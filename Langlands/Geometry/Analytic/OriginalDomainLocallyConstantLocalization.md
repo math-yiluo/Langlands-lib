@@ -1,7 +1,5 @@
 # Localization and coefficient maps of actual locally constant sections
 
-Author: Worker 56.
-
 Fix an actual indexed affinoid atlas `a` on `X` over a complete ultrametric
 normed field. The field, point, chart-index and coefficient universes are
 independent. This module uses the constructed original-chart domain

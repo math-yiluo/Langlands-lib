@@ -21,6 +21,5 @@ chosen last-entry coordinate, and transfers its regularity.
 The provenance is the elementary prime-variable cancellation argument,
 Mathlib's primality theorem for multivariate polynomial variables, the
 explicit determinant-one quotient, and its published comparison with actual
-affine coordinates. The comparison and row-coordinate foundations are by
-Worker 1369; the regularity argument is by Worker 669. This does not establish
+affine coordinates. This does not establish
 the general reductive-group or cofinal irreducibility conclusions.

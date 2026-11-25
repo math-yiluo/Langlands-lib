@@ -1,6 +1,6 @@
 # Actual Bernstein functors and their independent properties
 
-Worker 132. Supporting derived content for Task 5419, using Renard 2026,
+Supporting derived content for the proof of `BernsteinCuspAdjunctionStatement`, using Renard 2026,
 VI.7.2 second Lemma, printed pp.182–183 / PDF pp.188–189, registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.

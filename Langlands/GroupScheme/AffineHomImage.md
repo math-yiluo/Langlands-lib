@@ -1,6 +1,6 @@
 # The schematic image of an affine group homomorphism
 
-Worker 1280. This internal construction derives a group structure on the
+This internal construction derives a group structure on the
 scheme-theoretic image of a homomorphism between affine group schemes over an
 arbitrary field. It uses the existing Library lemmas for schematic dominance of
 the image projection and its tensor square, factorization through a closed
@@ -20,4 +20,7 @@ schematically dominant projection. Hence a smooth source gives a smooth image
 by Mathlib's smoothness theorem for geometrically reduced group schemes locally
 of finite type over a field.
 
-This module does not yet assert flatness or surjectivity of the projection.
+This module does not assert flatness or surjectivity of the projection. For a
+smooth source and a target locally of finite type,
+`AffineHomImage.isFppfQuotient` in `Langlands.GroupScheme.AffineKernelQuotient`
+proves that the projection is an fppf quotient by the full kernel.

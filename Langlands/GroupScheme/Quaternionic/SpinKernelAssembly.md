@@ -24,7 +24,7 @@ Levi morphism to a spin cover. It proves none of the three.
   (nonarchimedean local `K`, central `D` with `dim_K D = 4`, `σ` with `dim_K D^σ = 3`,
   `m ∈ {4, 5}`, `q` nondegenerate of Witt index `1`), for every spin cover `π` and every
   hyperbolic pair `h` there are `mu`, `psi` with `IsLeviLift h π mu psi`.
-* **`SpinKernelGeneratorStatement`** (a `Prop`, the kernel statement Z): in the same
+* **`SpinKernelGeneratorStatement`** (a `Prop`, the kernel statement): in the same
   setting, for every spin cover `π`, hyperbolic pair `h` and `mu`, `psi` with
   `IsLeviLift h π mu psi`, `KernelGenerator hdeg π mu psi` holds. Here `hdeg` is the reduced
   degree `2` obtained from `dim_K D = 4`. So `z(u) = mu(u) psi(u · 1)` is a bijection from
@@ -58,16 +58,19 @@ Levi morphism to a spin cover. It proves none of the three.
 
 ## Status of the three statements
 
-* Lifts: Worker 124's lift modules construct `mu` and `psi` assuming
-  `DegreeTwoNormOneSimplyConnectedStatement`. They do not yet show `IsLeviLift` against
-  `leviHom`.
+* Lifts: `SpinKernel.spinLeviLift_of_degreeTwoNormOneSimplyConnected` (module `SpinLeviLift`)
+  proves `SpinLeviLiftStatement` from `DegreeTwoNormOneSimplyConnectedStatement`, which
+  `CentralSimpleUnits.degreeTwoNormOneSimplyConnected` proves (module
+  `DegreeTwoNormOneSimplyConnectedProof`).
 * `SpinKernelGeneratorStatement` amounts to `π₁(O(q)⁰) = μ₂`, with the generator detected by
-  the plane subgroup `SL₂ × SL₁(D)`. It is open.
+  the plane subgroup `SL₂ × SL₁(D)`. It is proved as `SpinKernel.spinKernelGenerator` (module
+  `SpinKernelGeneratorProof`).
 * `SpinKernelElementaryLiftStatement` is automatic in characteristic `2`, where `-1 = 1`. In
-  general it is open.
+  general it is proved as `SpinKernel.spinKernelElementaryLift` (module
+  `KneserThreeSpinSubgroupProof`).
 
 ## Provenance
 
-Internal (Task 5398). This is bookkeeping that assembles the published reduction
+Internal, for the proof of `LocalSpinKneserTitsStatement`. This is bookkeeping that assembles the published reduction
 `localSpinKneserTits_of_spinInputs` with the descent theorem of `SpinKernelDescent` and the
 Levi morphism of `LeviGroupScheme`.

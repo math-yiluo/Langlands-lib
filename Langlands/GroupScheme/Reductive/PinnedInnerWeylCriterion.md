@@ -1,6 +1,6 @@
 # The Weyl criterion for inner automorphisms normalizing a split maximal torus
 
-Worker 838. Internal support for `InnerFormStarActionStatement`, derived from the published
+Internal support for `InnerFormStarActionStatement`, derived from the published
 split Weyl comparison, pinning base change, and fppf-local innerness interfaces. Its
 mathematical source is Conrad, *Reductive group schemes* (2014), Proposition 7.1.6 and
 the discussion on pp.242–243: the inner subgroup is the kernel of the action on based

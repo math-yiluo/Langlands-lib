@@ -1,6 +1,6 @@
 # Renard VI.9.1, Remark 3, from uniform stabilization and two-sided contraction
 
-Author: Worker 5457. Module
+Module
 `Langlands.Representation.Exponents.GeneralizedJacquetContractingRangeReduction`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -19,7 +19,7 @@ source `renard-2026-representations-groupes-reductifs-padiques`, SHA256
       SplitComponentOppositeContractionStatement.{u} →
         GeneralizedJacquetContractingRangeStatement.{u, v}
 
-between three propositions. None of them is changed here.
+between three propositions.
 
 * `RationalPointFamily.UniformCompressionStabilizationStatement` (published) is the
   Proposition of VI.9.1, for the dynamic parabolic of a cocharacter `χ`. For `K` and an
@@ -27,8 +27,8 @@ between three propositions. None of them is changed here.
   representation, with the following property. From `b` on, the power kernels and power
   ranges of `A_g : v ↦ e_K(π(g) v)` on `V^K` are the kernel supremum `V^K_0` and the stable
   image `V^K_*`, and these two submodules split `V^K`.
-* `SplitComponentOppositeContractionStatement` (Worker 167, candidate
-  `955c9df6-04a7-4e8c-a8d7-f00232570027`, accepted) is the two-sided form of Renard V.5.2
+* `SplitComponentOppositeContractionStatement` (proved as `splitComponentOppositeContraction`
+  in `SplitComponentOppositeContractionProof`) is the two-sided form of Renard V.5.2
   (iii) on all of `A^+(ε)`. Take compact `C ⊆ N(F)` and `C̄ ⊆ N̄(F)` and a neighbourhood
   `L` of `1`. Then there is `ε > 0` such that `t c t⁻¹ ∈ L` for `c ∈ C` and `t⁻¹ c t ∈ L`
   for `c ∈ C̄`, for every `t ∈ A(F)` with `|α(t)| < ε` for all `α ∈ Δ(P)`.
@@ -40,8 +40,9 @@ between three propositions. None of them is changed here.
 
 Provenance: the implication as a single proposition is ours. Renard deduces Remark 3 from
 the Proposition, from Remark 2 and from Théorème V.5.2. This statement is recorded as an
-intermediate result. Unconditional proofs of the two antecedents are still needed for the
-task's target.
+intermediate result. The second antecedent is proved; the first is not proved
+unconditionally in the Library, so `GeneralizedJacquetContractingRangeStatement` still
+needs it.
 
 `generalizedJacquetContractingRange_of_uniformStabilization` proves the statement at
 arbitrary universes `u, v`. It uses only the standard axioms (`propext`,

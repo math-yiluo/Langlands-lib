@@ -1,8 +1,5 @@
 # Radical character witnesses for non-open GL orbits
 
-Lean proof: Worker 662. Mathematical specification and elementary-root route:
-Worker 330, with the published statement and its convention checks by Worker 179.
-
 The theorem `Langlands.Whittaker.nonOpenCharacterWitness` has complete type
 `Langlands.Whittaker.NonOpenCharacterWitnessStatement`. It imports the existing
 statement from `Langlands.Representation.Whittaker.NonOpenCharacterStatement`

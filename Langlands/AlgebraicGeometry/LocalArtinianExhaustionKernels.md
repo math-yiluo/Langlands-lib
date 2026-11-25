@@ -1,6 +1,6 @@
 # Defining-ideal support in local Artinian exhaustion
 
-Worker 801 implements the affine support bridge in the local step of SGA 3,
+This module implements the affine support bridge in the local step of SGA 3,
 Exposé IX, Lemma 6.2 (registered source `sga3-expose-ix-gille-polo-2009`, printed
 pp.53–54). The internal construction `liftOfPullbackIso` factors a test morphism
 through a morphism whose pullback to that test is an isomorphism.
@@ -15,5 +15,6 @@ base action induced by the given scheme morphism.
 
 Over a locally noetherian scheme the earlier support/Artin–Rees helper then
 supplies a positive separating thickening on each affine open. The finite-cover
-and later-stage argument remains to be assembled separately; this module does
-not itself prove the full local exhaustion statement.
+and later-stage argument is assembled separately, in
+`LocalArtinianExhaustionProof`; this module does not itself prove the full local
+exhaustion statement.

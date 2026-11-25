@@ -29,55 +29,55 @@ lemma group_add_left_comm (x y z : Group Y) : x + (y + z) = y + (x + z) := by
   rw [← add_assoc, group_add_comm x y, add_assoc]
 
 /-- The Picard class of an invertible module. -/
-def icl (M : Y.Modules) (hM : Scheme.Modules.IsInvertible M) : Group Y :=
+def icl (M : Y.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) : Group Y :=
   (lineBundleOfIsInvertible M hM).classOf
 
-lemma icl_eq_iff (M M' : Y.Modules) (hM : Scheme.Modules.IsInvertible M)
-    (hM' : Scheme.Modules.IsInvertible M') :
+lemma icl_eq_iff (M M' : Y.Modules) (hM : Scheme.Modules.IsInvertibleFLT M)
+    (hM' : Scheme.Modules.IsInvertibleFLT M') :
     icl M hM = icl M' hM' ↔ Nonempty (M ≅ M') :=
   LineBundle.classOf_eq_iff _ _
 
-lemma icl_lineBundle (L : LineBundle Y) (h : Scheme.Modules.IsInvertible L.obj) :
+lemma icl_lineBundle (L : LineBundle Y) (h : Scheme.Modules.IsInvertibleFLT L.obj) :
     icl L.obj h = L.classOf :=
   (LineBundle.classOf_eq_iff _ _).2 ⟨Iso.refl _⟩
 
-lemma icl_tensor (M M' : Y.Modules) (hM : Scheme.Modules.IsInvertible M)
-    (hM' : Scheme.Modules.IsInvertible M') (h : Scheme.Modules.IsInvertible (M ⊗ M')) :
+lemma icl_tensor (M M' : Y.Modules) (hM : Scheme.Modules.IsInvertibleFLT M)
+    (hM' : Scheme.Modules.IsInvertibleFLT M') (h : Scheme.Modules.IsInvertibleFLT (M ⊗ M')) :
     icl (M ⊗ M') h = icl M hM + icl M' hM' := by
   rw [icl, icl, icl, ← LineBundle.classOf_tensor
     Langlands.Scheme.Modules.pullbackTensorComparisonIsIso]
   exact (LineBundle.classOf_eq_iff _ _).2 ⟨portedTensorExplicitIso M M'⟩
 
 lemma icl_pullback {Y' : Scheme.{u}} (φ : Y' ⟶ Y) (M : Y.Modules)
-    (hM : Scheme.Modules.IsInvertible M)
-    (h : Scheme.Modules.IsInvertible ((Scheme.Modules.pullback φ).obj M)) :
+    (hM : Scheme.Modules.IsInvertibleFLT M)
+    (h : Scheme.Modules.IsInvertibleFLT ((Scheme.Modules.pullback φ).obj M)) :
     icl ((Scheme.Modules.pullback φ).obj M) h = Group.pullback φ (icl M hM) := by
   rw [icl, icl, Group.pullback_lineBundle_classOf]
   exact (LineBundle.classOf_eq_iff _ _).2 ⟨Iso.refl _⟩
 
-lemma icl_unit (h : Scheme.Modules.IsInvertible (SheafOfModules.unit Y.ringCatSheaf)) :
+lemma icl_unit (h : Scheme.Modules.IsInvertibleFLT (SheafOfModules.unit Y.ringCatSheaf)) :
     icl (SheafOfModules.unit Y.ringCatSheaf) h = 0 := by
   rw [← LineBundle.classOf_trivial Y]
   exact (LineBundle.classOf_eq_iff _ _).2 ⟨Iso.refl _⟩
 
-lemma isInvertible_tensor {M M' : Y.Modules} (hM : Scheme.Modules.IsInvertible M)
-    (hM' : Scheme.Modules.IsInvertible M') : Scheme.Modules.IsInvertible (M ⊗ M') :=
+lemma isInvertible_tensor {M M' : Y.Modules} (hM : Scheme.Modules.IsInvertibleFLT M)
+    (hM' : Scheme.Modules.IsInvertibleFLT M') : Scheme.Modules.IsInvertibleFLT (M ⊗ M') :=
   Scheme.Modules.IsInvertible.tensor_monoidalV2 hM hM'
 
 /-- The twists `L ⊗ P^{⊗ m}`, written as in the statements. -/
 abbrev twist (L P : Y.Modules) (m : ℕ) : Y.Modules :=
   Nat.rec (motive := fun _ => Y.Modules) L (fun _ M => M ⊗ P) m
 
-lemma isInvertible_twist {L P : Y.Modules} (hL : Scheme.Modules.IsInvertible L)
-    (hP : Scheme.Modules.IsInvertible P) (m : ℕ) :
-    Scheme.Modules.IsInvertible (twist L P m) := by
+lemma isInvertible_twist {L P : Y.Modules} (hL : Scheme.Modules.IsInvertibleFLT L)
+    (hP : Scheme.Modules.IsInvertibleFLT P) (m : ℕ) :
+    Scheme.Modules.IsInvertibleFLT (twist L P m) := by
   induction m with
   | zero => exact hL
   | succ n ih => exact isInvertible_tensor ih hP
 
-lemma icl_twist {L P : Y.Modules} (hL : Scheme.Modules.IsInvertible L)
-    (hP : Scheme.Modules.IsInvertible P) (m : ℕ)
-    (h : Scheme.Modules.IsInvertible (twist L P m)) :
+lemma icl_twist {L P : Y.Modules} (hL : Scheme.Modules.IsInvertibleFLT L)
+    (hP : Scheme.Modules.IsInvertibleFLT P) (m : ℕ)
+    (h : Scheme.Modules.IsInvertibleFLT (twist L P m)) :
     icl (twist L P m) h = icl L hL + m • icl P hP := by
   induction m with
   | zero => simp
@@ -87,8 +87,8 @@ lemma icl_twist {L P : Y.Modules} (hL : Scheme.Modules.IsInvertible L)
       succ_nsmul, add_assoc]
 
 /-- Isomorphic invertible modules from class equations: `M ≅ M' ⊗ N`. -/
-lemma nonempty_iso_tensor_of_icl {M M' N : Y.Modules} (hM : Scheme.Modules.IsInvertible M)
-    (hM' : Scheme.Modules.IsInvertible M') (hN : Scheme.Modules.IsInvertible N)
+lemma nonempty_iso_tensor_of_icl {M M' N : Y.Modules} (hM : Scheme.Modules.IsInvertibleFLT M)
+    (hM' : Scheme.Modules.IsInvertibleFLT M') (hN : Scheme.Modules.IsInvertibleFLT N)
     (h : icl M hM = icl M' hM' + icl N hN) : Nonempty (M ≅ M' ⊗ N) := by
   rw [← icl_tensor M' N hM' hN (isInvertible_tensor hM' hN)] at h
   exact (icl_eq_iff _ _ _ _).1 h

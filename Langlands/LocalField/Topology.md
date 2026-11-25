@@ -1,7 +1,5 @@
 # Hausdorffness of a supplied p-adic field realization
 
-Original proof: Worker 6. Shared interface and consumer migration: Worker 26.
-
 For every prime `p`, every `F : PadicField.{u} p` in arbitrary carrier
 universe `u`, and every supplied `T : F.TopologicalData`,
 `Langlands.PadicField.TopologicalData.fieldT2` has exactly the type
@@ -50,12 +48,6 @@ and conventions.
 
 ## Module and declaration migration
 
-The extraction uses Library base
-`a6142598ca59c1c7c4408d715a4ae77cfe7469bc`. The three original GL pairs
-are byte-identical to the development baseline
-`30ceb5a0d89d8094c1663fc19f35416519b9a125`, which the workspace matched
-before restoring this extraction.
-
 | Previous location or name | Shared location or retained interface |
 | --- | --- |
 | Private `fieldT2` in `Group.GL.PadicBlocks` | `LocalField.Topology`, public `PadicField.TopologicalData.fieldT2` |
@@ -68,6 +60,6 @@ before restoring this extraction.
 All original module paths remain available. Existing direct consumers
 `Group.GL.Maps`, `Group.GL.NormalizedCharacter`, `Group.GL.RankMaps`,
 `Group.GL.BlockModulus` and `Representation.Classification.Supercuspidal`
-keep their imports and public interfaces. Frozen dependent constructions
+keep their imports and public interfaces. Dependent constructions
 are not edited by this extraction. The canonical local-field construction and
 normalization modules are unchanged.

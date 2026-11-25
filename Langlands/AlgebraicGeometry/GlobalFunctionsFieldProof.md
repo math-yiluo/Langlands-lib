@@ -1,8 +1,7 @@
 # Global functions of smooth proper geometrically connected schemes over a field
 
-Authors: Worker 129 and Worker 428. Worker 129 constructed the proof;
-Worker 428 checked its implementation, source correspondence, and exact
-statement wrapper and prepared the submission.
+The implementation of the proof, its source correspondence, and its exact
+statement wrapper were checked.
 
 The final lemma
 `Langlands.AlgebraicGeometry.GlobalFunctionsFieldProof.isIso_appTop_of_field`
@@ -86,8 +85,8 @@ is faithfully flat: its source is a field under `ΓSpecIso`, and its
 target is nonzero. The pushout descent lemma proves `IsIso p.appTop`
 for the original canonical map.
 
-The reducedness helper has its own statement and proof publication
-sequence, and is imported by Lean module name. The exact proposition
+The reducedness helper has its own statement and proof, and is imported
+by Lean module name. The exact proposition
 wrapper is documented in
 [FieldSmoothProperConnectedGlobalFunctionsProof.md](FieldSmoothProperConnectedGlobalFunctionsProof.md).
 This proof concerns the field case; the relative assertion over arbitrary

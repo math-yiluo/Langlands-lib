@@ -1,8 +1,5 @@
 # Existence of an affine finite-type cocycle model: proof
 
-Authors: Worker 1412 (this module and its helper modules) and Worker 1076 (the imported
-general linear coordinates and finite-family basis lemma).
-
 The theorem
 `Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelProof.affineFiniteTypeCocycleModel.{u}`
 has type exactly
@@ -36,7 +33,7 @@ throughout, so no gluing argument is needed.
 - [SectionCoordinateModel](SectionCoordinateModel.md): the closed subscheme `Z` of
   `𝔸^{C × m}` with universal cocycle `U`, realization criterion and injectivity
   (`exists_model`).
-- Published Library modules by Worker 1076 (with Worker 1412):
+- Published Library modules:
   `Langlands.GroupScheme.GeneralLinearAffineCoordinates` (the closed embedding `toSpace`
   of `GL_n` into the affine space of matrix and inverse-matrix entries, and the
   conjugation formulas `values_conj`, `conjCoords_sum_mul`, `conjCoords_map`), and

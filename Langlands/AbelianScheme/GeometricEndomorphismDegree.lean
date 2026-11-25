@@ -18,8 +18,8 @@ other endomorphisms. -/
 def geometricEndomorphismDegree {k : Type u} [Field k]
     (A : AbelianScheme (Spec (CommRingCat.of k))) (f : End A) : ℕ := by
   classical
-  exact if GroupScheme.IsIsogeny (groupHom f) then
-    (hom f).finrank (η[A.X].left (Classical.arbitrary (Spec (CommRingCat.of k))))
+  exact if GroupScheme.IsIsogeny (groupHom f.asHom) then
+    (hom f.asHom).finrank (η[A.X].left (Classical.arbitrary (Spec (CommRingCat.of k))))
   else 0
 
 end Langlands.AbelianScheme

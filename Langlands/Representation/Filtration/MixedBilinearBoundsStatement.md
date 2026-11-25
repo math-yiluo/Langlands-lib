@@ -8,8 +8,9 @@ construction and uses the existing `ObjectRepFiltration` and its actual
 `gradedRepresentation`. No original-literature assertion is transcribed.
 
 The module defines four propositions in namespace `Langlands.MixedBilinear`.
-It supplies no proofs of them. The aggregate `FiltrationBoundsStatement` is the
-exact target intended for a separate proof contribution. This unit establishes
+It supplies no proofs of them. The aggregate `FiltrationBoundsStatement` is
+proved separately, as `Langlands.MixedBilinear.filtrationBounds` in
+`Filtration.MixedBilinearBoundsProof`. This module establishes
 no JPSS theorem or unequal-rank uniqueness result.
 
 ## Universes, quantifiers and covariance
@@ -111,5 +112,6 @@ ambient monoids. They assume no topology, smoothness, irreducibility,
 admissibility, or Whittaker-functional uniqueness. The existing mixed
 construction already proves the elementary subrepresentation-plus-quotient
 bounds; this module names the subsequent finite-filtration and proportionality
-obligations. Their proofs, concrete unequal-rank adapters, exceptional-set
-arguments and full uniqueness results remain separate work.
+obligations. Their proofs are in `MixedBilinearBoundsProof`; concrete
+unequal-rank adapters, exceptional-set arguments and full uniqueness results
+are separate.

@@ -1,7 +1,5 @@
 # Cup products and subgroup maps
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 The degree-zero second-factor laws follow from the proved formula expressing
 multiplication by an invariant vector as the actual coefficient map. Coefficient
 naturality of the constructed restriction and corestriction then proves the

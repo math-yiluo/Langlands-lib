@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AlgebraicGeometry.ProperOfFibres.Approximation
 import Langlands.AlgebraicGeometry.ProperOfFibres.NoetherianCore
 import Langlands.AlgebraicGeometry.Morphisms.FpqcFiniteDescent

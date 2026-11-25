@@ -1,6 +1,6 @@
 # Bilateral shell sums of the canonical Euler tests
 
-Worker 1692 derives this internal support for the global Hecke theorem from the
+This module derives internal support for the global Hecke theorem from the
 published p-adic Fourier formulas, conductor laws and geometric series.
 `shellMellinTerm` samples the actual canonical uniformizer and multiplies by the
 integral power of the actual character value times the spectral variable. The

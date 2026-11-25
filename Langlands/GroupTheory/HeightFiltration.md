@@ -1,7 +1,5 @@
 # Height subgroups and their ordered coordinates
 
-Author: Worker 204.
-
 This is an internal group-theoretic part of the root-height filtration
 construction. It starts with a finite ordered family of actual subgroups
 `H i` of a group, with natural-number heights `w i`, and the hypothesis

@@ -1,6 +1,6 @@
 # Square-integrable representations are normalized-exponent tempered
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.SquareIntegrableNormalizedTemperedStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `SquareIntegrableNormalizedTemperedStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.SquareIntegrableNormalizedTemperedStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `SquareIntegrableNormalizedTemperedStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.1, Remark 2, printed p.227 / PDF p.233. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The remark says: if `(π, V)` is irreducible and square-integrable modulo the center, then by Casselman's criterion VII.1.2, `π` is tempered. It refers to the definition of square integrability modulo the center in IV.3.2 (printed pp.99–100 / PDF pp.105–106) and to the definition of temperedness at the start of VII.2.1 on the same page.
 
@@ -32,10 +32,10 @@ The published predicate `IsSquareIntegrableModCenter` already contains admissibi
 
 The remark is a consequence of Casselman's criterion. A proof is expected to proceed as follows.
 
-1. The forward implication of Casselman's criterion applies, because the published predicate gives both of its hypotheses. In the derived form submitted separately as `ArbitraryParabolicCasselmanCriterionStatement`, it puts every `normalizedRealPart χ` in the strictly positive root cone `pres.positiveCone`, for every actual parabolic, presentation, radical and normalized exponent. That statement is not yet in the Library and is not imported here.
+1. The forward implication of Casselman's criterion applies, because the published predicate gives both of its hypotheses. In the derived form stated separately as `ArbitraryParabolicCasselmanCriterionStatement` (module `ArbitraryParabolicCasselmanStatement`), it puts every `normalizedRealPart χ` in the strictly positive root cone `pres.positiveCone`, for every actual parabolic, presentation, radical and normalized exponent. That statement is not imported here.
 2. The published lemma `Langlands.GroupScheme.ParabolicRootPresentation.positiveCone_subset_nonnegCone` gives membership in `pres.nonnegCone`.
 3. Admissibility is the first component of `IsSquareIntegrableModCenter`.
-4. `SatisfiesNormalizedExponentConeCondition` also requires a compatible presentation for every actual triple `(p, l, a)`. For actual parabolics these come from the choices in V.3.14 (printed p.113 / PDF p.119): a minimal parabolic inside `P` and a maximal split torus containing `A_M`. This existence is a separate structural obligation. It is not proved in the Library, and this module does not assert it.
+4. `SatisfiesNormalizedExponentConeCondition` also requires a compatible presentation for every actual triple `(p, l, a)`. For actual parabolics these come from the choices in V.3.14 (printed p.113 / PDF p.119): a minimal parabolic inside `P` and a maximal split torus containing `A_M`. This existence is a separate structural statement, proved in the Library as `Langlands.GroupScheme.parabolicRootPresentationExistence` (module `Langlands.GroupScheme.Rational.ParabolicRootPresentationProof`); this module does not assert it.
 
 ## Faithfulness notes
 
@@ -45,4 +45,4 @@ The remark is a consequence of Casselman's criterion. A proof is expected to pro
 
 ## Provenance
 
-This is a derived statement of VII.2.1, Remark 2, for the represented-parabolic interface. It differs from the printed remark in one documented way: irreducibility is omitted because the published square-integrability predicate already contains the admissibility that irreducibility supplies in the source. Temperedness is the published normalized-exponent predicate, with its `q^(-s)` real part and closed root cone. The proof of this statement, the existence of compatible presentations, and the comparison with Renard's IV.3.2 definition remain separate obligations.
+This is a derived statement of VII.2.1, Remark 2, for the represented-parabolic interface. It differs from the printed remark in one documented way: irreducibility is omitted because the published square-integrability predicate already contains the admissibility that irreducibility supplies in the source. Temperedness is the published normalized-exponent predicate, with its `q^(-s)` real part and closed root cone. The proof of this statement, the existence of compatible presentations, and the comparison with Renard's IV.3.2 definition are not part of this module; the proof is `SquareIntegrableNormalizedTemperedProof`.

@@ -1,9 +1,8 @@
 # Descending sections to a finitely generated subalgebra
 
 Module `Langlands.AlgebraicGeometry.NoetherianApproximation.ModuleDescentStages`, namespace
-`Langlands.AlgebraicGeometry.NoetherianApproximation.ModuleDescentStages`, universe `u`. Author:
-Worker 1038. Internal helper for [`ModuleDescentProof`](ModuleDescentProof.md); it imports only
-Mathlib.
+`Langlands.AlgebraicGeometry.NoetherianApproximation.ModuleDescentStages`, universe `u`. Internal
+helper for [`ModuleDescentProof`](ModuleDescentProof.md); it imports only Mathlib.
 
 ## Setting
 

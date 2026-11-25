@@ -1,12 +1,12 @@
 # `Langlands.AnthropicFLT.Theorems.Thm_MvPolynomial_relation_mem_span_of_forall_finrank_piece_succ_le`
 
-Ported for task `6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism functor of a projective abelian scheme). Statement module (FLT `Theorems/`).
+Ported for the projective representability of the relative endomorphism functor of a projective abelian scheme. Statement module (FLT `Theorems/`).
 
 ## Source and licence
 
 Port of `Theorems/Thm_MvPolynomial_relation_mem_span_of_forall_finrank_piece_succ_le.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -36,5 +36,5 @@ Names and namespaces are the FLT ones; statements are the FLT ones up to the cha
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_HilbertFunctor` (same contribution), `Langlands.AnthropicFLT.P2M.Sol.S_MvPolynomial_relation_mem_span_of_forall_finrank_piece_succ_le` (same contribution).
+Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_HilbertFunctor` (ported with this file), `Langlands.AnthropicFLT.P2M.Sol.S_MvPolynomial_relation_mem_span_of_forall_finrank_piece_succ_le` (ported with this file).
 Other imports: `Mathlib`.

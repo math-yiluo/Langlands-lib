@@ -41,6 +41,20 @@ here; the hypothesis is the remaining analytic input. Neither the
 Dixmier–Malliavin factorization of a general smooth weight nor a trace
 formula is asserted.
 
+The form for test functions is
+`GroupSchemeFullAEL2CuspidalSmoothTraceClassStatement` (module
+`Langlands.Automorphic.GroupSchemeFullAEL2CuspidalSmoothTraceClassStatement`),
+with the same parameters: the Hilbert–Schmidt hypothesis is asked only for
+test functions (`IsAdelicTestFunction`), and the conclusion is that `R(f)`
+is trace class for every test function, not only for convolution products.
+It is not derived from this statement, whose hypothesis is stronger.
+`groupSchemeFullAEL2CuspidalSmoothTraceClass_of_convolution` (module
+`Langlands.Automorphic.GroupSchemeFullAEL2CuspidalSmoothTraceClassReduction`)
+proves it from `IntegratedActionConvolutionStatement`, through the
+Dixmier–Malliavin factorization of test functions
+(`IsAdelicTestFunction.exists_eq_sum_convolution`); the convolution
+statement is proved by `Langlands.Analysis.integratedActionConvolution`.
+
 ## Sources and provenance
 
 This is a derived statement. The source is Getz–Hahn, *An Introduction to
@@ -67,9 +81,12 @@ almost-everywhere cuspidality condition is the one implemented in
 
 ## Intended proof
 
-A private proof compiles. Compactly supported continuous weights are Haar
-integrable. The separately staged convolution statement
-`IntegratedActionConvolutionStatement`, applied to the cuspidal right action
+The Library has no proof of this statement. Compactly supported continuous
+weights are Haar integrable. The convolution statement
+`IntegratedActionConvolutionStatement` (proved by
+`Langlands.Analysis.integratedActionConvolution`, module
+`Langlands.Representation.Unitary.IntegratedConvolutionProof`), applied to
+the cuspidal right action
 `fullAEL2CuspidalBoundedRightAction` on the complete cuspidal space, gives
 integrability of `f₁ ⋆ f₂` and `R(f₁ ⋆ f₂) = R(f₁) ∘ R(f₂)`. The hypothesis
 makes both factors Hilbert–Schmidt, and the published

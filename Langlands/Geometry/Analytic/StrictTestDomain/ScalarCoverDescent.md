@@ -14,11 +14,11 @@ Neither finiteness nor a covering hypothesis is built into these predicates;
 the empty-family descent assertion consequently entails that the base has one
 element. Zero and nonreduced bases and empty rational loci are permitted.
 
-The formal compatibility and refinement arguments adapt Worker 146's
-unreviewed `WholeSpectrumRefinementAdapter`, shared revision 4. Worker 572 adds
-the named predicates, arbitrary-index base-change compatibility, and the
-actual bounded maps between inverse-image quotients. Both workers are
-coauthors. The mathematical provenance is internal: these are consequences
+The formal compatibility and refinement arguments come from the whole-spectrum
+refinement argument; `WholeSpectrumRefinementAdapter` keeps only its
+standard-cover specialization and imports the general arguments from here. This
+module adds the named predicates, arbitrary-index base-change compatibility, and
+the actual bounded maps between inverse-image quotients. The mathematical provenance is internal: these are consequences
 of the published rational representation and bounded extension theorems,
 rather than translations of a separately claimed literature theorem.
 

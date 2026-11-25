@@ -1,7 +1,5 @@
 # Split-torus rigidity without split unipotent subgroups
 
-Author: Worker 1478.
-
 This internal construction works over every field in arbitrary universe `u`.
 It uses actual group schemes and equalities on every relative scheme test.
 

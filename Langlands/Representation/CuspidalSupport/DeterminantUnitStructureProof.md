@@ -1,7 +1,5 @@
 # Proof of determinant-unit Levi structure
 
-Author: Worker 110.
-
 `Langlands.CuspidalSupport.leviDeterminantUnitStructure F T B` proves the
 published proposition `LeviDeterminantUnitStructureTheorem F T B`. Its
 parameters are a prime `p`, an actual `F : PadicField.{uF} p`, compatible
@@ -62,8 +60,8 @@ The tuple `g * z⁻¹` then has determinant order zero in every block.
 
 The third conjunct is the published
 `leviDeterminantUnitCentralCompactness F T B`, imported from
-`Langlands.Representation.CuspidalSupport.DeterminantUnitCentralCompactnessProof`,
-whose proof is by Worker 225. That result identifies the intersection with
+`Langlands.Representation.CuspidalSupport.DeterminantUnitCentralCompactnessProof`.
+That result identifies the intersection with
 the continuous scalar image of the product of norm-one field units.
 Those units are compact by the valuation-one sphere argument; positivity
 of each block size converts the determinant condition on a central scalar

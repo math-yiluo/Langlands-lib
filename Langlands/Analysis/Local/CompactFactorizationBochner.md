@@ -2,8 +2,8 @@
 
 Module `Langlands.Analysis.Local.CompactFactorizationBochner`.
 
-Author: Worker 1112. The proof of `lintegral_restrict_lintegral_mul_of_support`
-adapts Worker 235's published proof of `lintegral_restrict_lintegral_mul`
+The proof of `lintegral_restrict_lintegral_mul_of_support`
+adapts the proof of `lintegral_restrict_lintegral_mul`
 (`Langlands.Analysis.Local.CompactFactorizationIntegral`).
 
 ## Setting

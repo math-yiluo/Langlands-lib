@@ -1,13 +1,12 @@
 # Assembly of the quasi-split apartment, given V 5 at multipliable roots
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.QuasiSplitApartmentAssembly`.
 
-This internal unit belongs to task 8ffe0456. It proves the task target
+This module is part of the construction of actual quasi-split apartments over henselian
+integer-valued fields. It proves the target
 `QuasiSplitIntegerApartmentExistenceStatement` from one remaining statement,
 `QuasiSplitMultipliableOppositeStatement`: axiom V 5 of the descended family at multipliable
-relative roots (type R2). Everything else is proved here or in earlier units:
+relative roots (type R2). Everything else is proved here or in these modules:
 
 - the descent of the split apartment class: `SplitChevalleyApartment`,
   `SplitApartmentGaloisFixedPoint`, `QuasiSplitApartmentShifts`;
@@ -147,10 +146,10 @@ The construction is Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (20
 Here the base field is any field with a surjective `ℤ`-valued henselian valuation. The
 statement `QuasiSplitMultipliableOppositeStatement` and the assembly are internal. They are
 phrased for the Library's torus-then-field restriction of root function families. All proofs
-compose published Library results and the earlier units of this task.
+compose published Library results and the modules listed at the top of this page.
 
 ## Scope
 
 - `QuasiSplitMultipliableOppositeStatement` is not proved here. It is the R2 part of
   Proposition 6.1.19 (the `SU₃` computation) for the descended family.
-- So this unit reduces the target to that statement, and does not prove the target outright.
+- So this module reduces the target to that statement, and does not prove the target outright.

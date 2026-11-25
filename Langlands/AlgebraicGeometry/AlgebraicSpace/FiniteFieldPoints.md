@@ -1,7 +1,5 @@
 # Finitely many points over a finite field
 
-Author: Worker 105.
-
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed
 p.17, proof of Corollary 5.7: "the residue field is a finite field and X is of finite type,
 so by using a finite stratification of X by schemes we see that there are only finitely many

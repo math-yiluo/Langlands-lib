@@ -1,7 +1,5 @@
 # Čech exactness of quasi-coherent modules on standard affine covers
 
-Author: Worker 727.
-
 This module proves that a quasi-coherent `𝒪_X`-module has exact ordered Čech complex (module
 `Langlands.Cohomology.CechCochains`) in every positive degree for every standard open covering
 of an affine open. It is a helper for the proof of

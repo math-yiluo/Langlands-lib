@@ -1,7 +1,5 @@
 # Maximal compactness from opposite Iwasawa coverings and cell integrality
 
-Author: Worker 4686.
-
 This internal module gives a conditional reduction of the published
 `Langlands.GroupScheme.IntegralModel.MaximalCompactStatement` to an explicit
 datum, `IwasawaCellData M`, built from opposite subgroups of the generic group.

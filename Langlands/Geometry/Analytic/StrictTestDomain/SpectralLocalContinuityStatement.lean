@@ -20,11 +20,11 @@ def RationalSpectralLocalContinuityStatement : Prop :=
     (∀ (b : d.algebra) (g₀ : ρ.locusOpenSubgroup d) (ε : ℝ), 0 < ε →
       ∀ᶠ g in 𝓝 g₀,
         BanachSpectrum.SpectralBound
-          ((ρ.sectionAction d g).hom.toAlgHom b -
-            (ρ.sectionAction d g₀).hom.toAlgHom b) ε) ∧
+          ((ρ.sectionAction d g).asIso.hom.toAlgHom b -
+            (ρ.sectionAction d g₀).asIso.hom.toAlgHom b) ε) ∧
     (∀ b : d.algebra,
       Continuous (fun p : ρ.locusOpenSubgroup d × BanachSpectrum d.algebra =>
-        p.2 ((ρ.sectionAction d p.1).hom.toAlgHom b))) ∧
+        p.2 ((ρ.sectionAction d p.1).asIso.hom.toAlgHom b))) ∧
     Continuous (fun p : ρ.locusOpenSubgroup d × BanachSpectrum d.algebra =>
       (ρ.sectionAction d p.1) • p.2)
 

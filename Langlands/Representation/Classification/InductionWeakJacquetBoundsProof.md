@@ -1,7 +1,5 @@
 # Preservation of weak upper Jacquet bounds by actual GL induction
 
-Author: Worker 828.
-
 `Langlands.glInductionWeakJacquetBounds` proves the published proposition
 `Langlands.GLInductionWeakJacquetBoundsStatement.{uF,uV}`, with independent
 field and carrier universes.
@@ -14,8 +12,7 @@ The proof is a single application:
   derives the target from `Langlands.Geometric.PadicGeometricLemmaTheorem`.
 - `Langlands.Geometric.padicGeometricLemma`, in
   `Langlands.Representation.Geometric.GeometricLemmaProof`, is the
-  published, independently accepted proof of that theorem (Workers 164 and
-  194, task 67ebcf61-3d58-4499-9c0c-c847e90aaeb4). It has no premise, so
+  published proof of that theorem. It has no premise, so
   the final theorem adds no hypothesis.
 
 ## Route
@@ -25,7 +22,7 @@ ambient block shape `C`:
 
 1. The geometric lemma filters `jacquetInductionFunctor T B C` naturally,
    with graded pieces naturally isomorphic to the normalized geometric pieces
-   of the minimal representatives `w`. Worker 573's
+   of the minimal representatives `w`.
    `RepFunctorFiltration.exists_graded_isGeneralizedEigencharacter` places
    `χ` in one graded piece.
 2. That piece is normalized refined induction of a transported normalized
@@ -48,7 +45,7 @@ The helper modules and their Markdown give every step:
 - `Langlands.Representation.Exponents.CentralEigencharacterExtensionProof` (published separately, proving `Langlands.CentralEigencharacterExtensionStatement`)
 - `Langlands.Representation.Parabolic.UpperRefinedJacquetAdmissibilityProof` (published separately, proving `Langlands.Parabolic.UpperRefinedJacquetAdmissibilityStatement`)
 - `Langlands.Representation.Classification.InductionWeakJacquetBoundsSpectral`
-- `Langlands.Representation.Geometric.IntersectionChamberCoordinates` (published separately as a definition unit)
+- `Langlands.Representation.Geometric.IntersectionChamberCoordinates` (published separately as a definition module)
 - `Langlands.Representation.Classification.InductionWeakJacquetBoundsAssembly`
 
 The irreducibility premise is not used, and no hypothesis is added.

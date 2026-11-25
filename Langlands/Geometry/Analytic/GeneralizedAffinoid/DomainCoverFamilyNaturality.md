@@ -1,6 +1,6 @@
 # Compatible continuous families as natural descent data
 
-Worker 56 constructs the presheaf of compatible continuous families on the
+This module constructs the presheaf of compatible continuous families on the
 chosen-index finite full-domain cover category of a fixed represented domain.
 The published actual family transport along a bounded ambient equivalence is
 natural in every refinement. Its square also commutes for the inverse
@@ -124,4 +124,4 @@ supplied full-domain cover and a genuine bounded equivalence of ambient
 algebras. They concern continuous maps on represented loci, with no separation
 or compactness requirement on `Y`. Algebra-section descent, general analytic
 pullbacks, rational-domain existence, analytic structure sheaves, atlas
-completion and analytic etale sites remain separate construction obligations.
+completion and analytic etale sites lie outside this module.

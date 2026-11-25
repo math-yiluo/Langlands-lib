@@ -41,5 +41,5 @@ to the group-scheme category.
 
 `dvrIso` is the resulting actual isomorphism `M ≅ G`, constructed as `asIso f`.
 The simplification lemma `dvrIso_hom` states that its forward homomorphism is
-exactly `f`. This unit retains the split-torus hypothesis and does not assert
+exactly `f`. This module retains the split-torus hypothesis and does not assert
 the unrestricted reductive monomorphism closed-immersion theorem.

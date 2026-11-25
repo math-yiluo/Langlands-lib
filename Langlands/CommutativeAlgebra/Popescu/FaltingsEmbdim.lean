@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # `H₁(L_{κ/A})` is the cotangent space `𝔪/𝔪²` of a local ring -/
 

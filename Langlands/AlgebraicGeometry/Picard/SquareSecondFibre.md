@@ -1,8 +1,5 @@
 # Second-projection fibres of a square
 
-Authors: Worker 360; Worker 1013 supplied the published first-projection
-construction adapted here.
-
 These are internal derived helpers for arbitrary schemes `X` and `S` in
 universe `u`, a morphism `s : X ⟶ S`, a section `x : S ⟶ X`, and
 `hx : x ≫ s = 𝟙 S`. The construction follows the published
@@ -58,5 +55,6 @@ is definitionally the actual module pullback. For an abelian scheme
 `A` over `Spec K` and rational point `x`, specializing to `s = A.X.hom`,
 `x.left` and `x.w` gives exactly the literal second inclusion used by
 `AlgClosedFieldSquareSecondProjectionFiniteSupportDetectionStatement`.
-That target's total-vanishing and finite-support arguments remain separate
-proof obligations.
+That target's total-vanishing and finite-support arguments are separate;
+they are in its proof `algClosedFieldSquareSecondProjectionFiniteSupportDetection`
+(module `SquareSecondProjectionFiniteSupportDetectionProof`).

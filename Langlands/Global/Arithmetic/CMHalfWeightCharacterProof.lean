@@ -1,7 +1,7 @@
 import Langlands.Global.Arithmetic.CMFiniteNormSign
 import Langlands.Global.Arithmetic.CMHalfWeightFiniteControl
 import Langlands.Global.Arithmetic.CMHalfWeightLocalNormControl
-import Langlands.ClassField.Global.IdeleClassNormGaloisProductProof
+import Langlands.ClassFieldTheory.Global.IdeleClassNormGaloisProductProof
 import Langlands.Global.Arithmetic.CMHalfWeightCharacterStatement
 import Langlands.Global.Arithmetic.CMHalfWeightExtension
 import Langlands.Global.Arithmetic.CMHalfWeightRealSign
@@ -13,7 +13,7 @@ noncomputable section
 
 open Algebra NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
 open scoped NumberField Langlands.Global.AdelicFunctoriality.FiniteExtension
-open Langlands.ClassField.Global Langlands.Global.AdelicFunctoriality
+open Langlands.ClassFieldTheory.Global Langlands.Global.AdelicFunctoriality
 
 namespace Langlands.Global.CMHalfWeight
 

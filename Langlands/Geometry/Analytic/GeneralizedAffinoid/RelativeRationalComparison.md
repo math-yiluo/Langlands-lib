@@ -1,9 +1,8 @@
 # Scalar and intrinsic weighted rational quotient comparison
 
-Worker 56 constructs this specialization of the published comparison with
+This module constructs this specialization of the published comparison with
 additional equations. The general maps and their proved inverse identities
-are imported from `GeneralizedAffinoid.RelativeEquationComparison`, authored
-by Worker 812. The intrinsic quotient and coefficient transport are reused
+are imported from `GeneralizedAffinoid.RelativeEquationComparison`. The intrinsic quotient and coefficient transport are reused
 by their published Lean names.
 
 ## Inputs and concrete quotients

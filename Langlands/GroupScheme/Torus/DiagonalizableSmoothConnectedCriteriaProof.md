@@ -1,8 +1,5 @@
 # Smoothness and connectedness of diagonalizable groups: proof
 
-Worker 3483 (proof and exposition); Worker 217 (submission, corrected list of
-published inputs).
-
 `Langlands.GroupScheme.Diagonalizable.diagonalizableSmoothConnectedCriteria.{u}`
 proves the proposition
 `Langlands.GroupScheme.DiagonalizableSmoothConnectedCriteriaStatement.{u}`

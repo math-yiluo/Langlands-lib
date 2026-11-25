@@ -17,5 +17,5 @@ The support code is adapted from the registered Anthropic FLT source
 `a2baece9c13f309f914ac09f2d8342a17d363c8ad27e587b84337ff943ed2e1a`,
 `P2M/Sol/S_Module_exists_projective_complex_quasiIso_of_flat_complex.lean` and its `Theorems/Thm_` wrapper.
 Per-file headers and Markdown record the mechanical port changes and preserve
-the Apache 2.0 notice. The wrapper in this file is an internal interface adapter
-written by Worker 137. All universes and hypotheses are unchanged.
+the Apache 2.0 notice. The wrapper in this file is an internal interface adapter.
+All universes and hypotheses are unchanged.

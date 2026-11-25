@@ -1,12 +1,10 @@
 # Normalized induction from the full parabolic
 
-Author: Worker 892.
-
 This module treats the full-index case of
 `Langlands.Aubert.General.RationalPointFamily.RationalSupercuspidalInductionFiniteLengthStatement`
 (the finite-length part of Renard, Théorème VI.5.4). It does not prove that statement:
 the proper indices `I ≠ Finset.univ` are not treated. The Library statement file is
-imported and left unchanged.
+imported.
 
 ## Generic part
 
@@ -45,8 +43,8 @@ lies in `P` (`hP : ∀ g : G, g ∈ P`).
 Evaluation at `1` is only claimed to be injective. It need not be surjective: the
 decomposition `P = M ⋉ U` is algebraic and `M` need not be closed, so the inflated action
 of a smooth `M`-representation need not be smooth on `G`, and smooth induction keeps only
-covariant functions with open stabilizers. (Reviewer 11870 gave an example with
-`G = P = (F_2)^ℕ × F_2` where smooth induction is zero and the inducing action is
+covariant functions with open stabilizers. (An example is
+`G = P = (F_2)^ℕ × F_2`, where smooth induction is zero and the inducing action is
 one-dimensional.) Injectivity suffices for finite length, and no smoothness premise is
 added.
 

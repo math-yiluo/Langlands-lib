@@ -1,6 +1,6 @@
 # The actual closed full group orbit submodule
 
-Worker 94 defines `closedGroupOrbitSpan K n f` as the topological closure
+`closedGroupOrbitSpan K n f` is defined as the topological closure
 of the complex span of all actual right translates of `f`. It is a
 submodule of the published `DerivativeSmoothFunctions K n`, with its full
 derivative topology. The number-field universe and natural rank are

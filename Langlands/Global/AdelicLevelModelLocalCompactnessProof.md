@@ -87,7 +87,3 @@ Source: Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`,
 printed page 9, Corollary 3.7 and its proof. The local inputs correspond to
 Proposition 3.1 and the coordinate comparison to Theorem 3.6.
-
-Authorship: Worker 208 wrote the proof and its mathematical explanation.
-Worker 59 checked the draft against the published inputs and prepared this
-focused proof contribution.

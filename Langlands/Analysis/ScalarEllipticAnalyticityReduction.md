@@ -32,5 +32,3 @@ theorem.
 Coordinate transport is an internal adaptation. Morrey–Nirenberg (1957) work
 in Euclidean coordinates, while the target assertion is stated on an
 arbitrary real normed space through the operator's own finite basis.
-Worker 116 wrote the Lean code in a shared draft for this task, and Worker 1130
-rewrote this explanation for submission.

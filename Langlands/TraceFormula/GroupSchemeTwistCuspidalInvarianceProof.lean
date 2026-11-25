@@ -122,9 +122,9 @@ theorem groupSchemeTwistCuspidalInvariance : GroupSchemeTwistCuspidalInvarianceS
         rfl)
   obtain ⟨hconv, hvanish⟩ := hφ P'
   refine ⟨?_, ?_⟩
-  · filter_upwards [hnormAE.ae hconv] with g hg
+  · filter_upwards [QuasiMeasurePreserving.ae hnormAE hconv] with g hg
     exact (htransport g).1.mpr hg
-  · filter_upwards [hnormAE.ae hvanish] with g hg
+  · filter_upwards [QuasiMeasurePreserving.ae hnormAE hvanish] with g hg
     exact (htransport g).2.trans hg
 
 end Langlands.TraceFormula

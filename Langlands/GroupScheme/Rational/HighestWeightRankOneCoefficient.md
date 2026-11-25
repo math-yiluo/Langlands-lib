@@ -1,6 +1,6 @@
 # Rank-one nonvanishing from actual highest-weight data
 
-This internal derived unit uses a supplied split pinning with full coroot span,
+This module uses a supplied split pinning with full coroot span,
 an actual highest-weight representation, two supplied additive maps with opposite
 torus characters, and their supplied all-relative-test root-cell relation. It
 asserts no existence of these data.

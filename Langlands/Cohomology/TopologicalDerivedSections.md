@@ -1,7 +1,5 @@
 # Derived sections and compact support
 
-Author: Worker 13.
-
 This module constructs right-derived compact sections and ordinary sections
 on actual module sheaves over a topological space. Both the space and the
 coefficient ring use universe `u`, and the sheaf values are `ModuleCat.{u} R`.
@@ -44,7 +42,7 @@ SHA-256 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`;
 member
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`,
 SHA-256 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
-Worker 13 read the cited original pages.
+The cited original pages were read.
 
 Formal dependencies: accompanying `Langlands.Sheaf.CompactSupport`,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435` with Lean 4.34.0,

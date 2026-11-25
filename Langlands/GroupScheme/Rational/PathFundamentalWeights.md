@@ -1,7 +1,9 @@
 # Weights of a highest-weight representation at the first fundamental weight of a path
 
 This module is an internal prerequisite for the even type `A` case of the
-quasi-split Steinberg quotient task (Steinberg 1965, §9.10–9.19). Steinberg
+quasi-split Steinberg quotient `QuasiSplitSteinbergQuotientStatement` (Steinberg
+1965, §9.10–9.19), which the module `Rational.QuasiSplitSteinbergQuotient`
+proves. Steinberg
 computes in the standard representation of `SL_{2m+1}`. For an actual group
 scheme with a split pinning, the analogue of that representation is a
 highest-weight representation whose highest weight is the fundamental weight at
@@ -97,4 +99,5 @@ The module computes weights only. It does not show that ρ is trivial on the
 root subgroups of other components. It gives no matrices for root
 subgroups or reflection representatives in `pathWeightBasis`, constructs no
 fundamental representation, and makes no statement about class functions.
-These are later even type `A` obligations of the host task.
+These are later even type `A` steps, left to the proof of
+`QuasiSplitSteinbergQuotientStatement`.

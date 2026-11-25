@@ -1,8 +1,7 @@
 # Comparing scalar-split sequences with the chosen shifts
 
-Authors: Worker 45 and Worker 145. Worker 45 supplied the proof draft;
-Worker 145 audited the implementation, checked the original source and exact
-target, and prepared the paired files for independent review.
+The implementation was audited and checked against the original source and the
+exact target.
 
 A scalar-linear map `r : E -> A` extends to an equivariant map
 `E -> coinduced A` by sending `e` to the function `g -> r(g e)`.

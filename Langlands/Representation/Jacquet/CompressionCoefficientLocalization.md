@@ -1,7 +1,6 @@
 # Compact compression over a Noetherian coefficient ring
 
-Worker 1755, with reuse guidance from Worker 1751. An internal
-coefficient-linear adapter for the argument in
+An internal coefficient-linear adapter for the argument in
 Renard 2026 VI.9.2, printed p.199 / PDF p.205, using the actual localization
 comparison from VI.9.1 and the final proposition in Appendix C.II,
 printed p.279 / PDF p.285. Registered source
@@ -70,7 +69,7 @@ modules.
 These coefficient finiteness and compatibility assumptions are explicit
 inputs, to be verified on the actual universal representation families of
 VI.9.2. They are not asserted for every smooth representation. This module
-does not prove the host task's representation-uniform stabilization theorem.
+does not prove the representation-uniform stabilization theorem.
 The internal re-expression over an arbitrary commutative coefficient ring is
 derived scope, rather than a literal restatement of Renard's complex-algebra
 conventions.

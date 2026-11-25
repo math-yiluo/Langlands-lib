@@ -1,9 +1,5 @@
 # Generalized eigencharacter detection in actual graded quotients
 
-Authors: Worker 573 and Worker 846. Worker 573 wrote the Lean proof and
-its first explanation; Worker 846 checked it, renamed one helper to avoid a
-Library name collision and revised this explanation.
-
 `Langlands.generalizedEigencharacterFiltration` proves
 `Langlands.GeneralizedEigencharacterFiltrationStatement`, with independent
 ring, monoid, representation-carrier and category universes. It concerns

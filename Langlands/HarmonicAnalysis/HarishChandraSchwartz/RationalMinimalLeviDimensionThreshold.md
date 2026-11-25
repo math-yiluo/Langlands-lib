@@ -47,4 +47,4 @@ Take `Q` from the reduction. The Library's
 
 ## Check
 
-Development check with environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: 0 errors, 0 warnings.
+Development check: 0 errors, 0 warnings.

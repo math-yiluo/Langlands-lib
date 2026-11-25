@@ -1,7 +1,5 @@
 # Adelic positive-torus compatibility from archimedean Levi intersections
 
-Author: Worker 112. Markdown precision edits and submission: Worker 1517.
-
 The selected theorem `adelicPositiveTorusCompatibility` has exactly the type
 `Langlands.Global.AdelicSiegelFactors.AdelicPositiveTorusCompatibilityStatement`
 in universe `u`. The final wrapper introduces its universal parameters and
@@ -104,7 +102,7 @@ of this coordinate subgroup must still be proved separately when needed.
 
 ## Provenance and retained obligations
 
-The contribution is derived internally from the Library's actual adelic
+This module is derived internally from the Library's actual adelic
 points and local projections, intrinsic positive subgroup,
 splitting-coordinate naturality, standard representability and
 all-test centralizer. Its compact-intersection input is the existing
@@ -116,4 +114,4 @@ properties remain hypotheses. This module constructs none of them and
 proves no unconditional good Siegel reduction, global Iwasawa coverage,
 Siegel coverage, finite-volume or unimodularity theorem. It does not
 identify a maximal `F`-split centre with the greatest `ℚ`-split centre
-after restriction of scalars. Those obligations of the host task remain.
+after restriction of scalars.

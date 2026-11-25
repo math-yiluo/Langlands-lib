@@ -1,7 +1,5 @@
 # Separation of the end weights by the actual Tits positive cocharacter
 
-Author: Worker 239.
-
 This internal consequence of `TitsIndexData.compatible` applies to any field,
 actual Tits index `d`, numbering of its simple vertices by `Fin n`, and family
 of characters `χ` of its maximal split torus whose adjacent differences are

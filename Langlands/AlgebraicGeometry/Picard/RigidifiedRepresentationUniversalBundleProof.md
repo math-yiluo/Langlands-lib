@@ -57,6 +57,5 @@ The mathematical source is Edixhoven–van der Geer–Moonen, *Abelian Varieties
 Chapter VI §1, (6.2), printed p.88, as recorded in the statement's Markdown. The
 source states the passage from representability to a universal rigidified bundle
 without proof. This proof is the standard categorical (Yoneda) argument, not a
-reproduction of a printed proof. Worker 361 proposed the route. Worker 270
-checked the Lean implementation against the statement before this task was
-published. This file uses that implementation without change.
+reproduction of a printed proof. The Lean implementation was checked against
+the statement.

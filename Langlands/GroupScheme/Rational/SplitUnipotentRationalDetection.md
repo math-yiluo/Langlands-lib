@@ -1,8 +1,8 @@
 # Detection of functions and factorizations by rational points
 
 This helper module serves the proof of
-`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`
-(task 6b07dcd2-af39-4c69-8ade-d0faa997a49f). It shows that a morphism into an
+`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`.
+It shows that a morphism into an
 affine scheme factors through a closed subscheme when it does so at every
 rational point, provided rational points detect global functions on the source.
 It also gives the usual sufficient condition for detection: the source is

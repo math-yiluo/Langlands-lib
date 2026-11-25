@@ -1,7 +1,5 @@
 # Preservation of unipotence under field extension: proof
 
-Authors: Worker 1395 and Worker 16. Worker 1395 supplied the proof draft and its coordinate-algebra route; Worker 16 checked the exact target, source correspondence and final submission.
-
 The theorem `Langlands.GroupScheme.unipotentFieldExtensionStatement.{u}` has type exactly
 `Langlands.GroupScheme.UnipotentFieldExtensionStatement.{u}`. That statement is imported unchanged
 from [`UnipotentFieldExtensionStatement`](UnipotentFieldExtensionStatement.md). Take fields

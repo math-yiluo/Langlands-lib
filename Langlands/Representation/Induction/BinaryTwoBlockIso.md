@@ -75,8 +75,8 @@ The published module
 `binary_eq_twoBlocks`, `normalizedProductInductionFunctor_obj_congr`, and
 `binaryNormalizedProductFunctor_obj_eq_twoBlocks` declarations. They were
 read for comparison. That module imports
-`TwoSupercuspidalProductStructureStatement`, which is outside this host's
-permitted dependency boundary. The present definition separately implements
+`TwoSupercuspidalProductStructureStatement`, on which this module does not
+depend. The present definition separately implements
 the elementary shape/family equality argument in the generic induction layer
 and packages an actual isomorphism. It imports neither that bridge nor its
 product-structure statements. The published
@@ -107,21 +107,15 @@ classification modules in this closure. The group-level mirabolic modules
 supply general matrix constructions imported by `BinaryProduct`; no derivative
 result is extracted from them. `Jacquet.PositiveCharacter` supplies elementary
 positive characters for normalized induction, not a segment Jacquet formula.
-Neither the host criterion, its parent uniqueness theorem nor an excluded
+Neither the criterion `SegmentHeadProductIrreducibility`, the uniqueness
+theorem `GenericSegmentProductUniqueness` that uses it, nor an excluded
 segment/head/socle or classification proof is used. In particular,
 `SegmentHeadSupportStep`, `SegmentHeadJacquetReduction`, the support-truncation
 proof and its restricted `core_mid` intermediate, Zelevinsky 1980 3.5/9.6 and
-their proof successors, `TwoSupercuspidalProductStructureProof`, and
-`UniverseLiftPadic` are absent. The permission confined to the length-two
-support proof is not invoked. No pending candidate is imported.
+the modules that prove them, `TwoSupercuspidalProductStructureProof`, and
+`UniverseLiftPadic` are absent.
 
-The host's operator rulings are preserved: the general derivative permission
-in responses `bd71b9185aab5d6eafffb7891bd3a3ca` and
-`0edda6122ce65ed7ac51603c37473920`, the exact support-only boundary in
-`30144f6f9b59540b88b6d4c1517892d9`, and the restricted support-proof exceptions
-in `ed80148e21e7523abfc048f455e98eb0`,
-`2b33898bdd0a5ff1b9031be5155a06f0`, and
-`ca18fd5005bf5e12a3f7cade18dca865`. This adapter needs none of those exceptions;
+This adapter uses no representation-derivative result and no support proof;
 its construction is general equality transport within normalized induction.
 
 ## Complete project module inventory

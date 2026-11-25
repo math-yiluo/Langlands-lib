@@ -1,6 +1,6 @@
 # Composition of rational families and actual compact intertwiners
 
-This internal unit supplies composition calculus for the published
+This module supplies composition calculus for the published
 `UnramifiedOperatorFamily` predicates and `compactIntertwiningOperator`.
 It is motivated by Waldspurger IV.1(12), printed p.283 / PDF p.49, but does
 not prove the source's standard-integral factorization.

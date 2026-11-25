@@ -42,7 +42,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 reread II.2.5, printed pp.40–42 / PDF pp.46–48, when preparing
+II.2.5, printed pp.40–42 / PDF pp.46–48, was reread for
 this proof.
 
 The first clause is the original-module stalk-kernel description on

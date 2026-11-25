@@ -14,7 +14,7 @@ constructs a natural isomorphism
 Both products and the minus functor are the actual published normalized
 functors, with their actual maps. This focused proof establishes the left
 Psi clause of BZ77 Proposition 4.13(b). The positive Phi comparisons and
-the other clauses of the six-part host proposition are separate obligations.
+the other clauses of the six-part proposition are proved in other modules.
 
 ## Original and derived provenance
 
@@ -30,7 +30,7 @@ left mixed product. Proposition 4.13(b), printed p.458 (PDF p.19), gives
 the displayed compatibility, and the sentence after (d) requires all its
 morphisms to be functorial. The source states the opposite orientation
 of the isomorphism, which is equivalent by inversion. These passages and
-their page images were read during the task; the complete p.458 image
+their page images were read for this proof; the complete p.458 image
 was rechecked for this assembly. A bounded project/literature search
 found no BZ77-specific erratum entry.
 
@@ -183,11 +183,10 @@ of ranks, with independent `uF,uV`.
 The two direct imports are
 `Langlands.Representation.Derivative.MirabolicProductMinusLeftPsiInduction`
 and `Langlands.Representation.Induction.BinaryPositiveCompact`.
-Both are independently accepted and published constructions with proved
-equivariance and naturality laws. The target proposition and every
-imported Lean/Markdown pair remain unchanged. The table covers actual
-direct and transitive mathematical inputs, as well as the host's inherited
-exclusions. Proposition definitions in the closure supply types and
+Both are published constructions with proved equivariance and naturality
+laws. The target proposition and every imported Lean/Markdown pair remain
+unchanged. The table covers actual direct and transitive mathematical
+inputs, as well as the excluded results it lists. Proposition definitions in the closure supply types and
 constructions; they are never used as proofs of their conclusions.
 
 | Condition | Actual dependency and scope |
@@ -205,24 +204,23 @@ constructions; they are never used as proofs of their conclusions.
 | Plus functors and adjunction | No plus-functor or adjunction theorem or module supplies an input. Matrix subgroups, including `plusSubgroup` where present in lower matrix definitions, do not assert a plus-functor result. |
 | BZ77 4.13(d) and general Leibniz | No submodule-detection conclusion, general Leibniz proof or derivative-filtration theorem is imported or used. `Filtration.Definitions` supplies definitions only. |
 | Segment derivative and Jacquet formulas | No segment derivative formula, Ze80 §3.5 or §9.6, `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, or `SegmentSpecialJacquetExponentNormFormula` supplies a direct or transitive input. |
-| Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence conclusion, proof successor or downstream consequence is used. |
+| Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence conclusion, proof of one or downstream consequence is used. |
 | Linked and unlinked socle consumers | `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `JuxtaposedSegmentSocleReverseProductStructure`, and `LinkedSegmentSocleReverseProductQuotientHom` are absent from the proof dependencies. |
-| Segment product and commutation consumers | No `SegmentSocleProductIrreducibility`, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, `LinkedSegmentSocleGluing`, Ze80 4.2 or 9.7 criterion, or their successors or consequences is used. |
-| Special-head criterion and uniqueness | `SegmentHeadProductIrreducibility` and `GenericSegmentProductUniqueness`, their parent tasks, successors and downstream consequences supply no input. |
+| Segment product and commutation consumers | No `SegmentSocleProductIrreducibility`, `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`, `LinkedSegmentSocleGluing`, Ze80 4.2 or 9.7 criterion, or their proofs or consequences is used. |
+| Special-head criterion and uniqueness | `SegmentHeadProductIrreducibility` and `GenericSegmentProductUniqueness`, their proofs and downstream consequences supply no input. |
 | Ordered existence and multisegment exhaustion | No `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`, ordered strong-head existence, special-head multisegment exhaustion, quotient coverage or ordered-conversion conclusion is used. |
-| Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. This includes their proof successors and transitive consequences. |
-| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure`, their full-product assembly, successors or consequences is imported or used. |
+| Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. This includes their proofs and transitive consequences. |
+| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure`, their full-product assembly, proofs or consequences is imported or used. |
 | Supercuspidal and single-block finiteness | No `SupercuspidalCoinvariantFinitenessStatement`, all-character single-block conclusion or downstream consequence supplies an input. No arbitrary-character finiteness theorem is used. |
-| Other Whittaker finiteness exclusions | `IrreducibleCoinvariantFinitenessStatement` and `LeviCuspidalCoinvariantFinitenessStatement`, their parent/proof tasks and consequences are absent, as is the prohibited mirabolic finite-length route through that finiteness. |
+| Other Whittaker finiteness exclusions | `IrreducibleCoinvariantFinitenessStatement` and `LeviCuspidalCoinvariantFinitenessStatement`, their proofs and consequences are absent, as is the prohibited mirabolic finite-length route through that finiteness. |
 | Whittaker and Rankin–Selberg modules in the closure | Whittaker algebraic/GL modules provide character and coefficient definitions; Iwasawa provides the elementary group decomposition described above. The Rankin–Selberg imports contain lower measure, compact-orbit, cutoff and unimodularity constructions brought by generic induction infrastructure. They do not supply any excluded finiteness, segment or classification input. |
-| Other host clauses and pending results | The compatibility statement module supplies only the unchanged proposition and functor definitions. No unproved left/right Phi comparison, short exact sequence, right Psi comparison, draft, pending candidate or consumer conclusion is used. |
-| Parameters and run controls | Arbitrary supplied `T`, arbitrary smooth input carriers, zero objects and repeated factors are retained. No suspended or operator-paused worker is used to supply or waive a proof obligation. Shared ownership does not grant a mathematical premise. |
+| Other clauses of the statement | The compatibility statement module supplies only the unchanged proposition and functor definitions. No left/right Phi comparison, short exact sequence, right Psi comparison or consumer conclusion is used. |
+| Parameters | Arbitrary supplied `T`, arbitrary smooth input carriers, zero objects and repeated factors are retained. |
 
-The exclusions in these rows include all named tasks in the host's inherited
-union, their mathematical conclusions, proof successors and downstream
-consequences. Searches over the entire project source closure found no
-excluded consumer declaration or task identifier in Lean code and no
-proof holes or new axioms. The actual lower proof bodies and their
+The exclusions in these rows include the named results, their mathematical
+conclusions, the modules that prove them and downstream consequences. Searches over
+the entire project source closure found no excluded consumer declaration
+in Lean code and no proof holes or new axioms. The actual lower proof bodies and their
 published dependency explanations support the mathematical audit above.
 Only Lean's standard `propext`, `Classical.choice` and `Quot.sound`
 are required by the complete entry theorem.

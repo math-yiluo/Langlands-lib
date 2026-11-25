@@ -1,7 +1,5 @@
 # Products of unlinked segment socles are irreducible
 
-Author: Worker 758.
-
 This module proves the published proposition
 `Langlands.Classification.UnlinkedSegmentSocleProductIrreducible` of
 [SegmentSocleCriterionHalvesStatement](SegmentSocleCriterionHalvesStatement.md):
@@ -110,7 +108,7 @@ Direct imports:
 - the statement module `SegmentSocleDerivativesStatement` (definitions (b)–(f),
   importing `SupercuspidalDerivativesStatement` with (a));
 - `HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsProof`: the theorem
-  `padicUnitaryAdditiveCharacterExists` (task 2dbce78d, artifact 72e1678f). Its
+  `padicUnitaryAdditiveCharacterExists`. Its
   `Langlands` import closure is `HarmonicAnalysis.Basic`,
   `HarmonicAnalysis.CharacterTransport`, `LocalField.Definitions` and its statement
   module, with no representation theory;
@@ -119,22 +117,22 @@ Direct imports:
 - `RegularLanglandsHeadReduction`: `nontrivial_normalizedProductInduction`;
 - `Weil.Representation.IsomorphismInvarianceProof`: transport of irreducibility;
 - `SegmentSocleProductHighestDerivativeProof`: the theorem
-  `segmentSocleProductHighestDerivative`, which proves (f) (task 4e152d19,
-  artifact cf12542e, Library 286dd3b7). Its import closure has 1202 `Langlands`
+  `segmentSocleProductHighestDerivative`, which proves (f) (Library
+  286dd3b7). Its import closure has 1202 `Langlands`
   modules;
 - `NonjuxtaposedSegmentSocleDerivativeStrictMonoProof`: the theorem
-  `nonjuxtaposedSegmentSocleDerivativeStrictMono`, which proves (e) (task
-  6c126713, artifact f95b4d5e, Library 428fa7c0). Its import closure has 1299
+  `nonjuxtaposedSegmentSocleDerivativeStrictMono`, which proves (e) (Library
+  428fa7c0). Its import closure has 1299
   `Langlands` modules. Beyond the closure of (f), it adds the proof of (d)
-  (`NonjuxtaposedSegmentSocleConstituentLevelProof`, task 60b25b28), the proof of
+  (`NonjuxtaposedSegmentSocleConstituentLevelProof`), the proof of
   (c) (`HighestDerivativeSupportShiftProof`), finite length of products of
-  irreducible representations (`IrreducibleProductFiniteLengthProof`, task
-  0717fd42, with its Renard finiteness, cuspidal-support and parabolic-induction
+  irreducible representations (`IrreducibleProductFiniteLengthProof`,
+  with its Renard finiteness, cuspidal-support and parabolic-induction
   inputs), and the generic helpers `Category.FiniteLengthHelpers`. The Markdown of
-  that proof records the same exclusions as this task, including this task and
+  that proof records the same exclusions as this proof, including this result and
   its consumers, and finds none of them used.
 
-The import closure of the current imports in the Library (24243ad1) has 1309
+The import closure of the imports in the Library at commit 24243ad1 has 1309
 `Langlands` modules. A search of these modules for the excluded propositions, and
 for their lowercase theorem names, finds proposition definitions in statement modules and unused conditional
 assemblies. Examples of the statement-only matches are:
@@ -150,7 +148,7 @@ The closure contains no proof of `SegmentSocleProductIrreducibility`,
 `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`,
 `LinkedSegmentSocleGluing`, `OrderedMultisegmentSocleExistence`, the
 segment-head criterion `SegmentHeadProductIrreducibility`, or the other
-excluded tasks. The matching theorem names include the following unused
+excluded results. The matching theorem names include the following unused
 conditional or boundary results: `multisegmentSocleExhaustion_rankZero` in `SegmentSocleProductData` is the
 rank-zero base case in a definitions module, and
 `squareIntegrableLanglandsHeadExistence_of_grouping` in
@@ -164,7 +162,7 @@ the excluded segment-head criterion.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with
+A Lean check of
 declaration `Langlands.Classification.unlinkedSegmentSocleProductIrreducible`:
 0 errors, 0 warnings; axioms `propext`, `Classical.choice`, `Quot.sound`.
 

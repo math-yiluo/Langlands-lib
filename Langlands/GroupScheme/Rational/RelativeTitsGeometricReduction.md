@@ -1,10 +1,10 @@
 # The relative Tits system from two geometric statements
 
-This internal supporting unit reduces the existing exact
+This internal supporting module reduces the existing exact
 `RelativeTitsSystemStatement.{u}` to `RationalBruhatStatement.{u}` and
 `RootRankOneFactorizationStatement.{u}`. The proposition
 `RelativeTitsGeometricPremises` is precisely their conjunction. Both statements
-remain premises; this unit does not prove the unconditional Tits target.
+remain premises; this module does not prove the unconditional Tits target.
 
 A second reduction replaces the rank-one premise by
 `RelativeRoot.KernelCentralizerComponentReductiveStatement.{u}`, retaining
@@ -61,16 +61,16 @@ normalizing opposite pairs, reflection behavior, and the nonmultipliable
 consequences. Applying the preceding two-input reduction proves the
 conditional Tits conclusion.
 
-## Provenance and remaining obligations
+## Provenance and scope
 
-Worker 1288 composed these published implications after Worker 1225
-identified the averaging and factor-pair route that avoids parabolic
+These published implications are composed along the averaging and
+factor-pair route, which avoids parabolic
 classification as an input to root-system existence. The mathematical
 provenance is internal composition of the linked Library results and
 [`RootGeneratedCentralizerReduction`](RootGeneratedCentralizerReduction.md).
 No new external structural assertion or axiom is introduced.
 
-Acceptance of this unit establishes only the stated conditional implications.
-An unconditional proof of either remaining geometric input must be
-independent of the downstream Tits and classification targets before these
-reductions can complete the host proof task.
+This module establishes only the stated conditional implications. The
+unconditional proof of `RelativeTitsSystemStatement` is `relativeTitsSystem`
+([`RelativeTitsSystemProof`](RelativeTitsSystemProof.md)), which applies the
+first reduction to the proofs `rationalBruhat` and `rootRankOneFactorization`.

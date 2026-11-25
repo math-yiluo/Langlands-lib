@@ -1,6 +1,6 @@
 # Natural inclusions of the PQ support subspaces
 
-Author: Worker 154. Module `Langlands.Representation.Intertwining.PQSupportInclusions`.
+Module `Langlands.Representation.Intertwining.PQSupportInclusions`.
 The primary construction `pqSupportInclusionMaps`, in namespace
 `Langlands.Aubert.General.RepresentedParabolic`, gives the three natural
 same-function inclusions of Renard VII.3.2. The module also proves their
@@ -12,7 +12,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French versio
 of 9 July 2026, VII.3.1–VII.3.2, printed pp.232–233 / PDF pp.238–239;
 registered source `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 154 read these two PDF pages.
+These two PDF pages were read.
 
 The three maps have source and target, respectively:
 
@@ -58,9 +58,11 @@ parabolic decomposition, shared Levi embeddings, connected reductivity of G
 and local-field hypotheses of the full source setting are unnecessary for
 these inclusions.
 
-## Retained obligations
+## Scope
 
-This is an auxiliary construction for Task 5300. It proves the inclusion
+This is an auxiliary construction for Renard VII.3.2–VII.3.4 (support
+filtrations, the PQ-regularity lemma and the characterization of `J_{Q|P}`).
+It proves the inclusion
 component of `PQSupportGradedStatement`, without changing that statement or
 its imports. It does not prove the subquotient comparisons, the full
 geometric-lemma piece comparison, the identity identification, or

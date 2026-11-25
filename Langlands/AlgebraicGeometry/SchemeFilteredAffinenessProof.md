@@ -1,13 +1,13 @@
 # Proof of affineness descent over the original ring system
 
-Worker 105 proves `RingSystemAffinenessDescent` with
+This module proves `RingSystemAffinenessDescent` with
 `ringSystemAffinenessDescent`, retaining the arbitrary common universe
 `u` and all three clauses of the target. This supplies the actual-ring
 specializations of the affineness clause of Conrad's Theorem 3.4(2),
 printed pp. 5–6.
 
 `spectrumAffinenessDescent` applies the generic
-`relativeAffinenessDescent` to the published actual spectrum diagram,
+`relativeAffinenessDescent` to the actual spectrum diagram,
 its structural natural transformation and its cone. The
 `spectrumConeIsLimit` witness is constructed from the supplied algebra
 colimit witness. `spectrumCone_compat` supplies the required equality

@@ -10,8 +10,7 @@ natural isomorphism of functors. It then adds supplied character twists, and
 specializes them to the inverse-half twists of supplied positive characters.
 
 All declarations are in `Langlands.Jacquet.Localization`, inside namespace
-`TowerDatum` except the three join lemmas of the first section. Author: Worker
-1139. The published quotient `Coinvariants`, the quotient map `mk`, the
+`TowerDatum` except the three join lemmas of the first section. The published quotient `Coinvariants`, the quotient map `mk`, the
 universal property (`lift`, `lift_mk`, `hom_ext`), the descended `action`
 (`action_mk`), the induced maps `map` (`map_mk`) and `smoothFunctor` are used
 unchanged. So are `Langlands.twist`, `Langlands.twistIntertwining`,
@@ -300,10 +299,9 @@ Let `D : TowerDatum ℂ G`, `δ₁ : ↥D.M →* ℝ≥0ˣ` and `δ₂ : ↥D.H 
 not identify them with Haar conjugation moduli such as `mod_U` on `M` or
 `mod_W` on `H`. It does not prove the source's modulus identity
 `mod_{U ⊔ W} = mod_U · mod_W` on `H`, and it establishes no GL determinant
-identity. Those identifications remain obligations of the comparison
-consumer or of an existing modulus owner, for instance the separate normalizer
-Haar modulus task `2e58251c-65b9-4d52-af36-b6c21e2a4e8b`. No unpublished
-general normalized semidirect functor definition is used.
+identity. Those identifications are left to the modules that use this
+comparison or that treat the Haar modulus. No general normalized semidirect
+functor definition is used.
 
 ## Provenance and relation to the source
 
@@ -326,7 +324,7 @@ proof, whose definitions omit the normalizing modulus factors, and notes that
 the compatibility of these factors (for the localizations, the `-1/2` powers)
 must be checked.
 
-This unit is an internal algebraic quotient construction along that route, not
+This module is an internal algebraic quotient construction along that route, not
 a formalization of the source's normalized functor. The published
 `Coinvariants` relations are exactly the source's `E(U, θ)`. The published
 `action` is unnormalized. In the source's notation `(U, θ, M, V, θ', N)`
@@ -351,7 +349,7 @@ Direct imports: `Langlands.Representation.Jacquet.Localization`,
 `Langlands.Representation.Jacquet.PositiveCharacter` and
 `Langlands.Representation.Category.Twist`. The full transitive project import
 closure, checked at Library base `91ab820b34fa295dd50fbdeb1389423b0f6478ea`
-and byte-identical at the current base
+and byte-identical at the later base
 `af9eb30f9fab95cedb1fceb1c541bcfc776fd0f8`, consists of these 23 modules:
 
 - `Category.Basic`, `Category.Twist`;
@@ -381,38 +379,35 @@ None of these is used by the construction.
 
 Condition-by-condition:
 
-- `SegmentHeadProductIrreducibility` / `8364e73f`,
-  `GenericSegmentProductUniqueness` / `30341ae4`, `3bfb61fa`, `ebea9a8a`,
-  `20e4e1c6`, `8252833d`, `52e97845`, `SquareIntegrableLanglandsClassification`
-  / `1cb45da2`, `cd8ab97c`, `bf433f0a`, `f3a69bc8`, `aca8805b`,
-  `SegmentSpecialEssentialSquareIntegrability` / `5eece9e8`: none of these
+- `SegmentHeadProductIrreducibility`,
+  `GenericSegmentProductUniqueness`, `SquareIntegrableLanglandsClassification`,
+  `SegmentSpecialEssentialSquareIntegrability`: none of these
   modules or their successors is in the closure, and none of their conclusions
   is used.
 - Socle infrastructure: `UnlinkedSegmentSocleProductIrreducible`,
   `LinkedSegmentSocleReverseProductStructure`,
-  `LinkedSegmentSoclePairReducible` (`23e98d90`, `a55c4267`, `8fa9f68b`),
-  `SegmentSocleProductIrreducibility` / `2ae5cbe5`, `7ff2a1e9`, `e3634665`,
-  `cded83f3`, `426911b4`, `66e3b87c`, `c84cd52c`, `6780b79c`,
-  `OrderedMultisegmentSocleExistence` / `23189526`, `MultisegmentSocleExhaustion`:
+  `LinkedSegmentSoclePairReducible`,
+  `SegmentSocleProductIrreducibility`,
+  `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`:
   not in the closure and not used.
-- Top-localization restrictions: `SupercuspidalCoinvariantFinitenessStatement`
-  and `62de5903`: not in the closure and not used.
+- Top-localization restrictions: `SupercuspidalCoinvariantFinitenessStatement`:
+  not in the closure and not used.
 - BZ77-only upstream restrictions: no segment derivative formula,
   segment-socle/head existence, Jacquet formula or segment classification;
-  `TwoSupercuspidalNonadjacentProductIrreducible` / `3c9849a4` and
-  `TwoSupercuspidalProductStructure` / `ab61f565`; `67279e36`, `4ca79bbd`;
-  `SegmentFullJacquetFormula` / `ed48ae06`, `SegmentHeadJacquetFormula` /
-  `55ad1e10`, `SegmentSocleJacquetFormula` / `b95105c6`,
-  `SegmentSpecialJacquetExponentNormFormula` / `92aea10f`: not in the closure
+  `TwoSupercuspidalNonadjacentProductIrreducible` and
+  `TwoSupercuspidalProductStructure`;
+  `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`,
+  `SegmentSocleJacquetFormula`,
+  `SegmentSpecialJacquetExponentNormFormula`: not in the closure
   and not used. No Ze80 result (§3.5, §9.6, 4.2, 9.7, 9.3), no derivative
   result, and no product-irreducibility, analytic, classification or exhaustion
   theorem is used.
-- Whittaker-finiteness restrictions: `Langlands.Classification.SupercuspidalDerivatives`
-  / `2e5183b1`, `IrreducibleCoinvariantFinitenessStatement` / `5ab445dc`,
-  `LeviCuspidalCoinvariantFinitenessStatement` / `3ff5c8fb`, and the mirabolic
-  finite-length route of `5428fe2c`: not in the closure and not used.
-- Separately owned work: the general normalized semidirect definitions of task
-  `82bfcc29`, the untwisted tower task `4e0f8441`, `CoinvariantTowerProof`,
+- Whittaker-finiteness restrictions: `Langlands.Classification.SupercuspidalDerivatives`,
+  `IrreducibleCoinvariantFinitenessStatement`,
+  `LeviCuspidalCoinvariantFinitenessStatement`, and the mirabolic
+  finite-length route: not in the closure and not used.
+- Work outside this module: the general normalized semidirect definitions,
+  the untwisted coinvariant tower, `CoinvariantTowerProof`,
   `NormalizedCharacterTwistEquiv`, `TopDerivativeCoinvariantComparison` and
   `Derivative.MirabolicMinus` are not imported. The pullback functor
   `actingFunctor` is defined locally for that reason.

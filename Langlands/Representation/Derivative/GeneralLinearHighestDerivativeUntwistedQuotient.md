@@ -1,7 +1,5 @@
 # Actual quotients from derivatives of the untwisted smooth dual
 
-Author: Worker 357.
-
 This internal construction composes the published highest-derivative
 constituent quotient with the published natural determinant-twist isomorphism.
 It retains an actual irreducible admissible invariant subspace S of the
@@ -40,7 +38,8 @@ specialize the carrier universe to max uF uV without changing the construction.
 This is a direct internal composition of published constructions, with no
 new original-source assertion. It assumes no support existence, support
 uniqueness, segment derivative identification, classification or irreducibility
-criterion. The full host SegmentHeadProductIrreducibility remains open.
+criterion. The full SegmentHeadProductIrreducibility is proved separately in the
+Library, as `Langlands.Classification.segmentHeadProductIrreducibility`.
 
 
 ## Declaration and actual maps
@@ -108,8 +107,8 @@ There are exactly two direct imports:
 - `Langlands.Representation.Derivative.GeneralLinearHighestDerivativeConstituentQuotient`;
 - `Langlands.Representation.Derivative.GeneralLinearDerivativeDeterminantTwistProof`.
 
-Both are independently accepted and published at Library commit
-`e9121d2f8e2a84b24a5c3d710d82082ab261845c`. This unit uses their actual
+Both are published at Library commit
+`e9121d2f8e2a84b24a5c3d710d82082ab261845c`. This module uses their actual
 constructors, not a Prop statement as a proved theorem. The first's
 inherited route is the general BZ77 highest-derivative pairing, an
 Artinian-atom subrepresentation, the general cuspidal embedding for
@@ -119,7 +118,7 @@ submodules, restriction of determinant characters, commuting twists,
 and pasting actual natural isomorphisms. It uses no segment formula.
 The generic smooth duality, biduality and twist theorems used here are
 already in the first import's closure. No input is taken from the
-support-twist helper or from a pending candidate.
+support-twist helper.
 
 A recursive native import audit has 202 project modules, including this
 new module, and 119 directly named external import roots. All 201 inherited
@@ -137,42 +136,33 @@ published general pairing and cuspidal-embedding foundations, as documented
 in the first direct import; no Whittaker coinvariant-finiteness conclusion
 is used here.
 
-The trusted operator responses
-`/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md` and
-`/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md`
-permit fully proved, independently accepted general BZ77 derivative and
-duality infrastructure, while preserving the host's exclusions. The
-support-only permission
-`/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md`
-supplies no mathematical premise in this general quotient construction.
-The later rulings
-`/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md`,
-`/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md`, and
-`/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md`
-were read in full and are unnecessary to this proof. In particular neither
+The construction uses only fully proved general BZ77 derivative and duality
+infrastructure, and none of the results listed below. No
+support-only result supplies a mathematical premise in this general quotient
+construction. In particular neither
 `core_mid` nor its consequences, nor adjacent-product reducibility, is
 used.
 
 The complete import inventory, unchanged inherited pairs and proof-route
-inspection exclude Ze80 3.5/9.6 and their proof successors; the segment-socle
-part of `8e5b4563-0365-41c7-b134-70f2a0b36292`; segment head, socle and
+inspection exclude Ze80 3.5/9.6 and the modules proving them; the segment-socle
+derivative results; segment head, socle and
 full Jacquet formulas; two-supercuspidal product irreducibility or
 structure; special-head product irreducibility in either direction;
 `GenericSegmentProductUniqueness`; multisegment exhaustion; ordered
 strong-head existence; quotient coverage; ordered conversion; tempered
 uniqueness; `SquareIntegrableLanglandsClassification`; square-integrable
-exhaustion; and regular exhaustion. No task or mathematical conclusion
-listed under the host's Independence is used as an input under a new name.
+exhaustion; and regular exhaustion. None of these conclusions is used as an
+input under a new name.
 A lexical source scan supplements these proof-route checks and reports no
-prohibited-name hit, proof hole, new axiom, unsafe code or kernel-bypassing
+hit on the names above, proof hole, new axiom, unsafe code or kernel-bypassing
 command. Declaration inspection reports only `propext`, `Classical.choice`
-and `Quot.sound`. Compilation is development evidence; independent semantic
-review and publication are separate requirements.
+and `Quot.sound`.
 
-This internal unit proves neither direction of the full repeated-segment
+This internal module proves neither direction of the full repeated-segment
 `Langlands.Classification.SegmentHeadProductIrreducibility.{uF,uV} F T`.
-The support assembly, unlinked sufficient direction and linked converse
-remain separate host obligations in the original universes.
+The full statement, in the original universes, is proved separately as
+`Langlands.Classification.segmentHeadProductIrreducibility` in
+`Classification.SegmentHeadProductIrreducibilityProof`.
 
 ## Complete project import closure
 

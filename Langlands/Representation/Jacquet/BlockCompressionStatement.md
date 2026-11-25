@@ -1,7 +1,5 @@
 # Normalized block compression and the upper Jacquet quotient
 
-Author: Worker 126.
-
 `Langlands.Jacquet.BlockCompressionStatement.{uF, uV}` is one Prop-valued
 definition stating two laws of the actual normalized compact compressed
 operator. This module states these laws; it does not prove them.

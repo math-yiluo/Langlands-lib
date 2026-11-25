@@ -1,7 +1,7 @@
 # Haar integration as an algebraic distribution
 
-This definition unit provides concrete integration and density maps into the
-published `Langlands.HarmonicAnalysis.Distribution` space, and exact modular
+This definition module provides concrete integration and density maps into the
+existing `Langlands.HarmonicAnalysis.Distribution` space, and exact modular
 convention bridges. Its source is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version of 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -18,14 +18,15 @@ facts justify the linearity fields. In particular a Mathlib Haar measure
 supplies a distribution by this formula.
 
 `multiplyTest f` transports the existing
-`PointwiseTestAlgebra.multiplier f` through its published scalar equivalence.
+`PointwiseTestAlgebra.multiplier f` through its scalar equivalence.
 Its pointwise formula is `f(x) φ(x)`. The linear map `density μ` sends a
 locally constant function `f` to the distribution
 `φ ↦ ∫ x, f(x) φ(x) ∂μ`; complex multiplication is commutative, so this is
 the source's formula with the factors in reverse order. `density_one`
 identifies the constant-one density with `ofMeasure`. `testDensity μ`
 is its restriction to the existing test space. Injectivity and the compact
-support assertions are separate statement obligations, not properties
+support assertions are the separate statement
+`RenardHaar.DensityEmbeddingStatement` of `RenardHaarStatements`, not properties
 assumed in these definitions.
 
 `IsNonnegativeTest` means a test is real valued with nonnegative real part.
@@ -50,6 +51,6 @@ Renard's right point action is `x ↦ xg⁻¹`.
 `μ`, whereas Renard's (II.3.7.1) scales the integral of `f ∘ σ`, equivalently
 `μ.map σ`. Thus the reciprocal is required here too. These adapters reuse
 Mathlib's actual characters; they do not define alternative Haar measures.
-This unit constructs the maps and proves their elementary formulas, but
+This module constructs the maps and proves their elementary formulas, but
 does not prove Haar existence, uniqueness, invariance, positivity, density
 injectivity or Renard's index formula.

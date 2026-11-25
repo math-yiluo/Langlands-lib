@@ -97,7 +97,7 @@ theorem rootModelMap_specialFibre_lie_range (a : characterLattice S) (ha : a ≠
   rw [← RelativeRoot.tangentSubmodule_range, hrep.2]
   exact RelativeRoot.tangentSubmodule_subgroup A.specialFibreInclusion
     (A.characterSpecialization a) A.specialFibreTorus_isSplit
-      (by simpa only [map_zero] using A.characterSpecialization.injective.ne ha)
+      (by simpa only [AddEquiv.map_zero] using A.characterSpecialization.injective.ne ha)
 
 /-- The Lie algebra of the actual root-model special fibre, identified by
 its differential with the positive cyclic ambient weight span. -/

@@ -1,7 +1,5 @@
 # Bounded evaluation and the strict Tate universal-property target
 
-Author: Worker 36.
-
 `Langlands.Analytic.StrictTateAlgebra.BoundedUniversalPropertyStatement`
 is a proposition definition with four conjuncts. The variable type, coefficient
 field and target algebra range over independent universes.

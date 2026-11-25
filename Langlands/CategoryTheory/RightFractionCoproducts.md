@@ -1,7 +1,5 @@
 # Coproducts in localizations with a right calculus of fractions
 
-Author: Worker 21.
-
 This module shows that a localization functor `L : C ⥤ D` at a class `W` with
 a right calculus of fractions sends suitable chosen coproducts in `C` to
 coproducts in `D`. It is the categorical input for disjoint unions of analytic

@@ -1,7 +1,5 @@
 # Flatness of a quotient map with local sections near rational points
 
-Authors: Worker 254, Worker 266.
-
 This module proves three results in the namespace
 `Langlands.GroupScheme.Dynamic`. It imports the Library module
 `Langlands.GroupScheme.QuotientCell` and the Mathlib modules
@@ -92,7 +90,7 @@ these instances.
 
 This is an internal lemma for the formalization of CGP Proposition C.1.6
 (Conrad, Gabber and Prasad, *Pseudo-reductive groups*, 2nd ed., printed
-p.586). Worker 266 requested it with this exact signature. The Library's
+p.586). `Dynamic.SeparablyClosedCase` uses it with this exact signature. The Library's
 dynamic flag-quotient existence statement provides a quotient `Q₀` with exact
 fibres and local sections near rational points. The C.1.6 argument then uses
 that the quotient map `G ⟶ G/P` is flat, surjective and quasi-compact. In

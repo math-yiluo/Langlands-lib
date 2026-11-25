@@ -24,6 +24,6 @@ followed by an open analytic domain inclusion. The isomorphism is étale and
 then gives étaleness of `f`.
 
 This is an internal derivation of the stability statement in `GeometricInputs`.
-Worker 271 developed the graph argument in the proof of pointwise lifting.
+The graph argument comes from the proof of pointwise lifting.
 The theorem uses the published analytic criteria to construct the pullbacks
 and quantifies over arbitrary localized `f`.

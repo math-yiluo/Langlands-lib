@@ -1,7 +1,5 @@
 # Raynaud's affineness criterion over a discrete valuation ring
 
-Worker 671.
-
 `Langlands.GroupScheme.DvrGenericAffinenessStatement.{u}` is a
 proposition definition. For a flat group scheme of finite type over a
 discrete valuation ring, with affine generic fibre, it asserts that
@@ -51,8 +49,8 @@ The Lean proposition retains its stated generality and its separatedness
 condition; it does not replace the group scheme by an already affine
 integral model. The source attributes the result to Raynaud and provides
 a proof using normalization, smoothness after a DVR extension and
-affinization. No separate errata note for this source was present in the
-current Library when checked.
+affinization. No separate errata note for this source was found in the
+Library when checked.
 
 ## Consumer and scope
 
@@ -63,7 +61,8 @@ Registered source `conrad-2014-reductive-group-schemes`, SHA-256
 `1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a`.
 That closure is a separated flat finite-type group scheme with affine
 generic fibre, so it has exactly the inputs of this statement.
-Construction of the closure and its group law remain separate obligations.
+The closure and its group law are constructed in `GenericSubgroupClosure`
+(`GenericSubgroupClosure.closureGroup`).
 This module proves neither this criterion nor the reductive-monomorphism
 closed-immersion theorem.
 

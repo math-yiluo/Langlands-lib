@@ -1,7 +1,5 @@
 # Descent of local subgroup conditions
 
-Author: Worker 1726.
-
 This internal construction works with the actual point functor of a group
 scheme over an arbitrary base scheme, uniformly in the universe `u`.
 `IsZariskiLocal` says that membership in its subgroup on any test scheme is

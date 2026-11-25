@@ -1,6 +1,6 @@
 # The two identity slices of an augmented tensor product
 
-Worker 1228. This is an internal algebraic calculation for the proof of the
+This is an internal algebraic calculation for the proof of the
 semigroup commutator weight bound. Its source is the tensor calculation in
 Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition (2015),
 Lemma 3.3.4, printed pp.108–109 (PDF pp.134–135), registered as

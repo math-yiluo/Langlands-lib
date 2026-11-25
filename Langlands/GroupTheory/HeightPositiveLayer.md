@@ -1,7 +1,5 @@
 # Positive layers with possibly zero weights
 
-Author: Worker 204.
-
 This internal extension of `HeightFiltration` and `HeightLayer` permits
 arbitrary natural weights on the finite ordered family of actual
 subgroups. It retains the sum bound on commutators and requires the

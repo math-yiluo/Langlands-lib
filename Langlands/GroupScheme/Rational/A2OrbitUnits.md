@@ -1,14 +1,12 @@
 # The `A₂`-orbit case of `Z(k) ⊆ G(k)^+`
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.A2OrbitUnits`, namespace
 `Langlands.GroupScheme.GaloisCompatiblePinningData`.
 
 The setting and notation are those of module `Rational.A2OrbitGeneration`: pinning data
 `D`, `t : S ⟶ D.torus`, the merged root `m₀` of `p₀ ≠ q₀`, the base piece `c₀` with roots
-`A`, `B`, and merged-root data `M`. The module also uses the accepted field lemmas of Worker
-185 (`Langlands.FieldTheory.QuadraticFixedField`, module
+`A`, `B`, and merged-root data `M`. The module also uses the field lemmas
+`Langlands.FieldTheory.QuadraticFixedField` (module
 `FieldTheory.QuadraticFixedFieldCoordinates`).
 
 ## Hypotheses

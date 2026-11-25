@@ -138,10 +138,10 @@ theorem comp_characterPointsEquiv_symm {V V' : Over (Spec R)} (c : V' ⟶ V)
 variable (Λ) in
 /-- A chosen finite generating set of a finitely generated abelian group. -/
 def gens [AddGroup.FG Λ] : Finset Λ :=
-  (AddGroup.FG.out (H := Λ)).choose
+  (AddGroup.exists_of_isAddFG Λ).choose
 
 theorem closure_gens [AddGroup.FG Λ] : AddSubgroup.closure (gens Λ : Set Λ) = ⊤ :=
-  (AddGroup.FG.out (H := Λ)).choose_spec
+  (AddGroup.exists_of_isAddFG Λ).choose_spec
 
 /-- Characters agreeing on the chosen generators are equal. -/
 theorem chars_ext [AddGroup.FG Λ] {X : Scheme.{u}} {x y : Chars Λ X}

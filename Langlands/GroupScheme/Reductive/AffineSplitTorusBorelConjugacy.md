@@ -1,6 +1,6 @@
 # Simultaneous affine conjugacy from a split Borel vector series
 
-Worker 591. This internal derived assembly implements the affine simultaneous
+This internal derived assembly implements the affine simultaneous
 conjugacy argument in Conrad, *Reductive group schemes* (2014), Proposition
 6.2.11(2), p.211, with the split Borel structural hypothesis still explicit.
 The actual line-bundle Picard hypothesis is used throughout.

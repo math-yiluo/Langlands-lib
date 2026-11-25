@@ -1,7 +1,5 @@
 # Action quotients from a smooth relation space
 
-Author: Worker 5132.
-
 This module is the second half of the proof of
 `SmoothStabilizerActionQuotientStatement`. It proves the conclusion of that statement for an
 action `a` of a group scheme `G` on `V` as soon as a suitable "relation space" `B` is

@@ -3,9 +3,9 @@
 This internal construction derives a normalizer enlargement and normality of
 closed subgroups of codimension at most one from results already in the Library.
 It works over every field, in every characteristic and at universe `u`.
-Worker 317 identified the normality input needed in the prescribed-Borel
-approach to rank-one positive-root uniqueness; Worker 1547 implemented the
-universal commutator and generated-subgroup argument here.
+It supplies the normality input needed in the prescribed-Borel
+approach to rank-one positive-root uniqueness, through the
+universal commutator and generated-subgroup argument given here.
 
 The ambient group `G` and supplied subgroup `H` are smooth, connected and affine
 over `k`, and `j : H ⟶ G` is an actual closed subgroup inclusion. The general

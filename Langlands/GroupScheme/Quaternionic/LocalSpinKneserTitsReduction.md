@@ -55,7 +55,7 @@ second says that the rational kernel points of the spin cover lie in `S(K)⁺`.
 
 ## Provenance
 
-Internal. This is the final reduction step for Task 5398. The two statements isolate the
+Internal. This is the final reduction step for `LocalSpinKneserTitsStatement`. The two statements isolate the
 spin-cover-specific inputs of the classical proof. All other ingredients are proved in
 `HyperbolicLevi`, `EichlerReducedNorm`, `WittIndexOneInputs`, `EichlerDynamic` and
 `SpinEichlerLift`.

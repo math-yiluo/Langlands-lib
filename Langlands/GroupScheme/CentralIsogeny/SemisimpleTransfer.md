@@ -1,8 +1,9 @@
 # Semisimplicity of the source of a central isogeny
 
-Author: Worker 1224. This is supporting material for task
-`569a2d94-1d47-448e-8db3-48ecf4755ef4`, which proves the published
-`Langlands.GroupScheme.CentralIsogenyCommonSemisimpleRefinement`. That proof builds
+This is supporting material for the proof of the published
+`Langlands.GroupScheme.CentralIsogenyCommonSemisimpleRefinement`
+(`centralIsogenyCommonSemisimpleRefinement`, through
+`CentralIsogeny/CommonRefinementOfPerfect`). That proof builds
 a smooth connected group `D` with a central isogeny `p : D ⟶ C` onto a semisimple
 group `C`. This module shows that such a `D` is semisimple.
 

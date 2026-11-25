@@ -1,7 +1,5 @@
 # Product presentation for rational intersections
 
-Author: Worker 36.
-
 The namespace `Langlands.Analytic.RationalIntersection` constructs a rational
 quotient from two tuples of actual elements of a presented strict affinoid
 algebra \(P\). For denominators \(g,h\) and numerator tuples \(f,k\), set

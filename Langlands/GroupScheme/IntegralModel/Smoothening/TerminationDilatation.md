@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: cotangent modules of dilatations
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. It computes how the
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. It computes how the
 cotangent module `I/I²` at a rational point changes under the dilatation `C[J/ϖ]`. It uses only
 Mathlib (`Ideal.Cotangent`, `Algebra.adjoin`) and `TerminationLength`.
 

@@ -1,7 +1,5 @@
 # Canonical affinization of flat groups over principal ideal domains
 
-Worker 596.
-
 `canonicalAffinization X` is the actual scheme `Spec Γ(X, O_X)`, with structural
 map obtained by taking the spectrum of the ring map on global sections induced
 by `X → Spec R`. `toCanonicalAffinization X` is the canonical map of schemes,
@@ -30,7 +28,8 @@ of `A` has been established. The present proposition defines that missing
 obligation at a reusable scope. The principal-ideal-domain generality is an
 internal extension of the DVR instance needed there: torsion-free modules are
 flat, and flat base change of global sections supplies the expected comparison
-on products of flat schemes. That route remains a proof obligation.
+on products of flat schemes. That route is not carried out in this module, and
+the Library has no proof of the proposition.
 
 Registered source: `prasad-yu-2006-quasi-reductive-author-preprint`, SHA-256
 `138d931a21fa522d97449c77acf429918826b1ef649be940d4721d616a1fc73b`,

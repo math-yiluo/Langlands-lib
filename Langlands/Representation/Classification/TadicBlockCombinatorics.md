@@ -1,6 +1,6 @@
 # Rectangle decompositions of multisegments
 
-Author: Worker 5121. Module `Langlands.Representation.Classification.TadicBlockCombinatorics`,
+Module `Langlands.Representation.Classification.TadicBlockCombinatorics`,
 namespace `Langlands.Classification.TadicBlockCombinatorics`. Helper module of the proof of
 `Langlands.Classification.TadicBlockReductionFromInputs`. Pure multiset and real arithmetic
 over the published segment vocabulary, plus the published rigidity of unitary twists.

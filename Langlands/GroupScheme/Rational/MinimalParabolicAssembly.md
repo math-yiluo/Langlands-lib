@@ -1,6 +1,6 @@
 # Conditional assembly of maximal split-torus conjugacy
 
-This internal supporting unit derives the exact ambient statement from
+This module derives the exact ambient statement from
 explicit geometric premises. It imports the published minimal-parabolic
 interfaces and the split-rank reduction, without changing their definitions.
 It does not prove any of the geometric premises.
@@ -51,4 +51,6 @@ minimal parabolic is a separate result, and is not used to discharge
 containment here. Generic-cocharacter existence, generic minimality,
 minimal-parabolic conjugacy, inside-parabolic torus conjugacy, and maximal
 extension remain separate obligations toward an unconditional proof of
-the host target.
+`MaximalSplitTorusConjugacyStatement` along this route. The module
+`Rational.MaximalSplitTorusConjugacyProof` proves that statement, as
+`maximalSplitTorusConjugacy`, without this module.

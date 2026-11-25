@@ -21,7 +21,7 @@ namespace Langlands.GaloisRepresentation
 open Langlands.Automorphic Langlands.Automorphic.Unramified Langlands.Global
 open Langlands.Global.AdelicFunctoriality Langlands.Global.AdelicFunctoriality.FiniteExtension
 open Langlands.Global.CMConjugation Langlands.LocalFactor.Archimedean Langlands.Unramified
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 open NumberField
 open scoped NumberField NumberField.LiesOver
 

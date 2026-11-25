@@ -21,6 +21,6 @@ assembly from the existing Library.
 The companion `AffinePinnedTransitionInner` construction proves innerness
 of inverse corrected chart transitions by transporting the supplied
 full-centre quotient and its action to a pinned model and back. The natural
-pinned comparison remains an explicit input. This unit supplies the actual
+pinned comparison remains an explicit input. This module supplies the actual
 point assembly used to extend that result across the arbitrary atlas; it
-does not yet assert atlas-transition innerness or the final existence theorem.
+does not assert atlas-transition innerness or the final existence theorem.

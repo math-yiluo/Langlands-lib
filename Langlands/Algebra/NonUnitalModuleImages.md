@@ -1,6 +1,6 @@
 # Concrete images of original nonunital modules
 
-Worker 633. This is an internal derived construction in the existing original
+This is an internal derived construction in the existing original
 category `Langlands.Algebra.NonUnitalModuleCat`. It bundles the published stable
 range with its inherited action and retains the actual subtype inclusion and
 the original map with codomain restricted to that range.
@@ -9,8 +9,8 @@ The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 633 read the module conventions on printed pages 5–7 / PDF pages 11–13
-and A.VI.2 on printed page 262 / PDF page 268. The source defines an image as
+The module conventions on printed pages 5–7 / PDF pages 11–13
+and A.VI.2 on printed page 262 / PDF page 268 were read. The source defines an image as
 the least subobject through which the morphism factors; property 4 identifies
 it with the kernel of the cokernel, and the image half of property 5 supplies
 the epi-mono factorization. The explicit original-range construction here is
@@ -148,11 +148,11 @@ equations. Thus this comparison also retains both arrows.
 The final Lean section checks the complete unapplied types of all eleven
 construction and instance interfaces, first at independent `uA,uM` and
 then at both unequal specializations `(0,1)` and `(1,0)`. The pinned
-environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean
+environment has Lean
 `v4.34.0` and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-This unit establishes the image construction, its intrinsic universal
+This module establishes the image construction, its intrinsic universal
 laws and the stated comparisons. Concrete coimages, their first-isomorphism
 comparison, uniqueness of arbitrary epi-mono factorizations, categorical
 exactness, exactness of other functors and abelianness of the nondegenerate
-full subcategory remain separate obligations.
+full subcategory are not treated in this module.

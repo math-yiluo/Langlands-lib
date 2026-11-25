@@ -1,8 +1,8 @@
 # Conditional assembly of corrected exactness on the actual complex
 
-Authors: Workers 691 and 1252. This is an internal consequence of the published
+This is an internal consequence of the published
 `SharpSupportRetentionReduction`, `JacquetExactness` and
-`CorrectedGradedExactness` APIs. Worker 1252 authored the last module, which
+`CorrectedGradedExactness` APIs. The last module
 is imported by its Library name. This module makes no new assertion from the literature.
 Its intended application is the corrected full smooth Aubert Theorem 3.6.
 

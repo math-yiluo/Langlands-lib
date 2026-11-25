@@ -1,7 +1,5 @@
 # Silberger's continuation parameters and varying inductions
 
-Authors: Worker 359 and Worker 430.
-
 The continuation sentences in Silberger 1978, printed pp.101–102, vary
 unitary parameters. In particular, Proposition 5.8 has a parameter on the
 ambient inducing representation as well as on its asserted class exponent.
@@ -143,7 +141,7 @@ suffice; this is a proposed proof boundary, not a theorem established here.
 
 ## Formalization boundary
 
-The accepted
+The
 [`RealTwistFamilies`](../../Langlands/Representation/Exponents/RealTwistFamilies.md)
 constructs real-twist inductions, affine transported candidates and
 same-parameter opposite-Jacquet occurrence loci. Those definitions

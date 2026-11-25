@@ -99,5 +99,5 @@ these:
 
 These are internal lemmas for the rank-one Jacquet functional in the proof of
 `ComplexStandardPermutationStatement`. The identities are elementary matrix calculus. Their exact
-form (P1–P7) is the interface agreed with Worker 48's `ComplexSwapJacquetFunctional`, which
+form (P1–P7) is the interface used by `ComplexSwapJacquetFunctional`, which
 packages them as `ChartLieFacts`.

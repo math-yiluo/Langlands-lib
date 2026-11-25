@@ -12,10 +12,9 @@ The governing registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 prepared the original pair. Worker 345 independently read all three
-cited PDF pages and visually checked both exact-row diagrams on PDF282–283
-on 29 October 2026, then audited the complete component bodies against the
-current imported Lean/Markdown pairs. Both are authors of this unit.
+All three cited PDF pages were read independently, and both exact-row
+diagrams on PDF282–283 visually checked, on 29 October 2026; the complete
+component bodies were then audited against the imported Lean/Markdown pairs.
 
 ## Actual objects and source conventions
 
@@ -94,28 +93,29 @@ They give precisely the source diagrams after passing to `toLinearMap`.
 The letter `M` denotes the middle vector space so that `B` can continue
 to denote the algebra. This change of letter changes no hypothesis.
 
-## Errata, evidence and remaining obligations
+## Errata, evidence and scope
 
-Workers 709 and 345 independently read PDF18–19 of the registered supplementary source
+PDF18–19 of the registered supplementary source
 `renard-2010-corrections-complements`, SHA256
-`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`.
+`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, were read
+twice, independently.
 Its correction to the old proof of Lemma (iii) uses
 `ker fC ∩ Im fC`; that correction is already present on 2026 PDF284.
 The older list is supplementary evidence and does not replace the
-governing 2026 edition. No project Renard errata note was found during
-this preparation.
+governing 2026 edition. The Library's errata notes for the 2026 edition
+(`notes/errata/renard-*.md`) concern Chapter VII, not C.II.
 
 The family reuses published constructions and proposition definitions.
-Compilation and proposition inspection establish elaboration only;
-independent statement review and publication remain necessary. A later
-proof may specialize the existing vector-space criteria and transport
-submodule equalities and complementarity through the published
-`CompatibleSubmodule.toSubmoduleHom` and its injectivity. That is a
-proposed route, not a proof supplied here.
+Compilation and proposition inspection establish elaboration only.
+The proofs, `compatibleStability` and its components in
+`Langlands.Algebra.CompatibleStabilityProofs`, specialize the existing
+vector-space criteria to the underlying linear maps and transport submodule
+equalities and complementarity between the compatible-submodule lattice and
+the lattice of ordinary subspaces.
 
 Power-chain stabilization, the source's auxiliary `E_k` and `F_k`
 quotients and exact sequence, and the final C.II finite-localization
-proposition remain separate obligations. In particular this unit
+proposition are separate from this module. In particular this module
 does not resolve the source's finite-generation or Noetherian conventions
 for possibly nonunital algebra actions. It neither changes the existing
 ordinary unital-module localization statement nor constructs new

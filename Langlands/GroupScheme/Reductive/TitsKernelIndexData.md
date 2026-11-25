@@ -1,7 +1,5 @@
 # Index data of the semisimple anisotropic kernel
 
-Author: Worker 146 (Task 5619).
-
 This module constructs actual index data for the semisimple anisotropic kernel
 and proves the reduction
 

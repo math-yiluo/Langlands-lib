@@ -1,6 +1,6 @@
 # Universal subtorus
 
-Worker 584. This internal predicate packages the property used to construct the
+This internal predicate packages the property used to construct the
 largest subtorus over an arbitrary base. It is derived for the proof of
 `RelativeMultiplicativeTypeLargestSubtorusStatement`, whose notion of largest
 subtorus only quantifies over closed relative subtorus inclusions.

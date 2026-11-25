@@ -1,6 +1,8 @@
 # Transpose inverse and the standard infinite compact
 
-This is internal infrastructure for Task 7294 by Worker 264, derived from the
+This is internal infrastructure for `CuspidalTransposeInverseContragredientStatement`
+(the dual cusp forms of a cuspidal realization lie in a cuspidal
+contragredient), derived from the
 Library's concrete standard compact subgroup and the already constructed
 archimedean smooth transpose pullback. No maximality theorem or
 representation-theoretic contragredient identification is used.
@@ -30,4 +32,4 @@ reflection of finite dimensionality of the actual compact orbit span.
 
 These results concern the group and its action on archimedean smooth functions.
 They do not construct a full adelic cuspidal realization or establish the
-Gelfand–Kazhdan bridge required for Task 7294's final target.
+Gelfand–Kazhdan bridge required for `CuspidalTransposeInverseContragredientStatement`.

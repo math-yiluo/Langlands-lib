@@ -4,8 +4,8 @@ Let `G : Type u` be a finite group, `A : Type u` a commutative
 multiplicative group with a distributive `G`-action, and `c` an actual
 normalized two-cocycle with values in `A`. The scalar ring is
 `ULift.{u} ℤ`, and all Tate groups are the actual Tate cohomology groups.
-This internal unit computes scalar cup with the ordinary class
-`cohomologyClass c` on the published single-chain class
+This internal module computes scalar cup with the ordinary class
+`cohomologyClass c` on the single-chain class
 `minusTwoClass (integralTrivial G) g 1`.
 
 The augmentation ideal and splitting representation are those of
@@ -49,10 +49,10 @@ The first connecting map therefore gives the norm-zero class of
 representation and apply `delta_minusOneClass`; its computed norm
 gives the displayed degree-zero class.
 
-The provenance is internal: the formula follows from the published
+The provenance is internal: the formula follows from the
 coordinate actions, scalar double-boundary theorem, and actual-complex
 representative formulas. There is no assumption of cup bijectivity or
 any arithmetic reciprocity law. The inverse in the second cocycle
 argument is part of the proved formula. Evaluating this sum for cyclic
-carry cocycles and comparing local reciprocity conventions remain
-separate obligations.
+carry cocycles and comparing local reciprocity conventions are not part
+of this module.

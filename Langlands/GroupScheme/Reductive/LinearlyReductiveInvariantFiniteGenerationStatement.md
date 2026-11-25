@@ -182,8 +182,9 @@ not prove; it also writes
 is A^G-linear. Also a_i should be r_i." The 2022 reprint supplies the missing
 step. The section at the end describes the corrected argument.
 
-Relation to the Library. The Library has no finite generation result for
-rings of invariants. Related declarations:
+Relation to the Library. The Library proves this statement as
+`linearlyReductiveInvariantFiniteGeneration` (in
+`LinearlyReductiveInvariantFiniteGeneration`). Related declarations:
 
 - `ReductiveGeometricReductivityStatement` (Haboush's theorem, in
   [`GeometricReductivityStatement`](GeometricReductivityStatement.md)) uses
@@ -220,7 +221,11 @@ printed pp. 3, 6, 90, 96, 230, 248 or 250. The errata snapshot of
 `78e5f297fb2c80c6dacf413fc5abd7f82ba3dd5e5f83b5a5205dfd93bf160d49`) has no
 entry for printed pp. 249 or 250.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as
+`linearlyReductiveInvariantFiniteGeneration` in
+`LinearlyReductiveInvariantFiniteGeneration`.
 
 A proof of the Lean statement can follow Milne's corrected argument. Write
 `A = MvPolynomial (Fin n) k`, `A_d` for the homogeneous polynomials of degree

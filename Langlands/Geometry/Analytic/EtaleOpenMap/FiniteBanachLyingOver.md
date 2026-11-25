@@ -1,7 +1,5 @@
 # Lying over for finite Banach maps over arbitrary valued fields
 
-Author: Worker 786.
-
 This derived helper extends the proof route of `StrictTestDomain.LyingOver` to
 `IsFiniteBanach`, without assuming a nontrivial valuation. Norm-controlled
 finite coefficients bound every ring map that is contractive on the base.

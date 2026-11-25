@@ -1,7 +1,5 @@
 # Closedness of integral points over locally compact fields
 
-Author: Worker 105.
-
 `HenselianIntegralPointsClosedOfLocallyCompactStatement` states the closedness assertion of
 Corollary 5.7 of Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed p.16, when the field is locally compact. The registered source is

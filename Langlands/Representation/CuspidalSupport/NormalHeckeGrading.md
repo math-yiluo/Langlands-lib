@@ -1,11 +1,9 @@
 # The grading of End(ind_H^G ρ) by a degree on G
 
-Author: Worker 1826.
-
 This is a supporting module for the proofs of Renard VI.4.4 (the Theorem
 `RationalSummandEndCenterStatement`, the Corollary
 `RationalSummandEndNoetherianStatement` and the Proposition
-`RationalSummandCenterGroupAlgebraStatement`). It extends Worker 1789's generic
+`RationalSummandCenterGroupAlgebraStatement`). It extends the generic
 module `Langlands.Representation.CuspidalSupport.NormalSubgroupHecke`, in
 namespace `Langlands.CuspidalSupport.NormalHecke`. Source: David Renard,
 *Représentations des groupes réductifs p-adiques* (registered source

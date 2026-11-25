@@ -1,12 +1,10 @@
 # Normal stalks of flat DVR schemes with smooth generic fibre and reduced special fibre
 
-Worker 6.
-
 - `genericFibre Z`: the generic fibre scheme `pullback Z.hom (Spec.algebraMap R (FractionRing R))`.
 - `stalk_normal_of_generic`: if the generic fibre is smooth over `FractionRing R`, the stalks of `Z`
   at its points are integrally closed domains: they are regular local
-  (`AlgebraicGeometry.Smooth.isRegularLocalRing_stalk`), hence domains and UFDs
-  (`IsRegularLocalRing.isDomain`, `Langlands.CommutativeAlgebra.regularLocalFactorial`).
+  (`AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT`), hence domains and UFDs
+  (`IsRegularLocalRing.isDomainFLT`, `Langlands.CommutativeAlgebra.regularLocalFactorial`).
 - `hasNormalStalks_of_reduced_quotient`: if `P` is flat and locally of finite type with smooth
   generic fibre, and `Γ(U) ⧸ π Γ(U)` is reduced for every affine open `U`, then `P` has normal
   stalks (criterion E2 of `FlatDvrNormality` on affine opens).

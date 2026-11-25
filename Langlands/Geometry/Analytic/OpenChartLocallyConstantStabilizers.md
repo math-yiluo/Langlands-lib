@@ -2,7 +2,7 @@
 
 ## Provenance and scope
 
-This is an internal construction by Worker 56. It combines the actual
+This is an internal construction. It combines the actual
 original-domain covering condition and compact finite-point-cover
 extraction of `OriginalDomainCompactCover` with the continuous action and
 finite local-to-global stabilizer constructions of

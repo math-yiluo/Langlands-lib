@@ -1,7 +1,5 @@
 # Proof of bounded descent through closed-ideal quotients
 
-Author: Worker 36.
-
 `Langlands.Analytic.boundedQuotientProperties` proves the separate proposition
 `Langlands.Analytic.BoundedQuotientStatement`. The original module retains
 its concrete `quotientMap`, `liftQuotient` and `quotientHomEquiv` interfaces.

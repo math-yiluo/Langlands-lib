@@ -1,7 +1,5 @@
 # Actual transport of full Tate-normalized Harris CM models
 
-Author: Worker 344.
-
 This internal construction transports the actual full Tate-normalized
 representatives and their original rational-isogeny classes.
 

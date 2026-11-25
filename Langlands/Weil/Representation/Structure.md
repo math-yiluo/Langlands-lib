@@ -50,7 +50,7 @@ image. Conversely, determinants of a finite image have finite order.
 
 `FiniteImageExtension` takes a compact Hausdorff nonarchimedean group `Gamma`
 and a continuous surjection `phi` to the existing genuine profinite completion
-of the integers. It uses the already accepted `Pullback phi` and its actual
+of the integers. It uses the published `Pullback phi` and its actual
 projection, with the existing topology in which integer degree is discrete.
 For a continuous representation `rho` of that pullback, finite image is
 equivalent to existence of a unique continuous representation `sigma` of
@@ -72,11 +72,12 @@ paragraph explains the derived generalization; it is not a Lean proof.
 
 To specialize this statement to the absolute Galois group of a local field,
 the actual continuous surjective residue map and its normalized
-finite-field-Galois/profinite-integer identification are still required.
-Those arithmetic constructions are owned by the existing tasks
-`5c4b0ffa-799b-46ec-a1f7-bd3132abe585` and
-`0e7e34d9-8c49-4853-85d7-ab669c8b47b9`, and the local assembly belongs to
-`503968de-16f8-4f63-ba13-b5e167e11dce`. No identification of the generic
+finite-field-Galois/profinite-integer identification are required.
+Those arithmetic constructions are made elsewhere in the Library (the residue
+projection in `Langlands.Galois.Local.AbsoluteDefinitions` and
+`Langlands.Galois.Local.AbsoluteProof`, the finite-field comparison in
+`Langlands.Galois.FiniteField.ComparisonProof`), and the local assembly is
+`Langlands.Weil.Local.Assembly`. No identification of the generic
 ambient group or pullback with those field-theoretic objects is asserted here.
 
 ## Declaration-level original-source correspondence
@@ -86,7 +87,7 @@ ambient group or pullback with those field-theoretic objects is asserted here.
 | `UnramifiedReduction`, commuting correction | Henniart 1980, section 2.3, Corollary 2, p. 158/PDF 5, and proof in sections 2.4-2.6, pp. 159-160/PDF 6-7 | The conclusion is the source's unramified representation commuting with the given representation and making its product finite-image. The integer-extension setting isolates the structural hypotheses used in the proof. |
 | `UnramifiedReduction`, irreducible twist | Henniart 1980, section 2.3, Corollary 3, p. 158/PDF 5, proof p. 159/PDF 6; Tate, section 2.2.1, p. 10/PDF 19 | Tate explicitly describes this as the general fact for an extension of the integers by a profinite group. The target exposes the arbitrary unramified complex character rather than choosing an exponent of the norm character. |
 | `UnramifiedReduction`, determinant criterion | Same reduction passages; Tate section 2 opening, p. 9/PDF 18, for the determinant quasicharacter | This is an explicitly derived finite-order consequence, with the positive dimension provided by irreducibility. It is not attributed to those passages as a separately numbered theorem. |
-| `FiniteImageExtension` | Henniart 1980, section 2.1, p. 158/PDF 5; Tate, section 2.2, p. 10/PDF 19 | Both sources identify Galois type with finite image for local Weil representations. This statement generalizes the structural argument to the accepted integer pullback over a profinite ambient group. It quantifies the extension and its uniqueness, without assuming either. |
+| `FiniteImageExtension` | Henniart 1980, section 2.1, p. 158/PDF 5; Tate, section 2.2, p. 10/PDF 19 | Both sources identify Galois type with finite image for local Weil representations. This statement generalizes the structural argument to the published integer pullback over a profinite ambient group. It quantifies the extension and its uniqueness, without assuming either. |
 | `RepresentationStructure` | The preceding rows | A conjunction of the two exact targets; no additional mathematical assertion is hidden in the packaging. |
 
 Read retained originals:
@@ -104,22 +105,21 @@ Read retained originals:
 
 ## Exact dependencies
 
-- `Langlands.Representation.Twist.Definitions`:
-  artifact `c83db975-8b79-4fbb-9901-2db836910a0a` version 1.
+- `Langlands.Representation.Twist.Definitions`.
   Uses `Langlands.twist` on the unchanged representation space. No twist
-  definition or accepted twist-law target is duplicated.
-- `Langlands.Weil.Pullback`:
-  artifact `993e4326-4390-4fc8-94a7-82829061b1ea` version 1.
+  definition or published twist-law target is duplicated.
+- `Langlands.Weil.Pullback`.
   Uses `Degree`, `ProfiniteIntegers`, `Pullback`, and `projection`, with their
   actual groups and topologies.
-- Prepared environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1:
+- The pinned environment:
   Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
   Mathlib supplies `Representation`, its genuine `IsIrreducible` predicate,
   endomorphism determinants, complex topology, compactness and nonarchimedean
   group structure.
 
-Neither the staged continuity target nor the unfinished parameter-definition
-framework is imported. The topological bridge and generic Weil algebraic laws
-may be used in a later proof after their exact accepted statements and proofs
-are verified. Statement compilation and fingerprints do not prove the
-reduction or extension assertions.
+Neither the continuity target nor the parameter-definition
+framework is imported. Statement compilation does not prove the
+reduction or extension assertions: they are proved in
+`Langlands.Weil.Representation.UnramifiedReductionProof` and
+`Langlands.Weil.Representation.FiniteImageExtensionProof`, and their
+conjunction in `Langlands.Weil.Representation.StructureProof`.

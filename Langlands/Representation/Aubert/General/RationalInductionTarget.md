@@ -48,8 +48,7 @@ properties restrict to it. No premise supplies the desired equation.
 This is a proposition declaration, not a proof. All actual structural,
 topological and representation-theoretic realization obligations remain.
 Its explicit intermediate premises neither enlarge the parent's itemized
-external Chapter V boundary nor establish the main identity. Proof
-successors and final assembly remain with the parent and existing owners.
+external Chapter V boundary nor establish the main identity.
 
 Source: registered original `aubert-1995-duality`, SHA256
 `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693`,

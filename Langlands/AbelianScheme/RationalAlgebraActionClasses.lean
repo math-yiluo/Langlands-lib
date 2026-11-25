@@ -35,8 +35,8 @@ theorem classOf_eq_iff {X Y : RationalAlgebraAction S D} :
 theorem classOf_eq_iff_rationalIso {X Y : RationalAlgebraAction S D} :
     classOf X = classOf Y ↔
       ∃ e : Rationalization.of X.abelianScheme ≅ Rationalization.of Y.abelianScheme,
-        ∀ d : D, comp0 _ _ _ (X.action d) e.hom =
-          comp0 _ _ _ e.hom (Y.action d) := by
+        ∀ d : D, comp0 _ _ _ (X.action d).asHom e.hom =
+          comp0 _ _ _ e.hom (Y.action d).asHom := by
   rw [classOf_eq_iff]
   constructor
   · rintro ⟨e⟩

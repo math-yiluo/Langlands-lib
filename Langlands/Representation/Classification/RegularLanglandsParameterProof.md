@@ -1,7 +1,5 @@
 # Regular Langlands block-rank and real-parameter uniqueness
 
-Author: Worker 359.
-
 This module proves the exact published proposition
 `Langlands.GLRegularLanglandsParameterUniquenessStatement`, with independent
 field and representation universes and the stated maximum-universe carriers.

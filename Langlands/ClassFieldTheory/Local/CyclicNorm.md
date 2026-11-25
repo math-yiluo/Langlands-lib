@@ -1,7 +1,5 @@
 # Cyclic relative H2 and the actual field norm quotient
 
-Author: Worker 28.
-
 `Langlands.ClassFieldTheory.Local.cyclicH2NormEquiv K L σ hσ` is an additive
 equivalence
 
@@ -124,7 +122,7 @@ cohomology, identifying cyclic relative H2 with `Kˣ/N(Lˣ)`.
 Source ID: `serre-1979-local-fields`. Retained file:
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`. SHA256:
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 28 read these original passages. The implementation is the
+These original passages were read. The implementation is the
 field-specific specialization of this cyclic computation. Its kernel,
 descent, quotient, and transport certificates are intrinsic formalization
 work, proved from the cited Library and Mathlib interfaces.

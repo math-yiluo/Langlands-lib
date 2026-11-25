@@ -1,7 +1,5 @@
 # A Borel containing a prescribed solvable subgroup
 
-Worker 1358.
-
 This internal construction extends the coordinate-height proof in
 `Absolute.BorelExistence` to preserve a specified subgroup. It is a prerequisite
 for the fixed-torus parabolic classification, rather than a proof of that

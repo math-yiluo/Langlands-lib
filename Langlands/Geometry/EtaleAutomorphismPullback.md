@@ -109,7 +109,7 @@ This is an internal comparison and construction from the actual published
 theorem. The comparison is proved from their section formulas, resolution
 lifts and homology functoriality; no cohomology comparison is assumed as data.
 
-This unit concerns ordinary small-étale cohomology of a supplied actual scheme
+This module concerns ordinary small-étale cohomology of a supplied actual scheme
 and supplied equivariant sheaf. It does not construct a Shimura scheme or
 coefficient system, identify the action with a varying-scheme diagram, or
 assert compact support, a Galois realization, smoothness, scalar change, or

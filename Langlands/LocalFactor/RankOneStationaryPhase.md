@@ -1,6 +1,6 @@
 # Finite averaging on the Gauss shell
 
-Worker 1786 derives the Gauss twist identity by finite averaging. This is
+This module derives the Gauss twist identity by finite averaging. This is
 an internal proof for the unchanged rank-one stability target, using
 published lattice duality, Haar invariance, and the actual Gauss integrals.
 It retains every prime, arbitrary carrier universe, supplied topology,

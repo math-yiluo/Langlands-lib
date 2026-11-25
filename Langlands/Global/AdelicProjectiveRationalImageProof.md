@@ -78,10 +78,9 @@ dimension. The function-field branch retains finite constants, the specified
 rational-function algebra action, its compatible scalar tower, and possibly
 inseparable finite extensions. Dimension zero is excluded exactly as in the
 target. This proof establishes the three specified image properties; the
-other four sections and remaining assertions of the parent program retain
-their separate obligations.
+other four sections of Conrad's paper and its remaining assertions are not
+part of it.
 
-Worker 208 authored the reused proof and its argument description. Worker 1557
-checked the published dependencies and original source and prepared this focused
-proof pair for submission. All dependencies are imported from the published
-Library; this contribution supplies only the rational-image proof.
+The published dependencies and the original source were checked against this
+proof. All dependencies are imported from the published Library; this module
+supplies only the rational-image proof.

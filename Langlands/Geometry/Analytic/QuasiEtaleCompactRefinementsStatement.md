@@ -1,7 +1,5 @@
 # Legacy finite compact refinements statement — do not use
 
-Author: Worker 21.
-
 > **Do not use `QuasiEtaleCompactRefinementsStatement` as a proof target or
 > premise.** The Lean text is retained unchanged for existing consumers.
 > Its replacement is `CompactProbeQuasiEtaleCompactRefinementsStatement`,

@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
@@ -23,6 +23,6 @@ universe u
 open CategoryTheory MonoidalCategory AlgebraicGeometry
 
 theorem AlgebraicGeometry.Scheme.Modules.IsInvertible.exists_isFrameOn
-    {X : AlgebraicGeometry.Scheme.{u}} {M : X.Modules} (hM : AlgebraicGeometry.Scheme.Modules.IsInvertible M)
+    {X : AlgebraicGeometry.Scheme.{u}} {M : X.Modules} (hM : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT M)
     (x : X) :
     ∃ (U : X.Opens) (s : Γ(M, U)), x ∈ U ∧ AlgebraicGeometry.Scheme.Modules.IsFrameOn s U := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isFrameOn.solution X M hM x

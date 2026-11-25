@@ -1,7 +1,5 @@
 # Left descents and conjugation at the inverse longest representative
 
-Author: Worker 757 (task `f7d95940-33d0-49d3-93d6-8d5ff8d89373`).
-
 This module proves three Coxeter facts about the inverse longest representative
 `w = (longestRep cs I)⁻¹`, with associated subset
 `I' = associatedSubset cs I`. All declarations are theorems in the namespace
@@ -11,7 +9,7 @@ decreasing-length enumeration (module `AssociatedLeviSupport`). In that form
 they are exactly the premises `hconj₀`, `hR₀` and `hD₀` of the conditional
 top-degree graded surjectivity lemma
 `JacquetComplex.gradedDifferential_surjective_top_of_leftDescentSet_eq`
-of Worker 1252 (module `CorrectedGradedTopSurjectivity`), at
+(module `CorrectedGradedTopSurjectivity`), at
 `i₀ = associatedGrade cs I` and `K₀ = I'`. The theorem
 `TerminalJacquet.associatedGradedExactnessTarget_of_targets` (module
 `RationalAssociatedLeviReduction`) applies that lemma with these premises to

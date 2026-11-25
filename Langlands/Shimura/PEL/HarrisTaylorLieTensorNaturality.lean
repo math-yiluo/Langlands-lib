@@ -24,58 +24,62 @@ variable (L : Type) [Field L] [NumberField L] [IsCMField L]
 /-- The full actual rational algebra acts on the original-order Lie tensor factor. -/
 def lieTensorAction (conjugate : Bool) :
     A →+* End (lieTensorSheaf L s B i conjugate) where
-  toFun a := (lieTensorSheafIso L s B i conjugate).hom ≫
-    lieEigensheafAction L s B i conjugate a ≫ (lieTensorSheafIso L s B i conjugate).inv
+  toFun a := End.of ((lieTensorSheafIso L s B i conjugate).hom ≫
+    (lieEigensheafAction L s B i conjugate a).asHom ≫ (lieTensorSheafIso L s B i conjugate).inv)
   map_one' := by
-    change (_ ≫ lieEigensheafAction L s B i conjugate 1 ≫ _) = _
+    apply End.ext
+    change (_ ≫ (lieEigensheafAction L s B i conjugate 1).asHom ≫ _) = _
     rw [map_one]
     simp
   map_mul' a b := by
-    change (_ ≫ lieEigensheafAction L s B i conjugate (a * b) ≫ _) = _
+    apply End.ext
+    change (_ ≫ (lieEigensheafAction L s B i conjugate (a * b)).asHom ≫ _) = _
     rw [map_mul]
     simp [End.mul_def, Category.assoc]
   map_zero' := by
-    change (_ ≫ lieEigensheafAction L s B i conjugate 0 ≫ _) = _
+    apply End.ext
+    change (_ ≫ (lieEigensheafAction L s B i conjugate 0).asHom ≫ _) = _
     rw [map_zero]
     simp
   map_add' a b := by
-    change (_ ≫ lieEigensheafAction L s B i conjugate (a + b) ≫ _) = _
+    apply End.ext
+    change (_ ≫ (lieEigensheafAction L s B i conjugate (a + b)).asHom ≫ _) = _
     rw [map_add]
     change ((lieTensorSheafIso L s B i conjugate).hom ≫
-      (lieEigensheafAction L s B i conjugate a + lieEigensheafAction L s B i conjugate b :
+      ((lieEigensheafAction L s B i conjugate a).asHom + (lieEigensheafAction L s B i conjugate b).asHom :
         lieEigensheaf L s B i conjugate ⟶ lieEigensheaf L s B i conjugate) ≫
       (lieTensorSheafIso L s B i conjugate).inv) =
       ((lieTensorSheafIso L s B i conjugate).hom ≫
-        lieEigensheafAction L s B i conjugate a ≫ (lieTensorSheafIso L s B i conjugate).inv) +
+        (lieEigensheafAction L s B i conjugate a).asHom ≫ (lieTensorSheafIso L s B i conjugate).inv) +
       ((lieTensorSheafIso L s B i conjugate).hom ≫
-        lieEigensheafAction L s B i conjugate b ≫ (lieTensorSheafIso L s B i conjugate).inv)
+        (lieEigensheafAction L s B i conjugate b).asHom ≫ (lieTensorSheafIso L s B i conjugate).inv)
     exact (congrArg (fun h => (lieTensorSheafIso L s B i conjugate).hom ≫ h)
-      (Preadditive.add_comp _ _ _ (lieEigensheafAction L s B i conjugate a)
-        (lieEigensheafAction L s B i conjugate b)
+      (Preadditive.add_comp _ _ _ (lieEigensheafAction L s B i conjugate a).asHom
+        (lieEigensheafAction L s B i conjugate b).asHom
         (lieTensorSheafIso L s B i conjugate).inv)).trans
       (Preadditive.comp_add _ _ _ (lieTensorSheafIso L s B i conjugate).hom
-        (lieEigensheafAction L s B i conjugate a ≫ (lieTensorSheafIso L s B i conjugate).inv)
-        (lieEigensheafAction L s B i conjugate b ≫ (lieTensorSheafIso L s B i conjugate).inv))
+        ((lieEigensheafAction L s B i conjugate a).asHom ≫ (lieTensorSheafIso L s B i conjugate).inv)
+        ((lieEigensheafAction L s B i conjugate b).asHom ≫ (lieTensorSheafIso L s B i conjugate).inv))
 
 @[reassoc (attr := simp)]
 theorem lieTensorAction_comparison (conjugate : Bool) (a : A) :
-    lieTensorAction L s B i conjugate a ≫ (lieTensorSheafIso L s B i conjugate).hom =
-      (lieTensorSheafIso L s B i conjugate).hom ≫ lieEigensheafAction L s B i conjugate a := by
+    (lieTensorAction L s B i conjugate a).asHom ≫ (lieTensorSheafIso L s B i conjugate).hom =
+      (lieTensorSheafIso L s B i conjugate).hom ≫ (lieEigensheafAction L s B i conjugate a).asHom := by
   simp [lieTensorAction, Category.assoc]
 
 /-- The canonical tensor projection intertwines the full differentiated algebra action. -/
 theorem lieTensorProjection_intertwines (conjugate : Bool) (a : A) :
-    lieRationalOrderAction s B i.toRingHom a ≫ lieTensorProjection L s B i conjugate =
-      lieTensorProjection L s B i conjugate ≫ lieTensorAction L s B i conjugate a := by
+    (lieRationalOrderAction s B i.toRingHom a).asHom ≫ lieTensorProjection L s B i conjugate =
+      lieTensorProjection L s B i conjugate ≫ (lieTensorAction L s B i conjugate a).asHom := by
   simpa [lieTensorProjection, lieTensorAction, Category.assoc] using
     congrArg (fun f => f ≫ (lieTensorSheafIso L s B i conjugate).inv)
       (lieEigenProjection_intertwines L s B i conjugate a)
 
 /-- The actual Lie tensor splitting intertwines the full rational algebra action. -/
 theorem lieTensorSplitting_intertwines (a : A) :
-    lieRationalOrderAction s B i.toRingHom a ≫ (lieTensorSplitting L s B i).hom =
+    (lieRationalOrderAction s B i.toRingHom a).asHom ≫ (lieTensorSplitting L s B i).hom =
       (lieTensorSplitting L s B i).hom ≫
-        prod.map (lieTensorAction L s B i false a) (lieTensorAction L s B i true a) := by
+        prod.map (lieTensorAction L s B i false a).asHom (lieTensorAction L s B i true a).asHom := by
   apply prod.hom_ext
   · simpa only [lieTensorSplitting_hom, Category.assoc, prod.lift_fst,
       prod.map_fst, prod.lift_fst_assoc] using
@@ -86,7 +90,7 @@ theorem lieTensorSplitting_intertwines (a : A) :
 
 variable {B} {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
   (f : Hom0 B B')
-  (hf : ∀ a : A, comp0 B B B' (i a) f = comp0 B B' B' f (i' a))
+  (hf : ∀ a : A, comp0 B B B' (i a).asHom f = comp0 B B' B' f (i' a).asHom)
 
 /-- The actual rational differential induces a map of the two Lie tensor factors. -/
 def lieTensorMap (conjugate : Bool) :
@@ -110,8 +114,8 @@ theorem lieTensorProjection_naturality (conjugate : Bool) :
 
 /-- Tensor maps intertwine the full actual rational algebra actions. -/
 theorem lieTensorMap_intertwines (conjugate : Bool) (a : A) :
-    lieTensorAction L s B i conjugate a ≫ lieTensorMap L s i i' f hf conjugate =
-      lieTensorMap L s i i' f hf conjugate ≫ lieTensorAction L s B' i' conjugate a := by
+    (lieTensorAction L s B i conjugate a).asHom ≫ lieTensorMap L s i i' f hf conjugate =
+      lieTensorMap L s i i' f hf conjugate ≫ (lieTensorAction L s B' i' conjugate a).asHom := by
   simpa [lieTensorAction, lieTensorMap, Category.assoc] using
     congrArg (fun g => (lieTensorSheafIso L s B i conjugate).hom ≫ g ≫
       (lieTensorSheafIso L s B' i' conjugate).inv)
@@ -127,7 +131,7 @@ theorem lieTensorMap_id (conjugate : Bool) :
 /-- Tensor maps preserve actual rational composition. -/
 theorem lieTensorMap_comp {B'' : AbelianScheme S}
     (i'' : A →ₐ[ℚ] End0 B'') (g : Hom0 B' B'')
-    (hg : ∀ a : A, comp0 B' B' B'' (i' a) g = comp0 B' B'' B'' g (i'' a))
+    (hg : ∀ a : A, comp0 B' B' B'' (i' a).asHom g = comp0 B' B'' B'' g (i'' a).asHom)
     (conjugate : Bool) :
     lieTensorMap L s i i'' (comp0 B B' B'' f g)
         (fun a => by
@@ -154,7 +158,7 @@ theorem lieTensorSplitting_naturality :
 /-- An actual equivariant rational isomorphism gives actual tensor-factor isomorphisms. -/
 def lieTensorIso (conjugate : Bool)
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     lieTensorSheaf L s B i conjugate ≅ lieTensorSheaf L s B' i' conjugate :=
   lieTensorSheafIso L s B i conjugate ≪≫
     lieEigensheafIso L s i i' conjugate e he ≪≫ (lieTensorSheafIso L s B' i' conjugate).symm
@@ -162,7 +166,7 @@ def lieTensorIso (conjugate : Bool)
 @[simp]
 theorem lieTensorIso_hom (conjugate : Bool)
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     (lieTensorIso L s i i' conjugate e he).hom =
       lieTensorMap L s i i' e.hom he conjugate := by
   rfl

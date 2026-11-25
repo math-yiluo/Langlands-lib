@@ -2,13 +2,13 @@ import Langlands.Correspondence.HenniartCandidateExistenceExactStabilizerReducti
 import Langlands.Global.Arithmetic.HenniartGlobalizationExactStabilizerTC
 import Langlands.Global.Arithmetic.HenniartHarrisDatumExactStabilizerProof
 import Langlands.Global.Factors.RelativePolePairingProof
-import Langlands.ClassField.Global.FundamentalClassProof
+import Langlands.ClassFieldTheory.Global.FundamentalClassProof
 import Langlands.Global.AdeleQuotientCompactProof
 import Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof
 import Langlands.Automorphic.AssociatedAdditiveInputs
 import Langlands.Automorphic.AssociatedCentralCharacterProof
 import Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof
-import Langlands.ClassField.Global.LocalRelativeWeilTransferProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof
 
 /-! # Henniart's candidate existence from the totally complex exact-stabilizer inputs
 
@@ -21,7 +21,7 @@ namespace Langlands.Henniart
 
 universe uK uW uP uE uQ
 
-open Langlands.Global Langlands.ClassField.Global Langlands.Global.PoleComparison
+open Langlands.Global Langlands.ClassFieldTheory.Global Langlands.Global.PoleComparison
 
 /-- Henniart's candidate existence from Harris's exact-stabilizer Proposition 4.8, local
 relative class formation and the totally complex forms of the induction, pole-comparison and

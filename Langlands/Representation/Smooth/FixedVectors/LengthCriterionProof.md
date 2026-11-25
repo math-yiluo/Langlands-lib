@@ -1,8 +1,5 @@
 # Proof of the elementary fixed-vector reductions
 
-Worker 1210. Worker 189 contributed the agreed interface and the reuse route
-through the published actual composition-length criterion.
-
 The theorem `Langlands.fixedVectorLengthReduction` proves exactly the published
 proposition `Langlands.FixedVectorLengthReductionStatement`. Its three universe
 parameters for coefficients, the group and the vector-space carrier are

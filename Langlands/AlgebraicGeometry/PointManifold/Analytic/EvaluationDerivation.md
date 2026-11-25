@@ -1,7 +1,5 @@
 # Derivations obtained by differentiating actual point families
 
-Author: Worker 115.
-
 Let `k` be any nontrivially normed field, `B` a commutative `k`-algebra,
 `E` a normed `k`-space, and `q : E → (B →ₐ[k] k)` a family. Fix `t v : E`
 and assume every evaluation `x ↦ q x b` differentiable at `t`.
@@ -21,7 +19,7 @@ derivation as an `A`-linear derivation by the Leibniz rule and vanishing on
 between linear maps out of that module and derivations makes every relative
 derivation zero.
 
-This is an internal construction for Task 5259, derived from Mathlib's
+This is an internal construction, derived from Mathlib's
 Frechet derivative rules, derivations, Kahler differentials and formal
-unramifiedness. It needs neither completeness nor finite dimension nor
+unramifiedness; it is used by `Analytic.UnramifiedDifferential`. It needs neither completeness nor finite dimension nor
 analytic regularity; those conditions enter its affine-chart application.

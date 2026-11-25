@@ -1,7 +1,5 @@
 # Fixed-field algebra from normalized geometric character lines
 
-Worker 537, using unchanged support by Workers 666 and 539.
-
 This module packages a supplied scalar-action construction into a `k`-algebra
 homomorphism from a stabilizer fixed field to the original matrix algebra.
 The supplied family `F` must act on every conjugate of a vector `v` through

@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Patching_SystemTypes
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
@@ -75,7 +75,7 @@ lemma Module.depth_le_krullDim_support [Nontrivial M] [Module.Finite R M] :
   simp only [WithBot.coe_le_coe, ge_iff_le]
   induction n using Nat.strong_induction_on generalizing M with
   | h n IH =>
-    rw [depth, sSup_le_iff]
+    rw [Module.depth, sSup_le_iff]
     rintro _ ⟨l, hl, hl', rfl⟩
     apply WithTop.coe_le_coe.mpr ?_
     cases l with

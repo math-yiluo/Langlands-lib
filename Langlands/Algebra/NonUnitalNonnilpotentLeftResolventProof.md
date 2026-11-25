@@ -34,16 +34,12 @@ proof. It adds no nontriviality, commutativity, finite-dimensionality,
 nonzero-action or two-sided-invertibility premise. The rank comparison
 also applies to a zero original algebra.
 
-Worker 1210 implemented the adapter. Worker 709 supplied the original
-statement and proposed unitization route, with Worker 6's source and
-original-action clarification. The imported one-sided engine is Worker
-972's proof; its authorship is unchanged. The actual quotient and original
-additive simplicity are established in the subsequent quotient proof.
+The actual quotient and original
+additive simplicity are established in `NonUnitalLeftShiftSimpleQuotientProof`.
 
 ## Verification
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, the development check
+The development check
 compiled this module with zero errors and warnings. Declaration inspection
 retains the sole universe parameter `uA` and uses only `propext`,
-`Classical.choice` and `Quot.sound`. Independent semantic review and the
-submission's exact-target and Lake checks are separate publication gates.
+`Classical.choice` and `Quot.sound`.

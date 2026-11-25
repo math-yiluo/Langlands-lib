@@ -90,5 +90,5 @@ The equivalence premises are also not proved here.
    constructed admissibility proofs and intertwiner, this is the existential
    conclusion of `SigmaLiftInductionStatement`.
 
-The result is conditional and does not prove the unconditional target of
-Task 7841.
+The result is conditional and does not prove the unconditional target
+`SigmaLiftInductionStatement`.

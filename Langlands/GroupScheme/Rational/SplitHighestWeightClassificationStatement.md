@@ -212,7 +212,10 @@ Chapter 22, an entry on p. 465 (in 22.8, "X ⊂ X₀ + P(Φ)" holds only modulo
 `X₀`) and one on p. 478 (proof of 22.42); neither concerns the cited
 statements.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as `splitHighestWeightClassification` in
+[`Rational.SplitHighestWeightClassificationProof`](SplitHighestWeightClassificationProof.md).
 
 Milne's route, with `B` the Borel subgroup attached to `p.base`:
 

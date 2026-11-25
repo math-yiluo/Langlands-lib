@@ -1,7 +1,5 @@
 # Transport of the derivatives along representation equivalences
 
-Author: Worker 749.
-
 This helper module shows the following. Let two smooth representations be
 related by an actual equivalence of representations, where their carriers
 may lie in different universes. Then their images under every published
@@ -151,6 +149,6 @@ cofinality, twists, coinvariants and localization, matrix coefficients and
 Whittaker characters. It contains no classification, segment, multisegment,
 square-integrable, tempered, socle, cuspidal-support, Jacquet-formula,
 exactness or Leibniz-filtration module. The module uses no result of
-Zelevinsky (1980) and nothing from the special-head criterion task
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95` or the other excluded tasks listed in
+Zelevinsky (1980) and nothing from the special-head criterion
+`SegmentHeadProductIrreducibility` or the other excluded results listed in
 `GeneralLinearDerivativeFiniteLengthProof`.

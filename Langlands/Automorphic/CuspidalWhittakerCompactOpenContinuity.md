@@ -1,6 +1,6 @@
 # Compact-open continuity of actual cuspidal Whittaker coefficients
 
-Worker 805. This internal analytic prerequisite concerns the actual functions of
+This internal analytic prerequisite concerns the actual functions of
 `CuspidalOperatorRealization F r`, for arbitrary number-field universe and every
 rank `r + 1`. It is not a multiplicity-one theorem.
 
@@ -31,5 +31,7 @@ varying realized vector.
 The topology here is inherited compact-open function topology. No continuous
 inclusion from a Hilbert smooth-vector space, finite derivative-norm bound,
 continuous extension of an arbitrary operator equivalence, smooth globalization
-or uniqueness of Whittaker functionals is proved. Those bridges remain needed
-for `CuspidalOperatorMultiplicityOneStatement`.
+or uniqueness of Whittaker functionals is proved. Those bridges would be needed
+to derive `CuspidalOperatorMultiplicityOneStatement` from this module; the Library
+proves that statement as `cuspidalOperatorMultiplicityOne` (module
+`Langlands.Automorphic.CuspidalOperatorMultiplicityOneProof`).

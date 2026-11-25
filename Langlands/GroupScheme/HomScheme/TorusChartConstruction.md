@@ -1,9 +1,8 @@
 # The quotient chart of a ring-level torus chart datum
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. From a chart datum
+This is an internal module for the chart construction of
+`SmoothTorusSubgroupRepresentabilityProof` (smooth moduli of closed torus
+subgroups). From a chart datum
 `d : TorusChartRing.Datum R A r m gen n` it builds the following:
 
 - the chart `U d`, the quotient of `Spec B` (`B = W_N`) by the free twisting
@@ -22,8 +21,9 @@ by the window Hopf point `d.α`.
   connected. Its clopen sets are basic opens of idempotents, and these are `0`
   or `1`.
 - `X d := Spec B`. `action d` is the free action of `Γ`, made from
-  `d.actB` and `d.actB_free` by Worker 1421's
-  `SpecRingAction.finiteFreeSchemeAction`. `action_act_hom` records that
+  `d.actB` and `d.actB_free` by
+  `SpecRingAction.finiteFreeSchemeAction` (module
+  `AlgebraicGeometry/SpecRingActionFree`). `action_act_hom` records that
   `γ` acts by `Spec.map (actB γ)`.
 - `quot d`: the Library's affine quotient
   `FiniteFreeSchemeAction.quotient`. The quotient map is finite, étale and

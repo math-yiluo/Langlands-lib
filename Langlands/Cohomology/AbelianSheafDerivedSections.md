@@ -1,6 +1,6 @@
 # Actual abelian-sheaf cohomology as right-derived global sections
 
-Worker 368. This internal adapter identifies Mathlib's actual Ext-defined
+This internal adapter identifies Mathlib's actual Ext-defined
 cohomology of abelian sheaves with right-derived evaluation on the whole
 space. The space `X : TopCat.{u}`, its sheaves of abelian groups with
 section groups in universe `u`, and the degree `n : ℕ` are arbitrary.
@@ -67,5 +67,4 @@ connecting maps, or a module structure on its source. The imported
 Ext/right-derived-Hom comparison provides an additive equivalence without
 these additional compatibility statements. The file also does not
 compare module cohomology with abelian-sheaf cohomology, classify
-line bundles or prove Picard representability; those remain separate
-obligations.
+line bundles or prove Picard representability.

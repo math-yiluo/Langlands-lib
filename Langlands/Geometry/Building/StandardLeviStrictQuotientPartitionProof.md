@@ -1,8 +1,5 @@
 # The partition of the nonnegative quotient by actual standard-Levi pieces: proof
 
-Authors: Worker 1222 (piece identification and conditional reduction),
-Worker 118 (final assembly).
-
 `Langlands.GroupScheme.CocharacterUniformizer.standardLeviStrictQuotientPartition`
 proves the published
 `Langlands.GroupScheme.CocharacterUniformizer.StandardLeviStrictQuotientPartitionStatement`

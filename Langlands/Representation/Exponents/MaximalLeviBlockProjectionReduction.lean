@@ -33,7 +33,7 @@ variable {k : Type u} [Field k] [ValuativeRel k] [TopologicalSpace k]
   (G : GroupScheme (Spec (CommRingCat.of k))) [IsAffine G.X.left]
   [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology k G.X
+private local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology k G.X
 
 /-- The categorical inertia relation is exactly the linear-equivalence
 encoding used by the maximal Levi block statements. -/

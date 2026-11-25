@@ -46,7 +46,9 @@ theorem this retains the actual local Weil counit after the literal lower
 projection. Its proof uses the upper inverse identity and the exact
 regrouping and projection laws.
 
-The fields share an arbitrary universe. This unit constructs enlarged
+The fields share an arbitrary universe. This module constructs enlarged
 finite-level homeomorphisms over the two original integral bases.
-Compatibility with support inclusions, cofinal passage to full adelic
-points and the generic-fiber comparison remain host obligations.
+Compatibility with support inclusions (proved as
+`NumberFieldFixedLevelWeilEvaluation.levelPoint_natural`), cofinal passage
+to full adelic points (in `NumberFieldFixedModelWeilHomeomorph`) and the
+generic-fiber comparison are not part of this module.

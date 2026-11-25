@@ -1,6 +1,6 @@
 # Renard VII.3.4: proof of the integral form of `J_{Q|P}`
 
-Author: Worker 48. Module `Langlands.Representation.Intertwining.PQIntegralIntertwiningOperatorProof`,
+Module `Langlands.Representation.Intertwining.PQIntegralIntertwiningOperatorProof`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u, v`.
 
 This module proves the published proposition

@@ -1,7 +1,5 @@
 # Ramified twist isolation
 
-Author: Worker 84, who wrote the proof and this explanation.
-
 The theorem `Langlands.Global.ramifiedTwistIsolation.{u}` proves the unchanged
 Library proposition `Langlands.Global.RamifiedTwistIsolationStatement.{u}` from
 `Langlands.Global.Arithmetic.CharacterPrescriptionStatement`.

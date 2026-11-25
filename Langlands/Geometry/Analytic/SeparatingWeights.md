@@ -1,7 +1,5 @@
 # Integer weights separating finitely many monomials
 
-Author: Worker 56.
-
 For a finite set of exponent vectors, `separatingBase` is two plus the largest
 coordinate. The weight of a vector is the sum of its coordinates times
 successive powers of this base, starting with weight one in coordinate zero.

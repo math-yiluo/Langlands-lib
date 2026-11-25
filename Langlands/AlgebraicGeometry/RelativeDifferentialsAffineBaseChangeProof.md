@@ -1,7 +1,7 @@
 # Canonical differential base change for spectra
 
 `Langlands.Scheme.relativeDifferentialsAffineBaseChangeIsIso` proves exactly
-the published proposition
+the proposition
 `Langlands.Scheme.RelativeDifferentialsAffineBaseChangeIsIsoStatement.{u}`.
 For all `R A B : CommRingCat.{u}` and all ring maps `f : R ⟶ A` and
 `b : R ⟶ B`, the actual canonical comparison
@@ -13,7 +13,7 @@ relativeDifferentialsBaseChangeMap (Spec.map f) (Spec.map b)
 is invertible on the categorical scheme pullback. The universe `u` is
 arbitrary. Zero rings are included, and no flatness, smoothness, finiteness,
 nonemptiness, extra affineness certificate, or supplied base-change witness is
-assumed. The statement and its dependencies are imported unchanged.
+assumed. The statement and its dependencies are imported.
 
 ## Comparison with algebraic differentials
 
@@ -28,7 +28,7 @@ B ⊗[A] Ω[A/R] ≃ₗ[B] Ω[B/S].
 ```
 
 The proof identifies two maps out of `g* (tilde Ω[A/R])`. The first is the
-pullback of the published spectral comparison followed by the actual
+pullback of the spectral comparison followed by the actual
 canonical square map. The second is the tilde-pullback isomorphism, followed
 by the associated-sheaf map of the tensor differential isomorphism and the
 spectral comparison for `S → B`.
@@ -41,7 +41,7 @@ adjunction. Linear maps out of `Ω[A/R]` are determined by the generators
 `relativeDifferentialsSquareMap_adjoint_app`, the tilde-pullback generator
 formula, and `KaehlerDifferential.tensorKaehlerEquiv_tmul_D` identify the
 two maps. `Scheme.ΓSpecIso_inv_naturality` identifies the pulled-back
-global function. Thus the comparison uses the published local-section
+global function. Thus the comparison uses the local-section
 formula of the concrete canonical map. Cancellation of the spectral
 comparison and preservation of isomorphisms then prove invertibility of
 that square map.
@@ -70,23 +70,24 @@ is invertible.
 
 `relativeDifferentialsBaseChangeMap_spec_isIso_of_comparisons` converts the
 arbitrary maps `f` and `b` to algebra instances via `RingHom.toAlgebra`.
-It supplies the published `Modules.tildePullbackAlgebraIso` and
+It supplies `Modules.tildePullbackAlgebraIso` and
 `Modules.tildePullbackAlgebraIso_adjoint_toOpen`. This algebra-form API
 identifies scalar extension along the ring homomorphism with the tensor
 module for the given algebra structure and preserves pure tensors.
 
-The final theorem supplies the published proofs
+The final theorem supplies the proofs
 `relativeDifferentialsOpenImmersionIsIso` from
 `RelativeDifferentialsOpenImmersionProof` and
 `relativeDifferentialsSpecMapIsIso` from `RelativeDifferentialsSpecMapIsIso`.
 The helper lemmas retain explicit comparison premises for reuse, but the
-final theorem has exactly the published Prop as its type and no remaining
+final theorem has exactly the statement's Prop as its type and no remaining
 premises.
 
 Neither this module nor the transport helper imports the arbitrary-scheme
 base-change statement, the global reduction, or its unconditional proof.
-The parent task can import this affine theorem and the transport helper for
-its separate local assembly.
+The arbitrary-scheme theorem in `RelativeDifferentialsBaseChangeIsIso`
+imports this affine theorem, and the global reduction
+`RelativeDifferentialsBaseChangeProof` imports the transport helper.
 
 ## Sources and provenance
 
@@ -109,9 +110,5 @@ above. Mathlib is pinned at commit
 and its formula, and `AlgebraicGeometry/Pullbacks.lean` supplies the
 tensor-spectrum pullback isomorphism and projection identities.
 
-Worker 208 implemented the square-map comparison and categorical-pullback
-transport. Worker 274 contributed the generator comparison pattern and
-the published canonical tilde construction, including its algebra-form
-adapter. Worker 538 reused the two helper pairs, discharged the premises
-with the published prerequisite proofs, and prepared this exact-target
-proof and its explanation.
+The canonical tilde construction, including its algebra-form adapter, is
+imported from `Modules.TildePullback`.

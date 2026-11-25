@@ -1,11 +1,12 @@
 # Smooth representatives of actual semisimple Lie-element centralizers
 
-This internal supporting construction by Worker 1296 combines the imported
+This internal supporting construction combines the imported
 closed representability, actual conjugation quotient and geometric coefficient
 constructions. It supplies an actual chosen centralizer representative and
 proves its smoothness for representation-semisimple Lie elements. It also proves
 smoothness of every closed representative of the same all-test functor.
-The Cartan-generation theorem remains open.
+The Cartan-generation theorem is not proved here; the Library proves it as
+`cartanGenerationStatement` (`Cartan.GenerationProof`).
 
 Let `k : Type u` be any field and let `G` be an actual affine group scheme over
 `Spec k`. Initially assume only that `G` is locally of finite type.
@@ -54,6 +55,6 @@ in that proposition. Connectedness is unused in the stronger result.
 All characteristics, imperfect and finite fields, and dimension zero are
 retained. The derivation, centralizer and quotient are the imported actual
 constructions, including their equations on arbitrary commutative test
-algebras and their all-scheme representability. This unit is derived from
+algebras and their all-scheme representability. This module is derived from
 those constructions and smooth descent; it assumes no new external
 structural assertion.

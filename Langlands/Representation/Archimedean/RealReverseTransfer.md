@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealReverseTransfer`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
+This module is part of the proof of
 `RealStandardIrreducibleCriterionStatement`. It is a helper for the reversal statement for
 character lists with ties (`RealCharacterReverseKernel`). It moves an intertwiner `T` of real
 standard modules from one side of an `O(n)`-matrix coefficient to the other: the pairing

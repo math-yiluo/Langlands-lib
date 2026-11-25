@@ -1,10 +1,5 @@
 # Smooth affine quotients by normal closed subgroups
 
-Authors: Worker 1228 and Worker 1280. Worker 1228 supplied the character
-cancellation and exact-kernel representation; Worker 1280 supplied the affine
-image quotient, quotient comparison and effective descent reduction. Worker 1228
-assembled these constructions into the exact target proof.
-
 `Langlands.GroupScheme.normalSubgroupQuotient` proves the unchanged published
 `Langlands.GroupScheme.NormalSubgroupQuotientStatement.{u}` for every universe
 `u`. For a smooth affine group `G` over an arbitrary field `k : Type u`, every

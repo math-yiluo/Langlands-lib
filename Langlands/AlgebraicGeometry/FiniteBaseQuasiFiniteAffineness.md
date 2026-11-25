@@ -1,7 +1,5 @@
 # Affineness of quasi-finite schemes over a finite affine base
 
-Author: Worker 640.
-
 `Langlands.AlgebraicGeometry.finiteBaseQuasiFiniteAffineIso` constructs an
 actual isomorphism
 
@@ -36,7 +34,7 @@ scheme is affine.
 ## Implemented argument and provenance
 
 This is derived supporting development for the DVR step in the affineness
-route of Task 7526. It combines existing Library results and Mathlib's
+route for smooth group schemes with connected reductive residue fibres. It combines existing Library results and Mathlib's
 Zariski main theorem; it introduces no new literature transcription.
 
 1. Quasi-compact locally quasi-finite morphisms have finite point fibres.
@@ -61,4 +59,4 @@ The construction does not assert that `f` is finite. For example, the
 generic-point open immersion of a DVR is covered by the affineness result.
 It supplies only the general scheme-theoretic DVR affineness input; it
 does not prove the group-scheme Weyl criterion, finiteness over an arbitrary
-base, or the parent reductive-residue-fibre affineness theorem.
+base, or the reductive-residue-fibre affineness theorem.

@@ -1,9 +1,9 @@
 # Positive-order detection for smooth mirabolic representations
 
-Authors: Worker 700, Worker 749.
-
-`Langlands.Derivative.MirabolicDerivativeDetection F T` is an unproved
-proposition definition. For every prime, p-adic field `F`, supplied
+`Langlands.Derivative.MirabolicDerivativeDetection F T` is a
+proposition definition; this module does not prove it (the proof is
+`Langlands.Derivative.mirabolicDerivativeDetection` in
+`MirabolicDerivativeDetectionProof`). For every prime, p-adic field `F`, supplied
 compatible topology datum `T`, nontrivial unitary additive character `ψ`,
 natural number `N` and actual smooth complex representation `A` of
 `GeneralLinear.mirabolic N F.Carrier`, it asserts
@@ -47,8 +47,8 @@ supplies the exact sequence and functor identities used to construct
 the filtration.
 
 The original PDF pages 12–14 were read and page 13 was inspected as an
-image by Worker 700; Worker 749 independently reread the extracted text of
-PDF pages 12–13, including the definition `τ^(k) = Ψ⁻(Φ⁻)^(k-1)(τ)` for
+image; the extracted text of PDF pages 12–13 was independently reread,
+including the definition `τ^(k) = Ψ⁻(Φ⁻)^(k-1)(τ)` for
 `k = 1,…,n` and the filtration `0 ⊂ τ_n ⊂ … ⊂ τ_1 = τ` with
 `τ_k/τ_(k+1) ≅ (Φ⁺)^(k-1)Ψ⁺(τ^(k))`. No source-specific errata note was present in the supplied public
 notes. A search for corrections to BZ77 section 3.5 found the original
@@ -65,30 +65,26 @@ The derivative construction uses explicit determinant absolute-value
 twists of exponent `-1/2`, inherited from the published minus functors.
 These twists change the group action but not the underlying quotient
 carrier, so they do not affect which carriers are nontrivial. Comparison
-with the source's Haar-modulus normalization remains a separate
-obligation and is not used or asserted here. This statement supplies
+with the source's Haar-modulus normalization is a separate result
+(`MirabolicMinusNormalization`) and is not used or asserted here. This statement supplies
 no filtration, exactness theorem, analytic detection proof, plus-model
 embedding or lattice comparison.
 
-This is a standalone general BZ77 statement. Its later proof must be
+This is a standalone general BZ77 statement. Its proof must be
 independent of the strong-indecomposability reduction that consumes it,
 the segment derivative formulas of Zelevinsky 1980 sections 3.5 and
 9.6, every segment head/socle existence or classification result,
-both nonadjacent and full two-supercuspidal product conclusions,
-and all the further exclusions in its task contract. Sharing its
+and both nonadjacent and full two-supercuspidal product conclusions. Sharing its
 proposition with those consumers does not prove it.
 
 The only direct project import is the independently published
-`Langlands.Representation.Derivative.Homogeneity`. Its accepted definition
-artifact `609028d8-d915-4c8c-8223-2ece7bff15ff` was freshly fetched and
-verified; both frozen bundle hashes match the workspace pair and the current
-public pair. Its independent semantic review approves without qualifications.
+`Langlands.Representation.Derivative.Homogeneity`.
 This supplies the constructions and elementary laws described above, with
 its stated normalization qualification retained.
 
 The complete transitive project import closure was checked against Library
-commit `e40be87d4e73ac457e91929eddf904bd95d12d2f` by Worker 700 and again
-by Worker 749 against the current Library commit
+commit `e40be87d4e73ac457e91929eddf904bd95d12d2f` and again
+against Library commit
 `84146da9789e8ef59d6b18efecbc0086898b1f14`. In both checks all 53
 dependency Lean/Markdown pairs, including the direct import, are
 byte-identical to the published tree. No project
@@ -156,14 +152,14 @@ elementary laws. None contains an analytic derivative-detection or
 filtration proof, a segment construction or derivative formula, a product
 irreducibility or commutation result, the combined mirabolic
 strong-indecomposability reduction, or an ordered-socle, head, exhaustion,
-coverage or classification conclusion excluded in the task. The later
-BZ77 proof dependencies described above remain proof obligations; no
-unproved proposition is used as a theorem here. Every later proof and
-lower split must retain the full task exclusion set and audit its own
-mathematical and import dependencies.
+coverage or classification conclusion excluded above. The
+BZ77 proof dependencies described above are left to the proof; no
+unproved proposition is used as a theorem here. A proof must retain the
+full exclusion set and audit its own mathematical and import dependencies;
+`MirabolicDerivativeDetectionProof.md` records that audit for the Library's
+proof.
 
-Development checks `7dd06d53-2258-40ef-92ce-77fe3cd1c8a3` and
-`f0a8022d-945d-449a-bbe1-5d1f2a226cee` succeeded with zero errors or
+Development checks succeeded with zero errors or
 warnings. Inspection reports a definition returning `Prop`,
 exactly the independent universe parameters `uF` and `uV`, and only
 `propext`, `Classical.choice` and `Quot.sound`. The source's complete
@@ -177,13 +173,12 @@ the carrier `A.obj.V` and `Nat.findGreatest`, that it is equivalent via
 `(mirabolicDerivativeOfOrder T ψ N k hk).obj A`, that at `N=0` it yields
 nontriviality of `(Mirabolic.psiMinus T 0).obj A`, and that it
 instantiates at distinct universes. These development checks establish
-elaboration and proposition kind. Independent semantic acceptance and publication are still
-required; no proof of detection is supplied.
+elaboration and proposition kind; no proof of detection is supplied here.
 
 The Library already contains the proved helper
 `Langlands.Derivative.Mirabolic.subsingleton_of_psiMinus_phiMinus` in
 `Langlands.Representation.Derivative.MinusVanishing`: a smooth
 representation of `mirabolic (m+1)` whose `Ψ⁻` and `Φ⁻` carriers both
-vanish has zero carrier. This statement does not import it. A later proof
+vanish has zero carrier. This statement does not import it. A proof
 may use it only after auditing its own dependency closure against the full
 exclusion set above.

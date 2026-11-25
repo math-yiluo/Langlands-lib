@@ -128,7 +128,10 @@ check.
 
 The companion `NondegenerateTensorFunctorChecks` pair checks complete unapplied
 interfaces, independent and unequal universes, selected competing structures,
-and permitted boundary cases. This contribution proves no regular-tensor
+and permitted boundary cases. This module proves no regular-tensor
 contraction (I.2.3.3), scalar-restriction comparison, Hom-based pseudo-forgetful
 or I functor, equality of nondegenerate Hom parts, adjunction, or exactness.
-Those results and the complex coefficient bridges remain separate successors.
+Those results and the complex coefficient bridges are outside this module: the
+regular-tensor contraction is treated in `RegularTensorContraction`, the
+functors I and pseudo-F in `RenardHomFunctors`, and the adjunctions in
+`NondegenerateFInductionAdjunction` and `NondegeneratePInductionAdjunction`.

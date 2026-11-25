@@ -45,7 +45,7 @@ passes them to the line hypothesis.
 2. *Some restricted simple root exists.* `range_comp_ne_top_of_not_isIso` derives
    `range (l ≫ p) ≠ ⊤` from closedness of `p` and `¬ IsIso p`. A full-range monomorphism
    is identified with the identity through `isoOfIsRepresentedBy`. This argument is
-   adapted from Worker 1785's private `isIso_of_full_range` in
+   adapted from the private `isIso_of_full_range` in
    `MaximalLeviDynamicReduction`. `ParabolicRootPresentation.restrictedRoots_nonempty`
    then argues by contradiction. Suppose no simple relative root restricts nontrivially to
    `A`. Then the split-component cocharacter `ζ` of the presentation pairs to zero with

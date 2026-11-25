@@ -1,7 +1,5 @@
 # Lattice tori as corepresented group functors
 
-Author: Worker 1178.
-
 This internal module works with group-valued functors `F` on commutative
 `R`-algebras, corepresented by an algebra `B` (the published
 `Corepresented` interface, with the `pt`/`cls`/`comul` notation of

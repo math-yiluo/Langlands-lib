@@ -1,22 +1,22 @@
 # Global sections of Harris's étale coefficient sheaves over split torsors
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem` (`DivisibleSystem` with `tower`,
 `projection` and `epi_projection`),
 `Langlands.Cohomology.DivisibleSystem.LeftExact` (`mapLeftExact`),
 `Langlands.Cohomology.DivisibleSystem.HarrisEtale` (`EquivariantStructure`
 with `diagram` and `etaleSystem`, `harrisEquivariantStructure`,
 `harrisEtaleDivisibleSystem`, `harrisEtaleSectionsDivisibleSystem`), and
-Worker 13's `Langlands.Shimura.Coefficients.VaryingCoverLocalTrivialization`
+`Langlands.Shimura.Coefficients.VaryingCoverLocalTrivialization`
 (`etaleAssociatedTrivializationAlong`, whose forward map is
 `etaleAssociatedEvaluationAlong`, and
 `etaleAssociatedTransition_evaluationAlong`). Through their imports it uses
-Worker 13's `etaleAssociatedTransition`
+`etaleAssociatedTransition`
 (`Langlands.Shimura.Coefficients.VaryingCoverInverse`),
 `harrisEtaleSectionsSystem`
 (`Langlands.Shimura.Coefficients.HarrisEtaleCoefficients`) and
 `ModuleSheaf`, `sections` and `sectionsIso`
-(`Langlands.Geometry.EtaleDerivedSections`), and Worker 57's
+(`Langlands.Geometry.EtaleDerivedSections`), and
 `IsFiniteGeometricTorsor` (`Langlands.Shimura.Coefficients.Etale`) and
 `harrisCongruenceGroups`. From Mathlib it uses `constantSheaf`,
 `presheafToSheaf`, `sheafCompose`, `sheafComposeNatIso`,
@@ -110,13 +110,13 @@ the map of constant presheaves.
   that `M.obj.map f : M i ⟶ M j` is surjective. Then the map of sections
   over `⊤_ X.Etale` of `τ_f : F_i ⟶ F_j` is surjective.
 
-  Proof. Worker 13's `etaleAssociatedTrivializationAlong` restricts `F_i` to
+  Proof. The published `etaleAssociatedTrivializationAlong` restricts `F_i` to
   the slice site over a given `Z` and, for a map `a : Z ⟶ Y i`, identifies it
   with the restricted constant sheaf of `M i`; invertibility is proved there
   from `hY i`. Take `Z = ⊤_ X.Etale` and evaluate at the object `𝟙 Z` of the
   slice site: along `s` this gives an isomorphism
   `e_i : F_i(X) ≅ (constant M i)(X)`, and along `s ≫ Y.map f` an isomorphism
-  `e_j : F_j(X) ≅ (constant M j)(X)`. Worker 13's
+  `e_j : F_j(X) ≅ (constant M j)(X)`. The published
   `etaleAssociatedTransition_evaluationAlong` gives
   `τ_f(X) ≫ e_j = e_i ≫ (constant (M.obj.map f))(X)`. The right side is
   surjective by `surjective_constantSheaf_map_app`, so `τ_f(X)` is
@@ -180,11 +180,10 @@ needs the hypothesis `hΓ` because `Γ(X, -)` is only left exact.
 Harris makes no splitness assumption on his covers of level `K(N, m)`, and
 he does not state the surjectivity `hΓ`. The split case, the statements and
 all proofs are ours; the module is derived from the published modules named
-above and Mathlib. Worker 13 (first executor of task 23471a9e) approved this
-scope as a proved special case of `hΓ`.
+above and Mathlib.
 
 `hs` is a genuine restriction: finite geometric torsors alone do not force
-`hΓ`. Worker 13 pointed out the elementary obstruction: for `C₂` acting by
+`hΓ`. There is an elementary obstruction: for `C₂` acting by
 negation on `ℤ / 4 ⟶ ℤ / 2`, the fixed elements `{0, 2}` of `ℤ / 4` both
 reduce to `0`, while `C₂` acts trivially on `ℤ / 2`. A geometric realization
 (a remark, not formalized): `X = Spec ℝ`, the constant system of groups `C₂`

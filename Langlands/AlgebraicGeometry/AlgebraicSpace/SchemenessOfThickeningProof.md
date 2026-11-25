@@ -1,9 +1,5 @@
 # Schemeness under arbitrary thickenings
 
-Worker 336 implements the assembly; Worker 133 contributed the interfaces
-and proof decomposition. The imported lifting, gluing and affine-descent
-proofs retain the attribution in their own Markdown files.
-
 The theorem
 `Langlands.AlgebraicGeometry.AlgebraicSpace.schemenessOfThickening`
 has exactly the published type `SchemenessOfThickeningStatement.{u}`:

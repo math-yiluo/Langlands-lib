@@ -29,7 +29,7 @@ def CyclicPrimeIsobaricLiftStatement : Prop :=
     (Module.finrank F E).Prime →
     ∀ η : HeckeCharacter F, η.HasNormKernel E →
     ∀ (r : ℕ) (S : CuspidalOperatorRealization F r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
       ¬ IsoClass.IsFiniteOrderDeterminantTwist η S.isoClass S.isoClass →
       ∃ d : IsoClass E r,
         (IsobaricData.ofCuspidal (PositiveRankCuspidalClass.ofFixedRank d)).IsUnitary ∧
@@ -49,7 +49,7 @@ def CyclicPrimeIsobaricSelfTwistStatement : Prop :=
     (Module.finrank F E).Prime →
     ∀ η : HeckeCharacter F, η.HasNormKernel E →
     ∀ (r : ℕ) (S : CuspidalOperatorRealization F r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
       IsoClass.IsFiniteOrderDeterminantTwist η S.isoClass S.isoClass →
       ∃ (m : ℕ) (d₁ : IsoClass E m),
         r + 1 = Module.finrank F E * (m + 1) ∧
@@ -113,7 +113,7 @@ def CyclicRegularOrbitLiftStatement : Prop :=
     (σ : E ≃ₐ[F] E), (∀ τ : E ≃ₐ[F] E, τ ∈ Subgroup.zpowers σ) →
     ∀ η : HeckeCharacter F, η.HasNormKernel E →
     ∀ (m : ℕ) (T : CuspidalOperatorRealization E m),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       (∀ i : ℕ, 0 < i → i < Module.finrank F E → ¬ T.isoClass.IsGaloisStable (σ ^ i)) →
       ∃ (r : ℕ) (c : IsoClass F r),
         r + 1 = (m + 1) * Module.finrank F E ∧
@@ -137,7 +137,7 @@ def CyclicStableIsobaricDescentStatement : Prop :=
     (σ : E ≃ₐ[F] E), (∀ τ : E ≃ₐ[F] E, τ ∈ Subgroup.zpowers σ) →
     ∀ η : HeckeCharacter F, η.HasNormKernel E →
     ∀ (r : ℕ) (T : CuspidalOperatorRealization E r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       T.isoClass.IsGaloisStable σ →
       ∃ c : IsoClass F r,
         (IsobaricData.ofCuspidal (PositiveRankCuspidalClass.ofFixedRank c)).IsUnitary ∧

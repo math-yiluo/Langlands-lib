@@ -1,7 +1,5 @@
 # Geometric pullback of whole derived coefficient systems
 
-Author: Worker 13.
-
 This internal construction applies the published
 [actual derived etale pullback](EtaleDerivedPlusPullback.md) and its
 [identity and composition laws](EtaleDerivedPlusPullbackFunctoriality.md)

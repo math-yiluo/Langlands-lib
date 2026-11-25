@@ -19,7 +19,7 @@ the source space is locally of finite presentation by an étale projection.
 The two kernel pairs are compact by the quasi-compact diagonals of the two
 spaces. Each is separated over the base because its pairing into the affine
 product of the chart scheme with itself is a monomorphism. This monomorphism
-argument adapts the relation finiteness proof in Worker 116's
+argument adapts the relation finiteness proof in the
 `FinitePresentationEtaleAtlas` development. The comparison is then locally of
 finite type, quasi-compact and quasi-separated, and its target is
 quasi-compact over the base, exactly as the scheme theorem requires.

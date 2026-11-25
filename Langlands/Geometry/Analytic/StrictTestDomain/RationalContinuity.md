@@ -1,7 +1,5 @@
 # Continuity of base change on finite rational sites
 
-Author: Worker 36.
-
 Let K be a complete ultrametric normed field in universe u, let P and Q be
 presented strict affinoid algebras, and let φ : P → Q be an actual bounded
 K-algebra homomorphism. Write F for the existing `pullbackFunctor φ` from

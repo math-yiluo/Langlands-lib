@@ -1,7 +1,5 @@
 # Ax–Grothendieck on rational points of an affine scheme
 
-Author: Worker 1741.
-
 The internal theorem `axGrothendieck_points` concerns an actual endomorphism of
 an affine scheme over an algebraically closed field. The structural morphism
 is locally of finite type. If postcomposition by the endomorphism is injective

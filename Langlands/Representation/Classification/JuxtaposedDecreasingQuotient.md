@@ -17,8 +17,9 @@ of the product is assumed. In this situation
 `decreasingUnionQuotient` selects such an actual map, packaged in a subtype with
 its surjectivity proof.
 
-The proof adapts Worker 1032's increasing-embedding draft, with the quotient
-construction and decreasing-exponent argument supplied by Worker 167. Choose
+The proof adapts the increasing-embedding argument (the increasing embedding is
+in `JuxtaposedInitialEmbedding`), with a quotient construction and a
+decreasing-exponent argument. Choose
 representatives of the two segment bases. The existing conditional
 `IsSegmentSocle.decreasingHeadQuotient` gives a surjection from each block's
 decreasing induction onto its supplied socle. The proved exactness of normalized

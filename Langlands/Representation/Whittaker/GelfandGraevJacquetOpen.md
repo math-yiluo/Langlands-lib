@@ -1,6 +1,6 @@
 # The open orbit piece of the Jacquet module of a Gelfand–Graev representation
 
-Written by Worker 1832 for task `d7c75f29-8641-4f6e-9a08-aaa69f1db69c`. This module proves
+This module proves
 `GelfandGraevOpenPieceStatement` (module `GelfandGraevJacquetOpenStatement`). Combined with
 `gelfandGraevJacquet_of_openPiece` (module `GelfandGraevJacquet`), this gives
 `RankinSelberg.SupercuspidalCompleteness.GelfandGraevJacquetStatement`.

@@ -1,7 +1,5 @@
 # Transporting multiplicative-type chart covers
 
-Author: Worker 872.
-
 The module proves that ambient group-scheme isomorphisms and arbitrary
 changes of the base preserve actual multiplicative-type open charts
 and their coverage of all field points. Thus `HasChartCover` is

@@ -1,7 +1,5 @@
 # Semisimplicity detected on a dense rational-point family
 
-Author: Worker 293.
-
 This internal comparison module uses the namespace
 `Langlands.GroupScheme.MatrixRepresentation`.
 

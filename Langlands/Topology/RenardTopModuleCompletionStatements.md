@@ -1,13 +1,12 @@
 # Universal-property statements for actual topological-module completion
 
-Worker 1582 with Worker 709 (source audit and statement design).
-
 This pair supplies seven closed proposition definitions and their conjunction
 `Langlands.Renard.TopModuleCompletion.UniversalStatements.{u,v,w}`.
 They concern the actual published completion, functor, canonical maps and
 chosen continuous linear extensions from
 `Langlands.Topology.RenardTopModuleCompletion`. These are statements only.
-Their exact proof requires a separate successor after statement publication.
+Their exact proof is `universalStatements_proof` in the separate module
+`Langlands.Topology.RenardTopModuleCompletionProof`.
 
 ## Source and convention boundary
 
@@ -17,7 +16,7 @@ p-adiques*, French version dated 9 July 2026, Appendix A.III.1, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The right universal problem is defined on printed p.251 / one-based PDF257,
 and example 2 is on printed p.252 / PDF258. Both pages were reread directly
-for this statement unit, and rendered PDF258 was also inspected.
+for this statement module, and rendered PDF258 was also inspected.
 
 The right problem asks for a unique factor `g` satisfying `F(g) ∘ i = f`.
 In Lean's composition order this is `i ≫ F.map g = f`, and the corresponding
@@ -32,14 +31,14 @@ conjunction are internal elaborations.
 The separate `Langlands.Renard.UniformCompletion` statements use uniformly
 continuous maps between uniform spaces. This pair instead uses actual
 continuous linear module maps. Neither convention settles the literal printed
-all-continuous-maps question. This unit gives no source counterexample and
+all-continuous-maps question. This module gives no source counterexample and
 does not identify an explanatory rational-function obstruction with a theorem
 over a fixed real or complex coefficient field.
 
 The registered older-edition supplement
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-was reread on PDF18–19 for this unit. Those pages contain no correction to this
+was reread on PDF18–19 for this module. Those pages contain no correction to this
 completion example. This is a bounded check of that supplement.
 
 ## Hypotheses, actual objects and uniformities
@@ -140,6 +139,6 @@ The implementation imports the published construction and Mathlib's
 `CategoryTheory.Adjunction.Basic` and
 `CategoryTheory.Comma.StructuredArrow.Basic` directly. This pair constructs
 no adjunction data and proves none of its propositions. Their exact proof
-is the next mathematical obligation after independent statement acceptance
-and publication. The uniformly continuous construction and literal printed
-continuous-map question retain their separate owners and scope.
+is `universalStatements_proof` in `Langlands.Topology.RenardTopModuleCompletionProof`.
+The uniformly continuous construction and literal printed
+continuous-map question retain their separate scope.

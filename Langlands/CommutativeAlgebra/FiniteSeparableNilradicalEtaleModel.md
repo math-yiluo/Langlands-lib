@@ -72,7 +72,7 @@ tensor: `k` tensor `(s` tensor `a)` maps to the image in `L` of
 `(algebraMap (Base d) K s) * k`, multiplied by the original lifted
 model's generic map of `a`. This preserves the specified scalar action.
 
-This unit does not yet construct the scheme cover, its surjectivity,
+This module does not construct the scheme cover, its surjectivity,
 or the comparison with the actual generic residue field and its scheme
 triangle. Geometric-component splitting and full Stacks 0551 remain
 separate obligations.

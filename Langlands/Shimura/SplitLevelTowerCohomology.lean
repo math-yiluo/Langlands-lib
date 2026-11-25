@@ -142,7 +142,7 @@ omit [IsTopologicalGroup H] in
 theorem translate_awayCohomologyComparison_apply_of_mem [Nonempty (CompactOpenLevel H')]
     {D : CoefficientDiagram R T.op} (hD : IsLevelTrivialCoefficients D) (q : ℕ) {k : H}
     (hk : k ∈ K₀.subgroup) (x : (awayColimitCohomology e K₀ D q).V) :
-    ((colimitCohomology D q).ρ (factorHom e k)).hom
+    ((colimitCohomology D q).ρ (factorHom e k)).asHom.hom
         ((awayCohomologyComparison e K₀ D q).hom.hom x) =
       (awayCohomologyComparison e K₀ D q).hom.hom x :=
   LevelColimit.translate_awayComparison_apply_of_mem e (D.cohomology q)
@@ -194,7 +194,7 @@ theorem awayColimitCohomologyFunctor_map_comparison (D : CoefficientDiagram R T.
     ((awayColimitCohomologyFunctor e D q).map a.op).hom ≫
         (awayCohomologyComparison e K₀ D q).hom =
       (awayCohomologyComparison e K₁ D q).hom ≫
-        (colimitCohomology D q).ρ (factorHom e a.element) :=
+        ((colimitCohomology D q).ρ (factorHom e a.element)).asHom :=
   LevelColimit.awayColimitFunctor_map_comparison e (D.cohomology q) a
 
 /-- The colimit cohomology of `T` is the colimit over the levels `K₀` of `H` of the away colimit
@@ -246,8 +246,8 @@ theorem galois_awayComparison_apply (n : ℕ) (M : ModuleSheaf X R) (σ : L ≃�
     (x : ((awayGaloisCohomologyFunctor e K₀ F L s p R hT n).obj M).V.obj) :
     (LevelColimit.reindexComparison (awayOver e K₀)
         ((canonicalCoefficients R (baseChangeProjection F L s ≫ p) M).cohomology n)).hom
-        ((((awayGaloisCohomologyFunctor e K₀ F L s p R hT n).obj M).ρ σ).hom.hom x) =
-      (((galoisCohomologyFunctor F L s p R hT n).obj M).ρ σ).hom.hom
+        ((((awayGaloisCohomologyFunctor e K₀ F L s p R hT n).obj M).ρ σ).asHom.hom.hom x) =
+      (((galoisCohomologyFunctor F L s p R hT n).obj M).ρ σ).asHom.hom.hom
         ((LevelColimit.reindexComparison (awayOver e K₀)
           ((canonicalCoefficients R (baseChangeProjection F L s ≫ p) M).cohomology n)).hom x) :=
   galois_reindexComparison_apply (awayOver e K₀) F L s p R hT n M σ x

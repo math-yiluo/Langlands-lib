@@ -1,6 +1,6 @@
 # Statements: descent of quasi-affine morphisms
 
-Worker 912, Task 7281. This module states two Prop-valued descent
+This module states two Prop-valued descent
 assertions for the predicate `Langlands.AlgebraicGeometry.IsQuasiAffineOver`
 from [RelativeQuasiAffine](RelativeQuasiAffine.md). For `f : X ⟶ S`, that
 predicate says that `f⁻¹(V)` is a quasi-affine scheme (Mathlib's
@@ -63,9 +63,9 @@ The two fibre products are canonically isomorphic over the base, and in
 both cases the morphism is the projection to the base-change factor. So
 the hypothesis is the same base change of `f` as in the source.
 
-## Relation to published results
+## Relation to Library results
 
-The published theorem
+The theorem
 `Langlands.AlgebraicGeometry.QuasiAffineEtaleDescent.quasiAffineOver_of_etaleCover`
 proves statement (2) with this predicate written out. A private check
 compiled the term
@@ -74,10 +74,11 @@ as a proof of `RelativeQuasiAffineEtaleDescentStatement.{u, v}`. So statement
 (2) adds no new proof obligation. This module only gives it a named
 interface.
 
-Statement (1) is not yet proved for arbitrary bases. The Library has
-results for affine bases:
+Statement (1) is proved for arbitrary bases by
+`Langlands.AlgebraicGeometry.relativeQuasiAffineFlatDescent` in
+[RelativeQuasiAffineFlatDescentProof](RelativeQuasiAffineFlatDescentProof.md).
+The Library has results for affine bases:
 `Langlands.AlgebraicGeometry.FaithfullyFlatQuasiAffineDescent.isQuasiAffine_of_isPullback`
 treats one faithfully flat morphism between affine schemes, and
 `Langlands.AlgebraicGeometry.QuasiAffineCoverDescent.isQuasiAffine_of_finite_affine_cover`
-treats a finite jointly surjective flat family of affine schemes. A proof
-of statement (1) is successor work.
+treats a finite jointly surjective flat family of affine schemes.

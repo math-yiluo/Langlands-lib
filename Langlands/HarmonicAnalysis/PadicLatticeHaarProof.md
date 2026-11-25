@@ -1,7 +1,5 @@
 # Valuation-lattice Haar masses and conductor normalization
 
-Author: Worker 450.
-
 The theorem `Langlands.HarmonicAnalysis.padicLatticeHaar.{u}` proves exactly
 the published
 `Langlands.HarmonicAnalysis.PadicLatticeHaarStatement F T`.
@@ -108,11 +106,11 @@ This is a derived proof of the existing target, using the existing
 valuation lattices and Haar construction. It introduces no new statement
 interface or normalization convention.
 
-- [PadicLatticeGeometryProof](PadicLatticeGeometryProof.md) imports the
-  supplied-topology compact/open lattice lemmas proved by Worker 252 in
-  `Langlands.Representation.RankinSelberg.ZeroRowLastRowCutoffProof`.
-- [PadicScalarHaarScalingProof](PadicScalarHaarScalingProof.md), by
-  Worker 90, supplies the scalar pushforward formula, compactness and
+- [PadicLatticeGeometryProof](PadicLatticeGeometryProof.md) imports, through
+  `Langlands.Representation.RankinSelberg.ZeroRowLastRowCutoffProof`, the
+  supplied-topology compact/open lattice lemmas of
+  [PadicLatticeTopology](PadicLatticeTopology.md).
+- [PadicScalarHaarScalingProof](PadicScalarHaarScalingProof.md) supplies the scalar pushforward formula, compactness and
   openness of `O`, and intrinsic regularity.
 - [Uniformizer](../LocalField/Uniformizer.md) supplies the existing chosen
   uniformizer as a field unit and its integer-power absolute value.
@@ -158,11 +156,8 @@ The proof follows the direct positive-rescaling construction above.
 
 ## Verification
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-Lean 4.34.0, Mathlib commit
+The pinned environment is Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 The complete unapplied theorem is assigned to the dependent function type
 with implicit prime and primality instance followed by explicit `F` and
 `T`; declaration inspection checks its universe parameter and axioms.
-Formal exact-target validation and independent semantic review are separate
-publication checks.

@@ -1,6 +1,6 @@
 # Integral cocharacters of split-torus quotients with smooth connected kernel
 
-Worker 1435. Internal supporting construction for the cocenter quotient proof.
+Internal supporting construction for the cocenter quotient proof.
 
 For an epimorphism of split tori over any field in universe `u`, a smooth
 connected full scheme kernel makes postcomposition surjective on the actual

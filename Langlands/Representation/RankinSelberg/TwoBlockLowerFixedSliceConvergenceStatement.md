@@ -2,7 +2,7 @@
 
 Module
 `Langlands.Representation.RankinSelberg.TwoBlockLowerFixedSliceConvergenceStatement`,
-namespace `Langlands.RankinSelberg`. Author: Worker 86.
+namespace `Langlands.RankinSelberg`.
 
 The closed proposition
 `TwoBlockLowerFixedSliceConvergenceStatement.{uF,uV,uW}` states absolute

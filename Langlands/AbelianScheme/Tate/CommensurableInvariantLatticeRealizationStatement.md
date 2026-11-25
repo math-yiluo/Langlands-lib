@@ -1,7 +1,5 @@
 # Realizing commensurable monodromy-invariant full Tate lattices
 
-Author: Worker 1701.
-
 `Langlands.AbelianScheme.Tate.CommensurableInvariantLatticeRealizationStatement`
 is a universe-polymorphic proposition target. It says the following. Take an
 actual abelian scheme `A` over a connected locally noetherian base that
@@ -109,8 +107,7 @@ in the same form, with the point of `S` named `t` instead of `s`. The statement
 does not replace it by a given quotient, a given isogenous model or a global
 projective embedding. Showing that it holds for the abelian schemes of the
 eventual consumer (see Provenance) is the consumer's obligation. It is not
-part of this statement or its later proof. Generic work on this condition
-belongs to the proper-fibre geometry task `30938d34`.
+part of this statement or its proof.
 
 The statement does not take as inputs:
 
@@ -128,10 +125,9 @@ published monodromy and module interfaces, which take them as arguments. Both
 propositions `htor` and `h` already have published proofs,
 `Langlands.AbelianScheme.torsionFiniteEtale` and
 `Langlands.Global.rationalProfiniteIntegerAdeleComparison`, so these two inputs
-can always be supplied. They are quantified rather than fixed because the task
-contract asks for that. With `hu`, the `CharZero Ω`
+can always be supplied. They are quantified rather than fixed. With `hu`, the `CharZero Ω`
 instance is redundant, since `s` makes every positive integer a unit in `Ω`.
-It is kept because the task contract asks for it.
+It is kept nonetheless.
 
 ## Relation to existing declarations
 
@@ -152,38 +148,36 @@ It is kept because the task contract asks for it.
   a characteristic-zero field structure map and a finite integer basis. It
   does not make a chosen full integral Tate image equal a given `L`.
 - `Langlands.AbelianScheme.Tate.ConnectedIntegralLatticeReflectionStatement`
-  is a different, unproved target with proof task `79e5606f`. It starts from
+  is a different target, proved as `connectedIntegralLatticeReflection` in
+  `Langlands.AbelianScheme.Tate.ConnectedIntegralLatticeReflectionProof`. It starts from
   two given actual abelian schemes and a given rational isomorphism that
   preserves both full integral Tate images, and asks for an actual isomorphism.
   It produces no isogenous model. This statement neither assumes nor
   duplicates it.
-- The consumer's `HarrisIntegralLevelLattice` development (candidate
-  `53ef4c4a`, not imported here) builds monodromy-invariant lattices and their
+- The consumer's `HarrisIntegralLevelLattice` development (module
+  `Langlands.Shimura.PEL.HarrisIntegralLevelLattice`, not imported here) builds monodromy-invariant lattices and their
   integral order actions. It realizes no lattice by an abelian scheme.
 
 ## Provenance
 
 This is an internal target, derived from the exact need of a consumer. It is
 not a translation of a located source theorem, and no external source is
-cited. Worker 344 asked for it as a generic prerequisite of the division CM
-representability task `6eac742d` (revision 1). That task keeps the Harris
+cited. It is a generic prerequisite of the division-case representability of
+the normalized Harris CM presheaf. That result also needs the Harris
 specialization, the integral order and polarization descent, the determinant
 condition, the comparison of normalized moduli and the representing scheme
 with its properties. This proposition establishes none of them. The consumer
 must also supply the integer bound `n` and the fibre-affineness condition.
 
-Worker 142 reported that the generic Tate task `74795b53` has no overlapping
-realization theorem reserved or in progress. A task search for "Tate lattice
-realization" and "commensurable" found no matches. These are ownership and
-search findings, not mathematical claims.
-
-The hypotheses and conclusion are the ones fixed by the task contract: the
+The statement fixes these hypotheses and this conclusion: the
 single geometric point, the full index predicate, the actual monodromy, the
 one-bound commensurability and the direction of `e` from `B` to `A`.
 
-## Outstanding proof obligations
+## A proof route
 
-The proposition is not proved. One expected route, with `N = n²` and
+The proposition is proved by `commensurableInvariantLatticeRealization` in
+`Langlands.AbelianScheme.Tate.CommensurableInvariantLatticeRealizationProof`,
+whose page describes the implemented proof. One route, with `N = n²` and
 `M = n · L`, is:
 
 1. **Lattice to torsion subgroup.** By the two bounds, `N · im(TA) ⊆ M ⊆ im(TA)`,
@@ -194,9 +188,9 @@ The proposition is not proved. One expected route, with `N = n²` and
 2. **Subgroup realization.** By `htor` and `hu`, `A[N]` is finite étale over
    the connected base `S`. Show that a monodromy-stable subgroup of its
    geometric fibre is the fibre of a unique open and closed finite étale
-   subgroup scheme. This gives an actual `K : FiniteEtaleSubgroup A`. This
-   correspondence between stable subsets and open and closed subschemes is not
-   published for these carriers.
+   subgroup scheme. This gives an actual `K : FiniteEtaleSubgroup A`. The
+   Library's realization of stable subgroups by finite étale subgroup schemes is
+   `Langlands.AlgebraicGeometry.FiniteEtale.invariantSubgroupRealization`.
 3. **Quotient.** Apply `nonempty_quotientData_of_forall_finset_fibre` with the
    fibre-affineness condition to get `B` and `q : A ⟶ B` with scheme kernel
    `K`.
@@ -209,17 +203,17 @@ The proposition is not proved. One expected route, with `N = n²` and
 5. **Tate-image comparison.** Show that the rational map of `q` sends
    `n⁻¹ · L` onto `im(TB)`. This uses that `q` is finite étale surjective, that
    `Ω` is algebraically closed so `Ω`-points of `B` above `s` lift along `q`,
-   and the kernel square. Applying `e.hom` then gives exactly `L`. The task
-   contract names Worker 1584's narrow full-index evaluation-surjectivity
-   helper in the connected-reflection proof task as distinct work, not to be
-   duplicated.
+   and the kernel square. Applying `e.hom` then gives exactly `L`. A narrow
+   full-index evaluation-surjectivity helper is `full_evaluation_surjective_at`
+   (module `Langlands.AbelianScheme.Tate.IntegralReflectionAlgebra`), used by the
+   connected-reflection proof.
 
-Steps 1, 2 and 5 need facts that are not published for these carriers. The
+Steps 1, 2 and 5 need facts beyond the inputs of the statement. The
 statement assumes none of them. A proof has to establish them or get around
 them. This description explains the intended scope. It is not a Lean proof.
 
 ## Formal status
 
 The declaration is a `Prop`-valued `def`, not a theorem or an axiom. Its proof
-is a separate task, to be started after this exact statement has been
-independently accepted and published.
+is in a separate module: `commensurableInvariantLatticeRealization` in
+`Langlands.AbelianScheme.Tate.CommensurableInvariantLatticeRealizationProof`.

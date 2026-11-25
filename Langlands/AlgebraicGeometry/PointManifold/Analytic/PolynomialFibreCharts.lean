@@ -54,7 +54,7 @@ theorem hasFDerivAt_polynomialCoordinateMap
 theorem contDiff_polynomialCoordinateMap
     (p : σ → MvPolynomial (τ ⊕ σ) k) (n : WithTop ℕ∞) :
     ContDiff k n (polynomialCoordinateMap p) := by
-  exact (contDiff_pi.mpr (fun i => contDiff_apply k k (.inl i))).prodMk
+  exact (contDiff_pi.mpr (fun i => contDiff_apply k (fun _ => k) (.inl i))).prodMk
     (contDiff_pi.mpr (fun j => contDiff_polynomial_eval (p j) n))
 
 theorem polynomialCoordinateDerivative_bijective

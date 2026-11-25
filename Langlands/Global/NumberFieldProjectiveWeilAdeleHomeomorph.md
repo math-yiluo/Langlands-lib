@@ -17,7 +17,7 @@ finite sets of lower and upper finite places, respectively. Take
 This is actual constructed arithmetic and geometric data: its exceptional
 set E contains S, its full upper preimage E' contains T, and its upper
 model Y over B = O(L,E') has the specified generic fiber X and the
-specified projective immersion. The published constructor
+specified projective immersion. The existing constructor
 `numberFieldExtensionProjectiveModel` supplies M whenever X is
 quasi-compact. Thus this parameter does not assume an adelic comparison.
 All infinite factors are present in every adelic ring and every level.
@@ -72,10 +72,11 @@ equalities to the continuity assertions. It keeps the same underlying
 equivalence. Accordingly `adelicPointHomeomorphOfSpreads_apply` proves
 pointwise equality with `adelicPointHomeomorph` by reflexivity.
 
-This unit completes this topological assembly for number fields and the
+This module completes this topological assembly for number fields and the
 stated actual projective models. Identification of the resulting map
 with evaluation of the original field Weil counit along the literal
-full-adele inclusion remains a separate host obligation; the stage
+full-adele inclusion is proved in `NumberFieldProjectiveWeilAdeleEvaluation`
+(`adelicPointHomeomorph_eq_evaluation`); the stage
 formula here records its precise original arithmetic maps. The
 function-field analogue and the other assertions of the five-section
-paper also remain separate obligations.
+paper are not treated here.

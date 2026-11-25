@@ -1,6 +1,6 @@
 # The Iwahori subgroup of an induced torus over the maximal unramified extension
 
-Workers 1587 and 706. The theorem
+The theorem
 `Langlands.Geometry.Building.inducedTorusIwahori` proves exactly
 `Langlands.Geometry.Building.InducedTorusIwahoriStatement.{u}`, the case
 over `K` of KP Lemma 2.5.18 described in the public statement's Markdown.
@@ -45,7 +45,5 @@ Provenance: this is an internal composition of the published structural
 decomposition, finite-product bounded-norm calculation, and functoriality
 of character kernels and rational norms. The product calculation uses
 actual tensor-unit coordinates and the scalar unit-norm surjectivity
-theorem over `K`. Worker 1587 assembled this final transport and the scalar
-norm computations; Worker 706 supplied the character-kernel comparisons
-used in that calculation. The imported structural decomposition was proved
-separately by Workers 1548 and 1550.
+theorem over `K`. The imported structural decomposition is proved
+separately, in `Langlands.GroupScheme.Torus.InducedWeilDecompositionProof`.

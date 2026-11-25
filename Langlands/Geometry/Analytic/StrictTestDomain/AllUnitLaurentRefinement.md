@@ -1,7 +1,5 @@
 # All-unit standard covers and Laurent refinement
 
-Author: Worker 105.
-
 This module constructs a finite Laurent refinement of the standard rational
 cover associated with a finite tuple of units. All declarations are in
 `Langlands.Analytic.StrictTestDomain.RationalData`. The scalar field `K : Type u`

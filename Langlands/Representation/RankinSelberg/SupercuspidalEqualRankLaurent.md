@@ -1,13 +1,13 @@
 # Supercuspidal regularity and the central denominator bound
 
-This internal derived unit works with the canonical topology of the supplied
+This internal module, with derived provenance, works with the canonical topology of the supplied
 p-adic field and arbitrary quotient measure. It explicitly assumes the full
 `SupercuspidalKirillovStatement` and the actual equal-rank analytic conclusion.
 The denominator bound additionally assumes that the second representation σ
 is irreducible and admissible, that the quotient measure is invariant, and
 that P is a supplied normalized generator of the actual equal-rank rational
 values. Laurent regularity for tests vanishing at zero does not require
-these two representation-theoretic hypotheses on σ. This unit does not
+these two representation-theoretic hypotheses on σ. This module does not
 assert the Kirillov statement or the final equal-rank L-factor formula.
 
 For an irreducible supercuspidal representation and a nonzero standard
@@ -33,7 +33,8 @@ general central denominator bound gives a
 nonzero scalar c for which the normalized denominator P divides
 X^(n+1) - c. This binomial is separable over the complex numbers; consequently
 P is separable and squarefree as well. Identifying its roots with the
-contragredient twist parameters remains a separate obligation.
+contragredient twist parameters is not part of this module;
+`supercuspidalEqualRankLFactor` in `SupercuspidalEqualRankLFactorProof` does it.
 
-Integration uses module-specific names for local instances. Their types, values,
+Local instances have module-specific names. Their types, values,
 and local instance scopes are unchanged.

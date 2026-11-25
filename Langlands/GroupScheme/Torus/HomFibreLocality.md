@@ -63,4 +63,6 @@ For the supplied relative-Borel Weil-presentation problem, this result
 provides the locality step once an actual residue-fibre permutation is
 known. It does not construct quotient charts, prove their residue-fibre
 comparison, assemble an etale permutation atlas, or prove effective
-descent. Those remain separate obligations of the host task.
+descent. Those are separate steps toward
+`RelativeBorelAdjointTorusWeilPresentationStatement`, the statement this
+module serves.

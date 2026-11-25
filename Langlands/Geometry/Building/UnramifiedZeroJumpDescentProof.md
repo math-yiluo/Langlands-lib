@@ -59,7 +59,7 @@ the torus restriction `ψ x` (module `TorusRestrictedRootJump`). It checks (H1)�
 
 ## Supporting modules
 
-These modules are new and are integrated with this proof:
+The proof uses these modules:
 
 * `Langlands/Geometry/Building/TorusRestrictedRootJump`: a jump of `χ` gives a jump of `α_K`
   for the torus restriction.
@@ -69,12 +69,12 @@ These modules are new and are integrated with this proof:
   `unramifiedZeroJumpDescent_of_galoisDescent`.
 * `Langlands/Geometry/Building/UnramifiedFixedPointRootDescent`: Galois-fixed root-group points
   over `F^ur` descend to `F`, and unit torus points with prescribed character values.
-* `Langlands/Geometry/Building/RootGroupLinearization` (Worker 47): the definition of the
+* `Langlands/Geometry/Building/RootGroupLinearization`: the definition of the
   linearization hypothesis.
 * `Langlands/Geometry/Building/RootGroupLinearizationProof`: `rootGroupLinearization`.
-* `Langlands/GroupScheme/FilteredTraceDescent` (Worker 47): the abstract trace descent of
+* `Langlands/GroupScheme/FilteredTraceDescent`: the abstract trace descent of
   filtration jumps.
-* `Langlands/Geometry/Building/UnramifiedZeroJumpGaloisDescent` (Worker 47):
+* `Langlands/Geometry/Building/UnramifiedZeroJumpGaloisDescent`:
   `MaximalUnramified.isRootFiltrationJump_fieldRestrict_of_linearization`.
 
 Each module's Markdown explains its proofs.

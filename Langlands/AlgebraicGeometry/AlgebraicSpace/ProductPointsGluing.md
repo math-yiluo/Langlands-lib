@@ -1,7 +1,5 @@
 # Descending points of algebraic spaces along products of finite free extensions
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's Proposition 5.2,
 `Langlands.Global.AdelicSpaceLevelPointsStatement`. It contains no statement from the
 literature. It is the descent step of Conrad's proof (printed p.14).

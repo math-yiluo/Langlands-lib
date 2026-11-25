@@ -1,7 +1,5 @@
 # Isomorphisms and products of presheaf point spaces
 
-Author: Worker 107.
-
 These internal constructions follow from the quotient definition of points, the final
 étale-chart topology and the representing-scheme comparison.
 

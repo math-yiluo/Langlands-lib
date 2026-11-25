@@ -1,7 +1,5 @@
 # Ground-field norm-one lattice vanishing
 
-Workers 1107 and 1337. The Lean argument is reused from Worker 1107's shared draft.
-
 This proof establishes the published proposition
 `Langlands.GroupScheme.WeilGm.normOneRationalLatticesStatement k K`
 in every universe `u`. The provenance is internal: the argument

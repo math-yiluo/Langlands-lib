@@ -83,9 +83,15 @@ def torusTransportRootDatum :
 theorem torusTransportRootDatum_reflection (j : J) (χ : characterLattice T) :
     (torusTransportRootDatum e P).reflection j (characterLattice.congr e χ) =
       characterLattice.congr e (P.reflection j χ) := by
+  have hsub : ∀ y z : characterLattice T, characterLattice.congr e (y - z) =
+      characterLattice.congr e y - characterLattice.congr e z := fun y z =>
+    (characterLattice.congr e).toAddMonoidHom.map_sub y z
+  have hzsmul : ∀ (n : ℤ) (y : characterLattice T), characterLattice.congr e (n • y) =
+      n • characterLattice.congr e y := fun n y =>
+    (characterLattice.congr e).toAddMonoidHom.map_zsmul n y
   simp only [RootPairing.reflection_apply, RootPairing.coroot', LinearMap.flip_apply,
     torusTransportRootDatum_root, torusTransportRootDatum_coroot,
-    torusTransportRootDatum_pairing, map_sub, map_zsmul]
+    torusTransportRootDatum_pairing, hsub, hzsmul]
 
 variable {P} {G H : GroupScheme (Spec (CommRingCat.of k))}
     [IsAffineHom G.X.hom] [IsAffineHom H.X.hom]

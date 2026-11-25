@@ -392,6 +392,8 @@ theorem range_enum {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.
     (ha : ∀ n m : ℕ, n • a = m • a → n = m) :
     Set.range F.enum = RelativeRoot.semigroupIndivisibleRoots j
       (RelativeRoot.characterSemigroupPreimage f (RelativeRoot.cyclicTail a 1)) := by
+  have : HasUniqueDiv (characterLattice T) := ⟨fun _ hn a b hab =>
+    eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   ext χ
   constructor
   · rintro ⟨k', rfl⟩
@@ -720,6 +722,8 @@ theorem PieceFamily.nonempty_of_partners [Finite J] [P.IsReduced]
     (hdec : ∀ i : J, f ≫ P.root i = (2 : ℤ) • a →
       ∃ i' i'', f ≫ P.root i' = a ∧ f ≫ P.root i'' = a ∧ P.root i = P.root i' + P.root i'') :
     Nonempty (PieceFamily f P a) := by
+  have : HasUniqueDiv (characterLattice T) := ⟨fun _ hn a b hab =>
+    eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   classical
   have hred : ∀ i : J, P.root i + P.root i ∉ Set.range P.root := fun i h => by
     rw [← two_nsmul] at h

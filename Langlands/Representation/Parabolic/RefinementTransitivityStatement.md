@@ -1,7 +1,5 @@
 # Natural normalized transitivity for actual block refinements
 
-Author: Worker 8.
-
 Let `F` be a finite extension of `Q_p`, with compatible topological data
 `T`, let `B` be an ordered positive block shape of rank `n`, and let `S`
 refine each block of `B`. Write `G = GL_n(F)`, `M = B.Levi F.Carrier`,

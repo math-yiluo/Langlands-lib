@@ -1,7 +1,5 @@
 # An affine fppf chart of a group of multiplicative type
 
-Author: Worker 743 (Task 6941, `cb433511-4d2d-4361-b34b-2a0eff7b495e`).
-
 This helper module serves the proof of
 `Langlands.GroupScheme.MultiplicativeTypeQuasiIsotrivialStatement` (Conrad, *Reductive group
 schemes* (2014), Proposition B.3.4, pp.290–292). It begins that proof by working locally on

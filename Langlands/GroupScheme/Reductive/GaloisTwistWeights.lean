@@ -166,6 +166,7 @@ theorem characterSpace_restrict_eq_of_universalMatrix_eq [IsAffineHom G.X.hom]
   let A := CharacterUnits.Coord H'
   let : Algebra k A := Algebra.compHom A (algebraMap k K)
   have : IsScalarTower k K A := IsScalarTower.of_algebraMap_eq' rfl
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   have hu : ∀ ρ : MatrixRepresentation ((GroupScheme.baseChange (algebraBaseMap k K)).obj G) n,
       (ρ.restrict F).universalCharacterMatrix = (universalMatrix ρ).map
         (universalEval (A := A) (CharacterUnits.universalPoint H' ≫ F.hom.hom)) := by

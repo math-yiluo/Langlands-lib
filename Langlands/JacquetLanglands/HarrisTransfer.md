@@ -1,7 +1,5 @@
 # Harris's transfer `JL(π_f)` from `GJ` to `GG`
 
-Author: Worker 5443.
-
 This pair defines the relation "`ρ'` is `JL(ρ)`" between representations of
 the finite adelic points of Harris's two unitary similitude groups `GJ` and
 `GG`. It specializes the generic away-transfer relation
@@ -216,19 +214,18 @@ ends in `Prop` (validation below).
 - **Local constituents away from `v`.** As in `AwayTransfer.md`, the places
   other than `v` are grouped into `HarrisAwayComplement`; the Library has no
   restricted-product decomposition of `GJ(A_f^p)`, so the placewise reading of
-  Harris's condition (via Flath's theorem) remains a later obligation.
+  Harris's condition (via Flath's theorem) is not part of this relation.
 
 ## Dependencies and validation
 
 Imports: `Langlands.Global.CompletionPadic`,
 `Langlands.JacquetLanglands.AwayTransfer`,
 `Langlands.JacquetLanglands.HarrisAwaySplitting`,
-`Langlands.JacquetLanglands.Relation` (all published). Environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`).
+`Langlands.JacquetLanglands.Relation` (all published). Lean 4.34.0, Mathlib
+commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-`lean_check` of the module in place, with declaration
-`Langlands.JacquetLanglands.IsHarrisJacquetLanglandsTransfer` (record
-`056e0d03-dc12-418d-b1f2-eec036376ab6`): 0 errors, 0 warnings. The inspection
+Check of the module in place, with declaration
+`Langlands.JacquetLanglands.IsHarrisJacquetLanglandsTransfer`: 0 errors,
+0 warnings. The inspection
 reports a definition with `statement_returns_prop: true`, level parameters
 `u v w z z' uV`, and axioms `propext`, `Classical.choice`, `Quot.sound` only.

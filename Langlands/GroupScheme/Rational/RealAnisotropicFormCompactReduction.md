@@ -1,7 +1,5 @@
 # Reduction of the real anisotropic-form theorem to compact forms
 
-Author: Worker 263.
-
 `Langlands.GroupScheme.RealCompactFormInputs : Prop` is the conjunction of
 the following three statements:
 

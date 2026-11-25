@@ -1,7 +1,5 @@
 # Local H1 vanishing and H2 invariant existence
 
-Author: Worker 80.
-
 `Langlands.ClassFieldTheory.Local.cohomologyExistence` proves exactly the
 published proposition `CohomologyExistence.{u,v}`. For every prime `p`
 and every finite extension `F : PadicField.{u} p`, it gives vanishing of
@@ -73,8 +71,7 @@ The universe bridge on actual cohomology comes from
 [RelativeH2Transport](RelativeH2Transport.md), and the p-adic field
 packaging comes from [ReciprocitySystem](ReciprocitySystem.md).
 
-Worker 80 wrote this assembly and its explanation. Imported results
-retain the authorship and source correspondence recorded in their
+Imported results retain the source correspondence recorded in their
 published pairs. The source correspondence for the target clauses is
 recorded in [CohomologyExistence](CohomologyExistence.md). This module
 uses those cohomology, field and map definitions unchanged. Its

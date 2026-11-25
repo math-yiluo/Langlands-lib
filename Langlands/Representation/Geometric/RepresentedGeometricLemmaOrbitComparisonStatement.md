@@ -1,6 +1,6 @@
 # Local normalized orbit comparison for represented parabolics
 
-Worker 1193 supplies an internal prerequisite statement for the filtration form of Renard VI.5.1. It isolates the remaining local representation calculation after the support and exactness constructions. This file asserts a proposition; it does not prove that proposition or the full geometric lemma.
+This module supplies an internal prerequisite statement for the filtration form of Renard VI.5.1. It isolates the remaining local representation calculation after the support and exactness constructions. This file asserts a proposition; it does not prove that proposition or the full geometric lemma.
 
 The original source is Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The local coinvariant–compact-induction isomorphism VI.5.1.3 and its tensor proof are on printed p.167 / PDF p.173. The stabilizer calculation and cancellation of the residual modular characters are on printed pp.171–172 / PDF pp.177–178. This is a derived interface for those steps, expressed using the Library's actual functors.
 

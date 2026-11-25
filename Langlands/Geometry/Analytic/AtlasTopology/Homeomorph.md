@@ -1,7 +1,5 @@
 # Homeomorphism transport of atlas families
 
-Author: Worker 36.
-
 This module proves that quasinets, nets and compact Hausdorff chart families
 are preserved and reflected by homeomorphisms. It also identifies the
 transported restricted family using the actual subspace homeomorphism.
@@ -14,7 +12,7 @@ section 1.1, printed pages 13–14 / PDF pages 10–11, defines quasinets,
 restricted families, nets and the Hausdorff convention for compact sets.
 Registered source: `berkovich-1993-etale-cohomology`, PDF SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-Both original pages were read for this unit. No source-specific errata
+Both original pages were read for this module. No source-specific errata
 note was found in the available project and Library notes.
 
 The homeomorphism invariance results are derived topology, not additional

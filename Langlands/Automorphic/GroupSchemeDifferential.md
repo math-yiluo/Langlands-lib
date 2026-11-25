@@ -62,7 +62,7 @@ constant relative dimension `hG.smoothDimension_spec`; no additional chosen
 analytic smoothness premise is imposed. The surrounding affine instance is
 retained as in the general construction.
 
-This unit constructs first-order differentiation on the infinite adelic smooth
+This module constructs first-order differentiation on the infinite adelic smooth
 functions. It does not assert a Lie-bracket or universal-enveloping-algebra
 extension, an exponential-curve comparison, derivative growth estimates, or
 differentiation of adelic rational-invariant functions across finite slices.

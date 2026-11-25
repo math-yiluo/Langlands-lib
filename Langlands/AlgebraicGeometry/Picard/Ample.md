@@ -48,7 +48,9 @@ beyond it:
   section has nonzero value in its residue-field fibre.
 
 These comparison statements are published in `Modules.SectionResidueStatements`.
-Their proof is the separate task `2a0d3205-e7bb-4eed-88e5-757a42ca17ad`. They
+They are proved in the separate module `Modules.SectionResidueComparison`, as
+`Langlands.SchemeModule.lineBundleSectionResidueComparison` and
+`Langlands.SchemeModule.lineBundleResidueOpenComparison`. They
 are never assumed here; they appear only as hypotheses.
 
 ## Line-bundle definitions
@@ -100,7 +102,8 @@ second is `hpow : ∀ n, IsLocallyFreeRankOne (tensorPow L.obj n)`. Under them,
 `s : L.powSections n` such that `x ∈ nonvanishingLocus (tensorPow L.obj n) s`,
 and some open `U` with underlying set equal to that nonvanishing locus is
 affine. Rank one of the tensor powers is not proved here. Its statement is the
-separate task `356f47c9-c78c-4158-8e79-f9d86f9debee`.
+separate `Langlands.AlgebraicGeometry.Picard.TensorPowLocallyFreeRankOneStatement`, proved in
+the Library as `tensorPow_isLocallyFreeRankOne` (module `Picard.TensorRankOneProof`).
 
 ## Original sources
 

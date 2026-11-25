@@ -49,7 +49,7 @@ relative-component inclusion therefore identifies that section subgroup with
 `A.integralImages = D.neutral.integralPoints`.
 
 No index in all of `G(K)` is assumed. No topology is substituted for the
-actual congruence kernel. This unit does not construct torus or root models,
+actual congruence kernel. This module does not construct torus or root models,
 extend generic homomorphisms, establish connected generation, or prove that
 the generated subgroup equals the intersection of a building fixer with the
 zero subgroup. Those remain separate obligations of the unramified

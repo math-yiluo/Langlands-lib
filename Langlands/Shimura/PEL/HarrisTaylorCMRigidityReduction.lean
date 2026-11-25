@@ -87,7 +87,7 @@ def CMCoarseLevelFiniteOrder (U : HarrisLevel D) : Prop :=
       (he : PolarizedWeilLevel.Multiple preservation composition unitCoherence
         associativity comparison symmetry stability square universality additivity X X q e),
       transport X X ((indexFunctor).obj U) q e he a = a →
-        (let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+        (let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
          IsOfFinOrder f)
 
 /-- The coarse finite-order condition at every admitted algebraically closed

@@ -21,11 +21,11 @@ theorem eventuallyEquivariant_of_mono [Mono L.obj.hom] (hS : S.IsLiftSystem) :
     L.EventuallyEquivariant S := by
   intro V H a ha k
   refine ⟨H, le_rfl, fun h _ => ?_⟩
-  have ht : Hom.twist ((a h).unop ≫ (ι P ρ).map k) =
-      Hom.twist ((ι P ρ).map k ≫ (L.action (h : G)).unop) := by
+  have ht : Hom.twist ((a h).unop.asHom ≫ (ι P ρ).map k) =
+      Hom.twist ((ι P ρ).map k ≫ (L.action (h : G)).unop.asHom) := by
     simp only [comp_twist, homMk_twist, hS V H a ha h, L.twist, one_mul, mul_one]
   apply hom_ext ht
   apply (cancel_mono L.obj.hom).1
-  exact (Hom.w _).trans ((congrArg (fun g => V.hom ≫ (ρ g).hom) ht).trans (Hom.w _).symm)
+  exact (Hom.w _).trans ((congrArg (fun g => V.hom ≫ (ρ g).asIso.hom) ht).trans (Hom.w _).symm)
 
 end Langlands.Sheaf.Equivariant.TwistedOver.GlobalLift

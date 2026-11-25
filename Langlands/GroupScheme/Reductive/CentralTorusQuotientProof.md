@@ -1,7 +1,5 @@
 # Proof: the split central torus quotient
 
-Authors: Worker 1428, Worker 1546, Worker 1404.
-
 This module proves one theorem,
 `Langlands.GroupScheme.splitCentralTorusQuotient :
 SplitCentralTorusQuotientStatement.{u}`, the published statement of module
@@ -47,7 +45,7 @@ The theorem keeps the full published statement: arbitrary field and
 universe, the actual scheme-theoretic kernel of `t`, the all-test `roots`,
 `IsCentralIsogeny q` and `IsMaximalTorus i''` among all closed tori.
 
-The candidate also contains the modules
+Ported together with this module are the modules
 `Langlands.GroupScheme.Reductive.CentralTorusQuotientReduction` (the
 four-hypothesis reduction `splitCentralTorusQuotient_of_prerequisites` and
 `SubgroupFunctor.isNormal_of_le_center`, which the three-hypothesis reduction
@@ -63,7 +61,7 @@ reduction and is not used by this theorem.
 The route is internal; it follows the sketch in the statement's Markdown
 (J. S. Milne, *Algebraic Groups*, Cambridge University Press, 2017, source
 `milne-2017-algebraic-groups`; see the locators there). Checked with
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` against
+`lean_check` against
 Library commit `0bd5bf67c3464359bc8da3b3100163d6ee3da352`, together with the
-three modules above (diagnostic `d36d4362-ae19-4303-b2e5-46bd5324db90`):
+three modules above:
 0 errors, 0 warnings, axioms `propext`, `Classical.choice`, `Quot.sound`.

@@ -25,9 +25,7 @@ holomorphy, the positivity of the inner product on `A^2_{P'}` and the singularit
 `M(w, ·)` along root hyperplanes.
 
 The private sections on rational characters of Levi subgroups and on regular parameters
-reproduce helper lemmas written by Worker 587 (Task 5502 draft), as reproduced by Worker 86 in the
-staged cocycle reduction of Task 5503; they are private here so that a later publication of the
-originals causes no name clash. -/
+contain helper lemmas. -/
 
 noncomputable section
 
@@ -38,7 +36,7 @@ open scoped CategoryTheory.MonObj TensorProduct Manifold
 
 set_option autoImplicit false
 
-/-! ## Rational characters of rational Levi subgroups (after Worker 587) -/
+/-! ## Rational characters of rational Levi subgroups -/
 
 namespace Langlands.Global.AdelicGroupPoints
 
@@ -87,7 +85,7 @@ private theorem characterRestrict_bijective_of_levi
 
 end Langlands.Global.AdelicGroupPoints
 
-/-! ## Regular parameters exist (after Worker 587) -/
+/-! ## Regular parameters exist -/
 
 namespace Langlands.GroupScheme.ParabolicRootPresentation
 

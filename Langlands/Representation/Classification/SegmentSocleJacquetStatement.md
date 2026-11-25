@@ -1,12 +1,10 @@
 # Two-block Jacquet modules of segment socles
 
-Author: Worker 756.
-
 `Langlands.Classification.SegmentSocleJacquetFormula.{uF,uV} F T` is a proposition
 definition. It states Zelevinsky 1980, Proposition 3.4 (printed pp.181–182, PDF pages
 18–19, zero-based indices 17–18, of the registered source
 `zelevinsky-1980-induced-ii`) for the unique irreducible subrepresentation of the
-increasing segment induction. **This contribution does not prove the formula.** It
+increasing segment induction. **This module does not prove the formula.** It
 states the formula and adds a few elementary helper constructions.
 
 ## The statement
@@ -47,7 +45,7 @@ defined here and no isomorphism is taken as structure data.
 ## Lean helpers
 
 The file imports `SegmentHeadJacquetStatement`, which publishes the helpers of the
-head-side analogue (Zelevinsky 9.5, task 262f1d44-0ca4-44b0-a7ca-8801d8831522).
+head-side analogue (Zelevinsky 9.5).
 They are reused rather than duplicated:
 
 - `GeneralLinear.BlockShape.ofPair a b ha hb h` is the block shape of `GL_n` with
@@ -152,12 +150,12 @@ assumption occurs.
   `c(⟨Δ⟩) = ⟨∅⟩ ⊗ ⟨Δ⟩ + ρ ⊗ ⟨[νρ, ρ']⟩ + … + ⟨Δ⟩ ⊗ ⟨∅⟩` (see 1.7) also contains
   the endpoint terms `⟨∅⟩ ⊗ ⟨Δ⟩` and `⟨Δ⟩ ⊗ ⟨∅⟩`, for `l = 0` and `l = n`. Those
   are the trivial identity cases, with an empty segment and a block `GL_0`. They are
-  outside this unit. `Segment` requires positive length and `BlockShape` requires
+  outside this statement. `Segment` requires positive length and `BlockShape` requires
   positive block sizes, so no empty segment or zero-rank block appears.
 - **Length one.** If `m = 1` then every proper `l` satisfies `0 < l < r`, so
   `r ∤ l`. The vanishing clause asserts that all proper Jacquet modules vanish, and
   the formula clause is vacuous because no `q` satisfies `0 < q < 1`.
-- No derivative, genericity or exponent conclusion is part of this unit. Theorem 3.5
+- No derivative, genericity or exponent conclusion is part of this statement. Theorem 3.5
   (derivatives of `⟨Δ⟩`) is not stated here.
 
 ## Unproved formula

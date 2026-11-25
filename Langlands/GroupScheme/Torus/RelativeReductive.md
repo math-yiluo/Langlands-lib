@@ -11,9 +11,10 @@ No field, connected-base or global splitting hypothesis is added.
 This is an internal consequence of the existing split-torus geometry,
 faithfully flat descent, the comparison between relative and field tori, and
 connected reductivity of a field torus. It is a prerequisite for applying the
-fibrewise central-isogeny criterion to a product with a central torus in
-Task 6385. It does not establish central-torus existence or the multiplication
-isogeny in that task.
+fibrewise central-isogeny criterion to a product with a central torus, in
+the proof of the central isogenies `Z × D(G) → G` and `G → G/D(G) × G/Z` for
+reductive group schemes. It does not establish central-torus existence or the
+multiplication isogeny.
 
 The implemented proof has three parts.
 

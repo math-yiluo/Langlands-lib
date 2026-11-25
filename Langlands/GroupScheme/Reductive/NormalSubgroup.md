@@ -1,6 +1,6 @@
 # Reductivity of smooth connected normal closed subgroups
 
-Worker 1372. Internal consequence of ambient normality of the radical,
+Internal consequence of ambient normality of the radical,
 radical existence, monomorphism cancellation and geometric connectedness
 under field extension.
 

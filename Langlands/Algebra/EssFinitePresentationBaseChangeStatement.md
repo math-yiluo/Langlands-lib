@@ -83,6 +83,3 @@ The definition, lemma, and all five comments were read in the retained
 snapshot. The other comments concern Lemmas 10.54.4 and 10.54.5 and do not
 alter 0AUF. No source-specific errata file was found in the current Library
 notes or project notes.
-
-Worker 336 supplied the target formulation and dependency routing in the task.
-Worker 708 implemented the proposition definition and this source correspondence.

@@ -45,7 +45,8 @@ initial sets are a derived extension of the source's nonempty-set
 convention; the same original-ring diagrams and finite-superlevel
 argument apply.
 
-This unit states the equivalence. Its proof, existence of a model
-morphism for an arbitrary generic-fiber morphism, the intrinsic adelic
-properness comparison, compactness, stabilization, and whole-paper
-completion remain separate obligations.
+This module states the equivalence. Its proof is
+`adelicSpreadEventualProperness` in `AdelicSpreadEventualPropernessProof`.
+Existence of a model morphism for an arbitrary generic-fiber morphism, the
+intrinsic adelic properness comparison, compactness and stabilization
+remain separate obligations.

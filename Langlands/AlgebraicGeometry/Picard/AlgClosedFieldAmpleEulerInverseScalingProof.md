@@ -1,7 +1,6 @@
 # Proof of the `k^(2g)` scaling of the Euler product of an ample line bundle and its inverse
 
-Author: Worker 3649 (this file pair). The proof applies a published reduction to two
-published proofs; their authors are named below.
+The proof applies a published reduction to two published proofs.
 
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldAmpleEulerInverseScalingProof`,
 namespace `Langlands.AbelianScheme`. The module contains one theorem:
@@ -42,12 +41,12 @@ proves the published proposition
 It is applied to two published proofs:
 
 - `Langlands.GroupScheme.fieldCubePullback : FieldCubePullbackStatement.{u}`
-  (module `Langlands.AbelianScheme.FieldCubePullbackProof`, Worker 815), the balanced cube identity
+  (module `Langlands.AbelianScheme.FieldCubePullbackProof`), the balanced cube identity
   `Q(f+g+h) ⊗ (Q f ⊗ (Q g ⊗ Q h)) ≅ Q(f+g) ⊗ (Q(f+h) ⊗ Q(g+h))` for pullbacks `Q a = a^* L`
   of a line bundle `L` on a commutative smooth proper geometrically connected group scheme
   over any field, along maps `f, g, h` from any scheme over the field;
 - `Langlands.GroupScheme.fieldTheoremOfTheSquare : FieldTheoremOfTheSquareStatement.{u}`
-  (module `Langlands.AbelianScheme.FieldTheoremOfTheSquareProof`, Worker 2784), the theorem of the square
+  (module `Langlands.AbelianScheme.FieldTheoremOfTheSquareProof`), the theorem of the square
   `t_{a+b}^* L ⊗ L ≅ t_a^* L ⊗ t_b^* L` for rational points `a`, `b` of such a group scheme.
 
 Both are the exact Library propositions, not hypotheses of this module. No other input is
@@ -58,7 +57,7 @@ used.
 This section summarizes the published modules that the one-line proof relies on, so that
 the reader can follow the mathematics. Nothing here is reproved in this module.
 
-`algClosedFieldAmpleEulerInverseScalingReduction` (Worker 998) composes two published
+`algClosedFieldAmpleEulerInverseScalingReduction` composes two published
 theorems.
 
 1. `algClosedFieldAmpleEulerInverseScaling_of_ne_zero cube square` (same module) proves
@@ -84,7 +83,7 @@ theorems.
 
    Together: `χ(H^{⊗k}) χ(Nk) = χ(Z, Q(H^{⊗k}, Nk)) = k^{2g} χ(Z, Q(H, N)) =
    k^{2g} χ(H) χ(N)`.
-2. `algClosedFieldAmpleEulerInverseScaling_of_coprime` (Worker 1222, module
+2. `algClosedFieldAmpleEulerInverseScaling_of_coprime` (module
    `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldAmpleEulerInverseScalingCoprimeExtension`)
    extends the restricted statement to every `k ≥ 1`. The values `χ(H^{⊗n})` and
    `χ(N^{⊗n})` are values of rational polynomials in `n` (`smoothProperLineBundleEulerPolynomial_degree_le`).

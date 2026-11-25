@@ -1,7 +1,5 @@
 # Normalized character norms on actual local point groups
 
-Author: Worker 107.
-
 This internal adapter uses the actual completion algebra `placeCompletion F i`
 and actual point group `PlaceGroupPoints F G i` of `AdelicGroupLocalPoints`.
 The number field has arbitrary universe `u`. No change of carrier, topology,

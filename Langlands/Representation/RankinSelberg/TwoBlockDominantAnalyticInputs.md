@@ -1,7 +1,5 @@
 # Uniform analytic inputs for the dominant first-block identity
 
-Author: Worker 1209.
-
 This internal assembly proves the analytic clauses needed by the dominant
 first-block calculation in JPSS, *Rankin–Selberg convolutions* (1983),
 Section 4.10(2), printed page 419. The registered original is

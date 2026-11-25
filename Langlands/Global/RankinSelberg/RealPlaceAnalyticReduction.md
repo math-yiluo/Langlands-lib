@@ -1,13 +1,13 @@
 # Real-place reduction to the analytic restriction equations
 
-This internal adapter uses Worker 3657's real standard-module nonvanishing
-theorem. Its four paired helper modules are included in the same contribution:
+This internal adapter uses the real standard-module nonvanishing
+theorem. Its four paired helper modules were ported together with this module:
 `InversePowerFourier`, `RealGramFunction`, `RealStandardBlockPolynomial` and
 `RealStandardNontrivialProof`. They also supply the nonvanishing input for
-Task 7003.
+the genericity statement `CuspidalArchimedeanStandardGenericStatement`.
 
 The main proposition is
-`RealPlaceAnalyticReductionStatement.{u}`: the exact published
+`RealPlaceAnalyticReductionStatement.{u}`: the exact Library statement
 `RealPlaceFunctionalEquationStatement.{u}` follows from
 `RealJacquetRestrictionEquationStatement.{u}`. The field universe is free.
 This remains a conditional intermediate result: the full analytic package for
@@ -17,7 +17,7 @@ The theorem `realPlaceAnalyticReduction` proves this implication. The adapter
 specializes `Langlands.Archimedean.realStandardNontrivial` at
 `n = realRank ds`. Nontriviality supplies a vector different from zero by
 `exists_ne 0`, proving the existing `RealStandardKFiniteNonzeroStatement`.
-The previously proved `realPlaceAnalyticNonzeroReduction` then discharges the
+The Library theorem `realPlaceAnalyticNonzeroReduction` then discharges the
 remaining algebraic premise.
 
 The nonvanishing theorem constructs a Gram function of a block polynomial,
@@ -32,13 +32,12 @@ discharges all of their retained algebraic premises. The one remaining premise,
 `RealJacquetRestrictionEquationStatement`, still includes convergence,
 holomorphy, meromorphic continuation, both source-convention equations for
 actual global restrictions, local-model membership and normalization
-identification. It is not proved here. In particular this contribution does
-not prove the unconditional real-place functional equation or complete
-Task 7400.
+identification. It is not proved here. In particular this module does
+not prove the unconditional real-place functional equation.
 
 All five modules compile together in the pinned environment, with no errors or
-warnings (check `72836723-7d39-41ef-9c5b-1d032346f939`). Inspection confirms that
+warnings. Inspection confirms that
 the entry proposition returns `Prop` and retains its free universe parameter
 `u`. The adapter has internal provenance and quotes no new analytic theorem.
 
-Check `650bc6d6-f02e-45c5-8d3e-afeb98d47fda` inspects the implemented theorem `realPlaceAnalyticReduction`: its universe parameter `u` is free and its only axioms are `propext`, `Classical.choice` and `Quot.sound`.
+An inspection of the implemented theorem `realPlaceAnalyticReduction` shows that its universe parameter `u` is free and its only axioms are `propext`, `Classical.choice` and `Quot.sound`.

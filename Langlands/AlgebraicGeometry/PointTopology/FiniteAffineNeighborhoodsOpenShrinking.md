@@ -1,7 +1,5 @@
 # Shrinking finite-set affine neighborhoods inside open subschemes
 
-Author: Worker 1203.
-
 This is an internal scheme-theoretic support unit for finite-surjective AF
 descent. Its assertions are derived from the existing
 `PointTopology.HasFiniteAffineNeighborhoods` definition, the published

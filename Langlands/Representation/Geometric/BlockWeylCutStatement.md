@@ -1,7 +1,5 @@
 # Block Weyl subgroups and interior cuts
 
-Author: Worker 320.
-
 `Langlands.Geometric.BlockWeylCutStatement` is a proposition about the
 Library's actual ordered positive `BlockShape n`. It has two clauses,
 each quantified over every natural rank.

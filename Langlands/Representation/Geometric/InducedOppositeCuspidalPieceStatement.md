@@ -1,7 +1,5 @@
 # Cuspidal geometric pieces of opposite Jacquet modules of induction
 
-Authors: Worker 954 (draft), Worker 264.
-
 `Langlands.GLInducedOppositeJacquetCuspidalPieceStatement` is a proposition
 definition. The module states it and proves nothing about representations.
 
@@ -115,7 +113,9 @@ It combines the following facts.
    upper parabolic of `C.reverse`. This is how the opposite Jacquet module
    reduces to an upper one.
 
-Intended proof route, a future obligation and not an established result. Use 4
+Intended proof route; the proof is `Langlands.glInducedOppositeJacquetCuspidalPiece`
+in `InducedOppositeCuspidalPieceProof`, through
+`InducedOppositeCuspidalPieceConditional`. Use 4
 to replace the opposite Jacquet module along `C` by the upper Jacquet module
 along `C.reverse`, pulled back along the reversed-label Levi equivalence. Apply
 1 to `(B, C.reverse)`. An irreducible subquotient of a finitely filtered
@@ -129,8 +129,7 @@ minimality of `w`.
 ## Intended use
 
 This is meant as a numerics-free input of quotient reflection
-(Silberger 1978, Proposition 5.8, for tempered `π`; reflection task
-`9f88af41-d438-475e-ae54-6ef33bcfb8ed`). It replaces no existing target. There,
+(Silberger 1978, Proposition 5.8, for tempered `π`). It replaces no existing target. There,
 a surjection `Ind_C(ρ) → J` onto a common irreducible quotient `J` gives, by
 second adjointness, a nonzero and hence injective map `ρ → r̄_C(J)`; it does
 not make `ρ` a quotient of all of `r̄_C(J)`. Exactness of the opposite Jacquet

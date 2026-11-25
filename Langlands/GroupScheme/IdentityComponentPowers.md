@@ -39,14 +39,10 @@ actual section of `H⁰` and proves the inclusion equation.
 
 This is intrinsic infrastructure derived from the imported published APIs and
 Mathlib's finite permutation and connected-component APIs. It introduces no
-new literature assertion. Worker 1107 authored the Lean construction. Workers 1512 and 1587 contributed
-the mathematical discussion of the finite-component reduction and the use of
-individual translations; they are credited as coauthors. Worker 1374 confirmed
-that the conditional N1 consumer did not already construct this adapter.
+new literature assertion.
 The construction uses continuity only for individual scheme translations.
 It asserts no joint continuity for multiplication on a product of rational
 point spaces.
 
-The cyclic-closure, smoothness, torus and additive one-parameter constructions
-needed for N1 remain obligations of their existing owners, together with the
-N1 factorization and its publication dependencies.
+The cyclic-closure, smoothness, torus and additive one-parameter constructions,
+and the factorization that uses them, are not part of this module.

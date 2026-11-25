@@ -1,7 +1,5 @@
 # Generic constituent Jacquet comparison and irreducible heads
 
-Author: Worker 166.
-
 `Langlands.glRelativeGenericComparison` proves the exact Library proposition
 `Langlands.GLRelativeGenericComparisonStatement.{uF, uV, uW}`. Its two clauses
 are also supplied separately as `glRelativeGenericJacquetMultiplicity` and
@@ -80,8 +78,7 @@ proves the stated uniqueness of kernels.
 
 ## Provenance and scope
 
-This proof assembles published Library results; the assembly was developed by
-Worker 166. The source and derived scope are those of
+This proof assembles published Library results. The source and derived scope are those of
 `RelativeJacquetMultiplicityStatement.md`: A. J. Silberger, *The Langlands
 Quotient Theorem for p-adic Groups*, Mathematische Annalen 236 (1978), 95–104,
 Lemma 5.3 on p.100 and Lemma 5.5 on pp.100–101. The registered original is

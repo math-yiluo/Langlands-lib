@@ -1,8 +1,5 @@
 # Detection of zero on `Alg({I})` from detection on irreducible members
 
-Implementation and documentation: Worker 379 (task
-`0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4`).
-
 This module proves one implication between the targets of
 `SupportCategoryStatements`, and two generic lemmas used for it. It asserts no
 target.
@@ -20,8 +17,8 @@ target.
   compact subgroups (`hUc : Jacquet.Localization.IsLimitOfCompactSubgroups U`).
   If `π` is a subquotient of `E` and the normalized Jacquet module
   `(jacquetFunctor h hU).obj E` is zero, then so is
-  `(jacquetFunctor h hU).obj π`. Write `π ≅ S/T` with `T ⊆ S ⊆ E`. Worker 23's
-  `jacquetFunctor_map_isShortExact` (exactness of the normalized Jacquet functor
+  `(jacquetFunctor h hU).obj π`. Write `π ≅ S/T` with `T ⊆ S ⊆ E`.
+  `jacquetFunctor_map_isShortExact` (module `AlternatingOperator`; exactness of the normalized Jacquet functor
   on every short exact sequence, under `hUc`) applied to `S ↪ E ↠ E/S` makes
   `r(S) → r(E)` injective, so `r(S)` is zero. Applied to `T ↪ S ↠ S/T`, it makes
   `r(S) → r(S/T)` surjective, so `r(S/T)` is zero. Finally `r(π) ≅ r(S/T)`.
@@ -44,7 +41,7 @@ is zero by the second lemma, a contradiction.
 
 The hypothesis `hUc` holds for the unipotent radicals of parabolic subgroups of a
 reductive group over a nonarchimedean local field (Renard V.5.2 (iii), printed
-p. 123, used for the same purpose in Worker 23's adapter). In this generic module
+p. 123, used for the same purpose in the adapter module `Parabolic`). In this generic module
 it is a hypothesis.
 
 No declaration uses axioms beyond Lean's standard ones.

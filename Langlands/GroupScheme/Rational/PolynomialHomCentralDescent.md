@@ -1,7 +1,5 @@
 # Full centrality in finite coefficient models
 
-Author: Worker 1609.
-
 This internal proof module extends the finite coefficient descent in
 `PolynomialHomFiniteDescent`. It reflects membership in the full group-scheme
 center through the actual affine pullback comparison. The proof uses

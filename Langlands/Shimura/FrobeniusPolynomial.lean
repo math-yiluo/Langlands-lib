@@ -67,11 +67,11 @@ variable {K : Type uK} [Field K] [NumberField K] (v : Global.FinitePlace K)
 omit [NumberField K] in
 /-- The linear automorphism by which an element of `Gal(K̄/K)` acts. -/
 def actionEquiv (g : Field.absoluteGaloisGroup K) : M.V ≃ₗ[R] M.V :=
-  (M.ρAut g).toLinearEquiv
+  (M.ρAut g).asIso.toLinearEquiv
 
 omit [NumberField K] in
 @[simp] theorem actionEquiv_coe (g : Field.absoluteGaloisGroup K) :
-    (actionEquiv M g : M.V →ₗ[R] M.V) = (M.ρ g).hom :=
+    (actionEquiv M g : M.V →ₗ[R] M.V) = (M.ρ g).asHom.hom :=
   rfl
 
 variable [Module.Free R M.V] [Module.Finite R M.V]
@@ -105,9 +105,9 @@ theorem charpoly_eq_frobeniusCharpoly_of_lift
     {ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)}
     (hM : IsUnramifiedAlong (ModuleCat.{uV} R) v M ι) {g : LocalGroup v}
     (hg : IsGeometricFrobeniusLift v g) :
-    (M.ρ (localRestriction v ι g)).hom.charpoly = frobeniusCharpoly v M := by
-  have h : M.ρ (localRestriction v ι g) = geometricFrobenius (ModuleCat.{uV} R) v M ι :=
-    geometricFrobenius_eq_of_lift hM hg
+    (M.ρ (localRestriction v ι g)).asHom.hom.charpoly = frobeniusCharpoly v M := by
+  have h : (M.ρ (localRestriction v ι g)).asHom = geometricFrobenius (ModuleCat.{uV} R) v M ι :=
+    congrArg End.asHom (geometricFrobenius_eq_of_lift hM hg)
   rw [h, frobeniusCharpoly_eq_along ι]
 
 theorem frobeniusEulerPolynomial_eq_along
@@ -120,7 +120,7 @@ theorem eulerPolynomial_eq_frobeniusEulerPolynomial_of_lift
     {ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)}
     (hM : IsUnramifiedAlong (ModuleCat.{uV} R) v M ι) {g : LocalGroup v}
     (hg : IsGeometricFrobeniusLift v g) :
-    (M.ρ (localRestriction v ι g)).hom.charpoly.reverse = frobeniusEulerPolynomial v M := by
+    (M.ρ (localRestriction v ι g)).asHom.hom.charpoly.reverse = frobeniusEulerPolynomial v M := by
   rw [charpoly_eq_frobeniusCharpoly_of_lift hM hg]
   rfl
 

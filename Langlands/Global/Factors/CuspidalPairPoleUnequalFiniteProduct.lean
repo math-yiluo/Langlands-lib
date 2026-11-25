@@ -20,7 +20,7 @@ open RankinSelbergGlobal RankinSelbergGlobal.UnipotentClass
 open FiniteWhittakerTensor FiniteWhittakerSemilocal
 open RankinSelbergGlobal.FiniteWhittakerPartialDomain
 open LocalPointFactorization FiniteAdelicGL
-open Langlands.ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
 
 variable {F : Type u} [Field F] [NumberField F]

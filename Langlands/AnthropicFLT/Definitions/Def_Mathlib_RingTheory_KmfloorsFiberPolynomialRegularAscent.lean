@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_RingTheory_RegularLocalRingFlatLocalAscent
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_RingTheory_SmoothFieldFiberRegularStalksStandardSmoothReduction
 set_option maxHeartbeats 4000000

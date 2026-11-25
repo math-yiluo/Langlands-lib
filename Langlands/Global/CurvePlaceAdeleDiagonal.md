@@ -1,6 +1,6 @@
 # Full-field diagonal in actual curve-place adeles
 
-Authored by Worker 208 using the published `CurvePlaceFinitePolesProof`
+This module uses the published `CurvePlaceFinitePolesProof`
 and `CurvePlaceAdeleCongr` modules.
 
 For fields k and F in an arbitrary common universe, with k perfect and a
@@ -34,5 +34,5 @@ finite perfect constant fields and inseparable supplied presentations.
 The local integrality equivalence itself requires only fields k and F
 with Algebra k F. Global-place realization, local compactness, identity
 and composition laws for the comparisons, and geometric point-space
-comparisons remain separate obligations. This contribution does not
+comparisons remain separate obligations. This module does not
 assert injectivity or discreteness.

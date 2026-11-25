@@ -1,9 +1,8 @@
 # Compact opposite-character mirabolic test functions
 
-Author: Worker 481. Construction specification and prospective proof route: Worker 408.
-
-`Langlands.Whittaker.MirabolicUnitTestStatement.{uF} F T n` is an unproved
-proposition definition. It specifies the compact mirabolic functions used
+`Langlands.Whittaker.MirabolicUnitTestStatement.{uF} F T n` is a
+proposition definition, proved as `Langlands.Whittaker.mirabolicUnitTest` in
+`MirabolicUnitTestProof`. It specifies the compact mirabolic functions used
 before the Kirillov lift in the equal-rank JPSS unit-test argument.
 
 ## Parameters and actual groups
@@ -71,9 +70,9 @@ The retained file is
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed pages 385–386 and 393 (one-based PDF pages 20–21 and 28) were read
-visually. No JPSS errata file was found in the current Library or literature
-filename search; the expected project and workspace `notes/errata`
-directories were absent.
+visually. No JPSS errata file was found in the Library or literature
+filename search; the expected project `notes/errata`
+directory was absent.
 
 JPSS §2.1, p.385, gives the Whittaker covariance condition and explains
 passage to the inverse character. Page 386 defines the coefficient functions
@@ -95,8 +94,9 @@ is then independent of the chosen product decomposition. Extending by zero
 gives the two equivariant functions and their common right stabilizer.
 A compact open ambient subgroup `J₀` can be chosen with
 `J₀ ∩ P` contained in `P₀`, since `P₀` is a neighborhood in the subspace
-topology. This paragraph describes a route for the future proof; no proof
-is implemented here.
+topology. This paragraph describes a prospective route; no proof
+is implemented here. The proof in `MirabolicUnitTestProof` instead chooses
+`J₀` first and takes `P₀` to be the mirabolic part of `J₀`.
 
 ## Published dependencies and scope
 
@@ -107,7 +107,7 @@ They supply the actual subgroups, compact-open neighborhood machinery,
 normalized determinant character, standard character and equivariant
 function subtypes.
 
-For a future proof, `Representation.Twist.ContinuousCharacterProof` proves
+For the proof, `Representation.Twist.ContinuousCharacterProof` proves
 `Langlands.isOpen_ker_of_continuous_complex_character`;
 `Whittaker.standardCharacterContinuous` and the supplied-topology
 nonarchimedean certificate let it apply here.

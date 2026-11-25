@@ -1,8 +1,7 @@
 # Borel subgroups through a maximal torus over an algebraically closed field
 
 Module `Langlands.GroupScheme.Absolute.BorelDynamicConjugacy`. It is derived infrastructure for
-clause 3 of `Langlands.GroupScheme.RegularCocharacterBorelStatement` (task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`). The main theorem is conditional: it takes the
+clause 3 of `Langlands.GroupScheme.RegularCocharacterBorelStatement`. The main theorem is conditional: it takes the
 published `BorelConjugacyStatement` and `MaximalTorusConjugacyStatement` as hypotheses and does
 not prove them.
 

@@ -31,6 +31,5 @@ to prove the unchanged published `HasRelativeRootSystem` predicate.
 This is a conditional assembly interface. It supplies neither root reflections
 nor the positive-root stabilizer theorem. In particular, it does not by itself
 prove inheritance for an actual Levi or the finite induced-cuspidal embedding.
-Worker 1784 adapted the proof bodies of Worker 1225 in the two published modules
-named above;
+The proof bodies are adapted from the two published modules named above;
 no additional translation of an original literature result is claimed.

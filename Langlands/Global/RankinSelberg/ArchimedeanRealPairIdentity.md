@@ -1,8 +1,7 @@
 # Continuation of the real local Rankin–Selberg integrals from Jacquet's pair identity
 
-Entry module of an intermediate result of Task 7400, towards
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones
+Entry module of an intermediate result towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Every declaration is proved, with no axioms beyond Lean's standard ones
 (`propext`, `Classical.choice`, `Quot.sound`).
 
 The module reduces the meromorphic continuation and the functional equation of the real local

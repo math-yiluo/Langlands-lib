@@ -142,7 +142,9 @@ theorem geometricPieceK0_eq_refinedInduction_comp_transport :
         (normalizedRefinedJacquetK0 F T B S
           (B.finiteLengthClass F.Carrier A.val A.property)))
   have h0 := geometricPieceK0_finiteLengthClass.{uF, uV}
-    F T B C w S R hS hR A.val A.property hI
+    F T B C w S R hS hR A.val A.property
+    (geometricPieceSmoothFunctor_preservesFiniteLength.{uF, max uF uV}
+      F T B C w S R hS hR A.val A.property)
   have h1 := normalizedRefinedJacquetK0_finiteLengthClass.{uF, uV}
     F T B S A.val A.property hJ
   have h2 := refinedIntersectionTransportK0_finiteLengthClass.{uF, uV}
@@ -152,7 +154,7 @@ theorem geometricPieceK0_eq_refinedInduction_comp_transport :
   have h4 := congrArg (normalizedRefinedInductionK0.{uF, uV} F T C R) h2.symm
   have h5 := congrArg (fun x => normalizedRefinedInductionK0.{uF, uV} F T C R
     (refinedIntersectionTransportK0.{uF, uV} F.Carrier B C w S R hS hR x)) h1.symm
-  exact h0.trans (h3.symm.trans (h4.trans h5))
+  exact h0.trans (h3.symm.trans (h4.trans h5) : _)
 
 /-- After induction to the ambient general linear group, a geometric piece is
 exactly the source refinement's induction-after-Jacquet term, in every rank. -/

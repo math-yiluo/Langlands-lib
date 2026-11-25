@@ -64,39 +64,39 @@ variable (iA : D →ₐ[ℚ] Rationalization.End A) (iB : D →ₐ[ℚ] Rational
 
 /-- Identity morphisms intertwine each rational endomorphism action. -/
 theorem rationalIntertwines_identity (d : D) :
-    Rationalization.comp A A A (iA d) (Rationalization.identity A) =
-      Rationalization.comp A A A (Rationalization.identity A) (iA d) := by
+    Rationalization.comp A A A (iA d).asHom (Rationalization.identity A) =
+      Rationalization.comp A A A (Rationalization.identity A) (iA d).asHom := by
   simp
 
 /-- Intertwining is preserved by composition of rational homomorphisms. -/
 theorem rationalIntertwines_comp (iC : D →ₐ[ℚ] Rationalization.End C)
     (f : Rationalization.Hom A B) (g : Rationalization.Hom B C)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d))
-    (hg : ∀ d, Rationalization.comp B B C (iB d) g =
-      Rationalization.comp B C C g (iC d)) (d : D) :
-    Rationalization.comp A A C (iA d) (Rationalization.comp A B C f g) =
-      Rationalization.comp A C C (Rationalization.comp A B C f g) (iC d) := by
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom)
+    (hg : ∀ d, Rationalization.comp B B C (iB d).asHom g =
+      Rationalization.comp B C C g (iC d).asHom) (d : D) :
+    Rationalization.comp A A C (iA d).asHom (Rationalization.comp A B C f g) =
+      Rationalization.comp A C C (Rationalization.comp A B C f g) (iC d).asHom := by
   rw [← Rationalization.comp_assoc, hf, Rationalization.comp_assoc, hg,
     ← Rationalization.comp_assoc]
 
 /-- The inverse of an intertwining rational isomorphism also intertwines. -/
 theorem rationalIntertwines_inverse (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (d : D) :
-    Rationalization.comp B B A (iB d) e.inv =
-      Rationalization.comp B A A e.inv (iA d) := by
-  change (iB d : Rationalization.of B ⟶ Rationalization.of B) ≫ e.inv = e.inv ≫ iA d
-  have hd : (iA d : Rationalization.of A ⟶ Rationalization.of A) ≫ e.hom =
-      e.hom ≫ iB d := he d
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (d : D) :
+    Rationalization.comp B B A (iB d).asHom e.inv =
+      Rationalization.comp B A A e.inv (iA d).asHom := by
+  change (iB d).asHom ≫ e.inv = e.inv ≫ (iA d).asHom
+  have hd : (iA d).asHom ≫ e.hom =
+      e.hom ≫ (iB d).asHom := he d
   apply (cancel_epi e.hom).1
   rw [← Category.assoc, ← hd, Category.assoc, e.hom_inv_id,
     Category.comp_id, e.hom_inv_id_assoc]
 
 /-- Intertwining the actual rational endomorphisms intertwines their Tate actions. -/
 theorem rationalHomMap_intertwines (f : Rationalization.Hom A B)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d)) (d : D) (x : Rational A T P) :
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom) (d : D) (x : Rational A T P) :
     rationalHomMap T P f (rationalEndAction A T P (iA d) x) =
       rationalEndAction B T P (iB d) (rationalHomMap T P f x) := by
   have he := congrArg (rationalHomMap T P) (hf d)
@@ -105,8 +105,8 @@ theorem rationalHomMap_intertwines (f : Rationalization.Hom A B)
 
 /-- Intertwining extends to the constructed tensor-product algebra action. -/
 theorem rationalHomMap_finiteAdeleAlgebraAction (f : Rationalization.Hom A B)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d))
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom)
     (a : D ⊗[ℚ] Global.FiniteAdeles ℚ) (x : Rational A T P) :
     rationalHomMap T P f (finiteAdeleAlgebraAction A T P h iA a x) =
       finiteAdeleAlgebraAction B T P h iB a (rationalHomMap T P f x) := by
@@ -119,8 +119,8 @@ theorem rationalHomMap_finiteAdeleAlgebraAction (f : Rationalization.Hom A B)
 
 /-- An intertwining rational homomorphism is linear over D tensor_Q A_f. -/
 def finiteAdeleAlgebraHomMap (f : Rationalization.Hom A B)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d)) :
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom) :
     let := finiteAdeleAlgebraModule A T P h iA
     let := finiteAdeleAlgebraModule B T P h iB
     Rational A T P →ₗ[D ⊗[ℚ] Global.FiniteAdeles ℚ] Rational B T P := by
@@ -130,14 +130,14 @@ def finiteAdeleAlgebraHomMap (f : Rationalization.Hom A B)
     map_smul' := rationalHomMap_finiteAdeleAlgebraAction T P h iA iB f hf }
 
 @[simp] theorem finiteAdeleAlgebraHomMap_apply (f : Rationalization.Hom A B)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d)) (x : Rational A T P) :
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom) (x : Rational A T P) :
     finiteAdeleAlgebraHomMap T P h iA iB f hf x = rationalHomMap T P f x := rfl
 
 /-- An invertible intertwining rational homomorphism gives tensor-algebra transport. -/
 def finiteAdeleAlgebraIso (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     let := finiteAdeleAlgebraModule A T P h iA
     let := finiteAdeleAlgebraModule B T P h iB
     Rational A T P ≃ₗ[D ⊗[ℚ] Global.FiniteAdeles ℚ] Rational B T P := by
@@ -149,8 +149,8 @@ def finiteAdeleAlgebraIso (e : Rationalization.of A ≅ Rationalization.of B)
 
 @[simp] theorem finiteAdeleAlgebraIso_apply
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (x : Rational A T P) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (x : Rational A T P) :
     finiteAdeleAlgebraIso T P h iA iB e he x = rationalHomMap T P e.hom x := rfl
 
 @[simp] theorem finiteAdeleAlgebraHomMap_identity :
@@ -164,10 +164,10 @@ def finiteAdeleAlgebraIso (e : Rationalization.of A ≅ Rationalization.of B)
 
 theorem finiteAdeleAlgebraHomMap_comp (iC : D →ₐ[ℚ] Rationalization.End C)
     (f : Rationalization.Hom A B) (g : Rationalization.Hom B C)
-    (hf : ∀ d, Rationalization.comp A A B (iA d) f =
-      Rationalization.comp A B B f (iB d))
-    (hg : ∀ d, Rationalization.comp B B C (iB d) g =
-      Rationalization.comp B C C g (iC d)) :
+    (hf : ∀ d, Rationalization.comp A A B (iA d).asHom f =
+      Rationalization.comp A B B f (iB d).asHom)
+    (hg : ∀ d, Rationalization.comp B B C (iB d).asHom g =
+      Rationalization.comp B C C g (iC d).asHom) :
     let := finiteAdeleAlgebraModule A T P h iA
     let := finiteAdeleAlgebraModule B T P h iB
     let := finiteAdeleAlgebraModule C T P h iC
@@ -194,8 +194,8 @@ theorem finiteAdeleAlgebraHomMap_comp (iC : D →ₐ[ℚ] Rationalization.End C)
 
 @[simp] theorem finiteAdeleAlgebraIso_symm
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     let := finiteAdeleAlgebraModule A T P h iA
     let := finiteAdeleAlgebraModule B T P h iB
     (finiteAdeleAlgebraIso T P h iA iB e he).symm =
@@ -208,10 +208,10 @@ theorem finiteAdeleAlgebraHomMap_comp (iC : D →ₐ[ℚ] Rationalization.End C)
 theorem finiteAdeleAlgebraIso_trans (iC : D →ₐ[ℚ] Rationalization.End C)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom) :
     let := finiteAdeleAlgebraModule A T P h iA
     let := finiteAdeleAlgebraModule B T P h iB
     let := finiteAdeleAlgebraModule C T P h iC

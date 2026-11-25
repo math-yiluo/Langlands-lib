@@ -1,6 +1,6 @@
 # Renard VI.4.5, Corollary: the inertia block M(G)[π] is indecomposable
 
-Worker 6. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locator is the last Corollary of VI.4.5 and its proof, printed p.160 / PDF p.166. The notation 𝓜 = ∏ᵢ 𝓜ᵢ for a decomposition of a category is defined in A.IX, printed p.268 / PDF p.274, and the center of a category in A.X, printed p.269 / PDF p.275. The proof uses the Lemma and Corollary of VI.4.3 (A is a domain), printed pp.154–155 / PDF pp.160–161, and the isomorphism between Z and the center Z[π] of M(G)[π] earlier on p.160. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locator is the last Corollary of VI.4.5 and its proof, printed p.160 / PDF p.166. The notation 𝓜 = ∏ᵢ 𝓜ᵢ for a decomposition of a category is defined in A.IX, printed p.268 / PDF p.274, and the center of a category in A.X, printed p.269 / PDF p.275. The proof uses the Lemma and Corollary of VI.4.3 (A is a domain), printed pp.154–155 / PDF pp.160–161, and the isomorphism between Z and the center Z[π] of M(G)[π] earlier on p.160. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
 
 ## Source content
 
@@ -35,7 +35,7 @@ Let B be the published full category `RationalInertiaBlock G (rationalInertiaBas
 
 **The universe lift.** The block is formed from the published `rationalInertiaBaseLift G π`, which applies the fully faithful `SmoothRep.universeLiftFunctor` to π and has carrier in `Type (max uF uV)`, as in the VI.4.1 statements, where the progenerator Π lives. π has carrier in `Type uV`. Coefficients are ℂ in universe zero. Renard has no universe restriction.
 
-**Cuspidality.** Renard's π is supercuspidal. As in the VI.4.1 statements and Worker 1758's `RationalUniversalSmallProgeneratorStatement`, cuspidality is measured by the vanishing of every proper standard normalized Jacquet module. Comparing this with cuspidality along all proper rational parabolics is a separate obligation.
+**Cuspidality.** Renard's π is supercuspidal. As in the VI.4.1 statements and `RationalUniversalSmallProgeneratorStatement`, cuspidality is measured by the vanishing of every proper standard normalized Jacquet module. Comparing this with cuspidality along all proper rational parabolics is a separate obligation.
 
 There is no splitness, characteristic-zero, admissibility, compactness or finite-dimensionality premise on π. The statement does not assume that B is abelian.
 

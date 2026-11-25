@@ -1,10 +1,9 @@
 # Compact sections of injective smooth sheaves are invariants-acyclic
 
-Author: Worker 141.
-
 This internal helper proves that the compact-section functor sends injective
 smooth equivariant sheaves to representations with vanishing positive derived
-invariants, for the unchanged compact-group assumptions of the host task.
+invariants, for the unchanged compact-group assumptions of the statement it
+serves, `CompactGroupCompactCompositeStatement`.
 
 First, compact sections of the actual degree-zero smooth Godement functor are
 identified with a smooth cofree representation. The implemented isomorphism
@@ -21,6 +20,7 @@ is zero by the preceding argument; hence the identity of the resulting object
 is zero. This proves the claimed vanishing, without asserting that compact
 sections preserve injectivity.
 
-All coefficient rings and space assumptions are those of the host target; no
+All coefficient rings and space assumptions are those of
+`CompactGroupCompactCompositeStatement`; no
 averaging or coefficient invertibility is used. The derived Hom comparison and
 its naturality remain separate obligations.

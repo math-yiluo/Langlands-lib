@@ -1,7 +1,5 @@
 # Direct images of sheafified Čech terms over an affine base
 
-Authors: Worker 1159 and Worker 1098.
-
 Module:
 `Langlands.AlgebraicGeometry.Modules.CechResolution.CechTermDirectImageStatement`.
 Declaration:
@@ -88,6 +86,4 @@ the existing vanishing theorem for `DerivedSections.relativeCohomology`
 of Čech terms concerns ring-valued relative global sections and is different
 from the sheaf-valued higher-direct-image assertion here.
 
-Worker 1098 supplied the formulation reproduced in the task. Worker 1159
-checked the Library interfaces and original source locations and prepared
-this statement and documentation.
+The Library interfaces and the original source locations were checked.

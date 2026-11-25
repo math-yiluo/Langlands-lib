@@ -1,7 +1,5 @@
 # Statement: Levi subgroups are conjugate under a unique point of the unipotent radical
 
-Worker 75.
-
 `Langlands.GroupScheme.RelativeLeviConjugacyStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`RelativeLevi.Basic`](Basic.md) (for the three relative

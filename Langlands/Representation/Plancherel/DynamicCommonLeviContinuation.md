@@ -54,6 +54,6 @@ rationality is used. The compact module already proves the inverse-cocharacter
 specialization to the published conditional opposite compact family, with the
 existing conditional squared-modulus witness.
 
-This unit proves elementary continuation adapters conditional on actual data.
+This module proves elementary continuation adapters conditional on actual data.
 Analytic existence, regularity at all unitary parameters, invertibility and
 normalized tensor comparisons remain separate obligations.

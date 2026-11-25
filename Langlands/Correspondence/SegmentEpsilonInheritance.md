@@ -1,7 +1,5 @@
 # Segment-pair epsilon inheritance from the segment-head factor formulas
 
-Author: Worker 1695.
-
 This module proves `SegmentPairEpsilonCompatibility` and
 `SupercuspidalSegmentPairInheritance` (module `AssemblyEpsilonReduction`) from
 explicit published premises. As a corollary it proves the target proposition

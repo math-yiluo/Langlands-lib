@@ -1,6 +1,7 @@
 # Actual module comparisons between natural point charts
 
-This internal Task 7200 adapter starts with natural all-test point charts of
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals starts with natural all-test point charts of
 the same original group scheme into the actual pulled-back sections of two
 module sheaves. The additive section transition retains exactly the same
 original group point. The naturality of the charts proves its naturality for
@@ -15,6 +16,6 @@ maps with the same original point action are unique.
 
 The provenance is derived from the group-point equivalences, their canonical
 section naturality, and actual reconstruction on disjoint free presentations.
-The scalar-preservation premise must still be proved for a particular original
-quotient comparison; it is not an assumed conclusion about the global radical
+The scalar-preservation premise is a hypothesis here, to be proved for a
+particular original quotient comparison; it is not an assumed conclusion about the global radical
 filtration.

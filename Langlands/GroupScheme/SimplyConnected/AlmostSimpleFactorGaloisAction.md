@@ -1,7 +1,5 @@
 # Canonical Galois action on actual almost-simple factors
 
-Author: Worker 166.
-
 This internal construction equips the finite factor-index type of a supplied
 `SimplyConnectedAlmostSimpleProduct G_L` with the canonical action of
 `L ≃ₐ[k] L`. The extension `L/k` may have infinite degree and need not be

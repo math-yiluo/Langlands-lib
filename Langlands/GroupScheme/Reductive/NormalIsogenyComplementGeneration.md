@@ -26,6 +26,8 @@ scheme-theoretic kernel. The constructor applies the existing two-premise data
 constructor with the same derived perfectness proof.
 
 The generation premise remains unproved here. This supporting construction
-does not complete the unconditional normal-complement proof task. Its
+does not prove `SemisimpleNormalIsogenyComplementStatement` unconditionally;
+the Library proves it as `semisimpleNormalIsogenyComplement` in
+`NormalIsogenyComplementProof`, which imports this module. Its
 provenance is the internal composition of the named results, with no new
 literature assertion.

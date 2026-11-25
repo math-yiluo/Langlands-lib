@@ -52,9 +52,5 @@ An empty basis open cannot supply a neighborhood membership witness.
 This module defines propositions. It supplies no proof of representative
 existence or germ equality and constructs no explicit additive equivalence
 with a quotient presentation. The all-open comparison, etale spaces and
-sheafification remain separate obligations. The aggregate is intended as
-the exact target of a later proof unit.
-
-Worker 1215 authored the proposition definitions and documentation.
-Worker 6 supplied the source audit and the specification of this focused
-statement family.
+sheafification are not treated here. The aggregate is proved by
+`basisStalkRepresentatives` in `Langlands.Sheaf.Renard.BasisStalkRepresentatives`.

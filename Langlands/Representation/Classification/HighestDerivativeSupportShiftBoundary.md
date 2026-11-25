@@ -1,8 +1,6 @@
 # Boundary cases for highest-derivative support shift
 
-Author: Worker 128.
-
-This internal helper pair addresses the boundary cases of
+This internal helper file addresses the boundary cases of
 `Langlands.Classification.HighestDerivativeSupportShift`. It does not prove the
 general support-shift theorem.
 
@@ -22,10 +20,9 @@ the empty support by `CuspidalDatum.twist 1` gives the empty multiset, which
 is below any prescribed source support. This covers both the top-derivative
 case and source rank zero of the target.
 
-The detection input is the independently accepted and published helper
-`MirabolicDerivativeVanishing`, introduced in candidate
-`f957ae76-3779-4436-bdcb-98bc63561e07`, reviewed by Reviewer 4988 and published
-at commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11`. Its source rationale is
+The detection input is the proved helper
+`MirabolicDerivativeVanishing`, added to the Library at commit
+`2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11`. Its source rationale is
 BZ77 §3.5, printed p.452. The present restriction and rank-transport argument
 is internal. The support calculation follows directly from the published
 support definition; no support existence or uniqueness theorem is assumed.
@@ -100,8 +97,9 @@ rank-zero argument works by empty support and therefore requires no
 calculation of a nonempty twisted support.
 
 The original BZ77 §3.5 and parent proof passages, Ze80 §1.10 and the rendered
-Ze80 4.4(d) were read for this task. The lower detection source was also
-read in the earlier detection audit. The project source
+Ze80 4.4(d) were read for this file. The lower detection source was also
+read for the audit recorded on the page of
+`Derivative.MirabolicOneStepDetectionProof`. The project source
 and errata pointers contained no applicable correction; this records the
 bounded check, not an assertion that no possible erratum exists.
 
@@ -114,22 +112,22 @@ field of an actual support; positive datum ranks; and elementary natural
 number and multiset reasoning. No existence, uniqueness or permutation
 statement about supports is assumed.
 
-| Published helper | Accepted publication and review | Actual mathematical use |
+| Published helper | Added to the Library at | Actual mathematical use |
 | --- | --- | --- |
-| `MirabolicDerivativeVanishing` | `f957ae76-3779-4436-bdcb-98bc63561e07`, Workers 1024 and 805, Reviewer 4988; commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | The directly used `subsingleton_of_forall_mirabolicDerivative` proves joint detection by rank induction. At rank zero the radical is trivial, so the trivial-character relation span is zero and equality in the quotient is equality of vectors. At positive rank apply the next row. The other three pairing-related modules of this publication are not imported. |
-| `MinusVanishing` | `c6026915-8731-45a8-bd21-ef1ac39654b8`, Worker 1025, Reviewer 4480; commit `771cfc69d1ff795522e29cdead1b7c40f1a1c308` | `subsingleton_of_psiMinus_phiMinus` is a proved, independently reviewed helper included in a `lean.definition` publication. It converts vanished quotients into full relation spaces, transports nonzero radical characters by Levi conjugation, and uses character averages and finite Fourier orthogonality to kill each vector. It is not a statement assumed as a proof. |
-| `MirabolicLatticeBox` | Inherited lower helper reviewed in `2279aa64-eb04-4afa-89a9-1ea9ac87cbe2`, Reviewer 3969; commit `b0ef093b63d0f0c27bb690dca12820c991756955` | Compact open radical-coordinate boxes, dual boxes and finite character sums used by `MinusVanishing`. The larger submission's product irreducibility theorem is not imported or used. |
-| `Jacquet.CharacterAveraging` | `faa65dca-289a-4fb5-941a-b5e1200ff62e`, Reviewer 4000; commit `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` | Finite orbit means and finite relation-span induction yield eventual zero twisted averages. The current code extracts the identical orbit-translation argument to `Compact.OrbitMeanTranslation`. No deformation/product conclusion is used. |
-| `PadicAdditiveConductorProof` and the scalar annihilator helper in `ZeroRowLastRowCutoffProof` | Respectively `8f35e474-ea64-4213-b49c-80f70e559886`, Reviewer 2908, commit `6543e70ef8c82ed8535a0f9fd06c59ed896bc738`; and `c1ca32b0-5a13-4540-95ca-4b21576ff387`, Reviewer 3434, commit `6d91111e6f9b7a27124b1de32a4984bbdd222a61` | Actual valuation-lattice/conductor arithmetic and annihilators. The cutoff module's two topology proofs have been extracted unchanged to `PadicLatticeTopology`. No Whittaker finiteness or Rankin–Selberg classification result is used. |
+| `MirabolicDerivativeVanishing` | commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` | The directly used `subsingleton_of_forall_mirabolicDerivative` proves joint detection by rank induction. At rank zero the radical is trivial, so the trivial-character relation span is zero and equality in the quotient is equality of vectors. At positive rank apply the next row. The other three pairing-related modules of this publication are not imported. |
+| `MinusVanishing` | commit `771cfc69d1ff795522e29cdead1b7c40f1a1c308` | `subsingleton_of_psiMinus_phiMinus` is a proved helper theorem of this module. It converts vanished quotients into full relation spaces, transports nonzero radical characters by Levi conjugation, and uses character averages and finite Fourier orthogonality to kill each vector. It is not a statement assumed as a proof. |
+| `MirabolicLatticeBox` | commit `b0ef093b63d0f0c27bb690dca12820c991756955` (a lower helper) | Compact open radical-coordinate boxes, dual boxes and finite character sums used by `MinusVanishing`. The product irreducibility theorem added to the Library together with it is not imported or used. |
+| `Jacquet.CharacterAveraging` | commit `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` | Finite orbit means and finite relation-span induction yield eventual zero twisted averages. The Library code extracts the identical orbit-translation argument to `Compact.OrbitMeanTranslation`. No deformation/product conclusion is used. |
+| `PadicAdditiveConductorProof` and the scalar annihilator helper in `ZeroRowLastRowCutoffProof` | Respectively commit `6543e70ef8c82ed8535a0f9fd06c59ed896bc738` and commit `6d91111e6f9b7a27124b1de32a4984bbdd222a61` | Actual valuation-lattice/conductor arithmetic and annihilators. The cutoff module's two topology proofs have been extracted unchanged to `PadicLatticeTopology`. No Whittaker finiteness or Rankin–Selberg classification result is used. |
 | `SupercuspidalSupport.sum_rank` and `CuspidalDatum.rank_pos` | Existing published `SupercuspidalSupport` and `Segments` constructions | `sum_rank` extracts the equality of the sum of the given ordered factor ranks with the ambient rank; `rank_pos` is a structure field. The support calculation does not use the other theorems or segment constructions in these modules. |
 
-The current `MirabolicDerivativeVanishing` and `MinusVanishing` pairs were
-compared byte for byte with both their frozen accepted files and their
-publication commits; they agree. The lower proof/source and independent
-review audit of the averaging, conductor, lattice and annihilator helpers
-was performed in Worker 128's earlier one-step detection task
-`2871b0c7-cd63-4910-99a3-db5638fa30d1`. Those proof files remain byte-identical
-at the present base, including the recorded extractions. The added
+The `MirabolicDerivativeVanishing` and `MinusVanishing` pairs used here were
+compared byte for byte with their files at the commits above; they agreed.
+The proof and source audit of the averaging, conductor, lattice and
+annihilator helpers is recorded on the page of
+`Derivative.MirabolicOneStepDetectionProof`. Those proof files were
+byte-identical at the Library base of the import audit below, including the
+recorded extractions. The added
 `NormalizedCharacter.determinantNorm_eq_one_of_mem_compact` theorem imports
 `Topology.CompactNormCharacter`, an elementary proof that a continuous
 positive character is trivial on a compact subgroup: compactness bounds its
@@ -155,11 +153,12 @@ The only direct imports are
 `Langlands.Representation.Derivative.MirabolicDerivativeVanishing`.
 Their recursively followed project closure has exactly 101 published
 modules, listed below. All 202 Lean/Markdown files agree byte for byte
-with the workspace's immutable Library base
+with the Library base
 `26e9adf301abba95f343f5005d9f478af9fc09d4`. The entire existing base's
 13,045 Lean/Markdown files were also checked unchanged before adding this
 new pair. In particular the target pair and all its imports are untouched.
-No import of the parent six-statement module is needed for these helpers.
+No import of the parent six-statement module
+`Classification.SegmentSocleDerivativesStatement` is needed for these helpers.
 
 ```text
 Langlands.Analysis.Local.QuotientMeasure
@@ -269,53 +268,51 @@ Langlands.Weil.Representation.Operations
 
 The audit follows both the entire import closure and the actual proof
 chain above. A scan of the 101 Lean files and their Markdown companions
-against all 54 explicit forbidden declaration/task identifiers in the
-contract found no Lean hits. The six matching Markdown lines are
+against all 54 explicit excluded identifiers found no Lean hits. The six matching Markdown lines are
 independence disclaimers in `Iteration`, `MirabolicMinus` and
 `MirabolicDerivativeVanishing`. The mathematical inspection is also
 necessary: an identifier scan alone cannot exclude a renamed result.
 The following table records every listed exclusion, including repeated
 upstream restrictions, as absent from the mathematical proof chain and
-from imported proof dependencies. Task IDs identify prohibitions only.
+from imported proof dependencies.
 
-| Excluded conclusion or task family | Audit result |
+| Excluded conclusion | Audit result |
 | --- | --- |
-| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`; `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` | No such module, conclusion or successor enters the closure or proof. Joint detection precedes segment products. |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`; `7ff2a1e9-89dc-439e-a861-a567b3db92bf` and successors | No linked or juxtaposed pair structure or quotient result is used. |
-| `SegmentSocleProductIrreducibility`; `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | No socle product criterion is imported or applied. |
-| `AdjacentUnlinkedSegmentSocleSwap`; `e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab` | No adjacent commutation or swap result is used. |
-| `TwoSegmentSocleCommutation`; `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0` | No two-segment commutation result is used. |
-| `LinkedSegmentSocleGluing`; `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea` | No gluing result is used. |
-| `OrderedMultisegmentSocleExistence`; `23189526-80b0-4828-a6d4-7ebec2cbeef5` | The proof uses no ordered socle construction or existence. |
-| `MultisegmentSocleExhaustion`; `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | No multisegment exhaustion is used. |
-| Analytic segment classification; `aca8805b-054f-4d56-8045-12db7f623404` | The proof uses only actual relation quotients and elementary support arithmetic. |
-| Special-head multisegment exhaustion; `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` | No special-head exhaustion is used. |
-| Ordered special/strong-head existence; `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | No ordered head existence is used. |
-| Quotient coverage; `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | No quotient coverage theorem is used. |
-| Ordered conversion; `8252833d-c269-41a9-824c-5879e531b23b` | No multisegment conversion theorem is used. |
-| Tempered block uniqueness; `52e97845-36bb-457d-b76f-70753334b88c` | No tempered or block uniqueness theorem is used. |
-| `GenericSegmentProductUniqueness`; `30341ae4-65f2-4a0e-9283-763db01a409e` | No generic segment uniqueness result is used. |
-| `SquareIntegrableLanglandsClassification`; `1cb45da2-7007-4351-a694-594fb148b8d1` | No square-integrable classification is used. |
-| Square-integrable exhaustion; `cd8ab97c-0b78-4bce-97c4-d307a28159a4` | No square-integrable exhaustion is used. |
-| Regular exhaustion; `bf433f0a-921a-428c-b0c0-6475438125ac` | No regular exhaustion is used. |
-| `SegmentSpecialEssentialSquareIntegrability`, forward special-segment essential square-integrability; `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | No forward or special square-integrability result is used. |
-| `SegmentHeadProductIrreducibility`; `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | No special-head criterion or its consequences are used. |
-| Individual special-head/reverse-socle existence; `67279e36-f3c2-42e3-9302-11729784042e` | `Segments` supplies relations only; no individual existence assertion is used. |
-| Individual segment-socle/reverse-head existence; `4ca79bbd-589e-476b-9f65-661e799984b5` | No individual socle/head existence assertion is used. |
-| `SegmentFullJacquetFormula`; `ed48ae06-964c-4c84-9e62-978f5a953ca7` and exact proof successor | No full segment Jacquet formula is used. The relation-space and averaging constructions are general lower algebra. |
-| `SegmentHeadJacquetFormula`; `55ad1e10-62d8-46b7-a081-909ef0056426` | No head Jacquet formula is used. |
-| `SegmentSocleJacquetFormula`; `b95105c6-f8bb-4641-ae53-2f49d1e7f034` | No socle Jacquet formula is used. |
-| `SegmentSpecialJacquetExponentNormFormula`; `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | No segment exponent-norm formula is used. |
-| `TwoSupercuspidalNonadjacentProductIrreducible`; `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` | No nonadjacent two-supercuspidal irreducibility result is used. |
-| `TwoSupercuspidalProductStructure`; `ab61f565-1427-4746-ba77-46097563e962` | No full product structure, adjacent composition or Jacquet conclusion is used. |
-| Every segment derivative formula, including Ze80 §§3.5, 9.6 and parent clauses (b), (d), (e), (f) | No segment derivative statement or proof module is imported. The derivative input is general mirabolic joint vanishing, with its actual proof and independent publication checked. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | No such module, conclusion or proof of one enters the closure or proof. Joint detection precedes segment products. |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` and their proofs | No linked or juxtaposed pair structure or quotient result is used. |
+| `SegmentSocleProductIrreducibility` | No socle product criterion is imported or applied. |
+| `AdjacentUnlinkedSegmentSocleSwap` | No adjacent commutation or swap result is used. |
+| `TwoSegmentSocleCommutation` | No two-segment commutation result is used. |
+| `LinkedSegmentSocleGluing` | No gluing result is used. |
+| `OrderedMultisegmentSocleExistence` | The proof uses no ordered socle construction or existence. |
+| `MultisegmentSocleExhaustion` | No multisegment exhaustion is used. |
+| Analytic segment classification | The proof uses only actual relation quotients and elementary support arithmetic. |
+| Special-head multisegment exhaustion | No special-head exhaustion is used. |
+| Ordered special/strong-head existence | No ordered head existence is used. |
+| Quotient coverage | No quotient coverage theorem is used. |
+| Ordered conversion | No multisegment conversion theorem is used. |
+| Tempered block uniqueness | No tempered or block uniqueness theorem is used. |
+| `GenericSegmentProductUniqueness` | No generic segment uniqueness result is used. |
+| `SquareIntegrableLanglandsClassification` | No square-integrable classification is used. |
+| Square-integrable exhaustion | No square-integrable exhaustion is used. |
+| Regular exhaustion | No regular exhaustion is used. |
+| `SegmentSpecialEssentialSquareIntegrability`, forward special-segment essential square-integrability | No forward or special square-integrability result is used. |
+| `SegmentHeadProductIrreducibility` | No special-head criterion or its consequences are used. |
+| Individual special-head/reverse-socle existence | `Segments` supplies relations only; no individual existence assertion is used. |
+| Individual segment-socle/reverse-head existence | No individual socle/head existence assertion is used. |
+| `SegmentFullJacquetFormula` and its proof | No full segment Jacquet formula is used. The relation-space and averaging constructions are general lower algebra. |
+| `SegmentHeadJacquetFormula` | No head Jacquet formula is used. |
+| `SegmentSocleJacquetFormula` | No socle Jacquet formula is used. |
+| `SegmentSpecialJacquetExponentNormFormula` | No segment exponent-norm formula is used. |
+| `TwoSupercuspidalNonadjacentProductIrreducible` | No nonadjacent two-supercuspidal irreducibility result is used. |
+| `TwoSupercuspidalProductStructure` | No full product structure, adjacent composition or Jacquet conclusion is used. |
+| Every segment derivative formula, including Ze80 §§3.5, 9.6 and parent clauses (b), (d), (e), (f) | No segment derivative statement or proof module is imported. The derivative input is general mirabolic joint vanishing, with its actual proof and publication checked. |
 | Every segment-socle/head existence or Jacquet formula, and segment classification | The only imported segment layer defines the cuspidal datum, twists, segments and constituent relations. The four proofs use datum ranks, twists of the empty multiset, and support rank sums. |
 | Ze80 product criteria 4.2, 9.7, analytic/square-integrability result 9.3, classification and exhaustion theorems | None supplies any step. In particular the linked-pair converse is not used circularly for Proposition 1.11. |
-| Unproved derivative statements, citations, conditional assemblies or pending tasks | The used mirabolic detection lemmas are fully proved and independently accepted/published. Neither minus exactness, general-linear exactness, Leibniz filtration, mixed products, pairing, nor parent clause (a) is needed here. |
+| Unproved derivative statements, citations or conditional assemblies | The used mirabolic detection lemmas are fully proved. Neither minus exactness, general-linear exactness, Leibniz filtration, mixed products, pairing, nor parent clause (a) is needed here. |
 
-All rows exclude mathematical conclusions, proof successors and transitive
-dependents, including renamed versions. No new prerequisite task is
-introduced. The complete parent theorem, its nonboundary orders and its
-required notifications remain obligations of task
-`f81d9b36-2615-4fec-abc2-50ef93d880bf`; acceptance of this helper does not
-complete that task.
+All rows exclude mathematical conclusions, the files proving them and transitive
+dependents, including renamed versions. The complete parent theorem and
+its nonboundary orders are not proved here; the Library proves
+`HighestDerivativeSupportShift` as `highestDerivativeSupportShift` in
+`HighestDerivativeSupportShiftProof`.

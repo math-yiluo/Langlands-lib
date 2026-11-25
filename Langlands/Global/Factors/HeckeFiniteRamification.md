@@ -1,6 +1,6 @@
 # Finite ramification of actual Hecke characters
 
-Worker 1692, supporting work for the proof of
+Supporting work for the proof of
 `Langlands.Global.HeckeGlobalFunctionalEquationStatement`.
 
 This module constructs the actual inclusion of the product of completed local

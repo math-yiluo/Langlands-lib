@@ -1,8 +1,7 @@
 # Associated Jacquet filtration in rank zero
 
-Author: Worker 193. This is the direct rank-zero branch of the existing
+This is the direct rank-zero branch of the existing
 `Langlands.CuspidalSupport.AssociatedJacquetFiltrationTheorem`.
-The module preserves the published statement and every imported pair.
 
 `associatedJacquetFiltration_rankZero` proves
 `AssociatedJacquetFiltrationTheorem.{uF,uV} F T 0` for every prime `p`,
@@ -13,7 +12,7 @@ irreducibility, admissibility, finite length, finite dimension, or splitting
 hypothesis is introduced. The published quasicuspidality and association
 hypotheses are accepted by the proof but are unnecessary at rank zero.
 This module does not prove the positive-rank branch or the full universal
-target, and is a helper for that complete proof contribution.
+target, and is a helper for the complete proof in `AssociatedProof`.
 
 ## Implemented argument
 
@@ -61,7 +60,7 @@ uses only trivial-group constructions and does not import a geometric-lemma
 proof. The published `PadicGeometricLemmaTheorem` covers positive rank and
 therefore cannot itself supply this boundary case.
 
-This helper is submitted together with the unconditional theorem in
+This helper serves the unconditional theorem in
 `AssociatedProof`; its implementation is specific to rank zero.
 
 ## All-field port

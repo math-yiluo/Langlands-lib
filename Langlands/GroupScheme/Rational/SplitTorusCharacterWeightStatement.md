@@ -175,7 +175,10 @@ Chapter 22, entries on p. 465 (22.8) and p. 478 (proof of 22.42), and, for
 Chapters 4 and 12, entries on p. 89 (proof of 4.14) and p. 234 (Example
 12.10); none concerns 22.13 or the results its proof uses.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as `splitTorusCharacterWeight` in
+[`Rational.SplitTorusCharacterWeightProof`](SplitTorusCharacterWeightProof.md).
 
 Milne's 2017 proof, printed p. 466: let `χ ∈ X(T)`. As `O(G) → O(T)` is
 surjective, there is `f ∈ O(G)` with `f|T = χ`. "The action of T on O(G) is

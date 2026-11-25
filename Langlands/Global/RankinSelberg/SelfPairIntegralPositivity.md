@@ -1,6 +1,6 @@
 # Positive global and finite partial self-pair integrals
 
-Worker 837. Internal positivity helpers for Task 6821.
+Internal positivity helpers for the proof of `CuspidalSelfPairContinuationStatement`.
 
 At a real parameter where it is integrable, the Whittaker integrand for a vector
 and its conjugate has real part
@@ -17,7 +17,7 @@ proved in `SelfPairPositiveData`, and Mathlib's positive-integral theorem give a
 strictly positive global integral.
 
 The partial integration domains `unipotentIntegralClasses` increase to the whole
-quotient, as proved in the published `PartialIntegralExhaustion` module. For an
+quotient, as proved in the module `PartialIntegralExhaustion`. For an
 integrable real function with positive total integral, their integrals converge
 to that positive number. Thus a sufficiently large finite domain has positive
 integral and can also contain any prescribed finite set. Applying this to the

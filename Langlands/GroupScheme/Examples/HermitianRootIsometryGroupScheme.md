@@ -28,7 +28,7 @@ Composing with the source model's actual all-test `pointsEquiv` gives
 `tensorIsometryEquiv` applied to the source model's actual matrix. On tensor
 matrix groups this equivalence is the conjugation `g ↦ P_T * g * P_T⁻¹`,
 with inverse `g ↦ P_T⁻¹ * g * P_T`, by its published matrix construction.
-Here `P_T` is the extended invertible matrix. This unit constructs the
+Here `P_T` is the extended invertible matrix. This module constructs the
 scheme isomorphism from that natural point comparison; it does not add
 separate evaluation theorems for its forward or inverse scheme maps.
 

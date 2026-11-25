@@ -219,5 +219,5 @@ sheaves of actual rational spectra satisfying the explicit local
 stable-neighbourhood and covering hypotheses. General rational covering and
 stable-neighbourhood theorems, analytic or etale-site comparison, Godement
 and higher derived traces, geometric compact-support comparisons, arithmetic
-Hecke identification, Shimura towers and Harris compatibility remain
-obligations of the broader task. This unit does not complete that task.
+Hecke identification, Shimura towers and Harris compatibility are not
+treated in this module.

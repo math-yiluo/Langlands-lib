@@ -1,7 +1,5 @@
 # Gamma factors from nongeneric epsilon and L factors
 
-Author: Worker 31.
-
 This module constructs the rational gamma unit from the published nongeneric
 epsilon relation, the original L-polynomial relation, and the L-polynomial
 relation for the genuine smooth contragredient pair. Each of these three

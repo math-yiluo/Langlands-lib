@@ -10,7 +10,7 @@ correspondence with that existential condition. No subgroup, lift,
 section, or woundness proof is supplied as an extra premise to the
 exclusion result below.
 
-This internal unit proves that a supplied smooth connected affine fppf
+This internal module proves that a supplied smooth connected affine fppf
 quotient by a represented split radical has no central closed additive
 subgroup. When the source is unipotent, the existing exact
 `UnipotentWoundCriterionStatement` implies that this quotient has only
@@ -59,9 +59,10 @@ criterion on the quotient, whose unipotence follows from unipotence of
 the source and the supplied fppf quotient.
 
 The unconditional central-subgroup exclusion does not itself prove
-affine-line constancy. This unit also does not identify the split radical
+affine-line constancy. This module also does not identify the split radical
 of the ordinary radical with the ambient group's split radical.
 That identification requires the additional ambient stability argument.
-Consequently the exact `SplitRadicalWoundQuotientStatement` remains a
-separate proof obligation. No characteristic, perfectness or infinitude
+Consequently the exact `SplitRadicalWoundQuotientStatement` is not proved
+here; it is proved separately, by `splitRadicalWoundQuotient` in
+`Langlands.GroupScheme.Reductive.SplitRadicalWoundQuotientProof`. No characteristic, perfectness or infinitude
 restriction is imposed here.

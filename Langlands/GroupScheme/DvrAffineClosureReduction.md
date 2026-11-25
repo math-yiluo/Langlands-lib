@@ -1,7 +1,5 @@
 # The conditional affine-target reduction over a DVR
 
-Worker 671.
-
 This is a derived consumer of the generic-subgroup closure and its flat-source
 factorization. Raynaud's `DvrGenericAffinenessStatement` is an explicit premise;
 this module supplies no proof of that criterion or of the reductive-monomorphism
@@ -61,5 +59,6 @@ made.
 
 The criterion itself is the published statement corresponding to Prasad--Yu,
 *On quasi-reductive group schemes*, Proposition 3.1, author-preprint p.5.
-Its separate proof remains a dependency. Subsequent embedding into a general
-linear group and the reductive-group arguments also remain separate.
+It is an explicit premise here; the Library proves it only conditionally, in
+`DvrGenericAffinenessReduction`. Subsequent embedding into a general
+linear group and the reductive-group arguments are not part of this module.

@@ -104,7 +104,8 @@ theorem rankOne_double_positive_difference
   have hnflip : weylAction B.i n a = -a :=
     hpa.weylAction_eq_neg B.i hT ha.1 huA hu1
   have hnflipNeg : weylAction B.i n (-a) = a := by
-    rw [map_neg, hnflip, neg_neg]
+    rw [show weylAction B.i n (-a) = -weylAction B.i n a from
+      (weylAction B.i n).toLinearMap.map_neg a, hnflip, neg_neg]
   have hninv : weylAction B.i n⁻¹ a = -a := by
     have h := weylAction_inv_apply_apply n (-a)
     rw [hnflipNeg] at h

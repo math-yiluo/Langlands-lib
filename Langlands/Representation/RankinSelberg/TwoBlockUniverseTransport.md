@@ -1,7 +1,5 @@
 # Carrier-universe transport for two-block pair factors
 
-Author: Worker 592.
-
 This internal module derives carrier transport from the published Library
 definitions and actual representation equivalences. It makes no new analytic
 or original literature claim. In particular, each closed reduction assumes the
@@ -97,12 +95,10 @@ published source pairs reused unchanged are
 `Langlands/Representation/RankinSelberg/TwoBlockMultiplicativityStatement.{lean,md}`.
 Their existing imports supply the underlying induction and factor definitions.
 
-The module compiled without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection of the new actual induced
+The module compiled without errors or warnings. Inspection of the new actual induced
 equivalence reports precisely the independent universe parameters `uF, uV, uX`;
 each closed reduction reports `uF, uV, uW`. Their inspected assumptions are
-only `propext`, `Classical.choice`, and `Quot.sound`. These development checks
-do not supply independent semantic acceptance or Library publication.
+only `propext`, `Classical.choice`, and `Quot.sound`.
 
 ## All-field port
 

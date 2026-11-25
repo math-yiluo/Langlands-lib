@@ -1,7 +1,5 @@
 # Degree-two inflation–restriction under degree-one vanishing
 
-Author: Worker 10.
-
 `Langlands.Cohomology.H2InflationRestrictionExactness` is a proposition
 universally quantifying a commutative ring `k : Type u`, a group
 `G : Type u`, a representation `A : Rep.{u} k G`, and a normal subgroup
@@ -44,8 +42,8 @@ pages 117–118 / PDF pages 123–124. Registered source
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 10 read these original pages and visually checked the displayed
-sequence on printed page 117. No project errata entry for this source
+These original pages were read and the displayed sequence on printed
+page 117 was checked visually. No project errata entry for this source
 was present when checked.
 
 Serre's normal subgroup `H` is named `S` here. His proposition states
@@ -64,6 +62,8 @@ kernel expresses the same underlying abelian-group exactness.
 The commutative-ring parameter adds scalar structure to the source
 formulation; it does not add an exactness hypothesis.
 
-This file defines the proposition target only. Its proof is a separate
-obligation, as is its specialization to finite Galois towers and the
-comparison with their coefficient representations.
+This file defines the proposition target only. Its proof is
+`Langlands.Cohomology.h2InflationRestrictionExactness` in
+`Langlands.Cohomology.H2InflationProof`. Its specialization to finite Galois
+towers and the comparison with their coefficient representations are not
+part of this file.

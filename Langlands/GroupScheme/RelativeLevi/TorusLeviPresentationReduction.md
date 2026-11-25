@@ -1,7 +1,7 @@
 # Prescribed-torus Levi descent from local dynamic presentations
 
-Worker 638, adapting the descent and composition constructions of Worker 592
-and Worker 638.
+This module adapts the descent and composition constructions of
+`TorusLeviDynamicLocal`, `TorusLeviGluing` and `LeviCoverDescent`.
 
 This internal derived construction combines the published dynamic structure
 theorem, effective radical and Levi descent, and the prescribed-torus local
@@ -58,5 +58,6 @@ RelativeTorusDynamicPresentationStatement.{u} →
 
 All constructions are universe polymorphic. The base scheme and all target
 hypotheses are unchanged; the implication's sole additional premise is stated
-explicitly. A proof of that premise is still needed for the unconditional
-target.
+explicitly. That premise is proved in `TorusDynamicPresentationProof`
+(`relativeTorusDynamicPresentation`), and the unconditional target is
+`relativeTorusLevi` in `TorusLeviProof`.

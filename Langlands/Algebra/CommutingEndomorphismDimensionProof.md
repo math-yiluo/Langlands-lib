@@ -48,20 +48,13 @@ the primary decomposition into simultaneous generalized eigenspaces in
 `Langlands.Algebra.CommutingDimensionPrimary`. It then clears the real
 exponent by raising both sides to the power `2^l`.
 
-## Credit
-
-Worker 307 wrote the general-field proof infrastructure that this theorem
-imports. This includes `commuting_dimension_nat` and the `CommutingDimension*`
-helper modules. Worker 277 wrote this specialization wrapper.
-
-## Verification and publication
+## Verification
 
 The theorem is checked with the project's Lean service, which reports its
 kind, universe parameters and axioms. It must use only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`, so it contains no `sorry`,
-`admit` or new axiom. The theorem is submitted as a `lean.proof` naming
-`Langlands.CommutingEndomorphismDimensionStatement` as its statement
-declaration. Machine validation runs a Lake build and an exact-target
-check. It also checks that the statement pair and its imports are
-unchanged. Independent semantic review compares this Markdown with the
-Lean. Publication in the Library follows acceptance.
+`admit` or new axiom. Its statement declaration is
+`Langlands.CommutingEndomorphismDimensionStatement`. Machine validation runs
+a Lake build and an exact-target check. It also checks that the statement
+pair and its imports are unchanged. This Markdown is compared with the
+Lean.

@@ -1,9 +1,9 @@
 # The exponent criterion for temperedness on `GL_n`
 
-Worker 19 states `Langlands.GLTemperedExponentCriterionStatement`. This is a
-proposition definition. It asserts no Lean proof. Temperedness is Worker 23's
+This module states `Langlands.GLTemperedExponentCriterionStatement`. This is a
+proposition definition. It asserts no Lean proof. Temperedness is the
 analytic predicate `T.IsTempered` (matrix coefficients in `L^(2+ε)` modulo the
-centre), and the exponents are Worker 23's `T.IsJacquetExponent`. Neither is
+centre), and the exponents are `T.IsJacquetExponent`. Neither is
 defined through the other.
 
 ## Objects and quantifiers
@@ -104,7 +104,7 @@ modulus is trivial and the block scalars are the scalar matrices. So for
 - S. S. Kudla, *The local Langlands correspondence: the non-archimedean case*,
   §2.2, printed p.372 (literature ID `kudla-1994-local-langlands-nonarchimedean`,
   SHA256 `0e1f9bc9986fc136081f0eed1aaafb50302acacb5a23e9538581f2f5b533198b`).
-  This is the `L^(2+ε)` definition of temperedness that Worker 23's
+  This is the `L^(2+ε)` definition of temperedness that
   `IsTemperedModCenter` implements. It is not a source of the criterion.
 
 ## Translation to the Lean statement (derived)
@@ -193,7 +193,7 @@ direction from left to right, a Borel Haar measure exists
 ## Further derived choices
 
 - **The `ω`-hypothesis is needed.** Waldspurger's criterion holds for every
-  admissible representation. Worker 23's predicate, following Kudla, also
+  admissible representation. The Library's predicate, following Kudla, also
   demands one unitary central character. Without the `ω`-hypothesis the
   statement would be false: for two tempered irreducible representations with
   different unitary central characters, the direct sum satisfies the exponent
@@ -236,8 +236,8 @@ or assumed:
 ## Lean dependencies
 
 Direct imports are `Langlands.Representation.Classification.Tempered` (for
-`T.IsTempered`, Worker 23) and `Langlands.Representation.Exponents.Jacquet` (for
-`T.IsJacquetExponent`, Worker 23). Through the latter come the published block
+`T.IsTempered`) and `Langlands.Representation.Exponents.Jacquet` (for
+`T.IsJacquetExponent`). Through the latter come the published block
 shapes `GeneralLinear.BlockShape` (`Langlands.Group.GL.Blocks`), the normalized
 Jacquet module and the block modulus. `IsAdmissible`, `GeneralLinear.scalar`
 and `T.normalizedAbs` are published Library definitions.

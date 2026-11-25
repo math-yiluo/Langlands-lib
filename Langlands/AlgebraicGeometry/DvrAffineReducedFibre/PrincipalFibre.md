@@ -1,7 +1,5 @@
 # Reducedness of principal fibres with normal local rings
 
-Worker 594.
-
 Conrad's appendix to Prasad–Yu, *On quasi-reductive group schemes*,
 author preprint, Remark A.7 (p. 30), uses Serre's criteria to pass
 from generic smoothness to geometrically reduced fibres for flat

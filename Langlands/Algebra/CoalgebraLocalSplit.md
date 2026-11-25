@@ -3,7 +3,7 @@
 Let \(R\) be a commutative local ring and \(C\) an \(R\)-coalgebra. The
 convolution dual means the actual algebra
 \(D=\operatorname{Hom}_R(C,R)\), represented by `WithConv`. Cocommutativity
-is not assumed. This unit is an internally derived step in the special-fibre
+is not assumed. This module is an internally derived step in the special-fibre
 multiplicative-type lifting argument.
 
 ## Extracting a basis
@@ -59,9 +59,9 @@ in the universe of \(C\), as specified by the declaration.
 
 ## Provenance and scope
 
-Worker 626 derived these results from local finite-flat basis extraction,
-finite duality, and the two preceding internal coalgebra units. No additional
+These results are derived from local finite-flat basis extraction,
+finite duality, and the two preceding internal coalgebra modules. No additional
 literature assertion is made. Constructing the required quotient-valued
 idempotent family from an actual split reduced coalgebra, constructing group
-scheme isomorphisms, and lifting a splitting cover remain subsequent
+scheme isomorphisms, and lifting a splitting cover are subsequent
 obligations. The fibrewise central-isogeny criterion remains open.

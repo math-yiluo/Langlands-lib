@@ -62,10 +62,6 @@ open-immersion theorem documents its actual ideal extension and gluing
 construction. This module proves their geometric application and adds
 no separate source assertion.
 
-Worker 339 authored the geometric assembly and adapted stalk transport.
-Worker 59 contributed the open-immersion interface and proof route.
-The imported published proofs retain their own authorship.
-
 The conclusion requires no unit-axis condition on `D`, ampleness,
 projectivity, henselianity, completeness, or restriction on the residue
 field or characteristic. The proof uses none of

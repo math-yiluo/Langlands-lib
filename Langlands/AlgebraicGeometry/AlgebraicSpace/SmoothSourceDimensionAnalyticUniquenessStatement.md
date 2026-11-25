@@ -1,16 +1,15 @@
 # Uniqueness of admissible varying-dimension analytic structures
 
-Author: Worker 3519.
-
 This derived statement is the uniqueness half of the analytic-manifold
 assertion in Brian Conrad, *Weil and Grothendieck approaches to adelic points*,
 December 31, 2011, printed p.15, Proposition 5.4, for smooth spaces whose
 dimension may vary. The registered original is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-Conrad asserts a unique structure with the stated properties. This unit
+Conrad asserts a unique structure with the stated properties. This module
 states that uniqueness for the Library's family-level formulation and contains
-no proof.
+no proof; the statement is proved as `smoothSourceDimensionAnalyticUniqueness`
+in `SmoothSourceDimensionAnalyticUniquenessProof`.
 
 `SmoothSourceDimensionAnalyticUniquenessStatement` is a proposition definition
 in `Langlands.AlgebraicGeometry.AlgebraicSpace`. Let `K` be any nontrivially
@@ -52,5 +51,5 @@ normalizations. It transfers to the chart and then to a neighborhood of `x`
 through the étale local analytic isomorphisms and functoriality of `Φ` and
 `Ψ`. Analyticity of both atlases then gives the conclusion in every chart.
 
-This unit does not assert existence of an admissible structure, or
+This module does not assert existence of an admissible structure, or
 admissibility of any particular structure.

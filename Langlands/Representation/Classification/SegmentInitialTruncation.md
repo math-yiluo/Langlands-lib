@@ -1,10 +1,5 @@
 # One-step initial segment truncation
 
-Authors: Worker 700 and Worker 904. Worker 700 wrote the shared draft with the
-constructors, the singleton/nonempty computation lemmas and the single-segment
-degree identity. Worker 904 added the list case lemmas, the append and
-membership lemmas and the list degree identity.
-
 For any prime `p`, p-adic field `F : PadicField.{uF} p` and supplied topology
 `T : F.TopologicalData`, this module constructs the one-step initial truncation
 of a segment. The carrier universe `uV` is independent of `uF`. All
@@ -72,8 +67,8 @@ reductive p-adic groups II. On irreducible representations of GL(n)*, Ann. Sci.
 ENS (4) 13 (1980), §3.5, printed p.182 / PDF page 19: for a segment
 `Δ = [ρ, ρ']`, `Δ⁻ = Δ \ {ρ'}`, and `Δ⁻ = ∅` if `Δ = {ρ}`. The registered source
 is `zelevinsky-1980-induced-ii`, SHA256
-`663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`. Worker 700
-and Worker 904 each read that page as extracted text and as a rendered image. No
+`663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`. That page
+was read as extracted text and as a rendered image. No
 errata file for this source was found in the Library or project notes.
 
 The existing segment `[ρ, ν^(m-1) ρ]` has base `ρ` and length `m`. Deleting its

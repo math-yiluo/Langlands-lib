@@ -1,7 +1,5 @@
 # Common determinant twists of actual normalized block induction
 
-Authors: Worker 468; Worker 6 (adapted determinant and tensor argument).
-
 This is internal algebraic support for reducing a rank-one test to the trivial
 character. It generalizes the determinant/tensor argument in the published
 `Classification.TwistedProductCharacterTwistProof` from segment factors to

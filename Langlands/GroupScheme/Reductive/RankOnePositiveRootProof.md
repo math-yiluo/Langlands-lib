@@ -1,8 +1,6 @@
 # Uniqueness of the positive root in semisimple rank one
 
-Worker 1549 assembles the final proof from the published projective Borel
-route developed with Workers 1547, 254, 1162 and 317. The imported centralizer,
-quotient, fixed-point and transport results retain their own authorship.
+The final proof is assembled from the published projective Borel route.
 
 `Langlands.GroupScheme.rankOnePositiveRootUniqueness` has exactly the type
 `Langlands.GroupScheme.RankOnePositiveRootUniquenessStatement.{u}`.
@@ -13,7 +11,7 @@ and cocharacter `ν`, pairwise integral dependence of the actual roots implies
 that any two roots positive on `ν` are equal. Positivity is the strict
 inequality in `ℤ` given by `latticePairing T`; the cocharacter need not be
 regular or nonzero. Roots are the nonzero characters occurring in the actual
-adjoint Lie algebra, with the meaning of the unchanged published target.
+adjoint Lie algebra, with the meaning of the published target.
 
 ## Implemented proof
 

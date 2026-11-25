@@ -41,8 +41,7 @@ Public declarations of the original that are not re-declared here: `Langlands.Ra
 
 ## Deviation from the original: rank-one high-ramification input
 
-This deviation was made by Worker 394 (Task 6539), after Worker 5220's port. In the
-original, four declarations take the high-ramification hypothesis
+In the original, four declarations take the high-ramification hypothesis
 `hram : WhittakerTypeHighlyRamifiedLVanishingStatement` (JPSS 1983, Proposition
 (2.13), for all ranks): the private theorems `auxiliaryCharacter_exists`,
 `twoBlockL_firstRankOne`, `twoBlockL_allRanks`, and the public

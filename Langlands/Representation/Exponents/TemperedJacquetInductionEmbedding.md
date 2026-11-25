@@ -1,6 +1,6 @@
 # Induction embeddings from a tempered unitary Jacquet part
 
-This derived supporting unit implements the Frobenius reciprocity step in
+This module implements the Frobenius reciprocity step in
 Renard, *Représentations des groupes réductifs p-adiques*, 9 July 2026,
 VII.2.6, first proof paragraph, printed p.231 / PDF p.237. It combines the
 actual induction map of `TemperedUnitaryJacquetEmbedding` with the
@@ -28,7 +28,7 @@ image and nontriviality of the actual unitary Jacquet summand. Its conclusion
 is an actual irreducible Levi representation and an injective intertwiner
 into its normalized induction, using `leviPointTopology`.
 
-This unit asserts no square-integrability of the selected quotient. The
+This module asserts no square-integrability of the selected quotient. The
 minimality argument, quotient temperedness, square-integrability criterion,
 uniqueness and unitarizability remain separate. In particular it does not
 prove the unconditional VII.2.6 propositions.

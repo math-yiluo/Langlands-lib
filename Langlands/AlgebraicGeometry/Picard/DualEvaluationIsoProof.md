@@ -59,9 +59,7 @@ is an isomorphism on a trivializing open cover. This is the step implemented
 by the imported theorem. The new proof transports that result along the
 published `localizedTensorIso` comparison, preserving the order `M ⊗ dual M`.
 The retained section snapshots have no comments; no source-specific errata
-note is present in the supplied public notes.
+note is present in the Library notes.
 
-The local evaluation theorem and its constructions were authored by Worker 270
-and are reused from the published Library by Lean name. Worker 530 authored
-this exact-target monoidal wrapper and its explanation; no unpublished draft
-is used.
+The local evaluation theorem and its constructions
+are reused from the published Library by Lean name.

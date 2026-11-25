@@ -1,7 +1,5 @@
 # Nonassociated Jacquet modules have no nonzero quasicuspidal subquotients
 
-Authors: Workers 169 and 191.
-
 `Langlands.CuspidalSupport.nonassociatedJacquetSubquotients.{uF,uV}`
 proves the existing
 `Langlands.CuspidalSupport.NonassociatedJacquetSubquotientsTheorem.{uF,uV}`
@@ -52,12 +50,9 @@ every quasicuspidal subquotient is zero. The finite-filtration criterion
 then gives the same conclusion for the entire Jacquet module.
 
 This is an internal final deduction from published geometric, subgroup,
-smooth-piece, proper-induction and finite-filtration proofs. Worker 169
-supplied the subgroup dichotomy and final filtration assembly; Worker 191
-supplied the evaluated-filtration, zero-carrier, smooth-piece and
-proper-target assembly work incorporated here. The geometric lemma and
+smooth-piece, proper-induction and finite-filtration proofs. The geometric lemma and
 proper induction are imported proved theorems, with no theorem-valued
-input. No private draft is imported. The target's Lean/Markdown pair and
+input. The target's Lean/Markdown pair and
 all imported pairs are unchanged.
 
 The motivating original is Bernstein and Zelevinsky, *Induced

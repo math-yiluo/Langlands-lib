@@ -66,7 +66,7 @@ actual homeomorphism.
 
 The matrix form definition imposes polynomial growth separately on each finite
 slice, whereas the source requires one bound over all adelic arguments. The
-extra full-growth conjunct in the equivalence is therefore retained. This unit
+extra full-growth conjunct in the equivalence is therefore retained. This module
 constructs an injection and does not establish its surjectivity. It also makes
 no assertion of automatic uniform differential growth, a comparison of
 cuspidal form spaces, or global finite tensor rank. The separate literal tensor

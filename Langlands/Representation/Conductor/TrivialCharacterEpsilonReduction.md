@@ -1,6 +1,6 @@
 # Reduction of the trivial-character epsilon factor to the all-field functional equation
 
-Author: Worker 5550. This internal helper module proves
+This internal helper module proves
 `Langlands.Conductor.TrivialCharacterEpsilonStatement.{uF, uV}` from one premise,
 the separately stated
 `Langlands.RankinSelberg.LocalFieldUnequalRankFunctionalEquationStatement.{uF, uV, 0}`
@@ -67,9 +67,9 @@ hence the instance `.{uF, uV, 0}`.
 ## Scope
 
 The premise is the unequal-rank functional equation of JPSS 1983, Theorem
-(2.7)(iii), over every nonarchimedean local field. The target's contract counts an
-implication that keeps the functional equation as a premise as no proof of the
-target. This module is accordingly only the reduction step. The unconditional
+(2.7)(iii), over every nonarchimedean local field. An implication that keeps the
+functional equation as a premise is no proof of `TrivialCharacterEpsilonStatement`.
+This module is accordingly only the reduction step. The unconditional
 theorem `Langlands.Conductor.trivialCharacterEpsilon` in `TrivialCharacterEpsilonProof`
 applies it to the published proof of the premise. Whittaker multiplicity one is not
 a premise here; it is the published `localFieldMultiplicityOne`. The equal-rank case
@@ -77,6 +77,5 @@ a premise here; it is the published `localFieldMultiplicityOne`. The equal-rank 
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiles the
-module with no errors or warnings. The reduction theorem uses only the axioms
+The module compiles with no errors or warnings. The reduction theorem uses only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

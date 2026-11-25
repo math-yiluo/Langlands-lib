@@ -1,7 +1,5 @@
 # Column Fourier coefficients of automorphic functions
 
-Author: Worker 1709.
-
 This is internal infrastructure for the proof of
 `Langlands.Automorphic.CuspidalUnitaryLocalGenericityStatement`. It implements one step of the
 classical construction of the Whittaker coefficient of a cusp form on `GL_{r+1}`, integrating

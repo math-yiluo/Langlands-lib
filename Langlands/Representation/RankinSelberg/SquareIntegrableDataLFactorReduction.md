@@ -1,7 +1,5 @@
 # Reduction of the square-integrable-data L-factor formula
 
-Authors: Worker 1748 and Worker 1753.
-
 This internal module reduces the unchanged
 `SquareIntegrableDataLFactorStatement.{uF, uV, uW}` to explicit equal-exponent
 grouping, tempered and Langlands-type product formulas, and regular
@@ -33,7 +31,7 @@ quantifies the same argument to conclude the exact existing proposition.
 
 The provenance is internal: the module assembles the imported actual-carrier
 transport, grouped-product computation, and fixed-polynomial certificate
-reduction. Worker 1753 authored the reused fixed-polynomial certificate
-reduction with Worker 1748's carrier adapters. This module supplies no closed
+reduction. This module supplies no closed
 proof of the analytic formulas, grouping, or regular-data uniqueness, and
-therefore does not by itself close the unconditional host proof task.
+therefore does not by itself prove the statement unconditionally; the closed
+proof is `squareIntegrableDataLFactor` in `SquareIntegrableDataLFactorProof`.

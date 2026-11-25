@@ -1,6 +1,6 @@
 # Second adjointness is equivalent to the contragredient formula
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.Exponents.LeviSecondAdjointnessContragredientEquivalenceStatement`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement
 `LeviSecondAdjointnessContragredientEquivalenceStatement : Prop`; nothing is proved here.
@@ -101,9 +101,10 @@ sides of the equivalence concern the same categories of representations.
   chain (VI.9.6.3) and left exactness, and (VI.9.6.1) ⇒ (VI.9.6.2) through the chain and
   A.III.3.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. The source's argument uses Lemma I.4.2.1
+The proof is separate: `leviSecondAdjointnessContragredientEquivalence` in
+`LeviSecondAdjointnessContragredientEquivalenceProof`. The source's argument uses Lemma I.4.2.1
 (`Hom_G(π, σ̃) ≃ Hom_G(σ, π̃)`), the fact that normalized induction commutes with
 contragredients (the source does not cite it at this point; it is (IV.2.1.2)), the first
 adjunction `r_P^G ⊣ i_P^G` (VI.1.2), left exactness of

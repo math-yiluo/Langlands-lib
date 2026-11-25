@@ -5,9 +5,6 @@ This module proves the published proposition
 `Langlands.GroupScheme.zeroTangentTriviality.{u}`. It imports the unchanged
 statement from `Langlands.GroupScheme.Lie.ZeroTangentTrivialityStatement`.
 
-Worker 1285 authored the Lean proof in shared draft revision 1 of task
-`3d320396-74f0-40df-9182-b1efa7f71b82`. Worker 1368 reused that proof without
-Lean source changes and prepared this documentation for the focused proof task.
 The algebraic argument is derived from the published constructions and Mathlib
 results described below; it is an internal proof rather than a transcription
 of a cited literature proof.
@@ -27,7 +24,8 @@ because it retracts the base-field algebra map.
 The route is derived from the published cotangent and affine-coordinate
 constructions and Mathlib's duality and finitely generated ideal results.
 It does not use smoothness, translation, a dimension formula, or the
-unproved general Lie-subgroup equality statement.
+general Lie-subgroup equality statement `LieSubgroupEqualityStatement` (which
+the Library proves in `Lie.SubgroupEqualityProof`).
 
 For an actual connected affine group scheme locally of finite type over an
 arbitrary field, the chosen affine coordinate algebra is finite type and hence

@@ -1,6 +1,6 @@
 # Uniform-region recurrence for powers of a bounded coordinate dilation (statement)
 
-Authors: Worker 941 (draft), Worker 1121 (check and submission). This unit states one derived step used inside the proof of
+This module states one derived step used inside the proof of
 JPS (1979), Lemma (2.2.1), printed pp.181–182. The powers of one bounded
 coordinate dilation satisfy one scalar linear recurrence, pointwise on a whole
 small-coordinate region. It uses the actual function spaces, coordinate
@@ -64,7 +64,7 @@ of other coordinates does not meet the statement.
 The statement does not require `d` to be given by a linear recurrence of
 order `D`, nor `d m j` to be the Kronecker delta for `m < D`. Any coefficient
 choice that meets the pointwise identity on a uniform region suffices. The
-expected proof obtains such a recurrence anyway; see Source provenance.
+proof obtains such a recurrence anyway; see Source provenance.
 
 ## Actual spaces, actions and quotients
 
@@ -131,10 +131,11 @@ source. Its sources are these:
   on the quotient only gives, for each separate `m`, a threshold depending on
   `m`. The statement asserts one threshold for all `m`.
 
-The task contract of
-`Langlands.Whittaker.JPSUniformDilationStatement`'s proof task
-(`16738e59-6235-4345-be5e-361e76c577ca`) names this "uniform-region
-recurrence for powers of a uniformizer" as a separate prerequisite. The
+The proof of `Langlands.Whittaker.JPSUniformDilationStatement`
+(`jpsUniformDilation`, module
+`Langlands.Representation.Whittaker.JPSUniformDilationProof`) uses this
+"uniform-region recurrence for powers of a uniformizer" as a separate
+prerequisite. The
 statement is made for any bounded unit `c` rather than only a uniformizer. The
 proof is the same, and the uniformizer case is an instance.
 
@@ -143,7 +144,9 @@ Library notes or `/home/taskhub/central-library`.
 
 ## Status
 
-Statement only. The expected proof: the ascending chain of spans of
+Statement only. The proof (`Langlands.Whittaker.jpsBoundedDilationRecurrence`,
+module `Langlands.Representation.Whittaker.JPSBoundedDilationRecurrenceProof`):
+the ascending chain of spans of
 `σ_i(c ^ j)`, `j < d`, in the finite-dimensional operator span stabilizes,
 which gives `D` and `d`. For one `f`, the germ relation at `m = D` gives a
 threshold below which the lifted relation vanishes. Bounded dilations

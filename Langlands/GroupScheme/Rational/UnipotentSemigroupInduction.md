@@ -1,6 +1,6 @@
 # Central dimension induction for exact unipotent semigroup products
 
-This internal derived unit assembles existing vector products and central
+This internal derived module assembles existing vector products and central
 extension descent. It retains augmentation/Lie containment, semigroup
 realization, smooth quotient comparison, intersection comparison, existence of
 a central stable vector subgroup, and existence of its smooth quotient as
@@ -46,4 +46,5 @@ occurring zero weights, are handled by the imported exact product properties.
 The cross-exclusion remains between each original block and the other block's
 positive additive semigroup; no disjointness of generated semigroups is
 introduced. The scalar-extension and solvable reduction and all six premises
-remain separate obligations for the full host theorem.
+are not part of this module; the full `SemigroupOrderedProductStatement` is
+proved in `Rational/SemigroupOrderedProductProof`.

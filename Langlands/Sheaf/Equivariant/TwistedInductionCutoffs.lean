@@ -68,7 +68,7 @@ theorem isDiscreteSection_indexedMapApp
     IsDiscreteSection ((ι P ρ).op.ran.obj F') a (indexedMapApp ρ η U s) := by
   obtain ⟨J, hJH, hJ⟩ := hs
   refine ⟨J ⊓ K, inf_le_left.trans hJH, fun h hh => ?_⟩
-  have he : (fun g => η (g * (Hom.twist (a h).unop)⁻¹)) = η := by
+  have he : (fun g => η (g * (Hom.twist (a h).unop.asHom)⁻¹)) = η := by
     funext g
     rw [ha h, inv_inv]
     exact hη g h (OpenSubgroup.mem_inf.1 hh).2

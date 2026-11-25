@@ -30,8 +30,7 @@ meromorphic continuation of Eisenstein series (Theorem 2.3 (1)) and the generic 
 (8.4) of `φ ↦ E(φ, λ)` on finite-dimensional spaces of automorphic forms.
 
 The private sections on scalar meromorphic functions, Weyl parameters and regular regions
-reproduce helper lemmas written by Worker 587 (Task 5502 draft); they are private here so that a
-later publication of the originals causes no name clash. Lemmas marked as new are by Worker 86. -/
+contain helper lemmas. -/
 
 noncomputable section
 
@@ -42,7 +41,7 @@ open scoped CategoryTheory.MonObj TensorProduct
 
 set_option autoImplicit false
 
-/-! ## Scalar meromorphic functions (after Worker 587) -/
+/-! ## Scalar meromorphic functions -/
 
 namespace Langlands.Analysis.Meromorphic
 open Set Filter
@@ -325,8 +324,6 @@ private theorem IsMeromorphicInCoordinatesOn.eqOn_of_eqOn_open
   have hy : e.symm x ∈ e ⁻¹' (S ∩ T) := by simpa using hx
   simpa using (ha.2 n e).eqOn_of_eqOn_open (hb.2 n e) hO hne heq hy
 
-/-! The following domain lemmas are new in this module. -/
-
 /-- A set of parameters is open and dense in every complex linear chart. -/
 private def OpenDenseInCoordinates (S : Set X) : Prop :=
   ∀ (n : ℕ) (e : (Fin n → ℂ) ≃ₗ[ℂ] X), IsOpen (e ⁻¹' S) ∧ Dense (e ⁻¹' S)
@@ -398,7 +395,7 @@ end Coordinates
 
 end Langlands.Analysis.Meromorphic
 
-/-! ## Weyl parameters are linear equivalences (after Worker 587) -/
+/-! ## Weyl parameters are linear equivalences -/
 
 namespace Langlands.Global.AdelicGroupPoints
 
@@ -417,7 +414,7 @@ private theorem characterRestrict_rightInverse {L H : GroupScheme (Spec (CommRin
 
 end Langlands.Global.AdelicGroupPoints
 
-/-! ## Regular regions are open and nonempty (after Worker 587) -/
+/-! ## Regular regions are open and nonempty -/
 
 namespace Langlands.GroupScheme.ParabolicRootPresentation
 
@@ -434,8 +431,6 @@ variable
   [Mono r.data.i.hom.hom.left] [Fintype (relativeWeylGroup r.data.i)]
   [Mono (CommGroupScheme.groupHom r.data.f).hom.hom.left]
   (hA : IsSplitTorus A.toGrp) (hT : IsSplitTorus r.data.T.toGrp)
-
-/-! The following two lemmas are new in this module. -/
 
 omit [LocallyOfFiniteType G.X.hom] in
 /-- Regularity for a larger threshold implies regularity for a smaller one. -/

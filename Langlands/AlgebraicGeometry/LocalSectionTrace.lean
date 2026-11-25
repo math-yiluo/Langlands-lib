@@ -92,7 +92,7 @@ theorem localSectionTrace_iso
     (e : SheafOfModules.free (R := X.ringCatSheaf.over U) I ≅ M.over U)
     (h : M.over U ≅ N.over U)
     (a : End (M.over U)) (b : End (N.over U))
-    (hab : a ≫ h.hom = h.hom ≫ b) (V : Over U) :
+    (hab : a.asHom ≫ h.hom = h.hom ≫ b.asHom) (V : Over U) :
     localSectionTrace e a V = localSectionTrace (e ≪≫ h) b V :=
   congrArg Matrix.trace (localSectionEndomorphism_toMatrix_iso e h a b hab V)
 
@@ -103,7 +103,7 @@ theorem localSectionTrace_iso_any_chart
     {J : Type u} [Fintype J]
     (e' : SheafOfModules.free (R := X.ringCatSheaf.over U) J ≅ N.over U)
     (a : End (M.over U)) (b : End (N.over U))
-    (hab : a ≫ h.hom = h.hom ≫ b) (V : Over U) :
+    (hab : a.asHom ≫ h.hom = h.hom ≫ b.asHom) (V : Over U) :
     localSectionTrace e a V = localSectionTrace e' b V := by
   rw [localSectionTrace_iso e h a b hab V]
   exact localSectionTrace_trivialization_independent _ _ b V

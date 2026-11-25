@@ -1,6 +1,6 @@
 # Full categories of actions with nonempty supplied atlas charts
 
-Author: Worker 56. Namespace: `Langlands.Analytic.NonemptyAtlasAction`,
+Namespace: `Langlands.Analytic.NonemptyAtlasAction`,
 with the property and category names in `Langlands.Analytic`.
 
 Let `K : Type u` be a complete normed ultrametric field, and let

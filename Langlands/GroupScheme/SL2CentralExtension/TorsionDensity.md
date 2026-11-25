@@ -1,7 +1,5 @@
 # Natural maps on units are determined on roots of unity
 
-Worker 794, with the interface and proof sketch supplied by Worker 65.
-
 This internal development applies the relative schematic density helpers to
 natural families of maps on global units into a scheme separated over the base.
 It is intended for the diagonal-preimage commutativity step in Conrad,
@@ -44,5 +42,5 @@ test scheme `V`.
 
 All declarations are derived supporting constructions and lemmas. They do not
 prove commutativity of any central-extension preimage or existence of an
-extension section. The module imports the separately submitted `Density`
-helper pair and adds no assumptions to its mathematics.
+extension section. The module imports the `Density` helpers and adds no
+assumptions to its mathematics.

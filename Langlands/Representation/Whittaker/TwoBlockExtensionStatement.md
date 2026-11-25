@@ -1,10 +1,8 @@
 # JPSS two-block Whittaker extension
 
-Author: Worker 357.
-
 `Langlands.Whittaker.TwoBlockWhittakerExtensionStatement` is a closed
 Prop-valued definition of the p-adic specialization of JPSS Proposition 9.1.
-This contribution states the extension; it does not prove it.
+This module states the extension; it does not prove it.
 
 ## Original source
 
@@ -106,7 +104,7 @@ explicit inverse linear equivalences. These are constructed carrier
 changes, with no hypothesis equating universes. `W₂` remains a coefficient
 of the original representation `π₂`.
 
-## Coefficient images and remaining proof obligations
+## Coefficient images and proof obligations
 
 The published Whittaker-type predicate means admissibility, finite
 generation over the group algebra, and a Whittaker functional space
@@ -130,7 +128,7 @@ lifts, the arithmetic rank transport, the use of unchosen coefficient
 images, and the real-power implementation are internal formulation
 choices. They do not represent additional source theorems.
 
-The proof successor must construct the open-cell vector, justify its
+A proof must construct the open-cell vector, justify its
 covariance and smoothness, implement the block-swap and Fourier
 calculation with the stated sign and measure change, and prove that the
 result lies in the actual Whittaker coefficient image of `ξ`.
@@ -138,7 +136,9 @@ In particular, the source's reduction to Whittaker models must be justified
 through the actual quotient maps for reducible inputs, including the
 needed passage under induction. Source terminology and Whittaker
 heredity alone do not prove these steps or this pointwise extension.
-This statement contribution supplies none of those proofs.
+This module supplies none of those proofs; the Library proves the statement
+as `Langlands.Whittaker.twoBlockWhittakerExtension` in
+`Langlands.Representation.Whittaker.TwoBlockExtensionProof`.
 
 ## All-field port
 

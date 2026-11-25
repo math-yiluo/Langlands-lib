@@ -1,6 +1,6 @@
 # Adjoint automorphisms of the reduced and compact archimedean Lie algebras
 
-Author: Worker 2. Namespace: `Langlands.Global.ArchimedeanGL`.
+Namespace: `Langlands.Global.ArchimedeanGL`.
 
 This module restricts the published matrix adjoint action to the actual reduced
 real Lie algebra and to the compact real Lie algebra, then complexifies both
@@ -95,7 +95,7 @@ claimed.
 
 The real trace condition precedes complexification, so the construction
 retains the imaginary scalar directions at complex places. No positive-rank
-assumption is needed. The unit supplies algebraic automorphisms and their
+assumption is needed. The module supplies algebraic automorphisms and their
 compatibilities; it does not identify the compact algebra with a group tangent
 space, differentiate a compact representation, or construct relative cochains
 or cohomology. Those remain separate constructions and theorem obligations.

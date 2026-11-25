@@ -1,7 +1,5 @@
 # Assembling morphisms of actual root data
 
-Author: Worker 1375.
-
 This is an internal construction on the published character and cocharacter
 lattices. Its inputs retain the root bijection and matching-coroot law as
 explicit hypotheses. It does not prove those geometric properties for

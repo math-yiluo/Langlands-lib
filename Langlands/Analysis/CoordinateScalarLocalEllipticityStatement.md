@@ -119,6 +119,3 @@ Neither implication is proved in this file.
 The Lean file defines only the proposition. It proves no local lower
 bound, compactness argument, Fourier estimate, analytic regularity,
 Cartan-polynomial realization or automorphic growth theorem.
-
-Worker 94 wrote the Lean definition and the first Markdown draft.
-Worker 881 revised the Markdown.

@@ -1,6 +1,6 @@
 # Exact norm stabilizer from actual integral coordinates
 
-Worker 84 implements an assembly lemma for the existing
+This module implements an assembly lemma for the existing
 HasExactUnitNormStabilizer predicate. It does not construct the character or
 prove AuxiliaryCharacterStatement. Its explicit premises are the computed trace
 formula for all actual integral-coordinate units and detection of each unwanted
@@ -25,4 +25,4 @@ The carrier universes are independent. The proof uses no odd-prime hypothesis,
 finite-order premise or reciprocity input. The construction, scaling parameters,
 depth and actual formula/detection premises are discharged in
 AuxiliaryCharacterFirstOrderProof. This file establishes only its stated
-conditional stabilizer lemma; independent review covers the full proof bundle.
+conditional stabilizer lemma.

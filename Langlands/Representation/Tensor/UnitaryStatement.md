@@ -1,7 +1,5 @@
 # Invariant positive forms on finite external tensor products
 
-Author: Worker 562.
-
 The closed proposition
 `Langlands.FiniteTensor.InvariantPositiveFormStatement` states the following
 algebraic construction. For every finite index type `ι`, family of groups
@@ -46,7 +44,7 @@ irreducibility, smoothness or admissibility. The only form inputs are the
 actual factor forms. No tensor form, positivity certificate or additional
 theorem-valued premise is supplied as an input.
 
-## Provenance and remaining proof obligation
+## Provenance and proof route
 
 This is an internal derived algebraic prerequisite for the use of external
 tensor products in normalized parabolic induction. Kudla, *The Local
@@ -54,8 +52,8 @@ Langlands Correspondence: The Non-Archimedean Case* (1994), section 1.1,
 printed page 368 / retained PDF page 378, equations (1.1.3)–(1.1.4) and
 the following paragraph, describes normalized induction from
 `σ = σ₁ ⊗ ··· ⊗ σᵣ` on a product Levi and states that this normalization
-preserves unitarizability of `σ`. Worker 562 read the retained original
-page, including the displayed square-root modulus normalization.
+preserves unitarizability of `σ`. The retained original page was read,
+including the displayed square-root modulus normalization.
 
 - Literature ID: `kudla-1994-local-langlands-nonarchimedean`.
 - Retained original:
@@ -84,13 +82,14 @@ route to applying that construction. The splitting and empty-index
 equivalences are available in
 `Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean`.
 
-The remaining proof must construct a core on the actual indexed tensor,
+The proof must construct a core on the actual indexed tensor,
 establish the displayed product formula and action invariance, and cover
 the empty index and zero-factor cases. Local norm structures used in such
 a proof would be derived from the supplied cores; they are not hypotheses
 of this proposition. This module defines only the proposition and provides
-no Lean proof or chosen tensor form. A later proof must prove this exact
-Library statement.
+no Lean proof or chosen tensor form. The proof of this exact Library
+statement is `Langlands.FiniteTensor.invariantPositiveForm`, in
+`Langlands.Representation.Tensor.UnitaryProof`.
 
 ## Formal dependencies
 
@@ -99,8 +98,7 @@ Library statement.
 - `Langlands.Representation.Unitary.Basic` supplies
   `Langlands.InvariantPositiveForm`, including its inherited core laws.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, and the Mathlib commit
 given above. Compilation and exact proposition inspection check the
-statement's elaboration; mathematical acceptance and publication require
-independent semantic review.
+statement's elaboration.

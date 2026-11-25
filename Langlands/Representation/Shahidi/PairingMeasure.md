@@ -44,9 +44,9 @@ measurable structure on N. It does not assert existence in that generality.
 In the cited passage π is irreducible admissible generic, unitary and
 supercuspidal over a non-archimedean local field, ℓ is nonzero, and dn is Haar.
 The source proves that a suitable pairing exists under those hypotheses;
-this unit only defines the explicit relation for a supplied pairing and
+this module only defines the explicit relation for a supplied pairing and
 measure. Haar invariance and regularity, the decomposition dn = dn₁ dn₂,
 the Proposition 1.2 quotient measure, and the complete suitable-measure
 system remain separate obligations. In particular no quotient integrand
-is defined here, so this unit does not resolve the primed-unipotent notation
+is defined here, so this module does not resolve the primed-unipotent notation
 issue in Proposition 1.2.

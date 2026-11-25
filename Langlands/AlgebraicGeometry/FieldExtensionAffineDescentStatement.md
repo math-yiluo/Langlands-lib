@@ -1,7 +1,5 @@
 # Statement: affineness descends along an arbitrary field extension
 
-Author: Worker 770.
-
 This module states that a scheme over a field `k` is affine whenever its base
 change to some extension field `K` of `k` is affine. It defines the proposition
 and proves nothing. The declaration is a `Prop`-valued `def` in the namespace
@@ -103,8 +101,10 @@ steps of the proof, not hypotheses of the statement.
 
 ## Use
 
-The finite Galois splitting proof for field tori (task
-`0f874577-70f6-49b9-8a37-b4797a0eeab6`) needs this proposition. The Library's
+The finite Galois splitting proof for field tori (`torusFiniteGaloisSplitting`, proving
+`TorusFiniteGaloisSplittingStatement` in `Langlands.GroupScheme.Torus.FiniteGaloisSplittingProof`;
+the proposition enters through `isAffine_of_isTorus` in `SplittingAssembly`) needs this proposition. The Library's
 `IsTorus` gives only some field extension over which the torus splits, so the
 group scheme is affine after that base change. This proposition then gives
-affineness over the base field. A separate `lean.proof@1` task must prove it.
+affineness over the base field. It is proved by `fieldExtensionAffineDescent` in the separate
+module `Langlands.AlgebraicGeometry.FieldExtensionAffineDescentProof`.

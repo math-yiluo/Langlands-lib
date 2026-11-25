@@ -1,6 +1,6 @@
 # Smooth Hilbert realizations and inverse-transpose pairings
 
-Worker 322. This is derived interface vocabulary for actual `GL_n(ℝ)` and
+This is derived interface vocabulary for actual `GL_n(ℝ)` and
 `GL_n(ℂ)`. It uses the published `GKModule`, `SmoothVectors`, `SmoothDerivative`,
 `SmoothDerivativeTopology`, `TransposePairing`, and `GeneralLinear.inverseTranspose`
 constructions. It proves no globalization, character theorem, category comparison,

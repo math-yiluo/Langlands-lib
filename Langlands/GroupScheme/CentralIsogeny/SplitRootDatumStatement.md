@@ -1,7 +1,5 @@
 # The morphism of root data defined by a central isogeny of split reductive groups
 
-Author: Worker 1414.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.CentralIsogenyRootDatumHomStatement`. The Lean file
 only defines the proposition. It contains no proof of it, and it adds no

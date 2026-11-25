@@ -192,7 +192,7 @@ theorem exists_coincidences_lt (D : ℕ)
     have hv : Function.Injective v := by
       intro x y hxy
       have h := congrArg CommaMorphism.left hxy
-      exact ULift.ext _ _ (hdist _ _ h)
+      exact ULift.ext (hdist _ _ h)
     have hva : ∀ x, (schemeYoneda S).map (v x) ≫ π = (schemeYoneda S).map (v ⟨0⟩) ≫ π := by
       intro x
       change (schemeYoneda S).map ((succ ha P).pointHom t' ≫ (succ ha P).pr x.down) ≫ π =

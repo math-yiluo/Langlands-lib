@@ -1,7 +1,5 @@
 # Cocenter characters of the centralizer of a cocharacter
 
-Authors: Worker 187.
-
 The module `Langlands.GroupScheme.Rational.DynamicCentralizerCocenterComparison`
 (namespace `Langlands.GroupScheme.DynamicCentralizerCocenterComparison`) computes the
 characters of the cocenter of the centralizer of a cocharacter of a maximal torus,

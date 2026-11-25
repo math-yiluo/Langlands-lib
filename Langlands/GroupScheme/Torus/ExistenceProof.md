@@ -1,7 +1,5 @@
 # Existence of a maximal torus over the original field: proof
 
-Worker 1390.
-
 `Langlands.GroupScheme.maximalTorusExistence` proves
 `Langlands.GroupScheme.MaximalTorusExistenceStatement.{u}` for every universe `u`.
 The statement is in `Langlands.GroupScheme.Torus.ExistenceStatement`, whose

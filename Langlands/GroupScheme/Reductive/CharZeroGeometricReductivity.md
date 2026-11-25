@@ -33,7 +33,7 @@ characteristic-zero hypothesis. It applies the existing conditional consumer
 `reductiveCharZeroSemisimplicityStatement`. That consumer chooses degree one.
 Complete reducibility is thus discharged by the imported proof, with no
 semisimplicity or linear-reductivity premise in this new theorem. The
-positive-characteristic part of Haboush's theorem remains outside this unit.
+positive-characteristic part of Haboush's theorem remains outside this module.
 
 Provenance: Mumford, Fogarty and Kirwan, *Geometric Invariant Theory*, third
 enlarged edition (1994), Appendix to Chapter 1, Section A, printed p.191 (PDF

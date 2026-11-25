@@ -1,6 +1,6 @@
 # Identity and composition from geometric induced-map laws
 
-Worker 339. This internal reduction proves the functor laws from the two
+This internal reduction proves the functor laws from the two
 published proposition definitions `AlgebraicFundamentalGroupMapStatement` and
 `AlgebraicFundamentalGroupComparisonStatement`. The reduction takes proofs of
 those propositions as arguments; it does not prove their unconditional

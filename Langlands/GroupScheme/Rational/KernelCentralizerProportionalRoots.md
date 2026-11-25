@@ -1,8 +1,6 @@
 # Proportional-root centralizers inside full character-kernel centralizers
 
-Author: Worker 1465.
-
-This internal unit constructs an all-test containment used in the classical
+This module constructs an all-test containment used in the classical
 maximal-torus argument. It works over any field and in any universe. The ambient
 group is connected reductive, its specified maximal torus is split, and a second
 split torus maps into that maximal torus. The character of the second torus is
@@ -37,6 +35,7 @@ unipotent radical. This constructor needs no maximality assumption on the
 torus; maximality is used only in the preceding proportional-root containment.
 
 The provenance is internal composition of published root reducedness, the
-actual generic cocharacter centralizer, and the integral-weight support unit.
-This unit does not yet construct the ambient maximal torus or prove the
+actual generic cocharacter centralizer, and the integral-weight support module
+`KernelCentralizerWeightSupport`.
+This module does not construct the ambient maximal torus or prove the
 arbitrary-field identity-component reductivity statement.

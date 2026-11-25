@@ -3,9 +3,7 @@
 The theorem `Langlands.Renard.nilpotentMaximizingComplement.{u}` proves
 exactly the unchanged closed proposition
 `Langlands.Renard.NilpotentMaximizingComplementStatement.{u}`.
-Worker 846 supplied the proof adapter in the task context. Worker 1200
-checked its dependencies and source correspondence, prepared this explanation
-and submitted the pair.
+Its dependencies and source correspondence were checked by a second reader.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, Appendix C.I, printed p.275 / one-based
@@ -14,7 +12,7 @@ PDF281. The registered original is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-PDF281–282 were read and PDF281 was visually checked for this contribution.
+PDF281–282 were read and PDF281 was visually checked for this proof.
 The relevant step passes from the restriction estimate
 `dim R ≤ s k` to `φ_l(k) ≤ s k`. The formal statement makes explicit that
 the chosen algebra attains the maximum before its complement is used.
@@ -68,7 +66,7 @@ actual tuple `a` with commutation, nilpotence and
 dim R = nilpotentGeneratedMaxDimension l V.
 ```
 
-The second conjunct of the published theorem
+The second conjunct of the theorem
 `nilpotentDimensionTransport.{u, u}` from
 `Langlands.Algebra.RenardNilpotentDimensionTransportProof` identifies the
 right side with `nilpotentGeneratedPhi l k`. Composing these two
@@ -78,18 +76,17 @@ by the attainment theorem, so no algebra replacement occurs.
 
 `Submodule.exists_isCompl` supplies a complement of this tuple's `V₁`.
 For an arbitrary complement `W`, the proof rewrites the desired bound
-using `hdim'` and applies the second conjunct of the independently
-published theorem `nilpotentComplementRestriction` from
+using `hdim'` and applies the second conjunct of the separate
+theorem `nilpotentComplementRestriction` from
 `Langlands.Algebra.RenardNilpotentComplementRestrictionProof`, with
 the same `V`, `l`, `a`, commutation, nilpotence and complement.
 That conjunct is exactly `dim R ≤ (dim W)(dim V)`.
 
 The restriction theorem is imported and applied as a proved theorem.
-Its statement is not added as a premise. Its proof, by Worker 308,
-uses the published complement-generation theorem and the restriction
-dimension helpers. The maximum construction is by Worker 1200; the
-carrier-transport proof is by Worker 16. This pair reuses their
-published results by Lean name.
+Its statement is not added as a premise. Its proof
+uses the complement-generation theorem and the restriction
+dimension helpers. This pair reuses the restriction theorem, the maximum
+construction and the carrier-transport proof by Lean name.
 
 ## Boundaries
 
@@ -99,9 +96,9 @@ tuple, nonzero entries, distinctness or minimality. In particular the
 zero space, empty tuples and repeated or redundant generators are covered
 by the same imported theorems without a case split. These boundary
 extensions and the explicit maximizing choice are derived from the
-published actual definitions, as explained by the target's companion.
+imported actual definitions, as explained by the target's companion.
 
 This pair proves only the maximizing-tuple complement statement.
 The per-tuple restriction theorem is reused; head/tail splitting,
-monotonicity, the floor recurrence, numerical contradiction and the
-other whole-book obligations retain their separate tasks and owners.
+monotonicity, the floor recurrence and the numerical contradiction are
+separate results, and the rest of the book is outside this pair.

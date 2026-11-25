@@ -25,4 +25,4 @@ group-scheme structure, including inversion.
 
 This comparison supplies no descent of group-like elements, character-lattice
 identification, torus-splitting theorem, or dynamic-centralizer reductivity
-proof. Those remain separate obligations in the parent task.
+proof. Those are separate obligations of the statement this module serves.

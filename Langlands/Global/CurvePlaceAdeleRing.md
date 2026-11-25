@@ -1,7 +1,5 @@
 # Restricted products over actual discrete curve places
 
-Author: Worker 208.
-
 For fields `k` and `F` with an algebra structure `k → F`, the existing
 `AlgebraicCurve.Place k F` is a concrete nontrivial principal valuation
 subring of `F` containing the image of `k`. Its published DVR instance
@@ -36,7 +34,7 @@ between the level and the product of completion fields in `S` and
 completed valuation rings outside `S`. Its inverse assembles the
 given coordinates; integrality outside a finite set puts the result
 in the restricted product. The two final lemmas give both coordinate
-formulas. This unit claims a ring equivalence, without a product
+formulas. This module claims a ring equivalence, without a product
 homeomorphism or a categorical colimit assertion.
 
 The provenance is derived infrastructure for Brian Conrad,
@@ -55,5 +53,5 @@ stage. Conrad's nonempty all-place convention, identification of these
 places with all conventional places of a global function field,
 finite-pole support for every element of that field, the full-field
 diagonal, presentation independence, and the geometric point-space
-and whole-paper results remain separate obligations. No assertion in
-this unit assumes or discharges those comparisons.
+and other results of the paper remain separate obligations. No assertion in
+this module assumes or discharges those comparisons.

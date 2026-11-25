@@ -1,9 +1,5 @@
 # Product-Levi square-integrability from strict Jacquet exponent bounds
 
-Author: Worker 907, with Worker 728, who drafted the Lean formulations in the
-task contract and in the shared task draft. The Lean text is that draft,
-unchanged.
-
 This module defines two closed propositions. Each has independent field and
 representation universes `uF` and `uV`:
 
@@ -392,7 +388,7 @@ comparison is derived and is not asserted in Lean.
 
 The consumer form is applied in the proof of
 `Langlands.GLWeaklyCriticalTopLayerL2Statement` (Silberger Corollary 4.5.11),
-task `ecd53630-f80d-4513-82dc-99e03b56488f`. Its proof uses this declaration
+through `glWeaklyCriticalTopLayerL2_of` in `WeakCriticalTopLayerL2Reduction`. Its proof uses this declaration
 with this name, universe order `{uF,uV}`, hypothesis order and prefix shape.
 
 ## Dependencies and remaining scope
@@ -417,6 +413,6 @@ The following are not added to either target:
 The file proves nothing. In particular, it does not prove Casselman's
 criterion, the strict chamber coefficient bound, the analytic passage to
 `L²`, the Weyl/spectral adapter between the two forms, or the identification
-of the block scalars with the full centre. Both declarations compile in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. They are `Prop`-valued, have
+of the block scalars with the full centre. Both declarations compile.
+They are `Prop`-valued, have
 level parameters `uF uV`, and use only the standard axioms.

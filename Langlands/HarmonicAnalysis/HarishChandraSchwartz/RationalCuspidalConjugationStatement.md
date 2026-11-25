@@ -42,7 +42,7 @@ a measure `muQ` on `LeftQuotient A`, and
 `QuotientIntegration.IsCompatible A muG muA muQ`.
 That compatibility includes nonzero regularity, right invariance and
 the complex Weil formula. It is not compatibility along `G¹`.
-Existence of such a measure is not asserted in this unit.
+Existence of such a measure is not asserted in this module.
 
 There is no characteristic-zero, split-group, quasi-split or
 positive-rank hypothesis. The finite residue-field and nonarchimedean
@@ -108,7 +108,7 @@ Its membership requires integrability and zero constant term for
 every proper standard root subset, every Haar measure on its actual
 unipotent radical, and every two-sided translate. Its published
 `mem_rationalCuspidalSubmodule_iff_constantTermInd` retains convergence.
-This task does not duplicate that construction.
+This module does not duplicate that construction.
 
 In VIII.2 Waldspurger recursively constructs `°f = f − κ(ψ)`.
 VIII.2.1 identifies its image with vanishing of proper semistandard
@@ -117,8 +117,8 @@ convergence-strengthened kernel with all semistandard parabolics
 and with that recursive image remains unproved. The published
 `RationalCuspidalVanishingComparisonStatement` is the exact
 vanishing-only comparison target; its proof and the recursive
-image comparison remain with Task 7252. Task 7229 owns the full
-semistandard index. No assertion here applies these targets to a
+image comparison are not part of this module. The full
+semistandard index is `SemistandardSpectralIndex`. No assertion here applies these targets to a
 recursive `°f` without first proving its membership.
 
 The VIII.3.1 proof still needs the actual open-cell split,
@@ -132,9 +132,10 @@ The generic `CuspidalDecay`, `CuspidalSplit` and
 `CuspidalIntegrability` reductions retain these inputs; they do
 not establish the closed actual-point targets.
 
-Existing constant-term Task 5460, rapid-decay Task 5461,
-Xi upper-bound Task 5326 and split-centre height Task 5480 keep their
-proof ownership. No recursive VIII.2 projection, VIII.4 finiteness,
+The constant-term estimate (`RationalConstantTermEstimateStatement`), rapid
+decay (`RationalSquareIntegrableRapidDecayStatement`), Xi upper bound
+(`RationalXiUpperBoundStatement`) and split-centre height
+(`RationalSplitCenterHeightStatement`) are separate statements, not proved here. No recursive VIII.2 projection, VIII.4 finiteness,
 inversion or Plancherel conclusion is proved here. The source-map
 correction on printed p.325 reads VIII.2.1 where the source prints
 VII.2.1; it does not supply that missing comparison.

@@ -1,11 +1,11 @@
 # Multiplicative and unit objects for local class field theory
 
-Worker 21 authored this construction module. It uses an arbitrary prime `p`,
+This construction module uses an arbitrary prime `p`,
 an arbitrary-universe finite extension `F : Langlands.PadicField p`, and
 specified `T : F.TopologicalData`. The multiplicative group is the existing
 `F.Carrierˣ`. Install `T.topology` to obtain its standard Mathlib units topology;
 `multiplicativeTopology` exposes that exact choice. The integer and residue
-rings are the accepted `T.Integers` and `T.ResidueField`.
+rings are the published `T.Integers` and `T.ResidueField`.
 
 `valuationRing` is the same integer ring with Mathlib's valuation-subring
 interface. `unitSubgroup` and `principalUnitSubgroup` reuse its existing
@@ -39,13 +39,14 @@ The continuous versions `unitQuotientProjectionContinuous` and
 the former is the quotient map and the latter factors the continuous reduction.
 
 `orderHom` takes a nonzero field element, represented by a unit, to the
-accepted normalized order in multiplicative notation for the additive
+published normalized order in multiplicative notation for the additive
 integers. Its homomorphism certificate follows from multiplication of the
-accepted discrete valuation and the logarithm law for nonzero values.
+published discrete valuation and the logarithm law for nonzero values.
 `ValuationQuotient` and `valuationQuotientProjection` are the actual quotient
 of `F.Carrierˣ` by `unitSubgroup` and its projection. An isomorphism of this
 quotient with the integers, continuity of the order map, and the unit
-filtration's topological properties are separate theorem obligations.
+filtration's topological properties are not proved in this module; the
+last are proved in `UnitFiltrationStructuralProof`.
 `valuationQuotientProjectionContinuous` does provide the continuous canonical
 projection, using the genuine quotient topology.
 
@@ -68,12 +69,9 @@ There is no Artin map or reciprocity-existence assertion in these definitions.
 
 ## Exact dependencies
 
-- `Langlands.LocalField.Definitions`, artifact
-  `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1.
-- `Langlands.LocalField.Normalization.Definitions`, artifact
-  `e3d7bbd4-f2b9-4970-a60f-bf6aa0b34bb2`, version 1.
-- Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
-  Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+- `Langlands.LocalField.Definitions`.
+- `Langlands.LocalField.Normalization.Definitions`.
+- Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The direct Mathlib interfaces are `Valuation.valuationSubring`,
 `ValuationSubring.unitGroup`, `ValuationSubring.principalUnitGroup`,
@@ -85,15 +83,13 @@ statement is used as a proved dependency.
 
 ## Topic-hierarchy migration
 
-Worker 63 relocated this pair from `Langlands.LocalClassField.Units` to
+This pair was relocated from `Langlands.LocalClassField.Units` to
 `Langlands.ClassFieldTheory.Local.Units` at Library base
-`c139df9ce67284be1bc963c2de5fbebd90214dda`. Worker 21 remains the
-author of every mathematical declaration and construction certificate above.
+`c139df9ce67284be1bc963c2de5fbebd90214dda`.
 Only imports were rewritten in the Lean source; all declaration text, including
 universes, hypotheses, definitions, proofs and instance declarations, was retained.
 The old path is a declaration-free re-export with its own paired documentation.
 
 The full [module table and declaration-preservation ledger](Completion.md#topic-hierarchy-migration-ledger)
 records this mechanical migration and its validation. Original source citations
-and mathematical explanations are retained; their historical submission-status
-remarks describe the original contribution, not this relocation's review status.
+and mathematical explanations are retained.

@@ -1,8 +1,6 @@
 # Normal-base ample existence from two geometric inputs
 
-Author: Worker 1318.
-
-This internal reduction retains two explicit, unproved geometric inputs:
+This internal reduction retains two explicit geometric inputs as hypotheses:
 
 - `Langlands.AbelianScheme.NormalFiniteTypeTwoAxisExtensionProperty.{u}`,
   already defined in the Library's `NormalModelTwoAxisExtensionReduction`;
@@ -56,5 +54,8 @@ its own statement companion.
 The module uses no scheme representability of the normal-base or
 finite-type Picard sheaf, no smooth-family abelian representability
 statement, and no proof of any such result. It constructs no dual scheme,
-Picard atlas or Picard representer. It is conditional mathematics, not an
-exact-target proof submission for Task 5655.
+Picard atlas or Picard representer. It is conditional mathematics, not a
+proof of `NormalFiniteTypeAbelianAmpleExistenceStatement`; the Library's proof,
+`normalFiniteTypeAbelianAmpleExistence` (module
+`NormalFiniteTypeAbelianAmpleExistenceProof`), applies this reduction to proofs of
+the two inputs.

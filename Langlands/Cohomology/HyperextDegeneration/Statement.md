@@ -1,10 +1,5 @@
 # Degeneration of the hyperext spectral sequence
 
-Author: Worker 3.
-
-Documentation correction: Worker 54, with source and infrastructure audit by
-Worker 291.
-
 This module declares one auxiliary definition and one proposition in the
 namespace `Langlands.Cohomology`. The proposition
 `HyperextDegenerationStatement` is a theorem-statement definition, not a
@@ -243,7 +238,7 @@ Harris's application only the middle degree `j = n-1` contributes
   discharge the statement's bounded-above or `Abelian.Ext`-vanishing
   hypotheses. The Harris-specific specialization, identification of the
   relevant Ext constructions, and vanishing from his cohomology objects
-  into the supercuspidal coefficient representation remain separate
+  into the supercuspidal coefficient representation are separate
   obligations; that supercuspidal vanishing is not stated here.
 - The spectral sequence itself, its other edge maps and its behaviour without
   the vanishing hypothesis are not stated.
@@ -264,8 +259,8 @@ Harris's application only the middle degree `j = n-1` contributes
   the coefficient conventions of section 3, printed pp.306-307, and Proposition
   4.10 with (4.10.1)-(4.10.4) and section 5 through (5.3), printed
   pp.311-312 (PDF pp.8-9, 13-14), read visually from the page scans.
-  Worker 54 rechecked the original coefficient convention and ring of
-  integers on pp.306-307 visually for this documentation correction.
+  The original coefficient convention and ring of integers on pp.306-307
+  were rechecked visually.
 
 ## Formal dependencies and checks
 
@@ -273,16 +268,14 @@ The module imports only Mathlib:
 `Mathlib.Algebra.Homology.DerivedCategory.Ext.Basic`,
 `Mathlib.Algebra.Homology.DerivedCategory.FullyFaithful` and
 `Mathlib.Algebra.Homology.DerivedCategory.HomologySequence`. The environment
-is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib commit
+is Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Checks `c4aa9962-69a1-4c81-8edb-44817db82a50` (draft),
-`60314392-957d-40a7-a686-1a87b44bfb8c` (this module path) and
-`84445008-0496-4f79-9ab1-42bfccbb3f72` (after the Markdown correction; same
-Lean bytes) built the module with Lake with no errors or warnings. Each inspected `HyperextDegenerationStatement` as a
+Three checks, the second and third at this module path and on the same Lean
+bytes, built the module with Lake with no errors or warnings. Each inspected `HyperextDegenerationStatement` as a
 `Prop`-valued definition with universe parameters `w`, `w'`, `v`, `u`,
-depending only on `propext`, `Classical.choice` and `Quot.sound`. Check
-`26c638f1-5eee-4068-97ba-fa67b0da00cf` printed `edgeMap` and the statement
+depending only on `propext`, `Classical.choice` and `Quot.sound`. A fourth
+check printed `edgeMap` and the statement
 with universe annotations, and the output was read. It also compiled an
 instantiation of the statement with `HasDerivedCategory.standard`. The prints
 show:

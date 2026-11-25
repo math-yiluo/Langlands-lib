@@ -44,8 +44,9 @@ The intended algebraic dependency is the already published
 component theorems from `Langlands.VirtualRepresentation.DescentProof`.
 That branch proves relation descent, uniqueness of the generated
 equivalence, isometry, degree preservation, and positive basis
-extraction. H1 supplies the preceding analytic comparison; it does not
-duplicate the pure lattice proof.
+extraction. The finite-place comparison (track H1 of the program ledger
+`notes/automorphic/global-program-coverage.md`) supplies the preceding
+analytic comparison; it does not duplicate the pure lattice proof.
 
 The provenance is a derived formulation of Henniart (2000), §§2.5–2.8,
 printed pp.445–448: the generated groups and their unique isomorphism
@@ -62,8 +63,7 @@ All actual global functional equations, highly ramified twist
 stability, factor existence, and global boundary regularity remain
 separate inputs. In particular, regularity of the finitely many omitted
 local factors does not supply the Shahidi (1981), Theorem 5.2 boundary
-nonvanishing input. Its discharge belongs to the parent program
-`34b81620-20d7-4059-9b08-6bedd1c1c029` and the common library track.
+nonvanishing input, which is not discharged in this module.
 The actual arithmetic and automorphic instantiations are further
 conditional adapters, with their original realization, character,
 measure, and arithmetic quantifiers retained.

@@ -1,8 +1,7 @@
 # Torus endomorphisms: surjectivity or a closed multiplicative subgroup in the kernel
 
-Author: Worker 1435. Worker 1368 proposed the exact interface. Worker 1369
-identified the prerequisite in the Borel normalizer argument and corrected the
-distinction between a contained torus and the entire kernel.
+The statement is a prerequisite in the Borel normalizer argument
+(`Absolute.BorelNormalizerAssembly`).
 
 This module defines the proposition
 `Langlands.GroupScheme.TorusEndomorphismDichotomyStatement.{u}`. It contains no
@@ -89,7 +88,9 @@ passages cited above.
 ## Formalization boundary
 
 The character argument above explains the provenance and intended truth of
-the statement. A Lean proof remains a separate obligation. In particular, no
+the statement. The Lean proof is separate: `torusEndomorphismDichotomy` in
+`Torus.EndomorphismDichotomy`, checked at this exact type in
+`Torus.EndomorphismDichotomyProof`. In particular, no
 torus-splitting theorem or character-duality theorem is assumed as an extra
-premise of this proposition. This module supplies only the dichotomy target
-for later use; it establishes no Borel normalizer or connectedness result.
+premise of this proposition. This module supplies only the dichotomy statement;
+it establishes no Borel normalizer or connectedness result.

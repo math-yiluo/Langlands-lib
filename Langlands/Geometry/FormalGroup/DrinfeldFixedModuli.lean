@@ -63,18 +63,18 @@ def drinfeldFixedAct (X : DrinfeldFramedAtlas Φ A) : DrinfeldFramedAtlas Φ A :
 
 @[simp]
 theorem drinfeldFixedAction_class (X : DrinfeldFramedAtlas Φ A) :
-    (drinfeldFixedAction K D hInv hπ g).hom.app A (comparisonClassOf X) =
+    (drinfeldFixedAction K D hInv hπ g).asIso.hom.app A (comparisonClassOf X) =
       comparisonClassOf (drinfeldFixedAct K D hInv hπ g X) := rfl
 
 /-- The first coordinate of the class transforms by the printed inverse Frobenius shift. -/
 theorem drinfeldFixedAction_residueMap (q : ComparisonClass Φ A) :
-    ((drinfeldFixedAction K D hInv hπ g).hom.app A q).residueMap =
+    ((drinfeldFixedAction K D hInv hπ g).asIso.hom.app A q).residueMap =
       DrinfeldResidue.shift (DrinfeldAction.exponent K D g) q.residueMap :=
   unramifiedAction_residueMap Φ c g q
 
 /-- The target of the class transforms by conjugation of its division-order action. -/
 theorem drinfeldFixedAction_targetClass (q : ComparisonClass Φ A) :
-    ((drinfeldFixedAction K D hInv hπ g).hom.app A q).targetClass =
+    ((drinfeldFixedAction K D hInv hπ g).asIso.hom.app A q).targetClass =
       q.targetClass.twistDivisionUnit g.2 := unramifiedAction_targetClass Φ c g q
 
 end Langlands.FormalGroup.LocalDivision

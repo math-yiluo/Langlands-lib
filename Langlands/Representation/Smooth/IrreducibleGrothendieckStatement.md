@@ -1,7 +1,5 @@
 # Bijectivity of the irreducible exact finite-length realization: statement
 
-Author: Worker 981.
-
 This module states, as proposition definitions, that the published canonical
 integer-linear map from integral combinations of genuine irreducible smooth
 classes to the exact Grothendieck group of finite-length smooth representations
@@ -117,7 +115,7 @@ The adapters are abbreviations of the generic map at
 The proposition expresses the ordinary comparison between the exact
 Grothendieck group of a length category and the free abelian group on its
 simple objects. The following three sentences describe the intended theorem.
-They are not a proof implemented, assumed or used by this statement unit.
+They are not a proof implemented, assumed or used by this statement module.
 
 - **Generation.** Every finite-length smooth representation has a composition
   series whose graded quotients are irreducible smooth representations.
@@ -130,13 +128,14 @@ They are not a proof implemented, assumed or used by this statement unit.
   realization, which gives injectivity.
 
 This identification is **derived/internal**. The published generic input
-`Langlands.Representation.Filtration.MultiplicityAdditivityProof` (Worker 430)
+`Langlands.Representation.Filtration.MultiplicityAdditivityProof`
 supplies witness-based composition-series existence, independence, transport and
-short exact multiplicity additivity for actual representations. It is a potential
-input to a later proof. It is not imported here and does not by itself compare
+short exact multiplicity additivity for actual representations. The proof uses
+it through `IrreducibleCompositionFactors`. It is not imported here and does not by itself compare
 the smooth exact quotient with the irreducible lattice. This focused target
 does not demand a total multiplicity function, a chosen inverse or a coefficient
-theorem. The proof is a separate successor task.
+theorem. The proof is the separate module `IrreducibleGrothendieckProof`
+(`Langlands.SmoothRep.irreducibleGrothendieckStatement`).
 
 ## Source correspondence
 
@@ -155,7 +154,7 @@ is bijectivity of the canonical map from the free integral lattice.
 
 - Literature ID: `aubert-1995-duality`.
 - Original SHA-256: `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693`
-  (verified for this unit).
+  (verified for this module).
 
 The arbitrary coefficient field, arbitrary group and topology, independent
 carrier universe and the actual `GL_n` and Levi specializations are internal
@@ -178,27 +177,19 @@ Its project import closure, checked from the actual import lines, is
 - `Langlands.Group.GL.Basic`, which imports only Mathlib.
 
 No filtration, Jordan–Hölder, parabolic induction, Jacquet, Aubert-operator or
-analytic module is imported. No module or result from the excluded tasks, their
-proof successors or their dependencies is imported or used. These are analytic
-segment classification `aca8805b-054f-4d56-8045-12db7f623404`, special-head
-multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered
-strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`, `SquareIntegrableLanglandsClassification` /
-`1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, and regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`. The existing realization, category,
+analytic module is imported. No module or result of the following
+classification results, their proofs or their dependencies is imported or
+used: analytic segment classification, special-head multisegment exhaustion,
+ordered strong-head existence, quotient coverage, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion, and
+regular exhaustion. The existing realization, category,
 exact-K0, lattice and filtration pairs are not modified.
 
 ## Development validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-module with no errors or warnings (diagnostic
-`07005bef-1a15-4473-badd-f133b7623597`). It reported
+The module compiled with no errors or warnings. Inspection reported
 `SmoothRep.IrreducibleGrothendieckStatement` as a `Prop`-valued definition with
 level parameters `uR, uG, uV`. Separate inspections reported the `GL_n` and
 product-Levi propositions as `Prop`-valued definitions with level parameters
-`uV, uF` (diagnostics `c03582ee-88ce-41b7-864d-a1d88adf846e` and
-`226b0858-6741-4c67-a25a-b76eea7e9335`). Only `propext`, `Classical.choice` and
+`uV, uF`. Only `propext`, `Classical.choice` and
 `Quot.sound` were reported as assumptions. These are development checks.
-Independent semantic acceptance and Library publication are separate.

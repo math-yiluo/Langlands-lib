@@ -1,7 +1,5 @@
 # Regularity of Haar measures on actual rational points
 
-Author: Worker 1650.
-
 `RationalPointHaarRegularityStatement` is an internal adapter for the actual
 identity-test rational points of an affine group scheme locally of finite
 type over any nonarchimedean local field, with the existing rational-point

@@ -89,7 +89,7 @@ pullback action as its arrow maps. -/
 theorem ofEquivariant_cohomology_map (F : EquivariantSheaf R ρ) (q : ℕ)
     {i j : SingleObj G} (g : i ⟶ j) :
     ((ofEquivariant R ρ F).cohomology q).map g =
-      (pullbackCohomologyAction R ρ F q).ρ g :=
+      ((pullbackCohomologyAction R ρ F q).ρ g).asHom :=
   (pullbackCohomologyAction_ρ R ρ F q g).symm
 
 /-- The compatible-coefficient cohomology diagram is the diagram associated
@@ -100,7 +100,7 @@ def ofEquivariantCohomologyIso (F : EquivariantSheaf R ρ) (q : ℕ) :
         (pullbackCohomologyAction R ρ F q) :=
   NatIso.ofComponents (fun _ => Iso.refl _) (fun g => by
     change ((ofEquivariant R ρ F).cohomology q).map g ≫ 𝟙 _ =
-      𝟙 _ ≫ (pullbackCohomologyAction R ρ F q).ρ g
+      𝟙 _ ≫ ((pullbackCohomologyAction R ρ F q).ρ g).asHom
     rw [Category.comp_id, Category.id_comp]
     exact ofEquivariant_cohomology_map R ρ F q g)
 

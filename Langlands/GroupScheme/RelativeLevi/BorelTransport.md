@@ -1,7 +1,5 @@
 # Transport of relative Borel subgroups
 
-Author: Worker 693.
-
 This internal helper derives transport from the published relative Borel
 predicate, reductive residue-field geometry, arbitrary-field geometric Borel
 transport and the canonical comparisons for successive pullbacks.

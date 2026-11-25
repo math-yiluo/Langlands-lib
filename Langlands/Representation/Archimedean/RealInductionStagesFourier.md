@@ -6,7 +6,7 @@ Module: `Langlands.Representation.Archimedean.RealInductionStagesFourier`.
 
 This module is internal infrastructure for the proof of
 `Langlands.Archimedean.RealAdjacentFiltrationInStagesStatement` (induction in stages of adjacent
-filtrations, Task 7068). The Library's `realStandardModule N ds` asks a principal-series
+filtrations). The Library's `realStandardModule N ds` asks a principal-series
 function `f` to have vanishing block Fourier coefficients at every `g ∈ GL_N(ℝ)`. Functions
 built by induction in stages are only controlled on `O(N)`. The main theorem shows that
 vanishing on `O(N)` suffices.

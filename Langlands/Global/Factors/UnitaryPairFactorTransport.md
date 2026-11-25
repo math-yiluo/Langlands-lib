@@ -1,7 +1,7 @@
 # Supercuspidal pair-factor relations along an isomorphism of p-adic fields
 
-Author: Worker 5731. This is a supporting lemma module for the proof of
-`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement` (Task 5230).
+This is a supporting lemma module for the proof of
+`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement`.
 It states no new published mathematics. It lifts the p-adic results of
 `Langlands.Representation.RankinSelberg.FieldTransport.Padic` from
 representations to the published supercuspidal classes, to the unitary basis

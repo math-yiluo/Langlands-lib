@@ -1,6 +1,6 @@
 # Standard inputs for extending Henniart's stable map
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartExtensionInputs`,
+Module `Langlands.Correspondence.HenniartExtensionInputs`,
 namespace `Langlands.Henniart.Extension`.
 
 This module has two `Prop`-valued definitions and nothing else. Neither is

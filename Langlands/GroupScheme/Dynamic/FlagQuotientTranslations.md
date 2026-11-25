@@ -1,7 +1,5 @@
 # Rational translations of an actual scheme quotient
 
-Author: Worker 1275.
-
 This internal construction starts with an actual morphism `π : G.X ⟶ Q` over
 a field, a subgroup functor `H`, and the exact right-coset fiber equivalence on
 every test scheme. It also assumes that the underlying scheme map of `π` is

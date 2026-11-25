@@ -1,8 +1,7 @@
 # Uniqueness for weak association
 
-Worker 35 authored this statement unit for task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`. All declarations lie in the namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`.
+This is a statement module. All declarations lie in the namespace
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`.
 
 The module states the two uniqueness assertions of Henniart 2000, §2.2, for
 representations `S` of the relative Weil group
@@ -179,8 +178,9 @@ The formalization differs from the source in the following derived choices.
 1. **Relative Weil group.** Henniart's `S` is a representation of the
    absolute Weil group `W_F`. Here `S` and `S'` are representations of one
    finite-level group `W_{E/F}`, as in the published association relation.
-   The library has no absolute global Weil group or inflation maps between
-   levels; those belong to Worker 2's construction. Pulled back along the
+   The absolute global Weil group of the Library is a separate construction
+   (module `Langlands.ClassFieldTheory.Global.AbsoluteWeilGroup`, a projective
+   limit along a supplied system of Weil maps between levels). Pulled back along the
    surjection `W_F → W_{E/F}`, representations of `W_{E/F}` become
    representations of `W_F` with the same intertwiners, the same
    subrepresentations, and the same local components. So the statements here

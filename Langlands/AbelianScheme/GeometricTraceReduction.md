@@ -1,6 +1,6 @@
 # Geometric rank and extension of integral prime traces
 
-Worker 868's internal construction proves the geometric rank clauses and
+This internal construction proves the geometric rank clauses and
 reduces the full trace comparison to common rational values on actual integral
 endomorphisms. All fields and schemes retain the arbitrary universe `u`.
 
@@ -34,4 +34,4 @@ conditional reduction, not a proof of that target.
 The provenance is internal: the argument composes the named published
 geometric rank and relative-dimension theorems with tensor induction and
 injectivity of rational scalars. No characteristic-polynomial theorem,
-geometric trace rationality, or prime independence is supplied by this unit.
+geometric trace rationality, or prime independence is supplied by this module.

@@ -1,7 +1,5 @@
 # Finite-model descent from geometric Frobenius invariance
 
-Authors: Worker 1442.
-
 This internal supporting construction descends a specified finite split-torus
 model when the original subgroup over an algebraic extension is invariant
 under Frobenius on every relative test scheme. All fields and schemes use an

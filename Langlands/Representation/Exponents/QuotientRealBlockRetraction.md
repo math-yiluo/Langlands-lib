@@ -1,6 +1,6 @@
 # Actual quotient retractions on a selected central block
 
-Author: Worker 526. The namespace is
+The namespace is
 `Langlands.QuotientRealBlockRetraction`. This internal algebraic assembly
 uses the grouped lifting corollary, the published grouped-central
 retraction and Mathlib's simple-source intertwiner lemma. The group and

@@ -40,6 +40,6 @@ All constructions retain universe `u`, arbitrary fields, nonreduced and
 non-quasi-compact test schemes, and every actual line bundle. No equality
 `Γ(X,O_X) = k`, chosen point, section, universal bundle, positive algebra rank,
 reducedness, smoothness or projectivity of `X`, or flatness over its
-global-functions spectrum is used. This contribution supplies the smooth
+global-functions spectrum is used. This module supplies the smooth
 relative automorphism condition. It makes no claim of a stack atlas, a quotient,
 or Picard-sheaf representability.

@@ -1,7 +1,5 @@
 # Maximal split tori of an actual simply connected cover
 
-Author: Worker 1384.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.SimplyConnectedCoverSplitTorusStatement`. The Lean
 file only defines the proposition. It contains no proof of it, and it adds
@@ -74,8 +72,8 @@ every test scheme, is not repeated here. It follows from item 2 of the
 conclusion and the closed immersion `i` (supplied by `IsMaximalSplitTorus i`
 as `hi.1.2`), by the proved lemmas
 `comp_groupHom_eq_one_iff_of_comp_eq_of_isClosedSubgroup` and
-`mem_range_kernelι_groupHom_iff_of_comp_eq_of_isClosedSubgroup` in Worker
-1392's module
+`mem_range_kernelι_groupHom_iff_of_comp_eq_of_isClosedSubgroup` in the
+module
 [`Rational.SplitTorusIsogenyCocharacter`](../Rational/SplitTorusIsogenyCocharacter.md).
 That module also states `SplitTorusIsogenyCocharacterStatement`: for an
 isogeny of split tori, the integral cocharacter map is injective with finite

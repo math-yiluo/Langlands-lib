@@ -86,5 +86,5 @@ assertion is made.
 
 Opposite-pair existence and bounded finiteness remain explicit. No full
 apartment-axiom package, AS5 or simple-connectedness premise is used. Full
-simply connected normalizer generation is not established, and this unit
+simply connected normalizer generation is not established, and this module
 does not prove `SimplyConnectedFacetFixingStatement`.

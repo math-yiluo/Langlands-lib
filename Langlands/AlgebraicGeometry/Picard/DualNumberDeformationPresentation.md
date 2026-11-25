@@ -94,6 +94,8 @@ modules. Every comparison used in the proof is one of those constructions
 or a lemma proved here. No new external source assertion is introduced.
 
 The result concerns actual module-sheaf presentations and their additive
-coboundary independence. It does not yet identify deformation classes with
-derived cohomology, supply the rigidification comparison, or prove the
-linearity or final tangent-to-H1 comparison of the host task.
+coboundary independence. It does not identify deformation classes with
+derived cohomology (`DualNumberDeformationH1` does), supply the rigidification
+comparison, or prove the linearity or the final tangent-to-H1 comparison
+`FieldUniversalRigidifiedPicardTangentH1Statement`, which the Library proves in
+`FieldUniversalRigidifiedPicardTangentH1Proof`.

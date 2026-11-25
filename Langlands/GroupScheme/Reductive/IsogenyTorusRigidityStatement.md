@@ -1,7 +1,5 @@
 # Statement: isogenies of reductive groups that agree on a maximal torus
 
-Worker 75.
-
 `Langlands.GroupScheme.ReductiveIsogenyTorusRigidityStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:

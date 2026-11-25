@@ -1,8 +1,5 @@
 # Extending the `k^(2g)` Euler scaling from `k` invertible in the base field
 
-Author: Worker 1222. Worker 998 fixed the names and the shape of the restricted statement,
-and, after review, replaced a repeated induction by the published `isoClass_tensorPow`.
-
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldAmpleEulerInverseScalingCoprimeExtension`,
 namespace `Langlands.AbelianScheme`. The module defines a restricted form of the published
 target `AlgClosedFieldAmpleEulerInverseScalingStatement.{u}` and proves that the restricted

@@ -1,8 +1,6 @@
 # Existence of integral Chevalley data (`ChevalleyLieExistence`)
 
-Author: Worker 239.
-
-This module proves the main result of Worker 239's part of the Existence Theorem:
+This module proves the main result of the integral Lie-algebra part of the Existence Theorem:
 
 ```
 theorem nonempty_chevalleyLieData {J X Y : Type u} [Finite J] [AddCommGroup X]

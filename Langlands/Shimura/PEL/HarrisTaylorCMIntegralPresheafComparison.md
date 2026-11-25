@@ -59,10 +59,11 @@ forward function.
 
 The integral image here is a subpresheaf of the original normalized class
 presheaf; it retains the original rational-isogeny relation and adelic
-invariant level orbits through its imported constructions. This unit proves
+invariant level orbits through its imported constructions. This module proves
 that the subpresheaf is the full presheaf under the displayed premises.
 It neither identifies it with an ordinary polarized finite-level
 representable moduli functor nor constructs a representing scheme.
 Smoothness, projectivity under division, admissibility of a representing
-scheme, and discharge of the generic fibre-ampleness premise remain
-obligations for `DivisionCMRepresentabilityStatement`.
+scheme, and discharge of the generic fibre-ampleness premise are not proved
+in this module; they are needed for `DivisionCMRepresentabilityStatement`,
+which the Library does not prove.

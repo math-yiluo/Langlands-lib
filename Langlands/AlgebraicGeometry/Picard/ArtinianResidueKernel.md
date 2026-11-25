@@ -59,9 +59,11 @@ tensor to the algebraic-fibre tensor case. The two component naturality
 identities then prove the result. The residue opens in this equality are
 the actual inverse images under `i`.
 
-The provenance is internal: this unit composes the Cartesian affine
+The provenance is internal: this module composes the Cartesian affine
 residue-section comparison with the flat ideal-tensor comparison, while
 checking the original section-ring actions and restriction maps. It uses
 no Picard representability or atlas assertion. It supplies the affine
 coefficient comparison; a sheaf and cohomology comparison, formal hull,
-effectivity and the exact smooth Picard atlas remain further obligations.
+effectivity and the exact smooth Picard atlas are not part of this module.
+The hull is built in `FieldMinimalPicardHull` and the atlas in
+`FieldPicardStackAtlasProof` and `FiniteTypePicardStackAtlasProof`, which build on this module.

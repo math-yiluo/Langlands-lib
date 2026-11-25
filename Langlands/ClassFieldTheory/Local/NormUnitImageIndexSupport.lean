@@ -1,5 +1,5 @@
 import Langlands.ClassFieldTheory.Local.NormExistenceFiniteSupport
-import Langlands.ClassFieldTheory.Local.NYLL.UniverseZeroModel
+import Langlands.ClassFieldTheory.Local.UniverseZero.UniverseZeroModel
 import Mathlib.GroupTheory.Index
 
 /-! # Index arithmetic for norm images of unit filtrations
@@ -80,18 +80,18 @@ theorem normSubgroup_index_eq_finrank (F : PadicField.{u} p) (E : PadicField.{v}
     [Algebra F.Carrier E.Carrier] [FiniteDimensional F.Carrier E.Carrier]
     [IsAbelianGalois F.Carrier E.Carrier] :
     (normSubgroup F.Carrier E.Carrier).index = Module.finrank F.Carrier E.Carrier := by
-  let := NYLL.universeZeroAlgebra F E
-  have := NYLL.universeZeroAlgebra_finiteDimensional F E
-  have := NYLL.universeZeroAlgebra_isAbelianGalois F E
-  let e := Units.mapEquiv (NYLL.universeZeroEquiv F).toRingEquiv.toMulEquiv
-  have hmap : (normSubgroup (NYLL.universeZeroModel F).Carrier
-      (NYLL.universeZeroModel E).Carrier).map (e : _ →* _) =
+  let := UniverseZero.universeZeroAlgebra F E
+  have := UniverseZero.universeZeroAlgebra_finiteDimensional F E
+  have := UniverseZero.universeZeroAlgebra_isAbelianGalois F E
+  let e := Units.mapEquiv (UniverseZero.universeZeroEquiv F).toRingEquiv.toMulEquiv
+  have hmap : (normSubgroup (UniverseZero.universeZeroModel F).Carrier
+      (UniverseZero.universeZeroModel E).Carrier).map (e : _ →* _) =
       normSubgroup F.Carrier E.Carrier :=
-    NYLL.universeZeroNormRange_map F E
+    UniverseZero.universeZeroNormRange_map F E
   rw [← hmap, Subgroup.index_map_equiv,
-    ClassFieldTheory.Local.normSubgroup_index_eq_finrank (NYLL.universeZeroModel F)
-      (NYLL.universeZeroModel E).Carrier]
-  exact NYLL.universeZeroAlgebra_finrank F E
+    ClassFieldTheory.Local.normSubgroup_index_eq_finrank (UniverseZero.universeZeroModel F)
+      (UniverseZero.universeZeroModel E).Carrier]
+  exact UniverseZero.universeZeroAlgebra_finrank F E
 
 end NormIndex
 

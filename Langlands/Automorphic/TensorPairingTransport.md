@@ -1,6 +1,7 @@
 # Tensoring and transporting nonzero invariant bilinear forms
 
-This internal construction for Task 7294 uses Mathlib's tensor bilinear
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` uses Mathlib's tensor bilinear
 form and its transport across a complex-linear equivalence. On elementary
 tensors, the form is the product of the two factor pairings. If both
 factor forms are nonzero, witnesses for their nonzero values give a

@@ -1,7 +1,5 @@
 # Rational coefficient comparison and the real Deligne target
 
-Author: Worker 57.
-
 ## Purpose and provenance
 
 This internal adapter connects three existing constructions: the rational

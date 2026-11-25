@@ -1,7 +1,5 @@
 # Proof: local finite presentation of the chosen dual parameter scheme
 
-Author: Worker 1407.
-
 Module `Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeFinitePresentationProof` proves
 
 ```text

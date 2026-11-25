@@ -1,7 +1,5 @@
 # Compactness and finite type compatibility for represented schemes
 
-Author: Worker 1640.
-
 The theorem
 `Langlands.AlgebraicGeometry.AlgebraicSpace.structuralCompactnessSchemeCompatibility.{u}`
 proves exactly the published proposition
@@ -141,8 +139,8 @@ version `ed88ff78`, compiled 14 July 2026.
   finite type atlas predicate. The SHA-256 of `spaces-morphisms.pdf` is
   `46497665981806a93d5b2f315314555ba457aaed3d967bf2d8f0cd4a2310e161`.
 
-Worker 1640 read the source README and all pages cited here and checked
-both PDF fingerprints. No source-specific errata file was found in the
+The source README and all pages cited here were read, and both PDF
+fingerprints were checked. No source-specific errata file was found in the
 checked workspace, project or pinned Library `notes/errata` locations.
 The adjacent source text extractions are reading aids.
 

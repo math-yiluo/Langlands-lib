@@ -158,7 +158,7 @@ consists of calculus deductions from the published genuine smooth-vector
 definitions (`Langlands.Representation.Archimedean.SmoothVectors`,
 `SmoothDerivative`, `SmoothDerivativeTopology`), Mathlib's manifold calculus
 and Bochner integration, and the separately published compact
-vector-manifold integration result of Task 7699 in
+vector-manifold integration result in
 `Langlands.Analysis.CompactManifoldVectorIntegral`. That result is imported
 by Lean name and is not duplicated here. The module is infrastructure for
 approximation in the genuine smooth-vector topology. It asserts no

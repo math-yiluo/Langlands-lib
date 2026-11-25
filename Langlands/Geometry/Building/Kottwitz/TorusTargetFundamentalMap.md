@@ -1,7 +1,5 @@
 # Fundamental-group comparisons and induced maps with torus target
 
-Author: Worker 5168.
-
 This internal module proves, without hypotheses, the special cases of the
 canonical-comparison and induced-map laws of KP Construction 11.3.1 and
 Lemma 11.3.6 that are needed when the target group is a torus. Here KP is

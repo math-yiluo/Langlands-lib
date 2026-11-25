@@ -1,6 +1,6 @@
 # Torus envelope normality over a finite field when every cocharacter is central
 
-Worker 1387. This module states one proposition,
+This module states one proposition,
 `FiniteFieldCentralCocharacterEnvelopeNormalityStatement.{u}`. It is not proved
 here.
 

@@ -1,7 +1,5 @@
 # Involutivity from induction compatibility, term transitivity and the top term
 
-Author: Worker 1180, task `2f01b264-fb0e-4029-901c-009044feaa97`.
-
 This module carries out the exact-K0 computation in Aubert's proof of
 Theorem 1.7(3) for an arbitrary family of decompositions `P I = M I ⋉ U I`
 indexed by the finite subsets `I` of a finite type `ι`. It proves that

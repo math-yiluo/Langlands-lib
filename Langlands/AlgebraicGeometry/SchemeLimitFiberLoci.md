@@ -11,8 +11,8 @@ descent; it does not assert that descent theorem.
 
 For arbitrary schemes X and Y over S, a relative morphism f, and a
 diagram D of schemes over S, `morphismDiagram` is the natural
-transformation whose components are the published actual
-`baseChangeMap` maps. Its source and target are the published actual
+transformation whose components are the actual
+`baseChangeMap` maps. Its source and target are the actual
 pullback diagrams from `EtaleEquivalenceRelation.Action.TargetLimit`.
 No new model presentation or substitute point set is introduced.
 
@@ -32,11 +32,11 @@ quasi-compact model over a compact stage is compact, and a
 quasi-separated model over a quasi-separated stage has a
 quasi-separated underlying space. These instances retain their
 explicit relative hypotheses; affineness of a model is not assumed.
-Together with the published limiting-cone construction, they provide
+Together with the limiting-cone construction, they provide
 the topology hypotheses needed to apply constructible-set detection
 to the actual target model diagram.
 
-The published equalities for actual nonempty and geometrically
+The equalities for actual nonempty and geometrically
 connected fibre loci apply to these cartesian squares. Thus the loci
 of an actual base change are exactly the inverse images of the loci
 of f. The loci at the cone's base are likewise inverse images of the
@@ -54,10 +54,12 @@ particular image assertion. The two theorems directly reuse
 `Scheme.Hom.isLocallyConstructible_image`; they introduce no additional
 geometric assumption.
 
-The cartesian arguments reuse Worker 105's earlier complete relative
-affineness and model-descent drafts, expressed here as reusable
-construction properties in a distinct namespace. Constructibility of
+The cartesian arguments repeat those of the relative affineness and
+model-descent proofs (`SchemeLimitAffineProof`, `SchemeLimitModelProof`),
+expressed here as reusable construction properties in a distinct
+namespace. Constructibility of
 the geometric-connectedness and componentwise pure-dimension loci,
 pure-dimension base-change comparisons, and eventual descent of the
-combined fibre property remain separate obligations. All schemes and
+combined fibre property are proved elsewhere, in
+`SchemeFilteredFiberGeometryProof` and the modules it imports. All schemes and
 the indexing category lie in a common arbitrary universe.

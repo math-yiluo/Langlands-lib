@@ -1,7 +1,5 @@
 # Integer lattice coordinate independence of actual orbit forms
 
-Author: Worker 200.
-
 This derived comparison combines Waldspurger, *La formule de Plancherel
 pour les groupes p-adiques (d'après Harish-Chandra)* (2003), V.2
 (printed p.293, PDF p.59), VI.1 (printed pp.295–296, PDF pp.61–62),

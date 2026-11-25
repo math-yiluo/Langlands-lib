@@ -2,7 +2,9 @@
 
 These comparison lemmas arise in the passage from the unitary Euler
 polynomials of Harris (1999), (5.6), to the arithmetic Euler polynomials
-of two supplied families in Task 6846. They use the published purity and
+of two supplied families in the general-coefficient comparison at a
+split supercuspidal place (`HarrisSupercuspidalLocalComparisonStatement`).
+They use the published purity and
 weak association predicates on actual representations.
 
 At a place of residue cardinality \(q\), all roots of the reverse of a

@@ -1,6 +1,6 @@
 # Fibrewise reductive and semisimple locus comparisons
 
-Worker 634. This internal derived unit compares the actual geometric fibre
+This internal derived module compares the actual geometric fibre
 conditions used by `DirectLimitReductiveStatement`. It assumes a smooth affine
 group scheme over an arbitrary scheme and imposes no connectedness condition
 unless the theorem states it explicitly.

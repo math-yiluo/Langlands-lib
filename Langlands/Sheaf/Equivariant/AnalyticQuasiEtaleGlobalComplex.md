@@ -1,14 +1,14 @@
 # Invariant cohomology and derived global section complexes in the quasi-étale case
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedExactGlobalComplex` (Worker 26, submitted together
+- `Langlands.Sheaf.Equivariant.TwistedExactGlobalComplex` (ported together
   with this module): the complexes `sheafSectionsComplex`, `exactGlobalComplex` and
   `exactInvariantGlobalComplex`, the comparison `exactGlobalComplexComparison` and the
-  identifications of their cohomology. Through it, `TwistedExactGlobalComparison`
-  (Worker 26): `exactInvariantGlobalSections`, `exactInvariantGlobalDerived`,
+  identifications of their cohomology. Through it, `TwistedExactGlobalComparison`:
+  `exactInvariantGlobalSections`, `exactInvariantGlobalDerived`,
   `exactInvariantGlobalEdgeMap` and `isIso_exactInvariantGlobalEdgeMap_zero`.
-- `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleCohomology` (Worker 26):
+- `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleCohomology`:
   `quasiEtaleCohomology` (`H^q(X, F)` on the quasi-étale site), `quasiEtaleGSheafSections`
   (`Γ_{X{G}}`), `quasiEtaleGSheafCohomology` (`H^q(X{G}, F)`) and `quasiEtaleComparison`
   (`H^q(X{G}, F) → H^q(X, b^*F)`). Through it: `AnalyticQuasiEtaleComparison`
@@ -19,7 +19,7 @@ Author: Worker 26. Builds on the following modules:
   `discreteGlobalDerived`, `globalComparison`), `LocalActionDiscretePart` (the abelian
   structure and enough injectives of discrete sheaves and the exactness of their inclusion
   `discreteSheafInclusion`), `AnalyticGSheaves` (`QuasiEtaleGSheaf ρ`, the discrete sheaves
-  of `compactLiftSystem ρ`) and Worker 21's quasi-étale site with its topology
+  of `compactLiftSystem ρ`) and the quasi-étale site with its topology
   `quasiEtaleTopology`.
 - `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtale`:
   `quasiEtale_hasPointwiseRightKanExtension`.
@@ -34,14 +34,14 @@ which is the abutment of the spectral sequences of §1.2 and Theorem 1.6.1(ii). 
 adds `Γ_{X(G)}`, `H^q(X(G), F)` and the edge map, as `AnalyticEtaleCohomology` does in the
 étale case. It also adds the complexes `RΓ(X, F)`, `RΓ(X{G}, F)` and `RΓ(X(G), F)` and the
 comparison `RΓ(X{G}, F) → RΓ(X, b^*F)`, as `AnalyticEtaleGlobalComplex` does in the étale
-case. Worker 16's published `AnalyticQuasiEtaleGlobalComparisonStatement` states that
+case. The published `AnalyticQuasiEtaleGlobalComparisonStatement` states that
 `quasiEtaleComparison` is an isomorphism for compact `X`;
 `quasiEtaleComplexComparison_homology` identifies the cohomology of the comparison of
 complexes with `quasiEtaleComparison`.
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field, and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field, and `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - Coefficients: write `w = max u (v + 1) uL`. The ring `R : Type w` is commutative, and
   sheaves take values in `ModuleCat.{w} R`. As `uL` occurs only inside `w`, uses name the
@@ -151,8 +151,10 @@ our packaging.
 
 ## Not formalized here
 
-That the comparison is an isomorphism for compact `X` (Theorem 1.6.1(ii), stated by
-Worker 16 as `AnalyticQuasiEtaleGlobalComparisonStatement`, not proved); the spectral
+That the comparison is an isomorphism for compact `X` (Theorem 1.6.1(ii), stated
+as `AnalyticQuasiEtaleGlobalComparisonStatement` and proved as
+`analyticQuasiEtaleGlobalComparison` in
+`Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.Proof`); the spectral
 sequences of §1.2 and Theorem 1.6.1(ii) and the identification of the edge map with
 theirs; an identification of `RΓ(X(G), F)` with derived `G`-invariants of `RΓ(X{G}, F)`;
 independence of the chosen derived categories; the comparison with the étale

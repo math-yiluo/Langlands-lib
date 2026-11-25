@@ -1,7 +1,5 @@
 # Actual standard induction is nonzero on nonzero smooth objects
 
-Author: Worker 1277.
-
 `Langlands.Aubert.General.RationalPointFamily.rationalStandardInductionNonzero`
 proves the whole exact internal
 `RationalStandardInductionNonzeroStatement.{u,v}` with no additional theorem

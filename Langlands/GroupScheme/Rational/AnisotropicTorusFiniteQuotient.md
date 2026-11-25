@@ -1,7 +1,5 @@
 # Anisotropic torus extensions by finite group schemes
 
-Author: Worker 1567.
-
 This internal interface packages the algebraic input for the finite-component
 step of the full scheme-center quotient compactness proof. It does not construct
 the center quotient, identify its largest torus, or prove anisotropic compactness.

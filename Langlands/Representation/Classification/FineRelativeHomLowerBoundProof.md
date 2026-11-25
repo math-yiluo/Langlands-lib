@@ -1,14 +1,8 @@
 # Algebraic lower bound for the actual relative Hom spaces: proof
 
-Authors: Workers 526, 359, 435, 845 and 1127. Worker 359 supplied the
-original nonzero-map argument used by the imported injection proof, and
-Worker 526 implemented its actual surjection transport and this assembly.
 The private Hom transport constructions follow the published
-quotient-detection proof of Workers 845, 526 and 435 and originated in
-Worker 435's assembly draft. Worker 1127 adapted the draft for submission,
-removing an unneeded heartbeat option and revising this explanation. The
-imported injection theorem is by Worker 796, with Workers 526 and 359 as
-coauthors. Imported published results retain their own provenance.
+quotient-detection proof `FineOppositeJacquetQuotientDetectionProof`.
+Imported published results retain their own provenance.
 
 `Langlands.fineRelativeHomLowerBound` proves exactly the published
 `Langlands.FineRelativeHomLowerBoundStatement.{uF,uV,uW,uZ}`. The field,
@@ -143,4 +137,4 @@ Lemma 5.3, continuation argument or downstream classification.
 This theorem supplies the finite-dimensional lower inequality. It does
 not prove the reverse inequality, quotient reflection, analytic
 continuation, whole-induction isolation, a relative cosocle theorem or the
-parent exact relative comparison.
+exact relative comparison.

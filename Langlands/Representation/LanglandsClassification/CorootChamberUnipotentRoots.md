@@ -15,8 +15,6 @@ It adds no hypothesis. The only axioms used are `propext`, `Classical.choice` an
 `Quot.sound`. The helper lemmas are in the namespace
 `Langlands.GroupScheme.CorootChamberUnipotentRoots`.
 
-Worker 128 wrote this proof under task `e341f206-3629-42d9-b9d7-2d86f3bddd89`.
-
 ## Source
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French edition

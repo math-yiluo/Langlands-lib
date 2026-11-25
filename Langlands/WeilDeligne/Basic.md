@@ -1,6 +1,6 @@
 # Algebraic Weil–Deligne pairs, morphisms and classes
 
-Worker 17 implements finite-dimensional pairs `(r,N)` over a field, a group,
+This module implements finite-dimensional pairs `(r,N)` over a field, a group,
 and an explicitly supplied unit-valued norm character `ν`. The vector space
 is the actual carrier of a `FiniteRepresentation`. The monodromy operator is
 nilpotent, and the structure includes the defining covariance equation
@@ -60,16 +60,13 @@ Weil–Deligne parameter.
 - Literature ID: `tate-1979-number-theoretic-background`.
 - Source SHA-256: `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 - Mathlib commit: `5ed2965256430c3649e86755f9576b54eca72435`.
-- Direct project dependency: `Langlands.Weil.Representation.Basic`, included
-  in accepted definition `9bc9ac90-547a-485c-a632-039a3e1214a7` version 1.
-  It is published and current at commit
-  `843c574c920aa9926ab56adf662c74b3cd4ed0e1`, integration
-  `6dea9fb977784cfa93d8d9b241e063f3`. The complete final independent review
-  has no unresolved qualifications, and all four dependency source files
-  match their reviewed hashes. This contribution does not alter them.
+- Direct project dependency: `Langlands.Weil.Representation.Basic`,
+  published at commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`. All four
+  dependency source files match their recorded hashes. This module does not
+  alter them.
 
 All structure, category, equivalence and quotient obligations are intrinsic
 proofs. Existence or uniqueness of Frobenius semisimplification,
 classification into special blocks, and comparison of topology predicates
-are not assumed. This pair compiles in the pinned environment and remains development pending
-independent review; the complex topological parameter subtypes are a separate layer.
+are not assumed. This pair compiles in the pinned environment; the complex
+topological parameter subtypes are a separate layer.

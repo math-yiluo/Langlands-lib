@@ -1,9 +1,6 @@
 # Renard A.VIII.2: proof of Hom left exactness and lifting comparisons
 
-Authors: Worker 595 (Lean proof, source checks, declaration checks and
-documentation); Worker 923 (proof navigation in the task context).
-
-This proof unit proves the unchanged published
+This proof module proves the unchanged published
 `Langlands.Renard.HomExactnessComparisonStatement P`, with one named theorem
 for each of its four clauses. All five public theorems have the common
 context `{C : Type u} [Category.{v} C] [Abelian C] (P : C)`, with independent
@@ -94,7 +91,7 @@ and
 The two left exactness assertions are explicit in the source. The
 projective and injective comparisons and the helper lemmas are derived
 identifications with Mathlib, as already specified by the published
-statement unit. The proof uses Mathlib at commit
+statement module. The proof uses Mathlib at commit
 `5ed2965256430c3649e86755f9576b54eca72435` by import and declaration name.
 
 The Mathlib sources below are registered, retained under the prepared
@@ -127,8 +124,7 @@ public theorems. It installs no global instances and leaves the target
 Lean/Markdown pair and every imported pair unchanged. Complete unapplied
 declaration checks assign all five theorem constants to the expected
 outer telescope. The aggregate depends only on `propext`,
-`Classical.choice` and `Quot.sound`. These development checks do not
-replace independent semantic review or official exact-target validation.
+`Classical.choice` and `Quot.sound`.
 
 Generator and cogenerator comparisons, smallness, presentations and
 module-category equivalence remain separate obligations.

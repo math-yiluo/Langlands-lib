@@ -98,7 +98,7 @@ theorem bernsteinSummandCenter_exists_scalar
         (fun χ => (rationalNormCharacters (bernsteinLeviScheme i ν a.roots) χ).toMul) → ℂ,
       ∀ ω (φ : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
           rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω a.representation),
-        ζ ≫ φ = s ω • φ := by
+        ζ.asHom ≫ φ = s ω • φ := by
   obtain ⟨Ψ, -, -, hΨ⟩ :=
     bernsteinLeviCenterVarietyStatement_holds.{uF, uV} F G T i ν family a ρ₀ hρ₀ j hj
   let ζ' : Subalgebra.center ℂ
@@ -157,7 +157,7 @@ theorem bernsteinSummandCenter_hom_comm_twisted
         (fun χ => (rationalNormCharacters (bernsteinLeviScheme i ν a.roots) χ).toMul) → ℂ)
     (hs : ∀ ω (φ : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
           rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω a.representation),
-        ζ ≫ φ = s ω • φ)
+        ζ.asHom ≫ φ = s ω • φ)
     (c : RationalLeviConjugacy (Standard.leviHom i ν (rootSet i ν a.roots))
       (Standard.leviHom i ν (rootSet i ν a.roots)))
     (hinv : ∀ χ ω : unramifiedCharacters
@@ -167,7 +167,7 @@ theorem bernsteinSummandCenter_hom_comm_twisted
             (rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω a.representation)) →
       ∀ φ' : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
           rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω a.representation,
-          ζ ≫ φ' = s χ • φ')
+          ζ.asHom ≫ φ' = s χ • φ')
     (Tl : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ →ₗ[ℂ]
       rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)
     (hT : ∀ (m : rationalPoints (bernsteinLeviScheme i ν a.roots))
@@ -181,14 +181,14 @@ theorem bernsteinSummandCenter_hom_comm_twisted
     (U : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
       rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω a.representation)
     (v : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀) :
-    SmoothRep.hom U (Tl (SmoothRep.hom ζ v)) = SmoothRep.hom U (SmoothRep.hom ζ (Tl v)) := by
+    SmoothRep.hom U (Tl (SmoothRep.hom ζ.asHom v)) = SmoothRep.hom U (SmoothRep.hom ζ.asHom (Tl v)) := by
   let V := bernsteinSummandTwistedHom.{uF, uV} i ν family a ρ₀ c Tl hT ω U
   have hVx (x : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀) :
       SmoothRep.hom V x = SmoothRep.hom U (Tl x) := rfl
-  have hUω : SmoothRep.hom U (SmoothRep.hom ζ (Tl v)) = s ω • SmoothRep.hom U (Tl v) :=
+  have hUω : SmoothRep.hom U (SmoothRep.hom ζ.asHom (Tl v)) = s ω • SmoothRep.hom U (Tl v) :=
     congrArg (fun g => SmoothRep.hom g (Tl v)) (hs ω U)
   by_cases hV0 : SmoothRep.hom V = 0
-  · have h1 : SmoothRep.hom U (Tl (SmoothRep.hom ζ v)) = 0 := by
+  · have h1 : SmoothRep.hom U (Tl (SmoothRep.hom ζ.asHom v)) = 0 := by
       rw [← hVx, hV0]
       rfl
     have h2 : SmoothRep.hom U (Tl v) = 0 := by
@@ -207,13 +207,13 @@ theorem bernsteinSummandCenter_hom_comm_twisted
     obtain ⟨χ, ⟨e⟩⟩ := bernsteinSummand_exists_twist_iso_of_surjective.{uF, uV} i ν family a ρ₀
       hρ₀ j hj _ hτirr V hVsurj
     have hU := hinv χ ω ⟨e.symm⟩ U
-    have hVζ : ζ ≫ V = s χ • V := by
+    have hVζ : ζ.asHom ≫ V = s χ • V := by
       have h := hs χ (V ≫ e.hom)
       rw [← Category.assoc, ← Linear.smul_comp] at h
       exact (Iso.cancel_iso_hom_right _ _ e).mp h
-    have h1 : SmoothRep.hom U (Tl (SmoothRep.hom ζ v)) = s χ • SmoothRep.hom U (Tl v) :=
+    have h1 : SmoothRep.hom U (Tl (SmoothRep.hom ζ.asHom v)) = s χ • SmoothRep.hom U (Tl v) :=
       congrArg (fun g => SmoothRep.hom g v) hVζ
-    have h2 : SmoothRep.hom U (SmoothRep.hom ζ (Tl v)) = s χ • SmoothRep.hom U (Tl v) :=
+    have h2 : SmoothRep.hom U (SmoothRep.hom ζ.asHom (Tl v)) = s χ • SmoothRep.hom U (Tl v) :=
       congrArg (fun g => SmoothRep.hom g (Tl v)) hU
     rw [h1, h2]
 
@@ -244,10 +244,10 @@ theorem bernsteinSummandCenter_comm_twisted
             (rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω' a.representation))) →
       ∀ c : ℂ, (∀ φ : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
           rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω a.representation,
-          ζ ≫ φ = c • φ) →
+          ζ.asHom ≫ φ = c • φ) →
         ∀ φ' : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
           rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω' a.representation,
-          ζ ≫ φ' = c • φ')
+          ζ.asHom ≫ φ' = c • φ')
     (c : RationalLeviConjugacy (Standard.leviHom i ν (rootSet i ν a.roots))
       (Standard.leviHom i ν (rootSet i ν a.roots)))
     (Tl : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ →ₗ[ℂ]
@@ -259,7 +259,7 @@ theorem bernsteinSummandCenter_comm_twisted
         (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀).representation
           (rationalPoints.map c.iso.hom m) (Tl x))
     (v : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀) :
-    Tl (SmoothRep.hom ζ v) = SmoothRep.hom ζ (Tl v) := by
+    Tl (SmoothRep.hom ζ.asHom v) = SmoothRep.hom ζ.asHom (Tl v) := by
   obtain ⟨s, hs⟩ :=
     bernsteinSummandCenter_exists_scalar.{uF, uV} i ν family a ρ₀ hρ₀ j hj ζ hζc
   apply sub_eq_zero.mp
@@ -284,7 +284,7 @@ theorem bernsteinInvariantCenterInclusion :
     (l := Standard.leviToParabolic i ν (rootSet i ν a.roots))
     (r := Standard.unipotentToParabolic i ν (rootSet i ν a.roots))
     (hp := A.1) (hr := A.2.2.1) (hl := A.2.1) (hmul := A.2.2.2)
-    family.connectedReductive piD ?_ ?_ ζ hζc fun w φ hφ Tl hT v => ?_
+    family.connectedReductive piD ?_ ?_ ζ.asHom hζc fun w φ hφ Tl hT v => ?_
   · -- `Π_D` is supercuspidal.
     have := A.2.1.isConnectedReductive.isAffineHom
     let := RepresentedParabolic.leviPointTopology

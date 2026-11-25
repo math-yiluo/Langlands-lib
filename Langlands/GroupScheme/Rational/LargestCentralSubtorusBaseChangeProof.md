@@ -1,7 +1,5 @@
 # Largest central subtori under arbitrary field extension
 
-Authors: Worker 1578 and Worker 1467.
-
 `reductiveLargestCentralSubtorusBaseChange` proves exactly
 `ReductiveLargestCentralSubtorusBaseChangeStatement.{u}`. For every field
 extension `K/k` in universe `u`, the base change of any largest central

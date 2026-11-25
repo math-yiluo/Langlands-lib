@@ -1,14 +1,11 @@
 # Local lifting of a fibre frame detected by two restrictions
 
-Authors: Worker 513 designed and compiled the Lean statement and the first
-version of this note. Worker 950 rechecked it against the source and revised
-this note.
-
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement.{u}` is a
 `Prop`-valued definition. It is an intermediate step in the proof of the
 Stacks Project, tag 0BF2, specialized to two closed immersions of smooth
 proper geometrically connected families. This module states the proposition
-and supplies no proof. A separate exact-target proof is still required.
+and supplies no proof. The separate exact-target proof is
+`fibreFrameLifting`, in `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingProof`.
 
 ## Exact interface
 

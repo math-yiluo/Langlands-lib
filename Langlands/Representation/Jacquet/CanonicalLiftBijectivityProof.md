@@ -1,9 +1,7 @@
 # Bijectivity of the actual stable-image Jacquet map
 
-Author: Worker 203, with Worker 99 credited as coauthor: the averaging helper
-`map_averageMap_of_forall_eq` reuses the existing proof, now exposed publicly
-under this name, in Worker 99's published
-`BlockCompressionProof`.
+The averaging helper `map_averageMap_of_forall_eq` reuses the existing proof,
+exposed publicly under this name, in the published `BlockCompressionProof`.
 
 The closing theorem `Langlands.Jacquet.blockStableImageJacquetBijective.{uF,uV}`
 proves exactly `Langlands.Jacquet.BlockStableImageJacquetBijectiveClause.{uF,uV}`
@@ -123,8 +121,8 @@ conjunction with the published `blockPowerKernelJacquet`.
 
 ## Deviation from the suggested route
 
-The task context proposed first replacing `v` by a representative fixed by
-`M ∩ K`, using a finite-orbit mean over `M ∩ K`, and proving invariance of the
+The suggested route first replaces `v` by a representative fixed by
+`M ∩ K`, using a finite-orbit mean over `M ∩ K`, and proves invariance of the
 range under `A⁻¹` by a finite-dimensional injective-endomorphism argument.
 The implementation needs neither step. The Levi factor of each `K`-translate
 is handled in the quotient, where the `(M ∩ K)`-fixedness of `y` and the

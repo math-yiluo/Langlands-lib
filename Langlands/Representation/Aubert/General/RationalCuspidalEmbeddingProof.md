@@ -160,8 +160,3 @@ modular character.
 As in the statement, cuspidality refers to proper *standard* inner parabolics.
 The comparison with all proper parabolics, and the structural realization of the
 geometric and topological premises, remain separate obligations.
-
-## Attribution
-
-Worker 6 designed the target statement and Worker 158 submitted it. Worker 379
-wrote this proof.

@@ -7,9 +7,9 @@ This module proves the implication
 
 Both propositions are published, in `Langlands.Global.AdelicEisensteinConvergenceStatement` and
 `Langlands.Global.AdelicIntertwiningConvergenceStatement`. The Eisenstein proposition is the
-module's only premise, and the module does not prove it. That proof is the target of Task 5490
-(`1832dcb1-0d24-4d4b-b194-f272613d96c9`). So this module does not establish the convergence of
-intertwining integrals unconditionally. It reduces that convergence to the Eisenstein statement,
+module's only premise, and the module does not prove it; it is proved as
+`eisensteinAbsoluteConvergence` in module `AdelicEisensteinConvergenceProof`. So this module
+alone does not establish the convergence of intertwining integrals unconditionally. It reduces that convergence to the Eisenstein statement,
 with the same constant `R`.
 
 The module also defines `AdelicGroupPoints.intertwiningRationalCoset`, the class map
@@ -30,11 +30,10 @@ summable majorant of the Eisenstein terms that is uniform for `g` in a compact s
 compact parameter set.
 
 The three P(F)-invariance lemmas in the first section restate, under new names, the argument of
-the Task 5490 staged candidate `9eafa10a-e0b0-441f-8ae8-5446db618f7a`
-(`Langlands/Global/AdelicEisensteinRationalCosets.lean`, lemmas
+`Langlands/Global/AdelicEisensteinRationalCosets.lean` (lemmas
 `map_rational_mem_parabolicQuotientSubgroup`, `IsIwasawaCompact.parameterTwist_rational_mul`,
-`IsIwasawaCompact.eisensteinTerm_eq_of_representative`). That candidate is unpublished, so it
-cannot be imported. The new names avoid a clash once both are published.
+`IsIwasawaCompact.eisensteinTerm_eq_of_representative`). This module does not import that file.
+The new names avoid a clash with those lemmas.
 
 ## Rational translations (`section Rational`)
 

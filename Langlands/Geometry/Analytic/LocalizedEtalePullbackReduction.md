@@ -1,7 +1,5 @@
 # Exact strong-map reduction for localized étale pullbacks
 
-Author: Worker 250.
-
 This internal reduction restates the original localized étale pullback
 existence problem in terms of complete strong maps and source refinement.
 The reduction is an equivalence. It supplies no proof of the remaining

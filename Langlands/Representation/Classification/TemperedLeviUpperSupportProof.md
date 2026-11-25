@@ -1,7 +1,5 @@
 # Upper discrete-series quotient support for tempered product Levis
 
-Author: Worker 470.
-
 `Langlands.glTemperedLeviUpperSupport` proves exactly the closed proposition
 [`GLTemperedLeviUpperSupportStatement`](TemperedLeviUpperSupportStatement.md).
 For every supplied prime, p-adic field, compatible topology, positive rank,
@@ -104,8 +102,8 @@ in A. J. Silberger, *The Langlands Quotient Theorem for p-adic Groups*
 SHA-256
 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
 Printed pp.96–97 fix normalized induction and recall exactness, stages,
-and the subrepresentation/opposite-quotient correspondence. Worker 470
-read pp.96–99 directly and checked the opposite notation and quotient setup
+and the subrepresentation/opposite-quotient correspondence. Pages 96–99
+were read directly and the opposite notation and quotient setup were checked
 in page images.
 
 The ambient opposite-support route comes from Silberger,
@@ -113,7 +111,7 @@ The ambient opposite-support route comes from Silberger,
 Corollary 4.5.11, printed pp.189–190, registered as
 `silberger-1979-harmonic-analysis`, SHA-256
 `b9432812bb48ce0bcd3975144baa6b3cca99bcaaf0d33d785ce68e94e02854fc`.
-Worker 470 read those pages and checked the formulas in images.
+Those pages were read and the formulas checked in images.
 That corollary supplies an opposite-induction embedding. The implemented
 proof obtains the upper quotient through the published same-data comparison
 and semisimple retraction described above. No source-specific errata file

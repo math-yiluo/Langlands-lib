@@ -1,6 +1,6 @@
 # Renard A.IX: simple classes of a category decomposition
 
-This statement unit makes precise the first assertion after the definition of
+This statement module makes precise the first assertion after the definition of
 a category decomposition in Renard 2026 A.IX. It uses the published actual
 coproduct and off-diagonal Hom conditions and explicitly compares internal and
 ambient simplicity. The module supplies proposition definitions, with no
@@ -112,7 +112,8 @@ For a nonzero simple vertex some leg is nonzero, and that monomorphism
 must be an isomorphism. Off-diagonal vanishing excludes a nonzero simple
 representative in two different blocks. These observations motivate the
 targets under the stated hypotheses; they are a proposed proof route,
-not an implemented or accepted proof.
+not a proof. The proof is in `CategoryDecompositionSimpleClassesProof`
+(`simpleClasses`, with `simplicity` and `partition`).
 
 No global coproduct instance, well-poweredness, smallness, relation
 between the universes, finite-length restriction, nonempty-index
@@ -123,10 +124,11 @@ here.
 
 ## Scope
 
-The existing `RenardCategoryDecomposition` and `CompositionChains` pairs
-are imported unchanged. This unit does not construct a category
+The existing modules `RenardCategoryDecomposition` and `CompositionChains`
+are imported. This module does not construct a category
 equivalence, a supported sum or a supported-subcategory abelian
 structure, and it proves no simple-support closure or splitting result.
-The existing `SimpleSupport` task families retain their scopes. A proof
-successor must target the exact published aggregate statement after
-independent review and publication.
+The existing `SimpleSupport` modules keep their own scopes. The exact
+published aggregate statement is proved by
+`Langlands.Renard.CategoryDecompositionSimpleClassesProof.simpleClasses` in
+`CategoryDecompositionSimpleClassesProof`.

@@ -1,7 +1,6 @@
 # Renard A.IV: elementary limits and colimits
 
-Authors: Worker 709 (prepared Lean and Markdown pair) and Worker 695
-(source and interface verification and submission).
+The source and the interface of this Lean and Markdown pair were verified.
 
 This file specifies the first four examples in A.IV.1 and their four
 explicitly named duals in A.IV.2. It contains statements only. It supplies
@@ -27,8 +26,8 @@ every assertion in A.IV has been reconciled.
 The colimit factorization is read in the direction required by the
 source's displayed `D → ΔX → ΔY`: the factor is `X → Y`. The adjacent
 prose reverses both arrows. This correction was already diagnosed in
-Worker 6's [Appendix A source audit](../../../notes/renard/appendix-a-corrections.md)
-and documented in Worker 610's
+the [Appendix A source audit](../../../notes/renard/appendix-a-corrections.md)
+and documented in the
 [`ConeBridge` companion](ConeBridge.md). The present colimit examples use
 the resulting outward factor maps, without imposing connectedness on
 the index.
@@ -130,7 +129,7 @@ that the relevant Hom type has exactly one element.
 of these eight closed components in that order: the four A.IV.1 examples
 followed by their four A.IV.2 duals.
 
-## Provenance and remaining work
+## Provenance and proof boundary
 
 The identifications are source assertions. The explicit `iff` formulations
 expand the source's limit/colimit universal properties on the displayed
@@ -138,7 +137,9 @@ shapes; the named Mathlib constructors, `Nonempty` wrappers, independent
 universe parameters and closed conjunction are internal formal packaging.
 No universal-witness conclusion occurs as an input assumption.
 
-No proof of these propositions is supplied here. A later proof can use
+No proof of these propositions is supplied here; they are proved by
+`elementaryLimitColimitStatements` in the separate module
+`Langlands.CategoryTheory.Renard.ElementaryLimitColimitProofs`. A proof can use
 the existing Mathlib empty-cone, kernel-fork, fan and pullback-cone
 constructors and their duals to relate the explicit unique factorizations
 to `IsLimit` and `IsColimit`. That is a possible implementation route,
@@ -151,7 +152,7 @@ product/coproduct comparison in
 `Langlands.CategoryTheory.RenardProductCoproduct` belongs to A.VI.2(7);
 it does not supply these general shape characterizations.
 
-This unit leaves A.IV.1 examples 5–6 (inverse systems and subobject
+This module leaves A.IV.1 examples 5–6 (inverse systems and subobject
 intersections), their direct-system and union duals, and the subsequent
 concrete abelian-group product/direct-sum and filtered-colimit
 constructions as separate obligations. It makes no assertion of

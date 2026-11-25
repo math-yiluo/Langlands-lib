@@ -1,24 +1,21 @@
 # Henniart's numerical correspondence: route study for the orbit counts
 
-Author: Worker 5733, for Task 5584 (`35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`).
-Written on 13 November 2026 at the operator's request (message
-`6f6938abca3056869e24510367034c8d`) and checked against Library commit
-`4b619cdd61c537ff5ee2587fda415e0adb66e5ef`. Revised the same day after
-review `0bef28ce-570f-4e2f-ab6f-475fb7bd8ae7`: the source requirements for
-[Zi], [He2] and [KZ] were corrected, and section 2.4 now lists the missing
-sources each goal needs.
+This note, written on 13 November 2026, was checked against Library commit
+`4b619cdd61c537ff5ee2587fda415e0adb66e5ef`; what it says the Library contains
+is said of that commit, except where a present status is given. Section 2.4
+lists the missing sources each goal needs.
 
 This note compares the source routes to the published proposition
 `Langlands.Henniart.NumericalOrbitCountStatement`. For each route it lists the
 Library prerequisites, with exact source locations, and names every missing
-source. It proves nothing, and no Lean code in it has been accepted.
+source. It proves nothing, and the Lean code in it is not in the Library.
 
 Page numbers are printed pages unless marked "PDF". Source files are in
-`/home/taskhub/central-library/` under the file names given in section 6.
+`central-library/` under the file names given in section 6.
 
 ## 1. The target and where the counts enter
 
-Task 5584 must prove `Langlands.Henniart.NumericalSurjectivityStatement`
+The target is `Langlands.Henniart.NumericalSurjectivityStatement`
 (module `Correspondence/HenniartNumericalStatement`): for a p-adic field `K`,
 every `Numerical.IsNumericalInjection` (injective, preserving conductors,
 compatible with unramified twists) from irreducible `(k+1)`-dimensional Weil
@@ -27,10 +24,9 @@ second assertion of Henniart 1988, Théorème 1.2, p. 498 (PDF 3).
 
 The intended proof goes through the published reduction
 `NumericalOrbitReductionStatement`: the orbit counts and finite supercuspidal
-conductors imply surjectivity. Its proof task is Task 5891
-(`e69d09d4-6da8-4810-886b-664574e533f8`, ready). A compiled draft exists
-(Task 5584 shared draft, revision 1, `numericalOrbitReduction`). It is a
-pigeonhole argument on orbit strata that uses Mathlib's
+conductors imply surjectivity. The Library proves it, as
+`numericalOrbitReduction` (`Correspondence/HenniartNumericalReductionProof.lean`).
+The argument is a pigeonhole argument on orbit strata that uses Mathlib's
 `Set.surj_on_of_inj_on_of_ncard_le` together with the published orbit criteria
 `VirtualRepresentation.Weil.unramifiedOrbitClass_eq_iff` and
 `VirtualRepresentation.PadicSupercuspidal.unramifiedOrbitClass_eq_iff`. The
@@ -43,10 +39,10 @@ reduction has two hypotheses:
   contain a class of Artin conductor `a`, respectively of conductor
   `firstFixedLevel = a`. This note studies this hypothesis.
 - Finiteness of `Numerical.conductor K π` for every supercuspidal `π`. This
-  note does not study it. Under the operator's decision of 13 November 2026,
-  conductor questions stay with Task 5585
-  (`5da7d945-39ed-4dcb-ace6-030fa18e4f24`) and Task 5032
-  (`7b8711bf-90dc-40ae-923e-5bfecc3550b6`, the JPSS conductor theorem).
+  note does not study it. Conductor questions belong to compact-open
+  finiteness of supercuspidal classes with fixed central character
+  (Bernstein–Zelevinsky 1976, Corollary 4.15) and to the JPSS conductor
+  theorem.
 
 The Lean count statement does not take the form of Henniart's counts.
 Henniart's Théorème 1.3 (p. 498) is a Weil-side formula,
@@ -97,7 +93,7 @@ passes to an arbitrary injection ("Par les arguments de comptage du paragraphe
 the counting step that `NumericalOrbitReductionStatement` formalizes. A
 similar remark ends §1.9, p. 502. In Lean terms:
 a conductor-preserving, twist-compatible bijection in every rank gives the
-orbit counts (unit U2, section 7), and Task 5891 then gives the target.
+orbit counts (lemma U2, section 7), and `numericalOrbitReduction` then gives the target.
 
 ### 2.2 Steps, sources and prerequisites
 
@@ -108,9 +104,9 @@ orbit counts (unit U2, section 7), and Task 5891 then gives the target.
 | A3. Théorème 1.3 in characteristic `p` | §4.3, pp. 510–511 (Prop. 4.3, p. 511); §4.4, p. 511 | Laumon's local Fourier transform `F^(0,∞')`: [Lm] 2.4.2.3, Thm 2.4.3(e), 2.5.2, 3.6.3; comparison of complex and ℓ-adic representations (§4.2) | Nothing. No ℓ-adic local Fourier transform. The numerical statements are stated over `PadicField` only, while this step needs local fields of characteristic `p` and their Weil groups. |
 | A4. GL-side count | §2.5, pp. 504–505; §2.6, p. 505; §2.8, pp. 506–507 | Zelevinsky's `St_d(ρ)` [Ze]; Jacquet–Langlands [DKV] (and [Ro], missing) in characteristic 0, which preserves ε-factors and hence conductors; `a(σ) = j + n − 1` for `D^×` [GJ]; Koch's count of `D^×` representations [Ko3] = Koch 1981 ("Anzahlsatz", stated p. 229, proved §11, pp. 250–251); the computations of [Ko2] and [Ko3] in the forward direction of §2.8 (p. 507). [KZ] is not used here: it enters only the reverse direction (section 2.1). | JL: `JacquetLanglands.JacquetLanglandsCharZeroStatement` (`JacquetLanglands/Statements`), unproved, with no ε- or conductor-preservation clause. Zelevinsky: the segment and discrete-series statements listed in [GL_n classification coverage](gln-classification-coverage.md). `D^×` levels and Koch's count: nothing. |
 | A5. Close local fields; surjectivity for Swan exponent `< n e_K` | §5.1, p. 512 (Proposition); §5.2, p. 513 (extension to all classes and slopes, [Ze] §10, [Rd]) | Deligne [De2] (in BDKV 1984, pp. 119–157): `G_K/G_K^e ≅ G_K'/G_K'^e`, compatible with ramification; A3 for `K'`; the §2.8 argument (A4) | Nothing for close fields. Upper breaks: `Ramification.HerbrandBridge.weilIrreducibleUpperBreak` (`LocalFactor/Ramification/Herbrand/WeilBreakProof`, proved), which gives the single break of an irreducible representation behind the slope `λ(σ) = s(σ)/n` of §2.1, p. 503. |
-| A6. Local cyclic base change and its properties | §6.1–6.6, pp. 513–519 | [AC] I.6.2, 6.4, 6.8, 6.9, Lemma 2.8, 6.3 (as listed in §6.1); pair L-factors [JPS2] (§6.4); central character in case II by a global argument, [AC] III Lemma 6.4 and the proof of Thm 6.2 (§6.5, p. 518); compatibility with parabolic induction and transitivity, Prop. 6.6 (pp. 518–519, global) | No local base change object. See the Arthur–Clozel III.5.1 row of [global statement coverage](global-statement-coverage.md): "Not started; local base change has no Library object". The global weak transfers `Automorphic.Unramified.CyclicTransferStatement` and `IsobaricCyclicTransferStatement` are stated but unproved. |
+| A6. Local cyclic base change and its properties | §6.1–6.6, pp. 513–519 | [AC] I.6.2, 6.4, 6.8, 6.9, Lemma 2.8, 6.3 (as listed in §6.1); pair L-factors [JPS2] (§6.4); central character in case II by a global argument, [AC] III Lemma 6.4 and the proof of Thm 6.2 (§6.5, p. 518); compatibility with parabolic induction and transitivity, Prop. 6.6 (pp. 518–519, global) | No local base change object. See the Arthur–Clozel III.5.1 row of [global statement coverage](global-statement-coverage.md): "local base change has no Library object". The global weak transfers `Automorphic.Unramified.CyclicTransferStatement` and `IsobaricCyclicTransferStatement` are stated but unproved. |
 | A7. Slopes under base change; `Z_p`-extension | §6.7, pp. 519–520 (Prop. and Cor.) | Wintenberger [Wi] 1.2.1 (APF extensions) | Nothing |
-| A8. Théorème 1.9 ⇒ Théorème 1.2 in characteristic 0 | §6.8, pp. 520–521 | A5–A7; descent along a cyclic `p`-power tower; the counting step | Counting step: Task 5891 (draft) and the generic `Henniart.FiniteOrbitCountingStatement` (proved in `Correspondence/FiniteAuxiliaryProof`) |
+| A8. Théorème 1.9 ⇒ Théorème 1.2 in characteristic 0 | §6.8, pp. 520–521 | A5–A7; descent along a cyclic `p`-power tower; the counting step | Counting step: `numericalOrbitReduction` and the generic `Henniart.FiniteOrbitCountingStatement` (proved in `Correspondence/FiniteAuxiliaryProof`) |
 | A9. Théorème 1.9 (compatible injections `φ_L`, `φ_M`) | §6.9, p. 522 (sketch); §7, pp. 522–542 | Successive cyclic inductions (Thm A, §7.2; Thm B); strong Artin conjecture for solvable extensions [AC] III (§7.4); pair L- and ε-factors by global functional equations (§7.5); general case §§7.7–7.25. The Clifford-theory step of §7.7 (p. 526) cites [CR] §11 A, [DH] §2 and [He2] §5.7 together; [DH] (Deligne–Henniart 1981) is present. | Nothing |
 
 ### 2.3 Assessment
@@ -142,7 +138,7 @@ direction, which recovers the explicit formula of Théorème 1.3 (section 2.4).
 | Goal | Missing sources it needs |
 | --- | --- |
 | Théorème 1.2 for p-adic `K` by Route A (the target) | [Ko2] and [He2] (Lemma 2); possibly [Ro], which H88 cites with the present [DKV]. The main cited sources of the four developments above (Laumon 1987, BDKV 1984, Arthur–Clozel 1989, H88 §7) are present; I did not audit their own references. |
-| Lean orbit counts, given a bijective numerical injection in every rank (units U1 and U2, section 7) | None. U1 uses only Library results. U2 uses the bijection, U1, and the fact that each irreducible Weil class has exactly one Artin conductor (Library status unchecked). |
+| Lean orbit counts, given a bijective numerical injection in every rank (lemmas U1 and U2, section 7) | None. U1 uses only Library results. U2 uses the bijection, U1, and the fact that each irreducible Weil class has exactly one Artin conductor (Library status unchecked). |
 | Henniart's explicit Weil-side formula, Théorème 1.3, in characteristic 0 (not needed for the target) | [KZ] 2.3 and 2.4, applied to Théorème 1.2 in every rank `d` dividing `n` (§2.8 Remarque, p. 507) |
 
 ## 3. Route B: explicit counts on both sides
@@ -178,8 +174,12 @@ cited there from Bushnell 1987, which is missing.
 To compare that formula with the Lean `Numerical.conductor`
 (`firstFixedLevel`), two further inputs are needed:
 
-- JPSS 1981, Théorème 5.1: `Conductor.ConductorExponentStatement`, owned by
-  Task 5032. Supercuspidal genericity is proved:
+- JPSS 1981, Théorème 5.1: `Conductor.ConductorExponentStatement`. The Library
+  has the conditional `conductorExponentStatement_of`
+  (`Representation/Conductor/EssentialConductorReduction.lean`) and proves the
+  supercuspidal p-adic case as
+  `Langlands.Conductor.supercuspidalPadicConductorExponent`. Supercuspidal
+  genericity is proved:
   `Whittaker.SupercuspidalKirillovProof.exists_functional`.
 - The comparison of Godement–Jacquet factors with the JPSS factors.
 
@@ -217,7 +217,7 @@ the GL-side counting in A4 (B1 instead of B2).
 ## 4. Route C: from a full local Langlands correspondence
 
 A bijection that preserves conductors and is compatible with twists, in every
-rank, gives the orbit counts (unit U2, section 7). The available proofs of
+rank, gives the orbit counts (lemma U2, section 7). The available proofs of
 such a bijection are these:
 
 - Henniart 2000, and the Library's chain
@@ -234,13 +234,13 @@ such a bijection are these:
   and with nearby cycles on Shimura varieties.
 
 If the Library proved the correspondence by such a route, the correspondence
-would not need Task 5584's target. Route C is therefore not a program for this
-task. It only records that the counts follow from any independent proof of the
+would not need `NumericalSurjectivityStatement` as an input. Route C is
+therefore not a program for this target. It only records that the counts follow from any independent proof of the
 correspondence.
 
 ## 5. From Henniart's counts to the Lean orbit strata
 
-Route A does not need this translation (unit U2 suffices). Route B does. It
+Route A does not need this translation (lemma U2 suffices). Route B does. It
 needs:
 
 - twist stabilizers. On the Weil side, H88 Prop. 2.2, pp. 503–504 ([Ko1],
@@ -308,8 +308,8 @@ Théorème 1.2 by Route A needs it.
 - [Ko1] Koch, Invent. Math. 62 (1980), 243–268. Not needed: H88 §3.1,
   Remarque 2, p. 508, says the case `n = p` from [Ko1] will not be used.
 - [Ko2] Koch, "Bemerkungen zur numerischen lokalen Langlands-Vermutung",
-  Proc. Steklov Inst. 163 (1984), 129–136. Needed (A1, A4). The operator
-  declined request `e6ae248a5a155ec3906cd2ff39478631` for its Satz 1.
+  Proc. Steklov Inst. 163 (1984), 129–136. Needed (A1, A4). No copy
+  of the paper was available for this note, for its Satz 1.
 - [He2] Henniart, "La conjecture de Langlands locale pour GL(n)", Journées
   arithmétiques de Metz 1981, Astérisque 94 (1982), 67–85. Lemma 2 is needed
   for the proof of Prop. 3.3 (A2, p. 509). Its §5.7 is also cited in §7.7, but
@@ -330,9 +330,9 @@ Théorème 1.2 by Route A needs it.
 - Bushnell–Henniart 2007, "Counting the discrete series for GL(n)". Route B
   only. The citation is not verified here.
 
-## 7. Near-term units and recommendation
+## 7. Near-term lemmas and recommendation
 
-Two units are useful on every route, and I expect both to be elementary.
+Two lemmas are useful on every route, and I expect both to be elementary.
 Neither has been started in Lean.
 
 - U1, GL-side orbit-stratum finiteness: `(supercuspidalOrbitStratum K k a).Finite`.
@@ -352,8 +352,10 @@ Neither has been started in Lean.
   of `Numerical.HasArtinConductor`. I have not checked whether the Library
   provides this.
 
-Recommendation: let Task 5891 proceed, and publish U1 and U2 as focused
-statement and proof units. Together with Task 5891 and the conductor
+Recommendation: state and prove U1 and U2 as statement and proof
+modules (U1 is in the Library as
+`Langlands.Henniart.supercuspidalOrbitStratumFiniteness`). Together with
+`numericalOrbitReduction` and the conductor
 hypothesis, they reduce the target to the existence of one bijective numerical
 injection in every rank. This is Henniart's own logical shape (§1.9, p. 502;
 §6.8). U1 and U2 need no missing source (section 2.4). The explicit
@@ -364,5 +366,4 @@ Henniart §7, close local fields, Laumon's local Fourier transform and the
 Jacquet–Langlands correspondence, none of which the Library has. Of the missing
 papers it needs [Ko2] and [He2] (Lemma 2), and possibly [Ro]; it does not need
 [KZ] or [Zi]. Starting Route A is a decision about those foundations, not about
-counting. This note is a planning document: it supplies no accepted proof, and
-it does not complete Task 5584.
+counting. This note is a planning document: it supplies no proof.

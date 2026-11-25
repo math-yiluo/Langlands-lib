@@ -1,12 +1,11 @@
 # A chosen opposite Borel from local presentation and Lie spreading
 
-Worker 608 and Worker 653.
-
 This internal construction takes two explicit proof inputs:
 `RelativeBorelDynamicPresentationStatement` and
-`RelativeParabolicLieContainmentStatement`. Neither is proved by this unit.
-Consequently this conditional construction does not satisfy the host task's
-required unconditional proof of `RelativeOppositeBorelStatement`.
+`RelativeParabolicLieContainmentStatement`. Neither is proved by this module.
+Consequently this conditional construction is not by itself an unconditional
+proof of `RelativeOppositeBorelStatement`; that proof is `relativeOppositeBorel`
+in `OppositeBorelProof`.
 
 For an arbitrary scheme, reductive group scheme, supplied maximal torus and
 relative Borel containing it, `group` chooses the opposite Borel group scheme

@@ -1,7 +1,5 @@
 # Unitarity of a tempered central character on a split component
 
-Authors: Worker 1598 and Worker 1597 (canonical identity-parabolic specialization).
-
 This internal derived theorem composes three published results: the actual
 identity-parabolic data, the identity-Jacquet central-character comparison,
 and `normalizedTemperedFullGroupExponent`. It introduces no additional
@@ -43,9 +41,10 @@ character. No irreducibility, admissibility, finite-dimensionality, or
 independent regularity premise on the character is used.
 
 The conclusion covers images of split-component points in the full
-point-group center. Extending it to every element of that center still
-requires the separately owned compactness theorem for the center modulo the
-split component and the published full-center extension. This theorem
+point-group center. Extending it to every element of that center
+requires the separate compactness theorem for the center modulo the
+split component (`centerSplitComponentCompactness`) and the published
+full-center extension. This theorem
 does not prove that compactness assertion or the final full-center target.
 It uses the explicitly normalized exponent convention throughout; the
 corrected-source comparison with the raw-log parameter remains separate.

@@ -1,14 +1,16 @@
 # Conditional proof of all prime graded norm formulas
 
-Author: Worker 96.
-
 `primeGradedNormFromArithmetic` proves exactly
 `PrimeGradedNormFromArithmetic.{u,v}`. It assumes proofs of
 `PrimeRamifiedTraceIdeals.{u,v}` and `PrimeNormTraceExpansion.{u,v}` and
 then establishes the entire unchanged `PrimeRamifiedGradedNorm.{u,v}`
 conclusion. The arithmetic propositions remain hypotheses within this
 intermediate target. This module does not prove either arithmetic input and
-does not provide the closed unconditional theorem required by the host task.
+does not provide the closed unconditional theorem; that theorem is
+`primeRamifiedGradedNorm` in
+`Langlands.ClassFieldTheory.Local.PrimeRamifiedGradedNormProof`, which applies
+`primeGradedNormFromArithmetic` to `primeRamifiedTraceIdeals` and
+`primeNormTraceExpansion`.
 All supplied scalar structures, independent field universes, arbitrary
 order-one uniformizers, and actual forward residue maps are retained.
 

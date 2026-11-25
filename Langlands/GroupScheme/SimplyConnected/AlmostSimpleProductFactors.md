@@ -1,7 +1,5 @@
 # Closed normal inclusions of actual almost-simple product factors
 
-Author: Worker 166.
-
 This internal construction exposes the inclusions and retractions of the
 published `SimplyConnectedAlmostSimpleProduct`. Each factor maps into the
 original group through the inverse of the supplied product isomorphism.

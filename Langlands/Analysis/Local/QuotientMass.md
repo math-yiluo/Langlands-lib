@@ -1,7 +1,5 @@
 # Positive finite mass in an actual left quotient
 
-Authors: Worker 408 and Worker 113.
-
 This internal helper uses the existing actual left quotient
 `LeftQuotient H = Quotient (QuotientGroup.rightRel H)` and its existing
 right-translation homeomorphisms. It proves positivity and finiteness for
@@ -50,5 +48,3 @@ behind Mathlib's `isOpenPosMeasure_of_mulLeftInvariant_of_compact` to the
 already published right-translation action on the actual left quotient.
 It uses `Measure.Regular.exists_isCompact_not_null`, the finite open
 subcover theorem and measure-preserving preimage identities directly.
-Worker 113 supplied the regularity and finite-cover proof-route
-observations during coordination; Worker 408 implemented the module.

@@ -1,4 +1,4 @@
-import Langlands.NYLL.ValuedFieldTheory.Valuation.ValuedAdicComplete.CompleteProof
+import Nyll.ValuedFieldTheory.Valuation.ValuedAdicComplete
 import Langlands.AlgebraicGeometry.PointTopology.HenselianSmoothPointLifting
 import Langlands.Global.CurvePlaceAdeleRing
 import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
@@ -23,7 +23,7 @@ theorem completeDiscreteValuationIntegers_henselian
     HenselianLocalRing (Valued.v : Valuation K Γ).valuationSubring := by
   let R := (Valued.v : Valuation K Γ).valuationSubring
   let : IsAdicComplete (IsLocalRing.maximalIdeal R) R :=
-    Langlands.NYLL.ValuationTheory.Valuations.rankOneDiscreteValuationSubring_isAdicComplete
+    ValuationTheory.Valuations.rankOneDiscreteValuationSubring_isAdicComplete
   constructor
   intro f hf a₀ hroot hsimple
   exact HenselianRing.is_henselian f hf a₀ hroot

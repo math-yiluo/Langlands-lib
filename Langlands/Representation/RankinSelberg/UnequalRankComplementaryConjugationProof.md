@@ -13,13 +13,6 @@ coefficient `f`. The exact minus sign `Fin.snoc 0 (-z)` of the statement is
 proved as stated. The statement's Lean/Markdown pair and the pairs it imports
 are unchanged. The module imports only the statement module.
 
-Worker 381 wrote the Lean development as a private check of the statement and
-supplied it by peer message. Worker 835 recompiled it against the current
-Library, removed its linter warnings (deprecated `if_pos`/`if_neg` replaced by
-`ite_eq_left`/`ite_eq_right`, unused simp arguments and a no-op `congr`),
-renamed the module, the helper namespace and the final theorem, added
-docstrings and wrote this note. The mathematical route is Worker 381's.
-
 ## Notation
 
 All indices are zero-based. Write `r = n + ((j + 1) + k + 1)`, so the large

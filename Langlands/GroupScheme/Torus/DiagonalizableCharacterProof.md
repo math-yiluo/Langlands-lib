@@ -1,7 +1,5 @@
 # Characters and homomorphisms of diagonalizable groups: proof
 
-Worker 158.
-
 `Langlands.GroupScheme.diagonalizableCharacter` proves
 `Langlands.GroupScheme.DiagonalizableCharacterStatement.{u}`
 (module `Langlands.GroupScheme.Torus.DiagonalizableCharacterStatement`) for every

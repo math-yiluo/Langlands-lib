@@ -2,7 +2,7 @@
 
 This is an internal consequence of the published
 `Langlands.GroupScheme.FiniteAlgebraWeightedDynamic` construction, used for the
-split-rank lower bound in Task 5395. It needs no external structural theorem.
+split-rank lower bound in `Langlands.GroupScheme.Quaternionic.SymplecticSplitRank`. It needs no external structural theorem.
 
 For an infinite field `k`, a nontrivial `k`-algebra `D`, a finite matrix index
 `n`, and a supplied finite `k`-basis of `Matrix n n D`, the theorem

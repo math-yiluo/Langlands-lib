@@ -1,8 +1,8 @@
 # Normalized local sections in compact-induction coinvariants
 
-Worker 626 states
-`Langlands.Induction.CompactCoinvariantLocalInverseExists.{uG,uV}`,
-with the interface and proposed route supplied by Worker 199. This is one
+This module states
+`Langlands.Induction.CompactCoinvariantLocalInverseExists.{uG,uV}`.
+This is one
 closed `Prop` definition asserting existence of a complex linear map
 
 \[
@@ -128,7 +128,7 @@ Ann. Sci. ENS (4) **10** (1977), 441–472, §5.17, printed pp.466–467
 `bernstein-zelevinsky-1977-induced-i`, retained at
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`,
 SHA256 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-Worker 626 read and visually checked both cited pages.
+Both cited pages were read and visually checked.
 
 On p.466 the source integrates the projected inducing function over
 \(V'\backslash V\), with an inverse-character factor in the twisted case,
@@ -145,18 +145,18 @@ source's regular-representation/free-resolution proof. The explicitly
 supplied measure and full topological-group telescope are also internal
 formulations, not a claim that BZ77 states this exact proposition.
 
-The proposed later proof would compare normalized classes under compact
+The proposed proof would compare normalized classes under compact
 open refinement, use common refinements for choice independence and
 linearity, and use conjugation and right translation to annihilate
 \(H\)-relations. Smoothness would supply suitable compact open subgroups
-for vectors. These steps remain proof obligations. The existing
+for vectors. The proof `compactCoinvariantLocalInverseExists`, in
+`CompactCoinvariantLocalInverseProof`, follows this route. The existing
 [`CompactCoinvariantIntegral`](CompactCoinvariantIntegral.md) is the
 separate construction motivating later assembly; this statement adds no
-law about that integral. Its proof and the final integral-bijectivity
-assembly remain separate work.
+law about that integral. The final integral-bijectivity assembly is
+`compactCoinvariantIntegralBijective`, in `CompactCoinvariantBijectivityProof`.
 
-The statement compiled in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Exact declaration inspection
+The statement compiles. Exact declaration inspection
 reports a definition returning `Prop` with precisely the independent
 universe parameters `uG` and `uV`, using only `propext`,
 `Classical.choice`, and `Quot.sound`. These development checks establish

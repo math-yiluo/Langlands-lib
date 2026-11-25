@@ -50,16 +50,15 @@ The audit starts at `splitRootLieLine_independent` and checks that its
 type is exactly `SplitRootLieLineStatement.{u}` with one universe
 parameter `u`. It follows the types and values of every reachable
 constant, including opaque proof values. The scan checks all 24 named
-exclusions in Task 7510, additional projective-Borel and downstream
+exclusions of the dynamic-Borel inputs that this proof avoids, additional projective-Borel and downstream
 consumers, and the declaring modules of the excluded routes. It also
 verifies that the ordinary flag quotient, the curve dimension and kernel
 lemmas, and the centralizer and scalar-extension comparisons occur in the
 closure.
 
 The check at Library commit `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`
-used the published reduction and cover. In the pinned environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, `lean_check` diagnostic
-`ba96028d-1fde-437c-a7b8-67cee327977f` reports zero errors and warnings.
+used the published reduction and cover. In the pinned Lean environment,
+`lean_check` reports zero errors and warnings.
 The exact type and universe check passed. The scan visited 115,484 constants,
 including 23,937 declared in 1,876 Langlands modules. It found zero excluded
 or missing dependencies and reached every required declaration.
@@ -85,8 +84,8 @@ dependency inventory.
 
 ## Reproducing the audit
 
-Save the following script as `AuditSplitRootLieLineIndependent.lean` in a
-private draft and run `lean_check` on
+Save the following script as `AuditSplitRootLieLineIndependent.lean` and
+run `lean_check` on
 `Langlands.GroupScheme.Reductive.SplitRootLieLineIndependentProof` followed
 by `AuditSplitRootLieLineIndependent` in the pinned Lean environment.
 

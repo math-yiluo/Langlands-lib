@@ -50,5 +50,5 @@ This is an internal derivation from the imported orbit, invariant-open,
 reduced-closure, finite-section, and finite-target action APIs. In particular,
 the lift of the original section through the reduced closed immersion uses
 reducedness of the source `Spec k`. The bundled reduced-closure construction
-was adapted from Worker 716's draft, as documented in its own pair; this
-module imports that construction without changing it.
+is in `Langlands.GroupScheme.SchemeActionReducedClosed`, whose page documents
+its provenance; this module imports that construction without changing it.

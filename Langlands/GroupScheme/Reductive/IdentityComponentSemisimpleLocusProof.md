@@ -1,7 +1,7 @@
 # Openness of the semisimple geometric identity-component locus
 
-Workers 801 and 647. The theorem `identityComponentSemisimpleLocusOpen` has type
-exactly the unchanged published `IdentityComponentSemisimpleLocusOpenStatement`
+The theorem `identityComponentSemisimpleLocusOpen` has type
+exactly the published `IdentityComponentSemisimpleLocusOpenStatement`
 in every universe. It applies to every smooth affine group scheme over every
 scheme and adds no hypotheses.
 

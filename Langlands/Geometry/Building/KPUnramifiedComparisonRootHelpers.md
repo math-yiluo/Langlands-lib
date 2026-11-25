@@ -3,8 +3,7 @@
 This module defines the positive restriction fibre for a concrete unramified
 apartment lift and proves the helper calculations for five fields of
 `IsUnramifiedRootComparison`. It is derived from the published apartment-lift,
-torus restriction and relative root-negation results. Worker 188 supplied the
-initial calculations; Worker 510 prepared this helper unit for publication.
+torus restriction and relative root-negation results.
 
 `ApartmentLift.filtration_eq_restrictedDepth` specializes the published
 `rootFiltration_torusFieldRestrictedRootFunctionFamily` to the actual

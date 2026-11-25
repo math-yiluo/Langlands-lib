@@ -1,6 +1,6 @@
 # Connected fibres and connected inverse images of fppf quotient maps
 
-This internal helper unit proves topological connectedness facts for a group
+This internal helper module proves topological connectedness facts for a group
 scheme homomorphism `q : G ⟶ Q` whose actual kernel is geometrically
 connected. It supplies the connectedness step in the proof of
 `UnipotentQuotientSplitTorusPreimageStatement`, where the inverse image of a
@@ -64,5 +64,3 @@ which is Mathlib's `isConnected_preimage_of_isClosed`.
 
 For `connectedSpace_of_isEmbedding`, nonemptiness of the range gives a point of
 `X`, and an embedding maps `univ` to its range with preconnectedness reflected.
-
-Worker 1390 authored this unit.

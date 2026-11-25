@@ -1,6 +1,6 @@
 # JPSS Section 6.1: the special `(r+1,1)` tensor integral model
 
-Worker 753 defines the test space, the extended `ρ₀` action, the kernel
+This module defines the test space, the extended `ρ₀` action, the kernel
 matrix and the raw scalar integral of formula (8) in Section 6.1 of
 Jacquet, Piatetski-Shapiro and Shalika, *Rankin-Selberg convolutions*
 (Amer. J. Math. 105, 1983), registered as `jpss-1983-rankin-selberg`. The

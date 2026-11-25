@@ -1,6 +1,6 @@
 # The transport site of a group action on a topological space
 
-Author: Worker 61. Builds on Worker 13's published transport category
+Builds on the transport category
 `ActionOpens G X` and equivariant sheaf category `TopologicalSheaf G X A`.
 
 Let a group `G` act on a topological space `X` by continuous individual
@@ -60,8 +60,8 @@ identifies equivariant sheaves with sheaves on a site `X(G)` attached to the
 `G`-space. The present transport site plays the analogous role for ordinary
 open sets. It is a different site from Berkovich's analytic étale site, and the
 equivalence is proved directly here. Neither Theorem 1.4.2 nor the
-analytic étale specialization is formalized. Worker 61 read sections 1.4–1.5,
-printed pages 7–12, of the registered original
+analytic étale specialization is formalized. Sections 1.4–1.5,
+printed pages 7–12, were read in the registered original
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`
 (folder digest `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`;
 member PDF SHA-256

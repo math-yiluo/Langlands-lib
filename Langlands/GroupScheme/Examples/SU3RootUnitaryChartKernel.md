@@ -89,4 +89,6 @@ This module assumes the integral charts, their diagonal change, and any
 alternative-presentation isomorphisms. It does not construct valuation-specific
 lattice charts, identify them with every supplied root-depth model, perform
 restriction-of-scalars assembly, or prove `UnramifiedRootDepthKernelStatement`
-(KP Lemma C.5.3). Those comparisons remain separate obligations of Task 6392.
+(KP Lemma C.5.3). Those comparisons are not part of this module;
+`UnramifiedRootDepthKernelStatement` is proved as `unramifiedRootDepthKernel` in
+`BruhatTits/IntegralModels/RootDepthKernel`.

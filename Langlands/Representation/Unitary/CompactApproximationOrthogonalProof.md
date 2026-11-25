@@ -1,6 +1,6 @@
 # Proof of a dense orthogonal minimal family
 
-Worker 116 implements the orthogonal-family step motivated by
+The module implements the orthogonal-family step motivated by
 Getz–Hahn Lemma 9.3.1, printed p.247, one-based PDF p.259.
 The statement Markdown records exact original-source and errata provenance.
 
@@ -44,4 +44,4 @@ minimality theorem, whose eigenspace prerequisite is also published.
 The statement Markdown records the original-source and errata provenance.
 An isometric equivariant map from an actual Hilbert direct sum, finite
 representation multiplicity, Dirac weights, integrated operators and
-concrete automorphic realization remain separate obligations.
+concrete automorphic realization are not part of this proof.

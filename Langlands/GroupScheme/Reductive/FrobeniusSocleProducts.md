@@ -1,6 +1,6 @@
 # Regular spans of irreducible Frobenius products
 
-Worker 669 derives this construction from the existing actual regular
+This construction is derived from the existing actual regular
 representations, coordinate products, singleton regular spans, and Mathlib
 linear algebra. No external structural existence theorem is used.
 
@@ -79,5 +79,5 @@ The result concerns generated regular subspaces; it does not identify them
 with an entire covariance space or construct the geometric data required by
 `SteinbergBigCellStatement`.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here have module-specific names to permit joint
+imports. The renaming changes no type, value or local scope.

@@ -1,6 +1,6 @@
 # Upper exponent bounds of `GL_n` on the single-block product Levi
 
-Worker 978 and Worker 544 state `Langlands.GLOneBlockUpperExponentStatement.{uF, uV}`.
+This module states `Langlands.GLOneBlockUpperExponentStatement.{uF, uV}`.
 This is a closed proposition definition. It asserts no Lean proof. It is an
 algebraic adapter for the sufficiency direction of the `GL_n` exponent
 criterion: it moves the ordinary upper Jacquet exponent bounds of a
@@ -157,7 +157,7 @@ The opposite direction is already implemented in
 `exists_refinedJacquet_embedding`, `jacquetExponent_bound_of_core`), and these
 lemmas are useful models for the proof.
 
-The admissibility hypothesis is part of the requested interface. The
+The admissibility hypothesis is part of the stated interface. The
 correspondence above does not use it, because both exponent notions carry their
 own open-kernel conditions. A proof may ignore it.
 
@@ -173,7 +173,8 @@ here.
 
 ## Not claimed
 
-- No proof of this statement.
+- No proof of this statement (it is proved as `Langlands.glOneBlockUpperExponent`
+  in `OneBlockUpperExponentProof`).
 - No analytic estimate, temperedness, square-integrability or Haar-measure
   transport.
 - Neither direction of `GLTemperedExponentCriterionStatement`, and no use of it
@@ -200,5 +201,4 @@ here.
   `ScalarLayer.oneBlockLeviEquiv`.
 
 This pair is authored for the pinned Lean 4.34.0 environment and Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435` (environment artifact
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`).
+`5ed2965256430c3649e86755f9576b54eca72435`.

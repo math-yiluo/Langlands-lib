@@ -1,8 +1,5 @@
 # Normalized affine action on actual complex L²
 
-Authors: Worker 452 (construction, proofs and original description) and
-Worker 872 (independent verification and description edits).
-
 This module constructs a complex representation of the actual p-adic
 mirabolic matrix group on an actual complex L² space, with an isometric
 operator for every group element. Its primary declaration is
@@ -205,5 +202,7 @@ preservation.
 There is no positivity assumption on `n`; rank zero is included by the
 same definitions and proofs. No strong continuity, Fourier or
 Plancherel theorem, quotient measure, coefficient completion, induced
-Hilbert model, or irreducibility assertion is made here. These remain
-separate obligations for the normalized-induction irreducibility route.
+Hilbert model, or irreducibility assertion is made here. These lie outside
+this module, on the normalized-induction irreducibility route; joint
+continuity of the action is proved in
+`Langlands.Representation.Unitary.AffineL2ContinuityProof`.

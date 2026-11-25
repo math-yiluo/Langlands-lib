@@ -1,7 +1,5 @@
 # Derived composite comparisons through right resolutions
 
-Author: Worker 606.
-
 This internal extension proves identities for actual morphisms in derived
 categories. It lifts the published degreewise identities in
 `AcyclicResolution.Composition` and `ExactComparison` to the canonical

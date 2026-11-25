@@ -1,7 +1,5 @@
 # Closed monomorphisms from split tori over an arbitrary base
 
-Worker 671.
-
 For every scheme `S : Scheme.{u}`, split torus `T` over `S`, and affine
 `S`-group `G` locally of finite type, `IsSplitTorus.isClosedSubgroup_of_mono`
 proves that every homomorphism `f : T ⟶ G` monomorphic on schemes over `S`

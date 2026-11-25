@@ -21,17 +21,19 @@ def complexToDiagram :
   obj K :=
     { obj := (((forget (D := D) (C := C)).mapHomologicalComplex c).obj K).asFunctor
       ρ i :=
-        { toFun g :=
-            { f n := (K.X n).ρ i g
+        { toFun g := End.of
+            { f n := ((K.X n).ρ i g).asHom
               comm' p q _ := (K.d p q).comm i g }
           map_one' := by
+            apply End.ext
             apply HomologicalComplex.hom_ext
             intro n
-            exact (K.X n).ρ i |>.map_one
+            exact congrArg End.asHom ((K.X n).ρ i |>.map_one)
           map_mul' g h := by
+            apply End.ext
             apply HomologicalComplex.hom_ext
             intro n
-            exact (K.X n).ρ i |>.map_mul g h }
+            exact congrArg End.asHom ((K.X n).ρ i |>.map_mul g h) }
       comm f g := by
         apply HomologicalComplex.hom_ext
         intro n

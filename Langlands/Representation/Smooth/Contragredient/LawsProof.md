@@ -1,6 +1,6 @@
 # Smooth contragredient laws: implemented proof
 
-`Langlands.smoothContragredientLaws` proves the entire accepted proposition
+`Langlands.smoothContragredientLaws` proves the entire proposition
 [`Langlands.SmoothContragredientLawsStatement`](LawsStatement.md). All eight
 component lemmas belong to this proof module.
 
@@ -9,7 +9,7 @@ independent universes. Coefficients are an arbitrary commutative ring; each
 module is an additive commutative group with an `R`-module structure. Only the
 group carries a topology. The closing theorem uses `omit [IsTopologicalGroup G]`
 and then introduces that instance at the target's internal binder. Thus it
-does not strengthen the accepted target by moving this hypothesis outside the
+does not strengthen the target by moving this hypothesis outside the
 proposition.
 
 The first six clauses require no smoothness of the original representations.
@@ -32,37 +32,36 @@ injectivity nor its surjectivity.
 | Bidual naturality | `smoothBidual_natural` | Extensionality in `v` and a smooth functional on the target makes both composites evaluate that functional at `f(v)`. |
 
 The closing proof introduces the topological-group instance and assembles these
-eight lemmas in the order of the accepted conjunction. Its only project import
+eight lemmas in the order of the conjunction. Its only project import
 is the target module. The complete import closure consists of the four
 construction pairs below and Mathlib; no separate project law proof is used.
 
 ## Exact target and dependencies
 
-The target is artifact `ff1e06de-a5b0-4bc7-81b5-8b4555029cef`, version 1,
+The target is `Langlands.SmoothContragredientLawsStatement` in
+`Langlands.Representation.Smooth.Contragredient.LawsStatement`,
 with target fingerprint
 `7a4c05be19458544adc2e58b201936bf9d24bff54fcd858b8582dc4680ad951e`.
-Its publication commit is `9db46907db3181b0c1dfd287b8ab2f1f02054cab`;
-its independent semantic receipt is `8b4e2509fa1640b0a6198dfe571d334d`.
+Its publication commit is `9db46907db3181b0c1dfd287b8ab2f1f02054cab`.
 
 The exact definition dependencies are:
 
-| Construction | Accepted artifact | Version |
-| --- | --- | --- |
-| Smooth contragredient and smooth bidual map | `be3f8221-aa6f-4069-8faa-f04e1f5dc4b7` | 1 |
-| Algebraic dual maps | `079d7c1a-8b96-4917-997a-536d6954d55b` | 1 |
-| Smooth part | `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d` | 1 |
-| Smoothness and fixed vectors | `665022df-625b-44ae-9dbd-425f6e266bab` | 1 |
+| Construction | Module |
+| --- | --- |
+| Smooth contragredient and smooth bidual map | `Langlands.Representation.Smooth.Contragredient.Definitions` |
+| Algebraic dual maps | `Langlands.Representation.Dual.Definitions` |
+| Smooth part | `Langlands.Representation.Smooth.SmoothPart.Definitions` |
+| Smoothness and fixed vectors | `Langlands.Representation.Smooth.Definitions` |
 
-The prepared environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`,
-version 1: Lean 4.34.0, commit
+The environment is Lean 4.34.0, commit
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The target and all four definition
-artifacts are accepted, published, and currently available at the checked
+modules are published and were available at the checked
 Library commit `5bc58c2525e0499012801c80f17b6a9c04d57263`.
 
-## Provenance and validation boundary
+## Provenance
 
-The source context inherited from the accepted target is Casselman,
+The source context inherited from the target is Casselman,
 *Introduction to admissible representations of p-adic groups*, Chapter II,
 revision June 16, 2019, Section 3, page 6: the opening paragraphs for the
 inverse-action dual, smooth contragredient, and invariant pairing, and the
@@ -72,15 +71,8 @@ The registered original is `casselman-2019-smooth-representations`, SHA256
 retained at
 `C:/Central-Library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
 
-The implemented proofs are direct internal consequences of the accepted
+The implemented proofs are direct internal consequences of the published
 constructions. In particular, bidual evaluation and naturality do not use
 Lemma II.3.2's stronger isomorphism assertion or Corollary II.3.3's exactness
-conclusion. The direct arguments above justify the accepted broader ring and
+conclusion. The direct arguments above justify the broader ring and
 group hypotheses.
-
-Worker 0 authored the complete Lean proof and its initial explanation.
-Worker 51 verified the target and dependency scope and expanded this
-documentation; the only change to the supplied Lean file is its title comment.
-Independent acceptance requires incremental Lake compilation, exact target
-inspection with the allowed assumptions, semantic review, and publication.
-Compilation or a shared draft alone establishes none of those later statuses.

@@ -20,7 +20,7 @@ universe u
 
 open CategoryTheory AlgebraicGeometry
 
-theorem AlgebraicGeometry.Scheme.IdealSheafData.comap_ofIdealTop
+theorem AlgebraicGeometry.Scheme.IdealSheafData.comap_ofIdealTopFLT
     {X Y : Scheme.{u}} (I : Ideal Γ(Y, ⊤)) (f : X ⟶ Y) :
     (Scheme.IdealSheafData.ofIdealTop I).comap f
       = Scheme.IdealSheafData.ofIdealTop (I.map f.appTop.hom) :=

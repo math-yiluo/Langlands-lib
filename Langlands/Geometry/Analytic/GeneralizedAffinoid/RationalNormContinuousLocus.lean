@@ -17,7 +17,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K]
   {A : PresentedAffinoidAlgebra K}
   {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* Aut A)
-  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
 
 /-- Restrict the actual ambient point operator to the weighted rational locus. -/
 def normLocusOperator (d : RationalChart K A)
@@ -27,7 +27,7 @@ def normLocusOperator (d : RationalChart K A)
     exact hg.subset ⟨x.val, x.property, rfl⟩
   · apply Continuous.subtype_mk
     exact ((BanachSpectrum.comapContinuous
-      (ρ g.val).inv.toBoundedRingHom).continuous.comp continuous_subtype_val)
+      (ρ g.val).asIso.inv.toBoundedRingHom).continuous.comp continuous_subtype_val)
 
 @[simp]
 theorem normLocusOperator_coe (d : RationalChart K A)
@@ -39,8 +39,9 @@ def normLocusAction (d : RationalChart K A) :
     Action TopCat.{u} (normOpenStabilizer ρ hρ d) where
   V := TopCat.of d.locus
   ρ :=
-    { toFun := fun g => TopCat.ofHom (normLocusOperator ρ hρ d g)
+    { toFun := fun g => End.of (TopCat.ofHom (normLocusOperator ρ hρ d g))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         apply Subtype.ext
@@ -48,6 +49,7 @@ def normLocusAction (d : RationalChart K A) :
         rw [map_one, one_smul]
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro x
         apply Subtype.ext
@@ -60,13 +62,13 @@ include hρ in
 theorem continuous_normAmbientSpectrumAction :
     Continuous (fun p : G × BanachSpectrum A => ρ p.1 • p.2) := by
   change Continuous (fun p : G × BanachSpectrum A =>
-    BanachSpectrum.comap (ρ p.1).inv.toBoundedRingHom p.2)
+    BanachSpectrum.comap (ρ p.1).asIso.inv.toBoundedRingHom p.2)
   exact BanachSpectrum.continuous_comap_of_continuous_apply
-    (fun g : G => (ρ g).inv.toBoundedRingHom)
+    (fun g : G => (ρ g).asIso.inv.toBoundedRingHom)
     (fun a => by
       apply ((hρ a).comp continuous_inv).congr
       intro g
-      change (ρ (g⁻¹)).hom.toAlgHom a = (ρ g).inv.toAlgHom a
+      change (ρ (g⁻¹)).asIso.hom.toAlgHom a = (ρ g).asIso.inv.toAlgHom a
       rw [map_inv]
       rfl)
 
@@ -109,15 +111,17 @@ def normSpectrumAction (d : RationalChart K A) :
     Action TopCat.{u} (normOpenStabilizer ρ hρ d) where
   V := TopCat.of (BanachSpectrum d.algebra)
   ρ :=
-    { toFun := fun g => TopCat.ofHom
-        (BanachSpectrum.comapContinuous (normSectionAction ρ hρ d g).inv.toBoundedRingHom)
+    { toFun := fun g => End.of (TopCat.ofHom
+        (BanachSpectrum.comapContinuous (normSectionAction ρ hρ d g).asIso.inv.toBoundedRingHom))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         change (normSectionAction ρ hρ d 1) • x = x
         simp
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro x
         change (normSectionAction ρ hρ d (g * h)) • x =
@@ -151,8 +155,8 @@ def normSpectrumContinuousAction (d : RationalChart K A) :
 theorem normSpectrumContinuousAction_apply (d : RationalChart K A)
     (g : normOpenStabilizer ρ hρ d) (x : BanachSpectrum d.algebra) (b : d.algebra) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom ((normSpectrumContinuousAction ρ hρ d).obj.ρ g) x) b =
-        x ((normSectionAction ρ hρ d g).inv.toAlgHom b) := rfl
+      (ConcreteCategory.hom ((normSpectrumContinuousAction ρ hρ d).obj.ρ g).asHom x) b =
+        x ((normSectionAction ρ hρ d g).asIso.inv.toAlgHom b) := rfl
 
 /-- Every entire locally constant function has an open stabilizer in the
 original rational-locus preserving subgroup. -/
@@ -196,7 +200,7 @@ theorem normSpectrumLocallyConstantAction_apply (d : RationalChart K A) {C : Typ
     (f : DiscreteLocallyConstant (BanachSpectrum d.algebra) C)
     (x : BanachSpectrum d.algebra) :
     (DiscreteLocallyConstant.toLocallyConstant
-      (ConcreteCategory.hom ((normSpectrumLocallyConstantAction ρ hρ d C).obj.ρ g) f)) x =
+      (ConcreteCategory.hom ((normSpectrumLocallyConstantAction ρ hρ d C).obj.ρ g).asHom f)) x =
         f ((normSectionAction ρ hρ d g⁻¹) • x) := rfl
 
 /-- Openness of the locus stabilizer lifts the full function stabilizer into G. -/

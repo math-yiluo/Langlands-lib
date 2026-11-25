@@ -6,6 +6,6 @@ Let an actual group scheme over an arbitrary commutative ring have any supplied 
 
 `cyclicConjugationCutoff` defines the intrinsic cyclic cutoff on the original group, using this action and the positive integral tail at the supplied cutoff. `cyclicConjugationCutoff_one` proves that its first positive cutoff equals the actual dynamic contracting subgroup on every scheme test. It transports the arbitrary-ring first-cut equality through the proved model isomorphism. `cyclicConjugationCutoff_le_unipotent` shows that every later positive cutoff lies in that actual contracting subgroup by inclusion of the corresponding character tails.
 
-There are no field, finite-type, smoothness, or reducedness hypotheses. The construction depends on a supplied affine presentation; independence of its membership follows from the separately available intrinsic-weight presentation comparison once actions are identified. This unit does not identify root filtration terms or prove parabolic normality.
+There are no field, finite-type, smoothness, or reducedness hypotheses. The construction depends on a supplied affine presentation; independence of its membership follows from the separately available intrinsic-weight presentation comparison once actions are identified. This module does not identify root filtration terms or prove parabolic normality.
 
 Provenance: internal transport of the proved arbitrary-ring first-cut theorem and intrinsic weight construction to actual affine groups in arbitrary coordinate presentations.

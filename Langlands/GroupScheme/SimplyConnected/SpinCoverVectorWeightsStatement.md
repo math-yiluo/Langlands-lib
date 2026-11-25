@@ -1,7 +1,5 @@
 # The vector weights of an aligned type-`D` spin cover
 
-Author: Worker 73.
-
 Module `Langlands.GroupScheme.SimplyConnected.SpinCoverVectorWeightsStatement`, namespace
 `Langlands.GroupScheme`. It contains one `Prop`-valued definition,
 `SpinCoverVectorWeightsStatement`, with universe parameter `u`, and proves nothing. Its

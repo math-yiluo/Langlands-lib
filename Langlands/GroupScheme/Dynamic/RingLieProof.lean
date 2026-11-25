@@ -39,7 +39,18 @@ theorem powerHom_eq_comapIso (n : ℤ) :
       characterLattice.comapIso (T := Gm _)
         (T' := splitTorus.commGroupScheme (Spec (CommRingCat.of k)) PUnit)
         (splitTorus.gmIso (Spec (CommRingCat.of k))) (rankOneCharacter k n) := by
-  rw [rankOneCharacter, splitTorus.exponentCharacter, Fintype.sum_unique, map_zsmul]
+  have hz : ∀ (m : ℤ)
+      (x : characterLattice (splitTorus.commGroupScheme (Spec (CommRingCat.of k)) PUnit)),
+      characterLattice.comapIso (T := Gm _)
+        (T' := splitTorus.commGroupScheme (Spec (CommRingCat.of k)) PUnit)
+        (splitTorus.gmIso (Spec (CommRingCat.of k))) (m • x) =
+      m • characterLattice.comapIso (T := Gm _)
+        (T' := splitTorus.commGroupScheme (Spec (CommRingCat.of k)) PUnit)
+        (splitTorus.gmIso (Spec (CommRingCat.of k))) x :=
+    fun m x => (characterLattice.comapIso (T := Gm _)
+      (T' := splitTorus.commGroupScheme (Spec (CommRingCat.of k)) PUnit)
+      (splitTorus.gmIso (Spec (CommRingCat.of k)))).toAddMonoidHom.map_zsmul m x
+  rw [rankOneCharacter, splitTorus.exponentCharacter, Fintype.sum_unique, hz]
   change _ = n • characterLattice.comapIso (T := Gm _)
     (T' := splitTorus.commGroupScheme (Spec (CommRingCat.of k)) PUnit) (splitTorus.gmIso _)
     (splitTorus.proj _ PUnit PUnit.unit)

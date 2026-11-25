@@ -1,7 +1,5 @@
 # Actual fixed-exponent transport through coordinate torus homomorphisms
 
-Author: Worker 693.
-
 This internal helper translates an all-test character formula into equality of
 actual cocharacter maps over an arbitrary base scheme.
 
@@ -28,4 +26,4 @@ character.
 The provenance is an internal deduction from the published fixed-exponent
 character/cocharacter constructions, actual torus point equivalences and
 the root-datum equivalence laws. No torus homomorphism is constructed from
-lattice data by this unit.
+lattice data by this module.

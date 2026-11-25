@@ -57,8 +57,7 @@ of `(D.rationalInvolution.PrimeToPoints m)ᵐᵒᵖ`,
 and `LevelHecke.heckeModuleActionFunctor`.
 
 The module `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology`
-(candidate `24e3f602-b5d7-4c07-8a1d-4d8b67948758`, accepted and awaiting
-publication) provides `cmSmallLevelDecompositionCohomologyFunctor ... R w d j`,
+provides `cmSmallLevelDecompositionCohomologyFunctor ... R w d j`,
 `cmSmallLevelDecompositionChangeIso`, `cmPrimeToDecompositionCohomologyFunctor`,
 `cmPrimeToDecompositionChangeIso` and `cmPrimeToHeckeFrobenius`. Its generic
 module `Langlands.Shimura.DecompositionGroupAction` provides
@@ -67,13 +66,13 @@ module `Langlands.Shimura.DecompositionGroupAction` provides
 `geometricFrobenius_naturality` and `geometricFrobenius_conj`.
 
 The module `Langlands.Shimura.PEL.HarrisTaylorCMIsotypicCohomology`
-(candidate `06482d9c-709f-449e-bd42-538102e24d51`, staged) provides
+provides
 `cmSmallLevelIsotypicCohomologyFunctor ... R ξ d`,
 `cmSmallLevelIsotypicCohomologyι`, `cmPrimeToIsotypicCohomologyFunctor`,
 `cmPrimeToIsotypicCohomologyι` and `cmPrimeToIsotypicHeckeModuleFunctor`.
 Its generic module `Langlands.Shimura.IsotypicGaloisAction` provides
 `isotypicActionFunctor` and `isotypicMap`. The module
-`Langlands.Shimura.IsotypicDecompositionAction`, submitted together with
+`Langlands.Shimura.IsotypicDecompositionAction`, ported together with
 this one, provides `isotypicAtFinitePlaceIso`, `IsUnramifiedAlong.mapAction`
 and `IsUnramifiedAlong.isotypic`.
 

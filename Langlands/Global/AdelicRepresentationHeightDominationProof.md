@@ -145,6 +145,6 @@ published algebraic coordinate-polynomial theorem and supplies the simultaneous
 adelic estimates and their product assembly directly. It does not rely on the
 earlier mixed-space infinite-height domination theorem.
 
-This contribution proves only full adelic height domination. Growth
+This module proves only full adelic height domination. Growth
 independence and properness are separate consequences and are not asserted
 here.

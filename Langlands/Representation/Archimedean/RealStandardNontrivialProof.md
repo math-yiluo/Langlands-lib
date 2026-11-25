@@ -1,12 +1,12 @@
 # Real standard modules are nonzero
 
-Author: Worker 3657. Module `Langlands.Representation.Archimedean.RealStandardNontrivialProof`.
+Module `Langlands.Representation.Archimedean.RealStandardNontrivialProof`.
 It proves that every real standard module `realStandardModule n ds` has a nonzero `O(n)`-finite
-function. This is the real-place input of the Task 7003 proof
-(`CuspidalArchimedeanStandardGenericStatement`); the complex analogue is the Library theorem
-`complexStandardNontrivial`. It changes no published file.
+function. This is the real-place input of the proof of
+`CuspidalArchimedeanStandardGenericStatement`; the complex analogue is the Library theorem
+`complexStandardNontrivial`.
 
-Task 7400 also uses this theorem: its `RealPlaceAnalyticReduction` adapter
+The module `RealPlaceAnalyticReduction` also uses this theorem: there it
 discharges the real-standard nonvanishing premise of the parameter-determinant
 comparison.
 
@@ -32,8 +32,7 @@ theorem Langlands.Archimedean.realStandardNontrivial :
 ```
 
 For every list `ds` of real blocks of total rank `n`, the space of `O(n)`-finite functions of the
-real standard module `realStandardModule n ds` is nonzero. It replaces the nonvanishing hypothesis
-of an earlier partial Task 7003 draft. The space is the Library abbreviation
+real standard module `realStandardModule n ds` is nonzero. The space is the Library abbreviation
 `realStandardKFinite ds` (module `ArchimedeanPlaceParameter`) at `n = realRank ds`.
 
 Supporting results:
@@ -104,18 +103,17 @@ Fix `g`, an induction block at `p, p + 1` and `|k| < N`.
 
 ## Provenance
 
-That standard modules are nonzero is standard: the induced representations are nonzero. The Task
-7003 contract suggests a raising/lowering-operator argument for the Fourier condition. This proof
-instead uses an explicit `GL_2` computation: in `GL_2(ℝ)`, the function `(d - i c)^(-N)` of the
+That standard modules are nonzero is standard: the induced representations are nonzero. For the
+Fourier condition this proof uses, instead of a raising/lowering-operator argument, an explicit
+`GL_2` computation: in `GL_2(ℝ)`, the function `(d - i c)^(-N)` of the
 bottom row has only `SO(2)`-weights `|k| ≥ N`. It is spread over the induction blocks through the
 Gram–Schmidt formula of the Library module `PrincipalSeriesExtension`. The argument was written
 within the project and claims no literature source.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` against Library
-`fcb85a7ef43356fec01e6ccf1605f08568c08cb0`: check 949e5803. It built `InversePowerFourier`,
-`RealGramFunction`, `RealStandardBlockPolynomial` and this module with no errors or warnings.
+A build of `InversePowerFourier`,
+`RealGramFunction`, `RealStandardBlockPolynomial` and this module gave no errors or warnings.
 Axioms of `Langlands.Archimedean.realStandardNontrivial`: `propext`, `Classical.choice`,
-`Quot.sound`. Checks 91e91b10 and 4280e258 rebuilt the four modules together with the Task 7003
-proof module `CuspidalArchimedeanStandardGenericProof`, again with no errors or warnings.
+`Quot.sound`. The four modules were also rebuilt together with the
+module `CuspidalArchimedeanStandardGenericProof`, again with no errors or warnings.

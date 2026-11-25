@@ -1,6 +1,6 @@
 # Renard III.1.14–III.1.15: coinvariants, Hecke tensors and character twists
 
-Author: Worker 139. The entry theorem
+The entry theorem
 `Langlands.Renard.Smooth.renardCoinvariantTensorStatements` has exactly the
 published type `Langlands.Renard.Smooth.RenardCoinvariantTensorStatements`.
 Its independent universe parameters u and v correspond to the statement's

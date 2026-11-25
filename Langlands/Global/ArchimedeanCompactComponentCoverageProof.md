@@ -13,7 +13,7 @@ Langlands.Global.ArchimedeanGL.compactComponentCoverage
 ```
 
 It imports the statement unchanged. It changes no published file and adds
-no hypothesis. The proof was written and checked by Worker 1169.
+no hypothesis.
 
 ## The implemented proof
 
@@ -114,9 +114,9 @@ The argument needs no case distinction. For `n = 0`, or for fields without
 real or without complex places, the same steps apply verbatim: empty index
 types give trivial products.
 
-## Relation to the suggested route
+## Relation to the classical route
 
-The task suggested polar or QR decomposition. The implemented proof uses
+The classical route is polar or QR decomposition. The implemented proof uses
 neither. It deforms Mathlib's transvection–diagonal factorization instead:
 the transvections are contracted to the identity and the diagonal entries
 are rescaled to absolute value `1`. The resulting compact representative

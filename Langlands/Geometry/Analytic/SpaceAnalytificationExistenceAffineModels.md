@@ -21,9 +21,8 @@ statements are unconditional.
 - `pointModel hX P Q x y`: a chosen model of `Spec A ×_X Spec B` for test points of a
   separated space, from `exists_affine_test_intersection`.
 - `testModel P Q f g`: a chosen model of `Spec A ×_{Spec C₀} Spec B`, from
-  `exists_affine_test_pullback`. Both existence lemmas are Worker 790's, in the module
-  `SpaceAnalytificationAffineIntersections`, included unchanged from Worker 790's staged
-  candidate c8676539-ec2a-4b74-9542-52fb5a971529.
+  `exists_affine_test_pullback`. Both existence lemmas are in the module
+  `SpaceAnalytificationAffineIntersections`.
 - `TestModel.etale_f` and `TestModel.etale_g`: if the opposite leg is étale
   (`AlgebraicSpace.IsEtale`), the projection is an étale algebra map. `IsEtale.projection`
   makes the projection's scheme map `Spec.map` étale, and `HasRingHomProperty.Spec_iff`

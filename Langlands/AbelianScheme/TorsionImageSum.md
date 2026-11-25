@@ -43,6 +43,6 @@ homomorphisms of commutative group schemes.
 
 The index type may be empty, the integer may be zero or negative,
 and the base may have nilpotents. The explicit finite étale torsion
-hypothesis still applies in all these cases. This unit constructs the
+hypothesis still applies in all these cases. This module constructs the
 subgroup only. Quotient existence, an integral model of a rational
-action, and CM representability remain subsequent obligations.
+action, and CM representability lie outside this module.

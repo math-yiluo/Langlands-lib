@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_AlgebraicGeometry_Scheme_Modules_IsInvertible_pullback
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_MonoidalV2
@@ -22,7 +22,7 @@ open CategoryTheory MonoidalCategory
 
 theorem AlgebraicGeometry.Scheme.Modules.IsInvertible.pullback_dual_monoidalV2
     {X Y : AlgebraicGeometry.Scheme.{u}} (f : X ⟶ Y) {L : Y.Modules}
-    (hL : AlgebraicGeometry.Scheme.Modules.IsInvertible L) :
+    (hL : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT L) :
     Nonempty ((AlgebraicGeometry.Scheme.Modules.pullback f).obj
-        (AlgebraicGeometry.Scheme.Modules.dual L) ≅
-      AlgebraicGeometry.Scheme.Modules.dual ((AlgebraicGeometry.Scheme.Modules.pullback f).obj L)) := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_pullback_dual_monoidalV2.solution X Y f L hL
+        (AlgebraicGeometry.Scheme.Modules.dualFLT L) ≅
+      AlgebraicGeometry.Scheme.Modules.dualFLT ((AlgebraicGeometry.Scheme.Modules.pullback f).obj L)) := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_pullback_dual_monoidalV2.solution X Y f L hL

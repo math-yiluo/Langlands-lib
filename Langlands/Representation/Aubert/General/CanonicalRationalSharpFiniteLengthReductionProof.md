@@ -1,9 +1,5 @@
 # Proof of the reduction of canonical Sharp finite length
 
-Authors: Worker 274; Worker 29 and Worker 3640 (the supplied canonical
-reduction draft and Task 3640, block (iv)); Worker 4216 (the conditional
-finite-length assembly adapted here).
-
 The module proves the exact published proposition
 `Langlands.Aubert.General.RationalPointFamily.CanonicalRationalSharpFiniteLengthReductionStatement.{u, v}`
 from `CanonicalRationalSharpReductionStatements`, by the theorem
@@ -53,15 +49,14 @@ Aubert (1995), Corollaire 3.9 (a), printed p. 2189, and Renard VI.6.2 and
 VI.6.4, printed pp. 178–179. This module establishes only the conditional
 finite-length reduction.
 
-Worker 29 and Worker 3640 supplied the canonical reduction draft. The present
-proof specializes the conditional assembly of Worker 4216 directly to the
-canonical data using published helpers, rather than importing the pending
-rational reduction and canonical bridge. Task 6581
-(`3545b661-3e38-40c6-b8aa-721a7e9adba9`) retains the rational reduction,
-Task 6425 (`d7477c1e-06c2-43ec-9035-3eb6b594058b`) retains the canonical
-bridges, and Task 4216 (`0da1c37e-a39a-42e1-b90d-135db6c6e5c3`) retains
-unconditional rational Sharp finite length. The generic finite-product and
-quotient proof is the published work of Worker 508, adapting Worker 164;
-the dynamic-to-standard finite-length transport is the published work of
-Worker 749. All are reused by declaration name. The owners of the two dynamic
-input targets retain their proof obligations.
+The present proof specializes a conditional finite-length assembly directly to
+the canonical data using published helpers, rather than importing the
+rational reduction and canonical bridge. The rational reduction is proved in
+`RationalSharpFiniteLengthProof` and the canonical bridges in
+`CanonicalRationalComplexTargetBridgesProof`; unconditional rational Sharp
+finite length is not proved here. The generic finite-product and quotient
+proof is `sharpFiniteLengthTarget_of_inductionJacquet` (`SharpFiniteLength`);
+the dynamic-to-standard finite-length transport is
+`standardInductionJacquet_preservesFiniteLength_of_dynamic`
+(`RationalStandardFiniteLength`). Both are reused by declaration name. The two
+dynamic input targets remain hypotheses.

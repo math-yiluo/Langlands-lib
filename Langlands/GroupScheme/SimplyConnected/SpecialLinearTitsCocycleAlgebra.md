@@ -1,7 +1,5 @@
 # All-test algebra of the special-linear Galois discrepancy
 
-Author: Worker 187, for Task 6023.
-
 This internal helper module proves algebraic identities for the cover,
 coefficient maps and discrepancy defined in
 `SimplyConnected.SpecialLinearTitsCocycleStatement`. It does not prove

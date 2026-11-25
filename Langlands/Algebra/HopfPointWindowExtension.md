@@ -1,11 +1,9 @@
 # Extensions of Hopf points on principal opens where the weights lie in a window
 
-Author: Worker 1421.
-
 This module combines the weight-window openness of
 `Langlands.Algebra.HopfPointWeightWindow` with the extension lemma of
 `Langlands.Algebra.HopfPointExtension`. The result is the local extension used
-in the chart construction of task `45ac6e52-a4d8-4414-91f1-03c3be35223e`. It is
+in the chart construction for the closed torus subgroup functor. It is
 an internal module with no literature counterpart. The background is
 SGA 3, Exposé XI, §4 (registered source
 `sga3-exposes-xi-xii-xiv-gille-polo-2008`).

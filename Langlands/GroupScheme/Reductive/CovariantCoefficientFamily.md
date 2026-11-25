@@ -1,8 +1,9 @@
 # Finite covariant coefficient families
 
-Worker 525. This is a derived supporting construction for the invariant
+This is a derived supporting construction for the invariant
 unit-ideal argument. It uses the finite stable covariant families and
-scalar-preimage interfaces developed by Worker 690. It assumes no geometric
+scalar-preimage interfaces of `StableCovariantFamily` and
+`InvariantIdealLift`. It assumes no geometric
 reductivity and proves no quotient affineness or independent reductivity theorem.
 
 Work over a field k with group schemes H and J over Spec k and a homomorphism

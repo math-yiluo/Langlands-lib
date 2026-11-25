@@ -1,6 +1,6 @@
 # Connected reductive groups without roots
 
-This internal supporting unit proves the rank-zero case of
+This internal supporting module proves the rank-zero case of
 `SplitRankOneCommonTorusIsomorphismStatement` (Milne, *Algebraic Groups*,
 2017, Proposition 23.14, in the degenerate case where the root system is
 empty). It contains three results.

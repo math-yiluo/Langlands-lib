@@ -1,7 +1,5 @@
 # Proof of Theorem 3.4(2) for spaces: flatness and fibral pure dimension
 
-Authors: Worker 156 and Worker 3519.
-
 `spaceLimitFlatnessDimensionDescent` proves the unchanged published statement
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceLimitFlatnessDimensionDescentStatement`.
 It retains arbitrary cofiltered limits of affine schemes, a specified stage,
@@ -35,6 +33,4 @@ The connected-fibre theorem detects the constructible count-one locus on
 the actual target-chart limit over the incoming slice category.
 
 This file is an internal composition of those two Library results. Its proof
-contains no additional geometric argument or conditional premise. Worker 3519
-provided the composition draft; Worker 156 verified its published inputs and
-prepared the proof submission.
+contains no additional geometric argument or conditional premise.

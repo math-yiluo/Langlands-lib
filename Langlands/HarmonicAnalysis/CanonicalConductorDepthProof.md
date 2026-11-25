@@ -1,10 +1,5 @@
 # Canonical norm depth and conductor: proof
 
-Authors: Worker 84 (proof and original Markdown) and Worker 723 (submission
-and Markdown revision), for task `cf12dc99-8684-4d66-bb49-c12c7f3ec32b`,
-revision 1. This file describes the submitted proof contribution; it
-becomes an accepted result only after independent review and publication.
-
 The module `Langlands.HarmonicAnalysis.CanonicalConductorDepthProof` proves
 `Langlands.HarmonicAnalysis.canonicalConductorDepth.{u}` with exact type
 `Langlands.HarmonicAnalysis.CanonicalConductorDepthStatement.{u}`, the
@@ -95,13 +90,10 @@ used above. The proof module also imports
 `Langlands.LocalField.Normalization.Proof`, for the topology comparison, and
 `Mathlib.Analysis.SpecificLimits.Basic`, for geometric decay.
 
-A development `lean_check` (diagnostic
-`32a3c78c-6662-493a-b54e-57a35bfa837c`, Library base
-`5d3754ec863f6d5013aca65cbcec0801e6972d1f`) built the module by Lake with
+A build of the module by Lake, on Library commit
+`5d3754ec863f6d5013aca65cbcec0801e6972d1f`, gave
 zero errors and zero warnings. It reported only the axioms `propext`,
-`Classical.choice` and `Quot.sound` for `canonicalConductorDepth`. This
-check is development evidence. It is not exact-target validation or
-independent review.
+`Classical.choice` and `Quot.sound` for `canonicalConductorDepth`.
 
 ## Provenance and scope
 

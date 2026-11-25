@@ -11,8 +11,8 @@ The governing registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 648 read the text and visually inspected all three cited PDF pages,
-including both commutative diagrams.
+The text of all three cited PDF pages was read and the pages, including
+both commutative diagrams, were inspected visually.
 
 ## Existing constructions and hypotheses
 
@@ -37,7 +37,7 @@ The scalars are exactly `ℂ`; no general-field extension is asserted.
 The carriers `A : Type uA`, `B : Type uB`, and `C : Type uC` have independent
 universes. The one-space targets use the independent universe `uV`.
 Each theorem target binds its carriers, structures and maps internally,
-so a proof successor can name the complete proposition.
+so a proof can name the complete proposition.
 
 ## Declaration correspondence
 
@@ -64,7 +64,9 @@ conditions. Exactness is expressed at `B` by the actual submodule equality,
 and at the displayed end by the corresponding injectivity or surjectivity.
 
 The aggregate uses universe parameters in the order `uV uA uB uC`.
-For a future proof `h : StableEndomorphismStatement.{uV, uA, uB, uC}`,
+For a proof `h : StableEndomorphismStatement.{uV, uA, uB, uC}` (the
+Library's is `stableEndomorphism` in
+`Langlands.LinearAlgebra.StableEndomorphismProofs`),
 the named targets are available by conjunction projection:
 
 | Target | Projection |
@@ -99,8 +101,9 @@ prose typo.
 
 ## Errata check
 
-On 26 October 2026 Worker 648 checked the
-[author's current book page](https://perso.pages.math.cnrs.fr/users/david.renard/).
+On 26 October 2026 the
+[author's current book page](https://perso.pages.math.cnrs.fr/users/david.renard/)
+was checked.
 It links the corrected 2026 French edition and separately labels its
 [correction list](https://perso.pages.math.cnrs.fr/users/david.renard/erratumlivre.pdf)
 as errata for the 2010 edition. No separate 2026 errata link was displayed.
@@ -131,19 +134,25 @@ The Artinian/Noetherian eventual-stabilization theorems and the Library's
 finite-dimensional compact-compression results have stronger hypotheses
 and do not establish these arbitrary-dimensional targets.
 
-Three separate obligations remain with the parent Renard program:
+Three separate obligations of the source lie outside this module:
 
 1. The source extends its terminology to endomorphisms of `B`-modules for
    a possibly noncommutative complex algebra under the book's global
    nonunital-action conventions. An adapter over the actual nonunital
-   module construction is still required. Ordinary unital `[Module B V]`
-   instances do not discharge it.
+   module construction is required. Ordinary unital `[Module B V]`
+   instances do not discharge it. For Lemma (iv), such an adapter is
+   `Langlands.Algebra.CompatiblePowerStabilizationStatements`, with proofs
+   in `Langlands.Algebra.CompatiblePowerStabilizationProofs`.
 2. The source proof of (iv), printed278/PDF284, constructs the quotient
    spaces `E_k = N_(k+1) / N_k` and `F_k = I_k / I_(k+1)`, the maps induced
    by `t` and `t ^ k`, their stated kernels and images, and the exact sequence
    `0 → E_(k+1) → E_k → F_k → F_(k+1) → 0`.
    Those auxiliary construction and assertion obligations are not
-   supplied or imported here. A later proof of the final targets may take
+   supplied or imported here; the constructions are in
+   `Langlands.LinearAlgebra.StableEndomorphismQuotients`, and the kernel,
+   image and exactness assertions are stated in
+   `StableEndomorphismQuotientStatements` and proved in
+   `StableEndomorphismQuotientProofs`. A later proof of the final targets may take
    another route without claiming to discharge these source assertions.
 3. The final proposition of C.II, printed279/PDF285, on finite generation
    of the actual endomorphism localization remains separate. It depends

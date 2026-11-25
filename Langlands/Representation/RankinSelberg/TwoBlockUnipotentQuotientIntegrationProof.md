@@ -1,7 +1,6 @@
 # Normalized integration for the two-block unipotent quotient
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockUnipotentQuotientIntegrationProof`.
-Authors: Worker 113 and Worker 235.
 
 The theorem `Langlands.RankinSelberg.twoBlockUnipotentQuotientIntegration.{uF}`
 proves the unchanged Library proposition
@@ -88,9 +87,9 @@ establishes the absolute-integrability criterion as well as the identities.
 It makes no assertion about convergence of future representation-specific
 integrands or the subsequent general-linear disintegration in display (6).
 
-Worker 113 supplied the fixed measures, measurable-kernel and properness
-support, and the final assembly. Worker 235 supplied the coordinates,
-normalization, quotient tower, and analytic support. The theorem uses only
+The final assembly combines the fixed measures, measurable-kernel and
+properness support with the coordinates, normalization, quotient tower, and
+analytic support. The theorem uses only
 the standard Lean axioms `propext`, `Classical.choice`, and `Quot.sound`.
 
 ## All-field port

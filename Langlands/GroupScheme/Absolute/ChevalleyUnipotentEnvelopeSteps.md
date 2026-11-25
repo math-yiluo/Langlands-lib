@@ -3,8 +3,6 @@
 This module states two proposition targets, not proofs. Together they give
 `Langlands.GroupScheme.ChevalleyUnipotentEnvelopeStatement.{u}`.
 
-Worker 1328 adapted and checked the statement draft by Worker 1385.
-
 Both statements fix an algebraically closed field `k : Type u` and a smooth
 connected affine group scheme `G` over `Spec k`. Both also take a closed
 subgroup `i : U ⟶ G` with `U` smooth, connected and unipotent. All
@@ -83,10 +81,11 @@ schemes. Since the groups used here are smooth over the algebraically
 closed field, containments detected on their rational points give these
 scheme inclusions, hence containment on every test scheme as stated in Lean.
 
-A private compiled assembly theorem checks that the flag step takes the
-target's hypothesis unchanged and gives exactly the premise of the envelope
-step. The latter then returns the target's conclusion without conversion.
-That assembly theorem is not part of this statement module or its submission;
+The theorem `chevalleyUnipotentEnvelope` (module
+`Absolute.ChevalleyUnipotentEnvelopeProof`) composes the two steps: the flag
+step takes the target's hypothesis unchanged and gives exactly the premise of
+the envelope step. The latter then returns the target's conclusion without
+conversion. That theorem is not part of this statement module;
 this module supplies neither a proof of either step nor a proof of the target.
 
 The official author errata snapshot

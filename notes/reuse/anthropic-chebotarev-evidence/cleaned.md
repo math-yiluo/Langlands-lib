@@ -6,12 +6,12 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- P2M/Sol/S_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension.lean
 +++ P2M/Sol/S_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import Definitions.Def_FrobeniusDensity_PrimeSums
  import Definitions.Def_NumberField_PrimeNormSums
 @@ -8,7 +9,6 @@
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension
 -attribute [-instance] Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
@@ -21,12 +21,12 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- P2M/Sol/S_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension.lean
 +++ P2M/Sol/S_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import Theorems.Thm_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension
  import P2M.Util
 @@ -5,8 +6,6 @@
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension
 -attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
@@ -37,12 +37,12 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- P2M/Sol/S_NumberField_exists_prime_isArithFrobAt_of_isGalois.lean
 +++ P2M/Sol/S_NumberField_exists_prime_isArithFrobAt_of_isGalois.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import Theorems.Thm_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension
  import P2M.Util
 @@ -5,8 +6,6 @@
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_prime_isArithFrobAt_of_isGalois
 -attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
@@ -53,7 +53,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_Complex_exists_norm_le_of_continuousOn_of_exp_eq_of_tendsto.lean
 +++ Theorems/Thm_Complex_exists_norm_le_of_continuousOn_of_exp_eq_of_tendsto.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import P2M.Util
  import P2M.Sol.S_Complex_exists_norm_le_of_continuousOn_of_exp_eq_of_tendsto
@@ -67,7 +67,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_FrobeniusDensity_idealSum_ne_top.lean
 +++ Theorems/Thm_FrobeniusDensity_idealSum_ne_top.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Definitions.Def_FrobeniusDensity_PrimeSums
  import P2M.Util
  import P2M.Sol.S_FrobeniusDensity_idealSum_ne_top
@@ -81,7 +81,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_FrobeniusDensity_primeSum_toReal_add_log_isBigO.lean
 +++ Theorems/Thm_FrobeniusDensity_primeSum_toReal_add_log_isBigO.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Definitions.Def_FrobeniusDensity_PrimeSums
  import P2M.Util
  import P2M.Sol.S_FrobeniusDensity_primeSum_toReal_add_log_isBigO
@@ -95,7 +95,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_FrobeniusDensity_tailSum_le.lean
 +++ Theorems/Thm_FrobeniusDensity_tailSum_le.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import Definitions.Def_FrobeniusDensity_PrimeSums
  import P2M.Util
@@ -109,7 +109,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_FrobeniusDensity_tendsto_sub_one_mul_idealSum_test.lean
 +++ Theorems/Thm_FrobeniusDensity_tendsto_sub_one_mul_idealSum_test.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Definitions.Def_FrobeniusDensity_PrimeSums
  import Mathlib.NumberTheory.NumberField.DedekindZeta
  import P2M.Util
@@ -123,7 +123,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_M4aTorus_completedRayL_fe.lean
 +++ Theorems/Thm_M4aTorus_completedRayL_fe.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Definitions.Def_NumberField_CompletedRayL
  import Definitions.Def_NumberField_RayCharacterData
  import P2M.Util
@@ -137,7 +137,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_NumberField_InfinitePlace_sign_norm_eq_prod_sign_embedding_of_isReal.lean
 +++ Theorems/Thm_NumberField_InfinitePlace_sign_norm_eq_prod_sign_embedding_of_isReal.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import P2M.Util
  import P2M.Sol.S_NumberField_InfinitePlace_sign_norm_eq_prod_sign_embedding_of_isReal
@@ -151,13 +151,13 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_NumberField_exists_continuousOn_exp_eq_rayClassLSeries.lean
 +++ Theorems/Thm_NumberField_exists_continuousOn_exp_eq_rayClassLSeries.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import Definitions.Def_NumberField_CompletedRayL
  import Definitions.Def_NumberField_RayCharacterData
 @@ -6,8 +7,6 @@
  
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
 -attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal
 -attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -174,7 +174,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_NumberField_exists_differentiable_eq_rayClassLSeries_of_ne_one.lean
 +++ Theorems/Thm_NumberField_exists_differentiable_eq_rayClassLSeries_of_ne_one.lean
 @@ -1,3 +1,4 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import Definitions.Def_NumberField_CompletedRayL
  import Definitions.Def_NumberField_RayCharacterData
@@ -188,12 +188,12 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension.lean
 +++ Theorems/Thm_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension.lean
 @@ -1,11 +1,10 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension
  
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
 -attribute [-instance] Deep.NTSupply.instNormalRayClassSubgroup FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
 -attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -210,12 +210,12 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension.lean
 +++ Theorems/Thm_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension.lean
 @@ -1,11 +1,10 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension
  
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
 -attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
 -attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -232,12 +232,12 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension.lean
 +++ Theorems/Thm_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension.lean
 @@ -1,11 +1,10 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension
  
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
 -attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
 -attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -254,12 +254,12 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_NumberField_exists_prime_isArithFrobAt_of_isGalois.lean
 +++ Theorems/Thm_NumberField_exists_prime_isArithFrobAt_of_isGalois.lean
 @@ -1,11 +1,10 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_prime_isArithFrobAt_of_isGalois
  
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
 -attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
 -attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -276,12 +276,12 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 --- Theorems/Thm_NumberField_ncard_primesOver_eq_finrank_of_isCyclotomicExtension_of_absNorm_modEq_one.lean
 +++ Theorems/Thm_NumberField_ncard_primesOver_eq_finrank_of_isCyclotomicExtension_of_absNorm_modEq_one.lean
 @@ -1,10 +1,10 @@
-+/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
++/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/
  import Mathlib
  import P2M.Util
  import P2M.Sol.S_NumberField_ncard_primesOver_eq_finrank_of_isCyclotomicExtension_of_absNorm_modEq_one
  
- /- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
+ /- Bounded universe-generalization experiment, 25 October 2026. -/
  universe audit_u audit_v audit_w
 -attribute [-instance] Deep.NTSupply.instNormalRayClassSubgroup
  
@@ -298,7 +298,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 
 ## Original preparation script
 
-The original experiment used the following script. For a clean reproduction use the procedure in reproduce.md; the historical script assumes its named private input tree already exists.
+The original experiment used the following script; it assumes that its named private input tree already exists.
 
 ```python
 from pathlib import Path
@@ -314,8 +314,8 @@ for p in sorted(dest.rglob('*.lean')):
     if '(m : ℕ)' in t and 'Theorems' in p.parts:
         t=re.sub(r'(apply @\S+\.solution) <;>',r'\1 (m := m) <;>',t)
     if s!=t:
-        t='/- Worker 159: remove global attribute resets and proof-wrapper calls; 25 October 2026. -/\n'+t
-        p.write_text(t);md=p.with_suffix('.md');md.write_text(md.read_text()+'\nWorker 159 removed file-global instance/simp resets and replaced proof-wrapper calls with standard apply/assumption tactics. Namespace/alias utilities remain. See cleaned.patch for exact changes; this is a private feasibility experiment.\n')
+        t='/- Remove global attribute resets and proof-wrapper calls; 25 October 2026. -/\n'+t
+        p.write_text(t);md=p.with_suffix('.md');md.write_text(md.read_text()+'\nThis version removes file-global instance/simp resets and replaces proof-wrapper calls with standard apply/assumption tactics. Namespace/alias utilities remain. See cleaned.patch for exact changes; this is a private feasibility experiment.\n')
         diff.extend(difflib.unified_diff(s.splitlines(True),t.splitlines(True),fromfile=str(p.relative_to(dest)),tofile=str(p.relative_to(dest))))
         changes.append(str(p.relative_to(dest)))
 Path('.private/notes/chebotarev/cleaned.patch').write_text(''.join(diff))

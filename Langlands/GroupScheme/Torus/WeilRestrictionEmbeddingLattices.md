@@ -1,7 +1,5 @@
 # Embedding lattices of the Weil-restricted multiplicative group
 
-Worker 207.
-
 This internal adapter assumes commutative rings `k` and `K`, a field `Ω`,
 `k`-algebra structures on `K` and `Ω`, finite projectivity of `K` over `k`,
 a finite type of algebra homomorphisms `K →ₐ[k] Ω`, and an explicit proof
@@ -61,7 +59,7 @@ permutation of both vectors.
 These constructions and their laws are intrinsic consequences of the
 existing decomposition, tensor-coordinate descent and lattice-transport
 APIs. The explicit bijectivity input remains a separate obligation;
-this unit does not derive it from finite separability. It supplies an
+this module does not derive it from finite separability. It supplies an
 algebraic automorphism-group action and its actual-group comparison,
 with no claim about continuity, field-torus classification, or existence
 of a splitting field.

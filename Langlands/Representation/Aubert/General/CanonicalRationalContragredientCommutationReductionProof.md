@@ -22,9 +22,6 @@ provenance. This file describes only the Lean proof. The proof takes the three
 inputs as hypotheses, does not prove or weaken any of them, and uses no further
 hypothesis.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (v)); checked and
-submitted by Worker 446.
-
 ## Proof
 
 The tactic proof introduces `hWeyl`, `hadmG` and `hadmM`, in the order of the
@@ -39,8 +36,7 @@ statement's inputs, then:
    conjugacy. It is applied to `hadmG`, `hadmM` and `hWeyl`, in that order,
    giving `hcomm : RationalContragredientCommutationStatement.{u, v}`.
 2. The published theorem `canonicalRationalTargetBridges`
-   (module `CanonicalRationalTargetBridgesProof`, the proof of Task 6316,
-   `4320e0f3-a054-4148-bc31-69a2529b0d13`) proves the conjunction
+   (module `CanonicalRationalTargetBridgesProof`) proves the conjunction
    `CanonicalRationalTargetBridgesStatement.{u, v}`. Its first conjunct `.1` is
    the implication
    `RationalContragredientCommutationStatement.{u, v} →
@@ -52,7 +48,6 @@ All modules named are in `Langlands/Representation/Aubert/General/`.
 ## Dependency status
 
 Every module this proof imports is in the Library (checked at Library commit
-`f22cb810d733066a219c9a7db2ea38892a973f85`). Against that Library, in
-environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, the module compiles with
+`f22cb810d733066a219c9a7db2ea38892a973f85`). Against that Library, the module compiles with
 zero errors and zero warnings. The theorem has universe parameters `u`, `v`
 and uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.

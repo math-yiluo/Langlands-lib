@@ -1,7 +1,5 @@
 # A closed coefficient component in the actual central L2 completion
 
-Author: Worker 386.
-
 `Langlands.SquareIntegrableCoefficientHilbertComponentStatement.{uG,uV}`
 is an internal proposition definition. It states that an analytically
 square-integrable, algebraically irreducible, unitarizable representation

@@ -1,9 +1,9 @@
 # Cuspidal vanishing from the represented geometric lemma
 
-Author: Worker 1781. This supporting contribution implements the consumer deduction in Renard
+This supporting module implements the consumer deduction in Renard
 VI.5.3(i), printed p.173 / PDF p.179, from the exact represented geometric
-lemma. It is conditional on that still separate theorem and does not discharge
-the unconditional target. The Prop-valued definition
+lemma. It is conditional on that separate theorem and does not discharge
+the unconditional `LeviJacquetInductionVanishingStatement`. The Prop-valued definition
 `LeviJacquetInductionVanishingGeometricReductionStatement` names this
 implication. The theorem
 `leviJacquetInductionVanishing_of_geometricLemma` proves it by an explicit

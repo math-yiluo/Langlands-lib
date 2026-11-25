@@ -1,7 +1,5 @@
 # Existence of the universal Picard-zero family over a quasi-separated base: proof
 
-Worker 1012, 17 November 2026.
-
 ## Result
 
 `Langlands.AbelianScheme.relativeDualSchemeExistence` has type exactly
@@ -70,11 +68,10 @@ Markdown of the imported results. This module adds no construction or source
 comparison of its own beyond the predicate transfer in step 3, which is a direct
 use of the published comparison theorem.
 
-The finite-type representer was proved by Task 3233 and published as
-`lean.proof` candidate `1f268bce-9ef1-4d62-bac4-38d086a0ed3a` (first in Library
-commit `f24f97443f21ff7e59b1cf3b509602157dae54c2`). The comparison theorem was
-published as candidate `6b1cd5d7-8947-4935-8b6d-5d1ee83fb312` (Library commit
-`0a5678a23daa0818e88076247923cd745542293f`). These identifiers only document
+The finite-type representer first appeared in Library commit
+`f24f97443f21ff7e59b1cf3b509602157dae54c2`. The comparison theorem was
+published in Library commit `0a5678a23daa0818e88076247923cd745542293f`. These
+identifiers only document
 provenance; the Lean imports every result by its module and declaration name.
 
 The proof uses no `sorry`, `admit` or new axiom.

@@ -1,7 +1,5 @@
 # Actual local genericity of cuspidal presentations
 
-Author: Worker 1778.
-
 `Langlands.Automorphic.CuspidalUnitaryLocalGenericityStatement.{uF, uQ}`
 is a proposition definition isolating the genericity input used at the start
 of Henniart's Appendix A.2. It is an independently usable target for a later
@@ -13,7 +11,7 @@ The statement quantifies over every `F : Type uF` with `Field F`,
 `NumberField F`, and `CompactSpace (Langlands.Global.AdeleQuotient F)`, every
 `r : ℕ`, and every
 `T : Langlands.Automorphic.CuspidalOperatorRealization F r` satisfying
-`Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`.
 The last predicate means that some continuous idele-class character `χ`
 has unit complex norm everywhere and satisfies `T.HasCentralCharacter χ`.
 The compactness instance is for the additive adelic quotient in the existing

@@ -1,7 +1,5 @@
 # Actual local Weil lattice operations and unramified orbits
 
-Author: Worker 24.
-
 For every prime `p` and actual `PadicField F`, this module instantiates the
 published genuine twist and dual constructions on `LocalWeil.Basis F` and
 `LocalWeil.Lattice F`. The field universe and representation-carrier universe

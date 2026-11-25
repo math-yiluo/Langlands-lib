@@ -1,9 +1,7 @@
 # Weighted rational comparisons over a rational target
 
-Authors: Worker 36 and Worker 135.
-
 This module constructs bounded comparisons between actual positive-radius
-rational quotient algebras. It adapts Worker 135's published
+rational quotient algebras. It adapts the
 `StrictTestDomain/RationalRelativeComparison` argument to the weighted
 `PresentedAffinoidAlgebra.RationalChart` construction and its coefficient
 pushout. It supplies the relative comparison and compatibility transport

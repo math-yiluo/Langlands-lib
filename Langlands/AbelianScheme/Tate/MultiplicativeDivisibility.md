@@ -109,6 +109,6 @@ The equivalences require no characteristic, invertibility, rank, finite
 étaleness, compactness or torsion-finiteness hypotheses. They compare actual
 coherent families and do not trivialize the twist. Rationalization, comparison
 with products or restricted products, base change of test schemes, geometric
-monodromy and Weil pairings are outside this focused unit. In particular,
+monodromy and Weil pairings are outside this module. In particular,
 full-to-away restriction here changes the set of torsion orders, not the test
-scheme. The broader Tate/Weil/PEL task remains incomplete.
+scheme.

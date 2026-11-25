@@ -1,8 +1,8 @@
 # Positive forms from compact coefficient norms modulo the center
 
-Worker 1668, with Worker 1678, supplies this derived construction for the
-unitarity implication of Renard VI.2.1 and IV.3.2. Worker 1678 proposed the
-direct compact-coefficient integration route; Worker 1668 implemented this
+This module supplies a derived construction for the
+unitarity implication of Renard VI.2.1 and IV.3.2. It follows the
+direct compact-coefficient integration route and implements this
 wrapper and its nonarchimedean specialization. It composes published proofs
 and the actual Haar measure construction; it makes no additional assertion
 about algebraic groups or about compactness of supercuspidal coefficients.
@@ -56,9 +56,9 @@ For source orientation, Renard, *Représentations des groupes réductifs
 p-adiques*, version of 9 July 2026, IV.3.1–IV.3.2, printed pp.99–100 / PDF
 pp.105–106, constructs invariant forms from square-integrable coefficients.
 That passage works with a unimodular group and also proves admissibility and
-semisimplicity in its stated scope. This unit claims only the construction
+semisimplicity in its stated scope. This module claims only the construction
 described above and uses a different, previously formalized irreducibility
 argument for definiteness. The source is registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`;
-Worker 1668 read both cited PDF pages.
+both cited PDF pages were read.

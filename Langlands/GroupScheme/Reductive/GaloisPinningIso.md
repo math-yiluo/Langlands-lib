@@ -1,7 +1,7 @@
 # Pinned isomorphisms of Galois pinning data and highest-weight representations
 
 This module supplies the pinned-isomorphism notion needed to state that the Tits obstruction
-is transported along isomorphisms of groups (Task 7603, clause 1, last sentence). It also
+is transported along isomorphisms of groups (`SimplyConnected/TitsObstructionTransport`). It also
 proves the representation-theoretic and star-action compatibilities that the transport
 proof uses. Nothing here uses simple connectedness, Tits algebras or Brauer groups.
 
@@ -114,9 +114,9 @@ With `G` and `G'` locally of finite type over `k`:
 
 ## Provenance
 
-Internal. Clause 1 of Task 7603 asks for the transport of the Tits obstruction along actual
-group isomorphisms and compatible pinning isomorphisms. `GaloisPinningData.Iso` is the
-notion of compatible pinning isomorphism used for that statement. Its lemmas are routine
+Internal. The transport of the Tits obstruction is stated along actual group isomorphisms
+and compatible pinning isomorphisms. `GaloisPinningData.Iso` is the notion of compatible
+pinning isomorphism used for that statement. Its lemmas are routine
 consequences of the definitions, obtained by combining the Library results named above with
 Mathlib's root-pairing API. The transport of the obstruction itself is proved in a separate
 module.

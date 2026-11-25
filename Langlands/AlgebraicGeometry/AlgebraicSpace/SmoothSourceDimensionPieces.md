@@ -1,8 +1,6 @@
 # Actual algebraic dimension pieces of arbitrary smooth spaces
 
-Author: Worker 502.
-
-This derived host bridge supports Brian Conrad, *Weil and Grothendieck
+This derived bridge supports Brian Conrad, *Weil and Grothendieck
 approaches to adelic points*, December 31, 2011, printed p.15, Proposition 5.4.
 The registered source is `conrad-2011-weil-grothendieck-adelic-points`,
 SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
@@ -52,11 +50,17 @@ inhabits the existing `IsSmoothPureDimensional K n` interface whenever `K`
 is nontrivially normed and quasi-separatedness and local separatedness of
 `X` are supplied separately. No completeness hypothesis is needed.
 
-This unit supplies actual algebraic pieces, inclusions and restricted scheme
+This module supplies actual algebraic pieces, inclusions and restricted scheme
 atlases. Actual field-valued section factorization and the all-natural-index
-sigma equivalence are a separate construction unit. The homeomorphism for
+sigma equivalence are a separate construction, in
+`SmoothSourceDimensionFieldPoints`. The homeomorphism for
 the etale-chart rational-point topology, functorial analytic assembly across
 target dimension pieces, etale dimension preservation, analytic local
 isomorphisms and uniqueness of a varying-dimensional analytic structure
-remain subsequent statement and proof obligations. This does not claim the
-full manifold assertion.
+are separate statements, proved in `SmoothSourceDimensionTopologyProof`,
+`SmoothSourceDimensionAnalyticAssemblyProof`,
+`SmoothSourceDimensionAnalyticFunctorialityProof`,
+`SmoothSourceDimensionEtaleAnalyticIsoProof` and
+`SmoothSourceDimensionAnalyticUniquenessProof`. This does not claim the
+full manifold assertion, which is proved as `smoothSourceAnalyticManifold` in
+`SmoothSourceAnalyticManifoldProof`.

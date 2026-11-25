@@ -1,7 +1,5 @@
 # Finite covers with smooth generic fibre
 
-Worker 572.
-
 `Langlands.GroupScheme.DvrSmoothGenericReductionStatement.{u}` is a
 proposition definition. It records the preliminary reduction in the
 proof of Brian Conrad's Corollary A.4, before stable normalization.

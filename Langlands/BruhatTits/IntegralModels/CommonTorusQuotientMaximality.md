@@ -1,6 +1,6 @@
 # Common maximal split tori through a reductive special-fibre quotient
 
-This internal derived unit isolates the maximality assertions needed by
+This module isolates the maximality assertions needed by
 `UnramifiedFacetCommonTorusStatement`. It does not assert the Lie-weight sign
 formula or the existence of any model, quotient, torus, or building.
 
@@ -34,6 +34,6 @@ maximality is transported by the inner automorphism. The result requires no
 facet incidence, apartment descent, or characterization of integral points.
 
 All content is derived from the existing Library interfaces and results cited
-above. KP Axiom 4.1.22(3) motivates the consumer, but this unit proves only the
+above. KP Axiom 4.1.22(3) motivates the consumer, but this module proves only the
 maximality assertions; the actual schematic-image Lie-weight computation
 remains a separate obligation.

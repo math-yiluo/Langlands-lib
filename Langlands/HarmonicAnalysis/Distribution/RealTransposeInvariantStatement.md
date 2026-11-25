@@ -4,4 +4,4 @@ This statement specializes Aizenbud and Gourevitch, *Generalized Harish-Chandra 
 
 The invertible real matrices are an open subset of the real matrix space and give the usual smooth coordinates on the real general linear group. Mathlib models complex-valued distributions as continuous real-linear functionals on real scalar tests. The corresponding complex functional on complex tests is determined by real and imaginary parts. The two pullbacks extend by the same rule, so testing invariance on real scalar tests gives the source's condition.
 
-The proposition is the distributional input of the trace-character route to Task 7534. Theorem 8.2.1, p. 23 of the same source, uses Corollary 7.6.3 for the comparison between the smooth contragredient and the inverse-transpose twist.
+The proposition is the distributional input of the trace-character route to the existence of the archimedean inverse-transpose pairing of irreducible admissible `GL_n` modules. Theorem 8.2.1, p. 23 of the same source, uses Corollary 7.6.3 for the comparison between the smooth contragredient and the inverse-transpose twist.

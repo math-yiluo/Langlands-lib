@@ -107,7 +107,7 @@ integrability, or inversion arguments.
 
 ## Provenance
 
-Worker 110 authored this internal derivation from the published
+This is an internal derivation from the published
 [`Basic`](Basic.md) and [`RowFourier`](RowFourier.md) definitions, the two
 published prerequisite proofs, and Mathlib's finite-product integration
 theorems. The Fourier convention and self-duality hypothesis are inherited

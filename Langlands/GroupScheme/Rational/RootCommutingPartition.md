@@ -1,6 +1,6 @@
 # Commuting partitions of relative roots
 
-This internal supporting unit defines a partition condition for actual relative
+This internal supporting module defines a partition condition for actual relative
 root groups: the groups in the chosen set commute with all root groups outside
 it on every scheme over the ground field. For an almost-simple group and a
 maximal split torus, a chosen subset of roots satisfying this condition is empty

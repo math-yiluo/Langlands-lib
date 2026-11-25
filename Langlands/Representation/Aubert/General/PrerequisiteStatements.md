@@ -1,10 +1,9 @@
 # Representation-theoretic prerequisite targets for the general Aubert adapters
 
-Statements and bridge: Worker 1180 (task
-`593ef603-6672-4424-976c-14e11e920d9c`). The adapters they serve,
+The adapters these statements serve are
 [`Aubert.General.Parabolic`](Parabolic.md),
 [`Aubert.General.AlternatingOperator`](AlternatingOperator.md) and
-[`Aubert.General.DynamicParabolic`](DynamicParabolic.md), are Worker 23's.
+[`Aubert.General.DynamicParabolic`](DynamicParabolic.md).
 
 This module states, as closed propositions, the representation-theoretic facts
 that the general adapters take as named hypotheses: finite length of normalized
@@ -47,7 +46,7 @@ The subgroups are the published dynamic subgroups at the identity test object
 Each is an actual subgroup of `G(F)`, and a representation of `Z(χ)(F)` is a
 representation of that subgroup with the subspace topology.
 `dynamic_isSemidirectDecomposition χ T` is the decomposition
-`P(χ)(F) = Z(χ)(F) ⋉ U(χ)(F)`. The functors in the statements are Worker 23's
+`P(χ)(F) = Z(χ)(F) ⋉ U(χ)(F)`. The functors in the statements are
 `normalizedInductionFunctor` and `jacquetFunctor` of that decomposition.
 
 For connected reductive `G`, the subgroups `P_G(χ)` are exactly the parabolic
@@ -76,8 +75,8 @@ For a nonarchimedean local field all of these are true. By Conrad, Proposition
 subgroup scheme `U_G(χ)` has closed points `U(χ)(F)`. By Renard V.2.1, `G(F)` is
 totally disconnected, and its compact open subgroups form a basis of
 neighbourhoods of `1`. They are properties of the one pinned topology,
-not alternative topologies. Proving them belongs to Conrad's point-topology task
-`886bf565`, not to this module.
+not alternative topologies. Proving them belongs to the point-topology modules
+(`AlgebraicGeometry/PointTopology`), not to this module.
 
 ## The targets
 
@@ -94,7 +93,7 @@ vectors under every open subgroup, as in Renard III.1.7.
 * `DynamicLeviFiniteLengthAdmissibleStatement`: the same for `Z(χ)(F)`, for every
   `χ`.
 * `RationalPointsContragredientFiniteLengthStatement`, assuming
-  `[IsTopologicalGroup]`: Worker 23's `ContragredientPreservesFiniteLength`
+  `[IsTopologicalGroup]`: `ContragredientPreservesFiniteLength`
   holds for `G(F)`. That is, the smooth contragredient of every finite-length
   smooth complex representation has finite length.
 * `DynamicLeviContragredientFiniteLengthStatement`: the same for `Z(χ)(F)`.
@@ -120,20 +119,22 @@ vectors under every open subgroup, as in Renard III.1.7.
 `hU`, closedness of `P(χ)(F)`, continuity of the decomposition's projection
 `P(χ)(F) →* Z(χ)(F)`, and `Jacquet.Localization.IsLimitOfCompactSubgroups U(χ)(F)`.
 It concludes `ParabolicFiniteLength (dynamic_isSemidirectDecomposition χ T) hU`.
-The proof applies Worker 23's `ParabolicFiniteLength.of_preservesFiniteLength`.
-Compact-open cofinality comes from Worker 23's
+The proof applies `ParabolicFiniteLength.of_preservesFiniteLength`.
+Compact-open cofinality comes from
 `compactOpenCofinal_of_nonarchimedean` (local compactness and the nonarchimedean
 property), and the two finite-length conjuncts come from the targets.
 
-The extra structural hypotheses are those of Worker 23's exactness theorems. They
+The extra structural hypotheses are those of the exactness theorems of
+`Aubert.General.AlternatingOperator`. They
 are true for the pinned topology, but nothing here proves them. Hausdorffness and
 closedness come from Conrad, Proposition 2.1: closed immersions give closed
 embeddings when `F` is Hausdorff. The projection is the published
 `Dynamic.limitHom` (`dynamic_projection_eq_limitHom`). That is the map on points
 of the projection `P_G(χ) → Z_G(χ)` of CGP Lemma 2.1.5 and Proposition 2.1.8(2),
 and Conrad's topology is functorial, so the projection is continuous. That
-`U(χ)(F)` is a limit of compact subgroups is Renard V.5.2(iii), routed through
-Worker 6's task `15df7cd7`.
+`U(χ)(F)` is a limit of compact subgroups is Renard V.5.2(iii); the Library
+proves it as `BruhatTits.dynamicUnipotent_isLimitOfCompactSubgroups` applied to
+`BruhatTits.dynamicUnipotentCompactOpenContainment`.
 
 ## Provenance and scope
 
@@ -144,8 +145,9 @@ Worker 6's task `15df7cd7`.
   `Z(χ)(F) ⊂ G(F)` is its own topology. The Levi statements need only this
   subgroup form. Identifying `Z_G(χ)` with a connected reductive group scheme in
   the Library, so that the `G`-level statements apply to it directly, is
-  structural work owned by the algebraic-groups tasks (`2b5e4a00`, `8ace819d`).
-  It is not done here.
+  structural work of the algebraic-groups modules (connected reductivity of a
+  representing group scheme is `dynamicCentralizerReductive` in
+  `GroupScheme/Dynamic/CentralizerReductiveProof`). It is not done here.
 * The contragredient targets are derived; Renard does not state them as one
   result. A finite-length representation has admissible irreducible
   subquotients (VI.6.3, VI.2.2). The smooth dual is exact (I.4.1 Lemme, printed
@@ -155,7 +157,7 @@ Worker 6's task `15df7cd7`.
   contragredient.
 * Normalization. Renard VI.1.2 (printed pp. 135–136) writes
   `i^G_P(τ) = Ind^G_P(τ ⊗ δ_P^{-1/2})` and `r^G_P(π) = π_N ⊗ δ_P^{1/2}` with his
-  inverted `δ_P`. Worker 23's induction functor twists by the half modulus of
+  inverted `δ_P`. The induction functor of `Aubert.General.Parabolic` twists by the half modulus of
   conjugation on `U`, evaluated on all of `P`. Bernstein–Zelevinsky 1977
   §1.8(a)(1) and Renard instead use the Levi half modulus inflated to `P`. The two
   characters agree only when `U` is unimodular (`IsUnimodularModulus U hU`; see
@@ -168,14 +170,15 @@ Worker 6's task `15df7cd7`.
   autoequivalence of the smooth category that preserves finite length, so then the
   finite-length targets mean the same thing in either convention.
 * Conditional status. Everything here is a target or a conditional bridge.
-  Nothing proves Renard's theorems, and nothing completes the parent program
-  `46df6a68`.
+  Nothing here proves Renard's theorems.
 * Not stated here: transitivity of induction (Renard VI.1.4), the geometric lemma
   (VI.5.1) and second adjointness (VI.9.6). Each needs composite-parabolic or
-  double-coset structural data that the Library does not yet have. The joint
-  adapter table lists them with their existing owners. Compatibility of the
-  functors with conjugation is an intrinsic law of the generic adapter layer,
-  which Worker 23 treats within this task, so it is not a target here.
+  double-coset structural data. Transitivity is treated in
+  `Aubert.General.NestedInductionStages` and `Aubert.General.JacquetStages`, the
+  geometric lemma in `Aubert.General.ParabolicSupportFiltration` and
+  `Aubert.General.RationalGeometricK0Expansion`. Compatibility of the
+  functors with conjugation is an intrinsic law of the generic adapter layer
+  (`Aubert.General.Parabolic`), so it is not a target here.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # Factoring actual formal homomorphisms through fppf covers
 
-This internal construction, implemented by Worker 921, factors a
+This internal construction factors a
 formal O-module map h through an actual formal O-module map f when
 f has affine fppf local lifting and every actual point killed by f
 is killed by h. The rings and finite coordinate types retain the

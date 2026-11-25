@@ -1,7 +1,5 @@
 # Exact Euler expansion of the actual Aubert cut complex
 
-Author: Worker 164.
-
 This internal class comparison proves that the unadjusted Aubert operator on a
 finite-length smooth representation equals the signed sum of the actual cut
 complex degree classes at positive rank. The equality is in the published exact

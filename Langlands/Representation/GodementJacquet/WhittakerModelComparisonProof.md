@@ -1,7 +1,6 @@
 # Proof of the matrix-coefficient versus Whittaker comparison on the coefficient model
 
 Module `Langlands.Representation.GodementJacquet.WhittakerModelComparisonProof`.
-Authors: Worker 261 and Worker 249.
 
 This module proves the closed proposition
 `Langlands.GodementJacquet.WhittakerModelComparisonStatement.{uF,uV}` as the

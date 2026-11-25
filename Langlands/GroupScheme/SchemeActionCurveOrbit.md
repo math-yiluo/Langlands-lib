@@ -71,11 +71,12 @@ orbit morphism. Separatedness of `X` provides the needed quasi-separatedness.
 This is an internal derivation from the published actual-action interfaces,
 the rational-section/closed-point equivalence, smooth connected affine group
 geometry, and Mathlib's order-theoretic characterization of dimension at
-most one. It claims no new external source theorem. Worker 1547 developed
-the proof to supply the orbit step of the prescribed-Borel route discussed
-with Worker 317.
+most one. It claims no new external source theorem. The proof supplies
+the orbit step of the prescribed-Borel route.
 
-The exact `RankOnePositiveRootUniquenessStatement` remains open. This module
+The exact `RankOnePositiveRootUniquenessStatement` is not proved here; the
+Library proves it as `rankOnePositiveRootUniqueness`
+(`Langlands.GroupScheme.Reductive.RankOnePositiveRootProof`). This module
 does not construct a Borel quotient, prove that it is an irreducible curve,
 or produce a nonfixed rational section for a particular dynamic subgroup.
 Those are inputs to a later application. It also does not prove the

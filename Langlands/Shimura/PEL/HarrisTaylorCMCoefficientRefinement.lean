@@ -100,8 +100,8 @@ def cmHarrisCoefficientRefinementActionIso :
     intro g
     induction g using QuotientGroup.induction_on with
     | H g =>
-      change (cmHarrisFiniteTorsionAction D ρ p U m k).ρ g ≫ 𝟙 _ =
-        𝟙 _ ≫ (cmHarrisFiniteTorsionAction D ρ p U m k).ρ g
+      change ((cmHarrisFiniteTorsionAction D ρ p U m k).ρ g).asHom ≫ 𝟙 _ =
+        𝟙 _ ≫ ((cmHarrisFiniteTorsionAction D ρ p U m k).ρ g).asHom
       simp only [Category.comp_id, Category.id_comp])
 
 @[simp] theorem cmHarrisCoefficientRefinementActionIso_hom_hom :
@@ -135,10 +135,10 @@ local notation "Z" => cmHarrisRefinementTorsor D C preservation composition
     (Z).val.V.hom = (schemes q).map (smallCMInclusion D hVU) := rfl
 
 @[simp] theorem cmHarrisRefinementTorsor_ρ_left (g : SmallCMResidualGroup D U V) :
-    ((Z).val.ρ g).left =
-      (cmNormalQuotientAction D C preservation composition unitCoherence associativity
+    ((Z).val.ρ g).asHom.left =
+      ((cmNormalQuotientAction D C preservation composition unitCoherence associativity
         comparison symmetry stability square universality dualityNaturality
-        polarizationStability compatibility h htor U V hVU q).ρ g := rfl
+        polarizationStability compatibility h htor U V hVU q).ρ g).asHom := rfl
 
 /-- Original scheme forgetting, as an equivariant map in the actual small etale site. -/
 def cmHarrisCoefficientRefinementCover :
@@ -221,7 +221,7 @@ local notation "actionIso" => cmHarrisCoefficientRefinementActionIso D U ρ p m 
 /-- Fine-cover sections satisfy the original inverse-deck diagonal invariance. -/
 @[reassoc] theorem cmHarrisRefinementCoefficientInclusion_invariant
     (g : SmallCMResidualGroup D U V) :
-    fineInclusion ≫ (diagonal J (Z).val constantFineAction).ρ g = fineInclusion :=
+    fineInclusion ≫ ((diagonal J (Z).val constantFineAction).ρ g).asHom = fineInclusion :=
   inclusion_invariant J (Z).val constantFineAction g
 
 /-- Normal cover refinement does not change the original associated coefficient sheaf. -/

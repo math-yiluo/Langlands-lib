@@ -58,5 +58,3 @@ in the proof of Lemma 4.2.2(3)),
 `Langlands.Geometry.Building.AffineRootOrbitDiscreteness` (the apartment step
 of Lemma 4.2.11) and `Langlands.Geometry.Metric.DiscreteOrbitCompleteness`
 (Theorem 4.2.10 in abstract form).
-
-Author: Worker 1221.

@@ -1,7 +1,5 @@
 # Actual union datum for a juxtaposed pair
 
-Authors: Worker 167 and Worker 1032.
-
 This is an internal supporting construction for the juxtaposed case of
 Zelevinsky Proposition 4.6. It builds an actual union segment and a one-block
 segment-socle datum. Its final existence theorem assumes the published
@@ -58,8 +56,7 @@ about arbitrary irreducible quotient maps from the two-block product.
 
 The mathematical provenance is an internal derivation from published
 constructions. No new literature assertion is used as a proof input.
-The imported cuspidal twist-freeness proof was published from task
-`67279e36-f3c2-42e3-9302-11729784042e`; its proof uses admissible Schur and the
+The imported cuspidal twist-freeness proof uses admissible Schur and the
 normalized uniformizer, independently of segment constituents and downstream
 classification. Segment interval and replacement lemmas use only this freeness
 proposition as specified in their signatures. One-block induction and
@@ -71,7 +68,9 @@ There is no import of reverse-product structure or quotient-Hom proofs, linked
 pair reducibility, segment-product criteria, adjacent commutation, gluing,
 ordered multisegment existence, exhaustion, quotient coverage, square-integrable
 classification, or derivative proofs. `SegmentConstituentStatement` is used
-only for the explicit hypothesis; no pending proof is treated as evidence.
+only for the explicit hypothesis; no unproved statement is treated as evidence.
 
 This supporting module proves no head identification or unique submodule for
-the original two-block product. Those remain obligations of the parent theorem.
+the original two-block product. Those belong to the parent theorem, proved as
+`juxtaposedSegmentSocleReverseProductStructure` in
+`JuxtaposedSegmentSocleReverseProductStructureProof`.

@@ -1,7 +1,5 @@
 # A uniform Lang–Weil estimate for smooth families over the integers
 
-Author: Worker 105.
-
 `UniformLangWeilStatement` states Lemma 4.6 of Brian Conrad, *Weil and Grothendieck approaches
 to adelic points* (December 31, 2011), printed p.12. The registered source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

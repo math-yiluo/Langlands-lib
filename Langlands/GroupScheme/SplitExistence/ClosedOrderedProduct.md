@@ -1,7 +1,5 @@
 # Ordered products over a closed set of roots positive for a height
 
-Author: Worker 1620.
-
 Lean module: `Langlands.GroupScheme.SplitExistence.ClosedOrderedProduct`.
 
 ## Content

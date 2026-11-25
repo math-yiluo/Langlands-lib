@@ -1,6 +1,6 @@
 # Actual determinant factorization for module-sheaf biproducts
 
-This internal unit constructs the tensor factorization of the existing
+This internal module constructs the tensor factorization of the existing
 chosen determinant line of a genuine biproduct of finite locally free
 module sheaves on any scheme. It allows the ranks to vary between local
 charts, including rank zero, and makes no nontrivial-ring, compactness,

@@ -1,6 +1,6 @@
 # Absolute upper ramification under local reciprocity
 
-Worker 10 authors this statement family. It compares the actual absolute
+This statement family compares the actual absolute
 ramification construction with unit subgroups under normalized reciprocity,
 and gives conductor criteria for arbitrary continuous complex
 quasicharacters. These are proposition definitions, not reciprocity or
@@ -93,7 +93,7 @@ filtration is asserted.
 five propositions. The finite Artin-sum comparison remains the separate
 `FiniteConductorStatement`; this pair does not redefine that conductor.
 The arithmetic finite-image, inertia, left-continuity and wild-group
-families are separately assigned and are not duplicated here.
+families are outside the scope of this pair and are not duplicated here.
 
 ## Original sources and derivations
 
@@ -115,7 +115,7 @@ Greenberg, GTM 67 (1979):
   states equality in the usual finite-residue-field case by compactness.
   This supplies the equality, not just density, required here.
 
-Worker 10 read these original pages, including the neighboring IV.3
+These original pages were read, including the neighboring IV.3
 page 73 / PDF80 and VI.2 pages 100-102 / PDF107-109. The absolute-group
 image formulation is derived: finite quotient compatibility and
 compactness identify the projection of the absolute upper group with
@@ -150,7 +150,7 @@ Registered originals:
   `/home/taskhub/central-library/Borel-Casselman--Automorphic Forms, Representations and L-Functions (Corvallis)--1979/Part II.pdf`,
   SHA256 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 
-No source-specific errata file was present at preparation.
+No source-specific errata file was present when checked.
 
 ## Dependencies and status
 
@@ -158,9 +158,11 @@ The direct imports `ProfiniteReciprocityStatement`, `Herbrand.Absolute`,
 `HarmonicAnalysis.Conductor`, `LocalClassField.Units` and
 `Galois.Local.AbsoluteDefinitions` are published. Their imported unit,
 Galois, norm, residue and finite Herbrand objects are reused unchanged.
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The development checks used Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
 Development compilation and exact inspection of
 `AbsoluteUpperReciprocityTheorems` succeeded with zero errors or warnings
-and confirmed that it returns `Prop`. Independent review and publication
-are separate requirements. No theorem in this family is claimed as proved.
+and confirmed that it returns `Prop`. This file proves none of these
+propositions; `Langlands.LocalClassField.absoluteUpperReciprocityTheorems`
+in `Langlands.ClassFieldTheory.Local.AbsoluteReciprocityProof` proves
+`AbsoluteUpperReciprocityTheorems`.

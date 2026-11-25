@@ -1,7 +1,5 @@
 # Necessary upper bounds imply opposite full-dual prefix bounds
 
-Author: Worker 363.
-
 `Langlands.glTemperedOppositeDualPrefixAdapter.{uF,uV}` proves exactly
 `Langlands.GLTemperedOppositeDualPrefixAdapterStatement.{uF,uV}` from
 [TemperedOppositeDualPrefixAdapterStatement](TemperedOppositeDualPrefixAdapterStatement.md).

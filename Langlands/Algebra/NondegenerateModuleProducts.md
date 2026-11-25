@@ -1,6 +1,6 @@
 # Actual products of nondegenerate original modules
 
-Worker 6 constructs the product described in the proof of Renard I.6,
+This module constructs the product described in the proof of Renard I.6,
 printed p.27 / PDF p.33 of the French edition dated 9 July 2026.
 The governing registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -61,10 +61,13 @@ Complete unapplied interfaces check the universal property and existence
 with these independent bounds, including a larger index universe than the
 ring universe and a larger ring universe than the carrier universe.
 
-This is a focused construction unit. It supplies no global limit instance,
+This is a focused construction module. It supplies no global limit instance,
 general small-limit or colimit construction, AB5 proof, local finite-type
 proof (the source's AB6), or filtered-colimit exactness proof. Those remaining
-assertions of I.6 require separate statements and proofs.
+assertions of I.6 have separate statements and proofs, in
+`NondegenerateModuleCompletenessProof`, `NondegenerateModuleAB5Proof`,
+`NondegenerateModuleLocallyFiniteTypeProof` and
+`NondegenerateModuleFilteredColimitsProof`.
 
 The previously read supplementary 2010-edition corrections, registered as
 `renard-2010-corrections-complements`, SHA256

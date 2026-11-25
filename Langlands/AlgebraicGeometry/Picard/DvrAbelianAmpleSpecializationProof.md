@@ -1,7 +1,5 @@
 # Generic-to-special ampleness on an abelian scheme over a DVR: proof
 
-Author: Worker 171.
-
 Module `Langlands.AlgebraicGeometry.Picard.DvrAbelianAmpleSpecializationProof`.
 
 ## Theorem

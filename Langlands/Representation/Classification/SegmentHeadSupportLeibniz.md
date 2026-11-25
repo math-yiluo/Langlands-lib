@@ -97,5 +97,3 @@ Direct imports:
 
 The complete closure audit is in
 `SegmentHeadDerivativeSupportTruncationProof.md`.
-
-Author: Worker 890.

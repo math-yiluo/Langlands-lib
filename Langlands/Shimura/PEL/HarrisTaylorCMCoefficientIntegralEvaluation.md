@@ -1,7 +1,5 @@
 # Integral evaluation along original CM normal coefficient refinements
 
-Author: Worker 57.
-
 Construct integral evaluation along actual forgetting maps between original
 CM normal coefficient covers. Prove that the independently constructed
 evaluations agree with integral comparison and quotient-ring restriction
@@ -123,7 +121,7 @@ eᵥ𝑤 = cmHarrisSuccessiveRefinementIntegralIso ... V W₁ hV hW
 dᵥ𝑤 = cmHarrisSuccessiveRefinementIso ... V W₁ hV hW.
 ```
 
-The map `aᵥ𝑤` is the published equivariant cover map. Its underlying
+The map `aᵥ𝑤` is the equivariant cover map. Its underlying
 scheme map is exactly `S.map (smallCMInclusion D hWV)` and is over
 `Spec F`. The integral comparison has type `eᵥ𝑤 : Bᵥ ≅ B𝑤`; the
 quotient-ring comparison has type `dᵥ𝑤 : Qᵥ ≅ Q𝑤`.
@@ -196,7 +194,7 @@ it does not define `wᵥ𝑤` through `sᵥ` or `uᵥ𝑤`.
 loc𝑤.map sᵥ.hom ≫ uᵥ𝑤.hom = wᵥ𝑤.hom.
 ```
 
-It localizes the published inclusion normalization for `sᵥ`.
+It localizes the inclusion normalization for `sᵥ`.
 Functoriality and associativity reduce the result to
 `productEvaluationAlong_natural` applied to `c.hom`. That naturality
 equation moves the constant-sheaf comparison past graph evaluation.
@@ -209,7 +207,7 @@ loc𝑤.mapIso sᵥ ≪≫ uᵥ𝑤 = wᵥ𝑤.
 ```
 
 Let `w𝑤 = cmHarrisRefinementRestrictedTrivialization ... W₁ hW` be
-the published scalar restriction of the fine quotient evaluation.
+the scalar restriction of the fine quotient evaluation.
 `cmHarrisSuccessiveRefinementScalar_evaluation` and
 `cmHarrisSuccessiveRefinementScalar_trivialization` prove
 
@@ -221,7 +219,7 @@ loc𝑤.mapIso (r.mapIso dᵥ𝑤) ≪≫ w𝑤 =
   loc𝑤.mapIso sᵥ ≪≫ uᵥ𝑤.
 ```
 
-The morphism proof maps the published successive scalar square through
+The morphism proof maps the successive scalar square through
 `loc𝑤`, substitutes the fine scalar evaluation equation at `W₁`,
 and then uses the nested integral evaluation equation above. The
 isomorphism proof applies `Iso.ext`.
@@ -229,7 +227,7 @@ isomorphism proof applies `Iso.ext`.
 ## Evaluation on the actual common intersection cover
 
 No containment between `V` and `W₁` is required for this section.
-Reuse the published identity-Hecke intersection level
+Reuse the identity-Hecke intersection level
 
 ```text
 T   = smallCMCommonLevel D V W₁
@@ -259,7 +257,7 @@ locₜ.map eCommon.hom ≫ u𝑤ₜ.hom = uᵥₜ.hom.
 ```
 
 The proof rewrites the two independent evaluations by the new nested
-integral evaluation equation. It then uses functoriality, the published
+integral evaluation equation. It then uses functoriality, the
 identification of `eCommon` with the canonical comparison `eᵥ𝑤`,
 and integral comparison composition. This proves compatibility along
 both actual common-cover maps.
@@ -291,7 +289,7 @@ locₜ.mapIso (r.mapIso dCommon) ≪≫ w𝑤ₜ =
   locₜ.mapIso sᵥ ≪≫ uᵥₜ.
 ```
 
-The morphism proof localizes the published common-cover scalar square,
+The morphism proof localizes the common-cover scalar square,
 substitutes scalar evaluation along `a𝑤ₜ`, and applies the new
 common-cover integral evaluation equation. The full-isomorphism proof
 uses `Iso.ext`.
@@ -333,9 +331,9 @@ and constructs compatible coefficient/cover maps and composition.
 Registered source: `harris-taylor-2001-geometry-cohomology-simple-shimura`,
 SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
-The supplied five-page Harris *Publication with errata* list contains
+The five-page Harris *Publication with errata* list contains
 no correction to these passages; this observation concerns only that
-supplied list.
+list.
 
 The new nested and common-cover integral evaluation and scalar
 equations are internal deductions, rather than formulas attributed
@@ -349,7 +347,7 @@ No desired evaluation or compatibility is added as a hypothesis.
 
 ## Scope
 
-The unit fixes the coarse level, algebraic representation, chosen
+The module fixes the coarse level, algebraic representation, chosen
 stable lattice, scalar and exponent. It supplies actual nested and
 common-cover integral evaluation compatibility, including the genuine
 quotient-ring scalar comparison, under the retained exact geometric
@@ -358,7 +356,7 @@ premises.
 Applicable representability, dual existence/geometry, source rigidity,
 full source-moduli and canonical-model geometry, and identification of
 the invariant sheaves with the original component-function sheaves
-remain obligations of the surrounding program. This unit does not
+are not proved in this module. This module does not
 construct variation of coarse level, representation, lattice, scalar
 or exponent, extension of scalars, a general scheme inverse-image
 comparison, or completion to a lisse adic sheaf. Allowing every nonzero

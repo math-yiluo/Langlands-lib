@@ -1,7 +1,8 @@
-# Rank-one central cover: dependency audit of the Task 7586 proof
+# Rank-one central cover: dependency audit of its proof
 
-This note is the mechanical dependency check requested by the operator ruling 97eb98d7, condition
-(2), for the Task 7586 proof `Langlands.GroupScheme.rankOneCentralCover` of
+This note is a mechanical dependency check of the proof `Langlands.GroupScheme.rankOneCentralCover`
+(`Langlands/GroupScheme/Reductive/RankOneCentralCoverProof.lean`), which proves the actual rank-one
+`SL2` central cover independently of the dynamic-Borel route, of
 `Langlands.GroupScheme.RankOneCentralCoverStatement`. The full list of Library constants reached
 by the proof is in the companion note
 [rank-one-central-cover-dependency-constants.md](rank-one-central-cover-dependency-constants.md).
@@ -58,13 +59,11 @@ scanned through: `solvableProperFixedPoint`,
 `AlgClosedReductiveNormalSolvableTorusStatement` and its proof
 `algClosedReductiveNormalSolvableTorus` are not in the closure.
 
-Independent scans of the planned inputs, by Worker 777 (diagnostic 3275ca75) and Worker 785
-(diagnostic b69fb156) against their own 32 cut points, were also clean.
+Two independent scans of the planned inputs, against their own 32 cut points, were also clean.
 
 ## Reproducing the scan
 
-Put the following file in a private draft directory next to the proof modules, and run
-`lean_check` on `Langlands.GroupScheme.Reductive.RankOneCentralCoverProof` followed by this
+Put the following file in a directory next to the proof modules, and check `Langlands.GroupScheme.Reductive.RankOneCentralCoverProof` followed by this
 module. The result appears as information messages.
 
 ```lean

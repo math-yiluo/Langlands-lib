@@ -1,6 +1,7 @@
 # The full maximal-torus preimage in a simply connected derived cover
 
-Worker 1669, adapting Worker 1614's published preimage reduction.
+This module adapts the published preimage reduction
+`DerivedCoverMaximalTorusPreimageReduction`.
 
 `Langlands.GroupScheme.derivedCoverMaximalTorusPreimage` proves exactly
 `Langlands.GroupScheme.DerivedCoverMaximalTorusPreimageStatement.{u}`.
@@ -23,7 +24,7 @@ This step does not require base change of algebraic simple connectedness.
 
 Over `K`, the published
 `IsDerivedSubgroup.exists_compatible_maximalTorus_of_isAlgClosed`
-(module `Rational.GeometricSubgroupTorus`, Worker 1632) gives a split
+(module `Rational.GeometricSubgroupTorus`) gives a split
 maximal torus `s : S → D_K` and a closed torus map `e : S → T_K` with
 `e ≫ i_K = s ≫ d_K`. Its proof uses the published geometric
 maximal-torus conjugacy theorem, finite-Galois splitting, and the
@@ -40,11 +41,11 @@ to a maximal torus `j : A → C_K` and a torus map `f : A → S` with
 
 Apply the published
 `isTorus_subgroupIntersection_of_selfCentralizing_of_reflection`
-(module `Torus.SelfCentralizingPullback`, Worker 1669).
+(module `Torus.SelfCentralizingPullback`).
 The full pullback over `K` centralizes `A`: after mapping into the
 commutative ambient torus, its elements commute with the image of `A`;
 the monic derived inclusion reflects this commutation to `D_K`.
-`IsCentralIsogeny.torusCentralizer_comap` (Worker 1614) reflects
+`IsCentralIsogeny.torusCentralizer_comap` reflects
 centralization through `π_K` on every test scheme. The comparison therefore
 identifies the actual pullback with the self-centralizing source torus
 `A`, so that entire pullback is a torus.

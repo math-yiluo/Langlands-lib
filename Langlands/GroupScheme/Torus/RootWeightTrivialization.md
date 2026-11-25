@@ -1,6 +1,8 @@
 # Simultaneous principal trivialization of actual rank-one weight spaces
 
-Worker 634, with the interface requested by Worker 587 for Task 6260.
+The interface is the one used by the proof that reductive group schemes split
+étale-locally on the base (`etaleLocalSplitReductive` in
+[`Reductive.EtaleLocalSplitProof`](../Reductive/EtaleLocalSplitProof.md)).
 
 This is an internal consequence of Mathlib's finite-presentation localization
 of bases and the Library's actual finite-projective Lie weight modules. The

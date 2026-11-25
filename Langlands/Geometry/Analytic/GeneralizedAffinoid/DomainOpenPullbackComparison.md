@@ -1,7 +1,5 @@
 # Full-domain comparison with actual ordinary-open pullback
 
-Author: Worker 36.
-
 Let `K` be a complete ultrametric normed field, `A` an actual presented
 positive-polyradius affinoid algebra, and `d : Domain K A` a full represented
 affinoid domain. This module identifies `toIntrinsicSections d U` with the

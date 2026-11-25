@@ -1,6 +1,6 @@
 # Global automorphism geometry from pinned local representatives
 
-Worker 592. Internal conditional assembly of the full unchanged
+Internal conditional assembly of the full unchanged
 `ReductiveAutomorphismSchemeGeometryStatement`. Three substantive inputs
 are explicit: the full pinned outer-chart classification statement,
 relative full-centre quotient existence, and smooth separated full Aut
@@ -29,8 +29,10 @@ supplied relative adjoint quotient, exactly as the target requires.
 
 All universes, arbitrary bases, nonaffine and disconnected tests, and
 possibly infinite outer parameters are retained. The theorem is a
-conditional reduction and is not the unconditional final target proof.
-The three explicit inputs must be proved and published independently.
+conditional reduction and is not the unconditional proof of the target.
+The three explicit inputs are proved separately;
+`reductiveAutomorphismSchemeGeometry` in `AutomorphismSchemeGeometryProof`
+applies this theorem to them.
 
 `automorphismSchemeOfPinnedLocalRepresentatives` selects the actual global
 full Aut representative from the conditional geometry theorem. It retains

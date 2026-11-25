@@ -1,7 +1,5 @@
 # Lower-left rank characterization of actual upper Bruhat cells: proof
 
-Author: Worker 957.
-
 `Langlands.GeneralLinear.upperBruhatRankCharacterization.{u}` in
 `Langlands.Group.GL.UpperBruhatRankProof` proves the published closed
 proposition `Langlands.GeneralLinear.UpperBruhatRankCharacterizationStatement.{u}`

@@ -27,6 +27,8 @@ e-shift do. The preceding result shows it annihilates the ring. Adding the
 e-part proves that iota(k) annihilates the ring. Multiplication by its field
 inverse makes the original character trivial, contradicting nontriviality.
 
-This is an internal derivation following Worker 1843's generic proof plan.
-It proves nondegeneracy under the explicit approximation assumptions; the
-diagonal annihilator identity and surjectivity remain separate obligations.
+This is an internal derivation, used for the nondegeneracy step
+(`adelicPairing_nondegenerate`) of the proof of `AdelicAdditiveDualityStatement`
+in `AdelicAdditiveDualityProof`. It proves nondegeneracy under the explicit
+approximation assumptions; the diagonal annihilator identity and surjectivity
+are separate results (`CocompactFieldAnnihilator`, `CocompactRingCharacters`).

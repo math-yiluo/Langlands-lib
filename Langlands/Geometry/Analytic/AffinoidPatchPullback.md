@@ -7,8 +7,10 @@ ultrametric normed field `K`.
 
 ## Purpose and provenance
 
-This is an internal prerequisite for Task 7765
-(`CompactPullbackActionContinuityStatement`). No literature statement is
+This is an internal prerequisite for the proofs in
+`CompactPullbackContinuityOfSmall` of `CompactPullbackActionContinuitySmallStatement`
+and, under `UnivLE.{u, v}`, of `CompactPullbackActionContinuityStatement`. No
+literature statement is
 transcribed. Take an analytic domain `E` of `X` (a "patch") together with an
 affinoid model of it, meaning a saturated presentation `S₀` with a greatest
 chart `t` and an isomorphism

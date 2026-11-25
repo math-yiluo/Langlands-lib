@@ -1,6 +1,6 @@
 # Original-point shifts and conditional torus-then-field valuation assembly
 
-This internal unit assembles the already proved scalar laws of the actual
+This module assembles the already proved scalar laws of the actual
 `torusFieldRestrictedRootFunctionFamily`. All fields, groups, torus maps
 and upper valuation are unchanged from `RootValueTorusFieldAxioms`. Here
 the original map `i:S→G` is monomorphic. The actual factorization through

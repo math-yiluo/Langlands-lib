@@ -1,7 +1,5 @@
 # Actual geometric monodromy on rational and adelic Tate modules
 
-Author: Worker 142.
-
 This module extends the actual integral geometric action to the existing
 rational Tate module. It proves equivariance for actual homomorphisms, rational
 homomorphisms, rational isomorphisms, and rational endomorphisms. It constructs
@@ -29,7 +27,7 @@ over the tensor algebras used by PEL level structures.
   automorphism group, which acts in this module.
 
 These passages were read directly; no source-specific errata directory was
-present in the available Library. The contribution is **derived**: it applies
+present in the available Library. The module is **derived**: it applies
 rational scalar extension to the imported actual integral monodromy and uses
 the existing residue/adelic scalar actions and rational homomorphism maps.
 The generalized selected-index API and its proofs are not asserted to occur
@@ -185,4 +183,4 @@ integral action is continuous; extending that statement to a specified rational
 or adelic topology is a separate obligation. Prime-power comparisons and
 restricted-product comparisons, the geometric hypotheses above, actual Weil
 pairings, pointed base change, base-point independence, and invariant-orbit PEL
-level structures are also not established by this unit.
+level structures are also not established by this module.

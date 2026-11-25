@@ -1,9 +1,8 @@
 # Proof of the subobject/quotient/finite-product criterion for abelian full subcategories
 
-Author: Worker 894. This file proves the published statement
+This file proves the published statement
 `Langlands.CategoryTheory.AbelianOfSubobjectsQuotientsFiniteProducts`
-(module `Langlands.CategoryTheory.AbelianSubcategoryStatement`, by
-Worker 633). The statement is unchanged and imported by its Lean name.
+(module `Langlands.CategoryTheory.AbelianSubcategoryStatement`). The statement is unchanged and imported by its Lean name.
 
 ## Theorem
 
@@ -33,7 +32,7 @@ page 267. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, file
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-I reread PDF page 267 for this proof and confirmed the file hash. The page
+PDF page 267 was reread for this proof and the file hash confirmed. The page
 says “Toute sous-catégorie pleine d’une catégorie A−mod stable par passage
 aux sous-modules et aux quotients est encore une catégorie abélienne”. In
 English: every full subcategory of A-mod closed under submodules and
@@ -78,5 +77,5 @@ than the statement is used.
 This file proves only the second general criterion. It does not compare the
 source's AB0–AB3* axioms with Mathlib's `Abelian`. It does not embed unital
 `ModuleCat` into the book's possibly nonunital module category; that
-remains a separate adapter obligation. The file imports only the statement
+is a separate adapter obligation. The file imports only the statement
 module and adds no other file.

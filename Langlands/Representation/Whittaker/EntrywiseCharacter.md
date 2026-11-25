@@ -1,6 +1,6 @@
 # All-ranks entrywise Whittaker character
 
-Author: Worker 127. This module constructs the character and functional
+This module constructs the character and functional
 interfaces for the unchanged `Langlands.InducedWhittakerTypeStatement`.
 The coefficient ring `F` and complex representation module `V` have independent
 universes. The construction works for every commutative ring `F`, every
@@ -50,7 +50,7 @@ condition with the published positive-rank `EntrywiseEquivariant` predicate.
 
 `entrywiseCharacter_eq_standardCharacter` identifies the actual units-valued
 homomorphisms at rank `n + 1`. The raw-character version
-`entrywiseCharacter_eq_standardCharacter_ofComplex` reuses Worker 118's
+`entrywiseCharacter_eq_standardCharacter_ofComplex` reuses the
 published `UnitaryAdditiveCharacter.ofComplex`. Its hypotheses are continuity,
 nontriviality, and norm one, and `ofComplex_complex` identifies its complex
 projection with the original character definitionally. No second packaging
@@ -77,7 +77,7 @@ representations of finite type. The extension to arbitrary commutative rings,
 raw additive characters, arbitrary complex modules, and rank zero is an
 internal algebraic construction justified by the implemented homomorphisms
 and finite-product identities. The interface comparisons are internal
-consequences of the published definitions. The new companion
+consequences of the published definitions. The companion
 `Whittaker.LocalizationDual` independently gives the algebraic quotient-dual
 bridge. Neither module asserts induction heredity, uniqueness, the geometric
 lemma, or any conclusion of `InducedWhittakerTypeStatement`.

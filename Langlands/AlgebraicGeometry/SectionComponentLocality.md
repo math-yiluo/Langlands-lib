@@ -1,6 +1,6 @@
 # Locality of the union of fibre components selected by a section
 
-This internal unit proves that the existing `SectionComponent.componentSet`
+This internal module proves that the existing `SectionComponent.componentSet`
 commutes with restriction to an open subset of the base, and that its
 openness can be checked on an arbitrary open base cover. It reduces the
 published finite-presentation openness proposition to affine bases. It

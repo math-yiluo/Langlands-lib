@@ -1,12 +1,10 @@
 # The classical maximal-torus argument for full-kernel centralizers
 
-Author: Worker 1465.
-
-This internal unit assembles the actual split maximal-torus factorization,
+This module assembles the actual split maximal-torus factorization,
 full character-kernel centralizer containment, identity-component factorization,
 and rootwise radical detection over an algebraically closed field. The character
 kernel and centralizer retain their meanings on all scheme tests. The character
-need not be primitive. This unit does not yet supply the arbitrary-field descent.
+need not be primitive. This module does not supply the arbitrary-field descent.
 
 `range_le_kernelCentralizer_of_torus_factor` uses commutativity in the containing
 torus. `torusCentralizer_eq_range_of_comp_mono` reflects equality with the torus

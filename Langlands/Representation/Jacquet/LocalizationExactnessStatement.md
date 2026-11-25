@@ -1,6 +1,6 @@
 # Exactness of character-localized coinvariants
 
-Worker 8 authored this statement pair. The namespace is
+The namespace is
 `Langlands.Jacquet.Localization`; the aggregate is
 `CharacterLocalizationExactnessStatement`. It is a proposition definition
 combining compact detection of the actual character relations and exactness
@@ -78,12 +78,12 @@ representations of reductive p-adic groups I* (1977).
   page 445 / PDF page 6, give exactly the compact-subgroup containment
   condition and exactness of localization under that condition.
 
-All five original PDF pages 3–7 were read for this unit. Literature ID:
+All five original PDF pages 3–7 were read for this module. Literature ID:
 `bernstein-zelevinsky-1977-induced-i`. Original SHA256:
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 Retained original:
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
-No source errata entry for this ID is present in the admitted public notes.
+No source errata entry for this ID is present in the project notes.
 
 This is a **derived** formulation of the localization part of Proposition
 1.9(a). It retains the exact relation convention and the source's compact
@@ -111,7 +111,7 @@ argument. Unlike the exactness clause, it is algebraic once compact
 containment is supplied, hence its deliberately weaker hypotheses.
 The earlier untwisted `Langlands.SmoothCoinvariantExactnessStatement`
 uses Mathlib's trivial-character quotient and a compact-open containment
-hypothesis. It remains unchanged. This unit supplies the actual
+hypothesis. It remains unchanged. This module supplies the actual
 character-localized maps and normalizing-subgroup actions needed for
 general BZ77 localization.
 
@@ -121,15 +121,16 @@ The only project import is
 `Langlands.Representation.Jacquet.Localization`, which supplies the
 relation span, quotient, action, equivariant maps, their representative
 formulas, and smoothness descent. All intrinsic construction laws are
-proved there. No owner draft or unaccepted mathematical interface is
-imported. Mathlib supplies complex coefficients and local constancy.
+proved there. Mathlib supplies complex coefficients and local constancy.
 
 The compact-detection theorem and character-localization exactness
-theorem remain separate proof obligations. This unit contains only
+theorem are proved by
+`Langlands.Jacquet.Localization.characterLocalizationExactness` in
+`LocalizationExactnessProof`. This module contains only
 proposition definitions; it does not prove BZ77 Proposition 1.9(a).
 The general induction, normalized adjunction/transitivity, character
 compatibility, and general geometric-lemma families retain their own
 construction and statement obligations.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Environment: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

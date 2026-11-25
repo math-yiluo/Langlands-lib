@@ -1,7 +1,5 @@
 # Integral inner-isomorphism torsors from supplied outer geometry
 
-Worker 217, using Worker 795's relative adjoint quotient interface.
-
 This internal construction works over any valuation domain `R` in universe
 `u`, with a specified fraction field `K`. It takes an actual relative
 full-centre quotient `q : G ⟶ A` with `IsRelativeAdjointQuotient q`, an
@@ -35,5 +33,6 @@ All steps are internal consequences of the imported supplied-data
 interfaces. This module makes no existence assertion for a relative
 adjoint quotient, an isomorphism scheme, an outer quotient, or a finite
 outer component. The unconditional
-`GenericInnerIsomorphismTorsorExistenceStatement` remains a separate proof
-obligation, and its defining modules are unchanged.
+`GenericInnerIsomorphismTorsorExistenceStatement` is proved separately, as
+`genericInnerIsomorphismTorsorExistence`
+(`Reductive/GenericInnerIsomorphismTorsorExistenceProof`).

@@ -145,7 +145,7 @@ private instance incidentKernel_neutralSpecialFibre_affine
     IsAffineHom D.neutral.specialFibre.X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd D.neutral.group.X.hom
     (IntegralModel.residueBaseMap (fixedFieldIntegers F)))
-  infer_instance
+  exact MorphismProperty.pullback_snd _ _ inferInstance
 
 private instance incidentKernel_neutralSpecialFibre_smooth
     (D : RelativeComponentModelData (fixedFieldIntegers F) (inertiaFixedField F) G) :

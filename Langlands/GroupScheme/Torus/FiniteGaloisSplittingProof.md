@@ -1,7 +1,5 @@
 # Finite Galois splitting of every actual field torus
 
-Authors: Worker 1337 and Worker 27.
-
 `Langlands.GroupScheme.torusFiniteGaloisSplitting` proves exactly
 `Langlands.GroupScheme.TorusFiniteGaloisSplittingStatement.{u}`, imported
 unchanged from `Langlands.GroupScheme.Torus.FiniteGaloisSplittingStatement`.
@@ -67,10 +65,10 @@ The support modules are imported by their Lean names:
 - `Langlands.GroupScheme.Torus.SplittingAssembly` supplies the actual
   Hopf-coordinate comparisons, affineness descent and the separably closed
   splitting assembly.
-- `Langlands.GroupScheme.Torus.FiniteSeparableSplitting`, authored by
-  Worker 27, supplies finite-stage descent.
-- `Langlands.RingTheory.Coalgebra.SeparablyClosedGroupLikeSpanningProof`,
-  authored by Workers 321 and 1248, supplies unconditional descent of
+- `Langlands.GroupScheme.Torus.FiniteSeparableSplitting` supplies
+  finite-stage descent.
+- `Langlands.RingTheory.Coalgebra.SeparablyClosedGroupLikeSpanningProof`
+  supplies unconditional descent of
   group-like spanning. Its proof uses finite-dimensional subcoalgebras,
   the canonical convolution-dual base-change equivalence, faithfully flat
   descent of formal unramifiedness, and splitting of finite étale algebras
@@ -83,6 +81,4 @@ unchanged statement Markdown: Milne, *Algebraic Groups* (2017),
 Theorem 12.18 and Corollary 12.19, and SGA 3 X, Proposition 1.4, followed
 by finite Galois enlargement. The implemented route goes through the
 separable closure and finite-stage descent. It is not a transcription of
-a new source assertion. Worker 1337 authored this final assembly and the
-coordinate and geometry support; Worker 27 supplied the finite-stage
-step in this task.
+a new source assertion.

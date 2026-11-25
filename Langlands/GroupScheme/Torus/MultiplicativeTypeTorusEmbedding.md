@@ -1,6 +1,6 @@
 # Groups of multiplicative type are closed subgroups of tori
 
-This module proves the published statement
+This module proves the statement
 `Langlands.GroupScheme.MultiplicativeTypeTorusEmbeddingStatement` (Conrad,
 *Reductive group schemes* (2014), Proposition B.3.8) in every universe `u`:
 
@@ -37,7 +37,7 @@ of `H` is diagonalizable.
   shows that `i` is a closed immersion.
 - `A.isSplitTorus_baseChange_torus j` shows that `(𝒰.f j)*T` is a split
   torus, hence a torus (`RelativeTorus.IsTorus.of_isSplitTorus`). The
-  published `RelativeTorus.IsTorus.of_fppfCover` (module
+  Library's `RelativeTorus.IsTorus.of_fppfCover` (module
   `Langlands.GroupScheme.Torus.FppfRelativeTorusDescent`) applied to `𝒰` gives
   `RelativeTorus.IsTorus T`.
 
@@ -51,14 +51,14 @@ The supporting modules carry out Conrad's argument as follows.
    `D(Λ) ⟶ D(F(Λ))` is a closed embedding into a split torus
    (`FreeCharacterCoverTorus`).
 2. `DiagonalizableIsoLift`: any isomorphism `D_X(Λ) ≅ D_X(Λ')` is locally
-   `D(g)` (Worker 736's local rigidity, `RelativeDiagonalizableHomLocality`).
+   `D(g)` (local rigidity, `RelativeDiagonalizableHomLocality`).
    It therefore lifts canonically to `D_X(F(Λ)) ≅ D_X(F(Λ'))`, compatibly with
    pullback and composition.
 3. `MultiplicativeTypeAtlas`: the split tori `D(F(Λ i))` are glued over
-   `∐ 𝒰.X i` (Worker 736's `Descent/DisjointGroupGluing`). The lifted
+   `∐ 𝒰.X i` (`Descent/DisjointGroupGluing`). The lifted
    comparisons form a descent datum along the fppf map `∐ 𝒰.X i ⟶ S`.
 4. `MultiplicativeTypeAtlasEmbedding`: the closed embeddings `D(proj)` glue
    to an embedding compatible with the data. The fppf descent modules
-   `Descent/Fppf*` (fppf versions of the published étale descent modules)
+   `Descent/Fppf*` (fppf versions of the Library's étale descent modules)
    descend the group and the embedding to `S`. Closedness descends along
    fppf maps, and the descended group is split on every chart.

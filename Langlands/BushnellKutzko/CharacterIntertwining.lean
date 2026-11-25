@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Intertwining of characters (Bushnell–Kutzko 1993, §3.3, printed p. 104) -/
 

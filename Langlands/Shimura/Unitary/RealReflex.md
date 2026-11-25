@@ -1,7 +1,5 @@
 # The Hodge function and reflex field of the constructed real Harris homomorphism
 
-Author: Worker 57.
-
 This module computes the Hodge function of the positive complex homomorphism
 constructed on the actual algebra `ℝ ⊗[ℚ] A` in
 [RealPositivity](RealPositivity.md), using its assembled matrix coordinates.

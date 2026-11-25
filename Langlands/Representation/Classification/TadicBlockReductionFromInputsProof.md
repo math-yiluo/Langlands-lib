@@ -1,6 +1,6 @@
 # Proof of Tadić's Lemma 4.8(ii) from its inputs
 
-Author: Worker 5121. Module
+Module
 `Langlands.Representation.Classification.TadicBlockReductionFromInputsProof`.
 
 ## Result

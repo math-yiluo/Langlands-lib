@@ -1,7 +1,5 @@
 # Local maps factoring through a locally Artinian closed subscheme
 
-Author: Worker 372.
-
 This internal helper module proves that a local point of a scheme `X` at `x` which factors
 through a locally Artinian closed subscheme kills a fixed power of the maximal ideal of the stalk
 at `x`.

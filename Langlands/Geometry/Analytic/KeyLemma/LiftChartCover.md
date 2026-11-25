@@ -1,7 +1,5 @@
 # Local covers by charts with nearby lifts and rigidity
 
-Author: Worker 786.
-
 This module supplies the local étale chart cover for the nearby-lift
 argument of Berkovich, *Vanishing cycles for formal schemes* (1994),
 §7, Key Lemma 7.2. It uses spectral test transfer on represented

@@ -9,9 +9,9 @@ for transvections with the same ordered pair of distinct indices.
 
 This construction was extracted without changing its definition from
 `Langlands.Geometric.DiagonalCharacter.transvectionUnit` in
-[IntersectionLeviDiagonalCharacterProof](../../Representation/Geometric/IntersectionLeviDiagonalCharacterProof.md),
-originally authored by Worker 632. That proof and
-[MirabolicTailConullProof](MirabolicTailConullProof.md), authored by Worker 230,
-now share this declaration. The latter adds the zero-parameter,
+[IntersectionLeviDiagonalCharacterProof](../../Representation/Geometric/IntersectionLeviDiagonalCharacterProof.md).
+That proof and
+[MirabolicTailConullProof](MirabolicTailConullProof.md)
+share this declaration. The latter adds the zero-parameter,
 continuity and inverse-row formulas used for the full-measure tail locus.
 No topology or characteristic-zero assumption is needed for the construction.

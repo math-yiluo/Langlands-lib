@@ -1,6 +1,6 @@
 # Proof of the replaced normalizer-coset lemma
 
-This unit proves the published target
+This module proves the published target
 `Langlands.Geometry.Building.UnipotentNormalizerCosetStatement` of
 `Langlands/Geometry/Building/IwahoriWeylStatement.lean`. The theorem
 `Langlands.Geometry.Building.unipotentNormalizerCoset` is stated at an arbitrary universe `u`.
@@ -92,5 +92,6 @@ again. The implemented route differs in the separation step. It uses the factor 
 decomposition argument by the Library's opposite-cell separation
 `normalizer_eq_one_of_unipotent_product`. That step gives `n' n⁻¹ = z ∈ Z(F)^0` directly.
 
-The companion target `IwasawaDecompositionStatement` of the same task is proved separately by
+The companion target `IwasawaDecompositionStatement` of the same file
+`IwahoriWeylStatement.lean` is proved separately by
 `Langlands.Geometry.Building.iwasawaDecomposition` (module `IwasawaDecompositionProof`).

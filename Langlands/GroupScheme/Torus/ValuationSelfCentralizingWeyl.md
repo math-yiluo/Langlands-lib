@@ -1,7 +1,5 @@
 # Arbitrary-base finite Weyl models from valuation affineness
 
-Author: Worker 640.
-
 `Langlands.GroupScheme.SelfCentralizingWeyl.valuationFiniteWeylModel`
 constructs the actual `FiniteWeylModel t` over every scheme `S` and every universe
 `u`, with two explicit proof inputs:
@@ -62,7 +60,8 @@ transport lemmas. Its proof does not use the Noetherian DVR test. No new source
 text is transcribed.
 
 The valuation-subring etale-affineness hypothesis is a separate mathematical
-input under investigation. This module does not assert it unconditionally,
-prove the Weyl-affineness criterion, construct the torus, or prove Task 7526's
-unchanged target. It supplies the arbitrary-base assembly once those inputs
-are available.
+input. This module does not assert it unconditionally,
+prove the Weyl-affineness criterion, construct the torus, or prove the
+unchanged `ReductiveFiberAffinenessStatement` (affineness of smooth group
+schemes with connected reductive residue fibres). It supplies the
+arbitrary-base assembly from those inputs.

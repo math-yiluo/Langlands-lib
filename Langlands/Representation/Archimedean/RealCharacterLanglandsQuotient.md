@@ -2,13 +2,13 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealCharacterLanglandsQuotient`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`). It proves
+This module proves
 the case of character lists of `RealStandardLanglandsQuotientStatement` (L, module
 `RealLargeLanglandsQuotientReduction`), the L input of the Library's
 `realLargeLanglandsQuotientReduction`, conditionally on three statements stated in the Library
-whose proofs are open. It extends the published `RealStrictCharacterLanglandsQuotient` (strictly
-decreasing exponents) to Langlands-ordered character lists with ties. Its structure follows Worker
-140's `ComplexBlockLanglandsQuotient` (Task 7063).
+(see "The statement"). It extends the published `RealStrictCharacterLanglandsQuotient` (strictly
+decreasing exponents) to Langlands-ordered character lists with ties. Its structure follows
+`ComplexBlockLanglandsQuotient`.
 
 Notation: `GL_n(ℝ)` is `Langlands.GeneralLinear n ℝ` and `O(n)` is `unitaryCompact ℝ n`. A
 `RealBlock` is `.character d` (the character `sgn^ε |·|^t` of `ℝˣ`, rank `1`) or `.induced d`
@@ -29,8 +29,9 @@ and `realPositionExponent ds` are the characters and exponents at the positions
 ## The statement
 
 `RealCharacterLanglandsQuotientStatement` assumes three statements:
-`RealBlockChartIntegrableStatement` (proof Task 7165), `RealBlockParabolicIntegrationStatement`
-(proof Task 7166) and `RealTemperedStandardIrreducibleStatement` (proof Task 7158). Under these
+`RealBlockChartIntegrableStatement` (proved as `realBlockChartIntegrable`),
+`RealBlockParabolicIntegrationStatement` (proved as `realBlockParabolicIntegration`) and
+`RealTemperedStandardIrreducibleStatement` (proved as `realTemperedStandardIrreducible`). Under these
 assumptions it says the following.
 
 For every `n` and every list `ds` of character blocks with `realRank ds = n` and

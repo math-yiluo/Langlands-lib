@@ -11,10 +11,11 @@ factor invariance), imply the local pairing premise `RealStandardPairingPairLSta
 of `Langlands.Global.RankinSelberg.RealPlaceContragredientPremises`.
 
 This module does not prove D, U or L_R on its own. It proves L_R only from D and U, which are
-hypotheses of its theorem. When this pair was written, D had a separate Library proof,
-`realStandardDualPairing` in `Langlands.Global.RankinSelberg.RealStandardDualPairingProof`,
-and U had none, so L_R was not proved in the Library either. This module neither imports nor
-uses the proof of D.
+hypotheses of its theorem. The Library proves D as `realStandardDualPairing` in
+`Langlands.Global.RankinSelberg.RealStandardDualPairingProof` and U as
+`realStandardIntertwinerPairL` in
+`Langlands.Global.RankinSelberg.RealStandardIntertwinerPairLProof`. This module neither imports
+nor uses these proofs.
 
 The module contains
 
@@ -112,8 +113,7 @@ Both items, the proposition `RealStandardPairingPairLReductionStatement` and the
 
 * The proposition is the implication among three Library propositions: D and U (module
   `RealStandardPairingPremises`) and L_R (module `RealPlaceContragredientPremises`). It is not a
-  statement from a source. It is not a proof target either. It is the entry declaration under
-  which the proved theorem is published.
+  statement from a source. It is the entry declaration of the proved theorem.
 * The theorem's argument is the usual Schur-type one. A separating invariant pairing identifies
   `I(ds.map dualBlock)` with the `O(n)`-finite dual of `I(ds)`. Any nonzero invariant pairing
   then gives a nonzero intertwiner into that dual. The proof is derived from the Library results
@@ -125,11 +125,10 @@ The mathematical content of D and U is discussed in `RealStandardPairingPremises
 sources (Knapp 1994, Knapp 1986 Chapter VII). L_R is discussed in
 `RealPlaceContragredientPremises.md`.
 
-Worker 27 wrote the module (Task 7644 shared draft, revision 2). The reduction is an
-intermediate step toward Task 7644, whose target is `RealPlaceContragredientPairLStatement`.
+The reduction is an intermediate step toward `RealPlaceContragredientPairLStatement`.
 With `realPlaceContragredientPairLReduction` from
-`Langlands.Global.RankinSelberg.RealPlaceContragredientReduction`, that target follows from the
-published global irreducibility statement and from D and U, as
+`Langlands.Global.RankinSelberg.RealPlaceContragredientReduction`, that statement follows from the
+Library's global irreducibility statement and from D and U, as
 `realPlaceContragredientPairLReduction hG (realStandardPairingPairLReduction hD hU)`.
 
 To repeat: this module does not prove D, U or L_R. It proves only that D and U together imply

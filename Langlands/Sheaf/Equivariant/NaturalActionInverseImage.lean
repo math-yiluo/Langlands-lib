@@ -37,12 +37,12 @@ section Inflation
 
 variable {K : Type uK} [Monoid K] {Φ : E ⥤ T} (a : NaturalAction K Φ)
 
-theorem act_one_unop (V : E) : (a.act V 1).unop = 𝟙 (Φ.obj V) := by
+theorem act_one_unop (V : E) : (a.act V 1).unop.asHom = 𝟙 (Φ.obj V) := by
   rw [map_one]
   rfl
 
 theorem act_mul_unop (V : E) (k l : K) :
-    (a.act V (k * l)).unop = (a.act V k).unop ≫ (a.act V l).unop := by
+    (a.act V (k * l)).unop.asHom = (a.act V k).unop.asHom ≫ (a.act V l).unop.asHom := by
   rw [map_mul]
   rfl
 
@@ -51,14 +51,14 @@ theorem act_mul_unop (V : E) (k l : K) :
 action of `k` on `Φ W`. -/
 def inflation : E × SingleObj Kᵐᵒᵖ ⥤ T where
   obj V := Φ.obj V.1
-  map {_ W} f := Φ.map f.1 ≫ (a.act W.1 (MulOpposite.unop f.2)).unop
+  map {_ W} f := Φ.map f.1 ≫ (a.act W.1 (MulOpposite.unop f.2)).unop.asHom
   map_id V := by
-    change Φ.map (𝟙 V.1) ≫ (a.act V.1 (MulOpposite.unop 1)).unop = 𝟙 _
+    change Φ.map (𝟙 V.1) ≫ (a.act V.1 (MulOpposite.unop 1)).unop.asHom = 𝟙 _
     rw [Φ.map_id, MulOpposite.unop_one, act_one_unop, Category.comp_id]
   map_comp {_ V W} f g := by
-    change Φ.map (f.1 ≫ g.1) ≫ (a.act W.1 (MulOpposite.unop (f.2 ≫ g.2))).unop =
-      (Φ.map f.1 ≫ (a.act V.1 (MulOpposite.unop f.2)).unop) ≫
-        Φ.map g.1 ≫ (a.act W.1 (MulOpposite.unop g.2)).unop
+    change Φ.map (f.1 ≫ g.1) ≫ (a.act W.1 (MulOpposite.unop (f.2 ≫ g.2))).unop.asHom =
+      (Φ.map f.1 ≫ (a.act V.1 (MulOpposite.unop f.2)).unop.asHom) ≫
+        Φ.map g.1 ≫ (a.act W.1 (MulOpposite.unop g.2)).unop.asHom
     rw [SingleObj.comp_as_mul, MulOpposite.unop_mul, act_mul_unop, Φ.map_comp]
     simp only [Category.assoc]
     rw [reassoc_of% (a.comm g.1 (MulOpposite.unop f.2))]
@@ -68,13 +68,13 @@ theorem inflation_obj (V : E × SingleObj Kᵐᵒᵖ) : a.inflation.obj V = Φ.o
   rfl
 
 theorem inflation_map {V W : E × SingleObj Kᵐᵒᵖ} (f : V ⟶ W) :
-    a.inflation.map f = Φ.map f.1 ≫ (a.act W.1 (MulOpposite.unop f.2)).unop :=
+    a.inflation.map f = Φ.map f.1 ≫ (a.act W.1 (MulOpposite.unop f.2)).unop.asHom :=
   rfl
 
 /-- The inflation restricts to `Φ` on the objects `(V, ⋆)` and the morphisms `(f, 1)`. -/
 def sectInflationIso : Prod.sectL E (SingleObj.star Kᵐᵒᵖ) ⋙ a.inflation ≅ Φ :=
   NatIso.ofComponents (fun _ => Iso.refl _) fun f => by
-    change (Φ.map f ≫ (a.act _ (MulOpposite.unop 1)).unop) ≫ 𝟙 _ = 𝟙 _ ≫ Φ.map f
+    change (Φ.map f ≫ (a.act _ (MulOpposite.unop 1)).unop.asHom) ≫ 𝟙 _ = 𝟙 _ ≫ Φ.map f
     rw [MulOpposite.unop_one, act_one_unop, Category.comp_id, Category.comp_id,
       Category.id_comp]
 
@@ -88,10 +88,11 @@ variable (E K) in
 def sectAction : NaturalAction K (Prod.sectL E (SingleObj.star Kᵐᵒᵖ)) where
   act V :=
     { toFun := fun k => MulOpposite.op
-        (𝟙 V ×ₘ starHom k)
+        (End.of (𝟙 V ×ₘ starHom k))
       map_one' := rfl
       map_mul' := fun k l => by
         apply MulOpposite.unop_injective
+        apply End.ext
         change _ = (𝟙 V ×ₘ starHom k) ≫
           (𝟙 V ×ₘ starHom l)
         rw [prod_comp, Category.comp_id]
@@ -105,7 +106,7 @@ def sectAction : NaturalAction K (Prod.sectL E (SingleObj.star Kᵐᵒᵖ)) wher
       Category.comp_id]
 
 theorem sectAction_act_unop (V : E) (k : K) :
-    ((sectAction E K).act V k).unop =
+    ((sectAction E K).act V k).unop.asHom =
       (𝟙 V ×ₘ starHom k) :=
   rfl
 
@@ -115,20 +116,20 @@ theorem prod_hom_eq_sectL_map_comp {V W : E}
     (f : V ⟶ W) (k : SingleObj.star Kᵐᵒᵖ ⟶ SingleObj.star Kᵐᵒᵖ) :
     (f ×ₘ k : (V, SingleObj.star Kᵐᵒᵖ) ⟶ (W, SingleObj.star Kᵐᵒᵖ)) =
       (Prod.sectL E (SingleObj.star Kᵐᵒᵖ)).map f ≫
-        ((sectAction E K).act W (MulOpposite.unop k)).unop := by
+        ((sectAction E K).act W (MulOpposite.unop k)).unop.asHom := by
   change _ = (f ×ₘ 𝟙 (SingleObj.star Kᵐᵒᵖ)) ≫ (𝟙 W ×ₘ k)
   rw [prod_comp, Category.comp_id, Category.id_comp]
 
 /-- The inflation sends a morphism `(f, 1)` to `Φ f`. -/
 theorem inflation_map_sectL {V W : E} (f : V ⟶ W) :
     a.inflation.map ((Prod.sectL E (SingleObj.star Kᵐᵒᵖ)).map f) = Φ.map f := by
-  change Φ.map f ≫ (a.act W (MulOpposite.unop 1)).unop = _
+  change Φ.map f ≫ (a.act W (MulOpposite.unop 1)).unop.asHom = _
   rw [MulOpposite.unop_one, act_one_unop, Category.comp_id]
 
 /-- The inflation sends the action on `(V, ⋆)` to the action on `Φ V`. -/
 theorem inflation_map_sectAction (V : E) (k : K) :
-    a.inflation.map ((sectAction E K).act V k).unop = (a.act V k).unop := by
-  change Φ.map (𝟙 V) ≫ (a.act V (MulOpposite.unop (MulOpposite.op k))).unop = _
+    a.inflation.map ((sectAction E K).act V k).unop.asHom = (a.act V k).unop.asHom := by
+  change Φ.map (𝟙 V) ≫ (a.act V (MulOpposite.unop (MulOpposite.op k))).unop.asHom = _
   rw [Φ.map_id, Category.id_comp, MulOpposite.unop_op]
 
 end Inflation
@@ -140,8 +141,8 @@ variable {K : Type uK} [Group K] {Φ : E ⥤ T} (a : NaturalAction K Φ)
 /-- For a group `K`, the action of `k` on `Φ V` is an isomorphism. -/
 @[simps]
 def actIso (V : E) (k : K) : Φ.obj V ≅ Φ.obj V where
-  hom := (a.act V k).unop
-  inv := (a.act V k⁻¹).unop
+  hom := (a.act V k).unop.asHom
+  inv := (a.act V k⁻¹).unop.asHom
   hom_inv_id := by rw [← act_mul_unop, mul_inv_cancel, act_one_unop]
   inv_hom_id := by rw [← act_mul_unop, inv_mul_cancel, act_one_unop]
 
@@ -165,7 +166,7 @@ def sectPullbackAdjunction :
             { app := fun V => ModuleCat.ofHom (LinearMap.codRestrict _
                 (φ.app (op (V.unop, SingleObj.star Kᵐᵒᵖ))).hom fun q k => by
                   have h := NatTrans.naturality_apply φ
-                    ((sectAction E K).act V.unop k).unop.op q
+                    ((sectAction E K).act V.unop k).unop.asHom.op q
                   refine h.symm.trans ?_
                   change (φ.app (op (V.unop, SingleObj.star Kᵐᵒᵖ))).hom
                     ((Q.map (𝟙 V.unop).op).hom q) = _
@@ -189,7 +190,7 @@ def sectPullbackAdjunction :
                   congrArg Subtype.val (NatTrans.naturality_apply ψ g.unop.1.op q)
                 refine h1.trans ?_
                 have hg : P.map g = P.map ((sectAction E K).act V.unop.1
-                    (MulOpposite.unop g.unop.2)).unop.op ≫
+                    (MulOpposite.unop g.unop.2)).unop.asHom.op ≫
                     P.map ((Prod.sectL E (SingleObj.star Kᵐᵒᵖ)).map g.unop.1).op := by
                   rw [← P.map_comp, ← op_comp, ← prod_hom_eq_sectL_map_comp]
                   rfl
@@ -218,8 +219,8 @@ theorem invariants_inflation_eq (F : Tᵒᵖ ⥤ ModuleCat.{w} R) (V : E) :
     (actionRepresentation (a.inflation.op ⋙ F) ((sectAction E K).act V)).invariants =
       (actionRepresentation F (a.act V)).invariants := by
   ext s
-  change (∀ k, (F.map (a.inflation.map ((sectAction E K).act V k).unop).op).hom s = s) ↔
-    ∀ k, (F.map (a.act V k).unop.op).hom s = s
+  change (∀ k, (F.map (a.inflation.map ((sectAction E K).act V k).unop.asHom).op).hom s = s) ↔
+    ∀ k, (F.map (a.act V k).unop.asHom.op).hom s = s
   simp only [inflation_map_sectAction]
   exact Iff.rfl
 
@@ -319,7 +320,7 @@ variable (a : NaturalAction G (Ψ ⋙ TwistedOver.ι P ρ))
 
 /-- If the action of `k` has twist `k⁻¹`, the image under the inflation of a morphism
 `(f, k)` has twist `k⁻¹`. -/
-theorem twist_inflation_map (htw : ∀ V k, TwistedOver.Hom.twist (a.act V k).unop = k⁻¹)
+theorem twist_inflation_map (htw : ∀ V k, TwistedOver.Hom.twist (a.act V k).unop.asHom = k⁻¹)
     {V W : E × SingleObj Gᵐᵒᵖ} (f : V ⟶ W) :
     TwistedOver.Hom.twist (a.inflation.map f) = (MulOpposite.unop f.2)⁻¹ := by
   rw [inflation_map, TwistedOver.comp_twist, htw, Functor.comp_map, TwistedOver.ι_map_twist,
@@ -357,7 +358,7 @@ theorem untwistedArrowsFunctor_faithful (U : P.Over ⊤ X) :
     have := congrArg (fun φ => φ.left.unop.1) h
     exact Quiver.Hom.unop_inj this)
 
-variable (htw : ∀ V k, TwistedOver.Hom.twist (a.act V k).unop = k⁻¹)
+variable (htw : ∀ V k, TwistedOver.Hom.twist (a.act V k).unop.asHom = k⁻¹)
 
 include htw in
 theorem untwistedArrowsFunctor_full (U : P.Over ⊤ X) : (a.untwistedArrowsFunctor U).Full where
@@ -390,7 +391,7 @@ theorem untwistedArrowsFunctor_essSurj (U : P.Over ⊤ X) :
   mem_essImage Z := by
     obtain ⟨h₀, hh₀⟩ := TwistedOver.exists_ι_map_of_twist_eq_one (P := P) (ρ := ρ) (U := U)
       (V := Ψ.obj Z.left.unop.1)
-      (Z.hom.unop ≫ (a.act Z.left.unop.1 (TwistedOver.Hom.twist Z.hom.unop)).unop)
+      (Z.hom.unop ≫ (a.act Z.left.unop.1 (TwistedOver.Hom.twist Z.hom.unop)).unop.asHom)
       ((congrArg (· * TwistedOver.Hom.twist Z.hom.unop) (htw _ _)).trans (inv_mul_cancel _))
     exact ⟨CostructuredArrow.mk (Y := op Z.left.unop.1) h₀.op,
       ⟨CostructuredArrow.isoMk

@@ -1,7 +1,5 @@
 # The opposite dynamic open cell over an arbitrary base scheme: proof
 
-Workers 3483 and 312.
-
 This module proves
 `Langlands.GroupScheme.DynamicBaseOppositeCellStatement.{u}` by the theorem
 `Langlands.GroupScheme.dynamicBaseOppositeCell.{u}`. The target and all its
@@ -55,9 +53,10 @@ hypotheses here.
 
 ## Dependencies and scope
 
-The proof imports only current Library modules. In particular, it uses the
-published smooth-field opposite cell, not the separate draft of the field
-theorem without smoothness, and does not depend on publication of
+The proof imports only Library modules. In particular, it uses the
+published smooth-field opposite cell, not the field theorem without
+smoothness (`dynamicFieldOppositeCell`, module
+`Langlands.GroupScheme.Dynamic.FieldOppositeCellProof`), and does not depend on
 `dynamicBaseSmoothConnected`.
 
 The main published inputs are:

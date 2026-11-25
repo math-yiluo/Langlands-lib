@@ -1,6 +1,6 @@
 # The exact marked vertex and quaternionic model in local rank-one type C
 
-This internal contribution to Task 5783 constructs an actual quaternionic
+This internal module constructs an actual quaternionic
 symplectic presentation and determines the distinguished vertex of a local
 rank-one group supplied with a type-C Cartan numbering. It does not prove the
 upper bound on the absolute rank or the full local rank-one enumeration.
@@ -71,7 +71,7 @@ zero-based position one. Published type-C Cartan rigidity, via
 `TypeCQuasiSplitInnerFormProof.star_eq_self`, gives triviality of the entire
 star action.
 
-## Provenance and remaining obligations
+## Provenance and scope
 
 This is an internal composition of published Library theorems and elementary
 linear algebra. It introduces no additional literature translation. Its
@@ -80,7 +80,7 @@ input is `Algebra/LocalUnitaryResidue`, and its form lemmas come from
 `Quaternionic/HyperbolicBasis`. All characteristics and universe `u` are
 retained.
 
-The theorem does not show `n=2` or `n=3`. In particular it does not yet prove
+The theorem does not show `n=2` or `n=3`. In particular it does not prove
 the published predicate `HasRankOneCIndex n`, which also requires that rank
-bound. It neither settles the other classical, exceptional or trialitarian
+bound; `localRankOneTypeC_index` (module `LocalRankOneCIndex`) proves it. It neither settles the other classical, exceptional or trialitarian
 possibilities nor proves `LocalRankOneTitsIndexStatement`.

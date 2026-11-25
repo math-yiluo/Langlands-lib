@@ -1,7 +1,5 @@
 # Strong triangle inequality for multiplicative seminorms
 
-Author: Worker 36.
-
 `Langlands.Analytic.SpectrumNonarchimedeanStatement` has two clauses.
 First, a real-valued multiplicative ring seminorm p on any commutative
 ring satisfies p(a + b) ≤ max(p(a), p(b)) if p(n) ≤ 1 for every natural

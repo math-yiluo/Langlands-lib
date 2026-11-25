@@ -1,7 +1,5 @@
 # Bounded descent along finite faithfully flat affinoid maps
 
-Author: Worker 790.
-
 For a complete ultrametric nontrivially normed field `K` and presented
 affinoid `K`-algebras `A`, `B` and `C`, take a finite Banach map
 `f : A → B` whose underlying ring map is faithfully flat. The

@@ -1,7 +1,5 @@
 # Actual special-head replacement data
 
-Author: Worker 357.
-
 This derived construction chooses actual individual special heads for an
 ordered list of segment occurrences. For a supplied preceding pair and
 its support-certified union/intersection replacement, it constructs an
@@ -113,7 +111,7 @@ The construction supplies neither an equivalence nor a subquotient relation
 between the original and replacement products. It does not prove
 irreducibility of either product, any derivative formula, the linked
 two-factor obstruction, the general-family reduction, or either direction
-of `SegmentHeadProductIrreducibility`. Those remain separate obligations.
+of `SegmentHeadProductIrreducibility`.
 Integral twist freeness and the exact replacement support equations are
 explicit inputs.
 
@@ -138,7 +136,7 @@ multiplicity-one criterion to an actual nonzero map from increasing to
 decreasing induction. Actual cuspidal Jacquet multiplicities,
 opposite/upper block reversal, quotient/subobject detection, induction
 admissibility and the associated-cuspidal-induction map discharge the
-criterion. These are the permitted individual-head constructions. They
+criterion. These are individual-head constructions. They
 do not invoke an ordered-family head existence theorem or a full segment
 Jacquet formula.
 
@@ -152,50 +150,32 @@ proof holes, new axioms, prohibited execution syntax or audited excluded
 declarations. There are no derivative or mirabolic modules in this
 closure. The complete module and frontier inventories follow below.
 
-All six trusted operator files were read in full:
-
-- [bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md)
-  and [0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-  preserve the exclusions while permitting independently proved general
-  foundations and individual-head constructions.
-- [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-  permits a separately proved support-only derivative bound.
-- [ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md)
-  restricts its stronger intermediate to that bound's length-two base.
-- [2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-  and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-  restrict the adjacent-supercuspidal reducibility exception.
-
-This module uses none of the derivative/support/reducibility exceptions.
-It also does not depend on the pending `SegmentHeadProductComparison`
+This module uses no support-only derivative bound or intermediate of
+such a bound, and no adjacent-supercuspidal reducibility result.
+It also does not depend on the `SegmentHeadProductComparison`
 construction.
 
-The following exclusions are retained directly and transitively, including
-renamed conclusions and proof successors:
+The following exclusions hold directly and transitively, including
+renamed conclusions and their proofs:
 
-- Parent uniqueness `30341ae4-65f2-4a0e-9283-763db01a409e`;
-  multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-  ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-  quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-  ordered conversion `8252833d-c269-41a9-824c-5879e531b23b`.
-- Tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`;
-  square-integrable classification `1cb45da2-7007-4351-a694-594fb148b8d1`;
-  square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-  regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`.
+- Generic segment-product uniqueness `GenericSegmentProductUniqueness`;
+  multisegment exhaustion;
+  ordered strong-head existence;
+  quotient coverage;
+  ordered conversion.
+- Tempered uniqueness;
+  square-integrable classification;
+  square-integrable exhaustion;
+  regular exhaustion.
 - Ze80 3.5/9.6 segment derivative formulas; the segment-socle part of
-  `8e5b4563-0365-41c7-b134-70f2a0b36292`; full/head/socle segment Jacquet
-  formulas and exponent-norm formula, including
-  `ed48ae06-964c-4c84-9e62-978f5a953ca7`,
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034`,
-  `55ad1e10-62d8-46b7-a081-909ef0056426` and
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`.
-- Segment-socle product irreducibility, linked structure, gluing,
-  commutation, swaps and socle exhaustion, including
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`; analytic segment
+  `Classification.SegmentSocleDerivativesStatement`; full/head/socle segment Jacquet
+  formulas and exponent-norm formula.
+- Segment-socle product irreducibility `SegmentSocleProductIrreducibility`, linked structure, gluing,
+  commutation, swaps and socle exhaustion; analytic segment
   classification, special square-integrability and two-supercuspidal
   product structure or irreducibility.
-- This host's product criterion in either direction,
-  `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`.
+- The special-head product criterion `SegmentHeadProductIrreducibility`
+  in either direction.
 
 In particular, the closure contains no `SegmentHeadSupportStep`,
 `SegmentHeadJacquetReduction`, `TwoSupercuspidalProductStructureProof`,
@@ -205,12 +185,11 @@ definitions and Prop targets; no unproved statement is used as a theorem.
 
 ## Verification
 
-The exact constructor was checked in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The check reports zero errors and
+The exact constructor was checked. The check reports zero errors and
 warnings, a Lake build, declaration kind `definition`, independent
 `uF`/`uV`, and only `propext`, `Classical.choice` and `Quot.sound`.
-This development check establishes neither independent semantic acceptance
-nor the full host criterion.
+This check does not establish the full criterion
+`SegmentHeadProductIrreducibility`.
 
 ## Complete recursive project inventory
 

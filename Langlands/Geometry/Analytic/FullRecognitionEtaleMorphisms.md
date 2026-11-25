@@ -1,7 +1,5 @@
 # Flat, unramified and étale quasifinite morphisms through full-recognition pair systems
 
-Author: Worker 36.
-
 This module defines Berkovich's flat, unramified and étale morphisms, at a
 point and globally, for strong maps of local-domain enlargements. The
 definitions use the finite morphisms of `FullRecognitionFiniteMorphisms` and

@@ -2,22 +2,13 @@
 
 Module `Langlands.Representation.Aubert.General.RationalSupportCategoryZeroDetectionProof`.
 
-Authors:
-
-* Worker 4193: the two conditional theorems
-  `rationalSupportCategoryZeroDetection_of_irreducibleJacquetDetection` and
-  `rationalSupportCategoryZeroDetection_of_cuspidalFactors` and their
-  description below, applying the generic reduction of Worker 379
-  (`SupportCategoryReductions`). They are reused unchanged from the shared
-  draft of Task 4193 (`db02aabd-9901-4fae-9583-ec28c66aec3c`, revision 1).
-* Worker 29, with coauthor Worker 3640 (Task 3640): the statement import and
-  the final theorem `rationalSupportCategoryZeroDetectionReduction`. Worker 29
-  rechecked the module against Library
-  `c0debd6f4dd02fdd68d70811cf610906b945a962` together with the statement
-  module
-  [`RationalDetectionFiniteLengthReductionStatements`](RationalDetectionFiniteLengthReductionStatements.md).
-* Worker 261 (Task 6582): checked the conditional assembly against the
-  published targets and prepared this proof for independent review.
+The two conditional theorems
+`rationalSupportCategoryZeroDetection_of_irreducibleJacquetDetection` and
+`rationalSupportCategoryZeroDetection_of_cuspidalFactors` apply the generic
+reduction of `SupportCategoryReductions`. The module was checked against the
+statement module
+[`RationalDetectionFiniteLengthReductionStatements`](RationalDetectionFiniteLengthReductionStatements.md),
+and the conditional assembly against the published targets.
 
 **Status.** Every theorem in this module is conditional. The module proves
 the published reduction proposition
@@ -25,13 +16,10 @@ the published reduction proposition
 that `RationalSupportCategoryZeroDetectionStatement.{u, v}` follows from
 `RationalCuspidalJacquetFactorExtractionStatement.{u, v}`. It does not prove
 the zero-detection target. The unconditional theorem would apply the first
-theorem to a published proof of
-`RationalSupportCategoryIrreducibleJacquetDetectionStatement.{u, v}` (proof
-task `b7887025-20b3-4c11-9fad-0e70bdf59da6`), or the second to a published
-proof of `RationalCuspidalJacquetFactorExtractionStatement.{u, v}` (proof
-task `e6add7c5-44c5-45ea-afe9-7f48c98fb927`). Task 4193 owns that theorem;
-the input proofs retain their separate owners. The statement program remains
-Task 3640 (`46df6a68-5db4-4428-8044-05151d6ce1f6`).
+theorem to a proof of
+`RationalSupportCategoryIrreducibleJacquetDetectionStatement.{u, v}`, or the
+second to a proof of `RationalCuspidalJacquetFactorExtractionStatement.{u, v}`.
+The Library proves neither input.
 
 ## Statements proved
 
@@ -94,7 +82,7 @@ follows.
 
 The second theorem composes the first with the published conditional theorem
 `rationalSupportCategoryIrreducibleJacquetDetection_of_cuspidalFactors`
-(Worker 658, `RationalIrreducibleJacquetFactorDetection`).
+(`RationalIrreducibleJacquetFactorDetection`).
 
 The final theorem is the term
 `fun hextract => rationalSupportCategoryZeroDetection_of_cuspidalFactors hextract`.
@@ -126,8 +114,8 @@ This contradiction finishes the proof.
 ## Dependencies
 
 The compact-limit proof composes `BruhatTits.dynamicUnipotentCompactOpenContainment`
-with `BruhatTits.dynamicUnipotent_isLimitOfCompactSubgroups`, through Worker
-480's adapter `RationalUnipotentRegularity`. It also uses the existence part
+with `BruhatTits.dynamicUnipotent_isLimitOfCompactSubgroups`, through the
+adapter `RationalUnipotentRegularity`. It also uses the existence part
 of `hStandard` to identify the standard unipotent subgroup with a dynamic one.
 
 None of the steps listed above applies Langlands classification, character

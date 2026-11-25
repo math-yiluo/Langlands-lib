@@ -1,7 +1,5 @@
 # Conditional finite subcovers in the analytic étale site
 
-Author: Worker 284.
-
 This is an internal derived construction from the published analytic étale site,
 the twisted topology, and Mathlib's compact finite-subcover theorem. It does not
 assert the unresolved geometric hypotheses.

@@ -1,6 +1,6 @@
 # Subfields of the complex numbers are fixed fields
 
-Author: Worker 57. This file states a proposition. It does not prove it.
+This file states a proposition. It does not prove it.
 
 `ComplexFixedFieldStatement` says that every intermediate field `L` of
 `ℂ / ℚ` is the fixed field of its own fixing group. In Lean the fixing group
@@ -25,8 +25,8 @@ Kottwitz (1992), printed page 655, defines the reflex field as "the fixed
 field of the stabilizer in Aut(ℂ/ℚ) of the function i ↦ n(i)". Harris (1997),
 printed page 89, states that the reflex field `E(GG, X_{n-1})` "is just
 `t₁(K)`". Here `t₁` is the place of the CM type above `σ₁`. A companion module,
-`Langlands.Shimura.Unitary.Reflex`, was submitted with the positivity and
-reflex-field definitions. Its theorem
+`Langlands.Shimura.Unitary.Reflex`, holds the reflex-field definitions (the
+positivity definitions are in `Langlands.Shimura.Unitary.Positivity`). Its theorem
 `HarrisSignatureCharts.reflexField_eq_distinguishedImage` concludes
 `C.reflexField = C.distinguishedImage`, where `C.distinguishedImage` is the
 image `Φ τ₁ (K)` of the CM field. It needs two hypotheses. The first is that

@@ -1,7 +1,5 @@
 # The three direct-rank induced tail Laurent-span inclusions
 
-Author: Worker 53.
-
 `Langlands.RankinSelberg.inducedTailSpan.{uF,uV₁,uV₂,uW}` proves the existing
 closed proposition
 [`InducedTailSpanStatement`](InducedTailSpanStatement.md).
@@ -29,19 +27,16 @@ measure, arbitrary Whittaker-type block and test representation, actual
 rectangular product measure, and independently compatible quotient measure
 quantified by its three clauses. The proof has no premises. In particular,
 it requires no certified L-polynomial or additional representation hypothesis.
-The statement pair and its imported pairs are unchanged by this contribution.
+The statement pair and its imported pairs are unchanged.
 
 This is an internal composition of the three imported Library proofs.
-Workers 646 and 647 authored the equal and smaller comparisons, with
-contributions recorded in their paired explanations; Workers 318 and 829
-authored the intermediate construction and assembly. Their explanations
-document the derived direct-rank argument motivated by JPSS, *Rankin-Selberg
+Their paired explanations document the derived direct-rank argument motivated by JPSS, *Rankin-Selberg
 Convolutions* (1983), §§9.1–9.3, printed pp.452–457, and the registered
 original and source checks. This wrapper makes no new source translation
 claim.
 
 The aggregate covers the three direct-rank cases below the full induced
 rank. It does not assert a certified polynomial's existence or a
-polynomial-divisibility conclusion; the parent all-rank theorem additionally
-requires the separately owned factor-existence, opposite-bound and
-high-ramification inputs.
+polynomial-divisibility conclusion; the all-rank theorem `inducedTailLFactor`
+(`InducedTailLFactorProof`) additionally requires the separate
+factor-existence, opposite-bound and high-ramification inputs.

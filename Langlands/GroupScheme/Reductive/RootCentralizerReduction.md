@@ -1,7 +1,8 @@
 # Closed generation by a normal subgroup and its full centralizer
 
-This internal reduction supplies the closed-generation step in Worker 1566's
-proof of generation by normal almost-simple subgroups. It assumes the two
+This internal reduction supplies the closed-generation step of a proof of
+generation by normal almost-simple subgroups; `Reductive.MinimalNormalFactor`
+imports it. It assumes the two
 proposition targets `SemisimpleRootGenerationStatement` and
 `SemisimpleNormalRootDichotomyStatement`. Neither proposition is proved here.
 The field is algebraically closed with arbitrary characteristic and universe.

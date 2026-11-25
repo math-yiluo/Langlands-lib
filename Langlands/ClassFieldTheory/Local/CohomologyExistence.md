@@ -32,14 +32,14 @@ not choose a canonical invariant map, distinguish it from its negative,
 or claim that independently chosen relative and absolute maps agree.
 The restriction/corestriction laws, genuine finite-to-absolute comparison,
 arithmetic normalization, fundamental-class laws, and Tate cup-product
-statements are further required families of the assigned task.
+statements are separate statement families.
 
 In particular, this target must not be treated as a supplied arithmetic
-invariant or as completion of the local class-formation assignment.
-The later normalization must select Serre's arithmetic-Frobenius
-convention. Its fundamental class has invariant `+1/[L:F]`; the inverse
-of its degree `-2` cup-product is arithmetic reciprocity. The host's
-geometric reciprocity uses the inverse convention. No choice-based
+invariant. The separately stated normalization selects Serre's
+arithmetic-Frobenius convention. Its fundamental class has invariant
+`+1/[L:F]`; the inverse of its degree `-2` cup-product is arithmetic
+reciprocity. The Library's geometric reciprocity uses the inverse
+convention. No choice-based
 constructor is introduced here.
 
 ## Original source and exact correspondence
@@ -68,16 +68,10 @@ cohomology in this target.
 
 The cohomology definitions come from the paired
 `Langlands/ClassFieldTheory/Local/Cohomology` module and the pinned
-Mathlib complexes. The local-field domain is the accepted
-`Langlands.LocalField.Definitions` artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1, declaration
-`Langlands.PadicField`. Its current published Lean hash is
-`8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`;
-the published Markdown hash is
-`6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf`.
+Mathlib complexes. The local-field domain is the declaration
+`Langlands.PadicField` of `Langlands.LocalField.Definitions`.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-with Lean 4.34.0 and Mathlib revision
+The development checks used Lean 4.34.0 and Mathlib revision
 `5ed2965256430c3649e86755f9576b54eca72435`.
-This file contains no proof of the proposition. Its later proof must be
-bound to the independently accepted exact target.
+This file contains no proof of the proposition; the theorem
+`cohomologyExistence` in `CohomologyExistenceProof` proves it.

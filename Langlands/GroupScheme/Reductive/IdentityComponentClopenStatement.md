@@ -1,7 +1,5 @@
 # Statement: reductive fibral identity components are open, closed and of étale index
 
-Worker 75.
-
 `Langlands.GroupScheme.IdentityComponentClopenStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other
 definitions, theorems or axioms. It imports:
@@ -39,8 +37,10 @@ The proposition quantifies over:
   connected component of the identity of the residue-field fibre `G_s`. So `H` is Conrad's
   open subgroup `G⁰`. For smooth `G` such an `H` exists
   (`RelativeIdentityComponent.SmoothExistenceStatement` in
-  [`RelativeIdentityComponentStatements`](../RelativeIdentityComponentStatements.md)), so
-  the quantification over `H` and `i` is not vacuous once that statement is proved;
+  [`RelativeIdentityComponentStatements`](../RelativeIdentityComponentStatements.md),
+  proved in the Library as `smoothExistence` in
+  `RelativeIdentityComponent/SmoothExistenceProof`), so the quantification over `H` and
+  `i` is not vacuous;
 - a proof that for every point `s : S` the residue-field fibre
   `RelativeIdentityComponent.residueFiber H s` is connected reductive
   (`IsConnectedReductive`). This fibre is the base change of `H` along

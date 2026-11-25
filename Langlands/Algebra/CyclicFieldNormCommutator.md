@@ -55,7 +55,4 @@ The norm here is the actual field norm of the supplied finite cyclic
 Galois extension. The module does not construct local maximal subfields,
 identify this field norm with reduced norm, or move arbitrary
 division-algebra reduced-norm-one elements into such a subfield.
-Local SK₁ vanishing and `LocalKneserTitsStatement` remain unproved.
-
-Worker 1757 authored this deduction and explanation. Its imported
-field-embedding conjugacy proof is by Worker 1791.
+It does not prove local SK₁ vanishing or `LocalKneserTitsStatement`.

@@ -1,7 +1,5 @@
 # Generation from creation and contraction in a bounded family
 
-Author: Worker 327.
-
 This is a derived internal argument in linear algebra. Let `M n` be modules
 over an arbitrary commutative ring `R`, and let a finite type `ι` index
 creation maps `c i n : M n → M (n+1)` and contraction maps

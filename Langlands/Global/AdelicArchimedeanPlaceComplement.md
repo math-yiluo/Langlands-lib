@@ -4,4 +4,4 @@
 
 At any chosen real or complex place \(v\), an adelic matrix \(x\) is \(y\iota_v(g)\), where \(g\) is its matrix at \(v\) and \(y\) is obtained by setting that matrix to the identity. The other coordinates of \(\iota_v(g)\) are the identity. Thus \(y\) commutes with the entire image of the place group. Both statements include the finite factor in \(y\).
 
-This is an internal coordinate calculation for Task 7041. It lets the family of local section slices through commuting base points test every adelic point.
+This is an internal coordinate calculation for the proof of `CuspidalSupportEveryPlaceStatement`, that every automorphic representation of `GL_n` is a constituent of a cuspidally induced representation at every place. It lets the family of local section slices through commuting base points test every adelic point.

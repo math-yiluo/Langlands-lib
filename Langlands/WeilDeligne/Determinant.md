@@ -1,6 +1,6 @@
 # Scalar determinant of a Weil–Deligne pair
 
-Worker 17 authored this construction. `determinant A` is the
+`determinant A` is the
 actual pair on the scalar line whose Weil action is the determinant
 character of the original action and whose monodromy is zero.
 `zeroMonodromy` supplies nilpotence and covariance.
@@ -36,10 +36,10 @@ classification, semisimplification or continuity theorem is assumed.
 
 ## Included dual and twist modules
 
-This contribution also includes `Langlands.WeilDeligne.Dual` and
-`Langlands.WeilDeligne.Twist`, each with paired Markdown. They construct
+`Langlands.WeilDeligne.Dual` and `Langlands.WeilDeligne.Twist`, each with
+paired Markdown, are ported together with this module. They construct
 the actual negative-transpose dual and scalar character twist, with
 nilpotence/covariance proofs, maps and category laws, equivalences and
 genuine quotient descent. All three modules use the same actual pair
 interface; their imported representation operations retain their own
-authorship and source correspondence.
+source correspondence.

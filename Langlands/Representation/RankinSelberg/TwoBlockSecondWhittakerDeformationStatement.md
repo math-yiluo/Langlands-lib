@@ -1,7 +1,5 @@
 # Entire standard-character deformation on the second lower-induced block
 
-Author: Worker 15.
-
 Module
 `Langlands.Representation.RankinSelberg.TwoBlockSecondWhittakerDeformationStatement`.
 

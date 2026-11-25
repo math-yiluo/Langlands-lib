@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.ArchimedeanNormPowerApproximationQuadratic
+import Langlands.ClassFieldTheory.Global.ArchimedeanNormPowerApproximationQuadratic
 import Langlands.GroupScheme.Rational.CentralNormOneLocalCorrection
 import Langlands.GroupScheme.Rational.CentralMuArchimedeanCorrection
 
@@ -13,7 +13,7 @@ open scoped TensorProduct CategoryTheory.MonObj
 
 namespace Langlands.GroupScheme.IsCentralIsogeny
 
-open GaloisPoint Langlands.Algebra Langlands.ClassField.Global.TensorUnitShapiro
+open GaloisPoint Langlands.Algebra Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false

@@ -1,6 +1,6 @@
 # Coefficients of a multiplicative Laurent matrix
 
-Worker 37. This internal construction supports the split-rank upper bound for
+This internal construction supports the split-rank upper bound for
 `U(1,1)`. For a commutative ring `E` and additive commutative monoid `M`, it
 defines algebra maps from `E[M]` to `E[M × M]` by the exponent maps `m ↦ (m,m)`,
 `m ↦ (m,0)`, and `m ↦ (0,m)`. The coefficient of the diagonal image at `(a,b)`
@@ -16,7 +16,8 @@ of coefficients at `m`. Taking the coefficient at `(a,b)` entry by entry gives
 orthogonal idempotents. This is an elementary derived calculation; no field,
 invertibility, characteristic, or nonzero-ring hypothesis is used. The matrix
 identity is a hypothesis here; deriving it from the actual torus homomorphism
-remains part of the consuming upper-bound proof.
+is part of the consuming upper-bound proof (`universalMatrix_coeff_mul` in
+`QuasiSplitUnitaryRankBound`).
 
 The lemmas `neg_eq_zero_iff` and `neg_ne_zero_iff` apply to a generic matrix
 family `C` indexed by an additive group. If a zero-preserving map `c` and an
@@ -25,4 +26,5 @@ then `C(-m)=0` if and only if `C(m)=0`; hence nonzero support is stable under
 negation. One implication is entrywise zero preservation, and the reverse
 applies the same implication at `-m`. No injectivity assumption on `c` or `s`
 is required, because the hypothesis holds at every exponent. Derivation of
-this symmetry from the unitary equation belongs to the consuming proof.
+this symmetry from the unitary equation belongs to the consuming proof
+(`universalMatrix_coeff_neg` in `QuasiSplitUnitaryRankBound`).

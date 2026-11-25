@@ -260,9 +260,9 @@ theorem exists_regular [IsAlgClosed k] [LocallyOfFiniteType G.X.hom]
   have hfin : (roots j).Finite := (hT.finite_weightSupport j).subset fun _ h => h.2
   have : AddMonoid.FG (characterLattice T) :=
     AddGroup.fg_iff_addMonoid_fg.mp (Module.Finite.iff_addGroup_fg.mp hT.finite_characterLattice)
-  have : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice T) := IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice T) :=
-    hT.character_toRat_injective.isAddTorsionFree Langlands.LinearAlgebra.RationalSpan.toRat
+  have : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice T) := HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice T) :=
+    hT.character_toRat_injective.hasUniqueDiv Langlands.LinearAlgebra.RationalSpan.toRat
   have : IsDomain (AddMonoidAlgebra k (characterLattice T)) := NoZeroDivisors.to_isDomain _
   let P : AddMonoidAlgebra k (characterLattice T) :=
     ∏ χ ∈ hfin.toFinset, (AddMonoidAlgebra.single χ 1 - 1)

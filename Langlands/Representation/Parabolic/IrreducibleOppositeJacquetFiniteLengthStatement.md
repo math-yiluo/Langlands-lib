@@ -1,8 +1,8 @@
 # Finite length of opposite Jacquet modules of irreducible admissible input
 
-Author: Worker 203. Worker 363 specified the target for the discrete-series
-opposite Jacquet quotient criterion. The statement form follows the
-published opposite finite-generation statement.
+The target serves the discrete-series opposite Jacquet quotient
+criterion. The statement form follows the published opposite
+finite-generation statement.
 
 The closed proposition
 `Langlands.Parabolic.IrreducibleOppositeJacquetFiniteLengthStatement.{uF,uV}`
@@ -10,7 +10,9 @@ says the following. Take an irreducible admissible complex representation
 of a positive-rank p-adic general linear group. Its actual normalized
 opposite Jacquet representation has finite length as a module over the
 complex group algebra of the actual product block Levi. This pair only
-defines the proposition. Its proof is a separate obligation.
+defines the proposition. Its proof is
+`Langlands.Parabolic.irreducibleOppositeJacquetFiniteLength`, in the separate
+module `Langlands.Representation.Parabolic.IrreducibleOppositeJacquetFiniteLengthProof`.
 
 ## Exact statement
 
@@ -126,7 +128,7 @@ Two registered originals were read for this pair.
      representation of `G` has finite length.
 
 No errata file for either source exists in the project notes, the
-current Library notes, or the literature collection.
+Library notes, or the literature collection.
 
 ## Derivation of the specialization
 

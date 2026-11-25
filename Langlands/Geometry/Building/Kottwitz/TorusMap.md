@@ -31,7 +31,9 @@ constructed relative Galois norm of a point maps to the inertia class of its
 split-torus valuation. The valuation is `normalizedIntermediateValuation F L`,
 selected by equivalence to the actual restricted spectral valuation and
 surjectivity onto the full integer value group. Its unconditional existence
-and uniqueness obligation is `NormalizedIntermediateValuationStatement`.
+and uniqueness statement is `NormalizedIntermediateValuationStatement`, which the
+Library proves as `normalizedIntermediateValuation_existsUnique` (module
+`NormalizedValuationProof`).
 The split valuation is the actual character-pairing construction
 `splitValuation`; no map on torus points is supplied as input.
 
@@ -57,5 +59,7 @@ inclusion. `Multiplicative` changes notation for additive targets only.
 
 These definitions contain no prescribed kernel or boundedness hypothesis.
 The existence, uniqueness, independence, surjectivity and equivariance
-assertions are proposition definitions awaiting proofs; this unit does not
-claim those proofs or the reductive Kottwitz construction.
+assertions are proposition definitions; this module does not
+claim those proofs or the reductive Kottwitz construction. The Library proves
+them as `torusKottwitzExistence` (module `TorusMapProof`) and
+`torusKottwitzDescent` (module `TorusMapDescentProof`).

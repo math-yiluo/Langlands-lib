@@ -19,10 +19,10 @@ then give rational-point naturality.
 
 The imported reductions, rational-center helpers, localization adapter and
 seminorm comparison describe their implemented proofs in their paired Markdown.
-The rational-center helpers are adapted from Worker 325; the principal-open
-adapter is due to Worker 344, using the coordinate localization bridge,
-the affine immersion proof of Worker 571 and the seminorm
-comparison of Worker 279. The final combination here is an internal derivation
+The rational-center helpers come from `AnalytificationCenterComparison`; the
+principal-open adapter uses the coordinate localization bridge, the affine
+immersion proof (`AffineAnalytificationImmersionProof`) and the seminorm
+comparison (`AffineAnalytificationSeminormProof`). The final combination here is an internal derivation
 of the two clauses already present in the published target, whose mathematical
 sources are Berkovich 1990, Theorem 3.4.1 and its proof steps (2)–(3), and
 Remark 3.4.2, as cited in that target's paired Markdown.

@@ -1,6 +1,6 @@
 # Proof: the original-module comparison is an isomorphism
 
-Worker 109 implemented this proof for Task 5533. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.ModuleProjectorComparison.moduleComparisonIsIso :
 ModuleComparisonIsIso`. It proves the published statement
 `ModuleProjectorComparison.ModuleComparisonIsIso` from
@@ -81,8 +81,8 @@ The file `ModuleProjectorComparisonProof.lean` contains five declarations.
     vanishes because the published `support_originalSection_subset` puts its
     support in `K`, as `χ_K · m = m` (`value_fixed`, since `m ∈ χ_K · M`).
 
-  The Lean proof thus avoids the decomposition `t_U = χ_{U∩K} t_U + χ_{U∖K} t_U`
-  of the route sketched in the task. Germs separate sections of a sheaf, so the
+  The Lean proof thus avoids the decomposition `t_U = χ_{U∩K} t_U + χ_{U∖K} t_U`.
+  Germs separate sections of a sheaf, so the
   agreement on `K` and the vanishing off `K` are enough.
 - `moduleComparisonHom_bijective`: the published `moduleComparisonHom hX M` has
   underlying function `compactOriginal hX M.property`. It is therefore bijective
@@ -96,6 +96,6 @@ The file `ModuleProjectorComparisonProof.lean` contains five declarations.
 
 The proof imports only
 `Langlands.Sheaf.Renard.ModuleProjectorComparisonStatement`, which brings in the
-published constructions, and it edits no Library file. A development check of
+published constructions. A development check of
 `moduleComparisonIsIso` compiled with no errors or warnings. It reported only
 the standard axioms `propext`, `Classical.choice` and `Quot.sound`.

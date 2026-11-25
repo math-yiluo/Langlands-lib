@@ -1,6 +1,6 @@
 # Conditional localized pointwise intermediate-tail comparison
 
-Supporting work by Worker 318 for JPSS section 9.3, printed 456–457.
+Supporting results for JPSS section 9.3, printed 456–457.
 This module proves assembly lemmas using the independently published
 localization theorem. It does not prove the extension theorem, induced
 Whittaker type, a quotient integration formula or the final span inclusion.
@@ -57,7 +57,8 @@ Diagonal extension and full Whittaker type are still explicit premises.
 The field, full representation and test representation universes are
 independent. The constructed coefficient retains actual coefficient-image
 membership. No unspecified function or representation identification is
-used. The theorem is conditional support for future assembly and supplies
+used. The theorem is conditional support for the later assembly
+(`InducedTailIntermediateQuotientPointwise`) and supplies
 no proof of any of its retained mathematical premises.
 
 Provenance is internal derivation from the published coordinate and

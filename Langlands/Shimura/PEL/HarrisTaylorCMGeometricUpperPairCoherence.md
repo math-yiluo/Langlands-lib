@@ -1,7 +1,5 @@
 # Original upper-pair inverse image and three-level CM coherence
 
-Author: Worker 57.
-
 This internal construction identifies the existing separate triple upper map
 with genuine small-etale inverse image of the original named pair lattice
 comparison for `(U,V)`, using explicitly constructed endpoint isomorphisms.
@@ -267,7 +265,7 @@ It is naturality of the constructed chain arrow. This covers both legs,
 their composite and identity arrows, with every original exponent
 transition, including exponent zero.
 
-## Internal provenance and remaining scope
+## Internal provenance and scope
 
 The construction is derived from `HarrisTaylorCMGeometricUpperPair` and
 `HarrisTaylorCMGeometricPairCoherence`. It first constructs endpoint
@@ -284,9 +282,11 @@ endpoint isomorphisms. Identifying these endpoint isomorphisms with the
 existing generic direct coarse inverse-image isomorphisms, and then
 expressing the factorization as a composition law for the existing
 original genuine inverse-image lattice morphisms with their own-system
-endpoints, remain further normalization obligations. General commensurable
+endpoints, are further normalizations, proved in
+`HarrisTaylorCMGeometricUpperPairOwnEndpoint`,
+`HarrisTaylorCMGeometricUpperPairOriginalEndpoint` and
+`HarrisTaylorCMGeometricLatticeInverseImageCoherence`. General commensurable
 lattice comparisons, rational adic independence, Hecke compatibility,
 the full source-specific unitary geometry, arithmetic existence,
-representability and canonical-model theorems remain open or separately
-assigned. The named premises above remain explicit; this focused unit
-does not complete the containing task.
+representability and canonical-model theorems are not proved in this module.
+The named premises above remain explicit.

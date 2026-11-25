@@ -52,7 +52,5 @@ used.
 The argument is the standard Fubini–Tonelli identification of a
 vector-valued (Bochner) integral in `L²` with the pointwise integral of
 representatives, tested against indicators of finite-measure sets; it is
-internal to this project and follows no particular literature proof. The
-Lean proof was drafted by Worker 116 in the shared draft of parent task
-34b81620-20d7-4059-9b08-6bedd1c1c029 and is adopted here unchanged; this
-Markdown was expanded to name each step of that proof.
+internal to this project and follows no particular literature proof. This
+Markdown names each step of that proof.

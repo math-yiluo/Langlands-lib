@@ -1,0 +1,151 @@
+/-
+Copyright (c) 2026 Claude. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Claude
+-/
+module
+
+public import WeilConjectures.SixFunctors.ProEtale.Adic.LatticeEvaluation
+public import WeilConjectures.SixFunctors.ProEtale.Adic.LisseLattice
+public import Mathlib.RingTheory.Flat.TorsionFree
+
+/-!
+# Lisse sheaves from lattices: generation and evaluation on affine objects
+
+The two hypotheses of `AlgebraicGeometry.ProEtale.IsAdicLisseSheaf.of_lattice` only need to be
+checked on affine objects:
+
+- local generation of `p^* F` by the image of `ψ_U : C(U, M) → (p^* F)(U)` follows from
+  generation on affine `U`, every object being covered by its affine opens
+  (`AlgebraicGeometry.ProEtale.AdicSheaf.exists_sum_sectionAct_of_isAffine`);
+- linear independence of the lattice sections follows from pointwise evaluations on
+  affine `U` (`AlgebraicGeometry.ProEtale.AdicSheaf.sectionsLinearMap_injective_of_eval`).
+
+This gives `AlgebraicGeometry.ProEtale.IsAdicLisseSheaf.of_lattice_eval`, and its special case
+`AlgebraicGeometry.ProEtale.IsAdicLisseSheaf.of_lattice_tensor` for evaluations with values in
+`ℚ̄_ℓ ⊗_{𝒪_E} M`, `Φ(ψ(m))(x) = 1 ⊗ m(x)`: there the linear independence is automatic.
+-/
+
+@[expose] public section
+
+universe u
+
+open CategoryTheory Limits Opposite TensorProduct
+
+attribute [local instance] Abelian.hasFiniteBiproducts
+
+namespace AlgebraicGeometry.ProEtale.AdicSheaf
+
+open PadicAlgCl
+
+variable {l : ℕ} [Fact l.Prime] {X : Scheme.{u}} (F : AdicSheaf l X)
+  {M : Type} [AddCommGroup M] [TopologicalSpace M] [IsTopologicalAddGroup M]
+  (ψ : ∀ U : X.ProEt, C(U.left, M) →+ F.X.obj.obj (op U))
+  (hψ : ∀ ⦃U V : X.ProEt⦄ (f : V ⟶ U) (m : C(U.left, M)),
+    ψ V (m.comp f.left.base.hom) = F.X.obj.map f.op (ψ U m))
+
+include hψ in
+/-- **Local generation from generation on affine objects**: if every section of `F` over an
+affine `U` is a finite sum `∑ aⱼ • ψ(mⱼ)`, then every section over any `U` is locally of
+this form, `U` being covered by its affine opens. -/
+lemma exists_sum_sectionAct_of_isAffine
+    (h : ∀ (U : X.ProEt) [IsAffine U.left] (x : F.X.obj.obj (op U)), ∃ (n : ℕ)
+      (a : Fin n → (adicConstantSheaf l X).obj.obj (op U)) (m : Fin n → C(U.left, M)),
+        x = ∑ j, sectionAct F (a j) (ψ U (m j)))
+    (U : X.ProEt) (x : F.X.obj.obj (op U)) : ∃ S ∈ Scheme.ProEt.topology X U,
+      ∀ ⦃V : X.ProEt⦄ (f : V ⟶ U), S f → ∃ (n : ℕ)
+        (a : Fin n → (adicConstantSheaf l X).obj.obj (op V)) (m : Fin n → C(V.left, M)),
+          F.X.obj.map f.op x = ∑ j, sectionAct F (a j) (ψ V (m j)) := by
+  let Z (W : U.left.affineOpens) :=
+    overOpens (P := @WeaklyEtale) (fun _ _ ↦ inferInstance) U W.1
+  let g (W : U.left.affineOpens) : Z W ⟶ U :=
+    overOpensι (P := @WeaklyEtale) (fun _ _ ↦ inferInstance) U W.1
+  refine ⟨Sieve.ofArrows Z g, Scheme.ProEt.mem_topology_of_isOpenImmersion U _ Z g
+    (fun W ↦ inferInstanceAs (IsOpenImmersion W.1.ι)) (fun y ↦ ?_)
+    (fun W ↦ Sieve.ofArrows_mk _ _ W), fun V f hf ↦ ?_⟩
+  · obtain ⟨W, hW, hyW, -⟩ := (TopologicalSpace.Opens.isBasis_iff_nbhd.1
+      U.left.isBasis_affineOpens) (show y ∈ (⊤ : U.left.Opens) from trivial)
+    exact ⟨⟨W, hW⟩, ⟨y, hyW⟩, rfl⟩
+  obtain ⟨W, k, rfl⟩ := (Sieve.mem_ofArrows_iff _ _ _).1 hf
+  have : IsAffine (Z W).left := W.2
+  obtain ⟨n, a, m, hx⟩ := h (Z W) (F.X.obj.map (g W).op x)
+  refine ⟨n, fun j ↦ (adicConstantSheaf l X).obj.map k.op (a j),
+    fun j ↦ (m j).comp k.left.base.hom, ?_⟩
+  rw [op_comp, Functor.map_comp, ConcreteCategory.comp_apply, hx, map_sum]
+  exact Finset.sum_congr rfl fun j _ ↦ by rw [map_sectionAct, hψ]
+
+end AlgebraicGeometry.ProEtale.AdicSheaf
+
+namespace AlgebraicGeometry.ProEtale
+
+open AdicSheaf PadicAlgCl
+
+variable {l : ℕ} [Fact l.Prime] {S Y : Scheme.{u}} (p : Y ⟶ S) [WeaklyEtale p] [Surjective p]
+  [QuasiCompact p] {F : AdicSheaf l S}
+  {R : Type} [CommRing R] [IsDomain R] [IsPrincipalIdealRing R] [TopologicalSpace R]
+  [IsTopologicalRing R] (ι : R →+* PadicAlgCl l) (hι : Continuous ι)
+  (hιinj : Function.Injective ι) {E : IntermediateField ℚ_[l] (PadicAlgCl l)}
+  [FiniteDimensional ℚ_[l] E] (hιE : ∀ x, ι x ∈ E)
+  {M : Type} [AddCommGroup M] [Module R M] [Module.Finite R M] [TopologicalSpace M]
+  [IsTopologicalAddGroup M] [ContinuousSMul R M] [IsModuleTopology R M]
+  (ψ : ∀ U : Y.ProEt, C(U.left, M) →+ ((p)^*ᵃ[l].obj F).X.obj.obj (op U))
+  (hψ : ∀ ⦃U V : Y.ProEt⦄ (f : V ⟶ U) (m : C(U.left, M)),
+    ψ V (m.comp f.left.base.hom) = ((p)^*ᵃ[l].obj F).X.obj.map f.op (ψ U m))
+  (hψι : ∀ (U : Y.ProEt) (g : C(U.left, R)) (m : C(U.left, M)),
+    ψ U (g • m) = sectionAct _ (ULift.up (ringValuedFunction ι hι hιE g)) (ψ U m))
+  (hgen : ∀ (U : Y.ProEt) [IsAffine U.left] (x : ((p)^*ᵃ[l].obj F).X.obj.obj (op U)),
+    ∃ (n : ℕ) (a : Fin n → (adicConstantSheaf l Y).obj.obj (op U)) (m : Fin n → C(U.left, M)),
+      x = ∑ j, sectionAct _ (a j) (ψ U (m j)))
+
+include hψ hψι hιinj hgen in
+/-- **A sheaf generated by a lattice, with pointwise evaluations, is lisse**: let `p : Y ⟶ S` be
+weakly étale, surjective and quasi-compact, `M` a finitely generated module over a principal
+ideal domain `R ⊆ E` (typically `𝒪_E`) and `ψ_U : C(U, M) → (p^* F)(U)` natural semilinear maps
+whose image generates `(p^* F)(U)` over `ℚ̄_ℓ,Y(U)` for affine `U`. Suppose that for affine `U`
+and `x ∈ U` there are additive maps `Φ_{U,x} : (p^* F)(U) → V_{U,x}` to `ℚ̄_ℓ`-vector spaces
+with `Φ(a • s) = a(x) • Φ(s)`, mapping `ψ(b₁), …, ψ(bᵣ)` to linearly independent vectors
+whenever `b` is a basis of `M` modulo torsion. Then `F` is lisse. -/
+theorem IsAdicLisseSheaf.of_lattice_eval {V : ∀ U : Y.ProEt, U.left → Type*}
+    [∀ U x, AddCommGroup (V U x)] [∀ U x, Module (PadicAlgCl l) (V U x)]
+    (Φ : ∀ (U : Y.ProEt) [IsAffine U.left] (x : U.left),
+      ((p)^*ᵃ[l].obj F).X.obj.obj (op U) →+ V U x)
+    (hΦact : ∀ (U : Y.ProEt) [IsAffine U.left] (x : U.left)
+      (a : (adicConstantSheaf l Y).obj.obj (op U)) (t : ((p)^*ᵃ[l].obj F).X.obj.obj (op U)),
+      a.down.1 ∈ finiteIntermediateFieldValued l U.left →
+        Φ U x (sectionAct _ a t) = a.down.1 x • Φ U x t)
+    (hΦ : ∀ b : Fin (Module.finrank R (M ⧸ Submodule.torsion R M)) → M,
+      LinearIndependent R ((Submodule.torsion R M).mkQ ∘ b) →
+        ∀ (U : Y.ProEt) [IsAffine U.left] (x : U.left), LinearIndependent (PadicAlgCl l)
+          fun i ↦ Φ U x (ψ U (ContinuousMap.const _ (b i)))) :
+    IsAdicLisseSheaf F := by
+  refine IsAdicLisseSheaf.of_lattice p ι hι hιinj hιE ψ hψ hψι (fun b hb U ↦ ?_)
+    (exists_sum_sectionAct_of_isAffine _ ψ hψ hgen)
+  refine sectionsLinearMap_injective_of_eval _ _ Φ hΦact (fun U _ x ↦ ?_) U
+  have hb' (k : Fin _) : restrictTop _ (ψ (proEtTop Y) (ContinuousMap.const _ (b k))) (op U) =
+      ψ U (ContinuousMap.const _ (b k)) :=
+    (hψ (toProEtTop U) (ContinuousMap.const _ (b k))).symm
+  simp only [hb']
+  exact hΦ b hb U x
+
+include hψ hψι hιinj hgen in
+/-- **A sheaf generated by a lattice, with pointwise evaluations in `ℚ̄_ℓ ⊗_R M`, is lisse**:
+the special case of `AlgebraicGeometry.ProEtale.IsAdicLisseSheaf.of_lattice_eval` with
+evaluations `Φ_{U,x} : (p^* F)(U) → ℚ̄_ℓ ⊗_R M` (for an embedding `R ⊆ ℚ̄_ℓ`) with
+`Φ_x(ψ(m)) = 1 ⊗ m(x)`; linear independence then holds since `ℚ̄_ℓ` is flat over `R`. -/
+theorem IsAdicLisseSheaf.of_lattice_tensor [Algebra R (PadicAlgCl l)]
+    [FaithfulSMul R (PadicAlgCl l)]
+    (Φ : ∀ (U : Y.ProEt) [IsAffine U.left] (_ : U.left),
+      ((p)^*ᵃ[l].obj F).X.obj.obj (op U) →+ PadicAlgCl l ⊗[R] M)
+    (hΦψ : ∀ (U : Y.ProEt) [IsAffine U.left] (m : C(U.left, M)) (x : U.left),
+      Φ U x (ψ U m) = 1 ⊗ₜ m x)
+    (hΦact : ∀ (U : Y.ProEt) [IsAffine U.left] (x : U.left)
+      (a : (adicConstantSheaf l Y).obj.obj (op U)) (t : ((p)^*ᵃ[l].obj F).X.obj.obj (op U)),
+      a.down.1 ∈ finiteIntermediateFieldValued l U.left →
+        Φ U x (sectionAct _ a t) = a.down.1 x • Φ U x t) :
+    IsAdicLisseSheaf F := by
+  refine IsAdicLisseSheaf.of_lattice_eval p ι hι hιinj hιE ψ hψ hψι hgen
+    (V := fun _ _ ↦ PadicAlgCl l ⊗[R] M) Φ hΦact (fun b hb U _ x ↦ ?_)
+  simp only [hΦψ, ContinuousMap.const_apply]
+  exact LinearIndependent.one_tmul_of_mkQ _ hb
+
+end AlgebraicGeometry.ProEtale

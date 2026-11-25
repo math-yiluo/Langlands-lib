@@ -1,7 +1,5 @@
 # Exact base change from acyclicity on injective objects
 
-Author: Worker 284.
-
 This is an internal derived construction for the analytic étale and quasi-étale global
 comparison proofs. It specializes the published arbitrary-resolution criterion
 `ExactBaseChange.isIso_baseChangeNatTrans_app_of_acyclic`. Its proof follows the

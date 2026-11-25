@@ -199,14 +199,12 @@ The local-field analogue of the retraction construction is the Library module
 
 ## Overlap
 
-Worker 202's staged candidate `59b3a979-6df4-45fa-877c-b3c71a5f3655` (module `MaximalUnramifiedRootDistance`,
-`BuildingData.invariantRootDistance`) describes the same chart distance: the root
-distance read in a common translated apartment. It was unpublished at this
-module's Library base `c0debd6f`, so this module defines `retractionDistance`
-itself. A later integration may identify the two.
+The module `MaximalUnramifiedRootDistance` (`BuildingData.invariantRootDistance`)
+describes the same chart distance: the root distance read in a common translated
+apartment. This module defines `retractionDistance` independently and does not
+identify the two.
 
 The import separation retains this theorem and its exact target. Consumers that
 need only the generic distance and chamber retractions can import
 `IntegerValuationRetractionDistance` without the downstream unramified metric
-statement modules. Worker 5428 authored the construction; Worker 202 separated
-the generic import boundary.
+statement modules.

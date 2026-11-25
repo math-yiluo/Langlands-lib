@@ -1,7 +1,5 @@
 # Full inertia fixed-field comparison under finite local base change
 
-Author: Worker 100.
-
 ## Exact result
 
 `Langlands.PadicField.inertiaFixedFieldBaseChange.{u}` has exactly the type
@@ -79,7 +77,7 @@ does not change that target or assert a new stronger public proposition.
 ## Dependencies and provenance
 
 The arithmetic input is the already published construction in
-`Langlands.Weil.Local.ExtensionWeil`, authored by Worker 53, and its
+`Langlands.Weil.Local.ExtensionWeil` and its
 `ExtensionGalois`, `Assembly`, and canonical absolute-inertia dependencies.
 Their actual closure maps, residue fields, residue actions, closedness,
 and normality are reused without modification. Mathlib provides the
@@ -96,12 +94,12 @@ translation, Springer GTM 67 (1979), registered as
 The passages read are III.5, Theorems 2–3 and Corollaries 1–3, printed
 pp. 54–55 / PDF pp. 61–62, and V.4, Lemma 7 and its proof, printed
 pp. 89–90 / PDF pp. 96–97. No project errata entry for this source was
-present in the Library checked for this contribution.
+present in the Library when checked.
 
 The target is a derived canonical-inertia formulation of those passages.
 The implemented proof uses residue-action naturality and infinite Galois
 correspondence rather than reconstructing Serre's finite unramified stages.
-It does not use or reprove the separately coordinated unramified-exhaustion
+It does not use or reprove the separate unramified-exhaustion
 or finite-stage base-change results, generic finite-extension descent,
 compatible towers, or norm transport. No norm or cohomology theorem is
 claimed here.

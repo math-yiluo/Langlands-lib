@@ -1,7 +1,6 @@
 # Non-identity shuffle factors occur in every nonzero subrepresentation
 
-Helper module for the juxtaposed case of Zelevinsky 1980, Proposition 4.6
-(task 0c90f7e4-78fa-43fd-8736-238bb3e8617d). It contains no statement of its own
+Helper module for the juxtaposed case of Zelevinsky 1980, Proposition 4.6. It contains no statement of its own
 from the literature. It formalizes the step of Zelevinsky's argument in which
 Frobenius reciprocity shows that each non-identity shuffle tensor `τ_S` is a
 quotient of `J(X)` for every nonzero subrepresentation `X` of

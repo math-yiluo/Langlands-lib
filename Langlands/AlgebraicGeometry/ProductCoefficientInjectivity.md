@@ -1,7 +1,5 @@
 # Coefficients along a linearly independent family on a product
 
-Author: Worker 1412.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelStatement`
 (see [AffineFiniteTypeCocycleModelProof](../GroupScheme/AutomorphicAction/AffineFiniteTypeCocycleModelProof.md)).

@@ -208,7 +208,8 @@ theorem corAlgHom_bijective
     rcases IsSimpleRing.injective_ringHom_or_subsingleton_codomain (R := corAlg K L N A)
       (S := corAlg K L N' A) (corAlgHom A ι e he hN).toRingHom with h | h
     · exact h
-    · exact absurd h (not_subsingleton _)
+    · have : Nontrivial (corAlg K L N' A) := IsSimpleRing.instNontrivial
+      exact absurd h (not_subsingleton _)
   refine ⟨hinj, ?_⟩
   have hdim : finrank K (corAlg K L N A) = finrank K (corAlg K L N' A) := by
     rw [finrank_corAlg_eq_pow, finrank_corAlg_eq_pow, Nat.card_congr e]

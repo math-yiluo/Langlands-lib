@@ -1,9 +1,9 @@
 # The affine simply connected Weil restriction theorem
 
-Worker 47 and Worker 634, with Worker 632's relative almost-simple normal-idempotent theorem,
-finite-étale chart-algebra descent and finite-family products; Worker 5254's Weil-pair descent,
-abelian-image triviality and projection injectivity; and Worker 96's almost-simple field-ascent
-argument.
+The proof uses the relative almost-simple normal-idempotent theorem, finite-étale
+chart-algebra descent and finite-family products; the Weil-pair descent, abelian-image
+triviality and projection injectivity; and the almost-simple field-ascent argument of the
+imported modules.
 
 `affineSimplyConnectedWeilRestriction` proves
 `Langlands.GroupScheme.AffineSimplyConnectedWeilRestrictionStatement.{u}` in every universe.

@@ -1,7 +1,5 @@
 # Trace duality for the filtration of a lattice chain
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Statement
 
 `Langlands.BushnellKutzko.LatticeChain.mem_endFiltration_one_sub_of_forall`. Let `F` be a

@@ -1,6 +1,6 @@
 # From scheme charts of the base to the algebraic-space estimate
 
-Author: Worker 75. A helper module of the proof of
+A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`. Provenance:
 internal.
 

@@ -1,7 +1,5 @@
 # Laws of the local invariant family
 
-Author: Worker 272.
-
 Lean module: `Langlands.ClassFieldTheory.Local.LocalInvariantFamilyLawsStatement`.
 
 This module states five propositions about one concrete invariant family,
@@ -79,11 +77,11 @@ and the cyclic class.
 
 ## Intended use
 
-The target `LocalAbsoluteCorestrictionCompatibleClassFormationStatement` (task
-`f8ddc947-2d65-4e22-a2a4-e2f4844c8e78`) asks for one invariant family with all
+The statement `LocalAbsoluteCorestrictionCompatibleClassFormationStatement`
+asks for one invariant family with all
 local class-formation laws. The intended witness is
 `localInvariantFamily hEx p`, where `hEx` is a proof of
-`UnramifiedH2Exhaustion` (task `3263cf33`). These five propositions are the
+`UnramifiedH2Exhaustion`. These five propositions are the
 family-specific laws. The remaining clauses follow generically. The relative
 conjugacy and corestriction laws and the absolute corestriction law come from
 `InvariantTransferConsequencesStatement`. The cup-product laws come from

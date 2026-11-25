@@ -1,11 +1,9 @@
 # The actual standard Levi subgroups as group schemes: `Ξ`, `σ`, `P₀` and `δ₀`
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviScheme`,
 namespace `Langlands.HarishChandraSchwartz`.
 
-The published modules of this program define Waldspurger's `Ξ^M`, temperedness and the Schwartz
+The Library's actual-point modules define Waldspurger's `Ξ^M`, temperedness and the Schwartz
 space `C(M)` for an actual standard Levi subgroup `M_J(F)` as a *subgroup* of `G(F)`
 (`rationalLeviXi`, `IsRationalLeviTempered`, the target of `rationalConstantTerm`). The statements
 for a group (Lemma II.1.5, Corollary III.1.2, Theorem VIII.1.2, ...) are stated for the rational
@@ -31,7 +29,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers below are the
-printed ones; the PDF page is the printed page minus 234. The author checked the quotations
+printed ones; the PDF page is the printed page minus 234. The quotations were checked
 against the text of PDF pages 6 and 18.
 
 - I.1, printed p. 240: "le groupe `M ∩ K` vérifie relativement à `M` les mêmes propriétés que `K`

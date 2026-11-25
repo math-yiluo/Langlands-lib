@@ -1,7 +1,5 @@
 # Changes of actual affinoid presentation
 
-Author: Worker 36.
-
 The separate BoundedEquivalence/Definitions module constructs actual
 bounded algebra equivalences and their spectrum and norm-topology
 homeomorphisms. This module retains the presentation-specific helpers

@@ -1,19 +1,17 @@
 # Scalar extension of an algebra to a completion, decomposed over the places above
 
-Author: Worker 19.
-
 This internal algebraic construction decomposes the scalar extension of a
 possibly noncommutative algebra to the completion of a number field at a
 finite place into the product over the places of a larger number field above
 it. It is the step from Harris's undecomposed split-prime identification to
 the product over places in Harris (1999), (4.2), and Harris (1998), (A.1);
-the Harris specialization is `HarrisSplitPrimeFactors`, submitted together
-with this module.
+the Harris specialization is `HarrisSplitPrimeFactors` (ported with this
+file).
 
 ## Inputs
 
-The published `Langlands.Global.AdelicFunctoriality` modules (owned by the
-global arithmetic branch and reused unchanged) provide, for number fields
+The published `Langlands.Global.AdelicFunctoriality` modules (reused
+unchanged) provide, for number fields
 `K` and `L` with `Algebra K L` and a finite place `p` of `K`:
 
 - `FinitePlacesAbove L p`, the finite places `q` of `L` whose prime ideal lies

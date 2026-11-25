@@ -1,7 +1,5 @@
 # Bounded charts of actual projective point spaces
 
-Author: Worker 105.
-
 This internal prerequisite uses the Library's actual polynomial projective
 scheme, its degree-zero homogeneous localization chart rings and its actual
 relative scheme-point carrier. It is motivated by the projective case in

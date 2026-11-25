@@ -1,7 +1,5 @@
 # A finite-stage form with prescribed Frobenius star action
 
-Author: Worker 187.
-
 This internal construction starts with a split pinning `p` of an affine
 group `G₀` over a finite field `k : Type u` and a finite-order based
 automorphism `θ`. It produces an affine group `G` locally of finite

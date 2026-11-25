@@ -1,6 +1,6 @@
 # Apartment axioms on actual valuation-building data
 
-This internal derived unit compares two supplied `ValuationBuildingData` for
+This module compares two supplied `ValuationBuildingData` for
 the same actual group over the same nonarchimedean local field. A supplied
 isomorphism between their embedded maximal split tori must commute with
 their embeddings in that group.

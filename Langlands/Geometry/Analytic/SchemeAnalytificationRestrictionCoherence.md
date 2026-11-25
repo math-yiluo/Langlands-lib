@@ -1,6 +1,6 @@
 # Coherence of analytification restrictions
 
-This internal unit derives the identity and composition laws for the published
+This internal module derives the identity and composition laws for the published
 affine-open analytic restriction maps from their definitions. It introduces no
 source-specific mathematical claim. The field and scheme range over the same
 arbitrary universe, with the complete, ultrametric, nontrivially normed field and
@@ -17,5 +17,5 @@ reduces both assertions to the algebraic laws. The injectivity theorem in
 
 `OpenGluing.RestrictionCoherence` packages precisely those two pointwise analytic
 laws as a proposition. `OpenGluing.restrictionCoherence` supplies its proof. The
-unit is independent of the open embedding and center range arguments, so those
+module is independent of the open embedding and center range arguments, so those
 arguments can both import these laws.

@@ -1,7 +1,5 @@
 # Associated standard groups and ambient opposite groups: proof
 
-Worker 1068.
-
 `Langlands.GroupScheme.standardAssociatedOppositeTransport.{u}` proves exactly
 the unchanged `StandardAssociatedOppositeTransportStatement.{u}`. Let `k : Type u`
 be a field of any characteristic, `G` a connected reductive group scheme over
@@ -70,7 +68,6 @@ extension, and descends the opposite root along splitting-field restriction.
 
 The target statement is internal; its Markdown explains its role in the
 associated-Levi contragredient comparison. This module makes no new
-original-literature claim. Worker 1068 wrote the reduction module and this
-assembly. The negation proof is by Worker 1310 and its credited coauthors. Both
+original-literature claim. The reduction module and the negation proof
 are imported from the Library by Lean name, and no statement pair is changed.
 The proof uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.

@@ -1,9 +1,7 @@
 # Conjugation by the exponential of a divided-power family (`RootLieConj`)
 
-Author: Worker 239.
-
 Let `D : ℕ → Matrix (Fin n) (Fin n) ℤ` be a divided-power family (`IsDividedPowerFamily D` from
-`RootExp`, by Worker 1398), and let `divExp D g = Σ_{k ≤ n} g^k D_k` be its truncated
+`RootExp`), and let `divExp D g = Σ_{k ≤ n} g^k D_k` be its truncated
 exponential over a commutative ring. This module expands conjugation by `divExp D g` and
 deduces that, over `ℚ`, such conjugation preserves every subspace that is stable under the
 commutator with `D 1`.
@@ -29,7 +27,7 @@ commutator with `D 1`.
 ## Provenance
 
 The expansion follows the proof of `LieRootData.conj_eq_sum` in the module
-`Langlands.GroupScheme.SplitExistence.LieRootData` (Worker 1398), here for an arbitrary
+`Langlands.GroupScheme.SplitExistence.LieRootData`, here for an arbitrary
 divided-power family. Mathematically, it is the identity `Ad(exp(s e)) = exp(s ad e)` for a
 nilpotent matrix `e`, written with divided powers (Humphreys, *Introduction to Lie Algebras and
 Representation Theory*, §2.3; Steinberg, *Lectures on Chevalley groups*, §2).

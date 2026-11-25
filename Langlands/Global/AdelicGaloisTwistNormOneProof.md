@@ -50,5 +50,5 @@ last equality because `p` has norm one.
 This is internal infrastructure for the Library's Galois-descent route to Springer's
 fundamental-set theorem (Springer 1994, §3.6). The underlying fact is standard: Galois
 conjugation of adelic points commutes with taking absolute values of characters, because
-`|σ̃(x)| = |x|` on the ideles. The proof follows the route Worker 5268 proposed in
+`|σ̃(x)| = |x|` on the ideles. The proof follows the route outlined in
 `AdelicGaloisTwistNormOne.md`.

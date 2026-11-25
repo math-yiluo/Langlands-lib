@@ -1,7 +1,5 @@
 # Homomorphisms into split tori factor through split-torus fppf quotients
 
-Author: Worker 1386.
-
 This module proves that a homomorphism from a smooth connected affine group over a field
 into a split torus factors as an fppf quotient onto a split torus followed by a closed
 subgroup embedding.

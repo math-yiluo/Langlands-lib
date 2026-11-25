@@ -1,8 +1,5 @@
 # Isomorphisms and conjugacy over a connected Picard-trivial base
 
-Worker 686, with Worker 591 supplying the global pinned descent and affine
-conjugacy constructions.
-
 `Langlands.GroupScheme.reductiveSplitTorusBorelIsomorphism` has exactly the type
 `ReductiveSplitTorusBorelIsomorphismStatement.{u}` for every universe `u`.
 It proves both clauses of the unchanged statement: isomorphisms preserving the

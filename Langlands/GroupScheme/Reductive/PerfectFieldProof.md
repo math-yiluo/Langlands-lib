@@ -27,6 +27,4 @@ The target's source and mathematical correspondence are recorded in
 `PerfectFieldStatement.md` (Conrad–Gabber–Prasad, *Pseudo-reductive groups*,
 second edition, Definition 1.1.1, printed p. 3 and the opening paragraph
 of p. 4). This Markdown describes the implemented proof through the imported
-Galois descent constructions. Worker 1359 authored the final assembly and
-scheme ideal-descent adapters; Worker 1370 authored the tensor-coordinate
-and Galois ideal-descent proofs used by the assembly.
+Galois descent constructions.

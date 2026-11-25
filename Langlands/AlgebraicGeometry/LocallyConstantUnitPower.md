@@ -5,9 +5,11 @@ Module `Langlands.AlgebraicGeometry.LocallyConstantUnitPower`, namespace
 
 ## Purpose and provenance
 
-This is an internal helper for Task 7697, the canonical comparison between the
+This is an internal helper for the canonical comparison between the
 Cartier character presheaf of a diagonalizable group `D_S(M)` and the constant
-presheaf with coefficients `M`. There, a locally constant function
+presheaf with coefficients `M` (module
+`Langlands.GroupScheme.Cartier.DiagonalizableConstant`, through
+`Langlands.GroupScheme.Cartier.DiagonalizableGlue`). There, a locally constant function
 `f : V → M` on an `S`-scheme `V` must be turned into a character. That needs one
 unit of `Γ(V, ⊤)` that equals `t (ofAdd m)` on each clopen fibre `f ⁻¹' {m}`,
 where `t : Multiplicative M →* Γ(V, ⊤)ˣ` is a group homomorphism. This module

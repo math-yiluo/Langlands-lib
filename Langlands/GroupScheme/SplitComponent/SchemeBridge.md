@@ -1,7 +1,5 @@
 # From natural homomorphisms to homomorphisms of group schemes
 
-Author: Worker 1178.
-
 This internal module transfers the functor-level results to the published
 group schemes `Corepresented.groupScheme F e` over `Spec R`.
 

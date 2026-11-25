@@ -1,7 +1,5 @@
 # Transport of actual Picard atlases from etale to fppf classes
 
-Author: Worker 509.
-
 This is internal derived support for the actual Picard-sheaf
 representability argument. It uses the published canonical comparison in
 `Picard.EtaleFppfSheafComparison` and the accompanying generic atlas

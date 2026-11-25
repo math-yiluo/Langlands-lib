@@ -1,7 +1,5 @@
 # Equivalences and finiteness from relative invariant images
 
-Author: Worker 21.
-
 This module packages consequences of the existing predicate
 `InvariantFamily.RelativeImages`. Fix a prime `p`, an arbitrary family
 `I : InvariantFamily.{u,v} p`, and a proof `hI : I.RelativeImages`.

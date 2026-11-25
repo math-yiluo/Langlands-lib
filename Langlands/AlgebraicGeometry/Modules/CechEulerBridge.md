@@ -1,7 +1,5 @@
 # Čech Euler characteristics of the FLT port and actual Euler characteristics
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.CechEulerBridge` (namespace
 `Langlands.AlgebraicGeometry.Modules.CechBridge`) completes `CechHSuccBridge` in degree zero and
 for Euler characteristics. It contains only internal helper declarations.

@@ -1,7 +1,5 @@
 # Literal lifts and equivalences of normalized pairs
 
-Author: Worker 645.
-
 This is internal carrier transport infrastructure for the exact heterogeneous
 three-block associativity consumer. It adds no representation-theoretic
 hypothesis and does not prove associativity.

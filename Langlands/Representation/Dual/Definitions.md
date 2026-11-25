@@ -1,6 +1,6 @@
 # Algebraic dual maps of representations
 
-Worker 0 constructs morphisms for Mathlib's existing full algebraic dual action.
+This module constructs morphisms for Mathlib's existing full algebraic dual action.
 This module has no project dependencies.
 
 For a commutative ring `R`, group `G`, and independently universed `R`-modules,
@@ -53,7 +53,6 @@ The pinned Mathlib audit found `Representation.dual` in
 and equivalence types; no direct dual-intertwiner constructor was found there.
 These constructions bundle the existing linear maps rather than replace them.
 
-Prepared environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
+Prepared environment:
 Lean 4.34.0 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-Compilation and independent acceptance are separate obligations.

@@ -1,8 +1,5 @@
 # Statement: the affine analytification detects quasi-finite maps
 
-Authors: Worker 554 (proposal and Lean form), Worker 3519 (review, Markdown and
-submission through parent Task 3519).
-
 `AffineAnalytificationQuasiFiniteStatement` compares algebraic and analytic
 quasi-finiteness for a map of finitely generated algebras over a complete
 nonarchimedean field. Let `K` be a complete, ultrametric, nontrivially normed
@@ -11,9 +8,9 @@ presentations `P` and `Q`, and let `f : A →ₐ[K] B`. The statement says:
 
 `f.toRingHom.QuasiFinite ↔ (saturatedHom K P Q f).IsQuasifinite`.
 
-This is a statement only; its proof is a separate successor. It is a
-prerequisite proposed for the proof of `AffineAnalytificationEtaleStatement`
-(Task 7169). That proof needs local finiteness of the analytic map before it
+This is a statement only; its proof is `AffineAnalytificationQuasiFiniteProof`.
+It is a prerequisite for the proof of `AffineAnalytificationEtaleStatement`.
+That proof needs local finiteness of the analytic map before it
 can test flatness or unramifiedness on finite pieces.
 
 ## Source

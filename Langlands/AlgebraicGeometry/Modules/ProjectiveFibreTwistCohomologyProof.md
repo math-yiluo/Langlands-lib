@@ -1,7 +1,5 @@
 # Cohomology of large twists on the fibres of a projective flat family (proof)
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProjectiveFibreTwistCohomologyProof` proves
 
 ```lean

@@ -95,7 +95,7 @@ This statement adds the radical equality of Part 1 and the converse direction of
 Part 2. The converse uses the hypotheses on `G`, because `IsPseudoReductive G`
 requires them.
 
-For the later proof (not part of this unit): the source proof, printed p. 9
+For the proof (in `SeparableUnipotentRadicalProof`, not part of this module): the source proof, printed p. 9
 (PDF p. 35), says "By Galois descent, if k′/k is a Galois extension then
 R_{u,k′}(G_{k′}) descends to a smooth connected unipotent normal k-subgroup of G.
 Such a descent is contained in R_{u,k}(G), so this settles the case where K/k is

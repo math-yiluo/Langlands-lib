@@ -1,7 +1,6 @@
 # A test-independent Mellin convergence threshold: proof
 
-Worker 235 authored this proof and its explanation. The target statement pair
-was authored by Worker 468 and is imported unchanged.
+The target statement pair is imported unchanged.
 
 `Langlands.RankinSelberg.uniformFiniteFunctionMellinConvergence.{uF}` proves
 exactly `Langlands.RankinSelberg.UniformFiniteFunctionMellinConvergenceStatement.{uF}`

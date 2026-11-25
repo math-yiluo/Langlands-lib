@@ -15,7 +15,6 @@ open scoped NumberField TensorProduct AdelicFunctoriality.FiniteExtension
 
 universe u v
 
--- The two rational-prime helpers were contributed by Worker 60.
 private theorem rationalPrime_asIdeal (p : ℕ) [Fact p.Prime] :
     ((Rat.HeightOneSpectrum.primesEquiv (R := 𝓞 ℚ)).symm
       ⟨p, Fact.out⟩).asIdeal = Ideal.span {(p : 𝓞 ℚ)} := by

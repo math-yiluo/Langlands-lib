@@ -1,7 +1,5 @@
 # Conditional reduction for spherical tempered standard modules
 
-Author: Worker 1761.
-
 This module proves a conditional reduction to the two obligations in
 `SphericalStandardModulePrerequisites`. It does not prove either obligation
 or the unconditional `SphericalTemperedStandardModuleStatement`.

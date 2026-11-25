@@ -11,7 +11,7 @@ set_option autoImplicit false
 namespace Langlands.Automorphic.Unramified
 
 open Langlands.Global Langlands.Automorphic.CuspidalOperatorRealization
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- The existence part of Arthur–Clozel III.4.2(e), with an actual unitary
 cuspidal realization of the class whose weak base change is the full orbit. -/

@@ -68,7 +68,7 @@ composition, open-immersion, and pullback laws are established here.
 The two convenience instances record affineness of an affine relative open
 and local finite type of any relative open of a locally finite-type scheme.
 
-This unit does not yet prove that the glued scheme represents the full Weil
+This module does not prove that the glued scheme represents the full Weil
 restriction of `Y`. In particular, a morphism from a base-changed test scheme
 to `Y` must locally over the test base factor through a single affine open;
 an arbitrary affine cover alone does not prove that assertion. The finite-fiber

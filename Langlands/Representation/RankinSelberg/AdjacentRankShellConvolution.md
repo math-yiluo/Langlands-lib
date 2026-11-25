@@ -5,9 +5,9 @@ Piatetski-Shapiro and Shalika, *Rankin–Selberg Convolutions* (1983), Section 6
 printed pages 433–435, formulas (5)–(10). The registered original is
 `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 486 visually read printed pages 427–439 and reread pages 433–435 for
+Printed pages 427–439 were read visually, and pages 433–435 reread, for
 this implementation. No JPSS-specific registered erratum was found in the
-available literature index or project notes during the preceding source audit.
+available literature index or project notes.
 
 ## Actual functions and measures
 
@@ -122,8 +122,7 @@ or certify either parent adjacent-rank gamma or L statement. The coefficients
 `f_i` are explicitly coefficients of the actual Whittaker-image representation;
 no unchecked identification with the original arbitrary representation is made.
 The initial model substitution, global series and factor assembly remain
-separate obligations. The imported joint-shell and quotient-shear helpers retain
-their separate independent review and publication requirements.
+separate obligations.
 
 Local instances in this module have explicit module-specific names so that its
 canonical field structures can be imported together with the model-star modules.

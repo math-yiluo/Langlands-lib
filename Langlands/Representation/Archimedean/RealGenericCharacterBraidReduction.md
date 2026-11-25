@@ -1,6 +1,6 @@
 # Conditional polynomial-to-generic braid comparison
 
-This derived internal unit proves the actual integral generic character braid
+This derived internal module proves the actual integral generic character braid
 when either parameter is one or two. It also proves a reduction from a full
 normalized compact polynomial braid to the actual generic braid throughout
 the two positive real half planes. The full polynomial identity remains an
@@ -65,7 +65,9 @@ small integral cases and this conditional full generic conclusion.
 
 The provenance is the explicit reciprocal multiplier, actual Frobenius inverse
 laws, finite compact realization, proved small compact braid, and rational
-grid extension. Worker 769 supplied the compact polynomial braid used for
-the small cases. The full polynomial premise, degeneration to canonical tails
-at poles, compatibility with the chosen interlaced equivalence and the
-filtration kernel-image containments remain open.
+grid extension. The compact polynomial braid used for the small cases is
+`RealDifferentialCharacterBraid.normalized_braid_small`. The full polynomial
+premise is proved in `RealCompactCharacterPolynomialBraid.polynomial_braid`;
+degeneration to canonical tails at poles, compatibility with the chosen
+interlaced equivalence and the filtration kernel-image containments are not
+proved in this module.

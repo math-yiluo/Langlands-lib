@@ -1,7 +1,5 @@
 # Maximal tori of a normal subgroup variety: proof
 
-Author: Worker 752.
-
 `Langlands.GroupScheme.normalSubgroupMaximalTorus` proves the published
 `Langlands.GroupScheme.NormalSubgroupMaximalTorusStatement.{u}`
 ([`Torus.NormalSubgroupMaximalStatement`](NormalSubgroupMaximalStatement.md)) for every

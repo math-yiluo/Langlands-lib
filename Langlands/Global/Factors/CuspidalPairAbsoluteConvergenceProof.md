@@ -1,13 +1,12 @@
 # Jacquet–Shalika I, Theorem (5.3), from Lemma (5.2)
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceProof`.
-It proves target 1 of Task 6822. It imports the statement module
+It proves `CuspidalPairAbsoluteConvergenceReductionStatement`. It imports the
+statement module
 `Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceStatement`, the two
-helper modules of this draft (`Langlands.Analysis.LandauDirichlet`,
+helper modules ported with this file (`Langlands.Analysis.LandauDirichlet`,
 `Langlands.Representation.Unramified.UnitarySpectrumConjugation`), and published
-Library modules named below. It changes no published file.
+Library modules named below.
 
 ## Main theorem
 
@@ -180,14 +179,14 @@ Fix the data above, with `σ = Re s > 1`.
   `hardy-riesz-1915-dirichlet-series`, for Landau's theorem (see
   `Langlands/Analysis/LandauDirichlet.md`).
 
-The proof follows Jacquet–Shalika's route and the outline of the task contract.
+The proof follows Jacquet–Shalika's route.
 It differs in three points.
 
 - **Local bounds.** Corollary (2.5) is used in the non-strict form
   `|α| ≤ q^(1/2)`. That is what the published `norm_unramifiedClass_le_sqrt`
   gives for all ranks, and it suffices. The local logarithm is used only for
-  `Re s > 1`, where `|α β q^(-s)| ≤ q^(1 - Re s) < 1`. The contract's
-  alternative, the weak bound `CuspidalSatakeBound.norm_le_of_hasUnitaryCentralCharacter`,
+  `Re s > 1`, where `|α β q^(-s)| ≤ q^(1 - Re s) < 1`. The alternative, the
+  weak bound `CuspidalSatakeBound.norm_le_of_hasUnitaryCentralCharacter`,
   is not used.
 - **The finite set.** Lemma (5.2), as published, needs a finite set containing
   the exceptional set of the dual presentation. The published
@@ -201,13 +200,17 @@ It differs in three points.
 
 ## What is not asserted
 
-- `CuspidalPairAbsoluteConvergenceStatement` itself (target 2 of Task 6822): it
-  follows from the reduction once `CuspidalSelfPairContinuationStatement`
-  (Lemma (5.2), Task 6821) is proved. This module does not prove Lemma (5.2).
+- `CuspidalPairAbsoluteConvergenceStatement` itself: it follows from the
+  reduction and `CuspidalSelfPairContinuationStatement` (Lemma (5.2)), proved as
+  `cuspidalSelfPairContinuation` (module
+  `Langlands.Global.Factors.CuspidalSelfPairContinuationProof`); the Library
+  does this in `Langlands.Global.cuspidalPairAbsoluteConvergence` (module
+  `Langlands.Global.Factors.CuspidalPairAbsoluteConvergence`). This module does
+  not prove Lemma (5.2).
 - The strict bound `|α| < q^(1/2)`, or any statement at the archimedean places.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (lake
-build) compiles the module with no errors or warnings. The main theorem depends
+In the Lean environment in which it was written, `lake build` compiles the
+module with no errors or warnings. The main theorem depends
 only on the axioms `propext`, `Classical.choice` and `Quot.sound`.

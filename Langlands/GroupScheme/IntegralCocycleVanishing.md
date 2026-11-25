@@ -1,7 +1,5 @@
 # Cocycle vanishing over complete rings with finite residue field
 
-Authors: Worker 5015.
-
 This module states and proves two vanishing theorems for the Library's scheme-valued
 `Cocycle`, at arbitrary universe `u`:
 
@@ -73,7 +71,6 @@ of finite type over `k`, so it is a group variety in Milne's sense. The proof do
 Galois cocycles; it goes through torsors and the published `finiteFieldTorsorPointStatement`.
 
 The intended consumer is the Bruhat–Tits route to
-`LocalSimplyConnectedUnramifiedCocycleVanishingStatement` in task
-`306b2ea2-25ed-490a-9131-292ce36e6c84`. There an Iwahori-valued cocycle must be shown to be a
+`LocalSimplyConnectedUnramifiedCocycleVanishingStatement`. There an Iwahori-valued cocycle must be shown to be a
 coboundary. This module proves no part of that statement or of
 `LocalSimplyConnectedCocycleVanishingStatement`.

@@ -1,7 +1,7 @@
 # The multiplicativity input of the corank-one reduction
 
 Module `Langlands.Representation.Conductor.SphericalCorankOneMultiplicativityBridge`
-(part of the proof of `SphericalCorankOneFunctionalEquationStatement`, Task 5680).
+(part of the proof of `SphericalCorankOneFunctionalEquationStatement`).
 
 ## Inputs
 

@@ -1,7 +1,7 @@
 # Character decomposition for arbitrary diagonalizable groups
 
-Worker 537. Internal prerequisite for the representation theorem for groups of
-multiplicative type, Task 7149.
+Internal prerequisite for the representation theorem for groups of
+multiplicative type.
 
 The coefficient construction is defined for every commutative base ring `R`,
 every abelian group `Λ`, and every finite matrix representation of the actual
@@ -42,5 +42,5 @@ Theorem 12.12.
 The main results have no smoothness, reducedness, finite-generation, or
 characteristic hypotheses. The isomorphism form requires affineness of the
 supplied group because the Library's `characterSpace` uses its coordinate
-algebra. This unit establishes diagonalizable character decomposition; it does
+algebra. This module establishes diagonalizable character decomposition; it does
 not establish the Galois descent or orbit classification in Theorem 12.30.

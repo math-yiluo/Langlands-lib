@@ -1,7 +1,5 @@
 # Sharp square-integrable convergence and holomorphy at zero rows
 
-Worker 331, with PDF pagination correction by Worker 192.
-
 This module defines the closed proposition
 `Langlands.RankinSelberg.SquareIntegrableZeroRowAnalyticStatement.{uF,uV,uW}`.
 It states absolute convergence and holomorphy of the actual unequal-rank
@@ -130,7 +128,8 @@ The latter is finite by the preceding equal-rank argument for positive
 real part. The conclusion is convergence on the open half-plane.
 The bridge from the Library's matrix-coefficient definition of
 square-integrability to the source's Whittaker restriction estimates is
-part of the future proof obligation, not an extra hypothesis here.
+part of the proof (`squareIntegrableZeroRowAnalytic`, module
+`SquareIntegrableZeroRowAnalyticProof`), not an extra hypothesis here.
 
 ## Provenance of holomorphy
 
@@ -155,4 +154,5 @@ half-plane, holomorphy is expressed by `DifferentiableOn ℂ`.
 This rationale explains the derived formulation; it is not an implemented
 Lean proof. Establishing the restriction estimate, the source's convergence
 argument, the coefficient-model and supplied-measure adapters, and the
-holomorphic-parameter integration step remains separate proof work.
+holomorphic-parameter integration step is separate proof work, done in
+`SquareIntegrableZeroRowAnalyticProof` and the modules it imports.

@@ -1,7 +1,5 @@
 # Flat finitely presented models from pointwise flat stages
 
-Authors: Worker 1103, Worker 866.
-
 This helper module carries out the global step of Stacks Project, Algebra,
 Lemma 10.168.1, part (1) (Tag 02JO), in the case `M = S`. Let `B` be a
 finitely presented `A`-algebra with a presentation `P`. Assume that every prime
@@ -14,7 +12,7 @@ type over `ℤ`. That theorem lives in the namespace `Langlands.Algebra`; all
 other declarations live in `Langlands.Algebra.FlatFinitePresentationModel`.
 The module adds no axioms.
 
-The stages, their transitions and the colimit facts come from Worker 866's
+The stages, their transitions and the colimit facts come from the
 module `Langlands.Algebra.FinitePresentationStages`. Openness of the flat locus
 comes from `Module.Flat.isOpen_setOf_flat_localization_atPrime`, imported through
 `Langlands.Algebra.NoetherianFlatLocusOpen`.
@@ -31,7 +29,7 @@ comes from `Module.Flat.isOpen_setOf_flat_localization_atPrime`, imported throug
   stage is `V(I)` for an ideal `I` with `IS = S`. Then `I S_μ = S_μ` for some
   later stage `μ`, and `S_μ` is flat over `R_μ`.
 - The Lean proof follows this route. The pointwise statement is the
-  hypothesis `hstage`, supplied by Worker 866's module
+  hypothesis `hstage`, supplied by the module
   `Langlands.Algebra.FinitePresentationStageFlatness`. Openness of the flat
   locus is the Noetherian case `M = S` of Stacks Algebra, Theorem 10.129.4
   (Tag 00RC).
@@ -52,7 +50,7 @@ unfolds the definition.
 
 `flatSet_mono`: for `t ⊆ t'`, `flatSet P t ⊆ flatSet P t'`. The prime of
 `model P t` under `Q` is the preimage of the prime of `model P t'` under `Q`
-(`comap_trans_comap_toB`). Worker 866's `flat_localization_trans` passes
+(`comap_trans_comap_toB`). `FinitePresentationStages.flat_localization_trans` passes
 flatness from a stage to every later stage at every prime over it.
 
 `directed_flatSet`: the flat sets form a directed family. For stages `t` and
@@ -75,14 +73,14 @@ lies in the extension of `J` to `model P t''`.
 `model P t` to `B` is the image of an element of the extension of `J` to some
 later stage. Proof by induction on `b` as an element of the span of the image
 of `J`. Generators come from stage `t` itself. Sums are handled at the union
-of the two stages. For a multiple `c b`, Worker 866's `exists_lift` lifts
+of the two stages. For a multiple `c b`, `FinitePresentationStages.exists_lift` lifts
 `c` to some later stage.
 
 `exists_map_trans_eq_top`: if an ideal `J` of `model P t` generates the unit
 ideal of `B` and `P` has finitely many relations, then `J` generates the unit
 ideal of some later stage. By `exists_mem_map_trans`, `1 ∈ J B` comes from
-some `x ∈ J model P t'` with image `1` in `B`. Worker 866's
-`exists_trans_eq_zero` makes `x - 1` vanish at a later stage `t''`. So `1`
+some `x ∈ J model P t'` with image `1` in `B`.
+`FinitePresentationStages.exists_trans_eq_zero` makes `x - 1` vanish at a later stage `t''`. So `1`
 lies in the extension of `J` to `model P t''`.
 
 `flat_of_univ_subset_flatSet`: if every prime of `B` lies in `flatSet P t`,
@@ -128,7 +126,7 @@ in a flat set of this presentation, then there are a `ℤ`-subalgebra `A₀` of
 `A` of finite type over `ℤ` and a finitely presented, flat `A₀`-algebra `B₀`
 with an `A`-algebra isomorphism `A ⊗[A₀] B₀ ≃ₐ[A] B`. Take `A₀ = base P t`
 and `B₀ = model P t` for the stage `t` from the previous theorem. The
-isomorphism is Worker 866's `nonempty_tensor_model`.
+isomorphism is `FinitePresentationStages.nonempty_tensor_model`.
 
 `Langlands.Algebra.exists_flat_finitePresentation_model`: **Stacks
 10.168.1(1)** (Tag 02JO) in the case `M = S`, for `A` and `B` in the same
@@ -137,7 +135,7 @@ a `ℤ`-subalgebra `A₀` of `A` of finite type over `ℤ` and a finitely
 presented, flat `A₀`-algebra `B₀` with an `A`-algebra isomorphism
 `A ⊗[A₀] B₀ ≃ₐ[A] B`. Proof: apply the previous theorem. Its hypothesis, that
 every prime `Q` of `B` lies in a flat set of the standard presentation, is
-Worker 866's `exists_flat_stage` (module
+`exists_flat_stage` (module
 `Langlands.Algebra.FinitePresentationStageFlatness`) for the prime
 `Q.asIdeal`.
 

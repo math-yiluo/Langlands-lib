@@ -1,7 +1,5 @@
 # Existence of actual cuspidal contragredients without a unitary center: proof
 
-Author: Worker 5459, for Task 5826.
-
 Module: `Langlands.Automorphic.CuspidalContragredientExistenceProof`. Declaration:
 
 ```lean
@@ -20,8 +18,8 @@ The axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 
 The module imports the statement module, the published unitary case
 `Langlands.Automorphic.CuspidalUnitaryContragredientExistenceProof`,
-`HeckeTwist.FiniteSlice` and `HeckeTwist.FiniteLocalTransport`. It also imports two new
-supporting modules submitted with this proof:
+`HeckeTwist.FiniteSlice` and `HeckeTwist.FiniteLocalTransport`. It also imports two
+supporting modules:
 
 - `Langlands.Automorphic.IrreducibleCentralCharacterProof`: every irreducible operator
   realization has a unique central character

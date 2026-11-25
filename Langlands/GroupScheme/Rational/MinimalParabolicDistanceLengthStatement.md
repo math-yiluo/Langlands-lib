@@ -5,16 +5,13 @@ Namespace `Langlands.GroupScheme`. Universe parameter `u`.
 The module contains one **statement**, the `Prop`-valued definition
 `MinimalParabolicDistanceLengthStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read the opening paragraph of VII.3.5 (printed p.236 / PDF p.242):
+The opening paragraph of VII.3.5 (printed p.236 / PDF p.242) reads:
 
 > Quels que soient les sous-groupes paraboliques semi-standards `P` et `Q` de `G` ayant
 > même facteur de Levi `M`, posons : `d(P, Q) = |Σ(P) ∩ Σ(Q̄)|`. Il est bien connu que
@@ -32,7 +29,7 @@ the published Chapter VII item ledger `notes/renard/item-ledger-vii.md`.
   `M = GL_2 × GL_1` block diagonal, `A_M = {diag(a, a, b)}`, every element of
   `N_G(A_M)` fixes `A_M` pointwise, so `W(A_M)` is trivial. But the upper
   block-triangular `P` and `Q = P̄` are distinct, with `d(P, Q) = 1`. The book also defines no
-  length on `W(A_M)` for non-minimal `M`. This unit does not state the non-minimal case.
+  length on `W(A_M)` for non-minimal `M`. This module does not state the non-minimal case.
 - **Minimal `M`, which length.** Here `W(A_M)` is the relative Weyl group `W`, and `w`
   exists and is unique. The equality holds for the length defined by the simple roots of
   `P`. With the length defined by a fixed standard minimal parabolic `P_∅`, it fails
@@ -41,7 +38,7 @@ the published Chapter VII item ledger `notes/renard/item-ledger-vii.md`.
   `w = s_1s_2s_1` has `P_∅`-length 3. In terms of `P_∅`: if `P = uP_∅` and `Q = vP_∅`,
   then `w = vu⁻¹` and `d(P, Q) = ℓ(u⁻¹v)` for the `P_∅`-length.
 
-This unit states the minimal case in both corrected forms. The assertion is not used in
+This module states the minimal case in both corrected forms. The assertion is not used in
 the proofs of the VII.3.5 Proposition or of the other Chapter VII statements.
 
 ## The statement
@@ -137,9 +134,11 @@ the inversion set of `w⁻¹` for `ξ`, that is `ℓ(w⁻¹) = ℓ(w)`, which gi
 into the number of `β ∈ Σ⁺(ν)` with `v⁻¹u · β ∉ Σ⁺(ν)`, that is
 `ℓ(v⁻¹u) = ℓ(u⁻¹v)`.
 
-## Remaining obligations
+## Proof obligations
 
-The proof is a separate obligation. It needs the conjugation formula
+The proof is in the separate module `MinimalParabolicDistanceLengthProof`
+(`minimalParabolicDistanceLength`), which takes another route. The argument above
+needs the conjugation formula
 `n P(ξ) n⁻¹ = P(w · ξ)` for dynamic parabolics, the root description of `U(ξ)` (published
 `subgroupRelativeRoots_dynamicUnipotent`), simple transitivity of `W` on chambers, and the
 proved Coxeter realization.

@@ -1,11 +1,9 @@
 # Pullback of scheme modules along a flat morphism is exact
 
-Author: Worker 228.
-
 `Langlands.AlgebraicGeometry.Modules.FlatPullbackExactStatement.{u}` is a `Prop`-valued
 definition in module `Langlands.AlgebraicGeometry.Modules.FlatPullbackExactStatement`. This
-module only states the result and contains no proof. A separate exact-target proof of this
-proposition is still required.
+module only states the result and contains no proof. The proof is
+`Langlands.AlgebraicGeometry.Modules.flatPullbackExact`, in the module `FlatPullbackExactProof`.
 
 ## Exact interface
 
@@ -143,8 +141,9 @@ read. No project errata file exists for these sources.
 
 ## Intended use
 
-Worker 360 publishes this statement as a prerequisite of the flat higher-direct-image
-base-change proof task `5b778a75-e74b-4ae4-9232-6735e3eefa47`. Given a proof of it:
+This statement is a prerequisite of flat base change for higher direct images
+(`FlatHigherDirectImageBaseChangeStatement`, proved as `flatHigherDirectImageBaseChange` in
+`FlatHigherDirectImageBaseChangeProof`). Given a proof of it:
 
 - The Library module `Langlands.Cohomology.LeftExactHomology` needs an additive functor with
   `[PreservesFiniteLimits Φ]` to build its homology comparison, and `[Φ.PreservesHomology]` to

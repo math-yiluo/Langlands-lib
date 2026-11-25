@@ -1,6 +1,6 @@
 # Ordered dynamic root products with supplied ray geometry
 
-This is an internal derived supporting unit. It generalizes the construction
+This is an internal derived module. It generalizes the construction
 in `DynamicRootProductAssembly` and the single-group proof in
 `Reductive/SplitBigCellField` by retaining the root-ray hypotheses directly.
 It does not assert that those hypotheses hold for every nonreductive group.
@@ -41,6 +41,9 @@ representatives of those actual root functors and of the dynamic radical,
 it supplies the product isomorphism with the exact original ambient
 inclusion equation, using the general representative transport.
 
-The unit supplies a field ingredient for an integral root-product argument.
+The module supplies a field ingredient for an integral root-product argument.
 It proves neither fibrewise constancy of ray data nor an integral
-root-product isomorphism, and does not establish the parahoric-model target.
+root-product isomorphism, and does not establish the parahoric-model statement
+`UnramifiedParahoricModelStatement`, which the module
+`BruhatTits.IntegralModels.UnramifiedParahoricModelProof` proves as
+`unramifiedParahoricModel`.

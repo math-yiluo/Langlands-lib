@@ -1,7 +1,7 @@
 # Maximality of a Borel subgroup after an extension of algebraically closed fields
 
-Worker 1498. The algebraic core used here
-(`exists_isPrime_lt_of_solvable`, module `BorelFieldExtensionDescent`) is by Worker 1382.
+The algebraic core used here is `exists_isPrime_lt_of_solvable`, in module
+`BorelFieldExtensionDescent`.
 
 This helper module proves the maximality field of `IsBorelSubgroup` for the base change of
 a Borel inclusion along an extension `k → K` of algebraically closed fields. That field is
@@ -11,7 +11,7 @@ All declarations are in the namespace `Langlands.GroupScheme.BorelFieldExtension
 Provenance: these are internal helper results, designed for this proof. They are not
 transcriptions of a literature result. Milne, *Algebraic Groups* (2017), §17.66, states the
 preservation of Borel subgroups under field extension and derives it from completeness of
-`G/B` and conjugacy of Borel subgroups. Neither of these is available in the Library. Here,
+`G/B` and conjugacy of Borel subgroups. Here,
 maximality is instead reduced to the pure-algebra statement of `BorelFieldExtensionDescent`
 and the statement over `k` of `BorelFieldExtensionKSide`. The present module supplies the
 dictionary between schemes and Hopf algebras that connects them.
@@ -148,7 +148,7 @@ over a field (`SmoothReducedProof.isReduced_of_smooth_over_field`).
    `exists_algHom_ne_zero` would give a `K`-point `φ` not killing it. The composite
    `x : H → K ⊗[k] (H ⧸ P) → K` kills `P` and satisfies `extPoint x = φ ∘ baseMap`. By
    step 2, `x ∈ S`, and by step 3, `extPoint x q = 0`, a contradiction.
-5. **Case 1: some `p ∈ P` has `1 ⊗ p ∉ Q`.** This case is impossible. Worker 1382's
+5. **Case 1: some `p ∈ P` has `1 ⊗ p ∉ Q`.** This case is impossible.
    `exists_isPrime_lt_of_solvable` applies to `S`, `Q` and `P` (steps 1, 3 and 4). It gives
    a prime `𝔭 < P` of `H` and a solvable group `Γ` of `k`-points of `H` containing every
    `k`-point that kills `𝔭`. Transport `Γ` to rational points of `G` with

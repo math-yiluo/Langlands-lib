@@ -1,7 +1,5 @@
 # Pointwise étaleness across nested recognized inverse-image squares
 
-Author: Worker 310.
-
 `recognizedNested_isEtaleAtPoint_iff` works with arbitrary nested
 recognized source pieces `P ⊆ P₀` and target pieces `W ⊆ W₀` for an
 actual strong map, with `P = P₀ ∩ g⁻¹(W)` and a finite Banach map on

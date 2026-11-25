@@ -30,6 +30,7 @@ def rankOneExtensionLowerToUpper :
 
 include hχ hσ
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- The whole inverse-character Whittaker set is unchanged by reversal. -/
 theorem rankOneExtensionInverseWhittakerSet_eq
     (ψ : letI := F.canonicalTopologicalData.topology;
@@ -43,6 +44,7 @@ theorem rankOneExtensionInverseWhittakerSet_eq
   exact inverseWhittakerSet_eq_of_equiv ψ
     (rankOneExtensionLowerToUpper F t χ σ hχ hσ)
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- All clauses of Whittaker type transport, without assuming irreducibility. -/
 theorem rankOneExtensionWhittakerType_iff
     (ψ : letI := F.canonicalTopologicalData.topology;
@@ -59,6 +61,7 @@ theorem rankOneExtensionWhittakerType_iff
 
 variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Certified polynomials for the actual pair transport with the same measure. -/
 theorem rankOneExtensionSymmetricLPolynomial_iff
     (ψ : letI := F.canonicalTopologicalData.topology;
@@ -75,6 +78,7 @@ theorem rankOneExtensionSymmetricLPolynomial_iff
   exact IsPadicSymmetricLPolynomial.congr_equiv (Representation.Equiv.refl π)
     (rankOneExtensionLowerToUpper F t χ σ hχ hσ)
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Every fixed rectangular zeta-value set transports without changing either measure. -/
 theorem rankOneExtensionUnequalRankZetaValuesAt_eq
     (r j k : ℕ) (hr : r = (1 + t) + (j + k + 1))

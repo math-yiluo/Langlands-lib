@@ -1,7 +1,7 @@
 # Products of Tadić blocks in Langlands form
 
-Author: Worker 1792. The flattening lemmas repeat, under new names, the private
-helpers of the published `Classification.TadicProductClosure` by Worker 1745.
+The flattening lemmas repeat, under new names, the private
+helpers of the published `Classification.TadicProductClosure`.
 Module `Langlands.Representation.Classification.TadicHeadPieceFactorization`,
 namespace `Langlands.Classification`. The theorems take the published
 propositions `SpehUnitarizability`, `IrreducibleLanglandsHeadProduct` and
@@ -19,7 +19,7 @@ Theorem A.10(iii), `⟨a(n,d)^ρ⟩ = L(a(d,n)^ρ)` (1986, printed p.377), for
 
 - `TadicSocleHeadDuality.mono`, `.zero`: it is monotone in `m`, and it holds for
   `m = 0` since such socles have positive rank.
-- `.spehComparison`: it implies Worker 1745's `TadicSocleSpehComparison F T m`
+- `.spehComparison`: it implies `TadicSocleSpehComparison F T m` of `TadicXBlockAdapters`
   (rectangular socles of rank at most `m` are Speh representations), by
   `exists_isSpeh_of_isLanglandsHead`.
 - `.socleUnitarity`: with `SpehUnitarizability F T` it implies Tadić's `(U^m)`,

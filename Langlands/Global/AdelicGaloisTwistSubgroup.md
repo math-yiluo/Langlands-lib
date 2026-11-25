@@ -1,6 +1,6 @@
 # Galois twisting of norm-one points of subgroups (Lemma S)
 
-Statement-only helper module for the proof of `GaloisBorelTwistingStatement` (Task 5268). Both statements are proved in module `AdelicGaloisTwistSubgroupProof`.
+Statement-only helper module for the proof of `GaloisBorelTwistingStatement`. Both statements are proved in module `AdelicGaloisTwistSubgroupProof`.
 Internal interfaces (no literature counterpart; they are the adelic-point form of the facts
 that the Galois action is by continuous automorphisms preserving `|χ| = 1` conditions, and
 that it carries points of a subgroup to points of its Galois translate).

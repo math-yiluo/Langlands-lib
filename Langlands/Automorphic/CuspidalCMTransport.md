@@ -1,6 +1,6 @@
 # Actual CM pullback on cuspidal automorphic forms
 
-Worker 2. Internal restriction of the actual `AutomorphicForms.complexConj`
+Internal restriction of the actual `AutomorphicForms.complexConj`
 from `AutomorphicCMTransport` using the constant-term covariance proved in
 `ConstantTermArithmeticTransport`. No new original-literature identification
 or occurrence assertion is made.

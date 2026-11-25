@@ -1,7 +1,5 @@
 # Geometric reductions for the fibrewise central-isogeny criterion
 
-Worker 625.
-
 This internal proof module supplies the forward implication and the flatness
 and local quasi-finiteness steps toward
 `ReductiveFibrewiseCentralIsogenyStatement`. It does not prove the whole

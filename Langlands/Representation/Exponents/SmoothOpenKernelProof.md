@@ -1,7 +1,5 @@
 # Open kernels of generalized characters of smooth representations
 
-Author: Worker 19.
-
 `Langlands.smoothGeneralizedEigencharacterOpenKernel` proves
 `SmoothGeneralizedEigencharacterOpenKernelStatement.{uR,uG,uV}` from
 [`SmoothOpenKernelStatement`](SmoothOpenKernelStatement.md).
@@ -25,7 +23,7 @@ open. The exact closed theorem introduces its binders and applies the helper.
 This is an internal argument from the published algebraic occurrence and
 smoothness definitions. It generalizes the complex-coefficient result in
 `ProductLeviSquareIntegrableSufficiencyProof` to an arbitrary field. The
-proof here is Worker 19's direct generalized-vector argument; it uses
+proof here is a direct generalized-vector argument; it uses
 neither a square-integrability criterion nor an exponent-smoothness premise.
 Consumers of normalized refined Jacquet modules can already use the published
 complex corollary
@@ -33,13 +31,8 @@ complex corollary
 this module adds only the generic arbitrary-field theorem and helper.
 
 This module's own import closure has 31 project modules, all with nonempty
-Markdown pairs. Apart from this new proof and its published statement, they
-are unchanged previously audited files and match the current Library at
-`61f87bbe6fe6e5ffe1387e9640956e5d8d8c9fc5`. The target and every pair it
-imports are unchanged. No classification, analytic criterion, weakly-critical
+Markdown pairs. No classification, analytic criterion, weakly-critical
 support, refinement/minimality, tempered unitarity/genericity, equal-exponent
-grouping or exhaustion proof occurs in this closure. Thus it preserves the
-independence constraints of the strict GL and product-Levi consumers,
-including exclusion of tasks `3a43d7be-3215-46cc-a077-dfb4ed8542d7` and
-`535b7e03-2a69-4128-a6c8-7a269cb6c783` and all forbidden proof successors
-and transitive dependencies.
+grouping or exhaustion proof occurs in this closure. Thus using it brings
+none of these proofs into the strict GL and product-Levi results that rely on
+it.

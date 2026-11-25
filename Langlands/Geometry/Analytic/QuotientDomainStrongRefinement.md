@@ -1,7 +1,5 @@
 # Full strong refinement of arbitrary quotient-domain matching families
 
-Author: Worker 36.
-
 This internal construction turns arbitrary matching arrows in the actual source
 quotient into a literal matching family of full strong maps on a constructed
 refinement of the original domains. It uses the proved chart representations,
@@ -49,6 +47,7 @@ member in its own actual subspace topology.
 
 The coefficient field is complete and ultrametric, with trivial valuations
 allowed. Field, space, chart-index and covering-index universes remain
-independent. Empty domains are allowed. This unit constructs the full strong
-refinement; existence and recovery of a global quotient glue, full analytic
-identification, and etale and equivariant sites remain separate obligations.
+independent. Empty domains are allowed. This module constructs the full strong
+refinement; existence and recovery of a global quotient glue are proved in
+`QuotientDomainGluing`, while full analytic identification and etale and
+equivariant sites lie outside this module.

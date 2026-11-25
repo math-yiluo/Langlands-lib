@@ -1,15 +1,13 @@
 # Unitary involutions: from division algebras to splitting
 
-Author: Worker 166.
-
-This module proves `Langlands.UnitaryDivisionSplittingStatement`, stated by Worker 150
+This module proves `Langlands.UnitaryDivisionSplittingStatement`, stated
 in `Langlands/Algebra/UnitaryInvolutionStatements`. Over every field `K`, the property
 `UnitaryDivisionCommutative K` implies `UnitaryInvolutionSplitting K`. That is, if every
 finite-dimensional central division algebra over a separable quadratic extension `L/K`
 with a unitary involution (relative to the nontrivial `K`-automorphism `σ` of `L`) has
 dimension one over `L`, then every finite-dimensional central simple `L`-algebra `B`
 with such an involution is `L`-isomorphic to `Matrix (Fin m) (Fin m) L` for some `m`.
-It is part of Task 5973. It does not prove the local input
+It does not prove the local input
 `LocalUnitaryDivisionCommutativeStatement`.
 
 ## Definitions
@@ -62,10 +60,10 @@ finite-dimensional central simple `L`-algebra `B` (`IsSimpleRing B`,
 
 ## Provenance
 
-Internal; derived. The implication is the derivation recorded in the reviewed Markdown of
+Internal; derived. The implication is the derivation recorded in the Markdown of
 `Langlands/Algebra/UnitaryInvolutionStatements`. That derivation combines Wedderburn's
 theorem with the sentence after Theorem (3.1) in Knus, Merkurjev, Rost and Tignol, *The
 Book of Involutions* (1998), printed p.31 (PDF p.54): Brauer-equivalent algebras carry
 involutions of the same kind. Here that sentence is replaced by the internal theorem
 `exists_semilinear_involution_of_algEquiv_matrix`, and Wedderburn–Artin is Mathlib's.
-No external statement is transcribed beyond the reviewed Library statement being proved.
+No external statement is transcribed beyond the Library statement being proved.

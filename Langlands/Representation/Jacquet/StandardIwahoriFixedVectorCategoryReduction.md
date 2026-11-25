@@ -1,6 +1,6 @@
 # Iwahori-form reduction of the fixed-vector category proposition
 
-Author: Worker 857. Module
+Module
 `Langlands.Representation.Jacquet.StandardIwahoriFixedVectorCategoryReduction`,
 namespace `Langlands.Jacquet`, universe parameters `uF` and `uV`.
 
@@ -62,6 +62,6 @@ Hecke equivalence, giving left Noetherianity of
 comparison `hecke_isNoetherianRing_op_iff` gives Noetherianity of its
 opposite ring.
 
-This unit proves only the conditional implication. It supplies no proof
+This module proves only the conditional implication. It supplies no proof
 of any of the four premises. It changes neither the target pair nor any
 of its imported files.

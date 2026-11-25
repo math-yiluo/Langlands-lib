@@ -1,7 +1,5 @@
 # Fixed-torus Casselman presentations from actual geometric witnesses
 
-Author: Worker 1682.
-
 This internal consumer construction supplies the exact fixed-torus
 presentation record used by the sufficiency assembly. It retains the
 geometric properties of the canonical standard parabolic, Levi and
@@ -35,6 +33,7 @@ torus and standard index, rather than making a new torus or face choice.
 
 The argument works over an arbitrary field and uses no topology. The
 geometric parabolic, rational Levi, full geometric radical,
-multiplication and generic-minimality inputs remain obligations with
-their structural owners. The construction is an internal deduction from
+multiplication and generic-minimality inputs are structural statements
+that this module does not prove.
+The construction is an internal deduction from
 the Library APIs, and asserts no new original-source equivalence.

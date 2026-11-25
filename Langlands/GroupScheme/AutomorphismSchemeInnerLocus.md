@@ -1,7 +1,5 @@
 # Inner-action loci from a supplied automorphism group scheme
 
-Worker 647.
-
 This internal construction is the formal pullback argument for two actions
 on a group scheme over an arbitrary base. It depends on the supplied
 `GroupAutomorphismScheme` interface in

@@ -12,12 +12,12 @@ Let `K` and `L` be fields with `[Algebra K₀ K] [Algebra K₀ L] [FiniteDimensi
 `uL`. Let `T : LocalField.TopologicalData K₀ L` be any realization of `L`. Write
 `G = Gal(L/K)` and `E_H` for the actual fixed field `IntermediateField.fixedField H` of a
 subgroup `H`. The objects `G_u`, `G^v`, `φ` and `ψ` are those of
-`Herbrand.GeneralFinite` (Task 7403), built from `T.Integers`. No characteristic
+`Herbrand.GeneralFinite`, built from `T.Integers`. No characteristic
 hypothesis occurs, and `K₀` is not assumed to be a local field. The module proves three
 propositions of `Langlands.LocalFactor.Ramification.Herbrand.LocalArithmeticStatement`
 for every such `K₀`, `K`, `L` and `T`, with no further hypotheses:
 
-- `upperQuotientCompatibility K L T : UpperQuotientCompatibility K L T` (the task's target).
+- `upperQuotientCompatibility K L T : UpperQuotientCompatibility K L T`.
   For every normal `H`, every realization `S : LocalField.TopologicalData K₀ E_H` and every
   real `v ≥ -1`, the image of `G^v = upperRamificationGroup T K v` under
   `AlgEquiv.restrictNormalHom E_H` is `upperRamificationGroup S K v`. This is Serre,
@@ -31,13 +31,13 @@ for every such `K₀`, `K`, `L` and `T`, with no further hypotheses:
   `lowerRamificationGroupReal T E_H u` under `AlgEquiv.restrictScalarsHom K` is `G_u ⊓ H`.
   This is Serre IV §1, Proposition 2, with real indices by the ceiling convention. The
   published definition does not bind `[FiniteDimensional K₀ L]`, but this theorem keeps that
-  binder, as the task requires. It is used to obtain `FiniteDimensional K L`.
+  binder. It is used to obtain `FiniteDimensional K L`.
 
-The three theorems take exactly the binder list fixed by the task. Each concludes the
+The three theorems take exactly the binder list above. Each concludes the
 published proposition unchanged.
 
 It also proves the phi tower law through the actual fixed field of a normal subgroup, as a
-public theorem for the later finite tower proof:
+public theorem for a finite tower proof:
 
 - `herbrandPhi_fixedField_tower K L T H S u`: for normal `H`, every realization `S` of
   `E_H` and every real `u`, `herbrandPhi T K u = herbrandPhi S K (herbrandPhi T E_H u)`,
@@ -57,19 +57,19 @@ on underlying elements of `L`, which `fixedSubringEquiv_coe` records by `rfl`. T
 - Jean-Pierre Serre, *Local Fields*, GTM 67, Springer (1979). Registered as
   `serre-1979-local-fields`, SHA256
   `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`. Used: Chapter IV,
-  §1, Proposition 2 (printed p. 62), and §3, Lemma 5 and Propositions 14–15 (printed
-  pp. 73–75). The statement module `Herbrand/LocalArithmeticStatement` cites the same
+  §1, Proposition 2 (printed p. 62), and §3, Propositions 14–15 (printed p. 74) and Lemma 5
+  (printed p. 75). The statement module `Herbrand/LocalArithmeticStatement` cites the same
   places. Serre works over complete discretely valued fields with separable residue
   extensions, so both characteristics are covered.
 - The proofs use the ported Anthropic FLT theorems in `Langlands.AnthropicFLT`, imported
   through `Herbrand.QuotientProof`. The first is Herbrand's theorem in lower numbering for a
   finite group acting faithfully on a discrete valuation ring with separable residue
   extension
-  (`IsDiscreteValuationRing.map_lowerRamificationGroup_mk_eq_of_isSeparable_residueField`).
+  (`Langlands.Ramification.map_lowerGroup_mk_eq_of_isSeparable_residueField`).
   Its consequences are used for `φ`
-  (`IsLocalRing.herbrandPhi_eq_herbrandPhi_quotient_comp_of_map_lowerRamificationGroup_mk_eq`)
+  (`Langlands.Ramification.herbrandPhiRat_eq_herbrandPhiRat_quotient_comp_of_map_lowerGroup_mk_eq`)
   and for upper numbering
-  (`IsLocalRing.upperRamificationQuotientCompat_of_map_lowerRamificationGroup_mk_eq`). Both
+  (`Langlands.Ramification.upperGroupRatQuotientCompat_of_map_lowerGroup_mk_eq`). Both
   consequences are stated at nonnegative rational arguments.
 - The structure of the proof follows the published p-adic proof
   `Herbrand/QuotientProof.lean` (namespace `Langlands.Ramification.HerbrandBridge`). That
@@ -84,7 +84,7 @@ on underlying elements of `L`, which `fixedSubringEquiv_coe` records by `rfl`. T
 
 All declarations in `QuotientBridge` are internal lemmas. They connect the Library side
 (real-indexed groups built from `integerAction`) to the source side (rational-indexed
-groups of `IsLocalRing.lowerRamificationGroup`).
+groups of `Langlands.Ramification.lowerGroup`).
 
 ## Proof (as implemented)
 
@@ -105,10 +105,10 @@ groups of `IsLocalRing.lowerRamificationGroup`).
    `IsScalarTower.toAlgHom K₀ E_H L` of the actual fixed field.
 2. **Library φ at rational points** (section `Phi`). Suppose the Library orders
    `lowerGroupOrder T K i` equal the source cardinalities
-   `IsLocalRing.lowerRamificationCard A Γ i` for all `i`. Then for every rational `u ≥ 0`,
+   `Langlands.Ramification.lowerGroupCard A Γ i` for all `i`. Then for every rational `u ≥ 0`,
    the Library real `herbrandPhi T K` at `u` is the cast of the source rational
    `herbrandPhi` at `u` (`herbrandPhi_ratCast`). Both are given by the floor formula
-   (`herbrandPhi_floor` of `GeneralFinite`, `IsLocalRing.herbrandPhi_of_pos`).
+   (`herbrandPhi_floor` of `GeneralFinite`, `Langlands.Ramification.herbrandPhiRat_of_pos`).
    `herbrandPhi_natCast_eq` is the case of natural numbers. For finite `Γ`, the ceiling of
    the Library `ψ` at a rational `w ≥ 0` is the source index
    `upperRamificationIndex A Γ w` (`ceil_herbrandPsi_ratCast`). This uses that `φ` and `ψ`
@@ -176,9 +176,8 @@ groups of `IsLocalRing.lowerRamificationGroup`).
 
 ## Checks
 
-The draft was compiled with `lean_check` in the pinned environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors or warnings. A private check file
+The module was compiled in the pinned environment, with no errors or warnings. A private check file
 compared the types of `upperQuotientCompatibility`, `herbrandNormalSubgroup` and
-`lowerSubgroupCompatibility` with the task's binder list by syntactic equality of the
+`lowerSubgroupCompatibility` with the binder list above by syntactic equality of the
 elaborated types. All three agree. The three theorems use only the axioms `propext`,
 `Classical.choice` and `Quot.sound`.

@@ -1,7 +1,5 @@
 # Gradings of a Cayley datum from weighted self-dual frames
 
-Author: Worker 118.
-
 This module turns a weighted self-dual basis of a `CayleyDatum K` into a
 grading in the sense of
 `Langlands.GroupScheme.Composition.CayleyGrading`. It works over every

@@ -1,9 +1,7 @@
 # Automatic bounded maps from finite Banach algebras
 
-Author: Worker 36.
-
 This derived construction reuses the published theorem
-`FiniteBanachAlgebra.exists_norm_bound` by Worker 56.
+`FiniteBanachAlgebra.exists_norm_bound`.
 Let `f : A → B` and `g : A → C` be actual bounded maps of normed commutative
 `K`-algebras. Assume `K` is nontrivially normed, `A` and `B` are complete,
 and the exact ring map underlying `f` is module-finite. No completeness of

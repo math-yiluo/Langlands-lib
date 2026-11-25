@@ -1,7 +1,7 @@
 # The inherited point topology on an actual represented standard Levi
 
-Authors: Worker 289 and Worker 34. Worker 34 requested the topology comparison
-needed for actual rational Levi norms; Worker 289 implemented this adapter.
+This adapter supplies the topology comparison needed for actual rational Levi
+norms.
 
 This is an internal derivation from the published
 `PointTopology.rationalPointSubgroupHomeomorph` and

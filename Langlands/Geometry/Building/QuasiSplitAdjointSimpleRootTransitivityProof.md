@@ -16,7 +16,7 @@ steps 2 and 3 instead.
 
 ## Helper modules
 
-The proof uses six helper modules of this unit. Each has its own Markdown file.
+The proof uses six helper modules, ported with this file. Each has its own Markdown file.
 
 - `Langlands.LinearAlgebra.AdjointRootDatum` and
   `Langlands.GroupScheme.Reductive.AdjointRootSpan`. Over a field, if a connected reductive

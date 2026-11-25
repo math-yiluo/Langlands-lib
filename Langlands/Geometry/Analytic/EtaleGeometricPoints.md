@@ -1,7 +1,5 @@
 # Fibre functors of field-valued points on the étale site
 
-Author: Worker 21.
-
 For an `L`-valued point `x` of an analytic space `X` (module
 `FieldValuedPoints`), this module defines the fibre functor of `x` on the
 étale site `Ét(X)` (module `EtaleSite`). It also gives the point of the site

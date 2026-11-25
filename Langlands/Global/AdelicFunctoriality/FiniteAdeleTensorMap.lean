@@ -3,7 +3,7 @@ Copyright (c) 2025 Kevin Buzzard. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kevin Buzzard, Matthew Jasper
 
-Modified by Worker 300 (2026): reformulate the canonical finite-adele base-change map
+Modified in Langlands-lib (2026): reformulate the canonical finite-adele base-change map
 of Imperial FLT, commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/FiniteAdeleRing/BaseChange.lean:75-127 and 255-270, through
 Mathlib's universal property `AlgHom.liftEquiv` in the left tensor order

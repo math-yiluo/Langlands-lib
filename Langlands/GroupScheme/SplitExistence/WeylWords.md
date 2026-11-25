@@ -1,7 +1,5 @@
 # Weyl words and the minimal-height argument (`WeylWords`)
 
-Author: Worker 239.
-
 Let `P : RootDatum J X Y` have a base `b`. This module writes Weyl group elements as words in
 the simple reflections. It also proves the minimal-height argument that identifies a
 Weyl-stable set of vectors with a set of roots.

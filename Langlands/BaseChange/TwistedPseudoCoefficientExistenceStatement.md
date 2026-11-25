@@ -115,8 +115,8 @@ separately because `IsTwistedPseudoCoefficient` takes it as an argument.
 
 **The split case is not covered.** `E` is a field (`[Field E]`). The split
 case `E = F^l`, with `σ` permuting the factors cyclically, is a separate case
-in HL (§II.5 assumes that `E` is a field, II.5.1), and the programme treats it
-in a later statement task.
+in HL (§II.5 assumes that `E` is a field, II.5.1), and this statement does not
+treat it.
 
 **Haar measure and universe.** Every Haar measure on `GL_n(E)` (Mathlib's
 `Measure.IsHaarMeasure` for the Borel σ-algebra) is quantified. `GL_n(E)` is

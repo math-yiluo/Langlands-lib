@@ -1,6 +1,6 @@
 # Rational density in the fixed closed torus envelope
 
-Worker 1436. `TorusGeneratedEnvelopeRationalDensityStatement.{u}` asserts that,
+`TorusGeneratedEnvelopeRationalDensityStatement.{u}` asserts that,
 for every infinite field `k : Type u`, each actual representative `D` of the
 fixed closed torus envelope of a smooth connected affine group scheme `G` has
 Zariski-dense actual `k`-rational points in `D.group.X.left`. The field may be
@@ -38,11 +38,13 @@ along the existing isomorphism between representatives over `G`. No separate
 smoothness or connectedness premise on `D.group` is needed, since the
 structural existence and uniqueness results imply those properties for every
 representative. Establishing that identification, smooth connected existence,
-the source unirationality, and its density consequence are retained proof
-obligations. Neither unirationality nor a density toolkit is assumed in the
+the source unirationality, and its density consequence are proof
+obligations, not premises. Neither unirationality nor a density toolkit is assumed in the
 Lean proposition.
 
-This file states a focused prerequisite and supplies no proof. It asserts
+This file states a focused prerequisite and supplies no proof; the proof is
+`torusGeneratedEnvelopeRationalDensity` in
+`TorusGeneratedEnvelopeRationalDensityProof`. It asserts
 neither density over a finite field nor density in a general ambient smooth
 connected affine group. It does not prove the pseudo-parabolic rational-lifting
 theorem, normality of the envelope, or compatibility with field extension.

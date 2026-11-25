@@ -54,6 +54,6 @@ The natural equality of adelic Weil point sets on p.10, applied to the affine
 line, yields precisely this arithmetic tensor identity. The explicit tensor-map
 comparison and algebra-equivalence packaging are derived content.
 
-This unit asserts an algebra equivalence. It does not specify a tensor-product
-topology, prove the separate algebraic-space comparison, or complete the
-whole-paper formalization.
+This module asserts an algebra equivalence. It does not specify a tensor-product
+topology, prove the separate algebraic-space comparison, or formalize the rest
+of the paper.

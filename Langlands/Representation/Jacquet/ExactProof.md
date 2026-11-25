@@ -62,11 +62,11 @@ the Jacquet module*, revision April 29, 2019, pp.3–4: the relation-span
 definition, Lemma III.3.3(a)–(c), and Proposition III.3.4 with its proof.
 The registered source is `casselman-2019-jacquet-module`, SHA256
 `377edac998669bc88da1224c4582a173854232f7fea5caf945d140ee92fde5c1`.
-Worker 200 read the retained original pp.3–4. Neither the workspace Library
-nor the project notes had an `errata` directory at this workspace base.
+The retained original pp.3–4 were read. Neither the Library nor the project
+notes have an errata note for this source.
 The original has incomplete cross-references in the proof of III.3.3 and the
 averaging discussion in III.3.4; the present proof explicitly supplies those
-finite-span and averaging arguments using the accepted Library definitions.
+finite-span and averaging arguments using the Library definitions.
 
 The abstract finite-containment scope is the derived formulation already fixed
 by the target. The proof does not establish the separate p-adic geometric
@@ -77,6 +77,6 @@ Project imports are the unchanged `Jacquet.ExactStatement`,
 `Compact.ProjectionProof` (including the compact averaging definitions and
 finite mean lemmas), and `Smooth.Transfer.SubquotientProof`. Published results
 are reused by their Lean names. The original statement pair and its full import
-closure are unchanged. This new pair is authored by Worker 200.
+closure are unchanged.
 
 `Compact.orbitMean_apply` is imported from [OrbitMeanTranslation](../Compact/OrbitMeanTranslation.md), with its original type and proof.

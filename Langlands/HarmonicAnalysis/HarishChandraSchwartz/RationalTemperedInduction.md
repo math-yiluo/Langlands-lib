@@ -1,7 +1,5 @@
 # Tempered representations and normalized induction on actual rational points (III.2, Lemma III.2.3)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalTemperedInduction`,
 namespace `Langlands.HarishChandraSchwartz`.
 
@@ -31,7 +29,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on the
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the
 text of PDF pages 31 and 32.
 
 - III.2, printed p. 265: "Notons `C^w_{lisse}(G)` le sous-espace des `f ∈ C_{lisse}(G)` pour
@@ -179,5 +177,5 @@ condition `A(π) ⊂ A_w(G)` above.
   the height of `G`. Waldspurger defines `σ = log ‖τ(·)‖` on `G` (I.1, printed p. 242) and
   applies the notions of III.2 to `M` with `M` in place of `G`. The restriction of `τ` to `M` is an
   algebraic embedding of `M` with `τ(K ∩ M) ⊂ GL_n(𝒪)`, and its height is exactly `σ|_M`.
-- **Dependencies.** The module imports `RationalXiLevi` (candidate `765686ac`, review-accepted)
+- **Dependencies.** The module imports `RationalXiLevi`
   for `rationalLeviXi` and `rationalLeviData`.

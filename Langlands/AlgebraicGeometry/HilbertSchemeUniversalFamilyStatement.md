@@ -1,12 +1,11 @@
 # The Hilbert scheme of a projective flat family on all test schemes, with its universal closed subscheme and projective Hilbert-polynomial pieces
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705).
-This is a prerequisite statement under Task 5705, as permitted by the operator's
-answer to request `98389b48910e54088e0e2b2ba6aaad9c`. Together with
+This is a prerequisite statement. Together with
 `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveCartierLocusStatement`, it
-is one of the two hypotheses of a planned reduction of the published
-`Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesStatement`
-(Task 6002).
+is one of the two hypotheses of the reduction
+`Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesReductionStatement`
+of the published
+`Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesStatement`.
 
 ## Statement
 
@@ -22,7 +21,7 @@ proposition with no proof asserted here.
 It assumes
 
 - `Flat f` and `LocallyOfFinitePresentation f`;
-- `Scheme.Modules.IsInvertible 𝓛X`;
+- `Scheme.Modules.IsInvertibleFLT 𝓛X`;
 - `Scheme.Modules.ClosedImmersionBySections 𝓛X f`: finitely many global
   sections of `𝓛X` define a closed immersion of `X` into a finite projective
   space over `A`.
@@ -201,8 +200,9 @@ be organised. They are not Lean proofs.
 
 ## Use
 
-The planned reduction of
-`Picard.RelativeEffectiveDivisorHilbertPiecesStatement` takes `D` to be the
+The reduction `Picard.RelativeEffectiveDivisorHilbertPiecesReductionStatement` of
+`Picard.RelativeEffectiveDivisorHilbertPiecesStatement` (proved in
+`Picard.RelativeEffectiveDivisorHilbertPiecesReductionProof`) takes `D` to be the
 relative effective Cartier locus of `W`, an open subscheme of `H` given by
 `Picard.RelativeEffectiveCartierLocusStatement`. That locus is Kleiman's
 `Div_{X/S} ⊆ Hilb_{X/S}` (Theorem 3.7). Its Hilbert-polynomial pieces are open

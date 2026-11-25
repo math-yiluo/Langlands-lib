@@ -19,9 +19,8 @@ where `ι = ObjectProperty.ι (fun T ↦ IsAffine T.left ∧ IsNoetherian T.left
 inclusion of the full subcategory of noetherian affine tests. Thus `α` identifies
 `Hom_S(T, P)` with `F(T)` naturally in noetherian affine tests `T`. This is the
 form of the representability conclusion in the statement
-`NoetherianIntegralFibrePicardNoetherianTestsStatement` of Task 5705 (accepted in
-review, not yet in the Library; written there with the abbreviation
-`noetherianAffineOverι`). This module does not import that statement.
+`NoetherianIntegralFibrePicardNoetherianTestsStatement` (module of the same name;
+written there with the abbreviation `noetherianAffineOverι`). This module does not import that statement.
 
 ## Declarations
 

@@ -1,7 +1,5 @@
 # The Haar modulus of the actual mirabolic radical
 
-Author: Worker 752.
-
 This file states a proposition. It does not prove it. The proposition
 definition `Langlands.MirabolicRadicalHaarModulusStatement.{uF}` in the module
 `Langlands.Group.GL.MirabolicModulusStatement` asserts that the published

@@ -73,7 +73,7 @@ theorem Intertwines.weights_eq_of_bijective {ρ : MatrixRepresentation G n}
   ext χ
   exact ⟨hC.characterSpace_ne_bot hbij.1 χ, hD.characterSpace_ne_bot hDij.1 χ⟩
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom :=
   inferInstanceAs (IsAffineHom (Limits.pullback.snd G.X.hom (algebraBaseMap k K)))
 

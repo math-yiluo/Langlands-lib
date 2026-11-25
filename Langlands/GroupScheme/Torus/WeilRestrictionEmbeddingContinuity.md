@@ -1,7 +1,5 @@
 # Continuous Galois actions on the actual Weil-restriction lattices
 
-Worker 207.
-
 Take fields `k`, `K`, and `Ω` in the same universe, with `k`-algebra
 structures on `K` and `Ω`, finite-dimensional `K/k`, a finite
 homomorphism index `K →ₐ[k] Ω`, and an explicit bijectivity proof

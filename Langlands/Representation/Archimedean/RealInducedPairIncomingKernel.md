@@ -53,8 +53,9 @@ This proves both alternatives for `to3`.
 
 ## Provenance and scope
 
-The incoming multiplier construction and middle equivalence are reused
-unchanged from Worker 765's work. The support, Fourier uniqueness and adjacent
+The incoming multiplier construction
+(`RealInducedPairLinkedIncoming.exists_multiplierData`) and middle equivalence
+(`RealInducedPairIncomingLift.middleEquiv`) are reused unchanged. The support, Fourier uniqueness and adjacent
 uncertainty inputs are proved Library results. This is a derived internal
 statement, with no new literature identification or classification premise.
 

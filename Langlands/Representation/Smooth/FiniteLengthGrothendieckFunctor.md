@@ -1,12 +1,12 @@
 # Maps of finite-length smooth Grothendieck groups induced by functors
 
-Worker 270 constructs the integer-linear map
+This module constructs the integer-linear map
 `Langlands.SmoothRep.FiniteLengthGrothendieckGroup.map Φ hl hx` between the
 published exact Grothendieck groups of finite-length smooth representations. Its
 input is an actual functor `Φ` between actual smooth representation categories,
 with proofs `hl` and `hx` of the two preservation properties defined below. The
 published module `Langlands.Representation.Smooth.FiniteLengthGrothendieck`
-(Worker 503) is imported and used only through its published interface. Its
+is imported and used only through its published interface. Its
 Lean/Markdown pair and import closure are unchanged.
 
 ## Setting and universes
@@ -51,7 +51,7 @@ Both predicates are Prop-valued definitions in the namespace `Langlands.SmoothRe
   morphism. `IsShortExact` is the published predicate: injectivity of the first
   map, surjectivity of the second map, and equality of the first map's range
   with the second map's kernel. Only finite-length sequences are required to be
-  preserved, as the task permits, so this is the weaker of the two possible
+  preserved, so this is the weaker of the two possible
   forms.
 
 `preservesFiniteLength_id` and `preservesFiniteLengthShortExact_id` prove both
@@ -160,24 +160,24 @@ and no preservation property of such a functor is asserted.
 The original context is Anne-Marie Aubert, *Dualité dans le groupe de
 Grothendieck de la catégorie des représentations lisses de longueur finie d'un
 groupe réductif p-adique*, Transactions of the AMS **347** (1995), 2179–2189,
-§1, printed pp.2180–2181 (PDF pp.2–3, read for this unit; literature ID
+§1, printed pp.2180–2181 (PDF pp.2–3, read for this module; literature ID
 `aubert-1995-duality`). On p.2180 Aubert writes `𝓡(G)` for the Grothendieck group
 of finite-length smooth complex representations. She states that the
 Bernstein–Zelevinsky induction and restriction functors `i` and `r` (citing
 [BZ, 2.3]) define homomorphisms `𝓡(L_I) → 𝓡(G)` and `𝓡(G) → 𝓡(L_I)`. Properties
 (1.1)–(1.4) and Definition 1.5 on p.2181 then use those homomorphisms.
 
-The present unit implements the general mechanism behind such homomorphisms. It
+The present module implements the general mechanism behind such homomorphisms. It
 has explicit **derived/internal** provenance: it is the standard universal-property
 argument that a functor preserving finite length and short exact sequences
 induces a homomorphism of exact Grothendieck groups. It is written for the
-accepted project objects, with independent rings, groups and universes, and with
+published project objects, with independent rings, groups and universes, and with
 exactness read through actual intertwiners. Aubert is not cited as printing these
 Lean definitions or this generality. Her p.2180 claim that `𝓡(G)` is free on
 irreducible classes is neither formalized nor used. Exactness and finite-length
 preservation of the Bernstein–Zelevinsky functors, and Aubert's (1.1)–(1.4),
-Definition 1.5 and later results, are not proved or assumed here. They remain
-separate later units, together with the Aubert operator itself.
+Definition 1.5 and later results, are not proved or assumed here. They are not
+part of this module, and neither is the Aubert operator itself.
 
 No code was adapted from `Langlands.VirtualRepresentation.ExactInduction`,
 `ExactRestriction` or `ExactTensor`, and none of those modules is imported. They
@@ -193,8 +193,7 @@ import closure, checked recursively from the actual import lines at Library base
 
 - `Langlands.Representation.Smooth.FiniteLengthGrothendieck` (Lean SHA-256
   `a1b5669d4ae1725028298034c53630bae21f8a97c2a9d7b32b71019891d19b6e`, Markdown
-  SHA-256 `95cc767e8c97fbb0c5fe56e620aa42837eba0b9b15b3c35a9e459d831636223c`,
-  identical to publication `b2b30247-a8a2-481c-9765-2ff98c535b99`);
+  SHA-256 `95cc767e8c97fbb0c5fe56e620aa42837eba0b9b15b3c35a9e459d831636223c`);
 - `Langlands.Representation.Category.Basic`, which imports the next module and
   Mathlib only;
 - `Langlands.Representation.Smooth.Definitions`, which imports Mathlib only;
@@ -209,35 +208,30 @@ published K0 interface (`finiteLengthIsoSetoid`, `ofObject`, `ofRepresentation`,
 generator equations, `hom_ext_object`), the published `SmoothRep.hom` and
 `SmoothRep.ofHom`, and Mathlib's functor, isomorphism and quotient laws.
 
-Consequently none of the following excluded results, their conclusions, proof
-successors, or transitive proof dependencies supplies an input:
+Consequently none of the following classification results, their conclusions,
+proofs, or transitive proof dependencies supplies an input:
 
-- analytic segment classification `aca8805b-054f-4d56-8045-12db7f623404`;
-- special-head multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-- ordered special-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-- quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-- tempered block uniqueness `52e97845-36bb-457d-b76f-70753334b88c`;
-- `SquareIntegrableLanglandsClassification` /
-  `1cb45da2-7007-4351-a694-594fb148b8d1`;
-- square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-- regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`.
+- analytic segment classification;
+- special-head multisegment exhaustion;
+- ordered special-head existence;
+- quotient coverage;
+- tempered block uniqueness;
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion;
+- regular exhaustion.
 
-This unit is a conditional construction. `PreservesFiniteLength` and
+This module is a conditional construction. `PreservesFiniteLength` and
 `PreservesFiniteLengthShortExact` are hypotheses, not proved instances for any
-particular functor. No statement definition, citation, or pending proof is
+particular functor. No statement definition or citation is
 treated as a proved representation-theoretic theorem.
 
 ## Development validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-entry module with no errors or warnings (diagnostic
-`4e847b12-54b7-4bc7-814a-64adda097e90`). Inspection of
+The entry module compiled with no errors or warnings. Inspection of
 `SmoothRep.FiniteLengthGrothendieckGroup.map` reported level parameters
 `uR, uG, uV, uS, uH, uW` and only the assumptions `propext`, `Classical.choice` and
-`Quot.sound` (diagnostic `3c03af4f-4640-4772-998f-f18b7992131e`). Inspection of
+`Quot.sound`. Inspection of
 `GeneralLinear.BlockShape.finiteLengthMapToGeneralLinear` reported level
-parameters `uV, uF` and the same assumptions (diagnostic
-`3e804a8d-7013-471d-8daf-3b99234a333e`). A recheck of the identical sources at
-their workspace location, by Lake build, again inspected `map` with the same
-result (diagnostic `15168000-7bda-4d2b-bf77-17ca04d080b1`). These are development checks;
-independent semantic acceptance and Library publication are separate.
+parameters `uV, uF` and the same assumptions. A recheck of the identical sources
+by Lake build again inspected `map` with the same
+result. These are development checks.

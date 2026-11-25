@@ -1,7 +1,5 @@
 # The positive-rank Leibniz gluing from the mixed-product formulas
 
-Author: Worker 984.
-
 BZ77 Corollary 4.14(c) says that the `k`-th derivative of the product `ρ × σ` is glued
 from the products `ρ^(j) × σ^(k-j)`. The published statement module
 `Langlands.Representation.Derivative.GeneralLinearDerivativeLeibnizFiltrationStatement`
@@ -16,11 +14,12 @@ result is **conditional**: it takes three Prop-valued Library statements as expl
 hypotheses, namely the two halves of BZ77 4.14(a) and the proposition of BZ77
 4.14(b) (see Hypotheses). The module introduces no axioms.
 
-It is a helper unit. It does not prove the target statement
-`GeneralLinearDerivativeLeibnizFiltrationStatement`. Under the task contract, a
-conditional construction supplies no proof input. The theorems here bear on the
-target only when a consumer discharges all three hypotheses with accepted, published
-proofs, and that consumer's own audit then has to cover those proofs. The other
+It is a helper module. It does not prove the target statement
+`GeneralLinearDerivativeLeibnizFiltrationStatement`. A
+conditional construction supplies no proof input by itself. The theorems here bear on the
+target only when a consumer discharges all three hypotheses with published
+proofs, and that consumer's own audit then has to cover those proofs;
+`GeneralLinearDerivativeLeibnizFiltrationProof` is that consumer. The other
 cases (order zero and a zero rank) are already proved without hypotheses in the
 Library (see Related Library modules).
 
@@ -73,26 +72,25 @@ universe levels `uF, uV`, as explicit arguments:
   `RightMixedProductDerivativeFiltrationStatement`). Only its instance at
   `k = n + 1`, `r = m`, order `d` is used.
 
-These are statement definitions, not proofs. In the project they are owned by the
-4.14(a) task `7e19f753` and the 4.14(b) task `3231134e`; neither proof is published at
-this module's base. The module applies none of the conditional extractors
+These are statement definitions, not proofs. Neither proof is published at
+this module's base; the Library proves 4.14(a) in `LeftMixedProductDerivativeProof`
+and 4.14(b) in `RightMixedProductDerivativeFiltrationProof`. The module applies none of the conditional extractors
 `.filtration` of either statement module.
 
 ## Imports
 
-- `Langlands.Representation.Derivative.LeibnizRestrictionExact` (published, Worker
-  593): the subobject `leibnizRestrictionDerivativeSubobject`, the quotient
+- `Langlands.Representation.Derivative.LeibnizRestrictionExact` (published): the subobject `leibnizRestrictionDerivativeSubobject`, the quotient
   `leibnizRestrictionDerivativeQuotient` and the unconditional short exact sequence
   `leibnizRestrictionDerivativeExact`. Through it, the module uses `leibnizSource`,
   `leibnizPiece`, `leibnizPositivePieceIso` (`LeibnizPieceCompat`),
   `leibnizIndexSplitEquiv` (`LeibnizIndices`), `rightMixedDerivativePiece` and
   `generalLinearRepRankCast`.
-- `Langlands.Representation.Derivative.LeibnizQuotientPiece` (published, Worker 984):
+- `Langlands.Representation.Derivative.LeibnizQuotientPiece` (published):
   `leibnizRestrictionQuotientPieceIso` and `leibnizRestrictionQuotient_subsingleton`.
 - `Langlands.Representation.Derivative.MixedProductDerivativeStatement` (published
   statement module): the proposition definitions `LeftMixedProductDerivativeIso` and
   `LeftMixedProductDerivativeVanishing`, used only as hypothesis types.
-- `Langlands.Representation.Filtration.GluedFamily` (published, Worker 723): the
+- `Langlands.Representation.Filtration.GluedFamily` (published): the
   predicate `IsGluedFromFamily` and its laws `of_isGluedFrom`, `exists_equiv`,
   `precomp`, `isoPieces`, `equiv`, `of_iso_unique`, `of_isEmpty` and `splice`.
 
@@ -220,8 +218,8 @@ These are the 179 modules of the published `LeibnizRestrictionExact` closure
 `IsoTransport`, `OneStep`, `Precomposition`, `QuotientTail`, `Splicing`,
 `Splicing.Basic` and `Transport`.
 
-A text scan of every Lean file in the closure was run for all task identifiers named in
-the task contract and for the excluded declaration names it names. These include
+A text scan of every Lean file in the closure was run for the names of declarations
+that the proof does not use. These include
 `SupercuspidalCoinvariantFinitenessStatement`,
 `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`,
 `SquareIntegrableLanglandsClassification`, `GenericSegmentProductUniqueness`,
@@ -264,34 +262,33 @@ The mathematical inputs of the proofs, condition by condition:
 - **4.14(a) and 4.14(b).** These are supplied only by the hypotheses `hLI`, `hLV` and
   `hRM`. They are not proved here and are not imported as proofs.
 
-Against the inherited exclusions of the task contract:
+Condition by condition:
 
-| Inherited condition or exclusion | Check for this module |
+| Condition or result not used | Check for this module |
 | --- | --- |
 | Actual functors, unchanged target and imported pairs, complete feasible indices, smooth casts, no residual twist | The source is literally `leibnizSource` and the pieces are the unchanged `leibnizPiece` at every feasible index, including zero pieces. The enumeration comes from `exists_equiv`. No Library pair is edited. |
 | Supplied `T`, `ψ`, independent universes `uF`, `uV`, arbitrary carriers, boundaries | These are unchanged parameters with no representation hypothesis. Positive ranks and positive order are the explicit scope. The top and zero-first top orders are covered. The order-zero and zero-rank cases are separate published results. |
-| Only accepted, published general inputs; no proposition, citation, draft, pending task or conditional construction as a proof input | Every Lean input is published at the base. 4.14(a) and 4.14(b) enter only as explicit Prop-valued hypotheses, and this module is itself a conditional construction. So it supplies no proof of the target until the hypotheses are discharged by accepted, published proofs whose closures are audited separately. |
+| Only published general inputs; no proposition, citation or conditional construction as a proof input | Every Lean input is published at the base. 4.14(a) and 4.14(b) enter only as explicit Prop-valued hypotheses, and this module is itself a conditional construction. So it supplies no proof of the target until the hypotheses are discharged by published proofs whose closures are audited separately. |
 | Segment derivative formulas, segment-socle/head existence, full/head/socle Jacquet and special-exponent formulas, analytic segment classification | No segment module or declaration is in the closure or in the proof route. |
 | Unlinked/linked/juxtaposed socle structures, pair reducibility, reverse quotient maps, socle product irreducibility, adjacent swaps, two-segment commutation, linked gluing, ordered socle existence, socle exhaustion | None occurs in the closure or the proof route. |
 | Special-head criterion, generic segment-product uniqueness, multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion, tempered uniqueness | None occurs. The incidental `Classification` imports above prove no such conclusion and are not used. |
 | Square-integrable classification, square-integrable and regular exhaustion, forward special square-integrability | No square-integrable or exhaustion theorem is imported or used. |
 | Two-supercuspidal irreducibility, product structure or assembly | None occurs in the closure or the proof route. |
 | Ze80 segment derivatives (§3.5, §9.6), criteria 4.2/9.7, 9.3 analytic results | No Ze80 result is used. The route is BZ77 4.14(c) from (a), (b) and 4.13(a). |
-| Irreducible, Levi-cuspidal, supercuspidal and all-character single-block Whittaker coinvariant finiteness; the dependent mirabolic finite-length route | None of these declarations or tasks occurs in the closure. No finite-length, admissibility or irreducibility theorem is used. |
-| Worker 127 operator pause; ownership | No contact with Worker 127. This module does not prove 4.14(a) or 4.14(b) or claim the final theorem, which Worker 593 integrates. |
+| Irreducible, Levi-cuspidal, supercuspidal and all-character single-block Whittaker coinvariant finiteness; the dependent mirabolic finite-length route | None of these declarations occurs in the closure. No finite-length, admissibility or irreducibility theorem is used. |
+| Scope | This module does not prove 4.14(a) or 4.14(b) or claim the final theorem, which `GeneralLinearDerivativeLeibnizFiltrationProof` assembles. |
 
-This scan supplements the mathematical trace above; it does not replace independent
-review.
+This scan supplements the mathematical trace above; it does not replace a reading
+of the proofs.
 
 ## Related Library modules
 
-The published `GeneralLinearDerivativeLeibnizBoundary` (Worker 593) proves the order-zero
+The published `GeneralLinearDerivativeLeibnizBoundary` proves the order-zero
 case `generalLinearDerivativeLeibnizFiltration_zero`. `LeibnizRankZeroGluing`
-(Worker 593, using Worker 984's `LeibnizRankZeroBoundary`) proves the cases where the
+(using `LeibnizRankZeroBoundary`) proves the cases where the
 first or the second rank is zero. Both prove them without hypotheses. Together with
-this module, those cases cover every `a`, `b`, `d` with `d ≤ a + b`, once 4.14(a) and
-4.14(b) are proved. The published `RightMixedProductDerivativePositive` (Worker 723,
-with Markdown revisions by Worker 969) proves 4.14(b) at positive `GL` rank
-conditionally, from hypotheses that include `hLI` and `hLV`. Worker 969's
+this module, those cases cover every `a`, `b`, `d` with `d ≤ a + b`, given 4.14(a) and
+4.14(b), which the Library proves (see Hypotheses). The published `RightMixedProductDerivativePositive` proves 4.14(b) at positive `GL` rank
+conditionally, from hypotheses that include `hLI` and `hLV`.
 `RightMixedProductZeroRank` proves its `GL_0` case. This module imports neither and
 takes 4.14(b) only through `hRM`.

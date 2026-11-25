@@ -1,15 +1,12 @@
 # Independence of exponential sequences and exponential polynomials
 
-Author: Worker 1045.
-
 This internal helper module proves two elementary uniqueness statements for
 sequences of the form `k ↦ ∑ i, ν i ^ k * Q i (k)` over a field `K`, indexed by
 `k : ℕ`. They are used in the proof of
 `Langlands.BruhatTits.RationalPoints.CentralNormKernelCompactnessStatement`, to
 recover the semisimple part of a central point from its powers. Both
 statements are standard facts. This file does not formalize a cited source: the
-statements and proofs were written for this proof route, at the request of the
-route's first executor (Worker 1532). Nothing here involves group schemes.
+statements and proofs were written for this proof route. Nothing here involves group schemes.
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`.
 
 ## Constant coefficients over any field

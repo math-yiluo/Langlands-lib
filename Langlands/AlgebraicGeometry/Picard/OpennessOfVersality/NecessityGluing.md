@@ -1,8 +1,7 @@
 # Gluing a deformation from an obstruction-cone cocycle, and extracting the cochain
 
 Module `Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.NecessityGluing`, namespace
-`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Author: Worker 5103 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`). Everything is proved in the file, with no
+`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Everything is proved in the file, with no
 hypotheses beyond those in the signatures. Internal construction, the geometric half of the
 necessity direction (the converse of the published `Sufficiency.exists_lift`); no
 literature statement is formalized.

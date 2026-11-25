@@ -1,4 +1,4 @@
-import Langlands.TauCeti.RingTheory.WeilRestriction.Basic
+import Langlands.RingTheory.WeilRestriction.PresentedAlgebra
 import Mathlib.RingTheory.Bialgebra.TensorProduct
 import Mathlib.RingTheory.TensorProduct.Free
 import Mathlib.RingTheory.FiniteStability
@@ -281,16 +281,16 @@ section Representing
 variable (A P) [Module.Finite R P] [Module.Free R P] [Algebra.FinitePresentation R A]
 
 /-- The Weil restriction of `P ⊗[R] A` along `P`: it represents algebra maps `A → C ⊗[R] P`. -/
-abbrev Weil : Type u := TauCeti.Algebra.WeilRestriction R P (P ⊗[R] A)
+abbrev Weil : Type u := Langlands.Algebra.WeilRestriction R P (P ⊗[R] A)
 
 /-- The universal algebra map `A → Weil ⊗[R] P`. -/
 def weilPoint : A →ₐ[R] Weil R A P ⊗[R] P :=
-  TauCeti.Algebra.WeilRestriction.tensorHomEquiv R P A _ (AlgHom.id R _)
+  Langlands.Algebra.WeilRestriction.tensorHomEquiv R P A _ (AlgHom.id R _)
 
 variable {R A P} in
 theorem tensorHomEquiv_eq {C : Type u} [CommRing C] [Algebra R C] (g : Weil R A P →ₐ[R] C) :
-    TauCeti.Algebra.WeilRestriction.tensorHomEquiv R P A C g = pushPoint R g (weilPoint R A P) := by
-  have h := TauCeti.Algebra.WeilRestriction.tensorHomEquiv_comp (AlgHom.id R (Weil R A P)) g
+    Langlands.Algebra.WeilRestriction.tensorHomEquiv R P A C g = pushPoint R g (weilPoint R A P) := by
+  have h := Langlands.Algebra.WeilRestriction.tensorHomEquiv_comp (AlgHom.id R (Weil R A P)) g
   rwa [AlgHom.comp_id] at h
 
 /-- A chosen finite set of algebra generators of `A`. -/
@@ -371,9 +371,9 @@ def homEquiv (C : Type u) [CommRing C] [Algebra R C] :
     (HomAlgebra R A P →ₐ[R] C) ≃ {f : A →ₐ[R] C ⊗[R] P // IsHopfPoint R f} where
   toFun g := ⟨pushPoint R g (universalPoint R A P), (isHopfPoint_universalPoint R A P).pushPoint R g⟩
   invFun f := Ideal.Quotient.liftₐ _
-    ((TauCeti.Algebra.WeilRestriction.tensorHomEquiv R P A C).symm f.1) (by
+    ((Langlands.Algebra.WeilRestriction.tensorHomEquiv R P A C).symm f.1) (by
       have h := f.2
-      rw [← Equiv.apply_symm_apply (TauCeti.Algebra.WeilRestriction.tensorHomEquiv R P A C) f.1,
+      rw [← Equiv.apply_symm_apply (Langlands.Algebra.WeilRestriction.tensorHomEquiv R P A C) f.1,
         tensorHomEquiv_eq, isHopfPoint_pushPoint_iff] at h
       exact fun x hx => RingHom.mem_ker.mp (h hx))
   left_inv g := by

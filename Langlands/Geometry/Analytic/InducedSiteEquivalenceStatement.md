@@ -1,7 +1,5 @@
 # Statement: the quasi-étale sites of `X(H)` and `X_{G/H}(G)` are equivalent
 
-Author: Worker 21.
-
 This module states, without proof, Berkovich's Example 1.2.1(i) for
 quasi-étale sites, in the form of the induction functor of
 `InducedEquivariantSite`. It contains one Prop-valued definition,

@@ -1,14 +1,12 @@
 # Getz–Hahn Theorem 11.5.2, p-adic case: unitary generic L-polynomials on `Re(s) ≥ 1`
 
-Authors: Worker 3657 (proof) and Worker 828 (verification and
-submission). Module
+Module
 `Langlands.Representation.RankinSelberg.UnitaryGenericLPolynomialNonvanishingProof`,
 namespace `Langlands.RankinSelberg.UnitaryGeneric`. This is the main module of
-a proof candidate for Task 6387 (`9dcb3206-7035-4d1c-9cea-f620e42f9628`), whose
-target is the published statement
+the proof of the published statement
 `Langlands.RankinSelberg.UnitaryGenericLPolynomialNonvanishingStatement` (module
 `Langlands.Representation.RankinSelberg.UnitaryGenericLPolynomialNonvanishingStatement`).
-The candidate changes no published file.
+The proof changes no published file.
 
 ## Main theorem
 
@@ -29,9 +27,10 @@ cardinality. Existence of `P` is neither assumed nor proved.
 
 ## Route
 
-The candidate follows the route of the statement Markdown ("Intended proof route")
+The proof follows the route of the statement Markdown ("Intended proof route")
 and of the published square-integrable case
-`squareIntegrableLPolynomialNonvanishing` (Worker 192), with one addition for
+`squareIntegrableLPolynomialNonvanishing` (module
+`SquareIntegrableLPolynomialNonvanishingProof`), with one addition for
 the boundary line `Re(s) = 1`.
 
 1. **Square-summability on `N \ P`** (`UnitaryWhittakerTorusSum`):
@@ -88,7 +87,7 @@ point `z = q^(-s)` is nonzero (`spectralPoint_ne_zero_of_pos`).
   `unitaryEqualRankAnalytic` and `equalRank_strip_bounded`.
 - **`r < t`** is excluded by `not_isPairLPolynomial_of_lt`.
 
-## Modules of the candidate
+## Modules of the proof
 
 All are in `Langlands/Representation/RankinSelberg/`, namespace
 `Langlands.RankinSelberg.UnitaryGeneric`, each with its own Markdown:
@@ -96,16 +95,17 @@ All are in `Langlands/Representation/RankinSelberg/`, namespace
 `UnitaryWeightedWhittakerSquare`, `UnitaryEqualRankAnalytic`,
 `UnitaryZeroRowAnalytic`, `BoundaryRationalRegularity` and this module.
 
-Published Library modules reused, by Lean name (authors as recorded in their
-Markdown): `UnitaryCellBound.padicCellBound` and `UnitaryCellMasses` (Worker
-1797); `SquareIntegrableWhittakerRestrictionReduction` (Worker 381);
-`WeightedWhittakerSquareReduction` (Worker 724, with lemmas of Worker 676);
-`SquareIntegrableEqualRankAnalyticProof` (Worker 462, Worker 161);
-`SquareIntegrableZeroRowAnalyticProof` (Worker 161);
-`SquareIntegrableLPolynomialNonvanishingProof` (Worker 192); and the published
+Published Library modules reused, by Lean name:
+`UnitaryCellBound.padicCellBound` and `UnitaryCellMasses`;
+`SquareIntegrableWhittakerRestrictionReduction`;
+`WeightedWhittakerSquareReduction` (with lemmas of
+`UnequalRankIwasawaSupportProof`);
+`SquareIntegrableEqualRankAnalyticProof`;
+`SquareIntegrableZeroRowAnalyticProof`;
+`SquareIntegrableLPolynomialNonvanishingProof`; and the published
 `recursiveQuotientIntegration`, `QuotientTorusEnvelope`, `mellinHalfPlane`,
 `holomorphicRationalContinuation`, `NormalizedGeneratorRegularityProof`,
-`admissibleSchur_centralCharacter`. Where a reused lemma was private, the candidate
+`admissibleSchur_centralCharacter`. Where a reused lemma was private, the proof
 restates it publicly in its own namespace with the same proof.
 
 ## Sources
@@ -129,7 +129,7 @@ restates it publicly in its own namespace with the same proof.
 - H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika, *Rankin–Selberg
   convolutions*, Amer. J. Math. 105 (1983), 367–464, registered as
   `jpss-1983-rankin-selberg`: §8.3, pp.448–451 (the square-integrable
-  convergence argument whose structure the candidate follows).
+  convergence argument whose structure the proof follows).
 
 The route through square-summability on `N \ P` is Jacquet–Shalika's for equal
 rank. The unequal-rank zero-row block, the strip bound and the boundary
@@ -145,12 +145,7 @@ argument are internal to the project.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, lake build of
-all seven modules of the candidate, inspecting `unitaryGenericLPolynomialNonvanishing`:
-check ffc7fc36, rechecked after the Markdown was written as 2bf88205; no errors
-or warnings. The theorem is a theorem with universe
-parameters `uF`, `uV`, `uW` and depends only on the axioms `propext`,
-`Classical.choice` and `Quot.sound`. After the final Markdown and docstring
-edits (Worker 828), check 964ea5b2 rebuilt all seven modules with the same
-inspection result and no errors or warnings. Exact-target validation and
-independent review remain the submission checks.
+A lake build of all seven modules of the proof, inspecting
+`unitaryGenericLPolynomialNonvanishing`, gave no errors or warnings. The
+theorem is a theorem with universe parameters `uF`, `uV`, `uW` and depends
+only on the axioms `propext`, `Classical.choice` and `Quot.sound`.

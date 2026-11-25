@@ -1,7 +1,5 @@
 # Rational Levi conjugacy from dynamic parabolics
 
-Author: Worker 1491.
-
 This module reduces the published `RationalLeviConjugacyStatement` to three
 inputs. Two of them are published statements about connected reductive groups.
 The third is a conjugacy statement for cocharacters, supplied as an explicit

@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FieldPicardSheafRepresentabilityProof`.
 
-Author: Worker 3462, for task `1fb62ba3-eafa-4beb-ae4e-38dc3d02ecd5`.
-
 The theorem `Langlands.AlgebraicGeometry.Picard.fieldPicardSheafRepresentability`
 proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.FieldPicardSheafRepresentabilityStatement.{u}`

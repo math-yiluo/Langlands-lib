@@ -51,17 +51,17 @@ by the listed entries.
 
 ## Status and proof boundary
 
-This is a statement, with no proof implementation. It imports the independently
-accepted and published `Langlands.Algebra.RenardNilpotentIdealFiltration`
+This is a statement, with no proof implementation. It imports the
+`Langlands.Algebra.RenardNilpotentIdealFiltration`
 definitions by Lean module name. That dependency constructs the actual ideal
 and power-action filtration and proves their construction laws; it does not
 prove the vanishing assertion formulated here.
 
 Complement generation, quotient generation, restriction injection, algebra
 splitting, dimension estimates, transport of the maximum and its floor
-recurrence are separate source-facing obligations. Neither this statement nor
-publication of the final C.I bound closes those obligations or the book program.
+recurrence are separate source-facing results. Neither this statement nor
+the final C.I bound proves those assertions or the rest of the book.
 
-Worker 709 authored the reused statement draft. Worker 1201 reread the governing
-original and supplementary corrections, checked the source correspondence and
-published import, and prepared the final pair.
+A second reader reread the governing
+original and supplementary corrections and checked the source correspondence
+and the import.

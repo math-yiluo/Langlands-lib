@@ -1,7 +1,5 @@
 # Convergence of the hyperext spectral sequence for bounded objects
 
-Author: Worker 16.
-
 This module declares three theorem-statement definitions in the namespace
 `Langlands.Cohomology.HyperextConvergence`. They are propositions, not
 proofs: the vanishing of the differentials and the isomorphisms with the
@@ -9,7 +7,7 @@ graded pieces are their conclusions, and nothing is supplied as data or as a
 hypothesis about the spectral sequence. No proof is given here; the truth
 argument below explains why the statements hold.
 
-The statements say that Worker 61's hyperext spectral sequence converges to
+The statements say that the Library's hyperext spectral sequence converges to
 `Hom(K, B⟦n⟧)` when `K` is bounded for the t-structure. They are the abstract
 convergence part of the spectral sequences `E_2^{i,j} = Ext^i(H_c^{2(n-1)-j}, 𝒜) ⇒ H^{i+j}`
 of Harris 1999, (4.4.1) and (4.10.1). The identification of the abutment
@@ -21,14 +19,15 @@ not stated here.
 `C` is a category with objects in `Type u` and morphisms in `Type v`. It is
 preadditive, has a zero object and a shift by `ℤ` by additive functors, and is
 pretriangulated and triangulated (`IsTriangulated C`). These are the
-hypotheses under which Worker 61 constructs the spectral sequence. All three
+hypotheses under which `Langlands.Cohomology.HyperextSpectralSequence`
+constructs the spectral sequence. All three
 propositions take `C` and these instances as parameters and quantify over the
 rest.
 
 The following declarations of other modules are used.
 
 - `HyperextSpectralSequence.hyperextSpectralSequence t K B`
-  (module `Langlands.Cohomology.HyperextSpectralSequence`, Worker 61): for a
+  (module `Langlands.Cohomology.HyperextSpectralSequence`): for a
   t-structure `t : TStructure C` and objects `K` and `B`, Mathlib's
   `E₂CohomologicalSpectralSequence` in `AddCommGrpCat.{v}` of the spectral
   object obtained by applying `Hom(-, B)` to the truncations of `K`. Its
@@ -38,7 +37,7 @@ The following declarations of other modules are used.
   `heartPiece t K q` lies in degrees `≥ -q` and `≤ -q`; classically it is
   `H^{-q} K` placed in degree `-q`.
 - `HyperextAbutment.filtration t K B n p` and `HyperextAbutment.graded t K B n p`
-  (module `Langlands.Cohomology.HyperextAbutmentFiltration`, Worker 61):
+  (module `Langlands.Cohomology.HyperextAbutmentFiltration`):
   `F^p ⊆ Hom(K, B⟦n⟧)` is the subgroup of morphisms that factor through
   `K ⟶ τ_{≥ p - n} K`, equivalently that vanish on `τ_{< p - n} K`, and
   `gr^p = F^p / F^{p+1}`.
@@ -77,7 +76,7 @@ hyperext spectral object the term `H^n(i ⟶ j)` is `Hom` from a truncation of
 `Hom(K, B⟦n⟧)` (`abutmentIso`). So the row `q` involves `H^{-q} K`, the
 abutment in total degree `n` is `Hom(K, B⟦n⟧)`, and the graded piece paired
 with `(p, q)` is `gr^p` of `Hom(K, B⟦p + q⟧)`, which involves the truncation
-at `p - (p + q) = -q`. This is the pairing recorded in Worker 61's
+at `p - (p + q) = -q`. This is the pairing recorded in
 `HyperextAbutmentFiltration`: `gr^p` corresponds to `E_∞^{p, n - p}`.
 
 ## Why the statements are true
@@ -149,7 +148,7 @@ Lean statements are a derived reformulation of this convergence:
 | Cartan–Eilenberg | Lean |
 | --- | --- |
 | Modules over a ring; hypercohomology computed from Cartan–Eilenberg resolutions | Any triangulated category with a t-structure; `Hom(K, B⟦n⟧)` filtered by truncations of `K` |
-| Initial term `Ext(H_p(C), A)` | `E_2^{p,q} = Hom(heartPiece t K q, B⟦p + q⟧)`; for the standard t-structure on a derived category and `B` an object of the heart this is `Ext^p(H^{-q} K, B)` (Worker 61's `HyperextSecondPage`) |
+| Initial term `Ext(H_p(C), A)` | `E_2^{p,q} = Hom(heartPiece t K q, B⟦p + q⟧)`; for the standard t-structure on a derived category and `B` an object of the heart this is `Ext^p(H^{-q} K, B)` (`HyperextSecondPage`) |
 | Case 1: the complex `C` bounded from above (so `K` is bounded above), and `A` bounded below (a module is bounded) | `K` bounded on both sides for `t`; `B` arbitrary |
 | Convergence of a regular filtration (limit term isomorphic to the graded module of the filtered hypercohomology) | The stable pages are isomorphic to `gr^p` from page `max(2, b - a + 2)` on, and the differentials vanish there |
 
@@ -191,14 +190,13 @@ The statements give convergence to `Hom(K, B⟦i + j⟧)` from page
 `2(n - 1) + 2 = 2n` on. That `Hom(K, B⟦i + j⟧)` is `H^{i+j}(S̄_{K(N)}, W̃)`
 is the comparison Harris derives from the `p`-adic uniformization (4.3) and
 the complexes of Harris's §2. It needs the Drinfeld tower and the Shimura
-variety as actual objects, which the Library does not yet have, and it is
-not part of this module. Harris's printed text uses these spectral sequences
+variety as actual objects, and it is not part of this module. Harris's printed text uses these spectral sequences
 only through the degeneration (5.2); this module supplies the general
 convergence that makes the arrows `⇒` precise.
 
 ## Nonvacuity and checks
 
-The hypotheses are satisfiable in the intended setting. A private test file,
+The hypotheses are satisfiable in the intended setting. A test file,
 not part of this module, compiled the following over this module, with
 imports of Mathlib's `DerivedCategory.TStructure` and
 `ModuleCat.Abelian`:
@@ -223,20 +221,16 @@ complexes with bounded cohomology give the instances it uses. Objects with
 bounded cohomology exist in every such category (for example `0`, or a
 module placed in degree `0`, which lies in degrees `≥ 0` and `≤ 0`).
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lean
-4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`), over Library
-commit `18a1f10aef8ea135d90e8474439a5e6d9c130008`: diagnostic
-`89a5813f-548c-4369-9c91-d988f8d4488f` compiled the module with no errors or
+Checks in Lean
+4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`, over Library
+commit `18a1f10aef8ea135d90e8474439a5e6d9c130008`: a diagnostic
+compiled the module with no errors or
 warnings and inspected `HyperextConvergenceStatements`
 (`statement_returns_prop: true`, level parameters `v, u`, axioms `propext`,
-`Classical.choice`, `Quot.sound`). Diagnostic
-`6b6df0c9-54cc-4e85-a248-444bf34fbf21` printed the elaborated bodies of the
-three definitions and compiled the instantiation above.
-
-Revision: Worker 16 later corrected this Markdown. The earlier version
-misquoted Case 1 of Cartan and Eilenberg as `C_p = 0` and read it as
-boundedness of `K` from below. The Lean file is unchanged. Diagnostic
-`9708447a-6ef3-4370-bef2-07b41e6c029b` recompiled the module over Library
+`Classical.choice`, `Quot.sound`). A second diagnostic
+printed the elaborated bodies of the
+three definitions and compiled the instantiation above. A third diagnostic
+recompiled the same Lean file over Library
 commit `003dc092bfd3b226c86f83c40156844905f35c2c` with no errors or warnings
 and inspected `HyperextConvergenceStatements` with the same result.
 
@@ -245,9 +239,9 @@ and inspected `HyperextConvergenceStatements` with the same result.
 Library commit `18a1f10aef8ea135d90e8474439a5e6d9c130008`, unchanged in
 `003dc092bfd3b226c86f83c40156844905f35c2c`:
 
-- `Langlands.Cohomology.HyperextSpectralSequence` (Worker 61):
+- `Langlands.Cohomology.HyperextSpectralSequence`:
   `hyperextSpectralSequence`, `heartPiece`, `secondPageIso`, `abutmentIso`.
-- `Langlands.Cohomology.HyperextAbutmentFiltration` (Worker 61):
+- `Langlands.Cohomology.HyperextAbutmentFiltration`:
   `HyperextAbutment.filtration`, `HyperextAbutment.graded`.
 
 No other Library module is imported.

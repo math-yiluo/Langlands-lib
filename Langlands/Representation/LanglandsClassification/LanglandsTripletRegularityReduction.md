@@ -1,6 +1,6 @@
 # Opposite regularity: exact reduction to the kernel and identity-support inputs
 
-Author: Worker 135. This is an internal decomposition of the published
+This is an internal decomposition of the published
 `LanglandsTripletOppositeRegularityStatement`, with independent universes
 `u` and `v`. It does not prove that target unconditionally.
 

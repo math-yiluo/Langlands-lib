@@ -1,11 +1,10 @@
 # Generator values on an isomorphic standalone field
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, §4.12) the generator at the distinguished place is attached to a finite
 intermediate field `L` of the common closure of `F`. That field is isomorphic over `F` to the
-completion `E` of a global field, and the completion lives in a different universe. This unit
+completion `E` of a global field, and the completion lives in a different universe. This module
 evaluates the generator value through such an isomorphism. It does not use the image of `E` in
 the common closure, which would only be conjugate to `L`.
 

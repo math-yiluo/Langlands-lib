@@ -1,6 +1,6 @@
 # Actual CM class fibers under coarse-level rigidity
 
-This internal construction by Worker 57 proves the stabilizer criterion on the existing Harris CM rational-isogeny classes and constructs a bijection from the original residual group to each specified coarse fiber. Its explicit arithmetic hypothesis is `CoarseLevelHasNoAutomorphisms`, formulated on actual polarized objects and their compatible coarse-level orbits. The fiber bijection is derived from that hypothesis, the fixed-object stabilizer computation and the proved class transitivity.
+This internal construction proves the stabilizer criterion on the existing Harris CM rational-isogeny classes and constructs a bijection from the original residual group to each specified coarse fiber. Its explicit arithmetic hypothesis is `CoarseLevelHasNoAutomorphisms`, formulated on actual polarized objects and their compatible coarse-level orbits. The fiber bijection is derived from that hypothesis, the fixed-object stabilizer computation and the proved class transitivity.
 
 ## Objects, levels and hypotheses
 
@@ -18,7 +18,7 @@ Let `π : C_V → C_U` be the original inclusion class map. For `g ∈ U`, let `
 
 `CoarseLevelHasNoAutomorphisms U` is a proposition. For every actual positive polarized action `X` satisfying both `Good X` and `Num X`, every monodromy-invariant compatible `U`-orbit `a`, every `q : ℚˣ` and actual action-object isomorphism `e : X.actionObj ≅ X.actionObj`, it considers an actual proof of `PolarizedWeilLevel.Multiple X X q e`. If the existing equivalence `levelIso` for these data fixes `a`, the condition requires `e = Iso.refl _`.
 
-Thus the condition concerns the self-isogeny preserving a specified coarse level. It neither requires nor concludes `q = 1`. It assumes no class-level stabilizer conclusion or fiber bijection. Proving this condition from the published Harris `LevelSufficientlySmall` predicate is a separate, still open arithmetic obligation.
+Thus the condition concerns the self-isogeny preserving a specified coarse level. It neither requires nor concludes `q = 1`. It assumes no class-level stabilizer conclusion or fiber bijection. Proving this condition from the published Harris `LevelSufficientlySmall` predicate is a separate arithmetic obligation, not proved in the Library.
 
 ## Stabilizers through the rational-isogeny quotient
 
@@ -62,6 +62,6 @@ Harris and Taylor, *The Geometry and Cohomology of Some Simple Shimura Varieties
 
 Kottwitz, *Points on some Shimura varieties over finite fields*, JAMS 5 (1992), §6, printed p.392, one-based PDF p.20, is registered as `kottwitz-1992-points-shimura-finite-fields`, SHA-256 `c7cede3d0a5e201068e6100acbb3832adb67767d69248ec65458e7cc74ee46f1`. Before asserting the étale and normal-level Galois coverings, that passage restricts to prime-to-p levels for which the moduli objects have no nontrivial automorphisms. It motivates isolating actual object rigidity here. Its different level and isogeny conventions do not supply a proof of the full-adelic Harris smallness implication.
 
-The retained originals at these pages were read. All five pages of the supplied author document `Harris--Publication with errata--undated/Harris--Publication with errata.pdf` were also checked; no entry corrects this Harris–Taylor passage. This is a bounded observation about the supplied list. No source-specific errata note was found in the available project/current Library note filenames.
+The retained originals at these pages were read. All five pages of the supplied author document `Harris--Publication with errata--undated/Harris--Publication with errata.pdf` were also checked; no entry corrects this Harris–Taylor passage. This is a bounded observation about the supplied list. No source-specific errata note was found among the project and Library note filenames available when this module was written.
 
-This construction supplies conditional class stabilizers and an exact set fiber equivalence. It does not prove coarse rigidity, finite order of rational self-isogenies, applicability of moduli existence, equivalence with the full source moduli functor, étaleness of the original scheme projection, invertibility of the exact residual kernel comparison, canonical-model comparison, uniformization or coefficient descent. Those remain separate obligations of the geometric program.
+This construction supplies conditional class stabilizers and an exact set fiber equivalence. It does not prove coarse rigidity, finite order of rational self-isogenies, applicability of moduli existence, equivalence with the full source moduli functor, étaleness of the original scheme projection, invertibility of the exact residual kernel comparison, canonical-model comparison, uniformization or coefficient descent.

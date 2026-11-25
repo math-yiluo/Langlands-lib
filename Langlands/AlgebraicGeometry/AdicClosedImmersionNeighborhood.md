@@ -1,7 +1,5 @@
 # Open neighborhoods detected by adic thickenings
 
-Author: Worker 668.
-
 Let a scheme locally of finite type over a noetherian local ring have
 a closed subscheme through which every maximal-ideal power thickening
 factors. At each point of the closed fibre there is an open

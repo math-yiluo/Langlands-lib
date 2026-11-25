@@ -1,6 +1,6 @@
 # Quaternionic quadratic values and singular subspaces
 
-This internal unit derives elementary identities from the published definitions
+This internal module derives elementary identities from the published definitions
 in `Quaternionic.Forms`. It uses the left-module row-vector convention and works
 over any division algebra with an involution of the first kind, in every
 characteristic. No nondegeneracy, quaternionic dimension, or local-field

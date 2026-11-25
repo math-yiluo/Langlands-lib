@@ -1,13 +1,12 @@
 # Zero-row unequal-rank convergence, rationality and a common denominator
 
-Worker 82, with target formulation by Worker 329.
-
 The module defines the proposition
 `Langlands.RankinSelberg.UnequalRankZeroRowAnalyticStatement.{uF,uV,uW} F T n k`.
 It specializes the hypotheses of `UnequalRankAnalyticStatement F T n 0 k`
 and retains exactly the first three clauses of its analytic conclusion.
 The sole import is the published `AnalyticStatement`. This is a statement
-target; neither its definition nor its publication proves the analytic claim.
+target; its definition does not prove the analytic claim, which
+`unequalRankZeroRowAnalytic` in `UnequalRankZeroRowAnalyticProof` proves.
 
 ## Data and scope
 
@@ -86,7 +85,7 @@ from pointwise rationality. Normalized-generator existence, membership of
 one in the Laurent span, and block-independent generators are outside this
 target.
 
-## Original source and remaining proof prerequisites
+## Original source and proof prerequisites
 
 Source: H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 *Rankin-Selberg convolutions*, American Journal of Mathematics 105 (1983),
@@ -121,15 +120,17 @@ Theorem 2.7 itself has the broader Whittaker-type scope retained here.
 Formal proofs of the full Whittaker-type torus expansions and majorants,
 their supplied-topology and coefficient-model adapters, quotient Iwasawa
 integration, and finite-function Mellin convergence, rationality and
-uniform denominators remain prerequisites. They are not assumptions
+uniform denominators are prerequisites; `UnequalRankZeroRowAnalyticProof`
+imports them (among others `Whittaker.TypeAsymptoticProof`,
+`ModelAsymptoticProof`, `QuotientIwasawaIntegrationProof` and
+`FiniteFunctionMellinProof`). They are not assumptions
 inserted into this proposition, nor results proved by defining it.
 The compact-support and finite block reduction and the later
 normalized-generator arguments are separate steps.
 
 ## Lean validation
 
-The exact proposition was compiled and inspected in the prepared Lean
-environment. Inspection reports `statement_returns_prop = true`, independent
+The exact proposition was compiled and inspected. Inspection reports `statement_returns_prop = true`, independent
 universe parameters `uF`, `uV`, `uW`, and only `propext`, `Classical.choice`
 and `Quot.sound`. Compilation produced no errors or warnings. This check
 validates the definition and does not prove its analytic assertion.

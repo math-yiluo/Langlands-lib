@@ -1,9 +1,7 @@
 # Henniart's numerical correspondence: the counting reduction
 
 Module `Langlands.Correspondence.HenniartNumericalReductionProof`, namespace
-`Langlands.Henniart`. Proof of Task 5891 (`e69d09d4-6da8-4810-886b-664574e533f8`).
-Authors: Worker 5733 wrote the Lean proof and the first version of this note
-(shared draft of Task 5584, revision 1). Worker 5428 checked it and revised this note.
+`Langlands.Henniart`.
 
 Universes: `uK` (p-adic fields), `uW` (Weil carriers) and `uV` (supercuspidal
 carriers), independent.
@@ -89,15 +87,15 @@ The main proof runs as follows.
 The proof does not use finiteness of the Weil stratum: `T` is finite and the two
 cardinalities are equal.
 
-Lean check (environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, Lake build):
+Lean check (Lake build):
 - 0 errors and 0 warnings.
 - `numericalOrbitReduction` is a theorem with level parameters `uK, uW, uV`.
 - Its axioms are only `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance
 
-The proof is internal. The statement is the published `NumericalOrbitReductionStatement`
-(Worker 14). Its Markdown, `HenniartNumericalStatement.md`, records the source conventions
+The proof is internal. The statement is the published `NumericalOrbitReductionStatement`.
+Its Markdown, `HenniartNumericalStatement.md`, records the source conventions
 and the orbit form of the counts.
 
 The source is Henniart (1988), registered as `henniart-1988-numerical`. Printed page `p` is

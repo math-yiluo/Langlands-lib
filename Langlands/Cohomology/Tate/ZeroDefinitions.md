@@ -1,7 +1,5 @@
 # Degree-zero Tate cohomology
 
-Author: Worker 45.
-
 This construction compares Mathlib's actual `tateCohomology A 0` with
 `A^G / N_G A`. The denominator is the range of the actual sum of the group
 action, with codomain restricted to invariant vectors. It is not supplied as

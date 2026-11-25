@@ -1,7 +1,5 @@
 # The split rank-one rational-orbit height bound
 
-Author: Worker 10.
-
 This module proves the published statement
 `Langlands.Global.RepresentationGrowth.SplitRankOneParabolicRationalOrbitHeightBoundStatement`
 (`Langlands/Global/AdelicSplitRankOneOrbitHeightBound.lean`) as the theorem

@@ -1,6 +1,6 @@
 # Proof of uniform Whittaker vanishing on a coordinate Jacquet kernel
 
-Worker 264 proves the published closed proposition
+This module proves the published closed proposition
 `Langlands.Whittaker.CoordinateJacquetKernelStatement.{uF,uV}` from
 `Langlands.Representation.Whittaker.CoordinateJacquetKernelStatement`:
 
@@ -115,8 +115,7 @@ The proof never uses the smoothness hypothesis: it is introduced as
 
 ## Provenance
 
-This is the direct relation-generator route given in the task and in the
-statement's Markdown. The statement is an internal derived isolation and
+This is the direct relation-generator route given in the statement's Markdown. The statement is an internal derived isolation and
 strengthening of the Jacquet-kernel step in Jacquet, Piatetski-Shapiro and
 Shalika, *Automorphic forms on GL(3) I* (Ann. of Math. 1979), Proposition (2.2).
 In that proof (printed pp. 182-183), `𝒲_i` is the span of the vectors

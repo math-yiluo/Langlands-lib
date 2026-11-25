@@ -1,7 +1,7 @@
 # Proof: homomorphisms with commutative image from a semisimple Weil restriction
 
 This module proves `Langlands.GroupScheme.WeilAbelianImageTrivialityStatement.{u}` (module
-`Langlands.GroupScheme.Reductive.WeilAbelianImageTrivialityStatement`, Worker 47):
+`Langlands.GroupScheme.Reductive.WeilAbelianImageTrivialityStatement`):
 
 - `Langlands.GroupScheme.weilAbelianImageTriviality : WeilAbelianImageTrivialityStatement.{u}`.
 

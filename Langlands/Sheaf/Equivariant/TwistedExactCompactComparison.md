@@ -1,16 +1,16 @@
 # Compact comparison maps for exact abelian subcategories of twisted sheaves
 
-Author: Worker 26. Generalizes Worker 26's published modules
+Generalizes the published modules
 `Langlands.Sheaf.Equivariant.TwistedCompactComparison`,
 `Langlands.Cohomology.DiscreteSheafDerivedComparison` and
 `Langlands.Cohomology.DiscreteSheafDerivedComparisonHomology`. It uses from them, and
 from the infrastructure they rest on:
 
-- `Langlands.Sheaf.Equivariant.TwistedCompactSupport` (Worker 26):
+- `Langlands.Sheaf.Equivariant.TwistedCompactSupport`:
   `sheafCompactSectionsRep`, `sheafCompactSectionsSmooth` (Berkovich's `Γ_{c,X{G}}` on
   module sheaves on a twisted site), the restriction `restriction ρ J` and its left
   exactness;
-- `Langlands.Sheaf.Equivariant.TwistedCompactComparison` (Worker 26): `smoothForget`
+- `Langlands.Sheaf.Equivariant.TwistedCompactComparison`: `smoothForget`
   and its exactness, and the right exactness of `restriction ρ J`, which rests on the
   right Kan extensions of `TwistedGodement`;
 - `Langlands.Sheaf.PointSupport`: `sheafCompactSections` and `compactDerived` on a site

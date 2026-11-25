@@ -1,6 +1,6 @@
 # Complementary anti-triangular Fourier slices
 
-Worker 1198. This is an internal specialization of the published
+This is an internal specialization of the published
 `rectangularCoordinateSlice_fourier_duality` for the JPSS Section 6.2 rectangular
 identity. It does not assert the actual unipotent identity or identify Haar
 normalizations.

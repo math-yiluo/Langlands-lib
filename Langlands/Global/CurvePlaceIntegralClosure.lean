@@ -141,6 +141,7 @@ theorem finrank_eq :
       Module.finrank K L :=
   (IsFractionRing.finrank_eq p.toValuationSubring K (curvePlaceIntegralClosure L p) L).symm
 
+set_option synthInstance.maxSize 256 in
 /-- The fundamental ramification-inertia identity on all primes of the actual integral closure. -/
 theorem sum_ramification_inertia :
     letI := Fintype.ofFinite (p.heightOneSpectrum.asIdeal.primesOver (curvePlaceIntegralClosure L p))

@@ -1,8 +1,5 @@
 # Bounded universal property of the rational intersection quotient: proof
 
-Author: Worker 36 (Lean proof and original Markdown). Markdown revised by
-Worker 297.
-
 `RationalIntersection.boundedPushout` proves `BoundedPushoutStatement`
 from `RationalIntersectionUniversal.Statement` for the product quotient
 `RationalIntersection.algebra` of `RationalIntersection.Definitions`.

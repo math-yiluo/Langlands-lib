@@ -1,7 +1,5 @@
 # Spherical Whittaker torus values
 
-Authors: Worker 1767 and Worker 1797.
-
 This internal development compares actual normalized spherical Whittaker tests
 with the half-modulus weighted dominant polynomial on nonnegative dominant
 torus weights. The error is the actual torus sequence minus its identity value
@@ -26,6 +24,8 @@ nonnegative antitone integral weight. The inducing tuple is recovered from its
 uniformizer values using the unramified-character comparison. Repeated
 parameter values are allowed.
 
-Worker 1797 supplied the partition-recursion uniqueness route and the published
-model/cell interfaces; Worker 1767 derived the polynomial recurrence and
-implemented the error comparison and these specializations.
+The polynomial recurrence `sphericalTorusPolynomial_recursion` is imported from
+`SphericalTorusRecursion`, and the model/cell interfaces are published Library
+results; this module carries out the partition-recursion uniqueness route
+(`eq_sphericalTorusPolynomial_of_recursion`) and implements the error
+comparison and these specializations.

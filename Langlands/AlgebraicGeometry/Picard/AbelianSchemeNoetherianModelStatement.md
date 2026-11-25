@@ -17,7 +17,7 @@
 ```
 
 It lives in module `Langlands.AlgebraicGeometry.Picard.AbelianSchemeNoetherianModelStatement`,
-which imports only `Langlands.AlgebraicGeometry.Picard.RelativePicardZero`. This unit only
+which imports only `Langlands.AlgebraicGeometry.Picard.RelativePicardZero`. This module only
 defines the proposition. It proves nothing.
 
 ## Meaning
@@ -54,8 +54,8 @@ line bundles on `A.X.left`, each rigidified along the unit section
 - The isomorphisms are between the underlying line bundles only
   (`RigidifiedLineBundle.forget`), not between rigidified line bundles. The rigidifications
   of `M₁` and `M₂` are not compared with those of `M₁₀` and `M₂₀`.
-- There is no claim that `R₀` is a subring of `R`, or finitely generated. The expected proof
-  takes a finitely generated `ℤ`-subalgebra of `R`, but the proposition only needs a
+- There is no claim that `R₀` is a subring of `R`, or finitely generated. The proof in
+  `AbelianSchemeNoetherianModelProof` takes a finitely generated `ℤ`-subalgebra of `R`, but the proposition only needs a
   noetherian `R₀` and some ring map `φ`.
 
 ## Exact interface
@@ -105,6 +105,6 @@ finitely generated `ℤ`-subalgebras, which are noetherian (Section 32.5, tag 01
 
 These are the same references as the provenance of the published
 `RigidifiedClassesNoetherianApproximationStatement`. The present proposition isolates the
-geometric content of that approximation: it was introduced in proof task
-`a825ba6f-ac5b-43b7-8794-52b2039388f7` as the interface between the descent half of the proof
-and the formal reduction to the agreement equivalence.
+geometric content of that approximation: it was introduced in the proof of
+`RigidifiedClassesNoetherianApproximationStatement` as the interface between the descent half
+of the proof and the formal reduction to the agreement equivalence.

@@ -1,7 +1,5 @@
 # Weights of the split-isotypic part of a representation on a Levi comparison
 
-Author: Worker 5662.
-
 Let `d : GaloisPinningData F K G` with split torus data `s` (torus `S`) and Levi comparison
 data `L : d.LeviComparison s ι e` for `ι : D ⟶ G` (module `Reductive/SplitLeviComparison`).
 Let `ρ` be a representation of `G_K` on `Kⁿ` of highest weight `λ`. In Tits's comparison

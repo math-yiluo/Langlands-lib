@@ -1,7 +1,5 @@
 # The commutator relations for root exponentials over every commutative ring
 
-Author: Worker 1398.
-
 Module `Langlands.GroupScheme.SplitExistence.CommutatorInt`.
 
 ## Declarations

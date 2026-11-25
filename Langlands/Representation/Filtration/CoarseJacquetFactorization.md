@@ -1,7 +1,5 @@
 # Admissible coarse Jacquet constituents and tensor factorization
 
-Author: Worker 19.
-
 This internal adapter strengthens the actual constituent extraction in
 `CoarseJacquetExtraction`. It retains every coarse block and the existing
 `SmoothRep.IsSubquotient` relation. It does not prove either repeated-factor
@@ -78,8 +76,9 @@ classification. The coarse extraction dependency audit is recorded in
 The four direct imports are `Filtration.CoarseJacquetExtraction`,
 `CuspidalSupport.LeviAdmissibleFactorizationProof`,
 `Smooth.Admissibility.ExactProof`, and `Group.GL.CompactOpen`.
-Recursive traversal at the workspace's Library base gives 323 project
-modules including this module, 22 more than the coarse extraction closure.
+Recursive traversal of the imports at the Library base on which this module
+was written gives 323 project modules including this module, 22 more than the
+coarse extraction closure.
 The classification namespace imports remain exactly
 `ConstituentRelations`, `FiniteLengthProof`, `FiniteLengthStatement`,
 `Segments`, `Supercuspidal`, `SupercuspidalContragredientAux`,
@@ -115,8 +114,10 @@ The new proof route was checked at declaration level:
   existence or uniqueness theorem for supercuspidal support.
 
 Thus the dependency route retains the exclusion of the eight
-classification tasks named in the host contract, their conclusions and
-proof successors. Neither global support decomposition, general ordered
+classification results excluded for the repeated-factor transfers of
+`RepeatedCuspidalTripleJacquetTransfer` (listed in
+`ExactConstituentExtraction.md`), their conclusions and the modules that
+prove them. Neither global support decomposition, general ordered
 quotient coverage, nor full multisegment classification is used. Lean
 compilation and inspection of the closing existence theorem succeed with
 independent `uF,uV` and only `propext`, `Classical.choice`, and `Quot.sound`.

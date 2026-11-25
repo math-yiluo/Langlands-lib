@@ -1,7 +1,5 @@
 # Upper slice analysis for the dominant first-block identity
 
-Author: Worker 113.
-
 This internal helper assembles existing analytic results for the upper side of
 the strict-dominant first-block identity. Its provenance is JPSS,
 *Rankin–Selberg convolutions* (1983), Sections 2.7 and 4.6, together with the

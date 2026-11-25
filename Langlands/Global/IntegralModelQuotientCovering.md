@@ -1,15 +1,13 @@
 # Parabolic-left coverings of good model data from relative parabolic quotients
 
-Author: Worker 1654.
-
-This module connects three published or pending pieces:
+This module connects three pieces:
 
 - the statement `Langlands.GroupScheme.RelativeParabolicQuotient.ExistenceStatement.{u}`
   (proper quotients of reductive group schemes by parabolic subgroups, over any
   commutative ring);
 - the local covering theorem
   `Langlands.GroupScheme.IntegralParabolicCovering.range_mul_integralPoints_eq_univ`;
-- the model data `ReductiveParabolicSpreading.ModelData` and Worker 1641's canonical
+- the model data `ReductiveParabolicSpreading.ModelData` and the canonical
   completion models and `ModelLocalConditions`.
 
 Every theorem takes the quotient statement as an explicit hypothesis `hQ`. Nothing here
@@ -79,7 +77,7 @@ as `v : {v : FinitePlace F // v ∉ S}`. The completion carries the valuative re
 - `ModelLocalConditions.of_quotientStatement F S hQ D hmax` (for affine `G.X.left`):
   given only the maximality premise `hmax` of `of_canonicalModels` on the canonical
   models, it proves `ModelLocalConditions F G P p S D.ambient` by supplying the covering
-  premise above. With Worker 1641's `isIntegralIwasawaFamily_of_models`, the target
+  premise above. With `isIntegralIwasawaFamily_of_models`, the target
   `IsIntegralIwasawaFamily` then follows from model data, the quotient statement and local
   maximality.
 

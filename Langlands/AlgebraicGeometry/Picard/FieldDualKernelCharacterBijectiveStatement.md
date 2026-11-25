@@ -67,13 +67,14 @@ the theorem. The imported definitions alone do not prove them.
 ## Scope and proof obligation
 
 This file supplies a `Prop`-valued definition, no proof and no new
-axiom. A separate proof task must prove this exact published
-declaration.
+axiom. The Library proves this exact published declaration as
+`fieldDualKernelCharacterBijective` in `FieldDualKernelCharacterBijectiveProof`.
 
 This is the all-test-scheme bijectivity component of kernel Cartier
 duality over a field. Naturality and additivity of the actual beta
-remain separate obligations; this file does not package it as an
-isomorphism of group-valued functors. It also does not assert that
+are proved separately, in `DualKernelCharacterNaturality` and
+`DualKernelCharacterAdditivity`; this file does not package it as an
+isomorphism of group-valued functors (`KernelCartierDuality` does). It also does not assert that
 the dual map is an isogeny, prove existence or geometry of a dual,
 extend kernel duality to arbitrary base schemes, or construct a
 finite Weil pairing. Those assertions need their own proofs or

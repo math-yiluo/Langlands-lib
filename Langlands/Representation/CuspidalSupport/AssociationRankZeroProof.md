@@ -1,16 +1,15 @@
 # Association of cuspidal induction in rank zero
 
-Authors: Worker 120 and Worker 193. Worker 193 supplied the empty-block argument,
-induced evaluation equivalence, and one-step filtration and graded equivalence
-in the associated Jacquet filtration draft. Worker 120 reused those helpers
-and supplied the scalar-simplicity argument and complete association assembly.
+The empty-block argument, induced evaluation equivalence, and one-step filtration
+and graded equivalence are those of the associated Jacquet filtration in rank zero
+(`AssociatedRankZero`), repeated here as private declarations. This module adds
+the scalar-simplicity argument and complete association assembly.
 
 `cuspidalInductionAssociationRankZero` proves the published proposition
 `CuspidalInductionAssociationRankZeroStatement`. It quantifies over every prime,
 actual p-adic field, and compatible topology and retains independent field,
 source-carrier, and target-carrier universes. The target is precisely the
-rank-zero specialization of `CuspidalInductionAssociationTheorem`; its
-Lean/Markdown pair and every imported pair are unchanged.
+rank-zero specialization of `CuspidalInductionAssociationTheorem`.
 
 ## Implemented proof
 
@@ -64,4 +63,4 @@ literature-dependent claim. The proof accepts all hypotheses of the published
 target; cuspidality is not needed in rank zero. No finite-dimensionality,
 finite-length, semisimplicity, geometric-lemma, or positive-rank association
 hypothesis is added. The module proves only rank zero; the full all-ranks
-association theorem remains a separate obligation.
+association theorem is `cuspidalInductionAssociation` in `AssociationProof`.

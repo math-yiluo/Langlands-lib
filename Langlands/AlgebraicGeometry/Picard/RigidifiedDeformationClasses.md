@@ -50,5 +50,9 @@ the actual rigidified tensor operation to the ordinary class product.
 
 This focused construction supplies a type equivalence and the stated operation
 formulas. The comparison of a universal parameter's sheaf tangent module with
-these classes, and the final field-linear tangent/H1 comparison, are subsequent
-obligations of the host task.
+these classes, and the final field-linear tangent/H1 comparison, are later
+steps toward `FieldUniversalRigidifiedPicardTangentH1Statement`, which this
+construction serves: `tangentDeformationEquiv` in
+`UniversalRigidifiedTangentDeformation` makes the first comparison, and
+`fieldUniversalRigidifiedPicardTangentH1` in
+`FieldUniversalRigidifiedPicardTangentH1Proof` proves that statement.

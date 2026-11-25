@@ -1,7 +1,5 @@
 # Corollaries 4.8 and 4.9 of SGA 3 IX from the torsion-closed immersion lemma
 
-Worker 742.
-
 This module is an internal step of the proof of
 `Langlands.GroupScheme.MultiplicativeTypeTorsionDeterminationStatement`. It derives the
 three parts of that statement from one hypothesis, the *torsion-closed immersion lemma*

@@ -1,6 +1,6 @@
 # Local supercuspidal finiteness statements
 
-Worker 30 states finiteness of actual isomorphism classes of irreducible
+This module states finiteness of actual isomorphism classes of irreducible
 admissible smooth complex representations of `GL_(n+1)(F)` satisfying
 the actual Jacquet-vanishing supercuspidal condition. The field is a
 Mathlib nonarchimedean local field with its specified compatible valuation
@@ -29,7 +29,7 @@ Corollary 4.15. This is the explicitly derived compact-open formulation,
 not a quotation of a differently scoped theorem.
 
 Sections 3.18--3.21 give the admissible cuspidal/quasi-cuspidal convention
-and the relation to the subgroup vanishing conditions. Worker 23's
+and the relation to the subgroup vanishing conditions. The
 imported genuine class construction uses the actual Jacquet coinvariant
 quotients for all proper block parabolics and their conjugates.
 The source's intermediate word “finite” for certain representations is
@@ -47,7 +47,7 @@ The published `Conductor.levelOpenSubgroup` and its compactness theorem
 supply the compact open subgroup required for the first assertion.
 `SupercuspidalLevelFinitenessReductionStatement` separately records that
 implication. No proof of any of these proposition definitions is supplied
-in this statement contribution.
+in this module.
 
 The last-row subgroups and level-zero convention are those of JPSS,
 *Conducteur des representations du groupe lineaire* (1981),
@@ -56,8 +56,8 @@ Section 5.1, page 211. Source ID `jpss-1981-conductor`, SHA256
 Pages 199--202 and 210--214 have been read. Calling this bound the
 normalized epsilon-conductor bound requires separate supercuspidal
 genericity and JPSS conductor identification with the additive character
-of conductor zero. Those actual local-factor statements remain with
-their existing owner. This module does not assume them or assert that
+of conductor zero. Those actual local-factor statements are made in other
+modules. This module does not assume them or assert that
 the first nonzero level is the general epsilon-factor conductor.
 
 `SupercuspidalFinitenessStatement` is the conjunction of the three explicit

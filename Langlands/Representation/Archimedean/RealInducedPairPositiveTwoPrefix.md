@@ -1,10 +1,11 @@
 # Two outer parity prefixes for the positive-inner filtration
 
-This internal derived unit gives a concrete two-prefix reduction for the
+This module gives a concrete two-prefix reduction for the
 positive-inner linked case. It applies to positive original absolute weights
 `L,M`, a linked index `k` and positive signed inner weight `H`.
-The remaining kernel-image containment is an explicit premise; it is not
-proved here.
+The kernel-image containment is an explicit premise; it is not
+proved here (`RealInducedPairPositiveFiltration` proves it, by
+`ker_le_totalPrefix` and `absorption_iff_ker_le`).
 
 For any compatible endpoint parity choices `sd,se`, `parityPrefix` is the
 actual inner binomial followed by the actual original two-block quotient.
@@ -56,7 +57,7 @@ filtration. `realInducedPairPositiveTwoPrefix` proves it.
 
 The provenance is the existing actual positive crossed kernel, rank-one
 decompositions, generic middle surjectivity, outer-parity arithmetic, and
-surjective quotient descent. This unit leaves all earlier chosen maps
+surjective quotient descent. This module leaves all earlier chosen maps
 unchanged. It proves neither `Absorption` nor the unrestricted
 `RealInducedInducedFiltrationStatement`. No finite computational experiment
 is used as mathematical evidence.

@@ -68,6 +68,6 @@ and Mathlib's tensor-product and scheme pullback constructions.
 The idempotent-image proof adapts the published
 `HopfPointWeightWindow.exists_smul_eq_zero_of_idempotent` argument
 to an arbitrary field-valued point using that annihilation theorem.
-This contribution does not prove existence of a finite neighbourhood
+This module does not prove existence of a finite neighbourhood
 from a finite fibre. That separate obligation is needed to apply
 the final theorem to SGA 3 IX 6.5.

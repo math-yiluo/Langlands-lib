@@ -37,5 +37,6 @@ presentation survives scalar extension, and
 
 The provenance is internal: these are direct applications of the existing
 Mathlib tensor-product coalgebra, monoid-algebra and finite-presentation APIs,
-intended for the local-to-open-neighborhood argument in Task 6940. They do not
+intended for the local-to-open-neighborhood argument in the proof that fppf
+closed subgroups of groups of multiplicative type are of multiplicative type. They do not
 supply local Hopf reconstruction or a proof of the closed-subgroup theorem.

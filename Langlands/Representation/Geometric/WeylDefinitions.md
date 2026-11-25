@@ -1,10 +1,10 @@
 # Actual Weyl data for the GL geometric lemma
 
-Author: Worker 14. This construction imports the published
-`Langlands.Group.GL.Blocks` pair by Worker 6 and
-`Langlands.Group.GL.Maps` pair by Worker 16. The complete imported pairs
-were read and are reused by their current Library module names. They retain their original
-authorship and are reused without modification.
+This construction imports the published
+`Langlands.Group.GL.Blocks` pair and
+`Langlands.Group.GL.Maps` pair. The complete imported pairs
+were read and are reused by their current Library module names. They are
+reused without modification.
 
 `blockIndex` uses the existing consecutive-coordinate equivalence of a
 positive ordered `BlockShape`. The shared identity `blockIndex_index` proves

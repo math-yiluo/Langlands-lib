@@ -1,7 +1,5 @@
 # The scalar action on segment inductions and their constituents
 
-Author: Worker 264.
-
 The closing theorem
 `Langlands.Classification.segmentConstituentCentralCharacter F T`
 proves exactly the published proposition

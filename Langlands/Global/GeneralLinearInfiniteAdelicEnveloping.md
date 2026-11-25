@@ -33,7 +33,7 @@ proves the action formula for every enveloping element and original function.
 Restricting to the actual center proves the center-action formula.
 
 This is internal content based on the published original differential comparison,
-its faithfulness helper, and `LieEnvelopingEquiv`. It retains Worker 72's original
+its faithfulness helper, and `LieEnvelopingEquiv`. It retains the original
 matrix differential, smooth-function carriers and enveloping action. It proves
 no generic scalar manifold commutator, exponential-curve comparison, growth,
 quotient-measure or reduction-theory assertion.

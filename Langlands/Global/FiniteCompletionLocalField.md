@@ -1,7 +1,5 @@
 # The existing finite completion as a nonarchimedean local field
 
-Author: Worker 1625.
-
 This derived adapter equips `Langlands.Global.FiniteCompletion F v`, for
 every number field `F : Type u` and finite place `v`, with the valuative
 relation of its existing adic valuation. It proves the nonarchimedean

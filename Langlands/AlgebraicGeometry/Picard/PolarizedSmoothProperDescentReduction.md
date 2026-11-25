@@ -31,7 +31,7 @@ Thus its conclusion is precisely the published target proposition, under
 the explicit geometric effectivity hypothesis.
 
 The provenance is internal composition of the local relation, coherent
-bundle, sheaf comparison and geometric reflection constructions. This unit
+bundle, sheaf comparison and geometric reflection constructions. This module
 does not prove geometric effectivity, and therefore does not by itself
 prove the unconditional target. Neither the target nor its imported
 definitions is changed.

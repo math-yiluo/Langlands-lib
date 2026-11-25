@@ -1,7 +1,5 @@
 # Top dual homology of a residue-field resolution
 
-Author: Worker 1015.
-
 `Langlands.CommutativeAlgebra.RegularLocalResidueResolutionDualityStatement.{u}`
 defines a proposition and supplies no proof.
 

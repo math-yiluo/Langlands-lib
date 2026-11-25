@@ -1,8 +1,5 @@
 # Proof: the spaces `X_Σ` of discrete `G`-sets are `G`-spaces
 
-Author: Worker 148, adapting the proof of `InducedSpace.continuityStatement`
-by Worker 99.
-
 This module proves the Library statement
 `Langlands.Analytic.SaturatedAtlasPresentation.SetInducedSpace.ContinuityStatement`
 (module `SetInducedSpaceContinuityStatement`). The source is Berkovich,
@@ -21,8 +18,8 @@ Hausdorff, and its action of `G` is continuous for Berkovich's test triples.
 Berkovich uses this fact on p.4 without stating it separately.
 
 The lemmas on disjoint unions come from the helper module
-`LocalizedSigmaNearness` by Worker 99, written for the sibling statement
-`InducedSpace.ContinuityStatement`. The proof below follows Worker 99's proof
+`LocalizedSigmaNearness`, written for the sibling statement
+`InducedSpace.ContinuityStatement`. The proof below follows the proof
 of that statement (`InducedSpace.continuityStatement`). Here the action
 moves a copy without the conjugation by coset representatives, so the steps
 with representatives are not needed.

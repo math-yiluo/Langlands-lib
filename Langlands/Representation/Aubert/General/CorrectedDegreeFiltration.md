@@ -1,6 +1,6 @@
 # Corrected support filtration on homogeneous Jacquet degrees
 
-Worker 691 derived this internal construction from the published
+This internal construction is derived from the published
 `General.CorrectedFiltration`, the actual Jacquet diagram, the generic
 `CutComplex.Diagram.Subdiagram` quotient construction, and
 `Langlands.FiniteFiltered`. Its namespace is
@@ -65,7 +65,7 @@ below the length of the rank-ordered Weyl list.
 ## Provenance and retained obligations
 
 This is derived infrastructure. The actual support construction and its laws
-are imported from Worker 379's `General.CorrectedFiltration`; the quotient
+are imported from `General.CorrectedFiltration`; the quotient
 comparison and finite filtration lifting are imported from
 `FilteredCutDiagram` and `Filtration.FiniteFilteredExactness`. The organization
 parallels the published GL module `CorrectedJacquetCutFiltration`, with the

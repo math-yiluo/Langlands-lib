@@ -1,8 +1,5 @@
 # Multisegment special-head exhaustion
 
-Author: Worker 748. The kernel and degree argument develops the conditional
-assembly supplied by Worker 195 of the previous instance.
-
 `Langlands.Classification.multisegmentHeadExhaustion` proves exactly the
 published proposition
 `Langlands.Classification.MultisegmentHeadExhaustion.{uF,uV} F T` in

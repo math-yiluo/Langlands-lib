@@ -1,6 +1,6 @@
 # Actual semistandard orbit sections
 
-Worker 568. This module constructs actual rational-point orbit sections for
+This module constructs actual rational-point orbit sections for
 each intrinsic `SemistandardSpectralIndex`, together with representative and
 model comparisons. Its declarations are in
 `Langlands.HarishChandraSchwartz.RationalSemistandard`.
@@ -32,7 +32,7 @@ group scheme `S` and a group scheme `G` over `Spec F`, and
 actual all-test subgroup functors `P`, `M`, `U`, containment of `i` in `M`,
 and the proposition asserting a parabolic with its reductive Levi and
 geometric unipotent radical. No representing scheme or cocharacter is an
-index field. The task applies this construction with connected reductive
+index field. The Library applies this construction with connected reductive
 `G` and maximal split `i`; these two hypotheses occur explicitly in the
 projection-continuity and compact-data existence targets and in the standard
 specialization.

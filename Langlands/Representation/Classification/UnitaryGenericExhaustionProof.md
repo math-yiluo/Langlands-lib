@@ -1,7 +1,6 @@
 # Unitary generic exhaustion
 
-Author: Worker 4941. This file proves Task 4941
-(`31c91f66-6a4d-4571-9898-e0a37589a58b`). Module
+Module
 `Langlands.Representation.Classification.UnitaryGenericExhaustionProof`,
 namespace `Langlands.Classification`. The proof has no `sorry` and uses only the
 axioms `propext`, `Classical.choice` and `Quot.sound`.

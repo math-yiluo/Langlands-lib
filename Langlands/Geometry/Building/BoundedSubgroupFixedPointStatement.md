@@ -73,11 +73,11 @@ above include 4.1.6. Convexity is the corrected notion (convex sets are
 nonempty, corrections PDF pp.1–2), which is the Library's
 `IsGeodesicallyConvex`.
 
-This author could not open the source PDF in the session that produced
-this unit. The source content above is taken from the published Corollary
-4.2.14 row of the KP source ledger (`notes/bruhat-tits/kp-source-ledger.md`),
-which records it with the same locators. The reviewer should compare the
-statement with the original passage.
+The source PDF could not be opened when this file was written. The source
+content above is taken from the published Corollary 4.2.14 row of the KP
+source ledger (`notes/bruhat-tits/kp-source-ledger.md`), which records it
+with the same locators; this page records no comparison of the statement
+with the original passage.
 
 ## Derived scope and provenance
 
@@ -102,7 +102,8 @@ transcription. It differs from the source in three ways.
   universally quantified clause includes the source's case. Nothing is
   assumed about which realization is chosen.
 
-The intended proof combines published results: the metric realization
+The proof, `boundedSubgroupFixedPoint` in `BoundedSubgroupFixedPointProof`,
+combines published results: the metric realization
 (`MetricRealizationStatement`), compactness of the closure of an
 algebraically bounded set in the canonical topology, continuity of orbit
 maps, the bounded-set fixed-point theorem (KP Theorem 1.1.15(2)) and the

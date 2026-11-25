@@ -46,12 +46,12 @@ end Pairing
 
 variable {E : Type u} [Field E] [NumberField E] {n : ℕ}
 
-local instance : AddCommGroup (RationalInvariantFunctions E n) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions E n) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions E n) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms E n) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions E n) := Submodule.addCommGroup _
-local instance (S : OperatorRealization E n) : AddCommGroup S.Space := Submodule.addCommGroup _
+private local instance : AddCommGroup (RationalInvariantFunctions E n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (ContinuousRationalFunctions E n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (FiniteSmoothRationalFunctions E n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (AutomorphicForms E n) := Submodule.addCommGroup _
+private local instance : AddCommGroup (StableAutomorphicFunctions E n) := Submodule.addCommGroup _
+private local instance (S : OperatorRealization E n) : AddCommGroup S.Space := Submodule.addCommGroup _
 
 /-- On real Lie generators the enveloping shift adds the actual character derivative. -/
 private theorem heckeEnvelopingShift_realGenerator (ν : HeckeCharacter E)

@@ -1,7 +1,6 @@
 # Continuity of the star action: proof
 
-Authors: Worker 3483 (formerly Worker 15; Lean proof and original exposition) and
-Worker 119 (dependency documentation and exact-target submission). `Langlands.GroupScheme.starActionContinuity` proves
+`Langlands.GroupScheme.starActionContinuity` proves
 `Langlands.GroupScheme.StarActionContinuityStatement.{u}` exactly, with no
 added hypotheses or proposition-valued inputs. Its axioms are `propext`, `Classical.choice` and
 `Quot.sound`.
@@ -32,9 +31,6 @@ homomorphism sends `1` to `1`.
 
 ## Inputs and provenance
 
-The proof is reused without Lean changes from Task 3483 draft revision 3, task
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`, directory
-`revision-3-ce01aee184dec1c896d6b5edb977d87b1fc08762357b7999f699a7d8b24f5d12/files/`.
 The unchanged target module
 `Langlands.GroupScheme.Reductive.StarActionStatement` documents the source
 assertion and original-literature provenance. The implemented proof is the
@@ -44,7 +40,7 @@ Every project input theorem is named here with its module:
 
 | Declaration | Module | Use |
 | --- | --- | --- |
-| `Langlands.GroupScheme.torusLatticeGaloisContinuity` | `Langlands.GroupScheme.Torus.LatticeGaloisContinuityProof` | One finite-dimensional field makes both lattice actions trivial; this proof is submitted separately as target 1 of Task 5263. |
+| `Langlands.GroupScheme.torusLatticeGaloisContinuity` | `Langlands.GroupScheme.Torus.LatticeGaloisContinuityProof` | One finite-dimensional field makes both lattice actions trivial. |
 | `Langlands.GroupScheme.IsRootDatumOf.galoisRootIndexEquiv_root` | `Langlands.GroupScheme.Reductive.RootDatumGaloisRoots` | The root-index action agrees with Galois action on the root embedding. |
 
 The proof unfolds the published constructions

@@ -59,7 +59,7 @@ isomorphism obtained above closes the goal.
 
 No hypothesis beyond the statement's is used. In particular there is no
 common-apartment, V 7, AS 5, building-axiom or availability assumption.
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` reports
+A Lean check of the theorem reports
 kind `theorem`, no errors or warnings, and only the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 

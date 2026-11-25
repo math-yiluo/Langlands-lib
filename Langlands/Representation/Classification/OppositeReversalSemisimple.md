@@ -72,8 +72,8 @@ the tempered upper induction proposition.
    module map of `(oppositeReversalEquiv B σ).symm`
    (`isSemisimpleModule_iff_of_bijective`).
 
-`h1` is an explicit hypothesis and is not proved here. Its proof is owned by
-task `fb462a13-96b1-4ac1-a47d-4fd7510d0ac4`.
+`h1` is an explicit hypothesis and is not proved here. It is proved as
+`glTemperedInduction` in `Classification.TemperedInductionProof`.
 
 ## Provenance
 

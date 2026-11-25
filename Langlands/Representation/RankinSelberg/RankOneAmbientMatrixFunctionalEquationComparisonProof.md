@@ -1,8 +1,5 @@
 # Rank-one gamma comparison from ambient matrix data
 
-Authors: Worker 458 (positive-rank proof and all-ranks assembly);
-Worker 64 (rank-zero proof).
-
 The theorem
 `Langlands.RankinSelberg.rankOneAmbientMatrixFunctionalEquationComparison`
 proves exactly the existing closed proposition

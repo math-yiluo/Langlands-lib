@@ -32,11 +32,14 @@ and `cokernelSystem_isApproximation`. Two facts are standard Mathlib
 results: the tensor isomorphism for finite free modules
 (`TensorProduct.piScalarRight`) and the five lemma for right exact rows
 (`LinearMap.bijective_of_surjective_of_bijective_of_right_exact`). No
-unpublished code by other workers is used.
+unpublished code is used.
 
 The bijectivity of the cokernel's additive colimit comparison is **not**
-proved here. It is a separately allocated colimit-preservation result for
-`cokernelSystem` (successor of task d10d3f4e). Accordingly,
+proved here. It is a separate colimit-preservation result for
+`cokernelSystem`: `Langlands.Algebra.localCokernelColimitPreservation`
+(module `LocalApproximationCokernelColimit`), which applies
+`LocalModuleSystem.CompatibleMap.cokernelSystem_moduleColimitMap_bijective`
+from `LocalCompatibleMapApproximation`. Accordingly,
 `cokernelSystem_isApproximation` takes that bijectivity as an explicit
 hypothesis `hC`.
 
@@ -134,7 +137,7 @@ For finite `κ`:
   agree pointwise by induction on tensors. No exchange of tensor factors is
   involved. (Stacks writes the module-first tensor
   `(κ → D.alg i) ⊗[D.alg i] D.alg j`. That map is the scalar-first map
-  composed with `TensorProduct.comm`, and this unit does not use it.)
+  composed with `TensorProduct.comm`, and this module does not use it.)
 - `freeSystem_isApproximation`: if `D.IsApproximation`, all six module
   clauses hold. The components are finite free modules.
 

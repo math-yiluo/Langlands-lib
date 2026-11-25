@@ -1,7 +1,5 @@
 # Forms of the split even special orthogonal group
 
-Author: Worker 349.
-
 `Langlands.GroupScheme.Quaternionic.EvenSpecialOrthogonalFormStatement.{u}` is an
 **unproved** statement. It is the case `SO⁰_{2n}`, `n ≥ 4`, of Tits's realization of the
 forms of the orthogonal groups (Tits 1968, §3, Théorème 1). There is no characteristic

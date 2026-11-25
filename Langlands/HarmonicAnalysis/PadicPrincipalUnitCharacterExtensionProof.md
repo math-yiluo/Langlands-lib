@@ -2,16 +2,14 @@
 
 This pair implements the theorem
 `Langlands.HarmonicAnalysis.padicPrincipalUnitCharacterExtension.{u}` with exact
-target `PadicPrincipalUnitCharacterExtensionStatement.{u}`. Worker 84 is the principal
-author; Workers 394, 55 and 450 are coauthors for
-the adapted implementations described below.
+target `PadicPrincipalUnitCharacterExtensionStatement.{u}`.
 
-The openness helper adapts Worker 394's principal-unit openness implementation,
-which is documented and reused in the public UnboundedConductorProof pair.
+The openness helper adapts the principal-unit openness implementation
+documented and reused in the public UnboundedConductorProof pair.
 The principal-unit subgroup is open: its valuation-one condition is an open
 valuation sphere, and its congruence condition is the inverse image of the open
 integer ring under `a -> (a-1)/uniformizer^n`. This includes level zero.
-The normalized-order continuity argument adapts Workers 55 and 450's
+The normalized-order continuity argument adapts
 IntegralUnitCharacterExtensionProof to the supplied data. It uses the compatible
 valuation's local constancy away from zero, followed by the exact ordered
 value-group isomorphism, logarithm and negation.

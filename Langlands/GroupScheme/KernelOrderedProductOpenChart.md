@@ -1,6 +1,6 @@
 # Open ordered charts for full scheme-theoretic kernels
 
-This internal unit specializes `KernelProductOpenChart` to the actual ordered
+This auxiliary module specializes `KernelProductOpenChart` to the actual ordered
 multiplication morphisms of finite lists of group-scheme homomorphisms.
 Its inputs are compatible factor homomorphisms over an ambient homomorphism,
 a monic target chart, and an open source chart.
@@ -22,6 +22,7 @@ full kernel. It applies the general smoothness theorem to the reindexed
 charts; there is no identity-component or reduced-kernel replacement.
 
 These are internal deductions from the published ordered-product naturality,
-finite-product reindexing, and the separately submitted local kernel-chart
-construction. They supply a finite ordered-chart interface for the remaining
+finite-product reindexing, and the local kernel-chart construction of
+`KernelProductOpenChart`. They supply a finite ordered-chart interface,
+used by `BruhatTits.IntegralModels.RootCentralizerKernelAssembly`, for the
 incident-model assembly, and do not themselves assert the common-torus theorem.

@@ -1,6 +1,5 @@
 # A supercuspidal pair partner with a pole at `s = 0`
 
-Author: Worker 1719.
 This module, in namespace `Langlands.RankinSelberg`, defines one statement,
 `TemperedTwistSupercuspidalPoleStatement`. It is not proved here.
 

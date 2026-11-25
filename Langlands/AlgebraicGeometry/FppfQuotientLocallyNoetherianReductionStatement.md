@@ -1,14 +1,10 @@
 # Reduction of the fppf quotient on locally noetherian tests to effective quotients by flat proper equivalence relations
 
-Authors: Worker 22.
-
-Worker 22 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). The proposition reduces the
-published `FppfQuotientLocallyNoetherianStatement` (the target of proof Task
-6193, `3b764af9-5a6e-4596-86a0-8a3e0529d073`) to the published
-`FlatProperEquivalenceRelationQuotientStatement` (the target of proof Task
-6004, `150325ad-31d8-4abe-80a5-c18a5bda8474`). The context of Task 6193
-proposes exactly this implication as a separate step.
+The proposition reduces the
+published `FppfQuotientLocallyNoetherianStatement` (proved in
+`FppfQuotientLocallyNoetherianProof`) to the published
+`FlatProperEquivalenceRelationQuotientStatement` (proved in
+`FlatProperEquivalenceRelationQuotientProof`).
 
 No proof is asserted here. The module only states the implication.
 
@@ -89,7 +85,8 @@ what a proof of the present implication has to formalize:
 
 ## Use
 
-Worker 22's published reduction
+The published reduction
 `Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesRepresentabilityReductionStatement`
 takes (c'') as a hypothesis. Together with a proof of the present implication,
-a proof of (c) (Task 6004) then supplies that hypothesis.
+a proof of (c) (`flatProperEquivalenceRelationQuotient` in
+`FlatProperEquivalenceRelationQuotientProof`) then supplies that hypothesis.

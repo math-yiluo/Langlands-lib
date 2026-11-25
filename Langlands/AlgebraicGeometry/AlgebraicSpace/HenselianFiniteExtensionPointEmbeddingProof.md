@@ -1,11 +1,12 @@
 # Rational points embed along finite extensions of henselian valued fields
 
-Authors: Worker 157, with an adaptation of Worker 105's published completion
-embedding argument for the case of trivial relative separable closure.
+The proof adapts the completion embedding argument of
+`HenselianCompletionPointEmbeddingProof` for the case of trivial relative
+separable closure.
 
 `henselianFiniteExtensionPointEmbedding` proves exactly
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianFiniteExtensionPointEmbeddingStatement.{u}`.
-It imports the unchanged published statement and retains all its hypotheses:
+It imports the statement unchanged and retains all its hypotheses:
 `K` and `L` are henselian nontrivially normed fields with `NormedAlgebra K L`
 and `FiniteDimensional K L`, and `X` is quasi-separated, locally separated
 and locally of finite type over `Spec K`. The conclusion is an embedding for
@@ -50,7 +51,7 @@ of `L` also extend the norm of `K`, so are equal.
 If an `L`-point of an étale chart and a `K`-point of another chart have the
 same image in `X(L)`, they determine an `L`-point of the represented chart
 overlap. Its projection to the second chart is étale, hence formally
-unramified. The published
+unramified. The lemma
 `exists_changeRing_eq_of_formallyUnramified` makes that point rational.
 The coefficient-change embedding on scheme points identifies its second
 projection with the original `K`-point.
@@ -71,7 +72,7 @@ it does not require local separatedness.
 `isEmbedding_of_isGalois` uses local separatedness to prevent two nearby
 conjugate chart lifts from having the same image.
 
-Let `W` be open in `X(K)` and `x ∈ W`. The published rational-point étale
+Let `W` be open in `X(K)` and `x ∈ W`. The rational-point étale
 lifting theorem gives an affine finite-type étale chart `c : U → X` and
 `u ∈ U(K)` above `x`. Write `i : U(K) → U(L)` for coefficient change and
 `q : U(L) → X_L(L)` for the base-changed chart map.
@@ -94,7 +95,7 @@ of `x`.
 
 If `q(η)` for `η ∈ E` is the image of a rational point `y ∈ X(K)`, all
 `r_σ(η)` have the same image. They and `η` lie in `V`, where `q` is
-injective, hence `η` is Galois invariant. The published
+injective, hence `η` is Galois invariant. The lemma
 `GaloisChartPoint.exists_desc_of_galois_invariant` descends it to a point
 of the affine scheme `U(K)`. Membership in `A` puts that point in
 `c⁻¹(W)`. Injectivity of coefficient change on space points then shows
@@ -102,7 +103,7 @@ of the affine scheme `U(K)`. Membership in `A` puts that point in
 
 Consequently each `x ∈ W` has an open target neighborhood whose preimage
 lies in `W`. Taking their union proves the inducing property. Injectivity
-is the published fppf-sheaf injectivity for finite field extensions.
+is the Library's fppf-sheaf injectivity for finite field extensions.
 
 ## Finite separable and arbitrary finite extensions
 
@@ -123,7 +124,7 @@ separable extension of `K`, carrying its inherited norm, and
 into `(X_S)_L(L)`. The base change of `X` retains quasi-separatedness and
 local finite type. Composing with the homeomorphism from `towerIso`
 and using `fieldExtensionPointMap_tower` gives precisely the map in the
-published target.
+target.
 
 No completeness, module topology, separability of `L/K`, separatedness,
 or cover by separated open subspaces is added to the target. The theorem

@@ -1,7 +1,5 @@
 # Split-kernel Haar ratio for a full kernel intersection
 
-Author: Worker 499.
-
 This internal derived module proves that the actual character
 `Langlands.Induction.splitKernelHaarRatio` is the constant character `1`
 whenever the inducing subgroup contains the whole kernel. Its hypotheses
@@ -33,12 +31,13 @@ intersection, as in `splitKernelHaarRatio`.
 The proof uses only published split-kernel conjugation, restriction of a
 continuous automorphism to a subgroup, equality of Haar scaling under
 continuous conjugacy, and cancellation of a nonzero positive scalar.
-These elementary dependencies introduce none of the host task's excluded
+These elementary dependencies introduce none of the excluded
 derivative, segment, classification, supercuspidal, Whittaker-finiteness,
-plus-functor, adjunction or consumer conclusions. The concrete application,
+plus-functor, adjunction or consumer conclusions of the module this helper
+serves, `Derivative.MirabolicProductMinusLeftPhiHaar`. The concrete application,
 its original-source motivation, complete import closure and condition-by-condition
 audit accompany this helper in
 `Langlands/Representation/Derivative/MirabolicProductMinusLeftPhiHaar.md`.
 That closure includes both direct imports of this helper and all their
 transitive project dependencies. The proof is an internal derivation from
-the stated published constructions; no peer draft contributes a proof body.
+the stated published constructions.

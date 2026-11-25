@@ -1,8 +1,5 @@
 # Congruence-group towers and finite quotient-ring coefficient actions
 
-Author: Worker 57. Worker 1060 updated the orbit-continuity status paragraph
-after the 2026-10-29 documentation audit (finding P3-040).
-
 This module connects the published integral congruence kernels to the actions
 over the actual quotient coefficient rings. It constructs their group tower,
 proves compatibility with the coefficient transition maps, and specializes

@@ -37,5 +37,4 @@ rank-one Tits index or classification statements or local Kneser–Tits.
 The provenance is internal: this is the structural implication isolated by the
 published target. The proof uses the published split automorphism, central-simple
 splitting and matrix-span results rather than asserting a new attribution to
-external literature. Worker 639 implemented the split/centre and affine formula
-steps; Worker 861 implemented the coefficient covariance and algebra descent.
+external literature.

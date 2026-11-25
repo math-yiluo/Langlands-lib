@@ -1,7 +1,5 @@
 # Transport of an exponent across one rank-one wall
 
-Author: Worker 5120.
-
 This module proves `Langlands.InducedTwistPersistence.isGeneralizedEigencharacter_wall`.
 It is the analytic core of one wall step in the persistence argument.
 

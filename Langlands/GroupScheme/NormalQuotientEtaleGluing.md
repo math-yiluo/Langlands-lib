@@ -1,6 +1,6 @@
 # Étale descent of affine normal quotients
 
-This internal derived unit proves
+This auxiliary module, derived from existing Library results, proves
 `Langlands.GroupScheme.AffineNormalQuotientEtaleGluingStatement` in every
 universe. Let `G` be an affine group scheme locally of finite type over any
 scheme `S`, and let `i : N → G` be monomorphic on the underlying schemes over
@@ -67,7 +67,8 @@ gluing theorem, the published affine fppf quotient descent theorem, standard
 pullback coherence, and Mathlib's finite affine cover refinement and finite
 coproduct constructions. It introduces no external-source assertion.
 
-The local quotient schemes remain supplied data. This unit neither constructs
+The local quotient schemes remain supplied data. This module neither constructs
 them for arbitrary relative parabolics nor proves reductivity or the universal
-property of the global quotient. Those remain separate obligations of the
-relative parabolic reductive quotient proof.
+property of the global quotient. Those are parts of the relative parabolic
+reductive quotient proof, `relativeParabolicReductiveQuotient` in
+`RelativeLevi.ReductiveQuotientProof`.

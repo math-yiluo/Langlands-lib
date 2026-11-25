@@ -1,7 +1,5 @@
 # Apartment charts along a field extension, and the Galois coefficient charts
 
-Author: Worker 47 (Task 6502).
-
 This module constructs the per-automorphism coefficient charts on the unramified apartment and
 assembles them into the moving semilinear action data of the Galois action. It uses the generic
 chart layer `KPApartmentCoefficientChart`. Every statement holds for an arbitrary supplied

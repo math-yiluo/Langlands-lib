@@ -1,7 +1,5 @@
 # Actual GL parabolic quotients and ambient subgroup bridges
 
-Author: Worker 585.
-
 This internal construction supplies concrete group maps for the general-to-GL
 Aubert specialization. It reuses the actual upper block parabolic, diagonal
 projection, radical kernel, Levi embedding and conjugation action of
@@ -41,9 +39,9 @@ the Levi section's range inside the parabolic as the fixed set of its
 continuous projection followed by section. The already closed parabolic
 inclusion then gives closedness in GL.
 
-This unit has no representation-theoretic or classification prerequisites.
+This module has no representation-theoretic or classification prerequisites.
 It does not construct the shared general reductive datum, identify relative
 root subgroups, compare modulus characters, compare normalized functors,
 or identify Aubert operators. Those are further specialization obligations.
 In particular, the group quotient equivalence here is algebraic; the
-topological equivalence asserted in this unit is the radical inclusion.
+topological equivalence asserted in this module is the radical inclusion.

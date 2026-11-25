@@ -1,7 +1,6 @@
 # Uniqueness of actual relative-root subgroups from their Lie weights
 
-Workers 1286 and 1302 contributed this proof. Worker 1302 supplied the generic
-cyclic-tail reindexing in the paired `CyclicTailWeightSpan` module.
+The generic cyclic-tail reindexing is in the paired `CyclicTailWeightSpan` module.
 
 `Langlands.GroupScheme.RelativeRoot.rootSubgroupUniqueness` proves exactly
 `RootSubgroupUniquenessStatement.{u}` from
@@ -15,8 +14,8 @@ are retained, including those present in nonreduced relative root systems.
 The candidate subgroup's connectedness remains a hypothesis of the statement.
 
 The helper `semigroupWeightSpan_cyclicTail_one_conjugation` is unconditional.
-It uses the generic reindexing lemma `semigroupWeightSpan_cyclicTail`,
-contributed by Worker 1302 in the paired `CyclicTailWeightSpan` module, and the
+It uses the generic reindexing lemma `semigroupWeightSpan_cyclicTail`
+of the paired `CyclicTailWeightSpan` module, and the
 published `actionWeightSpace_conjugation` comparison. For a positive natural
 number, the extra bound `1 ≤ n` in the first cyclic tail is automatic. Taking
 the two indexed-supremum inequalities gives exactly `positiveWeightSpan i a`.

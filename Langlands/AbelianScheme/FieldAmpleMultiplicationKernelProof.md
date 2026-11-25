@@ -93,5 +93,5 @@ smoothness and geometric-connectedness assumptions remain in the exact target
 but are unused in this argument. No symmetry, projectivity, flatness, isogeny,
 or extra finite-kernel assumption is added.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+The environment in which it was checked is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

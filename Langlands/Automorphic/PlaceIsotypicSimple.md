@@ -1,7 +1,7 @@
 # Isotypic place actions and scalar vectors
 
 Module `Langlands.Automorphic.PlaceIsotypicSimple`, namespace
-`Langlands.Automorphic.PlaceIsotypic`. Worker 5665 wrote it for Task 7399, as a step in the
+`Langlands.Automorphic.PlaceIsotypic`. It is a step in the
 proof of `ComplexPlaceParameterIrreducibleStatement`. Provenance: internal.
 
 The module is abstract module theory. It uses Mathlib's semisimple and isotypic modules

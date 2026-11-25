@@ -3,10 +3,12 @@
 ## Purpose and provenance
 
 This module is internal to the proof of
-`Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement` (Task 6754). It proves the
+`Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement`. It proves the
 proposition `Langlands.Geometry.Building.RootGroupLinearization` of the module
-`RootGroupLinearization`. It introduces no new statement. Its main theorem is used by the Galois
-descent of filtration jumps in the same task.
+`RootGroupLinearization`. It introduces no new statement. Its main theorem supplies the
+hypothesis `RootGroupLinearization` of the Galois descent of filtration jumps (module
+`UnramifiedZeroJumpGaloisDescent`) in `UnramifiedZeroJumpDescentProof` and
+`UnramifiedZeroJumpForwardDescent`.
 
 Mathematically it collects standard facts about the root groups of a split torus (Kaletha–Prasad,
 *Bruhat–Tits Theory: A New Approach*, §2.6.8, printed p. 95/PDF p. 126):
@@ -72,7 +74,7 @@ In the namespace `Langlands.Geometry.Building`:
   `v c = 1`, a point `t ∈ characterValuationKernel v S_K` whose image `T` in `G_K(K)`
   corresponds to the `k`-scheme point `ν(c) ≫ iS`. `T` is fixed by every `σ` with `σ c = c`. The
   point comes from `exists_mem_characterValuationKernel_baseChangeCoeffEquiv_eq` (module
-  `UnramifiedFixedPointRootDescent`, same task). The fixedness comes from
+  `UnramifiedFixedPointRootDescent`). The fixedness comes from
   `baseChangeCoeffEquiv_rationalConjugate` and `specAut_comp_gm_symm`.
 * `characterValue_unitCocharacterPoint`: `a(ν(c)) = c ^ ⟨a, ν⟩`, by
   `CoordinateWeights.characterValue_cocharacter`.

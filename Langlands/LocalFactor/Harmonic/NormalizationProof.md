@@ -1,6 +1,6 @@
 # P-adic Fourier normalization
 
-Worker 1786 proves
+This module proves
 `Langlands.LocalFactors.padicFourierNormalization` of exactly the existing
 `Langlands.LocalFactors.PadicFourierNormalizationStatement.{u}` in
 `Langlands.LocalFactor.Harmonic.Statement`. The theorem retains the arbitrary
@@ -76,8 +76,7 @@ gives the exact raw self-duality conclusion for the scaled character.
 
 ## Verification boundary
 
-The module compiles with no warnings in the task's prepared Lean environment.
+The module compiles with no warnings in the prepared Lean environment.
 Inspection of `padicFourierNormalization` reports the single universe
 parameter `u` and only `propext`, `Classical.choice`, and `Quot.sound`
-among its axioms. Development compilation is separate from independent
-semantic review and the submission's exact-target validation.
+among its axioms.

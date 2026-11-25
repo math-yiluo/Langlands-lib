@@ -45,7 +45,7 @@ no hypothesis.
 
 ## Supporting modules
 
-The proof consists of the following modules, all part of this contribution, in dependency
+The proof consists of the following modules, in dependency
 order (each has its own Markdown file describing it):
 
 * `Langlands.AlgebraicGeometry.Modules.FrameVanishingCriterionStatement` and
@@ -70,10 +70,9 @@ order (each has its own Markdown file describing it):
 * `Langlands.AlgebraicGeometry.Picard.FiniteSeedOfSeparationStatement` and
   `...FiniteSeedOfSeparationProof`: Noetherian finiteness (`finiteSeedOfSeparation`).
 
-The three statement modules carry, unchanged, the statement texts of the statement tasks
-75c63d90-3732-4ddc-8eee-8d3c9f495992, ccde8b6e-eab2-4800-89b1-cb3b09bfdaee and
-54d78782-5b23-49ac-b02a-c9b4bae3a2ab, published from this proof task as its planned split;
-those tasks received no executor, so the statements are submitted here with their proofs.
+The three statement modules, `FrameVanishingCriterionStatement`,
+`PrimeGermDivisorSectionStatement` and `FiniteSeedOfSeparationStatement`, state the three
+steps into which this proof is split; each is proved by the proof module listed with it.
 
 ## Provenance
 

@@ -259,6 +259,7 @@ theorem standardLeviPacketChamberDerivativeEstimates_of_properRegions
   · apply enlarge Fcentral Finset.subset_union_left c0 (le_add_of_nonneg_right bot_le)
     have hP (q : SectionLevel H.1) : P0 q = (ccentral : ℝ) * (Fcentral.sup (inputSeminorms H.1)) q := by
       simp [P0, NNReal.smul_def]
+      rfl
     have h := norm_le_heightComparisonSeminorm (fun _ => P0)
       (fun q g => packet (includeLevel H.1 q) g) (rationalXi hKc hPK)
       (rationalHeight (F := F) ρ) (fun g => ‖rationalValuationCoordinates G hG g‖)

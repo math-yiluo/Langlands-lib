@@ -175,10 +175,10 @@ variable {R K : Type u} [CommRing R] [IsDomain R] [Field K]
 variable {k : Type u} [Field k]
     (b : Spec (CommRingCat.of k) ⟶ Spec (CommRingCat.of R))
 
-local instance : Smooth ((baseChange b).obj D.fullGroup).X.hom :=
+private local instance : Smooth ((baseChange b).obj D.fullGroup).X.hom :=
   inferInstanceAs (Smooth (CategoryTheory.Limits.pullback.snd D.fullGroup.X.hom b))
 
-local instance : IsAffineHom ((baseChange b).obj D.fullGroup).X.hom :=
+private local instance : IsAffineHom ((baseChange b).obj D.fullGroup).X.hom :=
   inferInstanceAs (IsAffineHom (CategoryTheory.Limits.pullback.snd D.fullGroup.X.hom b))
 
 /-- The integral cocharacter is identified with the cocharacter of the

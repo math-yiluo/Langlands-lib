@@ -71,7 +71,9 @@ in the universe `u`.
 
 ## Scope and provenance
 
-This unit is internal glue for the relative derived-group existence task.
+This module is internal glue for the proof of
+`RelativeDerivedGroupExistenceStatement`, which the Library completes as
+`relativeDerivedGroupExistence` in `RelativeDerivedGroupExistenceProof`.
 It combines the unchanged `RelativeDerivedInputs` and `RelativeDerivedReduction`
 interfaces with published effective closed-subgroup descent, affine normal
 quotient descent, semisimple field reflection and relative-torus locality.
@@ -80,7 +82,7 @@ Its geometric-fibre comparison follows the published
 There is no new literature assertion; these are consequences of those
 published definitions and proofs.
 
-Perfectness is used only to obtain matching ranges on the cover. The unit
+Perfectness is used only to obtain matching ranges on the cover. The module
 supplies neither that premise nor the local admissible subgroups. Both
 remain inputs for any application to the unchanged unconditional
 `RelativeDerivedGroupExistenceStatement`. There are no quasi-compactness,

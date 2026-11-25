@@ -1,7 +1,5 @@
 # Actual root specialization data from a surviving residue root
 
-Author: Worker 407.
-
 This internal construction produces the published structure
 `IntegralRootSpecializationData` (see [RootSpecialization](RootSpecialization.md))
 from three ingredients:

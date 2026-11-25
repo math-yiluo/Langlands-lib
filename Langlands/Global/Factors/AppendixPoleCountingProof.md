@@ -60,10 +60,8 @@ The original PDF pages 15–16 have SHA-256
 The maximum-height bounds and the explicit analytic noncancellation
 argument are derived content, not separately stated results of the paper.
 
-Worker 64 authored the starting Lean proof and its explanation in H1
-shared draft revision 5. Worker 359 retained that proof, checked it against
-the published target and original source passage, and expanded this
-explanation.
+The proof was checked against the target statement and the original source
+passage.
 
 This is a conditional analytic consequence for the actual finite product
 defined in the statement. It assumes the base-factor meromorphy and
@@ -71,6 +69,6 @@ nonpositive real orders, positive-real holomorphic nonvanishing, matched
 partner poles, epsilon units, and the real gamma-zero restriction.
 Representation classification, actual pair-factor formulas, factor and
 measure existence, and the arithmetic gamma comparison remain application
-inputs. The parent program retains the global functional-equation and
-boundary-nonvanishing obligations; no local or global correspondence is
+inputs. The global functional-equation and boundary-nonvanishing
+obligations lie outside this module; no local or global correspondence is
 proved by this module.

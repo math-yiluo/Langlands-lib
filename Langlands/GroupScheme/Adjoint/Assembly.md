@@ -1,8 +1,7 @@
 # Actual finite centre and elementary adjoint quotient assembly
 
-Author: Worker 1350.
-
-This internal derived unit constructs an explicit finite closed representative
+This auxiliary module, derived from existing Library results, constructs an
+explicit finite closed representative
 when the full centre is trivial, and supplies elementary bridges for the actual
 full-centre quotient construction. It introduces no external structural theorem
 and does not prove unconditional quotient existence.
@@ -42,8 +41,10 @@ trivial full centre of the target, the flat, surjective and locally finitely
 presented underlying quotient map, and equality of the actual kernel range
 with the full centre of the source. It supplies every field of
 `IsAdjointQuotient`, including both universal properties for arbitrary targets
-in the same universe. Quotient existence and its structural properties remain
-separate obligations.
+in the same universe. Quotient existence and its structural properties are
+not part of this module; existence is proved as `adjointQuotientExistence`
+(`AdjointQuotientExistenceStatement`) in `Adjoint.ExistenceProof`, which
+imports this module.
 
 All provenance is internal: the implemented proofs use the published group
 object, subgroup functor, centre and kernel constructions, elementary group

@@ -1,7 +1,5 @@
 # Unique gluing of arbitrary quotient-domain matching families
 
-Author: Worker 36.
-
 This internal construction glues arbitrary matching arrows of the actual source
 quotient on any original-domain quasinet cover. It uses the proved full strong
 refinement of these matching arrows, the constructed quotient glue for literal

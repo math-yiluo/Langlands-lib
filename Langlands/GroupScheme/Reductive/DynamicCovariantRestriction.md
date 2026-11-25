@@ -1,6 +1,6 @@
 # Actual opposite-unipotent restriction of entire covariant spaces
 
-Worker 1369 derives this construction from the published opposite-cell
+This construction is derived from the published opposite-cell
 theorem, actual represented dynamic subgroups, the basic-open argument
 implemented in `SplitPinning.exists_cellCoordinate`, full covariant cell
 restriction and the actual Hopf/Lie coordinate comparison. This is an

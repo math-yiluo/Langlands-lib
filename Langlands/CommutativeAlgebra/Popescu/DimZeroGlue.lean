@@ -1,6 +1,6 @@
 import Langlands.CommutativeAlgebra.Popescu.Basic
 import Langlands.CommutativeAlgebra.Popescu.DimZeroResolutionProof
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # The gluing algebra of Stacks Lemma 9.4 (07FA) -/
 

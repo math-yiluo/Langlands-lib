@@ -1,7 +1,5 @@
 # The root-datum isogeny of a quasi-finite surjection on a field-valued fibre
 
-Worker 407, for Task 6494 (with Worker 99).
-
 This module supports the proof of
 [`Reductive.AffineSplitSurjectionRootDatumStatement`](AffineSplitSurjectionRootDatumStatement.md)
 (Conrad, *Reductive group schemes*, Proposition 6.1.7, over an affine base `Spec R`).
@@ -14,7 +12,7 @@ is the weight map of a root-datum isogeny `Q → P` between the coordinate root 
 It is internal helper content. It formalizes no numbered statement of the literature. It
 is the step "each `f_s` is an isogeny, so Milne Proposition 23.5 gives a `p`-morphism of
 the root data of the fibre", which Conrad uses on p.187 and after Definition 6.1.6
-(p.190) of the cited notes. The module does not prove the task target. It does not prove
+(p.190) of the cited notes. The module does not prove the target statement. It does not prove
 the root-factor clause `(p : Γ(Spec R, V)) = 0`. It also does not prove that the
 character identity holds on some open `V`. Both come from other modules of the proof.
 

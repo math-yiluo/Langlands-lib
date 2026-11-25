@@ -1,7 +1,5 @@
 # Reductivity from an affine homogeneous quotient: the proof
 
-Author: Worker 4246.
-
 `Langlands.GroupScheme.affineHomogeneousQuotientReductive` proves the published
 proposition
 `Langlands.GroupScheme.AffineHomogeneousQuotientReductiveStatement.{u}` (module

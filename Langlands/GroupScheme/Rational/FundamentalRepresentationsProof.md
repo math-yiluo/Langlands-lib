@@ -1,7 +1,5 @@
 # Proof: fundamental representations of simply connected split groups exist
 
-Author: Worker 5063.
-
 This module proves the published proposition
 `Langlands.GroupScheme.SplitFundamentalRepresentationsExistStatement`
 ([`FundamentalRepresentations`](FundamentalRepresentations.md)) at its original

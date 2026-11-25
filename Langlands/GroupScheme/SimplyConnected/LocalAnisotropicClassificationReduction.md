@@ -1,13 +1,12 @@
 # The local anisotropic classification from actual Tits indices
 
-Author: Worker 160.
-
 This module reduces the published target
 `Langlands.GroupScheme.LocalAnisotropicSimplyConnectedClassificationStatement.{u}`
-to four published but unproved propositions. They appear as explicit
-hypotheses, so this module does not prove the target. Task 5636 owns the
-target. The final proof will apply the reduction below once all four inputs
-are proved.
+to four published propositions. They appear as explicit
+hypotheses, so this module does not prove the target. The proof of the target,
+`localAnisotropicSimplyConnectedClassification` in
+[`LocalAnisotropicClassificationProof`](LocalAnisotropicClassificationProof.md),
+applies the reduction below to proofs of all four inputs.
 
 ## The input bundle
 
@@ -15,7 +14,8 @@ are proved.
 the following four propositions, all at the same universe `u`:
 
 1. `TitsIndexExistenceStatement.{u}` (module
-   `Reductive/TitsIndexChoiceStatement`, proof Task 5621). Every affine
+   `Reductive/TitsIndexChoiceStatement`, proof `titsIndexExistence` in
+   `Reductive/TitsIndexExistenceProof`). Every affine
    semisimple field group that is locally of finite type has actual
    Tits-index data `TitsIndexData G`.
 2. `LocalAnisotropicInnerTypeAStatement.{u}` (module
@@ -26,19 +26,22 @@ the following four propositions, all at the same universe `u`:
    with `n > 0`. If the group is also simply connected, the full star action
    on that index is trivial.
 3. `InnerTypeANormOneStatement.{u}` (module
-   `SimplyConnected/InnerTypeANormOneStatement`, proof Task 5703). A simply
+   `SimplyConnected/InnerTypeANormOneStatement`, proof `innerTypeANormOne` in
+   `SimplyConnected/InnerTypeANormOneProof`). A simply
    connected absolutely almost-simple group with `d.HasInnerTypeA n` is
    isomorphic, as a group scheme, to `CentralSimpleUnits.normOne K A` for a
    finite-dimensional central simple `K`-algebra `A` of reduced degree
    `n + 1`.
 4. `CentralSimpleUnits.MatrixNormOneSplitRankStatement.{u}` (module
-   `SimplyConnected/MatrixNormOneSplitRankStatement`, proof Task 5637). For a
+   `SimplyConnected/MatrixNormOneSplitRankStatement`, proof
+   `CentralSimpleUnits.matrixNormOneSplitRank` in
+   `SimplyConnected/MatrixNormOneSplitRankProof`). For a
    finite-dimensional central division algebra `D` and `m > 0`, the split
    rank of `normOne K (Matrix (Fin m) (Fin m) D)` is `m - 1`.
 
 None of these inputs is the local rank-one classification or a local
-Kneser–Tits statement. None of them is planned to consume the anisotropic
-classification.
+Kneser–Tits statement. None of their proofs in the Library consumes the
+anisotropic classification.
 
 ## The algebra step
 
@@ -99,8 +102,7 @@ not an isomorphism of groups of rational points.
 
 ## Provenance
 
-The bundle and the reduction are internal to the project's proof plan for
-Task 5636. Their mathematical content is the derivation in Kaletha–Prasad,
+The bundle and the reduction are internal to the Library. Their mathematical content is the derivation in Kaletha–Prasad,
 *Bruhat–Tits Theory: A New Approach* (2023), printed p. 393 / PDF p. 424
 (`kaletha-prasad-2023-bruhat-tits-new-approach`). Kaletha–Prasad combine
 Theorem 10.3.1, the isotropy of outer type `A_n`, and Weil's description of

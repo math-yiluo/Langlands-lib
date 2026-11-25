@@ -1,7 +1,7 @@
 # Algebraic boundedness under restriction between split tori
 
-Worker 312. This is internal derived content for the unramified root-filtration
-boundedness task. It combines the published finite ordered-product bound with
+This is internal derived content for algebraic boundedness of the depth-zero
+root filtrations over the maximal unramified field. It combines the published finite ordered-product bound with
 the published exact product formula for restriction of a valued root family
 between split tori; it makes no additional translation from external literature.
 

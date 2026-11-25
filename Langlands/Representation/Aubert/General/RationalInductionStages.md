@@ -1,7 +1,5 @@
 # Actual rational normalized induction in stages
 
-Author: Worker 438.
-
 This is an internal specialization of `normalizedInductionStagesIso` from
 [`InductionStages`](InductionStages.md) to the literal rational standard
 subgroups. It uses the subgroup geometry and the positive Haar character

@@ -41,13 +41,13 @@ theorem exists_inductionFunctor_map_eq
     foldHom_copy_of_pointCoset H B hP t (baseCoset H) fun x => by
       rw [ht, Functor.map_comp, ConcreteCategory.comp_apply,
         pointCoset_space_apply_of_comp_eq H pA pB ψ hψ, pointCoset_unitHom]
-  obtain ⟨fh, hfh⟩ : ∃ fh, fh = t ≫ foldHom H B ≫ B.ρ (baseRep H) := ⟨_, rfl⟩
+  obtain ⟨fh, hfh⟩ : ∃ fh, fh = t ≫ foldHom H B ≫ (B.ρ (baseRep H)).asHom := ⟨_, rfl⟩
   have hfu : fh ≫ unitHom H B = t := by
     rw [hfh, unitHom, Category.assoc, Category.assoc, ρ_comp_assoc, inv_mul_cancel, Action.ρ_one,
-      Category.id_comp, htc]
-  have hcomm : ∀ h : H, A.ρ h ≫ fh = fh ≫ B.ρ h := fun h => by
+      End.one_asHom, Category.id_comp, htc]
+  have hcomm : ∀ h : H, (A.ρ h).asHom ≫ fh = fh ≫ (B.ρ h).asHom := fun h => by
     rw [← cancel_mono (unitHom H B), Category.assoc, Category.assoc, hfu, unitHom_comm,
-      ← Category.assoc fh, hfu, ht, ← Category.assoc (A.ρ h), unitHom_comm, Category.assoc,
+      ← Category.assoc fh, hfu, ht, ← Category.assoc (A.ρ h).asHom, unitHom_comm, Category.assoc,
       Category.assoc]
     exact congrArg (unitHom H A ≫ ·) (ψ.comm (h : G))
   let f : A ⟶ B := ⟨fh, hcomm⟩

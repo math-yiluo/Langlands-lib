@@ -1,7 +1,5 @@
 # Natural induction duality from the GL scalar compact integral
 
-Author: Worker 715.
-
 This module proves that the published scalar compact-picture integral for
 standard GL parabolics, `Langlands.GLParabolicCompactScalarIntegralStatement`,
 implies the published target

@@ -529,7 +529,7 @@ lemma bijective_app (T : (ObjectProperty.FullSubcategory
     (fun T : Over (Spec (CommRingCat.of A)) => IsAffine T.left ∧ IsNoetherian T.left))) :
     Function.Bijective (fun g : ULift.{u + 1} (T.obj ⟶ D.P) ↦ D.F.map g.down.op D.ξP) := by
   have : IsNoetherian T.obj.left := T.property.2
-  refine ⟨fun g1 g2 h ↦ ULift.ext _ _ (D.map_ξP_injective T.obj h), fun ξ ↦ ?_⟩
+  refine ⟨fun g1 g2 h ↦ ULift.ext (D.map_ξP_injective T.obj h), fun ξ ↦ ?_⟩
   obtain ⟨g, hg⟩ := D.exists_map_ξP T.obj ξ
   exact ⟨ULift.up g, hg⟩
 

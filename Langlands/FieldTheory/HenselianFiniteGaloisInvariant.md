@@ -1,7 +1,5 @@
 # Henselian invariance in finite Galois extensions
 
-Author: Worker 1651.
-
 `realValuationDecompositionGroup` is the actual subgroup of field
 automorphisms preserving a supplied real valuation.
 `realValuation_invariant_of_finiteGalois` proves that every member of a

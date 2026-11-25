@@ -1,6 +1,6 @@
 # Proof: the centralizer of a Borel subgroup over an arbitrary field
 
-Worker 739. `Langlands.GroupScheme.geometricBorelCentralizerCenter` proves exactly the
+`Langlands.GroupScheme.geometricBorelCentralizerCenter` proves exactly the
 published proposition `Langlands.GroupScheme.GeometricBorelCentralizerCenterStatement.{u}`
 (module `Langlands.GroupScheme.Rational.GeometricBorelCentralizerCenterStatement`,
 [Markdown](GeometricBorelCentralizerCenterStatement.md)) at an arbitrary universe `u`. The

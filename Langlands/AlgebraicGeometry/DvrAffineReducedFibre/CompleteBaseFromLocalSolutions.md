@@ -1,8 +1,5 @@
 # Assembling finite local solutions over a complete DVR
 
-Worker 594. The vertical DVR and finite DVR extension inputs include
-work by Worker 519.
-
 `minimalPrimeLocalRing` is the localization at a prime minimal over
 a specified ideal. The prime witness required to take this localization
 comes from minimality.

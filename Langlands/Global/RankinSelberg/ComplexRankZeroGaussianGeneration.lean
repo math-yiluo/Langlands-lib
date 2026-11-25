@@ -27,7 +27,7 @@ attribute [local instance] archimedeanEquationComplexGLMeasurable
 local notation "Row" => Fin (0 + 1) → ℂ
 local notation "Coordinates" => Fin (0 + 1) × Bool
 local notation "scale" => (2 * Real.pi : ℝ)
-local instance : Unique (Fin (0 + 1)) := inferInstanceAs (Unique (Fin 1))
+private local instance : Unique (Fin (0 + 1)) := inferInstanceAs (Unique (Fin 1))
 
 private def realLinearCoordinate (b : Bool) : MvPolynomial Bool ℂ :=
   if b then (X false - X true) * C ((2 * I)⁻¹) else (X false + X true) * C (2 : ℂ)⁻¹

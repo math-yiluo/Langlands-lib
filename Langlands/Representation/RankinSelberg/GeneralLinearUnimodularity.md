@@ -1,6 +1,6 @@
 # Right invariance of the normalized general linear Haar measure
 
-Worker 116 proves
+This module proves
 `Langlands.RankinSelberg.generalLinearHaarRightInvariant`, whose conclusion is
 exactly the published
 `Langlands.RankinSelberg.GeneralLinearHaarRightInvariantStatement F n`.
@@ -90,17 +90,17 @@ measure retains its published normalization assigning mass one to the
 integral general-linear subgroup. No measure or statement dependency is
 modified, and no quotient measure is constructed or assumed. The result
 establishes the general-linear target only; the separate upper-unipotent
-target remains a separate obligation.
+target is proved by `unipotentHaar_rightInvariant` in `UnipotentUnimodularity`.
 
 ## Public algebraic reuse
 
-Worker 386's public algebraic API reuses the existing theorem, now exposed as
+A public algebraic API reuses the existing theorem, exposed as
 `Langlands.RankinSelberg.GeneralLinearUnimodularity.character_eq_one`.
 For every field, finite decidable index type, and monoid homomorphism
 `chi : GL ->*` nonnegative reals, the theorem takes the condition that
 `chi` is one on every scalar matrix and concludes `chi(g) = 1` for every
 `g`. It requires no topology, continuity, local-field structure, or nonempty
-index type. Worker 116's proof body above is unchanged. Exposing this theorem
+index type. Exposing this theorem
 provides a reusable algebraic API without altering the normalized Haar
 theorem or instance. The central-quotient measure construction uses it
 on the pullback of a quotient character.

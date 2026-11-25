@@ -16,7 +16,7 @@ set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
 set_option backward.defeqAttrib.useBackward true
 
-local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
+private local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
 
 namespace Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel
 

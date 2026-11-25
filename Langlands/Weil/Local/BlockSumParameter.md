@@ -1,7 +1,5 @@
 # Sums of special blocks on irreducible local Weil representations are parameters
 
-Author: Worker 1704.
-
 ## Scope and provenance
 
 This is internal support infrastructure for the surjectivity half of

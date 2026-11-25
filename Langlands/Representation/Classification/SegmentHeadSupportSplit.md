@@ -70,5 +70,3 @@ assertion from the literature is transcribed.
 Direct import: `Langlands.Representation.Classification.SegmentHeadSupportCons`.
 The complete closure audit is in
 `SegmentHeadDerivativeSupportTruncationProof.md`.
-
-Author: Worker 890.

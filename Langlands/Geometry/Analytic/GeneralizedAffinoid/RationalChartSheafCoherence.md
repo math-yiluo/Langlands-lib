@@ -1,7 +1,5 @@
 # Identity and composition of finite rational chart sheaf direct image
 
-Author: Worker 56.
-
 This module is an internal categorical consequence of the concrete rational
 chart pullback comparisons and the continuous finite rational site functor.
 It constructs comparisons for the actual direct-image functors, with no

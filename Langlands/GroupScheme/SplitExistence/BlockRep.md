@@ -1,7 +1,5 @@
 # Integral representations of `SL₂` attached to one root (`BlockRep`)
 
-Author: Worker 239.
-
 Fix `α : X` and an additive map `pair : X →+ ℤ`, which stands for `⟨·, α^∨⟩`. This module packages
 an integral representation of `SL₂` along `α` as a structure. It then builds such
 representations from string decompositions (`StringRep`) and from the Cartan block of

@@ -1,7 +1,5 @@
 # Transport and composition of actual quotient sections
 
-Author: Worker 1478.
-
 This internal construction works over `Spec R` for every commutative ring
 `R : Type u`, with no field or finiteness assumption. All schemes and maps are
 actual objects and morphisms of `Over (Spec R)`. A section on an open `U` is
@@ -38,7 +36,7 @@ section with `f`, so it needs no affine-lifting assumption.
 
 The provenance is internal: the affine-open basis for schemes, restriction
 of actual relative morphisms to target opens, inclusions between nested
-opens, and category laws. This unit supplies the local-section composition
+opens, and category laws. This module supplies the local-section composition
 step for a possible split-radical reduction. It does not construct a
 split-radical quotient, prove that a split-unipotent torsor lifts affine
 tests, produce a quotient comparison isomorphism, or establish any

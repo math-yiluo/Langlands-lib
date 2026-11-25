@@ -1,7 +1,6 @@
 # Reduction of the complex Langlands quotient statement
 
-Worker 375 wrote this module for task `512e06d6-c86e-472a-b953-50625f03af0d` (Task 6310). That
-task's target is the Library's `Langlands.Archimedean.ComplexLanglandsQuotientStatement`
+The target of this module is the Library's `Langlands.Archimedean.ComplexLanglandsQuotientStatement`
 (module `Langlands.Representation.Archimedean.ComplexGenericParameterReduction`). The target
 says: every irreducible admissible `(𝔤𝔩_n(ℂ), U(n))`-module `(ρ, π)` receives a nonzero
 intertwining map `A` (`IsComplexStandardIntertwining`) from the `U(n)`-finite functions of
@@ -190,14 +189,15 @@ Take an irreducible admissible `(𝔤, K)`-module `(ρ, π)` on `V`.
 
 The module imports `Langlands.Representation.Archimedean.ComplexGenericParameterReduction`
 (the target and `IsComplexStandardIntertwining`) and
-`Langlands.Representation.Archimedean.PrincipalSeriesStability`. The latter is the separate
-candidate `0715f927-9d27-4968-bfac-83b2ed2650ca` of the same task; it must be integrated
-first. The statements S1–S3 themselves use only Library definitions; the stability module is
+`Langlands.Representation.Archimedean.PrincipalSeriesStability`. The latter is a separate
+module. The statements S1–S3 themselves use only Library definitions; the stability module is
 used only in the proof of the reduction.
 
-None of S1, S2 or S3 is proved here; each needs its own proof task. Like the target, they are
+None of S1, S2 or S3 is proved here; the Library proves them in
+`ComplexLanglandsSubrepresentationProof`, `ComplexContragredientProof` and
+`ComplexStandardDualityProof`. Like the target, they are
 stated for the Library's algebraic `(𝔤, K)`-modules and its `complexStandardModule`. Their truth
 relies on identifying `kFiniteFunctions (complexStandardModule n ds) (unitaryCompact ℂ n)` with
-the Harish-Chandra module of the classical principal series. The candidate
-`6142a512-db78-4194-aca3-39b471d4e7e6` (module `PrincipalSeriesGKModule`) proves that these
+the Harish-Chandra module of the classical principal series. The module
+`PrincipalSeriesGKModule` proves that these
 functions form a `(𝔤, K)`-module in the Library's sense.

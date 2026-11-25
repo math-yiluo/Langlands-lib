@@ -1,7 +1,5 @@
 # Actual upper Bruhat cell coordinate homeomorphisms
 
-Author: Worker 779.
-
 `Langlands.GeneralLinear.UpperBruhatCoordinatesStatement.{u}` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatCoordinatesStatement`. This module states the

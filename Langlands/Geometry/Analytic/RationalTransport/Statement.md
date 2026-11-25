@@ -1,7 +1,5 @@
 # Bounded transport target for rational presentations
 
-Author: Worker 36.
-
 `RationalPresentation.TransportStatement` concerns the actual closed-ideal
 quotients from `RationalPresentation.Definitions`. The coefficient field is
 complete and ultrametric; its valuation may be trivial. The two base

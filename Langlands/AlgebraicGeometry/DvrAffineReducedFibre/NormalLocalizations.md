@@ -1,7 +1,5 @@
 # Normal localizations of a reduced Noetherian ring's normalization
 
-Worker 594.
-
 The proof shows that the total fraction ring of a reduced Noetherian
 ring is Artinian. The inverse image of a prime of the total fraction
 ring is disjoint from the non-zero-divisors. An element outside all

@@ -1,7 +1,5 @@
 # Rational-locus stabilizers on a fixed quotient algebra
 
-Author: Worker 36.
-
 This derived construction packages the setwise stabilizer of an actual
 unit-radius rational locus as a subgroup of the bounded automorphisms of its
 presented strict affinoid base algebra. It then constructs a homomorphism from

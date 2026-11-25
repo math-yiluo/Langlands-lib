@@ -1,6 +1,6 @@
 # Renard A.IX: disjointness of the full supported sums
 
-This pair states the zero-intersection and binary direct-sum inclusion
+This module states the zero-intersection and binary direct-sum inclusion
 consequences in Renard A.IX for the actual sums of all supported subobjects.
 It supplies one proposition target,
 `Langlands.Renard.SimpleSupportSumOrthogonalityStatement`.
@@ -84,7 +84,7 @@ as explained in the published [supported-sum companion](SimpleSupportSum.md).
 The two explicit smallness premises preserve the independent source size.
 Empty supports and the zero ambient object are included.
 
-## Existing results and remaining proof
+## Existing results and proof
 
 [SimpleSupportSumStatements](SimpleSupportSumStatements.md) already states
 support of each actual full sum, with precisely its own family-size
@@ -98,13 +98,14 @@ The intended later proof applies the published support theorem separately
 to the two sums, then specializes the published arbitrary-supported-subobject
 results. A private composition diagnostic has checked that these interfaces
 compose with independent universes and both smallness premises. This
-statement pair neither imports that diagnostic nor exports its proof.
+statement module neither imports that diagnostic nor exports its proof.
 It introduces no support certificate, orthogonality assumption or
 conclusion-equivalent hypothesis.
 
-The new target records the literal full-sum specialization that those
-earlier units explicitly reserved. Independent statement acceptance and
-publication must precede a separate exact-target proof task. This pair
-does not change the earlier generic statements or establish additional
+This target records the literal full-sum specialization that those
+earlier modules explicitly reserved. It is proved by
+`Langlands.Renard.simpleSupportSumOrthogonality` in
+`SimpleSupportSumOrthogonality`. This module is separate from the earlier
+generic statements and does not establish additional
 closure, functor, splitting or category-decomposition results. It does
-not declare A.IX or the whole-book program complete.
+not cover all of A.IX.

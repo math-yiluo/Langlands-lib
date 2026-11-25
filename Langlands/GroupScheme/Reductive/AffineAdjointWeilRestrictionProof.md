@@ -1,9 +1,9 @@
 # The affine adjoint Weil restriction theorem
 
-Worker 632, with Worker 5254's Weil-pair descent, abelian-image triviality and
-projection injectivity; Worker 634's pinned component comparison; Worker 47's
-normal-idempotent reduction and uniqueness construction; and Worker 96's
-almost-simple field-ascent argument.
+The proof uses the Weil-pair descent, abelian-image triviality and
+projection injectivity; the pinned component comparison; the
+normal-idempotent reduction and uniqueness construction; and the
+almost-simple field-ascent argument of the imported modules.
 
 `affineAdjointWeilRestriction` proves exactly
 `Langlands.GroupScheme.AffineAdjointWeilRestrictionStatement.{u}` in every
@@ -11,7 +11,8 @@ universe, with no additional hypotheses. The target pair and its imported
 pairs are unchanged.
 
 The proof first supplies normal-idempotent rigidity for Weil restrictions.
-Worker 47's `WeilFactor.weilFactorIdempotentRigidity_of_inputs` takes the
+`WeilFactor.weilFactorIdempotentRigidity_of_inputs` (in
+`WeilFactorRigidityReduction`) takes the
 relative almost-simple normal-idempotent theorem and the triviality theorem
 for homomorphisms with commuting image from semisimple Weil restrictions.
 Both inputs are proved in the imported modules. The relative theorem retains
@@ -21,7 +22,7 @@ complementary opens, followed by the clopen/idempotent correspondence and
 projection injectivity. The abelian-image theorem uses fppf-local perfectness,
 graph idempotents after a finite-etale splitting cover, and point separation.
 
-Worker 5254's `affineWeilPairEtaleDescent` then combines this rigidity with the
+`affineWeilPairEtaleDescent` (in `WeilChartSingleChartDescent`) then combines this rigidity with the
 proved finite-etale chart-algebra descent theorem. Its actual coefficient
 algebra and closed factor group descend, with their reductivity and
 almost-simple geometric fibres, to produce generic pair descent.

@@ -1,7 +1,5 @@
 # Detecting isomorphisms out of the structure module on a fibre
 
-Author: Worker 1119.
-
 This helper module for the proof of
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement` proves that a morphism out of
 the structure module of a scheme whose global functions form a field is an isomorphism as soon

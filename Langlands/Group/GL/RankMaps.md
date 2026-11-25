@@ -1,7 +1,5 @@
 # Standard block sums and rank inclusions
 
-Author: Worker 6.
-
 For every commutative ring and natural ranks `n,m`, `blockSum` maps two actual
 general linear matrices to `diag(g,h)` in rank `n+m`. The construction first
 uses Mathlib's `Matrix.fromBlocks` on the index sum, with zero off-diagonal
@@ -29,12 +27,8 @@ identities. It supplies no conductor-specific stabilizer or integral
 reduction map. `TopologicalData.blockSum` and `TopologicalData.rankInclusion`
 instantiate these exact continuous homomorphisms for every supplied p-adic
 field topology. `canonicalBlockSum` and `canonicalRankInclusion` use the
-accepted canonical realization for every algebraic `PadicField p`.
+published canonical realization for every algebraic `PadicField p`.
 They choose the topology locally, with no additional realization premise.
 
-The project dependencies are the `Basic` and `Padic` constructions in
-`cd1132db-8cab-4cab-bd28-0c6164b44dbe` version 1, independently accepted and
-published at commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`, effective snapshot
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`.
-Final review receipt `7c88f2621a5047a9a85fe9ef375a8ed0` confirms the unchanged
-reviewed pairs, their current dependency closure and successful final Lake validation.
+The project dependencies are the `Basic` and `Padic` constructions. Their
+pairs were checked for their dependency closure, and they build with Lake.

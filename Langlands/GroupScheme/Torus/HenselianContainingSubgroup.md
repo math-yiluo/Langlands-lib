@@ -45,8 +45,9 @@ identity, the original exact residue inclusion is preserved. Classical
 choice extracts `containingLiftData` from the implemented existence proof
 `nonempty_containingLiftData`.
 
-This unit assembles existing exact lifting and transporter results and
+This module assembles existing exact lifting and transporter results and
 asserts no new external source theorem. It does not choose a residue maximal
 torus, construct an integral model of the initially supplied field torus,
-or prove the host fixed-pair special-apartment statement. Those are separate
+or prove the fixed-pair special-apartment statement
+`UnramifiedFixedPairSpecialApartmentStatement` that this module serves. Those are separate
 uses of this containment construction.

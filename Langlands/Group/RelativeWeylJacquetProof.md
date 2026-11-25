@@ -1,8 +1,8 @@
 # Pointwise Jacquet coefficient cancellation
 
 Module `Langlands.Group.RelativeWeylJacquetProof`, namespace
-`Langlands.Group.RelativeWeylIndexing`. The proof combines Worker 1230's
-Boolean calculation with Worker 1254's intrinsic image-coverage argument.
+`Langlands.Group.RelativeWeylIndexing`. The proof combines a
+Boolean calculation with an intrinsic image-coverage argument.
 
 ## Exact target and scope
 
@@ -68,7 +68,7 @@ The sum therefore has exactly one nonzero term, equal to `(-1)^K.card`.
 
 ## Intrinsic coverage
 
-`subset_simpleImage_of_mapsIntoSimple`, contributed by Worker 1254, proves
+`subset_simpleImage_of_mapsIntoSimple` proves
 coverage from the hypotheses of the true branch of the target. It uses no
 injectivity premise.
 

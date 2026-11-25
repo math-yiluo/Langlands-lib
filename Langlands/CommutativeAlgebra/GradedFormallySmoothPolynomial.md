@@ -86,7 +86,8 @@ the variables.
 ## Provenance
 
 This is an internal supporting lemma. It is part of the explicit Hopf-algebra route of the
-proof task for `Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement`, where it
+proof of `Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement` (the theorem
+`cyclicWeightFiltration` in `Langlands.GroupScheme.Rational.CyclicWeightFiltrationProof`), where it
 shows that the coordinate rings of the cyclic-tail subgroups, which are positively graded by
 a torus action, are polynomial rings on homogeneous coordinates. No literature source is
 cited. The statement is a standard fact: a positively graded, connected, smooth algebra of

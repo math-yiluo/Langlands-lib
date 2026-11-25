@@ -6,7 +6,7 @@ both `LeviJacquetFiniteLengthStatement.{u,v}` and
 concludes the unchanged `PQRegularityLemmaStatement.{u,v}`.
 `PQRegularityFiniteLengthReductionStatement` is this implication, and
 `pqRegularity_finiteLength_reduction` proves it. Neither premise is proved by
-this unit, and the unit does not establish the unconditional regularity target.
+this module, and the module does not establish the unconditional regularity target.
 Its provenance is the composition of the represented-parabolic finite-length
 interfaces, the actual predecessor filtration and the central-action algebra
 argument, rather than a separate translation of a source assertion.
@@ -45,5 +45,8 @@ The field universe `u` and source-carrier universe `v` are unchanged. Full piece
 carriers have universe `max u v`, and the central-action specialization is used
 at that universe when needed. No additional input at a shifted carrier
 universe is assumed for the two preservation statements. In particular this
-conditional reduction leaves their unconditional proofs, and the later exact
-proof submission for `PQRegularityLemmaStatement`, outstanding.
+conditional reduction proves neither them nor `PQRegularityLemmaStatement`
+unconditionally. The Library proves none of these three statements
+unconditionally; it has conditional reductions such as
+`leviJacquetFiniteLength_reduction`, `leviInductionFiniteLength_reduction` and
+`pqRegularity_admissible_reduction`.

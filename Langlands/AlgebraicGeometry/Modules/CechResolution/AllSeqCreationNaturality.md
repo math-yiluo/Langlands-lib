@@ -3,8 +3,8 @@
 This internal module extends the existing degree-one cup naturality and cover
 refinement formulas to creation on every positive degree. It is derived from
 the actual ordered Čech cup, pullback, refinement and resolution comparison
-maps in the Library. Worker 327 authors this extension; the comparison and
-pullback infrastructure is from Worker 5218.
+maps in the Library. The comparison and pullback infrastructure is imported
+through `AllSeqCreation` and `AllSeqRefine`.
 
 For any morphism of schemes and any map of covering indices subordinate to its
 inverse images, `Cech.pull_cup₁_all` proves that pullback of `cup₁ z b` equals

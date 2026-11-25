@@ -1,6 +1,6 @@
 # A central extension of a torus by a torus is a torus: proof
 
-Worker 1395 wrote this module. It proves
+This module proves
 
 ```lean
 theorem centralTorusExtensionStatement : CentralTorusExtensionStatement.{u}
@@ -71,7 +71,7 @@ The axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Dependencies
 
-The proof uses these new modules, all by Worker 1395:
+The proof uses these modules:
 
 * [`Algebra/IntLatticeAlgebra`](../../Algebra/IntLatticeAlgebra.md): units and
   the Picard group of `K[ℤ^I]`.

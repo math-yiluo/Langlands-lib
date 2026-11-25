@@ -1,7 +1,5 @@
 # Renard A.VI.3: all three simple-subquotient identities
 
-Author: Worker 973.
-
 This module proves `Langlands.Renard.simpleSubquotientIdentities`, whose
 complete unapplied type is
 
@@ -39,12 +37,12 @@ The Lemma's clauses are (i) `JH(M) = JH(M') ∪ JH(M/M')` for a subobject
 `M'`, (ii) `JH(M) = ∅` exactly when `M = 0`, and (iii) `JH(∑ M_i)` is the
 union of the `JH(M_i)` for a family of subobjects.
 
-This unit adds no new mathematics about those clauses. The source reading,
+This module adds no new mathematics about those clauses. The source reading,
 the correspondence of the three targets with the Lemma and the bounded
 supplementary 2010 errata check are recorded in the published statement
 Markdown `SimpleSubquotientIdentitiesStatements.md`. They are not repeated
 here. The internal routes of the three component proofs were not
-re-derived for this unit; they are cited from their published modules.
+re-derived for this module; they are cited from their published modules.
 
 ## Proof
 
@@ -53,14 +51,13 @@ used by Lean name and each applied to `C` at the same family universe `w`:
 
 - clause (i): `Langlands.Renard.simpleSubquotientSubobjectQuotient`, from
   `Langlands.CategoryTheory.Renard.SimpleSubquotientSubobjectQuotient`,
-  proves `SimpleSubquotientSubobjectQuotientStatement.{w} C`
-  (Worker 695);
+  proves `SimpleSubquotientSubobjectQuotientStatement.{w} C`;
 - clause (ii): `Langlands.Renard.simpleSubquotientEmpty`, from
   `Langlands.CategoryTheory.Renard.SimpleSubquotientEmpty`, proves
-  `SimpleSubquotientEmptyStatement.{w} C` (Worker 595);
+  `SimpleSubquotientEmptyStatement.{w} C`;
 - clause (iii): `Langlands.Renard.simpleSubquotientSum`, from
   `Langlands.CategoryTheory.Renard.SimpleSubquotientSum`, proves
-  `SimpleSubquotientSumStatement.{w} C` (Worker 695 and Worker 595).
+  `SimpleSubquotientSumStatement.{w} C`.
 
 The proof term is the anonymous constructor
 
@@ -88,18 +85,14 @@ the book.
 
 ## Checks
 
-The approved Lean service compiled this module in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with zero errors and warnings
-(diagnostic `8ce7b758-2228-4f3d-b437-dabf0e73e351`). Its inspection
+A development check compiled this module with zero errors and
+warnings. Its inspection
 reports a theorem with level parameters `w`, `v`, `u`, depending only on
 `propext`, `Classical.choice` and `Quot.sound`.
 
-A private inspection module (diagnostic
-`67429d94-73c0-40e7-ac24-06596b7cf5f1`, zero errors and warnings) printed
+A private inspection module (zero errors and warnings) printed
 the complete unapplied type and the body of the theorem and the body of
 the target. It assigned the unapplied constant `@simpleSubquotientIdentities`
 directly to both the named target telescope and the fully expanded
 three-clause proposition, and instantiated it at fresh independent
-universes. All checks passed. These are development checks, separate
-from the staged candidate's machine validation, independent semantic
-review and publication.
+universes. All checks passed.

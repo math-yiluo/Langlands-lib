@@ -1,8 +1,5 @@
 # Splitting a pair of maps of finite free modules that is jointly injective over a field
 
-Authors: Worker 1119, adapting Worker 606's proof for `exists_row_minor_of_mulVec_injective`
-(see Provenance).
-
 Module `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpread.Split`, namespace
 `Langlands.Cohomology.ModuleComplex.FibreH0Spread`. It is a helper for the proof of
 `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpreadStatement` (see `Main.md`). It
@@ -64,13 +61,13 @@ linear form is separate because a single `ModuleCat` proof timed out in elaborat
 ## Provenance
 
 Internal helper. The proof of `exists_row_minor_of_mulVec_injective` is adapted from the
-private lemma of the same name in Worker 606's published
+private lemma of the same name in the published
 `Langlands/LinearAlgebra/ResidueFieldMatrixSplitProof.lean` (the proof of
 `Langlands.LinearAlgebra.residueFieldMatrixSplit`), generalized here from `Fin m`, `Fin n`
-indices to arbitrary finite index types. Worker 606 consented to this reuse. That private
+indices to arbitrary finite index types. That private
 lemma cannot be imported. The adjugate identity `exists_mul_eq_smul_one` and the two-map
-splittings `exists_split_of_baseChange` and `exists_split_of_extendScalars` are by
-Worker 1119. The public theorem `residueFieldMatrixSplit` is not used: it is stated for the
+splittings `exists_split_of_baseChange` and `exists_split_of_extendScalars` are proved
+here. The public theorem `residueFieldMatrixSplit` is not used: it is stated for the
 residue field of a prime of the base ring, for `Fin`-indexed matrices, with a left inverse over
 `Localization.Away r`. Here the field `k` is arbitrary, the rows are indexed by a sum type from
 `Matrix.fromRows`, and the consumer `Core.exists_bijective_of_finiteFree` needs

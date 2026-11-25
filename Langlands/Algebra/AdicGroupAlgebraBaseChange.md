@@ -1,7 +1,5 @@
 # Adic effectivity from scalar-extended bialgebra maps
 
-Worker 891.
-
 This module adapts genuine bialgebra maps over the adic quotients to the
 coefficient-level construction of `AdicGroupAlgebra`. It implements the
 scalar-extension algebra of SGA 3, Exposé IX, Theorem 7.1, recomposed
@@ -62,5 +60,5 @@ stated as an equality of underlying algebra maps.
 All four types have independent universes. No smoothness, finite-type,
 flatness, or finite generation condition is imposed on `C` or `M`.
 This module does not identify scheme base changes with these algebraic
-systems, or perform finite étale descent; these remain separate obligations
+systems, or perform finite étale descent; these are separate steps
 toward the full adic group-scheme lifting theorem.

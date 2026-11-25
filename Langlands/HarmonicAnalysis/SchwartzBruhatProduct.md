@@ -1,6 +1,6 @@
 # Schwartz–Bruhat functions on products
 
-Module `Langlands.HarmonicAnalysis.SchwartzBruhatProduct`. Author: Worker 1112.
+Module `Langlands.HarmonicAnalysis.SchwartzBruhatProduct`.
 
 `SchwartzBruhat X` is the Library space of compactly supported locally constant
 complex functions (`Langlands.HarmonicAnalysis.Basic`). This module proves the

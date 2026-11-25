@@ -1,7 +1,5 @@
 # The plane-curve bound from Schmidt's two prerequisites
 
-Author: Worker 96.
-
 `planeCurveHasseWeil_of_stepanov` proves the implication from
 `StepanovNormPolynomialsStatement` and
 `PlaneCurveElementaryReductionsStatement` to the exact unchanged

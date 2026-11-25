@@ -1,8 +1,6 @@
 # Inner-conjugation triviality on continuous degree-two cohomology
 
-Proof implementation: Worker 134. Worker 160 supplied the prism formula and the
-compatibility conventions for the inner-conjugation map. The proof imports
-Worker 284's continuous prism construction from
+The proof imports the continuous prism construction from
 `Langlands.Cohomology.Continuous.InnerConjugationPrism`.
 
 `Langlands.Continuous.innerConjugationH2Triviality` proves exactly the imported
@@ -60,9 +58,9 @@ comparison premise.
 ## Provenance and scope
 
 These lemmas are a derived proof for the imported statement. The prism expression
-was proposed by Worker 160 and verified by Worker 134 directly against Mathlib's
-differential signs; Worker 284 constructed the continuous invariant prism in its
-separate module. The proof route and homology argument are internal formalization
+was verified directly against Mathlib's
+differential signs; the continuous invariant prism is constructed in its
+separate module `InnerConjugationPrism`. The proof route and homology argument are internal formalization
 work. The statement's paired Markdown records Serre's abstract inner-conjugation
 theorem and distinguishes it from this continuous adaptation. This module proves
 only the stated degree-two result; it makes no assertion of an all-degree result

@@ -1,6 +1,6 @@
 # The finite separable field of a full Cartan-component stabilizer
 
-Worker 509. This is derived interface material over arbitrary fields and at
+This is derived interface material over arbitrary fields and at
 every universe parameter. It uses the published star-action continuity theorem,
 the actual Cartan-component stabilizer, and Mathlib's infinite Galois
 correspondence. It imposes no new hypothesis on the group or field.
@@ -32,7 +32,7 @@ simultaneously. In the stabilizer-to-field direction the inverse group
 equivalence supplies the witness; in the reverse direction the forward group
 equivalence supplies an element that also explicitly stabilizes the component.
 
-This representation is defined on the original component. The unit does not
+This representation is defined on the original component. The module does not
 identify it with the star action of an actual factor group, construct a factor,
 or claim `SemisimpleTitsComponentFactorStatement`. Those are separate structural
-comparison obligations. No local rank-one or Kneser–Tits result is used.
+comparisons. No local rank-one or Kneser–Tits result is used.

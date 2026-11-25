@@ -1,7 +1,5 @@
 # Proof: connected reductivity and pseudo-reductivity under arbitrary field extension
 
-Author: Worker 47.
-
 This module proves `Langlands.GroupScheme.FieldExtensionReflectionStatement` in an
 arbitrary universe `u`. The theorem `Langlands.GroupScheme.fieldExtensionReflection` has
 exactly the type `FieldExtensionReflectionStatement.{u}`, with no added hypotheses. The
@@ -99,9 +97,8 @@ argument. It assembles published Library results. In component 2 the descent of 
 trivial unipotent radical plays the role of the CGP inclusion: a smooth connected unipotent
 normal `k`-subgroup of `G` base-changes to one of `G_K`.
 
-The route follows the description of Worker 3483's compiled proof in the task's context
-(shared draft of Task 3483 in the previous instance). That draft was not available in this
-instance, so this Lean file was written anew.
+The route follows an earlier description of this proof, from which this Lean file was
+written.
 
 No reflection assertion is assumed. The fields and the extension are arbitrary, including
 transcendental and inseparable extensions of imperfect fields. No smoothness, affineness,

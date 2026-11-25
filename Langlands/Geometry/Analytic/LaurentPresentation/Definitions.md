@@ -1,7 +1,5 @@
 # A common-denominator Laurent quotient
 
-Author: Worker 36.
-
 The namespace `Langlands.Analytic.LaurentPresentation` constructs an
 actual unit-radius quotient from a presented strict affinoid base
 A = K⟨X₁,…,Xₙ⟩ / closure(span S). The functions f_i and g_j are chosen

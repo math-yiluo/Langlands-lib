@@ -1,6 +1,6 @@
 # Conditional equivariant isotypic projections
 
-Worker 173 constructs projections from **supplied complementary invariant
+This module constructs projections from **supplied complementary invariant
 subspaces** and specializes them to the published intrinsic isotypic and
 annihilator subspaces. This is an internal algebraic construction and its
 elementary laws. It does not prove that the intrinsic subspaces are
@@ -79,8 +79,10 @@ No published source pair is changed.
 
 There is no Haar, admissibility, finite-dimensionality or finite-length
 assumption because the only existence input here is explicit
-complementarity. Establishing that input under the intended topological
-group hypotheses remains a separate mathematical obligation. This module
+complementarity. That input is established under the intended topological
+group hypotheses separately, by
+`CompactSplitting.isCompl_isotypicSubrepresentation_annihilatorSubrepresentation`
+(module `CompactCoefficient.AdmissibleComplement`). This module
 also proves no orthogonality between different classes, compact coefficients
 of the range, fixed-level vanishing, class transport under group
 automorphisms, or final product-Levi decomposition.

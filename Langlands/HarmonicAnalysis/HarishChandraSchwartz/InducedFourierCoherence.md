@@ -7,13 +7,13 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   `inducedFourierTransform` (`f ↦ f̂(ω, P)`), Lemma VII.1.1 (ii) in the form
   `integral_conj_coefficientMap_mul_eq_inner`, and the uniqueness statement
   `inducedFourierTransform_eq_of_forall_integral`;
-- `Langlands.Representation.Plancherel.CompactProductFormTransport` (Worker 200): the transport
+- `Langlands.Representation.Plancherel.CompactProductFormTransport`: the transport
   `productInducedCoefficientTransport h hU e : L(A, P) ≃ L(B, P)` along an equivalence
   `e : A ≃ B` of inducing representations (through its import `ProductInducedTransport`),
   `CompactInduction.coefficientMap_transport` (`E_P^G` is unchanged by transport) and
   `CompactInduction.formalDegreeProductForm_ofEquiv` (the transport is an isometry for the product
   of V.2);
-- `Langlands.Representation.Plancherel.ProductInducedOrbitSections` (Worker 200):
+- `Langlands.Representation.Plancherel.ProductInducedOrbitSections`:
   `UnitaryOrbitRepresentative ν π`, `ProductInducedOrbitSections ν π h hU` and
   `coherentProductInducedOrbitSections ν π h hU`.
 
@@ -40,7 +40,7 @@ the linear map are derived.
 ### Correspondence with the source
 
 - `O` is the orbit of the class of `π : IrreducibleAdmissibleRep ℂ M` under the unitary
-  unramified characters `unitaryUnramifiedCharacters ν` of Worker 200, for a family
+  unramified characters `unitaryUnramifiedCharacters ν`, for a family
   `ν : I → (M →* ℝ≥0ˣ)` of positive characters. Waldspurger's `Im X(M)` is the group of unitary
   unramified characters. A point `ω ∈ O` is represented by every actual
   `A : UnitaryOrbitRepresentative ν π`, an irreducible admissible representation whose class is
@@ -107,7 +107,7 @@ not derive them from those of `π`. `fourierOrbitSection_mem_coherent` and
 
 ## Relation to the Library
 
-- Worker 200's `productInducedSmoothOrbitSections` are the coherent sections whose restriction
+- `productInducedSmoothOrbitSections` are the coherent sections whose restriction
   to a fixed compact picture is a finite smooth family on the torus coordinates. Proposition
   VII.1.3 asserts that `ψ_f[O, P]` lies there and depends continuously on `f`; this module
   proves the coherence part only.

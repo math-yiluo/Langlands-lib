@@ -1,7 +1,5 @@
 # Discrete-series opposite support of irreducible tempered representations
 
-Author: Worker 387.
-
 `Langlands.glTemperedDiscreteSeriesSupport` proves exactly the closed
 proposition
 [`Langlands.GLTemperedDiscreteSeriesSupportStatement`](TemperedSupportStatement.md).

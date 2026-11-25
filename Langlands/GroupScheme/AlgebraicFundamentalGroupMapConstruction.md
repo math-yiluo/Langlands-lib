@@ -1,6 +1,6 @@
 # Actual torus factorizations and derived-cover lifts
 
-Worker 235. This is internal supporting work for the published proposition
+This is internal supporting work for the published proposition
 `AlgebraicFundamentalGroupMapStatement`; the results derive from the existing
 Library definitions, torus-image and maximal-extension theorems, and the actual
 simply connected homomorphism-lifting construction. The field has arbitrary
@@ -20,5 +20,9 @@ field extension.
 
 `IsInducedMap.ext` uses one factorization supplied by the predicate and the
 surjectivity of the source quotient projection to prove uniqueness. These helpers
-do not yet establish existence of an induced quotient map, independence from all
+do not establish existence of an induced quotient map, independence from all
 factorizations, Galois equivariance, or compatibility with source presentations.
+Those are proved by `algebraicFundamentalGroupMap_of_comparison` in
+`Langlands.GroupScheme.AlgebraicFundamentalGroupMapNaturality`, which
+`algebraicFundamentalGroupMap` in
+`Langlands.GroupScheme.AlgebraicFundamentalGroupMapProof` applies.

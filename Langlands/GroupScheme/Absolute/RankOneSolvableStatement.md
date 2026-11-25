@@ -78,8 +78,7 @@ torus restricting to both `α` and `-α`. This derivation is not formalized here
 
 ## Use
 
-The proof of `RegularCocharacterBorelStatement` (task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`) uses this statement in two places. In clause 1, a
+The proof of `RegularCocharacterBorelStatement` uses this statement in two places. In clause 1, a
 smooth connected solvable `B' ⊇ P(ν)` cannot have Lie weights of both signs, so
 `Lie(B') = Lie(P(ν))`, and `LieSubgroupEqualityStatement` then gives `B' = P(ν)`. Clause 3 uses
 it to bound the roots in the Lie algebra of a Borel subgroup through `T`. Because of this

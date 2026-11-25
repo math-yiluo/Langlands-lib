@@ -1,7 +1,5 @@
 # Ordinary matrix analytic data on actual Whittaker models
 
-Author: Worker 468.
-
 This internal construction assembles the ordinary
 `GodementJacquet.Padic.MatrixAnalyticAssertions` on the actual carrier
 `(glCoefficientModel psi n sigma ell).toSubmodule`. The original

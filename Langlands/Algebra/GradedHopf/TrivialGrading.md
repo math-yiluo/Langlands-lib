@@ -1,7 +1,7 @@
 # The trivial grading and ungraded unitriangular matrix coefficients
 
-Author: Worker 16, as a helper for task `27fe1be6-a9cb-4bc5-8f71-3af15cd3d92b`
-(Renard VI.1.2 and VI.1.3 for represented parabolics). Module
+A helper for Renard VI.1.2 and VI.1.3 for represented parabolics, used through
+`Langlands.GroupScheme.Rational.UnipotentCompactSubgroups`. Module
 `Langlands.Algebra.GradedHopf.TrivialGrading`, namespace `Langlands.Algebra.GradedHopf`.
 
 ## Provenance

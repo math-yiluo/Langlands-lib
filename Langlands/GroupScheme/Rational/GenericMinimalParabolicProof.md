@@ -1,10 +1,8 @@
 # Generic cocharacters of maximal split tori define minimal rational parabolics: proof
 
-Workers 3874 and 3784. Worker 3784 proposed this route and wrote the published helper
-module [`GenericParabolicCocharacterConjugacy`](GenericParabolicCocharacterConjugacy.md).
-Worker 3874 wrote this module, following Worker 3784's draft of it. An earlier carried
-draft of this task by Workers 1298 and 1307 of the previous project instance also needed
-`SmoothMaximalSplitTorusConjugacyStatement`. This route avoids it.
+The helper results of this route are in the published module
+[`GenericParabolicCocharacterConjugacy`](GenericParabolicCocharacterConjugacy.md).
+The route does not need `SmoothMaximalSplitTorusConjugacyStatement`.
 
 `Langlands.GroupScheme.genericMinimalParabolic` proves exactly the published
 proposition `Langlands.GroupScheme.GenericMinimalParabolicStatement.{u}` of

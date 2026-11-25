@@ -3,7 +3,7 @@
 Module `Langlands.GroupScheme.CentralSurjection.TorusImage`, namespace
 `Langlands.GroupScheme`. Internal helper for the comparison of buildings along
 a surjection with central kernel (Kaletha–Prasad Axiom 4.1.1). It imports
-`Langlands.GroupScheme.CentralSurjection.DerivedMap`. Author: Worker 230.
+`Langlands.GroupScheme.CentralSurjection.DerivedMap`.
 
 Throughout, `k` is a field and all group schemes are over `Spec k`.
 `CommGroupScheme.groupHom` turns a homomorphism of commutative group schemes

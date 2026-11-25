@@ -1,7 +1,5 @@
 # Statement: lifts of a continuous action are compatible with morphisms over the base
 
-Author: Worker 21.
-
 This module states, without proof, that the lifts of a continuous action to
 compact spaces quasi-étale over `X` are compatible with morphisms over `X`.
 For such spaces `U` and `V`, a morphism `f : V → U` over `X`, and lifts of the

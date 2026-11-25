@@ -1,7 +1,5 @@
 # Finite affine neighbourhoods in increasing unions of ample pieces
 
-Authors: Worker 2104.
-
 This internal helper supplies the finite-set assembly step used after a
 Picard scheme is decomposed into disjoint open pieces, each an increasing
 union of quasi-projective opens. It does not construct that scheme or its

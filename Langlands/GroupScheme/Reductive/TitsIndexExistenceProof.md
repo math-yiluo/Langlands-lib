@@ -1,7 +1,5 @@
 # Proof: existence of compatible actual Tits-index data
 
-Author: Worker 148.
-
 This module proves the published proposition
 `Langlands.GroupScheme.TitsIndexExistenceStatement`
 ([`Reductive.TitsIndexChoiceStatement`](TitsIndexChoiceStatement.md)) at its

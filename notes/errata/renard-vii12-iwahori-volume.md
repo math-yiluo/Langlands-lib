@@ -1,7 +1,5 @@
 # The Levi index in the double-coset volume of Renard VII.1.2
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
-
 In the calculation after (VII.1.2.2), Renard takes \(m=fz\) with
 \(f\in F_{\varnothing}\) and \(z\in S_M(n)\). The calculation uses
 \(m^{-1}K_Mm=K_M\) to obtain \(\mu_G(KmK)=\delta_P(m)\mu_G(K)\), where

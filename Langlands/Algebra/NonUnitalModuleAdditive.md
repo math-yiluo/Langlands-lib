@@ -1,6 +1,6 @@
 # Pointwise additive structure on original nonunital modules
 
-Worker 633. This is an internal derived construction over the published original
+This is an internal derived construction over the published original
 additive nonunital actions, their intertwiners and their integer-unitization
 categorical equivalence. Its structures and intrinsic laws implement pointwise
 addition and finite products without assuming a unit law for the original action.
@@ -13,7 +13,7 @@ The relevant original passages were read at printed pages 5–7 / PDF pages 11�
 A.VI.1 printed page 261 / PDF page 267, and A.VI.2 property 6 printed page 262 /
 PDF page 268. The supplementary 2010 errata, registered as
 `renard-2010-corrections-complements`, were read at PDF pages 18–19, together
-with the current Library note `notes/renard/appendix-a-corrections.md`.
+with the Library note `notes/renard/appendix-a-corrections.md`.
 The [author's book and errata section](https://perso.pages.math.cnrs.fr/users/david.renard/)
 was checked live on 30 October 2026: the page is byte-identical to the registered
 `renard-author-page-2026-10-26` snapshot, and the linked 2010 errata retain their
@@ -71,7 +71,7 @@ instance. For each `n`, it transports a `Discrete (Fin n)` limit from
 `Adjunction.hasLimitsOfShape_of_equivalence` and the existing
 `IntegerUnitization.extendFunctor_isEquivalence`. The target limit structure is
 Mathlib's ordinary module-category structure; no source limit structure is an
-input. The case `n = 0` is included. This unit does not choose explicit product
+input. The case `n = 0` is included. This module does not choose explicit product
 carriers or projection formulas.
 
 ## Size, verification and scope
@@ -99,5 +99,5 @@ Zero rings, zero carriers, and zero original actions are included. No
 idempotentedness, nondegeneracy, scalar field, nontriviality, finite generation
 or finite dimension is assumed. Ambient abelianness, concrete kernels/cokernels,
 nondegenerate closure or abelianness, exactness, recovered scalar Hom spaces,
-complex categorical comparisons, tensor products and adjunctions remain separate
-obligations.
+complex categorical comparisons, tensor products and adjunctions are not part
+of this module.

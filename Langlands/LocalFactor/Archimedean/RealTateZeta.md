@@ -1,7 +1,7 @@
 # Real Tate zeta integrals: convergence and holomorphy
 
 Helper module for the proof of `Langlands.LocalFactor.RealArchimedeanTateStatement`
-(see `RealTateProof.md`). Authored by Worker 823. Everything here is a proved lemma
+(see `RealTateProof.md`). Everything here is a proved lemma
 or an auxiliary definition; there are no hypotheses or axioms.
 
 ## Definitions

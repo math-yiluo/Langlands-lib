@@ -50,18 +50,18 @@ variable {Y X : LocalizedCategory.{u, v, v} (K := K)} {p : Y ⟶ X} {Γ : Type z
 /-- A surjective analytic étale arrow whose deck action is simply transitive
 on full geometric fibres has the analytic deck-graph partition. -/
 def of_geometricFibres (hp : etale p) (hsurj : Function.Surjective (localizedSpaceFunctor.map p))
-    (deck : Γ →* Aut Y) (hdeck : ∀ γ, (deck γ).hom ≫ p = p)
+    (deck : Γ →* Aut Y) (hdeck : ∀ γ, (deck γ).asIso.hom ≫ p = p)
     (hact : ∀ (L : Type u) [NormedField L] [NormedAlgebra K L] [IsUltrametricDist L]
       [CompleteSpace L] [IsAlgClosed L] (a b : (localizedFieldPointFunctor L).obj Y),
       (localizedFieldPointFunctor L).map p a = (localizedFieldPointFunctor L).map p b →
-      ∃! γ : Γ, (localizedFieldPointFunctor L).map (deck γ).hom a = b) : AnalyticGaloisCover Γ p := by
+      ∃! γ : Γ, (localizedFieldPointFunctor L).map (deck γ).asIso.hom a = b) : AnalyticGaloisCover Γ p := by
   let Q := localizedEtalePullback p p hp
   let s := Q.1.fst
   let t := Q.1.snd
   let h := IsPullback.of_isLimit Q.2
   let graph (γ : Γ) := analyticDeckGraph h (deck γ) (hdeck γ)
   have hs (γ : Γ) : graph γ ≫ s = 𝟙 Y := h.lift_fst _ _ _
-  have ht (γ : Γ) : graph γ ≫ t = (deck γ).hom := h.lift_snd _ _ _
+  have ht (γ : Γ) : graph γ ≫ t = (deck γ).asIso.hom := h.lift_snd _ _ _
   have hsEtale : etale s := by
     have hex : LocalizedEtalePullbackStatement.{u, v} K :=
       localizedEtalePullback_of_targetLocality_and_finitePieces
@@ -107,7 +107,7 @@ def of_geometricFibres (hp : etale p) (hsurj : Function.Surjective (localizedSpa
     have heq : a = b := (hfst γ a ha).trans (hfst δ b hb).symm
     subst b
     have hsnd (α : Γ) (hr : Φ.map (graph α) a = q) :
-        Φ.map (deck α).hom a = Φ.map t q := by
+        Φ.map (deck α).asIso.hom a = Φ.map t q := by
       rw [← hr, ← Φ.map_comp_apply, ht]
     have hsame : Φ.map p a = Φ.map p (Φ.map t q) := by
       rw [← hsnd γ ha, ← Φ.map_comp_apply, hdeck]

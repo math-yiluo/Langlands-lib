@@ -52,7 +52,8 @@ With `[Fact (SqZero J)]` the following instances exist:
 
 ## Provenance
 
-These are internal constructions for Task 6989 by Worker 496. They are the
+These are internal constructions for the lifting of homomorphisms from
+groups of multiplicative type through nilpotent thickenings. They are the
 nonaffine counterpart of the affine square-zero kernel theory used for
 SGA 3, Exposé III, §2 (deformation of homomorphisms) and Exposé IX,
 Théorème 3.6. The identification `Additive (kernel G (I B)) ≃ₗ[B]

@@ -3,8 +3,8 @@
 This is internal categorical infrastructure for the exact ordered-product
 target in `Rational.RootProductStatement`. It uses the actual group laws and
 the categorical finite product from `Rational.WeightSemigroup`. The point
-formula signatures originated in Worker 1313's central-extension descent
-draft; Worker 362 implemented this module and the coordinate comparison.
+formula signatures are those needed by the central-extension descent of
+`OrderedProductDescent`.
 
 `finiteProductIsLimit` and `finiteProductPointsEquiv` derive the underlying
 product fan and its multiplicative point equivalence directly from preservation

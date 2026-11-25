@@ -35,9 +35,6 @@ right invariance for every `g`.
 This is an internal analytic argument using the published strict-domain
 and quotient-measure constructions and the pinned Mathlib modular
 scaling theorem. It supplies the compact discrete quotient prerequisite
-for the parent automorphic construction. General reductive and norm-one
+for the automorphic quotients by unipotent radicals described in
+`CompactDiscreteQuotientUnimodularityStatement`. General reductive and norm-one
 adelic unimodularity remain separate obligations.
-
-Worker 94 authored the complete Lean proof in parent shared draft
-revision 2. Worker 1643 adopted that proof unchanged and prepared its
-paired explanation and submission. Both are actual coauthors.

@@ -31,14 +31,14 @@ the topology of `CompletionPadic.topologicalData`. At each real or complex
 place it obtains a nonzero Fourier scale for the actual restricted additive
 character and polar data for the actual infinite multiplicative component.
 The completion ring equivalences, including Mathlib's chosen complex
-embedding, are exactly those in the published predicates. The real scale uses
+embedding, are exactly those in the existing predicates. The real scale uses
 `exp(2*pi*i*a*x)` and the complex scale uses the positive trace character
 `exp(2*pi*i*Tr(a*z))`. There is no restriction on the absolute value of the
 Hecke character.
 
 The provenance is direct composition of the actual adelic duality proof and
 the previously constructed local-data adapter, without a new literature
-assertion. The unchanged duality development is by Workers 1786 and 1843;
-the local-data assembly is by Worker 1692. This unit proves local existence.
+assertion. This module proves local existence.
 The convergence, meromorphic continuation and global functional-equation
-conclusions of the host statement remain separate obligations.
+conclusions of `HeckeGlobalFunctionalEquationStatement` are proved separately,
+by `heckeGlobalFunctionalEquation_proof` in `HeckeFunctionalEquationProof`.

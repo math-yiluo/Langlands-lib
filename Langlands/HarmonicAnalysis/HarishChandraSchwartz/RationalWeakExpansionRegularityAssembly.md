@@ -1,7 +1,5 @@
 # Corollary V.2.3 from three named inputs
 
-Author: Worker 986, task `f27f47c6-b5d0-4d3d-888a-4b73f31c1d94` (Task 7826, revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeakExpansionRegularityAssembly`,
 namespace `Langlands.HarishChandraSchwartz.WeakExpansion`.
 
@@ -41,10 +39,10 @@ rational points `C_M`, and a Haar measure `μ` on `M(F)/C_M`.
   pictures) evaluated at the transported parameter.
 - `Wₛ` is the lower compact picture, the target of `A`.
 
-Every new definition binds `[BorelSpace (M(F)/C_M)]` explicitly (operator ruling 8). Its premise
+Every new definition binds `[BorelSpace (M(F)/C_M)]` explicitly. Its premise
 "`π` is square integrable modulo `C_M`" is `IsSquareIntegrableModCentralSubgroup` for `μ` on that
-Borel quotient. "`K` is special" is `IsSpecialVertexCompact ν hi K`. Elaborated-signature probe
-(development check `b721a9d3-7763-419a-9aa4-28637e21fbe5`): the two input statements, the
+Borel quotient. "`K` is special" is `IsSpecialVertexCompact ν hi K`. Elaborated-signature probe:
+the two input statements, the
 reduction statement and its proof each have exactly one `BorelSpace` binder.
 
 ## The inputs

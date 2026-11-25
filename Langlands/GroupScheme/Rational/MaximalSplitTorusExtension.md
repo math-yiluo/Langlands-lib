@@ -1,6 +1,6 @@
 # Maximal extensions of actual split subtori
 
-Worker 1274. This is an internal construction from the actual finite Lie-rank
+This is an internal construction from the actual finite Lie-rank
 bound and equal-rank monomorphism rigidity. The base field is arbitrary and
 may lie in any universe. The ambient group scheme is affine and its structure
 morphism is locally of finite type. Smoothness, connectedness and reductivity

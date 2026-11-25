@@ -98,7 +98,7 @@ def trivialOperatorsMap (X : VariableActionSpace.{u, v} K) :
   groupHom := 1
   algebraMap := BoundedAlgHom.id K X.algebraAction.obj.V
   equivariant _ a := by
-    change (X.algebraAction.obj.ρ 1).toAlgHom a = a
+    change (X.algebraAction.obj.ρ 1).asHom.toAlgHom a = a
     rw [map_one]
     rfl
 

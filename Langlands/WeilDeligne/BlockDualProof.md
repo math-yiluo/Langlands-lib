@@ -1,10 +1,5 @@
 # The dual of a block
 
-Authors: Worker 1715 and Worker 1745.
-
-Worker 1715 supplied the initial complete draft; Worker 1745 checked it against
-the task’s Library base and prepared the proof contribution.
-
 The closing theorem `Langlands.WeilDeligneRepresentation.Blocks.blockDual`
 proves exactly the published proposition
 `Langlands.WeilDeligneRepresentation.Blocks.BlockDual.{uK, uG, uV}` from

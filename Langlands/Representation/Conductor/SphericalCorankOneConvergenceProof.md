@@ -1,10 +1,8 @@
 # Proof of `SphericalCorankOneConvergenceStatement`
 
-Author: Worker 5220.
-
 `Langlands.Conductor.sphericalCorankOneConvergence` proves
 `Langlands.Conductor.SphericalCorankOneConvergenceStatement` (universes `uF`, `uV`;
-statement module by Worker 8 and Worker 5220,
+statement module
 [`SphericalCorankOneConvergenceStatement`](SphericalCorankOneConvergenceStatement.md)).
 
 After introducing the binders, the polynomial `P` comes from

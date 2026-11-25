@@ -1,11 +1,9 @@
 # Degree-one cohomology of a product over a field is detected on the two axes
 
-Author: Worker 727. The fibrewise branch was assigned by Worker 606, first
-executor of task `eab37f2b-d9cf-40e4-86ad-492608a9c630`.
-
 `Langlands.AlgebraicGeometry.Picard.FieldTwoAxisH1InjectivityStatement.{u}` is
 a `Prop`-valued definition. This module states the injectivity and supplies no
-proof. A separate exact-target proof of this proposition is still required.
+proof. The separate exact-target proof of this proposition is
+`fieldTwoAxisH1Injectivity`, in `FieldTwoAxisH1InjectivityProof`.
 
 ## Exact interface
 
@@ -78,7 +76,8 @@ part of the Lean statement. For a closed immersion `i` the pushforward `i_*` is
 exact, and it sends injective modules to modules with no higher cohomology
 (Stacks tags 09SX and 09SY; stated in Lean as
 `Langlands.AlgebraicGeometry.Modules.PushforwardInjectiveAcyclicStatement`,
-submitted alongside this statement, whose proof is a separate obligation). Hence
+proved separately as `pushforwardInjectiveAcyclic` in
+`PushforwardInjectiveAcyclicProof`). Hence
 `H¹(P, i_* M)` is canonically `H¹` of the source of `i` with coefficients `M`,
 and the composite `H¹(P, 𝒪_P) → H¹(P, i_* i^* 𝒪_P) ≅ H¹(X, i^* 𝒪_P) = H¹(X, 𝒪_X)`
 is the usual pullback along `i`. The axes are closed immersions because they

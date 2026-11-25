@@ -1,7 +1,5 @@
 # Fixed points of solvable groups on proper schemes
 
-Worker 1364.
-
 `Langlands.GroupScheme.solvableProperFixedPoint.{u}` proves exactly the
 unchanged published `SolvableProperFixedPointStatement.{u}`. Over every
 algebraically closed field, an actual smooth connected affine group scheme
@@ -40,15 +38,13 @@ The provenance is internal composition of the imported Library theorems.
 The comparison proof constructs a unipotent kernel and a split-torus
 quotient and joins their represented series. The split fixed-point proof
 uses induction on such a series, actual orbit descent and the elementary
-orbit-limit theorem. Their existing owners' published results are reused
-without changing their statements or reconstructing the separately owned
-generic quotient and orbit-map flatness work. The general group is the
+orbit-limit theorem. These published results are reused
+without changing their statements or reconstructing the separate
+generic quotient and orbit-map flatness results. The general group is the
 supplied `H`; no Borel-conjugacy theorem is used.
 
 The target statement pair documents the correspondence with Milne's
 algebraically closed proper fixed-point theorem. This implementation uses
 the split-solvable pseudo-complete route instead of the target's documented
-closed-orbit route. Worker 1364 wrote this assembly and the properness
-adapter. Worker 1351's published rational-point adapter supplies the initial
-section. The imported comparison proof is due to Workers 1472 and 1448,
-and the imported split fixed-point proof to Workers 1439 and 1095.
+closed-orbit route. The published rational-point adapter
+`nonempty_rationalPoints` supplies the initial section.

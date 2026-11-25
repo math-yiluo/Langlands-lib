@@ -1,8 +1,6 @@
 # Mixed products of inner and outer discrepancies and the twisted cocycle law
 
-Author: Worker 166.
-
-This internal unit works with the all-test Galois discrepancy of a local
+This internal module works with the all-test Galois discrepancy of a local
 presentation `E` from `SL_(n+1)` to a group scheme `G` over a field `K`, on
 the cover `Spec L`. The setting is the same as in
 `Langlands.GroupScheme.SimplyConnected.OuterTypeAStarCover`. Write `θ` for
@@ -14,7 +12,7 @@ entry of `Y`.
 
 The library already has the inner·inner law (`HasInnerDiscrepancy.mul`) and
 the outer·outer law (`HasOuterDiscrepancy.mul_outer`, from
-`SpecialLinearTitsOuterDiscrepancy`). This unit adds the two mixed laws.
+`SpecialLinearTitsOuterDiscrepancy`). This module adds the two mixed laws.
 Each one follows from `discrepancy_mul`, which computes the discrepancy of
 `σ * τ` at a cover point `a` from the discrepancy of `σ` at `a` and the
 discrepancy of `τ` at `a ≫ Spec σ`. Each also uses `coefficients_coverAut`:
@@ -53,7 +51,8 @@ automorphism. It is the conjunction of two conditions:
   `x(στ) = c • (x(σ) * ((x(τ)⁻¹).map σ)ᵀ)`.
 
 These two conditions are the hypotheses `hin` and `hout` of the
-semilinear descent theorem planned for Task 6356 (Worker 5397).
+semilinear descent theorem `UnitaryTwistedDescent.exists_conj_eq_scalar`
+(module `Langlands.LinearAlgebra.UnitaryTwistedDescent`).
 
 `isTwistedProjectiveCocycle_of_discrepancy` proves this law under three
 hypotheses: `H` has index two, `x(σ)` is an inner representative for every
@@ -78,8 +77,8 @@ above then put this in the stated form.
 
 This is internal infrastructure, derived from the imported library
 definitions; it has no literature source of its own. The interface of the
-cocycle law was specified by Worker 5397 to match their descent theorem.
-The unit proves only the composition laws and the cocycle law. It does not
+cocycle law matches that descent theorem.
+The module proves only the composition laws and the cocycle law. It does not
 construct the subgroup `H` or the representatives `x`. It also does not
 descend `x` to a coboundary, and it does not assert any Hermitian
 presentation.

@@ -24,7 +24,7 @@ from its original module. The theorem works in every universe `u`.
 Its sole mathematical premise is the uniform-exponent proposition.
 It adds no hypothesis to the schemes, groups, subgroup, or base point
 quantified by the target. In particular, it adds no flatness assumption.
-This contribution does not prove the premise, so it does not supply an
+This module does not prove the premise, so it does not supply an
 unconditional proof of the spreading target.
 
 The supporting modules contain the actual subgroup finiteness,
@@ -70,10 +70,6 @@ This is derived internal content: it composes the precise supporting
 constructions with the explicitly supplied uniform-exponent
 proposition. The route implements the division of SGA 3, Exposé IX,
 Lemmas 6.1 and 6.3, Theorem 6.4, and Corollary 6.5. Those source
-statements are not strengthened here. The remaining uniform-exponent
-proof is a separate obligation.
-
-Worker 877 assembled the reduction, the bounded-exponent finiteness
-argument and the finite-group trivial-fibre argument. Worker 887
-supplied the local quasi-finiteness and arbitrary-base relative
-geometry constructions.
+statements are not strengthened here. The uniform-exponent proposition
+is proved separately, as `quasiFiniteCommutativeUniformExponent` in
+`Langlands.GroupScheme.QuasiFiniteCommutativeUniformExponentProof`.

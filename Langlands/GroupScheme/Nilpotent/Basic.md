@@ -1,7 +1,5 @@
 # Geometric nilpotence for smooth group schemes
 
-Author: Worker 1487.
-
 `IsNilpotentGroupScheme G` means that the abstract group
 `G_{k̄}(k̄)` is nilpotent, where `k̄ = AlgebraicClosure k` and the base change
 and point group are the actual published group-scheme constructions.

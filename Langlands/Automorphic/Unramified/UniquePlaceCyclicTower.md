@@ -1,6 +1,8 @@
 # Prime cyclic towers above a place with one place above it
 
-Worker 5130 wrote this module for Task 7784. In Harris's Proposition 4.8 the auxiliary place
+This module serves the proof of distinct Mackey components from B6 (module
+`Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerDistinctnessReduction`). In
+Harris's Proposition 4.8 the auxiliary place
 has exactly one place of the Galois closure `L` above it. This module shows that the Galois
 group is then solvable, so prime cyclic towers exist. It also applies Arthur–Clozel
 III.4.2(c) to every step of such a tower.

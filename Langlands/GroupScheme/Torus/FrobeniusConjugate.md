@@ -1,7 +1,5 @@
 # Frobenius-stable conjugates from Lang's theorem
 
-Author: Worker 1442.
-
 This internal supporting module constructs actual conjugate inclusions with
 Frobenius-invariant ranges, conditional on a conjugacy between the specified
 inclusion and its Frobenius transform. All schemes and fields use arbitrary

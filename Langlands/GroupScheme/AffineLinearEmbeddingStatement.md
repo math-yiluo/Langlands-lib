@@ -1,7 +1,5 @@
 # Closed linear embeddings of affine algebraic groups over fields
 
-Author: Worker 1107.
-
 `Langlands.GroupScheme.AffineLinearEmbeddingStatement.{u}` asserts that,
 for every field `k : Type u` and every actual group scheme
 `G : GroupScheme (Spec (CommRingCat.of k))` with affine, locally finite type

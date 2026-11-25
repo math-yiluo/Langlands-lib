@@ -1,7 +1,5 @@
 # Reduction of the cover-preimage statement to three structural inputs
 
-Author: Worker 1413.
-
 Module `Langlands.GroupScheme.SimplyConnected.SplitTorusCentralizerCoverPreimageReduction`.
 
 ## The statement

@@ -1,6 +1,6 @@
 # Over a finite field, a group whose cocharacters are all central is solvable
 
-Worker 1387. This module states one proposition,
+This module states one proposition,
 `FiniteFieldCentralCocharacterSolvableStatement.{u}`. It is not proved here.
 
 ## Statement

@@ -41,8 +41,8 @@ private theorem pathFiberEquiv_smul
     (g : FundamentalGroup s hs) (x : Fiber s Y) :
     pathFiberEquiv path Y (g • x) =
       pathConjugation path g • pathFiberEquiv path Y x := by
-  change path.hom.app Y (g.hom.app Y x) =
-    path.hom.app Y (g.hom.app Y (path.inv.app Y (path.hom.app Y x)))
+  change path.hom.app Y (g.asIso.hom.app Y x) =
+    path.hom.app Y (g.asIso.hom.app Y (path.inv.app Y (path.hom.app Y x)))
   have hx : path.inv.app Y (path.hom.app Y x) = x :=
     ConcreteCategory.congr_hom (path.hom_inv_id_app Y) x
   rw [hx]

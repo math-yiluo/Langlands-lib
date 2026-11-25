@@ -197,38 +197,38 @@ private theorem permute_coord (σ : Equiv.Perm (Fin (n + 1))) (i : Fin (n + 1)) 
 `i`-th coordinate of a translate read at the inverse permutation of `i`. -/
 def permutations : Equiv.Perm (Fin (n + 1)) →* Aut P.obj where
   toFun σ :=
-    { hom := P.permute σ
-      inv := P.permute σ.symm
-      hom_inv_id := by
+    { asIso.hom := P.permute σ
+      asIso.inv := P.permute σ.symm
+      asIso.hom_inv_id := by
         apply P.hom_ext
         intro i
         rw [Category.assoc, P.permute_coord, P.permute_coord, Category.id_comp,
           Equiv.symm_symm, Equiv.symm_apply_apply]
-      inv_hom_id := by
+      asIso.inv_hom_id := by
         apply P.hom_ext
         intro i
         rw [Category.assoc, P.permute_coord, P.permute_coord, Category.id_comp,
           Equiv.symm_symm, Equiv.apply_symm_apply] }
-  map_one' := Iso.ext (by
+  map_one' := Aut.ext (Iso.ext (by
     apply P.hom_ext
     intro i
     change P.permute 1 ≫ P.coord i = 𝟙 _ ≫ P.coord i
     rw [P.permute_coord, Category.id_comp]
-    rfl)
-  map_mul' σ τ := Iso.ext (by
+    rfl))
+  map_mul' σ τ := Aut.ext (Iso.ext (by
     apply P.hom_ext
     intro i
     change P.permute (σ * τ) ≫ P.coord i = (P.permute τ ≫ P.permute σ) ≫ P.coord i
     rw [Category.assoc, P.permute_coord, P.permute_coord, P.permute_coord]
-    rfl)
+    rfl))
 
 @[reassoc (attr := simp)]
 theorem permutations_coord (σ : Equiv.Perm (Fin (n + 1))) (i : Fin (n + 1)) :
-    (P.permutations σ).hom ≫ P.coord i = P.coord (σ.symm i) := P.permute_coord σ i
+    (P.permutations σ).asIso.hom ≫ P.coord i = P.coord (σ.symm i) := P.permute_coord σ i
 
 @[reassoc (attr := simp)]
 theorem permutations_base (σ : Equiv.Perm (Fin (n + 1))) :
-    (P.permutations σ).hom ≫ P.base = P.base :=
+    (P.permutations σ).asIso.hom ≫ P.base = P.base :=
   P.lift_base P.base (fun i => P.coord (σ.symm i)) (fun _ => P.coord_base _)
 
 end CompactAnalyticFibrePower

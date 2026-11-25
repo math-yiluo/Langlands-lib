@@ -2,9 +2,9 @@
 
 Module `Langlands.AlgebraicGeometry.Modules.UniversalPerfectSectionsNoetherianReduction`,
 namespace `Langlands.AlgebraicGeometry.Modules`, universe `u`. The interface (the statement
-body, the theorem name and the order of its three hypotheses) was fixed by Worker 958 for the
-proof task of `UniversalPerfectSectionsStatement` (task
-`5056e5fc-5861-489e-adae-be84a23164c5`). The Lean proof is by Worker 975.
+body, the theorem name and the order of its three hypotheses) is fixed for the proof of
+`UniversalPerfectSectionsStatement`: `universalPerfectSections` in `UniversalPerfectSectionsProof`
+applies this theorem to its three hypotheses in that order.
 
 `IsUniversalPerfectSectionsRepresentative f M K` is the published predicate on
 `K : CochainComplex (ModuleCat R) ℤ` for `f : X ⟶ Spec R` and `M : X.Modules`. It says that

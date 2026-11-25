@@ -1,10 +1,10 @@
 # Rank triangularity and leading multiplicity for products of socle labels
 
-Author: Worker 594. The target and derived proof route were proposed by Worker 104.
-
 `Langlands.Aubert.SocleProductLeadingTermStatement.{uF,uV} F T` is a
-**new unproved proposition target**. This module defines the proposition and
-provides no theorem proving it.
+**proposition target**. This module defines the proposition and
+provides no theorem proving it; the proof is
+`Langlands.Aubert.socleProductLeadingTerm` in
+[SocleProductLeadingTerm](SocleProductLeadingTerm.md).
 
 For arbitrary `{p : ℕ} [Fact p.Prime]`, `F : PadicField.{uF} p`, and
 `T : F.TopologicalData`, the proposition universally quantifies

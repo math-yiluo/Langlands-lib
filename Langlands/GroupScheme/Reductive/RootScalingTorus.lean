@@ -74,7 +74,7 @@ theorem rootScalingProjection_coordinate (a : p.base.support) :
     by_cases h : b = a
     · subst b
       simp
-    · simp [h]
+    · simp [h, AddEquiv.map_zero]
   rw [hcoord, Fintype.linearCombination_apply_single, one_smul]
 
 /-- The projection is flat, surjective and locally of finite presentation;

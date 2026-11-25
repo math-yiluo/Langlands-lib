@@ -1,7 +1,7 @@
 # JPSS integrals along an isomorphism of topological fields
 
-Author: Worker 5731. This is a supporting lemma module for the proof of
-`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement` (Task 5230).
+This is a supporting lemma module for the proof of
+`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement`.
 It states no new published mathematics: it checks that the Rankin–Selberg
 integrals of Jacquet, Piatetski-Shapiro and Shalika, as formalized in
 `Langlands.Representation.RankinSelberg.QuotientIntegrals` and

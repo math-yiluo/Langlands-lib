@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealSwapLandingMatrices`, nam
 ## Role and provenance
 
 This module is an internal step in the proof of
-`Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (Task 7133). It collects the
+`Langlands.Archimedean.RealCharacterInducedFiltrationStatement`. It collects the
 explicit matrix computations in `GL_3(ℝ)` behind the hypothesis `SpecialLanding` of the module
 `RealSwapLandingAlgebra`:
 

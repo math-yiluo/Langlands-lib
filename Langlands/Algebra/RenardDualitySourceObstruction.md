@@ -1,8 +1,8 @@
 # Actual source functors in the additive coefficient obstruction
 
 Module and namespace
-`Langlands.Algebra.RenardDualitySourceObstruction`. Worker 1222 constructed
-this internal comparison for the coefficient audit of Renard I.4.2. It
+`Langlands.Algebra.RenardDualitySourceObstruction`. This internal
+comparison serves the coefficient audit of Renard I.4.2. It
 instantiates the actual original-action functors, identifies their recovered
 complex modules, and proves that the first natural isomorphism fails under
 the bare additive ring-bimodule hypotheses.
@@ -11,9 +11,9 @@ The source motivating this audit is David Renard, *Représentations des
 groupes réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read the bimodule convention on printed p.6 / PDF p.12, scalar
+The bimodule convention on printed p.6 / PDF p.12, scalar
 recovery in I.2.1 on printed p.14 / PDF p.20, and the I.4.2 Theorem and
-proof on printed pp.23–24 / PDF pp.29–30. The source asserts natural
+proof on printed pp.23–24 / PDF pp.29–30 were read for this module. The source asserts natural
 isomorphisms for the two duality composites; it does not assert this
 counterexample. Its opening convention defines a ring bimodule by
 commuting original additive actions. The counterexample is derived
@@ -52,14 +52,14 @@ unconditional existence is imported from
 
 ## Actual tensor and dual values
 
-`regularObject` is the published nondegenerate regular left B-module.
+`regularObject` is the nondegenerate regular left B-module.
 `forgetfulObject σ` is the value of
 `NondegenerateTensorFunctor.regularF` at this actual object, using the
 original left A-action above. Its carrier `FCarrier σ` is therefore the
-published additive balanced quotient `B ⊗_B B`, with its residual
+additive balanced quotient `B ⊗_B B`, with its residual
 original left A-action.
 
-`tensorContraction` is the published regular tensor contraction
+`tensorContraction` is the regular tensor contraction
 `b ⊗ n ↦ b n`. Its injectivity and the inverse `z ↦ 1 ⊗ z` come from
 the actual tensor quotient, without assuming an identification of
 carriers. `tensorContraction_action` is proved on pure tensors using
@@ -84,7 +84,7 @@ equivalence between this actual tensor value and
 
 `unitalDualEquiv` is a general auxiliary comparison for a unital ring R
 with the compatible complex algebra multiplication required by the
-published dual construction. For an actual nondegenerate module M whose
+dual construction. For an actual nondegenerate module M whose
 unit acts identically, the nondegenerate part of its recovered complex
 dual is the full algebraic dual: every functional is fixed by `1`.
 The equivalence sends a dual subtype element to its functional and
@@ -116,10 +116,10 @@ the regular B-action are ordinary multiplication. Hence
 `φ(z) = z φ(1)`. `regularFunctional t` constructs the element with formula
 `z ↦ t z`, using the full-dual comparison just described.
 
-`pseudoDualObject σ` applies the published
+`pseudoDualObject σ` applies
 `RenardRightHomFunctors.rightPseudoF` to `regularDualObject`.
 Thus its carrier `HCarrier σ` is exactly the A-nondegenerate part of
-`Hom_(B.op)(B, D_B(B))` with its published residual right A-action.
+`Hom_(B.op)(B, D_B(B))` with its residual right A-action.
 It is not a separately supplied model of that functor value.
 
 `doubleEvaluation σ h` evaluates `h` at `1`, then evaluates the resulting
@@ -178,7 +178,7 @@ pointwise left and right inverse identities for the underlying
 `NonUnitalModuleHom` maps.
 
 `pseudoDualFunctor σ` and `dualForgetfulFunctor σ` are exactly the two
-published contravariant composites in the first I.4.2 comparison:
+contravariant composites in the first I.4.2 comparison:
 
 ```text
 D_B ⋙ rightPseudoF_AB,
@@ -201,6 +201,6 @@ intended that convention for algebra bimodules. In particular, it does
 not contradict the Library's `DualityForgetfulStatement` or
 `DualityInductionStatement`, which require compatibility with common
 complex coefficients through `IsScalarTower`. The second comparison and
-the transposition Lemma (I.4.2.1) are not refuted by this module. Updating
-the source ledger and resolving the common-coefficient theorem's proof
-obligations remain separate work.
+the transposition Lemma (I.4.2.1) are not refuted by this module. The
+common-coefficient theorems are proved separately, as `dualityForgetful` in
+`DualityForgetfulProof` and `dualityInduction` in `DualityInductionProof`.

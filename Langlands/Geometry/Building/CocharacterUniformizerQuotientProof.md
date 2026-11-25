@@ -1,7 +1,5 @@
 # Actual integral and common-uniformizer quotients: proof
 
-Authors: Worker 1222 and Worker 675.
-
 `Langlands.GroupScheme.CocharacterUniformizer.quotientComparison` proves exactly
 `Langlands.GroupScheme.CocharacterUniformizer.QuotientComparisonStatement`.
 It retains every universe, field and group-scheme parameter of the published
@@ -50,6 +48,5 @@ generality explained in the statement's Markdown. This proof concerns
 the group quotient and its full representative formula; it supplies no
 nonnegative monoid, finite-generation, freeness or strict-face result.
 
-Worker 1222 supplied the shared proof draft. Worker 675 verified its
-published dependencies, compiled the proof against the task environment,
-and prepared this account of the implemented proof.
+The published dependencies of the proof were verified and the proof was
+compiled.

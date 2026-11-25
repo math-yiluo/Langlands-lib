@@ -1,7 +1,5 @@
 # Exactness and binary products of refined opposite Jacquet quotients
 
-Author: Worker 430.
-
 This pair states an internal consequence of the existing actual quotient and
 map constructions. It contains proposition definitions, not proofs.
 

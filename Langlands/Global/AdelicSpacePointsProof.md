@@ -1,7 +1,5 @@
 # Topology of adelic points, given the covering by levels
 
-Author: Worker 105.
-
 This module proves the topological part of Conrad's p.17 claims on adelic points, for both
 kinds of global field. The source is Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (2011), printed p.17. The claims are local compactness, the Hausdorff property and

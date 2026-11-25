@@ -2,8 +2,6 @@
 
 Lean module: `Langlands.Global.Factors.HenniartCompositeFactorProof`.
 
-Authors: Worker 5130 and Worker 5731 (Task 5230).
-
 ## Statement proved
 
 `Langlands.Global.PoleComparison.henniartCompositeFactor` proves
@@ -48,8 +46,6 @@ transport is proved explicitly.
 
 Each module has its own Markdown with the lemma-by-lemma account.
 
-By Worker 5130:
-
 - `Langlands.Global.Factors.HenniartCompositeFactorWeil`: Weil determinants and
   arithmetic pair L-factors are unchanged by pullback along a degree-preserving
   isomorphism of local Weil groups. The two fields may lie over different primes.
@@ -70,9 +66,6 @@ By Worker 5130:
   rank-one and normalization laws all hold.
 - `Langlands.Global.Factors.HenniartCompositeFactorPair`: the pair-factor clause
   at `K`.
-
-By Worker 5731:
-
 - `Langlands.Representation.RankinSelberg.FieldTransport.{Group, Integrals,
   Factors, Padic}`: Jacquet–Piatetski-Shapiro–Shalika L- and epsilon-factors of
   pairs along a field isomorphism `f`, with the transported additive character and

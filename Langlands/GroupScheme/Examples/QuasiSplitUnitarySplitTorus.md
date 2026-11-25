@@ -1,6 +1,6 @@
 # A rank-two split torus after extending the quasi-split unitary group
 
-Worker 1225. This internal proof unit establishes the third conjunct of the published `QuasiSplitUnitary.RankStatement`.
+This internal proof module establishes the third conjunct of the published `QuasiSplitUnitary.RankStatement`.
 
 For an injective weight vector, a block Levi matrix is diagonal. An invertible diagonal matrix has unit diagonal entries, so its matrix group is naturally isomorphic to a family of units. This natural equivalence of points identifies the published block Levi scheme with the split torus indexed by the universe lift of the matrix index type. The block Levi inclusion is a closed immersion by `CorepresentedClosedSubgroup`.
 

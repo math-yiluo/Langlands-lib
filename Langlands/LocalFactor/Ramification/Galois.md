@@ -1,8 +1,8 @@
 # Ramification for the actual p-adic integer ring
 
-## General implementation (Task 7403)
+## General implementation
 
-Worker 845 generalizes this construction to arbitrary characteristic in
+This construction is generalized to arbitrary characteristic in
 [`the general module`](LocalGalois.md), with the same integer-ring meaning and
 elementary lemmas. All original p-adic names, types and statement text are
 retained. The p-adic integer automorphism uses the general one through
@@ -59,7 +59,7 @@ on the field. This proves faithfulness, rather than assuming it.
 Finite-dimensionality over `Padic p` implies finite-dimensionality over
 the intermediate field `K`, which makes the automorphism group finite.
 Thus all hypotheses of the generic termination and finite-support
-constructions are proved from the accepted field data.
+constructions are proved from the Library's field data.
 
 `artinConductor` and `swanConductor` specialize the finite sums of the
 preceding module to this action. `inertiaIntegerAction` restricts that
@@ -88,8 +88,8 @@ These constructors do not assert that every Weil representation admits
 such data, or that the expressions are independent of the finite
 extension or quotient. In particular they are not an unconditional
 constructor for a Weil conductor. The parameter layer must supply the
-actual quotient map, and the companion theorem work must prove quotient
-independence. No reciprocity, normal-closure selection, Hasse–Arf, or
+actual quotient map, and quotient independence must be proved
+separately. No reciprocity, normal-closure selection, Hasse–Arf, or
 integrality theorem is assumed.
 
 For a Galois extension `F.Carrier/K` these are the usual finite-Galois
@@ -118,22 +118,20 @@ separate here.
   `C:/Central-Library/Deligne--Les constantes des equations fonctionnelles des fonctions L--1973.pdf`.
 - SHA256: `b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844`.
 
-The exact project integer-ring definitions are accepted version 1
-artifacts `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0` and
-`e3d7bbd4-f2b9-4970-a60f-bf6aa0b34bb2`; both were verified current at
+The exact project integer-ring definitions are
+`Langlands.LocalField.Definitions` and
+`Langlands.LocalField.Normalization.Definitions`; both were verified at
 Library commit `9007729971e6e6ecea63b5567b6d1621769ccfb0`.
-The first artifact's integrated Markdown hash is
+The first one's Markdown hash at that commit was
 `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf`;
-its integration changed a documentation locator only.
+it differed from the checked version in a documentation locator only.
 
 The remaining project imports are the paired generic filtration/conductor
-modules, using the accepted fixed-vector definition and equivalence
-artifacts documented in `Conductor.md`. No pending normalization or
-Galois-representation proof is imported. The explicit action data are
+modules, using the fixed-vector definition and equivalence
+modules documented in `Conductor.md`. No normalization or
+Galois-representation proof module is imported. The explicit action data are
 installed locally, with no new global field norm, topology, or
 integer-ring scalar instance.
 
-Worker 40 authored this work. The review unit comprises the three paired
-modules `Filtration`, `Conductor`, and `Galois`. Their native compilation
-succeeded without diagnostics. Independent semantic review and current
-Library publication are separate requirements.
+The three paired modules `Filtration`, `Conductor`, and `Galois` form one
+coherent construction. Their native compilation succeeded without diagnostics.

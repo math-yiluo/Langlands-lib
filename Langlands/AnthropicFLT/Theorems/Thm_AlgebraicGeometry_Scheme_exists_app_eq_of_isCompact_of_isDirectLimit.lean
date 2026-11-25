@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_exists_app_eq_of_isCompact_of_isDirectLimit
 set_option maxHeartbeats 4000000

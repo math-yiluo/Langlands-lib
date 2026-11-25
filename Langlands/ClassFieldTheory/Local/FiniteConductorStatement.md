@@ -1,8 +1,8 @@
 # Finite-character conductor transport under local reciprocity
 
-Worker 10 authored the proposition family
-`Langlands.LocalClassField.FiniteCharacterConductorTheorems.{u}` and its
-elementary representation helper. This is a statement contribution.
+This file states the proposition family
+`Langlands.LocalClassField.FiniteCharacterConductorTheorems.{u}` and gives its
+elementary representation helper.
 It neither proves local reciprocity nor proves the conductor comparison.
 
 ## Actual objects and scope
@@ -34,8 +34,7 @@ unit images, ramification transport, or a conductor equality.
 The unconditional existence and uniqueness of such an `r` is the
 separate `ProfiniteReciprocityExistenceUniqueness` target. This family is
 therefore a consequence layer of that target; it does not replace the
-existence target with a hypothesis or claim that the combined local CFT
-assignment is complete.
+existence target with a hypothesis.
 
 For each actual finite abelian `L`, `finiteFamilyOfHom r L` is the existing
 composition of `r` with actual finite Galois restriction. A finite
@@ -100,7 +99,7 @@ desired-conclusion certificate.
 
 The closing proposition is the conjunction of these five assertions.
 No upper-numbering constructor is added here. Higher ramification
-transport will use the separately assigned actual Herbrand construction.
+transport uses the separate actual Herbrand construction.
 
 ## Original sources and derivations
 
@@ -124,8 +123,8 @@ Jean-Pierre Serre, *Local Fields*, English translation, GTM 67 (1979):
   first lower group: no positive upper break lies strictly between
   zero and one.
 
-Worker 10 read the complete original PDF pages 106-111, 231-234 and
-78-86. For a character with a kernel, the conductor comparison first
+The complete original PDF pages 106-111, 231-234 and 78-86 were
+read. For a character with a kernel, the conductor comparison first
 passes to its cyclic quotient extension; the quotient-character
 compatibility in VI.2 and the norm-kernel characterization supply the
 general, not necessarily faithful, case. Items 4 and 5 are explicit
@@ -135,7 +134,7 @@ with exactly the displayed Lean syntax.
 
 The integer-valued multiplicative conductor convention is also J. Tate,
 *Number theoretic background*, Corvallis Part II (1979), Section 3.2.6,
-printed page 13 / retained PDF page 22, which Worker 10 read directly.
+printed page 13 / retained PDF page 22, read directly.
 It is zero for an unramified character and otherwise the least positive
 unit-congruence level on which the character is trivial.
 
@@ -168,11 +167,11 @@ All imports are published in the Library: `Langlands.ClassFieldTheory.Local.Unit
 with their construction dependencies. The separate proposition family
 in `UpperReciprocityStatement` uses the published actual Herbrand groups.
 
-The environment is Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`,
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+The development checks used Lean 4.34.0 and Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`.
 Development compilation and exact inspection of
 `FiniteCharacterConductorTheorems` succeeded with zero errors or warnings
-and confirmed that it returns `Prop`. Independent semantic review and
-publication remain separate requirements. No conductor theorem is claimed
-as proved.
+and confirmed that it returns `Prop`. This file proves no conductor
+theorem; `Langlands.LocalClassField.finiteCharacterConductorTheorems` in
+`Langlands.ClassFieldTheory.Local.FiniteConductorProof` proves
+`FiniteCharacterConductorTheorems`.

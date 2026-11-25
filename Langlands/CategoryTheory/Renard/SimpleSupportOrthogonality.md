@@ -1,7 +1,5 @@
 # Renard A.IX: disjoint supports and canonical subobject maps
 
-Author: Worker 827.
-
 This module proves exactly the published proposition
 `Langlands.Renard.SimpleSupportOrthogonalityStatement` from
 `Langlands.CategoryTheory.Renard.SimpleSupportOrthogonalityStatements`,
@@ -58,8 +56,9 @@ for the full supported sums `E_S` and `E_S'`, while the Lean targets
 cover any two actual subobjects `P, Q` of a common object whose
 underlying objects are supported on `S` and `T`. This module does not
 prove that `E_S` exists, is supported on `S` or is maximal, and so does
-not prove the source's `E_S` specialization; that remains a separate
-obligation. Monicity of `biprod.desc P.arrow Q.arrow` is the precise
+not prove the source's `E_S` specialization; that specialization is
+proved, under explicit smallness premises, in
+`Langlands.CategoryTheory.Renard.SimpleSupportSumOrthogonality`. Monicity of `biprod.desc P.arrow Q.arrow` is the precise
 meaning used for the source's inclusion `E_S ⊕ E_S' ⊂ E`.
 
 The separate registered 2010-edition errata
@@ -130,24 +129,21 @@ The three exported component theorems introduce the full antecedents of
 their statements and apply these lemmas; the biproduct component applies
 the criterion to the zero intersection just proved for the same `P` and
 `Q`. `simpleSupportOrthogonality` is their conjunction. The route is the
-one suggested in the statement's Markdown and the task context (image
+one suggested in the statement's Markdown (image
 factorization with mono/epi transport and zero detection; actual
 monomorphisms for the intersection; a canonical-map criterion for the
 biproduct).
 
 ## Checks and remaining obligations
 
-The module was compiled in the approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings, and
+The module was compiled with no errors or warnings, and
 the declaration `Langlands.Renard.simpleSupportOrthogonality` was
 inspected: it is a theorem with level parameters `w, v, u` whose axioms
 are only `propext`, `Classical.choice` and `Quot.sound`. It uses no
-`sorry`, `admit` or new axiom. Development compilation is not
-acceptance; independent review, Lake build and exact-target validation
-are separate.
+`sorry`, `admit` or new axiom.
 
 Existence of the full indexed sums `E_S`, the source-size adapters, their
 support and maximality, the `E_S` specialization of the last two
 components, finite and colimit closure, splitting by a subset or
-partition and the product decomposition are not addressed here and keep
-their separate tasks and owners.
+partition and the product decomposition are not addressed here and remain
+separate.

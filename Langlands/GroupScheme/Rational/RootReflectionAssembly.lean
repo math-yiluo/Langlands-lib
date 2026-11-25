@@ -96,7 +96,7 @@ theorem corootFunctional_injective (hT : IsSplitTorus T.toGrp)
     (hfinite : (relativeRoots i).Finite) :
     Function.Injective (fun α => corootFunctional i (D.coroot α)) := by
   let := hfinite.fintype
-  have : IsAddTorsionFree (relativeRootSpan i) := .of_isTorsionFree ℚ _
+  have : HasUniqueDiv (relativeRootSpan i) := .of_isTorsionFree ℚ _
   have htwo (α : relativeRoots i) :
       corootFunctional i (D.coroot α) (rootVector i α) = 2 := by
     rw [corootFunctional_rootVector, D.pair_self]

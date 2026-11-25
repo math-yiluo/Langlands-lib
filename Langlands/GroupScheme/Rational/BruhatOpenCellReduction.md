@@ -1,6 +1,6 @@
 # Rational Bruhat contraction inputs from the opposite open cell
 
-This internal unit derives the geometric contraction inputs of
+This internal module derives the geometric contraction inputs of
 `Rational.BruhatContractionReduction` from the explicit proposition
 `OppositeCellStatement`. The ambient group is smooth and affine over an
 arbitrary field in universe `u`.
@@ -44,7 +44,7 @@ The provenance is an internal composition of the named imported
 constructions, rather than a new claim from external literature.
 `OppositeCellStatement` is an explicit assumption, not a theorem proved
 here. The covering and centralizer identity remain separate proof
-obligations. This unit does not prove the unchanged full
+obligations. This module does not prove the unchanged full
 `RationalBruhatStatement`, generic minimality, or existence of the
 opposite open cell. No splitness, perfectness, characteristic, field-size
 or reductivity premise is added.

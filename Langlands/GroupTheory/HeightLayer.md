@@ -1,7 +1,5 @@
 # Successive quotients of finite height filtrations
 
-Author: Worker 204.
-
 This internal construction continues `HeightFiltration`. Its inputs are
 actual finite subgroups, natural heights, and the sum bound for
 commutators. `exactFactor H w d i` retains `H i` precisely when its height

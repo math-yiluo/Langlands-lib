@@ -1,7 +1,5 @@
 # Twisted split factorization with Galois inverse-orbit matching
 
-Author: Worker 5268.
-
 This module states, without proof, the core step of Springer's proof of
 compactness (Springer 1994, §3.5). The statement is conditional: it assumes
 the split fundamental-set theorem `SplitAdelicFundamentalSetStatement` and

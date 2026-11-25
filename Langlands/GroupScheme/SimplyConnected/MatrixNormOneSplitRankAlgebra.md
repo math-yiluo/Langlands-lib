@@ -1,7 +1,5 @@
 # Linear algebra for the split rank of `SL_m(D)`
 
-Author: Worker 161.
-
 This helper module proves three elementary facts. It is used only by the upper bound
 `Langlands.GroupScheme.MatrixNormOneSplitRank.splitRank_le` in
 `Langlands.GroupScheme.SimplyConnected.MatrixNormOneSplitRankUpper`. All declarations

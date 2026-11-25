@@ -141,7 +141,7 @@ local notation "projection" => cmHarrisGeometricCoarseSchemeProjection D C
 /-- The deck action fixes the original projection to V. -/
 @[reassoc] theorem cmHarrisGeometricCoarseSchemeProjection_invariant
     (k : ℕᵒᵖ) (g : (groups).obj k) :
-    (schemeDiagram).ρ k g ≫ (projection).app k = (projection).app k :=
+    ((schemeDiagram).ρ k g).asHom ≫ (projection).app k = (projection).app k :=
   cmGeometricNormalProjection_invariant D C preservation composition unitCoherence
     associativity comparison symmetry stability square universality dualityNaturality
     polarizationStability compatibility h htor q V (T k.unop) (hT k.unop) g
@@ -210,7 +210,7 @@ local notation "etaleDiagram" => cmHarrisGeometricCoarseEtaleDiagram D C preserv
 
 @[simp] theorem cmHarrisGeometricCoarseEtaleDiagram_action_mk_left
     (k : ℕᵒᵖ) (g : V.obj.subgroup) :
-    ((etaleDiagram).ρ k (QuotientGroup.mk g)).left =
+    ((etaleDiagram).ρ k (QuotientGroup.mk g)).asHom.left =
       (geometricSchemes).map
         (smallCMNormalInverseArrow D V (T k.unop) (hT k.unop) g) := rfl
 
@@ -277,8 +277,8 @@ local notation "coverMap" k:arg => cmHarrisGeometricCoarsePullbackCoverMap D C p
 /-- The fine-level comparison respects the constructed residual-group embedding. -/
 @[reassoc] theorem cmHarrisGeometricCoarseFineMap_equivariant
     (k : ℕᵒᵖ) (g : (groups).obj k) :
-    ((etaleDiagram).ρ k g).left ≫ fineMap k =
-      fineMap k ≫ ((originalDiagram).ρ k ((groupInclusion k) g)).left := by
+    ((etaleDiagram).ρ k g).asHom.left ≫ fineMap k =
+      fineMap k ≫ ((originalDiagram).ρ k ((groupInclusion k) g)).asHom.left := by
   induction g using QuotientGroup.induction_on with
   | H g =>
     change (geometricSchemes).map
@@ -300,15 +300,15 @@ def cmHarrisGeometricCoarsePullbackActionMap (k : ℕᵒᵖ) :
   hom := coverMap k
   comm g := by
     apply MorphismProperty.Over.Hom.ext
-    change ((etaleDiagram).ρ k g).left ≫ (coverMap k).left =
-      (coverMap k).left ≫ ((pulledDiagram).ρ k ((groupInclusion k) g)).left
-    have hfst : ((pulledDiagram).ρ k ((groupInclusion k) g)).left ≫
+    change ((etaleDiagram).ρ k g).asHom.left ≫ (coverMap k).left =
+      (coverMap k).left ≫ ((pulledDiagram).ρ k ((groupInclusion k) g)).asHom.left
+    have hfst : ((pulledDiagram).ρ k ((groupInclusion k) g)).asHom.left ≫
         pullback.fst ((originalDiagram).obj.obj k).hom coarseMap =
       pullback.fst ((originalDiagram).obj.obj k).hom coarseMap ≫
-        ((originalDiagram).ρ k ((groupInclusion k) g)).left :=
+        ((originalDiagram).ρ k ((groupInclusion k) g)).asHom.left :=
       etaleTorsorPullbackFunctor_ρ_fst coarseMap
         ((originalDiagram).action k) ((groupInclusion k) g)
-    have hsnd : ((pulledDiagram).ρ k ((groupInclusion k) g)).left ≫
+    have hsnd : ((pulledDiagram).ρ k ((groupInclusion k) g)).asHom.left ≫
         pullback.snd ((originalDiagram).obj.obj k).hom coarseMap =
       pullback.snd ((originalDiagram).obj.obj k).hom coarseMap :=
       etaleTorsorPullbackFunctor_ρ_snd coarseMap
@@ -324,7 +324,7 @@ def cmHarrisGeometricCoarsePullbackActionMap (k : ℕᵒᵖ) :
     · rw [Category.assoc, cmHarrisGeometricCoarsePullbackCoverMap_snd,
         Category.assoc, hsnd,
         cmHarrisGeometricCoarsePullbackCoverMap_snd]
-      exact MorphismProperty.Over.w ((etaleDiagram).ρ k g)
+      exact MorphismProperty.Over.w ((etaleDiagram).ρ k g).asHom
 
 
 /-- Original forgetting maps commute with both intersection-level projections. -/

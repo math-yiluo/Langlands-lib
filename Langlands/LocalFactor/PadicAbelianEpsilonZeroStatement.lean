@@ -34,7 +34,7 @@ def epsilonZeroAt (π : F.Carrierˣ) (χ : MultiplicativeCharacter)
   if a = 0 then -((χ π : ℂ) * spectralVariable T s) * epsilonAt T π χ ψ μ a n s
   else epsilonAt T π χ ψ μ a n s
 
-/-- `ε₀(χ ω_s, ψ, μ)` at the actual conductors and the owner's uniformizer. -/
+/-- `ε₀(χ ω_s, ψ, μ)` at the actual conductors and the uniformizer `uniformizerUnit T`. -/
 def epsilonZero (χ : MultiplicativeCharacter) (ψ : AdditiveCharacter)
     (μ : BorelMeasure T) (s : ℂ) : ℂ :=
   letI := T.topology

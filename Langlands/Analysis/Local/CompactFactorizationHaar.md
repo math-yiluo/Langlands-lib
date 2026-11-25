@@ -1,7 +1,5 @@
 # Haar measure on a group factored as `G = Q K` with `K` compact
 
-Author: Worker 235.
-
 This module is a helper for task 40747bb3, which proves
 `Langlands.Global.AdelicGroupPoints.NormOneRationalQuotientFiniteVolumeStatement`. The module
 itself contains no adelic or algebraic-group content, and it proves no adelic factorization: the

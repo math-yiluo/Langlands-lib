@@ -35,7 +35,7 @@ support (imageAction b c d i j hi hj)
 Thus one character from each input support suffices, and no zero character is
 inserted. `image_support_subset_semigroupSum` applies this result to any two
 additive subsemigroups containing the respective input augmentation supports.
-The conclusion is the literal `semigroupSum A A'` used by the host task.
+The conclusion is the literal `semigroupSum A A'` used by `SemigroupCommutatorStatement`.
 All actions, eigenconditions and slice identities retain their all-test or
 all-coefficient-algebra quantifiers, at arbitrary universe `u`.
 
@@ -43,5 +43,7 @@ The provenance is the coordinate-tensor argument of Conrad–Gabber–Prasad,
 *Pseudo-reductive Groups*, second edition (2015), Lemma 3.3.4, printed
 pp.108–109 / PDF pp.134–135. This is a derived application of the published
 actual-coordinate and tensor lemmas. It does not identify augmentation support
-with intrinsic Lie support, prove a generated-subgroup theorem, or prove the
-host `SemigroupCommutatorStatement`. Those remain separate obligations.
+with intrinsic Lie support, prove a generated-subgroup theorem, or prove
+`SemigroupCommutatorStatement`, the statement this module serves. Those are
+outside this module; `SemigroupCommutatorStatement` is proved in
+`Rational.SemigroupCommutatorProof`.

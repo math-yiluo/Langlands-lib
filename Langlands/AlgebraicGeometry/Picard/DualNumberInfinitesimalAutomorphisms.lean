@@ -44,10 +44,11 @@ lemma automorphismReduction_unitAutEquiv (L : LineBundle (thickening f))
     automorphismReduction f L (LineBundle.unitAutEquiv L (topUnitsEquiv f r)) =
       LineBundle.unitAutEquiv ((LineBundle.pullback (closedPoint f)).obj L)
         (unitReduction f ⊤ r) := by
+  apply Aut.ext
   change (LineBundle.pullback (closedPoint f)).mapIso
-    (LineBundle.unitAutEquiv L (topUnitsEquiv f r)) = _
+    (LineBundle.unitAutEquiv L (topUnitsEquiv f r)).asIso = _
   rw [LineBundle.pullback_mapIso_unitAutEquiv]
-  congr 1
+  congr 2
   change Units.map (closedPoint f).appTop.hom.toMonoidHom r =
     Units.map (reductionMap f ⊤).hom.toMonoidHom r
   rw [reductionMap_top]
@@ -149,12 +150,13 @@ The target is the automorphism group of the actually pulled-back line bundle. -/
 lemma pullback_infinitesimalAutEquiv (c : k) (L : LineBundle (thickening f))
     (a : Γ(X, ⊤)) :
     (LineBundle.pullback (scale f c)).mapIso
-        (infinitesimalAutEquiv f L (Multiplicative.ofAdd a)).val =
+        (infinitesimalAutEquiv f L (Multiplicative.ofAdd a)).val.asIso =
       (infinitesimalAutEquiv f ((LineBundle.pullback (scale f c)).obj L)
-        (Multiplicative.ofAdd (baseSectionMap f ⊤ c * a))).val := by
+        (Multiplicative.ofAdd (baseSectionMap f ⊤ c * a))).val.asIso := by
   erw [infinitesimalAutEquiv_val, LineBundle.pullback_mapIso_unitAutEquiv,
     infinitesimalAutEquiv_val]
-  apply congrArg (LineBundle.unitAutEquiv ((LineBundle.pullback (scale f c)).obj L))
+  apply congrArg
+    (fun r => (LineBundle.unitAutEquiv ((LineBundle.pullback (scale f c)).obj L) r).asIso)
   have h := scaleSectionMap_coefficientUnit f c ⊤ a
   rw [scaleSectionMap_top] at h
   exact h

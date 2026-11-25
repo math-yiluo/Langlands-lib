@@ -1,7 +1,5 @@
 # Aubert eigenvalues on quasicuspidal and induced classes
 
-Author: Worker 76.
-
 This internal helper module proves that the unadjusted Aubert operator on an
 actual product Levi acts on any finite-length quasicuspidal smooth complex
 representation with eigenvalue `(-1)^(n - B.length)`. The published induction

@@ -1,7 +1,5 @@
 # Rational points of locally separated spaces are locally Hausdorff
 
-Author: Worker 79.
-
 `LocallySeparatedRationalPointsStatement` states that over a henselian valued field the
 rational points of every quasi-separated, locally separated algebraic space locally of
 finite type are locally Hausdorff, locally compact when the field is, and locally totally

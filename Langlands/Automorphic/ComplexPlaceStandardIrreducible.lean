@@ -54,6 +54,7 @@ theorem isAtom_range_of_embedding {W₀ : Submodule ℂ V} (hW₀ : PlaceCompone
         obtain ⟨f, hf⟩ := m.2
         exact ⟨f, Subtype.ext hf⟩⟩
   have he : ∀ f, ((e f : M) : V) = A f := fun f => rfl
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   have heK : ∀ (k : Matrix.unitaryGroup (Fin n) ℂ) f,
       e (complexStandardRep n ds k f) = (⟨κ k, compact_mem_opAlg κ π k⟩ : opAlg κ π) • e f := by
     intro k f

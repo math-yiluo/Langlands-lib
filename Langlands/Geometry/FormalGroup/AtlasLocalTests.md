@@ -1,6 +1,6 @@
 # Universal localization tests for formal coordinate atlases
 
-This derived unit gives canonical localized coordinates for every point of a
+This module gives canonical localized coordinates for every point of a
 `ModuleLaw.BasicAtlas`. It constructs one universal chart test per chart,
 factors every other test through it, and proves that equality at these canonical
 tests detects equality of atlas points. The resulting coordinate map is an
@@ -22,10 +22,10 @@ is fixed, and coefficient test algebras have the same universe v as R. The atlas
 point module retains universe v+1. The proofs do not require using the cover's
 span condition or its transition equations: coefficient naturality alone
 already determines each component of a compatible family from its universal
-localized component. Thus this unit proves detection of points, without
+localized component. Thus this module proves detection of points, without
 claiming that every family of localized tuples glues. An image characterization,
 explicit overlap descent, refinement comparisons, formal-scheme comparison,
-order actions, moduli objects and representability remain further work.
+order actions, moduli objects and representability remain separate.
 
 ## Canonical tests and factorization
 

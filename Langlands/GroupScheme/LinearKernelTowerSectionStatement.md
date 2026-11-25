@@ -1,7 +1,5 @@
 # Homomorphic sections for finite character-linear kernel towers
 
-Worker 1437.
-
 `Langlands.GroupScheme.LinearKernelTower.SectionExistenceStatement.{u}` is
 a Prop-valued definition recording a section-existence assertion. This
 module contains no proof of that assertion. It reuses the published
@@ -130,8 +128,11 @@ The published one-step target is
 `Langlands.GroupScheme.LinearAdditiveExtensionSplittingStatement`,
 explained in
 [`LinearAdditiveExtensionSplittingStatement.md`](LinearAdditiveExtensionSplittingStatement.md).
-Its proof and the pullback/induction proof above are separate
-obligations. Defining `SectionExistenceStatement` proves neither of
+Its proof (`linearAdditiveExtensionSplitting` in
+`Langlands.GroupScheme.LinearAdditiveExtensionSplittingProof`) and the
+pullback/induction proof above (`LinearKernelTower.exists_section_of_admitsTower`
+in `Langlands.GroupScheme.LinearKernelTowerSection`) are in separate
+modules. Defining `SectionExistenceStatement` proves neither of
 them and asserts no unconditional existence of an `AdmitsTower`
 presentation. Constructing towers for actual triangular diagonal
-maps is a separate branch.
+maps is a separate matter (`TriangularDiagonalKernelTowerStatement`).

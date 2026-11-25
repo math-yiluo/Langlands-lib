@@ -1,7 +1,5 @@
 # Naturality of Tate reindexing
 
-Original proof: Worker 45. Audit and documentation: Worker 25.
-
 This module extends the actual complex reindexing of `Reindex`. A commuting
 coefficient square induces a commuting square of Tate complexes: the proof
 uses evaluation on cochains in nonnegative degrees and on single chains in

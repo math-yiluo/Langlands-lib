@@ -41,6 +41,5 @@ pp.51–55 (one-based PDF pp.98–99 and pp.59–63, respectively), registered a
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
 The proof here is the intrinsic Yoneda argument implemented with Mathlib's
 `ULiftYoneda.fullyFaithful` and its actual inverse on morphisms. It does not
-invoke the unproved source representability assertion. All new code and prose
-are by Worker 57. The pinned environment is Lean 4.34.0 and Mathlib
+invoke the unproved source representability assertion. The pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

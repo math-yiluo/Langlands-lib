@@ -1,12 +1,10 @@
 # Represented filtration terms from supported coordinates
 
-Author: Worker 204.
-
 Let an actual group scheme over an arbitrary commutative ring have a scheme
 isomorphism from a standard finite polynomial vector scheme. The chart is
 only an isomorphism of schemes over the base. Suppose a supplied subgroup
 functor is characterized on every scheme test by vanishing coordinates
-outside an enumerated subset. This unit constructs its smooth closed affine
+outside an enumerated subset. This module constructs its smooth closed affine
 subgroup scheme on the actual coordinate-subspace scheme.
 
 The inclusion of the coordinate subspace is transported through the chart.
@@ -21,5 +19,5 @@ group law is additive.
 
 This is a derived representability construction using `VectorCoordinateBlock`
 and `RepresentabilityTransfer`. Applications to root-height terms must still
-prove the displayed all-test coordinate membership condition. This unit alone
+prove the displayed all-test coordinate membership condition. This module alone
 does not construct their quotient maps or descend the filtration.

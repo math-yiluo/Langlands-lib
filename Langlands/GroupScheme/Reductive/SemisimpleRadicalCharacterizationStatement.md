@@ -133,7 +133,7 @@ The provenance is derived for three reasons:
 3. `k` lies in an arbitrary universe `u`, and `k^a` is Mathlib's
    `AlgebraicClosure k`. These are formalization conventions.
 
-## For the later proof (not part of this unit)
+## For the proof (in `SemisimpleRadicalCharacterizationProof`, not part of this module)
 
 Milne's proof of 19.10, printed p. 400: "(a)⇔(b). As the formation of R(G)
 commutes with extension of the base field, R(G) = e if and only if R(G_{k^a}) =

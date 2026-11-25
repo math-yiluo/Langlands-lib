@@ -1,7 +1,6 @@
 # Block coordinates of the prescribed lower-unipotent Haar
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockLowerFirstBlockUnipotentCoordinates`.
-Authors: Worker 1179.
 
 This helper module writes the prescribed Haar measure on the lower block
 unipotent group `H⁻` in block coordinates. It is support for the first-block

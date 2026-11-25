@@ -1,9 +1,7 @@
 # Classification of geometrically Picard-zero line bundles up to a base twist
 
-Authors: Worker 270 drafted the formulation and explanation; Worker 310 checked
-the original source and Library interfaces and prepared the reviewed pair.
-P3-034 documentation correction: Worker 1054, following the 2026-10-29
-external audit.
+This page was corrected following the 2026-10-29 external audit (item P3-034,
+`notes/audits/external-library-2026-10-29`).
 
 `Langlands.AbelianScheme.PicardZeroLineBundleClassificationStatement` is a
 proposition definition. It quantifies over a proof `preservation` of the
@@ -99,7 +97,7 @@ inverses of line bundles, `LineBundle.exists_tensorObj_iso_structureSheaf`.
 
 ## Intended proof route
 
-The following route was recorded as a lead for the proof task before that
+The following route was recorded as a lead for a proof before the Library's
 proof existed. It is not a formal result and does not describe the Lean proof.
 Cover `T` by opens on which `e_T^* N` is trivial. On each such open,
 a trivialization makes `N` a rigidified family whose class is Picard-zero, so
@@ -114,8 +112,8 @@ internal Hom sheaf of modules (`ModuleDual.lean`) is one way to glue them.
 
 ## Use
 
-Task `b71714f0-c50a-4258-94ac-e065ce455f61` uses this proposition to prove
-`Langlands.AbelianScheme.FieldDualSchemeMapAdditivityStatement`. It applies
+The proof of `Langlands.AbelianScheme.FieldDualSchemeMapAdditivityStatement`
+uses this proposition. It applies
 the proposition to `N = (m × id)^* P` on `B ×_S (B ×_S T)` for the
 group law `m` of `B` and the Poincaré bundle `P` of `B`. A rigidity argument
 then shows that the classifying map factors through the projection to `T`.

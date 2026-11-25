@@ -32,5 +32,5 @@ pulled-back Levi follows directly from the composite inclusion by
 
 The provenance is derived from the relative Levi reductivity, étale
 transport, and maximality lemmas and the explicitly supplied torus-existence
-proposition. This contribution does not prove that proposition, construct
+proposition. This module does not prove that proposition, construct
 global maximal tori, or prove the unchanged relative Levi conjugacy target.

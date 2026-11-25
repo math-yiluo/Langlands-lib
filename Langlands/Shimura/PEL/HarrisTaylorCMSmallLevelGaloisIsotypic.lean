@@ -103,9 +103,9 @@ variable {H hH}
 /-- The leg of level `U` commutes with the Galois actions. -/
 theorem towerFixedLeg_comm (U : σ.SmallLevelCategory) (g : Field.absoluteGaloisGroup F)
     (x : (H.obj (op U)).V) :
-    (towerFixedLeg H hH U).hom.hom (((H.obj (op U)).ρ g).hom x) =
+    (towerFixedLeg H hH U).hom.hom (((H.obj (op U)).ρ g).asHom.hom x) =
       (((fixedVectorsActionFunctor K (Field.absoluteGaloisGroup F)
-        (inverseOpposite U.obj).subgroup).obj (towerAction H hH)).ρ g).hom
+        (inverseOpposite U.obj).subgroup).obj (towerAction H hH)).ρ g).asHom.hom
           ((towerFixedLeg H hH U).hom.hom x) :=
   congrArg (fun φ => φ.hom x) ((towerFixedLeg H hH U).comm g)
 
@@ -189,8 +189,8 @@ def baseChangeActionMapIso {A B : Action (ModuleCat.{0} K) (Field.absoluteGalois
   let e₀ : A.V ≃ₗ[K] B.V := ((Action.forget _ _).mapIso e).toLinearEquiv
   Action.mkIso (LinearEquiv.baseChange K M A.V B.V e₀).toModuleIso fun g => by
     apply ModuleCat.hom_ext
-    change (LinearEquiv.baseChange K M A.V B.V e₀).toLinearMap ∘ₗ (A.ρ g).hom.baseChange M =
-      (B.ρ g).hom.baseChange M ∘ₗ (LinearEquiv.baseChange K M A.V B.V e₀).toLinearMap
+    change (LinearEquiv.baseChange K M A.V B.V e₀).toLinearMap ∘ₗ (A.ρ g).asHom.hom.baseChange M =
+      (B.ρ g).asHom.hom.baseChange M ∘ₗ (LinearEquiv.baseChange K M A.V B.V e₀).toLinearMap
     refine TensorProduct.AlgebraTensorModule.ext fun a x => ?_
     simp only [LinearMap.comp_apply, LinearMap.baseChange_tmul, LinearEquiv.coe_coe,
       LinearEquiv.baseChange_tmul]
@@ -233,7 +233,7 @@ theorem coe_towerIsotypicFixedVectorsObjects_representation_apply
     (x : fixedVectors (isotypicObj τ (towerExtendScalars M H hH).V).representation
       (inverseOpposite U.obj).subgroup) :
     ((towerIsotypicFixedVectorsObjects M hH hKM h U hU τ).val.representation g x).1.1 =
-      SmoothRep.hom ((towerExtendScalars M H hH).ρ g) x.1.1 :=
+      SmoothRep.hom ((towerExtendScalars M H hH).ρ g).asHom x.1.1 :=
   haveI := finite_towerExtendScalarsFixedVectors M h U
   coe_isotypicFixedVectorsObjects_representation_apply τ _ _ _ g x
 
@@ -270,7 +270,7 @@ theorem towerMultiplicityObjects_representation_apply
     [Module.Finite M (τ.IntertwiningMap (towerExtendScalars M H hH).V.representation)]
     (g : Field.absoluteGaloisGroup F) :
     (towerMultiplicityObjects M hH hKM h U hU τ hgen).val.representation g =
-      ((towerMultiplicity M H hH τ).ρ g).hom :=
+      ((towerMultiplicity M H hH τ).ρ g).asHom.hom :=
   rfl
 
 /-- If `H(U)` is unramified at `v`, the Galois representation on the multiplicity space has as
@@ -306,7 +306,7 @@ theorem towerHeckeMultiplicityObjects_representation_apply
         (inverseOpposite U.obj).subgroup)]
     (g : Field.absoluteGaloisGroup F) :
     (towerHeckeMultiplicityObjects M hH hKM h U hU τ).val.representation g =
-      ((towerHeckeMultiplicity M H hH τ U).ρ g).hom :=
+      ((towerHeckeMultiplicity M H hH τ U).ρ g).asHom.hom :=
   rfl
 
 /-- If `H(U)` is unramified at `v`, the Galois representation on the Hecke multiplicity space

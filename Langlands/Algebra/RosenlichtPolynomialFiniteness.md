@@ -1,7 +1,5 @@
 # Polynomial finiteness for the Rosenlicht argument
 
-Worker 565, 17 November 2026.
-
 This internal commutative-algebra development supplies four proved helper
 lemmas for the affine Rosenlicht units argument. It is not a translation of
 a numbered theorem in the literature. All declarations are in

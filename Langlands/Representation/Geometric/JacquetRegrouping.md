@@ -1,7 +1,5 @@
 # Actual Jacquet geometric-piece regrouping
 
-Author: Worker 165.
-
 This internal derived module regroups actual geometric-piece maps after
 normalized source Jacquet restriction. Its inputs are the published actual
 intersection, restriction-transitivity and geometric-piece comparisons and the

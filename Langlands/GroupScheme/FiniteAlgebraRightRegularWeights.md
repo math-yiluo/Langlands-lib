@@ -1,7 +1,5 @@
 # Split-torus weight elements in the original finite algebra
 
-Author: Worker 118.
-
 Let `A` be a possibly noncommutative algebra over a field `k : Type u`,
 with finite basis `b`. For an actual homomorphism from a standard split
 torus to `FiniteAlgebraUnits.groupScheme b`, this module turns a universal

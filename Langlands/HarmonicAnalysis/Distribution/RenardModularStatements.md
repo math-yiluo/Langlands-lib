@@ -1,6 +1,6 @@
 # Renard II.3.7–II.3.8: modular distribution formulas
 
-This statement unit uses the published integration and density maps and the
+This statement module uses the existing integration and density maps and the
 reciprocal adapters `Distribution.renardModular` and
 `Distribution.renardAutomorphismModule`. It supplies no proofs. The namespace is
 `Langlands.HarmonicAnalysis.Distribution.RenardModular`; `Statements` is the
@@ -29,7 +29,7 @@ already prove the Mathlib-convention versions for nonarchimedean locally compact
 groups. Composition with inversion and the identity
 `renardModular g = Measure.modularCharacter g⁻¹` give the precise correspondence.
 Mathlib's `Measure.modularCharacterFun_pos` supplies positivity. The character
-law itself is already built into the published `renardModular : G →* ℝ≥0`.
+law itself is already built into `renardModular : G →* ℝ≥0`.
 
 `InversionDensityStatement` states Proposition (ii) on the actual density map:
 the uniquely specified locally constant function `d(g) = δ(g)⁻¹` produces a

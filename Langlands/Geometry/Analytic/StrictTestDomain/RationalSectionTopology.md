@@ -1,7 +1,5 @@
 # Quotient-norm topology of an invariant rational section action
 
-Author: Worker 36.
-
 This derived construction starts with an actual unit-radius rational quotient
 `d.algebra` of a presented strict affinoid algebra `P` over a complete
 ultrametric normed field `K`. An algebraic homomorphism

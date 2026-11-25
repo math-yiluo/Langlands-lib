@@ -1,7 +1,5 @@
 # Coordinate blocks over arbitrary rings
 
-Author: Worker 204.
-
 This internal construction extends the coordinate-block maps in
 `Rational.VectorCoordinateRealization` from fields to any commutative
 base ring. It assumes actual natural additive coordinates on every

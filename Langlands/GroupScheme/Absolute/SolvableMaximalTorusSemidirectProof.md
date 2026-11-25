@@ -1,7 +1,5 @@
 # Smooth connected solvable groups as semidirect products with a maximal torus
 
-Worker 950, using the conditional reduction of Worker 1496.
-
 `Langlands.GroupScheme.solvableMaximalTorusSemidirect` proves the published
 proposition `Langlands.GroupScheme.SolvableMaximalTorusSemidirectStatement.{u}`
 for an arbitrary universe `u`, with no additional premise.

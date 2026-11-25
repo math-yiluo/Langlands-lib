@@ -1,7 +1,7 @@
 # Brauer induction for groups with a commutative open kernel of finite index
 
 Helper module for the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
 It proves the general theorem from which the target follows. Let `G` be a
 topological group and `π : G →* Q` a homomorphism to a finite group whose kernel
 is open and commutative. Then the continuous exact virtual group of `G`, with

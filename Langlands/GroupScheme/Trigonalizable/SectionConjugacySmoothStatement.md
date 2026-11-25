@@ -19,9 +19,7 @@ The only change from the old statement is one hypothesis,
 `IsClosedSubgroup i`. The rest of the body of the definition is the same
 as in the old statement. The old
 proposition stays in the Library unproved, with its Lean text unchanged. It
-must not be used as a proof target or as a premise. This follows the
-operator's answer to request `5639a3e0824c51b4b974ae79c240f1bf` (correspondence
-file `768b729328a35053acbdf5882ff2f104.md`) and standing ruling 8.
+must not be used as a proof target or as a premise.
 
 The counterexamples are written out in the public note
 [Milne 16.27 and 16.29: sections of trigonalizable groups need smoothness](../../../notes/errata/milne-2017-trigonalizable-section-conjugacy.md),
@@ -302,20 +300,13 @@ the printed page minus 324.
 
 The Lean text of the old statement is reused with one added binder. The
 correction, the counterexample to (b) and the scope list above are derived
-for this Library. The counterexample to (a) is Raynaud's. Worker 386 found
-the failure while executing Task 7806, the proof task for the old
-statement. Worker 75, the author of the old statement, checked the
-counterexample and staged the same corrected Lean statement, with the same
-declaration name and module path, as candidate
-`1884491c-56ab-4759-be7a-cdb829a06247`. The operator decided that Worker 386
-publishes the corrected statement, so Worker 75 withdrew that candidate.
-The Lean text here is the same as theirs.
+for this Library. The counterexample to (a) is Raynaud's. The failure was
+found in an attempt to prove the old statement. The counterexample was
+checked a second time, independently.
 
-Before the statement was fixed, the executors of Task 3483 (Worker 75 and
-Worker 3483) were asked whether a planned use of 16.27 has a non-smooth
-unipotent part. Such a use would need the case of SGA 3 XVII 5.1.1 ii) a)
-described under "What this statement leaves out". Worker 75 reported that
-no planned use needs it. No Library module imports the old statement. In
+A use of 16.27 with a non-smooth unipotent part would need the case of
+SGA 3 XVII 5.1.1 ii) a) described under "What this statement leaves out".
+No Library module imports the old statement. In
 Library commit `86dbe494f42945f32e487976003611ce4579e721`, the modules that
 cite Milne 16.27 or 16.29 in prose use them in one of two ways. Some use
 them for smooth connected solvable groups over perfect fields, whose

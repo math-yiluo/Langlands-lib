@@ -1,7 +1,5 @@
 # The modular character of the actual mirabolic group
 
-Author: Worker 799.
-
 This file states a proposition. It does not prove it. The proposition
 definition `Langlands.MirabolicModularCharacterStatement.{uF}` in the module
 `Langlands.Group.GL.MirabolicModularCharacterStatement` asserts that Mathlib's
@@ -155,8 +153,7 @@ The module imports only `Langlands.Group.GL.Mirabolic`,
 `Mathlib.MeasureTheory.Group.ModularCharacter`. It imports neither the radical
 Haar statement or proof, nor the block-parabolic modular character module
 `Langlands.Group.GL.ParabolicModularCharacter`, nor any representation,
-derivative, Jacquet, classification or irreducibility development, nor any
-module of the tasks excluded by this statement task's independence section.
+derivative, Jacquet, classification or irreducibility development.
 
 ## Not claimed
 

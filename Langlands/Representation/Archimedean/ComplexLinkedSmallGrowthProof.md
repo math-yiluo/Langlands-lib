@@ -21,17 +21,19 @@ The theorem `complexLinkedSmallGrowthReduction` proves the statement.
 
 ## Provenance
 
-Internal reduction statement of Task 7064, between two statements already in the Library. It
+Internal reduction statement, between two statements already in the Library. It
 belongs to an independent internal proof of the complex case of the conclusion of Vogan's
 theorem on large standard modules (D. Vogan, *Gelfand–Kirillov dimension for Harish-Chandra
 modules*, Invent. Math. 48 (1978), Theorem 6.2, (a) ⇒ (f)). This dimension-count route is not
 Vogan's argument: Vogan's proof on p. 93 reduces to nonsingular infinitesimal character by
 translation and then derives a nonempty τ-invariant from reducibility (Speh–Vogan), which
-contradicts largeness. Here the growth argument is the one described below. Once
-`ComplexStandardUnlinkedSwapStatement` is proved, the reduction gives
+contradicts largeness. Here the growth argument is the one described below. With the proof
+`complexStandardUnlinkedSwapReduction complexGLTwoUnlinkedIrreducible` of
+`ComplexStandardUnlinkedSwapStatement`, the reduction gives
 `ComplexLinkedSmallGrowthStatement`, which with `ComplexStandardHolomorphicGrowthStatement`
 yields `ComplexLinkedLanglandsQuotientNotLargeStatement`
-(`complexDualSubmoduleAnnihilator_of_growth`, `complexLinkedLanglandsQuotientNotLarge_of_dualSubmodule`).
+(`complexDualSubmoduleAnnihilator_of_growth`, `complexLinkedLanglandsQuotientNotLarge_of_dualSubmodule`;
+assembled in `ComplexLinkedLanglandsQuotientNotLargeProof`).
 
 ## Proof (`LinkedSmallGrowth.complexLinkedSmallGrowth_of_unlinkedSwap`)
 

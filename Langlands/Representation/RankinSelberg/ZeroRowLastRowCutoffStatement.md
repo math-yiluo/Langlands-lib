@@ -1,7 +1,5 @@
 # Compact last-row cutoff for smooth zero-row Whittaker coefficients
 
-Author: Worker 614.
-
 `Langlands.RankinSelberg.ZeroRowLastRowCutoffStatement.{uF,uV}` is a closed
 proposition definition. This module states the compact last-row cutoff
 obligation; it supplies no proof.

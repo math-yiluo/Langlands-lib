@@ -1,6 +1,6 @@
 # Canonical character-change quotient Haar measure law
 
-Worker 88 states the canonical local-field instance of the published
+This module states the canonical local-field instance of the published
 `Langlands.RankinSelberg.HasCharacterChangeMeasureLaw`. This is an internal
 statement assembled from the Library's actual constructions, not a
 transcription of a new literature theorem. Its provenance is
@@ -93,11 +93,11 @@ from orbital averages to equality of measures requires the corresponding
 lifting and measure-uniqueness argument. The Library's
 `RankinSelberg/UnipotentQuotient` already proves existence and uniqueness
 of the compatible measure, through `unipotentQuotientHaar_isCompatible`
-and `unipotentQuotientHaar_unique`; these can be reused in a later proof.
+and `unipotentQuotientHaar_unique`; these can be reused in a proof.
 They also show the target's compatible-measure quantifier has actual
 instances. No uniqueness statement is assumed here.
 
-This sign calculation explains the proposed statement. This module contains
+This sign calculation explains the statement. This module contains
 no proof of the conjugation Jacobian, the quotient measure identity, or
 their analytic consequences. It adds only the proposition definition,
 without changing any normalization, quotient or compatibility definition.

@@ -1,6 +1,6 @@
 # Ampleness and actual line twists from an affine base
 
-This internal unit proves that an actual line twist from an affine base does
+This internal module proves that an actual line twist from an affine base does
 not affect ampleness. Let `f : X ⟶ S` be a scheme morphism with `S` affine and
 `X` compact and quasi-separated. Let `L` and `M` be actual line bundles on `X`,
 let `B` be an actual line bundle on `S`, and supply an actual module-sheaf

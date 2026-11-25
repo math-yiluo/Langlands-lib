@@ -1,6 +1,6 @@
 # Rank-one stalk spreading for associated sheaves
 
-This internal derived unit starts with a finitely presented module `M` over a
+This internal module starts with a finitely presented module `M` over a
 commutative ring `R` and a rank-one linear equivalence at an actual stalk of
 the associated sheaf on `Spec R`. The scalar ring of the input equivalence is
 the actual local ring of `Spec R` at that point.

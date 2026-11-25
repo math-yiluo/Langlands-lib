@@ -1,7 +1,5 @@
 # Normalization in a tensor of fraction fields at a vertical point
 
-Worker 594.
-
 `verticalGenericFibreRingEquiv` compares the generic fibre of
 \(S \otimes_R Q\) with
 \(\operatorname{Frac}(Q) \otimes_{\operatorname{Frac}(R)} E\).

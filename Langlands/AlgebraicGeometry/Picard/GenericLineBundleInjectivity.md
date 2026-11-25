@@ -1,6 +1,8 @@
 # Line bundles over a valuation ring are determined by their generic fibre
 
-Worker 386 wrote this internal module for Task 6296. It works in namespace
+This internal module supports the proof of Murre's valuative separation
+condition (F6) for the two-axis class presheaf in
+`TwoAxisClassValuativeSeparationProof`. It works in namespace
 `Langlands.AlgebraicGeometry.Picard`, in every universe `u`. The main result is
 `nonempty_iso_of_generic_iso`. It proves the uniqueness half of extending line
 bundles from the generic fibre, using the published cocycle-gluing and

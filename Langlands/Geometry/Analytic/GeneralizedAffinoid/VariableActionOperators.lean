@@ -28,8 +28,8 @@ theorem operatorConjugation_apply (X : VariableActionSpace.{u, v} K)
 /-- The forward algebra action evaluates products by composition. -/
 theorem algebraAction_mul_apply (X : VariableActionSpace.{u, v} K)
     (g h : X.groupType) (a : X.algebraAction.obj.V) :
-    (X.algebraAction.obj.ρ (g * h)).toAlgHom a =
-      (X.algebraAction.obj.ρ g).toAlgHom ((X.algebraAction.obj.ρ h).toAlgHom a) := by
+    (X.algebraAction.obj.ρ (g * h)).asHom.toAlgHom a =
+      (X.algebraAction.obj.ρ g).asHom.toAlgHom ((X.algebraAction.obj.ρ h).asHom.toAlgHom a) := by
   rw [map_mul]
   rfl
 
@@ -38,10 +38,10 @@ pulling algebra elements back by its inverse. -/
 def operatorTranslation (X : VariableActionSpace.{u, v} K) (g : X.groupType) :
     X ⟶ X where
   groupHom := operatorConjugation X g
-  algebraMap := X.algebraAction.obj.ρ (g⁻¹)
+  algebraMap := (X.algebraAction.obj.ρ (g⁻¹)).asHom
   equivariant h a := by
     have e : g⁻¹ * (g * h * g⁻¹) = h * g⁻¹ := by simp [mul_assoc]
-    have t := congrArg (fun k => (X.algebraAction.obj.ρ k).toAlgHom a) e
+    have t := congrArg (fun k => (X.algebraAction.obj.ρ k).asHom.toAlgHom a) e
     simpa only [operatorConjugation_apply, algebraAction_mul_apply] using t
 
 @[simp]
@@ -52,7 +52,7 @@ theorem operatorTranslation_groupHom (X : VariableActionSpace.{u, v} K)
 @[simp]
 theorem operatorTranslation_algebraMap (X : VariableActionSpace.{u, v} K)
     (g : X.groupType) :
-    (operatorTranslation X g).algebraMap = X.algebraAction.obj.ρ (g⁻¹) := rfl
+    (operatorTranslation X g).algebraMap = (X.algebraAction.obj.ρ (g⁻¹)).asHom := rfl
 
 @[simp]
 theorem operatorTranslation_one (X : VariableActionSpace.{u, v} K) :
@@ -61,7 +61,7 @@ theorem operatorTranslation_one (X : VariableActionSpace.{u, v} K) :
   · ext h
     change 1 * h * 1⁻¹ = h
     simp
-  · change X.algebraAction.obj.ρ (1⁻¹) = 1
+  · change (X.algebraAction.obj.ρ (1⁻¹)).asHom = (1 : End X.algebraAction.obj.V).asHom
     simp
 
 /-- Geometric composition has the order appropriate to a left group action. -/
@@ -74,9 +74,9 @@ theorem operatorTranslation_comp (X : VariableActionSpace.{u, v} K)
     simp only [mul_inv_rev, mul_assoc]
   · apply BoundedAlgHom.ext
     intro a
-    change (X.algebraAction.obj.ρ (g⁻¹)).toAlgHom
-        ((X.algebraAction.obj.ρ (h⁻¹)).toAlgHom a) =
-      (X.algebraAction.obj.ρ ((h * g)⁻¹)).toAlgHom a
+    change (X.algebraAction.obj.ρ (g⁻¹)).asHom.toAlgHom
+        ((X.algebraAction.obj.ρ (h⁻¹)).asHom.toAlgHom a) =
+      (X.algebraAction.obj.ρ ((h * g)⁻¹)).asHom.toAlgHom a
     rw [mul_inv_rev, algebraAction_mul_apply]
 
 /-- The inverse operator constructs the genuine inverse varying-group arrow. -/
@@ -89,21 +89,23 @@ def operatorIso (X : VariableActionSpace.{u, v} K) (g : X.groupType) : X ≅ X w
 /-- The original operators extend to an actual action on the quotient object
 with its operator group retained. -/
 def operatorAction (X : VariableActionSpace.{u, v} K) : X.groupType →* Aut X where
-  toFun := operatorIso X
+  toFun g := Aut.of (operatorIso X g)
   map_one' := by
     apply Aut.ext
+    apply Iso.ext
     exact operatorTranslation_one X
   map_mul' g h := by
     apply Aut.ext
+    apply Iso.ext
     exact (operatorTranslation_comp X h g).symm
 
 @[simp]
 theorem operatorAction_hom (X : VariableActionSpace.{u, v} K) (g : X.groupType) :
-    (operatorAction X g).hom = operatorTranslation X g := rfl
+    (operatorAction X g).asIso.hom = operatorTranslation X g := rfl
 
 @[simp]
 theorem operatorAction_inv (X : VariableActionSpace.{u, v} K) (g : X.groupType) :
-    (operatorAction X g).inv = operatorTranslation X (g⁻¹) := rfl
+    (operatorAction X g).asIso.inv = operatorTranslation X (g⁻¹) := rfl
 
 /-- Every actual varying-group arrow intertwines the canonical operators,
 using its retained source-to-target group homomorphism. -/
@@ -117,8 +119,8 @@ theorem operatorTranslation_naturality {X Y : VariableActionSpace.{u, v} K}
     simp only [map_mul, map_inv]
   · apply BoundedAlgHom.ext
     intro a
-    change (X.algebraAction.obj.ρ (g⁻¹)).toAlgHom (f.algebraMap a) =
-      f.algebraMap ((Y.algebraAction.obj.ρ ((f.groupHom g)⁻¹)).toAlgHom a)
+    change (X.algebraAction.obj.ρ (g⁻¹)).asHom.toAlgHom (f.algebraMap a) =
+      f.algebraMap ((Y.algebraAction.obj.ρ ((f.groupHom g)⁻¹)).asHom.toAlgHom a)
     rw [← map_inv]
     exact (f.equivariant (g⁻¹) a).symm
 
@@ -147,11 +149,11 @@ theorem spectrumFunctor_operatorTranslation_apply
     (X : VariableActionSpace.{u, v} K) (g : X.groupType)
     (x : BanachSpectrum X.algebraAction.obj.V) :
     (spectrumFunctor.map (operatorTranslation X g)).spaceMap x =
-      ConcreteCategory.hom ((NormContinuousAction.spectrum X.algebraAction).obj.ρ g) x := by
+      ConcreteCategory.hom ((NormContinuousAction.spectrum X.algebraAction).obj.ρ g).asHom x := by
   apply BanachSpectrum.ext
   intro a
-  change x ((X.algebraAction.actionAut (g⁻¹)).hom.toAlgHom a) =
-    x ((X.algebraAction.actionAut g).inv.toAlgHom a)
+  change x ((X.algebraAction.actionAut (g⁻¹)).asIso.hom.toAlgHom a) =
+    x ((X.algebraAction.actionAut g).asIso.inv.toAlgHom a)
   rw [map_inv]
   rfl
 

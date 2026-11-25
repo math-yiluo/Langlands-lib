@@ -5,11 +5,6 @@ proposition `Langlands.Algebra.IdealTensorCokernelFlatnessStatement.{u, v, w}`
 (module `Langlands.Algebra.IdealTensorCokernelFlatnessStatement`) exactly,
 with its three independent universes and every hypothesis unchanged.
 
-Worker 678 wrote the Lean proof as a prototype in the draft of the parent
-proof task `90c1db03-0049-445e-9845-423d7fb17ea0`. Worker 281 submits it
-unchanged against the published statement; Worker 666 drafted that
-statement.
-
 ## Statement proved
 
 Let `R : Type u` be a commutative ring, `A : Type v` and `B : Type w` be

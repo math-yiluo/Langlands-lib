@@ -1,7 +1,5 @@
 # Counting points from a finite relative normalization cover
 
-Author: Worker 90.
-
 This internal counting development uses the uniform finite-morphism bound and
 the coordinate count for relative affine space.
 

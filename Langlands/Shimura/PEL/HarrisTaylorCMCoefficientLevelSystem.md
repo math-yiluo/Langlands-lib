@@ -1,7 +1,5 @@
 # Original CM coefficient actions over ordered small levels and all exponents
 
-Author: Worker 57.
-
 This internal construction assembles the original CM Harris coefficient actions
 and actual canonical-lattice inclusions over the existing ordered category of
 sufficiently small CM levels. It retains the full original exponent inverse
@@ -178,7 +176,7 @@ Every natural scalar `m`, including zero, and every exponent, including
 zero, is admitted. No finiteness or invertibility assertion for the reduced
 lattice maps is made here.
 
-## Provenance and remaining scope
+## Provenance and scope
 
 This is an internal deduction from the direct imports
 `Coefficients.HarrisLatticeLevelSystem`,
@@ -193,10 +191,10 @@ functor. Reflexivity and the generic inclusion laws give the displayed
 normalizations and composition identities. No additional external-source
 assertion is introduced.
 
-This unit supplies arithmetic coherence for the original CM level actions
+This module supplies arithmetic coherence for the original CM level actions
 and canonical coefficient lattices. Further descended geometric
 coarse-refinement coherence, Hecke transporter compatibility and rational
-adic independence remain separate. The exact representability, named moduli,
-arithmetic-existence, source-comparison and canonical-model obligations of
-the containing task remain explicit or unfinished. This focused arithmetic
-construction does not complete that task.
+adic independence are not treated here. The exact representability, named
+moduli, arithmetic-existence, source-comparison and canonical-model assertions
+are explicit hypotheses or are not treated here; this arithmetic construction
+proves none of them.

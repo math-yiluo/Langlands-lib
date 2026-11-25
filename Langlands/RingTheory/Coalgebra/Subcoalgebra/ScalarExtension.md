@@ -1,80 +1,35 @@
-# Scalar extension of field subcoalgebras
+# Images of coalgebra maps and scalar extension of subcoalgebras
 
-Worker 16 constructs this interface using the carrier coalgebra of
-`Langlands.RingTheory.Coalgebra.Subcoalgebra.Basic`, authored by Worker 321.
-The range-closure argument adapts the argument in the registered Apache-2.0
-TauCeti source `tauceti-subcoalgebra-basic-map-8428d621`, file
-`TauCeti/Algebra/Coalgebra/Subcoalgebra/Map.lean`, declaration
-`TauCeti.Subcoalgebra.map`, at commit
-`8428d6217f74afa72531df0bc85d7b57ab72810f`. The carrier coalgebra maps,
-equivalences and scalar extension here are new derived constructions.
+The file works with the subcoalgebras of [Basic](Basic.md): a subcoalgebra is a subspace `D` with `Δ(D) ⊆ D ⊗ D`, and over a field it carries the coalgebra structure constructed there. This is the convention of Milne, *Algebraic Groups* (2017), printed pp. 236–238, especially the definition of a finite-dimensional subcoalgebra in the proof of Theorem 12.18 on p. 237 (PDF pages 252–254). The registered source is `milne-2017-algebraic-groups`, content SHA-256 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`. The official errata snapshot `milne-2017-algebraic-groups-errata-2026-11-02` has no correction to this passage. Images, scalar extension and their lemmas are derived here; the source does not state them.
 
-The mathematical convention is Milne, *Algebraic Groups* (2017), printed
-pp. 236–238, especially the definition of a finite-dimensional subcoalgebra
-in the proof of Theorem 12.18 on p. 237 (PDF pages 252–254). The registered
-source is `milne-2017-algebraic-groups`, content SHA-256
-`899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
-The official errata snapshot
-`milne-2017-algebraic-groups-errata-2026-11-02` has no correction to this
-passage. These constructions implement the usual subspace condition
-Δ(D) ⊆ D ⊗ D. Scalar extension and its structural laws are derived here;
-the source does not state this bundled API.
+All universes are arbitrary and independent. `k : Type u` is a field, and `C : Type v`, `E : Type w` are `k`-coalgebras with `[AddCommGroup _]`. No cocommutativity or finite dimensionality is assumed.
 
-All universes are arbitrary and independent. Let `k : Type u` be a field.
-Let `C : Type v` and `E : Type w` have additive commutative groups,
-`k`-module structures and actual Mathlib `Coalgebra k` structures.
-No cocommutativity or finite-dimensionality is assumed.
+## The image of a homomorphism
 
-For every coalgebra homomorphism `f : C →ₗc[k] E`,
-`Langlands.Subcoalgebra.range f` has underlying submodule
-`LinearMap.range f.toLinearMap`. Membership is existence of a preimage.
-Its closure proof sends Δ(c) through the tensor square of the linear map
-from `C` to this range, then uses the compatibility of `f` with
-comultiplication. Thus the carrier coalgebra is obtained from closure by
-the construction in `Basic`; it is not supplied as extra data.
+For `f : C →ₗc[k] E`, `range f` is the subcoalgebra of `E` with underlying submodule `LinearMap.range f.toLinearMap` (`range_toSubmodule`); `e ∈ range f` means `e = f c` for some `c` (`mem_range`).
 
-For a subcoalgebra `D` of `E` containing every `f c`, `codRestrict D f h`
-is a coalgebra homomorphism to its carrier, with underlying function
-`c ↦ ⟨f c, h c⟩`. Its counit equality follows by restriction. Its
-comultiplication equality is checked after the injective tensor square
-of the inclusion of `D` into `E`; flatness over the field makes this
-test injective. `subtype_comp_codRestrict` identifies its composite
-with inclusion with `f`. Specializing gives the surjective
-`rangeRestrict f`; if `f` is injective, `equivRange f hf` is a coalgebra
-equivalence from `C` to `range f`.
+Closure under comultiplication: by Mathlib's `TensorProduct.range_mapIncl` and `TensorProduct.range_map`, the image of `range f ⊗ range f` in `E ⊗ E` and the range of `f ⊗ f` are the same submodule, namely the span of the tensors `f c ⊗ f c'`. Since `f` is a homomorphism, `Δ (f c) = (f ⊗ f)(Δ c)` lies in it.
 
-Now let `K : Type x` be any field with an `Algebra k K` structure.
-There is no algebraicity, separability, finiteness or universe restriction
-on `K/k`. For any `D : Langlands.Subcoalgebra k C`:
+## Restricting the codomain
 
-- `baseChangeMap K D : K ⊗[k] D →ₗc[K] K ⊗[k] C` is Mathlib's
-  tensor product of the identity coalgebra map on `K` and the inclusion
-  `D.subtype`. Its underlying `K`-linear map is exactly
-  `D.toSubmodule.subtype.baseChange K`, and it sends `a ⊗ d` to
-  `a ⊗ (d : C)`. It is injective because tensoring an injective
-  `k`-linear map with the flat `k`-module `K` preserves injectivity.
-- `baseChange K D` is the range subcoalgebra of that map in the
-  actual Mathlib tensor-product coalgebra on `K ⊗[k] C`. Its underlying
-  submodule is exactly `D.toSubmodule.baseChange K`. Membership means
-  being the image of some tensor in `K ⊗[k] D`, and every pure tensor
-  `a ⊗ c` with `c ∈ D` belongs.
-- `toBaseChange K D` is the canonical coalgebra map to this image
-  carrier. It is bijective and compatible with its inclusion into
-  `K ⊗[k] C`.
-- `baseChangeEquiv K D : K ⊗[k] D ≃ₗc[K] baseChange K D` is the
-  resulting coalgebra equivalence; its homomorphism is `toBaseChange`.
-  The application and pure-tensor lemmas identify its composite with
-  inclusion with `baseChangeMap K D`.
-- Scalar extension preserves the zero and whole subcoalgebras and
-  is monotone for inclusion.
-- If the carrier `D` is finite dimensional over `k`, the instance
-  `instFiniteDimensionalBaseChange` makes the carrier of `baseChange K D`
-  finite dimensional over `K`. This follows from Mathlib's
-  `Module.Finite.base_change` and surjectivity of `toBaseChange`.
-  The argument includes `D = ⊥`.
+For a subcoalgebra `D` of `E` and `f : C →ₗc[k] E` with `f c ∈ D` for all `c`, `codRestrict D f h : C →ₗc[k] D` is the linear map `c ↦ ⟨f c, h c⟩`, shown to be a homomorphism:
 
-Every displayed coalgebra map preserves both counit and comultiplication
-as part of its Mathlib type. The finite-dimensional instance imposes
-no finite-dimensionality on the ambient coalgebra `C`.
-This file makes no assertion that finite-dimensional subcoalgebras cover
-`C` and proves no descent, dual base change, or group-like spanning result.
+- the counit of `D` is the counit of `E` restricted, so compatibility with counits is that of `f`;
+- for comultiplication, both sides are compared after `tensorSquareInclusion D`, which is injective. The inclusion of `D` composed with the restricted map is `f` (`LinearMap.subtype_comp_codRestrict`), so by `TensorProduct.map_map` the left side becomes `(f ⊗ f)(Δ c) = Δ (f c)`, and the right side is `Δ (f c)` by `map_comul_subtype`.
+
+`codRestrict_apply` and `subtype_comp_codRestrict` say that it is `f` after inclusion into `E`.
+
+`rangeRestrict f : C →ₗc[k] range f` is the case `D = range f`. It is surjective (`rangeRestrict_surjective`), and injective when `f` is (`rangeRestrict_injective`). For injective `f`, `equivRange f hf : C ≃ₗc[k] range f` is the resulting equivalence, from Mathlib's `CoalgEquiv.ofBijective`.
+
+## Scalar extension
+
+Let `K : Type x` be a field with `[Algebra k K]`; nothing is assumed about the extension `K/k`. For `D : Subcoalgebra k C`:
+
+- `baseChangeMap K D : K ⊗[k] D →ₗc[K] K ⊗[k] C` is Mathlib's `Coalgebra.TensorProduct.map` of the identity of `K` and `D.subtype`. Its linear map is `D.toSubmodule.subtype.baseChange K` (`baseChangeMap_toLinearMap`), it sends `a ⊗ d` to `a ⊗ d` (`baseChangeMap_tmul`), and it is injective because `K` is flat over `k` (`baseChangeMap_injective`).
+- `baseChange K D` is `range (baseChangeMap K D)`, a subcoalgebra of Mathlib's tensor product coalgebra `K ⊗[k] C`. Its underlying submodule is `D.toSubmodule.baseChange K` (`baseChange_toSubmodule`). `mem_baseChange` and `tmul_mem_baseChange` describe its elements; the second is Mathlib's `Submodule.tmul_mem_baseChange_of_mem`.
+- `toBaseChange K D : K ⊗[k] D →ₗc[K] baseChange K D` is `rangeRestrict (baseChangeMap K D)`; it is bijective (`toBaseChange_bijective`), and followed by the inclusion it is `baseChangeMap K D` (`toBaseChange_apply`, `toBaseChange_tmul`, `subtype_comp_toBaseChange`).
+- `baseChangeEquiv K D : K ⊗[k] D ≃ₗc[K] baseChange K D` is `equivRange` of `baseChangeMap K D`. Its homomorphism is `toBaseChange K D` (`baseChangeEquiv_toCoalgHom`), with the corresponding formulas `baseChangeEquiv_apply`, `baseChangeEquiv_tmul`.
+- `baseChange_bot`, `baseChange_top` and `baseChange_mono` reduce to the statements for submodules (`Submodule.baseChange_bot`, `Submodule.baseChange_top`, `Submodule.baseChange_mono`), since a subcoalgebra is determined by its underlying submodule.
+- If `D` is finite dimensional over `k`, then `baseChange K D` is finite dimensional over `K` (`instFiniteDimensionalBaseChange`): `K ⊗[k] D` is finite over `K` by Mathlib's `Module.Finite.base_change`, and `baseChangeEquiv K D` is a linear equivalence. `C` itself need not be finite dimensional, and `D = ⊥` is included.
+
+The file does not show that finite-dimensional subcoalgebras cover `C` (see [LocalFiniteness](LocalFiniteness.md)), and proves no descent or duality statement.

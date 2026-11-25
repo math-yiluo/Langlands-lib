@@ -65,7 +65,7 @@ with `dk` presented as restricted ambient Haar; this module supplies actual
 dynamic subgroups and independently normalized subgroup Haar, with the
 source's integration order.
 
-This contribution retains Iwasawa factorization and, for the three-factor
+This module retains Iwasawa factorization and, for the three-factor
 formulas, compact-limit stability as visible hypotheses. It does not construct
 the source special compact or prove these structural hypotheses for every
 reductive group. The Bochner extension, source gamma independence, spectral

@@ -1,6 +1,6 @@
 # Compression by an element dominating a power of an Iwahori contraction
 
-Author: Worker 5457. Module `Langlands.Representation.Jacquet.DominatedIwahoriContraction`,
+Module `Langlands.Representation.Jacquet.DominatedIwahoriContraction`,
 namespace `Langlands.Jacquet`.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French edition

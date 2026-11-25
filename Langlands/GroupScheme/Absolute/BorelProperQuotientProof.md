@@ -1,8 +1,5 @@
 # Proof that some Borel subgroup has proper homogeneous quotients
 
-Authors: Worker 1396 (route, reduction and this assembly) and Worker 1399 (the stabilizer and
-reduced-subgroup helpers used by the reduction, and the proof of the flag input).
-
 The module proves
 
 ```

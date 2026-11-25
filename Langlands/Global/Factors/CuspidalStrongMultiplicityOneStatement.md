@@ -1,8 +1,5 @@
 # Strong multiplicity one for cuspidal realizations of `GL_(r+1)`
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition and proves nothing:
 
 - `Langlands.Global.CuspidalStrongMultiplicityOneStatement`.
@@ -27,13 +24,13 @@ statements `CuspidalPairPoleStatement` and
 
 **Why it is here.** The program ledger
 `notes/automorphic/global-program-coverage.md` lists the
-representation-theoretic form of Getz–Hahn 11.7.2 as an L4 target of this
-program with no public statement. The list is in the closing paragraph of the section
-"13 November 2026 Getz–Hahn 11.7.1 poles, Lemma 11.8.1 and the H3 reduction".
+representation-theoretic form of Getz–Hahn 11.7.2 as an L4 target with no
+public statement. The list is in the closing paragraph of the section
+"Getz–Hahn 11.7.1 poles, Lemma 11.8.1 and the H3 reduction".
 The Library's `CuspidalSpectralRigidityStatement` has only the numerical form,
 which compares unramified spectra (§5 below).
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalStrongMultiplicityOneStatement`. Its universe
 parameters are `u` (the number field) and `uQ` (the factor universe of the
 spectral presentations).
@@ -183,9 +180,9 @@ transport of a spectrum along an equivalence is
 `Langlands.Unramified.hasSphericalHeckeSpectrum_iff_of_equiv`
 (`Langlands/Representation/Unramified/HeckeOperators.lean`). Uniqueness of the
 spectrum on a nonzero spherical space is a further step. Neither statement is
-proved in the Library at this time.
+proved in the Library.
 
-## 6. Proof routes (for the proof task; not part of the statement)
+## 6. Proof routes (not part of the statement)
 
 **GH's route (Exercise 11.6).** Hecke characters that agree at almost all
 places are equal, so `π` and `π'` have the same central character. Twist both
@@ -198,8 +195,12 @@ holomorphic and nonzero (GH Theorem 11.5.2, after twisting to unitary).
 Therefore `L(s, π × π'^∨)` also has a pole at `s = 1`. By Theorem 11.7.1 again,
 `π ≅ (π'^∨)^∨ ≅ π'`.
 
-The Lean form of Theorem 11.5.2 is not yet in the Library. The program ledger
-lists it as an L4 target. A proof also needs the contragredient presentation
+The non-archimedean case of Theorem 11.5.2 for the components of cuspidal
+realizations is `CuspidalFinitePairRegularityStatement`, proved as
+`Langlands.Global.cuspidalFinitePairRegularity` (module
+`Langlands.Global.Factors.CuspidalFinitePairRegularityProof`). The archimedean
+case, `Automorphic.CuspidalArchimedeanPairRegularityStatement`, is not proved in
+the Library. The program ledger lists Theorem 11.5.2 as an L4 target. A proof also needs the contragredient presentation
 (the proved `cuspidalContragredientPresentationExistence`,
 `Langlands/Automorphic/CuspidalContragredientPresentationExistenceProof.lean`)
 and the twist.
@@ -227,6 +228,6 @@ This is a source statement: GH Theorem 11.7.2, with the hypothesis read
 through Library vocabulary. Two choices belong to this formalization: the set
 `S` contains finite places only (§3, equivalent to GH), and the local
 components are read through spectral presentations. Both are explained above.
-The Lean file was checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The
+The Lean file was checked in the Lean environment in which it was written,
+with no errors and no warnings. The
 declaration is a `def` returning `Prop`.

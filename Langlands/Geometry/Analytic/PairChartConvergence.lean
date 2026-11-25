@@ -142,11 +142,11 @@ variable {G : Type z} [Group G] [TopologicalSpace G]
 theorem _root_.Langlands.Analytic.SaturatedAtlasPresentation.IsContinuousAction.eventually_preimage_chartDomain
     {X : LocalizedCategory.{u, v, v} (K := K)} {σX : G →* Aut X} (hX : IsContinuousAction σX)
     (i : (presentationOf X).presentation.atlas.Index) :
-    ∀ᶠ a in 𝓝 (1 : G), localizedSpaceFunctor.map (σX a).hom ⁻¹'
+    ∀ᶠ a in 𝓝 (1 : G), localizedSpaceFunctor.map (σX a).asIso.hom ⁻¹'
       ((presentationOf X).chartDomain i).carrier = ((presentationOf X).chartDomain i).carrier := by
   let τ : TestTriple (presentationOf X) := ⟨i, 0, 1, zero_lt_one⟩
   filter_upwards [hX τ] with a ha
-  have hchart := (show IsNear τ (σX a).hom (𝟙 X) from ha).preimage_eq
+  have hchart := (show IsNear τ (σX a).asIso.hom (𝟙 X) from ha).preimage_eq
   rw [CategoryTheory.Functor.map_id, TopCat.coe_id] at hchart
   change _ = τ.locus at hchart
   exact hchart
@@ -156,8 +156,9 @@ variable {σ : G →* Aut P} {σU : G →* Aut U} {σV : G →* Aut V} {p : P �
 /-- An action compatible with continuous actions on both factors eventually
 preserves the patch of a pair chart. -/
 theorem eventually_preimage_patch (hU : IsContinuousAction σU) (hV : IsContinuousAction σV)
-    (hp : ∀ a, (σ a).hom ≫ p = p ≫ (σU a).hom) (hq : ∀ a, (σ a).hom ≫ q = q ≫ (σV a).hom) :
-    ∀ᶠ a in 𝓝 (1 : G), localizedSpaceFunctor.map (σ a).hom ⁻¹' (c.patch p q).carrier =
+    (hp : ∀ a, (σ a).asIso.hom ≫ p = p ≫ (σU a).asIso.hom)
+    (hq : ∀ a, (σ a).asIso.hom ≫ q = q ≫ (σV a).asIso.hom) :
+    ∀ᶠ a in 𝓝 (1 : G), localizedSpaceFunctor.map (σ a).asIso.hom ⁻¹' (c.patch p q).carrier =
       (c.patch p q).carrier :=
   eventually_preimage_eq_pullback_patch hU hV p q hp hq c.left c.right
 
@@ -266,10 +267,11 @@ variable {G : Type z} [Group G] [TopologicalSpace G]
 identity on the greatest-chart algebra of the pair chart. -/
 theorem spectralConvergesOn_patchPullback (hU : IsContinuousAction σU)
     (hV : IsContinuousAction σV)
-    (hp : ∀ a, (σ a).hom ≫ p = p ≫ (σU a).hom) (hq : ∀ a, (σ a).hom ≫ q = q ≫ (σV a).hom)
+    (hp : ∀ a, (σ a).asIso.hom ≫ p = p ≫ (σU a).asIso.hom)
+    (hq : ∀ a, (σ a).asIso.hom ≫ q = q ≫ (σV a).asIso.hom)
     (x : c.obj.presentation.atlas.algebra c.top) :
     SpectralConvergesOn (𝓝 (1 : G))
-      (fun a => patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).hom)
+      (fun a => patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).asIso.hom)
       (BoundedAlgHom.id K _) x := by
   apply spectralConvergesOn_of_transport c.top_algebra
   intro b
@@ -278,8 +280,8 @@ theorem spectralConvergesOn_patchPullback (hU : IsContinuousAction σU)
     filter_upwards [c.eventually_preimage_patch hU hV hp hq,
       hU.eventually_preimage_chartDomain c.left,
       hU.spectralConvergesOn_preservedChartPullback c.left y ε hε] with a hE hL hy
-    have key : patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).hom
-        (c.fstTop y) = c.fstTop (preservedChartPullback c.left (σU a).hom y) :=
+    have key : patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).asIso.hom
+        (c.fstTop y) = c.fstTop (preservedChartPullback c.left (σU a).asIso.hom y) :=
       congrArg (fun F => F y) (c.patchPullback_comp_fstTop hP _ _ (hp a) hE hL)
     have hfy : c.fstTop y = ((eqToHom c.top_algebra.symm).comp
         (AffinoidPushout.leftMap c.leftTop c.rightTop)) y :=
@@ -287,7 +289,7 @@ theorem spectralConvergesOn_patchPullback (hU : IsContinuousAction σU)
     have hb := hy.map c.fstTop.toBoundedRingHom
     rw [map_sub] at hb
     show BanachSpectrum.SpectralBound
-      (patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).hom
+      (patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).asIso.hom
         (((eqToHom c.top_algebra.symm).comp (AffinoidPushout.leftMap c.leftTop c.rightTop)) y) -
         ((eqToHom c.top_algebra.symm).comp (AffinoidPushout.leftMap c.leftTop c.rightTop)) y) ε
     rw [← hfy, key]
@@ -296,8 +298,8 @@ theorem spectralConvergesOn_patchPullback (hU : IsContinuousAction σU)
     filter_upwards [c.eventually_preimage_patch hU hV hp hq,
       hV.eventually_preimage_chartDomain c.right,
       hV.spectralConvergesOn_preservedChartPullback c.right y ε hε] with a hE hR hy
-    have key : patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).hom
-        (c.sndTop y) = c.sndTop (preservedChartPullback c.right (σV a).hom y) :=
+    have key : patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).asIso.hom
+        (c.sndTop y) = c.sndTop (preservedChartPullback c.right (σV a).asIso.hom y) :=
       congrArg (fun F => F y) (c.patchPullback_comp_sndTop hP _ _ (hq a) hE hR)
     have hfy : c.sndTop y = ((eqToHom c.top_algebra.symm).comp
         (AffinoidPushout.rightMap c.leftTop c.rightTop)) y :=
@@ -305,7 +307,7 @@ theorem spectralConvergesOn_patchPullback (hU : IsContinuousAction σU)
     have hb := hy.map c.sndTop.toBoundedRingHom
     rw [map_sub] at hb
     show BanachSpectrum.SpectralBound
-      (patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).hom
+      (patchPullback (c.patch p q) c.top c.top_contains (c.patchIso hP) (σ a).asIso.hom
         (((eqToHom c.top_algebra.symm).comp (AffinoidPushout.rightMap c.leftTop c.rightTop)) y) -
         ((eqToHom c.top_algebra.symm).comp (AffinoidPushout.rightMap c.leftTop c.rightTop)) y) ε
     rw [← hfy, key]

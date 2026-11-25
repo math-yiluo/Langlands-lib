@@ -1,8 +1,8 @@
 # Product decomposition along one step of a split series
 
 This helper module serves the proof of
-`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`
-(task 6b07dcd2-af39-4c69-8ade-d0faa997a49f). Take one step K ⟶ H ⟶ V of a split
+`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`.
+Take one step K ⟶ H ⟶ V of a split
 series of an affine group H over Spec R, with V a one-dimensional vector group.
 Then the quotient map H ⟶ V has a section that preserves the unit, and the map
 (κ, t) ↦ j(κ) · s(t) identifies K ⊗ V with H as schemes over Spec R. This is

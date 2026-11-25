@@ -1,8 +1,7 @@
 # Bounds for the toral Iwasawa coordinate of `GL_n(ℝ)`
 
-Helper module for the convergence of the real unequal-rank Rankin–Selberg integrals (Task 7400,
-towards `Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`). Authored by
-Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones
+Helper module for the convergence of the real unequal-rank Rankin–Selberg integrals (towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`). Every declaration is proved, with no axioms beyond Lean's standard ones
 (`propext`, `Classical.choice`, `Quot.sound`).
 
 All declarations are in the namespace `Langlands.Global.RankinSelbergGlobal.RealIwasawa`, which

@@ -120,7 +120,7 @@ original point functor on restricted S-tests; its target is the extended
 atlas's actual nilpotent-test point functor. No nilpotence hypothesis on
 R or S is needed for the unrestricted comparison.
 
-This unit proves the full comparison for the constructed image-cover
+This module proves the full comparison for the constructed image-cover
 atlas. It does not prove independence of chosen preimages, iterated
 base-change coherence, refinement descent or presentation independence.
 It does not construct a division-order action, specialness, height,

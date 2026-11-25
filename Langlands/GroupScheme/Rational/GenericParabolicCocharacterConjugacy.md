@@ -1,15 +1,13 @@
 # Cocharacters of a dynamic parabolic conjugated into a torus
 
-Author: Worker 3784 (formerly Worker 24).
-
 This module proves the helper results for the rational Bruhat decomposition in
 [`RationalBruhatProof`](RationalBruhatProof.md). Their main consequence is
 `exists_parabolic_conj_into_torus`. Let `i : T ⟶ G` be a maximal split torus of a
 connected reductive group over a field, and let `ν` be a cocharacter of `T` whose dynamic
 centralizer is the whole-torus centralizer. Then every cocharacter of `G` with values in
 `P_G(ν ≫ i)` is conjugate into `T` by a rational point of `P_G(ν ≫ i)`. All declarations
-are in `Langlands.GroupScheme` or `Langlands.GroupScheme.Dynamic`. Nothing here is a
-statement for review; these are proofs of internal helper results.
+are in `Langlands.GroupScheme` or `Langlands.GroupScheme.Dynamic`. This module defines no
+statement; these are proofs of internal helper results.
 
 Notation: `S` is a base scheme, or `Spec k` for a field `k : Type u`. `χ : 𝔾_m ⟶ G` is a
 cocharacter. `iP : P ⟶ G`, `iZ : Z ⟶ G` and `iU : U ⟶ G` are arbitrary

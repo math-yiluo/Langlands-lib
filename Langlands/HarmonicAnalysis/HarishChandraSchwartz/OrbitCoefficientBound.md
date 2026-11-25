@@ -1,12 +1,10 @@
 # Coefficients bounded by `Ξ` along unitary unramified orbits
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitCoefficientBound`, namespace
 `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacket` (Library,
-  this author's Unit 20). Only the last section uses it, for the actual objects `rationalLeviXi`
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacket` (Library).
+  Only the last section uses it, for the actual objects `rationalLeviXi`
   (`Ξ^{M_I}`), `RationalPointFamily.leviRationalNormCharacters` and `standardLeviPoints`. Through
   its imports come the Library's `UnitaryOrbitRepresentative`, `unitaryUnramifiedInclusion`,
   `unramifiedCharacter_isOpen_ker`, `IrreducibleAdmissibleRep.twist`, `SmoothRep.equivOfIso` and
@@ -33,12 +31,13 @@ pages; the PDF page is the printed page minus 234.
   `f ∈ A(π)` et tout `r ∈ R`, il existe `c > 0` tel que pour tout `g ∈ G¹`, on ait l'inégalité
   `|f(g)| ⩽ cΞ(g)(1 + σ(g))^{−r}`."
 
-The author checked these quotations on the PDF text of pages 29, 64 and 65.
+These quotations were checked on the PDF text of pages 29, 64 and 65.
 
 The definition `HasXiBoundedCoefficients Ξ ρ` (provenance: derived) names this bound: every
-smooth coefficient of `ρ` is at most `c Ξ`. The units of this author on actual points (Units
-19–27) take it as the hypothesis `hcoeff` for `π` and, for the orbit results of Units 26 and 27,
-as `hcoeffA` for every representative of the orbit. The source does not state the transfer
+smooth coefficient of `ρ` is at most `c Ξ`. The modules on actual points (for example
+`RationalInducedOrbitWavePacket`) take it as the hypothesis `hcoeff` for `π` and, for the orbit
+results of `RationalInducedConstantTermFourier` and `RationalCuspidalConvolution`, as `hcoeffA`
+for every representative of the orbit. The source does not state the transfer
 results separately: in the proof of Lemma VI.2.2 the factor `χ(m_P(kg))` has absolute value `1`,
 which is the twist result here. The equivalence and orbit results are elementary consequences.
 
@@ -62,7 +61,7 @@ Section `Orbit`: `G` a nonarchimedean topological group, `M` a subgroup, `ν : I
   the bound (`h`), then so does every `A : UnitaryOrbitRepresentative ν π`, that is every
   irreducible admissible `A` isomorphic to `π ⊗ χ` for some unitary unramified character `χ`.
 
-Section `Rational`: the actual setting of Units 20–27 (`G` over a nonarchimedean local field,
+Section `Rational`: the actual setting (`G` over a nonarchimedean local field,
 maximal split torus `i`, generic cocharacter `ν`, a finite set `I` of simple roots, `M_I(F)` the
 subtype `𝐌`, `K` compact open with `hKc`, and
 `hM : IsIwasawaPair (P₀(F) ∩ M_I(F)) (K ∩ M_I(F))`).
@@ -72,7 +71,7 @@ subtype `𝐌`, `K` compact open with `hKc`, and
   then for every `A : UnitaryOrbitRepresentative (leviRationalNormCharacters i ν I) π`, `v` and
   `ℓ` there is `c > 0` with `‖ℓ(A(m) v)‖ ≤ c Ξ^{M_I}(m)` for all `m`. The statement written with
   `∀ A v ℓ` in front is, word for word, the hypothesis `hcoeffA` of the orbit results of
-  `RationalInducedConstantTermFourier` (Unit 26) and of `RationalCuspidalConvolution` (Unit 27).
+  `RationalInducedConstantTermFourier` and of `RationalCuspidalConvolution`.
   Applying this theorem to `hcoeff` therefore supplies `hcoeffA`, so those results need only
   `hcoeff` for `π`.
 
@@ -96,5 +95,5 @@ subtype `𝐌`, `K` compact open with `hKc`, and
 
 The predicate is a bound for each pair `(v, ℓ)`. Uniformity in `v` or `ℓ` is not asserted.
 Corollary III.1.2 (printed p. 263, quoted above) bounds coefficients on `G¹` only. The bound on
-the whole group, as used in Lemma VI.2.2 for `M`, is not proved here; the units take it as a
+the whole group, as used in Lemma VI.2.2 for `M`, is not proved here; the modules on actual points take it as a
 hypothesis (`h`, `hcoeff`).

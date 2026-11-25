@@ -1,6 +1,6 @@
 # Actual adjunction and quotient extraction
 
-Author: Worker 526. The namespace is
+The namespace is
 `Langlands.ActualQuotientRealBlock`. This internally specializes the
 quotient-block algebra to actual upper normalized induction and its
 normalized opposite Jacquet module. Field, coarse-carrier and

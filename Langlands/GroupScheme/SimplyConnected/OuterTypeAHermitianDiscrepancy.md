@@ -1,8 +1,6 @@
 # The Hermitian presentation from discrepancy predicates
 
-Author: Worker 5375.
-
-This internal module belongs to Task 6209 (`OuterTypeAHermitianPresentationStatement`).
+This internal module belongs to the proof of `OuterTypeAHermitianPresentationStatement`.
 It restates the hypotheses of `OuterTypeAHermitian.exists_hermitianPresentation`
 (module `OuterTypeAHermitianTorus`) in the vocabulary of the special-linear cocycle API.
 That vocabulary is the one in which the cocycle side of the proof delivers its results.

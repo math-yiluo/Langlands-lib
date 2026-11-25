@@ -1,10 +1,5 @@
 # Finite full Weyl images of closed split tori
 
-Authors: Workers 1375 and 1283. Worker 1444 prepared the exact proof submission
-and the original-source comparison below. The Lean proof is unchanged from the
-published assembly by Worker 1375; the representation-weight finiteness and
-Weyl-image transport inputs are due to Worker 1283.
-
 `Langlands.GroupScheme.splitTorusWeylImageFinite` proves the exact published
 proposition `SplitTorusWeylImageFiniteStatement.{u}`. This internal assembly
 also constructs
@@ -51,9 +46,9 @@ The quantifiers allow every field universe and characteristic, imperfect
 fields, disconnected or nonsmooth ambient groups, nonmaximal split tori and
 rank zero. No smoothness, reductivity, connectedness or root datum is used.
 All geometric and action comparisons are imported proved results; no
-finiteness or support-stability premise remains. This is a supporting unit
-for the central-isogeny root-datum task: that task's root comparison,
-supplied-coroot compatibility and final isomorphism criterion remain separate.
+finiteness or support-stability premise remains. This is a supporting result
+for the root-datum comparison of central isogenies: its root comparison,
+supplied-coroot compatibility and final isomorphism criterion are separate.
 
 The construction and proof are derived internally from the named Library
 interfaces. For the provenance of the target, J. S. Milne, *Algebraic Groups*

@@ -48,7 +48,7 @@ construction on printed p. 180 (one-based PDF p. 176) and gives the
 induced map in numbered assertion (1) on printed p. 181 (PDF p. 177).
 Example 2 on p. 181 asserts the irreducibility equivalence. The proofs
 above use the published finite-stage theorem and the quotient-kernel
-argument from Worker 3657's shared draft for Task 7588.
+argument described above.
 
 The registered source is `flath-1979-tensor-products`. The retained volume
 has SHA256 `3b9fe0145da81d870ef8967be83635cd440a2581fe043e64e63324e22dec4db5`.

@@ -1,7 +1,5 @@
 # Relative module cohomology and arbitrary sheaf-cohomology pullback
 
-Author: Worker 221.
-
 `Langlands.AlgebraicGeometry.Modules.AbelianSheafComparison.RelativeAbelianSheafCohomologyPullbackStatement.{u}` is an internal, `Prop`-valued statement target. It adds no axiom and does not provide a proof.
 
 ## Data and assertion
@@ -26,6 +24,6 @@ where `c : f^* M ⟶ N` is the adjoint of `k` under `Scheme.Modules.pullbackPush
 
 ## Provenance and intended use
 
-This is an internal comparison obligation between two existing constructions, formulated for Task 5898. It is not a transcription of a separate literature theorem. Its meaning is determined by the imported definitions of actual module cohomology, actual underlying abelian sheaves, their additive comparison, and the Ext-defined inverse-image map. The sheaf and module pullback adjunctions are fixed independently; the assertion requires compatibility of the resulting maps, rather than accepting an arbitrary comparison or cohomology map as an input.
+This is an internal comparison obligation between two existing constructions, formulated for the naturality of square-zero Picard obstructions under morphisms of thickenings. It is not a transcription of a separate literature theorem. Its meaning is determined by the imported definitions of actual module cohomology, actual underlying abelian sheaves, their additive comparison, and the Ext-defined inverse-image map. The sheaf and module pullback adjunctions are fixed independently; the assertion requires compatibility of the resulting maps, rather than accepting an arbitrary comparison or cohomology map as an input.
 
-Applied in degree two to the ideal modules of a square-zero thickening, it supplies the module-cohomology comparison needed by `SquareZeroObstructionMorphismNaturalityStatement`. Naturality of the unit sequence and the Picard/unit-H¹ comparison remain separate obligations. This statement does not assert the Picard obstruction result or any downstream lifting theorem.
+Applied in degree two to the ideal modules of a square-zero thickening, it supplies the module-cohomology comparison needed by `SquareZeroObstructionMorphismNaturalityStatement`. Naturality of the unit sequence and the Picard/unit-H¹ comparison are separate from this statement. The Library proves the naturality statement as `squareZeroObstructionMorphismNaturality` (module `Langlands.AlgebraicGeometry.Picard.SquareZeroObstructionMorphismNaturalityProof`), from the reduction in `SquareZeroMorphismRelativeComparison` and the proof `AbelianSheafComparison.relativeAbelianSheafCohomologyPullback` of this statement (module `RelativeAbelianSheafCohomologyPullbackProof`). This statement does not assert the Picard obstruction result or any downstream lifting theorem.

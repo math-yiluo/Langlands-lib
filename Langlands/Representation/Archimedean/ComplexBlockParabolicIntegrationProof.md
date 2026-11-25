@@ -2,12 +2,11 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockParabolicIntegrationProof`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It proves the induction step of the integration
 formula along the maximal parabolic subgroup `P_{a,k}`. As a consequence it proves the Library
 statement `ComplexBlockParabolicIntegrationStatement` as the theorem
-`Langlands.Archimedean.complexBlockParabolicIntegration`. That statement is also the target of the
-proof task Task 7162.
+`Langlands.Archimedean.complexBlockParabolicIntegration`.
 
 Notation is as in `ComplexBlockModulusBound` and `ComplexBlockParabolicSlices`, the two tools
 modules it imports.

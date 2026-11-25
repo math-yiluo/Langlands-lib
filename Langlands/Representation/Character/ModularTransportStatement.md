@@ -6,14 +6,13 @@ The module contains two **statements**, the `Prop`-valued definitions
 `CharacterConjugationModularStatement` and `CharacterContragredientModularStatement`. It
 proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published, proved `CharacterTransportStatement`
+The published, proved `CharacterTransportStatement`
 ([TransportStatement](TransportStatement.md)) treats automorphisms that preserve the chosen
 measure and the contragredient for a measure invariant under inversion. For an inner
 automorphism, the first condition holds when `G` is unimodular. The second condition says that
 the left Haar measure is also right invariant. So for a non-unimodular `G` neither published
 statement gives the III.1.12 Lemma or Example, which carry the modular factors `δ_G(g₀)` and
-`δ_G⁻¹`. This unit states them for every t.d. group.
+`δ_G⁻¹`. This module states them for every t.d. group.
 
 ## Source and provenance
 
@@ -21,7 +20,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.1.12, printed p.65 / PDF p.71:
+The statements follow III.1.12, printed p.65 / PDF p.71:
 
 > Si l'on fixe une mesure de Haar à gauche `μ_G`, pour tout `f ∈ 𝒟(G)`, on pose
 > `Θ_π(f) = Tr π(f) := Tr π(f μ_G)`. […]

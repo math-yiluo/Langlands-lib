@@ -1,11 +1,11 @@
-import Langlands.ClassField.Global.IdeleArchimedean
+import Langlands.ClassFieldTheory.Global.IdeleArchimedean
 
 /-! # Mixed weak approximation by principal ideles -/
 
 namespace Langlands.Global.AdelicFunctoriality
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Topology
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 open scoped NumberField
 
 universe u

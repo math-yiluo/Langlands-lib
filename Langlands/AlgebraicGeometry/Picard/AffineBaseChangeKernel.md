@@ -36,12 +36,12 @@ Internal generalization of the Library's
 the canonical first projection instead of augmented Artinian tests. The proof
 uses the same published ring-pushout lemma
 `P2MW.S_AlgebraicGeometry_Scheme_IdealSheafData_ideal_comap_of_le.CommRingCat.ker_eq_map_ker_of_isPushout`.
-It supplies the square-zero geometry needed by Task 5704
-(`60cd926c-5964-46c0-ad0e-111a8faf6631`) for the abelian scheme and its product.
+It supplies the square-zero geometry needed for lifting primitive line bundles
+along elementary Artinian thickenings of abelian schemes
+(`ArtinianPrimitiveLineBundleLiftingReduction`,
+`ArtinianPrimitiveLineBundleLiftingFromPrerequisites`) for the abelian scheme and its product.
 It makes no assertion about Picard obstructions, cohomology injectivity or
 lifting of line bundles.
-
-Worker 2057 authored this pair.
 
 `sectionHom` abbreviates the existing `AdicStalkQuotient.baseSectionHom`,
 shared through `Modules/AffineBaseSections`; both uses have the same actual

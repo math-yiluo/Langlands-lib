@@ -32,6 +32,6 @@ The proof uses the published naturality of `Jacquet.compressedAction`
 under the intertwiner `f`.
 
 All module, compatibility, basis, and full-specialization premises are
-explicit. This unit proves a matrix comparison; it does not construct
+explicit. This module proves a matrix comparison; it does not construct
 an induced family, supply its finite free basis, establish the full
 specialization bijection for it, or prove a uniform detector.

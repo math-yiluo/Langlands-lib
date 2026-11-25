@@ -77,7 +77,7 @@ theorem not_mem_positivePoints_of_integral_oppositeFactors
     rfl
   have hposS : 0 < latticePairing T.specialFibre
       (T.characterSpecialization hT (-a)) (-νs) := by
-    simp only [map_neg, LinearMap.neg_apply, neg_neg]
+    simp only [AddEquiv.map_neg, LinearMap.map_neg, LinearMap.neg_apply, neg_neg]
     rw [hνRpair]
     exact hpos
   have hxq : rationalPoints.map Q.projection (D.neutral.reduction x) = 1 := by

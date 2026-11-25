@@ -1,7 +1,5 @@
 # Central split tori detect nonzero rational characters
 
-Author: Worker 1278.
-
 The universe-polymorphic proposition
 `Langlands.GroupScheme.CentralSplitTorusCharacterStatement` says that, over every
 field `k`, every nonzero rational character of a connected reductive group `G`

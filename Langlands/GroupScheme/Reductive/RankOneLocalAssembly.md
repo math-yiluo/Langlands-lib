@@ -62,7 +62,7 @@ Proof:
    a `RankOneRootCellRelation.CellData`.
 4. `RankOneLocalRootCell.exists_isRootCell` gives `h` and the rescaled negative root group.
 
-This file is internal to the rank-one SL2-cover development (Task 7586). Its local
+This file is internal to the rank-one SL2-cover development. Its local
 hypotheses (positive-root uniqueness on `ν` and the root lines) are stated for the given
 `G` and `ν`. It does not use the published statements `RankOnePositiveRootUniquenessStatement`
 or `SplitRootLieLineStatement`.

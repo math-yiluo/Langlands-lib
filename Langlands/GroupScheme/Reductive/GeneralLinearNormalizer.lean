@@ -191,7 +191,7 @@ theorem exists_perm_of_isNormalizingPoint
     obtain ⟨a⟩ := i
     rw [hcoord, cocharacterLatticeEquiv_single]
     by_cases hc : π a = c.down
-    · have h1 : (⟨π a⟩ : ULift.{u} n) = c := ULift.ext _ _ hc
+    · have h1 : (⟨π a⟩ : ULift.{u} n) = c := ULift.ext hc
       have h2 : (⟨w⁻¹ c.down⟩ : ULift.{u} n) = ⟨a⟩ := by
         congr 1
         rw [← hc, ← hw]

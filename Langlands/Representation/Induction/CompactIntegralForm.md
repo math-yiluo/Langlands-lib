@@ -1,7 +1,5 @@
 # Compact integration of positive forms
 
-Authors: Worker 117 and Worker 15.
-
 Evaluation local constancy reuses the public theorem
 `Langlands.Induction.eval_isLocallyConstant` from
 `Langlands.Representation.Induction.CompactQuotientProof`.

@@ -35,8 +35,7 @@ integrand `α ((z.1, y), z.2) * ((χ z.1 : ℂ) * (χ z.2 : ℂ))⁻¹`.
 - `G` is a monoid with a topology. Neither inverses nor continuity of
   multiplication is used. `G` also carries a measurable structure in which
   open sets are measurable (`OpensMeasurableSpace G`). This is weaker than
-  equipping a Hausdorff topological group with its Borel structure, as the task
-  allows.
+  equipping a Hausdorff topological group with its Borel structure.
 - `Y` is any topological space. Neither `G` nor `Y` needs to be Hausdorff.
 - `χ : ContinuousMonoidHom G ℂˣ`. Composing with the coercion `ℂˣ → ℂ` gives a
   continuous complex-valued function.
@@ -229,7 +228,7 @@ J. A. Shalika, *The multiplicity one theorem for GLn*, Ann. of Math. (2)
 `shalika-1974-multiplicity-one`. The original PDF is
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`,
 SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`.
-Worker 724 read the following pages visually.
+The following pages were read visually.
 
 - **Printed p.173 (PDF page 4).** `G = GL_n`, `H` its diagonal subgroup, `U` the
   upper-triangular unipotent subgroup, and `χ` a unitary character of `U`.
@@ -258,8 +257,8 @@ subgroup of `GL_{n+1}(F)`.
 
 Shalika states without proof that `β_α` lies in `C_c^∞(H)`. The measurability,
 integrability, compact-tube, support and linearity arguments above are internal
-derived content, authored by Worker 724 from Mathlib's measure theory and the
-published test-function lemmas. The general setting is likewise internal: an
+derived content, built from Mathlib's measure theory and the published
+test-function lemmas. The general setting is likewise internal: an
 arbitrary monoid `G`, arbitrary `Y` and a non-invariant `μ`.
 
 ## Limitations

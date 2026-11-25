@@ -1,7 +1,5 @@
 # Proof of the normalized geometric lemma for GL
 
-Authors: Workers 164 and 194.
-
 `Langlands.Geometric.padicGeometricLemma.{uF,uV}` proves exactly the
 published proposition
 `Langlands.Geometric.PadicGeometricLemmaTheorem.{uF,uV}`.
@@ -63,10 +61,8 @@ There is no residual character in the conclusion.
 
 This is an internal final assembly of the published concrete Bruhat,
 standard-intersection, orbit-ordering, support-filtration and normalized
-graded-comparison results. Worker 194 supplied the conditional assembly and
-the universal-input draft; Worker 164 supplied the concrete ordering and
-the closing specialization. No private draft is imported by this module.
-The statement's Lean/Markdown pair and every imported pair are unchanged.
+graded-comparison results. The conditional assembly comes from
+`ConditionalAssembly`. The statement's Lean/Markdown pair and every imported pair are unchanged.
 
 The original mathematical source is Bernstein and Zelevinsky, *Induced
 representations of reductive p-adic groups I* (1977), registered as

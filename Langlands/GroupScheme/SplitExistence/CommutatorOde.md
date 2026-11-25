@@ -1,7 +1,5 @@
 # The commutator of two root exponentials over a polynomial ring
 
-Author: Worker 1398.
-
 Module `Langlands.GroupScheme.SplitExistence.CommutatorOde`.
 
 ## Declarations

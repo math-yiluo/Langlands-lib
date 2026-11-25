@@ -1,6 +1,6 @@
 # Irreducible inducing quotients and preservation of cuspidality
 
-This internal supporting unit factors the quotient and adjointness steps of
+This module factors the quotient and adjointness steps of
 `RationalCuspidalEmbeddingProof` and `RationalLeviCuspidalJacquet` away from the
 actual rational-point subgroup expressions. It retains every compactness and
 unimodularity input.
@@ -33,5 +33,5 @@ induction embedding with the explicit unimodularity premise.
 The conclusion exposes both the surjective map from the flattened Jacquet
 module and the actual induction embedding. This allows a later consumer to
 transfer cuspidality without repeating the quotient construction. The carrier
-size is `max uG uV` as required by the actual induction functor. This supporting
-unit does not itself prove the full support-category vanishing target.
+size is `max uG uV` as required by the actual induction functor. This module
+does not itself prove the full support-category vanishing target.

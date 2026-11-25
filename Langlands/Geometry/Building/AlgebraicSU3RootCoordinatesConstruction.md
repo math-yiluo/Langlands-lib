@@ -3,11 +3,9 @@
 Module `Langlands.Geometry.Building.AlgebraicSU3RootCoordinatesConstruction`, namespaces
 `Langlands.GroupScheme.SimpleRootFiber` and `Langlands.Geometry.Building`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SU3 half.
-
 ## Purpose
 
-`AlgebraicRankOneCoordinatesExistenceStatement`, the target of Task 6836, has two clauses
+`AlgebraicRankOneCoordinatesExistenceStatement` has two clauses
 for an indivisible relative root `b`. The SL2 clause covers the case where `2 • b` is not a
 relative root. The SU3 clause, the published `AlgebraicSU3RootCoordinatesExistenceStatement`,
 covers the case where it is. The published module `AlgebraicSL2RootCoordinatesConstruction`

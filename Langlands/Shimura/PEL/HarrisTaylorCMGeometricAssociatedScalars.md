@@ -1,7 +1,5 @@
 # Quotient-ring coefficients on exact geometric CM torsors
 
-Author: Worker 57.
-
 This internal specialization constructs quotient-ring coefficient sheaves directly
 on the existing exact geometric CM coefficient torsors. Restriction of scalars
 identifies them with the components of the published integral associated system.
@@ -48,7 +46,7 @@ geometric tower. The arguments
 `existence : RelativeDualSchemeExistenceStatement`,
 `geometry : RelativeDualSchemeGeometryStatement` and
 `hRigid : CMGeometricCoarseRigidity ... U.obj` remain explicit.
-These premises are not proved in this unit. The exact geometric finite torsors
+These premises are not proved in this module. The exact geometric finite torsors
 already use the published dominant-unramified-etale criterion proof. No output
 sheaf, scalar comparison, trivialization or transition law is an extra premise.
 
@@ -240,17 +238,19 @@ the pure action comparison of
 [ConstantScalarRestriction](../Coefficients/ConstantScalarRestriction.md).
 The local proof follows the already published argument in
 [HarrisTaylorCMCoefficientLocalScalars](HarrisTaylorCMCoefficientLocalScalars.md)
-on these exact geometric torsors. Only published results and Worker 57's own
-published proof pattern are reused; there is no reused unpublished draft.
+on these exact geometric torsors. Only published results, including that
+proof pattern, are reused.
 
 The named representability, relative dual existence/geometry and coarse-rigidity
-premises remain obligations of their respective developments. This module does
+premises remain premises of this module. The Library proves the relative dual
+statements (`relativeDualSchemeExistence`, `relativeDualSchemeGeometry`) and
+`CMSmallLevelRigidityStatement` (`cmSmallLevelRigidity`). This module does
 not compare direct association with the existing arbitrary scheme inverse-image
 system `cmHarrisGeometricCoefficientSystem`. Such a comparison requires the
 separate arbitrary-morphism descent result. It makes no claim about finite free
 coefficient modules, independence of choices, completed lisse adic objects,
-scalar extension, tensor-with-invariants, source canonical-model identification,
-or completion of the host task.
+scalar extension, tensor-with-invariants, or source canonical-model
+identification.
 
 The pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

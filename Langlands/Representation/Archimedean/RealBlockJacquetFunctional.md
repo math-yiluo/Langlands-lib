@@ -10,7 +10,7 @@ standard module).
 ## Role and provenance
 
 This is internal infrastructure. It makes no claim from the literature and has no sources. It
-serves the proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067).
+serves the proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement`.
 In that proof, the maps between the standard modules of `pre ++ [x, y] ++ post` and of
 lists with the block `[x, y]` changed are built by Frobenius reciprocity from linear
 functionals. Those functionals weight the block Fourier coefficients at the identity by a

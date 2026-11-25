@@ -6,7 +6,7 @@ import Langlands.Automorphic.OperatorSubquotientLocalComponentStatement
 # Place components of irreducible operator subquotients at the real places
 
 Let `Q` be an operator subquotient of `GL_n` over a number field and `v` a real place.
-This module carries Worker 174's construction of irreducible admissible place components for
+This module carries the construction of irreducible admissible place components for
 cuspidal realizations (`Langlands.Automorphic.PlaceComponentExistence`) over to `Q`, and adds
 the isotypy of `Q` at `v`. The complex-place construction is in the companion module
 `Langlands.Automorphic.OperatorSubquotientPlaceComponentComplex`.
@@ -381,7 +381,7 @@ theorem representation_mem_of_realPlaceStable (v : RP) (Z : Submodule ℂ Q.Spac
     intro x hx
     have h : Q.representation (⟨e₁, he₁⟩ * ⟨e₂, he₂⟩ : automorphicOperatorAlgebra F n) x =
         Q.representation ⟨e₁, he₁⟩ (Q.representation ⟨e₂, he₂⟩ x) :=
-      LinearMap.congr_fun (map_mul Q.representation _ _) x
+      LinearMap.congr_fun (MonoidHom.map_mul Q.representation _ _) x
     exact (congrArg (fun y => y ∈ Z) h).mpr (h₁ _ (h₂ x hx))
 
 /-- For irreducible `Q`, such a subspace is `⊥` or `⊤`. -/

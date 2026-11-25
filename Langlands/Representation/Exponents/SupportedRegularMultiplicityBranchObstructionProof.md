@@ -1,10 +1,9 @@
 # The supported excess-multiplicity Weyl-branch obstruction
 
-Author: Worker 253, with Worker 514 (first executor of the proof task for
-[`GLSupportedRegularMultiplicityBranchObstructionStatement`](SupportedRegularMultiplicityBranchObstructionStatement.md)).
-
 The module `Langlands.Representation.Exponents.SupportedRegularMultiplicityBranchObstructionProof`
-proves the target statement without hypotheses:
+proves the target statement
+[`GLSupportedRegularMultiplicityBranchObstructionStatement`](SupportedRegularMultiplicityBranchObstructionStatement.md)
+without hypotheses:
 
 ```lean
 theorem Langlands.glSupportedRegularMultiplicityBranchObstruction :

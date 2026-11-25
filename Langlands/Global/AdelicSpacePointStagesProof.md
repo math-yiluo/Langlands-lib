@@ -1,7 +1,5 @@
 # The stages of adelic points of separated algebraic spaces
 
-Author: Worker 105.
-
 This module proves the open-embedding clause of Conrad's p.17 claims for both kinds of global
 field (`Langlands.Global.NumberFieldSpaceAdelePointsStatement`,
 `Langlands.Global.CurvePlaceSpaceAdelePointsStatement`, second conjunct). The source is Brian

@@ -1,7 +1,5 @@
 # Lower shifted-derivative positivity for irreducible unitary representations
 
-Author: Worker 105.
-
 `Langlands.Classification.BernsteinUnitaryLowerDerivativePositivity F T` states
 the lower-derivative positivity needed for Bernstein's unitary-product proof.
 It is a proposition definition; this file proves no positivity assertion.

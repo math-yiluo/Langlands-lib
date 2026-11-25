@@ -1,13 +1,12 @@
 # Renard C.I: generation by a complement to the first filtration level
 
-Worker 709 authored the reused draft of the closed Prop-valued statement
+This module states the closed Prop-valued statement
 `Langlands.Renard.NilpotentComplementGenerationStatement.{u}`. It expresses
 the two generation assertions in David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, Appendix C.I, printed
 p.275 / one-based PDF281, in the paragraph choosing a complement to `V_1`.
-This is a statement with no proof implementation. Worker 1200 checked the
-originals and the exact declaration, clarified the boundary cases below,
-and prepared this contribution.
+This is a statement with no proof implementation. A second reader checked the
+originals and the exact declaration.
 
 The registered governing source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -31,7 +30,7 @@ first filtration level. The hypothesis
 intersection is zero and their sum is the whole space. It does not require
 `W` to be invariant under the tuple or its generated algebra.
 
-The independently published import
+The import
 `Langlands.Algebra.RenardNilpotentIdealFiltration` provides the actual unital
 subalgebra `R = Algebra.adjoin ℂ (Set.range a)`, the ideal `I` spanned by the
 original entries viewed inside `R`, and the actual complex subspaces
@@ -83,11 +82,13 @@ The first assertion is expected from the complement decomposition and
 successive ideal actions. The source then uses the vanishing filtration to
 obtain generation of the whole module. This records the source proof route;
 neither argument is implemented in this statement pair, and vanishing is not
-an extra premise of the statement. A future proof may instead use Nakayama
-on the same actual algebra and action, with its route documented separately.
+an extra premise of the statement. A proof may instead use Nakayama
+on the same actual algebra and action;
+`RenardNilpotentComplementGenerationProof` does so and documents its route.
 
-The endpoint `V_(dim V) = 0` has its own statement task.
+The endpoint `V_(dim V) = 0` has its own statement,
+`RenardNilpotentFiltrationVanishingStatement`.
 Restriction injectivity, the bound involving `dim W`, the algebra splitting,
 monotonicity of the dimension maximum, the floor recurrence and the
-contradiction argument remain separate obligations, as do numerical base
-cases, carrier transport and the rest of the book program.
+contradiction argument are separate results, as are numerical base
+cases, carrier transport and the rest of the book.

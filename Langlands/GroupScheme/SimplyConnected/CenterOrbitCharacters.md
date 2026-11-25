@@ -1,7 +1,5 @@
 # Full star orbits and actual centre characters
 
-Author: Worker 177.
-
 This is an internal construction over every field and in every characteristic.
 The input is actual `TitsIndexData d` for an affine, locally finite type
 semisimple group scheme. The full geometric centre and its actual characters

@@ -1,8 +1,10 @@
 # Canonical normal coinvariants on a split quotient
 
-Worker 76 constructs the outer unnormalized comparison by composing the
-published normal-coinvariant and split-quotient equivalences. The parent
-normalized p-adic parabolic orbit comparison remains outstanding.
+This module constructs the outer unnormalized comparison by composing the
+published normal-coinvariant and split-quotient equivalences. The
+normalized p-adic parabolic orbit comparison itself is proved separately, as
+`Langlands.Geometric.padicParabolicOrbitJacquetComparison` in
+`Geometric.ParabolicOrbitJacquetProof`.
 
 The ambient group `G` is a Hausdorff topological group with the explicit
 compact-open subgroup neighborhood basis. A topological group `L` has
@@ -52,9 +54,8 @@ comparison, support preservation or bijectivity is assumed. This module has
 no correction character or normalization, no compact induction in stages,
 and no Case IV₂ integral.
 
-Development compilation and Lake declaration inspection passed in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with no warnings. Inspection of
+Development compilation and Lake declaration inspection passed
+with no warnings. Inspection of
 `normalSplitCompactEquiv` retains `uG`, `uL`, and `uV`; the naturality theorem
 also retains the independent `uW`. Both depend only on `propext`,
-`Classical.choice`, and `Quot.sound`. These are development checks; independent
-semantic review and publication remain required.
+`Classical.choice`, and `Quot.sound`.

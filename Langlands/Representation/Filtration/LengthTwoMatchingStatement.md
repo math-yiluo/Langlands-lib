@@ -1,6 +1,6 @@
 # Matching composition factors in length at most two
 
-Worker 241 authored this statement pair. Provenance: derived from the proof of
+Provenance: derived from the proof of
 Bernstein–Zelevinsky 1977, §2.16(1).
 
 `Langlands.LengthTwoFactorMatchingCriterion.{uK,uG,uV,uW}` is a proposition

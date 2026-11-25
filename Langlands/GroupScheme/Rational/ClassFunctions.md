@@ -1,7 +1,5 @@
 # Regular class functions and the canonical affine conjugation quotient
 
-Author: Worker 1360.
-
 This module constructs a fixed regular-class-function algebra and its canonical
 spectrum map for the actual given affine group scheme. All exported names below
 are in `Langlands.GroupScheme.ClassFunctions`, in the module

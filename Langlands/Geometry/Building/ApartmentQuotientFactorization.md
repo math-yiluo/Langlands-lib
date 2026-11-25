@@ -1,6 +1,6 @@
 # Common apartments and two-point subgroup factorization
 
-This internal unit gives an algebraic test for the existing quotient's
+This module gives an algebraic test for the existing quotient's
 common-apartment condition. It uses the published
 `ApartmentQuotient.HasCommonTranslatedApartment` without introducing another
 geometric predicate.
@@ -29,7 +29,7 @@ equivalence universally, allowing independent universes for `H` and `A`.
 `commonApartmentFactorization` proves that exact proposition.
 
 The provenance is the published quotient relation and its action and
-stabilizer lemmas. This unit proves the equivalence, not either side for a
+stabilizer lemmas. This module proves the equivalence, not either side for a
 particular valued root datum. For the actual building quotient the remaining
 algebraic obligation is `G(k) = P_x N(k) P_y` for every pair of apartment
 points. No common-apartment existence or maximal-boundedness theorem is

@@ -101,36 +101,36 @@ variable [CompleteSpace K]
 open DomainAutomorphism
 
 private theorem eventually_mem_locusStabilizer (d : RationalChart K A) {α : T → Aut A}
-    (hα : ∀ a, SpectralConvergesOn l (fun t => (α t).hom) (BoundedAlgHom.id K A) a) :
+    (hα : ∀ a, SpectralConvergesOn l (fun t => (α t).asIso.hom) (BoundedAlgHom.id K A) a) :
     ∀ᶠ t in l, α t ∈ DomainAutomorphism.locusStabilizer d.toDomain := by
   obtain ⟨ε, hε, hmin⟩ := d.exists_pos_le_denominator
   have hnum : ∀ᶠ t in l, ∀ j,
-      SpectralBound ((α t).hom.toAlgHom (d.numeratorClass j) - d.numeratorClass j) (d.radii j * ε) :=
+      SpectralBound ((α t).asIso.hom.toAlgHom (d.numeratorClass j) - d.numeratorClass j) (d.radii j * ε) :=
     Filter.eventually_all.mpr (fun j =>
       hα (d.numeratorClass j) (d.radii j * ε) (mul_pos (d.radii.positive j) hε))
   have hden : ∀ᶠ t in l,
-      SpectralBound ((α t).hom.toAlgHom d.denominatorClass - d.denominatorClass) (ε / 2) :=
+      SpectralBound ((α t).asIso.hom.toAlgHom d.denominatorClass - d.denominatorClass) (ε / 2) :=
     hα d.denominatorClass (ε / 2) (half_pos hε)
   filter_upwards [hden, hnum] with t hbt hft
-  have hib : SpectralBound ((α t).inv.toAlgHom d.denominatorClass - d.denominatorClass) (ε / 2) :=
+  have hib : SpectralBound ((α t).asIso.inv.toAlgHom d.denominatorClass - d.denominatorClass) (ε / 2) :=
     (spectralDisplacementSubgroup d.denominatorClass (ε / 2) (half_pos hε).le).inv_mem hbt
   have hif (j : Fin d.arity) :
-      SpectralBound ((α t).inv.toAlgHom (d.numeratorClass j) - d.numeratorClass j) (d.radii j * ε) :=
+      SpectralBound ((α t).asIso.inv.toAlgHom (d.numeratorClass j) - d.numeratorClass j) (d.radii j * ε) :=
     (spectralDisplacementSubgroup (d.numeratorClass j) (d.radii j * ε)
       (mul_pos (d.radii.positive j) hε).le).inv_mem (hft j)
   apply (DomainAutomorphism.mem_locusStabilizer d.toDomain (α t)).mpr
   apply Set.Subset.antisymm
   · rintro _ ⟨x, hx, rfl⟩
-    exact d.comap_mem_locus_of_spectralBound hmin (half_lt_self hε) (α t).inv hib hif hx
+    exact d.comap_mem_locus_of_spectralBound hmin (half_lt_self hε) (α t).asIso.inv hib hif hx
   · intro x hx
     exact ⟨(α t)⁻¹ • x,
-      d.comap_mem_locus_of_spectralBound hmin (half_lt_self hε) (α t).hom hbt hft hx,
+      d.comap_mem_locus_of_spectralBound hmin (half_lt_self hε) (α t).asIso.hom hbt hft hx,
       smul_inv_smul (α t) x⟩
 
 set_option backward.isDefEq.respectTransparency false in
 set_option backward.isDefEq.respectTransparency.types false in
 private theorem eventually_spectralBound_sectionMap (d : RationalChart K A) {α : T → Aut A}
-    (hα : ∀ a, SpectralConvergesOn l (fun t => (α t).hom) (BoundedAlgHom.id K A) a)
+    (hα : ∀ a, SpectralConvergesOn l (fun t => (α t).asIso.hom) (BoundedAlgHom.id K A) a)
     (b : d.toDomain.algebra) {ε : ℝ} (hε : 0 < ε) :
     ∀ᶠ t in l, ∃ ht : α t ∈ DomainAutomorphism.locusStabilizer d.toDomain,
       SpectralBound (stabilizerSectionMap d.toDomain ⟨α t, ht⟩ b - b) ε := by
@@ -144,7 +144,7 @@ private theorem eventually_spectralBound_sectionMap (d : RationalChart K A) {α 
     intro r hr
     filter_upwards [hpres, hα a r hr] with t ht hb
     rw [hF t ht]
-    change SpectralBound ((stabilizerSectionAction d.toDomain ⟨α t, ht⟩).hom.toAlgHom
+    change SpectralBound ((stabilizerSectionAction d.toDomain ⟨α t, ht⟩).asIso.hom.toAlgHom
       (d.toDomain.baseMap a) - d.toDomain.baseMap a) r
     rw [stabilizerSectionAction_baseMap, ← map_sub]
     exact hb.map d.baseMap.toBoundedRingHom
@@ -181,7 +181,7 @@ variable [CompleteSpace K]
 eventual preservation of each represented domain and spectral convergence
 of the actual restricted maps on all of its sections. -/
 theorem eventually_spectralBound_sectionMap (U : Domain K A) {α : T → Aut A}
-    (hα : ∀ a, SpectralConvergesOn l (fun t => (α t).hom) (BoundedAlgHom.id K A) a)
+    (hα : ∀ a, SpectralConvergesOn l (fun t => (α t).asIso.hom) (BoundedAlgHom.id K A) a)
     (b : U.algebra) {ε : ℝ} (hε : 0 < ε) :
     ∀ᶠ t in l, ∃ ht : α t ∈ locusStabilizer U,
       SpectralBound (stabilizerSectionMap U ⟨α t, ht⟩ b - b) ε := by
@@ -196,7 +196,7 @@ theorem eventually_spectralBound_sectionMap (U : Domain K A) {α : T → Aut A}
   change Fin c.size at i
   obtain ⟨hi, hb⟩ := ht i
   change SpectralBound ((c.map i).restriction
-    ((stabilizerSectionAction U ⟨α t, hU⟩).hom.toAlgHom b - b)) ε
+    ((stabilizerSectionAction U ⟨α t, hU⟩).asIso.hom.toAlgHom b - b)) ε
   rw [restriction_sectionDisplacement (c.map i) (α t) hi hU b]
   exact hb
 

@@ -1,6 +1,6 @@
 # Pair gamma matching from two Hecke Euler families
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaHeckeReduction`). `HasHeckeGammaCertificate` packages, for one
+Supporting module for the proof of `AssociatedGammaStatement` (module `Langlands.Automorphic.AssociatedGammaHeckeReduction`). `HasHeckeGammaCertificate` packages, for one
 self-dual measure `ν`, an original bad set `T ∋ v`, depths, an automorphic and an arithmetic
 `HeckeEulerFamily`, actual gamma factors `G` (automorphic, `IsAutomorphicPairGammaFactor`) and
 `H` (arithmetic, `IsArithmeticPairGammaFactor`) whose rational continuations are the untwisted

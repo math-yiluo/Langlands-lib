@@ -40,8 +40,12 @@ universe-polymorphic global propositions:
 - `DynamicConnectedStatement`;
 - `ConnectedReductiveFieldExtensionStatement`.
 
-All six remain proof obligations. This contribution supplies no unconditional
-proof of the host target and does not weaken or edit that target.
+All six are premises of this module; the Library proves each of them
+(`borelConjugacy`, `borelNormalizer`, `parabolicDynamic`,
+`oppositeCellStatement`, `dynamicConnected` and
+`connectedReductiveFieldExtensionStatement`). This module supplies no
+unconditional proof of `ParabolicSelfNormalizerStatement` and does not weaken
+or edit that statement.
 
 The entry construction `normalizerPointsEquivOfStructuralStatements` specializes
 the conditional equality to an arbitrary test scheme `T`, transports normalizer
@@ -51,7 +55,3 @@ point equivalence. It gives a multiplicative equivalence with actual morphisms
 with the original inclusion equals the original normalizer point. No affine or
 reducedness assumption is imposed on `T`, and all results retain arbitrary
 universe `u`.
-
-Worker 1346 implemented this assembly. Worker 1297 supplied the actual
-algebraically closed Borel-factorization adapter used to remove the earlier
-factorization premise.

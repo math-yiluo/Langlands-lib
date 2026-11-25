@@ -1,7 +1,5 @@
 # Weighted monomial bounds and series evaluation formulas
 
-Author: Worker 56.
-
 `GeneralizedTateAlgebra.HasBoundedMonomials r B b` says that one positive
 real number `C` bounds the norm of every actual finite monomial in the tuple
 `b`, after dividing by its positive weight `r.weight d`. Explicitly, the

@@ -139,7 +139,7 @@ unchanged. The adaptation makes only these changes:
 - the FLT imports are replaced by Mathlib imports, and the proof terms are omitted.
 
 The Lean file carries a notice recording this adaptation. Unmodified copies of the source's
-`LICENSE`, `NOTICE` and `ATTRIBUTION.md` accompany this contribution as
+`LICENSE`, `NOTICE` and `ATTRIBUTION.md` accompany this file as
 `licenses/Anthropic-FLT/LICENSE`, `licenses/Anthropic-FLT/NOTICE` and
 `licenses/Anthropic-FLT/ATTRIBUTION.md`. The source's `NOTICE` begins:
 

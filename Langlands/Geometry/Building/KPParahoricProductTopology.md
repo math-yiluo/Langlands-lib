@@ -1,6 +1,6 @@
 # Canonical topology on actual full-parahoric multiplication
 
-This derived support unit equips the existing two-factor map
+This module equips the existing two-factor map
 `ParahoricBuildingData.parahoricProductMap` with continuity, without changing
 its factors or codomain. It also proves continuity of the existing full
 Iwahori multiplication maps and conditional compactness consequences.
@@ -57,8 +57,10 @@ the published canonical-point functoriality, topological group operations,
 two-factor algebraic comparison, and root-block compactness. It introduces
 no new source assertion.
 
-The compactness premises here are separate obligations, not extra premises
-for `ChamberIwahoriCompactOpenStatement`. This unit proves neither those
+The compactness premises here are separate statements, not extra premises
+for `ChamberIwahoriCompactOpenStatement`; the Library proves that statement as
+`ParahoricBuildingData.chamberIwahoriCompactOpen` (module
+`ChamberIwahoriCompactOpenProof`). This module proves neither those
 premises nor a range equality for an ordered Iwahori map. It establishes no
 ambient openness, structural decomposition, anisotropic compactness, or
 compact openness of the full chamber Iwahori from the target's unchanged

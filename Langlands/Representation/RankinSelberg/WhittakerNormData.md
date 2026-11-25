@@ -1,7 +1,5 @@
 # Pointwise norm data on the left-unipotent quotient
 
-Author: Worker 594.
-
 This is a derived construction from the published definitions in
 `Langlands.Representation.RankinSelberg.QuotientIntegrals`, the unitary
 characters in `Langlands.Representation.Whittaker.GeneralLinear`, and the

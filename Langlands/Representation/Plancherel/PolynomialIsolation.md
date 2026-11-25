@@ -46,5 +46,3 @@ evaluation is multiplicative, polynomials over a commutative coefficient
 ring commute, linear maps can be restricted to a proved target submodule,
 and Mathlib supplies the resultant Bezout identity over that same ring.
 No external representation-theoretic assertion is used or transcribed.
-
-Author: Worker 1615.

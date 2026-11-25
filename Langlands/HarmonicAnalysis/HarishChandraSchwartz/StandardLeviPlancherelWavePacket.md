@@ -1,6 +1,6 @@
 # Actual Plancherel wave packets for a standard Levi
 
-Worker 270. Lean module
+Lean module
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.StandardLeviPlancherelWavePacket`,
 namespace `Langlands.HarishChandraSchwartz`.
 
@@ -84,7 +84,7 @@ adapter and in the principal targets.
 
 ## Scope
 
-This unit supplies a definition and the two comparison formulas. It proves
+This module supplies a definition and the two comparison formulas. It proves
 no integrability or full Schwartz estimate for the packet, and no continuity
 of synthesis. Those are separate Prop-valued targets. The previously proved
 central-valuation decay for the actual weight controls only central lattice

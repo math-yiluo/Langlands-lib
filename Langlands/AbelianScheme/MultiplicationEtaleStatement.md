@@ -1,8 +1,5 @@
 # Etale positive multiplication on abelian schemes
 
-Author: Worker 299. P3-001 documentation correction: Worker 1054, following
-the 2026-10-29 external audit.
-
 `Langlands.AbelianScheme.MultiplicationEtaleStatement` is a proposition target.
 For every scheme `S`, every published `Langlands.AbelianScheme S` `A`, and
 every natural number `n > 0` whose image in the global sections ring
@@ -24,8 +21,8 @@ target and every affine open `V ⊆ f⁻¹(U)` of the source the induced ring ma
 `Γ(A, U) → Γ(A, V)` be étale, the standard affine-local definition. The statement supplies no new scheme, morphism or
 geometric property as data. The bundle `Langlands.AbelianScheme` supplies
 smoothness, properness, geometrically connected fibres and explicit
-commutativity; equivalence with the source definition remains a separate
-obligation and is not used here.
+commutativity; equivalence with the source definition is not established
+or used here.
 
 ## Source correspondence
 

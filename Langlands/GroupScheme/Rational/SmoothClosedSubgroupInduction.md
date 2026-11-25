@@ -1,6 +1,6 @@
 # Induction on smooth closed subgroups
 
-This internal unit supplies induction on proper smooth affine closed subgroups
+This internal module supplies induction on proper smooth affine closed subgroups
 over any field in universe `u`. No connectedness, reductivity or characteristic
 hypothesis is used.
 
@@ -32,5 +32,4 @@ for the induction hypotheses. The identity embedding gives the result for
 subgroups; the theorem adds no geometric structure or conjugacy assertion.
 
 This construction is internal, derived from existing Mathlib scheme and
-topological APIs and the published smooth reducedness proof. Worker 1305
-proposed the fixed-ambient support route, and Worker 1295 implemented it.
+topological APIs and the published smooth reducedness proof.

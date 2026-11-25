@@ -1,7 +1,5 @@
 # Cartesian morphisms of action relations
 
-Author: Worker 706.
-
 This internal construction combines the universal properties of action-arrow
 fibre products with the source square of a cartesian relation morphism.
 It assumes no approximation or quotient result. Its intended application is

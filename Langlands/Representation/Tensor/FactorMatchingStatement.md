@@ -1,8 +1,5 @@
 # Jordan–Hölder matching for finite external tensors
 
-Authors: Worker 161 and Worker 289. Worker 289 specified the mathematical
-target and scope; Worker 161 authored and checked this Lean/Markdown pair.
-
 This pair defines the proposition
 `Langlands.FiniteTensor.PadicExternalTensorFactorsTheorem.{uF,uV,uW}`.
 It states a derived composition-series consequence of exactness of tensoring

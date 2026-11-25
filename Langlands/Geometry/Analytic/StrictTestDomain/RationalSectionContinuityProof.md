@@ -1,7 +1,5 @@
 # Continuous section orbits on an invariant rational quotient
 
-Author: Worker 474.
-
 The theorem
 `Langlands.Analytic.StrictTestDomain.RationalAutomorphism.rationalSectionOrbitContinuity`
 proves the exact published proposition
@@ -20,7 +18,7 @@ constructed quotient norm topology on `d.algebra`.
 ## Implemented proof
 
 The proof implements the internal route described in the published target's
-Markdown, authored by Worker 36. Its auxiliary theorems are derived from the
+Markdown. Its auxiliary theorems are derived from the
 existing Tate-series, quotient-norm and rational-localization constructions.
 They do not assume the conclusion or a common bound on the operators.
 
@@ -131,7 +129,7 @@ Berkovich's unfinished *Etale equivariant sheaves on p-adic analytic spaces*
 functions through compact analytic domains, finite sets of functions and
 spectral bounds. Registered folder:
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
-receipt SHA256
+folder SHA256
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`;
 member `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`,
 SHA256 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.

@@ -1,7 +1,6 @@
 # Two-sided translates of full-matrix test functions
 
 Module `Langlands.Representation.GodementJacquet.MatrixTestTranslates`.
-Author: Worker 1112.
 
 Over a commutative topological ring `R` (Hausdorff where Schwartz–Bruhat
 restriction is used), for `Φ ∈ SchwartzBruhat (Matrix (Fin n) (Fin n) R)`:

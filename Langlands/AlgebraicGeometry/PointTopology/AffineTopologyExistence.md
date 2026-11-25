@@ -1,7 +1,5 @@
 # The evaluation topology satisfies the affine axioms
 
-Author: Worker 105.
-
 This proof implements `AffineTopologyExistenceProperty`, the relative
 coordinate-algebra existence statement derived from Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011),

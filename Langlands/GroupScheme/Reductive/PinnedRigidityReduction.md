@@ -1,9 +1,5 @@
 # Pinned automorphism rigidity: conditional geometric reduction
 
-Implementation: Worker 1368. Workers 1416 and 1467 supplied the task's
-factor-pair, weight-coordinate and root-induction plan; Worker 1467 supplied
-the actual root weight-coordinate helper.
-
 This is an internal derivation from the actual pinning, cyclic root and
 weight-coordinate constructions, scalar-linear map rigidity, opposite-factor
 pair uniqueness, finite Weyl-image reflection comparison, base induction and
@@ -16,7 +12,10 @@ The prerequisites are precisely the published maximal-torus self-centralization
 statement and existence of actual normalizing opposite factor pairs for every
 actual pinning over every field. This second premise is restricted to supplied
 split pinnings; it does not assume a general relative-root classification.
-Both premises remain proof obligations.
+Both premises are hypotheses here. The Library proves them as
+`maximalTorusCentralizer` and `splitPinnedOppositeFactorPairs`, and
+`pinnedAutomorphismRigidity` (module `PinnedRigidityProof`) is the
+unconditional theorem.
 
 The simple-root step is unconditional. Every vector in the simple Lie weight
 line is a scalar multiple of the pinning's chosen vector, by its actual linear
@@ -38,7 +37,7 @@ every test scheme. This establishes the target's required simple-root
 fixedness directly from its differential hypothesis, without assuming fixedness
 of root subgroup points or root vectors outside the simple ones.
 
-The previously implemented pinned-root reduction uses actual factor pairs
+The pinned-root reduction uses actual factor pairs
 and their uniqueness to construct fixed reflection normalizers. Finite full
 Weyl image identifies their integral reflection functionals with the supplied
 root datum. Base induction propagates full subgroup fixedness from the simple
@@ -51,4 +50,4 @@ All group schemes, differentials, torus maps and root subgroups are the actual
 Library objects. The original statement and its imports are unchanged. All
 universes, fields, characteristics and groups with central tori are retained,
 including an empty root system. No rank-one existence theorem or torus
-self-centralization proof is supplied by this conditional contribution.
+self-centralization proof is supplied by this conditional module.

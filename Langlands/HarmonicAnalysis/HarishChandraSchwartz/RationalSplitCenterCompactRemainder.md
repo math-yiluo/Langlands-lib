@@ -1,6 +1,7 @@
 # A compact central remainder for the actual split-central quotient
 
-This internal auxiliary construction for Task 7500 converts full-central
+This internal auxiliary construction for Waldspurger's Corollary VIII.3.2 on
+the actual compatible split-central quotient converts full-central
 factors in a supplied group cover into a single compact right factor on the
 actual quotient by the split component. It reuses the Library's proved
 compactness of the full scheme-center rational-point quotient and its

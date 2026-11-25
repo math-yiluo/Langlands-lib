@@ -1,7 +1,5 @@
 # Reduction of associated coefficient sheaves
 
-Author: Worker 13.
-
 Let `R : Type u` be a commutative ring, `I : Ideal R`, `G : Type u` a group,
 `X : Scheme.{u}`, and `Y : Action X.Etale G`. Module carriers share universe
 `u`. All sheaves use the actual small etale site of `X`. The geometric action

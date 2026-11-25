@@ -74,12 +74,12 @@ along their composite. The proofs compare the actual sheaf maps on sections;
 after subtype extensionality each equation is reflexivity. These are coherent
 lax composition maps; no assertion that `compMap` is invertible is made.
 
-## Provenance and remaining obligations
+## Provenance and obligations
 
 All new objects are compositions or universal factorizations of the imported
 concrete functors. The identity isomorphism uses Mathlib's fully faithful
 adjunction result. The remaining intrinsic equations are proved on the original
 module sections. No new existence assumption, axiom, or higher comparison is
-introduced. This unit does not establish exactness, preservation of local
+introduced. This module does not establish exactness, preservation of local
 smoothness by ordinary direct image, comparison of Godement resolutions,
 derived-functor identities, or compact-support and arithmetic realizations.

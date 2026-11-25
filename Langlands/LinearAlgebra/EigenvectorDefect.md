@@ -9,7 +9,7 @@ for a complex vector space `X`, an endomorphism `L`, and an eigenvector equation
 The proof is induction on `k`, using linearity to evaluate the successor power.
 There is no nonzero-vector or finite-dimensional hypothesis.
 
-The Integrator moved this existing declaration, with its statement and proof
+This existing declaration was moved, with its statement and proof
 unchanged, from
 [TemperedOppositeJacquetScalarLayerAssembly](../Representation/Classification/TemperedOppositeJacquetScalarLayerAssembly.md).
 Its namespace and public name are retained, and the original module imports it.

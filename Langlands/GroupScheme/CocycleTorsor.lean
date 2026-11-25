@@ -492,7 +492,7 @@ theorem comp_diffCover {Z : Over S} (t : Z ⟶ trivialCover G U ⊗ trivialCover
 
 theorem exists_diff : ∃ d : torsor ξ ⊗ torsor ξ ⟶ G.X, (proj ξ ⊗ₘ proj ξ) ≫ d = diffCover ξ := by
   refine exists_desc (proj ξ ⊗ₘ proj ξ) (diffCover ξ) (fun {Z} t₁ t₂ he => ?_)
-  rw [tensorHom_proj_proj, tensorHom_proj_proj] at he
+  rw [tensorHom_proj_proj ξ t₁, tensorHom_proj_proj ξ t₂] at he
   have h1 := congrArg (· ≫ fst (torsor ξ) (torsor ξ)) he
   have h2 := congrArg (· ≫ snd (torsor ξ) (torsor ξ)) he
   simp only [lift_fst, lift_snd] at h1 h2

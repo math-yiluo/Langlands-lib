@@ -99,7 +99,7 @@ quotients, their spectra, the full `Domain` universal property, and the
 constructed section actions and base transport. The displacement subgroup,
 finite intersection, and conjugation-image proof patterns adapt the published
 strict rational constructions in `StrictTestDomain.SpectralDisplacement` and
-`StrictTestDomain.SpectralTransport`, with Worker 36 credited as coauthor.
+`StrictTestDomain.SpectralTransport`.
 Here the domain input is a full representation over general positive-radius
 algebras, and transport retains its algebra rather than using a different
 rational presentation and a comparison isomorphism. The generic spectral-bound

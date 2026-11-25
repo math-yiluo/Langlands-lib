@@ -1,8 +1,8 @@
 # Separating full-Hecke quotients from compact-open corners
 
-Author: Worker 138. Namespace `Langlands.Renard.Smooth`.
+Namespace `Langlands.Renard.Smooth`.
 
-This derived construction unit gives the actual full-Hecke action on a quotient of its unitization and proves that a nonnilpotent compact-open corner element has a separating, nondegenerate, additively simple quotient. It is an intermediate step toward Renard III.1.11, and does not yet assert the existence of the separating smooth representation or prove `HeckeCompletenessStatement`.
+This module, a derived construction, gives the actual full-Hecke action on a quotient of its unitization and proves that a nonnilpotent compact-open corner element has a separating, nondegenerate, additively simple quotient. It is an intermediate step toward Renard III.1.11, and does not yet assert the existence of the separating smooth representation or prove `HeckeCompletenessStatement`.
 
 The governing source is David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, III.1.11, printed pp.64–65 / PDF pp.70–71, together with Appendix B.III, printed p.273 / PDF p.279; registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The unitization compression argument is internal derived content replacing the printed proof's use of countability of the whole Hecke algebra. Only the fixed corner needs countable dimension here.
 

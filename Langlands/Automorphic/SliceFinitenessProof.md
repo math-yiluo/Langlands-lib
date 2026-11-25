@@ -1,6 +1,6 @@
 # Finiteness transport to smooth infinite slices
 
-Author: Worker 94. The theorem
+The theorem
 `Langlands.Automorphic.SliceFinitenessProof.sliceFiniteness` proves the published
 `Langlands.Automorphic.SliceFinitenessStatement K n`, for arbitrary
 `K : Type u`, `[Field K]`, `[NumberField K]`, and `n : ℕ`, including rank zero.

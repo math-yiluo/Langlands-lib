@@ -1,8 +1,10 @@
 # Reduction of henselian extension closedness to complete fields
 
-This derived supporting unit reduces the full unchanged
-`HenselianExtensionPointEmbeddingStatement` to the published, still unproved
-`CompleteExtensionPointClosedRangeStatement`. It does not prove that prerequisite
+This derived supporting module reduces the full unchanged
+`HenselianExtensionPointEmbeddingStatement` to the published
+`CompleteExtensionPointClosedRangeStatement`, which is proved in
+`CompleteExtensionPointClosedRangeProof` (`completeExtensionPointClosedRange`).
+It does not prove that prerequisite
 or assert unconditional completion of Conrad's Proposition 5.11(3).
 
 The construction `ExtensionClosedReduction.towerExtensionPointMap` sends points

@@ -1,7 +1,5 @@
 # The association equivalences for cuspidal Levi induction
 
-Authors: Worker 72 and Worker 120 (logical assembly).
-
 `Langlands.CuspidalSupport.cuspidalInductionAssociation` proves the published
 `CuspidalInductionAssociationTheorem.{uF,uV,uW}` from
 `NormalizedCuspidalInductionStatement`. It quantifies every prime, every
@@ -74,7 +72,6 @@ through the published forward factor proof. Registered source:
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 Rank zero is the internal extension already proved in the rank-zero module.
 
-The original statement pair and all imported published pairs are unchanged.
 The conditional helpers in `AssociationAssembly` have their inputs fully
 discharged here. The closing theorem assumes no association equivalence or
 other unproved proposition.

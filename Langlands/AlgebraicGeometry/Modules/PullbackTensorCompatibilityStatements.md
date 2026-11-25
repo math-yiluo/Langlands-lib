@@ -1,7 +1,7 @@
 # Compatibility targets for the canonical pullback tensor comparison
 
 This module states three laws for the fixed natural transformation
-`pullbackTensorComparison` from the published `PullbackTensor` module.
+`pullbackTensorComparison` from the `PullbackTensor` module.
 Every statement is a proposition definition in arbitrary universe `u`.
 No law is proved or assumed as an instance in this module.
 
@@ -42,13 +42,13 @@ explicit factor swap.
 `PullbackTensorCompatibilityStatement` is the conjunction of identity,
 composition, and symmetry compatibility, in that order.
 
-## Provenance and remaining obligations
+## Provenance and proofs
 
-Worker 59 authored these internal categorical targets. Their equations
+These are internal categorical targets. Their equations
 are the tensor components of compatibility of an oplax monoidal functor
 with identity/composition natural isomorphisms, and its compatibility
-with symmetry, expressed directly using the published explicit tensor
-and canonical maps. The relevant conventions are those of pinned
+with symmetry, expressed directly using the Library's explicit tensor
+and canonical maps. The relevant conventions are those of
 Mathlib's `CategoryTheory.Monoidal.Functor`,
 `CategoryTheory.Monoidal.NaturalTransformation`, and
 `AlgebraicGeometry.Modules.Sheaf`. The imported `Tensor` and
@@ -57,9 +57,14 @@ underlying constructions. These targets are internal specialization of
 categorical laws, not claimed translations of a separate source theorem.
 
 The statements have no flatness, quasicoherence, local-freeness,
-affineness, invertibility, or coherence hypotheses. A separate proof
-task must establish the conjunction without additional assumptions.
-This unit does not assert tensor-comparison invertibility, associativity,
+affineness, invertibility, or coherence hypotheses. The conjunction is
+proved without additional assumptions as `pullbackTensorCompatibility`
+(module `PullbackTensorCompatibilityProofs`).
+This module does not assert tensor-comparison invertibility, associativity,
 unit compatibility, or an assembled strong symmetric monoidal pullback
-instance. The parent task also retains the comparison between the
-explicit tensor's unitors and swap and the localized monoidal structure.
+instance. The comparison between the explicit tensor's unitors and swap and
+the localized monoidal structure is proved as `tensorMonoidalComparison` (module
+`TensorMonoidalComparisonProofs`); the module `PullbackMonoidal` uses it to carry
+the explicit unit and symmetry laws of the pullback comparison over to the localized
+tensor (`localizedPullbackTensorLeftUnitor`, `localizedPullbackTensorRightUnitor`,
+`localizedPullbackTensorSymmetry`).

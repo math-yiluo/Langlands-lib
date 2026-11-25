@@ -1,8 +1,6 @@
 # Renard A.IV: subobject intersections and unions as limits and colimits
 
-Author: Worker 709.
-
-This statement unit interprets the intersection exercise in Renard A.IV.1
+This module interprets the intersection exercise in Renard A.IV.1
 example 6 and its union dual in A.IV.2. The chosen category is Mathlib's
 actual `Subobject X`, with its existing partial order. For a discrete family
 of subobjects, a cone is limiting exactly when its vertex is a greatest
@@ -43,7 +41,7 @@ author errata `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 were also checked on PDF18–19. Those pages contain no correction to the
 subobject exercise or its order-bound definitions. They refer to an older
-edition; the 2026 original governs this unit. No separate source errata
+edition; the 2026 original governs this module. No separate source errata
 note was found in the inspected published notes or project notes.
 
 The exercise does not prescribe a particular category. Choosing the thin
@@ -54,7 +52,7 @@ ordered conjunction are internal formal packaging. They are not additional
 definitions or numbered claims attributed to the book.
 
 The published note `notes/renard/appendix-a-corrections.md` explains the
-general limit/colimit prose arrow errors. This unit uses actual Mathlib
+general limit/colimit prose arrow errors. This module uses actual Mathlib
 cones and cocones, with the concrete source factor directions. It requires
 no connectedness restriction on the index category.
 
@@ -70,7 +68,7 @@ classes of A.I.2. No replacement order or lattice instance is installed.
 In its canonical thin category a morphism `P ⟶ Q` records `P ≤ Q`.
 Compositions express transitivity. A family `F : I → Subobject X` determines
 the actual functor `Discrete.functor F : Discrete I ⥤ Subobject X`.
-Both the limit and colimit in this unit are taken in that subobject
+Both the limit and colimit in this module are taken in that subobject
 category.
 
 The object, ambient morphism and family-index universes `uC`, `vC` and
@@ -140,5 +138,5 @@ constructs particular least upper bounds from actual coproducts and images
 and proves a source A.VI.2 existence result. That construction, AB5
 distributivity, general conditional abelian-category completeness, the
 general cone bridge, elementary diagram shapes, inverse/direct systems and
-concrete abelian-group limits remain their separate units. This unit does
-not complete A.IV, Appendix A or the whole-book program.
+concrete abelian-group limits are in separate modules. This module does
+not complete A.IV, Appendix A or the formalization of the whole book.

@@ -1,7 +1,5 @@
 # Natural forgetting from actual unpointed CM polarized towers
 
-Author: Worker 57.
-
 This derived construction forgets the actual polarization and invariant level
 orbit from the existing unpointed normalized CM polarized presheaf. It
 constructs a natural transformation to the restriction of the existing joint

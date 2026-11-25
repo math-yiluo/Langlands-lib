@@ -1,7 +1,7 @@
 # Unitarity of induced reciprocity representations
 
-Author: Worker 5134. Module `Langlands.Automorphic.InducedReciprocityUnitary`,
-namespace `Langlands.ClassField.Global.RelativeWeilGroup`. Universes: `u` (the
+Module `Langlands.Automorphic.InducedReciprocityUnitary`,
+namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`. Universes: `u` (the
 number fields) and `uV` (the carrier universe of
 `inducedReciprocityRepresentation`).
 

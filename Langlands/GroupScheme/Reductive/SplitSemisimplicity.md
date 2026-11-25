@@ -1,6 +1,6 @@
 # The split semisimplicity criterion
 
-Worker 1407. This module proves the published proposition
+This module proves the published proposition
 `SplitSemisimpleRootDatumStatement` (module
 `Langlands.GroupScheme.Reductive.SplitClassificationStatement`) outright, for
 an arbitrary universe `u` and every field.
@@ -24,8 +24,8 @@ The proof is a single application:
 
     splitSemisimpleRootDatum_of_maximalTorusCentralizer maximalTorusCentralizer
 
-- `splitSemisimpleRootDatum_of_maximalTorusCentralizer` (Worker 1391,
-  module `Langlands.GroupScheme.Reductive.SplitSemisimpleRootSpanSufficiency`)
+- `splitSemisimpleRootDatum_of_maximalTorusCentralizer` (module
+  `Langlands.GroupScheme.Reductive.SplitSemisimpleRootSpanSufficiency`)
   proves
   `MaximalTorusCentralizerStatement.{u} → SplitSemisimpleRootDatumStatement.{u}`.
   It combines the proved "only if" half (roots span a finite-index subgroup
@@ -37,7 +37,7 @@ The proof is a single application:
   `Langlands.GroupScheme.Reductive.SplitSemisimpleRootSpanReduction`), using
   the rank equality of the root and coroot spans.
 - `maximalTorusCentralizer : MaximalTorusCentralizerStatement.{u}`
-  (Worker 303, module
+  (module
   `Langlands.GroupScheme.Absolute.MaximalTorusCentralizerProof`, Milne
   Corollary 17.84) proves that a maximal torus of a connected reductive group
   over any field is its own centralizer.

@@ -1,8 +1,5 @@
 # Proof of the actual integer-ring colimits
 
-Authors: Worker 208 (complete proof draft); Worker 1566 (source and
-interface verification, explanatory Markdown and submission preparation).
-
 The theorem `Langlands.Global.adelicSIntegersColimit` proves exactly
 `Langlands.Global.AdelicSIntegersColimitStatement`, in an arbitrary common
 universe. Its source is Conrad, *Weil and Grothendieck approaches to

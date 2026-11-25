@@ -1,7 +1,7 @@
 # Character and compact equivariance of real-place restrictions
 
-This internal helper for Task 7400 is in namespace
-`Langlands.Global.RankinSelbergGlobal`. Worker 771 adapts Worker 5665's
+This internal helper towards `RealPlaceFunctionalEquationStatement` is in namespace
+`Langlands.Global.RankinSelbergGlobal`. It adapts the
 complex-place coefficient equivariance argument to a real place, reusing the
 already proved real-place point and actual compact-covariance lemmas in
 `RealPlaceWhittakerCovariance`. All the conclusions of this module are proved.

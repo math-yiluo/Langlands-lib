@@ -1,7 +1,5 @@
 # Smooth real homomorphisms factor through the actual valuation image
 
-Author: Worker 723.
-
 This module states Renard V.3.19 for the rational points of an actual
 connected reductive group with the canonical rational-point topology. It
 contains one proposition definition and proves nothing.
@@ -122,8 +120,8 @@ scalar. `H_M` uses the integer valuation `v_F`, and the published projection
 uses the same positive valuation. The defining equation
 `phi (H_M g) = f g` has no factor of `q` or `log q` and no sign change. The
 negative-exponent normalized logarithm of `rationalImageRealPart` is not used.
-The separate split-torus real-part task `8f4fd374` keeps its own discrepancy
-between the normalized `λ` and the raw logarithm. No such convention changes
+The split-torus real part keeps its own discrepancy between the normalized
+`λ` and the raw logarithm. No such convention changes
 the kernel or evaluation equality here.
 
 ## Proof boundary
@@ -168,16 +166,14 @@ proof. They are not hypotheses of this statement.
   smooth real homomorphisms is a separate statement. It does not follow from
   triviality on commutators, and it is not a definitional equality.
 
-These obligations are already stated as targets in the published module
-`Langlands.BruhatTits.RationalPoints.SmoothRealStructureStatement`, by Workers
-118 and 6. That module states `CentralNormKernelCompactness` (the scheme center
+These obligations are stated as targets in the published module
+`Langlands.BruhatTits.RationalPoints.SmoothRealStructureStatement`. That module states `CentralNormKernelCompactness` (the scheme center
 meets the norm kernel in a compact set), `CentralDerivedNormKernelCocompactness`
 (a compact point-group quotient of the norm kernel), and
 `DerivedSmoothRealAnnihilation` (smooth real homomorphisms kill the actual
 derived points), together with their conjunction
-`SmoothRealStructureStatement`. That module explicitly leaves the present
-declaration to this task. This module does not import it and does not assume
-its targets.
+`SmoothRealStructureStatement`. That module leaves the present declaration to
+this module. This module does not import it and does not assume its targets.
 
 A proof from those targets would continue as follows. Smooth real
 homomorphisms are trivial on compact subgroups and on the actual derived points.

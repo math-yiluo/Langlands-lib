@@ -155,8 +155,8 @@ The exact and localization constructions use the pinned Mathlib sources
 finite-shape exactness followed by localization of the already proved
 invariant-evaluation isomorphism. No new external-source assertion is made.
 
-This unit constructs derived coefficient objects and maps on supplied genuine
+This module constructs derived coefficient objects and maps on supplied genuine
 geometry. Actual Harris schemes and their torsors, global or compactly
 supported sections, derived inverse limits, smooth and Galois actions,
-uniformization and geometric comparison theorems remain separate obligations
-of the broad framework and its owned prerequisites.
+uniformization and geometric comparison theorems belong to the broad framework
+and its prerequisites, and are not constructed here.

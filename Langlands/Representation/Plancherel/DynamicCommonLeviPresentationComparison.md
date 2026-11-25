@@ -63,5 +63,5 @@ not assert rationality of the actual standard integral.
 
 Comparison of normalized induction, compact restrictions and the source
 quotient measures, and extraction of a nonempty rational starting region from
-IV.1.1, are separate obligations. This unit proves no convergence or analytic
+IV.1.1, are separate obligations. This module proves no convergence or analytic
 existence statement and makes none a structural hypothesis.

@@ -1,7 +1,5 @@
 # Highly ramified stability of class pair gamma factors
 
-Author: Worker 389.
-
 This module transfers the two-factor stability of JPSS pair gamma factors
 (`RankinSelberg.StableTwist.pairGammaStability`, module
 `Langlands.Representation.RankinSelberg.StableTwist.JPSSStability`) from representations to

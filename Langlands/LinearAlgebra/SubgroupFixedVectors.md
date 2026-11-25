@@ -1,7 +1,9 @@
 # Fixed vectors for arbitrary subgroups of coefficient automorphisms
 
-Worker 537. Internal algebraic prerequisite for the stabilizer-fixed character
-line in Task 7149.
+Internal algebraic prerequisite for the stabilizer-fixed character lines of
+`Langlands.GroupScheme.MatrixRepresentation.IrreducibleCharacterLines`, in the
+classification of representations of a group of multiplicative type by Galois
+orbits of characters.
 
 Let `H` be any subgroup of the automorphism group of a field extension `K/k`.
 A `K`-subspace of finitely supported coordinate vectors is invariant if applying

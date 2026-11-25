@@ -1,6 +1,6 @@
 # Parity support and opposite-parameter block operators
 
-This internal unit derives adapters for the explicit real block multipliers
+This module derives adapters for the explicit real block multipliers
 and their actual Frobenius maps. It uses the finite-product formulas, the
 proved Fourier parity and uniqueness theorems, and scalar reciprocal identities.
 It has no external source.
@@ -42,7 +42,7 @@ makes the crossing with parameter `-ν` a left inverse. Fourier coefficient
 comparison proves the right inverse as well. `parameterEquiv`
 packages these two actual maps as an explicit complex linear equivalence.
 
-This unit proves inverse identities for single crossings and provides support
+This module proves inverse identities for single crossings and provides support
 adapters. It constructs no parameter limit or normalized four-crossing operator.
 For an arbitrary parameter the maps need not intertwine the fixed Lie actions;
 no such assertion is made here.

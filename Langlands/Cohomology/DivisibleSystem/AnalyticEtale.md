@@ -1,28 +1,30 @@
 # Harris's divisible systems for étale `G`-sheaves on analytic spaces
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Cohomology.DivisibleSystem.TwistedExact` and
-  `Langlands.Sheaf.Equivariant.TwistedExactGodement` (Worker 26, submitted with this module):
+  `Langlands.Sheaf.Equivariant.TwistedExactGodement` (ported together with this module):
   Harris's §2 constructions for a coreflective exact subcategory of sheaves on a twisted
   site.
-- `Langlands.Sheaf.Equivariant.AnalyticEtaleComparison` (Worker 26):
+- `Langlands.Sheaf.Equivariant.AnalyticEtaleComparison`:
   `etale_hasPointwiseRightKanExtension`, the right Kan extensions from the étale site to the
   twisted étale site.
-- Through it, `Langlands.Sheaf.Equivariant.AnalyticEtaleCompactCohomology` (Worker 26):
+- Through it, `Langlands.Sheaf.Equivariant.AnalyticEtaleCompactCohomology`:
   `twistedEtale_hasSheafify`, `etale_hasSheafify`, `etaleGSheaf_enoughInjectives`,
   `etaleGSheafCompactCohomology` (`H^q_c(X{G}, -)`), and the additivity of the inclusion of
-  étale `G`-sheaves; `Langlands.Sheaf.Equivariant.AnalyticCompactSupport` (Worker 26):
+  étale `G`-sheaves; `Langlands.Sheaf.Equivariant.AnalyticCompactSupport`:
   `pointTopology`, `continuousConstSMul_pointAction`, `etaleSite_locallySmall_points` and
-  `etaleGSheafCompactSections`; `Langlands.Sheaf.Equivariant.AnalyticGSheaves` (Worker 26):
+  `etaleGSheafCompactSections`; `Langlands.Sheaf.Equivariant.AnalyticGSheaves`:
   `twistedEtaleTopology`, `distinguishedLiftSystem` and `EtaleGSheaf`; and
-  `Langlands.Sheaf.Equivariant.LocalActionSmoothPart` (Worker 26): `smoothCoreflector`,
+  `Langlands.Sheaf.Equivariant.LocalActionSmoothPart`: `smoothCoreflector`,
   `smoothAdjunction`, the abelian structure of locally discrete sheaves and the exactness,
   fullness and faithfulness of their inclusion.
-- Worker 21's étale site `EtaleSite`, its topology `etaleTopology`, the point axioms
+- The Library's étale site `EtaleSite`, its topology `etaleTopology`, the point axioms
   `EtaleSite.PointAxioms`, the action `EtaleSite.pointAction` and
-  `EtaleSite.pointEquivariance`; Worker 3's statements `ProPInvariantSubcomplexStatement`
-  and `FiniteCohomologyInverseLimitStatement`, which appear only as hypotheses `hS` and
+  `EtaleSite.pointEquivariance`; the statements `ProPInvariantSubcomplexStatement`
+  (`Langlands.Cohomology.ProPInvariants.Statement`) and
+  `FiniteCohomologyInverseLimitStatement` (`Langlands.Cohomology.InverseLimit.Statement`),
+  which appear only as hypotheses `hS` and
   `hS'` and are not proved in the Library.
 
 ## Purpose
@@ -54,7 +56,7 @@ Every declaration instantiates a declaration of `TwistedExact` or `TwistedExactG
 
 As in `AnalyticEtaleCompactCohomology`:
 
-- `K : Type u` is a complete ultrametric normed field and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field and `X` an object of the Library's
   `LocalizedCategory.{u, v, v} (K := K)`.
 - `G` is a group with `ρ : G →* Aut X` and `[TopologicalSpace G]`. It lies in `Type z`,
   except in the inverse-limit section, where `G : Type u`. The compact-section and
@@ -120,7 +122,7 @@ Compact sections and (2.3):
   `Hⁿ(Γ_{c,X{G}}(G^•_m)) ≅ H^n_c(X{G}, T m)`.
 
 Inverse limits, with `G : Type u`, a filtered preorder `ι : Type u`, an antitone family
-`H : ι → Subgroup G` of normal subgroups of finite index and Worker 61's hypotheses `hK`
+`H : ι → Subgroup G` of normal subgroups of finite index and the hypotheses `hK`
 and `hk`:
 
 - `etaleFamilyGodementQuotientInvariantsLimit`: Harris's `C^•_m`;
@@ -147,7 +149,7 @@ this implies that they are jointly faithful. So the obstruction of
 `AnalyticQuasiEtalePoints.md` does not apply: there, affinoid domains that are not
 neighbourhoods give quasi-étale coverings that the `L`-valued points cannot detect.
 
-It is not checked here that Worker 21's `etaleTopology` has these coverings, nor that a
+It is not checked here that the Library's `etaleTopology` has these coverings, nor that a
 family of points of the Library's étale site realizes Berkovich's stalks at all points of
 `X`. For the `L`-valued points `EtaleSite.toPoint L x`, this would at least need every point
 of `|X|` to be the image of an `L`-valued point. No family of points satisfying `hpoints` is

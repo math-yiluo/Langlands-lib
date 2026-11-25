@@ -1,8 +1,6 @@
 # Character traces from a split component into the actual root span
 
-Author: Worker 1264.
-
-This derived unit combines integral Galois averaging, all-test central
+This derived module combines integral Galois averaging, all-test central
 cocharacter descent, the published root-annihilator centrality theorem, and
 perfect real duality. It constructs an element of the actual relative-root
 span rather than assuming a geometric root datum or a Weyl realization.

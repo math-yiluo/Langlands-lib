@@ -5,16 +5,13 @@ Namespace `Langlands.CuspidalSupport`. Universe parameters `uF, uV`.
 The module contains one **statement**, the `Prop`-valued definition
 `RationalInertiaBlockNoetherianModulesStatement`; it proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.4.1 and VI.4.4, printed pp.149–159 / PDF pp.155–165.
+VI.4.1 and VI.4.4, printed pp.149–159 / PDF pp.155–165, were read.
 The Corollary of VI.4.4 and its proof are on printed p.159 / PDF p.165:
 
 > **Corollaire.** La `ℂ`-algèbre `A` est noethérienne.

@@ -1,7 +1,5 @@
 # Hermitian approximation of the right action on `L²([G])`: proof
 
-Author: Worker 112.
-
 The theorem
 `Langlands.Global.RestrictionSplitCentre.quotientL2HermitianApproximation`
 has type exactly the published

@@ -1,7 +1,5 @@
 # Rigidity of families of homomorphisms between diagonalizable groups: proof
 
-Worker 383.
-
 `Langlands.GroupScheme.diagonalizableRigidity` proves
 `Langlands.GroupScheme.DiagonalizableRigidityStatement.{u}` (module
 [`Torus.DiagonalizableRigidityStatement`](DiagonalizableRigidityStatement.md); Milne,

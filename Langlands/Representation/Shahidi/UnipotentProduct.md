@@ -1,6 +1,6 @@
 # The upper-unipotent product in measure item 1
 
-This unit implements the ordered product of the smaller upper-unipotent group
+This module implements the ordered product of the smaller upper-unipotent group
 and the last-column subgroup used in Shahidi's measure item 1. It constructs
 actual mutually inverse coordinate maps, proves their continuity, and transports
 the whole product measure to the full upper-unipotent group.
@@ -24,10 +24,10 @@ existence theorems to new representations or fields.
 
 The constructions are derived infrastructure for the paper's displayed measure
 prescription. No proof of Haar invariance, existence of all compatible choices,
-or the full suitable-measure system is claimed by this unit. In particular,
+or the full suitable-measure system is claimed by this module. In particular,
 `IsUnipotentProductMeasure` allows zero input measures. Nonzero regular Haar
 hypotheses and the pairing and quotient compatibility equations belong to the
-later full system.
+full system.
 
 ## Actual group coordinates
 

@@ -90,11 +90,11 @@ The scalar compatibility and continuous semilinear packaging here are
 derived infrastructure for those conventions. Their proof is the finite
 residue calculation described above. Arbitrary commutative group schemes,
 test schemes, and selected predicates are explicit generalizations.
-Worker 92 supplied the published canonical scalar projections and
-coordinated the parallel root-twist API; this module concerns the actual
+The published canonical scalar projections are shared with the parallel
+root-twist API (`TwistPrimeScalars`); this module concerns the actual
 group-scheme Tate limits.
 
 There are no finiteness, rank, or characteristic hypotheses because these
 are coordinate scalar laws. No finite étaleness, profiniteness, product
 equivalence, rational restricted-product comparison, monodromy or Weil
-pairing is asserted by this unit.
+pairing is asserted by this module.

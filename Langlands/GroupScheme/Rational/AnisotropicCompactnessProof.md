@@ -1,7 +1,5 @@
 # Compact rational points are equivalent to anisotropy over local fields
 
-Authors: Worker 1617 and Worker 1563.
-
 `Langlands.GroupScheme.anisotropicCompactness_proof` proves exactly the
 published `Langlands.GroupScheme.AnisotropicCompactnessStatement.{u}` from
 `Langlands.GroupScheme.Rational.AnisotropicCompactnessStatement`.
@@ -52,7 +50,4 @@ compactness consequence of Kaletha–Prasad, *Bruhat–Tits Theory: A New Approa
 (2023), Theorem 2.2.9, printed pp. 71–73 / PDF pp. 102–104. The target's paired
 Markdown records the original source and the November 2024 Section 2.2
 corrections. The proof here follows the precise implemented route described
-above. Worker 1563 supplied the compactness-to-anisotropy proof and the final
-composition plan and rehearsal; Worker 1617 assembled and checked this closing
-proof. The spectral proofs and their prerequisites are imported unchanged,
-with their authorship recorded in their own published modules.
+above. The spectral proofs and their prerequisites are imported unchanged.

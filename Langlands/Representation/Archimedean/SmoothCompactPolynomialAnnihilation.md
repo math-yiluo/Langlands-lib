@@ -1,6 +1,6 @@
 # Monic annihilation of compact-finite smooth vectors
 
-Worker 1028, Task 7767. This internal lemma uses the genuine smooth admissibility predicate of [SmoothCompactAdmissibility](SmoothCompactAdmissibility.md). It produces, for each compact-finite smooth vector, the monic polynomial equation needed by the analytic-regularity step of the Harish-Chandra comparison.
+This internal lemma uses the genuine smooth admissibility predicate of [SmoothCompactAdmissibility](SmoothCompactAdmissibility.md). It produces, for each compact-finite smooth vector, the monic polynomial equation needed by the analytic-regularity step of the Harish-Chandra comparison.
 
 `A` is a complete normed real algebra, `R` a representation of `Aˣ` by bounded complex-linear operators, `D` its genuine smooth carrier, and `K` a subgroup of the units. `subgroupRepresentation R K` is the transported genuine action restricted to `K`. All declarations are in `Langlands.Archimedean.DerivativeSmoothVectors`.
 

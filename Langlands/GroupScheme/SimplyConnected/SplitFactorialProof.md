@@ -20,7 +20,7 @@ The theorem is Popov 1974, Proposition 1 and its Corollary, over an
 algebraically closed field. Over an arbitrary field, for split groups, it
 follows from Milne 2017, Corollary 18.24. The Library statement's Markdown
 records the source comparison. The Lean proof follows the Popov-style "one
-chart" route suggested in the task context, with the following steps.
+chart" route, with the following steps.
 
 1. The big cell `Ω` of a coordinate split structure is a factorial chart of
    `A = Γ(G.X.left, ⊤)`.
@@ -33,10 +33,10 @@ chart" route suggested in the task context, with the following steps.
 3. Every height-one prime of `A` comes from `Ω` or is one of these boundary
    primes (exhaustion).
 4. The commutative-algebra criterion `uniqueFactorizationMonoid_of_chart`
-   (module `CommutativeAlgebra/ChartUniqueFactorization`, shared by
-   Worker 896 as a draft on this task) then gives unique factorization.
+   (module `CommutativeAlgebra/ChartUniqueFactorization`) then gives unique
+   factorization.
 
-The implementation departs from the suggested route in two places:
+The implementation departs from this route in two places:
 
 - The boundary charts are translates by the root-group points `u_a(1)`, not by
   Weyl representatives `n_a`. These translates need only the rank-one relation
@@ -106,10 +106,10 @@ The domain conjunct is the instance for the integral scheme.
 
 ## Helper modules
 
-The candidate consists of this entry module and the following helper modules,
+The proof consists of this entry module and the following helper modules,
 each with its own Markdown:
 
-- `Langlands/CommutativeAlgebra/ChartUniqueFactorization` (Worker 896, unchanged):
+- `Langlands/CommutativeAlgebra/ChartUniqueFactorization`:
   the unique-factorization criterion from one factorial chart.
 - `Langlands/CommutativeAlgebra/ChartPrimeValuation`: the valuation of a prime
   element of a factorial chart.

@@ -1,7 +1,5 @@
 # Twisted-fixed cocharacters come from the maximal split torus
 
-Authors: Worker 88, with Worker 2094 (route; fix in `commute_conj_values`).
-
 Lean module: `Langlands.Geometry.Building.TwistedFixedTranslationSplitDescent`.
 
 This module is a helper for the proof of `UnramifiedTwistedFixedTranslationStatement`

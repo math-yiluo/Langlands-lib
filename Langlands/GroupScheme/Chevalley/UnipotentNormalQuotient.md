@@ -1,6 +1,6 @@
 # Equivariant normal unipotent quotients from closed vector orbits
 
-This internal theorem, authored by Worker 362, combines
+This internal theorem combines
 `Chevalley.unipotentAffineQuotient` with
 `HomogeneousQuotient.exists_action_relativeDimension`. The exact published
 `UnipotentAffineOrbitClosedStatement` remains an explicit input.
@@ -19,6 +19,6 @@ The proof constructs an affine homogeneous quotient using the vector orbit
 and the supplied closed-orbit proposition, puts the descended normal group
 structure on that precise scheme, and applies the existing represented-kernel
 action and dimension theorem. Subgroup unipotence is retained explicitly:
-this unit does not prove that it follows from the ambient group's unipotence.
+this module does not prove that it follows from the ambient group's unipotence.
 It does not prove the closed-orbit proposition, descend affineness to an
 arbitrary field, or prove the host ordered-product statement.

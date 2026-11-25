@@ -98,8 +98,8 @@ complex homomorphism. It assumes only the retained signature and CM-section
 hypotheses in addition to the actual algebra data, rather than taking the
 resulting homomorphism as an extra input.
 
-This unit constructs the real algebra and group identification and the
-complex homomorphism. It does not yet package this constructed homomorphism
-as a morphism to the real pullback of the rational group scheme, nor establish
-smoothness, reductivity, PEL representability or canonical scheme levels.
-Those remain separate parts of the geometry task.
+This module constructs the real algebra and group identification and the complex
+homomorphism. It does not package this constructed homomorphism as a morphism to
+the real pullback of the rational group scheme (`HarrisDeligneGroupScheme`
+does), nor establish smoothness, reductivity, PEL representability or canonical
+scheme levels. Those remain separate obligations.

@@ -61,7 +61,7 @@ is `EquivariantDerivedSections`. All comparison and naturality proofs
 apply the generic constructions with these concrete source and target
 categories. No new result is attributed to Harris or Berkovich.
 
-The representations here are algebraic. This unit does not prove that
+The representations here are algebraic. This module does not prove that
 forgetting the derived action recovers ordinary small-etale derived
 sections of the restricted sheaf: that comparison needs a separate
 acyclicity or exactness argument. Smoothness, compact supports, analytic

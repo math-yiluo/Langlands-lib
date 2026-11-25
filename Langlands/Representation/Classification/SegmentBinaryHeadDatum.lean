@@ -70,10 +70,10 @@ def segmentBinaryHeadDatum
   let X := fun i : Fin B.length => (hs i).symm ▸ d.blocks (Fin.cast rfl i)
   have hbinary : (T.binaryNormalizedProductFunctor Δ.degree Γ.degree).obj (π,τ) =
       (T.normalizedProductInductionFunctor B).obj X :=
-    SegmentProductSplit.binaryNormalizedProductFunctor_obj_eq T
-      Δ.degree_pos Γ.degree_pos π τ X rfl rfl
+    (SegmentProductSplit.binaryNormalizedProductFunctor_obj_eq T
+      Δ.degree_pos Γ.degree_pos π τ X rfl rfl : _)
   exact ⟨d,hd,hsegments,hcontent,
     (d.inducedEquivOfShape B rfl hs).trans
-      (SmoothRep.equivOfIso (eqToIso hbinary.symm))⟩
+      (SmoothRep.equivOfIso (eqToIso (hbinary.symm : _)))⟩
 
 end Langlands.Classification

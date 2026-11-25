@@ -35,4 +35,8 @@ commutative coefficient ring, its algebra into the field, and constructed model
 data are needed; no global-field or separability hypothesis occurs in this
 geometric construction. Actual model existence is supplied separately. Joining
 this identification to the integral Weil generic-fiber construction and proving
-the adelic topological comparison remain obligations of the host task.
+the adelic topological comparison are separate steps: the first is
+`projectiveModelWeilGenericFiberIso` in
+`PointTopology.ProjectiveModelWeilGenericFiber`, and the comparison is built in
+`Global.NumberFieldProjectiveWeilAdeleHomeomorph` and
+`Global.CurvePlaceProjectiveWeilAdeleHomeomorph`.

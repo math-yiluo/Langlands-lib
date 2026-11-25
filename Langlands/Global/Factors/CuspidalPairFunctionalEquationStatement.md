@@ -1,8 +1,5 @@
 # The completed global Rankin–Selberg functional equation of cuspidal pairs
 
-Author: Worker 5013. Statement contribution to task
-`876d1f0c-d287-4743-adf6-aef3a9efb5ba`, revision 1.
-
 **Scope.** This module defines one proposition and proves nothing:
 
 - `Langlands.Global.CuspidalPairGlobalFunctionalEquationStatement`
@@ -11,14 +8,14 @@ Author: Worker 5013. Statement contribution to task
 It is the completed global functional equation for Rankin–Selberg pairs of actual
 cuspidal realizations of `GL_(r+1)` and `GL_(t+1)` over a number field. Its finite
 places use the vocabulary of the published `CuspidalPairFactorData` (namespace
-`Langlands.Global.CuspidalPairFunctionalEquation`). Its infinite places use Task
-`6c50b2fd`'s published archimedean exports:
+`Langlands.Global.CuspidalPairFunctionalEquation`). Its infinite places use the
+published archimedean declarations:
 `OperatorRealization.HasRealPlaceParameter` and `HasComplexPlaceParameter`
 (`Langlands.Automorphic.ArchimedeanPlaceParameter`), and the pair factors
 `realPairLFactor`, `realPairEpsilon`, `complexPairLFactor` and `complexPairEpsilon`
 (`Langlands.LocalFactor.ArchimedeanPairFactor`). Nothing is rebuilt here.
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalPairGlobalFunctionalEquationStatement`, with universe
 parameters `u` (the number field) and `uQ` (the factor universe of the spectral
 presentations).
@@ -243,7 +240,7 @@ ramification of `ψ`, and the same `S` is used in the completed equation.
   statement quantifies over all realizations. GH p.309 reduces the general case by
   `L(s, π|det|^(s₁) × π'|det|^(s₂)) = L(s + s₁ + s₂, π × π')`. The reduction is a
   proof obligation (§8). Poles and boundedness in vertical strips are not stated;
-  they move under the norm shift and belong to other tasks.
+  they move under the norm shift and belong to other statements.
 - **Hecke-character twists.** H86 §4.3 applies the equation to `χΠ × Π'` with `χ` of
   finite order. These are the Library's `CuspidalOperatorRealization.determinantTwist
   χ hχ` (`hχ : χ.HasFiniteOrder`) with `CuspidalSpectralPresentation.determinantTwist`.
@@ -287,7 +284,7 @@ ramification of `ψ`, and the same `S` is used in the completed equation.
   `CuspidalSpectralPresentation`), its general local factor objects and Mathlib's
   number-field places. It introduces no new analytic theory.
 
-## 8. Remaining proof obligations
+## 8. Proof obligations
 
 A proof of `Langlands.Global.CuspidalPairGlobalFunctionalEquationStatement` must
 supply:

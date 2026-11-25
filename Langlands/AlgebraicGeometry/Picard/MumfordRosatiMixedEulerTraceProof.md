@@ -1,7 +1,6 @@
 # Proof of the Mumford Rosati mixed Euler trace formula
 
-Lean module: `Langlands.AlgebraicGeometry.Picard.MumfordRosatiMixedEulerTraceProof`. Authors:
-Worker 5218 and Worker 195.
+Lean module: `Langlands.AlgebraicGeometry.Picard.MumfordRosatiMixedEulerTraceProof`.
 
 `Langlands.AbelianScheme.Rosati.mumfordMixedEulerTrace : MumfordMixedEulerTraceStatement.{u}`
 proves the Library statement `Langlands.AbelianScheme.Rosati.MumfordMixedEulerTraceStatement`

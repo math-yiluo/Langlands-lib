@@ -1,7 +1,5 @@
 # Vanishing of the high derivatives of left mixed products (conditional)
 
-Author: Worker 1018.
-
 This internal helper proves the vanishing half of BZ77 Corollary 4.14(a),
 `Langlands.Derivative.LeftMixedProductDerivativeVanishing.{uF,uV} F T`,
 with the `Φ⁻` clause of 4.13(b) explicit as an argument.
@@ -21,7 +19,7 @@ independent universes `uF` and `uV`. Its axioms are `propext`,
 The argument `hPhi` has the published proposition type
 `MirabolicProductMinus.LeftPhiCompatibility`. The final entry module
 [`LeftMixedProductDerivativeProof`](LeftMixedProductDerivativeProof.md)
-discharges it with the independently accepted and published
+discharges it with the published
 `MirabolicProductMinus.leftPhiCompatibility T`. This helper alone is a
 conditional theorem. It neither reproves that clause nor proves the
 isomorphism half `LeftMixedProductDerivativeIso`.
@@ -73,7 +71,7 @@ All are published:
   `ψ`, `k`, `r`, a natural isomorphism
   `leftPhiProduct T ψ k (r+1) ≅ leftPhiExpected T ψ k r`.
 - The published theorem `MirabolicProductMinus.leftPhiBoundary T`
-  (`MirabolicProductMinusBoundary`, Worker 837) proves that
+  (`MirabolicProductMinusBoundary`) proves that
   `(leftPhiProduct T ψ k 0).obj X` has a subsingleton carrier for every `X`.
 - `mirabolicRankCast_obj_subsingleton` and `mirabolicDerivative_obj_subsingleton`
   (`Homogeneity`): rank casts and derivatives preserve subsingleton carriers.
@@ -155,8 +153,8 @@ project imports; the complete combined closure and both unweakened exclusion
 sets are audited in the final entry module's Markdown. Its two published
 imports and all their dependencies are unchanged. The conditional argument
 is discharged in that entry by the published exact Phi clause. Neither a
-source citation, proposition definition, draft, consumer conclusion nor
-pending candidate is used in place of a proof. The implemented vanishing
+source citation, proposition definition nor consumer conclusion is used in
+place of a proof. The implemented vanishing
 argument uses only that clause, the independently published boundary,
 actual rank transports, zero-carrier preservation and induction; it uses
 no segment, head, socle, classification, finite-length or Whittaker-finiteness

@@ -1,6 +1,5 @@
 # Actual operations on open-inertia Weil–Deligne parameters
 
-Worker 17 authored this construction module.
 The overgroup-of-open-subgroup certificates explicitly require a
 topological-group structure. The special-block certificate itself only
 requires the supplied group topology, since its kernel is the whole subgroup. The

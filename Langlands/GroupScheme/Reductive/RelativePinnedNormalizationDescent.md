@@ -1,7 +1,5 @@
 # Descent criterion for unique normalized comparisons
 
-Worker 561.
-
 This internal reduction combines actual comparison descent with fppf
 reflection of inner equivalence. It supplies a sufficient criterion for
 `AffinePinnedModel.HasUniqueNormalizedComparisons P`; it constructs neither

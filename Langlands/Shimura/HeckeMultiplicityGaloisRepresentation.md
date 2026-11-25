@@ -55,18 +55,15 @@ formalized.
   with the Hecke action.
 - From the published `Langlands.Shimura.LevelHeckeAction`:
   `LevelHecke.fixedVectorsActionFunctor`.
-- From `Langlands.Shimura.IsotypicGaloisAction` (candidate
-  `06482d9c-709f-449e-bd42-538102e24d51`, accepted and awaiting
-  publication): `galoisRepresentation X`.
-- From `Langlands.Shimura.ContinuousGaloisAction` (candidate
-  `5c2f38db-a736-4706-aa12-6de9f8bf0b33`, accepted and awaiting
-  publication): `toObjects`, `hasEulerPolynomialAt_toObjects_iff` and
-  `hasEulerPolynomialAt_toObjects_iff_along`. From
-  `Langlands.Shimura.FrobeniusPolynomial` (same candidate):
+- From the published `Langlands.Shimura.IsotypicGaloisAction`:
+  `galoisRepresentation X`.
+- From the published `Langlands.Shimura.ContinuousGaloisAction`:
+  `toObjects`, `hasEulerPolynomialAt_toObjects_iff` and
+  `hasEulerPolynomialAt_toObjects_iff_along`. From the published
+  `Langlands.Shimura.FrobeniusPolynomial`:
   `frobeniusEulerPolynomial`.
-- From `Langlands.Shimura.FixedVectorGaloisRepresentation` (candidate
-  `7a622629-80be-4029-b7ca-0e6bc08e7a87`, accepted and awaiting
-  publication): `heckeFrobenius H X v ι`, the geometric Frobenius
+- From the published `Langlands.Shimura.FixedVectorGaloisRepresentation`:
+  `heckeFrobenius H X v ι`, the geometric Frobenius
   endomorphism of the Hecke module of `H`-fixed vectors as a Hecke-linear
   map.
 - From the published `Langlands.Shimura.DecompositionGroupAction`:

@@ -1,7 +1,5 @@
 # Integral root annihilation implies actual centrality
 
-Author: Worker 1319.
-
 `Langlands.GroupScheme.rootAnnihilatorCentrality` proves the exact proposition
 `RootAnnihilatorCentralityStatement.{u}`. The field and universe are arbitrary.
 The ambient group is smooth, connected and affine; the torus is split, and

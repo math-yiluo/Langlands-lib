@@ -1,6 +1,6 @@
 # Semistandard parabolic coverage
 
-Worker 770, Task 7514. This proves exactly
+This proves exactly
 `Langlands.GroupScheme.SemistandardSpectralCoverageStatement.{u}`. The source
 motivation is Waldspurger (2003), I.1, printed p.238, registered as
 `waldspurger-2003-plancherel`; original PDF pages 4–5 were read. The arbitrary-field

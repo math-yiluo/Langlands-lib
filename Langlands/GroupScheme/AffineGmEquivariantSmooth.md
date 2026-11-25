@@ -50,7 +50,7 @@ transfer the proved algebraic smoothness to the actual morphisms through
 
 The hypotheses explicitly include smoothness of both original schemes over
 the base as well as smoothness of `f`. No field, characteristic, reducedness,
-noetherian, or nontrivial-action hypothesis is imposed. This unit does not prove
+noetherian, or nontrivial-action hypothesis is imposed. This module does not prove
 orbit closedness, reductive quotient affineness, or
-`DynamicQuotientProperStatement`; it uses none of the excluded
+`DynamicQuotientProperStatement`; it uses none of the
 regular-cocharacter/Borel or rank-one inputs.

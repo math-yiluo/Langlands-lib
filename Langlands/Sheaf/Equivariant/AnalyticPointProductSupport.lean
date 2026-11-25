@@ -81,7 +81,7 @@ theorem hasCompactSeparatingBounds_etalePoints
 
 variable {R : Type (max u (v + 1) uL)} [CommRing R]
 
-local instance {S : Type w} [CommRing S] :
+private local instance {S : Type w} [CommRing S] :
     HasProducts.{wI} (ModuleCat.{max wI w} S) := by
   let := hasLimitsOfSizeShrink.{wI, wI, w, w} (ModuleCat.{max wI w} S)
   infer_instance

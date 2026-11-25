@@ -1,7 +1,5 @@
 # Generic nonzero morphisms between inductions sharing a standard Levi
 
-Author: Worker 121.
-
 This module states
 `Langlands.Aubert.General.RationalPointFamily.RationalSameLeviGenericNonzeroIntertwinerStatement`.
 It provides no proof.

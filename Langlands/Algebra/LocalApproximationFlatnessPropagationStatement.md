@@ -87,10 +87,10 @@ associativity and scalar compatibility identify this localized module with
 with the explicitly specified base action.
 
 This localization over the auxiliary algebra `A` is a necessary step of a
-future Lean proof. Base change alone does not establish the conclusion.
+Lean proof. Base change alone does not establish the conclusion.
 `Module.Flat.of_isLocalizedModule` concerns localization of the flatness base
 ring; it does not directly discharge localization over `A` with `Rⱼ`
-unchanged. A future implementation must establish that preservation and the
+unchanged. A Lean proof must establish that preservation and the
 canonical scalar-compatible identifications. No such Lean proof or unchecked
 application of a tensor-product flatness instance is claimed here.
 
@@ -133,5 +133,7 @@ localization; this statement does not use them as unconditional identities.
 The module imports the published `LocalApproximationSystem` by Lean name and
 leaves its Lean/Markdown pair and imports intact. The statement applies to
 any systems of that interface, including derived fibre systems when their
-transition hypotheses have been established. Construction of those systems,
-generic colimit ascent, and the exact proof successor are separate work.
+transition hypotheses have been established. Construction of those systems and
+generic colimit ascent are separate work; the proposition is proved by
+`localApproximationFlatnessPropagation` in the module
+`LocalApproximationFlatnessPropagation`.

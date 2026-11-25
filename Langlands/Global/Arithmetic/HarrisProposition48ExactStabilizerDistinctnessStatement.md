@@ -7,7 +7,11 @@ The module declares `universe uF uV`, sets `autoImplicit false`, and defines
 two closed propositions with universes `.{uF, uV}` and result `Prop`.
 `r : ℕ` in the expanded distinctness predicate means `GL_(r+1)`.
 
-Two unproved implications. **Neither is proved here.**
+Two implications. **Neither is proved here.** They are proved as
+`proposition48ExactStabilizerDistinctness` in
+`HarrisProposition48ExactStabilizerDistinctnessProof` and
+`proposition48ExactStabilizerDistinctnessTC` in
+`HarrisProposition48ExactStabilizerDistinctnessTCProof`.
 
 ## `Proposition48ExactStabilizerDistinctnessStatement.{uF, uV}`
 
@@ -45,17 +49,17 @@ including `Q : Proposition48Problem.{uF}`, the intermediate field `D`, the
 cardinality condition and `Q.HasDistinctMackeyComponents.{uF, uV} D`, is
 identical to the first declaration.
 
-There is no published counterpart of either distinctness declaration. They
-isolate the part of the published prime branch that uses A2
+There is no general-position counterpart of either distinctness declaration. They
+isolate the part of the general-position prime branch that uses A2
 (`HarrisSupercuspidalLocalComparisonStatement`) and general position to
 distinguish the local Mackey constituents. The exact-stabilizer prime branch
 takes only this conclusion as a hypothesis; its derivation from B6, rather
-than A2, is the separate unproved implication here.
+than A2, is the separate implication here.
 
 ## Why it should hold (proof obligations)
 
 This is claim (2) of Remark 4.2 of the plan note in the form of B6 (plan
-Section 4.8, line 908). A sketch for the proof task, not a proof:
+Section 4.8, line 908). A sketch of a proof, not a proof:
 
 1. `L` has exactly one place above `Q.Ps.v` (`HasUniquePlaceAbove`, a
    conjunct of validity), so so has `D`, and the places `w` in the conclusion
@@ -100,11 +104,8 @@ change, and the advanced theory of the trace formula*, Ann. of Math. Stud.
 Theorem 4.2(c) (weak lifting for cyclic extensions of prime degree, for
 representations induced from cuspidal), printed p.202 (PDF p.216).
 
-The
-[operator's R2 ruling](/home/taskhub/pilot/correspondence/a79e2e832569567a8582b3c994f2fc1b.md),
-answer to request `c292736a05f55d4fba67d1a01b7fb2e2`, retains standard B6
-through this isolated conclusion, as required by the
-[standard-B6 ruling](/home/taskhub/pilot/correspondence/afc4eb775dc157d6807bbc17caa2b02b.md).
+The design decision R2 retains standard B6 (B6 as stated in the plan note,
+Section 2.2) through this isolated conclusion.
 It uses parameters carried by solutions with restricted B7(2) in the prime
 branch and B7(1) in the singleton branch, followed by the separate
 archimedean bridge. No whole-tower archimedean transport is needed by the
@@ -118,4 +119,4 @@ well.
 ## Status
 
 Proposition definitions only. Neither implication is proved here, and no
-published declaration is changed.
+existing declaration is changed.

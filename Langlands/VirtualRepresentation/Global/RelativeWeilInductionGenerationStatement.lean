@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.RelativeWeilGroup
+import Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 import Langlands.VirtualRepresentation.ExactInductionTwist
 import Langlands.Weil.Representation.CharacterLine
 
@@ -17,7 +17,7 @@ set_option autoImplicit false
 
 universe u uV
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.VirtualRepresentation
 
@@ -70,4 +70,4 @@ def InducedCharacterGenerationStatement : Prop :=
     [Field F] [NumberField F] [Field E] [NumberField E] [Algebra F E] [IsGalois F E],
     InducedCharacterGeneration.{u, uV} c F E
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

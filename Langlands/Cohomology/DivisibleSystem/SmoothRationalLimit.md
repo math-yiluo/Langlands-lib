@@ -1,8 +1,8 @@
 # Integral and rational structures on the `ℓ`-adic limits of smooth Godement towers
 
-Author: Worker 61. This module builds on the following published modules:
+This module builds on the following published modules:
 
-- `Langlands.Cohomology.DivisibleSystem.ConstantInverseLimit` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.ConstantInverseLimit`:
   the `ℓ`-adic limit `adicLimit`, the limit of level cohomologies
   `levelCohomologyLimit`, the comparison `adicLimitComparison` with
   `adicLimitComparison_π`, `isIso_adicLimitComparison_of_finite` and
@@ -26,14 +26,14 @@ Author: Worker 61. This module builds on the following published modules:
   `constantGodementTruncatedCompactSectionsSystem` (ConstantTruncation module),
   `constantSheafSystem` (ConstantCoefficients module),
   `smoothSheafCompactSections`, `smoothQuotientInvariants`,
-  `quotientProjection`, `IsProPSubgroup`, and Worker 3's unproved statements
+  `quotientProjection`, `IsProPSubgroup`, and the unproved statements
   `FiniteCohomologyInverseLimitStatement`,
   `ProPInvariantSubcomplexStatement` and `SmoothGodementZeroExactStatement`,
   which appear only as hypotheses.
-- `Langlands.Cohomology.HyperextScalarExtension` (Worker 61): the instance
+- `Langlands.Cohomology.HyperextScalarExtension`: the instance
   `repExtendScalars_preservesHomology` (extension of scalars of
   representations along a flat algebra preserves homology). Through it,
-  `Langlands.Cohomology.DivisibleSystem.ScalarExtension` (Worker 61):
+  `Langlands.Cohomology.DivisibleSystem.ScalarExtension`:
   `repExtendScalars`, `repRestrictScalars`, `repExtendScalarsUnit` (with
   components `v ↦ 1 ⊗ v`), `repExtendScalarsComplex` and
   `quotientInvariantsInverseLimitBaseChange`.
@@ -201,7 +201,7 @@ two sections, with the same proofs:
 `R` is a commutative ring, `G` a topological group, `X` a topological space
 with a `G`-action by homeomorphisms and `HasStableNeighbourhoods G X`, all in
 one universe `u`. `T : SmoothSheafDivisibleSystem R G X ℓ`, and
-`h : SmoothGodementZeroExactStatement R G X` is Worker 3's unproved
+`h : SmoothGodementZeroExactStatement R G X` is the unproved
 exactness statement for the degree-zero smooth Godement functor (an explicit
 hypothesis). `F_m^•` is the smooth Godement resolution of the level `T_m`.
 `Φ` is an additive sections functor on smooth sheaves that preserves finite
@@ -348,7 +348,7 @@ sheaves of the trivial representations `ℤ_[ℓ] / ℓ ^ m ℤ_[ℓ]`.
    n varies, satisfy an appropriate Mittag-Leffler condition, and give rise
    in the inverse limit over n to a complex of smooth Z_ℓ[S(e,d)]-modules,
    whose cohomology equals H_c^•(U(e,N), Z_ℓ). [...] Tensoring with Q_ℓ, we
-   obtain our complex C(e,d)." Worker 61 read this passage in the original
+   obtain our complex C(e,d)." The passage was read in the original
    for the published ScalarExtension module.
 2. Deligne, *Cohomologie étale* (SGA 4½), Lecture Notes in Mathematics 569
    (1977), *Rapport sur la formule des traces*, 2.10, printed p.84 (one-based

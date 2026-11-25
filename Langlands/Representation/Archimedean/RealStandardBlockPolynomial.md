@@ -1,10 +1,10 @@
 # The block polynomial of a real standard module
 
-Author: Worker 3657. Module `Langlands.Representation.Archimedean.RealStandardBlockPolynomial`.
+Module `Langlands.Representation.Archimedean.RealStandardBlockPolynomial`.
 Helper module of the proof that real standard modules are nonzero
 (`Langlands.Archimedean.realStandardNontrivial`, module
-`Langlands.Representation.Archimedean.RealStandardNontrivialProof`), used in Task 7003. It changes
-no published file.
+`Langlands.Representation.Archimedean.RealStandardNontrivialProof`), used in the proof of
+`CuspidalArchimedeanStandardGenericStatement`.
 
 For a list `ds` of real blocks, the module defines a polynomial `blockPoly n ds 0` in the entries
 `X_ij` of an `n × n` matrix. Its Gram function (module `RealGramFunction`) is the nonzero vector of
@@ -100,6 +100,6 @@ for these lemmas.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: check 960670f9 (module alone)
-and check 949e5803 (built with the other nonvanishing modules). No errors or warnings. Axioms:
+The module was checked alone and built together with the other nonvanishing modules. No errors or
+warnings. Axioms:
 `propext`, `Classical.choice`, `Quot.sound`.

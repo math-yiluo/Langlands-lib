@@ -9,7 +9,7 @@ and result `Prop`; neither has further outer binders. A rank index `r : ℕ`
 in their inputs means `GL_(r+1)`.
 
 Two unproved implications. **Neither is proved here.** They are the
-exact-stabilizer counterparts of the published `Proposition48ReductionStatement`
+exact-stabilizer counterparts of the general-position `Proposition48ReductionStatement`
 and `Proposition48ReductionTCStatement`: the one-place induction and its named
 inputs imply `Proposition48ExactStabilizerStatement.{uF, 0, 0, 0, uV}`, the
 restatement of Harris 1998, Proposition 4.8 (printed p.201) with condition
@@ -21,11 +21,11 @@ universes used by globalization.
 The hypothesis is the conjunction of 22 statements, in this order:
 
 1. `Proposition48ExactStabilizerAuxiliaryRankOneStatement.{uF, uV}` (rank one
-   with parameters; replaces the published rank-one input);
-2. `Proposition48AuxiliaryParityNormalizationStatement.{uF}` (published);
-3. `Proposition48AuxiliaryParityUntwistStatement.{uF, uV}` (published);
+   with parameters; replaces the general-position rank-one input);
+2. `Proposition48AuxiliaryParityNormalizationStatement.{uF}` (general-position);
+3. `Proposition48AuxiliaryParityUntwistStatement.{uF, uV}` (general-position);
 4. `Proposition48ExactStabilizerParameterUntwistStatement.{uF, uV}` (new);
-5. `Proposition48MackeyStepStatement.{uF}` (published);
+5. `Proposition48MackeyStepStatement.{uF}` (general-position);
 6. `Proposition48ExactStabilizerMackeyInheritanceStatement.{uF}` and
 7. `Proposition48ExactStabilizerParityInheritanceStatement.{uF}` (inheritance
    of (4.12), module `HarrisProposition48ExactStabilizerInheritanceStatement`);
@@ -47,13 +47,13 @@ The hypothesis is the conjunction of 22 statements, in this order:
     (restricted B7);
 22. `CuspidalComplexParameterBridgeTCStatement.{0}` (the archimedean bridge).
 
-Compared with the published reduction: the comparison at a split
+Compared with the general-position reduction: the comparison at a split
 supercuspidal place (`HarrisSupercuspidalLocalComparisonStatement`, A2) is
-dropped; the published rank-one input and the two branches are replaced by
+dropped; the general-position rank-one input and the two branches are replaced by
 their parameter-carrying exact-stabilizer forms; inputs 4, 6–8 and 18–22 are added. Inputs 2, 3
-and 5 are the published general-position statements, unchanged. They apply to
+and 5 are the general-position statements, unchanged. They apply to
 exact-stabilizer problems because exact-stabilizer validity implies the
-published validity
+general-position validity
 (`IsAuxiliaryExactStabilizerValidAtParity.isAuxiliaryValidAtParity`, through
 `generalPositionOfExactStabilizer`), and inputs 6 and 7 upgrade their outputs
 back to exact-stabilizer validity. The canonical B7
@@ -84,7 +84,7 @@ The conjunction has the same 22 positions, with these exact replacements:
 | 20 | `CyclicPrimeIsobaricBaseChangeTCStatement.{0, 0, uV, uV}` |
 
 Inputs 1–7, 11, 21, 22 and the conclusion are identical to the ordinary
-exact-stabilizer reduction. Compared directly with the published
+exact-stabilizer reduction. Compared directly with
 `Proposition48ReductionTCStatement` in `HarrisProposition48ReductionTCStatement`,
 the same additions, replacements and removal listed above are the complete
 changes, using the TC versions at the positions shown. Every other premise,
@@ -92,13 +92,13 @@ binder and universe is unchanged.
 
 ## Why it should hold (proof obligations)
 
-A sketch for the proof task, not a proof. Prove, by strong induction on
+A sketch of a proof, not a proof. Prove, by strong induction on
 `Q.inductionDegree = [L : E]`, that every `Q` with
 `Q.IsAuxiliaryExactStabilizerValid` has `Q.HasParameterSolution`.
 
-- If `[E' : E] = 1`, apply input 1 to the published validity.
+- If `[E' : E] = 1`, apply input 1 to the general-position validity.
 - Otherwise input 5 gives a prime cyclic step `D`, with one or `[D : E]`
-  Mackey classes, and for each `a` a child `R` with published validity at the
+  Mackey classes, and for each `a` a child `R` with general-position validity at the
   parent's parity and smaller induction degree. Input 6 upgrades it to
   exact-stabilizer validity at that parity. Input 2 gives a parity
   normalization `ν`, `χs` of `R`, and input 7 gives exact-stabilizer validity
@@ -126,13 +126,11 @@ Proposition 4.8 (printed p.201) and its proof (printed pp.201–203); condition
 Design: the operator's plan note, source
 `operator-external-inputs-plan-2026-11-16`, `external-inputs-plan.tex`,
 Section 2.2 (B5–B7, TeX lines 196–199) and Section 4.8 (Remark 4.2, lines
-859–894, and lines 897–921). The operator later decided that the
+859–894, and lines 897–921). By a later design decision (R2), the
 exact-stabilizer branches use the restricted form of B7 with
 parameter-carrying solutions, instead of the canonical B7.
 
-The precise decision is the
-[operator's R2 ruling](/home/taskhub/pilot/correspondence/a79e2e832569567a8582b3c994f2fc1b.md),
-answer to request `c292736a05f55d4fba67d1a01b7fb2e2`. In this design,
+In this design,
 regular algebraicity comes from the children's parameters and restricted
 B7(2) in the prime branch, restricted B7(1) in the singleton branch, and the
 separate bridge. B6 supplies the distinctness of claim (2) of Remark 4.2 in
@@ -140,6 +138,6 @@ the plan in place of A2; B5 is claim (3) for a singleton fibre.
 
 The parameter predicates, distinctness and parameter statements packaged by
 this reduction are internal interfaces of R2, not statements of Harris. The
-reduction is an internal unproved restatement of the published reduction,
-and the induction described above is a plan for a later proof. Nothing is
-proved here, and no published declaration is changed.
+reduction is an internal unproved restatement of the general-position reduction,
+and the induction described above is a plan for a proof. Nothing is
+proved here, and no existing declaration is changed.

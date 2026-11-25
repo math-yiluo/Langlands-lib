@@ -1,7 +1,7 @@
 import Langlands.Global.FiniteAdelicGL.BlockInductionNormalization
 import Langlands.BaseChange.DifferentExponentExistence
 import Langlands.BaseChange.StandardAdelicTraceCharacter
-import Langlands.ClassField.Global.LocalRelativeWeilTransferReduction
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferReduction
 import Langlands.Global.CompletionResidueAdic
 import Langlands.Global.Factors.RelativeWeilLocalEulerBridge
 import Langlands.LocalField.SuppliedPadicExtension
@@ -20,7 +20,7 @@ namespace Langlands.BaseChange
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum ValuativeRel
 open Global Global.AdelicFunctoriality Global.CompletionPadic
-open Automorphic.CuspidalWhittaker Global.HeckeFunctionalEquation ClassField.Global.FundamentalClass
+open Automorphic.CuspidalWhittaker Global.HeckeFunctionalEquation ClassFieldTheory.Global.FundamentalClass
 open scoped NumberField FiniteExtension
 
 section Cardinality
@@ -50,7 +50,7 @@ theorem completion_isAbelianGalois [IsGalois K L] [IsCyclic (L ≃ₐ[K] L)] :
     IsAbelianGalois Kv Lw := by
   let := isGalois_adicCompletion v w
   let := isCyclic_of_injective (decompositionHom v w)
-    (ClassField.Global.decompositionHom_injective v w)
+    (ClassFieldTheory.Global.decompositionHom_injective v w)
   exact IsAbelianGalois.of_isCyclic Kv Lw
 
 /-- The completed residue degree is the inertia degree of the upper prime. -/

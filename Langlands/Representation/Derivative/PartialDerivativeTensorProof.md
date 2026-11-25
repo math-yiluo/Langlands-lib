@@ -1,9 +1,5 @@
 # Partial derivative of an exterior tensor product
 
-Authors: Worker 288 and Worker 1004. Worker 288 constructed the binary tensor
-quotient comparison and the final assembly. Worker 1004 constructed the
-all-rank normalized top-localization adapter reused in that assembly.
-
 The theorem `Langlands.Derivative.partialDerivativeTensor` proves exactly
 `Langlands.Derivative.PartialDerivativeTensorStatement.{uF,uV} F T`, with outer
 telescope
@@ -30,8 +26,7 @@ There are no added positivity, finite-length, admissibility, irreducibility,
 genericity, nonzero-object or finite-dimension assumptions. The bundled
 character retains its existing continuity, unitarity and nontriviality.
 
-The target and its full dependency closure are unchanged. In particular the
-right-hand second factor is the entire carrier of the published
+The right-hand second factor is the entire carrier of the published
 
 ```text
 topDerivative T ψ m = generalLinearDerivative T ψ m m (Nat.le_refl m) ⋙
@@ -179,12 +174,12 @@ printed p.445 / PDF p.6, for transitivity and commuting with tensoring;
 §3.5 with footnote 2, printed p.452 / PDF p.13, for the decreasing-rank
 Phi-minus iteration ending in Psi-minus; and §4.3, printed p.454 / PDF p.15,
 for the zeroth derivative and restriction from GL. The negative exponent was
-also visually checked. The supplied originals' hashes were verified; the
-previous bounded search found no source-specific errata in the supplied
+also visually checked. The originals' hashes were verified; a
+bounded search found no source-specific errata in the
 literature/index/notes.
 
-The proof follows those quotient constructions through independently accepted
-and published internal helpers. It does not assume the source derivative or
+The proof follows those quotient constructions through published internal
+helpers. It does not assume the source derivative or
 transitivity claims as Lean premises. The binary tensor helper proves its
 maps directly. The normalized adapter specializes the proved generic
 supplied-twist localization tower and composes its actual inverses. The final
@@ -192,34 +187,34 @@ Lean code adds only the identity/product natural isomorphism, application of
 the actual first-factor tensor functor, composition and the `Nonempty`
 constructor. There is no additional general derivative hypothesis.
 
-The following independently accepted and published modules were checked before
+The following published modules were checked before
 reuse. The complete paired helper bodies, source conventions and full exclusion
-audits were inspected; the current pairs agree with those audited publications.
+audits were inspected; the pairs agree with those audited versions.
 They are imported by Lean name.
 
-| Module under `Langlands.Representation` | Accepted supporting publication | Use in this proof chain |
+| Module under `Langlands.Representation` | Library version checked | Use in this proof chain |
 | --- | --- | --- |
-| `Derivative.PartialDerivativeTensorLocalization` | Worker 288, Reviewer 5331; Library `7d8c1355c088b76a992b0af1690748d5ae7147b5` | The two binary tensor quotient lifts, inverse laws, equivariance and both-variable naturality |
-| `Derivative.TopLocalizationComparison` | Worker 1004, Reviewer 5777; Library `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` | All-rank adapter used by the final composition |
-| `Derivative.TopLocalizationStep` | Worker 1004, Reviewer 5706; Library `42ebad9dec7efaf48307e0b6085168e104486dfb` | Actual normalized one-step quotient comparison |
-| `Derivative.TopLocalizationMirabolicZero` | Worker 1004, Reviewer 5719; Library `c5eebf94883144ce00adc4e252995c28082f08a7` | Terminal normalized Psi-minus comparison |
+| `Derivative.PartialDerivativeTensorLocalization` | Library `7d8c1355c088b76a992b0af1690748d5ae7147b5` | The two binary tensor quotient lifts, inverse laws, equivariance and both-variable naturality |
+| `Derivative.TopLocalizationComparison` | Library `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` | All-rank adapter used by the final composition |
+| `Derivative.TopLocalizationStep` | Library `42ebad9dec7efaf48307e0b6085168e104486dfb` | Actual normalized one-step quotient comparison |
+| `Derivative.TopLocalizationMirabolicZero` | Library `c5eebf94883144ce00adc4e252995c28082f08a7` | Terminal normalized Psi-minus comparison |
 | `Derivative.TopLocalizationBoundary` and `Derivative.TopLocalizationRestriction` | Library `47d510a700120ee55273befb9e9cfbff513b1eb4` | Rank-zero full-carrier boundary and actual GL-to-mirabolic subgroup-copy equivalence |
-| `Derivative.TopLocalizationData` | Accepted and published before the one-step construction | Elementary matrix subgroups, characters and determinant identities |
-| `Jacquet.LocalizationTower` | Reviewer 5607; Library `a471b56846d22482cc30a47a96315f2d487b8c01` | Nested/single quotient inverse lifts and supplied-twist compatibility |
-| `Jacquet.LocalizationTransport` | Accepted and published before the tower and concrete adapters | Inverse quotient lifts under subgroup and character transport |
+| `Derivative.TopLocalizationData` | Published before the one-step construction | Elementary matrix subgroups, characters and determinant identities |
+| `Jacquet.LocalizationTower` | Library `a471b56846d22482cc30a47a96315f2d487b8c01` | Nested/single quotient inverse lifts and supplied-twist compatibility |
+| `Jacquet.LocalizationTransport` | Published before the tower and concrete adapters | Inverse quotient lifts under subgroup and character transport |
 
 ## Import and condition-by-condition independence audit
 
 The direct project imports are `Derivative.PartialDerivativeTensorLocalization`
 and `Derivative.TopLocalizationComparison`. Recursive traversal of actual import
-declarations gives exactly 93 project imports, excluding this final entry
+declarations gives exactly 93 project imports, excluding this
 module; the complete list appears below. At Library
 `2d873b3cb17c7405c7a7212a3744ed724403d313`, every imported Lean/Markdown pair
-matches the workspace byte for byte and is unchanged from the completed audit
+is unchanged byte for byte from the audit
 at `6cb15022e66f7f1f171e7e8d563e74b92072e5ba`. The adapter's 92 imports match the
-previously completed helper audits unchanged, and the new adapter pair itself
-matches its frozen reviewed and published files. Adding the direct tensor import
-introduces no module beyond that closure. The target retains Lean SHA256
+earlier helper audits unchanged, and the adapter pair itself
+matches its published files. Adding the direct tensor import
+introduces no module beyond that closure. The target has Lean SHA256
 `30c22587bab476fab8c6a190841b30c41f8dfa20b9f40b0187254c3f53227f41` and
 Markdown SHA256
 `e21ce266515ce4c853255f63bd98c8dd5bb097ded93fec62c9c329415b5e8c15`.
@@ -243,37 +238,36 @@ and matrix-coefficient definitions. None supplies an excluded representation
 finiteness, representation duality or consumer conclusion. The measure results
 in `MirabolicQuotientMeasure` are unused; only its elementary matrix facts feed
 the data helper. `LocalizationTransport`'s scalar-vanishing theorem is unused.
-The current `NormalizedCharacter` includes a published import of
+`NormalizedCharacter` includes an import of
 `Topology.CompactNormCharacter`. That helper pair imports only Mathlib and
 proves the compact-character result by bounded powers/inverses; its historical
 `RankinSelberg.LastRowReduction` namespace introduces no consumer dependency.
 The actual graph, including that addition, was checked.
 
-All 38 distinct excluded task IDs from the full host objective are retained
-below. Each exclusion applies to the mathematical conclusions, proof successors,
-transitive prerequisites and downstream consequences, as specified by the host.
-The source scan for excluded names and IDs has no hits in the Lean closure;
+The excluded families are listed below. Each exclusion applies to the
+mathematical conclusions, the modules that prove them, transitive prerequisites
+and downstream consequences.
+The source scan for excluded names has no hits in the Lean closure;
 that corroborates the inspected proof bodies and provenance rather than
-replacing their audit. No pending candidate, statement definition or private
-draft is used as a proved premise.
+replacing their audit. No statement definition is used as a proved premise.
 
-| Excluded family and parent task references | Final proof and shared-helper audit |
+| Excluded family | Final proof and shared-helper audit |
 | --- | --- |
-| `SegmentHeadProductIrreducibility` (`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`); `GenericSegmentProductUniqueness` (`30341ae4-65f2-4a0e-9283-763db01a409e`); individual special-head/reverse-socle (`67279e36-f3c2-42e3-9302-11729784042e`) and segment-socle/reverse-head (`4ca79bbd-589e-476b-9f65-661e799984b5`) existence | No segment, head or socle module occurs. The tensor inverse is a quotient-valued bilinear lift, and the adapter inverse uses quotient transport and the supplied-twist tower universal properties. |
-| Multisegment exhaustion (`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head existence (`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), quotient coverage (`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), ordered conversion (`8252833d-c269-41a9-824c-5879e531b23b`) | No multisegment, ordering or coverage theorem occurs. The two maps send nested representatives to single representatives and back. |
-| Tempered uniqueness (`52e97845-36bb-457d-b76f-70753334b88c`), `SquareIntegrableLanglandsClassification` (`1cb45da2-7007-4351-a694-594fb148b8d1`), square-integrable exhaustion (`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), regular exhaustion (`bf433f0a-921a-428c-b0c0-6475438125ac`), analytic segment classification (`aca8805b-054f-4d56-8045-12db7f623404`), `SegmentSpecialEssentialSquareIntegrability` (`5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`) | No classification or square-integrability input occurs. Every original module carrier is arbitrary. |
-| `UnlinkedSegmentSocleProductIrreducible` (`23e98d90-6055-4e35-91a9-b0f5d8a84961`), `LinkedSegmentSocleReverseProductStructure` (`a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`), `LinkedSegmentSoclePairReducible` (`8fa9f68b-fa1b-431a-97f6-5b163964d1fc`), `SegmentSocleProductIrreducibility` (`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`), juxtaposed structure and quotient-Hom (`7ff2a1e9-89dc-439e-a861-a567b3db92bf`) | No socle, representation product-structure, reducibility or quotient-Hom theorem occurs. |
-| Adjacent socle commutation (`e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`), two-segment commutation (`426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0`), linked gluing (`c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea`), `OrderedMultisegmentSocleExistence` (`23189526-80b0-4828-a6d4-7ebec2cbeef5`), socle exhaustion (`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`) | No socle commutation, gluing or exhaustion module or theorem occurs. |
-| `SegmentFullJacquetFormula` (`ed48ae06-964c-4c84-9e62-978f5a953ca7`), `SegmentHeadJacquetFormula` (`55ad1e10-62d8-46b7-a081-909ef0056426`), `SegmentSocleJacquetFormula` (`b95105c6-f8bb-4641-ae53-2f49d1e7f034`), `SegmentSpecialJacquetExponentNormFormula` (`92aea10f-62ac-4e0b-bd4a-9a80909797c5`); all segment derivative formulas and parent six-statement parts (b), (d), (e), (f) | No segment formula is used. General localization supplies the relation quotient, and ordinary restriction is its exact published definition. |
-| `TwoSupercuspidalNonadjacentProductIrreducible` (`3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`), `TwoSupercuspidalProductStructure` (`ab61f565-1427-4746-ba77-46097563e962`); Ze80 §§3.5, 9.6, Theorems 4.2, 9.7 and 9.3 | No product criterion, segment derivative, analytic theorem or unproved BZ77 derivative result is used. No Haar bridge is needed. |
-| `IrreducibleCoinvariantFinitenessStatement` (`5ab445dc-d2b4-4072-80d1-6370870a4a26`), `LeviCuspidalCoinvariantFinitenessStatement` (`3ff5c8fb-397c-4345-bcb3-5d98a0993d18`), the dependent mirabolic finite-length route (`5428fe2c-013c-482d-aa6e-7df43e7191aa`), `SupercuspidalCoinvariantFinitenessStatement` (`62de5903-b616-4b5c-88eb-a066b77c5467`) | No representation-finiteness input occurs. The imported finite-length predicate and arithmetic degrees described above are unused. |
-| Proper-derivative vanishing and finrank-one conclusions of `SupercuspidalDerivatives` (`2e5183b1-01e9-44fb-b26c-f4521a25c7c7`) | No classification module occurs. Neither UpperUnipotentCharacterFactorization nor TopDerivativeCoinvariantComparison, whose closure reaches the excluded host, is imported. No derivative dimension is used. |
-| Plus, adjunction, representation duality, derivative filtration, pairing, or unproved general derivative comparisons | No such theorem is assumed. The tensor isomorphism and all-rank adapter are independently published; the latter is constructed from one-step, terminal, restriction and boundary equivalences using derivative recursion and categorical composition. The final proof tensors that adapter with the identity and composes it with the tensor isomorphism. The generic tower proves its own quotient lifts; no unproved general derivative result is a premise. |
+| `SegmentHeadProductIrreducibility`; `GenericSegmentProductUniqueness`; individual special-head/reverse-socle and segment-socle/reverse-head existence | No segment, head or socle module occurs. The tensor inverse is a quotient-valued bilinear lift, and the adapter inverse uses quotient transport and the supplied-twist tower universal properties. |
+| Multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion | No multisegment, ordering or coverage theorem occurs. The two maps send nested representatives to single representatives and back. |
+| Tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable exhaustion, regular exhaustion, analytic segment classification, `SegmentSpecialEssentialSquareIntegrability` | No classification or square-integrability input occurs. Every original module carrier is arbitrary. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `SegmentSocleProductIrreducibility`, juxtaposed structure and quotient-Hom | No socle, representation product-structure, reducibility or quotient-Hom theorem occurs. |
+| Adjacent socle commutation, two-segment commutation, linked gluing, `OrderedMultisegmentSocleExistence`, socle exhaustion | No socle commutation, gluing or exhaustion module or theorem occurs. |
+| `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`; all segment derivative formulas and parts (b), (d), (e), (f) of the six statements of `Classification.SegmentSocleDerivativesStatement` | No segment formula is used. General localization supplies the relation quotient, and ordinary restriction is its exact published definition. |
+| `TwoSupercuspidalNonadjacentProductIrreducible`, `TwoSupercuspidalProductStructure`; Ze80 §§3.5, 9.6, Theorems 4.2, 9.7 and 9.3 | No product criterion, segment derivative, analytic theorem or unproved BZ77 derivative result is used. No Haar bridge is needed. |
+| `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`, the dependent mirabolic finite-length route, `SupercuspidalCoinvariantFinitenessStatement` | No representation-finiteness input occurs. The imported finite-length predicate and arithmetic degrees described above are unused. |
+| Proper-derivative vanishing and finrank-one conclusions of `SupercuspidalDerivatives` | No classification module occurs. Neither UpperUnipotentCharacterFactorization nor TopDerivativeCoinvariantComparison, whose closure reaches the vanishing half of `SupercuspidalDerivatives` (`Classification.SupercuspidalDerivativeVanishing`), is imported. No derivative dimension is used. |
+| Plus, adjunction, representation duality, derivative filtration, pairing, or unproved general derivative comparisons | No such theorem is assumed. The tensor isomorphism and all-rank adapter are published separately; the latter is constructed from one-step, terminal, restriction and boundary equivalences using derivative recursion and categorical composition. The final proof tensors that adapter with the identity and composes it with the tensor isomorphism. The generic tower proves its own quotient lifts; no unproved general derivative result is a premise. |
 
 
-No split weakens these exclusions. The tensor helper and adapter were submitted
-and reviewed under the inherited full restrictions. In particular the separate
-normalization bridge under the excluded two-supercuspidal product host is not
+The tensor helper and adapter satisfy the same full restrictions. In particular
+the separate normalization bridge `Derivative.MirabolicMinusNormalization`,
+introduced with the excluded two-supercuspidal product results, is not
 imported or used: this proof retains the published explicit inverse-half
 characters and needs no Haar comparison. The all-character/degenerate-character
 finiteness consumers, the positive two-block Jacquet comparison and every

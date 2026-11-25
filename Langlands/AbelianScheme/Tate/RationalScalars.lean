@@ -248,7 +248,7 @@ theorem rationalEndAction_commute (f : Rationalization.End A) (a : Global.Finite
     Commute (rationalEndAction A T P f) (finiteAdeleAction A T P h a) := by
   apply LinearMap.ext
   intro x
-  exact rationalHomMap_finiteAdeleAction T P h f a x
+  exact rationalHomMap_finiteAdeleAction T P h f.asHom a x
 
 /-- The required B tensor_Q A_f action comes from actual rational endomorphisms. -/
 def finiteAdeleAlgebraAction {D : Type*} [Ring D] [Algebra ℚ D]

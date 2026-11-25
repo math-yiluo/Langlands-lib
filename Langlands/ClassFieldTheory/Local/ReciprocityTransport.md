@@ -1,8 +1,8 @@
 # Standalone and common-closure reciprocity transport
 
-Author: Worker 100. This is a derived comparison construction with its intrinsic
+This is a derived comparison construction with its intrinsic
 transport and normalization laws. It imports the published field and units
-comparison of Worker 28 in `ExtensionFieldTransport`; it does not duplicate it.
+comparison in `ExtensionFieldTransport`; it does not duplicate it.
 
 ## Inputs and actual objects
 

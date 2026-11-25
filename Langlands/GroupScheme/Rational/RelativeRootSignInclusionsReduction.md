@@ -1,8 +1,6 @@
 # Semigroup reductions for actual-root sign inclusion
 
-Authors: Worker 1312, using Worker 1323's actual-root support conversion.
-
-This internal unit defines `RelativeRootSignInclusionsFromSemigroups` as the
+This internal module defines `RelativeRootSignInclusionsFromSemigroups` as the
 conditional implication
 
 `SemigroupRealizationStatement → DynamicSemigroupComparisonStatement → RelativeRootSignInclusionsStatement`.
@@ -10,15 +8,15 @@ conditional implication
 The theorem `relativeRootSignInclusions_of_semigroupRealization` proves that
 implication. Both structural propositions remain explicit theorem-valued
 premises. This is not an unconditional proof of either structural proposition
-or of the exact task target `RelativeRootSignInclusionsStatement`. The exact
-task still requires independently proved structural inputs with no added
-premises in its eventual theorem.
+or of the exact target `RelativeRootSignInclusionsStatement`. The Library's
+unconditional proof of the target is `relativeRootSignInclusions` (module
+`RelativeRootSignInclusionsProof`).
 
 The construction is internally derived from the published definitions and
 interfaces in `WeightSemigroupStatement`, the pointwise support-order API in
 `WeightSemigroupSupport`, and the actual-root support conversion in
 `RelativeRootSignSupport`. The latter converts between the same actual
-adjoint roots as the task target and the ambient conjugation-action support;
+adjoint roots as the target and the ambient conjugation-action support;
 there is no replacement root datum or assumed root-group decomposition.
 
 For parabolics, `dynamic_parabolic_le_iff_on_weightSupport_of_semigroup`

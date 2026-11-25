@@ -1,7 +1,5 @@
 # The two-step Mackey sequence for the mirabolic restriction
 
-Author: Worker 1163.
-
 This helper module of the proof of
 `Langlands.Derivative.MirabolicProductRestrictionStatement` turns the published
 closed-subgroup Mackey filtration into the natural short exact sequence of

@@ -1,6 +1,6 @@
 # Minimal cuspidal Jacquet modules inside an actual standard Levi
 
-This internal supporting construction adapts Worker 379's published
+This internal supporting construction adapts
 `RationalCuspidalEmbeddingProof` to a fixed actual standard rational-point
 Levi. `exists_nonzero_cuspidal_leviJacquet` proves that every irreducible smooth
 representation of that Levi has a nonzero normalized Jacquet module which is
@@ -57,7 +57,7 @@ The direct declaration-level dependencies of this argument are
 `isLimitOfCompactSubgroups_subgroupOf`, and
 `standardUnipotent_isLimitOfCompactSubgroups_of_standardCocharacterStatement`.
 These are existing Library results. The proof route is derived from them;
-no new assertion from the original literature is claimed in this unit.
+no new assertion from the original literature is claimed in this file.
 
 Three generic helpers prepare the subsequent embedding argument.
 `exists_irreducible_quotient_of_finite` takes a nonzero smooth module finitely
@@ -75,7 +75,8 @@ retains the explicit unimodularity premise required by first adjointness.
 The main minimal-Jacquet theorem uses no Langlands classification,
 character-independence theorem or geometric lemma. The generic embedding
 helper uses the actual first-adjointness equivalence just named, with its
-unimodularity hypothesis and carrier sizes unchanged. This candidate does
-not yet construct the rational inside-Levi induction embedding. Its compact
+unimodularity hypothesis and carrier sizes unchanged. This module does not
+construct the rational inside-Levi induction embedding; that is
+`exists_cuspidal_embedding_in_levi` in `RationalLeviCuspidalEmbedding`. Its compact
 quotient discharge and the full support-category Jacquet-vanishing proof
 remain separate obligations.

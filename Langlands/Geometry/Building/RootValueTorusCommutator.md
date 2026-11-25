@@ -137,8 +137,8 @@ positive-cocharacter theorem, the canonical lower filtration construction and
 its exact scalar level sets, and elementary subgroup algebra. It introduces no
 new assertion from external literature.
 
-This unit establishes V3 under the stated upper-valuation hypotheses. It does
+This module establishes V3 under the stated upper-valuation hypotheses. It does
 not establish V2, V4 or V5 or assert a full lower root datum valuation. Initial
 valuation existence, building geometry and metric construction, and the special
 vertex and unique fixation for the original supplied integral model remain
-outside this unit. In particular `BuildingComparisonStatement` remains open.
+outside this module. In particular `BuildingComparisonStatement` remains open.

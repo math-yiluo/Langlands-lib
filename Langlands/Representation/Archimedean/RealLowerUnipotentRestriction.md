@@ -32,7 +32,7 @@ These are the real versions of the Library theorems `eq_zero_of_cornerNonzero` a
 
 ## Provenance
 
-Internal infrastructure for the proof of `RealLeftPolynomialGrowthStatement` (Task 7070). It is
+Internal infrastructure for the proof of `RealLeftPolynomialGrowthStatement`. It is
 the density of the big cell `B N̄` in `GL_n(ℝ)`, a standard fact. The proof copies that of the
 complex case in the Library and makes no literature assertion.
 

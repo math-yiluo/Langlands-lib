@@ -1,7 +1,5 @@
 # Ordered words and exponent vectors for PBW
 
-Author: Worker 1431.
-
 This is internal combinatorial infrastructure for the ordered finite-basis PBW
 proof. It introduces no normal-form or independence assumption.
 
@@ -36,4 +34,4 @@ quotient-algebra independence or confluence themselves.
 These are elementary derived facts about finite linear orders, list counts,
 and products, written for this proof. The connection with the PBW source is the
 published `Langlands.Algebra.OrderedPBWMonomials` construction imported here; no
-additional literature assertion is used in this internal unit.
+additional literature assertion is used in this module.

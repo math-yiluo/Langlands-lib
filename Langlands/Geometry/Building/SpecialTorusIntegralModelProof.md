@@ -26,7 +26,7 @@ The proof is one line. It applies two published Library theorems:
 
 1. `Langlands.Geometry.Building.specialTorusBoundedModel :
    SpecialTorusBoundedModelStatement.{u}` (module
-   `Langlands.Geometry.Building.SpecialTorusBoundedModelProof`, from Task 6196). It gives a
+   `Langlands.Geometry.Building.SpecialTorusBoundedModelProof`). It gives a
    smooth `M : IntegralModel ↥𝒪[F] F G` whose base change to `O_K = fixedFieldIntegers F`
    has integral points containing two subgroups. The first is the image of `S_K(K)^1`. The
    second is the image of `A(K)^1` for a maximal `K`-split torus `iA : A.toGrp ⟶ G_K`. Here
@@ -37,7 +37,7 @@ The proof is one line. It applies two published Library theorems:
    the torus of an apartment through the point.
 2. `Langlands.Geometry.Building.specialTorusIntegralModelReductionStatement :
    SpecialTorusIntegralModelReductionStatement.{u}` (module
-   `Langlands.Geometry.Building.SpecialTorusIntegralModelReduction`, from Task 5970). The
+   `Langlands.Geometry.Building.SpecialTorusIntegralModelReduction`). The
    proposition `SpecialTorusIntegralModelReductionStatement.{u}` is by definition
    `SpecialTorusBoundedModelStatement.{u} → SpecialTorusIntegralModelStatement.{u}`. So
    applying this theorem to the term in step 1 has exactly the target type. Its proof,
@@ -80,15 +80,14 @@ proofs of the two theorems above. The target module imports the module that defi
 `UnramifiedSpecialApartmentStatement`, but the proof does not use that proposition. Both
 inputs are closed theorems.
 `specialTorusIntegralModelReductionStatement` has the residual as its only hypothesis, and
-`specialTorusBoundedModel` has no premise. The author checked this privately, outside the
-submitted files. The check followed the transitive closure of the constants in the types and
+`specialTorusBoundedModel` has no premise. This was checked outside the Library files.
+The check followed the transitive closure of the constants in the types and
 values of `specialTorusIntegralModel`, including opaque values. That closure has 156,446
 constants and contains none of the three propositions. The final theorem depends only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance
 
-Worker 5707 wrote this module for Task 5707 (`f502c3c7-c095-4c74-bf82-ad8ffb916f57`). The
-residual statement and the reduction come from Task 5970
-(`5e417cd1-e617-4ae4-adf8-da82b98ba654`), and the proof of the residual from Task 6196
-(`06c39422-c7bd-4529-be25-02182885ffaa`).
+The residual statement is `SpecialTorusBoundedModelStatement`, in the module of the same
+name. The reduction is in `SpecialTorusIntegralModelReduction`, and the proof of the residual
+in `SpecialTorusBoundedModelProof`.

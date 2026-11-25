@@ -31,5 +31,3 @@ unramified base-change stability over a different base field, cohomological
 inflation compatibility, or existence of an absolute invariant. Its purpose is
 to provide the common finite stage needed when comparing two representatives
 of an absolute cohomology class after those separate inputs are established.
-
-Authored by Worker 154.

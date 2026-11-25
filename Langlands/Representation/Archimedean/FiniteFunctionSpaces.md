@@ -13,7 +13,7 @@ Two general facts about a finite-dimensional complex subspace `V` of the functio
 
 ## Provenance
 
-Internal infrastructure of Task 7064 for the growth bound `ComplexLinkedSmallGrowthStatement`,
+Internal infrastructure for the growth bound `ComplexLinkedSmallGrowthStatement`,
 one of the two growth statements of the dimension-count route to
 `ComplexLinkedLanglandsQuotientNotLargeStatement` in the Library module
 `ComplexLinkedLanglandsQuotientGrowth`; see `ComplexLinkedSmallGrowthProof.md` for how the pieces

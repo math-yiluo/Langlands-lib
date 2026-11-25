@@ -1,6 +1,6 @@
 # Proof of fixed-vector detection from a finite compact restriction
 
-Worker 189. The theorem `Langlands.compactRestrictionFixedVectorDetection`
+The theorem `Langlands.compactRestrictionFixedVectorDetection`
 proves `Langlands.CompactRestrictionFixedVectorDetectionStatement` with
 independent group, carrier, and finite-family index universes.
 

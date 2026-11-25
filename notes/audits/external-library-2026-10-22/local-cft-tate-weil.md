@@ -1,7 +1,5 @@
 # External Library audit: local class-field theory, Tate cohomology and Weil parameters
 
-Authors: Worker 25, Worker 159 and Worker 32.
-
 ## Scope and checked versions
 
 This note addresses I006, I009, I018–I021 and I062–I065 of
@@ -28,8 +26,8 @@ present in that publication.
 
 The final reconciliation checked current Library
 `fb40559309dd366f4145aa31aad8c3db11b7cc07`. All ten findings held when
-independently verified, and all ten are now repaired by eight independently
-reviewed and published documentation candidates. The ledger records the
+independently verified, and all ten are now repaired by eight documentation
+corrections, which are in the Library. The ledger records the
 historical verdict and the present corrected state separately. Earlier
 per-section commits and hashes identify the exact pre-correction inputs;
 the final publication table gives the current corrected hashes. Every other
@@ -43,14 +41,14 @@ I064/I065 sections refer to this final commit.
 | --- | --- | --- |
 | I006 | Holds; corrected | The downward augmentation requires finite ambient `G`; the coordinate map and upward exact sequence do not. Corrected the hypothesis description in `SubgroupShifts.md`; Lean unchanged. |
 | I009 | Holds; corrected | The surjectivity theorem specializes both maps to identities. Corrected `CochainComparison.md` and described the general invariant map before the quotient; Lean unchanged. |
-| I018 | Holds; corrected | The two existential invariant-family targets already exist; the later transfer-compatible strengthening also exists. Candidate `686dc7dc-119c-4bb8-ab4d-9a157057409d` corrects the status prose and preserves the open realization boundary. |
-| I019 | Holds; corrected | Actual positive-degree corestriction, its fundamental-class predicate and the existential targets are published. The same candidate corrects the obsolete construction status; Lean unchanged. |
-| I020 | Holds; corrected | Structural laws, conditional compact lifting and actual unramified unit-norm surjectivity are separately proved and published. Candidate `6392ae02-9bd6-481a-b647-948d5fc05c96` corrects their status, preserving every hypothesis. |
-| I021 | Holds; corrected | Coherent-family relations, actual-degree system targets, the absolute filtration and its reciprocity targets already exist. Candidate `a7879e1e-a8ab-4256-a908-7dc23361a568` documents them while retaining the unproved reciprocity boundary. |
-| I062 | Holds; corrected | The genuine dual and continuous-character twist equivalences and actual local lattice specialization already exist. Candidate `8048afee-3b20-48b6-ab40-e8bb51260a33` corrects the companion status with unchanged Lean. |
-| I063 | Holds; corrected | `algebraicProperties` already proves the complete generic target, including degree surjectivity conditional on surjectivity of `φ`. Historical independent acceptance and unchanged current files are verified below. |
-| I064 | Holds; corrected | The actual local Weil assembly and its complete 22-clause theorem are published. Candidate `3cd1e6d4-236a-4261-8b1b-934748136067` links them while preserving the generic-module boundary. |
-| I065 | Holds; corrected | The complete relation target family is published. Candidate `7109acd7-e648-4b37-934c-f383f423b1c7` records it, distinguishes existing certified parameter operations, and retains the open complete-family proof goal. |
+| I018 | Holds; corrected | The two existential invariant-family targets already exist; the later transfer-compatible strengthening also exists. The correction corrects the status prose and preserves the open realization boundary. |
+| I019 | Holds; corrected | Actual positive-degree corestriction, its fundamental-class predicate and the existential targets are published. The same correction corrects the obsolete construction status; Lean unchanged. |
+| I020 | Holds; corrected | Structural laws, conditional compact lifting and actual unramified unit-norm surjectivity are separately proved and published. The correction corrects their status, preserving every hypothesis. |
+| I021 | Holds; corrected | Coherent-family relations, actual-degree system targets, the absolute filtration and its reciprocity targets already exist. The correction documents them while retaining the unproved reciprocity boundary. |
+| I062 | Holds; corrected | The genuine dual and continuous-character twist equivalences and actual local lattice specialization already exist. The correction corrects the companion status with unchanged Lean. |
+| I063 | Holds; corrected | `algebraicProperties` already proves the complete generic target, including degree surjectivity conditional on surjectivity of `φ`. Its earlier checks and unchanged current files are verified below. |
+| I064 | Holds; corrected | The actual local Weil assembly and its complete 22-clause theorem are published. The correction links them while preserving the generic-module boundary. |
+| I065 | Holds; corrected | The complete relation target family is published. The correction records it, distinguishes existing certified parameter operations, and retains the open complete-family proof goal. |
 
 ## I006: subgroup shifts
 
@@ -81,8 +79,7 @@ lines 82–90: `coinducedProjectionLinear A f` sums
 
 The report identifies a real omission in the short description of the two
 sequences. It does not identify a false Lean theorem, or assert that ordinary
-finite-group Tate theory has been extended to infinite `H`. Correction
-`4183217d-30e4-4867-9fe8-37bfb6d8ba4e` explicitly separates all these scopes
+finite-group Tate theory has been extended to infinite `H`. The correction explicitly separates all these scopes
 in `SubgroupShifts.md`, lines 5–31, with unchanged Lean.
 
 ## I009: the canonical cochain comparison
@@ -112,7 +109,7 @@ Thus the omission of the identity specialization is real; the Lean theorem
 already has the correct scope. For example, a zero coefficient morphism gives
 a zero induced map, which cannot be surjective when its target is nonzero.
 No arbitrary-map surjectivity theorem follows from the canonical comparison.
-The same correction candidate makes the specialization and the general
+The same correction makes the specialization and the general
 degree-zero factorization explicit in `CochainComparison.md`, lines 12–34.
 
 ## Tate original-source comparison
@@ -139,29 +136,17 @@ construction are internal realizations, not statements attributed verbatim to
 Serre. The exact scopes in the two corrections follow from the Lean definitions
 and complete declaration types.
 
-## Tate validation, review and publication evidence
+## Tate checks and correction
 
-Development checks `6ab61f38-f368-4d70-b1c4-4c38331868c1` and recovery check
-`e20e8a5b-d6e8-4145-aa6a-d712c3b72a40` completed with zero errors or warnings.
+Development and recovery checks completed with zero errors or warnings.
 They printed the complete unapplied declarations with universe parameters.
-They are supporting development evidence, not independent acceptance.
+They are supporting development evidence, not proofs.
 
-Correction candidate `4183217d-30e4-4867-9fe8-37bfb6d8ba4e` has snapshot
-`30ac99d53397b963a1fbb83d0478068fa39e54a687de4059d3240f62b839fd48`.
-Machine receipt `ed3f4570-68ab-4bb0-a772-2f895a0bc9df` accepted its build
-and declaration checks. Reviewer 1233 independently approved review
-`2fc9bb1c-06a7-4e51-9f6c-21bab66b1213`, without qualifications, after
-checking the full types, original Serre pages, Markdown and unchanged Lean.
-Original authors Worker 45 and Worker 210 are retained.
-
-TaskHub subsequently records `accepted=true`, `public=true` and publication
-at Library `2173e15e1a7e4f96682e6274d63c4f98ccce2c73`, integration
-`1866b4b81232405d9a446bea835cb530`. The integrated batch build passed with
-no qualifications and a quiet process. Its snapshot is
-`bbb05eab4acabbc9272ba110870f0a9ebde66bf6fdba556c6d954396b7aaa2ec`.
-The published Markdown hashes match the candidate hashes below; the
-two Lean files and the supporting inputs remain byte-identical. This closes
-the Tate corrective contribution, not the other findings or the independent publication requirement for this verdict note.
+The correction was checked against the full types, the original Serre
+pages, the Markdown and the unchanged Lean, and first appeared in the
+Library at `2173e15e1a7e4f96682e6274d63c4f98ccce2c73`, where it was built with
+Lake. The Markdown hashes in the Library match the corrected hashes below;
+the two Lean files and the supporting inputs remain byte-identical.
 
 ## Tate input fingerprints
 
@@ -180,7 +165,7 @@ Paths are relative to `Langlands/Cohomology/Tate/`.
 | `ZeroDefinitions.lean` | `d0b650881aef493ceaf637562c6f3a3d63e680f74ef6d566c8d4e9a7dca656e0` |
 | `ZeroProof.lean` | `3d45b34adccc16b386c898356cdcc3ee1092c38079b3ebf56b9c81f067fc74f2` |
 
-The candidate's and publication's corrected Markdown hashes are
+The corrected Markdown hashes, as submitted and in the Library, are
 `656eac9f41b5a10b3d87bbc4ebfe6f71d372727190f574d55f7f5dbaa4cd401c`
 for `SubgroupShifts.md` and
 `113e2470d4acd06a455dc59d8e30c8278cdb7acc4f7496a260a36c314342602d`
@@ -191,7 +176,7 @@ for `CochainComparison.md`. Both Lean hashes remain as listed above.
 These findings were checked against Library
 `350369b5ca2d36132eb7e57d869fc0454f3a3707`. Both primary pairs and all five
 companion pairs listed below are byte-identical at the report snapshot
-`f9c1742752d97c488fc1a835070bf50b534f4427`, candidate base
+`f9c1742752d97c488fc1a835070bf50b534f4427`, correction base
 `b263cfa454b11d485198ae46d8290f32435e48c6`, and this checked snapshot.
 Thus no intervening change had repaired either finding at verification.
 
@@ -253,41 +238,29 @@ original is source `henniart-2000-simple-proof`, SHA256
 The reciprocal convention changes by inversion separately from the positive
 fundamental class. No relevant errata file was found in the checked Library.
 
-### Companion acceptance and publication
+### Companions in the Library
 
-The original archive records and independent verdicts were checked directly;
-the accepted paired hashes match the current files. All independent verdicts
-below are `approve`, with empty review qualifications. These receipts establish
-their stated definition/statement scope, not proofs of local realization.
+The companions below are in the Library; the table gives the commit where
+each first appeared, and their paired hashes match the current files. They
+establish their stated definition/statement scope, not proofs of local
+realization.
 
-| Companion | Candidate | Validation receipt | Publication commit |
-| --- | --- | --- | --- |
-| `ClassFormationStatement` | `1caa5041-b20d-456d-be75-b4ff0fdbefd5` | `02f9d8df-b58e-467c-a5df-41039d33c07c` (`lean.statement@1`, accepted) | `056b7c747e32f712be4ac7fd004fd0af4845c968` |
-| `ClassFormationTransferStatement` | `53523ae8-e22f-4961-b0c6-b06d0a1f66b5` | `0164787e-2887-4c24-beb9-f04fa97c5892` (`lean.statement@1`, accepted) | `15d892539cb2f99d22c0903905b053d7c86de92a` |
-| `Corestriction` | `0be387f5-8ce3-4443-868e-0105bce23b9e` | `75637d5f-5bdc-498c-8186-cefeb048bd36` (`lean.definition@1`, accepted) | `15f4ec1bc9d27d00acfb08e2d8667e7b44317ee7` |
-| `FiniteComparison` | `8e692f6f-0f65-4ef7-882f-a7b34304d26a` | `9a7da7b9-e4f5-4bca-a21a-528dde900a02` (`lean.definition@1`, accepted) | `f01c1864161b6d1cdc1d04b1f8d577dfd4e8400f` |
-| `FiniteInvariantCompatibility` | `a587e589-ab71-41a4-9af7-ac7c4265c38e` | `211f9bf7-ea9a-4717-9cb7-afde5cca5824` (`lean.definition@1`, accepted) | `18fac9a1ce0cc1ae5ed2c754ff093194569c18e3` |
+| Companion | Publication commit |
+| --- | --- |
+| `ClassFormationStatement` | `056b7c747e32f712be4ac7fd004fd0af4845c968` |
+| `ClassFormationTransferStatement` | `15d892539cb2f99d22c0903905b053d7c86de92a` |
+| `Corestriction` | `15f4ec1bc9d27d00acfb08e2d8667e7b44317ee7` |
+| `FiniteComparison` | `f01c1864161b6d1cdc1d04b1f8d577dfd4e8400f` |
+| `FiniteInvariantCompatibility` | `18fac9a1ce0cc1ae5ed2c754ff093194569c18e3` |
 
 ### Correction status and fingerprints
 
-Worker 159's documentation-only correction is candidate
-`686dc7dc-119c-4bb8-ab4d-9a157057409d`, snapshot
-`8b5453559c943460170b37b6c2e3db65d6a890780067a4b885508b1e4f95bac5`.
-Machine receipt `ea4f7cf8-8199-4ad2-8f78-99d4748f4723` accepted the build
-and declaration checks. Reviewer 1404 approved independent review
-`33572d65-e270-4059-9596-683141a86d12` without qualifications. The full report
-was read: it verifies the originals, companion receipts and unchanged Lean,
-and covers only I018–I019. TaskHub now records `accepted=true`,
-`public=true`: publication commit `886e27567a757917705b7adef45a2c2621bf4bf7`,
-integration `d26b17ee37694fe482eb1ec38f9b0867`, integrated snapshot
-`4afbced190956c6e3bb82471470a91acddabf971fcdcc4cbd3c0054901959929`.
-The fresh integration validation is accepted, `build_succeeded=true`, without
-qualifications (report SHA256
-`7c8040a688f82f2181e515b54d2dd78b67e5b38423305685e22d2174a8b7a192`).
-Both published pairs match the frozen submission and checked current Library
-`77b88e13c66c007890e05a700979f65279070987` byte for byte. The original Worker 49/Worker 42 credits
-are preserved. Candidate prose appears at `ClassFormation.md:141–160` and
-`FundamentalClasses.md:73–104`.
+The documentation-only correction covers only I018–I019; it was checked
+against the originals, the companions and the unchanged Lean, and first
+appeared in the Library at `886e27567a757917705b7adef45a2c2621bf4bf7`, where it
+was built with Lake. Both corrected pairs match the checked Library
+`77b88e13c66c007890e05a700979f65279070987` byte for byte. The corrected prose
+appears at `ClassFormation.md:141–160` and `FundamentalClasses.md:73–104`.
 
 SHA256 inputs at checked Library `350369b5ca2d36132eb7e57d869fc0454f3a3707`,
 with paths relative to `Langlands/ClassFieldTheory/Local/`:
@@ -309,7 +282,7 @@ with paths relative to `Langlands/ClassFieldTheory/Local/`:
 | `FiniteInvariantCompatibility.lean` | `87d7aade4975b8e1bd9f73a896be93f03f80e09b70c464925c9d2f738191fe1c` |
 | `FiniteInvariantCompatibility.md` | `def97b2126e6f16e4cb2f1f2b0d9996c384f3508b0ad5fecc9051ad96d2c621a` |
 
-Candidate corrected Markdown hashes are
+Corrected Markdown hashes are
 `540ae013a15ee4fbfcf0a53a847cae8f70fa426aeee5de4a0bfe5fa422334a72`
 for `ClassFormation.md` and
 `d452d2fc2107e558a881ed24e7face6e1833f77ef74c9b71e7a639714e452bc1`
@@ -380,38 +353,26 @@ level zero. The compact-intersection and Krull-intersection implementations
 are disclosed as derived routes, not Serre's verbatim proof. No Serre erratum
 was present in the checked Library.
 
-### Companion receipts and correction
+### Companions and correction
 
-Directly checked original records, independent review rationales, accepted
-validation and publication receipts establish all three proof releases. Each
-proof receipt records Lake build, exact target, unchanged statement and frozen
-inputs, with `proof_accepted=true`; the integrated batch build is separately
-accepted. All six archived proof-pair hashes equal the current files. These
-historical receipts, rather than present compilation or nearby prose, support
-the publication claims.
+The three proofs below are in the Library; each was checked with a Lake
+build, against its exact target, with its statement and inputs unchanged.
+All six proof-pair hashes equal the current files.
 
-| Proof | Candidate | Accepted proof validation | Independent review | Publication |
-| --- | --- | --- | --- | --- |
-| Structural | `e7c97189-c755-481e-b82f-bfb898915625` | `7b75ef98-2b61-48df-8bfc-e2f63e810426` | `fe3a986f-b826-4971-a493-19711a9777c6`, Reviewer 301, approve | `bfd2c6b428660be7889841323ce92565132580bb` |
-| Topology | `1a6487f4-ea86-4561-92d7-5bf31d81eae9` | `e047255e-81ca-42ec-a699-6f8a61a7a2a6` | `310d017d-33ed-4875-be74-07391b2161fd`, Reviewer 345, approve | `9173b91d7bd642075001f7d8d56e9e6d26cae822` |
-| Unramified unit norm | `157d6e5b-e40f-4e63-aecc-bc5039ade7bd` | `d4e98dc3-8a60-42fa-ab02-285f54f8e8e1` | `2e62a1a8-4f0c-4476-b8a6-6ad31025807c`, Reviewer 395, approve | `08ce07bfdc79298778cd3e9ee6d5318c23c3b75b` |
+| Proof | Publication |
+| --- | --- |
+| Structural | `bfd2c6b428660be7889841323ce92565132580bb` |
+| Topology | `9173b91d7bd642075001f7d8d56e9e6d26cae822` |
+| Unramified unit norm | `08ce07bfdc79298778cd3e9ee6d5318c23c3b75b` |
 
-The original topology statement is also independently accepted and published:
-`4af8a47e-b9f0-4a37-9f76-977c279946ac`, validation
-`277b9d91-189c-44d5-8ff1-91d9e1544754`, review
-`62396fea-d51e-4952-a00b-3486b9cded59` (Reviewer 175, approve), publication
+The original topology statement first appeared at
 `f8488ce760fd0ec518e405f24e33da3f8aaf7ef2`. Its current Lean differs only by
 canonicalizing the `Units` import; its Markdown has the corresponding two
 module-name changes. These complete differences were inspected.
 
-Correction `6392ae02-9bd6-481a-b647-948d5fc05c96` preserves all Lean bytes and
-Worker 92's authorship, with Worker 159's documentation contribution identified.
-Machine receipt `ad19b347-a351-416b-910c-2b276ba26863` is accepted. Reviewer 1440
-approved review `79bbacff-ddee-41d1-9c65-17b1d4156191` without qualifications;
-the full report checks original Serre passages and all three companion receipts.
-It is accepted and published at
-`4ccd65d85917da26d0a67b9c48a37859533fffa9`, integration
-`31cfcc34258e4ee6a8abcc8d5dde8c36`, with accepted integrated validation. The corrected Markdown SHA256 is
+The correction preserves all Lean bytes. It was checked against the original
+Serre passages and all three companions, and first appeared in the Library at
+`4ccd65d85917da26d0a67b9c48a37859533fffa9`. The corrected Markdown SHA256 is
 `06a7403c4d0254ee50545083e3203bc1bf6a73a9860fe88437259804ccca0fb3`.
 
 Input SHA256 hashes at the checked commit, relative to
@@ -434,7 +395,7 @@ Input SHA256 hashes at the checked commit, relative to
 | `Norms.lean` | `696b8c578a372037c4729160b4be63fac3365e96360abf5b50b8b546fe994d87` |
 | `Norms.md` | `36ebee619ae3ad6ab5bed3286549564dd9ab3bf3cd1c852006bfdbad5141dab9` |
 
-## I021: existing coherent-system and absolute-filtration units
+## I021: existing coherent-system and absolute-filtration modules
 
 The finding holds at Library `886e27567a757917705b7adef45a2c2621bf4bf7`.
 The checked pairs below are unchanged from the report snapshot and
@@ -525,37 +486,30 @@ compatibility diagrams and subgroup images. These sources support the declared
 interfaces and conventions; they do not supply Lean proofs. No relevant Tate
 or Serre erratum was present in the checked Library.
 
-### Publication evidence and correction
+### Modules and correction
 
-The five original records, full independent review rationales and authoritative
-publication receipts were checked directly. All reviews approve without
-qualifications; machine validation and integrated builds are accepted.
-Their policies are definition or statement policies, as appropriate, and do
-not certify reciprocity proofs.
+The five modules below are in the Library; the table gives the commit where
+each first appeared. They are definitions or statements and do not certify
+reciprocity proofs.
 
-| Unit | Candidate | Accepted validation | Independent review | Publication |
-| --- | --- | --- | --- | --- |
-| Weil statement | `567a474e-a4bd-47e3-b4eb-1ee5ed72de5b` | `3e5f1b7c-153d-4647-8706-3c8c9ef1d8a4` | `4be40b15-9303-4d0a-881e-2e9c571586af`, Reviewer 295 | `bfd2c6b428660be7889841323ce92565132580bb` |
-| System definitions | `2c2c9984-5fef-4992-ad36-a288068f90a7` | `430dae27-b0b3-4b40-b6ce-4beca6b0a783` | `53403c6e-fc07-4e1a-8b6f-258df600bd44`, Reviewer 105 | `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf` |
-| Actual system targets | `794aaa47-1b71-45d9-b470-936ef6a5fd4a` | `fd8f6b41-6fb8-4348-bac9-3a41eeec5111` | `02b38838-f93f-40b6-a816-9a1160bfba92`, Reviewer 236 | `8728166c7a3a18d2d8347cd6c907cc2226768605` |
-| Absolute filtration | `3591d714-9aaa-4b57-9e50-df569da2f630` | `b43aa5db-ba6d-45c1-9337-44ce366ec4c4` | `4c76117a-c9f9-4a82-8420-24c14204acae`, Reviewer 140 | `6700bb7581ced62a8982c39bcea021acff83aad7` |
-| Absolute reciprocity targets | `e1c7c7ae-fb7d-4ecf-b1c8-5cf20cad28b1` | `8da9a9d9-b46c-406a-9647-7506c4e9895e` | `1670778b-10a3-48d3-b65c-f08e73f89ef8`, Reviewer 258 | `ef274d37c255e4b25a990dd377d10e2da436807d` |
+| Module | Publication |
+| --- | --- |
+| Weil statement | `bfd2c6b428660be7889841323ce92565132580bb` |
+| System definitions | `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf` |
+| Actual system targets | `8728166c7a3a18d2d8347cd6c907cc2226768605` |
+| Absolute filtration | `6700bb7581ced62a8982c39bcea021acff83aad7` |
+| Absolute reciprocity targets | `ef274d37c255e4b25a990dd377d10e2da436807d` |
 
 Archived pairs equal the current files except for the canonicalized Galois
 import in `Herbrand.Absolute`, its matching Markdown description, and the
 module-directory description in `ReciprocitySystem.md`. These full differences
 were inspected; no mathematical statement changed.
 
-Correction candidate `a7879e1e-a8ab-4256-a908-7dc23361a568` retains Worker 10's
-authorship and unchanged Lean, with Worker 159's documentation contribution.
-Machine receipt `025dcb3a-07b6-4bf2-9b61-8c89c21c9fe3` is accepted.
-Reviewer 1450 approved review `75a8891a-f17d-4d2c-aeb1-b610de437815` without
-qualifications; the full report was read. It is accepted and published at
-`4ccd65d85917da26d0a67b9c48a37859533fffa9`, integration
-`7bbea4c4af5b460c91b07c90d7c434f9`, with accepted integrated validation.
-Its corrected Markdown SHA256 is
+The correction keeps the Lean unchanged. It first appeared in the Library at
+`4ccd65d85917da26d0a67b9c48a37859533fffa9`. Its corrected Markdown SHA256 is
 `30f10173b6c45f3b08e52359ab1005c469d023bf10eeae3fa9383e5d34ef3748`.
-The old statement pair's publication is distinct from this correction's status.
+The old statement pair's entry into the Library is distinct from this
+correction.
 
 Current input SHA256 hashes at the checked commit:
 
@@ -602,18 +556,12 @@ retains the arbitrary universe and all original hypotheses.
 
 Thus [Algebraic.md](../../../Langlands/Weil/Algebraic.md), lines 3–4 and
 27–32, has obsolete future-proof wording. Its claim that the statement
-module itself only defines a proposition remains accurate. Correction
-`42e302be-9d7d-4085-903b-f99144e25b45` links the companion proof and keeps
-that module distinction and the conditional-surjectivity boundary. Machine
-receipt `076b8c8c-5804-4c58-8335-dd60d86e854c` is accepted; Reviewer 1477
-approved review `80924a88-7728-4042-8f00-b1ab64acad93` without qualifications.
-The complete review was read. It is accepted and published at
-`a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18`, integration
-`ac6a5c3a136342c0bc4071987a35ebe5`, with accepted integrated validation.
-The corrected Markdown SHA256 is
-`0a93572cc4956df7085c6024121f40f5446178acf07cab6b653207c00b511154`.
-Lean is unchanged; Worker 2's authorship is retained with Worker 32's
-correction contribution.
+module itself only defines a proposition remains accurate. The correction
+links the companion proof and keeps that module distinction and the
+conditional-surjectivity boundary. It first appeared in the Library at
+`a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18`. The corrected Markdown SHA256 is
+`0a93572cc4956df7085c6024121f40f5446178acf07cab6b653207c00b511154`. Lean is
+unchanged.
 
 The complete supporting [Pullback.lean](../../../Langlands/Weil/Pullback.lean),
 lines 18–75, defines `Degree := Multiplicative ℤ`, the actual profinite
@@ -633,47 +581,37 @@ that Henniart states the arbitrary-input theorem. Source
 SHA256 `451a8bd31a58be9bf5ce49588503c2d229b1a73bf3e65ae0c7b2f491c1c4e017`.
 No relevant errata file was found in the checked notes.
 
-### Verified Test 2 acceptance and current-file continuity
+### Checks in an earlier line of the Library and current-file continuity
 
-The pilot imported Test 2's Library files without its ledger. The operator
-supplied a read-only export in literature folder
-`Test 2 acceptance receipts of the Weil pullback algebraic proof/`.
-Its registered source is
-`provided-646d3159d992a5cae36711e43fde410b44eb8ff157d3dee3abb1c23a3177ae85`,
-folder SHA256 `f1bd0a306f83a23f74243d5bdb9dcda6da121e89e037a3295c0b31e1a9954027`.
-The exact locators are each artifact's `receipts.json` and
-`archive/1/{record,publication}.json`, with accepted source files in
-`archive/1/final/`. The candidate bindings, original validation, independent
-review rationales and semantic checks, integrated validation, publication
-and final source bindings were checked directly. These are historical
-**Test 2** commits, not new publications in the pilot:
+These three modules were first published in an earlier line of the Library
+(called Test 2 in its records) and imported into this Library without their
+records. A read-only export of those records is registered as
+`provided-646d3159d992a5cae36711e43fde410b44eb8ff157d3dee3abb1c23a3177ae85`
+(literature folder `Test 2 acceptance receipts of the Weil pullback algebraic proof/`,
+folder SHA256 `f1bd0a306f83a23f74243d5bdb9dcda6da121e89e037a3295c0b31e1a9954027`).
+Their source bindings, checks and final source files were read there. The
+commits below are commits of that earlier line:
 
-| Content | Candidate | Accepted validation | Independent reviewer | Test 2 publication |
-| --- | --- | --- | --- | --- |
-| Generic proof | `ed9e1f3f-9453-4fb5-afbc-bc5ec4624213` | `21fe8ae7-229a-4e62-90e4-3d7494b58c7c`, `lean.proof@1` | Reviewer 82, review `cf1ee5a2f71142419c613cb0f7355ab5` | `5bc58c2525e0499012801c80f17b6a9c04d57263` |
-| Algebraic target | `a1ca17e7-e6e7-40de-866f-a1db719cc6a2` | `ac0b4700-bd39-421a-8a7a-75edb98f3433`, `lean.statement@1` | Reviewer 28, review `76a0b5973ae242d3a1667ac18a587839` | `9db46907db3181b0c1dfd287b8ab2f1f02054cab` |
-| Pullback definition | `993e4326-4390-4fc8-94a7-82829061b1ea` | `9eff032f-b41a-4e52-9d72-edbed7bfdd7b`, `lean.definition@1` | Reviewer 18, review `96b60dc2-a3bf-4357-bd16-87bb744c872c` | `32f1fbf4cd19ab3f273133995b573b41c814aaff` |
+| Content | Publication in the earlier line |
+| --- | --- |
+| Generic proof | `5bc58c2525e0499012801c80f17b6a9c04d57263` |
+| Algebraic target | `9db46907db3181b0c1dfd287b8ab2f1f02054cab` |
+| Pullback definition | `32f1fbf4cd19ab3f273133995b573b41c814aaff` |
 
-All three independent reviews approve with empty qualifications. The proof
-belongs to task `3b9f4fcb-7138-4fb9-9f72-0edc615d7fb6`, revision 1,
-with candidate body hash
-`ea7bd9f235762b365fa2d471fc6f5062d03917ff9579f7d7cde5c5530bf1124b`.
-Its native binding targets the exact statement above, fingerprint
+The proof's binding targets the exact statement above, fingerprint
 `cf576391460530659e34a842c1b05c7da15ec77124156dff986d83fa3385ace4`.
-The published integration `94b78d8863554d829ee3666c4ab328b1` has accepted
-Lake-build, exact-target, statement-definition and frozen-input checks;
-`proof_accepted=true`, the candidate inspection has `target_matches=true`,
+It passed Lake-build, exact-target, statement-definition and frozen-input
+checks; its target matches,
 and the only recorded axioms are `propext`, `Classical.choice`, `Quot.sound`.
 The final theorem retains universe `u`. The statement and definition
 validations establish their corresponding scopes and do not separately
-claim proof acceptance.
+claim a proof.
 
-All six accepted final files match both the external report snapshot
-`f9c1742752d97c488fc1a835070bf50b534f4427` and current checked pilot
-Library `350369b5ca2d36132eb7e57d869fc0454f3a3707` byte for byte. This
-binds the historical acceptance to the carried source and closes the prior
-receipt gap; neither compilation alone nor downstream use supplies that
-conclusion. Paths below are relative to `Langlands/Weil/`:
+All six final files match both the external report snapshot
+`f9c1742752d97c488fc1a835070bf50b534f4427` and the checked Library
+`350369b5ca2d36132eb7e57d869fc0454f3a3707` byte for byte. This ties the
+earlier checks to the files carried into this Library; neither compilation
+alone nor downstream use supplies that conclusion. Paths below are relative to `Langlands/Weil/`:
 
 | Path | SHA256 |
 | --- | --- |
@@ -725,32 +663,25 @@ free integral lattice, degree and coefficient pairing, and the finite Galois
 support used in the source. The arbitrary-group interface and finite-support
 implementation are derived. No relevant errata file was present.
 
-The original candidate records, complete independent reviews and publication
-receipts were checked directly. All reviews approve without qualifications;
-the original machine receipts and fresh integrated builds are accepted under
-`lean.definition@1`, not a claim of a new proof target being accepted.
+The companions below are definitions in the Library; the table gives the
+commit where each first appeared. They do not claim a new proof target.
 
-| Companion | Candidate | Validation | Independent review | Publication |
-| --- | --- | --- | --- | --- |
-| Dual | `12139155-152b-4d69-8b15-85a997672136` | `926707c0-f02f-494a-8993-5b5ec9a060ff` | `1ce20c19-4b58-4f71-ab00-18ecc2f6aaa4`, Reviewer 209 | `1058c134c0d2fb45ec96d08ea2956983aaac1d80` |
-| Twist | `6bdffb91-ee72-49c7-b55f-84d250988743` | `6282e6f2-6b15-4681-9484-423abd5d1c9f` | `6e141888-a27b-47fb-9133-8d30313b9d3f`, Reviewer 117 | `4fbc1953d45ea9aa3fa4b80478542c845102a4e5` |
-| Local | `b79698cf-b13d-4c4f-9ce6-0937c0fdfd7b` | `374536ef-0e9b-4590-9946-6eb7a0311af5` | `a8a0744a-1089-451c-8e4f-d8dc47b4412d`, Reviewer 188 | `0aa8ebf100fddc512af4406817bcd1730dd75f75` |
+| Companion | Publication |
+| --- | --- |
+| Dual | `1058c134c0d2fb45ec96d08ea2956983aaac1d80` |
+| Twist | `4fbc1953d45ea9aa3fa4b80478542c845102a4e5` |
+| Local | `0aa8ebf100fddc512af4406817bcd1730dd75f75` |
 
 Dual and Twist archived pairs equal the current pairs. Local's published
 pair equals the current pair; its integration canonicalized the submitted
 rank-family and Galois-type aliases to the existing `Parameters` declarations.
 The complete differences and actual alias definitions were checked.
 
-Replacement correction `8048afee-3b20-48b6-ab40-e8bb51260a33` supersedes
-withdrawn candidate `b5c06eee-78ce-4d15-8e2d-ba25a05ea7a2`. Machine receipt
-`94742c1d-844d-4997-b2c9-77e5746e3625` is accepted; Reviewer 1472 approved
-review `dc7cbe01-0b03-4f62-967b-3615f1f156cf` without qualifications.
-It is accepted and published at
-`a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18`, integration
-`26a4dc058f0c4a3585262bfa8c222b41`, with accepted integrated validation.
-The corrected Markdown hash is
+The correction (an earlier version did not enter the Library) first appeared
+in the Library at `a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18`. The corrected
+Markdown hash is
 `c510235fb9204ad7e8443c6ed821736e43166f0ff4ebe615a1bab6e52e15c4b2`;
-Lean is unchanged and original Worker 24 authorship is retained.
+Lean is unchanged.
 
 Input hashes at the checked commit:
 
@@ -829,19 +760,17 @@ implementations of these descriptions, not verbatim source theorems.
 
 ### Assembly acceptance and later publication continuity
 
-Original records, full independent reviews, machine receipts and publication
-records were checked directly. All three reviews approve without unresolved
-qualifications. Their exact identities are:
+The three companions are in the Library; the table gives the commit where
+each first appeared:
 
-| Companion | Candidate | Accepted validation | Independent review | Publication |
-| --- | --- | --- | --- | --- |
-| Assembly | `3b435643-8dc4-46a5-833c-78f20652b225` | `a26da4fc-6176-4744-abd3-a2b8e43b1fce` | `e999a445-baa0-4b07-bfbd-f80cde88f530`, Reviewer 108 | `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf` |
-| AssemblyStatement | `3f8a7118-ff95-47c0-9ae0-70275f9abee3` | `d5a4abe1-7dba-47e2-a880-7848113c6176` | `c70674f5-9f8f-4ba0-9bcd-09493b76f225`, Reviewer 151 | `22b4f024e0d4218752e970d09329d1799f6d81d1` |
-| AssemblyProof | `83d2d5f9-6c19-4f53-b30a-b30fccd5882f` | `abc0d442-6758-4846-bee7-007fd62ccb05` | `1c2af5e8-a712-4f6d-8510-215fd239f3db`, Reviewer 214 | `f01c1864161b6d1cdc1d04b1f8d577dfd4e8400f` |
+| Companion | Publication |
+| --- | --- |
+| Assembly | `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf` |
+| AssemblyStatement | `22b4f024e0d4218752e970d09329d1799f6d81d1` |
+| AssemblyProof | `f01c1864161b6d1cdc1d04b1f8d577dfd4e8400f` |
 
-The original proof validation records accepted Lake build, exact-target,
-unchanged-statement and frozen-input checks, with `proof_accepted=true`.
-The definition and statement records establish those respective scopes.
+The proof was checked with a Lake build, against its exact target, with its
+statement and inputs unchanged.
 Assembly and AssemblyStatement published pairs equal the current files.
 AssemblyProof subsequently underwent two inspected refactors: import
 relocation at `8728166c7a3a18d2d8347cd6c907cc2226768605` and extraction of
@@ -851,25 +780,13 @@ extracted helper proof were checked; the target and field quantification
 are unchanged. The latter publication's proof pair exactly matches the
 final checked Library.
 
-The native publication receipts bind those refactors to snapshots
-`4ca2019862e6584090c0dcae9e4bab587a683e8744952e6d68803b0749a09d03`
-and `492219e7ed5b2ab9f92c4255891fab27380935410f3a8222b6cd1b9bd3437e7c`.
-Batch receipts `89076a20-a33c-4feb-86af-20962f702ce0` and
-`b33eb00a-b242-48d9-8549-b953f0383cf7`, integrations
-`c5652c3556cb4c89a0bc4f5a8eec4d3f` and
-`2f4c80c3671947adb07dc8d356422fd6`, each record an accepted fresh Lake
-build. These later checks are explicitly source-compilation-only; they are
-not new exact-target proof acceptances and do not replace the original
-independent proof review.
+Both refactors were built with Lake when they entered the Library; these
+are compilation checks, not new checks against the exact target.
 
-Correction `3cd1e6d4-236a-4261-8b1b-934748136067` leaves Lean unchanged
-and replaces the obsolete checklist with direct companion links and precise
-properties in current `Pullback.md:98–136`. Reviewer 1456 approved review
-`1688071a-17cd-486b-80f6-39a38db50db0` without qualifications; the full
-report was read. Machine receipt `eeb5e90c-6ba8-4a88-bab5-d52b40a6de89`
-is accepted. Publication is
-`4ccd65d85917da26d0a67b9c48a37859533fffa9`, integration
-`8363a137cd714232bb458cc0c5b52a64`. Original Worker 2 authorship is retained.
+The correction leaves Lean unchanged and replaces the obsolete checklist
+with direct companion links and precise properties in current
+`Pullback.md:98–136`. It first appeared in the Library at
+`4ccd65d85917da26d0a67b9c48a37859533fffa9`.
 This correction does not claim reciprocity or the entire parameter framework.
 
 ## I065: the published parameter-relation target family
@@ -941,27 +858,20 @@ are internal derived formulations. No relevant errata note was found.
 
 ### Parameter-family acceptance and correction
 
-The complete three original reviews and their authoritative records were
-read. All approve without unresolved qualifications; original validation
-and integrated builds are accepted under the indicated definition/statement
-policies. This establishes the definitions and targets, not a proof of the
-complete `Statement`.
+The three modules below, of definitions and statements, are in the Library; the
+table gives the commit where each first appeared. This establishes the
+definitions and targets, not a proof of the complete `Statement`.
 
-| Content | Candidate | Accepted validation | Independent review | Publication |
-| --- | --- | --- | --- | --- |
-| Relation definitions | `b88732e0-9b77-4ed2-89e6-b7cc2c0a1c4e` | `8cef27e7-0a41-4b02-9d7a-71c83435cc0a`, `lean.definition@1` | `5862f6a1-3519-420b-b368-19bd592fd6e8`, Reviewer 119 | `4fbc1953d45ea9aa3fa4b80478542c845102a4e5` |
-| Relation targets | `aae1dbb8-051d-4566-866c-ff5156e9d3ee` | `54afbb5a-1dab-45c6-9d79-ba9fecc53a0e`, `lean.statement@1` | `41543dda-e457-4147-976f-d11d01d26852`, Reviewer 198 | `1058c134c0d2fb45ec96d08ea2956983aaac1d80` |
-| Parameter operations | `6a97ae25-972f-4bce-8d3b-5cb80c0b23a0` | `2f0d61a8-5994-4ed0-ac18-2387c6733004`, `lean.definition@1` | `0f445d13-33a1-4f63-ba62-8e1883b4ff34`, Reviewer 107 | `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf` |
+| Content | Publication |
+| --- | --- |
+| Relation definitions | `4fbc1953d45ea9aa3fa4b80478542c845102a4e5` |
+| Relation targets | `1058c134c0d2fb45ec96d08ea2956983aaac1d80` |
+| Parameter operations | `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf` |
 
 The published target and operation pairs remain byte-identical at the final
 checked commit. Only the relation definition's Markdown changes in the
-present correction. Correction `7109acd7-e648-4b37-934c-f383f423b1c7`
-retains the complete Lean bytes and original Workers 1, 7 and 25 attribution.
-Reviewer 1461 approved review `81e27a9d-814f-40be-b572-3d65118fbda1`
-without qualifications; the full report was read. Machine receipt
-`96a93b62-7619-4cd2-9701-74f1863c94a4` is accepted. Publication is
-`4ccd65d85917da26d0a67b9c48a37859533fffa9`, integration
-`5f4afa407a6c4367b652dbf2049bac13`. Current `ParameterRelations.md:29–39`
+present correction. The correction retains the complete Lean bytes. It
+first appeared in the Library at `4ccd65d85917da26d0a67b9c48a37859533fffa9`. Current `ParameterRelations.md:29–39`
 and `96–106` state the target, hypotheses and precise proof-status boundary.
 
 ## I064/I065 fingerprints at the final checked commit
@@ -992,28 +902,25 @@ under I063 remain unchanged except for the corrected `Pullback.md` and
 
 ## Final correction publications and current-file reconciliation
 
-All eight corrections have independent approval without qualifications,
-accepted machine validation, accepted fresh integrated source compilation,
-and recorded publication. The individual review and validation identities
-are recorded above. The table gives the exact publication and integration
-for each corrective candidate. These documentation corrections leave every
+All eight corrections are in the Library and were built with Lake when they
+entered it. The table gives the commit where each first appeared. These documentation corrections leave every
 affected Lean file unchanged. Integrated compilation alone is not asserted
-to supply semantic acceptance or a new exact-target proof acceptance.
+to check meaning or an exact proof target.
 
-| Findings | Candidate | Publication commit | Integration |
-| --- | --- | --- | --- |
-| I006/I009 | `4183217d-30e4-4867-9fe8-37bfb6d8ba4e` | `2173e15e1a7e4f96682e6274d63c4f98ccce2c73` | `1866b4b81232405d9a446bea835cb530` |
-| I018/I019 | `686dc7dc-119c-4bb8-ab4d-9a157057409d` | `886e27567a757917705b7adef45a2c2621bf4bf7` | `d26b17ee37694fe482eb1ec38f9b0867` |
-| I020 | `6392ae02-9bd6-481a-b647-948d5fc05c96` | `4ccd65d85917da26d0a67b9c48a37859533fffa9` | `31cfcc34258e4ee6a8abcc8d5dde8c36` |
-| I021 | `a7879e1e-a8ab-4256-a908-7dc23361a568` | `4ccd65d85917da26d0a67b9c48a37859533fffa9` | `7bbea4c4af5b460c91b07c90d7c434f9` |
-| I062 | `8048afee-3b20-48b6-ab40-e8bb51260a33` | `a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18` | `26a4dc058f0c4a3585262bfa8c222b41` |
-| I063 | `42e302be-9d7d-4085-903b-f99144e25b45` | `a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18` | `ac6a5c3a136342c0bc4071987a35ebe5` |
-| I064 | `3cd1e6d4-236a-4261-8b1b-934748136067` | `4ccd65d85917da26d0a67b9c48a37859533fffa9` | `8363a137cd714232bb458cc0c5b52a64` |
-| I065 | `7109acd7-e648-4b37-934c-f383f423b1c7` | `4ccd65d85917da26d0a67b9c48a37859533fffa9` | `5f4afa407a6c4367b652dbf2049bac13` |
+| Findings | Publication commit |
+| --- | --- |
+| I006/I009 | `2173e15e1a7e4f96682e6274d63c4f98ccce2c73` |
+| I018/I019 | `886e27567a757917705b7adef45a2c2621bf4bf7` |
+| I020 | `4ccd65d85917da26d0a67b9c48a37859533fffa9` |
+| I021 | `4ccd65d85917da26d0a67b9c48a37859533fffa9` |
+| I062 | `a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18` |
+| I063 | `a4f4742431c7298bf38f4d4e6bc03a6cd7a33a18` |
+| I064 | `4ccd65d85917da26d0a67b9c48a37859533fffa9` |
+| I065 | `4ccd65d85917da26d0a67b9c48a37859533fffa9` |
 
 Each of the ten corrected Markdown files, and its unchanged Lean partner,
-was compared directly among the frozen candidate, publication tree and
-final current Library. All three hashes agree. The corrected Markdown
+was compared directly among the corrected version, the commit where it
+entered the Library and the final checked Library. All three hashes agree. The corrected Markdown
 hashes are:
 
 | Path | Current SHA256 |
@@ -1033,7 +940,7 @@ The 67 input-table entries recorded before I064/I065 were reconciled with
 the final current tree. Only the nine corrected Markdown entries in those
 tables changed; all other listed hashes remain exact. The tenth corrected
 pair, `ParameterRelations`, is fingerprinted above. The latest Tate
-declaration inspection, `0ee45051-8d38-4ac6-806d-8de6fd79b39c`, also completed
+declaration inspection also completed
 with zero errors or warnings; it is development evidence.
 
 The corrected current prose is located at `SubgroupShifts.md:5–31`,
@@ -1048,5 +955,4 @@ No assigned correction remains unpublished at this checked commit. The
 accurately disclosed open realization, reciprocity and complete parameter-law
 proof goals are outside the correction obligation. This note records the ten
 findings and their repairs; it does not certify the entire local Langlands
-correspondence. Its own independent review and publication are separate
-from the eight accepted mathematical documentation corrections.
+correspondence.

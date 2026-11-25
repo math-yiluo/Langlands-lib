@@ -70,11 +70,11 @@ def RationalNormKernelHeckeModuleStatement : Prop :=
           (∀ (α : End I) (g : GroupScheme.rationalPoints G) (w : ρ),
             (e α : GroupScheme.rationalPoints G → Module.End ℂ ρ) g w =
               eval (rationalCommonNormKernel G) ρ.representation
-                (SmoothRep.hom α (f w)).1 g) →
+                (SmoothRep.hom α.asHom (f w)).1 g) →
           ∀ (s : I ⟶ τ) (φ : rationalNormKernelHecke G ρ) (ψ : ρ.representation.IntertwiningMap
               Rτ.representation),
             (∀ w, ψ w = SmoothRep.hom s (f w)) →
-            ∀ w, SmoothRep.hom (e.symm φ ≫ s) (f w) = act ψ φ w) ∧
+            ∀ w, SmoothRep.hom ((e.symm φ).asHom ≫ s) (f w) = act ψ φ w) ∧
         ∀ ψ : ρ.representation.IntertwiningMap Rτ.representation,
           ∃! s : I ⟶ τ, (∀ w, SmoothRep.hom s (f w) = ψ w) ∧
             ∀ v : I, SmoothRep.hom s v =

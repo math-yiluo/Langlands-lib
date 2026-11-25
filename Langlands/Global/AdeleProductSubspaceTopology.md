@@ -23,6 +23,8 @@ The definitions have arbitrary common universe and preserve the original rings
 and the independently supplied local coefficient topologies. The curve
 construction does not require finite constants or a rational-function
 presentation. These named topologies do not redefine the existing arithmetic
-adelic topology. This unit does not prove their comparison with any projective
+adelic topology. This module does not prove their comparison with any projective
 subspace topology, their non-local-compactness, or any rational-point density
-assertion. Those are separate obligations.
+assertion. For the affine line in projective one-space, the first two are
+`AdelicAffineLineSubspaceStatement` and `AdelicAffineLineNonLocalCompactnessStatement`,
+proved in `AdelicAffineLineSubspaceProof` and `AdelicAffineLineNonLocalCompactnessProof`.

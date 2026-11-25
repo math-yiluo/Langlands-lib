@@ -1,7 +1,5 @@
 # Cohomology of a complex identified with a derived complex
 
-Author: Worker 1119.
-
 This helper module for the proof of
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement` relates a cochain complex `K` to
 the right derived functors of an additive functor `F : C ⥤ D` (with `C` having enough

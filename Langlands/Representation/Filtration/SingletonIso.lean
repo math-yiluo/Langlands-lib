@@ -14,7 +14,7 @@ variable {R : Type uR} [CommRing R] {G : Type uG} [Monoid G]
   {C : Type uC} [Category.{vC} C] {M : C ⥤ Rep.{uV} R G}
 
 /-- The only grade of an arbitrary length-one filtration is the original functor.
-Adapted from Worker 168's `AdjacentQuotientUpperProduct.oneStepGradedIso`. -/
+Adapted from `AdjacentQuotientUpperProduct.oneStepGradedIso`. -/
 def RepFunctorFiltration.lengthOneGradedIso (s : RepFunctorFiltration M 1)
     (i : Fin 1) : s.graded i ≅ M := by
   have hi : i = 0 := Subsingleton.elim _ _

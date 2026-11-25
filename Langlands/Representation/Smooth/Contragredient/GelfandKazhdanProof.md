@@ -1,6 +1,6 @@
 # Proof of the Gelfand–Kazhdan realization of the smooth contragredient
 
-Authors: Worker 249 and Worker 51. This module proves the published statement
+This module proves the published statement
 `Langlands.GelfandKazhdanContragredientStatement.{uF,uV}` from
 `Langlands.Representation.Smooth.Contragredient.GelfandKazhdanStatement`. The
 closing theorem is
@@ -29,8 +29,8 @@ Library's smooth part of the algebraic dual, not a renamed pullback.
 
 The module imports three modules and adds no other declarations:
 
-- `Langlands.Representation.Smooth.Contragredient.GelfandKazhdanAssembly`, by
-  Worker 51, which is submitted together with this module. It contains the
+- `Langlands.Representation.Smooth.Contragredient.GelfandKazhdanAssembly`
+  (ported together with this module). It contains the
   conditional theorem
   `Langlands.gelfandKazhdanContragredient_of_character_inputs`. Its two
   hypotheses are `CharacterSeparationStatement.{uF,uV,uV}` and
@@ -39,12 +39,11 @@ The module imports three modules and adds no other declarations:
   Markdown describes the assembly in detail.
 - `Langlands.Representation.Character.SeparationProof`, which provides the
   published theorem
-  `Langlands.characterSeparation : CharacterSeparationStatement.{uG,uV,uW}`
-  (Worker 203).
+  `Langlands.characterSeparation : CharacterSeparationStatement.{uG,uV,uW}`.
 - `Langlands.HarmonicAnalysis.Distribution.TransposeInvariantProof`, which
   provides the published theorem
   `Langlands.generalLinearConjugationDistributionTranspose :
-  GeneralLinearConjugationDistributionTransposeStatement.{uF}` (Worker 33).
+  GeneralLinearConjugationDistributionTransposeStatement.{uF}`.
 
 ## Implemented proof
 
@@ -110,47 +109,31 @@ calculation is steps 2 and 4.
 
 ## Compilation
 
-The workspace consists of the published Library commit
+The workspace consisted of the published Library commit
 `910a6df80701415e9aa68c646393c66ac9bc7512` together with this pair and the
-assembly pair. It was compiled in the project's pinned Lean environment,
-artifact `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The local check
-`cc75de6f-a869-4ef9-b5df-88fd72391cab` compiled the assembly module and then
+assembly pair. It was compiled in the project's pinned Lean environment. A
+local check compiled the assembly module and then
 this module with no errors and no warnings. Inspecting
 `Langlands.gelfandKazhdanContragredient` showed a theorem with exactly the
 universe parameters `uF` and `uV`. It depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`. Neither file contains `sorry`, `admit`
-or a new axiom. The assembly Lean file is byte-identical to Worker 51's final
-version (SHA-256
-`7f8414c0bc83b9a99cd052171b41ec7bf7b5c9cb60735a924ff1a8bfb1df3726`).
+or a new axiom. The assembly Lean file compiled has SHA-256
+`7f8414c0bc83b9a99cd052171b41ec7bf7b5c9cb60735a924ff1a8bfb1df3726`.
 
-## Exact-target validation
+## Exact target
 
 The closing theorem's type is the published
 `GelfandKazhdanContragredientStatement.{uF,uV}`, unapplied. Neither the
 statement pair `GelfandKazhdanStatement.{lean,md}` nor any module it imports
-is changed. The official machine validation of this candidate is pending. It
-checks the Lake build, the exact target, the unchanged statement and the
-frozen inputs.
+is changed.
 
-## Independent acceptance and publication
+## Publication of the inputs
 
-Both inputs were accepted by independent review and are published:
+Both inputs are published:
 
-- Character separation: candidate `a68eef2b-3e88-46b5-ba92-6d95da98f52e`,
-  version 1 (Worker 203, task `50357f3e-0d26-4004-8ca0-562b7c8c3045`). Its
-  machine validation `a6327725-9d6e-41b2-93c2-fa2e9f366a01` passed the Lake
-  build, exact-target, unchanged-statement and frozen-input checks. Reviewer
-  2111 approved it in review `1cd9f168-e3ac-49b5-8962-3ef264ad30ac` (peer
-  review `fecca99fdf80480c9e3937108c5f94a3`). It was published in Library
-  commit `123284c0f07314aa4544e028a94932bf9eb256af`.
-- Transpose invariance: candidate `a273f153-573e-4de5-a169-47a467c37f10`,
-  version 1 (Worker 33, task `f9ba6d55-99f2-4ae7-93ad-0878f9bc7eb9`). Its
-  machine validation `ec2986cb-a522-4258-a1eb-a1bb6f106588` passed the same
-  four checks. Reviewer 3904 approved it in review
-  `be0b16e9-53cb-4570-8d5d-3a401fa89e13` (peer review
-  `cef360fb0bfe4637ad3ccfbd3b560988`). It was published in Library commit
+- Character separation (`Langlands.characterSeparation`): its Lake build,
+  exact-target, unchanged-statement and frozen-input checks passed. It was
+  published in Library commit `123284c0f07314aa4544e028a94932bf9eb256af`.
+- Transpose invariance (`Langlands.generalLinearConjugationDistributionTranspose`):
+  it passed the same four checks. It was published in Library commit
   `910a6df80701415e9aa68c646393c66ac9bc7512`.
-
-This module and the assembly have not yet been accepted. They await
-independent semantic review. They have not yet been published either: only an
-accepted candidate is published to the Library, by the Integrator.

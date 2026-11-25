@@ -1,6 +1,6 @@
 # Split maximal tori in actual product factors of a prescribed split pair
 
-Worker 509. This derived construction works over arbitrary fields at every
+This derived construction works over arbitrary fields at every
 universe parameter. It supplies actual split maximal tori in the factors of
 a `SimplyConnectedAlmostSimpleProduct`, with explicit compatibility with a
 specified ambient split maximal torus and an actual split projection from it.
@@ -41,7 +41,7 @@ same range. The two represented subgroup factorizations give an inverse to
 the inclusion between the tori, which proves maximality in the Library's
 actual definition.
 
-`factorMaximalTorus` chooses one such set of actual data. This unit compares
+`factorMaximalTorus` chooses one such set of actual data. This module compares
 actual tori and their maps. It does not construct a factor-root datum map or
 prove the whole component-factor realization theorem. Provenance is internal
 derived interface material, with no downstream local rank-one classification

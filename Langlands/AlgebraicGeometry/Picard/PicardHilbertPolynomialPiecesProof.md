@@ -1,7 +1,5 @@
 # The Hilbert-polynomial pieces of the Picard functor (proof)
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Picard.PicardHilbertPolynomialPiecesProof` proves
 
 ```lean

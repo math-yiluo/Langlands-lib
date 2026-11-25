@@ -48,9 +48,9 @@ Anthropic, PBC, under Apache-2.0; see the Library files
 `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`. This proof
 reuses its actual integral-closure charts and centre construction, and
 replaces its characteristic-zero Dedekind-instance route with explicit
-finite separability. All helper lemmas in the submitted module are
-private. Worker 208 wrote this adaptation, the separating-parameter
-argument and the two-chart assembly.
+finite separability. All helper lemmas in this module are
+private. This adaptation, the separating-parameter argument and the
+two-chart assembly were written for the Library.
 
 The inherited source is Brian Conrad, *Weil and Grothendieck approaches
 to adelic points* (December 31, 2011), printed p.1, registered as

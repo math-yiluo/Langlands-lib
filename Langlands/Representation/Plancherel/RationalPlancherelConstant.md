@@ -1,6 +1,6 @@
 # Waldspurger's constant `c(G|M)` on actual rational points
 
-Worker 5. This module defines the constant `c(G|M)` of J.-L. Waldspurger,
+This module defines the constant `c(G|M)` of J.-L. Waldspurger,
 *La formule de Plancherel pour les groupes p-adiques (d'après
 Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), I.1, printed p.241 /
 PDF p.7. There, for a semi-standard parabolic `P = MU` and

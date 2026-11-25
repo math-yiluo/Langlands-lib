@@ -1,7 +1,5 @@
 # Dense range from tangent surjectivity at a point with values in a field extension
 
-Author: Worker 1630.
-
 This derived helper module extends the published tangent-space dominance
 criterion `TangentSmoothness.denseRange_of_isTangentSurjectiveAt` from
 rational points to points with values in a field extension. The tangent

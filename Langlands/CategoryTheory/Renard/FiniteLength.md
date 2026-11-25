@@ -17,7 +17,7 @@ The existing constructions and their source comparison are in
 proof and its implemented route are in [JordanHolder.md](JordanHolder.md).
 The chain convention uses the `n` successive factors `B_{i+1}/B_i`, repairing
 the printed factor-index range as explained in `CompositionChains.md`.
-The current Appendix A discrepancy note
+The Appendix A discrepancy note
 `notes/renard/appendix-a-corrections.md` has no additional correction to this
 length definition. The older 2010-edition errata, PDF pages 18–19, were checked
 in the source audit recorded in `CompositionChains.md`; they do not alter this
@@ -57,7 +57,7 @@ The short intrinsic laws establish the intended meaning of the construction:
   has nonzero length.
 
 These laws are intrinsic specifications and consequences of the definition,
-grouped with it under the parent task's construction boundary. The module
+grouped with it in this module. The module
 imports the existing Jordan–Hölder proof; it does not reprove that source
 theorem. It does not construct a multiset of composition factors or establish
 length additivity, invariance under isomorphism, or representation-specific

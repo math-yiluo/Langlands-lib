@@ -1,7 +1,5 @@
 # Simple root subgroups and their opposites generate every root subgroup: proof
 
-Authors: Worker 180.
-
 The theorem `Langlands.GroupScheme.simpleRootSubgroupGeneration` has type
 exactly `SimpleRootSubgroupGenerationStatement.{u}` (module
 `Rational.SimpleRootSubgroupGenerationStatement`), at arbitrary universe `u`.

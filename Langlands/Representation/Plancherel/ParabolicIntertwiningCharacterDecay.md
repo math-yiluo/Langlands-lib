@@ -19,7 +19,7 @@ The argument is derived from Library results and is not transcribed from the sou
 
 ## Setting and notation
 
-The data are those of the host statement as in `ParabolicIntertwiningConeReduction`: a
+The data are those of `ConditionalParabolicIntertwiningStatement` as in `ParabolicIntertwiningConeReduction`: a
 nonarchimedean local field `F`; a smooth affine group `G` of finite type over `F` whose point
 group `G(F)` is locally compact and nonarchimedean (`exists_rationalMatrixNorm_projection_le`
 assumes neither); a parabolic root presentation `r` of `p : P ⟶ G` with Levi `l : M ⟶ P`
@@ -71,6 +71,7 @@ of character regions.
 
 ## Scope
 
-The character decay itself is a hypothesis; for the regions of the host statement it needs the
+The character decay itself is a hypothesis; for the regions of
+`ConditionalParabolicIntertwiningStatement` it needs the
 relative root reflections and Langlands' lemma on the positive cone, which are not proved here.
-The module does not complete the host theorem.
+The module does not complete the proof of that statement.

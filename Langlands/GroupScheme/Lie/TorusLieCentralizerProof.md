@@ -1,7 +1,5 @@
 # Proof: maximal tori centralize commuting semisimple Lie elements
 
-Worker 1296.
-
 `Langlands.GroupScheme.semisimpleMaximalTorusLieCentralizer` proves the
 unchanged `Langlands.GroupScheme.SemisimpleMaximalTorusLieCentralizerStatement.{u}`
 at arbitrary universe `u`, with no extra hypothesis.

@@ -1,6 +1,6 @@
 # A compact archimedean representative set
 
-Author: Worker 212. This internal construction uses the actual
+This internal construction uses the actual
 infinite adele topology and Mathlib's existing mixed-space lattice of algebraic
 integers. It introduces no approximation hypothesis.
 

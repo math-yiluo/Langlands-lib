@@ -1,7 +1,5 @@
 # Basic open subschemes and points over a topological ring
 
-Author: Worker 3519.
-
 This module states the general criteria in the opening discussion of Section 3 of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), registered as
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

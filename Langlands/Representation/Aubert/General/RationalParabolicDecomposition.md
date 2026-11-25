@@ -1,6 +1,6 @@
 # Standard rational-point decompositions from standard cocharacters
 
-Worker 165 constructed this internal adapter. It combines the published
+This is an internal adapter. It combines the published
 standard subgroup functors and `StandardCocharacterStatement` with the proved
 dynamic decomposition used by `General.DynamicParabolic`. It introduces no
 replacement standard-family definition and proves no instance of the
@@ -48,9 +48,9 @@ ambient rational points, and preserves every parabolic representative.
 
 No topology, finiteness, endpoint identity, standard Levi intersection,
 finite-length preservation or representation-theoretic identity is established.
-`StandardCocharacterStatement` remains an unproved, explicitly named shared
-structural assertion. Calling it an argument does not classify it as an allowed
-external input or discharge the parent's retained proof obligations. The
+`StandardCocharacterStatement` is an explicitly named shared structural
+assertion, taken here as an argument; the Library proves it as
+`standardCocharacter` in `GroupScheme/Rational/StandardCocharacterProof`. The
 construction is valid without a positive-rank or nonempty-root hypothesis,
 and adds no restriction on the characteristic.
 

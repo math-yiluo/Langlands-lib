@@ -1,3 +1,4 @@
+import Langlands.Analysis.ConvolutionIntegral
 import Langlands.Representation.Hecke.TestFunction
 import Mathlib.MeasureTheory.Integral.Prod
 import Mathlib.MeasureTheory.Group.Integral
@@ -17,11 +18,6 @@ open HarmonicAnalysis (SchwartzBruhat)
 
 variable {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   [MeasurableSpace G] [BorelSpace G]
-
-/-- Left-Haar convolution, with the convention `f(y) g(y⁻¹x)`.
-For arbitrary functions this uses the usual Bochner integral convention. -/
-def convolutionIntegral (μ : Measure G) (f g : G → ℂ) (x : G) : ℂ :=
-  ∫ y, f y * g (y⁻¹ * x) ∂μ
 
 namespace TestFunction
 

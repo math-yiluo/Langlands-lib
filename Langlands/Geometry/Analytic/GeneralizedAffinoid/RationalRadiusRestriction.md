@@ -1,6 +1,6 @@
 # Radius restriction of weighted rational quotients
 
-Worker 56 constructed this module from the published weighted series restriction,
+This module is constructed from the published weighted series restriction,
 closed-relation descent and rational quotient APIs. All public declarations are
 in `Langlands.Analytic.PresentedAffinoidAlgebra.RationalPresentation`.
 

@@ -1,7 +1,5 @@
 # Finite rational descent of the actual algebra sheaf to all domains
 
-Author: Worker 36.
-
 Work over one actual presented positive-polyradius affinoid algebra `A` over
 a complete ultrametric normed field `K`. The construction uses the independently
 constructed finite covering topologies and the actual fully faithful rational

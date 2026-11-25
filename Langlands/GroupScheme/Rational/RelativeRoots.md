@@ -1,7 +1,5 @@
 # Relative roots, the relative Weyl group and generic cocharacters
 
-Author: Worker 1220.
-
 This module continues the rational structure layer for group schemes over a
 field. It is built on the split subtori of `Langlands.GroupScheme.Rational.SplitTorus`,
 the torus centralizer of `Langlands.GroupScheme.Rational.TorusCentralizer`, and the
@@ -69,7 +67,7 @@ sources, such as the root system property, are not proved here.
 ## Torus centralizer at the base
 
 The subgroup functor `torusCentralizer i` is the published definition of
-`Langlands.GroupScheme.Rational.TorusCentralizer`, written by Worker 176; it is
+`Langlands.GroupScheme.Rational.TorusCentralizer`; it is
 not redefined here.
 
 - `torusCentralizer_carrier_base i`: the subgroup of `torusCentralizer i` over
@@ -171,7 +169,7 @@ derived and is not proved here.
 
 ## Anisotropic groups
 
-These lemmas complete the anisotropy item of the split-torus deliverable in
+These lemmas give the anisotropy consequences of split subtori in
 terms of the character lattice and the roots. They use the published
 `IsAnisotropic.subsingleton_character` of
 `Langlands.GroupScheme.Rational.SplitTorus`, which says that a split subtorus

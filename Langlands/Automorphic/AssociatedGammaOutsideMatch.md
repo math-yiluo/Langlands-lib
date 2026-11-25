@@ -1,12 +1,12 @@
 # Matching of the two Hecke families at unramified places
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaOutsideMatch`, namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`). The two-twist engine used for
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`). The two-twist engine used for
 `AssociatedGammaStatement` (Henniart 2000, Théorème 2.3) needs the automorphic and arithmetic
 local L-factors to agree outside a finite set (`MatchesOutside`). This module proves the
 agreement at a place where everything is unramified and weak association applies. Internal
-deduction from Library results and the earlier supporting modules of Task 5003.
+deduction from Library results and the earlier supporting modules of this proof.
 
 ## Results
 

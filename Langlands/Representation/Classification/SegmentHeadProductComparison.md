@@ -1,7 +1,5 @@
 # Actual comparisons of head products with equal cuspidal content
 
-Author: Worker 357.
-
 For two supplied positive-rank products of special heads with equal exact
 cuspidal contents, irreducibility of the first gives an actual equivalence
 from that whole product to a detected irreducible constituent of the second.
@@ -147,7 +145,7 @@ are documented in the published
 [fixed-support comparison](../CuspidalSupport/FixedSupportDetectedEquiv.md),
 [cuspidal quotient](SegmentHeadProductCuspidalQuotient.md), and
 [top derivative](SegmentHeadProductTopDerivative.md) pairs.
-Only published results are reused; no unreviewed draft is adapted.
+Only published results are reused.
 
 The constructor needs the displayed irreducibility of the first product.
 It does not establish that premise, prove irreducibility of the second,
@@ -155,8 +153,9 @@ identify either whole product with the other, prove survival of every
 simple subquotient under the top derivative, or identify any intermediate
 segment derivative with a head. It does not construct linked replacement
 data or an occurrence obstruction. The arbitrary-family reduction and
-both directions of `SegmentHeadProductIrreducibility` remain obligations
-of the host.
+both directions of `SegmentHeadProductIrreducibility` are not part of this
+module; [`SegmentHeadProductIrreducibilityProof`](SegmentHeadProductIrreducibilityProof.md)
+proves them.
 
 ## Complete dependency and independence audit
 
@@ -169,24 +168,20 @@ the common prefix `Langlands.Representation.`:
 | `Classification.SegmentHeadProductCuspidalQuotient` | Actual cuspidal member representatives and surjective map to the supplied head product, and its support corollary; primitive strong-head quotients, tensor and induction surjectivity, ordered regrouping and finite member flattening |
 | `Classification.SegmentHeadProductTopDerivative` | Nontrivial full top derivative of the first product and actual detected constituent of the second; permitted individual-head top derivative, general finite-product top line, exactness, finite length and composition-series extraction |
 
-The author read these three Lean bodies, their exact-interface,
-implemented-proof and independence explanations, and the actual
+These three Lean bodies, their exact-interface, implemented-proof and
+independence explanations, and the actual
 `ExactFunctorDetectedConstituent.Data`, subquotient-transitivity and
-exact-subquotient-transport bodies. The recursive inventory below records
-all project imports and the external import frontier. It was generated
-after stripping nested comments and string literals from Lean. Every
-inherited Lean/Markdown pair equals the current published Library
-`b01e426d540ff0d2edcc0480f6f0d03dd2f71e78` byte for byte. The refresh has no
-conflicts. All project modules have nonempty Markdown pairs, and the scan
-finds no proof hole, new axiom, prohibited execution syntax, or scanned
-excluded declaration/task name.
+exact-subquotient-transport bodies were read. The recursive inventory below
+records all project imports and the external import frontier. It was
+generated after stripping nested comments and string literals from Lean.
+Every inherited Lean/Markdown pair equals the published Library at commit
+`b01e426d540ff0d2edcc0480f6f0d03dd2f71e78` byte for byte. All project
+modules have nonempty Markdown pairs, and the scan finds no proof hole, new
+axiom, prohibited execution syntax, or scanned excluded declaration name.
 
 This combines a used-interface and proof-route audit with complete
 recursive import and byte-equality checks. It does not claim that every
 inherited proof body was newly read line by line.
-The private reproducibility inventory is
-`.private/notes/worker357-head-product-comparison-import-audit-2026-11-04.json`;
-the complete public lists below reconstruct its module sets.
 
 The lower mathematical routes remain those of the three published inputs.
 The individual-head top proof embeds the supplied strong head into
@@ -203,28 +198,22 @@ followed by generic composition-series image extraction, supply the actual
 detected constituent. The exact-functor conditional irreducibility
 criterion imported in that branch is not applied in this module.
 
-All six trusted operator files were read in full:
+The independence boundary of the special-head criterion admits:
 
-- [bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md)
-  permits the fully proved general derivative route and preserves the
-  segment-formula and classification exclusions.
-- [0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-  permits independently accepted and published BZ77 4.11, general Ze80
-  3.7(b) through Lemma 4.7(b), Ze80 5.3 and nine generic modules.
-- [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-  permits a separately proved support-only derivative bound.
-- [ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md)
-  restricts `core_mid` and its consequence to that bound's length-two base.
-- [2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-  and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-  restrict the adjacent-supercuspidal reducibility exception.
+- the fully proved general derivative route, with the segment-formula and
+  classification exclusions preserved;
+- published BZ77 4.11, general Ze80 3.7(b) through Lemma 4.7(b), Ze80 5.3
+  and nine generic modules;
+- a separately proved support-only derivative bound;
+- `core_mid` and its consequence, restricted to that bound's length-two base;
+- the adjacent-supercuspidal reducibility exception, in restricted form.
 
-Only the general foundations and individual-head constructions authorized
-by the first two rulings enter here. This closure needs no support-only
+Only the general foundations and individual-head constructions admitted
+by the first two items enter here. This closure needs no support-only
 bound, `core_mid`, its at-most-one-factor consequence or the restricted
 reducibility exception.
 
-The nine authorized generic modules occur with unchanged published bytes.
+The nine permitted generic modules occur with unchanged published bytes.
 With prefix `Langlands.Representation.` except where stated, these are
 `Filtration.ObjectTransport`, `Tensor.FiniteFiltration`,
 `Tensor.ExternalFiltration`, `Tensor.ExternalSubrepresentation`,
@@ -236,57 +225,46 @@ With prefix `Langlands.Representation.` except where stated, these are
 Their uses are actual filtration/tensor transport, induction of actual
 subrepresentations, finite inversion bookkeeping, general minus-functor
 normalization and the isolated cuspidal derivative predicate with its
-independently proved theorem. Their introducing tasks' excluded
-conclusions are not used.
+independently proved theorem. The excluded conclusions of the results
+these modules were introduced for are not used.
 
 The following exclusions are retained directly and transitively, including
-renamed conclusions and proof successors:
+renamed conclusions and their proofs:
 
-- Parent `GenericSegmentProductUniqueness`,
-  `30341ae4-65f2-4a0e-9283-763db01a409e`; multisegment exhaustion,
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`; ordered strong-head existence,
-  `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`; quotient coverage,
-  `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`; and ordered conversion,
-  `8252833d-c269-41a9-824c-5879e531b23b`.
-- Tempered uniqueness, `52e97845-36bb-457d-b76f-70753334b88c`;
-  `SquareIntegrableLanglandsClassification`,
-  `1cb45da2-7007-4351-a694-594fb148b8d1`; square-integrable exhaustion,
-  `cd8ab97c-0b78-4bce-97c4-d307a28159a4`; and regular exhaustion,
-  `bf433f0a-921a-428c-b0c0-6475438125ac`.
+- Parent `GenericSegmentProductUniqueness`; multisegment exhaustion;
+  ordered strong-head existence; quotient coverage; and ordered conversion.
+- Tempered uniqueness; `SquareIntegrableLanglandsClassification`;
+  square-integrable exhaustion; and regular exhaustion.
 - Ze80 3.5/9.6 segment derivative formulas, the segment-socle derivative
-  part of `8e5b4563-0365-41c7-b134-70f2a0b36292`, full/head/socle
-  segment Jacquet formulas and exponent-norm formula, including
-  `ed48ae06-964c-4c84-9e62-978f5a953ca7`,
-  `55ad1e10-62d8-46b7-a081-909ef0056426`,
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034` and
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`.
+  statements such as `SegmentSocleDerivatives`, full/head/socle segment Jacquet
+  formulas and exponent-norm formula, including
+  `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`,
+  `SegmentSocleJacquetFormula` and
+  `SegmentSpecialJacquetExponentNormFormula`.
 - Segment-socle product irreducibility, linked structure, gluing,
   commutation, swaps and socle exhaustion, including
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`; analytic segment
+  `SegmentSocleProductIrreducibility`; analytic segment
   classification, special square-integrability, two-supercuspidal
   product structure/irreducibility and Whittaker coinvariant finiteness.
-- The host `SegmentHeadProductIrreducibility` conclusion in either
-  direction, task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`. Already
-  published supporting constructions from this host do not assume it.
+- The `SegmentHeadProductIrreducibility` conclusion in either
+  direction. The published supporting constructions for that criterion do
+  not assume it.
 
 In particular, the closure contains no `SegmentHeadSupportStep`,
 `SegmentHeadJacquetReduction`, `TwoSupercuspidalProductStructureProof`,
 `UniverseLiftPadic` or restricted support-proof intermediate.
 Essential/tempered and analytic segment statement modules inherited
 through individual-head infrastructure supply definitions or Prop targets;
-no unproved statement is used as a theorem. Reuse is by current published
-Lean names, with no pending input or conditional classification assembly.
+no unproved statement is used as a theorem. Reuse is by published Lean
+names, with no unpublished input or conditional classification assembly.
 
 ## Development verification
 
-Recovery check `b20d42e1-ed59-4b87-acf3-06d11bbe887f` compiled the published
-original-occurrence module and this comparison with zero errors or
-warnings. Exact inspection `e27f15a1-4e02-409e-8215-1a70ebd9901b` of
+A development check compiled the published original-occurrence module and
+this comparison with zero errors or warnings. An exact inspection of
 `segmentHeadProductComparison` again compiled without errors or warnings
 and reports a definition with independent universe parameters `uF`, `uV`
-and only `propext`, `Classical.choice` and `Quot.sound`. These are
-development checks; independent semantic acceptance and integration are
-separate requirements for the new pair.
+and only `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Complete recursive project import inventory
 

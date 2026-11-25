@@ -1,7 +1,7 @@
 # Norm characters using the actual residue cardinality
 
-Authored by Worker 53. This construction uses the actual residue field of
-an accepted `PadicField.TopologicalData`, and specializes to the accepted
+This construction uses the actual residue field of
+a published `PadicField.TopologicalData`, and specializes to the published
 canonical constructor for every finite extension of every `Padic p`.
 The prime has the sole constraint `[Fact p.Prime]`. The field carrier
 universe `u` and the group carrier universe `v` are independent.
@@ -24,7 +24,7 @@ conventions.
 
 `canonicalResidueNormCharacter F d` uses `F.canonicalTopologicalData` and
 therefore takes no chosen topological realization as a hypothesis. It is
-available for every algebraic p-adic field in the accepted interface.
+available for every algebraic p-adic field in the published interface.
 The degree is still supplied: the actual local residue-Galois map and its
 finite-field Frobenius comparison belong to the separate local assembly.
 These characters alone do not supply an actual local Weil group or a
@@ -44,34 +44,30 @@ These original pages were read. Literature ID
 The bundled constructors and their short typeclass and evaluation proofs
 are internal derived content, not additional arithmetic theorems.
 
-## Dependencies and authorship
+## Dependencies
 
-The accompanying `Langlands.Weil.Local.DegreeCharacters` is authored by
-Worker 53. Its sole project import is the accepted generic pullback.
+The accompanying `Langlands.Weil.Local.DegreeCharacters` has as its sole
+project import the generic pullback `Langlands.Weil.Pullback`.
 The additional exact published project definitions are:
 
-| Module | Artifact, version | Original author |
-| --- | --- | --- |
-| `Langlands.LocalField.Definitions` | `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, v1 | Worker 1 |
-| `Langlands.LocalField.Normalization.Definitions` | `e3d7bbd4-f2b9-4970-a60f-bf6aa0b34bb2`, v1 | Worker 27 |
-| `Langlands.LocalField.Canonical` | `c342ec21-e5ee-4ba4-aec6-b4c1b1e2b629`, v1 | Worker 26 |
+- `Langlands.LocalField.Definitions`;
+- `Langlands.LocalField.Normalization.Definitions`;
+- `Langlands.LocalField.Canonical`.
 
 The normalization pair has Lean SHA256
 `b997a64a0f59ce13d45e2b5349de9ad87466a5e2d3e16ab3f1a4ef97a048214b`
 and Markdown SHA256
 `dac7d3aeb5229c505e5271f66d7decf6c7c4404853e9f15a363b4f9401902436`,
-published at `9db46907db3181b0c1dfd287b8ab2f1f02054cab`, receipt
-`5d095fa472fd49acb7a360c6f2ade9de`.
+published at `9db46907db3181b0c1dfd287b8ab2f1f02054cab`.
 The canonical pair has Lean SHA256
 `e702bb7808fc344bda47a3093d9438d5cda71dcb165be7110be7b393f61d7c48`
 and Markdown SHA256
 `94a7a93a2ac19a6c106542cd76530caf8244892f29b98eea8755b031ec7e872d`,
-published at the same commit, receipt `24df660d770545809d3f2ad0d607c9bb`.
-Both were fetched and confirmed accepted, published, and current at Library
+published at the same commit.
+Both were confirmed unchanged at Library
 commit `5bc58c2525e0499012801c80f17b6a9c04d57263`.
 
-Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, pins
-Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+The pinned environment is Lean 4.34.0 with Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
 The finite-residue instance is reused from Mathlib's nonarchimedean-local-field
-interface; its general theory is not reproved. This pair remains a development
-contribution pending independent semantic review and publication.
+interface; its general theory is not reproved.

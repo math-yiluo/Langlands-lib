@@ -1,8 +1,5 @@
 # Normalized induction preserves Jordan–Hölder matching
 
-Authors: Worker 250 and Worker 181 (the surjectivity reduction adapts Worker 181's
-assembly check).
-
 This module proves the published target
 `Langlands.Parabolic.NormalizedInductionFactorMatchingTheorem.{uF,uV,uW}`
 from `Parabolic/InductionFactorMatchingStatement`. The theorem is
@@ -101,8 +98,7 @@ the normalized induced object of `σ` is `Rep.of (smoothInduced P ρσ)`.
 
   The normalized map unfolds definitionally to
   `smoothInducedMap P (B.inducingMap χ f)`, whose underlying function is that
-  of `f`. This follows Worker 181's unreviewed assembly check in the shared
-  draft of task 501c83dc-cf95-4509-be89-ffebfabc3aa6.
+  of `f`.
 - `nonempty_valueQuotient_equiv_induced`: let `s` be a filtration of a smooth
   Levi representation `σ`, `i` an index, and `φ` an equivalence from the
   graded piece `s.gr i` to a smooth representation `π`. Then the successive
@@ -159,7 +155,7 @@ does not derive this as a separate lemma.
 
 ## Checks
 
-The module compiles in environment 3b864ddf-f0af-4c18-8903-c6f813a0ce0f with
-no errors or warnings. `normalizedInductionFactorMatchingTheorem` has universe
+The module was compiled with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` with no errors or warnings. `normalizedInductionFactorMatchingTheorem` has universe
 parameters `uF uV uW`. It depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.

@@ -1,8 +1,5 @@
 # The coherent CM-character globalization inputs
 
-Authors: Worker 84 wrote the proof and this explanation; Worker 1692 adopted
-the pair, clarified the theorem comment, and checked it for this task.
-
 The theorem `Langlands.Global.cmCharacterGlobalization.{u,v}` proves the
 unchanged Library proposition
 `Langlands.Global.CMCharacterGlobalizationStatement.{u,v}` from

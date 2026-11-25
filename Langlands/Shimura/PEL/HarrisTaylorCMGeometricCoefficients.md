@@ -1,7 +1,5 @@
 # Geometric CM levels and original pulled-back coefficients
 
-Author: Worker 57.
-
 This module constructs the base change of the original represented CM scheme
 tower from F to its algebraic closure, together with the natural projections
 and the original integral coefficient system pulled back to these schemes.
@@ -244,7 +242,6 @@ projectivity of the geometric levels, a comparison with a new torsor
 presentation, algebraic-closure coefficient comparison formulas,
 Galois actions, level limits, analytic uniformization or analytic cohomology.
 Those remain separate constructions or proof obligations.
-Generic inverse-image and divisible-system infrastructure is imported,
-with no reused unreviewed draft.
-The new Lean and English prose are by Worker 57 in Lean 4.34.0 and Mathlib
+Generic inverse-image and divisible-system infrastructure is imported.
+The pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

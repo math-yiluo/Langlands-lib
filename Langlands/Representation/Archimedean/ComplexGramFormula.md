@@ -2,9 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexGramFormula`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`). It is the
-complex counterpart of the Library module `PrincipalSeriesGramFormula` (Worker 5220, for
-`GL_n(ℝ)`), and reuses that module's ring-level lemmas.
+This module is infrastructure for the proof of `ComplexStandardLanglandsQuotientStatement`. It is
+the complex counterpart of the Library module `PrincipalSeriesGramFormula` (for `GL_n(ℝ)`), and
+reuses that module's ring-level lemmas.
 
 The module gives a closed formula for every `U(n)`-finite function of a principal series of
 `GL_n(ℂ)` on all of `GL_n(ℂ)`. The formula uses polynomials in the entries of `x` and of the
@@ -74,7 +74,7 @@ through the Iwasawa decomposition `x = b κ`, written explicitly: with `T_l = �
 moduli `|b_ll|² = G_l/G_{l+1}` and the normalized unitary factor
 `diag(b_ii/|b_ii|) κ = (κ̂_ij(x, x̄))` are read off from Gram determinants, and the restriction
 to `U(n)` is polynomial in the entries and their conjugates (`UnitaryFinitePolynomial`). Used in
-the proof of `ComplexStandardLanglandsQuotientStatement` (Task 7063) for the analyticity of
+the proof of `ComplexStandardLanglandsQuotientStatement` for the analyticity of
 `U(n)`-finite matrix coefficients.
 
 ## Proof

@@ -1,7 +1,6 @@
 # Unitary generic classification of GL_n
 
-Authors: Worker 62 (Lean statements and source reading), Worker 69 (collaborative
-source and dependency audit). This pair states construction, exhaustion and
+This pair states construction, exhaustion and
 unordered uniqueness. It proves none of these assertions and assumes no
 classification theorem in a constructor or axiom.
 
@@ -64,7 +63,7 @@ is isomorphic to `δ`. Thus Ta86 §5.5, p.362, gives
 `(ν^s δ)^∨ ≅ ν^(-s) δ^∨`. The symmetry predicate uses the first formula and
 places **no ordinary self-duality condition** on `δ`. The actual semilinear
 Hermitian-dual bridge and twist/dual/central-character statements are the
-separate compatibility installment; this predicate does not purport to
+separate compatibility statements (`UnitaryGenericCompatibilityStatement`); this predicate does not purport to
 construct or prove that bridge.
 
 ## Classification clauses and source correspondence
@@ -158,25 +157,25 @@ The proof dependency map distinguishes available statement targets from proofs:
   `TemperedBlockExhaustion`, and `TemperedBlockUniqueness` describe the
   zero-exponent case. They are statement definitions, not established proofs.
 - At this base, the separate full multisegment classification and
-  segment-product genericity installments have no published statement names.
+  segment-product genericity results have no published statement names.
   Their required content is respectively actual unordered multisegment
   classification, and special-product nondegeneracy/nonlinkage,
   generic exhaustion/uniqueness, and the singleton-segment criterion.
   These remain explicit proof prerequisites. The published relations
   `Multisegment.IsLanglandsHead` and `Multisegment.IsZelevinskySocle` do not
   establish any of those assertions.
-- The separate unitary generic compatibility installment supplies actual
+- The separate unitary generic compatibility statement
+  (`UnitaryGenericCompatibilityStatement`) supplies actual
   Hermitian-dual, ordinary-dual, determinant-twist and scalar-central-character
-  clauses for these construction parameters. Its publication remains a
-  requirement of the surrounding assignment; this focused pair covers the
+  clauses for these construction parameters; this focused pair covers the
   three classification clauses only.
 
 Ta86 p.339 notes a then-unpublished involution input used in its main argument.
 Its Appendix pp.371–380 supplies a characteristic-zero route, applicable to
 these p-adic fields, without assuming that general conjecture. The Appendix
 uses deep globalization and residual-spectrum results, which are not proved
-here and whose upstream originals are not claimed to have been read in this
-installment. Ze80 §9.3 explicitly omits Bernstein's square-integrability
+here and whose upstream originals are not claimed to have been read for this
+pair. Ze80 §9.3 explicitly omits Bernstein's square-integrability
 converse proof; the separate square-integrability source audit retains that
 boundary. Ze80 §9.10 also omits an elementary combinatorial lemma proof.
 
@@ -191,8 +190,8 @@ obligations is discharged by defining the present propositions.
 ## Retained original sources
 
 All five originals were already registered. Their exact bytes were rehashed
-for this submission. No source-specific errata note was present in the
-current Library. Readings below are selected passages, not full-paper claims.
+for this pair. No source-specific errata note was present in the
+Library at the development base. Readings below are selected passages, not full-paper claims.
 
 - **Ta86**: M. Tadic, *Classification of unitary representations in irreducible
   representations of general linear group (non-archimedean case)*, Ann. Sci.

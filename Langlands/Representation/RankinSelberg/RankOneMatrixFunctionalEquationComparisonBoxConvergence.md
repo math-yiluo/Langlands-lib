@@ -1,6 +1,6 @@
 # Actual rank-one convergence from matrix analytic data
 
-Worker 396. Internal derived prerequisite for the actual matrix functional-equation
+Internal derived prerequisite for the actual matrix functional-equation
 comparison. The field and representation-carrier universes are independent.
 
 `ModelBoxConditions` records exactly the positive principal level, nonnegative
@@ -64,7 +64,9 @@ pointwise BoxCoefficient helper. They assert no new transcription from the
 literature. The analytic hypotheses are the actual matrix assertions of the
 specified coefficient model; no irreducibility, finite length or extra Whittaker
 convergence premise is used. Inverse-transpose convergence, the paired Fourier
-extraction and the final gamma functional equation remain later obligations.
+extraction and the final gamma functional equation are not proved here; the
+final equation is `rankOneMatrixFunctionalEquationComparison` in
+`RankOneMatrixFunctionalEquationComparisonProof`.
 
 ## All-field port
 

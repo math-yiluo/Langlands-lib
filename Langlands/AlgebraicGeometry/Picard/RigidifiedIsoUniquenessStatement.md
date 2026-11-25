@@ -147,22 +147,24 @@ rigidified line bundles.
 The proposition isolates the automorphism-rigidity input of the published
 `Langlands.AbelianScheme.RigidifiedClassesZariskiSeparatedStatement`, in
 module `Langlands.AlgebraicGeometry.Picard.RigidifiedClassesZariskiSeparatedStatement`.
-One route in that file's remaining proof obligations uses exactly this
-uniqueness. Local rigidified isomorphisms between pulled-back representatives
+The Library's proof `rigidifiedClassesZariskiSeparated` (module
+`RigidifiedClassesZariskiSeparatedProof`) uses exactly this uniqueness. Local rigidified isomorphisms between pulled-back representatives
 must agree on the pulled-back overlaps before they can be glued. This file
 asserts no gluing, separatedness or sheaf property. It also states no
 ordinary Picard functor and no ordinary/rigidified comparison.
 
-The Lean interface was designed by Worker 453.
-
-## Remaining proof obligations
+## Proof obligations
 
 A proof must establish the exact proposition for every `S`, `A`, `T`, `L` and
 `M`, without new hypotheses. One route has the following steps.
 
 1. Show that every automorphism of an `IsLocallyFreeRankOne` module sheaf `L`
    on a scheme `X` is multiplication by a unique global unit of `Γ(X, ⊤)`.
-   The source uses this step without proof. It is not yet in the Library.
+   The source uses this step without proof. The Library proves the existence
+   part, in the form that every endomorphism of such a module sheaf is
+   multiplication by a global function, as
+   `Langlands.Scheme.Modules.exists_eq_smul_id_of_isLocallyFreeRankOne` (in
+   `RigidifiedIsoUniquenessProof`).
    `Langlands.SchemeModule.structureAutMulEquiv` in
    `Modules.StructureUnitScalars` classifies automorphisms only of the
    structure module. The scalar action `Langlands.Scheme.Modules.scalarHom` in
@@ -183,7 +185,6 @@ A proof must establish the exact proposition for every `S`, `A`, `T`, `L` and
 4. Deduce uniqueness of isomorphisms by the groupoid argument above and
    `Iso.ext`.
 
-These are obligations of a separate exact-target proof task. The ordinary
-Picard and fppf, ordinary/rigidified comparison, relative existence, relative
-geometry, field existence and openness, and global-functions workflows retain
-their separate ownership and existing controls.
+These are obligations of a separate exact-target proof, which the Library
+supplies as `Langlands.AbelianScheme.rigidifiedIsoUniqueness` (module
+`RigidifiedIsoUniquenessProof`).

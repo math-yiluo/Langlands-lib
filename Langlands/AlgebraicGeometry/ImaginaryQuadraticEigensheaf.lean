@@ -78,10 +78,10 @@ theorem sheafProjector_add_other (conjugate : Bool) :
 
 /-- The image of the actual projector satisfies every scalar eigen equation on every open. -/
 theorem sheafProjector_mem (conjugate : Bool) (U : S.Opens) (x : Γ(M, U)) :
-    (sheafProjector L K M ρ conjugate).app U x ∈
+    (sheafProjector L K M ρ conjugate).asHom.app U x ∈
       scalarEigenSections ρ (sheafFactorCharacter L K conjugate) U := by
   intro t
-  have h := congrArg (fun a => (sheafTensorAction L M ρ a).app U x)
+  have h := congrArg (fun a => (sheafTensorAction L M ρ a).asHom.app U x)
     (tmul_mul_factorIdempotent L K Γ(S, ⊤) conjugate t)
   rw [map_mul, sheafTensorAction_tmul, one_smul, sheafTensorAction_smul] at h
   exact h
@@ -90,31 +90,31 @@ theorem sheafProjector_mem (conjugate : Bool) (U : S.Opens) (x : Γ(M, U)) :
 theorem sheafTensorAction_apply_of_mem (conjugate : Bool) (U : S.Opens)
     {x : Γ(M, U)} (hx : x ∈ scalarEigenSections ρ (sheafFactorCharacter L K conjugate) U)
     (a : Γ(S, ⊤) ⊗[ℚ] L) :
-    (sheafTensorAction L M ρ a).app U x =
+    (sheafTensorAction L M ρ a).asHom.app U x =
       restrictScalar U (factorEvaluation L K Γ(S, ⊤) conjugate a) • x := by
   induction a using TensorProduct.inductionOn with
   | tmul r t =>
     rw [sheafTensorAction_tmul, factorEvaluation_tmul, map_mul, mul_smul]
-    change restrictScalar U r • (ρ t).app U x = _
+    change restrictScalar U r • (ρ t).asHom.app U x = _
     rw [hx t]
     rfl
   | add a b ha hb =>
     rw [map_add, map_add, map_add, add_smul]
-    change (sheafTensorAction L M ρ a).app U x +
-      (sheafTensorAction L M ρ b).app U x = _
+    change (sheafTensorAction L M ρ a).asHom.app U x +
+      (sheafTensorAction L M ρ b).asHom.app U x = _
     rw [ha, hb]
 
 /-- An eigensection is fixed by its corresponding actual sheaf projector. -/
 theorem sheafProjector_apply_of_mem (conjugate : Bool) (U : S.Opens)
     {x : Γ(M, U)} (hx : x ∈ scalarEigenSections ρ (sheafFactorCharacter L K conjugate) U) :
-    (sheafProjector L K M ρ conjugate).app U x = x := by
+    (sheafProjector L K M ρ conjugate).asHom.app U x = x := by
   rw [sheafProjector, sheafTensorAction_apply_of_mem L K M ρ conjugate U hx]
   cases conjugate <;> simp [factorEvaluation]
 
 /-- An eigensection is killed by the other actual sheaf projector. -/
 theorem sheafProjector_other_apply_of_mem (conjugate : Bool) (U : S.Opens)
     {x : Γ(M, U)} (hx : x ∈ scalarEigenSections ρ (sheafFactorCharacter L K conjugate) U) :
-    (sheafProjector L K M ρ (!conjugate)).app U x = 0 := by
+    (sheafProjector L K M ρ (!conjugate)).asHom.app U x = 0 := by
   rw [sheafProjector, sheafTensorAction_apply_of_mem L K M ρ conjugate U hx]
   cases conjugate <;> simp [factorEvaluation]
 
@@ -123,7 +123,7 @@ def sheafEigenProjection (conjugate : Bool) :
     M ⟶ scalarEigensheaf ρ (sheafFactorCharacter L K conjugate) where
   val :=
     { app := fun U => ModuleCat.ofHom
-        { toFun := fun x => ⟨(sheafProjector L K M ρ conjugate).app U.unop x,
+        { toFun := fun x => ⟨(sheafProjector L K M ρ conjugate).asHom.app U.unop x,
             sheafProjector_mem L K M ρ conjugate U.unop x⟩
           map_add' := fun x y => Subtype.ext (map_add _ x y)
           map_smul' := fun r x =>
@@ -133,18 +133,18 @@ def sheafEigenProjection (conjugate : Bool) :
         ext x
         apply Subtype.ext
         exact PresheafOfModules.naturality_apply
-          (sheafProjector L K M ρ conjugate).val j x }
+          (sheafProjector L K M ρ conjugate).asHom.val j x }
 
 @[simp]
 theorem sheafEigenProjection_app (conjugate : Bool) (U : S.Opens) (x : Γ(M, U)) :
     ((sheafEigenProjection L K M ρ conjugate).app U x).val =
-      (sheafProjector L K M ρ conjugate).app U x := rfl
+      (sheafProjector L K M ρ conjugate).asHom.app U x := rfl
 
 @[simp]
 theorem sheafEigenProjection_ι (conjugate : Bool) :
     sheafEigenProjection L K M ρ conjugate ≫
         scalarEigensheafι ρ (sheafFactorCharacter L K conjugate) =
-      sheafProjector L K M ρ conjugate := rfl
+      (sheafProjector L K M ρ conjugate).asHom := rfl
 
 @[simp]
 theorem ι_sheafEigenProjection (conjugate : Bool) :
@@ -172,7 +172,7 @@ def sheafEigenIso :
   hom_inv_id := by
     simp only [Preadditive.comp_add, ← Category.assoc, prod.lift_fst, prod.lift_snd,
       sheafEigenProjection_ι]
-    exact sheafProjector_add_other L K M ρ false
+    exact congrArg End.asHom (sheafProjector_add_other L K M ρ false)
   inv_hom_id := by
     apply prod.hom_ext
     · simp only [Preadditive.add_comp, Category.assoc, prod.lift_fst,

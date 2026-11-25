@@ -1,9 +1,7 @@
 # The geometric lemma for tempered representations (Renard VII.2.5): proof
 
-Author: Worker 4882.
-
 `Langlands.Aubert.General.RepresentedParabolic.temperedGeometricLemma` proves the
-unchanged published proposition `TemperedGeometricLemmaStatement.{u, v}` of
+published proposition `TemperedGeometricLemmaStatement.{u, v}` of
 [TemperedGeometricLemmaStatement](TemperedGeometricLemmaStatement.md). It has no
 hypotheses, and its type is exactly that proposition, at independent field universe
 `u` and representation-carrier universe `v`.
@@ -38,8 +36,8 @@ lemma. Each structural input is a published unconditional theorem, imported belo
 
 The proof is a single term. It applies the published conditional reduction
 `temperedGeometricLemma_of_structuralInputs`, from
-[TemperedGeometricLemmaReduction](TemperedGeometricLemmaReduction.md) (Workers 1725
-and 1221), to published proofs of its five premises:
+[TemperedGeometricLemmaReduction](TemperedGeometricLemmaReduction.md), to published
+proofs of its five premises:
 
 1. `RepresentedGeometricLemmaStatement.{u, v}`: `representedGeometricLemma`, from
    [RepresentedGeometricLemmaProof](../Geometric/RepresentedGeometricLemmaProof.md)
@@ -48,17 +46,15 @@ and 1221), to published proofs of its five premises:
    (`representedGeometricLemmaOrbitComparison`).
 2. `ParabolicRootPresentationExistenceStatement.{u}`:
    `Langlands.GroupScheme.parabolicRootPresentationExistence`, from
-   [ParabolicRootPresentationProof](../../GroupScheme/Rational/ParabolicRootPresentationProof.md)
-   (Worker 4487).
+   [ParabolicRootPresentationProof](../../GroupScheme/Rational/ParabolicRootPresentationProof.md).
 3. `ArbitraryParabolicQuotientCompactStatement.{u}`:
    `arbitraryParabolicQuotientCompact`, from
-   [ArbitraryParabolicQuotientCompactProof](ArbitraryParabolicQuotientCompactProof.md)
-   (Worker 4777).
+   [ArbitraryParabolicQuotientCompactProof](ArbitraryParabolicQuotientCompactProof.md).
 4. `ArbitraryParabolicJacquetAdmissibilityStatement.{u, v}`, and
 5. `ArbitraryParabolicJacquetAdmissibilityStatement.{u, max u v}`: both are the
    universe-polymorphic `arbitraryParabolicJacquetAdmissibility`, from
-   [ArbitraryParabolicJacquetAdmissibilityProof](ArbitraryParabolicJacquetAdmissibilityProof.md)
-   (Worker 4776). Lean instantiates it at carrier universes `v` and `max u v`.
+   [ArbitraryParabolicJacquetAdmissibilityProof](ArbitraryParabolicJacquetAdmissibilityProof.md).
+   Lean instantiates it at carrier universes `v` and `max u v`.
 
 The reduction's Markdown explains how these inputs are used:
 
@@ -79,9 +75,7 @@ restricting exponents directly, and a strict-positivity argument on the restrict
 cone handles the nonunitary parts. Unlike Renard's proof, it does not cite VII.2.2 or
 VII.2.3 to show that the unitary pieces are tempered.
 
-The module adds only this composition. It does not change the statement's Lean or
-Markdown, or any file the statement imports. In environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` it compiles with no errors or warnings.
+The module adds only this composition. It compiles with no errors or warnings.
 The theorem uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Source

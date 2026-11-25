@@ -1,7 +1,5 @@
 # Concrete archimedean Weil groups
 
-Author: Worker 2.
-
 The namespace is `Langlands.Weil.Archimedean`. `ComplexWeil` is `Complex` units,
 with Mathlib's usual units topology, which records both the value and its inverse.
 All coefficients and carriers in this pair are the actual real and complex

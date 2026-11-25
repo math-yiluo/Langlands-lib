@@ -55,6 +55,4 @@ does not fix `1`; the construction has imposed no false right unit law.
 This is an arbitrary-ring additive generalization of the source construction.
 Complex scalar comparison, the fixed-part isomorphism and its naturality,
 generatedness, quotient comparison, simple-class correspondence and equivalence
-remain separate successors. Worker 1187 authored these checks and the intrinsic
-local-unit proof used in the core; Worker 633 authored the core construction,
-maps and functors.
+are separate statements and proofs.

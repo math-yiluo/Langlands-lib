@@ -24,10 +24,10 @@ Both sides are Library statements:
 - `ComplexJacquetModuleFiniteStatement` (module `ComplexJacquetReduction`) is Casselman's
   theorem in algebraic form for `(𝔤𝔩_n(ℂ), U(n))`-modules (Wallach 1979, 4.13 and 4.14, for the
   upper triangular Borel subalgebra). For an irreducible admissible module `V`, the Jacquet
-  module `V/𝔫V` is finite-dimensional and nonzero. This is the target of Task 7065.
+  module `V/𝔫V` is finite-dimensional and nonzero.
 
-So the statement reduces Task 7065's target to the six Bernstein–Gelfand input statements.
-Each of them is the target of its own proof task.
+So the statement reduces `ComplexJacquetModuleFiniteStatement` to the six Bernstein–Gelfand input
+statements. Each of them is proved in its own module (listed in `ComplexJacquetModuleFiniteProof.md`).
 
 ## Provenance
 
@@ -51,12 +51,12 @@ Chaining them into this single statement is ours.
 
 1. `complexJacquetBimoduleReduction` (Library, module `ComplexJacquetBimoduleReduction`):
    `BernsteinGelfandInputsStatement.{uV, uV} → ComplexJacquetBimoduleStatement.{uV}`;
-2. `complexJacquetOneSided_of_bimodule` (new helper module `ComplexJacquetBimoduleBridge`, by
-   Worker 71): `ComplexJacquetBimoduleStatement.{uV} → ComplexJacquetOneSidedStatement.{uV}`;
+2. `complexJacquetOneSided_of_bimodule` (helper module `ComplexJacquetBimoduleBridge`):
+   `ComplexJacquetBimoduleStatement.{uV} → ComplexJacquetOneSidedStatement.{uV}`;
 3. `complexJacquetModuleFinite_of_oneSided` (Library, module `ComplexJacquetOneSided`):
    `ComplexJacquetOneSidedStatement.{uV} → ComplexJacquetModuleFiniteStatement.{uV}`.
 
-The bridge module and its paired Markdown are part of this contribution. In outline, for an
+The bridge module has its own Markdown page. In outline, for an
 irreducible admissible `(ρ, π)` it takes the commuting actions `ℓ = π̃(·, 0)` and `r = π̃(0, ·)`
 of `𝔤𝔩_n(ℂ)`, and `E` the `U(n)`-span of a nonzero vector. It then proves the following:
 
@@ -68,5 +68,6 @@ of `𝔤𝔩_n(ℂ)`, and `E` the `U(n)`-span of a nonzero vector. It then prove
 
 ## Use
 
-Once the six input statements are proved, Task 7065's target follows as
+The six input statements are proved in the Library, and `ComplexJacquetModuleFiniteProof` derives
+`ComplexJacquetModuleFiniteStatement` as
 `complexJacquetModuleFiniteReduction ⟨weight, duflo, kostant, central, homBound, projective⟩`.

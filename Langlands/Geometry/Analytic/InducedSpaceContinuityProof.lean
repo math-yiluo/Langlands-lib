@@ -59,7 +59,7 @@ theorem continuityStatement : ContinuityStatement.{u, v, z} := by
     rw [copy_actionMap, Category.comp_id]
     by_cases hc : c = c₀
     · rw [hc, hcorr, hgc₀]
-      have := hE X.V (X.ρ h) (𝟙 X.V) fun τ' hτ' => Set.mem_iInter₂.mp hhV τ' hτ'
+      have := hE X.V (X.ρ h).asHom (𝟙 X.V) fun τ' hτ' => Set.mem_iInter₂.mp hhV τ' hτ'
       rwa [Category.id_comp] at this
     · have hgc : g • c ≠ c₀ := fun h' => hc (MulAction.injective g (h'.trans hgc₀.symm))
       refine isNear_of_preimage_eq_empty ?_ ?_

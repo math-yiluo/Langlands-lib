@@ -34,10 +34,12 @@ dimension bound. The base is the actual finite-support Euler positivity
 criterion. The successor step is the filtration argument above, using the
 preceding dimension's criterion on the actual section cokernel.
 
-This is an internal derivation. Worker 137 supplied the integral
-structure-module positivity helper, which uses Worker 689's coherent ample cut
-and Worker 1013's section-cokernel coefficient identity. Worker 1013 also
-supplied the actual pushforward comparison and coherent-filtration telescope.
+This is an internal derivation. The integral structure-module positivity
+helper (`IntegralAmpleEulerCoefficientProof`) uses the coherent ample cut and
+the section-cokernel coefficient identity
+(`Picard.SectionCokernelEulerCoefficientProof`). The actual pushforward
+comparison and the coherent-filtration telescope are in
+`CoherentEulerPushforward` and `CoherentEulerFiltration`.
 The complete integral-ideal filtration theorem remains an explicit premise.
 This reduction does not prove that premise or the final smooth proper
 line-bundle Euler polynomial statement.

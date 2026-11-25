@@ -83,7 +83,7 @@ theorem persistentCuspidalPiece_of_geometricLemma (hn : 0 < n)
   have h₂ : IsSubquotient (transport (B.flatten (Sf (e i))) C.reverse (e i).val hw σ) ρr :=
     IsSubquotient.of_equiv_left
       (wholeLeviGeometricPieceEquiv T B C.reverse (e i).val (Sf (e i)) (Rf (e i))
-        hSi.2.1 hRi.2.1 hw π').symm hi
+        hSi.2.1 hRi.2.1 hw π').symm (hi : _)
   -- Undo the block relabelling.
   have hw' := conjugatesLevi_mul hw (conjugatesLevi_reverse (F := F.Carrier) C)
   have h₃ : IsSubquotient
@@ -106,7 +106,7 @@ theorem persistentCuspidalPiece_of_geometricLemma (hn : 0 < n)
       (transport (B.flatten (Sf (e i))) C.reverse (e i).val hw σV) :=
     IsSubquotient.of_equiv_right hp
       (wholeLeviGeometricPieceEquiv T B C.reverse (e i).val (Sf (e i)) (Rf (e i))
-        hSi.2.1 hRi.2.1 hw A)
+        hSi.2.1 hRi.2.1 hw A : _)
   have hp'' := hp'.comp r.toMonoidHom
   have hpFinal : IsSubquotient
       (((jacquetInductionFunctor.{uF, uW} T B C.reverse).obj A).ρ.comp r.toMonoidHom)

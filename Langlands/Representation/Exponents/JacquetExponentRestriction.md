@@ -1,6 +1,6 @@
 # Restriction of normalized Jacquet exponents
 
-Workers 1670 and 1666. The source is David Renard, *Représentations des groupes
+The source is David Renard, *Représentations des groupes
 réductifs p-adiques*, 9 July 2026, VII.1.1, printed pages 220–221 / PDF pages
 226–227, lemma (ii) and its proof. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -57,14 +57,13 @@ connected reductivity is additionally needed in this argument. The theorem
 requires no admissibility or finite generation of the Jacquet representation,
 no Iwahori contraction, irreducibility, continuity of `e`, or existence of `e`.
 
-Worker 1670 implemented the central quotient and actual Jacquet comparison.
-Worker 1666 authored the bundled `SplitComponentDecomposition` and
-`SplitComponentComparison` pairs, including the source-spanning and surjective
-weight-reflection lemmas used here. Those pairs are unchanged copies of the
-separately submitted supporting units.
+The source-spanning and surjective weight-reflection lemmas used here are in
+the modules `SplitComponentDecomposition` and `SplitComponentComparison`.
 
-This is a supporting statement and its derivation within the parent proof
-task. It proves the Jacquet exponent-comparison clause only. The full
-`ArbitraryParabolicExponentStatement` still requires its unconditional
-Jacquet decomposition and finite-exponent assertions. The separate Casselman
-criterion and later VII.2 assertions are outside this unit.
+This is a supporting statement and its derivation for
+`ArbitraryParabolicExponentStatement`. It proves the Jacquet exponent-comparison
+clause only. The full `ArbitraryParabolicExponentStatement` also requires its
+unconditional Jacquet decomposition and finite-exponent assertions;
+`arbitraryParabolicExponent` in `ArbitraryParabolicExponentProof` proves it.
+The separate Casselman criterion and later VII.2 assertions are outside this
+module.

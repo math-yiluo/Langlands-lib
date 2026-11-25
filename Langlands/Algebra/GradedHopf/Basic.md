@@ -1,9 +1,9 @@
 # Graded bialgebras
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. The module builds on
-`Langlands.Algebra.GradedHopf.TensorGrading` (same author), whose degree projections
+This module is part of the Hopf-level core of the proof of split unipotence from the
+absence of zero Lie weights (`Langlands.GroupScheme.RelativeRoot.torusActionSplitUnipotence`
+in `Langlands.GroupScheme.Rational.TorusSplitUnipotenceProof`). The module builds on
+`Langlands.Algebra.GradedHopf.TensorGrading`, whose degree projections
 `gradeProj` and `tensorProj` and total-degree submodules `tensorGrade` it uses.
 
 The module `Langlands/Algebra/GradedHopf/Basic.lean` sets up a grading of a commutative

@@ -60,5 +60,6 @@ only constancy from the earlier AS 4 law.
 
 The module proves no sharp normalizer-centralizer equality, full-centralizer
 intersection computation, unipotent intersection comparison, or product
-injectivity or range assertion. Those remain parts of the exact chamber
-Iwahori decomposition proof task.
+injectivity or range assertion. Those are parts of the proof of the exact
+chamber Iwahori decomposition, which the Library completes as
+`ParahoricBuildingData.chamberIwahoriDecomposition` in `ChamberIwahoriProof`.

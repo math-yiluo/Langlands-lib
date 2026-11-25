@@ -1,7 +1,5 @@
 # Acyclic induced modules pushed from an affine quotient cover
 
-Author: Worker 148.
-
 This internal adapter combines the actual scheme source-cartesian tensor
 coordinates with the affine quotient's invariant-ring presentation and the
 coaction pushforward theorem. It supplies the induced-cover case needed in the

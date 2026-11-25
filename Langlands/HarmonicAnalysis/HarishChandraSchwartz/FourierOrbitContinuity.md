@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitContinuity`, namespace
 `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitLaurentSmoothness` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitLaurentSmoothness`:
   `fourierOrbitLaurentSmoothSectionLinear`, `isOpen_commonNormKernel_of_continuous`; through its
   imports `FourierOrbitSmoothness` (`fourierOrbitSmoothSectionLinear`, the map
   `f ↦ ψ_f[O, P]` into `C^∞(O, P)`, and `Space.constantTermInd_mul_of_isBiInvariant`),
@@ -27,12 +27,12 @@ Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitConti
   (`eval_inducedFourierTransform`, Lemma VII.1.2 pointwise, and `Space.constantTermInd`),
   `InducedFourierCoherence` (`fourierOrbitSection`, `ψ_f[O, P]`), `Basic` (`Level`, `Space`,
   `Level.withSeminorms`, `Level.isBiInvariant`, `Space.ofLevel`, `Space.mkCLM`, `nu_mono`,
-  `Space.nu_ne_top`), Worker 200's `productInducedFamilyRestriction_eval`,
+  `Space.nu_ne_top`), `productInducedFamilyRestriction_eval` (`ProductInducedSmoothFamilies`),
   `productCompactTwistTensorEquiv`, `unitaryTorusParameter`, `unitaryOrbitParameterRepresentative`,
   `unramifiedCharacter_isOpen_ker`, `representationFormalDegree_unitaryTwist`,
   `productInducedOrbitRepresentation`, `mem_finiteSmoothFamilies_linearMap`, and
   `Induction.FiniteProductTensorBijective.evalLinear` with `smoothFunctions_ext`;
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitSectionTopology` (Worker 249): the
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitSectionTopology`: the
   topology of `C^∞(O, P)` (`OrbitSectionSpace`, `OrbitSectionLevel`,
   `orbitSectionLevelSubmodule`, `orbitSectionLevelSubmodule_antitone`, `orbitSectionSeminorm`,
   `orbitSectionSeminorm_le_iff`, `OrbitSectionLevel.withSeminorms`,

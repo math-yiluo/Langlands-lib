@@ -1,6 +1,6 @@
 # Genuine derivatives of smooth vectors
 
-Author: Worker 779. This internal prerequisite to Task 7293 proves that
+This internal prerequisite to the proof of `CuspidalOperatorMultiplicityOneStatement` proves that
 the genuine orbit derivatives defined in
 `Langlands.Representation.Archimedean.SmoothVectors` preserve smooth vectors
 and are complex linear there. It bundles their words as linear maps and

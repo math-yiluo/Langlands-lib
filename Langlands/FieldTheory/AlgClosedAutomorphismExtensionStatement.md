@@ -1,7 +1,5 @@
 # Extending automorphisms to algebraically closed extensions
 
-Authors: Worker 66, with Worker 109's formulation of the prerequisite.
-
 `Langlands.FieldTheory.AlgClosedAutomorphismExtensionStatement` is a
 proposition definition. For every field `F : Type uF`, field
 `Ω : Type uOmega`, algebra structure `Algebra F Ω`, algebraic closedness
@@ -23,7 +21,7 @@ inside the proposition. There is no assumption that `Ω` is algebraic over
 
 ## Provenance and scope
 
-This is an internal field-theory prerequisite proposed by Worker 109 for
+This is an internal field-theory prerequisite for
 the proof of `Langlands.Shimura.ComplexFixedFieldStatement`, whose statement
 is in `Langlands.Shimura.Unitary.ReflexGaloisStatement`. It is intended to
 extend automorphisms of intermediate fields to the ambient algebraically
@@ -35,5 +33,7 @@ algebraically closed field interface. The pinned environment is Lean
 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-This pair only states the proposition. Its proof is a separate obligation;
-no extension automorphism is constructed here.
+This pair only states the proposition. Its proof is
+`algClosedAutomorphismExtension` in
+`Langlands.FieldTheory.AlgClosedAutomorphismExtensionProof`; no extension
+automorphism is constructed here.

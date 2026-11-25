@@ -1,8 +1,5 @@
 # Statement: simply connected central covers of split semisimple groups
 
-Authors: Worker 1391 (original draft), Worker 1466 (source verification and preparation),
-Worker 1457 (source and interface verification, final preparation).
-
 This module states that every semisimple group scheme with a split maximal
 torus, over an arbitrary field, is the target of a central isogeny from a
 simply connected group. It defines one unproved proposition,
@@ -62,8 +59,7 @@ part of the conclusion. It is the split input to the route of Milne,
 Remark 23.60: construct the cover where `G` splits and descend it to `k`. The
 factorization law is the subject of the separate statement
 `SimplyConnectedCentralCoverUniversalProperty`
-(`SimplyConnected/UniversalPropertyStatement`; originating statement task
-`2be094ba-099b-4960-b5e3-3326c4320317`); a proof of the present proposition
+(`SimplyConnected/UniversalPropertyStatement`); a proof of the present proposition
 must not use it, nor the published target.
 
 ## Sources and provenance

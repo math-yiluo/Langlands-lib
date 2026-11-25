@@ -4,9 +4,11 @@ This internal assembly supplies the representation-free constant chart for
 arbitrary pairs of affine pinned models and arbitrary common bases. It
 retains precisely two mathematical inputs: the exact
 `AffinePinnedIsomorphismTheoremStatement` and
-`AffinePinnedModel.HasFppfLocalPinnedRepresentatives`. Their independently
-owned unconditional proofs are separate obligations. This module does not
-assert either input.
+`AffinePinnedModel.HasFppfLocalPinnedRepresentatives`. Their unconditional
+proofs are not part of this module; the Library proves them as
+`affinePinnedIsomorphismTheorem` (in `AffinePinnedIsomorphismTheoremProof`) and
+`AffinePinnedModel.hasFppfLocalPinnedRepresentatives` (in
+`RelativePinnedComparisonProof`). This module does not assert either input.
 
 `AffinePinnedModel.openPinnedLabelCompleteness` discharges the local
 completeness premise of the preceding descent module by applying
@@ -45,9 +47,11 @@ Isom representative and transfers the orbit bijection. It places no
 additional conditions on the supplied quotient or representative.
 Nonaffine, disconnected, nonreduced, and empty tests are retained.
 
-The conditional theorem is not an unconditional proof of the task target
-until the two stated inputs have been supplied. There is no remaining
-local-completeness premise in this module.
+The conditional theorem is not an unconditional proof of
+`PinnedOuterIsomorphismChartStatement`; the Library proves that statement as
+`pinnedOuterIsomorphismChart` in `PinnedOuterIsomorphismChartProof`, by
+supplying the two inputs to `pinnedOuterIsomorphismChart_of_pinnedTheorems`.
+There is no remaining local-completeness premise in this module.
 
 ## Provenance
 

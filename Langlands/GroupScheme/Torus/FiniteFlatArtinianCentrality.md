@@ -39,7 +39,5 @@ source, as the reflexive value equality states.
 All rings and schemes use an arbitrary universe `u`. This proof composes
 the finite separable splitting construction, the actual Artinian lift,
 finite flat local nilpotent reconstruction, affine infinitesimal
-centrality and faithfully flat reflection. Worker 626 supplied the first
-three structural inputs and the splitting-and-lifting route; Worker 625
-implemented these comparisons and centrality application. No additional
+centrality and faithfully flat reflection. No additional
 structural proposition remains an unproved premise.

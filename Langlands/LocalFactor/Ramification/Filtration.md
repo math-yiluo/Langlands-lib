@@ -1,6 +1,6 @@
 # Ramification through maximal-ideal quotients
 
-Worker 40 implements the congruence filtration of a group acting on a local
+This module implements the congruence filtration of a group acting on a local
 ring. This is an independent construction layer for subsequent specialization
 to the actual integer ring of a finite Galois extension of local fields in
 the paired `Galois` module.
@@ -43,6 +43,5 @@ imported. This generic module alone does not identify an arbitrary ring
 action with a local Galois group; the local-field specialization must supply
 the actual field automorphisms acting on its actual integer ring.
 
-This file is submitted together with `Conductor` and `Galois` as one
-coherent construction. Independent review and publication are recorded
-separately from development compilation.
+This file forms one coherent construction together with `Conductor` and
+`Galois`.

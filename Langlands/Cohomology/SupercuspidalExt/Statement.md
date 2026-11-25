@@ -1,7 +1,5 @@
 # Supercuspidal Ext vanishing
 
-Author: Worker 3.
-
 This module defines two functors, one predicate and three propositions, with
 their conjunction `Langlands.Cohomology.SupercuspidalExt.SupercuspidalExtStatements`.
 The propositions are the representation-theoretic inputs of the degeneration
@@ -13,7 +11,7 @@ component.
 
 ## Objects
 
-`Ext` is Worker 13's `Langlands.Cohomology.SmoothExt.ext R G V n`, the
+`Ext` is `Langlands.Cohomology.SmoothExt.ext R G V n`, the
 `n`-th right derived functor of equivariant `Hom(V, -)` on the abelian
 category `Langlands.SmoothRep R G` of smooth representations. It takes values
 in `R`-modules. It is computed with injective resolutions; the category has
@@ -61,7 +59,7 @@ this statement.
 The third component follows from the first two. By the first, with `R = ℂ`
 and `H = G₀`, the group in question is `Ext^{n+1}_{G₀}(V, π|_{G₀})`. That is
 the finite sum of the `Ext^{n+1}_{G₀}(V, σ_i)`. Each `σ_i` is injective by the
-second component applied to `G₀`, so these groups vanish by Worker 13's
+second component applied to `G₀`, so these groups vanish by
 `isZero_ext_succ_of_injective`. The open subgroup `G₀` satisfies the
 hypotheses of the second component: it is closed, hence σ-compact, and the
 restriction of `μ` is a two-sided Haar measure on it. The third component is
@@ -119,9 +117,11 @@ Derivations and choices:
 - Reciprocity. For an open subgroup the modulus ratio in BZ 2.29 is trivial.
   The component uses the direct form: compact induction from an open
   subgroup is left adjoint to restriction. For complex coefficients this
-  adjunction is the published, unproved clause
+  adjunction is the clause
   `Langlands.Induction.OpenSubgroupAdjunctionClause` in
-  `Langlands.Representation.Induction.StructuralStatement`. Both functors
+  `Langlands.Representation.Induction.StructuralStatement`, proved by
+  `Langlands.Induction.openSubgroupAdjunction` in
+  `Langlands.Representation.Induction.StructuralProof`. Both functors
   are exact, and restriction, a right adjoint of an exact functor, preserves
   injectives. So applying `Hom_G(c-Ind V, -) ≅ Hom_H(V, -) ∘ restriction` to
   an injective resolution gives the `Ext` isomorphism for every `n`. The
@@ -196,25 +196,23 @@ Project imports, byte-identical to Library commits
 `ef274d37c255e4b25a990dd377d10e2da436807d` and
 `09d04036c57ae8751aadc1beefbcd76b482a8a7d`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Cohomology.SmoothExt` | Worker 13 | `7dc67a2e1e0e9244dfd73c8d056c8a308e1cd04fc3bbce696f574dfd34391d9f` | `3541f8f564938d5c659a76a723501307a9f36649d7a27f7f4acbd5c347521d51` |
-| `Langlands.Representation.Induction.Definitions` | Worker 15 | `c4d24368c009c903ea7450a8fc08f3dbeb5dbdb31fc3aabdc394b89b731880cf` | `7e3f0697431e4814007ac100da702a56037c1fd35f01f7c5df5e235d4eac7274` |
-| `Langlands.Representation.CompactCoefficient.SplittingStatement` | Worker 3 | `f683e51e99cb560486e099c22ec43409e0eff8f10d20c6dfcf0b745937c18407` | `de72b3a818583c88c486253dbea90225c854262513d49f72146780642257cdfc` |
-| `Langlands.Representation.Smooth.Transfer.PullbackProof` | Worker 0 | `b0502abed8a3551e9a5c542f07605cd66b83649fafbcb38a23b05dddc3e691b6` | `46884ac73c7107c18ce746c2110810d14d19939b7fca6a608670a6c70265ddfb` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Cohomology.SmoothExt` | `7dc67a2e1e0e9244dfd73c8d056c8a308e1cd04fc3bbce696f574dfd34391d9f` | `3541f8f564938d5c659a76a723501307a9f36649d7a27f7f4acbd5c347521d51` |
+| `Langlands.Representation.Induction.Definitions` | `c4d24368c009c903ea7450a8fc08f3dbeb5dbdb31fc3aabdc394b89b731880cf` | `7e3f0697431e4814007ac100da702a56037c1fd35f01f7c5df5e235d4eac7274` |
+| `Langlands.Representation.CompactCoefficient.SplittingStatement` | `f683e51e99cb560486e099c22ec43409e0eff8f10d20c6dfcf0b745937c18407` | `de72b3a818583c88c486253dbea90225c854262513d49f72146780642257cdfc` |
+| `Langlands.Representation.Smooth.Transfer.PullbackProof` | `b0502abed8a3551e9a5c542f07605cd66b83649fafbcb38a23b05dddc3e691b6` | `46884ac73c7107c18ce746c2110810d14d19939b7fca6a608670a6c70265ddfb` |
 
-`Langlands.Cohomology.SmoothExt` brings Worker 13's abelian structure
+`Langlands.Cohomology.SmoothExt` brings the abelian structure
 `Langlands.SmoothRep.abelian` and `Langlands.SmoothRep.enoughInjectives`.
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Draft check `86897976-731a-43cc-93ce-8ddb282185c6` compiled and printed the
-module against copies of Worker 13's then-staged modules. After their
-publication, check `a7ecb8dd-e2c3-4b51-b527-c479f6d1ff26` built this module with Lake
-against the published imports, with no errors or warnings, and inspected
+A first check compiled and printed the module. A second check built this
+module with Lake against its imports, with no errors or warnings, and inspected
 `SupercuspidalExtStatements` as a `Prop`-valued definition without universe
 parameters, depending only on `propext`, `Classical.choice` and
-`Quot.sound`. Check `594a704d-694c-4172-b754-399c83724678` printed the two
+`Quot.sound`. A third check printed the two
 functors, the predicate, the three components and the conjunction, with
 universe annotations for the functors, and the output was read. The prints
 show:

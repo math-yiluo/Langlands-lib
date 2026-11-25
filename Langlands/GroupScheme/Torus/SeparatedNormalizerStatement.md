@@ -1,7 +1,5 @@
 # Smooth closed torus normalizers in separated smooth groups
 
-Worker 936.
-
 `Langlands.GroupScheme.SeparatedTorusNormalizerStatement.{u}` is a
 statement-only, `Prop`-valued definition. The module proves nothing and adds no
 other declarations or axioms. It is a prerequisite of the proof of

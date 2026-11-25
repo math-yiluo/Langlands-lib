@@ -1,8 +1,7 @@
 # Relative H2 vanishing for finite p-group Galois extensions
 
-Worker 28 authored the induction and this explanation. The upper norm-family
-step reuses Worker 68's restriction-of-scalars argument from the shared finite
-norm/H2 draft; Worker 68 is a coauthor for that contribution.
+The upper norm-family step uses the same restriction-of-scalars argument as
+`norm_surjective_restrictScalars` in [FiniteNormH2Proof](FiniteNormH2Proof.md).
 
 The theorem
 `Langlands.ClassFieldTheory.Local.finitePGroupNormH2Vanishing.{u}` proves the
@@ -55,7 +54,7 @@ For each `F : IntermediateField E L`, the hypothesis at
 `F.restrictScalars K` supplies surjectivity of the norm from `L` to `F`.
 The carrier field and inclusion in `L` are unchanged by restriction of
 scalars, and the canonical finite-dimensional instances give the required
-type directly. This is the reused Worker 68 argument. The induction hypothesis
+type directly. This is the restriction-of-scalars argument mentioned above. The induction hypothesis
 now gives vanishing for `L/E`.
 
 The equivalence `IsGalois.normalAutEquivQuotient H` identifies `Gal(E/K)`

@@ -1,8 +1,5 @@
 # The separable inertia fixed field of a nonarchimedean local field
 
-Lean construction: Worker 785. Markdown and source audit: Worker 972.
-Rerouting through the general residue projection: Worker 122 (Task 7404).
-
 For every nonarchimedean local field \(F\), this file defines the fixed field
 \(U\) of the inertia subgroup of \(\operatorname{Gal}(\Omega/F)\), where
 \(\Omega=\) `SeparableClosure F` is Mathlib's actual separable closure. It also
@@ -219,10 +216,10 @@ definition marked `@[instance_reducible]`, to be installed locally.
 The topology of \(F\) itself is not changed. Completeness or local compactness of
 \(U\) or \(\Omega\) is neither assumed nor claimed.
 
-## What this unit does not assert
+## What this module does not assert
 
-This is a construction unit, and it proves only the short facts listed above.
-The following are later arithmetic obligations. None appears here as a
+This is a construction module, and it proves only the short facts listed above.
+The following are separate arithmetic statements. None appears here as a
 hypothesis, as input data or as a conclusion:
 
 - \(U\) is the maximal unramified extension of \(F\) in \(\Omega\);
@@ -304,8 +301,8 @@ All cited pages were read in the retained files listed above.
   `inertia` is its kernel. `separableResidueHom` and `separableInertia`
   specialize these to the infinite extension \(\Omega/F\).
 - `inertiaFixedField` is the analogue for \(\Omega/F\) of Serre's \(K_T\). Its
-  identification with Serre's \(K_{nr}\) and with Kaletha–Prasad's \(K\) is a
-  later obligation and is not proved here. This unit uses no Henselian,
+  identification with Serre's \(K_{nr}\) and with Kaletha–Prasad's \(K\) is
+  not proved here. This module uses no Henselian,
   discreteness or perfect-residue-field hypothesis beyond what the Library's
   spectral constructions already need.
 - The Lean names and the following objects are derived implementation content:
@@ -332,11 +329,11 @@ The project modules used are the published versions at Library commit
   `localNormedField` and its construction lemmas, `localResidueEquiv`,
   `localResidue_finite`, `integerInclusion` and `residueInclusion`.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 with
+The environment is Lean 4.34.0 with
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. The file introduces no
 axioms and does not change any existing module.
 
-**Generalization (Task 7404).** The bodies of `separableInertia`,
+**Generalization.** The bodies of `separableInertia`,
 `separableInertia_normal`, `sepClosureValuation` and `sepClosureValuation_extends`
 were replaced by the general declarations `SepClosed.absoluteInertia`,
 `SepClosed.absoluteInertia_normal`, `SepClosed.closureValuation` and
@@ -347,10 +344,9 @@ unfold to the previous bodies `inertia F Ω`, `inertia_normal F Ω`,
 of this file keeps its name, type and value; the fully elaborated types of all
 declarations were compared before and after the change and are identical, and all
 proofs of this file (including the `rfl` proofs) are unchanged. Equality with the
-general declarations is checked by `rfl` in a private draft:
+general declarations is checked by `rfl` in a private scratch module:
 `separableInertia F = SepClosed.absoluteInertia F (SeparableClosure F)`,
 `sepClosureValuation F = SepClosed.closureValuation F (SeparableClosure F)`,
 `sepClosureIntegers F = SepClosed.closureIntegers F (SeparableClosure F)` and
 `integerToSepClosure F = SepClosed.integerMap F (SeparableClosure F)`. This
-rerouting was compiled in the environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` over Library commit `fcb85a7e`.
+rerouting was compiled over Library commit `fcb85a7e`.

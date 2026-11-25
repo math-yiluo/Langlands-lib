@@ -1,7 +1,5 @@
 # Rational points as root-generated points times centralizer points
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.RootGeneratedCentralizerCovering`.
 
 ## Statement

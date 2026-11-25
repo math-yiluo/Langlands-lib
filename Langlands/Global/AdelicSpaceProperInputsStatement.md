@@ -1,7 +1,5 @@
 # Arithmetic model inputs for proper adelic maps of algebraic spaces
 
-Author: Worker 108.
-
 This module states two intermediate assertions in the proof of Conrad's Proposition 5.8.
 It contains proposition definitions and no proofs. Its registered source is Brian Conrad,
 *Weil and Grothendieck approaches to adelic points*, December 31, 2011,

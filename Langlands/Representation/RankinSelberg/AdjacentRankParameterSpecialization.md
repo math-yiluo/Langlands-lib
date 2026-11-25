@@ -1,6 +1,6 @@
 # Entire parameter specialization after finite Laurent clearing
 
-Worker 486. Derived support for the coefficientwise identity argument of
+Derived support for the coefficientwise identity argument of
 JPSS 1983, Section4.5, printed409-410, and its positive second-twist use
 in Section6.1, printed427. This module proves the identity-theorem step
 for supplied entire coefficient families. It constructs no Whittaker

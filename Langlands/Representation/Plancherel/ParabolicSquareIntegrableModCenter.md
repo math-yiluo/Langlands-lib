@@ -10,7 +10,7 @@ geometric-lemma pieces, use `IsSquareIntegrableModCenter` on the Levi's own
 rational points `M(F)` modulo the full abstract center. The module proves
 that the first gives the second. It cites no external source.
 
-The setting is that of the host target: a nonarchimedean local field `F`, an
+The setting is that of `ConditionalParabolicGenericIrreducibilityStatement`: a nonarchimedean local field `F`, an
 affine `G` with canonical point topology, the actual maps `p`, `l`, `a`, and a
 compatible root presentation `pres : ParabolicRootPresentation p l a`. Write
 `e = parabolicLeviPointHomeomorph pres : M(F) ≃ₜ* parabolicLeviPointSubgroup p l`.
@@ -49,6 +49,7 @@ compatible root presentation `pres : ParabolicRootPresentation p l a`. Write
   `isSquareIntegrableModCenter_comp_continuousMulEquiv` then changes variables
   along `e`.
 
-No hypothesis beyond the host target's own structural assumptions is used.
+No hypothesis beyond the structural assumptions of
+`ConditionalParabolicGenericIrreducibilityStatement` is used.
 Temperedness, irreducibility and admissibility are not asserted, except that
 admissibility is part of both square-integrability predicates.

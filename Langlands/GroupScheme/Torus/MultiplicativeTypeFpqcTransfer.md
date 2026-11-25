@@ -1,6 +1,6 @@
 # Geometric fibre and coordinate-order transfer for fpqc descent
 
-Worker 875. Internal derivations from the published field predicate, finite Galois
+Internal derivations from the published field predicate, finite Galois
 splitting, geometric-fibre comparison and affine tensor-coordinate isomorphisms.
 
 `IsMultiplicativeType.of_fieldExtension` composes a splitting extension with the

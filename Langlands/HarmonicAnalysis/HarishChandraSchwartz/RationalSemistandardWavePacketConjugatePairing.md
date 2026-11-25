@@ -96,7 +96,8 @@ uses the actual VII.1.1(ii) coefficient pairing.
 
 The source then uses VII.1.4 to compare the Fourier components at
 the two parabolics and VII.2.1 to compute the same-Levi component.
-These are the full Fourier covariance obligation of Task 7260 and
+These are the full Fourier covariance obligation of the Fourier
+product family (VII.1.4) and
 `FourierWeylSumStatement`, respectively. With the component
 computed, `orbitWeylPairing_changeVariables` identifies its
 target-orbit pairing terms with the displayed source-orbit

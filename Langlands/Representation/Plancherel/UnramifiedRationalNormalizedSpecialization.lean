@@ -166,6 +166,7 @@ abbrev JacquetEvaluationMk (f : Induced r h hU π.representation) : Prop :=
 @[simp] theorem jacquetEvaluation_mk (f : Induced r h hU π.representation) :
     JacquetEvaluationMk r h hU π χ f := rfl
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Semilinearity of the descended evaluation along b ↦ b(χ). -/
 abbrev JacquetEvaluationRegularSmul (b : RegularAlgebra r)
     (z : Jacquet r h hU π.representation) : Prop :=

@@ -1,8 +1,5 @@
 # Vanishing of decaying bilateral multiplication recurrences
 
-Authors: Worker 105 (formulation and intended route), Worker 214 (Lean statement
-and documentation).
-
 `Langlands.Analytic.BilateralRecurrenceVanishingStatement.{u,v}` is a
 proposition with all its data quantified internally. For every
 `K : Type u` with `NontriviallyNormedField K`, every `A : Type v` with
@@ -48,8 +45,8 @@ recurrence expresses `f^m * c (k+n)` as `c (k+n-m)`; decay in the
 negative direction places `c (k+n)` in `I`. The same iteration gives
 `f^n * c (k+n) = c k`. The intended estimate
 `‖c k‖ ≤ C * ‖c (k+n)‖`, together with decay in the positive direction,
-would then force `c k = 0`. This is a proposed derivation and remains a
-proof obligation; this module supplies only the exact proposition.
+would then force `c k = 0`. The proof along this route is
+`BilateralRecurrenceVanishingProof`; this module supplies only the exact proposition.
 
 The intended application is to injectivity of multiplication by `X-f`
 on the auxiliary annulus in the binary Laurent argument, after a separate

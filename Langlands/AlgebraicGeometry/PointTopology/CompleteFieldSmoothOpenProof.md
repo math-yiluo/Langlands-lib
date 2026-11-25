@@ -1,7 +1,5 @@
 # Smooth scheme maps are open on complete-field points
 
-Author: Worker 208.
-
 `completeFieldSmoothPointOpen.{u}` proves exactly the published
 `CompleteFieldSmoothPointOpenStatement.{u}`. For a complete nontrivially normed
 field `K`, a smooth relative morphism between schemes locally of finite type
@@ -54,4 +52,4 @@ the analytic step and the actual scheme-point chart constructions for gluing.
 
 This proof supplies the local complete-field assertion. The additional
 almost-all integral-point surjectivity and the adelic smooth-openness theorem
-remain separate obligations of the parent task.
+are not part of this module.

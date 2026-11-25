@@ -1,7 +1,5 @@
 # Actual points in a standard etale presentation
 
-Author: Worker 208.
-
 `standardEtalePointHomeomorph` identifies the actual K-algebra-map points
 of a standard etale A-algebra B with the subtype
 

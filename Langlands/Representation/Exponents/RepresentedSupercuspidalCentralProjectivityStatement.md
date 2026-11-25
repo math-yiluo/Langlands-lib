@@ -1,6 +1,6 @@
 # Supercuspidal representations are projective and injective with fixed central character
 
-Author: Worker 6. Module
+Module
 `Langlands.Representation.Exponents.RepresentedSupercuspidalCentralProjectivityStatement`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement
 `RepresentedSupercuspidalCentralProjectivityStatement : Prop`; nothing is proved here.

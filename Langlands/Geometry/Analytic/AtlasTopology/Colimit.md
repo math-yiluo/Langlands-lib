@@ -1,7 +1,5 @@
 # Continuous gluing and the topological colimit of a net
 
-Author: Worker 36.
-
 This is derived topology infrastructure for Berkovich's actual atlas convention.
 The source is Vladimir G. Berkovich, *Etale cohomology for non-Archimedean
 analytic spaces*, Publications mathematiques de l'IHES 78 (1993), section 1.1,

@@ -1,7 +1,6 @@
 # A common complete algebraically closed analytic point field
 
-Worker 310, with the complete algebraic closure and arbitrary-family field
-constructions by Worker 250. The theorem
+The theorem
 `Langlands.Analytic.SaturatedAtlasPresentation.commonAlgebraicallyClosedPointField`
 proves the published
 `Langlands.Analytic.SaturatedAtlasPresentation.CommonAlgebraicallyClosedPointFieldStatement`

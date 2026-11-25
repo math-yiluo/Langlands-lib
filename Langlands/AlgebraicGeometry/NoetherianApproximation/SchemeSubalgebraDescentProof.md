@@ -1,7 +1,5 @@
 # Descent of schemes of finite presentation to finitely generated subalgebras (proof)
 
-Proof module of task `80ab0ad1-6602-4bc6-8c52-3f88f45f4c83`.
-
 ## Statement proved
 
 `Langlands.AlgebraicGeometry.NoetherianApproximation.schemeSubalgebraDescent :
@@ -58,7 +56,7 @@ The ported FLT proof runs as follows; the Markdown files of the modules named he
 - `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements` (Library; the
   target statement).
 - `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_isPullback_of_locallyOfFinitePresentation`
-  and its import closure of 23 further ported FLT modules under `Langlands/AnthropicFLT/` (submitted
+  and its import closure of 23 further ported FLT modules under `Langlands/AnthropicFLT/` (ported
   with this proof). These are ported from the Anthropic Lean formalization of Fermat's Last Theorem,
   commit `6e837e75355538c7f80bab5b956861e86c4eacc2`, Apache License 2.0, Copyright 2026 Anthropic, PBC;
   see `licenses/Anthropic-FLT/` and the "Source and licence" section of each ported module's Markdown.

@@ -12,7 +12,7 @@ the theorem takes as a hypothesis. It does not prove `WavePacketInnerProductStat
 | `weylParameterSet_eq_empty_of_not_weylConjugation` | theorem (proved) | internal |
 | `nonAssociateWavePacketOrthogonality_of_innerProduct` | theorem (proved) | derived from `WavePacketInnerProductStatement` |
 
-It is a step toward `Langlands.Global.RelativeWavePacketOrthogonalityStatement` (Task 7950),
+It is a step toward `Langlands.Global.RelativeWavePacketOrthogonalityStatement`,
 the corresponding statement on `[G] = A_G G(F) \ G(𝔸)` with parameters in `i(𝔞_M^G)^*`. The
 passage from `G(F) \ G(𝔸)` to `[G]` is not part of this module.
 
@@ -118,7 +118,7 @@ The theorem uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 ## Scope
 
 - The theorem is conditional on `WavePacketInnerProductStatement`, which is not proved in the
-  Library (proof Task 5612, `711e48e1-89b5-4fc8-a272-904a2f4e4040`).
+  Library.
 - The statement is on `G(F) \ G(𝔸)` with parameters in all of `i𝔞_P^*`. The statement on `[G]`
   with parameters in `i(𝔞_M^G)^*`, `RelativeWavePacketOrthogonalityStatement`, needs in
   addition the comparison between the two quotients and the two kinds of wave packets; this

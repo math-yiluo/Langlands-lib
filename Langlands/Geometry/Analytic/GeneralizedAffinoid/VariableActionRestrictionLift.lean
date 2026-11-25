@@ -21,8 +21,8 @@ def restrictionLift (f : H →ₜ* X.groupType) (h : Z ⟶ X)
   groupHom := k
   algebraMap := h.algebraMap
   equivariant g a := by
-    change h.algebraMap ((X.algebraAction.obj.ρ (f (k g))).toAlgHom a) =
-      (Z.algebraAction.obj.ρ g).toAlgHom (h.algebraMap a)
+    change h.algebraMap ((X.algebraAction.obj.ρ (f (k g))).asHom.toAlgHom a) =
+      (Z.algebraAction.obj.ρ g).asHom.toAlgHom (h.algebraMap a)
     rw [show f (k g) = h.groupHom g from
       congrArg (fun q : Z.groupType →ₜ* X.groupType => q g) hgroup]
     exact h.equivariant g a

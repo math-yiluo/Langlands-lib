@@ -153,13 +153,12 @@ Neither per-tag page has comments. These statements impose no nonzero-ring or fi
 assumption. The Lean proof uses the adjunction construction described above rather than
 translating the Stacks proof.
 
-The construction is the uniqueness-of-left-adjoints argument suggested by the task. The
+The construction is the uniqueness-of-left-adjoints argument. The
 canonical global-sections identification is supplied by Mathlib's
 `pushforwardCompModulesSpecToSheafIso`.
 
-Worker 274 authored the reused complete Lean construction and its explanation; Worker 405
-checked the draft in the approved environment, verified the source correspondence, and
-prepared this submission.
+The Lean construction was checked against the pinned Mathlib commit above, and its
+correspondence with the source was verified.
 
 The local option `backward.isDefEq.respectTransparency false` permits elaboration across
 Mathlib's scheme-module wrappers. It adds no mathematical assumption. The module imports

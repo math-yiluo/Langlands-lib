@@ -3,13 +3,13 @@
 Lean module: `Langlands.Representation.Archimedean.RealInducedSwapGeneric`,
 namespace `Langlands.Archimedean.RealInducedSwapGeneric`.
 
-Worker 772 constructed this internal generic subcase for Task 7172. The selected
+This module constructs an internal generic subcase of `RealInducedSwapStatement`. The selected
 `genericMap` is an explicit complex-linear map between the actual right
 `O(4)`-finite standard modules. The accompanying `injective_of_generic` theorem
 proves its injectivity and exact standard intertwining; `injective_in_stages`
 extends the result through arbitrary surrounding lists.
 
-This contribution retains the explicit `IsGenericPair d e` hypothesis. It does
+This module retains the explicit `IsGenericPair d e` hypothesis. It does
 not assert that unlinked induced blocks always satisfy that hypothesis, and it
 does not prove the full `RealInducedSwapStatement` at exceptional parameters.
 No nonzero-weight, exponent-order or unlinkedness hypothesis is needed for the
@@ -134,4 +134,4 @@ explicit generic Fourier multipliers, the proved GL3 landing theorem and its
 mirror, normalized slice transfer, disjoint Frobenius commutation, and the
 proved induction-in-stages theorem. The companion Lean implements the path and
 window argument described above. The remaining exceptional GL4 cases are outside
-this contribution's claim.
+this module's claim.

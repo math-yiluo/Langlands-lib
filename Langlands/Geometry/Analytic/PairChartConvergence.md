@@ -6,8 +6,8 @@ charts of `PairChartPatch` and the patch pullbacks of `AffinoidPatchPullback`.
 
 ## Purpose and provenance
 
-This is an internal prerequisite for Task 7765
-(`CompactPullbackActionContinuityStatement`). No literature statement is
+This is an internal prerequisite for
+`CompactPullbackActionContinuityStatement`. No literature statement is
 transcribed. Mathematically: a fibre product `P = U ×_B V` carries an action
 `σ` whose projections `p`, `q` are equivariant for continuous actions `σU`,
 `σV`. Over a pair of compatible charts, the part of `P` lying over both is

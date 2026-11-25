@@ -106,7 +106,7 @@ The retained S78 original is
 registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 125 read pp.96 and 99 (PDF pp.2 and 5), checking the p.99 formula image.
+Pages 96 and 99 (PDF pp.2 and 5) were read, and the p.99 formula image checked.
 
 S78 cites A. J. Silberger, *Introduction to Harmonic Analysis on Reductive
 p-adic Groups* (1979) (S79), Corollary 2.4.2 and Theorem 4.4.4 for this step.
@@ -114,9 +114,9 @@ The retained original is
 `/home/taskhub/central-library/Silberger--Introduction to harmonic analysis on reductive p-adic groups (book)--1979.pdf`,
 registered as `silberger-1979-harmonic-analysis`, SHA256
 `b9432812bb48ce0bcd3975144baa6b3cca99bcaaf0d33d785ce68e94e02854fc`.
-Worker 125 read section 2.4 through Corollary 2.4.2, printed pp.90–92
+Section 2.4 through Corollary 2.4.2, printed pp.90–92
 (PDF pp.96–98), and Theorem 4.4.4 with its proof, printed pp.177–180
-(PDF pp.183–186), checking all these page images. No relevant retained errata
+(PDF pp.183–186), were read, and all these page images checked. No relevant retained errata
 file was found in the project notes.
 
 This is a derived GL product-Levi specialization of the S78 support step,
@@ -132,8 +132,10 @@ or an induction map.
 
 ## Proof obligations
 
-A future proof must justify the GL product-Levi specialization and each
-comparison needed to realize the S78 support step with these actual objects:
+A proof must justify the GL product-Levi specialization and each
+comparison needed to realize the S78 support step with these actual objects
+(the Lean proof is `glDiscreteSeriesPositiveRootSupport` in
+`DiscreteSeriesPositiveRootSupportProof`):
 
 - Extract suitable cuspidal support without assuming a critical exponent or
   a support map. Relate J-supercuspidality to the actual admissible
@@ -166,4 +168,5 @@ No item in this list is proved by this statement module. Regular Langlands
 classification, tempered exhaustion, square-integrable Langlands
 classification, and the desired support quotient are not premises. The joint
 fine/middle/coarse assembly and the head conclusion of
-`GLRelativeRegularComparisonStatement` remain separate work.
+`GLRelativeRegularComparisonStatement` are separate; that statement is proved
+by `glRelativeRegularComparison`.

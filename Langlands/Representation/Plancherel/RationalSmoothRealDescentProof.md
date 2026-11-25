@@ -1,7 +1,5 @@
 # Proof of smooth real descent on actual reductive rational points
 
-Author: Worker 4356.
-
 `Langlands.Plancherel.rationalSmoothRealDescent` proves the Library proposition
 `Langlands.Plancherel.RationalSmoothRealDescentStatement.{u}` (module
 `Langlands.Representation.Plancherel.RationalSmoothRealDescentStatement`). It holds at an
@@ -32,7 +30,7 @@ remains.
 
 ### The reduction
 
-`Langlands.Plancherel.rationalSmoothRealDescent_of_structure` (Worker 20, module
+`Langlands.Plancherel.rationalSmoothRealDescent_of_structure` (module
 `Langlands.Representation.Plancherel.RationalSmoothRealDescentConstruction`) has type
 `SmoothRealStructureStatement.{u} → RationalSmoothRealDescentStatement.{u}`. Its premise
 `Langlands.BruhatTits.RationalPoints.SmoothRealStructureStatement.{u}` (module
@@ -65,17 +63,15 @@ Each is a published unconditional proof, imported by Lean name. Together they fo
 anonymous-constructor proof of `SmoothRealStructureStatement.{u}`.
 
 1. `Langlands.BruhatTits.RationalPoints.centralNormKernelCompactness` (module
-   `Langlands.BruhatTits.RationalPoints.CentralNormKernelCompactnessProof`, Workers 1532 and
-   1045) proves `CentralNormKernelCompactnessStatement.{u}`: `Z ⊓ K` is compact in the
+   `Langlands.BruhatTits.RationalPoints.CentralNormKernelCompactnessProof`) proves `CentralNormKernelCompactnessStatement.{u}`: `Z ⊓ K` is compact in the
    canonical topology. In the reduction it gives `Z ⊓ K ≤ f.ker` through the compact-subgroup
    argument.
 2. `Langlands.BruhatTits.RationalPoints.centralDerivedNormKernelCocompactness` (module
-   `Langlands.BruhatTits.RationalPoints.CentralDerivedNormKernelCocompactnessProof`, Worker
-   4312) proves `CentralDerivedNormKernelCocompactnessStatement.{u}`: the quotient
+   `Langlands.BruhatTits.RationalPoints.CentralDerivedNormKernelCocompactnessProof`) proves `CentralDerivedNormKernelCocompactnessStatement.{u}`: the quotient
    `K ⧸ (((Z ⊓ K) ⊔ D).subgroupOf K)` is compact. In the reduction it is the cocompact
    subgroup in the finite-index argument that gives clause 1.
 3. `Langlands.BruhatTits.RationalPoints.derivedSmoothRealAnnihilation` (module
-   `Langlands.BruhatTits.RationalPoints.DerivedSmoothRealAnnihilationProof`, Worker 4314)
+   `Langlands.BruhatTits.RationalPoints.DerivedSmoothRealAnnihilationProof`)
    proves `DerivedSmoothRealAnnihilationStatement.{u}`: every open-kernel homomorphism to
    `Multiplicative ℝ` kills `D`. In the reduction it gives `D ≤ f.ker`.
 

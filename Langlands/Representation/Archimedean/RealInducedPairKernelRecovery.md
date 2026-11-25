@@ -1,6 +1,6 @@
 # Kernels of the four-crossing induced-pair operator
 
-This internal supporting unit analyzes the actual operators defined in
+This module analyzes the actual operators defined in
 `RealInducedPairFrobenius`. It derives its assertions from their compact Fourier
 identities, the two proved landing routes, and the adjacent-window injectivity
 criterion in `RealAdjacentMultiplierInjectivity`. No external literature assertion
@@ -62,7 +62,7 @@ quantifies `d`, `e`, `δ`, all four multipliers and `h`, and asserts these two
 conditional equalities of kernels. `realInducedPairKernelRecovery` proves it
 using the preceding lemmas.
 
-These are kernel descriptions and conditional recovery results. The unit does
+These are kernel descriptions and conditional recovery results. The module does
 not construct the multiplier data, identify nonzero kernels with images of
 heavier standard modules, analyze the final crossing, or establish the
 unconditional `RealInducedInducedFiltrationStatement`.

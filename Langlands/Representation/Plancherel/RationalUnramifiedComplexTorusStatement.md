@@ -1,7 +1,5 @@
 # The complex torus `X(G)` and its real subtorus `Im X(G)` (Renard V.3.20): statements
 
-Author: Worker 4.
-
 `RationalUnramifiedComplexTorusStatement` states the parts of Renard V.3.20 that concern smooth
 structure. These are the complex torus structure of the group `X(G)` of unramified characters,
 and the fact that the unitary characters `Im X(G)` form a real submanifold of it. That

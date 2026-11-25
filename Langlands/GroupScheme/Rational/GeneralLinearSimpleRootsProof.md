@@ -1,7 +1,5 @@
 # Simple relative roots of the diagonal torus
 
-Worker 163.
-
 This derived helper for `GeneralLinearStandardParabolicStatement` identifies the
 simple relative roots of the actual diagonal torus of `GL_N` over any field.
 Its hypothesis is that the integer coordinates of the chosen cocharacter are

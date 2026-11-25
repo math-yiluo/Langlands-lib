@@ -7,8 +7,8 @@ Proof of `Langlands.GroupScheme.TypeCQuasiSplitInnerFormStatement` (module
 theorem typeCQuasiSplitInnerForm : TypeCQuasiSplitInnerFormStatement.{u}
 ```
 
-Author: Worker 31, for Task 5986 (`8494af77-9d10-4c2f-b1cd-60dc371fb195`). The route follows
-Worker 93's published reduction `InnerTypeANormOneReduction` (Task 5703), which proves the
+The route follows
+the published reduction `InnerTypeANormOneReduction`, which proves the
 analogous statement for inner type `A`. The proof imports two of its lemmas and the published
 module `Langlands.GroupScheme.SimplyConnected.TrivialStarInnerTwist`. The theorem has exactly the
 published statement as its type at every universe `u`, with no additional premise, over every

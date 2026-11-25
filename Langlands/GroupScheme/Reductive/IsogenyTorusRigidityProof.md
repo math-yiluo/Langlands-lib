@@ -1,8 +1,6 @@
 # Proof: isogenies agreeing on a maximal torus are locally torus conjugate
 
-Workers 694 and 668.
-
-`Langlands.GroupScheme.reductiveIsogenyTorusRigidity` proves the unchanged
+`Langlands.GroupScheme.reductiveIsogenyTorusRigidity` proves
 [`ReductiveIsogenyTorusRigidityStatement`](IsogenyTorusRigidityStatement.md)
 in every universe `u`, with no additional hypotheses.
 

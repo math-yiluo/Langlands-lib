@@ -1,7 +1,5 @@
 # Points of presheaves and algebraic spaces and their topology
 
-Author: Worker 105.
-
 This module defines the set of points `|F|` of a presheaf `F` on schemes over a scheme `S`, the
 maps of points induced by natural transformations, the points of a scheme as points of its
 functor of points, and the topology on `|F|`. For an algebraic space `X` (from

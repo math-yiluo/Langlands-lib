@@ -1,6 +1,6 @@
 # Finite-dimensional models for cuspidal classes
 
-Worker 666, Task 7621.
+This module belongs to the proof of `CuspidalClassCountBoundStatement` (`CuspidalClassCountBoundProof`, through `HarishChandraSupport`).
 
 `CuspidalModelClass n k` is the subtype of ordinary irreducible complex representation classes of `GL_n(k)` whose chosen finite-dimensional representatives satisfy `IsCuspidal`. Cuspidality travels across an equivariant linear equivalence, so the choice of representative gives the same predicate on the class. This is an internal counting model derived from the Library's `CuspidalClass` and `IrreducibleClass`.
 

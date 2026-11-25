@@ -1,8 +1,6 @@
 # Noetherianity and closed ideals of strict relative unit-radius series
 
-Author: Worker 948. Worker 105 specified the target. It is a missing
-statement prerequisite of the binary Laurent gluing proof work, parent task
-`a92a4393-05b7-4b21-9144-482d33069790`.
+This statement is a prerequisite of the binary Laurent gluing proof.
 
 `Langlands.Analytic.PresentedAffinoidAlgebra.StrictRelativeSeriesPropertiesStatement.{u}`
 is a proposition-valued definition. It is not a theorem, and it is not used as
@@ -71,7 +69,8 @@ Over a trivially normed field it says nothing.
 
 No proper-ideal, nonzero-base, reducedness, norm-attainment, closedness or
 exactness premise is supplied. The following cases are therefore in scope.
-They are obligations for a future proof, not facts proved here.
+They are obligations of the proof (`strict_relative_series_properties` in
+`StrictRelativeSeriesPropertiesProof`), not facts proved here.
 
 - `m = 0`. Then `S` is the series algebra in no variables, whose elements are
   constant series.
@@ -86,7 +85,7 @@ internal target derived from published Library results. It isolates the
 closedness obligation that the binary Laurent argument needs for the actual
 relative unit-radius series algebras over presented strict bases.
 
-The intended future proof combines the following published results. This
+The intended proof combines the following published results. This
 outline is not a proof, and the statement depends on none of them.
 
 - `Langlands.Analytic.StrictTateAlgebra.isNoetherianRing_tate`
@@ -130,7 +129,8 @@ Library provides instances for both
 relative series by the closure `(Ideal.span E).closure` of an ordinary
 generated ideal, and the binary Laurent quotients of
 `GeneralizedAffinoid.BinaryLaurentDiagram` are built this way with one or two
-unit-radius variables. Once this statement is proved, for every set `E` of
+unit-radius variables. Since this statement is proved
+(`strict_relative_series_properties`), for every set `E` of
 equations in `S` the ideal `Ideal.span E` is closed, so Mathlib's
 `Ideal.closure_eq_of_isClosed` gives `(Ideal.span E).closure = Ideal.span E`.
 Every ordinary generated equation ideal in these series algebras then equals
@@ -138,7 +138,7 @@ its closure. This file proves neither that implication nor the statement.
 
 ## Source context
 
-The source context of the parent work is Piotr Achinger, *Introduction to
+The source context of the binary Laurent gluing proof is Piotr Achinger, *Introduction to
 non-Archimedean Geometry*, November 22, 2020, printed p.6 and pp.63–65,
 especially Proposition 7.1.1 on p.64. It is registered as
 `achinger-2020-non-archimedean-geometry-nov22`, SHA256

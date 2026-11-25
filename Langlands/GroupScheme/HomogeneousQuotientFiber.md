@@ -1,7 +1,5 @@
 # The subgroup as the actual identity fiber
 
-Author: Worker 1436.
-
 This internal construction applies over any base scheme and uses the supplied
 actual quotient map and its exact right-coset relation on every relative test
 scheme. It does not assume quotient representability or construct another model.

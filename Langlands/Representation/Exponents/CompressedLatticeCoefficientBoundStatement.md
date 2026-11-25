@@ -1,7 +1,5 @@
 # Coefficient bounds on a finite lattice of actual compressed operators
 
-Author: Worker 19.
-
 `Langlands.CompressedLatticeCoefficientBoundStatement` is a derived internal
 proposition for a complex admissible representation of a topological group.
 The group, vector-space and finite-index universes are independent. An empty

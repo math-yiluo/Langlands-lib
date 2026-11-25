@@ -106,8 +106,8 @@ theorem norm_character_ratio_eq_exp (characters : n → rationalCharacters T.toG
       rationalNormLogarithm_eq_intValuation, Real.rpow_def_of_pos hq]
   rw [hnorm, hnorm, ← Real.exp_neg, ← Real.exp_add]
   congr 1
-  simp only [RenardLeviCones.characterOrder, map_sub, AddEquiv.symm_apply_apply,
-    Int.cast_sub]
+  simp only [RenardLeviCones.characterOrder, AddEquiv.map_sub, AddEquiv.symm_apply_apply]
+  simp only [map_sub, Int.cast_sub]
   ring
 
 

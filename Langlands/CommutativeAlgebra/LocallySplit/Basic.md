@@ -19,8 +19,8 @@ elements, with an endomorphism that factors through a finite free module.
 
 ## Provenance
 
-The definition is internal to this project. Worker 281 proposed it as the interface between the
-geometric part of the 05FT proof and the module-theoretic part, and Worker 928 wrote this file.
+The definition is internal to this project. It is the interface between the
+geometric part of the 05FT proof and the module-theoretic part.
 In the literature the condition is known as "locally projective" (Zimmermann-Huisgen). It is
 used here only through the projectivity criterion
 `Langlands.CommutativeAlgebra.projective_of_locallySplit_baseChange` in

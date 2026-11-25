@@ -1,6 +1,6 @@
 # Gamma multiplicativity for normalized block induction
 
-Worker 20 authored this internal assembly of published results.
+This module is an internal assembly of published results.
 `Langlands.RankinSelberg.gammaMultiplicativity` proves exactly
 `GammaMultiplicativityStatement.{uF,uV,uW}` from
 `Langlands.Representation.RankinSelberg.MultiplicativityStatement`.
@@ -57,8 +57,8 @@ Section 3.2, printed page 405, reduces the finite family to two blocks by
 induction; Sections 7.1–7.2, printed pages 438–442, supply the two-block gamma
 descents. The registered original is `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-The original proof and registered errata were checked during the prerequisite
-development; no applicable registered erratum was found. The implementation
+The original proof and registered errata were checked for the prerequisite
+modules; no applicable registered erratum was found. The implementation
 here derives the exact existing proposition solely from the two imported
 published results. The target pair and its imports are unchanged.
 

@@ -1,7 +1,5 @@
 # Proof: rational fixed-order surviving support for the corrected Aubert filtration
 
-Author: Worker 4399.
-
 Module `Langlands.Representation.Aubert.General.RationalCorrectedSurvivingSupportProof`.
 
 ## Result
@@ -198,7 +196,7 @@ standard-parabolic results (Borel–Tits 1965, 5.15–5.20) and of the compactne
 of `G/P` (Renard V.5.1). None of them is assumed.
 
 The first conjunct composes a proof of `StandardParabolicPointsStatement.{u}`
-inline, as a needed deduction. The standalone exact proof publication of that
-statement remains with its own proof task (Task 3790,
-`e43da082-554e-432c-9a99-8079337a1444`). The target pair and every pair it
-imports are unchanged.
+inline, as a needed deduction. The standalone proof of that statement is
+`Langlands.GroupScheme.standardParabolicPointsStatement_proof` (module
+`GroupScheme.Rational.StandardParabolicPointsProof`). The target pair and every
+pair it imports are unchanged.

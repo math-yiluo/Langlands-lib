@@ -1,6 +1,6 @@
 # Splitting a smooth representation along disjoint support categories
 
-Worker 4195. This module proves a conditional form of Renard, Théorème VI.7.2,
+This module proves a conditional form of Renard, Théorème VI.7.2,
 for the generic standard families of `Langlands.Aubert.General`. The theorem is
 grouped by an equivalence relation on standard index sets. It also proves the
 splitting lemma and the direct-sum lemmas that the argument uses. Nothing here

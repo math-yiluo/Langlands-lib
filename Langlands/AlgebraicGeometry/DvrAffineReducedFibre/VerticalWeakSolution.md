@@ -1,7 +1,5 @@
 # From ramification index one to a reduced normalized residue fibre
 
-Worker 594.
-
 At a vertical DVR, the generic localization of the original local
 ring is its fraction field. After changing the base to a new DVR,
 the tensor of fraction fields is a localization of the extended

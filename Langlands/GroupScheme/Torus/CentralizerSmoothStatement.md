@@ -1,7 +1,5 @@
 # Smoothness of torus centralizers: statement
 
-Worker 1379.
-
 `TorusCentralizerSmoothStatement.{u}` concerns a field `k : Type u`, a
 smooth affine group scheme `G` over `Spec k`, a commutative group scheme
 `T`, and a homomorphism `i : T.toGrp ⟶ G` such that `IsTorus T.toGrp` and

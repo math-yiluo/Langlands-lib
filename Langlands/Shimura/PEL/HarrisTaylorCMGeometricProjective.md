@@ -40,10 +40,10 @@ representability over the CM field. The registered source is
 `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
 The implemented base-change embeddings and properness are internal deductions
-from the exact representation witness and the published polynomial-Proj
+from the exact representation witness and the polynomial-Proj
 base-change and properness results. They are not a proof of the original
 representability assertion.
 
-The general datum still needs an applicable existence theorem and the
-remaining canonical-model, cover and coefficient-descent prerequisites.
-This focused construction does not complete the host task.
+For the general datum the Library proves no applicable existence theorem
+(`CMRepresentabilityStatement` is a premise here), and the canonical-model,
+cover and coefficient-descent prerequisites are not treated in this module.

@@ -43,23 +43,24 @@ theorem copies_hom_ext {Y : LocalizedCategory.{u, max z v, max z v} (K := K)}
 acting there by the correction `κ(g, c) = (g • c).out⁻¹ * (g * c.out) ∈ H`. -/
 def actionMap (g : G) : (copies H X).pt ⟶ (copies H X).pt :=
   Cofan.IsColimit.desc (isColimitCopies H X) fun c =>
-    X.ρ (correction H g c) ≫ copy H X (g • c)
+    (X.ρ (correction H g c)).asHom ≫ copy H X (g • c)
 
 @[reassoc (attr := simp)]
 theorem copy_actionMap (g : G) (c : G ⧸ H) :
-    copy H X c ≫ actionMap H X g = X.ρ (correction H g c) ≫ copy H X (g • c) :=
+    copy H X c ≫ actionMap H X g =
+      (X.ρ (correction H g c)).asHom ≫ copy H X (g • c) :=
   Cofan.IsColimit.fac _ _ c
 
 omit [IsUltrametricDist K] [CompleteSpace K] in
 @[reassoc]
 theorem ρ_comp {M : Type*} [Monoid M] {V : Type*} [Category V] (A : Action V M) (a b : M) :
-    A.ρ a ≫ A.ρ b = A.ρ (b * a) := by
+    (A.ρ a).asHom ≫ (A.ρ b).asHom = (A.ρ (b * a)).asHom := by
   rw [map_mul, End.mul_def]
 
 theorem actionMap_one : actionMap H X 1 = 𝟙 _ :=
   copies_hom_ext H X fun c => by
-    rw [copy_actionMap, correction_one, Action.ρ_one, one_smul, Category.id_comp,
-      Category.comp_id]
+    rw [copy_actionMap, correction_one, Action.ρ_one, End.one_asHom, one_smul,
+      Category.id_comp, Category.comp_id]
 
 theorem actionMap_mul (g k : G) :
     actionMap H X (g * k) = actionMap H X k ≫ actionMap H X g :=
@@ -71,12 +72,12 @@ theorem actionMap_mul (g k : G) :
 abbrev inducedAction : Action (LocalizedCategory.{u, max z v, max z v} (K := K)) G where
   V := (copies H X).pt
   ρ :=
-    { toFun := actionMap H X
-      map_one' := actionMap_one H X
-      map_mul' := actionMap_mul H X }
+    { toFun := fun g => End.of (actionMap H X g)
+      map_one' := congrArg End.of (actionMap_one H X)
+      map_mul' := fun g k => congrArg End.of (actionMap_mul H X g k) }
 
 @[simp]
-theorem inducedAction_ρ (g : G) : (inducedAction H X).ρ g = actionMap H X g := rfl
+theorem inducedAction_ρ (g : G) : ((inducedAction H X).ρ g).asHom = actionMap H X g := rfl
 
 /-! ## The unit `X → X_{G/H}` -/
 
@@ -116,10 +117,10 @@ theorem correction_out_baseCoset (c : G ⧸ H) :
 /-- The underlying morphism of the unit: `X` is identified with the copy indexed by the coset
 `H`, corrected by the chosen representative of that coset. -/
 def unitHom : X.V ⟶ (copies H X).pt :=
-  X.ρ (baseRep H)⁻¹ ≫ copy H X (baseCoset H)
+  (X.ρ (baseRep H)⁻¹).asHom ≫ copy H X (baseCoset H)
 
 theorem unitHom_comm (h : H) :
-    X.ρ h ≫ unitHom H X = unitHom H X ≫ actionMap H X h := by
+    (X.ρ h).asHom ≫ unitHom H X = unitHom H X ≫ actionMap H X h := by
   rw [unitHom, Category.assoc, copy_actionMap, correction_baseCoset, smul_baseCoset,
     ← Category.assoc, ← Category.assoc, ρ_comp, ρ_comp]
   congr 2
@@ -140,38 +141,43 @@ variable {X} {Y : Action (LocalizedCategory.{u, max z v, max z v} (K := K)) G}
 /-- The morphism `X_{G/H} → Y` extending a morphism `f : X → Y`: on the copy indexed by `c` it
 is `f` followed by the action of the representative `c.out`. -/
 def liftHom (f : X.V ⟶ Y.V) : (copies H X).pt ⟶ Y.V :=
-  Cofan.IsColimit.desc (isColimitCopies H X) fun c => f ≫ Y.ρ c.out
+  Cofan.IsColimit.desc (isColimitCopies H X) fun c => f ≫ (Y.ρ c.out).asHom
 
 @[reassoc (attr := simp)]
 theorem copy_liftHom (f : X.V ⟶ Y.V) (c : G ⧸ H) :
-    copy H X c ≫ liftHom H f = f ≫ Y.ρ c.out :=
+    copy H X c ≫ liftHom H f = f ≫ (Y.ρ c.out).asHom :=
   Cofan.IsColimit.fac _ _ c
 
 /-- For an `H`-equivariant `f`, the extension is `G`-equivariant. -/
-theorem actionMap_liftHom (f : X.V ⟶ Y.V) (hf : ∀ h : H, X.ρ h ≫ f = f ≫ Y.ρ h) (g : G) :
-    actionMap H X g ≫ liftHom H f = liftHom H f ≫ Y.ρ g :=
+theorem actionMap_liftHom (f : X.V ⟶ Y.V)
+    (hf : ∀ h : H, (X.ρ h).asHom ≫ f = f ≫ (Y.ρ h).asHom) (g : G) :
+    actionMap H X g ≫ liftHom H f = liftHom H f ≫ (Y.ρ g).asHom :=
   copies_hom_ext H X fun c => by
-    have hf' : ∀ (h : H) {Z} (k : Y.V ⟶ Z), X.ρ h ≫ f ≫ k = f ≫ Y.ρ h ≫ k := fun h Z k => by
+    have hf' : ∀ (h : H) {Z} (k : Y.V ⟶ Z),
+        (X.ρ h).asHom ≫ f ≫ k = f ≫ (Y.ρ h).asHom ≫ k := fun h Z k => by
       rw [← Category.assoc, hf, Category.assoc]
     rw [copy_actionMap_assoc, copy_liftHom, copy_liftHom_assoc, hf', ρ_comp, ρ_comp,
       ← correction_spec]
 
-theorem unitHom_liftHom (f : X.V ⟶ Y.V) (hf : ∀ h : H, X.ρ h ≫ f = f ≫ Y.ρ h) :
+theorem unitHom_liftHom (f : X.V ⟶ Y.V)
+    (hf : ∀ h : H, (X.ρ h).asHom ≫ f = f ≫ (Y.ρ h).asHom) :
     unitHom H X ≫ liftHom H f = f := by
-  have hf' : ∀ (h : H) {Z} (k : Y.V ⟶ Z), X.ρ h ≫ f ≫ k = f ≫ Y.ρ h ≫ k := fun h Z k => by
+  have hf' : ∀ (h : H) {Z} (k : Y.V ⟶ Z),
+      (X.ρ h).asHom ≫ f ≫ k = f ≫ (Y.ρ h).asHom ≫ k := fun h Z k => by
     rw [← Category.assoc, hf, Category.assoc]
   have e : (baseCoset H).out * (((baseRep H)⁻¹ : H) : G) = 1 := by
     rw [Subgroup.coe_inv]
     exact mul_inv_cancel _
-  rw [unitHom, Category.assoc, copy_liftHom, hf', ρ_comp, e, Action.ρ_one, Category.comp_id]
+  rw [unitHom, Category.assoc, copy_liftHom, hf', ρ_comp, e, Action.ρ_one, End.one_asHom,
+    Category.comp_id]
 
 theorem liftHom_unitHom_comp (f : (copies H X).pt ⟶ Y.V)
-    (hf : ∀ g : G, actionMap H X g ≫ f = f ≫ Y.ρ g) :
+    (hf : ∀ g : G, actionMap H X g ≫ f = f ≫ (Y.ρ g).asHom) :
     liftHom H (unitHom H X ≫ f) = f :=
   copies_hom_ext H X fun c => by
     rw [copy_liftHom, Category.assoc, ← hf, unitHom, Category.assoc, copy_actionMap_assoc,
       correction_out_baseCoset, out_smul_baseCoset, ρ_comp_assoc, mul_inv_cancel,
-      Action.ρ_one, Category.id_comp]
+      Action.ρ_one, End.one_asHom, Category.id_comp]
 
 /-- The extension of an `H`-morphism to a `G`-morphism out of the induced space. -/
 def lift (φ : X ⟶ (Action.res _ H.subtype).obj Y) : inducedAction H X ⟶ Y where

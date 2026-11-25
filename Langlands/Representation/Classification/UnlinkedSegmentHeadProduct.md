@@ -1,15 +1,13 @@
 # Highest derivatives of constituents of unlinked special-head products
 
-Author: Worker 357.
-
 The selected internal definition is
 `Langlands.Classification.chooseUnlinkedSegmentHeadProductHighestDerivativeOrder`.
 For every irreducible actual subquotient of an unlinked product of supplied
 special heads, it selects highest positive derivative data and retains an
 equality between its order and the ambient rank. Two grouped lemmas extract
 top-derivative nonvanishing and irreducibility of the unlinked product.
-The full `SegmentHeadProductIrreducibility` equivalence still requires the
-linked converse.
+The full `SegmentHeadProductIrreducibility` equivalence also requires the
+linked converse; it is proved in `SegmentHeadProductIrreducibilityProof`.
 
 ## Parameters and returned data
 
@@ -112,12 +110,12 @@ original universe convention; it does not establish the linked converse.
 
 ## Internal provenance and dependency audit
 
-This unit composes proved published constructions and translates no new
+This module composes proved published constructions and translates no new
 external assertion. Its provenance is internal and its source list is
 empty. The direct dependencies implement general derivative order selection,
 finite length, actual smooth duality and quotients, the permitted
 support-only comparison, finite segment combinatorics, and the top-derivative
-irreducibility detector. No premise assumes this unit's conclusion.
+irreducibility detector. No premise assumes this module's conclusion.
 
 At Library base `83afd4553e9b793a825b53a9504028c880852999`, the recursive
 inventory contains 1279 project modules including this new root and 321
@@ -130,29 +128,22 @@ traversal of Mathlib.
 
 The inherited inventory is covered by the previously completed audits of
 the shifted-support, untwisted-quotient, highest-order and top-derivative
-units, with 1258, 202, 104 and 1111 project modules respectively in those
+modules, with 1258, 202, 104 and 1111 project modules respectively in those
 audit snapshots. Comparing their union leaves only the present new root.
-This records inherited audit coverage and current byte equality; it does
+This records inherited audit coverage and byte equality at that base; it does
 not claim every inherited source was freshly reread line by line for this
 composition. At the present base the five direct import closures contain
 1258, 1112, 104, 202 and 860 project modules, in the table's order.
 
-The trusted operator responses
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md),
-[ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md),
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-were read in full. They permit independently proved general BZ77 derivative
-theory, the ruled general Ze80 3.7(b)/Lemma 4.7(b) and 5.3 infrastructure,
-and exactly the independently proved final terminal-support bound for
-individual supplied heads. In this composition that final bound is used
-through the published shifted-support construction.
+The independence requirements admit, as derivative and support inputs,
+independently proved general BZ77 derivative theory, the general Ze80
+3.7(b)/Lemma 4.7(b) and 5.3 infrastructure, and exactly the independently
+proved final terminal-support bound for individual supplied heads. In this composition that final bound is
+used through the published shifted-support construction.
 
 The stronger `core_mid`, `core` and at-most-one-simple-factor consequences,
 and the adjacent-supercuspidal reducibility import, remain inside the
-support proof's length-two base case. This unit invokes none of them
+support proof's length-two base case. This module invokes none of them
 separately. The lexical inventory adds no hit beyond the shifted-support
 closure: its inherited matches are the permitted support-only theorem and
 helpers, broad two-supercuspidal Prop interfaces, and the nonadjacent theorem
@@ -160,30 +151,30 @@ inside the restricted adjacent-reducibility route.
 `TwoSupercuspidalProductStructureProof` is absent. An imported Prop
 interface is not used as an assumed proof.
 
-The inherited proof dependencies exclude the parent
+The inherited proof dependencies exclude the
 `GenericSegmentProductUniqueness` conclusion; multisegment exhaustion;
 ordered strong-head existence; quotient coverage; ordered conversion;
 tempered uniqueness; square-integrable classification and exhaustion;
-regular exhaustion; Ze80 3.5/9.6 and their proof successors; the excluded
+regular exhaustion; Ze80 3.5/9.6 and their proofs; the excluded
 segment, head, socle and full Jacquet conclusions; and the segment-socle
-part of task `8e5b4563-0365-41c7-b134-70f2a0b36292`.
-They also exclude both directions of the host criterion as inputs.
+part of the segment derivative statements (`SegmentSocleDerivativesStatement`).
+They also exclude both directions of the special-head product criterion
+`SegmentHeadProductIrreducibility` as inputs.
 The present root proves its stated sufficient direction from those
 independent foundations.
 
-## Validation and remaining obligation
+## Validation and the full criterion
 
-Recovery compilation of this module together with the three recently
-published order, quotient and shifted-support modules succeeded with zero
-errors and warnings in the authorized Lean service. Inspection of the
+Compilation of this module together with the order, quotient and
+shifted-support modules succeeded with zero
+errors and warnings. Inspection of the
 selected actual constructor reports declaration kind `definition`,
 independent level parameters `uF,uV`, and only `propext`, `Classical.choice`
-and `Quot.sound`. These author checks do not replace independent semantic
-review and Library publication.
+and `Quot.sound`. These checks are not an independent semantic review.
 
-This candidate is a focused internal construction with grouped projections.
-The exact full `SegmentHeadProductIrreducibility` theorem remains a separate
-host obligation, including its linked converse and exact-target validation.
+This module is a focused internal construction with grouped projections.
+The exact full `SegmentHeadProductIrreducibility` theorem, including its
+linked converse, is proved separately in `SegmentHeadProductIrreducibilityProof`.
 
 ## Complete project import inventory
 

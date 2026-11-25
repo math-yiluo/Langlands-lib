@@ -38,5 +38,5 @@ VI.8.1 (printed p.187 / PDF p.193). The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The set is a name for the existing formulation, and the elementary
 transport results are not attributed to separately numbered source
-assertions. This unit proves no finite-type characterization and
+assertions. This module proves no finite-type characterization and
 assumes no unproved characterization.

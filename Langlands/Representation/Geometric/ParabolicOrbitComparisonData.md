@@ -1,7 +1,5 @@
 # Actual subgroup data for the parabolic-orbit comparison
 
-Author: Worker 76.
-
 This internal bridge uses the published block Levi projection, its section,
 the literal six decomposability theorem, and the canonical diagonal projection
 on a decomposable intersection. It applies over every commutative ring and in

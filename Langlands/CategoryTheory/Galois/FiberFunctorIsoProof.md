@@ -54,8 +54,7 @@ The axiom comparison is documented in the imported statement's Markdown.
 
 The implemented proof uses Mathlib's
 `Mathlib.CategoryTheory.Galois.Prorepresentability` and
-`Mathlib.CategoryTheory.CofilteredSystem`, following the route proposed by
-Worker 360. The helper and cocone argument are derived constructions for this
+`Mathlib.CategoryTheory.CofilteredSystem`. The helper and cocone argument are derived constructions for this
 proof. This is not a transcription of SGA 1's proof through its earlier
 propositions.
 

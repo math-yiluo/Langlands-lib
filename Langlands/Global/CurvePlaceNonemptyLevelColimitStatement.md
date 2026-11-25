@@ -1,7 +1,5 @@
 # Colimits over nonempty finite sets of actual curve places
 
-Author: Worker 208.
-
 `CurvePlaceNonemptyLevelColimitStatement` quantifies over fields `k` and
 `F` in a common arbitrary universe, a specified `k`-algebra structure on
 `F`, and the existence of an actual `AlgebraicCurve.Place k F`. It uses

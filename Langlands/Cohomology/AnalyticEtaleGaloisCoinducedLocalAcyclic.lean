@@ -34,7 +34,7 @@ def liftFixedSubmodule (S : EtaleGSheaf ρ (ModuleCat.{w} R))
     (V : TwistedOver (etale (K := K)) ρ) (l : ActionLift ρ V.hom) (Kₒ : Subgroup G)
     (hK : Kₒ ≤ l.subgroup) : Submodule R (S.obj.obj.obj (op V)) :=
   ⨅ (k : G) (hk : k ∈ Kₒ),
-    LinearMap.ker ((S.obj.obj.map (liftAction l ⟨k, hK hk⟩).unop.op).hom - LinearMap.id)
+    LinearMap.ker ((S.obj.obj.map (liftAction l ⟨k, hK hk⟩).unop.asHom.op).hom - LinearMap.id)
 
 variable (L : Type uL) [NormedField L] [NormedAlgebra K L]
 
@@ -50,16 +50,16 @@ def HasCoinducedGaloisFixedSections (S : EtaleGSheaf ρ (ModuleCat.{w} R)) :
     Prop :=
   ∀ (V : TwistedOver (etale (K := K)) ρ), IsDistinguishedEtale V.hom →
     ∀ (Γ : Type) [Group Γ] [Finite Γ] (deck : Γ →* Aut V.obj.left)
-      (hdeck : ∀ γ : Γ, (deck γ).hom ≫ V.hom = V.hom),
+      (hdeck : ∀ γ : Γ, (deck γ).asIso.hom ≫ V.hom = V.hom),
       (∀ (γ : Γ) (p : (localizedFieldPointFunctor L).obj V.obj.left),
-        (localizedFieldPointFunctor L).map (deck γ).hom p = p → γ = 1) →
+        (localizedFieldPointFunctor L).map (deck γ).asIso.hom p = p → γ = 1) →
       ∀ l : ActionLift ρ V.hom,
         (∀ (γ : Γ) (k : l.subgroup),
-          (l.action k).hom ≫ (deck γ).hom = (deck γ).hom ≫ (l.action k).hom) →
+          (l.action k).asIso.hom ≫ (deck γ).asIso.hom = (deck γ).asIso.hom ≫ (l.action k).asIso.hom) →
         ∀ Kₒ : Subgroup G, IsOpen (Kₒ : Set G) → ∀ hK : Kₒ ≤ l.subgroup,
           ∃ (A : ModuleCat.{w} R) (π : S.obj.obj.obj (op V) →ₗ[R] A),
             Function.Bijective fun s : liftFixedSubmodule S V l Kₒ hK => fun γ : Γ =>
-              π ((S.obj.obj.map (deckEndomorphism V (deck γ) (hdeck γ)).op).hom s.1)
+              π ((S.obj.obj.map (deckEndomorphism V (deck γ).asIso (hdeck γ)).op).hom s.1)
 
 end Data
 

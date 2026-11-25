@@ -1,7 +1,5 @@
 # Positive mirabolic localization character
 
-Author: Worker 653.
-
 This module constructs the character used by Bernstein and Zelevinsky,
 *Induced representations of reductive p-adic groups I* (1977), §3.1,
 printed p.450 (PDF page 11, zero-based index 10). Sections 3.1–3.2,

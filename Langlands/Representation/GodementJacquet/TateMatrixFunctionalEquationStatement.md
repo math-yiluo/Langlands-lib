@@ -59,8 +59,9 @@ The retained original is
 The theorem gives the admissible irreducible analytic assertion. Printed page
 31 explicitly identifies `M = F` as the known Tate case. Specializing the
 matrix rank to one gives this prerequisite. The statement keeps the theorem's
-actual representation scope; a future proof must establish any character-model
-reduction it uses.
+actual representation scope; a proof must establish any character-model
+reduction it uses. The Library proves the statement as
+`tateMatrixFunctionalEquation` in the module `TateMatrixFunctionalEquationProof`.
 
 H. Jacquet, I. I. Piatetski-Shapiro and J. Shalika, *Automorphic Forms on
 GL(3) I* (1979), printed page 177 (one-based PDF page 10), equations
@@ -74,7 +75,7 @@ one the transpose has no effect. The cited passages were read in the retained
 originals. No source-specific errata note was found in the project literature
 or published notes.
 
-This unit supplies the analytic base target, without assuming a preexisting
+This module supplies the analytic base target, without assuming a preexisting
 abelian local-analysis theorem or the generic matrix functional equation. It
 does not prove either one or assert the reducible analogue.
 

@@ -1,6 +1,6 @@
 # Actual derivative quotients for binary tensor induction
 
-Author: Worker 357. This is an internal assembly of actual published maps.
+This is an internal assembly of actual published maps.
 It introduces no new assertion transcribed from the literature. Its purpose is
 to keep the quotient map, its ordered tensor factors and its surjectivity as data.
 
@@ -121,13 +121,13 @@ The five direct imports are `Derivative.InducedMapQuotient`,
 `Derivative.PartialDerivativeTensorProof`, `Tensor.FiniteProperties`,
 `Smooth.Schur.Proof` and `Shahidi.IntertwiningInduced`, all under
 `Langlands.Representation`. Every used declaration is in the supplied published
-Library. This module imports no pending cut-embedding or other pending result.
+Library. This module imports no cut-embedding or other unpublished result.
 At Library base `8a1c71c3b7e45f52546ca1d740fc0b623ffb6299`, recursive traversal of
 the actual import declarations gives 166 project modules including this entry
 and 125 distinct directly named external frontier imports. All 165 inherited
 Lean/Markdown pairs match that Library byte for byte. No module or Markdown
 is missing. The complete inventories follow below. The code scan finds no
-host-excluded name, proof hole, new axiom or prohibited execution syntax.
+excluded name, proof hole, new axiom or prohibited execution syntax.
 These checks corroborate the inspected definitions and proof bodies; a list
 of imports by itself is not a mathematical proof.
 
@@ -154,40 +154,33 @@ an analytic theorem premise.
 
 The following restrictions are retained directly and transitively:
 
-- No parent `GenericSegmentProductUniqueness`, full head-product criterion in
+- No `GenericSegmentProductUniqueness`, full head-product criterion in
   either direction, multisegment exhaustion, ordered strong-head existence,
   quotient coverage, ordered conversion, tempered uniqueness, square-integrable
   classification or exhaustion, or regular exhaustion conclusion is used.
-- No Ze80 3.5 or 9.6, their proof successors, segment/head/socle derivative or
+- No Ze80 3.5 or 9.6, their proofs, segment/head/socle derivative or
   Jacquet formulas, segment-socle product criterion or linked-product structure
-  conclusion is used. No segment-socle part of
-  `8e5b4563-0365-41c7-b134-70f2a0b36292` occurs.
+  conclusion is used. No segment-socle part of the derivative statements
+  (`SegmentSocleDerivativesStatement`) occurs.
 - No `SegmentHeadSupportStep`, `SegmentHeadJacquetReduction`,
   `SegmentSocleJacquetReduction`, `core_mid`, two-supercuspidal reducibility,
   `TwoSupercuspidalProductStructureProof`, or restricted support-proof
   intermediate is imported or consumed.
-- No proposition definition, draft, pending proof, source citation or downstream
+- No proposition definition, unproved statement, source citation or downstream
   classification is treated as an already proved input.
 
-Operator decisions `bd71b9185aab5d6eafffb7891bd3a3ca`
-and `0edda6122ce65ed7ac51603c37473920`
-permit independently proved general derivative theory and the general Ze80
-3.7(b) comparison used by `InducedMapQuotient`, while preserving the host's
-exclusions. The tensor comparison is likewise proved from quotient universal
-properties and the actual normalized minus tower. The further rulings
-`30144f6f9b59540b88b6d4c1517892d9`, `ed80148e21e7523abfc048f455e98eb0`,
-`2b33898bdd0a5ff1b9031be5155a06f0` and `ca18fd5005bf5e12a3f7cade18dca865`
-are respected without invoking their restricted support or reducibility
-exceptions. All six trusted operator messages were read completely. No run
-control, owner pause or review independence is waived.
+The module uses independently proved general derivative theory and the general
+Ze80 3.7(b) comparison used by `InducedMapQuotient`, with the exclusions above.
+The tensor comparison is likewise proved from quotient universal
+properties and the actual normalized minus tower. No exception to these
+exclusions, for restricted support or reducibility results, is invoked.
 
 This focused pair is a prerequisite construction. It proves no segment
 nonvanishing, truncated-head identification, derivative irreducibility,
-multiplicity formula or product criterion. In particular, the host's full
-`SegmentHeadProductIrreducibility` equivalence and its linked converse remain
-separate unproved obligations.
-
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+multiplicity formula or product criterion. In particular, the full
+`SegmentHeadProductIrreducibility` equivalence and its linked converse are not
+proved here; both are proved by `segmentHeadProductIrreducibility` in
+`Classification.SegmentHeadProductIrreducibilityProof`.
 
 ## Complete transitive project inventory
 

@@ -1,6 +1,6 @@
 # Actual determinant duality from finite free frames
 
-This internal unit compares actual chosen determinant lines under
+This internal module compares actual chosen determinant lines under
 internal module duality on a supplied fixed finite-index frame cover.
 For a module sheaf `M` with actual frames `e` on a cover `T i`, all
 indexed by one finite type, `dualFrames` applies the actual
@@ -39,6 +39,6 @@ existing chosen actual determinants and transports the frame tensor
 inverse comparison through actual line-bundle duality.
 
 The provenance is internal finite-frame duality and sheaf tensor
-algebra. The input fixed-index cover is retained. The unit neither
+algebra. The input fixed-index cover is retained. The module neither
 asserts a constant-rank cover exists globally for every finite locally
 free sheaf nor makes an ampleness claim.

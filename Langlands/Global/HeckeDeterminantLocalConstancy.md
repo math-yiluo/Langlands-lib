@@ -1,7 +1,5 @@
 # Local constancy of the finite determinant factor of every Hecke character
 
-Author: Worker 5136.
-
 This internal module proves that, for every Hecke character `χ` of a number
 field `F` and every rank `n`, the map `d ↦ χ(det d)` on the finite adelic
 matrix group `GL_n(𝔸_F^∞)` has an open kernel and is locally constant. No

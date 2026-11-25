@@ -82,7 +82,7 @@ Representatives here are tensor-invertible sheaves. Their local rank-one
 interpretation and the ordinary `LineBundle` inverse interface are handled
 using the published comparison in a separate module.
 
-Worker 148 authored this specialization of the published categorical Picard
+This module is a specialization of the published categorical Picard
 construction and canonical scheme tensor/pullback. The registered original
 is `stacks-local-freeness-invertibility-sections-2026-10-21`, SHA-256
 `6d1641a9deb284be889ee6e2630a2be6e57cc5985c80af2c9da7d17543ed0785`,

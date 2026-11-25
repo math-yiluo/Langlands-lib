@@ -87,7 +87,7 @@ theorem isOpen_ker_one (n : ℕ) :
 produces a vector with the same class whose Levi translates all have classes in a
 successor-stable subspace containing the original class. The averaged vector stays in
 every invariant subspace containing the original vector. Adapted from the proof of
-`eq_bot_or_eq_top_of_radicalQuotient` (Worker 806). -/
+`eq_bot_or_eq_top_of_radicalQuotient`. -/
 theorem exists_levi_translates_mem (m : ℕ)
     {V : Type uV} [AddCommGroup V] [Module ℂ V]
     {W : Type uW} [AddCommGroup W] [Module ℂ W]

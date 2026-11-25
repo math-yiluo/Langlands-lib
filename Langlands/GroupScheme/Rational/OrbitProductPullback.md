@@ -57,7 +57,7 @@ reductivity, or splitness premise is used.
 The provenance is internal: the list-product argument uses Mathlib's monoid
 homomorphism and permutation lemmas, the pullback uses the tensor-product
 universal property and the Library's actual affine coordinates, and ideal
-descent reuses the published arbitrary-Galois helper. This unit asserts no new
+descent reuses the published arbitrary-Galois helper. This module asserts no new
 literature-specific theorem from Steinberg or Borel–Springer.
 
 Consumers must construct a compatible base-changed pinning and actual root

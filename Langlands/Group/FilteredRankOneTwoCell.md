@@ -1,7 +1,6 @@
 # Group algebra for a filtered rank-one two-cell decomposition
 
-This internal derived module works in an arbitrary group `G`. Worker 1600
-is the author. It defines `FilteredRankOne.reflectionCell U Z m` as the
+This internal derived module works in an arbitrary group `G`. It defines `FilteredRankOne.reflectionCell U Z m` as the
 literal set product `U {m} Z U` for subgroups `U` and `Z`.
 
 The theorem `coe_sup_eq_twoCell` identifies the subgroup `U ⊔ V ⊔ Z`

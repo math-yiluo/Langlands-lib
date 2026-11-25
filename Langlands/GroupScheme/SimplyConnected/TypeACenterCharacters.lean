@@ -149,6 +149,8 @@ geometric centre characters in type A. -/
 theorem centerCharacter_action_sign_A (hn : 1 ≤ n) (σ : Ω ≃ₐ[k] Ω) :
     (∀ χ : C, characterLattice.galoisRepresentation k Ω d.toralCenter.group σ χ = χ) ∨
     (∀ χ : C, characterLattice.galoisRepresentation k Ω d.toralCenter.group σ χ = -χ) := by
+  have : AddMonoidHomClass (C ≃ₗ[ℤ] ZMod (n + 1)) C (ZMod (n + 1)) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   let f := d.centerCharacterEquivA hsc e hA hn
   rcases d.star_cases_of_A e hA σ with hid | hrev
   · left

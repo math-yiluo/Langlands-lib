@@ -1,7 +1,5 @@
 # Descent of a Galois-stable pairing-sign class
 
-Worker 1272.
-
 This internal construction derives an alternative interface for the published
 integral Galois averaging and actual cocharacter descent results. It uses the
 published `HaveSamePairingSigns` predicate on actual characters and cocharacters.

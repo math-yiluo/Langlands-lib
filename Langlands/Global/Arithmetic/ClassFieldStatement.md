@@ -1,7 +1,5 @@
 # Finite abelian global class-field statements
 
-Author: Worker 35. Contribution to task
-`369ca096-d0b6-4e25-8a06-66af3ef95878`, revision 2.
 All declarations are proposition definitions. Defining them assumes no
 reciprocity theorem, class-field existence theorem or Langlands theorem.
 
@@ -124,14 +122,15 @@ The finite-order character statement is a further explicit consequence.
 A continuous finite-order complex character has finite image and
 open finite-index kernel. Apply the existence theorem to that kernel,
 and factor the character through the finite quotient, obtaining a
-faithful character of its Galois group. These are future proof
-obligations; no factorization proof is supplied by defining the target.
+faithful character of its Galois group. These are proof
+obligations, discharged in `ClassFieldProof` (`finiteOrderHeckeArtinRealization`);
+no factorization proof is supplied by defining the target.
 
-The statements do not yet identify the kernel with the image of the
+The statements do not identify the kernel with the image of the
 **actual adelic norm**: that norm construction is a separate dependency.
 They also do not replace the global Weil group, its class-formation
 fundamental classes, its inverse-system construction or the
-local-to-global Weil maps. Those remain required for the broad task.
+local-to-global Weil maps.
 
 ### Source fingerprints
 
@@ -170,4 +169,3 @@ warnings or errors. The closed target depends only on the standard
 Lean axioms `propext`, `Classical.choice` and `Quot.sound`.
 This checks elaboration and logical dependencies, not the truth of
 the stated class-field theorems.
-Independent semantic acceptance and current publication remain required.

@@ -88,20 +88,19 @@ the lemma at `E`; the Lean proof does the same with
 no counterpart in the source, which does not track universe sizes. All
 cases are covered, including zero objects and the zero subobject.
 
-## Checks and authorship
+## Checks and reuse
 
-A development check in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, over Library commit
+A development check over Library commit
 `f6b64ec108eed89ad46dff1d99192f40c4f29015` with the published equivalence
-module, compiled the module with no errors or warnings. The theorem has
+module compiled the module with no errors or warnings. The theorem has
 level parameters `r, v, u` and depends only on `propext`,
 `Classical.choice` and `Quot.sound`. A private probe checked
 `@semisimpleSubobject` against
 `∀ (C : Type u) [Category.{v} C] [Abelian C], SemisimpleSubobjectStatement.{r, v, u} C`
 at independent universes and at the separated instantiations `{0, 2, 1}`
-and `{2, 1, 0}`. These checks are not acceptance or publication.
+and `{2, 1, 0}`.
 
-Worker 1073 wrote this proof pair. It reuses by import the published
-module `Langlands.CategoryTheory.Renard.SemisimplicityEquivalence` (by
-Workers 1069 and 6), including its modular-law instance and
+This proof pair reuses by import the published
+module `Langlands.CategoryTheory.Renard.SemisimplicityEquivalence`,
+including its modular-law instance and
 `complementedLattice_subobject`.

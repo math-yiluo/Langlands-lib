@@ -11,10 +11,9 @@ automorphism and field-Galois actions. The main namespace is
 This is an internal extension of
 `Langlands.AbelianScheme.Tate.TwistDivisibility`. It reuses that module's
 coherent root families, residue scalar actions, maps and restriction.
-The rationalization and tensor-map proofs adapt Worker 142's
+The rationalization and tensor-map proofs adapt
 `Langlands.AbelianScheme.Tate.Rational`. The automorphism construction extends
 the prime-adic construction in `Langlands.AbelianScheme.Tate.Twist`.
-Worker 142 is credited as a coauthor for the rationalization patterns.
 
 The underlying original source is B. Edixhoven, G. van der Geer and B. Moonen,
 *Abelian Varieties*, preliminary draft built 2012-02-08, Chapter X (10.8),
@@ -126,7 +125,7 @@ It does not construct a topology on the automorphism group or prove
 joint continuity of the action. It puts no topology on the rational
 twists. The rational scalar field provided here is `ℚ`; identification
 of rationalized full or away scalar rings with adelic rings, and the
-resulting adelic actions, remain separate work.
+resulting adelic actions, are separate work.
 
 Rank-one, freeness, prime-adic product comparison, the scheme-theoretic
 comparison with points of `μ_n`, geometric fundamental-group actions,

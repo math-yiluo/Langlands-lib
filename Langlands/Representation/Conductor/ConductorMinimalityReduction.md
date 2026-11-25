@@ -1,6 +1,6 @@
 # The conductor lower bound and scaled identity from the spherical functional equation
 
-Author: Worker 5077. Module
+Module
 `Langlands.Representation.Conductor.ConductorMinimalityReduction`. Its main
 theorem is
 
@@ -166,9 +166,13 @@ of the target and a vector `v` fixed by `levelSubgroup F (n + 1) u`, and apply
 
 To prove `ConductorMinimalityStatement` outright, both hypotheses must be
 proved over every nonarchimedean local field: mirabolic restriction injectivity
-(proof task `20fcd75c-eb88-415e-83c0-7d767ae2e3a6`) and the spherical
+and the spherical
 functional equation, which contains JPSS 1983 Theorems (2.7) and (3.1) for
-unramified principal series.
+unramified principal series. Both are proved in the Library
+(`Langlands.Whittaker.mirabolicRestrictionInjectivity` and
+`Langlands.Conductor.sphericalLaurentFunctionalEquation`), and
+[`ConductorMinimalityProof`](ConductorMinimalityProof.md) applies this reduction
+to them.
 
 ## Imports
 

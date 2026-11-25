@@ -1,7 +1,5 @@
 # Almost-everywhere local powers and global half-powers
 
-Authors: Worker 53 and Worker 1232.
-
 `Langlands.Global.AlmostEverywherePowerHalfStatement.{u}` states that for every
 number field `K : Type u`, finite set `S` of its actual finite places, positive
 natural number `n`, and nonzero element `a : Kˣ`, local solvability of
@@ -16,8 +14,7 @@ PDF pp.74–75). The registered source is
 `artin-tate-2009-class-field-theory`, SHA-256
 `af7ba934904a3c10012e6fd326cea493ffb6200d885d97583277bb45f935c3dd`.
 The appended errata at one-based PDF p.202 contain no correction to this theorem.
-Both authors read the source theorem and proof; Worker 1232 identified this
-minimal interface in the arithmetic prerequisite audit.
+The source theorem and proof were read.
 
 This statement is a derived specialization. Set the source exponent to `2*n`
 and exclude all infinite places as well as `S`; a number field has finitely many

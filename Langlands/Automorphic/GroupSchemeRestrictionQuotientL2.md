@@ -1,7 +1,5 @@
 # Square-integrable classes on the restriction split-centre quotient
 
-Author: Worker 112.
-
 The published module `GroupSchemeQuotientL2` defines `L²` classes and the right
 regular representation on the positive-torus quotient
 `PositiveRealTorus.PositiveRationalQuotient F G T i`. That quotient uses the

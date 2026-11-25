@@ -1,7 +1,5 @@
 # Reflection of finiteness of the full scheme-theoretic centre
 
-Author: Worker 1347.
-
 In arbitrary universe `u`, this helper constructs a finite representative of
 the full scheme-theoretic centre over a field from a finite representative
 after any field extension, provided the extended group is affine. It also

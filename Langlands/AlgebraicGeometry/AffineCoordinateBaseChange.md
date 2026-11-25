@@ -1,7 +1,5 @@
 # Affine coordinates under scalar extension
 
-Author: Worker 445.
-
 This internal construction compares relative global sections with scalar
 extension. It uses Mathlib's relative spectrum–global-sections adjunction and
 its tensor-product description of a pullback of affine spectra. The

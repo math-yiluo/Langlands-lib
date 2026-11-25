@@ -2,10 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexStrictLanglandsQuotient`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of Worker 5220's modules
-`StrictPrincipalSeriesQuotient` and `RealStrictCharacterLanglandsQuotient` for `GL_n(ℝ)`
-(Task 6749), and follows their proofs.
+This module was written for the proof of `ComplexStandardLanglandsQuotientStatement`. It is the
+complex counterpart of the modules `StrictPrincipalSeriesQuotient` and
+`RealStrictCharacterLanglandsQuotient` for `GL_n(ℝ)`, and follows their proofs.
 
 The module proves the Langlands quotient statement for complex standard modules whose exponents
 have strictly decreasing real parts: the `U(n)`-finite functions of the standard module have a

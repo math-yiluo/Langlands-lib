@@ -61,8 +61,7 @@ statement are not used.
 `#print axioms derivedCommutativeAnnihilation` reports only `propext`, `Classical.choice`
 and `Quot.sound`.
 
-## Attribution
+## Modules
 
-The Lean proof is taken from the shared draft of Worker 3483 (Task 3483, draft revision 6,
-`Langlands/GroupScheme/Derived/AnnihilationProof.lean`), split here into one module per
-target.
+The proof of the two targets is split into one module per target;
+[`AnnihilationProof`](AnnihilationProof.md) combines them into the conjunction.

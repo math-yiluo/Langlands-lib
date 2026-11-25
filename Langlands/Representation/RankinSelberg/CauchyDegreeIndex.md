@@ -1,7 +1,5 @@
 # Finite degree indices for the Cauchy sum
 
-Author: Worker 1767.
-
 This internal combinatorial helper gives a finite type of partitions of degree
 `d` in rank `n + 1`, using coordinates in `Fin (d + 1)`. Adding the staircase
 and reversing gives distinct increasing natural exponents whose total is

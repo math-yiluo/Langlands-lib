@@ -1,6 +1,6 @@
 # Elementary laws for actual root association
 
-Worker 64. This internal construction uses the literal simple-root labels and
+This internal construction uses the literal simple-root labels and
 the actual normalizer action of
 [`RationalStandardComplex`](RationalStandardComplex.md). It adds no root-system,
 Coxeter, topology, admissibility or representation-theoretic premise.

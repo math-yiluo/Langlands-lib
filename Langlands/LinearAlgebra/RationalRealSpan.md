@@ -1,7 +1,5 @@
 # Rational spans and kernels detected after real scalar extension
 
-Author: Worker 1327.
-
 This internal scalar-extension construction works for every additive
 commutative group `M`, in every universe, without a torsion-free or finite-rank
 assumption. `rationalRealEquiv` identifies

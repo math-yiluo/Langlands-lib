@@ -3,7 +3,7 @@
 This module constructs a smooth closed representative of the published
 `torusCentralizer i` whenever `i : T.toGrp ⟶ G` is a split subtorus of a smooth
 affine group scheme over a field `k`. All types and schemes have the arbitrary
-universe `u` used by the host statement. No perfectness, characteristic,
+universe `u` used by `TorusNormalizerRepresentableStatement`. No perfectness, characteristic,
 maximality, connectedness or reductivity assumption is required. Representation
 is on every test scheme over `Spec k`, including non-affine schemes.
 
@@ -68,14 +68,14 @@ diagonalizable group of the lattice `I → ℤ`. The auxiliary
 an isomorphism preserves its range on every test scheme. Thus the diagonalizable
 case transports to the original, unchanged `torusCentralizer i`.
 
-## Provenance and host boundary
+## Provenance and relation to the normalizer statement
 
 This is an internal construction from the published fixed-point lifting,
 affine coordinate, closed centralizer and infinitesimal smoothness APIs. It is
 an alternative infinitesimal proof, not a transcription of a further source
-theorem. Worker 950 contributed the closed-representative and smoothness
-interfaces and their use in this construction.
+theorem.
 
-This unit supplies the centralizer half of
+This module supplies the centralizer half of
 `TorusNormalizerRepresentableStatement`. It does not prove the normalizer half
-or complete the host task.
+or the full statement, which `torusNormalizerRepresentable` (module
+`Rational.TorusNormalizerProof`) proves.

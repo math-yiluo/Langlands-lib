@@ -261,16 +261,21 @@ this is a separate consequence of
 
 ## Use in the singleton branch
 
-1. Use Task 7823’s `Proposition48MackeyChildTransportStatement` to
+1. Use `Proposition48MackeyChildTransportStatement` (module
+   `HarrisProposition48MackeyTransportStatement`) to
    transport the child at `a = 1` to a Mackey constituent `S` over `D`
-   with the child’s induced complex-place parameters. Task 7822 gives
+   with the child’s induced complex-place parameters.
+   `ConjugateSelfDualUnitaryCentralCharacterStatement` (module
+   `HarrisAuxiliaryConjugatePairStatement`) gives
    a unitary central character for the conjugate self-dual child.
-   Task 7823’s arithmetic transport statements preserve the unitary
+   The arithmetic transport statements of
+   `CuspidalArithmeticTransportStatement` preserve the unitary
    central character, supercuspidal component and conjugate self-duality.
    Part (G) gives Galois stability and B1 gives the descents of `S`.
 2. For each descent, (U) gives a unitary central character.
-   Task 7822 gives supercuspidality of `S` at the conjugate auxiliary
-   place by conjugate self-duality, and shows that the places in the
+   The statements of `HarrisAuxiliaryConjugatePairStatement` give
+   supercuspidality of `S` at the conjugate auxiliary
+   place by conjugate self-duality, and show that the places in the
    pair are distinct by splitting in `K₀`. B5 gives supercuspidality
    of each descent at `Q.Ps.v` and its conjugate. Restricted B7(1) compares the
    complex-place parameters across this step on these unitary
@@ -278,10 +283,10 @@ this is a separate consequence of
    Part (P1) then gives `Q.HasInducedComplexPlaceParameters` for the
    descent, an actual parameter of the class of the induced form at
    every complex place of `E`.
-3. Task 7823’s `Proposition48InducedParameterRegularAlgebraicStatement`
+3. `Proposition48InducedParameterRegularAlgebraicStatement`
    gives regular algebraicity through `CuspidalComplexParameterBridgeTCStatement`.
    Together with B5 at `Q.Ps.v`, this gives the hypotheses on every
-   descent for (L16). Apply (L16) and then Task 7823’s
+   descent for (L16). Apply (L16) and then
    `WeakInductionConjugateInverseSelfDualTCStatement` to obtain the
    required weak induction with conjugate self-duality.
 
@@ -291,9 +296,8 @@ give the totally complex isobaric invariance input.
 
 The project route follows Section 4.8, Remark 4.2 (lines 859–894) and
 the singleton discussion (line 909) of `external-inputs-plan.tex`
-(`operator-external-inputs-plan-2026-11-16`). Ruling R2 (record
-`a79e2e832569567a8582b3c994f2fc1b`) obtains the singleton’s
-parameters through restricted B7(1). Its unitary central character
+(`operator-external-inputs-plan-2026-11-16`). In this design the singleton’s
+parameters are obtained through restricted B7(1). Its unitary central character
 and auxiliary conjugate-pair supercuspidality hypotheses explain
 the use of (U) before the comparison and of (P1) to obtain the
 induced form afterward.

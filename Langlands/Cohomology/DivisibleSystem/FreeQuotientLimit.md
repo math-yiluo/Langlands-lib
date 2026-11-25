@@ -1,35 +1,35 @@
 # Direct limits of free modules over quotient group algebras
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Representation.Induction.InvariantRestriction`
 (`Induction.invariantsToCoinvariants`,
 `Induction.bijective_invariantsToCoinvariants_of_equiv`,
 `Induction.bijective_invariantsToCoinvariants_permutation`,
-`Induction.isUnit_index_subgroupOf`; Worker 61),
+`Induction.isUnit_index_subgroupOf`),
 `Langlands.Representation.Induction.PermutationDual`
-(`Induction.permutation_asModule_free`; Worker 61),
+(`Induction.permutation_asModule_free`),
 `Langlands.Representation.Smooth.Definitions` (`Langlands.IsSmooth`,
 `Langlands.fixedVectors`),
 `Langlands.Cohomology.DivisibleSystem.FreeTorsionProjective`
 (`FreeOverPowQuotient`, `torsionQuotientRepresentation`, `torsionQuotientRep`,
 `isTorsionBySet_of_powSMul_eq_zero`, `powSMul_hom_apply`,
-`powTorsionProjective_of_freeOverPowQuotient`; Worker 61) and
-`Langlands.Cohomology.DivisibleSystem.InvariantHomSurjective` (Worker 61).
+`powTorsionProjective_of_freeOverPowQuotient`) and
+`Langlands.Cohomology.DivisibleSystem.InvariantHomSurjective`.
 Through these imports it also uses
 `Langlands.Representation.Induction.PermutationInvariants`
 (`Induction.invariantsEquivOfEquiv`, `Induction.permutationInvariantsEquiv`,
 `Induction.asModuleLinearEquiv`,
-`Induction.finiteIndex_subgroupOf_of_isCompact`; Worker 61),
+`Induction.finiteIndex_subgroupOf_of_isCompact`),
 `Langlands.Representation.Induction.PermutationModule`
-(`Induction.permutation`, `Induction.permutation_apply`; Worker 61),
+(`Induction.permutation`, `Induction.permutation_apply`),
 `Langlands.Cohomology.DivisibleSystem.InvariantHomSystem`
-(`invariantsHomSystemIso`; Worker 61),
+(`invariantsHomSystemIso`),
 `Langlands.Cohomology.DivisibleSystem.HomSystem` (`homSystem`,
-`towerHomEval`; Worker 61), `Langlands.Cohomology.DivisibleSystem.HomSurjective`
+`towerHomEval`), `Langlands.Cohomology.DivisibleSystem.HomSurjective`
 (`homSystem_map_surjective`, `isMittagLeffler_homSystem`,
-`towerHomEval_surjective`; Worker 61) and the Library's `ℓ`-divisible systems
+`towerHomEval_surjective`) and the Library's `ℓ`-divisible systems
 (`DivisibleSystem`, `DivisibleSystem.mapLeftExact`,
-`DivisibleSystem.mapComplexes`, `DivisibleSystem.degree`; Worker 61).
+`DivisibleSystem.mapComplexes`, `DivisibleSystem.degree`).
 
 Harris's coefficient modules `C^j_m(ẽ)` are direct limits of free
 `𝒪/ℓ^m𝒪[S(ẽ)/H(ẽ)]`-modules as the open subgroup `H(ẽ)` shrinks. This module

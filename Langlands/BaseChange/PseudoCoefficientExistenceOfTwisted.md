@@ -34,6 +34,6 @@ Henniart–Lemaire 2011, II.5.13 (printed pp. 113–114), with their identity-ca
 comparison in II.1.7 (p. 59) and trace formula in II.2.7 (p. 67). The new
 proof is the non-induction argument detailed in
 [`PadicSquareIntegrableNotInduced`](PadicSquareIntegrableNotInduced.md).
-The `TwistedPseudoCoefficientExistenceStatement` premise (Task 7881) is
-not proved here. The candidate therefore does not assert unconditional
+The `TwistedPseudoCoefficientExistenceStatement` premise is
+not proved here. The module therefore does not assert unconditional
 pseudo-coefficient existence.

@@ -1,14 +1,13 @@
 # Common constituents from nonzero actual Jacquet modules
 
-Worker 158 implements this derived internal construction for the full smooth
-support-vanishing task. The cyclic-module construction adapts the published
-argument of Workers 1210, 379 and 238 in
+This module implements a derived internal construction for the full smooth
+support-vanishing target. The cyclic-module construction adapts the published
+argument in
 `Smooth.RenardIrreducibleExistenceProof`. The explicit image range restriction
-and its nontriviality argument adapt the implementation of Workers 320 and 514
+and its nontriviality argument adapt the implementation
 in `Filtration.NonzeroImageIrreducibleQuotient`; the present argument uses
 unrestricted irreducible-subquotient existence after that image step.
-Worker 593 coordinated the independent scope; Worker 78 confirmed that it does
-not duplicate the separate irreducible Jacquet-detection task.
+The construction does not duplicate the separate irreducible Jacquet detection.
 
 The namespace is
 `Langlands.Aubert.General.JacquetCommonConstituent`.
@@ -77,5 +76,4 @@ in an actual cuspidal series inside that Levi, transport its presentation by
 exact normalized induction and induction transitivity, and prove the required
 actual standard-index and association comparisons. This file supplies none of
 those inputs and does not prove
-`RationalSupportCategoryJacquetVanishingStatement`. No target or imported pair
-is changed.
+`RationalSupportCategoryJacquetVanishingStatement`.

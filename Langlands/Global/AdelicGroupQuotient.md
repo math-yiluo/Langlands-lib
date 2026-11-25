@@ -37,10 +37,10 @@ and open quotient projections are those of the reused generic quotient API.
 The original arithmetic quotient conventions are Getz–Hahn, *An Introduction
 to Automorphic Representations* (2024), Section 2.6, printed pages 67–69:
 the opening rational quotient, the norm-one subgroup (2.19), and the domain
-of (2.22). The present unit's closed-embedding comparison is an internal
+of (2.22). The present module's closed-embedding comparison is an internal
 consequence of these actual subgroups and the quotient universal property.
 It does not construct the split-centre subgroup `A_G` of (2.20), the
 split-centre quotient `[G]` of (2.21), or the homeomorphism in (2.22).
 Polishness, invariant quotient measures, Weil compatibility, finite volume,
-reduction theory and automorphic analytic conditions remain separate
-obligations. No second-countability or finite-volume conclusion is used here.
+reduction theory and automorphic analytic conditions are not part of this
+module. No second-countability or finite-volume conclusion is used here.

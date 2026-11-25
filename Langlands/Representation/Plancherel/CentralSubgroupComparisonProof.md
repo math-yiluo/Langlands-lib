@@ -1,7 +1,5 @@
 # Actual central-quotient topology and coefficient comparison
 
-Author: Worker 117.
-
 This is an internal derived proof of the exact published proposition
 `Langlands.Plancherel.CentralSubgroupSquareIntegrabilityComparisonStatement`.
 It uses the actual quotient projection, the published compact-kernel Haar/Lp

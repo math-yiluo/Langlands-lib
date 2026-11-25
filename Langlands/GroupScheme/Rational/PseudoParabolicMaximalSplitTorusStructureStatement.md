@@ -1,7 +1,5 @@
 # Maximal split tori and the minimality criterion for pseudo-parabolics
 
-Author: Worker 274.
-
 `Langlands.GroupScheme.PseudoParabolicMaximalSplitTorusStructureStatement.{u}`
 states the maximality observation immediately before Proposition C.2.4
 and the proposition itself in Conrad–Gabber–Prasad, *Pseudo-reductive

@@ -1,7 +1,5 @@
 # One polar compact subgroup for all actual dynamic parabolics
 
-Authors: Worker 1359 and Worker 1571.
-
 This internal derived construction combines `AffinePolarCompact` with
 `Dynamic.ConjugatedParabolicPolarCover`. Let `k : Type u` be a field,
 `S : Type u` an `RCLike` field with a `k`-algebra structure, and `G` an affine

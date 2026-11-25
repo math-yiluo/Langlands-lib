@@ -1,7 +1,5 @@
 # Relative derived complementary centralizers from component coordinates
 
-Worker 634.
-
 RootComponentCoordinates determines closed split complementary subtori over
 every scheme by its integral restriction and extension maps. Their explicit
 retractions make the inclusions closed. Over the pinned model's affine base,

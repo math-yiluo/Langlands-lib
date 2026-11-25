@@ -1,8 +1,8 @@
 # Spin-cover existence, uniqueness and geometric descent
 
-This internal derived unit is work of Worker 97 for Task 5397. It derives its claims from
-the published group-scheme interfaces and does not assert the quaternionic geometry
-required for the task's final statement.
+This internal derived module serves the proof of `LocalSpinRankOneStatement`. It derives its
+claims from the published group-scheme interfaces and does not assert the quaternionic
+geometry required for that statement.
 
 For a form over an arbitrary field, the isometry group is assumed smooth and its
 identity component semisimple. The published `simplyConnectedCoverExistence`
@@ -34,7 +34,7 @@ statement at arbitrary universe `u`. There is no local-field, central-division,
 quaternionic-dimension, nondegeneracy or Witt-index restriction in these
 reductions beyond their explicitly supplied geometric hypotheses.
 
-The missing inputs remain smoothness and semisimplicity for the actual isometry
-group, and almost simplicity and split rank one for one cover of the relevant
+The inputs these reductions do not supply are smoothness and semisimplicity for the
+actual isometry group, and almost simplicity and split rank one for one cover of the relevant
 quaternionic form. No assumption about the characteristic is made in these
-reductions. This unit does not prove `LocalSpinRankOneStatement`.
+reductions. This module does not prove `LocalSpinRankOneStatement`.

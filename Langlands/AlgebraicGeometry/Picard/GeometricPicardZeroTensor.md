@@ -59,12 +59,12 @@ Moonen, *Abelian Varieties*, preliminary draft, literature ID
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
 Printed p.95 (PDF p.99) gives `φ_L(x) = [t_x* L ⊗ L⁻¹]`;
 Corollary (7.22), printed p.106 (PDF p.110), identifies the kernel of this
-assignment with `Pic⁰` over a field. The parent task explicitly chooses the
+assignment with `Pic⁰` over a field. `GeometricPicardZero` chooses the
 translation-invariance criterion on algebraically closed geometric fibres.
 The elementary closure proof implemented here uses tensor functoriality and
 the fixed pullback comparison; it does not invoke or prove that kernel theorem.
 
-This contribution supplies tensor closure of the chosen condition. Group
+This module supplies tensor closure of the chosen condition. Group
 axioms, inverses, a group law on relative classes, and representability remain
 separate constructions. All conclusions here retain the stated canonical
 comparison-invertibility hypothesis.

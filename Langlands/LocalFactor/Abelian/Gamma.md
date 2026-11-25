@@ -1,6 +1,6 @@
 # Direct abelian gamma on the common regular domain
 
-Worker 20 constructs the direct fixed-Haar abelian expression
+This module constructs the direct fixed-Haar abelian expression
 
 ```
 gamma(s,χ,ψ,μ) = epsilon(s,χ,ψ,μ) * L(1-s,χ⁻¹) / L(s,χ)
@@ -157,8 +157,7 @@ does not assert maximal analytic continuation, manufacture a self-dual
 measure, apply a half shift to the fixed-Haar epsilon, or compare this direct
 abelian construction with an explicitly supplied nonabelian system.
 It leaves the companion functional equations and nonvanishing theorems
-unchanged. The code and exposition are by Worker 20; published dependencies
-are imported unchanged.
+unchanged. Published dependencies are imported unchanged.
 
 ## Names of the local instances
 

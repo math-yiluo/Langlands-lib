@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_MonoidalV2
@@ -27,11 +27,11 @@ set_option autoImplicit false
 open AlgebraicGeometry.Scheme.Modules in
 
 theorem solution {X : AlgebraicGeometry.Scheme.{u}} {L : X.Modules} {U : X.Opens} (g : Γ(X, U)) (s : Γ(L, U)) (n : ℕ) :
-    AlgebraicGeometry.Scheme.Modules.tensorPowSection (g • s) n =
-      g ^ n • AlgebraicGeometry.Scheme.Modules.tensorPowSection s n := by
+    AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT (g • s) n =
+      g ^ n • AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT s n := by
   induction n with
-  | zero => rw [tensorPowSection_zero, tensorPowSection_zero, pow_zero, one_smul]
+  | zero => rw [tensorPowSectionFLT_zero, tensorPowSectionFLT_zero, pow_zero, one_smul]
   | succ n ih =>
-    rw [tensorPowSection_succ, tensorPowSection_succ, ih, tensorSections_smul_left, tensorSections_smul_right,
+    rw [tensorPowSectionFLT_succ, tensorPowSectionFLT_succ, ih, tensorSections_smul_left, tensorSections_smul_right,
       smul_smul, ← pow_succ]
     try rfl

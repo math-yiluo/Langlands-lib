@@ -1,7 +1,5 @@
 # Actual reduced quotient transport between torus embeddings
 
-Author: Worker 118.
-
 Over an arbitrary field, supply the actual isomorphisms `e : S ≅ S'` and
 `f : G ≅ H`, their commuting square with the inclusions `i`, `j`,
 monomorphisms on both underlying inclusions, affine ambient structural
@@ -42,7 +40,7 @@ parahorics or intersections with zero/one subgroups.
 
 The provenance is internal. The input quotient, its exact relation,
 root/sharp fixers, action and charts are the existing constructions in
-`KPBuilding` and `ApartmentQuotient`. This unit transports those constructions;
+`KPBuilding` and `ApartmentQuotient`. This module transports those constructions;
 it does not assume or prove that either quotient satisfies the abstract
 building axioms. It constructs no compatible class for a separately chosen
 target group, no field-isomorphism comparison, and no building data for

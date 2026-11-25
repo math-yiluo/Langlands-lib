@@ -1,6 +1,6 @@
 # Fixed-vector splitting from actual component coproducts
 
-Author: Worker 146. This is an internal categorical adapter for the splitting
+This is an internal categorical adapter for the splitting
 used in Renard VI.10.6(iii). It does not prove the Bernstein decomposition or
 the fixed-level comparison for its blocks.
 

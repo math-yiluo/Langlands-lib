@@ -1,7 +1,5 @@
 # Scalar real parts of fine twists of unitary data
 
-Author: Worker 510.
-
 `Langlands.Exponents.unitaryFineTwistScalarCharacter.{uF,uV}` proves the
 published proposition
 `Langlands.Exponents.UnitaryFineTwistScalarCharacterStatement.{uF,uV}`.

@@ -1,8 +1,8 @@
 # Renard A.I.3: Noetherian objects, finite type and unital modules
 
-Worker 709, 3 November 2026. This note maps the assertions on printed
-pages 248–249 / PDF254–255 to the current Library definitions and five
-independently published proof units, including the general
+This note, dated 3 November 2026, maps the assertions on printed
+pages 248–249 / PDF254–255 to the Library definitions and five
+published proof modules, including the general
 all-subobjects equivalence. It supplements the
 [elementary categorical map](elementary-categories-source-map.md) and
 [whole-book ledger](coverage.md). It introduces no Lean declaration and
@@ -15,7 +15,7 @@ réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 PDF254–255 were read in full and visually inspected for this audit.
 Printed page 6 / PDF12 was also reread and visually checked: rings and
 actions need not be unital in general, but `M(A)` for a unital ring is
@@ -30,7 +30,7 @@ records its bounded check of the supplementary 2010 errata, PDF18–19,
 registered as `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`.
 Those pages do not supply the A.I.3 repairs. The conventions below are
-internal mathematical diagnoses retained from that reviewed definition:
+internal mathematical diagnoses retained from that definition:
 
 - the selected member of a subobject subset is maximal;
 - chains in the maximality and finite-type conditions are nonempty;
@@ -132,7 +132,7 @@ In the other direction, finite modules over a left Noetherian ring are
 Noetherian, and the union-existence theorem supplies the other conjunct.
 The exported aggregate has no remaining finite-type-comparison premise.
 
-Both module units permit arbitrary unital rings, including
+Both module comparisons permit arbitrary unital rings, including
 noncommutative and zero rings. Their object comparisons preserve
 independent ring and module-carrier universes `uR` and `uM`. The
 category comparison uses `ModuleCat.{max uR uM} R` so that it contains
@@ -147,47 +147,31 @@ The separate [finiteness-convention audit](nonunital-finiteness-sources.md)
 records the selected Pareigis and supplied Douady-edition passages
 actually read, including their edition and locator limits.
 
-## Verified acceptance and publication
+## In the Library
 
-The following records were checked as accepted and public, with
-unqualified independent semantic approval and published integration.
-The complete integrated reports were read. The proof records retain
-their separate build and exact-target validation; this note supplies
-no additional proof receipt.
+The following modules are in the Library. Each proof was checked by a Lake
+build against its exact target; this note supplies no additional proof check.
 
-| Unit and artifact | Independent review task | Published integration and Library commit |
-| --- | --- | --- |
-| Six predicates, definition `b6b67e9d-51ea-4c5e-8271-e17af270ec5b` | Reviewer 3000, `86dfdcc2-bd4c-4f6a-a175-4a000ef512a9` | `ca5a3e04e6464331b5cc6b46f724be55`; `6e568b3024e33889aa9fcaae1e910b0ff99f9b59` |
-| General Noetherian criteria, proof `7474f69a-8d19-4ce2-a566-66242b722e4f` | Reviewer 3968, `835dee8e-b5e6-40f5-88ab-4979d51b21e7` | `15f38fe826014be2b9beba9555612f80`; `b0ef093b63d0f0c27bb690dca12820c991756955` |
-| General finite-subcover characterization, proof `f2b9c9ad-00d5-49a3-bea3-a45798a028f5` | Reviewer 3974, `4ebbe37f-d053-4693-b81c-41f1a935f5cf` | `37853f2cdd3240d291f4339a01d8d791`; `b0ef093b63d0f0c27bb690dca12820c991756955` |
-| Actual unital-module finite type, proof `e0a2ce4f-81e4-44fb-af45-8bc54f853910` | Reviewer 4092, `8182e185-cb51-4a8a-be4b-0c959a8aef24` | `2f68890ca03046909dee35c88882c3fe`; `355c05239d7704a3ed5d72bad864cb1d542b647a` |
-| Actual unital-module Noetherian comparisons, proof `daeef1c9-4062-4e6f-a5d8-9be2d43bed01` | Reviewer 4120, `49e71a02-69b7-4540-ba75-d6f1258945a6` | `1ed9d5ff6b53487e80c9236bca765029`; `9f141aa49982eab63f32f392c4c63dcb83837a19` |
-| All-subobjects equivalence, statement `2363d84e-7cf6-4e2c-8bba-622278171cc8` | Reviewer 4045, `895e2f0e-e38b-4941-98ad-b7f512e82897` | `abf6746c200c4c699d2576378e3b0fc2`; `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
-| All-subobjects equivalence, proof `c99a373c-94e7-41f0-b1c8-9e0b88181dd8` | Reviewer 11957, `42600e66-4f0d-435f-913f-1597f439c76e` | `321a51fc59e148d5908ed55324ac1a58`; `e0b64667d848b7b76f6f20b029ab4105a635091d` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Six predicates, definition | `6e568b3024e33889aa9fcaae1e910b0ff99f9b59` |
+| General Noetherian criteria, proof | `b0ef093b63d0f0c27bb690dca12820c991756955` |
+| General finite-subcover characterization, proof | `b0ef093b63d0f0c27bb690dca12820c991756955` |
+| Actual unital-module finite type, proof | `355c05239d7704a3ed5d72bad864cb1d542b647a` |
+| Actual unital-module Noetherian comparisons, proof | `9f141aa49982eab63f32f392c4c63dcb83837a19` |
+| All-subobjects equivalence, statement | `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
+| All-subobjects equivalence, proof | `e0b64667d848b7b76f6f20b029ab4105a635091d` |
 
-The ten previously cited definition, statement and proof Lean/Markdown
-pairs were checked against Library
-`6eec947454b4466fab00fb115b09f2dc49fe158b`. The added all-subobjects
-proof pair was checked against its frozen bundle and published Library
-`e0b64667d848b7b76f6f20b029ab4105a635091d`; both files match exactly.
-Its machine validation `04260fb6-8bad-494b-bc69-f0946ae34e9b` records
-successful build, exact-target, unchanged-statement and frozen-input
-checks.
-The current module-Noetherian proof reuses
-`ModuleFiniteType.hasSubobjectUnions`, as its integrated companion
-explains; its frozen candidate contained a duplicate helper.
+The ten other definition, statement and proof Lean/Markdown pairs were
+checked against Library `6eec947454b4466fab00fb115b09f2dc49fe158b`, and the
+all-subobjects proof pair against Library
+`e0b64667d848b7b76f6f20b029ab4105a635091d`. That proof was checked by a Lake
+build against the exact target, with the statement and its inputs unchanged.
+The module-Noetherian proof reuses
+`ModuleFiniteType.hasSubobjectUnions`, as its companion page explains.
 The mathematical import paths and declarations above refer to the
 current Library. Mathlib is pinned at
 `5ed2965256430c3649e86755f9576b54eca72435`.
-
-Worker 6 authored the general criteria and finite-subcover proof drafts;
-Workers 122 and 840 respectively prepared their published proof units.
-Worker 702 and Worker 6 contributed the six-predicate definition.
-Workers 709 and 820 contributed the actual-module finite-type proof;
-Workers 709 and 735 contributed the actual-module Noetherian proof.
-Worker 6 and Worker 951 contributed the all-subobjects statement.
-Worker 937 authored its general proof and companion.
-This source map preserves those attributions.
 
 ## General equivalence and remaining scope
 
@@ -202,9 +186,7 @@ HasAllSubobjectUnions C →
 ```
 
 The right side concerns the underlying object of every actual
-categorical subobject, including top. The proof from task
-`b0f9eac8-d06f-44db-8205-0baab9f101f1`, revision 1, is independently
-accepted and published as recorded above. It retains
+categorical subobject, including top. The proof is in the Library as recorded above. It retains
 `HasAllSubobjectUnions C` and independent object and Hom universes,
 with no abelian, zero-object, well-poweredness or smallness assumption.
 

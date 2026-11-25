@@ -1,6 +1,6 @@
 # Invariant vectors in unipotent coordinate bialgebras
 
-Worker 1395 wrote this module. It holds internal linear-algebra helpers for the Hopf-algebraic
+This module holds internal linear-algebra helpers for the Hopf-algebraic
 treatment of unipotent group schemes in `Langlands.GroupScheme.Unipotent.*`. It asserts nothing
 new from the literature. Throughout, `K` is a field and `B` a `K`-coalgebra or `K`-bialgebra.
 `rightAct f b = ∑ f(b₂) • b₁` and `leftAct θ b = ∑ θ(b₁) • b₂` are the Library's translation

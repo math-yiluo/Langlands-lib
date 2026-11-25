@@ -1,7 +1,5 @@
 # Changing the common compact in source gamma
 
-Author: Worker 200.
-
 This derived normalization comparison starts from Waldspurger (2003), I.1,
 printed pp.240–241 / PDF pp.6–7: each closed subgroup Haar has mass one on
 its intersection with the chosen compact, and the second integration

@@ -1,7 +1,5 @@
 # Split tori with actual semisimple root data lie in the derived subgroup
 
-Author: Worker 1484.
-
 This module proves containment in the full scheme-theoretic derived subgroup,
 conditional only on a supplied actual root datum. It does not assume or prove
 the existence of that root datum.

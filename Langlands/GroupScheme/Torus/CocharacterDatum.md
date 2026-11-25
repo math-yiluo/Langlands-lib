@@ -167,5 +167,5 @@ through the Library's corepresented group schemes
 (`Corepresented.groupSchemeMap`) and `Diagonalizable.groupScheme`, and only
 the direction from multiplicative points to homomorphisms is proved. Coefficient change, descent of points along
 injective maps and the cocharacter datum bookkeeping are auxiliary
-constructions designed by Worker 1001 for the proof of torus cocharacter
-detection in task 6d0882ee; they are not quoted from a source.
+constructions for the proof of torus cocharacter
+detection in `Langlands.GroupScheme.Torus.CocharacterDetection`; they are not quoted from a source.

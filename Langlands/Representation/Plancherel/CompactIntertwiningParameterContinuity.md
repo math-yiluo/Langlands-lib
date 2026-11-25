@@ -93,7 +93,7 @@ no new literature premise.
 
 The local integrable domination estimate remains an explicit hypothesis; no
 such estimate, convergence on a cone, holomorphy, denominator cancellation,
-rationality of the integral or the host conditional standard intertwining
-theorem is proved by this unit. Pointwise polynomiality of the integrand does
+rationality of the integral or the conditional standard intertwining
+theorem `ConditionalParabolicIntertwiningStatement` is proved by this module. Pointwise polynomiality of the integrand does
 not assert polynomiality of its integral. All actual modulus and full-domain
 prerequisites of the compact operator remain explicit.

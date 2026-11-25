@@ -1,6 +1,6 @@
 # The conductor functional on induced character differences
 
-Worker 4803 wrote this supporting module of
+This is a supporting module of
 `SpectralConductor.spectralConductorRankOneReduction`.
 
 ## Setting

@@ -86,10 +86,10 @@ theorem comp0_assoc {A B C D : AbelianScheme S}
 abbrev End0 (A : AbelianScheme S) := Langlands.Rationalization.End A
 
 theorem end0_mul (A : AbelianScheme S) (a b : End0 A) :
-    a * b = comp0 A A A b a := rfl
+    a * b = CategoryTheory.End.of (comp0 A A A b.asHom a.asHom) := rfl
 
 @[simp] theorem end0_algebraMap (A : AbelianScheme S) (q : ℚ) :
-    algebraMap ℚ (End0 A) q = q ⊗ₜ[ℤ] 𝟙 A :=
+    algebraMap ℚ (End0 A) q = CategoryTheory.End.of (q ⊗ₜ[ℤ] 𝟙 A) :=
   Langlands.Rationalization.algebraMap_eq A q
 
 /-- The canonical unital ring map to rational endomorphisms. -/
@@ -97,7 +97,7 @@ def endToEnd0 (A : AbelianScheme S) : CategoryTheory.End A →+* End0 A :=
   Langlands.Rationalization.ofEnd A
 
 @[simp] theorem endToEnd0_apply (A : AbelianScheme S) (f : CategoryTheory.End A) :
-    endToEnd0 A f = homToHom0 f := rfl
+    endToEnd0 A f = CategoryTheory.End.of (homToHom0 f.asHom) := rfl
 
 /-- End0(B) acts Q-linearly on Hom0(A,B) by postcomposition. -/
 def end0PostAction (A B : AbelianScheme S) : End0 B →ₐ[ℚ] Module.End ℚ (Hom0 A B) :=
@@ -116,12 +116,12 @@ theorem end0PreAction_mul (A B : AbelianScheme S) (a a' : End0 A) (f : Hom0 A B)
 
 @[simp] theorem end0PostAction_endToEnd0 {A B : AbelianScheme S}
     (b : CategoryTheory.End B) (f : A ⟶ B) :
-    end0PostAction A B (endToEnd0 B b) (homToHom0 f) = homToHom0 (f ≫ b) :=
+    end0PostAction A B (endToEnd0 B b) (homToHom0 f) = homToHom0 (f ≫ b.asHom) :=
   Langlands.Rationalization.postAction_ofEnd b f
 
 @[simp] theorem end0PreAction_endToEnd0 {A B : AbelianScheme S}
     (a : CategoryTheory.End A) (f : A ⟶ B) :
-    end0PreAction A B (endToEnd0 A a) (homToHom0 f) = homToHom0 (a ≫ f) :=
+    end0PreAction A B (endToEnd0 A a) (homToHom0 f) = homToHom0 (a.asHom ≫ f) :=
   Langlands.Rationalization.preAction_ofEnd a f
 
 theorem end0_actions_commute (A B : AbelianScheme S) (a : End0 A) (b : End0 B)

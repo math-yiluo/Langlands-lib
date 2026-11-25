@@ -1,7 +1,5 @@
 # Presentation and affine geometry of full group-scheme kernels
 
-Worker 878.
-
 This internal API works over an arbitrary base scheme and imposes no commutativity,
 flatness or smoothness hypothesis on its group schemes. Every unit section is an
 immersion: its composite with the structure map is the identity, and immersions
@@ -24,6 +22,6 @@ These are categorical and scheme-geometric consequences of existing Library and
 Mathlib results, used as prerequisites for SGA 3 IX, Corollaries 6.6 and 6.7. They
 do not assert either spreading corollary or that the source is of multiplicative
 type. The target's locally finite type hypothesis in the presentation lemma is
-slightly weaker than the locally finite presentation hypothesis of the assigned
+slightly weaker than the locally finite presentation hypothesis of the
 spreading statement, in agreement with editorial note 43 on printed p.55 of SGA 3
 IX. No source claim beyond the proved lemma is needed.

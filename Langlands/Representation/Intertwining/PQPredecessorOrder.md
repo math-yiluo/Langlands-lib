@@ -1,6 +1,6 @@
 # A finite lower set as a support-filtration tail
 
-Worker 154. Internal geometric prerequisite for Renard VII.3.3. The module
+Internal geometric prerequisite for Renard VII.3.3. The module
 constructs an open-prefix orbit ordering whose final block consists exactly
 of any given Bruhat lower set. It uses actual double cosets and the existing
 finite orbit-closure/refining-order interface. Both complementary blocks are

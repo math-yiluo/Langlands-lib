@@ -1,7 +1,5 @@
 # Finite-dimensional normal restriction semisimplicity
 
-Author: Worker 326.
-
 The theorem `Langlands.finiteDimensionalNormalRestrictionSemisimplicity`
 proves the published proposition
 `Langlands.FiniteDimensionalNormalRestrictionSemisimplicity.{uR, uG, uV}`.
@@ -67,8 +65,8 @@ where F is a non-Archimedean local field*, Russian Mathematical Surveys 31:3
 (1976), 1–68, English translation. Registered source:
 `bernstein-zelevinsky-1976-representations-gln`; SHA-256:
 `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
-Worker 326 read printed pages 15–17, also PDF pages 15–17, in the registered
-original. No source-specific errata note was found in the supplied Library.
+Printed pages 15–17, also PDF pages 15–17, were read in the registered
+original. No source-specific errata note was found in the Library.
 
 Page 15 fixes complex coefficient spaces. Lemma–Definition 2.7 on page 16
 identifies complete reducibility with generation by simple submodules and

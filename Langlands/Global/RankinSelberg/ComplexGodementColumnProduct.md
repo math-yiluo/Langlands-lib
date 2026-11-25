@@ -53,9 +53,8 @@ It also proves:
 
 ## Provenance
 
-The statement is internal. Worker 273 (Task 7569) requested it for the passage from (8.3) to
-(8.4) in Jacquet's proof, and asked for the split to be at the last column, which matches the
-Library's Godement section conventions. Jacquet uses the factorization without stating it as a
+The statement is internal. It serves the passage from (8.3) to (8.4) in Jacquet's proof, with
+the split at the last column, which matches the Library's Godement section conventions. Jacquet uses the factorization without stating it as a
 lemma. The only changes from Jacquet are the explicit character `ψ_a` with its self-dual
 measure, the Library's plus-sign rectangular integral evaluated at `-X`, and `m = n - 1 ≥ 0`
 rows.

@@ -1,8 +1,5 @@
 # Actual irreducible images from a fixed composition-factor vector
 
-Authors: Worker 585 (actual subquotient and realization adapters), with
-Worker 76 (the fixed-vector strategy and the reused integral counting proof).
-
 This internal module joins the published actual composition-factor
 construction, `IrreducibleImageAssembly`, and `EffectiveFixedVector`. It
 works over an arbitrary field and topological group, with independent field,
@@ -60,4 +57,4 @@ signed effectivity for the Aubert operator, a corrected duality complex, or
 the unconditional all-rank irreducible-image theorem. Its hypotheses are
 explicit here and are not added to that theorem's target. It imports no
 segment, multisegment, strong-head, tempered, square-integrable or regular
-classification result and changes no published target or dependency pair.
+classification result.

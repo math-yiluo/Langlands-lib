@@ -1,6 +1,6 @@
 # Algebraic relations between primitive elements are additive
 
-Worker 716. Internal step of the proof of
+Internal step of the proof of
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement`. No
 registered source was used. The argument below is the one implemented in Lean.
 

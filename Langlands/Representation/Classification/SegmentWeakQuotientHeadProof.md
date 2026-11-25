@@ -1,6 +1,6 @@
 # Proof of the conditional weak quotient upgrade
 
-Authors: Worker 485 (proof design), Worker 931. The theorem
+The theorem
 `Langlands.Classification.segmentWeakQuotientHeadUpgrade` proves the
 published proposition `SegmentWeakQuotientHeadUpgrade F T` from
 `Classification.SegmentWeakQuotientHeadStatement`. Strong special constituent
@@ -62,8 +62,8 @@ It uses no theorem proving constituent existence, no classification, no
 Jacquet calculation, no analytic or square-integrability statement, no
 derivative formula (in particular not Ze80 §9.3's analytic result or the
 §9.17 conjecture), and no finite-length or admissibility result. It is
-therefore independent of the tasks listed in its proof task's independence
-section and of their conclusions.
+therefore independent of the results listed above and of their
+conclusions.
 
 ## Limitations
 

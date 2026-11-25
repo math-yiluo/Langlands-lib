@@ -137,7 +137,9 @@ theorem mem_indivisibleRoots_characterSpecialization_iff (a : characterLattice S
     intro b hb m hm h
     apply ha.2 (A.characterSpecialization b)
       ((A.mem_roots_characterSpecialization_iff b).mpr hb) m hm
-    simpa only [map_nsmul] using congrArg A.characterSpecialization h
+    have hns : ∀ (n : ℕ) x, A.characterSpecialization (n • x) = n • A.characterSpecialization x :=
+      fun n x => A.characterSpecialization.toAddMonoidHom.map_nsmul n x
+    simpa only [hns] using congrArg A.characterSpecialization h
   · intro ha
     refine ⟨(A.mem_roots_characterSpecialization_iff a).mpr ha.1, ?_⟩
     intro b hb m hm h
@@ -145,7 +147,9 @@ theorem mem_indivisibleRoots_characterSpecialization_iff (a : characterLattice S
       (A.mem_roots_characterSpecialization_iff _).mp (by simpa using hb)
     apply ha.2 (A.characterSpecialization.symm b) hb' m hm
     apply A.characterSpecialization.injective
-    simpa only [map_nsmul, AddEquiv.apply_symm_apply] using h
+    have hns : ∀ (n : ℕ) x, A.characterSpecialization (n • x) = n • A.characterSpecialization x :=
+      fun n x => A.characterSpecialization.toAddMonoidHom.map_nsmul n x
+    simpa only [hns, AddEquiv.apply_symm_apply] using h
 
 /-- Disjoint positive root rays in the full special fibre follow from the
 actual generic root system through the same integral split torus. -/
@@ -167,11 +171,14 @@ theorem disjoint_cyclicTail_special_indivisiblePositiveRoots
   have hd := disjoint_cyclicTail_indivisibleRoots i hroot hS ha' hb' hne'
   apply Set.disjoint_left.mpr
   rintro chi ⟨m, hm, hm0, hma⟩ ⟨n, hn, hn0, hnb⟩
+  have hns : ∀ (k : ℕ) x,
+      A.characterSpecialization.symm (k • x) = k • A.characterSpecialization.symm x :=
+    fun k x => A.characterSpecialization.symm.toAddMonoidHom.map_nsmul k x
   apply Set.disjoint_left.mp hd
   · exact ⟨m, hm, hm0, by
-      simpa only [map_nsmul] using congrArg A.characterSpecialization.symm hma⟩
+      simpa only [hns] using congrArg A.characterSpecialization.symm hma⟩
   · exact ⟨n, hn, hn0, by
-      simpa only [map_nsmul] using congrArg A.characterSpecialization.symm hnb⟩
+      simpa only [hns] using congrArg A.characterSpecialization.symm hnb⟩
 
 end IntegralSplitTorusData
 

@@ -3,9 +3,8 @@
 Module `Langlands.GroupScheme.HomScheme.MultiplicativeTypeChartInjective`, namespace
 `Langlands.GroupScheme.HomScheme.MultiplicativeTypeChart`.
 
-Author: Worker 57.
-
-This is an internal module for the chart construction of Task 6946. It proves the
+This is an internal module for the chart construction in the proof of
+`MultiplicativeTypeEtaleLiftStatement`. It proves the
 injectivity condition of `MultiplicativeTypeSubgroupModuli.IsOpenChartOnAffines` for the
 chart `j G d` over `U d` built in `MultiplicativeTypeChartConstruction`: two affine test
 points of the chart with the same evaluation are equal. It follows the Library module

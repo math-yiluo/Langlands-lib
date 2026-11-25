@@ -27,5 +27,3 @@ allows independent universes for the field and the two algebras.
 
 This is internal derived work using the original bounded charts,
 the recognized inverse-image construction, and quotient base change.
-The recognized-chart quotient argument follows the criterion developed
-by Worker 775 in Task 7299.

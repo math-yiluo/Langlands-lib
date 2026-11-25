@@ -1,7 +1,5 @@
 # Actual products from split commutative group-scheme homomorphisms
 
-Author: Worker 1561.
-
 This internal, derived construction supplies the actual product isomorphism used
 when a homomorphic retraction has been constructed. Let `E` be a commutative group
 scheme over any scheme `S`, and let `q : E ⟶ V` and `s : V ⟶ E` satisfy

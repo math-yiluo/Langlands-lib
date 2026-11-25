@@ -1,6 +1,6 @@
 # Compact chart nets of actual induced rational spectra
 
-Worker 36 derives this package from the actual rational-spectrum transport
+This module derives this package from the actual rational-spectrum transport
 and compact coset-chart constructions. It equips the actual induced spaces
 with compact Hausdorff charts and proves a criterion for their compact subsets.
 
@@ -92,7 +92,7 @@ This is an internal derived construction over the published
 `Topology.GroupAction.InducedCompactCharts` APIs. The compactness criterion
 and transport formula are additional elementary deductions from those APIs.
 The imported compactness proof is documented in `Spectrum/Properties.md`;
-this unit uses the proved instances rather than a separate spectrum
+this module uses the proved instances rather than a separate spectrum
 existence assertion.
 
 Berkovich, *Etale cohomology for non-Archimedean analytic spaces* (1993),

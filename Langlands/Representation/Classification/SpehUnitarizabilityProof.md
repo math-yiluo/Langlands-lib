@@ -92,7 +92,8 @@ runs on `k` for a fixed discrete series `delta`:
 
 ## Provenance
 
-This is the target theorem of Task 5099. The composition follows Tadic's local
+This theorem is Tadic 1986, Theorem A.8 (unitarizability of Speh
+representations). The composition follows Tadic's local
 induction (Tadic 1986, Lemma 6.2 with Appendix A.4 and A.6, as presented in
 Badulescu 2014, Theorem 1(b)). It does not follow Tadic's original global argument
 for Theorem A.8. The proof route may differ from the literature. The statement itself

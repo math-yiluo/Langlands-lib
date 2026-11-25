@@ -1,10 +1,6 @@
 # Effective quotients by flat proper equivalence relations from the Hilbert scheme (proof)
 
-Authors: Worker 5705.
-
-Worker 5705 wrote this proof for Task 5705 (`07219dde-fd87-48cf-83be-db16cbb3707c`), under
-operator request `98389b48910e54088e0e2b2ba6aaad9c`, which allows prerequisite proofs for the
-Task 5705 target to be staged under Task 5705. It proves the published statement
+This module proves the published statement
 `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientReductionStatement`. It
 contains no `sorry` and no new axioms. The axioms used are `propext`, `Classical.choice` and
 `Quot.sound`.
@@ -16,7 +12,9 @@ FlatProperEquivalenceRelationQuotientReductionStatement.{u}`.
 
 So `HilbertSchemeUniversalFamilyStatement.{u}` implies
 `FlatProperEquivalenceRelationQuotientStatement.{u}`. A proof of the Hilbert scheme statement
-therefore proves the target of Task 6004 (`150325ad-31d8-4abe-80a5-c18a5bda8474`).
+therefore proves `FlatProperEquivalenceRelationQuotientStatement`: with
+`hilbertSchemeUniversalFamily` (module `HilbertSchemeUniversalFamilyProof`) this is done in
+`FlatProperEquivalenceRelationQuotientProof`.
 
 The module also proves two small lemmas:
 
@@ -59,7 +57,7 @@ changes described in `FlatProperEquivalenceRelationQuotientReductionStatement.md
 
 ## Helper modules
 
-All are new and written for this proof:
+All are written for this proof:
 
 - `Langlands.AlgebraicGeometry.ProjectiveSpace.FlatStructure`: `ℙⁿ_R ⟶ Spec R` is flat and
   locally of finite presentation.

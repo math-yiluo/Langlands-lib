@@ -1,7 +1,5 @@
 # The invariant counit under detection of zero comodules
 
-Authors: Worker 101 and Worker 1203.
-
 This internal algebraic step concerns the canonical `B`-linear map
 `invariantCounit θ : B ⊗[A] θ.invariantSubmodule → M`,
 where `A = invariantRing t`. It assumes `RingEtaleEquivalenceRelation t`,
@@ -37,8 +35,8 @@ equivalence, and its application lemma records the underlying map.
 The provenance is a direct internal derivation from the unchanged
 published coaction and acyclicity predicates, the kernel and cokernel
 constructions, the counit identities, and the all-module invariant unit
-theorem. Worker 1203 supplied the induced coaction and unit argument on
-which the injectivity proof depends. No original-literature theorem is
+theorem. The injectivity proof depends on the induced coaction and unit
+argument. No original-literature theorem is
 asserted here. In particular, this module does not prove `hdetect` from
 Noetherianity and acyclicity, nor does it prove the full Serre criterion
 or assume an affine quotient or descent conclusion.

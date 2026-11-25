@@ -1,7 +1,5 @@
 # Actual full-product sections and conditional dominant assembly
 
-Author: Worker 1292.
-
 This derived development assembles the seven conclusions of
 `DominantCentralizerLatticeConclusions` from finite positive-root support,
 finite index of the actual split valuation image, and a bijection from the
@@ -43,7 +41,10 @@ and uses actual rational points and actual valuation images throughout.
 
 The provenance is elementary quotient, product, restriction and image
 reasoning using the published interfaces and the focused derived helper
-modules named above. To obtain the closed host target, its maximal-split
-centralizer hypotheses must still imply the finite root support and the
-lattice comparison through published structural theorems. No structural
+modules named above. To obtain the closed target
+`RenardDominantComparisonStatement`, its maximal-split centralizer hypotheses
+must imply the finite root support and the lattice comparison through
+published structural theorems; `renardDominantComparison` in
+`RenardDominantComparisonProof` does so and applies the assembly of this
+module. No structural
 conclusion is hidden in this assembly's premises or claimed as established.

@@ -1,7 +1,5 @@
 # Vanishing of a module on an open subset
 
-Author: Worker 921.
-
 This helper module is part of the proof of
 `Langlands.AlgebraicGeometry.Modules.NoetherianSeparatedQuasicoherentVanishingStatement`. It
 records where an `𝒪_X`-module vanishes, which the vanishing induction uses as its notion of

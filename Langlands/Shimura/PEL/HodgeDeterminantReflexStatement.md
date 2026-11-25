@@ -92,5 +92,6 @@ sections are subsequent constructions. No descent theorem, PEL
 representability or canonical model follows from merely publishing
 this statement.
 
-Worker 57 authored this derived target. Independent statement review
-does not establish the truth of the proposition.
+This statement module does not establish the truth of the proposition.
+It is proved by `kottwitzHodgeDeterminantReflexDescent` in
+`Langlands.Shimura.PEL.HodgeDeterminantReflexProof`.

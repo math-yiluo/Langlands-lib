@@ -1,8 +1,6 @@
 # Value-group transport for the actual separable inertia fixed field
 
-Worker 706.
-
-This unit derives intrinsic discreteness and the actual integer ring's
+This module derives intrinsic discreteness and the actual integer ring's
 discrete valuation property from `FixedFieldValuesFromBase F`. It does not
 prove value attainment, residue closure, or Henselianity, and it assumes no
 finite-unramified theorem.

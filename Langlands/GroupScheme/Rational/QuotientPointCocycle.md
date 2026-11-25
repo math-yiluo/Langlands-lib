@@ -2,7 +2,8 @@
 
 This internal construction uses the published actual group-scheme kernel,
 all-test cover cocycles, and effective-epimorphism descent. It is an auxiliary
-exactness result for the local Kneser--Tits proof task, not an arithmetic
+exactness result toward a proof of the local Kneser--Tits statement
+(`LocalKneserTitsStatement`), not an arithmetic
 vanishing theorem.
 
 Let `n : N → G` and `q : G → Q` be homomorphisms of actual group schemes over

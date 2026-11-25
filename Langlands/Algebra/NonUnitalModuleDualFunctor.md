@@ -1,7 +1,7 @@
 # Contravariant nondegenerate dual functors
 
-Worker 1156 constructed this functor pair using Worker 1149's actual dual and
-pullback constructions. Import `Langlands.Algebra.NonUnitalModuleDualFunctor`.
+This functor pair uses the actual dual and pullback constructions of
+`NonUnitalModuleDual` and `NonUnitalModuleDualMap`. Import `Langlands.Algebra.NonUnitalModuleDualFunctor`.
 All declarations below are in `Langlands.Algebra.NonUnitalModuleDual`.
 
 The governing source is Renard, *Représentations des groupes réductifs
@@ -137,4 +137,4 @@ its identity and composition laws.
 These are constructions and intrinsic laws. Fixed-part dual isomorphisms,
 exactness, bidual evaluation or injectivity, anti-involution transport,
 forgetful/adjoint/completion comparisons and admissible reflexivity remain
-separate successor work.
+separate results.

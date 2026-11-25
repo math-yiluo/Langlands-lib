@@ -1,6 +1,6 @@
 # Renard VI.4.1 for the full-restriction Π₁ from the special-vertex inputs
 
-Worker 4959, Task 4959 (`0ba788d6-b9d9-4a76-a017-972f8cad288f`). This module
+This module
 states and proves a conditional reduction of the unconditional target
 `Langlands.CuspidalSupport.RationalUniversalSmallProgeneratorStatement.{uF, uV}`.
 It does not prove that target. The target, its structural binders and its
@@ -72,8 +72,10 @@ decompositions, and an irreducible cuspidal π. It then proceeds in three steps.
 
 `rationalUniversalSmallProgeneratorSpecialVertexReduction` proves the
 reduction statement. It discharges the two VI.3.2 hypotheses with the
-published proofs `rationalNormKernelFiniteRestriction` (Task 4361) and
-`rationalNormKernelTwistEquivalence` (Task 4372).
+published proofs `rationalNormKernelFiniteRestriction` (module
+`RationalNormKernelFiniteRestrictionProof`) and
+`rationalNormKernelTwistEquivalence` (module
+`RationalNormKernelTwistEquivalenceProof`).
 
 `rationalUniversalSmallProgenerator_of_jointBasis` derives the target from
 `Langlands.BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement.{uF}`.
@@ -107,7 +109,9 @@ treat.
 
 No abelianness, coproduct existence, block membership, admissibility, finite
 dimension or progenerator property is assumed. The only unproved input is the
-special-vertex existence premise. Its stronger joint form is the target of
-proof task `8c39faa0-2a70-4fc4-a027-914987aba924`. Once either proposition is
+special-vertex existence premise. Its stronger joint form is
+`Langlands.BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement`,
+which the Library proves only under further inputs (`JointBasisFinalAssembly`).
+Once either proposition is
 proved, applying the theorems of this module to that proof proves the exact
 target `RationalUniversalSmallProgeneratorStatement.{uF, uV}`.

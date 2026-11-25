@@ -1,6 +1,6 @@
 # Finite-length preservation from the irreducible case
 
-Worker 117 proves
+This module proves
 `Langlands.SmoothRep.FiniteLengthInductionStatement.{uR,uG,uV,uS,uH,uW}` as the
 closed theorem `finiteLengthInduction`. The applied version is
 `preservesFiniteLength_of_irreducibles`.

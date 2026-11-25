@@ -1,6 +1,6 @@
 # Character conductors under a p-adic algebra equivalence
 
-Author: Worker 20. This module constructs character transport for the canonical
+This module constructs character transport for the canonical
 local-field topologies and proves compatibility of the existing conductor
 constructions. All declarations are in
 `Langlands.PadicField.ConductorTransport`.
@@ -95,5 +95,5 @@ The comparison concerns an invertible map over the same p-adic base and the
 specified canonical topological data. It does not assert invariance along a
 proper field extension. It does not identify chosen uniformizers, assume
 reciprocity or a self-dual measure, or construct an epsilon system. Actual
-abelian-factor transport and its Haar change of variables are subsequent
+abelian-factor transport and its Haar change of variables are separate
 construction obligations. This module is one focused prerequisite for them.

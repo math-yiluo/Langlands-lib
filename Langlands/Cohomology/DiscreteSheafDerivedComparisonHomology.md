@@ -1,6 +1,6 @@
 # Cohomology of the derived comparison for compactly supported cohomology
 
-Author: Worker 26. Completes Worker 26's
+Completes
 `Langlands.Cohomology.DiscreteSheafDerivedComparison`. That module identifies the
 cohomology of the last two factors of `compactComplexComparison` but not of
 its first factor, the exact postcomposition isomorphism. Uses
@@ -93,8 +93,8 @@ Derived infrastructure. As recorded in `TwistedCompactComparison` and
 `DiscreteSheafDerivedComparison`, `compactComparison J R L E q` has the shape
 of Berkovich's maps `H^q_c(X{G}, F) → H^q_c(X, b^*F)` of Corollary 1.5.2(i)
 (Berkovich, *Etale equivariant sheaves on p-adic analytic spaces*, unfinished
-1995–1996 manuscript, printed pp.11–12 = PDF pp.11–12, read in the original by
-Worker 26: "For any étale abelian sheaf `F` on `X(G)` there are canonical
+1995–1996 manuscript, printed pp.11–12 = PDF pp.11–12, read in the original:
+"For any étale abelian sheaf `F` on `X(G)` there are canonical
 isomorphisms `H^q_c(X{G}, F) ⥲ H^q_c(X, b^*F)`, `g ≥ 0`" [sic, for `q ≥ 0`]).
 Berkovich states only maps of cohomology groups. This module shows that the
 derived-category map `compactComplexComparison` induces them in every

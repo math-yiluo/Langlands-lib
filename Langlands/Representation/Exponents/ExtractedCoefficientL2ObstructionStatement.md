@@ -1,7 +1,5 @@
 # Strict L2 decay for one exactly extracted normalized coefficient
 
-Author: Worker 580.
-
 `Langlands.GLExtractedCoefficientL2ObstructionStatement.{uF,uV}` is a closed
 Prop-valued definition. It states an analytic obstruction for a single actual
 smooth matrix coefficient. The module contains no proof.
@@ -114,10 +112,13 @@ this adapter; the decay estimate in its corollary already uses square
 integrability through that criterion and cannot replace the independent
 lower-bound argument below.
 
-## Independent route required of a future proof
+## An independent route to a proof
 
 The following is a mathematical derivation plan, not an implemented Lean
-proof or a list of extra premises.
+proof or a list of extra premises. The Library's proof
+(`ExtractedCoefficientL2ObstructionProof`) takes a different route: it counts
+explicit disjoint unipotent translates instead of using a Haar-volume lower
+bound for double cells.
 
 1. **A common fixing subgroup.** Smoothness gives an open stabilizing
    subgroup for `v`. Membership of `ℓ` in the actual smooth dual gives
@@ -186,8 +187,8 @@ proof or a list of extra premises.
    is at least one. The weighted sum over `m : ℕ` is therefore infinite.
    Apply the published `Langlands.countableCellLpLower` at exponent two
    to these measurable disjoint cells and their constant lower values:
-   the assumed `MemLp` instead makes that sum finite. The future proof
-   must supply all conversions between nonnegative real values and
+   the assumed `MemLp` instead makes that sum finite. A proof along this
+   route must supply all conversions between nonnegative real values and
    `ℝ≥0∞`, the `p.toReal = 2` exponent identity, positivity, and the
    divergence argument. No covering by the small cells is required.
 
@@ -198,7 +199,7 @@ disjoint-union lower integral estimate and uses no exponent criterion.
 proves continuity and almost-everywhere strong measurability of the
 descended norm from a smooth vector. Its direct proof uses quotient
 continuity and local constancy of the actual coefficient. These are
-available elementary results to audit and reuse in the separate proof.
+available elementary results to reuse in a proof along this route.
 Neither they nor the geometric proof obligations are premises of this
 statement.
 
@@ -208,18 +209,19 @@ The direct imports supply existing block-scalar embeddings, the explicit
 positive block modulus, the actual smooth dual, and the actual coefficient
 norm modulo the center. No existing imported Lean/Markdown pair is changed.
 The statement does not import a Jacquet-exponent predicate or a classification
-criterion. The separate extraction theorem can eventually supply its
-identity when assembling the parent strict criterion.
+criterion. The extraction theorem `Langlands.glJacquetExponentCoefficientExtraction`
+(`CoefficientExtractionProof`) can supply its identity in an assembly of the
+strict criterion; no module of the Library performs that assembly.
 
-The future proof must remain independent of the strict square-integrable
+A proof of the statement must remain independent of the strict square-integrable
 exponent criterion and of segment analytic classification, multisegment
 special-head exhaustion, ordered special-head existence, quotient
 coverage for classification, tempered block uniqueness,
 `SquareIntegrableLanglandsClassification`, square-integrable exhaustion,
-and regular exhaustion, including their proof successors and transitive
-dependencies. Pending geometry or extraction tasks and published statements
-are navigation pointers, not proved inputs. Shared geometry and measure
-owners must be checked before splitting any lower proof work.
+and regular exhaustion, including the modules that prove them and their transitive
+dependencies. Published statements
+are navigation pointers, not proved inputs.
 
-This contribution publishes only the proposition. Its exact proof successor
-is to be published separately after this target is in the Library.
+This module states only the proposition. Its proof is
+`Langlands.glExtractedCoefficientL2Obstruction` in
+`ExtractedCoefficientL2ObstructionProof`.

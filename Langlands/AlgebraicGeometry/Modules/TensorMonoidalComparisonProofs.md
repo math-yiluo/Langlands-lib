@@ -1,6 +1,6 @@
 # Localized tensor unitors and symmetry
 
-Worker 339 proves `Langlands.Scheme.Modules.tensorMonoidalComparison` with
+This module proves `Langlands.Scheme.Modules.tensorMonoidalComparison` with
 exact type `TensorMonoidalComparisonStatement.{u}`. The theorem has no
 additional hypotheses and applies to every scheme in universe `u`. Its three
 constituents are also exported as `tensorMonoidalLeftUnitorComparison`,

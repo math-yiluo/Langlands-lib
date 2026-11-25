@@ -1,7 +1,5 @@
 # The relation of the Galois-twisted line is an affine immersion
 
-Author: Worker 105.
-
 This is support for Conrad's Example 5.13 (printed p.20). Conrad notes that the diagonal is
 affine and an immersion. This module proves the ring-theoretic core of that claim.
 

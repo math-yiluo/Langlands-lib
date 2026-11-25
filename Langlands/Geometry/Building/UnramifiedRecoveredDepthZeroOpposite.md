@@ -53,8 +53,9 @@ as follows.
 The proof preserves the original restricted root functions and every
 quantifier and hypothesis of the target. Fixedness is used to obtain the
 models from the availability input. The provenance is internal composition
-of the named Library results and the focused supporting model, integrality
+of the named Library results and the supporting model, integrality
 and nearby-comparison lemmas. Actual model existence, the nearby
 parabolic-image and exact-preimage properties, and the integral
 opposite-factor input remain separate obligations. This is a proved
-conditional reduction, not an unconditional proof of the host task.
+conditional reduction, not an unconditional proof of
+`UnramifiedFixedDepthZeroOppositeStatement`.

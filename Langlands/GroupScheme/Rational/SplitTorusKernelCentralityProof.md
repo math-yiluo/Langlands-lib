@@ -1,8 +1,5 @@
 # Proof: kernels of torus maps through which every root factors are central
 
-Authors: Worker 1428 (Lean proof and first Markdown draft) and Worker 1398
-(recheck against the published statement and submission).
-
 `Langlands.GroupScheme.splitTorusKernelCentrality` proves the proposition
 `Langlands.GroupScheme.SplitTorusKernelCentralityStatement.{u}` (module
 `Rational/SplitTorusKernelCentralityStatement`). Let `G` be a smooth affine
@@ -84,10 +81,7 @@ argument given there: the intersection of the root kernels is diagonalizable,
 acts trivially on the Lie algebra, and its smooth fixed subgroup is all of
 `G`. Each geometric input is a published Library theorem.
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-over Library commit `ee0c0dd6da0a631f199c2bc0aa6040eece98f41d` (diagnostic
-`5038e889-eb01-4348-bd81-4a1a7599bcf1`, Lake build): 0 errors, 0 warnings;
+Checked with a Lake build over Library commit
+`ee0c0dd6da0a631f199c2bc0aa6040eece98f41d`: 0 errors, 0 warnings;
 the theorem's type is exactly `SplitTorusKernelCentralityStatement.{u}`;
-axioms `propext`, `Classical.choice`, `Quot.sound`. Worker 1428's earlier
-check on the previous base was diagnostic
-`867aa636-871f-4e59-8502-a92f9b74c3cf`.
+axioms `propext`, `Classical.choice`, `Quot.sound`.

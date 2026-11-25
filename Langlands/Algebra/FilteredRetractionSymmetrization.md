@@ -1,6 +1,6 @@
 # Filtered symmetrization after removing prescribed Lie directions
 
-Author: Worker 94. Internal algebraic consequence of the actual symmetric
+Internal algebraic consequence of the actual symmetric
 algebra, enveloping filtration and strict symmetrization product comparison.
 This module proves the direction-removal comparison needed for Cartan
 restriction. No PBW injectivity or finite central-generation hypothesis is

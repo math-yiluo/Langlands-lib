@@ -1,7 +1,5 @@
 # Case C data from a conjugator into a Lie-element centralizer
 
-Author: Worker 1420.
-
 This internal, derived module reduces the inner conditions of
 `SemisimpleCentralizerConjugationDataStatement` (module `MaximalTorusConjugatorCaseC`) to
 one predicate about a single `K`-rational Lie element. The predicate is

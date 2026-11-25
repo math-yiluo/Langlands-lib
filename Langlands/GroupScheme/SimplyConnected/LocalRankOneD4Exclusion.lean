@@ -314,7 +314,7 @@ theorem not_hasRankOneD4InnerOrNoFixedLeafIndex : ¬ d.HasRankOneD4InnerOrNoFixe
       rw [← map_add, show (1 / 2 : ℚ) + 1 / 2 = ((1 : ℤ) : ℚ) by norm_num,
         UnramifiedBaseChange.rationalClass_intCast]
     rw [htwo, zero_add] at h
-    exact Langlands.ClassField.Global.rationalClass_half_ne_zero h
+    exact Langlands.ClassFieldTheory.Global.rationalClass_half_ne_zero h
   · let a := q.symm 0
     have ha : q a ≠ 1 := by simp [a]
     have hroot := d.absoluteOrbitWeight_D4_mem_rootSpan_of_no_fixed_leaf
@@ -323,6 +323,6 @@ theorem not_hasRankOneD4InnerOrNoFixedLeafIndex : ¬ d.HasRankOneD4InnerOrNoFixe
       hsc (d.orbitFixedWeight hsc a) hroot
     have h := d.invariant_orbitFixedWeight_eq_half hsc q hq a ha
     rw [hzero, map_zero] at h
-    exact Langlands.ClassField.Global.rationalClass_half_ne_zero h.symm
+    exact Langlands.ClassFieldTheory.Global.rationalClass_half_ne_zero h.symm
 
 end Langlands.GroupScheme.TitsIndexData

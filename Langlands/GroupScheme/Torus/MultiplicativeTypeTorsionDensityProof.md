@@ -1,7 +1,5 @@
 # Proof: the torsion subgroups of a group of multiplicative type are dense
 
-Worker 732.
-
 `Langlands.GroupScheme.multiplicativeTypeTorsionDensity.{u}` proves the proposition
 `Langlands.GroupScheme.MultiplicativeTypeTorsionDensityStatement.{u}` (module
 `Langlands.GroupScheme.Torus.MultiplicativeTypeTorsionDensityStatement`,
@@ -96,7 +94,7 @@ be the characteristic exponent of `k` (`ExpChar k p`). Then `p • x = 0` implie
 *Proof.* `p` is also the characteristic exponent of `K`
 (`expChar_of_injective_algebraMap`). The structure morphism of `D_K(Λ)` equals `e⁻¹`
 followed by `pullback.snd G.X.hom b`. That projection is smooth as a base change of the
-smooth `G.X.hom`, so `D_K(Λ)` is smooth over `K`. Part 2 of the published
+smooth `G.X.hom`, so `D_K(Λ)` is smooth over `K`. Part 2 of
 `Diagonalizable.diagonalizableSmoothConnectedCriteria K p Λ` (module
 [`Torus.DiagonalizableSmoothConnectedCriteriaProof`](DiagonalizableSmoothConnectedCriteriaProof.md))
 then says that `Λ` has no `p`-torsion.
@@ -107,7 +105,7 @@ Let `G` and `H` be group schemes over `k`, where `G` has the property of part 1
 (hypothesis `hG`). Let `f₁ f₂ : G ⟶ H` agree on every `n`-torsion point, `n > 0`. Then
 `f₁ = f₂`.
 
-*Proof.* The published `fieldSeparated` (module
+*Proof.* The Library's `fieldSeparated` (module
 [`GroupScheme.FieldSeparatedProof`](../FieldSeparatedProof.md)) says that every group
 scheme over a field is separated. So the diagonal `H → H ×_k H` is a closed immersion.
 Let `ℓ = (f₁, f₂) : G → H ×_k H` (`pullback.lift`), and let `z` be the base change of the
@@ -148,7 +146,7 @@ parts.
 
 ## Helper modules
 
-Both helper modules are new and are listed in the submission:
+Both helper modules are ported together with this module:
 
 - [`TorsionDensityLattice`](TorsionDensityLattice.md): `multiples`,
   `exists_bound_of_ne_zero`, `exists_bound_injOn`, `eq_zero_of_mapDomain_eq_zero`,

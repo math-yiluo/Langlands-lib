@@ -2,7 +2,7 @@
 
 This internal specialization attaches the diagonal characters to the actual
 finite Galois `Presentation d e`. It combines the presentation construction of
-Worker 243 with the finite-stage diagonal weights, using the original maximal
+`SpecialLinearTitsCocyclePresentation` with the finite-stage diagonal weights, using the original maximal
 split torus, root restrictions and numbering of the supplied Tits index.
 It introduces no new literature assertion.
 

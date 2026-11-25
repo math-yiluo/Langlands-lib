@@ -34,5 +34,6 @@ already implemented in `ArithmeticSIntegerExtension`.
 
 Both number fields inhabit an arbitrary common universe, and the algebra map
 is the original field embedding. The finite exceptional set may be empty; only
-finite places occur in these S-integer rings. Finite local freeness and the
-integral and adelic Weil comparisons remain obligations of the host task.
+finite places occur in these S-integer rings. Finite local freeness (proved in
+`NumberFieldSIntegerFinite`) and the
+integral and adelic Weil comparisons are not part of this module.

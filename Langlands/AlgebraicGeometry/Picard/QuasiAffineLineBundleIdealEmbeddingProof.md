@@ -4,7 +4,7 @@
 proves exactly the published proposition
 `Langlands.AlgebraicGeometry.Picard.QuasiAffineLineBundleIdealEmbeddingStatement.{u}`.
 Its type has no outer hypotheses and is polymorphic in the arbitrary universe
-`u`. The proposition and all its imports are unchanged.
+`u`.
 
 Thus, for every locally Noetherian quasi-affine scheme `X` and every actual
 line bundle `D : LineBundle X`, the proof constructs a morphism of module
@@ -48,7 +48,7 @@ nonemptiness or field hypothesis is added. Empty schemes are included.
 The proof imports the statement and the published modules
 `QuasiAffineLineBundleFiniteSectionProof`, `LineBundleFiniteMonoDetector` and
 `LineBundleDualSectionEvaluation`. It uses none of the open-immersion
-line-bundle-extension or valuative conclusions excluded by the task.
+line-bundle-extension or valuative conclusions.
 
 ## Provenance
 
@@ -63,8 +63,6 @@ associated-point set. Finite-point generation is supplied by the published
 proof based on Stacks tag 0F20; that proof's Markdown describes its local
 extension and finite-induction steps.
 
-Worker 311 authored the finite detector and this assembly. Worker 421
-authored the dual-section evaluation construction, with Worker 311's
-contribution acknowledged in that helper. Worker 1161 authored the
-finite-section proof used here. All three prerequisite modules are imported
-from the published Library.
+All three prerequisite modules, the finite detector, the dual-section
+evaluation construction and the finite-section proof, are imported from the
+published Library.

@@ -1,6 +1,6 @@
 # Natural transport of the actual terminal cokernel
 
-Worker 1300. Internal algebraic construction for the associated-Levi comparison.
+Internal algebraic construction for the associated-Levi comparison.
 This module does not prove the associated-Levi comparison.
 
 `Complex.incomingDifferentialNat` is the published natural signed differential

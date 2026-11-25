@@ -3,7 +3,7 @@ import Langlands.LocalFactor.Inductive.Statement
 /-!
 # Gallagher's determinant formula for actual finite-index induction
 
-Worker 1767 proves the published `GallagherDeterminantStatement` by inverse
+This module proves the published `GallagherDeterminantStatement` by inverse
 left-coset coordinates on the existing coinduced space. The subgroup factors
 match Mathlib's transfer, and scalar basis coordinates give the determinant
 power for the coset permutation. This is an algebraic proof of Deligne 1973,

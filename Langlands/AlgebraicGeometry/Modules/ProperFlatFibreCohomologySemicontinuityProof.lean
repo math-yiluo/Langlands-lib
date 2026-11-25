@@ -29,7 +29,7 @@ namespace FibreSemicontinuity
 one strictly perfect complex computes the derived sections after every base change. -/
 theorem exists_perfectModel {R : CommRingCat.{u}} [IsNoetherianRing R] {X : Scheme.{u}}
     (f : X ⟶ Spec R) [IsProper f] [Flat f] (M : X.Modules)
-    (hM : Scheme.Modules.IsInvertible M) :
+    (hM : Scheme.Modules.IsInvertibleFLT M) :
     ∃ K : CochainComplex (ModuleCat.{u} R) ℤ, ModuleComplex.IsStrictlyPerfect K ∧
       ∀ (S : CommRingCat.{u}) (φ : R ⟶ S),
         Nonempty (DerivedCategory.Q.obj ((ModuleComplex.baseChange φ.hom).obj K) ≅
@@ -86,7 +86,7 @@ open of `T` with noetherian ring of sections. There is a strictly perfect comple
 `Γ(T, V)`-modules such that for every `t ∈ V` the fibre cohomology `Hⁿ(Y_t, F_t)` is the homology
 of `K ⊗ κ(t)` in degree `n ≥ 0`, and `K ⊗ κ(t)` has no homology in negative degrees. -/
 theorem exists_fibreModel {Y T : Scheme.{u}} (g : Y ⟶ T) [IsProper g] [Flat g] (F : Y.Modules)
-    (hF : Scheme.Modules.IsInvertible F) {V : T.Opens} (hV : IsAffineOpen V)
+    (hF : Scheme.Modules.IsInvertibleFLT F) {V : T.Opens} (hV : IsAffineOpen V)
     [IsNoetherianRing Γ(T, V)] :
     ∃ K : CochainComplex (ModuleCat.{u} Γ(T, V)) ℤ, ModuleComplex.IsStrictlyPerfect K ∧
       ∀ (t : T) (ht : t ∈ V),
@@ -98,7 +98,7 @@ theorem exists_fibreModel {Y T : Scheme.{u}} (g : Y ⟶ T) [IsProper g] [Flat g]
     delta affineRestrict
     infer_instance
   obtain ⟨K, hK, hmod⟩ := exists_perfectModel (affineRestrict g hV)
-    ((Scheme.Modules.pullback (g ⁻¹ᵁ V).ι).obj F) (hF.pullback _)
+    ((Scheme.Modules.pullback (g ⁻¹ᵁ V).ι).obj F) (Scheme.Modules.IsInvertible.pullbackFLT (hL := hF) _)
   refine ⟨K, hK, fun t ht => ?_⟩
   obtain ⟨e⟩ := hmod (T.residueField t) (T.evaluation V t ht)
   have hsq : IsPullback (pullback.fst (affineRestrict g hV) (Spec.map (T.evaluation V t ht)) ≫
@@ -182,7 +182,7 @@ end Algebra
 
 /-- Every point of a locally noetherian base has an affine neighbourhood with a fibre model. -/
 theorem exists_localFibreModel {Y T : Scheme.{u}} [IsLocallyNoetherian T] (g : Y ⟶ T)
-    [IsProper g] [Flat g] (F : Y.Modules) (hF : Scheme.Modules.IsInvertible F) (t₀ : T) :
+    [IsProper g] [Flat g] (F : Y.Modules) (hF : Scheme.Modules.IsInvertibleFLT F) (t₀ : T) :
     ∃ (V : T.Opens) (_ : IsAffineOpen V), t₀ ∈ V ∧
       ∃ K : CochainComplex (ModuleCat.{u} Γ(T, V)) ℤ, ModuleComplex.IsStrictlyPerfect K ∧
         ∀ (t : T) (ht : t ∈ V),

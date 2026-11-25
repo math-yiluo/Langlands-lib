@@ -1,7 +1,5 @@
 # Actual Jacquet geometric expansion and the zero-rank equality
 
-Author: Worker 165.
-
 This internal derived module connects the actual geometric lemma with the
 fixed-permutation cancellation of geometric pieces after source Jacquet
 restriction. It retains arbitrary supplied p-adic fields and topologies,

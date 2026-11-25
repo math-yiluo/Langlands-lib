@@ -1,8 +1,5 @@
 # The geometric core of the central-quotient theorem
 
-Authors: Worker 1428 (Lean proof and Markdown) and Worker 1499 (Markdown
-revision and submission).
-
 This internal helper module of the proof of
 `Langlands.GroupScheme.CentralQuotientReductiveStatement` proves the
 statement over an algebraically closed field. It is derived content: the

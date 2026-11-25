@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_TwoAffineOpenCover
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_exists_algEquiv_tensor_sections_pullback_fst_preimage_of_isAffineOpen
 set_option maxHeartbeats 4000000

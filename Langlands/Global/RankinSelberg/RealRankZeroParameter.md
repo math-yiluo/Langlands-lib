@@ -1,8 +1,8 @@
 # Rank-one realizations with a real-place parameter
 
 Helper module for the rank-one (`r = 0`) case of
-`Langlands.Global.RankinSelbergGlobal.RealEqualFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved; there are no hypotheses beyond those stated in
+`Langlands.Global.RankinSelbergGlobal.RealEqualFunctionalEquationStatement`.
+Every declaration is proved; there are no hypotheses beyond those stated in
 each declaration and no axioms are added.
 
 All declarations are in the namespace

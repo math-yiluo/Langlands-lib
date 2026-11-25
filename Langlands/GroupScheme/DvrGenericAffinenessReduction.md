@@ -1,7 +1,5 @@
 # Reduction of Raynaud affineness to two prerequisites
 
-Worker 528.
-
 This internal derived module reduces
 `Langlands.GroupScheme.DvrGenericAffinenessStatement.{u}` to the two explicit
 premises `SmoothDvrGenericAffinenessStatement.{u}` and
@@ -21,8 +19,8 @@ The remaining declarations belong to the namespace
 `Langlands.GroupScheme.DvrGenericAffinenessReduction`. The theorem
 `dvrGenericAffinenessReduction` proves the named conditional proposition by
 applying `dvrGenericAffineness_of_smooth_and_cover`. This supporting statement
-and its conditional proof do not supply the unconditional proof required by
-the original task.
+and its conditional proof do not supply an unconditional proof of
+`DvrGenericAffinenessStatement`.
 
 The imported `AffineQuotient.isAffine_of_finite_surjective` specializes the published algebraic-space theorem
 `Langlands.AlgebraicGeometry.AlgebraicSpace.finiteSurjectiveAffineDescent` to actual

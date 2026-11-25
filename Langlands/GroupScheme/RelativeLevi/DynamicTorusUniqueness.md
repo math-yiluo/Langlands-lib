@@ -1,7 +1,5 @@
 # Dynamic Levi complements containing the defining cocharacter
 
-Worker 592.
-
 This internal result specializes the published arbitrary-base dynamic Levi
 conjugacy calculation in `Rational.DynamicLeviConjugacyReduction`. It supplies
 a uniqueness step for relative Levi subgroups once the actual dynamic

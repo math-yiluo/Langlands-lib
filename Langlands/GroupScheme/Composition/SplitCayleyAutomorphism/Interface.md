@@ -1,7 +1,7 @@
 # Algebraic inputs for the split Cayley automorphism pinning (proposed interface)
 
-Four Prop-valued statements of pure matrix algebra about Zorn's algebra, proposed for division of
-labour inside Task 7589. They are stated here and proved in other files: `generation` in
+Four Prop-valued statements of pure matrix algebra about Zorn's algebra, used by the
+scheme-theoretic proof of `SplitCayleyAutomorphismPinningStatement`. They are stated here and proved in other files: `generation` in
 `Generation.lean`, `stableSubspace` and `unitRigidity` in `RadicalAlgebra.lean`, and
 `centerRigidity` in `Center.lean`.
 

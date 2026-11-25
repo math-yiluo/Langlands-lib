@@ -1,7 +1,7 @@
 # Functorial carrier universe lifts
 
-Author: Worker 1187. This is internal infrastructure for the preservation proof
-requested by the represented-parabolic Renard VI.1.2 task. It makes the
+This is internal infrastructure for the proof of the represented-parabolic
+preservation statement of Renard VI.1.2. It makes the
 published carrier lift from `Category/UniverseLift.lean` into fully faithful
 functors on algebraic and smooth complex representations.
 

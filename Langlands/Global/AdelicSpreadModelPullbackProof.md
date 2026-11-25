@@ -6,7 +6,7 @@ universe `u`. It proves both arithmetic clauses with the target's original
 finite-type models, separatedness of the base model only, specified
 pullback cone, actual generic-fiber pullback functor, actual full adelic
 rings and existing spread topologies. No descent of a new field cone is
-assumed or proved by this unit.
+assumed or proved by this module.
 
 The internal lemma `isHomeomorph_imagePullbackPointComparison` applies to
 any functor between the two relevant categories of schemes over ring
@@ -41,11 +41,11 @@ integer-base algebra structure of `numberFieldAdeleOver` and the existing
 actual scalar action are retained.
 
 This is the implemented transport argument for the derived comparison
-associated with Conrad (2011), printed pp.8–9, as specified by the unchanged
-target Markdown. It introduces no local compactness, finite-residue-field,
+associated with Conrad (2011), printed pp.8–9, as specified by the target's
+page `AdelicSpreadModelPullbackStatement.md`. It introduces no local compactness, finite-residue-field,
 additional separatedness, affineness or function-field separability
 premise. The perfectness of the arbitrary curve constant field is exactly
 the target premise inherited from its generic-fiber point constructions;
 empty initial place sets are allowed. Arbitrary independently given field
 cones, spreading them with a separated base model, and independence from
-arbitrary alternative spreads remain separate whole-paper obligations.
+arbitrary alternative spreads remain separate obligations.

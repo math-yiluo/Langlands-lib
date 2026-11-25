@@ -1,10 +1,10 @@
 # Proof of the actual local Weil interface
 
-Author: Worker 53. This proof contribution proves the published target
+This proof module proves the published target
 `Langlands.Weil.Local.LocalAssemblyStatement` (module
 `Langlands.Weil.Local.AssemblyStatement`, published at Library commit
 `22b4f024e0d4218752e970d09329d1799f6d81d1`). The construction `Langlands.Weil.Local.Assembly` and the
-arithmetic inputs it uses (Worker 9's absolute residue theorem and Worker 28's
+arithmetic inputs it uses (the absolute residue theorem and the
 finite-field comparison) are published. The environment is Lean 4.34.0 with
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 

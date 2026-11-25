@@ -1,6 +1,6 @@
 # Actual identity coherence of the Nilp quotient-square comparison
 
-This internal unit identifies the actual quotient-square comparison at a Nilp
+This module identifies the actual quotient-square comparison at a Nilp
 identity with reduction of the actual identity-base comparison.
 
 `baseAlongSquare_identity_unit` uses the two proved whole coefficient-unit
@@ -28,5 +28,6 @@ The coefficient/acting rings, Nilp objects and rational field have the indicated
 separate universes. The finite coordinate type is arbitrary. Rationalization
 uses the existing domain/fraction-field hypotheses, and the given quotient
 chart is invertible on its test. Covers may be infinite. Original framed
-identity/composition comparisons, class functor laws and representability
-remain further obligations.
+identity/composition comparisons are constructed in
+`DrinfeldFramedIdentityComparison` and `DrinfeldFramedCompositionComparison`;
+class functor laws and representability remain separate.

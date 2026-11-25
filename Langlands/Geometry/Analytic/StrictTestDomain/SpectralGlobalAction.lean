@@ -97,15 +97,17 @@ theorem continuous_globalSpectrumAction :
 def globalSpectrumAction : Action TopCat.{u} G where
   V := TopCat.of (BanachSpectrum P)
   ρ :=
-    { toFun := fun g => TopCat.ofHom
-        (BanachSpectrum.comapContinuous (ρ.toMonoidHom g).inv.toBoundedRingHom)
+    { toFun := fun g => End.of (TopCat.ofHom
+        (BanachSpectrum.comapContinuous (ρ.toMonoidHom g).asIso.inv.toBoundedRingHom))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         change ρ.toMonoidHom 1 • x = x
         simp
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro x
         change ρ.toMonoidHom (g * h) • x =
@@ -120,8 +122,8 @@ def globalSpectrum : ContAction TopCat.{u} G :=
 @[simp]
 theorem globalSpectrum_apply (g : G) (x : BanachSpectrum P) (a : P) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom (ρ.globalSpectrum.obj.ρ g) x) a =
-        x ((ρ.toMonoidHom g).inv.toAlgHom a) := rfl
+      (ConcreteCategory.hom (ρ.globalSpectrum.obj.ρ g).asHom x) a =
+        x ((ρ.toMonoidHom g).asIso.inv.toAlgHom a) := rfl
 
 end RationalAutomorphism.RationalSpectralAction
 

@@ -35,5 +35,3 @@ The sorted tuple and realization supply the remaining conclusions.
 
 Provenance is internal composition of these published results. The final
 theorem has no generation, realization, classification, or comparison premise.
-Worker 1761 supplies this composition and its explanation; Workers 1697, 1650
-and 706 supplied the realization and generation constructions used in it.

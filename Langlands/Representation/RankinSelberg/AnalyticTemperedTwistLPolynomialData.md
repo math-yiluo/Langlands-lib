@@ -1,7 +1,5 @@
 # Real-twisted analytic tempered polynomial data
 
-Author: Worker 111.
-
 This internal construction applies the published unramified-twist transport
 twice to the original-action analytic tempered L-polynomial. For irreducible
 analytically tempered actions `π` and `σ`, and real exponents `s` and `z`,
@@ -24,7 +22,7 @@ addition and inversion justify the norm calculation.
 every certificate of the same twisted pair by polynomial uniqueness.
 No polynomial, Whittaker type, pole bound or classification hypothesis is
 added to the constructor's irreducibility and analytic temperedness inputs.
-This unit supplies block root bounds for the standard-module product proof;
+This module supplies block root bounds for the standard-module product proof;
 it makes no assertion about that product.
 
 The provenance is internal composition of

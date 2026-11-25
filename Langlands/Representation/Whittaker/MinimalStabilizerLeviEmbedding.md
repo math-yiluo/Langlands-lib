@@ -1,7 +1,5 @@
 # The Levi upper-unipotent group inside a minimal orbit stabilizer
 
-Author: Worker 379.
-
 ## Scope and conventions
 
 Fix a field `K : Type uK`, a rank `n`, an ordered block shape `B : BlockShape n`, and
@@ -143,8 +141,8 @@ A. V. Zelevinskii, *Representations of the group GL(n,F) where F is a
 non-Archimedean local field*, Russian Math. Surveys 31:3 (1976), proof of Theorem 7.12,
 steps (2)–(4), printed p.61 (PDF SHA256
 `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`; printed p.61 is
-PDF page 61). I read pp.59–62 for this file and checked the formulas of p.61 on the
-rendered page image. No erratum for this source is recorded in the literature index,
+PDF page 61). Pp.59–62 were read for this file, and the formulas of p.61 were checked
+on the rendered page image. No erratum for this source is recorded in the literature index,
 the Library or the project notes.
 
 The source defines the following objects:
@@ -164,8 +162,7 @@ Library's `U ∩ G_β`, written as a subgroup of the Levi product. In the Librar
 order condition on `W^(β)` is the clause "`a ↦ v (B.index i a)` strictly increasing" of
 `IsMinimalRepresentative`. Under the convention of `permutation_conjugate_entry`, this
 is the source's condition that `ω⁻¹` preserves order inside each segment. The Lean
-proof uses only the Library clause, so this dictionary is explanatory. Worker 330
-recorded it when publishing the task.
+proof uses only the Library clause, so this dictionary is explanatory.
 
 The following are derived interfaces, not literal assertions of the source:
 

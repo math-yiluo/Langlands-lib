@@ -30,8 +30,8 @@ def galoisStageDeck (i : I) : Γ →* Aut (V.obj i).left :=
     ((Functor.mapAut V ((evaluation I (EtaleSite X)).obj i)).comp deck)
 
 theorem galoisStageDeck_over (i : I) (γ : Γ) :
-    (galoisStageDeck V deck i γ).hom ≫ (V.obj i).hom = (V.obj i).hom :=
-  MorphismProperty.Over.w ((deck γ).hom.app i)
+    (galoisStageDeck V deck i γ).asIso.hom ≫ (V.obj i).hom = (V.obj i).hom :=
+  MorphismProperty.Over.w ((deck γ).asIso.hom.app i)
 
 private abbrev ordinaryPresheaf : (EtaleSite X)ᵒᵖ ⥤ ModuleCat.{w} R :=
   (ι etale ρ).op ⋙ S.obj.obj
@@ -39,20 +39,20 @@ private abbrev ordinaryPresheaf : (EtaleSite X)ᵒᵖ ⥤ ModuleCat.{w} R :=
 /-- The deck representation on all sections at one stage. -/
 def galoisStageRepresentation (i : I) :
     Representation R (ULift.{w} Γ) ((ordinaryPresheaf S).obj (op (V.obj i))) where
-  toFun γ := ((ordinaryPresheaf S).map ((deck γ.down⁻¹).hom.app i).op).hom
+  toFun γ := ((ordinaryPresheaf S).map ((deck γ.down⁻¹).asIso.hom.app i).op).hom
   map_one' := by
-    change ((ordinaryPresheaf S).map ((deck (1 : Γ)⁻¹).hom.app i).op).hom = 1
+    change ((ordinaryPresheaf S).map ((deck (1 : Γ)⁻¹).asIso.hom.app i).op).hom = 1
     rw [inv_one, map_one]
     change ((ordinaryPresheaf S).map (𝟙 (op (V.obj i)))).hom = 1
     rw [(ordinaryPresheaf S).map_id]
     rfl
   map_mul' γ δ := by
-    have he : (deck (γ * δ).down⁻¹).hom.app i =
-        (deck γ.down⁻¹).hom.app i ≫ (deck δ.down⁻¹).hom.app i := by
-      change (deck (γ.down * δ.down)⁻¹).hom.app i = _
+    have he : (deck (γ * δ).down⁻¹).asIso.hom.app i =
+        (deck γ.down⁻¹).asIso.hom.app i ≫ (deck δ.down⁻¹).asIso.hom.app i := by
+      change (deck (γ.down * δ.down)⁻¹).asIso.hom.app i = _
       rw [mul_inv_rev, map_mul]
       rfl
-    change ((ordinaryPresheaf S).map ((deck (γ * δ).down⁻¹).hom.app i).op).hom = _
+    change ((ordinaryPresheaf S).map ((deck (γ * δ).down⁻¹).asIso.hom.app i).op).hom = _
     rw [he, op_comp, (ordinaryPresheaf S).map_comp]
     rfl
 
@@ -60,7 +60,7 @@ theorem galoisStageRepresentation_apply (i : I) (γ : ULift.{w} Γ)
     (s : (ordinaryPresheaf S).obj (op (V.obj i))) :
     galoisStageRepresentation S V deck i γ s =
       S.obj.obj.map (deckEndomorphism ((ι etale ρ).obj (V.obj i))
-        (galoisStageDeck V deck i γ.down⁻¹) (galoisStageDeck_over V deck i γ.down⁻¹)).op s := rfl
+        (galoisStageDeck V deck i γ.down⁻¹).asIso (galoisStageDeck_over V deck i γ.down⁻¹)).op s := rfl
 
 /-- Restriction maps between stages of the Galois germ commute with the
 inverse deck action. -/
@@ -71,10 +71,10 @@ def galoisStageSections : Iᵒᵖ ⥤ Rep.{w} R (ULift.{w} Γ) where
       (galoisStageRepresentation S V deck i.unop) (galoisStageRepresentation S V deck j.unop)
       ((ordinaryPresheaf S).map (V.map f.unop).op).hom (by
         intro γ s
-        let a := (deck γ.down⁻¹).hom.app i.unop
-        let b := (deck γ.down⁻¹).hom.app j.unop
+        let a := (deck γ.down⁻¹).asIso.hom.app i.unop
+        let b := (deck γ.down⁻¹).asIso.hom.app j.unop
         let p := V.map f.unop
-        have hp : p ≫ a = b ≫ p := (deck γ.down⁻¹).hom.naturality f.unop
+        have hp : p ≫ a = b ≫ p := (deck γ.down⁻¹).asIso.hom.naturality f.unop
         exact (map_op_comp_apply (ordinaryPresheaf S) p a s).symm.trans
           ((congrArg (fun h => (ordinaryPresheaf S).map h.op s) hp).trans
             (map_op_comp_apply (ordinaryPresheaf S) b p s)))
@@ -109,9 +109,9 @@ theorem isZero_groupCohomology_succ_galoisStageGerm
     (hdist : ∀ i, IsDistinguishedEtale (V.obj i).hom)
     (htrans : ∀ i, ∀ x y : localizedSpaceFunctor.obj (V.obj i).left,
       localizedSpaceFunctor.map (V.obj i).hom x = localizedSpaceFunctor.map (V.obj i).hom y →
-        ∃ γ, localizedSpaceFunctor.map (galoisStageDeck V deck i γ).hom x = y)
+        ∃ γ, localizedSpaceFunctor.map (galoisStageDeck V deck i γ).asIso.hom x = y)
     (hfree : ∀ (i : I) (γ : Γ) (p : (localizedFieldPointFunctor L).obj (V.obj i).left),
-      (localizedFieldPointFunctor L).map (galoisStageDeck V deck i γ).hom p = p → γ = 1)
+      (localizedFieldPointFunctor L).map (galoisStageDeck V deck i γ).asIso.hom p = p → γ = 1)
     (y : localizedSpaceFunctor.obj X)
     (hy : ∀ i, ∃ x : localizedSpaceFunctor.obj (V.obj i).left,
       localizedSpaceFunctor.map (V.obj i).hom x = y)
@@ -129,7 +129,7 @@ theorem isZero_groupCohomology_succ_galoisStageGerm
       (h : localizedSpaceFunctor.map (V.obj i.unop).hom b =
         localizedSpaceFunctor.map (V.obj i.unop).hom d) :
       ∃ γ : ULift.{w} Γ,
-        localizedSpaceFunctor.map (galoisStageDeck V deck i.unop γ.down).hom b = d := by
+        localizedSpaceFunctor.map (galoisStageDeck V deck i.unop γ.down).asIso.hom b = d := by
     obtain ⟨γ, hγ⟩ := htrans i.unop b d h
     exact ⟨ULift.up γ, hγ⟩
   obtain ⟨O, hO, m, W, f, hf, hcov⟩ :=

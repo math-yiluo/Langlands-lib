@@ -1,7 +1,5 @@
 # Orthogonal cocycle cohomology and congruence of descended forms
 
-Worker 863.
-
 This internal comparison identifies pairwise cohomology of finite-Galois
 orthogonal matrix cocycles with congruence of their descended Gram matrices
 over the ground field. It applies to any finite coordinate type, including the
@@ -40,5 +38,5 @@ give the required cocycle twist equation.
 
 The provenance is internal: the proof uses the explicit descent equations
 already established in `OrthogonalCocycleDescent`, Galois fixed-field descent,
-and matrix and group identities. It does not yet identify these matrix
+and matrix and group identities. It does not identify these matrix
 cocycles with natural group-scheme cocycles or compare their completions.

@@ -1,6 +1,6 @@
 # Valuation-lattice Haar masses and conductor normalization
 
-Worker 753 authored this focused proposition definition.
+This is a focused proposition definition.
 `Langlands.HarmonicAnalysis.PadicLatticeHaarStatement.{u}` has implicit
 parameters `{p : ℕ}` and `[Fact p.Prime]`, followed by explicit parameters
 `(F : Langlands.PadicField.{u} p)` and `(T : F.TopologicalData)`. It returns
@@ -72,8 +72,7 @@ property. It does not choose a character or a measure.
 ## Derived provenance and scope
 
 This is an internal prerequisite for a proof of
-`PadicSelfDualMeasureExistsStatement`. Worker 688 split it from that proof task
-(`2be3a65c-9439-43c6-be52-368dd3a8bf98`). It is not a verbatim theorem of one
+`PadicSelfDualMeasureExistsStatement`, split from that proof. It is not a verbatim theorem of one
 source. It combines standard facts in the Library's conventions, as follows.
 
 - Part 1 is the module rule `μ(aX) = mod(a) μ(X)` applied to `a = π^(-m)` and
@@ -133,12 +132,12 @@ local-factor functional equations or on any scalar or row theorem that assumes
     correction. It contains no scalar-ratio formula and does not copy Tate's
     printed exponent.
 
-Worker 753 read the Weil and Tate pages cited above. No source-specific errata
+The Weil and Tate pages cited above were read. No source-specific errata
 file was present in the workspace or public notes. The published scalar-ratio
 correction was read. The bundled formulation, the local instance setup, the
 explicit finiteness conjunct, and the square-root normalization are derived
 Lean packaging, not verbatim source notation.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 This module defines a proposition only and contains no proof of its target.

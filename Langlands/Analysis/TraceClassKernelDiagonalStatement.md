@@ -74,6 +74,6 @@ via hypotheses 2 and 3; it does not assert existence of a kernel. Brislawn's
 second-countable setting requires no separation axiom, and neither does this
 statement.
 
-The Lean proposition retains the form of Worker 4918's shared draft for
-Task 7410. It provides the diagonal-integral step used by the abstract simple
-twisted trace formula of Task 7340.
+The Lean proposition provides the diagonal-integral step used by the abstract
+simple twisted trace formula (in
+`Langlands.TraceFormula.AbstractTwistedKernelDiagonalTraceProof`).

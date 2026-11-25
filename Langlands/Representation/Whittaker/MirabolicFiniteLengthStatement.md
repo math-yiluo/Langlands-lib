@@ -1,7 +1,5 @@
 # Finite length of restriction to the actual mirabolic subgroup
 
-Author: Worker 499.
-
 `Langlands.Whittaker.MirabolicFiniteLengthStatement.{uF,uV}` states implication
 (1) implies (2) of Bernstein–Zelevinsky (1976), Corollary 5.22, printed p.51,
 specialized to finite extensions of the p-adic numbers. It is a `Prop`-valued
@@ -59,10 +57,10 @@ Only the specified direction of Corollary 5.22 is stated. The other equivalences
 in 5.22 and the separate mirabolic-representation criterion 5.23 are outside
 this declaration. The theorem that admissible representations of finite type
 have finite GL length is separately stated in
-`Langlands.GLAdmissibleFiniteLengthStatement`; this contribution takes GL finite
+`Langlands.GLAdmissibleFiniteLengthStatement`; this statement takes GL finite
 length as input.
 
-## Source proof and remaining proof obligations
+## Source proof and proof obligations
 
 The complete proof of Corollary 5.22 on printed p.51 was read, and its formulas
 were visually checked. Write `r = n + 1`, and let `U` be the full upper
@@ -71,15 +69,17 @@ unipotent subgroup. For a smooth character `θ` of `U`, the source's
 `ρ(u)v - θ(u)v` (§2.30, printed p.24).
 
 The source proves (1) implies (3), followed by (3) implies (2). The following
-mathematical steps remain proof obligations for this target; they are not
-assumed as premises or proved in this statement module:
+mathematical steps are proof obligations for this target; they are not
+assumed as premises or proved in this statement module (the Library proves the
+target as `Langlands.Whittaker.mirabolicFiniteLength` in
+`Langlands.Representation.Whittaker.MirabolicFiniteLengthProof`):
 
 1. **Finite-dimensional twisted coinvariants.** BZ76 Theorem 5.21, printed
    p.51, bounds `dim E_{U,θ}` by `r!` for an irreducible smooth representation of
    `GL_r(F)` and every smooth character `θ`. Together with exactness and a
    finite GL composition series, this gives finite-dimensional twisted
    coinvariants for the input representation. The source says that 5.21 is
-   proved in §7; this contribution does not formalize that proof.
+   proved in §7; this module does not formalize that proof.
 2. **Exactness.** BZ76 Proposition 2.35(b), printed p.25, gives exactness of
    twisted coinvariants when the subgroup is exhausted by compact subgroups.
    A Lean proof must apply this to the actual `U`, justify the required
@@ -135,7 +135,7 @@ bilinear bound.
   Printed p.397, one-based PDF page 32, was read visually for its use of
   BZ76 Corollary 5.22.
 
-No matching erratum note was found in the checked project, current Library,
+No matching erratum note was found in the checked project, Library,
 or literature errata locations. No correction to these cited passages was
-available there. All source claims above are distinguished from the unproved
-Lean target.
+available there. All source claims above are distinguished from the Lean
+target, which this module does not prove.

@@ -34,7 +34,7 @@ open Langlands.Global.FunctionalEquationComparison
 open Langlands.Global.FunctionalEquationComparison.RelativeWeilEngine
 open Langlands.Global.CompletionPadic Langlands.Global.HeckeFunctionalEquation
 open Langlands.LocalFactor.Archimedean
-open Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- **Engine inputs over a totally complex field.** The totally complex form of
 `exists_engineInputs`: given the completed global Rankin–Selberg equation over totally complex
@@ -85,7 +85,7 @@ section CommonInputs
 
 open scoped Classical
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -158,13 +158,13 @@ theorem commonTwistEulerInputs_families_tc.{u, uQ, uV, uE}
   · exact dualLFactor_eq_of_unramified D A hEps arch χ₂ S₂ hU₂ z hzS₂ hzPd hzd₂ hzPd'
       (hR₂ z hzR₂) (hW₃ z hzPd hzW₃) (hW₄ z hzPd' hzW₄) s
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 end CommonInputs
 
 /-! ## The gamma certificate and the assembly -/
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -376,4 +376,4 @@ theorem associatedGammaReductionTC.{u, uV, uP, uQ, uE} :
   associatedGamma_of_inputs_tc.{u, uV, uP, uQ, uE} hFE
     stableTwistPairGammaMatchStatement.{u, uV, uE}
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

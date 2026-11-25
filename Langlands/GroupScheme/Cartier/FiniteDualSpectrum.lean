@@ -1,5 +1,5 @@
 import Langlands.GroupScheme.AffineHopfCoordinates
-import Langlands.TauCeti.Algebra.AlgebraicGroup.Hopf.CentralPoint
+import Langlands.RingTheory.HopfAlgebra.CocommutativePoints
 
 /-! # Hopf spectrum points for the Cartier pairing -/
 
@@ -143,7 +143,7 @@ theorem affineCoordinates_isCocomm (G : CommGroupScheme (Spec R)) [IsAffine G.X.
   let i : WithConv (A →ₐ[R] A ⊗[R] A) ≃* (T ⟶ G.X) :=
     (Spec.mapMulEquiv (R := R) (S := A) (T := A ⊗[R] A)).trans
     ((yonedaGrp.mapIso (AffineCoordinates.hopfSpecIso G.toGrp)).app (op T)).groupIsoToMulEquiv
-  apply (TauCeti.HopfAlgebra.commute_includeLeft_includeRight_iff_isCocomm R A).mp
+  apply (Langlands.HopfAlgebra.commute_includeLeft_includeRight_iff_isCocomm R A).mp
   apply i.injective
   rw [map_mul, map_mul, mul_comm]
 

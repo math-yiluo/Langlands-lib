@@ -1,6 +1,6 @@
 # Long exact sequence of right derived functors
 
-Author: Worker 61. This module is derived infrastructure. It imports
+This module is derived infrastructure. It imports
 `Langlands.Cohomology.DerivedPlusNaturality` and Mathlib's
 `Mathlib.Algebra.Homology.DerivedCategory.SingleTriangle`.
 
@@ -136,7 +136,7 @@ construction for `F.rightDerived`. Exactness, naturality and the criteria above
 do not depend on that comparison.
 
 Its purpose in the Harris framework is the comparison of acyclic resolutions
-with right derived functors: Worker 3's
+with right derived functors:
 `Langlands.Cohomology.AcyclicResolutionComparisonStatement`. That statement is
 not proved here.
 

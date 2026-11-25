@@ -1,9 +1,5 @@
 # Dense affine open subspaces of separated algebraic spaces over a field
 
-Authors: Worker 1001 and Worker 399. The Lean formula is reused unchanged from
-Worker 1001's supplied, checked formulation; Worker 399 checked the retained
-originals and supplied this documentation.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SeparatedDenseAffineOpenStatement.{u}`
 is a Prop-valued definition for every universe `u`. It states a derived
 consequence of the schematic-locus arguments listed below. No cited source
@@ -130,6 +126,8 @@ in this Lean module.
 This adaptation combines the finite locus from 06NH with the invariant affine
 open and affine quotient method in the third proof of 06NG. It strengthens the
 intermediate schematic-open conclusion to a single affine open by retaining
-all finitely many generic points at once. Establishing this argument in Lean
-requires a separate proof successor; compilation of the Prop definition does
-not establish its truth.
+all finitely many generic points at once. In Lean this argument is carried out
+by `separatedDenseAffineOpen_of` in the module `SeparatedDenseAffineOpenReduction`,
+which takes the statements of 03BM and finite-set 03JE and the invariance of the
+finite locus as hypotheses; compilation of the Prop definition does not establish
+its truth.

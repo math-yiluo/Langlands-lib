@@ -1,7 +1,5 @@
 # The cup map into an external tensor product
 
-Author: Worker 1147.
-
 Lean module: `Langlands.AlgebraicGeometry.Modules.BiCech.Cup`.
 It is a helper for the proof of
 `Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethStatement`.

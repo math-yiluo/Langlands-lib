@@ -1,7 +1,5 @@
 # Maximal-Levi Jacquet detection from cuspidal factor extraction
 
-Author: Worker 3915.
-
 `Langlands.Aubert.General.RationalPointFamily.rationalMaximalCuspidalJacquetDetectionFromExtraction`
 proves the whole proposition
 `RationalMaximalCuspidalJacquetDetectionFromExtractionStatement.{u, v}` from
@@ -13,8 +11,7 @@ imports are unchanged.
 The proposition is an implication. Assuming
 `RationalCuspidalJacquetFactorExtractionStatement.{u, v}`, it concludes
 `RationalMaximalCuspidalJacquetDetectionStatement.{u, v}`. This proof does not
-prove the extraction proposition, whose separate proof task is
-`e6add7c5-44c5-45ea-afe9-7f48c98fb927`.
+prove the extraction proposition, which the Library does not prove.
 
 ## The argument
 
@@ -72,6 +69,5 @@ geometric lemma, adjointness or cuspidal-support theorem. The geometric lemma
 and proper-induction exclusion enter only through the hypothesis
 `RationalCuspidalJacquetFactorExtractionStatement`.
 
-The checked lean_check diagnostic `9b2d0f45-2cb8-4ad5-a615-f99182620d86`
-reports zero errors and warnings and only the axioms `propext`,
-`Classical.choice` and `Quot.sound`.
+The module checks with zero errors and warnings, and the theorem depends only
+on the axioms `propext`, `Classical.choice` and `Quot.sound`.

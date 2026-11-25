@@ -1,7 +1,5 @@
 # Opposite associated Jacquet filtration from the upper theorem: proof
 
-Author: Worker 264.
-
 `Langlands.glOppositeCuspidalJacquetFiltrationFromUpper.{uF,uV}` proves the
 unchanged published proposition
 `Langlands.GLOppositeCuspidalJacquetFiltrationFromUpperStatement.{uF,uV}`

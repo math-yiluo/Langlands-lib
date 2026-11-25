@@ -1,8 +1,8 @@
 # Weyl conjugacy on the standard rational-point family
 
-Author: Worker 1186. This pair specializes the published generic
+This pair specializes the published generic
 `General.inducedK0WeylConjugacy` and `General.inducedClassWeylConjugacy`
-targets to the actual standard family constructed by Worker 165. Both new
+targets to the actual standard family. Both new
 declarations are universally quantified propositions; neither proves an
 instance or makes a representation-theoretic identity a structural field.
 
@@ -60,10 +60,9 @@ Proposition 4.1(3), printed p.158. The original-source record and dependency
 analysis are in `../GeneralWeylConjugacyTarget.md`. The intended
 Ban–Jantzen route requires general character independence, Langlands
 classification and the geometric lemma; their proof declarations and
-hypotheses must be recorded by the parent. They are representation-theoretic
-obligations, outside the permitted final external Chapter V structural
-boundary. Aubert Proposition 3.2 supplies no evidence.
+hypotheses must be recorded by any proof along that route. They are
+representation-theoretic obligations, outside the permitted final external
+Chapter V structural boundary. Aubert Proposition 3.2 supplies no evidence.
 
-The parent task `46df6a68-5db4-4428-8044-05151d6ce1f6` owns the proof
-successors and discharge of these premises. Only this target pair is selected
-for publication; the imported constructions retain their separate owners.
+Proofs of these statements and the discharge of these premises lie outside
+this pair; the imported constructions are in their own modules.

@@ -5,8 +5,8 @@ Module `Langlands.Geometry.Analytic.PairChartCover`, namespace
 
 ## Purpose and provenance
 
-This is an internal prerequisite for Task 7765
-(`CompactPullbackActionContinuityStatement`). No literature statement is
+This is an internal prerequisite for
+`CompactPullbackActionContinuityStatement`. No literature statement is
 transcribed. Take a commutative square `p ≫ f = q ≫ g` in the localized
 analytic category. The theorem shows that every point of `P` is locally
 covered by finitely many charts of `P`, each lying inside the patch

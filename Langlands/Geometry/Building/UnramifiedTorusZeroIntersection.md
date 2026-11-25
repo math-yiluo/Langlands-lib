@@ -62,4 +62,4 @@ Library constructions and theorems; it introduces no new translation of an
 external statement. It supplies a comparison needed by
 `UnramifiedParahoricModelStatement`. It does not identify a whole-apartment
 fixer with a centralizer, construct an integral model, or prove the complete
-host statement.
+statement `UnramifiedParahoricModelStatement`.

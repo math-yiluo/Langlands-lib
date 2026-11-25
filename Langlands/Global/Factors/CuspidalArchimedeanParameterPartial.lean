@@ -40,12 +40,12 @@ section RankOne
 
 open RankinSelbergGlobal.RealRankZero
 
-local instance : AddCommGroup (RationalInvariantFunctions F 1) := Submodule.addCommGroup _
-local instance : AddCommGroup (ContinuousRationalFunctions F 1) := Submodule.addCommGroup _
-local instance : AddCommGroup (FiniteSmoothRationalFunctions F 1) := Submodule.addCommGroup _
-local instance : AddCommGroup (AutomorphicForms F 1) := Submodule.addCommGroup _
-local instance : AddCommGroup (StableAutomorphicFunctions F 1) := Submodule.addCommGroup _
-local instance (T : OperatorRealization F 1) : AddCommGroup T.Space := Submodule.addCommGroup _
+private local instance : AddCommGroup (RationalInvariantFunctions F 1) := Submodule.addCommGroup _
+private local instance : AddCommGroup (ContinuousRationalFunctions F 1) := Submodule.addCommGroup _
+private local instance : AddCommGroup (FiniteSmoothRationalFunctions F 1) := Submodule.addCommGroup _
+private local instance : AddCommGroup (AutomorphicForms F 1) := Submodule.addCommGroup _
+private local instance : AddCommGroup (StableAutomorphicFunctions F 1) := Submodule.addCommGroup _
+private local instance (T : OperatorRealization F 1) : AddCommGroup T.Space := Submodule.addCommGroup _
 
 private theorem rankOne_standard_eq_eval_smul (c : RealCharacterData)
     (f : realStandardKFinite 1 [RealBlock.character c]) :

@@ -1,6 +1,5 @@
 # Support lemmas for the supercuspidal characterization by L-factors of pairs
 
-Author: Worker 1719.
 This module, in namespace
 `Langlands.RankinSelberg.SupercuspidalLFactorCharacterization`, proves helper
 results used by the reduction of Henniart 2002, Théorème 1.6(b) (module

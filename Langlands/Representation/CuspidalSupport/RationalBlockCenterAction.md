@@ -1,6 +1,6 @@
 # Complex scalars and actions under inertia-block center evaluation
 
-Worker 1153. This internal construction implements the categorical action step
+This internal construction implements the categorical action step
 in the Proposition of Renard VI.4.5, printed p.160 / PDF p.166, registered
 source `renard-2026-representations-groupes-reductifs-padiques` dated 9 July
 2026. It is used with the group-algebra center parametrization of VI.4.4,

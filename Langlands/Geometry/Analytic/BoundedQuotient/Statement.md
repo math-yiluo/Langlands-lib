@@ -1,7 +1,5 @@
 # Bounded descent through closed-ideal quotients
 
-Author: Worker 36.
-
 `Langlands.Analytic.BoundedQuotientStatement` concerns actual bounded algebra
 homomorphisms between commutative normed algebras over a normed field. The
 coefficient field, source algebra and target algebra have independent universes.

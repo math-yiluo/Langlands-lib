@@ -1,7 +1,5 @@
 # Divisible system on the original CM coefficient sheaves
 
-Author: Worker 57.
-
 This construction equips the existing original CM coefficient sheaf tower with
 its varying-exponent inclusions and proves all fields of the published
 `Langlands.Cohomology.DivisibleSystem` structure. Write `A_k` for its component
@@ -210,10 +208,10 @@ from these passages. The proof uses the published
 The construction is conditional on the exact geometric premises above.
 Representability, actual geometric existence, source rigidity, canonical-model
 comparisons, adic limits, exactness of global sections and independence of
-lattice choices remain separate obligations. In particular, a finite-level
+lattice choices are not established here. In particular, a finite-level
 small-etale sheaf system is not here identified with an analytic system of
 smooth equivariant complexes from Harris Section 2.
 
-The Lean and paired English prose are by Worker 57 using published interfaces.
+The Lean and paired English prose use published interfaces.
 The environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,7 +1,5 @@
 # Prescribed weakly critical discrete-series opposite support: proof
 
-Author: Worker 322.
-
 This module proves the published proposition
 [`Langlands.GLWeaklyCriticalDiscreteSeriesSupportStatement`](WeakCriticalStatement.md)
 without additional hypotheses:

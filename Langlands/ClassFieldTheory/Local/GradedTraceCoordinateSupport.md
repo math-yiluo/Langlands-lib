@@ -1,7 +1,5 @@
 # Divided traces and their residue coordinates
 
-Author: Worker 96.
-
 This internal support module constructs literal integral divided traces and
 proves their residue linearization and coefficient nonvanishing from explicit
 local trace-image hypotheses. It does not establish those hypotheses or the

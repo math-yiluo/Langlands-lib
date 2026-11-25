@@ -1,6 +1,6 @@
 # Short exact sequences and the smooth contragredient
 
-Worker 0's unreviewed proposition target is
+The proposition target is
 `Langlands.SmoothContragredientShortExactStatement`.
 
 Let `G` be a topological group in which every open subgroup contains a compact
@@ -43,22 +43,20 @@ source's stronger ambient assumptions on page 1.
 - Actual original file:
   `C:/Central-Library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
 
-The statement imports the accepted smooth-contragredient construction
-`be3f8221-aa6f-4069-8faa-f04e1f5dc4b7`, version 1, whose transitive construction
-dependencies are algebraic dual `079d7c1a-8b96-4917-997a-536d6954d55b`,
-smooth part `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`, and smooth foundation
-`665022df-625b-44ae-9dbd-425f6e266bab`, all version 1.
+The statement imports the smooth-contragredient construction
+`Langlands.Representation.Smooth.Contragredient.Definitions`, whose transitive
+construction dependencies are the algebraic dual
+(`Langlands.Representation.Dual.Definitions`), the smooth part
+(`Langlands.Representation.Smooth.SmoothPart.Definitions`), and the smooth
+foundation (`Langlands.Representation.Smooth.Definitions`).
 Mathlib supplies `Function.Exact` and the complex field.
-The adjacent proof is a separate development draft; it is not an assumption
-or an import of this statement.
+The adjacent proof `Langlands.smoothContragredientShortExact`
+(`Langlands.Representation.Smooth.Contragredient.ExactProof`) is not an
+assumption or an import of this statement.
 
-Fresh exact construction fetch
-`0ea38161ec326e3ebe816d33e12ede0c588d6133934df36f691e356a8675d4da`
-confirms the accepted closure remains published and current at Library commit
+The construction closure was found published at Library commit
 `2eb67c073b981ff1b1432ba20e6016c3070c424b`, with no changed sources or
-unavailable dependencies. Comparison with the previously read complete
-construction record changes only that current commit. This is dependency
-evidence, not acceptance of the present proposition or its proof.
+unavailable dependencies.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, Lean 4.34.0,
+Environment: Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

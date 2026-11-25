@@ -1,7 +1,5 @@
 # Noncommuting rational points of the hyperbolic unitary group
 
-Author: Worker 1150.
-
 `Langlands.GroupScheme.QuasiSplitUnitary.nonCommutative` proves exactly the
 published proposition `NonCommutativeStatement.{u}`. It retains the arbitrary
 universe, fields, quadratic extension, finite basis and nonidentity algebra

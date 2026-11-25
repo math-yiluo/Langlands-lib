@@ -1,7 +1,5 @@
 # Geometric inputs to compact analytic étale sections
 
-Author: Worker 627.
-
 This module connects the published support and compact-section
 constructions to the geometric hypotheses of the analytic compact comparison.
 It is an internal deduction from the Library constructions and proofs.

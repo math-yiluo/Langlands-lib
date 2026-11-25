@@ -1,6 +1,6 @@
 # Split-torus rank comparisons
 
-This is an internal derived unit for the split-rank part of the quaternionic
+This is an internal derived module for the split-rank part of the quaternionic
 spin-group argument. It compares the actual split ranks defined by closed split
 subtori, over an arbitrary field and without a characteristic restriction.
 

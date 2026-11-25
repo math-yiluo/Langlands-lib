@@ -1,6 +1,6 @@
 # Independence of the induced progenerator: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.InducedProgeneratorIndependenceStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.CuspidalSupport.InducedProgeneratorIndependenceStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.1: Lemma, Proposition and Corollary, printed p.207 / PDF p.213. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The progenerator `Π_D` is that of VI.4.1, printed p.149 / PDF p.155.
 
@@ -16,7 +16,7 @@ The consequence drawn on printed p.208 is that the isomorphism class of `Π_Ω =
 
 ## The Lean statement
 
-`InducedProgeneratorIndependenceStatement` combines the three results into one derived statement for actual groups. It is a statement unit: nothing is proved.
+`InducedProgeneratorIndependenceStatement` combines the three results into one derived statement for actual groups. It is a statement only: nothing is proved.
 
 It quantifies over:
 
@@ -47,4 +47,4 @@ The source's parabolics are standard, as is customary in Renard. The actual-grou
 ## Remarks
 
 - The proof (VII.1.3 Corollary, the geometric lemma VI.5.3 and transitivity of induction) is not formalized here.
-- The VI.10.1 Theorem, that `Π_Ω` is a finitely generated progenerator of `M(G)_Ω`, is a separate unit. It needs the Bernstein block `M(G)_Ω` of `G` together with the second adjointness theorem.
+- The VI.10.1 Theorem, that `Π_Ω` is a finitely generated progenerator of `M(G)_Ω`, is stated separately, in `BernsteinInducedProgeneratorStatement`. It needs the Bernstein block `M(G)_Ω` of `G` together with the second adjointness theorem.

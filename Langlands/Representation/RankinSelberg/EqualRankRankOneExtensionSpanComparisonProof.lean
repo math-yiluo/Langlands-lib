@@ -95,7 +95,7 @@ section Convergence
 assumption on the first factor. -/
 theorem prod_dirac_eq_map {α β : Type*} [MeasurableSpace α] [MeasurableSpace β]
     (μ : Measure α) (y : β) : μ.prod (Measure.dirac y) = μ.map (fun x => (x, y)) := by
-  rw [Measure.prod_def]
+  rw [Measure.prod_eq_of_sfinite]
   simp_rw [Measure.map_dirac' measurable_prodMk_left]
   exact Measure.bind_dirac_eq_map μ measurable_prodMk_right
 

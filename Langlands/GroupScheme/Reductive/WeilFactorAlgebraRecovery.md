@@ -1,7 +1,5 @@
 # Recovering the étale algebra of a Weil restriction from its factor projections
 
-Worker 47.
-
 Module `Langlands.GroupScheme.Reductive.WeilFactorAlgebraRecovery`, namespace
 `Langlands.GroupScheme.WeilFactor`. It imports [`WeilFactorTransfer`](WeilFactorTransfer.md)
 and [`Algebra.EtaleGraphIdempotent`](../../Algebra/EtaleGraphIdempotent.md).

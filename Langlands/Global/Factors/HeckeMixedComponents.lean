@@ -65,7 +65,7 @@ theorem norm_mixedInfiniteUnit_pos (a : Ideles K) :
 theorem full_eq_mixed_mul_divisor_norm_inv (a : Ideles K) :
     ((IdeleAbsoluteValue.full K a : ℝ≥0) : ℝ) =
       mixedEmbedding.norm (mixedInfiniteUnit a : mixedEmbedding.mixedSpace K) *
-        (HeckeDivisor.norm (Langlands.ClassField.Global.ideleDivisor a))⁻¹ := by
+        (HeckeDivisor.norm (Langlands.ClassFieldTheory.Global.ideleDivisor a))⁻¹ := by
   rw [mixedInfiniteUnit_val, norm_mixedCoordinates]
   exact HeckeDivisor.full_eq_infinite_mul_norm_inv a
 

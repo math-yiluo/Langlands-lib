@@ -1,7 +1,6 @@
 # Conductor exponents of local constants
 
-Worker 33 wrote this module for task `e534647a`. It covers the
-conductor-exponent part of row 9 of the local-factor coverage map. The main
+This module covers the conductor-exponent laws of local constants. The main
 declaration is `Langlands.LocalFactor.ConductorExponentStatement`. It is a
 proposition only. No local-constant system, presentation or conductor law is
 constructed or chosen, and nothing is assumed as an axiom. The only proved
@@ -102,7 +101,8 @@ surjectivity `hsurj`. Write `a = P.artinConductor hsurj`, `n = n(ψ)`,
   its own common closure. The same laws over an intermediate field `E ≠ F`
   would need presentations of representations of `W_E`. That requires the
   identification of `weilSubgroup F E` with the local Weil group of `E`
-  (task `ef3a09fe`) and is not stated here.
+  (`intermediateWeilEquiv` in `Langlands.Weil.Local.IntermediateWeil`) and is
+  not stated here.
 - **Every presentation.** Each clause holds at every presentation of `A` for
   which the actual restriction map is surjective. Surjectivity is an explicit
   hypothesis and is never replaced by an arbitrary map onto a finite group.

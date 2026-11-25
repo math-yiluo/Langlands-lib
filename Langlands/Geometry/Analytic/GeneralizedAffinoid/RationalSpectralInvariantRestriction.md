@@ -1,7 +1,5 @@
 # Subgroup restriction of represented-domain spectral rational diagrams
 
-Author: Worker 56.
-
 This internal construction compares the actual positive-radius rational
 section, spectrum and locus diagrams when an open subgroup `J` is replaced
 by an open subgroup `H ≤ J`. Its entry point is
@@ -87,7 +85,7 @@ homeomorphisms; none is an extra output-object assumption here.
 
 ## Provenance and sources
 
-Worker 56 adapts the published `RationalNormInvariantRestriction` and
+This module adapts the published `RationalNormInvariantRestriction` and
 `DomainInvariantSubgroupRestriction` constructions to the continuous
 spectral rational diagrams of `RationalSpectralInvariantActions`.
 The norm-continuous predecessor uses quotient-norm orbit continuity;

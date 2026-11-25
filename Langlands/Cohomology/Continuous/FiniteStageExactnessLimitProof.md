@@ -1,7 +1,5 @@
 # Finite-stage exactness passes to continuous cohomology
 
-Author: Worker 21.
-
 `Langlands.Continuous.finiteStageExactnessLimit` proves exactly the published
 proposition `Langlands.Continuous.FiniteStageExactnessLimit.{u}`. It retains the
 arbitrary common universe, commutative coefficient ring, compact locally compact

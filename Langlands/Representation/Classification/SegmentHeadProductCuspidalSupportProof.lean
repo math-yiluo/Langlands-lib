@@ -99,18 +99,14 @@ private theorem memberInducedIso {n : ℕ}
     (d.shape.flatten_size_flattenBlockEquiv S q).symm
   obtain ⟨ereg⟩ := Parabolic.orderedProductRegrouping.{uF,max uF uV} F T
     n B d.shape S e h (fun j k x => d.shape.index_index_eq_flatten S ⟨j,k⟩ x) σ
-  have einner (j : Fin d.shape.length) :
-      (T.normalizedProductInductionFunctor (S j)).obj
-        (fun k => (h ⟨j,k⟩).symm ▸ σ (e ⟨j,k⟩)) ≅
-      T.segmentInduced (A j).obj (d.segments j).length (d.segments j).rank_pos := by
-    apply (T.normalizedProductInductionFunctor (S j)).mapIso
-    apply Pi.isoMk
-    intro k
-    exact memberRankIso F T
-      (fun q : (j : Fin d.shape.length) × Fin (S j).length => (S q.1).size q.2)
-      (fun q => T.segmentFactor (A q.1).obj (q.2.val : ℝ))
-      (e.symm_apply_apply ⟨j,k⟩)
-  exact ⟨ereg ≪≫ (T.normalizedProductInductionFunctor d.shape).mapIso (Pi.isoMk einner)⟩
+  refine ⟨ereg ≪≫ (T.normalizedProductInductionFunctor d.shape).mapIso (Pi.isoMk fun j => ?_)⟩
+  apply (T.normalizedProductInductionFunctor (S j)).mapIso
+  apply Pi.isoMk
+  intro k
+  exact memberRankIso F T
+    (fun q : (j : Fin d.shape.length) × Fin (S j).length => (S q.1).size q.2)
+    (fun q => T.segmentFactor (A q.1).obj (q.2.val : ℝ))
+    (e.symm_apply_apply ⟨j,k⟩)
 
 private theorem memberFamily_content {n : ℕ}
     (d : T.SegmentProductDatum.{max uF uV,uF} n) :

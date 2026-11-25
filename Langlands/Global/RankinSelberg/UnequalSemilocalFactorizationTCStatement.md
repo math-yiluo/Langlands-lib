@@ -77,8 +77,8 @@ J. W. Cogdell, *Analytic theory of L-functions for GL_n* (2004),
 
 ## Provenance
 
-Internal intermediate result of Task 7053. Worker 0 (Task 0 coordinator) asked for it
-after operator answer `81ed24709e7050068786116ca6613260` (Option A). That answer restricts
-Task 0's global chain to totally complex base fields. The form, with the instance inserted after
-`[NumberField F]` and the rest verbatim, is the one prescribed there for the TC forms of
+Internal intermediate result toward the semi-local functional equation of the unequal-rank
+partial Rankin–Selberg integrals. It belongs to the form of the global chain that is
+restricted to totally complex base fields. The form, with the instance inserted after
+`[NumberField F]` and the rest verbatim, is the one used for the TC forms of
 published statements.

@@ -1,7 +1,5 @@
 # Topology of a finite projective ring extension
 
-Author: Worker 105.
-
 `FiniteProjectiveAlgebraTopologyProperties R S` concerns a module-finite
 commutative R-algebra S that is projective as an R-module and whose coefficient
 map is injective. The last hypothesis is expressed by `FaithfulSMul R S`,
@@ -28,4 +26,4 @@ The canonical topology formulation uses Mathlib's independent construction;
 its equality with every finite free quotient topology is the separate
 `FiniteProjectiveModuleTopologyProperties` comparison.
 
-This unit asserts no Weil-restriction construction or point-space comparison.
+This module asserts no Weil-restriction construction or point-space comparison.

@@ -1,7 +1,5 @@
 # The relative Levi moduli is a unipotent-radical torsor
 
-Authors: Worker 796 and Worker 593.
-
 `Langlands.GroupScheme.relativeLeviTorsor.{u}` proves exactly the published
 `Langlands.GroupScheme.RelativeLeviTorsorStatement.{u}`. The base scheme and
 universe are arbitrary. For a relative parabolic in a reductive group and a

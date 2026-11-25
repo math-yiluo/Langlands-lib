@@ -1,6 +1,6 @@
 # Isomorphism invariance and geometric normality of the fixed torus envelope
 
-Worker 1436. This internal prerequisite uses the unchanged
+This internal prerequisite uses the unchanged
 `closedTorusEnvelope` and its actual `TorusGeneratedEnvelope`
 representatives. The universe is arbitrary. The ambient groups and all
 isomorphisms are group schemes over the original field.
@@ -67,7 +67,8 @@ intersection, actual representative, inner automorphism, closed normalizer
 and rational-point detection constructions, together with represented
 subgroup base change and fpqc containment reflection. They isolate the
 geometric normality argument and its descent reduction needed by the
-rational-lifting task. Compatibility of this fixed envelope with field
-extension remains an obligation, so general-field normality remains
-unproved; this module does not assert the full
-`TorusGeneratedEnvelopeNormalityStatement` or the rational-lifting theorem.
+rational-lifting theorem. Compatibility of this fixed envelope with field
+extension is not proved here; this module does not assert the full
+`TorusGeneratedEnvelopeNormalityStatement` (proved as
+`torusGeneratedEnvelopeNormality` in `TorusGeneratedEnvelopeNormalityProof`) or
+the rational-lifting theorem.

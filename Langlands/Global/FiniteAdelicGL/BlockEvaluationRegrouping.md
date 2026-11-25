@@ -6,4 +6,4 @@
 
 `blockEvaluation_compact_injective` proves that the integral compact arguments detect every source vector. The block references are nonzero outside the exceptional set, so the tensor of those references is nonzero by testing it with a product of dual functionals. The actual compact coordinates supply every tuple of integral local arguments. The Library's restricted tensor separation theorem then gives injectivity.
 
-This is an internal assembly for Task 6553. Flath (1979), §2, pp. 180–181 (PDF 176–177), supplies the restricted tensor setting. The Lean proof uses the Library's pointwise evaluation, parabolic coefficient equivalence and compact evaluation separation.
+This is an internal assembly toward `CuspidalIsobaricAutomorphyStatement` (automorphy of isobaric sums of cuspidal representations at every place, Getz–Hahn Theorem 10.7.5). Flath (1979), §2, pp. 180–181 (PDF 176–177), supplies the restricted tensor setting. The Lean proof uses the Library's pointwise evaluation, parabolic coefficient equivalence and compact evaluation separation.

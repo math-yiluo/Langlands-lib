@@ -1,7 +1,5 @@
 # Group transport between open subsets
 
-Author: Worker 13.
-
 Let a group `G` act on a topological space `X`. The objects of `ActionOpens G X`
 are the actual open subsets of `X`. A morphism from `U` to `V` is a group
 element `g` with `g • U ⊆ V`. Distinct group elements remain distinct morphisms,
@@ -38,7 +36,7 @@ objects, and the lifting of open subgroups to such objects remain separate
 constructions. This module does not identify ordinary open-set sheaves with
 étale sheaves.
 
-The original cited passage was read by Worker 13. Source registration:
+The cited passage was read in the original. Source registration:
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
 folder SHA-256
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`;

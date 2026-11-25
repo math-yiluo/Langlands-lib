@@ -1,7 +1,5 @@
 # Unconditional localization of full presented affinoid domains
 
-Author: Worker 36.
-
 For every complete ultrametric normed field `K : Type u`, actual
 positive-polyradius presented affinoid algebra `A`, and full represented
 domain `U : Domain K A`, this module constructs

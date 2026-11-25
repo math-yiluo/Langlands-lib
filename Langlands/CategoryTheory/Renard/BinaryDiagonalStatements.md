@@ -1,8 +1,6 @@
 # Renard A.III.1: the diagonal and binary products and coproducts
 
-Author: Worker 709.
-
-This statement-only unit records Appendix A.III.1, example 1, of David
+This statement-only module records Appendix A.III.1, example 1, of David
 Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, printed p.252 / one-based PDF258, using the universal
 problem definition on printed p.251 / PDF257. It also compares these
@@ -10,7 +8,7 @@ universal arrows with the binary limit and colimit formulations in A.IV.1,
 example 3, and A.IV.2, printed p.257 / PDF263. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The original PDF257–258 and PDF262–263 were read directly for this unit.
+The original PDF257–258 and PDF262–263 were read directly for this module.
 
 The [Appendix A discrepancy note](../../../notes/renard/appendix-a-corrections.md)
 does not change example 1. Its correction of the general colimit prose
@@ -92,20 +90,19 @@ separately numbered results in the book.
 The existing [universal-arrow statements](UniversalArrowStatements.md)
 and their published proof give the generic factorization dictionary.
 The [elementary limit and colimit statements](ElementaryLimitColimitStatements.md)
-and their published proof include arbitrary fans and cofans. This unit
+and their published proof include arbitrary fans and cofans. This module
 records the comparison using the actual diagonal, paired arrow and
 binary fan or cofan, so all chosen structure maps remain visible.
 
 ## Proof boundary
 
-This file defines propositions and supplies no proof. A separate exact
-proof can reuse the generic universal-arrow characterization together
-with componentwise product-category equality and the existing binary
-fan/cofan universal-property API. That is a possible proof route, not
-proof evidence. The exact-proof successor targets
-`Langlands.Renard.BinaryDiagonal.BinaryDiagonalStatements` only after
-independent statement acceptance and actual Library publication, in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+This file defines propositions and supplies no proof. The proof of
+`Langlands.Renard.BinaryDiagonal.BinaryDiagonalStatements` is
+`binaryDiagonalStatements` in the separate module
+`Langlands.CategoryTheory.Renard.BinaryDiagonalProof`. A proof can reuse the
+generic universal-arrow characterization together with componentwise
+product-category equality and the existing binary fan/cofan
+universal-property API. That is a possible proof route, not proof evidence.
 
-The completion of the other A.III examples and the whole appendix
-remains with the parent book program.
+The other A.III examples and the rest of the appendix are outside this
+module.

@@ -1,7 +1,5 @@
 # Proof: the centralizer of a subgroup of multiplicative type is open in its normalizer
 
-Worker 1324, with Worker 234 (reduction to the split case).
-
 Module: `Langlands.GroupScheme.Torus.MultiplicativeTypeCentralizerOpenProof`.
 
 `Langlands.GroupScheme.multiplicativeTypeCentralizerOpen` proves

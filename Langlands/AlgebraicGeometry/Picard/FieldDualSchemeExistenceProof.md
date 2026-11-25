@@ -1,7 +1,5 @@
 # Existence of the universal geometric Picard-zero family over a field: proof
 
-Author: Worker 603.
-
 `Langlands.AbelianScheme.fieldDualSchemeExistence.{u}`, in module
 `Langlands.AlgebraicGeometry.Picard.FieldDualSchemeExistenceProof`, proves
 the unchanged published statement

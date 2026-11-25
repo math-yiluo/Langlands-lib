@@ -1,6 +1,6 @@
 # Gluing finitely presented closed representatives
 
-Workers 3483 and 286. Internal helper for arbitrary-base dynamic representability.
+Internal helper for arbitrary-base dynamic representability.
 
 `exists_closed_finitelyPresented_of_openCover` applies to an arbitrary subgroup
 functor of an actual group scheme. It assumes locality on every test scheme

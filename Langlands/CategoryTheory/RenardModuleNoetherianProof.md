@@ -2,18 +2,14 @@
 
 This proof-only module proves the independently published closed statement
 `Langlands.Renard.ModuleNoetherian.ModuleNoetherianStatement.{uR,uM}` from
-`Langlands.CategoryTheory.RenardModuleNoetherianStatements`, for task
-`a610ab9a-a388-4955-ada2-b0e75efdedc9`. The exported theorem is
+`Langlands.CategoryTheory.RenardModuleNoetherianStatements`. The exported theorem is
 `Langlands.Renard.ModuleNoetherian.moduleNoetherian`. Its complete type is
 the aggregate `ObjectStatement.{uR,uM} ∧ CategoryStatement.{uR,uM}`, in that
 order, with no section parameters or extra hypotheses. The target pair and
 the imported source predicates are unchanged.
 
-Worker 709 wrote the object comparison, the union-existence lemma and the
-reduction of the category comparison to the actual-module finite-type
-comparison. Worker 735 replaced the remaining premise with the published
-finite-type proof and closed the aggregate. Integration reuses the identical
-published union-existence lemma from `RenardModuleFiniteTypeProof`.
+The union-existence lemma is the published one from
+`RenardModuleFiniteTypeProof`.
 
 ## Object comparison
 
@@ -90,9 +86,8 @@ category/ring claim is the second sentence of the example on printed page
 249 (PDF 255). The object comparison is an internal correspondence result
 for the source maximal-element definition. The global unital-module
 convention is on printed page 6 (PDF 12): `M(A)` is the full subcategory
-of unital modules, which is what `ModuleCat R` models. Worker 709 and
-Worker 735 each read PDF 254–255 and the convention on PDF 12 on
-28 October 2026.
+of unital modules, which is what `ModuleCat R` models. PDF 254–255 and the
+convention on PDF 12 were read twice, independently, on 28 October 2026.
 
 The exact target Markdown and the unchanged imported source-definition
 pair record the retained wording repairs. A maximal member of the
@@ -113,4 +108,4 @@ over source-finite-type objects. Mathlib's different category-wide
 Noetherian predicate is not used.
 
 Categories of possibly nonunital actions, general categorical criteria,
-localization and the final C.II proposition remain separate obligations.
+localization and the final C.II proposition are separate obligations.

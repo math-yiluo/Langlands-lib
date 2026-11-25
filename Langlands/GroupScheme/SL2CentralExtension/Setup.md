@@ -1,6 +1,6 @@
 # Central extensions of `SL₂` on points
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1). It sets up the functor-of-points framework in which the existence
 part of the proof is carried out.

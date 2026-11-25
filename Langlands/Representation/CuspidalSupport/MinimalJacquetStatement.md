@@ -1,7 +1,5 @@
 # Minimal nonzero quasicuspidal Jacquet descent
 
-Authors: Worker 186 and Worker 205.
-
 `Langlands.CuspidalSupport.MinimalNonzeroJacquetTheorem.{uF,uV}` is a
 proposition definition stating nonzero quasicuspidal Jacquet descent. It
 quantifies every prime `p`, every actual `F : PadicField.{uF} p`, every

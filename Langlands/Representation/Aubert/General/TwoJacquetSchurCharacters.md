@@ -10,7 +10,7 @@ independent.
 
 The inputs include two semidirect decompositions `P = M U` and `Q = L O`,
 closedness of both unipotent subgroups, and a smooth complex representation
-`σ` of `M`. No relation between the two parabolics is required in this unit.
+`σ` of `M`. No relation between the two parabolics is required in this file.
 The second object is literally
 `(jacquetFunctor hO hOc).obj ((normalizedInductionFunctor h hU).obj σ)`,
 whose carrier universe is `max uG uV`.
@@ -52,7 +52,7 @@ of Langlands classification, character independence, the geometric lemma,
 adjointness, or a cuspidal-support theorem.
 
 Admissibility and irreducibility of the two objects remain explicit inputs.
-This unit does not construct the two Jacquet factors, identify their characters
+This file does not construct the two Jacquet factors, identify their characters
 by conjugation, compare their signs, or establish unit modulus on an entire
 Levi center. It supplies character inputs for subsequent sign arguments and
 does not prove `RationalRankOneSelfAssociationStatement`.

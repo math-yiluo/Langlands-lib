@@ -95,10 +95,10 @@ theorem reflectionWordLoweringMaps_represents
 positive integral multiplicity. -/
 theorem reducedRays : SplitBigCell.ReducedRays p.inclusion := by
   let : p.rootDatum.IsReduced := p.isReduced
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice p.torus) :=
-    IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice p.torus) :=
-    p.isSplitTorus.character_toRat_injective.isAddTorsionFree toRat
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice p.torus) :=
+    HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice p.torus) :=
+    p.isSplitTorus.character_toRat_injective.hasUniqueDiv toRat
   intro a ha b hb r t hr ht he
   rw [relativeRoots_eq_roots, ← p.isRootDatum.2.1] at ha hb
   obtain ⟨i, rfl⟩ := ha

@@ -11,7 +11,7 @@ AlgClosedFieldTranslationDifferenceLiftingStatement.{u} →
 ```
 
 in module `Langlands.AlgebraicGeometry.Picard.PicardZeroValuativeExtensionReductionStatement`,
-inside `namespace Langlands.AbelianScheme`. This unit only defines the proposition. It proves
+inside `namespace Langlands.AbelianScheme`. This module only defines the proposition. It proves
 nothing, in particular none of the five named propositions. It says only that the last one
 follows from the first four.
 
@@ -57,8 +57,8 @@ universe `u`. Here `preservation` always denotes a proof of the Library proposit
 
 ## Provenance
 
-Internal. The implication is the decomposition step of proof task
-`322a2874-8b1c-4e61-b7cc-e0d154742640`, whose target is the conclusion. It adds no mathematics
+Internal. The implication is the decomposition step of the proof of the conclusion
+(`picardZeroValuativeExtension`, module `PicardZeroValuativeExtensionProof`). It adds no mathematics
 of its own; the geometric input is in the four hypotheses, whose Markdown cites the
 literature. The assembly runs as follows.
 
@@ -74,4 +74,5 @@ literature. The assembly runs as follows.
 5. The class over `R'` is the pullback of the rigidified Mumford family along the extended
    point. It is Picard zero by the third hypothesis.
 
-A Lean proof of the implication is a separate unit.
+A Lean proof of the implication is in a separate module: `picardZeroValuativeExtensionReduction`
+in `PicardZeroValuativeExtensionReduction`.

@@ -1,7 +1,5 @@
 # Cuspidal embedding for actual general linear groups
 
-Author: Worker 156.
-
 `Langlands.CuspidalSupport.cuspidalEmbedding` proves exactly
 `Langlands.CuspidalSupport.CuspidalEmbeddingTheorem.{uF,uV} F T n`
 from `NormalizedCuspidalInductionStatement`. Its parameters range over every
@@ -29,8 +27,8 @@ The proof splits on the rank.
 
 At rank zero it applies
 `Langlands.CuspidalSupport.zeroRankCuspidalEmbedding` from
-`Langlands.Representation.CuspidalSupport.ZeroRankEmbeddingProof`
-(Worker 157). This published boundary case has the exact required target
+`Langlands.Representation.CuspidalSupport.ZeroRankEmbeddingProof`.
+This published boundary case has the exact required target
 and independent field and carrier universes.
 
 At rank `n + 1`, it installs the topology and topological-group structure
@@ -38,16 +36,16 @@ supplied by `T`, then performs the following assembly:
 
 1. `Langlands.CuspidalSupport.normalizedQuasicuspidalEmbedding` from
    `Langlands.Representation.CuspidalSupport.QuasicuspidalEmbeddingProof`
-   (Worker 238) supplies an actual block shape `B`, an irreducible smooth
+   supplies an actual block shape `B`, an irreducible smooth
    quasicuspidal Levi representation `σ`, and an injective intertwiner `j`
    from `ω` into its normalized induction. Positivity is `Nat.zero_lt_succ n`.
 2. `Langlands.CuspidalSupport.LeviAdmissibility.irreducibleQuasicuspidalLeviAdmissibility`
    from `Langlands.Representation.CuspidalSupport.QuasicuspidalLeviAdmissibilityProof`
-   (Worker 237) proves admissibility of this `σ`. Together with the
+   proves admissibility of this `σ`. Together with the
    quasicuspidality already obtained, this is precisely Levi cuspidality.
 3. `Langlands.Parabolic.normalizedInductionAdmissibility` from
    `Langlands.Representation.Parabolic.NormalizedAdmissibilityProof`
-   (Workers 162 and 172) proves admissibility of the actual normalized
+   proves admissibility of the actual normalized
    induced representation.
 4. `Langlands.isAdmissible_of_injective` from
    `Langlands.Representation.Smooth.Admissibility.EmbeddingProof`

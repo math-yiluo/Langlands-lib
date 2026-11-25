@@ -1,7 +1,5 @@
 # Statement: conjugacy and density of Cartan subgroups
 
-Worker 75.
-
 `Langlands.GroupScheme.CartanConjugacyDensityStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:

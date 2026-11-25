@@ -1,7 +1,5 @@
 # Twisting a block
 
-Authors: Worker 1715 (original proof draft), Worker 1743 (current-Library validation and submission).
-
 The closing theorem `Langlands.WeilDeligneRepresentation.Blocks.blockTwist`
 proves exactly the published proposition
 `Langlands.WeilDeligneRepresentation.Blocks.BlockTwist.{uK, uG, uV}` from

@@ -1,7 +1,5 @@
 # Restriction morphisms of equivariant sites from fibre products
 
-Author: Worker 1006.
-
 This module proves `RestrictionSiteMorphismStatement` **conditionally**: from
 the two fibre-product statements `EquivariantQuasiEtalePullbacksStatement` and
 `EquivariantEtalePullbacksStatement` (module

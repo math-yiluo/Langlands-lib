@@ -1,8 +1,5 @@
 # Ordered pivot isolation for upper Bruhat induction
 
-Authors: Worker 330 (Lean proof and documentation) and Worker 308
-(pivot-isolation interface and proof design).
-
 `Langlands.GeneralLinear.fieldUpperBruhatPivotTheorem.{u}` proves the closed
 published proposition `Langlands.GeneralLinear.FieldUpperBruhatPivotTheorem.{u}`.
 It retains every field `K : Type u`, every natural `n`, and every
@@ -65,7 +62,8 @@ is still normalized to one.
 ## Provenance and scope
 
 This is internal algebraic proof infrastructure for the project's upper Bruhat
-induction. The construction implements Worker 308's proposed least-pivot and
+induction. The construction implements the least-pivot and
 complementary-inverse route using existing Mathlib matrix and finite-sum
 identities. It claims no external literature theorem. The theorem proves only
-pivot isolation; the parent's induction and final factorization remain separate.
+pivot isolation; the rank induction and final factorization are in
+`Langlands.Group.GL.UpperBruhatProof`.

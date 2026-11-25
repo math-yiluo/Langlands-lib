@@ -3,8 +3,11 @@
 This module is a conditional assembly with derived provenance. It derives the published
 `SpaceAnalytificationExistenceStatement` from explicit hypotheses, following the route of
 Conrad–Temkin (2009), §4.2–4.3. **The target statement is not proved**: the seven inputs of
-`SpaceAnalytificationExistenceReductionStatement` are still hypotheses, and none of them is
-proved in the Library.
+`SpaceAnalytificationExistenceReductionStatement` are hypotheses. Three of them are proved
+elsewhere in the Library: input 4 by `affineAnalytificationFibreProduct`
+(`AffineAnalytificationFibreProductProof`), input 6 by `localizedEtalePullbackBaseChange`
+(`LocalizedEtalePullbackProof`), and input 7 by `exists_mem_range_localizedHom`
+(`AffineAnalytificationJointSurjectivity`).
 
 ## Declarations
 
@@ -30,19 +33,19 @@ proved in the Library.
     `affPullback` field of `AnalyticInputs` through `isPullback_localizedHom_of_isPullback_ty`.
   - input 6: `LocalizedEtalePullbackStatement.{u,u} K` for every `K`.
 
-  The other five inputs are not yet in the Library, so they are written out in full. Each
-  one is literally the body of the named proposal at the stated universes, so the proposal
-  can be supplied directly once it is published.
+  The other five inputs are not Library statements, so they are written out in full. Each
+  one is literally the body of the proposed statement of that name at the stated universes,
+  so that statement can be supplied directly once it is a Library statement.
   - input 1: the proposed `SpaceAnalytificationChartQuotientStatement`. Every family of
     étale affine test points `xᵢ : Spec Aᵢ → X` of a separated `X` has a quotient. That is,
     there are an analytic space `Y` and étale maps `πᵢ : Spec(Aᵢ)ᵃⁿ → Y`, jointly surjective
     on points, which carry every presheaf fibre square `Spec B = Spec Aᵢ ×_X Spec Aⱼ` to a
     pullback square. This is the chart form of Conrad–Temkin, Theorem 4.2.2.
-  - input 2: Worker 790's proposed `EtaleHomSheafStatement.{u,u}`. Morphisms to an analytic
+  - input 2: the proposed `EtaleHomSheafStatement.{u,u}`. Morphisms to an analytic
     space `T` form a sheaf on the small étale site of every analytic space. This is
     representable étale descent (Berkovich 1993, §4.1; Conrad–Temkin 2009, Theorem 4.1.2
     and the discussion around it).
-  - input 3: Worker 550's proposed `LocalizedEtaleSourceDescentStatement.{u,u,u}`.
+  - input 3: the proposed `LocalizedEtaleSourceDescentStatement.{u,u,u}`.
     Étaleness descends through a jointly surjective family of étale maps to the source.
   - input 5: the proposed `AffineAnalytificationLocalizedEtaleStatement.{u,u,u}`. The
     analytification of an étale map of finitely presented `K`-algebras is étale (Berkovich

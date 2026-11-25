@@ -1,7 +1,5 @@
 # The actual full-center point quotient and an algebraic quotient model
 
-Author: Worker 1232.
-
 This is derived infrastructure for the unchanged
 `CenterSplitComponentCompactnessStatement`. It uses the existing actual point
 carriers, represented-subgroup homeomorphism and algebraic open-section theorem.

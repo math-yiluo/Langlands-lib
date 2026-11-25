@@ -1,6 +1,6 @@
 # Actual roots of the outer Levi in a fine torus
 
-Worker 17. This internal construction retains two supplied compatible fine
+This internal construction retains two supplied compatible fine
 and outer parabolic root presentations, an actual fine-Levi map into the
 original outer Levi, and its compatibility with the ambient inclusions.
 

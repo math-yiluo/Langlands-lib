@@ -49,7 +49,7 @@ private theorem infiniteTensorComparison_tmul (a : L) (x : InfiniteAdeleRing K)
       algebraMap L q.Completion a *
         infiniteCompletionMap (algebraMap K L) q (x (q.comap (algebraMap K L))) := by
   have : q.LiesOver (q.comap (algebraMap K L)) := ⟨rfl⟩
-  change NumberField.LiesOver.completionMap (x (q.comap (algebraMap K L))) *
+  change NumberField.LiesOver.completionMap _ q (x (q.comap (algebraMap K L))) *
     algebraMap L q.Completion a = _
   exact mul_comm _ _
 

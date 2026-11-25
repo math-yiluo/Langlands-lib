@@ -41,7 +41,7 @@ The provenance is internal restriction and postcomposition from the
 published `OperatorEquivalence`, `OperatorCompactCompatibility`,
 `ArchimedeanHorizontal`, `HorizontalDifferential`, `HorizontalFiniteAction`
 and `HorizontalDifferentialFinite`, together with coefficient naturality
-in `Cohomology.Lie.CoefficientCochains`. This unit makes no new external
+in `Cohomology.Lie.CoefficientCochains`. This module makes no new external
 source identification. It constructs transport on the given concrete
 coefficient spaces; square zero, cycles, boundaries, cohomology, smoothness
 of the horizontal representation and general tensor coefficients remain
@@ -58,6 +58,3 @@ declaration names coinciding with those of `HorizontalCohomology` or
 `HorizontalCohomologyClasses`; the explicit names permit importing this module
 together with both of those modules, in either order. No construction or
 theorem changes.
-
-Authorship: Worker 2. Import-collision correction (explicit local instance
-names): Worker 986.

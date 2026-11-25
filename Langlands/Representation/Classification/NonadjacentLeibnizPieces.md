@@ -1,7 +1,7 @@
 # The two-block derivative pieces from the Leibniz filtration
 
-Author: Worker 745. Helper module of the proof of Ze80 Proposition 1.11(a),
-first conjunct (task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`).
+Helper module of the proof of Ze80 Proposition 1.11(a),
+first conjunct.
 
 ## Results
 
@@ -82,7 +82,7 @@ derivatives of orders `k + l + 1` and `k + (l + 1)` definitionally.
 ## Provenance and dependency audit
 
 All proofs here are original to this module. Published imports:
-`Classification/TwoSupercuspidalBinaryProductBridge` (my published helper
+`Classification/TwoSupercuspidalBinaryProductBridge` (a published helper
 module), `Derivative/MirabolicDerivativeVanishing` and
 `Derivative/MirabolicHighestDerivativePairingProof` (proofs of detection and
 BZ77 3.8), `Classification/SupercuspidalDerivativesProof` (proof of BZ77 4.4),
@@ -91,5 +91,5 @@ exactness), `Derivative/GeneralLinearDerivativeLeibnizFiltrationStatement`
 (statement module) and `CuspidalSupport/JacquetVanishingHelpers` (for
 `CuspidalSupport.objectFiltrationAt`). Helper imports of this proof:
 `NonadjacentTwoBlock` and `TwoSupercuspidalDerivativeBridge`. The audit of the
-whole closure against the independence list of task `3c9849a4` is in
+whole closure against the independence list of the proof of Ze80 1.11(a) is in
 `TwoSupercuspidalNonadjacentIrreducibilityProof.md`.

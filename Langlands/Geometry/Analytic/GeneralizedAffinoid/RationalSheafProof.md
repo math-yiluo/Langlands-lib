@@ -1,7 +1,8 @@
 # The positive-radius rational algebra sheaf
 
-Authors: Worker 36 and Worker 74. The imported finite relative-gluing
-assembly is adapted from Worker 135's argument, credited in its own pair.
+The imported finite relative-gluing assembly in
+`GeneralizedAffinoid/FiniteRationalGluingProof` is adapted from the
+`StrictTestDomain/FiniteRationalGluingProof` argument, as its own page explains.
 
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart.rationalPresheafIsSheaf.{u}`
 proves `RationalPresheafSheafStatement.{u}`. For every complete ultrametric
@@ -15,7 +16,6 @@ All base polyradii and rational relative radii may be arbitrary positive
 real numbers. The actual section algebras are the constructed closed-ideal
 weighted Tate quotients. Presheaf arrows are their actual bounded algebra
 restrictions after forgetting the norm and chosen presentation.
-The target statement pair and every imported definition are unchanged.
 
 ## Separation on finite covers
 
@@ -78,7 +78,7 @@ The closing theorem supplies proved finite gluing to the private conversion;
 
 ## Provenance and scope
 
-Worker 36 adapted Worker 74's published
+The proof adapts the
 `StrictTestDomain/RationalSheafProof` all-covering-sieve conversion, with
 `Restriction` replacing strict locus-inclusion arrows and `algebraPresheaf`
 replacing the strict presheaf. Only the actual weighted chart definitions,

@@ -225,12 +225,12 @@ def shiftIntCancelIso (k l : ℤ) (h : k + l = 0) :
     rw [frameToTotal_comp_totalId, frameToTotal_shiftInt, M.frameToTotal_shiftInt,
       Category.assoc]
     change M.frameToTotal F ≫
-      ((rationalPiAut F X d π M.lattice.sheaf hπ ^ k).hom ≫
-        (rationalPiAut F X d π M.lattice.sheaf hπ ^ l).hom) = M.frameToTotal F
+      ((rationalPiAut F X d π M.lattice.sheaf hπ ^ k).asIso.hom ≫
+        (rationalPiAut F X d π M.lattice.sheaf hπ ^ l).asIso.hom) = M.frameToTotal F
     have hp :
-        (rationalPiAut F X d π M.lattice.sheaf hπ ^ k).hom ≫
-          (rationalPiAut F X d π M.lattice.sheaf hπ ^ l).hom =
-        (rationalPiAut F X d π M.lattice.sheaf hπ ^ (k + l)).hom := by
+        (rationalPiAut F X d π M.lattice.sheaf hπ ^ k).asIso.hom ≫
+          (rationalPiAut F X d π M.lattice.sheaf hπ ^ l).asIso.hom =
+        (rationalPiAut F X d π M.lattice.sheaf hπ ^ (k + l)).asIso.hom := by
       rw [add_comm k l, zpow_add]
       rfl
     rw [hp, h, zpow_zero]

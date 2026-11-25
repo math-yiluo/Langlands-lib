@@ -1,7 +1,7 @@
 # Relative Weyl representatives in a special-point parahoric
 
-Author: Worker 102. Extracted by Integrator from the published
-`Langlands.BruhatTits.Iwasawa.AvailableProof`; the accepted Cartan proof carried
+Extracted from the published
+`Langlands.BruhatTits.Iwasawa.AvailableProof`; the Cartan proof carried
 the same four arguments. Their statements and proofs are preserved, and the
 final theorem is shared by both consumers.
 

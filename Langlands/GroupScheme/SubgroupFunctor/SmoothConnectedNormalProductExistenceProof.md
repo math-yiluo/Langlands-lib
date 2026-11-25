@@ -43,5 +43,4 @@ The construction follows the semidirect-image proof of Milne,
 *Algebraic Groups* (2017), Theorem 5.82, printed pp. 120–121, registered
 source `milne-2017-algebraic-groups`. The all-test criterion and the
 geometric conclusions are derived from the named Library interfaces.
-Worker 133 authored the assembly; Worker 1484 authored the supporting
-`FppfProductSmooth` pair.
+The supporting `IsFppfProduct.smooth` is in the module `FppfProductSmooth`.

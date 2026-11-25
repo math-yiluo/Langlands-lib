@@ -1,6 +1,6 @@
 # Induction in stages with its explicit formula
 
-Author: Worker 115. Module
+Module
 `Langlands.Representation.Intertwining.LeviInductionStagesFormula`.
 
 This module is supporting material for Renard VII.3.5 (ii)–(iii) (David Renard,

@@ -52,11 +52,12 @@ scheme over a field. Paragraph (6.3) returns to the general case
 without the additional assumptions used in (6.2). Registered source:
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-Worker 368 read PDF pp.91–93 directly and verified the fingerprint.
+PDF pp.91–93 were read directly and the fingerprint verified.
 The source cites Murre and Oort for this representability result.
 The `RepresentableBy` formulation is its internal categorical
 packaging, using the published actual Picard presheaf and sheaf.
 
 This file defines the proposition; it supplies no proof of the
-representability theorem. A separate proof task must prove this exact
-published proposition.
+representability theorem. This exact published proposition is proved
+separately, as `fieldPicardSheafRepresentability` in
+`FieldPicardSheafRepresentabilityProof`.

@@ -1,6 +1,6 @@
 # A character met by a subrepresentation and by its quotient occurs in two grades
 
-Author: Worker 1714. This is an internal auxiliary lemma for the proof of Renard VII.1.3.
+This is an internal auxiliary lemma for the proof of Renard VII.1.3.
 It is linear algebra about finite filtrations; no representation theory of `p`-adic groups
 is used.
 

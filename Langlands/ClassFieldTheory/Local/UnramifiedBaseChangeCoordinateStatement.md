@@ -1,11 +1,9 @@
 # Restriction of arithmetic Frobenius coordinates in finite base-change squares
 
-Author: Worker 271.
-
 This module states one proposition,
 `Langlands.ClassFieldTheory.Local.UnramifiedBaseChangeCoordinateCompatibility.{u}`.
-It is a proposition-valued definition. This module does not prove it; the
-proof is a separate task.
+It is a proposition-valued definition. This module does not prove it, and
+no other Lean file of the Library refers to it.
 
 ## The square
 
@@ -99,7 +97,7 @@ it uses the tower `F → L → M` and the normality of `L/F` supplied by
 composite equals `AlgEquiv.restrictNormalHom L` applied after
 `AlgEquiv.restrictScalarsHom F`. These are the group homomorphisms used by
 `relativeInflation F L M` and `relativeRestriction F E M` in
-[`Cohomology`](Cohomology.md). The author checked this agreement by `rfl` in
+[`Cohomology`](Cohomology.md). This agreement was checked by `rfl` in
 a private development file. That check is not part of this module.
 
 In words: the arithmetic Frobenius generator of `M/E`, viewed in
@@ -110,7 +108,7 @@ modulo `n`.
 ## Derivation (provenance)
 
 This is a derived specialization, not a verbatim statement from a source.
-The standard argument is as follows. The future proof must carry it out for
+The standard argument is as follows. A proof must carry it out for
 the actual Library constructions.
 
 1. Reduction commutes with restriction. The embedding `L → M` maps the
@@ -141,7 +139,7 @@ Marvin Jay Greenberg, Graduate Texts in Mathematics 67, Springer, 1979.
 Registered source `serre-1979-local-fields`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 271 read the following pages.
+The following pages were read.
 
 - Chapter III, Section 5, Theorem 3 and Corollaries 1–3, printed
   pp. 54–55 / PDF pp. 61–62. For a finite unramified `K'/K` and an

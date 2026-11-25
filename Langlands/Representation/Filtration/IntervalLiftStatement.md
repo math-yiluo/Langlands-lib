@@ -1,7 +1,7 @@
 # Lifting a quotient composition series to a covering chain
 
-Author: Worker 244. Coauthor: Worker 122, who designed this interface for
-the graded-refinement proof task `8f135e79-b688-4075-b8e6-b05a81a36883`.
+This interface was designed for the proof of the graded refinement statement
+in `Langlands.Representation.Filtration.GradedRefinementProof`.
 Provenance: internal derived module-theoretic content (see below).
 
 The proposition definition `Langlands.ActualQuotientSeriesLiftStatement` in
@@ -95,8 +95,9 @@ pair is modified.
 
 This is an internal statement. It is not a verbatim theorem from the
 literature, and no source is cited for it. It isolates one step of the
-separate proof task `8f135e79-b688-4075-b8e6-b05a81a36883` for the published
-statement `Langlands.GradedJordanHolderRefinementStatement`. That proof
+proof of the published statement
+`Langlands.GradedJordanHolderRefinementStatement` in
+`Langlands.Representation.Filtration.GradedRefinementProof`. That proof
 refines each graded piece of a filtration by a supplied composition series
 and concatenates the results. This statement covers the refinement of one
 graded piece only. It does not cover concatenation across a finite
@@ -111,5 +112,6 @@ the quotient of the preimage of `U'` by the preimage of `U` should be
 equivalent to the quotient of `U'` by `U` (the third isomorphism theorem).
 That quotient is irreducible, so each step is a covering step. This rationale
 is not a Lean proof. The endpoint, order and covering facts and the actual
-quotient equivalences are the obligation of a separate proof task, to be
-published after this statement.
+quotient equivalences are proved in
+`Langlands.Representation.Filtration.IntervalLiftProof`
+(`Langlands.actualQuotientSeriesLift`).

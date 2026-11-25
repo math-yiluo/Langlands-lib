@@ -24,12 +24,13 @@ the divisor using Tag 0BD8. In the invertible-ideal convention, the separate
 inputs. Neither is assumed as an outer hypothesis of this proposition.
 No integrality, reducedness, connectedness, projectivity, or restriction
 on the given bundle is imposed. Affineness is an extra hypothesis only
-for this local interface; the general task retains arbitrary targets.
+for this local interface; the general
+`OpenImmersionLineBundleExtensionStatement` retains arbitrary targets.
 
 The retained source is `stacks-open-line-bundle-extension-0bd9-2026-11-01`,
 directory SHA256
 `e04f95facf97c45df0e888af89a8d92fd61988dcb397e6354110b6e4d184380d`,
 at `/home/taskhub/pilot/literature/Stacks Project - Open line-bundle extension and Cartier divisors, Tags 0BD9, 0BD8, 0AYM (HTML snapshot 2026-11-01)`.
-The complete statement, proof and comments of `0BD9.html` were read in the
-parent task. No corresponding errata file was found in bounded Library,
+The complete statement, proof and comments of `0BD9.html` were read.
+No corresponding errata file was found in bounded Library,
 private and project notes filename searches.

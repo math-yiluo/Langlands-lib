@@ -9,7 +9,7 @@ RigidifiedClassesEqualizerClosedAffineStatement.{u} →
     RigidifiedClassesEqualizerClosedStatement.{u}
 ```
 
-This unit only defines the proposition. It proves nothing. In particular it does not
+This module only defines the proposition. It proves nothing. In particular it does not
 prove `RigidifiedClassesEqualizerClosedStatement`. It only says that this statement follows
 from the two named hypotheses.
 
@@ -40,11 +40,13 @@ parameter object `T`.
 
 ## Provenance
 
-Internal. The implication is a decomposition step of this project, made in proof task
-`e3d4a3ab-f378-42af-87c5-0cd4caec7b2e` for the published conclusion. That conclusion is
+Internal. The implication is a decomposition step of this project, made in the proof of the
+published conclusion. That conclusion is
 derived from the Stacks Project, *More on Morphisms*, Lemmas 37.33.1 (tag 0BDP) and 37.33.4
 (tag 0BF0); see its paired Markdown. The present statement adds no mathematics of its own. It
 records the standard reduction of a representability statement for a Zariski-local subfunctor
 to an affine base. The hypotheses are exactly the two other published propositions. A Lean
-proof of the implication is a separate unit. The remaining inputs, proofs of the affine-base
-statement and of Zariski separatedness, are separate proof tasks.
+proof of the implication is in a separate module (`rigidifiedClassesEqualizerClosedReduction`,
+module `RigidifiedClassesEqualizerClosedReductionProof`). The remaining inputs, proofs of the
+affine-base statement and of Zariski separatedness, are in separate modules
+(`rigidifiedClassesEqualizerClosedAffine` and `rigidifiedClassesZariskiSeparated`).

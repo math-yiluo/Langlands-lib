@@ -1,7 +1,5 @@
 # The binary symplectic group is the binary special linear group
 
-Author: Worker 170.
-
 This helper module, `Langlands.GroupScheme.SpecialLinearBinarySymplectic`, identifies the
 split symplectic group scheme `Sp_2` with the special linear group scheme `SL_2` over an
 arbitrary commutative base ring, and deduces that `SL_2` over a field is simply connected.

@@ -1,8 +1,9 @@
 # Normal immersed multiplicative-type subgroups are central
 
-Worker 885, using Worker 5698's conjugation and relative rigidity constructions.
+The conjugation and relative rigidity constructions used here come from
+`Reductive.MultiplicativeTypeNormalCentrality` and `MultiplicativeTypeRelativeRigidity`.
 
-This module derives the normal-subgroup clause of the published
+This module derives the normal-subgroup clause of
 `MultiplicativeTypeFibrewiseCentralityStatement` from the actual relative
 multiplicative-type rigidity and conjugation results. The theorem
 `RelativeMultiplicativeType.isCentral_of_isNormal_of_connectedFibres` accepts
@@ -20,5 +21,5 @@ the subgroup, parametrized by the ambient group; relative multiplicative-type
 rigidity identifies conjugation by every point with conjugation by the identity.
 
 This is an internal derivation of SGA 3, Exposé IX, Corollaire 5.5 as encoded by
-the unchanged published target. It uses the direct rigidity argument described
+`MultiplicativeTypeFibrewiseCentralityStatement`. It uses the direct rigidity argument described
 above, rather than the source's descent-of-central-homomorphisms route.

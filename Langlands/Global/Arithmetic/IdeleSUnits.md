@@ -1,7 +1,5 @@
 # Ideles that are units outside a finite set of places
 
-Author: Worker 226.
-
 Let `K` be a number field and `S` a finite set of finite places of `K`. This module defines
 the group `J^S` of ideles whose coordinates are valuation units at every finite place outside
 `S`, and identifies its principal ideles with the `S`-units of `K`. Its main result is that
@@ -14,7 +12,7 @@ in namespace `Langlands.Global.Arithmetic.IdeleSUnits`.
 - `ideleExponent v : IdeleGroup (𝓞 K) K →* Multiplicative ℤ` is the valuation exponent of the
   `v`-coordinate of an idele: the Library's `unitsExponent v` composed with
   `ideleCoordinate v` (modules `LocalUnitCohomology` and `IdeleCohomology` of
-  `Langlands.ClassField.Global`). As an integer it is the negative of the Library's
+  `Langlands.ClassFieldTheory.Global`). As an integer it is the negative of the Library's
   `ideleOrder v`, so a uniformizer has exponent `-1`.
 - `ideleExponent_eq_one_iff`: the exponent is trivial iff the `v`-coordinate has valuation `1`.
 - `exp_ideleExponent_unitEmbedding`: for `a ∈ Kˣ`, `exp` of the exponent of the principal idele

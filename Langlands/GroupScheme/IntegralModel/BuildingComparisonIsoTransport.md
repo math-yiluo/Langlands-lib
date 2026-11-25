@@ -35,6 +35,6 @@ exactly the data used in these constructions.
 
 The provenance is internal composition of the integral-image transport,
 the full quotient and affine-root transport, and the metric realization
-transport. This unit assumes a comparison and an integral isomorphism. It
+transport. This module assumes a comparison and an integral isomorphism. It
 asserts neither their existence nor the unconditional
 `BuildingComparisonStatement`, and introduces no new literature assertion.

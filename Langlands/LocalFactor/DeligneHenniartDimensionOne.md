@@ -111,7 +111,7 @@ ramification index, DH81 3.2(iii).
   - the slope relation `e_K (ψ b - ψ(b/2)) = e_L (b/2)` holds;
   - the bound `e_K ψ b ≤ e_L b` holds.
 
-  Worker 1698's `relativeHerbrandPsi` (Herbrand subextension modules) is
+  `relativeHerbrandPsi` (Herbrand subextension modules) is
   intended to supply it. It is an explicit hypothesis here.
 - `exactWitnessOn_characterClass_of_linearization`: let `χ` on `K` have
   conductor `b + 1` with `b ≥ 1`, and let `c` linearize it at depth

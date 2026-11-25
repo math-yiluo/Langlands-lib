@@ -1,6 +1,6 @@
 # Deleting prescribed zero factors from an actual representation filtration: proof
 
-Author: Worker 250. Provenance: internal algebra.
+Provenance: internal algebra.
 
 The theorem `Langlands.ObjectRepFiltration.zeroFactorDeletionTheorem.{uR,uG,uV}`
 has exactly the published type

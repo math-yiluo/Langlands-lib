@@ -246,6 +246,7 @@ theorem adelicDeterminant_ofInfinite_coordinates (χ : HeckeCharacter K)
   congr 2
   exact Matrix.GeneralLinearGroup.map_det _ _
 
+set_option synthInstance.maxSize 256 in
 /-- The archimedean determinant factor of every Hecke character is smooth. -/
 theorem contMDiff_adelicDeterminant_ofInfinite (χ : HeckeCharacter K) :
     ContMDiff 𝓘(ℝ, ArchimedeanMatrix K n) 𝓘(ℝ, ℂ) ∞ (fun x : ArchimedeanGL K n =>
@@ -264,6 +265,7 @@ theorem contMDiff_adelicDeterminant_ofInfinite (χ : HeckeCharacter K) :
   simp only [Function.comp_apply, adelicDeterminant_ofInfinite_coordinates]
   rw [← Matrix.GeneralLinearGroup.val_det_apply, unitsCharacterExtension_unit]
 
+set_option synthInstance.maxSize 256 in
 /-- On every slice of the adelic matrix group, the determinant factor of every Hecke
 character is smooth in the archimedean variable. -/
 theorem contMDiff_adelicDeterminant_pair (χ : HeckeCharacter K) (b : FiniteAdelicGL K n) :

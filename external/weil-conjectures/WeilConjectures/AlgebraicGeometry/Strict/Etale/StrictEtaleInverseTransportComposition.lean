@@ -1,0 +1,24 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+module
+
+public import WeilConjectures.AlgebraicGeometry.Etale.Coefficient.EtaleCoefficientTransportInterfaces
+
+/-! # Normalized coefficient transport composition
+
+Source: Zheng, Construction 4.1, Construction 5.15 and Proposition 2.29(2).
+-/
+
+@[expose] public noncomputable section
+set_option autoImplicit false
+set_option synthInstance.maxSize 2048
+set_option backward.defeqAttrib.useBackward true
+universe u
+open CategoryTheory CategoryTheory.Functor SheafOfModules
+namespace AlgebraicGeometry
+attribute [local instance 5000] strictEtaleSystemDerived strictEtaleLevelDerived
+
+end AlgebraicGeometry

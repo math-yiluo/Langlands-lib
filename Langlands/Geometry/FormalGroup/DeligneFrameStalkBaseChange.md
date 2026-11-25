@@ -22,14 +22,16 @@ transporting that condition under base change.
 The hypotheses for this infrastructure are a commutative ring O, a field F
 with an O-algebra structure, a positive natural number d, an element pi of O,
 and an arbitrary continuous map f : X → Y. No nonzero image of pi is needed
-for this unit. There is no assumption that f is flat or that the spaces are
+for this module. There is no assumption that f is flat or that the spaces are
 schemes. The comparison and all its compatibility equations are constructed,
 rather than supplied as additional input data.
 
 The module proves transport of the unshifted frame lattice. It does not prove
 compatibility of the rational Pi operator or its integer powers, determinant
 normalization, injectivity of integral rationalization, full admissibility,
-or representability. Those remain further obligations.
+or representability. The first four are treated in `DelignePiStalkBaseChange`,
+`DeligneDeterminantBaseChange`, `DeligneRationalInjective` and
+`DeligneAdmissibleBaseChange`; representability remains separate.
 
 ## Constant unit and rational component inclusions
 

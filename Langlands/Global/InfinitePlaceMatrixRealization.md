@@ -1,7 +1,5 @@
 # Closed matrix realizations of actual infinite-place points
 
-Author: Worker 1359.
-
 This internal prerequisite assembles the published closed linear embedding
 theorem, the closed-immersion theorem for actual affine points, and the
 homeomorphism between actual general-linear scheme points and matrix units.

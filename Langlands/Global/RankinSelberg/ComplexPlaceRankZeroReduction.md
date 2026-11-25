@@ -1,9 +1,9 @@
 # The complex-place functional equation with the rank-one equal-rank case proved
 
 Module `Langlands.Global.RankinSelberg.ComplexPlaceRankZeroReduction`, namespace
-`Langlands.Global.RankinSelbergGlobal`. Intermediate result for Task 7399 (prove
-`ComplexPlaceFunctionalEquationStatement`, Jacquet 2009, Theorem 2.1, at a complex place).
-Authored by Worker 822. Provenance: internal.
+`Langlands.Global.RankinSelbergGlobal`. Intermediate result towards
+`ComplexPlaceFunctionalEquationStatement` (Jacquet 2009, Theorem 2.1, at a complex place).
+Provenance: internal.
 
 The module reduces the target to two local premises. The first is the unequal-rank local
 functional equation. The second is the equal-rank local functional equation at every positive
@@ -33,18 +33,20 @@ realizations `T`, `T'` with contragredients `Td`, `Td'` and their parameters `d`
 `((complexPairLFactor d d').denominator s)⁻¹`, the inverse of the entire function
 `.denominator`. The Lean statement writes these inverses explicitly.
 
-The two premises are open:
+The two premises are hypotheses here:
 
 1. `ComplexLocalUnequalFunctionalEquationStatement`: the Library's local unequal-rank premise
    (Jacquet 2009, Theorem 2.1 (i)–(iii), for `GL_(r+1)(ℂ) × GL_(t+1)(ℂ)` with `t < r`). It
    concerns functions in the local Whittaker models `complexWhittakerModel r d a` and
    `complexWhittakerModel t d' (-a)`. Its sign is `complexCentralSign d' ^ r`, and the
-   inverse character lists of `d` and `d'` replace `dd` and `dd'`. It is the target of
-   Task 7569.
+   inverse character lists of `d` and `d'` replace `dd` and `dd'`. The Library proves it as
+   `complexLocalUnequalFunctionalEquation` (module `ComplexPlaceUnequalFunctionalEquationProof`).
 2. `ComplexLocalEqualAtRankStatement r` for every `r > 0`: the Library's local equal-rank
    premise `ComplexLocalEqualFunctionalEquationStatement` with the rank index fixed to `r`
    (defined in the Library module `ComplexLocalEqualRankZeroReduction`). The rank index `r`
-   corresponds to `GL_(r+1)(ℂ) × GL_(r+1)(ℂ)`, so `r > 0` means size at least two.
+   corresponds to `GL_(r+1)(ℂ) × GL_(r+1)(ℂ)`, so `r > 0` means size at least two. The Library
+   proves the full equal-rank statement as `complexLocalEqualFunctionalEquation` (module
+   `ComplexPlaceEqualFunctionalEquationProof`).
 
 ## The proof
 
@@ -76,7 +78,7 @@ The theorem uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 ## Complex Tate theory
 
 The Library theorem `Langlands.LocalFactor.ComplexTate.complexArchimedeanTateStatement`
-(module `Langlands.LocalFactor.Archimedean.ComplexTateProof`, Worker 279, Task 7762) proves
+(module `Langlands.LocalFactor.Archimedean.ComplexTateProof`) proves
 the Library proposition `Langlands.LocalFactor.ComplexArchimedeanTateStatement` with no
 hypotheses. That proposition is Tate's local theory at a complex place. It concerns the zeta
 integrals `∫ f(z) (z/|z|)^m |z|^(2(s+t)-2) dμ(z)` of Schwartz functions `f` on `ℂ`, where `μ`
@@ -89,8 +91,7 @@ theorem.
 
 The case `r = 0` is `complexLocalEqualAtRankStatement_zero` in the Library module
 `ComplexLocalEqualRankZeroReduction`, with its helper modules `ComplexRankZeroHaar`,
-`ComplexRankZeroWhittaker` and `ComplexRankZeroLocal`. Worker 822 wrote them and Worker 262
-submitted them in Task 7570. They identify the rank-one Whittaker models with multiples of
+`ComplexRankZeroWhittaker` and `ComplexRankZeroLocal`. They identify the rank-one Whittaker models with multiples of
 `χ_c ∘ det`, and the rank-one integrals with complex Tate zeta integrals. The rank-one factors
 are `L(s, [c] × [c']) = Γℂ(s + t + |m|/2)`, `L(1 - s, [c⁻¹] × [c'⁻¹]) = Γℂ(1 - s - t + |m|/2)`
 and `ε = |a| (a/|a|)^m |a|^(2(s+t-1)) i^|m|`. Here `m` and `t` are the weight and exponent of
@@ -100,12 +101,12 @@ Tate's local functional equation from `ComplexArchimedeanTateStatement`.
 ## What is not proved
 
 The module does not prove the unequal-rank local statement, and it does not prove the
-equal-rank local statement at positive rank indices. The required proof of
+equal-rank local statement at positive rank indices. The unconditional proof of
 `ComplexPlaceFunctionalEquationStatement` remains open.
 
 ## Provenance
 
-Internal intermediate result of Task 7399: our own conditional reduction of
+Internal intermediate result: our own conditional reduction of
 `ComplexPlaceFunctionalEquationStatement`, stated as an implication. The target is Jacquet,
 *Archimedean Rankin–Selberg integrals* (2009), Theorem 2.1, at a complex place. Its
 equal-rank case `n = n' = 1` is Tate's local functional equation at `ℂ`: J. T. Tate,

@@ -1,7 +1,5 @@
 # Geometrically maximal tori over finite fields
 
-Author: Worker 1442.
-
 `Langlands.GroupScheme.finiteFieldGeometricMaximalTorus` proves the exact
 published `FiniteFieldGeometricMaximalTorusStatement.{u}` for arbitrary
 universe `u`. For every finite field `k : Type u` and smooth connected affine

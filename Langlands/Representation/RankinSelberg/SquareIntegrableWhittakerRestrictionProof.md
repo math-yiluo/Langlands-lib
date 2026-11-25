@@ -1,7 +1,5 @@
 # The square-integrable Whittaker restriction-square estimate
 
-Author: Worker 381.
-
 This module proves the Library statement
 `Langlands.RankinSelberg.SquareIntegrableWhittakerRestrictionStatement.{uF,uV}`
 (module `Langlands.Representation.RankinSelberg.SquareIntegrableWhittakerRestrictionStatement`):

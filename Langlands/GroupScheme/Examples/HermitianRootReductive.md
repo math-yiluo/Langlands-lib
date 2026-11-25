@@ -1,6 +1,6 @@
 # Connected reductivity of the actual weighted Hermitian group
 
-This internal derived unit proves connected reductivity of
+This module proves connected reductivity of
 `HermitianRoot.SchemeModel.groupScheme k L H w hw`, the actual affine
 scheme equalizer of inverse adjoint and identity in the Weil restriction of
 special linear matrices. The coefficients are a separable quadratic field

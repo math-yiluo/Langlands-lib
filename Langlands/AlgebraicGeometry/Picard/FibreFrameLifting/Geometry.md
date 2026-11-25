@@ -1,7 +1,5 @@
 # Base-change squares over an affine open, its fibre and a smaller affine open
 
-Author: Worker 1119.
-
 For morphisms `h : X ⟶ S`, `h₁ : X₁ ⟶ S` and `i : X₁ ⟶ X` with `hi : i ≫ h = h₁`, this module
 names the base changes used in the proof of
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement` and proves the pullback squares

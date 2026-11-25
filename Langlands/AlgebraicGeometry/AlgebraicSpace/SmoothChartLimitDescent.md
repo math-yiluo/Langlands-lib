@@ -34,4 +34,4 @@ published hypotheses. It does not prove the other seven conjuncts or the
 full eight-property target.
 
 The constructions and reduction are derived from the cited Library declarations
-and their conventions; no outside source is used in this internal unit.
+and their conventions; no outside source is used in this internal module.

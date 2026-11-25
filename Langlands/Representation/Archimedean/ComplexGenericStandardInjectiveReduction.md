@@ -1,7 +1,6 @@
 # Reduction of the irreducibility of generic standard modules for `GL_n(ℂ)`
 
-Worker 376 wrote this module for task `d3d2a4fc-0566-4045-b7c0-9ee47ceb167b` (Task 6311). That
-task's target is the Library's `Langlands.Archimedean.ComplexGenericStandardInjectiveStatement`
+The target of this module is the Library's `Langlands.Archimedean.ComplexGenericStandardInjectiveStatement`
 (S2, module `Langlands.Representation.Archimedean.ComplexGenericParameterReduction`). S2 says:
 for every list `ds` of `n` complex characters in the Langlands order, every surjective
 intertwining map `A` from the `U(n)`-finite functions of the standard module of `ds` onto an
@@ -119,7 +118,7 @@ a permutation of `σ`. This is the uniqueness half of the Langlands classificati
 hypothesis cannot be dropped (see the `GL_2(ℂ)` example in
 `ComplexGenericParameterReduction.md`).
 
-An informal argument, as a guide for the proof task. Let `X = V`. `X` is irreducible and
+An informal argument, as a guide for a proof of V2. Let `X = V`. `X` is irreducible and
 receives an injective intertwining map from `I(ds')`. The image is a nonzero invariant subspace,
 so `X ≅ I(ds')` and `I(ds')` is irreducible. Let `σ''` be the Langlands-ordered rearrangement
 of `ds'`. Principal series whose parameters differ by a permutation have the same composition
@@ -161,11 +160,12 @@ here because S2 itself is only used to prove that statement, in
 
 ## Scope
 
-None of K, V1 or V2 is proved here; each needs a separate proof task. Like S1 and S2, they
+None of K, V1 or V2 is proved here; the Library proves them in `ComplexGenericLargeProof`,
+`ComplexLargePrincipalSeriesProof` and `ComplexStandardSurjectionInjectiveProof`. Like S1 and S2, they
 are stated for the Library's algebraic `(𝔤, K)`-modules and its `complexStandardModule`. Their
 truth relies on identifying `kFiniteFunctions (complexStandardModule n ds) (unitaryCompact ℂ n)`
-with the Harish-Chandra module of the classical principal series. The prerequisites that
-the Task 6311 contract lists are covered as follows. The passage from algebraic Whittaker
+with the Harish-Chandra module of the classical principal series. The prerequisites of
+S2 are covered as follows. The passage from algebraic Whittaker
 functionals to genericity in the sense of the sources is K, in the form "generic ⇒ large".
 The irreducibility of a standard module with generic Langlands quotient is V1 together with
 V2, which is the route of Vogan 1978 cited by Jacquet 2009 (p. 9, "For an algebraic proof of

@@ -1,6 +1,6 @@
 # KP Corollary 2.6.28 for the actual minimal-Levi zero subgroup, from its structural inputs
 
-Worker 1512 and Worker 1532. This module is an internal conditional assembly
+This module is an internal conditional assembly
 toward the second conjunct of
 `Langlands.Geometry.Building.ZeroSubgroupDatum.MinimalLeviZeroComparisonStatement`,
 namely `E.CentralizerZeroIntersectionStatement`:
@@ -20,8 +20,9 @@ valuation of `K`, and `M(K)^1 = characterValuationKernel v M`.
 
 ## Structural inputs
 
-The following published Library statements have not yet been proved. They
-appear as explicit hypotheses:
+The following Library statements appear as explicit hypotheses. The Library
+proves all of them; `ZeroSubgroupDatum.minimalLeviZeroComparison` (module
+`KPMinimalLeviZeroComparisonProof`) discharges them:
 
 - `hC : CocenterQuotientExistenceStatement`
   (`Langlands.GroupScheme.Derived.CocenterQuotientStatement`),
@@ -155,14 +156,13 @@ Assume `hC hF hB1 hPL hsc` and
 `hG : SplitTorusCentralizerDerivedSimplyConnectedStatement`
 (`Langlands.GroupScheme.SimplyConnected.SplitTorusCentralizerDerivedStatement`:
 in a simply connected group, the derived subgroup of a split-torus centralizer
-is simply connected; also not yet proved). Then
+is simply connected; also discharged in `KPMinimalLeviZeroComparisonProof`). Then
 `E.MinimalLeviZeroComparisonStatement` holds for every actual
 `E : ZeroSubgroupDatum i j`. It is the pair of
 `E.centralizerZeroNormKernel_of_inputs hC hF hG hB1 hsc` (KP Lemma 2.6.27,
 from `KPMinimalLeviZeroNormKernelReduction`) and
 `E.centralizerZeroIntersection_of_inputs hC hF hB1 hPL hsc`. It is a
-proof-valued `def` (with `linter.defProp` off) so that it can serve as a
-definition-kind entry; Worker 1532 suggested it.
+proof-valued `def` (with `linter.defProp` off).
 
 All declarations use only the axioms `propext`, `Classical.choice` and
 `Quot.sound`.

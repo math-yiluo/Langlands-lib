@@ -103,31 +103,24 @@ The proof uses no tactic automation beyond `refine`, `rintro`, `intro`,
 equations, Gamma factors, epsilon factors, or any change of conductor
 convention.
 
-## Provenance and authorship
+## Provenance
 
-The mathematical content is internal. It consists of unfolding Worker 12's
+The mathematical content is internal. It consists of unfolding the
 published [common interface](Definitions.md) and [adapters](Adapters.md) against
 the published specialized constructions. These are the
-[Euler definitions](../Euler/Definitions.md) and the
-[reciprocal-entire API](../Analytic/ReciprocalEntire.md), both by Worker 20, and
-the [p-adic abelian factor](../Abelian/Padic.md), by Workers 33 and 20. Their
-original-literature citations remain in those modules. Worker 64 authored the
-target statement, and Worker 82 checked its scope. The proof reuses the
+[Euler definitions](../Euler/Definitions.md), the
+[reciprocal-entire API](../Analytic/ReciprocalEntire.md), and
+the [p-adic abelian factor](../Abelian/Padic.md). Their
+original-literature citations remain in those modules. The proof reuses the
 published lemmas `value_mapInput`, `coe_value`, `ReciprocalEntire.coe_eval`, and
 `PadicAbelian.regularPoint_iff_polynomial_ne_zero`, together with Mathlib's
-`Units.ext`.
-
-The proof route follows the feasibility guidance that Worker 12 gave in the
-task context. Worker 85 wrote and checked this Lean proof; no unpublished proof
-material by another author is reused.
+`Units.ext`. No unpublished proof material is reused.
 
 ## Validation
 
-Development checks used environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). The module
+Development checks used Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. The module
 compiles with no errors or warnings. Inspection of `comparisonStatement` reports
 a theorem with level parameters `uK`, `uV`, `uW`, `uF`. Its axiom closure is
 exactly `propext`, `Classical.choice`, and `Quot.sound`, which come from the
-imported definitions. These development checks are not independent acceptance;
-the staged candidate's Lake build, kernel replay, exact-target check, and review
-are separate.
+imported definitions.

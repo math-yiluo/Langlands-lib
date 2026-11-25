@@ -1,13 +1,12 @@
 # The specified generic map of recovered apartment tori
 
-This derived internal unit constructs the generic map of the actual integral
+This derived internal module constructs the generic map of the actual integral
 extension from `UnramifiedRecoveredTorusMap` on its prescribed generic tori
 and identifies it with its prescribed input morphism.
 It composes that module with `IntegralTorusCharacterNaturality.genericFibreMap`
 and the conversion `IntegralSplitTorusData.toIntegralTorusData` from
 `IntegralSplitTorusConversion`. The direct provider import supplies the same
-adapter without the unrelated facet-sign descent interface. All declaration
-types and proof bodies are unchanged. It adds no independent literature assertion.
+adapter without the unrelated facet-sign descent interface. It adds no independent literature assertion.
 
 For `genericFibreMap_homToSplitTorus`, let R and K be types in a common universe,
 with R a commutative domain, K a field and an R-algebra which is its fraction

@@ -1,10 +1,9 @@
 # Hartogs extension across a point with factorial stalk
 
-Author: Worker 919.
-
 Module `Langlands.AlgebraicGeometry.FactorialHartogsExtension`, namespace
-`Langlands.AlgebraicGeometry.FactorialHartogsExtension`. This is an internal supporting unit
-for Task 7586. It is the section-extension form of the codimension statement
+`Langlands.AlgebraicGeometry.FactorialHartogsExtension`. This is an internal supporting module
+for the proof of `Langlands.GroupScheme.RankOneCentralCoverStatement` (`rankOneCentralCover` in
+`Langlands.GroupScheme.Reductive.RankOneCentralCoverProof`). It is the section-extension form of the codimension statement
 `FactorialAffineComplement.false_of_generization_chain`, and it uses the same algebraic input,
 `FactorialLocalHartogs.exists_eq_of_forall_pow_mul`. This is the classical Hartogs property of
 normal (here factorial) local rings of dimension at least two. The module proves it directly,

@@ -23,7 +23,8 @@ for actual line bundles) as its first explicit argument `cube`.
   It takes the same arguments and returns an actual isomorphism of this
   type, chosen with `Classical.choice` from the theorem. Downstream code uses
   it to transport cohomology along `ψ_n^* L ≅ …`. It has the same form as
-  Worker 316's published `fieldSymmetricMultiplicationPullbackIsoOfCube`, which
+  the published `fieldSymmetricMultiplicationPullbackIsoOfCube` (module
+  `Langlands.AbelianScheme.FieldSymmetricMultiplicationPullbackAssembly`), which
   treats symmetric line bundles.
 
 ## Source and provenance
@@ -47,7 +48,7 @@ which is a premise here. The hypotheses on `G` are the ones in
 The private helpers `multiplication_pullback_zero`, `tensorObj_invertible`,
 `lineBundle_invertible`, `lineBundle_pullback_invertible`,
 `tensorPow_invertible`, `picard_tensorObj`, `picard_tensorPow` and
-`picard_cube_pullback` are copied from Worker 316's published
+`picard_cube_pullback` are copied from the published
 `Langlands/AbelianScheme/FieldSymmetricMultiplicationPullbackAssembly.lean`.
 `multiplication_pullback_zero` uses the private lemma
 `lineBundle_constant_pullback_trivial`, which is also copied. The helpers
@@ -75,8 +76,3 @@ additive identity
 
 `fieldMultiplicationPullbackIsoOfCube` is `Classical.choice` applied to the
 theorem.
-
-## Authors
-
-Worker 1137 adapted Worker 316's helpers and wrote the theorem. Worker 1147
-added the definition. Worker 316 approved reusing its helpers.

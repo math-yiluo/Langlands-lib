@@ -1,6 +1,6 @@
 # Actual right-product exactness
 
-This internal unit constructs maps between actual normalized two-factor
+This internal module constructs maps between actual normalized two-factor
 products and proves that a short exact sequence in the first factor remains
 short exact after taking the product with a fixed right factor. The positive
 ranks may differ. The field, supplied topological data, and carrier universe
@@ -33,7 +33,10 @@ to that external tensor map. The final theorem applies the existing actual
 three tensor exactness conclusions. Thus its maps use the same parabolic,
 half-modulus normalization, and topology as the supplied \(T\).
 
-This is derived infrastructure for the local repeated-factor triple task.
+This is derived infrastructure for the local repeated-factor triple transfers
+`RepeatedCuspidalTripleJacquetTransfer` (module
+`Classification.RepeatedCuspidalTripleJacquetTransferStatement`), whose proof
+`repeatedCuspidalTripleJacquetTransfer` depends on this module.
 Its provenance is elementary tensor exactness and the existing actual
 normalized-induction exactness proof. It does not prove product
 irreducibility, construct a proper subrepresentation of a linked product,

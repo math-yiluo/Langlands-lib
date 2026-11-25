@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockJacquetConvergence.DominantGrowth`,
 namespace `Langlands.RankinSelberg.TwoBlockConvergence`.
 
-Author: Worker 886.
-
 This is a helper module for the proof of
 `Langlands.RankinSelberg.TwoBlockJacquetConvergenceStatement` (JPSS 1983,
 Section (4.6)). It proves the elementary "finite growth exponent" estimate on

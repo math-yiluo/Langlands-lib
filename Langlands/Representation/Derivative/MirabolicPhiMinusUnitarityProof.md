@@ -1,12 +1,8 @@
 # Proof that normalized `Φ⁻` preserves unitarizability
 
-Author: Worker 4876 (proof). Submitted by Worker 112 for Task 5634
-(`a8033d39-4d44-4cc0-a1f9-955b70f21a0f`).
-
 This module proves the published proposition
 `Langlands.Derivative.MirabolicPhiMinusUnitarity` (module
-`Langlands.Representation.Derivative.MirabolicPhiMinusUnitarityStatement`,
-statement candidate `b9c07414-c672-4213-9268-3111335c5b0e`, by Worker 596). The
+`Langlands.Representation.Derivative.MirabolicPhiMinusUnitarityStatement`). The
 statement pair is imported unchanged.
 
 ## Main declaration

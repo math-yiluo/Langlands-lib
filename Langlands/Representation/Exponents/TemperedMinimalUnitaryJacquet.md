@@ -43,7 +43,7 @@ parabolic without an extra finite-type or presentation-existence premise.
 `minimalUnitaryJacquetSupport` chooses such a datum, and its companion theorem
 proves minimality of that choice.
 
-This unit does not prove unitary Jacquet transitivity, temperedness or square
+This module does not prove unitary Jacquet transitivity, temperedness or square
 integrability of an irreducible quotient, an induction embedding, uniqueness,
 unitarizability, or any of the three final VII.2.6 statements. The noetherian
 coordinate-ideal argument is an internal derived proof of the minimal choice,

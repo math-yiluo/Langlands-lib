@@ -1,8 +1,7 @@
 # Ramified twist isolation from two arithmetic inputs
 
-Author: Worker 84. This is a derived statement for the H1–H2 arithmetic
-interface of the global automorphic and Henniart-input program
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
+This is a derived statement for the H1–H2 arithmetic
+interface of the global automorphic and Henniart-input program.
 
 The proposition
 `Langlands.Global.RamifiedTwistIsolationOfInputsStatement.{u}` is exactly
@@ -42,8 +41,10 @@ combines these with the given characters on `S`, chooses a common positive
 multiple of their finitely many periods, and applies the first premise to
 `S ∪ T` with trivial infinity character. Disjointness makes the prescription
 unambiguous. Exact local component equality transfers the chosen
-principal-unit witnesses. A separate proof task must establish this
-implication; this file only defines its proposition.
+principal-unit witnesses. The implication is proved by
+`Langlands.Global.ramifiedTwistIsolationOfInputs` in
+`Langlands.Global.Arithmetic.RamifiedTwistIsolationReductionProof`; this file
+only defines its proposition.
 
 ## Source correspondence and boundary
 
@@ -54,7 +55,7 @@ Registered source `henniart-1986-cyclic`, SHA-256
 `096fba993b7368b1af9f7cc1f0c053e5436ba447f291c2acd402f058eb44b0ba`,
 retained original
 `/home/taskhub/central-library/Henniart--On the Local Langlands Conjecture for GL(n) The Cyclic Case--1986.pdf`.
-Worker 84 read these original pages and visually checked p.159.
+These original pages were read and p.159 was visually checked.
 
 Proposition 3.4 gives unrestricted finite-order global prescription with
 the doubled period bound. Section 4.3 chooses finite-order local characters
@@ -73,5 +74,3 @@ This statement supplies no local stability formula, functional equation,
 gamma-factor comparison or separation of L and epsilon factors. Those are
 separate consumers. It also supplies neither the unconditional
 Grunwald–Wang theorem nor the local finite-order character existence premise.
-Compilation and proposition inspection are development checks; independent
-semantic acceptance and publication remain separate.

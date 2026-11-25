@@ -7,10 +7,8 @@ imports the published `ArchimedeanCartanSymbol` module and, through it,
 the normalized Cartan basis of `ArchimedeanCasimirCartan`, the genuine
 differentiation of `ArchimedeanSmoothDifferential` and the genuine
 enveloping action of `ArchimedeanEnvelopingAction`. None of those modules
-is changed. Worker 94 wrote the development; Worker 880 checked it
-against the published prerequisites and added the documentation of the
-coordinate-extension specializations and the constant-polynomial
-corollary.
+is changed. The development was checked against the published
+prerequisites.
 
 Every declaration is stated for an arbitrary number field `K : Type u`
 and every natural rank `n`, including `n = 0`. The carrier is the

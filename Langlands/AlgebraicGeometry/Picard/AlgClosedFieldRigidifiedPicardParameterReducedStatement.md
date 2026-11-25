@@ -47,8 +47,7 @@ inside `namespace Langlands.AbelianScheme`, with
 `Langlands.AlgebraicGeometry.Picard.RelativePicardZero`,
 `Mathlib.AlgebraicGeometry.Morphisms.FiniteType` and
 `Mathlib.FieldTheory.IsAlgClosed.Basic`. With `pp.fieldNotation false`,
-`pp.proofs true` and `pp.funBinderTypes true`, `#print` in the pinned
-environment reports:
+`pp.proofs true` and `pp.funBinderTypes true`, `#print` reports:
 
 ```text
 def Langlands.AbelianScheme.AlgClosedFieldRigidifiedPicardParameterReducedStatement.{u} : Prop :=
@@ -66,7 +65,7 @@ def Langlands.AbelianScheme.AlgClosedFieldRigidifiedPicardParameterReducedStatem
 ```
 
 Here `↧k` is `CommRingCat.of k`, and `_proof_1 k A` is the auxiliary proof
-term that Lean abstracts from `unitSection_comp A`. A private check confirmed
+term that Lean abstracts from `unitSection_comp A`. A check confirmed
 by `rfl` that the conclusion is Mathlib's scheme class
 `AlgebraicGeometry.IsReduced`, not the ring-theoretic `IsReduced`.
 
@@ -160,8 +159,9 @@ universal for all test schemes.
 Theorem (6.18) and Proposition (3.17) are proved in the source; the proof
 of (6.18) works with the Picard scheme whose existence §3 admits. The Lean
 declaration here is only a stated proposition, not a proved theorem.
-Proving it is a separate exact-target task, after this statement is
-published.
+Its proof is the separate module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldRigidifiedPicardParameterReducedProof`
+(`Langlands.AbelianScheme.algClosedFieldRigidifiedPicardParameterReduced`).
 
 ## Remarks on a proof
 
@@ -183,22 +183,19 @@ this in `universalCommGrpObj`, conditional on seven named Library
 propositions that it takes as explicit arguments. This module does not
 import it.
 
-The planned route compares the tangent space at the trivial parameter with
+The route compares the tangent space at the trivial parameter with
 actual `H¹(A, O_A)` and bounds its dimension using (6.15). It obtains the
 opposite local-dimension bound from an ample line bundle `M` on `A` whose
 group scheme `K(M)` is finite (Lemmas (2.17) and (2.19)). It then uses
-regularity and translations. Each of these inputs must be proved and
-published as its own unit before it is used. This module imports none of
-them and assumes none of their unproved propositions.
+regularity and translations. These inputs are proved in the Library and
+imported by the proof module. This module imports none of
+them and assumes none of their propositions.
 
 ## Intended use
 
 This is the algebraically closed core of the published arbitrary-field
-statement `FieldRigidifiedPicardParameterGeometricallyReducedStatement`
-(proof task `9cd303c4-a699-432a-8e44-0c6446ebc0df`). That task's final
-assembly also needs inputs not stated here, such as passing from an
+statement `FieldRigidifiedPicardParameterGeometricallyReducedStatement`.
+Its proof `Langlands.AbelianScheme.fieldRigidifiedPicardParameterGeometricallyReduced`
+(module `Langlands.AlgebraicGeometry.Picard.FieldRigidifiedPicardParameterGeometricallyReducedProof`)
+also needs inputs not stated here, such as passing from an
 arbitrary field to an algebraic closure and descending reducedness back.
-
-Worker 1001 wrote the Lean statement and this explanation, checked the
-cited source passages and the reused declarations, and compiled the module
-in the pinned environment.

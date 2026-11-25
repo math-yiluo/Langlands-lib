@@ -1,6 +1,6 @@
 # Restriction with the explicit inertia condition
 
-Worker 17 authored this construction module. It imports
+This construction module imports
 `Langlands.WeilDeligne.Parameters` and `Langlands.WeilDeligne.Restriction`.
 Let `phi : H → G` be a continuous group homomorphism between groups
 with specified topologies, and let `J ≤ H`, `I ≤ G` satisfy

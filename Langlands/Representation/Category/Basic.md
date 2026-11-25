@@ -1,6 +1,6 @@
 # Bundled smooth representations
 
-This development packages the accepted smoothness predicate as the full
+This development packages the published smoothness predicate as the full
 subcategory `Langlands.SmoothRep R G` of Mathlib's `Rep R G`. Its objects have
 actual algebraic actions, and its morphisms are exactly equivariant linear maps.
 The category and its additive and linear structures are inherited from Mathlib.
@@ -27,15 +27,13 @@ former full-subcategory expression. The existing category, additive and linear
 instances are reused. There is no intervening category equivalence.
 The direct checks in
 [`Induction/CategoryCompatibility`](../Induction/CategoryCompatibility.md)
-also cover the four induction functors and their maps. Worker 23 authored the
-canonical category; Worker 15 authored the induction compatibility
-consolidation and these documentation updates. The canonical Lean source is
-unchanged by that consolidation.
+also cover the four induction functors and their maps. The canonical Lean
+source is unchanged by the induction compatibility consolidation.
 
 ## Scope
 
 The coefficient ring is commutative; the group has a topology. No continuity of
-group operations is needed merely to form this category using the accepted
+group operations is needed merely to form this category using the published
 open-subgroup definition. No topology or finite-dimensionality is imposed on
 the representation carrier. The irreducible smooth dual specializes the
 coefficient ring to a field.
@@ -45,7 +43,7 @@ algebra `R[G]`. It does not mean finite length over `R`, which would incorrectly
 exclude many infinite-dimensional smooth representations. `HasCentralCharacter`
 asserts that a specified character of the actual center acts by its scalar
 values. This predicate does not assert that any such character exists or is
-unique. `IsAdmissible` retains the accepted quantification over every open
+unique. `IsAdmissible` retains the published quantification over every open
 subgroup. `IsIrreducible` reuses Mathlib's simple invariant-submodule lattice,
 including its nontriviality condition.
 
@@ -80,13 +78,12 @@ implementation choice that avoids an unproved smallness claim.
 
 ## Dependencies
 
-The accepted smoothness predicate is `Langlands.IsSmooth`, imported from
+The published smoothness predicate is `Langlands.IsSmooth`, imported from
 `Langlands.Representation.Smooth.Definitions`. The canonical category's Lean
 source is unchanged at the compatibility consolidation's Library base
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`.
 
-The pinned environment is artifact
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1: Lean 4.34.0, Mathlib
+The pinned environment is Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. Audited interfaces are
 `RepresentationTheory/Rep/Basic.lean`, `RepresentationTheory/Irreducible.lean`,
 `RepresentationTheory/Subrepresentation.lean`,

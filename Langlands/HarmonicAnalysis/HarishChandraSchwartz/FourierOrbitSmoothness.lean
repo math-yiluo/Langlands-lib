@@ -10,7 +10,7 @@ Waldspurger, Proposition VII.1.3 (printed p. 316): for `f ∈ C(G)`, `ψ_f[O, P]
 `C^∞(O, P)`, and `f ↦ ψ_f[O, P]` is continuous. The proof: "Grâce au Lemme VII.1.2 et à la
 continuité de l'application `f ↦ f^{(P)}`, on est ramené au cas `M = G`."
 
-Here `C^∞(O, P)` is Worker 200's `productInducedSmoothOrbitSections`: coherent sections over the
+Here `C^∞(O, P)` is `productInducedSmoothOrbitSections`: coherent sections over the
 representatives of the orbit of `π` under the unitary unramified characters, whose restriction to
 the fixed compact picture on `K × K` is a finite smooth family in torus coordinates `e`.
 `fourierOrbitSection_mem_smooth` proves that `ψ_f[O, P]` (`fourierOrbitSection`) lies there, and
@@ -18,7 +18,7 @@ the fixed compact picture on `K × K` is a finite smooth family in torus coordin
 coherence is `fourierOrbitSection_mem_coherent`; at a point `(k₁, k₂)` of `K × K` the value of
 `f̂(ω_z, P)` is `[f^{(P),Ind}(k₁, k₂)]^(ω_z, M)` by Lemma VII.1.2 (`eval_inducedFourierTransform`),
 which is smooth in `z` by the case `M = G` (`TwistedFourierIdentification`), since
-`d(ω ⊗ χ) = d(ω)` (`representationFormalDegree_unitaryTwist`). Worker 200's
+`d(ω ⊗ χ) = d(ω)` (`representationFormalDegree_unitaryTwist`).
 `mem_finiteSmoothFamilies_of_common_open_stabilizer` assembles the values, using that all
 `f̂(ω_z, P)` are right invariant under `H × H` for a compact open `H` under which `f` is
 bi-invariant. The continuity assertion is not addressed: no topology on `C^∞(O, P)` is defined.
@@ -73,7 +73,7 @@ theorem Space.constantTermInd_mul_of_isBiInvariant [Nonempty (CompactOpenSubgrou
 
 set_option maxHeartbeats 1000000 in
 /-- **Proposition VII.1.3, smoothness** (Waldspurger, printed p. 316): for `f ∈ C(G)`,
-`ψ_f[O, P]` lies in Worker 200's smooth sections `C^∞(O, P)` over the orbit of `π`, given torus
+`ψ_f[O, P]` lies in the smooth sections `C^∞(O, P)` over the orbit of `π`, given torus
 coordinates `e` on the unitary unramified characters and a lattice map `n` with
 `χ_z(m) = ∏ⱼ zⱼ^{n(m)ⱼ}` for the character `χ_z` of parameter `z`. The proof reduces to `M`
 by Lemma VII.1.2 and applies `TwistedFourierIdentification` on `M`. -/
@@ -195,7 +195,7 @@ theorem fourierOrbitSection_mem_smooth {J : Type*} [Fintype J]
       (fun z => hTM (R z)) hΞM hσM dπ (Space.constantTermInd hD hE ht htM f (k : G × G))
 
 /-- **Waldspurger's map `C(G) → C^∞(O, P)`, `f ↦ ψ_f[O, P]`** (Proposition VII.1.3): the linear
-map `f ↦ ψ_f[O, P]` into Worker 200's smooth sections over the orbit of `π`. -/
+map `f ↦ ψ_f[O, P]` into the smooth sections over the orbit of `π`. -/
 def fourierOrbitSmoothSectionLinear {J : Type*} [Fintype J]
     (e : unitaryUnramifiedCharacters ν ≃* (J → Circle)) (hνc : ∀ i, Continuous (ν i))
     (hPK' : ∀ g : G, ∃ p : P, ∃ k : K, g = (p : G) * (k : G))

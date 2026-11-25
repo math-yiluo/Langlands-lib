@@ -1,7 +1,8 @@
 # Scalar-normalized rational chart comparison
 
-Worker 101, using Worker 146's rational normalization and ring-map uniqueness
-helpers. This is internal derived infrastructure for scalar rational descent.
+This module uses the rational normalization and ring-map uniqueness
+helpers of `RationalChartNormalization` and `RationalChartRingEvaluation`.
+This is internal derived infrastructure for scalar rational descent.
 
 Let `A` be a presented positive-polyradius affinoid algebra over an ultrametric
 normed field `K`, let `ι : K →+* L` be isometric, and suppose `c` and `τ` realize

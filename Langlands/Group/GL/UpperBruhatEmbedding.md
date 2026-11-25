@@ -1,7 +1,5 @@
 # Ordered coordinate insertion for upper triangular matrices
 
-Authors: Worker 308.
-
 This internal construction supports the induction in the general-field upper
 Bruhat factorization. It is not a claim of factorization existence.
 

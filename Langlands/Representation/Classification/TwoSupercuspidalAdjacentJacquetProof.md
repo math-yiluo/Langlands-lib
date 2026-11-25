@@ -1,8 +1,5 @@
 # Actual ordered Jacquet factors for adjacent supercuspidal products
 
-Authors: Worker 892 (the complete algebraic core) and Worker 163
-(specialization, dependency verification and this explanation).
-
 This proof establishes exactly the published proposition
 `Langlands.Classification.TwoSupercuspidalAdjacentProductJacquet`.
 Its outer telescope is
@@ -69,7 +66,9 @@ full Jacquet modules; factor counts alone are not used as equivalences.
 
 This proposition quantifies over proper nonzero invariant subspaces; it does
 not assert that one exists. Adjacent reducibility and the full product
-structure theorem remain separate obligations.
+structure theorem are separate results, proved in
+`TwoSupercuspidalAdjacentReducibilityProof` and
+`TwoSupercuspidalProductStructureProof`.
 
 ## Provenance and independence
 
@@ -80,8 +79,8 @@ Bernstein–Zelevinsky 1977, §2.16(1), printed pp.449–450/PDF pp.10–11
 content, and its proof uses the actual Library constructions.
 
 The recursive project import closure has 457 modules, all with nonempty
-paired Markdown. All 455 imported Library pairs agree with the workspace
-base. Of these, 410 modules have identical Lean and Markdown hashes to the
+paired Markdown. All 455 imported Library pairs are unchanged from the
+Library. Of these, 410 modules have identical Lean and Markdown hashes to the
 previously checked associated and nonassociated Jacquet proof closures.
 The additional modules supply the algebraic core, statements, Jacquet-length
 detection and subquotient transport, finite tensor properties, central
@@ -98,18 +97,18 @@ constructions. The direct lower results used by the core are
 `Parabolic.FirstAdjointness.equiv`, `normalizedJacquetMap_exact`,
 `jordanHolderSeriesComparison`, the Jacquet-length/count lemmas, and the
 algebraic tensor flip and Weyl transport equivalences. Each is an actual
-proved Library declaration or a proved lemma in the supplied core.
+proved Library declaration or a proved lemma in the core.
 
 Neither the imports nor the mathematical route use general derivatives,
 Ze80's segment derivative formulas, segment product irreducibility or segment
 Jacquet formulas, special-head or reverse-socle existence, ordered
 multisegment head/socle existence, quotient coverage, ordered conversion,
 analytic segment classification, square-integrability, tempered uniqueness,
-or any classification or exhaustion conclusion excluded by the parent task.
+or any later classification or exhaustion conclusion.
 The inherited `Classification.Segments` module supplies lower definitions
 only; the route through `SupercuspidalSupport` uses elementary subquotient
 transport. Compact-object and unipotent-subgroup exhaustion constructions are
-unrelated to the excluded classification exhaustions. The Shahidi imports
+unrelated to the classification exhaustions. The Shahidi imports
 supply the tensor flip, without an analytic intertwining-operator premise.
 No second adjointness is used.
 
@@ -117,4 +116,4 @@ The core also contains conditional composition and product-structure
 assemblies. Their nonadjacent-irreducibility and adjacent-reducibility inputs
 remain explicit hypotheses of those lemmas. This theorem uses only the
 Jacquet conclusion, which requires neither input, so those assemblies do not
-assume the parent conclusion in this proof.
+assume the full product structure conclusion in this proof.

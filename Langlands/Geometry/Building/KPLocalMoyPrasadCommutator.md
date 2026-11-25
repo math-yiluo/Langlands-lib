@@ -2,17 +2,18 @@
 
 This internal helper adapts the Library's `MoyPrasadCommutatorGenerators`
 proof to `B : MaximalUnramified.BuildingData F H`, for
-`K = UnramifiedClosure F`, and D1's actual torus filtration with
+`K = UnramifiedClosure F`, and the actual torus filtration of `KPLocalMoyPrasadGroups` with
 `hZ : IsTorus B.centralizer.Z`. The field `F` has arbitrary characteristic,
 and all declarations are at arbitrary universe `u`.
 
 The final theorem, `localMoyPrasadCommutator_of_torus_commutator_bounds`, has
 type `LocalMoyPrasadCommutator B hZ` under the three explicit predicates of
 `KPLocalMoyPrasadDoubleRootConjugation`: ordinary torus commutator
-friendliness (S1 clause 1), root compatibility (S1 clause 2), and the
-independent actual doubled-root estimate requested in Task 6543. These
+friendliness (clause 1 of `QuasiSplitLocalTorusFiltrationStatement`), root
+compatibility (its clause 2), and the independent actual doubled-root estimate
+of `KPLocalDoubleRootCommutatorStatement`. These
 hypotheses are not discharged in this module. This is not an unconditional
-proof of clause 3 or of the full S2 statement.
+proof of clause 3 or of the full statement `LocalMoyPrasadGroupPropertiesStatement`.
 
 ## Implemented proof
 
@@ -21,7 +22,7 @@ proof of clause 3 or of the full S2 statement.
   lemmas `mem_filtration_vadd_of_mem` and `mem_filtration_of_mem_vadd` then
   read depths at translated apartment points using
   `KPApartmentData.filtration_mk_vadd`.
-- `moyPrasad_eq_closure` rewrites D1's subgroup as the closure of its torus
+- `moyPrasad_eq_closure` rewrites the subgroup of `KPLocalMoyPrasadGroups` as the closure of its torus
   image and the union of its individual root filtrations. The theorem
   `filtrationBlock_vadd_subset_moyPrasad` places a root block at a translated
   point in the original-point subgroup whenever both translated-back root
@@ -81,6 +82,7 @@ The independent sharper torus estimate is motivated by the quasi-split
 SU3 computation in the proof of KP Proposition 7.1.1 (printed pp.239–240,
 PDF pp.270–271). This module assumes it explicitly and does not derive it
 from normality, Iwahori factorization, or torus intersection. Consequently
-there is no dependency on the parent S2 conclusions in that estimate.
-Acceptance of this conditional helper alone would not discharge the exact
-unconditional S2 target.
+there is no dependency on the conclusions of
+`LocalMoyPrasadGroupPropertiesStatement` in that estimate. This conditional
+helper alone does not prove the exact unconditional
+`LocalMoyPrasadGroupPropertiesStatement`.

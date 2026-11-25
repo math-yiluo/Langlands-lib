@@ -104,7 +104,8 @@ theorem cocharacterTangent_single (i : I) :
   by_cases hij : i = j
   · subst j
     simp
-  · simp [hij, Ne.symm hij]
+  · rw [if_neg hij, AddEquiv.map_zero]
+    simp [hij, Ne.symm hij]
 
 /-- Coordinate cocharacters span the actual Lie algebra of a standard split torus. -/
 theorem span_cocharacterTangent_standard :

@@ -1,7 +1,5 @@
 # Invariant forms on compact induction and equivariant functionals
 
-Author: Worker 805.
-
 This helper module relates invariant bilinear forms on a compactly induced
 character to equivariant functionals, and constructs the standard invariant
 pairing between compact inductions of inverse characters. It is used by the

@@ -1,6 +1,6 @@
 # A chosen-basis operator trace formula
 
-Worker 116 constructs `operatorTrace A` for an actual bounded complex-linear
+This module constructs `operatorTrace A` for an actual bounded complex-linear
 endomorphism of an arbitrary complete complex inner-product space. Mathlib's
 `exists_hilbertBasis ℂ E` supplies a basis indexed by a subset of E. Classical
 choice selects that subset and a Hilbert basis on it; `operatorTrace A` is

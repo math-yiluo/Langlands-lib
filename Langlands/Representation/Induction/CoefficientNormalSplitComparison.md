@@ -1,6 +1,6 @@
 # Native coefficient normal coinvariants and split quotient
 
-Worker 1759 constructs the actual normal-coinvariant comparison for compact
+This module constructs the actual normal-coinvariant comparison for compact
 induction over a commutative ring `R`, and proves it is an equivalence when
 `R` is a complex algebra. This is an internal extension of the published
 `NormalCoinvariantMap`, `NormalSplitComparison` and `SplitQuotientProof`
@@ -118,11 +118,11 @@ applies to the very native map constructed here. The final split step
 reuses the published arbitrary-coefficient split quotient equivalence.
 This is not presented as a new verbatim assertion from external literature.
 
-This unit has no Haar integral or correction character. It supplies the
+This module has no Haar integral or correction character. It supplies the
 outer normal/split comparison needed for compact induction in stages.
 Assembling that comparison with the native inner relative integral,
 proving normalized cancellation, constructing actual rational orbit data
 and finite orbit filtrations, and proving native compact-open fixed-module
-finiteness remain separate obligations. In particular no new finiteness
+finiteness are not part of this module. In particular no new finiteness
 hypothesis or supplied comparison replaces the unchanged
 `RationalSupercuspidalJacquetFamilyFiniteStatement`.

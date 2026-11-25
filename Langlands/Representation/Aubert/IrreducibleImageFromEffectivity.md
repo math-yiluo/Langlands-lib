@@ -1,7 +1,7 @@
 # Irreducible Aubert images assuming common-sign effectivity
 
-Authors: Worker 76 (Aubert-specific assembly), using Worker 585's actual
-fixed-factor-vector adapter and the published helpers described below.
+This module uses the actual fixed-factor-vector adapter of
+`ActualFixedFactorVector` and the published helpers described below.
 
 This internal module reduces the existing `IrreducibleImageStatement` to
 the explicit `SignedEffectivityStatement`. The latter remains a hypothesis

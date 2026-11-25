@@ -1,7 +1,5 @@
 # Statement: quasi-split inner forms over `Spec ℤ`, affine spaces and bases with trivial Picard groups
 
-Worker 75.
-
 `Langlands.GroupScheme.ReductivePicardTrivialQuasiSplitInnerFormStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It records Conrad's Remark 7.2.13, which extends

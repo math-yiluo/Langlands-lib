@@ -11,7 +11,7 @@ The base scheme and group schemes have universe `u`. There is no noetherian,
 quasicompact, field, smoothness, properness, or commutativity hypothesis in this
 predicate. It is defined on all group-scheme homomorphisms so that its restriction
 to abelian schemes can reuse it directly. It does not construct the abelian-scheme
-bundle, which is a separate dependency owned by Worker 129.
+bundle, which is defined separately, in `Langlands.AbelianScheme.Basic`.
 
 ## Provenance and source correspondence
 
@@ -22,10 +22,12 @@ a field** by exactly these three properties. The registered source is
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
 
-The present general-base definition is a chosen extension of condition (c), as
-specified in task `f0172c48-e294-4cd1-be2f-9deba8e26205`, rather than a claim that
+The present general-base definition is a chosen extension of condition (c),
+rather than a claim that
 the cited field result treats arbitrary bases or arbitrary group schemes.
 Its provenance is therefore derived. No equivalence with a finite-kernel or
 surjective-and-equal-dimension definition is asserted here. No invertibility in
 rationalized Hom spaces is asserted. Closure under composition and arbitrary base
-change will have their own precise statement and proof contribution.
+change has its own statement and proof: `IsogenyStabilityStatement`, proved as
+`Langlands.GroupScheme.isogenyStability` (with `IsIsogeny.comp` and `IsIsogeny.baseChange`)
+in the module `Langlands.AbelianScheme.IsogenyStability`.

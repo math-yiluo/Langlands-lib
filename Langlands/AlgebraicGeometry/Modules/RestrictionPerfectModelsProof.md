@@ -19,7 +19,7 @@ For `R : CommRingCat.{u}`, `X : Scheme.{u}`, `f : X ⟶ Spec R` with instances
 
 Proof.
 
-1. The published theorem `universalPerfectSections` gives a strictly perfect
+1. The theorem `universalPerfectSections` gives a strictly perfect
    complex `K` of `R`-modules and some derived isomorphism
    `e : Q.obj K ≅ RΓ_R(X, L.obj)`. Its base-change part is not used.
 2. `X` is quasi-compact because `f` is quasi-compact and `Spec R` is compact.
@@ -27,7 +27,7 @@ Proof.
    affine open cover. Let `C` be the alternating Čech complex
    `(CechResolution.cechCochainComplex f 𝒰 L.obj).extend ComplexShape.embeddingUpNat`,
    indexed by `ℤ` and zero in negative degrees. `f` is separated (it is
-   proper) and `L.obj` is quasi-coherent, so the published canonical
+   proper) and `L.obj` is quasi-coherent, so the canonical
    comparison `c = CechResolution.cechDerivedComparison f 𝒰 L.obj :
    Q.obj C ⟶ RΓ_R(X, L.obj)` is an isomorphism (`cechDerivedComparisonIso`).
 3. By `exists_chainMap_of_isStrictlyPerfect`, the derived morphism `e ≫ c⁻¹` is
@@ -35,7 +35,7 @@ Proof.
 4. The model is `K` with `a = Q.map v ≫ c`. It is an isomorphism because it
    equals `e`.
 5. Universality. Fix a pullback square
-   `hp : IsPullback p f' f (Spec.map φ)` with `φ : R ⟶ T`. The published
+   `hp : IsPullback p f' f (Spec.map φ)` with `φ : R ⟶ T`. The
    criterion `CechResolution.isIso_perfectModelBaseChange_cechDerivedComparison_iff hp L 𝒰 v hK`
    says that `perfectModelBaseChange hp L hK (Q.map v ≫ c)` is an isomorphism
    if and only if the termwise scalar extension
@@ -94,29 +94,11 @@ finite affine cover as a flat bounded representative, a chain-level lift from
 a strictly perfect model, and flat scalar extension of quasi-isomorphisms. No
 noetherian hypothesis is used.
 
-## Publication history
+## Checks
 
-Worker 950 wrote this module and `RestrictionPerfectModelsReduction`. Both
-were first published, with the same Lean bytes as here, in Library commit
-`c5eebf94883144ce00adc4e252995c28082f08a7`. They formed the accepted
-definition record `e9f50221-b816-4b25-b8bb-37dc184b044f`
-(`UniversalPerfectModel`, task `e969f1c2-7aa6-4731-abaa-2f7455f32265`).
-That record's machine validation, receipt
-`bd6588f4-067d-4ede-ab53-6629cb2fcd56`, ran the Lake build and the
-definition-policy checks. It did not compare the type of
-`restrictionPerfectModels` with the statement. Reviewer 5741's independent
-semantic review, task `2d56012e-cd8e-4f21-85dc-0abb35088e89`, accepted that
-record and covered this pair.
-
-The Lean file is unchanged in the proof record for task
-`bd06d237-4ff8-40dc-b9bc-5adaf95c69b1`. That record names
-`restrictionPerfectModels` as its proof of
-`Langlands.AlgebraicGeometry.Modules.RestrictionPerfectModelsStatement`. Its
-own machine validation compares the theorem's type with that statement and
-checks its axioms against the environment's allowed assumptions. It also
-rejects changes to the statement's Lean/Markdown pair and to the modules that
-statement imports. A development check of the unchanged module found no errors
-or warnings. It found that `restrictionPerfectModels` uses only the axioms
-`propext`, `Classical.choice` and `Quot.sound`. Independent semantic review and
-Integrator publication of that proof record are separate from the earlier
-validation, review and publication.
+The module and `RestrictionPerfectModelsReduction` were built with Lake. The
+type of `restrictionPerfectModels` is exactly
+`Langlands.AlgebraicGeometry.Modules.RestrictionPerfectModelsStatement`. A check
+of the module found no errors or warnings, and found that
+`restrictionPerfectModels` uses only the axioms `propext`, `Classical.choice`
+and `Quot.sound`.

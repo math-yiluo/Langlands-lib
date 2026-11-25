@@ -1,14 +1,13 @@
 # Bounded pushout target for positive-polyradius rational intersections
 
-Author: Worker 965.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalPresentation.RationalIntersection.BoundedPushoutStatement`
 is a proposition definition (a `def` returning `Prop`). It states that the
 actual all-products quotient of the published `GeneralizedAffinoid.RationalIntersection`
 module, with its fixed constructed restriction maps, is the pushout of the two
 original weighted rational quotients over the coefficient algebra, tested
 against bounded maps into complete ultrametric normed commutative algebras.
-This module does not prove the proposition; a separate proof task will name it.
+This module does not prove the proposition; it is proved as
+`RationalIntersection.boundedPushout` in `RationalIntersectionUniversal`.
 
 ## Quantified data
 
@@ -149,17 +148,18 @@ imported quotients and this statement use the explicit algebraic
 `GeneratesUnitIdeal` hypotheses instead, without asserting equivalence of the
 two conditions. Definition 2.2.1, printed/PDF page 9, is cited only to
 distinguish its stronger factorization property, which remains a separate
-obligation, as do comparisons with iterated relative rational quotients,
-independence of the chosen representatives, structure sheaves, analytic
-sites, and the Harris tower.
+obligation, as do independence of the chosen representatives, structure
+sheaves, analytic sites, and the Harris tower. The comparison with iterated
+relative rational quotients is `equiv` in `RationalIntersectionIterated`.
 
 The registered original is `berkovich-2009-trieste-analytic-spaces`, PDF
 SHA256 `8cfe4f6f35d5e717ac67c5c8f5ef9ff9185f460bbe5f9a10aeacd84cddeeb2ca`.
 
 ## Proposed proof route
 
-This paragraph is guidance for the later proof task, not part of the
-statement. Apply the published bounded extension property
+This paragraph describes a proof route and is not part of the statement;
+`RationalIntersectionUniversal` carries out a proof along these lines, with
+the tuple below as `pairTuple`. Apply the published bounded extension property
 `RationalPresentation.boundedExtension` to \(D\), its unit-generated tuple
 `generatesUnitIdeal K A g h f k hf hk`, the base map
 \(\varphi=\alpha\circ\operatorname{baseMap}_B\), and the tuple

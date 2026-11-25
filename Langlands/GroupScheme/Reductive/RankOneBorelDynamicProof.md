@@ -1,6 +1,6 @@
 # Proof: the two dynamic Borels in semisimple rank one
 
-Worker 1301. The theorem `Langlands.GroupScheme.rankOneBorelDynamic` has type
+The theorem `Langlands.GroupScheme.rankOneBorelDynamic` has type
 exactly `RankOneBorelDynamicStatement.{u}` from
 `Langlands.GroupScheme.Reductive.RankOneBorelDynamicStatement`.
 
@@ -55,7 +55,7 @@ factorization. That construction has the following steps.
    scheme, and the quotient has Krull dimension at most one. The same data
    records that `Z_G(ν ≫ j)` lies in the range of `b`, that the rational span
    of the actual roots has dimension exactly one, and that `b` is not an
-   isomorphism. Two parts of this step supply the comparisons the task
+   isomorphism. Two parts of this step supply the comparisons the statement
    requires:
    - The pairwise-dependence hypothesis gives semisimple rank one through
      the published dependent-root span lemma, applied to the actual nonzero

@@ -1,7 +1,7 @@
 # Abelianization and inertia quotients of the existing Weil pullback
 
-Author: Worker 21. This construction uses published Galois and generic Weil
-pullback modules. Its own independent review and publication remain required.
+This construction uses published Galois and generic Weil
+pullback modules.
 
 The namespace `LocalClassField.WeilQuotients` uses the existing
 `Langlands.Weil.Pullback φ`. It does not introduce another Weil group.
@@ -37,21 +37,22 @@ actual pullbacks. It does not construct the field-extension pullback map.
 `localPullbackAbelianization F φ` and `localPullbackToGalois F φ` specialize
 these objects to the actual `Field.absoluteGaloisGroup F.Carrier`. The
 continuous map `φ` is explicitly supplied. Its identification with the
-geometric residue-degree map, and the local Weil assembly itself, remain
-the existing parameter/residue tasks' work. This specialization is not a
-claim to have constructed that missing map.
+geometric residue-degree map, and the local Weil assembly itself, are not
+part of this module; the assembly and `localResidueDegree` are in
+`Langlands.Weil.Local.Assembly`. This specialization does not construct
+that map.
 
 ## Original sources and convention
 
 Deligne, *Les constantes des équations fonctionnelles des fonctions L*
 (1973), section 2.3, internal pages Del-23–24 / printed pages 523–524 /
 PDF pages 23–24, describes the topological Weil abelianization and its
-reciprocity identification. Worker 21 read both original pages and
-visually checked the normalization and norm/transfer diagrams.
+reciprocity identification. Both original pages were read and the
+normalization and norm/transfer diagrams visually checked.
 Deligne's integer quotient uses arithmetic Frobenius and therefore has
 a minus sign in its valuation comparison. The project instead assigns
-degree `+1` to geometric Frobenius. Once the actual residue-degree map is
-available, the normalized comparison with additive valuation therefore
+degree `+1` to geometric Frobenius. For the actual residue-degree map,
+the normalized comparison with additive valuation therefore
 has a plus sign. This generic quotient module makes no choice of `φ`.
 
 Registered source `deligne-1973-local-constants`, SHA256
@@ -71,27 +72,24 @@ into an unabelianized Weil group is assumed or constructed.
 
 The project imports are `Langlands.Weil.Pullback` and
 `Langlands.ClassFieldTheory.Local.Galois`. Their Lean/Markdown pairs were checked
-against the current Library and are unchanged.
-The prepared environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` v1,
+against the Library and are unchanged.
+The development checks used
 Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Development check `cd937d6c-2958-4282-9e30-2d26a308d351` compiled the
+A development check compiled the
 whole module without errors or warnings and inspected
 `localPullbackToGalois` in universe `u` with only standard allowed
 assumptions. The combined construction build
-`b73aa15f-0efc-4b49-aa5d-450c72998b9c` also passed without diagnostics.
-Independent semantic review and current publication remain required.
+also passed without diagnostics.
 
 ## Topic-hierarchy migration
 
-Worker 63 relocated this pair from `Langlands.LocalClassField.WeilAbelianization` to
+This pair was relocated from `Langlands.LocalClassField.WeilAbelianization` to
 `Langlands.ClassFieldTheory.Local.WeilAbelianization` at Library base
-`c139df9ce67284be1bc963c2de5fbebd90214dda`. Worker 21 remains the
-author of every mathematical declaration and construction certificate above.
+`c139df9ce67284be1bc963c2de5fbebd90214dda`.
 Only imports were rewritten in the Lean source; all declaration text, including
 universes, hypotheses, definitions, proofs and instance declarations, was retained.
 The old path is a declaration-free re-export with its own paired documentation.
 
 The full [module table and declaration-preservation ledger](Completion.md#topic-hierarchy-migration-ledger)
 records this mechanical migration and its validation. Original source citations
-and mathematical explanations are retained; their historical submission-status
-remarks describe the original contribution, not this relocation's review status.
+and mathematical explanations are retained.

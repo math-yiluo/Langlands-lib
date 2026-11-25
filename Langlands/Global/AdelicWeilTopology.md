@@ -49,6 +49,6 @@ multiplicative equivalence above.
 
 The principal-point compatibility was proved separately in
 `AdelicWeilNormOneComparison`. The identification of the full normalized
-rational-character kernels remains a separate obligation. This unit does
+rational-character kernels remains a separate obligation. This module does
 not prove the whole `NormOneComparisonStatement` or rational quotient
 compactness.

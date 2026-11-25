@@ -1,6 +1,6 @@
 # Noetherian generic constancy and actual-fibre constructibility
 
-Worker 105. This internal reduction connects generic fibre geometry to the
+This internal reduction connects generic fibre geometry to the
 existing general geometric-connectedness constructibility target. It
 explicitly retains generic constancy as a premise, then derives that
 premise conditionally from the full generic-component splitting and

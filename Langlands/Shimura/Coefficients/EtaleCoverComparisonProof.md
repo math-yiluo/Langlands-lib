@@ -1,7 +1,5 @@
 # Invertibility of the associated-sheaf comparison between finite etale torsors
 
-Author: Worker 266.
-
 `Langlands.Shimura.Coefficients.etaleAssociatedCoverComparison` proves exactly
 the published proposition
 `Langlands.Shimura.Coefficients.EtaleAssociatedCoverComparisonStatement.{u}`

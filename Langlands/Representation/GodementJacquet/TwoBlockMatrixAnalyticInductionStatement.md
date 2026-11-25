@@ -1,7 +1,5 @@
 # Conditional two-block matrix analytic induction
 
-Author: Worker 1075.
-
 This module defines one proposition,
 `Langlands.GodementJacquet.TwoBlockMatrixAnalyticInductionStatement.{uF,uV}`.
 It is a statement target, not a proof. It formulates the analytic and

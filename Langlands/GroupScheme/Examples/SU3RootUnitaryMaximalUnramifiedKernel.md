@@ -46,7 +46,8 @@ calculation to the actual maximal unramified setting of that appendix,
 using the imported elementary ramification proof. The explicit residue-kernel
 comparison and the compatible-presentation formulation are derived constructions.
 
-This unit concerns the quadratic unitary parameter group over `K`. Restriction
+This module concerns the quadratic unitary parameter group over `K`. Restriction
 of scalars from other root fields and comparison with arbitrary supplied
-relative root and apartment data remain obligations of
-`UnramifiedRootDepthKernelStatement` (KP Lemma C.5.3).
+relative root and apartment data are part of
+`UnramifiedRootDepthKernelStatement` (KP Lemma C.5.3), which is proved as
+`unramifiedRootDepthKernel` in `Langlands.BruhatTits.IntegralModels.RootDepthKernel`.

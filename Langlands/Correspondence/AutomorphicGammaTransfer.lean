@@ -62,7 +62,7 @@ theorem IsAutomorphicPairGammaFactor.meromorphicAt
 
 end Langlands.Correspondence
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uP uQ uE
 
@@ -272,4 +272,4 @@ end Order
 
 end Global
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

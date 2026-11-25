@@ -1,7 +1,5 @@
 # Rational rank-one length two from special-vertex compact inputs
 
-Worker 3915, Task 3915 (`c53e3363-ffa5-4f01-ae77-aca8e1f49117`).
-
 This internal composition derives the unchanged
 `Langlands.Aubert.General.RationalPointFamily.RationalRankOneLengthTwoStatement.{u, v}`
 from special-vertex compact inputs. It does **not** prove that unconditional
@@ -104,12 +102,12 @@ Markdown records the source correspondence to the length-two step of
 Aubert's Corollary 1.10(b), Casselman section 7.1, and Renard's geometric lemma
 and proper-induction exclusion.
 
-The special-vertex compact inputs remain unproved. Task 4169
-(`8c39faa0-2a70-4fc4-a027-914987aba924`) owns the stronger joint existence
-target. Task 4358 (`e6add7c5-44c5-45ea-afe9-7f48c98fb927`) owns unconditional
-cuspidal Jacquet-factor extraction, which also suffices directly through the
-existing reduction. Neither task's assignment nor its draft is proof evidence.
+The special-vertex compact inputs are not proved in the Library, nor is the
+stronger joint existence statement
+`JointSpecialCompactBasisExistenceStatement`. Unconditional cuspidal
+Jacquet-factor extraction (`RationalCuspidalJacquetFactorExtractionStatement`,
+also not proved in the Library) would also suffice directly through the
+existing reduction.
 The whole-category cuspidal splitting of Renard VI.3.5 and fixed-level
-cuspidal finiteness are not additional hypotheses of this route. Completion
-of Task 3915 still requires an unconditional proof of its exact target,
-independent semantic review, and publication.
+cuspidal finiteness are not additional hypotheses of this route. The Library
+has no unconditional proof of `RationalRankOneLengthTwoStatement`.

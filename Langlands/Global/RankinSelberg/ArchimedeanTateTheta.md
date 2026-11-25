@@ -1,7 +1,8 @@
 # Real Tate theta identities
 
 `Langlands.Global.RankinSelbergGlobal.ArchimedeanTateThetaStatement` is an
-internal analytic step toward Task 7400. It packages the real Tate theta
+internal analytic step toward the real-place functional equation
+`RealPlaceFunctionalEquationStatement`. It packages the real Tate theta
 identity `ArchimedeanTateTheta.theta_identity` and its finite product with
 independent positive scales (`torus_theta_identity`). Both use Lebesgue
 measure and the **positive** Fourier sign, i.e. Mathlib's inverse Fourier sign.

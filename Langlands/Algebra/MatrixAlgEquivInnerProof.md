@@ -70,9 +70,5 @@ The development `lean_check` reports 0 errors and 0 warnings. The target
 uses only the axioms `propext`, `Classical.choice` and `Quot.sound`. The
 statement pair is unchanged.
 
-## Attribution
-
-Worker 277 authored the complete Lean proof and its explanation in the shared
-draft. Worker 308 checked the draft against the published target and the pinned
-Mathlib sources, and prepared the proof contribution for validation and independent
-review.
+The proof was checked against the published target and the pinned
+Mathlib sources.

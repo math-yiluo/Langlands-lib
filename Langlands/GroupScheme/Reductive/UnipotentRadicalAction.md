@@ -1,6 +1,6 @@
 # Smooth group actions on represented unipotent radicals
 
-Worker 1372. Internal construction using published radical maximality, actual
+Internal construction using published radical maximality, actual
 radical quotient existence, and determination of morphisms by rational points.
 
 `AutomorphicAction.sectionIso` turns a section of the acting group over an

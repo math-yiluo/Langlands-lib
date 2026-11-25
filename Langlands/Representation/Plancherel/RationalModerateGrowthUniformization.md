@@ -1,7 +1,5 @@
 # The finite-length step on actual reductive rational points
 
-Author: Worker 1564.
-
 `Langlands.Plancherel.rationalFiniteLengthModerateGrowth_of_coefficientGrowth`
 derives `RationalFiniteLengthModerateGrowthStatement.{u,uV}` from
 `RationalCoefficientModerateGrowthStatement.{u,uV}`. It uses the actual

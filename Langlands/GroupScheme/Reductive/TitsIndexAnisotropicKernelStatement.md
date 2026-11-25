@@ -1,7 +1,5 @@
 # The semisimple anisotropic kernel of an actual Tits index: statements
 
-Author: Worker 4741 (Task 5568).
-
 Source: J. Tits, *Classification of algebraic semisimple groups* (1966),
 §2.2, printed p.39 (proceedings PDF p.44), and the second-to-last paragraph
 of §2.3 on the same page, with the notation of §2.1 (printed pp.38–39,
@@ -10,7 +8,8 @@ PDF pp.43–44). Registered source
 `962203f9e47e9c3c43fc1049a38e28c751aa42beb7ee5250a095a132e215a5d4`.
 
 Every declaration below is in `Langlands.GroupScheme`. The three
-statements are unproved `Prop`-valued definitions, not axioms or theorems.
+statements are `Prop`-valued definitions, not axioms or theorems; this
+module proves none of them.
 They build on the actual index data `TitsIndexData` of
 `Langlands.GroupScheme.Reductive.TitsIndex`, which is used unchanged.
 
@@ -78,9 +77,9 @@ its full star action on simple vertices, is the subdiagram of `d` on
 `Δ₀`. The comparison uses actual characters and cocharacters over
 `k_s`. It is not just an equality of abstract diagrams. Star invariance
 of `Δ₀` is not a hypothesis. Conjuncts 5 and 6 imply it, since every
-vertex of `Δ₀` is `φ b` for a simple root `b` of `e`. The sibling
-target `TitsIndexStarInvariantStatement`
-(`Reductive.TitsIndexRelativeStatement`, same task) states the
+vertex of `Δ₀` is `φ b` for a simple root `b` of `e`. The separate
+statement `TitsIndexStarInvariantStatement`
+(`Reductive.TitsIndexRelativeStatement`) states the
 invariance on its own.
 
 `KernelComparison` is not phrased through `TitsIndexEquiv`. That notion
@@ -139,7 +138,7 @@ TitsAnisotropicKernelIndexStatement.{u}`, with no further hypotheses.
 
 ## Simply connected covers and isogenies
 
-The task asks whether a simply connected cover is involved. It is not.
+No simply connected cover is involved.
 Tits §2.2 defines the semisimple anisotropic kernel as the actual derived
 group `𝒟𝒵(S)`. Both statements concern this actual `D`, given by
 `IsDerivedSubgroup i`, and its actual based root datum, without passing
@@ -151,7 +150,7 @@ isomorphism of `D` with any other group. The reductive anisotropic kernel
 `𝒟𝒵(S) · Z₀` and its almost-direct-product decomposition, also in §2.2,
 are not formalized here.
 
-## Scope and retained proof obligations
+## Scope and proofs
 
 - All fields `k : Type u` are allowed, of any characteristic and at
   arbitrary universe. No local-field hypothesis appears. Quasi-split `G`
@@ -170,14 +169,16 @@ are not formalized here.
   [Derived/RepresentabilityProof](../Derived/RepresentabilityProof.md).
 - Independence of `𝒟𝒵(S)` from the choice of `S` up to `k`-isomorphism
   (§2.2) is not asserted here. Independence of the index from all
-  choices is the sibling target `TitsIndexIndependenceStatement`
+  choices is the separate statement `TitsIndexIndependenceStatement`
   (`Reductive.TitsIndexChoiceStatement`).
-- Expected proof ingredients include the published targets
+- Proof ingredients include the published statements
   `SplitTorusCentralizerReductiveStatement` (the centralizer `M` is
   connected reductive), `DerivedSubgroupSemisimpleStatement` (so `D` is
   semisimple), and `DerivedMaximalTorusIntersectionStatement` (`T ∩ D` is
   a torus). The rest of the work is the anisotropy of `D` and the root,
   base and star-action comparison. These are listed as a guide only.
   Their definitions do not prove anything here.
-- The two substantive proof units are `TitsAnisotropicKernelStatement`
-  and `TitsAnisotropicKernelIndexStatement`.
+- The two substantive statements are `TitsAnisotropicKernelStatement`
+  and `TitsAnisotropicKernelIndexStatement`. They are proved by
+  `titsAnisotropicKernel` (`Reductive.TitsIndexAnisotropicKernelProof`) and
+  `titsAnisotropicKernelIndex` (`Reductive.TitsIndexAnisotropicKernelIndexProof`).

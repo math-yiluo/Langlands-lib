@@ -1,13 +1,13 @@
 # Orthogonal complements and scalar commutants for algebraic GK modules
 
-This is an internal algebraic support module for Task 7158. It does not prove
+This is an internal algebraic support module for the proof of
+`RealTemperedStandardIrreducibleStatement`. It does not prove
 irreducibility of any particular standard module.
 
 The orthogonal-complement construction is extracted from the proved abstract
 section of the Library module `ComplexTemperedComplement`, with its purely
 algebraic prerequisites imported from `ComplexPermutationEndomorphism`.
-The new module imports neither a Langlands quotient statement nor a proof of one.
-It leaves all existing modules unchanged.
+This module imports neither a Langlands quotient statement nor a proof of one.
 
 For a complex representation in which every vector has finite-dimensional orbit
 span, assume a linear functional separates vectors along their group orbits.

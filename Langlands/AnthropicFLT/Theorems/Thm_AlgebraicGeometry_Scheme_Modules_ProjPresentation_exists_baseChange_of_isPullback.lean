@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesProjPresentation
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_ProjPresentation_exists_baseChange_of_isPullback

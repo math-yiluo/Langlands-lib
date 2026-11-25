@@ -1,10 +1,10 @@
 import Langlands.Automorphic.Unramified.CyclicTransferStatement
-import Langlands.ClassField.Global.FundamentalClassProof
-import Langlands.ClassField.Global.IdeleClassBaseImage
-import Langlands.ClassField.Global.LocalRelativeWeilMapExistenceProof
-import Langlands.ClassField.Global.LocalRelativeWeilTransferProof
-import Langlands.ClassField.Global.RelativeWeilTransferReciprocityProof
-import Langlands.ClassField.Global.RelativeWeilUnramifiedTransfer
+import Langlands.ClassFieldTheory.Global.FundamentalClassProof
+import Langlands.ClassFieldTheory.Global.IdeleClassBaseImage
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransferReciprocityProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTransfer
 import Langlands.ClassFieldTheory.Local.CommonClosureReciprocityConstruction
 import Langlands.ClassFieldTheory.Local.LocalRelativeClassFormationProof
 import Langlands.Correspondence.AssemblyLTwistedSupercuspidal
@@ -23,7 +23,7 @@ set_option backward.isDefEq.respectTransparency false
 
 namespace Langlands.Global.AdelicFunctoriality
 
-open NumberField ClassField.Global ClassField.Global.RelativeWeilGroup
+open NumberField ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup
 open ClassFieldTheory.Local CompletionPadic LocalClassField
 open scoped NumberField FiniteExtension
 

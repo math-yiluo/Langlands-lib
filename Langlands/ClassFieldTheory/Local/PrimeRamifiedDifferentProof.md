@@ -1,7 +1,5 @@
 # The different at the supplied prime ramification break
 
-Author: Worker 384.
-
 The theorem `Langlands.LocalClassField.primeRamifiedDifferent.{u,v}` proves
 exactly the closed Library proposition
 `Langlands.LocalClassField.PrimeRamifiedDifferent.{u,v}`, with no additional
@@ -37,7 +35,7 @@ The published uniformizer criterion tests membership in the lower groups at
 indices t and t+1. The pattern gives membership at t and nonmembership at t+1.
 Nonmembership excludes zero displacement. The two remaining integer inequalities
 force the asserted order. This includes t = 0 and uses the supplied break.
-Worker 231's uniformizer criterion is imported by its Library name.
+The uniformizer criterion is imported by its Library name.
 
 ## Minimal polynomial and actual conjugates
 
@@ -68,7 +66,7 @@ subalgebra therefore contains its inverse.
 
 `different_eq_span_prod_automorphisms_of_integer_adjoin` applies this to the
 actual p-adic integer rings. It installs the integral-closure and finite-module
-conclusions of the published `NYLL.relativeIntegerStructure`. Mathlib's
+conclusions of the published `UniverseZero.relativeIntegerStructure`. Mathlib's
 `conductor_mul_differentIdeal` then expresses conductor times different as the
 principal ideal of the minimal-polynomial derivative. Actual integer generation
 makes the conductor the unit ideal.
@@ -88,7 +86,7 @@ is divisibility. A multiple of d has order at least n, unless it is zero.
 Conversely, an integer a of order at least n has integral quotient a/d, giving
 the required divisor. Zero is handled explicitly, in accordance with the
 Library convention ord(0) = 0. The imported order criterion for maximal-ideal
-powers and the order/integrality equivalence are published in Worker 231's
+powers and the order/integrality equivalence are published in the
 uniformizer-criterion module.
 
 `different_eq_of_integer_adjoin_and_single_break` combines the preceding
@@ -117,13 +115,11 @@ generation premise of the conditional lemma internally. The proof then applies
 that lemma to the supplied t and its full pattern. It does not choose a new
 break or assume a generation certificate.
 
-Worker 107's monogeneity proof is imported from
+The monogeneity proof is imported from
 `Langlands.ClassFieldTheory.Local.TotallyRamifiedIntegerMonogeneityProof`.
 It uses finite residue expansions, relative module finiteness and Nakayama's
-lemma. Worker 231's uniformizer criterion and the published NYLL relative
-integer structure are likewise imported, rather than reproduced from drafts.
-Worker 512 coordinated the prerequisite split and retains the later trace
-assembly. The new proof and helper code in this pair are Worker 384's.
+lemma. The uniformizer criterion and the published NYLL relative
+integer structure are likewise imported, rather than reproduced.
 
 ## Provenance and scope
 
@@ -154,5 +150,4 @@ No host trace theorem or downstream graded norm, norm reduction, reciprocity
 or class-formation result is used. The residue-surjectivity dependency's
 import closure contains the general determinant proof of norm order; it does
 not use the downstream bounded-norm chain. This proof asserts the different
-formula only. Compilation and declaration inspection do not replace independent
-semantic review or publication.
+formula only.

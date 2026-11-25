@@ -1,10 +1,7 @@
-# Harris 1998 Proposition 4.8: reduction and proof ownership
+# Harris 1998 Proposition 4.8: reduction and proof status
 
-Prepared by Workers 514 and 619 under Task 6413
-`bca10e59-d4e2-40a4-be9b-5d70eaa1acd2`. Declaration and ownership snapshot:
-16 November 2026, Library `f68324d1a21483563906b878776458c28ca83618`
-and shared DAG revision 325. The statements described below are published;
-their proofs remain assigned work.
+The statements described below are in the Library; the proof status of
+each, as found in the Library, is given in the tables.
 
 The original target is
 `Langlands.Global.Harris.Proposition48Statement`, in
@@ -14,44 +11,39 @@ and `IsProposition48Datum` stay unchanged. The new derived reduction is
 `Langlands.Global.Arithmetic.HarrisProposition48ReductionStatement`.
 It has fourteen explicit conjuncts and conclusion
 `Proposition48Statement.{uF,0,0,0,uV}` for arbitrary independent `uF,uV`,
-as required by both Henniart globalization consumers. A statement or
-planning publication is not a proof of its hypotheses.
+as required by both Henniart globalization consumers. A statement is not
+a proof of its hypotheses.
 
-The exact original target's final assembly belongs to Task 6702
-`0aa2189a-e878-4144-9d41-b76799d87cfc`. It must import the eventual
-reduction proof and all input proofs; retaining those inputs as theorem
-hypotheses does not prove Proposition 4.8. The focused reduction proof
-belongs to Task 7213 `b517f901-0ac4-4ae4-a08e-b8b88a3b0fec`.
+The final assembly of the original target must import the reduction proof
+and all input proofs; retaining those inputs as theorem hypotheses does not
+prove Proposition 4.8. The Library proves the reduction
+(`proposition48Reduction`) and has the conditional `proposition48_of_hasSolution`;
+it does not prove `Proposition48Statement`.
 
 ## Fourteen explicit inputs
 
 The table follows the Lean conjunction order. Names beginning
 `Proposition48` are in `Langlands.Global.Harris`; the comparison and
 Theorem 1.2 are in `Langlands.GaloisRepresentation`; the other names are
-in `Langlands.Automorphic.Unramified`. The table assigns proof work,
-not just statement ownership.
+in `Langlands.Automorphic.Unramified`. The table gives the proof status of
+each input in the Library.
 
-| Input | Proof or proof-decomposition owner | Scope |
+| Input | Proof status | Scope |
 | --- | --- | --- |
-| `Proposition48AuxiliaryRankOneStatement` | Task 7216 `22c6a336-836c-47dc-bc09-667768393b20` | Genuine Hecke-character realization on GL(1), with all four output properties. |
-| `Proposition48AuxiliaryParityNormalizationStatement` | Task 7218 `8a1e00f3-5223-4c5a-9994-f8f08331ceda` | Conjugate-inverse CM base character, actual norm correction and preserved one-place validity. |
-| `Proposition48AuxiliaryParityUntwistStatement` | Task 7218 `8a1e00f3-5223-4c5a-9994-f8f08331ceda` | Actual raw/corrected realizations related by multiplication by `ν(det g)`. |
-| `Proposition48MackeyStepStatement` | Task 7219 `03216936-611f-40ff-9fbf-4aca7b6cec03` | One compatible prime cyclic field and all actual raw children, exact rank and smaller closure degree. |
-| `Proposition48PrimeBranchStatement` | Task 7221 `528311c0-f3fd-4553-ad48-a6bed4282b5a` | Prime orbit, actual transfers and spectral attachments, local distinctness, final assembly. |
-| `Proposition48SingletonBranchStatement` | Task 7222 `95f79351-962f-4e98-a877-d3ca1aa759e1` | Actual local descent, finite-character correction and extension selection. |
-| `Harris1998Theorem12CuspidalStatement` | Task 6698 `cd19dd55-136e-42e9-b062-5a23b2c7a6b2` | Existing cuspidal target's geometric proof decomposition and eventual exact proof assembly. |
-| `HarrisSupercuspidalLocalComparisonStatement` | Task 6846 `2aa19068-4bd1-4522-8eb4-6d6a159e5e77` | General cohomological coefficients; pairwise forward local comparison at split supercuspidal places. |
-| `CuspidalSpectralRigidityStatement` | Task 6446 `c4f0be57-1a49-4a42-b813-4354e297ab3f`, revision 2 | Existing deep Euler constituent rigidity proof task; no duplicate. |
-| `Proposition48IsobaricInvarianceStatement` | Task 7220 `549b134f-cd9d-42ad-94bc-2d2ff16386c1` | Conditional multiplicity-preserving Galois invariance from supplied Euler presentations and rigidity. |
-| `CyclicRegularInductionStatement` | Task 6699 `ca76241a-30bc-46d4-a0b9-5f6c284363a5` | Existing Arthur–Clozel target's proof decomposition and assembly. |
-| `CyclicRegularOrbitLiftStatement` | Task 6699 `ca76241a-30bc-46d4-a0b9-5f6c284363a5` | Actual isobaric lift of the full regular orbit, with all target hypotheses retained. |
-| `CyclicStableDescentStatement` | Task 6699 `ca76241a-30bc-46d4-a0b9-5f6c284363a5` | Actual cuspidal descents and finite-twist classification. |
-| `CyclicWeakInductionSupercuspidalStatement` | Task 6845 `3064d640-8ebf-4ac1-807c-a48f48d653c4`, revision 2 | Henniart–Herb consequence, including actual local/global induction matching. |
-
-Tasks 6698, 6699, 7218, 7221 and 7222 are statement and planning
-tasks: they must decompose their substantial inputs and publish focused
-proof tasks. The other owners in the table are focused proof tasks.
-The three Task 6699 rows refer to its revision 2.
+| `Proposition48AuxiliaryRankOneStatement` | proved: `proposition48AuxiliaryRankOne` | Genuine Hecke-character realization on GL(1), with all four output properties. |
+| `Proposition48AuxiliaryParityNormalizationStatement` | no theorem; it follows from proved results: `proposition48AuxiliaryParityNormalizationReduction` with `normTwistInfinity`, `cmNormConjugation`, `proposition48PlaceNormTwist` and `generalPositionAmbientTwist` | Conjugate-inverse CM base character, actual norm correction and preserved one-place validity. |
+| `Proposition48AuxiliaryParityUntwistStatement` | no theorem; it follows from proved results: `proposition48AuxiliaryParityUntwistReduction` with `heckeDeterminantTwistWeakInduction`, `heckeDeterminantTwistConjugateSelfDual` and `heckeDeterminantTwistSupercuspidal` | Actual raw/corrected realizations related by multiplication by `ν(det g)`. |
+| `Proposition48MackeyStepStatement` | proved: `proposition48MackeyStep` | One compatible prime cyclic field and all actual raw children, exact rank and smaller closure degree. |
+| `Proposition48PrimeBranchStatement` | open | Prime orbit, actual transfers and spectral attachments, local distinctness, final assembly. |
+| `Proposition48SingletonBranchStatement` | open | Actual local descent, finite-character correction and extension selection. |
+| `Harris1998Theorem12CuspidalStatement` | open | Existing cuspidal target; its proof needs a geometric decomposition. |
+| `HarrisSupercuspidalLocalComparisonStatement` | open (the Library has the conditional `harrisSupercuspidalLocalComparison_of_canonical`, from `Harris1999Theorem59iiParameterStatement` and `HarrisSupercuspidalRestrictionIrreducibleStatement`) | General cohomological coefficients; pairwise forward local comparison at split supercuspidal places. |
+| `CuspidalSpectralRigidityStatement` | open (the Library has the conditional `cuspidalSpectralRigidityLandauReduction`, from `CuspidalPairPoleStatement` with the proved `cuspidalPairAbsoluteConvergence`) | Existing deep Euler constituent rigidity statement; not duplicated. |
+| `Proposition48IsobaricInvarianceStatement` | proved: `proposition48IsobaricInvariance` | Conditional multiplicity-preserving Galois invariance from supplied Euler presentations and rigidity. |
+| `CyclicRegularInductionStatement` | open (the Library has the conditional `cyclicRegularInductionNormReduction`, from `CyclicRegularInductionExistenceStatement` and `CuspidalEulerConstituentRecoveryStatement`) | Existing Arthur–Clozel target. |
+| `CyclicRegularOrbitLiftStatement` | open (the Library has the conditional `cyclicRegularOrbitLiftReduction`, from `CyclicRegularInductionExistenceStatement`, `WeakInductionOrbitBaseChangeStatement` and `CyclicWeakBaseChangePairMultiplicityStatement`) | Actual isobaric lift of the full regular orbit, with all target hypotheses retained. |
+| `CyclicStableDescentStatement` | open | Actual cuspidal descents and finite-twist classification. |
+| `CyclicWeakInductionSupercuspidalStatement` | open (the Library has the conditional `cyclicWeakInductionSupercuspidal_of_matching_at_completion`) | Henniart–Herb consequence, including actual local/global induction matching. |
 
 Theorem 1.2 is in
 `Langlands.Galois.Harris1998ExistenceStatement`; comparison in
@@ -67,37 +59,37 @@ The new Proposition48 statements have matching `HarrisProposition48…`
 module stems in `Langlands.Global.Arithmetic`; the first three share
 `HarrisProposition48AuxiliaryInputStatement`.
 
-The companion `Proposition48RankOneStatement` is assigned to
-Task 7216 `22c6a336-836c-47dc-bc09-667768393b20`. The full two-place parity statements
+The companion `Proposition48RankOneStatement` is proved
+(`proposition48RankOne`). The full two-place parity statements
 `Proposition48ParityNormalizationStatement`,
-`Proposition48ParityUntwistStatement`, and their conjunction
-`Proposition48ParityTransportStatement` are assigned to Task 7218
-`8a1e00f3-5223-4c5a-9994-f8f08331ceda`,
-as is the direct conjunction assembly
-`Proposition48AuxiliaryPreparationStatement` using the separate rank-one
-proof. The two-place companions do not imply the weaker-hypothesis
+`Proposition48ParityUntwistStatement`, their conjunction
+`Proposition48ParityTransportStatement` and the direct conjunction assembly
+`Proposition48AuxiliaryPreparationStatement`, which uses the separate
+rank-one proof, are not theorems of the Library but follow from proved results; see
+[parity correction and determinant untwisting](proposition-48-parity-transport.md).
+The two-place companions do not imply the weaker-hypothesis
 one-place inputs: an arbitrary child need not supply a second,
 independently compatible completion identification.
 
 ## Totally complex companions
 
-The current Library also publishes
+The Library also states
 `Langlands.Global.Harris.Proposition48ReductionTCStatement` and its
 three companion statements in
 `Langlands.Global.Arithmetic.HarrisProposition48ReductionTCStatement`.
 They retain the original conclusion and universes. Inputs 1–4, 7 and 8
 in the table are unchanged; inputs 5, 6 and 9–14 use their totally
-complex forms. Ownership includes these exact companions:
+complex forms. Their proof status:
 
-| Published companion | Proof or planning owner |
+| Companion | Proof |
 | --- | --- |
-| `Proposition48ReductionTCStatement` | Task 7213 `b517f901-0ac4-4ae4-a08e-b8b88a3b0fec` |
-| `Proposition48PrimeBranchTCStatement` | Task 7221 `528311c0-f3fd-4553-ad48-a6bed4282b5a` |
-| `Proposition48SingletonBranchTCStatement` | Task 7222 `95f79351-962f-4e98-a877-d3ca1aa759e1` |
-| `Proposition48IsobaricInvarianceTCStatement` | Task 7220 `549b134f-cd9d-42ad-94bc-2d2ff16386c1` |
-| `CuspidalSpectralRigidityTCStatement` | Task 6446 `c4f0be57-1a49-4a42-b813-4354e297ab3f`, revision 2 |
-| `CyclicRegularInductionTCStatement`, `CyclicRegularOrbitLiftTCStatement`, `CyclicStableDescentTCStatement` | Task 6699 `ca76241a-30bc-46d4-a0b9-5f6c284363a5`, revision 2 |
-| `CyclicWeakInductionSupercuspidalTCStatement` | Task 6845 `3064d640-8ebf-4ac1-807c-a48f48d653c4`, revision 2 |
+| `Proposition48ReductionTCStatement` | proved: `proposition48ReductionTC` |
+| `Proposition48PrimeBranchTCStatement` | open |
+| `Proposition48SingletonBranchTCStatement` | open |
+| `Proposition48IsobaricInvarianceTCStatement` | proved: `proposition48IsobaricInvarianceTC` |
+| `CuspidalSpectralRigidityTCStatement` | open (conditional `cuspidalSpectralRigidityTC_of_normalizedContinuation`) |
+| `CyclicRegularInductionTCStatement`, `CyclicRegularOrbitLiftTCStatement`, `CyclicStableDescentTCStatement` | open |
+| `CyclicWeakInductionSupercuspidalTCStatement` | open (conditional `cyclicWeakInductionSupercuspidalTC_of_gammaOrder`) |
 
 The first four names have namespace `Langlands.Global.Harris`; the last
 five have namespace `Langlands.Automorphic.Unramified`. Rigidity is in
@@ -114,8 +106,8 @@ the branches the fields are CM or finite extensions of CM fields.
 Mathlib's `NumberField.IsCMField.isTotallyComplex` and
 `NumberField.isTotallyComplex_of_algebra` supply the totally complex
 instances. Thus this restriction presents no known field-instance
-obstruction; constructing the actual branch witnesses remains owned
-work.
+obstruction; constructing the actual branch witnesses is the remaining
+work of the branches.
 
 ## Source-to-declaration route
 
@@ -153,10 +145,10 @@ reused in its published cuspidal form. Its output is a finite sum of
 pure compatible families with existential coefficient field/embedding,
 total rank and weak unramified association. It does not already give
 a single common-weight family or arbitrary ramified comparison.
-Task 6698 owns the needed geometric proof decomposition, preserving
-Clozel/Kottwitz/Taylor and parity obligations. Statement framework
-`bd93b48c-db25-4739-89f5-97cabc0f6491` and geometric framework
-`b91b0934-0122-4c05-b359-4e7ed64bbe3d` retain their existing scope.
+Its proof needs a geometric decomposition that keeps the
+Clozel/Kottwitz/Taylor and parity obligations. The compatible-family
+framework and the Harris–Berkovich cohomological framework keep their
+existing scope.
 4. **General coefficients.** The Remark, printed p.202, TeX 1616–1628,
 explicitly needs arbitrary cohomological infinity types. The existing
 `Harris1999Theorem59iStatement` concerns part (i) and does not supply
@@ -185,7 +177,7 @@ Arthur–Clozel III.6.4 to the full orbit. The existing regular-induction
 and isobaric orbit-lift statements are explicit premises of the prime
 branch. The registered source is `arthur-clozel-1989-base-change`,
 Chapter III, especially Theorem 6.2 and Lemmas 6.3–6.4, printed
-pp.215–217. These inputs still require proof; Task 6699 preserves their
+pp.215–217. These inputs still require proof; their proofs must keep their
 generator, norm-kernel character, actual unitarity, Galois pullback and
 spectral hypotheses. The branch must construct those witnesses.
 7. **Auxiliary supercuspidality.** Printed p.203 invokes
@@ -202,72 +194,46 @@ common weight; forward comparison can then be used contrapositively.
 8. **Singleton.** Printed p.203, TeX 1666–1674, refers to Lemma 1.6,
 printed pp.188–189 (PDF12–13), TeX 687–794. The existing stable-descent
 statement supplies weak descents and finite-twist classification.
-The singleton branch also owns actual ramified local descent and
+The singleton branch also has to give actual ramified local descent and
 supercuspidality reflection, finite-character correction to conjugate
 self-duality, extension from the real subfield, and matching the
 distinct descents with extensions of the irreducible monomial
 restriction. This is why weak descent alone does not fit the complete
 needed input. Theorem 1.7 assumes supercuspidality and cannot establish
 it for an arbitrary descent. The complete branch is stated explicitly;
-its planning owner must split these remaining obligations and publish
-their proof tasks.
+its proof must split these remaining obligations.
 9. **Lemma 4.7.** The existing published theorem
 `Langlands.Global.harrisGeneralPosition`, module
 `Langlands.Global.Arithmetic.HarrisGeneralPositionProof`, proves
 `HarrisGeneralPositionStatement` in arbitrary field universe, including
-residue characteristic two. Its completed exact proof task is
-`83445b71-56bc-4dab-b2df-43a956708a18`. The theorem retains normalized
+residue characteristic two. The theorem retains normalized
 reciprocity explicitly. It constructs local general-position characters
 and the indicated tower, not the global character/place transports of
-the Mackey step. Those remain assigned to that step.
+the Mackey step. Those belong to that step.
 
 ## Four translation obligations
 
-| Obligation | Present handling | Remaining owned work |
+| Obligation | Present handling | Remaining work |
 | --- | --- | --- |
-| Missing sum in Definition1.3(b), p.186 | Built into published `Langlands.Automorphic.Unramified.WeakInduction.inducedEulerPolynomial`: product over all places above, representing the direct sum of the local induced parameters. The published actual weak-induction relation uses it. | Tasks 7221 `528311c0-f3fd-4553-ad48-a6bed4282b5a` and 7222 `95f79351-962f-4e98-a877-d3ca1aa759e1` own branch spectral attachments and the Euler relation for their actual output. |
-| Mackey rank and p=2 in Lemma4.7 proof, pp.204–206 | Published `Langlands.Global.harrisGeneralPosition` uses actual finite-index Mackey induction and the first-order auxiliary-character proof covering p=2. New Mackey interfaces use `[D·a(E'):D]`, matching the inducing extension and rank-one base. | Task 7219 `03216936-611f-40ff-9fbf-4aca7b6cec03` proves the exact global child/rank and place transports. The local published proof alone does not prove them. |
-| General-coefficient Theorem1.7 dependency, p.202 | Built into the derived `HarrisSupercuspidalLocalComparisonStatement` with arbitrary regular algebraic type, sourced to 1999 Theorem5.9(ii). | Task 6846 `2aa19068-4bd1-4522-8eb4-6d6a159e5e77` proves the comparison; Task 7221 `528311c0-f3fd-4553-ad48-a6bed4282b5a` owns its common-weight normalized monomial witnesses. |
-| Half-integral twists along induction, p.191 | Built into inherited-parity child validity, genuine CM base-character normalization and actual determinant untwisting; the reduction lists the two parity inputs separately. | Task 7218 `8a1e00f3-5223-4c5a-9994-f8f08331ceda` owns correction/transport decomposition and proof tasks; Tasks 7221 `528311c0-f3fd-4553-ad48-a6bed4282b5a` and 7222 `95f79351-962f-4e98-a877-d3ca1aa759e1` own branch realizations and weight normalization. |
+| Missing sum in Definition1.3(b), p.186 | Built into published `Langlands.Automorphic.Unramified.WeakInduction.inducedEulerPolynomial`: product over all places above, representing the direct sum of the local induced parameters. The published actual weak-induction relation uses it. | The proofs of the prime and singleton branches must give their spectral attachments and the Euler relation for their actual output. |
+| Mackey rank and p=2 in Lemma4.7 proof, pp.204–206 | Published `Langlands.Global.harrisGeneralPosition` uses actual finite-index Mackey induction and the first-order auxiliary-character proof covering p=2. New Mackey interfaces use `[D·a(E'):D]`, matching the inducing extension and rank-one base. | The Mackey step (proved: `proposition48MackeyStep`) gives the exact global child/rank and place transports. The local published proof alone does not prove them. |
+| General-coefficient Theorem1.7 dependency, p.202 | Built into the derived `HarrisSupercuspidalLocalComparisonStatement` with arbitrary regular algebraic type, sourced to 1999 Theorem5.9(ii). | The comparison itself is open (the Library derives it from `Harris1999Theorem59iiParameterStatement` and `HarrisSupercuspidalRestrictionIrreducibleStatement`: `harrisSupercuspidalLocalComparison_of_canonical`); the prime branch must supply its common-weight normalized monomial witnesses. |
+| Half-integral twists along induction, p.191 | Built into inherited-parity child validity, genuine CM base-character normalization and actual determinant untwisting; the reduction lists the two parity inputs separately. | The parity decomposition ([parity transport note](proposition-48-parity-transport.md)) gives the correction and transport; the branches must give their realizations and weight normalization. |
 
 No `n < p` bound, stronger general-place ramified compatibility or
-unproved multiplicity-one assertion is inserted. DAG revision 325 records
-these four obligations and exact owners in `proof.harris-global-input`,
-with edges to all fourteen input nodes and the reduction. Four data
-nodes record the induction, parity, Mackey and auxiliary interfaces.
-Task 6413 also requires this account in the original proposition's paired
-Markdown; the table above records it independently in this note.
-The DAG is a plan, not evidence that the open proofs have been completed.
+unproved multiplicity-one assertion is inserted.
 
-## Ownership audit and status
+## Status
 
-On 14 November 2026, the audit searched TaskHub, exact target names in
-current Library Lean references and task objectives, and both DAGs
-(revision215 before these updates). The exact Theorem1.2 and three
-Arthur–Clozel targets were present as statements without proof owners;
-Tasks6698 and6699 were published for their substantial decomposition.
-The existing spectral-rigidity owner was reused. The spectral program
-`34b81620-20d7-4059-9b08-6bedd1c1c029` explicitly keeps these deep inputs
-as assumptions and does not own Proposition4.8. Existing statement and
-actual-object construction authority is preserved.
-
-After the inputs were published, the ownership audit was repeated before
-the seven successor contracts were published. It checked TaskHub search,
-current Library declarations and references, task objectives and the
-shared DAG. The focused comparison and Henniart–Herb owners were
-published by Worker 619; the existing rigidity owner was retained.
-Task 6699 revision 2 and the successor contracts include the totally
-complex coverage above.
-
-On 16 November 2026 all fourteen accepted contribution pairs for this
-task were checked against Library
-`f68324d1a21483563906b878776458c28ca83618`; every Lean and Markdown
-file matched its accepted bytes. This inventory comprises the four
-internal data modules, rank-one and full parity statements, auxiliary
-inputs, Mackey step, invariance, prime and singleton branches, reduction,
-comparison and the Henniart–Herb consequence. The reduction was published
-at `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`; a fresh development
-check compiles it without diagnostics and inspects it as `Prop` with
-independent parameters `uF,uV`. This is publication and compilation
-evidence for statements, not proofs. The proof and planning contracts
-listed here are published; their required mathematical work remains open.
+The fourteen statement pairs of this reduction (the four internal data
+modules, rank-one and full parity statements, auxiliary inputs, Mackey step,
+invariance, prime and singleton branches, reduction, comparison and the
+Henniart–Herb consequence) were checked byte for byte against Library commit
+`f68324d1a21483563906b878776458c28ca83618`. The reduction first appeared at
+`af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`; it compiles without diagnostics
+and is a `Prop` with independent parameters `uF,uV`. Of the proofs, the
+Library has the reduction (general and totally complex), the rank-one
+statements, the Mackey step and isobaric invariance. Proposition 4.8 itself,
+the two branches, the parity inputs and the external inputs (Theorem 1.2, the
+comparison, rigidity, the Arthur–Clozel inputs and the Henniart–Herb
+consequence) are open.

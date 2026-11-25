@@ -1,6 +1,6 @@
 # Actual comparison isomorphisms between specified original test charts
 
-This internal unit constructs `Comparison.testIso`: the actual integral
+This module constructs `Comparison.testIso`: the actual integral
 full-order formal isomorphism from a specified original source chart to a
 specified original target chart on a test algebra. A supplied invertible finer
 comparison chart specifies its middle formal map. The construction follows the
@@ -19,5 +19,8 @@ fixed original charts. Equality of point evaluations is not used.
 The coefficient and acting rings have separate universes and arbitrary finite
 source and target coordinate types. All specified finer and original chart
 generators have their actual unit evidence in the test ring. Covers may be
-infinite. This unit does not yet assert coefficient-extension compatibility or
-framed comparison base change.
+infinite. This module does not assert coefficient-extension compatibility or
+framed comparison base change: `testIso_baseChange` in
+`AtlasOrderComparisonTestBaseChange` proves the first, and
+`DrinfeldFramedComparisonBaseChange` constructs
+`DrinfeldFramedAtlas.Comparison.baseChange`.

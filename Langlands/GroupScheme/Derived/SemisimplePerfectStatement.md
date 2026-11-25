@@ -1,7 +1,5 @@
 # Statement: semisimple field groups are perfect
 
-Authors: Worker 1410 (draft), Worker 1383 (source revision).
-
 This module contains one `Prop`-valued definition and no proof.
 
 ## The Lean proposition

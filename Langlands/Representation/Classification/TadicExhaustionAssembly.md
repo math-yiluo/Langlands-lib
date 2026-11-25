@@ -1,6 +1,6 @@
 # Tadić's Theorem A.10: the exhaustion from its ingredients
 
-Author: Worker 1792. It uses Worker 1745's `TadicXBlockAdapters` (members of
+This module uses `TadicXBlockAdapters` (members of
 `X_k` are Tadić building blocks once rectangular socles of rank at most `k` are
 Speh representations). Module
 `Langlands.Representation.Classification.TadicExhaustionAssembly`, namespace
@@ -55,7 +55,7 @@ Tadić's proof of Theorem A.10 (1986, printed pp.378–379).
   published `TadicUnitaryDualExhaustion F T` follows. Let `π` on `GL_(n+1)` be
   irreducible and unitarizable. If `π` is a Zelevinsky socle of some `a(u,v)^ρ`
   with `ρ` unitary, it lies in `X_(n+1)`, hence is a Tadić building block
-  (Worker 1745's `isTadicBuildingBlock_of_isTadicXBlock` with
+  (`isTadicBuildingBlock_of_isTadicXBlock` of `TadicXBlockAdapters` with
   `TadicSocleHeadDuality.spehComparison`), and the one-block product is the
   required factorization. Otherwise Lemma 4.8(ii) with `(U^n)` writes `π` as a
   product of members of `X_n`, each a Tadić building block in the same way.

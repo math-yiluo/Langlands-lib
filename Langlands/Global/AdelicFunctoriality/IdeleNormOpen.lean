@@ -261,7 +261,7 @@ end Infinite
 
 section Finite
 
-open Langlands.Global Langlands.ClassField.Global
+open Langlands.Global Langlands.ClassFieldTheory.Global
 open Langlands.Global.Arithmetic.SUnitIdeleTopology
 
 omit [NumberField K] in

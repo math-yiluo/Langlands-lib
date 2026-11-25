@@ -41,7 +41,7 @@ lift, and pullback commutativity proves its equation.
 
 The provenance is internal: this adapts the published closed-torus pullback
 construction and extension-section theorem to arbitrary torus homomorphisms
-using affine base change. Worker 1459 suggested the pullback-section route.
+using affine base change.
 No additional external structural assertion is introduced. The stable-vector
 proof and the finite-field central-cocharacter solvability theorem remain
 separate obligations.

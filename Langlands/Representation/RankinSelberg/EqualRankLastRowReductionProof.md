@@ -1,7 +1,5 @@
 # Equal-rank integrals with a last-row orbit cutoff: proof
 
-Author: Worker 719.
-
 `Langlands.RankinSelberg.equalRankLastRowReduction` proves
 `EqualRankLastRowReductionStatement F T n` for every implicit prime `p`, every
 `F : PadicField.{uF} p`, every supplied `T : F.TopologicalData` and every

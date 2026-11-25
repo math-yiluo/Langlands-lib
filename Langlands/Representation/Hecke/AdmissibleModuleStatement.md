@@ -5,13 +5,11 @@ Module `Langlands.Representation.Hecke.AdmissibleModuleStatement`. Namespace
 The module contains one **statement**, the `Prop`-valued definition
 `AdmissibleIffHeckeAdmissibleStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. III.1.7 translates admissibility of a representation
+III.1.7 translates admissibility of a representation
 into admissibility of its Hecke module, and then deduces its Proposition from I.5.1. The
 Library has both notions: `IsAdmissible` for representations and
 `NonUnitalModuleAdmissible.IsAdmissible` for modules
-([NonUnitalModuleAdmissible](../../Algebra/NonUnitalModuleAdmissible.md)). No published
-statement relates them. The III.1.7 Proposition itself is the published, proved
+([NonUnitalModuleAdmissible](../../Algebra/NonUnitalModuleAdmissible.md)). The III.1.7 Proposition itself is the published, proved
 `AdmissibleBidualStatement`.
 
 ## Source and provenance
@@ -20,7 +18,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.1.7, printed p.62 / PDF p.68:
+The text of III.1.7, printed p.62 / PDF p.68, was read:
 
 > Définition. Une représentation lisse `(π, V)` du groupe t.d. `G` est dite admissible, si pour
 > tout sous-groupe ouvert `N` de `G`, le sous-espace des vecteurs fixes `V^N` est de dimension
@@ -81,9 +79,9 @@ representation on `V`. Then:
    of `H(G)` is a test function, bi-invariant under some compact open `K`. So `e = e_K e` and
    `e · V ⊂ e_K · V = V^K`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation.
+The proof is `admissibleIffHeckeAdmissible` in `AdmissibleModuleProof`.
 
 ## Imports
 

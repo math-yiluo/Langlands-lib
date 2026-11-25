@@ -1,7 +1,5 @@
 # The segment classification of essentially square-integrable representations
 
-Author: Worker 320.
-
 ## Exact theorem and conventions
 
 `Langlands.Classification.segmentEssentialSquareIntegrableClassification`

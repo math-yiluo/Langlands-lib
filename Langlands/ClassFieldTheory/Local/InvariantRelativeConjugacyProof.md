@@ -1,7 +1,5 @@
 # Relative conjugacy from the inflation and restriction laws
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.InvariantRelativeConjugacyStatement`
 (module `Langlands.ClassFieldTheory.Local.InvariantTransferConsequencesStatement`).

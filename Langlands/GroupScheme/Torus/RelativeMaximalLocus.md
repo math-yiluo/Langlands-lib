@@ -1,7 +1,5 @@
 # Openness of the maximal locus for relative tori
 
-Worker 586.
-
 `maximalTorusOpen` is the actual open subscheme of the base where a supplied
 closed relative torus in a reductive group is maximal on the residue fibre.
 It imposes no restriction on the base scheme or on its residue characteristics.

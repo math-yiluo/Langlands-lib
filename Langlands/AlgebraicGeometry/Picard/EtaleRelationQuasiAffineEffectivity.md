@@ -2,7 +2,7 @@
 
 Module `Langlands.AlgebraicGeometry.Picard.EtaleRelationQuasiAffineEffectivity`,
 namespace `Langlands.AlgebraicGeometry.EtaleRelationQuasiAffineEffectivity`.
-Worker 5217, Task 7409. This is an internal, derived construction used by the proof
+This is an internal, derived construction used by the proof
 `polarizedEtaleRelationEffectivity` (module
 `Langlands.AlgebraicGeometry.Picard.PolarizedEtaleRelationEffectivityProof`). It states no
 literature result of its own.

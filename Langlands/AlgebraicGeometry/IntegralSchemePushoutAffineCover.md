@@ -24,7 +24,7 @@ inverse images are empty.
 `integralCompatibleAffineCoverRight` package the two covering families
 as actual scheme open covers with the same compatible-pair index.
 Their members are the corresponding open subschemes, with the canonical
-open immersions. Each is affine by construction of the index. This unit
+open immersions. Each is affine by construction of the index. This module
 supplies covers and inverse-image equalities; the global scheme, its
 universal properties, and the properties of its two maps require the
 separate gluing construction.

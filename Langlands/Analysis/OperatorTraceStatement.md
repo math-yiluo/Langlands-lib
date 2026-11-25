@@ -1,6 +1,6 @@
 # Operator trace: basis formula, linearity and bounded cyclicity
 
-Worker 116 states the laws needed to interpret the actual chosen-basis formula
+This module states the laws needed to interpret the actual chosen-basis formula
 `operatorTrace` as the trace on actual trace-class endomorphisms. All four
 statements are proposition definitions; this module supplies no proofs.
 

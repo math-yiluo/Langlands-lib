@@ -53,7 +53,7 @@ B.pairingLeviSpan ν ⊓ B.moyPrasad hZ x 0 ≤
 The `0` in `moyPrasad` and `centralizerTorusImage` is `(0 : ℝ≥0)`. The `0` in
 `rootFiltrationSpan` is `(0 : ℝ)`. This is definitionally the coercion
 `↑(0 : ℝ≥0)` that S2 uses at `r = 0`. Both clauses are displayed exactly as in
-the task objective. Clause (b) is kept as an inclusion; it is not strengthened
+the Lean statement. Clause (b) is kept as an inclusion; it is not strengthened
 to an equality.
 
 ## The imported definitions
@@ -162,7 +162,8 @@ inclusion `⊇` of that equality for `f = 0` and `M = M_ν`.
   it, which is smooth by Proposition 2.11.5. It uses Lemma 7.3.16 for the torus
   part, Proposition 7.3.12 for the root groups, and Proposition 8.2.8 for
   generation. None of these is available in the Library for the K-level groups.
-  The proof successor must supply its own route.
+  A proof must supply its own route; the Library's proof is
+  `localMoyPrasadDepthZero` (module `KPLocalMoyPrasadDepthZeroProof`).
 
 If `Φ₀(ν) = ∅`, then `pairingLeviSpan ν = j(Z(K)) ⊔ ⊥`. In that case clause (b)
 says `j(Z(K)) ∩ G(K)_{x,0} ⊆ j(Z(K)_0)`, which is the nontrivial inclusion of
@@ -210,7 +211,7 @@ finite, hence perfect, and `K = F^ur` is the field of the data.
 Hence the theory behind both clauses applies to the data `F`, `H`, `B`, `hZ` as
 they stand. The geometric facts the source proofs use are consequences to be
 established from these data. They are not premises of the target. This file
-does not infer AS 5 from the root-valuation axioms. The proof successor must
+does not infer AS 5 from the root-valuation axioms. A proof of the statement must
 justify every geometric consequence its route uses. The field `K` has infinite
 residue field and is not treated as a nonarchimedean local field. Only `F`
 carries that instance.

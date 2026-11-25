@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Lattice chains and hereditary orders (Bushnell–Kutzko 1993, §1.1)
 

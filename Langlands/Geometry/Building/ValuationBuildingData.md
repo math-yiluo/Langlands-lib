@@ -1,8 +1,7 @@
 # Building data for an `ω`-compatible valuation of the root datum
 
-This module belongs to the task on actual Kaletha–Prasad affine-root,
-special-point, parahoric and compact-stabilizer objects. It is the adapter of
-the task's objective 4. The structure `ValuationBuildingData G` collects, for
+This module is an adapter for the actual Kaletha–Prasad affine-root,
+special-point, parahoric and compact-stabilizer objects. The structure `ValuationBuildingData G` collects, for
 an actual connected reductive group `G` over a nonarchimedean local field `F`,
 the data that KP Chapter 7 assumes before constructing the building, except
 the assumption AS 5 added by the corrections (see below). Under one
@@ -18,10 +17,10 @@ definition or a one-line restatement of a law proved in those modules. The
 exceptions are the predicates `IsFacet`, `IsChamber` and `IsVertex` on the
 building, and the lemma `mono_of_isMaximalSplitTorus`.
 
-Two later modules of the same task build on this one. `KPParahoric` defines
+Two later modules build on this one. `KPParahoric` defines
 `ParahoricBuildingData G`, which extends `ValuationBuildingData G` by the
 data of `Z(F)^0` and `G(F)^0` (module `KPZeroSubgroups`) and defines the
-parahoric subgroups. Worker 1045's `ValuationBuildingAxioms` states, as
+parahoric subgroups. The module `ValuationBuildingAxioms` states, as
 conditions on `B : ValuationBuildingData G`, the clauses of KP's axioms that
 are not fields here, among them V 7 and AS 2–AS 5. This Markdown describes
 only this module; the two later modules are cited where they fill a gap

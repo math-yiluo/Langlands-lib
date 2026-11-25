@@ -1,7 +1,5 @@
 # The maximal torus conjugator reduction
 
-Author: Worker 97. Composite proof route: Worker 15 (Task 5243 context).
-
 `Langlands.GroupScheme.maximalTorusConjugatorReduction.{u}` proves exactly
 `Langlands.GroupScheme.MaximalTorusConjugatorReductionStatement.{u}` from
 `Langlands.GroupScheme.Rational.MaximalTorusGenericConjugatorInduction`.
@@ -30,14 +28,13 @@ Names and modules have the prefix `Langlands.GroupScheme`.
 
 All applications use the published universe `u`. The Lean proof is the
 composition above; no structural premise remains as an extra hypothesis.
-The earlier composite terms are repeated in this module, so this candidate
+The earlier composite terms are repeated in this module, so this module
 depends only on published modules.
 
 ## Provenance
 
 This is a derived proof assembled from the existing Library theorems named above,
-following the route recorded by Worker 15 in the context of Task 5243
-(`054c9e79-c59d-4325-a96b-8c82a40df80b`, revision 1) and the public note
+following the route recorded in the note
 `notes/group-schemes/composable-targets-2026-11-08.md`. It adds a direct proof of
 the existing proposition. It introduces no new statement or independent
 translation of literature. The original statement and its imports are unchanged.

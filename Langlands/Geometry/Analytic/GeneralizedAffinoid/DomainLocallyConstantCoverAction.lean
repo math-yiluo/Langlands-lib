@@ -122,7 +122,7 @@ theorem finiteCoverCompatibleLocallyConstantSmul_apply
     (g : ρ.finiteFamilyOpenSubgroup H c.obj) (f : c.DiscreteSpectrumCompatibleFamily A)
     (i : Fin c.size) (x : BanachSpectrum (c.obj i).algebra) :
     (ρ.finiteCoverCompatibleLocallyConstantSmul H d c A g f).val i x =
-      f.val i (ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ g⁻¹) x) :=
+      f.val i (ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ g⁻¹).asHom x) :=
   rfl
 
 /-- The entire compatible-family action, with the inherited finite product topology. -/
@@ -131,10 +131,11 @@ def finiteCoverCompatibleLocallyConstantAction :
   let act : Action TopCat.{max u w} (ρ.finiteFamilyOpenSubgroup H c.obj) :=
     { V := TopCat.of (c.DiscreteSpectrumCompatibleFamily A)
       ρ :=
-        { toFun := fun g => TopCat.ofHom
+        { toFun := fun g => End.of (TopCat.ofHom
             ⟨ρ.finiteCoverCompatibleLocallyConstantSmul H d c A g,
-              continuous_of_discreteTopology⟩
+              continuous_of_discreteTopology⟩)
           map_one' := by
+            apply End.ext
             apply TopCat.ext
             intro f
             apply Subtype.ext
@@ -142,6 +143,7 @@ def finiteCoverCompatibleLocallyConstantAction :
             exact one_smul _ (f.val i)
           map_mul' := by
             intro g h
+            apply End.ext
             apply TopCat.ext
             intro f
             apply Subtype.ext

@@ -1,6 +1,6 @@
 # Canonical induced coordinates on the actual opposite unipotent group
 
-This derived unit restricts the entire canonical negative-rho induced coordinate
+This derived module restricts the entire canonical negative-rho induced coordinate
 space to the existing opposite dynamic unipotent group and transfers its
 negative simple-root degree bound. It combines `CanonicalRhoRootDegree`,
 `FrobeniusRootCurveCutoff`, `AffineCoordinateTranslation`, and proved dynamic
@@ -46,11 +46,12 @@ scheme, including nonreduced tests. This applies in particular to
 `m = q^r - 1`, because exponential characteristic is positive.
 
 The split pinning and full integral coroot span remain inputs. Frobenius-origin
-invariance remains an explicit premise. This unit does not prove constancy
+invariance remains an explicit premise. This module does not prove constancy
 under the whole group `U`, restriction injectivity, an induced-space dimension
 bound, highest-weight existence, or `SteinbergBigCellStatement`. Its purpose is
 to supply the actual-object degree and root-invariance inputs to the separate
 whole-space argument.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instance `canonicalRhoUnipotentRestrictionIsAffine` used here has a
+module-specific name to permit joint imports. The name changes no type, value, or
+local scope.

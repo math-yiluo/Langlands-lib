@@ -25,7 +25,7 @@ def invariantLocusOperator (H : OpenSubgroup G) (d : ρ.InvariantDomain H) (g : 
       (ρ.stabilizerHom d.obj (ρ.invariantStabilizerInclusion H d g)) x.property⟩
   continuous_toFun :=
     ((BanachSpectrum.comapContinuous
-      (ρ.toMonoidHom (g : G)).inv.toBoundedRingHom).continuous.comp
+      (ρ.toMonoidHom (g : G)).asIso.inv.toBoundedRingHom).continuous.comp
         continuous_subtype_val).subtype_mk _
 
 @[simp]
@@ -41,8 +41,9 @@ def invariantLocusAction (H : OpenSubgroup G) (d : ρ.InvariantDomain H) :
     Action TopCat.{u} H where
   V := TopCat.of d.obj.locus
   ρ :=
-    { toFun := fun g => TopCat.ofHom (ρ.invariantLocusOperator H d g)
+    { toFun := fun g => End.of (TopCat.ofHom (ρ.invariantLocusOperator H d g))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         apply Subtype.ext
@@ -50,6 +51,7 @@ def invariantLocusAction (H : OpenSubgroup G) (d : ρ.InvariantDomain H) :
         rw [map_one, one_smul]
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro x
         apply Subtype.ext

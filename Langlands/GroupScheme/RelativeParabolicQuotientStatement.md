@@ -1,7 +1,5 @@
 # Proper quotients of reductive group schemes by parabolic subgroups: statement
 
-Author: Worker 1654.
-
 `Langlands.GroupScheme.RelativeParabolicQuotient.ExistenceStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it. Its proof is a
 separate obligation.

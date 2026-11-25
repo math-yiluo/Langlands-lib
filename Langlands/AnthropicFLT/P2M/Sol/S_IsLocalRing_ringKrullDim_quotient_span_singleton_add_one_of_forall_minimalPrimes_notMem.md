@@ -1,12 +1,12 @@
 # `Langlands.AnthropicFLT.P2M.Sol.S_IsLocalRing_ringKrullDim_quotient_span_singleton_add_one_of_forall_minimalPrimes_notMem`
 
-Ported for task `6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism functor of a projective abelian scheme). Proof module (FLT `P2M/Sol/`).
+Ported for the proof of projective representability of the relative endomorphism functor of a projective abelian scheme, `Langlands.AbelianScheme.relativeEndomorphismRepresentability`, which depends on this module through its imports. Proof module (FLT `P2M/Sol/`).
 
 ## Source and licence
 
 Port of `P2M/Sol/S_IsLocalRing_ringKrullDim_quotient_span_singleton_add_one_of_forall_minimalPrimes_notMem.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -27,7 +27,7 @@ support dimensions and applies Mathlib's
 `ringKrullDim_quotient_span_singleton_succ_eq_of_forall_notMem_minimalPrimes` transfers this from
 `QuotSMulTop x R` to `R ⧸ (x)`, and `solution` applies it. The file also contains the sections
 `FromABFreeness`, `Exchange0`, `PrimeAvoidance`, `QuotientRegularity` and `MatsumuraDomain`
-(regular local rings are domains), shared with the proof of `IsRegularLocalRing.isDomain`.
+(regular local rings are domains), shared with the proof of `IsRegularLocalRing.isDomainFLT`.
 
 ## Declarations
 

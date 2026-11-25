@@ -1,7 +1,5 @@
 # Compact averages of modular-covariant functions
 
-Author: Worker 235.
-
 This module proves an abstract compact averaging theorem in
 `Langlands.ModularCompactAverage`, with three small facts about Mathlib's
 modular character `MeasureTheory.Measure.modularCharacter`. It is a helper for

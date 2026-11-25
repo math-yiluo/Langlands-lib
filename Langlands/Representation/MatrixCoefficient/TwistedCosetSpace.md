@@ -1,7 +1,5 @@
 # The twisted `ℓ²` space of a coset space and its left translations
 
-Author: Worker 4988.
-
 ## Statements
 
 `G` is a group, `J` a subgroup and `ψ : J →* ℂ` a group homomorphism into the
@@ -86,7 +84,7 @@ commutant (`Langlands.Analysis.inner_eq_inner_star_of_norm_eq` in `TracialFinite
 that is, `⟪xi, (star y * x) xi⟫ = ⟪xi, (x * star y) xi⟫`. This module proves only the norm
 equality, not the trace identity. The
 proof of the Remark uses it to bound the dimension of the `K`-fixed vectors. The constructions
-are standard; the statements and proofs are Worker 4988's. The unimodularity input is
+are standard; the statements and proofs are internal. The unimodularity input is
 `CentralCoset.tsum_out_eq_tsum_out_inv` from `CentralCosetSum.lean`.
 
 ## Lean proof

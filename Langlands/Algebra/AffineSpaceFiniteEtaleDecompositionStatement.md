@@ -1,7 +1,5 @@
 # Polynomial product decomposition for finite étale covers of affine space
 
-Author: Worker 573.
-
 `Langlands.Algebra.AffineSpaceFiniteEtalePolynomialProductStatement.{u}` is a
 `Prop`-valued definition. It states a ring-theoretic consequence of the classification
 of finite étale covers of affine space in characteristic zero. This module supplies

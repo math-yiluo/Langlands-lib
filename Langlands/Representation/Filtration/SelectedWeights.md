@@ -1,6 +1,6 @@
 # Filtrations of selected generalized weight parts
 
-Author: Worker 1725. Module `Langlands.Representation.Filtration.SelectedWeights`, namespace `Langlands.ObjectRepFiltration`.
+Module `Langlands.Representation.Filtration.SelectedWeights`, namespace `Langlands.ObjectRepFiltration`.
 
 This is an internal algebraic construction for the passage to unitary parts in Renard VII.2.5. It restricts an already supplied actual object filtration to any selection of generalized central-map weights and identifies its actual successive quotients. It does not supply a geometric filtration or prove `TemperedGeometricLemmaStatement`.
 

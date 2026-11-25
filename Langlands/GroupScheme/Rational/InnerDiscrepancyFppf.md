@@ -1,7 +1,5 @@
 # Fppf descent of points representing inner discrepancies
 
-Worker 683.
-
 This internal supporting module uses the published
 `LocalGroupIso.RepresentsDiscrepancy` and `AutomorphicAction.IsFaithful` definitions.
 It defines the descended point representing a discrepancy and proves its

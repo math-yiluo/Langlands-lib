@@ -32,7 +32,7 @@ theorem is assumed to define this map.
 displayed multiplication map. `iwasawaMeasureFromFactors_apply` proves
 the corresponding nonnegative integral formula for measurable sets,
 assuming measurability of this multiplication map. The proof applies
-the measure pushforward and density evaluation formulas. This unit
+the measure pushforward and density evaluation formulas. This module
 does not silently select independent Haar normalizations.
 
 `IsIwasawaMeasureCompatible` is a Prop-valued relation on these supplied

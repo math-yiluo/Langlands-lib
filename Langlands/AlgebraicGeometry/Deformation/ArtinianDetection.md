@@ -1,6 +1,6 @@
 # Detection in noetherian rings by local Artinian quotients
 
-Worker 626. This internal algebraic construction supports the Artinian-test
+This internal algebraic construction supports the Artinian-test
 step in the proof of the fibrewise central-isogeny criterion. Its proof uses
 Mathlib's Krull intersection theorem and detection of zero by maximal
 localizations. It requires no approximation theorem.

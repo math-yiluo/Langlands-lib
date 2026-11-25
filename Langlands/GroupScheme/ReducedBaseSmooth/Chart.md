@@ -1,7 +1,5 @@
 # Affine charts: the section lies in the smooth locus
 
-Author: Worker 9.
-
 Helper module for the proof of
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (SGA 3, Exposé VI_B,
 Corollaire 4.4). It proves the local theorem used in that proof, except for one algebraic
@@ -31,8 +29,8 @@ and rings lie in one universe `u`.
 Conclusion: `e s ∈ q.smoothLocus`.
 
 The hypothesis `homega` is exactly the statement of
-`Langlands.GroupScheme.ReducedBaseSmooth.finrank_residueField_tensor_kaehler_eq` (Worker 50,
-`OmegaRank.lean`). The unconditional form `mem_smoothLocus_of_fibres` is obtained by
+`Langlands.GroupScheme.ReducedBaseSmooth.finrank_residueField_tensor_kaehler_eq`
+(`OmegaRank.lean`). The unconditional form `mem_smoothLocus_of_fibres` is obtained by
 supplying that theorem; it is stated in the final proof module.
 
 ## Provenance

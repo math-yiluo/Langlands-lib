@@ -1,7 +1,5 @@
 # Solvability under arbitrary extension of the base field
 
-Worker 1370.
-
 `Langlands.GroupScheme.SolvableFieldExtensionStatement.{u}` asserts that a smooth
 affine group scheme `G` over any field `k : Type u` remains solvable after every
 extension to a field `K : Type u`. The extension is expressed as any actual

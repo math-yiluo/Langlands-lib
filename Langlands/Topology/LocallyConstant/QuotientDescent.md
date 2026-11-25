@@ -1,6 +1,6 @@
 # Locally constant descent through a quotient map
 
-Worker 56 constructs descent of locally constant functions along an actual
+This module constructs descent of locally constant functions along an actual
 topological quotient `q : X → Y`. The coefficient set has an independent
 universe and needs no topology or nonemptiness assumption.
 

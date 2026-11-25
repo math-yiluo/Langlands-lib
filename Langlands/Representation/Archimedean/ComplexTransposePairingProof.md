@@ -8,4 +8,4 @@ Pullback by `g ↦ w₀ (gᵀ)⁻¹` and the compact integration pairing identif
 
 The final input, existence of that largest proper standard submodule, is supplied unconditionally by `complexBlockLanglandsQuotient` using `complexBlockChartIntegrable`, `complexBlockParabolicIntegration` and the published `complexTemperedStandardIrreducible`. Every retained premise of the earlier reduction is therefore discharged.
 
-This proves the complex half of `ArchimedeanTransposePairingStatement`. It does not prove the real half or complete Task 7534's conjunction. The proof route differs from the smooth Fréchet route in the target's Aizenbud–Gourevitch source; the classification, duality and kernel arguments implement the exact Library conclusion directly in the algebraic GK category.
+This proves the complex half of `ArchimedeanTransposePairingStatement`. It does not prove the real half or the whole conjunction. The proof route differs from the smooth Fréchet route in the target's Aizenbud–Gourevitch source; the classification, duality and kernel arguments implement the exact Library conclusion directly in the algebraic GK category.

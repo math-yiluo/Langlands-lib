@@ -1,6 +1,6 @@
 # Fixed-vector generation and smooth duality from a splitting
 
-Author: Worker 146. This is an internal reduction for Renard VI.10.6,
+This is an internal reduction for Renard VI.10.6,
 Proposition (iii), printed p.214 / PDF p.220 of the French version of
 9 July 2026. It does not prove the splitting premise or the exact global
 `FixedVectorCategoryStatements` target.

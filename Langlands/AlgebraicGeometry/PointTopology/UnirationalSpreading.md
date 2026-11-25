@@ -1,7 +1,5 @@
 # Spreading out local parametrizations of unirational schemes
 
-Author: Worker 1420.
-
 This is an internal, derived interface for the actual scheme predicate
 `PointTopology.IsUnirational` from `UnirationalDensity`. The field `k` and
 all schemes have arbitrary universe `u`. There is no infinitude, perfection

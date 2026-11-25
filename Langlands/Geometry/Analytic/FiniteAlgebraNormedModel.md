@@ -1,7 +1,7 @@
 # Complete normed models of finite algebras over Noetherian Banach algebras
 
 Lean module: `Langlands.Geometry.Analytic.FiniteAlgebraNormedModel`
-(namespace `Langlands.Analytic.FiniteNormedModel`). Support module for Task 7655.
+(namespace `Langlands.Analytic.FiniteNormedModel`). Support module for the proof of `AffineAnalytificationFiniteGermComparisonStatement`.
 
 ## Content
 
@@ -40,5 +40,5 @@ Internal Library infrastructure. It adapts the quotient-norm construction in the
 `GeneralizedAffinoid.FiniteTensorComparison.Proof` to an arbitrary finite algebra, and it reuses
 `isUltrametricDist_submoduleQuotient` from the former. The
 underlying fact is standard: a finite algebra over a Noetherian Banach algebra carries a complete
-quotient norm. Task 7655 uses the model to build test algebras out of finite `R`-algebras
-(`FinitePieceLocalProof`).
+quotient norm. `FinitePieceLocalProof` uses the model to build test algebras out of finite
+`R`-algebras.

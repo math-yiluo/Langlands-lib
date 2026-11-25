@@ -1,7 +1,5 @@
 # Base change of full character-kernel centralizers
 
-Author: Worker 1465.
-
 This internal construction combines the published actual-kernel base-change
 isomorphism, uniqueness of represented subgroups, and arbitrary-base-change
 compatibility of all-test centralizers.

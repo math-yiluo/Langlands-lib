@@ -47,9 +47,8 @@ faithfulness assertion occurs in it.
 
 The provenance is internal: this is the compatibility required
 between the Library's existing canonical dual pullback and its
-geometric-fibre definition of relative polarization. Worker 144
-identified the remaining family-comparison obligations and Worker
-57 formulated the exact target. The isogeny conjunct should follow
+geometric-fibre definition of relative polarization. The isogeny
+conjunct should follow
 from actual isogeny base change and composition with the canonical
 isomorphism. For a point `s' : Spec K ⟶ S'`, the other conjunct
 must compare the actual iterated fibre with the actual direct fibre
@@ -65,6 +64,4 @@ This file does not supply these comparisons or a proof of
 polarization stability. It does not claim existence of polarizations,
 preservation of an involution equation or of a faithful action,
 pointed Weil-level pullback, a varying-base polarized quotient,
-representability or scheme levels. The statement retains all
-existing pauses on unconditional Picard, inverse-bundle,
-ampleness-existence and related infrastructure.
+representability or scheme levels.

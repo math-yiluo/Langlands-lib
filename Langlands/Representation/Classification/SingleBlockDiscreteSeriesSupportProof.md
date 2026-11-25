@@ -1,7 +1,5 @@
 # Single-block unitary cuspidal support on the original GL carrier
 
-Author: Worker 320.
-
 `Langlands.glSingleBlockDiscreteSeriesSupport` proves the unchanged
 `Langlands.GLSingleBlockDiscreteSeriesSupportStatement.{uF,uV}` from
 [`SingleBlockDiscreteSeriesSupportStatement`](SingleBlockDiscreteSeriesSupportStatement.md).

@@ -1,6 +1,6 @@
 # Renard A.III.3: the object and functor isomorphism principles
 
-This pair states the two clauses of the proposition in Renard 2026,
+This module states the two clauses of the proposition in Renard 2026,
 Appendix A.III.3. It supplies closed proposition definitions and no proofs.
 
 ## Source and conventions
@@ -91,7 +91,7 @@ The categories and functors need no additive, finiteness or limit structure.
 The Hom-family formulation leaves all four universes independent without
 choosing a separate universe of sets or identifying any of the levels.
 
-## Aggregate and remaining proof
+## Aggregate and proof
 
 `Langlands.Renard.IsomorphismPrinciple.IsomorphismPrincipleStatements` is
 the conjunction of `ObjectStatement` and `FunctorStatement`, in that order,
@@ -105,9 +105,11 @@ isomorphism from inverse Hom maps and the same precomposition equation.
 For functors, the equivalences at each X give such object isomorphisms;
 naturality in X must then give the naturality of their forward maps.
 These observations describe an intended route, not an implemented proof.
+The aggregate is proved, exactly as stated, by
+`Langlands.Renard.IsomorphismPrinciple.isomorphismPrincipleStatements` in
+`IsomorphismPrincipleProof`, which uses `Yoneda.ext`.
 
-An exact-proof successor must target the unchanged aggregate after its
-independent acceptance and actual Library publication. This pair does not
+This module does not
 supply the general Yoneda lemma, the representability assertions of A.III.2,
-compatible uniqueness of representations, adjunctions, or completion of
-Appendix A.III or the whole-book program.
+compatible uniqueness of representations, adjunctions, or all of
+Appendix A.III.

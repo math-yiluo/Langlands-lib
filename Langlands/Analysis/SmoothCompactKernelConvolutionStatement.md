@@ -1,6 +1,6 @@
 # Smooth compact group kernels and continuous Banach-valued functions
 
-Worker116 states the internal target
+This module states the internal target
 `Langlands.Analysis.SmoothCompactKernelConvolutionStatement`. This file defines
 one proposition and contains no proof.
 
@@ -42,16 +42,22 @@ original function is smooth at `p₀`. Pointwise integrability separately follow
 from continuity and compact support of the actual integrand.
 
 This is a proof plan. The common support set, compact restriction, measure
-identities and local equality must be proved in an exact-target proof. The
-manifold weighted-integral target is itself a separately staged statement;
-neither that definition nor an unreviewed private proof is accepted proof
-input. This statement file imports only public Mathlib interfaces.
+identities and local equality are proved in `smoothCompactKernelConvolution`
+(module `Langlands.Analysis.SmoothCompactKernelConvolutionProof`). The
+manifold weighted-integral target is itself a separate statement,
+`CompactManifoldWeightedIntegralStatement`, proved as
+`compactManifoldWeightedIntegral` in
+`Langlands.Analysis.CompactManifoldWeightedIntegralProof`; this file imports
+neither. This statement file imports only public Mathlib interfaces.
 
 ## Application boundary
 
 For an actual continuous isometric representation, `w(y)` may be the orbit of an
-original vector. The displayed convolution has not yet been identified with the
-orbit of the corresponding integrated vector: the Haar change of variables and
-representation action/integral comparison remain separate obligations. No
+original vector. This statement does not identify the displayed convolution
+with the orbit of the corresponding integrated vector: the Haar change of
+variables and representation action/integral comparison are separate results.
+That identification is made in `integratedIsometricSmoothVectors` (module
+`Langlands.Representation.Unitary.IntegratedIsometricSmoothVectorsProof`),
+through the left translation identity `integratedActionLeftTranslation`. No
 smooth-vector density, approximate identity, GH6.1 tensor realization, decay,
-trace or spectral assertion follows from this statement publication.
+trace or spectral assertion follows from this statement.

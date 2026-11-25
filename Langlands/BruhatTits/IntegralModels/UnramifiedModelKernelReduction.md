@@ -4,7 +4,7 @@ Module `Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelReduction`.
 
 ## Purpose and provenance
 
-The published host statement
+The published statement
 `Langlands.BruhatTits.IntegralModels.UnramifiedModelKernelStatement.{u}` is the
 statement of Kaletha–Prasad, *Bruhat–Tits theory: a new approach* (2023),
 Proposition 8.4.15. Its subsets of the building are translates
@@ -12,11 +12,12 @@ Proposition 8.4.15. Its subsets of the building are translates
 `g ∈ G(K)`, where `K` is the maximal unramified extension. Its group `G(K)^0`
 is defined by an arbitrary zero datum `E : UnramifiedZeroDatum`.
 
-This module reduces the host statement to a special case. In the special case
+This module reduces `UnramifiedModelKernelStatement` to a special case. In the special case
 there is no translation (`g = 1`), and the torus of the zero datum represents
 the centralizer of the maximal split torus of the building data. The reduction
-uses two published statements that have no proof in the Library. They are
-explicit hypotheses of the main theorem:
+uses two published statements. They are explicit hypotheses of the main
+theorem; `unramifiedModelKernel` (module `UnramifiedModelKernelProof`)
+discharges both when it proves `UnramifiedModelKernelStatement`:
 
 * `Langlands.Geometry.Building.UnramifiedQuasiSplitStatement.{u}`: every
   connected reductive group over `K = UnramifiedClosure F` is quasi-split;
@@ -24,11 +25,10 @@ explicit hypotheses of the main theorem:
   the subgroup `E.zeroPoints = H(K)^0` does not depend on the zero datum `E`
   (KP Lemma 2.6.24).
 
-**This module does not prove the host statement.** It also does not prove the
+**This module does not prove `UnramifiedModelKernelStatement`.** It also does not prove the
 special case `UnramifiedCompatibleModelKernelStatement` or either hypothesis.
-The special case and the arrangement of this reduction are internal design by
-Worker 4783 for Task 6203, which Worker 282 and Worker 4783 share. They are not
-statements from the literature.
+The special case and the arrangement of this reduction are internal design for
+the proof of `UnramifiedModelKernelStatement`. They are not statements from the literature.
 
 Notation: `K = inertiaFixedField F`, and `G_K = baseChanged F K G` is the base
 change of the `F`-group `G` to `K`. `C` is building data for `G_K`
@@ -71,17 +71,17 @@ structure morphism of `G_K` is affine.
   the reduced building, the image of `C.pointwiseFixer (g · Y)` under
   conjugation `x ↦ g⁻¹ x g` is `C.pointwiseFixer Y`. This is Mathlib's
   `SubMulAction.fixingSubgroup_map_conj_eq` together with `g⁻¹ · (g · Y) = Y`.
-* `UnramifiedCompatibleModelKernelStatement.{u}` (a `Prop`): the host statement
+* `UnramifiedCompatibleModelKernelStatement.{u}` (a `Prop`): `UnramifiedModelKernelStatement`
   with two changes. First, the sets are `C.apartmentMap '' Ωa` and
   `C.apartmentMap '' Ωa'` (no translation by `g`). Second, it assumes
   `(torusCentralizer C.i).IsRepresentedBy E.i`. The other hypotheses are those
-  of the host: `Ωa` is nonempty; every affine function `C.Apartment → ℝ` is
+  of `UnramifiedModelKernelStatement`: `Ωa` is nonempty; every affine function `C.Apartment → ℝ` is
   bounded above on `Ωa'`; `Ωa` lies in the closure of `Ωa'` for the topology
   induced by affine functions; `N` and `N'` are smooth integral models of `G_K`
   over the integers of `K` with integral points
   `E.zeroPoints ⊓ C.pointwiseFixer (C.apartmentMap '' Ωa)` and
   `E.zeroPoints ⊓ C.pointwiseFixer (C.apartmentMap '' Ωa')`. The conclusion is
-  the host conclusion: for every model homomorphism `ψ : N'.Hom N (𝟙 _)`, the
+  the conclusion of `UnramifiedModelKernelStatement`: for every model homomorphism `ψ : N'.Hom N (𝟙 _)`, the
   kernel of `ψ.specialFibreMap` is smooth, connected and unipotent.
 * `integralPoints_transport_innerIso hind C E E' g Y M hM`: let `M` be an
   integral model of `G_K` with integral points
@@ -115,7 +115,8 @@ structure morphism of `G_K` is affine.
   `hcore : UnramifiedCompatibleModelKernelStatement.{u}`, it concludes
   `UnramifiedModelKernelStatement.{u}`.
 
-  *Proof.* Take the host data `F, G, C, E, g, Ωa, Ωa', N, N', ψ`. The group
+  *Proof.* Take the data `F, G, C, E, g, Ωa, Ωa', N, N', ψ` of
+  `UnramifiedModelKernelStatement`. The group
   `G_K` is connected reductive (a field of `C`), hence quasi-split by `hquasi`.
   Apply `exists_isRepresentedBy_torusCentralizer` to the maximal split torus
   `C.i` to get a compatible zero datum `E'`. Transport `N` and `N'` along

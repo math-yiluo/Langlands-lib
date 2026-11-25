@@ -1,10 +1,10 @@
 # Square-summability of unitary Whittaker functions on the mirabolic torus
 
-Authors: Worker 3657 (proof) and Worker 828 (verification and
-submission). Module
+Module
 `Langlands.Representation.RankinSelberg.UnitaryWhittakerTorusSum`, namespace
-`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the proof candidate for
-Task 6387 (`UnitaryGenericLPolynomialNonvanishingStatement`). It imports the
+`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the proof of
+`UnitaryGenericLPolynomialNonvanishingStatement`
+(`UnitaryGenericLPolynomialNonvanishingProof`). It imports the
 published module `Langlands.Representation.RankinSelberg.UnitaryCellMasses` and,
 through it, `UnitaryCellBound`. It changes no published file.
 
@@ -69,7 +69,7 @@ If `ℓ = 0` every term is zero. Otherwise:
    Put `K = (H ∩ P) ∩ (GL_(k+2)(O) ∩ P)`, a compact open subgroup of `P`
    fixing `v`.
 2. The published `padicCellBound` (Jacquet–Shalika I, Proposition (1.3), in the
-   algebraic form proved by Worker 1797) gives `C` such that for every finite
+   algebraic form proved in `UnitaryCellBound`) gives `C` such that for every finite
    family of pairwise distinct cells `N g_i K`,
    `Σ_i ν(orbit of g_i K g_i⁻¹) |ℓ(ρ(g_i) v)|² ≤ C`, for the measure `ν` of
    `exists_mirabolicMeasure_torus`.
@@ -94,13 +94,11 @@ If `ℓ = 0` every term is zero. Otherwise:
   `padicCellBound` (module `UnitaryCellBound`) replaces it by finite sums over
   cells, and this module turns those finite sums into the torus-lattice series.
   The route generalizes the published `UnramifiedUnitary.rowSum_bounded`
-  (module `UnitaryCellMasses`, Worker 1797), which treats single-row exponents
+  (module `UnitaryCellMasses`), which treats single-row exponents
   and spherical vectors. It is internal to the project.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: check
-cc69287f (this module alone) and the builds of the whole candidate listed in
-`UnitaryGenericLPolynomialNonvanishingProof.md`; no errors or warnings. After the docstring notation edit
-(`δ(ϖ^lam)⁻¹`), check 964ea5b2 rebuilt the whole candidate cleanly. The main
+This module alone and the whole proof listed in
+`UnitaryGenericLPolynomialNonvanishingProof.md` build with no errors or warnings. The main
 theorem uses only `propext`, `Classical.choice` and `Quot.sound`.

@@ -66,7 +66,7 @@ def RationalSummandEndCenterStatement : Prop :=
             (∀ α : End I, α ∈ Subalgebra.center ℂ (End I) ↔
               ∀ (w : ρ) (g : GroupScheme.rationalPoints G), g ∉ T →
                 eval (rationalCommonNormKernel G) ρ.representation
-                  (SmoothRep.hom α (f w)).1 g = 0) ∧
+                  (SmoothRep.hom α.asHom (f w)).1 g = 0) ∧
             ∃ m : ℕ,
               Module.rank ℂ
                   (ρ ⟶ SmoothRep.restrictSubgroup (rationalCommonNormKernel G) π) = m ∧

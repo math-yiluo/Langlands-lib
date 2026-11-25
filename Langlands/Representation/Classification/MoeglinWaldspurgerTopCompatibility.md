@@ -1,7 +1,7 @@
 # Top compatibility of the bottom-up matching
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerTopCompatibility`,
-namespace `Langlands.MoeglinWaldspurger.Derivation`. Written by Worker 5735 for Task 5735.
+namespace `Langlands.MoeglinWaldspurger.Derivation`.
 
 The theorem `topUnmatchedCompatibility : TopUnmatchedCompatibility` proves the target of the
 same name stated in `MoeglinWaldspurgerDerivativeStatements`. It is a special case of
@@ -10,7 +10,8 @@ same name stated in `MoeglinWaldspurgerDerivativeStatements`. It is a special ca
 `dual a` contains the point `[x, x]` exactly `card (unmatched a x)` times, and
 `dual (leftDerivative a x) = dual a - replicate (card (unmatched a x)) [x, x]`.
 
-Both statements are internal to the derivative-comparison proof of Task 5735; they are not
+Both statements are internal to the derivative-comparison proof of
+`UniversalAubertCorrectness`; they are not
 taken from the literature. (Representation-theoretically, `dual a` labels the Zelevinsky
 representation isomorphic to the Langlands quotient of `a`, whose highest left derivative at
 the top point `x` has a trivial Zelevinsky-side description.)

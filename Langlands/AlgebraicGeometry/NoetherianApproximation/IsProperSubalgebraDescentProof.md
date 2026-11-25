@@ -1,13 +1,11 @@
 # Descent of properness to finitely generated subalgebras (proof)
 
-Proof submitted by task `e36ae7da-512e-4a4d-a902-71146c92ec82`.
-
 ## Statement proved
 
 `Langlands.AlgebraicGeometry.NoetherianApproximation.isProperSubalgebraDescent :
 IsProperSubalgebraDescentStatement.{u}`, for an arbitrary universe `u`. The statement is the published
-proposition of module `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements`
-(statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`): for a noetherian commutative ring `A₀`,
+proposition of module `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements`:
+for a noetherian commutative ring `A₀`,
 an `A₀`-algebra `A` (both in `Type u`), a separated, quasi-compact morphism `f : X ⟶ Spec A₀` that is
 locally of finite type and whose base change `pullback.snd f (Spec.map (algebraMap A₀ A))` is proper,
 and a finite set `s ⊆ A`, there is a finitely generated `A₀`-subalgebra `T ⊇ s` of `A` such that the
@@ -33,19 +31,19 @@ case over the irreducible components of the noetherian scheme `X`, using project
 image of `j` is closed in the base change of `P`. Over `A` this preimage is open and closed; its
 complement, a quasi-compact open, descends to a finitely generated subalgebra by Mathlib's limit
 lemmas (`exists_preimage_eq`, `exists_map_preimage_eq_map_preimage`) along the limit cone
-`SubalgebraStages.nonempty_isLimit_cone` of task `80ab0ad1-6602-4bc6-8c52-3f88f45f4c83`, which makes the preimage closed over some
+`SubalgebraStages.nonempty_isLimit_cone` (ported with `SchemeSubalgebraDescentProof`), which makes the preimage closed over some
 `T ⊇ s`.
 
 ## Dependencies
 
 - `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements` (Library).
 - `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_IsProper_exists_fg_subalgebra_of_isProper_pullback_snd`
-  and its import closure: 7 further ported FLT modules submitted with this proof, the three modules
+  and its import closure: 7 further FLT modules ported with this proof, the three modules
   `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_SubalgebraStages`,
   `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_SubalgebraStages_nonempty_isLimit_cone` and
   `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_SubalgebraStages_nonempty_isLimit_cone`
-  (port of task `80ab0ad1-6602-4bc6-8c52-3f88f45f4c83`), and
-  `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace` (published with the FLT port
-  of task `69435287-9f1e-4abd-8483-5e65ff23668a`). All three dependency ports are imported from the
-  Library, not resubmitted here. Apache License 2.0, Copyright 2026 Anthropic, PBC, see
+  (ported with `SchemeSubalgebraDescentProof`), and
+  `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace` (from an earlier FLT port
+  in the Library). All three dependency ports are imported from the
+  Library, not ported again here. Apache License 2.0, Copyright 2026 Anthropic, PBC, see
   `licenses/Anthropic-FLT/`.

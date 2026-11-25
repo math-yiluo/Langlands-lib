@@ -1,7 +1,5 @@
 # The actual affine point manifold through algebraic base change
 
-Author: Worker 94.
-
 Let `C` be a commutative ring, let `k` be an `RCLike` field in the same
 arbitrary universe, and fix `Algebra C k`. Let `G` be an actual group scheme
 over `Spec C` with affine underlying scheme. Write `G_k` for the existing

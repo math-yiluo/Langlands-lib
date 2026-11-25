@@ -1,7 +1,5 @@
 # Fixation on the actual algebraic compact-type span
 
-Author: Worker 94.
-
 The source-character reproduction formula is passed through every
 algebraic intertwiner from the compact type into the actual derivative smooth
 functions. Compose an intertwiner with point evaluation. The resulting

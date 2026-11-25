@@ -1,6 +1,6 @@
 # The actual infinite adelic group manifold
 
-Author: Worker 94. This internal construction assembles the specified local
+This internal construction assembles the specified local
 completion manifolds using the finite-product atlas and explicit homeomorphism
 chart transport. It imports the published actual completion decomposition and
 mixed-coordinate comparison by their Lean names.
@@ -64,7 +64,7 @@ coordinate criterion and the existing exact `atPlace_evaluation` identity.
 
 The provenance is internal assembly of the actual affine-point completion
 manifolds, explicit homeomorphism chart transport, the finite-product helper and
-published original-coordinate identities. This unit constructs the infinite
+published original-coordinate identities. This module constructs the infinite
 adelic manifold and original Lie group under the stated constant-dimension
 hypothesis. Deriving that hypothesis from connected reductivity, compatibility
 with existing general-linear manifold charts, differential growth, reduction

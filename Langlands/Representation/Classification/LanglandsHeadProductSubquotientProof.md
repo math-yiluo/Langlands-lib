@@ -1,7 +1,5 @@
 # The summed Langlands head occurs in a binary product: proof
 
-Author: Worker 186.
-
 The theorem `Langlands.Classification.langlandsHeadProductSubquotient` proves the
 unchanged published proposition
 `Langlands.Classification.LanglandsHeadProductSubquotient.{uF,uV} F T` from

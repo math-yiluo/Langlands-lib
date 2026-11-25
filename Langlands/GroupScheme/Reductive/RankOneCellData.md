@@ -1,6 +1,6 @@
 # Cell data in semisimple rank one
 
-This internal supporting unit supplies the cell data for the rank-one case of
+This internal supporting module supplies the cell data for the rank-one case of
 `SplitRankOneCommonTorusIsomorphismStatement`. Let `i : T ⟶ G` be a maximal
 torus of a connected reductive group `G` over a field `k`, with `T` split, and
 assume that any two roots of `i` are linearly dependent over `ℤ` (the rank-one
@@ -12,7 +12,10 @@ and Theorem 21.11(c) (p. 428–429): the root group `U_α = U_G(ν)` is isomorph
 to `𝔾ₐ` and normalized by `T`.
 
 Three published Prop-valued statements enter as explicit hypotheses. The
-final candidate must discharge them with their Library proofs:
+Library proves them, as `dynamicCentralizerReductive` (in
+`Dynamic.CentralizerReductiveProof`), `rankOnePositiveRootUniqueness` (in
+`RankOnePositiveRootProof`) and `splitRootLieLine` (in `SplitRootLieLineProof`),
+in the order of this list:
 
 - `hDCR : DynamicCentralizerReductiveStatement`: a closed subgroup that
   represents the dynamic centralizer of a cocharacter of a connected reductive
@@ -127,7 +130,7 @@ cocharacter, with conjugation through `-α`.
 ## `rankOneCellData`
 
 This is the conjunction of `rankOne_centralizer_isRepresentedBy` (using
-`⟨α, ν⟩ ≠ 0`) and `rankOne_exists_rootGroup`, in the form requested for the
+`⟨α, ν⟩ ≠ 0`) and `rankOne_exists_rootGroup`, in the form intended for the
 rank-one assembly.
 
 ## `rankOne_exists_cell`

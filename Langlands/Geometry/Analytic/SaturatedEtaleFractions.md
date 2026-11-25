@@ -1,13 +1,13 @@
 # Intrinsic étale numerator conditions on actual right fractions
 
-Author: Worker 208.
-
-This derived internal unit defines `localizedFractionEtale` on the actual
+This internal module defines `localizedFractionEtale` on the actual
 localized category of saturated presentations. It is built from the
 canonical strong-map property `strongEtale`. Its equality with the
-existing localized `etale` predicate used by `EtaleSite` remains to be
-proved; the present composition theorem alone does not establish
-composition or right cancellation for that existing predicate.
+existing localized `etale` predicate used by `EtaleSite` is proved in
+`LocalizedEtaleComposition` (`localizedFractionEtale_eq_etale`, in that
+predicate's universe convention); the present composition theorem alone
+does not establish composition or right cancellation for that existing
+predicate.
 
 Work over a complete ultrametric normed field `K : Type u`, with
 independent space and original atlas-index universes `v` and `w`.
@@ -71,5 +71,3 @@ All arguments use existing actual right fractions, full bounded-map
 common refinement, the constructed Ore square and proved strong-map
 quasi-isomorphism invariance. No external theorem translation, unproved
 geometric premise, separation hypothesis or supplied Ore data is used.
-Unchanged prerequisite pairs are included for dependency completeness
-while their earlier independently reviewed submissions await integration.

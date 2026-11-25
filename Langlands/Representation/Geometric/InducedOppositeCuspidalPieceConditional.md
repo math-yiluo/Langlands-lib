@@ -1,8 +1,5 @@
 # Cuspidal pieces of opposite Jacquet modules from the geometric lemma
 
-Authors: Worker 954 (proof and original draft), Worker 164 (current-Library
-adaptation and documentation).
-
 The module `Langlands.Representation.Geometric.InducedOppositeCuspidalPieceConditional`,
 namespace `Langlands.InducedOppositeCuspidalPiece`, proves that the
 cuspidal-piece statement `Langlands.GLInducedOppositeJacquetCuspidalPieceStatement`
@@ -95,7 +92,7 @@ Write `I = induced T B π`, `r = leviReverseEquiv C`, and
    `refinedLevi_eq_top_of_refinedParabolic_eq_top` and `hR` give
    `sourceLevi F C.reverse B (e i)⁻¹ = ⊤`. With
    `hS`, `conjugatesLevi_flatten_of_intersections` gives
-   `hw : ConjugatesLevi (B.flatten (Sf (e i))) C.reverse (e i)`. Worker 514's
+   `hw : ConjugatesLevi (B.flatten (Sf (e i))) C.reverse (e i)`. The
    published `Geometric.wholeLeviGeometricPieceEquiv` identifies the piece with
    `transport (B.flatten (Sf (e i))) C.reverse (e i) hw σ`, where
    `σ = (T.normalizedRefinedJacquet B (Sf (e i)) π.ρ).comp (flattenedLeviEquiv F B (Sf (e i))).toMonoidHom`.

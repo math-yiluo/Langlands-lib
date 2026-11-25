@@ -32,15 +32,16 @@ spectrum points is assumed.
 ## Provenance and intended role
 
 This is an internal general spectral-analysis prerequisite. It abstracts
-the evaluation step from Worker 730's published
+the evaluation step from the published
 `StrictTestDomain/SpectralLocalContinuityProof`, separating it from the
 strict quotient, group-action and represented-domain machinery. That proof's
 private `joint_spectral_evaluation` uses the inequality
 `|x(b) - x(c)| ≤ x(b - c)` and continuity of evaluation at a fixed element;
 `joint_spectral_action` uses the spectrum's induced topology. The same
 argument applies to this general bounded-map family with arbitrary source
-and target rings. The present statement is proposed for independent proof;
-this file supplies no proof of it.
+and target rings. This file supplies no proof of the present statement;
+`spectralParametricPullbackContinuity` in `Spectrum/SpectralJointContinuityProof`
+proves it.
 
 The Library's `Spectrum/JointContinuityStatement` instead assumes norm
 continuity of each orbit. The present target allows the weaker uniform

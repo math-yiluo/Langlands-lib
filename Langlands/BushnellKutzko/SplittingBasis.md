@@ -1,10 +1,9 @@
 # Splitting bases for lattice chains
 
 Supporting lemmas for the proof of BK93 §1.1, derived from
-`Langlands.BushnellKutzko.LatticeChain` and Mathlib. Worker 408 supplied
-the original coordinate-space draft. Worker 628 generalized the index
-and splitting induction to an arbitrary vector space in an independent
-universe. The one-chain splitting property is the decomposition along
+`Langlands.BushnellKutzko.LatticeChain` and Mathlib. The index and the
+splitting induction are developed for an arbitrary vector space in an
+independent universe. The one-chain splitting property is the decomposition along
 coordinate lines in BK93 (1.1.7), printed p. 23.
 
 `ordOf hϖ c` is the integer exponent in the uniformizer-times-unit decomposition of a nonzero field element, with the value zero assigned at zero. The uniqueness, product, inverse and integrality lemmas follow from the discrete valuation ring decomposition. Products and inverses explicitly require nonzero inputs.

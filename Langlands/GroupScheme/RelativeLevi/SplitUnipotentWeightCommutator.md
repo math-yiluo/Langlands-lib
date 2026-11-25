@@ -1,6 +1,6 @@
 # Independent nonnegative weights in a regular contracting group
 
-This derived unit works over any commutative ring, on every scheme test.
+This derived module works over any commutative ring, on every scheme test.
 Fix an equivariant root family in a split-torus big cell with negative and
 positive root lists, and a regular cocharacter `ν` whose pairings have the
 specified strict signs. Let `j : U → G` represent its actual dynamic

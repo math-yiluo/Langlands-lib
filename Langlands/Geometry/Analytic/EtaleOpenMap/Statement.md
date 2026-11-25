@@ -1,7 +1,5 @@
 # Openness of étale morphisms of analytic spaces
 
-Author: Worker 284.
-
 This module states
 `Langlands.Analytic.SaturatedAtlasPresentation.EtaleOpenMapStatement`.
 For every complete ultrametric normed field `K`, the proposition says that

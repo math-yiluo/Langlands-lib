@@ -1,10 +1,10 @@
 # Statement: the ground-field base-change map of affine analytifications
 
-This unit states, without proof, two properties of the canonical continuous map
+This module states, without proof, two properties of the canonical continuous map
 `baseChangeMap K L P : (X_L)^an → X^an`. Here `X = Spec A` for a presented
 `K`-algebra `A`, `K → L` is an extension of complete non-Archimedean fields, and
 `X_L = Spec (L ⊗[K] A)`. The map is defined in the published
-`AffineAnalytificationScalarExtension` unit. The statement says that the map is
+`AffineAnalytificationScalarExtension` module. The statement says that the map is
 surjective, and that over the analytic point of a `K`-rational point of `X` its
 fibre is the single analytic point of the corresponding `L`-rational point of
 `X_L`. The proposition is
@@ -38,7 +38,7 @@ SHA256 `9b543e7ffae8ec6febf154a60c4d11a288f7ecc3795c66f004ba3200a6824e79`.
 Conrad–Temkin, *Non-archimedean analytification of algebraic spaces* (2009),
 Theorem 2.3.5, printed p.13/PDF p.13, gives a natural isomorphism
 `k′ ⊗̂_k X^an ≃ (k′ ⊗_k X)^an`, "the usual isomorphism when `X` is an algebraic
-`k`-scheme". That section works with rigid-analytic spaces, so this unit cites
+`k`-scheme". That section works with rigid-analytic spaces, so this module cites
 it only as context for the compatibility. The registered source is
 `conrad-temkin-2009-nonarchimedean-analytification`, SHA256
 `ecfb9dad9c7e27ec36e3a40111ea140fc3bf2589f41b58f97e036e4e2ce6394e`.
@@ -91,12 +91,12 @@ of `φ`, and that no other point of `(X_L)^an` does.
 
 ## Scope
 
-The unit supplies no proof and edits no published or staged input. It imports
-the published `AffineAnalytificationScalarExtension` and
-`AffineAnalytificationRationalPoints` units unchanged. It does not state that
+The module supplies no proof; the statement is proved as
+`affineAnalytificationBaseChange` in `AffineAnalytificationBaseChangeProof`.
+It imports the published `AffineAnalytificationScalarExtension` and
+`AffineAnalytificationRationalPoints` modules. It does not state that
 `baseChangeMap` is proper, closed or a quotient map. It does not identify
 `(X_L)^an` with a completed ground-field extension `X^an ⊗̂ L`, and it does not
 describe the fibres over points that are not `K`-rational. It does not treat the
 more general `extensionMap` for an arbitrary `K`-algebra map, scheme-level base
-change, or independence of the presentation. These remain successor obligations
-of the parent task.
+change, or independence of the presentation.

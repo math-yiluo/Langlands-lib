@@ -1,8 +1,9 @@
 # Inverse-transpose pullback on actual finite-smooth adelic functions
 
-This internal construction for Task 7294 combines the ambient rational
-continuous pullback of Worker 338 with the archimedean smooth pullback and
-differential covariance of Worker 264.
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` combines the ambient rational
+continuous pullback of `TransposeAmbient` with the archimedean smooth pullback and
+differential covariance of `Global/ArchimedeanTransposeSmooth`.
 
 `finiteSmoothTranspose K n` is the complex-linear involution
 `f(g) ↦ f((g⁻¹)ᵀ)` on the actual finite-smooth rational function space.
@@ -26,4 +27,6 @@ simultaneous center finiteness is preserved and reflected. This is a
 common-family result, not merely separate center finiteness of each slice.
 
 No growth, compact finiteness, cuspidality or contragredient identification
-is asserted here. The exact target of Task 7294 remains open.
+is asserted here. `CuspidalTransposeInverseContragredientStatement` is proved as
+`cuspidalTransposeInverseContragredient` in
+`Global/RankinSelberg/CuspidalTransposeInverseContragredientProof`.

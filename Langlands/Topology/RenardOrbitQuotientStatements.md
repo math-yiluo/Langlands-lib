@@ -1,6 +1,6 @@
 # Renard II.3.3–II.3.4: orbit maps and quotients
 
-This unit states six results in
+This module states six results in
 `Langlands.Topology.RenardOrbitQuotient.Statements`. They are proposition
 definitions, with no proofs supplied here.
 
@@ -58,4 +58,5 @@ projection, using the `ContinuousConstSMul` instance induced by
 `ContinuousSMul`. It also proves continuity of the quotient projection and
 `QuotientGroup.instLocallyCompactSpace` for subgroup quotients. These results
 are reused; no replacement quotient carrier is introduced. They do not by
-themselves establish the six new targets, which remain unproved.
+themselves establish the six new targets; the module `RenardOrbitQuotientProof`
+proves them (`Langlands.Topology.RenardOrbitQuotient.statements`).

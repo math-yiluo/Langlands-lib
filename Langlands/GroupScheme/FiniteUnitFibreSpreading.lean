@@ -152,6 +152,7 @@ theorem isIso_baseChange_comp {S T U : Scheme.{u}} (b : T ⟶ S) (c : U ⟶ T)
     change IsIso (pullback.snd _ _)
     infer_instance
   rw [← Over.w (baseChangeCompIso b c K).hom.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A finite group over an affine base with trivial residue fibre is trivial
@@ -165,6 +166,7 @@ theorem exists_isIso_neighbourhood_affine {R : CommRingCat.{u}}
   let M := (hopfSpec R).obj (Opposite.op B)
   let e : M ≅ K := AffineCoordinates.hopfSpecIso K
   have : Module.Finite R B := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     have hfin : IsFinite (e.hom.hom.hom.left ≫ K.X.hom) := inferInstance
     rw [Over.w] at hfin
     change IsFinite (Spec.map (CommRingCat.ofHom (algebraMap R B))) at hfin
@@ -177,6 +179,7 @@ theorem exists_isIso_neighbourhood_affine {R : CommRingCat.{u}}
   have : IsIso ((baseChange b).obj K).X.hom := by rw [hb]; exact hs
   have : IsIso ((baseChange b).obj M).X.hom := by
     rw [← Over.w ((baseChange b).mapIso e).hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have : IsIso (pullback.snd
       (Spec.map (CommRingCat.ofHom (algebraMap R B))) b) := ‹IsIso ((baseChange b).obj M).X.hom›
@@ -198,6 +201,7 @@ theorem exists_isIso_neighbourhood_affine {R : CommRingCat.{u}}
     isIso_pullbackSnd_of_scalar_bijective hbij
   have : IsIso ((baseChange c).obj K).X.hom := by
     rw [← Over.w ((baseChange c).mapIso e).inv.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   refine ⟨PrimeSpectrum.basicOpen r, hrmem, ?_⟩
   rw [← basicOpenIsoSpecAway_hom_SpecMap r]
@@ -213,6 +217,7 @@ theorem isIso_fibre_baseChange {S T : Scheme.{u}} (b : T ⟶ S)
     exact isIso_baseChange_comp (S.fromSpecResidueField (b t))
       (Spec.map (b.residueFieldMap t)) K
   rw [← Over.w (baseChangeCompIso b (T.fromSpecResidueField t) K).inv.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- Triviality of a base change along an open immersion gives a neighbourhood
@@ -247,6 +252,7 @@ theorem exists_isIso_neighbourhood {S : Scheme.{u}} (K : Langlands.GroupScheme S
   have : IsIso ((baseChange j).obj K).X.hom := by
     have : IsIso ((baseChange V.ι).obj ((baseChange b).obj K)).X.hom := hV
     rw [← Over.w (baseChangeCompIso b V.ι K).hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   obtain ⟨U, hsU, hU⟩ := exists_isIso_neighbourhood_of_openImmersion j K ⟨t, htV⟩
   refine ⟨U, ?_, hU⟩
@@ -269,6 +275,7 @@ theorem exists_isIso_neighbourhood_of_finite_neighbourhood {S : Scheme.{u}}
   have : IsIso ((baseChange j).obj K).X.hom := by
     have : IsIso ((baseChange W.ι).obj ((baseChange V.ι).obj K)).X.hom := hW
     rw [← Over.w (baseChangeCompIso V.ι W.ι K).hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   exact exists_isIso_neighbourhood_of_openImmersion j K ⟨t, htW⟩
 

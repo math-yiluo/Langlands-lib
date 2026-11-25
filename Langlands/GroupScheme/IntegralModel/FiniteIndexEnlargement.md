@@ -3,7 +3,8 @@
 This module states the finite-index enlargement step of KP's construction of
 integral models. It gives an interface, `IsOpenEnlargement`, and a closed
 existence target, `FiniteIndexEnlargementStatement.{u}`. It does not prove
-that an enlargement exists. That is left to a separate proof task.
+that an enlargement exists; that is proved as `finiteIndexEnlargement` in
+`Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementProof`.
 
 ## The interface `IsOpenEnlargement`
 
@@ -187,7 +188,7 @@ This is a derived algebraic formulation of the finite-index,
 perfect-residue specialization of A.7.1(1)–(4), not a literal transcription
 of the printed statement.
 
-## Remaining work and scope
+## Proof requirements and scope
 
 A proof of `FiniteIndexEnlargementStatement` must construct the enlargement.
 Following the source, it would glue copies of `M.group` along their common

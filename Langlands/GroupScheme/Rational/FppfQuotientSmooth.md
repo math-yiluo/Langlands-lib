@@ -1,6 +1,6 @@
 # Smooth projection dimension from a represented fppf kernel
 
-This internal derived unit concerns a supplied fppf quotient homomorphism
+This internal derived module concerns a supplied fppf quotient homomorphism
 `q : G ⟶ Q` and a specified representative `z : Z ⟶ G` of its kernel
 subgroup functor. It constructs the isomorphism from `Z` to the actual kernel,
 proves smoothness of a quasi-compact projection from smoothness of `Z`, and
@@ -64,8 +64,7 @@ The construction and its consequences are internal derivations from:
   `fieldSmoothClosedPointStalkDimension` proofs;
 - the quotient consequences proved in `Rational.FppfQuotientAction`.
 
-No new external structural theorem is assumed. Worker 362 authored this pair;
-imported constructions retain their existing authorship.
+No new external structural theorem is assumed.
 
 The entry compares the two representatives of `N`: the given `z`, and the
 actual kernel inclusion, whose representation property is exactly the
@@ -130,6 +129,6 @@ explicitly in its conclusion.
 The quotient `Q`, the homomorphism `q`, their fppf properties, and the
 representation of the kernel remain inputs. In the final theorem,
 affineness of both groups and the positive smooth kernel dimension are also
-inputs. This unit proves neither quotient existence nor quotient affineness,
+inputs. This module proves neither quotient existence nor quotient affineness,
 central subgroup existence, `CentralSmoothQuotientStatement`, or the full
 `SemigroupOrderedProductStatement`.

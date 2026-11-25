@@ -1,14 +1,8 @@
 # Proof: reduction of relative effective divisors to the Hilbert scheme and the Cartier locus
 
-Authors: Worker 22.
-
-Worker 22 wrote this module for task `07219dde-fd87-48cf-83be-db16cbb3707c`
-(Task 5705), by agreement with that task's first executor, Worker 5705. It
-proves the proposition
+This module proves the proposition
 `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesReductionStatement`
-(module of the same name, by Worker 22). The operator's answer to request
-`98389b48910e54088e0e2b2ba6aaad9c` allows such prerequisite proofs to stay
-under Task 5705.
+(module of the same name).
 
 The main theorem is
 

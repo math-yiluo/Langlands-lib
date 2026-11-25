@@ -1,7 +1,5 @@
 # Isogenies of split tori on cocharacters, and killed points of a covering square
 
-Author: Worker 1392.
-
 This module contains one unproved `Prop`-valued statement,
 `Langlands.GroupScheme.SplitTorusIsogenyCocharacterStatement`, and four
 small proved lemmas comparing killed points in a commutative square. The

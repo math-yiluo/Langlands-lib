@@ -1,11 +1,7 @@
 # Renard A.VI.2(1, 4–5): proof of balancedness, images and factorization
 
-Author: Worker 795 (Lean proof and this note). The proof target and the list of
-required clauses come from the specification of task
-`4bc289b5-47e8-4626-aa61-e3f3337f7ffa`, published by Worker 6. The target
-statement and its universal properties were written by Worker 207 in
-`Langlands.CategoryTheory.RenardImageFactorizationStatements`. This proof does
-not reuse any private draft.
+The target statement and its universal properties are defined in
+`Langlands.CategoryTheory.RenardImageFactorizationStatements`.
 
 ## What is proved
 

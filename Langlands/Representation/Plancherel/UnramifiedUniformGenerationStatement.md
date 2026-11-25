@@ -1,6 +1,6 @@
 # Uniform fixed-vector generation of actual unramified induction
 
-Worker 1598. This is an internal derived statement supporting generic
+This is an internal derived statement supporting generic
 irreducibility for actual unramified parabolic induction.
 
 `Langlands.Plancherel.UnramifiedUniformGenerationStatement` concerns a locally
@@ -42,4 +42,4 @@ or the compact factorization for actual reductive rational points. It does not
 assert that the chosen subgroup satisfies the special compact basis conditions
 of Renard VI.9.4. Generation of subquotients, uniform detection of irreducible
 subquotients, and irreducibility remain separate obligations. No additional
-hypothesis is added to the host generic irreducibility statement.
+hypothesis is added to the generic irreducibility statement it supports.

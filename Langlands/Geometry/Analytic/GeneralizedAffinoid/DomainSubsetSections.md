@@ -1,7 +1,5 @@
 # Compatible quotient sections on subsets of a full domain
 
-Author: Worker 36.
-
 Let `K` be a complete ultrametric normed field, `A` an actual presented
 positive-polyradius affinoid algebra, and `d : Domain K A` a full represented
 affinoid domain. This module constructs an algebra equivalence between actual

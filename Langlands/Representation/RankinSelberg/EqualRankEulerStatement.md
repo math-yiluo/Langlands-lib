@@ -1,6 +1,6 @@
 # Equal-rank integrals of Jacquet and Shalika, Euler products I
 
-Author: Worker 11. This module is in namespace `Langlands.RankinSelberg`. It
+This module is in namespace `Langlands.RankinSelberg`. It
 states three results of Jacquet-Shalika on the equal-rank integrals
 `Ψ(s, W, W', Φ)` of two generic representations of `GL_r(F)`:
 

@@ -1,9 +1,10 @@
 # Finite length and exactness of the actual product-Levi refinement functors
 
-Author: Worker 717, for task f1ed5bbb (objective by Worker 320). This module
+This module
 declares five proposition definitions and nine compilation-checked `example`s.
-It declares no theorem and proves none of the propositions. Their proof is a
-separate later task.
+It declares no theorem and proves none of the propositions. Their proof is
+`Langlands.Parabolic.normalizedRefinedFiniteLengthExactness`, in the separate
+module `Parabolic.RefinedFiniteLengthFunctorProof`.
 
 ## The declarations
 
@@ -35,11 +36,12 @@ quantifies, inside the proposition, every `n : ℕ`, every
    `1 ∧ (2 ∧ (3 ∧ 4))`, the right-associated conjunction of the four
    declarations above, in that order, at the same `F`, `T`, `uF` and `uV`.
    Rank, outer shape and refinement are quantified inside each conjunct, so only
-   `F` and `T` stay outside. It is the intended exact target of the later proof.
+   `F` and `T` stay outside. It is the exact statement of
+   `normalizedRefinedFiniteLengthExactness`.
    Inspection reports its level parameters as `[uF, uV]`, its kind as a
    definition and its type as `Prop`.
 
-The names are those prescribed by the task. They were unused in the Library.
+The names were unused in the Library.
 
 ## The objects and the predicates
 
@@ -91,7 +93,7 @@ product Levi, not of an abstract product or of a flattened standard Levi of
 
 ## The two functors
 
-Both are published in `Geometric/RefinementFunctors` (Worker 14) and reused
+Both are published in `Geometric/RefinementFunctors` and reused
 unchanged. Write `P_S`, `M_S` and `N_S` for the three subgroups above and
 `pr` for `refinedLeviProjection`.
 
@@ -251,10 +253,10 @@ page numbers agree with the PDF pages; these pages were read:
   `G` has finite length.
 
 Casselman's `G` is a connected reductive group over a locally compact
-non-archimedean field, as is Bernstein–Zelevinsky's from §2 on. Worker 320 and
-the author found no source-specific `notes/errata/<source-id>.md` for either
-source in the workspace, the project or the supplied Library. This bounded check
-does not exclude errata elsewhere.
+non-archimedean field, as is Bernstein–Zelevinsky's from §2 on. No
+source-specific `notes/errata/<source-id>.md` was found for either
+source in the project or the Library. This check does not exclude errata
+elsewhere.
 
 ## Correspondence with the sources
 
@@ -300,8 +302,8 @@ reindexed as the product Levi of the concatenated shape. Transporting the Levi
 clause along these isomorphisms makes every finite-length smooth `σ` of `M_S`
 admissible. Casselman's admissible statement then applies. So the all-smooth
 clause 1 is Casselman's corollary composed with the finite-length admissibility
-theorem, not a verbatim instance of it. The transport is part of the later
-proof, not of this unit.
+theorem, not a verbatim instance of it. The transport is part of a
+proof, not of this module.
 
 For clause 2 the same Levi clause, applied directly to `B`, makes every
 finite-length smooth representation of `B.Levi F.Carrier` admissible.
@@ -309,8 +311,8 @@ finite-length smooth representation of `B.Levi F.Carrier` admissible.
 ## Derivation, for explanation only
 
 The following explains why the statements are expected to hold. It is not a
-proof, and the later proof may follow another route, for instance the
-all-rank reduction sketched in the task context.
+proof. The proof in `RefinedFiniteLengthFunctorProof` follows another route: it
+transports the published all-rank standard theorem, as described there.
 
 - *Clause 1, nonempty shape.* As above, finite-length `σ` is admissible; the
   half-modulus twist keeps it admissible and of finite length; Casselman's
@@ -343,8 +345,9 @@ all-rank reduction sketched in the task context.
   preservation for standard induction from `B.Levi` to `GL_n` and standard
   Jacquet from `GL_n` to `B.Levi`. The new clauses concern induction and
   Jacquet **inside** the product Levi, between `B.Levi` and the actual subgroup
-  `M_S`. Neither is a literal instance of the other. The published theorem is a
-  likely input of the later proof, not a proof of this statement.
+  `M_S`. Neither is a literal instance of the other. The published theorem is
+  an input of the proof in `RefinedFiniteLengthFunctorProof`, not a proof of
+  this statement.
 - `Langlands.finiteLengthAdmissibility` (`Smooth/Admissibility/FiniteLengthProof`,
   published) supplies the admissibility input described above.
 - `Langlands.Parabolic.normalizedRefinedInductionAdmissibility`

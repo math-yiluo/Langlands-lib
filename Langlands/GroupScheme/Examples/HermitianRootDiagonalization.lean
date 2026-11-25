@@ -3,7 +3,7 @@ Copyright (c) 2020 Anne Baanen. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Anne Baanen, Kexing Ying, Eric Wieser
 
-Worker 98 adapted the orthogonal-basis induction below from Mathlib's
+The orthogonal-basis induction below is adapted from Mathlib's
 LinearMap.BilinForm.exists_orthogonal_basis.
 -/
 import Langlands.GroupScheme.Examples.HermitianRootReflectionAction

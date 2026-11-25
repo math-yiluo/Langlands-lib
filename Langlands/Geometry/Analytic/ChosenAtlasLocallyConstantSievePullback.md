@@ -1,7 +1,5 @@
 # Actual target-sieve gluing and chosen atlas pullback
 
-Author: Worker 56.
-
 Let `K : Type u` be a complete ultrametric normed field,
 `A,B : AffinoidAtlasPresentation.{u,v,w} K`, and `e : A ≅ B` a full chosen
 atlas isomorphism. Let `D : Type z` be an arbitrary coefficient type. This

@@ -1,6 +1,6 @@
 # Ordered open charts for the full special-fibre kernel
 
-This internal supporting unit composes the full-kernel containment lemma for
+This module composes the full-kernel containment lemma for
 Henselian integral models with the actual torus/root factor-kernel comparison.
 It uses supplied families `A` and `B` with the same group, building, zero datum
 and apartment point, and an identity-generic-fibre model map `ψ : N' → N`.
@@ -32,9 +32,10 @@ special-fibre kernel.
 
 The provenance is internal composition of the published Henselian
 containment theorem and the torus/root comparison APIs. In particular, this
-unit does not construct the supplied families or ordered open charts, prove
+module does not construct the supplied families or ordered open charts, prove
 the integral-section range condition or root-depth theorem, or claim
-unipotence. Those inputs remain obligations of the host proof. The
+unipotence. Those inputs are left to the proof of `UnramifiedModelKernelStatement`
+(module `UnramifiedModelKernelProof`, which imports this one). The
 closed-point condition concerns integral sections whose target reduction is
 the identity, rather than only those integral sections whose generic point
 is the identity.

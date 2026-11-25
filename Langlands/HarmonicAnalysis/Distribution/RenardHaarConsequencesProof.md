@@ -1,11 +1,12 @@
 # Inversion and positive scalar consequences of left Haar uniqueness
 
-This helper unit proves two implications at the full group universe:
+This helper module proves two implications at the full group universe:
 `rightHaar_of_leftHaar` derives `RightHaarStatement` from
 `LeftHaarStatement`, and `positiveScalarUniqueness_of_leftHaar` derives
 `PositiveScalarUniquenessStatement` from the same input. It does not supply
-the left Haar assertion. The aggregate proof imports this unit and supplies
-that assertion separately.
+the left Haar assertion. The aggregate proof `RenardHaar.statements` in `RenardHaarProof` imports this
+module and supplies that assertion separately, by `leftHaar` from
+`RenardHaarLeftProof`.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*,
 French version of 9 July 2026, registered as
@@ -14,11 +15,11 @@ French version of 9 July 2026, registered as
 II.3.6 Proposition, printed pp.46–47 / PDF pp.52–53. The two source pages
 were read. The positivity normalization consequence is also used in the
 opening of II.3.7 on printed p.47. The proof below is a derived argument on
-the published algebraic distributions and actual inversion maps.
+the algebraic distributions and actual inversion maps.
 
-The published linear involutions `GroupAction.inversionTests` and
+The linear involutions `GroupAction.inversionTests` and
 `GroupAction.inversionDistributions` preserve nonzero nonnegative tests and
-strictly positive distributions. The published intertwining identities
+strictly positive distributions. The intertwining identities
 exchange left and right translation. Given a positive left Haar generator,
 its inversion is therefore a positive right invariant generator. Inverting
 an arbitrary right invariant algebraic distribution reduces its scalar

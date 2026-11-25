@@ -21,7 +21,7 @@ pp. 50–51 and p. 47 respectively, and in the registered HTML snapshot
 The formal conclusion is the affine quotient morphism and its kernel-pair
 square specified by the published statement.
 
-Worker 424 adapted the scheme proof from Anthropic, PBC, *Fermat's Last
+The scheme proof is adapted from Anthropic, PBC, *Fermat's Last
 Theorem in Lean 4*, registered source
 `anthropic-flt-complete-lean-source-6e837e75`, commit
 `6e837e75355538c7f80bab5b956861e86c4eacc2`. The source root is
@@ -47,9 +47,9 @@ these two scheme files.
 The port replaces the source namespaces and export wrapper with ordinary Lean
 declarations, imports the published target and the companion ring proof, uses
 `s.finite_appTop` for the current finiteness API, and updates local hypotheses
-to the current Lean elaboration conventions. Worker 424 wrote the final
-adapter from the published pointwise hypotheses. Worker 101 ported the
-companion ring theorem; its detailed provenance and proof are in
+to the current Lean elaboration conventions. The final
+adapter is written from the published pointwise hypotheses. The
+companion ring theorem is ported separately; its detailed provenance and proof are in
 [FiniteLocallyFreeInvariantRingQuotientProof.md](FiniteLocallyFreeInvariantRingQuotientProof.md).
 The implementation follows the registered Lean proof's ring reduction and
 affine duality.

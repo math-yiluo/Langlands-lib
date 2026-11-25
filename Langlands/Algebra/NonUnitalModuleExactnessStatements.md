@@ -1,8 +1,7 @@
 # Exactness in the original category of nonunital modules
 
-Workers 6 and 691. Worker 6 prepared the shared statement draft; Worker 691
-independently checked the cited original passages, scope and complete Lean
-interface. This file states one internal derived correspondence in the
+The cited original passages, scope and complete Lean interface were
+checked. This file states one internal derived correspondence in the
 published category `Langlands.Algebra.NonUnitalModuleCat`. It supplies
 neither a proof of that correspondence nor a new exactness predicate.
 
@@ -56,7 +55,7 @@ The automatic integer-compatible interpretation used inside the
 existing stable-subgroup constructions retains the given original
 additive maps and actions.
 
-## Provenance and remaining obligations
+## Provenance and scope
 
 The governing source is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
@@ -67,8 +66,8 @@ and original actions without a unit law, even over unital rings.
 I.1.2 at printed p.7/PDF13 separately identifies the nondegenerate full
 subcategory. The exact-sequence paragraph in A.VI.2 at printed
 p.262/PDF268 introduces exact sequences after the kernel/image discussion.
-Both authors read these original passages for this statement. Worker 691 also
-visually inspected PDF268 to confirm the exact-sequence paragraph. The
+These original passages were read for this statement. PDF268 was also
+visually inspected to confirm the exact-sequence paragraph. The
 supplementary `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was read at PDF1–3 and PDF18–19. It concerns the 2010 edition and does not
@@ -85,10 +84,11 @@ stable subgroups. The defining expression for `ShortComplex.Exact` was
 checked in the pinned Mathlib source
 `Algebra/Homology/ShortComplex/Exact.lean`, commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-No proof of the equivalence is claimed by this statement publication.
+No proof of the equivalence is claimed by this statement; the proof is
+`Langlands.Algebra.nonUnitalModuleExactnessStatement` in
+`NonUnitalModuleExactnessProof`.
 
 Concrete image/coimage constructions and their comparisons, the
 nondegenerate subcategory's finite-product closure and abelianness,
 exactness of its inclusion and nondegenerate-part functor, and scalar
-Hom/category comparisons remain separate obligations of the whole-book
-program.
+Hom/category comparisons are not treated here.

@@ -1,8 +1,9 @@
 # Finite positive-polyradius quotient presentations
 
-Authors: Worker 56 and Worker 36. Worker 56 extends the construction to
+This module extends the construction to
 arbitrary positive polyradii; the quotient norm, ultrametric proof and
-bounded-map category adapt Worker 36's published strict affinoid construction.
+bounded-map category adapt the strict affinoid construction
+`PresentedStrictAffinoidAlgebra` (module `Affinoid`).
 
 `PresentedAffinoidAlgebra K` contains a finite number of variables, one
 strictly positive real radius for each variable, and a closed ideal of the
@@ -38,8 +39,8 @@ Radii need not lie in its value group or its divisible closure.
 This file provides the normed quotient and categorical portion of chosen
 affinoid presentations. It supplies no `CompleteSpace` instance, Banach
 bundle, structure sheaf, atlas or analytic-domain universal property.
-Completeness over complete coefficients is a separate obligation that
-depends on the weighted Tate completeness proof. In particular, this file
+Completeness over complete coefficients is proved separately, in
+`GeneralizedAffinoid/Banach`, from the weighted Tate completeness proof. In particular, this file
 does not assert that its objects over an incomplete field are Banach
 affinoid algebras in the source's sense.
 
@@ -61,6 +62,6 @@ exact quotient norm instead of starting from an arbitrary admissible
 epimorphism onto a Banach algebra. Closedness is a condition on the actual
 ideal, not an assumed theorem that every ideal is closed. Noetherianity,
 automatic ideal closedness, independence of presentations, comparison with
-other equivalent norms and identification of the strict subcategory remain
-separate results. The source's completed Banach affinoid construction will
-also require the deferred completeness instance.
+other equivalent norms and identification of the strict subcategory are
+separate results. The source's completed Banach affinoid construction also
+requires the completeness instance of `GeneralizedAffinoid/Banach`.

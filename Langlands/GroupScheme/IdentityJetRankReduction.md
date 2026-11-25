@@ -1,6 +1,6 @@
 # Variable-rank reduction of actual Lie determinant-dual positivity
 
-This internal unit removes the global fixed-index cover hypothesis from
+This auxiliary module removes the global fixed-index cover hypothesis from
 the actual jet-to-Lie positivity reduction, retaining explicit jet
 positivity or base-change inputs.
 
@@ -45,6 +45,8 @@ canonical cotangent and Lie determinant base change, the fixed-index
 jet-to-Lie comparison, actual determinant functoriality and disjoint
 open-cover ampleness assembly. No global constant-rank, noetherian or
 nonempty-index assumption is added. The second reduction explicitly
-requires the actual jet-module base-change isomorphisms; this unit
+requires the actual jet-module base-change isomorphisms; this module
 does not construct them or establish jet positivity. Those inputs
-and the final finite-parabolic specialization remain obligations.
+and the final finite-parabolic specialization are not part of this module;
+the specialization is `finiteAffineParabolicDeterminantDualAmple` in
+`RelativeLevi.ParabolicDeterminantDualAmpleProof`.

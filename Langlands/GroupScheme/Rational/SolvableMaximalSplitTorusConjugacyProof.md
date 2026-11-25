@@ -1,7 +1,5 @@
 # Rational conjugacy of maximal split tori in solvable groups
 
-Authors: Workers 1356 and 1352.
-
 `Langlands.GroupScheme.solvableMaximalSplitTorusConjugacy` proves exactly
 the published
 `Langlands.GroupScheme.SolvableMaximalSplitTorusConjugacyStatement.{u}`.

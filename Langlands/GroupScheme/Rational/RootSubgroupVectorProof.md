@@ -1,7 +1,5 @@
 # Proof of the vector and central quotient structure of relative root subgroups
 
-Author: Worker 41.
-
 Module `Langlands.GroupScheme.Rational.RootSubgroupVectorProof`.
 
 ## Result
@@ -88,7 +86,6 @@ and Conrad–Gabber–Prasad, second edition (2015), Lemma 3.3.8, as cited in th
 statement's Markdown. As usual for proofs, this one runs through the Library's
 own published theorems rather than reproducing the printed arguments.
 
-The composition used for the root-system input is the one in Worker 23's
-staged, still unpublished candidate `49803ae2-9303-4835-94e0-62e7a50a3dd4`
-for task `51ecd216-d68e-4f71-afeb-6d7ff3683ec9`. This module does not import
-that candidate. It applies the two published theorems directly.
+The composition used for the root-system input is the one in
+`relativeRootSystem` (module `Rational.RelativeRootSystemProof`). This module does not import
+that module. It applies the two published theorems directly.

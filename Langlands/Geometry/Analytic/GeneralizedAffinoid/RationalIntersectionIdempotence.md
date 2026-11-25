@@ -1,7 +1,5 @@
 # Isometric idempotence of weighted rational intersections
 
-Author: Worker 56.
-
 This module constructs the actual bounded algebra equivalence between the
 all-products quotient for the intersection of a rational presentation with
 itself and the original rational quotient. It imports the published

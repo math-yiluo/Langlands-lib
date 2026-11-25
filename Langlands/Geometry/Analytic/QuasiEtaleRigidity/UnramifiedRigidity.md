@@ -1,7 +1,5 @@
 # Spectrally close maps out of an unramified algebra are equal
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. It contains
 the analytic form of the algebraic core of the uniqueness in Berkovich's Key
 Lemma 7.2 (*Vanishing cycles for formal schemes*, 1994, §7, printed p.560).

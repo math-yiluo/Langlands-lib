@@ -61,7 +61,7 @@ variable {A K : Type u} [CommRing A] [IsDomain A] [HenselianLocalRing A]
         (characterLattice.baseChange (residueBaseMap A) T a)) =
       AutomorphicAction.conjugation ((baseChange (residueBaseMap A)).map i ≫ q))
 
-local instance : IsAffine M.group.X.left := isAffine_of_isAffineHom M.group.X.hom
+private local instance : IsAffine M.group.X.left := isAffine_of_isAffineHom M.group.X.hom
 local instance : IsAffine Q.X.left := isAffine_of_isAffineHom Q.X.hom
 
 local notation "χ" => (CommGroupScheme.groupHom ν ≫ i)

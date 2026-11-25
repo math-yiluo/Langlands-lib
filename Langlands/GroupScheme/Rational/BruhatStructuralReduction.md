@@ -17,7 +17,7 @@ or conclusions. It records the remaining structural obligations in one
 input package. The method
 `RationalBruhatStructuralInputs.rationalBruhatStatement` consumes a
 supplied package by applying `rationalBruhatStatement_of_structural`
-to its fields. This unit constructs no inhabitant of the package.
+to its fields. This module constructs no inhabitant of the package.
 
 The first theorem,
 `hasRationalBruhatDecomposition_of_parabolicCovering_and_oppositeCell`,
@@ -46,9 +46,10 @@ normalizing point and both parabolic factors. The preceding local
 assembly then proves the desired instance.
 
 The provenance is internal composition of the named imported
-constructions. This unit neither changes the imported Bruhat proposition
+constructions. This module neither changes the imported Bruhat proposition
 nor proves any of the five displayed structural propositions. Each
-remains a mathematical input to this conditional theorem and must be
-proved before the full Bruhat proof task can be completed. There is no
+remains a mathematical input to this conditional theorem. The full
+Bruhat statement `RationalBruhatStatement` is proved in
+`Rational.RationalBruhatProof`. There is no
 additional splitness, perfectness, characteristic, field-size or
 local-field premise.

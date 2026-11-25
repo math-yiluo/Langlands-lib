@@ -1,6 +1,6 @@
 # Graded corrected-filtration targets on the actual rational points
 
-Author: Worker 379. The two propositions in
+The two propositions in
 `Langlands.Aubert.General.RationalPointFamily` restate the generic targets of
 `CorrectedFiltrationStatements` for the actual group of rational points of a
 connected reductive group, its actual standard subgroup families and its
@@ -101,6 +101,6 @@ corrected proof of Aubert's Theorem 3.6 in the erratum, with the Ban–Jantzen
 double-coset repair. The derivation pins the generic parameters to the actual
 families, the actual Weyl group and the named structural inputs above. The
 structural, root-sign, finiteness, closedness and topological premises remain
-intermediate obligations, to be discharged or matched to the parent's
-external structural ledger. No representation-theoretic statement is moved
+intermediate obligations, to be discharged or matched to the allowed
+external structural inputs. No representation-theoretic statement is moved
 into them.

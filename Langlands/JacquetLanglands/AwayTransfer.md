@@ -108,10 +108,10 @@ module:
   constituents at the places it contains. Then "same complement constituent"
   is "same local constituents at every place other than `v`".
 
-The Library does not yet decompose Harris's prime-to-`p` group into a
-restricted product over places, so the placewise reading is recorded as a
-later obligation of the Harris specialization and of Flath's restricted
-tensor statements; the two-factor formulation used here needs neither.
+The Library does not decompose Harris's prime-to-`p` group into a
+restricted product over places, so the placewise reading belongs to the
+Harris specialization and to Flath's restricted tensor statements; the
+two-factor formulation used here needs neither.
 
 Harris fixes identifications of `GJ` and `GG` away from `v` (§4, printed
 pp.308–309: `𝒟` and `ℬ` are assumed "isomorphic away from `v`, `σ₁`, and
@@ -125,11 +125,10 @@ relation is stated for the given `θ`.
 
 Project import: `Langlands.Representation.Smooth.Definitions` (published).
 Mathlib supplies `Representation`, `Representation.tprod`, `Representation.Equiv`,
-`ModuleCat`, `ContinuousMulEquiv` and `MonoidHom.fst`/`snd`. Environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`).
+`ModuleCat`, `ContinuousMulEquiv` and `MonoidHom.fst`/`snd`. Environment:
+Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-`lean_check` `01d40e1d-453c-480e-9f39-3c3ee6ccb955` of the module in place: 0 errors, 0 warnings. Inspection of
+A Lean check of the module in place: 0 errors, 0 warnings. Inspection of
 `Langlands.JacquetLanglands.IsAwayTransfer` reports `statement_returns_prop: true`,
 level parameters `u uG uG' uL uL' uH uH'`, axioms `propext`, `Classical.choice`,
 `Quot.sound` only.

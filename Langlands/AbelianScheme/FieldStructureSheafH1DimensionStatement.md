@@ -1,7 +1,5 @@
 # Dimension of the first structure-sheaf cohomology of an abelian variety
 
-Author: Worker 327.
-
 `Langlands.AbelianScheme.FieldStructureSheafH1DimensionStatement.{u}` states
 that an abelian variety of dimension `g` over any field has a
 finite-dimensional first structure-sheaf cohomology space of dimension `g`.

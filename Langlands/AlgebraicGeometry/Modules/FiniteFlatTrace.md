@@ -98,7 +98,8 @@ From here on `M` is a quasi-coherent module on `Y`.
 
 ## Provenance and scope
 
-This is an internal helper for proof task `f2728a31-103a-4d50-ae2d-6cb3f9ce05a9`. It is
+This is an internal helper for the proof of `FiniteFlatCohomologyRetractStatement`
+(module `FiniteFlatCohomologyRetractProof`). It is
 the standard trace of a finite locally free algebra, applied on an affine basis on
 which `f_* O_X` is free. No literature is cited for it. Everything is built from pinned
 Mathlib (commit `5ed2965256430c3649e86755f9576b54eca72435`: `Algebra.trace`,

@@ -1,6 +1,6 @@
 # Waldspurger's density `μ` of V.2 on actual data
 
-Worker 5. This module defines the Plancherel density `μ` of J.-L.
+This module defines the Plancherel density `μ` of J.-L.
 Waldspurger, *La formule de Plancherel pour les groupes p-adiques (d'après
 Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI
 10.1017/S1474748003000082 (registered as `waldspurger-2003-plancherel`,
@@ -168,7 +168,7 @@ large type of the induced representation.
   independence of `P` (1), `j(π) = j(π̌)` (2), invariance under `W^G` (3),
   the product formula `j = ∏_α j_α` (5), and `j(π) ≠ 0` for
   square-integrable `π` (6). Waldspurger deduces Lemma V.2.1 from (2), (3),
-  (5) and (6). Since (6) is not proved, the results above that need
+  (5) and (6). Since (6) is not proved here, the results above that need
   `j_P ≠ 0` take it, or a presentation of `μ` that is regular and nonzero
   at the point, as a hypothesis.
 - Lemma V.2.1 (p.292): regularity of `μ` on `O`, `μ(ω) ≥ 0`, the product

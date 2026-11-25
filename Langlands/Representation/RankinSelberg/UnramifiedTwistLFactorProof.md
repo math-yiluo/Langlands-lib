@@ -1,6 +1,5 @@
 # Unramified twist transport of certified pair L-polynomials
 
-Worker 85, with Worker 352 contributing the spectral-rescaling instantiation.
 The theorem `Langlands.RankinSelberg.unramifiedTwistLFactor` proves exactly
 `UnramifiedTwistLFactorStatement.{uF, uV, uW}` from
 `UnramifiedTwistStatement`. For every supplied complex exponent `u` and

@@ -1,7 +1,8 @@
 # The Borel axioms of the relative Tits system from the Bruhat decomposition
 
-This internal auxiliary module supports the proof task for
-`Langlands.GroupScheme.RelativeTitsSystemStatement`. It combines two internal modules.
+This internal auxiliary module serves the proof of
+`Langlands.GroupScheme.RelativeTitsSystemStatement` (`relativeTitsSystem`, module
+`Rational.RelativeTitsSystemProof`). It combines two internal modules.
 `Langlands.GroupScheme.Rational.RelativeTitsCoxeterReduction` reduces the relative Tits system,
 under a Coxeter realization of the relative Weyl group, to the predicate
 `HasRelativeTitsBorelAxioms`. `Langlands.GroupScheme.Rational.RelativeTitsBruhatReduction`

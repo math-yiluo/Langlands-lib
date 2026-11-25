@@ -1,8 +1,7 @@
 # The equal-rank partial Euler factorization from the Whittaker–Schwartz bound
 
-Module `Langlands.Global.RankinSelberg.EqualEulerGaugeReduction`. Author: Worker 5130. The
-proof reuses the published reduction `equalEulerFactorizationReduction`, written with
-Worker 24.
+Module `Langlands.Global.RankinSelberg.EqualEulerGaugeReduction`. The
+proof reuses the published reduction `equalEulerFactorizationReduction`.
 
 ## Content
 
@@ -22,8 +21,9 @@ The module contains, in the namespace `Langlands.Global.RankinSelbergGlobal`:
     `WhittakerSchwartzGaugeStatement.{u}`. It concludes
     `EqualEulerFactorizationStatement.{u, uQ}`.
 
-None of these proves `EqualEulerFactorizationStatement` outright. Each premise is an open
-Library statement.
+None of these proves `EqualEulerFactorizationStatement` outright. Each premise is a Library
+statement; `EqualUnfoldingGaugeStatement` and `WhittakerSchwartzGaugeStatement` are proved in
+the Library (see Provenance).
 
 ### The premises
 
@@ -91,8 +91,10 @@ convergence. Cogdell argues with factorizable Whittaker functions. The steps her
 named above.
 
 The premise `EqualWhittakerSchwartzStatement` isolates the one analytic estimate the proof
-still needs. Its general form `WhittakerSchwartzGaugeStatement` is the target of Task 7290.
-The premise G is the first half of `EqualUnfoldingGaugeStatement`, the target of Task 7173.
+still needs. Its general form `WhittakerSchwartzGaugeStatement` is proved in the Library
+(`whittakerSchwartzGauge`, module `WhittakerSchwartzGauge`). The premise G is the first half of
+`EqualUnfoldingGaugeStatement`, proved in the Library (`equalUnfoldingGauge`, module
+`EqualUnfoldingGauge`).
 The reduction has the same form as the Library precedent
 `EqualDualEulerFactorizationReductionStatement`: a `Prop`-valued implication, with a theorem
 that proves it.

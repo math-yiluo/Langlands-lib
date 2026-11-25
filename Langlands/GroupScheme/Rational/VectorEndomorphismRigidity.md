@@ -1,6 +1,6 @@
 # A scalar-linear vector map is determined by its differential
 
-Worker 1368. Internal proof derived from the published natural vector-coordinate,
+Internal proof derived from the published natural vector-coordinate,
 epsilon-point and finite Lie scalar-extension interfaces. The coefficient
 calculation adapts the published `VectorLinearAction` proof for an action to
 postcomposition by one group-scheme endomorphism.

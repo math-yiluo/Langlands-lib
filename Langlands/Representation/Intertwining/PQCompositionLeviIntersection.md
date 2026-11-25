@@ -1,6 +1,6 @@
 # Renard VII.3.5 (i): inheritance of regularity
 
-Author: Worker 102. Module `Langlands.Representation.Intertwining.PQCompositionLeviIntersection`,
+Module `Langlands.Representation.Intertwining.PQCompositionLeviIntersection`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u` (the field)
 and `v` (the representation).
 
@@ -9,7 +9,7 @@ and `v` (the representation).
 - `pqCompositionRegularity : PQCompositionRegularityStatement.{u, v}`. This is premise (4) of
   the published reduction `pqIntertwiningComposition_of_reductions` of Renard VII.3.5 (i)
   (module `PQIntertwiningCompositionReduction`): under the hypotheses of VII.3.5 (i), every
-  `P₁P₃`-regular `σ` is `P₂P₃`-regular and `P₁P₂`-regular. This is the recorded proof.
+  `P₁P₃`-regular `σ` is `P₂P₃`-regular and `P₁P₂`-regular.
 - `pqCompositionBruhat : PQCompositionBruhatStatement.{u}`, the published Bruhat-order input
   (module `PQCompositionRegularityReduction`).
 - `pqCompositionLeviIntersection`, the equality part of `PQCompositionBruhatStatement`, stated
@@ -17,7 +17,7 @@ and `v` (the representation).
 
 `pqCompositionRegularity` is `pqCompositionRegularityOfBruhat pqCompositionBruhat`, where
 `pqCompositionRegularityOfBruhat` is the published reduction. The module adds no definitions.
-It uses the lemmas of `PQCompositionBruhatOrder`, submitted with it.
+It uses the lemmas of `PQCompositionBruhatOrder`, ported together with this module.
 
 ## Notation
 

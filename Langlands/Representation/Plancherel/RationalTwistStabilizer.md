@@ -1,7 +1,5 @@
 # Actual rational-point twist stabilizers
 
-Author: Worker 200.
-
 This derived specialization connects the published generic twist-stabilizer
 construction to actual rational points and the actual continuous central
 restriction map. The source is J.-L. Waldspurger, *La formule de Plancherel
@@ -10,7 +8,7 @@ p.273 (PDF p.39), and the finite quotient used in the proof of III.7.1,
 printed p.274 (PDF p.40), source ID `waldspurger-2003-plancherel`, SHA-256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
 The source writes the stabilizer in the full \(X(G)\) while parameterizing
-the unitary orbit by its quotient. This unit supplies the actual-point
+the unitary orbit by its quotient. This module supplies the actual-point
 comparison under an explicit actual-image finite-index premise.
 
 The quotient input is the conditional actual quotient comparison derived

@@ -1,7 +1,5 @@
 # Finite Galois character anti-equivalence from full faithfulness
 
-Worker 158.
-
 This module proves that the published proposition
 `Langlands.GroupScheme.MultiplicativeTypeGaloisFullFaithfulnessStatement.{u}`
 implies the published proposition
@@ -105,5 +103,4 @@ their own Markdown records the exact locators and the correspondence. This modul
 is internal: it is the routine categorical step that a functor which is fully
 faithful and essentially surjective is an equivalence, together with the
 adapters between the bundled action category and the unbundled hypotheses of
-the two component theorems. It follows the adapter route described in the
-context of Task 6926.
+the two component theorems.

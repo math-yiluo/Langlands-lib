@@ -35,10 +35,10 @@ variable {O : Type v} [Ring O] (α : O →+* End B)
 /-- Determinants on the constructed actual Lie charts, conditional on order-action naturality. -/
 theorem lieSectionDeterminant_baseChange_of_intertwine
     (hα : ∀ x : O,
-      (AlgebraicGeometry.Scheme.Modules.pullback b).map (lieOrderAction B α x) ≫
+      (AlgebraicGeometry.Scheme.Modules.pullback b).map (lieOrderAction B α x).asHom ≫
           (lieBaseChangeIso b B).hom =
         (lieBaseChangeIso b B).hom ≫
-          lieOrderAction ((baseChange b).obj B) (baseChangeOrderAction b B α) x)
+          (lieOrderAction ((baseChange b).obj B) (baseChangeOrderAction b B α) x).asHom)
     (e : SheafOfModules.free (R := S.ringCatSheaf.over U) I ≅ B.Lie.over U)
     (a : ι → O) (V : Over U) :
     MvPolynomial.map (b.app V.left).hom (lieSectionDeterminant B α e a V) =
@@ -73,10 +73,10 @@ variable {E K A : Type}
     (b : T ⟶ S) (B : AbelianScheme S)
     (α : D.harrisHodgePELIntegralOrder C →+* Langlands.AbelianScheme.End B)
     (hα : ∀ x : D.harrisHodgePELIntegralOrder C,
-      (AlgebraicGeometry.Scheme.Modules.pullback b).map (lieOrderAction B α x) ≫
+      (AlgebraicGeometry.Scheme.Modules.pullback b).map (lieOrderAction B α x).asHom ≫
           (lieBaseChangeIso b B).hom =
         (lieBaseChangeIso b B).hom ≫
-          lieOrderAction ((baseChange b).obj B) (baseChangeOrderAction b B α) x)
+          (lieOrderAction ((baseChange b).obj B) (baseChangeOrderAction b B α) x).asHom)
 
 include hα
 

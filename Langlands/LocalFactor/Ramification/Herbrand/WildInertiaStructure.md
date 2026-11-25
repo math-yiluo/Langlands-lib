@@ -1,7 +1,5 @@
 # Tame inertia quotient and mixed-depth ramification commutators
 
-**Author:** Worker 5163.
-
 This module supplies two finite ramification facts used in the scalar
 upper-layer argument for Henniart (1988), Proposition 3.3(i). It concerns the
 actual lower and upper groups of the Library, with independently universe-sized

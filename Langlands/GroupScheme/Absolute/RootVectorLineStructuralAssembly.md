@@ -54,10 +54,13 @@ applying `absoluteRootVectorLine_of_structuralInputs` with the published proof
 not prove its conclusion.
 
 The provenance is internal composition of published Library theorems; no new
-literature claim is made. The host statement's source is J. S. Milne,
+literature claim is made. The source of `AbsoluteRootVectorLineStatement` is J. S. Milne,
 *Algebraic Groups* (2022), Definition 21.10 and Theorem 21.11(b),(c). That
 proof obtains the additive root group from a rank-one homomorphism from
 `SL₂`. The present route instead bounds the root tangent through rank-one
 quotient curves and generic centralizers. Proofs of the three remaining
-structural propositions are separate obligations, and no published target or
-imported file is changed.
+structural propositions are not part of this module; `absoluteRootVectorLine`
+in `Absolute.RootVectorLineProof` applies
+`absoluteRootVectorLineStructuralReduction` to their proofs
+`solvableProperFixedPoint`, `solvableTorusQuotient` and
+`dynamicCentralizerReductive`.

@@ -29,8 +29,9 @@ All three propositions are published Library statements, used unchanged:
   `hA : HasDualScheme A`, the structure morphism of `dualScheme A hA` is
   smooth, proper and geometrically connected (`DualSchemeGeometry A hA`).
 
-The reduction proves neither hypothesis. Each input is the subject of separate
-proof work.
+The reduction proves neither hypothesis. The Library proves them separately, as
+`relativeDualSchemeValuativeExistence` in `RelativeDualSchemeValuativeExistenceProof`
+and `picardZeroArtinianLifting` in `PicardZeroArtinianLiftingProof`.
 
 ## Residue fibres
 
@@ -65,7 +66,7 @@ geometric connectedness of every residue fibre, proved above.
 `Smooth` instance for the structure morphism of the chosen dual. It proves
 that this morphism is quasi-compact, using the group scheme structure from
 `nonempty_grpObj_dualScheme` and the criterion `quasiCompact_of_residueFibers`
-of this unit. The criterion needs, for every `s`:
+of the supporting module below. The criterion needs, for every `s`:
 
 - a smooth residue fibre: the residue fibre is a base change of the smooth
   structure morphism (Mathlib's base-change instance for `Smooth`);
@@ -107,13 +108,13 @@ published `finiteType_dualScheme_smooth_of_picardZeroArtinianLifting`
 ## Scope
 
 Every quasi-compactness and properness result here assumes smoothness of the
-chosen dual over the given base. The unit proves none of the separate Library
+chosen dual over the given base. The module proves none of the separate Library
 targets `FieldDualSchemeSmoothStatement`, `FieldDualSchemeGeometryStatement`
 or `RelativeDualSchemeQuasiCompactStatement`, and does not use them.
 
-## Supporting module in this unit
+## Supporting module ported with this file
 
-The unit also adds
+Ported together with this module is
 `Langlands.GroupScheme.RelativeIdentityComponent.QuasiCompactOfFibres`: a
 group scheme over a quasi-separated base with smooth, connected,
 quasi-compact residue fibres is quasi-compact. Its own Markdown explains the

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.Popescu.ArtinianFlatClaim
 
 /-! # The coefficient claim for an Artinian local algebra

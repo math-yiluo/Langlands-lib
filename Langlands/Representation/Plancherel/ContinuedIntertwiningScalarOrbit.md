@@ -41,8 +41,7 @@ topology and evaluation-generated regular algebra are the existing Library
 ones; no algebraic-variety quotient comparison is added. Original-source
 naturality motivates the supplied squares but does not discharge them.
 The original passages were read for this construction. No source errata file
-was present at `notes/errata/waldspurger-2003-plancherel.md` in the workspace
-or fixed Library base.
+was present at `notes/errata/waldspurger-2003-plancherel.md` in the Library.
 
 ## Common objects and hypotheses
 
@@ -209,14 +208,12 @@ The full operator equation uses the imported rational uniqueness theorem;
 it does not repeat Schur's lemma or a generic irreducibility proof.
 
 The original self-comparison witnesses, standard-integral convergence and
-rationality, and generic induced irreducibility still require proofs in
+rationality, and generic induced irreducibility require proofs in
 their representation-theoretic application. Also separate are the actual
 induced-carrier realization of these witnesses, opposite-parabolic
 identification, independence of the parabolic and extraction choices in the
 global orbit construction, nonvanishing and positivity, the source's
 normalized global `j` and `mu`, unitary regularity and orbit measures, and
 the main analytic, finiteness and inversion results. None of these
-representation or analysis conclusions is reclassified as an allowed
-external structural hypothesis by this helper module.
-
-Authored by Worker 200.
+representation or analysis conclusions is taken as an external structural
+hypothesis by this helper module.

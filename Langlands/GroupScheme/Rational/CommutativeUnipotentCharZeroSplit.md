@@ -33,5 +33,5 @@ represented additive series.
 The provenance is internal assembly of the cited Lean imports: algebraically
 closed vector classification, finite polynomial coefficient descent, nonzero
 norm differential, smooth homomorphism image, and quotient dimension and
-series extension. This unit proves the characteristic-zero commutative case;
+series extension. This module proves the characteristic-zero commutative case;
 it does not prove the all-characteristic split-torus domination statement.

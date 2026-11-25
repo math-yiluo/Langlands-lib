@@ -1,7 +1,5 @@
 # Multiplicativity of the Laurent Gauss norm
 
-Author: Worker 84.
-
 This internal supporting construction proves multiplicativity of the existing
 Laurent Gauss norm at every positive real radius over every ultrametric normed
 field. It defines the corresponding bounded multiplicative spectrum point on

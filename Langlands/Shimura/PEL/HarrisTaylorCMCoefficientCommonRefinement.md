@@ -1,7 +1,5 @@
 # Common normal covers for original CM coefficient sheaves
 
-Author: Worker 57.
-
 For two small levels normal in a fixed coarse CM level and contained in
 the full coefficient kernel, construct their actual common intersection
 level. Restriction from either cover to this common cover is invertible
@@ -89,7 +87,7 @@ Each `Nᵧ` has underlying module `M.V`. Each `Bᵧ` is constructed
 independently as the invariant sheaf for the original residual action on
 the cover `Zᵧ`, with the inherited inverse-right deck and inverse-unop
 coefficient conventions. The comparison `eᵧ𝓏` from the imported coherence
-unit is defined through the original coefficient-kernel sheaf, without
+module is defined through the original coefficient-kernel sheaf, without
 requiring a containment between `Y` and `Z`.
 
 ## The actual common normal level
@@ -262,9 +260,9 @@ Applicable representability and existence theorems, source rigidity,
 full source-moduli and canonical-model geometry, identification with the
 source's component-function sheaf, variation of coarse level or
 coefficient data, arbitrary scheme inverse-image compatibility, and
-completion to a lisse adic sheaf remain obligations of the surrounding
-program. This focused unit does not discharge those obligations.
+completion to a lisse adic sheaf are not established here. This focused
+module does not discharge those obligations.
 
-Only published dependencies are imported. This pair is by Worker 57,
+Only published dependencies are imported. This pair is written
 in Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

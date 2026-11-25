@@ -5,7 +5,7 @@ import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalValuationCoordin
 
 /-! # The lattice map of Laurent torus coordinates
 
-Worker 200's `HasLaurentUnitaryCoordinates ν e` says that for every `m` the evaluation
+`HasLaurentUnitaryCoordinates ν e` says that for every `m` the evaluation
 `z ↦ χ_z(m)` of the unitary unramified character `χ_z = e⁻¹(z)` is a Laurent monomial
 `torusCharacter n z = ∏ⱼ zⱼ^{nⱼ}`. The exponent `n` is unique (`torusCharacter_injective`), so it
 defines a map `laurentExponent : H → J → ℤ`, which is a homomorphism (`laurentExponent_mul`),
@@ -147,7 +147,7 @@ local instance laurentExponentPointTopology :
   rationalPointTopology F G.X
 
 omit [IsAffine G.X.left] in
-/-- For Worker 200's canonical rational coordinates the lattice map is the coordinate vector
+/-- For the canonical rational coordinates the lattice map is the coordinate vector
 `rationalValuationCoordinates` of the valuation image in the basis
 `rationalReductiveValuationBasis`. -/
 theorem laurentExponent_rationalCanonical (hG : GroupScheme.IsConnectedReductive G)

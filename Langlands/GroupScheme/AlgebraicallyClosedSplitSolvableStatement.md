@@ -1,7 +1,5 @@
 # Solvable groups are split over an algebraically closed field
 
-Worker 1364.
-
 `Langlands.GroupScheme.AlgebraicallyClosedSplitSolvableStatement.{u}`
 records a proposition definition. For every algebraically closed field
 `k : Type u` and every actual group scheme `H` over `Spec k`, it assumes

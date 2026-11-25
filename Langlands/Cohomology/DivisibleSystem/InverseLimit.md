@@ -1,15 +1,15 @@
 # Harris's inverse limit over `m` and Lemma 2.8
 
-Author: Worker 61. Built on
+Built on
 `Langlands.Cohomology.DivisibleSystem.InvariantLimit`
 (`quotientInvariantsLimit`, `quotientInvariantsLimitToRepExtend`,
 `quasiIso_quotientInvariantsLimitToRepExtend`), and through it on the base
 module `DivisibleSystem` (`tower`, `obj`, `epi_projection`, `extendSystem`),
 `…Invariants` (`toRepComplexes`, `smoothQuotientInvariants`),
 `…InvariantTransition` (`quotientProjection`), `…ProPInvariants`
-(`IsProPSubgroup`) and Worker 3's
+(`IsProPSubgroup`) and
 `Langlands.Cohomology.ProPInvariants.Statement`
-(`ProPInvariantSubcomplexStatement`). It also uses Worker 3's
+(`ProPInvariantSubcomplexStatement`). It also uses
 `Langlands.Cohomology.InverseLimit.Statement`
 (`FiniteCohomologyInverseLimitStatement`). Both statements are unproved and
 appear only as hypotheses. From Mathlib it uses `limit.post`,
@@ -145,14 +145,14 @@ j : C_m^•(U(ẽ)_F̄) → C_{m'}^•(U(ẽ)_F̄), for m > m', are all surjecti
 hypothesis. It thus follows from Fact 1 bis that the system of complexes
 {C_m^•(U(ẽ)_F̄)} satisfies a Mittag-Leffler condition [EGA III, Chap. 0,
 Proposition 13.2.3], hence that Lemma 2.8. For every q, there is a canonical
-isomorphism H^q(lim C_m^•(U(ẽ)_F̄)) ≅ lim H_c^q(U(ẽ)_F̄, Z/ℓ^mZ)." Worker 61
-read this passage in the scanned original. Fact 1 bis, earlier in section
+isomorphism H^q(lim C_m^•(U(ẽ)_F̄)) ≅ lim H_c^q(U(ẽ)_F̄, Z/ℓ^mZ)." This
+passage was read in the scanned original. Fact 1 bis, earlier in section
 2, states that the cohomology groups with `ℤ/ℓ^mℤ` coefficients are finite.
 
 Our rendering:
 
 1. Harris derives the isomorphism from EGA's Mittag-Leffler criterion. We do
-   not formalize that argument. We assume Worker 3's
+   not formalize that argument. We assume
    `FiniteCohomologyInverseLimitStatement` (hypothesis `hS'`), whose
    hypotheses are surjective transition maps and finite cohomology. The
    surjectivity holds for every `ℓ`-divisible system, so finiteness is the
@@ -168,7 +168,7 @@ Our rendering:
    with the level-`m` map induced by (2.6) on cohomology; our second factor
    is the limit over `m` of the latter maps.
 4. The theorem inherits the hypotheses of
-   `quasiIso_quotientInvariantsLimitToRepExtend` at every level: Worker 3's
+   `quasiIso_quotientInvariantsLimitToRepExtend` at every level: the
    unproved `ProPInvariantSubcomplexStatement` (`hS`), pro-`p`-ness (`hP`),
    trivial action (`htriv`) and the surjectivity and unit hypotheses `hK`
    and `hk`. Harris's specific family of subgroups is not constructed (see
@@ -181,7 +181,8 @@ Our rendering:
 
 The module defines the inverse limit of an `ℓ`-divisible system and the
 comparison map of Lemma 2.8. It proves that the comparison is an isomorphism,
-assuming Worker 3's two statements and the hypotheses above. All maps are in
+assuming the two statements `ProPInvariantSubcomplexStatement` and
+`FiniteCohomologyInverseLimitStatement` and the hypotheses above. All maps are in
 `Rep R G`, so they are `G`-equivariant. It does not prove the Mittag-Leffler
 argument or either statement. It does not identify the cohomology of `K`
 with Harris's `H_c^q`. It does not treat smoothness or topology of the

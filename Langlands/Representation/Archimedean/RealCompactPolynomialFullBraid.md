@@ -1,9 +1,10 @@
 # The full compact polynomial braid and recursive corner normal forms
 
-This internal unit states a universal algebraic prerequisite as the Prop-valued
+This module states a universal algebraic prerequisite as the Prop-valued
 `RealCompactPolynomialFullBraidStatement`. It also proves two corner
 factorizations and a conditional sufficient criterion. It contains **no theorem
-proving the full braid proposition**. That proof is left to separate work.
+proving the full braid proposition**. The Library proves it separately, as
+`realCompactPolynomialFullBraid` in `RealCompactPolynomialFullBraidProof`.
 
 Let A be any complex associative unital algebra and let X,Y,Z satisfy
 XY−YX=Z, ZX−XZ=Y and ZY−YZ=−X. Write D_n(X) for

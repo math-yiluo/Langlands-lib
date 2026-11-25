@@ -98,4 +98,4 @@ the normalization of `μ`.
 ## Provenance
 
 The statement is derived from Henniart 1993, Lemme 2.1, with the test family
-changed as explained above. Worker 1718 wrote the module.
+changed as explained above.

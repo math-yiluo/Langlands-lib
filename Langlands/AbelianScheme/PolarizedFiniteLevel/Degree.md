@@ -1,7 +1,5 @@
 # Constant degree for ordinary polarized finite-level data
 
-Worker 310.
-
 This module supplies the degree convention and transport used in ordinary
 polarized finite-level moduli. The source is Mumford, Fogarty and Kirwan,
 *Geometric Invariant Theory*, third edition (1994), Chapter 7, Section 2,

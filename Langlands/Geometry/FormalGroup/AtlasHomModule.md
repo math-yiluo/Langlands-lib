@@ -65,7 +65,7 @@ is the actual identity atlas map.
 ## Scope
 
 The maps require equal principal-open covers and finite coordinate types.
-This unit supplies integral O-linear maps. Rational maps, full-order
+This module supplies integral O-linear maps. Rational maps, full-order
 commutation, refinement and gluing of rational maps, quasi-isogenies and
 framing triples require further constructions. No representing or universal
 object, classification, height, polarization or group action is assumed or

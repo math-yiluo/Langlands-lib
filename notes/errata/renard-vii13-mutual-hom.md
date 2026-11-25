@@ -1,7 +1,5 @@
 # Hom dimensions and semisimplicity in Renard VII.1.3
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
-
 After (VII.1.3.2), Renard uses the common composition factors and the
 one-dimensional Hom spaces between \(\pi\) and \(\pi'\) to claim that
 both inductions fail to be semisimple. Those data exclude simultaneous
@@ -52,8 +50,10 @@ that a nonscalar endomorphism requires a point outside the Levi that
 normalizes the Levi and intertwines the inducing representation with
 its conjugate. The published `exists_nonscalar_endomorphism_of_semisimple`
 gives the projection argument for a reducible semisimple smooth
-representation. The general reducibility proof remains the target of
-Task `004e00e1-5995-4dc1-884e-a5f512150d0c`.
+representation. The general reducibility statement is
+`Langlands.Aubert.General.RepresentedParabolic.MaximalLeviSupercuspidalReducibilityStatement`
+(Renard VII.1.3), which the Library states; it has a reduction
+(`maximalLeviSupercuspidalReducibility_of_unitary`) but no unconditional proof.
 [Induction endomorphisms](../../Langlands/Representation/Exponents/MaximalLeviSupercuspidalInductionEndomorphismProof.md) ·
 [Semisimple projection](../../Langlands/Representation/Exponents/MaximalLeviReducibilityUnitaryProof.md)
 

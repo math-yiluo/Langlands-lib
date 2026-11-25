@@ -1,11 +1,9 @@
 # Analytic local isomorphisms for unramified affine maps in equal dimensions
 
-Author: Worker 115.
-
 Let `k : Type u` be any complete nontrivially normed field. Let `X` and `Y`
 be actual affine schemes over `Spec k`, let `d : ℕ`, and supply regular analytic
 atlases of dimension `d` on their actual relative-point carriers with the
-published point topologies. No algebraic smoothness is needed in the
+point topologies. No algebraic smoothness is needed in the
 atlas-level construction beyond the existence of the supplied atlases.
 
 `RegularChart.coordinateDerivativeEquiv` makes the derivative of a formally
@@ -39,11 +37,14 @@ hypothesis for `Y`, and to every `Etale f.left`. Thus the local analytic
 isomorphism assertion holds for the constructed smooth affine manifolds.
 Zero dimension and empty actual point spaces are included.
 
-This is an internal prerequisite construction for Task 5259, which proves
+This is an internal prerequisite construction for
 Conrad Proposition 5.4's analytic-manifold assertion (registered source
-`conrad-2011-weil-grothendieck-adelic-points`, printed pp.15–16). Its implemented
+`conrad-2011-weil-grothendieck-adelic-points`, printed pp.15–16), which
+`analyticPointManifold` in `AlgebraicSpace.AnalyticPointManifoldProof` proves. Its implemented
 route uses evaluation derivations and formal unramifiedness to establish the
 invertible derivative, then the analytic inverse theorem. It uses the analytic
 affine-manifold construction by import and changes none of its files.
 Transport to nonaffine schemes and algebraic spaces, affine-space normalization
-and the exact `AnalyticPointManifoldStatement` remain further obligations.
+and the exact `AnalyticPointManifoldStatement` are outside this module;
+`analyticPointManifold` in `AlgebraicSpace.AnalyticPointManifoldProof` proves
+the statement.

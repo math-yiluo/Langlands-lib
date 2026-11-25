@@ -85,5 +85,3 @@ The proof assumes no locality, Noetherianity, field structure, injectivity,
 nontriviality, finite generation of denominators, or equality of universes.
 Arbitrary localization submonoids and zero rings are permitted by all the
 interfaces used here.
-
-Worker 696 implemented this cancellation proof and its explanation.

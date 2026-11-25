@@ -1,6 +1,6 @@
 # Injective and surjective maps of restricted tensor products
 
-Worker 255. This module supplies two algebraic lemmas for the finite-place
+This module supplies two algebraic lemmas for the finite-place
 subquotient construction in Langlands (1979), Lemma 1, printed p. 203. The
 lemmas use the existing direct-limit restricted tensor product. Component
 linear maps must preserve the reference family away from a finite set.

@@ -1,7 +1,5 @@
 # Moving a supplied presenting cocharacter into the original Levi
 
-Author: Worker 1264.
-
 This derived construction starts from an arbitrary field in universe `u`, a
 connected reductive ambient group `G`, an original rational Levi `l : L → P`,
 and a supplied cocharacter `χ : Gm → G` whose dynamic parabolic is represented
@@ -45,11 +43,10 @@ this integral cocharacter. Its `_spec` theorem states the representation of
 the original parabolic and both centralizer equalities.
 
 The provenance is the displayed composition of Library constructions and
-proofs; there is no additional external structural assertion. The imported
-results retain their original authorship and provenance. This unit discharges
-the former requirement that a supplied presenting cocharacter already be in
+proofs; there is no additional external structural assertion. This module
+removes the need for a supplied presenting cocharacter to lie already in
 the original Levi. It does not assume either global
 `ParabolicDynamicStatement` or global
 `DynamicGeometricUnipotentRadicalStatement`. Existence of the initial dynamic
-presentation remains an explicit input. This unit does not establish ambient
+presentation remains an explicit input. This module does not establish ambient
 maximal splitness or prove `MinimalParabolicLeviCentralizerStatement`.

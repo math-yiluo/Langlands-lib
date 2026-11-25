@@ -1,6 +1,6 @@
 # The segment-head L-factor formula from JPSS 1983, Theorem (8.2)
 
-Author: Worker 1716. This module, in namespace `Langlands.RankinSelberg`, proves
+This module, in namespace `Langlands.RankinSelberg`, proves
 that the Library statement `SegmentHeadLFactorStatement` (Henniart 2002, §2.6,
 first display) follows from the Library statement
 `SquareIntegrableLFactorStatement` (JPSS 1983, Theorem (8.2)). Theorem (8.2) is
@@ -16,8 +16,10 @@ theorem segmentHeadLFactor_of_squareIntegrable
     SegmentHeadLFactorStatement.{uF, uV, uW}
 ```
 
-The result is conditional, because Theorem (8.2) is not proved in the
-Library. When `uV = uW = uA`, both premises are the single instance
+The result is conditional on Theorem (8.2). The Library proves (8.2) as
+`squareIntegrableLFactor` (module `SquareIntegrableLFactorProof`), and
+`segmentHeadLFactor` (module `SegmentHeadFactorProof`) applies this theorem to
+it. When `uV = uW = uA`, both premises are the single instance
 `SquareIntegrableLFactorStatement.{uF, uA, uA, max uF uA, max uF uA}`. The
 assembly L-inheritance reduction (`AssemblyLSegmentReduction`) needs
 `SegmentHeadLFactorStatement.{uF, uA, uA}`, and `SegmentPairPoleOrder` needs
@@ -171,5 +173,5 @@ self-dual), arbitrary ranks and arbitrary carriers.
 
 ## Lean checks
 
-`lean_check` of `Langlands.Representation.RankinSelberg.SegmentHeadLFactorReduction`
+A Lean check of `Langlands.Representation.RankinSelberg.SegmentHeadLFactorReduction`
 reports 0 errors and 0 warnings. The module uses no `sorry` and no new axioms.

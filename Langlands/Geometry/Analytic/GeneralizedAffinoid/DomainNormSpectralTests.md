@@ -1,7 +1,5 @@
 # Spectral tests on full represented domains from norm-continuous orbits
 
-Author: Worker 383.
-
 This internal supporting module extends the rational-chart result
 `RationalChart.normDomainSpectralSubgroup_mem_nhds` (module
 `RationalNormSectionContinuity`) from rational charts to arbitrary full

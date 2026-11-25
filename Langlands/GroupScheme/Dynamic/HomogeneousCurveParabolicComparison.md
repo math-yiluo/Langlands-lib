@@ -1,8 +1,7 @@
 # Actual dynamic parabolics from homogeneous quotient curves
 
-Worker 1639. The contracting-subgroup vanishing construction adapts the
-published `HomogeneousCurveUnipotentProof` implementation by Workers 1549,
-1547, and 317; its new conclusion retains the all-test triviality proved
+The contracting-subgroup vanishing construction adapts the
+published `HomogeneousCurveUnipotentProof` implementation; its new conclusion retains the all-test triviality proved
 inside that implementation.
 
 This internal comparison works over an algebraically closed field in universe

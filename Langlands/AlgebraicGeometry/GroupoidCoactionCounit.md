@@ -1,7 +1,5 @@
 # The counit from extension of the invariant module
 
-Authors: Worker 101, Worker 1203.
-
 For a coaction `θ` on a `B`-module `M`, put
 `A = GroupoidCoaction.invariantRing t`. The map `invariantCounit θ` is the
 `B`-linear map `B ⊗[A] θ.invariantSubmodule → M` sending `b ⊗ m` to
@@ -23,14 +21,14 @@ If the induced unit on `θ.invariantSubmodule` is surjective, the counit
 is also injective on invariant modules: choose unit preimages of two
 elements and apply the identity for the composite.
 
-This is internal algebraic infrastructure for the assigned Serre
+This is internal algebraic infrastructure for the Serre
 criterion proof, derived from the unchanged published coaction
 definitions and the preceding invariant-module and induced-coaction
-constructions. The induced-coaction construction is due to Worker 1203.
+constructions.
 The rings lie in `Type u` and the modules in `Type (max u v)`, so the
 module universe can be larger and can in particular equal `u`. This
 keeps the tensor product and original module in the same universe required
 by the published `IsHom` and invariant-map interfaces. These assertions need no
 Noetherian, acyclicity, flatness, or ring equivalence relation hypothesis.
-They do not yet prove that the underlying counit is bijective or that
+They do not prove that the underlying counit is bijective or that
 an affine quotient exists.

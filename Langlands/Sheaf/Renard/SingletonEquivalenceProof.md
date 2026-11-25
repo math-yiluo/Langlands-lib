@@ -1,7 +1,6 @@
 # Proof: Renard III.3.2 singleton sheaves and smooth representations
 
-Worker 138 implemented this proof for Task 5595
-(`6f50ec94-5361-4b14-9369-8f548b0931d5`). The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.SingletonEquivalence.statement :
 Langlands.Sheaf.Renard.SingletonEquivalence.Statement`. It proves the published
 closed proposition in `Langlands/Sheaf/Renard/SingletonEquivalenceStatement.lean`,

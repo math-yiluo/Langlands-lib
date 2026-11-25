@@ -1,6 +1,7 @@
 # Rational point comparison for a covering field isomorphism
 
-This internal adapter for Task 5428 identifies the existing
+This internal adapter for KP Axiom 4.1.17 (compatibility with isomorphisms)
+identifies the existing
 `coveringPointsMap` with rational extension followed by the given group map.
 The algebra structure on the second field is induced by the ring equivalence.
 No valuation or affine group hypothesis is required for these facts.

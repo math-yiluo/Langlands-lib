@@ -1,7 +1,5 @@
 # Products over equal-exponent Langlands groups
 
-Author: Worker 1748.
-
 `SquareIntegrableFactorGrouping` packages the part of an actual
 equal-exponent grouping used to compute factors: square-integrability of the
 unitarily normalized original blocks, tempered data with matching exponents,

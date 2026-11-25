@@ -4,7 +4,7 @@
 of fourteen propositions about upper-break multiplicities, conductors and the
 intrinsic last break. It quantifies over every Mathlib nonarchimedean local
 field `K` of any characteristic and every specified separable closure `Ω`.
-The propositions are targets for later proof tasks.
+The propositions are stated here; the Library does not prove them.
 
 ## Objects and conventions
 

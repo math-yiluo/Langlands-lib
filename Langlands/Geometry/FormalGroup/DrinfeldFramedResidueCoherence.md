@@ -1,6 +1,6 @@
 # Forced frame maps for identity and composition of framed base extension
 
-This internal unit proves the residue-map coherence needed for actual framed
+This module proves the residue-map coherence needed for actual framed
 identity and composition comparisons. `Nilp.reducedScalarMap_id` and
 `reducedScalarMap_comp` follow the actual quotient functor identity and
 composition laws and the definition of the induced scalar algebra map.
@@ -18,5 +18,7 @@ coefficient/residue and height-certified fixed-frame hypotheses remain explicit,
 with Nilp universes `{v,u}` for framed objects. The generic induced quotient
 scalar-map equations allow Nilp universes `{v,w}`. These are actual integral
 fixed-frame isomorphisms and residue equations. Original framed identity and
-composition comparisons, class functor laws and representability remain
-further obligations.
+composition comparisons and class functor laws are outside this module; they
+are constructed in `DrinfeldFramedIdentityComparison`,
+`DrinfeldFramedCompositionComparison` and `DrinfeldFramedClassFunctor`.
+Representability remains separate.

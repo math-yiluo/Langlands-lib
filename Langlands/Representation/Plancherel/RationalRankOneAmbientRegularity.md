@@ -1,8 +1,5 @@
 # Unitary regularity of ambient-invariant fractions in rank at most one
 
-Author: Worker 359. The Laurent descent and reduced polynomial presentation
-used here are due to Worker 362.
-
 This is a derived result for a morphism `H → G` of affine group schemes locally
 of finite type over a nonarchimedean local field. The source `H` is connected
 reductive, and both point groups have their canonical rational-point topologies.

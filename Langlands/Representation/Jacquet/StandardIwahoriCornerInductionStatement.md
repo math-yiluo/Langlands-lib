@@ -8,15 +8,14 @@ The module contains one `Prop`-valued definition,
 `StandardIwahoriCornerInductionEquivalenceStatement`. It proves nothing and defines no new
 objects.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-It addresses gap 6 of the Chapter VI item ledger (`notes/renard/item-ledger-vi.md`, row
+This module addresses gap 6 of the Chapter VI item ledger (`notes/renard/item-ledger-vi.md`, row
 "VI.9.4 Proposition"). The ledger lists two missing parts:
 
 - the comparison of the measure-free `LevelHeckeAlgebra ℂ K` with the Haar-measure
-  `H(G, K)`. Worker 1222's published `Hecke.LevelHeckeCornerComparisonStatement` now states
+  `H(G, K)`. The published `Hecke.LevelHeckeCornerComparisonStatement` now states
   this comparison;
 - the identification of the inverse functor `M ↦ H(G) ⊗_{H(G,K)} M`, which is
-  VI.10.6, Proposition (ii). This unit states it.
+  VI.10.6, Proposition (ii). This module states it.
 
 The published VI.9.4 statements (`StandardFixedVectorHeckeEquivalenceStatement` and
 `StandardIwahoriFixedVectorHeckeEquivalenceStatement`) assert that `V ↦ V^K` is an
@@ -31,7 +30,7 @@ the Haar Hecke algebra `H(G)`, its corner `H(G, K) = e_K H(G) e_K`, the functor
 David Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF page numbers are
-one-based and equal printed page numbers plus six. The author read:
+one-based and equal printed page numbers plus six. The following were read:
 
 - VI.10.6, Proposition and proof, printed p.214 / PDF p.220:
 
@@ -179,7 +178,7 @@ structure are the same as in the published VI.9.4 statements.
   on `K`-fixed vectors. Together with clause 1 it relates the two forms. This comparison is
   not stated here.
 - The published `FixedVectorCategoryStatements` (VI.10.6, (iii) and (iv)) records in its
-  Markdown that the inverse functor of (ii) is not stated. This unit states it.
+  Markdown that the inverse functor of (ii) is not stated. This module states it.
 
 ## Expected proof route
 
@@ -212,7 +211,8 @@ not a proof.
    heckeNondegenerateModuleFunctor haar ≅ R.functor ⋙ inclusion e` and the counit of `R`
    gives clause 2.
 
-The only open input is the VI.9.4 Corollary, whose proof is a separate open task.
+The only open input is the VI.9.4 Corollary, which `StandardIwahoriSubquotientGenerationReduction`
+proves only from structural inputs such as `JointSpecialCompactBasisExistenceStatement`.
 
 ## Scope
 

@@ -1,11 +1,13 @@
 # Actual semistandard coefficients and source wave packets
 
-Worker 268. This derived construction supports unit 3 of Task 7258.
+This derived construction supports the weighted synthesis of Waldspurger's
+invariant spectral families.
 Its principal declaration is
 `Langlands.HarishChandraSchwartz.RationalSemistandard.SourcePacket.rawWavePacketLinear`.
 It constructs the actual one-orbit source integral and proves its pointwise
-integrability and complex linearity. It does not yet construct global
-weighted synthesis or a Schwartz-valued lift.
+integrability and complex linearity. It does not construct global
+weighted synthesis (`RationalSemistandardWeightedSynthesis`) or a
+Schwartz-valued lift.
 
 The source is J.-L. Waldspurger (2003), *La formule de Plancherel pour les
 groupes p-adiques*, registered as `waldspurger-2003-plancherel`, SHA256
@@ -27,8 +29,8 @@ intrinsic index `t`, actual `LeviModel model`, literal Levi `M`, and
 topologies. No ambient splitness, quasi-splitness or representation-carrier
 topology is added. Rank zero is included. An actual
 `CocharacterPresentation hG t` identifies the whole all-test triple with
-a dynamic triple; existence from the separately owned dynamic-coverage
-target remains conditional in the preceding adapter. The compact-picture
+a dynamic triple; existence from the dynamic-coverage target remains
+conditional in the preceding adapter. The compact-picture
 projection continuity and actual Iwasawa factorization remain in `d`.
 
 `RationalSemistandard.isClosed_levi_of_model` follows from the model's actual closed
@@ -83,7 +85,7 @@ split-torus character statements, scalar compact `Ks` with both parabolic
 factorizations, forward and reverse continuation data, nonempty open
 convergence loci inside the full domains, a nonempty open generic
 irreducibility locus, and full-unitary regularity of the inverse canonical
-composition scalar. These obligations retain their existing owners.
+composition scalar. These obligations are not discharged here.
 `Ks` is independent of the coefficient compact in `d`. No irreducibility
 assumption on all tempered parabolic induction is added.
 
@@ -119,7 +121,7 @@ functions on `G(F)`. No integrability or linearity conclusion is assumed.
 The actual standard-specialization, model and representative-change
 comparisons of the complete source packet, source formal-degree transport,
 Schwartz membership and continuous lift, weighted global sum, invariant
-restriction and VI.3.2 factorization remain additional Task 7258
-constructions/targets. The separately owned standard VI.3.1 estimates and
-source-topology comparison are unchanged. This file proves no global
+restriction and VI.3.2 factorization are additional constructions and
+targets, not in this module. The standard VI.3.1 estimates and the
+source-topology comparison are separate. This file proves no global
 form, VII.2.5 isometry or VIII Fourier-support finiteness/inversion.

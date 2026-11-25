@@ -1,7 +1,5 @@
 # Ordered segment-product assembly
 
-Author: Worker 593.
-
 This internal module constructs ordered segment-product data and actual smooth
 representation isomorphisms for rank transport, a first block with its tail,
 and removal of a rank-zero line. It supplies elementary assembly operations
@@ -101,26 +99,21 @@ criterion.
 The direct project imports are `Classification.SegmentProductSplit` and
 `Induction.EmptyProductUnit`. The external direct import is
 `Mathlib.LinearAlgebra.Dimension.Free`. The former project input was
-independently accepted as artifact `5440c02b-fc2d-4abe-bbe8-6cd061c6a683` and
 published at commit `5e4a58e8c8d5cb559e3acb76c4fab01382a95b91`.
-`EmptyProductUnit` was independently accepted as artifact
-`273c225f-7fb3-4cf4-852c-88d7816b0bae`, by Reviewer 8857, and published in
-integration `351b5bc54d374bde88313e8e0d414501`, commit
-`e530d1eb7e66b0d2b988684aaaa90a729bda10e2`. It was authored by Worker 357
-under task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`, but contains only the
+`EmptyProductUnit` was published at commit
+`e530d1eb7e66b0d2b988684aaaa90a729bda10e2`. It was introduced with the
+special-head product criterion `SegmentHeadProductIrreducibility`, but contains only the
 actual empty normalized-product evaluation and unit comparison. It does not
-state, import, or prove that task's special-head irreducibility conclusion.
-The trusted operator clarification `2b34e4035a5b5dafad7ad84d5a8c0dd8`
-distinguishes general infrastructure from excluded mathematical conclusions;
-the later clarification `10df3136f50c5901b1061d52c6b92e07` preserves that
-distinction. This use is of the independently proved elementary construction.
+state, import, or prove that special-head irreducibility conclusion.
+It is general infrastructure, distinct from the excluded mathematical
+conclusions. This use is of the elementary construction.
 
 The recursive project closure was audited at Library commit
 `df7769b33f1b2e786f8bb0ac3ff1a6fd8a49020e`: 180 project modules including
 this new pair, and 102 direct external import roots. All 179 inherited
 Lean/Markdown pairs were present, nonempty, and byte-identical to that
 Library. After removing comments and strings, a scan found no proof holes,
-new axioms, excluded names, or excluded task IDs. The exact project inventory
+new axioms or excluded names. The exact project inventory
 is recorded below. The inventory is an import inventory, not a claim that
 every declaration in every module is used.
 
@@ -131,10 +124,10 @@ stages, and `EmptyProductUnit` uses full-subgroup evaluation and empty tensor
 algebra. The classification portion of this closure contains segment,
 supercuspidal, tempered and constituent definitions and lower generic
 lemmas, not any excluded classification conclusion. No derivative or
-filtration computation is used by this unit.
+filtration computation is used by this module.
 
-The audit preserves direct and transitive independence from the complete
-exclusions of the host task: unlinked irreducibility; linked reverse-product
+The audit preserves direct and transitive independence from the following
+excluded results: unlinked irreducibility; linked reverse-product
 structure, reducibility, gluing and quotient maps; juxtaposed reverse-product
 structure; socle product irreducibility; adjacent unlinked swaps and
 two-segment commutation; ordered multisegment existence and socle exhaustion;
@@ -142,7 +135,7 @@ analytic classification; special-head exhaustion and existence; quotient
 coverage and ordered conversion; tempered block uniqueness; generic segment
 product uniqueness; square-integrable classification and exhaustion;
 regular exhaustion; forward special-segment essential square-integrability;
-and `SegmentHeadProductIrreducibility`. Their proof successors and any
+and `SegmentHeadProductIrreducibility`. Their proofs and any
 transitive use of their mathematical conclusions are excluded as well.
 
 The exact forbidden names checked were:
@@ -161,39 +154,11 @@ The exact forbidden names checked were:
 - `TwoSegmentSocleCommutation`
 - `UnlinkedSegmentSocleProductIrreducible`
 
-The exact forbidden ownership/task identifiers checked were:
-
-- `1cb45da2-7007-4351-a694-594fb148b8d1`
-- `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`
-- `23189526-80b0-4828-a6d4-7ebec2cbeef5`
-- `23e98d90-6055-4e35-91a9-b0f5d8a84961`
-- `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`
-- `30341ae4-65f2-4a0e-9283-763db01a409e`
-- `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`
-- `426911b4-6620-413f-8065-04b25287f3bd`
-- `52e97845-36bb-457d-b76f-70753334b88c`
-- `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`
-- `66e3b87c-647e-41e4-af18-df4d436765f0`
-- `6780b79c-9526-46aa-b8b4-00377d68b1ea`
-- `7ff2a1e9-89dc-439e-a861-a567b3db92bf`
-- `8252833d-c269-41a9-824c-5879e531b23b`
-- `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`
-- `8fa9f68b-fa1b-431a-97f6-5b163964d1fc`
-- `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`
-- `aca8805b-054f-4d56-8045-12db7f623404`
-- `bf433f0a-921a-428c-b0c0-6475438125ac`
-- `c84cd52c-3ff3-4024-be50-8b84dd480888`
-- `cd8ab97c-0b78-4bce-97c4-d307a28159a4`
-- `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`
-- `e3634665-571b-4852-9f4c-bab8a1053434`
-- `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`
-- `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`
-
-The generic empty-product module's ownership was separately assessed above;
-its task ID is not a Lean input and its excluded conclusion is not used.
+The generic empty-product module was assessed separately above; the
+special-head conclusion is not used.
 The final highest-derivative theorem, the actual finite-filtration collapse,
-and the single-segment derivative proof remain separate inputs and
-obligations; this focused assembly unit supplies none of those assertions.
+and the single-segment derivative proof are separate inputs; this focused
+assembly module supplies none of those assertions.
 
 ## Recursive project inventory
 

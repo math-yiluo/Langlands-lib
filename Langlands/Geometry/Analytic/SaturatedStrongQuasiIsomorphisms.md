@@ -1,6 +1,6 @@
 # Full quasi-isomorphisms on saturated affinoid atlases
 
-This unit is an internal construction on the actual category
+This module is an internal construction on the actual category
 `SaturatedAtlasPresentation`, using its original all-admissible-pair
 `StrongHom` morphisms. It retains the existing definition `IsQuasiIso`:
 an ambient homeomorphism together with full affinoid-domain representation
@@ -43,6 +43,6 @@ identity theorem with the new composition theorem. `mono_of_isQuasiIso`
 and `postcompQuasiIsoEmbedding` give the categorical cancellation
 consequences, with the embedding using the actual category composition.
 
-This unit supplies neither a strong inverse for every quasi-isomorphism
+This module supplies neither a strong inverse for every quasi-isomorphism
 nor a localization category. Whole-atlas extension and analytic sites
-remain separate construction obligations.
+lie outside this module.

@@ -139,10 +139,12 @@ category. It introduces no new category or assumed morphism.
 
 ## Remaining scope
 
-This unit constructs the general square for compatible maps with the stated
+This module constructs the general square for compatible maps with the stated
 source and common-target closure hypotheses, and proves that the new source
-retains full-domain closure. It does not yet provide a calculus-of-fractions
-instance on the saturated category or compare the resulting localization
+retains full-domain closure. It does not provide a calculus-of-fractions
+instance on the saturated category (the instance
+`HasRightCalculusOfFractions` for quasi-isomorphisms is given in
+`SaturatedQuasiIsoRightFractions`) or compare the resulting localization
 with an independently defined analytic-space category. Etale, quasi-etale
 and equivariant sites, compact and distinguished domains, and the Harris
-tower specialization remain obligations of the surrounding task.
+tower specialization lie outside this module.

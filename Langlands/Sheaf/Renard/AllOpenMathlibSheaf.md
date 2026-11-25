@@ -10,7 +10,7 @@ p.261 / PDF p.267, lists abelian-group sheaves and presheaves on a
 topological space among the abelian-category examples. The registered
 source is `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-These three PDF pages were read directly for this unit. The separately
+These three PDF pages were read directly for this module. The separately
 registered historical 2010 errata, PDF pp.2–3, were also read; their later
 sheafification corrections do not change these definitions.
 
@@ -115,15 +115,13 @@ natural transformation and evaluating the identity maps.
 other triangle law, derived from the actual equivalence. Consequently
 the construction is suitable for subsequent categorical transport.
 
-Worker 1594 implemented the construction and intrinsic laws. Worker 709
-provided the task's original-source audit and the universe-safe route
-through preservation and reflection of existing limits. Published
-prerequisites are reused by Lean name, including the source basis
+The construction takes a universe-safe route through preservation and
+reflection of existing limits. Published prerequisites are reused by Lean name, including the source basis
 presheaf/sheaf categories and the existing all-open lift.
 
-This unit proves no abelianness assertion. The arbitrary chosen-basis /
+This module proves no abelianness assertion. The arbitrary chosen-basis /
 all-open equivalence, normalized-presheaf abelianness, actual sheaf
 abelianness and its sheafification premises, original-universe germ
 models, stalk comparisons, compact sections, and scalar or module
-enhancements remain separate obligations. No separation, compactness,
+enhancements are not treated here. No separation, compactness,
 countability, nonemptiness, or total-disconnectedness hypothesis is added.

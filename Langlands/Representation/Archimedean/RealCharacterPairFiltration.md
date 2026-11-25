@@ -7,8 +7,8 @@ Module: `Langlands.Representation.Archimedean.RealCharacterPairFiltration`. The 
 
 ## Statement proved
 
-`realCharacterPairFiltration : RealCharacterPairFiltrationStatement`, the target statement
-of Task 7067 (module `RealRankOneStepFiltration`). Let `c`, `d` be characters of `ℝ^×` with
+`realCharacterPairFiltration : RealCharacterPairFiltrationStatement`, the statement defined
+in module `RealRankOneStepFiltration`. Let `c`, `d` be characters of `ℝ^×` with
 exponents `t_c`, `t_d` and `Re t_c < Re t_d`, and let `pre`, `post` be lists of real blocks
 with `realRank (pre ++ character c :: character d :: post) = n`. Then
 `RealAdjacentFiltration n pre post (character c) (character d)` holds. That is, there are

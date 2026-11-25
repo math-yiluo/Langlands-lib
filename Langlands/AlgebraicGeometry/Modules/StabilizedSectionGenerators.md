@@ -2,7 +2,7 @@
 
 Let `p : X ⟶ Spec R` be any scheme morphism, `M` an actual module sheaf on
 `X`, and `C` any `R`-module. Supply an actual `R`-linear family
-`q : E →ₗ[R] (relativeGlobalSections p).obj M`. This unit combines it with
+`q : E →ₗ[R] (relativeGlobalSections p).obj M`. This module combines it with
 the canonical global family of the actual pulled-back associated sheaf
 `p*(tilde C)` in the genuine categorical biproduct
 
@@ -43,7 +43,7 @@ The provenance is internal: the actual global section functor, genuine
 biproduct inclusion/projection identities, canonical pulled-back base
 module generators and ordinary coefficient tensor extension supply the
 whole construction. No finiteness, projectivity, flatness or
-quasi-coherence assumption on `M` or `E` is needed. This unit makes no
+quasi-coherence assumption on `M` or `E` is needed. This module makes no
 orbit, Grassmannian classified-kernel or parabolic positivity assertion.
 For an identity-jet application its genuine biproduct is definitionally
 the actual `IdentityJet.stabilizedModule` with `M = IdentityJet.module G n`

@@ -1,7 +1,5 @@
 # Restrictions to clopen pieces are localizations at idempotents
 
-Author: Worker 36.
-
 This module shows that the Weierstrass chart of a clopen subset of an affinoid
 spectrum is the localization of the algebra away from the idempotent of the
 subset. It follows that the restriction from a recognized subset to a

@@ -1,7 +1,5 @@
 # The Iwasawa height `H_P` on actual adelic points
 
-Author: Worker 3659.
-
 Mœglin–Waldspurger (1995), I.1.4, printed p. 7, use the decomposition `G = P K` to define
 `m_P : G(𝔸) → M¹ \ M(𝔸)`, `m_P(u m k) = M¹ m`, and compose it with `log_M` of their equation (4).
 This is the height used for Siegel domains, for `φ ↦ φ · m_P^λ` and for Eisenstein series.

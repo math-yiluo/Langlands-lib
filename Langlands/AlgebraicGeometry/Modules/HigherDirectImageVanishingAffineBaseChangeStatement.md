@@ -28,7 +28,7 @@ There are no additional outer parameters or hypotheses.
 
 The schemes `X` and `Y` and the morphism `f : X ⟶ Y` are arbitrary
 apart from the two geometric premises `Smooth f` and `IsProper f`.
-`Q : Picard.LineBundle X` is the published full-subcategory object of
+`Q : Picard.LineBundle X` is the full-subcategory object of
 actual structure-sheaf modules locally free of rank one, and
 `Q.obj : X.Modules` is its underlying module.
 
@@ -49,7 +49,7 @@ fibre product is the actual module
 ```
 
 The conclusion is zero cohomology as an actual `R`-module, computed
-by the published functor
+by the functor
 `DerivedSections.relativeCohomology (pullback.snd f x) n`.
 Both degree quantifiers include zero.
 
@@ -116,9 +116,11 @@ argument uses joint vanishing in all degrees; it does not assume
 that individual higher direct images commute with arbitrary base
 change.
 
-## Separate proof obligations and consumer
+## Proof and consumer
 
-A later exact proof must identify the published natural-degree
+The proposition is proved as `higherDirectImageVanishingAffineBaseChange`
+(module `HigherDirectImageVanishingAffineBaseChangeProof`, using the
+lemmas of `AffineBaseChangeVanishing`). A proof must identify the natural-degree
 right-derived functors with the integer-degree derived-category
 cohomology used by the source, including vanishing in negative
 degrees. It must establish the proper perfect-section comparison
@@ -131,7 +133,7 @@ pass from zero higher direct images to zero affine-local derived
 sections; arbitrary scalar change then preserves zero. An affine
 cover of `Y` need not contain the entire image of `x`, so the proof
 must use its inverse-image cover on `Spec R`, refine by affine
-opens, and detect or glue the resulting zero object there. The published
+opens, and detect or glue the resulting zero object there.
 `UniversalPerfectSectionsStatement` is a proposition stating a
 relevant affine perfect-representative input; its definition is
 not a proof of that input. A degreewise `baseChangeMap` alone also
@@ -142,17 +144,16 @@ The second-projection finite-support detection consumer is
 After its separate finite-support, Leray and section-detection
 steps make all higher direct images zero, the present proposition
 can be specialized to the second square projection, `R = K`, and
-each rational point. The separately published second-fibre
-cohomology identification then gives the consumer's literal
+each rational point. The separate second-fibre cohomology
+identification `squareSecondFibreCohomologyIso` then gives the consumer's literal
 fibre expression.
 
 This is distinct from the forward rational-fibre criterion, which
 deduces zero restrictions of higher direct images from vanishing
 on fibres of an open subscheme, and from the first-projection
-total-vanishing adapter. Those results, this proposition's exact
-proof, and the consumer's exact proof remain separate obligations.
+total-vanishing adapter. The consumer is proved as
+`algClosedFieldSquareSecondProjectionFiniteSupportDetection` (module
+`Langlands.AlgebraicGeometry.Picard.SquareSecondProjectionFiniteSupportDetectionProof`),
+which applies `higherDirectImageVanishingAffineBaseChange`.
 
-Worker 360 prepared the shared statement draft for task
-`66163118-2990-48e3-9fec-026452cb617f`. Worker 152 checked its exact
-interface and source passages and expanded the split-exactness
-and comparison explanations for submission.
+The exact interface and the source passages were checked.

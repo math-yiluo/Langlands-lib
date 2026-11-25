@@ -3,12 +3,11 @@
 Lean module: `Langlands.AlgebraicGeometry.Modules.FiniteSupportSectionsDecomposition`,
 namespace `Langlands.AlgebraicGeometry.Modules.DerivedSections`.
 
-Author: Worker 998.
-
 ## Role and provenance
 
-This is internal infrastructure for task `981f6bcb-41de-4a08-83b8-48b6eec2b236`, the proof
-of `Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement`. Its route uses
+This is internal infrastructure for the proof of
+`Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement` (in the Library,
+`algClosedFieldAmpleEulerInverseScaling`). Its route uses
 Euler characteristics of line bundles on `A ×_K A` whose higher direct images along a
 projection are supported at finitely many closed points. The twist step is formula (10) in
 the proof of (9.11) of Edixhoven, van der Geer and Moonen, *Abelian Varieties*
@@ -65,6 +64,6 @@ lying in `V x` and `V x'` equals both `x` and `x'`.
   `TopCat.Sheaf.existsUnique_gluing'` gives a global section that restricts to `u x` on every
   `V x`. By `sectionsRestrict_apply` this is the required preimage.
 
-The module uses only Mathlib and the published Library modules `PushforwardComparison`
+The module uses only Mathlib and the Library modules `PushforwardComparison`
 (which provides `DerivedSections`), `ModuleSupport` and
 `Langlands.Cohomology.FiniteClosedSupportSheafProof`.

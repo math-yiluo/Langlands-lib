@@ -36,4 +36,4 @@ The provenance is internal coordinate and coefficient algebra using the
 published constructions named above. The extension of the old p-adic
 comparison uses only the general-field Haar transport. No analytic continuation,
 normalized-generator, functional-equation, epsilon or conductor conclusion is
-proved by this unit.
+proved by this module.

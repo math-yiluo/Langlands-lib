@@ -1,12 +1,12 @@
 # Compact finiteness of the spherical Laurent formula
 
-This derived unit proves the compact-modulo-unipotent finiteness assertion for
+This module proves the compact-modulo-unipotent finiteness assertion for
 `Langlands.Conductor.sphericalWhittakerPolynomial`. Its source motivation is
 Jacquet, *A correction to Conducteur des représentations du groupe linéaire*
 (2012), Section 2, printed p. 520, first paragraph. The formula itself and its
 specialization to the explicit scalar spherical function come from
 `Langlands.Representation.Conductor.SphericalPolynomial`. The identification
-with a principal-series Whittaker function remains a separate obligation.
+with a principal-series Whittaker function is not part of this module.
 
 ## Objects and assumptions
 
@@ -55,7 +55,7 @@ finite-dimensional value span of `C`.
 
 The final theorem quantifies over every group element whose quotient image lies
 in `D`. It proves finite-dimensional containment, rather than finite image on
-that entire preimage: the character can vary along unipotent orbits. This unit
+that entire preimage: the character can vary along unipotent orbits. This module
 does not prove compactness of the support of a Rankin–Selberg integrand, a lower
 bound on its determinant levels, coefficient integration, rational continuation,
 or an essential-vector or conductor theorem. Those are further steps of the

@@ -1,6 +1,6 @@
 # Finite-cover presentations of actual sheaf H¹ on compact spaces
 
-Worker 368, internal construction. This construction uses only published
+This internal construction uses only published
 `AbelianSheafFlasque`, ordered `CechCochains`, and Mathlib's actual sheaf
 epimorphism/local-surjectivity, compactness and cohomology exact-sequence
 results. No external-source translation is asserted.

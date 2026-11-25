@@ -1,6 +1,6 @@
 # Model congruence subgroups as linear congruence subgroups
 
-This internal unit identifies the congruence tower of an integral model with
+This internal module identifies the congruence tower of an integral model with
 pulled-back principal congruence subgroups. Here `F` is a nonarchimedean
 local field with valuation ring `𝒪[F]`, `G` is a group scheme over `F`, and
 `M : IntegralModel 𝒪[F] F G` is an integral model. The level-`n` congruence

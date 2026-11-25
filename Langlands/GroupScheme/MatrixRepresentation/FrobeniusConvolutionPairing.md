@@ -1,6 +1,7 @@
 # Perfect convolution evaluation on the actual Frobenius quotient dual
 
-This derived unit works with the genuine Frobenius-origin coordinate quotient
+This module, derived rather than taken from a source, works with the genuine
+Frobenius-origin coordinate quotient
 of an affine group scheme. Given pointed polynomial eigen-coordinates with
 positive cocharacter heights, the class of the top retained monomial is a
 coordinate integral: multiplication by any coordinate equals multiplication

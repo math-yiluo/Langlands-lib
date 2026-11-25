@@ -1,8 +1,8 @@
 # Fixed pinned chart transitions and canonical comparison naturality
 
-Worker 591, with Worker 686's actual chart constructions. This internal
-adapter concerns supplied coherent root frames; their existence remains
-a separate obligation.
+This internal adapter uses the actual chart constructions of
+`Reductive/GlobalPinningTransitions` and concerns supplied coherent root
+frames; their existence is not proved here.
 
 Let `G` be reductive over an arbitrary scheme `S`, with a closed split
 fibrewise maximal torus, a supplied full global coordinate root datum
@@ -36,4 +36,5 @@ Neither the base nor the common scheme is assumed affine, connected or
 quasi-compact. The two chart source schemes are affine. The result is an
 internal composition of actual chart-transition preservation and fixed
 pinned comparison uniqueness. It does not construct the frames, prove
-the affine pinned theorem, or assert the parent isomorphism statement.
+the affine pinned theorem, or assert the isomorphism statement
+`ReductiveSplitTorusBorelIsomorphismStatement`.

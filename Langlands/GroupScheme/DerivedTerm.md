@@ -1,7 +1,5 @@
 # Finite terms for derived-series elements
 
-Worker 1370.
-
 This internal construction supports solvability transport for actual group schemes.
 `DerivedTerm n` is finite syntax: an arbitrary input at level zero, the identity,
 products and inverses at a fixed level, and commutators which raise the level by one.

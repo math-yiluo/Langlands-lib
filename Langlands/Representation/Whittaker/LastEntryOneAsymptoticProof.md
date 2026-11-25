@@ -1,7 +1,5 @@
 # Last-entry-one Whittaker expansion
 
-Author: Worker 186.
-
 `Langlands.whittakerLastEntryOneAsymptotic` proves the entire closed
 `Langlands.WhittakerLastEntryOneAsymptoticStatement.{uF,uV}`. The field and
 representation-carrier universes remain independent. The target and every

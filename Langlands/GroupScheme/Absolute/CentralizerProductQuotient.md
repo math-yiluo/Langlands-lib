@@ -1,8 +1,8 @@
 # The actual intersection quotient inside an ambient homogeneous quotient
 
-Internal construction by Worker 1438 from the actual scheme-theoretic subgroup
+Internal construction from the actual scheme-theoretic subgroup
 intersection, exact all-test homogeneous quotient fibers, fpqc descent of
-morphisms, and Mathlib pullback topology. This is a supporting unit for the
+morphisms, and Mathlib pullback topology. This is a supporting module for the
 centralizer–Borel argument; it supplies no proof of the main statement.
 
 For group schemes `M`, `B`, and `G` over an arbitrary base scheme `S`, let

@@ -1,6 +1,6 @@
 # Exact character Mellin denominator
 
-This internal unit derives the abelian Euler denominator from the actual
+This internal module derives the abelian Euler denominator from the actual
 character shell coefficients. It retains arbitrary p-adic fields, continuous
 quasicharacters and supplied topological data.
 
@@ -36,14 +36,13 @@ continuation with this one and transfers the Laurent clearing witness.
 
 This is a direct internal consequence of the published shell, conductor and
 recurrence results. The two spectral helper proofs specialize the helpers in
-Worker 656's `OneVariableMellinProof` and Worker 357's `TateScalarMellin`, which
-in turn attribute the elementary power argument to Worker 235's
-`RamifiedFiniteFunctionMellinProof`. Their attribution is retained. The
+`OneVariableMellinProof` and `TateScalarMellin`, which in turn take the
+elementary power argument from `RamifiedFiniteFunctionMellinProof`. The
 character's finite translation span uses the published
 `tateCharacter_translationFinite`; it is not an additional hypothesis.
 
 The reverse-polynomial and denominator conclusions cover both conductor
-branches, with no condition on the value of the test at zero. This unit does
+branches, with no condition on the value of the test at zero. This module does
 not construct a test realizing the reciprocal Euler polynomial, prove that it
 is the normalized generator, identify the JPSS pair L-factor, or establish an
 epsilon comparison or the closed all-field correspondence.

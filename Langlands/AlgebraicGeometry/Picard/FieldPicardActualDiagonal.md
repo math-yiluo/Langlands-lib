@@ -1,7 +1,5 @@
 # The actual Picard diagonal over an arbitrary field
 
-Author: Worker 509.
-
 This internal specialization combines the published actual class-equalizer
 theorem `RelativePicard.fieldPicardClassEqualizerImmersion` with the published
 bridge from actual line bundles to arbitrary sections of the fppf Picard sheaf.

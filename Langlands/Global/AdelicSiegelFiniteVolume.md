@@ -1,7 +1,5 @@
 # Finite Haar measure of Siegel sets and reductive finite volume
 
-Author: Worker 1179. The good-position hypothesis below was agreed with Worker 235.
-
 This module does five things:
 
 1. It proves a general covolume criterion for a discrete subgroup of a locally compact
@@ -20,9 +18,12 @@ This module does five things:
    both for one group at a time and as the Library target
    `ConnectedReductiveFiniteVolumeStatement`.
 
-The module does not prove finite volume outright. Its two inputs,
-`AdelicGoodSiegelReductionStatement` and `SiegelProductFiniteMeasureStatement`, are both
-unproved.
+The module does not prove finite volume outright. Of its two inputs,
+`SiegelProductFiniteMeasureStatement` is proved as `siegelProductFiniteMeasure` (module
+`AdelicSiegelFiniteVolumeProof`); the Library has no proof of
+`AdelicGoodSiegelReductionStatement`. Finite volume itself,
+`ConnectedReductiveFiniteVolumeStatement`, is proved in the Library as
+`connectedReductiveFiniteVolume` (module `AdelicFiniteVolumeProof`).
 
 ## Covolume criterion
 

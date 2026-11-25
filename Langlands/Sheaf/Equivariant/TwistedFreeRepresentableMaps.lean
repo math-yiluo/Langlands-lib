@@ -17,14 +17,14 @@ variable {L M N : GlobalLift (P := P) (ρ := ρ)}
 
 /-- An ordinary arrow intertwines the two specified full lifted actions. -/
 def IsEquivariant (p : L.obj ⟶ M.obj) : Prop :=
-  ∀ g : G, (L.action g).unop ≫ (ι P ρ).map p =
-    (ι P ρ).map p ≫ (M.action g).unop
+  ∀ g : G, (L.action g).unop.asHom ≫ (ι P ρ).map p =
+    (ι P ρ).map p ≫ (M.action g).unop.asHom
 
 @[simp]
 theorem isEquivariant_id (L : GlobalLift (P := P) (ρ := ρ)) :
     IsEquivariant (L := L) (M := L) (𝟙 L.obj) := by
   intro g
-  change (L.action g).unop ≫ 𝟙 _ = 𝟙 _ ≫ (L.action g).unop
+  change (L.action g).unop.asHom ≫ 𝟙 _ = 𝟙 _ ≫ (L.action g).unop.asHom
   simp only [Category.comp_id, Category.id_comp]
 
 theorem IsEquivariant.comp {p : L.obj ⟶ M.obj} {q : M.obj ⟶ N.obj}
@@ -42,11 +42,11 @@ theorem precomp_postcomp (p : L.obj ⟶ M.obj) (hp : IsEquivariant p)
     M.precomp f (k ≫ p) = L.precomp f k ≫ p := by
   apply MorphismProperty.Over.Hom.ext
   have h := congrArg Hom.left (hp (Hom.twist f))
-  change Hom.left (L.action (Hom.twist f)).unop ≫ p.left =
-    p.left ≫ Hom.left (M.action (Hom.twist f)).unop at h
+  change Hom.left (L.action (Hom.twist f)).unop.asHom ≫ p.left =
+    p.left ≫ Hom.left (M.action (Hom.twist f)).unop.asHom at h
   change Hom.left f ≫ (k.left ≫ p.left) ≫
-      Hom.left (M.action (Hom.twist f)).unop =
-    (Hom.left f ≫ k.left ≫ Hom.left (L.action (Hom.twist f)).unop) ≫ p.left
+      Hom.left (M.action (Hom.twist f)).unop.asHom =
+    (Hom.left f ≫ k.left ≫ Hom.left (L.action (Hom.twist f)).unop.asHom) ≫ p.left
   simp only [Category.assoc]
   rw [h]
 

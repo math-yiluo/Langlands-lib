@@ -1,6 +1,6 @@
 # Compact-support changes of variables and the right Hecke action
 
-Worker 133, Task 5403. Internal supporting lemmas for Renard III.2.6,
+Internal supporting lemmas for Renard III.2.6,
 printed pp.75–76 / PDF pp.81–82 in the registered French 9 July 2026 source
 `renard-2026-representations-groupes-reductifs-padiques`.
 
@@ -34,4 +34,5 @@ for the original right module, for any continuous homomorphism φ.
 
 Mathlib's modular character Δ, named `haarScale`, is the inverse of Renard's
 modular function. These are supporting lemmas; the natural compact-induction
-tensor isomorphism is still a separate obligation.
+tensor isomorphism is a separate result (`compactComparisonNatIso` in
+`CompactInductionHeckeProof`).

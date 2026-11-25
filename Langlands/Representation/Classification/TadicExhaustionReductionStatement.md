@@ -1,6 +1,6 @@
 # Tadić's exhaustion argument as an implication
 
-Author: Worker 1792. This pair states one proposition definition,
+This pair states one proposition definition,
 `Langlands.Classification.TadicExhaustionReduction`, in module
 `Langlands.Representation.Classification.TadicExhaustionReductionStatement`.
 **It is not proved here.** The module proves no theorem. It adds no axiom, no
@@ -80,8 +80,10 @@ representations).
 
 ## Correspondence with Tadić's proof
 
-The hypotheses are the external inputs of Tadić's proof of A.10(ii) and (iii) that
-the Library does not yet prove. Everything else in that proof is to be derived from
+The hypotheses are the external inputs of Tadić's proof of A.10(ii) and (iii). The
+Library proves each of them, and `tadicUnitaryDualExhaustion` (module
+`TadicUnitaryDualExhaustionProof`) applies the proof `tadicExhaustionReduction` of
+this implication to them. Everything else in that proof is derived from
 the published Library:
 the identification `⟨a(n,d)^ρ⟩ = L(a(d,n)^ρ)` (A.10(iii)) by the same induction,
 the identification of `L(a(d,n)^ρ)` with a Speh representation (A.9), the support

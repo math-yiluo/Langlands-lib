@@ -1,6 +1,6 @@
 # KP Lemma 2.6.27 and Corollary 2.6.28 for the actual minimal-Levi zero subgroup
 
-Worker 4631. The theorem
+The theorem
 `Langlands.Geometry.Building.ZeroSubgroupDatum.minimalLeviZeroComparison`
 proves exactly
 `Langlands.Geometry.Building.ZeroSubgroupDatum.MinimalLeviZeroComparisonStatement`

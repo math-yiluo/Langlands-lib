@@ -1,6 +1,6 @@
 # Prescribed dominant bases as actual coweight-face data
 
-This derived unit constructs actual `RootDatumCoweightFace.Face` data with a
+This derived module constructs actual `RootDatumCoweightFace.Face` data with a
 prescribed dominant base for a finite reduced coordinate root datum. It thereby
 extends face-height independence from two supplied sign-refining face data to
 any two prescribed bases dominant for the same coweight.

@@ -1,6 +1,6 @@
 # Renard VI.9.5 reduced to the generalized Jacquet lemma of VI.9.1
 
-Author: Worker 76. Module
+Module
 `Langlands.Representation.Families.RenardFamilyJacquetAdmissibilityReduction`,
 namespace `Langlands.Renard.AlgebraicFamily`.
 
@@ -37,8 +37,8 @@ dated 9 July 2026, registered as
 
 - VI.9.5, "Une autre conséquence", printed p. 201 / PDF p. 207: "Le foncteur de
   restriction `r_P^G : M(G, B) → M(M, B)` préserve la `B`-admissibilité.
-  L'argument est le même que celle du corollaire VI.6.1." Worker 76 read this
-  page;
+  L'argument est le même que celle du corollaire VI.6.1." This page was read
+  for the module;
 - the Corollary of VI.6.1, printed pp. 176–177 / PDF pp. 182–183, whose argument
   is referred to;
 - VI.9.1, the generalized Jacquet lemma, printed pp. 195–197 / PDF pp. 201–203.
@@ -125,8 +125,8 @@ of [GeneralizedJacquetReduction](../Exponents/GeneralizedJacquetReduction.md).
 
 At Library commit `18a1f10aef8ea135d90e8474439a5e6d9c130008`, neither
 `GeneralizedJacquetLemmaStatement` nor `UniformCompressionStabilizationStatement`
-is proved. Their proof tasks are `cac6f709-2a1b-4eaa-a16d-63f2e40f3b29` and
-`47e556e6-6b2a-40dc-ba66-d6a0585f5220`. Once either is published, applying the
+is proved; the Library proves each of them only from further hypotheses. Once
+either is proved, applying the
 corresponding theorem of this module to it proves `JacquetAdmissibleStatement`
 for all universe levels. No admissibility over `ℂ`, finite length,
 finite-dimensional fixed-vector, splitting or stabilization premise is added

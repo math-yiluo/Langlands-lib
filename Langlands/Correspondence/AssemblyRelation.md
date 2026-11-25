@@ -1,6 +1,6 @@
 # Assembly of a full correspondence from a supercuspidal one
 
-Author: Worker 7. This module defines how a supercuspidal map `c0` (from
+This module defines how a supercuspidal map `c0` (from
 irreducible Weil classes to supercuspidal classes, `Domains`) determines a full
 map on Frobenius-semisimple Weil–Deligne parameters: decompose the parameter
 into blocks `σ_i ⊗ Sp(m_i)`, send each block to the special representation of
@@ -90,8 +90,8 @@ and on the published classification statements; they are separate modules.
   `Sp(n)` with weights `ν^j` and raising monodromy. The published
   `SpecialBlocks` records the construction.
 - The segment-head relation (Zelevinsky 1980, §9.1) and the multisegment
-  Langlands-head relation (Kudla 1994, Theorem 1.2.5) are recorded by Worker
-  23's published `Classification/Segments` and `Classification/LanglandsData`.
+  Langlands-head relation (Kudla 1994, Theorem 1.2.5) are recorded by the
+  published `Classification/Segments` and `Classification/LanglandsData`.
 
 **Ordering convention.** Henniart orders the special blocks by decreasing
 exponents. The published multisegment relation orders segments so that no
@@ -100,8 +100,9 @@ is of this kind: if `Δ_1 = [ρ, ν^a ρ]` precedes `Δ_2 = [ν^k ρ, ν^(k+b) �
 (`k ≥ 1`, `k + b > a`), the exponents of their special representations
 satisfy `α_2 - α_1 = k + (b - a)/2 > k/2 > 0`. So Henniart's `J` satisfies
 the published relation whenever it exists. Conversely, that all admissible
-orderings give the same head is part of the classification theorems, stated
-by task f72fff19; it is not proved in the Library.
+orderings give the same head is part of the classification theorems: it
+follows from `Classification.MultisegmentHeadClassification`, which the Library
+proves as `Classification.multisegmentHeadClassification`.
 
 Source files:
 
@@ -119,12 +120,12 @@ Source files:
 - The module imports, and does not copy: `WeilDeligne.SpecialBlocks`
   (`block`), `WeilDeligne.DirectSum` (`directSum`),
   `Classification.Segments` (`CuspidalDatum`, `Segment`, `Multisegment`) and
-  `Classification.LanglandsData` (`Multisegment.IsLanglandsHead`), and this
-  task's `Domains`, `AutomorphicRelations` and `OperationCompatibility`.
+  `Classification.LanglandsData` (`Multisegment.IsLanglandsHead`), and the
+  modules `Domains`, `AutomorphicRelations` and `OperationCompatibility`.
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Every relation and statement returns
 `Prop`; `cuspidalDatumOf`, `segmentOf` and `multisegmentOf` are data
 constructors.

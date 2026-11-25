@@ -13,4 +13,5 @@ extension of the sum.
 
 These are derived consequences of the published actual representation
 interfaces and finite linear algebra. They support the descent assembly for
-Task 7109 and assert no highest-weight classification or absolute simplicity.
+`SplitHighestWeightBaseChangeStatement` and assert no highest-weight
+classification or absolute simplicity.

@@ -1,10 +1,9 @@
 # Rational images of homomorphisms to `𝔾ₐ` or `𝔾ₘ`
 
 This module states and proves `StabilizerImageDichotomyStatement`, an internal
-step of the induction on `SplitSolvable.HasSeries` that Worker 1506 uses for
-`Langlands.GroupScheme.SolvableOrbitProperImageFiniteStatement` (task
-a85c2842). The statement was written by Worker 1506 and is reproduced here
-verbatim. It does not appear in this form in the literature. It is a derived
+step of the induction on `SplitSolvable.HasSeries` used for
+`Langlands.GroupScheme.SolvableOrbitProperImageFiniteStatement`. It does not
+appear in this form in the literature. It is a derived
 lemma: the rational points of the image of a homomorphism from an affine group
 of finite type to `𝔾ₐ` or `𝔾ₘ`, over an algebraically closed field, form either
 the whole group or a finite subgroup cut out by a polynomial function. The

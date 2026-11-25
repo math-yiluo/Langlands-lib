@@ -1,7 +1,5 @@
 # Equivariant actual spectrum maps of finite cover refinements
 
-Author: Worker 56.
-
 This internal construction lifts the actual refinement category of supplied
 finite represented-domain covers to equivariant spectrum diagrams over the
 original target locus. It uses the existing finite disjoint-union action,
@@ -120,16 +118,16 @@ arrows. The category laws use their concrete spectrum pullbacks. The
 subgroup comparisons retain the original ambient group element and
 all underlying maps. No additional literature theorem is claimed.
 
-The imported finite common-stabilizer support adapts Worker 36's
-strict rational finite-intersection pattern; that support is included
-unchanged when needed for integration.
+The imported finite common-stabilizer support adapts the
+strict rational finite-intersection pattern.
 
 Empty covers and loci, zero quotients, nilpotents and trivial scalar
 valuations remain allowed. The actions in `Action TopCat H` have
 continuous fixed-element operators. Joint continuity in the group
-parameter, spectrum injectivity, algebra-section descent, analytic
-structure sheaves, analytic atlases, analytic etale sites and the
-Harris specialization are further obligations.
+parameter is added in `DomainContinuousCoverRefinement`. Spectrum
+injectivity, algebra-section descent, analytic structure sheaves,
+analytic atlases, analytic etale sites and the Harris specialization
+lie outside this module.
 
 The subgroup inclusion used here is the published
 `Langlands.Analytic.StrictTestDomain.RationalAutomorphism.RationalSpectralAction.openSubgroupInclusion`,

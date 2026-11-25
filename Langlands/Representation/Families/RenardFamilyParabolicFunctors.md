@@ -24,9 +24,10 @@ dated **9 July 2026**:
   radical of a parabolic subgroup is the union of its compact open subgroups.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 checked this hash and read PDF pages 129, 132–133, 141–142 and 193–197.
+The hash was checked, and PDF pages 129, 132–133, 141–142 and 193–197 were read for
+these definitions.
 
 The source passages are:
 
@@ -92,8 +93,8 @@ tensor product. Lean writes the scalars on the left, `C ⊗[B] V`, as Mathlib's 
 change does; Renard writes `V ⊗_B C` in the functor and `C ⊗_B W` in the module
 adjunction, and the two orders are identified by the symmetry of the tensor product
 over the commutative ring `B`. Renard's "`C` soit un `B`-module" is read as a
-`B`-algebra structure `[Algebra B C]`, which `C ⊗_B W` needs to be a `C`-module; this
-reading is Worker 709's. `C` need not be a `ℂ`-algebra, Noetherian or reduced for the
+`B`-algebra structure `[Algebra B C]`, which `C ⊗_B W` needs to be a `C`-module.
+`C` need not be a `ℂ`-algebra, Noetherian or reduced for the
 definition. Specialization at a point `χ : B →ₐ[ℂ] ℂ` in the
 published `SpecializationAdmissibilityStatement` is the same construction with
 `C = ℂ`.
@@ -204,11 +205,12 @@ of the radical image lies in a compact subgroup (compare Renard V.5.2 (iii), PDF
 p. 129). That theorem assumes `[ValuativeRel k] [IsNonarchimedeanLocalField k]` in
 addition to the `[T2Space k]`, `[LocallyCompactSpace (rationalPoints G)]` and
 `[NonarchimedeanGroup (rationalPoints G)]` of this section, whereas the definitions
-here allow any topological field `k`. This module does not import it, and no Library
-theorem applies it, together with `inducingRepresentation_eq_twist_of_isUnimodularModulus`,
-to the decomposition and closedness used by `LeviInduced`. Nor does the Library
-identify `leviInducedRepresentation` at `B = ℂ` with the published complex induction
-on represented parabolics, and this module does not claim it. The Jacquet side needs
+here allow any topological field `k`. This module does not import it. The module
+`SupercuspidalFamilyFiberIrreducibility` applies it, together with
+`inducingRepresentation_eq_twist_of_isUnimodularModulus`, to the decomposition and
+closedness used by `LeviInduced`: its `leviInducedComplexEquiv` identifies
+`leviInducedRepresentation` at `B = ℂ` with the published complex induction
+`leviInductionFunctor` on represented parabolics. This module does not claim it. The Jacquet side needs
 no such comparison: both use `c_U^{-1/2}` on the Levi.
 
 ## Scope

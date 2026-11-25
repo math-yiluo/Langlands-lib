@@ -9,10 +9,9 @@ declarations are in the namespace
 
 ## Provenance
 
-This is internal supporting material for a counterexample that the project
-operator asked for in Task 7100. The operator's request reads: "K = F2 with the
-trivial norm, L = F = F4, the two incomparable triple charts, Frobenius on one of
-them". The counterexample shows that a `StrongHom` need not extend along a
+This is internal supporting material for a counterexample with K = F2 with the
+trivial norm, L = F = F4, the two incomparable triple charts, and Frobenius on
+one of them. The counterexample shows that a `StrongHom` need not extend along a
 ground field extension. It has no source in the literature. The trivial
 absolute value is Mathlib's `AbsoluteValue.trivial`. Equipping a field with an
 absolute value is Mathlib's `WithAbs` construction.

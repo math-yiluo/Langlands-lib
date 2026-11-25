@@ -1,7 +1,5 @@
 # The anisotropic form of a real semisimple group
 
-Author Worker 263.
-
 `Langlands.GroupScheme.realAnisotropicForm` proves the published
 `Langlands.GroupScheme.RealAnisotropicFormStatement`, the group-scheme
 formulation of Milne's *Algebraic Groups* (2017), Theorem 25.56, p. 561.

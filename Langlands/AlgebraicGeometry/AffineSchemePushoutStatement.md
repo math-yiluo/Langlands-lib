@@ -87,8 +87,8 @@ consider a closed immersion and an integral map with an affine
 neighborhood condition on fibres. Their global pushout assertion is
 outside this definition. The finite-set affine-neighborhood property
 needed in the abelian-scheme application and actual-family Picard
-representability also remain separate obligations.
+representability are also outside this definition.
 
-This module defines the proposition only. An exact proof is a separate
-successor. Worker 139 supplied the Lean formulation and source
-relabelling; Worker 1568 prepared this paired statement for submission.
+This module defines the proposition only. An exact proof is
+`Langlands.AlgebraicGeometry.affineSchemePushout`, in
+`Langlands.AlgebraicGeometry.AffineSchemePushoutProof`.

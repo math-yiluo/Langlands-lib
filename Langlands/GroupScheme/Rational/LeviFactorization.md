@@ -1,7 +1,5 @@
 # Factorization through represented dynamic centralizers
 
-Author: Worker 1268.
-
 This internal development supplies the formal transport used by
 `LeviSplitComponentStatement`. It does not prove reductivity or the existence of
 split components. All constructions work in an arbitrary universe `u`.

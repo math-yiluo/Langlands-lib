@@ -1,13 +1,11 @@
 # Conditional assembly of the juxtaposed case of Zelevinsky's Proposition 4.6
 
-Author: Worker 1032.
-
 This internal planning module of the proof of
 `Langlands.Classification.JuxtaposedSegmentSocleReverseProductStructure`
 (Zelevinsky 1980, Proposition 4.6, step (1), juxtaposed case) makes no literature
 assertion of its own. It derives the target proposition from five explicit
 hypotheses. It is not the exact proof: that proof must replace every hypothesis by
-a proved, independently accepted Library input.
+a proved Library input.
 
 Notation: `π = ⟨Δ⟩ × ⟨Δ'⟩ = d.induced` with `Δ = d.segments 0` and
 `Δ' = d.segments 1`. `ρ = Δ'.base` has rank `r`, `q = Δ.length` and
@@ -18,18 +16,16 @@ Notation: `π = ⟨Δ⟩ × ⟨Δ'⟩ = d.induced` with `Δ = d.segments 0` and
 ## Hypotheses of the main theorem
 
 - `hS1 : TwoSegmentSocleShuffleJacquet` (the shuffle count of `J(π)`, a Library
-  statement from task efe00a4a-423f-449a-acf6-4e7e0eaf7f35; its exact-proof task is
-  343ddfde-e74c-46b8-a559-0c8f3a3145a6).
+  statement; the Library proves it as `twoSegmentSocleShuffleJacquet` in
+  `Classification.TwoSegmentSocleShuffleJacquetProof`).
 - `hnon : ∀ n, NonassociatedJacquetSubquotientsTheorem F T n` (BZ77 2.13(b), a
   Library statement). Its proof `CuspidalSupport.nonassociatedJacquetSubquotients`
-  (module `CuspidalSupport.NonassociatedJacquetSubquotientsProof`, task
-  b17b8c8c-858b-4b48-994b-e3641cb05f02, artifact 8c6610e7) is published, and
+  (module `CuspidalSupport.NonassociatedJacquetSubquotientsProof`) is published, and
   `juxtaposedSegmentSocleReverseProductStructure_of_irreducible` does not take
   `hnon`.
 - `hfull : SegmentSubrepresentationFullJacquet` (Zelevinsky 1980, 3.1, a Library
   statement). It is the first clause of the published
-  `segmentFullJacquetFormula F T` (module `Classification.SegmentFullJacquetProof`,
-  task b331611c-526d-4925-87fe-ea67ed6e6fed, artifact f2c2886a), and
+  `segmentFullJacquetFormula F T` (module `Classification.SegmentFullJacquetProof`), and
   `juxtaposedSegmentSocleReverseProductStructure_of_irreducible` does not take
   `hfull`.
 - `hirr`: for every positive `r`, every supercuspidal representation `A` of `GL_r`
@@ -68,13 +64,12 @@ Notation: `π = ⟨Δ⟩ × ⟨Δ'⟩ = d.induced` with `Δ = d.segments 0` and
 - `juxtaposedSegmentSocleReverseProductStructure_of_irreducible`: the target
   proposition from `hS1` and `hirr` alone. It supplies `hnon` and `hfull` by the
   published proofs named above, and `hH` as
-  `JuxtaposedShuffle.exists_juxtaposedUnionHead T hex` (Worker 167, module
+  `JuxtaposedShuffle.exists_juxtaposedUnionHead T hex` (module
   `Classification.JuxtaposedUnionHead`), whose conclusion is exactly `hH`. Here
   `hex : SegmentZelevinskyConstituentExistence F T` (Zelevinsky 1980, 3.1 and 3.4,
   existence of the segment constituent `⟨Δ⟩` with its strong socle and head) is the
   published `segmentZelevinskyConstituentExistence F T` (module
-  `Classification.SegmentZelevinskyConstituentExistenceProof`, task 4ca79bbd,
-  artifact 7172c4a6).
+  `Classification.SegmentZelevinskyConstituentExistenceProof`).
 
 ## Proofs
 

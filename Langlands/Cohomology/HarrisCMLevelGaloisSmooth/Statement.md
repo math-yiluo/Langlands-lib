@@ -1,8 +1,5 @@
 # Galois smoothness of CM cohomology over all small levels
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 This module states one proposition, `HarrisCMLevelGaloisSmoothStatement`,
 about the Library's functor `cmSmallLevelGaloisCohomologyFunctor` (module
 `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelGaloisCoefficients`). That
@@ -56,8 +53,8 @@ The Lean definition keeps every premise as an explicit hypothesis, as the
 Library's modules do. That a premise is a parameter does not mean that it is
 unproved. In Library commit `ce52163e150fe772fdb773627f006a99df1688af`,
 fourteen of the premise types have published proofs, so a user can pass these
-theorems as the corresponding arguments. Check `f0cecafe` (see the checks
-below) confirms that each theorem, at universe zero, has the premise type.
+theorems as the corresponding arguments. The third of the checks
+below confirms that each theorem, at universe zero, has the premise type.
 
 | Premise | Type | Library theorem | Module |
 | --- | --- | --- | --- |
@@ -102,6 +99,14 @@ any of these five premise types.
   small level", and every Library module that uses it takes it as a
   hypothesis.
 
+In the Library as it is now, `square`, `existence` and `geometry` are proved as
+well: `Langlands.AbelianScheme.mumfordBundlePicardZero` (module
+`Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroProof`),
+`Langlands.AbelianScheme.relativeDualSchemeExistence` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`) and
+`Langlands.AbelianScheme.relativeDualSchemeGeometry` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`).
+
 Since `q` is unproved, the proposition is a statement about the objects that
 any witness `q` produces. A proof must work for every such witness.
 
@@ -131,7 +136,7 @@ topology, the only topology instance on this type (from
 - `H^d(X̄_U, M_U) = (EtaleDerivedSections.cohomology X̄_U R d).obj M_U`, the
   `d`-th right derived functor of global sections on
   `Sheaf (Scheme.smallEtaleTopology X̄_U) (ModuleCat.{0} R)`, computed with
-  injective resolutions (Worker 13's `EtaleDerivedSections`).
+  injective resolutions (`EtaleDerivedSections`).
 
 The colimit:
 
@@ -211,7 +216,7 @@ every `σ ∈ V` fixes `x`.
 
 ### Level-wise form
 
-Check `63d0dfe7` (below) defines the level-wise form
+The second check below defines the level-wise form
 
 ```lean
 ∀ (d : ℕ) (M) (U : SmallCMLevel D) (y : H^d(X̄_U, M_U)),
@@ -361,9 +366,9 @@ The statement does not cover:
 - Hecke operators, compact supports, or intersection cohomology;
 - any topology on the cohomology modules other than the discrete one;
 - local-global compatibility;
-- a proof of any premise. The open premises `square`, `q`, `existence`,
-  `geometry` and `hRigid` stay open, and the proved ones are not
-  instantiated here.
+- a proof of any premise. The premises `q` and `hRigid` are not proved in
+  the Library; the others are proved there (see "Proof status of the
+  premises") but are not instantiated here.
 
 ## Registered sources
 
@@ -395,39 +400,36 @@ The statement does not cover:
 
 Direct project import, byte-identical in Library commits
 `ce52163e150fe772fdb773627f006a99df1688af` and
-`0d9cba336dd98294a5d7f48d772eb708aae40708` and in the workspace. The two
+`0d9cba336dd98294a5d7f48d772eb708aae40708`. The two
 commits have the same files in the import closure of this module (the later
 commit only adds files outside it and edits three modules outside it):
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelGaloisCoefficients` | Library (no Author line) | `c3cb1700389e02f7f2a558e8fa8883c79c11e2ef6b3e37b3ffe5e76c0d86fecc` | `faba77cb8a8ca89c9bf60f10e9b1e94ffd8f5eee1e810c411acb90981dc9e3e4` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelGaloisCoefficients` | `c3cb1700389e02f7f2a558e8fa8883c79c11e2ef6b3e37b3ffe5e76c0d86fecc` | `faba77cb8a8ca89c9bf60f10e9b1e94ffd8f5eee1e810c411acb90981dc9e3e4` |
 
 The module also imports Mathlib's `Mathlib.FieldTheory.KrullTopology`.
-Through the import it uses `HarrisTaylorCMSmallLevelIndex` (Author: Worker
-57) for `SmallCMLevel` and `OrderedSmallCMLevel`; `EtaleGaloisAction`
-(Author: Worker 13) for `baseChangeMap`; `EtaleDerivedSections` (Author:
-Worker 13) for the cohomology; and the Library modules
+Through the import it uses `HarrisTaylorCMSmallLevelIndex` for `SmallCMLevel`
+and `OrderedSmallCMLevel`; `EtaleGaloisAction` for `baseChangeMap`;
+`EtaleDerivedSections` for the cohomology; and the Library modules
 `HarrisTaylorCMSmallLevelCohomology`, `RestrictedLevelColimit`,
 `LevelTowerCanonicalCoefficients`, `EtaleDerivedPullback`,
-`EtaleInverseImage` and `Representation.Category.Basic`, whose Markdown
-files have no Author line. The truth argument cites
+`EtaleInverseImage` and `Representation.Category.Basic`. The truth argument cites
 `EtaleGeometricCoefficientPullback` and `EtaleInverseImageCoherence`, which
-are in the import closure but have no Author line, and is otherwise
+are in the import closure, and is otherwise
 independent of the Lean file.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Checks, against Library `ce52163e` unless stated otherwise, all on the final Lean file (SHA-256
 `b3107f973c18f83da777b21c74ead9d1eae46df75aae254fdeda1afc1ffa7f5a`). None
 reported errors.
 
-- `6274524d-9895-4fab-a349-1efba2b932fb` built the file from a draft
-  directory and inspected `HarrisCMLevelGaloisSmoothStatement`: a
+- The first built the file and inspected `HarrisCMLevelGaloisSmoothStatement`: a
   `Prop`-valued definition with no universe parameters, depending only on
   `propext`, `Classical.choice` and `Quot.sound`. No warnings.
-- `63d0dfe7-6700-4a17-a446-2a921864aa5e` compiled a test file
+- The second compiled a test file
   (`Langlands/Inspect/CMLevelGaloisPrint.lean`, SHA-256
   `02677949e31a203229a97f5c0387ae5e9922e65bbe928a6b7a0ebbc6d0215033`)
   against this Lean file, and its output was read. It printed the
@@ -436,18 +438,18 @@ reported errors.
   `levelwise_imp_statement [Nonempty (SmallCMLevel D)]`, both depending only
   on the three standard axioms. Its one warning is a linter suggestion
   (`letI` to `let`) in the test file.
-- `f0cecafe-c032-4763-8230-7685b70d936a` compiled a test file
+- The third compiled a test file
   (`Langlands/Inspect/CMLevelGaloisPremises.lean`, SHA-256
   `8ea8469afd44d5e40c829b7ad921f375ca2275fc61959afcb1ba87e1275e1508`)
   against this Lean file. For each of the fourteen proved premises in the
   table above, an `example` with the premise type at universe zero is closed
   by the cited theorem. `#print axioms` shows that each theorem depends only
   on `propext`, `Classical.choice` and `Quot.sound`.
-- `b061e96c-2ac0-4ce2-b64e-e509e345b33b` built the file with Lake from the
-  workspace and inspected `HarrisCMLevelGaloisSmoothStatement`: a
+- The fourth built the file with Lake and inspected
+  `HarrisCMLevelGaloisSmoothStatement`: a
   `Prop`-valued definition with no universe parameters, depending only on
   `propext`, `Classical.choice` and `Quot.sound`. No warnings.
-- `b8da015c-e6c7-4ba0-9a65-1f8e3be4e130` repeated this workspace Lake build
+- The fifth repeated this Lake build
   over Library `0d9cba33` with the final files, with the same result and the
   same type hash (`79daf658c5d4281bfa206ad2a29ff04ca1a26a23545684448bb31992f06e05e8`).
   No errors or warnings.

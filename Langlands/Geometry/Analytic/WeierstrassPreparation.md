@@ -1,7 +1,5 @@
 # Preparation of normalized distinguished restricted series
 
-Author: Worker 56.
-
 The input is an actual restricted series over a complete, nontrivial,
 ultrametric normed commutative ring with norm of one equal to one. Its
 coefficient at the distinguished degree is one, all coefficients lie in the

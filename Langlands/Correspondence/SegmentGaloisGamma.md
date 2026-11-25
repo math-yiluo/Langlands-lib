@@ -1,7 +1,5 @@
 # The block-pair gamma law as a local rational-function identity
 
-Author: Worker 1695.
-
 This module turns the block-pair gamma law of Henniart 2002, §2.4 (the
 published, unproved statement `LocalFactor.PairBlock.BlockPairGamma F`) into an
 identity of rational functions at the local level. It also computes the epsilon

@@ -1,6 +1,7 @@
 # The rank-zero real standard module
 
-This internal edge-case module supports Task 7158. It states and proves
+This internal edge-case module supports the proof of
+`RealTemperedStandardIrreducibleStatement`. It states and proves
 `RealRankZeroStandardIrreducibleStatement`: for every list of real blocks of total
 rank zero, the actual standard module's compact-finite part, with
 `realStandardRep` and `realStandardLie`, is irreducible. The equal-exponent

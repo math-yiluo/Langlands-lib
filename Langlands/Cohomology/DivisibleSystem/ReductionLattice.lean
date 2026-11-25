@@ -68,7 +68,7 @@ def reductionActionIso (M : Action (ModuleCat.{w} R) G) (m : ℕ) :
     rw [← cancel_epi (reductionπ ℓ M m).hom, ← Category.assoc, ← (reductionπ ℓ M m).comm g,
       Category.assoc, reductionπ_hom_reductionActionVIso_hom,
       reductionπ_hom_reductionActionVIso_hom_assoc]
-    exact (Coefficients.AdicSystem.quotientMap (Ideal.span {(ℓ : R)}) m).naturality (M.ρ g))
+    exact (Coefficients.AdicSystem.quotientMap (Ideal.span {(ℓ : R)}) m).naturality (M.ρ g).asHom)
 
 @[reassoc (attr := simp)]
 lemma reductionπ_reductionActionIso_hom (M : Action (ModuleCat.{w} R) G) (m : ℕ) :

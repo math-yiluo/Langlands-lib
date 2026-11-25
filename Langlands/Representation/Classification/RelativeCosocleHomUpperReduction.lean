@@ -10,7 +10,6 @@ open RelativeJacquetMultiplicity RelativeRegularComparison
 
 universe uF uV uM uW uZ
 
--- The shape-equality transport follows Worker 435's shared assembly draft.
 private theorem transportFineData {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
     (T : F.TopologicalData) {n : ℕ} {C D : BlockShape n} (h : C = D)
     (ω : Rep.{uV} ℂ (C.Levi F.Carrier)) :

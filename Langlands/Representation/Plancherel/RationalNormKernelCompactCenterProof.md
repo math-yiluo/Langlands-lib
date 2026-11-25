@@ -1,7 +1,5 @@
 # Compact centre implies `⁰G = G(F)` (Renard V.2.6)
 
-Author: Worker 103 (Task 5711, `8f1184cf-8c14-4ede-a502-96f1d8f66ec2`).
-
 Module `Langlands.Representation.Plancherel.RationalNormKernelCompactCenterProof`.
 The theorem `Langlands.Plancherel.rationalNormKernelCompactCenter` proves exactly the
 published proposition
@@ -37,7 +35,7 @@ subset of `G(F)`, then `rationalCommonNormKernel G = ⊤`, that is, `⁰G = G(F)
    Since `n ≠ 0` and `ℤ` has no zero divisors (`smul_eq_zero`), `v(g)(χ) = 0` for every
    `χ`. Hence `g ∈ ⁰G`.
 
-`lean_check` reports that the theorem depends only on the axioms `propext`,
+The Lean axiom check reports that the theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
 ## Relation to the literature
@@ -61,8 +59,9 @@ the absolute values `|χ(g)|_F`.
 ## Scope
 
 This proves only `RationalNormKernelCompactCenterStatement`. It does not prove the
-published, still unproved V.2.6 Lemma `RenardCartan.SplitComponentKernelStatement`
-(`⁰A_G = ⁰G ∩ A_G`), and it does not use it. The other two statements of the module are
+published V.2.6 Lemma `RenardCartan.SplitComponentKernelStatement`
+(`⁰A_G = ⁰G ∩ A_G`, proved as `splitComponentKernel` in
+[`SplitComponentKernelProof`](SplitComponentKernelProof.md)), and it does not use it. The other two statements of the module are
 proved in [`RationalNormKernelUnimodularProof`](RationalNormKernelUnimodularProof.md) and
 [`RationalNormKernelRestrictionProof`](RationalNormKernelRestrictionProof.md).
 

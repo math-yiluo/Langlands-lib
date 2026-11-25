@@ -3,7 +3,10 @@
 This is an internal comparison of the published represented-parabolic and
 dynamic functors. It retains an exact dynamic presentation as input.
 It neither constructs that presentation nor proves any of the four
-finite-length or cuspidal-support propositions of the host task.
+finite-length or cuspidal-support propositions for represented parabolics
+that it serves (`LeviInductionFiniteLengthStatement`,
+`LeviJacquetFiniteLengthStatement`, `LeviCuspidalSupportAssociationStatement`
+and `LeviCuspidalSupportSurjectiveStatement`).
 
 ## Data and topology
 

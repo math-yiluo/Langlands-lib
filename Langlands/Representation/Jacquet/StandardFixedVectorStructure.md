@@ -1,6 +1,6 @@
 # Local structural inputs for the standard fixed-vector argument
 
-Worker 1649. This is internal adapter infrastructure for the exact published
+This is internal adapter infrastructure for the exact published
 VI.9.4 fixed-vector statements. It derives closedness of their actual standard
 Levi and unipotent point subgroups, compact-open containment in the latter,
 and connected reductivity of the canonical standard Levi from hypotheses

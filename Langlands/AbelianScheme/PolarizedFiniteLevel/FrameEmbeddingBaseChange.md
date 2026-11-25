@@ -7,8 +7,8 @@ All schemes lie in one universe `u`. For a datum `a` over `S`, a morphism `f : S
 ## Declarations
 
 - `Datum.pullback_torsionPoint_fst`: the torsion points of `a.pullback f` lie over those of
-  `a` (from `enumerateTuple_pullback`; the same computation is in the frame-locus
-  base-change draft of Task 3449's subtask).
+  `a` (from `enumerateTuple_pullback`; the same computation is
+  `Datum.torsionPoint_pullback_fst` in `FrameLocusBaseChangeProof`).
 - `pullbackSection_comp_congr`, `pullbackSection_pullback_eq_iff`: equality of pullbacks of
   two sections is preserved along composites, and pulled-back sections have equal pullbacks
   along `w` exactly when the original sections have equal pullbacks along the composite
@@ -30,4 +30,5 @@ All schemes lie in one universe `u`. For a datum `a` over `S`, a morphism `f : S
 
 ## Provenance
 
-Internal base-change lemmas for Task 7811's reduction (`FrameChartRepresentabilityReduction`).
+Internal base-change lemmas for the reduction of `FrameChartRepresentabilityStatement`
+(`FrameChartRepresentabilityReduction`).

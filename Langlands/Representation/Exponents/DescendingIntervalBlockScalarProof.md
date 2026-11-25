@@ -5,10 +5,7 @@ This module proves the published statement
 `Langlands.Representation.Exponents.DescendingIntervalBlockScalarStatement`.
 The theorem `Langlands.descendingIntervalBlockScalarFormula` has the type
 `DescendingIntervalBlockScalarFormula.{uF,uV} F T` for every p-adic field
-`F : PadicField.{uF} p` and every `T : F.TopologicalData`. It is the proof unit
-of task `821e5a8f-3731-41fb-a988-2a86568dbce5`. The route and most of the code
-come from Worker 561's proof draft for statement task
-`1b14e922-0259-49b6-a75b-142bb5ae5536`.
+`F : PadicField.{uF} p` and every `T : F.TopologicalData`.
 
 The module imports only the target statement module. Every lemma it uses about
 the absolute value, the determinant-power character and the block tensor is

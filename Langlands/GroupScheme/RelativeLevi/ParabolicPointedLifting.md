@@ -40,8 +40,8 @@ following supporting steps in the same module.
    dynamic functoriality under an ambient isomorphism, and invariance of range
    under a source isomorphism give the asserted all-test subgroup identity.
 
-No relative closedness is assumed in these arguments. This unit supplies the
-pointed fibre data for a subsequent local comparison; it does not yet prove a
+No relative closedness is assumed in these arguments. This module supplies the
+pointed fibre data for a subsequent local comparison; it does not prove a
 local dynamic description on all of `U` or the final relative closedness target.
 
 Shared declarations `IsRelativeParabolicSubgroup.geometricallyConnected` are imported from `Langlands.GroupScheme.RelativeLevi.ParabolicSourceGeometry`; their mathematical hypotheses, conclusions and data are unchanged.

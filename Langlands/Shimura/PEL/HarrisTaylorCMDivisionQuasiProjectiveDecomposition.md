@@ -1,6 +1,6 @@
 # Division-case quasi-projective representability through normal sublevels
 
-Worker 3269. This module splits the published premise
+This module splits the published premise
 `DivisionCMQuasiProjectiveRepresentabilityStatement` (module
 `HarrisTaylorCMDivisionPremiseStatements`) into two closed statements. The
 first is a descent statement along normal sublevels and has no division
@@ -93,8 +93,9 @@ Neither statement is proved here. The expected routes are informal.
 - Normal-quotient statement. Let `Q` be the finite group
   `U.obj.subgroup ⧸ (U'.obj.subgroup.subgroupOf U.obj.subgroup)`. It acts on
   the representing scheme `X'` at `U'` through the existing level-change maps.
-  Small-level rigidity (the published, unproved
-  `CMSmallLevelRigidityStatement`) should make the action free. A free action
+  Small-level rigidity (the published
+  `CMSmallLevelRigidityStatement`, proved as `cmSmallLevelRigidity` in
+  `HarrisTaylorCMSmallLevelRigidityProof`) should make the action free. A free action
   of a finite group on a quasi-projective scheme over a field has a
   quasi-projective quotient `X'/Q`, and `X' → X'/Q` is a finite étale
   `Q`-torsor. The presheaf at `U` should be the étale quotient of the presheaf
@@ -102,7 +103,7 @@ Neither statement is proved here. The expected routes are informal.
   étale descent for the normalized classes. Then `X'/Q` represents the
   presheaf at `U`.
 - Normal-sublevel statement. Take `U'` normal in `U` and inside a level at
-  which the ordinary polarized moduli scheme is available (Task 3449). Then cut out
+  which the ordinary polarized moduli scheme is available. Then cut out
   the locus of the PEL data, the action, the determinant condition and the
   Rosati condition, and compare it with the normalized class presheaf.
 

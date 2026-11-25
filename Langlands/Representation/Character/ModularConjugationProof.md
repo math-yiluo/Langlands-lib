@@ -1,6 +1,6 @@
 # Conjugation of admissible characters with the modular factor
 
-Worker 278. This proof unit targets the unchanged
+This proof module targets the unchanged
 `Langlands.CharacterConjugationModularStatement`, with the independent universes
 of the group and the representation space and no additional hypotheses.
 The original source is David Renard, *Représentations des groupes réductifs

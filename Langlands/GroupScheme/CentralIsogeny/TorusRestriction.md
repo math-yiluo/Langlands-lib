@@ -1,8 +1,6 @@
 # Finite torus restrictions and actual cocharacters
 
-Author: Worker 1375.
-
-This internal supporting unit proves the cocharacter injectivity needed for
+This module proves the cocharacter injectivity needed for
 `CentralIsogenyRootDatumHomStatement`. It uses the published cancellation
 theorem for finite homomorphisms and ordinary properties of finite scheme
 morphisms. It introduces no proposition assumed as an axiom.
@@ -47,4 +45,5 @@ particular conclusion.
 
 These are derived internal lemmas. They establish neither the root
 bijection nor coroot compatibility, character injectivity, or the
-isomorphism criterion, and do not prove the whole host proposition.
+isomorphism criterion, and do not prove the whole
+`CentralIsogenyRootDatumHomStatement`.

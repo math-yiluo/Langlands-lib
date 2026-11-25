@@ -1,7 +1,5 @@
 # Whole-Levi conjugacy on exact finite-length Grothendieck groups
 
-Author: Worker 320.
-
 `Langlands.Parabolic.normalizedConjugateInductionK0` composes the actual
 inverse-conjugation transport from the product Levi of `B` to that of `C`
 with actual normalized parabolic induction from `C` to `GL_n`. The input

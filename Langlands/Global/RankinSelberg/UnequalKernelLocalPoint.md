@@ -1,7 +1,7 @@
 # Points supported at one finite place and the unequal-rank Whittaker kernel
 
 Module `Langlands.Global.RankinSelberg.UnequalKernelLocalPoint`, namespace
-`Langlands.Global.RankinSelbergGlobal`. Author: Worker 95.
+`Langlands.Global.RankinSelbergGlobal`.
 
 ## Content
 
@@ -10,7 +10,7 @@ Let `F` be a number field, `v` a finite place and `F_v = FiniteCompletion F v`. 
 `v` is `h ∈ GL_m(F_v)` and whose other components are `1`. The definition `localPoint` and
 the basic lemmas `localPoint_mul`, `localPoint_mul_comm`, `finiteComponent_localPoint`,
 `adelicEquiv_localPoint`, `infinite_ofFinite`, `finite_ofFinite`, `detNorm_localPoint` are
-in module `Langlands.Global.RankinSelberg.LocalPointFactorization` (Worker 5130), which this
+in module `Langlands.Global.RankinSelberg.LocalPointFactorization`, which this
 module imports. This module adds the following lemmas.
 
 **Points supported at one place.**

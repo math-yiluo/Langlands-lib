@@ -26,7 +26,7 @@ by `χ ∘ det`. Then `y ≤ max x k`, and `y = max x k` when `x ≠ k`.
 
 - `Langlands.BushnellKutzko.NormalizedLevelTwistStatement` (published target).
 - `Langlands.BushnellKutzko.FundamentalStratumLevelProof` supplies `fundamentalStratumLevel`
-  from Task 7681. Task 7696 made the L1 and L2 statement modules mutually importable.
+  (L1). The L1 and L2 statement modules can be imported together.
 - `Langlands.ClassFieldTheory.Local.UnitFiltrationConductor` supplies the conductor
   criteria for triviality and nontriviality on principal units.
 - `Langlands.Representation.Smooth.FixedVectors.OrderProof` supplies
@@ -86,5 +86,5 @@ L2 is Lemma `lem:level`(ii) of the operator route note
 (`operator-numerical-llc-route-2026-11-16`, Lemma 4.11, printed p. 16). The note proves it
 from part (i), which is L1. The Lean implementation obtains the needed determinant
 congruences from integral matrices and chooses `ψ` to match `χ` by extending a character
-of the valuation ring. Worker 408 authored this proof in Task 7339. Worker 198 adapted it
-in Task 7682 to use the published L1 theorem and shared lattice and fixed-vector lemmas.
+of the valuation ring. The proof uses the published L1 theorem and shared lattice and
+fixed-vector lemmas.

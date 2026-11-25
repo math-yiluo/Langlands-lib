@@ -1,7 +1,5 @@
 # Statement: an analytic space partitioned into open domains is their disjoint union
 
-Author: Worker 5254.
-
 This module states, without proof, that an analytic space whose underlying
 space is partitioned into open subsets is the coproduct of the corresponding
 open domains in the localized category of analytic spaces. It contains one
@@ -59,17 +57,18 @@ p-adic analytic spaces* (unfinished manuscript, 1995–1996), registered as
 Example 1.2.1(i), printed p.3, asserts that induction `U(H) ↦ U_{G/H}(G)`
 gives isomorphisms of sites. The decomposition of a quasi-étale `G`-space `V`
 over `X_{G/H}` into the inverse images of the copies `X_i`, to which this
-statement is applied, is not in the manuscript: it is the argument proposed in
-the suggested route of the host task (Task 5695, context, step 1).
+statement is applied, is not in the manuscript: it is derived for the
+Library's proof of Example 1.2.1(i), along the proof route sketched in
+`InducedSiteEquivalenceStatement.md`.
 
 ## Role
 
 This statement is a prerequisite for the proof of Berkovich's Example
-1.2.1(i) (`QuasiEtaleSiteEquivalenceStatement`, Task 5695). The proof of
+1.2.1(i) (`QuasiEtaleSiteEquivalenceStatement`). The proof of
 fullness and of essential surjectivity of the induction functor decomposes a
 `G`-space over `X_{G/H}` into its parts over the copies of `X`. The universal
 property of the coproduct gives the morphisms out of it.
 
 ## Scope
 
-This is a `lean.statement`: nothing is proved here.
+This is a statement module: nothing is proved here.

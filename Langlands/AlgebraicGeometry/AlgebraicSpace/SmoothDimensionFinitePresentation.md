@@ -1,6 +1,6 @@
 # Finite-presentation atlases on clopen dimension restrictions
 
-This derived supporting unit for Conrad's Theorem 5.9 constructs actual atlases
+This derived supporting module for Conrad's Theorem 5.9 constructs actual atlases
 on the source and target restrictions defined in `SmoothDimensionRestrictions`.
 Its inputs and conclusions concern the ordinary quotient point topology.
 It assumes no point-count estimate or adelic openness theorem.
@@ -30,4 +30,4 @@ The provenance is internal: actual scheme opens and subfunctor pullbacks from
 `SmoothDimensionOpenSubspaces`, the source restriction from
 `SmoothDimensionRestrictions`, and the existing relative morphism-property,
 diagonal and scheme compactness interfaces. Uniform Lang–Weil and the final
-adelic theorem remain separate obligations.
+adelic theorem are not part of this module.

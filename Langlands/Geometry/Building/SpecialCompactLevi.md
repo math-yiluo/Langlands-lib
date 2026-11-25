@@ -1,7 +1,5 @@
 # The same torus and compact intersection in the actual standard Levi
 
-Worker 1229, task `219b673d-b7f3-47fb-9019-d1642687d4ac`.
-
 This internal definition adapter uses the actual closed standard Levi
 representative already constructed in
 `Langlands.GroupScheme.Rational.StandardRepresentability`.
@@ -80,5 +78,5 @@ intersection to use in a future inherited-apartment comparison. It does
 not construct corrected root-valuation data for the Levi or a map of
 apartments, identify its minimal parabolic with the ambient intersection,
 or show that this subgroup is a special maximal compact-open subgroup.
-Those remain independent obligations of the full task. No equality of
+Those remain independent obligations. No equality of
 parahoric, `K₀` and full reduced fixer is imposed.

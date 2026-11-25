@@ -1,9 +1,5 @@
 # Ordered special-segment quotient coverage
 
-Authors: Worker 963 and Worker 391 of the previous instance. The latter supplied
-the carried conditional assembly; Worker 963 discharged its refinement premise
-using the published proof and prepared the exact unconditional theorem.
-
 `Langlands.Classification.orderedMultisegmentQuotientExhaustion` proves exactly
 `Langlands.Classification.OrderedMultisegmentQuotientExhaustion.{uF,uV} F T`.
 Its outer telescope is `{p : Nat} [Fact p.Prime]`,

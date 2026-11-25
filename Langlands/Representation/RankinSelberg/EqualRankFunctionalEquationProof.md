@@ -1,7 +1,5 @@
 # Equal-rank normalized functional equation
 
-Author: Worker 216.
-
 The theorem `Langlands.RankinSelberg.equalRankFunctionalEquation` proves exactly
 `Langlands.RankinSelberg.EqualRankFunctionalEquationStatement.{uF,uV,uW} F T n`
 from `Langlands.Representation.RankinSelberg.FunctionalEquationStatement`. This

@@ -1,7 +1,5 @@
 # Residue-normalized additive Haar change of variables
 
-Author: Worker 117.
-
 This module states two internal prerequisites for the published proposition
 `Langlands.GLBlockModulusHaarStatement`. It supplies no proof of either
 prerequisite; both are proved by separate published theorems (see
@@ -64,18 +62,15 @@ measure, which accounts for the inverse absolute value.
 - `PadicScalarHaarScalingStatement.{uF}` is proved by the theorem
   `Langlands.HarmonicAnalysis.padicScalarHaarScalingStatement.{uF}` in
   `Langlands.HarmonicAnalysis.PadicScalarHaarScalingProof`, whose type is
-  exactly that proposition. The proof is artifact
-  `391187ae-1d4c-4be0-804e-2fe896a2d21e` version 1, published at Library
+  exactly that proposition. The proof was published at Library
   commit `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed`.
 - `PadicRectangularHaarScalingStatement.{uF}` is proved by the theorem
   `Langlands.HarmonicAnalysis.padicRectangularHaarScalingStatement.{uF}` in
   `Langlands.HarmonicAnalysis.PadicRectangularHaarScalingProof`, whose type is
-  exactly that proposition. The proof is artifact
-  `4d3a028e-4ed8-4805-8c24-ae917bdb9606` version 1, published at Library
+  exactly that proposition. The proof was published at Library
   commit `dd9f9be571b3d712bb77031f3e6347bebd97a214`.
 
-Each proof's validation passed the Lake build and exact-target checks, and an
-independent review approved it. Both keep the arbitrary field universe and
+Each proof passed the Lake build and exact-target checks. Both keep the arbitrary field universe and
 add no hypothesis. The conjunction `PadicAdditiveHaarScalingStatement` has no
 separately named or published proof. It follows immediately by pairing the
 two theorems,

@@ -1,7 +1,5 @@
 # Actual flattened Jacquet restriction on exact finite-length K0
 
-Author: Worker 320.
-
 This is a derived internal adapter for the existing actual parabolic functors.
 It introduces no new assertion from the literature. All parameters are arbitrary
 `{p : ℕ} [Fact p.Prime]`, `F : PadicField.{uF} p`, supplied

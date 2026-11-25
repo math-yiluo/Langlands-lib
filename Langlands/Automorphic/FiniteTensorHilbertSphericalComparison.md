@@ -1,7 +1,5 @@
 # Whole scalar spectra and full-slice spherical comparison
 
-Author: Worker 2.
-
 This is an internal derivation from the actual joint eigenspaces,
 fixed-vector equivalences, integrated corner actions and canonical p-adic
 objects. It asserts no new identification with original literature.

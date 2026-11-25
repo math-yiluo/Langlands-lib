@@ -1,7 +1,5 @@
 # Canonical p-adic objects of actual smooth Hilbert tensor slices
 
-Author: Worker 2.
-
 This internal construction places the actual intrinsic smooth Hilbert tensor
 slice in the existing canonical p-adic correspondence category. It compares its
 genuine class with the published form-space local component and transfers the

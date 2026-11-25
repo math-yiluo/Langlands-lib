@@ -1,6 +1,6 @@
 # Actual inducing subgroups for the two mixed mirabolic products
 
-Author: Worker 1012. Namespace:
+Namespace:
 `Langlands.GeneralLinear.Mirabolic.MixedProduct`.
 
 This pair constructs the actual matrix subgroups in cases (II) and (III) of
@@ -208,13 +208,11 @@ matrix and local-field infrastructure: it imports no representation,
 derivative, segment, socle, classification, adjunction, duality or pairing
 module. Shared lower helpers supply actual matrix maps, inherited topologies
 and local-field constructions. None supplies an excluded representation
-theorem or a proof-successor route. Thus it is independent of the full
-classification/socle exclusion set in task
-`fb4abf4e-9f24-4bb0-8ac0-2ed7bf6c6942`, revision 1.
+theorem or a route to one. Thus it is independent of the full set of
+classification and socle results.
 
 No representation product, normalization character, Haar module, derivative
 identity, filtration, exactness, admissibility or irreducibility is constructed
 or proved in this pair. The later representation products still require BZ77's
 normalizations; these subgroup identities alone give no derivative
-compatibility. Development compilation is separate from independent semantic
-acceptance and Library publication.
+compatibility.

@@ -1,6 +1,6 @@
 # Continuous Hermitian integrated approximation
 
-Worker 116 formulates the internal proposition
+The module formulates the internal proposition
 `Langlands.Analysis.IntegratedHermitianApproximationStatement`.
 It assembles the preceding continuous scalar-weight, actual Bochner
 operator, symmetry, approximation and naturality interfaces.
@@ -77,10 +77,10 @@ It was read in full; its Chapter 9 corrections concern sections 9.2
 and 9.5, and do not change the cited section 9.3 paragraph.
 
 This file defines a Prop-valued target and contains no proof.
-A separate exact published-target proof child remains required.
+The proof is in `Langlands.Representation.Unitary.IntegratedHermitianApproximationProof`.
 This assembly supplies symmetric contractions and strong approximation
 under the displayed measure and action hypotheses. It does not assert
 that these operators are compact. Smooth scalar weights, actual Haar
 and modular-density constructions, the automorphic Hilbert action,
 comparison with algebraic Hecke operators, compactness, and a
-spectral-decomposition application remain separate obligations.
+spectral-decomposition application are not part of this target.

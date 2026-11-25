@@ -1,8 +1,9 @@
 # Effective quotients by flat proper equivalence relations on quasi-projective schemes
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705).
-The interface was agreed with Worker 5705, who uses the statement in the
-Picard construction of that task.
+The statement is the interface used in the construction of the Picard scheme
+(`Langlands.AlgebraicGeometry.Picard.picardHilbertPiecesRepresentability`, module
+`Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesRepresentabilityProof`), which obtains it through
+`FlatProperEquivalenceRelationQuotientReductionStatement`.
 
 ## Statement
 
@@ -97,4 +98,4 @@ These are explanations of the derivation, not Lean proofs.
 In Kleiman's proof of the main Theorem 4.8, the quotient is applied with `Z` an
 open subscheme of the scheme of relative effective divisors and with `R` the
 linear-system equivalence relation. The resulting `Q` represents a piece of
-the Picard sheaf. Task 5705 uses the statement for this step.
+the Picard sheaf. The Library's `picardHilbertPiecesRepresentability` uses the statement for this step.

@@ -1,6 +1,6 @@
 # The marked vertex and spin model in local rank-one type D
 
-This internal unit derives a local consequence of the published classical
+This internal module derives a local consequence of the published classical
 type-D spin presentation and index comparison. It concerns every nonarchimedean
 local field, including characteristic two, and a simply connected absolutely
 almost-simple group with an actual type-`D_n` Cartan numbering, `n ≥ 4`.
@@ -36,6 +36,8 @@ orbit of the full absolute Galois group. Every distinguished vertex is therefore
 this vertex, which proves the entire marked set, including that the fork tips
 are unmarked.
 
-This unit does not assert an upper bound on `n`, determine the star action on
+This module does not assert an upper bound on `n`, determine the star action on
 the fork tips, or handle trialitarian numberings without the nonfork-fixing
-hypothesis. Those remain separate obligations for the local index enumeration.
+hypothesis. Those are separate parts of the local index enumeration,
+`LocalRankOneTitsIndexStatement`, which `localRankOneTitsIndex` in
+`LocalRankOneTitsIndexProof` proves.

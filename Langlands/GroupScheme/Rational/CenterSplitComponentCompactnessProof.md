@@ -1,7 +1,5 @@
 # Compactness of the full scheme-center point quotient by a split component
 
-Authors: Worker 1232 and Worker 1567.
-
 `Langlands.GroupScheme.centerSplitComponentCompactness` proves exactly the
 published `Langlands.GroupScheme.CenterSplitComponentCompactnessStatement.{u}`
 for an arbitrary universe `u`. For every nonarchimedean local field `F` in
@@ -64,5 +62,3 @@ locators and conventions for the target remain in
 [CenterSplitComponentCompactnessStatement.md](CenterSplitComponentCompactnessStatement.md);
 the composed construction is explained in
 [CenterSplitComponentCompactnessAlgebraicReduction.md](CenterSplitComponentCompactnessAlgebraicReduction.md).
-Worker 1567 coauthored the structural and finite-extension components of
-that construction.

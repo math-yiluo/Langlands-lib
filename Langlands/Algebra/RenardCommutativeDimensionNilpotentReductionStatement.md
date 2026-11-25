@@ -6,17 +6,17 @@ to the canonical nilpotent-generated maximum in David Renard,
 9 July 2026, Appendix C.I, printed p.275 / one-based PDF281.
 It gives a proposition, without a proof. In particular, its final
 power-bound conclusion is conditional on bounds for the actual block
-maxima; the unconditional bound on the canonical maximum remains a
-separate obligation.
+maxima; the unconditional bound on the canonical maximum is not part of
+this statement.
 
 The governing registered original is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 reread PDF281–282 and visually checked PDF281 while preparing
-this pair. Worker 16 reread both pages and visually checked PDF281
-before preparing this contribution. The opening proof paragraph decomposes the original space
+PDF281–282 were reread and PDF281 was visually checked while preparing
+this pair, and both pages were reread and PDF281 visually checked again
+in a second check. The opening proof paragraph decomposes the original space
 into invariant characteristic subspaces, subtracts each generator's
 scalar part on each space, and reduces the bound to nilpotent generators.
 The next paragraph defines the maximum possible dimension for those
@@ -82,7 +82,8 @@ the dimension of the original
 canonical maxima over the supported actual spaces. The original
 algebra is `Algebra.adjoin ℂ (Set.range a)`. The asserted sum uses
 each actual block's dimension as the maximum's second argument.
-Its intended derivation combines the first assertion with the
+Its derivation, carried out in
+`RenardCommutativeDimensionNilpotentReductionProof`, combines the first assertion with the
 comparison between the original algebra and the sum of the dimensions
 of its actual restriction images.
 
@@ -91,7 +92,9 @@ an enumeration. The actual supported subtype is finite by the
 separate joint-decomposition assertion. Neither a finite
 decomposition nor its dimension comparison is a premise of the
 present target. This pair does not prove those separate assertions
-or treat their pending statement as a theorem.
+or treat their statement as a theorem; the joint decomposition is proved
+separately, as `commutingGeneralizedEigenspaceDecomposition` in
+`RenardCommutingGeneralizedEigenspaceDecompositionProof`.
 
 Third, for positive `l`, set
 `r = 2 - Real.rpow 2 (1 - (l : ℝ))`. If, for each supported actual
@@ -110,7 +113,7 @@ decomposition or faithfulness assertion. Both subtractions and the
 inner power in `r`, and the outer power in the dimension bound, are
 real operations.
 
-## Provenance, boundaries and remaining work
+## Provenance and boundaries
 
 The first assertion makes the source's scalar-subtraction reduction
 and immediately following maximum definition explicit on the published
@@ -137,14 +140,14 @@ and scalar operators do not consume tuple entries. No stability
 or invertibility assumption is imposed beyond the intrinsic stability
 of the actual joint spaces.
 
-Worker 709 authored this statement and its source correspondence.
-Worker 16 checked the source correspondence, hypotheses and corner
-cases, and prepared the focused contribution from that draft.
-The imported actual block construction credits Workers 709, 307
-and 1044, and the imported maximum construction has its own published
-provenance. These published pairs are imported unchanged; no
-unpublished proof is adapted here. The exact proof of this statement,
-the separate joint decomposition and power-comparison proofs, the
-unconditional bound on the actual canonical maximum, its floor
-recurrence and numerical induction, and the remaining whole-book
-program remain separate work.
+The source correspondence, hypotheses and corner cases were checked.
+The imported actual block construction and the imported maximum
+construction have their own published provenance. These published pairs
+are imported unchanged; no unpublished proof is adapted here. The exact
+proof of this statement is `Langlands.Renard.commutativeDimensionNilpotentReduction`,
+in `RenardCommutativeDimensionNilpotentReductionProof`; the joint
+decomposition and power-comparison proofs it uses are
+`RenardCommutingGeneralizedEigenspaceDecompositionProof` and
+`RenardCommutativeDimensionPowerAssemblyProof`. The unconditional bound on
+the actual canonical maximum, its floor recurrence and numerical induction,
+and the rest of the book are separate from this statement.

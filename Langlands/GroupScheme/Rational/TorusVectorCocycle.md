@@ -66,7 +66,7 @@ then gives equality of the actual cocycle morphisms. Finally,
 `exists_coboundary_of_isTorus` obtains affineness from `IsTorus`, applies the
 splitting-field construction and descends its primitive.
 
-This is a derived internal contribution: all arguments use the existing actual
+This is a derived internal module: all arguments use the existing actual
 cocycle, vector-coordinate, finite-action and base-change interfaces and ordinary
 linear algebra; no external vanishing or descent theorem is assumed.
 The construction permits arbitrary characteristics, finite and imperfect base
@@ -74,4 +74,4 @@ fields, nonsplit tori and dimension zero. The extension used for descent can be
 arbitrary: no finiteness, separability, Galois structure or division by its degree
 is needed. It does not prove that a given torus action admits these coordinates,
 construct a vector subgroup in a solvable group, or prove the full maximal-torus
-conjugacy statement. Those remain separate obligations of the host task.
+conjugacy statement. Those are not part of this module.

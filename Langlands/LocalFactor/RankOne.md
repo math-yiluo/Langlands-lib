@@ -1,7 +1,5 @@
 # Rank-one inputs for actual local Weil groups
 
-Author: Worker 20.
-
 For a supplied finite p-adic field `F : PadicField p`, this module uses the
 published actual Weil group `Weil.Local.localWeilGroup F`, its actual
 residue-degree map, and `F.canonicalTopologicalData`. It connects continuous

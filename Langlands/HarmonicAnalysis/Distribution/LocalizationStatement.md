@@ -101,10 +101,9 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.Distribution.equivariantLocalization.{uX, uY, uI}`
 in `Langlands.HarmonicAnalysis.Distribution.LocalizationProof`. Its type is
 exactly `EquivariantLocalizationStatement.{uX, uY, uI}`, with the same
-independent universes and no added hypothesis. The proof is artifact
-`8f3e3767-6c71-4b9e-a9f7-73744cd5d0f3` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `d1e92cc3fedd601726630b19e4e6d1a9dc84b2cd`.
+independent universes and no added hypothesis. The proof passed the Lake
+build and exact-target checks and was published at Library commit
+`d1e92cc3fedd601726630b19e4e6d1a9dc84b2cd`.
 It proves only the localization stated here. It does not formalize the
 l-sheaf statements Proposition 2.36 or Corollary 2.37 of
 Bernstein–Zelevinsky.

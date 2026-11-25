@@ -26,7 +26,7 @@ identities and `saturationSourceLift_comp`.
 The commutative square, constructed refined existence, and previously
 proved strict complete joint uniqueness establish
 `smallFibreProduct_isRefinedStrongPullback`.
-Worker 250's general categorical descent then gives both the actual
+The general categorical descent of `LocalizedPullbackDescent` then gives both the actual
 localized `IsPullback` and a constructed `IsLimit` of its cone. These
 properties quantify over all objects and all arrows of the existing
 localization, in the original universes.

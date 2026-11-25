@@ -40,29 +40,27 @@ is equivalent to finite-dimensionality of both ends of an exact sequence.
 Cofinality then passes from compact open subgroups to every open subgroup,
 since a larger subgroup has a subspace of the fixed vectors of a smaller one.
 These observations explain the weaker group hypotheses; they are not proofs
-assumed in the proposition definition. Proving this target remains separate.
+assumed in the proposition definition. The target is proved by
+`Langlands.admissibleShortExact`
+(`Langlands.Representation.Smooth.Admissibility.ExactProof`).
 
 This target extends the existing injective admissibility and smoothness
 transfer statements with the quotient and extension conclusions. It does
 not redeclare their targets or the compact-averaging/fixed-vector-surjectivity
-construction. A later proof should reuse their accepted exact versions.
+construction. Its proof reuses their published exact versions.
 
 ## Exact dependencies and scope
 
-The sole project import is `Langlands.Representation.Smooth.Definitions`,
-accepted artifact `665022df-625b-44ae-9dbd-425f6e266bab`, version 1.
-Its effective Lean SHA256 is
+The sole project import is `Langlands.Representation.Smooth.Definitions`.
+Its Lean SHA256 is
 `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`,
 and Markdown SHA256 is
 `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569`.
 It was published at `10c81beaaff024987cf2945c64d0c9511f6cb686`;
-fresh inspection confirms current availability and no unavailable
-dependencies at Library head `d0f5322f745425b08ae8e72c1031206f45cb049e`.
+inspection found it available, with no unavailable dependencies, at Library
+commit `d0f5322f745425b08ae8e72c1031206f45cb049e`.
 Mathlib supplies the representation, intertwiner, image, and kernel types.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 8 authored this statement and explanation. This is one foundational
-target within the broader induction/Jacquet/classification statement task;
-it neither completes that task nor proves this proposition. Independent
-statement acceptance and publication are separate from later proof acceptance.
+Environment: Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+This is one foundational target for the induction, Jacquet-module and
+classification statements; this file does not prove the proposition.

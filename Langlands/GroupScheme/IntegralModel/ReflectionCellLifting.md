@@ -45,4 +45,4 @@ to integral coordinates of the translated section.
 This is a composition of the named internal Library constructions, without
 an additional original-literature assertion. It does not identify the generic
 normalizer with a root reflection or assert integrality of prescribed opposite
-factors. The final fixed-point theorem remains outside this unit's scope.
+factors. The final fixed-point theorem remains outside this module's scope.

@@ -5,8 +5,6 @@ import Langlands.Algebra.LieCasimir
 
 /-!
 # Complete reducibility for Lie algebras with central radical
-
-Authors: Worker 1429
 -/
 
 noncomputable section

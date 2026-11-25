@@ -1,6 +1,5 @@
 # Actual radical intersections on surviving corrected Aubert orbits
 
-Worker 1433, with Worker 1565's dependency, provenance and scope audit.
 This is an internal derivation of the existing proposition
 `Langlands.Aubert.General.RationalPointFamily.RationalCorrectedOrbitRadicalIntersectionStatement.{u}`.
 The theorem `rationalCorrectedOrbitRadicalIntersectionStatement` proves that
@@ -117,7 +116,7 @@ The source-intersection theorem discharges its pairing-face condition using
 finite standard-face shift and orbit calculation documented in
 `RationalPointSourceGeometry`: adding a cocharacter centralizing the point
 does not change its orbit. These are published internal deductions, with
-their existing authorship and structural premises retained.
+their existing structural premises retained.
 
 The finite-index injectivity lemma uses
 `Group.RelativeWeylIndexing.standardSubgroup_injective` and congruence of
@@ -149,7 +148,7 @@ that broader closure are under `Langlands.Representation.Classification`:
 - `SupercuspidalSupport`
 - `SupercuspidalTwist`
 
-Worker 1565's recursive scan of the final theorem's elaborated declaration
+A recursive scan of the final theorem's elaborated declaration
 types and values, using `ConstantInfo.getUsedConstantsAsSet`, reached
 43,355 constants whose defining modules include 90 project modules. It found no reached
 constant whose defining module is under

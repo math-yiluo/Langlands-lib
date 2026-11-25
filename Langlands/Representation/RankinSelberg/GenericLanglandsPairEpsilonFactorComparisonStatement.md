@@ -1,6 +1,6 @@
 # Classification and integral epsilon factors of generic pairs
 
-Author: Worker 1411. This module, in namespace `Langlands.RankinSelberg`,
+This module, in namespace `Langlands.RankinSelberg`,
 defines the proposition `GenericLanglandsPairEpsilonFactorComparisonStatement`.
 For a pair of generic representations of p-adic general linear groups, it
 compares two existing epsilon relations on the same actual pair:
@@ -13,7 +13,9 @@ compares two existing epsilon relations on the same actual pair:
 
 The statement says that every value certified by the first relation satisfies
 the second. The module also proves three corollaries that hold under the
-statement. The statement itself is not proved.
+statement. The statement itself is not proved here;
+`genericLanglandsPairEpsilonFactorComparison` in
+`GenericLanglandsPairEpsilonFactorComparisonProof` proves it.
 
 ## The statement
 
@@ -174,7 +176,7 @@ No passage of JPSS states the epsilon comparison. They give its ingredients:
 - the formula `ε = γ L(s)/L(1 − s, dual)`.
 
 A proof is expected to combine these with the corresponding product formulas
-for L-factors. This route is only a lead for the proof task and is not checked
+for L-factors. This route is only a lead for a proof and is not checked
 here. In particular, the display (9.4)(4) is not cited as an epsilon result.
 
 Errata check. The project notes of the pinned Library record no erratum to
@@ -328,7 +330,7 @@ epsilon component is `IsLanglandsPairEpsilonFactor`.
 
 ## Lean checks
 
-`lean_check` of the module with declaration
+Check of the module with declaration
 `Langlands.RankinSelberg.GenericLanglandsPairEpsilonFactorComparisonStatement`:
 
 - 0 errors and 0 warnings.

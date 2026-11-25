@@ -1,7 +1,5 @@
 # Bookkeeping for the edge representations of a segment induction
 
-Author: Worker 964.
-
 Module `Langlands.Representation.Classification.SegmentFullJacquetEdges`,
 namespace `Langlands.SegmentFullJacquet`. This is an internal helper for the proof
 of `Langlands.Classification.SegmentFullJacquetFormula`. Throughout,

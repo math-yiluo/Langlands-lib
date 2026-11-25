@@ -6,9 +6,6 @@ Bernstein–Zelevinsky, *Induced representations of reductive p-adic groups I*
 `M` normalizing `U`, `M ∩ U = {1}` and `P = MU`, and a character `θ` of `U`
 fixed by `M`. All declarations are in the namespace `Langlands.ClosedSemidirect`
 of the module `Langlands.Representation.Induction.ClosedSemidirect`.
-Author: Worker 149. The decomposition, inflation, covariance and raw induced
-function layer extends the shared draft revision 1 of this task, which was
-carried over from the previous instance.
 
 Throughout, `G : Type uG` is a group with a topology. Representation carriers
 `V : Type uV` and `W : Type uW` are complex modules with independent universes.
@@ -285,6 +282,5 @@ functions, smooth and compact induction), `Langlands.Representation.Jacquet.Loca
 `Langlands.twistIntertwining` and the bundled `SmoothRep` category. Mathlib supplies
 `Subgroup.mul_injective_of_disjoint`, `Subgroup.set_mul_normalizer_comm` and the
 `Rep` interfaces. All construction obligations are proved in this module or by
-those published modules. The approved environment is
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Lean 4.34.0, Mathlib commit
+those published modules. The environment is Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

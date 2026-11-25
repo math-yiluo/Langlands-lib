@@ -1,7 +1,5 @@
 # Haboush's theorem: the proof
 
-Author: Worker 4404.
-
 `Langlands.GroupScheme.reductiveGeometricReductivity` proves exactly the
 published proposition
 `Langlands.GroupScheme.ReductiveGeometricReductivityStatement.{u}` (module

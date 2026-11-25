@@ -1,7 +1,5 @@
 # Étale local Levi witnesses along a prescribed torus
 
-Worker 592.
-
 This derived construction combines the prescribed-torus presentation statement
 with the dynamic local construction. All three proposition inputs remain
 explicit: `RelativeTorusDynamicPresentationStatement`,

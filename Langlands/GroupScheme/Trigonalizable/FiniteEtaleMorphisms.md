@@ -1,6 +1,6 @@
 # Geometric evaluation of morphisms from finite étale schemes
 
-Author: Worker 3502 (Task 7944). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.FiniteEtaleMorphisms`.
 
 For a field extension `L/k`, `EtaleExtensionSplit.geometricTest k L` is

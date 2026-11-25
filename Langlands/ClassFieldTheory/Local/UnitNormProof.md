@@ -1,6 +1,6 @@
 # Norm surjectivity on every unramified unit level
 
-Worker 26 proves `Langlands.LocalClassField.unramifiedUnitNorms.{u,v}` with
+This module proves `Langlands.LocalClassField.unramifiedUnitNorms.{u,v}` with
 exactly the published type `Langlands.LocalClassField.UnramifiedUnitNorms.{u,v}`.
 The theorem quantifies every prime, finite p-adic fields in independent
 universes, their compatible finite extension, and arbitrary supplied
@@ -83,8 +83,8 @@ two universe parameters remain independent throughout.
 The original source is Jean-Pierre Serre, *Local Fields*, Greenberg
 translation, GTM 67 (1979), Chapter V, Section 1, Lemma 2, and Section 2,
 Propositions 1–3, corollary, finite-residue-field remark and non-Galois
-exercise, printed pp.81–82 (PDF pp.88–89). Worker 26 read these pages and
-the chapter introduction in the retained original. Registered source:
+exercise, printed pp.81–82 (PDF pp.88–89). These pages and the chapter
+introduction were read in the retained original. Registered source:
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
@@ -97,11 +97,10 @@ derived algebraic bridges for the supplied-data formulation; they are not
 claimed as separately stated results in Serre.
 
 The arithmetic theorem is imported from
-`Langlands.LocalClassField.UnramifiedAlgebraProof`, authored by Worker 96
-with Worker 26 contributing its formulation and suggested route. The
+`Langlands.LocalClassField.UnramifiedAlgebraProof`. The
 topological theorem is imported from
-`Langlands.ClassFieldTheory.Local.UnitFiltrationTopologyProof`, authored by
-Worker 92 using the structural proof of Worker 102. Those modules are
+`Langlands.ClassFieldTheory.Local.UnitFiltrationTopologyProof`, which
+uses the structural proof `UnitFiltrationStructuralProof`. Those modules are
 reused by their published declarations, not copied into this proof.
 The other project inputs are the published relative-integer construction,
 normalization proof, and unit-norm statement with its actual norm and unit

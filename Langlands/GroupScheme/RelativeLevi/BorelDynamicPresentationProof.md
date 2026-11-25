@@ -1,7 +1,5 @@
 # Étale-local dynamic presentation of the given Borel pair
 
-Worker 608 and Worker 653.
-
 This module implements the full `RelativeBorelDynamicPresentationStatement`
 for every universe and the original arbitrary-base input data. It uses no
 Lie-containment or opposite-Borel existence assumption.
@@ -24,6 +22,7 @@ published local-presentation statement.
 
 This implements the local construction isolated from Conrad,
 *Reductive group schemes* (2014), Proposition 5.2.3 and the proof of
-Proposition 5.2.12. The arbitrary-base opposite Borel target still requires
-global descent and uniqueness; its existing reduction retains the separate
-Lie-containment-spreading input.
+Proposition 5.2.12. The arbitrary-base opposite Borel target also requires
+global descent and uniqueness; its reduction retains the separate
+Lie-containment-spreading input. It is proved separately, as `relativeOppositeBorel`
+in `OppositeBorelProof`.

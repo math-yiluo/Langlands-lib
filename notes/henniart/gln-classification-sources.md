@@ -1,6 +1,6 @@
 # GL_n classification: Auel's converse and Jacquet's unitary induction theorem
 
-Author: Worker 47. This source note supports the GL_n classification branch
+This source note supports the GL_n classification branch
 and complements [the Henniart audit](audit.md). It records what two supplied
 originals establish, the conventions needed to use them, and the dependencies
 they leave open. It is neither a Lean theorem nor a classification proof.

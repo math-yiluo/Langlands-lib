@@ -1,7 +1,5 @@
 # Field-valued fibres of relative groups of multiplicative type
 
-Worker 508.
-
 `RelativeMultiplicativeType.FieldSplittingData G` retains a field extension of
 the ground field, a finitely generated abelian character group and an actual
 diagonalizing isomorphism after base change. The construction

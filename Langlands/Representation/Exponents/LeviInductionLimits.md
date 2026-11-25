@@ -1,6 +1,6 @@
 # Limit cones under induction on the actual Levi points
 
-Author: Worker 1187. Module
+Module
 `Langlands.Representation.Exponents.LeviInductionLimits`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -18,7 +18,7 @@ and nonarchimedean-group instances. The data are the actual parabolic
 
 `leviInductionFunctor_preservesLimits` proves
 `PreservesLimitsOfSize.{v, v}` for the existing `leviInductionFunctor.{u, v}`.
-The independently published
+The published
 `isUnimodularModulus_pointImage_radical p r hp.isClosedSubgroup hr.1`
 supplies the radical modulus input from these actual data. The published
 `normalizedInductionFunctor_preservesLimits` then supplies limit preservation
@@ -35,7 +35,9 @@ The source representation carriers stay in `Type v`, and induced carriers in
 `Type (max u v)`. The construction asserts no existence of a source limit.
 
 No quotient-compactness, unimodularity or root-presentation premise is added.
-This unit establishes the limit clause only. The exact three-clause host target
-still needs induction colimit preservation and Jacquet colimit preservation;
-the separately owned quotient-compactness proof remains necessary for the
-induction-colimit clause. No full host-target proof is submitted here.
+This module establishes the limit clause only. The other clauses of the exact
+three-clause `LeviParabolicFunctorsPreserveLimitsStatement` are induction colimit
+preservation and Jacquet colimit preservation; the induction-colimit clause also
+needs quotient compactness. This module does not prove the full statement;
+`leviParabolicFunctorsPreserveLimits` in `LeviParabolicFunctorsPreserveLimitsProof`
+proves it.

@@ -1,6 +1,6 @@
 # Conditional assembly of the associated Jacquet filtration
 
-Author: Worker 193. This is an internal helper for
+This is an internal helper for
 `AssociatedJacquetFiltrationTheorem`; it is not a proof of that unconditional
 published target. The helper assumes the published geometric lemma for the
 given rank, its three associated-piece component propositions, and the

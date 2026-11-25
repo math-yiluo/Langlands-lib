@@ -77,6 +77,5 @@ rather than a verbatim source proof. The Mathlib modules are
 and `Mathlib.RingTheory.RingHom.FinitePresentation`, at commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 405 implemented the Lean proof and this explanation. Worker 136 supplied
-the presentation-and-localization transport strategy and the source-isomorphism
-finite-presentation strategy in the task context.
+The proof follows the presentation-and-localization transport strategy and the
+source-isomorphism finite-presentation strategy described above.

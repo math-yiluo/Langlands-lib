@@ -200,11 +200,11 @@ theorem twistInduction_centerScalar_of_generator
       (fun χ => (rationalNormCharacters (bernsteinLeviScheme i ν a.roots) χ).toMul) → ℂ)
     (hζ : ∀ ω (φ : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
         rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω a.representation),
-      ζ ≫ φ = c ω • φ)
+      ζ.asHom ≫ φ = c ω • φ)
     (hz : (z.app ⟨_, hmem⟩).hom =
       (bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
           (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).inv ≫
-        (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ ≫
+        (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ.asHom ≫
         (bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
           (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).hom)
     (ω : unramifiedCharacters
@@ -318,7 +318,7 @@ theorem bernsteinInducedCenter_exists
     (hx : x ∈ Subring.center _) :
     ∃ ζ ∈ Subring.center
         (End (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)),
-      x = (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ := by
+      x = End.of ((bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ.asHom) := by
   let A := bernsteinStandardRepresentativesGeometric i ν family a.roots
   have h := hP2 F G family.connectedReductive
     (Standard.parabolicScheme i ν (rootSet i ν a.roots)) (bernsteinLeviScheme i ν a.roots)
@@ -343,11 +343,11 @@ theorem catCenter_conj_mem_center
           (bernsteinLiteralLeviRep i ν a.roots
             (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀))))
     (z : CatCenter (BernsteinSaturatedBlock i ν family (bernsteinInertialClass i ν family a))) :
-    (bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
+    End.of ((bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
           (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).hom ≫
         (z.app ⟨_, hmem⟩).hom ≫
         (bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
-          (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).inv ∈
+          (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).inv) ∈
       Subring.center (End ((bernsteinStandardRepresentedInductionFunctor.{uF, uV}
         i ν family a.roots).obj
           (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀))) := by
@@ -359,10 +359,10 @@ theorem catCenter_conj_mem_center
     (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)
   have hnat := z.naturality
     (X := (⟨_, hmem⟩ : BernsteinSaturatedBlock i ν family (bernsteinInertialClass i ν family a)))
-    (Y := ⟨_, hmem⟩) (ObjectProperty.homMk (eΩ.inv ≫ g ≫ eΩ.hom))
+    (Y := ⟨_, hmem⟩) (ObjectProperty.homMk (eΩ.inv ≫ g.asHom ≫ eΩ.hom))
   have h1 := congrArg (fun f => f.hom) hnat
   simp only [ObjectProperty.FullSubcategory.comp_hom, ObjectProperty.homMk_hom] at h1
-  exact conj_comm_of_comm eΩ.symm (z.app ⟨_, hmem⟩).hom g h1
+  exact End.ext (conj_comm_of_comm eΩ.symm (z.app ⟨_, hmem⟩).hom g.asHom h1)
 
 /-- If `I(ζ)` is central in `End(I(Π_D))`, its conjugate by `I(Π_D) ≅ Π_Ω` is the component at
 `Π_Ω` of a central element of the block (Morita, Renard VI.10.2). -/
@@ -378,7 +378,7 @@ theorem catCenter_exists_of_inducedCenter
     (hEq : (preadditiveCoyonedaObj (⟨_, hmem⟩ :
       BernsteinSaturatedBlock i ν family (bernsteinInertialClass i ν family a))).IsEquivalence)
     (ζ : End (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀))
-    (hζ : (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ ∈
+    (hζ : End.of ((bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ.asHom) ∈
       Subring.center (End ((bernsteinStandardRepresentedInductionFunctor.{uF, uV}
         i ν family a.roots).obj
           (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)))) :
@@ -386,24 +386,25 @@ theorem catCenter_exists_of_inducedCenter
       (z.app ⟨_, hmem⟩).hom =
         (bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
             (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).inv ≫
-          (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ ≫
+          (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ.asHom ≫
           (bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
             (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).hom := by
   let eΩ := bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
     (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)
   let P : BernsteinSaturatedBlock i ν family (bernsteinInertialClass i ν family a) := ⟨_, hmem⟩
-  have hc : (ObjectProperty.homMk
-      (eΩ.inv ≫ (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ ≫
+  have hc : End.of (ObjectProperty.homMk
+      (eΩ.inv ≫ (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ.asHom ≫
         eΩ.hom) : P ⟶ P) ∈ Subring.center (End P) := by
     refine (Subring.mem_center_iff (R := End P)).mpr fun f => ?_
+    apply End.ext
     apply ObjectProperty.hom_ext
     have hcomm := (Subring.mem_center_iff (R := End
       ((bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).obj
         (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)))).mp hζ
-      (eΩ.hom ≫ f.hom ≫ eΩ.inv)
-    exact conj_comm_of_comm eΩ _ f.hom hcomm.symm
+      (End.of (eΩ.hom ≫ f.asHom.hom ≫ eΩ.inv))
+    exact conj_comm_of_comm eΩ _ f.asHom.hom (congrArg End.asHom hcomm).symm
   obtain ⟨z, hz⟩ := Renard.generatorCenterEvaluation_surjective P ⟨_, hc⟩
-  exact ⟨z, congrArg (fun t => t.val.hom) hz⟩
+  exact ⟨z, congrArg (fun t => t.val.asHom.hom) hz⟩
 
 /-- Renard VI.10.4, Theorem, first sentence, with Remark 1, at a fixed cuspidal datum `a`, from
 VI.10.2, Theorem (`BernsteinBlockHomEquivalenceStatement`), the centre inclusion of VI.10.4, second
@@ -463,13 +464,14 @@ theorem bernsteinBlockCenterFunctions_of_inputs
         (z.app ⟨_, hmem⟩).hom =
           (bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
               (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).inv ≫
-            (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ ≫
+            (bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots).map ζ.asHom ≫
             (bernsteinStandardRepresentedInductionIso.{uF, uV} i ν family a.roots
               (rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀)).hom := by
     intro z
     obtain ⟨ζ, hζ, hx⟩ := bernsteinInducedCenter_exists.{uF, uV} i ν family hP2 a ρ₀ hρ₀ j hj _
       (catCenter_conj_mem_center.{uF, uV} i ν family a ρ₀ hmem z)
     refine ⟨ζ, hζ, ?_⟩
+    rw [End.of.injEq] at hx
     rw [← hx]
     simp only [Category.assoc, Iso.inv_hom_id, Category.comp_id, Iso.inv_hom_id_assoc]
   choose ζ hζc hζz using hζex
@@ -533,7 +535,7 @@ theorem bernsteinBlockCenterFunctions_of_inputs
       rw [hζz z, hζz w, h3]
     exact Renard.generatorCenterEvaluation_injective
       (⟨_, hmem⟩ : BernsteinSaturatedBlock i ν family (bernsteinInertialClass i ν family a))
-      (Subtype.ext h4)
+      (Subtype.ext (congrArg End.of h4))
   have hsurj : Function.Surjective (sHom.codRestrict O hmemO) := by
     rintro ⟨f, hf⟩
     have hf' : f ∈ invariant := hf
@@ -544,9 +546,9 @@ theorem bernsteinBlockCenterFunctions_of_inputs
     obtain ⟨ζ0, rfl⟩ := hfr
     have hyp : ∀ ω ω', Assoc ω ω' → ∀ c : ℂ,
         (∀ φ : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
-          twist ω, (ζ0 : End _) ≫ φ = c • φ) →
+          twist ω, (ζ0 : End _).asHom ≫ φ = c • φ) →
         ∀ φ' : rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀ ⟶
-          twist ω', (ζ0 : End _) ≫ φ' = c • φ' := by
+          twist ω', (ζ0 : End _).asHom ≫ φ' = c • φ' := by
       intro ω ω' hA c hc φ'
       obtain ⟨φ, hφ⟩ :=
         bernsteinCuspidalDatum_exists_surjective_twist.{uF, uV} i ν family a ρ₀ j hj ω

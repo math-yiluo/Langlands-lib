@@ -1,6 +1,6 @@
 # Actual jet frames adapted to affine cotangent frames
 
-This internal unit constructs actual free frames of the identity-jet sheaf
+This module constructs actual free frames of the identity-jet sheaf
 from an actual cotangent frame on an affine base open. Let `G` be a smooth
 affine group scheme over an arbitrary scheme `S`, let `U` be an affine
 open, and specify a finite-index actual free sheaf frame `e` of
@@ -40,6 +40,6 @@ The provenance is internal. The construction combines actual cotangent
 and jet section comparisons, the already proved splitting-independent
 restriction determinant, and the sheaf criterion from affine subopens.
 The existence of a supplied finite cotangent frame on this chart does
-not impose a global constant-rank condition. This unit constructs the
-required local jet frames; it does not yet glue a determinant-power
+not impose a global constant-rank condition. This module constructs the
+required local jet frames; it does not glue a determinant-power
 line-bundle isomorphism or prove ampleness.

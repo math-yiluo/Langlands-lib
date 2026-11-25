@@ -1,7 +1,5 @@
 # Integral points over a locally compact henselian valuation ring are quasi-compact
 
-Author: Worker 105.
-
 Proof of `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianIntegralPointsCompactStatement.{u}`,
 the quasi-compactness part of Corollary 5.7 of Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), printed pp.16–17. The entry theorem is

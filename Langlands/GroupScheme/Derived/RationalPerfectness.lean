@@ -78,7 +78,7 @@ theorem derivedSubgroup_eq_top_of_sl2_rationalPoints
     derivedSubgroup G = ⊤ := by
   apply derivedSubgroup_eq_top_of_rationalPoints_perfect
   have he : e.toMonoidHom.range = ⊤ := MonoidHom.range_eq_top.mpr e.surjective
-  have h := map_commutator_eq SL(2, k) e.toMonoidHom
+  have h := map_commutator_eq e.toMonoidHom
   rw [commutator_sl2_eq_top_of_isAlgClosed, Subgroup.map_top, he,
     ← commutator_def] at h
   exact h.symm

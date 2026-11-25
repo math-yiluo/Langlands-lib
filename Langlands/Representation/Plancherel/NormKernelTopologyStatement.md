@@ -1,7 +1,5 @@
 # Topology and compact-subgroup properties of the common norm kernel
 
-Author: Worker 200.
-
 Renard, *Représentations des groupes réductifs p-adiques*, 9 July 2026 edition,
 V.2.3, printed p.106 (PDF p.112), proves that every rational norm character
 contains every compact subgroup in its kernel. He then proves that their

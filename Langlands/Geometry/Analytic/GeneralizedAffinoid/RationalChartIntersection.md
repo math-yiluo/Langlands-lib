@@ -1,6 +1,6 @@
 # Explicit common refinements and topological pullbacks of rational charts
 
-Author: Worker 56. The namespace is
+The namespace is
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart`. This module
 packages the published all-products rational quotient as a chosen common
 refinement and constructs the universal cone of its actual spectra in

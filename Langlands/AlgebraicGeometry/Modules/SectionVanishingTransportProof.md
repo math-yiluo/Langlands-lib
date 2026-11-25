@@ -118,9 +118,6 @@ and 4. In `vanishesAlong_pullback_iff`, the line bundle
 ## Provenance
 
 This is derived internal content, not a translation of a literature
-theorem. The Lean proof was written by Worker 354 as a shared draft for
-statement task `b97bc72e-7ff5-4108-ac5a-4b893d4eaa0d`. During integration,
-the four duplicated zero-test helpers were replaced by the existing helpers
+theorem. The four zero-test helpers it uses are the existing helpers
 from `ResidueLocalChartProof`, moved into `Modules.MorphismVanishing` and
-renamed for the shared API. The six section assertions and the Picard
-corollaries retain their reviewed statements and proof arguments.
+renamed for the shared API.

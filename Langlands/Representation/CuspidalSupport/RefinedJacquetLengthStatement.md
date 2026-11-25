@@ -1,7 +1,5 @@
 # Finite-length detection by proper refined Jacquet modules
 
-Author: Worker 185, following Worker 122's task specification.
-
 `Langlands.CuspidalSupport.RefinedJacquetFiniteLengthDetectionStatement.{uF,uV}`
 is a closed `Prop`-valued definition. It states the following implication;
 this module supplies no proof.
@@ -91,7 +89,7 @@ refinement, it would be quasicuspidal by definition, contradicting the
 first hypothesis. Thus detection is to be derived, not assumed as
 additional witness data.
 
-For a future proof, injectivity and exactness on smooth refined
+For the proof, injectivity and exactness on smooth refined
 coinvariants should follow using the published
 `T.refinedUnipotent_finite_containment` and generic smooth coinvariant
 exactness, as already used in `CuspidalSupport.QuasicuspidalSubquotientProof`.
@@ -106,6 +104,7 @@ route; their single-GL interface is preserved unchanged.
 
 These paragraphs explain the intended derivation, not an implemented
 proof. The statement does not depend on a general induction finite-length
-theorem, `InducedFiniteTypeStatement`, the parent
+theorem, `InducedFiniteTypeStatement`,
 `GLAdmissibleFiniteLengthStatement`, or a replacement exactness premise.
-Its exact closed proof is a separate successor task.
+Its exact closed proof is separate: `refinedJacquetFiniteLengthDetection` in
+`RefinedJacquetLengthProof`.

@@ -25,7 +25,7 @@ open Langlands.Global.HeckeFunctionalEquation
 attribute [local instance] unitsMeasurable unitsBorel rankZeroGLMeasurable rankZeroGLBorel
   rankZeroNMeasurable rankZeroNBorel rankZeroQMeasurable rankZeroQBorel
 
-local instance : Unique (Fin (0 + 1)) := inferInstanceAs (Unique (Fin 1))
+private local instance : Unique (Fin (0 + 1)) := inferInstanceAs (Unique (Fin 1))
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
 
@@ -98,7 +98,7 @@ theorem complexEqual_rankZero_tests (hTate : ComplexArchimedeanTateStatement)
     refine mul_ne_zero (mul_ne_zero two_ne_zero ?_) (Complex.Gamma_ne_zero_of_re_pos ?_)
     · exact Complex.cpow_ne_zero_iff.mpr
         (.inl (mul_ne_zero two_ne_zero (Complex.ofReal_ne_zero.mpr Real.pi_ne_zero)))
-    · simp only [Complex.add_re, Complex.div_ofNat_re, Complex.natCast_re]
+    · rw [Complex.add_re, Complex.div_ofNat_re, Complex.natCast_re]
       positivity
   have hn : HolomorphicNonzeroOnRightHalfPlane (complexEqualIntegral D W W' Φ) := by
     refine ⟨σ, hf, z, hz, ?_⟩

@@ -1,6 +1,6 @@
 # Finite denominator multiplication of spherical Laurent series
 
-This internal unit constructs the actual symmetric polynomial multiplier used
+This module constructs the actual symmetric polynomial multiplier used
 in the formal-series argument for the corrected essential-vector theorem. It
 also proves the finite convolution, specialization and homogeneity properties
 needed to multiply the Laurent series from `SphericalSeries`.
@@ -113,9 +113,9 @@ exact polynomial specialization
 Thus this multiplier is built from the actual coordinate product, and its
 identification with that product is proved.
 
-## Provenance and remaining obligations
+## Provenance and what is not proved here
 
-All definitions and deductions in this unit are internal algebraic
+All definitions and deductions in this module are internal algebraic
 constructions using Mathlib's multivariate homogeneous components, polynomial
 evaluation, the existing torus localization and Hahn-series operations.
 Their intended application is the finite denominator multiplication and
@@ -126,4 +126,4 @@ flawed 1981 essential-vector existence argument.
 
 Identifying an input `P` with an L-factor polynomial, proving the functional
 equation, using it to obtain an upper degree bound, and proving the
-essential-vector and conductor conclusions remain separate obligations.
+essential-vector and conductor conclusions are not part of this module.

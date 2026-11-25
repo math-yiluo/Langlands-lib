@@ -27,7 +27,7 @@ def characterAction (T : SplitMultiplicativeType k L) :
 theorem characterAction_ρ_apply (T : SplitMultiplicativeType k L)
     (σ : L ≃ₐ[k] L)
     (χ : characterLattice ((CommGroupScheme.baseChange (algebraBaseMap k L)).obj T.obj)) :
-    ((characterAction k L T).ρ σ).hom.hom χ =
+    ((characterAction k L T).ρ σ).asHom.hom.hom χ =
       characterLattice.galoisRepresentation k L T.obj σ χ := rfl
 
 /-- Actual character pullback, bundled between the finitely generated actions. -/

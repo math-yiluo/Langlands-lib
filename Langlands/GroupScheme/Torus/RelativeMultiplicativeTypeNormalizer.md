@@ -1,7 +1,5 @@
 # Closed normalizers of subgroups of multiplicative type
 
-Worker 592.
-
 This derived module extends the projective-coordinate construction in
 [`DiagonalizableNormalizer`](DiagonalizableNormalizer.md) to arbitrary base
 schemes by fppf descent. It supplies the closed-normalizer assertion required

@@ -49,7 +49,6 @@ this passage. The original and errata were read. This wrapper is derived
 packaging of the published formalization of that argument; it does not use
 Milne's alternative norm base-change argument.
 
-Worker 107 authored this wrapper and its explanation. Worker 269 authored the
-underlying cyclotomic construction and proof, with Worker 123 contributing its
-two tower-index lemmas. Their existing published module is reused by import;
-no draft source is copied or adapted here.
+The underlying cyclotomic construction and proof, with its two tower-index
+lemmas, are in the published module `CyclotomicSecondInequalityReduction`,
+which is reused by import.

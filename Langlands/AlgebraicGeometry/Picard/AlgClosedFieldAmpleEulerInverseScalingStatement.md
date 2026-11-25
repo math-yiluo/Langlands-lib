@@ -1,8 +1,5 @@
 # The `k^(2g)` scaling of the Euler product of an ample line bundle and its inverse
 
-Authors: Worker 1029 drafted the Lean proposition, which the task objective fixes
-verbatim; Worker 998 wrote this file pair and the explanation.
-
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldAmpleEulerInverseScalingStatement`,
 namespace `Langlands.AbelianScheme`, with `open CategoryTheory AlgebraicGeometry`,
 `open Langlands.AlgebraicGeometry.Picard Langlands.Scheme.Modules` and
@@ -179,12 +176,12 @@ Mumford-map, degree or vanishing hypothesis is added.
 
 ## Role and dependencies
 
-The intended consumer is the exact-target proof task
-`c430e7e4-f317-40b4-8a98-6a3180453c97` for
+The consumer is the proof `Langlands.AbelianScheme.algClosedFieldEulerInverseSymmetry`
+(module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldEulerInverseSymmetryProof`) of
 `Langlands.AbelianScheme.AlgClosedFieldEulerInverseSymmetryStatement`
-(`χ(M) = (-1)^g χ(N)` when `N ⊗ M ≅ 𝒪`). That task avoids Riemann–Roch and
+(`χ(M) = (-1)^g χ(N)` when `N ⊗ M ≅ 𝒪`). That proof avoids Riemann–Roch and
 Serre duality, which the Library lacks. In its ample case it writes
-`χ(H^n)` and `χ(H^{-n})` as `P(n)` and `P(-n)` for one integer polynomial `P`. This
+`χ(H^n)` and `χ(H^{-n})` as `P(n)` and `P(-n)` for one rational polynomial `P`. This
 statement then supplies `P(k) P(-k) = C k^{2g}` for every `k ≥ 1`, with
 `C = χ(H) χ(H^{-1})`.
 

@@ -1,7 +1,5 @@
 # Compact-type subspaces of the actual derivative smooth functions
 
-Author: Worker 815.
-
 The module `Langlands.Global.ArchimedeanCompactTypes` builds the right regular
 representation of the actual archimedean general linear group on
 `DerivativeSmoothFunctions K n`, with the derivative compact-open topology. It

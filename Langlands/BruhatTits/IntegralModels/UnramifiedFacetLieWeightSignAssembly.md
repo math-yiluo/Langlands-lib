@@ -136,9 +136,10 @@ structure, because the general instance search times out there.
 
 ## Provenance
 
-Internal infrastructure for Task 6320 (proof of
-`UnramifiedFacetCommonTorusStatement`, Kaletha–Prasad, *Bruhat–Tits theory: a
-new approach*, Axiom 4.1.22(3)). It proves the Library statement
+Internal infrastructure for the proof of
+`UnramifiedFacetCommonTorusStatement` (Kaletha–Prasad, *Bruhat–Tits theory: a
+new approach*, Axiom 4.1.22(3)); `UnramifiedFacetCommonTorusProof` imports this module.
+It proves the Library statement
 `UnramifiedFacetLieWeightSignStatement` (KP Theorem 8.4.19(2)) from Library
 results only. The proof route is internal. It follows the structure of KP's
 argument: positive roots reduce to the image, negative roots die, and the

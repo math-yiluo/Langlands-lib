@@ -1,6 +1,6 @@
 # Identifying an irreducible head by a positive count
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.HeadDetectingCount`,
+Module `Langlands.Representation.Classification.HeadDetectingCount`,
 namespace `Langlands.Classification.HeadDetectingCount`. Internal helper for the proof of
 Tadić's Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`). It has no Library
 statement and no literature counterpart; it is a general counting argument with

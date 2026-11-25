@@ -1,7 +1,5 @@
 # Proof: subgroups and quotients of trigonalizable groups are trigonalizable
 
-Author: Worker 5157.
-
 This module proves the published statement
 `Langlands.GroupScheme.TrigonalizableSubgroupQuotientStatement.{u}` from
 [`SubgroupQuotientStatement`](SubgroupQuotientStatement.md). It is Milne, *Algebraic Groups*

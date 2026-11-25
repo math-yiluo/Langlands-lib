@@ -1,7 +1,5 @@
 # Local products from affine-line rigidity of the radical quotient
 
-Worker 1150; scope documentation corrected by Worker 1468.
-
 This derived infrastructure constructs the canonical inclusion of a supplied
 split ground-field unipotent radical into a supplied ordinary ground-field
 unipotent radical. It uses their published all-test containment and the

@@ -1,7 +1,5 @@
 # Group schemes with trivial residue-field fibres
 
-Worker 677.
-
 For every scheme `S`, `isIso_hom_of_residueField_fibres` proves that a locally
 finite-type group scheme `K` over `S` is trivial if the structure map of each
 residue-field fibre is an isomorphism. It assumes neither flatness nor

@@ -109,9 +109,9 @@ local notation "levelCohomology" => cmLevelGaloisCohomologyFunctor D C preservat
 scheme at the level `U`, which is the automorphism of the algebraic-closure factor
 (`cmSmallLevelGaloisAut_hom_app`). -/
 theorem cmLevelGaloisCohomologyFunctor_ρ (d : ℕ) (M : ModuleSheaf base R) (σ : Gamma) :
-    ((levelCohomology d).obj M).ρ σ =
+    (((levelCohomology d).obj M).ρ σ).asHom =
       LevelTowerCohomology.projectionCohomologyMap R ((arithmeticGeometricStructure).app U)
-        ((arithmeticGeometricStructure).app U) ((galoisAction σ).unop.hom.app U)
+        ((arithmeticGeometricStructure).app U) ((galoisAction σ).unop.asIso.hom.app U)
         (NatTrans.congr_app (galoisOver σ) U) d M :=
   rfl
 
@@ -136,7 +136,7 @@ theorem cmLevelGaloisCohomology_ι_apply (d : ℕ) (M : ModuleSheaf base R) (σ 
     SmoothRep.hom (((cmSmallLevelGaloisCohomologyFunctor D C preservation composition
         unitCoherence associativity comparison symmetry stability square universality
         dualityNaturality polarizationStability compatibility h htor q existence geometry hRigid
-        criterion R d).obj M).ρ σ)
+        criterion R d).obj M).ρ σ).asHom
         ((RestrictedLevelColimit.ι ((cmSmallLevelArithmeticCoefficients D C preservation
           composition unitCoherence associativity comparison symmetry stability square
           universality dualityNaturality polarizationStability compatibility h htor q existence
@@ -145,7 +145,7 @@ theorem cmLevelGaloisCohomology_ι_apply (d : ℕ) (M : ModuleSheaf base R) (σ 
           composition unitCoherence associativity comparison symmetry stability square
           universality dualityNaturality polarizationStability compatibility h htor q existence
           geometry hRigid criterion R M).cohomology d) U).hom
-        ((((levelCohomology d).obj M).ρ σ).hom x) :=
+        ((((levelCohomology d).obj M).ρ σ).asHom.hom x) :=
   cmSmallLevelGaloisCohomology_ρ_ι_apply D C preservation composition unitCoherence
     associativity comparison symmetry stability square universality dualityNaturality
     polarizationStability compatibility h htor q existence geometry hRigid criterion R d M σ U x
@@ -194,9 +194,9 @@ local notation "primeToLevelCohomology" => cmPrimeToLevelGaloisCohomologyFunctor
 /-- A Galois element acts by the cohomological pullback along its automorphism of the CM
 scheme at the level `e⁻¹ (K₀ × K')` (`cmPrimeToGaloisAction_hom_app`). -/
 theorem cmPrimeToLevelGaloisCohomologyFunctor_ρ (d : ℕ) (M : ModuleSheaf base R) (σ : Gamma) :
-    ((primeToLevelCohomology d).obj M).ρ σ =
+    (((primeToLevelCohomology d).obj M).ρ σ).asHom =
       LevelTowerCohomology.projectionCohomologyMap R ((primeToStructure).app K')
-        ((primeToStructure).app K') ((primeToGaloisAction σ).unop.hom.app K')
+        ((primeToStructure).app K') ((primeToGaloisAction σ).unop.asIso.hom.app K')
         (NatTrans.congr_app (primeToGaloisOver σ) K') d M :=
   rfl
 
@@ -222,7 +222,7 @@ theorem cmPrimeToLevelGaloisCohomology_ι_apply (d : ℕ) (M : ModuleSheaf base 
     SmoothRep.hom (((cmPrimeToGaloisCohomologyFunctor D C preservation composition
         unitCoherence associativity comparison symmetry stability square universality
         dualityNaturality polarizationStability compatibility h htor q m hm K₀ existence geometry
-        hRigid criterion R d).obj M).ρ σ)
+        hRigid criterion R d).obj M).ρ σ).asHom
         ((RestrictedLevelColimit.ι ((cmPrimeToArithmeticCoefficients D C preservation
           composition unitCoherence associativity comparison symmetry stability square
           universality dualityNaturality polarizationStability compatibility h htor q m hm K₀
@@ -231,7 +231,7 @@ theorem cmPrimeToLevelGaloisCohomology_ι_apply (d : ℕ) (M : ModuleSheaf base 
           composition unitCoherence associativity comparison symmetry stability square
           universality dualityNaturality polarizationStability compatibility h htor q m hm K₀
           existence geometry hRigid criterion R M).cohomology d) K').hom
-        ((((primeToLevelCohomology d).obj M).ρ σ).hom x) :=
+        ((((primeToLevelCohomology d).obj M).ρ σ).asHom.hom x) :=
   cmPrimeToGaloisCohomology_ρ_ι_apply D C preservation composition unitCoherence
     associativity comparison symmetry stability square universality dualityNaturality
     polarizationStability compatibility h htor q m hm K₀ existence geometry hRigid criterion R d

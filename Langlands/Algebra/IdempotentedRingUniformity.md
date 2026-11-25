@@ -10,10 +10,9 @@ The registered source is
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 These original pages were read and the formulas on PDF14 visually checked.
-No source-specific project errata entry was present when this unit was prepared.
+No source-specific project errata entry was present when this module was prepared.
 
-The construction is by Worker 6; Worker 345 checked the original source, expanded
-the documentation and prepared the focused submission. All declarations are in
+All declarations are in
 `Langlands.Algebra`, with the subgroup and entourage API in `Idempotent`
 and the common-refinement/directedness laws in `IsIdempotented`. The given `A : Type u` has only
 `NonUnitalRing A`; the construction uses its actual multiplication and the
@@ -128,8 +127,8 @@ idempotentedness.
 
 The additive direct-sum decomposition, zero/one pseudometrics and their
 comparison, topological group laws, separation, inverse limits, density,
-completeness, completed multiplication, and module action extension remain
-separate obligations. This module constructs neither a completion nor the
+completeness, completed multiplication, and module action extension are not
+part of this module. This module constructs neither a completion nor the
 distinct left-module completion of I.1.4.
 
 The final anonymous `example` declarations check the complete unapplied

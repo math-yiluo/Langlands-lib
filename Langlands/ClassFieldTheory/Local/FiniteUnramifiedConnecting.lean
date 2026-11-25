@@ -66,8 +66,8 @@ def localUnramifiedValuationCoefficients :
     unitsRepresentation K L ⟶ Langlands.Tate.integralTrivial Gal(L/K) :=
   Rep.ofHom ⟨{
     toFun a := ULift.up (normalizedUnitOrder L a)
-    map_add' a b := ULift.ext _ _ (map_add (normalizedUnitOrder L) a b)
-    map_smul' z a := ULift.ext _ _ (map_zsmul (normalizedUnitOrder L) z.down a) }, by
+    map_add' a b := ULift.ext (map_add (normalizedUnitOrder L) a b)
+    map_smul' z a := ULift.ext (map_zsmul (normalizedUnitOrder L) z.down a) }, by
     intro σ
     apply LinearMap.ext
     intro a₀

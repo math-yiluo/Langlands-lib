@@ -1,6 +1,6 @@
 # Proof: constructibility of every geometric component count for schemes
 
-Worker 189. The final theorem `schemeGeometricComponentCountConstructible` proves
+The final theorem `schemeGeometricComponentCountConstructible` proves
 `SchemeGeometricComponentCountConstructibleStatement.{u}`. This is the scheme case of
 Conrad, *Weil and Grothendieck approaches to adelic points*, December 31, 2011,
 printed p.13 Lemma 5.1 (registered source
@@ -28,7 +28,7 @@ a truth value to the count in `ℕ∞`. The new ingredient is the base-change in
    Noetherian, `f` locally of finite type and quasi-compact, and `η` a generic point
    of `Y`. Suppose every irreducible component of the fibre over `η` is geometrically
    irreducible (`FiberComponentsGeometricallyIrreducible f η`). Then constancy holds
-   at `η`. Two published inputs, the Library lemma
+   at `η`. Two inputs, the Library lemma
    `exists_open_genericComponentClosures_geometricallyIrreducible_and_incidence` and
    the proved spreading theorem `finiteTypeGeometricallyIrreducibleGenericSpreading`,
    give an open `U ∋ η` with three properties at every `y ∈ U`:
@@ -66,7 +66,7 @@ a truth value to the count in `ℕ∞`. The new ingredient is the base-change in
    `isConstructible_of_irreducibleClosed_genericConstancy` turns step 5 into
    constructibility of every level set.
 7. `schemeGeometricComponentCountConstructible`: for an arbitrary ring `B`, the
-   published Noetherian approximation
+   Noetherian approximation
    `NoetherianApproximation.schemeSubalgebraDescent` (over `ULift ℤ`) is applied to
    `f`. It requires `f` to be locally of finite presentation, quasi-compact and
    quasi-separated, so all three hypotheses of the target are used here; the

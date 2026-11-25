@@ -1,8 +1,7 @@
 # Contragredients of weakly associated pairs
 
-Worker 35 authored this statement unit for task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`. All declarations lie in the namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`.
+All declarations lie in the namespace
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`.
 
 The module states the first consequence of association in Henniart 2000,
 §2.2: if a representation `S` of the Weil group and an automorphic
@@ -21,7 +20,8 @@ There are three `Prop`-valued definitions:
 - `ClassContragredientAssociationStatement`, for cuspidal classes;
 - `AssociatedContragredientStatement`, their conjunction.
 
-The statements are not proved. No representation, contragredient realization,
+The statements are proved by `associatedContragredient` in
+`Langlands.Automorphic.Unramified.ContragredientAssociationProof`. No representation, contragredient realization,
 presentation or local map is constructed, and no existence statement is made
 apart from the conclusion of the class form, discussed below.
 
@@ -34,7 +34,7 @@ apart from the conclusion of the class form, discussed below.
   `ClassExtension (K := F) (c F E)`, the extension of `E ≃ₐ[F] E` by the
   idele class group `C_E` with class `c F E`. A class family is a family of
   arbitrary classes in `H²`; the zero family is one. As the published
-  `Langlands.ClassField.Global.RelativeWeilGroup` documents, the extension is
+  `Langlands.ClassFieldTheory.Global.RelativeWeilGroup` documents, the extension is
   the relative Weil group `W_{E/F}` of the sources only when `c F E` is the
   arithmetic fundamental class `u_{E/F}`. This module assumes nothing about
   `c`, so for general `c` the group is a class-indexed extension, not a Weil
@@ -138,13 +138,16 @@ other.
   existence. It is true, but deep: a cuspidal representation is irreducible
   and admissible, so the tensor product theorem decomposes it into local
   factors that are spherical at almost every place. These factors have
-  countable dimension, so they can be realized in every universe. None of
-  this is formalized in the Library, and this module does not state it
-  separately.
+  countable dimension, so they can be realized in every universe. This
+  module does not state it separately.
 
 ## Why the statements are true
 
-This explanation is not formalized.
+The proof of the presented form in `Langlands.Automorphic.Unramified.ContragredientAssociation`
+follows this route for rank, continuity and the Weil side. For the automorphic side it uses
+`CuspidalOperatorRealization.eigenvalues_eq_map_inv_of_isContragredientOf` (module
+`Langlands.Automorphic.ContragredientSphericalSpectrum`), which obtains the inverse spectrum from
+Hecke adjointness for the invariant pairing, not from local contragredients and Satake inversion.
 
 - **Rank and continuity.** The dual of `S` has the same rank as `S` and is
   continuous because `S` is, by `rank_dual` and `isContinuous_dual_iff`.
@@ -187,8 +190,7 @@ generalizes it.
 1. **Arithmetic specialization.** Henniart's `S` is a representation of the
    absolute Weil group `W_F`. Here `S` is a representation of the
    finite-level group `RelativeWeilGroup c F E`, as in the published
-   association relation; the Library has no absolute global Weil group and
-   no maps between levels. The comparison with Henniart applies only when
+   association relation. The comparison with Henniart applies only when
    `c F E` is the arithmetic fundamental class, for instance when `c`
    satisfies `IsArithmeticClassFamily c`, so that `RelativeWeilGroup c F E`
    is the relative Weil group `W_{E/F}`. It also needs the local maps `ι`
@@ -229,8 +231,8 @@ generalizes it.
 
 ## Scope
 
-The module states two unproved theorems and their conjunction. It does not
-assert:
+The module states two theorems and their conjunction, and does not prove
+them. It does not assert:
 
 - the existence of a contragredient realization, of any weakly associated
   pair, or of local maps `ι`;

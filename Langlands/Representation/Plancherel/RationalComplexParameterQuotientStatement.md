@@ -64,7 +64,7 @@ cosets of `P`, giving the commuting quotient homeomorphisms. This route is
 an intended proof plan only; this statement does not assume that algebraic
 proposition or any of its conclusions as a premise.
 
-This unit does not assert discreteness or cocompactness of the periods,
+This module does not assert discreteness or cocompactness of the periods,
 the compact imaginary quotient, algebraic torus representability or its
 algebraic structure, the character tensor-space or split-center comparisons,
 or the pure-tensor norm formula. These remain separate construction and

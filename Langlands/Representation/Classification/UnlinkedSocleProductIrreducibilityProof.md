@@ -1,7 +1,5 @@
 # Products of Zelevinsky socles with mutually unlinked multisegments
 
-Author: Worker 4879.
-
 This module proves the published proposition
 `Langlands.Classification.UnlinkedSocleProductIrreducibility` of
 [TadicBlockReductionStatement](TadicBlockReductionStatement.md), which states Zelevinsky

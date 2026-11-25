@@ -1,6 +1,6 @@
 # Simultaneous diagonalization of orthogonal idempotent matrices
 
-Worker 303. This module proves one linear-algebra theorem,
+This module proves one linear-algebra theorem,
 `Langlands.LinearAlgebra.exists_conj_eq_diagonal_of_orthogonal`. It is used
 by `Langlands.GroupScheme.Dynamic.GeneralLinearCocharacterWeights` to
 conjugate a cocharacter of `GL_n` over a field to a diagonal cocharacter.

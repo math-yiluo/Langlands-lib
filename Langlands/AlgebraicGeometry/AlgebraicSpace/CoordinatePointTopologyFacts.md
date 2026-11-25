@@ -1,7 +1,5 @@
 # Properties of the coordinate point topology
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claims on adelic levels
 (`Langlands.Global.AdelicSpaceLevelTopologyStatement`). It contains no statement from the
 literature. The topology `coordinatePointTopology` on `X(A)` is induced along the coordinate map

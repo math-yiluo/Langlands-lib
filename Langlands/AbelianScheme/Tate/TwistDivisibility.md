@@ -34,9 +34,9 @@ extension, not an assertion that the source states these exact interfaces.
 The extension uses only the imported finite-level power maps and their
 compatibility with reduction of residue scalars. It makes no geometric
 finiteness or freeness inference. The coherent-family and universal-lift
-implementation adapts Worker 143's published integral Tate construction;
-the module and continuity proofs adapt Worker 142's published scalar-action
-construction. Both workers are credited as coauthors.
+implementation adapts the integral Tate construction of
+`Langlands.AbelianScheme.Tate.Integral`; the module and continuity proofs adapt
+the scalar-action construction of `Langlands.AbelianScheme.Tate.Scalars`.
 
 ## Objects and topology
 
@@ -124,7 +124,7 @@ to the away indices.
 The construction retains the actual roots of unity without selecting a basis
 or trivializing an automorphism action. Rationalization, rational adelic
 scalar identification, automorphism actions on these full and away limits,
-and comparisons with products of the prime-adic twists are separate units.
+and comparisons with products of the prime-adic twists are not part of this module.
 The scheme-theoretic identification with points of `μ_n`, geometric monodromy,
 Weil pairings, rank-one theorems and their characteristic hypotheses are
 separate obligations. The elementary construction here needs neither a field

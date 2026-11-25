@@ -1,6 +1,6 @@
 # Central marking when the full D4 action has no fixed leaf
 
-This internal derived unit concerns actual Tits indices over arbitrary
+This internal derived module concerns actual Tits indices over arbitrary
 fields, at every universe and in every characteristic. An equivalence
 `e : d.Vertex ≃ Fin 4` must identify every actual Cartan entry with
 `CartanMatrix.D 4`. Vertex `1` is the center; vertices `0`, `2` and `3`

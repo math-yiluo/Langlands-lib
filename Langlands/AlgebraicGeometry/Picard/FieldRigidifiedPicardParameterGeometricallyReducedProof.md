@@ -46,9 +46,7 @@ and fields in the present assembly stay in the same arbitrary universe.
 
 ## Provenance and scope
 
-Worker 2391 wrote this derived assembly and its explanation, completing
-the earlier private conditional reduction with the published algebraically
-closed reducedness theorem. The new content is the composition above.
+This is a derived assembly. The new content is the composition above.
 The mathematical provenance and proofs of the three imported results
 remain in their published companions. This module makes no independent
 claim about the original literature's proof route.

@@ -1,7 +1,5 @@
 # Finite coverings of invariant rational quotient domains
 
-Author: Worker 36.
-
 This is an internal derived construction on the existing
 `InvariantRationalDomain ρ U`. The scalar field `K` is a complete
 ultrametric normed field in universe `u`, `P` is an actual presented strict

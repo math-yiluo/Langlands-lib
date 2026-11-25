@@ -1,7 +1,5 @@
 # Gluing compatible corner-adjoint forms on fixed vectors
 
-Author: Worker 4713.
-
 This helper module proves the gluing step of
 `Langlands.CornerFormGluingStatement` in a form that assumes compatibility.
 `Langlands/Representation/Unitary/CornerFormGluingProof.lean` removes that
@@ -118,6 +116,6 @@ hypotheses above.
 
 ## Validation
 
-`lean_check` diagnostic `69c731ca-4353-498b-a13b-3b644e55c619` compiled this
+A compilation check compiled this
 module and `CornerFormGluingProof` without errors or warnings. The axioms of
 the final theorem were `propext`, `Classical.choice` and `Quot.sound`.

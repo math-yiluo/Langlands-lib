@@ -1,13 +1,11 @@
 # Exponential-polynomial matrix coefficients on the integer lattice
 
-Authors: Worker 664, with Worker 6's representation-form formulation and prior
-elaboration diagnostic as input.
-
 `Langlands.IntegerLatticeMatrixCoefficientExponentialPolynomialStatement.{u}`
 is a closed Prop-valued definition in
 `Langlands.Representation.MatrixCoefficient.IntegerLatticeStatement`. It states
-the matrix-coefficient proposition in Renard's Appendix C.III. A proof of the
-proposition is a separate obligation.
+the matrix-coefficient proposition in Renard's Appendix C.III. The proposition
+is proved separately, as `Langlands.integerLatticeMatrixCoefficientExponentialPolynomial`
+in `Langlands.Representation.MatrixCoefficient.IntegerLatticeProof`.
 
 ## Original source and errata
 
@@ -29,11 +27,9 @@ The live French PDF and the linked erratum were downloaded for comparison;
 their bytes matched the retained book above and the registered erratum below.
 This is an observation about the author's linked materials on that date.
 
-The registered author-page snapshot is `renard-author-page-2026-10-26`, retained
-as `/home/taskhub/pilot/literature/David Renard — Author page and 2026-2010 book edition and errata links (snapshot 26 October 2026).html`.
-The supplementary source `renard-2010-corrections-complements`, SHA256
-`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-is retained as `/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`.
+The registered author-page snapshot is `renard-author-page-2026-10-26`.
+The supplementary source is `renard-2010-corrections-complements`, SHA256
+`fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`.
 Its appendix corrections on PDF18–19 were read. The final entry, for printed
 p.322, line -4 of the old edition, inserts parentheses around the
 scalar-times-unipotent factor before taking its integer power. The governing
@@ -112,7 +108,7 @@ adding positivity or nontriviality assumptions to the source formulation.
 There is no topology, smoothness, irreducibility, simultaneous
 diagonalizability, or pre-existing expansion hypothesis.
 
-## Imports and retained proof obligations
+## Imports and the proof
 
 `Langlands.Representation.MatrixCoefficient.Definitions` supplies the existing
 algebraic coefficient. Mathlib's `RepresentationTheory.Basic`, imported there,
@@ -123,7 +119,8 @@ finite-dimensionality predicate. The prepared Mathlib commit is
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The construction equating commuting invertible tuples with lattice
-representations is separate work owned by the parent task. This statement
+representations is separate: `Langlands.IntegerLattice.tupleRepresentationEquiv`
+in `Langlands.Representation.IntegerLattice`. This statement
 neither implements that equivalence nor supplies a tuple-form specialization.
 It needs no unpublished bridge as an import.
 
@@ -136,11 +133,8 @@ The coefficient is obtained by applying the fixed vector and functional.
 Simultaneous generalized-weight decomposition, common triangular bases,
 scalar-times-unipotent form, commutation and nilpotence of the nilpotent
 parts, the finite expansion for negative as well as nonnegative powers, and
-polynomiality of the binomial coefficients remain proof or construction
-obligations. This module imports no checked correspondence for those steps
-and proves none of them. A future proof may document a different route.
-
-Worker 6's earlier private elaboration diagnostic
-`2f5f8b61-f899-48ed-a329-653016e47c3c` motivated the formulation; it is not
-acceptance or proof evidence. This contribution names and documents the
-actual statement for independent review.
+polynomiality of the binomial coefficients are the steps of the source proof.
+This module imports no checked correspondence for those steps and proves none
+of them. The proof in `IntegerLatticeProof` takes a different route, by
+induction on `d` with the generalized eigenspaces of a single operator at each
+step, as its Markdown documents.

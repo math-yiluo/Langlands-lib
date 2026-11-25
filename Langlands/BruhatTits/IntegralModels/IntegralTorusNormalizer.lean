@@ -166,7 +166,10 @@ theorem characterAut_specialized_reflection
       χ - latticePairing T.specialFibre χ (T.cocharacterSpecialization hT ν) •
         T.characterSpecialization hT a := by
   obtain ⟨ψ, rfl⟩ := (T.characterSpecialization hT).surjective χ
-  rw [← T.characterSpecialization_characterAut, hσ, map_sub, map_zsmul,
+  have hzsmul : ∀ (n : ℤ) (x : characterLattice S),
+      T.characterSpecialization hT (n • x) = n • T.characterSpecialization hT x :=
+    fun n x => (T.characterSpecialization hT).toAddMonoidHom.map_zsmul n x
+  rw [← T.characterSpecialization_characterAut, hσ, AddEquiv.map_sub, hzsmul,
     T.latticePairing_specialization]
 
 omit [IsLocalRing R] in

@@ -1,6 +1,6 @@
 # Frobenius reciprocity for normalized parabolic induction
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviFrobeniusReciprocityStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviFrobeniusReciprocityStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviFrobeniusReciprocityStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviFrobeniusReciprocityStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The formalized result is the adjunction part of the Proposition of VI.1.2 (printed p.136 / PDF p.142), in translation:
 
@@ -66,7 +66,7 @@ This is the adjunction "`i_P^G` is right adjoint to `r_P^G`" in explicit form. T
 
 ## Remaining obligations
 
-The proof is a separate obligation, and nothing is asserted here about how it is discharged. A natural route through the published Library is as follows. Apply the published `Langlands.Aubert.General.FirstAdjointness.equiv` to the decomposition of the parabolic image. Its unimodularity hypothesis `IsUnimodularModulus (pointImage (r ≫ p)) _` is proved by the published `Langlands.Plancherel.parabolicRadical_isUnimodular` from a compatible `ParabolicRootPresentation`. Existence of such a presentation for an arbitrary actual parabolic is a separate open structural obligation. A proof that avoids it, for example from the fact that `N(F)` is a union of compact open subgroups, would also do. Then transport across `leviPointsEquiv`, which identifies intertwiners of pulled-back representations.
+The proof is a separate obligation, and nothing is asserted here about how it is discharged. A natural route through the published Library is as follows. Apply the published `Langlands.Aubert.General.FirstAdjointness.equiv` to the decomposition of the parabolic image. Its unimodularity hypothesis `IsUnimodularModulus (pointImage (r ≫ p)) _` is proved by the published `Langlands.Plancherel.parabolicRadical_isUnimodular` from a compatible `ParabolicRootPresentation`. Existence of such a presentation for an arbitrary actual parabolic is the separate structural statement `ParabolicRootPresentationExistenceStatement`, proved by `parabolicRootPresentationExistence` (module `Langlands.GroupScheme.Rational.ParabolicRootPresentationProof`). A proof that avoids it, for example from the fact that `N(F)` is a union of compact open subgroups, would also do. Then transport across `leviPointsEquiv`, which identifies intertwiners of pulled-back representations.
 
 ## Provenance
 

@@ -1,8 +1,6 @@
 # Polynomial growth under a compactly supported convolution kernel
 
-Documentation correction (P3-057): Worker 1057.
-
-This unit states an elementary analytic prerequisite for the automorphic
+This module states an elementary analytic prerequisite for the automorphic
 differential-growth proof. It uses the published actual group
 `Langlands.Global.InfiniteAdelicGL K n` and its matrix/inverse height. This
 module proves only the logical implication between the two formulations below.
@@ -36,9 +34,9 @@ from the continuity and compact support of `κ` and the height bound on `f`.
 The convention `f(y) κ(y⁻¹g)` is chosen so that a right-translation-generated
 differential, whose real-generator direction is `gX`, acts on the second
 factor. Transfer of that differential under the integral is not part of this
-unit. It is proved separately, for smooth compactly supported kernels, by
+module. It is proved separately, for smooth compactly supported kernels, by
 `compactKernelConvolutionRealDifferentiation` and
-`compactKernelConvolutionDifferentiation`; see Status below. This unit has no
+`compactKernelConvolutionDifferentiation`; see Status below. This module has no
 dependency on the construction of a smooth kernel subtype or on differential
 covariance.
 
@@ -68,7 +66,7 @@ for the Library's already defined height. Sections 4.2–4.3, printed pp.194–1
 PDF189–190, give the adelic per-finite-slice setting. These pages and the
 bibliography on PDF197 were read. No project errata entry for this source was
 found. The cross-reference slips in §2.2 are documented in the published
-`Langlands.Automorphic.PreservationStatement.md`; this unit relies on the
+`Langlands.Automorphic.PreservationStatement.md`; this module relies on the
 content of its growth sentence, not its printed condition labels.
 
 The new statements are not quotations of a numbered source theorem. The
@@ -80,9 +78,10 @@ so the integral becomes `∫ z, f(g z) κ(z⁻¹) dμ(z)`, and then uses
 kernel norm is integrable by compact support. This module does not implement
 that route. The published proof `compactKernelConvolutionBound` follows it.
 
-The parent target remains exactly
-`Langlands.Automorphic.AutomorphicDifferentialGrowthStatement K n`, which is
-unproved. Applying these statements to that target still requires proving
+The target these statements serve is
+`Langlands.Automorphic.AutomorphicDifferentialGrowthStatement K n`, proved as
+`automorphicDifferentialGrowth` (module `Langlands.Automorphic.DifferentialGrowthProof`).
+Applying these statements to that target requires
 existence of a smooth reproducing kernel from the actual automorphic
 hypotheses. That obligation is neither assumed nor discharged here or in the
 published results below. Two other ingredients of that application are

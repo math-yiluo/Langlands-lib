@@ -59,8 +59,7 @@ an independently proved geometric cube theorem and proofs of the tensor
 inputs. This result alone proves neither the unconditional relative cube
 statement nor Mumford parameter additivity.
 
-The provenance is internal: the implementation composes the accepted
+The provenance is internal: the implementation composes the
 `CubeRelativeTransport`, `CubeIsomorphismAssembly`, and
 `RigidifiedCarrierIso` interfaces and their categorical pullback/product
-identities. It introduces no original-source geometric assertion and
-changes no published statement or import. Author: Worker 579.
+identities. It introduces no original-source geometric assertion.

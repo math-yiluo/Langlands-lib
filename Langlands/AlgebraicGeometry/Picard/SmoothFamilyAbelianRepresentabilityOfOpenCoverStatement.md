@@ -1,8 +1,5 @@
 # Zariski-local existence of an abelian-scheme smooth-family representer
 
-Statement design: Workers 930 and 141. Formalization, Markdown and source
-checks: Worker 1043.
-
 `Langlands.AbelianScheme.SmoothFamilyAbelianRepresentabilityOfOpenCoverStatement.{u}`
 is the proposition
 
@@ -57,7 +54,7 @@ overlap of `𝒰.X i` and `𝒰.X j`, no isomorphisms between the corresponding
 restrictions of the local families, and no cocycle condition. The group law and unit section of each local `B` are
 arbitrary abelian-scheme structures; nothing ties them to those of another
 member. Producing compatible gluing data from these independent local pairs
-and combining them into one global pair is the substance of any future proof.
+and combining them into one global pair is the substance of any proof.
 
 The members `𝒰.X i` are not given a `QuasiSeparatedSpace` instance in the
 hypothesis, and the predicate used there does not need one. Since each
@@ -113,11 +110,6 @@ type is in universe `u`), it would give the shared target for `S`; that is the
 first reduction step in the route described below. That combination is not
 proved in this module.
 
-The existing statement pairs and their import closures are unchanged,
-including `SmoothFamilyAbelianRepresentabilityStatement`,
-`SmoothFamilyQuasiSeparatedRepresentabilityStatement`, and the flatness and
-finite-presentation targets that consume the shared target's geometry.
-
 ## Original sources and derived provenance
 
 This is a derived local-to-global statement for the Library's existing
@@ -152,8 +144,8 @@ representability by the dual abelian scheme over every base, and the
 universal rigidified Poincare sheaf. This motivates the represented functor
 and the global conclusion; Lan does not state a cover-gluing lemma.
 
-Worker 141's accepted source map,
-[Relative Picard representability: source and construction boundaries](../../../notes/abelian-schemes/relative-picard-source-map.md),
+The source map
+[Relative Picard representability: source and construction boundaries](../../../notes/abelian-schemes/relative-picard-source-map.md)
 records the read passages of both sources and the remaining comparisons.
 
 The Library's smooth-family condition is an explicit geometric-fibre witness
@@ -161,34 +153,39 @@ condition, as described above. Its comparison with the sources' algebraic
 equivalence on ordinary residue-field fibres is not asserted here, and the
 citations supply motivation and conventions, not an imported Lean proof.
 
-## Future proof obligations
+## Proof obligations
 
-These inputs are recorded for a future proof; none is assumed by the
-proposition. Several are unproved, and one is not yet stated.
+These inputs describe one route to a proof; none is assumed by the
+proposition. The Library proves the proposition as
+`Langlands.AbelianScheme.smoothFamilyAbelianRepresentabilityOfOpenCover`
+(module `SmoothFamilyAbelianRepresentabilityOfOpenCoverProof`), from Zariski
+gluing of rigidified classes (`rigidifiedClassesZariskiGluing`) and the
+existence of abelian-scheme structures on schemes locally isomorphic to
+abelian schemes (`abelianSchemeStructureOfOpenCover`).
 
 1. Restriction of the local universal property to double and triple
    overlaps. The smooth-family universal base-change statement
-   `SmoothFamilyUniversalBaseChangeStatement` (statement task
-   `b3fc018d-5e69-4f09-9807-0d72b7e02d80`, submitted separately and not
-   imported here) would supply this, together with transport along the
+   `SmoothFamilyUniversalBaseChangeStatement` (proved as
+   `smoothFamilyUniversalBaseChange`, not imported here) would supply this, together with transport along the
    canonical isomorphisms between iterated and composite base changes of `A`.
 2. Unique parameter isomorphisms on overlaps, from
-   `SmoothFamilyUniversalComparisonStatement` (proof task
-   `6bd3a08a-6191-4308-8df4-b928b7fe3fc1`). That statement needs one
+   `SmoothFamilyUniversalComparisonStatement` (proved as
+   `smoothFamilyUniversalComparison`). That statement needs one
    parameter to be quasi-separated; overlap parameters are quasi-separated
    because abelian schemes are separated and `S` is quasi-separated.
    Uniqueness of these isomorphisms gives the cocycle condition for the
    parameter schemes.
 3. That comparison gives only `Nonempty` family isomorphisms. A cocycle for
    the families needs actual uniqueness of rigidified isomorphisms
-   (`RigidifiedIsoUniquenessStatement`, proof task
-   `e0c0560c-6851-48c0-9e92-2d5b0d6af6a2`). Class-level Zariski separatedness
-   (`RigidifiedClassesZariskiSeparatedStatement`, proof task
-   `f34bab0f-25a2-40c7-a05c-6c0f06ed4283`) does not supply effective descent.
+   (`RigidifiedIsoUniquenessStatement`, proved as `rigidifiedIsoUniqueness`).
+   Class-level Zariski separatedness
+   (`RigidifiedClassesZariskiSeparatedStatement`, proved as
+   `rigidifiedClassesZariskiSeparated`) does not supply effective descent.
    Effective Zariski descent, that is object gluing, of actual rigidified line
-   bundles is a missing statement with no current owner. Morphism gluing is
-   tasks `16d8f979-ba00-4cf2-a264-f2e26049d79a` and
-   `e1c23c06-e85c-48cb-b86f-6f3b5ccbbf40`.
+   bundles is not supplied by these statements. The Library's proof of the
+   proposition uses the gluing of rigidified classes along Zariski covers of
+   a test scheme, `RigidifiedClassesZariskiGluingStatement` (proved as
+   `rigidifiedClassesZariskiGluing`).
 4. Gluing of the actual parameter schemes over `S` along the cocycle, and
    descent of smoothness, properness and geometrically connected fibres, using
    Mathlib's scheme gluing and morphism gluing.
@@ -196,23 +193,11 @@ proposition. Several are unproved, and one is not yet stated.
    the arbitrary local group laws or unit sections. One route re-centres each
    local law at the classifying map of the trivial class and applies
    arbitrary-base pointed-morphism rigidity
-   (`Langlands.AbelianScheme.PointedMorphismRigidity`, task
-   `014e89e9-670d-40d8-8e52-26f62f6a0116`) so that the isomorphisms become
+   (`Langlands.AbelianScheme.PointedMorphismRigidity`, proved as
+   `pointedMorphismRigidity`) so that the isomorphisms become
    group homomorphisms and the group laws glue.
 6. The two conjuncts of the global predicate. Global smooth-family
    membership is checked at geometric points of the glued parameter, each of
    which factors through some local parameter. Global classification on a
    quasi-separated test uses its open subschemes over the cover members,
    local existence and uniqueness, morphism gluing, and Zariski separatedness.
-
-Each substantial missing input is to become its own focused statement and
-proof task after coordination with its current owner. All existing operator
-pauses and separate ownership remain in force, including tasks
-`052750df-cf2f-43ff-b892-80dcc6125078`,
-`b879dd05-2261-4214-a0d1-57cdb62b5634`,
-`f38215ec-58a9-488f-8fd0-305952a3db2b`,
-`9d039bac-24d3-4106-869b-bd98894b444d`,
-`4103d548-09ec-41f9-ab1e-1714a6838a09`,
-`f34bab0f-25a2-40c7-a05c-6c0f06ed4283` and
-`c8d28806-2733-4037-8503-633a7b12a5f6`. The last of these glues along covers
-of a test scheme, not of the base.

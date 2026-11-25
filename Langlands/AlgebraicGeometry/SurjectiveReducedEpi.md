@@ -1,8 +1,9 @@
 # Surjective morphisms onto reduced schemes are epimorphisms
 
-Worker 1425 authored this module as a helper for the proof task
-`5dc6c43c-2acc-40a0-92ad-454b4232a509` (central torus and derived subgroup
-generation for connected reductive groups). It supplies the final conjunct
+This module is a helper for the proof of central torus and derived subgroup
+generation for connected reductive groups
+(`Langlands.GroupScheme.Reductive.CentralDerivedProductReduction` imports it).
+It supplies the final conjunct
 `Epi (subgroupProductMap i d)` of
 `Langlands.GroupScheme.ReductiveCentralDerivedProductStatement` once the
 underlying map of the product morphism is known to be surjective.

@@ -1,7 +1,5 @@
 # Proof of the local linked-segment socle embedding reduction
 
-Author: Worker 775.
-
 This module proves
 `Langlands.Classification.linkedSegmentSocleEmbeddingReduction :
 LinkedSegmentSocleEmbeddingReduction.{uF,uV} F T`, with outer arguments
@@ -38,13 +36,11 @@ a disjunction:
 
 ## Inputs
 
-All inputs are used by their current Library Lean names.
+All inputs are used by their Library Lean names.
 
 - **Two-factor gluing.** `Langlands.Classification.linkedSegmentSocleGluing`
   (module `Langlands.Representation.Classification.LinkedSegmentSocleGluingProof`,
-  lean.proof candidate c865bd57-056a-4f5a-9779-ce3255b09360, task
-  6780b79c-9526-46aa-b8b4-00377d68b1ea, Worker 773, public at Library commit
-  622054b9c6b9f07feb1335165348ac66b27b39e5). It proves
+  public at Library commit 622054b9c6b9f07feb1335165348ac66b27b39e5). It proves
   `LinkedSegmentSocleGluing.{uF,uV} F T`. For a two-block segment-socle datum in
   forward order `Δ', Δ` it gives `U`, `I`, a socle datum `e₂` with
   `List.ofFn e₂.segments = U :: I.toList`, and a length-two filtration `s` of the
@@ -142,21 +138,21 @@ All inputs are used by their current Library Lean names.
 
 ## Dependency audit
 
-The task excludes these items, with their conclusions, proof successors and
+The proof excludes these items, with their conclusions, the files proving them and
 transitive proof dependencies:
 
-- socle exhaustion f3a69bc8 (`MultisegmentSocleExhaustion`);
-- segment analytic classification aca8805b
+- socle exhaustion (`MultisegmentSocleExhaustion`);
+- segment analytic classification
   (`SegmentEssentialSquareIntegrableClassification`);
-- special-head multisegment exhaustion 3bfb61fa (`MultisegmentHeadExhaustion`);
-- ordered special-head existence ebea9a8a (`OrderedMultisegmentHeadExistence`);
-- quotient coverage 20e4e1c6 (`OrderedMultisegmentQuotientExhaustion`);
-- tempered block uniqueness 52e97845 (`TemperedBlockUniqueness`);
-- `SquareIntegrableLanglandsClassification` (task 1cb45da2);
-- square-integrable exhaustion cd8ab97c (`SquareIntegrableLanglandsExhaustion`);
-- regular exhaustion bf433f0a (`GLRegularLanglandsExhaustionStatement`).
+- special-head multisegment exhaustion (`MultisegmentHeadExhaustion`);
+- ordered special-head existence (`OrderedMultisegmentHeadExistence`);
+- quotient coverage (`OrderedMultisegmentQuotientExhaustion`);
+- tempered block uniqueness (`TemperedBlockUniqueness`);
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion (`SquareIntegrableLanglandsExhaustion`);
+- regular exhaustion (`GLRegularLanglandsExhaustionStatement`).
 
-The checks below were run against the module as submitted.
+The checks below were run against this module.
 
 - **Import closure.** The module's project import closure has 1,386 modules.
   It contains no proof module of an excluded item, such as
@@ -202,7 +198,7 @@ The checks below were run against the module as submitted.
     `SegmentSocleJacquetReduction`. Its own dependencies are in the same
     traversal.
 
-  The task allows the sufficient irreducibility direction to be reused.
+  The sufficient irreducibility direction is not excluded and may be reused.
 - **Axioms.** `linkedSegmentSocleEmbeddingReduction` depends only on `propext`,
   `Classical.choice` and `Quot.sound`.
 

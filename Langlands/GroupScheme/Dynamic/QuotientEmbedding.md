@@ -1,6 +1,6 @@
 # Actual comparison maps between supplied dynamic quotients
 
-Worker 708. This internal construction works over every base scheme
+This internal construction works over every base scheme
 `S : Scheme.{u}` and for actual group schemes `G,H` over `S`.
 
 Given a homomorphism `f : G → H`, a cocharacter `χ` of `G`, and supplied
@@ -37,7 +37,9 @@ These constructions require neither smoothness nor affineness of `G` or
 They use effective-epimorphism descent, fpqc local lifts, general dynamic
 functoriality and closed-subgroup orbit-extension reflection. No Borel,
 regular cocharacter or rank-one input occurs. The provenance is internal,
-with no new external geometric theorem. The unit is a comparison step
+with no new external geometric theorem. The module is a comparison step
 toward the affine homogeneous space route to
 `DynamicQuotientProperStatement`; the affineness and closedness arguments
-required for that route remain open.
+required for that route are not part of this module. The statement is proved by
+`dynamicQuotientProper` (`Dynamic.QuotientProperProof`), which imports this
+module.

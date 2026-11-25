@@ -1,10 +1,9 @@
 # Admissibility of irreducible product-Levi representations
 
-Author: Worker 246.
-
-This pair states one future proof target in `Langlands.CuspidalSupport`. It is
+This pair states one proposition in `Langlands.CuspidalSupport`. It is
 a proposition definition only. It neither proves the assertion nor assumes it
-anywhere, and no Library result is claimed to imply it.
+anywhere. The module `IrreducibleLeviAdmissibilityProof` proves it, as
+`Langlands.CuspidalSupport.irreducibleLeviAdmissibility`.
 
 ## Exact declaration
 
@@ -167,6 +166,8 @@ The Library already proves the quasicuspidal case (step 3) in its own form,
 as cited above. A proof of the present target still needs step 1 for
 arbitrary product Levis, together with the admissibility of normalized or
 unnormalized induction from a product Levi to a product Levi and the
-transfer along an injective intertwiner. The task context reports no
-published arbitrary product-Levi embedding of this kind. These are
-obligations for a separate proof task, not results of this pair.
+transfer along an injective intertwiner. These are not results of this
+pair. `IrreducibleLeviAdmissibilityProof` takes them from
+`normalizedRefinedQuasicuspidalEmbedding`,
+`Parabolic.normalizedRefinedInductionAdmissibility` and
+`isAdmissible_of_injective`.

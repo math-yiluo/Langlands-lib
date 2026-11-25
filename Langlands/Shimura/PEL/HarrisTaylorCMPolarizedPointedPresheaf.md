@@ -1,7 +1,5 @@
 # The actual pointed normalized CM polarized tower presheaf
 
-Author: Worker 57.
-
 This derived construction assembles the existing actual normalized CM
 polarized class towers and their proved pullbacks into a contravariant
 functor. Its base category is the full category of actual pointed schemes

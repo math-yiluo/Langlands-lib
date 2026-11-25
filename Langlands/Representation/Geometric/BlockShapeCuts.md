@@ -1,7 +1,5 @@
 # Ordered block shapes and interior cuts
 
-Author: Worker 320.
-
 This derived supporting construction identifies the Library's actual ordered
 positive `Langlands.GeneralLinear.BlockShape n` with finite sets of interior
 cuts. It applies to every natural rank, including zero.

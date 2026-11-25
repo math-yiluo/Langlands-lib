@@ -1,6 +1,6 @@
 # Whittaker characters on the rectangular radicals
 
-This definition unit connects the actual radical matrices in `Shahidi.Geometry`
+This module of definitions connects the actual radical matrices in `Shahidi.Geometry`
 to the Library's standard Whittaker character. It follows Shahidi,
 *Fourier transforms of intertwining operators and Plancherel measures for
 GL(n)* (1984), printed pages 71–72, especially the conjugate-character kernels
@@ -43,7 +43,7 @@ The norm lemmas follow from the unitary additive character, and the
 Continuity of both kernels follows from continuity of the radical matrices,
 their entries, finite sums, the additive character, and conjugation.
 
-The kernels are only the scalar character factors. This unit does not define
+The kernels are only the scalar character factors. This module does not define
 an induced representation, a tensor contraction, an integral or a Whittaker
 functional on an induced space. In particular it makes no convergence,
 stabilization or local-coefficient existence assertion.

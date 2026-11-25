@@ -1,10 +1,10 @@
 # Haar integration positivity and density embedding
 
-This proof unit addresses the actual integration and density maps of Renard
+This proof module addresses the actual integration and density maps of Renard
 II.3.6, printed pp.46–47 / PDF pp.52–53. The source is David Renard,
 *Représentations des groupes réductifs p-adiques*, French version of 9 July
 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`.
-The support equality is the derived bridge specified in the published
+The support equality is the derived bridge specified in
 `DensityEmbeddingStatement`.
 
 The integration functional is strictly positive because its imaginary part
@@ -28,4 +28,4 @@ of the original test and proves membership in the existing submodule
 for arbitrary locally compact, Hausdorff, totally disconnected spaces with
 measures finite on compact sets and positive on nonempty open sets. Their Haar
 specialization is the exact theorem `densityEmbedding`, retaining the group
-universe and all published hypotheses.
+universe and all hypotheses of the statement.

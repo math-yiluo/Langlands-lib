@@ -64,7 +64,7 @@ def FiniteCharacterConjugateDualCorrectionStatement : Prop :=
     Sdual.realization.IsContragredientOf S.realization →
     S.isoClass.IsFiniteOrderDeterminantTwist (α * α.complexConj)
       Sdual.complexConj.isoClass →
-    ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+    ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
     S.isoClass.IsRegularAlgebraic →
     S.isoClass.HasSupercuspidalComponent.{uE, uV} v →
     (S.determinantTwist α hα).isoClass.IsConjugateSelfDual ∧

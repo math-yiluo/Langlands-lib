@@ -1,7 +1,5 @@
 # Proof of the relative root system
 
-Author: Worker 23. Worker 15 pointed out the composition used here.
-
 Module `Langlands.GroupScheme.Rational.RelativeRootSystemProof`.
 
 ## Result

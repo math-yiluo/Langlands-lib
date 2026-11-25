@@ -1,6 +1,6 @@
 # Renard III.3.1: original coinvariant sheaf, fibres and distributions
 
-These are unproved closed proposition targets for David Renard,
+These are closed proposition targets for David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, III.3.1, printed pp.83–84 / PDF pp.89–90: the construction's
 compact-section identification, the Proposition identifying the fibre of
@@ -72,7 +72,7 @@ F′_y ≅ (F|_(q⁻¹{y}))_c(q⁻¹{y})_G.
 The natural isomorphism is a conclusion. This target specifies its exact
 original endpoints and naturality in `F`, without asserting a particular
 map on representatives. The source proof's compact restriction
-surjectivity, kernel span and successive quotient identifications remain
+surjectivity, kernel span and successive quotient identifications are
 proof obligations; none is silently supplied as input data.
 
 ## The distribution Corollary
@@ -93,6 +93,11 @@ vanish; sheaf separation and the canonical compact comparison then give
 zero global coinvariant dual. This is a proof route, not a proved
 reduction in this module.
 
-`Statements` conjoins the three targets while retaining their full names
-for separate focused proof tasks. The actual sheaf/module and homogeneous
-category equivalences are separate declarations.
+`Statements` conjoins the three targets while retaining their full names.
+They are proved separately, as `CoinvariantStatements.compactComparisonStatement`
+in `Langlands.Sheaf.Renard.CoinvariantCompactComparisonProof`,
+`CoinvariantStatements.fibreCoinvariantStatement` in
+`Langlands.Sheaf.Renard.FibreCoinvariantProof` and
+`CoinvariantStatements.noInvariantDistributionsStatement` in
+`Langlands.Sheaf.Renard.NoInvariantDistributionsProof`. The actual sheaf/module
+and homogeneous category equivalences are separate declarations.

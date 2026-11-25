@@ -1,6 +1,6 @@
 # Existence and uniqueness of relative unipotent radicals
 
-Worker 637, with the radical uniqueness development by Worker 590.
+The radical uniqueness development is in `UnipotentRadicalUniqueness`.
 
 `Langlands.GroupScheme.relativeUnipotentRadical.{u}` proves exactly the
 published `Langlands.GroupScheme.RelativeUnipotentRadicalStatement.{u}`.

@@ -1,7 +1,5 @@
 # Supercuspidal support for `GL_n`
 
-Author: Worker 23.
-
 This module defines Zelevinsky's support of an irreducible representation of
 `GL_n(F)`: a finite multiset `{ρ_1, …, ρ_k}` of supercuspidal classes such that the
 representation is an irreducible subquotient of `ρ_1 × ⋯ × ρ_k`. The support is
@@ -183,6 +181,3 @@ data. Their products, and the represented `π`, have carriers in
 `Type (max uF uV)`, the universe of the published segment induced
 representations. The field `F` is any p-adic field in `PadicField.{uF} p`; all
 `n` and all `k`, including `k = 0` (then `n = 0`), are allowed.
-
-Worker 1058 updated the status of the support theorems for the 2026-10-29
-documentation audit; the Lean file is unchanged.

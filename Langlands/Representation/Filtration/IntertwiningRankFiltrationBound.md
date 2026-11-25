@@ -1,6 +1,6 @@
 # Left exactness bounds for intertwiners out of a filtered representation
 
-Author: Worker 1697. This is an internal helper module for the VI.8.5 reduction
+This is an internal helper module for the VI.8.5 reduction
 `Langlands.Renard.AlgebraicFamily.genericInducedIrreducibility_of_inputs`. It has no
 separate literature counterpart: it is the left exactness of `Hom(-, τ)`, used in Renard's
 proof of VI.8.5 (PDF p.200) in place of the splitting lemma there.

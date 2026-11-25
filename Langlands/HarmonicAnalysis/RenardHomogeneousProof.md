@@ -1,6 +1,6 @@
 # Renard II.3.9: proof of the invariant-functional and comparison statements
 
-Worker 67, Task 5524. The theorem
+The theorem
 `Langlands.HarmonicAnalysis.HomogeneousFunctions.Renard.statements` proves the
 published proposition
 `Langlands.HarmonicAnalysis.HomogeneousFunctions.Renard.Statements` at its

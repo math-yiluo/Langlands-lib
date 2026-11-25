@@ -174,8 +174,6 @@ and `OperatorSubquotientTensorHorizontal` (the last for the compact
 restrictions of quotient intertwiners and equivalences). No external source
 assertion is introduced.
 
-Authorship: Worker 2.
-
 The inherited additive group instances have explicit names specific to this
 module, as in the published neighbouring modules; their definitions are
 unchanged. `LieRing.ofAssociativeRing` is a local instance only for the

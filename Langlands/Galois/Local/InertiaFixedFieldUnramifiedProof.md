@@ -1,7 +1,5 @@
 # Proof of finite unramified exhaustion of the actual inertia fixed field
 
-Author: Worker 107.
-
 `Langlands.PadicField.inertiaFixedFieldUnramifiedExhaustion` proves exactly
 `Langlands.PadicField.InertiaFixedFieldUnramifiedExhaustion.{u}`, in arbitrary
 universe `u`, with no additional outer hypotheses. The statement is imported
@@ -88,11 +86,11 @@ Jay Greenberg, Springer GTM 67 (1979), registered as
 `serre-1979-local-fields`, file
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 107 read III.5, Theorems 2–3 and Corollaries 1–3, printed pages 54–55
+The following were read: III.5, Theorems 2–3 and Corollaries 1–3, printed pages 54–55
 (PDF pages 61–62); IV.1, Proposition 1 and the corollary to Proposition 2,
 printed pages 62–63 (PDF pages 69–70); and V.4, Lemmas 6–7, printed pages
 89–90 (PDF pages 96–97). No project errata entry for this source was present
-in the current public notes when checked.
+in the public notes when checked.
 
 The first passages describe finite unramified extensions, their maximal
 unramified union, and the inertia fixed-field characterization. Lemmas 6–7

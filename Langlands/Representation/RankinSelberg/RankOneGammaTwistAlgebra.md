@@ -1,6 +1,6 @@
 # Algebra for rank-one gamma twist transport
 
-Worker 458. This internal helper expands the determinant of the actual long Weyl
+This internal helper expands the determinant of the actual long Weyl
 matrix along its first row. The resulting recurrence computes the ratio of the
 long Weyl and block Weyl determinants in the dual transform as `(-1)^r`.
 It also constructs the unchanged candidate functional and each rank-one test

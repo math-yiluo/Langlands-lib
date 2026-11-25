@@ -1,6 +1,6 @@
 # Actual bundle extension when the base is a field
 
-Worker 513 authored these internal inverse-pullback constructions for the
+These are internal inverse-pullback constructions for the
 field-base case of `ValuationRingTwoAxisExtensionStatement`. This module
 constructs actual line bundles and restriction isomorphisms. It does not
 prove the extension assertion over a domain that is not a field.
@@ -38,16 +38,17 @@ constructions to every Library abelian scheme `A / Spec R` and every
 line bundle `D` on the actual self-product of its actual base change to
 `Spec K`. The extending bundle is inverse pullback along exactly
 `mumfordProductBaseChangeMap A (Spec.map (CommRingCat.ofHom (algebraMap R K)))`.
-This is the explicit canonical map `q` of the published host target.
+This is the explicit canonical map `q` of the published
+`ValuationRingTwoAxisExtensionStatement`.
 The conclusion supplies an actual total-space line bundle `E` and
 `Nonempty (q* E ≅ D)` on the underlying module sheaves.
 
 There is no axis-triviality premise, valuation-ring instance, ampleness
 assertion, or assumption about the characteristic. An arbitrary universe
 `u` is retained. The field-base condition is essential to this argument:
-it does not prove the host's arbitrary-rank valuation extension theorem
-or the separate trait extension theorem. It also does not prove or
-replace the separately owned field-ample result.
+it does not prove the arbitrary-rank valuation extension theorem
+`ValuationRingTwoAxisExtensionStatement` or the separate trait extension
+theorem. It also does not prove or replace the separate field-ample result.
 
 The provenance is internal. The only ingredients are the published
 actual line-bundle pullback comparisons and self-product base-change

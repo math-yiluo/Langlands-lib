@@ -6,6 +6,7 @@ import Mathlib.CategoryTheory.Sites.Subsheaf
 open CategoryTheory AlgebraicGeometry Opposite
 
 set_option backward.isDefEq.respectTransparency false
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false
 set_option backward.defeqAttrib.useBackward true
 
 universe u

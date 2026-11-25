@@ -21,7 +21,8 @@ induced by a module isomorphism. Flatness transports across this linear
 equivalence, proving `isFlatOver_iff_of_iso` and closure of the object
 property `isFlatOver f` under isomorphisms.
 
-This focused unit provides the intrinsic flatness predicate and its
-isomorphism invariance. Pullback preservation and the coherent-family
-groupoid are subsequent units of the same task; no algebraicity result is
-asserted here.
+This module provides the intrinsic flatness predicate and its
+isomorphism invariance. Pullback preservation is proved in
+`RelativeFlatnessPullback`, and the coherent-family groupoid is built in
+`Langlands.AlgebraicGeometry.CoherentSheaves.Groupoid`; no algebraicity
+result is asserted here.

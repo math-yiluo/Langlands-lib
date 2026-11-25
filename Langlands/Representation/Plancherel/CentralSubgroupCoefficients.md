@@ -1,7 +1,5 @@
 # Matrix coefficients modulo a prescribed central subgroup
 
-Author: Worker 200.
-
 Waldspurger III.1, printed p.263 (PDF p.29), defines square-integrability
 for an admissible representation with a unitary central character by requiring
 all matrix coefficients to be square-integrable on `A_G \ G`. Here `A_G` is

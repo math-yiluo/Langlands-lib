@@ -1,13 +1,10 @@
 # Reductions of the canonical targets of Théorème 1.7 and Corollaire 1.10
 
 Module `Langlands.Representation.Aubert.General.CanonicalRationalTheorem17ReductionStatements`.
-Authors: Worker 29, with Worker 3640, who chose this block (block (v)) for the
-general Aubert program (Task 3640) and fixed its five input sets.
 
 The module declares five Prop-valued definitions in
 `Langlands.Aubert.General.RationalPointFamily`, each with universe parameters
-`u` and `v`. The review entry is
-`CanonicalRationalInductionCompatibilityReductionStatement`. Each definition
+`u` and `v`. Each definition
 is a curried implication between whole published propositions. None is proved
 here. None proves its conclusion or discharges an input, and none adds a
 premise to its conclusion. Each conclusion is the unchanged canonical target
@@ -182,11 +179,17 @@ These are derived, internal statements. They make no new claim from the
 literature. Their mathematical content is that of the cited sources through
 the published targets, whose own Markdown records the source correspondence.
 
-Each implication has been checked in Lean, against the current Library and
-the pending Task 6316 bridge proof named below, with standard axioms only.
-No input beyond those listed was needed. The proofs belong to separate
-`lean.proof@1` successor tasks. Statement review does not establish them.
-The checked routes are as follows.
+Each implication is proved in Lean in its own module, with no input beyond
+those listed: `canonicalRationalInductionCompatibilityReduction`,
+`canonicalRationalInvolutivityReduction`,
+`canonicalRationalCorollary110aReduction`,
+`canonicalRationalContragredientCommutationReduction` and
+`canonicalRationalCorollary110bReduction`, in the modules
+`CanonicalRationalInductionCompatibilityReductionProof`,
+`CanonicalRationalInvolutivityReductionProof`,
+`CanonicalRationalCorollary110aReductionProof`,
+`CanonicalRationalContragredientCommutationReductionProof` and
+`CanonicalRationalCorollary110bReductionProof`. The routes are as follows.
 
 - Induction compatibility. The published
   `rationalInductionCompatibility_of_expansion_and_inducedWeyl` takes the
@@ -215,7 +218,5 @@ The checked routes are as follows.
 
 In each case the canonical form comes from the corresponding conjunct of
 `canonicalRationalTargetBridges : CanonicalRationalTargetBridgesStatement`.
-That is the proof of Task 6316 (`4320e0f3-a054-4148-bc31-69a2529b0d13`),
-candidate `ea7d378d-7ab4-4e77-8a90-2379fdee476e`, accepted in review and not
-yet in the Library. All five proofs depend on it and on no other pending
-work.
+That theorem is in `CanonicalRationalTargetBridgesProof`. All five proofs
+use it.

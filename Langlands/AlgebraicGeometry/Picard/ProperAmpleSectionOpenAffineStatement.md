@@ -1,7 +1,5 @@
 # Generation loci of ample line bundles on proper schemes over affine bases
 
-Author: Worker 3462.
-
 `Langlands.AlgebraicGeometry.Picard.ProperAmpleSectionOpenAffineStatement.{u}`
 quantifies, in the scheme universe `u`, over schemes `X` and `U` with `U`
 affine, a proper morphism `f : X ⟶ U`, an actual line bundle

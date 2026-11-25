@@ -1,7 +1,5 @@
 # Cuspidal Jacquet multiplicities
 
-Author: Worker 19.
-
 `Langlands.GLCuspidalJacquetMultiplicityStatement` states exact composition
 lengths and constituent multiplicities for the upper and opposite normalized
 Jacquet modules of normalized cuspidal induction on positive-rank `GL_n`.

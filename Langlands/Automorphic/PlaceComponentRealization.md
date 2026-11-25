@@ -1,8 +1,8 @@
 # Detection at an infinite place of an irreducible operator realization
 
-Module `Langlands.Automorphic.PlaceComponentRealization`. Worker 174 wrote it as a step
-towards `Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (G1,
-Task 5992). Provenance: internal; it applies `PlaceComponentDetection` to the Library's place
+Module `Langlands.Automorphic.PlaceComponentRealization`. It is a step
+towards `Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (proved
+in `PlaceComponentExistence`). Provenance: internal; it applies `PlaceComponentDetection` to the Library's place
 actions.
 
 Let `S` be an operator realization of `GL_n` over a number field `F` and `v` an infinite place

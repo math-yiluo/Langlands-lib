@@ -1,7 +1,5 @@
 # The fixed-level block decomposition from the Bernstein decomposition and visibility
 
-Author: Worker 733, Task 6639 (`97df9594-40e0-45d8-8f8c-0e7562c6b4de`).
-
 This module proves the two directions of the equivalence in Renard VI.10.6
 Proposition (i): `M(G)_K ≃ ∏_{𝔰 ∈ B(G)_K} M(G)_𝔰`, in the coproduct form used by
 the Library statement `StandardIwahoriFixedVectorBlockDecompositionStatement`.

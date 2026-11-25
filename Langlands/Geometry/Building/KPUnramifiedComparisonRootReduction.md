@@ -1,6 +1,6 @@
 # Reduction of the root comparison field to doubled-root depth models
 
-This derived unit composes the concrete apartment-lift root helpers, uniform
+This module composes the concrete apartment-lift root helpers, uniform
 root-fibre depth comparisons, conditional doubled-root block descent, and
 integral-vector centralizer containment. It makes no new assertion attributed
 directly to original literature.
@@ -40,6 +40,9 @@ Consequently `unramifiedComparisonRootField_of_doubledRootDepthModel` proves
 the implication from `UnramifiedDoubledRootDepthModelStatement.{u}` to the
 unchanged `UnramifiedComparisonRootFieldStatement.{u}` at arbitrary universe
 `u`. It applies to every supplied lift, without constructing such a lift.
-The depth-model proposition remains an explicit, unproved premise. This unit
+The depth-model proposition remains an explicit premise here; the Library
+proves it as `unramifiedDoubledRootDepthModel` (module
+`UnramifiedDoubledRootDepthModelProof`). This module
 does not prove the unconditional root-field target or permit adding a premise
-to that target; an actual proof of model existence is still required.
+to that target; `unramifiedComparisonRootField` (module
+`KPUnramifiedComparisonRootFieldProof`) combines the two.

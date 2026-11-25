@@ -7,8 +7,8 @@ import Langlands.Representation.Smooth.Transfer.PullbackProof
 
 Berkovich's Corollary 1.5.2(i) says that the comparison maps `H^q_c(X{G}, F) → H^q_c(X, b^*F)`
 are isomorphisms for every étale `G`-sheaf `F`, and "in particular, the canonical action of `G`
-on the groups `H^q_c(X, b^*F)` is discrete". The first assertion is Worker 16's statement
-`AnalyticEtaleCompactComparisonStatement`, which is not proved. This module derives the second
+on the groups `H^q_c(X, b^*F)` is discrete". The first assertion is the statement
+`AnalyticEtaleCompactComparisonStatement`, which is not proved here. This module derives the second
 assertion from it: under the hypotheses of the statement, the comparison maps are bijective,
 the canonical action of `G` on `H^q_c(X, b^*F)` is smooth, and the comparison is an
 isomorphism of smooth representations. The restriction of this action to any subgroup of `G`

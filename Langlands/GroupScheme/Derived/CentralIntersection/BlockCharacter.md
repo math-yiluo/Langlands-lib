@@ -1,7 +1,5 @@
 # Block-determinant characters and eigenvalues of central derived points
 
-Author: Worker 1408.
-
 This internal helper module bounds the eigenvalues of a central rational point
 of an actual derived subgroup. Its role is that of the weight-block determinants
 in the proof of Milne, *Algebraic Groups* (2017), Proposition 12.46(a),

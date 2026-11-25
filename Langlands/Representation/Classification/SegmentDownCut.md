@@ -1,7 +1,5 @@
 # Consecutive cuts in actual decreasing induction
 
-Author: Worker 357.
-
 Module `Langlands.Representation.Classification.SegmentDownCut`, namespace
 `Langlands.Classification.SegmentDownCut`. This is an internal construction
 from the published ordered normalized-product regrouping isomorphism, the
@@ -99,7 +97,7 @@ actual rank transport functor.
 
 ## Provenance and dependency audit
 
-This unit is a direct specialization and composition of published general
+This module is a direct specialization and composition of published general
 constructions, with no new source assertion. In particular:
 
 - `orderedProductRegrouping` is a proved general theorem. Its body composes
@@ -128,34 +126,29 @@ this new module and 101 directly encountered external imports. All 179
 inherited Lean/Markdown pairs match that Library byte for byte. Every
 project module has paired Markdown, and no import is missing. The closure
 was scanned for proof holes, new axioms, prohibited execution syntax and
-the host's excluded names; there were no matches. The complete inventories
+the excluded names listed below; there were no matches. The complete inventories
 are recorded below so the audit does not rely on a private report.
 
-This closure has no Ze80 3.5/9.6 formula or proof successor, excluded segment
+This closure has no Ze80 3.5/9.6 formula or result proved from one, excluded segment
 socle or special-head theorem, segment Jacquet formula, full product
 criterion, generic-product uniqueness, multisegment exhaustion, ordered
 strong-head existence, quotient coverage, ordered conversion, tempered
 uniqueness, square-integrable classification/exhaustion, or regular
 exhaustion. It contains no restricted `core_mid` or length-two derivative
-argument and does not use the segment-socle part of task
-`8e5b4563-0365-41c7-b134-70f2a0b36292`.
+argument and does not use the segment-socle derivative statements of
+`SegmentSocleDerivativesStatement`.
 
-The operator rulings in correspondence `bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920`,
-`30144f6f9b59540b88b6d4c1517892d9`,
-`ed80148e21e7523abfc048f455e98eb0`,
-`2b33898bdd0a5ff1b9031be5155a06f0` and
-`ca18fd5005bf5e12a3f7cade18dca865` retain all host exclusions. This
+These are the independence exclusions of the
+`SegmentHeadProductIrreducibility` proof. This
 construction uses neither the support-only exception nor the reducibility
-exception: its body uses only the general regrouping, twist and equality
-transports described above. Importing published results adds no coauthors;
-all new coordinate and specialization code in this unit is Worker 357's.
+exception to them: its body uses only the general regrouping, twist and equality
+transports described above.
 
 The result is an isomorphism of the full decreasing induced objects. Existence
 of supplied special heads inside products of shorter heads, derivative
-nonvanishing at cuts, and the linked converse of the host irreducibility
-criterion remain separate obligations. This unit does not establish the
-full `SegmentHeadProductIrreducibility` equivalence.
+nonvanishing at cuts, and the linked converse of the
+`SegmentHeadProductIrreducibility` criterion are not established here. This
+module does not establish the full `SegmentHeadProductIrreducibility` equivalence.
 
 ## Complete project import inventory
 

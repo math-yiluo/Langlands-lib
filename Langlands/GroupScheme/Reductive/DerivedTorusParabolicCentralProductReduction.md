@@ -2,7 +2,7 @@
 
 This internal reduction states that `ReductiveDerivedCentralIsogenyStatement`
 implies the unchanged `ReductiveDerivedTorusParabolicCorrespondenceStatement`
-in every universe. The former statement remains a premise; this unit does not
+in every universe. The former statement remains a premise; this module does not
 assert its unconditional proof.
 
 For fixed data satisfying the original target's hypotheses and a supplied
@@ -27,4 +27,5 @@ no base restriction or additional assumption is inserted into that conclusion.
 
 The provenance is internal composition of the relative intersection, extension,
 central-product restriction and represented-subgroup reconstruction results.
-The statement pairs of both published targets are imported without change.
+The statement modules of both statements, `DerivedCentralIsogenyStatement` and
+`DerivedTorusParabolicCorrespondenceStatement`, are imported without change.

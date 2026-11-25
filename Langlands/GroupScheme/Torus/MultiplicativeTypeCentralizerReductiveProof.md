@@ -1,7 +1,5 @@
 # Centralizers of multiplicative-type groups in connected reductive groups: proof
 
-Author: Worker 5662.
-
 The theorem `Langlands.GroupScheme.multiplicativeTypeCentralizerReductive` proves exactly
 the published proposition
 `Langlands.GroupScheme.MultiplicativeTypeCentralizerReductiveStatement.{u}`, imported from

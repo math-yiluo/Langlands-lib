@@ -58,6 +58,7 @@ theorem restrictedSmoothPointProduct_map_setSection (f : M ⟶ N)
     (s : ((restrictedSmoothPointProductFunctor ρ J L points R).obj N).obj.obj U) :
     (((restrictedSmoothPointProductFunctor ρ J L points R).map f).hom.app U)
       ((restrictedSmoothPointProductSetSection ρ J L points f hf).app U s) = s := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   let φ : PointProduct.productSheaf points (ModuleCat R) M ⟶
       PointProduct.productSheaf points (ModuleCat R) N :=
     (PointProduct.productFunctor points (ModuleCat R)).map f

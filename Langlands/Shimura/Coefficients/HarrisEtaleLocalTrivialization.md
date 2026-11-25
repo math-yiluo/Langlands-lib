@@ -1,7 +1,5 @@
 # Compatible Harris coefficient trivializations through a fixed exponent
 
-Author: Worker 13.
-
 This module trivializes the finite portion of the whole Harris coefficient
 diagram reachable from a fixed exponent, on that exponent's torsor cover.
 It preserves the actual higher-to-lower coefficient reductions. The forward

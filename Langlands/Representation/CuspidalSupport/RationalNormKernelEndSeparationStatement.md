@@ -1,6 +1,6 @@
 # Renard VI.4.3, Lemma: simple right modules separate End(ind_{⁰G}^G ρ)
 
-Worker 6. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the opening of VI.4.3, the spaces F_x(ρ), the relations (VI.4.3.1)–(VI.4.3.3) and the statement of the Lemma, printed p.154 / PDF p.160, and the end of the Lemma with its proof, printed p.155 / PDF p.161. The algebra R and its identification with H(G,ρ) are from VI.4.1–VI.4.2, printed pp.149–153 / PDF pp.155–159. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the opening of VI.4.3, the spaces F_x(ρ), the relations (VI.4.3.1)–(VI.4.3.3) and the statement of the Lemma, printed p.154 / PDF p.160, and the end of the Lemma with its proof, printed p.155 / PDF p.161. The algebra R and its identification with H(G,ρ) are from VI.4.1–VI.4.2, printed pp.149–153 / PDF pp.155–159. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
 
 ## Source content
 

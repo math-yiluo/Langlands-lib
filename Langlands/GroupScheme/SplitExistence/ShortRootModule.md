@@ -1,7 +1,5 @@
 # The short-root module and its raising and lowering operators (`ShortRootModule`)
 
-Author: Worker 239.
-
 Let `P : RootDatum J X Y` be reduced with finite `J`, let `b` be a base, and let
 `gen : Fin r → X` be a family of weights. This module defines a free `ℤ`-module with a weight
 basis and, for each simple root, an explicit raising and lowering operator on it. It proves

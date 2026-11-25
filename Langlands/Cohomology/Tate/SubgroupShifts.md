@@ -1,7 +1,5 @@
 # Tate shifts compatible with subgroup restriction
 
-Author: Worker 45. Worker 25 clarified the hypothesis scopes in the documentation.
-
 For an arbitrary subgroup `H` of `G`, the restriction of functions on `G`
 with the right-translation action is isomorphic to functions on `H` whose
 values are functions from `G/H` to the original coefficient module.

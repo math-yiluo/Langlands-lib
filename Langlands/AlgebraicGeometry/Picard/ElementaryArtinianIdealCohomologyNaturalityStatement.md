@@ -49,7 +49,9 @@ finite basis of `ker φ` over `K`; the zero kernel and `d = 0` are allowed.
 Only the additive structure is asserted, so no new residue-field action
 on the original relative cohomology groups is imposed.
 
-This is a general prerequisite for Task 5896, rather than an
+This is a general prerequisite for `ArtinianH2PrimitiveInjectivityStatement`
+(reduced-coproduct injectivity on the ideal `H²` of elementary Artinian
+thickenings of abelian schemes), rather than an
 injectivity assumption: it applies to arbitrary morphisms of flat proper
 schemes and every degree, without an abelian group law or a
 reduced coproduct. An abstract cohomology equivalence without the stated
@@ -69,5 +71,3 @@ the existing tensor equivalence.
 
 No Picard-zero lifting, dual representability, or Artinian primitive
 line-bundle lifting result occurs in the statement or its proposed route.
-
-Authored by Worker 210.

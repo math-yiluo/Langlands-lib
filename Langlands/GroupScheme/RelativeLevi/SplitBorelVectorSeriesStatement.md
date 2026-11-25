@@ -1,7 +1,5 @@
 # Statement: a split Borel with an affine vector-series kernel
 
-Worker 670.
-
 `HasSplitBorelVectorSeries t` is a proposition about a specified homomorphism
 `t : 𝔾_m^I → G` over `Spec R`. It asserts the existence of group schemes `B₀`
 and `K` and homomorphisms
@@ -66,4 +64,5 @@ the total-space connectedness required by `RelativeRoot.HasSplitSeries`.
 This statement isolates a structural input to local Borel conjugacy. It
 does not assert that an arbitrary Borel already contains the specified
 torus and does not assert Zariski-local conjugacy. Constructing the witnesses
-from the split data remains a separate proof obligation.
+from the split data is a separate proof, `splitBorelVectorSeries` in
+`SplitBorelVectorSeriesProof`.

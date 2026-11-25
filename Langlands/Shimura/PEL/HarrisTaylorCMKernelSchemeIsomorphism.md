@@ -1,7 +1,5 @@
 # Original CM kernel scheme isomorphisms without original etaleness
 
-Author: Worker 57.
-
 This derived construction gives a full scheme inverse for the original CM
 kernel comparison under exact representations, both named relative-dual
 assertions and explicit geometric coarse rigidity. Its forward map is
@@ -165,7 +163,7 @@ those equalities. The chosen `cmNormalKernelComparison_mono_of_dualGeometry`
 and `cmNormalKernelComparison_isIso_of_dualGeometry` specialize the proved
 properties to the identical original comparison.
 
-## Provenance and retained obligations
+## Provenance and what is not proved here
 
 This is an internal deduction from the actual connected coproduct
 factorization, geometric rigidity transfer, component constructions and
@@ -183,14 +181,19 @@ rational polarization multiplier and right frame composition. It asserts
 smooth projective representability, finite-etale forgetting and the normal
 `U/V` Galois cover. These conventions are retained by the imported
 constructions. The new conditional scheme inverse is not attributed to the
-book as a proof of all those assertions. The supplied publication/errata
-list was previously read in full and lists no correction to this passage.
+book as a proof of all those assertions. The publication/errata
+list was read in full and lists no correction to this passage.
 
 No original-projection etaleness or comparison isomorphism is assumed.
-Applicable representability, the derivation of the exact geometric
-coarse-rigidity hypothesis from source smallness, comparison with the complete
-source moduli problem, original projection etaleness, canonical-model
-geometry and coefficient descent remain separate obligations. The inverse
+Applicable representability, comparison with the complete source moduli
+problem, canonical-model geometry and coefficient descent are not proved in
+this module. The exact geometric coarse-rigidity hypothesis at sufficiently
+small levels is derived in the Library by `cmSmallLevelRigidity`
+(`HarrisTaylorCMSmallLevelRigidityProof`), and original projection etaleness,
+under the same relative-dual and rigidity premises and the proved criterion
+`DominantUnramifiedEtaleProof.dominantUnramifiedEtale`, by
+`representedCMNormalProjection_etale_of_dominantCriterion`
+(`HarrisTaylorCMNormalSmoothEtale`). The inverse
 is a morphism for the kernel comparison, not a section of the forgetting
-projection. This focused conditional construction does not complete the
-source cover theorem or the host task.
+projection. This conditional construction does not complete the
+source cover theorem.

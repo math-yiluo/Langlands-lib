@@ -1,6 +1,6 @@
 # Local characters that agree on units up to an unramified twist
 
-Author: Worker 5134. Module `Langlands.Global.Arithmetic.HenniartLocalCharacter`
+Module `Langlands.Global.Arithmetic.HenniartLocalCharacter`
 (namespace `Langlands.Global`). It is a helper for the reduction
 `HenniartGlobalizationReductionStatement`
 (`Langlands.Global.Arithmetic.HenniartGlobalizationReduction`) of

@@ -19,7 +19,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 /-- Bundle an action specified by its analytic automorphisms. -/
 def analyticActionOfAut (σ : G →* Aut Y) : Action (LocalizedCategory.{u, v, v} (K := K)) G where
   V := Y
-  ρ := (Aut.toEnd Y).comp σ
+  ρ := (Aut.toEnd (X := Y)).comp σ
 
 @[simp]
 theorem analyticActionOfAut_ρAut (σ : G →* Aut Y) :
@@ -36,7 +36,7 @@ with a continuous action also has a continuous action. -/
 theorem IsContinuousAction.of_equivariant_domainEmbedding
     {σX : G →* Aut X} {σY : G →* Aut Y} (hY : IsContinuousAction σY)
     {f : X ⟶ Y} (hf : IsAnalyticDomainEmbedding f)
-    (heq : ∀ t, (σX t).hom ≫ f = f ≫ (σY t).hom) : IsContinuousAction σX := by
+    (heq : ∀ t, (σX t).asIso.hom ≫ f = f ≫ (σY t).asIso.hom) : IsContinuousAction σX := by
   obtain ⟨D, e, rfl⟩ := hf
   let Y' := analyticActionOfAut σY
   let j := domainι Y D
@@ -50,7 +50,7 @@ theorem IsContinuousAction.of_equivariant_domainEmbedding
       exact domainι_apply D z
     have hpoint := congrArg (fun f : X ⟶ Y => localizedSpaceFunctor.map f x) (heq t)
     simp only [CategoryTheory.Functor.map_comp, TopCat.comp_app] at hpoint
-    change localizedSpaceFunctor.map (σY t).hom y ∈ D.carrier
+    change localizedSpaceFunctor.map (σY t).asIso.hom y ∈ D.carrier
     rw [← hx, CategoryTheory.Functor.map_comp, TopCat.comp_app, ← hpoint]
     change localizedSpaceFunctor.map (domainι Y D) _ ∈ D.carrier
     rw [domainι_apply]
@@ -59,17 +59,17 @@ theorem IsContinuousAction.of_equivariant_domainEmbedding
     simpa only [Y', analyticActionOfAut_ρAut] using hY
   let Z := SaturatedAtlasPresentation.invariantDomainAction Y' D hD
   have hZ : IsContinuousAction Z.ρAut := hY'.invariantDomainAction D hD
-  have hZι (t : G) : (Z.ρAut t).hom ≫ j = j ≫ (σY t).hom :=
+  have hZι (t : G) : (Z.ρAut t).asIso.hom ≫ j = j ≫ (σY t).asIso.hom :=
     (invariantDomainInclusion Y' D hD).comm t
-  have hXe (t : G) : (σX t).hom ≫ e.hom = e.hom ≫ (Z.ρAut t).hom := by
+  have hXe (t : G) : (σX t).asIso.hom ≫ e.hom = e.hom ≫ (Z.ρAut t).asIso.hom := by
     apply (cancel_mono j).1
     calc
-      _ = (σX t).hom ≫ (e.hom ≫ j) := Category.assoc _ _ _
-      _ = (e.hom ≫ j) ≫ (σY t).hom := heq t
+      _ = (σX t).asIso.hom ≫ (e.hom ≫ j) := Category.assoc _ _ _
+      _ = (e.hom ≫ j) ≫ (σY t).asIso.hom := heq t
       _ = _ := by rw [Category.assoc, Category.assoc, hZι]
   apply hZ.of_equivariant_iso e.symm σX
   intro t
-  change (Z.ρAut t).hom ≫ e.inv = e.inv ≫ (σX t).hom
+  change (Z.ρAut t).asIso.hom ≫ e.inv = e.inv ≫ (σX t).asIso.hom
   apply (cancel_mono e.hom).1
   rw [Category.assoc, Iso.inv_hom_id, Category.comp_id, Category.assoc, hXe,
     Iso.inv_hom_id_assoc]

@@ -1,7 +1,5 @@
 # Monomorphisms from reductive groups to smooth affine groups
 
-Worker 671.
-
 For any scheme `S : Scheme.{u}`, reductive group scheme `H` over `S`, smooth
 affine group scheme `G` over `S`, and homomorphism `f : H ⟶ G` monomorphic
 on underlying schemes, `ReductiveImmersion.isImmersion_of_mono` proves that
@@ -29,5 +27,5 @@ This is an internal composition of the etale local reductive immersion
 criterion and arbitrary-base split torus monomorphism closedness, followed
 by the standard coborder factorization. It asserts no separate translation
 of external literature. The conclusion remains immersion into a smooth
-affine target; it does not assert global closedness or treat arbitrary
-separated finitely presented targets from the host statement.
+affine target; it does not assert global closedness or treat the arbitrary
+separated finitely presented targets of `ReductiveMonomorphismClosedImmersionStatement`.

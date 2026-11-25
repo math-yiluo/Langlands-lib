@@ -1,7 +1,5 @@
 # Reconstruction from actual connected-component schemes
 
-Author: Worker 57.
-
 This derived geometric helper constructs the coproduct isomorphism from the
 actual open connected-component schemes of a locally Noetherian scheme and
 assembles arbitrary morphisms on those components. It uses the previously

@@ -1,7 +1,5 @@
 # The second inequality for Kummer extensions of prime degree
 
-Author: Worker 226.
-
 This module proves the Library statement `IdeleClassKummerPrimeDegreeSecondInequality.{u, u}`
 (module `Langlands.Global.AdelicFunctoriality.IdeleClassCyclotomicSecondInequalityStatement`)
 from three Library statements, which it takes as explicit hypotheses:
@@ -9,10 +7,10 @@ from three Library statements, which it takes as explicit hypotheses:
 `CyclicIdeleClassHerbrandQuotient.{u, u}`. Each is proved elsewhere in the Library, with
 independent universes for the base and the extension: `Langlands.Global.cyclicNonsplitPrimeStatement`
 (module `Langlands.Global.Arithmetic.CyclicNonsplitPrimeProof`),
-`Langlands.ClassField.Global.ideleClassGaloisDescent` (module
-`Langlands.ClassField.Global.IdeleClassGaloisDescentProof`) and
-`Langlands.ClassField.Global.cyclicIdeleClassHerbrandQuotient` (module
-`Langlands.ClassField.Global.CyclicIdeleClassHerbrandAssembly`). This module does not import
+`Langlands.ClassFieldTheory.Global.ideleClassGaloisDescent` (module
+`Langlands.ClassFieldTheory.Global.IdeleClassGaloisDescentProof`) and
+`Langlands.ClassFieldTheory.Global.cyclicIdeleClassHerbrandQuotient` (module
+`Langlands.ClassFieldTheory.Global.CyclicIdeleClassHerbrandAssembly`). This module does not import
 those proofs, and its main theorem keeps the three explicit arguments. The module
 `Langlands.Global.AdelicFunctoriality.IdeleClassPrimeDegreeSecondInequalityProof` applies it to
 them at equal universes. Let `L/K` be a Galois
@@ -47,8 +45,8 @@ Notation: `J_K` is the idele group, `P` the principal ideles, `J^S` the Library'
 
 - `PowerClassProd K S p` is the product type
   `(∏_{v ∈ S} K_vˣ / localPowers v p) × (∏_{w ∣ ∞} K_wˣ / infiniteUnitPowers w p)`. Here
-  `localPowers v p` (Library module `Langlands.ClassField.Global.LocalPowerIndex`) and
-  `infiniteUnitPowers w p` (module `Langlands.ClassField.Global.LocalUnitPowers`) are the
+  `localPowers v p` (Library module `Langlands.ClassFieldTheory.Global.LocalPowerIndex`) and
+  `infiniteUnitPowers w p` (module `Langlands.ClassFieldTheory.Global.LocalUnitPowers`) are the
   subgroups of `p`-th powers of `K_vˣ` and `K_wˣ`.
 - `PowerClassGroup K S p` is a type synonym of `PowerClassProd K S p`. Its commutative group
   structure is the product structure, declared as a single instance.

@@ -1,6 +1,6 @@
 # Characteristic-space decompositions and exponents for represented parabolics: proof
 
-Author: Worker 4684. Module `Langlands.Representation.Exponents.ArbitraryParabolicExponentProof`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.ArbitraryParabolicExponentProof`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 `arbitraryParabolicExponent : ArbitraryParabolicExponentStatement.{u, v}` proves the published proposition `Langlands.Aubert.General.RepresentedParabolic.ArbitraryParabolicExponentStatement` unconditionally. The field universe `u` and the representation-carrier universe `v` are independent. The theorem's type is the unapplied proposition itself. It adds no hypothesis, so every quantifier and datum of the statement is kept: the field, valuation, topology, local-field and Hausdorff hypotheses; the connected reductive group with its canonical rational-point topology and the local-compactness and nonarchimedean-group instances; every represented parabolic `p`, Levi `l`, radical `r`, multiplication isomorphism and split component `a`; every split component `aG` of `G`; and every compatible point homomorphism `e`. Representations need only the admissibility and finite length that the statement already assumes. No Jacquet-admissibility, Iwahori-contraction, finite-generation, existence-of-`e` or irreducibility premise appears.
 

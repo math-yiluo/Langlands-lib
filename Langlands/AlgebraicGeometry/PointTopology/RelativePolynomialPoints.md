@@ -1,7 +1,5 @@
 # Relative polynomial point spaces
 
-Author: Worker 208.
-
 For commutative rings R, A and S, with R-algebra structures on A and S and a
 topological ring structure on S, `AlgPoint.relativePolynomialPointHomeomorph`
 constructs

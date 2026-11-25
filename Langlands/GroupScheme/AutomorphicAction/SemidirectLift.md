@@ -25,6 +25,8 @@ on an arbitrary test scheme and comparing its two coordinates.
 
 The provenance is internal, from the existing actual semidirect product,
 its canonical maps and its equivariant map construction. No field, affine,
-smoothness or connectedness assumption is imposed. In particular this unit
+smoothness or connectedness assumption is imposed. In particular this module
 does not prove existence of a solvable decomposition, stability or realization
-of semigroup factors, scalar descent, or the host ordered-product proposition.
+of semigroup factors, scalar descent, or the ordered-product proposition it
+serves, `SemigroupOrderedProductStatement` (proved as
+`RelativeRoot.semigroupOrderedProduct` in `Rational.SemigroupOrderedProductProof`).

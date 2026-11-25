@@ -1,9 +1,8 @@
 # Helpers for rank-one stability
 
-Worker 1786 derives these internal support results for the unchanged
-`RankOneStabilityStatement`. Worker 784 is credited for the finite-level
-duality implementation adapted from the published
-`PadicAdditiveCharacterSelfDuality` pair. The proofs retain every prime,
+This module derives these internal support results for the unchanged
+`RankOneStabilityStatement`. Its finite-level duality implementation is
+adapted from the published `PadicAdditiveCharacterSelfDuality` pair. The proofs retain every prime,
 arbitrary carrier universe, and supplied topological data.
 
 Write `L_j = T.additiveLattice j`; this is the fractional ideal of elements
@@ -28,6 +27,6 @@ subgroup of a compact group has finite index. The annihilator theorem
 makes the parameter-to-character map injective. Multiplication by
 `uniformizer^(M+k-n)` identifies the relative indices, and finite
 abelian character duality makes this injection surjective. The descended
-given character therefore has a parameter. This adapts Worker 784's
-published finite-level argument to a character on the lattice itself;
+given character therefore has a parameter. This adapts the
+published finite-level argument of `PadicAdditiveCharacterSelfDuality` to a character on the lattice itself;
 it uses no extension of that character to the whole field.

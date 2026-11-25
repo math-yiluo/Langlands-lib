@@ -1,7 +1,5 @@
 # The finite group on all actual scheme components
 
-Author: Worker 1107.
-
 This internal derived construction uses the published
 `AlgebraicallyClosedComponentProof` and `RationallyRepresentedComponents`.
 Its provenance is transport of the already constructed finite group through

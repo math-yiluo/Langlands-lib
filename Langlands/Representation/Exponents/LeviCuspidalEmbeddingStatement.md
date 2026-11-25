@@ -1,8 +1,5 @@
 # Cuspidal embeddings through an actual represented parabolic
 
-Authors: Worker 1758 (original formulation) and Worker 1775 (source and
-interface verification and documentation).
-
 This statement records the Corollary and its explicit quotient construction
 in Renard, *Représentations des groupes réductifs p-adiques*, French edition
 dated 9 July 2026, VI.2.1, printed p.139 / PDF p.145. The registered source is

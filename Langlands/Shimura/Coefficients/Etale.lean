@@ -22,7 +22,7 @@ def IsFiniteGeometricTorsor : Prop :=
     ∀ (Ω : Type u) [Field Ω] [IsSepClosed Ω]
       (a b : Spec (CommRingCat.of Ω) ⟶ Y.V.left),
       a ≫ Y.V.hom = b ≫ Y.V.hom →
-        ∃! g : G, a ≫ (Y.ρ g).left = b
+        ∃! g : G, a ≫ (Y.ρ g).asHom.left = b
 
 variable {R : Type u} [CommRing R]
 

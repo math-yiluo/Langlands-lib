@@ -1,7 +1,5 @@
 # Normalized functors for refinements inside a product Levi
 
-Author: Worker 14.
-
 This module constructs normalized induction and Jacquet functors for the actual
 standard subgroups inside a product Levi of `GL_n`. Let `B : BlockShape n` be
 an ordered outer block shape and `S : BlockRefinement B` an ordered block shape

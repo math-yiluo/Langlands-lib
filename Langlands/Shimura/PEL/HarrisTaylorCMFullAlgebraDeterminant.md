@@ -1,7 +1,5 @@
 # Extending the normalized Harris determinant to the full rational algebra
 
-Author: Worker 344.
-
 This internal derived construction extends the existing normalized Harris–Taylor
 order-family determinant test to families in the full rational algebra and proves
 that the two global conditions are equivalent. The comparison uses the same
@@ -135,9 +133,8 @@ local determinant identity and applies the existing
 `traceCoefficient_harrisTaylorCentralDeterminant_section`. No order
 representative of the central element is needed.
 
-This contribution establishes a comparison of determinant conditions and its
+This module establishes a comparison of determinant conditions and its
 coefficient consequence. It supplies no satisfying abelian scheme, geometric
 dimension condition, equivalence with the full Lie-plus condition, moduli
 scheme, admissibility proof, smoothness, projectivity, or natural
-representability isomorphism. The exact published
-`DivisionCMRepresentabilityStatement` and its imported pairs are preserved.
+representability isomorphism.

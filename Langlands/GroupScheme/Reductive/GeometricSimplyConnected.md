@@ -1,7 +1,5 @@
 # Simply connected and nontrivial geometric fibres under base change
 
-Worker 634.
-
 This internal helper supplies the fibre comparisons needed when applying étale
 local splitting to the hypotheses of Conrad's Proposition 6.4.4. It does not
 construct a Weil restriction presentation or prove that proposition.
@@ -31,4 +29,4 @@ These are derived consequences of published Library constructions, rather than
 additional source assertions. The motivating source is Brian Conrad, *Reductive
 group schemes* (2014), registered as `conrad-2014-reductive-group-schemes`,
 Proposition 6.4.4 and its proof, pp.232–233. The point-functor nontriviality condition
-agrees with the unchanged affine Weil restriction statement.
+agrees with the affine Weil restriction statement.

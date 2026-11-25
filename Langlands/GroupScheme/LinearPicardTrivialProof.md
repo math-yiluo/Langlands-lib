@@ -1,7 +1,5 @@
 # The Picard groups of SLₙ and GLₙ vanish: proof
 
-Author: Worker 896.
-
 `Langlands.GroupScheme.LinearPicardTrivial.linearPicardTrivialStatement` proves
 the published proposition `Langlands.GroupScheme.LinearPicardTrivialStatement.{u}`.
 Its type is exactly that proposition, for every universe `u`, with no additional

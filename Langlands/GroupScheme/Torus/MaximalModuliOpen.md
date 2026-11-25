@@ -1,7 +1,5 @@
 # The smooth universal family of maximal tori
 
-Worker 586.
-
 This internal construction restricts the published smooth universal family of
 all closed relative-torus subgroups of a reductive group to its actual open
 maximal locus. The base scheme and universe are arbitrary. The result
@@ -29,6 +27,6 @@ the relative-torus condition persist under pullback to the open subscheme,
 and the composite of its open immersion with the smooth original parameter
 map is smooth.
 
-All inputs are published constructions or the separately submitted internal
-maximal-locus, commutativity and open-restriction units. The construction adds
+All inputs are published constructions or the separate internal
+maximal-locus, commutativity and open-restriction modules. The construction adds
 no geometric premise and does not assume maximal-torus representability.

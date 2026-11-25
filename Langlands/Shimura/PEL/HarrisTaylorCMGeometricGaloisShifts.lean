@@ -147,9 +147,9 @@ def cmHarrisGeometricGaloisDerivedShiftedAction (k : ℕ) :
 local notation "derivedShiftedAction" => cmHarrisGeometricGaloisDerivedShiftedAction D C preservation composition unitCoherence associativity comparison symmetry stability square universality dualityNaturality polarizationStability compatibility h htor q U ρ p m hm existence geometry hRigid
 
 private theorem cmGaloisDerivedInclusion_comm (k : ℕ) (r : ℕᵒᵖ) (σ : Galois) :
-    ((derivedAction).obj r).ρ σ ≫ (RD).map ((shiftInclusion k).app r) =
+    (((derivedAction).obj r).ρ σ).asHom ≫ (RD).map ((shiftInclusion k).app r) =
       (RD).map ((shiftInclusion k).app r) ≫
-        ((derivedAction).obj (op (r.unop + k))).ρ σ := by
+        (((derivedAction).obj (op (r.unop + k))).ρ σ).asHom := by
   rw [cmHarrisGeometricGaloisDerivedAction_obj_ρ D C preservation composition unitCoherence associativity comparison symmetry stability square universality dualityNaturality polarizationStability compatibility h htor q U ρ p m hm existence geometry hRigid,
     cmHarrisGeometricGaloisDerivedAction_obj_ρ D C preservation composition unitCoherence associativity comparison symmetry stability square universality dualityNaturality polarizationStability compatibility h htor q U ρ p m hm existence geometry hRigid,
     ← sheafDerivedPullbackWithCoefficients_postcomp,

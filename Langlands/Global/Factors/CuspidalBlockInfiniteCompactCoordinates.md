@@ -4,4 +4,4 @@
 
 `infiniteLeviCompact` evaluates `AdelicBlockParabolic.infiniteCompactLeviProjection` to obtain the diagonal blocks of a matrix in the infinite compact parabolic intersection. Each block is in its own actual infinite compact group. At a real or complex place, the ambient matrix is the compact block diagonal embedding of these projected blocks. The projection preserves the parabolic zero entries, and the local compact parabolic equals its compact Levi.
 
-These are internal coordinate comparisons for the scalar inducing model of Task 6553. Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), describe the compact and parabolic intersection used in that model.
+These are internal coordinate comparisons for the scalar inducing model of `CuspidalIsobaricAutomorphyStatement`. Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), describe the compact and parabolic intersection used in that model.

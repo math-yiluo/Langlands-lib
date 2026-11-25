@@ -1,6 +1,5 @@
 # Renard III.1.6: compact-distribution transpose and compact fixed-dual restriction
 
-Worker 338, Task 5961 (`e57418a0-4be3-4766-96de-c20d6ca8cfc3`).
 Module
 `Langlands.Representation.Smooth.Contragredient.CompactDistributionTransposeProof`,
 namespace `Langlands`.
@@ -103,8 +102,5 @@ the three component proofs.
 
 ## Validation
 
-The module compiled with no errors or warnings under the task's environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. Declaration inspection reported both
+The module compiled with no errors or warnings. Declaration inspection reported both
 universe parameters and only `propext`, `Classical.choice` and `Quot.sound`.
-Independent semantic review and the submission's exact-target validation
-remain separate requirements.

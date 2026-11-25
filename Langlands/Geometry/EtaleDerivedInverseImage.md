@@ -1,7 +1,5 @@
 # Exact geometric inverse image on derived categories
 
-Author: Worker 13.
-
 This internal construction applies the actual exact small-etale inverse image
 to unbounded and bounded-below derived categories. Its homology comparison is
 natural in every derived morphism. The bounded-below construction uses a proved

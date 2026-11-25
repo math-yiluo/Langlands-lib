@@ -5,24 +5,25 @@ p-adiques (d'après Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003),
 235–333, proof of Proposition VIII.4.1, printed pp. 328–330 (PDF pp. 94–96).
 Registered source `waldspurger-2003-plancherel`.
 
-This module is the third follow-up to focused unit 2 of Task 7439
-(revision 2). It imports `RationalCuspidalCentralKernelPairing` (unit 2c),
-which imports units 2b and 2. Its provenance is **derived**. It states one new
+This module continues the local kernel step `RationalCuspidalCentralKernelStep`.
+It imports `RationalCuspidalCentralKernelPairing`, which imports
+`RationalCuspidalCentralKernelDiagonal` and `RationalCuspidalCentralKernelStep`.
+Its provenance is **derived**. It states one new
 proposition, `RationalCuspidalLevelKernelFiniteStatement`, and proves it from
 three Library statements. It does not construct `°e`, does not prove VIII.3.2,
 and does not prove the closed target
 `RationalCuspidalCentralProjectionFiniteStatement`.
 
-## What changes compared with unit 2
+## What changes compared with `RationalCuspidalCentralKernelStep`
 
-Unit 2's `IsRationalCuspidalLevelKernel.finiteDimensional_levelSpan` assumes
+`IsRationalCuspidalLevelKernel.finiteDimensional_levelSpan` (`RationalCuspidalCentralKernelStep`) assumes
 `ConvolutionWeights muG K' Ξ σ` (the estimate of Lemma III.6.1). It uses that
 hypothesis only to make the triple integral of the proof absolutely
 convergent. The Library obtains `ConvolutionWeights` from Lemma II.1.5
 (`RationalXiSquareIntegrableStatement.convolutionWeights`) only when the
 Iwasawa subgroup `K` satisfies `K ≤ rationalHeightSubgroup ρ`, that is
-`ρ(K) ⊆ GL_n(𝒪)`. The target quantifies over every `K` and every `ρ`, and no
-task supplies that inclusion for every structural choice. This module proves the same
+`ρ(K) ⊆ GL_n(𝒪)`. The target quantifies over every `K` and every `ρ`, and that
+inclusion need not hold for every structural choice. This module proves the same
 absolute convergence from the central weights and the `L²` weights alone, by
 the Cauchy–Schwarz inequality on `A_G \ G`. The resulting local step has no
 convolution-weight hypothesis.
@@ -34,8 +35,9 @@ On printed p. 328 the source writes, for `ϕ ∈ °C_H` with `f = p_χ ϕ`,
 and states "Cette expression est absolument convergente" without further
 argument. This module supplies an argument. The rest of the step (the
 reproducing formula (1), the orthonormal basis and the diagonal integral made
-finite by VIII.3.2, printed p. 329) is the content of units 2, 2b and 2c,
-which this module combines.
+finite by VIII.3.2, printed p. 329) is the content of `RationalCuspidalCentralKernelStep`,
+`RationalCuspidalCentralKernelDiagonal` and `RationalCuspidalCentralKernelPairing`, which this
+module combines.
 
 ## Generic results (section `SquareBound`)
 
@@ -85,7 +87,7 @@ Library's `centralAbsIntegral μA f g`.
 
 ## Rational results (section `Rational`)
 
-The setting is that of units 2–2c: `F` a nonarchimedean local field, `G`
+The setting is that of `RationalCuspidalCentralKernelStep` and its two continuations: `F` a nonarchimedean local field, `G`
 with `K`, `hKc`, `hPK`, `ρ`, `Ξ = rationalXi hKc hPK` and
 `σ = rationalHeight ρ`; `s` with `hs : IsSplitComponent s`, a Haar measure
 `muA` on `A_G(F) = (rationalPoints.map s).range`, and a unitary character `χ`.
@@ -96,7 +98,7 @@ with `K`, `hKc`, `hPK`, `ρ`, `Ξ = rationalXi hKc hPK` and
   `CentralWeights muA Ξ σ`, `L2Weights muG Ξ σ` and
   `RationalLevelKernelDiagonalIntegrable hKc hPK ρ muA χ muG H E`. Then
   `rationalCuspidalCentralLevelSpan hKc hPK ρ muA χ H` is finite dimensional.
-  The proof is that of unit 2's `IsRationalCuspidalLevelKernel.finiteDimensional_levelSpan`
+  The proof is that of `IsRationalCuspidalLevelKernel.finiteDimensional_levelSpan`
   with one change: the triple integrability input of
   `finiteDimensional_schwartzCentralIntegralSpan_of_kernel` comes from
   `integrable_kernelTriple_of_l2Weights`. The left translate `x ↦ E(g⁻¹ x)`
@@ -106,14 +108,16 @@ with `K`, `hKc`, `hPK`, `ρ`, `Ξ = rationalXi hKc hPK` and
   assume `hG : IsConnectedReductive G`, a Haar measure `muG`, a compact open
   `H`, `E` with `IsRationalCuspidalLevelKernel`, the central and `L²` weights,
   and `RationalLevelKernelConjugationIntegrable hKc hPK ρ hs muA muG E`
-  (unit 2c: the VIII.3.2 integrability form at `f₁ = E`). Then the actual
+  (`RationalCuspidalCentralKernelPairing`: the VIII.3.2 integrability form at `f₁ = E`). Then the actual
   central level span of `H` is finite dimensional. There is **no** hypothesis
-  on `χ`. If some `b ∈ A_G(F) ∩ H` has `χ(b) ≠ 1`, unit 1's
-  `rationalCuspidalCentralLevel_finite_of_ne_one` shows the span is zero.
+  on `χ`. If some `b ∈ A_G(F) ∩ H` has `χ(b) ≠ 1`,
+  `rationalCuspidalCentralLevel_finite_of_ne_one` (`RationalCuspidalCentralFiniteReduction`) shows
+  the span is zero.
   Otherwise `χ` is trivial on `A_G(F) ∩ H`. Right invariance of `muG` comes
-  from unit 2's `rationalHaar_isMulRightInvariant`. The diagonal input comes
-  from unit 2b's `IsRationalCuspidalLevelKernel.diagonalIntegrable` applied to
-  unit 2c's `RationalLevelKernelPairingIntegrable.of_leftConjugationPairing`.
+  from `rationalHaar_isMulRightInvariant`. The diagonal input comes
+  from `IsRationalCuspidalLevelKernel.diagonalIntegrable` (`RationalCuspidalCentralKernelDiagonal`)
+  applied to `RationalLevelKernelPairingIntegrable.of_leftConjugationPairing`
+  (`RationalCuspidalCentralKernelPairing`).
   The previous theorem then applies.
 
 ## The new statement
@@ -158,50 +162,48 @@ three Library statements:
 It then applies
 `IsRationalCuspidalLevelKernel.finiteDimensional_levelSpan_of_conjugationIntegrable`.
 
-## Open hypotheses and their owners
+## Open hypotheses
 
 None of the hypotheses below is same-rank finiteness, same-rank
 reconstruction, the closed target or a dimension bound.
 
-- `RationalSplitCenterHeightStatement`: owned by Task 5480
-  (`c3846e17-dfda-44c2-a37e-cd9054cb3b0f`).
+- `RationalSplitCenterHeightStatement`: proved in the Library as
+  `rationalSplitCenterHeight` (module `RationalSplitCenterHeightProof`).
 - `RationalXiSquareIntegrableStatement`: the Library proves it from
   `RationalXiUpperBoundStatement` (the upper bound of Lemma II.1.1) by
-  `rationalXiSquareIntegrable_of_upperBound`. That upper bound is owned by
-  Task 5326 (`d27429ee-ab4e-47b4-8486-8cdd92ff4d34`).
+  `rationalXiSquareIntegrable_of_upperBound`. That upper bound is proved
+  as `rationalXiUpperBound` (module `RationalXiUpperBoundProof`).
 - `CuspidalSupport.RationalSpecialVertexCompactInputsStatement`: the Library
   proves it from `JointSpecialCompactBasisExistenceStatement` by
   `CuspidalSupport.rationalSpecialVertexCompactInputs_of_jointBasis`. That
-  statement is owned by Task 4169 (`8c39faa0-2a70-4fc4-a027-914987aba924`).
+  statement is not proved unconditionally in the Library (`JointBasisFinalAssembly` derives it
+  from further inputs).
 - The premise `IsRationalCuspidalLevelKernel hKc hPK ρ muG H E` of the
-  statement, for `E = °e`: Worker 827's unit 3 of Task 7439 (Library module
+  statement, for `E = °e`: the rank adapter (Library module
   `RationalCuspidalUnit`) derives the five properties from six laws of a
-  linear projection. Task 7277 (`eaceb96b-aaaf-4068-9a11-46292b5334e6`) owns
-  those laws for the actual degree-zero projection. The bridge from unit 3's
-  interface to `IsRationalCuspidalLevelKernel` stays inside Task 7439
-  (Worker 827's module `RationalCuspidalUnitKernel`, not yet staged).
+  linear projection. Those laws concern the actual degree-zero projection of
+  VIII.2, which is not in the Library. The bridge from the interface of
+  `RationalCuspidalUnit` to `IsRationalCuspidalLevelKernel` is
+  `isRationalCuspidalUnit_iff_isRationalCuspidalLevelKernel` (module `RationalCuspidalUnitKernel`).
 - The premise `RationalLevelKernelConjugationIntegrable hKc hPK ρ hs muA muG E`
   of the statement, for `E = °e`: it is the second conjunct of the Library
   statement `RationalCuspidalConjugationIntegrabilityStatement` (VIII.3.2)
-  at `f₁ = °e`. The proof of that statement is owned by Task 7500
-  (`6c7dbd12-f209-43e5-8e07-60460134dc82`). The adapter from the Library
-  statement to this premise, which needs `°e` to be cuspidal and a compact
-  `K0` with `SimultaneousStandardBasisAt`, stays inside Task 7439 (Worker
-  827's module `RationalCuspidalUnitKernel`, together with Task 4169 for the
-  basis).
+  at `f₁ = °e`. That statement is not proved in the Library. The adapter from
+  the Library statement to this premise, which needs `°e` to be cuspidal and a
+  compact `K0` with `SimultaneousStandardBasisAt`, is
+  `RationalCuspidalConjugationIntegrabilityStatement.levelKernelConjugationIntegrable` (module
+  `RationalCuspidalUnitKernel`); the basis comes from
+  `JointSpecialCompactBasisExistenceStatement`.
 
-Unimodularity of `G(F)` is not open: unit 2's `rationalHaar_isMulRightInvariant`
-derives it for connected reductive `G`.
+Unimodularity of `G(F)` is not open: `rationalHaar_isMulRightInvariant`
+(`RationalCuspidalCentralKernelStep`) derives it for connected reductive `G`.
 
 ## Dependencies
 
-This module depends on the Task 7439 units published at Library commit
-`371b9c350ae74d42665a9e7e0ec32e4c66f56619`: unit 2 (`2eeb2a9b-6ac4-4307-b89b-ea12a7030a50`, module
-`RationalCuspidalCentralKernelStep`), unit 2b
-(`55f19aeb-32e1-4508-ab80-f107d3d09672`, module
-`RationalCuspidalCentralKernelDiagonal`) and unit 2c
-(`ec802636-4330-40a4-a352-47c3939d9071`, module
-`RationalCuspidalCentralKernelPairing`). It also imports the Library modules
-`RationalCuspidalCentralFiniteReduction` (unit 1),
+This module depends on the modules published at Library commit
+`371b9c350ae74d42665a9e7e0ec32e4c66f56619`: `RationalCuspidalCentralKernelStep`,
+`RationalCuspidalCentralKernelDiagonal` and
+`RationalCuspidalCentralKernelPairing`. It also imports the Library modules
+`RationalCuspidalCentralFiniteReduction`,
 `RationalCentralProjection` and
 `CuspidalSupport.RationalCuspidalInertiaDecompositionReduction`.

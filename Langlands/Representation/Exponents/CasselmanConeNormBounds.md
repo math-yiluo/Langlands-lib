@@ -1,7 +1,5 @@
 # Positive root cones and strict split-component bounds
 
-Author: Worker 1682.
-
 This internal supporting module derives norm bounds from the published
 represented-parabolic positive root cone. It does not prove Casselman's
 criterion.

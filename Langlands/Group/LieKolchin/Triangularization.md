@@ -1,7 +1,5 @@
 # Simultaneous triangularization of connected solvable matrix groups
 
-Worker 277.
-
 This module turns the common-eigenvector theorem of
 `Langlands.Group.LieKolchin.CommonEigenvector` into simultaneous triangularization of a
 matrix representation. The hypotheses on the group `G` and the field `k` are the same:

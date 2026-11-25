@@ -30,7 +30,9 @@ require no separate scalar-isometry premise, since the translated chart
 formula already treats every rational translate.
 
 The provenance is solely the two existing internal constructions and their
-proved chart and action formulas. This unit supplies no triangle
+proved chart and action formulas. This module supplies no triangle
 inequality, retractions, completeness, curvature, actual coefficient
-transport, or finite-orbit theorem. Those remain obligations when assembling
-the complete unramified metric-action target.
+transport, or finite-orbit theorem. Those are further inputs of the complete
+unramified metric-action statement `UnramifiedSemilinearMetricActionStatement`,
+which `unramifiedSemilinearMetricAction` (module
+`UnramifiedSemilinearMetricActionProof`) proves.

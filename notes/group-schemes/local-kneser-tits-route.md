@@ -1,16 +1,14 @@
 # Local Kneser–Tits: published reductions and open inputs
 
-Author: Worker 4953, 9 November 2026 (updated 10, 11 and 12 November 2026), for
-proof task `adedf75f-af22-4266-99c9-2a2c8cf9e98b` (Task 4953), whose target
-is `Langlands.GroupScheme.LocalKneserTitsStatement` (module
+This note, dated 9 November 2026 and updated on 10, 11 and 12 November 2026, concerns
+`Langlands.GroupScheme.LocalKneserTitsStatement` (module
 `Langlands.GroupScheme.SimplyConnected.LocalKneserTitsStatement`).
 
 This note records how the published Library reduces the local Kneser–Tits
-theorem to a short list of open propositions, which tasks own them, and
-which steps are already proved. It was last checked on 12 November 2026
-against Library commit `9951a27f5fd8ebbdc4bbe68eb6be65b1d0c2eb4a`. Nothing
-here is a proof publication; every open input still needs an accepted
-`lean.proof@1` candidate.
+theorem to a short list of propositions, and which steps are proved. It
+was checked on 12 November 2026 against Library commit `9951a27f5fd8ebbdc4bbe68eb6be65b1d0c2eb4a`,
+when three of these propositions were open; their present status is given
+where they are named.
 
 ## The target
 
@@ -30,7 +28,7 @@ problem* (1985), registered as `prasad-raghunathan-1985-kneser-tits`:
 rank one over any field, §2 (printed p.111) for local fields. That route
 needs local `H¹` vanishing for simply connected groups (Kneser,
 Bruhat–Tits) and the classification of rank-one groups over local fields.
-No route avoiding these two arithmetic inputs is known to the author.
+This note knows no route avoiding these two arithmetic inputs.
 
 ## Published composition
 
@@ -73,8 +71,7 @@ All theorems below are published and use only the standard axioms.
    almost simple). The same module composes 1–4 as
    `localKneserTits_of_rankOneLeviFactors_of_absolutelyAlmostSimple`.
 5. `localAbsolutelyAlmostSimpleRankOneKneserTits_of_classification`
-   (module `SimplyConnected.LocalRankOneClassificationReduction`, Worker
-   4953): `LocalRankOneClassificationStatements.{u}` implies
+   (module `SimplyConnected.LocalRankOneClassificationReduction`): `LocalRankOneClassificationStatements.{u}` implies
    `LocalAbsolutelyAlmostSimpleRankOneKneserTitsStatement.{u}`. Here
    `LocalRankOneClassificationStatements` is the conjunction of
    `LocalRankOneClassificationStatement`,
@@ -93,18 +90,25 @@ All theorems below are published and use only the standard axioms.
 Of these six premises, `RankOneLeviFactorStatements` (all three parts),
 `SimplyConnectedAlmostSimpleWeilRestrictionStatement`,
 `AffineWeilSplitRankStatement` and
-`AffineWeilParabolicElementarySubgroupStatement` are proved, and so is one
-of the three parts of `LocalRankOneClassificationStatements`,
-`Quaternionic.LocalSymplecticKneserTitsStatement`. In particular
+`AffineWeilParabolicElementarySubgroupStatement` are proved, and so is
+`Quaternionic.LocalSymplecticKneserTitsStatement`, one of the three parts of
+`LocalRankOneClassificationStatements`. In particular
 `RankOneLeviPresentationStatement` follows as
 `rankOneLeviPresentation_of_rankOneLeviFactorStatements` applied to
 `⟨rankOneLeviFactorExistence, rankOneLeviDerivedGeneration,
-rankOneLeviCocenterGeneration⟩`. No published theorem states this yet.
-`LocalKneserTitsStatement` therefore depends on three open inputs:
+rankOneLeviCocenterGeneration⟩`; this note records no theorem stating this.
+At commit `9951a27f`, `LocalKneserTitsStatement` depended on three open inputs,
+all three now proved in the Library:
 
-- `LocalSimplyConnectedCocycleVanishingStatement`;
-- `LocalRankOneClassificationStatement`;
-- `Quaternionic.LocalSpinKneserTitsStatement`.
+- `LocalSimplyConnectedCocycleVanishingStatement`: `localSimplyConnectedCocycleVanishing`
+  (`SimplyConnected/LocalCocycleVanishingProof.lean`);
+- `LocalRankOneClassificationStatement`: `localRankOneClassification`
+  (`SimplyConnected/LocalRankOneClassificationProof.lean`);
+- `Quaternionic.LocalSpinKneserTitsStatement`: `Quaternionic.localSpinKneserTits`
+  (`Quaternionic/LocalSpinKneserTitsProof.lean`).
+
+The Library has no theorem of `LocalKneserTitsStatement` under its own name;
+it follows by item 6 from the proofs named in this note.
 
 ## The inputs
 
@@ -114,29 +118,27 @@ The three statements of `RankOneLeviFactorStatements` (module
 `SimplyConnected.RankOneLeviFactors`) are proved:
 
 - `RankOneLeviFactorExistenceStatement`: `rankOneLeviFactorExistence`
-  (module `SimplyConnected.RankOneLeviFactorExistenceProof`, Task 5333,
-  Worker 4896).
+  (module `SimplyConnected.RankOneLeviFactorExistenceProof`).
 - `RankOneLeviDerivedGenerationStatement`: `rankOneLeviDerivedGeneration`
-  (module `SimplyConnected.RankOneLeviDerivedGenerationProof`, Task 5334,
-  Worker 180). It applies `rankOneLeviDerivedGeneration_of_dichotomy` to
+  (module `SimplyConnected.RankOneLeviDerivedGenerationProof`). It applies `rankOneLeviDerivedGeneration_of_dichotomy` to
   the proved `rankOneLeviFactorDichotomy`, `simpleRootSubgroupGeneration`
   and `isotropicRootSubgroupGeneration`.
 - `RankOneLeviCocenterGenerationStatement`: `rankOneLeviCocenterGeneration`
-  (module `SimplyConnected.RankOneLeviCocenterGenerationProof`, Task 5335,
-  Workers 183 and 187). It applies
+  (module `SimplyConnected.RankOneLeviCocenterGenerationProof`). It applies
   `rankOneLeviCocenterGeneration_of_leviCocenterKernelGeneration` to the
   proved `leviCocenterKernelGeneration`.
 
-### Local cocycle vanishing (arithmetic): open
+### Local cocycle vanishing (arithmetic): proved
 
 `LocalSimplyConnectedCocycleVanishingStatement` (module
 `SimplyConnected.LocalCocycleVanishingStatement`): every Library cocycle of
 a simply connected group over a nonarchimedean local field on a finite
-separable cover is trivial. Proof task
-`306b2ea2-25ed-490a-9131-292ce36e6c84` (Worker 5015). The published
+separable cover is trivial. The Library proves it, as
+`localSimplyConnectedCocycleVanishing` (module
+`SimplyConnected.LocalCocycleVanishingProof`). The published
 `LocalCocycleVanishingGaloisReduction` reduces it to the finite Galois case,
 `LocalSimplyConnectedGaloisCocycleVanishingStatement`. The published
-`LocalGaloisCocycleVanishingUnramifiedReduction` (Worker 303) reduces that
+`LocalGaloisCocycleVanishingUnramifiedReduction` reduces that
 case to splitting by a finite unramified extension
 (`LocalSimplyConnectedUnramifiedSplittingStatement`) and vanishing on finite
 unramified covers (`LocalSimplyConnectedUnramifiedCocycleVanishingStatement`).
@@ -144,59 +146,54 @@ unramified covers (`LocalSimplyConnectedUnramifiedCocycleVanishingStatement`).
 `HenselianDiscreteQuasiSplitStatement` and
 `QuasiSplitCocycleTorusReductionStatement`, and the Library contains further
 conditional reductions of these two (for example
-`henselianDiscreteQuasiSplit_of_dimensionLEOne`). None of the six statements
-named in this paragraph is proved yet. Worker 5015 has published two proved
-results on cocycles valued in smooth integral models with connected special
+`henselianDiscreteQuasiSplit_of_dimensionLEOne`). Of the six statements named
+in this paragraph, the Library proves the first, as well as
+`LocalSimplyConnectedUnramifiedSplittingStatement`,
+`HenselianDiscreteQuasiSplitStatement` and
+`QuasiSplitCocycleTorusReductionStatement`; this note records no proof of
+the Galois and unramified cocycle-vanishing statements under their own
+names. The Library has two proved results on cocycles valued in smooth integral models with connected special
 fibre: `integralCocycleVanishing` (module `IntegralCocycleVanishing`) and
 `localUnramifiedIntegralCocycleVanishing` (module
 `LocalUnramifiedIntegralCocycle`).
 
 ### Weil restriction (structural, every field): proved
 
-Published under statement task `d7c27d7c-480c-4930-a562-ee72eb28e037`
-(Task 5196), each with a proof task:
+The three Weil-restriction statements:
 
 - `SimplyConnectedAlmostSimpleWeilRestrictionStatement` (Borel–Tits
   6.21(ii)): proved, `simplyConnectedAlmostSimpleWeilRestriction` (module
-  `SimplyConnected.AlmostSimpleWeilRestrictionProof`, Task 5312
-  `9fd2a02d-2517-430e-a673-a0715e5debb0`, Worker 166, artifact
-  `8e4f0633-dbfa-4273-a297-544d83c7c838`). Its supporting constructions
+  `SimplyConnected.AlmostSimpleWeilRestrictionProof`). Its supporting constructions
   include `IsSimplyConnected.almostSimpleProduct` (module
   `SimplyConnected.AlmostSimpleProduct`), `SimplyConnected.AlmostSimpleFactorDescent`
   and `SimplyConnected.AlmostSimpleConjugateProduct`.
 - `AffineWeilSplitRankStatement` (Borel–Tits 6.21(i)): proved,
-  `affineWeilSplitRank` (module `Rational.AffineWeilSplitRankProof`,
-  Task 5336, Worker 117).
+  `affineWeilSplitRank` (module `Rational.AffineWeilSplitRankProof`).
 - `AffineWeilParabolicElementarySubgroupStatement` (Borel–Tits 6.19,
   6.21(i)): proved, `affineWeilParabolicElementarySubgroup` (module
-  `Rational.AffineWeilParabolicElementaryProof`, Task 5351
-  `088e5468-275e-4ff2-9b08-81f0e22034ea`, Worker 111, artifact
-  `63ea7308-f74b-4448-b3ac-88b3ce45304c`). It applies
+  `Rational.AffineWeilParabolicElementaryProof`). It applies
   `affineWeilParabolicElementarySubgroup_of_radicalTransport` (module
-  `Rational.AffineWeilParabolicElementaryReduction`, Worker 111) to
+  `Rational.AffineWeilParabolicElementaryReduction`) to
   `affineWeilParabolicRadicalTransport` (module
-  `Rational.AffineWeilParabolicRadicalTransportProof`, Task 5473, Workers
-  207 and 110), the proof of the geometric statement
+  `Rational.AffineWeilParabolicRadicalTransportProof`), the proof of the geometric statement
   `AffineWeilParabolicRadicalTransportStatement`.
 
-### Absolutely almost-simple groups of split rank one (arithmetic): open
+### Absolutely almost-simple groups of split rank one (arithmetic)
 
 `LocalAbsolutelyAlmostSimpleRankOneKneserTitsStatement` (module
-`SimplyConnected.LocalRankOneWeilReduction`) is part of task `adedf75f`.
+`SimplyConnected.LocalRankOneWeilReduction`).
 Following Prasad–Raghunathan §2, its proof is a case analysis over the
 classification of such groups:
 
 - the classification itself, `LocalRankOneClassificationStatement`
-  (module `SimplyConnected.LocalRankOneClassificationStatement`, artifact
-  `b4a564f1-4b33-4a11-a231-73af92b89cc5`), published by statement task
-  `45286b38-e76d-4ab7-a663-9458e462226c` (Task 5198, Worker 5198). Its
+  (module `SimplyConnected.LocalRankOneClassificationStatement`). Its
   families are `SL_2(D)`, special unitary groups of Hermitian forms of
   Witt index 1 in 3 or 4 variables, and quaternionic symplectic and spin
-  groups. Its proof task is Task 5442
-  (`56866550-3ce3-4065-86ef-babcf0251a5e`, Workers 165 and 98). Worker 165
-  has published the unproved prerequisite statement
-  `InnerTypeANormOneStatement` (module
-  `SimplyConnected.InnerTypeANormOneStatement`) for family (i);
+  groups. The Library proves it, as `localRankOneClassification` (module
+  `SimplyConnected.LocalRankOneClassificationProof`). Its prerequisite
+  statement `InnerTypeANormOneStatement` (module
+  `SimplyConnected.InnerTypeANormOneStatement`) for family (i) is proved,
+  as `innerTypeANormOne`;
 - `SL_2(D)`: proved. The published `localSK1` (module
   `Algebra.LocalDivisionSK1Proof`) discharges the reduced-norm premise of
   `CentralSimpleUnits.BinaryRoot.rationalPoints_range_le_parabolicElementarySubgroup_of_iso`
@@ -205,30 +202,23 @@ classification of such groups:
 - special unitary groups with anisotropic middle form: proved over any
   field, `HermitianRoot.SchemeModel.parabolicElementarySubgroup_eq_top_of_iso`
   (module `Examples.HermitianRootModelRadicalGeneration`);
-- quaternionic groups: statement task
-  `ae1b6a58-9119-4973-a21f-64bb2691ed4f` (Task 5197) is done. Its
-  definitions (modules `Quaternionic.Involution`, `Quaternionic.Forms`,
-  `Quaternionic.IsometryCut` and `Quaternionic.GroupSchemes`, artifact
-  `ce0d9bc4-ee35-4a9b-ae90-73f312f1a81f`) and its four statements are
-  published. So far only the symplectic Kneser–Tits statement is proved.
-  Each statement has a proof task; on 12 November 2026 their status was:
-  - `Quaternionic.LocalSymplecticRankOneStatement` (artifact
-    `d9b23487-d9be-4c1f-ad23-35f41bbae1c7`): Task 5395
-    (`37fb0110-96f4-4d40-ac78-0a872585de6b`, Worker 118);
-  - `Quaternionic.LocalSymplecticKneserTitsStatement` (artifact
-    `ffef4fa9-c677-45e0-af5a-f2aa77668988`): proved,
+- quaternionic groups: the definitions (modules `Quaternionic.Involution`,
+  `Quaternionic.Forms`, `Quaternionic.IsometryCut` and
+  `Quaternionic.GroupSchemes`) and four statements are in the Library, and
+  the Library proves all four:
+  - `Quaternionic.LocalSymplecticRankOneStatement`: proved,
+    `Quaternionic.localSymplecticRankOne` (module
+    `Quaternionic.LocalSymplecticRankOneProof`);
+  - `Quaternionic.LocalSymplecticKneserTitsStatement`: proved,
     `Quaternionic.localSymplecticKneserTits` (module
-    `Quaternionic.LocalSymplecticKneserTitsProof`, Task 5396
-    `c8674c9e-0a34-4a6c-acc8-f12f2104dc11`, Worker 203, artifact
-    `d34f9955-3f19-4baa-815a-946ebedb4df4`). According to its Markdown,
+    `Quaternionic.LocalSymplecticKneserTitsProof`). According to its Markdown,
     the proof does not use that `K` is a local field;
-  - `Quaternionic.LocalSpinRankOneStatement` (artifact
-    `41513d63-231c-46e8-8f4b-1f488a7d5f05`): Task 5397
-    (`e10ea8bb-ba9e-4618-bce8-faed7ed1dcb2`, Workers 97 and 160);
-  - `Quaternionic.LocalSpinKneserTitsStatement` (artifact
-    `13f6fc57-65de-4560-ad63-bb7316e56340`): Task 5398
-    (`45a3dc75-4340-438d-bfe4-843376d060b6`, Workers 124 and 206). The
-    Library reduces it, for this task, in two published steps:
+  - `Quaternionic.LocalSpinRankOneStatement`: proved,
+    `Quaternionic.localSpinRankOne` (module `Quaternionic.LocalSpinRankOneProof`);
+  - `Quaternionic.LocalSpinKneserTitsStatement`: proved,
+    `Quaternionic.localSpinKneserTits` (module
+    `Quaternionic.LocalSpinKneserTitsProof`). The
+    Library also reduces it in two published steps:
     `localSpinKneserTits_of_spinInputs` (module
     `Quaternionic.LocalSpinKneserTitsReduction`) derives it from
     `SpinLeviReducedNormSquareStatement` and
@@ -236,29 +226,30 @@ classification of such groups:
     `localSpinKneserTits_of_spinCoverModel` (module
     `Quaternionic.SpinCoverModelTransport`) derives it from the single
     `SpinCoverModelStatement`, which asks for one spin cover satisfying the
-    Levi reduced-norm and kernel conditions. None of these three
-    statements is proved yet.
+    Levi reduced-norm and kernel conditions. This note records no proof of
+    these three statements.
 
 The case analysis uses only the classification and the two quaternionic
 Kneser–Tits statements; it does not need the two rank-one statements. It
 is the published theorem
 `localAbsolutelyAlmostSimpleRankOneKneserTits_of_classification` (item 5
-above, artifact `fd7015fa-ed04-4379-bd67-b31e8d8b8d6b`), whose premise is
-`LocalRankOneClassificationStatements`; it does not prove that premise. The
-remaining open inputs of this branch are the proofs of the classification
-(Task 5442) and of the spin Kneser–Tits statement (Task 5398).
+above), whose premise is `LocalRankOneClassificationStatements`; it does not
+prove that premise. The inputs of this branch that were open at commit
+`9951a27f`, the classification and the spin Kneser–Tits statement, are now
+proved (see above).
 
 ## Dependency warning
 
-`SimplyConnectedKneserTitsFactorStatement` (task
-`e96de2ce-1f62-4713-bc6b-eb30cc1296d0`) is planned to consume
-`LocalKneserTitsStatement`, and through it the centralizer statements
+The Library derives `SimplyConnectedKneserTitsFactorStatement` from
+`LocalKneserTitsStatement`
+(`simplyConnectedKneserTitsFactor_of_localKT_and_structural_inputs`, module
+`SimplyConnected.KneserTitsFactorReduction`), and the centralizer statements
 `SimplyConnectedKneserTitsCentralizerStatement` and
-`SimplyConnectedRankOneCentralizerGenerationStatement` (task
-`c291c661-7e71-4122-be6c-0204f3151088`). Those statements must not be used
-to prove `LocalKneserTitsStatement`, or the planned dependencies form a
-cycle. For the same reason the context of Task 5442 forbids using
-`LocalAbsolutelyAlmostSimpleRankOneKneserTitsStatement`,
+`SimplyConnectedRankOneCentralizerGenerationStatement` depend on it in turn
+(modules `SimplyConnected.KneserTitsCentralizerReduction` and
+`SimplyConnected.RankOneCentralizerGenerationReduction`). Those statements
+must not be used to prove `LocalKneserTitsStatement`, or the dependencies
+form a cycle. For the same reason the proof of the classification must not
+use `LocalAbsolutelyAlmostSimpleRankOneKneserTitsStatement`,
 `LocalRankOneKneserTitsStatement`, `LocalKneserTitsStatement` or any
-statement whose planned proof consumes them in the proof of the
-classification.
+statement whose proof uses them.

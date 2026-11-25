@@ -52,8 +52,10 @@ entire all-test kernel range with the derived subgroup. The published field
 semisimplicity theorem then applies to the actual kernel inclusion.
 
 This is an internal consequence of the imported character, derived-subgroup,
-quotient and root-datum APIs. The definition of the coroot quotient and its
-projection are the separately submitted unchanged constructions of Worker 596.
+quotient and root-datum APIs. The coroot quotient and its projection are the
+separate constructions of `CorootTorusQuotient` and `CorootTorusProjection`,
+used here unchanged.
 The module does not construct q. Specialization to geometric fibres over an
 arbitrary coefficient ring, and the unconditional relative existence theorem
-of Task 6860, remain separate obligations.
+for a semisimple normal subgroup with torus quotient, are not part of this
+module.

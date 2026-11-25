@@ -42,9 +42,13 @@ with the conjunction of the existing compact-translation and differential
 preservation statements. Finite translation is already known to preserve all
 forms. The proof converts the smooth-function and finite-smooth presentations
 of the same forms using their published equivalence. This is a conditional
-characterization, not a proof of the two remaining preservation obligations.
+characterization, not a proof of the two preservation statements; the Library
+proves them as `automorphicCompactTranslation` (module
+`Langlands.Automorphic.CompactTranslationProof`) and
+`automorphicDifferentialPreservation` (module
+`Langlands.Automorphic.FullOperatorAction`).
 
-This unit supplies a maximal concrete invariant space, with its universal
+This module supplies a maximal concrete invariant space, with its universal
 property and genuine actions. It asserts neither its nonzeroness nor equality
 with all forms. Irreducible realizations, cuspidal classes, subquotients,
 admissibility, tensor factorization, spectral existence and isobaric

@@ -42,12 +42,11 @@ coefficient of the second-factor monomial `m` in `Δ f` is the constant `f.coeff
 whenever no monomial of `f` has weight above that of `m`. This is the top-weight part
 of Milne's inclusion `Δ(C_r) ⊆ ∑_i C_i ⊗ C_{r-i}`.
 
-## Authorship
+## Supporting modules
 
-Worker 1500 wrote `Langlands.GroupScheme.UnitriangularUnipotent.WeightCore`, the
-polynomial weight estimate and `rid_lTensor_eval₂Hom`, from definitions agreed with
-Worker 1405. Worker 1405 wrote `Langlands.GroupScheme.UnitriangularUnipotent.Coordinates`
-and this module.
+`Langlands.GroupScheme.UnitriangularUnipotent.WeightCore` contains the
+polynomial weight estimate and `rid_lTensor_eval₂Hom`.
+`Langlands.GroupScheme.UnitriangularUnipotent.Coordinates` imports it.
 
 ## Generic part
 

@@ -1,10 +1,6 @@
 # Renard A.VIII.2: small projectives and projective finite-type objects
 
-Authors: Worker 6 (statement design, implementation and documentation);
-Worker 937 (independent source rereading, compilation and inspection, and the
-size-degeneracy and module-instance explanations).
-
-This statement unit supplies
+This module supplies
 `Langlands.Renard.SmallProjectiveFiniteTypeStatement` in module
 `Langlands.CategoryTheory.Renard.SmallProjectiveFiniteTypeStatements`.
 It records the comparison in an arbitrary abelian category with Renard's
@@ -22,7 +18,7 @@ Complete PDF pages 272–273 (printed 266–267) were read for A.VIII.1–2.
 The comparison is the unnumbered assertion in A.VIII.2 on printed page 267 /
 PDF page 273: in a Grothendieck category an object is small projective if
 and only if it is projective of finite type. Renard cites Pareigis [37],
-4.11, Lemma 1. That cited source has not been read for this unit, and no
+4.11, Lemma 1. That cited source has not been read for this module, and no
 proof from it is claimed to have been checked.
 
 The definitions of source Grothendieck, AB4* and AB5 were reread on printed
@@ -39,7 +35,8 @@ on `Hom(P, •)`. The 2026 text already incorporates it. Those two errata
 pages contain no correction to the finite-type comparison; this is a
 bounded observation about the consulted pages and edition. The public
 `notes/renard/appendix-a-corrections.md` concerns other Appendix A passages.
-No `notes/errata` directory is present in the inspected current Library.
+The Library's `notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`
+concerns VII.1.2, not Appendix A.
 
 ## Complete statement
 
@@ -140,7 +137,7 @@ For example, for a ring `R : Type v` and `M : ModuleCat.{v} R` the premise
 `Small.{v} (Subobject M)` is an existing Mathlib instance
 (`CategoryTheory.small_subobject` applied to Mathlib's
 `wellPowered_moduleCat`); this was confirmed by a private `inferInstance`
-check. That check concerns only the smallness premise. This unit neither
+check. That check concerns only the smallness premise. This module neither
 states nor proves that a module category satisfies the source Grothendieck
 hypothesis.
 
@@ -150,10 +147,9 @@ comparison at one chosen size `w` at a time.
 There is no universe equality, module specialization, generator, enough
 projectives, Noetherianity, finite length or finite-dimensionality premise.
 
-## Verification and remaining obligations
+## Verification and scope
 
-Development compilation and full declaration inspection were performed in
-approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with prepared
+Development compilation and full declaration inspection were performed with
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The inspection reports a `definition` with level parameters `w, v, u`,
 returning `Prop`, whose axioms are only `propext`, `Classical.choice` and
@@ -165,11 +161,11 @@ with universes, and checked by `rfl` that the declaration is
 conjunct of `hG`. It also elaborated the declaration at the unequal universe
 choices `{0, 1, 3}` and `{5, 2, 1}`.
 These checks establish elaboration and the proposition kind; they do not
-prove the comparison or establish independent semantic acceptance.
+prove the comparison.
 
-The comparison proof remains a separate exact-target successor after
-independent statement publication. The adjacent finite-subcoproduct
+The comparison is proved as `smallProjectiveFiniteType` in
+`Langlands.CategoryTheory.Renard.SmallProjectiveFiniteType`. The adjacent finite-subcoproduct
 factorization assertion, presentations by copies of a progenerator, the
-regular-module converse and the actual right-module equivalence remain
-separate source obligations. No proof sketch, imported theorem or circular
+regular-module converse and the actual right-module equivalence are
+separate source assertions. No proof sketch, imported theorem or circular
 assumption is supplied in this statement pair.

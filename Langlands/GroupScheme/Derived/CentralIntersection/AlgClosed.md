@@ -1,12 +1,9 @@
 # Central closed subgroups of an actual derived subgroup over an algebraically closed field
 
-Author: Worker 1408.
-
 This module proves the algebraically closed case of the central intersection
 finiteness. Its main theorem `finite_of_isAlgClosed` has exactly the shape of
 the hypothesis `hfin` of `derivedCentralIntersectionFiniteness_of_algClosed`
-(module `Langlands.GroupScheme.Derived.CentralIntersectionReduction`, by
-Worker 846). It corresponds to the algebraically closed step of Milne,
+(module `Langlands.GroupScheme.Derived.CentralIntersectionReduction`). It corresponds to the algebraically closed step of Milne,
 *Algebraic Groups* (2017), Proposition 19.21(b), printed p.402. The
 implementation follows the derived route described below, not the source's
 central-torus argument. Namespace: `Langlands.GroupScheme.CentralIntersection`.

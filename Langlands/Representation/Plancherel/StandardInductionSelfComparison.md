@@ -1,7 +1,5 @@
 # Standard integral self-comparisons
 
-Author: Worker 200.
-
 ## Provenance and purpose
 
 This is a derived construction motivated by J.-L. Waldspurger, *La formule
@@ -172,7 +170,7 @@ separate compact-induction hypotheses are available.
 
 ## Remaining obligations
 
-This unit proves the original standard-integral comparison squares and
+This module proves the original standard-integral comparison squares and
 their full-stabilizer witnesses conditional on full convergence on the
 stated nonempty ambient opens and the displayed measure and modulus
 data. Initial convergence, construction of those opens, rational
@@ -183,5 +181,5 @@ nonvanishing, positivity or source-normalized global `j`/`mu`.
 
 Actual rational-point structural realizations and the remaining measure,
 Schwartz, spectral and Plancherel conclusions are also separate. These
-representation-theoretic and analytic premises do not become permitted
-external structural inputs for completion of the whole Plancherel program.
+representation-theoretic and analytic premises are not structural
+hypotheses that the main Plancherel results may keep.

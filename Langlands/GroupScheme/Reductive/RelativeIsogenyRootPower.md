@@ -1,6 +1,6 @@
 # Prescribed powers of actual root restrictions over local rings
 
-This internal derived unit computes the restriction from
+This internal derived module computes the restriction from
 `RelativeIsogenyRootRestriction` using the supplied root-datum factor. The base
 is any local commutative ring `R`, including a nonreduced ring. The source and
 target group schemes are affine. Their coordinate tori have finite index sets;
@@ -19,7 +19,7 @@ actual root restriction evaluated at `1` in the base ring. The theorem
 `rootRestriction_power_rootPoint` computes the ambient composite on every scheme
 test as the target root point with coordinate
 `baseScalar Z coefficient * a ^ r.rootFactor b`. Tests need not be affine.
-The coefficient is not asserted to be a unit in this unit.
+The coefficient is not asserted to be a unit in this module.
 
 The generic theorem `IsRootParametrization.restriction_powerWeight` cancels the
 monic target parametrization and uses the two all-test conjugation laws and the
@@ -37,4 +37,4 @@ including nonaffine tests. `rootRestriction_power_rootPoint` then composes with
 the actual ambient restriction square. No equality over the base is inferred
 from field fibres. All results are derived from the imported actual root
 restriction, root equivariance and natural Laurent-polynomial rigidity APIs;
-this unit does not assert the full isogeny rigidity theorem.
+this module does not assert the full isogeny rigidity theorem.

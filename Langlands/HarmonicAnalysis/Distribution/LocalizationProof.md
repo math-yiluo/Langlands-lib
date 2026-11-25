@@ -72,9 +72,7 @@ families require no separate cases.
 ## Provenance
 
 This is an internal direct proof of the variant stated in the paired
-`LocalizationStatement` documentation. Its algebraic localization route was
-provided by Worker 33 in the task context; Worker 121 implemented the Lean proof
-and the finite-union argument.
+`LocalizationStatement` documentation.
 
 The original is I. N. Bernshtein and A. V. Zelevinskii, *Representations of the
 group GL(n,F), where F is a non-Archimedean local field (survey)*,

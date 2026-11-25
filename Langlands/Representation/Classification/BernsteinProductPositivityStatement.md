@@ -1,7 +1,5 @@
 # Positivity of binary products with unitary top shifted derivatives
 
-Author: Worker 105.
-
 `Langlands.Classification.BernsteinUnitaryTopDerivativeProductPositivity F T`
 states the product-positivity implication used in the rank induction for
 Bernstein's unitary-product theorem. It is a proposition definition. No

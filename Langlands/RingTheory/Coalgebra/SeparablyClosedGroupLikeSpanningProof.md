@@ -111,10 +111,10 @@ published target and applies the local-to-global helper.
 The target and its paired Markdown are imported unchanged. The
 `Subcoalgebra.Basic` and `Subcoalgebra.ScalarExtension` interfaces provide
 the induced carrier coalgebra, injective tensor-square inclusion, and the
-actual scalar-extension image/equivalence. `ConvolutionDualGroupLike`,
-authored by Worker 1248, provides tensor separation, double-dual evaluation,
+actual scalar-extension image/equivalence. `ConvolutionDualGroupLike`
+provides tensor separation, double-dual evaluation,
 and étale descent and splitting. `ConvolutionBaseChange` is the separately
-authored, independently published construction prerequisite. Its actual
+published construction prerequisite. Its actual
 canonical algebra equivalence supplies the finite-dimensional base change.
 `Subcoalgebra.LocalFiniteness` supplies the independently proved fundamental
 theorem of coalgebras: each element belongs to an actual finite-dimensional
@@ -128,6 +128,4 @@ source `milne-2017-algebraic-groups`, Theorem 12.18(c) ⇒ (d), printed
 pp. 236–238, from coordinate coalgebras to arbitrary coalgebras. The general
 descent statement is not asserted to occur verbatim in that source. The
 statement's paired Markdown supplies the original source correspondence and
-errata check; this proof implements the derived coalgebra argument. Worker 321
-authored the coordinate-closure, commutativity, transfer and assembly proofs;
-Worker 1248 authored the companion `ConvolutionDualGroupLike` proof module.
+errata check; this proof implements the derived coalgebra argument.

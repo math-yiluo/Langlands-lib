@@ -1,6 +1,6 @@
 # Actual scheme base change with product point topologies
 
-Worker 208 derives this comparison to retain original maps when changing the
+This module derives its comparison to retain original maps when changing the
 coefficient base of an adelic model. Conrad, *Weil and Grothendieck approaches
 to adelic points* (December 31, 2011), Theorem 3.6 and Example 4.2, printed
 pp.8–10, use independently defined product topologies at arithmetic levels.

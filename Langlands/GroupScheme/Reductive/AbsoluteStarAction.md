@@ -1,8 +1,5 @@
 # Galois pinning data for every connected reductive group, and the absolute star action
 
-Author: Worker 15, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483).
-
 The module `Reductive/StarAction` constructs the star action from supplied
 `GaloisPinningData k E G`. This module constructs such data for every connected
 reductive group over a field. It uses the separable closure, and so gives the star

@@ -1,6 +1,6 @@
 # Proof: a maximal torus of a connected reductive group is its own centralizer
 
-Worker 303. `Langlands.GroupScheme.maximalTorusCentralizer` proves exactly the
+`Langlands.GroupScheme.maximalTorusCentralizer` proves exactly the
 published proposition `Langlands.GroupScheme.MaximalTorusCentralizerStatement.{u}`
 (module `Langlands.GroupScheme.Absolute.MaximalTorusCentralizerStatement`) at an
 arbitrary universe `u`. The statement pair and everything it imports are unchanged.

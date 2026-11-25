@@ -1,6 +1,6 @@
 # Filtered-colimit exactness for original nondegenerate modules: statements
 
-This unit states the final assertion of the proposition in Renard I.6,
+This module states the final assertion of the proposition in Renard I.6,
 using the actual published category `NondegenerateModuleCat A` and its
 original additive intertwining maps. It supplies two closed Prop-valued
 targets and their conjunction. Neither target is proved here.
@@ -66,6 +66,7 @@ is a hypothesis. Both colimit existence and exactness are conclusions.
 `FilteredColimitAssertions` conjoins the two targets. The examples expose
 the complete unapplied targets as propositions, check all six distinct
 universe-level permutations, and unfold the conjunction reflexively.
-Proofs, general comparisons between source AB5 and Mathlib AB5, local
+The targets are proved in `NondegenerateModuleFilteredColimitsProof`.
+General comparisons between source AB5 and Mathlib AB5, local
 finite type/source AB6, the remainder of Chapter I and the whole book
 remain separate obligations.

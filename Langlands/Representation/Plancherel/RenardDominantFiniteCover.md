@@ -1,7 +1,5 @@
 # Finite positive covers of the actual dominant valuation image
 
-Author: Worker 1292.
-
 This internal derived development uses Dickson's lemma on the natural floors
 of the actual positive-root orders. It retains the actual rational points,
 integer character valuation, real centralizer valuation and uniformizer section.

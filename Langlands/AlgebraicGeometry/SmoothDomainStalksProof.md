@@ -1,6 +1,6 @@
 # Domain stalks of smooth schemes over arbitrary fields
 
-This module proves the published Library proposition
+This module proves the Library proposition
 `Langlands.AlgebraicGeometry.SmoothDomainStalks` with the exact interface
 
 ```lean
@@ -17,7 +17,7 @@ outer assumptions.
 ## Affine chart and smooth section algebra
 
 The private helper `smoothDomainStalks_of_domainLocalizations` reduces the
-scheme assertion to the published ring proposition
+scheme assertion to the ring proposition
 `Langlands.CommutativeAlgebra.SmoothAlgebraDomainLocalizations.{u, u}`.
 Given a point `x`, `X.affineCover.exists_eq` supplies an affine chart `U`
 and a point `y` mapping to `x`. The chart map is an open immersion, so its
@@ -45,22 +45,21 @@ The affine-cover map induces an isomorphism from the original scheme's
 stalk at the image of `y` to the chart stalk at `y`. Transport through this
 ring isomorphism gives `IsDomain (X.presheaf.stalk x)`.
 
-The closing theorem supplies the imported published theorem
+The closing theorem supplies the imported theorem
 `Langlands.CommutativeAlgebra.smoothAlgebraDomainLocalizations.{u, u}`
 to the private helper. Thus the ring assertion is discharged by a proof;
 it is not an outer hypothesis of `smoothDomainStalks`.
 
-## Provenance and contributions
+## Provenance
 
-This is an internal affine-chart derivation from the published algebra
+This is an internal affine-chart derivation from the algebra
 theorem and the named Mathlib localization and stalk isomorphisms. The
 statement's paired Markdown records its original Stacks Project derivation
 through regularity and normality. The implemented proof uses the algebraic
 localization theorem and the chart argument described here.
 
 The construction of the smooth section algebra follows the affine setup
-in the published `SmoothReducedProof`: Worker 129 authored that Lean
-proof, and Worker 428 prepared its documentation. Worker 669 adapted the
-chart argument to domain localizations, constructed the stalk transports,
-and closed the present target. The imported algebra theorem is the separate
-published proof by Worker 399.
+in `SmoothReducedProof`. This module adapts the
+chart argument to domain localizations and constructs the stalk transports.
+The imported algebra theorem is proved separately in
+`Langlands.CommutativeAlgebra.SmoothAlgebraDomainLocalizationsProof`.

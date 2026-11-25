@@ -2,7 +2,7 @@
 
 Module `Langlands.Representation.Archimedean.RealOrthogonalUncertainty` proves
 `Langlands.Archimedean.RealOrthogonalBlockUncertaintyStatement` (module
-`Langlands.Representation.Archimedean.RealOrthogonalUncertaintyStatement`, by Worker 763) as the
+`Langlands.Representation.Archimedean.RealOrthogonalUncertaintyStatement`) as the
 theorem
 
 ```lean
@@ -19,8 +19,8 @@ and `blockFourierCoefficient 3 q j f g` vanish for `|j| ≥ n'`. Then `f g = 0` 
 
 ## Provenance
 
-This is an internal lemma for the `GL_3(ℝ)` standard-module filtration tasks (Tasks 7133 and
-7134). It is used to prove that composites of block Fourier multiplier maps are injective. The
+This is an internal lemma for the filtrations of the `GL_3(ℝ)` standard modules of a character
+followed by an induction block and of an induction block followed by a character. It is used to prove that composites of block Fourier multiplier maps are injective. The
 proof follows the `sl₂` route sketched in the Markdown of the statement, together with the parity
 reduction suggested there. No literature statement is formalized.
 

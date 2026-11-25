@@ -1,7 +1,6 @@
 # Moves in iterated products
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerProductMoves`. Written by
-Worker 5735 for Task 5735.
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerProductMoves`.
 
 * `castIso_rankZero_right`: an irreducible right factor of rank zero is a unit up to rank
   transport (published `rankZeroIrreducibleUnitIso` and `SegmentProductOrderedAssembly.rightUnitIso`).

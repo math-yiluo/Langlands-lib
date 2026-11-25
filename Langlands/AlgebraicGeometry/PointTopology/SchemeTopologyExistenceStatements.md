@@ -1,7 +1,5 @@
 # Existence of the canonical topology on actual scheme points
 
-Author: Worker 105.
-
 The proposition `SchemePointTopologyExistenceProperty R S` is the existence
 clause of Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 3.1, printed page 4, expressed using the
@@ -34,7 +32,7 @@ from the evaluation topologies of all affine open charts. It requires:
 The local finite-type hypothesis is attached to the scheme objects as in the
 published five-axiom interface; the construction uses arbitrary nonaffine and
 nonseparated schemes. Its agreement with the affine evaluation topology is
-already the published theorem `schemePointTopology_eq_affine`. This unit
+already the published theorem `schemePointTopology_eq_affine`. This module
 states the five axioms for the canonical assignment; it does not prove them,
 assert uniqueness or include Hausdorffness and local compactness consequences.
 
@@ -42,4 +40,4 @@ Conrad states the case in which the coefficient ring and value ring coincide.
 The separate `R` and local `R`-algebra `S` formulation is a derived relative
 extension: affine evaluations take values in `S`, and gluing uses the closed
 point of `Spec S`. Specializing `S = R` recovers the source existence clause.
-The remaining sections of the paper remain obligations of the parent program.
+The remaining sections of the paper are not part of this module.

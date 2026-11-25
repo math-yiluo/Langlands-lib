@@ -35,7 +35,7 @@ theorem contDiff_finiteTorusMonomialLift {J K : Type*} [Fintype J] [Fintype K]
     (a : J → K → ℤ) : ContDiff ℝ ∞ (finiteTorusMonomialLift a) := by
   apply contDiff_pi.mpr
   intro j
-  exact ContDiff.sum fun k _ => contDiff_const.mul (contDiff_apply ℝ ℝ k)
+  exact ContDiff.sum fun k _ => contDiff_const.mul (contDiff_apply ℝ (fun _ => ℝ) k)
 
 /-- Precomposition by any integer torus monomial preserves scalar smoothness. -/
 theorem IsSmoothFiniteTorusFunction.comp_monomial {J K : Type*} [Fintype J] [Fintype K]

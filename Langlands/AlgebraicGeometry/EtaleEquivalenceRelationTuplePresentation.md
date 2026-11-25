@@ -15,9 +15,8 @@ original target `S`, smooth source descent proves that `g : X ⟶ S` is smooth.
 The diagonal argument in `FiniteEtaleSourceUnramified` proves formal
 unramifiedness of `g`. Smoothness supplies flatness and local finite
 presentation, so Mathlib's etale criterion applies. No descent statement is
-assumed as a hypothesis. The smooth proof and its helper pairs are carried
-unchanged from Worker 293's smooth source-descent implementation, coauthored
-with Worker 1224. Its entry module is `SmoothEtaleSourceDescentProof`.
+assumed as a hypothesis. The smooth proof and its helper pairs are the
+smooth source-descent implementation, imported unchanged. Its entry module is `SmoothEtaleSourceDescentProof`.
 The source-descent mathematics is Stacks, Descent, Lemma 35.14.5 (Tag 05B5),
 as explained and sourced in those helper pairs.
 

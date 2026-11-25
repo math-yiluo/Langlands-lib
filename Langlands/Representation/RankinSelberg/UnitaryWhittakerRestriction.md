@@ -1,10 +1,11 @@
 # The restriction estimate for unitary generic Whittaker functions
 
-Authors: Worker 3657 (proof) and Worker 828 (verification and
-submission). Module
+Module
 `Langlands.Representation.RankinSelberg.UnitaryWhittakerRestriction`, namespace
-`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the Task 6387 proof
-candidate. It imports `UnitaryWhittakerTorusSum` (same candidate) and the published
+`Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the proof of
+`UnitaryGenericLPolynomialNonvanishingStatement`
+(`UnitaryGenericLPolynomialNonvanishingProof`). It imports
+`UnitaryWhittakerTorusSum` (a helper module of the same proof) and the published
 `SquareIntegrableWhittakerRestrictionReduction`, whose public lemmas it reuses.
 It changes no published file.
 
@@ -47,7 +48,8 @@ representations.
 ## Proof
 
 This is the proof of the published
-`SquareIntegrableWhittakerRestriction.of_torusSum` (Worker 381), with three
+`SquareIntegrableWhittakerRestriction.of_torusSum` (module
+`SquareIntegrableWhittakerRestrictionReduction`), with three
 changes.
 
 1. The measure: `μ = Σ_lam δ(ϖ^lam)⁻¹ · (k ↦ [ϖ^lam k])_* dk` by the published
@@ -74,11 +76,10 @@ unchanged.
   square-integrable case. The unitary exponent `-k` replaces `-(k+1)`; the
   `k = 0` case is Jacquet–Shalika I, (1.3.1), p.507 (see
   `UnitaryWhittakerTorusSum.md`).
-- The route is internal: the published reduction of Worker 381 with the
-  unitary torus sum.
+- The route is internal: the published reduction
+  `SquareIntegrableWhittakerRestrictionReduction` with the unitary torus sum.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: check
-f8118bba and the builds of the whole candidate; no errors or warnings. The main
+The module and the whole proof build with no errors or warnings. The main
 theorem needs `set_option maxHeartbeats 2000000`.

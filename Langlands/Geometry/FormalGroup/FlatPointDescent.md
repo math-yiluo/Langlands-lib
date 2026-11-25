@@ -1,6 +1,6 @@
 # Descent of formal points along faithfully flat algebra maps
 
-This internal infrastructure, implemented by Worker 921, proves
+This internal infrastructure proves
 effective descent of actual formal-module points over coefficient
 algebras. O and R are arbitrary commutative rings with an O-algebra
 structure on R and possibly different universes. The coordinate set

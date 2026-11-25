@@ -1,10 +1,9 @@
 # The canonical etale quotient of a smooth algebraic-space relation
 
-Worker 712 proves
+This module proves
 `Langlands.AlgebraicGeometry.AlgebraicSpace.smoothRelationQuotient.{u}`. Its
-type is exactly the published `SmoothRelationQuotientStatement.{u}` (Worker 59).
-Worker 303 contributed to the decomposition. The statement and its import
-closure are unchanged.
+type is exactly the published `SmoothRelationQuotientStatement.{u}`. The
+statement and its import closure are unchanged.
 
 ## The implemented proof
 
@@ -47,4 +46,4 @@ then descend along the etale surjective presentation.
 
 The route follows the smooth case of Stacks Project Theorem 80.10.1 (Tag
 04S6) and Section 80.12 (Tag 076L), as cited by the statement's Markdown.
-This unit adds no mathematics beyond the application of the reduction.
+This module adds no mathematics beyond the application of the reduction.

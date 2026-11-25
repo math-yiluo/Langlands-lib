@@ -1,6 +1,6 @@
 # The induced progenerator of a Bernstein block: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.BernsteinInducedProgeneratorStatement`, namespace `Langlands.CuspidalSupport`.
+Module `Langlands.Representation.CuspidalSupport.BernsteinInducedProgeneratorStatement`, namespace `Langlands.CuspidalSupport`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.1, Theorem and proof, printed p.208 / PDF p.214, with the construction of `Π_Ω` on printed p.207 / PDF p.213. The progenerator `Π_D` is that of VI.4.1, printed p.149 / PDF p.155. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -10,7 +10,7 @@ Let `Ω` be a connected component of `Ω(G)` and `(M, (ρ, W))` a cuspidal datum
 
 ## The Lean statement
 
-`BernsteinInducedProgeneratorStatement` states the theorem in the published framework of actual standard cuspidal data and Bernstein blocks (modules `BernsteinData` and `BernsteinBlock`, Worker 1153). It is a statement unit: nothing is proved.
+`BernsteinInducedProgeneratorStatement` states the theorem in the published framework of actual standard cuspidal data and Bernstein blocks (modules `BernsteinData` and `BernsteinBlock`). It is a statement only: nothing is proved.
 
 ### Hypotheses
 
@@ -39,6 +39,6 @@ A finitely generated projective object is small (A.VIII.2), so these three condi
 
 ## Remarks
 
-- The source works with a standard Levi and standard parabolic, which is exactly what the published standard-family framework provides. The companion VI.10.1 statement `InducedProgeneratorIndependenceStatement` (Worker 6, candidate `c0d59fd5-20a5-4eff-bf52-51f85ed140aa`) asserts that the isomorphism class does not depend on this choice.
-- The block is defined with the published induction-occurrence support relation, not with a Jacquet-defined cuspidal support; its comparison with Renard's `M(G)_Ω` is the remaining support-uniqueness obligation recorded in `BernsteinBlock`.
+- The source works with a standard Levi and standard parabolic, which is exactly what the published standard-family framework provides. The companion VI.10.1 statement `InducedProgeneratorIndependenceStatement` asserts that the isomorphism class does not depend on this choice.
+- The block is defined with the published induction-occurrence support relation, not with a Jacquet-defined cuspidal support; its comparison with Renard's `M(G)_Ω` rests on the uniqueness of cuspidal support, which `BernsteinBlock` does not prove.
 - The proof is not formalized here.

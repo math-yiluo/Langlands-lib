@@ -1,7 +1,5 @@
 # Smooth and exact-K0 transport between actual GL Levi models
 
-Author: Worker 585.
-
 This internal adapter uses the existing full smooth complex representation
 categories and exact finite-length Grothendieck groups. For an arbitrary natural
 rank, block shape and commutative topological ring `F : Type uF`, the product

@@ -81,8 +81,9 @@ proof gives the original fixed-level transport on the original level element.
 
 `harrisIntegralNormalizedLevelPointEquiv_path_independent` proves equality of
 the restricted equivalences for any two paths with these endpoints. Extensionality
-and subtype extensionality reduce this to the published path-independence
-result for the original fixed-level transport. Path independence is asserted
+and subtype extensionality reduce this to the path-independence result
+`Tate.weilAdelicLevelTransport_path_independent` for the original fixed-level
+transport. Path independence is asserted
 for fixed orbit classes, not for individual frames.
 
 ## Canonical geometric comparison
@@ -100,9 +101,9 @@ level map with the component at `K` of the original
 definitional: both constructions choose the path from the same proved
 existence statement and use the same original fixed-level transport.
 
-## Provenance and remaining obligations
+## Provenance and what is not proved here
 
-This unit is an internal consequence of the actual integral/rational Tate
+This module is an internal consequence of the actual integral/rational Tate
 path transports, their rationalization compatibility, the Harris full-image
 normalization predicate, and the original Weil frame and fixed-orbit path
 comparisons. It translates no additional external theorem. Its generic
@@ -112,4 +113,4 @@ It does not prove existence of normalized frames or integral models, removal
 of denominators from a rational isomorphism, stability under arbitrary base
 change or level transporters, a natural moduli comparison on the full CM test
 category, representability, output admissibility, smoothness or projectivity.
-The exact `DivisionCMRepresentabilityStatement` of the host task remains open.
+The Library does not prove the exact `DivisionCMRepresentabilityStatement`.

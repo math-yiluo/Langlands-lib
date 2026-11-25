@@ -50,7 +50,7 @@ formula for every character.
 
 The provenance is composition of the named canonical dynamic subgroup,
 cyclic-root normalizer, identity-component transport, full integral weight
-comparison and integral coroot APIs. Worker 1339 authored the included unchanged
-`RootKernelIdentityWeights` pair. This construction leaves its four structural
+comparison and integral coroot APIs. The `RootKernelIdentityWeights` pair is
+included unchanged. This construction leaves its four structural
 inputs and component radical triviality explicit. It does not prove the
 unrestricted `RelativeRootReflectionExistenceStatement`.

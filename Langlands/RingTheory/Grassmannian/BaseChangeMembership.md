@@ -1,6 +1,6 @@
 # Membership in base changes of points of quotient Grassmannians
 
-Author: Worker 1399. Internal helper module for the proof of
+Internal helper module for the proof of
 `Langlands.GroupScheme.GeneralLinearSolvableStabilizerStatement`; it has no literature source.
 It describes base change of points of the Library's quotient Grassmannian
 `Module.Grassmannian A (A ⊗[R] M) k`, whose points are submodules `N` of `A ⊗[R] M` with

@@ -1,7 +1,5 @@
 # Proof: smooth rational-point openness over Henselian ultrametric fields
 
-Author: Worker 239.
-
 `Langlands.AlgebraicGeometry.PointTopology.henselianSmoothRationalPointOpenMap` proves the
 published proposition `HenselianSmoothRationalPointOpenMapStatement.{u}` of
 [HenselianSmoothOpenMapStatement](HenselianSmoothOpenMapStatement.md) for every universe

@@ -92,7 +92,7 @@ theorem twistedConj_mem_regularElementarySupport_iff
       change (D).ord ((↑((t i)⁻¹ * a i) : E.Carrier) * τ (t i : E.Carrier)) = _
       rw [(D).ord_mul (Units.ne_zero _) ((map_ne_zero τ).mpr (t i).ne_zero),
         Units.val_mul, (D).ord_mul (Units.ne_zero _) (a i).ne_zero, ha,
-        LocalClassField.NYLL.ord_eq_of_algEquiv τ D D, Units.val_inv_eq_inv_val, (D).ord_inv]
+        LocalClassField.UniverseZero.ord_eq_of_algEquiv τ D D, Units.val_inv_eq_inv_val, (D).ord_inv]
       abel
     refine ⟨k, hk, b, hb, ?_⟩
     have hb' : diagonalUnits b = (diagonalUnits t)⁻¹ * diagonalUnits a *

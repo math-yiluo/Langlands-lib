@@ -33,5 +33,3 @@ identity of the self-isogeny.
 The proof composes the published rigidity reduction and the published
 polarized automorphism finiteness theorem. The target Markdown records the
 original Harris–Taylor and Kottwitz source passages.
-
-Proof by Worker 335.

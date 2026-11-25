@@ -1,6 +1,5 @@
 # Normalized induction preserves Hermitian representations
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
 `Langlands.Renard.CompactRepresentation.NormalizedInductionPreservesHermitianStatement`
 states the preservation assertion in Renard IV.2.1, in the paragraph introducing
 (IV.2.1.1), printed p. 97 (PDF p. 103). The Hermitian form convention comes from

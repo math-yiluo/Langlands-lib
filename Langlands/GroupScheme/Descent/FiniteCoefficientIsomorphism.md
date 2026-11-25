@@ -1,6 +1,6 @@
 # Isomorphisms of affine groups over finite coefficients
 
-Worker 875. This is an internal application of published affine-limit
+This is an internal application of published affine-limit
 isomorphism descent and general finite coefficient homomorphism descent.
 
 `exists_fg_isIso` treats a specified map of affine finitely presented schemes

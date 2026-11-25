@@ -1,7 +1,5 @@
 # The line character of a maximal standard parabolic is dominant
 
-Author: Worker 2.
-
 This internal helper module proves the representation-theoretic input to
 Springer's overlap estimate (Springer, *Reduction theory over global fields*,
 1994, Proposition 2.6 and §2.5). Springer uses a representation in which the

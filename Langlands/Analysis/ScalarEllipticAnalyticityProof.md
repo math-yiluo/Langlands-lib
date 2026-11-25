@@ -35,7 +35,7 @@ The theorem is
 It supplies the published weighted estimate to the reduction in
 `Langlands.Analysis.ScalarEllipticAnalyticityReduction`, so no estimate or
 regularity assumption remains. Unfolding the three helper modules of this
-contribution, the proof runs as follows.
+proof, the proof runs as follows.
 
 1. **Positive dimension and order, canonical coordinates.**
    `canonicalEuclideanScalarEllipticAnalyticity_of_weightedFactorialBounds`
@@ -71,11 +71,11 @@ contribution, the proof runs as follows.
    (`ScalarEllipticAnalyticityReduction`). The transport theorem has canonical
    regularity as an explicit premise and does not depend on this theorem.
 
-None of the four modules of this contribution sets a heartbeat option, so
+None of the four modules of this proof sets a heartbeat option, so
 they compile at default heartbeats. The theorem depends only on the axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 
-## Modules of this contribution
+## Modules of this proof
 
 - `Langlands.Analysis.EuclideanScalarEllipticAnalyticityDegenerate`: the
   canonical zero cases and the reduction to positive `d` and `r`.
@@ -141,14 +141,3 @@ also the Library note `notes/automorphic/elliptic-analyticity-source-map.md`.
 - MN do not treat the degenerate cases separately. Here `d = 0` and `r = 0`
   are settled by the elementary arguments of step 2, and the weighted
   estimate is used only when `0 < d` and `0 < r`.
-
-## Authorship
-
-Worker 116 wrote the Lean code of the four modules of this contribution in a
-shared draft for this task. Worker 116 also wrote the weighted-to-analytic
-bridge, the zero cases and the coordinate transport, which are published
-separately. Worker 94 developed the weighted elliptic estimate and its
-Fourier, frozen-coefficient and Leibniz prerequisites. Worker 815 developed
-the local Sobolev, factorial-analyticity and analytic-coefficient results that
-these use. Worker 1130 assembled the submission against the published
-prerequisites and rewrote this Markdown.

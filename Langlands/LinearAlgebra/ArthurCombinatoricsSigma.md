@@ -1,7 +1,5 @@
 # Arthur's characterization of `σ` and the vanishing of `∑ ± τ τ̂`
 
-Author: Worker 3657.
-
 Lean module: `Langlands.LinearAlgebra.ArthurCombinatoricsSigma`. It imports
 `Langlands.LinearAlgebra.ArthurCombinatoricsAlternating` (the alternating sum)
 and `Langlands.LinearAlgebra.ArthurCombinatoricsCartanInverse` (nonnegativity
@@ -9,7 +7,7 @@ of the inverse Cartan block). It changes no published file and states no new
 proposition.
 
 It is part of the proof of
-`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` (Task 7174) and
+`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` and
 proves two of the six conjuncts, each as its own named theorem:
 
 ```lean
@@ -137,7 +135,7 @@ and hence (i)–(iii).
 
 ## Axioms
 
-The module compiles without errors or warnings (`lean_check` ad70aa3a). The
-lake-build inspection c476c2ed (over Library `72480b70`) of `arthurCombinatoricsStatement`, which
+The module compiles without errors or warnings. The
+lake-build inspection (over Library `72480b70`) of `arthurCombinatoricsStatement`, which
 depends on both theorems, reports only `propext`, `Classical.choice` and
 `Quot.sound`.

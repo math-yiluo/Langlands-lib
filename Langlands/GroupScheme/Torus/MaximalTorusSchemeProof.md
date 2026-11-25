@@ -1,7 +1,5 @@
 # Representability of the scheme of maximal tori
 
-Worker 586.
-
 `Langlands.GroupScheme.maximalTorusScheme` proves the published
 `MaximalTorusSchemeStatement.{u}` for every universe `u`, with no additional
 hypotheses. For every scheme `S` and reductive group scheme `G` over `S`,

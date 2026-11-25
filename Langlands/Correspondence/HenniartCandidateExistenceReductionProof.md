@@ -24,7 +24,7 @@ the statement. Fix a prime `p`, a p-adic field `K` and `q : Gal(K̄/K) → Q` wi
 1. **An arithmetic fundamental class family.** `hlcf` gives, for every prime, an invariant
    family satisfying relative class formation and the arithmetic normalization (`choose`).
    The proved `globalFundamentalClassStatement.{0}`
-   (`Langlands/ClassField/Global/FundamentalClassProof.lean`) turns this family into a
+   (`Langlands/ClassFieldTheory/Global/FundamentalClassProof.lean`) turns this family into a
    fundamental class family `c`, and the triple is the witness of
    `RelativeWeilGroup.IsArithmeticClassFamily c`.
 2. **Globalization.** The proved `henniartGlobalization_of_inputs`

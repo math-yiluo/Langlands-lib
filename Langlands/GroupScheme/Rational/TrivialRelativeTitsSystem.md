@@ -1,6 +1,6 @@
 # The actual relative Tits system with full torus centralizer
 
-This internal unit identifies the actual relative Weyl quotient with the trivial
+This internal module identifies the actual relative Weyl quotient with the trivial
 group when `centralizerPoints i = ⊤`. The construction
 `relativeWeylEquivPUnitOfCentralizerEqTop` uses the quotient by the full subgroup,
 so the identification concerns the published quotient itself.

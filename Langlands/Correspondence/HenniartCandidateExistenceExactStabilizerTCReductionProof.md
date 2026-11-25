@@ -21,7 +21,7 @@ automorphic lattice universe `0`.
    gives the global fundamental class family `c` and its restriction
    properties. Together with `I` these witness
    `RelativeWeilGroup.IsArithmeticClassFamily c`.
-   [Global fundamental classes](../ClassField/Global/FundamentalClassProof.md)
+   [Global fundamental classes](../ClassFieldTheory/Global/FundamentalClassProof.md)
 2. `henniartGlobalizationExactStabilizerTC_of_inputs` is applied at `c`,
    `K` and `q` with the assumed Proposition 4.8 and Théorème 2.4.
    `harrisDatumCharacterRealizationExactStabilizer` produces the
@@ -44,7 +44,7 @@ automorphic lattice universe `0`.
    [Reciprocity](../ClassFieldTheory/Local/CommonClosureExistenceProof.md),
    [Induced restriction](../VirtualRepresentation/Global/RelativeWeilLocalRestrictionProof.md),
    [Central character](../Automorphic/AssociatedCentralCharacterProof.md),
-   [Local transfer](../ClassField/Global/LocalRelativeWeilTransferProof.md)
+   [Local transfer](../ClassFieldTheory/Global/LocalRelativeWeilTransferProof.md)
 3. `compactSpace_adeleQuotient` supplies compactness at `F`.
    Take `ψ` to be
    `HeckeFunctionalEquation.standardFiniteAdditiveComponent F v`.

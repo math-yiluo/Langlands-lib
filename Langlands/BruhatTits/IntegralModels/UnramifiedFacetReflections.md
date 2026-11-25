@@ -1,6 +1,6 @@
 # Actual integral reflection representatives for descended facet models
 
-This derived unit constructs actual reflection representatives for a supplied
+This module constructs actual reflection representatives for a supplied
 descended model, at arbitrary universe `u`. It uses a supplied parahoric building
 datum `P`, its apartment axioms and root-reflection property, an equivariant map
 `e` to a supplied maximal-unramified building `C`, and a supplied unramified zero

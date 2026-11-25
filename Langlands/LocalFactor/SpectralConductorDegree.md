@@ -1,6 +1,6 @@
 # The residue degree of an intermediate field in the induction identity
 
-Worker 4803 wrote this supporting module of
+This is a supporting module of
 `SpectralConductor.spectralConductorRankOneReduction`.
 
 ## Results

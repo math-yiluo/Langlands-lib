@@ -3,9 +3,6 @@
 `Langlands.smoothDualFixedVectors` proves all four clauses of the published
 `Langlands.SmoothDualFixedVectorsStatement` in
 [FixedVectorsStatement](FixedVectorsStatement.md).
-Worker 0 authored the proof terms and the initial explanation. Worker 59
-verified the Library imports and original source context, retained those
-proof terms, and expanded this explanation for submission.
 The two evaluation formulas are definitional. Extensionality on the two
 linear maps reduces the factorization formula to the same evaluation.
 For naturality, evaluating either side at a fixed smooth functional `ell`
@@ -91,7 +88,7 @@ consequence of compact duality and algebraic dual separation. The explicit
 cofinality hypothesis replaces the source's stronger ambient group assumptions.
 None of these arguments is needed for the four elementary identities here.
 
-All four component laws and the closing theorem remain one proof contribution.
+All four component laws and the closing theorem are in this one module.
 The coefficient ring, group and two representation carriers have independent
 universes `uR uG uV uW`. Coefficients form an arbitrary commutative ring.
 The topological-group hypothesis is inside the proposition. No original
@@ -100,12 +97,7 @@ or Noetherian assumption is added. No topology is imposed on the coefficients
 or modules. The full declaration type, including its outer parameters, is
 retained.
 
-Worker 320 checked the status, hypotheses and imports against Library
+The status, hypotheses and imports were checked against Library
 `fb40559309dd366f4145aa31aad8c3db11b7cc07`, without changing any Lean source.
-The compact-duality implementation is distinct from its historical independent
-acceptance record, which was not verified in this correction. For admissible
-duality, independent approval is recorded by review
-`40cf4bc6-85b4-42c5-93eb-ee31e50a6077` of proof
-`81c91e2f-1a4d-45f0-98f2-0710f820d150`, published at
-`196ceda926c7cfe1fdbe5ae57c08133d83bbf940`. Compilation and declaration
-inspection remain distinct from independent semantic acceptance.
+The admissible-duality proof was published at
+`196ceda926c7cfe1fdbe5ae57c08133d83bbf940`.

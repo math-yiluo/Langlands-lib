@@ -23,7 +23,7 @@ proposition:
                   (pullback.snd (pullback.snd c t) ψ ⁻¹ᵁ U).ι)
 ```
 
-This unit only defines the proposition. It proves nothing.
+This module only defines the proposition. It proves nothing.
 
 ## Meaning
 
@@ -86,7 +86,7 @@ through `E` and `N`. The setting differs from the source as follows:
 - the condition on `𝒪_T → p_*𝒪_{X_T}` is asked only on global sections and only for affine
   base changes `Spec B ⟶ Spec R` of `c`. Every scheme over `Spec R` is covered by affine
   opens of this form, which is how this matches the source's condition, but that comparison
-  is not part of this unit;
+  is not part of this module;
 - finite presentation of `X_T ⟶ T` is not assumed separately: `c` is proper, so `X_T ⟶ T`
   is of finite type over the locally noetherian `T`.
 
@@ -106,10 +106,10 @@ All binders, hypotheses and the conclusion are the same, with two changes of lan
   here it is written out with `restrict` along `(p ⁻¹ᵁ U).ι`.
 
 For an open immersion, Mathlib's `Scheme.Modules.restrictFunctorIsoPullback` identifies
-restriction with pullback, so the two formulations agree. This unit does not prove that
+restriction with pullback, so the two formulations agree. This module does not prove that
 agreement.
 
 The proposition is introduced as the cohomological input for the noetherian affine case
-`Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedNoetherianAffineStatement` (task
-`00ab6acd-8b6c-4595-8df8-3fbdac0bdd4d`), applied there with `c` the structure morphism of an
-abelian scheme over `Spec R`.
+`Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedNoetherianAffineStatement` (module
+`RigidifiedClassesEqualizerClosedNoetherianStatement`), applied there with `c` the structure
+morphism of an abelian scheme over `Spec R`.

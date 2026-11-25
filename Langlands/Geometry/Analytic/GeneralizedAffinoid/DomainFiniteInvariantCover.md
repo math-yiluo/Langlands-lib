@@ -1,8 +1,5 @@
 # Common open stabilizers and finite equivariant spectrum quotient covers
 
-Authors: Worker 56; Worker 36, whose published strict rational common-stabilizer
-construction supplies the finite intersection pattern adapted here.
-
 ## Inputs and common subgroup
 
 Let `K : Type u` be a complete ultrametric normed field, let
@@ -92,6 +89,7 @@ nonempty-spectrum, nonzero-quotient, reducedness or nontrivial-valuation
 assumption is introduced. The target is the represented locus;
 surjectivity onto the target section spectrum would require a further
 argument and is not claimed. `Action TopCat J` records continuous
-operators for fixed group elements. Joint continuity, general analytic
-gluing, structure sheaves, analytic etale sites and Harris specialization
-remain further constructions.
+operators for fixed group elements. Joint continuity of this action is
+`finiteCoverSpectrumAction_isContinuous` in `DomainContinuousFiniteCover`.
+General analytic gluing, structure sheaves, analytic etale sites and Harris
+specialization lie outside this module.

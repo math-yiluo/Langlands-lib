@@ -1,7 +1,5 @@
 # Maximal tori and Borel subgroups, assuming Borel conjugacy
 
-Worker 1418.
-
 This module contains derived internal infrastructure for the published targets
 `BorelMaximalTorusStatement` and `MaximalTorusConjugacyStatement`. The results
 in the field section are unconditional. The two final theorems are conditional:
@@ -78,5 +76,6 @@ on the same page places maximal tori in Borels in the same way. That is the
 containment input that `maximalTorusConjugacyStatement_of_borelConjugacy`
 discharges.
 
-This contribution does not complete the host task: a published proof of
-`BorelConjugacyStatement` is still needed.
+`BorelConjugacyStatement` is proved separately, as `borelConjugacy` in
+`Absolute.BorelConjugacyProof`. `Absolute.BorelMaximalTorusProof` and
+`Absolute.MaximalTorusConjugacyProof` apply the two conditional theorems to it.

@@ -1,6 +1,6 @@
 # Noetherian affine reduction for geometric-connectedness constructibility
 
-Worker 105. This derived prerequisite expresses the Noetherian affine case of
+This derived prerequisite expresses the Noetherian affine case of
 constructibility for the actual geometric-connectedness fibre locus and proves
 that it is equivalent to the existing general finite-presentation target.
 It does not prove either universal constructibility proposition.
@@ -54,5 +54,8 @@ The forward direction uses the fact that a locally constructible subset of
 a quasi-compact quasi-separated scheme is constructible.
 
 The remaining Noetherian affine proposition requires a geometric generic
-constancy argument. It is retained as an explicit unproved target, rather
-than supplied as an assumed conclusion of a geometry structure.
+constancy argument. It is retained as an explicit target, not proved in this
+module, rather than supplied as an assumed conclusion of a geometry structure.
+By the equivalence above it follows from
+`geometricallyConnectedFiberLocalConstructibility`, proved in
+`GeometricallyConnectedFiberConstructibilityProof`.

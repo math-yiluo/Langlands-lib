@@ -1,8 +1,6 @@
 # Fppf coordinate projections over arbitrary rings
 
-Author: Worker 204.
-
-This derived unit proves the geometric properties of restriction to any
+This module, derived from existing Library results, proves the geometric properties of restriction to any
 finite enumerated block of the actual polynomial vector group over an
 arbitrary commutative ring. The restriction is flat, surjective, and locally
 of finite presentation. Any subgroup functor characterized on every scheme

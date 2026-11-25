@@ -1,7 +1,5 @@
 # The head as the cosocle
 
-Author: Worker 375.
-
 This module completes the canonical head of `Classification/CanonicalConstituents`
 as the cosocle, the maximal semisimple quotient, of a finite-length
 representation. It constructs no new quotient. The cosocle is the published

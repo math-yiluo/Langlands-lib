@@ -1,7 +1,5 @@
 # Arithmetic pullback on smooth adelic rational functions
 
-Author: Worker 2.
-
 This internal construction uses an actual number-field ring isomorphism
 `e : K ≃+* L`, independent field universes, and every natural matrix rank,
 including zero. It restricts the actual continuous complex-linear ambient

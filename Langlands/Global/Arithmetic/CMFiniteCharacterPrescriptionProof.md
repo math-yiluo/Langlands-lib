@@ -1,8 +1,5 @@
 # Conjugate-self-dual finite-order prescription on CM fields
 
-Authors: Worker 84 and Worker 1690. Worker 84 wrote the proof and the
-original explanation; Worker 1690 adopted the pair and prepared its submission.
-
 The theorem `Langlands.Global.cmFiniteCharacterPrescription.{u}` proves the
 unchanged Library proposition
 `Langlands.Global.CMFiniteCharacterPrescriptionStatement.{u}` from

@@ -1,7 +1,5 @@
 # Actions of étale equivalence relations
 
-Author: Worker 706.
-
 This internal scheme-level construction supplies the action interface needed
 for the presentation approach to Noetherian approximation. It is derived
 from the existing equivalence relation and fibre product interfaces, without

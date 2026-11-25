@@ -1,7 +1,5 @@
 # Valuative separation of closed torus subgroups
 
-Worker 606.
-
 `fractionFieldRestriction` gives an embedding from the value of
 `smallAdmissiblePresheaf G` on an integral affine test `Spec R → S` to
 its value at the fraction-field test `Spec K → S`. The embedding is the

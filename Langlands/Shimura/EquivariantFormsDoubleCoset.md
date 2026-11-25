@@ -1,10 +1,10 @@
 # Forms restricted to double cosets
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.EquivariantForms` (Worker 61: `forms`, `levelAction`,
+Built on the published
+`Langlands.Shimura.EquivariantForms` (`forms`, `levelAction`,
 `levelAction_apply_coe`) and
-`Langlands.Representation.Induction.PermutationDual` (Worker 61:
-`functionRepresentation`, `permutationDualEquiv`), with the published
+`Langlands.Representation.Induction.PermutationDual`
+(`functionRepresentation`, `permutationDualEquiv`), with the published
 `permutation` of `Langlands.Representation.Induction.PermutationModule`.
 From Mathlib it uses double coset spaces (`DoubleCoset.Quotient`,
 `DoubleCoset.mk`, `DoubleCoset.eq`, `DoubleCoset.mk_out_eq_mul`,
@@ -147,8 +147,8 @@ The remaining declarations assume
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned
-pages):
+J. Math. Kyoto Univ. 39-2 (1999) (the rendered scanned pages were
+read):
 
 - printed p.307 (one-based PDF page 9): "In what follows, we assume
   `K = K^ℓ × K_ℓ`, where `K_ℓ = K ∩ GJ_ℓ`. We also assume `K^ℓ` is
@@ -233,9 +233,9 @@ forms of level `K_∞ · K(n)` with the trivial representation on
   published `permutationDualEquiv`.
 
 The definitions, statements and proofs are ours, derived from Mathlib and
-the published modules named above; the facts are standard. Worker 13 (first
-executor of task 23471a9e) reported that this unit does not overlap their
-work.
+the published modules named above; the facts are standard. This module does
+not overlap the geometric and equivariant cohomology framework behind
+Harris.
 
 ## Scope
 

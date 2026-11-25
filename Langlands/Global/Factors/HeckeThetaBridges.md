@@ -1,11 +1,11 @@
 # Bridges from Hecke theta coefficients to adelic tensor coefficients
 
-Worker 1692 supplies these internal bridges requested by Worker 1798 for the
+This module supplies internal bridges for the
 global assembly. They connect the finite theta coefficients
-(`HeckeThetaCoefficients`, package B3) and their Fourier counterparts
-(`HeckeFourierTheta`, package B4) with the adelic tensor coefficients
+(`HeckeThetaCoefficients`) and their Fourier counterparts
+(`HeckeFourierTheta`) with the adelic tensor coefficients
 `Hecke.tensorCoeff` and the local Fourier transforms `Hecke.localFourier` of
-Worker 1798's Poisson module `AdelicPoisson`. They also add analytic facts
+the Poisson module `AdelicPoisson`. They also add analytic facts
 about the class factors and the dual mixed character. Everything concerns an
 actual Hecke character `χ` of a number field `K` in unrestricted universe `u`,
 with the actual local Euler tests, uniformizers `π_v`, finite divisors `d`,
@@ -16,7 +16,7 @@ is integral at every finite place outside `S`, and `0` otherwise.
 ## Tensor coefficients (namespace `Langlands.Global.HeckeTheta`)
 
 - `coe_dilatedEulerTest`: the Schwartz–Bruhat function `dilatedEulerTest χ d v`
-  of B4 is the function `x ↦ eulerTest_v(x π_v^(d v))`.
+  of `HeckeFourierTheta` is the function `x ↦ eulerTest_v(x π_v^(d v))`.
 - `fourierDilatedEulerTest χ ψf μ d v` is the function
   `Hecke.localFourier ψf μ v (dilatedEulerTest χ d v)`, the actual local Fourier
   transform (for `ψf v` and `μ v`) of the dilated Euler test;
@@ -43,8 +43,8 @@ is integral at every finite place outside `S`, and `0` otherwise.
   functions of `s` (the spectral variables are complex exponentials).
 - `classFactor_ne_zero`: the class factor never vanishes.
 - `classFactor_one_sub_mul_dualClassFactor`:
-  `classFactor χ d (1 - s) · dualClassFactor χ d s = 1`, which is the B4 identity
-  `dualClassFactor_one_sub_mul_classFactor` at `1 - s`.
+  `classFactor χ d (1 - s) · dualClassFactor χ d s = 1`, which is the identity
+  `dualClassFactor_one_sub_mul_classFactor` of `HeckeFourierTheta` at `1 - s`.
 
 ## Dual mixed character (namespace `Langlands.Global.HeckeFunctionalEquation`)
 
@@ -53,7 +53,7 @@ Let `dR`, `dC` present the infinite components of `χ` and `dR'`, `dC'` those of
 corresponding `Hecke.mixedCharFun`.
 
 - `mixedCharFun_dual_eq_inv_apply`: `χV' y = χV (y⁻¹)` for every `y` in the
-  mixed space. By the package A uniqueness lemmas, `dR'` has the parities of `dR`
+  mixed space. By the uniqueness lemmas of `HeckeArchimedeanZeta`, `dR'` has the parities of `dR`
   and opposite exponents, and `dC'` has opposite weights and exponents. The
   Library identity `Hecke.mixedCharFun_inv` then concludes.
 - `mixedCharFun_dual_eq_inv`: if the mixed norm of `y` is nonzero, then

@@ -1,6 +1,6 @@
 # Actual finite Hecke shell divisor series
 
-Worker 1692 derives this internal analytic support from the actual local
+This module derives internal analytic support from the actual local
 Euler-test formulas in `Langlands.LocalFactor.Abelian.EulerTestShells`, the
 prime-ideal convergence and common absolute-value exponent in
 `Langlands.Global.Factors.HeckeEulerProduct`, and the general divisor-series

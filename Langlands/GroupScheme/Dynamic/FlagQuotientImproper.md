@@ -1,7 +1,5 @@
 # Proper scheme quotients for improper dynamic parabolics
 
-Author: Worker 1275.
-
 This internal derived construction handles the improper case of the published
 `DynamicFlagQuotientExistenceStatement`. It uses the published actual dynamic
 subgroup functors and the existing relative scheme and open-subscheme objects.

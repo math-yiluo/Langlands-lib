@@ -1,7 +1,5 @@
 # Joint normalized determinant and numerical action presheaves
 
-Author: Worker 57.
-
 This internal construction combines the normalized Harris–Taylor determinant condition and prescribed geometric dimension on one actual rational algebra action. It constructs their image in actual equivariant rational-isomorphism classes, proves arbitrary-base-change stability, and forms a subpresheaf on schemes over the actual CM spectrum. The exact named `LieBaseChangeNaturalityStatement` remains an explicit hypothesis.
 
 The parameters are a totally real number field `E`, a totally complex quadratic extension `F/E` with CM structure, a central simple unitary datum `D` of degree `n`, the compatible rational, `E` and `F` algebra structures and scalar towers on `A`, an imaginary quadratic CM field `L`, an `L`-algebra structure on `F`, an embedding `τ₀ : L →+* ℂ`, and actual signature charts `C` for `harrisCMSection E (algebraMap L F) τ₀`. These types and schemes have universe zero. A base object is an actual map `p : S → Spec F`; an action is an actual abelian scheme `B/S` with `i : A →ₐ[ℚ] End0 B`.

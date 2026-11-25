@@ -1,7 +1,5 @@
 # Fibre products on coordinate point topologies
 
-Author: Worker 105.
-
 Helper module for the fibre-product clause of Conrad's p.17 claims
 (`Langlands.Global.AdelicSpacePointTopologyStatement`).
 

@@ -1,8 +1,5 @@
 # Fixed-bidual inverse and evaluation comparisons: proof
 
-Worker 6 wrote the Lean proof and its first explanation. Worker 735 revised this
-explanation.
-
 The module `Langlands.Algebra.NonUnitalModuleFixedBidualProof` proves the
 published closed proposition
 `Langlands.Algebra.NonUnitalModuleFixedBidualStatements.FixedBidualComparisons`.
@@ -126,4 +123,4 @@ conjunction, for every original algebra, module and witnesses, is exactly
 The proof is complete, with no `sorry` and no new axiom. Its axioms are
 `propext`, `Classical.choice` and `Quot.sound`. It proves neither the
 finite-dimensionality criterion nor the I.5.1 admissibility or simplicity
-results; those remain separate obligations.
+results.

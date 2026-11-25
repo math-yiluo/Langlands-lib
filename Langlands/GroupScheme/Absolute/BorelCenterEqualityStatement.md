@@ -1,7 +1,5 @@
 # Statement: the centre of a Borel subgroup is the centre of the group
 
-Worker 75.
-
 `Langlands.GroupScheme.BorelCenterEqualityStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:
@@ -81,7 +79,9 @@ Milne's proof: reduce to `k` algebraically closed. Since `Z(G) = C_G(B)` (17.22)
   `[ConnectedSpace G.X.left]`, with no hypothesis on `k`, as in Section 17d.
 - **Borel subgroups over `k`.** Milne's Section 17d convention, a subgroup that becomes Borel
   over `k^a`, is `IsGeometricBorelSubgroup i`. Mathematically its first component `IsBorelSubgroup i`
-  follows from the second (the Library does not prove this): a smooth connected solvable
+  follows from the second (for a closed subgroup `i`, the Library proves this as
+  `IsBorelSubgroup.of_baseChange_toAlgebraicClosure` in
+  `Langlands.GroupScheme.Absolute.GeometricBorelDescent`): a smooth connected solvable
   closed subgroup of `G` containing `B` becomes one of `G_{k^a}` containing `B_{k^a}`, so it
   equals `B`.
 - **Centres.** Milne's `Z(G)` and `Z(B)` are the subgroups representing the functors of

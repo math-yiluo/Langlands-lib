@@ -1,7 +1,5 @@
 # The fixed-vector splitting from subobject closure and Noetherianity
 
-Author: Worker 5293.
-
 This module proves `fixedVectorSplitting K` (defined in
 `FixedVectorDualityReduction`) for a compact open subgroup `K` of a
 topological group `G`. The proof does not use the Bernstein decomposition. It

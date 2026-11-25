@@ -1,7 +1,5 @@
 # The uniform Lang–Weil estimate for curve families
 
-Author: Worker 158.
-
 The theorem `Langlands.AlgebraicGeometry.LangWeil.familyLangWeilCurve` proves
 the unchanged published proposition
 `Langlands.AlgebraicGeometry.LangWeil.FamilyLangWeilCurveStatement.{u}`.

@@ -1,7 +1,5 @@
 # Measures and slice transport for the Section 4.7 lower quotient
 
-Author: Worker 1191.
-
 This internal helper for fixed-slice convergence defines `lowerMeasure` to be exactly
 `Measure.map (lowerToStandard h F.Carrier).symm νN`. All topologies are the canonical
 p-adic ones; the measurable structures may be any Borel structures for these topologies.

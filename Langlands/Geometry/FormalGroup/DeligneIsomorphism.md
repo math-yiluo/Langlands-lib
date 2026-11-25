@@ -103,10 +103,11 @@ not constructed here.
 
 The admissibility subtype retains the preceding determinant predicate's
 documented scope: its normalization is stalkwise, and comparison with an
-independently constructed exterior-power subsheaf equality remains unproved.
+independently constructed exterior-power subsheaf equality is not proved here;
+`determinantSubsheavesNormalized_iff` in `DeligneDeterminantSubsheaf` proves it.
 The module does not prove invariance of the entire admissibility predicate
 under arbitrary isomorphisms, existence of admissible objects, or identification
 with a separately defined Deligne moduli functor. The quotient is nevertheless
 an actual equivalence-relation quotient on the subtype of objects satisfying
 that predicate. A normalized PGL action, a representing formal scheme and its
-generic fibre remain outside this unit.
+generic fibre remain outside this module.

@@ -1,15 +1,13 @@
 # Normalizer-stable apartment classes of split reductive groups
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.SplitChevalleyApartment`.
 
-This unit constructs, for every split maximal torus of every connected reductive
+This module constructs, for every split maximal torus of every connected reductive
 group over every field, an actual `KPApartmentData`: an equipollence class of
 valuations of the root datum (axioms V 0–V 5), compatible with a prescribed
 valuation on the split torus, and stable under the whole actual normalizer.
 It is the split case of the apartment of Kaletha–Prasad, and an input for the
-quasi-split apartment of task 8ffe0456.
+quasi-split apartment.
 
 ## Main results
 
@@ -116,7 +114,7 @@ Lemma 6.1.12; no sign of that lemma enters this proof.
 
 ## Scope
 
-The unit treats split maximal tori only. It does not construct Galois-stable
+The module treats split maximal tori only. It does not construct Galois-stable
 classes, quasi-split or general apartments, full centralizer compatibility for
 non-split tori, V 7, or any building. All results are uniform in the universe
 and the characteristic.

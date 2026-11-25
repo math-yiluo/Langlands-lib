@@ -1,6 +1,6 @@
 # Tori in the normal factor of an external semidirect product
 
-This internal supporting unit constructs the actual scheme-theoretic
+This module constructs the actual scheme-theoretic
 intersection of a commutative subgroup of an external semidirect product with
 the original normal factor. It proves this intersection is a torus and is
 fixed pointwise when the commutative subgroup is a torus containing the
@@ -40,7 +40,7 @@ the existing finite-type maximal-torus extension theorem puts the closed
 external factor into a maximal torus `M` of the actual semidirect product.
 The preceding construction gives a closed affine torus in `G`, smooth and
 connected, fixed pointwise by the original external action. The maximality
-assertion concerns `M` in the semidirect product. This unit does not assert
+assertion concerns `M` in the semidirect product. This module does not assert
 that its intersection is a maximal torus of `G`, provide a unipotent
 complement, or prove the full semigroup ordered-product proposition.
 

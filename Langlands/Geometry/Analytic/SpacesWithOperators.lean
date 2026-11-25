@@ -68,7 +68,7 @@ structure Hom (Y X : SpaceWithOperators.{u, v, w, z} K) where
   groupHom : Y.group ⟶ X.group
   /-- The `K`-linear morphism of analytic spaces `φ : Y → X`. -/
   hom : Y.space.obj.V ⟶ X.space.obj.V
-  comm : ∀ h : Y.group.carrier, Y.space.obj.ρ h ≫ hom = hom ≫ X.space.obj.ρ (groupHom h)
+  comm : ∀ h : Y.group.carrier, (Y.space.obj.ρ h).asHom ≫ hom = hom ≫ (X.space.obj.ρ (groupHom h)).asHom
 
 /-- The identity morphism of `X(G)`. -/
 def Hom.id (X : SpaceWithOperators.{u, v, w, z} K) : Hom X X where
@@ -229,7 +229,7 @@ instance : (toTopologicalGroup.{u, v, w, z} K).IsFibered :=
 action of `g` on `X`. -/
 def conjugation (X : SpaceWithOperators.{u, v, w, z} K) (g : X.group.carrier) : X ⟶ X where
   groupHom := Topology.TopologicalGroup.conj g
-  hom := X.space.obj.ρ g
+  hom := (X.space.obj.ρ g).asHom
   comm h := by
     rw [← End.mul_def, ← End.mul_def, ← map_mul, ← map_mul, Topology.TopologicalGroup.conj_apply,
       inv_mul_cancel_right]
@@ -241,23 +241,23 @@ theorem conjugation_groupHom (X : SpaceWithOperators.{u, v, w, z} K) (g : X.grou
 
 @[simp]
 theorem conjugation_hom (X : SpaceWithOperators.{u, v, w, z} K) (g : X.group.carrier) :
-    (conjugation X g).hom = X.space.obj.ρ g :=
+    (conjugation X g).hom = (X.space.obj.ρ g).asHom :=
   rfl
 
 theorem conjugation_one (X : SpaceWithOperators.{u, v, w, z} K) : conjugation X 1 = 𝟙 X :=
-  hom_ext (Topology.TopologicalGroup.hom_ext fun x => by simp) (Action.ρ_one _)
+  hom_ext (Topology.TopologicalGroup.hom_ext fun x => by simp) (congrArg End.asHom (Action.ρ_one _))
 
 theorem conjugation_mul (X : SpaceWithOperators.{u, v, w, z} K) (g g' : X.group.carrier) :
     conjugation X (g * g') = conjugation X g' ≫ conjugation X g :=
   hom_ext (Topology.TopologicalGroup.hom_ext fun x => by simp [mul_assoc])
-    (map_mul X.space.obj.ρ g g')
+    (congrArg End.asHom (map_mul X.space.obj.ρ g g'))
 
 /-- Berkovich: "the action of `G` on `X` extends to a natural action of `G` on `X(G)` for which
 `ν_g(g') = g g' g⁻¹`." -/
 def conjugationAction (X : SpaceWithOperators.{u, v, w, z} K) : X.group.carrier →* End X where
-  toFun := conjugation X
-  map_one' := conjugation_one X
-  map_mul' := conjugation_mul X
+  toFun := fun g => End.of (conjugation X g)
+  map_one' := congrArg End.of (conjugation_one X)
+  map_mul' := fun g g' => congrArg End.of (conjugation_mul X g g')
 
 /-- Berkovich's morphism `a : X(G_d) → X(G)` (Example 1.1.3), where `G_d` is `G` with the
 discrete topology. -/

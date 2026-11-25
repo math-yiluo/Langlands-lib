@@ -5,13 +5,10 @@ This pair defines the linear map
 of a compactly induced function, pushed through a coefficient map `T`, over
 the left quotient of the kernel of a split retraction. It proves the laws of
 this map: kernel invariance, the section law, surjectivity, a kernel
-criterion, and compatibility with linear maps of values. The pair was written
-for task `d6be9c3b-ff6f-425c-9bb5-84c973b9568f` (surviving graded transitions
-of the corrected Aubert complex). The module
+criterion, and compatibility with linear maps of values. The pair serves the
+surviving graded transitions of the corrected Aubert complex: the module
 `Langlands.Representation.Aubert.General.CorrectedOrbitJacquet` specializes it
 to the orbit Jacquet maps of that complex.
-
-Author: Worker 1255.
 
 ## Provenance
 

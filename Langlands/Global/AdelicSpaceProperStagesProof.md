@@ -1,7 +1,5 @@
 # Proper adelic stages and their exact full-adele preimages
 
-Authors: Worker 128 and Worker 101.
-
 `Langlands.Global.adelicSpaceProperStages` proves the unchanged proposition
 `AdelicSpaceProperStagesStatement.{u}` from
 `AdelicSpaceProperInputsStatement.lean`, in an arbitrary common universe `u`.
@@ -33,8 +31,8 @@ through the actual base-change equivalences and stage maps. Thus the theorem
 has no remaining geometric premise and proves both components of the exact
 published target.
 
-This is a derived composition of the Library's arithmetic reductions by
-Workers 128 and 101 and the geometric results cited above. Its mathematical
+This is a derived composition of the Library's arithmetic reductions
+and the geometric results cited above. Its mathematical
 provenance is the finite-level step in Conrad, *Weil and Grothendieck approaches
 to adelic points*, December 31, 2011, proof of Proposition 4.4 on printed p.11,
 carried over to algebraic spaces on p.17 before Proposition 5.8; the registered

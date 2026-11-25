@@ -91,10 +91,10 @@ lemma localUnitSection_generator
 lemma localUnitSection_generator_comp
     (e : SheafOfModules.free (R := Y.ringCatSheaf.over U) I ≅ M.over U)
     (a : End (M.over U)) (j : I) :
-    localUnitSection M U (SheafOfModules.ιFree j ≫ e.hom ≫ a) =
+    localUnitSection M U (SheafOfModules.ιFree j ≫ e.hom ≫ a.asHom) =
       localSectionEndomorphism M (Over.mk (𝟙 U)) a
         (localSectionBasis e (Over.mk (𝟙 U)) j) := by
-  change LocalHom.app a (𝟙 U)
+  change LocalHom.app a.asHom (𝟙 U)
     (localUnitSection M U (SheafOfModules.ιFree j ≫ e.hom)) = _
   rw [localUnitSection_generator]
   rfl
@@ -103,7 +103,7 @@ lemma localUnitSection_generator_comp
 lemma localSectionBasis_generator_matrix
     (e : SheafOfModules.free (R := Y.ringCatSheaf.over U) I ≅ M.over U)
     (a : End (M.over U)) (j : I) :
-    SheafOfModules.ιFree j ≫ e.hom ≫ a =
+    SheafOfModules.ιFree j ≫ e.hom ≫ a.asHom =
       ∑ i, (show Γ(Y, U) from LinearMap.toMatrix (localSectionBasis e (Over.mk (𝟙 U)))
         (localSectionBasis e (Over.mk (𝟙 U)))
         (localSectionEndomorphism M (Over.mk (𝟙 U)) a) i j) •
@@ -112,7 +112,7 @@ lemma localSectionBasis_generator_matrix
   apply localUnitSection_injective M U
   rw [map_sum]
   simp only [map_smul, localUnitSection_generator, LinearMap.toMatrix_apply]
-  change LocalHom.app a (𝟙 U)
+  change LocalHom.app a.asHom (𝟙 U)
       (localUnitSection M U (SheafOfModules.ιFree j ≫ e.hom)) = _
   rw [localUnitSection_generator]
   exact ((localSectionBasis e (Over.mk (𝟙 U))).sum_repr _).symm
@@ -133,7 +133,7 @@ lemma chartFreePullbackIso_generator_matrix (f : X ⟶ Y)
     (e : SheafOfModules.free (R := Y.ringCatSheaf.over U) I ≅ M.over U)
     (a : End (M.over U)) (j : I) :
     SheafOfModules.ιFree j ≫ (chartFreePullbackIso f U e).hom ≫
-        localHomPullback f U a =
+        localHomPullback f U a.asHom =
       ∑ i, (f.app U (LinearMap.toMatrix (localSectionBasis e (Over.mk (𝟙 U)))
         (localSectionBasis e (Over.mk (𝟙 U)))
         (localSectionEndomorphism M (Over.mk (𝟙 U)) a) i j)) •
@@ -169,7 +169,7 @@ theorem localSectionEndomorphism_toMatrix_pullback_top (f : X ⟶ Y)
         (localSectionBasis (chartFreePullbackIso f U e) (Over.mk (𝟙 (f ⁻¹ᵁ U))))
         (localSectionBasis (chartFreePullbackIso f U e) (Over.mk (𝟙 (f ⁻¹ᵁ U))))
         (localSectionEndomorphism ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M)
-          (Over.mk (𝟙 (f ⁻¹ᵁ U))) (localHomPullback f U a)) =
+          (Over.mk (𝟙 (f ⁻¹ᵁ U))) (End.of (localHomPullback f U a.asHom))) =
       (LinearMap.toMatrix (localSectionBasis e (Over.mk (𝟙 U)))
         (localSectionBasis e (Over.mk (𝟙 U)))
         (localSectionEndomorphism M (Over.mk (𝟙 U)) a)).map (f.app U) := by
@@ -179,7 +179,8 @@ theorem localSectionEndomorphism_toMatrix_pullback_top (f : X ⟶ Y)
     (localUnitSection ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M) (f ⁻¹ᵁ U))
     (chartFreePullbackIso_generator_matrix f e a j)
   rw [map_sum] at h
-  simp only [map_smul, localUnitSection_generator, localUnitSection_generator_comp] at h
+  simp only [map_smul, localUnitSection_generator,
+    localUnitSection_generator_comp _ (End.of (localHomPullback f U a.asHom))] at h
   simp only [LinearMap.toMatrix_apply, Matrix.map_apply]
   rw [h]
   rw [Module.Basis.repr_sum_self]
@@ -196,7 +197,7 @@ theorem localSectionEndomorphism_toMatrix_pullback (f : X ⟶ Y)
           (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom)))
         (localSectionEndomorphism ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M)
           (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom))
-          (localHomPullback f U a)) =
+          (End.of (localHomPullback f U a.asHom))) =
       (LinearMap.toMatrix (localSectionBasis e V) (localSectionBasis e V)
         (localSectionEndomorphism M V a)).map (f.app V.left) := by
   apply Matrix.ext
@@ -225,7 +226,7 @@ theorem localSectionDeterminant_matrix_pullback (f : X ⟶ Y)
           (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom)))
         (fun i => localSectionEndomorphism ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M)
           (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom))
-          (localHomPullback f U (a i))) := by
+          (End.of (localHomPullback f U (a i).asHom))) := by
   apply Matrix.ext
   intro i j
   simp only [Matrix.map_apply, Langlands.Shimura.HodgeDeterminant.matrix,
@@ -239,7 +240,7 @@ theorem localSectionDeterminant_pullback (f : X ⟶ Y)
     (a : ι → End (M.over U)) (V : Over U) :
     MvPolynomial.map (f.app V.left).hom (localSectionDeterminant e a V) =
       localSectionDeterminant (chartFreePullbackIso f U e)
-        (fun i => localHomPullback f U (a i))
+        (fun i => End.of (localHomPullback f U (a i).asHom))
         (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom)) := by
   unfold localSectionDeterminant Langlands.Shimura.HodgeDeterminant.polynomial
   rw [RingHom.map_det]
@@ -251,7 +252,7 @@ theorem coeff_localSectionDeterminant_pullback (f : X ⟶ Y)
     (a : ι → End (M.over U)) (V : Over U) (d : ι →₀ ℕ) :
     f.app V.left ((localSectionDeterminant e a V).coeff d) =
       (localSectionDeterminant (chartFreePullbackIso f U e)
-        (fun i => localHomPullback f U (a i))
+        (fun i => End.of (localHomPullback f U (a i).asHom))
         (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom))).coeff d := by
   rw [← localSectionDeterminant_pullback f e a V]
   exact (MvPolynomial.coeff_map (f.app V.left).hom (localSectionDeterminant e a V) d).symm

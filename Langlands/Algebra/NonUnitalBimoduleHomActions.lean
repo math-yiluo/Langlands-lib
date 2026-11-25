@@ -73,7 +73,7 @@ abbrev sourceAction : NonUnitalModule R (NonUnitalModuleHom S Y Z) where
   add_smul r s h := by
     ext y
     change h (op (r + s) • y) = h (op r • y) + h (op s • y)
-    rw [op_add, NonUnitalModule.add_smul, h.map_add]
+    rw [MulOpposite.op_add, NonUnitalModule.add_smul, h.map_add]
   zero_smul h := by
     ext y
     change h (op (0 : R) • y) = 0

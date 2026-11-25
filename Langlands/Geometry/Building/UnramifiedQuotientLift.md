@@ -52,15 +52,13 @@ underlying function.
 
 The proof route is an internal composition of existing Library quotient and
 building-axiom results with Mathlib's action restriction. No new assertion
-from the original literature is made. Worker 118 contributed the
-source-inspected action-restriction route; Worker 1681 implemented the
-specialization and proofs.
+from the original literature is made.
 
 Both building bundles, the compatible apartment map, normalizer
 compatibility, the every-point root/fixer comparisons, apartment
 injectivity, and the source building witness remain inputs. The apartment
 map is an arbitrary function here; no affine, root or facet preservation is
-asserted. This unit constructs no unconditional building or scalar-extension
+asserted. This module constructs no unconditional building or scalar-extension
 embedding, no metric, and no identification of an original supplied integral
 model. In particular, it does not prove or replace
 `IntegralModel.BuildingComparisonStatement`.

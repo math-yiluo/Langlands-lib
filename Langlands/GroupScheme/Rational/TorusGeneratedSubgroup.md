@@ -1,6 +1,6 @@
 # The least closed subgroup containing every ground-field torus
 
-Worker 1333. This internal adapter uses the fixed `closedTorusEnvelope` and
+This internal adapter uses the fixed `closedTorusEnvelope` and
 `TorusGeneratedEnvelope` from `Rational.TorusGeneratedEnvelope`. The field and
 universe are arbitrary.
 

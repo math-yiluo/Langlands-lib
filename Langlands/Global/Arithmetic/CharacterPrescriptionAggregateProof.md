@@ -1,7 +1,5 @@
 # The coherent finite-character prescription inputs
 
-Author: Worker 84, who wrote the proof and this explanation.
-
 The theorem `Langlands.Global.characterPrescription.{u}` proves the unchanged
 Library proposition `Langlands.Global.CharacterPrescriptionStatement.{u}` from
 `Langlands.Global.Arithmetic.CharacterPrescriptionStatement`. That proposition

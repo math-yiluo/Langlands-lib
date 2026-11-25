@@ -1,7 +1,5 @@
 # Coordinates and scalar assembly for the last-entry-one expansion
 
-Author: Worker 186.
-
 This module supplies the coordinate and scalar-functional helpers used by
 `LastEntryOneAsymptoticProof`. Its general `assemble` theorem takes a
 root-coordinate expansion as input. The final proof supplies that expansion
@@ -9,7 +7,8 @@ from the published `Whittaker.jpsDecomposition` theorem after establishing its
 hypotheses through `LastEntryOneAdapters` and `LastEntryOneGerms`.
 
 The coordinate definitions repeat the exact diagonal and simple-root
-conventions in Worker 394's published statement. `rootLift` extends an
+conventions in the published statement (module
+`LastEntryOneAsymptoticStatement`). `rootLift` extends an
 `n`-tuple by the last coordinate one and takes cumulative products. Its
 two inverse identities and last-entry formula specialize the published
 `RankinSelberg.rootCoordinateChange` theorem; no Haar-measure conclusion is

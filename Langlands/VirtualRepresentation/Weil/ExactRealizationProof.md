@@ -1,7 +1,5 @@
 # Exact K0 realization is bijective
 
-Authors: Worker 981 and Worker 585.
-
 This module proves the published statement
 `Langlands.VirtualRepresentation.Weil.ExactRealizationBijectiveStatement.{uG,uV} G`
 and its three consequences. The statement says that the canonical map
@@ -35,11 +33,11 @@ negative virtual classes.
   `exactCoefficients_realizeExact`, so `exactCoefficients` is a left inverse,
   and `realizeExact_injective`. Its Markdown explains how Jordan–Hölder
   multiplicities make the map well defined and exact-additive.
-- `Weil.ExactFiltration` (Worker 585, published) proves
+- `Weil.ExactFiltration` (published) proves
   `exactClass_eq_sum_of_filtration`: for any zero-to-full filtration `s` of an
   actual continuous `A`, the exact class of `A` is the sum of the exact classes
   of the continuous graded quotients `continuousFiltrationGraded A s i`. Its
-  continuity input is Worker 585's published
+  continuity input is the published
   `Weil.Representation.SubquotientContinuity`.
 
 ## Surjectivity

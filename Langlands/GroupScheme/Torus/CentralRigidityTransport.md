@@ -1,7 +1,5 @@
 # Transport of fibre equality and centrality along composite base changes
 
-Worker 738.
-
 These are internal helper lemmas for the proof of
 `MultiplicativeTypeCentralRigidityStatement`. They come from no specific statement in
 the literature. The proof of SGA 3, Exposé IX, Théorème 5.1 (registered Gille–Polo 2009

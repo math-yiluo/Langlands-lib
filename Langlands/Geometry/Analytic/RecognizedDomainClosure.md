@@ -1,7 +1,5 @@
 # Recognition and actual local-domain closure of the full atlas
 
-Author: Worker 36.
-
 This module constructs a recognized chart for every full affinoid domain
 inside a chart of the full recognition atlas. It retains the literal
 ambient domain locus, constructs a bounded equivalence from the given
@@ -117,7 +115,8 @@ test algebras.
 The construction does not invoke the general special-intersection lemma,
 closed-ideal effectiveness or Kiehl descent as an assumed new input.
 It proves local full-domain closure of the constructed full atlas, while
-equivalent-net invariance, iteration of recognition, maximal-atlas
-uniqueness and the unrestricted morphism-category identification remain
-separate obligations. Analytic étale and equivariant sites and the Harris
-tower specialization also remain outside this unit.
+equivalent-net invariance, maximal-atlas uniqueness and the unrestricted
+morphism-category identification lie outside it; iteration of recognition
+is treated in `IteratedRecognizedDomainRefinement` and
+`FullRecognitionIdempotence`. Analytic étale and equivariant sites and the
+Harris tower specialization also remain outside this module.

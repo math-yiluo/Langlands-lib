@@ -4,7 +4,7 @@ Module `Langlands.Global.RankinSelberg.SelfPairLandau`, namespace
 `Langlands.Global.RankinSelbergGlobal.SelfPairLandau`.
 
 This is an internal helper for the positivity proof of Jacquet–Shalika I, Lemma (5.2)
-(Task 6821, `CuspidalSelfPairContinuationStatement`). It contains no `Prop`-valued
+(`CuspidalSelfPairContinuationStatement`). It contains no `Prop`-valued
 statement definitions. It applies Landau's theorem for two-sided Laplace transforms of
 nonnegative functions (`Langlands.Analysis.LandauMellin`) to integrals over
 `N_n(𝔸) \ GL_n(𝔸)` of the form

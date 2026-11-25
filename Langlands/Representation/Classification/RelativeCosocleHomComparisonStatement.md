@@ -1,6 +1,6 @@
 # Relative Hom comparison for an arbitrary outer quotient
 
-Author: Worker 435. The quantified telescope is copied from Worker 19's
+The quantified telescope is copied from the
 published `GLRelativeCosocleMultiplicityStatement`. This pair defines an
 internal proposition; it does not prove a comparison.
 
@@ -70,7 +70,7 @@ in the proof of Lemma 5.6 on p.101. These passages motivate this
 Hom-dimension interface; they do not literally state its Lean telescope
 or the two explicit finite-dimensionality conclusions.
 
-A later proof must establish actual second-adjointness applicability,
+A proof must establish actual second-adjointness applicability,
 quotient extraction and the multiplicity-sensitive continuation and
 tempered-exponent argument for the arbitrary coarse input. A raw
 Jordan–Hölder count in a possibly nonsemisimple cuspidal isotypic Jacquet
@@ -88,5 +88,5 @@ The retained original is registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 PDF SHA-256
 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-The full article was read during the parent proof investigation; pp.99–102
+The full article was read; pp.99–102
 and the displayed p.102 formulas were revisited for this pair.

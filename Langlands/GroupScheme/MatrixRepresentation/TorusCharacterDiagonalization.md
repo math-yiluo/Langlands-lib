@@ -1,6 +1,6 @@
 # Simultaneous torus-character diagonalization
 
-This internal supporting unit for the actual open-cell height estimate
+This internal module, which supports the actual open-cell height estimate,
 chooses one coordinate change diagonalizing an entire supplied split
 torus. It uses the published character-space decomposition and character
 basis, including their universal coefficient-algebra equations.
@@ -41,6 +41,6 @@ splitness of the supplied torus, but no reductivity, maximality,
 closedness of the matrix representation, or local-field topology. The
 last uniformizer-section specialization explicitly requires the
 nonarchimedean local-field structure used to define that section. All
-field universes are arbitrary. The unit is an internal consequence of
+field universes are arbitrary. The module is an internal consequence of
 the published representation and torus interfaces, rather than a
 translation of a separately named source theorem.

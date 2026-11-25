@@ -100,6 +100,7 @@ private theorem realStandardEvaluation_lie_upper
     (leviProjection_hasDerivAt ℝ B p X hpX) L
     (fun i => realStandardLie_one_tmul_apply_coe _ _ (Y i)) a ha
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- At real compact identity, evaluation of the upper triangular Lie derivative
 splits into the half-character derivative and actual block Lie operators. -/
 theorem realPlaceEvaluation_lie_upper (X : Matrix (Fin (r + 1)) (Fin (r + 1)) ℝ)
@@ -169,6 +170,7 @@ private theorem complexStandardEvaluation_lie_upper
     (leviProjection_hasDerivAt ℂ B p X hpX) L
     (fun i => principalSeriesLie_one_tmul_apply_coe ℂ _ _ (Y i)) a ha
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- At complex compact identity, evaluation of the upper triangular Lie derivative
 splits into the half-character derivative and actual block Lie operators. -/
 theorem complexPlaceEvaluation_lie_upper (X : Matrix (Fin (r + 1)) (Fin (r + 1)) ℂ)

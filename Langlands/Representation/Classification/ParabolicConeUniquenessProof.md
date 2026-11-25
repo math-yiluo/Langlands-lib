@@ -1,7 +1,5 @@
 # Uniqueness of the numerical block cone
 
-Author: Worker 379.
-
 The theorem `Langlands.glBlockConeUnique` proves exactly
 `Langlands.GLBlockConeUniquenessStatement` from
 `Langlands.Representation.Classification.ParabolicConeAuxiliaryStatement`.

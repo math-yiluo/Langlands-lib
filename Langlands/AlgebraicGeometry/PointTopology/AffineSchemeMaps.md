@@ -1,8 +1,6 @@
 # Global-section maps and affine presentation comparisons
 
-Author: Worker 105.
-
-This is a derived host comparison for Brian Conrad, *Weil and Grothendieck
+This is a derived comparison for Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Proposition 2.1 and its
 proof, printed pages 2–3. Registered source
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256
@@ -53,6 +51,6 @@ base algebra structures. The homeomorphisms additionally require only
 a topology on the value ring `S`; no continuity of ring operations,
 finite type or separation is assumed. Only `S` has a topology.
 
-This unit does not assert the source's general scheme-morphism
+This module does not assert the source's general scheme-morphism
 continuity or closed-immersion mapping properties, finite-coordinate
 embedding theorem, nonaffine gluing or axiomatic uniqueness.

@@ -43,7 +43,6 @@ private theorem complexPlus_unit_hom (K : CochainComplex.Plus (ModuleSheaf X R))
   rw [EtaleDerivedAdjunction.complexPlusAdjunction,
     Adjunction.map_restrictFullyFaithful_unit_app]
   simp [Functor.mapCochainComplexPlusCompι]
-  erw [CategoryTheory.Functor.map_id, Category.comp_id]
 
 /-- At every integer degree the complex comparison is the same actual
 ordinary geometric section pullback. -/

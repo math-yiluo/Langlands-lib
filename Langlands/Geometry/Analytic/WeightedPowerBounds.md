@@ -1,7 +1,7 @@
 # Radius-weighted power bounds and finite monomial bounds
 
-Worker 56 defines the weighted power predicate and proves its basic calculus.
-The finite-tuple argument adapts Worker 36's published unit-radius
+This module defines the weighted power predicate and proves its basic calculus.
+The finite-tuple argument adapts the unit-radius
 `StrictTateAlgebra.hasBoundedMonomials_iff_pow_bound`.
 
 For a normed ring \(A\), real radius \(r\), and element \(a\),
@@ -39,7 +39,9 @@ satisfied \(x(a)>r>0\), the powers of \(x(a)/r>1\) would be unbounded.
 Multiplicativity, the spectrum point's domination by the actual ring norm,
 and the weighted power bound instead bound all these powers by \(C\).
 No completeness or affinoid presentation is used. The converse spectral
-implication remains a separate theorem obligation.
+implication is a separate theorem: for affinoid quotients it is
+`PresentedAffinoidAlgebra.SpectralPowerBoundStatement`, proved by
+`spectralPowerBound` (module `GeneralizedAffinoid/SpectralPowerBoundProof`).
 
 In namespace `GeneralizedTateAlgebra`,
 `HasBoundedMonomials.radiusBoundedPowers` specializes an existing weighted

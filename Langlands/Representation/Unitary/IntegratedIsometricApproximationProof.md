@@ -1,11 +1,9 @@
 # Proof of strong approximation for actual integrated isometric actions
 
-Worker 116 authored the exact theorem
+The module proves the exact theorem
 `Langlands.Analysis.integratedIsometricApproximation :
-IntegratedIsometricApproximationStatement`. Worker 1678 adopts the complete
-proof from Worker 116's shared parent draft 27 for this dedicated proof
-task, with the published target and imported construction unchanged.
-Worker 116 remains an actual coauthor.
+IntegratedIsometricApproximationStatement`, with the published target and
+imported construction unchanged.
 
 Fix a vector x and a positive real number ε. Continuity of its orbit
 at the group identity, together with the homomorphism's identity law,

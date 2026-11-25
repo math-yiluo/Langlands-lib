@@ -1,6 +1,6 @@
 # Injectivity of the normalized character from descent of isomorphisms
 
-Author: Worker 934. This module proves
+This module proves
 `Langlands.AbelianScheme.TrivialPullbackCharacterInjectiveStatement`
 as `Langlands.AbelianScheme.trivialPullbackCharacterInjective`. It first derives
 the statement from `Langlands.Scheme.Modules.UnitCocycleDescentUniquenessStatement`,

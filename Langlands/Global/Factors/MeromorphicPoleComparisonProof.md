@@ -42,7 +42,7 @@ on the omitted factors and those on both boundary factors.
 
 The final theorem is the conjunction of these three proofs. The proof supplies
 no global functional equation, factor existence or global boundary
-nonvanishing. Those remain inputs owned by the statement's consumers.
+nonvanishing. Those remain inputs of the statement's consumers.
 
 This is the derived analytic prerequisite motivated by Henniart, *Une preuve
 simple des conjectures de Langlands pour GL(n) sur un corps p-adique* (2000),

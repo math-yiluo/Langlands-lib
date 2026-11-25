@@ -1,7 +1,5 @@
 # Reduction of adelic Iwasawa existence to local and integral existence
 
-Authors: Worker 399 and Worker 1430.
-
 This internal derived module proves a conditional implication with conclusion
 the exact published `AdelicGroupPoints.ParabolicIwasawaStatement`. It retains
 three existence inputs and does not prove any of them.
@@ -37,8 +35,8 @@ compactness, unrestricted maximality and covering conclusion.
 
 The provenance is internal: this is an application of the actual
 adelic assembly, the published archimedean and integral-family proposition
-interfaces, and the finite-place proposition in this bundle. Worker 1430
-proposed this final reduction. Its mathematical
+interfaces, and the finite-place proposition (module
+`FinitePlaceIwasawaStatement`). Its mathematical
 motivation is Getz–Hahn, *An Introduction to Automorphic Representations*
 (2024), Theorem 2.7.1, printed p.71, with the local and integral inputs in
 Appendix B, Theorem B.2.5, Proposition B.3.1 and B.4, printed pp.543–548.
@@ -46,8 +44,10 @@ Registered source: `getz-hahn-2024-automorphic-representations`, SHA256
 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`.
 The October 2026 errata has no correction to these passages.
 
-An unconditional adelic proof still requires proofs of all three
-existence propositions. This
+An unconditional adelic proof requires proofs of all three
+existence propositions. The Library proves the archimedean one
+(`InfinitePlaceGroupPoints.parabolicIwasawaStatement`) and the integral-family one
+(`IntegralIwasawaFamily.existenceStatement`), not the finite-place one. This
 theorem does not identify a supplementary special-compact statement, a
 supplied compact subgroup or a conditional local product interface with those
-missing proofs.
+proofs.

@@ -1,7 +1,5 @@
 # Rational maximal-torus conjugacy with the stable-vector premise discharged
 
-Worker 1333.
-
 This internal companion to `SolvableMaximalTorusAssembly` uses the published
 unconditional theorem
 `RelativeRoot.splitUnipotentStableVectorSubgroup.{u}`. It supplies that theorem,
@@ -60,6 +58,6 @@ Every field and characteristic, finite and imperfect fields, arbitrary
 nonsplit maximal tori, and universe `u` are retained. All statement declarations
 and geometric predicates are unchanged. The displayed pairs of structural
 inputs remain hypotheses; this module does not prove them or the unconditional
-host target. Its provenance is the explicit composition of the named Library
+target. Its provenance is the explicit composition of the named Library
 constructions, with no additional external assertion. It does not use either
 maximal-split-torus conjugacy family.

@@ -1,6 +1,6 @@
 # Actual integral Weil points over all upper function-field completions
 
-This unit constructs the local integral Weil point homeomorphism for a
+This module constructs the local integral Weil point homeomorphism for a
 quasi-projective model over the **actual integral closure** of an original
 function-field valuation ring. Its factors range over every actual upper
 place, and both sides have independently constructed scheme point topologies.
@@ -14,7 +14,7 @@ rings to the adelic Weil homeomorphism. The registered source is
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 This module supplies the local integral point comparison for the original
 valuation-ring normalization. Spreading models and compatibility with global
-choices are retained as separate obligations.
+choices are not part of this module.
 
 The fields `k`, `K` and `L` lie in one arbitrary universe, with finite `k`,
 their three algebra structures, `FiniteDimensional K L`,
@@ -77,7 +77,7 @@ This bounds definitional reduction and uses the default heartbeat limit.
 All original finite field extensions and inseparable rational presentations
 are retained. The actual integral tensor isomorphism, local finiteness,
 projectivity and original module topologies are proved, rather than fields of
-an assumed package. This unit does not prove spreading to a common global
+an assumed package. This module does not prove spreading to a common global
 integral model, compatibility with the completed-field homeomorphism, or the
-global adelic Weil homeomorphism. Those remain parent-task obligations, as do
-the separate Section 5 algebraic-space conclusions.
+global adelic Weil homeomorphism. Those, and the separate Section 5
+algebraic-space conclusions, are not part of this module.

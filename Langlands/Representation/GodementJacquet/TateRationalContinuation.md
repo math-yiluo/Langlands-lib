@@ -1,6 +1,6 @@
 # Rational scalar and meromorphic additive Tate continuations
 
-Worker 357 derives a comparison of the two existing continuation conventions,
+This module derives a comparison of the two existing continuation conventions,
 using the exact Haar identity in `TateAdditiveMellin`. The prime and p-adic field
 universe are arbitrary. The field carries its canonical topological data,
 the continuous multiplicative character and scalar Schwartz--Bruhat test

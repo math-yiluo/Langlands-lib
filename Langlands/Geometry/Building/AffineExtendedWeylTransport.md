@@ -1,6 +1,6 @@
 # Extended affine Weyl groups under affine equivalences
 
-This internal derived unit extends the existing `AffineWeylTransport` results
+This module extends the existing `AffineWeylTransport` results
 to the unchanged `extendedAffineWeylGroup` of `AffineWeylGroups`. Its inputs
 are an arbitrary set of real affine functionals on an affine space and an
 affine equivalence to another affine space. The translation spaces and
@@ -31,7 +31,7 @@ the pointwise cancellation identities prove the two inverse laws.
 The provenance is the existing definitions of affine reflections, root
 stabilizers, derivative Weyl groups and extended affine Weyl groups, together
 with `AffineWeylTransport` and inverse root transport from
-`AffineRootSystemTransport`. This unit introduces no new literature
+`AffineRootSystemTransport`. This module introduces no new literature
 translation. It supplies an algebraic comparison needed for the AS 5
 clauses of `SatisfiesApartmentAxioms`; actual building data, root comparisons
 and witnesses of those clauses are separate obligations.

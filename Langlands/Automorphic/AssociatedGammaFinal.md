@@ -1,11 +1,10 @@
 # Assembly of the associated gamma comparison
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaFinal`). It derives
+Supporting module for the proof of `AssociatedGammaStatement` (module `Langlands.Automorphic.AssociatedGammaFinal`). It derives
 `AssociatedGammaStatement` (Henniart 2000, Théorème 2.3; Henniart 1986, Theorem 4.1) from two
-statements that are not yet proved in the Library, by assembling the inputs of the two-twist
-comparison engine. Every declaration compiles in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, and `associatedGamma_of_inputs` uses only the axioms
-`propext`, `Classical.choice` and `Quot.sound`.
+statements taken as hypotheses (see `associatedGamma_of_inputs` below), by assembling the inputs
+of the two-twist comparison engine. Every declaration compiles, and `associatedGamma_of_inputs`
+uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Results
 
@@ -36,8 +35,9 @@ comparison engine. Every declaration compiles in environment
   and a local-constant system (`NonabelianSystem.exists_system`) exist over every p-adic field.
 - `associatedGamma_of_inputs`: `AssociatedGammaStatement` follows from two hypotheses, the
   completed global Rankin–Selberg equation `CuspidalPairGlobalFunctionalEquationStatement.{u, u}`
-  (its proof is owned by Task 5493) and the stable local comparison
-  `StableTwistPairGammaMatchStatement.{u, uV, uE}` (its proof is owned by Task 6211). Every
+  and the stable local comparison
+  `StableTwistPairGammaMatchStatement.{u, uV, uE}` (proved in the Library as
+  `stableTwistPairGammaMatchStatement`). Every
   other input is a proved Library theorem:
   - `principalSeriesPairGammaMatchStatement` (principal-series comparison);
   - `Correspondence.arithmeticPairEpsilonExistence` (arithmetic pair epsilon factors);
@@ -48,8 +48,8 @@ comparison engine. Every declaration compiles in environment
   - `presentedContragredientAssociation` and `associatedCentralCharacter` (weak association of
     the duals and central characters).
 
-  This theorem is not a proof of the target: the target is proved only once both hypotheses
-  are proved theorems.
+  This theorem is not a proof of `AssociatedGammaStatement`: the statement is proved only once
+  both hypotheses are proved theorems.
 
 ## Proof of `associatedGamma_of_inputs`
 

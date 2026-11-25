@@ -1,7 +1,5 @@
 # Ring laws for actual graded normalized induction
 
-Authors: Worker 480 and Worker 837.
-
 `Langlands.Aubert.gradedInductionRingLaws` proves the published proposition
 `Langlands.Aubert.GradedInductionRingLawsStatement.{uF,uV} F T hx`.
 Its only parameters are the prime and its primality instance, the actual

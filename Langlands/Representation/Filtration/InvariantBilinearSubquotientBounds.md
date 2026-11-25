@@ -1,7 +1,5 @@
 # Bilinear length bounds for subrepresentations and quotients of filtered representations
 
-Author: Worker 745.
-
 This internal algebraic adapter extends the filtration bounds of
 `Filtration.InvariantBilinearBounds`. Those bounds concern a filtered
 representation itself. This module bounds an actual subrepresentation or an
@@ -64,8 +62,7 @@ Namespace `Langlands.InvariantBilinear`.
 
 The provenance is internal. The module is linear algebra over the published
 `InvariantBilinear` and `ObjectRepFiltration` definitions. It is used in the
-proof of Ze80 Proposition 1.11(a) (task
-`3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`). There it replaces the step "an
+proof of Ze80 Proposition 1.11(a). There it replaces the step "an
 irreducible subquotient pairs nontrivially with some Jordan–Hölder factor" in
 BZ77 §4.8 (Bernstein and Zelevinsky 1977, `bernstein-zelevinsky-1977-induced-i`,
 proof of Lemma 4.7(b), printed p.455) by a length count that needs no
@@ -79,4 +76,4 @@ Its transitive `Langlands` closure is `Filtration.Definitions`,
 `Filtration.ObjectDefinitions`, at Library commit
 `9076dbdeff7e1d9a1bddd23c2f62e11d180814a1`. It contains no derivative,
 induction, classification, segment or irreducibility-criterion module. So no
-excluded result of task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` is used.
+result excluded from the proof of Ze80 Proposition 1.11(a) is used.

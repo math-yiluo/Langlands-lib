@@ -1,6 +1,6 @@
 # An actual opposite parabolic with the specified rational Levi
 
-Worker 148. Internal construction for the opposite-parabolic input in
+Internal construction for the opposite-parabolic input in
 Renard VII.4.2 (i), printed p.243 / PDF p.249. The construction uses published
 unconditional algebraic-group proofs, with no local-field, topology,
 representation, finite-length or admissibility hypothesis.

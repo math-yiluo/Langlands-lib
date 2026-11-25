@@ -106,7 +106,7 @@ variable {B}
 theorem harrisCMRationalLieDeterminantCondition_iso
     {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     D.HarrisCMRationalLieDeterminantCondition C p B i ↔
       D.HarrisCMRationalLieDeterminantCondition C p B' i' :=
   (D.harrisCMRationalLieDeterminantCondition_iff C p B i).trans

@@ -1,7 +1,8 @@
 # Nonvanishing of coefficient maps after precomposition
 
-Author: Worker 181, as a component of the joint task with Worker 654 on
-`TwoBlockModelGenericSocleOccurrenceStatement`.
+The module is a component of the proof of
+`TwoBlockModelGenericSocleOccurrenceStatement`
+(`Langlands.Representation.RankinSelberg.TwoBlockModelGenericSocleOccurrenceProof`).
 
 This internal algebraic module uses the actual coefficient maps from
 `Whittaker.Algebraic` and pullback of equivariant functionals from
@@ -29,12 +30,12 @@ The coefficient convention is Jacquet, Piatetski-Shapiro and Shalika,
 (3): `W(g) = ell(sigma(g)v)`. The result above is an internal direct algebraic
 consequence, used to supply the nonzero invariant image in the constituent
 argument of Section 5.4, printed page 423 between equations (3) and (4).
-Worker 181 visually read printed pages 385–387 and 423 from registered source
+Printed pages 385–387 and 423 were read visually from registered source
 `jpss-1983-rankin-selberg`, SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`,
 retained at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.
-A bounded search of project and current Library notes and the literature index
+A bounded search of project and Library notes and the literature index
 found no registered source-specific JPSS errata.
 
 These lemmas construct no socle, induction comparison, or analytic factor.

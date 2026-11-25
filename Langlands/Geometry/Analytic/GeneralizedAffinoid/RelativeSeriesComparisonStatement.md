@@ -1,7 +1,5 @@
 # Isometric comparison with relative weighted restricted series: target
 
-Author: Worker 56.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.Adjoin.RelativeSeriesComparisonStatement`
 is a proposition definition specifying three comparison obligations for the
 published actual forward map. This module does not prove the proposition.

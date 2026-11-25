@@ -1,7 +1,5 @@
 # Invariant analytic domains of `G`-spaces are `G`-spaces
 
-Author: Worker 21.
-
 This module contains only a statement: the Prop-valued definition
 `InvariantDomainContinuityStatement`. Nothing here proves it.
 
@@ -45,8 +43,10 @@ triple `τ = (U, f, t)`, with `U` a chart, the set of `g` with
 
 ## Why the statement is expected to hold
 
-The following argument is derived (it is not in the sources) and is not
-formalized. Let `τ = (U, f, t)` be a test triple of `D`: a chart `U` of `X`
+The following argument is derived (it is not in the sources). It is
+formalized as `IsContinuousAction.invariantDomainAction` (module
+`ContinuousInvariantDomain`), and `invariantDomainContinuity` (module
+`InvariantDomainContinuityProof`) proves the statement with it. Let `τ = (U, f, t)` be a test triple of `D`: a chart `U` of `X`
 contained in `D`, a function `f` on `U`, and `t > 0`. The same data form a
 test triple `τ_X` of `X`. If `g` is in Berkovich's subgroup `G_{τ_X}(X)`, then
 `ρ(g)` maps `D` onto `D` and `U ⊆ D`, so the preimage of `U` under the
@@ -58,8 +58,8 @@ restriction of `ρ(g)` to `D` is the preimage under `ρ(g)`. The pullbacks of
 
 In the Library's terms, `IsNear` is witnessed by right fractions `s⁻¹a`,
 `s⁻¹b` with `StrongNear τ_X a b`. A witness for the restriction is obtained
-from the inverse-image domain `s⁻¹(D)` (Worker 36's
-`SourceCategory.domainPreimage`), refined to charts that `a` and `b` send into
+from the inverse-image domain `s⁻¹(D)`
+(`SourceCategory.domainPreimage`), refined to charts that `a` and `b` send into
 charts contained in `D`. The covering pieces of `StrongNear τ_X a b` are
 charts sent into `U ⊆ D` by both maps, so they survive this refinement, and
 the bounds are unchanged.

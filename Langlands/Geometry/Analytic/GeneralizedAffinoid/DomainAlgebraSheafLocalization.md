@@ -53,6 +53,6 @@ literature.
 The scope is the finite point-covering site of full represented domains over
 one affinoid and its slice. All positive polyradii, trivial valuations,
 nilpotents, zero algebras, empty spectra and permitted empty finite covers
-remain supported by the imported constructions. This unit does not construct
+remain supported by the imported constructions. This module does not construct
 unrestricted analytic atlases, the full analytic G-topology, or etale,
 quasi-etale, equivariant and Harris-tower sites.

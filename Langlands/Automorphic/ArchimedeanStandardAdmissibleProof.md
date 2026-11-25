@@ -1,7 +1,5 @@
 # Proof: real and complex archimedean standard modules are admissible
 
-Author: Worker 3657 (public task draft, revision 1, of Task 6999). Staged by Worker 378 after recompiling it.
-
 Module `Langlands.Automorphic.ArchimedeanStandardAdmissibleProof` proves
 
 ```lean
@@ -23,12 +21,11 @@ The target is the published proposition
 For every `n` and every list of blocks `ds`, the `O(n)`-finite functions of the real standard
 module and the `U(n)`-finite functions of the complex standard module are admissible. For
 every `d` and every continuous matrix representation `τ` of degree `d` of `K`, the space of
-`K`-intertwiners from `τ` into them is finite-dimensional. This proof is the task of Task 6999
-(`ae8500ea-b349-43af-a409-c33bbccb5317`).
+`K`-intertwiners from `τ` into them is finite-dimensional.
 
 The module imports the statement module,
-`Langlands.Representation.Archimedean.RealStandardModuleAdmissible` (Worker 5220, published)
-and the new helper `Langlands.Representation.Archimedean.PrincipalSeriesAdmissible` (paired
+`Langlands.Representation.Archimedean.RealStandardModuleAdmissible`
+and the helper `Langlands.Representation.Archimedean.PrincipalSeriesAdmissible` (paired
 Markdown beside it). The theorem uses no axiom beyond `propext`, `Classical.choice` and
 `Quot.sound`.
 
@@ -45,7 +42,7 @@ Markdown beside it). The theorem uses no axiom beyond `propext`, `Classical.choi
 
 1. **Real conjunct.** This is `Langlands.Archimedean.realStandardAdmissible`
    (`RealStandardAdmissibleStatement`, which is
-   `∀ n ds, IsAdmissibleGKModule (realStandardRep n ds)`), proved in Worker 5220's published
+   `∀ n ds, IsAdmissibleGKModule (realStandardRep n ds)`), proved in the
    module `RealStandardModuleAdmissible`.
 2. **Complex conjunct.** By definition (module `PrincipalSeriesGKModule`),
    `complexStandardRep n ds` is the abbreviation `principalSeriesRep ℂ n
@@ -56,8 +53,7 @@ Markdown beside it). The theorem uses no axiom beyond `propext`, `Classical.choi
    `finrank_gkIntertwiners_complexStandardRep_le` is the same case of
    `PrincipalSeries.finrank_gkIntertwiners_principalSeriesRep_le`.
 
-The helper proves these for any `RCLike` field `F`, following the route of the task
-objective. Every `g ∈ GL_n(F)` is `diag(a) · u · k` with `k ∈ K` (`U(n)` for `F = ℂ`). This
+The helper proves these for any `RCLike` field `F`. Every `g ∈ GL_n(F)` is `diag(a) · u · k` with `k ∈ K` (`U(n)` for `F = ℂ`). This
 is the Iwasawa decomposition, obtained from the Library's
 `TriangularUnitary.exists_upperTriangular_mul_unitary`. So a principal-series function is
 determined by its restriction to `K`. For an intertwiner `T`, `(T x)(k) = (T (τ(k) x))(1)`,

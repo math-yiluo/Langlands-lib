@@ -1,6 +1,6 @@
 # Ambient isomorphisms of actual rational Levi subgroups
 
-This internal derived unit supplies transport lemmas for the existing
+This module supplies transport lemmas for the existing
 `IsRationalLeviSubgroup` predicate. It is used when conjugating a Levi by a
 rational point of its ambient parabolic.
 

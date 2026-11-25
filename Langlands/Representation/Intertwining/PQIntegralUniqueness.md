@@ -1,14 +1,15 @@
 # Uniqueness of integral-normalized intertwining operators
 
-Author: Worker 115. Module
+Module
 `Langlands.Representation.Intertwining.PQIntegralUniqueness`.
 
 This module holds supporting lemmas for Renard VII.3.5 (ii)–(iii) (David Renard,
 *Représentations des groupes réductifs p-adiques*, French version of 9 July 2026,
 VII.3.4–VII.3.5, printed pp.235–240 / PDF pp.241–246). It formalizes the uniqueness
 half of the VII.3.4 characterization, which Renard uses to identify operators in the
-proof of VII.3.5. It does not use the unproved explicit integral statement
-`PQIntegralIntertwiningOperatorStatement`.
+proof of VII.3.5. It does not use the explicit integral statement
+`PQIntegralIntertwiningOperatorStatement` (proved by `pqIntegralIntertwiningOperator` in
+`PQIntegralIntertwiningOperatorProof`).
 
 ## Results
 

@@ -140,9 +140,30 @@ theorem inducedProgeneratorEndFree_of_jointSpecialCompact
   have hsc' := isSupercuspidal_rationalNormKernelSummandInduction π hsc ρ₀ j hj
   obtain ⟨hfin, b, hb⟩ := inducedProgeneratorEnd_expansion hG p l r hp hr hl hmul
     π hπ ρ₀ hρ₀ j hj hproj hsc'
-  refine ⟨(leviInductionEndEmbedding.{u, max u v} p l r hp hr hl hmul
-    (CuspidalSupport.rationalNormKernelSummandInduction M ρ₀)).injective, hfin, ⟨b, hb⟩, ?_⟩
-  exact leviInducedEndCenterExpansion_of_endExpansion p l r hp hr hl hmul
-    π hπ ρ₀ hρ₀ j hj _ b hb
+  have hb' : ∀ x : End (I.obj piD), ∃! a : Fin _ → End piD,
+      x = ∑ i, End.of (I.map (a i).asHom ≫ (End.of (b i)).asHom) := by
+    intro x
+    obtain ⟨a, ha, hau⟩ := hb x.asHom
+    refine ⟨fun i => End.of (a i), End.ext ?_, fun a' ha' => ?_⟩
+    · rw [End.sum_asHom]
+      exact ha
+    · have h := congrArg End.asHom ha'
+      rw [End.sum_asHom] at h
+      have h' := hau (fun i => (a' i).asHom) h
+      funext i
+      exact End.ext (congrFun h' i)
+  obtain ⟨s, c, hc⟩ := leviInducedEndCenterExpansion_of_endExpansion p l r hp hr hl hmul
+    π hπ ρ₀ hρ₀ j hj _ (fun i => End.of (b i)) hb'
+  refine ⟨fun a a' h => congrArg End.asHom ((leviInductionEndEmbedding.{u, max u v} p l r hp hr
+      hl hmul (CuspidalSupport.rationalNormKernelSummandInduction M ρ₀)).injective
+      (a₁ := End.of a) (a₂ := End.of a') (End.ext h)), hfin, ⟨b, hb⟩,
+    s, fun i => (c i).asHom, fun x => ?_⟩
+  obtain ⟨z, hz, hzu⟩ := hc (End.of x)
+  refine ⟨z, ?_, fun z' hz' => hzu z' (End.ext ?_)⟩
+  · have h := congrArg End.asHom hz
+    rw [End.sum_asHom] at h
+    exact h
+  · rw [End.sum_asHom]
+    exact hz'
 
 end Langlands.Aubert.General.RepresentedParabolic

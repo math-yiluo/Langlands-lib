@@ -1,7 +1,5 @@
 # Positive-root unitary cuspidal support of product-Levi discrete series
 
-Author: Worker 510.
-
 `Langlands.glDiscreteSeriesPositiveRootSupport` proves the unchanged
 `Langlands.GLDiscreteSeriesPositiveRootSupportStatement.{uF,uV}` from
 [`DiscreteSeriesPositiveRootSupportStatement`](DiscreteSeriesPositiveRootSupportStatement.md).
@@ -118,8 +116,8 @@ This is a derived assembly of the named published Library results.
 The original source motivation and normalization are recorded in the
 paired statement Markdown: Silberger 1978, printed pp.96 and 99, and
 Silberger 1979, section 2.4, printed pp.90–92, and Theorem 4.4.4,
-printed pp.177–180. Worker 510 previously read these original passages
-and their formula images and checked the retained errata locations.
+printed pp.177–180. These original passages and their formula images
+were read, and the retained errata locations checked.
 The upper quotient and the modulo-full-center strict opposite cone are
 the explicit derived comparisons used here; this file does not claim
 that the printed opposite embedding alone supplies either comparison.

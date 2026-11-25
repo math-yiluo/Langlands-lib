@@ -1,6 +1,6 @@
 # Integral-weight minuscule recursion in the symmetric Laurent algebra
 
-This internal unit defines the elementary symmetric polynomials and the
+This module defines the elementary symmetric polynomials and the
 normalized minuscule Hecke eigenvalues in the actual symmetric Laurent algebra.
 For rank `n + 1`, the eigenvalue with index `k` is the elementary symmetric
 polynomial `e_k` multiplied by
@@ -10,7 +10,7 @@ minuscule scalar. These definitions accept every natural `q`; the recursion
 theorems below require `q > 0`.
 
 `sphericalTorusLaurentPolynomial` is the normalized integral-weight Schur
-expression on dominant weights and zero elsewhere. The unit proves its
+expression on dominant weights and zero elsewhere. The module proves its
 minuscule recursion for every dominant integer weight when `q > 0`. First, evaluation at
 unit tuples and the existing nonnegative Pieri recursion give the result on
 nonnegative dominant weights. Subtracting the last coordinate gives such a
@@ -24,7 +24,7 @@ For the group calculation, `F` is a field with valuation `v` and a supplied
 integer power of `v(ϖ)`. The character `θ` of the upper-unipotent group is
 assumed trivial on its integral points (`IsIntegrallyTrivial v θ`).
 Under these hypotheses, `sphericalWhittakerMinusculeSum` is the actual finite sum of the spherical
-Laurent polynomial over the labelled minuscule representatives. The unit
+Laurent polynomial over the labelled minuscule representatives. The module
 identifies this sum at each dominant torus element with multiplication by the
 specified Laurent eigenvalue. It uses the existing unipotent calculation:
 integral radical entries do not change a dominant torus value, and counting
@@ -37,7 +37,8 @@ chosen field-valued lifts must be integral. This torus calculation does not yet 
 the lifts to represent all distinct residue classes. Extending the identity to
 all group elements requires those residue-class conditions, right integral
 invariance of the sum, and the standard character nontriviality condition.
-Those extensions, its action on integrated model numerators, full ideal
-stability, universal finite support and the essential-conductor target remain
-separate obligations. The provenance is the implemented internal deduction
+Those extensions are proved in `SphericalHecke`, its action on integrated model
+numerators in `SphericalMinusculeCoefficient` and full ideal stability in
+`SphericalNumeratorIdeal`; universal finite support and the essential-conductor
+target are not part of this module. The provenance is the implemented internal deduction
 from the existing Pieri, central-shift and actual coset-value theorems.

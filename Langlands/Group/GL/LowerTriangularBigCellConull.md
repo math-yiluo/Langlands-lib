@@ -1,7 +1,5 @@
 # The lower big cell `N_m · B̄_m` is conull
 
-Author: Worker 234.
-
 This module proves that the product set `N_m · B̄_m` fills
 `GeneralLinear m F.Carrier` up to a Haar-null set. Here `N_m` is the upper
 unipotent group and `B̄_m` is the group of invertible lower triangular
@@ -26,9 +24,9 @@ standard:
 - the zero set of a nonzero polynomial minor is Haar-null;
 - a compatible quotient measure vanishes on sets whose preimage is null.
 
-The module was written as a helper for the proof task 7b088130 of
+The module was written as a helper for the proof of
 `Langlands.RankinSelberg.LowerBlockQuotientDisintegrationStatement`, in the
-shape agreed with that task's executor, Worker 936. The definitions
+shape used by `LowerBlockQuotientGeometryProof`. The definitions
 `bottomCornerMatrix` and `bottomCornerExchange` are implementation devices
 for these minors. They have no counterpart in the source.
 
@@ -198,8 +196,10 @@ is disabled for these two declarations only.
 Together with `isOpenEmbedding_lowerTriangularQuotientMap` from
 `LowerTriangularQuotientCell`, the last theorem lets a compatible quotient
 measure on `N_m \ GL_m` be computed on the open cell of lower triangular
-representatives, with nothing lost off that cell. The planned consumer is
-the proof of `LowerBlockQuotientDisintegrationStatement` (task 7b088130).
+representatives, with nothing lost off that cell. It serves the proof
+`lowerBlockQuotientDisintegration` of `LowerBlockQuotientDisintegrationStatement`
+(module `Langlands.Representation.RankinSelberg.LowerBlockQuotientDisintegrationProof`),
+through `LowerBlockQuotientGeometryProof` and `LowerBlockQuotientMeasureComparison`.
 
 ## All-field port
 

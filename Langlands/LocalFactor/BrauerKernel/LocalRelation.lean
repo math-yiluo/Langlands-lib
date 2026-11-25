@@ -8,7 +8,7 @@ set_option autoImplicit false
 
 universe u uV
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open NumberField
 open scoped NumberField
@@ -125,4 +125,4 @@ theorem sum_induce_weilCharacter_eq_zero
     (continuousRestrict_sum_induce_eq_weilCharacter h hgeo r K θh θh' ιd hloc eC heC).symm.trans ?_
   exact (congrArg (ExactGrothendieckGroup.continuousRestrict ιd) hrel).trans (map_zero _)
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

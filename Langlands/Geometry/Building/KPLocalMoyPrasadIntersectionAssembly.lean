@@ -7,8 +7,8 @@ import Langlands.Geometry.Building.KPQuasiSplitLocalTorusFiltrationStatement
 
 Assembly of clauses 4–8 of `LocalMoyPrasadGroupPropertiesStatement` from three published
 propositions and the two depth-zero intersection facts: the commutator clause of
-`QuasiSplitLocalTorusFiltrationStatement` (S1) feeds `LocalMoyPrasadPositiveProductStatement`
-(Task 6542), whose conclusion is the sign product cover used at positive depth.
+`QuasiSplitLocalTorusFiltrationStatement` (S1) feeds `LocalMoyPrasadPositiveProductStatement`,
+whose conclusion is the sign product cover used at positive depth.
 -/
 
 noncomputable section
@@ -29,7 +29,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (B : BuildingData F H) (hZ : IsTorus B.centralizer.Z)
 
 /-- The sign product cover at positive depth, from S1's commutator clause and the conditional
-product cover statement of Task 6542. -/
+product cover statement `LocalMoyPrasadPositiveProductStatement`. -/
 theorem productCover_of_statements
     (hS1 : QuasiSplitLocalTorusFiltrationStatement.{u})
     (hProd : LocalMoyPrasadPositiveProductStatement.{u}) :
@@ -44,7 +44,8 @@ theorem productCover_of_statements
   hProd F H B hZ (hS1 F H B hZ).1
 
 /-- **Clauses 4–8** of `LocalMoyPrasadGroupPropertiesStatement` for `B`, from S1, the product
-cover statement of Task 6542 and the two depth-zero intersection facts (Task 6570). -/
+cover statement `LocalMoyPrasadPositiveProductStatement` and the two depth-zero intersection
+facts. -/
 theorem intersectionClauses_of_statements
     (hS1 : QuasiSplitLocalTorusFiltrationStatement.{u})
     (hProd : LocalMoyPrasadPositiveProductStatement.{u})

@@ -62,11 +62,11 @@ retained HTML SHA-256
 The source takes finitely many generators of a geometric-component prime
 ideal and chooses a finite coefficient extension containing them. The
 imported finite ideal model implements this coefficient step. The present
-unit additionally proves that its defining ideals are the prime
+module additionally proves that its defining ideals are the prime
 contractions, using faithfully flat scalar extension. The finite-family,
 arbitrary-algebra form is an internal generalization of that algebraic step.
 
-This unit does not establish descent of scheme components, continuity of
+This module does not establish descent of scheme components, continuity of
 the Galois action on components, finite separable component splitting, the
 full 04KZ lemma, or Conrad's geometric-fibre theorems. In particular it
 makes no claim that a general algebraic extension is separable. Those

@@ -1,7 +1,5 @@
 # Finite rational gluing over a rational target
 
-Author: Worker 135.
-
 `Langlands.Analytic.StrictTestDomain.finiteRationalGluing.{u}` proves the
 unchanged published `FiniteRationalGluingStatement.{u}`. For a finite
 point-covering family of actual rational loci included in a rational target
@@ -67,11 +65,10 @@ and uniqueness using equality in the quotient algebras themselves.
 
 ## Provenance and scope
 
-This is a derived transport proof, authored by Worker 135 together with
-the imported `RationalRelativeComparison` constructions. The analytic
-input is Worker 146's published `wholeSpectrumRationalGluing`; its
-supporting proof credits Worker 101's shared preparation and Worker 572's
-formal descent transport, and imports the separately proved standard-cover,
+This is a derived transport proof using the imported
+`RationalRelativeComparison` constructions. The analytic
+input is the published `wholeSpectrumRationalGluing`; its
+supporting proof imports the separately proved standard-cover,
 finite-refinement and trivial-scalar localization results. Those analytic
 arguments are reused through their published Lean declarations.
 
@@ -91,5 +88,5 @@ and trivial scalar valuations remain in scope. The conclusion is scalar
 degree-zero gluing at unit radii over presented strict bases. Higher Cech
 exactness, admissibility, general finite-module descent, arbitrary radii,
 all-affinoid test representation and analytic atlases are outside this
-statement. Conversion to the categorical sheaf condition is a separate
-task. The target pair and all imported pairs are unchanged.
+statement. Conversion to the categorical sheaf condition is not part of
+this statement. The target pair and all imported pairs are unchanged.

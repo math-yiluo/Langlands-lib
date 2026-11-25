@@ -1,8 +1,5 @@
 # Ordinary cohomology comparison for positive restriction
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The comparison theorem identifies the constructed Tate restriction with
 Mathlib's `groupCohomology.map` along the subgroup inclusion in every positive
 degree, under the existing Tate-to-ordinary comparison isomorphisms.

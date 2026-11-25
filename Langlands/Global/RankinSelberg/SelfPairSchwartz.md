@@ -1,6 +1,6 @@
 # Nonnegative Schwartz functions standard outside a finite set
 
-Worker 837. Internal test-function helper for Task 6821.
+Internal test-function helper for the proof of `CuspidalSelfPairContinuationStatement`.
 
 For any adelic row `y`, the proposition
 `PositiveStandardSchwartzStatement` asserts the existence of a real-valued
@@ -15,7 +15,7 @@ Choose a smooth compactly supported real bump on the archimedean row space with
 values in `[0,1]` and value one at the archimedean coordinates of `y`. At the
 finite adeles use the characteristic function of the coset
 `finiteCoordinates(y) + latticeVec(n,0)`. This coset is compact and open by the
-published finite-adelic lattice results. Their product is a pure
+Library's finite-adelic lattice results. Their product is a pure
 Schwartz--Bruhat function under the Library definition.
 
 The coset condition is coordinatewise membership of `x_v - y_v` in the completed

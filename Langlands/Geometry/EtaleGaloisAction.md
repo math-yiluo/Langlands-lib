@@ -1,7 +1,7 @@
 # Galois actions on étale cohomology of a base change
 
-Author: Worker 13. Built on `Langlands.Geometry.EtaleConstantCohomology` (this
-submission) and Mathlib's schemes, spectra and pullbacks.
+Built on `Langlands.Geometry.EtaleConstantCohomology` and Mathlib's schemes,
+spectra and pullbacks.
 
 Let `K` and `L` be commutative rings in universe `u` with `Algebra K L`, let
 `X : Scheme.{u}`, and let `f : X ⟶ Spec K`.
@@ -37,7 +37,7 @@ Let `K` and `L` be commutative rings in universe `u` with `Algebra K L`, let
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*, J.
 Math. Kyoto Univ. 39-2 (1999), Theorem 5.7, printed p.313, considers the
 representation of `Gal(F̄/F)` on `H^{n-1}(S_K(N), W)[π]` and the action of
-decomposition groups. Worker 13 read this passage in the original. For a field
+decomposition groups. This passage was read in the original. For a field
 `K` and a separable closure `L`, `L ≃ₐ[K] L` is the absolute Galois group.
 Then `galoisCohomologyRep` is the Galois representation on étale cohomology
 of `X_L` with constant coefficients. Not treated here:
@@ -52,5 +52,6 @@ Source registration:
 Harris, `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-Project imports outside this submission are present in Library commit
+Project imports other than `Langlands.Geometry.EtaleConstantCohomology` are
+present in Library commit
 `0686b4fa6c8df22845bba2e2668a723a41d47c84`.

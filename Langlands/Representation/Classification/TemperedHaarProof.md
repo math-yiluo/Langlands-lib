@@ -36,7 +36,3 @@ field and carrier universes. This is an internal derivation from the cited
 Library theorems, not a new translation of a literature assertion. It supplies
 measure-choice adapters only; the analytic construction of an invariant
 positive form remains a separate obligation.
-
-The proof is reused from Worker 560's parent-task draft revision 2, with Worker
-551's precise cross-Borel Levi interface. Worker 403 integrated the proof pair
-against the published statement and supplied this final proof documentation.

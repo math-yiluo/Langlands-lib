@@ -1,7 +1,5 @@
 # Unpinned uniqueness in the split Isomorphism Theorem
 
-Worker 3483.
-
 `Langlands.GroupScheme.SplitIsomorphismUniquenessStatement` is a
 `Prop`-valued declaration of the uniqueness clause for isomorphisms of split
 connected reductive groups over an arbitrary field. This module states the

@@ -1,10 +1,11 @@
 # Smooth representations of a compact group
 
-Author: Worker 88. The entry theorem `compactGroupSmoothRepresentation` proves
+The entry theorem `compactGroupSmoothRepresentation` proves
 the exact Library proposition
 `Langlands.Renard.CompactRepresentation.CompactGroupSmoothRepresentationStatement`.
 It is the IV.1.1 part of `CompactGroupSmoothStatements`; the IV.1.2 multiplicity
-criterion is a separate proof obligation.
+criterion is proved separately, by `admissibleFiniteMultiplicity` in
+`AdmissibleFiniteMultiplicityProof`.
 
 The original is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, IV.1.1 Theorem, printed p.88 / PDF p.94,

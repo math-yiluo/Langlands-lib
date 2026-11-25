@@ -3,8 +3,6 @@
 Lean module: `Langlands.Global.Factors.RelativeWeilFunctionalEquationProof`
 (namespace `Langlands.Global.FunctionalEquationComparison`).
 
-Author: Worker 5014 (task `cc3ec74b-6eb5-4fd8-af55-97f37ce4d76c`).
-
 ## Statement proved
 
 `relativeWeilTwistFunctionalEquation : RelativeWeilTwistFunctionalEquationStatement.{u, uV, uE}`
@@ -30,12 +28,12 @@ pour GL(n) sur un corps p-adique*, Invent. Math. 139 (2000), §2.3 (registered
 The proof is one line:
 
 `relativeWeilTwistFunctionalEquation_of_localTransferReciprocity
-  ClassField.Global.RelativeWeilGroup.localTransferReciprocity.{u}`.
+  ClassFieldTheory.Global.RelativeWeilGroup.localTransferReciprocity.{u}`.
 
 1. `relativeWeilTwistFunctionalEquation_of_localTransferReciprocity`, in the companion
-   module `Langlands.Global.Factors.RelativeWeilFunctionalEquationAssembly` (submitted with
-   this proof), derives the target from
-   `ClassField.Global.RelativeWeilGroup.LocalTransferReciprocityStatement.{u}`. Its Markdown
+   module `Langlands.Global.Factors.RelativeWeilFunctionalEquationAssembly` (ported with
+   this file), derives the target from
+   `ClassFieldTheory.Global.RelativeWeilGroup.LocalTransferReciprocityStatement.{u}`. Its Markdown
    gives the full argument. In short, it follows Tate's proof of (3.5.3): Brauer's theorem
    writes each twist of the class of `S ⊗ S'` as an integral combination of representations
    induced from characters of intermediate fields. The local restriction formula, local
@@ -43,16 +41,16 @@ The proof is one line:
    place with products of Hecke local factors. The Hecke functional equations then give the
    global functional equation. The whole archimedean block is placed at one infinite place.
    This is allowed because the target's archimedean block is existential.
-2. `Langlands.ClassField.Global.RelativeWeilGroup.localTransferReciprocity :
+2. `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.localTransferReciprocity :
    LocalTransferReciprocityStatement.{u}` (module
-   `Langlands.ClassField.Global.LocalRelativeWeilTransferProof`) is the published
+   `Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof`) is the published
    unconditional proof of local transfer reciprocity.
 
 ## Public theorems used
 
-- `Langlands.ClassField.Global.RelativeWeilGroup.localTransferReciprocity`.
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.localTransferReciprocity`.
 - Through the companion module: among others,
-  `Langlands.ClassField.Global.RelativeWeilGroup.localInducedRestriction`,
+  `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.localInducedRestriction`,
   `Langlands.LocalClassField.commonClosureGeometricProof`,
   `heckeGlobalFunctionalEquation_proof`, `hasGlobalEquation_brauerProduct`,
   `inducedCharacterGeneration`, `transferCharacterFactorization` and

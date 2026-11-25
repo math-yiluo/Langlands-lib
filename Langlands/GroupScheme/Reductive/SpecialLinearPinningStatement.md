@@ -3,7 +3,7 @@
 This module defines the proposition
 `Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement` (universe
 parameter `u`). It is a statement only. The module supplies no proof. It is a
-prerequisite of Task 5703 (simply connected groups of inner type `A_n` as
+prerequisite of the proof of `InnerTypeANormOneStatement` (simply connected groups of inner type `A_n` as
 reduced-norm-one groups), where it identifies the split model of an inner form of type
 `A_n` with `SL_{n+1}`.
 

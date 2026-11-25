@@ -1,7 +1,5 @@
 # The Weil class of a finite Galois extension is its fundamental class
 
-Author: Worker 5095, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`.
-
 Let `E/F` be a finite Galois extension of `p`-adic fields. This module shows that the
 actual Weil pushout class `finiteGaloisClass F E f hE eE heE`
 (`Langlands.Weil.Local.FiniteGaloisPushout`) is the fundamental class. The hypotheses
@@ -17,7 +15,7 @@ This is Tate, *Number theoretic background* (1979), §1.2, printed p.5 (PDF p.14
 
 The Lean proof follows this argument with `E₁ = M₀` unramified (hence cyclic) of
 degree `[E:F]`. The Library's common closure (`exists_unramified_commonClosure`,
-Worker 1839, `Langlands.Weil.Local.FiniteGaloisCommonClosure`) supplies `M₀`. It also
+`Langlands.Weil.Local.FiniteGaloisCommonClosure`) supplies `M₀`. It also
 supplies a finite Galois `L₀` containing both, with the tower embeddings
 `towerFieldEmbedding`.
 
@@ -104,10 +102,10 @@ normalized cocycle `z : NormalizedTwoCocycle Gal(E/F) Eˣ` whose class is fundam
   injective (the `RelativeImages` component of `RelativeClassFormation`), so fundamental
   classes are unique.
 - `weilClassMap` (definition): the continuous homomorphism `W_F →ₜ* z.Extension`
-  obtained as the Library's Weil pushout `finiteGaloisPushout` (Worker 1839,
-  `Langlands.Weil.Local.FiniteGaloisPushout`) followed by the continuous equivalence
-  `NormalizedTwoCocycle.continuousEquivOfCohomologyClassEq` (Worker 1556,
-  `Langlands.GroupTheory.CocycleClassEquiv`) for the equality of classes above. That
+  obtained as the Library's Weil pushout `finiteGaloisPushout`
+  (`Langlands.Weil.Local.FiniteGaloisPushout`) followed by the continuous equivalence
+  `NormalizedTwoCocycle.continuousEquivOfCohomologyClassEq`
+  (`Langlands.GroupTheory.CocycleClassEquiv`) for the equality of classes above. That
   equivalence is the identity on `Eˣ` and on `Gal(E/F)`. The topology of `Gal(E/F)` is
   its Krull topology, which is discrete. The units of `E` form a topological group for the
   canonical topology, which makes `E` a nonarchimedean local field.

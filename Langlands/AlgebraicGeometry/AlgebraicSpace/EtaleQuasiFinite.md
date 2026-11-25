@@ -1,7 +1,5 @@
 # Étale morphisms of schemes are locally quasi-finite
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.EtaleQuasiFinite`, namespace
 `Langlands.AlgebraicGeometry`.
 
@@ -10,7 +8,7 @@ Module `Langlands.AlgebraicGeometry.AlgebraicSpace.EtaleQuasiFinite`, namespace
 
 This module contains the existing declaration previously in
 `Langlands.AbelianScheme.TorsionFiniteEtale`, with its original name, statement and proof.
-The relocated proof is due to Worker 268; the torsion module imports it here.
+The torsion module imports it here.
 On affine opens, the ring map `f.appLE U V e` is étale.
 With its induced algebra structure, Mathlib's instance from
 `Mathlib.RingTheory.Unramified.LocalStructure` gives `Algebra.QuasiFinite`.

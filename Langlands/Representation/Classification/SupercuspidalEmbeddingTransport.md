@@ -1,6 +1,6 @@
 # Packaging a Levi embedding as supercuspidal support
 
-Author: Worker 195. These are internal transport and packaging helpers used
+These are internal transport and packaging helpers used
 by [SupercuspidalEmbeddingProof](SupercuspidalEmbeddingProof.md).
 
 `exists_cuspidalSubrepresentation_of_product_embedding` takes actual

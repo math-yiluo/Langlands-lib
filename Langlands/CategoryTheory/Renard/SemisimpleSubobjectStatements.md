@@ -3,7 +3,7 @@
 Module: `Langlands.CategoryTheory.Renard.SemisimpleSubobjectStatements`.
 The single declaration `Langlands.Renard.SemisimpleSubobjectStatement` is a
 definition returning `Prop`. It states the unnumbered corollary after the
-semisimplicity lemma of A.VII. This unit supplies no proof of the corollary.
+semisimplicity lemma of A.VII. This module supplies no proof of the corollary.
 
 ## Original and conventions
 
@@ -18,9 +18,9 @@ unnumbered A.VII lemma:
 
 > **Corollaire.** Un sous-objet d'un objet semi-simple est semi-simple.
 
-Worker 6 read PDF269–271 in full and visually inspected PDF271. Worker 1073
-independently rechecked the file's SHA256 and reread the extracted text of
-PDF269–271 before submission.
+PDF269–271 were read in full and PDF271 was visually inspected. The file's
+SHA256 was independently rechecked and the extracted text of PDF269–271
+reread.
 
 The corollary itself names no hypotheses. It directly follows the lemma,
 which assumes "une catégorie abélienne vérifiant les hypothèses de la section
@@ -94,7 +94,7 @@ Mathlib's `Subobject.map_obj_injective j`. Thus
 `small_of_injective (Subobject.map_obj_injective j)` transfers the displayed
 ambient size bound to `Subobject Y`. This is an intrinsic size observation,
 not the semisimplicity conclusion. It permits using the separate A.VII
-equivalence at both objects in a future proof.
+equivalence at both objects in the proof.
 
 There is no global `HasCoproducts.{max u v} C`, category-wide smallness,
 generator, finite-dimensionality, Noetherianity or asserted complement
@@ -112,24 +112,24 @@ semisimple. The printed proof calls the ambient complement a "sous-module";
 in the abelian setting this reads as a subobject.
 
 This paragraph records the source route, not an implemented proof.
-The separate semisimplicity-equivalence target, its proof, the actual
-complement/intersection transport and the corollary proof retain their
-own publication requirements. This statement imports only public
-definitions and does not depend on an unpublished equivalence statement.
+The semisimplicity-equivalence target and its proof
+(`Langlands.CategoryTheory.Renard.SemisimplicityEquivalenceStatements`,
+`Langlands.CategoryTheory.Renard.SemisimplicityEquivalence`), the actual
+complement/intersection transport and the corollary proof
+(`Langlands.CategoryTheory.Renard.SemisimpleSubobject`) are separate
+modules. This statement imports only public definitions and does not
+depend on the equivalence statement.
 Module and representation adapters, support decompositions and the rest of
 the whole-book program remain separate.
 
-## Checks and authorship
+## Checks
 
-Development checks in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the module with no errors or
-warnings, reported `statement_returns_prop: true`, level parameters
+Development checks compiled the module with no errors or warnings, reported `statement_returns_prop: true`, level parameters
 `r, v, u` and only `propext`, `Classical.choice` and `Quot.sound`. A private
 probe printed the complete unapplied body, checked it by `Iff.rfl` at
 independent universes and at the separated instantiations `{0, 1, 2}` and
 `{2, 0, 1}`, and proved the inherited `Small.{r} (Subobject Y)` instance
-above. These checks are not acceptance or publication.
+above.
 
-Worker 6 authored the initial statement pair. Worker 1073 adopted it,
-independently reread the original and errata, rechecked the declaration and
-revised this Markdown.
+The original and errata were reread independently and the declaration was
+rechecked.

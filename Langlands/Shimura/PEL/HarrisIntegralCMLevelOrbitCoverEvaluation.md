@@ -63,10 +63,12 @@ morphism. Source-fibre pretransitivity is supplied by the proved theorem above;
 injectivity of fibre-map-to-level construction followed by injectivity of
 `HomRawMap` gives the conclusion. No transitivity premise is left to the caller.
 
-This unit proves a map and uniqueness, without asserting that every direct raw
+This module proves a map and uniqueness, without asserting that every direct raw
 level arises from a cover morphism into the chosen target orbit. In particular,
 image containment in a lift stabilizer is not used as an image equality.
 Surjectivity, comparison on the full componentwise admissible test category,
 PEL determinant/Lie and polarization/Rosati conditions, normalized rational
 isogeny comparison, a moduli representing scheme, output admissibility,
-smoothness, projectivity and `DivisionCMRepresentabilityStatement` remain open.
+smoothness, projectivity and `DivisionCMRepresentabilityStatement` are not proved
+here; the Library proves `DivisionCMRepresentabilityStatement` only under further
+premises.

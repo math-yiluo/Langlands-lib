@@ -143,7 +143,8 @@ The provenance is derived for these reasons.
 
 Milne gives no proof of the sentence.
 
-Relation to the Library. The Library has no statement of Example 12.28.
+Relation to the Library. Apart from this module, the Library has no statement
+of Example 12.28.
 Related declarations:
 
 - `DiagonalizableSmoothConnectedCriteriaStatement` (in
@@ -177,8 +178,11 @@ snapshot of 2026-11-04 for the 2022 reprint (source ID
 `78e5f297fb2c80c6dacf413fc5abd7f82ba3dd5e5f83b5a5205dfd93bf160d49`) has no
 entry for printed pp. 3, 44, 236, 241 or 583.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
 
+The Library proves the statement as
+`Langlands.GroupScheme.etaleMultiplicativeTypeOrderStatement` in
+[`EtaleMultiplicativeTypeOrderProof`](EtaleMultiplicativeTypeOrderProof.md).
 A proof of the Lean statement can follow these steps. Write `A = O(G)`, an
 étale `k`-algebra, and `m = Nat.card (G.affinePoints (CommAlgCat.of k Ks))`.
 

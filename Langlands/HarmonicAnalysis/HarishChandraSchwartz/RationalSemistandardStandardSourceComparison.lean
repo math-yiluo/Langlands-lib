@@ -100,7 +100,7 @@ theorem standard_irreducible : ∀ z ∈ q.irreducibleDomain,
       (parameterTransport (CommGroupScheme.groupHom zeta ≫ i) z)
       (SmoothRep.pullback (standardLeviDynamicHomeomorph hG hi hnu I hzeta) pi.obj)).IsIrreducible := by
   rw [← literalHomeomorph_eq hG hi hnu I hzeta]
-  exact q.irreducible
+  exact (q.irreducible : _)
 
 /-- The actual canonical scalar in the published standard presentation. -/
 abbrev standardScalar :=

@@ -5,16 +5,13 @@ Namespace `Langlands.CuspidalSupport`. Universe parameters `u, v`.
 The module contains one **statement**, the `Prop`-valued definition
 `ContragredientIrreducibilityStatement`; it proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.2.2, printed p.140 / PDF p.146:
+VI.2.2, printed p.140 / PDF p.146, reads:
 
 > **Corollaire.** Soit `(π, V)` une représentation lisse de `G`. Alors `π` est
 > irréductible (resp. supercuspidale irréductible) si et seulement si `π̃` est
@@ -23,8 +20,7 @@ Worker 1222 read VI.2.2, printed p.140 / PDF p.146:
 > *Démonstration.* Ceci découle du théorème et du corollaire III.1.7.
 
 The Theorem of VI.2.2 (irreducible implies admissible) is the published
-`RationalPointsIrreducibleAdmissibleStatement`. Before this unit no declaration
-stated the Corollary.
+`RationalPointsIrreducibleAdmissibleStatement`.
 
 ## The statement
 

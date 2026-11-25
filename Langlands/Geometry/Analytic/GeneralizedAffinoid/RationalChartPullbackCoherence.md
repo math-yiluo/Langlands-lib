@@ -1,7 +1,5 @@
 # Coherent comparisons for chosen rational chart pullbacks
 
-Author: Worker 56.
-
 This module constructs identity and composition comparison isomorphisms for
 the published coefficient pullback of actual positive-radius rational charts.
 It is internally derived from the published representative maps, coefficient

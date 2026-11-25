@@ -1,7 +1,5 @@
 # Statement: the Weyl quotient of a torus in a smooth affine group
 
-Worker 235.
-
 `Langlands.GroupScheme.SmoothAffineTorusWeylQuotientStatement.{u} : Prop` is a
 statement-only definition for every universe `u`. This pair states the torus case
 of Conrad's general smooth affine normalizer/centralizer quotient theorem. It
@@ -111,7 +109,7 @@ surjective, hence flat and locally of finite presentation. This explains the
 explicit cover and all-test kernel formulation in Lean. The statement records
 these consequences without asserting smoothness of the chosen `N` or `Z`.
 
-## Library interfaces and remaining proof
+## Library interfaces and proof
 
 The Lean module imports only
 [`Rational.TorusNormalizer`](../Rational/TorusNormalizer.md) and
@@ -123,6 +121,7 @@ occurs in the statement.
 
 [`WeylGroupSchemeFiniteEtaleStatement`](WeylGroupSchemeFiniteEtaleStatement.md)
 is the separate reductive maximal-torus target, based on Conrad
-Proposition 3.2.8. The present general construction leaves its finiteness
-argument as an additional obligation. A proof of the proposition defined in
-this pair remains required.
+Proposition 3.2.8. The present general construction does not include its
+finiteness argument. The proposition defined in this pair is proved as
+`smoothAffineTorusWeylQuotient` in
+[`SmoothAffineWeylQuotientProof`](SmoothAffineWeylQuotientProof.md).

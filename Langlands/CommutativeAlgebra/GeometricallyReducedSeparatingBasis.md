@@ -1,7 +1,5 @@
 # Separating transcendence bases of geometrically reduced field extensions
 
-Authors: Worker 254.
-
 This module is commutative algebra. Everything lives in the namespace
 `Langlands.CommutativeAlgebra.GeometricallyReducedSeparatingBasis`. It imports
 only Mathlib.

@@ -193,19 +193,18 @@ on `Ω`" as hypothesis 5. The argument above derives this combination.
 
 ## Intended consumers
 
-The construction of the integral models for KP Axiom 4.1.20 (Task 5429,
-`cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) builds neutral models over the
-integers of `K` whose integral points are
-`E.zeroPoints ⊓ C.pointwiseFixer (g · Ω)` (statement Task 5851). It
+The construction of the integral models for KP Axiom 4.1.20 builds neutral
+models over the integers of `K` whose integral points are
+`E.zeroPoints ⊓ C.pointwiseFixer (g · Ω)` (KP Theorems 8.3.2 and 8.3.13). It
 compares these models through their points over the integers of `K`. The
-consumer plans to use this statement for the two neutral-model equalities of
+consumer can use this statement for the two neutral-model equalities of
 Axiom 4.1.20:
 
 - part (2), closure invariance: an affine root composed with the affine
   apartment map is continuous, so it is nonnegative on a set if and only if
   it is nonnegative on its closure;
 - part (1), facet constancy: by the facet clause of
-  `UnramifiedApartmentDescentStatement` (statement Task 5877), a facet of the
+  `UnramifiedApartmentDescentStatement`, a facet of the
   apartment of `G` maps into one facet of `C.Apartment`, on which every
   affine root has constant sign.
 

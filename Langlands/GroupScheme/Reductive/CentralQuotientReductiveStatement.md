@@ -1,12 +1,10 @@
 # Statement: quotients of connected reductive groups by central subgroups
 
-Authors: Worker 1428 (draft) and Worker 1499 (source check and Markdown
-revision).
-
-This module states one unproved proposition, the `Prop`-valued `def`
+This module states one proposition, the `Prop`-valued `def`
 `Langlands.GroupScheme.CentralQuotientReductiveStatement` with one universe
 parameter `u`. Nothing is proved here, no quotient is constructed, and no
-other declaration is introduced.
+other declaration is introduced. The Library proves the proposition by
+`centralQuotientReductive` (`Reductive/CentralQuotientReductiveProof`).
 
 The module imports `Langlands.GroupScheme.Reductive.Basic`,
 `Langlands.GroupScheme.Rational.Characters` and
@@ -122,9 +120,12 @@ The official Milne errata snapshot of 2026-11-02
 
 ## Use
 
-This statement is intended to supply the reductivity of the quotient in the
-proof of `SplitCentralTorusQuotientStatement` (planned module
-`Reductive/CentralTorusQuotientStatement`, statement task
-`2ea05a8b-453e-49c8-8d20-9b2ad61ac047`, not yet published when this module
-was written), where `N` is the image in `G` of the finite kernel of an
-isogeny of split tori.
+This statement supplies the reductivity of the quotient in the reduction
+`splitCentralTorusQuotient_of_prerequisites`
+(`Reductive/CentralTorusQuotientReduction`) of
+`SplitCentralTorusQuotientStatement` (module
+`Reductive/CentralTorusQuotientStatement`), where `N` is the image in `G` of
+the finite kernel of an isogeny of split tori. The proof
+`splitCentralTorusQuotient` uses instead the central-isogeny case
+`isConnectedReductive_of_isCentralIsogeny`
+(`Reductive/CentralFiniteQuotientReductive`).

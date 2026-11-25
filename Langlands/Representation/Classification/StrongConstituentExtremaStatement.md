@@ -1,7 +1,5 @@
 # Strong irreducible constituents from lattice extrema
 
-Author: Worker 502.
-
 `Langlands.Classification.StrongConstituentExtremaStatement` is an internal
 algebraic statement over every group `G : Type uG` and every complex
 representation on a carrier `V : Type uV`. The two universes are independent.

@@ -1,7 +1,7 @@
 # Proof of the finiteness Lemma for the generated subalgebra `M` (Renard V.5.3)
 
 Module `Langlands.Representation.Hecke.IwahoriHeckeSubalgebraFinitenessProof`, namespace
-`Langlands.Hecke`. Worker 952 wrote it for Task 7679. The theorem
+`Langlands.Hecke`. The theorem
 `iwahoriHeckeSubalgebraFiniteness : IwahoriHeckeSubalgebraFinitenessStatement.{u}` proves the
 published proposition `Langlands.Hecke.IwahoriHeckeSubalgebraFinitenessStatement` exactly, with
 universe `u` and no additional hypothesis. The positivity hypothesis (P) on `C̃⁺` is part of

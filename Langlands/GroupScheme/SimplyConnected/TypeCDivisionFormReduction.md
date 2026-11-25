@@ -1,7 +1,5 @@
 # Reduction of the type-C division-form classification to four prerequisites
 
-Author: Worker 31, for Task 5986 (`8494af77-9d10-4c2f-b1cd-60dc371fb195`).
-
 ## Result
 
 `Langlands.GroupScheme.typeCDivisionForm_of_inputs.{u}` proves

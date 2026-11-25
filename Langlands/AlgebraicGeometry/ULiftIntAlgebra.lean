@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # `ULift ℤ` as the base ring of absolute constructions in an arbitrary universe -/
 

@@ -13,8 +13,8 @@ objects. The field universe `u` and the representation universe `uV` stay indepe
 target has level parameters exactly `u, uV`.
 
 The module **proves no estimate**. The uniform threshold, the weak-term limit, the decay
-estimate and (optionally) the existence of the constant terms are published as named targets
-for proof successors.
+estimate and (optionally) the existence of the constant terms are published as named targets;
+their proofs are separate modules (see "Unresolved obligations").
 
 ## Source
 
@@ -22,8 +22,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques (d'aprè
 Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082
 (literature id `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-numbers; the PDF page is the printed page minus 234. The quotations below were checked by the
-author against the text extracted from PDF pages 5, 6, 11, 12, 35, 36, 62–67, 69 and 71.
+numbers; the PDF page is the printed page minus 234. The quotations below were checked against
+the text extracted from PDF pages 5, 6, 11, 12, 35, 36, 62–67, 69 and 71.
 
 - **I.1, printed p. 239.** "On fixe un sous-groupe parabolique minimal `P_0` de Lévi `M_0`. On
   pose `Δ_0 = Δ(P_0)`." "On pose `ā_0^+ = {H ∈ a_0 ; ∀α ∈ Δ_0, ⟨α, H⟩ ⩾ 0}`." "Si `P ∈ 𝒫(M)`,
@@ -180,8 +180,13 @@ quotient measurable-space instance.
 
 ### Unresolved obligations
 
-The four targets; the inputs listed under "Realization inputs"; and the comparison identities
-listed under "Moduli" and "`Δ(P′)` and `Σ(P′)`".
+The four targets are proved in separate modules: `rationalOrbitConstantTermExistence`
+(`RationalOrbitConstantTermExistenceProof`), `rationalOrbitConstantTermThreshold`
+(`RationalOrbitConstantTermThresholdProof`), `rationalOrbitWeakConstantTermLimit`
+(`RationalOrbitWeakConstantTermLimitProof`) and `rationalOrbitPositiveConstantTermDecay`
+(`RationalOrbitPositiveConstantTermDecayProof`). This module does not prove them, nor the inputs
+listed under "Realization inputs" or the comparison identities listed under "Moduli" and
+"`Δ(P′)` and `Σ(P′)`".
 
 ## Definitions in detail
 
@@ -290,8 +295,8 @@ body. An unused section instance would not impose this condition on the target.
 `Measure.IsHaarMeasure` on an independently chosen measurable space does not
 itself identify that measurable space with the Borel structure.
 
-This corrects the interpretation of the square-integrability premise as an
-analytic condition for the topological quotient. Lemma III.5.1 starts with a
+With it, the square-integrability premise is read as an analytic condition
+for the topological quotient. Lemma III.5.1 starts with a
 tempered coefficient `f ∈ A^w(G)`, and VI.2.3 uses the unitary/non-unitary exponent
 split of those coefficients; neither source passage asserts their conclusions
 for square integrability on an unrelated sigma algebra. Borel compatibility is
@@ -300,8 +305,8 @@ a claim of the weakest possible measure-theoretic condition.
 
 The orbit and constant-term constructions and their algebraic decomposition laws
 continue to accept the original measurable data. The existence and uniform
-threshold targets use admissibility and the algebraic-family result I.5, so this
-correction adds the Borel requirement only to the weak-limit and decay targets.
+threshold targets use admissibility and the algebraic-family result I.5, so the
+Borel requirement is added only to the weak-limit and decay targets.
 Their structural premises and conclusions are otherwise the same. In particular,
 Borel compatibility supplies neither induced temperedness nor an exponent bound
 nor a coefficient estimate. For the general central subgroup `C` in this module,
@@ -326,9 +331,9 @@ properties of a weak constant term, the threshold, or any decay estimate.
 1. **`RationalOrbitConstantTermExistenceStatement`** (Proposition I.6.2 for the orbit
    coefficients). Under `ζ`, `B`, the basis-member clauses (the hypotheses of the published
    `exists_standardConstantTerm`), every `f_ω` satisfies `HasStandardConstantTerm hA f_ω`. It is
-   published as a target (the task allows this); it should follow from
+   published as a target; it follows from
    `exists_standardConstantTerm` once `f_ω` is exhibited as a coefficient of the admissible
-   induced representation `I^G_P(ω)`.
+   induced representation `I^G_P(ω)` (`RationalOrbitConstantTermExistenceProof`).
 2. **`RationalOrbitConstantTermThresholdStatement`** (I.4.3 with I.5, as used on pp. 299 and
    303). For every `ψ` there is `t > 0` such that for every `ω ∈ O` and every
    `m ∈ M̄_0^+` with `⟨α, H_0(m)⟩ ≥ t` for `α ∈ Δ_0 − Δ_0^{M′}`,
@@ -408,26 +413,26 @@ other and the notions coincide. Similarly, `H_0(a)` for `a ∈ A(F)` is the imag
   `IsRightFinite` right-finite functions have the finite expansion used by `weakPart`
   (`mem_sup_of_isRightFinite`); the uniqueness results identify the limit in target 3.
 
-## Realization inputs still needed
+## Realization inputs
 
-To prove the targets (in particular VI.2.3) from the engines, the successors need:
+To prove the targets (in particular VI.2.3) from the engines, the proofs need:
 
 1. **Lemma VI.2.1 (ii) on actual points**: for the actual `(f_ω)_{P′}`, annihilating
    polynomials of `F^w`, `F^+` under right translation by one `a ∈ A_{M′}(F) ∩ M̄_0^+`, of
    degrees uniform over the orbit, with the root bounds (unitary for `E^w`, uniformly `≤ θ < 1`
    for `E^+`), equivalently the `b_i(χ)` representation of p. 300.
 2. **Lemma VI.2.2 without a coefficient premise**: the published
-   `exists_norm_rationalInducedOrbitCoefficientMap_le_rationalXi` still takes `hcoeff`; it must be
-   discharged by Corollary III.1.2 (Task 5461 `7f9ba483-3cd4-4733-a87b-b5651bdbd06a`) for the
-   square-integrable `π`.
-3. **Lemma II.1.1** (Task 5326 `d27429ee-ab4e-47b4-8486-8cdd92ff4d34`):
+   `exists_norm_rationalInducedOrbitCoefficientMap_le_rationalXi` takes `hcoeff`; it must be
+   discharged by Corollary III.1.2 (`RationalSquareIntegrableRapidDecayStatement`, proved as
+   `rationalSquareIntegrableRapidDecay`) for the square-integrable `π`.
+3. **Lemma II.1.1** (the upper bound is `RationalXiUpperBoundStatement`, proved as
+   `rationalXiUpperBound`):
    `Ξ(m) ≤ C δ_0(m)^{1/2}(1 + σ(m))^d` and `C δ_0^{M′}(m)^{1/2} ≤ Ξ^{M′}(m)` on `M̄_0^+`.
 4. **Exponent bounds of tempered induced representations**: Proposition III.2.2
-   (`TemperedExponentCone`), Casselman's criterion (Task 4712
-   `2e8d370f-f1ed-4ad4-a529-5083212ebae0`), giving `|(sp_χ ν)(a)| < 1` for `ν ∈ E^+`.
+   (`TemperedExponentCone`), Casselman's square-integrability
+   criterion (Renard VII.1.2, for represented parabolics), giving `|(sp_χ ν)(a)| < 1` for `ν ∈ E^+`.
 5. The threshold target (2) itself, the existence target (1), and the structural existence of the
-   V.5.2 data (`JointSpecialCompactBasisExistenceStatement`, Task 4169
-   `8c39faa0-2a70-4fc4-a027-914987aba924`).
+   V.5.2 data (`JointSpecialCompactBasisExistenceStatement`).
 6. Auxiliary facts for the engine hypotheses: `Ξ^{M′}(m a) = Ξ^{M′}(m)` for `a ∈ A_{M′}(F)`, a
    subadditive height `σ` on `M_0(F)` with `1 + σ ≤ C(1 + |H_0|)`, compactness of
    `{m ∈ D_{M′}(δ) ; |H_0(m)| ≤ tδ^{−1}}` modulo the kernel of `H_0` (p. 301), and the moduli
@@ -435,16 +440,16 @@ To prove the targets (in particular VI.2.3) from the engines, the successors nee
 
 These are inputs of the eventual proofs, **not** premises of the targets. This module does not
 prove Lemma VI.2.3 or Proposition VI.3.1, and does not supply the weak-constant-term expansion
-into lower-Levi packets (V.1.1, Corollary V.2.3), which is a separate task.
+into lower-Levi packets (V.1.1, Corollary V.2.3), which is separate.
 
 ## Check
 
-`lean_check` with environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (Library base
+`lean_check` (Library base
 `fcb85a7ef43356fec01e6ccf1605f08568c08cb0`): 0 errors, 0 warnings. Inspection of each of the
 four targets reports `statement_returns_prop: true`, level parameters `u, uV`, axioms
 `propext`, `Classical.choice`, `Quot.sound`.
 
-The quotient Borel correction was checked on both changed propositions with the
-same environment: compilation and exact proposition inspection report zero
+The two propositions with the quotient Borel structure were checked in the same
+way: compilation and exact proposition inspection report zero
 errors and warnings, `statement_returns_prop: true`, independent level parameters
 `u, uV`, and only `propext`, `Classical.choice`, `Quot.sound`.

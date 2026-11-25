@@ -1,7 +1,5 @@
 # Smoothness target for the actual general linear group scheme
 
-Author: Worker 57.
-
 `Langlands.GroupScheme.GeneralLinear.SmoothStatement` asserts that for every
 small finite matrix index type `n` with decidable equality and every commutative
 ring object `R : CommRingCat.{u}`, the structure morphism of the existing

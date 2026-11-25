@@ -1,7 +1,5 @@
 # Actual geometric pieces after source Jacquet restriction
 
-Author: Worker 165.
-
 This internal derived helper compares actual integer-linear maps on the full
 exact finite-length smooth complex Grothendieck group. It retains arbitrary
 p-adic fields, supplied topological data, independent field and carrier

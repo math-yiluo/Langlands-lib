@@ -5,8 +5,8 @@ Module `Langlands.LinearAlgebra.MatrixMinor`, namespace `Langlands.Archimedean.M
 ## Role and provenance
 
 This is internal linear-algebra infrastructure with no literature source. All results are
-classical facts about determinants. It was written for the reversal step ("Rev") of Task 7069
-(Speh's irreducibility criterion for `GL_n(ℝ)`, "if" direction). There the functions
+classical facts about determinants. It was written for the reversal step ("Rev") of the proof of
+Speh's irreducibility criterion for `GL_n(ℝ)`, "if" direction. There the functions
 `k ↦ minor k A B` on `O(n)` serve as test vectors. Cauchy–Binet gives their behaviour under
 multiplication, and the triangular and complementary-minor results compute their values on
 Iwasawa factors. Reindexing along `Fin.castSucc` relates minors of an `n × n` matrix to

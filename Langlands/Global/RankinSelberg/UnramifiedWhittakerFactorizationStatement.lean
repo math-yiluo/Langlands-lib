@@ -49,7 +49,7 @@ def UnramifiedWhittakerFactorizationStatement : Prop :=
   ∀ (x : T.Space), IsSphericalOutside F T S x →
   ∀ (v : FinitePlace F) (hv : v ∉ S)
     (ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)),
-    ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv →
+    ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv →
   ∀ (ϖ : (CompletionPadic.padicField v).Carrierˣ)
     (hϖ : GeneralLinear.Iwasawa.IsUniformizingElement
       (@ValuativeRel.valuation _ _

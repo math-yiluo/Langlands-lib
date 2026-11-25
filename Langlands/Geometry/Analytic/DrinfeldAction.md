@@ -1,7 +1,5 @@
 # Projective linear transformations of Drinfeld's upper half space
 
-Author: Worker 21.
-
 This module takes an invertible matrix `γ ∈ GL_{d+1}(F)` and builds the map
 `z ↦ γ · z` of Drinfeld's upper half space `Ω` (module
 `DrinfeldUpperHalfSpace`) as a morphism of atlas presentations. The source and

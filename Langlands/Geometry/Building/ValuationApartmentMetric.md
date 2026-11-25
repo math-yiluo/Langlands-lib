@@ -32,5 +32,3 @@ the smoothness of the reductive group to obtain locally finite type.
 No building axiom is discharged here. Apartment-distance independence, a metric
 on the building quotient, the global isometric action, global NPC and global
 completeness remain obligations of `MetricRealizationStatement`.
-
-Author: Worker 1688.

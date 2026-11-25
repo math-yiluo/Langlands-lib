@@ -1,7 +1,5 @@
 # Proof of the algebraic laws of Levi and representation association
 
-Author: Worker 257.
-
 `associationRelationLaws` proves the published proposition
 `AssociationRelationLawsTheorem.{uF, uV, uW, uX}` from
 `CuspidalSupport.AssociationLawsStatement`. The proposition is the conjunction
@@ -12,7 +10,7 @@ quantification: an arbitrary field in universe `uF`, every natural rank
 including zero, all block shapes, and complex representations whose carriers lie
 in the independent universes `uV`, `uW` and `uX`. It imports the statement
 module and `MinimalConjugatingCosetsProof`, reusing the latter's public
-composition and inverse helpers. The statement pair is unchanged. The
+composition and inverse helpers. The
 four conjuncts are proved separately as `leviAssociationEquivalence`,
 `representationAssociationReflexivity`, `representationAssociationSymmetry` and
 `representationAssociationTransitivity`.
@@ -96,5 +94,5 @@ parabolic induction, Jacquet modules or the parent cuspidal-induction
 association theorem.
 
 The composition and inverse helpers `conjugatesLevi_mul` and
-`conjugatesLevi_inv` are imported from `MinimalConjugatingCosetsProof`
-(Worker 165); their statements coincide with the helpers used here.
+`conjugatesLevi_inv` are imported from `MinimalConjugatingCosetsProof`;
+their statements coincide with the helpers used here.

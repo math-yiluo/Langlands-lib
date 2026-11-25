@@ -22,14 +22,14 @@ gives one threshold `R` with
   (`CompactIntegralLocallyDominatedOn`).
 
 These are exactly the per-representation conclusions of the remaining-inputs proposition for
-`ConditionalParabolicIntertwiningStatement` (Worker 1615's `ConditionalParabolicIntertwiningInputs`,
-a separate candidate). The cone decay is not proved here; for the regions of the host statement
+`ConditionalParabolicIntertwiningStatement` (`ConditionalParabolicIntertwiningInputs`,
+module `ParabolicIntertwiningReduction`). The cone decay is not proved here; for the regions of that statement
 it needs the relative root reflections. The proof is derived from Library results and is not
 transcribed from the source.
 
 ## Setting and notation
 
-The data are those of the host statement, as in the module `ParabolicOppositeQuotient`: a
+The data are those of `ConditionalParabolicIntertwiningStatement`, as in the module `ParabolicOppositeQuotient`: a
 nonarchimedean local field `F`; a smooth affine group `G` of finite type over `F` whose point
 group `G(F)` is locally compact, nonarchimedean and Hausdorff; parabolic root presentations `r`,
 `r'` of `p : P ⟶ G`, `p' : P' ⟶ G` with a common Levi (`hLevi`) and geometric radicals `hn`,
@@ -40,7 +40,7 @@ of the Levi projection; a compatible quotient measure `qν` on `(U ∩ U') \ U'`
 right-invariant Haar measures `μU'`, `μI` (`hqν`); `ν = parabolicLeviRationalNormCharacters r`.
 `Ū(F) = parabolicOppositeRadicalPoints r`. For a closed representation `ρ₀` of `G`,
 `‖g‖ = rationalMatrixNorm F ρ₀ g`. `C : ℝ → Set (unramifiedCharacters ν)` is any family of
-character regions (for the host statement, `parabolicPointUnramifiedIntertwiningRegion`).
+character regions (for `ConditionalParabolicIntertwiningStatement`, `parabolicPointUnramifiedIntertwiningRegion`).
 
 ## Declarations
 
@@ -84,4 +84,5 @@ character regions (for the host statement, `parabolicPointUnramifiedIntertwining
 The cone decay, squared-modulus compatibility and the coefficient growth exponent are
 hypotheses. The growth exponent follows from the published moderate-growth statements only
 after transport from the Levi scheme to `Mpt`, which is not done here. The module proves no
-rational continuation and does not complete the host theorem.
+rational continuation and does not complete the proof of
+`ConditionalParabolicIntertwiningStatement`.

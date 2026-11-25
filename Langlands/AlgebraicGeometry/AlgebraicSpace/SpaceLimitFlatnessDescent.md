@@ -1,9 +1,7 @@
 # Flatness descends along cofiltered affine limits for algebraic spaces
 
-Author: Worker 156.
-
-`SpaceLimitFlatnessDescentStatement` is the flatness conjunct of the assigned
-statement, proved by `spaceLimitFlatnessDescends`. It
+`SpaceLimitFlatnessDescentStatement` is the flatness conjunct of
+`SpaceLimitFlatnessDimensionDescentStatement`, proved by `spaceLimitFlatnessDescends`. It
 imports unchanged chart-based flatness, chooses fixed affine locally finitely
 presented chart schemes at the original stage, and uses flatness independence
 of the chart square. Restriction of that square to any scheme base change
@@ -25,4 +23,5 @@ categories and universes, and the existing hypotheses on the original spaces.
 It adds no representability, smoothness, or noetherianity assumption. The
 scheme-chart transport comes from `SpaceMorphismBaseChange`. The
 geometrically connected fibre and pure fibre dimension conjunction remains
-outside this supporting unit.
+outside this supporting module; the full statement is proved as
+`spaceLimitFlatnessDimensionDescent` in `SpaceLimitFlatnessDimensionDescentProof`.

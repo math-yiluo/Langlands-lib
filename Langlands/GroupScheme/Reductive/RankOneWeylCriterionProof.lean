@@ -157,10 +157,10 @@ theorem eq_zero_of_eq_neg {k : Type u} [Field k]
       (T' := splitTorus.commGroupScheme (Spec (CommRingCat.of k)) I) e).symm.trans
       (splitTorus.characterLatticeEquiv k I)
   apply φ.injective
-  rw [map_zero]
+  rw [AddEquiv.map_zero]
   funext x
   have hx := congrFun (congrArg φ h) x
-  rw [map_neg, Pi.neg_apply] at hx
+  rw [AddEquiv.map_neg, Pi.neg_apply] at hx
   rw [Pi.zero_apply]
   omega
 
@@ -217,7 +217,7 @@ theorem hasTrivialUnipotentRadical (α : characterLattice T) (hα : α ≠ 0)
   have hcongr_neg : characterLattice.congr σ (-α) = α := by
     rw [characterLattice.congr_apply, ← hσα, Iso.inv_hom_id_assoc]
   have hcongr : characterLattice.congr σ α = -α := by
-    have h1 := map_neg (characterLattice.congr σ) α
+    have h1 := AddEquiv.map_neg (characterLattice.congr σ) α
     rw [hcongr_neg] at h1
     exact neg_eq_iff_eq_neg.mp h1.symm
   -- A nonzero root vector in `Lie(H)` is impossible.

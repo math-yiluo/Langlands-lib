@@ -1,6 +1,6 @@
 # Actual Jacquet diagram of the general standard complex
 
-Worker 691 derived this internal construction from the published general complex,
+This internal construction is derived from the published general complex,
 normalized Jacquet functor, and finite-product coinvariant equivalence. It supplies
 the actual homogeneous Jacquet diagram needed to assemble the corrected support
 filtration. Its namespace is `Langlands.Aubert.General.JacquetComplex`.
@@ -66,20 +66,19 @@ of the actual maps, in addition to equivalence of their source and target module
 ## Provenance and scope
 
 This is derived infrastructure, with no additional claim taken from the
-literature. The declaration-level dependencies are Worker 194's published
+literature. The declaration-level dependencies are the published
 `General.Complex.diagram`, `degreeObject`, and `degreeMorphism`, and
-`General.StandardComplex.removedFamily`; Worker 379's published
+`General.StandardComplex.removedFamily`; the published
 `General.CorrectedFiltration.term` and `transition`; and the published
 `Jacquet.Localization.trivialEquiv`, `mk_surjective`, and
-`Aubert.FiniteProduct.coinvariantsEquiv`. Those imported files and their existing
-authorship are preserved. The signed calculation follows the existing
+`Aubert.FiniteProduct.coinvariantsEquiv`. The signed calculation follows the existing
 `Aubert.ActualCutComplex` Jacquet-diagram construction, now using the general
 normalized functors and actual subgroup families. It uses no GL-specific Jacquet
 equivalence or general-to-GL identification.
 
-The unit has no finite-length, irreducibility, or admissibility premise on `A`.
+The module has no finite-length, irreducibility, or admissibility premise on `A`.
 It does not prove graded exactness, produce Bruhat or Coxeter data, or prove
 `RationalCorrectedTheorem36Statement`. Those remain separate obligations. No
 Langlands-classification, character-independence, geometric-lemma, or adjointness
-theorem is applied in this unit's proof bodies. Its representation-theoretic
+theorem is applied in this module's proof bodies. Its representation-theoretic
 inputs are the imported construction and quotient APIs just named.

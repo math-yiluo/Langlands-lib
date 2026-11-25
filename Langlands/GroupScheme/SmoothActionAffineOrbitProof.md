@@ -1,7 +1,5 @@
 # Affine orbits of a smooth action relation: proof
 
-Author: Worker 1420.
-
 The theorem `Langlands.GroupScheme.SchemeAction.smoothActionAffineOrbit` has
 type exactly `SmoothActionAffineOrbitStatement.{u}`. The statement is imported
 unchanged from

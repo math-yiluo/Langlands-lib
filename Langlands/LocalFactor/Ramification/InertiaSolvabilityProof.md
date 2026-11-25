@@ -1,7 +1,5 @@
 # Proof of solvability of actual finite p-adic inertia groups
 
-Author: Worker 231.
-
 The closing theorem `Langlands.Ramification.Padic.finiteInertiaSolvability` has type
 `Langlands.Ramification.Padic.FiniteInertiaSolvability.{u, v}`. This is the proposition
 published in `Langlands.LocalFactor.Ramification.InertiaSolvabilityStatement`, with

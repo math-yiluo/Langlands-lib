@@ -1,6 +1,6 @@
 # Proof of `LeviSecondAdjointnessFromInputsStatement`
 
-Authors: Worker 1402 and Worker 937. Lean module
+Lean module
 `Langlands.Representation.Exponents.LeviSecondAdjointnessFromInputsProof`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 

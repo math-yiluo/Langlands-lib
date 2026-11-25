@@ -46,5 +46,5 @@ unchanged.
 
 These are algebraic presentation formulas for the specified embedded space and
 its actual CM image. They assert neither existence of a tensor presentation for
-arbitrary form spaces nor topological tensor equivalences, spectral occurrence,
-or completion of the host task.
+arbitrary form spaces nor topological tensor equivalences or spectral
+occurrence.

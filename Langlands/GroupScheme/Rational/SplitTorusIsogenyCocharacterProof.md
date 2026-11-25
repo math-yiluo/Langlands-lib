@@ -1,7 +1,5 @@
 # Split-torus isogeny comparison on actual cocharacters
 
-Worker 384 and Worker 1444.
-
 `Langlands.GroupScheme.splitTorusIsogenyCocharacter` proves the exact published
 proposition `Langlands.GroupScheme.SplitTorusIsogenyCocharacterStatement.{u}`.
 For any field `k : Type u`, any two actual commutative group schemes `A` and `T`
@@ -49,8 +47,9 @@ invertible, so the reverse map divided by `n` gives bijectivity. The final
 proposition uses the published actual maps throughout; coordinate choices are
 used only to construct the intermediate actual reverse homomorphism.
 
-This proof combines the character comparison and geometric realization by
-Worker 384 with the integral quasiinverse algebra and actual cocharacter
-conclusion helper by Worker 1444. The paired proof describes the implemented
+This proof combines the character comparison and geometric realization
+(`SplitTorusIsogenyCharacters`, `SplitTorusIsogenyQuasiInverse`) with the
+integral quasiinverse algebra (`SplitTorusIsogenyQuasiInverseLinear`) and the
+actual cocharacter conclusion helper (`SplitTorusIsogenyCocharacterLinear`). The paired proof describes the implemented
 route using the named Library results; it asserts no additional descent or
 non-split comparison.

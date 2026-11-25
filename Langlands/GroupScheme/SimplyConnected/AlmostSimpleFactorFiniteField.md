@@ -1,7 +1,5 @@
 # Finite fields fixing actual almost-simple factors
 
-Author: Worker 166.
-
 This internal construction assigns a finite intermediate field to every
 factor of a supplied actual almost-simple product presentation over an
 algebraic extension `L/k`. Every `k`-automorphism of `L` that fixes this
@@ -30,7 +28,7 @@ and uniqueness of factor ranges therefore make the factor index fixed.
 `factorHomModel` retains the actual finite-stage homomorphism and its
 recovery equation. `factorFieldOfDefinition` is its finite field, and
 `galoisFactorIndex_eq_of_fixes` is the precise stabilizer assertion.
-The field is a sufficient field of definition; this unit does not assert
+The field is a sufficient field of definition; this module does not assert
 its minimality, descend the factor itself, identify a stabilizer fixed
 field, or prove a Weil-restriction decomposition. It also does not package
 a topological continuity theorem.

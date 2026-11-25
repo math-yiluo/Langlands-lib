@@ -1,8 +1,6 @@
 # Actual Speh isomorphism and complementary rank adapters
 
-Author: Worker 1745.
-
-This internal unit derives actual isomorphism adapters from the published
+This internal module derives actual isomorphism adapters from the published
 `SpehDatum.IsSpeh` relation, the normalized twisted-product construction,
 and the isomorphism invariance of irreducibility. It introduces no assertion
 from original literature. All declarations preserve independent universes
@@ -38,6 +36,8 @@ and `complementaryRankIso`. In particular, it gives the whole induced
 representation as the building block and retains the same `S` in both
 factors.
 
-The unit constructs no Speh realization for a multisegment socle and
+The module constructs no Speh realization for a multisegment socle and
 proves no unitarizability or unitary-dual exhaustion assertion. Those
-remain separate mathematical obligations.
+are separate mathematical statements; the unitary-dual exhaustion is proved
+as `tadicUnitaryDualExhaustion` in
+`Classification.TadicUnitaryDualExhaustionProof`.

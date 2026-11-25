@@ -234,7 +234,7 @@ cohomology. -/
 theorem cmSmallLevelMultiplicityGaloisRepresentation_apply (σ : Field.absoluteGaloisGroup F)
     (φ : ξ.IntertwiningMap ((galoisCohomologyFunctor d).obj M).V.representation) :
     (multiplicityGalois).val.representation σ φ =
-      (SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ)).comp φ :=
+      (SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ).asHom).comp φ :=
   rfl
 
 /-- The dimension of the Galois representation is that of the multiplicity space. -/
@@ -326,7 +326,7 @@ cohomology. -/
 theorem cmPrimeToMultiplicityGaloisRepresentation_apply (σ : Field.absoluteGaloisGroup F)
     (φ : ξ.IntertwiningMap ((primeToGaloisCohomologyFunctor d).obj M).V.representation) :
     (primeToMultiplicityGalois).val.representation σ φ =
-      (SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ)).comp φ :=
+      (SmoothRep.hom (((primeToGaloisCohomologyFunctor d).obj M).ρ σ).asHom).comp φ :=
   rfl
 
 /-- The dimension of the Galois representation is that of the multiplicity space. -/

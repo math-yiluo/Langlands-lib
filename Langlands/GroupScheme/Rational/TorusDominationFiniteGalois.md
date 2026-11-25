@@ -1,6 +1,6 @@
 # Finite Galois split-torus domination
 
-Worker 1333. Over every field `k : Type u`, a pointed dominant morphism from
+Over every field `k : Type u`, a pointed dominant morphism from
 an actual ground-field torus to a reduced affine group admits an actual
 base-changed pointed dominant parametrization by a split torus over a finite
 Galois extension of `k`. The parametrizing morphism is a morphism of schemes
@@ -45,5 +45,5 @@ It strengthens the arbitrary-extension conclusion in
 `Rational.TorusDominationBaseChange` to a finite Galois extension, preserving
 its actual morphisms and predicates. It supplies no assertion that the target
 is split solvable, and no existence, geometric comparison or splitness theorem
-for its unipotent radical. Those remain separate structural obligations.
+for its unipotent radical. Those are separate structural results, outside this module.
 Finite fields, imperfect fields and all characteristics are included.

@@ -1,7 +1,5 @@
 # Admissibility and finite length of actual refined cuspidal induction
 
-Authors: Worker 636 and Worker 717.
-
 `Langlands.CuspidalSupport.refinedCuspidalInductionFiniteLength.{uF,uV}`
 proves the exact published proposition
 [`RefinedCuspidalInductionFiniteLengthStatement`](RefinedCuspidalInductionLengthStatement.md).
@@ -46,8 +44,6 @@ bridge produces the actual series. The reduction treats rank zero with
 The provenance is internal: this module discharges the premise of an existing
 published reduction using the existing standard cuspidal-induction theorem.
 The linked proof explanations record the provenance and implementation of
-those ingredients. Worker 717 supplied the reduction and the assembly
-template; Worker 636 verified the published input, supplied its actual theorem
-and import, and completed this proof pair. The target statement and its
+those ingredients. The target statement and its
 imports are preserved. No tensor presentation, supplied series, finiteness or
 dimension premise, rank restriction, or extra theorem-valued premise is added.

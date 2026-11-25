@@ -1,7 +1,7 @@
 # Essential vectors of supercuspidal representations over p-adic fields
 
 Module `Langlands.Representation.Conductor.SupercuspidalPadicEssentialExistence`, namespace
-`Langlands.Conductor.SupercuspidalPadic`. Author: Worker 388 (Task 7044). This is a helper
+`Langlands.Conductor.SupercuspidalPadic`. This is a helper
 module for [`SupercuspidalPadicConductorExponentProof`](SupercuspidalPadicConductorExponentProof.md).
 It defines nothing new. It proves three theorems, all at independent universes `uF`
 (the field) and `uV` (the carrier of `π`).
@@ -19,7 +19,7 @@ contains an essential vector, with the standard L-polynomial `1`.
 The source is Jacquet, *A correction to Conducteur des représentations du groupe
 linéaire*, Pacific J. Math. 260 (2012) (literature ID `jacquet-2012-conductor-correction`).
 Its Theorem 1 states the essential vector, and Remark 1 (printed p. 523) says that the
-1981 existence proof is correct when `L(s, π) = 1`. The task context gives this locator.
+1981 existence proof is correct when `L(s, π) = 1`.
 The Lean proof below does not follow the 1981 argument. It uses the zero-cell function,
 which has a direct proof when `L = 1`.
 

@@ -1,7 +1,5 @@
 # Finite norm surjectivity over the actual inertia fixed field
 
-Author: Worker 60.
-
 `Langlands.ClassFieldTheory.Local.InertiaFixedFieldNormSurjectivity.{u}`
 is a proposition definition, not a proof. For every prime `p` and every
 `F : PadicField.{u} p`, put
@@ -64,7 +62,7 @@ Jean-Pierre Serre, *Local Fields*, Greenberg English translation,
 Springer GTM 67 (1979), registered as `serre-1979-local-fields`, retained
 at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 60 read the following original passages. PDF page numbers count
+The following original passages were read. PDF page numbers count
 from one. No project errata entry for this source was present when checked.
 
 - Chapter III, section 5, Theorems 2–3 and Corollaries 1–3, printed
@@ -103,9 +101,9 @@ statement of the source. The X.7 and XII.1 passages explain its intended
 use in the subsequent inertia cohomology argument; their conclusions
 are not asserted or assumed by this file.
 
-## Arithmetic and comparison work still required
+## Arithmetic and comparison work of a proof
 
-A later proof must implement the following bridges or an equivalent
+A proof must implement the following bridges or an equivalent
 argument for these exact objects.
 
 1. Relate the canonical valuation and residue action used to define
@@ -135,7 +133,8 @@ argument for these exact objects.
 
 The published proposition `Langlands.PadicField.CanonicalUnramifiedCriterion`
 supplies a target for the finite Galois inertia criterion. Its proof is
-separate work; even that finite criterion alone does not supply the
+separate (`canonicalUnramifiedCriterion`, module
+`Langlands.Galois.Local.UnramifiedCriterionProof`); even that finite criterion alone does not supply the
 infinite directed-union identification, finite descent, or the norm
 argument above. The published `Langlands.Galois.Local.AbsoluteProof`
 proves inertia closedness and residue exactness, which also do not by
@@ -147,7 +146,9 @@ for normal intermediate fields without a finiteness assumption; they
 supply no arithmetic norm theorem. No new such transport is constructed
 here.
 
-Only the proposition target is defined in the Lean file. A proof of it,
-the subsequent deduction of `InertiaH2Vanishing`, and the finite
-unramified splitting theorem remain separate obligations. Existing
+Only the proposition target is defined in the Lean file. A proof of it
+(`inertiaFixedFieldNormSurjectivity`, module `InertiaFixedFieldNormProof`),
+the subsequent deduction of `InertiaH2Vanishing` (`inertiaH2Vanishing`,
+module `InertiaH2Proof`), and the finite unramified splitting theorem
+(`unramifiedH2Exhaustion`, module `UnramifiedH2Proof`) are separate. Existing
 statement, proof, and transport files are unchanged.

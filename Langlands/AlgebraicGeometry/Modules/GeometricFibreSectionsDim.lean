@@ -22,7 +22,7 @@ point `t` of `Spec k`. Then `dim_k Hᵖ(Y_k, F_k) = dim_{κ(t)} Hᵖ(Y_t, F_t)`,
 chosen pullback of `g` along `Spec k ⟶ Spec B`. -/
 theorem finrank_relativeCohomology_geomFibre {B : Type u} [CommRing B] [IsNoetherianRing B]
     {Y : Scheme.{u}} (g : Y ⟶ Spec (CommRingCat.of B)) [IsProper g] [Flat g] (F : Y.Modules)
-    (hF : Scheme.Modules.IsInvertible F) (k : Type u) [Field k] (sk : B →+* k) (p : ℕ) :
+    (hF : Scheme.Modules.IsInvertibleFLT F) (k : Type u) [Field k] (sk : B →+* k) (p : ℕ) :
     (Module.finrank k ((relativeCohomology (pullback.snd g (Spec.map (CommRingCat.ofHom sk))) p).obj
         ((Scheme.Modules.pullback (pullback.fst g (Spec.map (CommRingCat.ofHom sk)))).obj F)) :
         ℤ) =
@@ -32,7 +32,7 @@ theorem finrank_relativeCohomology_geomFibre {B : Type u} [CommRing B] [IsNoethe
   let f := pullback.snd g (T.fromSpecResidueField t)
   let a := pullback.fst g (T.fromSpecResidueField t)
   obtain ⟨K, hK, hmod⟩ := exists_perfectModel f ((Scheme.Modules.pullback a).obj F)
-    (hF.pullback a)
+    (Scheme.Modules.IsInvertible.pullbackFLT (hL := hF) a)
   have : ∀ i, Module.Finite (T.residueField t) (K.X i) := fun i => (hK.2 i).1
   -- the fibre over `t` itself: base change along the identity of `κ(t)`
   have hdim₀ : (fibreCohomologyDim g t F p : ℤ) =
@@ -82,7 +82,7 @@ theorem finrank_relativeCohomology_geomFibre {B : Type u} [CommRing B] [IsNoethe
 /-- The `H⁰` case in the form of the FLT dimension `geomFibreH0Finrank`. -/
 theorem geomFibreH0Finrank_eq {B : Type u} [CommRing B] [IsNoetherianRing B]
     {Y : Scheme.{u}} (g : Y ⟶ Spec (CommRingCat.of B)) [IsProper g] [Flat g] (F : Y.Modules)
-    (hF : Scheme.Modules.IsInvertible F) (k : Type u) [Field k] (sk : B →+* k) :
+    (hF : Scheme.Modules.IsInvertibleFLT F) (k : Type u) [Field k] (sk : B →+* k) :
     (Scheme.Modules.geomFibreH0Finrank g F k sk : ℤ) =
       fibreCohomologyDim g ((Spec.map (CommRingCat.ofHom sk)) (IsLocalRing.closedPoint k)) F 0 := by
   rw [← finrank_relativeCohomology_geomFibre g F hF k sk 0]

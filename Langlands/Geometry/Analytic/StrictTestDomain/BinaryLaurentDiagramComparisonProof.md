@@ -1,7 +1,5 @@
 # Comparison of the actual strict and relative binary Laurent diagrams
 
-Authors: Worker 84 and Worker 101.
-
 The theorem assembles the published strict-to-relative rational
 comparison, the relative four-to-two-variable overlap comparison and the
 elementary binary compatibility lemmas into the exact diagram comparison.
@@ -44,7 +42,7 @@ becomes the constant tuple `1`; the same equality transport produces
 `eLower`. Equality transport is bounded in both directions because
 eliminating the equalities leaves the identity bounded algebra equivalence.
 
-The original intersection has arity four. Worker 101's
+The original intersection has arity four.
 `laurent_inter_denominator` computes its denominator as `f`, and
 `laurent_inter_numerator_strictEquiv` computes the transported numerator
 tuple, in the actual product order, as
@@ -114,5 +112,5 @@ maps. Trivial scalar valuations, zero algebras, nilpotent `f`, and empty
 loci remain in scope. This proof establishes only the published
 diagram comparison, with no exactness, gluing, descent, higher Cech
 exactness, admissibility, arbitrary-radius comparison, or finite-module
-conclusion. The strict binary gluing and its relative and whole-spectrum
-parents retain their separate targets.
+conclusion. The strict binary gluing and the relative and whole-spectrum
+descent statements retain their separate targets.

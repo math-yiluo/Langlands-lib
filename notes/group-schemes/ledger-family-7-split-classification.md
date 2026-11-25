@@ -1,8 +1,7 @@
 # Group-scheme ledger, family 7: split realization and classification
 
-Author: Worker 3483, 9 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
-ledger for family 7 of that program's contract. Family 7 covers:
+This note, dated 9 November 2026, is the source-to-declaration
+ledger for family 7 of the algebraic and reductive group-scheme program. Family 7 covers:
 
 - realization of split reductive groups by finite root data;
 - the isomorphism and central isogeny theorems over fields;
@@ -12,27 +11,24 @@ ledger for family 7 of that program's contract. Family 7 covers:
 - the Steinberg data used in positive characteristic;
 - Chevalley groups and integral models.
 
-It describes Library commit `18a1f10aef8ea135d90e8474439a5e6d9c130008` and environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. All Lean names are in `Langlands.GroupScheme`
+It describes Library commit `18a1f10aef8ea135d90e8474439a5e6d9c130008`. All Lean names are in `Langlands.GroupScheme`
 unless a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that
 commit.
 
 ## Status codes and evidence
 
 Each row gives the source assertion with its locator, the exact Lean statement and its
-hypotheses, a status, the evidence, and the owner task.
+hypotheses, a status and the evidence.
 
 - **P (published proof).** The Library at the commit above contains a theorem whose type is
-  exactly the statement. The evidence is that theorem and its module path. The author also
-  type-checked `example : S := proof` for every P row in a private module. That check
-  passed with no errors or warnings, but it is not public evidence. Owner task: none open.
+  exactly the statement. The evidence is that theorem and its module path. Every P row was also
+  type-checked as `example : S := proof`. That check
+  passed with no errors or warnings, but it is not public evidence.
 - **C (composite, not published).** No published theorem has the statement as its type.
-  However, a term built only from published theorems has that type: the author type-checked
-  it in the same private module, and its axioms are `propext`, `Classical.choice` and
-  `Quot.sound`. The composite is not an accepted artifact. The owner task is the
-  `lean.proof@1` task that should publish it.
-- **S (staged).** A proof candidate is staged in the owner task. It is unreviewed and
-  unpublished at this commit.
+  However, a term built only from published theorems has that type: it was type-checked
+  in the same way, and its axioms are `propext`, `Classical.choice` and
+  `Quot.sound`. The composite is not itself in the Library.
+- **S (staged).** A proof existed outside the Library at this commit.
 - **O (open).** No proof and no composite from published results is known.
 
 Source locators use these registered sources. For Milne 2017 the PDF page is the printed
@@ -134,7 +130,6 @@ and the dual form in the proof of Proposition 21.49(a), printed p.439 (PDF 455).
   mathematics. What is missing is only a published theorem with each exact type.
 - Status C: `splitSemisimpleOfFiniteRootIndex_of_maximalTorusCentralizer
   maximalTorusCentralizer`, then `splitSemisimpleRootSpan_of_finiteRootIndex`.
-  Owner: Task 5311, `51f00513-0c90-4a4b-8725-dcfdc90c167c`.
 
 ## C. Rank-one inputs
 
@@ -207,8 +202,7 @@ Definition 6.1.1, p.186.
   Hypotheses: a connected reductive `G` over a field with a split maximal torus.
   Conclusion: `Nonempty (SplitPinning G)`.
 - Status C: `splitPinningExistence_of_rootDatumExistence rootDatumExistence`
-  (`Reductive/RootPinningFromSplitTorus`, `Reductive/RootDatumExistence`). Owner: Task
-  5242, `043f2527-205c-4cfc-b9b2-553de1010d9d`.
+  (`Reductive/RootPinningFromSplitTorus`, `Reductive/RootDatumExistence`).
 
 **E3. Isomorphism theorem for pinned groups (full faithfulness).** Source: Conrad, Theorem
 6.1.17, p.197; Corollary 6.1.15, p.195.
@@ -256,25 +250,22 @@ All three statements have the same scope:
 - Status C: `steinbergBigCell_of_rootAndCoroot rootDatumExistence
   splitSimplyConnectedCorootSpan` (`Reductive/SteinbergBigCellRootCorootAssembly`,
   `SimplyConnected/SplitNecessity`).
-- Status S: candidate `1bd99426-1a83-4e16-a31c-9d09bebecf5d` in the owner task, Task 4716,
-  `2d982376-401c-4c21-917d-ba42fd70af17`.
+- Status S.
 
 **F2. Covariant exhaustion.** Lean: `SteinbergCovariantExhaustionStatement`
 (`Reductive/SteinbergCovariantExhaustionStatement`).
 - Status C: `steinbergCovariantExhaustion_of_bigCell` (`Reductive/SteinbergBigCellReduction`)
-  applied to the F1 composite. Owner: Task 5311, `51f00513-0c90-4a4b-8725-dcfdc90c167c`.
+  applied to the F1 composite.
 
 **F3. Tensor embedding.** Lean: `SteinbergTensorEmbeddingStatement`
 (`Reductive/SteinbergTensorEmbeddingStatement`).
 - Status C: `steinbergTensorEmbedding_of_covariantExhaustion`
-  (`Reductive/SteinbergCovariantReduction`) applied to the F2 composite. Owner: Task 5311.
+  (`Reductive/SteinbergCovariantReduction`) applied to the F2 composite.
 
 The two consumers below belong to families 3 and 6. They are listed because their status
 follows from F1:
 - `SimplyConnectedPositiveCharConjugationMapStatement` is C, by
-  `simplyConnectedPositiveCharConjugationMap_of_bigCell`. Task 4587,
-  `3346aae1-d026-4f7f-9956-6cb65f0b6866`, has the staged candidate
-  `a250029c-35dc-493c-8f90-0a4c60509071`.
+  `simplyConnectedPositiveCharConjugationMap_of_bigCell`. A proof existed outside the Library at the commit above.
 - Haboush's theorem `ReductiveGeometricReductivityStatement` is C, by
   `reductiveGeometricReductivity_of_structural_inputs` applied to four inputs:
   - `reductiveCentralDerivedProduct`;
@@ -284,16 +275,13 @@ follows from F1:
   - the conjugation-map composite;
   - `reductiveCharZeroSemisimplicityStatement`.
 
-  Owners: Task 4404, `db7e7723-dab1-43d9-8fdc-755e40c61351` (staged candidate
-  `fe21742d-ff3e-4c84-8dfd-5504fe2f7896`), and Task 4073,
-  `a75c8252-e54b-46f2-8dba-0b41d9e4fba2`, for the derived cover (staged candidate
-  `9d9b31d2-1b0a-40c4-bef4-77d57e686b42`).
+  Proofs of the theorem and of the derived cover existed outside the Library at the commit
+  above.
 
 ## G. Chevalley groups and integral models
 
 **G1. Chevalley groups over `ℤ`.** No group scheme over `ℤ` attached to a general root
-datum exists in the Library at this commit, and no task for one was found. A TaskHub
-search for "Chevalley group scheme over Z" returned nothing. The modules under
+datum exists in the Library at this commit. The modules under
 `SplitExistence/` construct groups over each field from Chevalley data. They also prove
 that a reduced root datum has a base over `ℤ` (`SplitExistence/IntegralBase`). Status O.
 
@@ -325,8 +313,7 @@ base ring. Those conditions go beyond the two cited propositions.
     base ring.
 - Status C: `existenceStatement_of_spreadingStatements genericReductivitySpreading
   parabolicDynamic` (`IntegralModel/ConditionalReductiveParabolicSpreading`,
-  `Reductive/GenericSpreadingProof`, `Absolute/ParabolicDynamicProof`). Owner: Task 4668,
-  `8b53f86e-c91d-47ab-b631-e30de865fbbe`, which has no executor at this writing.
+  `Reductive/GenericSpreadingProof`, `Absolute/ParabolicDynamicProof`).
 
 **G3. Maximal compactness of model points.** Source: Getz–Hahn, Theorem 2.4.3, final
 assertion, printed p.59 (PDF 76): if a model of `G` over `𝒪_F` has reductive special
@@ -337,8 +324,10 @@ fibre, its `𝒪_F`-points form a maximal compact subgroup of `G(F)`.
   Conclusion: `M(𝒪_F)` is compact and is a maximal compact subgroup of `G(F)`.
 - Status O. The published `maximalCompactStatement_of_buildingComparison`
   (`IntegralModel/BuildingComparison`) reduces it to `BuildingComparisonStatement`, which
-  is also O. Owners: Task `21033437-c908-4d4f-bf9a-06d1f642447a` (maximal compactness)
-  and Task `e93a1c4a-39d9-440a-b41f-f3071783e6e4` (building comparison).
+  is also O. The Library now proves `IntegralModel.MaximalCompactStatement`, as
+  `maximalCompactStatement` (`IntegralModel/MaximalCompact.lean`); for
+  `BuildingComparisonStatement` it has only the conditional
+  `buildingComparisonStatement_of_unramified`.
 
 ## Conventions and scope
 
@@ -366,5 +355,5 @@ for B2, E2, F1–F3, G1 and G2 are recorded in the
   Lean statement.
 - Chevalley group schemes over `ℤ` and their base change (G1).
 - `IntegralModel.MaximalCompactStatement` and `IntegralModel.BuildingComparisonStatement`
-  (G3).
-- Publication of the C rows (B2, E2, F1–F3, G2) by their owner tasks.
+  (G3); the first is now proved (`maximalCompactStatement`, row G3).
+- Named theorems for the C rows (B2, E2, F1–F3, G2).

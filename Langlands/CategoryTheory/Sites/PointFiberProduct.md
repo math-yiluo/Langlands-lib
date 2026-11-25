@@ -39,6 +39,6 @@ universes are independent. Both presheaves take values in the maximum
 of the base and fibre morphism universes. All test objects and slice
 restriction maps occur in this comparison.
 
-This unit identifies two explicit presheaves. It does not assert that
+This module identifies two explicit presheaves. It does not assert that
 the Hom presheaf or point fibre has a representing scheme, and establishes
 no smoothness, local finite presentation, surjectivity, or atlas existence.

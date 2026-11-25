@@ -1,6 +1,6 @@
 # The actual maximal-torus stabilizer inside the adjoint Borel
 
-This is an internal construction by Worker 692 from the Library's relative
+This is an internal construction from the Library's relative
 Levi self-normalization, maximal-torus center containment, Borel retraction,
 actual right-coset projection, and represented-subgroup quotient construction.
 It is a supporting step for the semilocal quasi-split inner-form problem.
@@ -44,7 +44,7 @@ represents the identity fibre as a closed subgroup of `P`; its exact
 inverse image gives the cartesian square and the fppf projection.
 
 No torus existence is assumed implicitly: the original torus and its
-factorization are supplied. This construction does not yet assert that
+factorization are supplied. This construction does not assert that
 the resulting group `D` is a torus, give an induced-torus presentation,
 construct the Borel quotient's retraction to `D`, supply a radical
 vector-bundle series, or prove the semilocal inner-form theorem.

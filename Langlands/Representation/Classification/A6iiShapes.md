@@ -1,6 +1,6 @@
 # Shape bookkeeping for the irreducible-product argument
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiShapes`,
+Module `Langlands.Representation.Classification.A6iiShapes`,
 namespace `Langlands.Classification.A6ii`. Internal helper for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`).
 

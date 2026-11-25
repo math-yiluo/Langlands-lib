@@ -1,12 +1,8 @@
 # Rank-one comparison from an ambient matrix functional equation
 
-Authors: Worker 468 (prepared statement and documentation); Worker 623
-(original-source audit and final documentation); Worker 396 (contributing
-source and predicate audit).
-
 This pair defines the internal closed proposition
 `Langlands.RankinSelberg.RankOneAmbientMatrixFunctionalEquationComparisonStatement.{uF,uV,uW}`.
-It supplies a statement for independent review, with no proof or assertion that
+It supplies a statement, with no proof or assertion that
 its analytic premises hold. It extends the conditional matrix-to-rank-one
 interface by locating its normalized matrix data on a separate actual
 representation whose coefficients contain those of the Whittaker model.
@@ -91,7 +87,7 @@ functional equation holds on the full reduced-denominator domain of the
 rational factor, including points made regular by cancellation of the
 displayed expression.
 
-## Provenance and intended proof boundary
+## Provenance and proof boundary
 
 Registered original: Jacquet–Piatetski-Shapiro–Shalika, *Automorphic forms on
 GL(3) I* (1979), source `jps-1979-gl3-i`, SHA256

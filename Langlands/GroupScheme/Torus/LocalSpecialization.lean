@@ -110,6 +110,7 @@ theorem isClosedSubgroup_comp_of_specialFibreIso
   change IsClosedImmersion
     (((baseChange (Spec.map (CommRingCat.ofHom (IsLocalRing.residue R)))).map i).hom.hom.left ≫
       ((baseChange (Spec.map (CommRingCat.ofHom (IsLocalRing.residue R)))).map f).hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 end TorusLocalSpecialization

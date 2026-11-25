@@ -47,8 +47,10 @@ with finiteness of the actual relative-root subtype into the existing
 every proof that the integral torus is split; proof irrelevance identifies
 that proof with the splitness component used in the construction.
 
-This unit is derived from `FacetRootDatumAssembly`, `FacetTorusQuotient` and
+This module is derived from `FacetRootDatumAssembly`, `FacetTorusQuotient` and
 `UnramifiedFacetReflections`. It needs no facet condition or smoothness of `D`
 beyond the hypotheses of those constructions. It is a conditional assembly
-step toward `UnramifiedFacetRootDatumStatement`, whose remaining exact root
-comparison and complete universally quantified theorem are still open.
+step toward `UnramifiedFacetRootDatumStatement`; the exact root comparison and
+the complete universally quantified theorem are not proved here. The theorem
+`unramifiedFacetRootDatum` in `UnramifiedFacetRootDatumProof` proves that
+statement.

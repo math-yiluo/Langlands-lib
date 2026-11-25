@@ -119,8 +119,8 @@ set of lifts, and the converse direction of Lemma 37.11.7 (formally
 smooth and locally of finite presentation implies smooth) are outside
 this definition.
 
-This module defines the proposition only. An exact proof is a separate
-successor. Worker 496 supplied the Lean formulation and this
-description, as a prerequisite for lifting homomorphisms of group
-schemes through nilpotent thickenings (SGA 3, Exposé IX, Théorème 3.6),
+This module defines the proposition only. Its proof is
+`Langlands.AlgebraicGeometry.smoothThickeningLifting`, in the module
+`SmoothThickeningLiftingProof`. The proposition is a prerequisite for
+lifting homomorphisms of group schemes through nilpotent thickenings (SGA 3, Exposé IX, Théorème 3.6),
 where the smooth group scheme `G` is not assumed affine.

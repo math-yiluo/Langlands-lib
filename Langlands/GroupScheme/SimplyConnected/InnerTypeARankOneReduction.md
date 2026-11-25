@@ -1,7 +1,5 @@
 # Conditional rank-one reduction for inner type A
 
-Author: Worker 165.
-
 `Langlands.GroupScheme.exists_binary_model_of_innerTypeA.{u}` proves the
 family-(i) model conclusion from two explicit structural hypotheses:
 

@@ -50,7 +50,7 @@ Kottwitz, *Points on some Shimura varieties over finite fields*, JAMS 5
 isogeny to the dual which is a polarization at every geometric point.
 His PEL moduli problem additionally restricts to locally noetherian bases,
 projective abelian schemes and prime-to-`p` isogenies. This file isolates
-the general polarization predicate required by the host task; it does not
+the general polarization predicate; it does not
 assert those extra moduli restrictions or a representability theorem.
 
 The field criterion is Edixhoven–van der Geer–Moonen, *Abelian Varieties*,

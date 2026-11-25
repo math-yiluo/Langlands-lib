@@ -1,7 +1,7 @@
 # Actual original-field Galois pinnings of recovered geometric factors
 
-Worker 509, using Worker 587's actual factor root/base/embedding constructions.
-Derived from the original-field normal-factor torus, actual reduced root-datum
+This module uses the actual factor root/base/embedding constructions of the modules
+`FactorRootBase` and `FactorComponentEmbedding`. Derived from the original-field normal-factor torus, actual reduced root-datum
 existence, ambient group-isomorphism transport, and the full orthogonal component
 star comparison. The original normal-subgroup model receives a genuine Galois
 pinning with its torus and inclusion over the ground field. Its simple vertices

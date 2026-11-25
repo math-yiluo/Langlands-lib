@@ -1,10 +1,10 @@
 # Classical type-D spin presentations and actual indices
 
-Author: Worker 180.
-
 `Langlands.GroupScheme.ClassicalTypeDSpinPresentationStatement.{u}` is
-an **unproved** prerequisite for the rank-one quaternionic spin
-identification. It applies to every field, in every characteristic,
+a prerequisite for the rank-one quaternionic spin identification
+that this module does **not** prove; it is proved as
+`classicalTypeDSpinPresentation` in `ClassicalTypeDSpinPresentationProof`.
+It applies to every field, in every characteristic,
 and to every absolute rank `n ≥ 4`. It assumes neither a supplied
 algebra with involution nor a supplied form or spin cover.
 
@@ -137,8 +137,10 @@ subsequent generation theorem is not used.
 This is a derived formulation combining these descriptions with the
 Library's actual Tits index, left row-vector conventions and spin-cover
 predicate. The source does not supply the presentation as an input.
-In particular the proof successor must construct the realization
+In particular a proof of the statement must construct the realization
 aligned with the numbered vector node, perform the division-algebra
 and quadratic-form comparison, identify the actual distinguished
-vertices and relative rank, and construct the cover of the given `G`.
+vertices and relative rank, and construct the cover of the given `G`;
+`ClassicalTypeDSpinPresentationProof` does this through
+`classicalTypeDAlignedSpinCover` and `alignedSpinCoverTitsIndex`.
 This file does not prove any of those structural steps.

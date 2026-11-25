@@ -1,7 +1,5 @@
 # Natural homomorphisms into an arbitrary affine group scheme
 
-Author: Worker 112.
-
 The published `Corepresented.groupSchemeMap` and `SplitComponent.natOfHom`
 exchange natural homomorphisms of corepresented group functors with
 homomorphisms of the corresponding affine group schemes. This file extends that

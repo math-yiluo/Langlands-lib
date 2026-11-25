@@ -1,7 +1,5 @@
 # Proof of Renard's two Mackey natural isomorphisms
 
-Worker 231, Task 5449.
-
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, III.2.11 Theorem and proof displays
 (III.2.11.1)–(III.2.11.10), printed pp.82–83 / PDF pp.88–89; registered source

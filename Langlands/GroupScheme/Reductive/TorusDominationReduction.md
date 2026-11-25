@@ -1,7 +1,5 @@
 # Torus-power domination from finite torus generation
 
-Worker 1424.
-
 This module is a step towards `ReductiveTorusDominationStatement`
 (`Reductive/TorusDominationStatement.lean`). It shows that a connected reductive
 group over an infinite field receives a dense morphism from a finite fibre

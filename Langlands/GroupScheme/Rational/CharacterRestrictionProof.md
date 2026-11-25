@@ -1,7 +1,5 @@
 # Restriction of rational characters to a split component
 
-Author: Worker 33 (Task 3798, `6d0882ee-6e45-410c-b5a1-86d4544a4ffb`).
-
 `Langlands.GroupScheme.characterRestriction` proves exactly the published
 proposition `Langlands.GroupScheme.CharacterRestrictionStatement.{u}` (module
 [`CharactersStatement`](CharactersStatement.md)), at every universe `u`, with

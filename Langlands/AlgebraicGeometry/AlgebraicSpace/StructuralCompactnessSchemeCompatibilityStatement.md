@@ -1,8 +1,5 @@
 # Structural compactness and finite type on represented schemes
 
-Authors: Worker 1640 and Worker 139, who specified the exact proposition in
-the task objective.
-
 This module supplies one Prop-valued definition,
 `Langlands.AlgebraicGeometry.AlgebraicSpace.StructuralCompactnessSchemeCompatibilityStatement.{u}`.
 It states three compatibility equivalences for schemes viewed as algebraic
@@ -96,8 +93,8 @@ The published `StructuralAtlasSchemeCompatibilityProof` supplies
 a represented scheme to an actual etale surjective scheme morphism,
 and `locallyOfFiniteTypeOverBase_schemeToSpace_iff`, comparing the
 existing structural local finite type predicate with Mathlib's
-property of `U.hom`. These explain the interfaces relevant to a later
-proof; this statement imports no additional proof module and proves
+property of `U.hom`. These explain the interfaces relevant to its
+proof, `structuralCompactnessSchemeCompatibility`; this statement imports no additional proof module and proves
 none of the three equivalences.
 
 The exact three-conjunct package is an internal derived statement about
@@ -142,30 +139,32 @@ In the same chapter, Definition 67.23.1(3)
 defines finite type as local finite type and quasi-compactness.
 Lemma 67.23.4(6)
 ([Tag 040Y](https://stacks.math.columbia.edu/tag/040Y)), also on p.45,
-gives the atlas criterion underlying the current structural local
+gives the atlas criterion underlying the structural local
 finite type definition. Together with the existing scheme comparison
 for local finite type, these motivate the third conjunct.
 The morphisms PDF hash is
 `46497665981806a93d5b2f315314555ba457aaed3d967bf2d8f0cd4a2310e161`.
 
-Worker 1640 read the source README and the original PDF pages cited
-above, checked both PDF hashes, and found no source-specific errata
-file in the checked workspace, project or current Library
+The source README and the original PDF pages cited above were read,
+both PDF hashes were checked, and no source-specific errata file was
+found in the checked workspace, project or current Library
 `notes/errata/` paths. The adjacent text extractions are reading aids.
 These citations explain the derived statement and supply no Lean
 proof of it.
 
 ## Scope and consumer
 
-This unit supplies only the represented-scheme compatibility statement.
-Its exact proof is a later successor after independent statement
-acceptance and Library publication. General base-change stability for
+This module supplies only the represented-scheme compatibility statement.
+Its exact proof is `structuralCompactnessSchemeCompatibility`, in the
+module `StructuralCompactnessSchemeCompatibilityProof`. General base-change stability for
 arbitrary algebraic spaces, comparison with the distinct affine-base
 `FiniteTypeOverRing`, intrinsic algebraic-space topology, properness
 and Picard geometry remain separate. The statement makes no change to
 `StructuralCompactness`, `StructuralAtlasSchemeCompatibility`,
 `SpaceBaseChange` or `FiniteTypeOverRing`.
 
-Worker 139 retains finite-type representability assembly in task
-`90a7704e-771a-4107-a91a-c67873dd035e`. This proposition supplies a
-compatibility target for that consumer and constructs no representer.
+The finite-type representability assembly, for
+`FiniteTypeSmoothFamilyAbelianRepresentabilityStatement`, lies outside this
+statement. This proposition was formulated as a compatibility target for that
+result and constructs no representer; the proof of that result,
+`finiteTypeSmoothFamilyAbelianRepresentability`, does not import this module.

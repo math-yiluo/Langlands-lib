@@ -26,6 +26,6 @@ affine target gives the quasi-affineness conclusion for the open.
 The accompanying generic `ClosedEmbeddingModel` record contains the scheme,
 actual universal closed family, and bijectivity on all test schemes. Its
 classifying map commutes with restriction. It introduces no representability
-assumption beyond these explicit fields. This contribution constructs the
+assumption beyond these explicit fields. This module constructs the
 embedding parameter scheme; automorphism actions and normalizer orbit fibers
 remain separate constructions.

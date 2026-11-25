@@ -1,7 +1,5 @@
 # Springer's split fundamental set from the split rank-one height bound
 
-Author: Worker 5253.
-
 This internal derived module proves Springer's split fundamental-set statement
 `SplitAdelicFundamentalSetStatement` (`AdelicSplitFundamentalSet`) from two explicit
 hypotheses:

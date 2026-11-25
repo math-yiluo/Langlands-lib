@@ -1,10 +1,8 @@
 # Common determinant twists of actual normalized lower block induction
 
-Author: Worker 15.
-
 This is internal algebraic support for the second-block Whittaker deformation
 transport. It adapts the published upper-parabolic argument in
-`Induction.NormalizedProductCharacterTwist` (Workers 468 and 6) to the actual
+`Induction.NormalizedProductCharacterTwist` to the actual
 lower parabolic, retaining the inverse half-modulus. It asserts no new literal
 literature theorem.
 

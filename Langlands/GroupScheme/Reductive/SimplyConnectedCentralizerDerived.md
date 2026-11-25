@@ -1,7 +1,5 @@
 # Simply connected derived groups of relative split-torus centralizers
 
-Worker 634.
-
 This internal construction provides actual subgroup schemes for a possible
 simple-factor construction over an affine base. Let `G` be reductive over
 `Spec R`, with simply connected geometric fibres, and let `a : T → G` be a

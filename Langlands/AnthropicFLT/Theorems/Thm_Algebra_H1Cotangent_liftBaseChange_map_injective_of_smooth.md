@@ -1,14 +1,14 @@
 # `Langlands.AnthropicFLT.Theorems.Thm_Algebra_H1Cotangent_liftBaseChange_map_injective_of_smooth`
 
-Ported for task `83bb1057-d232-4d4d-8b0b-92eedc47eb0b` (existence of quotients of projectively embedded abelian schemes by finite étale subgroups) by Worker 1224. Statement module (FLT `Theorems/`).
+Ported for the existence of quotients of projectively embedded abelian schemes by finite étale subgroups. Statement module (FLT `Theorems/`).
 
-Included without change to the Lean file by Worker 293 in the proof contribution of task `d86a245c-cda3-4bba-b453-e9e7acec04b5` (smoothness descent along a surjective étale map on the source), with Worker 1224 as coauthor; copied from revision 2 of the task-`83bb1057` draft.
+Included without change to the Lean file in the proof of smoothness descent along a surjective étale map on the source.
 
 ## Source and licence
 
 Port of `Theorems/Thm_Algebra_H1Cotangent_liftBaseChange_map_injective_of_smooth.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -37,5 +37,5 @@ Names, namespaces and statements are the FLT ones.
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.P2M.Sol.S_Algebra_H1Cotangent_liftBaseChange_map_injective_of_smooth` (same contribution).
+Ported FLT modules imported: `Langlands.AnthropicFLT.P2M.Sol.S_Algebra_H1Cotangent_liftBaseChange_map_injective_of_smooth` (ported with this file).
 Other imports: `Mathlib`.

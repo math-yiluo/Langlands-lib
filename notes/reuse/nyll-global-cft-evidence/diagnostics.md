@@ -1,25 +1,25 @@
 # Lean diagnostics of the NYLL global audit
 
-Evidence for [the audit note](../nyll-global-cft-audit.md), section 4. All checks ran in the project's Lean service with `lean_check` on environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean `v4.34.0`, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`), from a private draft directory holding the adapted closure of [closure.md](closure.md). The diagnostic identifiers are those of the service's records.
+Evidence for [the audit note](../nyll-global-cft-audit.md), section 4. All checks ran in the project's Lean checking service, with Lean `v4.34.0` and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`, from a private draft directory holding the adapted closure of [closure.md](closure.md).
 
 ## 1. Builds of the closure, by layers
 
-A single check of the six roots from scratch exceeded the service's 30-minute limit per call: run `002b1572` stopped there after reporting one error (the one fixed by the edit to `IntegerRingComparison`), and run `e5e0ad89` stopped with no message. The closure was therefore built in layers: each call requests the maximal modules among those of import depth at most N, which builds all modules of depth at most N. The build cache of the service keeps the outputs of earlier calls, including the modules compiled by the stopped runs, and rebuilds a module whenever its source or an import changed. Every call below ended with return code 0, no error and no warning.
+A single check of the six roots from scratch exceeded the service's 30-minute limit per call: the first run stopped there after reporting one error (the one fixed by the edit to `IntegerRingComparison`), and the second stopped with no message. The closure was therefore built in layers: each call requests the maximal modules among those of import depth at most N, which builds all modules of depth at most N. The build cache of the service keeps the outputs of earlier calls, including the modules compiled by the stopped runs, and rebuilds a module whenever its source or an import changed. Every call below ended with return code 0, no error and no warning.
 
-| Diagnostic | Modules of the closure covered | Requested (maximal) modules | Build time (s) |
-|---|---|---|---|
-| `56515156-ac3f-4041-bc3b-0f437432d846` | depth ≤ 15: 430 | 93 | 1006 |
-| `8be82939-386c-4b96-8f9c-25d5ba662087` | depth ≤ 30: 591 | 70 | 312 |
-| `99f0429f-3c4d-4ea1-a745-93f961757dec` | depth ≤ 59: 742 | 57 | 16 |
-| `48da7e0d-1632-417f-8302-7e4eec4f694e` | depth ≤ 75: 839 | 43 | 20 |
-| `82fbda58-3e54-4747-9bf5-35ea471173ba` | depth ≤ 95: 931 | 21 | 214 |
-| `913786b0-382e-4a71-b6b4-d1fd193018ff` | all 957 (the six roots) | 6 | 791 |
+| Modules of the closure covered | Requested (maximal) modules | Build time (s) |
+|---|---|---|
+| depth ≤ 15: 430 | 93 | 1006 |
+| depth ≤ 30: 591 | 70 | 312 |
+| depth ≤ 59: 742 | 57 | 16 |
+| depth ≤ 75: 839 | 43 | 20 |
+| depth ≤ 95: 931 | 21 | 214 |
+| all 957 (the six roots) | 6 | 791 |
 
 The import depth of a module is 1 plus the largest depth of its imports inside the closure; the largest depth is 107. The edits were found from the errors of earlier calls (for example `de07aa77`, `366aee7c`, `3f446f6f`, `38edcaf8`, `1670d346` and `002b1572`); [edits.md](edits.md) gives the final state.
 
 ## 2. Declarations: signatures and axioms
 
-Diagnostic `3c6e5461-795a-465e-affe-39d3a25b0652` (ok, 39 information messages, no error, no warning). Module `NyllGlobalDiag`:
+The check of `NyllGlobalDiag` (ok, 39 information messages, no error, no warning). Module `NyllGlobalDiag`:
 
 ```lean
 import Nyll.ClassFieldTheory.GlobalClassFieldTheory.GlobalClassFields.MathlibGlobalReciprocity
@@ -29,7 +29,7 @@ import Nyll.ClassFieldTheory.GlobalClassFieldTheory.Reciprocity.FiniteIdeleArtin
 import Nyll.ClassFieldTheory.AlgebraicNumberTheory.Idele.ClassGroup.MathlibTopologyComparison
 import Nyll.ClassFieldTheory.AlgebraicNumberTheory.RayClass.Topology
 
-/-! Audit diagnostic (Task 7345): the NYLL fbd320cd declarations that supply
+/-! Audit diagnostic: the NYLL fbd320cd declarations that supply
 clauses of `Langlands.Global.FiniteAbelianClassFieldStatement`, compiled from the
 adapted closure on the Library's pin. Signatures and axioms only. -/
 
@@ -50,7 +50,7 @@ adapted closure on the Library's pin. Signatures and axioms only. -/
 -- Bridge to Mathlib's idele class group (the Library's `IdeleClasses`).
 #check @IdeleGroup.ideleClassGroupContinuousMulEquivMathlib
 
--- Further declarations used in the audit note (added in the coauthor review).
+-- Further declarations used in the audit note (added later).
 #check @GlobalClassFieldTheory.Reciprocity.arithmeticGlobalNormResidueMonoidHom_comp_finitePlaceIdeleClass
 #check @GlobalClassFieldTheory.GlobalClassFields.arithmeticFinitePlacePrimeArtin_eq_arithmeticChosenFinitePlaceArtin
 #check @IdeleGroup.ideleClassGroupEquivMathlib_finitePlaceIdeleClass
@@ -234,11 +234,11 @@ Every declaration checked, the nineteen of the `#print axioms` lines, depends on
 
 Universes: the Artin map and its `_apply`, kernel, surjectivity, continuity and finite-place lemmas, the prime-Artin and Frobenius comparisons, the unit lemma, the quotient form `GlobalClassFieldComparison.finiteAbelianGlobalReciprocity` (a `Nonempty` homeomorphic isomorphism from the norm quotient of the idele class group to the Galois group), the class field `closedFiniteIndexClassField` and the two class-field theorems take `K L : Type` or `K : Type` (universe 0). `ClassFieldTheory.arithmeticFrobeniusAt`, the three `RayClass` declarations and the two bridge declarations `IdeleGroup.ideleClassGroupContinuousMulEquivMathlib` and `IdeleGroup.ideleClassGroupEquivMathlib_finitePlaceIdeleClass` are universe-polymorphic.
 
-Earlier runs of the same module checked fewer declarations, with the same results for those: diagnostic `d004145b-cd7f-438f-890e-4718daafcf73` (the first ten `#print axioms` lines) and `fc43fa87-99f0-455f-9a14-b551e262024a` (the first sixteen). The last six were added in the coauthor review.
+Earlier runs of the same module checked fewer declarations, with the same results for those: one run with the first ten `#print axioms` lines and one with the first sixteen. The last six were added later.
 
 ## 3. Coexistence with the Library and the bridge
 
-### `NyllCoexistDiag`: diagnostic `63bbdfc1-cdab-4be0-96e7-c73ce19c42fd`
+### `NyllCoexistDiag`
 
 Checked at Library commit `fcb85a7ef43356fec01e6ccf1605f08568c08cb0`. It imports the class-field statement, four modules of the Library's NYLL port and the six NYLL roots, with the bridge checked against the Library's `IdeleClasses` and `finiteClassInclusion`. Result: ok, no error, no warning; 1 information message(s):
 
@@ -261,7 +261,7 @@ import Nyll.ClassFieldTheory.GlobalClassFieldTheory.Reciprocity.FiniteIdeleArtin
 import Nyll.ClassFieldTheory.AlgebraicNumberTheory.Idele.ClassGroup.MathlibTopologyComparison
 import Nyll.ClassFieldTheory.AlgebraicNumberTheory.RayClass.Topology
 
-/-! Audit diagnostic (Task 7345): one module importing the Library's interface-F
+/-! Audit diagnostic: one module importing the Library's interface-F
 statement, part of the Library's NYLL local port, and the adapted NYLL fbd320cd
 global closure. Checks that the imports coexist and that NYLL's idele-class
 comparison lands in the Library's `IdeleClasses`. -/
@@ -283,7 +283,7 @@ example (K : Type) [Field K] [NumberField K] (v : FinitePlace K)
   IdeleGroup.ideleClassGroupEquivMathlib_finitePlaceIdeleClass K v x
 ```
 
-### `NyllCoexistFullDiag`: diagnostic `0390f87b-26e0-4e6a-a671-a54868109762`
+### `NyllCoexistFullDiag`
 
 Checked at Library commit `fcb85a7ef43356fec01e6ccf1605f08568c08cb0`. It imports the class-field statement, all 1749 modules of the Library's NYLL port (through its 620 maximal modules) and the six NYLL roots. Result: ok, no error, no warning; 0 information message(s).
 
@@ -291,15 +291,15 @@ Source (636 lines, SHA-256 `74c1f7d9c387548068bad82c82ea80f5dd7f80faf5822ff79a03
 
 ```lean
 import Langlands.Global.Arithmetic.ClassFieldStatement
-import Langlands.ClassFieldTheory.Local.NYLL.InertiaFromGeometricProof
-import Langlands.ClassFieldTheory.Local.NYLL.NormTransferReductionProof
-import Langlands.ClassFieldTheory.Local.NYLL.NormTransferUniverseTransportProof
-import Langlands.ClassFieldTheory.Local.NYLL.RamifiedGeometricNormalizationTransferProof
-import Langlands.ClassFieldTheory.Local.NYLL.ReciprocityUniverseTransportProof
-import Langlands.ClassFieldTheory.Local.NYLL.RestrictionUniverseTransportProof
-import Langlands.ClassFieldTheory.Local.NYLL.SuppliedUniformityProof
-import Langlands.ClassFieldTheory.Local.NYLL.SuppliedUnramifiedProof
-import Langlands.ClassFieldTheory.Local.NYLL.SuppliedValuationSignProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.InertiaFromGeometricProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.NormTransferReductionProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.NormTransferUniverseTransportProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RamifiedGeometricNormalizationTransferProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.ReciprocityUniverseTransportProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RestrictionUniverseTransportProof
+import Langlands.ClassFieldTheory.Local.Supplied.SuppliedUniformityProof
+import Langlands.ClassFieldTheory.Local.General.SuppliedUnramifiedProof
+import Langlands.ClassFieldTheory.Local.General.SuppliedValuationSignProof
 import Langlands.ClassFieldTheory.Local.NYLL.ZeroRamificationHostProof
 import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Degree.Fields.FiniteAbstractField.Extension.NumericStatements
 import Langlands.NYLL.ClassFieldTheory.AbstractClassFieldTheory.Degree.Fields.FiniteAbstractField.Residue.U128.Proofs
@@ -918,7 +918,7 @@ import Nyll.ClassFieldTheory.GlobalClassFieldTheory.Reciprocity.FiniteIdeleArtin
 import Nyll.ClassFieldTheory.AlgebraicNumberTheory.Idele.ClassGroup.MathlibTopologyComparison
 import Nyll.ClassFieldTheory.AlgebraicNumberTheory.RayClass.Topology
 
-/-! Audit diagnostic (Task 7345): the Library interface-F statement, all 1749
+/-! Audit diagnostic: the Library interface-F statement, all 1749
 modules of the Library NYLL port (through its 620 maximal modules) and the adapted
 NYLL fbd320cd global closure, imported together. -/
 

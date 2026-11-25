@@ -630,7 +630,7 @@ end CuspidalOperatorRealization
 
 end Langlands.Automorphic
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Automorphic Langlands.Global NumberField
 
@@ -644,4 +644,4 @@ theorem HasUnitaryCentralCharacter.conjugate {F : Type u} [Field F] [NumberField
   rw [norm_conjCharacter]
   exact hχ x
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

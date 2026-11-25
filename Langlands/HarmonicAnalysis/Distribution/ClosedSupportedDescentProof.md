@@ -49,10 +49,9 @@ and support remains the published pointwise-annihilator condition. This
 module proves bijectivity; it exports no chosen inverse or locally closed
 descent or orbit-vanishing result.
 
-Worker 182 authored this internal algebraic deduction from the published
-Library constructions and Mathlib's quotient and dual-map APIs. Worker 128's
-separately published closed-restriction theorem supplies the topological
-input. The motivating distribution-descent remark and its distinction from
+This is an internal algebraic deduction from the published Library
+constructions and Mathlib's quotient and dual-map APIs. The separately
+published closed-restriction theorem supplies the topological input. The motivating distribution-descent remark and its distinction from
 the present support convention are documented in the unchanged
 [ClosedSupportedDescentStatement](ClosedSupportedDescentStatement.md);
 this proof relies on the Library statement and the imported restriction

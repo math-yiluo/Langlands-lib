@@ -43,7 +43,8 @@ Let `φ : X ⟶ Y` be a morphism with `φ ≫ fY = f`.
 
 ## Provenance
 
-These are internal lemmas written for Task 6989 by Worker 496. They make
+These are internal lemmas written for the lifting of homomorphisms from
+groups of multiplicative type through nilpotent thickenings. They make
 the affine structure of the set of infinitesimal lifts (the torsor
 structure in Stacks Project, More on Morphisms, Lemma 37.11.7, Tag 02H6)
 explicit and global, without a sheaf of differentials.

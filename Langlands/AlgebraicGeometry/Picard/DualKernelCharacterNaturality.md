@@ -41,7 +41,11 @@ functor. Its components are precisely `dualKernelPointCharacter`.
 The provenance is the internal composition of the two imported modules and
 their stated representative and class-character laws. The orientation is
 inherited from the actual beta without inversion. No isogeny, finiteness,
-characteristic or quasi-separated-base assumption is added. This unit
+characteristic or quasi-separated-base assumption is added. This module
 asserts naturality in the test scheme only. Tensor compatibility, dual-variable
 additivity, bijectivity, Cartier duality, finite Weil pairings and perfectness
-remain separate obligations.
+are not part of this module; additivity is proved in
+`DualKernelCharacterAdditivity`, bijectivity over a field in
+`FieldDualKernelCharacterBijectiveProof`, Cartier duality in
+`KernelCartierDuality`, and the finite Weil pairing and its perfectness are
+treated in `FiniteWeilPairing` and `FiniteWeilCartierPerfectness`.

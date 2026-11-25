@@ -9,8 +9,8 @@ hypothesis quantified in that proposition, it proves
 
 `(maximalIdeal S).ramificationIdx R * (maximalIdeal S).inertiaDeg R ≤ finrank K L`.
 
-This is an internal derived proof by Worker 109. The statement was isolated
-from the completed-local-degree project by Worker 107 and formalized in its
+This is an internal derived proof. The statement was isolated
+from the completed-local-degree project and formalized in its
 separate published statement module. The proof here is developed from the
 pinned Mathlib module, localization, and length APIs; it does not transcribe an
 external literature proof. Both auxiliary theorems are private implementation

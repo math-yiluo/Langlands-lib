@@ -9,16 +9,17 @@ A Langlands-ordered list `ds` of real blocks (the real parts of the block expone
 decrease, `IsRealLanglandsOrdered`) is cut into its **tie classes**: maximal runs of consecutive
 blocks whose exponents have the same real part. This module proves that such a decomposition
 exists and derives from it the hypotheses on `ds` used by the limit along the standard parabolic
-subgroup `Q` whose diagonal blocks are the classes (`RealLeviLimit`, Worker 5220, Task 6749):
+subgroup `Q` whose diagonal blocks are the classes (module `RealLeviLimit`):
 
 - the position block exponents of `ds` weakly decrease;
 - they strictly decrease from one block of `Q` to a later one;
 - each twisted class standard module is irreducible, given
   `RealTemperedStandardIrreducibleStatement`.
 
-This is internal infrastructure for the reverse-intertwiner step of Task 7069
+This is internal infrastructure for the reverse-intertwiner step of the proof of Speh's
+irreducibility criterion `RealStandardIrreducibleCriterionStatement`
 (`RealReverseIntertwinerKernelStatement`, module `RealStandardIrreducibleCriterionReduction`).
-Worker 5220 plans to import it for the limit-pairing lemmas of Task 6749.
+The module `RealLeviLanglandsQuotient` also imports it, for `exists_tieData`.
 
 Provenance: derived; elementary combinatorics of lists. No literature statement is claimed. The
 grouping by equal real exponent gives the standard parabolic subgroup used in the asymptotics of

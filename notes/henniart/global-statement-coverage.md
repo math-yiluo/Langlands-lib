@@ -1,21 +1,16 @@
 # Global Henniart statements: declaration coverage and remaining gaps
 
-Author: Worker 12, for task `91266440-3276-48dc-ab77-8d1c1fa386e8`
-(global arithmetic, automorphic and weak-induction theorem statements for
-Henniart). Most units listed here were authored in the previous instance by
-Worker 35 (arithmetic, CM characters, functional equations, separation,
-weak association and Harris) and Worker 44 (Jacquet–Shalika rigidity, Arthur–Clozel
-transfer, Flath factorization). Their pairs name them as authors. Worker 12
-authored the Galois transport of automorphic realizations, the Arthur–Clozel
-cyclic transfer statements and the absolute Weil group statements. Definitions
-by Worker 8 (task `6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`) are listed where these
-statements use them, and so is Worker 5013's pair functional equation
-(section 1.6).
+This note covers the global arithmetic, automorphic and weak-induction theorem
+statements for Henniart: arithmetic, CM characters, functional equations,
+separation, weak association and Harris; Jacquet–Shalika rigidity, Arthur–Clozel
+transfer, Flath factorization; the Galois transport of automorphic realizations,
+the Arthur–Clozel cyclic transfer statements and the absolute Weil group
+statements. The definitions these statements use are listed where they are
+used, and so is the pair functional equation (section 1.6).
 
-This note maps the objective of that task to the published Lean declarations
-at Library commit `7103f5282c4897716543f227940fdb2a0e12e70e`, environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). Modules are given relative to
+This note maps them to the published Lean declarations
+at Library commit `7103f5282c4897716543f227940fdb2a0e12e70e` (Lean 4.34.0,
+Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). Modules are given relative to
 `Langlands/`. Consume them by Lean name from the current Library; the commit
 and the hashes in section 3 fix the versions described here.
 
@@ -39,21 +34,21 @@ them.
 | `Global/Arithmetic/ClassFieldStatement` | `Langlands.Global.{HasArithmeticArtinNormalization, FiniteAbelianArtinReciprocityStatement, OpenIdeleClassSubgroupFiniteIndexStatement, FiniteAbelianClassFieldExistenceStatement, FiniteAbelianClassFieldKernelRigidityStatement, FiniteOrderHeckeArtinRealizationStatement, FiniteAbelianClassFieldStatement}` | Artin–Tate (2009) VII §3 Thm 9 and Cors 2–3, pp.51–52; VIII §§1–2, pp.55–57 | Unproved |
 | `Global/Arithmetic/ArtinNormStatement` | `Langlands.Global.{ArtinNormKernelStatement, LocalGlobalNormImageStatement, AbelianIdeleNormIndexStatement, HeckeNormFactorizationStatement, ArtinNormComparisonStatement}` | Artin–Tate VII §3, pp.41–52; VIII §1 Thm 2, pp.55–56; Tate 1979 §1.4.1 | Unproved |
 | `Global/Arithmetic/ChebotarevStatement` | `Langlands.Global.{ChebotarevPrimeRealizationStatement, FiniteGaloisFrobeniusRigidityStatement, ChebotarevRigidityStatement}` | Neukirch VII §13 Thm 13.4, pp.545–546; Serre 1977 Part I §§1–2 | Unproved |
-| `ClassField/Global/FundamentalClassStatement` (with constructions in `Global/AdelicFunctoriality/Inclusion`) | `Langlands.ClassField.Global.GlobalFundamentalClassStatement` | Artin–Tate VI Thm 1, VII Thms 7–8, 11–12, XIV §3; Tate 1979 §§1.2, 1.6 | Published proof `Langlands.ClassField.Global.globalFundamentalClassStatement` (`ClassField/Global/FundamentalClassProof`) |
-| `ClassField/Global/LocalRelativeWeilMap` (definitions) | `Langlands.ClassField.Global.RelativeWeilGroup.IsLocalRelativeWeilMap` and helpers | Tate 1979 (1.2), (1.4.1), §1.5, (1.6.1); Artin–Tate XV §1 | Definition |
-| `ClassField/Global/LocalRelativeWeilMapStatement` | `Langlands.ClassField.Global.{LocalRelativeWeilMapConjugacyStatement, LocalRelativeWeilMapExistenceStatement, LocalRelativeWeilMapStatement}` | Tate 1979 §1.5, (1.6.1); Artin–Tate XV §1 | Unproved |
-| `ClassField/Global/RelativeWeilTransfer` (definitions) | `Langlands.ClassField.Global.RelativeWeilGroup.transfer` and helpers | Artin–Tate XIII §2, XV §1; Tate 1979 §1.2 | Definition |
-| `ClassField/Global/RelativeWeilTransferReciprocityStatement` | `Langlands.ClassField.Global.RelativeWeilGroup.RelativeWeilTransferReciprocityStatement` | Artin–Tate XV Thm 1; Tate 1979 §1.2 | Published proof `relativeWeilTransferReciprocity` (`ClassField/Global/RelativeWeilTransferReciprocityProof`) |
-| `Automorphic/AssociatedUniquenessStatement` | `Langlands.ClassField.Global.RelativeWeilGroup.{WeakEquivalenceRigidityStatement, AssociatedRepresentationUniquenessStatement, AssociatedClassUniquenessStatement, AssociatedUniquenessStatement}` | Henniart 2000 §2.2, p.444; Jacquet–Shalika 1981 II Thm 4.2 | Unproved |
-| `ClassField/Global/{RelativeWeilMap, AbsoluteWeilGroup, AbsoluteLocalWeilMap}` (definitions, Worker 8) | `Langlands.ClassField.Global.{RelativeWeilGroup.IsWeilMap, WeilMapSystem, WeilMapSystem.WeilGroup, WeilMapSystem.toLevel, WeilMapSystem.IsLocalWeilMap}` | Artin–Tate XV §1, pp.167–180; Tate 1979 (1.4.1), (1.6.1) | Definition |
-| `ClassField/Global/AbsoluteWeilGroupStatement` | `Langlands.ClassField.Global.{WeilMapExistenceStatement, WeilMapSystemExistenceStatement, WeilLevelSurjectiveStatement, LocalWeilMapExistenceStatement, LocalWeilMapConjugacyStatement, LocalWeilMapLiftStatement, WeilRepresentationFactorizationStatement, AbsoluteWeilGroupStatement}` | Artin–Tate XV Thms 1–3, pp.168–171, p.177, the lemmas on pp.178–179 and Thm 7, pp.179–180; Tate 1979 (1.6.1) and §2.1 | Unproved |
-| `Automorphic/Unramified/{AbsoluteWeilAssociation, IsobaricWeilAssociation}` (definitions, Worker 8) | `Langlands.ClassField.Global.WeilMapSystem.{inflate, localComponent, IsWeaklyAssociated, IsWeaklyAssociatedClass, IsWeaklyAssociatedIsobaric}` and the relative `IsWeaklyAssociatedIsobaric` | Henniart 2000 §2.2, pp.443–444 | Definition |
+| `ClassField/Global/FundamentalClassStatement` (with constructions in `Global/AdelicFunctoriality/Inclusion`) | `Langlands.ClassFieldTheory.Global.GlobalFundamentalClassStatement` | Artin–Tate VI Thm 1, VII Thms 7–8, 11–12, XIV §3; Tate 1979 §§1.2, 1.6 | Published proof `Langlands.ClassFieldTheory.Global.globalFundamentalClassStatement` (`ClassField/Global/FundamentalClassProof`) |
+| `ClassField/Global/LocalRelativeWeilMap` (definitions) | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.IsLocalRelativeWeilMap` and helpers | Tate 1979 (1.2), (1.4.1), §1.5, (1.6.1); Artin–Tate XV §1 | Definition |
+| `ClassField/Global/LocalRelativeWeilMapStatement` | `Langlands.ClassFieldTheory.Global.{LocalRelativeWeilMapConjugacyStatement, LocalRelativeWeilMapExistenceStatement, LocalRelativeWeilMapStatement}` | Tate 1979 §1.5, (1.6.1); Artin–Tate XV §1 | Unproved |
+| `ClassField/Global/RelativeWeilTransfer` (definitions) | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.transfer` and helpers | Artin–Tate XIII §2, XV §1; Tate 1979 §1.2 | Definition |
+| `ClassField/Global/RelativeWeilTransferReciprocityStatement` | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.RelativeWeilTransferReciprocityStatement` | Artin–Tate XV Thm 1; Tate 1979 §1.2 | Published proof `relativeWeilTransferReciprocity` (`ClassField/Global/RelativeWeilTransferReciprocityProof`) |
+| `Automorphic/AssociatedUniquenessStatement` | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.{WeakEquivalenceRigidityStatement, AssociatedRepresentationUniquenessStatement, AssociatedClassUniquenessStatement, AssociatedUniquenessStatement}` | Henniart 2000 §2.2, p.444; Jacquet–Shalika 1981 II Thm 4.2 | Unproved |
+| `ClassField/Global/{RelativeWeilMap, AbsoluteWeilGroup, AbsoluteLocalWeilMap}` (definitions) | `Langlands.ClassFieldTheory.Global.{RelativeWeilGroup.IsWeilMap, WeilMapSystem, WeilMapSystem.WeilGroup, WeilMapSystem.toLevel, WeilMapSystem.IsLocalWeilMap}` | Artin–Tate XV §1, pp.167–180; Tate 1979 (1.4.1), (1.6.1) | Definition |
+| `ClassField/Global/AbsoluteWeilGroupStatement` | `Langlands.ClassFieldTheory.Global.{WeilMapExistenceStatement, WeilMapSystemExistenceStatement, WeilLevelSurjectiveStatement, LocalWeilMapExistenceStatement, LocalWeilMapConjugacyStatement, LocalWeilMapLiftStatement, WeilRepresentationFactorizationStatement, AbsoluteWeilGroupStatement}` | Artin–Tate XV Thms 1–3, pp.168–171, p.177, the lemmas on pp.178–179 and Thm 7, pp.179–180; Tate 1979 (1.6.1) and §2.1 | Unproved |
+| `Automorphic/Unramified/{AbsoluteWeilAssociation, IsobaricWeilAssociation}` (definitions) | `Langlands.ClassFieldTheory.Global.WeilMapSystem.{inflate, localComponent, IsWeaklyAssociated, IsWeaklyAssociatedClass, IsWeaklyAssociatedIsobaric}` and the relative `IsWeaklyAssociatedIsobaric` | Henniart 2000 §2.2, pp.443–444 | Definition |
 
 The Weil-side rigidity of Henniart 2000 §2.2 is stated at the finite relative
 level `W_{E/F}` (`WeakEquivalenceRigidityStatement`). The global
 representations that Henniart's construction feeds into it, inductions of
 Hecke characters from finite extensions, factor through such a group. The
-absolute group `W_F` is now Worker 8's `WeilMapSystem.WeilGroup`, the inverse
+absolute group `W_F` is now the `WeilMapSystem.WeilGroup`, the inverse
 limit of the relative groups along a system of Weil maps for a fixed algebraic
 closure `Ω`. `AbsoluteWeilGroupStatement` states the arithmetic inputs that make
 this object the Weil group: existence of the Weil maps and of a system,
@@ -93,12 +88,11 @@ printed; both pairs record this, and the targets add no odd-prime restriction.
 | `Automorphic/Unramified/CuspidalSpectralRigidityStatement` | `Langlands.Automorphic.Unramified.{CuspidalPowerTraceIndependenceStatement, CuspidalPowerTraceConstituentRecoveryStatement, CuspidalEulerConstituentRecoveryStatement, CuspidalSpectralRigidityStatement}` | Jacquet–Shalika 1981 II Thm 4.2 and the multiplicity step of Thm 4.4, pp.805–809 | Unproved |
 | `Automorphic/Unramified/HeckeCharacterRigidityStatement` | `Langlands.Automorphic.Unramified.{HeckeFiniteRamificationStatement, HeckePowerTraceIndependenceStatement, HeckeEulerProductRigidityStatement, HeckeLocalComponentRigidityStatement, HeckeCharacterRigidityStatement}` | Rank-one case of the same; Tate 1979 §§2–3 | Unproved |
 | `Automorphic/Unramified/TraceAlgebraStatement` | `Langlands.Automorphic.Unramified.{EulerProductTraceStatement, InductionPolynomialTraceStatement, InductionPolynomialDegreeStatement, TraceAlgebraStatement}` | Polynomial algebra behind JS81 Thm 4.2 and the induction formulas of Tate 1979 (2.3.5) | Components proved: `eulerProductTrace`, `inductionPolynomialTrace`, `inductionPolynomialDegree` |
-| `Automorphic/IsobaricData` (definitions, Worker 8) | `Langlands.Automorphic.IsobaricData` (multisets of `PositiveRankCuspidalClass`) with `IsobaricData.{rank, ofCuspidal, IsUnitary, HasSpectralSystem}` | Arthur–Clozel 1989 III Def. 4.1, p.202 | Definition |
+| `Automorphic/IsobaricData` (definitions) | `Langlands.Automorphic.IsobaricData` (multisets of `PositiveRankCuspidalClass`) with `IsobaricData.{rank, ofCuspidal, IsUnitary, HasSpectralSystem}` | Arthur–Clozel 1989 III Def. 4.1, p.202 | Definition |
 
 The constituent-recovery targets compare finite lists of actual cuspidal
 classes (repetitions allowed) through their unramified Euler products. That
-is the isobaric rigidity of JS81 Thm 4.4 in terms of cuspidal data. Worker 8's
-`IsobaricData` packages such lists as multisets of positive-rank cuspidal
+is the isobaric rigidity of JS81 Thm 4.4 in terms of cuspidal data. The `IsobaricData` packages such lists as multisets of positive-rank cuspidal
 classes, the constituent data of the representations induced from cuspidal
 data. A comparison with realized isobaric representations is not stated,
 because no realized isobaric object is in the Library (section 5).
@@ -107,8 +101,8 @@ because no realized isobaric object is in the Library (section 5).
 
 | Module | Declarations | Original source | Proof status |
 | --- | --- | --- | --- |
-| `Representation/Unramified/WeakTransfer`, `Automorphic/Unramified/WeakTransfer` (definitions) | `Langlands.Unramified.SpectralSystem.{IsArithmeticWeakBaseChangeOf, IsArithmeticWeakInductionOf}`; `Langlands.Automorphic.CuspidalOperatorRealization.IsoClass.{IsWeakBaseChangeOf, IsWeakInductionOf}` | Arthur–Clozel 1989 III Def. 1.1, p.199; Def. 6.1 and (6.1)–(6.2), pp.215–216 | Definition (focused task `04d260ad`) |
-| `Automorphic/FiniteOrderDeterminantTwist` (definitions) | `Langlands.Automorphic.OperatorRealization.IsFiniteOrderDeterminantTwist` and `Langlands.Automorphic.CuspidalOperatorRealization.IsoClass.IsFiniteOrderDeterminantTwist`; the norm condition is `Langlands.Global.HeckeCharacter.IsTrivialOnNorm` (`Global/HeckeCharacterFiniteOrder`) | Arthur–Clozel III.3.1 conclusion | Definition (focused task `8ff39111`) |
+| `Representation/Unramified/WeakTransfer`, `Automorphic/Unramified/WeakTransfer` (definitions) | `Langlands.Unramified.SpectralSystem.{IsArithmeticWeakBaseChangeOf, IsArithmeticWeakInductionOf}`; `Langlands.Automorphic.CuspidalOperatorRealization.IsoClass.{IsWeakBaseChangeOf, IsWeakInductionOf}` | Arthur–Clozel 1989 III Def. 1.1, p.199; Def. 6.1 and (6.1)–(6.2), pp.215–216 | Definition |
+| `Automorphic/FiniteOrderDeterminantTwist` (definitions) | `Langlands.Automorphic.OperatorRealization.IsFiniteOrderDeterminantTwist` and `Langlands.Automorphic.CuspidalOperatorRealization.IsoClass.IsFiniteOrderDeterminantTwist`; the norm condition is `Langlands.Global.HeckeCharacter.IsTrivialOnNorm` (`Global/HeckeCharacterFiniteOrder`) | Arthur–Clozel III.3.1 conclusion | Definition |
 | `Automorphic/Unramified/CyclicCuspidalFiberStatement` | `Langlands.Unramified.SpectralSystem.SameResidueDegreePowers`, `Langlands.Automorphic.Unramified.CyclicCuspidalFiberStatement` | Arthur–Clozel III Thm 3.1, p.201 | Unproved |
 | `Automorphic/Unramified/WeakInduction`, `Automorphic/WeakAutomorphicInduction` (definitions) | `Langlands.Unramified.SpectralSystem.IsWeakInductionOf`; `Langlands.Automorphic.CuspidalOperatorRealization.IsoClass.IsWeakAutomorphicInductionOf` | Harris 1998 Def. 1.3(b), p.186 (corrected to the sum over places above, Tate 1979 (2.3.5)) | Definition |
 | `Global/ArchimedeanCompactTransport`, `Automorphic/ArithmeticTransportRelation` (definitions) | `Langlands.Global.ArchimedeanCompactTransport.{realPlace, complexPlace, compactEquiv}`; `Langlands.Automorphic.OperatorRealization.{ArithmeticTransportEquations, IsArithmeticTransport}` and the cuspidal class forms `Langlands.Automorphic.CuspidalOperatorRealization.IsoClass.{IsArithmeticTransport, IsGaloisConjugate, IsGaloisStable}` | Arthur–Clozel III §4, p.202 (`Π^σ`); III §6, p.217 | Definition |
@@ -135,21 +129,19 @@ Lemma III.6.6 are not stated (section 5).
 | `Global/Factors/HeckeFunctionalEquationStatement` | `Langlands.Global.HeckeGlobalFunctionalEquationStatement` with helpers in `Langlands.Global.HeckeFunctionalEquation` | Tate 1979 Thm 3.5.3, pp.15–16; Weil 1973 II.5 and VII.2 | Published proof `heckeGlobalFunctionalEquation_proof` (`Global/Factors/HeckeFunctionalEquationProof`) |
 | `Representation/Archimedean/{SmoothVectors, GeneralLinear, Induction, StandardModule}` (definitions) | Smooth vectors, generic Banach representations of `GL_N(ℝ)`, `GL_N(ℂ)`, normalized induction, local-coefficient relation, standard-module parameters | Shahidi 1985 §§1–3; Shahidi 1984 pp.72–73; Knapp 1994 | Definition |
 | `Representation/Archimedean/LocalCoefficientGammaStatement` | `Langlands.Archimedean.{RealLocalCoefficientGammaStatement, ComplexLocalCoefficientGammaStatement, LocalCoefficientGammaStatement}` | Shahidi 1985 Thms 3.1 and 3.13, Remark 2, pp.990–991, 1003 | Unproved |
-| `Automorphic/ArchimedeanPlaceParameter`, `LocalFactor/ArchimedeanPairFactor` (definitions, Worker 8) | `Langlands.Automorphic.OperatorRealization.{HasRealPlaceParameter, HasComplexPlaceParameter}` and their class forms; `Langlands.LocalFactor.Archimedean.{realPairLFactor, realPairEpsilon, complexPairLFactor, complexPairEpsilon}` | Knapp 1994, pp.399–403, Thms 1–2, 4–5; Tate 1979 (2.2.2), §§3.1–3.4 | Definition |
-| `Global/Factors/CuspidalPairFactorData` (definitions, Workers 1794 and 1802) | `Langlands.Global.CuspidalPairFunctionalEquation.{FinitePairFactorChoice, IsUnramifiedOutside, CompletedEquationHolds}` and helpers | JPSS 1983 (9.4), p.458; Henniart 2002 §2.8, p.596; Cogdell 2004 §3, pp.211–217 | Definition |
-| `Global/Factors/CuspidalPairFunctionalEquationStatement` (Worker 5013) | `Langlands.Global.CuspidalPairGlobalFunctionalEquationStatement` | Henniart 1986 §2.10, p.155; Cogdell 2004 Thm 4.1, p.219; Getz–Hahn 2024 Thm 11.7.1, p.309 | Unproved |
+| `Automorphic/ArchimedeanPlaceParameter`, `LocalFactor/ArchimedeanPairFactor` (definitions) | `Langlands.Automorphic.OperatorRealization.{HasRealPlaceParameter, HasComplexPlaceParameter}` and their class forms; `Langlands.LocalFactor.Archimedean.{realPairLFactor, realPairEpsilon, complexPairLFactor, complexPairEpsilon}` | Knapp 1994, pp.399–403, Thms 1–2, 4–5; Tate 1979 (2.2.2), §§3.1–3.4 | Definition |
+| `Global/Factors/CuspidalPairFactorData` (definitions) | `Langlands.Global.CuspidalPairFunctionalEquation.{FinitePairFactorChoice, IsUnramifiedOutside, CompletedEquationHolds}` and helpers | JPSS 1983 (9.4), p.458; Henniart 2002 §2.8, p.596; Cogdell 2004 §3, pp.211–217 | Definition |
+| `Global/Factors/CuspidalPairFunctionalEquationStatement` | `Langlands.Global.CuspidalPairGlobalFunctionalEquationStatement` | Henniart 1986 §2.10, p.155; Cogdell 2004 Thm 4.1, p.219; Getz–Hahn 2024 Thm 11.7.1, p.309 | Unproved (derived from `CuspidalPairCompletedEquationStatement` by `cuspidalPairFunctionalEquationReduction`, with the proved `cuspidalPairLocalData` and `cuspidalArchimedeanParameterExistence`) |
 
 The Galois-side functional equation for twisted pairs of relative Weil
 representations is `Langlands.Global.FunctionalEquationComparison.RelativeWeilTwistFunctionalEquationStatement`
-(`Global/Factors/RelativeWeilFunctionalEquationStatement`), authored by
-Worker 84 under program `34b81620-20d7-4059-9b08-6bedd1c1c029`; it is reused,
+(`Global/Factors/RelativeWeilFunctionalEquationStatement`); it is reused,
 not duplicated. The completed Rankin–Selberg equation for pairs of actual
-cuspidal realizations is `CuspidalPairGlobalFunctionalEquationStatement`, stated
-by Worker 5013 in focused task `876d1f0c-d287-4743-adf6-aef3a9efb5ba` (Task 5013,
-under program `34b81620`). Its finite places use `CuspidalPairFactorData`. At
-each infinite place it uses Worker 8's parameters of the realizations (an
+cuspidal realizations is `CuspidalPairGlobalFunctionalEquationStatement`. Its
+finite places use `CuspidalPairFactorData`. At
+each infinite place it uses the parameters of the realizations (an
 injective `(𝔤_v, K_v)`-equivariant map from the `K`-finite standard module of a
-block list into the realization) and Worker 8's pair factors of those
+block list into the realization) and the pair factors of those
 parameters. It covers cuspidal pairs, as Henniart 2000 §2.4 needs; pairs of
 noncuspidal representations are not stated (section 5). Its Markdown records the
 normalizations (shift `1 − s`, actual contragredient pair, sign, self-dual
@@ -166,18 +158,19 @@ p.159). Both are proved. The local stability of gamma factors under such twists
 exceptional-set comparison engine (`Global/Factors/FiniteComparisonStatement`,
 Henniart 1986 §4.3 (2), (4), (5)) belong to the local-factor branch
 (`Langlands/LocalFactor/RankOneStabilityStatement` and the Deligne–Henniart
-modules) and to program `34b81620` (row H1). This task does not restate them.
+modules) and to the relative global construction (row H1). This note's
+statements do not restate them.
 
 ### 1.8 Weak-association gamma comparison, pole regions and separation
 
 | Module | Declarations | Original source | Proof status |
 | --- | --- | --- | --- |
-| `Automorphic/Unramified/RelativeWeilAssociation` (definitions) | `Langlands.ClassField.Global.RelativeWeilGroup.{localComponent, localPairClass, localEulerPolynomial, IsUnramifiedMatchAt, IsWeaklyAssociated, IsWeaklyAssociatedClass}` | Henniart 2000 §2.2, pp.443–444 | Definition |
-| `Automorphic/AssociatedFactorStatement` | `Langlands.ClassField.Global.RelativeWeilGroup.{AssociatedGammaStatement, AssociatedTemperedFactorStatement, AssociatedSupercuspidalInductionStatement, AssociatedCuspidalFactorStatement, AssociatedFactorStatement}` and match predicates | Henniart 2000 Thm 2.3, Cor. 2.3, Thm 2.4, Cor. 2.4, pp.444–445 | Unproved |
+| `Automorphic/Unramified/RelativeWeilAssociation` (definitions) | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.{localComponent, localPairClass, localEulerPolynomial, IsUnramifiedMatchAt, IsWeaklyAssociated, IsWeaklyAssociatedClass}` | Henniart 2000 §2.2, pp.443–444 | Definition |
+| `Automorphic/AssociatedFactorStatement` | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.{AssociatedGammaStatement, AssociatedTemperedFactorStatement, AssociatedSupercuspidalInductionStatement, AssociatedCuspidalFactorStatement, AssociatedFactorStatement}` and match predicates | Henniart 2000 Thm 2.3, Cor. 2.3, Thm 2.4, Cor. 2.4, pp.444–445 | Unproved |
 | `Automorphic/Contragredient` (definitions) | `Langlands.Automorphic.OperatorRealization.IsContragredientOf` and class forms | Henniart 2000 §2.2, p.444 | Definition |
-| `Automorphic/AssociatedContragredientStatement` | `Langlands.ClassField.Global.RelativeWeilGroup.PresentedContragredientAssociationStatement` | Henniart 2000 §2.2, p.444 | Published proof `Langlands.ClassField.Global.RelativeWeilGroup.presentedContragredientAssociation` (`Automorphic/Unramified/ContragredientAssociation`) |
-| `Automorphic/AssociatedContragredientStatement` | `Langlands.ClassField.Global.RelativeWeilGroup.{ClassContragredientAssociationStatement, AssociatedContragredientStatement}` | Henniart 2000 §2.2, p.444 | Unproved. `classContragredientAssociation_of_dualPresentationExistence` (`Automorphic/Unramified/ContragredientAssociation`) proves the class form only under the hypothesis `Langlands.Automorphic.CuspidalDualPresentationExistenceStatement`, itself unproved |
-| `Automorphic/AssociatedDeterminantTwistStatement` | `Langlands.ClassField.Global.RelativeWeilGroup.{reciprocityCharacter, PresentedDeterminantAssociationStatement, PresentedTwistAssociationStatement, ClassTwistAssociationStatement, AssociatedDeterminantTwistStatement}` | Henniart 2000 §2.2, p.444 | Unproved |
+| `Automorphic/AssociatedContragredientStatement` | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.PresentedContragredientAssociationStatement` | Henniart 2000 §2.2, p.444 | Published proof `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.presentedContragredientAssociation` (`Automorphic/Unramified/ContragredientAssociation`) |
+| `Automorphic/AssociatedContragredientStatement` | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.{ClassContragredientAssociationStatement, AssociatedContragredientStatement}` | Henniart 2000 §2.2, p.444 | Unproved. `classContragredientAssociation_of_dualPresentationExistence` (`Automorphic/Unramified/ContragredientAssociation`) proves the class form only under the hypothesis `Langlands.Automorphic.CuspidalDualPresentationExistenceStatement`, itself unproved |
+| `Automorphic/AssociatedDeterminantTwistStatement` | `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.{reciprocityCharacter, PresentedDeterminantAssociationStatement, PresentedTwistAssociationStatement, ClassTwistAssociationStatement, AssociatedDeterminantTwistStatement}` | Henniart 2000 §2.2, p.444 | Unproved |
 | `Global/Factors/WeilPoleRegionStatement` | `Langlands.Global.{EssentiallyUnitaryPoleRegionStatement, NonJuxtaposedPoleRegionStatement, WeilPairPoleRegionStatement}` | Henniart 1986 Prop. 4.5(i), pp.159–160 | Unproved |
 | `Global/Factors/GLPoleRegionStatement` | `Langlands.Global.{EqualRankPoleRegionStatement, UnequalRankPoleRegionStatement, GLPairPoleRegionStatement}` | Henniart 1986 Prop. 4.5(ii), pp.159–160 | Unproved |
 | `Global/Factors/SeparationStatement` | `Langlands.Global.{GammaPolynomialSeparationStatement, ReflectedRootRegionStatement, GammaSeparationStatement}` | Henniart 1986 §4.4 Lemma, p.159 | Published proof `Langlands.Global.gammaSeparation` (`Global/Factors/SeparationProof`) |
@@ -202,11 +195,11 @@ splits, the normal closure and completion identifications, two pairs of
 conjugate places, general position at the auxiliary place, and the regular,
 conjugate-inverse, algebraic (Harris p.195 normalization) infinity type. It has
 no `n < p` restriction. Its proof needs Harris's Theorems 1.2 and 1.7 with
-general cohomological coefficients (owned by the cohomological branch,
-`bd93b48c-db25-4739-89f5-97cabc0f6491`) and the Arthur–Clozel inputs of
+general cohomological coefficients (the cohomological branch; see
+[the Galois-family coverage note](galois-family-coverage.md)) and the Arthur–Clozel inputs of
 section 1.5.
 
-## 2. Further prerequisite constructions built under this task
+## 2. Further prerequisite constructions
 
 - `Global/AdeleQuotientStatement`: `Langlands.Global.{principalAdeles, AdeleQuotient, adeleQuotientMap}` and
   `AdeleQuotientStatement` (Cassels §§13–14; Weil, *Basic Number Theory* IV §2 Thm 2), proved by
@@ -222,8 +215,8 @@ section 1.5.
 ## 3. Exact versions at Library `7103f528`
 
 Lean / Markdown SHA-256, first twelve hex digits; the full values can be
-recomputed from the Library at that commit. The first table covers the units
-authored under this task or its focused delegated tasks.
+recomputed from the Library at that commit. The first table covers the modules
+this note describes.
 
 | Module | Lean | Markdown |
 | --- | --- | --- |
@@ -291,9 +284,8 @@ Several files differ from their frozen candidate hashes because of later
 published corrections (the `HarrisSetup` infinity-type correction and
 documentation-only audits). The table records the files at the stated commit.
 
-Reused units of other tasks that complete clauses of section 1 (Worker 8's
-definitions and Task 5013's pair functional equation) are recorded here at the
-same commit. Other reused units are named in section 1 and consumed by Lean name.
+Reused modules that complete clauses of section 1 (the definitions and the pair functional equation) are recorded here at the
+same commit. Other reused modules are named in section 1 and consumed by Lean name.
 
 | Module | Lean | Markdown |
 | --- | --- | --- |
@@ -334,16 +326,15 @@ These are explained in the pairs' Markdown and kept visible here:
 - Weak association, weak base change and weak induction are almost-everywhere
   unramified relations only; no ramified local compatibility is asserted.
 
-## 5. Remaining statements, owners and gates
+## 5. Remaining statements and their prerequisites
 
-| Missing statement | Needed actual objects | Owner and gate |
+| Missing statement | Needed actual objects | Status and prerequisites |
 | --- | --- | --- |
-| Arthur–Clozel III.5.1 (strong base change: local base change at every place) | Local base-change character relations at finite and archimedean places | Not started; local base change has no Library object. The Henniart and Harris 1998 steps covered here use only the weak relations of section 1.5. Harris 1999 Thm 5.9 uses base change with supercuspidal-place control; that belongs to the cohomological branch (`bd93b48c-db25-4739-89f5-97cabc0f6491`) |
+| Arthur–Clozel III.5.1 (strong base change: local base change at every place) | Local base-change character relations at finite and archimedean places | Not stated; at the commit above local base change has no Library object. The Henniart and Harris 1998 steps covered here use only the weak relations of section 1.5. Harris 1999 Thm 5.9 uses base change with supercuspidal-place control; that belongs to the cohomological branch |
 | Arthur–Clozel Cor. III.6.5 and Lemma III.6.6 (lifts and inductions through stabilizers) | None beyond section 1.5 | Not stated; not used by the steps covered here |
 | Noncuspidal forms: the Rankin–Selberg functional equation for pairs of noncuspidal automorphic representations (Henniart 1986 §2.10, Thm 4.1) and Henniart 2000 Thm 2.3 and Cor. 2.3 for noncuspidal `Π` | Realized isobaric representations with their local components and archimedean parameters | Not stated. The cuspidal forms are in sections 1.6 and 1.8; Henniart 2000 §2.4 and Thm 2.4, Cor. 2.4 concern cuspidal representations. Depends on the realized objects of the next row |
-| Comparison with realized isobaric representations (JS81 Thm 4.4 in full; Arthur–Clozel statements for realized induced representations) | Realized normalized induced-from-cuspidal representations | Task `6c50b2fd`; program `34b81620`. The data-level statements of section 1.5 do not depend on it |
+| Comparison with realized isobaric representations (JS81 Thm 4.4 in full; Arthur–Clozel statements for realized induced representations) | Realized normalized induced-from-cuspidal representations | Not stated in this note. The data-level statements of section 1.5 do not depend on it |
 | Uniqueness of archimedean place parameters, and their transport along field isomorphisms | Langlands classification for `GL_n(ℝ)`, `GL_n(ℂ)` (Knapp 1994); conjugation of complex standard modules | Not stated. Block lists are not unique as lists (order; weight-zero induced blocks; weights `k` and `−k`), so uniqueness must compare the attached Weil representations. Needed only once a statement compares parameters of different presentations |
 
-All proofs of the unproved statements in section 1 are separate obligations.
-Several already have focused proof tasks; consult the task pool and the shared
-proof DAG node of each statement.
+All proofs of the unproved statements in section 1 are separate obligations;
+section 1 gives their status at the commit above.

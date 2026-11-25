@@ -128,7 +128,8 @@ this theorem, for the later results of A.VI.3. They are not premises here.
 **Proof provenance.** The source gives no proof. It says that the theorem
 follows from the Noether isomorphisms A.VI.2, 9 ("se démontre à partir des
 isomorphismes de Noether"). This is recorded as provenance only; no proof is
-implemented in this module. A separate proof unit must prove this statement.
+implemented in this module. The statement is proved by `jordanHolder` in
+`Langlands.CategoryTheory.Renard.JordanHolder`.
 
 **Errata.** The 2010 corrections (`renard-2010-corrections-complements`) are
 for a different edition and are supplementary. Their final pages (PDF pages
@@ -144,11 +145,10 @@ This module defines no numerical length of an object and no chosen multiset of
 composition factors. It states neither the simple-quotient proposition nor the
 `JH` identities of PDF page 270, nor anything about AB6 or semisimplicity. It
 does not compare with the representation-specific Jordan–Hölder modules
-elsewhere in the Library. Each of these is a separate unit.
+elsewhere in the Library. Each of these lies outside this module.
 
 ## Lean check
 
-The module compiles in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with
-no errors or warnings. Inspection reports `statement_returns_prop: true`,
+The module compiles with no errors or warnings. Inspection reports `statement_returns_prop: true`,
 universe parameters `u, v`, and only the axioms `propext`, `Classical.choice`
 and `Quot.sound`.

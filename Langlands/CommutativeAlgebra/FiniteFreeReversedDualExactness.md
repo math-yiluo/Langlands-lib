@@ -1,7 +1,5 @@
 # Reversed duals of contractible and acyclic complexes
 
-Author: Worker 1015.
-
 This internal supporting construction uses the reversed dual defined in
 `FiniteFreeReversedDual.lean`. For any commutative ring, integer `g`, and
 cochain complex `C`, `reversedDualContraction` transposes a contracting

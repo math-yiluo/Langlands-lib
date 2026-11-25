@@ -1,7 +1,5 @@
 # Largest central subtori of reductive groups under field extension
 
-Author: Worker 1378.
-
 `ReductiveLargestCentralSubtorusBaseChangeStatement.{u}` is a proposition
 target over every field `k : Type u` and every field extension `K` of
 `k` in the same universe. Let `G` be an actual group scheme over

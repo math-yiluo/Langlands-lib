@@ -1,7 +1,7 @@
-import Langlands.ClassField.Global.CompletionTower
-import Langlands.ClassField.Global.CyclicReciprocityParts
-import Langlands.ClassField.Global.H1VanishingProof
-import Langlands.ClassField.Global.ReciprocityTower
+import Langlands.ClassFieldTheory.Global.CompletionTower
+import Langlands.ClassFieldTheory.Global.CyclicReciprocityParts
+import Langlands.ClassFieldTheory.Global.H1VanishingProof
+import Langlands.ClassFieldTheory.Global.ReciprocityTower
 import Langlands.ClassFieldTheory.Local.LocalInvariantFamilyRelativeImagesProof
 import Langlands.ClassFieldTheory.Local.UnramifiedH2Proof
 import Mathlib.RingTheory.Complex
@@ -19,7 +19,7 @@ open scoped Langlands.Global.AdelicFunctoriality.InfiniteExtension
 namespace Langlands.Global
 
 open AdelicFunctoriality
-open ClassField.Global ClassFieldTheory.Local CyclicClassAlgebra
+open ClassFieldTheory.Global ClassFieldTheory.Local CyclicClassAlgebra
 
 private theorem nonempty_cyclicCoordinate (G : Type u) [Group G] [Finite G] [IsCyclic G] :
     Nonempty (G ≃* Multiplicative (ZMod (Nat.card G))) := by

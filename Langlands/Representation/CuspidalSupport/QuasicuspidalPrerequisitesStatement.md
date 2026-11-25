@@ -1,7 +1,5 @@
 # Quasicuspidal prerequisites for cuspidal embedding
 
-Author: Worker 171.
-
 This pair states three future proof targets in `Langlands.CuspidalSupport`.
 Every declaration is a proposition definition or abbreviation. No proof of
 these assertions, or assumption of their truth, is introduced. The field is

@@ -1,7 +1,5 @@
 # Actual fine quotient reflection for arbitrary tempered input
 
-Author: Worker 1080.
-
 `Langlands.glTemperedRelativeQuotientReflection` proves the unchanged
 `Langlands.GLTemperedRelativeQuotientReflectionStatement` with independent
 universes `uF`, `uV`, `uM`, `uW`, and `uZ`. The coarse representation is
@@ -59,8 +57,8 @@ A. J. Silberger, *The Langlands quotient theorem for p-adic groups*
 p.99 and conventions on pp.96–97. The registered original is
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 1080 read the entire article and inspected the relevant formula
-images. The implementation follows the public geometric proof route
+The entire article was read and the relevant formula
+images were inspected. The implementation follows the public geometric proof route
 just described, rather than asserting the source's continuation sentence.
 
 Upper induction retains right translation and positive-half-modulus

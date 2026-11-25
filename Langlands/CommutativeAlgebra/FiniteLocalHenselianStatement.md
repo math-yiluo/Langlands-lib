@@ -1,7 +1,5 @@
 # Finite local algebras over Henselian local rings
 
-Author: Worker 598.
-
 `Langlands.CommutativeAlgebra.FiniteLocalHenselianStatement.{u,v}` asserts
 that a commutative local ring `S`, finite as a module over a Henselian local
 commutative ring `R`, is Henselian. The carriers may have different arbitrary
@@ -17,7 +15,7 @@ conclusion. The registered source is
 `stacks-commutative-algebra-chapter-ed88ff78`, readable as
 `Stacks Project - Commutative Algebra, full chapter PDF (version ed88ff78).pdf`,
 SHA-256 `b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947`.
-Worker 598 read the assertion and its proof on p.414 directly. The proof uses
+The assertion and its proof on p.414 were read directly. The proof uses
 the finite-local-factor characterization in Lemma 153.3, assertion (10).
 
 This module states the proposition and provides no proof. Its intended use

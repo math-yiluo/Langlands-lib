@@ -1,6 +1,6 @@
 # Compact coefficients and escaping Iwahori contractions
 
-Worker 389 derives two abstract helpers for the compact-restriction converse.
+This module derives two abstract helpers for the compact-restriction converse.
 They concern an arbitrary topological group, independent group and vector-space
 universes, an arbitrary smooth complex representation, and an actual subgroup
 with its induced topology. No admissibility or dimension premise is used.
@@ -32,4 +32,5 @@ conclusion is that the entire actual relation submodule is top.
 This is derived internal content from the named published averaging, algebraic
 dual and Iwahori contraction results. It does not construct a contracting element,
 prove norm-kernel membership or escape, or supply a reductive-group basis.
-The exact general rational-point converse remains a separate assembly obligation.
+The exact general rational-point converse is assembled separately, by
+`rationalCompactRestrictionCuspidal` in `Aubert.General.RationalCompactRestrictionCuspidalProof`.

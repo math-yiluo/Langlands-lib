@@ -30,4 +30,4 @@ In Ξ_main the shifts are \(a_\alpha=\iota_T(t_\alpha)\) with \(t_\alpha\) in th
 
 ## Dependencies
 
-The module imports `AdelicCuspidalProductVanishing` (candidate `40366576-aa47-45e4-bdf7-45afa9ff0d4b`, Task 5499) and the published `AdelicLocalFinitenessStatement`.
+The module imports `AdelicCuspidalProductVanishing` and the published `AdelicLocalFinitenessStatement`.

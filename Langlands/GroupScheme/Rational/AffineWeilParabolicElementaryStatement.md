@@ -1,7 +1,5 @@
 # Parabolic radical generation under affine Weil restriction
 
-Author: Worker 5196.
-
 ## Lean meaning
 
 `Langlands.GroupScheme.AffineWeilParabolicElementarySubgroupStatement` is a

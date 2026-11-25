@@ -1,8 +1,5 @@
 # Proof of DynamicRingUnipotentFibresStatement
 
-Authors: Worker 125, following the proof route that Worker 3483 described in the
-context of Task 5728.
-
 `Langlands.GroupScheme.dynamicRingUnipotentFibres.{u}` has exactly the published
 proposition `Langlands.GroupScheme.DynamicRingUnipotentFibresStatement.{u}` as its type.
 The proposition is defined in `Langlands.GroupScheme.Dynamic.RingUnipotentFibresStatement`
@@ -75,16 +72,13 @@ and `Langlands.GroupScheme.SubgroupBaseChange`.
 
 ## Check
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiled the module with
-no errors or warnings. The theorem depends only on the axioms `propext`,
+The module compiled with no errors or warnings. The theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`, and has the single universe parameter `u`.
 
 ## Provenance
 
-This is an internal proof of the existing Library proposition. The route (base change of
-the representative, `Dynamic.unipotent_baseChange`, then the field case) is the one
-Worker 3483 recorded in the context of Task 5728 for a draft that did not carry over to
-this instance; Worker 125 wrote this Lean proof and explanation. The mathematical
+This is an internal proof of the existing Library proposition. The route is base change of
+the representative, `Dynamic.unipotent_baseChange`, then the field case. The mathematical
 statement and its original-source interpretation (Conrad–Gabber–Prasad, *Pseudo-reductive
 groups*, Lemma 2.1.5; Conrad, *Reductive group schemes*, Theorem 4.1.7(4)) are those of
 the unchanged published statement pair.

@@ -53,8 +53,6 @@ invariance hypothesis.
 The construction is derived internal mathematics. Its inputs are the published
 smooth induction, smooth contragredient, smooth lifting, and Mathlib's scalar
 Bochner integration. It makes no attribution to an unread external source.
-Worker 166 implemented the construction; Worker 14 supplied design feedback
-about the coefficient-map compatibility.
 
 The proof of bilinearity applies `integral_add` using the supplied integrability
 of each summand and `integral_smul` for scalar multiplication. For equivariance,

@@ -1,22 +1,17 @@
 # Harris's function modules `D_m(K_ℓ)` and the identifications (3.10), (3.11)
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.DefiniteFormsDoubleCoset` (Worker 61: `localLevel`,
+Built on the published
+`Langlands.Shimura.DefiniteFormsDoubleCoset` (`localLevel`,
 `localLevelMap`, `ellModuleForms`, `LocalLevelFree`, `congruenceLevel`,
 `congruenceLevel_le`, `congruenceLevelEquiv`,
 `congruenceLevelEquiv_apply_mk`), `Langlands.Shimura.EquivariantForms`
-(Worker 61: `forms`, `levelAction`),
-`Langlands.Shimura.EquivariantFormsDoubleCoset` (Worker 61:
-`DoubleCosets`), `Langlands.Shimura.EquivariantFormsTensor` (Worker 61:
-`EquivariantForms.invariantsEquivOfEquiv`),
-`Langlands.Cohomology.DivisibleSystem.RegularFreeLimit` (Worker 61:
-`Langlands.Induction.regularRepresentation`),
-`Langlands.Representation.Induction.PermutationDual` (Worker 61:
-`Langlands.Induction.functionRepresentation`),
-`Langlands.Representation.Induction.PermutationInvariants` (Worker 61:
-`Langlands.Induction.invariantsEquivOfEquiv`) and
-`Langlands.Representation.EquivalencePullback` (`equivComp`), and on Worker
-57's similitude groups (`AlgebraInvolution.FiniteAdelicPoints`,
+(`forms`, `levelAction`),
+`Langlands.Shimura.EquivariantFormsDoubleCoset` (`DoubleCosets`), `Langlands.Shimura.EquivariantFormsTensor` (`EquivariantForms.invariantsEquivOfEquiv`),
+`Langlands.Cohomology.DivisibleSystem.RegularFreeLimit` (`Langlands.Induction.regularRepresentation`),
+`Langlands.Representation.Induction.PermutationDual` (`Langlands.Induction.functionRepresentation`),
+`Langlands.Representation.Induction.PermutationInvariants` (`Langlands.Induction.invariantsEquivOfEquiv`) and
+`Langlands.Representation.EquivalencePullback` (`equivComp`), and on the
+published similitude groups (`AlgebraInvolution.FiniteAdelicPoints`,
 `finiteAdelicDiagonal`, the topology on `σ.Points`). From Mathlib it uses
 locally constant functions (`LocallyConstant`, `LocallyConstant.comapₗ`,
 `LocallyConstant.flip`, `LocallyConstant.unflip`,
@@ -45,7 +40,7 @@ points of its similitude group (Harris's `GJ(𝔸^f)`), with the rational
 points embedded by `σ.finiteAdelicDiagonal`. `ℓ` is a finite place of `ℚ`,
 `K` is a subgroup of `σ.FiniteAdelicPoints`, `localLevel σ ℓ K` (Harris's
 `K_ℓ`) is the image of `K` under the `ℓ`-component map, a subgroup of the
-`ℓ`-adic points `σ.Points ℚ_ℓ` with the subspace topology of Worker 57's
+`ℓ`-adic points `σ.Points ℚ_ℓ` with the subspace topology of the published
 topology on `σ.Points ℚ_ℓ`, and `localLevelMap σ ℓ K : K →* localLevel σ ℓ K`
 is `k ↦ k_ℓ`. `DoubleCosets σ.finiteAdelicDiagonal K` is
 `GJ(ℚ) \ GJ(𝔸^f) / K` and `x.out` is Mathlib's chosen representative of a
@@ -188,8 +183,8 @@ declaration.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". Worker 61
-read the rendered scanned page. Printed p.308 (one-based PDF page 10),
+J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". The
+rendered scanned page was read. Printed p.308 (one-based PDF page 10),
 after (3.7) and the lattice comparison: "More generally, we can let `𝓛` be
 any continuous `K_ℓ`-module; then `𝒜_ℓ(GJ, 𝓛, K)`, defined by analogy with
 (3.7), still makes sense. For example, we may take

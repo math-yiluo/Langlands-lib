@@ -1,7 +1,5 @@
 # Testing a base uniformizer in local normalizations
 
-Worker 594.
-
 `localTensorNormalization` takes an algebra map \(B \to G\), a base
 extension \(R \to S\), and a prime \(p\) of \(B\).
 It is the integral closure of \(B_p \otimes_B (S \otimes_R B)\) in

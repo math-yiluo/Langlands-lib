@@ -1,8 +1,7 @@
 # Matrix proof of standard intersections
 
-Authors: Worker 125 and Worker 165. Worker 125 implemented the coordinate,
-conjugation, and refinement assembly arguments. The Levi membership argument
-uses Worker 165's published `Langlands.CuspidalSupport.levi_mem_iff` directly.
+The Levi membership argument uses the published
+`Langlands.CuspidalSupport.levi_mem_iff` directly.
 
 `Langlands.Geometric.padicStandardIntersectionsTheorem` proves the exact
 published proposition `Langlands.Geometric.PadicStandardIntersectionsTheorem`
@@ -11,7 +10,7 @@ pair of positive ordered block shapes, and actual minimal permutation, it
 constructs positive block refinements on both sides and proves all six
 parabolic, Levi, and unipotent subgroup equalities.
 
-The proof imports `Langlands.Geometric.monotoneBlockShape` from Worker 175's
+The proof imports `Langlands.Geometric.monotoneBlockShape` from
 `MonotoneBlocksProof`. This supplies the finite-order existence theorem;
 no theorem-truth hypothesis remains in the final theorem or in
 `exists_standardIntersections`. All published source pairs are unchanged.

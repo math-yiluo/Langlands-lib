@@ -39,6 +39,6 @@ For the translated coordinates `x = y * z * q(m) * w`, it takes
 by the dynamic centralizer and unipotent inclusions.
 
 These are internal consequences of the named Library constructions, without
-an additional literature assertion. This unit supplies field-level coordinates;
+an additional literature assertion. This module supplies field-level coordinates;
 it does not assert integral lifting or integrality of prescribed opposite
-factors and does not prove the host fixed-point theorem.
+factors and does not prove the fixed-point theorem this module serves.

@@ -17,7 +17,7 @@ set_option autoImplicit false
 
 namespace Langlands.Global
 
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 
 variable {F E' : Type} [Field F] [NumberField F] [Field E'] [NumberField E'] [Algebra F E']
   (v : FinitePlace F) (u : FinitePlace E') [u.asIdeal.LiesOver v.asIdeal]

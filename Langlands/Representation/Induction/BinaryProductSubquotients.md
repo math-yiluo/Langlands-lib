@@ -1,7 +1,5 @@
 # Actual subquotients of binary normalized products
 
-Author: Worker 357.
-
 This module constructs an actual subquotient presentation for the normalized
 binary product from supplied presentations of both factors. The accompanying
 map lemmas cover every pair of natural ranks. The provenance is internal:
@@ -183,7 +181,7 @@ new module, and **101 external import roots**. The external list records
 roots named by these project modules, not the recursive Mathlib closure.
 Every inherited Lean/Markdown pair is nonempty and byte-identical to that
 published Library base. There are no unresolved project imports, proof
-holes or new axioms. The forbidden-name and task scan found no matches;
+holes or new axioms. The forbidden-name and excluded-result scan found no matches;
 the inspected actual proof routes above supply the independence argument
 beyond that name scan.
 
@@ -202,38 +200,29 @@ representation derivative or mirabolic-theory module occurs in this
 closure. Some inherited group-definition modules define the mirabolic
 group; no derivative assertion is imported from them.
 
-The host's exclusions remain in force: generic segment-product uniqueness
-(task `30341ae4-65f2-4a0e-9283-763db01a409e`), multisegment exhaustion
-(`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head existence
-(`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), quotient coverage
-(`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), ordered conversion
-(`8252833d-c269-41a9-824c-5879e531b23b`), tempered uniqueness
-(`52e97845-36bb-457d-b76f-70753334b88c`),
-`SquareIntegrableLanglandsClassification` and its task
-`1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-(`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), and regular exhaustion
-(`bf433f0a-921a-428c-b0c0-6475438125ac`). None is an input, directly or
-transitively, nor are their conclusions or proof successors. The present
-host criterion is not an input either. The Ze80 3.5/9.6 segment derivative
-formulas and their proof successors, the excluded segment/head/socle/full
-Jacquet and classification conclusions, and the segment-socle part of
-`8e5b4563` are not used.
+The following results are excluded: generic segment-product uniqueness,
+multisegment exhaustion, ordered strong-head existence, quotient coverage,
+ordered conversion, tempered uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion,
+and regular exhaustion. None is an input, directly or
+transitively, nor are their conclusions or the modules that prove them. The
+criterion `SegmentHeadProductIrreducibility` is not an input either. The Ze80 3.5/9.6 segment derivative
+formulas and the modules that prove them, the excluded segment/head/socle/full
+Jacquet and classification conclusions, and the segment-socle results
+are not used.
 
-Operator decisions `bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920`, and
-`30144f6f9b59540b88b6d4c1517892d9` retain these exclusions while allowing
-independently proved general infrastructure. This module uses that general
+The exclusions concern these conclusions only; independently proved general
+infrastructure may be used. This module uses that general
 infrastructure only. It makes no segment derivative assertion and does
-not use the support-only permission to infer a stronger result. It
-imports none of the author's staged, unpublished constituent-extraction
-or head-duality modules.
+not use a support-only terminal-truncation bound to infer a stronger
+result. It imports no constituent-extraction or head-duality module.
 
-This unit establishes product occurrence preservation. It does not prove
+This module establishes product occurrence preservation. It does not prove
 support addition, product derivative support aggregation, nonlinkage
 survival, the linked converse, or either direction of
-`SegmentHeadProductIrreducibility`. Those remain obligations of the host.
-Compilation is a development check; independent semantic acceptance and
-Library publication are separate requirements.
+`SegmentHeadProductIrreducibility`. The criterion is proved separately, as
+`segmentHeadProductIrreducibility` in
+`Langlands.Representation.Classification.SegmentHeadProductIrreducibilityProof`.
 
 ## Project import inventory
 

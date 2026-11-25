@@ -1,7 +1,5 @@
 # The central idempotent of a two-factor decomposition
 
-Author: Worker 1842.
-
 Module `Langlands.CategoryTheory.Renard.DecompositionCenterIdempotent`, namespace
 `Langlands.Renard`.
 

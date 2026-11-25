@@ -1,7 +1,5 @@
 # Automorphic representations are determined by their local components
 
-Author: Worker 3657.
-
 `Langlands.Automorphic.LocalComponentDeterminationProof` combines the forward
 and reverse implications with the published theorem
 `Langlands.Automorphic.localComponentExistence`.
@@ -86,7 +84,6 @@ from this place-by-place intertwiner to the whole operator action.
 
 ## Axioms
 
-The Lake build in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-(development check `26abd25c-1ac9-40de-8128-e4ef871201fe`) reported zero
+A Lake build reported zero
 errors and zero warnings. `localComponentDetermination` uses `propext`,
 `Classical.choice` and `Quot.sound`.

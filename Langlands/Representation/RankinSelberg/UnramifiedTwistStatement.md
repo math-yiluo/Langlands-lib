@@ -1,6 +1,6 @@
 # Unramified twists of pair factors
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 how the L-factor and the epsilon factor of a pair change when one member is
 twisted by the unramified character `|det|^u`, `u ∈ ℂ`: both are shifted from
 `s` to `s + u`. The epsilon statement is from Henniart, *Caractérisation de la

@@ -1,7 +1,5 @@
 # Split subtori, maximal split tori, the split rank and anisotropy over a field
 
-Author: Worker 1220.
-
 This module starts the rational structure layer for group schemes over a field.
 It defines split subtori and maximal split tori of a group scheme
 `G : GroupScheme S` over `S = Spec k`, the split rank (`k`-rank) of `G` and

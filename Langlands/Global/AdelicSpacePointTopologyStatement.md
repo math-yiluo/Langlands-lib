@@ -1,7 +1,5 @@
 # Topological properties of adelic points of algebraic spaces
 
-Author: Worker 105.
-
 `AdelicSpacePointTopologyStatement` states the claims that Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), makes on printed p.17 about
 adelic points of separated algebraic spaces of finite type, for global fields of both

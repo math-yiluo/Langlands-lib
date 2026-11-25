@@ -1,6 +1,6 @@
 # The comparison maps through the cohomology of the restriction as a representation
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
 - `Langlands.Sheaf.Equivariant.TwistedExactGlobalComparison`: for an exact functor
   `incl : 𝒜 ⥤ Sheaf (twistedTopology ρ J) (ModuleCat R)`, the smooth global sections
@@ -27,10 +27,10 @@ Author: Worker 26. Builds on the following modules:
 - `Langlands.Sheaf.Equivariant.TwistedGlobalSections` and
   `Langlands.Sheaf.Equivariant.TwistedCompactSupport` (through the imports):
   `sheafGlobalSectionsRep J R`, `sheafCompactSectionsRep J R E` and their `ForgetIso`s.
-- `Langlands.Representation.Category.SmoothPartAdjunction` (Worker 13, through the
+- `Langlands.Representation.Category.SmoothPartAdjunction` (through the
   imports): `SmoothRep.toRepSmoothPartAdjunction R G`, the adjunction between the inclusion
   `SmoothRep.toRep` of smooth representations and the smooth part.
-- `Langlands.Cohomology.ExactBaseChange.Paste` (this candidate): `pasteNatTrans` and
+- `Langlands.Cohomology.ExactBaseChange.Paste` (ported together with this module): `pasteNatTrans` and
   `baseChangeNatTrans_paste_app`.
 
 All declarations are in the namespace `Langlands.Sheaf.Equivariant.TwistedOver`.
@@ -134,4 +134,4 @@ that isomorphism is `G`-equivariant. He does not state this separately or define
 explicitly. This module proves that the comparison maps commute with the actions of `G`
 defined in `TwistedRepCohomology`. That the comparison maps are isomorphisms is not proved
 here. The specializations to étale and quasi-étale `G`-sheaves are in
-`Langlands.Sheaf.Equivariant.AnalyticRepComparison` (this candidate).
+`Langlands.Sheaf.Equivariant.AnalyticRepComparison` (ported together with this module).

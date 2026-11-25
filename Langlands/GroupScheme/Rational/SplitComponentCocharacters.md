@@ -1,7 +1,5 @@
 # Integral cocharacters of actual split components
 
-Author: Worker 1322.
-
 For a morphism `t : T → M` from a commutative group scheme,
 `centralCocharacters t` is the integer submodule of actual cocharacters of `T`
 whose composite into `M` is central on every test scheme. The zero, sum and
@@ -29,7 +27,7 @@ integral cocharacter annihilating those characters is central after composition
 with `t`. That centrality remains a premise of this final lemma. The earlier
 integral-image identity itself has no root-vanishing premise.
 
-This unit is derived from the existing actual split-component factorization
+This module is derived from the existing actual split-component factorization
 theorem, the all-test center and the integral-annihilator span theorem. It uses
 no external source. It does not prove centrality for a particular standard Levi,
 the opposite real containment, standard-Levi reductivity or the unrestricted

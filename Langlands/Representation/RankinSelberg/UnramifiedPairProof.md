@@ -1,6 +1,6 @@
 # Proof of the unramified computation of Rankin–Selberg integrals
 
-Author: Worker 1797. Module `Langlands.Representation.RankinSelberg.UnramifiedPairProof`.
+Module `Langlands.Representation.RankinSelberg.UnramifiedPairProof`.
 
 ```lean
 theorem Langlands.RankinSelberg.unramifiedPair :
@@ -47,8 +47,7 @@ published `Langlands.RankinSelberg.unramifiedUnitaryPoleFree`. This module prove
   less than `exp(log r)`.
 - `unramifiedPairIntegral`:
   1. Jacquet's normalization identifies `q` with the residue cardinality, so `q > 1`.
-  2. Worker 1767's `exists_schurCauchy_radius` (module `SchurCauchyEvaluation`, the
-     reviewed candidate 42a3c57c-b573-47a8-84e9-4421690538ff, carried here unchanged),
+  2. `exists_schurCauchy_radius` (module `SchurCauchyEvaluation`, used unchanged),
      applied to the two Langlands classes, gives `r > 0` such that for `‖t‖ < r` the Schur pair terms over antitone natural
      tuples are absolutely summable, with sum `(∏_j ∏_i (1 - a_i a'_j t))⁻¹`.
   3. Take `c = -log r / log q`. For `c < Re s`, `t = q^(-s)` satisfies `‖t‖ < r`.

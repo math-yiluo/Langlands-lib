@@ -1,7 +1,5 @@
 # Character and cocharacter lattices, `End(𝔾_m) ≅ ℤ`, split tori and tori
 
-Worker 274.
-
 This module builds the lattice layer of the absolute root-datum development on
 the published `Langlands.GroupScheme` architecture: character and cocharacter
 lattices of commutative group schemes, the identification `End(𝔾_m) ≅ ℤ`, the
@@ -84,8 +82,8 @@ field) and `S = Spec k`.
   power map (`eq_gmEndEquiv_zsmul`). `gmEndEquiv_comp` says that composition
   becomes multiplication, and `gmEndEquiv_id` that the identity goes to `1`.
 
-The task allows replacing the field by a nonzero ring with connected spectrum.
-An integral domain is such a ring, and every field is an integral domain.
+Here the field is replaced by an integral domain, a nonzero ring with connected
+spectrum; every field is an integral domain.
 
 ## The pairing
 

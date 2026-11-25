@@ -1,9 +1,9 @@
 # Cancellation of coordinate poles from dense unitary bounds
 
-This derived unit isolates the elementary boundedness-to-divisibility step
+This module isolates the elementary boundedness-to-divisibility step
 used in Waldspurger (2003), V.2.3, printed p.294 / PDF p.60, and reused in
 Lemma V.3.1, printed p.295 / PDF p.61. It imports the coordinate divisibility
-unit `LaurentUnitaryHyperplaneDivisibility`. The registered original is
+module `LaurentUnitaryHyperplaneDivisibility`. The registered original is
 `waldspurger-2003-plancherel`. These lemmas concern finite Laurent polynomials,
 not an assertion that a given standard intertwiner has the required pole
 support or norm identities.

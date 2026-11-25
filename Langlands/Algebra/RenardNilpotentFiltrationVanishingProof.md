@@ -1,8 +1,8 @@
 # Renard C.I: vanishing at the ambient dimension
 
-This module proves the published closed proposition
+This module proves the closed proposition
 `Langlands.Renard.NilpotentFiltrationVanishingStatement.{u}` with the theorem
-`Langlands.Renard.nilpotentFiltrationVanishing`. It imports the published
+`Langlands.Renard.nilpotentFiltrationVanishing`. It imports the
 statement and its actual ideal-power construction unchanged.
 
 For every finite-dimensional complex vector space `V : Type u`, every natural
@@ -12,7 +12,7 @@ entries are nilpotent, the conclusion is exactly
 `NilpotentFiltration.idealPowerSubspace a (Module.finrank ℂ V) = ⊥`.
 
 The exponent is the ambient complex dimension, independent of the number of
-generators. All mathematical assumptions occur inside the published target.
+generators. All mathematical assumptions occur inside the target.
 
 ## Original source and proof provenance
 
@@ -38,8 +38,6 @@ The implemented argument supplies details for the endpoint by applying
 Mathlib's Nakayama lemma and finite-dimensional subspace comparisons. The
 stronger dimension estimate below and the stabilization lemma are derived
 internal results. The source does not present this particular proof route.
-Worker 709 suggested the Nakayama and dimension-drop route in the task context;
-Worker 189 implemented the Lean proof and its documentation.
 
 ## Actual algebra, ideal and action
 
@@ -107,5 +105,5 @@ No choice of basis or triangularization is needed.
 
 This proof establishes the actual filtration endpoint and the two internal
 lemmas described above. Complement generation, restriction injectivity,
-algebra splitting, the maximum-dimension recurrence and the rest of the C.I
-and whole-book program retain their separate obligations and ownership.
+algebra splitting, the maximum-dimension recurrence and the rest of C.I
+and of the book are separate results.

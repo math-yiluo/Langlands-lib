@@ -71,14 +71,14 @@ Chapter VII, Lemma (7.16)(i) and Corollary (7.17), printed p.104
 additivity hypothesis. Registered source:
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-No source errata note was present in the admission Library. The scalar
+No source errata note was present in the Library. The scalar
 extension and uniqueness proof here are algebraic deductions, not a
 claim that this passage states the Lean rational construction.
 
 No proof of the geometric additivity or geometry statements is supplied.
-Their separate proof tasks are respectively
-`b71714f0-c50a-4258-94ac-e065ce455f61` and
-`19d345c7-a011-41ac-a9b9-bb37a32f14a1`. Universal-family existence and
+They are proved separately, as `fieldDualSchemeMapAdditivity` in
+`FieldDualSchemeMapAdditivityProof` and `fieldDualSchemeGeometry` in
+`FieldDualSchemeGeometryProof`. Universal-family existence and
 ordinary inverse/evaluation data remain conditional, as do the seven
 fixed-map propositions. This module is field-only and does not supply
 arbitrary-base dual geometry, biduality, polarizations, or Rosati.

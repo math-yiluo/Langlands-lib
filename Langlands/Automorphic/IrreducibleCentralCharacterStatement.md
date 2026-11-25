@@ -1,7 +1,5 @@
 # Central characters of irreducible operator realizations
 
-Author: Worker 116, for task `34b81620-20d7-4059-9b08-6bedd1c1c029`.
-
 `Langlands.Automorphic.OperatorRealization.IrreducibleCentralCharacterStatement`
 is a proposition definition: every irreducible actual operator realization of
 `GL_n` over a number field has exactly one central character. The module
@@ -118,14 +116,19 @@ the Library's actual operator realizations. The intended proof route is:
 4. Uniqueness: two central characters agree at every idele, because some
    form of the nonzero realization `S` takes a nonzero value.
 
-This route is guidance for a later proof, not part of the statement.
+This route is guidance, not part of the statement. The Library's proof,
+`OperatorRealization.irreducibleCentralCharacter` (module
+`Langlands.Automorphic.IrreducibleCentralCharacterProof`), takes another route.
 
 ## Use and boundary
 
-The proposition is the first step of the intended proof of the published
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement`
+The proposition bears on the published
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement`
 (module `Langlands.Automorphic.AssociatedCentralCharacterStatement`). There
-the actual cuspidal realization `T` must have a central character before the
-determinant of the associated Weil representation can be compared with it.
+the central character of the actual cuspidal realization `T` is compared with
+the determinant of the associated Weil representation. The Library's proof of
+that statement, `associatedCentralCharacter` (module
+`Langlands.Automorphic.AssociatedCentralCharacterProof`), obtains the central
+character of `T` from the determinant.
 This module does not prove that comparison, unitarity of the central
 character, or any statement about cuspidal realizations specifically.

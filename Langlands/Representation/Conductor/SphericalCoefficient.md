@@ -1,11 +1,11 @@
 # Degree coefficients of the Laurent quotient integrand
 
-This internal adapter constructs one Laurent coefficient from the existing
+This adapter constructs one Laurent coefficient from the existing
 degree-restricted corank-one integrand on the actual left upper-unipotent
 quotient. It proves finite-dimensionality from compact quotient support,
 preservation of the integral degree, and scalar evaluation under explicit
-integrability. It leaves the analytic support and integrability of actual model
-vectors to subsequent results.
+integrability. It does not establish the analytic support and integrability of actual model
+vectors.
 
 The field has its own universe and is a topological valued field with a chosen
 uniformizing element. The unitary additive character `ψ` is trivial on the
@@ -50,10 +50,10 @@ the existing polynomial integrand specialization. The result is the integral
 over the actual quotient of the scalar corank-one integrand at spectral value
 zero when the quotient degree equals `d`, and zero otherwise.
 
-The provenance is internal. This unit combines the proved compact spherical
+The provenance is internal. This module combines the proved compact spherical
 finiteness, actual quotient descent and homogeneity, and finite-span
 coefficient integration. It asserts neither compact support nor integrability
 for arbitrary Whittaker-model vectors, chooses no Haar normalization, and
 does not compare Iwasawa degree with determinant norm. Principal-series
 realization, the Laurent series and denominator argument, essential-vector
-existence and uniqueness, and conductor conclusions remain open.
+existence and uniqueness, and conductor conclusions are not part of this module.

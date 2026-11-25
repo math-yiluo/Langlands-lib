@@ -1,7 +1,5 @@
 # Springer's split fundamental-set target on actual adelic points
 
-Author: Worker 83.
-
 This module states the split fundamental-set theorem as an independent
 prerequisite for general reduction theory. It proves the inversion
 conversion between two actual-point formulations. It does not prove the

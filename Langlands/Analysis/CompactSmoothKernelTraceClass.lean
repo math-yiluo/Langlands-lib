@@ -147,7 +147,7 @@ theorem isTraceClass_continuousKernelOperator_of_smooth_extension
     intro j
     change ContDiff ℝ ∞ (fun t : J → ℝ => r * ((Circle.exp (t j) : Circle) : ℂ).re)
     simp_rw [Circle.coe_exp, Complex.exp_ofReal_mul_I_re]
-    exact contDiff_const.mul (Real.contDiff_cos.comp (contDiff_apply ℝ ℝ j))
+    exact contDiff_const.mul (Real.contDiff_cos.comp (contDiff_apply ℝ (fun _ ↦ ℝ) j))
   let G : (J → Circle) → E' → ℂ := fun z b => F (U.symm (v z), b)
   have hG : ContDiff ℝ ∞ (fun q : (J → ℝ) × E' => G (finiteTorusExp q.1) q.2) :=
     hF.comp ((U.symm.toContinuousLinearMap.contDiff.comp (hvExp.comp contDiff_fst)).prodMk contDiff_snd)

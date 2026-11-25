@@ -1,6 +1,6 @@
 # Actual products of base changes along embeddings, on homomorphisms
 
-This internal unit supplies the product side of the embedding splitting of affine Weil
+This internal module supplies the product side of the embedding splitting of affine Weil
 restriction. It only uses the categorical finite product `GroupScheme.pi`, the actual
 base-change functor `GroupScheme.baseChange` and Mathlib's `Limits.Pi.map`; no group is
 assumed commutative, smooth or of any special shape.

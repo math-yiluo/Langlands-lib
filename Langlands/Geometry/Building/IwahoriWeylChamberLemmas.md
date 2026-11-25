@@ -1,6 +1,6 @@
 # Chamber complement lemmas for the Iwahori–Weyl quotient
 
-This derived internal unit supplies the chamber-complement step for the
+This module supplies the chamber-complement step for the
 existing Iwahori–Weyl targets. Its proposition
 `IwahoriWeylChamberReductionStatement` quantifies over the same arbitrary-universe
 local fields, group schemes and actual data `P` as the published targets. It
@@ -10,7 +10,7 @@ chamber-splitting conclusion for every chamber. The theorem
 `iwahoriWeylChamberReduction` implements this conditional reduction.
 
 The exact sequence and unique transport are explicit intermediate premises.
-This unit does not prove `IwahoriWeylExactSequenceStatement` or
+This module does not prove `IwahoriWeylExactSequenceStatement` or
 `IwahoriWeylChamberSplittingStatement`, nor does it discharge the generic
 affine-chamber transitivity theorem. Their final hypotheses remain unchanged.
 In particular, the full `P.chamberStabilizer C` and full component quotient

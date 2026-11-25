@@ -1,8 +1,5 @@
 # Independence of the star action: proof
 
-Proof author: Worker 3483. Worker 162 reused the complete proof from Task 3483 shared
-draft revision 5 and expanded the published-input documentation for Task 5308.
-
 This module proves `Langlands.GroupScheme.StarActionIndependenceStatement` (module
 `Langlands.GroupScheme.Reductive.StarActionStatement`). The theorem is
 `Langlands.GroupScheme.StarActionIndependence.starActionIndependence`, at universe
@@ -167,8 +164,7 @@ statement is supplied as an input.
 
 ## Verification
 
-Worker 162 checked the unchanged Lean proof against the current Library in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`: the Lake build passed with no errors or warnings,
+The Lean proof was checked against the Library: the Lake build passed with no errors or warnings,
 and declaration inspection returned the sole universe parameter `u` and the axioms
 `propext`, `Classical.choice`, and `Quot.sound`. The theorem's declared type is exactly
 `Langlands.GroupScheme.StarActionIndependenceStatement.{u}`. The statement's Lean/Markdown

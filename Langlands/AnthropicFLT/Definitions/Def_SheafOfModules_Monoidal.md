@@ -20,11 +20,11 @@ whose underlying presheaf of rings is a sheaf (`h𝒪`).
   (instances), and sheafification is a localization at `presheafW J 𝒪` (instance).
   `sheafifyCounitIso` is the counit isomorphism `sheafify (toPMod M) ≅ M`, and `sheafifyUnitIso`
   identifies the sheafification of the monoidal unit of `PMod 𝒪` with the unit sheaf of modules.
-- The instances `monoidalCategory` and `symmetricCategory` equip `SheafOfModules (ringSheaf 𝒪 h𝒪)` with
+- The instances `monoidalCategoryFLT` and `symmetricCategoryFLT` equip `SheafOfModules (ringSheaf 𝒪 h𝒪)` with
   the symmetric monoidal structure transported from presheaves through the localization
   (`LocalizedMonoidal`), so the tensor product of sheaves of modules is the sheafified presheaf tensor
   product. `sheafifyFunctor_monoidal` makes sheafification a monoidal functor, `tensorUnit_eq` says the
-  monoidal unit is the unit sheaf `unit`, and `monoidalClosed` gives the closed structure (internal
+  monoidal unit is the unit sheaf `unit`, and `monoidalClosedFLT` gives the closed structure (internal
   Hom) through the reflective adjunction (`Monoidal.Reflective.monoidalClosed`).
 - `tensorIsoSheafify L M : sheafify (L ⊗ M as presheaves) ≅ L ⊗ M`.
 
@@ -32,7 +32,7 @@ For a scheme `X`:
 
 - instances give `X.PresheafOfModules` its monoidal, symmetric and closed structures from presheaves of
   modules, and `X.Modules` its monoidal, symmetric and closed structures from the above;
-- `Scheme.Modules.tensor L M = L ⊗ M`, and `Scheme.Modules.dual L` is the internal Hom
+- `Scheme.Modules.tensor L M = L ⊗ M`, and `Scheme.Modules.dualFLT L` is the internal Hom
   `(ihom L).obj 𝟙` from `L` to the unit, the dual sheaf `L^∨ = ℋom(L, 𝒪_X)`;
 - `Scheme.Modules.tensorUnit_eq`: the monoidal unit of `X.Modules` is the structure sheaf;
 - `Scheme.Modules.sheafify X` is sheafification `X.PresheafOfModules ⥤ X.Modules` (a monoidal functor,
@@ -45,7 +45,7 @@ formalization of Fermat's Last Theorem at commit `6e837e75355538c7f80bab5b956861
 (registered literature `anthropic-flt-complete-lean-source-6e837e75`). That work is Copyright 2026
 Anthropic, PBC, and is licensed under the Apache License, Version 2.0. Copies of its `LICENSE`, `NOTICE`
 and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`. `ATTRIBUTION.md` has no row for this file, so no
-third-party notice applies. Declaration names and namespaces are FLT's. The port makes only these
+third-party notice applies. Declaration names and namespaces are FLT's, apart from the renames described under “Names changed by the Library” below. The port makes only these
 changes:
 
 - an attribution header is added above the imports;
@@ -55,3 +55,11 @@ changes:
   `Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf`;
 - FLT's lakefile options are set after the imports: `maxHeartbeats 4000000`,
   `synthInstance.maxHeartbeats 400000` and `backward.isDefEq.respectTransparency.types false`.
+
+## Names changed by the Library (22 November 2026)
+
+weil-conjectures, on which the Library depends, declares 21 of the names of this extract itself, so that no module could import both. The Library renamed these 21 declarations: each keeps its name space and the last component of its name gets the marker `FLT` (`tensorPow` becomes `tensorPowFLT`, `tensorPow_zero` becomes `tensorPowFLT_zero`). In this file:
+
+- it declares `AlgebraicGeometry.Scheme.Modules.dualFLT` (FLT `AlgebraicGeometry.Scheme.Modules.dual`), `SheafOfModules.monoidalCategoryFLT` (FLT `SheafOfModules.monoidalCategory`), `SheafOfModules.monoidalClosedFLT` (FLT `SheafOfModules.monoidalClosed`), `SheafOfModules.symmetricCategoryFLT` (FLT `SheafOfModules.symmetricCategory`).
+
+Statements and proofs are otherwise unchanged. Elsewhere on this page the names are given as they now are. The Lean file also imports `Langlands.MathlibBase` where FLT imports `Mathlib` (see `Langlands/MathlibBase.md`).

@@ -1,7 +1,6 @@
 # The socle cut
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerSocleCut`. Written by
-Worker 5735 for Task 5735.
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerSocleCut`.
 
 `socleCut_embeds`: let `Δ` be a segment of length `k + 2`, `A` a supercuspidal representative of
 its base, `Z` a segment socle of `Δ` and `Z'` a segment socle of the segment

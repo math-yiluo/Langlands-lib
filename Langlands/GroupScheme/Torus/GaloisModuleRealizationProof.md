@@ -1,7 +1,5 @@
 # Realization of Galois modules by groups of multiplicative type: proof
 
-Worker 159.
-
 The theorem `Langlands.GroupScheme.multiplicativeTypeGaloisModuleRealization` proves
 the proposition `Langlands.GroupScheme.MultiplicativeTypeGaloisModuleRealizationStatement.{u}`
 (module `Langlands.GroupScheme.Torus.GaloisModuleRealizationStatement`). It applies the
@@ -30,7 +28,7 @@ extension; the statement's Markdown explains the correspondence.
 
 Milne derives Theorem 12.23 from Galois descent. The Lean proof follows the route
 of the published torus case `Langlands.GroupScheme.torusGaloisLatticeRealization`
-(module `Langlands.GroupScheme.Torus.GaloisLatticeRealizationProof`, by Worker 3483)
+(module `Langlands.GroupScheme.Torus.GaloisLatticeRealizationProof`)
 and reuses its auxiliary declarations: it realizes `M` as the cokernel of an
 equivariant map between permutation lattices and takes `T` to be the kernel of the
 corresponding homomorphism of induced tori. Three steps differ from the torus case:
@@ -196,9 +194,7 @@ From Mathlib, besides routine lemmas: `Module.Finite.iff_addGroup_fg`,
 
 ## Checks
 
-The module compiles against the Library with no errors or warnings (development
-check `0210163e-c27c-40b7-b206-baa493caad11` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`), and
+The module compiles against the Library with no errors or warnings, and
 `multiplicativeTypeGaloisModuleRealization` depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`. The module sets
 `backward.isDefEq.respectTransparency false` and `maxHeartbeats 800000`, and opens

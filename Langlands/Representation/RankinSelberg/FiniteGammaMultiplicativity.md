@@ -1,9 +1,9 @@
 # Rank transport and finite-block gamma assembly
 
-This internal contribution supplies total-rank transport for actual normalized
+This internal module supplies total-rank transport for actual normalized
 product induction and the conditional theorem
 `Langlands.RankinSelberg.gammaMultiplicativity_of_twoBlock`.
-Worker 20 authored this module. Its provenance is a derivation from the imported
+Its provenance is a derivation from the imported
 Library constructions and certificate relations; it asserts no new external
 analytic result.
 
@@ -72,8 +72,9 @@ those of the existing statements. The imported symmetric certificate transport
 and uniqueness lemmas handle both rank orders.
 
 This is a conditional assembly result. Neither two-block premise is proved in
-this module. Its publication does not establish the closed
-`GammaMultiplicativityStatement` required by the parent task.
+this module, so it does not by itself establish the closed
+`GammaMultiplicativityStatement`; `gammaMultiplicativity` in
+`GammaMultiplicativityProof` proves that statement.
 
 ## All-field port
 

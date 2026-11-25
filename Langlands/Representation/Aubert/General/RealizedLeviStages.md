@@ -1,7 +1,5 @@
 # Normalized induction in stages through a realized source Levi
 
-Author: Worker 1212.
-
 This internal adapter compares direct ambient normalized induction with the
 actual source induction inside a represented dynamic Levi, followed by outer
 normalized induction. It uses the exact simultaneous realization identities.

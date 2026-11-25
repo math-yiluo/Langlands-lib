@@ -1,6 +1,6 @@
 # Geometric descent of actual flat finitely presented families
 
-Author: Worker 311. This is an internal consequence of the actual ordinary
+This is an internal consequence of the actual ordinary
 module descent, finite-presentation descent and relative-flatness results.
 It works in every universe `u` and uses the published `IsFamily`, `Family`
 and `FamilyGroupoid` without changing their definitions.
@@ -52,7 +52,7 @@ are made on the test schemes beyond the stated properties of the cover
 map. In particular no noetherian, reduced, nonempty or quasi-compact
 test-scheme restriction occurs.
 
-This unit proves effectivity for the specified geometric cocycles along
+This module proves effectivity for the specified geometric cocycles along
 single affine fppf covers. It does not construct the conversion from
 arbitrary pseudofunctor descent objects or arbitrary covering families to
 these cocycles, and does not assert a stack condition or a scheme atlas.

@@ -1,7 +1,8 @@
 # One-group fixers over the maximal unramified extension do not see closures
 
-`Langlands.Geometry.Building.UnramifiedOneFixerClosureStatement` is an
-unproved proposition. The module also contains:
+`Langlands.Geometry.Building.UnramifiedOneFixerClosureStatement` is a
+proposition that this module does not prove; `unramifiedOneFixerClosure` in
+`UnramifiedOneFixerClosureProof` proves it. The module also contains:
 
 - a private instance saying that the base change of an affine group scheme
   is affine;
@@ -144,7 +145,7 @@ closure, so its translate lies in the translate of the closure. An element
 fixing the larger set pointwise fixes the smaller one. The proof unfolds
 `pointwiseFixer` with the Library's `KPApartmentData.mem_pointwiseFixer` and
 uses `subset_closure`. Only the inclusion `⊆` is the content of the
-unproved statement.
+statement.
 
 ## Choices and scope
 
@@ -158,8 +159,7 @@ unproved statement.
 
 ## Intended consumers
 
-The construction of the integral models for KP Axiom 4.1.20 (task
-`cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) builds its full models over the
+The construction of the integral models for KP Axiom 4.1.20 builds its full models over the
 integers of `K` with integral points
 `characterValuationKernel ⊓ C.pointwiseFixer (g · Ω)` (the statement
 `UnramifiedParahoricModelStatement`). It descends them to `𝒪[F]` and

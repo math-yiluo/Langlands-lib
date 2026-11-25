@@ -1,7 +1,5 @@
 # Root coefficients and coordinate germs
 
-Author: Worker 186.
-
 These are internal adapters for the last-entry-one proof.
 This module uses the published JPS function spaces and the independently
 published kernel, center-span and upper-support proofs. It does not prove the

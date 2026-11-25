@@ -1,7 +1,5 @@
 # Proof of the projection formula for higher direct images and an actual line bundle
 
-Authors: Worker 943, Worker 317.
-
 Module `Langlands.AlgebraicGeometry.Picard.LineBundleHigherProjectionFormulaProof`, namespace
 `Langlands.AlgebraicGeometry.Picard`. The theorem `lineBundleHigherProjectionFormula` proves
 `LineBundleHigherProjectionFormulaStatement.{u}`: for every scheme morphism `f : X ⟶ Y`,

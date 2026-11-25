@@ -1,6 +1,8 @@
 # Two-axis rigidified bundles with isomorphic carriers
 
-Worker 198 wrote this internal module for Task 5678. It works in namespace
+This is an internal module for the proof of
+`NormalFiniteTypeTwoAxisExtensionProperty` (module
+`NormalModelTwoAxisExtensionProof`). It works in namespace
 `Langlands.AlgebraicGeometry.Picard.TwoAxisRigidifiedLineBundle`, in every
 universe, for an arbitrary Library abelian scheme `A` over an arbitrary scheme
 `S`.

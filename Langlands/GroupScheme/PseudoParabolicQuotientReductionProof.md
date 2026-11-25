@@ -1,7 +1,5 @@
 # Pseudo-parabolic quotients as dynamic-parabolic quotients of pseudo-reductive groups
 
-Authors: Worker 1527.
-
 `Langlands.GroupScheme.pseudoParabolicQuotientPseudoReductiveReduction.{u}` proves the
 unchanged published proposition
 `Langlands.GroupScheme.PseudoParabolicQuotientPseudoReductiveReductionStatement.{u}`

@@ -47,7 +47,7 @@ theorem invariantLocusFunctor_toAction (H : OpenSubgroup G) :
 theorem invariantLocusFunctor_obj_coe (H : OpenSubgroup G)
     (d : ρ.InvariantDomain H) (g : H) (x : d.obj.locus) :
     ((show d.obj.locus from
-      ConcreteCategory.hom (((ρ.invariantLocusFunctor H).obj d).obj.ρ g) x) :
+      ConcreteCategory.hom (((ρ.invariantLocusFunctor H).obj d).obj.ρ g).asHom x) :
       BanachSpectrum P) = ρ.toMonoidHom (g : G) • (x : BanachSpectrum P) := rfl
 
 @[simp]

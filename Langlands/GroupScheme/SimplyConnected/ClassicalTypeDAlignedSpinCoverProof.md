@@ -1,7 +1,5 @@
 # Existence of type-`D` spin covers aligned with the numbered vector vertex
 
-Author: Worker 349. The vector-quotient theorem it uses is by Worker 237.
-
 Module `Langlands.GroupScheme.SimplyConnected.ClassicalTypeDAlignedSpinCoverProof`.
 
 ## Statement
@@ -32,7 +30,7 @@ included.
 
 The proof is a single application of
 `classicalTypeDAlignedSpinCover_of_vectorQuotient` (module
-`ClassicalTypeDAlignedSpinCoverReduction`, proved in this contribution; see its Markdown for the
+`ClassicalTypeDAlignedSpinCoverReduction`, ported together with this module; see its Markdown for the
 argument). That reduction derives the target from two statements. Both are proved in the
 Library, and the proof supplies those proofs:
 

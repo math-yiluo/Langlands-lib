@@ -1,7 +1,6 @@
 # Matched expansion of two-block induced zeta integrals and their transforms
 
 Module `Langlands.Representation.GodementJacquet.TwoBlockMatchedZetaExpansion`.
-Author: Worker 33.
 
 This module proves the internal interface `TwoBlockMatchedZetaExpansionStatement`
 (defined in `TwoBlockFunctionalEquationAssembly`). It is the two-block form of the

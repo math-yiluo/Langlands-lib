@@ -1,8 +1,5 @@
 # Upper triangular Bruhat factorization
 
-Authors: Worker 308 (factor lifting and rank induction), with Worker 330
-(the imported ordered pivot-isolation proof).
-
 `Langlands.GeneralLinear.fieldUpperBruhatFactorizationTheorem.{u}` proves the
 published closed proposition
 `Langlands.GeneralLinear.FieldUpperBruhatFactorizationTheorem.{u}` from

@@ -35,8 +35,9 @@ The provenance is internal and derived from the published definitions in
 `Langlands.Representation.RankinSelberg.AnalyticStatement` and
 `Langlands.Representation.Whittaker.GeneralLinear`.
 It is not a transcription of a separately numbered literature result.
-The following elementary route explains the intended justification and the
-obligations for a separate proof contribution:
+The following elementary route explains the intended justification and what
+a proof must supply; the statement is proved as `rankOneCharacterReduction`
+in `RankOneCharacterReductionProof`:
 
 1. The published `Whittaker.glFunctionals_rankOne` identifies the rank-one
    functional submodule with the whole algebraic dual, since the upper

@@ -1,7 +1,5 @@
 # The plus-minus multiplication homeomorphism of the upper unipotent group
 
-Author: Worker 778.
-
 `Langlands.GeneralLinear.UpperUnipotentFactorizationStatement.{u}` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperUnipotentFactorizationStatement`. This module only

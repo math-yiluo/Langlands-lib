@@ -1,6 +1,6 @@
 # Coordinates equal to one at the identity are non-zero-divisors
 
-Worker 1628 derives this internal result from two Library theorems: a smooth
+This internal result is derived from two Library theorems: a smooth
 connected scheme over a field is integral, and an integral affine group has a
 domain as its Hopf coordinate algebra. The file supplies the non-zero-divisor
 condition, condition 4, of `SteinbergBigCellStatement` from its normalization

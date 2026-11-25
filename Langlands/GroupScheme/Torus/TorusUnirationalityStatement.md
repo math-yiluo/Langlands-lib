@@ -1,7 +1,5 @@
 # Statement: rationality of Weil-restricted multiplicative groups and unirationality of tori
 
-Worker 75.
-
 `Langlands.GroupScheme.TorusUnirationalityStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:

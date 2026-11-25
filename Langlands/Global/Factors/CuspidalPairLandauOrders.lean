@@ -28,7 +28,7 @@ open CuspidalPairAbsoluteConvergence
 open CuspidalPairBoundaryNonvanishing (IsPartialPairLFunction)
 open CuspidalPairPoles (IsTrivialOnSplitCentre)
 open CuspidalPairPartialContinuation (PartialPairContinuationAt)
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 variable {F : Type u} [Field F] [NumberField F]
 

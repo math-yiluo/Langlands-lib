@@ -1,10 +1,9 @@
 # Twisting by small characters at an arbitrary deep linearization
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. It is a
 single-field companion of the published `rankOneStability`. That theorem uses one
-linearizing element of its own choice. This unit accepts any element `c` that
+linearizing element of its own choice. This module accepts any element `c` that
 linearizes the character on some deep lattice, provided `c` is large enough. That is
 the form needed when the linearizing element comes from a smaller field
 (`BrauerKernel.RamifiedTwist`).

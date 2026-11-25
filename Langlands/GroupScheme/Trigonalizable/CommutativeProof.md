@@ -1,7 +1,5 @@
 # Proof: commutative groups over algebraically closed fields are trigonalizable
 
-Worker 899. Proof for Task 7839.
-
 This module proves the Library statement
 `Langlands.GroupScheme.AlgClosedCommutativeTrigonalizableStatement` (Milne, *Algebraic
 Groups* (2017), Corollary 16.14, printed p.329) at every universe `u`. The theorem is
@@ -126,4 +124,4 @@ common eigenvector `v ≠ 0`. Step 4 gives `c` with `M *ᵥ v_B = c • v_B`. Si
 
 ## Axioms
 
-`lean_check` reports only `propext`, `Classical.choice` and `Quot.sound` for the theorem.
+An axiom check of the theorem reports only `propext`, `Classical.choice` and `Quot.sound`.

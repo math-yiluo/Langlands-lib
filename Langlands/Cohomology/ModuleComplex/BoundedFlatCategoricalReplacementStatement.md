@@ -21,7 +21,7 @@ ring `A` is arbitrary and need not be flat or noetherian. All module
 carriers stay in universe `u`; the derived categories use Mathlib's
 standard localization, with morphisms in universe `u + 1`.
 
-Worker 137 designed this interface by combining the existing
+This interface combines the existing
 `BoundedFlatComplexProjectiveStatement` and
 `BoundedFlatQuasiIsoBaseChangeStatement` with the internal
 `NatModuleQuasiIsoCriterionStatement`,
@@ -30,4 +30,5 @@ and the Library's `DerivedPlus.mapExtendIso`. It repackages their raw
 cycle and boundary tests as actual derived-category comparisons. It
 introduces no new notion of perfection or scalar extension and contains
 no scheme-theoretic input or comparison with derived sections. This file
-defines the proposition; its proof is separate.
+defines the proposition; its proof is `boundedFlatCategoricalReplacement` in
+`Langlands.Cohomology.ModuleComplex.BoundedFlatCategoricalReplacementProof`.

@@ -1,6 +1,6 @@
 # Matched adjacent finite-product functional equation
 
-Worker 486. This internal composition defines the Prop-valued
+This internal composition defines the Prop-valued
 `AdjacentRankCorankFunctionalEquation`: actual original and dual corank-one
 integrals admit rational continuations satisfying one normalized equation,
 with fixed polynomials, complex units and Laurent exponent. Both pole guards

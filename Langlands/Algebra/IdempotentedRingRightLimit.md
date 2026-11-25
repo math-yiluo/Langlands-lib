@@ -1,7 +1,5 @@
 # The actual additive right-image inverse limit
 
-Authors: Worker 6 and Worker 702.
-
 For the actual given nonunital ring `A`, `Idempotent.rightImage e` is the
 additive subgroup of elements satisfying `a * e = a`. Its membership
 equivalence with `∃ b, b * e = a` identifies it with the source's `Ae`.
@@ -59,7 +57,7 @@ was read on PDF1–3. Its early Chapter I entries correct a pseudometric
 inequality and a local-unit formula in the 2010 edition. They do not alter
 the right images, transitions, or family equations used here. The governing
 2026 original already states `d_e ≤ d_f` and the fixed-point equation
-`a * e = a`; the pseudometric assertion itself is outside this unit.
+`a * e = a`; the pseudometric assertion itself is outside this module.
 
 The additive subgroup presentation and its explicit universal-property
 proof are an internal realization of the source's inverse limit (whose
@@ -68,4 +66,4 @@ assumed or installed. This module does not assert a topology, a ring
 product, a unit, a quotient/decomposition comparison, density, completeness,
 or an extension of module actions on the family group. Those remain
 separate obligations. The distinct left-action module completion of
-I.1.4 is also outside this unit.
+I.1.4 is also outside this module.

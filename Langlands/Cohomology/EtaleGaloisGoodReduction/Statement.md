@@ -1,11 +1,8 @@
 # Unramified Galois actions on étale cohomology outside a uniform set of places
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 This module states one proposition, `GaloisCohomologyGoodReductionStatement`.
 Let `K` be a number field and `f : X ⟶ Spec K` a smooth proper morphism.
-Worker 13's published `Langlands.Geometry.EtaleGaloisAction` lets the
+The published `Langlands.Geometry.EtaleGaloisAction` lets the
 absolute Galois group `Gal(K̄/K)` act on the étale cohomology of
 `X_K̄ = X ×_{Spec K} Spec K̄` with constant coefficients. The proposition
 says that there is one finite set `S` of finite places of `K`, chosen before
@@ -16,9 +13,7 @@ predicate `IsUnramifiedAt` of the published
 `Langlands.Shimura.DecompositionGroupAction`. Nothing is proved here.
 
 The companion statement `GaloisCohomologyUnramifiedStatement` (module
-`Langlands.Cohomology.EtaleGaloisUnramified.Statement`, candidate
-`c1c7da7d-650b-424c-a2c5-a19a36cab4c0` by the same author, approved and not
-yet in Library `568f1cff`) holds for every finite-type `X`, but its set of
+`Langlands.Cohomology.EtaleGaloisUnramified.Statement`) holds for every finite-type `X`, but its set of
 places may depend on `M`. The present statement asks for more on smooth
 proper `X`: one set `S` for all `M`, apart from the places dividing the
 order of `M`. This uniformity is what an `ℓ`-adic representation needs:
@@ -37,12 +32,12 @@ All types live in one universe `u`.
 - `R` is a commutative ring. `M : ModuleCat R` is quantified inside the
   proposition with the instance `[Finite M]`: the underlying set of `M` is
   finite. `Nat.card M` is its cardinality. `n : ℕ` is the degree.
-- `galoisCohomologyRep (L := AlgebraicClosure K) f R M n` is Worker 13's
+- `galoisCohomologyRep (L := AlgebraicClosure K) f R M n` is the Library's
   representation of `AlgebraicClosure K ≃ₐ[K] AlgebraicClosure K` on the
   degree-`n` étale cohomology of `X_K̄ := baseChange K (AlgebraicClosure K) f`
   with coefficients in the constant sheaf of `M`, computed in sheaves of
-  `R`-modules on Mathlib's small étale site (Worker 13's
-  `Langlands.Geometry.EtaleDerivedSections`). The published
+  `R`-modules on Mathlib's small étale site
+  (`Langlands.Geometry.EtaleDerivedSections`). The published
   [EtaleGaloisSmooth](../EtaleGaloisSmooth/Statement.md) explains the
   action: `σ` acts by the pullback along `baseChangeMap f σ`, the identity
   on `X` times `Spec σ` on `Spec K̄`.
@@ -60,8 +55,8 @@ All types live in one universe `u`.
   not divide the order of `M`.
 - `DecompositionGroupAction.IsUnramifiedAt V v A` says that every element of
   `localInertia v`, the kernel of the action of the absolute Galois group of
-  the completion `K_v` on the residue field of its algebraic closure (Worker
-  41's `Langlands.Galois.CompatibleFamily`), acts trivially on `A` after
+  the completion `K_v` on the residue field of its algebraic closure
+  (`Langlands.Galois.CompatibleFamily`), acts trivially on `A` after
   restriction to `Gal(K̄/K)` along Mathlib's chosen closure embedding. The
   published theorem `isUnramifiedAlong_iff` shows that the condition does
   not depend on the closure embedding.
@@ -88,7 +83,7 @@ before `M` and `n` in the quantifiers, so it does not depend on them.
 
 ## Relation to the almost-everywhere statement
 
-The test lemma `unramified_of_goodReduction` of check `5d1a92cd` (below)
+The test lemma `unramified_of_goodReduction` of the first check below
 proves, for smooth proper `f`, that this proposition implies
 `GaloisCohomologyUnramifiedStatement K f R`. For given `M`, it adds to `S`
 the places `v` with `(Nat.card M : 𝓞 K) ∈ v.asIdeal`. These are finitely
@@ -187,14 +182,14 @@ The statement does not cover:
 - the cohomology modules of the Library's CM towers, which are colimits
   over levels with coefficients pulled back from `Spec F` and are built
   separately; `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology`
-  (no Author line) takes their unramifiedness as a hypothesis;
+  takes their unramifiedness as a hypothesis;
 - any description of `S`, such as the places of bad reduction of a model;
 - Frobenius eigenvalues, purity, or local-global compatibility.
 
 Related Library declarations: the published
 [EtaleGaloisSmooth](../EtaleGaloisSmooth/Statement.md) states that the same
 Galois action is smooth for the Krull topology;
-`Langlands.Shimura.DecompositionGroupAction` (no Author line) defines
+`Langlands.Shimura.DecompositionGroupAction` defines
 `IsUnramifiedAt` and proves its independence of the closure embedding, but
 proves unramifiedness of no specific object.
 
@@ -233,33 +228,33 @@ proves unramifiedness of no specific object.
 ## Formal dependencies and checks
 
 Direct project imports, in Library commit
-`568f1cff4df2c51ba08b932716bf99235d0032c7` and the workspace:
+`568f1cff4df2c51ba08b932716bf99235d0032c7`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Geometry.EtaleGaloisAction` | Worker 13 | `5d07cffce7425cbd24204e0f65a5ca913c1570e7c5621aae229d13beb0e581fa` | `d9c5b185b7b92d780aeceaa828ac8440c29a30872c2099428cd5a5776dc885f6` |
-| `Langlands.Shimura.DecompositionGroupAction` | no Author line | `9a5ae46b57a07e743845d7980e90a00a4db618f2e14fee54dc16f303e91cda43` | `317291d8aad940a67f73157ad08598516b9d3cb5731f195dd524085ac58b4cfc` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Geometry.EtaleGaloisAction` | `5d07cffce7425cbd24204e0f65a5ca913c1570e7c5621aae229d13beb0e581fa` | `d9c5b185b7b92d780aeceaa828ac8440c29a30872c2099428cd5a5776dc885f6` |
+| `Langlands.Shimura.DecompositionGroupAction` | `9a5ae46b57a07e743845d7980e90a00a4db618f2e14fee54dc16f303e91cda43` | `317291d8aad940a67f73157ad08598516b9d3cb5731f195dd524085ac58b4cfc` |
 
-Through these imports the module uses Worker 13's
+Through these imports the module uses
 `Langlands.Geometry.EtaleConstantCohomology` (`constantCohomologyRep`) and
-Worker 41's `Langlands.Galois.ClosureRestriction` (`chosenClosureEmbedding`)
+`Langlands.Galois.ClosureRestriction` (`chosenClosureEmbedding`)
 and `Langlands.Galois.CompatibleFamily` (`localInertia`). The module does
-not import `Langlands.Cohomology.EtaleGaloisUnramified.Statement`. The
-environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib
+not import `Langlands.Cohomology.EtaleGaloisUnramified.Statement`. The Lean
+environment of the checks is Lean 4.34.0, Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Checks against Library `568f1cff`, on the final Lean file (SHA-256
 `0acfa9a65ceccf612c6481eefc75545b5c6ec2b185024be5cdf2b42215addfca`). None reported errors or warnings.
 
-- `5d1a92cd-a9be-42e0-a4ee-cbc389c9dccc` compiled the file from a draft directory together with the
-  workspace module `Langlands.Cohomology.EtaleGaloisUnramified.Statement`
+- A first check compiled the file together with the
+  module `Langlands.Cohomology.EtaleGaloisUnramified.Statement`
   and a test file (`Langlands/Inspect/EtaleGaloisGoodReductionPrint.lean`,
-  SHA-256 `d492f622d8560b0eefa4eec510f62fb57b33d548d4c109ba1dafd657cdd2094e`), neither part of the candidate. It printed
+  SHA-256 `d492f622d8560b0eefa4eec510f62fb57b33d548d4c109ba1dafd657cdd2094e`), neither part of this module. It printed
   `GaloisCohomologyGoodReductionStatement` with universes: a `Prop`-valued
   definition with the single universe parameter `u`. It proved
   `unramified_of_goodReduction`, which depends only on `propext`,
   `Classical.choice` and `Quot.sound`.
-- `2a25bb4a-4ef5-456d-92a8-1d0ab021c202` built the file with Lake from the workspace and
+- A second check built the file with Lake and
   inspected `GaloisCohomologyGoodReductionStatement`: a `Prop`-valued
   definition with the universe parameter `u`, depending only on `propext`,
   `Classical.choice` and `Quot.sound` (type hash `3b913245f583e2c2750a2174407c91e063aec80754e9b65340aae5dbaa648f8d`).

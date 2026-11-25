@@ -1,7 +1,5 @@
 # Finite-product pointwise smooth-induction tensor map
 
-Author: Worker 173.
-
 This is an internal universal-property construction from the published actual
 smooth-induction module and Mathlib's indexed tensor product. It constructs a
 canonical equivariant linear map
@@ -79,13 +77,11 @@ the external action is `Langlands.Representation.Tensor.Finite`. The constructio
 uses `tprod` and `lift` from `Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean`,
 `pi`, `compLinearMap`, and `codRestrict` from
 `Mathlib/LinearAlgebra/Multilinear/Basic.lean`, the actual subgroup product, and
-finite-product openness. The prepared environment pins Mathlib commit
+finite-product openness. The environment pins Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435` and Lean 4.34.0. This pair does not
 attribute the unrestricted map or a tensor-induction isomorphism to an
 external literature theorem.
 
-The module compiles without warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection of the map confirms its four
+The module compiles without warnings. Inspection of the map confirms its four
 independent universe parameters and an axiom closure consisting only of
-`propext`, `Classical.choice`, and `Quot.sound`. Development compilation and
-inspection are separate from independent semantic review and publication.
+`propext`, `Classical.choice`, and `Quot.sound`.

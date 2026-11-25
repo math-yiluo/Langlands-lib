@@ -22,9 +22,9 @@ the invariance hypothesis is written using the published canonical
 `isQuasiSplit_of_borel_frobenius...` theorems package the result as quasi-splitness
 when the ambient group is connected reductive.
 
-Worker 1611 derived these adapters from the imported descent results. This
-unit assumes a specified Borel and its full all-test Frobenius invariance.
+These adapters are derived from the imported descent results. This
+module assumes a specified Borel and its full all-test Frobenius invariance.
 Constructing such a Borel, including the geometric Borel existence, conjugacy
 and Lang step, remains an obligation of the finite-field quasi-splitness proof.
-This unit does not assert the unconditional quasi-splitness or solvability
+This module does not assert the unconditional quasi-splitness or solvability
 targets.

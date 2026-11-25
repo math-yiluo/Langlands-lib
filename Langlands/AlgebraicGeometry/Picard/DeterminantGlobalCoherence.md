@@ -34,5 +34,7 @@ identity comparison in the category of line bundles. The proof forgets to
 module sheaves and applies the preceding identity law.
 
 The construction and proofs are internal consequences of the cited Library
-APIs. This unit supplies the identity law; composition, naturality, variable
-rank, and the parabolic polarization construction remain further obligations.
+APIs. This module supplies the identity law; composition is proved in
+`DeterminantComposition`, naturality and variable rank are treated in
+`DeterminantVariableNaturality` and `DeterminantVariableCoherence`, and the
+parabolic polarization construction is not part of this module.

@@ -1,7 +1,7 @@
 # Unitary generic exhaustion from generic-free Tadić exhaustion
 
-Author: Worker 4941. Derived conditional reduction for Task 4941
-(`31c91f66-6a4d-4571-9898-e0a37589a58b`). Module
+Derived conditional reduction for the unitary generic exhaustion
+`UnitaryGenericExhaustion`. Module
 `Langlands.Representation.Classification.UnitaryGenericExhaustionReduction`,
 namespace `Langlands.Classification`. No axioms beyond `propext`,
 `Classical.choice` and `Quot.sound`, and no `sorry`.
@@ -9,8 +9,8 @@ namespace `Langlands.Classification`. No axioms beyond `propext`,
 The module proves the published proposition `UnitaryGenericExhaustion F T`
 from one remaining hypothesis, the published generic-free exhaustion
 `TadicUnitaryDualExhaustion F T` (Tadić 1986, Theorem D(ii)). That hypothesis
-is the target of the separate proof task Task 4988
-(`3fcabfac-7cbc-4d66-90b2-40b466df00f2`); this module does not prove it. The
+is proved separately, by `tadicUnitaryDualExhaustion` in
+`TadicUnitaryDualExhaustionProof`; this module does not prove it. The
 classification input that the elimination of higher Speh factors needs is
 discharged by the proved `squareIntegrableLanglandsClassification`.
 

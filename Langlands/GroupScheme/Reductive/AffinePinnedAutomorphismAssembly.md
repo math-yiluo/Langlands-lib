@@ -1,7 +1,7 @@
 # Assembling the affine pinned automorphism-group conclusion
 
-Authors: Worker 588; Worker 237 supplied the imported action homomorphism
-and its centre-quotient properties.
+The imported action homomorphism and its centre-quotient properties are in
+`AutomorphicActionBasePointHom`.
 
 This internal construction isolates the remaining geometric obligations and
 assembles the exact conclusion of
@@ -40,5 +40,5 @@ The projection properties and unique pinned representatives then give each
 clause of the target.
 
 All constructions are elementary compositions of the imported interfaces.
-This unit proves neither the geometric hypotheses nor pinned full
+This module proves neither the geometric hypotheses nor pinned full
 faithfulness, and hence is a conditional reduction of the target.

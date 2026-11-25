@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_Module_Flat_exists_ne_zero_flat_localization_tensorProduct
 import Langlands.AnthropicFLT.Theorems.Thm_Module_flat_of_comap_maximalIdeal_rTensor_injective
 set_option maxHeartbeats 4000000

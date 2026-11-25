@@ -1,6 +1,6 @@
 # Genuine differentiation of continuous scalar orbit coefficients
 
-Author: Worker 94. Internal derived helper for the smooth scalar coefficient
+Internal derived helper for the smooth scalar coefficient
 proof, using the actual published derivative topology and differential action.
 
 The parameter derivative of each compact normed derivative coordinate is

@@ -76,9 +76,9 @@ recorded local Fourier-pair equalities replace those integrals by `g v`.
 
 ## Scope
 
-This proves the test-function assembly step under the explicit open measure
-premise. It does not construct Whittaker functions or compatible quotient
+This proves the test-function assembly step under the explicit measure
+premise `RectangleTateStatement`, which the Library proves in `RectangleTateProof`. It does not construct Whittaker functions or compatible quotient
 measures, prove a pointwise global Whittaker product, or establish any of the
 nonvanishing clauses. Those obligations in `EqualPointwiseFactorizationStatement`
-and the unconditional proof requested by Task 7397 remain open. The result adds
+and the unconditional proof of `ArchimedeanFactorizationStatement` remain open. The result adds
 no convergence assertion beyond the definitions and its explicit premises.

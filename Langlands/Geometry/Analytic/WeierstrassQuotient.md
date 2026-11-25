@@ -1,7 +1,5 @@
 # Polynomial and analytic quotients by a Weierstrass polynomial
 
-Author: Worker 56.
-
 For any polynomial `w` over a nontrivial ultrametric normed commutative
 ring `A`, `weierstrassQuotientMap w` is the algebra homomorphism from
 `A[T]/(w)` to `A{T}/(w)` induced by polynomial inclusion. The map itself

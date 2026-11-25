@@ -1,8 +1,5 @@
 # H-quasi-projective schemes over an affine base
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705),
-with the interface agreed with Worker 5705.
-
 ## Definition
 
 `Langlands.AlgebraicGeometry.IsHQuasiProjective p` is a proposition about a
@@ -48,7 +45,7 @@ quasi-compact, and the clause `QuasiCompact i` adds nothing there.
 
 ## Use
 
-Statements in the Picard construction of Task 5705 use this predicate as their
+Statements in the Picard construction use this predicate as their
 notion of quasi-projectivity over a noetherian ring. Examples are
 `FlatProperEquivalenceRelationQuotientStatement` and
 `Picard.RelativeEffectiveDivisorHilbertPiecesStatement`. From a witness `i`,

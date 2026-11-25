@@ -1,7 +1,6 @@
 # Reduction of the real Langlands quotient statement
 
-Worker 373 wrote this module for Task 6201 (`285d5eab-679b-4923-b5a6-c24fb384cd06`). The
-task's target is the Library's `Langlands.Archimedean.RealLanglandsQuotientStatement` (module
+The target of this module is the Library's `Langlands.Archimedean.RealLanglandsQuotientStatement` (module
 `Langlands.Representation.Archimedean.RealGenericParameterReduction`). It says that every
 irreducible admissible `(𝔤𝔩_n(ℝ), O(n))`-module `(ρ, π)` on a complex vector space `V`
 receives a nonzero `(𝔤, K)`-intertwiner `B` (`IsRealStandardIntertwiner n ρ π ds B`) from the

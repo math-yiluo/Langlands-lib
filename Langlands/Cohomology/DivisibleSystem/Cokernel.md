@@ -1,6 +1,6 @@
 # Cokernels of ℓ-divisible systems
 
-Author: Worker 61. Built on the published module
+Built on the published module
 `Langlands.Cohomology.DivisibleSystem` (ℓ-divisible systems, Harris 1999,
 (2.1)) and on Mathlib's short complexes, refinements in abelian categories
 (`Mathlib.CategoryTheory.Abelian.Refinements`) and snake lemma
@@ -98,8 +98,8 @@ the instance argument `hb : ∀ m : ℕ, Mono (b.tower.app (op m))`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.304. Worker 61 read
-the page in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.304. The page was read
+in the scanned original.
 
 Harris applies the fact to `T' = {F(T_m)}`. That is an `ℓ`-divisible system by
 his Fact 4, and `b` is a morphism of systems by functoriality of the

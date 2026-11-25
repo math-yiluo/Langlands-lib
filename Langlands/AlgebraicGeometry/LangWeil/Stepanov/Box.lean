@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Degree boxes for bivariate polynomials

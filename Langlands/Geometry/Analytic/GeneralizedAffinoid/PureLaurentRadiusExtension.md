@@ -1,7 +1,5 @@
 # Pure Laurent extensions and radical value-group radii
 
-Author: Worker 84.
-
 This internal construction selects a finite tower of the actual completed
 Gauss Laurent fields from `LaurentGaussField`. The base is any complete
 ultrametric normed field `K : Type u`, including a trivially valued field.

@@ -1,20 +1,18 @@
 # Twists by arbitrary Hecke characters
 
-Author: Worker 84. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1, unit U3b of the H3 assembly
-(Henniart 2000, §3). Workers 116 (first executor), 44 and 64 raised no objection
-to this unit, and no existing statement or task covers it.
-
 The module has two relation definitions, eight proved theorems about them, and three
 proposition definitions. Nothing is assumed.
 
 The targets are
 `Langlands.Automorphic.CuspidalDeterminantMultipleStatement` and
-`Langlands.ClassField.Global.RelativeWeilGroup.PresentedDeterminantMultipleAssociationStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.PresentedDeterminantMultipleAssociationStatement`.
 Their conjunction is
-`Langlands.ClassField.Global.RelativeWeilGroup.HeckeDeterminantTwistStatement`
-(universe parameters `u uV uP uQ`), the declaration of this submission. Each conjunct
-is meant to get its own proof task.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HeckeDeterminantTwistStatement`
+(universe parameters `u uV uP uQ`), the main declaration of this module. Each conjunct
+has its own proof: `cuspidalDeterminantMultiple` (module
+`Langlands.Automorphic.CuspidalDeterminantMultipleProof`) and
+`presentedDeterminantMultipleAssociation` (module
+`Langlands.Automorphic.HeckeDeterminantTwistAssociationProof`).
 Informally, for every Hecke character `χ` of a number field `F`, not necessarily of
 finite order and not necessarily unitary:
 
@@ -178,7 +176,7 @@ associated. Henniart allows every quasicharacter, as the targets do here.
 
 ## Why the targets are true
 
-This is a sketch of the expected proofs. Nothing here is proved in the module.
+This is a sketch of proofs of the targets. Nothing here is proved in the module.
 
 *Existence.* `|χ|` is trivial on the compact norm-one idele classes (Tate 1979,
 §1.4.6, p.7), so `|χ(x)| = ‖x‖^σ` for a real `σ`. Multiplication `M_χ` sends automorphic
@@ -221,7 +219,7 @@ of `T'`.
 
 ## Intended use
 
-The proof of the published `Langlands.Global.HenniartGlobalizationStatement` (U2)
+The proof of the published `Langlands.Global.HenniartGlobalizationStatement`
 follows Henniart (2000), §3.7, p.451. There the local component `S(X)_0` of the
 global pair is the induced representation twisted by an unramified unitary character,
 and Henniart concludes ("par suite") that the induced representation itself is

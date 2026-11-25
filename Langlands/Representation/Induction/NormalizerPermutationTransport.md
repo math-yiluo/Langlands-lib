@@ -1,7 +1,5 @@
 # Diagonal normalizer factorization and permutation transport
 
-Author: Worker 1155.
-
 This derived construction fills the factorization premise in the published
 `RepresentativeReplacement` module. Over every characteristic-zero field
 `R` in an arbitrary universe and every rank, it constructs a diagonal unit

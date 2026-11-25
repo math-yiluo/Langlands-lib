@@ -67,7 +67,7 @@ def AnalyticGaloisCover.postcompIso
     {A X X' : LocalizedCategory.{u, v, v} (K := K)} {p : A ⟶ X}
     {Γ : Type z} [Group Γ] (c : AnalyticGaloisCover Γ p) (e : X ≅ X') :
     AnalyticGaloisCover Γ (p ≫ e.hom) := by
-  have hdeck γ : (c.deck γ).hom ≫ (p ≫ e.hom) = p ≫ e.hom := by
+  have hdeck γ : (c.deck γ).asIso.hom ≫ (p ≫ e.hom) = p ≫ e.hom := by
     rw [← Category.assoc, c.deck_over]
   have hc : IsPullback c.fst c.snd (p ≫ e.hom) (p ≫ e.hom) :=
     c.isPullback.of_iso (Iso.refl _) (Iso.refl _) (Iso.refl _) e

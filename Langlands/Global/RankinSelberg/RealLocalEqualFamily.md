@@ -1,6 +1,6 @@
 # Holomorphy of real equal-rank integrals in Whittaker families
 
-This module is the real counterpart of the published complex module `ComplexLocalEqualFamily`.
+This module is the real counterpart of the complex module `ComplexLocalEqualFamily`.
 It shows that the real equal-rank Rankin–Selberg integral
 `realEqualIntegral D W V Φ s = ∫ W(g) V(g) Φ(e_n g) |det g|^s` (over the left unipotent quotient
 `N \ GL_{r+1}(ℝ)`, with the quotient measure of `D`) depends holomorphically on a finite-dimensional
@@ -22,11 +22,11 @@ open set `S ⊆ E`, two families `W, V : E → GL_{r+1}(ℝ) → ℂ`, a holomor
 function `Φ` on `ℝ^{r+1}` and a nonzero real `a`. It assumes:
 
 * `W p` has the left upper unipotent character of `a` and `V p` that of `-a`
-  (Worker 1050's `RealUnequalFamily.HasLeftCharacter`);
+  (`RealUnequalFamily.HasLeftCharacter`);
 * every `W p` and `V p` is continuous;
 * `p ↦ W p g` and `p ↦ V p g` are holomorphic on `S` for every `g`;
 * both families satisfy `HasUniformGauge S`, the gauge estimate of `RealEqualConvergence.HasGauge`
-  with constants uniform for `p ∈ S` (Worker 1050's `RealUnequalFamily.HasUniformGauge`).
+  with constants uniform for `p ∈ S` (`RealUnequalFamily.HasUniformGauge`).
 
 It concludes that there is `σ` such that, on `S ∩ {σ < Re s(p)}`, the integrand
 `realEqualIntegrand (W p) (V p) Φ (s p)` is integrable and
@@ -51,7 +51,7 @@ with the constants made uniform, and the complex family argument.
    `L y ≤ ‖L‖ ∑ |y_j|`, bounds the total exponent by `-∑ |y_j| - L y`. This gives the
    parameter-independent integrable majorant `C exp(-∑ |y_j| - L y)` of the lemma.
 3. The generic theorem `ComplexUnequalFamily.differentiableOn_integral_of_halfPlaneDomination`
-   (measure-agnostic, in the published `ComplexUnequalOrdinaryFamily`) then gives integrability
+   (measure-agnostic, in the Library module `ComplexUnequalOrdinaryFamily`) then gives integrability
    and holomorphy. Its inputs are measurability (continuity on the quotient), holomorphy of the
    integrand in `p` for each `q`, and the half-plane domination.
 
@@ -62,5 +62,4 @@ pp. 53–54, and §8.2. There the integrals of holomorphic families of Whittaker
 inducing exponents are holomorphic on a common half-plane. The statement asserts holomorphy of
 convergent integrals only. It proves no continuation or functional equation and does not prove
 `RealLocalUniformPositiveEqualContinuationStatement`. `HasUniformGauge` and `HasLeftCharacter` come
-from Worker 1050's accepted module `RealUnequalFamilyGauge`, whose unchanged pair accompanies this
-candidate.
+from the module `RealUnequalFamilyGauge`.

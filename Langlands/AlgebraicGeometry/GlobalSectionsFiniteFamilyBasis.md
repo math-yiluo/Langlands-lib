@@ -1,7 +1,5 @@
 # A finite family of global sections over a field through a linearly independent family
 
-Author: Worker 1076. The statement was specified by Worker 1412.
-
 Let `k : Type u` be a field, `X : Scheme.{u}` a scheme and
 `c : X ⟶ Spec (CommRingCat.of k)` a morphism. The ring `Γ(X, ⊤)` of global
 sections is a `k`-algebra through the instance
@@ -32,14 +30,16 @@ None of these needs a hypothesis on `X` or `c`. For an object
 
 ## Provenance
 
-This is standard linear algebra, written for schemes over a field, and is used
-as an internal helper. In the proof of the Library statement
-`Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelStatement`
-(task `909c8ce9`), `X` is a group scheme over a field `k`. There the theorem
-supplies a family of global sections, linearly independent over `k`, through
-which finitely many given global sections are expressed. The coefficients are
-stated with `c.appTop` and `Scheme.ΓSpecIso` so that they match the
-coordinates used elsewhere in that proof.
+This is standard linear algebra, written for schemes over a field, and is
+an internal helper. In the proof of the Library statement
+`Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelStatement`,
+`X` is a group scheme over a field `k`, and a family of global sections,
+linearly independent over `k`, is needed through which finitely many given
+global sections are expressed. The theorem was written to supply it. The
+coefficients are stated with `c.appTop` and `Scheme.ΓSpecIso` so that they
+match the coordinates used elsewhere in that proof. The Library's proof
+(`AffineFiniteTypeCocycleModelProof`) takes the family instead from the
+general form described at the end of this page.
 
 ## Proof
 
@@ -63,5 +63,6 @@ the algebra map (`Algebra.smul_def`). The algebra map is then rewritten by
 
 The same linear algebra in a general `k`-algebra is
 `Langlands.LinearAlgebra.exists_linearIndependent_sum_algebraMap_mul`, in a
-separate helper candidate. This module does not import it, so that the two
-helper candidates do not depend on each other.
+separate helper module `Langlands.LinearAlgebra.FiniteFamilyBasis`. This
+module does not import it, so that the two helper modules do not depend on
+each other.

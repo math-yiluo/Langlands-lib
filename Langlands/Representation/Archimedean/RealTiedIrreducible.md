@@ -2,11 +2,12 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealTiedIrreducible`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module serves the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
 connects the hypothesis `RealBlockFunctional.TiedIrreducible` of the block Jacquet functional
 (module `RealBlockFunctional`) with the Library statement `RealTemperedStandardIrreducibleStatement`
-(module `RealTemperedIrreducibleStatement`, proof Task 7158).
+(module `RealTemperedIrreducibleStatement`, proof `realTemperedStandardIrreducible` in module
+`RealTemperedIrreducibleProof`).
 
 Notation: `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ` and `O(N)` is `unitaryCompact ℝ N`.
 `IsSignedPower ψ f` (module `PartialJacquetIntegral`) means `ψ_l(x) = ψ_l(sgn x) |x|^{f_l}`,

@@ -1,8 +1,5 @@
 # The actual tangent-to-H1 statement for a universal rigidified Picard parameter
 
-Authors: Worker 139 and Worker 432. Worker 432 supplied the statement design;
-Worker 139 prepared this public statement and its explanation.
-
 `Langlands.AbelianScheme.FieldUniversalRigidifiedPicardTangentH1Statement.{u}`
 is a definition returning `Prop`. It states the existence of a linear
 equivalence between two specified modules. This module supplies no proof
@@ -98,9 +95,9 @@ The original is B. Edixhoven, G. van der Geer and B. Moonen,
 Registered source ID:
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`; SHA-256:
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-Worker 139 read both full pages and inspected their rendered formulas.
-No source-specific errata file was present in the checked workspace,
-project or current Library `notes/errata` locations.
+Both full pages were read and their rendered formulas inspected.
+No source-specific errata file was present in the
+project or Library `notes/errata` locations.
 
 For a proper variety `X` over a field, the cited part of the corollary
 identifies the tangent space of the Picard parameter at its identity with
@@ -131,7 +128,7 @@ parameter one must justify the applicable comparison with this rigidified
 functor and preserve the trivial class. Neither such a comparison nor
 existence of a universal parameter is an extra premise or a theorem here.
 
-A future proof must verify the source's geometric hypotheses from the
+A proof must verify the source's geometric hypotheses from the
 actual `AbelianScheme` input and construct the comparison between the
 published sheaf-defined `T` and the dual-number tangent description. It
 must also compare the source's units-sequence or Čech description with the
@@ -139,8 +136,9 @@ actual right-derived module-sheaf cohomology `H`, preserving the
 `k`-linear structures. Inverting the resulting source-oriented
 cohomology-to-tangent isomorphism gives the direction in the conclusion.
 These comparisons are proof obligations, not existing results claimed
-by this statement unit; substantial missing constructions or comparisons
-require separate publication.
+by this statement; they are discharged by the proof
+`fieldUniversalRigidifiedPicardTangentH1` in
+`FieldUniversalRigidifiedPicardTangentH1Proof` and its prerequisite modules.
 
 The later smoothness assertion in (6.6)(i) and the completeness assertion
 in (6.6)(ii) are outside this statement. The module also supplies no

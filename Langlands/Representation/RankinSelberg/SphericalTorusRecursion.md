@@ -1,7 +1,5 @@
 # Normalized spherical torus recursion
 
-Author: Worker 1767.
-
 This internal helper constructs the half-modulus weighted evaluation of the
 dominant Jacobi–Trudi polynomial. Pair counting identifies the exponent of the
 half modulus: the radical multiplicity and half modulus together give the

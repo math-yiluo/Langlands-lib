@@ -1,7 +1,5 @@
 # Pointwise lifting squares in the analytic étale site
 
-Authors: Worker 621 and Worker 284.
-
 This module states
 `Langlands.Analytic.SaturatedAtlasPresentation.EtalePointwiseLiftingStatement`.
 It isolates a geometric prerequisite for the covering-points input to the

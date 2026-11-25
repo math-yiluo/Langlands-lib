@@ -53,7 +53,7 @@ independent. The source needs topology and `ChartedSpace H M`, with
 no source manifold premise. The real and complex family theorems
 specialize the same result.
 
-Worker 94 internally adapted Worker 1203's implementations in
+This module internally adapts the implementations in
 `AffinePointRegularSmooth`, `AffinePointRegularLieGroup` and
 `SmoothAffinePointLieGroup` to the universe-general regular-evaluation,
 atlas and named-manifold interfaces. The coordinate-smooth group

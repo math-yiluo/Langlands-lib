@@ -1,6 +1,6 @@
 # Actual weight-vector coordinates on root subgroups
 
-This internal derived unit retains the torus equivariance of the vector
+This internal derived module retains the torus equivariance of the vector
 coordinates already supplied by the published cyclic weight quotient.
 The ambient group scheme is smooth and affine over an arbitrary field, and the
 acting torus is split. For a nonzero character `a`, `HasNoHigherRoots i a`
@@ -43,8 +43,8 @@ multiplication from the choice of coordinates, rather than uniqueness of a
 basis.
 
 The provenance is an internal composition of the imported Library proofs.
-Worker 1368 identified the need to retain the quotient's equivariance for the
-pinned-rigidity argument and suggested the trivial-kernel transport route.
+The quotient's equivariance is retained for the pinned-rigidity argument,
+along the trivial-kernel transport route.
 The existing `isVectorGroup_of_noHigherRoots` forgets this equivariance; the new
 result preserves it. No connectedness, reductivity, maximality, characteristic
 or perfectness assumption is added. The character need not itself be an

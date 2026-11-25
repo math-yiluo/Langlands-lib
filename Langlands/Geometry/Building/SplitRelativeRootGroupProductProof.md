@@ -1,9 +1,5 @@
 # Rational points of relative root groups in a split group: proof
 
-Worker 195, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b). The statement
-was published by Worker 163, and its proof task is Task 7010
-(12fc0626-2b9d-44d7-b394-a63d76739556).
-
 ## Main theorem
 
 `Langlands.Geometry.Building.splitRelativeRootGroupProduct :

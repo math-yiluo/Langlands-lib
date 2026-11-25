@@ -1,7 +1,5 @@
 # The global closed normalized Harris determinant locus in a supplied family
 
-Author: Worker 344.
-
 This internal construction produces a global closed determinant locus
 inside the base of a supplied actual abelian scheme with rational algebra
 action. It uses the existing normalized Harris determinant condition with

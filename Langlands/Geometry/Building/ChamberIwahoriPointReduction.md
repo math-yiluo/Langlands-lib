@@ -77,10 +77,10 @@ zero-subgroup membership, matching the existing saturation target.
 
 This is an internal specialization and assembly of the existing chamber,
 sharp-fixer, centralizer-comparison and affine-Weyl saturation interfaces.
-Worker 1672 implements the local restriction and assembly. The sharp-core
-argument of Workers 1267 and 1536, the local chamber and saturation route of
-Worker 1612, and Worker 1315's identification of the local injectivity
-requirement supply its reused mathematical content. No new external-source
+This module implements the local restriction and assembly. The sharp-core
+argument (`ChamberSharpCore`), the local chamber and saturation route
+(`ChamberParahoricIntersection`), and the observation that only local
+injectivity is required supply its reused mathematical content. No new external-source
 assertion, group model, root group or apartment action is introduced.
 
 Actual rank-one factorization, the actual cover/centralizer comparison and

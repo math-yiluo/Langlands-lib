@@ -1,9 +1,7 @@
 # Finite fields of definition of group-scheme homomorphisms
 
-Authors: Worker 1442 and Worker 27.
-
 This internal construction adapts the finite-stage scheme-map factorization and
-faithful reflection of group laws from Worker 27's published
+faithful reflection of group laws from the published
 `Torus.FiniteSeparableSplitting`. It exposes an actual group homomorphism at the
 finite stage, together with the equation recovering the specified homomorphism
 over the algebraic extension. Source and target groups need not be commutative.
@@ -56,5 +54,5 @@ reflection of group laws, and affine closed-subgroup reflection. No external
 numbered theorem is claimed here. This module supplies finite fields of
 definition for maps between groups already defined over `k`. For a split torus
 over `Ω`, its split form over `k` can serve as the source. Frobenius invariance,
-invariant maximal-torus existence, and maximality after geometric descent remain
-separate obligations.
+invariant maximal-torus existence, and maximality after geometric descent are
+not proved here.

@@ -1,7 +1,7 @@
 # Topology of a ring pullback spectrum
 
 This internal helper module constructs the topological pushout used in the
-assigned affine scheme pushout proof. Let `f : B →+* D` and `g : C →+* D`
+affine scheme pushout proof `AffineSchemePushoutProof`. Let `f : B →+* D` and `g : C →+* D`
 be homomorphisms of arbitrary commutative rings in one universe. Write
 `P = RingHom.pullback f g`, the subring of `B × C` of compatible pairs,
 and let `i = f.pullbackFst g` and `j = f.pullbackSnd g` be its projections.
@@ -14,8 +14,8 @@ and let `i = f.pullbackFst g` and `j = f.pullbackSnd g` be its projections.
 `isPushout_comap_pullback f g hf` records the corresponding `IsPushout`.
 The target in this universal property is an arbitrary object of `TopCat`
 in the same universe. No reducedness, nonzero-ring, or separation assumption
-is used. The scheme universal property is a separate remaining part of
-the host task.
+is used. The scheme universal property, `AffineSchemePushoutStatement`, is
+proved in `AffineSchemePushoutProof`.
 
 ## Covering the spectrum
 

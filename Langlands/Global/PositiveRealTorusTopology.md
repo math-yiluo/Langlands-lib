@@ -1,6 +1,7 @@
 # Closed positive-real subgroups in the actual adelic point topology
 
-Worker 112, with unchanged actual-point topology support by Worker 94.
+The module uses the actual-point topology support
+(`GroupScheme.affinePointsTopologicalSpace`) unchanged.
 
 This is an internal consequence of the intrinsic positive-real subgroup,
 the proved scalar closed embedding, and the actual regular-function point
@@ -33,9 +34,10 @@ The empty-rank case is included.
 This proof of closedness uses character inverse images. It does not require
 an inverse-continuity assertion for the torus coordinate equivalence, and
 does not assert continuity of the positive torus parametrization. A
-coordinate homeomorphism, closedness of an image in an arbitrary ambient
+coordinate homeomorphism (`coordinatesHomeomorph`, in
+`PositiveRealTorusEmbedding`), closedness of an image in an arbitrary ambient
 group, a central split-torus selection, and reduction or volume results
-remain separate obligations.
+are separate statements.
 
 The local topology instances have explicit names and expose exactly
 `GroupScheme.affinePointsTopologicalSpace` on the actual affine-point

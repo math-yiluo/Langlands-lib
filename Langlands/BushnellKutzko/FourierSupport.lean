@@ -18,8 +18,9 @@ trace duality `LatticeChain.mem_endFiltration_one_sub_of_forall` turns this into
 `c⁻¹ (xᵀ - b') ∈ 𝔓^{1-k}(𝓛)` whenever `ψ(c ·)` is nontrivial on `𝔬_K`
 (`LatticeChain.toLin'_mem_endFiltration_of_rectangularFourierIntegral_ne_zero`).
 
-This is piece An1 of the analytic part of the proof of T2 (Task 7683): it bounds the support of
-the Fourier transform of the test function attached to a stratum contained in a representation.
+This belongs to the analytic part of the proof of T2 (see `ConductorFormula`): it bounds the
+support of the Fourier transform of the test function attached to a stratum contained in a
+representation.
 -/
 
 noncomputable section
@@ -161,7 +162,7 @@ theorem mem_matrixFiltration (𝓛 : LatticeChain 𝒪[K] K (Fin N → K)) (k : 
 
 variable [MeasurableSpace K] [MeasurableAdd K]
 
-/-- **Fourier support in terms of the lattice chain** (piece An1). Let `c ≠ 0` be such that
+/-- **Fourier support in terms of the lattice chain**. Let `c ≠ 0` be such that
 `ψ(c a) ≠ 1` for some `a ∈ 𝔬_K`. If the Fourier integral of the twisted indicator of
 `(𝔓^k(𝓛), b')` is nonzero at `x`, then `c⁻¹ (xᵀ - b') ∈ 𝔓^{1-k}(𝓛)`. -/
 theorem toLin'_mem_endFiltration_of_rectangularFourierIntegral_ne_zero

@@ -6,8 +6,8 @@ Source: J. Tits, *Classification of algebraic semisimple groups* (1966),
 Registered source `tits-1966-classification-algebraic-semisimple`;
 SHA-256 `962203f9e47e9c3c43fc1049a38e28c751aa42beb7ee5250a095a132e215a5d4`.
 
-Every declaration belongs to `Langlands.GroupScheme` and is an unproved
-`Prop`-valued definition. The common hypotheses are an arbitrary field
+Every declaration belongs to `Langlands.GroupScheme` and is a
+`Prop`-valued definition, not proved in this module. The common hypotheses are an arbitrary field
 `k : Type u`, an actual `k`-group scheme `G` with affine and
 locally-finite-type structure morphism, and `d : TitsIndexData G`.
 This datum includes actual semisimplicity, a maximal split torus `S`,
@@ -68,9 +68,11 @@ of star invariance and the actual simple-root comparison.
 of that target and the split-rank target. Both are at the same
 arbitrary universe and add no hypotheses.
 
-The remaining proof units are star invariance with the restriction/orbit
-and actual-simple-root comparison, and the comparison with the
-independent split rank. Published relative-root-system,
+The proofs are in two modules: star invariance with the restriction/orbit
+and actual-simple-root comparison in `TitsIndexStarProof`
+(`titsIndexStarRelativeRoots`), and the comparison with the
+independent split rank in `TitsIndexSplitRankProof` (`titsIndexSplitRank`,
+`titsIndexRelativeStructure`). Published relative-root-system,
 absolute-restriction and maximal-split-torus results may be used after
 checking their exact hypotheses. The existence of their statement
 definitions is not a proof of any target here. No local classification,

@@ -1,6 +1,6 @@
 # Transporting the cokernel construction along a right exact functor
 
-Author: Worker 61. Extends Worker 13's published functorial cokernel
+Extends the functorial cokernel
 construction `Langlands.Cohomology.CokernelComplex`.
 
 Let `A` and `B` be abelian categories. Let `T : A ⥤ A` with
@@ -60,5 +60,5 @@ Sources: registered folder
 (digest `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`;
 member PDF SHA-256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`).
-Worker 61 read the cited passage. Lean 4.34.0, Mathlib
+The cited passage was read. Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

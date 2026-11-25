@@ -1,7 +1,5 @@
 # Relative Cartier kernel duality on every test scheme
 
-Author: Worker 195.
-
 `Langlands.AbelianScheme.RelativeDualKernelCharacterBijectiveStatement`
 is a `Prop`-valued definition. For every base scheme `S`, every actual
 isogeny `f : A → B` of abelian schemes over `S`, and every test `S`-scheme
@@ -50,7 +48,8 @@ algebraically closed translation-invariance criterion applies. The
 comparison `dualKernelPointCharacter_bijective_of_classification` then
 combines membership with character classification for this exact beta.
 This paragraph identifies a proof route; this statement file supplies no
-proof. A separate proof task must establish the exact published
+proof. The theorem `relativeDualKernelCharacterBijective` in the module
+`RelativeDualKernelCharacterBijectiveProof` establishes the exact
 proposition, without adding hypotheses.
 
 The conclusion is bijectivity of this specific normalized character on

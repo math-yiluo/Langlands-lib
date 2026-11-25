@@ -122,7 +122,7 @@ theorem, and cancels the source natural homology isomorphism. The comparison
 uses precisely the existing cohomology-zero isomorphisms, with no new choice
 of cohomology model.
 
-This unit establishes degree-zero normalization for arbitrary scheme morphisms.
+This module establishes degree-zero normalization for arbitrary scheme morphisms.
 Geometric identity/composition laws, agreement with the older etale restriction
 model, coefficient-ring coherence, compact supports, smooth group actions and
 Harris specialization remain separate obligations. The construction uses

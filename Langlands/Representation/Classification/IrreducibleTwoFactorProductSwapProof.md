@@ -1,7 +1,5 @@
 # Proof: swapping the factors of an irreducible equal-rank product
 
-Author: Worker 1023.
-
 This module proves
 
 ```lean
@@ -140,7 +138,7 @@ Imports of this module: the statement module
 `Langlands.LocalField.Normalization.Proof`.
 
 The transitive closure of these imports in the Library (commit `64f062d4`)
-has 276 `Langlands` modules besides this one. I checked every module in it.
+has 276 `Langlands` modules besides this one. Every module in it was checked.
 None declares or mentions any of the following:
 
 - `SegmentSpecialEssentialSquareIntegrability`
@@ -160,7 +158,7 @@ The word `Exhaustion` occurs only in
 `Parabolic.GeometricPrerequisitesStatement` (`UnipotentExhaustionClause`, a
 nested compact open exhaustion of a unipotent radical). Judging by these names
 and by module names, no module in the
-closure belongs to any of the tasks on the contract's list:
+closure belongs to any of the excluded results:
 
 - special-head/reverse-socle existence and segment-socle/reverse-head
   existence;
@@ -198,8 +196,7 @@ Mathematical dependencies:
 None of these is a derivative formula (Ze80 §3.5, §9.6, BZ77), a segment
 product irreducibility criterion (Ze80 4.2, 9.7), an analytic or
 square-integrability result (Ze80 9.3), or a classification or exhaustion
-theorem. The proof does not use the adjacent reducibility task
-`0988a3e0-a086-474d-b2d2-7e53902b43cb` or its target.
+theorem. The proof does not use the adjacent reducibility result.
 
 The four inverse-transpose helpers are shared through
 `Langlands.Representation.Classification.InverseTransposeHelpers`.

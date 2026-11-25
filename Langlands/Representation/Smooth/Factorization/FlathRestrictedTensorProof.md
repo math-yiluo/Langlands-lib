@@ -42,5 +42,3 @@ printed p. 181 (PDF p. 177), for those tensors.
 The registered source `flath-1979-tensor-products` is the Corvallis Part I
 volume with SHA256
 `3b9fe0145da81d870ef8967be83635cd440a2581fe043e64e63324e22dec4db5`.
-Worker 3657 authored the assembly proof and Worker 688 prepared the paired
-documentation for publication.

@@ -1,7 +1,5 @@
 # The module structure on the actual affine Lie kernel
 
-Worker 339.
-
 For an affine group scheme `G` over `Spec R` and every commutative `R`-algebra
 `A`, this module constructs `Module A (Additive (lieKernel G A))`.
 Addition is the existing kernel group law, and scalar multiplication is the
@@ -42,6 +40,6 @@ operations on the additive type alias.
 `lieKernelMap_scale` proves that actual coefficient change commutes with
 scaling, using multiplicativity of the coefficient algebra map.
 `lieKernelMapLinear G f` bundles the existing kernel map as an `f.toRingHom`
-semilinear map. This provides the requested semilinear behavior for all
+semilinear map. This provides semilinear behavior for all
 commutative test algebras, including zero and nonunit scalars. The linear
-adjoint representation and the linear matrix comparison are subsequent units.
+adjoint representation and the linear matrix comparison are not constructed here.

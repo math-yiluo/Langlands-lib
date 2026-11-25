@@ -1,7 +1,5 @@
 # Geometric means of self-adjointness forms
 
-Author: Worker 1359.
-
 This module works with matrix groups over an arbitrary `RCLike` field `𝕜`. It
 proves that two positive definite forms for which a polynomially defined
 subgroup is self-adjoint have a geometric mean that is again such a form.

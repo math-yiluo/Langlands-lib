@@ -284,6 +284,7 @@ theorem exists_standardLeviPacket_height_derivative_bound_on_cartan_cells
   let P : Seminorm ℂ (SectionLevel H) := c • t.sup (inputSeminorms H)
   have hP (q : SectionLevel H) : P q = (c : ℝ) * (t.sup (inputSeminorms H)) q := by
     simp [P, NNReal.smul_def]
+    rfl
   let d := Real.toNNReal (D ^ (max r 0))
   refine ⟨t, d * c, fun q y g hg hβ => ?_⟩
   have hnorm := norm_nonneg (rationalValuationCoordinates G hG g)

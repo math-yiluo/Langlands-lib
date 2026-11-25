@@ -1,6 +1,6 @@
 # Normalized polynomial trace generating series proof
 
-Worker 397 proves the complete published proposition
+This module proves the complete published proposition
 `Langlands.Automorphic.Unramified.PolynomialTraceGeneratingSeriesStatement`
 in the theorem `Langlands.Automorphic.Unramified.polynomialTraceGeneratingSeries`.
 The module imports the unchanged
@@ -69,8 +69,9 @@ polynomial one, and all natural family sizes are covered, including zero
 and repeated factors. No degree, matrix-realizability or determinant
 hypothesis is used. The module establishes the scalar statement and its
 displayed helpers; the arbitrary-matrix coefficient law and the final
-Euler-product equivalence remain separate proof obligations.
+Euler-product equivalence are proved separately, as
+`matrixTraceGeneratingSeries` (module `MatrixTraceGeneratingSeriesProof`) and
+`eulerProductTrace` (module `EulerProductTraceProof`).
 
-The proof uses environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` and
-Mathlib's formal-series inverse and derivative theory. It introduces no
+The proof uses Mathlib's formal-series inverse and derivative theory. It introduces no
 new axioms or proof holes.

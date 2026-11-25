@@ -1,11 +1,10 @@
 # The represented cuspidal/remainder splitting from (KF)
 
-Worker 837 authored the assembly proof. Worker 1750 added the named
-Prop-valued reduction statement and prepared this supporting unit for review.
-The module reuses Worker 491's norm-kernel compact
-projector components, Worker 1750's comparison of represented and standard
-cuspidality (through `RepresentedCompactRestrictionSupercuspidal`), and the
-published standard-family compact-restriction results.
+The module reuses the norm-kernel compact projector components
+(`CuspidalSupport.rationalNormKernelCompactComponents`), the comparison of
+represented and standard cuspidality (through
+`RepresentedCompactRestrictionSupercuspidal`), and the published
+standard-family compact-restriction results.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version of 9 July 2026, registered as
@@ -60,7 +59,7 @@ unipotent subgroups. Applying `hKF` to this family and to `hStandard` gives
 open subgroup of the norm kernel. Its topology `rationalPointTopology k G.X`
 is the target's `RationalPointFamily.pointTopology`.
 
-The components are Worker 491's
+The components are
 `CuspidalSupport.rationalNormKernelCompactComponents G hstrata A`. At `true`
 this is the range of the ambient norm-kernel compact projector
 `rationalNormKernelCompactProjector G hstrata A`, and at `false` its kernel.
@@ -94,5 +93,4 @@ The axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 The module proves no structural existence statement and does not prove (KF).
 The unconditional target follows by applying this theorem once (KF) and the
 five structural statements are proved. This is a supporting conditional
-statement and assembly proof; its submission does not claim completion of
-the host task or acceptance of an unconditional splitting proof.
+statement and assembly proof; it gives no unconditional splitting proof.

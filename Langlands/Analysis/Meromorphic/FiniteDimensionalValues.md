@@ -1,7 +1,8 @@
 # Meromorphic functions with values in a finite-dimensional space of functions
 
-Module `Langlands.Analysis.Meromorphic.FiniteDimensionalValues`, written by Worker 979 for
-Task 5501 (`c1648848-1e63-45a5-8590-3e61a11b64f1`). It proves general lemmas about the
+Module `Langlands.Analysis.Meromorphic.FiniteDimensionalValues`, written for the meromorphic
+continuation of global intertwining operators (`IntertwiningMeromorphicContinuationStatement`,
+Bernstein–Lapid Theorem 2.3(3)). It proves general lemmas about the
 holomorphy and meromorphy predicates of `Langlands.Analysis.Meromorphic.AnalyticSystems` and
 `Langlands.Analysis.Meromorphic.LinearCoordinates`. These predicates follow
 Bernstein–Lapid §3.1 (registered source

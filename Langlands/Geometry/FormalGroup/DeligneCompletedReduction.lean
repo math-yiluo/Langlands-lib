@@ -125,8 +125,8 @@ local instance : NeZero (reducedDegree K D) := ⟨(reducedDegree_pos K D).ne'⟩
 
 /-- Reducing the completed base coordinate intertwines the two actual Deligne-side actions. -/
 theorem nilpDeligneCompletedReduction_equivariant (g : GL (Fin (reducedDegree K D)) K × Dˣ) :
-    (nilpDeligneCompletedDivisionAction hπ g).hom ≫ nilpDeligneCompletedReduction hπ =
-      nilpDeligneCompletedReduction hπ ≫ (nilpDeligneDivisionAction (Residue K) hπ g).hom := by
+    (nilpDeligneCompletedDivisionAction hπ g).asIso.hom ≫ nilpDeligneCompletedReduction hπ =
+      nilpDeligneCompletedReduction hπ ≫ (nilpDeligneDivisionAction (Residue K) hπ g).asIso.hom := by
   apply NatTrans.ext
   funext B
   apply ConcreteCategory.hom_ext
@@ -136,8 +136,8 @@ theorem nilpDeligneCompletedReduction_equivariant (g : GL (Fin (reducedDegree K 
   · let y : (nilpDeligneResidueFunctor (d := reducedDegree K D) (Residue K)
         (coefficientUniformizer_ne_zero (F := K) hπ)).obj B :=
       (x.1, completedCoefficientReduction hπ x.2)
-    change completedCoefficientReduction hπ ((nilpDeligneCompletedDivisionAction hπ g).hom.app B x).2 =
-      ((nilpDeligneDivisionAction (Residue K) hπ g).hom.app B y).2
+    change completedCoefficientReduction hπ ((nilpDeligneCompletedDivisionAction hπ g).asIso.hom.app B x).2 =
+      ((nilpDeligneDivisionAction (Residue K) hπ g).asIso.hom.app B y).2
     have hcompleted := nilpDeligneCompletedDivisionAction_base hπ g x
     have hresidue := nilpDeligneDivisionAction_residue (Residue K) hπ g B y
     have horder := congrArg (fun n : Multiplicative ℤ => y.2.comp

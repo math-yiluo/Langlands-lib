@@ -1,8 +1,5 @@
 # Proof of existence of quotients by finite étale subgroups of projectively embedded abelian schemes
 
-Authors: Worker 934 wrote this Lean module and this Markdown. The candidate also contains
-modules by Worker 1224, listed below, and both workers are its authors.
-
 The theorem `Langlands.AbelianScheme.finiteEtaleQuotientExistence` has type exactly
 `Langlands.AbelianScheme.FiniteEtaleQuotientExistenceStatement.{u}`, for an arbitrary
 universe `u`. Take a locally noetherian `S`, an abelian scheme `A` over `S`, a closed
@@ -30,8 +27,9 @@ the plan given there, with the following implementation choices.
    lie in affine opens. The quotient theorem used here asks this for the orbit of every
    point. That is the case `E = U` of footnote 1 of Stacks Tag 07S6, as explained in the
    published `FiniteLocallyFreeEquivalenceRelationQuotientStatement`. Each orbit is a finite
-   subset of one fibre of `A.X.hom`. Worker 1224's theorem
+   subset of one fibre of `A.X.hom`. The theorem
    `Langlands.AlgebraicGeometry.RelativeProjectiveSpace.exists_isAffineOpen_forall_mem_of_fibre`
+   (module `Langlands.AlgebraicGeometry.RelativeProjectiveSpaceFibreAffineOpen`)
    puts every finite subset of a fibre of a closed subscheme of relative projective space
    into one affine open. This is where the displayed embedding `i` is used.
 3. **Quotient scheme and torsor square** (EVM Theorem (4.16)(i), (iii)). The ported FLT
@@ -49,21 +47,21 @@ the plan given there, with the following implementation choices.
    them. This uses that `A` is commutative, so `K` is normal. It gives a commutative group
    law on `P` over `S` for which `p` is multiplicative, and a point of `A` maps to the unit
    of `P` exactly when it factors through `K`. The ported FLT files state this over
-   `Spec R`. This candidate generalizes them to an arbitrary base `S`, because the proofs
-   never use that the base is affine. Their Markdown files list the changes.
+   `Spec R`. The modules under `Langlands/AnthropicFLT/OverBase/` generalize them to an
+   arbitrary base `S`, because the proofs never use that the base is affine. Their Markdown
+   files list the changes.
 5. **Étaleness of `q`.** This is the derivation given in item 6 of the statement Markdown.
    In the torsor square, `s` is a base change of the étale morphism `K.G.X.hom`, so it is
    étale. Mathlib's descent of étaleness along surjective, flat, quasi-compact morphisms then
    makes `p` étale.
 6. **Abelian-scheme output.** This is the derivation given in item 5 of the statement
-   Markdown. Worker 1224's `Langlands.AbelianScheme.ofFiniteEtaleSurjective` takes the
+   Markdown. `Langlands.AbelianScheme.ofFiniteEtaleSurjective` (module
+   `Langlands.AbelianScheme.FiniteEtaleQuotientPropertyDescent`) takes the
    commutative group scheme `B` and the finite étale surjection `p` with `p ≫ g = A.X.hom`.
    From these it shows that `g` is smooth and proper with geometrically connected fibres,
    which makes `B` an abelian scheme.
 
-## Modules added by this candidate
-
-Worker 934:
+## Modules of this proof
 
 - this module, `Langlands.AbelianScheme.FiniteEtaleQuotientExistenceProof`;
 - the seven generalized FLT group-law modules under `Langlands/AnthropicFLT/OverBase/`:
@@ -72,17 +70,14 @@ Worker 934:
   `Definitions.Def_GoodReductionJacobian_RelativeGroupLawAction`, and the statement and proof
   modules (`Theorems/Thm_…`, `P2M/Sol/S_…`) of
   `GoodReductionJacobian_RelativeGroupLaw_finiteLocallyFree_mono_equivalence_actionGroupoid`
-  and of `GoodReductionJacobian_RelativeGroupLaw_exists_relativeGroupLaw_quotient_of_isColimit`.
-
-Worker 1224:
-
+  and of `GoodReductionJacobian_RelativeGroupLaw_exists_relativeGroupLaw_quotient_of_isColimit`;
 - `Langlands.AbelianScheme.FiniteEtaleQuotientPropertyDescent` (`ofFiniteEtaleSurjective` and
   the property-descent lemmas);
 - `Langlands.AlgebraicGeometry.RelativeProjectiveSpaceFibreAffineOpen` (orbit affineness);
 - the FLT port of smooth source descent,
   `AlgebraicGeometry.Smooth.of_comp_of_smooth_of_surjective_of_locallyOfFinitePresentation`,
   (`Theorems/Thm_…` and `P2M/Sol/S_…` modules under `Langlands/AnthropicFLT/`). The
-  `Algebra.IsSmoothAt` and `H1Cotangent` FLT ports it imports are already in the Library.
+  `Algebra.IsSmoothAt` and `H1Cotangent` FLT ports it imports are separate Library modules.
 
 Each of these modules has its own Markdown with its sources and the changes made to it.
 
@@ -147,7 +142,7 @@ affine open. The conclusion is `Nonempty K.QuotientData`.
   turns these facts into the limit property of the square. The lift is the chosen
   factorization, its second leg is checked by composing with `A.X.hom`, and uniqueness holds
   because `j` is a monomorphism.
-- The result is the `QuotientData` with `B := ofFiniteEtaleSurjective A B p hg` (Worker 1224)
+- The result is the `QuotientData` with `B := ofFiniteEtaleSurjective A B p hg`
   and `q := qB`, whose underlying morphism `p` is finite, étale and surjective, together with
   the kernel square just constructed.
 

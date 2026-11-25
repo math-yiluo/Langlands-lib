@@ -1,7 +1,5 @@
 # Factor projections of a Weil restriction attached to idempotents
 
-Worker 47.
-
 Module `Langlands.GroupScheme.Reductive.WeilFactorProjection`, namespace
 `Langlands.GroupScheme.WeilFactor`. It imports
 [`AffineIdempotentPoints`](../AffineIdempotentPoints.md) and

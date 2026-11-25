@@ -417,6 +417,9 @@ proposition.
 **Elliptic inner product.** AC's elliptic inner product (Chapter 1, (6.6))
 and its orthogonality relations (Proposition 6.6) are not defined here. AC
 prove Proposition 6.6 as a consequence of base change. The facts that the
-comparison needs are left to a later statement task: the (twisted) orbital
+comparison needs are not stated in this module: the (twisted) orbital
 integrals of a pseudo-coefficient (AC Chapter 1, Lemma 2.12; HL
-II.5.14–II.5.15) and Kazhdan's Theorem K(b).
+II.5.14–II.5.15) and Kazhdan's Theorem K(b). Clauses on these orbital
+integrals (HL II.5.14, Proposition 2) are part of
+`Langlands.BaseChange.CuspidalPseudoCoefficientExistenceStatement` and
+`Langlands.BaseChange.TwistedCuspidalPseudoCoefficientExistenceStatement`.

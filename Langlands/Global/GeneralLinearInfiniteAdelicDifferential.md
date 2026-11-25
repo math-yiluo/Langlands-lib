@@ -78,7 +78,7 @@ in differentiation.
 specializations require no supplied dimension or tangent identification and
 include `n = 0`.
 
-This unit establishes the first-order differential comparison only. Lie
+This module establishes the first-order differential comparison only. Lie
 brackets, enveloping actions, exponential-curve comparison, finite adelic
 slice differentiation, growth estimates, quotient measures and cuspidal
 Hilbert-space constructions remain separate obligations.

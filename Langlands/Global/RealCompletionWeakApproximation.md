@@ -1,7 +1,5 @@
 # Weak approximation in real completions
 
-Worker 243.
-
 The scalar diagonal in the real completions is dense. The Lean proof uses
 `denseRange_numberFieldFiniteCompletionDiagonal` with the empty set of
 finite places and projects onto the real factors. The projection is

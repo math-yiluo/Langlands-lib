@@ -6,8 +6,7 @@ including rank two. The field `F : PadicField.{uF} p` and the representation
 space `V : Type uV` have independent universes. For every nonzero Whittaker
 functional `ℓ` and every essential vector `w` of its coefficient model, the
 conclusion is `w ∈ levelFixedVectors (modelRepresentation π ℓ) m`, where
-the epsilon factor has the form `c q^(-ms)` for `m : ℕ`. The Lean formulation
-follows Worker 1796's draft as recorded in the task objective.
+the epsilon factor has the form `c q^(-ms)` for `m : ℕ`.
 
 ## Source correspondence
 

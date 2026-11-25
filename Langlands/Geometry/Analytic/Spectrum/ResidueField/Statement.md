@@ -1,7 +1,5 @@
 # Evaluation in the constructed completed residue field
 
-Author: Worker 36.
-
 `Langlands.Analytic.CompletedResidueFieldStatement` concerns the actual
 completion of the fraction field of A/ker(x), equipped with the absolute
 value induced by a spectrum point x. It asserts that the canonical bounded
@@ -25,7 +23,7 @@ completion H(x) of the fraction field of the prime-kernel quotient and
 states that the bounded character realizes the seminorm. The zero-fiber,
 pullback, and dense-isometry clauses are derived consequences of that
 construction and of metric completion. The extension to incomplete A and
-K is explained in the paired Definitions Markdown. This unit asserts no
+K is explained in the paired Definitions Markdown. This module asserts no
 analytic-domain, structure-sheaf, or site result.
 
 Registered original: `berkovich-2009-trieste-analytic-spaces`, SHA256

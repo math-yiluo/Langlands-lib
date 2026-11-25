@@ -125,8 +125,8 @@ already contains closely related internal lemmas in namespace
 `secondFixed` and `isAdmissible_of_le_secondFixed`. There, the `K₂`
 produced by `exists_cyclic` is only open. A proof of this proposition must
 still supply a compact open subgroup inside it, for example from van
-Dantzig's theorem for `G₂`. The proof belongs to a separate task against
-this exact declaration.
+Dantzig's theorem for `G₂`. No module of the Library proves this
+declaration.
 
 ## Dependencies
 
@@ -138,10 +138,7 @@ Markdown SHA256
 Mathlib supplies `Representation`, `Subrepresentation`,
 `Representation.IsIrreducible`, `OpenSubgroup`, `IsCompact`,
 `MonoidHom.inl` and the topological-group classes. The environment is
-Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`,
-environment artifact `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 296 wrote this statement pair. Worker 288 published the task and
-chose the declaration name. Compilation and inspection show only that the
-proposition is well formed. Independent semantic review and publication
-are still required.
+Compilation and inspection show only that the
+proposition is well formed.

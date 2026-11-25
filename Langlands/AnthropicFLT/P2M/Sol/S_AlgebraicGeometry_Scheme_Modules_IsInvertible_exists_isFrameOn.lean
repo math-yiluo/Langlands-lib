@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
@@ -51,11 +51,11 @@ end FrameBridge
 end PresheafOfModules
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Hom Scheme.Opens.ι_appIso Scheme.Hom.image_preimage_eq_opensRange_inf Scheme Scheme.Modules Scheme.Opens Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertible Scheme.Modules.IsFrameOn)
+export _root_.AlgebraicGeometry (Scheme.Hom Scheme.Opens.ι_appIso Scheme.Hom.image_preimage_eq_opensRange_inf Scheme Scheme.Modules Scheme.Opens Scheme.Opens.opensRange_ι Scheme.Modules.IsInvertibleFLT Scheme.Modules.IsFrameOn)
 namespace Scheme
-export _root_.AlgebraicGeometry.Scheme (ringCatSheaf Modules.pullback Hom Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules Opens grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.IsInvertible Modules.IsFrameOn)
+export _root_.AlgebraicGeometry.Scheme (ringCatSheaf Modules.pullback Hom Γ Opens.ι_appIso Hom.image_preimage_eq_opensRange_inf Modules.restrictFunctor restrictFunctor Modules Opens grothendieckTopology Opens.opensRange_ι PresheafOfModules Modules.IsInvertibleFLT Modules.IsFrameOn)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback map_smul IsInvertible dual IsFrameOn)
+export _root_.AlgebraicGeometry.Scheme.Modules (pushforward pullback presheaf Hom restrictFunctor restrictFunctorIsoPullback map_smul IsInvertibleFLT dualFLT IsFrameOn)
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
 namespace FrameBridge
@@ -123,6 +123,7 @@ lemma gen₀_map {W W' : (U : Scheme.{u}).Opens} (i : W' ⟶ W) :
 
 omit e in
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 lemma bijective_smul_map_eqToHom {A B : X.Opens} (q : A = B) (t : L.val.obj (op A))
     (h : Function.Bijective (fun b : Γ(X, A) => b • t)) :
     Function.Bijective (fun a : Γ(X, B) => a • L.val.map (eqToHom q.symm : B ⟶ A).op t) := by
@@ -151,10 +152,10 @@ end
 
 end FrameBridge
 
-namespace IsInvertible export _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible (pullback) end IsInvertible
+namespace IsInvertible export _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible (pullbackFLT) end IsInvertible
 open scoped _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible in
 open FrameBridge in
-theorem IsInvertible.exists_isFrameOn' {X : Scheme.{u}} {M : X.Modules} (hM : Scheme.Modules.IsInvertible M) (x : X) :
+theorem IsInvertible.exists_isFrameOn' {X : Scheme.{u}} {M : X.Modules} (hM : Scheme.Modules.IsInvertibleFLT M) (x : X) :
     ∃ (U : X.Opens) (s : Γ(M, U)), x ∈ U ∧ IsFrameOn s U := by
   obtain ⟨U, hxU, ⟨eU⟩⟩ := hM.1 x
   let e : (restrictFunctor' U).obj M ≅ SheafOfModules.unit (U : Scheme.{u}).ringCatSheaf :=
@@ -176,6 +177,6 @@ end
 open _root_.AlgebraicGeometry _root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isFrameOn.AlgebraicGeometry _root_.AlgebraicGeometry.Scheme.Modules _root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isFrameOn.AlgebraicGeometry.Scheme.Modules in
 
 theorem solution {X : AlgebraicGeometry.Scheme.{u}} {M : X.Modules}
-    (hM : AlgebraicGeometry.Scheme.Modules.IsInvertible M) (x : X) :
+    (hM : AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT M) (x : X) :
     ∃ (U : X.Opens) (s : Γ(M, U)), x ∈ U ∧ AlgebraicGeometry.Scheme.Modules.IsFrameOn s U :=
   AlgebraicGeometry.Scheme.Modules.IsInvertible.exists_isFrameOn' hM x

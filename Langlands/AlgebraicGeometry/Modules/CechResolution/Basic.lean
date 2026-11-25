@@ -62,7 +62,7 @@ lemma sheafOn_map (W : X.Opens) {V V' : X.Opens} (i : V' ⟶ V) :
 
 /-- Scalars act on `Γ(sheafOn M W, V)` through the ring map `Γ(X, V) ⟶ Γ(X, W.ι ''ᵁ W.ι ⁻¹ᵁ V)`. -/
 lemma smul_eq (W V : X.Opens) (r : Γ(X, V)) (m : Γ(sheafOn M W, V)) :
-    r • m = (M.smul ((W.ι.app V ≫ (W.ι.appIso (W.ι ⁻¹ᵁ V)).inv) r)).hom m := rfl
+    r • m = (M.smul ((W.ι.app V ≫ (W.ι.appIso (W.ι ⁻¹ᵁ V)).inv) r)).asHom.hom m := rfl
 
 lemma app_appIso_inv_comp_map {W W' : X.Opens} (h : W' ≤ W) (V : X.Opens) :
     (W.ι.app V ≫ (W.ι.appIso (W.ι ⁻¹ᵁ V)).inv) ≫

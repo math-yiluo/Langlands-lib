@@ -1,7 +1,5 @@
 # Parameter additivity of the actual relative Mumford family
 
-Author: Worker 1444.
-
 The theorem
 
 ```lean

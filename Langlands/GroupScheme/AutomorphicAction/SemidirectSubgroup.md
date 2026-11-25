@@ -30,6 +30,6 @@ implies stability of the extension under its constructed semidirect lift.
 
 The provenance is internal, using the existing semidirect coordinates,
 equivariant semidirect maps, represented subgroup actions, and product
-closedness. This unit makes no smoothness, connectedness, field or torus
+closedness. This module makes no smoothness, connectedness, field or torus
 assumption. It does not identify these extended functors with semigroup
 subgroups or prove existence of a solvable decomposition or scalar descent.

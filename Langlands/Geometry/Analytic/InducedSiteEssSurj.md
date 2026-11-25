@@ -1,10 +1,8 @@
 # Essential surjectivity of induction on equivariant quasi-étale sites
 
-Author: Worker 5254.
-
 This module proves the essential surjectivity part of Berkovich's Example
 1.2.1(i), `InducedSpace.QuasiEtaleSiteEquivalenceStatement`, assuming two
-accepted statements and an isomorphism condition as hypotheses (see below).
+Library statements and an isomorphism condition as hypotheses (see below).
 Berkovich states the example without proof; the argument here is the evident
 one: a quasi-étale `G`-space `π : W → X_{G/H}` is induced from the `H`-space
 `π⁻¹(X)` over `X`. The `H`-space `π⁻¹(X)` and its morphism to `X` are
@@ -32,7 +30,7 @@ chosen representative `r ∈ H`.
   Hausdorff and `π.hom` is quasi-étale, then `baseHomV π` is quasi-étale. Here
   `hP : OpenPartitionCoproductStatement.{u, v, z}` and
   `hR : QuasiEtaleOpenRestrictionStatement.{u, max z v}` are hypotheses: the
-  accepted statements that an analytic space partitioned into open subsets is
+  Library statements that an analytic space partitioned into open subsets is
   their coproduct, and that a quasi-étale morphism with Hausdorff source
   restricts to a quasi-étale morphism over an open subset of the target
   (Berkovich 1994, Lemma 3.1(i)). Neither statement is proved here.
@@ -69,7 +67,8 @@ of `Qét(X_{G/H}(G))`, i.e. of `EquivariantQuasiEtaleSite` of the induced
 - `essSurj_quasiEtaleSiteInduction_of_isIso hH hC hQ hP hR hI`: the functor
   `quasiEtaleSiteInduction hH hC hQ X` is essentially surjective, given
   `hI : ∀ π : Y ⟶ inducedAction H X.obj, IsIso (lift H (baseInclusion π))`.
-  This condition is proved separately (by Worker 933) from `hP`.
+  This condition is proved separately from `hP` (`isIso_lift_baseInclusion`, module
+  `InducedSiteBaseIso`).
 
 ## Proof
 

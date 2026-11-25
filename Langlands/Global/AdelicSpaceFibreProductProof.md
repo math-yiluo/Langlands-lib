@@ -1,7 +1,5 @@
 # Fibre products of adelic points of separated algebraic spaces
 
-Author: Worker 105.
-
 This module proves the fibre-product clause of Conrad's p.17 claims for both kinds of global
 field. The source is Brian Conrad, *Weil and Grothendieck approaches to adelic points* (2011),
 printed p.17: the topology on adelic points is compatible with fibre products. The clause is

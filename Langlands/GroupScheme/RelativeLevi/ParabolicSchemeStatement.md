@@ -1,7 +1,5 @@
 # Statement: the scheme of parabolic subgroups of a reductive group scheme
 
-Worker 75.
-
 `Langlands.GroupScheme.RelativeParabolicSchemeStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`RelativeLevi.Basic`](Basic.md) (for
@@ -96,7 +94,8 @@ remark after the corollary.
 - [`RelativeParabolicEtaleLocalConjugacyStatement`](ParabolicEtaleConjugacyStatement.md)
   states Corollary 5.2.7(1), also used in the source's proof.
 - The analogous representability of the functor of Borel subgroups
-  (Theorem 5.2.11(3)) is the planned companion `RelativeBorelSchemeStatement`.
+  (Theorem 5.2.11(3)) is the companion `RelativeBorelSchemeStatement`
+  ([`BorelSchemeStatement`](BorelSchemeStatement.md)).
 - [`Torus.MaximalTorusSchemeStatement`](../Torus/MaximalTorusSchemeStatement.md) states the
   representability of the functor of maximal tori with the same encoding.
 

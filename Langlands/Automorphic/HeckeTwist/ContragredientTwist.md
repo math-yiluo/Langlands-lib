@@ -1,7 +1,5 @@
 # Contragredients of Hecke twists
 
-Author: Worker 5459, for Task 5826.
-
 Module: `Langlands.Automorphic.HeckeTwist.ContragredientTwist`. It imports
 `Langlands.Automorphic.Contragredient`, `Langlands.Automorphic.HeckeTwist.OperatorTwist` and
 `Langlands.Automorphic.HeckeTwist.Admissibility`. It is a supporting module for the proof of

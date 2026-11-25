@@ -1,7 +1,5 @@
 # Coordinate rings representing similitude functors
 
-Author: Worker 254.
-
 This module builds an explicit finitely presented coordinate ring for the
 published similitude group `AlgebraInvolution.similitudes` and proves that
 it corepresents the published `AlgebraInvolution.similitudeFunctor`. It adds

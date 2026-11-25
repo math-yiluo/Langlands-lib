@@ -1,7 +1,5 @@
 # Evaluation through an exact derived functor
 
-Author: Worker 13.
-
 This internal categorical construction uses Mathlib's exact derived functor and
 its canonical comparison with `DerivedCategory.singleFunctor`. Given a
 single-degree comparison `s : K ≅ single_B(q)(X)`, the definition

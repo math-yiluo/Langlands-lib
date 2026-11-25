@@ -10,10 +10,10 @@ proved. The source-P₁ specialization is identified with the actual binary
 product, retaining its entire GL₀ output carrier.
 
 This module does not prove the all-rank `LeftPsiCompatibility` proposition,
-the positive Phi comparisons, or the host six-part
+the positive Phi comparisons, or the six-part
 `MirabolicProductMinusCompatibilityStatement`. Passing from the section
 subgroup to the positive binary parabolic and then to the binary product
-remains a separate assembly. The existing statement module is imported for
+is a separate assembly, in `MirabolicProductMinusLeftPsi`. The existing statement module is imported for
 the unchanged targets and their native functor definitions.
 
 ## Provenance and conventions
@@ -27,7 +27,7 @@ normalized induction and character localization; §§3.1–3.2, pp.450–451
 (PDF pp.11–12), for the mirabolic radical and minus functors; §4.12,
 pp.456–458 (PDF pp.17–19), case (II), for the left mixed product; and
 Proposition 4.13(b), p.458 (PDF p.19), for its functorial Psi compatibility.
-These passages and their page images were read during this task. A bounded
+These passages and their page images were read for this construction. A bounded
 project and literature search found no BZ77-specific erratum entry.
 
 The new equivalences and elementary adapters are derived internal content.
@@ -53,7 +53,7 @@ The pair `X=(ρ,τ)` consists of arbitrary smooth complex representations on
 product has carrier universe `max uF uV`. Here
 `psiMinus T r : P_(r+1) → GL_r`. No finiteness, admissibility,
 irreducibility, nonzero-vector or nonzero-object hypothesis occurs.
-Although the final host clause requires positive `k`, these internal
+Although the final clause `LeftPsiCompatibility` requires positive `k`, these internal
 constructions also permit `k=0`.
 
 ## Concrete subgroup and determinant calculations
@@ -221,11 +221,11 @@ used as a proof of its comparison.
 | Rank-zero specialization and naturality | Published whole-subgroup evaluation equivalence, binary right-zero tensor equivalence, smoothness transfer, and the explicit naturality calculations above. Arbitrary zero objects, repeated factors and GL₀ carriers remain admissible. |
 | Plus functors, adjunction, BZ77 4.13(d), and general Leibniz proofs | No such conclusion supplies an input. No plus-functor or adjunction module belongs to this closure. Matrix subgroup constructions do not assert a plus-functor theorem. |
 | Segment formulas, segment socle/head existence, commutation, gluing and product irreducibility | No segment derivative/Jacquet formula, Ze80 §3.5 or §9.6 result, Ze80 4.2 or 9.7 criterion, or any named excluded segment consumer supplies an input or appears in the import closure. |
-| Classification and exhaustion | No analytic or square-integrability result (including Ze80 9.3), special-head criterion, multisegment, ordered-head, quotient coverage, tempered, square-integrable or regular exhaustion theorem is imported or used. This includes the full inherited exclusion union of the host task. |
+| Classification and exhaustion | No analytic or square-integrability result (including Ze80 9.3), special-head criterion, multisegment, ordered-head, quotient coverage, tempered, square-integrable or regular exhaustion theorem is imported or used. |
 | Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure`, their successors, or transitive consequences is used. No supercuspidal theorem occurs in this closure. |
 | Whittaker and arbitrary-character finiteness | No `SupercuspidalCoinvariantFinitenessStatement`, `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement`, all-character single-block conclusion, or mirabolic finite-length route using them is imported or used. The Whittaker imports below supply basic characters and algebraic definitions only. |
-| Other clauses of the host task | The imported target module contributes proposition and functor definitions. No unproved Psi/Phi compatibility, short exact sequence, derivative formula, pending artifact or draft is used as a mathematical premise. This construction does not complete those clauses. |
-| Parameters and authority | All hypotheses are discharged for arbitrary supplied `T` and independent `uF,uV`; no theorem-valued premise, saturation, genericity, dimension or length condition is added. No suspended worker or consumer was used to waive an inherited restriction. |
+| Other clauses of the statement | The imported target module contributes proposition and functor definitions. No Psi/Phi compatibility, short exact sequence or derivative formula is used as a mathematical premise. This construction does not complete those clauses. |
+| Parameters | All hypotheses are discharged for arbitrary supplied `T` and independent `uF,uV`; no theorem-valued premise, saturation, genericity, dimension or length condition is added. |
 
 ## Complete project import closure
 

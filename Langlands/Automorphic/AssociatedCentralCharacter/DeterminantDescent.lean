@@ -1,5 +1,5 @@
 import Langlands.Automorphic.AssociatedCentralCharacterStatement
-import Langlands.ClassField.Global.RelativeWeilCharacterFactorization
+import Langlands.ClassFieldTheory.Global.RelativeWeilCharacterFactorization
 import Langlands.VirtualRepresentation.ExactDeterminant
 import Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionStatement
 
@@ -15,7 +15,7 @@ set_option autoImplicit false
 
 universe u uV
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global
 
@@ -78,4 +78,4 @@ theorem existsUnique_determinantCharacter_eq_reciprocityCharacter
   obtain ⟨δ, hδ⟩ := exists_determinantCharacter_eq_reciprocityCharacter hc S hS
   exact ⟨δ, hδ, fun χ hχ => reciprocityCharacter_injective hc (hχ.symm.trans hδ)⟩
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

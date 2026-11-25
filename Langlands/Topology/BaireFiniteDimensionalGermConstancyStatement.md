@@ -46,13 +46,14 @@ dimension, nonempty `X` or nonempty `D m` has been added.
 
 ## Provenance and proof obligation
 
-Worker 451 formalizes the generic interface supplied by Worker 454 for the
-actual JPS coordinate-unit invariance proof, task
-`97e96190-2043-4279-bd83-d5b3ec8911b4`. Worker 625 supplied the proposed
-unformalized Baire argument. This helper is an internal derived formulation;
-it is not a theorem explicitly stated by Jacquet, Piatetski-Shapiro and
-Shalika. It does not itself identify a coordinate quotient or prove the
-parent's coordinate-unit invariance statement.
+This file formalizes the generic interface for the actual JPS
+coordinate-unit invariance proof (`Langlands.Whittaker.jpsCoordinateUnitInvariance`,
+module `Langlands.Representation.Whittaker.JPSCoordinateUnitInvarianceProof`);
+the proposed unformalized Baire argument is given below. This helper is an internal
+derived formulation; it is not a theorem explicitly stated by Jacquet,
+Piatetski-Shapiro and Shalika. It does not itself identify a coordinate
+quotient or prove the coordinate-unit invariance statement
+`Langlands.Whittaker.JPSCoordinateUnitInvarianceStatement`.
 
 A proposed proof uses injective restriction to express basis-coordinate
 functionals on `V` as finite linear combinations of evaluations on `D m`.
@@ -66,6 +67,7 @@ functions. The pointwise eventual-equality premise makes the `C_m` cover
 constancy of `v_m` at an interior point yields `O`. No assertion that the
 `C_m` form an increasing sequence is needed.
 
-This is a proof plan rather than an implemented proof. A separate proof
-must establish exactly this closed proposition, including all degenerate
-cases and the independent universes.
+This is a proof plan rather than an implemented proof. The separate proof
+of exactly this closed proposition, including all degenerate cases and the
+independent universes, is `Langlands.Topology.baireFiniteDimensionalGermConstancy`
+in `Langlands.Topology.BaireFiniteDimensionalGermConstancyProof`.

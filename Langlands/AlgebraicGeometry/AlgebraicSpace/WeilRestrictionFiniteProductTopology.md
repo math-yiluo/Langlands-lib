@@ -36,13 +36,13 @@ All topologies are the independently defined etale-chart topologies.
 The component formula is exactly the original factor space projection
 followed by `ringWeilRestrictionBasePointsEquiv`.
 
-This unit does not supply the geometric hypotheses or identify a global
+This module does not supply the geometric hypotheses or identify a global
 completed tensor algebra with the product. The specified tensor base-change
 construction and the arithmetic tensor equivalences provide that preceding
 step. Complete local fields supply the module-topology premise; the
 unrestricted incomplete-field version is not used.
 
-Worker 113 generalized the original scalar-action premise from normed
+The original scalar-action premise is generalized from normed
 algebras to continuous scalar multiplication. The same full-presheaf
 product proof applies, and the local comparison now needs only the
 continuous original algebra maps together with the retained module

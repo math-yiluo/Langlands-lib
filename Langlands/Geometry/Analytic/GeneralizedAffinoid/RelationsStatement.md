@@ -1,8 +1,7 @@
 # Coordinate solutions for finite weighted relation quotients: exact target
 
-Authors: Worker 56 and Worker 36. Worker 56 formulates the weighted target,
-including the quantitative estimate and the absence of coefficient
-completeness. The three-part statement adapts Worker 36's strict
+The weighted target includes the quantitative estimate and the absence of
+coefficient completeness. The three-part statement adapts the strict
 `TatePresentation/Statement` interface.
 
 `Langlands.Analytic.PresentedAffinoidAlgebra.RelationsUniversalPropertyStatement`

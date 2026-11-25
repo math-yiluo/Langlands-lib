@@ -1,24 +1,25 @@
 # Harris's `D_m(K_ℓ)` and the forms of level `K(n)` along the tower `K_ℓ(n)`
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.DefiniteFormsFunctions` (Worker 61: `rightRegular`,
+Built on the published
+`Langlands.Shimura.DefiniteFormsFunctions` (`rightRegular`,
 `functionRightRegular`, `invariantsPullback`, `invariantsDescend`,
 `functionModuleRep`, `functionModuleForms`, `congruenceFunctionEquiv`,
 `congruenceFunctionEquiv_apply`), `Langlands.Shimura.DefiniteFormsTower`
-(Worker 61: `CongruenceTower`, `exists_lower_le`, `isSmooth_iff_iSup`,
+(`CongruenceTower`, `exists_lower_le`, `isSmooth_iff_iSup`,
 `congruenceLevel_mono`, `compactSpace_localLevel`),
-`Langlands.Shimura.DefiniteFormsDoubleCoset` (Worker 61: `localLevel`,
+`Langlands.Shimura.DefiniteFormsDoubleCoset` (`localLevel`,
 `localLevelMap`, `localLevelMap_surjective`, `ellModuleForms`,
 `LocalLevelFree`, `congruenceLevel`, `congruenceLevel_le`,
 `congruenceLevel_subgroupOf` and the normality instance of
 `(congruenceLevel σ ℓ K H).subgroupOf K`),
-`Langlands.Shimura.EquivariantForms` (Worker 61: `forms`, `mem_forms`,
-`levelAction`), `Langlands.Shimura.EquivariantFormsDoubleCoset` (Worker 61:
-`DoubleCosets`, `exists_eq_mul_out_mul`, `forms_apply_mul_mul`),
-`Langlands.Topology.GroupAction.CompactLocallyConstantStabilizer` (Worker 56:
-`CompactAction.functionStabilizer`, `functionStabilizer_isOpen`),
+`Langlands.Shimura.EquivariantForms` (`forms`, `mem_forms`,
+`levelAction`), `Langlands.Shimura.EquivariantFormsDoubleCoset`
+(`DoubleCosets`, `exists_eq_mul_out_mul`, `forms_apply_mul_mul`),
+`Langlands.Topology.GroupAction.CompactLocallyConstantStabilizer`
+(`CompactAction.functionStabilizer`, `functionStabilizer_isOpen`),
 `Langlands.Representation.Smooth.Definitions` (`fixedVectors`, `IsSmooth`),
-and on Worker 57's similitude groups (`AlgebraInvolution.FiniteAdelicPoints`,
+and on the similitude groups of `Langlands.Shimura.Unitary.Adelic`
+(`AlgebraInvolution.FiniteAdelicPoints`,
 `finiteAdelicDiagonal`, the topology on `σ.Points`). From Mathlib it uses
 locally constant functions (`LocallyConstant`), direct limits of modules
 (`Module.DirectLimit`, `Module.DirectLimit.lift`, `lift_injective`,
@@ -209,8 +210,8 @@ With `M = R`:
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". Worker 61
-read the rendered scanned page. Printed p.308 (one-based PDF page 10), as
+J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". The
+rendered scanned page was read. Printed p.308 (one-based PDF page 10), as
 quoted in the published `DefiniteFormsFunctions.md`: "More generally, we can
 let `𝓛` be any continuous `K_ℓ`-module; then `𝒜_ℓ(GJ, 𝓛, K)`, defined by
 analogy with (3.7), still makes sense. For example, we may take
@@ -273,9 +274,9 @@ How the module relates to Harris (an explanation, not formalized):
   modules named above; `localLevelSection`, `congruenceForms`,
   `towerFunctionMap`, `towerFunctionLinearMap`, `evalOne`,
   `functionModuleFormsLift` and `functionFormsMap` are internal
-  constructions. Worker 13 (first executor of task 23471a9e) reported that
-  this unit does not overlap their planned work, which stays on the
-  geometric and cohomological side.
+  constructions. This module does not overlap the geometric and equivariant
+  cohomology framework behind Harris, which stays on the geometric and
+  cohomological side.
 
 ## Related declarations
 
@@ -296,8 +297,8 @@ How the module relates to Harris (an explanation, not formalized):
   CofilteredLimit`): a locally constant function on a cofiltered limit of
   profinite spaces factors through a stage. `exists_lower_apply_mul` is the
   analogous statement for the quotients `G ⧸ T.lower n` of a compact group.
-- Library `Langlands.Shimura.LevelColimit`, `RestrictedLevelColimit`
-  (Worker 13): colimits over compact open levels. `towerForms` is a union
+- Library `Langlands.Shimura.LevelColimit`, `RestrictedLevelColimit`:
+  colimits over compact open levels. `towerForms` is a union
   over a fixed sequence `K(n)` of levels inside one function space.
 
 ## Scope

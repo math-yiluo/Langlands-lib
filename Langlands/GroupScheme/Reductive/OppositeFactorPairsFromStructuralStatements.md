@@ -1,26 +1,28 @@
 # Opposite factor pairs from supplied rank-one cells and root lines
 
-Author: Worker 1407.
-
 Module `Langlands.GroupScheme.Reductive.OppositeFactorPairsFromStructuralStatements`.
 
 ## Purpose
 
 `AlgClosedOppositeFactorPairsStatement.{u}` (module
-`Rational.AlgClosedOppositeFactorPairsStatement`, accepted statement
-`36dc664a-2fbe-4ceb-b39e-f1b87813556a`) is the rank-one input of the opposite-pair big-cell
-assembly for Task 7459. This module derives it from three existing Library statements. All
-three are explicit hypotheses and are not proved here:
+`Rational.AlgClosedOppositeFactorPairsStatement`) is the rank-one input of the opposite-pair
+big-cell assembly `steinbergBigCellIndependent` (module
+`Reductive.SteinbergBigCellIndependentProof`), which proves the Steinberg big-cell data
+independently of the excluded dynamic-Borel inputs. This module derives it from three
+existing Library statements. All three are explicit hypotheses and are not proved here:
 
 - `RootDatumExistenceStatement.{u}` (`Reductive.RootDatumStatement`): every split maximal
   torus of a connected reductive group over a field has a finite reduced root datum.
-  Task 7458 owns its independent proof.
+  Its independent proof is `rootDatumExistenceIndependent` (module
+  `Reductive.RootDatumExistenceIndependent`).
 - `SplitRankOneRootCellStatement.{u}` (`Reductive.SplitRankOneRootCellStatement`): in
   semisimple rank one, with a supplied root datum, there are additive maps `xp, xm` with
   torus weights `±α`, an open triple cell `xm · T · xp`, and the rank-one relation.
-  Task 7509 owns its independent proof.
+  Its independent proof is `splitRankOneRootCellIndependent` (module
+  `Reductive.SplitRankOneRootCellIndependentProof`).
 - `SplitRootLieLineStatement.{u}` (`Reductive.SplitRootLieLineStatement`): root spaces of
-  the Lie algebra are lines. Task 7510 owns its independent proof.
+  the Lie algebra are lines. Its independent proof is `splitRootLieLine_independent` (module
+  `Reductive.SplitRootLieLineIndependentProof`).
 
 ## Results
 
@@ -48,7 +50,7 @@ three are explicit hypotheses and are not proved here:
 `hasOppositeFactorPairs_of_rootDatum` (module `Reductive.SplitPinnedOppositeFactorPairs`).
 Only the rank-one cell input changes. The Library proof obtains its cell from
 `rankOne_exists_rootCell`, which takes `RankOnePositiveRootUniquenessStatement` and
-`splitRootLieLine` as inputs, both excluded for Task 7459. Here:
+`splitRootLieLine` as inputs, both excluded from the independent big-cell route. Here:
 
 - the additive maps `xp, xm`, their torus weights and the open triple cell come from
   `hcell`;
@@ -82,8 +84,8 @@ applies (2). (5) is `Classical.choose` of (4).
 
 ## Independence
 
-A private closure audit over project constants, `a609cb60`, found that all six declarations
-reach none of the inputs excluded by Task 7459. It also covered the new inputs
+A closure audit over project constants found that all six declarations reach none of the
+excluded inputs. It also covered the new inputs
 `rankOne_centralizer_isRepresentedBy`, `RelativeRoot.hasNoHigherRoots_of_isRootDatumOf`,
 `orthogonalRootPairing_isReduced`, `Dynamic.mono_right_of_tripleCell` and
 `VectorGroup.isTorusEquivariant_of_weightPointAction`. The excluded inputs are:
@@ -95,7 +97,7 @@ reach none of the inputs excluded by Task 7459. It also covered the new inputs
 - `splitRootLieLine`, `splitRankOneRootCell`, `isParabolicSubgroup_of_range_eq_dynamicParabolic`;
 - the projective-Borel helpers.
 
-An earlier audit, `3489efdd`, covered the remaining inputs shared with the Library proof:
+An earlier audit covered the remaining inputs shared with the Library proof:
 `dynamicCentralizerReductive`, `dynamicCentralizerRoots`, the `RootReducedness` lattice
 lemmas, `orthogonalRootPairing`, `root_map_centralizer`,
 `exists_normalizing_latticeReflectionIso`, `exists_sq_eq_of_isNormalizingPoint`,

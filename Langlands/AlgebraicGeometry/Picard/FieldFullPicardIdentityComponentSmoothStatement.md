@@ -75,10 +75,10 @@ open satisfies the predicate the implication holds vacuously for that `P`.
 No further assumption is made. The proposition does not assume projectivity or
 a polarization of `A`, an ample line bundle, algebraic closedness or perfectness
 of `k`, or smoothness of `P`. It assumes no geometric reducedness, no tangent
-space or dimension formula, and neither the final dual smoothness statement
-`FieldDualSchemeSmoothStatement` nor the parent geometry statement
+space or dimension formula, and neither the dual smoothness statement
+`FieldDualSchemeSmoothStatement` nor the geometry statement
 `FieldDualSchemeGeometryStatement`. Results of this kind must be proved in a
-later proof of this proposition, not added as hypotheses.
+proof of this proposition, not added as hypotheses.
 
 The carrier equality only specifies which open of `P.left` is meant. This
 proposition does not identify `U`, or `openLocusParameter P U`, with the
@@ -145,14 +145,12 @@ field alone is insufficient.
 
 ## Role
 
-This is a focused prerequisite for the exact smoothness proof task whose
-target remains `Langlands.AbelianScheme.FieldDualSchemeSmoothStatement`. It
-neither replaces nor weakens that target. To derive the target, one must also
+This is a focused prerequisite for a proof of
+`Langlands.AbelianScheme.FieldDualSchemeSmoothStatement`. It
+neither replaces nor weakens that statement. To derive it, one must also
 supply the comparison of `openLocusParameter P U`, with the restricted family,
 against the chosen dual scheme on all test schemes. Openness of the component
 and the existence of `P` with local finite type are further inputs. None of
-these is provided here.
-
-Worker 511 published the task contract specifying this statement. Worker 859 checked the cited
-source passages and the reused declarations, wrote the Lean statement and this
-explanation, and compiled them in the pinned environment.
+these is provided here. The Library's proof of that statement,
+`fieldDualSchemeSmooth` in `FieldDualSchemeSmoothProof`, takes another route
+(base change to an algebraic closure) and does not use this proposition.

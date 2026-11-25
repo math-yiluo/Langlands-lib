@@ -1,8 +1,5 @@
 # Continuous spectrum and locus quotient diagrams over the actual base
 
-Authors: Worker 56; Worker 36, whose strict rational overcategory construction
-supplies the structural spectrum diagram pattern adapted here.
-
 Let `K : Type u` be a complete ultrametric normed field, let `P` be an actual
 finite positive-polyradius presented affinoid quotient over `K`, and let
 `G : Type v` be a topological group. The two universes are independent.
@@ -60,7 +57,7 @@ transformation. These identities are definitional.
 
 This is an internal categorical construction on the existing actual
 bounded structural maps and locus inclusions. It adapts the spectrum
-part of Worker 36's `StrictTestDomain/SpectralOverBase`, then adds the
+part of `StrictTestDomain/SpectralOverBase`, then adds the
 locus diagram and structural quotient factorization over the same base.
 Joint continuity is derived by the imported local and global proofs,
 not assumed for a new output object. No new literature theorem is
@@ -70,4 +67,4 @@ the same component maps; no spectrum injectivity is claimed.
 Empty loci and spectra, zero quotients, nilpotents and trivial scalar
 valuations remain allowed. Comparison with all compact analytic-domain
 tests, analytic atlases and structure sheaves, analytic etale sites
-and the Harris specialization remain further work.
+and the Harris specialization lie outside this module.

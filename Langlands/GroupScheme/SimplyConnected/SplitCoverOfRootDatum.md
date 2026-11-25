@@ -1,6 +1,6 @@
 # Split simply connected covers from root-datum existence
 
-Worker 169, Task 7298. Helper module of `IndependentHaboushReduction`. It contains no
+Helper module of `IndependentHaboushReduction`. It contains no
 proof of geometric reductivity or of root-datum existence.
 
 ## Statement
@@ -33,12 +33,13 @@ it depends on the excluded rank-one input:
 `rootDatumExistence → rootDatumExistence_of_splitWeylRationality → rootReducedness →
 RootReducedness.rankOneRootReducedness → RankOnePositiveRootUniquenessStatement`.
 This module turns that argument into a premise. `IndependentGeometricReductivityProof`
-supplies it from the rank-one central cover, through Task 7458's reducedness theorem.
+supplies it from the rank-one central cover, through the reducedness theorems
+`rankOneRootReducedness_of_centralCover` and `rootDatumExistence_of_rankOneReducedness`.
 
 ## Dependency audit
 
-A full type-and-value closure audit was run on 17 November 2026 (private diagnostic
-`67e07da0-f706-4b94-b7de-feb9cf64f46a`, with a private scanner). For every reached constant, the scanner follows every constant in its type
+A full type-and-value closure audit was run on 17 November 2026 (with a private
+scanner). For every reached constant, the scanner follows every constant in its type
 and in its value, including opaque proof values and instances. It reached 19,815
 `Langlands` constants and none of the following excluded names:
 `ParabolicDynamicStatement`, `RegularCocharacterBorelStatement`,
@@ -48,7 +49,7 @@ and in its value, including opaque proof values and instances. It reached 19,815
 `rankOnePositiveRootUniqueness`. `centralIsogenyRootDatumHom`, `semisimplePerfect` and
 `splitSimplyConnectedCoverExistence_of_minimalLattice` are each clean under the same
 audit. As positive controls, the scanner finds the excluded statement in the closures of
-`rootDatumExistence`, `splitSimplyConnectedCoverExistence` and the current
+`rootDatumExistence`, `splitSimplyConnectedCoverExistence` and
 `HaboushReduction.exists_simplyConnected_cover_of_isSemisimple`.
 
-A compiler diagnostic does not establish independent semantic acceptance.
+A compiler diagnostic does not replace an independent check of the statements' meaning.

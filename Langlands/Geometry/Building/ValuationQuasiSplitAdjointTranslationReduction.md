@@ -1,6 +1,6 @@
 # The translation part of AS 5 from simple-root transitivity
 
-This internal unit proves
+This internal module proves
 
 `valuationBuildingQuasiSplitAdjointTranslation_of_simpleRootTransitivity :
   QuasiSplitAdjointSimpleRootTransitivityStatement.{u} →
@@ -72,5 +72,5 @@ of the apartment.
 
 ## Scope
 
-The transitivity proposition remains an explicit premise. This unit does not prove it. It
+The transitivity proposition remains an explicit premise. This module does not prove it. It
 also does not prove the first sentence of AS 5 or the apartment axioms.

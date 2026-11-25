@@ -7,11 +7,9 @@ The module contains three **statements**, the `Prop`-valued definitions
 `CompactOpenSheafCharacterizationStatement`, `LocallyConstantCompactSectionsStatement` and
 `PointwiseTestAlgebraUnitalIffCompactStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The II.2.4 Proposition had no published statement.
 The published [GermSupport](GermSupport.md) and
-[GermSupportClosednessStatement](GermSupportClosednessStatement.md) leave the
-"II.2.4 compact-open exhaustion" as a separate unit. [ClopenExtension](../ClopenExtension.md)
+[GermSupportClosednessStatement](GermSupportClosednessStatement.md) do not treat the
+"II.2.4 compact-open exhaustion". [ClopenExtension](../ClopenExtension.md)
 constructs the clopen zero extension as an internal prerequisite and claims no comparison
 with the source proposition.
 
@@ -21,7 +19,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read II.2.4, printed p.38 / PDF p.44:
+II.2.4, printed p.38 / PDF p.44, was read:
 
 > Proposition. Soit `X` un espace t.d. et soit `F` un faisceau (de groupes abéliens) de base
 > `T_c`. Alors il existe un groupe abélien `F_c(X)` et un faisceau `F₁` isomorphe à `F` tels
@@ -111,9 +109,12 @@ only if `X` is compact.
   `U ∋ x`. Then `e χ_U = χ_U`, so `e(x) = 1`. Hence the support of `e`, which is compact, is
   all of `X`.
 
-## Remaining obligations
+## Proofs
 
-The proofs are a separate obligation.
+The three statements are proved by `compactOpenSheafCharacterization`
+(`CompactOpenSheafCharacterizationProof`), `locallyConstantCompactSections`
+(`LocallyConstantCompactSectionsProof`) and `pointwiseTestAlgebraUnitalIffCompact`
+(`PointwiseTestAlgebraUnitalProof`).
 
 ## Imports
 

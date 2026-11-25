@@ -21,8 +21,8 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
   (l : ActionLift ρ U.hom)
   (σ : ∀ i, l.subgroup →* Aut (C.obj i).left)
   (hσ : ∀ i (g : l.subgroup),
-    (σ i g).hom ≫ (C.arrow i).left =
-      (C.arrow i).left ≫ (l.action g).hom)
+    (σ i g).asIso.hom ≫ (C.arrow i).left =
+      (C.arrow i).left ≫ (l.action g).asIso.hom)
   (hcσ : ∀ i, IsContinuousAction (σ i))
 
 /-- Compatible continuous source actions are actual lifts of the base action,

@@ -1,7 +1,5 @@
 # Descending a commutative quotient through an inner twist
 
-Worker 838.
-
 Suppose the local isomorphisms from `G` to `H` over an fpqc cover have overlap
 relation given by conjugation by the cocycle `ζ`. For a homomorphism `q` from
 `G` to a commutative group `Q`, the composite of each inverse local isomorphism

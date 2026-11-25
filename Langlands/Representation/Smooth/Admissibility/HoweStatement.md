@@ -1,6 +1,6 @@
 # Howe's finite-length implication on actual reductive rational points
 
-Worker 1212. This statement unit defines the closed proposition
+This statement module defines the closed proposition
 `Langlands.SmoothRep.RationalPointsFinitelyGeneratedAdmissibleFiniteLengthStatement`
 in `Langlands.Representation.Smooth.Admissibility.HoweStatement`.
 It states the implication from finite generation and admissibility to finite
@@ -88,20 +88,19 @@ terminology without becoming premises of Howe's implication.
 
 ## Status and remaining work
 
-This artifact defines a proposition and supplies no proof of Howe's implication.
+This module defines a proposition and supplies no proof of Howe's implication.
 The source proof chooses a compact open subgroup fixing a finite generating
 family, normal in the fixed special maximal compact and admitting the relevant
 Iwahori decompositions. The preceding corollary and exactness of fixed vectors
 then bound the length by the dimension of its fixed-vector space. That stronger
-bound and the VI.6.3 lemma, proposition, and corollary remain separate obligations.
+bound and the VI.6.3 lemma, proposition, and corollary are not part of this module.
 
 The existing
 `Langlands.Aubert.General.RationalPointsFiniteLengthAdmissibleStatement`
-and its proof owner retain the converse implication. An exact proof successor
-for this new declaration is to be routed by the parent after independent
-statement acceptance and publication. The actual dynamic-Levi comparison,
-Jacquet results, and structural compact-open constructions also remain separate.
+states the converse implication. The actual dynamic-Levi comparison,
+Jacquet results, and structural compact-open constructions are also not part
+of this module.
 
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0
+Environment: Lean 4.34.0
 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.

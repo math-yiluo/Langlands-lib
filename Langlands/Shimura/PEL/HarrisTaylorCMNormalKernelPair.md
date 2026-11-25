@@ -198,6 +198,5 @@ that forgetting is finite etale or surjective. Freeness and transitivity
 on geometric fibers, the torsor and Galois-cover assertions, canonical-model
 comparison, uniformization and coefficient descent remain unproved here.
 Finiteness of the residual index and construction of this comparison do
-not imply any of them. All code and prose in this pair are by Worker 57;
-the pinned environment is Lean 4.34.0 with Mathlib
+not imply any of them. The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,8 +1,5 @@
 # Nonvanishing of partial cuspidal pair L-functions on the line `Re s = 1`
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition, uses two auxiliary definitions, and
 proves nothing:
 
@@ -18,14 +15,14 @@ with unitary central characters. It says the partial Rankin–Selberg L-function
 is that of the published `CuspidalPairFactorData`. Nothing from that module is
 rebuilt.
 
-**Why it is here.** Two published Library modules name this theorem as an
-unresolved global input owned by this program:
+**Why it is here.** Two published Library modules name this theorem as a
+global input that they do not supply:
 `Langlands/Global/Factors/AppendixPoleCountingStatement.md` and
 `Langlands/Global/Factors/MeromorphicPoleComparisonStatement.md`. Both say that
 neither module proves Shahidi (1981), Theorem 5.2, or replaces it with local
 conditions.
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalPairBoundaryNonvanishingStatement`. Its universe
 parameters are `u` (the number field) and `uQ` (the factor universe of the
 spectral presentations).
@@ -146,8 +143,10 @@ allows a pole, as at `s = 1` when `π' ≅ π̃`.
   `t + 1` are Shahidi's `n`, `m` (both at least 1). Sh81 also assumes
   "non-degenerate". For cuspidal representations of `GL_n` this is automatic,
   since they have Whittaker models (Shalika 1974, Sh81's reference [27]). In the
-  Library the corresponding input is the published, unproved
-  `Langlands.Global.WhittakerExpansionStatement`. It is not a hypothesis here;
+  Library the corresponding input is the published
+  `Langlands.Global.WhittakerExpansionStatement`, proved as
+  `Langlands.Global.whittakerExpansion` (module
+  `Langlands.Global.GeneralLinearWhittakerExpansionProof`). It is not a hypothesis here;
   any use of it belongs to the proof.
 - **Unitarity.** Sh81 assumes unitary local components (p.343). Here the
   hypothesis is `HasUnitaryCentralCharacter T`: some continuous character of the
@@ -214,7 +213,7 @@ allows a pole, as at `s = 1` when `π' ≅ π̃`.
   that holomorphy is pole information of the kind in GH Thm 11.7.1. It is not
   part of this statement.
 
-## 6. Proof routes (for the proof task)
+## 6. Proof routes
 
 Sh81 proves Thm 5.1 (pp.351–352) as follows. The non-constant Fourier
 coefficient of a cuspidal Eisenstein series on `GL_(n+m)`, induced from `π ⊗ π'`,
@@ -228,5 +227,11 @@ axis. This needs:
 - the Casselman–Shalika formula (Sh81's reference [3]);
 - the local theory of Sh81 §3.
 
-None of these is in the Library. The proof task may choose another established
-route, and it must record the route it uses.
+In the Library, `Langlands.Global.cuspidalPairBoundaryNonvanishingReduction`
+(module `Langlands.Global.Factors.CuspidalPairBoundaryNonvanishingReduction`)
+derives this statement from `CuspidalPairBoundaryNonvanishingEnlargedStatement`,
+and `Langlands.Global.cuspidalPairBoundaryNonvanishingEnlarged_of_eisenstein`
+(module `Langlands.Global.Factors.CuspidalPairEisensteinDerivation`) derives
+that from `CuspidalPairEisensteinCoefficientStatement` and
+`CuspidalPairEisensteinHolomorphyStatement`. Neither of these two statements is
+proved in the Library.

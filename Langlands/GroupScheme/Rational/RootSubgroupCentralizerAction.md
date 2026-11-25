@@ -70,5 +70,8 @@ represented-subgroup actions, normalized conjugation, and vector-line
 rigidity. They impose no characteristic restriction. They do not prove
 root-group dimension one, vector-group structure for a reductive root,
 generation by roots, centralization of all of `H`, the full normal-root
-dichotomy, or the host almost-simple-generation theorem. Those remaining
-structural obligations are not supplied by this contribution.
+dichotomy, or the almost-simple-generation theorem
+`SemisimpleAlmostSimpleGenerationStatement` that this module serves, which the
+Library proves as `semisimpleAlmostSimpleGeneration`
+(`Reductive.AlmostSimpleGenerationProof`). Those remaining
+structural obligations are not supplied by this module.

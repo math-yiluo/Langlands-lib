@@ -1,7 +1,5 @@
 # Étaleness of affine-chart Weil restrictions
 
-Author: Worker 185.
-
 This module supplies one local input for the affine-atlas step in Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Lemma 5.10, printed pp.17–18 (registered source
@@ -17,7 +15,7 @@ ring `A`.
 ## Algebra
 
 `Langlands.Algebra.weilRestriction_formallyUnramified` states that for a
-finitely presented, formally unramified `B`-algebra `C`, the TauCeti Weil
+finitely presented, formally unramified `B`-algebra `C`, the finite-presentation Weil
 restriction `WeilRestriction A B C` is formally unramified over `A`. The proof
 uses the criterion `Algebra.FormallyUnramified.iff_comp_injective`: given an
 `A`-algebra `T` with a square-zero ideal `I` and two `A`-algebra maps out of
@@ -29,8 +27,8 @@ hence zero. Formal unramifiedness of `C` over `B`
 (`Algebra.FormallyUnramified.lift_unique'`) then makes the two transported maps
 equal, and `homEquiv` is injective.
 
-`weilRestriction_etale` combines this with the published formal smoothness of
-the TauCeti Weil restriction to get `Algebra.Etale A (WeilRestriction A B C)`
+`weilRestriction_etale` combines this with the formal smoothness of
+the finite-presentation Weil restriction to get `Algebra.Etale A (WeilRestriction A B C)`
 for étale `C`. `weilRestrictionFiniteType_etale` transports étaleness to the
 Library's finite-type model `WeilRestrictionFiniteType A B C` through
 `WeilRestrictionFiniteType.finitePresentationAlgEquiv`.

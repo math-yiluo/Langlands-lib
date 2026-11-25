@@ -285,7 +285,9 @@ theorem coordinateOrigin_double_depths [IsAffine S.toGrp.X.left] [IsAffine Z.Z.X
     exact weylAction_mapsTo_relativeRoots i (C.weylNormalizer Z hZ hn) hb
   have hm2b : 2 • (-b) ∈ relativeRoots i := by
     have hh := weylAction_mapsTo_relativeRoots i (C.weylNormalizer Z hZ hn) h2b
-    simpa only [map_nsmul, hnroot] using hh
+    have hsm : ∀ (e : characterLattice S ≃ₗ[ℤ] characterLattice S) (y : characterLattice S),
+        e (2 • y) = 2 • e y := fun e y => e.toLinearMap.toAddMonoidHom.map_nsmul 2 y
+    simpa only [hsm, hnroot] using hh
   exact ⟨hdouble b hb h2b C.positive hp, hdouble (-b) hmb hm2b C.negative hm⟩
 
 end AlgebraicSU3RootCoordinates

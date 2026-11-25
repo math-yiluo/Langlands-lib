@@ -1,7 +1,5 @@
 # Fundamental weights trivial on the kernel of a homomorphism
 
-Author: Worker 64.
-
 `Langlands.GroupScheme.TitsIndexData.FundamentalWeightTrivialOnKernel`
 is a `Prop`-valued definition. It is used to say which end vertex of a
 numbered type-`D` diagram is the vector vertex of a spin cover.

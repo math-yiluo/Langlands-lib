@@ -2,7 +2,7 @@
 
 This is an internal assembly of actual subgroup function spaces, using the
 published signed-complex construction. All declarations lie in
-`Langlands.Aubert.SubgroupComplex`. Author: Worker 194.
+`Langlands.Aubert.SubgroupComplex`.
 
 Let `ι` be a finite linearly ordered set. Let `P s` and `U s` be actual
 subgroups of a topological group `G`, indexed by finite subsets `s` of `ι`.

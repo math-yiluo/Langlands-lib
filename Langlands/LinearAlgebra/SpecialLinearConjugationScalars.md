@@ -1,7 +1,5 @@
 # Scalar ambiguity of conjugation on special linear groups
 
-Author: Worker 239.
-
 This is a derived internal matrix-algebra unit in the namespace
 `Langlands.LinearAlgebra.SpecialLinearConjugation`. It works over an arbitrary
 commutative ring `R` and any finite index type `I`, in independent universes.

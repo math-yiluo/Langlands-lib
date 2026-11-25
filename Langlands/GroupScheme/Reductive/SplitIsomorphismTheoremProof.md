@@ -1,9 +1,5 @@
 # Proof: the Isomorphism Theorem for split reductive groups
 
-Author: Worker 74. The route follows the outline of an earlier compiled draft by
-Worker 3483 (program Task 3483), as described in this task's context. That draft was
-not available in this instance, so this file was written independently from the outline.
-
 This module proves the published proposition
 `Langlands.GroupScheme.SplitIsomorphismTheoremStatement`
 ([`Reductive.SplitIsomorphismTheoremStatement`](SplitIsomorphismTheoremStatement.md)) at
@@ -105,7 +101,6 @@ The module imports the target's statement module
 `Langlands.GroupScheme.Reductive.SplitIsomorphismTheoremStatement` and the published
 modules `Langlands.GroupScheme.Reductive.PinnedIsomorphismReduction` (which imports
 `Reductive.PinningLattice`) and `Langlands.GroupScheme.Reductive.SplitIsomorphismProof`.
-It does not change the statement's Lean/Markdown pair or anything it imports.
 
 ## Relation to the source
 

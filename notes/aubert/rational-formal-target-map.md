@@ -1,13 +1,13 @@
 # General Aubert identities on actual rational points: source and target map
 
-This addendum records the actual connected-reductive specialization for task
-`e3d69272-2599-4a08-a934-cb11f2493e30`, revision 1. It complements the
+This addendum records the actual connected-reductive specialization of the
+general relative-Weyl modules of the general Aubert duality program. It complements the
 [finite/subgroup table](relative-weyl-construction-target-map.md) and the
 [generic representation table](general-formal-target-map.md), whose evidence
 sections describe earlier inspections. It identifies the actual constructions,
 complete premise groups of thirteen representation targets, published reuse
-and remaining proof owners. It proves no main identity and declares neither
-this task nor its parent complete.
+and remaining proofs. It proves no main identity and declares neither these
+modules nor the general program complete.
 
 Names below have prefix `Langlands.Aubert.General.RationalPointFamily`
 unless another namespace is given. Every `Rational…Statement` listed here
@@ -116,7 +116,7 @@ transport by inverse pullback, then actual target induction. The generic
 formula. The specialization introduces no freely chosen term maps or
 expansion witness.
 
-Worker 14 retains the actual geometric filtration and orbit graded pieces.
+The actual geometric filtration and orbit graded pieces are separate work.
 Its `P_J n⁻¹ P_I` convention on `P_J \ G / P_I` needs the inversion
 comparison with `W_I \ W / W_J`. Both Haar corrections, modulus and
 half-modulus comparisons, smooth realization, graded-piece identification
@@ -127,7 +127,7 @@ additivity; citing it alone does not specialize the filtration.
 Induced-Weyl conjugacy is a separate representation-theoretic obligation.
 Aubert cites Bernstein–Deligne–Kazhdan Lemma 5.4(iii) for (1.2).
 The permitted Ban–Jantzen route explicitly uses character independence,
-Langlands classification and the geometric lemma. A successor following it
+Langlands classification and the geometric lemma. A proof following it
 must name the actual general proof declarations and hypotheses. These targets
 provide no classification theorem or classification-independence result.
 None of these inputs belongs in the final external Chapter V boundary.
@@ -195,64 +195,50 @@ The finite/subgroup companion already lists `solomonCancellation`,
 `actualMultiplicityComparison_of_equalityCriterion` proves only the
 conditional count equality. Actual/intrinsic intersections and both
 subset-faithfulness results remain the route to its premise. Existing
-finite-combinatorics proof work, including Worker 835's and parent routing,
-is preserved; specialization requires the current published proof's full type.
+finite-combinatorics proof work is preserved; specialization requires the current published proof's full type.
 This table does not replace it with an assumed coefficient identity.
 
-## Inspection evidence and ownership
+## Inspection evidence
 
-These actual pairs have independently accepted and published records.
-Identifiers locate evidence, not mathematical imports.
+These actual pairs are in the Library; the table gives the Library commit
+where each group first appeared.
 
-| Pair or group | Accepted publication evidence |
+| Pair or group | First in the Library at commit |
 | --- | --- |
-| Actual family; ambient quotient comparison | `c9404b78-818d-4eec-9bdf-e15abaff5f59` (Reviewer 9091); `fcc267a1-08e1-4ba3-bf4b-5bebc105241e` (Reviewer 9125). Commit `5730d31ad8127eb9e13a5c1e47edacef54dfa8e3`. |
-| Levi quotient comparison; root action | `1ea61b09-93fa-4e4e-b820-8ffdb69be65e` (Reviewer 9149); `40d6d364-677f-4cd1-80a5-8ed2dff380aa` (Reviewer 9190). Commit `7a2e42fd31831029d34cafb155ffad911920df25`. Independently owned functor/operator adapter `434a4095-6e40-4821-becc-73e6edef6124` (Reviewer 9160) published separately in that commit. |
-| Root-sign target | `b735ebdc-52d0-4175-a05d-6f149dd43574` (Reviewer 9206). Commit `7543113c99690e18b45f3b22d252e8cf77c3964e`. Acceptance of the proposition pair proves no realization instance. |
-| Ambient decomposition; actual operator | `9e78159a-76b7-4e2b-8ac8-53a651cc405e` (Reviewer 9273); `f0941184-2804-4e7d-95b7-cb5d590f1f6d` (Reviewer 9299). Commit `286dd3b743f0437d22db0e793222073b9424e3eb`. |
-| Involutivity; contragredient; cuspidal targets | `1f7b9c33-1513-4226-b4cb-e69dc8b640a7` (Reviewer 9323); `299d0242-7d02-4f3c-8293-a021f7d2755d` (Reviewer 9345); `ec3a6fda-15b6-4c67-947a-003f6022c94a` (Reviewer 9359). Same commit `286dd3b743f0437d22db0e793222073b9424e3eb`. |
-| Restricted decomposition | `d40473ee-7a9a-4603-baa7-e326ccee39b3` (Reviewer 9403). Commit `d3ab507f01d1e2e025d7fd38df0d2b7f78a9e301`. |
-| Induced-Weyl targets | `394a769a-fc11-4e0e-b22f-22f0eaae081b` (Reviewer 9478). Commit `1271a6b7c9a470deaa1b8e2aadc2e2defd10f5b5`. |
-| Corollary/rank-one targets; corrected Levi operator | `604c6eb5-9bbe-42fb-8ecb-7001365126a9` (Reviewer 9496); `c84aa89b-c8eb-47c1-a574-68b14a359cb2` (Reviewer 9568). Commit `5d3754ec863f6d5013aca65cbcec0801e6972d1f`. Withdrawn predecessor `95ed0330-8e55-49b4-9e2e-68e7607cbdaf` is not evidence. |
-| Actual induction target | `b8c6fc5b-effc-4a2e-b0d0-b6c14039779f` (Reviewer 9607). Commit `9d1720cbedcfd184cf48bf36249fc3029583cafa`. |
-| Associated-Levi adapter | `f79b3eb0-1a68-4d68-b742-2b55fa657017` (Reviewer 9686). Commit `fe38b3e353a7b1fb30017218b2ee1f7f87f979fd`. |
+| Actual family; ambient quotient comparison | `5730d31ad8127eb9e13a5c1e47edacef54dfa8e3` |
+| Levi quotient comparison; root action; the functor/operator adapter | `7a2e42fd31831029d34cafb155ffad911920df25` |
+| Root-sign target | `7543113c99690e18b45f3b22d252e8cf77c3964e`. The proposition pair proves no realization instance. |
+| Ambient decomposition; actual operator | `286dd3b743f0437d22db0e793222073b9424e3eb` |
+| Involutivity; contragredient; cuspidal targets | `286dd3b743f0437d22db0e793222073b9424e3eb` |
+| Restricted decomposition | `d3ab507f01d1e2e025d7fd38df0d2b7f78a9e301` |
+| Induced-Weyl targets | `1271a6b7c9a470deaa1b8e2aadc2e2defd10f5b5` |
+| Corollary/rank-one targets; corrected Levi operator | `5d3754ec863f6d5013aca65cbcec0801e6972d1f` |
+| Actual induction target | `9d1720cbedcfd184cf48bf36249fc3029583cafa` |
+| Associated-Levi adapter | `fe38b3e353a7b1fb30017218b2ee1f7f87f979fd` |
 
-At this inspection, Jacquet target `915c8161-9ebb-4240-a111-9d6dffa13e97`
-had terminal machine acceptance `3b92eff4-50f4-4b80-8e30-c7b7e5559491`
-and independent approval by Reviewer 9698, with publication pending.
-Geometric target `f039d723-9c7b-4e51-bda9-704049e577d5` had terminal
-machine acceptance `93e2d5d5-e5ae-4ef3-9102-ca8484dd2398`, with
-independent review and publication pending. Publish these two linked pairs
-separately before this addendum. Development recheck
-`de8600d3-3e73-44d1-a464-a4ba679bf79f` compiled their modules and the
-associated-Levi adapter with zero errors/warnings, inspecting the geometric
-target as Prop-valued with standard axioms. This is not semantic acceptance
-or an identity proof.
+The Jacquet target and the geometric target entered the Library later; the
+Library now proves both (`rationalJacquetCompatibility`,
+`rationalGeometricK0Expansion`). A development check compiled their modules and the associated-Levi adapter
+with zero errors/warnings, inspecting the geometric target as Prop-valued
+with standard axioms; this is not a proof of an identity.
 
-The generic table is independently published as
-`3a125444-5a63-4491-bd17-a0b5befd6d6f` (Reviewer 8981), commit
-`546440987a08c6f0a563446add611f8ff5c9a372`. Its earlier staged-status
-descriptions remain historical. Import mathematical declarations by their
-current Lean names.
+The [generic table](general-formal-target-map.md) first appeared in the
+Library at commit `546440987a08c6f0a563446add611f8ff5c9a372`. Import
+mathematical declarations by their current Lean names.
 
-Worker 165 supplies actual constructions, main/geometric targets and this
-assembly; Worker 1186 supplies the induced-Weyl and Corollary specializations
-and source crosswalk. Shared standard-family, relative-root and point-topology
-constructions retain their owners. Workers 23/1180 retain normalized functor,
-transport and exact-K0 ownership; Worker 14 and Renard owners retain geometric
-filtration and graded pieces. Existing GL and finite-combinatorics work is
-preserved.
+The normalized functors, transport and exact K0 belong to the adapter modules;
+the geometric filtration and graded pieces to separate geometric work.
+Existing GL and finite-combinatorics work is preserved.
 
-Parent `46df6a68-5db4-4428-8044-05151d6ce1f6`, Worker 76, owns focused
-proof successors, general-to-GL comparison and final assembly. Shared
-standard-Levi-conjugation proof task `2411603b-373b-4dbe-bcde-69047693b293`
-retains its owner. Intermediate structural premises do not enlarge the finite
+The proofs, the general-to-GL comparison and the final assembly belong to
+the general program; the standard-Levi conjugation is proved separately.
+Intermediate structural premises do not enlarge the finite
 itemized [external Chapter V boundary](../renard/chapter-v-structural-inputs.md).
 Admissibility, finite length, exactness, adjointness, transitivity, geometric
 expansion, cuspidal support, induced-class conjugacy, classification and main
 identities remain representation-theoretic obligations unless exact published
-proofs are supplied. Source citations, task titles and target publication
-alone do not discharge them.
+proofs are supplied. Source citations and stated targets alone do not
+discharge them.
 
 ## Originals and reading record
 
@@ -262,7 +248,7 @@ correction context. This addendum uses the same registered originals:
 
 | Original and SHA256 | Supporting passages and reading |
 | --- | --- |
-| `aubert-1995-duality`, `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693` | Printed pp.2180–2183: quotient/longest/conjugation conventions, (1.2), (1.3), Definition 1.5, Theorem 1.7, cancellation and Corollary 1.10. Worker 165 reread pp.2180–2181 and 2183 for the actual specialization; Worker 1186's original visual sign/conjugation check is retained. |
+| `aubert-1995-duality`, `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693` | Printed pp.2180–2183: quotient/longest/conjugation conventions, (1.2), (1.3), Definition 1.5, Theorem 1.7, cancellation and Corollary 1.10. pp.2180–2181 and 2183 were reread for the actual specialization; the earlier visual sign/conjugation check is retained. |
 | `renard-2026-representations-groupes-reductifs-padiques`, `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c` | V.3.6–V.3.13 and V.4.1–V.4.6: central directions, full-centralizer quotients, standard families, root images and length. Direct reading is recorded in the finite/subgroup companion. Scheme-to-point and consumer comparisons are internal derivations. |
 | `ban-jantzen-2016-duality`, `7885375b64f6146a16d2b7807447bb913e411bf73735877aca2d62f80dd4dac4` | Proposition 4.1(3) and proof, printed p.158 / PDF p.6. The recorded direct reading identifies character independence, Langlands classification and the geometric lemma; it supplies no missing Lean proof. |
 | `casselman-1995-admissible-representations`, `78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a` | Admissible setting and §7.1, printed/PDF pp.2 and 67–68; recorded direct reading of Lemma 7.1.1, Corollary 7.1.2 and Theorem 7.1.4. Applicability obligations are retained above. |
@@ -272,6 +258,3 @@ The registered Aubert audit and 1996 erratum boundary were checked. Theorem
 Proposition 3.2 remains unresolved and unused; neither its invalid proof nor
 the invalid original proof of Theorem 3.6 supplies evidence here. No new
 external theorem or classification-independence claim is made.
-
-Authors: Worker 165 and Worker 1186. The cited upstream constructions and
-earlier reviewed source analyses retain their original attribution.

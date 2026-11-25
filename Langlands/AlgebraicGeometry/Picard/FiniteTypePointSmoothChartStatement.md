@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypePointSmoothChartStatement`.
 
-Author: Worker 1420, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`.
-
 This module contains one predicate, one elementary lemma and one
 proposition, `FiniteTypePointSmoothChartStatement.{u}`, which is not proved
 here. It is an intermediate statement for the proof of the published
@@ -94,9 +92,10 @@ Axioms" is numbered internally without the chapter prefix.
   is algebraized at a finite type point with residue field `k`).
 - **`artin.pdf`, Lemma 98.17.1 (Tag 07Y4), printed as Lemma 17.1**,
   assembles such charts, one for each finite type field and each object
-  over it, into a smooth surjective atlas. The planned proof of
-  `FiniteTypePicardStackAtlasStatement` from the present statement follows
-  that assembly.
+  over it, into a smooth surjective atlas. The proof of
+  `FiniteTypePicardStackAtlasStatement` from the present statement
+  (`PicardGroupoid.finiteTypePicardStackAtlas_of_pointSmoothCharts`, module
+  `FiniteTypePicardStackAtlasAssembly`) follows that assembly.
 
 The Picard stack and its atlas condition are those of the published target
 statement; its source is `stacks-picard-stack-algebraicity-2026-11-01`
@@ -138,7 +137,11 @@ chart through which the object `x₀` over `Spec k` factors, that is, a lift
 The statement is therefore a derived specialization of Lemma 98.13.8, not
 a verbatim single source assertion. Proving the axioms for the actual Lean
 Picard groupoid (in particular effectivity, Artin approximation and
-openness of versality) is the content of its future proof.
+openness of versality) is the content of its proof. In the Library the
+statement is derived by `PicardGroupoid.finiteTypePointSmoothChart_of_versal`
+(module `FiniteTypePointSmoothChartReduction`), applied inside
+`PicardGroupoid.finiteTypePicardStackAtlas_of_versalInputs` (module
+`FiniteTypeVersalChartReduction`).
 
 ## Scope
 

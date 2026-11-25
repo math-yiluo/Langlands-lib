@@ -1,6 +1,6 @@
 # Supplied and spectral local-field data over an arbitrary base
 
-Worker 845 generalizes the existing p-adic realization mechanism for Task 7403.
+This module generalizes the existing p-adic realization mechanism.
 `Langlands.LocalField.TopologicalData K₀ L` records a local-field realization of
 an extension of fields, with a specified base valuative relation and topology.
 Its five fields are `topology`, `valuativeRel`, `valuativeExtension`,
@@ -74,16 +74,15 @@ perfect or separable. In the local-field application the base norm is
 `LocalGalois.localNormedField K`, whose completeness, ultrametricity and comparison
 lemmas are already published for every `IsNonarchimedeanLocalField K`.
 The replacement of an algebraic closure by a separable closure belongs to the
-absolute-filtration unit, not this foundational data package.
+absolute-filtration module, not this foundational data package.
 
-Development check `6eaa79d3-715c-4758-ad0b-168453aa7af5` compiled the unchanged
+A development check compiled the unchanged
 canonical and normalization proof consumers. A private diagnostic also checked
 by `rfl` that the original canonical valuation, valuative relation and full
 topological-data constructor are the new ones, and that both integer-ring
 presentations are identical. Inspection of the general constructor reports only
-`propext`, `Classical.choice`, and `Quot.sound`. This is development evidence;
-independent review and publication remain separate.
+`propext`, `Classical.choice`, and `Quot.sound`.
 
-A further consumer check `df82c366-330b-4a3c-baa6-13f003161985` compiled
+A further consumer check compiled
 `CanonicalProof`, `Normalization.Proof` and `Weil.Local.ExtensionResidue` with
 zero diagnostics after retaining the original outer norm expression.

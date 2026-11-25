@@ -1,6 +1,6 @@
 # Square integrability bounds exponents along weak dynamic contractions
 
-Author: Worker 4712. Module
+Module
 `Langlands.Representation.Exponents.CasselmanDynamicNecessity`. This is a
 supporting module for the necessity half of Casselman's criterion (Renard 2026,
 VII.1.2). It combines the abstract modules `WeakIwahoriBasis`,

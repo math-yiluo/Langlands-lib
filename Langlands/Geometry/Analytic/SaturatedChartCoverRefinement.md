@@ -38,6 +38,6 @@ ideals and finite positive polyradii. No directedness, greatest chart,
 nontrivial valuation, reducedness or nonempty spectrum is required.
 
 These refinements supply actual original source charts for subsequent strong
-morphism gluing on the constructed saturated atlases. This unit does not
+morphism gluing on the constructed saturated atlases. This module does not
 construct general strong composition, extend arbitrary original strong-map data
 to all local domains, or construct analytic or equivariant etale sites.

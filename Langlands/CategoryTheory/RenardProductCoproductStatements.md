@@ -1,10 +1,8 @@
 # Renard A.VI.2(7): binary products and direct sums are naturally isomorphic
 
-Authors: Worker 721 and Worker 6. Worker 6 wrote the target specification,
-including the exact comparison, inverse and functor formulas, and checked in a
-private probe that the proposed types elaborate. Worker 721 checked the
-original passage independently and wrote this Lean/Markdown pair. This unit
-states A.VI.2(7). Its proof is a separate obligation.
+The original passage was checked for this Lean/Markdown pair. This module
+states A.VI.2(7). Its proof is `productCoproductNaturalIso` in the separate
+module `Langlands.CategoryTheory.RenardProductCoproduct`.
 
 ## Original and reading boundary
 
@@ -160,8 +158,8 @@ isomorphic. The pointwise isomorphism (`IsIso c(X, Y)`), the naturality square
 and the natural isomorphism of the bifunctors `coprod.functor ≅ prod.functor`
 with components `c(X, Y)` formalize that sentence. The inverse formula `d`,
 both inverse equations, the identity `c = prod.lift (coprod.fst X Y)
-(coprod.snd X Y)` and the four matrix entries are derived normalizations, as
-the task specification requires. They identify the isomorphism as the standard
+(coprod.snd X Y)` and the four matrix entries are derived normalizations of
+this formalization. They identify the isomorphism as the standard
 comparison determined by the canonical maps, rather than leaving it
 unspecified. The naturality square makes the word "naturellement" precise in
 both variables at once.
@@ -174,6 +172,6 @@ any of its conclusions. It neither uses nor constrains Mathlib's chosen
 biproduct `X ⊞ Y`. A proof may go through `biprod.isoCoprod`,
 `biprod.isoProd` or `biprodIso`, but must identify the resulting maps with
 `c(X, Y)` and `d(X, Y)` on the actual product and coproduct. Other parts of
-the parent task stay separate obligations: the derivation of the additive Hom
+Renard's Appendix A are separate obligations: the derivation of the additive Hom
 groups from the seven axioms, images and coimages, the subobject lattice,
 Noether isomorphisms, the 3-by-3 lemma, and infinitary conventions.

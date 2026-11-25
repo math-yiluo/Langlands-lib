@@ -1,7 +1,5 @@
 # Global functions and the special fibre of a smooth DVR scheme
 
-Worker 596.
-
 This module concerns an arbitrary actual smooth scheme `Y` over a discrete
 valuation ring `R`. It imposes no affineness, quasi-compactness, separatedness,
 properness, connectedness or henselianity hypothesis.
@@ -10,7 +8,7 @@ properness, connectedness or henselianity hypothesis.
 For an irreducible element `π` of `R`, its basic open is the complement of the
 actual special fibre. A function on an affine open that vanishes at all points
 of the special fibre is divisible by the restricted `π`. This follows from
-reducedness of the smooth residue algebra and the published theorem
+reducedness of the smooth residue algebra and the theorem
 `SmoothDVRUniformizerDivision.dvd_of_forall_mem_prime`. The local quotients of
 a global function glue: multiplication by `π` is injective on all affine
 opens by flatness, and `Smoothening.exists_eq_mul_of_affine` applies.
@@ -34,7 +32,7 @@ function ring, and no surjectivity or base-change isomorphism is asserted.
 The global divisibility assertion justifies the injection of special-fibre
 coordinate functions discussed immediately before BLR, *Néron Models*, §6.5,
 Lemma 6, printed p.161 (PDF p.168). The implemented argument reuses the
-published local smooth-algebra division and sheaf gluing constructions,
+local smooth-algebra division and sheaf gluing constructions,
 generalizing the analogous uniformizer-division argument for abelian schemes
 in `Langlands.AlgebraicGeometry.Picard.DvrUniformizerDivision`.
 

@@ -20,8 +20,6 @@ including nonaffine and nonreduced tests.
 
 The provenance is the explicit determinant equation, the previously proved Weyl
 conjugation formula, the actual all-test matrix and diagonalizable-group point
-equivalences, and the pointwise Yoneda construction. The triangular subgroup
-and row-coordinate foundations are by Worker 1369; the unit-cell and diagonal
-intersection constructions are by Worker 669. This result does not prove a
+equivalences, and the pointwise Yoneda construction. This result does not prove a
 Borel property, coordinate regularity, full covariant-space identification,
 irreducibility, or the general Steinberg big-cell proposition.

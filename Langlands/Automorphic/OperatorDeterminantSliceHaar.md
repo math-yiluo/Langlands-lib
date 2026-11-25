@@ -57,8 +57,13 @@ existing topology.
 The provenance is internal: this is a specialization and composition of proved
 Library Lie, character, modular-character, quotient-measure and pairing
 results. Neither constructor derives its remaining integrability hypothesis
-from cuspidality. This unit therefore does not prove
-`CuspidalUnitaryLocalUnitarityStatement`; the cuspidal covering estimate and the
-transport to the prescribed original local component remain separate work.
+from cuspidality. This module therefore does not prove
+`CuspidalUnitaryLocalUnitarityStatement`; the cuspidal covering estimate
+(`OperatorRealization.exists_band_cover`, module
+`Langlands.Automorphic.CuspidalL2.SiegelCover`) and the transport to the
+prescribed original local component (module `CuspidalSpectralUnitaryForm`) are
+separate, and `cuspidalUnitaryLocalUnitarity` (module
+`Langlands.Automorphic.CuspidalUnitaryLocalUnitarityProof`) combines them to
+prove the statement.
 Positive rank includes rank one, and no presentation universe is specialized
 by this intermediate finite-action construction.

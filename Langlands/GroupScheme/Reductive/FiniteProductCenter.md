@@ -1,7 +1,5 @@
 # Trivial centres of finite products and their factors
 
-Worker 632.
-
 This internal helper supplies the adjointness transfer needed when a
 split pinned chart is expressed as an actual finite product of
 almost-simple factors. It is motivated by Brian Conrad, *Reductive

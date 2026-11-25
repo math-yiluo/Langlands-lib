@@ -1,6 +1,6 @@
 # Finite intermediate fields along an isomorphism of p-adic fields
 
-Worker 5130, Task 5230. Internal derived infrastructure; no external source.
+Internal derived infrastructure; no external source.
 
 Fix `g : F ≃ₐ[ℚ_p] E` between p-adic fields over the same prime, possibly in
 different universes. `closureEquiv F E g` is the Library's chosen extension

@@ -1,7 +1,20 @@
 import Langlands.BaseChange.CyclicProductQuotient
 import Langlands.BaseChange.SplitMatchingConvolution
 
-/-! # Integration of compactly supported tensors in cyclic product coordinates -/
+/-!
+# Integration of compactly supported tensors in cyclic product coordinates
+
+For a group `G` with a measure `μ`, the fibre integral `splitFiberIntegral μ Φ` of a function `Φ`
+on `G^{m+1}` integrates `Φ` over the fibres of the ordered product `x ↦ x₀ ⋯ x_m`; for a tensor of
+factor functions it is their ordered convolution `splitFiberConvolution μ ψ`
+(`splitFiberIntegral_tensor`), which is the usual left-Haar convolution in the stated order
+(`splitFiberConvolution_succ`). For a cyclic product `κ : H ≃ₜ* G^{m+1}` with a twist that shifts
+the coordinates and acts by `τ` at the wrap, the twisted orbital integral of `Φ ∘ κ` at `δ` is the
+`τ`-twisted orbital integral of the fibre integral of `Φ` at the ordered product of the coordinates
+of `δ`, for every continuous compactly supported `Φ`
+(`cyclicProductOrbitalIntegral_eq_splitFiberIntegral`); the case of tensors is
+`cyclicProductConvolutionOrbitalIntegral_eq`. See the paired Markdown.
+-/
 
 noncomputable section
 
@@ -25,8 +38,21 @@ the first `m` entries with the remaining entry fixed by the total product. -/
 def splitFiberConvolution (μ : Measure G) (ψ : Fin (m + 1) → G → ℂ) (y : G) : ℂ :=
   ∫ w, ∏ i, ψ i (splitProductFiberChart m (y, w) i) ∂Measure.pi (fun _ : Fin m => μ)
 
+/-- The fibre integral of `Φ` over the ordered product: `y ↦ ∫ Φ(w₀, …, w_{m-1},
+(w₀ ⋯ w_{m-1})⁻¹ y) dμ^m(w)`, the integral over the first `m` coordinates with the last one fixed
+by the total product. -/
+def splitFiberIntegral (μ : Measure G) (Φ : (Fin (m + 1) → G) → ℂ) (y : G) : ℂ :=
+  ∫ w, Φ (splitProductFiberChart m (y, w)) ∂Measure.pi (fun _ : Fin m => μ)
+
+/-- For a tensor, the fibre integral is the ordered convolution of the factors. -/
+theorem splitFiberIntegral_tensor (μ : Measure G) (ψ : Fin (m + 1) → G → ℂ) :
+    splitFiberIntegral μ (fun x => ∏ i, ψ i (x i)) = splitFiberConvolution μ ψ :=
+  rfl
+
 omit [MeasurableSpace G] in
-private theorem continuous_hasCompactSupport_splitTensor
+/-- The tensor `x ↦ ∏ i, ψ i (x i)` of continuous compactly supported factor functions is
+continuous and compactly supported on `G^{m+1}`. -/
+theorem splitTensor_continuous_hasCompactSupport
     (ψ : Fin (m + 1) → G → ℂ) (hc : ∀ i, Continuous (ψ i))
     (hs : ∀ i, HasCompactSupport (ψ i)) :
     Continuous (fun x : Fin (m + 1) → G => ∏ i, ψ i (x i)) ∧
@@ -43,7 +69,7 @@ theorem splitTensorInCoordinates_continuous_hasCompactSupport
     (ψ : Fin (m + 1) → G → ℂ) (hc : ∀ i, Continuous (ψ i))
     (hs : ∀ i, HasCompactSupport (ψ i)) :
     Continuous (fun x => ∏ i, ψ i (κ x i)) ∧ HasCompactSupport (fun x => ∏ i, ψ i (κ x i)) := by
-  obtain ⟨hT, hS⟩ := continuous_hasCompactSupport_splitTensor ψ hc hs
+  obtain ⟨hT, hS⟩ := splitTensor_continuous_hasCompactSupport ψ hc hs
   exact ⟨hT.comp κ.continuous, hS.comp_homeomorph κ.toHomeomorph⟩
 
 variable [BorelSpace G] [T2Space G] [SecondCountableTopology G] [LocallyCompactSpace G]
@@ -70,7 +96,7 @@ theorem splitFiberConvolution_succ (μ : Measure G) [μ.IsHaarMeasure]
       rcases p with ⟨x, w⟩
       simp [eq_comm]]
     exact isClosed_singleton.preimage continuous_fst
-  obtain ⟨hT, hS⟩ := continuous_hasCompactSupport_splitTensor ψ hc hs
+  obtain ⟨hT, hS⟩ := splitTensor_continuous_hasCompactSupport ψ hc hs
   have hEmb := (splitProductFiberChart (m + 1)).isClosedEmbedding.comp hy
   have hK : Integrable K (Measure.pi fun _ => μ) :=
     (hT.comp hEmb.continuous).integrable_of_hasCompactSupport (hS.comp_isClosedEmbedding hEmb)
@@ -102,7 +128,7 @@ theorem splitFiberConvolution_continuous_hasCompactSupport
     Continuous (splitFiberConvolution μ ψ) ∧ HasCompactSupport (splitFiberConvolution μ ψ) := by
   let K (p : G × (Fin m → G)) : ℂ := ∏ i, ψ i (splitProductFiberChart m p i)
   let ρ : Measure (Fin m → G) := Measure.pi fun _ => μ
-  obtain ⟨hT, hS⟩ := continuous_hasCompactSupport_splitTensor ψ hc hs
+  obtain ⟨hT, hS⟩ := splitTensor_continuous_hasCompactSupport ψ hc hs
   have hK : Continuous K := hT.comp (splitProductFiberChart m).continuous
   have hKS : HasCompactSupport K := hS.comp_homeomorph (splitProductFiberChart m)
   let Y := Prod.snd '' tsupport K
@@ -144,8 +170,62 @@ local notation "C" => twistedCentralizer σ δ
 local notation "Z" => twistedCentralizer τ β
 local notation "Θ" => cyclicProductQuotientChart κ σ τ hshift hwrap δ
 
+/-- **Orbital integrals in cyclic product coordinates.** For every continuous compactly supported
+`Φ` on `G^{m+1}`, the twisted orbital integral of `Φ ∘ κ` at `δ` is the `τ`-twisted orbital
+integral of the fibre integral of `Φ` at the ordered product of the coordinates of `δ`, for a
+product Haar measure on `H`, corresponding centralizer measures, compatible quotient measures and a
+closed `τ`-twisted orbit. -/
+theorem cyclicProductOrbitalIntegral_eq_splitFiberIntegral
+    (hσ : Continuous σ) (hτ : Continuous τ)
+    {μ : Measure G} [μ.IsHaarMeasure] {μH : Measure H}
+    (hκ : MeasurePreserving κ μH (Measure.pi fun _ : Fin (m + 1) => μ))
+    {μC : Measure C} [μC.IsHaarMeasure] [μC.IsMulRightInvariant]
+    {μZ : Measure Z} [μZ.IsHaarMeasure] [μZ.IsMulRightInvariant]
+    {νC : Measure (LeftQuotient C)} {νZ : Measure (LeftQuotient Z)}
+    (hνC : IsCompatible C μH μC νC) (hνZ : IsCompatible Z μ μZ νZ)
+    (he : MeasurePreserving (cyclicProductCentralizerEquiv κ σ τ hshift hwrap δ) μC μZ)
+    (hOrbit : IsClosedEmbedding (twistedOrbitFunction τ β id))
+    (Φ : (Fin (m + 1) → G) → ℂ) (hc : Continuous Φ) (hs : HasCompactSupport Φ) :
+    twistedOrbitalIntegral σ δ νC (fun x => Φ (κ x)) =
+      twistedOrbitalIntegral τ β νZ (splitFiberIntegral μ Φ) := by
+  let ρ : Measure (Fin m → G) := Measure.pi fun _ => μ
+  let U := twistedOrbitFunction τ β id
+  let K (p : LeftQuotient Z × (Fin m → G)) : ℂ := Φ (splitProductFiberChart m (U p.1, p.2))
+  let : SecondCountableTopology (LeftQuotient Z) :=
+    (leftQuotient_isOpenQuotientMap Z).secondCountableTopology
+  let : LocallyCompactSpace (LeftQuotient Z) := leftQuotient_locallyCompactSpace Z
+  let : νZ.Regular := hνZ.regular
+  have hΘ := cyclicProductQuotientChart_symm_measurePreserving
+    κ σ τ hshift hwrap δ hσ hτ hκ hνC hνZ he
+  have hEmb := (splitProductFiberChart m).isClosedEmbedding.comp
+    (hOrbit.prodMap (IsClosedEmbedding.id (X := (Fin m → G))))
+  have hK : Integrable K (νZ.prod ρ) :=
+    (hc.comp hEmb.continuous).integrable_of_hasCompactSupport (hs.comp_isClosedEmbedding hEmb)
+  let ΦH : H → ℂ := fun x => Φ (κ x)
+  have hU (g : G) : U (leftQuotientMap Z g) = twistedConj τ g β := rfl
+  have hEval (q : LeftQuotient C) : twistedOrbitFunction σ δ ΦH q = K (Θ q) := by
+    induction q using Quotient.inductionOn with
+    | h x =>
+      change ΦH (twistedConj σ x δ) = K (Θ (leftQuotientMap C x))
+      rw [cyclicProductQuotientChart_mk]
+      simp only [ΦH, K, hU, splitProductFiberChart_apply,
+        cyclicProductAmbientChart_twistedConj κ σ τ hshift hwrap]
+  change (∫ q, twistedOrbitFunction σ δ ΦH q ∂νC) = _
+  calc
+    _ = ∫ p, twistedOrbitFunction σ δ ΦH ((Θ).symm p) ∂νZ.prod ρ :=
+      (hΘ.integral_comp (Θ).symm.toMeasurableEquiv.measurableEmbedding _).symm
+    _ = ∫ p, K p ∂νZ.prod ρ := by simp_rw [hEval, Homeomorph.apply_symm_apply]
+    _ = ∫ q, ∫ w, K (q, w) ∂ρ ∂νZ := integral_prod K hK
+    _ = twistedOrbitalIntegral τ β νZ (splitFiberIntegral μ Φ) := by
+      apply integral_congr_ae
+      apply Filter.Eventually.of_forall
+      intro q
+      induction q using Quotient.inductionOn with
+      | h x => rfl
+
 /-- The cyclic product tensor has the orbital integral of its ordered
-convolution on the first factor. -/
+convolution on the first factor: the case of tensors of
+`cyclicProductOrbitalIntegral_eq_splitFiberIntegral` (`splitFiberIntegral_tensor`). -/
 theorem cyclicProductConvolutionOrbitalIntegral_eq
     (hσ : Continuous σ) (hτ : Continuous τ)
     {μ : Measure G} [μ.IsHaarMeasure] {μH : Measure H}
@@ -160,42 +240,9 @@ theorem cyclicProductConvolutionOrbitalIntegral_eq
     (hs : ∀ i, HasCompactSupport (ψ i)) :
     twistedOrbitalIntegral σ δ νC (fun x => ∏ i, ψ i (κ x i)) =
       twistedOrbitalIntegral τ β νZ (splitFiberConvolution μ ψ) := by
-  let ρ : Measure (Fin m → G) := Measure.pi fun _ => μ
-  let U := twistedOrbitFunction τ β id
-  let K (p : LeftQuotient Z × (Fin m → G)) : ℂ :=
-    ∏ i, ψ i (splitProductFiberChart m (U p.1, p.2) i)
-  let : SecondCountableTopology (LeftQuotient Z) := (leftQuotient_isOpenQuotientMap Z).secondCountableTopology
-  let : LocallyCompactSpace (LeftQuotient Z) := leftQuotient_locallyCompactSpace Z
-  let : νZ.Regular := hνZ.regular
-  have hΘ := cyclicProductQuotientChart_symm_measurePreserving
-    κ σ τ hshift hwrap δ hσ hτ hκ hνC hνZ he
-  obtain ⟨hT, hS⟩ := continuous_hasCompactSupport_splitTensor ψ hc hs
-  have hEmb := (splitProductFiberChart m).isClosedEmbedding.comp
-    (hOrbit.prodMap (IsClosedEmbedding.id (X := (Fin m → G))))
-  have hK : Integrable K (νZ.prod ρ) :=
-    (hT.comp hEmb.continuous).integrable_of_hasCompactSupport (hS.comp_isClosedEmbedding hEmb)
-  let ψH : H → ℂ := fun x => ∏ i, ψ i (κ x i)
-  have hU (g : G) : U (leftQuotientMap Z g) = twistedConj τ g β := rfl
-  have hEval (q : LeftQuotient C) : twistedOrbitFunction σ δ ψH q = K (Θ q) := by
-    induction q using Quotient.inductionOn with
-    | h x =>
-      change ψH (twistedConj σ x δ) =
-        K (Θ (leftQuotientMap C x))
-      rw [cyclicProductQuotientChart_mk]
-      simp only [ψH, K, hU, splitProductFiberChart_apply,
-        cyclicProductAmbientChart_twistedConj κ σ τ hshift hwrap]
-  change (∫ q, twistedOrbitFunction σ δ ψH q ∂νC) = _
-  calc
-    _ = ∫ p, twistedOrbitFunction σ δ ψH ((Θ).symm p) ∂νZ.prod ρ :=
-      (hΘ.integral_comp (Θ).symm.toMeasurableEquiv.measurableEmbedding _).symm
-    _ = ∫ p, K p ∂νZ.prod ρ := by simp_rw [hEval, Homeomorph.apply_symm_apply]
-    _ = ∫ q, ∫ w, K (q, w) ∂ρ ∂νZ := integral_prod K hK
-    _ = twistedOrbitalIntegral τ β νZ (splitFiberConvolution μ ψ) := by
-      apply integral_congr_ae
-      apply Filter.Eventually.of_forall
-      intro q
-      induction q using Quotient.inductionOn with
-      | h x => rfl
+  obtain ⟨hT, hS⟩ := splitTensor_continuous_hasCompactSupport ψ hc hs
+  exact cyclicProductOrbitalIntegral_eq_splitFiberIntegral κ σ τ hshift hwrap δ hσ hτ hκ hνC hνZ he
+    hOrbit (fun x => ∏ i, ψ i (x i)) hT hS
 
 end Comparison
 

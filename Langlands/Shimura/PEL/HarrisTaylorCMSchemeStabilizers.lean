@@ -228,8 +228,8 @@ theorem representedCMGeometricHom_normalTranslate_eq_iff
     (p : Spec (CommRingCat.of Ω) ⟶ Spec (.of F))
     (hRigid : Rigid U.obj) (g k : U.obj.subgroup)
     (x : testBase existence geometry p ⟶ (R V).base) :
-    x ≫ (baseAction R U V hVU).ρ (QuotientGroup.mk g) =
-      x ≫ (baseAction R U V hVU).ρ (QuotientGroup.mk k) ↔
+    x ≫ ((baseAction R U V hVU).ρ (QuotientGroup.mk g)).asHom =
+      x ≫ ((baseAction R U V hVU).ρ (QuotientGroup.mk k)).asHom ↔
       (g : SmallCMResidualGroup D U V) = k := by
   let S : DisBases := testBase existence geometry p
   let qx : (distower S).obj V.obj :=
@@ -269,7 +269,7 @@ theorem representedCMGeometricHom_normalTranslate_injective
     (hRigid : Rigid U.obj)
     (x : testBase existence geometry p ⟶ (R V).base) :
     Function.Injective (fun g : SmallCMResidualGroup D U V =>
-      x ≫ (baseAction R U V hVU).ρ g) := by
+      x ≫ ((baseAction R U V hVU).ρ g).asHom) := by
   intro g k
   induction g using QuotientGroup.induction_on with
   | H g =>
@@ -289,7 +289,7 @@ theorem representedCMGeometricPoint_normalTranslate_injective
     (hRigid : Rigid U.obj)
     (a : Spec (CommRingCat.of Ω) ⟶ (schemes R).obj V) :
     Function.Injective (fun g : SmallCMResidualGroup D U V =>
-      a ≫ (quotientAction R U V hVU).ρ g) := by
+      a ≫ ((quotientAction R U V hVU).ρ g).asHom) := by
   let p := a ≫ (R V).base.obj.hom
   let x : testBase existence geometry p ⟶ (R V).base :=
     ObjectProperty.homMk (Over.homMk a rfl)
@@ -314,7 +314,7 @@ def representedCMGeometricFiberEquiv
       {b : Spec (CommRingCat.of Ω) ⟶ (schemes R).obj V //
         b ≫ projection R U V hVU = a ≫ projection R U V hVU} :=
   Equiv.ofBijective
-    (fun g => ⟨a ≫ (quotientAction R U V hVU).ρ g, by
+    (fun g => ⟨a ≫ ((quotientAction R U V hVU).ρ g).asHom, by
       rw [Category.assoc, representedCMNormalProjection_invariant]⟩)
     ⟨by
       intro g k hgk
@@ -341,7 +341,7 @@ def representedCMGeometricFiberEquiv
     (representedCMGeometricFiberEquiv D C preservation composition unitCoherence
       associativity comparison symmetry stability square universality dualityNaturality
       polarizationStability compatibility h htor R U V hVU existence geometry
-      hRigid a g).val = a ≫ (quotientAction R U V hVU).ρ g := rfl
+      hRigid a g).val = a ≫ ((quotientAction R U V hVU).ρ g).asHom := rfl
 
 local notation "chosenReps" => chosenCMLevelRepresentation D C preservation composition
   unitCoherence associativity comparison symmetry stability square universality
@@ -366,7 +366,7 @@ theorem cmGeometricPoint_normalTranslate_injective
     (hRigid : Rigid U.obj)
     (a : Spec (CommRingCat.of Ω) ⟶ (chosenSchemes q).obj V) :
     Function.Injective (fun g : SmallCMResidualGroup D U V =>
-      a ≫ (chosenAction q).ρ g) :=
+      a ≫ ((chosenAction q).ρ g).asHom) :=
   representedCMGeometricPoint_normalTranslate_injective D C preservation composition
     unitCoherence associativity comparison symmetry stability square universality
     dualityNaturality polarizationStability compatibility h htor
@@ -400,6 +400,6 @@ def cmGeometricFiberEquiv
     (cmGeometricFiberEquiv D C preservation composition unitCoherence
       associativity comparison symmetry stability square universality dualityNaturality
       polarizationStability compatibility h htor U V hVU q existence geometry
-      hRigid a g).val = a ≫ (chosenAction q).ρ g := rfl
+      hRigid a g).val = a ≫ ((chosenAction q).ρ g).asHom := rfl
 
 end Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel

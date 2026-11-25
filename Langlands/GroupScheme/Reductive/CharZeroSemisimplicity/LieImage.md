@@ -1,7 +1,5 @@
 # Tangent matrices are closed under commutators
 
-Author: Worker 1498.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.ReductiveCharZeroSemisimplicityStatement`. It shows that the
 tangent matrices of a finite matrix representation form a Lie algebra under the

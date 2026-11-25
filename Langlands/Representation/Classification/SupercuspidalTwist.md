@@ -1,7 +1,5 @@
 # Supercuspidality under twists by characters of the determinant
 
-Author: Worker 23.
-
 This module proves that the published predicate `GeneralLinear.IsSupercuspidal`
 of `Classification/Supercuspidal` is unchanged by twisting with an open-kernel
 complex character of `GL_n(F)` that is trivial on the kernel of the
@@ -81,7 +79,7 @@ For `F : PadicField p` with a supplied realization `T`:
   `ℂˣ`. Here `T.determinantNorm n` is the published residue-normalized
   absolute value of the determinant, with `|ϖ| = q^(-1)`.
 - `T.norm_determinantPowerCharacter_scalar n s z` gives the scalar-matrix
-  norm `|z|^(n * s)`. This is Worker 167's existing proof, moved here from
+  norm `|z|^(n * s)`. This is an existing proof, moved here from
   the linked-head exponent module for reuse by the linked-head,
   square-integrable nonlinkage and descending-interval proofs. It expands
   the real-power character and uses `determinantNorm_scalar` and the

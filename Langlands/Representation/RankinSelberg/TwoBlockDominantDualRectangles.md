@@ -63,15 +63,15 @@ follow from this measure-preserving equivalence for arbitrary functions and
 independent target universes. No self-dual normalization is required and no
 new measure is chosen.
 
-This unit proves only the coordinate and supplied-Haar transport. The large
+This module proves only the coordinate and supplied-Haar transport. The large
 matrix comparison with `reversedMatrix`, the right factor `diag(I_N,w_c)`,
 the determinant weights, lower-quotient geometry, scalar kernels and
-determinant-slice transport remain separate obligations. It asserts no
+determinant-slice transport are not part of this module. It asserts no
 convergence for arbitrary inputs and neither final dominant gamma/L target.
 
 The canonical local instances have module-specific names so that this module
 can be imported together with the other dominant scalar, rectangle and slice
-helpers. This naming correction changes no instance value or mathematical
+helpers. These names change no instance value or mathematical
 definition, statement or proof.
 
 ## All-field port

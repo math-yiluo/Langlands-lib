@@ -1,6 +1,6 @@
 # Henniart's global characters as data for Harris's Proposition 4.8
 
-Worker 84. The module
+The module
 `Langlands/Global/Arithmetic/HenniartHarrisDatumStatement.lean` defines one
 predicate and three propositions:
 
@@ -78,7 +78,7 @@ to `F` through `e`; `ξ` satisfies `IsAlgebraicAfterTwist ([E' : E] − 1)`, is
   sur un corps p-adique*, Invent. Math. 139 (2000). Registered source
   `henniart-2000-simple-proof`, SHA-256
   `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`. Read
-  directly for this contribution: §2.5 (printed p.446) and §§3.1–3.8
+  directly: §2.5 (printed p.446) and §§3.1–3.8
   (printed pp.448–451). The
   conditions 1)–3) of §3.4 on `X` are `X ∘ c = X⁻¹`, archimedean components
   `(z/z̄)^{p_v}` with distinct `p_v` over a fixed embedding of `K`, and
@@ -122,7 +122,7 @@ The proposition is a derived formulation, not a verbatim theorem.
    `n = [E' : E]` is odd, a character with Henniart's components satisfies
    `IsAlgebraicAfterTwist (n − 1)`, because `|z|^{n−1} = (z z̄)^{(n−1)/2}`.
    When `n` is even, the exponents must be odd, and Harris's p.195 construction
-   (components trivial on `ℝˣ`) does not produce them. The expected route
+   (components trivial on `ℝˣ`) does not produce them. A route
    multiplies Henniart's character by the pullback along the norm of a
    character from `CMHalfWeightCharacterStatement` on `E`. This is the
    twist of Harris–Taylor's Proposition VII.2.7 in the language of the
@@ -183,9 +183,13 @@ character.
 
 ## Boundaries
 
-- Nothing here is proved. The four new existence claims (this module and
-  `CMHalfWeightCharacterStatement`) need their own proofs. The published
-  inputs they are expected to use are `HarrisPairedPlaceRealizationStatement`
+- Nothing here is proved. The four existence claims (this module and
+  `CMHalfWeightCharacterStatement`) are proved elsewhere:
+  `harrisDatumCharacterRealization` and `henniartHarrisDatum`
+  (`HenniartHarrisDatumProof`), `henniartCommonBaseRealization`
+  (`HenniartCommonBaseRealizationProof`) and `cmHalfWeightCharacter`
+  (`CMHalfWeightCharacterProof`). The published inputs on which their proofs
+  can draw are `HarrisPairedPlaceRealizationStatement`
   (for the method), `FieldRealizationStatement`,
   `CMCharacterGlobalizationStatement`, `AuxiliaryCharacterStatement`,
   `UnitNormWeilStabilizerTransportStatement` and
@@ -196,5 +200,5 @@ character.
   compatibility, central-character comparison, Brauer argument or
   functional equation appears. Harris's Proposition 4.8, the global
   reciprocity needed to compare `S(ξ)` at `v₀` with the induced local
-  character, and the assembly of §3.7 remain separate obligations of H3 in
-  program `34b81620-20d7-4059-9b08-6bedd1c1c029`.
+  character, and the assembly of §3.7 are separate obligations of the
+  Henniart globalization (`HenniartGlobalizationStatement`).

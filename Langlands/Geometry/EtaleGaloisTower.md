@@ -17,8 +17,7 @@ GL(n)*, Theorem 5.7 on printed p. 313, considers the action of `Gal(F̄/F)` on
 étale cohomology of Shimura varieties with coefficient systems. The published
 `EtaleGaloisAction` treats a single base change with constant coefficients.
 The coverage note `notes/henniart/harris-cohomology-coverage.md` lists Galois
-actions with non-constant coefficients as a missing prerequisite, owned by
-Worker 13.
+actions with non-constant coefficients as a missing prerequisite.
 
 When `L / K` is an algebraic Galois extension, for example a separable
 closure, and `X` is quasi-compact and quasi-separated over `K`, étale

@@ -1,7 +1,5 @@
 # Existence of a special maximal compact subgroup: statement target
 
-Worker 1249, task `219b673d-b7f3-47fb-9019-d1642687d4ac`.
-
 This module states the general existence target
 `Langlands.BruhatTits.SpecialCompact.SpecialMaximalCompactExistence`. It is
 a proposition-valued definition, not a proof.
@@ -10,7 +8,8 @@ Scope: this target is supplementary. Its witness data satisfy only the axiom
 predicates listed under "Conditions on the witness data". It does not state,
 and does not discharge, existence for apartment data satisfying the full
 corrected KP Definition 4.1.26 (for `D` and for every Levi `DM`). That
-existence remains open. The inclusion `P_x ⊆ K_0` is not part of this
+existence is the separate target `AvailableSpecialMaximalCompactExistence`
+(module `AvailableExistenceStatement`), which remains open. The inclusion `P_x ⊆ K_0` is not part of this
 target; it is the separate target `ParahoricLeCompactStabilizer` (see "Scope
 and distinctions").
 
@@ -35,8 +34,8 @@ The instances `IsAffineHom G.X.hom` and `Mono i.hom.hom.left` are taken from
 The conclusion is that there exist a centralizer datum `C : CentralizerDatum i`
 and apartment data `D : KPApartmentData i (localFieldOrder F)` such that
 
-1. `D.SatisfiesApartmentAxioms C` (Worker 1045's
-   `Langlands.Geometry.Building.KPApartmentAxioms`): V 6 on the actual
+1. `D.SatisfiesApartmentAxioms C`
+   (`Langlands.Geometry.Building.KPApartmentAxioms`): V 6 on the actual
    centralizer `Z(F)`, V 7, AS 2, AS 3, AS 4 and all three sentences of AS 5;
 2. `D.HasBoundedOpenStabilizers`: KP Axiom 4.1.2 for the reduced building of
    `D`;
@@ -74,7 +73,7 @@ and `HasBoundedOpenStabilizers` assume no reductivity of the group, so they
 apply verbatim to `(M_J, S)`.
 
 The predicates are documented in `Langlands.BruhatTits.SpecialCompact.Properties`.
-The subgroup and vertex predicate are Worker 1229's accepted adapters in
+The subgroup and vertex predicate are the adapters in
 `Langlands.Geometry.Building.SpecialCompact`. The same witness `(C, D, x)`,
 and hence the same `K_0`, is used in all clauses and for every `J`.
 
@@ -166,24 +165,25 @@ They are not the full corrected Definition 4.1.26 (corrections, PDF page
 4.1.17, 4.1.20 and 4.1.22. Not imposed here:
 
 - AS 1 and the `m(u)`-form of AS 2 of Axiom 4.1.6. They need the elements
-  `m(u)` of KP Proposition 2.11.17, which are not in the Library;
+  `m(u)` of KP Proposition 2.11.17;
 - Axiom 4.1.4 beyond the single apartment `A(S)`: the apartments `A(S′)`
   for all maximal split tori and the isomorphisms `A(S) → A(gSg⁻¹)`;
 - AS 6 of Axiom 4.1.6, and Axioms 4.1.1, 4.1.8, 4.1.9, 4.1.16, 4.1.17, 4.1.20
   and 4.1.22. They concern the building's polysimplicial structure, all
   apartments, the groups `G(F)^0`
-  and `Z(F)^0` of KP Definition 2.6.23 (now defined from chosen data in
-  `Langlands.Geometry.Building.KPZeroSubgroups`, but these axioms about them
-  are not formalized), the Tits system
+  and `Z(F)^0` of KP Definition 2.6.23 (defined from chosen data in
+  `Langlands.Geometry.Building.KPZeroSubgroups`), the Tits system
   of Axiom 4.1.9, the integral models of Axioms 4.1.20 and 4.1.22, and the
   functoriality of `G ↦ B(G)`. They are not conditions on one class `A(S)`.
 
 KP Chapter 7 constructs the building and proves the other properties from
-the Chapter 7 hypotheses. That derivation is not formalized. A formal
-predicate for the full corrected Definition 4.1.26 does not exist yet. For
-this reason the target is supplementary: the existence of data satisfying the
+the Chapter 7 hypotheses. That derivation is not formalized. The full corrected Definition 4.1.26 is formalized
+separately, as `KPBuildingAssignment.IsAvailableFor` (module
+`Langlands.Geometry.Building.FullValidity.Assignment`). The target is
+supplementary: the existence of data satisfying the
 full corrected Definition 4.1.26, for `G` and for every standard Levi, is not
-asserted here and remains open.
+asserted here; it is the separate target `AvailableSpecialMaximalCompactExistence`,
+which remains open.
 
 ## Scope and distinctions
 

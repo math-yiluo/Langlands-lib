@@ -1,7 +1,5 @@
 # Central directions in the represented-parabolic Casselman criterion
 
-Author: Worker 1680.
-
 This is an internal supporting derivation for the represented-parabolic
 Casselman criterion. It uses the published normalized Jacquet quotient,
 unitary central character, generalized exponent, normalized real-part and

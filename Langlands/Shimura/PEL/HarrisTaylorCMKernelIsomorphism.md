@@ -205,12 +205,13 @@ from the geometric Hom statements.
 The exact representability proposition, applicable existence under the
 source's division/global hypotheses, comparison with its complete
 moduli functor, original-projection etaleness, and rigidity from source
-smallness remain obligations. Canonical-model comparisons,
+smallness are not proved here; the last is `CMSmallLevelRigidityStatement`,
+proved as `cmSmallLevelRigidity`. Canonical-model comparisons,
 uniformization and coefficient descent are not proved here. The
 conditional isomorphism discharges the exact kernel-comparison
 invertibility premise when all the displayed inputs hold; it does not
-complete the source cover theorem or the host task.
+complete the source cover theorem.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

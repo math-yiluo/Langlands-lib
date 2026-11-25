@@ -207,6 +207,7 @@ theorem proj_pt_comm (hW : WeilAbelianImageTrivialityStatement.{u})
   rw [pt_comp, pt_comp, hψY, hψY] at h1
   have h2 := congrArg (AffineWeil.pointsEquiv A B G X.right) h1
   rw [hfY] at h2
+  set_option maxRecDepth 1024 in
   rw [h2]
   congr 2
   apply (AffineWeil.pointsEquiv A B G X.right).injective

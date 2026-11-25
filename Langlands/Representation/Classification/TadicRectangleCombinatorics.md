@@ -1,6 +1,6 @@
 # `a(d,n)^ρ` is not a sum of smaller Tadić pieces
 
-Author: Worker 1792. Module
+Module
 `Langlands.Representation.Classification.TadicRectangleCombinatorics`, namespace
 `Langlands.Classification`. Everything is proved; there are no hypotheses of
 theorem type, no axioms and no `sorry`.

@@ -1,7 +1,5 @@
 # Ordinary-to-Tate cocycles and connecting maps
 
-Author: Worker 45.
-
 `Langlands.Tate.OrdinaryTateBoundaryLaws` states two compatibility properties
 of the published canonical map `ordinaryToTate` from ordinary group cohomology
 to Mathlib's actual Tate cohomology. It quantifies over a commutative ring `R`,

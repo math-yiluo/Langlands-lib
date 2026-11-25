@@ -1,7 +1,5 @@
 # Jacquet's lemma for compact open subgroups with an Iwahori decomposition: proof
 
-Author: Worker 59.
-
 Module: `Langlands.Representation.Exponents.RepresentedJacquetLemmaProof`.
 
 This module proves the proposition

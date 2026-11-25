@@ -1,7 +1,5 @@
 # Open maps for coordinate point topologies
 
-Author: Worker 109.
-
 This is an internal construction and a topological reduction for the proof of
 Conrad's Theorem 5.9. It uses the published `coordinatePointMap`,
 `coordinatePointTopology`, `coordinateProductTopology` and

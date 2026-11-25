@@ -1,14 +1,14 @@
 # Restriction of analytic points along an extension of the ground field
 
-This unit works with an extension `K → L` of complete non-Archimedean fields.
+This module works with an extension `K → L` of complete non-Archimedean fields.
 It takes a `K`-algebra map `f : A →ₐ[K] B` from a presented `K`-algebra `A` to a
 presented `L`-algebra `B`, and constructs the induced continuous map
 `Space L Q → Space K P` between the Library's polynomial-locus analytifications.
 A point of the analytification of `B` over `L` gives a multiplicative seminorm
 on `B`. The image point gives the seminorm on `A` obtained by composing with
 `f`. The main case is the base change `B = L ⊗[K] A`, with the map
-`a ↦ 1 ⊗ a`. Here the unit gives the canonical continuous map
-`(X_L)^an → X^an` for `X = Spec A`. The unit does not identify `(X_L)^an` with
+`a ↦ 1 ⊗ a`. Here the module gives the canonical continuous map
+`(X_L)^an → X^an` for `X = Spec A`. The module does not identify `(X_L)^an` with
 a ground-field extension of `X^an`, and it does not state that the map is
 surjective.
 
@@ -47,7 +47,7 @@ derived from Remark 3.4.2: a point of the analytification of `B` over `L` is a
 multiplicative seminorm on `B` that extends the norm of `L`. Composing with `f`
 gives a multiplicative seminorm on `A` that extends the norm of `K`, because
 `K → L` preserves norms. The chart construction is modelled on the published
-`AffineAnalytificationMap` unit, which treats the case `L = K`. The generator
+`AffineAnalytificationMap` module, which treats the case `L = K`. The generator
 values, the radius levels, the Tate evaluation chart maps and the gluing are
 derived implementation choices for the Library's model. So is the presentation
 of `L ⊗[K] A` by the same generators.
@@ -173,8 +173,8 @@ finiteness of `f` is assumed, and `L` need not be finite over `K`.
 
 ## Scope
 
-The unit imports the published `AffineAnalytificationSeminorm` and
-`AffineAnalytificationMap` unchanged and edits no published input. It gives
+The module imports the published `AffineAnalytificationSeminorm` and
+`AffineAnalytificationMap`. It gives
 definitions and their computation lemmas only. It does not state that
 `baseChangeMap` is surjective, proper or a quotient map, and it does not
 identify `(X_L)^an` with a completed ground-field extension `X^an ⊗̂ L`. It does
@@ -183,4 +183,4 @@ not prove identity or composition laws, independence of presentations, or
 compatibility with rational points. It has no scheme-level version and does not
 construct maps of atlases or structure sheaves. Conrad's identification of
 `X(k) → X(k')` with `X^an(k) → (X^an)_{k'}(k')` and its closedness are
-successor obligations of the parent task.
+not treated here.

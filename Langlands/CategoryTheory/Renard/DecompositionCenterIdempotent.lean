@@ -93,7 +93,7 @@ theorem comp_decompositionIdemApp {X W : C} (g : W ⟶ X) (b : Bool) (hW : P b W
 
 /-- The central element attached to a decomposition `P : Bool → ObjectProperty C`:
 the identity on the `P true` component and zero on the `P false` component. -/
-def decompositionIdem : CatCenter C where
+def decompositionIdem : CatCenter C := End.of {
   app X := decompositionIdemApp hP X
   naturality X X' f := by
     obtain ⟨Y, ι, hY, hc⟩ := (hP.1 X)
@@ -103,7 +103,7 @@ def decompositionIdem : CatCenter C where
     change ι b ≫ f ≫ _ = ι b ≫ _ ≫ f
     rw [← Category.assoc, comp_decompositionIdemApp hP _ b (hY b), ← Category.assoc,
       comp_decompositionIdemApp hP _ b (hY b)]
-    cases b <;> simp
+    cases b <;> simp }
 
 theorem decompositionIdem_app_of_true {X : C} (hX : P true X) :
     (decompositionIdem hP).app X = 𝟙 X := by
@@ -155,14 +155,14 @@ theorem exists_isZero_of_decomposition (Q : C) [NoZeroDivisors (End Q)]
     (hinj : Function.Injective fun z : CatCenter C => z.app Q)
     {P : Bool → ObjectProperty C} (hP : IsCategoryDecomposition P) :
     ∃ b : Bool, ∀ X : C, P b X → IsZero X := by
-  let ev : CatCenter C → End Q := fun z => z.app Q
+  let ev : CatCenter C → End Q := fun z => End.of (z.app Q)
   have hidem : IsIdempotentElem (ev (decompositionIdem hP)) :=
     congrArg ev (decompositionIdem_isIdempotentElem hP)
   rcases IsIdempotentElem.iff_eq_zero_or_one.mp hidem with h | h
   · refine ⟨true, fun X hX => isZero_of_decompositionIdem_eq_zero hP (hinj ?_) hX⟩
-    exact h
+    exact congrArg End.asHom h
   · refine ⟨false, fun X hX => isZero_of_decompositionIdem_eq_one hP (hinj ?_) hX⟩
-    exact h
+    exact congrArg End.asHom h
 
 /-- If the Hom functor of `Q` is faithful, evaluation of the center at `Q` is
 injective: `φ ≫ z.app X = z.app Q ≫ φ` for every `φ : Q ⟶ X`. -/
@@ -193,9 +193,10 @@ theorem exists_isZero_of_decomposition_fullSubcategory {D : Type u} [Category.{v
     [(preadditiveCoyonedaObj X₀).Faithful] [NoZeroDivisors (End X₀.obj)]
     {P : Bool → ObjectProperty Q.FullSubcategory} (hP : IsCategoryDecomposition P) :
     ∃ b : Bool, ∀ X : Q.FullSubcategory, P b X → IsZero X := by
-  let e : End X₀ → End X₀.obj := fun f => f.hom
+  let e : End X₀ → End X₀.obj := fun f => End.of f.asHom.hom
   have : NoZeroDivisors (End X₀) :=
-    Function.Injective.noZeroDivisors e (fun _ _ h => ObjectProperty.hom_ext Q h) rfl
+    Function.Injective.noZeroDivisors e
+      (fun _ _ h => End.ext (ObjectProperty.hom_ext Q (congrArg End.asHom h))) rfl
       (fun _ _ => rfl)
   exact exists_isZero_of_decomposition_of_faithful X₀ hP
 

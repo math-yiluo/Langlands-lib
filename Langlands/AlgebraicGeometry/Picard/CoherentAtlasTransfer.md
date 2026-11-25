@@ -39,9 +39,11 @@ arbitrary fields, arbitrary proper schemes and every slice test scheme.
 
 The provenance is internal composition of the actual family comparison,
 explicit hom lift, rank-one atlas restriction, and Mathlib's geometric
-instances. Worker 152 authored the reused actual comparison;
-its private core-pseudofunctor helper adapts Worker 214's published family
+instances. The private core-pseudofunctor helper of the reused actual comparison
+adapts the published family
 pullback construction. This module proves the conditional atlas transfer
 and the implication of the two field statements. It supplies no
-unconditional coherent-atlas existence proof, so the final Picard field
-statement still requires that separate input.
+unconditional coherent-atlas existence proof, so this route to the Picard field
+statement requires that separate input. The Library proves
+`FieldPicardStackAtlasStatement` by another route, as `fieldPicardStackAtlas` (module
+`Langlands.AlgebraicGeometry.Picard.FieldPicardStackAtlasProof`).

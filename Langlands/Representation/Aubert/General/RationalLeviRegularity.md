@@ -1,7 +1,5 @@
 # Closedness of the literal Levi from the actual projection
 
-Author: Worker 103.
-
 This internal helper proves that the Levi subgroup `M` of a semidirect
 decomposition `P = M ⋉ U` is closed in a Hausdorff ambient group whenever
 `P` is closed and the actual Levi projection is continuous. Inside `P`,

@@ -1,8 +1,6 @@
 # Base change of finite vector-bundle series
 
-Author: Worker 590, in collaboration with Worker 204 on Task 7200.
-
-This internal derived unit preserves the exact finite-vector-bundle
+This internal derived module preserves the exact finite-vector-bundle
 predicate and finite normal series under any morphism of base schemes,
 at arbitrary universe `u`. It imposes no flatness, affineness, nonemptiness,
 or constant-rank hypothesis on the base change.

@@ -1,7 +1,5 @@
 # Rank-one root reducedness descends from an algebraic closure
 
-Worker 847.
-
 This is an internal field-descent interface and conditional reduction for the
 published `RankOneRootReducednessStatement`. Its provenance is the existing
 actual-root and lattice base-change results in `RootSupportBaseChange`,
@@ -23,8 +21,8 @@ The roots are the nonzero characters with nonzero weight spaces in the actual
 adjoint Lie representation. Affineness in that definition comes from `hG`.
 The statement allows the root set to be empty. There is no assertion of root
 existence, root-space dimension, an `SL₂` cover, a Borel model or a root datum.
-The universe and characteristic are unrestricted. This module does not prove
-the newly stated algebraically closed proposition.
+The universe and characteristic are unrestricted. This module states the
+algebraically closed proposition but does not prove it.
 
 ## Implemented reduction
 
@@ -59,5 +57,4 @@ The reduction uses pure root support, character lattices and maximal-torus
 base change. In particular, the positive-root uniqueness theorem and its
 geometric proof are not inputs. The module containing the pure pairwise
 dependence transport lemma also states a positive-root proposition; importing
-that module does not apply the proposition or its proof. Independent review
-must check the new declaration dependencies as well as these semantics.
+that module does not apply the proposition or its proof.

@@ -68,12 +68,12 @@ def nearIdentitySubgroup (τ : TestTriple (presentationOf X)) : Subgroup (Aut X)
   carrier := nearIdentity τ
   one_mem' := one_mem_nearIdentity τ
   mul_mem' {σ σ'} hσ hσ' := by
-    change IsNear τ (σ'.hom ≫ σ.hom) (𝟙 X)
+    change IsNear τ (σ'.asIso.hom ≫ σ.asIso.hom) (𝟙 X)
     exact IsNear.comp_of_isNear_id hσ' hσ
   inv_mem' {σ} hσ := by
-    change IsNear τ σ.inv (𝟙 X)
-    have h := IsNear.precomp (τ := τ) hσ σ.inv
-    have h2 : σ.inv ≫ σ.hom = 𝟙 X := σ.inv_hom_id
+    change IsNear τ σ.asIso.inv (𝟙 X)
+    have h := IsNear.precomp (τ := τ) hσ σ.asIso.inv
+    have h2 : σ.asIso.inv ≫ σ.asIso.hom = 𝟙 X := σ.asIso.inv_hom_id
     rw [h2, Category.comp_id] at h
     exact h.symm
 

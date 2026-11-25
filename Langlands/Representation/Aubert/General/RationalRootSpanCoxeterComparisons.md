@@ -17,8 +17,8 @@ for the transported point system.
 
 `exists_rootSpanPointCoxeterSystem` constructs a finite Coxeter system from the
 given `HasRelativeRootSystem` witness and generic cocharacter. It transports the
-length and pairing laws just described, then applies Worker 165's
-`actualLeviWeylIdentification_of_simplePairing`. Thus the image of the actual
+length and pairing laws just described, then applies
+`actualLeviWeylIdentification_of_simplePairing` (`RationalPointLeviWeylIdentification`). Thus the image of the actual
 Levi Weyl inclusion equals the standard Coxeter subgroup for every finite face,
 including the empty and full face. Finite labels and finite point Weyl group
 are conclusions, with no positive-rank or reduced-root assumption.
@@ -31,6 +31,6 @@ same system and the same literal simple-character labels.
 The proof derives its conclusions from the actual root-span Coxeter
 construction, whole-character pairing invariance, and the actual quotient and
 descent adapters. No stronger full-character Coxeter realization is assumed.
-This unit does not establish positive simple-reflection conjugacy, identify an
+This file does not establish positive simple-reflection conjugacy, identify an
 arbitrary supplied Coxeter system, or prove any geometric expansion or final
 Aubert compatibility equation.

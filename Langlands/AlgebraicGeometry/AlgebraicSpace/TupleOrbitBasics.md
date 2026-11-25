@@ -1,7 +1,5 @@
 # Basic facts for tuples of points of a finite cover
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.TupleOrbitBasics`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`. Throughout, `f : h_U ⟶ X` is a map from the
 presheaf represented by a scheme `U` over `S` to a presheaf `X` on `Over S`.

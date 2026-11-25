@@ -1,9 +1,9 @@
 # The geometric theorem of the cube with a smooth third factor over arbitrary fields
 
-Authors: Worker 816 (the published seesaw and local two-axis proof) and
-Worker 2509 (the smooth-third generalization and proper specialization).
-The proof body and all categorical helpers are reused from Worker 816's
-published `FieldCubeTrivialityProof`; no unpublished draft is used.
+The proof body and all categorical helpers are reused from the earlier
+seesaw and local two-axis proof of `fieldCubeTriviality` in this module,
+`FieldCubeTrivialityProof`; the smooth-third generalization and the proper
+specialization were added to it.
 
 The module proves the exact published proposition
 `Langlands.AlgebraicGeometry.Picard.FieldCubeTrivialitySmoothThirdStatement.{u}`:

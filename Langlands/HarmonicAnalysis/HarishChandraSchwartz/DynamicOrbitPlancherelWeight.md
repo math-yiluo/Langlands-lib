@@ -1,14 +1,13 @@
 # Plancherel weights on unitary orbits for dynamic parabolics, with density packages
 
-Author: Worker 131, task `b2eba110-082e-4b07-9076-f64b90cd0dc3` (Task 7454, revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.DynamicOrbitPlancherelWeight`,
 namespace `Langlands.HarishChandraSchwartz.DynamicInducedOrbit`. It imports only
 `Langlands.Representation.Plancherel.StandardLeviPlancherelWeight`.
 
 ## Purpose
 
-Item 3 of Task 7454 asks for the lower densities `µ^{M'}` on the conjugated orbits `sO`. Each
+The weighted weak-constant-term expansion (Waldspurger V.1.1, V.2.3) needs the lower densities
+`µ^{M'}` on the conjugated orbits `sO`. Each
 `µ^{M'}` is the actual Plancherel density of the lower group `M'` relative to `M' ∩ s·P`, built
 from the published weight constructions applied to `M'`, its maximal split torus and the
 conjugated cocharacter. Its
@@ -21,7 +20,7 @@ module gives the same orbit construction for the Levi `Z_H(χ)(F)` of the actual
 parabolic of any cocharacter `χ = ζ ∘ j` of any connected reductive `H`. Here `j : T ⟶ H` is
 arbitrary, so the module is a generic wrapper of the Library expression `plancherelWeight j ζ …`.
 That expression is the source density only when `j` is a maximal split torus of `H` (see
-"Scope of the source identification" below). The task applies the module with
+"Scope of the source identification" below). The expansion applies the module with
 `H = M' = Standard.leviScheme i ν J'`, `j = Standard.leviTorusHom i ν J'` (maximal split) and the
 cocharacter of `M' ∩ s·P`.
 
@@ -116,13 +115,12 @@ cocharacters killed by `β` and by the roots of `j` vanishing on `ζ`. The Libra
 as `X_*(A_α)` for `T` a maximal split torus. In that case the roots of `j` are the relative roots
 of `H`, the members are the lattices `X_*(A_α)`, one for each `α ∈ Σ_red(P)`, and the product is
 Waldspurger's `∏_α γ(M_α|M)`. For a smaller torus the indexing is wrong. Distinct source factors
-can have the same kernel in the smaller lattice and merge into one factor. The reviewer of the
-first version of this module gave this example: `H = SL₃` over `ℚ₂`, `T = 𝔾_m`,
+can have the same kernel in the smaller lattice and merge into one factor. An example:
+`H = SL₃` over `ℚ₂`, `T = 𝔾_m`,
 `j = χ = diag(t, 1, t⁻¹)` and `ζ = id`. The three positive roots restrict to the weights
 `1, 1, 2`, no root vanishes on `ζ`, and all three kernels are zero. So the Library product has a
 single factor, with centralizer `H`, instead of the three source factors. With the principal
-congruence subgroup the reviewer computed `441/64` for the Library constant and `729/64` for the
-source constant.
+congruence subgroup the Library constant is `441/64` and the source constant is `729/64`.
 
 So `P.weight` and `orbitPlancherelWeight` are Waldspurger's `µ` only when `j` is a maximal split
 torus of `H`. The module does **not** assume maximality. Nor does it prove that the Library's
@@ -130,7 +128,7 @@ roots and rank-one Levi subgroups are the source ones. Both are obligations of t
 the module is used. The published `µ^G` meets
 this condition through its hypothesis `hi : IsMaximalSplitTorus i`.
 
-The intended specialization in Task 7454 is
+The intended specialization, in the weighted weak-constant-term expansion, is
 `H = M' = Standard.leviScheme i ν J'`, `j = Standard.leviTorusHom i ν J'`. Here `J'` is the root
 set of the standard Levi `M'`, and `ζ` is the conjugate of the standard cocharacter of `M` by a
 representative of `s`. Then `j` is maximal split in `M'` by the published
@@ -153,7 +151,8 @@ the same constant `∏_α γ(M_α|M)²`, each computed in its own ambient group.
 are the same construction. The only difference is that `standardOrbitWeight` also composes with
 the published identification of the standard Levi scheme `M_I` with the centralizer. The
 constants `γ(G|M')` and `c(G|M)` of V.1 and V.2.2 do not enter `µ^G` or `µ^{M'}`. They enter the
-c-family and the norm identity of Lemma V.2.2, which are stated in later modules of the task.
+c-family and the norm identity of Lemma V.2.2, which are stated in the `RationalWeakExpansion`
+modules (the c-family in `RationalWeakExpansionCFamily`).
 
 The package is genuinely separate data. The continuations, domains, irreducibility locus and
 regularity witness of `µ^G` concern the induction from `M_I` to `G`. Those of `µ^{M'}` concern

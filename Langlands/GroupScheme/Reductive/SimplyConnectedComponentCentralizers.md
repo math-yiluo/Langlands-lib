@@ -1,7 +1,5 @@
 # Actual component-indexed derived centralizers of a pinned model
 
-Worker 634.
-
 For an `AffineSimplyConnectedPinnedModel`, this internal module constructs a
 finite family of actual closed reductive subgroup schemes, indexed by the
 Cartan components of its full constant root datum. Every geometric fibre of
@@ -21,5 +19,5 @@ composite into the original group is exactly the supplied maximal torus.
 All assertions are internally derived from the coroot-subtorus and relative
 derived-centralizer constructions. This prepares the factor construction in
 Conrad, *Reductive group schemes* (2014), Proposition 6.4.4, pp.232–233. The
-module does not yet prove that the candidate groups are almost simple,
+module does not prove that the candidate groups are almost simple,
 pairwise commuting or a product presentation, nor does it perform descent.

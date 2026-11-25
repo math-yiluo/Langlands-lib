@@ -40,6 +40,7 @@ theorem inclusion_closed : IsClosedSubgroup (inclusion z t f) := by
   rw [← kernelIso_hom_comp z t f]
   change IsClosedImmersion
     ((kernelIso z t f).hom.hom.hom.left ≫ (kernelι (projection z t f)).hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 @[reassoc]

@@ -1,6 +1,6 @@
 # The underlying complex of the equivariant Godement complex
 
-Author: Worker 61. Combines the published equivariant Godement construction
+Combines the published equivariant Godement construction
 (`Langlands.Sheaf.Equivariant.Godement.{Zero,SkyscraperProduct,Complex}`), the
 exactness of forgetting equivariance (`Langlands.Sheaf.Equivariant.Exact`), the
 transport of the cokernel construction along a right exact functor
@@ -71,11 +71,7 @@ ordinary-topological transport-site version, not Berkovich's analytic
 equivariant étale site. No flasqueness, exactness or acyclicity of either
 complex is asserted.
 
-Provenance: derived. The statement matches the form of the
-"underlying comparison" proposed in Worker 3's (rejected, unpublished)
-statement candidate 90b58de0. That candidate was rejected for source
-documentation, not for its Lean content, and is not imported here. The proof
-route is this module's own.
+Provenance: derived. The proof route is this module's own.
 
 Sources: registered folder
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`
@@ -84,5 +80,5 @@ member PDF SHA-256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`), section
 1.5, printed page 10; and `sga4-1973-tome3-deligne-xvii-original-scan`
 (SHA-256 `702fa23766ccec841d31ce0f21dfaacff8d8d31d4153de386587a27a4c01107a`),
-Exposé XVII, 4.2.1–4.2.2, original page 326. Worker 61 read both passages.
+Exposé XVII, 4.2.1–4.2.2, original page 326. Both passages were read.
 Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

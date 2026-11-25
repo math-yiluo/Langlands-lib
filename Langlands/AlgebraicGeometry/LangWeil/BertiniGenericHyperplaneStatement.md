@@ -1,7 +1,5 @@
 # Bertini's irreducibility theorem for the generic hyperplane section
 
-Author: Worker 69.
-
 This module states Bertini's irreducibility theorem for the generic hyperplane section of an
 affine scheme of finite type over a field. It is the geometric input of the induction step
 (hyperplane slicing) in the Library's Lang–Weil route to Conrad's Lemma 4.6. The module
@@ -75,5 +73,5 @@ parameter space.
 
 ## Status
 
-Open. A proof is to be supplied through its own focused proof task, for example by formalizing
-Stacks Lemmas 37.32.1–37.32.3.
+Proved, as `BertiniGenericHyperplane.bertiniGenericHyperplaneStatement` in
+`BertiniGenericHyperplaneProof`.

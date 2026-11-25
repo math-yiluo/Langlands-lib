@@ -1,6 +1,6 @@
 # Degree-one comparison in a common chart of genuine frame atlases
 
-This derived unit proves the common-open chart compatibility equation for the
+This derived module proves the common-open chart compatibility equation for the
 actual degree-one line bundles and comparisons of `FrameAtlasTwist`. It uses
 the generic chart transport and the proved relative linear-action composition
 law in `FrameChoiceTwistChart`. No external geometric assertion is invoked.
@@ -94,7 +94,7 @@ proof. Preserving the explicit coefficient ring avoids duplicating expensive
 restricted-scheme type conversions. The local `linter.defProp` setting only
 suppresses a style warning; the proof uses ordinary kernel checking.
 
-The unit is an internal consequence of the imported module-pullback,
+The module is an internal consequence of the imported module-pullback,
 relative-linear-action, genuine-frame and degree-one constructions. It proves
 compatibility on an open belonging to both given bases. It does not assert a
 common-refinement theorem for arbitrary distinct bases, invariance under

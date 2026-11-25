@@ -1,7 +1,5 @@
 # Actual left-Phi character stages comparison
 
-Author: Worker 499.
-
 This module constructs `leftPhiStagesCharacterEquiv` and its supplied-topology
 adapter `padic_leftPhiStagesCharacterEquiv` in
 `Langlands.Derivative.MirabolicProductMinus`. At either actual left orbit
@@ -11,8 +9,8 @@ measure data are constructed from the actual groups. The identification is
 natural for every stabilizer intertwiner, across independent coefficient
 universes. The source and target actions here are the unnormalized section
 actions. The ambient inverse-half normalization, normalized source coefficient
-comparison, rank transport and six-part host compatibility theorem remain
-separate obligations.
+comparison, rank transport and six-part statement
+`MirabolicProductMinusCompatibilityStatement` are proved in other modules.
 
 ## Source and provenance
 
@@ -30,7 +28,7 @@ character and minus functors. Section 4.12(II), printed pp.456–457 (PDF pages
 17–18), defines the left mixed product; §4.13(b), printed p.458 (PDF page 19),
 states its functorial comparisons. Section 7.2, printed p.471 (PDF page 32),
 gives the two left orbit representatives. These passages and relevant page
-images were read during this task. The bounded supplied-source and public-note
+images were read for this construction. The bounded supplied-source and public-note
 errata search found no applicable BZ77 entry; no global absence is asserted.
 
 The present topology, measure construction and specialization of the published
@@ -39,9 +37,8 @@ literally state the arbitrary-ring adapters or the chosen compatible measure.
 The construction imports the published actual section coefficient and actual
 Haar-ratio identity, the proved generic character-stages comparison, the proved
 compatible quotient-measure existence theorem and the compact-open basis for
-matrix groups. No host comparison is assumed. Worker 499 wrote this pair;
-no peer draft supplies a proof body. The generic comparison is reused by its
-published Lean name.
+matrix groups. No comparison of the statement is assumed. The generic
+comparison is reused by its published Lean name.
 
 ## Parameters and exact actions
 
@@ -96,9 +93,10 @@ genericity, nonzero-vector or universe-saturation condition is imposed.
 The ambient mirabolic group is `P_(k+r+3)` and the output section group is
 `P_(k+r+2)`, using `mirabolic n R = P_(n+1)(R)`. The intended higher left
 product has positive GL rank `k+1` and source mirabolic factor `P_(r+2)`.
-The host convention `phiMinus T ψ r : P_(r+2) → P_(r+1)` is retained.
+The convention `phiMinus T ψ r : P_(r+2) → P_(r+1)` of the compatibility
+statement is retained.
 All `k,r`, including zero, are allowed. No `P_0` or Phi-minus on `P_1` is
-introduced. This unit does not yet identify `K_i` compact induction with a
+introduced. This module does not identify `K_i` compact induction with a
 rank-transported normalized mixed product.
 
 ## Topology and measure construction
@@ -223,7 +221,7 @@ argument explicitly install the supplied topology and its Hausdorff
 topological-ring data where required. There is no canonical-topology choice,
 extra Haar condition, character-triviality condition or comparison premise.
 The ambient inverse-half twist remains a later operation; no normalized
-host comparison is asserted by these wrappers.
+comparison of the statement is asserted by these wrappers.
 
 ## Import and mathematical dependency audit
 
@@ -241,9 +239,8 @@ The complete direct and transitive closure has 148 project modules,
 excluding this entry. All 296 imported Lean/Markdown files are nonempty,
 byte-identical to the published Library and verified against its manifest at
 commit `6096ab5ac4bb214693970d29c770af26cb4cea48`.
-No pending module or peer draft is imported. In particular, the separately
-published source-action and normalized-section constructions are not inputs
-to this unit.
+In particular, the separately published source-action and normalized-section
+constructions are not inputs to this module.
 
 The actual mathematical dependencies are the actual matrix groups,
 projection/successor and closed subgroup calculations; actual nested
@@ -261,7 +258,7 @@ without any coinvariant-finiteness conclusion.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host conclusions | The host statement and proof modules are absent from the closure. No mixed-minus compatibility or boundary conclusion supplies an input. The comparison proved here is the lower actual section comparison, with normalization and mixed-product assembly still separate. |
+| Six conclusions of the statement | The statement module `MirabolicProductMinusCompatibilityStatement` and the proofs of its clauses are absent from the closure. No mixed-minus compatibility or boundary conclusion supplies an input. The comparison proved here is the lower actual section comparison, with normalization and mixed-product assembly separate. |
 | Plus functors, adjunction and §4.13(d) | None supplies an input. The plus subgroup, projection and successor are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -271,23 +268,22 @@ without any coinvariant-finiteness conclusion.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor its full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor its full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. |
 | Generality and normalization | All `k,r`, arbitrary supplied `T`, positive GL input rank and entire coefficient carriers are retained. Smoothness is the only representation premise. The actual Haar character is proved one; the ambient inverse-half normalization is explicitly reserved for subsequent assembly. |
-| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions, source formulas, drafts, pending constructions and consumer tasks provide no unproved comparison premise. The invoked generic comparison is a published proof. |
-| Separate owners and controls | This unit constructs actual left character-stages comparison data; it does not duplicate the separate restriction-sequence or exactness work. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions and source formulas provide no unproved comparison premise. The invoked generic comparison is a published proof. |
+| Separate results | This module constructs actual left character-stages comparison data; it does not duplicate the separate restriction-sequence or exactness results. |
 
 A scan of this module and its entire project closure finds no occurrence in
-Lean code of the host's 38 excluded task identifiers or 24 named consumer
-declarations, and no proof holes, new axioms or unsafe evaluation commands.
-Excluded names in explanatory Markdown are audit prose. Development
-compilation is distinct from independent semantic acceptance and publication.
+Lean code of 24 excluded consumer declarations, and no proof holes, new
+axioms or unsafe evaluation commands. Excluded names in explanatory
+Markdown are audit prose.
 
 ## Complete project import closure
 
 The following list contains every direct and transitive project import,
-excluding this entry module. Mathlib is supplied by the pinned approved
+excluding this entry module. Mathlib is supplied by the pinned
 environment and remains unchanged.
 
 ```text

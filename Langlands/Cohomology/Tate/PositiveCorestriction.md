@@ -1,8 +1,5 @@
 # Positive-degree comparison for corestriction
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The constructed Tate corestriction agrees with the independently defined
 ordinary cohomological corestriction in every positive degree. Both maps use
 Mathlib's actual cohomology objects, conjugated by its existing Tate comparison

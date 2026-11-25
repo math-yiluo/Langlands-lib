@@ -221,7 +221,7 @@ omit [NumberField K] in
 @[simp] theorem infiniteTensorMap_tmul (p : InfinitePlace K)
     (x : p.Completion) (y : L) (q : InfinitePlacesAbove L p) :
     infiniteTensorMap p (x ⊗ₜ[K] y) q =
-      NumberField.LiesOver.completionMap x *
+      NumberField.LiesOver.completionMap p q.1 x *
         algebraMap L q.1.Completion y := rfl
 
 omit [NumberField K] in

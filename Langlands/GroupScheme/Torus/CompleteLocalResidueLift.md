@@ -1,6 +1,6 @@
 # Complete-local lifting with an arbitrary field quotient
 
-Worker 872. This internal transport lemma keeps the complete-local
+This internal transport lemma keeps the complete-local
 deformation proposition as an explicit input.
 
 For a complete Noetherian local ring `B`, let `B → K` be a supplied

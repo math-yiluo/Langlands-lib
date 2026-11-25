@@ -55,5 +55,6 @@ generality.
 
 The separated-base hypothesis is retained throughout. The statement does not
 adopt an unrestricted nonseparated-base interpretation of the phrase “for
-general X” on p.9. This pair supplies proposition targets; their proofs require
-separate proof contributions.
+general X” on p.9. This pair supplies proposition targets; their proofs are
+`curvePlaceSpreadPullback`, `numberFieldSpreadPullback` and
+`adelicSpreadPullback` in `AdelicSpreadPullbackProof`.

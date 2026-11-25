@@ -1,7 +1,5 @@
 # Equivariance of arbitrary-sieve locally constant gluing
 
-Author: Worker 56.
-
 This internal companion combines the actual domain-section pair action from
 `ChosenAtlasLocallyConstantAction` with the target-sieve pullback construction
 from `ChosenAtlasLocallyConstantSievePullback`. It constructs pairs for the

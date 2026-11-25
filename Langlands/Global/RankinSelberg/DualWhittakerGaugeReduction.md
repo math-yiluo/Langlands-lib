@@ -1,11 +1,11 @@
 # Translated dual Whittaker majorization from the generic gauge input
 
-This internal reduction for Task 7262 is conditional on
+This internal reduction towards `UnequalRectGaugeStatement` is conditional on
 `WhittakerSimpleRootMajorizationStatement`. It does not prove that analytic
 statement or the rectangular Mellin convergence statement. The imported gauge
 interface and majorization proposition are published Library declarations.
-Their publication states the analytic premise; a proof of that premise is still
-required.
+Their publication states the analytic premise; the Library proves that premise
+as `whittakerSimpleRootMajorization` (module `WhittakerSimpleRootMajorization`).
 
 `dualCuspSpaceEquiv` is the complex linear equivalence from the realization's
 vector space to `iotaSpace (cuspSpace T)`, obtained by composing the published
@@ -44,6 +44,7 @@ invariance of the gauge and the determinant norm identity leave the majorant
 unchanged. This is exactly the pointwise input expected by
 `rectWhittakerGaugeBound_of_simpleRootGauge`.
 
-These claims are derived from the named Library results, the separately
-reviewed compact Weyl helper, and the explicit generic majorization premise.
+These claims are derived from the named Library results, the compact Weyl
+helper `unfoldingWeyl_mem_standardCompact` (module `UnfoldingWeylCompact`), and
+the explicit generic majorization premise.
 They assert no independent analytic convergence theorem.

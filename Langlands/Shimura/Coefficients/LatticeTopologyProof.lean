@@ -81,14 +81,14 @@ private theorem congruenceKernel_isOpen
     {R : Type u} [CommRing R] {G : Type z} [Group G] [TopologicalSpace G]
     (M : Action (ModuleCat.{w} R) G) [Module.Finite R M.V]
     [TopologicalSpace M.V] [IsTopologicalAddGroup M.V]
-    (hρ : ∀ x : M.V, Continuous (fun g : G => (M.ρ g).hom x))
+    (hρ : ∀ x : M.V, Continuous (fun g : G => (M.ρ g).asHom.hom x))
     (I : Ideal R) (n : ℕ)
     (hop : IsOpen ((I ^ n • ⊤ : Submodule R M.V) : Set M.V)) :
     IsOpen (congruenceKernel I M n : Set G) := by
   classical
   obtain ⟨s, hs⟩ := (Module.Finite.fg_top : (⊤ : Submodule R M.V).FG)
   have heq : (congruenceKernel I M n : Set G) =
-      ⋂ x ∈ s, {g | (M.ρ g).hom x - x ∈ (I ^ n • ⊤ : Submodule R M.V)} := by
+      ⋂ x ∈ s, {g | (M.ρ g).asHom.hom x - x ∈ (I ^ n • ⊤ : Submodule R M.V)} := by
     ext g
     change g ∈ congruenceKernel I M n ↔ _
     rw [mem_congruenceKernel]
@@ -97,7 +97,7 @@ private theorem congruenceKernel_isOpen
     · intro h x hx
       exact (Submodule.Quotient.eq _).mp (h x)
     · intro h x
-      have he : (Submodule.mkQ (I ^ n • ⊤)).comp (M.ρ g).hom =
+      have he : (Submodule.mkQ (I ^ n • ⊤)).comp (M.ρ g).asHom.hom =
           (Submodule.mkQ (I ^ n • ⊤) : M.V →ₗ[R] (torsionAction I M n).V) := by
         apply LinearMap.ext_on hs
         intro y hy

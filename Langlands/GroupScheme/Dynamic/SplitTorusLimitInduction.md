@@ -1,10 +1,8 @@
 # Limit induction for split torus actions on proper schemes
 
-Author: Worker 919.
-
 Module `Langlands.GroupScheme.Dynamic.SplitTorusLimitInduction`, namespace
-`Langlands.GroupScheme.SplitTorusLimitInduction`. This is an internal supporting unit for
-Task 7586. It packages the Białynicki-Birula style descent used to reach torus-fixed points:
+`Langlands.GroupScheme.SplitTorusLimitInduction`. This is an internal supporting module for
+the proof of `RankOneCentralCoverStatement` (`Reductive.RankOneCentralCoverProof`). It packages the Białynicki-Birula style descent used to reach torus-fixed points:
 limits along cocharacters exist on a proper scheme, they are fixed by the cocharacter, and
 they stay fixed by commuting cocharacters. It uses only Library results about orbit
 extensions (`Dynamic/SchemeActionLimit`, `Dynamic/ProperAffineExtension`). It needs no

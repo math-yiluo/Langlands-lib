@@ -9,21 +9,21 @@ The governing registered original is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Workers 709 and 1201 reread PDF281–282 for this construction; Worker 1201
+Two readers reread PDF281–282 for this construction; the second
 also rendered and visually checked PDF281. The source's displayed
 splitting and dimension inequalities are not proved by this pair.
 
 The supplementary registered source
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-was reread by both workers on PDF18–19. Its C.I entries concern the older numerical
+was reread by both readers on PDF18–19. Its C.I entries concern the older numerical
 inequalities and exponents. The 2026 original governs these actual objects.
 
 ## Original objects and scope
 
 All new declarations are in `Langlands.Renard.NilpotentFiltration`.
 The carrier is an arbitrary `V : Type u` with `AddCommGroup V` and
-`Module ℂ V`. The published import
+`Module ℂ V`. The import
 `Langlands.Algebra.RenardNilpotentIdealFiltration` supplies, unchanged,
 the actual algebra
 `generatedAlgebra a = Algebra.adjoin ℂ (Set.range a)`, its embedded
@@ -49,7 +49,7 @@ source's `a_2, …, a_(l+1)`.
   hence a complex subspace of the original `R`.
 
 Mathlib's `Ideal` is a left ideal for an arbitrary ring. Under the source
-hypothesis that the original tuple commutes, the published
+hypothesis that the original tuple commutes, the lemma
 `generatedAlgebra_isMulCommutative` supplies commutativity of `R`;
 the head ideal is then the usual two-sided source ideal. The definitions
 themselves need no commutation, nilpotence or finite-dimensionality
@@ -62,7 +62,7 @@ For every natural tuple length `l`, including zero,
 
 `generatedAlgebra a →ₐ[ℂ] Module.End ℂ (idealPowerSubspace a 1)`.
 
-It reuses the published generic construction
+It reuses the generic construction
 `Langlands.CommutingDimension.restrictionAlgHom` with stability supplied by
 `idealPowerSubspace_stable`. It restricts each original endomorphism to
 the actual invariant subspace `V_1 = I V`. No replacement carrier, action,
@@ -93,7 +93,7 @@ span of its singleton.
 
 `firstLevelRestriction_apply` and `firstLevelTuple_apply` are reflexive
 equalities: after inclusion in `V`, the restricted maps evaluate the
-original endomorphisms. `firstLevelAlgebra_eq_range` reuses the published
+original endomorphisms. `firstLevelAlgebra_eq_range` reuses the
 generic laws `CommutingDimension.adjoin_generators_top` and
 `CommutingDimension.adjoin_image_generators` to identify the actual
 restricted adjoin with the image of the restriction homomorphism.
@@ -106,21 +106,19 @@ restriction homomorphism. `firstLevelTuple_isNilpotent` similarly lifts
 nilpotence by `IsNilpotent.map_iff` and maps it along restriction. Each
 law assumes exactly the named property of the original tuple; no property
 of a supplied restricted tuple is assumed. The generic constructions and
-laws reused here belong to the published commuting-dimension
+laws reused here belong to the Library's commuting-dimension
 infrastructure; this pair supplies their original-object specialization.
-Worker 307 authored that imported infrastructure; importing the published
-lemmas does not attribute their original proofs to this pair's authors.
 
 These compatibility laws are internal construction facts. This module
 does not assert `R = R' + R''`, a dimension bound on either summand, a
 comparison of `dim R''` with the restriction-image dimension, the bound on
 the maximum using a complement, or the floor recurrence. Those source
-assertions require separate statement and proof units. The actual
+assertions have separate statement and proof modules, such as
+`RenardNilpotentHeadTailDimensionStatement` and
+`RenardNilpotentHeadTailDimensionProof`. The actual
 maximum, attainment, endpoint and complement statements, numerical base
-cases, carrier transport, monotonicity and the rest of the whole-book
-program retain their existing owners and obligations.
+cases, carrier transport, monotonicity and the rest of the book
+are separate.
 
-Worker 709 authored the complete reused Lean and Markdown draft. Worker 1201
-verified the registered originals, reviewed the original-object constructions
-and intrinsic laws, refined this exposition, and prepared the checked
-contribution. The reused Lean draft is unchanged.
+A second reader verified the registered originals and checked the
+original-object constructions and intrinsic laws.

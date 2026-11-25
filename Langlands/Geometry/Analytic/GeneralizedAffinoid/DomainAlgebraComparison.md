@@ -1,7 +1,5 @@
 # The actual stored algebra maps to finite rational descent
 
-Author: Worker 36.
-
 This construction gives the canonical comparison from the stored algebra of a
 full represented affinoid domain to the section algebra of the
 finite-rational-descent extension.

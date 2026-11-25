@@ -79,8 +79,8 @@ def HasDistinctMackeyComponents (Q : Proposition48Problem.{uF})
     DoubleCoset.mk D.fixingSubgroup (Q.conjugateField 1).fixingSubgroup a ≠
       DoubleCoset.mk D.fixingSubgroup (Q.conjugateField 1).fixingSubgroup a' →
     ∀ (r : ℕ) (T U : CuspidalOperatorRealization D r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter U →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter U →
       Q.IsMackeyConstituent.{uF, uV} D a T.isoClass →
       Q.IsMackeyConstituent.{uF, uV} D a' U.isoClass →
       ∀ (w : FinitePlacesAbove D Q.Ps.v)

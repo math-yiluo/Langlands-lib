@@ -1,8 +1,5 @@
 # Geometric Frobenius lifts at number-field completions
 
-Author: Worker 41.
-Closure-comparison documentation clarification: Worker 100.
-
 This module constructs a geometric Frobenius lift at every actual finite place
 of a number field, then defines evaluation of a genuine Galois representation's
 Euler polynomial at that lift. The lift satisfies the already published
@@ -81,6 +78,38 @@ independent. For the family lemma the coefficient field is a number field,
 and each representation uses its actual completion topology, as in
 `Collection` and `MatchesOutside`.
 
+## The two integral structures of a completion
+
+For a finite place `v` of a number field `K` (namespace `Langlands.GaloisRepresentation`), the
+completion `K_v = FiniteCompletion K v` carries its norm and the local-field structure of
+`Langlands.Global.FiniteCompletionLocalField`. They have the same valuation integers
+(`normedField_valuation_integer_eq`); hence the spectral integers of `AlgebraicClosure K_v` for the
+norm are those for the local-field structure (`localClosureIntegers v`,
+`extensionIntegers_eq_localClosureIntegers`), and the residue field of `K_v` for the local-field
+structure has `N(v)` elements (`card_residueField_localNormedField`, from
+`CompletionResidue.card_residueField`). These identify the residue action used for Frobenius lifts
+with that of the local theory.
+
+Complete types, as printed by `PrettyPrinter.ppSignature`:
+
+```lean
+Langlands.GaloisRepresentation.normedField_valuation_integer_eq.{u} {K : Type u} [Field K] [NumberField K]
+  (v : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K)) :
+  NormedField.valuation.integer = (ValuativeRel.valuation (Langlands.Global.FiniteCompletion K v)).integer
+Langlands.GaloisRepresentation.localClosureIntegers.{u} {K : Type u} [Field K] [NumberField K]
+  (v : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K)) :
+  ValuationSubring (AlgebraicClosure (Langlands.Global.FiniteCompletion K v))
+Langlands.GaloisRepresentation.extensionIntegers_eq_localClosureIntegers.{u} {K : Type u} [Field K] [NumberField K]
+  (v : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K)) :
+  Langlands.LocalGalois.extensionIntegers (Langlands.Global.FiniteCompletion K v)
+      (AlgebraicClosure (Langlands.Global.FiniteCompletion K v)) =
+    Langlands.GaloisRepresentation.localClosureIntegers v
+Langlands.GaloisRepresentation.card_residueField_localNormedField.{u} {K : Type u} [Field K] [NumberField K]
+  (v : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K)) :
+  Nat.card (IsLocalRing.ResidueField ↥(Langlands.LocalGalois.baseIntegers (Langlands.Global.FiniteCompletion K v))) =
+    Ideal.absNorm v.asIdeal
+```
+
 ## Provenance and exact sources
 
 This is a derived construction, not a new formulation of an automorphic
@@ -106,7 +135,7 @@ the exclusion of the coefficient residue characteristic. This page was read
 directly in `harris-1998-local-langlands`, SHA256
 `7934239ea37d0b91f741ae70c2ac157fe5d619cda4dd992ac24e39ae460c375b`.
 Both original-file fingerprints were recomputed. No errata files for these
-sources were present in the current Library or project notes.
+sources were present in the Library or project notes when checked.
 
 ## Dependency map and boundaries
 
@@ -173,12 +202,11 @@ cohomology here; purity,
 multiplicity removal, semisimplicity, geometric origin and Hodge–Tate
 properties are not consequences of this module. It does not define a
 ramified Euler factor via inertia invariants or establish ramified local
-compatibility. The full host theorem-statement task remains incomplete.
+compatibility.
 
 Original development compilation and declaration inspection succeeded without errors
 or warnings. Complete types preserve independent universes and introduce no
 extra Galois, finite-residue-field or lift-existence assumption. Unapplied
 assignments checked the full existence and unique-matching theorem types.
 The inspected construction and matching proofs use only `propext`,
-`Classical.choice` and `Quot.sound`. This is development evidence; independent
-semantic review and publication remain separate.
+`Classical.choice` and `Quot.sound`.

@@ -178,8 +178,8 @@ The analogous identity for `G(F)^1` is already proved in the Library as
 `MaximalUnramified.characterValuationKernel_comap` (module
 `UnramifiedStabilizerDescent`).
 
-The construction of integral models for KP Axioms 4.1.20 and 4.1.22 (task
-`cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) needs all three clauses:
+The construction of integral models for KP Axioms 4.1.20 and 4.1.22 needs
+all three clauses:
 
 - Clauses 1 and 2 make the integral points of the models over the integers
   of `K` Galois-stable, so the models descend to `𝒪[F]` by KP Fact 2.10.16.

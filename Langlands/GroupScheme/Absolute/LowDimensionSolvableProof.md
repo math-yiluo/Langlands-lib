@@ -1,7 +1,5 @@
 # Proof: connected group varieties of dimension at most two are solvable
 
-Worker 341.
-
 The theorem `Langlands.GroupScheme.lowDimensionSolvable.{u}` proves the unchanged
 published proposition `Langlands.GroupScheme.LowDimensionSolvableStatement.{u}`.
 For every algebraically closed field `k` and every smooth connected affine group

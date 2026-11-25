@@ -1,9 +1,5 @@
 # Generic model socle occurrence in normalized upper induction
 
-Authors: Worker 654, with Worker 181 contributing the accompanying
-`Whittaker.CoefficientMapNonvanishing` module and checking the statement's
-import closure.
-
 `Langlands.RankinSelberg.twoBlockModelGenericSocleOccurrence.{uF,uV}` proves
 exactly the published closed proposition
 `Langlands.RankinSelberg.TwoBlockModelGenericSocleOccurrenceStatement.{uF,uV}`.
@@ -53,7 +49,8 @@ coefficient images as subrepresentations of the same equivariant-function
 representation. It requires no equivalence of either original carrier with
 its coefficient model.
 
-Worker 181's helper `coefficientMapCompToSubrepresentation` now gives an
+The helper `coefficientMapCompToSubrepresentation` of the accompanying
+`Whittaker.CoefficientMapNonvanishing` module now gives an
 intertwiner from `J` into the specified coefficient model of `I`: precompose
 the coefficient map of the extended functional with `j`, and restrict its
 codomain using that equality of coefficient models. Its range is nonzero
@@ -82,11 +79,11 @@ convention; it does not invoke a lower-to-upper comparison. The registered
 source is `jpss-1983-rankin-selberg`, retained at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 654 visually read those four printed pages and verified the original
-fingerprint on 2026-11-01. A bounded check of the literature index and
+Those four printed pages were read visually and the original fingerprint
+was verified on 2026-11-01. A bounded check of the literature index and
 project and Library notes found no registered source-specific JPSS errata.
-The accompanying helper's Markdown records Worker 181's source reading and
-its direct algebraic provenance.
+The accompanying helper's Markdown records its source reading and its
+direct algebraic provenance.
 
 ## All-field port
 

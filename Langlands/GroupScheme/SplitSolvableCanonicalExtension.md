@@ -1,7 +1,5 @@
 # The canonical extension of a split solvable group is split
 
-Worker 5678 (Task 7832, `61c64f71-25d0-40f3-9dac-3233755fd71e`).
-
 This module proves the splitting half of Milne's Corollary 16.56. The main
 theorem is
 `Langlands.GroupScheme.SplitSolvableCanonical.canonicalExtension_split`. Let

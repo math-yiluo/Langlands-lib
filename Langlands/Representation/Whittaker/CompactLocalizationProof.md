@@ -1,6 +1,6 @@
 # Character localization of compact induction in p-adic unipotent groups
 
-Worker 672 proves the published proposition
+This module proves the published proposition
 `Langlands.Whittaker.CompactLocalizationStatement.{uF,uV}` by the closed theorem
 `Langlands.Whittaker.compactLocalization` in
 `Langlands.Representation.Whittaker.CompactLocalizationProof`. The field and
@@ -48,8 +48,8 @@ kernel by continuity of the subtype inclusion, and `isSmooth_twist_iff` applies.
 
 It then imports and applies
 `Induction.compactCoinvariantIntegralBijective.{uG,uV}` from
-`Langlands.Representation.Induction.CompactCoinvariantBijectivityProof`,
-authored by Worker 199. `LinearEquiv.ofBijective` is applied to the actual
+`Langlands.Representation.Induction.CompactCoinvariantBijectivityProof`.
+`LinearEquiv.ofBijective` is applied to the actual
 `Induction.compactCoinvariantDesc`, using the compatible measure's proved right
 invariance. The helper transports this integral equivalence through the character
 comparisons above. The normalized-section and spanning argument establishing
@@ -73,14 +73,13 @@ actual left-coset quotient with their Borel measurable structures, and chooses
 Mathlib's regular left Haar measures `μU` and `μH`.
 
 The imported closed theorem `Haar.compactOpenCoverUnimodularity` from
-`Langlands.Analysis.Local.CompactOpenCoverUnimodularityProof`, authored by
-Worker 117, supplies right invariance of both chosen measures. Its ambient
+`Langlands.Analysis.Local.CompactOpenCoverUnimodularityProof` supplies right
+invariance of both chosen measures. Its ambient
 argument uses regular Haar uniqueness and cancellation of the finite nonzero
 mass of a compact open subgroup containing the translated element. Its
 closed-subgroup clause derives the requisite cover by pulling back compact open
-subgroups along the closed subtype embedding. The published proof credits
-Worker 103's ambient route and Worker 672's closed-subgroup route; this consumer
-imports the result without duplicating it.
+subgroups along the closed subtype embedding. This module imports the result
+without duplicating it.
 
 `QuotientIntegration.compatibleMeasureExists` now supplies a compatible measure
 on the actual left quotient. Its regularity supplies finiteness on compact sets.

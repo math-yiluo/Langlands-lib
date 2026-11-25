@@ -1,6 +1,6 @@
 # Cancellation of unitary coordinate pole multiplicities
 
-This derived unit completes scalar coordinate multiplicity cancellation for
+This module completes scalar coordinate multiplicity cancellation for
 the elementary part of the argument used in Waldspurger (2003), V.2.3, printed
 p.294 / PDF p.60, and Lemma V.3.1, printed p.295 / PDF p.61. The registered
 original is `waldspurger-2003-plancherel`. It imports

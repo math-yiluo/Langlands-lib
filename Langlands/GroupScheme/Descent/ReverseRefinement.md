@@ -48,6 +48,6 @@ pullback gives `refinementComparison_compatible` on the original overlap.
 Together with the recovered actual isomorphism and the object `C`, this is
 exactly the three fields of `Solution D`.
 
-This unit recovers a solution from a supplied refined solution. Constructing an
+This module recovers a solution from a supplied refined solution. Constructing an
 initial refined solution and applying this to the quasi-split inner-form
 existence statement remain separate obligations.

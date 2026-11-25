@@ -1,7 +1,7 @@
 # Actual integral global form on semistandard spectral families
 
-Worker 268. This construction and statement unit supports unit 4 of Task
-7258. Its principal target is
+This construction and statement module belongs to the global-form construction for
+Waldspurger's invariant spectral families. Its principal target is
 `Langlands.HarishChandraSchwartz.RationalSemistandard.GlobalForm.PositiveFormStatement`.
 It constructs the actual weighted integral form on the full smooth
 finite-support family, proves scalar integrability, sesquilinearity and
@@ -121,12 +121,12 @@ existing scalar/density program and its semistandard transports. Strict
 positivity at every unitary point is not required.
 
 `PositiveFormStatement` consumes those concrete scalar-density obligations,
-actual maximal splitness and the exact separately owned
+actual maximal splitness and the exact
 `SemistandardSpectralFiberFinitenessStatement`. It concludes Hermitian
 symmetry, nonnegativity of every diagonal real part and definiteness of
 this particular integral form. The source weights' positivity is already
-proved from the corresponding geometric hypotheses in the preceding
-source-constant adapter. No one of the target's form conclusions is an
+proved from the corresponding geometric hypotheses in the
+source-constant adapter `RationalSemistandardSourceConstants`. No one of the target's form conclusions is an
 input.
 
 `invariantPositiveForm` is conditional on that named target and the
@@ -137,11 +137,10 @@ proved theorem above. The target supplies only the remaining Hermitian
 and positive-definite fields. `invariantPositiveForm_inner` proves by
 reflexivity that the constructed form is exactly the actual integral.
 
-This unit does not yet give the full source-normalized comparison with
+This module does not give the full source-normalized comparison with
 `standardLeviPlancherelOrbitProductCore`, the formal-degree/model transport,
 invariant-subspace restriction, association-class construction or VII.2.4
-representative sums. Those remain Task 7258 obligations. Source constants
+representative sums; those are separate. Source constants
 and full compact/model/representative choice comparisons remain as stated
-in the preceding units. No VII.2.5 isometry, synthesis isometry, VIII
+in the modules it builds on. No VII.2.5 isometry, synthesis isometry, VIII
 Fourier-family finiteness, surjectivity or inversion is proved or assumed.
-All existing owners and Task 4534 controls remain unchanged.

@@ -1,6 +1,6 @@
 # Actual finite products from disjoint root partitions
 
-Worker 632, using Worker 634's supplied root-generated normal models.
+This module uses the root-generated normal models of `Reductive.RootPartitionNormalSubgroup`.
 
 This internal component-assembly theorem works in a semisimple group over an
 algebraically closed field, with a supplied split maximal torus. For a finite

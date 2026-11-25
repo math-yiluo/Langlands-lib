@@ -7,7 +7,7 @@ isomorphic to the unit, and a finite ordered affine cover 𝒰 of X. All
 carrier types lie in the arbitrary universe u.
 
 It chooses one integer-indexed complex P of R-modules. The complex is
-strictly perfect in the published sense: bounded with finite projective
+strictly perfect in the Library's sense: bounded with finite projective
 terms. Its image under the actual derived-category localization Q is
 isomorphic to the original Čech complex. Here the latter is explicitly
 `CochainComplex.of` applied to the cochains and differentials of
@@ -30,8 +30,7 @@ approximation.
 
 ## Internal derivation
 
-Workers 137 and 958 coordinated the raw-family derived-comparison
-interface used here. This statement composes two focused prerequisites:
+This statement composes two focused prerequisites:
 `NoetherianCechProjectiveRepresentativeStatement` supplies one bounded
 finite projective family with the four original-base cycle tests and all
 scalar cycle tests, and

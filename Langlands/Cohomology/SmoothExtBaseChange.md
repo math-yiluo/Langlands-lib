@@ -1,34 +1,34 @@
 # Extension of scalars on `Ext` groups of smooth representations
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextExtBaseChange` (`HasResolutionBy`,
 `HasResolutionBy.of_prop`, `HasResolutionBy.mono`,
 `extBaseChangeMap_zero_bijective_iff`,
 `extBaseChangeMap_injective_of_hasResolutionBy`,
 `extBaseChangeMap_bijective_of_hasResolutionBy`,
-`extBaseChangeEquivOfHasResolutionBy`; Worker 61),
+`extBaseChangeEquivOfHasResolutionBy`),
 `Langlands.Cohomology.HyperextInvariantsLocalization`
 (`hasFiniteOrbits_comp_subtype_of_isSmooth`,
-`invariantsBaseChangeEquivOfIsLocalization`; Worker 61) and
+`invariantsBaseChangeEquivOfIsLocalization`) and
 `Langlands.Cohomology.DivisibleSystem.PermutationProjective`
 (`smoothTrivialFunctor`, `smoothInvariantsFunctor`,
-`smoothInvariantsFunctor_preservesEpimorphisms`; Worker 61). Through these
+`smoothInvariantsFunctor_preservesEpimorphisms`). Through these
 imports it also uses `Langlands.Cohomology.HyperextHomLocalization`
-(`homBaseChangeMap`; Worker 61), `Langlands.Cohomology.HyperextScalarExtension`
-(`smoothRepExtendScalars_isSemilinear`, `smoothExtBaseChangeMap`; Worker 61),
+(`homBaseChangeMap`), `Langlands.Cohomology.HyperextScalarExtension`
+(`smoothRepExtendScalars_isSemilinear`, `smoothExtBaseChangeMap`),
 `Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension`
 (`smoothRepExtendScalars`, `smoothRepRestrictScalars`,
-`smoothRepRestrictScalars_map_apply`, `smoothRepExtendScalarsAdjunction`;
-Worker 61), `Langlands.Cohomology.DivisibleSystem.ScalarExtension`
-(`baseChangeRepresentation`; Worker 61),
-`Langlands.Cohomology.DivisibleSystem.ProPInvariants` (`IsProPSubgroup`;
-Worker 61), `Langlands.Representation.Induction.OpenAdjunction`
+`smoothRepRestrictScalars_map_apply`, `smoothRepExtendScalarsAdjunction`),
+`Langlands.Cohomology.DivisibleSystem.ScalarExtension`
+(`baseChangeRepresentation`),
+`Langlands.Cohomology.DivisibleSystem.ProPInvariants` (`IsProPSubgroup`),
+`Langlands.Representation.Induction.OpenAdjunction`
 (`Induction.smoothRestriction`, `Induction.smoothCompactInduction`,
 `Induction.compactInductionAdjunction` and the instance
-`Induction.smoothRestriction_preservesEpimorphisms`; Worker 61),
-`Langlands.Representation.Category.Abelian` (`SmoothRep.epi_iff_surjective`;
-Worker 13) and `Langlands.Cohomology.ProPInvariants.Statement`
-(`ProPInvariantsExactStatement`; Worker 3).
+`Induction.smoothRestriction_preservesEpimorphisms`),
+`Langlands.Representation.Category.Abelian` (`SmoothRep.epi_iff_surjective`)
+and `Langlands.Cohomology.ProPInvariants.Statement`
+(`ProPInvariantsExactStatement`).
 
 The Library's `smoothExtBaseChangeMap R S G X Y n` is the `S`-linear map
 `S ⊗[R] Ext^n_G(X, Y) → Ext^n_G(S ⊗[R] X, S ⊗[R] Y)`, `s ⊗ e ↦ s • (S ⊗ e)`,

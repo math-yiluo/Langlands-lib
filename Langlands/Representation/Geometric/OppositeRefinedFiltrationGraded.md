@@ -1,6 +1,6 @@
 # Jacquet descriptions of the transported opposite grades
 
-Worker 514 supplies an internal exactness adapter for the actual filtration
+This module supplies an internal exactness adapter for the actual filtration
 constructed in `OppositeRefinedFiltration`. For a smooth representation `A`
 of `GL_n(F)`, a block shape `B`, a refinement `S`, and any supplied filtration
 of the actual normalized upper Jacquet module along `B.reverse`, it identifies

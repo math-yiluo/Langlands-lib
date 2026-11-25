@@ -1,6 +1,6 @@
 # Unitarity adapters for actual rational parabolics
 
-Author: Worker 346. This is internal supporting work for Renard VII.2.6.
+This is internal supporting work for Renard VII.2.6.
 It does not prove the unconditional corollary.
 
 `rationalSquareIntegrableUnimodularForm` constructs a positive invariant form

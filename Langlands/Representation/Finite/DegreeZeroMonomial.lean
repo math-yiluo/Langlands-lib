@@ -2,22 +2,22 @@
 Adapted from the published Anthropic FLT monomial proof at upstream commit
 6e837e75355538c7f80bab5b956861e86c4eacc2, Copyright 2026 Anthropic, PBC,
 Apache License 2.0. See licenses/Anthropic-FLT/LICENSE, NOTICE and ATTRIBUTION.md.
-Modified by Worker 1787: retain the initial normal abelian subgroup in every
+Modified in Langlands-lib: retain the initial normal abelian subgroup in every
 inducing subgroup, and prove the containment invariant through the induction.
 -/
-import Langlands.AnthropicFLT.P2M.Sol.S_ClassFunction_exists_trace_eq_sum_induced_linearCharacter_of_normal_comm_of_pow_prime_pow_mem
+import Langlands.Representation.Finite.MonomialTrace
 
 noncomputable section
 open scoped Classical
 open Module
-open P2MW.S_ClassFunction_exists_trace_eq_sum_induced_linearCharacter_of_normal_comm_of_pow_prime_pow_mem.MonomialProof
+open Langlands.FiniteRep.WeightSpaces Langlands.FiniteRep.MonomialTrace
 
 namespace Langlands.FiniteRep.DegreeZeroMonomial
 
 set_option maxHeartbeats 4000000
 
 private def val {K : Type} [Group K] [Fintype K] (e : Entry K) : K → ℂ :=
-  ClassFunction.induced e.1 (extChar e.1 e.2)
+  inducedClassFunction e.1 (extChar e.1 e.2)
 
 /-- An occurring weight is fixed by every element of the weight subgroup. -/
 theorem weight_fixed {K : Type} [Group K] [Fintype K]
@@ -67,8 +67,8 @@ theorem monomial_of_comm (A : Subgroup K) (hab : ∀ x y : K, σ x * σ y = σ y
           (⟨x, Subgroup.mem_top _⟩ : T)⁻¹ * ⟨y, Subgroup.mem_top _⟩ * ⟨x, Subgroup.mem_top _⟩ := rfl
       rw [e, weight_mul σ T hχ, weight_mul σ T hχ, mul_comm (χ _) (χ ⟨y, _⟩), mul_assoc,
         ← weight_mul σ T hχ, inv_mul_cancel, weight_one σ T hχ, mul_one]
-    change ClassFunction.induced ⊤ (extChar ⊤ (weightHom σ T hχ)) g = _
-    rw [ClassFunction.induced_top_of_conj_invariant _ hcf]
+    change inducedClassFunction ⊤ (extChar ⊤ (weightHom σ T hχ)) g = _
+    rw [inducedClassFunction_top_of_conj_invariant _ hcf]
     simp only [extChar, dite_eq_left (Subgroup.mem_top _), weightHom_apply]
 
   have htr : ∀ g : K, LinearMap.trace ℂ W (σ g) =
@@ -133,19 +133,19 @@ theorem monomial_of_transitive (A : Subgroup K) (B : Subgroup K) [B.Normal]
   · intro e he a ha
     obtain ⟨d, hd, rfl⟩ := List.mem_map.mp he
     exact ⟨⟨a, hAH ha⟩, hAl' d hd ha, rfl⟩
-  rw [← induced_lsum_eq]
+  rw [← inducedClassFunction_lsum_eq]
 
   suffices key : ∀ Φ : K → ℂ,
       (∀ (y : K) (hy : y ∈ H₁), Φ y =
         LinearMap.trace ℂ _ (stabRep σ B χ₁ H₁ (fun h hh => (hH₁ h).1 hh) ⟨y, hy⟩)) →
-      LinearMap.trace ℂ W (σ g) = ClassFunction.induced H₁ Φ g by
+      LinearMap.trace ℂ W (σ g) = inducedClassFunction H₁ Φ g by
     apply key
     intro y hy
     beta_reduce
     rw [dite_eq_left hy]
     exact (hl' ⟨y, hy⟩).symm
   intro Φ hΦ
-  rw [ClassFunction.induced_apply]
+  rw [inducedClassFunction_apply]
   have hint := isInternal_wt σ B hcommB
   have horbS : ∀ x : K, x • χ₁ ∈ S := fun x =>
     (hS _).2 ((wt_smul_ne_bot_iff σ B x χ₁).2 ((hS _).1 hχ₁))

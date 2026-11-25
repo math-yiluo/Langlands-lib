@@ -1,7 +1,5 @@
 # Arithmetic pair epsilon factors of direct sums
 
-Author: Worker 1695.
-
 This module proves, with no hypothesis beyond the axioms of a supplied
 local-constant system, that arithmetic pair epsilon factors are multiplicative
 on finite direct sums. Its main theorem

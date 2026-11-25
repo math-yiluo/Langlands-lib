@@ -1,7 +1,5 @@
 # Properties of morphisms local on the target in the fppf topology
 
-Authors: Worker 1001.
-
 Internal infrastructure for the proof of
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelationAlgebraicSpaceQuotientStatement`.
 In the proof of Lemma 65.10.3 (Tag [02WV](https://stacks.math.columbia.edu/tag/02WV),

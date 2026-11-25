@@ -1,7 +1,5 @@
 # Dimension one of a full tensor dual
 
-Author: Worker 174.
-
 `Langlands.LinearAlgebra.dualTensorOneDimensional` proves exactly
 `Langlands.LinearAlgebra.DualTensorOneDimensionalStatement`, with independent
 universes for the field, finite index type, and vector-space carriers. It adds

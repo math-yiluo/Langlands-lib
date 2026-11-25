@@ -1,7 +1,6 @@
 # Reduced translation spaces through an actual derived inclusion
 
-Authors: Worker 27 and Worker 1631. The bundled `DerivedRootTransport`
-support is Worker 1631's work.
+The bundled support comes from `Rational.DerivedRootTransport`.
 
 For a field `k : Type u`, retain the supplied actual derived inclusion and
 split-torus square of `Rational.DerivedRelativeRoots`: `D` is affine and
@@ -63,12 +62,12 @@ vanishing. It does not construct the supplied tori or product, a source
 apartment, its full omega compatibility, or the final normalizer-image
 theorem.
 
-The integrated module also exposes
+The module also exposes
 `cocharacterRange_sup_eq_top_of_centralComplement`, expressing the product
 spanning result as a supremum of linear ranges;
 `comap_rootAnnihilator_derived`, expressing the same root-kernel comparison
 as a submodule equality; and
 `centralComplement_cocharacterRange_le_rootAnnihilator`, isolating the
-central factor's vanishing. These are the additional reviewed interfaces
+central factor's vanishing. These are the additional interfaces
 used by the normalizer-action comparison. The existing decomposition,
 quotient maps and representative formulas are retained.

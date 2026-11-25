@@ -1,7 +1,5 @@
 # Whittaker genericity of a square-integrable representation
 
-Author: Worker 386.
-
 `Langlands.Classification.SquareIntegrableGenericity.{uF,uV} F T` states
 the intrinsic single-representation genericity theorem as a `Prop`-valued
 definition. This module proves no genericity theorem.
@@ -138,7 +136,7 @@ and `Representation.Whittaker.GeneralLinear`, all under `Langlands`.
 They supply the actual smooth category, analytic predicate, invariant
 forms, characters and functionals. Neither `TemperedBlockStatement` nor
 the segment-classification statements are imported. No existing pair is
-modified. This single-block target precedes Worker 90's separate
+modified. This single-block target precedes the separate
 square-integrable-block genericity proof; it does not take that target,
 parent tempered genericity, or another theorem-valued assumption as input.
 The formulation was developed against Library commit

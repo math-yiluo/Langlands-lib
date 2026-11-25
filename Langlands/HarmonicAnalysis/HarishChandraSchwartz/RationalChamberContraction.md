@@ -1,11 +1,11 @@
 # Uniform conjugation height bounds on the actual minimal parabolic
 
-This unit states and proves an actual-point form of Waldspurger,
+This module states and proves an actual-point form of Waldspurger,
 *La formule de Plancherel pour les groupes p-adiques (d'après
 Harish-Chandra)*, Lemma II.3.3, printed p.256 (PDF p.22), registered as
 `waldspurger-2003-plancherel`, DOI
 [10.1017/S1474748003000082](https://doi.org/10.1017/S1474748003000082).
-The chamber is the full `rationalMinimalChamber i ν`, with the published
+The chamber is the full `rationalMinimalChamber i ν`, with the existing
 positive-sign root-order convention. No norm-kernel restriction is
 imposed here.
 
@@ -39,7 +39,7 @@ than the source's `τ₀` representation. Its steps are:
    giving the inverse-entry half of the norm bound.
 2. `standardParabolic_empty_le_of_simpleRootPairings_nonneg` puts each
    cocharacter `c` with nonnegative simple-root pairings on the face
-   of simple roots on which its pairing is zero. The published
+   of simple roots on which its pairing is zero. The
    `standardCocharacter` equality and `standardParabolicOrder`
    inclusion show that its dynamic parabolic contains the minimal
    standard parabolic.
@@ -50,7 +50,7 @@ than the source's `τ₀` representation. Its steps are:
    character pairings. Hence
    `rationalMatrixNorm_conj_latticeSection_le` applies the first two
    steps to every dominant intrinsic uniformizer-section point.
-4. For any actual torus point, the published
+4. For any actual torus point,
    `CocharacterUniformizer.isUniformizerLatticeSection` factors it
    as a torus norm-kernel point times its section representative.
    `mem_normKernel_mul_section_inv_iff` identifies the root orders
@@ -78,4 +78,6 @@ The field universe is arbitrary, both local-field characteristics and
 nonsplit connected reductive groups are retained, and the simple-root
 set may be empty. This proves the minimal-parabolic contraction input
 needed in II.3.5. The maximal-parabolic open-cell estimate and its
-opposite-radical tail cutoff remain separate obligations.
+opposite-radical tail cutoff are proved separately, as
+`rationalParabolicOpenCellHeight` in `RationalOpenCellHeight` and
+`rationalOppositeTailHeightCutoff` in `RationalOppositeTailCutoff`.

@@ -152,4 +152,4 @@ along the actual actions.
 None of this is proved by this module. In particular the comparison in item 1
 is not constructed here. The finiteness implications are also not proved here,
 and the base-change statement is not proved by this module. The proposition is
-stated so that a proof successor can establish these facts.
+proved in `ResidueFiberFinitenessProof`, by `residueFiberFiniteness`.

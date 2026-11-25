@@ -59,9 +59,9 @@ theorem splitPolarizedIso_ofHom (e : G ≅ H) :
 
 /-- An order-linear primal isomorphism gives an order-linear polarized isomorphism. -/
 theorem splitPolarizedIso_order {A : Type v} [Ring A] {a : A →+* End G} {b : A →+* End H}
-    (e : G ≅ H) (he : ∀ t, a t ≫ e.hom = e.hom ≫ b t) (t : Aᵐᵒᵖ × A) :
-    splitOrderAction a hExact t ≫ (splitPolarizedIso hExact e).hom =
-      (splitPolarizedIso hExact e).hom ≫ splitOrderAction b hExact t := by
+    (e : G ≅ H) (he : ∀ t, (a t).asHom ≫ e.hom = e.hom ≫ (b t).asHom) (t : Aᵐᵒᵖ × A) :
+    (splitOrderAction a hExact t).asHom ≫ (splitPolarizedIso hExact e).hom =
+      (splitPolarizedIso hExact e).hom ≫ (splitOrderAction b hExact t).asHom := by
   apply RationalHom.ofHom_injective
   rw [RationalHom.ofHom_comp, RationalHom.ofHom_comp, splitPolarizedIso_ofHom]
   exact (splitOrderRigidifier hExact (OrderQuasiIsogeny.ofIso (a := a) (b := b) e he) 1).commutes t
@@ -85,7 +85,7 @@ theorem splitPolarizedIso_pairing (e : G ≅ H) (n : ℕ) (T : Over (Spec R))
     (inverseDualIso hExact e).hom_inv_id
   have hn : g ≫ schemeDualMap f = 1 • 𝟙 (schemeDual (G.inclusions.obj n)) := by
     rw [one_nsmul]
-    exact congrArg (fun m : End (G.dual hExact) => m.app n) he
+    exact congrArg (fun m : G.dual hExact ⟶ G.dual hExact => m.app n) he
   have h := productWithDualPairing_similitude f g 1 hn T x y
   rw [pow_one] at h
   dsimp only

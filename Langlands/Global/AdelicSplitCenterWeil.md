@@ -1,7 +1,5 @@
 # Full Weil compatibility of the actual positive/principal quotient
 
-Author: Worker 112.
-
 This internal construction establishes full subgroup Weil compatibility for
 the actual adelic measures constructed in `AdelicSplitCenterHaar`,
 `AdelicSplitCenterSubgroupHaar` and `AdelicSplitCenterMeasure`. It specializes

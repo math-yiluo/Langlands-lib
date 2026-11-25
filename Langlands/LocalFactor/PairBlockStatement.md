@@ -1,7 +1,6 @@
 # Epsilon and gamma laws for sums, pairs and special blocks
 
-Worker 33 wrote this module for task `e534647a` (row 11 of the local-factor
-coverage map). The main declaration is
+The main declaration of this module is
 `Langlands.LocalFactor.PairBlockFactorStatement`. It is a proposition only. No
 local-constant system is constructed or chosen, no proof of the factor laws is
 claimed, and nothing is assumed as an axiom. The only proved results are the
@@ -126,7 +125,7 @@ values of an arbitrary supplied system. The changes are as follows.
   too (clauses 1 and 2). He also states that `γ` alone multiplies when `σ` is an
   extension of `σ_1` by `σ_2` (clause 3). The direct-sum law for `L` is
   published as `WDEulerDirectSumStatement` in
-  `Langlands.LocalFactor.WeilDeligneEulerStatement` (row 8). The dual of a sum
+  `Langlands.LocalFactor.WeilDeligneEulerStatement`. The dual of a sum
   is covered by `DualCompatibility` in `Langlands.WeilDeligne.OperationStatements`.
   Neither is repeated here. `L` and `ε`
   are deliberately not stated for short exact sequences, since they fail
@@ -139,7 +138,7 @@ values of an arbitrary supplied system. The changes are as follows.
   gives the finite products. The representation isomorphism
   `σ ⊗ σ' ≃ Σ σ_i ⊗ σ'_j` is not stated in this module; clause 4 is stated
   directly on the factor values. The `L` law of 2.2 follows from the published
-  row-8 direct-sum law together with the invariance of `L` under isomorphism.
+  direct-sum law `WDEulerDirectSumStatement` together with the invariance of `L` under isomorphism.
 - **2.3.** Henniart's `St_n` restricts to `W_F` as `1, ν, …, ν^(n-1)`. That is
   the uncentered block `specialBlock ν n` used here, with weights indexed from
   `0`. In the extracted text of both formulas of 2.3 (the restriction of
@@ -156,7 +155,8 @@ values of an arbitrary supplied system. The changes are as follows.
   exact sequences, so no irreducibility is assumed. Clause 5 is the case of a
   single block, that is `ρ' = 1` and `m = 0` in Henniart's formula; it is
   stated separately because the tensor with a trivial one-dimensional pair is
-  not syntactically `ρ ⊗ S_(n+1)`. The `L` laws of 2.4 are published in row 8
+  not syntactically `ρ ⊗ S_(n+1)`. The `L` laws of 2.4 are published in
+  `Langlands.LocalFactor.WeilDeligneEulerStatement`
   (`WDEulerBlockStatement` and `WDEulerPairBlockStatement`).
 
 Why clause 3 holds, and why no semisimplicity is needed: Tate (4.1.6) defines
@@ -177,10 +177,10 @@ Weil–Deligne correction is evaluated at `q_E^(-s) Φ`. An unramified `ω` with
 `ω` keeps `I`-invariants and monodromy, and multiplies the action of `Φ` by
 `q_E^(-t)`. Tate (3.4.6) gives the explicit value
 `ε(V ⊗ W) = ε(V)^(dim W) det W(π^(a(V) + dim V · n(ψ)))` for unramified `W`. That
-explicit conductor exponent is stated with the conductor laws of row 9 (Worker
-46), not here. The class-level clauses (the first three items of clause 7)
-answer Worker 4's request in the coverage map. They are the unramified-twist
-comparison for class pairs with arbitrary complex `t`, stated on Weil classes
+explicit conductor exponent is stated with the conductor laws of
+`Langlands.LocalFactor.ConductorExponentStatement` (`UnramifiedTensorStatement`),
+not here. The class-level clauses (the first three items of clause 7) are the
+unramified-twist comparison for class pairs with arbitrary complex `t`, stated on Weil classes
 because such twists need not preserve finite image.
 
 ## Sources

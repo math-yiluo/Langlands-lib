@@ -1,6 +1,6 @@
 # Levels of `ℓ`-divisible systems over Harris's coefficient ring
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.LevelProjective`
+Built on `Langlands.Cohomology.DivisibleSystem.LevelProjective`
 (`PowQuotientFlat`, `PowQuotientFlat.exists_presentation`,
 `PowQuotientFlat.exists_free_generators`, `exists_eq_smul_of_forall_dvd_finsupp`,
 `moduleCat_powSMul_hom_apply`, `IsUnitMulUniformizerPow`, and the proof pattern of
@@ -11,7 +11,7 @@ it uses the DivisibleSystem module (`DivisibleSystem` with its axioms `powSMul_e
 HomSurjective module (`PowTorsionProjective`), and the InvariantTotalProjective module
 (`UnderlyingPowTorsionProjectiveBelow` and its lemmas for `smoothGodementInvariantTotalSystem`
 and `proPSmoothGodementInvariantTotalSystem`). From
-`Langlands.Shimura.Coefficients.HarrisLattice` (Worker 57) it uses Harris's coefficient ring
+`Langlands.Shimura.Coefficients.HarrisLattice` it uses Harris's coefficient ring
 `HarrisCoefficientIntegers L p`, the product of the rings `CoefficientIntegers l.1` over the
 places `l : FinitePlacesAbove L p`. From Mathlib it uses
 `IsDiscreteValuationRing.exists_irreducible`, `IsDiscreteValuationRing.eq_unit_mul_pow_irreducible`,

@@ -39,7 +39,7 @@ orbit, measure or induction data.
 
 ## Intended use
 
-Worker 301's staged `FullLeviInduction` defines
+The module `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FullLeviInduction` defines
 `fullLeviAmbientSmoothRep M hM A` as
 `SmoothRep.of (A.representation.comp (fullLeviGroupEquiv M hM).toMonoidHom) _`.
 This is definitionally `SmoothRep.pullback (fullLeviGroupEquiv M hM) A`, so

@@ -51,7 +51,9 @@ theorem deriv_leftMappedPath (j : U →* H) (hj : ContMDiff IU IH ∞ j)
     simp only [b, k, n, Function.comp_apply, map_mul, map_inv]
     congr 1
     group
-  rw [heq, ← fderiv_apply_one_eq_deriv, ← mvfderiv_eq_fderiv]
+  rw [heq, ← fderiv_apply_one_eq_deriv,
+    show fderiv ℝ (b ∘ k ∘ j ∘ n) t 1 = mvfderiv 𝓘(ℝ, ℝ) (b ∘ k ∘ j ∘ n) t 1 from
+      (DFunLike.congr_fun (mvfderiv_eq_fderiv (f := b ∘ k ∘ j ∘ n) (x := t)) 1).symm]
   rw [mvfderiv_comp t (hb.mdifferentiableAt (by simp))
     ((hk.comp (hj.comp hn)).mdifferentiableAt (by simp))]
   rw [mfderiv_comp t (hk.mdifferentiableAt (by simp))

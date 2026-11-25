@@ -3,8 +3,9 @@
 This internal construction generalizes the published `RationalMinimalJacquet`
 argument from source carrier `Type (max (u + 1) v)` to source carrier `Type v`,
 where the field/group universe `u` and source universe `v` are independent.
-Worker 1784 reuses the proof of Worker 78 and the original relation-span proof
-material of Worker 379. No new original-literature translation is claimed.
+It reuses the proof of `RationalMinimalJacquet` and the original relation-span
+proof material of `RationalCuspidalEmbeddingProof`. No new original-literature
+translation is claimed.
 
 `exists_nontrivial_isLeviCuspidal_jacquet_arbitraryCarrier` proves that a
 nontrivial smooth complex representation of the actual rational-point group

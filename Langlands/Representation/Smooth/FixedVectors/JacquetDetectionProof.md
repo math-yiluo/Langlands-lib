@@ -1,6 +1,6 @@
 # Proof of fixed-vector detection through actual Jacquet subquotients
 
-Worker 189. The theorem
+The theorem
 `Langlands.jacquetSubquotientFixedVectorDetection` proves
 `Langlands.JacquetSubquotientFixedVectorDetectionStatement` with independent
 group, carrier and finite-family index universes.

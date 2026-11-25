@@ -1,8 +1,5 @@
 # Openness of the fibre-contraction locus
 
-Authors: Worker 1028 and Worker 139. Worker 1028 supplied the statement draft;
-Worker 139 checked the interfaces and source passage and prepared this pair.
-
 `Langlands.AbelianScheme.FibreContractionOpenStatement.{u}` is a
 `Prop`-valued definition. This module states the proposition and does not
 prove it.
@@ -47,8 +44,8 @@ The registered original is Edixhoven, van der Geer and Moonen,
 The relevant passage is (1.12), the Rigidity Lemma and its proof, printed
 pp.12–13, PDF pp.16–17, in the retained file
 `literature/Edixhoven, van der Geer, Moonen - Abelian Varieties (preliminary version of the first chapters).pdf`.
-No source-specific errata note was present in the checked workspace,
-Library or project `notes/errata/` locations.
+No source-specific errata note was present in the Library or in the
+project's `notes/errata/`.
 
 This proposition is derived from the openness step of that proof,
 isolated in scheme-theoretic form. It is not a quotation of the source's

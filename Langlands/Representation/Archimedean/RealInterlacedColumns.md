@@ -89,7 +89,7 @@ The module compiles with no errors or warnings.
 
 ## Provenance
 
-Internal to Task 7070. The self-dual combinations are the standard decomposition
+Internal to the proof of `RealInterlacedInducedInducedLinkedJacquetFunctionalStatement`. The self-dual combinations are the standard decomposition
 `Λ²ℂ⁴ = Λ²₊ ⊕ Λ²₋` under `SO(4)`, restricted here to what the proof uses: the three block
 rotations act on `L_w` as computed above. The consequence used later is that the middle block
 has a one-dimensional space of top modes on `Sm`. Everything else is elementary linear algebra

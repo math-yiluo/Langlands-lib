@@ -1,7 +1,5 @@
 # Module-valued Hom complexes
 
-Author: Worker 13.
-
 Let `C` be an `R`-linear preadditive category, where `R` is a ring. For actual
 integer-graded cochain complexes `P` and `Q`, `complex R P Q` is a cochain
 complex of `R`-modules. Its degree `n` term consists of all families of
@@ -38,7 +36,7 @@ assumption is imposed on `C`.
 This is an internal categorical construction using the pinned Mathlib
 implementation `Algebra/Homology/HomotopyCategory/HomComplex.lean`,
 in particular `Cochain`, `δ_hom`, `δ_shape`, `δ_δ`, `δ_comp_ofHom` and
-`δ_ofHom_comp`. Worker 13 inspected those definitions and proofs at Mathlib
+`δ_ofHom_comp`. Those definitions and proofs were inspected at Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`. The new construction
 retains the coefficient-module structure and packages the two variances
 and their cohomology maps.
@@ -47,7 +45,7 @@ Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), printed pp.305-306, equations (2.4)-(2.6),
 constructs free resolutions and their total complexes. Printed p.309,
 Proposition 4.4 and equation (4.4.1), specifies derived Hom in the category
-of smooth coefficient representations. Worker 13 read these original pages.
+of smooth coefficient representations. These original pages were read.
 The present construction is reusable input for applying Hom to actual
 complexes in that category. It does not supply Harris's geometric complexes,
 their projectivity or acyclicity, a totalization of his particular double

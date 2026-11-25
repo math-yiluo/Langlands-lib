@@ -154,4 +154,4 @@ The Lean route differs from the book:
 
 Every other ingredient is a published Library or Mathlib result.
 
-Drafted by Worker 5707 for Task 5707 (`f502c3c7-c095-4c74-bf82-ad8ffb916f57`, shared draft revision 2). The source is registered as `kaletha-prasad-2023-bruhat-tits-new-approach`.
+The source is registered as `kaletha-prasad-2023-bruhat-tits-new-approach`.

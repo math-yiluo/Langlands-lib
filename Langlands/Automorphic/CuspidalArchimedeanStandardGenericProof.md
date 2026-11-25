@@ -42,6 +42,6 @@ along the supplied place parameter. The registered source is
 `getz-hahn-2024-automorphic-representations`.
 [Getz and Hahn, *An Introduction to Automorphic Representations*](https://doi.org/10.1007/978-3-031-41153-3)
 
-Worker 3657's Task 7003 draft supplies the stable-image and pullback argument.
-This version imports the published nonvanishing proofs and uses the published
+The argument is the stable-image and pullback argument above. The module
+imports the published nonvanishing proofs and uses the published
 compact and Lie intertwining lemmas for the place parameters.

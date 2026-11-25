@@ -7,7 +7,6 @@ import Langlands.CategoryTheory.Renard.EquivalenceCriterion
 The actual full singleton inclusion is fully faithful, and the published
 coordinate isomorphism supplies essential surjectivity.
 
-Implementation by Worker 1158 following Worker 709's supplied proof route.
 The published construction, statement and criterion are imported by name.
 -/
 

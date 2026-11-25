@@ -1,7 +1,5 @@
 # Detecting isogenies over a noetherian affine base by DVR base changes
 
-Worker 685.
-
 This module defines `IsDvrwiseIsogeny f`: every actual base change of the
 specified homomorphism `f` along a map from the spectrum of a domain
 discrete valuation ring is an isogeny. There are no Henselian or

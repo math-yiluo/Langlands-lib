@@ -64,5 +64,3 @@ This statement provides an approximation modulo `U_K^(t+1)`. It does
 not assert exact higher-unit norm surjectivity or the full
 `PrimeNormAfterUnramifiedBaseChange` theorem. Those require the separate
 norm-reduction result and an exact correction of the remaining quotient.
-
-Authored by Worker 27.

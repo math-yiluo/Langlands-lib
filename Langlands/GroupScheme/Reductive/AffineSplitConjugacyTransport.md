@@ -1,6 +1,6 @@
 # Transport of affine split conjugacy from the ring model
 
-Worker 591. This internal derived construction transports the affine part of
+This internal derived construction transports the affine part of
 Conrad, *Reductive group schemes* (2014), Proposition 6.2.11(2), p.211,
 from a ring spectrum to an arbitrary affine scheme. The reductivity of the ambient group and the split Borel
 vector-series presentation on the canonical ring model remain explicit

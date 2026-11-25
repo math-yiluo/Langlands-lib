@@ -2,17 +2,18 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockLimitValue`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
-`RealStandardIrreducibleCriterionStatement`. It is a helper for the reversal statement for
-character lists with ties (`RealCharacterReverseKernel`). Worker 5220's module `RealBlockLimit`
-(Task 6749) proves the limit argument along the maximal parabolic subgroup `P_{a,k+1}` in
+This module was written for the proof of
+`RealStandardIrreducibleCriterionStatement`; the Library's proof of that statement (in
+`RealLargeLanglandsQuotientInjectiveProof`) does not import this module. It is a helper for the
+reversal statement for character lists with ties (`RealCharacterReverseKernel`). The module
+`RealBlockLimit` proves the limit argument along the maximal parabolic subgroup `P_{a,k+1}` in
 *vanishing* form: if every matrix coefficient `g ↦ ∫ u(κ g) h(κ) dκ` vanishes, then so does the
 limit value `∫∫ u(m) T_P h(m)`. The reversal argument needs the *value* form: the normalized
 matrix coefficients along `d(s)` converge to that limit value, whether or not they vanish. This
 module proves it by the same three dominated-convergence steps as
 `RealBlockLimit.integral_mul_blockStep_eq_zero`.
 
-Notation (all from Worker 5220's modules `RealBlockLimit`, `RealBlockJacquet` and the statement
+Notation (all from the modules `RealBlockLimit`, `RealBlockJacquet` and the statement
 `RealBlockParabolicIntegrationStatement`): `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ`, `O(N)` is
 `unitaryCompact ℝ N` with the Haar probability measure `RealPrincipalSeriesDuality.haarK N`.
 `n̄(X)` (`blockLowerGL`) is the lower unipotent block matrix `[[1, 0], [X, 1]]` for
@@ -61,8 +62,10 @@ Provenance. Derived. This is the standard leading-term (Langlands lemma) argumen
 parabolic subgroup, internal infrastructure. It restates the content of the proof of
 `RealBlockLimit.integral_mul_blockStep_eq_zero` with the limit value kept. It makes no claim beyond
 the Lean statements. The two assumed statements `RealBlockChartIntegrableStatement` and
-`RealBlockParabolicIntegrationStatement` are stated but not proved in the Library; every theorem
-that uses them takes them as explicit hypotheses.
+`RealBlockParabolicIntegrationStatement` are proved in the Library as `realBlockChartIntegrable`
+(`RealBlockChartIntegralProof`) and `realBlockParabolicIntegration`
+(`RealBlockParabolicIntegrationProof`); every theorem of this module that uses them takes them as
+explicit hypotheses.
 
 ## Proof
 

@@ -1,9 +1,8 @@
 # Proof: finite twisted upper-unipotent coinvariants of irreducible supercuspidal representations
 
-Author: Worker 784. This module proves the published closed proposition
+This module proves the published closed proposition
 `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement.{uF,uV}` of
 [`SupercuspidalCoinvariantFinitenessStatement`](SupercuspidalCoinvariantFinitenessStatement.md).
-It is the deliverable of task `62de5903-b616-4b5c-88eb-a066b77c5467`.
 
 ## The theorem
 
@@ -167,16 +166,14 @@ Direct imports:
 - the helper modules [`UpperUnipotentCoinvariantReduction`](UpperUnipotentCoinvariantReduction.md)
   and, through it, [`UpperUnipotentCharacterFactorization`](UpperUnipotentCharacterFactorization.md)
   and the shared two-block shape `ProductLeviChamber.twoBlock` of
-  [`TwoBlockShape`](../../Group/GL/TwoBlockShape.md). The two helper modules are this task's
-  helper candidate `f9e03896-ea24-449d-9cce-8ff4246e2939`, approved by Reviewer 4978 and
-  published at Library commit `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11`. They in turn
+  [`TwoBlockShape`](../../Group/GL/TwoBlockShape.md). The two helper modules in turn
   import the published `Classification/SupercuspidalDerivativeVanishing`, but only for
   its block-unipotent matrix lemmas.
 - the published [`Iwasawa`](Iwasawa.md), `Conductor/PrincipalCongruenceBasisProof` and
   `HarmonicAnalysis/PadicAdditiveConductorProof`;
 - Mathlib's interval finsets on `ℤ` and on finite products.
 
-The integrated Langlands import closure has 77 modules, counting this one. They lie in these groups:
+When the proof was checked, its Langlands import closure had 77 modules, counting this one. They lie in these groups:
 
 - matrix groups (`Group/GL/*`);
 - local-field normalization and topology;
@@ -195,7 +192,7 @@ The integrated Langlands import closure has 77 modules, counting this one. They 
 Mathematically, the proof uses only published, proved theorems and the helper lemmas listed
 above. It applies no proposition definition as a hypothesis.
 
-Condition-by-condition audit against the task's exclusions:
+Condition-by-condition audit against excluded dependencies:
 
 - **Independence section** (`UnlinkedSegmentSocleProductIrreducible`,
   `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`,
@@ -209,27 +206,23 @@ Condition-by-condition audit against the task's exclusions:
   square-integrable and regular exhaustion, forward special-segment square-integrability,
   `SegmentHeadProductIrreducibility`). None is imported. The closure contains no segment,
   socle, head, multisegment, square-integrable, tempered, exhaustion or classification
-  module beyond `Classification/Supercuspidal` and the vanishing helper. None is used, and
-  the listed tasks are not inputs.
+  module beyond `Classification/Supercuspidal` and the vanishing helper. None is used.
 - **Additional BZ77-only restrictions** (segment derivative formulas, segment socle/head
   existence and Jacquet formulas `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`,
   `SegmentSocleJacquetFormula` and `SegmentSpecialJacquetExponentNormFormula`, segment
   classification, `TwoSupercuspidalNonadjacentProductIrreducible`,
-  `TwoSupercuspidalProductStructure`, Ze80 §3.5/§9.6/4.2/9.7/9.3, and every listed consumer
-  task). None is imported or used. No derivative result is assumed: in particular
-  `SupercuspidalDerivatives` (task `2e5183b1-01e9-44fb-b26c-f4521a25c7c7`) and
-  `MultiplicityOneStatement` (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`) are neither
+  `TwoSupercuspidalProductStructure`, Ze80 §3.5/§9.6/4.2/9.7/9.3, and every listed
+  consumer). None is imported or used. No derivative result is assumed: in particular
+  `SupercuspidalDerivatives` and `MultiplicityOneStatement` are neither
   imported nor used.
 - **Whittaker-finiteness independence** (`IrreducibleCoinvariantFinitenessStatement` and
-  task `5ab445dc-d2b4-4072-80d1-6370870a4a26`, `LeviCuspidalCoinvariantFinitenessStatement`
-  and task `3ff5c8fb-397c-4345-bcb3-5d98a0993d18`, mirabolic finite length and task
-  `5428fe2c-013c-482d-aa6e-7df43e7191aa`). None is imported or used. No mirabolic
-  finite-length route appears.
+  its proof, `LeviCuspidalCoinvariantFinitenessStatement` and its proof, mirabolic finite
+  length). None is imported or used. No mirabolic finite-length route appears.
 - **Kirillov and multiplicity one**. `SupercuspidalKirillovStatement` and
   `MultiplicityOneStatement` are not used.
 
-The additive self-duality helper `b8160fbd-5342-43ac-a38d-6a3923ad418e` and the
-top-derivative comparison of helper `f9e03896` were prepared for the derivative route. They
+An additive self-duality helper and the top-derivative comparison
+(`TopDerivativeCoinvariantComparison`) were prepared for the derivative route. They
 are not imported by this proof.
 
 ## Source

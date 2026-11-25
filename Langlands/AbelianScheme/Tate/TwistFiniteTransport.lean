@@ -71,7 +71,7 @@ theorem levelTransport_symm (γ : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- A loop recovers the published geometric monodromy exactly. -/
 theorem levelTransport_aut (g : FundamentalGroup s hs) :
-    levelTransport n g = levelMonodromy s hs n g := rfl
+    levelTransport n g.asIso = levelMonodromy s hs n g := rfl
 
 /-- Path evaluation is linear for the existing residue actions. -/
 def levelTransportLinear (γ : fiberFunctor s hs ≅ fiberFunctor t ht) :
@@ -102,7 +102,7 @@ theorem levelTransport_monodromy (γ : fiberFunctor s hs ≅ fiberFunctor t ht)
 theorem levelTransport_change_path (γ δ : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Level Ω n) :
     levelTransport n δ x =
-      levelMonodromy t ht n (γ.symm ≪≫ δ) (levelTransport n γ x) := by
+      levelMonodromy t ht n (Aut.of (γ.symm ≪≫ δ)) (levelTransport n γ x) := by
   rw [← levelTransport_aut, ← levelTransport_trans]
   simp
 

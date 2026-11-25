@@ -107,25 +107,27 @@ smooth, proper, geometrically connected objects of `Over S` is again such.
   composite with `baseChangeProductMap` is the projection to the fibre followed by the
   fibre inclusion. So the representative `Λ`, restricted to the fibre, becomes trivial
   after base change to `K`. The helper theorem `fieldBaseChangeTrivialityDescent` (module
-  `Langlands.AlgebraicGeometry.Picard.FieldBaseChangeTrivialityDescent`, submitted with
+  `Langlands.AlgebraicGeometry.Picard.FieldBaseChangeTrivialityDescent`, ported with
   this module) descends the triviality to the fibre over `κ(b)`.
 - Main theorem: combine `isTranslationInvariant_iff_mumfordClass_eq_one` for the base
   change, `pullbackHom_mumfordClass_baseChange`, `range_subset_iff` and the two directions
   of the fibre comparison.
 
-## Selected definition
+## Main definition
 
-The selected definition of this contribution is
+The main definition of this module is
 `Langlands.AbelianScheme.mumfordTrivialLocus`. It is the open subscheme of `B` whose
 points are those over which the Mumford class of `M` is trivial on the fibre over the
 residue field. `isTranslationInvariant_fibreLineBundle_iff` characterizes it through
-geometric points. The final proof of
-`Langlands.AbelianScheme.FiniteTypePicardZeroOpenLocusStatement` (task `40d423ed`) uses
+geometric points. The proof `finiteTypePicardZeroOpenLocus` of
+`Langlands.AbelianScheme.FiniteTypePicardZeroOpenLocusStatement` (module
+`Langlands.AlgebraicGeometry.Picard.FiniteTypePicardZeroOpenLocusProof`) uses
 both names.
 
 ## Provenance
 
-This is a derived, internal construction for task `40d423ed`. It has no separate
+This is a derived, internal construction for the proof of
+`FiniteTypePicardZeroOpenLocusStatement`. It has no separate
 literature statement. It is the classical argument that the Picard-zero locus of a line
 bundle on an abelian scheme is open. For a line bundle `L` on an abelian variety over an
 algebraically closed field, `L` is translation invariant exactly when the Mumford bundle

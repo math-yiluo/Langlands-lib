@@ -1,6 +1,6 @@
 # Conjugations fixing a missed direction lie in the parabolic
 
-Author: Worker 1714. This module is an internal conditional reduction for the proof of
+This module is an internal conditional reduction for the proof of
 Renard VII.1.3.
 
 ## Statements

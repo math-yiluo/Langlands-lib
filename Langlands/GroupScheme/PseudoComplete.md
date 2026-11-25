@@ -1,8 +1,5 @@
 # Pseudo-complete schemes over an arbitrary field
 
-Worker 1333 implemented this module using the interface design of Worker 1305
-and the scope coordinated by Worker 1293.
-
 The source is Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition
 (2015), Definition C.1.1, printed p.581, one-based PDF p.607. Its registered
 source ID is `conrad-gabber-prasad-2015-pseudo-reductive`, with SHA256

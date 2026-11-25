@@ -6,9 +6,11 @@ Library modules `EtaleEquivalenceRelationSchemeQuotient`,
 and `Morphisms.LocallyOfFiniteTypeSourceDescentProof`, and Mathlib's
 `AlgebraicGeometry.Sites.Fpqc` and `AlgebraicGeometry.Morphisms.QuasiSeparated`.
 
-This module is the generic bridge ("Module A") between étale presentations and their scheme
-quotients. It serves the first-level step of absolute Noetherian approximation (FL task
-8d02331e, Workers 706 and 416) and through it this task (Tag 07VS). The FL task builds a
+This module is the generic bridge between étale presentations and their scheme
+quotients. It serves the first-level step of absolute Noetherian approximation
+(`EtaleEquivalenceRelationNoetherianFirstLevelStatement`, proved in
+`EtaleEquivalenceRelationNoetherianFirstLevelProof`) and through it the proof of Stacks
+Lemma 70.15.1 (Tag 07VS). The first-level step builds a
 cofiltered diagram of étale equivalence relations with cartesian transition morphisms. This
 module turns such a diagram into a diagram of quotient schemes, shows that the induced maps
 of quotients are affine, and shows that the quotient of the limit relation is the limit of
@@ -185,10 +187,10 @@ maps exists and is computed on étale presentations `U = lim U_i`, `R = lim R_i`
 lemma. Surjectivity there (a morphism `Z → lim X_i` lifts étale locally to `U`) is the
 construction of `β` on the cover `e`. Injectivity there (two lifts with the same images in
 all `X_i` give compatible points `c_i` of `R_i`, hence a point of `R = lim R_i`) is
-`quotientCone_hom_ext`. Stacks applies Lemma 70.4.1 with affine transition maps; the FL task
+`quotientCone_hom_ext`. Stacks applies Lemma 70.4.1 with affine transition maps; the first-level step
 supplies them through `isAffineHom_map`. Proposition 70.8.1 (Tag 07SU), absolute Noetherian
 approximation, writes a space as such a limit `X = lim X_i` with affine transition maps. In
-the FL task the levels are given by étale presentations, and `isLimitQuotientCone` identifies
+the first-level step the levels are given by étale presentations, and `isLimitQuotientCone` identifies
 the quotient of the limit presentation with the limit of the level quotients.
 
 The other statements are standard facts on quotients by fppf equivalence relations, proved here
@@ -199,4 +201,4 @@ algebraic spaces `X' → X` with `U' = X' ×_X U` and `R' = X' ×_X R` makes the
 `U' → U`, `X' → X` cartesian; this is the definition of `U_i` in the proof of Lemma 70.4.1.
 The packaging (the structure-level `map`, the open-cover criterion
 `isAffineHom_q_of_invariantOpenCover`, the conditional constructions `ofIsCartesianHom` and
-`quotientFunctor`) is internal and follows the interface agreed with the FL task.
+`quotientFunctor`) is internal and follows the interface used by the first-level proof.

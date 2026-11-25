@@ -1,6 +1,6 @@
 # Literal rational-point intersections from represented geometric-lemma data
 
-Worker 1193 supplies internal adapters from the published `GeometricLemmaIntersectionDatum` to actual subgroup and topological-group interfaces. A datum is an input throughout. This unit constructs no representative or intersection datum and makes no normalized representation-comparison claim.
+This module supplies internal adapters from the published `GeometricLemmaIntersectionDatum` to actual subgroup and topological-group interfaces. A datum is an input throughout. This module constructs no representative or intersection datum and makes no normalized representation-comparison claim.
 
 For a datum at `z` for source `P = MN` and target `Q = LU`, the six point-image equalities identify its represented source parabolic, Levi and radical with `M ∩ zQz⁻¹`, `M ∩ zLz⁻¹` and `M ∩ zUz⁻¹`, and its represented target parabolic, Levi and radical with `L ∩ z⁻¹Pz`, `L ∩ z⁻¹Mz` and `L ∩ z⁻¹Nz`. Each subgroup is the literal range of the specified rational-point map inside the original ambient rational-point group.
 

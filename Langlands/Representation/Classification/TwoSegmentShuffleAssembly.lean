@@ -119,14 +119,18 @@ theorem shuffleJacquet_of_pieces :
   obtain ⟨S, R, hS, hR, M, e, order, s, hs⟩ :=
     padicGeometricLemma.{uF, max uF uV} p F T _ hn d.shape C
   let enum : Fin M ≃ MinimalRepresentatives d.shape C := order.trans e
-  let ρY := FiniteTensor.externalSmoothObject d.blocks
-  let evaluated := objectFiltrationAt s ρY
+  let evaluated := objectFiltrationAt s (FiniteTensor.externalSmoothObject d.blocks)
   have graded (i : Fin M) :
       Nonempty ((evaluated.gradedRepresentation i).ρ.Equiv
         ((geometricPieceFunctor T d.shape C (enum i).val (S (enum i))
-          (R (enum i)) (hS (enum i)).2.1 (hR (enum i)).2.1).obj ρY).ρ) := by
-    obtain ⟨iso⟩ := hs i
-    exact ⟨Representation.equivOfIso (iso.app ρY)⟩
+          (R (enum i)) (hS (enum i)).2.1 (hR (enum i)).2.1).obj
+            (FiniteTensor.externalSmoothObject d.blocks)).ρ) := by
+    have hsi := hs i
+    rw [Function.comp_apply] at hsi
+    obtain ⟨iso⟩ := hsi
+    exact ⟨Representation.equivOfIso ((iso ≪≫ eqToIso (show _ = geometricPieceFunctor T d.shape C
+      (enum i).val (S (enum i)) (R (enum i)) (hS (enum i)).2.1 (hR (enum i)).2.1 from rfl)).app
+        (FiniteTensor.externalSmoothObject d.blocks))⟩
   let P : Fin M → Prop := fun i => ∀ j k, ρ.rank ∣ (S (enum i) j).size k
   have zero (i : Fin M) (hi : ¬ P i) : Subsingleton (evaluated.gradedRepresentation i) := by
     have hP := geometricPiece_subsingleton_of_not_dvd F T d hsoc ρ.rank hrank C (enum i).val
@@ -153,15 +157,15 @@ theorem shuffleJacquet_of_pieces :
     obtain ⟨g⟩ := graded (retained i).val
     obtain ⟨h⟩ := hpiece (enum (retained i).val) (S _) (R _) (hS _) (hR _)
       (retained i).property
-    exact ⟨(f.trans g).trans h⟩
+    exact ⟨(f.trans g).trans (h : _)⟩
   obtain ⟨hlen, hmult⟩ :=
     finiteFamilyFiltrationMultiplicity ℂ (C.Levi F.Carrier) I _ family hfamily N indexing t hgr
   refine ⟨?_, ?_⟩
   · rw [← card_shuffles m₀ m₁]
     exact hlen
   · intro W _ _ τ _ m
-    change HasJordanHolderMultiplicity ((jacquetInductionFunctor T d.shape C).obj ρY)
-      (Rep.of τ) m ↔ _
+    change HasJordanHolderMultiplicity ((jacquetInductionFunctor T d.shape C).obj
+      (FiniteTensor.externalSmoothObject d.blocks)) (Rep.of τ) m ↔ _
     rw [hmult (Rep.of τ) m]
     apply Iff.of_eq
     congr 1

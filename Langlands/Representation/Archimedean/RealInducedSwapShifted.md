@@ -1,6 +1,6 @@
 # Four crossings with a common recurrence shift
 
-This internal unit generalizes the recurrent four-crossing construction to a
+This module generalizes the recurrent four-crossing construction to a
 common additive shift in the four recurrence parameters, while keeping the
 source and target exponents fixed. Its provenance is the published rank-three
 landing theorem with arbitrary recurrence parameter, induction in stages,
@@ -29,5 +29,5 @@ The code follows the recurrent construction, reusing its list models, compact
 inclusions, window membership lemmas, and the published landing and disjoint
 commutation theorems. The new mathematical point is that the shared shift need
 not equal zero; no relation between this shifted recurrence and the fixed Lie
-actions is asserted. This unit proves no injectivity, parameter regularity, or
+actions is asserted. This module proves no injectivity, parameter regularity, or
 full swap equivalence.

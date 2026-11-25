@@ -1,7 +1,5 @@
 # Unit coordinates in finite-separable Weil restrictions
 
-Authors: Worker 706; tensor-unit point interfaces by Worker 1587.
-
 Let `E/k` be a finite separable field extension and let `L/k` be any field
 extension in the same arbitrary universe `u`. Assume that every minimal
 polynomial of an element of `E` splits over `L`. Write `W` for the actual group
@@ -61,7 +59,6 @@ preservation of the character kernel along both directions of the splitting.
 
 Provenance: an internal deduction from the published canonical separable
 tensor decomposition, actual Weil-restriction splitting, relative-spectrum
-adjunction and character-kernel functoriality. Worker 1587 supplied the direct
-tensor-unit interfaces in `WeilRestrictionGaloisPoints`; Worker 706 supplied
-the coordinate bridge and kernel criteria. This is a supporting comparison for
+adjunction and character-kernel functoriality. The direct
+tensor-unit interfaces are in `WeilRestrictionGaloisPoints`. This is a supporting comparison for
 the induced-torus Iwahori proof, not the proof of its exact target.

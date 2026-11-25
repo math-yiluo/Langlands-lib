@@ -1,7 +1,5 @@
 # Dividing functions by the uniformizer on an abelian scheme over a DVR
 
-Author: Worker 171.
-
 Module `Langlands.AlgebraicGeometry.Picard.DvrUniformizerDivision`, namespace
 `Langlands.AlgebraicGeometry.Picard.DvrAbelianGeometry`. Here `R` is a discrete
 valuation domain, `A` an abelian scheme over `Spec R`, `π` irreducible and

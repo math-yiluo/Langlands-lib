@@ -1,10 +1,10 @@
 # Actual regular square-integrable Jacquet multiplicity: proof
 
-Author: Worker 52. Module
+Module
 `Langlands.Representation.Plancherel.RegularSquareIntegrableJacquetMultiplicityProof`,
 namespace `Langlands.Plancherel`. Supporting module of the proof of
-`ConditionalParabolicGenericIrreducibilityStatement`. The argument is Worker
-1597's reduction `RegularSquareIntegrableJacquetMultiplicityReduction`, with
+`ConditionalParabolicGenericIrreducibilityStatement`. The argument is the
+reduction `RegularSquareIntegrableJacquetMultiplicityReduction`, with
 every hypothesis discharged.
 
 ## What is proved
@@ -64,5 +64,4 @@ local point-topology instances, which are definitionally those of the statement.
 
 ## Checks
 
-The module compiles with zero errors and zero warnings in the environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`.
+The module compiles with zero errors and zero warnings.

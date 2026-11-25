@@ -1,7 +1,5 @@
 # Constant actual characters detect diagonalizability
 
-Worker 616.
-
 `Langlands.GroupScheme.RelativeCharacterConstancyStatement.{u}` is a
 Prop-valued statement in every universe. For every scheme `S`, every group
 scheme `H` over `S`, and every proof
@@ -66,7 +64,11 @@ provenance of the reformulation, not a claimed Lean proof.
 
 ## Scope
 
-This module supplies the exact statement for a later proof. It asserts no
+This module supplies the exact statement; it is proved as
+`relativeCharacterConstancy` in
+[`RelativeCharacterConstancyProof`](RelativeCharacterConstancyProof.md). It asserts no
 construction of the full anti-equivalence and supplies no finite étale
-cover. The normal-base isotriviality target will use the implication from
-constant actual characters to diagonalizability after base change.
+cover. The normal-base isotriviality assembly
+([`MultiplicativeTypeNormalIsotrivialAssembly`](MultiplicativeTypeNormalIsotrivialAssembly.md))
+uses the implication from constant actual characters to diagonalizability after
+base change.

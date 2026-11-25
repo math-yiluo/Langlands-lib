@@ -1,6 +1,6 @@
 # Integral section generation from dynamic open cells
 
-This internal derived unit combines the published arbitrary-base dynamic
+This module combines the published arbitrary-base dynamic
 opposite cell, its parabolic product isomorphism, the translated-cell
 intersection cover, and smooth section existence over strictly Henselian
 local rings. All declarations retain arbitrary universe `u`.

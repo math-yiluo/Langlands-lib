@@ -1,6 +1,6 @@
 # Actual rational-character norms, integer valuation and real logarithm
 
-This unit composes the published group-scheme rational-character evaluation
+This module composes the published group-scheme rational-character evaluation
 with the published unrestricted local-field norm and order. All maps refer
 to the actual characters and rational points of the given group scheme.
 
@@ -93,7 +93,7 @@ at `y` with the original coordinate at `rationalPoints.map f y`.
 The first two follow from actual evaluation compatibility; the last uses
 the proved integer-coordinate comparison.
 
-## Scope retained for later work
+## Scope
 
 This is an actual algebraic specialization of the generic norm, valuation
 and logarithm constructions. It also applies when the rational-character

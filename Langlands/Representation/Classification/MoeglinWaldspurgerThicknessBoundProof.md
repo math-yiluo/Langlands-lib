@@ -1,6 +1,6 @@
 # Badulescu property (P′) for the Moeglin–Waldspurger recursion
 
-Worker 235. `Langlands.MoeglinWaldspurger.thicknessBound` proves exactly the
+`Langlands.MoeglinWaldspurger.thicknessBound` proves exactly the
 Library proposition `Langlands.MoeglinWaldspurger.ThicknessBound`: for every
 finite integer multisegment `a`, including the empty one, every interval `J`
 in `dual a` satisfies `J.length ≤ a.card`, where `a.card` counts input

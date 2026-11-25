@@ -1,6 +1,6 @@
 # Functoriality of finite norm-invariant weighted rational sites
 
-Authors: Worker 56 and Worker 36. Internal adaptation of the published strict
+Internal adaptation of the published strict
 `InvariantRestrictionSite` construction to actual positive-radius rational
 quotients and norm-continuous base-algebra actions.
 

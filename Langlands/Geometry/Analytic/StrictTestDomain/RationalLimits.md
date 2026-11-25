@@ -1,7 +1,5 @@
 # Explicit terminal object and pullbacks of rational inclusions
 
-Author: Worker 36.
-
 Fix a complete ultrametric normed field K and a presented strict affinoid P.
 The category is the published inclusion category on chosen `RationalData K P`.
 `generatesUnitIdeal` converts its no-common-spectrum-zero field into the

@@ -1,6 +1,6 @@
 # The Langlands classification from its remaining inputs
 
-Author: Worker 5295. Module
+Module
 `Langlands.Representation.LanglandsClassification.LanglandsClassificationFromInputsStatement`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -54,8 +54,7 @@ published propositions, in this order:
 Renard's proof of VII.4.2 uses the VII.4.1 Lemma, second adjointness (VI.9.6), Frobenius
 reciprocity, Langlands' combinatorial lemma V.3.18, the geometric lemma, and the finiteness
 properties of Chapter VI. In the represented-parabolic interface of the Library, every
-other input of this proof is a published theorem or, in one case, an accepted proof awaiting
-publication:
+other input of this proof is a published theorem:
 
 - the VII.4.1 Lemma, as `langlandsTripletOppositeKernel` (module `LanglandsTripletRegularityProof`);
 - the identity support of the opposite intertwining space, as `oppositeIdentitySupport`;
@@ -65,11 +64,11 @@ publication:
 - restriction of exponents to larger standard Levi subgroups, as
   `oppositeStandardExponentRestriction`;
 - the temperedness criterion for unitary untwists (`OppositeUntwistTemperedCriterionStatement`),
-  proved by Worker 63's `oppositeUntwistTemperedCriterion`, a proof candidate of Task 5295
-  (4c051806) that has passed review but is not yet published.
+  proved by `oppositeUntwistTemperedCriterion` (module `OppositeUntwistTemperedCriterion`).
 
-The proof of this statement will be staged only after that candidate is published, so the
-four premises are exactly the inputs that will remain open.
+The proof of this statement is `langlandsClassificationFromInputs` (module
+`LanglandsClassificationFromInputsProof`), so the four premises are exactly the inputs that
+remain open.
 
 The four premises enter the proof as follows.
 
@@ -103,15 +102,13 @@ The four premises enter the proof as follows.
 - **Universes.** Premise 1 is used at carrier universe `max u v`, the carrier universe of
   `i_P^G(σ ⊗ ψ)`. Premises 2, 3 and 4 are used at carrier universe `v`.
 - **Strength.** All premises are theorems of the literature with published statements and
-  their own provenance. None of them is the target or contains it. Each is the target of an
-  open proof task: Task 4834 (premise 1), Task 4950 (premises 2 and 4) and Task 3838
-  (premise 3).
+  their own provenance. None of them is the target or contains it. None of them is proved in
+  the Library.
 
 ## Provenance
 
 Derived. The statement records which published inputs of Renard's proof of VII.4.2 remain
-unproved in the represented-parabolic interface. Task 5295 (proof of
-`LanglandsClassificationStatement`) welcomes such a conditional reduction as an
-intermediate result. The statement lets the reduction be reviewed and published separately
-from the proofs of its premises. Combining it with proofs of the four premises gives the
+unproved in the represented-parabolic interface. It is a conditional reduction, an
+intermediate result towards a proof of `LanglandsClassificationStatement`. The statement
+separates the reduction from the proofs of its premises. Combining it with proofs of the four premises gives the
 target.

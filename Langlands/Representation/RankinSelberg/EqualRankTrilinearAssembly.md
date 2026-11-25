@@ -45,14 +45,17 @@ sets is chosen before the parameter and before any forms.
 `equalRankTrilinearUniqueness_of_source` packages source uniqueness as the exact
 published `EqualRankTrilinearUniquenessStatement`, with independent field and
 representation-carrier universes. The source-uniqueness hypothesis remains
-explicit and unproved. Its exceptional set is chosen even before the two
+explicit; it is not proved here. Its exceptional set is chosen even before the two
 Whittaker functionals, which suffices for the target's quantifier order.
 
 The provenance is internal algebraic specialization of published definitions
 and reduction lemmas. No Library statement or imported pair is edited. The
 module neither constructs Frobenius reciprocity nor proves finite length,
 irreducible mirabolic pairing rigidity, or central bilinear vanishing. Those
-representation-theoretic inputs remain separate obligations for the parent task.
+representation-theoretic inputs are proved separately; with them,
+`equalRankTrilinearUniqueness` in `EqualRankTrilinearUniquenessProof` proves
+`EqualRankTrilinearUniquenessStatement` through
+`equalRankTrilinearUniqueness_of_source`.
 
 ## All-field port
 

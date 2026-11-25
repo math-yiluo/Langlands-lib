@@ -17,7 +17,7 @@ equations.
 `RationalRosatiBasisEquations` expresses the corresponding finite equations
 in the actual rational Hom group, for an arbitrary rational homomorphism `λ`.
 `rationalAction_involutionCompatible_iff` identifies those equations with the
-published `IsInvolutionCompatible` predicate for the unique rational extension
+`IsInvolutionCompatible` predicate for the unique rational extension
 of `a`. Its star instance is the existing `auxiliaryStarRing D C`.
 Both sides of the Rosati equation define rational linear maps on the ambient
 algebra: composition is bilinear, dualization is rational linear, and the
@@ -28,8 +28,8 @@ order, and the involution preserves that order, giving exactly the stated
 finite equations.
 
 `IntegralRosatiBasisEquations.rationalize` applies the canonical map to the
-actual integral equality and uses the published compatibility of composition
-and dualization with rationalization.
+actual integral equality and uses the compatibility of composition
+and dualization with rationalization (`comp0_homToHom0`, `dualHom0_homToHom0`).
 `rationalAction_involutionCompatible_of_integralBasis` combines that result
 with the basis criterion. It applies in particular when `λ` is an actual
 polarization. No injectivity of integral Hom into rational Hom is used or
@@ -37,7 +37,7 @@ claimed, and no converse from rational equations to actual equalities is
 asserted.
 
 The provenance is internal linear algebra and functoriality of the existing
-dual and rationalization constructions. This unit supplies only Rosati
+dual and rationalization constructions. This module supplies only Rosati
 compatibility for a supplied integral action and supplied dual data. It
 constructs no integral action from rational data, no polarization, no moduli
 scheme, and no normalized representability comparison.

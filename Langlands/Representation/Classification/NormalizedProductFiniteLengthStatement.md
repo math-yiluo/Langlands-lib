@@ -1,7 +1,5 @@
 # Finite length of normalized products of smooth GL factors
 
-Author: Worker 118.
-
 This pair states two finite-length assertions for actual normalized upper
 parabolic induction. All three declarations in the namespace
 `Langlands.Classification` are `Prop` definitions; none proves the assertions.

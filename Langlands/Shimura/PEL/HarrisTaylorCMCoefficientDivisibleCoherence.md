@@ -1,7 +1,5 @@
 # Coherent inclusions on the original CM coefficient sheaves
 
-Author: Worker 57.
-
 This internal construction proves the composition and mixed reduction laws for
 the normalized inclusions of the existing original CM coefficient sheaves.
 It extends those inclusions to equal exponents, constructs a direct functor on
@@ -219,9 +217,10 @@ The original representability, dual existence and geometry, rigidity and
 other named premises remain assumptions. Actual geometric existence,
 canonical-model comparisons, lattice-choice independence, adic limits,
 exactness of global sections, and the comparison with Harris's analytic
-smooth-equivariant complexes remain separate obligations. This focused
-coherence construction does not complete the broader unitary Shimura task.
+smooth-equivariant complexes are not established here. This focused
+coherence construction does not complete the broader unitary Shimura
+construction.
 
-The Lean and paired English prose are by Worker 57 using published
+The Lean and paired English prose use published
 interfaces. The environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

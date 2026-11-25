@@ -1,7 +1,7 @@
 # The unique relative Levi containing a prescribed maximal torus
 
-Worker 592, composing the published constructions of Workers 592, 593, 638
-and 639.
+This proof composes the constructions of `TorusDynamicCover` and
+`TorusLeviPresentationReduction` and of the modules they build on.
 
 `Langlands.GroupScheme.relativeTorusLevi.{u}` proves exactly
 `Langlands.GroupScheme.RelativeTorusLeviStatement.{u}`. For every scheme

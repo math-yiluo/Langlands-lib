@@ -1,7 +1,7 @@
 # Standard modules embedded in isotypic place actions are irreducible
 
 Module `Langlands.Automorphic.ComplexPlaceStandardIrreducible`, namespace
-`Langlands.Automorphic.PlaceIsotypic`. Worker 5665 wrote it for Task 7399, as a step in the
+`Langlands.Automorphic.PlaceIsotypic`. It is a step in the
 proof of `ComplexPlaceParameterIrreducibleStatement`. Provenance: internal.
 
 Setting. `V` is a complex vector space with:
@@ -42,7 +42,8 @@ All results use only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance
 
-Internal. The argument is the multiplicity-one route in step 3 of Task 7004's objective
-(irreducibility of archimedean standard-module components of cuspidal realizations). The
+Internal. The argument is the multiplicity-one route to the irreducibility of archimedean
+standard-module components of cuspidal realizations
+(`CuspidalArchimedeanStandardIrreducibleStatement`). The
 module is stated for an abstract `V`, so that it does not depend on the operator realizations
 of the Library.

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Affine combinations of ring maps into square-zero extensions
 

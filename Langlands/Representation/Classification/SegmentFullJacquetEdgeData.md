@@ -1,12 +1,11 @@
 # Edge data for the full cuspidal Jacquet modules of segment constituents
 
-Author: Worker 964.
-
 Module `Langlands.Representation.Classification.SegmentFullJacquetEdgeData`,
 namespace `Langlands.SegmentFullJacquet`. This is an internal helper for the proof
 of `Langlands.Classification.SegmentFullJacquetFormula`. It assembles both clauses
 from the conditional clauses of `SegmentFullJacquetAssembly` and the published edge
-modules of Worker 890.
+modules `SegmentEdgeJacquetReduction`, `SegmentEdgeMaps` and
+`SegmentEdgeFamilyHypotheses`.
 
 Notation:
 - `β = BlockShape.uniform m r hr` and `γ = β.adjacentMerge k hk`, which merges

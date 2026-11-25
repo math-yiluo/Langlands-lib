@@ -3,10 +3,10 @@
 This module declares the **statement**
 `Langlands.Henniart.CandidateExistenceReductionStatement`, with universe
 parameters `uK uW uP uE uQ`. It is a proposition definition, and the file
-contains no proof of it. It is the assembly unit of the H3 program (Henniart's
-global construction, task `34b81620-20d7-4059-9b08-6bedd1c1c029`). It states
-that the published local target `CandidateExistenceStatement` follows from the
-remaining open inputs of Henniart's global construction. Its provenance is
+contains no proof of it. It is the assembly step of Henniart's
+global construction. It states
+that the published local target `CandidateExistenceStatement` follows from five
+inputs of Henniart's global construction. Its provenance is
 *derived*: Henniart's §3 has no single statement of this form. The statement
 records how his argument combines its inputs, as listed in §3 below.
 
@@ -17,7 +17,7 @@ The proposition is an implication with five hypotheses:
 1. `Global.Harris.Proposition48Statement.{uK, 0, 0, 0, uP}`: Harris (1998),
    Proposition 4.8, at the levels used by the published
    `HenniartGlobalizationStatement`.
-2. `ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP}`:
+2. `ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP}`:
    Henniart (2000), Théorème 2.4, for number fields in `Type`.
 3. `ClassFieldTheory.Local.LocalRelativeClassFormationStatement.{0}`: local
    finite-level class formation with its fundamental classes, for p-adic fields
@@ -51,8 +51,7 @@ finite-quotient universe `uQ`.
 The local correspondence results in `Langlands/Correspondence/` use
 `CandidateExistenceStatement` with an arbitrary automorphic universe `uV`.
 Getting there from universe `0` is a separate carrier-universe transport. It
-is not part of this statement. That transport is the work of Worker 5732,
-Task 5583.
+is not part of this statement.
 
 ## 3. Source correspondence
 
@@ -83,10 +82,11 @@ GL(n) sur un corps p-adique*, Invent. Math. 139 (2000), 439–455
   class family. Hypothesis 3 with the proved `globalFundamentalClassStatement`
   supplies one.
 
-## 4. The expected proof
+## 4. The route of the proof
 
-A private development check compiled the following route in full. The route is
-recorded here for the proof task; this unit does not prove the statement.
+A development check outside the Library compiled the following route in full.
+This module does not prove the statement; `candidateExistenceReduction`
+(`HenniartCandidateExistenceReductionProof`) does.
 
 1. Choose an invariant family from hypothesis 3. By
    `globalFundamentalClassStatement.{0}`, this gives a class family `c` with
@@ -116,8 +116,8 @@ statement module imports neither of them.
 
 ## 5. Scope
 
-- No hypothesis is a consequence of another. Each of the five is an open
-  Library target with its own owner, or is owned by this program.
+- No hypothesis is a consequence of another. Each of the five is a separate
+  Library statement.
 - The conclusion concerns candidates only. Independence of choices
   (`ChoiceIndependenceStatement`) and the final correspondence are separate
   targets.

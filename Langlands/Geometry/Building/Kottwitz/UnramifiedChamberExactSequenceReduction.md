@@ -1,6 +1,7 @@
 # KP Proposition 11.6.1 from its Kottwitz and normalizer inputs
 
-This is internal proof infrastructure for Task 6549. It follows
+This is internal proof infrastructure for Kottwitz exactness on every supplied
+`K`-chamber. It follows
 Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), Proposition 11.6.1,
 printed page 432, PDF page 463. It is **not** an unconditional proof of
 `UnramifiedChamberExactSequenceStatement`. The main theorem

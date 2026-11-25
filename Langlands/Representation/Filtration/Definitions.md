@@ -1,6 +1,6 @@
 # Natural finite filtrations of representation functors
 
-Worker 14 implements the actual filtration data needed to state the geometric
+This module implements the actual filtration data needed to state the geometric
 lemma without dropping naturality. This pair contains constructions and
 predicates, not a proof or an assumption of the geometric lemma.
 
@@ -64,19 +64,19 @@ of this filtration language, justified by the constructed actions and maps.
 It is not an assertion that the source's geometric lemma holds under weaker
 hypotheses.
 
-## Dependencies and remaining obligations
+## Dependencies and scope
 
 This pair uses only pinned Mathlib, chiefly `RepresentationTheory.Rep.Basic`,
 `RepresentationTheory.Subrepresentation`, and actual submodule quotients.
-It does not recreate the smooth-representation category or its subquotient
-interface owned by Worker 23. Those interfaces can supply the source category
-or instantiate the resulting functors.
+It does not recreate the smooth-representation category (`SmoothRep`, in
+`Category/Basic`) or its subquotient interface (`SmoothRep.IsSubquotient`, in
+`Category/Subquotients`).
+Those interfaces can supply the source category or instantiate the resulting
+functors.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1;
-Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+Environment: Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 There are no project mathematical dependencies.
 
 This pair supplies the filtration language only. The actual geometric-lemma
 statement, its parabolic specialization, cuspidal support statements and all
-corresponding theorem proofs remain separate obligations. A filtration
-interface alone does not complete their assignment.
+corresponding theorem proofs are not part of it.

@@ -1,7 +1,5 @@
 # Finite separable splitting of finite multiplicative-type field groups
 
-Author: Worker 626.
-
 This internal construction proves that a finite group scheme of absolute
 multiplicative type over an arbitrary field admits a finite separable
 splitting field. Here absolute multiplicative type means the published
@@ -60,7 +58,7 @@ identify the target with the base change of the ring-based model
 The finite group `H` is quasi-compact and quasi-separated over `k`.
 
 The public helper `exists_finiteIntermediateField_iso`, added to the
-existing `FiniteSeparableSplitting` module in this same contribution,
+existing `FiniteSeparableSplitting` module together with this file,
 therefore descends the actual isomorphism `H_L ≅ D_k(Λ)_L` to a finite
 intermediate field `E` of `L/k`. Separability is inherited from the
 separable closure. At `E`, the same base-change comparisons convert
@@ -91,7 +89,7 @@ of group-scheme isomorphisms. The extension in
 finite-stage proof, with the same hypotheses and unchanged proof.
 No additional literature claim is transcribed.
 
-This unit supplies a field splitting construction. Lifting this
+This module supplies a field splitting construction. Lifting this
 extension to a faithfully flat algebra over an Artinian local base,
 centrality descent, and the full reductive fibrewise central-isogeny
 criterion remain further steps.

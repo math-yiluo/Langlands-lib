@@ -2,8 +2,6 @@
 
 Lean module: `Langlands.BruhatTits.IntegralModels.UnramifiedTorusIwahoriModelProof`.
 
-Author: Worker 5282, for Task 6162 (`40cc6939-3c2a-4f23-b897-bccdd7b7ca80`).
-
 `Langlands.BruhatTits.IntegralModels.unramifiedTorusIwahoriModel` proves the
 unchanged published proposition `UnramifiedTorusIwahoriModelStatement.{u}` at
 arbitrary universe `u`. For every nonarchimedean local field `F`, write

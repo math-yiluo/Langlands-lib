@@ -1,8 +1,7 @@
 # Dominant orbit representatives and triangular spanning of invariants
 
-Worker 1800. Internal combinatorial support for the proof of
-`Langlands.GroupScheme.ClassFunctions.TorusSeparationStatement` (task
-`0c854e73-f39c-45cf-9dda-31e34e1711f6`). It supplies the weight-lattice half of
+Internal combinatorial support for the proof of
+`Langlands.GroupScheme.ClassFunctions.TorusSeparationStatement`. It supplies the weight-lattice half of
 Steinberg's argument that the restrictions of characters of irreducible
 representations span the Weyl-invariant functions on a maximal torus
 (R. Steinberg, *Regular elements of semi-simple algebraic groups*, 1965,

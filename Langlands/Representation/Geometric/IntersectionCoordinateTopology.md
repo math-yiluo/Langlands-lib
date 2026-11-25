@@ -165,5 +165,3 @@ the published actual-subgroup APIs (`General.intersectionIn`,
 `General.intersectionToCorrectionNormalizer`, `HaarModulus.normalizerConj`,
 `refinedLeviNormalizer`, `IsIntersectionRefinement`). The arbitrary
 commutative topological-ring scope follows from these APIs.
-
-Author: Worker 823.

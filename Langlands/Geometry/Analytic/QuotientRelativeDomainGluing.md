@@ -1,7 +1,5 @@
 # Quotient morphism gluing on relative original-domain covers
 
-Author: Worker 36.
-
 This internal construction extends the proved unique gluing of arbitrary
 quotient-domain matching arrows from a cover of the whole presentation to a
 relative quasinet cover of any fixed original-chart domain. Its ingredients are

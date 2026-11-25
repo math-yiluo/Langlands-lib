@@ -1,6 +1,6 @@
 # Actual source model transports and comparison target
 
-Worker 268, Task 7258. This derived unit constructs the prescribed
+This derived module constructs the prescribed
 model transports and states the exact remaining comparison of their
 source-normalized character Haar and integrals.
 
@@ -26,13 +26,16 @@ compact picture are fixed throughout.
 
 The exact preceding smoothness input is
 `Langlands.HarishChandraSchwartz.RationalSemistandard.ModelSmoothComparisonStatement`,
-from Task 7229. The source split-center input `hc` is the actual equality
+from `RationalSemistandardOrbitSections`. The source split-center input `hc` is the actual equality
 `m.splitCenter a = n.splitCenter b`. It is precisely the corresponding
-instance of that task's
+instance of the same module's
 `Langlands.HarishChandraSchwartz.RationalSemistandard.SplitCenterChoiceIndependenceStatement`
 at the two models and their displayed algebraic split components.
-Both are conditional structural comparisons; neither is proved or
-made a permanent external hypothesis by this unit.
+Both are structural comparisons; this module neither proves them nor
+makes them permanent external hypotheses. They are proved as
+`modelSmoothComparison` (`RationalSemistandardModelSmoothComparisonProof`)
+and `splitCenterChoiceIndependence`
+(`RationalSemistandardSplitCenterIndependenceProof`).
 
 ## Prescribed transports and proved laws
 
@@ -96,8 +99,10 @@ inverse-regularity obligations remain visible.
 The target concludes these actual measure and integral comparisons;
 it does not take them as hypotheses. It adds no free map, weight,
 Schwartz-valued synthesis or positive form. General compact-normalization
-transports, inter-parabolic invariance and averaging still require their
-separate existing prerequisites and Task 7258 constructions. The
-source formal-degree model target and representative-integral target
-are stated separately; their proofs and the model source target's
-proof remain successors after publication.
+transports, inter-parabolic invariance and averaging require separate
+prerequisites and constructions. The source formal-degree model target
+(`RationalSemistandardSourceFormalDegree`) and the representative-integral
+target (`RationalSemistandardSourceRepresentativeComparison`) are stated
+separately. The first is proved as `formalDegreeTransport`; the Library has
+no proof of the representative-integral target or of the model source
+target.

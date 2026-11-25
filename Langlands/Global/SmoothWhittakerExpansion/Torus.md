@@ -2,8 +2,8 @@
 
 Module `Langlands.Global.SmoothWhittakerExpansion.Torus`, namespace
 `Langlands.Global.SmoothWhittakerExpansion`. Helper module for the proof of
-`Langlands.Global.WhittakerExpansionStatement` (Task 5713). It carries out step 2 of that
-task's proof guide: the Whittaker expansion for the generic character with simple-root
+`Langlands.Global.WhittakerExpansionStatement`. It carries out one step of that
+proof: the Whittaker expansion for the generic character with simple-root
 coefficients `m = (m_0, …, m_{r-1})` reduces to the standard coefficients `m = 1`, which is the
 case treated by the Library's Whittaker expansion core
 (`Langlands.Global.RankinSelberg.WhittakerExpansionCore`). Everything is proved; the axioms

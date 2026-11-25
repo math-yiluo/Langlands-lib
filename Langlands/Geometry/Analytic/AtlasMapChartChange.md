@@ -39,8 +39,9 @@ closed quotient ideals, trivial valuations, nonreduced or zero quotients and
 empty spectra are retained. Neither a greatest chart, directedness, saturation
 nor a further gluing output is assumed.
 
-The present unit establishes the constructed map and its exact local and
-ambient equations. Independence from choices, coefficient naturality and
-coherence of chart changes remain further results; they are not inferred from
+The present module establishes the constructed map and its exact local and
+ambient equations. Independence from choices and coefficient naturality are
+proved in `AtlasMapChartChangeNaturality`, and coherence of chart changes in
+`AtlasMapChartChangeCoherence`; they are not inferred from
 the ambient point equation. General strong composition and analytic or
-equivariant etale sites also remain further work.
+equivariant etale sites are not treated here.

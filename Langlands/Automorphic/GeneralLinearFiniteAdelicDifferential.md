@@ -63,9 +63,7 @@ analytic-smoothness premise and imposes no positive-rank restriction.
 The provenance is internal: the construction composes the original function
 equivalences, the actual tangent differential and its already constructed
 infinite general-linear comparison with the original `EnvelopingAction`
-slice laws. The supporting slice reconstruction and descent arguments retain
-Worker 72's contribution. The included manifold and differential supports
-retain their actual contributing authors. No external assertion is newly
+slice laws. No external assertion is newly
 transcribed.
 
 These results identify first-order real tangent operators under the original

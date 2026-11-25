@@ -4,7 +4,7 @@ Ported from `Definitions/Def_AlgebraicGeometry_ModulesSectionsTensor.lean` of th
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_Monoidal
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTensorPow
@@ -154,26 +154,26 @@ lemma smul_unitSection_bijective : Function.Bijective fun g : Γ(X, U) => g • 
   · exact mul_one g
   · exact mul_one (show Γ(X, U) from x)
 
-def tensorPowSection (s : Γ(L, U)) : (n : ℕ) → Γ(L.tensorPow n, U)
+def tensorPowSectionFLT (s : Γ(L, U)) : (n : ℕ) → Γ(L.tensorPowFLT n, U)
   | 0 => unitSection U
-  | n + 1 => tensorSections (L := L.tensorPow n) (M := L) (tensorPowSection s n) s
+  | n + 1 => tensorSections (L := L.tensorPowFLT n) (M := L) (tensorPowSectionFLT s n) s
 
-@[simp] lemma tensorPowSection_zero (s : Γ(L, U)) : tensorPowSection s 0 = unitSection U := rfl
+@[simp] lemma tensorPowSectionFLT_zero (s : Γ(L, U)) : tensorPowSectionFLT s 0 = unitSection U := rfl
 
-lemma tensorPowSection_succ (s : Γ(L, U)) (n : ℕ) :
-    tensorPowSection s (n + 1) = tensorSections (L := L.tensorPow n) (M := L) (tensorPowSection s n) s := rfl
+lemma tensorPowSectionFLT_succ (s : Γ(L, U)) (n : ℕ) :
+    tensorPowSectionFLT s (n + 1) = tensorSections (L := L.tensorPowFLT n) (M := L) (tensorPowSectionFLT s n) s := rfl
 
 lemma tensorPowSection_one (s : Γ(L, U)) :
-    tensorPowSection s 1 = tensorSections (L := 𝟙_ X.Modules) (M := L) (unitSection U) s := rfl
+    tensorPowSectionFLT s 1 = tensorSections (L := 𝟙_ X.Modules) (M := L) (unitSection U) s := rfl
 
 lemma map_tensorPowSection {V : X.Opens} (i : V ⟶ U) (s : Γ(L, U)) (n : ℕ) :
-    (L.tensorPow n).presheaf.map i.op (tensorPowSection s n) =
-      tensorPowSection (L.presheaf.map i.op s) n := by
+    (L.tensorPowFLT n).presheaf.map i.op (tensorPowSectionFLT s n) =
+      tensorPowSectionFLT (L.presheaf.map i.op s) n := by
   induction n with
   | zero => exact map_unitSection i
   | succ n ih =>
-    rw [tensorPowSection_succ, tensorPowSection_succ, ← ih]
-    exact map_tensorSections (L := L.tensorPow n) (M := L) i _ s
+    rw [tensorPowSectionFLT_succ, tensorPowSectionFLT_succ, ← ih]
+    exact map_tensorSections (L := L.tensorPowFLT n) (M := L) i _ s
 
 end Pow
 

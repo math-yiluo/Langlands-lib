@@ -1,6 +1,6 @@
 import Langlands.Cohomology.DivisibleSystem.HarrisLatticeHom
 import Langlands.Cohomology.DivisibleSystem.ReductionLimit
-import Langlands.ClassField.Global.LocalUnitPowers
+import Langlands.ClassFieldTheory.Global.LocalUnitPowers
 import Langlands.Shimura.Coefficients.HarrisReduction
 
 /-!
@@ -143,7 +143,7 @@ theorem isAdicComplete_coefficientIntegers [NeZero ℓ] (hℓ : (ℓ : 𝓞 ℚ)
   obtain ⟨ϖ, hϖ⟩ := IsDiscreteValuationRing.exists_irreducible (CoefficientIntegers l)
   obtain ⟨k, hk⟩ := IsDiscreteValuationRing.associated_pow_irreducible hne hϖ
   refine isAdicComplete_of_le_of_pow_le (J := maximalIdeal (CoefficientIntegers l)) ?_ (k := k)
-    ?_ (Langlands.ClassField.Global.isAdicComplete_adicCompletionIntegers l)
+    ?_ (Langlands.ClassFieldTheory.Global.isAdicComplete_adicCompletionIntegers l)
   · rw [Ideal.span_le, Set.singleton_subset_iff]
     exact natCast_mem_maximalIdeal_coefficientIntegers ℓ hℓ l
   · rw [(IsDiscreteValuationRing.irreducible_iff_uniformizer ϖ).1 hϖ, Ideal.span_singleton_pow,
@@ -263,8 +263,8 @@ theorem isAdicComplete_harrisLattice :
   have := isAdicComplete_harrisCoefficientIntegers ℓ L hℓ
   have : Module.Finite (HarrisCoefficientIntegers L p) (harrisLattice ρ p U) :=
     Module.Finite.of_basis (harrisLatticeBasis ρ p U)
-  NYLL.ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite.{u, u}
-    (HarrisCoefficientIntegers L p) (harrisLattice ρ p U) _
+  ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite.{u, u}
+    (R := HarrisCoefficientIntegers L p) (M := harrisLattice ρ p U) _
 
 /-- For `p` dividing `ℓ ≠ 0`, the inverse limit of the `ℓ`-divisible system `{𝓛 / ℓ ^ m 𝓛}` of
 Harris's lattice `𝓛` is isomorphic to `𝓛`, as representations of the level `U`. -/
@@ -307,8 +307,8 @@ theorem isAdicComplete_stableCoefficientLattice (hℓ : (ℓ : 𝓞 ℚ) ∈ p.a
     (Λ : StableCoefficientLattice ρ p l U) :
     IsAdicComplete (Ideal.span {(ℓ : CoefficientIntegers l)}) Λ.carrier :=
   have := isAdicComplete_coefficientIntegers ℓ hℓ l
-  NYLL.ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite.{u, u}
-    (CoefficientIntegers l) Λ.carrier _
+  ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite.{u, u}
+    (R := CoefficientIntegers l) (M := Λ.carrier) _
 
 /-- For `p` dividing `ℓ ≠ 0` and `l` above `p`, the inverse limit of the `ℓ`-divisible system
 `{Λ / ℓ ^ m Λ}` of a stable lattice `Λ` in `L_l ⊗_L W` is isomorphic to `Λ`. -/

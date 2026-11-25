@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexTemperedIrreducibleStatement`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module was written for the proof of
 `ComplexStandardLanglandsQuotientStatement` (L). It states one proposition and proves nothing.
 The proposition is the input L needs at ties of the Langlands order (equal real parts of
 exponents); see "Why L needs it" below.
@@ -74,7 +74,8 @@ series of a unitary list to that of the inverse list), is a positive definite He
 finite multiplicities of `U(n)`-types the space is `W ⊕ W^⊥`. If the Langlands-ordered list `ds`
 had a largest proper submodule `R` (statement L) and a proper nonzero submodule `W`, then `W ≤ R` and
 `W^⊥ ≤ R`, so `R` would be everything. Hence L at such a list implies the present statement, and any
-proof of L contains a proof of this one. In Task 7063 the statement is used only at the ties of the
+proof of L contains a proof of this one. In the Library's proof of L
+(`ComplexStandardLanglandsQuotientProof`) the statement is used only at the ties of the
 Langlands order: for a block parabolic subgroup whose Levi blocks collect equal real parts, the
 Langlands lemma reduces L to the irreducibility of the Levi module, whose blocks are of this form.
 

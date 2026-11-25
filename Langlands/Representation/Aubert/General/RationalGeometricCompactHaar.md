@@ -1,6 +1,6 @@
 # Ambient Haar characters of the actual rational compact comparison
 
-This internal construction by Worker 184 specializes
+This internal construction specializes
 `Langlands.Induction.SplitStagesAmbientHaar` to the actual subgroups used in
 `RationalGeometricCompactComparison`. It identifies the positive characters
 behind that compact comparison and proves their kernels are open in the

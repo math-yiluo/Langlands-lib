@@ -166,13 +166,15 @@ local notation "galoisIso" => cmGeometricGaloisIso D C preservation composition
 /-- Inverse comorphisms turn the raw right action into a left action on the whole tower. -/
 def cmGeometricGaloisAction :
     (AlgebraicClosure F ≃ₐ[F] AlgebraicClosure F) →* Aut geometricSchemes where
-  toFun σ := galoisIso σ⁻¹
+  toFun σ := Aut.of (galoisIso σ⁻¹)
   map_one' := by
+    apply Aut.ext
     apply Iso.ext
     exact cmGeometricGaloisMap_one D C preservation composition unitCoherence
       associativity comparison symmetry stability square universality dualityNaturality
       polarizationStability compatibility h htor q
   map_mul' σ τ := by
+    apply Aut.ext
     apply Iso.ext
     change galoisMap ((σ * τ)⁻¹) = galoisMap τ⁻¹ ≫ galoisMap σ⁻¹
     rw [mul_inv_rev, cmGeometricGaloisMap_mul]
@@ -184,7 +186,7 @@ local notation "galoisAction" => cmGeometricGaloisAction D C preservation compos
 /-- The left action has the explicit inverse-comorphism normalization. -/
 @[simp] theorem cmGeometricGaloisAction_hom
     (σ : AlgebraicClosure F ≃ₐ[F] AlgebraicClosure F) :
-    ((galoisAction) σ).hom = galoisMap σ⁻¹ := rfl
+    ((galoisAction) σ).asIso.hom = galoisMap σ⁻¹ := rfl
 
 /-- Evaluation gives an actual automorphism action on each geometric CM scheme. -/
 def cmGeometricGaloisLevelAction (U : SmallCMLevel D) :
@@ -197,8 +199,8 @@ def cmGeometricGaloisLevelAction (U : SmallCMLevel D) :
 theorem cmGeometricGaloisAction_naturality
     (σ : AlgebraicClosure F ≃ₐ[F] AlgebraicClosure F)
     {U V : SmallCMLevel D} (k : U ⟶ V) :
-    (geometricSchemes).map k ≫ ((galoisAction) σ).hom.app V =
-      ((galoisAction) σ).hom.app U ≫ (geometricSchemes).map k :=
-  ((galoisAction) σ).hom.naturality k
+    (geometricSchemes).map k ≫ ((galoisAction) σ).asIso.hom.app V =
+      ((galoisAction) σ).asIso.hom.app U ≫ (geometricSchemes).map k :=
+  ((galoisAction) σ).asIso.hom.naturality k
 
 end Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel

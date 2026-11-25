@@ -1,8 +1,8 @@
 # The constructed manifold of actual infinite-place group points
 
-Author: Worker 94. This internal assembly specializes the actual scalar-extension
+This internal assembly specializes the actual scalar-extension
 manifold and Lie-group construction to an infinite-place completion. It uses the
-published `InfiniteCompletionRCLike` construction of Worker 1359 by import.
+published `InfiniteCompletionRCLike` construction by import.
 
 Let `F` be a field in any universe, let `G` be an affine group scheme over `F`,
 and let `v` be an actual infinite place of `F`. Assume
@@ -46,7 +46,7 @@ separately chosen atlases with other choices.
 
 The provenance is internal assembly of the published completion comparison,
 the actual affine-point base-change manifold and Mathlib's continuous additive
-to real-linear equivalence construction. The unit constructs the local
+to real-linear equivalence construction. The module constructs the local
 archimedean manifold and original Lie group under the stated algebraic hypothesis.
 The finite infinite-adelic product, constant-dimension existence for connected
 reductive groups, reduction theory, differential growth and automorphic Hilbert

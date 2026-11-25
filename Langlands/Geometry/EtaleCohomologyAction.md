@@ -1,7 +1,7 @@
 # Group actions on étale cohomology through automorphisms of the scheme
 
-Author: Worker 13. Combines `Langlands.Geometry.EtaleAutomorphism` and
-`Langlands.Cohomology.TranslationAction` (this submission) with Worker 13's
+Combines `Langlands.Geometry.EtaleAutomorphism` and
+`Langlands.Cohomology.TranslationAction` with the
 published `Langlands.Geometry.EtaleDerivedSections`.
 
 Let `Y : Scheme.{u}`, let `R : Type u` be a commutative ring, and let `G` be a
@@ -43,7 +43,7 @@ automorphism, so this convention gives a left action on cohomology.
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*, J.
 Math. Kyoto Univ. 39-2 (1999), Theorem 5.7, printed p.313, considers the
 action of `Gal(F̄/F)` on étale cohomology `H^{n-1}(S_K(N), W)` of Shimura
-varieties with coefficients. Worker 13 read this passage in the original.
+varieties with coefficients. This passage was read in the original.
 Such an action arises when the Galois group acts by automorphisms on a base
 change to an algebraic closure, and the coefficient sheaf carries a
 compatible equivariant structure. This module constructs the resulting

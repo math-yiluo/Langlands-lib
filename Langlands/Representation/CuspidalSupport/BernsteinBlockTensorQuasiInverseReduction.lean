@@ -74,7 +74,7 @@ theorem bernsteinSaturatedBlockTensorEvaluation_surjective_and_ker
       LinearMap.ker (bernsteinSaturatedBlockTensorEvaluation i ν family s P τ) =
         Submodule.span ℤ (Set.range
           (fun p : End P × (P ⟶ τ) × P.obj =>
-            (p.1 ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] (SmoothRep.hom p.1.hom p.2.2))) := by
+            (p.1.asHom ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] (SmoothRep.hom p.1.asHom.hom p.2.2))) := by
   have : Projective P := ⟨fun {E Y} f e he => hproj E Y e he f⟩
   have hseparator : IsSeparator P := by
     rw [isSeparator_def]
@@ -98,7 +98,7 @@ theorem exists_bernsteinSaturatedBlockTensorEvaluation
       Function.Surjective ev ∧
       LinearMap.ker ev = Submodule.span ℤ (Set.range
         (fun p : End P × (P ⟶ τ) × P.obj =>
-          (p.1 ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] (SmoothRep.hom p.1.hom p.2.2))) :=
+          (p.1.asHom ≫ p.2.1) ⊗ₜ[ℤ] p.2.2 - p.2.1 ⊗ₜ[ℤ] (SmoothRep.hom p.1.asHom.hom p.2.2))) :=
   ⟨bernsteinSaturatedBlockTensorEvaluation i ν family s P τ,
     fun α w => bernsteinSaturatedBlockTensorEvaluation_tmul i ν family s α w,
     bernsteinSaturatedBlockTensorEvaluation_surjective_and_ker i ν family s P hproj hgen τ⟩

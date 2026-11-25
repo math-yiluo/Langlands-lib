@@ -6,12 +6,11 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
 - the published `HarishChandraSchwartz.TwistedCoefficientSmoothness`: `twistedCoefficientFamily`
   and `norm_torusPartialDerivList_twistedCoefficientFamily_le`, and through it `torusSynthesis`,
   `torusPartialDerivList` (`TorusFourierSynthesis`), `Space`, `nu` and `L2Weights`;
-- `HarishChandraSchwartz.RationalValuationCoordinates` (Worker 249, accepted candidate
-  2863d106): the lattice coordinates
+- `HarishChandraSchwartz.RationalValuationCoordinates`: the lattice coordinates
   `rationalValuationCoordinates G hG` (`n(g) ∈ ℤ^r`), `measurable_rationalValuationCoordinates`
   and the character formula `rationalUnitaryUnramifiedCharacter_apply`, which states
   `χ(g) = torusCharacter (n g) z` for the character `χ` with circle coordinates `z`
-  (`rationalCanonicalUnitaryUnramifiedCharacterCoordinates`, Worker 200);
+  (`rationalCanonicalUnitaryUnramifiedCharacterCoordinates`);
 - the published `BruhatTits.Unipotent.RationalPointCompactOpen`:
   `rationalPointCompactOpenSubgroup`, which gives the instance
   `Nonempty (CompactOpenSubgroup G(F))` required by `Space`.
@@ -33,7 +32,8 @@ This module removes two of the identifications that `TwistedCoefficientSmoothnes
 open, for the actual group `G(F)`: the torus `J → Circle` is `Im X(G)` through the Library's
 circle coordinates (`J = Fin (rationalImageRank G)`), and the abstract lattice map `n` is the
 coordinate map of the integer valuation. The bound `‖n(g)‖ ≤ C (1 + σ(g))` remains a hypothesis
-because the Library has no Waldspurger `σ` on `G(F)`. The statements are derived for this
+because `σ` is kept abstract here; the Library's Waldspurger `σ` on `G(F)` is `rationalHeight`
+(module `RationalWeights`), which this module does not import. The statements are derived for this
 purpose.
 
 ## Scope and hypotheses
@@ -89,7 +89,9 @@ back along the same circle coordinates (`IsSmoothRationalOrbitFunction`); this m
 
 ## Open obligations
 
-- the bound `‖n(g)‖ ≤ C (1 + σ(g))` for Waldspurger's `σ` (I.1), which needs `σ` on `G(F)`;
+- the bound `‖n(g)‖ ≤ C (1 + σ(g))` for Waldspurger's `σ` (I.1); for `σ = rationalHeight ρ` with `ρ` a
+  closed matrix representation it is `rationalValuationCoordinateHeight` (module
+  `RationalLaurentHeight`), which is not used here;
 - the choice `φ(g) = ⟨ω(g)v, v̌⟩` with Corollary III.1.2, `f̌` in place of `f`, the factor
   `d(ω)`, and the passage to `ψ_f[𝒪, G]` on the orbit `𝒪 = Im X(G)/S` and to general `M`
   (Lemma VII.1.2);

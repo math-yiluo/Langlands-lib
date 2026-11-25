@@ -9,12 +9,12 @@ The Lean file starts with a notice recording the modification.
 
 ## Changes against the FLT file
 
-- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; Mathlib imports are unchanged.
+- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; `import Mathlib` is now `import Langlands.MathlibBase` (all of Mathlib except the three modules that clash with weil-conjectures, see `Langlands/MathlibBase.md`).
 - The FLT lakefile options are inserted after the imports: `maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`,
   `backward.isDefEq.respectTransparency.types false`.
 - `import P2M.Util` (the command library of FLT's build tooling) is dropped, and its commands are replaced by standard Lean commands.
   - FLT line 18: `p2m_exact_reverting @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isFrameOn.solution` becomes `exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isFrameOn.solution X M hM x`. `p2m_exact_reverting` reverts the whole local context and elaborates the term against the reverted goal; `exact` applies the same term to the same hypotheses in the same order (`_` for anonymous hypotheses such as instances).
-- No other change: the declarations, statements and proofs are the FLT text.
+- No other change: apart from the renames described under “Names changed by the Library” below, the declarations, statements and proofs are the FLT text.
 
 ## Contents
 
@@ -24,8 +24,16 @@ Declarations, with their original FLT names and namespaces (no new definitions o
 
 ## Statement
 
-If `M` is `IsInvertible` (from `Def_AlgebraicGeometry_RelativePicardFunctor`), then every point `x` of `X` has an open neighbourhood `U` and a section `s` of `M` over `U` that is a frame on `U` (`IsFrameOn s V`, from `Def_AlgebraicGeometry_ModulesSectionsTensor`: for every open `W ≤ U` with `W ≤ V`, `g ↦ g • s|W` is a bijection `Γ(X, W) → Γ(M, W)`). This is the converse of `isInvertible_of_forall_exists_isFrameOn`.
+If `M` is `IsInvertibleFLT` (from `Def_AlgebraicGeometry_RelativePicardFunctor`), then every point `x` of `X` has an open neighbourhood `U` and a section `s` of `M` over `U` that is a frame on `U` (`IsFrameOn s V`, from `Def_AlgebraicGeometry_ModulesSectionsTensor`: for every open `W ≤ U` with `W ≤ V`, `g ↦ g • s|W` is a bijection `Γ(X, W) → Γ(M, W)`). This is the converse of `isInvertible_of_forall_exists_isFrameOn`.
 
 ## Dependencies
 
 Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor`, `Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom`, `Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf`, `Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_Monoidal`, `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTensorPow`, `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor`, `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_isFrameOn`.
+
+## Names changed by the Library (22 November 2026)
+
+weil-conjectures, on which the Library depends, declares 21 of the names of this extract itself, so that no module could import both. The Library renamed these 21 declarations: each keeps its name space and the last component of its name gets the marker `FLT` (`tensorPow` becomes `tensorPowFLT`, `tensorPow_zero` becomes `tensorPowFLT_zero`). In this file:
+
+- its uses of `AlgebraicGeometry.Scheme.Modules.IsInvertible` are uses of `IsInvertibleFLT` now.
+
+Statements and proofs are otherwise unchanged. Elsewhere on this page the names are given as they now are.

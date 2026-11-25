@@ -35,8 +35,7 @@ Linearity in the vector follows from linearity of the action and functional;
 linearity in the functional is pointwise. These intrinsic construction fields
 are proved in the definition.
 
-This construction was authored by Worker 0. The environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1, Lean 4.34.0,
+It was checked with Lean 4.34.0 and
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 It asserts neither a function-space representation nor the admissibility
 equivalences of Casselman Proposition II.7.1.

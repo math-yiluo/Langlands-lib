@@ -1,7 +1,5 @@
 # Full duals of finite tensor products in dimension one
 
-Author: Worker 174.
-
 `Langlands.LinearAlgebra.DualTensorOneDimensionalStatement` is an internal
 proposition target, not a theorem or an assumption. It ranges over an arbitrary
 field, an arbitrary finite index type, and arbitrary vector spaces, with

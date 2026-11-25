@@ -1,7 +1,5 @@
 # Assembly of compact equal-rank JPSS test data
 
-Author: Worker 408.
-
 This internal helper identifies the actual equal-rank integrand with the
 indicator of an explicitly defined subset of the actual left-unipotent
 quotient. It proves a conditional assembly step; it does not construct the

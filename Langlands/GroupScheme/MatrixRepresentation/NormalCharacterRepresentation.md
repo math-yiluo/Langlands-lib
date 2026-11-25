@@ -1,7 +1,5 @@
 # Representations on the normal-subgroup character span
 
-Worker 1228.
-
 For an actual matrix representation with stable split coordinates, the affine
 matrix of its restriction is the expected product of the retraction, original
 matrix and inclusion. This follows from the all-test matrix formula by the
@@ -30,4 +28,4 @@ the negative of the input character.
 
 This is an internal derivation from the published coordinate restriction,
 character spaces, normal-character-span stability and actual dual construction.
-It does not yet construct a fixed tensor, a prescribed kernel or a quotient.
+It does not construct a fixed tensor, a prescribed kernel or a quotient.

@@ -23,7 +23,7 @@ def typeCBlockRestriction (k : Type u) [Field k] (degree r n : ℕ) :
       (ULift.{u} (Fin n))) →+ (Fin r → ℤ) where
   toFun χ := GeneralLinear.characterCoordEquiv (Fin r) k
     (blockTorusHom k degree r n ≫ χ)
-  map_zero' := by simp
+  map_zero' := by rw [Limits.comp_zero, LinearEquiv.map_zero]
   map_add' χ ψ := by simp [Preadditive.comp_add]
 
 /-- A simple type C character restricts to the corresponding repeated-block vector. -/
@@ -38,6 +38,9 @@ theorem typeCBlockRestriction_simple {k : Type u} [Field k] {degree r n : ℕ}
       coordChar (Fin n) k i - coordChar (Fin n) k ⟨i.val + 1, h⟩
       else 2 • coordChar (Fin n) k i := by
     apply (GeneralLinear.characterCoordEquiv (Fin n) k).injective
+    have : AddMonoidHomClass (characterLattice (splitTorus.commGroupScheme
+        (Spec (CommRingCat.of k)) (ULift.{u} (Fin n))) ≃ₗ[ℤ] (Fin n → ℤ)) _ _ :=
+      SemilinearMapClass.instAddMonoidHomClass _
     rw [hχ, TypeCPinning.weightCoord_inl_sub_simpleSnd]
     split_ifs with hi
     · rw [map_sub, characterCoordEquiv_coordChar, characterCoordEquiv_coordChar]

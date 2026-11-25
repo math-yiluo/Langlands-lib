@@ -1,7 +1,5 @@
 # Kernels of restrictions and actual subgroup intersections
 
-Author: Worker 1616.
-
 `kernelCompositeIntersectionIso i d q hd hker` identifies the actual kernel
 of `i ≫ q` with `subgroupIntersection i d`, over an arbitrary base scheme.
 Here `i : H ⟶ G` is any group-scheme homomorphism, `d : D ⟶ G` is a closed

@@ -1,7 +1,7 @@
 # Stability under the real-place actions and their commutant
 
 This internal helper for the real-place Rankin–Selberg model bridge is in namespace
-`Langlands.Automorphic.OperatorRealization`. It adapts Worker 5665's complex-place
+`Langlands.Automorphic.OperatorRealization`. It adapts the complex-place
 commutant argument to a real place, using the real-place factorization proofs in the
 Library's `Langlands.Automorphic.PlaceComponentRealization`.
 

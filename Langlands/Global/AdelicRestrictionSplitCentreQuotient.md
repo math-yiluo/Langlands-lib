@@ -1,7 +1,5 @@
 # Measures and Weil compatibility on the restriction split-centre quotient
 
-Author: Worker 112.
-
 Getz--Hahn (2.20), p. 68, define `A_G` through the greatest `ℚ`-split torus of
 the restriction of scalars of the centre, and display (2.21), p. 69, forms
 `[G] = A_G G(F) \ G(A_F)`. Display (2.22), p. 69, compares `[G]` with the

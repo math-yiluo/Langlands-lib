@@ -3,18 +3,18 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalValuationCoordinates`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.TorusLatticeDuality` (submitted with this module):
+- `Langlands.HarmonicAnalysis.TorusLatticeDuality` (ported together with this module):
   `latticeAnnihilator`, `mem_latticeAnnihilator`, and through `TorusFourierInversion` and
   `TorusFourierDecay` the characters `torusCharacter`;
-- the published `Representation.Plancherel.RationalUnramifiedCharacterCoordinates` (Worker 200):
+- the published `Representation.Plancherel.RationalUnramifiedCharacterCoordinates`:
   `rationalReductiveValuationBasis G hG`, a `ℤ`-basis indexed by `Fin (rationalImageRank G)` of
   `Additive (rationalDiscreteValuationImage G)`, the image lattice of the integer valuation map
   (written `Λ(G)`), and the circle coordinates
   `rationalCanonicalUnitaryUnramifiedCharacterCoordinates G hG : Im X(G) ≃ₜ* (Fin r → Circle)`
   with their value formula `rationalCanonicalUnitaryUnramifiedCharacterCoordinates_symm_apply`;
-- the published `Representation.Plancherel.RationalNormKernelTopology` (Worker 200):
+- the published `Representation.Plancherel.RationalNormKernelTopology`:
   `continuous_rationalValuationImageProjection`;
-- the published `Representation.Plancherel.RationalRestrictionKernel` (Worker 200):
+- the published `Representation.Plancherel.RationalRestrictionKernel`:
   `mem_rationalUnitaryUnramifiedCharacterRestrict_ker`, and through its imports
   `rationalUnitaryUnramifiedCharacterRestrict` and `RenardCartan.splitValuationImage`.
 
@@ -118,4 +118,5 @@ proves `hindex` for a split component whose restriction of rational characters i
 
 For Proposition VII.2.1: the sum over `A_G / (A_G ∩ G¹)` in place of the integral over `A_G`,
 the passage from `Im X(G)` to the orbit `Im X(G)/S` with its factor `|S|` (III.7; the orbit
-measure of `RationalNormalizedOrbitMeasure`), and the remaining steps of the proof.
+measure of `RationalNormalizedOrbitMeasure`), and the remaining steps of the proof. The first
+two are made in `RationalSplitCenterFourierInversion` and `RationalOrbitFourierInversion`.

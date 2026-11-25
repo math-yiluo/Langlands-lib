@@ -1,8 +1,9 @@
 # Local dynamic Borel data from a prescribed residue cocharacter
 
-Worker 608, using the local-presentation construction of Worker 598,
-the parabolic source geometry of Worker 606, and Worker 653's negative Borel
-adapter.
+This construction uses the local-presentation construction of
+`Dynamic.LocalPresentation`, the parabolic source geometry of
+`ParabolicSourceGeometry`, and the negative Borel adapter of
+`BorelOfTorusCentralizer`.
 
 This internal construction starts with a split maximal torus in a reductive
 group scheme, a relative Borel containing it, a base point and a cocharacter of
@@ -34,6 +35,4 @@ supplied cocharacter. `borelDynamicNeighbourhoodOfResidue` chooses neighbourhood
 data satisfying the recorded fields. Its output type does not record an
 equality between its cocharacter and the base change of the supplied one, so
 the public construction guarantees only those fields. The base scheme is
-arbitrary and the construction is universe polymorphic. All nonpublic helper
-sources remain private development dependencies pending their independent
-acceptance and publication.
+arbitrary and the construction is universe polymorphic.

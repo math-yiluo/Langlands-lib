@@ -1,7 +1,5 @@
 # Conditional fixedness for proper actions with invariant affine neighborhoods
 
-Worker 1460.
-
 This internal assembly retains two explicit global hypotheses:
 `UnipotentAffineOrbitClosedStatement` (Kostant–Rosenlicht for actual affine
 scheme-action orbit images) and `SolvableProperFixedPointStatement` (a rational

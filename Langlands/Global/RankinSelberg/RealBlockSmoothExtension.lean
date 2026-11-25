@@ -140,7 +140,7 @@ theorem exists_continuous_norm_bound_blockFrobMap
     exact le_add_of_nonneg_right (mul_nonneg (pow_nonneg hJ₀ _) (apply_nonneg _ _))
   have hQc : Continuous Q := (derivativeCLM I (R ds) []).continuous.norm.add
     (continuous_const.mul (continuous_wordOrderSeminorm (R ds) b (d + 2)))
-  refine ⟨fun v => B * Q v, continuous_const.mul hQc, by simp [Q], fun f => ?_⟩
+  refine ⟨fun v => B * Q v, continuous_const.mul hQc, by simp only [Q, AddGroupSeminormClass.map_zero, mul_zero, add_zero], fun f => ?_⟩
   apply norm_emptyCoord_le es _ (mul_nonneg hB (hQ₀ _))
   intro g hg
   refine hb f g hg _ (fun k hk => (norm_algebraicWord_eval_le ds [] f hk).trans (hQ₁ f)) ?_

@@ -1,6 +1,6 @@
 # Actual full-Levi orbit measure
 
-This derived unit compares the orbit measures in the ambient group-Levi packet
+This derived module compares the orbit measures in the ambient group-Levi packet
 and the actual full-root standard Levi packet for Waldspurger VIII.4.2,
 printed p.330 (PDF p.96), using the I.1 and VI.3 normalization.
 
@@ -30,4 +30,5 @@ the source restriction-kernel cardinality and the self-twist cardinality.
 
 The field and representation carrier universes remain independent. The module
 proves no smooth-section comparison, packet membership, cuspidality or closed
-Task 7440 target.
+VIII.4.2 target (`RationalCuspidalDiscreteCoefficientStatement`,
+`RationalCuspidalFixedCoefficientLiftingStatement`).

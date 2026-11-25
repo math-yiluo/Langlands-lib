@@ -1,12 +1,13 @@
 # Same-multiplier propagation of the unequal-rank gamma equation
 
-Worker 331 authored this statement. The field, measure and representation
-scope and the private valuative-topology helper are adapted from Worker 11's
-published `FunctionalEquationStatement`. Worker 12 supplied the shared-cutoff
-interface plan described below.
+The field, measure and representation scope and the private
+valuative-topology helper are adapted from the published
+`FunctionalEquationStatement`.
 
 `Langlands.RankinSelberg.UnequalRankGammaPropagationStatement.{uF,uV,uW}
-F T n r` is a proposition definition, not a proved theorem. It isolates the
+F T n r` is a proposition definition, not a proved theorem; the theorem
+`unequalRankGammaPropagation` in `UnequalRankGammaPropagationProof` proves
+it. It isolates the
 block-zero reduction of JPSS §2.8, printed p.395, in the Library's rational
 gamma-equation language. The internal packaging is derived from the source;
 JPSS does not name this predicate. No existence of a gamma factor or proof of
@@ -101,7 +102,7 @@ from the antecedent.
 The adjacent-rank case `r = n+1` is included: its only block is `(0,0)`.
 The case `n = 0` includes a rank-one second member.
 
-## Source correspondence and future proof dependency
+## Source correspondence and proof dependency
 
 JPSS Theorem 2.7, pp.390–391, has Whittaker-type scope. Its unequal-rank
 formula (2), p.391, uses complementary blocks, the right-translated dual
@@ -123,18 +124,19 @@ transfers a Schwartz cutoff to the complementary integral by Fourier
 transformation, and chooses the cutoff using support and smoothness. The
 multiplier remains fixed in the passage from `j` to `j+1`.
 
-A future proof must implement that root/Fourier transfer for the actual
+A proof must implement that root/Fourier transfer for the actual
 coefficient models and the supplied measures, together with the rational
 continuation and nonzero-value obligations of the conclusion. The shared
-cutoff interface planned with the adjacent-span work is a Fourier-weighted
+cutoff interface with the adjacent-span work is a Fourier-weighted
 right-translation construction in the same representation: its row-integrated
 coefficient equals the original coefficient with a Schwartz cutoff in that
 row. It must retain the topology and measure normalization; a version stated
 for a differently normalized Haar measure needs explicit nonzero scaling
 transport. It must not assume a common generator or the functional equation.
-The adjacent-span and functional-equation consumers should share this helper.
-This is an unimplemented proof-interface plan, not an additional Lean
-hypothesis or an already proved cutoff lemma. Compact rectangular support
+The adjacent-span and functional-equation consumers share this helper: both
+`UnequalRankBlockSpanProof` and `UnequalRankComplementaryTransferProof` import
+the Fourier-smearing proof `UnequalRankFourierSmearingProof`. This helper is
+not an additional Lean hypothesis of this statement. Compact rectangular support
 and finite Schwartz expansion are separate prerequisites. This module proves
 neither the cutoff lemma nor gamma existence, and does not perform epsilon
 normalization.

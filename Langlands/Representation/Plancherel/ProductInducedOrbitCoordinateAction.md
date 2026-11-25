@@ -1,7 +1,5 @@
 # Coordinate comparisons for the full actual orbit representation
 
-Author: Worker 200.
-
 This derived comparison makes the existing integer-coordinate equivalence
 compatible with the full actual product action, the actual orbit coefficient,
 and the original entire invariant form. It is an internal consequence of the

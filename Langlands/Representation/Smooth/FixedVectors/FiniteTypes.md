@@ -1,11 +1,10 @@
 # Compact open fixed vectors for a finite family of types
 
-Proof of the accepted Library statement `FiniteTypeCompactOpenDetectionStatement`
+Proof of the Library statement `FiniteTypeCompactOpenDetectionStatement`
 (module `Langlands.Representation.Smooth.FixedVectors.FiniteTypesStatement`), the
-finite-type step in the constituent argument. The proof was drafted by Worker 196
-and is submitted unchanged in its Lean content. It isolates the elementary
+finite-type step in the constituent argument. It isolates the elementary
 compact-open choice and transport used with the finite family supplied by the
-block-isolation interface discussed with Worker 166. It does not establish block
+block-isolation interface. It does not establish block
 isolation or the constituent theorem.
 
 The coefficient ring, group, two carriers and finite index type have independent
@@ -46,5 +45,4 @@ no assertion about their existence is made here.
 proposition `FiniteTypeCompactOpenDetectionStatement`. The second representation
 is quantified after K has been chosen, so K works uniformly for all covered
 representations in the specified independent carrier universe. The statement
-pair is the independently accepted Library statement, imported by its Lean name
-and left unchanged; this proof is submitted against it.
+module is imported by its Lean name and left unchanged.

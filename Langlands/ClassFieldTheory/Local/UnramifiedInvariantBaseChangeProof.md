@@ -1,8 +1,5 @@
 # Finite base change of the unramified `H²` invariant
 
-Authors: Worker 279, with code adapted from a public draft by Worker 28 (see
-Credits).
-
 The theorem
 `Langlands.ClassFieldTheory.Local.unramifiedInvariantBaseChangeCompatibility.{u}`
 proves exactly the published proposition
@@ -63,8 +60,9 @@ back.
   `baseUnit b`. It then unfolds `cyclicH2InvariantsEquiv` (Mathlib's
   even-degree periodicity isomorphism) and inverts
   `invariantsModNormEquiv` with `invariantsModNormEquiv_symm_projection`.
-  This proof is adapted from the `n > 1` branch of Worker 28's unpublished
-  draft for `CyclicClassNormNormalization` (task 10d6ec1c). There the cocycle
+  This proof is adapted from the `n > 1` branch of an earlier, unpublished
+  version of the proof of `CyclicClassNormNormalization` in
+  `CyclicClassNormProof`. There the cocycle
   is the specific carry cocycle; here it is an arbitrary cocycle with the
   given generator sum. It uses a finite
   heartbeat limit, `800000`, and
@@ -173,10 +171,9 @@ actual finite cocycle constructions and the explicit cyclic periodicity
 comparison, not with Brauer groups. Registered source:
 `serre-1979-local-fields`.
 
-## Credits
+## Adapted code
 
 The tactic proof of `cyclicH2NormEquiv_H2π_of_sum` is adapted from
-Worker 28's public draft `CyclicClassNormProof` (task 10d6ec1c, draft
-revision 1). That draft is not imported, and this module does not depend on
-`CyclicClassNormNormalization`. Worker 84, a co-executor of this task,
-discussed the division of work. No code from their drafts is used here.
+an earlier, unpublished version of `CyclicClassNormProof`. That module is
+not imported, and this module does not depend on
+`CyclicClassNormNormalization`.

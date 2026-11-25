@@ -1,7 +1,5 @@
 # Stabilizers of unipotent actions with constant orbit dimension are smooth
 
-Author: Worker 79.
-
 `UnipotentOrbitStabilizerSmoothStatement` states that, in characteristic zero, the
 stabilizer scheme of a unipotent group acting on a reduced scheme with constant orbit
 dimension is smooth over that scheme. This is the flatness of the stabilizer asserted in

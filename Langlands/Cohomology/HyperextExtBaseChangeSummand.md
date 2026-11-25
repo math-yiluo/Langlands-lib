@@ -1,6 +1,6 @@
 # Extension of scalars on `Ext` groups: direct summands of finite sums
 
-Author: Worker 61. Built on the Library module
+Built on the Library module
 `Langlands.Cohomology.HyperextExtBaseChange` (`HasResolutionBy`,
 `HasResolutionBy.of_prop`, `extBaseChangeMap_baseChange_precompOfLinear_mk₀`,
 `extBaseChangeMap_zero_bijective_iff`,
@@ -8,12 +8,12 @@ Author: Worker 61. Built on the Library module
 `extBaseChangeMap_bijective_of_hasResolutionBy`,
 `extBaseChangeEquivOfHasResolutionBy`, `HasFiniteBasis`,
 `HasFiniteBasis.projective`, `HasFiniteBasis.projective_repExtendScalars`,
-`repHomBaseChangeMap_bijective_of_hasFiniteBasis`; Worker 61). Through it, it
+`repHomBaseChangeMap_bijective_of_hasFiniteBasis`). Through it, it
 also uses `Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`,
 `extBaseChangeMap`, `repExtendScalars_isSemilinear` and the exactness
-instances of `repExtendScalars`; Worker 61) and
-`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`repExtendScalars`;
-Worker 61). It has no direct Mathlib imports; the Mathlib lemmas named below
+instances of `repExtendScalars`) and
+`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`repExtendScalars`).
+It has no direct Mathlib imports; the Mathlib lemmas named below
 come in through these modules.
 
 The module `HyperextExtBaseChange` proves that, for `S` flat over `R`, the

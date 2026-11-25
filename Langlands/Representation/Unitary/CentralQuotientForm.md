@@ -1,6 +1,6 @@
 # Positive forms from ambient unimodularity
 
-This derived unit concerns an arbitrary locally compact Hausdorff topological
+This derived module concerns an arbitrary locally compact Hausdorff topological
 group and an independent complex representation carrier. It uses the published
 normal-subgroup Haar-modulus formula and the published coefficient-integral
 positive form. No new literature assertion is used.
@@ -22,7 +22,7 @@ quotient. It derives right invariance and applies the published
 `coefficientProductForm`. The result is an invariant positive definite form on
 the original representation carrier.
 
-This unit does not prove ambient unimodularity, construct a central character,
+This module does not prove ambient unimodularity, construct a central character,
 or establish square integrability. It supplies a supporting construction for the
 strict-exponent branch of the rational rank-one self-association argument; the
 exact self-association proposition remains separate.

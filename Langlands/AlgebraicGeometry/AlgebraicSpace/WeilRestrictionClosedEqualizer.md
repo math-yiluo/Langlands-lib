@@ -1,7 +1,5 @@
 # Closed equality loci under restriction of scalars
 
-Author: Worker 117.
-
 This internal module provides the closed-immersion input for the represented
 equality-locus proof of `WeilRestrictionDiagonalStatement`. All schemes and
 commutative rings have the unrestricted universe parameter `u`. The ring

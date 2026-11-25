@@ -1,7 +1,5 @@
 # Uniqueness of absolutely convergent bilateral spectral coefficients
 
-Authors: Worker 352 (Lean formulation and source verification) and Worker 486
-(analytic prerequisite specification and proof rationale).
 This module supplies a **statement**, expressed as the
 closed proposition definition
 `Langlands.RankinSelberg.BilateralSpectralCoefficientUniquenessStatement`.
@@ -45,7 +43,9 @@ the convergent sums.
 ## Rationale for a separate proof
 
 The following explains why this internally derived statement is sound; the
-steps remain proof obligations for its proof successor.
+steps are proof obligations, discharged by
+`Langlands.RankinSelberg.bilateralSpectralCoefficientUniqueness` in
+`BilateralSpectralCoefficientUniquenessProof`.
 
 Fix `q`, `a`, `b`, and a bound `C` from the hypotheses. Choose a real
 `σ > C` and put `r = exp (-σ * log q) > 0`, with `q` viewed as a
@@ -59,7 +59,7 @@ spectralPoint q (σ + i t) = r exp (-i t log q).
 As `t` varies this parametrizes the whole circle of radius `r`. More
 explicitly, for any real `θ` choose `t = -θ / log q`, obtaining
 `spectralPoint q (σ + i t) = r exp (i θ)`. Matching this formula to
-Mathlib's complex-power conventions is part of the future proof.
+Mathlib's complex-power conventions is part of the proof.
 
 At the real parameter `s = σ`, absolute summability gives
 `∑ₘ |aₘ| rᵐ < ∞` and `∑ₘ |bₘ| rᵐ < ∞`, with integer powers of the
@@ -152,5 +152,4 @@ subsequent specialization in the deformation parameter.
 The only imports are the published modules
 `Langlands.HarmonicAnalysis.BilateralLaurentSeries` and
 `Langlands.Representation.RankinSelberg.RationalContinuation`.
-Existing Library Lean and Markdown files are unchanged. The designated
-Lean environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+Existing Library Lean and Markdown files are unchanged.

@@ -1,6 +1,6 @@
 # Square and fixed conjugation of the actual powered Weyl family
 
-This internal derived unit instantiates `PoweredWeylActions` with the actual
+This internal derived module instantiates `PoweredWeylActions` with the actual
 powered maps prescribed by a root-datum isogeny. It retains the original
 characteristic condition on the coefficient ring and does not require those
 powered maps to be root parametrizations.

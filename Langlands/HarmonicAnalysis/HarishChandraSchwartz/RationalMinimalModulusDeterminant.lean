@@ -31,7 +31,7 @@ theorem distribHaarChar_eq_residueNormalizedAbsoluteValue (a : Fˣ) :
   let v := FML.normalizedMultiplicativeValuation F
   let e := IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F
   have hE : v.IsEquiv (ValuativeRel.valuation F) :=
-    Valuation.isEquiv_map_self_of_strictMono e.toMulEquiv.toMonoidWithZeroHom e.strictMono
+    Valuation.isEquiv_map_self_of_strictMono _ e.strictMono.injective
   let π : Fˣ := Units.mk0 (LocalField.uniformizer F) (LocalField.uniformizer_ne_zero F)
   have hπ0 : v (π : F) ≠ 0 := v.ne_zero_iff.mpr π.ne_zero
   have hπord := LocalField.ord_uniformizer F
@@ -94,7 +94,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 attribute [local instance] rationalWeightsIsAffine rationalWeightsTopology
   rationalWeightsTopologicalGroup rationalWeightsT2Field rationalWeightsLocallyCompact
 
-local instance : NonarchimedeanGroup (rationalPoints G) :=
+private local instance : NonarchimedeanGroup (rationalPoints G) :=
   Plancherel.rationalPoints_nonarchimedeanGroup G
 
 /-- The minimal modulus is the absolute value of the determinant on the actual minimal

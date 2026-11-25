@@ -1,7 +1,7 @@
 # Stable pairing from Fitting splittings or admissibility and two Iwahori contractions
 
-Worker 480 constructs a stable evaluation pairing for an admissible smooth
-complex representation `ρ` of a topological group `G`; Worker 937 extended the
+This module constructs a stable evaluation pairing for an admissible smooth
+complex representation `ρ` of a topological group `G`, and extends the
 `Admits` construction to smooth representations whose two compressed actions
 have Fitting splittings. The inputs are the
 published `D : Langlands.Jacquet.StablePairingData G` and, for every good open
@@ -17,7 +17,7 @@ This is an internal composition of published results. The module imports
 `Smooth.Contragredient.AdmissibleDualityProof`; it makes no additional
 literature claim.
 
-`admits_of_iwahoriContractions_of_splits`, added by Worker 937, proves
+`admits_of_iwahoriContractions_of_splits` proves
 `D.Admits ρ hs` for any smooth `ρ` (proof `hs` of smoothness) without
 finiteness. Besides the two contraction predicates it assumes, for every good
 `K`, the published `CompactCompressionSplits` for compression by `D.g` on the
@@ -43,8 +43,8 @@ subgroup inside every open subgroup. The published
 admissibility of the actual smooth contragredient. Finite-dimensional fixed
 spaces of `ρ` and of its smooth contragredient give both splittings through the
 published `powerKernelSup_isCompl_stableImage`, and the previous theorem applies.
-(Its original proof assembled the fields directly from finite dimensionality;
-Worker 937 rerouted it through the splitting version.)
+(The proof goes through the splitting version rather than assembling the
+fields directly from finite dimensionality.)
 
 `stablePairingOfIwahoriContractions` chooses the bilinear pairing furnished by
 the published `exists_isStablePairing`, using the newly proved `Admits`.
@@ -58,4 +58,4 @@ The module retains the structural `StablePairingData` and both contraction
 predicates. It does not construct them for reductive rational-point groups,
 identify normalized Levi actions, prove an opposite-modulus comparison, or
 prove analytic irreducibility or rational rank-one self-association. Those
-remain separate obligations of the host proof.
+remain separate obligations.

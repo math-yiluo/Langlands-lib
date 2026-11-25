@@ -201,6 +201,7 @@ private theorem originalGroup_affine : IsAffineHom G.X.hom := by
   have hu : IsAffineHom
       ((baseChange (Spec.algebraMap F (inertiaFixedField F))).obj G).X.hom := by
     rw [← Over.w N.genericIso.inv.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   exact MorphismProperty.of_pullback_snd_of_descendsAlong
     (P := @IsAffineHom) (Q := @Surjective ⊓ @Flat ⊓ @QuasiCompact)

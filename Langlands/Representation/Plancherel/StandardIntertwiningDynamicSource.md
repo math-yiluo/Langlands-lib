@@ -6,7 +6,7 @@ motivation is Waldspurger, *La formule de Plancherel pour les groupes p-adiques
 printed p.279 / PDF page 45, with the rational composition identity IV.1(12),
 printed p.283 / PDF page 49. I.1 normalizes intrinsic subgroup Haar measures
 using one special compact subgroup. IV.1 orders the complementary unipotent
-factors before passing to rational intertwining operators. The present unit
+factors before passing to rational intertwining operators. This module
 specializes the existing source-scale quotient construction to actual dynamic
 subgroups. Its cover deductions and quotient selection are internal results;
 it does not assert the full rational identity or realize the requisite ordered
@@ -124,8 +124,9 @@ witnesses unchanged. Its constructed nested quotient is definitionally the
 one above. No measure is substituted into an existing witness, and no
 scalar correction is hidden in the conclusion.
 
-This unit discharges actual radical topology, closedness, covers and quotient
+This module discharges actual radical topology, closedness, covers and quotient
 construction for the displayed setting. Ordered-chart realization, the three
 local product identities, special-compact realization, analytic convergence,
 original-carrier representability and rational continuation remain separate
-obligations. No whole-task Plancherel completion condition is closed here.
+obligations. No top-level requirement of the full Plancherel formula is
+established here.

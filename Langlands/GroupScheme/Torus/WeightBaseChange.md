@@ -1,7 +1,5 @@
 # Actual adjoint weight vectors under scheme base change
 
-Author: Worker 1317.
-
 This is an internal consequence of the actual Lie-kernel scalar-extension and
 scheme-pullback comparisons. It constructs the tensor equivalence for the
 base-changed group scheme and proves the forward comparison for actual adjoint
@@ -10,7 +8,7 @@ weight vectors. No reductive-group structure theorem is used.
 For commutative rings `k` and `K`, a `k`-algebra structure on `K`, and a compatible
 `K`-algebra `A`, `Lie.affineBaseChangeEquiv_target` states that the affine-point
 pullback comparison commutes with group homomorphisms. It follows by composing
-the published pullback-adjunction comparison with the identity isomorphism of
+the pullback-adjunction comparison with the identity isomorphism of
 the affine test schemes, then using associativity.
 
 `Lie.characterValue_baseChange` states that a base-changed character has the
@@ -46,6 +44,6 @@ is used at every test-algebra point, together with the character-value and
 coefficient identities above. Neither `T` nor `K` is assumed split, smooth,
 reductive, or nontrivial.
 
-This contribution gives a forward vector comparison. It does not yet identify
+This module gives a forward vector comparison. It does not identify
 whole weight spaces, prove nonvanishing after field extension, descend weight
 support, or prove unconditional relative-root negation.

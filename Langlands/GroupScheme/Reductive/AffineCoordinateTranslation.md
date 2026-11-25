@@ -1,6 +1,6 @@
 # Translation identities from rational coordinate values
 
-This is derived supporting work by Worker 1369 for the Steinberg big-cell
+This is derived supporting work for the Steinberg big-cell
 construction. It introduces no external source assertion. It combines actual
 affine-coordinate evaluation, reduced-scheme rational-point determination,
 smoothness of products, and the earlier Frobenius root-curve cutoff.
@@ -60,7 +60,7 @@ its polynomial coordinate algebra. The rational-pair theorem then proves
 b(xm(s)g)=b(g) for every relative test V, every additive V-point s and every
 G-valued V-point g. This includes nonreduced and empty tests and height zero.
 
-This unit retains the degree bound and origin invariance as visible premises.
+This module retains the degree bound and origin invariance as visible premises.
 It does not construct the closed translation stabilizer, extend invariance
 from simple root groups to a generated unipotent group, prove the fixed-height
 restriction injection, or prove `SteinbergBigCellStatement`.

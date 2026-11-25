@@ -35,7 +35,7 @@ trait and the continuous finite-extension module convention. Henniart (1988),
 `ladicUnramifiedCharacters K Ω ℓ` is a subgroup of the continuous monoid
 homomorphisms from the absolute Galois group to `Eˣ` with its units topology.
 Its members are trivial on `LocalGalois.SepClosed.absoluteInertia K Ω`, the
-inertia subgroup of Task 7404, and have all their values in a common finite
+inertia subgroup, and have all their values in a common finite
 intermediate extension of `ℚ_[ℓ]`. In rank one, the character acts by scalar
 multiplication on `E`, where evaluation at `1` identifies linear endomorphisms
 with `E` and the sole matrix entry is the character value. Laumon (1987),
@@ -74,7 +74,7 @@ intertwiner, and `LinearMap.baseChange_comp` transports its intertwining
 equation. `ladicScalarExtensionClass ℓ ι` is the resulting quotient map.
 
 `ladicWeilTransport K Ω ℓ ι` first applies `FiniteRepresentation.restrictClass`
-along `Weil.Local.SepClosed.localProjection K Ω` from Task 7404, and then
+along `Weil.Local.SepClosed.localProjection K Ω`, and then
 applies `ladicScalarExtensionClass ℓ ι`. The Weil group is the one for the
 specified separable closure, with algebraicity and separable closedness
 derived from `IsSepClosure K Ω`. The domain and codomain are the full

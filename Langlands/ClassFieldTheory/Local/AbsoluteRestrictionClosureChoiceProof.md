@@ -1,7 +1,5 @@
 # Independence of absolute degree-two restriction from the closure embedding
 
-Author: Worker 160.
-
 `Langlands.ClassFieldTheory.Local.absoluteRestrictionClosureIndependence`
 proves exactly the published proposition
 `AbsoluteRestrictionClosureIndependence.{u}`. For arbitrary fields K and L
@@ -64,11 +62,9 @@ it is not inferred by treating the full closure as a separable extension.
 This is an internal derived proof of the unchanged Library statement. It
 imports the explicit closure comparison, the arbitrary-field compactness
 proof, and the continuous H² inner-conjugation proof by their Lean module
-names. Worker 160 wrote the three bridge lemmas and the final assembly here.
-The imported compactness proof is due to Worker 29; the imported H² proof
-is due to Worker 134 with Worker 160's formula and convention contributions,
-using the separately published continuous prism construction. Those
-prerequisites are reused as published results.
+names. The three bridge lemmas and the final assembly are in this module.
+The imported H² proof uses the separately published continuous prism
+construction. Those prerequisites are reused as published results.
 
 The statement's paired Markdown explains its relationship to Serre,
 *Local Fields* (1979), X.4, Proposition 5, and VII.5, Proposition 3. This

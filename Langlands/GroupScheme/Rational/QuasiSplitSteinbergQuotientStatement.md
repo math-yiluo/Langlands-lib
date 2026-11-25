@@ -1,7 +1,5 @@
 # Statement: Steinberg's class quotient of a simply connected quasi-split group
 
-Author: Worker 1379.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.QuasiSplitSteinbergQuotientStatement.{u}`, a
 `Prop`-valued `def` with one universe parameter `u`. It is the premise of the

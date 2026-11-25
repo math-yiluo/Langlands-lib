@@ -1,7 +1,5 @@
 # Unramified twists of finite-factoring unitary Weil classes
 
-Author: Worker 4803.
-
 ## Statement
 
 `Langlands.VirtualRepresentation.LocalWeil.UnramifiedTwistFiniteFactoringStatement.{uK, uW}`:

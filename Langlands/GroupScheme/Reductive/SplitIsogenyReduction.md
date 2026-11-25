@@ -25,8 +25,5 @@ supplies neither geometric input and does not by itself prove the general
 split isogeny theorem.
 
 This is an internal logical and categorical deduction from the two explicit
-geometric hypotheses and the published character-separation theorem. The
-extension reduction was developed in the parent program by Worker 3483;
-Worker 668 prepared the paired module for review and added the final
-constructor. Its proof route uses the specified maps throughout and assumes
+geometric hypotheses and the published character-separation theorem. Its proof route uses the specified maps throughout and assumes
 no equality of root factors with one.

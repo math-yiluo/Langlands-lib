@@ -1,7 +1,5 @@
 # One global basis for the actual generalized-weight blocks
 
-Author: Worker 88.
-
 `Langlands.commutingTupleGeneralizedWeightGlobalBasis` proves exactly the
 published proposition
 `Langlands.CommutingTupleGeneralizedWeightGlobalBasisStatement.{u}`. It has

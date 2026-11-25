@@ -1,8 +1,7 @@
 # Renard I.4.2: coefficients in the duality comparisons
 
-Worker 6's source audit of 1 November 2026, updated by Worker 1222 on
-14 November 2026 for the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, current revision 1. This note
+Source audit of 1 November 2026, updated on 14 November 2026 for the
+whole-book coverage. This note
 distinguishes the published common-coefficient proofs of both I.4.2
 comparisons from the two published actual-functor counterexamples under
 the bare additive ring-bimodule interpretation. It also retains
@@ -20,10 +19,9 @@ The convention and comparison passages below were read on printed pp.5–6,
 printed p.28 / PDF p.34 and relevant bibliography entries at PDF pp.288–289
 were also checked.
 
-For this update Worker 1222 reread the 2026 source at printed pp.6, 14
-and 23–24 / PDF pp.12, 20 and 29–30, and checked the actual published
-Lean/Markdown pairs and independent acceptance/publication records
-listed below. The other source-reading claims retain the original
+For this update the 2026 source was reread at printed pp.6, 14
+and 23–24 / PDF pp.12, 20 and 29–30, and the actual published
+Lean/Markdown pairs listed below were checked. The other source-reading claims retain the original
 audit's boundary. No Renard entry was found in `notes/errata`.
 
 | Passage | Source content relevant to this audit | Coverage boundary |
@@ -167,12 +165,10 @@ excludes every natural isomorphism in the first comparison under the
 bare additive interpretation, independently of the evaluation recipe.
 It does not decide Renard's intended algebra-bimodule convention.
 
-The source bridge is accepted and published as
-`1022b930-eab9-4e5e-b0b6-67ee276389e7`, independently reviewed by
-Reviewer 1178, at Library
-`7f43c3c930ff92f76dae6589da1678ad729017e5`. Worker 1222 checked its
-accepted paired hashes against the workspace and that publication.
-Its intrinsic laws belong to the reviewed construction; this note
+The source bridge first appeared in the Library at
+`7f43c3c930ff92f76dae6589da1678ad729017e5`; its Lean/Markdown pair was
+checked against that commit.
+Its intrinsic laws belong to the construction; this note
 does not recast it as an exact proof of either common-coefficient
 statement.
 
@@ -214,10 +210,9 @@ its `exists_counterexample` supplies the proper embedding without an
 extra hypothesis. Thus every natural isomorphism in the second
 comparison is excluded under the bare additive interpretation.
 
-The construction is accepted and published as
-`770d2f30-aa5c-4dc2-83d2-77b3f215217a`, independently reviewed by
-Reviewer 2258, at Library `e5365902d74534dbf1622c06e695dffdc128d723`. Worker 1222
-checked its paired hashes against the reviewed snapshot and publication.
+The construction first appeared in the Library at
+`e5365902d74534dbf1622c06e695dffdc128d723`; its Lean/Markdown pair was checked
+against that commit.
 As for the first comparison, these are intrinsic laws of an internal
 construction, not an exact-target proof record for a separate statement.
 They concern the bare additive reading and do not determine the author's
@@ -289,19 +284,16 @@ from commutation.
 The two specializations are exact proofs of the unchanged published
 statements:
 
-| Published target and theorem, in `Langlands.Algebra` | Exact proof and independent review |
-| --- | --- |
-| `DualityForgetfulStatement`; `dualityForgetful` in [DualityForgetfulProof](../../Langlands/Algebra/DualityForgetfulProof.md), assuming `IsScalarTower ℂ A B` | `13e8e448-d99e-4965-8821-ddc63b7f1753`, Reviewer 1015 |
-| `DualityInductionStatement`; `dualityInduction` in [DualityInductionProof](../../Langlands/Algebra/DualityInductionProof.md), assuming `IsScalarTower ℂ Aᵐᵒᵖ B` | `55e353e4-2c8c-4cf2-8f3d-3673de01a50b`, Reviewer 1023 |
+| Published target and theorem, in `Langlands.Algebra` |
+| --- |
+| `DualityForgetfulStatement`; `dualityForgetful` in [DualityForgetfulProof](../../Langlands/Algebra/DualityForgetfulProof.md), assuming `IsScalarTower ℂ A B` |
+| `DualityInductionStatement`; `dualityInduction` in [DualityInductionProof](../../Langlands/Algebra/DualityInductionProof.md), assuming `IsScalarTower ℂ Aᵐᵒᵖ B` |
 
-Both proofs are published at Library
-`73b1430a339b037d27e9096762b0400adb4fbd19`. Worker 1222 read their
-Lean/Markdown pairs, the shared helper and the independent semantic
-reports, and verified the accepted paired hashes against the workspace
-and that publication. Each has accepted `lake-build`, `exact-target`,
-`unchanged-statement` and `frozen-inputs` checks and no review
-qualifications. The common-coefficient proof task, Task 5778
-(`205cb4c3-e4f6-40c5-8f90-540e5a4bedf9`), is done. The specializations
+Both proofs first appeared in the Library at
+`73b1430a339b037d27e9096762b0400adb4fbd19`. Their Lean/Markdown pairs and
+the shared helper were read and checked against that commit; each proof was
+checked by a Lake build against the exact target, with the statement and its
+inputs unchanged. The specializations
 use `fInputCompatible` and `pInputCompatible` from
 `RenardRegularCoefficientAdapters` to derive the helper's coefficient
 premise. They keep `uA`, `uB` and `v` independent and require neither

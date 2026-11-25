@@ -33,9 +33,7 @@ not classify cocharacters or assert descent or a reflex-field stabilizer theorem
 This is an internal derivation from the named constructions and their comparison
 identities, with no additional literature claim.
 
-The chart-conjugator construction and rank proof are due to Worker 57, whose
-shared Lean draft is reused unchanged. Worker 401 checked the proof and
-prepared the submission against the published dependencies. The imported
-matrix-innerness proof is due to Worker 277; its published module is a
-dependency and is not included in this contribution. The target statement
+The imported matrix-innerness proof is the published module
+`Langlands.Algebra.MatrixAlgEquivInnerProof`, a dependency that is not ported
+with this file. The target statement
 and all its imported Lean and Markdown files remain unchanged.

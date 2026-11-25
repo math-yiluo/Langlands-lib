@@ -1,7 +1,5 @@
 # Simple connectedness and absolute almost-simplicity of standard symplectic groups
 
-Author: Worker 118.
-
 `Langlands.GroupScheme.Symplectic.StructureStatement.{u}` is a proposition
 definition. For every field `K : Type u` and every natural number `n ≥ 2`, it
 asserts

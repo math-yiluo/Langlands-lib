@@ -166,17 +166,17 @@ def rationalEndAction : Rationalization.End A →ₐ[ℚ] Module.End ℚ (Ration
     (Rationalization.liftEnd (rationalFunctor T P) A).toRingHom
   commutes' q := by
     change (Rationalization.liftEnd (rationalFunctor T P) A
-      (algebraMap ℚ (Rationalization.End A) q)).hom = _
+      (algebraMap ℚ (Rationalization.End A) q)).asHom.hom = _
     rw [AlgHom.commutes]
     rfl
 
 @[simp] theorem rationalEndAction_apply (f : Rationalization.End A) :
-    rationalEndAction A T P f = rationalHomMap T P f := rfl
+    rationalEndAction A T P f = rationalHomMap T P f.asHom := rfl
 
 @[simp] theorem rationalEndAction_ofEnd (f : CategoryTheory.End A) :
-    rationalEndAction A T P (Rationalization.ofEnd A f) = rationalMap T P f := by
-  change rationalHomMap T P (Rationalization.ofHom f) = _
-  exact rationalHomMap_ofHom T P f
+    rationalEndAction A T P (Rationalization.ofEnd A f) = rationalMap T P f.asHom := by
+  change rationalHomMap T P (Rationalization.ofHom f.asHom) = _
+  exact rationalHomMap_ofHom T P f.asHom
 
 /-- Any rational endomorphism-algebra action induces a rational linear action. -/
 def algebraAction {D : Type*} [Ring D] [Algebra ℚ D]

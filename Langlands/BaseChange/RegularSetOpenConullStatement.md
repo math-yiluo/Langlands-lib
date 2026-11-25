@@ -101,7 +101,7 @@ every characteristic. In characteristic zero the two notions coincide.
 
 - `Langlands.BaseChange.CharacterFunction`: definitions 1–2 integrate over all of `GL_n`;
   statements 6–7 show that this agrees with HL's integrals over the (σ-)regular set.
-- The input L0 of the B5 comparison in the global part of Task 7340 (a σ-stable irreducible
+- The input L0 of the B5 comparison in the global trace-formula part of cyclic base change (a σ-stable irreducible
   `Π` and a bijective `A` admit `φ` supported in the σ-regular set with
   `trace(Π(φ) ∘ A) ≠ 0`) needs statement 7 together with statement 5
   (`TwistedCharacterLocalIntegrabilityStatement`).

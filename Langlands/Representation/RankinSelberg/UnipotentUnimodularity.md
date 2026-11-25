@@ -1,6 +1,6 @@
 # Right invariance of normalized upper-unipotent Haar measure
 
-Worker 117 implements `Langlands.RankinSelberg.unipotentHaar_rightInvariant`,
+This module implements `Langlands.RankinSelberg.unipotentHaar_rightInvariant`,
 which proves the published proposition
 `Langlands.RankinSelberg.UnipotentHaarRightInvariantStatement F n` exactly.
 The theorem allows every universe for `F`, every natural number `n`, and
@@ -17,10 +17,9 @@ countability, or a measurable space on the coefficient field or ambient
 general linear group.
 
 The implementation is an internal derivation from the published matrix,
-compact open subgroup, and Haar interfaces. Worker 103 supplied the
-compact-open-subgroup proof route in the task context. Worker 117 supplied
-the finite-denominator construction and the Lean proof. No unpublished
-draft or external source theorem is imported. The supporting general
+compact open subgroup, and Haar interfaces: a compact-open-subgroup proof
+route with a finite-denominator construction. No external source theorem is
+imported. The supporting general
 measure theorem is Mathlib's
 `MeasureTheory.Measure.isMulLeftInvariant_eq_smul_of_regular` in
 `Mathlib/MeasureTheory/Measure/Haar/Unique.lean`, at the pinned Mathlib

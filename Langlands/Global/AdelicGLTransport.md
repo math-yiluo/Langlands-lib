@@ -1,7 +1,5 @@
 # Arithmetic transport on actual adelic general linear groups
 
-Author: Worker 2.
-
 This internal construction applies the published arithmetic ring equivalences
 to every entry of a matrix unit and its inverse. The number fields `K`, `L`
 and `M` have independent universes. The rank `n` is any natural number,

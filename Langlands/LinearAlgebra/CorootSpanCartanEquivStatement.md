@@ -2,9 +2,9 @@
 
 This module defines the proposition
 `Langlands.LinearAlgebra.CorootSpanCartanEquivStatement` (universe parameter `u`). It
-is a statement only. The module supplies no proof. It is a prerequisite of Task 5703
-(simply connected groups of inner type `A_n` as reduced-norm-one groups), where it
-compares the root datum of a simply connected group of type `A_n` with that of
+is a statement only. The module supplies no proof. It is a prerequisite of the
+presentation of simply connected groups of inner type `A_n` as reduced-norm-one
+groups, where it compares the root datum of a simply connected group of type `A_n` with that of
 `SL_{n+1}`.
 
 ## Statement

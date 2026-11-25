@@ -1,7 +1,5 @@
 # Algebraic comparison for equal-rank gamma existence
 
-Author: Worker 364.
-
 This module supplies the algebraic comparison used by
 `Langlands.RankinSelberg.equalRankGammaExistence` in the companion
 `EqualRankGammaExistenceProof` module. Its four helper theorems live in

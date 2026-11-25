@@ -1,7 +1,5 @@
 # From the special-linear Tits cocycle to the Hermitian presentation
 
-Author: Worker 239.
-
 This internal reduction combines the special-linear cocycle statement with
 the constructions of Hermitian coordinates and all-test descent. Its main
 theorem is conditional:
@@ -13,8 +11,10 @@ outerTypeAHermitianPresentation_of_specialLinearTitsCocycle
 ```
 
 The proposition `SpecialLinearTitsCocycleStatement` is published, but this
-unit assumes a proof of it. Thus this unit does not by itself prove the
-unconditional target of Task 6209.
+module assumes a proof of it. Thus this module does not by itself prove
+`OuterTypeAHermitianPresentationStatement` unconditionally; the Library
+proves it as `outerTypeAHermitianPresentation` (module
+`SimplyConnected.OuterTypeAHermitianPresentationProof`).
 
 `SpecialLinearTitsCocycle.HasStarMatrixFormulas` records the matrix-valued
 star-discrepancy clause of `SpecialLinearTitsCocycleStatement` for a supplied

@@ -1,7 +1,5 @@
 # Numerical adapters for supported regular Weyl comparisons
 
-Author: Worker 165.
-
 `Langlands.Exponents.SupportedRegularWeylParameterNumericsStatement` is an
 internal finite-coordinate statement for the supported regular comparison.
 It has three clauses.

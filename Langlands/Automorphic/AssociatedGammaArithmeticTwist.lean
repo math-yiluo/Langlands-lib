@@ -1,6 +1,6 @@
 import Langlands.Global.Factors.RelativeWeilFunctionalEquationStatement
 import Langlands.Global.Factors.RelativeWeilLocalHecke
-import Langlands.ClassField.Global.LocalRelativeWeilTransferProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof
 import Langlands.ClassFieldTheory.Local.CommonClosureGeometricProof
 import Langlands.Correspondence.BaseReciprocityCandidate
 import Langlands.Correspondence.ArithmeticPairEpsilonExistenceStatement
@@ -21,7 +21,7 @@ set_option autoImplicit false
 
 universe u uV uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -172,4 +172,4 @@ theorem exists_isArithmeticPairLocalFactors
       (padicField z).canonicalTopologicalData.residueCardinality cc m s⟩,
     fun _ => rfl, fun _ => rfl, cc, m, hcm, fun _ => rfl⟩
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

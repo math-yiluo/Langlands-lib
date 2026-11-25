@@ -23,7 +23,7 @@ Composition is the existing saturated strong composition. The property
 `Represents` predicate for every admissible chart pullback. In particular,
 its unique bounded factorization tests range over every presented-affinoid
 coefficient algebra. No chart directedness or upper-cofinality premise is
-introduced in this unit.
+introduced in this module.
 
 Write `Q := localizationFunctor` and `W := quasiIsomorphisms`. The category
 `LocalizedCategory` and functor `Q` already exist as the actual
@@ -122,11 +122,8 @@ identity.
 
 ## Remaining scope
 
-This unit computes representatives, equality and underlying continuous maps
+This module computes representatives, equality and underlying continuous maps
 in the actual saturated presentation localization. It does not identify
 that category with an independently defined Berkovich analytic-space
 category, construct etale, quasi-etale or equivariant sites, implement compact
-or distinguished domains, or specialize to Harris towers. Those remain
-obligations of the surrounding analytic-space and site task. Independent
-review and publication of the preceding Ore and right-calculus units remain
-their own gates.
+or distinguished domains, or specialize to Harris towers.

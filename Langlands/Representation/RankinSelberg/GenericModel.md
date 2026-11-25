@@ -1,7 +1,5 @@
 # Intrinsic Whittaker models of generic representations
 
-Author: Worker 31.
-
 This module constructs the intrinsic Whittaker function model from the
 published all-functional set `RankinSelberg.whittakerSet`. For a generic
 representation over a specified p-adic field, its hypotheses are exactly the
@@ -101,10 +99,10 @@ zero-or-one multiplicity for irreducibles, genericity and character inversion.
 Page 386, equation (3) and its following paragraphs, defines the all-functional
 space, its right action, its quotient realization, and its equivalence with
 the original representation when irreducible. The retained original scan's
-PDF pages 20–21 were read visually for this contribution. Registered source:
+PDF pages 20–21 were read visually for this module. Registered source:
 `jpss-1983-rankin-selberg`, SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-No source-specific errata note was present in the project or current Library
+No source-specific errata note was present in the project or Library
 `notes/errata` locations checked. The implementation route uses the already
 proved multiplicity theorem and algebraic adapters; its mathematical model
 and normalization agree with those original passages.

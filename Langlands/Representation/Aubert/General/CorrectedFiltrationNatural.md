@@ -1,9 +1,7 @@
 # Naturality of the corrected support filtration
 
-Author: Worker 757 (task `f7d95940-33d0-49d3-93d6-8d5ff8d89373`).
-
 This module proves that the corrected support filtration of
-`Aubert.General.CorrectedFiltration` (Worker 379) is natural in the ambient
+`Aubert.General.CorrectedFiltration` is natural in the ambient
 smooth representation. Let `φ : A ⟶ B` be a morphism of smooth representations
 of `G`. The actual functor map `r_I(i_J r_J φ) : r_I(E_J) ⟶ r_I(E'_J)` sends
 each filtration step `Ẽ^{θ_i'}_{J,I}` of `A` into the same step of `B`. The
@@ -20,7 +18,7 @@ relative Weyl group and the Coxeter system `cs` are those of
 
 * `termMap P M U h hclosed φ s : term … A s ⟶ term … B s` is the actual functor
   map `(inductionJacquetFunctor (h (S \ s)) (hclosed (S \ s))).map φ`, i.e.
-  `i_J r_J φ`. `hom_termMap` says that its underlying intertwiner is Worker 194's
+  `i_J r_J φ`. `hom_termMap` says that its underlying intertwiner is
   `Complex.termMap` for the removed-root families (definitional).
   `termMap_id` and `termMap_comp` are the functor laws.
 * `transition_termMap`: for `s ⊆ t`, the term maps commute with the actual

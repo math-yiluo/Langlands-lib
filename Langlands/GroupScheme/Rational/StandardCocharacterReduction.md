@@ -1,7 +1,7 @@
 # Standard-cocharacter comparison reduction
 
-Worker 185, using Worker 163's positive-root and sign helpers. This internal
-reduction combines the published pointwise-intersection definitions with the
+This internal reduction uses the positive-root and sign helpers of
+`PositiveRootInduction` and combines the published pointwise-intersection definitions with the
 split-lattice construction and relative-root combinatorics. It retains the
 universe, arbitrary field, and all test schemes of the existing interfaces.
 
@@ -18,7 +18,8 @@ functors on every test scheme.
 
 `HasRelativeRootSystem.standardCocharacters_haveSameRelativeRootSigns`
 uses actual-root negation closure from the explicit relative-root-system
-realization and splitness, then applies Worker 163's sign theorem to two
+realization and splitness, then applies the sign theorem
+`IsStandardCocharacter.haveSameRelativeRootSigns` (`PositiveRootInduction`) to two
 standard cocharacters. Genericity is assumed for the fixed cocharacter.
 `HasRelativeRootSystem.standardCocharacterDynamicComparison` additionally
 assumes the sign-to-dynamic comparison and applies it to this sign equality.

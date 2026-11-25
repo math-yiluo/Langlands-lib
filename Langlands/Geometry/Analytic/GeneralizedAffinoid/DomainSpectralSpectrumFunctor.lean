@@ -55,8 +55,8 @@ def spectrumFunctor :
 theorem spectrumFunctor_obj_apply (X : DomainSpectralSpace K G)
     (g : G) (x : BanachSpectrum X.unop.obj.V) (a : X.unop.obj.V) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom (((spectrumFunctor).obj X).obj.ρ g) x) a =
-        x ((X.unop.actionAut g).inv.toAlgHom a) := rfl
+      (ConcreteCategory.hom (((spectrumFunctor).obj X).obj.ρ g).asHom x) a =
+        x ((X.unop.actionAut g).asIso.inv.toAlgHom a) := rfl
 
 @[simp]
 theorem spectrumFunctor_map_apply {X Y : DomainSpectralSpace K G}

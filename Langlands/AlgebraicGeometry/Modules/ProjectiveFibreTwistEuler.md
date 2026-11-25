@@ -1,7 +1,5 @@
 # Euler characteristics of twists on fibres are polynomials
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProjectiveFibreTwistEuler` (namespace
 `Langlands.AlgebraicGeometry.Modules.FibreTwist`) proves the content of clause 3 of
 `ProjectiveFibreTwistCohomologyStatement`.

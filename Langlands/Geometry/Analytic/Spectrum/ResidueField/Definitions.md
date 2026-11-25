@@ -1,7 +1,5 @@
 # Construction of completed residue fields
 
-Author: Worker 36.
-
 For a bounded multiplicative spectrum point x of a normed commutative
 algebra A over an ultrametric normed field K, these definitions construct
 its completed residue field and a bounded K-algebra map from A into it.

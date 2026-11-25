@@ -51,8 +51,8 @@ The original source is Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin–Selberg Convolutions* (1983), registered as
 `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 486 visually reread printed page 433 while implementing this
-helper, after reading the surrounding printed pages 432–436.
+Printed page 433 was reread visually for this helper, after the
+surrounding printed pages 432–436 were read.
 The generic quotient homeomorphism and measure argument are internal
 formal packaging of its change of variables. This helper does not
 identify the initial scalar model coefficient with formula (4), and

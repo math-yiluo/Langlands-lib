@@ -40,7 +40,7 @@ def pullbackDerivedSectionsFunctor :
 /-- Each group element acts by derived geometric pullback followed by the
 derived map of its coefficient structure morphism. -/
 theorem pullbackDerivedSectionsFunctor_obj_ρ (F : EquivariantSheaf R ρ) (g : G) :
-    ((pullbackDerivedSectionsFunctor R ρ).obj F).ρ g =
+    (((pullbackDerivedSectionsFunctor R ρ).obj F).ρ g).asHom =
       (EtalePullback.derivedSectionsMap (aut ρ g).hom R).app F.obj ≫
         (EtaleDerivedSectionsPlus.derivedSections Y R).map (F.act g) := rfl
 
@@ -56,7 +56,7 @@ def pullbackDerivedHomologyIso (F : EquivariantSheaf R ρ) (q : ℕ) :
           (derivedSectionsMapWithCoefficients (aut ρ g).hom R (F.act g)) ≫
           (EtaleDerivedSectionsPlus.homologyNatIso Y R q).hom.app F.obj =
         (EtaleDerivedSectionsPlus.homologyNatIso Y R q).hom.app F.obj ≫
-          (pullbackCohomologyAction R ρ F q).ρ g
+          ((pullbackCohomologyAction R ρ F q).ρ g).asHom
       rw [pullbackCohomologyAction_ρ]
       exact derivedSectionsMapWithCoefficients_homology (aut ρ g).hom R (F.act g) q)
 

@@ -2,8 +2,7 @@
 
 `unramifiedTwistedChamberQuotient` proves the published proposition
 `Langlands.Geometry.Building.UnramifiedTwistedChamberQuotientStatement.{u}` exactly, at an
-arbitrary universe `u`, with no added hypothesis. The statement's Lean/Markdown pair and
-everything it imports are unchanged.
+arbitrary universe `u`, with no added hypothesis.
 
 ## Route
 
@@ -22,7 +21,7 @@ The proof is a one-line application of two published Library theorems.
    published Galois facet results. It then assembles `HasFiniteFieldChamberQuotient` from the
    transitivity and kernel clauses of the residue quotient statement.
 2. The published theorem `unramifiedTwistedResidueQuotient` (module
-   `Langlands.Geometry.Building.UnramifiedTwistedResidueQuotientProof`, Task 6572) proves
+   `Langlands.Geometry.Building.UnramifiedTwistedResidueQuotientProof`) proves
    `UnramifiedTwistedResidueQuotientStatement.{u}` unconditionally.
 
 Applying the first to the second gives the target. The mathematical content is in those two

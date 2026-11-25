@@ -169,7 +169,8 @@ classification properties.
 The family and class laws hold over arbitrary schemes without flatness or
 reducedness assumptions. The dual equations remain conditional on the named
 Picard propositions and actual dual existence. This module does not prove
-those propositions or existence hypotheses. It does not yet lift these
+those propositions or existence hypotheses. It does not lift these
 scheme equations to every choice of dual evaluation data, prove polarized
 multiplier coherence, construct Harris PEL representability or scheme levels,
-or perform coefficient descent. Those remain separate steps of the host task.
+or perform coefficient descent. Those are separate steps toward varying-base
+polarized moduli, not part of this module.

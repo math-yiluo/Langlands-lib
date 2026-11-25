@@ -1,7 +1,5 @@
 # The sum of normal-subgroup character spaces
 
-Worker 1228.
-
 For a normal subgroup represented by a monomorphism, conjugation by an ambient
 base point gives an actual automorphism of the subgroup. This construction uses
 the published normalized-conjugation morphism and its naturality, followed by
@@ -25,5 +23,5 @@ locally of finite type, the rational-point stability detector makes any split
 coordinates of this sum invariant on all scheme tests. The subgroup is not
 assumed smooth or reduced. This is an internal derivation from the published
 normalization, actual representation, character-space, and rational-point
-detection interfaces. It does not yet construct the restricted representation,
+detection interfaces. It does not construct the restricted representation,
 prove its character-space spanning, cancel a character, or construct a quotient.

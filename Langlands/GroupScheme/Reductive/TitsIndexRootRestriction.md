@@ -1,6 +1,6 @@
 # Restricting absolute weights in an actual Tits index
 
-This internal derived unit works over an arbitrary field `K : Type u`,
+This internal derived module works over an arbitrary field `K : Type u`,
 with the affine and locally finite type hypotheses of `TitsIndexData G`.
 It uses the actual root datum of the supplied pinning and the actual
 maximal split torus. It introduces no classification or local arithmetic

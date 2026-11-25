@@ -110,9 +110,9 @@ glued inverse.
 
 ## Scope retained
 
-This unit establishes an actual all-test representing equivalence for the
+This module establishes an actual all-test representing equivalence for the
 displayed projective-immersion inputs. It does not prove finite type,
 separatedness or quasi-projectivity of `G`, construct arithmetic models,
 identify the local-field or adelic topologies, or construct the
-finite-extension decompositions of the actual adelic rings. These remain
-separate obligations of Example 4.2 and the whole-paper task.
+finite-extension decompositions of the actual adelic rings. These parts of
+Example 4.2 and of the whole paper are not part of this module.

@@ -1,6 +1,6 @@
 # Averaging equivariant linear maps over a finite quotient
 
-Author: Worker 1709. Module
+Module
 `Langlands.Representation.CompactCoefficient.FiniteQuotientAveraging`, namespace
 `Langlands.FiniteQuotientAveraging`.
 

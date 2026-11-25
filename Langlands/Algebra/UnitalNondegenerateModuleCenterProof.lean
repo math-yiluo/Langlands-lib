@@ -37,8 +37,8 @@ def scalarHom (z : Subring.center A) (M : NondegenerateModuleCat.{uA, uM} A) :
 
 /-- Multiplication by a central element, as an element of the categorical centre. -/
 def scalarCenter (z : Subring.center A) : NondegenerateModuleCenter.{uA, uM} A where
-  app M := ObjectProperty.homMk (scalarHom z M)
-  naturality M N f := by
+  asHom.app M := ObjectProperty.homMk (scalarHom z M)
+  asHom.naturality M N f := by
     apply ObjectProperty.hom_ext
     apply NonUnitalModuleHom.ext
     intro m

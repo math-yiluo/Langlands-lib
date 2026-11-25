@@ -1,7 +1,7 @@
 # Proof of the rational geometric-lemma K0 expansion
 
 Module: `Langlands.Representation.Aubert.General.RationalGeometricK0Expansion`,
-namespace `Langlands.Aubert.General.RationalPointFamily`. Author: Worker 4021.
+namespace `Langlands.Aubert.General.RationalPointFamily`.
 
 `rationalGeometricK0Expansion : RationalGeometricK0ExpansionStatement.{u, v}`
 proves the published proposition
@@ -45,9 +45,8 @@ rationalGeometricK0Expansion_of_standardParabolicPoints.{u, v}
   including the indexing `W_J \ W / W_K ≃ P_J(k) \ G(k) / P_K(k)` of parabolic
   double cosets by normalizer points.
 
-The two module pairs `RationalGeometricEpsilonBalance` and
-`RationalGeometricK0Assembly` were accepted in candidate
-`e2fd2fa3-87f4-473e-9cb2-68e1dea097b2`. This module only composes them with the
+This module only composes the two module pairs
+`RationalGeometricEpsilonBalance` and `RationalGeometricK0Assembly` with the
 published points theorem.
 
 ## The argument behind the composed declarations

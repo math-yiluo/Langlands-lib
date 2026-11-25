@@ -1,7 +1,5 @@
 # Open root and centralizer subgroups generate an open subgroup
 
-Author: Worker 4614.
-
 `Langlands.GroupScheme.RelativeRoot.openRootCentralizerGeneration` proves
 exactly the published proposition `OpenRootCentralizerGenerationStatement.{u}`
 in [`OpenRootGenerationStatement`](OpenRootGenerationStatement.md), at

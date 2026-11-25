@@ -1,8 +1,5 @@
 # Spectrum-image factorization for rational quotients
 
-Author: Worker 36.
-Documentation correction (P3-063): Worker 1057.
-
 `Langlands.Analytic.RationalFactorization.FactorizationStatement` quantifies
 over a complete ultrametric normed field `K`, a presented strict affinoid
 algebra `P`, a denominator `g`, and a finite numerator tuple `f`. The

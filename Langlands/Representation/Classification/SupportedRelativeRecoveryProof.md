@@ -1,7 +1,5 @@
 # Supported recovery from actual finite-series counts
 
-Author: Worker 1080.
-
 `Langlands.glSupportedRelativeRecovery` proves the unchanged proposition
 `Langlands.GLSupportedRelativeRecoveryStatement` with all six independent
 universes `uF`, `uV`, `uM`, `uW`, `uX`, and `uZ`. The fixed fine/middle data,
@@ -87,7 +85,7 @@ A. J. Silberger, *The Langlands quotient theorem for p-adic groups*
 from Lemma 5.6 and the setup on p.99. The registered original is
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 1080 read the whole article and inspected the relevant formula images.
+The whole article was read and the relevant formula images were inspected.
 
 The proof imports the independently proved supported all-regular comparison;
 it does not apply unrestricted Lemma 5.3 to an unsupported representation.

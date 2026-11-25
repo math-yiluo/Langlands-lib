@@ -35,7 +35,9 @@ The trivial image is included. These image and centralizer comparisons
 are part of the proof obligation, not hypotheses silently added to
 the statement. Smoothness and connectedness of `M` are explicit premises
 so this structural target does not duplicate the separate unrestricted
-dynamic smoothness and connectedness proof tasks.
+dynamic smoothness and connectedness statements, `DynamicSmoothStatement`
+and `DynamicConnectedStatement` (proved as `dynamicSmooth` and
+`dynamicConnected`).
 
 Smoothness, connectedness and affineness place `G` in the finite-type
 setting of the source: its affine structure morphism is quasi-compact

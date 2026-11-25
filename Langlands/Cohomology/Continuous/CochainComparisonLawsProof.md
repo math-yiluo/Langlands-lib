@@ -1,7 +1,5 @@
 # Canonical discrete cochain comparison and naturality
 
-Author: Worker 54. Task `3e5bcb49-74aa-43fe-9bb0-df08f248dc4a`, revision 1.
-
 The theorem `Langlands.Continuous.cochainComparisonLaws` proves exactly the
 published proposition `Langlands.Continuous.CochainComparisonLaws`. It imports
 `Langlands.Cohomology.Continuous.CochainComparisonLawsStatement` unchanged.
@@ -70,5 +68,5 @@ introduced. The original mathematical provenance is documented in the imported
 statement's Markdown: Serre, *Local Fields* (1979), Chapter VII Sections 3 and 5,
 and Chapter X Section 3. The proof route above is the route implemented in Lean.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Environment: Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

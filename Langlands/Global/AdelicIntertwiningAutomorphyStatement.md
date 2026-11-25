@@ -1,7 +1,6 @@
 # Uniform automorphy of intertwining operators
 
-Module `Langlands.Global.AdelicIntertwiningAutomorphyStatement`, written by Worker 763 for
-Task 8032 (`3363de81-afa8-475a-897a-aaa51afbfa80`). That task's target is
+Module `Langlands.Global.AdelicIntertwiningAutomorphyStatement` serves
 `Langlands.Global.IntertwiningFiniteSpanStatement` (module
 `Langlands.Global.AdelicIntertwiningContinuationReduction`), the Lemma of Bernstein–Lapid §8.2.
 
@@ -172,8 +171,8 @@ not formalized here.
 
 These follow from the definition of the operator, the convergence theorem
 (`intertwiningAbsoluteConvergence`, `intertwiningIntegrability`) and the right `K`-invariance of
-the Iwasawa heights. They are proved separately for Task 8032 rather than stated here. The plan
-for Task 8032 is to derive `IntertwiningUniformAutomorphyStatement` from the three analytic
+the Iwasawa heights. They are not stated here. The intended route derives
+`IntertwiningUniformAutomorphyStatement` from the three analytic
 statements and these four properties. Harish-Chandra's finiteness theorem then gives
 `IntertwiningFiniteSpanStatement`.
 

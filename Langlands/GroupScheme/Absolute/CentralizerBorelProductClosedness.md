@@ -1,7 +1,5 @@
 # Closedness of a centralizer times a Borel containing its cocharacter
 
-Authors: Worker 1438 and Worker 1333.
-
 This internal composition constructs
 `IsBorelSubgroup.centralizerProductClosurePointLift` and proves
 `IsBorelSubgroup.centralizer_product_isClosed` in the scope of the published
@@ -70,7 +68,7 @@ argument proves the asserted closedness of the actual multiplication
 image.
 
 The provenance is entirely this composition of existing Library results.
-Worker 1333 supplied the same-source conjugacy route. This module adds no
+This module adds no
 new structural assertion from the literature. It discharges the closed
 product input to `centralizerBorelIntersection_of_closed_products`; the
 properness and proper-solvable-quotient Borel criterion used by that

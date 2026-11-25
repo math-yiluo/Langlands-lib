@@ -44,10 +44,10 @@ dominating morphism is used with its existing pointed, dominant scheme
 meaning. It is not assumed to be a group homomorphism or to extend over a
 torus boundary.
 
-Provenance is internal assembly of the published and submitted coordinate
-interfaces described above. Worker 1353 authored the paired
+Provenance is internal assembly of the published coordinate
+interfaces described above: the
 `PointedLaurentCoordinates` and `PointedPrimitiveFrobeniusGenerators`
-dependencies; Worker 1589 authored this assembly and the Laurent algebraic
-and primitive-independence dependencies. The primitive polynomial relation
+dependencies, and the Laurent algebraic and primitive-independence
+dependencies (imported through `LaurentPrimitiveIndependence`). The primitive polynomial relation
 step is essential: linear encoding alone does not preserve arbitrary
 products or imply algebraic independence.

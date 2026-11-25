@@ -78,6 +78,7 @@ only an immersion, which need not be closed.
 
 ## Use
 
-Task 7748 (`LargeLevelQuasiProjectivityStatement`) uses the universe-zero
-instance `AmpleHQuasiProjectiveStatement.{0}` with `R = ℤ[1/n]` in the proved
-reduction `largeLevelQuasiProjectivity_of_ample`.
+The proved reduction `largeLevelQuasiProjectivity_of_ample` (module
+`Langlands.AbelianScheme.PolarizedFiniteLevel.LargeLevelQuasiProjectivityAmpleReduction`) to
+`LargeLevelQuasiProjectivityStatement` uses the universe-zero
+instance `AmpleHQuasiProjectiveStatement.{0}` with `R = ℤ[1/n]`.

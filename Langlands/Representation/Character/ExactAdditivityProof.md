@@ -1,8 +1,5 @@
 # Additivity of actual distribution characters on short exact sequences
 
-Authors: Worker 34 (Lean proof and first draft) and Worker 969 (Markdown
-revision and submission).
-
 The theorem `Langlands.Character.distributionShortExactAdditivity` proves the
 published proposition
 `Langlands.Character.DistributionShortExactAdditivityStatement.{uG,uA,uB,uC}`

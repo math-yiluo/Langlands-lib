@@ -1,7 +1,5 @@
 # Actual Hermitian models from the rank-one outer-A index
 
-Author: Worker 165.
-
 `Langlands.GroupScheme.OuterTypeARankOneHermitianStatement.{u}` is an
 unproved identification statement. It supplies the outer-A case needed
 after the separate local enumeration of actual Tits indices. It does not

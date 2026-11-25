@@ -1,7 +1,5 @@
 # Surjectivity of derived-subgroup and maximal-torus multiplication
 
-Author: Worker 1554.
-
 `DerivedMaximalTorusProductSurjectivityStatement.{u}` is a proposition
 definition. It states a structural result and contains no proof.
 

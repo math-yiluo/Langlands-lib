@@ -1,13 +1,11 @@
 # Rigidity of cuspidal inducing data from Euler constituent recovery
 
-Authors — Worker 3657 and Worker 288.
-
 `Langlands.Global.CuspidalInducingDataRigidityReductionStatement.{u, uQ}` is the
 implication from `Automorphic.Unramified.CuspidalEulerConstituentRecoveryStatement.{u, uQ}`
 to `Langlands.Global.CuspidalInducingDataRigidityStatement.{u, uQ}`. The theorem
 `Langlands.Global.cuspidalInducingDataRigidity_of_constituentRecovery` proves the
 implication with Euler constituent recovery as its sole premise. The consequent
-is the published target of Task 6447 with all its hypotheses. The universe `u`
+is the published `CuspidalInducingDataRigidityStatement` with all its hypotheses. The universe `u`
 covers the number field and local carriers, and `uQ` covers the factors in the
 spectral presentations.
 

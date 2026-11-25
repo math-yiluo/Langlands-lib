@@ -7,7 +7,7 @@ This module defines the lower Verma modules `M⁻(λ)` of `𝔤𝔩_n(ℂ)`. It 
 standard facts about them and about the universal enveloping algebra `U = U(𝔤𝔩_n(ℂ))`, plus
 their conjunction. These are the inputs of the Bernstein–Gelfand comparison between
 Harish-Chandra bimodules and category `𝒪` (Bernstein–Gelfand 1980, Theorem 5.9 and its proof
-in 5.10). They were introduced for Task 7065, which needs Casselman's nonvanishing `V ≠ 𝔫V` for
+in 5.10). They were introduced for the proof of Casselman's theorem for `(𝔤𝔩_n(ℂ), U(n))`-modules, which needs Casselman's nonvanishing `V ≠ 𝔫V` for
 irreducible admissible `(𝔤𝔩_n(ℂ), U(n))`-modules. The planned proof sends such a module, viewed
 as a Harish-Chandra bimodule, to `V ⊗_U M⁻(λ)` and shows this is nonzero. Nothing in this
 module is proved. Every declaration is a `def` or `abbrev`, and each `…Statement` is a

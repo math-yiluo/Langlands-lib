@@ -1,13 +1,13 @@
 # Renard VI.4.1–VI.4.5: the supercuspidal block and its center
 
-Worker 6, 7 November 2026. This focused map supplements the
+This focused map, dated 7 November 2026, supplements the
 [whole-book ledger](coverage.md) and the
 [supercuspidal induction and finite-length map](supercuspidal-finite-length-progress.md).
-It records twelve verified statement publications by Worker 6 for VI.4,
-the proof tasks for them, the published proofs of three of them by Worker
-1789 and the published conditional reductions by other workers. None of the
-twelve publications proves a proposition. At Library `eec7519b`, the other
-nine statements have no proof. The map is not a complete inventory of VI.4,
+It records twelve statements published for VI.4, the published proofs of
+three of them and the published conditional reductions. None of the twelve
+statement modules proves a proposition. At Library `eec7519b`, the other nine
+statements had no proof; the Library now proves eight of the twelve (see
+[Status in the Library](#status-in-the-library)). The map is not a complete inventory of VI.4,
 and supplies no new Lean proof.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -16,34 +16,31 @@ French version dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 PDF page numbers are one-based and equal printed page numbers plus six.
 The source passages and the paired Lean and Markdown files were read for the
-claims below. By SHA256, all twenty-four primary files equal their frozen
-accepted files, Worker 6's workspace files and the files at Library
-`eec7519b852f9097606377425625fd5794c87f71`. A fresh Lean check at that
-Library of fifty modules, including these twelve (check
-`6459f600-a711-4494-a5dc-27d2639384bc`), had zero diagnostics.
+claims below. By SHA256, all twenty-four primary files equal their first published
+versions and the files at Library
+`eec7519b852f9097606377425625fd5794c87f71`. A Lean check at that
+Library of fifty modules, including these twelve, had zero diagnostics.
 
-## Verified publications
+## Statements in the Library
 
-Each receipt below has `accepted = true`, `public = true`, an accepted
-`lean.statement@1` machine validation, an independent semantic approval with
-no review qualification and a published integration. A statement receipt
-does not prove its proposition. All declarations are in namespace
+Each statement below was checked by a Lake build and for declaration kind. A
+statement does not prove its proposition. All declarations are in namespace
 `Langlands.CuspidalSupport` under `Langlands/Representation/CuspidalSupport/`.
 
-| Pair and exact declaration | Candidate, independent review and publication |
+| Pair and exact declaration | First appeared at Library commit |
 | --- | --- |
-| [RationalSummandSmallProgeneratorStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandSmallProgeneratorStatement.md) | Statement `b7460a21-0d96-40d1-ac54-0280318b052d`; Reviewer 16438, review `5212f319-f534-4f94-9e84-6d691d45f785`; machine `44311bfa-0dc9-4dd1-8039-45bab42dbb3e`; integration `1b8da722e53a445f9b1731ffe3b11bf7`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
-| [RationalSummandHomEquivalenceStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandHomEquivalenceStatement.md) | Statement `1ff070b2-41a0-4bed-a8f4-a5d45ec83cef`; Reviewer 16439, review `1ddad616-88ba-400b-977a-f5b9c24ad613`; machine `d473fb32-9018-4e56-a2f0-257c30174164`; integration `b7b38daf53aa438395b7716f63d115e0`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
-| [RationalNormKernelHeckeStatement](../../Langlands/Representation/CuspidalSupport/RationalNormKernelHeckeStatement.md) | Statement `d02b789d-c795-4894-a239-5fa9c9a5332b`; Reviewer 16444, review `3a1f6432-9966-487c-8cac-49908ce798a2`; machine `94d5c26a-e289-48d6-9e47-66be341a3e81`; integration `18158e0343ef4769959ad9142722bcec`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
-| [RationalNormKernelEndSeparationStatement](../../Langlands/Representation/CuspidalSupport/RationalNormKernelEndSeparationStatement.md) | Statement `bdd4f35e-f82b-403c-b91e-4b53087e2e70`; Reviewer 16446, review `8c8eddc3-d546-4e9f-8d09-3dfd9372d8c0`; machine `0aed16f6-7512-44b5-935b-92b9b9913d0b`; integration `10fef6ecf9f94b29a172cf42e6caef93`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
-| [RationalNormKernelEndDomainStatement](../../Langlands/Representation/CuspidalSupport/RationalNormKernelEndDomainStatement.md) | Statement `4ac10ae2-0fd2-498a-9b23-7c36d464eadf`; Reviewer 16447, review `9c064310-fc70-4de0-b00d-4365915d16ea`; machine `734faad6-3c37-4650-9cd6-d9abdf2713dc`; integration `281de72ffbf64641a7d98d05a72e8312`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
-| [RationalSummandEndCommutativeStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandEndCommutativeStatement.md) | Statement `4f8cbd12-5159-4485-bf7d-b0904413515b`; Reviewer 16448, review `3d0d0f20-8530-4cc6-a5dd-c3507fcdd1c5`; machine `b34b20b8-9486-41f4-9313-58c00f8bef27`; integration `1db9d835dcd84e398adce6763c9a5d3c`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
-| [RationalSummandEndCenterStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandEndCenterStatement.md) | Statement `beb8c173-4491-47d8-9714-4f41130a4043`; Reviewer 16452, review `64a201e0-d84a-424a-9550-13a138962129`; machine `d46afc66-00c2-47e8-8f4e-140726cf5651`; integration `76c83d21183d4c5b86d0e022ea46879b`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
-| [RationalSummandEndNoetherianStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandEndNoetherianStatement.md) | Statement `a6cb06b3-1154-4c29-837f-cca72bca147e`; Reviewer 16497, review `cac1a762-600e-4ef3-a2a9-76b345ef3b5f`; machine `11462a10-848b-46f0-8102-59aa82115fc7`; integration `72bc6f080075476eb37442408e883275`, commit `6f182f920309bbe9e9e43bd7181d7e25d5c02acd`. |
-| [RationalSummandCenterGroupAlgebraStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandCenterGroupAlgebraStatement.md) | Statement `7f4e9425-8096-4b60-86e9-434f2f7ca2a0`; Reviewer 16528, review `83187ad0-c1c8-412b-9624-e8295ab36b8c`; machine `c87264aa-2779-45cb-9839-4919aca6b1e5`; integration `79548ab4256d4bdfb2baa75c52b7b7f4`, commit `6f75b7b37e52f82517ed4cc6d73e4d3511317934`. |
-| [RationalSummandBlockCenterStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandBlockCenterStatement.md) | Statement `59881e52-be22-4a0e-bc4e-46242ad7a9dc`; Reviewer 16621, review `ea7f8efc-f5fd-4181-b8c6-118b7c9a5c0b`; machine `b4e2db8e-e07c-4505-b401-1512c7f13e05`; integration `c5a1c0e2932348f1a8575da0f7f2e5c1`, commit `6813e35ad82cbbdded7064b624e6041b61e40b74`. |
-| [RationalInertiaBlockIndecomposableStatement](../../Langlands/Representation/CuspidalSupport/RationalInertiaBlockIndecomposableStatement.md) | Statement `5582e3d7-daa9-4f80-a5a4-5c4b0a552c82`; Reviewer 16639, review `fcc82d65-77df-4f8d-b2d3-3c70ada02c12`; machine `cab52c00-2103-424f-a466-5f191d343af7`; integration `0dd7436100da436db8c3e4bd4962efc2`, commit `6813e35ad82cbbdded7064b624e6041b61e40b74`. |
-| [RationalInertiaBlockCenterEvaluationStatement](../../Langlands/Representation/CuspidalSupport/RationalInertiaBlockCenterEvaluationStatement.md) | Statement `4f025e34-0609-4756-95c4-0d2246eb7d1a`; Reviewer 16695, review `a30f2cbc-454e-4c61-8fde-2f7c00975f7b`; machine `32bb591c-a52a-49e3-8181-7e48d1c3d271`; integration `808ee191e3a844638985029fd734ab1a`, commit `6813e35ad82cbbdded7064b624e6041b61e40b74`. |
+| [RationalSummandSmallProgeneratorStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandSmallProgeneratorStatement.md) | `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` |
+| [RationalSummandHomEquivalenceStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandHomEquivalenceStatement.md) | `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` |
+| [RationalNormKernelHeckeStatement](../../Langlands/Representation/CuspidalSupport/RationalNormKernelHeckeStatement.md) | `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` |
+| [RationalNormKernelEndSeparationStatement](../../Langlands/Representation/CuspidalSupport/RationalNormKernelEndSeparationStatement.md) | `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` |
+| [RationalNormKernelEndDomainStatement](../../Langlands/Representation/CuspidalSupport/RationalNormKernelEndDomainStatement.md) | `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` |
+| [RationalSummandEndCommutativeStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandEndCommutativeStatement.md) | `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` |
+| [RationalSummandEndCenterStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandEndCenterStatement.md) | `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` |
+| [RationalSummandEndNoetherianStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandEndNoetherianStatement.md) | `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` |
+| [RationalSummandCenterGroupAlgebraStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandCenterGroupAlgebraStatement.md) | `6f75b7b37e52f82517ed4cc6d73e4d3511317934` |
+| [RationalSummandBlockCenterStatement](../../Langlands/Representation/CuspidalSupport/RationalSummandBlockCenterStatement.md) | `6813e35ad82cbbdded7064b624e6041b61e40b74` |
+| [RationalInertiaBlockIndecomposableStatement](../../Langlands/Representation/CuspidalSupport/RationalInertiaBlockIndecomposableStatement.md) | `6813e35ad82cbbdded7064b624e6041b61e40b74` |
+| [RationalInertiaBlockCenterEvaluationStatement](../../Langlands/Representation/CuspidalSupport/RationalInertiaBlockCenterEvaluationStatement.md) | `6813e35ad82cbbdded7064b624e6041b61e40b74` |
 
 ## Common setting
 
@@ -71,7 +68,7 @@ with the subspace topology.
   nonarchimedean group property and Hausdorffness of `H`. `π` is
   irreducible and cuspidal in the sense of the published
   `Aubert.General.IsCuspidal`: every proper standard normalized Jacquet
-  module vanishes. Worker 1276's
+  module vanishes. The
   `isCuspidal_of_all_represented_parabolics_of_standardCocharacter`
   (module `Langlands.Representation.Aubert.General.RepresentedStandardCuspidality`)
   derives this exact `IsCuspidal` from vanishing along all proper
@@ -99,7 +96,7 @@ printed pp.266–267 / PDF pp.272–273.
   `IsRationalInertiaSmallProgenerator`: it lies in the block, lifts along
   epimorphisms of the block, has a faithful integer Hom functor, the block
   has coproducts indexed by `Type (max uF uV)`, and the Hom functor
-  preserves them. The predicate is Worker 1758's
+  preserves them. The predicate is the
   `IsRationalNormKernelSmallProgenerator` with `Π₁` replaced by an
   arbitrary object.
 - `RationalSummandHomEquivalenceStatement` (Theorem): `Π` lies in the block,
@@ -109,12 +106,11 @@ printed pp.266–267 / PDF pp.272–273.
   neither assumed nor asserted to be abelian.
 
 The alternative progenerator `Π₁ = ind_{⁰G}^G(Res π)` of the Remark after
-the Proposition is the subject of Worker 1758's
+the Proposition is the subject of the
 `RationalUniversalSmallProgeneratorStatement` (not proved) and
 `RationalUniversalProgeneratorComparisonStatement`, the isomorphism of
-`Π₁` with the unramified group-algebra tensor. Worker 1595's
-`rationalUniversalProgeneratorComparison` proves the comparison. The
-receipts are in the
+`Π₁` with the unramified group-algebra tensor. The
+`rationalUniversalProgeneratorComparison` proves the comparison. Their entries in the Library are listed in the
 [algebraic-families map](algebraic-families-progress.md) and the
 prerequisite table of the
 [uniform-compression map](uniform-compression-progress.md).
@@ -191,40 +187,40 @@ PDF pp.165–166; A.IX and A.X, printed pp.268–269 / PDF pp.274–275.
   A.IX (`Renard.IsCategoryDecomposition`), one factor has only zero
   objects.
 
-## Proof tasks
+## Status in the Library
 
-| Targets | Proof task |
+| Statement | In the Library |
 | --- | --- |
-| The two VI.4.1 statements | `ca5fea74-6ce4-457c-9947-4427cbfdbdd8` |
-| The four VI.4.2 and VI.4.3 statements | `d1dd711e-784b-4280-aca6-84ebe3265618` |
-| The three VI.4.4 statements | `3014a47e-e58f-44f8-94da-6e973d17a1f2` |
-| The three VI.4.5 statements | `6b7a3e50-1d26-42c0-8246-ae6d1514d6e8` |
+| `RationalNormKernelHeckeStatement` | proved, `rationalNormKernelHecke_equiv` (`RationalNormKernelHeckeProof.lean`) |
+| `RationalNormKernelEndSeparationStatement` | proved, `rationalNormKernelEnd_separation` (`RationalNormKernelEndSeparationProof.lean`) |
+| `RationalNormKernelEndDomainStatement` | proved, `rationalNormKernelEnd_isDomain` (`RationalNormKernelEndDomainProof.lean`) |
+| `RationalSummandEndCommutativeStatement` | proved, `rationalSummandEnd_commutative` (`RationalSummandEndCommutativeProof.lean`) |
+| `RationalSummandEndCenterStatement` | proved, `rationalSummandEndCenter` (`RationalSummandEndCenterProof.lean`) |
+| `RationalSummandEndNoetherianStatement` | proved, `rationalSummandEndNoetherian` (`RationalSummandEndNoetherianProof.lean`) |
+| `RationalSummandCenterGroupAlgebraStatement` | proved, `rationalSummandCenterGroupAlgebra` (`RationalSummandCenterGroupAlgebraProof.lean`) |
+| `RationalInertiaBlockIndecomposableStatement` | proved, `rationalInertiaBlockIndecomposable` (`RationalInertiaBlockIndecomposableProof.lean`) |
+| `RationalSummandSmallProgeneratorStatement` | conditional reductions only (below) |
+| `RationalSummandHomEquivalenceStatement` | conditional reductions only (below) |
+| `RationalSummandBlockCenterStatement` | conditional reduction only, `rationalSummandBlockCenter_of_homEquivalence` (`RationalBlockCenterReduction.lean`) |
+| `RationalInertiaBlockCenterEvaluationStatement` | conditional reduction only, `rationalInertiaBlockCenterEvaluation_of_inputs` (`RationalInertiaBlockCenterEvaluationReduction.lean`) |
 
-Worker 6 published these tasks. Related tasks of other workers: the
-statement task `3e43c59a-2f05-433e-a739-54f50fcea0d3` of the VI.4.1
-norm-kernel model and progenerator comparison; the proof tasks
-`0bb65e53-06b7-4274-92ba-fee1666298eb` of the comparison and
-`0ba788d6-b9d9-4a76-a017-972f8cad288f` of
-`RationalUniversalSmallProgeneratorStatement`; and the VI.3.2 proof tasks
-`04bc1186-999e-4a8b-8ee9-896710865f63` (i),
-`5c063810-e264-4d0d-95b4-0da35bdfedf5` (ii) and
-`9e053e00-35e1-4121-972e-e1653dc830c3` (iii). A task identifier locates
-work; it is not a proof receipt or an ownership change.
+All files are in `Langlands/Representation/CuspidalSupport/`. The related
+`RationalUniversalSmallProgeneratorStatement` also has only a conditional
+reduction (`rationalUniversalSmallProgenerator_of_specialVertexInputs_of_restriction`).
 
 ## Published proofs
 
-Worker 1789 proved three of the statements on task `d1dd711e`. Each theorem
+Three of the statements had published proofs at the date of this map. Each theorem
 has the exact published statement as its type, with both universes
 arbitrary. All three proofs are in namespace `Langlands.CuspidalSupport`.
 
-| Statement | Theorem and proof module | Proof candidate, independent review and publication |
+| Statement | Theorem and proof module | First appeared at Library commit |
 | --- | --- | --- |
-| `RationalNormKernelHeckeStatement` (VI.4.2) | `rationalNormKernelHecke_equiv`, `RationalNormKernelHeckeProof` | `e176e28c-c97d-48d7-8e3e-46d2918f11a3`; Reviewer 17311, review `ab8746b6-73da-4e07-a001-d3e7ba469bbf`; integration `903ef7e42a3e45be95d45ff09e6427e2`, commit `d82893a7de0b168873a15c6c7b0a731deb27aa23`. |
-| `RationalNormKernelEndDomainStatement` (VI.4.3, Corollary (i)) | `rationalNormKernelEnd_isDomain`, `RationalNormKernelEndDomainProof` | `a25b96df-c3fc-43cd-b2f2-128e4b704a46`; Reviewer 17346, review `48ed33a9-e6ec-4f23-9b83-7d5efb71cf02`; integration `dda86aecedff433a93a79413ce8da707`, commit `d82893a7de0b168873a15c6c7b0a731deb27aa23`. |
-| `RationalNormKernelEndSeparationStatement` (VI.4.3, Lemma) | `rationalNormKernelEnd_separation`, `RationalNormKernelEndSeparationProof` | `f5226a42-bb3c-4e93-a019-04d4e5419b27`; Reviewer 17438, review `9797c6b7-1b2e-4976-8fde-553951744fcc`; integration `4b34dea8b1354fea8a91120c23382ecb`, commit `93c6a3c332d9b4c0bdda5f4026a5865fb43cfa08`. |
+| `RationalNormKernelHeckeStatement` (VI.4.2) | `rationalNormKernelHecke_equiv`, `RationalNormKernelHeckeProof` | `d82893a7de0b168873a15c6c7b0a731deb27aa23` |
+| `RationalNormKernelEndDomainStatement` (VI.4.3, Corollary (i)) | `rationalNormKernelEnd_isDomain`, `RationalNormKernelEndDomainProof` | `d82893a7de0b168873a15c6c7b0a731deb27aa23` |
+| `RationalNormKernelEndSeparationStatement` (VI.4.3, Lemma) | `rationalNormKernelEnd_separation`, `RationalNormKernelEndSeparationProof` | `93c6a3c332d9b4c0bdda5f4026a5865fb43cfa08` |
 
-The three proof receipts have an accepted `lean.proof@1` lake-build
-validation and no qualification. The proofs specialize Worker 1789's
+The three proofs were checked by a Lake build. They specialize the
 supporting modules `NormalSubgroupHecke`, `NormalSubgroupHeckeDomain` and
 `NormalSubgroupHeckeSeparation`. Those modules are written for an arbitrary
 topological group, an open normal subgroup `H` and an irreducible smooth
@@ -251,18 +247,18 @@ norm kernel.
   embedding of `End I` into finitely supported functions on `G(F)/⁰G`.
 
 None of the three proofs assumes admissibility or finite dimensionality of
-`ρ`, nor a supercuspidal `π`. A search of the staged and published proof
-records found no proof candidate for any of the other nine statements.
-Worker 1826's supporting module `NormalHeckeGrading` (artifact
-`56500ee3-da11-4196-a7c4-9f497b7634a2`) grades `End(ind_H^G ρ)` by a degree
-on `G` with kernel `H`, toward the VI.4.4 proofs of task `3014a47e`, using
+`ρ`, nor a supercuspidal `π`. At the date of this map no proof of
+the other nine statements had been found (for the present status see
+[Status in the Library](#status-in-the-library)). The supporting module
+`NormalHeckeGrading` grades `End(ind_H^G ρ)` by a degree
+on `G` with kernel `H`, toward the VI.4.4 proofs, using
 the abstract module `Langlands.Algebra.RankOneGradedAlgebra`. It proves none
 of the twelve statements.
 
 ## Published conditional reductions
 
-Worker 1637 published two modules for VI.4.1. Their theorems are proved
-and keep the listed premises as hypotheses.
+Two modules for VI.4.1 give conditional reductions. Their theorems are
+proved and keep the listed premises as hypotheses.
 
 | Theorem and module | Premises | Conclusion |
 | --- | --- | --- |
@@ -280,13 +276,14 @@ one.
 
 ## Remaining obligations
 
-1. Proofs of the nine statements that are not proved, through the listed
-   tasks, and of the premises of the reductions above.
+1. Proofs of the four statements the Library does not prove (see
+   [Status in the Library](#status-in-the-library)), and of the premises of
+   the reductions above.
 2. Statements of the VI.4.1.4 quasi-inverse, the right module structures
    of VI.4.2, the structure of `F_x(ρ)` and (VI.4.3.3), the VI.4.4 Lemma,
    finiteness of `X(G)(π)` and of the index of `T`, the variety
    `Irr(G)[π]` and its algebra of functions, and the comparison from
    standard to all-parabolic cuspidality.
 
-General reductive scope, positive-characteristic local fields, existing
-owners and user run controls remain unchanged.
+General reductive scope and positive-characteristic local fields remain
+unchanged.

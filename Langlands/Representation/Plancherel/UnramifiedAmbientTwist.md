@@ -1,7 +1,5 @@
 # Ambient characters acting on actual unramified induction parameters
 
-Author: Worker 359.
-
 This internal module combines the Library's unramified parameter, actual
 Levi-normalized induction and fixed compact picture with the ambient
 character transport of the standard integral. The coefficient comparison

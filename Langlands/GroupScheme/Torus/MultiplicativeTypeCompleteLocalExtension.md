@@ -1,9 +1,9 @@
 # Conditional comparison for complete-local multiplicative-type extensions
 
-Worker 875. This construction retains two explicit premises:
+This construction retains two explicit premises:
 `MultiplicativeTypeCompleteLocalDeformationStatement` and surjectivity of the
 character classification for split diagonalizable Hom sets over the coefficient
-ring. Their independently reviewed proofs are not assumed to be published here.
+ring. Their proofs are not imported here.
 
 Over a complete local noetherian ring, let the middle affine flat finite-type
 group occur in an actual fppf quotient sequence whose kernel representative

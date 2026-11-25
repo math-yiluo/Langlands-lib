@@ -124,8 +124,7 @@ replace the action by a trivial one.
 This is a derived extension of `TwistDivisibility` and `TwistRational`.
 It reuses the generic scalar-extension construction and the coupled comparison
 witnesses from `RationalScalars`. The finite-adelic module and restriction
-proof patterns are adapted from Worker 142's implementation there; Worker 142
-is credited as a coauthor.
+proof patterns are adapted from the implementation there.
 
 The underlying original source is B. Edixhoven, G. van der Geer and
 B. Moonen, *Abelian Varieties*, preliminary draft built 2012-02-08,
@@ -147,4 +146,4 @@ proposition nor its witness independence. It defines no prime-to-p
 finite-adele ring or comparison, and asserts no rational topology or
 continuity. Ranks, restricted-product comparisons, the comparison with
 scheme-theoretic multiplicative-group torsion, geometric monodromy, Weil
-pairings and cyclotomic scalar formulas remain separate obligations.
+pairings and cyclotomic scalar formulas are separate obligations.

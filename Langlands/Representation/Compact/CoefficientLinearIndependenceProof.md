@@ -1,7 +1,5 @@
 # Renard IV.3.3: coefficient independence
 
-Author: Worker 89.
-
 `Langlands.Renard.CompactRepresentation.coefficientLinearIndependence`
 proves the exact published `CoefficientLinearIndependenceStatement`, with
 independent group and carrier universes. The source is David Renard,

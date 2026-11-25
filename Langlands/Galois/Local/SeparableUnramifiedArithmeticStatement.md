@@ -1,9 +1,6 @@
 # Residue and valuation arithmetic of the separable inertia fixed field
 
-Lean and statement translation: Worker 60. Target design and original-source
-map: Worker 118.
-
-This unit defines unproved arithmetic propositions over the published
+This module defines unproved arithmetic propositions over the published
 `Langlands.Galois.Local.SeparableInertiaDefinitions`. Its only new proof is
 the short integer-ring comparison described below. That comparison does not
 prove any of the arithmetic targets.
@@ -33,9 +30,9 @@ perfect; this does not require perfectness of `F`.
 The arithmetic interpretation is that `U` is the maximal unramified extension
 inside this actual `Ω`. Finite arithmetic maximality and finite Galois
 exhaustion are the separate targets of
-`Langlands.Galois.Local.SeparableUnramifiedStatement`. This unit imports the
+`Langlands.Galois.Local.SeparableUnramifiedStatement`. This module imports the
 published construction directly, so it has no dependency on that statement
-unit or a proof of its targets.
+module or a proof of its targets.
 
 ## Exact propositions
 
@@ -147,8 +144,8 @@ the corresponding maximal-ideal and unit tests. Thus the polynomial's
 approximate-root condition and the derivative-unit condition hold in this
 finite stage. Its integer ring is complete by Serre II §2, so II §4,
 Proposition 7 lifts the simple root there. Including the root back into `B`
-gives the required Henselian lift. This is a derived route for a future proof,
-not a proof implemented by this statement unit. It does not assume that the
+gives the required Henselian lift. This is a derived route,
+not a proof implemented by this statement module. It does not assume that the
 infinite field `U` is complete.
 
 Read with Serre, *Corrections to J-P. Serre's books* (2019), registered
@@ -163,7 +160,7 @@ registered source `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256
 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`,
 §2.5(c), printed p. 88/PDF p. 119, uses the maximal unramified extension
 inside a fixed separable closure. Their setup allows more general discretely
-valued Henselian base fields; this unit states its arithmetic prerequisite
+valued Henselian base fields; this module states its arithmetic prerequisite
 only for nonarchimedean local fields. Lemma 2.5.12 and Definition 2.5.13,
 printed pp. 89–90/PDF pp. 120–121, motivate the later torus consumer and are
 not asserted here.
@@ -182,9 +179,11 @@ The only direct project import is
 `Langlands.Galois.Local.SeparableInertiaDefinitions`, reused unchanged.
 The additional Mathlib imports supply `IsAlgClosure`,
 `IsDiscreteValuationRing` and `HenselianLocalRing`.
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0
+The environment is Lean 4.34.0
 with Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-All five arithmetic targets remain proof obligations for subsequent tasks.
+All five arithmetic targets are proved together, as
+`SeparableUnramifiedArithmeticStatement`, by `separableUnramifiedArithmetic` in
+`SeparableUnramifiedArithmeticProof`.
 
 The four local instances have explicit names specific to this module so that
 combined imports retain distinct declarations. Their types, bodies and local

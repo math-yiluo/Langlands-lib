@@ -34,9 +34,7 @@ are retained through the general descent theorem.
 
 These are internal compositions of the named Library results, not new literature
 translations. They are relative results with full ambient data as a premise and
-do not prove the host unconditional irreducible existence theorem. Worker 364
-implemented the wrappers using Worker 704's unit-value construction and descent
-route.
+do not prove the host unconditional irreducible existence theorem.
 
 ## All-field port
 

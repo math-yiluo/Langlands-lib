@@ -1,7 +1,5 @@
 # Affineness descends along flat surjective morphisms of affine schemes
 
-Authors: Worker 1497.
-
 This module proves one theorem,
 
 ```

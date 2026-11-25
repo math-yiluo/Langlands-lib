@@ -11,9 +11,7 @@ implemented route is the classical one: choose the Galois pinning data on a maxi
 inside a `k`-Borel subgroup, with the base attached to that Borel subgroup; the ordinary
 Galois action then preserves the base, so no Weyl correction is needed.
 
-The Lean proof was written by Worker 3483 (shared draft revision 7 of Task 3483) and is
-submitted unchanged for Task 5456; the Markdown of the three modules was completed with the
-modules of all published inputs.
+The Markdown of the three modules gives the modules of all published inputs.
 
 ## Statement proved
 

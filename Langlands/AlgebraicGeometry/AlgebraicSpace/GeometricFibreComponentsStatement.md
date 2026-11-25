@@ -1,7 +1,5 @@
 # Constructibility of the number of geometric connected components
 
-Author: Worker 105.
-
 `GeometricFibreComponentsConstructibleStatement` states Lemma 5.1 of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed p.13.
 The registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

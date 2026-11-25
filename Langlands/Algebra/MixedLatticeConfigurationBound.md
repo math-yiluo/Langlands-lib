@@ -1,7 +1,5 @@
 # Bounded configurations with free and finite character groups
 
-Lean: Worker 57. Documentation and integration: Worker 872.
-
 The namespace `Langlands.Algebra.MixedLatticeConfiguration` extends
 the published free-lattice configuration argument to
 `Λ = (r → ℤ) × F`, where `r` and `F` are finite for the bounded

@@ -1,7 +1,5 @@
 # Haar scaling on a rational dynamic unipotent subgroup
 
-Author: Worker 184.
-
 This internal assembly proves the unchanged published proposition
 `Langlands.Aubert.General.RationalPointFamily.DynamicUnipotentHaarDeterminantStatement`
 as `dynamicUnipotentHaarDeterminant`, without additional theorem parameters.

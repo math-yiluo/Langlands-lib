@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Auxiliary lemmas for the proof of Stacks, Smoothing Ring Maps, Lemma 16.11.1 (07FG) -/
 

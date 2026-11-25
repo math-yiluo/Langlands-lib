@@ -1,6 +1,6 @@
 # Conditional adjacent factor matching assembly
 
-This internal derived module reuses the smooth objects for induction
+This module reuses the smooth objects for induction
 inside refined blocks from
 [RefinedInnerInductionObjects](../Parabolic/RefinedInnerInductionObjects.md)
 and assembles adjacent factor matching from two explicit theorem inputs.
@@ -23,7 +23,8 @@ The conclusion is the unchanged
 `AdjacentBlockSwapCuspidalInductionFactorsTheorem.{uF,uV,uW}`.
 Field, source and target carrier universes remain independent. The module
 proves neither input and supplies a conditional prerequisite, so it does
-not complete the host proof task. The length input retains its complete
+not itself prove `AdjacentBlockSwapCuspidalInductionFactorsTheorem`; that is
+done by `adjacentBlockSwapCuspidalInductionFactorsTheorem` in `AdjacentSwapProof`. The length input retains its complete
 published telescope even though this assembly uses only its finite-length
 conjunct at positive rank.
 
@@ -73,7 +74,7 @@ The final declaration applies the published
 `adjacentBlockSwap_of_canonicalProducts`. That reduction uses canonical
 cuspidal tensor factorization and actual normalized induction equivalences
 to recover the full adjacent target, including an independently sized
-target carrier. The assembly assumes neither the parent association
+target carrier. The assembly assumes neither the association
 theorem nor the cuspidal association equivalence.
 
 Provenance is internal and derived: the module composes the published

@@ -1,7 +1,6 @@
 # Inverse-transpose substitution in transformed matrix integrals
 
 Module `Langlands.Representation.GodementJacquet.InverseTransposeMatrixIntegral`.
-Author: Worker 1117.
 
 This module rewrites the transformed Godement–Jacquet matrix integral
 `Z(Φ, s, f^ι)` as an integral of `f` itself. Here `f^ι = coefficientIota f`

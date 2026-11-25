@@ -112,20 +112,21 @@ No existence of `C`, `CM`, `D` or `DM` is asserted. With
 `ChapterSevenBuildingAxiomsStatement` and `RootGroupActionAxiomStatement`
 applied to building data for `M_J` built from `DM` and `CM`, this statement
 gives the building axioms for the Levi subgroup under hypotheses on `G`
-alone, as needed for local Levi arguments such as Task 5309.
+alone, as needed for local Levi arguments such as the maximal-compact Cartan and
+standard-Levi comparison (`AvailableRenardCartanStatement`).
 
 ## Expected proof route (not prescribed)
 
-Use the published restriction results: Worker 164's
+Use the published restriction results:
 `Langlands.BruhatTits.SpecialCompact.LeviApartmentRestriction` and
 `LeviValuationRestriction` (restricted families, projection, translation
-compatibility), Worker 163's
+compatibility),
 `isOmegaCompatible_standardLevi_of_restriction` (module
 `Langlands.Representation.Plancherel.RenardLeviCentralizerCompatibility`; full
 V 6 for a restricted class and the standard Levi centralizer datum; for an
 arbitrary `CM` one also needs independence of the centralizer
 representative), and the restriction of affine roots
-(`LeviSpecialPointRestrictionStatement`, proof Task 5415). For AS 5 use
+(`LeviSpecialPointRestrictionStatement`, proved as `leviSpecialPointRestriction`). For AS 5 use
 `rootReflection` for the Levi data, the normalizer action on affine roots
 (`NormalizerAffineRootAction`), and the dimension count for the central torus
 of `M_J`.

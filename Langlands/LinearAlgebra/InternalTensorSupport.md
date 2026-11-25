@@ -1,6 +1,6 @@
 # Internal direct sums and support after scalar extension
 
-Worker 416. This internal linear algebra lemma compares two internal direct sum
+This internal linear algebra lemma compares two internal direct sum
 decompositions over fields `k` and `K`. A scalar-extension linear equivalence
 from `K ⊗[k] V` to `W` is assumed to send every pure vector from the component
 `A i` into `B (f i)`, where the index map `f` is injective.

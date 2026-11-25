@@ -1,8 +1,7 @@
 # The quasi-split unitary group `U(1,1)` has split rank one over `F`: statement
 
-Author: Worker 293. This is statement unit S4 of task
-`be70310c-1939-4a82-8293-c4d33f5883ae`. It is a `lean.statement`. A
-`lean.proof@1` task proves it.
+The proof of `RankStatement` is `rankStatement`, in the separate module
+`QuasiSplitUnitaryRankProof`.
 
 ## The statement
 
@@ -11,12 +10,12 @@ Author: Worker 293. This is statement unit S4 of task
 finite type `κ : Type u`, an `F`-basis `b : Module.Basis κ F (Matrix (Fin 2)
 (Fin 2) E)` and `c : E ≃ₐ[F] E` with `c ≠ AlgEquiv.refl`. For such data it
 asserts the conjunction of three claims about `G = groupScheme b c`, the group
-scheme `U(1,1)` over `Spec (CommRingCat.of F)` of unit 1
-(`Langlands.GroupScheme.Examples.QuasiSplitUnitary`, Worker 399):
+scheme `U(1,1)` over `Spec (CommRingCat.of F)` of
+`Langlands.GroupScheme.Examples.QuasiSplitUnitary`:
 
 1. `IsClosedSubgroup (cocharacter b c)`. Here `cocharacter b c` is the
-   cocharacter `λ : (Gm (Spec F)).toGrp ⟶ G` of unit 2
-   (`Langlands.GroupScheme.Examples.QuasiSplitUnitaryDynamic`, Worker 399),
+   cocharacter `λ : (Gm (Spec F)).toGrp ⟶ G` of
+   `Langlands.GroupScheme.Examples.QuasiSplitUnitaryDynamic`,
    with points `t ↦ diag(t, t⁻¹)`. `IsClosedSubgroup` is the Library
    predicate of `Langlands.GroupScheme.Reductive.Basic`: the underlying
    morphism of schemes is a closed immersion.
@@ -29,8 +28,8 @@ scheme `U(1,1)` over `Spec (CommRingCat.of F)` of unit 1
    with `IsClosedSubgroup i`. Here `baseChangeGroupScheme b c` is the actual
    pullback
    `(GroupScheme.baseChange (Spec.map (CommRingCat.ofHom (algebraMap F E)))).obj G`
-   of `Langlands.GroupScheme.Examples.QuasiSplitUnitarySplitting` (Worker 293),
-   the group scheme `G_E` of deliverable 3.
+   of `Langlands.GroupScheme.Examples.QuasiSplitUnitarySplitting`,
+   the group scheme `G_E`.
 
 The index type of the rank-two torus is existential, with `Nat.card I = 2`,
 because `splitTorus` takes an index type in the universe `u` of the base scheme.
@@ -46,9 +45,9 @@ maximal split torus of `G`. By the following remark (printed p.402) the `k`-rank
 can change under extension of the base field. Definition 19.22 (printed p.402)
 calls a reductive group splittable when it contains a split maximal torus.
 Milne 24.40–24.44 (printed pp.523–525) treats unitary groups and their
-splitting over a field that splits the centre. The task contract records the
-choice of the hermitian form `h(v, w) = v₁ c(w₂) + v₂ c(w₁)` with antidiagonal
-Gram matrix as a standard choice.
+splitting over a field that splits the centre. The hermitian form
+`h(v, w) = v₁ c(w₂) + v₂ c(w₁)` with antidiagonal Gram matrix is a standard
+choice.
 
 Over `E` the group `G_E` is isomorphic to `GL₂` (`splittingIso`), whose maximal
 tori have dimension two. Thus the maximal tori of `G` have dimension two. In
@@ -63,8 +62,7 @@ that the rank of `G_E` is at most two.
 
 ## Provenance
 
-The three claims are fixed by the task contract (deliverable S4). They are a
-derived, explicit form of the rank computation for `U(1,1)`. Claim 1 is the
+The three claims are a derived, explicit form of the rank computation for `U(1,1)`. Claim 1 is the
 split torus given by the diagonal cocharacter. Claim 2 is the upper bound on
 the `F`-rank. Claim 3 is the image of the diagonal torus of `GL₂` under the
 splitting.

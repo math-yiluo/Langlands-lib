@@ -1,7 +1,5 @@
 # Borel subgroup schemes are conjugate étale-locally
 
-Worker 607.
-
 `Langlands.GroupScheme.relativeBorelEtaleLocalConjugacyStatement` proves
 the unchanged `RelativeBorelEtaleLocalConjugacyStatement.{u}` in every
 universe, over an arbitrary scheme and with precisely the reductivity and

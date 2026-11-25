@@ -1,6 +1,6 @@
 # Smooth Laurent evaluation of unitary unramified characters
 
-Worker 200. This internal coordinate and finite-family construction supplies a
+This internal coordinate and finite-family construction supplies a
 prerequisite for translation on the existing compact model of orbit sections.
 It reuses the published real-angle smoothness convention, integer torus
 characters, and rational valuation-image coordinates.

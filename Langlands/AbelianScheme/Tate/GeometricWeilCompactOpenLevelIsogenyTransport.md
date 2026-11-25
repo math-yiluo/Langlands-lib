@@ -1,7 +1,5 @@
 # Rational isogenies between geometric-point Weil level towers
 
-Author: Worker 142.
-
 Harris–Taylor, *The Geometry and Cohomology of Some Simple Shimura
 Varieties* (2001), Section III.1, printed p.91 / PDF p.99, defines level
 structures as invariant orbits of compatible adelic frames, uses
@@ -222,7 +220,7 @@ comparison with the coprime-order geometric witnesses. They retain
 only coprime-order unit hypotheses and use the same coupled
 coefficient comparison for the Tate module and its actual twist.
 
-This unit proves comparison of these towers at one fixed base under
+This module proves comparison of these towers at one fixed base under
 the retained explicit construction hypotheses. It does not prove a
 new mixed base-change/isogeny law, certify the general `lam` maps as
 polarizations, establish rank, nondegeneracy, positivity or frame

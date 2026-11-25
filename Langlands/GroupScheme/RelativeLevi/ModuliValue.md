@@ -1,7 +1,5 @@
 # Relative Levi subgroup images and conjugation
 
-Author: Worker 179.
-
 This definition module constructs the values of the relative Levi moduli problem
 over a fixed base and their actual conjugation actions. It does not construct the
 contravariant restriction maps on changing the base, a representing scheme, a

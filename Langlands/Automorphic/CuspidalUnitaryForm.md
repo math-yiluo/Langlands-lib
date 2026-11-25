@@ -169,7 +169,9 @@ Borel structure, takes the band cover of `exists_band_cover` with `lo = 1` and
 
 The theorem uses no hypothesis beyond the actual cuspidal realization, its unitary
 central character, and the compactness convention `[CompactSpace (AdeleQuotient F)]`
-of the host statement. The form is algebraic: no Hilbert-space completion or
+of `CuspidalUnitaryContragredientExistenceStatement`. The form is algebraic: no Hilbert-space completion or
 occurrence in `L²` is asserted. The result does not construct a contragredient. It
-proves neither admissibility nor surjectivity of the induced pairing; those remain
-separate obligations of the host task.
+proves neither admissibility nor surjectivity of the induced pairing; those are
+separate obligations of `CuspidalUnitaryContragredientExistenceStatement`, which the
+Library proves as `cuspidalUnitaryContragredientExistence` (module
+`Langlands.Automorphic.CuspidalUnitaryContragredientExistenceProof`).

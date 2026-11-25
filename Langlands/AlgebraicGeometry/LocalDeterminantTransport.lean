@@ -47,7 +47,7 @@ theorem localSectionEndomorphism_toMatrix_pullback_transport (f : X ⟶ Y)
     (h : ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M).over (f ⁻¹ᵁ U) ≅
       N.over (f ⁻¹ᵁ U))
     (a : End (M.over U)) (b : End (N.over (f ⁻¹ᵁ U)))
-    (hab : localHomPullback f U a ≫ h.hom = h.hom ≫ b) (V : Over U) :
+    (hab : localHomPullback f U a.asHom ≫ h.hom = h.hom ≫ b.asHom) (V : Over U) :
     LinearMap.toMatrix
         (localSectionBasis (chartFreePullbackTransportIso f e h)
           (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom)))
@@ -59,7 +59,7 @@ theorem localSectionEndomorphism_toMatrix_pullback_transport (f : X ⟶ Y)
         (localSectionEndomorphism M V a)).map (f.app V.left) := by
   unfold chartFreePullbackTransportIso
   rw [← localSectionEndomorphism_toMatrix_iso (chartFreePullbackIso f U e) h
-    (localHomPullback f U a) b hab]
+    (End.of (localHomPullback f U a.asHom)) b hab]
   exact localSectionEndomorphism_toMatrix_pullback f e a V
 
 variable {ι : Type v} [Fintype ι]
@@ -70,13 +70,13 @@ theorem localSectionDeterminant_pullback_transport (f : X ⟶ Y)
     (h : ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M).over (f ⁻¹ᵁ U) ≅
       N.over (f ⁻¹ᵁ U))
     (a : ι → End (M.over U)) (b : ι → End (N.over (f ⁻¹ᵁ U)))
-    (hab : ∀ i, localHomPullback f U (a i) ≫ h.hom = h.hom ≫ b i) (V : Over U) :
+    (hab : ∀ i, localHomPullback f U (a i).asHom ≫ h.hom = h.hom ≫ (b i).asHom) (V : Over U) :
     MvPolynomial.map (f.app V.left).hom (localSectionDeterminant e a V) =
       localSectionDeterminant (chartFreePullbackTransportIso f e h) b
         (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom)) := by
   rw [localSectionDeterminant_pullback f e a V]
   exact localSectionDeterminant_iso (chartFreePullbackIso f U e) h
-    (fun i => localHomPullback f U (a i)) b hab _
+    (fun i => End.of (localHomPullback f U (a i).asHom)) b hab _
 
 /-- Every finite target chart on the same inverse-image chart open gives this polynomial. -/
 theorem localSectionDeterminant_pullback_transport_any_chart (f : X ⟶ Y)
@@ -87,13 +87,13 @@ theorem localSectionDeterminant_pullback_transport_any_chart (f : X ⟶ Y)
     (e' : SheafOfModules.free (R := X.ringCatSheaf.over (f ⁻¹ᵁ U)) J ≅
       N.over (f ⁻¹ᵁ U))
     (a : ι → End (M.over U)) (b : ι → End (N.over (f ⁻¹ᵁ U)))
-    (hab : ∀ i, localHomPullback f U (a i) ≫ h.hom = h.hom ≫ b i) (V : Over U) :
+    (hab : ∀ i, localHomPullback f U (a i).asHom ≫ h.hom = h.hom ≫ (b i).asHom) (V : Over U) :
     MvPolynomial.map (f.app V.left).hom (localSectionDeterminant e a V) =
       localSectionDeterminant e' b
         (Over.mk ((TopologicalSpace.Opens.map f.base).map V.hom)) := by
   rw [localSectionDeterminant_pullback f e a V]
   exact localSectionDeterminant_iso_any_chart (chartFreePullbackIso f U e) h e'
-    (fun i => localHomPullback f U (a i)) b hab _
+    (fun i => End.of (localHomPullback f U (a i).asHom)) b hab _
 
 /-- Every determinant coefficient transports as an actual section of the structure sheaf. -/
 theorem coeff_localSectionDeterminant_pullback_transport (f : X ⟶ Y)
@@ -101,7 +101,7 @@ theorem coeff_localSectionDeterminant_pullback_transport (f : X ⟶ Y)
     (h : ((AlgebraicGeometry.Scheme.Modules.pullback f).obj M).over (f ⁻¹ᵁ U) ≅
       N.over (f ⁻¹ᵁ U))
     (a : ι → End (M.over U)) (b : ι → End (N.over (f ⁻¹ᵁ U)))
-    (hab : ∀ i, localHomPullback f U (a i) ≫ h.hom = h.hom ≫ b i)
+    (hab : ∀ i, localHomPullback f U (a i).asHom ≫ h.hom = h.hom ≫ (b i).asHom)
     (V : Over U) (d : ι →₀ ℕ) :
     f.app V.left ((localSectionDeterminant e a V).coeff d) =
       (localSectionDeterminant (chartFreePullbackTransportIso f e h) b
@@ -113,10 +113,10 @@ theorem coeff_localSectionDeterminant_pullback_transport (f : X ⟶ Y)
 lemma localHomPullback_over_intertwine (f : X ⟶ Y) {M : Y.Modules} {N : X.Modules}
     (h : (AlgebraicGeometry.Scheme.Modules.pullback f).obj M ≅ N)
     (a : End M) (b : End N)
-    (hab : (AlgebraicGeometry.Scheme.Modules.pullback f).map a ≫ h.hom = h.hom ≫ b)
+    (hab : (AlgebraicGeometry.Scheme.Modules.pullback f).map a.asHom ≫ h.hom = h.hom ≫ b.asHom)
     (U : Y.Opens) :
-    localHomPullback f U (a.over U) ≫ h.hom.over (f ⁻¹ᵁ U) =
-      h.hom.over (f ⁻¹ᵁ U) ≫ b.over (f ⁻¹ᵁ U) := by
+    localHomPullback f U (a.asHom.over U) ≫ h.hom.over (f ⁻¹ᵁ U) =
+      h.hom.over (f ⁻¹ᵁ U) ≫ b.asHom.over (f ⁻¹ᵁ U) := by
   rw [localHomPullback_over]
   exact congrArg ((SheafOfModules.overFunctor X.ringCatSheaf (f ⁻¹ᵁ U)).map) hab
 

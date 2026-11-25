@@ -1,7 +1,5 @@
 # Generic nonzero morphisms between inductions sharing a standard Levi
 
-Authors: Worker 194 and Worker 192.
-
 `rationalSameLeviGenericNonzeroIntertwiner` proves
 `Langlands.Aubert.General.RationalPointFamily.RationalSameLeviGenericNonzeroIntertwinerStatement.{u, v}`
 (module `Aubert.General.RationalSameLeviGenericIntertwinerStatement`), with exactly
@@ -20,14 +18,14 @@ induction along `g P_I g⁻¹` is nonzero.
 The proof is the composition of two results.
 
 1. `RepresentedParabolic.representedSameLeviGenericNonzeroIntertwiner` (module
-   `Aubert.General.RepresentedSameLeviGenericIntertwinerProof`, by Worker 192) proves
+   `Aubert.General.RepresentedSameLeviGenericIntertwinerProof`) proves
    the version for actual represented parabolics `P = MN` and `Q = MU` with one Levi
    scheme. It follows Renard, *Représentations des groupes réductifs p-adiques*,
    VII.3: generic `PQ`-regularity of the twist, then the algebraic intertwiner of
    VII.3.4. No analytic continuation of intertwining integrals is used. Its Markdown
    lists its helper modules.
 2. `rationalSameLeviGenericNonzeroIntertwiner_of_represented` (module
-   `Aubert.General.RationalSameLeviGenericIntertwinerReduction`, by Worker 194)
+   `Aubert.General.RationalSameLeviGenericIntertwinerReduction`)
    derives the target from the represented version. It realizes `P_J` as the standard
    represented parabolic and `g P_I g⁻¹` as the standard represented parabolic `P_I`
    composed with the inner automorphism of `g`. The shared Levi scheme is `L_J`,
@@ -42,10 +40,10 @@ Grothendieck classes.
 
 ## Files of this proof
 
-New modules, each with its Markdown:
+Modules, each with its Markdown:
 
 - `Aubert.General.RationalSameLeviGenericIntertwinerProof` (this file) and
-  `Aubert.General.RationalSameLeviGenericIntertwinerReduction`, by Worker 194.
+  `Aubert.General.RationalSameLeviGenericIntertwinerReduction`.
 - `Aubert.General.RepresentedSameLeviGenericIntertwinerProof`,
   `Aubert.General.RepresentedSameLeviGenericRegularity`,
   `Aubert.General.RepresentedSameLeviRegularIntertwiner`,
@@ -53,8 +51,8 @@ New modules, each with its Markdown:
   `Aubert.General.SameLeviPieceDisplacementProof`,
   `LanglandsClassification.SimpleCorootFaceExistence`,
   `Intertwining.CentralActionQuotientFiniteness` and
-  `Intertwining.PieceActionQuotientFiniteness`, by Worker 192.
-- `Plancherel.UnramifiedMonomialSeparation`, by Worker 194.
+  `Intertwining.PieceActionQuotientFiniteness`.
+- `Plancherel.UnramifiedMonomialSeparation`.
 
 The represented interface `RepresentedSameLeviGenericNonzeroIntertwinerStatement`
 (module `Aubert.General.RepresentedSameLeviGenericIntertwinerStatement`) is already

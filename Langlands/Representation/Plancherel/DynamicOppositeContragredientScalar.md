@@ -1,6 +1,6 @@
 # Contragredient invariance of the scalar `j` (targets)
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.DynamicOppositeContragredientScalar` states
 two Prop-valued targets for the Library's actual opposite standard integrals
 `J_{P̄|P}` and `J_{P|P̄}` (module `DynamicOppositeStandardIntertwining`):

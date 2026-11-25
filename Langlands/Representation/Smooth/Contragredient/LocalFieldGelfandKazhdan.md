@@ -1,7 +1,5 @@
 # The Gelfand–Kazhdan contragredient over every nonarchimedean local field
 
-Author: Worker 5089.
-
 The published theorems `Langlands.generalLinearConjugationDistributionTranspose`
 (module `Langlands.HarmonicAnalysis.Distribution.TransposeInvariantProof`) and
 `Langlands.gelfandKazhdanContragredient` (module

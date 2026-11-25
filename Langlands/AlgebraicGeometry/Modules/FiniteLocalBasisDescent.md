@@ -69,7 +69,10 @@ The provenance is entirely internal and derived: the ingredients are the
 Library's actual stalk and restriction comparisons, finite-presentation descent,
 faithful stalk flatness and free-chart constructions, together with Mathlib's
 finite flat local freeness and finite-presentation localization theorems.
-This unit supplies a module-sheaf reflection step for the relative radical
-filtration task. Construction of a descent datum, its effective module sheaf,
-and descent of natural group-point/section equivalences remain separate
-obligations; the full radical-filtration statement is not asserted here.
+This module supplies a module-sheaf reflection step for the relative radical
+filtration statement, `RelativeUnipotentRadicalFiltrationStatement`. Construction
+of a descent datum, its effective module sheaf, and descent of natural
+group-point/section equivalences are not part of this module; the full
+radical-filtration statement is not asserted here. The Library proves it as
+`relativeUnipotentRadicalFiltration` in
+`GroupScheme/RelativeUnipotent/RadicalFiltrationProof`.

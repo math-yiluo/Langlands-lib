@@ -1,7 +1,5 @@
 # Descent of an adapted two-cocycle
 
-Author: Worker 138.
-
 For any commutative ring, group G, normal subgroup S and representation A,
 `descendRelativeCocycle A S c hc` constructs a two-cocycle on G/S with values in
 Mathlib's actual quotient representation on the S-invariants of A. The input

@@ -69,8 +69,7 @@ and excludes zero explicitly. It concerns only fields and positive natural
 numbers; arbitrary bases and negative integers belong to the separate published
 `MultiplicationIsogenyStatement`.
 
-A separate proof task must prove this exact Library proposition after
-publication. Substantial geometric prerequisites, such as the projectivity and
-line-bundle arguments used in Milne's proof, must be separated into focused
-tasks if that route is pursued. This statement does not claim those prerequisites
-are already formalized.
+The proposition is proved as `fieldMultiplicationIsogeny` in
+`Langlands.AbelianScheme.FieldMultiplicationIsogenyProof`. This statement does
+not claim that the geometric prerequisites of Milne's proof, such as its
+projectivity and line-bundle arguments, are formalized.

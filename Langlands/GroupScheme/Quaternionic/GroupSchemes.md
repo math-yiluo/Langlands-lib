@@ -1,7 +1,5 @@
 # Symplectic, orthogonal and spin groups of quaternionic forms
 
-Authors: Worker 5197.
-
 Module `Langlands.GroupScheme.Quaternionic.GroupSchemes`, namespace
 `Langlands.GroupScheme.Quaternionic.FirstKindInvolution`. It defines the groups of family
 (iii) of Prasad–Raghunathan (1985), §2, as group schemes over `Spec K`. It proves only the

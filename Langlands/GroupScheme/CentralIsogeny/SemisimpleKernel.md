@@ -1,7 +1,5 @@
 # Killing central semisimple tangent vectors by a central isogeny
 
-Author: Worker 1487.
-
 This internal deduction combines the exact full-centre tangent quotient with
 the actual scheme centralizer criterion and smoothness of semisimple
 centralizers. It concerns actual dual-number identity kernels and the full

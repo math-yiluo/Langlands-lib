@@ -7,8 +7,9 @@ This module proves, in every universe `u`, that two inputs imply the exact targe
   `Absolute/MaximalTorusCentralizerReduction`; Milne, Proposition 17.61(a), the
   algebraically closed case of Corollary 17.84). This published Library proposition
   says that a maximal torus of a connected reductive group over an algebraically
-  closed field is its own centralizer, as an equality of subgroup functors. It is not
-  yet proved in the Library.
+  closed field is its own centralizer, as an equality of subgroup functors. The Library
+  proves it as `algClosedMaximalTorusCentralizer` (module
+  `Absolute/AlgClosedMaximalTorusCentralizerProof`).
 - Reductivity of semidirect products: for every algebraically closed field `k`,
   connected reductive group `G` over `k`, commutative group scheme `S` over `k` that is a
   split torus, and automorphic action `b` of `S` on `G`, the semidirect product
@@ -87,5 +88,4 @@ adjoint quotient and lifts a maximal torus from there. This module follows a
 different, internal argument: in the reductive group `G ⋊ S` the centre of the normal
 factor `G` is central, hence lies in every maximal torus (Milne, *Algebraic Groups*
 (2017), Proposition 17.61(a) and Corollary 17.84, printed pp.372 and 379, PDF pp.388
-and 395), in particular in one containing `S`. Worker 1334 proposed this route, which
-removes the conjugacy premise. The Lean arrangement, the `Prop` definition and the proofs are Worker 1544's.
+and 395), in particular in one containing `S`. This route removes the conjugacy premise.

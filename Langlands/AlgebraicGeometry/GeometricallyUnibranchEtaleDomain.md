@@ -1,7 +1,5 @@
 # Etale local domains over geometrically unibranch local domains
 
-Authors: Worker 706 and Worker 384.
-
 This internal proof module supplies the geometric-unibranch local-domain step
 used in the proof of
 `Langlands.AlgebraicGeometry.UnramifiedGeometricallyUnibranchLocalCriterionStatement`.

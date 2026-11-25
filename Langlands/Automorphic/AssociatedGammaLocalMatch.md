@@ -1,12 +1,12 @@
 # From a local pair gamma match to equal family gamma factors
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaLocalMatch`). The stability inputs of the two-twist
 engine (`RamifiedGammaStability`, `OutsideGammaStability`) ask that the gamma factors of the
 two Hecke families be meromorphically equal at a place. The local theorems (L1, PS, and at the
 selected place the target itself) give `IsPairGammaMatch` of the twisted local classes. This
 module converts the second into the first. It is an internal deduction from Library results
-and the earlier supporting modules of Task 5003.
+and the earlier supporting modules of this proof.
 
 ## Results
 

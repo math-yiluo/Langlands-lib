@@ -89,7 +89,7 @@ theorem ext {P Q : RefiningSelection a} (h : ∀ i, i ∈ P ↔ i ∈ Q) : P = Q
   SetLike.ext h
 
 instance : SemilatticeInf (RefiningSelection a) where
-  __ := PartialOrder.ofSetLike (RefiningSelection a) a.Index
+  __ := PartialOrder.ofSetLike (RefiningSelection a)
   inf P Q := ⟨P.carrier ∩ Q.carrier,
     P.downward_closed.and Q.downward_closed,
     P.locally_refining.and Q.locally_refining P.downward_closed⟩

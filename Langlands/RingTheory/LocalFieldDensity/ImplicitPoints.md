@@ -1,7 +1,5 @@
 # Points of submersive presentations over complete normed fields
 
-Author: Worker 712.
-
 This internal helper module applies the inverse function theorem to
 submersive presentations over a complete nontrivially normed field. It is a
 derived result: it combines Mathlib's inverse function theorem

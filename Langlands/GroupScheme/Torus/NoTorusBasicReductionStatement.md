@@ -1,7 +1,5 @@
 # The nilpotent and finite-field no-torus reductions
 
-Author: Worker 1487.
-
 `Langlands.GroupScheme.NoTorusBasicReductionStatement.{u}` packages two
 conditional reductions used in the proof of `NoTorusUnipotentStatement`.
 It is a proposition definition; this file supplies no proof.

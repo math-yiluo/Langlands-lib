@@ -1,7 +1,6 @@
 # Actual exact duality commutes with restriction and finite-index induction
 
-Worker 1763 derives these identities for fixed-Haar duality task
-`e945d920-df9f-446c-9528-b488a3bee609`.
+This module derives these identities for use in fixed-Haar duality.
 
 `continuousRestrict_continuousDual` identifies restriction of the actual
 contragredient with the contragredient of restriction, along every supplied

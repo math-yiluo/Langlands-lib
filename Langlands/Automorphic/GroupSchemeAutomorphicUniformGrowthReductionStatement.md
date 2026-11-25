@@ -1,7 +1,5 @@
 # Uniform growth of adelic automorphic forms from an elliptic estimate and a Casimir element
 
-Author: Worker 723.
-
 `AdelicAutomorphicUniformGrowthReductionStatement` (universe `u`) is the implication
 
 `LieGroupEllipticInteriorEstimateStatement.{u, u} → AdelicAdaptedCasimirStatement.{u} →

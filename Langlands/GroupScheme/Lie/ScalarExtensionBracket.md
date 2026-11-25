@@ -51,8 +51,8 @@ printed pp.191–192. For a finitely generated commutative `k`-algebra `R`,
 Milne defines `g(R) = Ker(G(R[ε]) → G(R))` and proves `g(R) ≅ g ⊗ R`,
 functorially in `G` (equation (59)). Milne uses this identification
 throughout §10d to define the adjoint representation and the bracket. This
-derived unit adds the statement that the identification is an isomorphism of
-Lie algebras. On `g(R)` the bracket is the actual convolution bracket at the
+module adds, as a derived result, the statement that the identification is an
+isomorphism of Lie algebras. On `g(R)` the bracket is the actual convolution bracket at the
 test algebra `R`; on `g ⊗ R` it is the bracket extended from `g`. The result
 holds for every commutative `k`-algebra, not only finitely generated ones,
 because `kernelScalarExtension` does. Neither errata snapshot (2017, 2 November

@@ -1,7 +1,5 @@
 # Initial truncation preserves nonprecedence
 
-Authors: Worker 700 (proof draft) and Worker 904 (final revision).
-
 ## Target
 
 The theorem `Langlands.Classification.segmentInitialTruncationOrder` proves
@@ -77,7 +75,7 @@ conventions of Zelevinsky, *Induced representations of reductive p-adic
 groups II. On irreducible representations of GL(n)*, Ann. Sci. ENS (4) 13
 (1980), 165-210. Registered source `zelevinsky-1980-induced-ii`, SHA256
 `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`.
-Worker 904 read the following passages in the registered PDF:
+The following passages of the registered PDF were read:
 
 - §3.5, printed p.182 / PDF p.19, defines `Δ⁻ = Δ \ {ρ'}` for
   `Δ = [ρ, ρ']`, with `Δ⁻` empty for a singleton. This is the published
@@ -105,7 +103,7 @@ The module imports exactly
 and `Langlands.Representation.Classification.SegmentIntervalLinkage`. Its
 complete transitive project import closure has 53 modules, listed below. All
 53 are byte-identical, Lean and Markdown, to the published Library at
-commit `84ad0affe3e3e8feae73b57da624fc1f16a6923b`. Worker 700's earlier
+commit `84ad0affe3e3e8feae73b57da624fc1f16a6923b`. An earlier
 audit listed 52. Since then, the Library added
 `Langlands.Representation.Jacquet.CharacterTwistEquiv`, now imported by
 `Classification.SupercuspidalTwist`. That module identifies Jacquet quotients
@@ -123,7 +121,7 @@ endpoint theorems used from `SegmentIntervalLinkage` and
 `SegmentIntegralCoordinates` rely only on integral twist identities, finite
 interval arithmetic and support computations.
 
-No module in the closure contains the conclusion, a proof successor or a
+No module in the closure contains the conclusion, a proof or a
 transitive proof dependency of any of these: ordered-socle existence, socle
 exhaustion, analytic segment classification, unlinked segment-socle product
 irreducibility, the final segment-socle irreducibility criterion,
@@ -191,13 +189,12 @@ square-integrability.
 
 ## Development checks
 
-Development check `98fe7b5e-30bc-40ac-b129-59ca689b0767` compiled this module
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no diagnostics. It
+A development check compiled this module
+with no diagnostics. It
 inspected `segmentInitialTruncationOrder` as a theorem with universe
 parameters `uF` and `uV` and axioms `propext`, `Classical.choice` and
-`Quot.sound` only. Private check `048d8790-fd45-4017-b147-492a785c5a10`
-also compiled a separate unsubmitted file. That file assigns the unapplied
+`Quot.sound` only. A further check
+also compiled a separate test file. That file assigns the unapplied
 constant `@segmentInitialTruncationOrder.{uF,uV}` to the complete telescope
 `∀ {p} [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData),
-SegmentInitialTruncationOrder.{uF,uV} F T`. These development checks are
-not independent acceptance, exact-target validation or publication.
+SegmentInitialTruncationOrder.{uF,uV} F T`.

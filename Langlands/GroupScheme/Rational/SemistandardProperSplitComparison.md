@@ -1,6 +1,6 @@
 # The proper/group split under semistandard Levi comparisons
 
-This structural unit isolates preservation of the group and proper parts of
+This structural module isolates preservation of the group and proper parts of
 the full semistandard index under the actual comparisons used in Fourier
 covariance. It constructs neither a spectral carrier nor a projector.
 
@@ -13,7 +13,7 @@ the proper truncation in VIII.2 and its use of VII.1.4. Registered source
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
 Setting the group components to zero preserves covariance only if the
 comparisons preserve the group/proper split. The explicit structural
-formulation and proof reductions in this unit are derived interfaces.
+formulation and proof reductions in this module are derived interfaces.
 The cited passage does not prove these general-field geometric comparisons.
 
 All assertions here are about group schemes and their all-test subgroup
@@ -42,15 +42,17 @@ proper Levi into a larger one and do not imply preservation of this split.
 No representative of the normalizer quotient is chosen or substituted for the
 published transporter quotient.
 
-## Dependency ledger and outstanding inputs
+## Dependency ledger and explicit inputs
 
 The intrinsic semistandard index, its dynamic construction and the actual
 Weyl equality transporters are public imports from the existing Library.
 The dynamic parabolic/centralizer theorem and connected reductivity's
 trivial-unipotent-radical consequence are published structural results.
-`SemistandardSpectralDynamicCoverageStatement` remains an explicit outstanding
-structural premise. This unit proves a reduction from it and does not assert
-coverage unconditionally. Downstream consumers can retain the precise
+`SemistandardSpectralDynamicCoverageStatement` remains an explicit
+structural premise here. This module proves a reduction from it and does not assert
+coverage unconditionally; the Library proves the coverage statement as
+`semistandardSpectralDynamicCoverage`
+(`Rational.SemistandardSpectralDynamicCoverageProof`). Downstream consumers can retain the precise
 `SemistandardProperSplitComparisonStatement` instead of the stronger coverage
 premise.
 

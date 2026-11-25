@@ -1,9 +1,7 @@
 # Weakly induced tori over `K = F^ur` (Kaletha–Prasad Definition B.6.2)
 
-Author: Worker 3557.
-
-This module belongs to the Kaletha–Prasad Bruhat–Tits program (task
-`f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`). It supplies the torus hypothesis of
+This module belongs to the Library's Kaletha–Prasad Bruhat–Tits development.
+It supplies the torus hypothesis of
 condition (1) in KP §13.5, the hypothesis under which KP prove the
 Moy–Prasad isomorphism (Theorem 13.5.1) for every `s ≤ 2r`. The module
 contains three `Prop`-valued definitions and no theorems. The remarks below

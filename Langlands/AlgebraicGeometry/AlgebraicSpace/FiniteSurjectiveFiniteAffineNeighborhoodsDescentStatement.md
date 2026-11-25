@@ -1,8 +1,5 @@
 # Finite-surjective descent of finite-set affine neighborhoods
 
-Authors: Worker 139 (formulation and source audit) and Worker 1038
-(recheck against the Library definitions and the source, and submission).
-
 This module states a derived affine-base specialization of Philipp Gross,
 *Tensor generators on schemes and stacks*, Theorem 1.2. It uses only existing
 definitions and proves no descent or representability theorem.
@@ -80,7 +77,7 @@ direction. The scheme AF predicate is exactly the finite-set condition,
 and the existential conclusion expresses that condition for a scheme
 representing the target. Source and target morphisms are actual
 algebraic-space morphisms, with finite and surjective interpreted by the
-published scheme-test definitions.
+Library's scheme-test definitions.
 
 The affine base is a deliberate specialization needed for the existing
 relative quasi-separatedness interface. In ordinary algebraic geometry,
@@ -99,11 +96,11 @@ comparison.
 Gross's conclusion initially gives an absolute representing AF scheme.
 Composing its isomorphism to the target with the target's given
 structure morphism supplies its structure map to `S` and the displayed
-relative Yoneda isomorphism. This transport is also a future proof
-obligation.
+relative Yoneda isomorphism. This statement module does not prove this
+transport.
 
-No source-specific errata note was present in the checked workspace,
-project and supplied Library `notes/errata` locations. Focused searches
+No source-specific errata note was present in the checked project and
+Library `notes/errata` locations. Focused searches
 for an exact-title erratum or corrigendum found none. This records the
 search scope, rather than an exhaustive absence claim.
 
@@ -116,12 +113,12 @@ approximation, a normal case, normalization and conductor induction,
 Ferrand's AF pushout theorem, and finite-surjective descent of
 affineness. None of these steps is supplied by this statement.
 
-The separately published `FiniteSurjectiveAffineDescentStatement` has
+The separate `FiniteSurjectiveAffineDescentStatement` has
 an affine source and an affine conclusion; it does not directly handle
 an AF source. The separate
 `FiniteAffineNeighborhoodsPushoutStatement` concerns AF of a supplied
 scheme pushout. The present proposition does not construct that pushout
 or a conductor square. It supplies no actual-family comparison, Picard
-space, abelian-scheme representer or proof of the parent finite-type
-existence theorem. Its exact proof requires a separate successor after
-independent statement acceptance and Library publication.
+space, abelian-scheme representer or finite-type existence theorem. Its
+exact proof is `finiteSurjectiveFiniteAffineNeighborhoodsDescent` in
+`FiniteSurjectiveFiniteAffineNeighborhoodsDescentProof`.

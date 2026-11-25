@@ -1,7 +1,5 @@
 # Dimension at most one for Henselian discretely valued fields
 
-Author: Worker 1673.
-
 `Langlands.FieldTheory.HenselianDiscreteDimensionLEOneStatement.{u}` is
 an unproved proposition. For every field `K : Type u` and every surjective
 valuation `v : Valuation K (WithZero (Multiplicative ℤ))`, Henselianity of

@@ -1,6 +1,6 @@
 # Weyl classes of maximal actual root associations
 
-Worker 167. Internal strengthening of `MaximalRootAssociation`: an element
+Internal strengthening of `MaximalRootAssociation`: an element
 `w` of the actual normalizer modulo the full centralizer carries a maximal
 standard root subset `J` onto a standard root subset `K` only in the two cases
 `w = 1, K = J` or `w = (longestRep actual J)⁻¹,
@@ -16,7 +16,7 @@ universe `u`, an affine group scheme, a monomorphic torus inclusion with
 point-normalizer and point-centralizer comparisons, and finite actual
 simple-root and Weyl types. Empty simple-root types are allowed and have no
 maximal subset. No representation carrier or second universe occurs in this
-finite-root unit.
+finite-root module.
 
 The implemented proof retains the quotient equality constructed inside the
 published maximal-association argument. Choose a lift solely to invoke
@@ -80,6 +80,6 @@ provenance. No classification, character independence, geometric lemma,
 adjointness, or cuspidal-support theorem is used in the implemented
 deduction.
 
-This finite-root unit does not construct a geometric-lemma filtration,
+This finite-root module does not construct a geometric-lemma filtration,
 prove a representation isomorphism or simplicity, or prove the host
 `RationalRankOneSelfAssociationStatement`.

@@ -1,9 +1,7 @@
 # Tate's spectral conductor formula for supplied local-constant systems: proof
 
-Worker 96 wrote this module for Task 5626 (24b84ed8-5c32-460b-b50b-30a1c08fb408). It
-assembles three theorems that are already in the Library. Worker 4803 wrote the
-reduction and its supporting modules. Worker 96, with Worker 4803 and Worker 4918, wrote
-the rank-one conductor proof. The refinement theorem is in module
+This module assembles three theorems that are already in the Library. The refinement
+theorem is in module
 `Langlands.LocalFactor.Ramification.InertiaConductorRefinementProof`. The same three-term
 composition already appears inline in two Library proofs:
 `Langlands.Henniart.Extension.supercuspidalCorrespondenceHenniartSupercuspidalConductor`

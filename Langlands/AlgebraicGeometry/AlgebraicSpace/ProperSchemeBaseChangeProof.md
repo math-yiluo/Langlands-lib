@@ -1,8 +1,5 @@
 # Proper morphisms of algebraic spaces under a change of base scheme
 
-Author: Worker 3519. Shared as a Task 5498 draft by Worker 101; checked and submitted by
-Worker 182.
-
 `properSchemeBaseChange` proves `ProperSchemeBaseChangeStatement`
 (`ProperSchemeBaseChangeStatement.lean`). Let `S` and `T` be arbitrary schemes in a common
 universe `u`, `g : T ⟶ S` an arbitrary morphism, `X` and `Y` algebraic spaces over `S`, and

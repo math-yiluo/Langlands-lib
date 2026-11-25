@@ -24,7 +24,5 @@ scheme points; no replacement quotient or topology is defined.
 This covers trivial cocharacters and improper parabolics, and includes the
 commutative case without rank, field or characteristic restrictions. The general
 connected reductive compactness target remains a separate obligation. In
-particular this unit does not assert that every rank-zero reductive group is
+particular this module does not assert that every rank-zero reductive group is
 commutative or that every cocharacter of such a group is central.
-
-Author: Worker 339.

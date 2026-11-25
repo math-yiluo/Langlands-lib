@@ -1,7 +1,5 @@
 # Comparing maximal tori with maximal split tori
 
-Author: Worker 1354.
-
 This is internal infrastructure derived directly from the existing
 `IsTorus`, `IsSplitTorus`, `IsMaximalTorus` and `IsMaximalSplitTorus`
 definitions. It applies to every field `k : Type u` and every actual

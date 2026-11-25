@@ -2,7 +2,7 @@
 
 `groupSchemeFullAEL2FiniteApproximation` proves
 `GroupSchemeFullAEL2FiniteApproximationStatement` at universe `u`. This internal
-proof was developed by Worker 116 in the parent task's shared draft. It uses the
+proof uses the
 original Haar quotient measure and the full all-parabolic almost-everywhere
 cuspidal submodule.
 

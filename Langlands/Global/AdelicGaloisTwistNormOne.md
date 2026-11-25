@@ -1,6 +1,6 @@
 # Galois twisting preserves norm-one adelic points (Lemma C)
 
-Statement-only helper module for the proof of `GaloisBorelTwistingStatement` (Task 5268). The statement is proved in module `AdelicGaloisTwistNormOneProof`.
+Statement-only helper module for the proof of `GaloisBorelTwistingStatement`. The statement is proved in module `AdelicGaloisTwistNormOneProof`.
 
 `TwistPointNormOneStatement`: for a finite Galois extension `L/F` of number fields,
 `σ ∈ Gal(L/F)`, an affine group `H` over `L`, and an adelic point `p ∈ H(𝔸_L)` in the

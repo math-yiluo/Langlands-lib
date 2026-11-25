@@ -1,7 +1,5 @@
 # Closed linear embeddings of corepresented group schemes over a field
 
-Author: Worker 254.
-
 This helper module proves the closed embedding theorem for the Library's
 corepresented affine group schemes, `Langlands.GroupScheme.Corepresented.groupScheme F e`.
 The proof follows Milne's Theorem 4.9 and Corollary 4.10. The final transfer to

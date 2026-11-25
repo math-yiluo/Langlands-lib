@@ -1,11 +1,9 @@
 # Galois descent of root filtration jumps through semilinear root coordinates
 
-Authors: Worker 47.
-
 ## Purpose and provenance
 
 This module is internal to the proof of
-`Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement` (Task 6754). That statement is
+`Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement`. That statement is
 an internal pointwise formulation of Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*
 (2023), Proposition 9.4.28(2), in the setting of KP 9.4.27. It says that a jump at `0` of a
 root of `G_K`, `K = F^ur`, restricting to `α` gives a jump at `0` of `α` for the restricted

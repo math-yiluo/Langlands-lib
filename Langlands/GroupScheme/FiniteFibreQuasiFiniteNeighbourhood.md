@@ -1,6 +1,6 @@
 # Quasi-finite neighbourhoods of finite fibres of affine group schemes
 
-This supporting unit implements the quasi-finite-locus construction in SGA 3, Exposé IX, Lemma 6.3 for affine group schemes locally of finite type. Every scheme, field and group in the module belongs to the arbitrary universe `u`.
+This module implements the quasi-finite-locus construction in SGA 3, Exposé IX, Lemma 6.3 for affine group schemes locally of finite type. Every scheme, field and group in the module belongs to the arbitrary universe `u`.
 
 For a group scheme `G` over a scheme `S`, with structure morphism locally of finite type, `quasiFiniteUnitLocus G` is the open subset
 
@@ -23,6 +23,6 @@ In the algebraically closed field case, the locally quasi-finite chart is locall
 
 For the neighbourhood construction, let `Q` be the quasi-finite locus of `G → S`. Over `U`, the restriction of the unit to `Q` gives a section of `Q ×ₛ U`; its composite with the pulled-back open immersion is the base-changed unit. The chart theorem then applies. If the fibre at `s` is finite, its underlying space is discrete; Mathlib's characterization of quasi-finiteness by an open singleton in the fibre shows that the unit at `s` is in `Q`, hence `s ∈ U`.
 
-No flatness, reducedness, finite-presentation or noetherian hypothesis is used. The construction and chart lemmas are internal reorganizations of the quasi-finite-locus and group-translation argument in Lemma 6.3, using published field geometry and fpqc descent. This unit proves local quasi-finiteness; the further finiteness conclusion for subgroups of multiplicative-type groups requires additional results.
+No flatness, reducedness, finite-presentation or noetherian hypothesis is used. The construction and chart lemmas are internal reorganizations of the quasi-finite-locus and group-translation argument in Lemma 6.3, using published field geometry and fpqc descent. This module proves local quasi-finiteness; the further finiteness conclusion for subgroups of multiplicative-type groups requires additional results.
 
 Source: SGA 3, Exposé IX, Gille–Polo recomposed edition (2009), registered source `sga3-expose-ix-gille-polo-2009`, Lemma 6.3, p.54 (original margin p.66). The chart lemmas are internal reorganizations of its group-translation step, using published field geometry.

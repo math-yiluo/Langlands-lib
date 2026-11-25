@@ -1,6 +1,6 @@
 # Renard II.1.2: vector-valued disjoint indicators and the canonical tensor maps
 
-Worker 132 proves the unchanged public statement
+This module proves the unchanged public statement
 `Langlands.HarmonicAnalysis.VectorTestFunctionStatements.Assertions.{uX, uV}`.
 The theorem is `Langlands.HarmonicAnalysis.VectorTestFunctionProof.assertions`.
 It uses the carriers and maps from
@@ -18,7 +18,7 @@ the paragraph right after them. It also points back to the lemma on
 printed p.31 / PDF p.37. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 132 read PDF p.38. The source states the two injections without
+PDF p.38 was read. The source states the two injections without
 proof. It gets surjectivity of (II.1.2.4) from the finite disjoint
 decomposition. The Lean proof below supplies all of these arguments.
 
@@ -83,8 +83,8 @@ coefficient \(\mathrm{ev}(c_i)(x)\) is zero. This holds for every `x`, and
 `ev` is injective, so each \(c_i = 0\). Hence `c = 0` and `t = 0`.
 `injective_iff_map_eq_zero` turns this into injectivity.
 
-The task context suggests the same argument with a basis of the span of
-finitely many vectors. The Lean proof uses a basis of all of `V` instead.
+The same argument can be run with a basis of the span of finitely many
+vectors. The Lean proof uses a basis of all of `V` instead.
 The two applications are:
 
 - `smoothTensorMap_injective`: `A = LocallyConstant X ℂ` and
@@ -128,8 +128,6 @@ Mathlib results used (pinned commit
 
 These lemmas are called, not copied.
 
-Development check `d01e8a50-017e-4f02-b0bc-8052e7d5a380` built the module
-with zero errors and zero warnings. It inspected `assertions`: the universe
-parameters are `uX, uV` and the axioms are `propext`, `Classical.choice`
-and `Quot.sound`. Publication still needs independent review and validation
-of the exact candidate.
+A development check built the module with zero errors and zero warnings.
+It inspected `assertions`: the universe parameters are `uX, uV` and the
+axioms are `propext`, `Classical.choice` and `Quot.sound`.

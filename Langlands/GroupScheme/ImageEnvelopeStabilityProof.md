@@ -1,7 +1,5 @@
 # Stability of closed image envelopes
 
-Author: Worker 1372.
-
 `Langlands.GroupScheme.pointedImageEnvelopeStability` proves the exact published
 proposition `Langlands.GroupScheme.PointedImageEnvelopeStabilityStatement.{u}`
 from `ImageGenerationStatement`, for arbitrary universe `u`. Its conclusion is

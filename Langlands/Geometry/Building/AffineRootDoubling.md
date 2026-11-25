@@ -84,4 +84,4 @@ conditions directly.
 No full apartment-axiom package, AS5, local reflection-arrangement geometry, or
 simply connected normalizer generation is assumed or established. Opposite-pair
 existence remains an explicit premise of the actual-group specialization.
-This unit does not prove `SimplyConnectedFacetFixingStatement`.
+This module does not prove `SimplyConnectedFacetFixingStatement`.

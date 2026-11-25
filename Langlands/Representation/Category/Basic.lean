@@ -40,7 +40,10 @@ instance : CoeSort (SmoothRep.{uR, uG, uV} R G) (Type uV) :=
 instance (A : SmoothRep.{uR, uG, uV} R G) : AddCommGroup A :=
   A.obj.hV1
 
-instance (A : SmoothRep.{uR, uG, uV} R G) : Module R A :=
+/-- Above the priority 1100 that Mathlib gives `Rep.hV2`, so that instance search finds this
+module structure for the carrier of a smooth representation, as it did while both had the
+default priority. -/
+instance (priority := 1200) (A : SmoothRep.{uR, uG, uV} R G) : Module R A :=
   A.obj.hV2
 
 /-- The actual algebraic group action of a bundled smooth representation. -/

@@ -1,7 +1,5 @@
 # Uniform comparison of curve fibres with bounded-degree plane curves
 
-Author: Worker 158.
-
 ## Meaning
 
 `Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`
@@ -38,7 +36,8 @@ registered source `lang-weil-1954-number-of-points`), printed p.819
 the change in point count in terms of its degree. Neither passage states
 this exact assertion about all finite-type scheme families.
 
-The family formulation is an internal intermediate result for Task 5408.
+The family formulation is an internal intermediate result for the proof of
+`FamilyLangWeilCurveStatement`.
 Its intended proof uses Noetherian induction on the base, an affine dense
 open of each generic fibre, and a plane model of its function field.
 Nonreduced fibres must be treated without adding a reducedness hypothesis;

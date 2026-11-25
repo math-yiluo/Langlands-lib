@@ -24,7 +24,7 @@ Together with the marked-position calculation, this gives exactly one-based
 marked position `d` on the `2d−1` vertex diagram. The construction chooses this
 presentation; the last theorem extracts the exact inner-A alternative.
 
-This unit is an internal composition of the imported structural and elementary
+This module is an internal composition of the imported structural and elementary
 root-datum results. The binary model comes from the actual inner-type-A
 norm-one identification, matrix division-algebra decomposition and matrix
 norm-one split-rank formula, as explained in `InnerTypeARankOneProof.md`.
@@ -32,4 +32,6 @@ Opposition is derived from actual compatible Tits data, and its type-A
 identification uses the Weyl-invariant weight residue, as explained in the
 imported pairs. No local rank-one classification or Kneser–Tits result is used.
 The other Cartan types and outer star actions, and hence the unconditional
-full local enumeration, remain separate obligations.
+full local enumeration, are outside this module; `localRankOneTitsIndex` in
+`LocalRankOneTitsIndexProof` proves that enumeration,
+`LocalRankOneTitsIndexStatement`.

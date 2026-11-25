@@ -50,7 +50,9 @@ of its actual coordinate Hopf algebra. -/
 theorem finitePresentation_hopfAlgebra [LocallyOfFinitePresentation H.X.hom] :
     Algebra.FinitePresentation R (hopfAlgebra H) := by
   have h : LocallyOfFinitePresentation
-      ((hopfSpecIso H).hom.hom.hom.left ≫ H.X.hom) := by infer_instance
+      ((hopfSpecIso H).hom.hom.hom.left ≫ H.X.hom) := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    infer_instance
   rw [Over.w] at h
   change LocallyOfFinitePresentation (Spec.map (CommRingCat.ofHom
     (algebraMap R (hopfAlgebra H)))) at h

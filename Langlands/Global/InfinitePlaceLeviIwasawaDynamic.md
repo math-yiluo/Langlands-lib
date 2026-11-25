@@ -1,7 +1,5 @@
 # Archimedean Levi-compatible Iwasawa from dynamic structure
 
-Author: Worker 1655.
-
 This internal assembly discharges the ambient-realization premise of
 `InfinitePlaceLeviIwasawaAssembly` with the published theorem
 `SelfAdjointRealization.connectedReductiveSelfAdjointRealizationStatement`.
@@ -36,7 +34,10 @@ this existence theorem. It preserves the arbitrary number field,
 connected reductive group, specified rational parabolic and Levi,
 infinite place, non-split and anisotropic cases, and improper
 parabolics. The two dynamic propositions remain premises of the
-wrapper, so this result does not complete the unconditional host task.
+wrapper, so this result is not by itself an unconditional proof of
+`LeviCompatibleIwasawaStatement`; `InfinitePlaceLeviIwasawaProof` supplies
+the two premises (`parabolicDynamic`, `dynamicGeometricUnipotentRadical`)
+and proves it as `leviCompatibleIwasawaStatement`.
 
 The provenance is internal composition of published results. In
 particular, the ambient-realization proposition is now supplied by its

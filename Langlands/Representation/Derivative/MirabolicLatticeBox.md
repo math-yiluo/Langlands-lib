@@ -1,7 +1,5 @@
 # Lattice boxes and character sums for the mirabolic radical
 
-Author: Worker 806.
-
 This module collects elementary lemmas used by the proofs that the unnormalized
 `Φ⁻` functor preserves irreducibility (`MirabolicMinusIrreducibleProof`) and transfers
 invariant pairings (`MirabolicMinusPairingTransferProof`). Its content is internal

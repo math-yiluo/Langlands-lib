@@ -1,11 +1,9 @@
 # Refined common fixed generators
 
-Worker 1210, in coordination with Worker 189.
-
-This internal statement unit refines the published
+This internal statement module refines the published
 `Langlands.CommonFixedGeneratorsStatement`. It records two elementary choices
 of a subgroup fixing a finite generating family. The declarations are
-proposition definitions; this unit supplies no proofs.
+proposition definitions; this module supplies no proofs.
 
 `CommonCompactOpenNormalGeneratorsStatement` quantifies independently over a
 commutative coefficient ring `R`, a nonarchimedean topological group `G`, a

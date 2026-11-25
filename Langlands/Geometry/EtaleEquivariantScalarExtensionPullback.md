@@ -139,7 +139,7 @@ therefore hold for the particular natural isomorphism constructed here.
 
 ## Scope
 
-This unit concerns arbitrary etale scheme maps equipped with the stated
+This module concerns arbitrary etale scheme maps equipped with the stated
 equivariance equation and arbitrary coefficient homomorphisms between
 commutative rings in the common universe. It gives actual functors and
 maps on geometrically equivariant small-etale sheaves. It does not

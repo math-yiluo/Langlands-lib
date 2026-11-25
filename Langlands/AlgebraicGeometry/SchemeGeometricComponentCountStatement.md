@@ -1,7 +1,5 @@
 # Constructibility of every geometric component count for schemes
 
-Author: Worker 107.
-
 `SchemeGeometricComponentCountConstructibleStatement` is the scheme specialization of
 Conrad's Lemma 5.1 (*Weil and Grothendieck approaches to adelic points*, December 31, 2011,
 printed p.13; registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

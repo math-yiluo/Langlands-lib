@@ -1,7 +1,5 @@
 # Tensor compatibility of normalized refined induction
 
-Author: Worker 321.
-
 `Langlands.Parabolic.refinedInductionTensor` proves the published proposition
 `Langlands.Parabolic.RefinedInductionTensorTheorem.{uF,uV}`. For every actual
 p-adic field, compatible topology, outer block shape, refinement, and smooth

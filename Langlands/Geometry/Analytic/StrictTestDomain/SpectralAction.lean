@@ -136,8 +136,8 @@ def sectionAction (ρ : RationalSpectralAction G P) (d : RationalData K P) :
 /-- The local action extends the given forward action on base-algebra sections. -/
 @[simp] theorem sectionAction_baseMap (ρ : RationalSpectralAction G P)
     (d : RationalData K P) (g : ρ.locusOpenSubgroup d) (a : P) :
-    (ρ.sectionAction d g).hom.toAlgHom (d.baseMap a) =
-      d.baseMap ((ρ.toMonoidHom g).hom.toAlgHom a) :=
+    (ρ.sectionAction d g).asIso.hom.toAlgHom (d.baseMap a) =
+      d.baseMap ((ρ.toMonoidHom g).asIso.hom.toAlgHom a) :=
   stabilizerSectionAction_baseMap d (ρ.stabilizerHom d g) a
 
 end RationalSpectralAction

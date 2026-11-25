@@ -1,7 +1,5 @@
 # Kummer-step upper ramification proof
 
-Worker 561, Task 7502.
-
 The module proves
 `Langlands.Ramification.Kummer.kummerStepUpperSup.{u}` with type exactly
 `Langlands.Ramification.Kummer.KummerStepUpperSupStatement.{u}`. For every
@@ -28,17 +26,17 @@ published canonical valuation, ramification and Herbrand APIs and the
 imported Mathlib algebraic identities. The target's original source map is
 in the published paired documentation of
 `Langlands.LocalFactor.Ramification.Herbrand.KummerTowerStatement`.
-The proof follows the task's cyclotomic tame-descent route, with the
+The proof follows the cyclotomic tame-descent route, with the
 prime-index argument below supplying the final transitivity step.
 
-The completed extension-arithmetic calculation now also proves that the root
+The extension-arithmetic calculation also proves that the root
 has canonical order one, the absolute ramification index is multiplied by `p`,
 and the relative residue degree is one. In any supplied degree-`p` extension,
 order comparison yields `e_F p ord(β) = e_L`; the degree identity yields
 `e_L f = p e_F`. Cancellation gives `ord(β) f = 1`, and positivity forces both
 factors to be one. This proof does not use normality.
 
-The completed cyclotomic-order calculation proves
+The cyclotomic-order calculation proves
 `(p - 1) ord(ζ - 1) = e` for every primitive prime-order root in a p-adic
 field. It first proves that associated elements of the actual canonical
 integer ring have equal order: a unit has valuation one, hence order zero.
@@ -71,7 +69,7 @@ ceiling definition of real lower numbering give triviality above `t`.
 These filtration calculations are internal deductions from the preceding
 order formulas and the published ramification and Herbrand APIs.
 
-The completed Bézout reduction replaces a radicand of positive order `r`
+The Bézout reduction replaces a radicand of positive order `r`
 coprime to `p` by one of order one. If `r a + p b = 1` and `η` is a base
 uniformizer, the new radical is `δ = β^a η^b`, with radicand
 `ϖ^a η^(p b)`. The canonical integer-power and multiplicative order laws
@@ -126,7 +124,8 @@ the simple-adjoin extension principle. The published
 automorphism at `b` to an element of `G_F^b` moving `α`.
 For `x > b`, every element of `G_F^x` restricts to the identity on `M`,
 so it fixes `α` and hence the whole simple intermediate field. This
-proves the requested strict upper-bound auxiliary.
+proves the strict upper-bound auxiliary
+`kummerStep_upper_le_fixingSubgroup`.
 
 Finally put `H = Gal(Ω/F(α))` and `U = G_F^x` for `x ≤ b`.
 The degree formula gives `[G_F:H] = p`, and antitonicity puts the

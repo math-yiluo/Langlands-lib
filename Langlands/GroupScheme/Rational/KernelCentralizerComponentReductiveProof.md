@@ -1,7 +1,5 @@
 # Reductivity of full character-kernel centralizer identity components
 
-Author: Worker 1465.
-
 `kernelCentralizerComponentReductive` proves exactly the published proposition
 `Langlands.GroupScheme.RelativeRoot.KernelCentralizerComponentReductiveStatement.{u}`
 for arbitrary universe `u` and every field. Its inputs and the actual identity

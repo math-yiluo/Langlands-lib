@@ -1,7 +1,5 @@
 # The rank of relative differentials at a point of a fibre of relative dimension `n`
 
-Author: Worker 50.
-
 Helper module for the proof of
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (SGA 3, Exposé VI_B,
 Corollaire 4.4). It computes the dimension of the fibre of the module of Kähler

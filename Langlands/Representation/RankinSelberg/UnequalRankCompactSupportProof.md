@@ -1,7 +1,5 @@
 # Uniform compact support of unequal-rank Whittaker block coefficients
 
-Author: Worker 358.
-
 The theorem
 `Langlands.RankinSelberg.unequalRankCompactSupport.{uF,uV}` proves the
 unchanged Library proposition
@@ -12,11 +10,13 @@ carrier universe `uV` is independent of `uF`.
 
 This is an internal assembly of two published theorems:
 
-- `Langlands.Whittaker.smoothSimpleRootSupport`, implemented by Worker 657,
+- `Langlands.Whittaker.smoothSimpleRootSupport` (module
+  `Langlands.Representation.Whittaker.SmoothSimpleRootSupportProof`)
   bounds all adjacent diagonal ratios for an actual smooth Whittaker
   coefficient, uniformly over the integral factor.
-- `Langlands.RankinSelberg.unequalRankIwasawaSupport`, implemented by
-  Worker 676, converts such a bound into one compact rectangular set for
+- `Langlands.RankinSelberg.unequalRankIwasawaSupport` (module
+  `Langlands.Representation.RankinSelberg.UnequalRankIwasawaSupportProof`)
+  converts such a bound into one compact rectangular set for
   the actual unequal-rank block matrix.
 
 Their statements, proofs, and the target statement are imported without

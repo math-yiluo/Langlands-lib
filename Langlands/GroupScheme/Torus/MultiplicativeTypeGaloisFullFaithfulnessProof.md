@@ -1,7 +1,5 @@
 # Finite Galois full faithfulness for groups of multiplicative type: proof
 
-Author: Worker 815.
-
 This module proves
 `Langlands.GroupScheme.MultiplicativeTypeGaloisFullFaithfulnessStatement.{u}`
 (see [the statement](MultiplicativeTypeGaloisFullFaithfulnessStatement.md))

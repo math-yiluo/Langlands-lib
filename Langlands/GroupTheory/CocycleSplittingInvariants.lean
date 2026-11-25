@@ -35,7 +35,7 @@ lemma ideal_invariant_eq_zero (f : Ideal G)
     congrArg ULift.down hn
   have hc : (Fintype.card G : ℤ) ≠ 0 :=
     Nat.cast_ne_zero.mpr Fintype.card_ne_zero
-  have hz : f.val 1 = 0 := ULift.ext _ _ ((mul_eq_zero.mp hn').resolve_left hc)
+  have hz : f.val 1 = 0 := ULift.ext ((mul_eq_zero.mp hn').resolve_left hc)
   apply Subtype.ext
   funext x
   change f.val x = 0

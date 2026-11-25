@@ -1,8 +1,5 @@
 # Nonzero Whittaker inheritance for normalized block induction
 
-Authors: Worker 357; Worker 90 supplied the checked consumer interface and
-its equality-transport design.
-
 `Langlands.Whittaker.NormalizedInheritanceStatement.{uF,uV} F T` is a
 proposition definition, not a proof or an assumption. It states the nonzero
 functional consequence of Rodier heredity for the Library's actual normalized
@@ -83,8 +80,9 @@ target.
 
 ## Derivation and remaining proof obligations
 
-A future proof must establish the following composition; none of these steps
-is silently a premise of this proposition.
+The proof, `Langlands.Whittaker.normalizedInheritance` in
+`NormalizedInheritanceProof`, establishes the following composition; none of
+these steps is silently a premise of this proposition.
 
 1. Eliminate each rank equality and extract admissibility, irreducibility and
    functional existence from block genericity. Derive finite generation over
@@ -92,7 +90,8 @@ is silently a premise of this proposition.
    and hence finitely generated. This is finite type, not finite dimension
    over the complex numbers. Multiplicity one then upgrades nonzero existence
    to the one-dimensional functional condition required by Rodier. The separate
-   `Whittaker.MultiplicityOneStatement` is a target, not a theorem supplied here.
+   `Whittaker.MultiplicityOneStatement` is a target, proved separately as
+   `multiplicityOne` (module `MultiplicityOneProof`), not a theorem supplied here.
 2. Absorb the upper half modulus into the factors. If `r_i = B.size i`, the
    block character is `χ_i(g) = |det g|^c_i`, with
    `c_i = (∑_{j>i} r_j - ∑_{j<i} r_j)/2`, for the normalized local absolute
@@ -112,7 +111,7 @@ is silently a premise of this proposition.
    Consequently the factor hypotheses needed by the unnormalized Rodier
    statement follow from the original genericity data and multiplicity one.
    These component constructions are available; assembling them at the
-   transported ranks remains part of the future proof.
+   transported ranks is part of the proof.
 4. Reconcile the canonical topology in `InducedWhittakerTypeStatement` with
    the arbitrary compatible `T` here. The published
    `topology_eq_canonicalModule` and `canonicalTopologicalData_topology`
@@ -129,10 +128,11 @@ is silently a premise of this proposition.
    nonzero part of its induced conclusion and transport the functional along
    the actual absorption equivalence, using `Whittaker.Transport`.
 
-The full unnormalized heredity proof remains a separate obligation owned by
-Worker 174. The Library's `inducedWhittakerTypeReduction` proves a conditional
-reduction from `InducedLocalizationStatement`; it does not eliminate that
-geometric heredity premise. The published `Whittaker.LocalizationDual` and
+The full unnormalized heredity is proved separately as
+`Langlands.inducedWhittakerType` (module `InducedWhittakerTypeProof`). The
+Library's `inducedWhittakerTypeReduction` proves a conditional reduction from
+`InducedLocalizationStatement`; it does not by itself eliminate that geometric
+heredity premise, which `InducedLocalizationProof` proves. The published `Whittaker.LocalizationDual` and
 `Tensor.CharacterLocalization` supply quotient-dual and finite-tensor
 comparisons, not an unconditional induction theorem. This module does not
 change `TemperedBlockStatement` or any imported pair and does not duplicate

@@ -1,7 +1,5 @@
 # Proof of the depth-zero intersections of `G(K)_{x,0}` over `K = F^ur`
 
-Author: Worker 82.
-
 `Langlands.Geometry.Building.MaximalUnramified.localMoyPrasadDepthZero` proves
 the unchanged published proposition
 `Langlands.Geometry.Building.MaximalUnramified.LocalMoyPrasadDepthZeroStatement.{u}`

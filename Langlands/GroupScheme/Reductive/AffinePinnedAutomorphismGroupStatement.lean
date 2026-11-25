@@ -47,17 +47,17 @@ def AffinePinnedAutomorphismGroupStatement : Prop :=
     let Pinned : CategoryTheory.Aut G → RootPairing.Aut P → Prop := fun σ θ =>
       ∃ hθ : Based θ,
         (∃ τ : splitTorus (Spec (CommRingCat.of R)) I ≅ splitTorus (Spec (CommRingCat.of R)) I,
-          i ≫ σ.hom = τ.hom ≫ i ∧
+          i ≫ σ.asIso.hom = τ.hom ≫ i ∧
           ∀ (U : Over (Spec (CommRingCat.of R)))
             (x : U ⟶ (splitTorus (Spec (CommRingCat.of R)) I).X) (m : I → ℤ),
             ∏ j, splitTorus.pointsEquiv I U (x ≫ τ.hom.hom.hom) j ^ θ.weightMap m j =
               ∏ j, splitTorus.pointsEquiv I U x j ^ m j) ∧
         ∀ a : b.support,
-          Lie.targetMapLinear σ.hom (CommRingCat.of R) (X a 1).val =
+          Lie.targetMapLinear σ.asIso.hom (CommRingCat.of R) (X a 1).val =
             (X ⟨θ.indexEquiv a, (hθ a).mp a.property⟩ 1).val
     ∃ (inn : (Over.mk (𝟙 (Spec (CommRingCat.of R))) ⟶ Gad.X) →* CategoryTheory.Aut G)
       (π : CategoryTheory.Aut G →* RootPairing.Aut P),
-      (∀ x, inn x = c.basePointIso x) ∧
+      (∀ x, (inn x).asIso = c.basePointIso x) ∧
       Function.Injective inn ∧
       π.ker = inn.range ∧
       (∀ θ, θ ∈ π.range ↔ Based θ) ∧

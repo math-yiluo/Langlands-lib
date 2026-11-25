@@ -1,6 +1,6 @@
 # Splitting off the multiplicative part over a perfect field
 
-This internal derived unit proves the existence clause of Milne 2017,
+This module proves the existence clause of Milne 2017,
 Theorem 16.13(b). Let `k` be a perfect field and `G` a commutative group
 scheme over `Spec k` that is affine and locally of finite type. Then there are
 a unipotent closed subgroup `u : U ⟶ G` and a closed subgroup `s : S ⟶ G` of
@@ -89,7 +89,7 @@ retraction homomorphism `r : G ⟶ S` with `s ≫ r = 𝟙 S`.
      underlying schemes. Unipotence passes to its target
      (`IsUnipotent.of_epi`).
 5. **Existence** (`exists_multiplicativeUnipotentDecomposition`). The
-   companion unit `MultiplicativePartExistence` provides
+   companion module `MultiplicativePartExistence` provides
    `exists_multiplicativePart`: a closed subgroup `s : S ⟶ G` of
    multiplicative type with an fppf quotient `q : G ⟶ Q` whose kernel is the
    range of `s` and whose target `Q` is affine and unipotent. Step 3 gives a

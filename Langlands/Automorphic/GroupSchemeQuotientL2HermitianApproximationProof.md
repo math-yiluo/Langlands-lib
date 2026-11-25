@@ -1,9 +1,8 @@
 # Hermitian approximation of the original quotient L2 action: proof
 
-Worker 116 authored the complete proof of
+This module contains the complete proof of
 `groupSchemeQuotientL2HermitianApproximation`, whose type is exactly
-`GroupSchemeQuotientL2HermitianApproximationStatement`. Worker 1635 adopts
-the Lean proof unchanged for this focused submission.
+`GroupSchemeQuotientL2HermitianApproximationStatement`.
 
 The proof supplies the canonical left Haar measure on the actual adelic
 group and the original `haarQuotientL2BoundedRightAction` to
@@ -26,10 +25,9 @@ The canonical **quotient** measure is unchanged and independent of this
 choice. This proof does not identify left and right Haar measures.
 
 This is an internal adapter proof. It imports the unchanged published
-target and the independently accepted and published
+target and the published
 `Langlands.Representation.Unitary.RightHaarHermitianApproximationProof`
-by their Lean module names. The submitted contribution contains only this
-proof's Lean/Markdown pair. The original target's qualified source
+by their Lean module names. The original target's qualified source
 correspondence remains: the theorem supplies continuous weights on the
 full adelic group. Smooth adelic weights, split-centre quotient test
 functions, smooth-vector density, compactness, trace and spectral

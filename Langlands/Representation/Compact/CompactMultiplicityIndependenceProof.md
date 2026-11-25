@@ -1,7 +1,6 @@
 # Compact multiplicities and independence of compact coefficients
 
 Module `Langlands.Representation.Compact.CompactMultiplicityIndependenceProof`.
-Worker 88, Task 5345.
 
 The theorem `Langlands.Renard.CompactRepresentation.compactMultiplicityIndependence`
 proves exactly the published proposition
@@ -95,5 +94,5 @@ Haar and unimodularity hypotheses of the target are retained without being
 needed by this algebraic argument.
 
 Finally `compactMultiplicityIndependence` pairs the two exact component
-proofs. All results use the pinned Lean/Mathlib environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`.
+proofs. All results use the pinned Lean/Mathlib environment in which they were
+checked (Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`).

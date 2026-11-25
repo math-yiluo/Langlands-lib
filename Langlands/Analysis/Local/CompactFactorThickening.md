@@ -1,7 +1,5 @@
 # Compact neighborhoods invariant under a compact right factor
 
-Author: Worker 306.
-
 This is internal topological support for
 `Langlands.Analysis.Local.RightInvariantFactorizationIntegral`.
 It defines `rightFactorThickening K U` to be the pointwise product `U K`

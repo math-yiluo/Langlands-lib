@@ -162,7 +162,7 @@ private instance signAssembly_rootSpecialFibre_affine (a : characterLattice C.S)
   change IsAffineHom (CategoryTheory.Limits.pullback.snd
     ((T.toIntegralSplitTorusData hT).rootModel a ha).group.X.hom
     (IntegralModel.residueBaseMap (fixedFieldIntegers F)))
-  infer_instance
+  exact MorphismProperty.pullback_snd _ _ inferInstance
 
 /-- The roots of the source special-fibre torus of `T` in the quotient `Q` whose
 generic character is nonnegative on the real cocharacter vector `v`: the right

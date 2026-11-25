@@ -100,7 +100,7 @@ Classical.choice and Quot.sound.
 
 ## Role and limits
 
-This is step (i) of a proof of `UnramifiedTwistedResidueQuotientStatement` (Task 6572).
+This is step (i) of a proof of `UnramifiedTwistedResidueQuotientStatement`.
 It lets the remaining construction work at an apartment point, where the parahoric
 model statement `UnramifiedParahoricModelStatement` and the kernel-fixation module
 `UnramifiedRadicalChamberFixation` apply to `apartmentMap '' {x}`. The module constructs

@@ -69,47 +69,55 @@ theorem lift_baseChange (g : A ⟶ C) (hg : KillsKernel q g) (b : T ⟶ S) :
   rw [← Functor.map_comp, fac]
 
 variable {R : Type v} [Ring R] (α : R →+* End A)
-  (hα : ∀ r, KillsKernel q (α r ≫ q))
+  (hα : ∀ r, KillsKernel q ((α r).asHom ≫ q))
 
 /-- Descend a unital integral action preserving the actual isogeny kernel. -/
 def action : R →+* End B where
-  toFun r := lift hq (α r ≫ q) (hα r)
+  toFun r := CategoryTheory.End.of (lift hq ((α r).asHom ≫ q) (hα r))
   map_one' := by
+    apply CategoryTheory.End.ext
     apply hom_ext hq
     rw [fac, map_one]
     rfl
   map_zero' := by
+    apply CategoryTheory.End.ext
     apply hom_ext hq
-    rw [fac, map_zero, zero_comp, comp_zero]
+    rw [fac, map_zero, CategoryTheory.End.zero_asHom, CategoryTheory.End.zero_asHom, zero_comp,
+      comp_zero]
   map_add' r s := by
+    apply CategoryTheory.End.ext
+    rw [CategoryTheory.End.add_asHom]
     apply hom_ext hq
-    rw [fac, map_add, Preadditive.add_comp, Preadditive.comp_add, fac, fac]
+    rw [fac, map_add, CategoryTheory.End.add_asHom, Preadditive.add_comp, Preadditive.comp_add,
+      fac, fac]
   map_mul' r s := by
+    apply CategoryTheory.End.ext
     apply hom_ext hq
-    change q ≫ lift hq (α (r * s) ≫ q) (hα (r * s)) =
-      q ≫ (lift hq (α s ≫ q) (hα s) ≫ lift hq (α r ≫ q) (hα r))
+    change q ≫ lift hq ((α (r * s)).asHom ≫ q) (hα (r * s)) =
+      q ≫ (lift hq ((α s).asHom ≫ q) (hα s) ≫ lift hq ((α r).asHom ≫ q) (hα r))
     rw [fac, map_mul]
-    change (α s ≫ α r) ≫ q = _
+    change ((α s).asHom ≫ (α r).asHom) ≫ q = _
     rw [← Category.assoc, fac]
     simp only [Category.assoc, fac]
 
 @[reassoc]
-theorem action_fac (r : R) : q ≫ action hq α hα r = α r ≫ q :=
+theorem action_fac (r : R) : q ≫ (action hq α hα r).asHom = (α r).asHom ≫ q :=
   fac hq _ _
 
 /-- Equivariance of `q` uniquely determines the descended action. -/
 theorem action_unique (β : R →+* End B)
-    (hβ : ∀ r, q ≫ β r = α r ≫ q) : β = action hq α hα := by
-  ext r
+    (hβ : ∀ r, q ≫ (β r).asHom = (α r).asHom ≫ q) : β = action hq α hα := by
+  ext r : 1
+  apply CategoryTheory.End.ext
   exact hom_ext hq _ _ ((hβ r).trans (action_fac hq α hα r).symm)
 
 include hq hα in
 /-- The pulled-back action preserves the pulled-back actual scheme kernel. -/
 theorem action_killsKernel_baseChange (b : T ⟶ S) (r : R) :
     KillsKernel ((baseChange b).map q)
-      (baseChangeOrderAction b A α r ≫ (baseChange b).map q) := by
+      ((baseChangeOrderAction b A α r).asHom ≫ (baseChange b).map q) := by
   change KillsKernel ((baseChange b).map q)
-    ((baseChange b).map (α r) ≫ (baseChange b).map q)
+    ((baseChange b).map (α r).asHom ≫ (baseChange b).map q)
   rw [← Functor.map_comp]
   exact killsKernel_baseChange hq _ (hα r) b
 
@@ -120,7 +128,7 @@ theorem action_baseChange (b : T ⟶ S) :
         (action_killsKernel_baseChange hq α hα b) := by
   apply action_unique
   intro r
-  change (baseChange b).map q ≫ (baseChange b).map (action hq α hα r) = _
+  change (baseChange b).map q ≫ (baseChange b).map (action hq α hα r).asHom = _
   rw [← Functor.map_comp, action_fac, Functor.map_comp]
   rfl
 
@@ -132,7 +140,7 @@ variable (K : FiniteEtaleSubgroup A)
 
 /-- An actual endomorphism preserves the supplied subgroup if it restricts to it. -/
 def PreservedBy (e : End A) : Prop :=
-  ∃ k : CommGroupScheme.End K.G, K.inclusion ≫ commHom e = k ≫ K.inclusion
+  ∃ k : CommGroupScheme.End K.G, K.inclusion ≫ commHom e.asHom = k.asHom ≫ K.inclusion
 
 namespace QuotientData
 
@@ -160,10 +168,10 @@ theorem inclusion_comp_q : K.inclusion ≫ commHom D.q = 0 :=
 
 /-- Restriction to the actual subgroup suffices for kernel preservation. -/
 theorem killsKernel_of_preserved {e : End A} (he : K.PreservedBy e) :
-    KillsKernel D.q (e ≫ D.q) := by
+    KillsKernel D.q (e.asHom ≫ D.q) := by
   apply (D.killsKernel_iff _).mpr
   obtain ⟨k, hk⟩ := he
-  change K.inclusion ≫ (commHom e ≫ commHom D.q) = 0
+  change K.inclusion ≫ (commHom e.asHom ≫ commHom D.q) = 0
   rw [← Category.assoc, hk, Category.assoc, inclusion_comp_q, comp_zero]
 
 /-- The quotient's universal factorization for a supplied subgroup-killing map. -/
@@ -182,12 +190,12 @@ def action : R →+* End D.B :=
   IsogenyActionDescent.action D.isIsogeny α (fun r => D.killsKernel_of_preserved (hα r))
 
 @[reassoc]
-theorem action_fac (r : R) : D.q ≫ D.action α hα r = α r ≫ D.q :=
+theorem action_fac (r : R) : D.q ≫ (D.action α hα r).asHom = (α r).asHom ≫ D.q :=
   IsogenyActionDescent.action_fac _ _ _ _
 
 /-- Equivariance determines the quotient action uniquely. -/
 theorem action_unique (β : R →+* End D.B)
-    (hβ : ∀ r, D.q ≫ β r = α r ≫ D.q) : β = D.action α hα :=
+    (hβ : ∀ r, D.q ≫ (β r).asHom = (α r).asHom ≫ D.q) : β = D.action α hα :=
   IsogenyActionDescent.action_unique _ _ _ β hβ
 
 /-- Pulling back the quotient action equals descent through the pulled-back quotient map. -/

@@ -1,7 +1,5 @@
 # Actual central split tori inside maximal split tori
 
-Author: Worker 1327.
-
 This internal derivation uses the published factorization of central split
 tori through maximal split tori. Over an arbitrary field and in an arbitrary
 universe, every actual central split torus `a : A → G` factors through every

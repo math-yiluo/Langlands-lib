@@ -77,15 +77,15 @@ theorem multiplier_eq_one_of_two_nsmul_not_mem
     {α : characterLattice S} (hα : α ∈ relativeRoots i) (h2α : 2 • α ∉ relativeRoots i)
     {χ : characterLattice T} (hχ : χ ∈ relativeRoots j) {m : ℕ} (hm : 0 < m)
     (heq : f ≫ χ = m • (a_K α)) : m = 1 := by
-  have : IsAddTorsionFree (TensorProduct ℤ ℚ (characterLattice S)) :=
-    IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice S) :=
-    Function.Injective.isAddTorsionFree Langlands.LinearAlgebra.RationalSpan.toRat
+  have : HasUniqueDiv (TensorProduct ℤ ℚ (characterLattice S)) :=
+    HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice S) :=
+    Function.Injective.hasUniqueDiv Langlands.LinearAlgebra.RationalSpan.toRat
       hS.character_toRat_injective
   have hmα : m • α ≠ 0 := by
     intro h0
     apply hα.1
-    exact IsAddTorsionFree.nsmul_right_injective (Nat.pos_iff_ne_zero.mp hm)
+    exact HasUniqueDiv.nsmul_right_injective (Nat.pos_iff_ne_zero.mp hm)
       (h0.trans (smul_zero m).symm)
   have hbase : (a_K (m • α)) = m • (a_K α) := map_nsmul _ m α
   have hne : f ≫ χ ≠ 0 := by

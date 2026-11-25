@@ -9,7 +9,7 @@ import Langlands.TraceFormula.GeneralLinearBaseChangeLocal
 
 For `GL_{r+1}` over a number field `F`, this module states that the local factor at a finite
 place `v` in the trace factorization of `GroupSchemeCuspidalLocalTraceFactorizationStatement`
-(Task 7701) can be taken to be the Library's local component at `v` of a cuspidal operator
+can be taken to be the Library's local component at `v` of a cuspidal operator
 realization `R` attached to the summand. The summand `P` and the realization `R` are linked as
 in `GeneralLinearCuspidalSummandRealizationStatement`: a linear map `Φ` sends each form of `R`
 to its `L²` class, and the closure of its image is `P`. The local component is that of any

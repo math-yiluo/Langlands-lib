@@ -1,6 +1,6 @@
 # Smoothness and orbit continuity of the actual coefficient
 
-Worker 200. This derived construction proves the finite-torus parameter form
+This derived construction proves the finite-torus parameter form
 of Waldspurger Lemma VI.2.1(i), printed p.296/PDF p.62: for a coherent smooth
 orbit section and fixed `g`, its actual induced coefficient is smooth in the
 orbit parameter. It also proves continuity for the actual quotient topology on
@@ -107,7 +107,7 @@ consumer's conclusions.
 
 ## Remaining scope
 
-This unit proves fixed-group-point parameter smoothness and orbit continuity
+This module proves fixed-group-point parameter smoothness and orbit continuity
 for the original descended coefficient and its fixed normalization. It proves
 no constant-term smoothness from VI.2.1(ii), parameter-space topology or
 continuity of the coefficient map as an operator, Schwartz bound, wave-packet

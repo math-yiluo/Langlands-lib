@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_bijective_appTop_of_isProper_of_flat_of_locallyOfFinitePresentation_of_isLocalRing
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_bijective_appTop_pullback_snd_of_bijective_appTop_fiberToSpecResidueField
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_bijective_appTop_of_forall_isMaximal

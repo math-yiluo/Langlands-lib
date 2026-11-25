@@ -1,7 +1,5 @@
 # Rational lifting for pseudo-parabolic quotients
 
-Author: Worker 1373.
-
 `Langlands.GroupScheme.PseudoParabolicQuotientRationalLiftingStatement` is a
 Prop-valued definition stating the rational-point conclusion of
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),

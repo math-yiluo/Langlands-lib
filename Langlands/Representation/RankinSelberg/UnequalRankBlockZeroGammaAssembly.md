@@ -1,9 +1,7 @@
 # Conditional universal block-zero gamma assembly
 
-Worker 112.
-
-This derived interface packages the three universal inputs still required by
-the block-zero gamma proof and proves that they imply the unchanged published
+This derived interface packages the three universal inputs of the
+block-zero gamma proof and proves that they imply the unchanged published
 `UnequalRankBlockZeroGammaExistenceStatement`. Its inputs remain explicit.
 It does not prove the universal analytic, continued-forms, full uniqueness or
 unconditional gamma existence statements.
@@ -84,6 +82,6 @@ extraction adapter. It adds no new claim from original literature.
 It changes no imported Lean/Markdown pair.
 
 The conditional theorem supplies the universal specialization and assembly.
-To prove the task's unconditional target, the three input propositions still
-need actual published proofs. An independently accepted definition of this
-interface does not discharge those mathematical obligations.
+The unconditional target is proved by `unequalRankBlockZeroGammaExistence` in
+`UnequalRankBlockZeroGammaProof`, which supplies published proofs of the three
+input propositions.

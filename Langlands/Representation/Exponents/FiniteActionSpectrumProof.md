@@ -1,7 +1,5 @@
 # Proof of the finite spectrum of a commutative action with finite operator span
 
-Author: Worker 23.
-
 The theorem `Langlands.finiteActionCommutativeSpectrum` has the complete
 unapplied type `Langlands.FiniteActionCommutativeSpectrumStatement.{uA,uV}`,
 imported from `Langlands.Representation.Exponents.FiniteActionSpectrumStatement`.

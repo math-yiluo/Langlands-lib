@@ -1,7 +1,8 @@
 # Almost simplicity of identity components under field extension
 
-This internal derived module supplies the geometric descent step used by
-Worker 97 in Task 5397. Its groups and identity components are the actual
+This internal derived module supplies the geometric descent step used for
+the spin groups of quaternionic quadratic forms of Witt index one over
+nonarchimedean local fields. Its groups and identity components are the actual
 published group schemes; no quaternionic classification result is assumed or
 proved here. The fields have arbitrary characteristic and lie in an arbitrary
 common universe.

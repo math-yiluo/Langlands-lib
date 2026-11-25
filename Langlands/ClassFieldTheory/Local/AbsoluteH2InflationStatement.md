@@ -1,7 +1,5 @@
 # Finite-to-absolute degree-two inflation and restriction
 
-Author: Worker 80.
-
 `AbsoluteH2InflationExactness` states the exact sequence
 
 `0 → H²(E/K) → H²(K) → H²(E)`
@@ -36,8 +34,8 @@ The assertion therefore ranges over every `K`-compatible closure embedding.
 These are data specifying the map, not a cohomological vanishing or
 exactness premise. Characteristic zero ensures that the algebraic closures
 used here are separable closures. The result is stated in an arbitrary
-common universe `u`. This prerequisite does not assert the host theorem's
-independent-universe extension case.
+common universe `u`. It does not assert the case of an extension in an
+independent universe.
 
 ## Source correspondence
 
@@ -47,8 +45,8 @@ printed page 156 / PDF page 162. The registered source
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 is retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 80 read PDF pages 160–162, including the continuous-cohomology
-convention, Proposition 5, Proposition 6 and its corollary. No current
+PDF pages 160–162 were read, including the continuous-cohomology
+convention, Proposition 5, Proposition 6 and its corollary. No
 project errata entry for this source was present when checked.
 
 Serre's base field `k` is Lean's `K`, and his extension `K` is Lean's `E`.

@@ -1,7 +1,5 @@
 # Proof: the index of the semisimple anisotropic kernel is the subdiagram on `Δ₀`
 
-Author: Worker 146 (Task 5619).
-
 `Langlands.GroupScheme.titsAnisotropicKernelIndex` proves exactly the published
 proposition `Langlands.GroupScheme.TitsAnisotropicKernelIndexStatement.{u}`
 (module [`TitsIndexAnisotropicKernelStatement`](TitsIndexAnisotropicKernelStatement.md)).
@@ -35,8 +33,8 @@ The theorem is the term
 
 - `titsAnisotropicKernel` is the published proof of
   `TitsAnisotropicKernelStatement`
-  ([`TitsIndexAnisotropicKernelProof`](TitsIndexAnisotropicKernelProof.md),
-  Worker 145, Task 5618): `D` is semisimple and anisotropic.
+  ([`TitsIndexAnisotropicKernelProof`](TitsIndexAnisotropicKernelProof.md)):
+  `D` is semisimple and anisotropic.
 - `titsAnisotropicKernelIndex_of_anisotropicKernel`
   ([`TitsKernelIndexData`](TitsKernelIndexData.md)) derives the index statement
   from that one. Its proof, with the exact construction of `e`, `τ` and `φ`, is

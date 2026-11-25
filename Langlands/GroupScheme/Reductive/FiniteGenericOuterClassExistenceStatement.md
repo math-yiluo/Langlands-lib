@@ -1,7 +1,5 @@
 # A finite outer component containing a prescribed generic isomorphism class
 
-Worker 217.
-
 `FiniteGenericOuterClassExistenceStatement` is a proposition in every
 universe. Let `R` be a commutative domain DVR with specified fraction
 field `K`, and let `G` and `H` be reductive groups over `Spec R` with a
@@ -37,14 +35,16 @@ the image of the specified generic outer class is therefore finite
 étale over `Spec R`. Taking that component and its inclusion gives the
 data requested here. For arbitrary supplied `I` and `O`, deriving this
 statement also requires identifying their represented fpqc quotient
-with that outer-isomorphism sheaf. This is part of the unproved
-geometric obligation, not an extra premise.
+with that outer-isomorphism sheaf. This is part of the geometric
+argument, not an extra premise. The Library proves the statement as
+`finiteGenericOuterClassExistence` (module
+`FiniteGenericOuterClassExistenceProof`).
 
 The general-DVR scope is derived from the geometric part of the cited
 argument. Henselianity and finite residue are used subsequently in
 Conrad to trivialize adjoint torsors; they are unnecessary for the
 finite-component assertion and are absent here. This module supplies
-an unproved proposition-valued definition. Extending the finite-scheme
+a proposition-valued definition and does not prove it. Extending the finite-scheme
 point and constructing its actual fibre are separately implemented by
 `FiniteGenericOuterClass.integralClass` and
 `GenericInnerIsomorphismTorsor.ofOuter`; they do not prove this

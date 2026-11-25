@@ -1,7 +1,5 @@
 # The DVR valuative reduction for reductive group monomorphisms
 
-Worker 671.
-
 This internal construction applies the published `DvrCase` proposition to actual
 base changes of the source and target groups of a monic homomorphism from a
 reductive group scheme. The target is separated, locally of finite presentation,
@@ -38,4 +36,5 @@ specializes to the spectrum of a DVR, which is locally noetherian.
 The noetherian DVR criterion is reused from
 `Langlands.AlgebraicGeometry.NoetherianValuativeCriterion`; its proof and licensed
 dependencies are not reproduced here. This module does not prove `DvrCase`, the
-separate approximation to noetherian bases, or the host theorem over all bases.
+separate approximation to noetherian bases, or the closed-immersion theorem over
+all bases (`ReductiveMonomorphismClosedImmersionStatement`).

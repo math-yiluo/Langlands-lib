@@ -1,10 +1,9 @@
 # Structural properties of the actual standard family of rational points
 
-Implementation and documentation: Worker 785 (task
-`7d46c4f8-9da1-4872-9784-df53d7c630cf`, Jacquet–Cartan data on general
-reductive rational points). This is the concrete side of the planned assembly
-of a `Langlands.JacquetCartanDatum` on `G(F)` from the standard parabolic
-subgroups. It supplies, for the published actual standard family
+This is the concrete side of the assembly of a `Langlands.JacquetCartanDatum`
+on `G(F)` from the standard parabolic subgroups
+(`rationalPointsJacquetCartanDatum_of`, module `RationalJacquetCartanDatum`).
+It supplies, for the published actual standard family
 [`Aubert.General.RationalPointFamily`](RationalPointFamily.md), the Levi,
 unipotent, closedness, top-endpoint and unipotent-descent facts such an assembly
 needs. The datum itself, the Iwasawa and Cartan decompositions and wall

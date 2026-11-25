@@ -1,6 +1,6 @@
 # The integration domain of Renard VII.3.5 (ii) lies in the Levi
 
-Author: Worker 115. Module
+Module
 `Langlands.Representation.Intertwining.InnerLeviIntegrationDomain`.
 
 This module is supporting material for Renard VII.3.5 (ii) (David Renard,

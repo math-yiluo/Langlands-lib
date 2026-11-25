@@ -9,15 +9,13 @@ Proposition 8.4.15 (printed p. 307, PDF p. 338) that the kernel of the
 special-fibre map `ρ` is unipotent: `ρ` is injective on a maximal torus of the
 special fibre, and all maximal tori are conjugate, so the connected kernel
 contains no nontrivial torus. The module
-`Langlands.GroupScheme.Absolute.KernelMaximalTorusUnipotent` (approved
-candidate `3c8c7c2b`, included in this submission's repository paths until it
-is integrated) proves this step
+`Langlands.GroupScheme.Absolute.KernelMaximalTorusUnipotent` proves this step
 when the source group `G` is connected (`isUnipotent_kernel_of_isMaximalTorus`).
 
 The special fibre of a smooth integral model need not be connected. This module
 removes that hypothesis by passing to the identity component. The statements
-and their arrangement are internal design by Worker 4783 for Task 6203, which
-Worker 282 and Worker 4783 share. No statement here comes from the literature.
+and their arrangement are internal design, made for the proof of KP
+Proposition 8.4.15. No statement here comes from the literature.
 
 The published module `Langlands.GroupScheme.IdentityComponent` supplies, for a
 smooth affine group `G` over a field:
@@ -32,7 +30,7 @@ smooth affine group `G` over a field:
   from a split torus factors uniquely through the identity component.
 
 This module does not prove smoothness or connectedness of any kernel, and it
-does not prove the host theorem of Task 6203.
+does not prove KP Proposition 8.4.15 itself.
 
 ## Results
 

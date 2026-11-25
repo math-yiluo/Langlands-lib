@@ -195,22 +195,22 @@ The module imports only:
 So the project import closure is the statement's 63 modules plus
 `Group.GL.NestedRefinement`, 64 in all. Its only Classification modules are
 `Classification.Supercuspidal` and `Classification.SupercuspidalTwist`. None of
-these modules is a conclusion, proof successor or transitive proof dependency of
-any excluded task:
+these modules states or proves any of the following results, or depends on a
+proof of one of them:
 
-- analytic segment classification `aca8805b`;
-- special-head multisegment exhaustion `3bfb61fa`;
-- ordered strong-head existence `ebea9a8a`;
-- quotient coverage `20e4e1c6`;
-- tempered block uniqueness `52e97845`;
-- `SquareIntegrableLanglandsClassification` / `1cb45da2`;
-- square-integrable exhaustion `cd8ab97c`;
-- regular exhaustion `bf433f0a`.
+- analytic segment classification;
+- special-head multisegment exhaustion;
+- ordered strong-head existence;
+- quotient coverage;
+- tempered block uniqueness;
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion;
+- regular exhaustion.
 
-The proof also uses no results of the arbitrary irreducible-Levi task
-`3b437c95`, the finite-length admissibility task `d9898ee2`, the parabolic
-finite-length task `2a216dfa`, or the upper/opposite refinement-transitivity
-task `32edfd0a`. From `CuspidalSupport.MinimalJacquetProof` it reuses only
+The proof also uses no results on admissibility of arbitrary irreducible Levi
+representations, on finite-length admissibility, on parabolic finite length,
+or on upper/opposite refinement transitivity. From
+`CuspidalSupport.MinimalJacquetProof` it reuses only
 group-level material in namespace `GeneralLinear.BlockShape`:
 
 - the shape constructions `BlockShape.flatten` and `BlockShape.flattenBlockEquiv`,

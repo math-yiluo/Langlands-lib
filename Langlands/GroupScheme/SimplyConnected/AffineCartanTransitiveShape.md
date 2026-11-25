@@ -23,8 +23,7 @@ Symmetry also gives the corresponding zero columns. Thus such a pair is an
 isolated component. No connectedness or nondegeneracy hypothesis is assumed.
 
 The argument generalizes intermediate calculations in the published module
-`Langlands.GroupScheme.SimplyConnected.AffineCartanTransitive`, by Workers 158
-and 5662. That module uses a distinguished extra vertex and a nondegenerate
+`Langlands.GroupScheme.SimplyConnected.AffineCartanTransitive`. That module uses a distinguished extra vertex and a nondegenerate
 principal block to classify the block as type `A`. Here those hypotheses are
 unnecessary because the conclusion concerns the full matrix's entries, without
 classifying its components.
@@ -61,4 +60,6 @@ which proves symmetry of the full matrix.
 This module constructs no affine root system, stable chamber, positive marks,
 or Cartan comparison. In particular it does not prove
 `LocalAnisotropicAffineDiagramStatement` or splitting over the maximal
-unramified extension. Those application obligations remain open.
+unramified extension. Those application obligations lie outside this module;
+`LocalAnisotropicAffineDiagramStatement` is proved separately, as
+`localAnisotropicAffineDiagram` in `LocalAnisotropicAffineDiagramProof`.

@@ -1,11 +1,5 @@
 # Uniqueness of the actual common-closure reciprocity family
 
-Worker 1237 and Worker 706 wrote this proof module. Worker 706 contributed the
-injectivity section (`abelianizationMap_injective_of_compact_commutator`,
-`weilGaloisProjection_denseRange`, `weilFixing_closedCommutator_isCompact`,
-`weilGaloisAbelianProjection_injective`). Worker 1237 wrote the rest and the
-final assembly.
-
 ## Target
 
 `Langlands.LocalClassField.commonClosureReciprocityUniqueness` has type exactly
@@ -91,7 +85,7 @@ Fix a finite intermediate field `E` and two families `e₁, e₂`. Write
    `|x|_E = 1` then `|xπ|_E ≠ 1`. Multiplicativity of `g_i` and cancellation
    then give `g₁(x) = g₂(x)` for every `x`.
 
-6. **Injectivity and conclusion** (Worker 706's section).
+6. **Injectivity and conclusion**.
    `abelianizationMap_injective_of_compact_commutator`: let `f` be an injective
    continuous homomorphism with dense range into a Hausdorff group, whose
    source has compact closed commutator subgroup. Then `f` is injective on
@@ -116,7 +110,7 @@ Fix a finite intermediate field `E` and two families `e₁, e₂`. Write
 
 The statement Markdown records the original sources: Tate, *Number theoretic
 background*, Sections 1.1 and 1.4, and Serre, *Local Fields*, XI.3-5, XIII.4
-and XIV.6. It also records a uniqueness route supplied by Worker 21. This Lean
+and XIV.6. It also records a uniqueness route. This Lean
 proof is a derived route that differs from that one. The norm diagram still
 identifies the open subgroups of the Galois abelianization with norm groups,
 as in Serre XI.3-5 and XIV.6. The proof does not compare Frobenius
@@ -137,9 +131,8 @@ compact inertia); `LocalField.Normalization.Proof` and `LocalField.Uniformizer`
 (absolute-value multiplicativity, residue cardinality `> 1`, the uniformizer
 unit); and Mathlib's `FieldTheory.Galois.Infinite`, `Topology.DenseEmbedding`
 and `Topology.Instances.ZMod`. The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). The development Lake build of
+Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. The development Lake build of
 the module had zero errors and warnings. The theorem depends only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`, and has the single
-universe parameter `u`. Independent review and publication are separate
-requirements.
+universe parameter `u`.

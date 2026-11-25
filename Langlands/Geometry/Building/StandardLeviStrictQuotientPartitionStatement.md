@@ -1,7 +1,5 @@
 # The partition of the nonnegative quotient by actual standard-Levi pieces
 
-Author: Worker 1222.
-
 `Langlands.GroupScheme.CocharacterUniformizer.StandardLeviStrictQuotientPartitionStatement`
 is a proposition about every nonarchimedean local field `F : Type u`,
 connected reductive actual group scheme `G`, actual maximal split torus

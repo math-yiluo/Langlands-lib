@@ -37,5 +37,6 @@ clauses of the unchanged target.
 
 This is an internal composite proof of the published statement. The Lean file
 imports its prerequisites by module name and changes neither the target's
-Lean/Markdown pair nor any imported pair. The algebraic assembly is due to
-Worker 588; Worker 237 supplied the geometric splitting used here.
+Lean/Markdown pair nor any imported pair. The algebraic assembly is in
+`AffinePinnedAutomorphismAssembly`; the geometric splitting used here is in
+`AffinePinnedAutomorphismSplittingGeometry`.

@@ -1,25 +1,24 @@
 # Harris's §2 constructions for étale sheaves on the domains `U(f)`
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Cohomology.DivisibleSystem.DrinfeldFacet` (Worker 26, published): Harris's
+- `Langlands.Cohomology.DivisibleSystem.DrinfeldFacet`: Harris's
   domain `U(f)` as the analytic space `facetSpace K hS ε H hH`, with the action
   `facetρ K hS ε H hH` of a subgroup `H` of the stabilizer `S(f)` in `GL_{d+1}(F)`, built
-  from Worker 21's `facetAction` (`DrinfeldFacetSpaces`). It is the quasi-étale version of
+  from `facetAction` (`DrinfeldFacetSpaces`). It is the quasi-étale version of
   this module.
-- `Langlands.Sheaf.Equivariant.AnalyticEtaleRefinements` (Worker 26, published): the
+- `Langlands.Sheaf.Equivariant.AnalyticEtaleRefinements`: the
   conditions `HasDistinguishedEtaleNeighbourhoods`, `HasDistinguishedEtaleLifts` and
   `HasCompatibleDistinguishedEtaleLifts`, and
   `hasAdmissibleRefinements_distinguishedLiftSystem`.
-- `Langlands.Cohomology.DivisibleSystem.AnalyticEtaleConstant` (Worker 26, accepted or
-  submitted before this module): the constant étale `G`-sheaves `etaleConstantSheaf`, the
-  constant system `etaleConstantSystem`, Harris's Lemma 2.2, Lemma 2.2 bis, (2.3) and
+- `Langlands.Cohomology.DivisibleSystem.AnalyticEtaleConstant`: the constant étale
+  `G`-sheaves `etaleConstantSheaf`, the constant system `etaleConstantSystem`, Harris's Lemma 2.2, Lemma 2.2 bis, (2.3) and
   Lemma 2.8 for it with a family of points (`etaleConstantFamily*`), and
   `etaleConstantCompactHomologyToPlain`. Through it, `DivisibleSystem.AnalyticEtale`
   (`EtaleDivisibleSystem`, `etaleFamilyGodementFunctor`), `AnalyticEtaleComparison`
   (`etaleCompactCohomology`) and `AnalyticEtaleCompactCohomology`
   (`etaleGSheafCompactCohomology`, `twistedEtale_hasSheafify`, `etale_hasSheafify`).
-- Worker 3's statements `ProPInvariantSubcomplexStatement` and
+- The statements `ProPInvariantSubcomplexStatement` and
   `FiniteCohomologyInverseLimitStatement`, which appear only as hypotheses and are not
   proved in the Library.
 
@@ -86,7 +85,8 @@ As in `DrinfeldFacet`:
   on the étale site of `U(f)`: (2.3) followed by the comparison
   `etaleConstantCompactComparison`. That it is an isomorphism is not proved.
 - With a filtered preorder `ι : Type u`, an antitone family `N : ι → Subgroup H` of normal
-  subgroups of finite index and Worker 61's hypotheses `hK`, `hk`:
+  subgroups of finite index and the hypotheses `hK`, `hk` of the InverseLimit module (as in
+  `DrinfeldFacet`):
   `facetEtaleConstantQuotientInvariantsInverseLimit`, Harris's `lim_m C^•_m`, and
   `facetEtaleConstantQuotientInvariantsInverseLimitHomologyIso`, Harris's Lemma 2.8,
   `Hⁿ(lim_m C^•_m) ≅ limit (m ↦ H^n_c(U(f){H}, R / ℓ ^ m R))` in `Rep R H`, under the
@@ -121,7 +121,8 @@ Fact 2 as the hypothesis `hdim`. Coefficients are `R / ℓ ^ m R`.
 
 The three conditions of `AnalyticEtaleRefinements` on `U(f)`, the point axioms, a family of
 points satisfying `hpoints`, exactness and acyclicity of the Godement functor, Fact 2 for
-constant coefficients, the subgroup family and its hypotheses, Worker 3's two statements, the
+constant coefficients, the subgroup family and its hypotheses, the two statements
+`ProPInvariantSubcomplexStatement` and `FiniteCohomologyInverseLimitStatement`, the
 trivial action and finiteness of `H^q_c`, that the comparison to plain cohomology is an
 isomorphism, the tower `ℳ_N`, the domains `U(e, N, δ)`, Harris's group `GJ` and its
 subgroups `S(ẽ)`.

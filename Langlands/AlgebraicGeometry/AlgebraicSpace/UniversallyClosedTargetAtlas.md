@@ -1,6 +1,6 @@
 # Universal closedness tested on a surjective etale target atlas
 
-This internal unit proves the target-atlas criterion for the published
+This internal module proves the target-atlas criterion for the published
 `IsUniversallyClosedMorphism` predicate, with arbitrary base scheme and arbitrary
 algebraic-space morphism. It uses actual presheaf pullbacks and their specified
 point topologies; the original morphism need not be represented by schemes.
@@ -42,7 +42,10 @@ original image is closed, as required.
 The provenance is internal: the published chart-point/common-test comparison,
 actual fibre products, represented atlas projections, point-map continuity,
 etale atlas quotient topology, and canonical iterated pullback isomorphisms.
-The result supplies the target-local topological step of the host properness
-argument. Scheme-cover existence, actual rebase comparisons, descent of the
-cover and its map, and the full eight-property limit theorem remain separate
-obligations.
+The result supplies the target-local topological step of the properness
+clause of `SpaceLimitPropertyDescentStatement`. Scheme-cover existence, actual
+rebase comparisons, descent of the cover and its map, and the full
+eight-property limit theorem are separate results: `properSchemeCover` in
+`ProperSchemeCoverProof`, `SchemeTargetUniversallyClosed`,
+`ProperSchemeCoverDescent`, and `spaceLimitPropertyDescent` in
+`SpaceLimitPropertyDescentProof`.

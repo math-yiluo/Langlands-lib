@@ -1,7 +1,5 @@
 # Elementary cases of mirabolic twisted pairing rigidity
 
-Author: Worker 806.
-
 This module reduces
 `Langlands.Whittaker.MirabolicTwistedPairingRigidityStatement.{uF,uV,uW} F T n`
 (from `MirabolicPairingStatement`) to the single case in which both

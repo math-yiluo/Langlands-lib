@@ -1,8 +1,6 @@
 # Proof of Conrad's Lemma 4.6 for schemes
 
-Author: Worker 7. The composition was proposed by Worker 5202 in the context of Task 5993.
-
-This module proves the published statement
+This module proves the statement
 `Langlands.AlgebraicGeometry.UniformLangWeilStatement` with the theorem
 `Langlands.AlgebraicGeometry.uniformLangWeil`, in an arbitrary universe `u`. It imports the
 statement's Lean/Markdown pair unchanged. It adds no hypotheses and introduces no axiom or
@@ -24,7 +22,7 @@ Conrad's own proof uses Deligne's Weil II. This proof does not.
 
 ## The proof
 
-The proof is one term, the composition of three published Library theorems in namespace
+The proof is one term, the composition of three Library theorems in namespace
 `Langlands.AlgebraicGeometry.LangWeil`:
 
 ```lean

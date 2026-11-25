@@ -1,7 +1,5 @@
 # Actual left Mackey projection after positive-character localization
 
-Author: Worker 499.
-
 This module constructs `leftPhiMackeyLocalizedIso` in
 `Langlands.Derivative.MirabolicProductMinus`. For the actual higher left
 mixed-product coefficient, localization of the full restricted compact
@@ -13,8 +11,9 @@ zero, and algebraic right exactness makes this quotient bijective.
 This is a focused internal prerequisite toward BZ77 §4.13(b).
 Its localization uses the unnormalized successor section action. The
 comparison with the actual ambient Phi-minus radical action, its
-inverse-half determinant twist, the host rank adapters and the final
-mixed-minus compatibility remain separate obligations.
+inverse-half determinant twist, the rank adapters of the statement
+`MirabolicProductMinusCompatibilityStatement` and the final mixed-minus
+compatibility are proved in other modules.
 
 ## Source and provenance
 
@@ -33,7 +32,7 @@ mirabolic groups and minus functors. Section 4.12(II), printed pp.456–457
 p.458 (PDF page 19), states its natural compatibility. Section 7.2,
 printed p.471 (PDF page 32), gives the left identity and cycle orbit
 calculation. These passages and their relevant page images were read
-during this task. The bounded supplied-source and public-note errata
+for this construction. The bounded supplied-source and public-note errata
 search found no applicable BZ77 entry; no global absence is asserted.
 
 The present functorial specialization and assembly are derived content.
@@ -42,8 +41,8 @@ two-step natural exact-sequence construction, character-stages comparison,
 full normalized cycle-coefficient vanishing, and algebraic localization
 right exactness are reused from independently published Lean results.
 The original does not literally state the Library's nested kernel or
-chosen-natural-transformation interfaces. No host comparison, source
-formula treated as a theorem, pending candidate or peer draft supplies a
+chosen-natural-transformation interfaces. No comparison of the statement,
+source formula treated as a theorem or unproved statement supplies a
 proof body. The generic two-step result is imported from the separate
 binary-restriction development; its binary restriction conclusion is not
 used as a comparison for this actual mixed restriction.
@@ -82,7 +81,7 @@ H_i = orbitStabilizer H Q w_i = leftStabilizer k r F.Carrier i.
 Here `w_0` is the cycle and `w_1` the identity. The group `L` is
 P_(k+r+2), the expected ambient Phi-minus output group. The source
 convention `phiMinus T ψ r : P_(r+2) → P_(r+1)` is preserved, but
-this unit does not yet invoke that functor on the mixed product. No P_0
+this module does not invoke that functor on the mixed product. No P_0
 or application of Phi-minus to P_1 is introduced.
 
 For an input `X=(ρ,τ)`, `leftPhiMackeyInput` is the existing smooth
@@ -208,8 +207,8 @@ The five direct imports are listed in the audit below. Every one is
 published. The complete closure contains 217 imported project modules,
 excluding this entry. All 434 imported Lean/Markdown files are nonempty,
 byte-identical to the Library and verified against its manifest at commit
-`1741653e5f4f861282ff64d062269adbcc65c686`. There is no pending import;
-in particular, the host transport adapter is not used.
+`1741653e5f4f861282ff64d062269adbcc65c686`. In particular, the rank
+transport adapter `MirabolicProductMinusLeftPhiHostTransport` is not used.
 
 The direct proof inputs are the actual mixed orbit coverage, closedness
 and matrix topology; the published generic Mackey support filtration
@@ -231,7 +230,7 @@ establishes the following dependency findings.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host conclusions | The host statement and proof modules are absent. No host mixed-minus comparison or boundary conclusion supplies an input. This unit proves the localized identity-orbit projection isomorphism only. |
+| Six conclusions of the statement | The statement module `MirabolicProductMinusCompatibilityStatement` and the proofs of its clauses are absent. No mixed-minus comparison or boundary conclusion of the statement supplies an input. This module proves the localized identity-orbit projection isomorphism only. |
 | Plus functors, adjunction and §4.13(d) | None supplies an input. The plus subgroup, projection, successor and positive kernel character are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -241,24 +240,23 @@ establishes the following dependency findings.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. |
 | Generality and normalization | Arbitrary supplied T, all k,r, positive GL rank, independent field and carrier universes and all smooth input objects/maps are retained. The complete higher covariance twist is present; the ambient inverse-half Phi twist remains a separate comparison. |
-| Published-input requirement | Every imported pair is published and unchanged. Statements, source formulas, drafts, pending candidates and consumer tasks provide no unproved comparison premise. All comparisons actually invoked are published proofs. |
-| Separate owners and controls | The generic restriction/Mackey and exactness results are reused rather than reproved. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is published and unchanged. Statements and source formulas provide no unproved comparison premise. All comparisons actually invoked are published proofs. |
+| Separate results | The generic restriction/Mackey and exactness results are reused rather than reproved. |
 | Entire carriers and actual maps | The vanishing concerns the whole localized cycle. The isomorphism uses the actual chosen natural Mackey projection and actual character-quotient maps on all elements. |
 
 A scan of this module and its complete project closure finds no Lean-code
-occurrence of the host's 38 excluded task identifiers or 24 named consumer
-declarations, and no proof holes, new axioms or unsafe evaluation commands.
-Names in explanatory Markdown are audit prose. Development compilation is
-separate from independent semantic acceptance and publication.
+occurrence of 24 excluded consumer declarations, and no proof holes, new
+axioms or unsafe evaluation commands. Names in explanatory Markdown are
+audit prose.
 
 ## Complete project import closure
 
 The following direct and transitive project imports exclude this entry.
-The approved environment pins Lean and Mathlib respectively to commits
+The environment pins Lean and Mathlib respectively to commits
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and
 `5ed2965256430c3649e86755f9576b54eca72435`. Its external import boundary
 is also listed below; the transitive standard-library closure is supplied

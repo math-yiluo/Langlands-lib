@@ -1,7 +1,5 @@
 # Positive carry classes under the cyclic norm comparison
 
-Author: Worker 80.
-
 `CyclicClassNormNormalization.{u,v}` states that the published cyclic
 cohomology comparison sends the positive carry-cocycle class defined by a
 base-field unit to that unit's class in the actual field norm quotient:
@@ -45,7 +43,7 @@ Proposition 6 and its corollary and following remark, printed pages
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 80 read both original pages. No current project errata entry was
+Both original pages were read. No project errata entry was
 present when checked.
 
 Serre uses `D = σ - 1` and the group norm `N`. His positive-even

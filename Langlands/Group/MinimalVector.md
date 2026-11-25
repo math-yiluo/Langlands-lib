@@ -1,7 +1,5 @@
 # Minimal vectors and star-stable stabilizers
 
-Author: Worker 1359.
-
 This module proves an elementary minimal-vector lemma for matrix groups over
 an arbitrary `RCLike` field `𝕜`, so for both the real and the complex numbers.
 It is one step of a planned route to a self-adjoint matrix realization of a

@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ChartIwasawaPower`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
+This module is infrastructure for a proof of
 `RealStandardIrreducibleCriterionStatement`. It sits between `PartialSqIntegral` and
 `JacquetMinorNonvanishing`. Take a real principal series of signed-power characters and a
 principal minor vector in it. This module rewrites that vector, restricted to the chart

@@ -1,7 +1,5 @@
 # Absolute membership and torus locality for actual subgroups
 
-Author: Worker 1726.
-
 This internal module supplies the adapters for applying scheme gluing to actual
 subgroup functors. It derives all assertions from the existing all-test subgroup
 membership, base-change point equivalence, represented-subgroup isomorphism,

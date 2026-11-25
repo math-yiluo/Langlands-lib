@@ -1,6 +1,6 @@
 # Geometric chamber walls and simple affine reflections
 
-This definition unit works on the existing `AffineRootSystem` objects, for independent
+This definition module works on the existing `AffineRootSystem` objects, for independent
 universes `uV`, `uA`, a real vector space `V`, a `V`-torsor `A`, and the given affine
 functionals `Ψ`. It supplies no root-system axioms, generating set chosen independently
 of the geometry, or structural truth theorem.

@@ -16,8 +16,7 @@ lemma to sigma-finiteness; the original product measure is sigma-finite because
 the canonical field is sigma compact.
 
 The elementary private integral-transport proof follows the equality-elimination
-helper in Workers 113 and 1209's `TwoBlockDominantFirstBlockLaurentIdentityProof`;
-their contribution is credited with this unit. The present property transport
+helper in `TwoBlockDominantFirstBlockLaurentIdentityProof`. The present property transport
 and its applications to analysis, sigma-finiteness and intrinsic generators
 are the new assembly.
 
@@ -48,7 +47,7 @@ the intrinsic normalized-generator hypothesis from the original product
 measure to the Borel presentation. The existing
 `strictModelFiniteClearing_polynomialDivisibility` then gives polynomials
 `Q` and a natural number `e` with `X ^ e * A = Q * P`. This is the intrinsic
-denominator direction required by the dominant-rank task. There is no new
+denominator direction required by the dominant-rank proof. There is no new
 factor-existence or analytic premise beyond the hypotheses shown in Lean.
 
 ## All-field port

@@ -1,6 +1,6 @@
 # Edits to NYLL fbd320cd for the Library's pin
 
-Evidence for [the audit note](../nyll-global-cft-audit.md), section 4. This is the complete unified diff from the files of NYLL ClassFieldTheory at commit `fbd320cd8b1b06487c58227e92eb135794267709` (registered source `external-lean-reuse-snapshots-2026-10-21`, folder `n-yamaguchi-0729--ClassFieldTheory/source`) to the adapted copy that compiles on the Library's pin (Lean `v4.34.0`, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`, environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`). It changes 14 files in 22 hunks. Every other file of the 957-module closure is byte-identical to the snapshot.
+Evidence for [the audit note](../nyll-global-cft-audit.md), section 4. This is the complete unified diff from the files of NYLL ClassFieldTheory at commit `fbd320cd8b1b06487c58227e92eb135794267709` (registered source `external-lean-reuse-snapshots-2026-10-21`, folder `n-yamaguchi-0729--ClassFieldTheory/source`) to the adapted copy that compiles on the Library's pin (Lean `v4.34.0`, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). It changes 14 files in 22 hunks. Every other file of the 957-module closure is byte-identical to the snapshot.
 
 The diff has 249 lines; its SHA-256 is `2d734a1499b59ba94d1b84089ce536500251ef38e001086d1676f7919faa6150`. Paths are relative to the repository root.
 

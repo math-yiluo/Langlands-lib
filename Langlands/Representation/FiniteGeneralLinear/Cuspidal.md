@@ -1,10 +1,9 @@
 # Cuspidal complex representations of `GL_n(k)` and their isomorphism classes
 
-Author: Worker 377 (Task 7401).
-
 This module defines Harish-Chandra cuspidality for complex representations of
 `Langlands.GeneralLinear n k`, and the set of isomorphism classes of irreducible
-cuspidal complex representations. These are definitions 1 and 3 of Task 7401. Its
+cuspidal complex representations. The count statement in
+`CuspidalClassCountBoundStatement` is stated with these definitions. Its
 conventions follow the p-adic analogue `GeneralLinear.SupercuspidalClass` in
 `Langlands/Representation/Classification/Supercuspidal.lean`.
 

@@ -52,7 +52,8 @@ decomposition with a polynomial kernel in one fewer variables whenever the
 original polynomial kernel fails actual affine-line constancy.
 
 No field infinitude, perfection, characteristic restriction or assumed
-coordinate presentation of an arbitrary unipotent group is used. This unit
+coordinate presentation of an arbitrary unipotent group is used. This module
 constructs a single additive direct factor of an explicit polynomial kernel;
-iteration to a constant-map complement and the arbitrary-group woundness
-criterion remain separate obligations.
+iteration to a constant-map complement (`exists_polynomialKernelVectorFactor`
+in `PolynomialKernelVectorFactor`) and the arbitrary-group woundness
+criterion are not part of this module.

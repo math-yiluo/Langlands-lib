@@ -1,7 +1,5 @@
 # Geometric pullback of bounded below derived etale sections
 
-Author: Worker 13.
-
 For actual schemes `X`, `Y` in universe `u`, an etale morphism
 `f : Y ⟶ X` and a commutative ring `R : Type u`, this module constructs
 geometric pullback of derived sections of module sheaves:

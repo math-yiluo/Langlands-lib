@@ -1,7 +1,5 @@
 # The functional-equation exponent of a supercuspidal representation and its level
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Setting
 
 As in `ConductorUpperBound` and `ConductorLowerBound`: `K` is a `p`-adic field with canonical

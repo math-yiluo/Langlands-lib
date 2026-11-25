@@ -64,9 +64,10 @@ is a natural representing equivalence on the full over category.
 
 This construction is conditional on a supplied representation of the total
 presheaf. It constructs the structure morphism on that supplied representing
-object. In the CM representability task it provides a categorical step after
-the geometric representing object and its equivalence have been obtained;
-those existence and comparison obligations remain open.
+object. In the representability of the normalized Harris CM presheaf it
+provides a categorical step after the geometric representing object and its
+equivalence have been obtained; those existence and comparison statements are
+not proved here.
 
 ## Source and adaptations
 
@@ -89,5 +90,5 @@ The source distribution is Copyright 2026 Anthropic, PBC, licensed under the
 Apache License 2.0. The existing `licenses/Anthropic-FLT/LICENSE`, `NOTICE`
 and `ATTRIBUTION.md` are byte-identical to the pinned source distribution and
 retain its full notices. The upstream attribution file has no entry for this
-source file. Worker 344 made the adaptations listed above. Mathlib is used
+source file. The adaptations listed above were made in Langlands-lib (2026). Mathlib is used
 through the project's pinned environment.

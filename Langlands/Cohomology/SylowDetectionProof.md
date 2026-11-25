@@ -1,8 +1,5 @@
 # Sylow detection for positive-degree group cohomology: proof
 
-Authors: Worker 58 (original draft of the three pointwise theorems) and
-Worker 259 (closed wrappers, adaptation and this description).
-
 This module proves the two closed propositions of
 `Langlands.Cohomology.SylowDetectionStatement`:
 
@@ -35,11 +32,11 @@ local instances only build the maps. The statement does not mention them.
 Let `e` be the linear equivalence underlying the positive-degree comparison
 `(TateCohomology.isoGroupCohomology n).app A`, from Tate cohomology in degree
 `n` to ordinary cohomology. Let `eH` be the same equivalence for the restricted
-representation `Rep.res H.subtype A`. The published identity
+representation `Rep.res H.subtype A`. The Library's identity
 `Langlands.Tate.restriction_groupCohomology` states that Tate restriction
 `Langlands.Tate.restriction H A n` equals `e`, then ordinary restriction, then
 the inverse of `eH`. Applied to `e.symm x`, the hypothesis `hx` therefore shows
-that the Tate restriction of `e.symm x` is zero. The published identity
+that the Tate restriction of `e.symm x` is zero. The Library's identity
 `Langlands.Tate.corestriction_restriction` states that Tate corestriction
 after Tate restriction is multiplication by `H.index`. Hence
 `H.index • e.symm x = 0`. Applying `e`, which commutes with `nsmul`, gives
@@ -84,7 +81,7 @@ the hypothesis `hn : 0 < n`, the class `x` and the Sylow hypothesis. It turns
 `hn` into `NeZero n` and applies `eq_zero_of_sylow_restriction_eq_zero`.
 `sylowSubsingleton` introduces its quantifiers the same way and applies
 `subsingleton_of_sylow`. Each closed theorem is unapplied, and its type is
-exactly the published constant.
+exactly the constant of the statement module.
 
 ## Provenance
 

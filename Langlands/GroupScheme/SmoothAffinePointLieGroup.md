@@ -67,4 +67,4 @@ substantial algebraic or analytic proof. The separately published
 already proves the existential group-atlas statement. This module records
 the stronger choice compatibility needed to use the group operations and
 family criterion with the same named charted space as the general affine
-construction. Author: Worker 1203.
+construction.

@@ -1,6 +1,6 @@
 # Actual jet basis matrices under affine restriction
 
-This internal unit proves determinant formulas for the actual restrictions
+This module proves determinant formulas for the actual restrictions
 between affine sections of the identity jets of a smooth affine group scheme
 `G` over an arbitrary scheme `S`.
 
@@ -53,4 +53,4 @@ homogeneous determinant calculation. The same-index hypothesis concerns
 the two supplied affine bases only; this module asserts neither a global
 constant-rank condition nor the existence of these bases on every affine.
 It supplies the restriction determinant calculation for later line-bundle
-gluing. It does not yet construct that line isomorphism or prove ampleness.
+gluing. It does not construct that line isomorphism or prove ampleness.

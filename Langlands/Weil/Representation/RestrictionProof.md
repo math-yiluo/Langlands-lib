@@ -1,6 +1,6 @@
 # Generic restriction laws for complex Weil representations
 
-Worker 106 proves `Langlands.Weil.representationRestriction`, whose complete
+This module proves `Langlands.Weil.representationRestriction`, whose complete
 closed type is `Langlands.Weil.RepresentationRestriction.{uG, uH, uV, uU}`.
 The four universes remain independent. The theorem introduces exactly the
 parameters and hypotheses of the published proposition, including arbitrary

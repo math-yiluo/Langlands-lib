@@ -1,7 +1,5 @@
 # Finite injective normalization of strict affinoid quotients
 
-Author: Worker 56.
-
 `PresentedStrictAffinoidAlgebra.NoetherNormalizationStatement K` says that
 every nonzero presented strict affinoid algebra over the complete
 ultrametric normed field `K` admits a bounded, injective `K`-algebra

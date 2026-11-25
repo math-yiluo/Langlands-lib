@@ -1,7 +1,5 @@
 # Kneser–Tits for split-torus centralizers from the almost-simple factors
 
-Authors: Worker 1526.
-
 Module `Langlands.GroupScheme.SimplyConnected.KneserTitsCentralizerReduction`.
 
 ## The statement

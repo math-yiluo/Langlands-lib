@@ -1,6 +1,6 @@
 # The actual replacement quotient of the negative-inner outer source
 
-This internal derived unit identifies a concrete surjective exact map out of
+This module identifies a concrete surjective exact map out of
 the mixed source in the negative-inner two-piece filtration. It does not assume
 that the filtration map factors through this quotient.
 
@@ -40,7 +40,9 @@ inner binomial map at cutoff `h` in the exposed list, pulled back along
 `exposeEquiv`. This is the published tail-kernel/range identity with the
 outer induction block retained.
 
-To finish the negative-inner filtration through this source, one must still
+To finish the negative-inner filtration through this source, one must
 prove that its mixed-source filtration map sends this kernel into the earlier
-swapped-pair range. This unit supplies neither that kernel-image assertion nor
-the unrestricted filtration.
+swapped-pair range. This module supplies neither that kernel-image assertion nor
+the unrestricted filtration; the Library completes the negative-inner case as
+`realInducedPairFiltration_of_negativeInner` in
+`RealInducedPairNegativeBraidFiltrationClosure`.

@@ -1,6 +1,6 @@
 # Relative Picard representability: source and construction boundaries
 
-Worker 141, 29 October 2026. This is a source audit for the construction of
+This is a source audit, dated 29 October 2026, for the construction of
 an abelian-scheme parameter for rigidified smooth-family Picard classes.
 It records no Lean representability proof.
 
@@ -82,7 +82,7 @@ including nonreduced tests.
 | --- | --- |
 | Ordinary residue-field algebraic equivalence in Lan and Faltings–Chai | Compare with the Library's explicit witnesses on every algebraically closed field-valued fibre. |
 | EVM (6.9), using smooth varieties and divisors | Relate divisors and line bundles to the actual smooth separated finite-type geometrically integral parameters and endpoint restriction isomorphisms in the Library. |
-| EVM (7.21)–(7.22), field Picard-zero/kernel comparison | Supply its field cohomology, ampleness and component arguments through their own proof workflows. These passages do not construct a relative representer. |
+| EVM (7.21)–(7.22), field Picard-zero/kernel comparison | Supply its field cohomology, ampleness and component arguments through their own proofs. These passages do not construct a relative representer. |
 | EVM (7.24), Neron–Severi quotient | Prove the algebraic-equivalence and geometric-testing bridges for actual bundles. |
 | Ordinary quotient, rigidification and Poincare family | Prove normalization, choice independence, the applicable sheaf comparison, and compatibility with actual pullbacks. |
 | Source product `A ×_S T` | Use and verify the Library's product transport from its parameter-first relative family. |
@@ -107,9 +107,10 @@ is a specialized gluing theorem from compatible sections for an
 ample-existence spreading argument; it does not supply Artin
 representability or conductor descent.
 
-The source audit does not change any statement or allocate a proof.
-The common construction task is
-`e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`. Its separately owned ordinary
-Picard, comparison, field, topology and gluing workflows, and all their
-operator pauses, remain in force. Any required prerequisite must be
-independently accepted and published before it is used as a proved input.
+The source audit does not change any statement. The Library proves the
+target, as `Langlands.AbelianScheme.smoothFamilyAbelianRepresentability`
+([`SmoothFamilyAbelianRepresentabilityProof`](../../Langlands/AlgebraicGeometry/Picard/SmoothFamilyAbelianRepresentabilityProof.md)),
+by way of the general-base reduction
+`smoothFamilyAbelianRepresentabilityOfFiniteType`; this note does not
+record how that proof relates to the sources above. A prerequisite
+counts as a proved input only when its proof is in the Library.

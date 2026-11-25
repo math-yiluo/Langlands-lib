@@ -1,6 +1,6 @@
 # Unit norm surjectivity for a finite Galois extension
 
-Author: Worker 1512. This is the third helper module of the proof of
+This is the third helper module of the proof of
 `Langlands.ClassFieldTheory.Local.SeparableInertiaUnitNormSurjectivity` (see
 `SeparableInertiaNormProof.md`). It imports `SeparableInertiaNormCyclic` and
 Mathlib (`Polynomial.Taylor`, `GroupTheory.IndexNormal`, `GroupTheory.Sylow`).

@@ -48,7 +48,9 @@ It concerns the specified representation `σ` on `V`, without replacing it
 by a coefficient model or an equivalent carrier. No scalar central
 character, model equivalence, analytic assertion, continuation, generator
 or selected factor is an additional premise. Any such intermediate input
-needed by a future proof must be established there.
+needed by a proof must be established there, as it is in
+`genericMatrixFunctionalEquation` (module `GenericMatrixFunctionalEquationProof`),
+whose type is exactly this proposition.
 
 ## The full data conclusion
 
@@ -123,7 +125,7 @@ Its retained original is
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Automorphic Forms on GL(3) I--1979.pdf`.
 This is the transpose adaptation used here: it gives the plus transpose
 Fourier integral, inverse-transpose coefficient and shifted normalized
-equation. The future proof must justify these analytic assertions for
+equation. A proof must justify these analytic assertions for
 the actual coefficient family; this statement introduces no coefficient
 equivalence by definition.
 
@@ -144,7 +146,7 @@ read visually. The registered pointers and project, Library and literature
 errata-note locations were checked; no source-specific errata note for
 these three originals was found.
 
-This unit asserts no unconditional reducible matrix equation. Matrix
+This module asserts no unconditional reducible matrix equation. Matrix
 induction, generic-socle occurrence, coefficient or subquotient transport,
 JPSS comparison certificates and multiplicativity are separate statements
 and proofs.

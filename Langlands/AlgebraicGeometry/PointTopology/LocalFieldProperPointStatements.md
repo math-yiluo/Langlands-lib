@@ -1,7 +1,5 @@
 # Proper maps on actual points over locally compact fields
 
-Author: Worker 105.
-
 The original source is Brian Conrad, *Weil and Grothendieck approaches to
 adelic points*, December 31, 2011, registered as
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256

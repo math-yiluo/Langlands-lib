@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Algebras graded by a commutative group with pieces of rank at most one

@@ -1,6 +1,6 @@
 # Actual prime extraction in local adelic-frame coordinates
 
-This internal unit derives a local factorization from the actual tensor-algebra
+This internal module derives a local factorization from the actual tensor-algebra
 Tate frame and the normalized finite-adelic scalar comparison. Its inputs are an
 abelian scheme over an arbitrary scheme universe, a rational algebra action, a
 rational module with compatible algebra action, a field-valued point, and a chosen

@@ -1,7 +1,5 @@
 # Finite-length preservation for normalized parabolic products
 
-Author: Worker 325.
-
 `Langlands.Classification.admissibleFiniteLengthProductPreservation.{uF,uV} F T`
 proves the complete existing proposition
 `Langlands.Classification.AdmissibleFiniteLengthProductPreservation.{uF,uV} F T`.

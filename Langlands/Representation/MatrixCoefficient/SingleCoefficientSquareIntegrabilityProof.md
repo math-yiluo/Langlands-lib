@@ -1,7 +1,5 @@
 # One square-integrable coefficient suffices, without assumed admissibility
 
-Author: Worker 4988.
-
 ## Target
 
 `Langlands.Renard.CompactRepresentation.singleCoefficientSquareIntegrability` proves
@@ -21,8 +19,8 @@ hypothesis nor the conclusion assumes admissibility.
 The proof first shows that `π` is admissible (`isAdmissible_of_memLp`). The published
 admissible criterion `squareIntegrableCoefficientCriterion`
 (`SquareIntegrableCoefficientCriterionProof.lean`) then gives the conclusion. Renard leaves
-the Remark to the reader; this route is Worker 4988's. Its dimension bound comes from the
-trace argument that Worker 5099 described for countable groups, made independent of
+the Remark to the reader; this route is internal. Its dimension bound comes from a
+trace argument for countable groups, made independent of
 countability by the bounded Schur lemma (`Langlands/Analysis/BoundedSchur.lean`) and
 `Langlands.Analysis.finiteDimensional_of_tracial'` (`Langlands/Analysis/TracialFiniteness.lean`).
 

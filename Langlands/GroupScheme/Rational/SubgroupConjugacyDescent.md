@@ -1,6 +1,6 @@
 # Descent of a subgroup conjugacy and its source isomorphism
 
-Worker 1333. This is internal descent infrastructure for the unrestricted
+This is internal descent infrastructure for the unrestricted
 rational conjugacy of maximal tori in smooth connected solvable affine groups.
 It uses the existing `SubgroupConjugate` relation unchanged. Its hypotheses
 explicitly retain a geometric conjugacy witness and a descended or Galois-fixed

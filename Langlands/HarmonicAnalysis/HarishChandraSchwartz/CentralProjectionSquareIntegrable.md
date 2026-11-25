@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.CentralProjectionSquareIntegrable`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.KernelQuotient` (Worker 249) and through it
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.KernelQuotient` and through it
   `CentralProjection` (`centralProjection`, `CentralWeights` with `exists_lintegral_lt_top` and
   `lintegral_enorm_le`, `IsUnitaryCharacter`, `centralProjection_mul_left`,
   `IsBiInvariant.centralProjection`), `Langlands.Analysis.Local.QuotientWeilKernel`

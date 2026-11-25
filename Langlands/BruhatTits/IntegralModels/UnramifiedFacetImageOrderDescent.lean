@@ -140,6 +140,8 @@ local instance imageOrderDescentIntegerTower : IsScalarTower ↥𝒪[F] (fixedFi
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
 local instance imageOrderDescentIntegerLocal : IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
+  haveI : IsLocalHom (algebraMap F (inertiaFixedField F)) :=
+    isLocalHom_of_exists_map_ne_one ⟨0, by simp⟩
   Valuation.HasExtension.instIsLocalHomValuationInteger
     (vR := ValuativeRel.valuation F) (vS := fixedFieldValuation F)
 

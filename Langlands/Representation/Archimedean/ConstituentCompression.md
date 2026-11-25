@@ -1,6 +1,6 @@
 # Detecting a simple constituent on a finite-dimensional range
 
-This internal algebraic lemma is for Task 7042. It detects a simple subquotient
+This internal algebraic lemma is for the proof of `CuspidalIsobaricSupportStatement`. It detects a simple subquotient
 through a finite-dimensional compression of an algebra action. It is motivated
 by the constituent comparison of normalized products in Badulescu–Renard (2010),
 Definition 2.2, Remark 2.3 and Proposition 2.4, pp. 1123–1124 (PDF pp. 10–11).

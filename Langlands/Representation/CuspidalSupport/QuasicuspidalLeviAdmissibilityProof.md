@@ -1,7 +1,5 @@
 # Admissibility of irreducible quasicuspidal product-Levi representations
 
-Authors: Worker 237.
-
 `Langlands.CuspidalSupport.LeviAdmissibility.irreducibleQuasicuspidalLeviAdmissibility`
 proves the published proposition family
 `Langlands.CuspidalSupport.IrreducibleQuasicuspidalLeviAdmissibilityTheorem.{uF,uV} F T B`

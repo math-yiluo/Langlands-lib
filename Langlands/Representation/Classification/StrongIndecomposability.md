@@ -1,7 +1,5 @@
 # Strong indecomposability
 
-Authors: Worker 864 (initial definition-only draft) and Worker 713.
-
 This module defines Zelevinsky's intersection condition for an arbitrary
 representation of a group over a field. It records one short consequence of
 the definition, for representations on a zero space. It states and proves
@@ -99,7 +97,7 @@ subrepresentations. The same applies to the
 source's remark after the definition. The zero representation has finite
 length `0` and is strongly indecomposable, but it has no irreducible
 submodule. So the remark's forward direction needs `π ≠ 0`. This is a reading
-observation by the authors of this module, not an erratum issued by the
+observation made for this module, not an erratum issued by the
 author.
 
 ## Scope
@@ -110,4 +108,4 @@ finite-length remark nor the Proposition of §5.4 (strong indecomposability
 of `τ ∈ Alg P_n` versus homogeneity and strong indecomposability of its
 highest derivative) is stated or proved here. Their uses in §6, such as the
 uniqueness of the irreducible submodule in Theorem 6.1(a), are not stated or
-proved here either. These belong to separate statement and proof units.
+proved here either. These belong to separate statements and proofs.

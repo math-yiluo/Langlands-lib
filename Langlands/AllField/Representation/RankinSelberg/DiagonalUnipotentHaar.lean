@@ -4,7 +4,7 @@ import Langlands.AllField.Group.GL.SingletonBlocks
 /-! # Diagonal conjugation and upper-unipotent Haar measure
 
 Shared helpers extracted without changing their definitions or proofs from
-`QuotientIwasawaIntegrationProof` (Worker 113).
+`QuotientIwasawaIntegrationProof`.
 -/
 
 noncomputable section

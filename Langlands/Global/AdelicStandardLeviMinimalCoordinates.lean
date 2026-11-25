@@ -47,7 +47,7 @@ variable (F : Type u) [Field F] [NumberField F]
   (T : CommGroupScheme (Spec (CommRingCat.of F))) (i : T.toGrp ⟶ G)
   (ν : cocharacterLattice T)
 
-local instance (J : Set (characterLattice T)) :
+private local instance (J : Set (characterLattice T)) :
     IsAffineHom (Standard.leviScheme i ν J).X.hom :=
   (Standard.isClosedSubgroup_leviHom i ν J).isAffineHom_source
 

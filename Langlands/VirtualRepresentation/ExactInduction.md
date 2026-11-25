@@ -1,6 +1,6 @@
 # Finite-index induction on exact virtual representations
 
-Worker 20 constructs induction on the exact-relation virtual representation
+This module constructs induction on the exact-relation virtual representation
 group and on its genuine degree-zero submodule. The underlying representation
 is the existing equivariant-function induction from
 `Langlands.Weil.Representation.Induction`; no new representation model or

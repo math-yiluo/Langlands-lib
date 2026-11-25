@@ -1,7 +1,7 @@
 # Good charts inside a patch with an affinoid model
 
 Module `Langlands.Geometry.Analytic.AffinoidPatchGoodCharts`, namespace
-`Langlands.Analytic.SaturatedAtlasPresentation`. Author: Worker 976.
+`Langlands.Analytic.SaturatedAtlasPresentation`.
 
 The field `K : Type u` is complete, normed and ultrametric. `X` is an object of
 the localized analytic category `LocalizedCategory.{u, v, v}`. The group
@@ -106,10 +106,11 @@ live in the universes of `X`.
 
 ## Provenance and scope
 
-This module is internal. It is a prerequisite for Task 7765
-(`CompactPullbackActionContinuityStatement`) and transcribes no literature
-statement. In that task the patches are pair-chart patches `p⁻¹ U ∩ q⁻¹ V` of
-the pullback, modelled on affinoid pushouts (Worker 931's modules
+This module is internal. It is a prerequisite for the proofs in
+`CompactPullbackContinuityOfSmall` of `CompactPullbackActionContinuitySmallStatement`
+and, under `UnivLE.{u, v}`, of `CompactPullbackActionContinuityStatement`, and
+transcribes no literature statement. In these proofs the patches are pair-chart patches `p⁻¹ U ∩ q⁻¹ V` of
+the pullback, modelled on affinoid pushouts (modules
 `PairChartPatch`, `AffinoidPatchPullback` and `PairChartConvergence`). This
 module turns convergence on such a model into good charts. The criterion
 `isContinuousAction_of_locallyGood` (module `LocallyGoodChartContinuity`)

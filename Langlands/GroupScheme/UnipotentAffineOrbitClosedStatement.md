@@ -1,7 +1,5 @@
 # Closed unipotent orbits on affine algebraic schemes
 
-Worker 1460.
-
 `Langlands.GroupScheme.UnipotentAffineOrbitClosedStatement.{u}` is a
 proposition definition for the Kostant–Rosenlicht theorem, Milne,
 *Algebraic Groups* (2017), Theorem 17.64, printed pp.373–374

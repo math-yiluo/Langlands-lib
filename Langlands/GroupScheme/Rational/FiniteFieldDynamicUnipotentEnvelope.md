@@ -1,6 +1,6 @@
 # Dynamic contracting subgroups lie in the torus envelope over a finite field
 
-Worker 1387. This internal module proves that, over a finite field, the
+This internal module proves that, over a finite field, the
 contracting subgroup `U_G(χ)` of every cocharacter `χ` of a smooth affine
 group `G` is contained in the fixed `closedTorusEnvelope G`, on every test
 scheme. The universe is arbitrary; no connectedness, reductivity or

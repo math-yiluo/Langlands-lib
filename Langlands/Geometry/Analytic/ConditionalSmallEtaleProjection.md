@@ -38,6 +38,7 @@ The provenance is internal: actual canonical small projections, chart
 coverage, genuine finite product neighborhoods, complete full-recognition
 projection coefficient identities, finite target families and the two
 explicit general analytic criteria. This is a conditional theorem and
-certified data construction. Until the general criteria are proved, it
-does not provide an unconditional proof of the localized etale pullback
-statement required by Task 7349.
+certified data construction. By itself it does not provide an unconditional
+proof of the localized etale pullback statement `LocalizedEtalePullbackStatement`;
+the two general criteria are proved in `FullRecognitionFiniteTargetLocalityProof`
+and `FinitePiecesEtaleAllPiecesProof`.

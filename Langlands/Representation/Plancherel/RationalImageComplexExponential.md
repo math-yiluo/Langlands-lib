@@ -92,7 +92,7 @@ description remain separate statement and proof obligations. Also retained
 are the comparisons with `X*(G) ⊗ ℂ` and the split-center tensor spaces, the
 pure-tensor formula using algebraic character norms, parameter topologies,
 the complex algebraic torus structure and the compact imaginary quotient.
-This unit alone does not establish the full V.3.20 identification.
+This module alone does not establish the full V.3.20 identification.
 
 The local instances have explicit module-specific names to avoid generated-name
 collisions when these developments are imported together. Their types, bodies

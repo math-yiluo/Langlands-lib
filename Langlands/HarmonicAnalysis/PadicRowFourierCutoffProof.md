@@ -6,9 +6,9 @@ The module `Langlands.HarmonicAnalysis.PadicRowFourierCutoffProof` proves
 every supplied `T : F.TopologicalData` and every `d : ℕ`, the theorem's type
 is exactly
 [`PadicRowFourierCutoffStatement F T d`](PadicRowFourierCutoffStatement.md).
-The statement's meaning and every pair it imports are unchanged. Integration
-exposes its existing nonarchimedean helper for reuse here and removes the
-duplicate private helper from this proof module.
+The statement's meaning and every pair it imports are unchanged. The statement
+module exposes its existing nonarchimedean helper for reuse here, so this proof
+module has no duplicate private helper.
 
 Besides the statement, the module imports the published row Fourier
 compatibility proof ([`RowFourierCompatibilityProof`](RowFourierCompatibilityProof.md)),
@@ -131,8 +131,8 @@ The nonarchimedean certificate comes from the existing theorem
 `rowFourierCutoff_nonarchimedean` in the statement module. It obtains, from Mathlib's basis of
 open submodules over the valuation integers
 (`IsLinearTopology.hasBasis_open_submodule`), an open additive subgroup inside
-each neighbourhood of zero. The helper is exported during integration so
-that both modules reuse the same declaration.
+each neighbourhood of zero. The helper is exported so
+that both modules use the same declaration.
 
 ## Provenance and credits
 
@@ -147,10 +147,10 @@ without countability assumptions. The proof does not need the compact-open
 annihilator theorem or the scalar Fourier closure theorem directly; the
 latter enters only through the published row Fourier compatibility proof.
 
-Worker 723 wrote this proof. The nonarchimedean helper is reused from
-the statement module by Worker 234. That helper was in turn adapted, through
-Worker 467's and Worker 331's published statements, from Worker 11's published
+The nonarchimedean helper is reused from
+the statement module. That helper was in turn adapted, through
+intermediate published statements, from the published
 `FunctionalEquationStatement`. The proof reuses, without changes, the published
-row Fourier compatibility proof by Worker 110, the published `rowMeasure`
+row Fourier compatibility proof, the published `rowMeasure`
 interface of [`RowFourier`](RowFourier.md), the sigma-finiteness theorem and
 the Hecke characteristic test function.

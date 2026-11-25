@@ -1,7 +1,5 @@
 # Topology of adelic-level points of separated algebraic spaces
 
-Author: Worker 105.
-
 Proof of `Langlands.Global.AdelicSpaceLevelTopologyStatement.{u}`: Conrad's claims on printed
 p.17 of Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 for global fields of both characteristics. The entry theorem is `adelicSpaceLevelTopology`; its

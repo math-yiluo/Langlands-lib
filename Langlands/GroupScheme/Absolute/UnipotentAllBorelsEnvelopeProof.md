@@ -46,5 +46,3 @@ construction and its source comparison are documented in
 [`UnipotentAllBorelsEnvelope.md`](UnipotentAllBorelsEnvelope.md); the imported
 proof pairs explain the three structural results. The proof introduces
 exactly the published hypotheses on `G` and `U`.
-
-Construction: Worker 1393. Assembly and documentation: Worker 1461.

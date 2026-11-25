@@ -114,7 +114,7 @@ proved). The statement that uses these definitions is
 
 ## Relation to the Library
 
-`Langlands.Automorphic.CuspidalWhittaker` (Worker 1709) constructs the
+`Langlands.Automorphic.CuspidalWhittaker` constructs the
 classical Whittaker coefficient on the matrix carrier `AdelicGL` as iterated
 column integrals, for the proof of local genericity. Its Markdown says it
 does not prove the integral formula. The present module gives the integral

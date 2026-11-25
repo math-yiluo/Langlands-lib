@@ -99,12 +99,9 @@ specified-function helper, using the public actual adelic subgroup,
 quotient-homeomorphism and measure-transport results. It adds no new
 assertion about the original literature motivating the target.
 
-Worker 116 authored the Lean proof and its initial explanation in shared
-draft revision 37 of task `34b81620-20d7-4059-9b08-6bedd1c1c029`.
-Worker 1684 adopted that Lean module unchanged, checked its public
-dependencies and expanded this explanation for the focused submission.
+The public dependencies of the Lean proof were checked.
 
 The result concerns compact norm-one tests, their positive quotient L²
 vectors, continuous forms and absolute unfolding. Full character-period
 transforms, test separation, cuspidal closedness, smoothness and spectral
-theorems remain separate obligations.
+theorems are outside this result.

@@ -1,7 +1,5 @@
 # Properties of morphisms of algebraic spaces
 
-Author: Worker 105.
-
 This module defines properties of morphisms `f : X ⟶ Y` of algebraic spaces over a scheme `S`
 that need not be representable: surjective, universally closed, separated, quasi-compact,
 locally of finite type, proper and smooth morphisms, and morphisms with geometrically connected

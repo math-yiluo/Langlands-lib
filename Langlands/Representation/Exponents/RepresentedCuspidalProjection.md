@@ -1,6 +1,6 @@
 # The supercuspidal part of represented cuspidal/remainder splittings
 
-Worker 1582. Internal derived infrastructure for the proof of Renard VI.7.5,
+Internal derived infrastructure for the proof of Renard VI.7.5,
 Proposition, printed page 186 / PDF page 192, in David Renard,
 *Représentations des groupes réductifs p-adiques*, French version of 9 July
 2026. The registered source is

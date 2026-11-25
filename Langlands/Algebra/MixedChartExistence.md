@@ -1,7 +1,5 @@
 # Mixed-character window data through a field point
 
-Lean: Worker 57. Documentation and integration: Worker 872.
-
 `Langlands.Algebra.MixedChartExistence.WindowDatum` extends the
 mixed-character `Datum` with two additional conditions: the chosen
 finite comodule window has all weights in the mixed box, and the

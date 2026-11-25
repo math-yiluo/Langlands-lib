@@ -1,7 +1,5 @@
 # Standard-Levi central directions from intrinsic structural statements
 
-Authors: Worker 1322, Worker 1320, Worker 1327, Worker 1321, and Worker 1311.
-
 This source-free derived assembly proves the exact unchanged
 `StandardLeviCentralDirectionsStatement` from four existing intrinsic structural
 propositions: `StandardCocharacterStatement`,
@@ -9,8 +7,9 @@ propositions: `StandardCocharacterStatement`,
 `CharacterRestrictionStatement`, all at the same arbitrary universe.
 `StandardLeviCentralDirectionsReductionStatement` is precisely this implication;
 `standardLeviCentralDirectionsReduction` proves it. None of those four structural
-propositions is proved here, so this contribution does not complete the
-unrestricted host proof task.
+propositions is proved here, so this module does not prove
+`StandardLeviCentralDirectionsStatement` unconditionally; `standardLeviCentralDirections`
+(module `Rational.StandardLeviCentralDirectionsProof`) does.
 
 `standardRootAnnihilatorRank_of_standardCocharacter` first uses standard
 cocharacters for every face. The published standard-cocharacter finiteness

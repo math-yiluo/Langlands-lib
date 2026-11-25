@@ -5,7 +5,7 @@ when passing from integral Weil models to the original field schemes in
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (2011),
 Example 4.2, printed pages 9–10. The source chooses an upper integral model,
 forms its lower Weil restriction, and compares its points with points of the
-original upper scheme. The present unit proves compatibility of the existing
+original upper scheme. The present module proves compatibility of the existing
 actual generic-fiber isomorphism with the original evaluation maps. It does
 not introduce a topology or assert a full adelic comparison.
 
@@ -82,5 +82,5 @@ K tensor_A B to L. There is no separability assumption on L over K.
 This is an intrinsic compatibility of the constructed evaluation map. The
 number-field and function-field arithmetic specializations, its use to
 identify the full adelic homeomorphisms with evaluation along the literal
-adele inclusions, and the remaining whole-paper results remain obligations
-of the host task.
+adele inclusions, and the remaining whole-paper results are not part of
+this module.

@@ -1,10 +1,8 @@
 # Fppf descent from an etale scheme atlas
 
-Worker 421 proves
+This module proves
 `Langlands.AlgebraicGeometry.AlgebraicSpace.etaleAtlasFppfSheaf :
-EtaleAtlasFppfSheafStatement.{u}`. Worker 509 contributed the Picard
-comparison route, and Worker 595 contributed the common-presentation
-comparison and the dependency audit.
+EtaleAtlasFppfSheafStatement.{u}`.
 
 For every scheme `S : Scheme.{u}`, an etale sheaf on the full scheme slice
 with representable diagonal and an etale geometrically surjective scheme
@@ -15,7 +13,7 @@ source and conventions are documented in `EtaleAtlasFppfSheafStatement.md`.
 The proof follows its quotient-presentation argument.
 
 The atlas `a : h_U → F` has a represented kernel pair
-`(t,s) : R → U` with etale projections, by the published
+`(t,s) : R → U` with etale projections, by
 `exists_kernelPair`. The construction
 `EtaleEquivalenceRelation.ofKernelPair` turns this into an etale
 equivalence relation on the underlying schemes. Both projections commute
@@ -31,7 +29,7 @@ quotient's represented kernel-pair square to precisely `(t,s) : R → U`.
 This helper is an internal consequence of the imported relation
 construction and invariance of pullbacks under isomorphism.
 
-The final theorem supplies this helper with the independently published
+The final theorem supplies this helper with the
 unconditional theorem
 `Langlands.AlgebraicGeometry.etaleEquivalenceRelationAlgebraicSpaceQuotient`,
 from `EtaleEquivalenceRelationAlgebraicSpaceQuotientProof`. That theorem
@@ -42,11 +40,11 @@ their etaleness and geometric surjectivity. The imported
 presentations with their identical represented kernel pair and transports
 the fppf sheaf property from `Q` to `F`.
 
-The separate diagonal premise of the published statement is retained.
+The separate diagonal premise of the statement is retained.
 The proof obtains the kernel pair directly from the atlas because the
 Library's `IsEtale` predicate already includes representability. All test
 schemes and all sections remain in the argument at arbitrary universe `u`,
 with presheaf values in `Type (u + 1)`. The theorem has no additional
 hypothesis and imports no Picard statement. It supplies the generic
 descent step in the field Picard comparison; it does not prove the
-remaining Picard stack atlas or smooth-automorphism quotient inputs.
+other Picard stack atlas or smooth-automorphism quotient inputs.

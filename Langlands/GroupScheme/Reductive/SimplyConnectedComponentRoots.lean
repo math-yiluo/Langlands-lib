@@ -43,7 +43,7 @@ variable (M : AffineSimplyConnectedPinnedModel.{u})
 local instance : CommRing M.ring := M.toAffinePinnedModel.commRing
 local instance : Fintype M.coordinates := M.toAffinePinnedModel.fintypeCoordinates
 local instance : Fintype M.rootIndex := M.toAffinePinnedModel.fintypeRoots
-local instance : M.rootDatum.IsReduced := M.fibrewiseRootDatum.isReduced
+private local instance : M.rootDatum.IsReduced := M.fibrewiseRootDatum.isReduced
 local instance (c : M.Component) : Fintype (M.Complement c) :=
   Fintype.ofFinite (M.Complement c)
 local instance : IsAffineHom M.group.X.hom := M.reductive.isAffineHom
@@ -178,13 +178,12 @@ theorem mem_fieldCentralizer_roots_iff (r : M.rootIndex) :
     ext i
     exact (SimplyConnectedCorootSubtori.simpleCorootCoordinates_apply M.rootDatum M.basis
       M.corootSpan_eq_top (M.rootDatum.root r) i).symm
-  rw [map_eq_zero_iff]
+  rw [AddEquiv.map_eq_zero_iff]
   change (fun i : M.Complement c =>
     M.rootDatum.toLinearMap (M.rootDatum.root r) (M.rootDatum.coroot i)) = 0 ↔ _
   rw [hz]
   exact SimplyConnectedCorootSubtori.restriction_root_complement_eq_zero_iff
     M.rootDatum M.basis M.corootSpan_eq_top c r
-  exact (splitTorus.characterLatticeEquiv k (M.Complement c)).symm.injective
 
 end AffineSimplyConnectedPinnedModel
 

@@ -238,10 +238,10 @@ def cmHarrisCoarseCoefficientDiagram (m : ℕ) (hm : m ≠ 0) :
         (((coarseGroups m hm).map f).hom g) =
       ((originalGroups m hm).map f).hom
         (cmHarrisCoarseCoefficientGroupInclusion D ρ p U V hVU m hm i g) at he
-    change (originalCoefficients m hm).ρ i
-        (cmHarrisCoarseCoefficientGroupInclusion D ρ p U V hVU m hm i g) ≫
+    change ((originalCoefficients m hm).ρ i
+        (cmHarrisCoarseCoefficientGroupInclusion D ρ p U V hVU m hm i g)).asHom ≫
         (originalCoefficients m hm).obj.map f =
-      (originalCoefficients m hm).obj.map f ≫ (originalCoefficients m hm).ρ j _
+      (originalCoefficients m hm).obj.map f ≫ ((originalCoefficients m hm).ρ j _).asHom
     rw [he]
     exact (originalCoefficients m hm).comm f _
 
@@ -270,11 +270,11 @@ def cmHarrisCoarseCoefficientActionIso (m : ℕ) (hm : m ≠ 0) (k : ℕᵒᵖ) 
 @[simp] theorem cmHarrisCoarseCoefficientDiagram_action_mk
     (m : ℕ) (hm : m ≠ 0) (k : ℕ) (g : V.obj.subgroup)
     (x : (harrisLatticeAction ρ p (CompactOpenLevel.inverseOpposite U.obj)).V) :
-    ((coarseCoefficients m hm).ρ (op k) (QuotientGroup.mk g)).hom
+    ((coarseCoefficients m hm).ρ (op k) (QuotientGroup.mk g)).asHom.hom
         (Submodule.Quotient.mk x) =
       Submodule.Quotient.mk
         (((harrisLatticeAction ρ p (CompactOpenLevel.inverseOpposite U.obj)).ρ
-          (CompactOpenLevel.inverseOppositeEquiv U.obj (Subgroup.inclusion hVU g))).hom x) := rfl
+          (CompactOpenLevel.inverseOppositeEquiv U.obj (Subgroup.inclusion hVU g))).asHom.hom x) := rfl
 
 /-- Every exponent transition is the original full-lattice representative reduction. -/
 @[simp] theorem cmHarrisCoarseCoefficientDiagram_transition_mk

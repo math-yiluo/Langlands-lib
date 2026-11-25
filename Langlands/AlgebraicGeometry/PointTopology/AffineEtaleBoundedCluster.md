@@ -1,7 +1,5 @@
 # Bounded families of rational points of étale algebras cluster
 
-Author: Worker 105.
-
 This module proves that over a henselian ultrametric valued field, bounded families of
 rational points of an étale algebra cluster, as long as they converge on the base. It is
 the analytic core of the total disconnectedness of rational points of separated algebraic

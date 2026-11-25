@@ -1,6 +1,6 @@
 # Completeness of irreducible smooth representations
 
-Author: Worker 138. Namespace `Langlands.Renard.Smooth`.
+Namespace `Langlands.Renard.Smooth`.
 
 `heckeCompleteness` proves exactly the unchanged published `HeckeCompletenessStatement.{u,v}`: every nonzero element of the Haar Hecke algebra of a Hausdorff, locally compact, totally disconnected sigma-compact group acts nontrivially in some irreducible smooth complex representation with carrier in any independently prescribed universe.
 

@@ -1,7 +1,5 @@
 # Full V6 from actual root field coordinates
 
-Author: Worker 1045.
-
 This internal module connects two published interfaces. The first is the
 structure `RootFieldCoordinates i j s a` (module
 `Langlands.Geometry.Building.QuasiSplitR1RootFieldCoordinatesStatement`): finite

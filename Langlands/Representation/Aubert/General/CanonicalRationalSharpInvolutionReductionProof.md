@@ -23,9 +23,6 @@ are described in the statement module's Markdown. This file describes only
 the Lean proof. The proof uses no hypothesis beyond the statement's five
 inputs.
 
-Proof: Worker 29, with Worker 3640 (Task 3640, block (iv)).
-Prepared for submission by Worker 278 under Task 6620.
-
 ## Proof
 
 The tactic proof introduces `hwhole`, `hvan`, `hiDyn`, `hrDyn` and `hWeyl`.
@@ -40,7 +37,7 @@ It derives the following whole rational-point propositions, all at `.{u, v}`:
    applied to `rationalSupportCategoryDecomposition_of_wholeStatement hwhole`,
    to `rationalLeviJacquetCuspidalRemainderSplitting_of_wholeStatement hwhole`
    at `.{u, max (u + 1) v}`, and to step 2;
-4. exactness detection, from the block (ii) reductions
+4. exactness detection, from the reductions
    `rationalSupportCategoryZeroDetectionReduction` and
    `rationalSupportCategoryExactnessDetectionReduction` applied to step 1;
 5. support-category Jacquet vanishing, from
@@ -110,29 +107,22 @@ the conclusion are recorded in the unchanged Markdown paired with
 `CanonicalRationalSharpReductionStatements` and
 `CanonicalRationalComplexTargets`.
 
-The proof imports the following helper modules from their owning tasks:
+The proof imports the following helper modules:
 
-- step 13 comes from Task 6425
-  (`d7477c1e-06c2-43ec-9035-3eb6b594058b`, module
-  `CanonicalRationalComplexTargetBridgesProof`);
-- step 6 comes from Task 6483
-  (`18c36a7c-1b08-4443-b90a-38a4f0b9532a`, module
-  `RationalSharpClassFormulaInputs`), using the conditional assembly of
-  Workers 751 and 4217;
-- step 11 comes from Task 6484
-  (`b5652c2b-8c8a-41a5-9af8-09a7f7a8412c`, module
-  `RationalSharpCuspidalSeriesReduction`), using the conditional assembly of
-  Workers 1166 and 4221;
-- step 4 comes from Task 6582
-  (`f7b6068d-c312-487a-b08f-72f5382bd5fb`, module
-  `RationalSupportCategoryZeroDetectionProof`) and Task 6583
-  (`e9fddf52-5367-4151-a290-413d98622e89`, module
-  `RationalSupportCategoryExactnessReduction`). These reuse Worker 4193's
-  zero-detection assembly with Worker 379's generic reduction, and the
-  exactness-detection assembly of Workers 128 and 4194, respectively.
+- step 13 comes from module
+  `CanonicalRationalComplexTargetBridgesProof`;
+- step 6 comes from module
+  `RationalSharpClassFormulaInputs`, using its conditional assembly;
+- step 11 comes from module
+  `RationalSharpCuspidalSeriesReduction`, using its conditional assembly;
+- step 4 comes from modules
+  `RationalSupportCategoryZeroDetectionProof` and
+  `RationalSupportCategoryExactnessReduction`. These reuse a zero-detection
+  assembly with the generic reduction of `SupportCategoryReductions`, and an
+  exactness-detection assembly, respectively.
 
-Those modules are imported by their Lean names. This contribution adds only
-the present proof pair and leaves their owning tasks and the owners of all
+Those modules are imported by their Lean names. This module adds only
+the present proof pair and leaves those modules and all
 five bottleneck targets unchanged. It proves the five-premise implication;
 it does not supply any of the five premises or an unconditional Sharp
 involution theorem.

@@ -57,7 +57,7 @@ maximal generation opens. It applies to arbitrary schemes and arbitrary opens,
 and adds no geometric hypotheses to `L.IsAmple`. Its type is the published
 proposition itself, with every prerequisite discharged by a proved theorem.
 
-## Provenance and authorship
+## Provenance
 
 This proof implements the neighborhood form of the implication (1) to (3)
 in Stacks Proposition 28.27.13, tag
@@ -75,6 +75,5 @@ and a whole-locus calculation. The current HTML passages and comments at
 `stacks-section-open-prerequisites-2026-10-29`; the corrected common-exponent
 argument in the 01PW comments is implemented in the published clearing proof.
 
-Worker 689 wrote the quasi-separatedness lemma, basis assembly, consumer and
-this explanation. The principal-lifting, affine-intersection, tensor-rank and
+The principal-lifting, affine-intersection, tensor-rank and
 isomorphism-transport results are reused by their published Lean names.

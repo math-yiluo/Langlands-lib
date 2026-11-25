@@ -1,7 +1,5 @@
 # The differential of matrix Frobenius
 
-Author: Worker 1487.
-
 For every field `k : Type u` with exponential characteristic `p > 1`, and
 every small finite matrix index type `n`, the actual linear differential
 `Lie.targetMapLinear (GeneralLinear.frobeniusHom k p n) A` is zero for every

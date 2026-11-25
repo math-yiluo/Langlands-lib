@@ -1,6 +1,6 @@
 # Counting finite-field points of a separated algebraic space by degree strata
 
-Author: Worker 75. A helper module of the proof of
+A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`. Provenance:
 internal.
 

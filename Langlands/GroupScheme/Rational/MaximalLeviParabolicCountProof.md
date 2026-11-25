@@ -17,8 +17,9 @@ The proof uses `splitComponentStatement`,
 the family injectively to `Bool`, according to membership of a fixed nonzero
 central-annihilator character in the members' positive cones.
 
-The same unit supplies the numerical application in
-[MaximalLeviParabolicBudget](../../Representation/Geometric/MaximalLeviParabolicBudget.md).
+The module
+[MaximalLeviParabolicBudget](../../Representation/Geometric/MaximalLeviParabolicBudget.md),
+ported with this file, supplies the numerical application.
 For a finite family of pairwise nonconjugate target parabolics whose Levis are
 isomorphic to the source maximal Levi, every full-source geometric index
 gives a conjugated target parabolic with that fixed embedded Levi. The
@@ -39,7 +40,8 @@ uses exact Jacquet functors and the exact-family length theorem.
 This derived route is motivated by Renard V.4.8 (printed p.122 / PDF p.128) and
 VI.5.4 (printed pp.173–174 / PDF pp.179–180). It proves the structural count
 unconditionally. The geometric-family consequences retain their explicit
-family, separation, double-coset, gluing and detection inputs. Thus this unit
-does not prove the host task's exact induction-length target. All imported
+family, separation, double-coset, gluing and detection inputs. Thus this module
+does not prove the exact induction-length statement
+`MaximalLeviSupercuspidalInductionLengthBoundStatement` that it serves. All imported
 prerequisites above are proved Library theorems; neither the represented
 geometric lemma statement nor VI.5.4 association is assumed or invoked.

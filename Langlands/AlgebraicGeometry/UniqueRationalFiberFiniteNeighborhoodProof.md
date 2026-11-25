@@ -35,9 +35,9 @@ equals `x`. Write `z = x(closedPoint K)` and `y = f z`.
 
 ## Provenance
 
-The statement and the route are by Worker 487. They are an internal supporting formulation of
+The statement and the route are an internal supporting formulation of
 the cited Mathlib results, not a transcription of an external theorem. The Lean proof follows
-the suggested route in the statement task's context. Steps 1–3 use only closed-point and
+the route suggested in the statement's Markdown. Steps 1–3 use only closed-point and
 Jacobson-space facts. Step 4 is the cited Mathlib lemma, applied without extra hypotheses.
 
 The proof uses only the standard axioms `propext`, `Classical.choice` and `Quot.sound`.

@@ -11,8 +11,8 @@ This is an internal derived interface for the finite-set part of
 `ProperFibreAmpleAffineOpenStatement`. Its provenance is the Library's
 actual ampleness predicate and the published results named below. The
 supporting lemmas implement the generic geometric argument in the same
-file. Submission as a statement provides no exact-target proof receipt
-for the proper-family proposition.
+file. This file does not prove the proper-family proposition; the Library
+proves it as `properFibreAmpleAffineOpen` in `ProperFibreAmpleAffineOpenProof`.
 
 The implemented argument first proves
 `LineBundle.IsAmple.pullback_of_isAffineHom`: affine pullback preserves
@@ -46,7 +46,9 @@ affine neighbourhood there, and its image under `T.ι` is an affine open
 of `X` contained in `W`. This proves the conclusion expressed by the
 new interface, with the same quantifiers and hypotheses.
 
-Fibre-ampleness spreading remains a separate prerequisite. This file
+Fibre-ampleness spreading is a separate prerequisite, proved as
+`properFibreAmpleSpreading` in `ProperFibreAmpleSpreadingProof`. This file
 supplies the generic ample-scheme argument; obtaining ampleness on a
 neighbourhood of a proper fibre and transporting the finite set from
-that family remain obligations of the host proper-family proof.
+that family belong to the proof of `ProperFibreAmpleAffineOpenStatement`
+(`ProperFibreAmpleAffineOpenReduction` and `ProperFibreAmpleAffineOpenProof`).

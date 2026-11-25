@@ -21,10 +21,15 @@ the scalar ring, group and coefficient module. We therefore use
 ordinary integer action: `r • a` is `r.down • a`. The representation is
 Mathlib's actual integral unit representation, with its linear maps
 restricted along this ring equivalence. The representation identities
-are proved from the original identities.
+are proved from the original identities. Its action is
+`unitsRepresentation_ρ_apply (σ : Gal(L/K)) (x : Additive Lˣ) :
+(unitsRepresentation K L).ρ σ x = Additive.ofMul (σ • x.toMul)` (by
+definition); it is stated for `x : Additive Lˣ` because the carrier of
+`unitsRepresentation K L` is `Additive Lˣ` only after unfolding the
+definition, and it is not a `simp` lemma.
 No field carrier, algebraic closure or Galois group is resized. The base
 and extension fields of the coefficient construction have independent
-universes. Tower maps currently use one shared carrier universe.
+universes. Tower maps use one shared carrier universe.
 
 In particular, the module action is the actual action on units, and the
 standard cochain differential is used. The scalar lift does not assume a
@@ -115,8 +120,8 @@ Chapter XI, section 2, printed pages 166–168
 denominator subgroup. Section 3, page 168 (PDF page 174), normalizes the
 fundamental class to invariant `1/[L:K]`. Chapter XIII, section 4,
 pages 195–196 (PDF pages 200–201), specializes the formation to the
-separable closure and field multiplicative groups. Worker 42 read these
-original passages and visually checked the fundamental-class formulas.
+separable closure and field multiplicative groups. These original passages
+were read and the fundamental-class formulas visually checked.
 
 The implementation reuses Mathlib revision
 `5ed2965256430c3649e86755f9576b54eca72435`, especially
@@ -129,14 +134,13 @@ This file supplies coefficient and map constructions, not a proof of local
 class field theory.
 
 The pinned Mathlib Tate complex has a norm connecting chains and cochains,
-but does not yet supply the all-degree cup product and group-changing
+but does not supply the all-degree cup product and group-changing
 transfer API needed here. Its continuous-cohomology module also lists the
-finite discrete comparison as a TODO. Exact prerequisite tasks
-`bc3f0bd4-2281-4247-a4b9-931c9cf179e8` and
-`c6ea3f74-2826-48db-9ab1-46587ae2dd92` address those constructions.
-They are not imported assumptions, accepted dependencies, or substitutes
-for the remaining local proposition families.
+finite discrete comparison as a TODO. The Library constructs these in
+separate modules (`TateCup` and `TateTransfers` for the cup product and
+transfers, `FiniteComparison` for the comparison). This file imports none
+of them, and they are not substitutes for the local proposition families.
 
 The kernel of `rationalClass` consists of the integers. The global fundamental-class module and the local connecting sequence use this quotient calculation.
 
-The class of one half in the rational quotient is nonzero. The local and global files share `Langlands.ClassField.Global.rationalClass_half_ne_zero`.
+The class of one half in the rational quotient is nonzero. The local and global files share `Langlands.ClassFieldTheory.Global.rationalClass_half_ne_zero`.

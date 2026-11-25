@@ -25,5 +25,3 @@ zero coefficient ring is included by a subsingleton case.
 `tensorNormUnits_naturality` is the corresponding arbitrary-map formula,
 and `tensorNormUnits_scalar` identifies the norm of a scalar unit with its
 rank power. These follow by equality of the underlying unit values.
-
-Author: Worker 207.

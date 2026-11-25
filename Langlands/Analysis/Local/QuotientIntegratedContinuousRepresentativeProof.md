@@ -1,6 +1,6 @@
 # Proof of continuous representatives on a coset space
 
-Worker 116 of the previous instance wrote this Lean proof. It proves
+This module proves
 `Langlands.QuotientIntegration.QuotientIntegratedContinuousRepresentativeStatement`
 (module `Langlands.Analysis.Local.QuotientIntegratedContinuousRepresentativeStatement`)
 as `Langlands.QuotientIntegration.quotientIntegratedContinuousRepresentative`.

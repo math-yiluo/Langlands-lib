@@ -1,6 +1,6 @@
 # Exactness of the nondegenerate tensor and Hom functors
 
-Worker 134, Task 5281. This proof targets the published proposition
+This proof targets the published proposition
 `Langlands.Algebra.NondegenerateTensorHomExactness.Statements` in
 `Langlands.Algebra.NondegenerateTensorHomExactnessStatements`.
 

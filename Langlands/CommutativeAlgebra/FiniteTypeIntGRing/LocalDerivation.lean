@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.CompletionDerivation
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.FiberRegular
 

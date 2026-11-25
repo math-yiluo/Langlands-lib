@@ -24,6 +24,7 @@ abbrev IntegerScalars := ULift.{u} ℤ
 /-- The scalar lift is the actual integer ring, via the explicit down equivalence. -/
 def integerScalarsEquiv : IntegerScalars.{u} ≃+* ℤ := ULift.ringEquiv
 
+attribute [local instance 1200] AddCommGroup.toIntModule in
 /-- The actual Galois action on the additive notation for the field's unit group. -/
 def unitsRepresentation (K : Type v) (L : Type u)
     [Field K] [Field L] [Algebra K L] :
@@ -36,6 +37,14 @@ def unitsRepresentation (K : Type v) (L : Type u)
       map_mul' σ τ := by
         ext x
         exact LinearMap.congr_fun (map_mul (Rep.ofAlgebraAutOnUnits K L).ρ σ τ) x }
+
+/-- The action of `σ` on `x : Additive Lˣ`. The carrier of `unitsRepresentation K L` is
+`Additive Lˣ` only after unfolding the definition, so this lemma is stated for `x : Additive Lˣ`,
+for rewriting with lemmas about `Additive Lˣ`. -/
+theorem unitsRepresentation_ρ_apply {K : Type v} {L : Type u} [Field K] [Field L] [Algebra K L]
+    (σ : Gal(L/K)) (x : Additive Lˣ) :
+    (unitsRepresentation K L).ρ σ x = Additive.ofMul (σ • x.toMul) :=
+  rfl
 
 /-- The unit module with its discrete topology and actual automorphism action. -/
 def discreteUnitsRepresentation (K : Type v) (L : Type u)
@@ -118,7 +127,7 @@ abbrev RationalModIntegers := ℚ ⧸ AddSubgroup.zmultiples (1 : ℚ)
 def rationalClass : ℚ →+ RationalModIntegers :=
   QuotientAddGroup.mk' (AddSubgroup.zmultiples (1 : ℚ))
 
-theorem _root_.Langlands.ClassField.Global.FundamentalClass.rationalClass_eq_zero_iff (q : ℚ) :
+theorem _root_.Langlands.ClassFieldTheory.Global.FundamentalClass.rationalClass_eq_zero_iff (q : ℚ) :
     rationalClass q = 0 ↔ ∃ k : ℤ, (k : ℚ) = q := by
   unfold rationalClass
   rw [QuotientAddGroup.mk'_apply, QuotientAddGroup.eq_zero_iff,
@@ -213,7 +222,7 @@ abbrev absoluteRestriction (n : ℕ) :
 
 end AbsoluteRestriction
 
-theorem _root_.Langlands.ClassField.Global.rationalClass_half_ne_zero : rationalClass (1 / 2 : ℚ) ≠ 0 := by
+theorem _root_.Langlands.ClassFieldTheory.Global.rationalClass_half_ne_zero : rationalClass (1 / 2 : ℚ) ≠ 0 := by
   intro h
   obtain ⟨n, hn⟩ := AddSubgroup.mem_zmultiples_iff.1 ((QuotientAddGroup.eq_zero_iff _).1 h)
   rw [zsmul_eq_mul, mul_one] at hn

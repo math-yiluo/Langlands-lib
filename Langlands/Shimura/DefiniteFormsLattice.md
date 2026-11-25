@@ -1,14 +1,13 @@
 # Lattice-valued forms on definite similitude groups
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.DefiniteFormsDoubleCoset` (Worker 61: `localLevel`,
+Built on the published
+`Langlands.Shimura.DefiniteFormsDoubleCoset` (`localLevel`,
 `localLevelMap`, `ellModuleForms`, `localRep`),
-`Langlands.Shimura.DefiniteForms` (Worker 61: `ellAdicForms`),
-`Langlands.Shimura.EquivariantFormsDoubleCoset` (Worker 61:
-`DoubleCosets`, `doubleCosetStabilizer`, `apply_mem_invariants`,
+`Langlands.Shimura.DefiniteForms` (`ellAdicForms`),
+`Langlands.Shimura.EquivariantFormsDoubleCoset` (`DoubleCosets`, `doubleCosetStabilizer`, `apply_mem_invariants`,
 `doubleCosetEquiv`, `doubleCosetEquiv_apply_coe`) and
-`Langlands.Shimura.EquivariantForms` (Worker 61: `forms`), and on Worker
-57's similitude groups (`AlgebraInvolution.FiniteAdelicPoints`,
+`Langlands.Shimura.EquivariantForms` (`forms`), and on the
+published similitude groups (`AlgebraInvolution.FiniteAdelicPoints`,
 `finiteAdelicDiagonal`) and algebraic coefficients
 (`AlgebraicRepresentation`). From Mathlib it uses localizations of rings
 and modules (`IsLocalization`, `IsLocalization.mem_span_iff`,
@@ -137,8 +136,8 @@ in the conventions and a commutative ring `O` with `[Algebra O S]`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". Worker 61
-read the rendered scanned pages. Printed p.307 (one-based PDF page 9), after
+J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case". The
+rendered scanned pages were read. Printed p.307 (one-based PDF page 9), after
 (3.6): "Let `𝒪` denote the ring of integers of `L_ℓ`, and let `𝓛_W` be a
 `K_ℓ`-stable `𝒪`-lattice in `W(L)`. Then we can define". Printed p.308
 (one-based PDF page 10): "(3.7) `𝒜_ℓ(GJ, 𝓛_W, K) = {f : _{K^ℓ}S(GJ) → 𝓛_W |

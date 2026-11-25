@@ -1,8 +1,6 @@
 # Étaleness of the inclusions of the pieces of a disjoint union
 
-Author: Worker 22.
-
-This internal unit proves that, in the localized category of analytic spaces,
+This internal module proves that, in the localized category of analytic spaces,
 the inclusion of each piece of the chosen disjoint union
 `localizedSigmaCofan` is étale for the actual `etale` predicate of the
 analytic étale site. It also proves a general criterion: a domain embedding

@@ -1,7 +1,5 @@
 # Finite coefficient and determinant identities
 
-Author: Worker 1767.
-
 This internal algebraic helper expands a finite product of linear power
 series by subsets. Its coefficient of degree `n` is the sum of the products
 indexed by the subsets of size `n`. With the multivariate polynomial variables

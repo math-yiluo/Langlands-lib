@@ -123,15 +123,15 @@ def cmHarrisTripleUpperPairOwnCoefficientIso :
   hom :=
     { hom := 𝟙 _
       comm k g := by
-        change ((restriction).obj pairOwn).ρ k g ≫ 𝟙 _ = 𝟙 _ ≫ (middle).ρ k g
+        change (((restriction).obj pairOwn).ρ k g).asHom ≫ 𝟙 _ = 𝟙 _ ≫ ((middle).ρ k g).asHom
         simp only [Category.comp_id, Category.id_comp]
-        exact cmHarrisTripleUpperPairOwnCoefficient_action D ρ p U V T hVU hTV m hm k g }
+        exact congrArg End.asHom (cmHarrisTripleUpperPairOwnCoefficient_action D ρ p U V T hVU hTV m hm k g) }
   inv :=
     { hom := 𝟙 _
       comm k g := by
-        change (middle).ρ k g ≫ 𝟙 _ = 𝟙 _ ≫ ((restriction).obj pairOwn).ρ k g
+        change ((middle).ρ k g).asHom ≫ 𝟙 _ = 𝟙 _ ≫ (((restriction).obj pairOwn).ρ k g).asHom
         simp only [Category.comp_id, Category.id_comp]
-        exact (cmHarrisTripleUpperPairOwnCoefficient_action D ρ p U V T hVU hTV m hm k g).symm }
+        exact congrArg End.asHom (cmHarrisTripleUpperPairOwnCoefficient_action D ρ p U V T hVU hTV m hm k g).symm }
   hom_inv_id := by apply EquivariantDiagram.Hom.ext; exact Category.id_comp _
   inv_hom_id := by apply EquivariantDiagram.Hom.ext; exact Category.id_comp _
 
@@ -148,15 +148,15 @@ def cmHarrisTripleUpperPairOriginalCoefficientIso :
   hom :=
     { hom := 𝟙 _
       comm k g := by
-        change ((restriction).obj pairOriginal).ρ k g ≫ 𝟙 _ = 𝟙 _ ≫ (upper).ρ k g
+        change (((restriction).obj pairOriginal).ρ k g).asHom ≫ 𝟙 _ = 𝟙 _ ≫ ((upper).ρ k g).asHom
         simp only [Category.comp_id, Category.id_comp]
-        exact cmHarrisTripleUpperPairOriginalCoefficient_action D ρ p U V T hVU hTV m hm k g }
+        exact congrArg End.asHom (cmHarrisTripleUpperPairOriginalCoefficient_action D ρ p U V T hVU hTV m hm k g) }
   inv :=
     { hom := 𝟙 _
       comm k g := by
-        change (upper).ρ k g ≫ 𝟙 _ = 𝟙 _ ≫ ((restriction).obj pairOriginal).ρ k g
+        change ((upper).ρ k g).asHom ≫ 𝟙 _ = 𝟙 _ ≫ (((restriction).obj pairOriginal).ρ k g).asHom
         simp only [Category.comp_id, Category.id_comp]
-        exact (cmHarrisTripleUpperPairOriginalCoefficient_action D ρ p U V T hVU hTV m hm k g).symm }
+        exact congrArg End.asHom (cmHarrisTripleUpperPairOriginalCoefficient_action D ρ p U V T hVU hTV m hm k g).symm }
   hom_inv_id := by apply EquivariantDiagram.Hom.ext; exact Category.id_comp _
   inv_hom_id := by apply EquivariantDiagram.Hom.ext; exact Category.id_comp _
 

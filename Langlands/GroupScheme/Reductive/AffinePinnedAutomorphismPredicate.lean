@@ -32,14 +32,14 @@ def IsPinnedAutomorphism (σ : CategoryTheory.Aut M.group)
     (θ : RootPairing.Aut M.rootDatum) : Prop :=
   ∃ hθ : θ ∈ M.basedAutomorphisms,
     (∃ τ : splitTorus M.base M.coordinates ≅ splitTorus M.base M.coordinates,
-      M.inclusion ≫ σ.hom = τ.hom ≫ M.inclusion ∧
+      M.inclusion ≫ σ.asIso.hom = τ.hom ≫ M.inclusion ∧
       ∀ (U : Over M.base) (x : U ⟶ (splitTorus M.base M.coordinates).X)
         (m : M.coordinates → ℤ),
         ∏ j, splitTorus.pointsEquiv M.coordinates U (x ≫ τ.hom.hom.hom) j ^
             θ.weightMap m j =
           ∏ j, splitTorus.pointsEquiv M.coordinates U x j ^ m j) ∧
     ∀ a : M.basis.support,
-      Lie.targetMapLinear σ.hom (CommRingCat.of M.ring) (M.pinning a 1).val =
+      Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring) (M.pinning a 1).val =
         (M.pinning ⟨θ.indexEquiv a, (hθ a).mp a.property⟩ 1).val
 
 theorem IsPinnedAutomorphism.based {σ : CategoryTheory.Aut M.group}
@@ -56,13 +56,13 @@ private theorem targetMapLinear_id (v : Additive (lieKernel M.group M.ring)) :
 
 private theorem targetMapLinear_mul (σ ρ : CategoryTheory.Aut M.group)
     (v : Additive (lieKernel M.group M.ring)) :
-    Lie.targetMapLinear (σ * ρ).hom (CommRingCat.of M.ring) v =
-      Lie.targetMapLinear σ.hom (CommRingCat.of M.ring)
-        (Lie.targetMapLinear ρ.hom (CommRingCat.of M.ring) v) := by
+    Lie.targetMapLinear (σ * ρ).asIso.hom (CommRingCat.of M.ring) v =
+      Lie.targetMapLinear σ.asIso.hom (CommRingCat.of M.ring)
+        (Lie.targetMapLinear ρ.asIso.hom (CommRingCat.of M.ring) v) := by
   apply Additive.toMul.injective
   apply Subtype.ext
-  change v.toMul.val ≫ (ρ.hom ≫ σ.hom).hom.hom =
-    (v.toMul.val ≫ ρ.hom.hom.hom) ≫ σ.hom.hom.hom
+  change v.toMul.val ≫ (ρ.asIso.hom ≫ σ.asIso.hom).hom.hom =
+    (v.toMul.val ≫ ρ.asIso.hom.hom.hom) ≫ σ.asIso.hom.hom.hom
   rw [Grp.comp_hom_hom, Category.assoc]
 
 /-- The identity automorphism has identity label and preserves the pinning. -/
@@ -83,7 +83,7 @@ theorem IsPinnedAutomorphism.mul {σ ρ : CategoryTheory.Aut M.group}
   obtain ⟨hθ, ⟨τ, hτ, hτχ⟩, hσX⟩ := hσ
   obtain ⟨hψ, ⟨υ, hυ, hυχ⟩, hρX⟩ := hρ
   refine ⟨M.basedAutomorphisms.mul_mem hθ hψ, ⟨υ ≪≫ τ, ?_, ?_⟩, ?_⟩
-  · change M.inclusion ≫ (ρ.hom ≫ σ.hom) = (υ.hom ≫ τ.hom) ≫ M.inclusion
+  · change M.inclusion ≫ (ρ.asIso.hom ≫ σ.asIso.hom) = (υ.hom ≫ τ.hom) ≫ M.inclusion
     rw [← Category.assoc, hυ, Category.assoc, hτ, ← Category.assoc]
   · intro U x m
     simp only [Iso.trans_hom, Grp.comp_hom_hom, ← Category.assoc]

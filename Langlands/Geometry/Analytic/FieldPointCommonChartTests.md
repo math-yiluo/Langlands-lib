@@ -1,6 +1,6 @@
 # Faithful field-point tests in a common target chart
 
-This internal unit works over a complete ultrametric normed field `K`
+This internal module works over a complete ultrametric normed field `K`
 and a normed extension field `L`, with independent algebra, space,
 chart-index and extension-field universes.
 
@@ -39,6 +39,6 @@ quotient test point along each map.
 The provenance is internal, from the actual strong-map chart formulas,
 restriction compatibility, saturated-source extensionality,
 greatest-chart affinoid comparison, and faithful field-point tests.
-This unit does not assert that one faithful evaluation identifies maps
+This module does not assert that one faithful evaluation identifies maps
 to an arbitrary target without the common-chart premise, nor does it
 assert full localized pullback preservation.

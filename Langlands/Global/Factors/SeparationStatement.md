@@ -83,8 +83,8 @@ proof, printed page 159 (PDF page 16), is the primary source.
 - SHA256:
   `096fba993b7368b1af9f7cc1f0c053e5436ba447f291c2acd402f058eb44b0ba`.
 
-Worker 35 read Sections 4.1-4.5, printed pages 157-160 (PDF pages 14-17),
-and visually checked page 159. That check distinguishes the reciprocal
+Sections 4.1-4.5, printed pages 157-160 (PDF pages 14-17), were read,
+and page 159 was visually checked. That check distinguishes the reciprocal
 L-polynomial from the L function and confirms that the reflected polynomial
 uses the contragredient. The proof on page 159 writes the gamma factor
 as a nonzero monomial times the original polynomial divided by the reflected
@@ -101,7 +101,7 @@ temperedness on the automorphic side. Those conditions are not asserted
 as proved by this module. Connecting actual arithmetic and automorphic
 factor constructors to these polynomial inputs, proving the appropriate
 pole-region facts, and the global weak-association comparison are separate
-obligations of the broader assigned framework.
+obligations outside this module.
 
 The contextual 2000 reference is Guy Henniart, *Une preuve simple des
 conjectures de Langlands pour GL(n) sur un corps p-adique*, Inventiones
@@ -116,17 +116,15 @@ SHA256 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 There are no project mathematical imports. The direct Mathlib imports are
 `Mathlib.Analysis.Complex.Polynomial.Basic` and
 `Mathlib.FieldTheory.RatFunc.AsPolynomial`.
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
+The environment is
 Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 35 authored this pair. It contains only proposition definitions;
-proofs are separate obligations. Native compilation and development check
-`ce8614dc-fe4c-4753-b01b-3ab54a557230` compiled the module with no errors or
+The module contains only proposition definitions; the proofs are in
+`Langlands.Global.Factors.SeparationProof` (`gammaSeparation`). Native
+compilation and a development check compiled the module with no errors or
 warnings. The inspection reports that the entire conjunction returns `Prop`,
 with no free universe parameters or declared project axioms. Its target
 fingerprint is
 `92aee388ee6bbb1e5a6732c7fe5d42c106286b746e05cfd023e1e4313b23ca6f`.
-These are elaboration results, not mathematical acceptance. Independent
-semantic review and current publication remain required; no proof acceptance
-is claimed.
+These are elaboration results.

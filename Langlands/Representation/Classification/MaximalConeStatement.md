@@ -1,9 +1,5 @@
 # Dominance-maximal selection of an essentially tempered Jacquet quotient
 
-Author of the correction and independent source checks: Worker 436.
-Original statement and documentation: Worker 19.
-Counterexample, dominance correction and quotient-route reports: Worker 23.
-
 `Langlands.GLMaximalConeJacquetQuotientStatement` is a derived proposition
 definition, not a proved theorem. It selects an actual dual exponent, a
 consecutive cone coarsening and an irreducible admissible quotient of the
@@ -231,12 +227,12 @@ it asserts neither reciprocity nor a surjection from upper induction.
 
 ## Independent check of the reported GL4 obstruction
 
-The initial example and map audit were reported by Worker 23. Worker 19
-had checked only the finite rational cone enumeration for two reported
-Borel words. For this correction Worker 436 independently checked the
-representation arguments against Z80 and K03, and recomputed the numerical
-cases from geometric-lemma matrices, rather than assuming the reported
-spectrum. These are mathematical source checks and finite rational
+The initial example and map audit were reported before this correction; the
+original statement had been checked only by the finite rational cone
+enumeration for two reported Borel words. For this correction the
+representation arguments were checked independently against Z80 and K03, and
+the numerical cases were recomputed from geometric-lemma matrices, rather than
+assuming the reported spectrum. These are mathematical source checks and finite rational
 computations, **not Lean proofs** of a counterexample or of classification.
 
 Write `ν^s=|det|^s`, `a=1/2`, `Δ=[ν^(-a),ν^a]` and
@@ -416,21 +412,23 @@ new cardinality defect. The corrected proposition uses K03's dominance
 geometry, the explicit full-spectrum polygon argument and the independent
 whole-quotient extraction above.
 
-The original author had read S78 in full and the cited earlier exponent
-and analytic passages for related families. For this correction Worker 436
-read S78 pp.103–104, K03 Sections 2–3, the listed Z80 and C95 passages and
-the listed S79/W03 analytic passages; the order, selection and relevant
+For the original statement S78 had been read in full, with the cited earlier
+exponent and analytic passages for related families. For this correction
+S78 pp.103–104, K03 Sections 2–3, the listed Z80 and C95 passages and
+the listed S79/W03 analytic passages were read; the order, selection and relevant
 segment formulas were also checked in page images. No fresh full reading
 of all six works or every transitive original proof source is claimed.
 C95 is not the older Casselman preprint cited in S78; the retained Langlands
 retypesetting discussed in `ParabolicConeStatement.md` is likewise not
 identified with S78's original IAS preprint.
 
-Future Lean proofs must construct finite spectra, the numerical cone and
+A Lean proof must construct finite spectra, the numerical cone and
 its order compatibility, restriction occurrence, the whole Jacquet
 surjection, normalized relative Jacquet transitivity, finer exponent
-lifting and the analytic bridge. No such result is assumed as a certificate
+lifting and the analytic bridge; the Library's proof is
+`Langlands.glMaximalConeJacquetQuotient` in `Classification.MaximalConeProof`.
+No such result is assumed as a certificate
 or proved by this proposition definition. Deriving a final quotient from
 upper induction additionally needs the correct adjointness/duality and
 regular-head arguments. Other statement families, the public source map
-and the downstream proof task are outside this correction pair.
+and the downstream proof are outside this correction pair.

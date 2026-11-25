@@ -21,7 +21,7 @@ abelian category `C` (`ρ : Γ →* Aut K`) and on an object `W` of `C` (`σ : �
 * The action on the abutment preserves every step of the abutment filtration
   (`abutmentAction_mem_filtration`).
 
-The degeneration isomorphisms take Worker 3's proposition `HyperextDegenerationStatement` as the
+The degeneration isomorphisms take the proposition `HyperextDegenerationStatement` as the
 explicit hypothesis `h`; this module does not prove it.
 -/
 
@@ -57,25 +57,25 @@ variable {Γ : Type uΓ} [Group Γ]
 /-- The action of `Γ` by additive automorphisms on `X ⟶ Y` induced by actions `ρ` on `X` and `σ`
 on `Y` by automorphisms: `γ` sends `f` to `(ρ γ)⁻¹ ≫ f ≫ σ γ`. -/
 def homAction {X Y : C} (ρ : Γ →* Aut X) (σ : Γ →* Aut Y) : Γ →* AddMonoid.End (X ⟶ Y) where
-  toFun γ := (homAddEquiv (ρ γ) (σ γ)).toAddMonoidHom
+  toFun γ := (homAddEquiv (ρ γ).asIso (σ γ).asIso).toAddMonoidHom
   map_one' := by
     ext f
-    have h₁ : (ρ 1).inv = 𝟙 X := by rw [map_one]; rfl
-    have h₂ : (σ 1).hom = 𝟙 Y := by rw [map_one]; rfl
-    change (ρ 1).inv ≫ f ≫ (σ 1).hom = f
+    have h₁ : (ρ 1).asIso.inv = 𝟙 X := by rw [map_one]; rfl
+    have h₂ : (σ 1).asIso.hom = 𝟙 Y := by rw [map_one]; rfl
+    change (ρ 1).asIso.inv ≫ f ≫ (σ 1).asIso.hom = f
     rw [h₁, h₂]
     exact (Category.id_comp _).trans (Category.comp_id _)
   map_mul' γ δ := by
     ext f
-    have h₁ : (ρ (γ * δ)).inv = (ρ γ).inv ≫ (ρ δ).inv := by rw [map_mul]; rfl
-    have h₂ : (σ (γ * δ)).hom = (σ δ).hom ≫ (σ γ).hom := by rw [map_mul]; rfl
-    change (ρ (γ * δ)).inv ≫ f ≫ (σ (γ * δ)).hom =
-      (ρ γ).inv ≫ ((ρ δ).inv ≫ f ≫ (σ δ).hom) ≫ (σ γ).hom
+    have h₁ : (ρ (γ * δ)).asIso.inv = (ρ γ).asIso.inv ≫ (ρ δ).asIso.inv := by rw [map_mul]; rfl
+    have h₂ : (σ (γ * δ)).asIso.hom = (σ δ).asIso.hom ≫ (σ γ).asIso.hom := by rw [map_mul]; rfl
+    change (ρ (γ * δ)).asIso.inv ≫ f ≫ (σ (γ * δ)).asIso.hom =
+      (ρ γ).asIso.inv ≫ ((ρ δ).asIso.inv ≫ f ≫ (σ δ).asIso.hom) ≫ (σ γ).asIso.hom
     rw [h₁, h₂]
     simp only [Category.assoc]
 
 lemma homAction_apply {X Y : C} (ρ : Γ →* Aut X) (σ : Γ →* Aut Y) (γ : Γ) (f : X ⟶ Y) :
-    homAction ρ σ γ f = (ρ γ).inv ≫ f ≫ (σ γ).hom :=
+    homAction ρ σ γ f = (ρ γ).asIso.inv ≫ f ≫ (σ γ).asIso.hom :=
   rfl
 
 end Hom
@@ -144,12 +144,13 @@ def cohomologyHomAction {K : DerivedCategory C} {W : C} (ρ : Γ →* Aut K) (σ
 lemma abutmentAction_apply {K : DerivedCategory C} {W : C} (ρ : Γ →* Aut K) (σ : Γ →* Aut W)
     (n : ℤ) (γ : Γ) (f : ShiftedHom K ((singleFunctor C 0).obj W) n) :
     abutmentAction ρ σ n γ f =
-      postcomp K ((singleFunctor C 0).map (σ γ).hom) n (precomp (ρ γ).inv _ n f) :=
+      postcomp K ((singleFunctor C 0).map (σ γ).asIso.hom) n (precomp (ρ γ).asIso.inv _ n f) :=
   (Category.assoc _ _ _).symm
 
 lemma cohomologyHomAction_apply {K : DerivedCategory C} {W : C} (ρ : Γ →* Aut K)
     (σ : Γ →* Aut W) (n : ℤ) (γ : Γ) (g : (homologyFunctor C (-n)).obj K ⟶ W) :
-    cohomologyHomAction ρ σ n γ g = (homologyFunctor C (-n)).map (ρ γ).inv ≫ g ≫ (σ γ).hom :=
+    cohomologyHomAction ρ σ n γ g =
+      (homologyFunctor C (-n)).map (ρ γ).asIso.inv ≫ g ≫ (σ γ).asIso.hom :=
   rfl
 
 /-- The edge map `Hom(K, W₀⟦n⟧) → Hom(H^{-n} K, W)` intertwines `abutmentAction` and

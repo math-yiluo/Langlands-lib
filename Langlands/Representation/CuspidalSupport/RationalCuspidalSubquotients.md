@@ -1,6 +1,6 @@
 # Actual cuspidality passes to arbitrary smooth subquotients
 
-Worker 1751. This internal result connects ordinary cuspidality with the
+This internal result connects ordinary cuspidality with the
 all-cuspidal-subquotient factor used by the actual category decomposition.
 
 `CuspidalSubquotientClosure` states that vanishing of every actual normalized

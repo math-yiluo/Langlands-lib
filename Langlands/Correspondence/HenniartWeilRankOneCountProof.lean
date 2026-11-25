@@ -25,7 +25,7 @@ universe uK uW
 
 variable {p : ℕ} [Fact p.Prime] (K : PadicField.{uK} p)
 
-local instance : TopologicalSpace K.Carrier := K.canonicalTopologicalData.topology
+private local instance : TopologicalSpace K.Carrier := K.canonicalTopologicalData.topology
 
 local notation "T" => K.canonicalTopologicalData
 

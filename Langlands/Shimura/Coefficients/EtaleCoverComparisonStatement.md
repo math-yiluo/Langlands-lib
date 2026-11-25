@@ -1,6 +1,6 @@
 # Associated-sheaf comparison between finite etale torsors
 
-Author: Worker 558. This module defines a proposition target; it provides no
+This module defines a proposition target; it provides no
 proof of that proposition.
 
 `Langlands.Shimura.Coefficients.EtaleAssociatedCoverComparisonStatement`
@@ -80,5 +80,4 @@ separate obligations.
 The sole direct import is
 `Langlands.Shimura.Coefficients.EtaleCrossCover`, which imports `Etale`.
 Formal environment: Lean 4.34.0 and Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. No imported declaration or
-companion Markdown is changed.
+`5ed2965256430c3649e86755f9576b54eca72435`.

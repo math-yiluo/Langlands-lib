@@ -10,7 +10,8 @@ The proof does not use the hypothesis `c ≠ AlgEquiv.refl`. No characteristic i
 
 ## Provenance
 
-This is an internal helper for the proof task of `LeviRepresentedStatement`. It is not a
+This module serves the proof of `LeviRepresentedStatement`, `leviRepresentedStatement` in
+`QuasiSplitUnitaryLeviRepresentedProof`. It is not a
 formalization of a cited literature passage. The definitions below are auxiliary
 constructions from the Library's antidiagonal hermitian model of `U(1,1)`
 (`QuasiSplitUnitary`, `QuasiSplitUnitaryLevi`) and the similitude scheme model

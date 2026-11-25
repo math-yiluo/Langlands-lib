@@ -83,7 +83,8 @@ pullback, pushforward and adjunction, and from the Library modules
 `ClosedImmersionHigherDirectImageVanishingProof`. They give the standard
 identification of `M/I M` with the pushforward of the restriction of `M` to
 the closed subscheme cut out by `I`. The proof of Stacks Project Lemma
-30.21.3 (tag 02OF), the source of the host task, uses this identification when
+30.21.3 (tag 02OF), the source of `ProperFibrePowerSectionLiftingStatement`, which
+this module serves, uses this identification when
 it says that the fibre `X_y` is the closed subscheme cut out by `𝔪 O_X`, with
 `F_y = F/𝔪 F`. The module proves it under the hypotheses displayed above: the
 closed subscheme is given as a base change of `Spec (R/I) → Spec R` for an

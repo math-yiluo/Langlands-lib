@@ -572,7 +572,7 @@ theorem operatorRealization_exists_evaluate_ne_zero {x : S.Space} (hx : x ≠ 0)
   apply S.toContinuous_injective
   rw [map_zero S.toContinuous]
   apply toContinuousMap_injective F (r + 1)
-  rw [map_zero (toContinuousMap F (r + 1))]
+  rw [LinearMap.map_zero (toContinuousMap F (r + 1))]
   ext g
   exact h g
 

@@ -1,7 +1,5 @@
 # Finite dual exponents and tempered class exponents
 
-Author: Worker 19.
-
 This family states the finite dual-spectrum and class-exponent prerequisites
 for the weakly critical refinement of tempered support. These are proposition
 definitions, not proofs.

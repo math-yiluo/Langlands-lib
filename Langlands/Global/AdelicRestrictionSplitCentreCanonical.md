@@ -1,7 +1,5 @@
 # The canonical restriction split-centre quotient `[G]`
 
-Author: Worker 112.
-
 Getz--Hahn (2.20), printed p. 68 (`getz-hahn-2024-automorphic-representations`),
 define `A_G` as the neutral component of the real points of the greatest
 `ℚ`-split torus in the restriction of scalars `Res_{F/ℚ} Z_G`. Display (2.21),
@@ -42,8 +40,9 @@ module does not prove that the two agree. The subgroup is the published
   - `hCST : CentralSplitTorusCharacterStatement.{0}`. This is the published
     proposition that, over every field, every nonzero rational character of
     a connected reductive group restricts nontrivially to some central split
-    torus. It is unproved in the current Library; its proof is open task
-    `4f432abe-c26e-45a1-97de-0f87624ccf5b`.
+    torus. It is proved as `Langlands.GroupScheme.centralSplitTorusCharacter`
+    (module `Langlands.GroupScheme.Rational.CentralSplitTorusCharacterProof`);
+    this module keeps it as a hypothesis.
   - `hG : IsConnectedReductive G`.
 
 ## Existence of split components
@@ -200,5 +199,5 @@ For any split component `j` of the restriction:
 
 The module proves no relation between split components of `Res_{F/ℚ} G` and
 the greatest `ℚ`-split torus of `Res_{F/ℚ} Z_G`. Every reductive result above
-depends on the unproved `CentralSplitTorusCharacterStatement`. Finite volume,
+takes `CentralSplitTorusCharacterStatement` as the hypothesis `hCST`. Finite volume,
 reduction theory and automorphic forms are not treated here.

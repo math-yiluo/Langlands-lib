@@ -1,19 +1,16 @@
 # External Library audit: local factors and correspondence
 
-Author: Worker 46. Audit task `7d7f925d-f349-4657-b964-a38871b7c372`, revision 2.
-Checked on 2026-10-23 against Library
-`fb40559309dd366f4145aa31aad8c3db11b7cc07`.
+Checked on 2026-10-23 against Library `fb40559309dd366f4145aa31aad8c3db11b7cc07`.
 
-All nine assigned findings have verdicts below. The verified documentation
-defects have been repaired by seven independently accepted and published
-correction candidates. The current documents distinguish conditional
+All nine findings concerned have verdicts below. The verified documentation
+defects have been repaired by seven corrections, which are in the Library. The current documents distinguish conditional
 constructions, available statements and proved results from the remaining
 existence and correspondence goals. No Lean change was required by these
 findings; all seven corrections preserve Lean bytes.
 
 All assigned primary Lean and paired Markdown were read, together with the
-relevant definitions and consumers. Original-source readings and authoritative
-review, validation and publication evidence are recorded below. Verification
+relevant definitions and consumers. Original-source readings and the commits
+where the corrections entered the Library are recorded below. Verification
 began at `b26cde6370d6c0976d0002a7f4c955db801efd02`; the 68-file audit set
 was rechecked at the current snapshot, and the additional `LanglandsLFactor`
 pair was read and checked against its accepted publication. Historical and
@@ -42,7 +39,7 @@ historical; they are not copied from the report snapshots.
 | ISSUES-1 DOC-05 | Does not hold in the current Library. The historical stale claim held; repaired by the same candidate as I034. | Conditional epsilon-zero construction and stated Swan formulas are now distinguished from unconditional existence and proofs. No further correction. |
 | ISSUES-1 DOC-08 | Does not hold in the current Library as an allegation of missing library interfaces. The four historical stale availability passages were confirmed and repaired. | Three published correction candidates cover the four documents. Their narrower generic or L-only scope and unproved goals remain unchanged. No further correction. |
 | ISSUES-1 GOAL-01 | Holds as an accurately disclosed open-proof observation. Correspondence and assembly goals remain proposition definitions. | No corrective mathematical change. Their proof obligations remain separate work. |
-| ISSUES-1 GOAL-02 | Holds in part. Missing-adapter, missing-unified-specification and no-consumer claims do not hold. Universal factor existence and full correspondence proofs remain open. | Published interfaces and certified class transport supply counterevidence to the absence claims. No duplicate specification task or target weakening; remaining obligations are mapped below. |
+| ISSUES-1 GOAL-02 | Holds in part. Missing-adapter, missing-unified-specification and no-consumer claims do not hold. Universal factor existence and full correspondence proofs remain open. | Published interfaces and certified class transport supply counterevidence to the absence claims. No duplicate specification or target weakening; remaining obligations are listed below. |
 
 ## I001: the same fixed reciprocity family
 
@@ -251,8 +248,7 @@ equivariant linear equivalences to the class representatives. The L constructor
 epsilon constructor (256–276) still requires quotient-data existence for both
 representations, block-factor existence and datum independence. It does not
 silently use the classification constructor at a different block universe.
-The complete pair and independent review were read; the integrated files match
-the submitted hashes. Henniart 2002 §1.2, p.589, and §2.8, p.596, and JPSS §9.4,
+The complete pair was read; the files in the Library match the submitted hashes. Henniart 2002 §1.2, p.589, and §2.8, p.596, and JPSS §9.4,
 p.458, supply the normalization and class/product interpretation already checked
 from the originals.
 
@@ -263,24 +259,18 @@ do not hold. Existence of a factor for every class pair, character/measure
 independence, block-universe lowering and the full correspondence proofs are
 not established by this construction.
 
-The remaining obligations map to the existing work below. This is the ownership
-map recorded at the initial audit, including its historical DAG revision; it is
-not a claim about the current queue state or accepted proof evidence. The current
-Library declaration/use search still finds the named correspondence, assembly,
-universal L-existence and generic-comparison targets as `Prop` definitions,
-with no theorem proving them.
-
-| Obligation | Existing work or planning location |
-| --- | --- |
-| Square-integrable classification consumed by epsilon descent | Exact-target proof task `1cb45da2-7007-4351-a694-594fb148b8d1`, revision 1. |
-| Square-integrable exhaustion consumed by epsilon descent | Exact-target proof task `cd8ab97c-0b78-4bce-97c4-d307a28159a4`, revision 1. |
-| Actual representation-side factors, analytic existence and intrinsic construction bridges | Definition/construction host `6f0365a3-7419-4804-b209-3fc348b878de`; associated JPSS statement branch `80b8ac90-940b-487d-acdf-1f228d63f8d6`. Conditional constructor acceptance does not close this host. |
-| Correspondence predicates and assembly statement interfaces | Statement task `1fecded2-fe72-47d9-8d3f-035897e9bc29`; the accepted bundle below fills the reported specification gap. |
-| Full factor compatibility, assembly, characterization and final LLC proofs | Shared proof DAG revision 340: `proof.full-factor-compatibilities`, `proof.conditional-classification-assembly`, `proof.full-llc-characterization`, `proof.local-langlands-all-ranks`. These are planned proof obligations, not implemented theorems. |
-
-No new statement or proof task is justified merely by an accurately disclosed
-open goal. The published class-transport bridge belongs to the existing factor
-host; its acceptance does not discharge that host's remaining existence work.
+At the audit the Library declaration/use search found the named
+correspondence, assembly, universal L-existence and generic-comparison
+targets as `Prop` definitions, with no theorem proving them. The remaining
+obligations recorded then were: square-integrable classification and
+exhaustion, both consumed by epsilon descent; the actual representation-side
+factors, analytic existence and intrinsic construction bridges, which the
+conditional constructors do not settle; the correspondence predicates and
+assembly statement interfaces, whose specification gap the bundle below
+fills; and the full factor compatibility, assembly, characterization and
+final LLC proofs, which were planned, not implemented. An accurately
+disclosed open goal needs no new statement. The published class-transport bridge belongs to the existing factor
+modules; its acceptance does not discharge their remaining existence work.
 
 ## Original-source record
 
@@ -301,105 +291,74 @@ PDF page numbers are one-based. Full source fingerprints are:
 
 For GOAL-02, Henniart 2002 §§1.1–1.8, pp.588–592 / PDF pp.2–6, and §2.8
 were checked directly. The verdict concerns the availability and scope of the
-current predicates, not a new independent acceptance of every LLC statement.
+current predicates, not a new check of every LLC statement.
 
-## Accepted companion evidence
+## Companion modules in the Library
 
-The following authoritative artifact archives and `publication.json` receipts
-were checked, including independent approvals and accepted validation. All listed
-reviews have empty qualifications. Definition/statement acceptance is not proof
-acceptance of their unproved goals. These records establish the particular
-published companions used above, not completion of their broad host tasks.
+The following companions are in the Library; the table gives the commit
+where each first appeared. A definition or statement in the Library is not a
+proof of its goals, and these companions do not complete the broader work
+they belong to.
 
-| Companion | Candidate | Independent review task | Publication commit |
-| --- | --- | --- | --- |
-| Epsilon-zero definition and statement family | `02bb9cbf-0e28-432f-9be8-2dad72f3eb8f` | `d5591dba-1ef1-4e9b-9a77-b9ae2f755637` (approve) | `e3c2fa98be720f63c6981efbbdf15cd223329e76` |
-| Actual local Weil assembly | `3b435643-8dc4-46a5-833c-78f20652b225` | `e999a445-baa0-4b07-bfbd-f80cde88f530` (approve) | `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf` |
-| Common-closure spectral specialization | `8e20959a-d7a5-4932-a36b-1d60f61451bd` | `507bac7b-2197-4e3f-9a4d-fb47833dadef` (approve) | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
-| Local-factor module containing the dual-function membership theorem | `b5a9a5a8-7d2f-4d84-9acb-9678053ceff9` | `10d48baa-2272-4dac-9763-fcc9b25cabfc` (approve) | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
-| Nongeneric epsilon relation and constructor | `b8752e4e-5383-4013-9095-36e5a351ceaf` | `1404006d-9764-4b16-a140-de9bf0d8dbfc` (approve) | `2e31df852eed5b4c1a45eca581f8480418360a34` |
-| Nongeneric L relation and statement family | `bb2f6617-d42a-409a-a4b7-ee6968df5dd6` | `4167e4f5-596c-41c4-8a9d-e55c62ac069d` (approve) | `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` |
-| Full compatibility/specification/assembly bundle | `93e999f3-90cd-4126-94fb-a4f181baaa27` | `b65bce71-9b18-4ffa-a31e-338c481c7435` (approve) | `a93d5169d27e08500e30b75e254252103329adc1` |
-| Epsilon descent conditional on classification | `1adb6aa6-c23b-4b42-962a-b89cb4a26bb5` | `c68c11b2-3b8a-4ea5-aafb-cd706e34173f` (approve) | `ed386d3458bf6efda6bdcd8bafd745280be7efb6` |
-| Conditional nongeneric gamma unit | `79e2d944-1b25-4560-86d0-0ca08a35d740` | `2f1fb87c-ae81-4a2a-8796-0469bf7e973c` (approve) | `f1b212cc117b9c34dced95c0ac88e6328827334d` |
-| Certified automorphic-class pair factors and representative independence | `9f85b200-5b60-43e9-b3d8-91652d027ea4` | `dbcb00a4-c1b2-440b-afd4-d06210120cf1` (approve, Reviewer 1266) | `9ff0d4f8edaf10dd32d87468c3045da6ec3ee5c6` |
-| Conditional nongeneric L-polynomial and rational unit | `f2887fab-657b-4267-86e8-0fd328decbf3` | `695d1290-78da-4e50-9ab7-13f83b98de74` (approve, Reviewer 1091) | `cddb0412f1a617f8f0476ab118a15618a386cf2d` |
+| Companion | Publication commit |
+| --- | --- |
+| Epsilon-zero definition and statement family | `e3c2fa98be720f63c6981efbbdf15cd223329e76` |
+| Actual local Weil assembly | `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf` |
+| Common-closure spectral specialization | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
+| Local-factor module containing the dual-function membership theorem | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
+| Nongeneric epsilon relation and constructor | `2e31df852eed5b4c1a45eca581f8480418360a34` |
+| Nongeneric L relation and statement family | `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` |
+| Full compatibility/specification/assembly bundle | `a93d5169d27e08500e30b75e254252103329adc1` |
+| Epsilon descent conditional on classification | `ed386d3458bf6efda6bdcd8bafd745280be7efb6` |
+| Conditional nongeneric gamma unit | `f1b212cc117b9c34dced95c0ac88e6328827334d` |
+| Certified automorphic-class pair factors and representative independence | `9ff0d4f8edaf10dd32d87468c3045da6ec3ee5c6` |
+| Conditional nongeneric L-polynomial and rational unit | `cddb0412f1a617f8f0476ab118a15618a386cf2d` |
 
-The gamma candidate's archived submission differs from the integrated module:
+The gamma module as first submitted differs from the module in the Library:
 the duplicate reciprocal-residue scale and its coercion lemma were moved to
 `LocalFactor/ResidueReflection`. The current gamma and reflection pairs equal
-the files published at `f1b212cc117b9c34dced95c0ac88e6328827334d`. Its Library
-manifest snapshot, publication snapshot and accepted fresh integrated Lake-build
-validation all name
-`0fc6ba034bfd0ce7a64c05098764866083ff214217448ceda8251ff3329d8499`.
-The independent review explicitly identified the duplicate scale; the shared
-module preserves its value. This is an integration adjustment, not byte identity
-with the original submitted pair. The full-compatibility/specification/assembly,
-epsilon-descent and nongeneric-L pairs do equal their archived submissions.
+the files published at `f1b212cc117b9c34dced95c0ac88e6328827334d`. The
+duplicate scale was noticed when the module was checked; the shared module
+preserves its value. This is an adjustment made when the module entered the
+Library, not byte identity with the original submitted pair. The
+full-compatibility/specification/assembly, epsilon-descent and nongeneric-L
+pairs do equal their submitted versions.
 
-The class-adapter candidate has accepted machine validation
-`6e2b61f0-d0cf-45e5-bad4-6ae1fc2dd642` under `lean.definition@1` and unqualified
-independent approval. Its publication integration
-`148983378bb2432f91bb11e3c3da274c` records a successful fresh integrated Lake
-build of snapshot
-`d9065036c82d8e163875e4f95ce3ae42466ca33d4787557bbda0e8d35856d1a1`.
-The integrated review differs from the original approval only by integration
-identifiers. This acceptance concerns the certified construction, not universal
-factor existence or completion of the broad host.
+The class adapter was built with Lake when it entered the Library. This
+concerns the certified construction, not universal factor existence.
 
-## Correction ledger
+## Corrections
 
-All seven candidates below are accepted and public. Their complete independent
-reviews were read; all are unqualified approvals. Exact-candidate machine
-validations and fresh integrated Lake builds were accepted. For each correction,
-the frozen snapshot was compared with its repository base: only the intended
-paired Markdown changed, with no Lean changes. For sparse archives the unchanged
-files were resolved from the recorded base. Archive hashes and the target pairs
-were checked against the publication commit, the checked current Library and the
-workspace. The integrated review reports differ from the original approvals
-only in integration metadata. Worker 46 verifies these receipts and does not
-self-review the correction candidates on which Worker 46 is a coauthor.
+All seven corrections below are in the Library; each was built with Lake when
+it entered it. For each correction, the corrected files were compared with
+their base: only the intended paired Markdown changed, with no Lean changes.
+The target pairs were checked against the commit where the correction first
+appeared and against the checked Library.
 
-| Finding coverage | Correction task (revision) | Accepted/public candidate | Independent reviewer / review task | Accepted machine validation | Publication commit |
-| --- | --- | --- | --- | --- | --- |
-| I001 | `7ab65f0d-3be2-45d7-a4ab-d9ad2c31cbcb` (1) | `983c0d99-8b95-486f-b1e0-c73a2d2bbc07` | Reviewer 1344, approve: `92068d9c-ed33-488e-91fd-4cf26874b62f` | `50f6dd1f-9c9e-4182-8f6c-91df97b09c6e` | `b263cfa454b11d485198ae46d8290f32435e48c6` |
-| I011 | `3030c695-849f-43d7-babe-4a0e41084e5f` (1) | `4c95c30b-a4f9-47cf-9d07-2162651619ba` | Reviewer 1415, approve: `911ed731-56d0-4246-998a-2d26855cfd71` | `b988be0f-a0dd-4001-a6b0-6bd503e640eb` | `886e27567a757917705b7adef45a2c2621bf4bf7` |
-| I034 and DOC-05 | `9bca79c2-e874-4f9c-8755-bbe9d8a7f76c` (1) | `b3d7132d-038d-48a7-b5d2-7ddf40c1bc8d` | Reviewer 1423, approve: `412dc076-97b3-4d5f-81d8-d164b8733304` | `b41b22e9-a966-4265-ba14-40902328ac57` | `886e27567a757917705b7adef45a2c2621bf4bf7` |
-| I035 | `ca457911-4ae7-4810-bf81-70b1905008fa` (1) | `def45475-3949-48a4-96bd-e011345066dc` | Reviewer 1412, approve: `ec41d6aa-1e00-4e20-896d-459acb08e66c` | `88d0c005-6ee4-4c52-add0-f49b1b1a90c8` | `886e27567a757917705b7adef45a2c2621bf4bf7` |
-| I050 and DOC-08: epsilon normalization | `cfd3fa07-a9f1-4ad0-b4e1-ab40bd2645b5` (1) | `b3be91c3-dd4e-4ac1-af23-5adcb891a55a` | Reviewer 1546, approve: `8f04739c-728b-4391-a9b3-e0fc7b665a67` | `a88ee1f5-42b1-4bbc-92c7-55e405cad399` | `4ab35fd7cc442c437d97a7e9a247b902533aa199` |
-| DOC-08: FullL and AssemblyL | `ee850127-e062-4b61-81d1-9d472cee0126` (1) | `fbe00d99-2457-4134-b0ff-2d171a591c33` | Reviewer 1547, approve: `21afff0c-e022-4f01-955b-0923a319536d` | `95e56d26-7680-4c10-adbf-76a5d6f91d7f` | `4ab35fd7cc442c437d97a7e9a247b902533aa199` |
-| DOC-08: GLPoleRegion | `e70861e2-26e4-4421-8ca3-1aa394092a9c` (3) | `cc06ce2d-a9d5-48ee-a333-2ebab2aac633` | Reviewer 1543, approve: `2c4cbdb8-9ab2-4270-aee1-04b5c028a0e7` | `13c5ffb3-453d-4924-81ef-c8704366c96a` | `4ab35fd7cc442c437d97a7e9a247b902533aa199` |
+| Finding coverage | Publication commit |
+| --- | --- |
+| I001 | `b263cfa454b11d485198ae46d8290f32435e48c6` |
+| I011 | `886e27567a757917705b7adef45a2c2621bf4bf7` |
+| I034 and DOC-05 | `886e27567a757917705b7adef45a2c2621bf4bf7` |
+| I035 | `886e27567a757917705b7adef45a2c2621bf4bf7` |
+| I050 and DOC-08: epsilon normalization | `4ab35fd7cc442c437d97a7e9a247b902533aa199` |
+| DOC-08: FullL and AssemblyL | `4ab35fd7cc442c437d97a7e9a247b902533aa199` |
+| DOC-08: GLPoleRegion | `4ab35fd7cc442c437d97a7e9a247b902533aa199` |
 
-I001 published at `b263cfa454b11d485198ae46d8290f32435e48c6`.
-I011, I034/DOC-05 and I035 share accepted integration snapshot
-`4afbced190956c6e3bb82471470a91acddabf971fcdcc4cbd3c0054901959929` at
-`886e27567a757917705b7adef45a2c2621bf4bf7`. The final three corrections share
-snapshot `7d94b6a5406a06be154e889ef3d0870f864e6604255d424ec4f1c2afad0392f1`
-at `4ab35fd7cc442c437d97a7e9a247b902533aa199`; the accepted fresh integrated
-build report has SHA-256
-`af997ec5514a8815548e06417a7a6f2d0cf9ae45f2c5363e4e6f854a988c5c97`.
-These are build receipts, not proofs of the Prop-valued goals.
+Builds are not proofs of the Prop-valued goals.
 
-Pole-task revision 3 corrected only the declaration name to the existing
-`Langlands.Global.GLPairPoleRegionStatement`. The mathematical target and Lean
-bytes did not change. Its accepted statement validation is listed above.
+The pole-region correction changed only the declaration name, to the
+existing `Langlands.Global.GLPairPoleRegionStatement`. The mathematical target
+and Lean bytes did not change.
 
-The conditional L-constructor companion has accepted machine validation
-`2cbe0552-ff24-46c7-8cd9-a2d54641958d` under `lean.definition@1` and a successful
-fresh integrated build of snapshot
-`6ac054fdbe21c5964c2e86871e416bb056b7459e7fe667a2f35acdc80ddd449d`.
-Its frozen, published and current pair hashes agree. Its independent approval
-preserves the explicit classification, exhaustion and analytic-existence inputs.
+The conditional L-constructor companion was built when it entered the
+Library, and its submitted and current pair hashes agree. It preserves the
+explicit classification, exhaustion and analytic-existence inputs.
 
-The two preliminary audit notes are also independently accepted and published:
-`b065d09c-70a3-43f8-a800-1a50055ffad8`, review
-`a395b363-6293-4bc2-8ccf-c785250db498`, at
-`dc8cdb2866562d5f929dc912f3563a75cc16ce79`; and
-`a72e6a5c-f94e-45be-9987-fa2bb02b84df`, review
-`bbcf0af7-9395-4ed0-9c68-9a1ad6584383`, at
-`637a0f1ab722507f1e8565d6bd8d1a9f3b00ed53`.
-Their pending correction ledgers are historical and are superseded by this final
-verdict update. Neither preliminary publication alone completed this audit.
+Two preliminary audit notes first appeared in the Library at
+`dc8cdb2866562d5f929dc912f3563a75cc16ce79` and
+`637a0f1ab722507f1e8565d6bd8d1a9f3b00ed53`. Their correction lists are
+superseded by this note.
 
 GOAL-01 requires no correction. GOAL-02's superseded absence claims require no
 new interface candidate; the accepted companions above supply the counterevidence.
@@ -472,19 +431,14 @@ preserved here; their replacements are in the current table.
 | `Correspondence/FullLFactorCompatibility.md` | `1e0a191ead60d12cb735cbcc3e3abc83449b28f407d0e23423a616f472bbb57d` |
 | `Global/Factors/GLPoleRegionStatement.md` | `b75dd24111bf2097435bcc2d75865b8e5ea2cb97c3550a4177fef65683dffb4b` |
 
-Eight of these changes are the assigned documents repaired by the seven
-correction candidates. The ninth, `RankinSelberg/LocalFactor.md`, is the sibling
+Eight of these changes are the documents repaired by the seven
+corrections. The ninth, `RankinSelberg/LocalFactor.md`, is a separate
 quotient-Haar status update. Its Lean hash is unchanged, including
 `dualFunction_mem_whittakerSet`. The availability claim was checked against
 complete `UnipotentQuotient` and `QuotientHaarExistence` pairs and the exact
-`QuotientHaarExistenceStatement`. The definition companion
-`eb738941-1de1-4153-bc1d-5bc7a0833dbd` was independently approved in review
-`57d6426e-673e-469f-b46f-71da94069e4d`, validated by
-`0ddd80de-5108-4207-910b-98a519121b77`, and published at
-`3afe6f3ba5efc4d00cccb18dba321ef341bbaf68`.
-The proof `7242bb53-8416-495f-ae65-a8b1ca741775` was independently approved in
-review `126b1e95-48f6-4539-ac3a-751fe7adc8b7`, accepted with Lake-build and
-exact-target validation `75a2e2f2-254e-4bdf-ac84-1f32121d27a6`, and published at
+`QuotientHaarExistenceStatement`. The definition companion first appeared at
+`3afe6f3ba5efc4d00cccb18dba321ef341bbaf68`, and the proof, checked with a
+Lake build against its exact target, at
 `4897b8b0eeea4fd4761194eb8fe4c2103d02aae4`. These companions establish the stated
 fixed-normalization quotient-measure availability; they do not prove the
 remaining Rankin–Selberg analytic assertions. This audit uses that evidence only

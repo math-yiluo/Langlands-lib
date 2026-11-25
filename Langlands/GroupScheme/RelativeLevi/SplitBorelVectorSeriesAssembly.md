@@ -1,7 +1,7 @@
 # Assembly of split Borel structure with an affine vector-quotient series
 
-Author: Worker 591. The represented root-height terms, successive quotients
-and endpoint identifications are supplied by Worker 204's general
+The represented root-height terms, successive quotients
+and endpoint identifications are supplied by the general
 `RelativeUnipotent.RootHeightChart` construction.
 
 This internal assembly works in every universe over every commutative ring,

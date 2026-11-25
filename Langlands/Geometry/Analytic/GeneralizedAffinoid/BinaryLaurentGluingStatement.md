@@ -1,7 +1,8 @@
 # Scalar descent for the actual relative binary Laurent diagram
 
-Author: Worker 948. Worker 572 specified the target as the statement
-prerequisite of the strict binary gluing proof work.
+This statement is a prerequisite of the strict binary gluing proof
+`StrictTestDomain.binaryLaurentGluing`, whose module imports
+`GeneralizedAffinoid/BinaryLaurentGluingProof`.
 
 `Langlands.Analytic.PresentedAffinoidAlgebra.BinaryLaurent.GluingStatement.{u}`
 is a proposition-valued definition. It is not a theorem, and it is not used as
@@ -26,7 +27,7 @@ left K A f sUpper = right K A f sLower →
 
 So a pair of sections whose images in the overlap quotient agree comes from
 exactly one element of the base. The unapplied declaration has type `Prop`,
-and `lean_check` reports `statement_returns_prop: true`. The module imports
+as a Lean check confirmed. The module imports
 the published `BinaryLaurentDiagram` and `StrictComparison` modules by name
 and changes neither of them.
 
@@ -81,7 +82,7 @@ sheafness, or covers other than this one.
 No exactness, closedness, quotient-comparison, sheaf, norm-detection,
 injectivity or gluing premise is supplied. There is no reducedness, nonzero
 base or nonempty-locus condition. The following cases are therefore in scope.
-They are obligations for a future proof, not facts proved here.
+They are cases a proof must cover, not facts proved here.
 
 - `P` may present the zero algebra. Then the conclusion says that `A` has
   exactly one element.
@@ -172,7 +173,7 @@ public Library notes.
 
 This module only states the assertion. It proves neither the closedness
 translation nor exactness, and the source citation does not supply a Lean
-proof. A separate successor task will supply the proof. This statement leaves
+proof. The proof is `gluing`, in `GeneralizedAffinoid/BinaryLaurentGluingProof`. This statement leaves
 the strict `StrictTestDomain.BinaryLaurentGluingStatement`, the whole-spectrum
 gluing statements and the relative gluing statements unchanged, and completes
 none of them.

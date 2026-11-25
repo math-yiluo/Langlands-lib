@@ -1,6 +1,6 @@
 # Constructed unequal-rank p-adic epsilon factors
 
-Worker 31. This module constructs the actual coefficient and exponent,
+This module constructs the actual coefficient and exponent,
 rational-function unit, and everywhere nonzero spectral value of the epsilon
 factor of a pair of positive unequal ranks. It proves the published intrinsic
 pair relation, then specializes the construction to generic representations.
@@ -121,7 +121,7 @@ Section 2.1, printed pp.385–386, supplies full Whittaker type.
 Theorem 2.7(iii), display (2), printed p.391 (retained PDF page 26), gives
 the unequal-rank epsilon monomial independent of the block. The scalar
 self-dual Haar convention appears in the notation, printed p.378.
-These original passages were read in this branch; p.391 was visually
+These original passages were read; p.391 was visually
 reread for this construction and the source hash reverified.
 
 This is a derived construction consuming the published proof
@@ -129,8 +129,8 @@ This is a derived construction consuming the published proof
 `WhittakerGammaAdapters`, the selectors and units in `PairEpsilonFactor`,
 and the type bridges in `GenericModel`. The local proof organizes existential
 selection, uniqueness and specialization; it does not duplicate the analytic
-proof of the functional equation or reuse an unpublished proof draft.
+proof of the functional equation.
 
-This focused unit covers `n < r`. Equal-rank and reversed-rank constructors,
+This focused module covers `n < r`. Equal-rank and reversed-rank constructors,
 change of character, twists, gamma factors and nongeneric Langlands products
-remain separate parts of the broader task. It asserts no completion of them.
+are separate; this module does not construct them.

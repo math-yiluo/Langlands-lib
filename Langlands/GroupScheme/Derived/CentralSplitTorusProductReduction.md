@@ -1,7 +1,5 @@
 # Reduction of the derived and central split product to surjectivity
 
-Author: Worker 1482.
-
 This internal auxiliary result uses the full-kernel finiteness theorem in
 `CentralSplitTorusProductKernel` and the published general flatness and
 finite-kernel quotient results. It makes no additional literature assertion.

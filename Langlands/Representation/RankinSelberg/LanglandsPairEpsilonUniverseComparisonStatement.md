@@ -1,7 +1,5 @@
 # Carrier-universe comparison for nongeneric pair epsilon factors
 
-Author: Worker 1799.
-
 This module states one named comparison obligation and proves one immediate
 corollary of it. It imports only
 `Langlands.Representation.RankinSelberg.LanglandsFactors` and changes no
@@ -50,8 +48,8 @@ inductions. Both rank orders are allowed, as in `IsLanglandsPairEpsilonFactor`.
 epsilon certificate from classification and exhaustion. It produces the
 saturated instance `IsLanglandsPairEpsilonFactor.{uF, max uF uV, max uF uW}`,
 because classification and exhaustion are stated for blocks in the saturated
-universes. The principal statement of this task,
-`LanglandsPairEpsilonFactorExistenceStatement.{uF, uV, uW}`, by Worker 1411,
+universes. The existence statement
+`LanglandsPairEpsilonFactorExistenceStatement.{uF, uV, uW}`
 concludes with the same saturated instance. The existing consumers use other
 instances:
 
@@ -62,10 +60,9 @@ instances:
   uses `IsLanglandsPairEpsilonFactor.{uF, uA, uA}` for `J` and `J'` with
   carriers in `max uF uA`.
 
-The task contract asks to preserve independent field and carrier universes, and
-to handle the saturated universes explicitly or to supply named comparison
-obligations instead of identifying unequal universes. This statement is that
-named comparison.
+Independent field and carrier universes are kept, and the saturated universes
+are handled explicitly or by named comparison obligations, instead of
+identifying unequal universes. This statement is that named comparison.
 
 ## Meaning, clause by clause
 
@@ -89,8 +86,8 @@ for all data in `uV` and `uW`, with the same `e` (clause 3).
 
 ## Intended proof route
 
-The proof is not part of this statement contribution. Its exact-target proof
-task can be published once this statement is public. The intended route uses
+The proof is not part of this module, and the Library does not prove the
+statement. The intended route uses
 only Library results and needs no analytic input, classification, exhaustion or
 cardinality hypothesis.
 
@@ -135,7 +132,7 @@ Take irreducible admissible `π` and `σ` and a self-dual Haar measure
 of this corollary at `ν.val`. The comparison and the corollary then give the
 epsilon component `∃ e, IsLanglandsPairEpsilonFactor.{uF, uV, uW} F ψ ν.val π σ e`
 of `LanglandsPairGammaInput.{uF, uV, uW}`. This module does not import the
-principal statement, so it does not state that combination as a theorem.
+existence statement, so it does not state that combination as a theorem.
 
 ## Provenance and normalization
 
@@ -153,8 +150,7 @@ and `ν` fixed, so it needs no self-duality condition on `ν`.
 
 ## Development checks
 
-The module compiled without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection reports that the statement
+The module compiled without errors or warnings in the pinned environment.
+Inspection reports that the statement
 returns `Prop`, has universe parameters `uF, uV, uW`, and uses only the
-assumptions `propext`, `Classical.choice` and `Quot.sound`. These checks are
-not independent review or Library publication.
+assumptions `propext`, `Classical.choice` and `Quot.sound`.

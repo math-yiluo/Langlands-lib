@@ -1,6 +1,6 @@
 # Semisimplicity of actual finite-index induction
 
-Worker 365 proves the published proposition
+This module proves the published proposition
 `Langlands.Weil.RepresentationInductionSemisimplicity.{uG,uV}` by the closed theorem
 `Langlands.Weil.representationInductionSemisimplicity`. Import
 `Langlands.Weil.Representation.InductionSemisimplicityProof` to use it.
@@ -113,7 +113,8 @@ is the conjugation and evaluation argument and its assembly into the exact targe
 
 Only this Lean/Markdown proof pair is added. The statement pair and its import
 closure are preserved. The other finiteness components, aggregate assembly,
-topology, compatibility, actual local specialization and LLC are separate tasks.
+topology, compatibility, actual local specialization and LLC are not part of
+this module.
 
 ## Type and universe checks
 
@@ -124,7 +125,7 @@ Mathlib's comparison with carrier universe `max uV 0` imposes no extra universe
 relation. The coinduced carrier may live in `Type (max uG uV)`; restriction is
 applied at that carrier universe.
 
-The proof is checked in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with
+The proof is checked in the pinned environment, with
 Lean 4.34.0 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The development Lake build completed without errors or warnings. Full declaration
 inspection reports level parameters `uG`, `uV` and only the axioms `propext`,

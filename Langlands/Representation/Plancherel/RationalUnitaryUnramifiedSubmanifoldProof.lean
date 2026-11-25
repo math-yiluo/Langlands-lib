@@ -58,7 +58,7 @@ private def anglePart (z : κ → ℂ) : (κ → ℝ) := fun i => (z i).im
 private theorem contDiff_anglePart : ContDiff ℝ ∞ (anglePart : (κ → ℂ) → (κ → ℝ)) := by
   rw [contDiff_pi]
   intro i
-  exact Complex.imCLM.contDiff.comp (contDiff_apply ℝ ℂ i)
+  exact Complex.imCLM.contDiff.comp (contDiff_apply ℝ (fun _ ↦ ℂ) i)
 
 /-- The finite product of principal logarithms after division by the center. -/
 private def logarithmChart (c : κ → ℂ) (hc : ∀ i, c i ≠ 0) : OpenPartialHomeomorph (κ → ℂ) (κ → ℂ) :=
@@ -92,7 +92,7 @@ private theorem contDiffOn_logarithmChart (c : κ → ℂ) (hc : ∀ i, c i ≠ 
   simp only [logarithmChart_apply]
   have hlog : ContDiffOn ℝ ∞ Complex.log Complex.slitPlane := fun z hz =>
     ((Complex.contDiffAt_log hz).restrict_scalars ℝ).contDiffWithinAt
-  exact hlog.comp ((contDiff_const.mul (contDiff_apply ℝ ℂ i)).contDiffOn)
+  exact hlog.comp ((contDiff_const.mul (contDiff_apply ℝ (fun _ ↦ ℂ) i)).contDiffOn)
     (fun _ hz => hz i (mem_univ i))
 
 private theorem contDiff_logarithmChart_symm (c : κ → ℂ) (hc : ∀ i, c i ≠ 0) :
@@ -100,7 +100,7 @@ private theorem contDiff_logarithmChart_symm (c : κ → ℂ) (hc : ∀ i, c i �
   rw [contDiff_pi]
   intro i
   simp only [logarithmChart_symm_apply]
-  exact contDiff_const.mul ((Complex.contDiff_exp (𝕜 := ℝ)).comp (contDiff_apply ℝ ℂ i))
+  exact contDiff_const.mul ((Complex.contDiff_exp (𝕜 := ℝ)).comp (contDiff_apply ℝ (fun _ ↦ ℂ) i))
 
 variable {U : Type*} [Group U] [TopologicalSpace U]
 variable (coord : U →* (κ → ℂ)) (hcoord : IsEmbedding coord) (hnorm : ∀ x i, ‖coord x i‖ = 1)

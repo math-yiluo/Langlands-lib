@@ -1,7 +1,5 @@
 # Surjectivity of supplied split factors from a central Weyl norm
 
-Author: Worker 1562.
-
 This internal construction and its auxiliary theorems give a conditional
 surjectivity reduction for the supplied derived and central split-product
 problem. They do not prove the exact product-isogeny proposition:

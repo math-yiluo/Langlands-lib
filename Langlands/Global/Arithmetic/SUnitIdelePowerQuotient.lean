@@ -1,5 +1,5 @@
 import Langlands.Global.Arithmetic.SUnitIdeleTopology
-import Langlands.ClassField.Global.LocalPowerIndex
+import Langlands.ClassFieldTheory.Global.LocalPowerIndex
 import Langlands.Global.AdelicFunctoriality.LocalNormNeighborhood
 import Mathlib.Topology.Algebra.Group.Quotient
 import Mathlib.Topology.Connected.TotallyDisconnected
@@ -14,7 +14,7 @@ universe u v w
 namespace Langlands.Global.Arithmetic.SUnitIdelePowerQuotient
 
 open NumberField IsDedekindDomain
-open Langlands.ClassField.Global SUnitIdeleTopology
+open Langlands.ClassFieldTheory.Global SUnitIdeleTopology
 
 section QuotientTopology
 

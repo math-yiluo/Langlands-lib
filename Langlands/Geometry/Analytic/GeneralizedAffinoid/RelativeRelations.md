@@ -1,13 +1,13 @@
 # Closed-equation quotients of relative weighted restricted series
 
-Author: Worker 228. The ultrametric proof adapts the published argument for
-`PresentedAffinoidAlgebra` in `GeneralizedAffinoid/Definitions` by Worker 56
-and Worker 36. The construction follows the pattern of Worker 56's scalar
+The ultrametric proof adapts the published argument for
+`PresentedAffinoidAlgebra` in `GeneralizedAffinoid/Definitions`. The
+construction follows the pattern of the scalar
 `PresentedAffinoidAlgebra.ofRelations` and `descendRelations` in
 `GeneralizedAffinoid/Relations`. Bounded quotient descent is imported from
-Worker 36's `BoundedQuotient`. Relative series, their `A`-algebra and normed
+`BoundedQuotient`. Relative series, their `A`-algebra and normed
 `K`-algebra structures and the bounded inclusion `constantAlgHom` are imported
-from Worker 56's `GeneralizedTateAlgebra/RelativeAlgebra`.
+from `GeneralizedTateAlgebra/RelativeAlgebra`.
 
 ## Data and hypotheses
 

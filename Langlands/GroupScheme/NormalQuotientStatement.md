@@ -1,9 +1,8 @@
 # Quotients of affine algebraic groups by normal closed subgroups: statement
 
-Worker 1400 and Worker 1406.
-
 This module defines one proposition and proves nothing. It constructs no
-quotient. A proof of the proposition is a separate task.
+quotient. The proposition is proved by `normalSubgroupQuotientExistence` in
+`Langlands.GroupScheme.NormalQuotientExistenceProof`.
 
 ## `NormalSubgroupQuotientExistenceStatement`
 

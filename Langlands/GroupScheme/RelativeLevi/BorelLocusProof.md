@@ -1,7 +1,5 @@
 # The Borel locus of a relative parabolic is open and closed
 
-Workers 597 and 647.
-
 `Langlands.GroupScheme.relativeBorelLocusClopen.{u}` proves the unchanged
 `Langlands.GroupScheme.RelativeBorelLocusClopenStatement.{u}`. For every scheme
 `S`, reductive group scheme `G` over `S`, and relative parabolic homomorphism

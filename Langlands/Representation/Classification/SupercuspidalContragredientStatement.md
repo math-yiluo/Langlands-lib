@@ -1,7 +1,5 @@
 # Supercuspidality and the smooth contragredient (statement)
 
-Author: Worker 23.
-
 `Langlands.GeneralLinear.SupercuspidalContragredientStatement` is a `Prop`
 definition. It states a theorem and does not prove it. The proof is a separate
 obligation.

@@ -17,7 +17,7 @@ The source and targets have their original field-valued point topologies.
 The proof applies the finite-type tensor field comparison to
 `NumberFieldSIntegerFieldTensor.tensorEquiv`. The actual completion maps
 give continuous scalar multiplication. Completeness of the lower field
-and finite dimensionality give the module topology. The published local
+and finite dimensionality give the module topology. The existing local
 field results give henselianity for each independently normalized
 completion norm. No preservation of those norms under ramified embeddings
 is required.
@@ -28,12 +28,12 @@ points at the completed integers of `K_v` with the product of
 corresponding field-valued points. The proof applies the integral tensor
 topology comparison to the original completed-integer and completed-field
 tensor equivalences. Compatibility of the coefficient inclusions is
-definitional for the published original coefficient structures.
+definitional for the existing original coefficient structures.
 
 `infinitePointHomeomorph` treats every infinite place, including all real
 and complex factors, using `NumberFieldSIntegerInfiniteTensor.tensorEquiv`.
 Completeness and finite dimensionality supply the module topology and the
-published infinite-completion result supplies henselianity.
+existing infinite-completion result supplies henselianity.
 
 Each homeomorphism has a component theorem identifying its forward map
 exactly with `completedTensorSpaceWeilRestrictionPointMap` for the
@@ -41,9 +41,9 @@ specified original tensor equivalence. The additional
 `isHomeomorph_fieldPointMap` supplies that property for the field map in
 the form used by the integral construction.
 
-The provenance is internal application of the published arithmetic tensor
+The provenance is internal application of the existing arithmetic tensor
 equivalences and complete-local-field results to the tensor comparison
 constructions. No choice of a projective chart or scheme model is imposed
 on `X`. Algebraicity of its original Weil restriction is retained as a
-premise. This unit does not assemble the adelic stages or prove the adelic
+premise. This module does not assemble the adelic stages or prove the adelic
 endpoint.

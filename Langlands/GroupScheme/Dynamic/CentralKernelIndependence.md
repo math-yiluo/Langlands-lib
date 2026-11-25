@@ -1,6 +1,6 @@
 # Independence of dynamic subgroups from lifts through a central kernel
 
-This is an internal derived proof and construction by Worker 146.
+This is an internal derived proof and construction.
 
 Let `S : Scheme.{u}` be any base scheme, let `G` and `H` be group schemes
 over `S`, and let `q : G ⟶ H` be an actual group-scheme homomorphism.
@@ -84,7 +84,7 @@ the actual dynamic orbit definitions, group identities, positive scaling
 and representability. No separate original literature assertion or unproved
 classification statement is used.
 
-This unit establishes independence among supplied actual lifts in the
+This module establishes independence among supplied actual lifts in the
 original group. It does not construct a lift, a reductive central quotient,
 or a cocharacter for a supplied parabolic. It also does not prove that the
 dynamic subgroup in `G` is the full inverse image of the corresponding

@@ -1,6 +1,6 @@
 # Uniqueness of normalized finite relative local invariants
 
-Worker 1556 develops this derived helper for the actual local Weil class-map
+This module is a derived helper for the actual local Weil class-map
 proof. It uses the existing local invariant family and the proved unramified
 `H²` exhaustion; it does not construct a Weil map or identify a Weil extension
 class.

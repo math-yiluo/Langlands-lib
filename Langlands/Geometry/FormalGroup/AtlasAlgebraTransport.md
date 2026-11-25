@@ -1,6 +1,6 @@
 # Transport of actual formal atlases between equal scalar algebra structures
 
-This derived unit transports formal module laws and actual principal-cover
+This module transports formal module laws and actual principal-cover
 atlases between two equal O-algebra structures on the same commutative ring R.
 It retains the original coordinate data and proves identity and composition
 laws for the transport.
@@ -11,7 +11,7 @@ This is internal infrastructure derived from `ModuleLaw` and `BasicAtlas`,
 using equality elimination in Lean. It claims no additional theorem from the
 literature. The underlying atlas construction implements Drinfeld's convention
 that formal groups may be glued over localizations; its source and scope are
-documented in `BasicAtlas.md`. This unit resolves the type-level distinction
+documented in `BasicAtlas.md`. This module resolves the type-level distinction
 between equal scalar structures that occurs when comparing coefficient
 extension with an independently supplied O-algebra structure.
 

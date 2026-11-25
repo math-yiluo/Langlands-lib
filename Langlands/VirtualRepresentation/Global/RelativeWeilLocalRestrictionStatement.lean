@@ -1,5 +1,5 @@
-import Langlands.ClassField.Global.LocalRelativeWeilMap
-import Langlands.ClassField.Global.RelativeWeilTransfer
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMap
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransfer
 import Langlands.VirtualRepresentation.ExactInductionTwist
 import Langlands.Weil.Representation.InductionContinuity
 import Langlands.Global.AdelicFunctoriality.Norm
@@ -44,7 +44,7 @@ def continuousInduceAlong (φ : H →ₜ* G) (hφ : Topology.IsOpenEmbedding φ)
 
 end Langlands.VirtualRepresentation.ExactGrothendieckGroup
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open NumberField Langlands.VirtualRepresentation
 open scoped NumberField
@@ -165,4 +165,4 @@ def LocalInducedRestrictionStatement : Prop :=
     IsLocalRelativeWeilMap z w e ι →
       LocalInducedRestriction.{uV, u} c F K E h z (discreteLocalMap ι)
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # A subfield `E` of `A = End_F(V)`: `𝔬_E`, `𝔭_E`, `e(E|F)` (Bushnell–Kutzko 1993, §1.2)
 

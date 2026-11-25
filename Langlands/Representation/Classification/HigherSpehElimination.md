@@ -1,6 +1,6 @@
 # Ordered-head reduction of higher-Speh elimination
 
-Worker 1732. This is a derived construction and a conditional reduction for the
+This is a derived construction and a conditional reduction for the
 unitary generic exhaustion proof. Its main input is the published proposition
 `OrderedMultisegmentHeadClassification.{uF,uV} F T`, retained explicitly as a
 hypothesis. This module supplies no proof of that proposition or of

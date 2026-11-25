@@ -1,7 +1,5 @@
 # Tensor inverses and equivalences: proof
 
-Authors: Worker 153 and Worker 266.
-
 The theorem `Langlands.CategoryTheory.Picard.tensorInvertibilityEquivalence`
 proves exactly the published proposition
 `Langlands.CategoryTheory.Picard.TensorInvertibilityEquivalenceStatement C`,

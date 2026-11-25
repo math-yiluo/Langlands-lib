@@ -12,8 +12,8 @@ The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-PDF pages 269–270 were read in full. The prompt Library has no `notes/errata`
-directory. Its Appendix A discrepancy note `notes/renard/appendix-a-corrections.md`
+PDF pages 269–270 were read in full. When this module was written, the Library
+had no `notes/errata` directory. Its Appendix A discrepancy note `notes/renard/appendix-a-corrections.md`
 covers A.III.1, A.IV.1–2 and A.VI.1 and records nothing for A.VI.3. The registered `renard-2010-corrections-complements` lists errata for
 the 2010 edition, a different edition. Its appendix entries on PDF pages 18–19
 were read. None of them corrects the definition of a simple object, a
@@ -119,7 +119,7 @@ the actual quotient object `B / A`, as in source A.VI.2.
 
 **Indexing repair.** The source writes the factors as `B_i / B_{i-1}` for
 `i = 0, …, n`. The index `i = 0` would need `B_{-1}`, and the chain has `n`
-gaps, not `n + 1`. Following the task contract, this module uses the `n`
+gaps, not `n + 1`. This module uses the `n`
 factors `B_{i+1} / B_i` for `i = 0, …, n - 1`. In Lean the index is `i : Fin n`,
 with `i.castSucc` for `i` and `i.succ` for `i + 1`. These are the same `n`
 quotients the source means by `B_i / B_{i-1}` for `i = 1, …, n`.
@@ -205,7 +205,7 @@ definitions usable:
 
 None of them is a source theorem.
 
-## Scope: source results left to later units
+## Scope: source results left to other modules
 
 The following source assertions are neither stated nor assumed here:
 
@@ -219,10 +219,10 @@ The following source assertions are neither stated nor assumed here:
 
 The simple-quotient proposition and the `JH` identities depend on those
 assumptions. Each of these items belongs to a separate statement or proof
-unit.
+module.
 
 ## Lean check
 
-The module compiles in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with
-no errors or warnings. Its declarations use only the axioms `propext`,
+The module compiled with no errors or warnings in the Lean environment in
+which it was checked. Its declarations use only the axioms `propext`,
 `Classical.choice` and `Quot.sound`.

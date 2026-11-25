@@ -1,8 +1,8 @@
 # The weighted Whittaker square estimate
 
-Author: Worker 724. The helper module
+The helper module
 `Langlands.Representation.RankinSelberg.WeightedWhittakerSquareReduction`
-contains three lemmas copied from Worker 676's published module
+contains three lemmas copied from the published module
 `Langlands.Representation.RankinSelberg.UnequalRankIwasawaSupportProof` (see
 that module's Markdown).
 
@@ -50,7 +50,7 @@ It combines three results.
 
 - `Langlands.RankinSelberg.weightedWhittakerSquare_of`, in the helper module
   `Langlands.Representation.RankinSelberg.WeightedWhittakerSquareReduction`
-  submitted with this module. It proves the statement from two hypotheses:
+  ported with this module. It proves the statement from two hypotheses:
   `h1`, the recursive quotient integration formula
   `RecursiveQuotientIntegrationStatement F T m` at all `p`, `F`, `T`, `m`, and
   `h2`, the restricted Whittaker square estimate

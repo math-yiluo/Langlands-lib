@@ -1,7 +1,5 @@
 # Statement: field-valued fibres of relative multiplicative-type groups
 
-Worker 508.
-
 `Langlands.GroupScheme.RelativeMultiplicativeTypeFieldStatement.{u}` is a
 statement-only, `Prop`-valued definition. For every scheme `S`, every group scheme
 `G` over `S` of relative multiplicative type, every field `k` in the same universe,

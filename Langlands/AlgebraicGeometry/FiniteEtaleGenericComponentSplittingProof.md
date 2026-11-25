@@ -13,8 +13,9 @@ The implemented proof applies the published assembly theorem
 `finiteTypeFiniteEtaleGenericComponentSplitting_of_fieldSplitting_and_cover`
 to the proved inputs `finiteSeparableComponentSplitting` and
 `finiteSeparableGenericCover`. The former is the published Stacks 054R
-proof developed by Workers 1370 and 1583. The latter uses the published
-prescribed-cover construction developed by Worker 105. All three are
+proof (`FiniteSeparableComponentSplittingProof`). The latter
+(`FiniteSeparableGenericCoverProof`) uses the published
+prescribed-cover construction. All three are
 imported by their Lean module names.
 
 For a locally finite-type, quasi-compact morphism to an irreducible

@@ -123,8 +123,8 @@ def endRingEquiv :
     letI := NonUnitalModule.ofLinearEndHom ρ
     End (NonUnitalModuleCat.of A M) ≃+* centralizer ρ :=
   letI := NonUnitalModule.ofLinearEndHom ρ
-  { toFun f := toCentralizer ρ hs f
-    invFun g := ofCentralizer ρ g
+  { toFun f := toCentralizer ρ hs f.asHom
+    invFun g := End.of (ofCentralizer ρ g)
     left_inv _ := rfl
     right_inv _ := rfl
     map_mul' _ _ := rfl
@@ -144,7 +144,7 @@ theorem unitizedEndRingEquiv_apply
     (f : letI := NonUnitalModule.ofLinearEndHom ρ; End (NonUnitalModuleCat.of A M)) (m : M) :
     (letI := NonUnitalModule.ofLinearEndHom ρ; letI := module ρ;
       unitizedEndRingEquiv ρ hs f m) =
-      (letI := NonUnitalModule.ofLinearEndHom ρ; NonUnitalModuleHom.toAddMonoidHom f m) :=
+      (letI := NonUnitalModule.ofLinearEndHom ρ; NonUnitalModuleHom.toAddMonoidHom f.asHom m) :=
   rfl
 
 end Simple
@@ -179,8 +179,8 @@ theorem nonUnitalSchurEndBijective (ρ : A →ₙₐ[ℂ] Module.End ℂ M) :
   intro hs f hf
   let _inst := module ρ
   let e := unitizedEndRingEquiv ρ hs
-  exact schurEndBijective (Unitization ℂ A) M (unitized_isSimpleModule ρ hs) (e f)
-    ((map_ne_zero_iff e e.injective).2 hf)
+  exact schurEndBijective (Unitization ℂ A) M (unitized_isSimpleModule ρ hs) (e (End.of f))
+    ((map_ne_zero_iff e e.injective).2 fun h => hf (congrArg End.asHom h))
 
 /-- Every additive original endomorphism is a unique element of the actual centralizer. -/
 theorem nonUnitalSchurEndComparison (ρ : A →ₙₐ[ℂ] Module.End ℂ M) :

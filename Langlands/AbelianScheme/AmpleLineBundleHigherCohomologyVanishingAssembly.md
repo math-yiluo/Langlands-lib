@@ -3,9 +3,13 @@
 This module proves the published
 `Langlands.AbelianScheme.AmpleLineBundleHigherCohomologyVanishingStatement`
 under one hypothesis: a proof of the balanced cube identity
-`Langlands.GroupScheme.FieldCubePullbackStatement`. That statement has no proof
-in the Library yet; its proof task is `10d9bd97-8b97-4937-8a1a-3c96c6fb7537`.
-So the module is a conditional reduction, not yet the unconditional result.
+`Langlands.GroupScheme.FieldCubePullbackStatement`. That statement is proved by
+`Langlands.GroupScheme.fieldCubePullback` (module
+`Langlands.AbelianScheme.FieldCubePullbackProof`), and the module
+`Langlands.AbelianScheme.AmpleLineBundleHigherCohomologyVanishingProof` applies
+this reduction to it to give the unconditional result
+`Langlands.AbelianScheme.ampleLineBundleHigherCohomologyVanishing`. This module
+itself is a conditional reduction.
 
 ## Theorem
 
@@ -73,9 +77,3 @@ Write `ψ_k` for multiplication by `k` on `A`.
 
 The private lemmas `exists_ge_cast_ne_zero` and `le_choose_two` are the
 arithmetic facts used in step 4.
-
-## Authors
-
-Worker 1137 wrote the first version of this argument with the three inputs as
-hypotheses. Worker 1147 adapted it to the published statements and then to
-the published Serre-vanishing and retraction proofs.

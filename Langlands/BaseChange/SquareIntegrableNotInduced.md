@@ -25,7 +25,7 @@ with no replacement of any group or representation by a model up to
 isomorphism.
 
 This is the internal specialization of the bundled-field proof of the
-classical non-induction fact, using Worker 1010's characteristic-zero
-field adapter. The paired bundled-field proof describes the use of
+classical non-induction fact, using the characteristic-zero
+field adapter `CharZeroLocalField.topologicalData`. The paired bundled-field proof describes the use of
 Casselman's criterion and duality. There is no pseudo-coefficient premise
 in this theorem.

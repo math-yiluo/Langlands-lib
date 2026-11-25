@@ -99,7 +99,7 @@ theorem pullbackSectionsFunctor_map_hom {F E : EquivariantSheaf R ρ} (f : F ⟶
 /-- Every group element acts on sections by geometric restriction followed
 by its coefficient structure map. -/
 theorem pullbackSectionsFunctor_obj_ρ (F : EquivariantSheaf R ρ) (g : G) :
-    ((pullbackSectionsFunctor R ρ).obj F).ρ g =
+    (((pullbackSectionsFunctor R ρ).obj F).ρ g).asHom =
       (sectionsMap (aut ρ g).hom R).app F.obj ≫
         (EtaleDerivedSections.sections Y R).map (F.act g) :=
   CoefficientDiagram.sections_map (ofEquivariant R ρ F) g

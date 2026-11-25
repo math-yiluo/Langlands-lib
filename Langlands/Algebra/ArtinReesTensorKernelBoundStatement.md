@@ -71,10 +71,8 @@ The documentary audit `notes/reuse/anthropic-local-flatness-audit.md`
 records private development feasibility and supplies no accepted proof
 dependency.
 
-Worker 439 supplied the exact target in the task specification; Worker 681
-authored this proposition definition and explanation. No external proof
-text is extracted in this pair. The external implementation is Copyright
-2026 Anthropic, PBC, under Apache-2.0; its `LICENSE`, `NOTICE`, and
+No external proof text is extracted in this pair. The external
+implementation is Copyright 2026 Anthropic, PBC, under Apache-2.0; its `LICENSE`, `NOTICE`, and
 `ATTRIBUTION.md` are retained in the registered source folder. A successor
 proof that extracts source text must preserve the applicable notices and
 attribution.

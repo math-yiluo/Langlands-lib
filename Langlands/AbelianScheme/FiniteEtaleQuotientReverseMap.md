@@ -1,7 +1,5 @@
 # Reverse maps of finite étale quotients with bounded kernel
 
-Author: Worker 1575.
-
 This internal construction supplies the quotient and reverse-map step of
 commensurable full Tate lattice realization. It generalizes the specialized
 reverse-map construction in `Langlands.AbelianScheme.OrderSaturation` by taking
@@ -56,7 +54,7 @@ base. The result assumes no quotient, reverse map, projective embedding,
 connectedness, geometric point or Tate image comparison. The subgroup and
 its annihilation remain inputs to this focused helper. Deriving them from
 a monodromy-invariant lattice and proving its final Tate image equality
-are separate steps in the parent task.
+are separate steps of the full Tate lattice realization, outside this module.
 
 This generic quotient construction is located beside
 `FiniteEtaleQuotient` and `IsogenyActionDescent`; its Tate-image consumers

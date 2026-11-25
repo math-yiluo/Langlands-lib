@@ -59,7 +59,7 @@ of the supplied sheaf at the indicated level. -/
 /-- A group element acts by the actual geometric derived pullback and
 the coefficient transition along its product-index arrow. -/
 theorem derivedAction_obj_ρ (D : CoefficientDiagram R S) (i : J) (g : G) :
-    (D.derivedAction.obj i).ρ g =
+    ((D.derivedAction.obj i).ρ g).asHom =
       sheafDerivedPullbackWithCoefficients (S.map (𝟙 i ×ₘ g)).unop R
         (D.map (𝟙 i ×ₘ g)) := rfl
 
@@ -76,8 +76,8 @@ theorem derivedAction_map_hom (D : CoefficientDiagram R S)
 commuting arrows in the product index category. -/
 theorem derivedAction_map_comm (D : CoefficientDiagram R S)
     {i j : J} (a : i ⟶ j) (g : G) :
-    (D.derivedAction.obj i).ρ g ≫ (D.derivedAction.map a).hom =
-      (D.derivedAction.map a).hom ≫ (D.derivedAction.obj j).ρ g :=
+    ((D.derivedAction.obj i).ρ g).asHom ≫ (D.derivedAction.map a).hom =
+      (D.derivedAction.map a).hom ≫ ((D.derivedAction.obj j).ρ g).asHom :=
   (D.derivedAction.map a).comm g
 
 /-- Coefficient morphisms act by actual derived global sections at every
@@ -110,7 +110,7 @@ global-section object at the given level. -/
 given coefficient transition. -/
 theorem cohomologyAction_obj_ρ (D : CoefficientDiagram R S)
     (q : ℕ) (i : J) (g : G) :
-    ((D.cohomologyAction q).obj i).ρ g =
+    (((D.cohomologyAction q).obj i).ρ g).asHom =
       cohomologyPullbackWithCoefficients (S.map (𝟙 i ×ₘ g)).unop R q
         (D.map (𝟙 i ×ₘ g)) :=
   cohomology_map D q (𝟙 i ×ₘ g)
@@ -151,7 +151,7 @@ def sectionsActionFunctor :
 /-- The section action uses actual geometric section pullback and the
 coefficient map. -/
 theorem sectionsAction_obj_ρ (D : CoefficientDiagram R S) (i : J) (g : G) :
-    (D.sectionsAction.obj i).ρ g =
+    ((D.sectionsAction.obj i).ρ g).asHom =
       sectionsPullbackWithCoefficients (S.map (𝟙 i ×ₘ g)).unop R
         (D.map (𝟙 i ×ₘ g)) :=
   sections_map D (𝟙 i ×ₘ g)

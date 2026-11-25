@@ -275,6 +275,7 @@ action on all fibres. -/
 theorem fundamentalGroup_ext {s : Spec (.of Ω) ⟶ S} {hs : ∀ Y : Cover S, Finite (Fiber s Y)}
     {σ τ : FundamentalGroup s hs} (H : ∀ (Y : Cover S) (x : Fiber s Y), σ • x = τ • x) :
     σ = τ := by
+  apply Aut.ext
   apply Iso.ext
   ext Y x
   exact H Y x
@@ -290,8 +291,9 @@ def fundamentalGroupMap : FundamentalGroup t ht →* FundamentalGroup s hs :=
       (fiberFunctor t ht))
 
 theorem fundamentalGroupMap_apply (σ : FundamentalGroup t ht) :
-    fundamentalGroupMap f t s h ht hs σ =
-      fiberFunctorPullbackIso f t s h hs ht ≪≫ Functor.isoWhiskerLeft (pullbackFunctor f) σ ≪≫
+    (fundamentalGroupMap f t s h ht hs σ).asIso =
+      fiberFunctorPullbackIso f t s h hs ht ≪≫
+        Functor.isoWhiskerLeft (pullbackFunctor f) σ.asIso ≪≫
         (fiberFunctorPullbackIso f t s h hs ht).symm := by
   ext Y x
   rfl
@@ -372,9 +374,11 @@ theorem continuous_fundamentalGroupMap : Continuous (fundamentalGroupMap f t s h
   let e := (fiberFunctorPullbackIso f t s h hs ht).app Y
   have key : (fun σ => PreGaloisCategory.autEmbedding (fiberFunctor s hs)
       (fundamentalGroupMap f t s h ht hs σ) Y) =
-      (fun τ : Aut ((fiberFunctor t ht).obj ((pullbackFunctor f).obj Y)) => e ≪≫ τ ≪≫ e.symm) ∘ (fun p => p ((pullbackFunctor f).obj Y)) ∘
+      (fun τ : Aut ((fiberFunctor t ht).obj ((pullbackFunctor f).obj Y)) =>
+        Aut.of (e ≪≫ τ.asIso ≪≫ e.symm)) ∘ (fun p => p ((pullbackFunctor f).obj Y)) ∘
         PreGaloisCategory.autEmbedding (fiberFunctor t ht) := by
     funext σ
+    apply Aut.ext
     apply Iso.ext
     rfl
   simp only [Function.comp_apply]

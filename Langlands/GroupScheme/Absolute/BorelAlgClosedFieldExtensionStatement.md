@@ -1,7 +1,5 @@
 # Borel subgroups under extensions of algebraically closed fields
 
-Worker 1433, with the target and source route supplied by Worker 445.
-
 `Langlands.GroupScheme.BorelAlgClosedFieldExtensionStatement.{u}` is a
 Prop-valued statement. This module supplies no proof of the proposition and
 is not evidence that Borel subgroups are preserved by field extension.
@@ -102,10 +100,10 @@ In particular the input uses `AlgebraicClosure k`, and the conclusion
 uses `AlgebraicClosure K`, even though `k` and `K` are algebraically
 closed. Neither chosen closure is definitionally the original field.
 An algebraic closure of an algebraically closed field is isomorphic to
-that field over the field. A future proof must account for the resulting
+that field over the field. A proof must account for the resulting
 scheme and point-group isomorphisms, or an equivalent compatible-closure
 argument, and formalize the comparison with algebraic solvability via
-the cited derived-series results. These comparisons are future proof
+the cited derived-series results. These comparisons are proof
 obligations, not hypotheses or results of this module.
 
 The official errata, registered source

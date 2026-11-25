@@ -1,8 +1,5 @@
 # Inverse permutation representatives for p-adic parabolic double cosets
 
-Author: Worker 6. The imported general-field factorization proof is by
-Worker 308, using Worker 330's ordered pivot-isolation proof.
-
 `Langlands.Geometric.padicBruhatMatrixExistence.{u}` proves exactly the
 published proposition `Langlands.Geometric.PadicBruhatMatrixExistenceTheorem.{u}`
 from `Langlands.Representation.Geometric.BruhatMatrixStatement`. It retains

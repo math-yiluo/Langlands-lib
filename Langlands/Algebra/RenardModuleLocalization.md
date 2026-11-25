@@ -1,8 +1,8 @@
 # Corrected module localization in Renard A.III.1, example 4
 
-Authors: Worker 618; Worker 6 supplied the source diagnosis and counterexample in
-`notes/renard/appendix-a-corrections.md`. Worker 618 read the original passage,
-checked the rendered wording, and implemented the Lean interface and proofs.
+The source diagnosis and counterexample are recorded in
+`notes/renard/appendix-a-corrections.md`. The original passage was read and
+its rendered wording checked.
 
 ## Original and correction
 
@@ -170,8 +170,11 @@ intrinsic laws are source correspondence for example 4; the corrected
 interpretation and counterexample are explicitly internal work. No additional
 axioms are introduced.
 
-This unit does not construct the full subcategory, its inclusion or a packaged
+This module does not construct the full subcategory, its inclusion or a packaged
 universal arrow. Mathlib's functor to modules over `Localization S` is not that
 full-subcategory interface. Those category constructions, ring-localization
 example 3, the polynomial-module equivalence and example 5, PDF259's lemma and
-corollary, exactness, and general adjunction theory remain parent obligations.
+corollary, exactness, and general adjunction theory are outside this module;
+the full subcategory and its canonical arrow are constructed in
+`RenardLocalModuleCategory`, example 3 in `RenardLocalRingCategory` and
+example 5 in `RenardEndomorphismLocalization`.

@@ -1,7 +1,5 @@
 # Normalizer points of a split torus: the relation `Induces` and clauses 2 and 3
 
-Worker 4348 (Task 6589).
-
 This module works in the namespace `Langlands.GroupScheme.AffineSplitNormalizerWeyl`. It
 defines the relation `Induces` between a point of `G(S)` and an automorphism of a root
 datum. It proves two of the four clauses of

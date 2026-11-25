@@ -1,6 +1,6 @@
 # Admissibility of irreducible representations with compact coefficients
 
-Worker 340, using the statement draft by Worker 307. This module defines a
+This module defines a
 proposition; it supplies no proof of that proposition.
 
 ## Statement and interfaces

@@ -9,9 +9,9 @@ commutative ring, the ambient group is finite, and all carriers share an
 arbitrary universe `u`. The wrapper retains every finite instance and the
 explicit subgroup-coordinate map quantified by the target.
 
-Worker 25 wrote the Lean proof and this explanation. The proof imports the
+The proof imports the
 published statement, `PositiveCorestriction`, and `TowerTransitivity` without
-modification. Their dependencies supply the independently constructed ordinary
+modification. Their dependencies supply the separately constructed ordinary
 standard-resolution transfer and the proved Tate comparisons and laws. This
 module adds derived proof lemmas and the final theorem; it does not define a
 replacement transfer.

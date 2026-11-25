@@ -56,7 +56,7 @@ shape, with an independently prescribed output block-carrier universe.
 
 The provenance is internal composition of the imported constructions and
 proofs. The segment-head and supercuspidal equal-rank factor statements remain
-premises of both centered conclusions. This unit does not discharge unitary
+premises of both centered conclusions. This module does not discharge unitary
 generic exhaustion, construct the supplied segment parameters from arbitrary
 blocks, identify the whole contragredient with the product of block duals,
 establish the associated-pair gamma comparison or its real-order condition,

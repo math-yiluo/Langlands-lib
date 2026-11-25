@@ -25,7 +25,7 @@ variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
 variable (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
   [LocallyOfFiniteType G.X.hom]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+local instance rationalUniversalSmallProgeneratorStatementTopologicalSpace : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- Membership and the exact lifting, faithful-Hom and coproduct conditions

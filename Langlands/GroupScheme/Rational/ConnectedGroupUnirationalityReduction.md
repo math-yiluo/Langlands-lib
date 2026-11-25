@@ -1,7 +1,5 @@
 # Proof: reduction of connected-group unirationality
 
-Worker 295.
-
 `Langlands.GroupScheme.connectedGroupUnirationalityReduction` has exactly the
 published type `ConnectedGroupUnirationalityReductionStatement.{u}`. It proves
 the implication from the torus and split-unipotent affine-space statements

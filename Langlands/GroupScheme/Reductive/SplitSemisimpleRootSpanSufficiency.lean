@@ -55,7 +55,7 @@ theorem characterValue_root_eq_one_of_isCentral (i : T.toGrp ⟶ G)
   rw [Grp.comp_hom_hom, ← Category.assoc, hw] at hz
   have h0 : ((Lie.characterValue α (s ≫ w.hom.hom) : B) - 1) ⊗ₜ[k] X = 0 := by
     apply (Lie.kernelScalarExtension G B).injective
-    rw [Lie.kernelScalarExtension_tmul, map_zero, sub_smul, one_smul, hz, sub_self]
+    rw [Lie.kernelScalarExtension_tmul, LinearEquiv.map_zero, sub_smul, one_smul, hz, sub_self]
   exact Units.ext (sub_eq_zero.1 (eq_zero_of_tmul_eq_zero hX0 h0))
 
 omit [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom] in

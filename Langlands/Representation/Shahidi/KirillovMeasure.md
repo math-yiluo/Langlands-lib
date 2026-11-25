@@ -34,8 +34,7 @@ this module proves the embedding and the necessary invariance directly,
 without needing a formal equality with the subgroup intersection.
 
 This choice is an inference from the source and its equivariance conventions,
-not a claim of a published erratum. Worker 11 independently contributed the
-source and matrix analysis supporting it. The module does not assert descent
+not a claim of a published erratum. The module does not assert descent
 for the literal lower-unipotent quotient. The transpose/inverse quotient
 transport in measure item 1 on page 75 is a separate construction.
 
@@ -109,5 +108,6 @@ structure is supplied, and no measurability of the quotient action is
 asserted. The definition includes neither existence of a normalized measure
 nor the choice of the pairing from Lemma 1.1. Those conditions, the
 `dn₁ dn₂` decomposition, and the remaining measure items belong to the
-later full normalization relation. This module does not prove Proposition
+full normalization relation `IsEqualRankMeasureNormalized` of
+`EqualRankMeasures`. This module does not prove Proposition
 1.2, analytic continuation, or the Theorem 5.1 comparison.

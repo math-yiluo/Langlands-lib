@@ -2,10 +2,11 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockSliceDecomposition`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
-`RealStandardIrreducibleCriterionStatement`. It is a helper for the reversal statement for
-character lists with ties (`RealCharacterReverseKernel`, through `RealReverseRecursion`). It
-extends two pieces of Worker 5220's module `RealBlockDual` (Task 6749) from the block
+This module was written for the proof of
+`RealStandardIrreducibleCriterionStatement`; the Library's proof of that statement (in
+`RealLargeLanglandsQuotientInjectiveProof`) does not import this module. It is a helper for the
+reversal statement for character lists with ties (`RealCharacterReverseKernel`, through
+`RealReverseRecursion`). It extends two pieces of the module `RealBlockDual` from the block
 `h ∈ O(a)` to all `h ∈ GL_a(ℝ)`:
 
 * a finite separation of variables `y(diag(h, g₂)) = ∑ᵢ ỹᵢ(diag(h, 1)) bᵢ(g₂)`;

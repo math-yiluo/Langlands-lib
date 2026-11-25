@@ -118,9 +118,11 @@ All constructions in this section are over an algebraically closed field `k`.
 
 This is a mathematical scope justification for the proposition, not an
 existing Library proof. In particular, it does not use the affine-only
-`IsUnipotent.baseChange` on a possibly nonaffine source. A proof successor must
-formalize the needed geometric route or another valid argument for the exact
-target.
+`IsUnipotent.baseChange` on a possibly nonaffine source. The exact target is
+proved by `smoothAlgebraicallyClosedUnipotentRadicalExtension` in
+`Langlands.GroupScheme.Reductive.SmoothRadicalFieldExtensionProof`, through the
+anti-affine quotient reduction of
+`Langlands.GroupScheme.Reductive.SmoothAntiAffineRadicalExtension`.
 
 ## Sources, provenance and limits
 

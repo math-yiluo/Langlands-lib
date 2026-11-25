@@ -1,8 +1,5 @@
 # Prime-to-`m` CM cohomology as level invariants
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 This module states one proposition, `HarrisCMPrimeToInvariantsStatement`.
 It is about the Library's prime-to-`m` cohomology of the geometric CM tower
 (module `Langlands.Shimura.PEL.HarrisTaylorCMPrimeToCohomology`). Fix `m ≠ 0`
@@ -57,8 +54,8 @@ The Lean definition keeps every premise as an explicit hypothesis, as the
 Library's modules do. A premise being a parameter does not mean that it is
 unproved. In Library commit `7e84f6ad2a2083a26977b5113dd0ab93f3f3b0ed`,
 fourteen premise types have published proofs, so a user can pass these
-theorems as the corresponding arguments. Check `abbebec9` (see the checks
-below) confirms that each theorem, at universe zero, has the premise type.
+theorems as the corresponding arguments. The second of the checks
+below confirms that each theorem, at universe zero, has the premise type.
 
 | Premise | Type | Library theorem | Module |
 | --- | --- | --- | --- |
@@ -100,6 +97,14 @@ published invariants statements and
 `Langlands.Shimura.PEL.HarrisTaylorCMPrimeToGaloisCohomology`. All four use
 them only as binders, and none concludes them.
 
+In the Library as it is now, `square`, `existence` and `geometry` are proved as
+well: `Langlands.AbelianScheme.mumfordBundlePicardZero` (module
+`Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroProof`),
+`Langlands.AbelianScheme.relativeDualSchemeExistence` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`) and
+`Langlands.AbelianScheme.relativeDualSchemeGeometry` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`).
+
 Since `q` is unproved, the proposition is a statement about the objects that
 any witness `q` produces. A proof must work for every such witness.
 
@@ -123,7 +128,7 @@ subgroup `U.obj.subgroup` of `G` that is sufficiently small
 - *The prime-to-`m` levels.* `K₀` is a level of the first factor (a compact
   open subgroup, `CompactOpenLevel`). `cmPrimeToProperty D m hm K₀` holds for
   a level `K'` of the second factor when `e⁻¹ (K₀ × K')` is sufficiently
-  small. The test lemma `mem_awayLevel_iff` of check `08a1612b` shows that
+  small. The test lemma `mem_awayLevel_iff` of the first check below shows that
   `g` lies in this level exactly when `(e g).1 ∈ K₀` and `(e g).2 ∈ K'`.
 - *Coefficients and cohomology.* `coeff : cmSmallLevelCoefficientDiagram ... R`
   is a coefficient diagram on the geometric tower `U ↦ X̄_U` over all small
@@ -137,7 +142,7 @@ subgroup `U.obj.subgroup` of `G` that is sufficiently small
   the colimit over all small levels ordered by inclusion, as an object with an
   action `ρ` of `G`. Its operators are those of the smooth representation
   `cmSmallLevelSmoothCohomology` used in `HarrisCMColimitInvariantsStatement`
-  (lemma `smooth_rho_eq` of check `08a1612b`, proved by `rfl`). The source is
+  (lemma `smooth_rho_eq` of the first check below, proved by `rfl`). The source is
   `cmPrimeToColimitCohomology` of the restricted coefficients
   `cmPrimeToCoefficients ... coeff`: the colimit, over the levels `K'` with
   `cmPrimeToProperty D m hm K₀ K'` ordered by inclusion, of
@@ -192,7 +197,7 @@ The hypotheses:
   The Library proves this inclusion of the image in the invariants as
   `cmPrimeToCohomologyComparison_translate_of_mem`, under
   `[Nonempty (cmPrimeToProperty D m hm K₀).FullSubcategory]`; the test lemma
-  `range_subset_invariants` of check `08a1612b` restates it in the form above.
+  `range_subset_invariants` of the first check below restates it in the form above.
   The proposition needs no such hypothesis: either no small level exists and
   both colimits are zero, or some prime-to-`m` level satisfies the property
   (steps 0 and 1 of the argument below).
@@ -308,9 +313,9 @@ The statement does not cover:
 - the sheaves `L_ξ`, ℓ-adic coefficients, limits over torsion coefficients,
   or Harris's Ext spectral sequences;
 - Hecke operators, compact supports, or local-global compatibility;
-- a proof of any premise. The open premises `square`, `q`, `existence`,
-  `geometry` and `hRigid` stay open, and the proved ones are not
-  instantiated here.
+- a proof of any premise. The premises `q` and `hRigid` are not proved in
+  the Library; the others are proved there (see "Proof status of the
+  premises") but are not instantiated here.
 
 ## Registered sources
 
@@ -331,11 +336,11 @@ The truth argument uses no further source beyond the standard facts on
 ## Formal dependencies and checks
 
 Direct project import, in Library commit
-`7e84f6ad2a2083a26977b5113dd0ab93f3f3b0ed` and the workspace:
+`7e84f6ad2a2083a26977b5113dd0ab93f3f3b0ed`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Shimura.PEL.HarrisTaylorCMPrimeToCohomology` | Library (no Author line) | `862ef504d67ad45868e7d01592961a01b8dc79eeb18cd1e3a80777b4cb68c18a` | `84b9af305fd1488db528c4ec4805f745f867ecbfb17365eefa8dde4503595668` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Shimura.PEL.HarrisTaylorCMPrimeToCohomology` | `862ef504d67ad45868e7d01592961a01b8dc79eeb18cd1e3a80777b4cb68c18a` | `84b9af305fd1488db528c4ec4805f745f867ecbfb17365eefa8dde4503595668` |
 
 Through it the module uses `HarrisTaylorCMSmallLevelCohomology` (the small
 levels, coefficients, cohomology and colimit), `SplitLevelTower`
@@ -344,17 +349,16 @@ levels and the comparison). It does not import
 `Langlands.Cohomology.HarrisCMColimitInvariants.Statement`, which the truth
 argument uses.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Checks against Library `7e84f6ad`, all on the final Lean file (SHA-256
 `4c493313d048a014f62c3b484f95420245fed1ac322a6d526783d3bf858dd31f`). None reported errors or warnings.
 
-- `08a1612b-6099-4010-85ec-3fcfd5a73801` compiled the file from a draft
-  directory together with a test file
+- The first compiled the file together with a test file
   (`Langlands/Inspect/CMPrimeToInvariantsPrint.lean`, SHA-256
   `efd46c79a07448996cfea87a91ac430e118eb995f75f28e7a8bb8af89b63dfad`), not
-  part of the candidate. It printed `HarrisCMPrimeToInvariantsStatement`: a
+  part of the Library. It printed `HarrisCMPrimeToInvariantsStatement`: a
   `Prop`-valued definition with no universe parameters. It proved three
   lemmas, each depending only on `propext`, `Classical.choice` and
   `Quot.sound`: `range_subset_invariants` (the image of the comparison lies
@@ -362,14 +366,14 @@ Checks against Library `7e84f6ad`, all on the final Lean file (SHA-256
   `smooth_rho_eq` (the operators of `cmSmallLevelSmoothCohomology` and of
   `cmSmallLevelColimitCohomology` agree, by `rfl`) and `mem_awayLevel_iff`
   (membership in the level `e⁻¹ (K₀ × K')`, by `Iff.rfl`).
-- `abbebec9-1b85-470d-95c5-88d656c7301b` compiled a test file
+- The second compiled a test file
   (`Langlands/Inspect/CMPrimeToInvariantsPremises.lean`, SHA-256
   `334ab636216de02cb19ff1644a72e495892f26e9b82e0bb08f70fd0fcb43b82d`)
   against this file. For each of the fourteen proved premises in the table
   above, an `example` with the premise type at universe zero is closed by the
   cited theorem. `#print axioms` shows that each theorem depends only on
   `propext`, `Classical.choice` and `Quot.sound`.
-- `0eb12833-2627-47c6-b906-d94264924117` built the file with Lake from the workspace and inspected
+- The third built the file with Lake and inspected
   `HarrisCMPrimeToInvariantsStatement`, with the same result (type hash
   `71837723a2d84d60cc1263f0edd4276f463162e333eb5a2d35d8462a14e36cd5`).
 

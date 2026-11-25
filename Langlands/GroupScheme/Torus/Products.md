@@ -1,7 +1,5 @@
 # Finite products of tori
 
-Worker 1143.
-
 This module proves that finite products of tori over a field are tori. It
 also gives the group-scheme isomorphisms used in the proof. These are
 internal consequences of the published definitions

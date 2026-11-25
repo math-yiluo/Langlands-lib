@@ -1,6 +1,6 @@
 # Irreducible tempered representations are unitarizable
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.TemperedIrreducibleUnitarizableStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedIrreducibleUnitarizableStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.TemperedIrreducibleUnitarizableStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedIrreducibleUnitarizableStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.6, Corollary, printed p.232 / PDF p.238. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The corollary says: an irreducible tempered representation is unitary. Its proof: this follows from the Theorem of VII.2.6, because an irreducible square-integrable representation is unitary (IV.3.2) and parabolic induction preserves unitarity.
 
@@ -22,7 +22,7 @@ The statement quantifies over a field `k : Type u` with `[Field k] [ValuativeRel
 
 ## Remaining obligations
 
-The proof is a separate obligation. The source route uses the Theorem of VII.2.6 (the companion statement unit `TemperedIrreducibleDiscreteSeriesStatement`): `π` embeds in `i_P^G σ` with `σ` irreducible and square-integrable modulo the center. Then:
+The proof is a separate obligation. The source route uses the Theorem of VII.2.6 (the companion statement `TemperedIrreducibleDiscreteSeriesStatement`): `π` embeds in `i_P^G σ` with `σ` irreducible and square-integrable modulo the center. Then:
 
 - `σ` is unitarizable (IV.3.2): an invariant inner product is built from its square-integrable matrix coefficients on `M(F) ⧸ Z(M(F))`;
 - the normalized induction of a unitarizable representation is unitarizable: the inner product `⟨f₁, f₂⟩ = ∫_K ⟨f₁(k), f₂(k)⟩ dk` over a good maximal compact `K` with `G = PK`, which uses the normalization by `δ_P^{1/2}` and the compactness of `P\G`;

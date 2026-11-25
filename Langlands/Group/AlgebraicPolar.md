@@ -1,7 +1,5 @@
 # Internal positive powers and polar factors
 
-Author: Worker 1571.
-
 This internal auxiliary module uses the Hermitian spectral theorem to define
 positive real powers of a positive definite matrix unit. Its diagonal powers
 are the construction in `AlgebraicMatrixPowers`; no matrix logarithm is used.

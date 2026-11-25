@@ -1,36 +1,36 @@
 # The regular representation of a profinite group as a direct limit of free modules
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.DivisibleSystem.FreeQuotientLimit`
 (`Induction.IsFreeOnInvariants`, `Induction.IsFreeLimit`,
 `Induction.IsFreeLimit.of_isSmooth`, `Induction.exists_le_of_isOpen`,
 `Induction.IsFreeLimit.bijective_invariantsToCoinvariants_of_isProP`,
 `isFreeLimit_invariants_homSystem_map_surjective`,
 `isMittagLeffler_isFreeLimit_invariants_homSystem`,
-`isFreeLimit_homSystem_map_surjective`; Worker 61),
+`isFreeLimit_homSystem_map_surjective`),
 `Langlands.Cohomology.DivisibleSystem.FreeReduction` (`powDiv`,
-`powDiv_zero`, `pow_mul_powDiv`; Worker 61) and
+`powDiv_zero`, `pow_mul_powDiv`) and
 `Langlands.Representation.LocallyConstant.CompactAction`
 (`CompactAction.LocallyConstantModule.diagonalRepresentation`,
 `diagonalRepresentation_apply`, `diagonalRepresentation_isSmooth`). Through
 these imports it also uses `Langlands.Representation.Induction.PermutationInvariants`
 (`Induction.invariantsEquivOfEquiv`, `Induction.equiv_apply_mem_invariants`,
-`Induction.finiteIndex_subgroupOf_of_isCompact`; Worker 61),
+`Induction.finiteIndex_subgroupOf_of_isCompact`),
 `Langlands.Representation.Induction.PermutationModule`
-(`Induction.permutation`, `Induction.permutation_apply`; Worker 61),
+(`Induction.permutation`, `Induction.permutation_apply`),
 `Langlands.Representation.Induction.PermutationDual`
-(`Induction.permutationCongr`; Worker 61),
+(`Induction.permutationCongr`),
 `Langlands.Representation.Induction.InvariantRestriction`
-(`Induction.invariantsToCoinvariants`, `Induction.isUnit_index_subgroupOf`;
-Worker 61), `Langlands.Cohomology.DivisibleSystem.Reduction`
-(`reductionSystem`, `mono_powSMul_one_iff_isSMulRegular`; Worker 61),
+(`Induction.invariantsToCoinvariants`, `Induction.isUnit_index_subgroupOf`),
+`Langlands.Cohomology.DivisibleSystem.Reduction`
+(`reductionSystem`, `mono_powSMul_one_iff_isSMulRegular`),
 `Langlands.Cohomology.DivisibleSystem.FreeTorsionProjective`
-(`powSMul_hom_apply`; Worker 61),
+(`powSMul_hom_apply`),
 `Langlands.Cohomology.DivisibleSystem.InvariantHomSurjective`
-(`epi_quotientToInvariantsFunctor_map_projection`; Worker 61),
-`Langlands.Cohomology.DivisibleSystem.HomSystem` (`homSystem`; Worker 61)
+(`epi_quotientToInvariantsFunctor_map_projection`),
+`Langlands.Cohomology.DivisibleSystem.HomSystem` (`homSystem`)
 and the Library's `ℓ`-divisible systems (`DivisibleSystem`, `powSMul`,
-`DivisibleSystem.mapLeftExact`; Worker 61). From Mathlib it uses
+`DivisibleSystem.mapLeftExact`). From Mathlib it uses
 `LocallyConstant` (with `LocallyConstant.mapₗ`, `LocallyConstant.map`),
 `IsLocallyConstant.of_discrete`, `QuotientGroup.discreteTopology`,
 `Subgroup.quotient_finite_of_isOpen`, `Finsupp.equivFunOnFinite`,

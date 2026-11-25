@@ -14,9 +14,10 @@ Module `Langlands.Representation.Archimedean.RealKTypeTransport` (namespace
   from `[character c, induced d]` to `[induced d, character c]`.
 
 No condition on the exponents is assumed. Both theorems apply the lemma
-`RealKTypeCount.surjective_of_injective` (accepted candidate `5567dc19`), which needs one injective `O(3)`-equivariant map in
+`RealKTypeCount.surjective_of_injective`, which needs one injective `O(3)`-equivariant map in
 the opposite direction. That map is `cycleMap c d` resp. `cycleInvMap c d` below. The theorems
-are helpers for the `GL_3(ℝ)` filtration tasks 7133 and 7134: there an intertwiner between the
+are helpers for the `GL_3(ℝ)` filtrations (`RealCharacterInducedFiltrationStatement` and
+`RealInducedCharacterFiltrationStatement`): there an intertwiner between the
 two standard modules is shown to be injective, and these theorems make it bijective.
 
 ## Definitions
@@ -130,7 +131,7 @@ definition of the literature.
 ## Provenance
 
 Internal. The transport by an element of `O(n)` and the cyclic permutation on `GL_3(ℝ)` are
-elementary constructions designed for the counting argument of the `GL_3(ℝ)` filtration tasks.
+elementary constructions designed for the counting argument of the `GL_3(ℝ)` filtrations.
 Informally, `cycleMap` shows that every `O(3)`-type occurs in the two standard modules with the
 same multiplicity, because both are induced from characters of the same restriction to
 `O(3) ∩ B` up to conjugation by `w`. No literature source is formalized.

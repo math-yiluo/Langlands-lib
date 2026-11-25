@@ -1,7 +1,5 @@
 # Actual residual-head occurrences in the original linked-pair derivative
 
-Author: Worker 357.
-
 This derived internal construction retains an actual special head of a supplied
 terminal witness, an invariant subspace of the original binary-product
 derivative, and a surjection from that subspace onto the head with its group rank
@@ -108,7 +106,7 @@ product is not the source of this occurrence.
 ## Implemented construction
 
 For a positive consecutive cut `b`, choose an actual lower head of `⟨ρ,b,hb⟩`
-with the independently published `segmentSpecialConstituentExistence F T`.
+with the published `segmentSpecialConstituentExistence F T`.
 Unpack the supplied long-head relation to obtain an actual representative of
 `ρ`. Apply the published
 `SegmentHeadCut.headCutDerivativeQuotient` with the supplied long and upper heads,
@@ -148,7 +146,7 @@ equality isomorphism and the cast quotient compose to give an actual surjection.
 The private `rankCast_surjective` eliminates a rank equality to prove that the
 cast preserves function surjectivity.
 
-The independently published `segmentHeadTopDerivativeNontrivial` applied to
+The published `segmentHeadTopDerivativeNontrivial` applied to
 the supplied second head gives nontriviality of its full order-`Γ.degree`
 derivative. Apply the published `rightTopDerivativeQuotientOccurrence` with
 first order `w.cut*Δ.rank`, second order `Γ.degree`, and the actual quotient just
@@ -163,8 +161,8 @@ injective inclusion of `space` and the retained surjective `quotient`.
 
 ## Provenance and independence
 
-This is derived internal material assembled from independently accepted and
-published constructions; it transcribes no additional source theorem. Its three
+This is derived internal material assembled from published constructions; it
+transcribes no additional source theorem. Its three
 direct imports are:
 
 | Module, after `Langlands.Representation.` | Role |
@@ -200,68 +198,48 @@ the witness's data fields, not its replacement obstruction or its constructor.
 The zero-cut branch uses only uniqueness of a strong head of the same actual
 induction and the identity zeroth derivative.
 
-The complete trusted operator files were read:
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md)
-permits fully proved general derivative theory, and
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-permits the published BZ77 4.11, general Ze80 3.7(b)/Lemma 4.7(b) and 5.3
-branches and nine generic modules. The support-only permission
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md),
-the restriction of `core_mid` to that proof's length-two base in
-[ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md),
-and the restricted reducibility permissions
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-are retained. This module imports neither the support-bound proof nor its
+The permitted inputs are fully proved general derivative theory, the published
+BZ77 4.11, the general Ze80 3.7(b)/Lemma 4.7(b) and 5.3 branches and nine
+generic modules. This module imports neither the support-bound proof nor its
 restricted intermediates or adjacent-supercuspidal reducibility.
 
-The closure uses no Ze80 3.5/9.6 segment derivative formula or proof successor;
+The closure uses no Ze80 3.5/9.6 segment derivative formula or file proving one;
 excluded special-head, segment-socle or full-Jacquet formula; segment-socle part
-of `8e5b4563-0365-41c7-b134-70f2a0b36292`; or excluded linked-structure,
-gluing, commutation or classification conclusion. The additional excluded tasks
-`ed48ae06-964c-4c84-9e62-978f5a953ca7`,
-`b95105c6-f8bb-4641-ae53-2f49d1e7f034`,
-`55ad1e10-62d8-46b7-a081-909ef0056426`,
-`92aea10f-62ac-4e0b-bd4a-9a80909797c5` and
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4` supply no excluded conclusion.
+of `SegmentSocleDerivativesStatement`; or excluded linked-structure,
+gluing, commutation or classification conclusion. The additional excluded
+results `SegmentFullJacquetFormula`, `SegmentSocleJacquetFormula`,
+`SegmentHeadJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula` and
+`SegmentSocleProductIrreducibility` supply no excluded conclusion.
 `SegmentHeadSupportStep`, `SegmentHeadJacquetReduction`,
 `SegmentSocleJacquetReduction`, `TwoSupercuspidalProductStructureProof` and
 `UniverseLiftPadic` are absent.
 
-Neither direction of the host `SegmentHeadProductIrreducibility` is assumed.
-Nor is any conclusion from parent uniqueness
-`30341ae4-65f2-4a0e-9283-763db01a409e`, multisegment exhaustion
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered strong-head existence
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, ordered conversion
-`8252833d-c269-41a9-824c-5879e531b23b`, tempered uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`, square-integrable classification
-`1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, or regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac` used. General analytic predicates and
+Neither direction of the parent statement `SegmentHeadProductIrreducibility` is
+assumed. Nor is any conclusion from parent uniqueness, multisegment exhaustion,
+ordered strong-head existence, quotient coverage, ordered conversion, tempered
+uniqueness, square-integrable classification, square-integrable exhaustion, or
+regular exhaustion used. General analytic predicates and
 statement definitions inherited through individual-head infrastructure supply
 no excluded classification proof.
 
-## Complete closure audit and remaining obligations
+## Complete closure audit and what is not proved here
 
 A native recursive audit against published Library
 `8b0bca33e42af34d78809e9fae6a20b0e296117c` finds 1,147 project modules,
-including this entry, and 301 distinct external frontier imports. All 1,146
+including this one, and 301 distinct external frontier imports. All 1,146
 inherited Lean/Markdown pairs are nonempty and byte-identical to that Library.
 The inherited module set is exactly the union of the prior cut-quotient,
 geometric-witness and general quotient-occurrence inventories; there is no new
 external import beyond that union. Every inherited Lean hash matches a prior
-audit. The only Markdown hashes changed since those pre-submission inventories
-are the three direct entry explanations, and each equals its independently
-accepted, published frozen pair.
+audit. The only Markdown hashes changed since those inventories are the pages
+of the three direct imports, and each equals its published version.
 
 After removing nested comments and string literals, the recursive code scan
-finds no excluded-name/task-identifier match, missing module, proof hole, new
-axiom or prohibited execution syntax. The used-body audit above supplements
+finds no excluded-name match, missing module, proof hole, new axiom or
+prohibited execution syntax. The used-body audit above supplements
 the scan and inherited fingerprint comparison; this does not claim a new
 line-by-line reading of every inherited file. Full inventories follow.
-Compilation in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` is a
-development check; independent semantic review and publication remain required.
+Compilation is a development check.
 
 The result establishes an actual occurrence of a residual special head in one
 derivative of the original supplied pair. It neither identifies that derivative
@@ -269,7 +247,8 @@ with the head nor asserts derivative irreducibility, multiplicity or a full
 derivative formula. The separate replacement obstruction is not imported.
 Comparing a hypothetical irreducible original product with a constituent of
 the replacement, deriving linked reducibility, reducing an arbitrary segment
-family, and proving the full host biconditional all remain obligations.
+family, and proving the full biconditional of `SegmentHeadProductIrreducibility`
+are not done here.
 
 
 ## Complete project import inventory

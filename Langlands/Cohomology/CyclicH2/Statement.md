@@ -1,8 +1,9 @@
 # The cyclic degree-two cocycle-sum comparison
 
 The companion Lean file defines the proposition
-`Langlands.Cohomology.CyclicH2.CocycleSumComparison.{u}`. It supplies a statement
-for a later proof; it does not prove the comparison.
+`Langlands.Cohomology.CyclicH2.CocycleSumComparison.{u}`. It supplies the statement;
+it does not prove the comparison, which is proved as `cocycleSumComparison` in
+`Langlands.Cohomology.CyclicH2.Proof`.
 
 ## Exact statement
 
@@ -70,8 +71,9 @@ With the bar differential
 boundary is `(g − 1)[]`, and the augmentation is the identity. Evaluating a
 two-cocycle on the degree-two value yields precisely the displayed sum, with
 the positive sign. This explains the proposed formula, including its
-unnormalized convention. A later proof must establish the required comparison
-and show that its induced map agrees with Mathlib's actual Ext-based
+unnormalized convention. The proof in `Langlands.Cohomology.CyclicH2.Proof`
+(with `BarComparison` and `ExtComparison`) establishes the required comparison
+and shows that its induced map agrees with Mathlib's actual Ext-based
 comparison. No such proof or agreement hypothesis is supplied here.
 
 Registered source: `serre-1979-local-fields`, retained at
@@ -79,7 +81,7 @@ Registered source: `serre-1979-local-fields`, retained at
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 The cited original pages were read for this statement.
 
-## Formal dependencies and authorship
+## Formal dependencies
 
 The only direct import is
 `Mathlib.RepresentationTheory.Homological.GroupCohomology.FiniteCyclic`.
@@ -91,6 +93,4 @@ The checked Mathlib revision is
 `5ed2965256430c3649e86755f9576b54eca72435`, with Lean 4.34.0.
 No project Library module is changed or required by this pair.
 
-Worker 28 supplied the exact Lean interface and the chain-comparison design.
-Worker 25 prepared this paired statement, checked the source conventions and
-formal dependencies, and expanded the documentation.
+The source conventions and formal dependencies were checked.

@@ -1,7 +1,5 @@
 # Actual germ universal property proof
 
-Worker 1215, with Worker 6's source audit and local-representative proof design.
-
 This proof targets the published closed `GermUniversalStatement.{u,v}`. It uses
 the actual germ functors, canonical units, corrected descent, and universe lifts.
 The original source is Renard 2026, II.2.1, printed pp.35–37 / PDF pp.41–43,
@@ -42,4 +40,4 @@ normalized source presheaves and all empty cases. The direct adjunction is at
 value universe max u v; the arbitrary original-v family uses the actual lifts.
 
 Unit invertibility on sheaves, basis/all-open equivalence, compact sections and
-scalar-module extensions remain separate obligations.
+scalar-module extensions are outside this proof.

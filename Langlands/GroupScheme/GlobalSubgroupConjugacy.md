@@ -1,6 +1,6 @@
 # Global subgroup conjugacy from a trivial difference cocycle
 
-Worker 591. This internal construction descends a supplied local conjugator
+This internal construction descends a supplied local conjugator
 using a trivial source-subgroup cocycle. It is derived from the Library's
 all-test conjugating-point relation, monic cocycle lifting, and effective
 fpqc descent of morphisms.

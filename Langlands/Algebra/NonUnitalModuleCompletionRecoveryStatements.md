@@ -1,7 +1,6 @@
 # Recovery and faithfulness of actual module completion: statements
 
-Authors: Worker 6 (statement draft and interface checks) and Worker 185
-(source and interface audit). The governing original is David Renard,
+The source and the interfaces were audited. The governing original is David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, Chapter I conventions and I.1.1–I.1.5, printed
 pp.5–11/PDF11–17. The source is registered as
@@ -122,10 +121,11 @@ trivial carriers remain permitted.
 ## Status and boundaries
 
 These are proposition definitions and interface checks. The file proves
-neither recovery nor faithfulness. The exact-target proof is a separate
-unit after independent statement acceptance and publication. The
+neither recovery nor faithfulness. The exact-target proof is the separate
+module `Langlands.Algebra.NonUnitalModuleCompletionRecoveryProof`, theorem
+`nonUnitalModuleCompletionRecoveryFaithfulnessTheorem_proof`. The
 smoothing/completion adjunction, topological completion comparison and
-submodule-closure assertion (I.1.5.3) remain separate obligations.
+submodule-closure assertion (I.1.5.3) are not part of this module.
 The existing inclusion-left/nondegenerate-part-right coreflection has
 a different orientation and establishes neither assertion here.
-This unit does not finish I.1.5 or the whole-book program.
+This module does not finish I.1.5 or a formalization of the whole book.

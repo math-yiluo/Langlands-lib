@@ -1,7 +1,5 @@
 # Proof of the derived and central split-torus product isogeny
 
-Author: Worker 4420.
-
 Module `Langlands.GroupScheme.Derived.CentralSplitTorusProductProof`.
 
 ## Result

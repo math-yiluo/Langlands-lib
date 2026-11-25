@@ -1,7 +1,5 @@
 # Strongly regular points of a maximal torus
 
-Author: Worker 1729.
-
 `Langlands.GroupScheme.algClosedStronglyRegularTorusPoint.{u}` proves exactly
 `Langlands.GroupScheme.AlgClosedStronglyRegularTorusPointStatement.{u}` from
 `Absolute/StronglyRegularTorusPointStatement`, with one arbitrary universe

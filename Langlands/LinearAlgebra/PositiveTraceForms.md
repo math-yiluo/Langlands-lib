@@ -1,7 +1,5 @@
 # Positive traces and invariant forms on simple modules
 
-Author: Worker 5219.
-
 The module `Langlands.LinearAlgebra.PositiveTraceForms` (namespace
 `Langlands.PositiveTraceForms`) contains the purely algebraic core of the
 following classical fact. If the trace of a finite-dimensional representation

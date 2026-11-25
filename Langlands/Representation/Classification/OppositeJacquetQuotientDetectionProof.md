@@ -1,7 +1,5 @@
 # Positive opposite-Jacquet multiplicity for admissible quotients of induction
 
-Author: Worker 165.
-
 `Langlands.oppositeJacquetQuotientDetection` proves exactly the published
 `Langlands.OppositeJacquetQuotientDetectionStatement.{uF,uV,uW}`. Its field,
 inducing-carrier and quotient-carrier universes are independent. It retains

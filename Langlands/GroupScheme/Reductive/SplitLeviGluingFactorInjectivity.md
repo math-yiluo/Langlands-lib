@@ -1,7 +1,5 @@
 # The graph projections are isomorphisms over an algebraically closed field
 
-Author: Worker 712 (unit taken over from Worker 1444's Levi-gluing chain).
-
 This is a derived internal support module for the graph route to the
 common-torus Levi gluing statement `SplitCommonTorusLeviGluingStatement`. Its
 main theorem `algClosedGraphProjectionIsomorphisms` proves the Library's
@@ -28,8 +26,8 @@ Throughout, `k : Type u` is a field and all group schemes are over
   nonzero characters with nonzero weight space.
 - `IsNormalizingPoint t n σ` says that the rational point `n` of `H`
   normalizes `t` and acts on `T` through the automorphism `σ`.
-- A simple comparison graph `D : SimpleComparisonGraph i₁ i₂` (Worker 1444's
-  `SplitLeviGluingSimpleGraph`) records that `T` is split (`D.split`), a generic
+- A simple comparison graph `D : SimpleComparisonGraph i₁ i₂`
+  (`SplitLeviGluingSimpleGraph`) records that `T` is split (`D.split`), a generic
   chamber cocharacter `D.directions.chamber` with, for every simple root `a`, a
   cocharacter `D.directions.direction a` that annihilates `a`, the local
   comparisons `D.comparisons a`, and the graph envelope `D.envelope`. The local
@@ -41,7 +39,7 @@ Throughout, `k : Type u` is a field and all group schemes are over
   and by the diagonal torus. It has torus `D.envelope.torusLift`, local lifts
   `D.envelope.localLift a` of `left` into the graph group, and the two
   projections `first` and `second`.
-- `D.GraphDynamicFactors` (Worker 1444's `SplitLeviGluingGraphDynamicFactors`)
+- `D.GraphDynamicFactors` (`SplitLeviGluingGraphDynamicFactors`)
   records representatives of the positive and negative dynamic unipotent
   subgroups of the graph group, and the fact that its torus represents the
   centralizer of the chamber. `UnipotentProjectionData p a ν i`
@@ -207,7 +205,7 @@ result, since `σ.inv ≫ χ = P₁.reflection j χ`.
 
 `D.weightKernelTrivial`. The zero weight is `weightKernelTrivial_zero`: the graph
 torus is self-centralizing (`E.torus_selfCentralizing`). Nonzero non-roots are
-`weightKernelTrivial_of_not_mem_roots`. For roots, Worker 712's
+`weightKernelTrivial_of_not_mem_roots`. For roots,
 `positive_induction` (`SplitLeviGluingSimpleGeneration`, no reducedness
 assumed) is applied to the property "`WeightKernelTrivial` holds at `ψ` and at
 `-ψ`". It holds at a simple root `a` and at `2 • a`, because `±a` and `±2 • a`
@@ -218,7 +216,7 @@ every positive root. A root `χ` of the graph torus is a root of `i₁` and pair
 nonzero with the generic chamber. Either `χ` or `-χ` is positive, and the
 property at that root gives the property at `χ`.
 
-`algClosedGraphProjectionIsomorphisms`. Let `E` and `F` be Worker 1444's
+`algClosedGraphProjectionIsomorphisms`. Let `E` and `F` be
 `D.graphDynamicFactorsOfReductive` and `D.graphFactorProjectionsOfReductive`. The
 graph group is connected reductive (`D.isConnectedReductive`), with maximal
 torus `D.envelope.torusLift` (`E.isMaximalTorus`). For `p = first`,
@@ -232,7 +230,7 @@ chamber and to its negative, makes the four maps `F.positiveFirst.hom`,
 `F.negativeFirst.hom`, `F.positiveSecond.hom` and `F.negativeSecond.hom`
 isomorphisms. The negative factor `E.negative.inclusion` represents the
 dynamic unipotent subgroup of `-chamber` by
-`groupHom_neg_comp_eq_oppositeCocharacter`. Worker 1444's
+`groupHom_neg_comp_eq_oppositeCocharacter`.
 `E.isIso_first_of_factorIsomorphisms` and `E.isIso_second_of_factorIsomorphisms`
 (`SplitLeviGluingGraphFactorIsomorphisms`) then make both projections
 isomorphisms.
@@ -263,7 +261,7 @@ Milne's argument. The zero weight uses the self-centralizing torus (Milne
 isomorphisms, by connectedness of dynamic unipotent subgroups and triviality of
 groups with zero Lie algebra, which replaces Milne's use of 23.24 and
 Theorem 21.51. Reductivity of the graph (Milne 23.20), maximality of its torus
-(23.23) and the big-cell assembly are Worker 1444's published modules. The
+(23.23) and the big-cell assembly are other modules of the Library. The
 official errata to Milne (`milne-2017-algebraic-groups-errata-2026-11-02`) have
 no Chapter 23 entries for printed pp.491–492 (their Chapter 23 entries are for
 p.488 and p.494 onwards). They have no entry for Theorem 21.11. Their p.440

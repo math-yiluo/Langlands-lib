@@ -47,4 +47,6 @@ The provenance is an internal composition of the named published interfaces,
 natural-number minimization, and classical choice of actual representatives.
 The new construction and its helper theorems are conditional. They do not prove
 any of the three structural propositions, generation by all normal almost-simple
-subgroups, or the host task's exact unconditional generation statement.
+subgroups, or the exact unconditional generation statement
+`SemisimpleAlmostSimpleGenerationStatement`, which the Library proves as
+`semisimpleAlmostSimpleGeneration` in `AlmostSimpleGenerationProof`.

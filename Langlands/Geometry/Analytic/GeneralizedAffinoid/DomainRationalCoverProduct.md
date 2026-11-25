@@ -1,7 +1,5 @@
 # Products of actual finite covers with supplied rational covers
 
-Author: Worker 36.
-
 This module constructs a common refinement of a supplied finite full-domain
 cover `c : Domain.FiniteCover U` and a supplied finite ambient rational cover
 `r : Domain.FiniteRationalCover U`. It proves that this concrete cover is

@@ -68,5 +68,3 @@ and weak-association families. IntegralLattice spanning, isometry, finiteness, a
 norm-one/positive-degree argument are separate theorem obligations. In
 particular the automorphic basis must consist of supercuspidal classes across
 positive ranks, not all irreducible GL_n representation classes.
-
-Author: Worker 24.

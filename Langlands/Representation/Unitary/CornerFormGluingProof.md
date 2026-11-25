@@ -1,7 +1,5 @@
 # Proof of the corner-form gluing statement
 
-Author: Worker 4713.
-
 The theorem `Langlands.CornerFormGluing.cornerFormGluing` has type
 `Langlands.CornerFormGluingStatement.{uG, uV}`. It proves the published
 statement in `Langlands/Representation/Unitary/CornerFormGluingStatement.lean`.
@@ -23,11 +21,11 @@ The forms at different levels are not assumed compatible. The conclusion is
 
 ## Dependencies
 
-- `Langlands/Representation/Unitary/CornerFormGluing.lean` (submitted with
-  this proof): `isUnitarizable_of_compatibleCornerForms` glues a
+- `Langlands/Representation/Unitary/CornerFormGluing.lean` (ported with
+  this file): `isUnitarizable_of_compatibleCornerForms` glues a
   corner-adjoint family that is compatible under restriction.
 - `Langlands.PositiveTraceForms.StarInvariantForm.inner_mul_inner_eq` in
-  `Langlands/LinearAlgebra/PositiveTraceForms.lean`, by Worker 5219. If `A` is
+  `Langlands/LinearAlgebra/PositiveTraceForms.lean`. If `A` is
   a complex `*`-algebra and `V` is a finite-dimensional simple `A`-module,
   then any two `*`-invariant positive definite forms `b, b'` on `V` satisfy
   `b(v₀,v₀) b'(x,w) = b'(v₀,v₀) b(x,w)`.
@@ -49,7 +47,7 @@ In namespace `Langlands.CornerFormGluing`:
   same image in `H(G)`.
 - `toStarInvariantForm` packages a corner-adjoint form as a
   `StarInvariantForm` for the corner module. Then `inner_mul_inner_eq`
-  specializes Worker 5219's uniqueness theorem to `ρ^K`, using
+  specializes the uniqueness theorem of `PositiveTraceForms` to `ρ^K`, using
   `cornerModule_isScalarTower`.
 - `fixedInclusion ρ hLK : ρ^K →ₗ ρ^L` is the inclusion of fixed spaces, and
   `fixedInclusion_injective` shows it is injective.
@@ -87,7 +85,7 @@ the statement's Markdown. The gluing and invariance arguments are in
 
 ## Validation
 
-`lean_check` diagnostic `69c731ca-4353-498b-a13b-3b644e55c619` compiled this
+A compilation check compiled this
 module and `CornerFormGluing` without errors or warnings. The axioms of
 `Langlands.CornerFormGluing.cornerFormGluing` were `propext`,
 `Classical.choice` and `Quot.sound`.

@@ -1,7 +1,5 @@
 # Geometrically maximal tori over finite fields: statement
 
-Author: Worker 1487.
-
 `FiniteFieldGeometricMaximalTorusStatement.{u}` says that a smooth
 connected affine group scheme `G` over a finite field `k : Type u`
 contains a torus `i : T.toGrp ⟶ G` that is maximal both over `k` and

@@ -34,6 +34,7 @@ theorem isSmooth_of_coefficientIso
   have hs : Smooth (pullback.snd N.group.X.hom (Spec.algebraMap R A)) := by
     change Smooth (N.baseChange A L).group.X.hom
     rw [← Over.w e.iso.hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   exact MorphismProperty.of_pullback_snd_of_descendsAlong
     (P := @Smooth) (Q := @Surjective ⊓ @Flat ⊓ @QuasiCompact)

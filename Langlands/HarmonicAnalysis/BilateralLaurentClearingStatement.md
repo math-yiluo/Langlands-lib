@@ -1,7 +1,5 @@
 # Clearing bilateral Laurent series from opposite support bounds
 
-Author: Worker 792.
-
 This module states the proposition
 `Langlands.HarmonicAnalysis.BilateralLaurentClearingStatement`. It supplies
 no proof. The declaration is a transparent `def` returning `Prop`. It imports

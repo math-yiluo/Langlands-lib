@@ -75,13 +75,13 @@ character uses the transport above.
 The FML additive order sends zero to `⊤`; the Library's integer-valued
 `T.ord` has value `0` at zero. No equality of these whole functions is asserted.
 Agreement of the lattice, unit-filtration and conductor conventions with the
-Library interfaces is reserved for the subsequent statement and proof units.
+Library interfaces is stated in `AgreementStatement` and proved in `AgreementProof`.
 No finite local constant or equality with a Library epsilon or self-dual
 constant is constructed here.
 
 ## Source and modifications
 
-Adapted by Worker 20 from Fukuhiro Ueda, *epsilon_FML*, commit
+Adapted in Langlands-lib (2026) from Fukuhiro Ueda, *epsilon_FML*, commit
 `0b4159be50e1bd45ddff1de4280399576a3e2024`, Apache-2.0; see the retained,
 unchanged [LICENSE](LICENSE). The registered source is
 `external-lean-reuse-snapshots-2026-10-21`, content fingerprint

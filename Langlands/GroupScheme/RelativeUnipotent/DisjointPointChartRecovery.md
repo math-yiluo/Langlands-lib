@@ -1,6 +1,7 @@
 # Exact original point-chart recovery on a coproduct component
 
-This internal Task 7200 adapter proves that the actual assembled module point
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals proves that the actual assembled module point
 chart, restricted to any original coproduct component, is that component's
 prescribed original chart through the canonical actual module
 pullback-composition section comparison. It applies to every test over the

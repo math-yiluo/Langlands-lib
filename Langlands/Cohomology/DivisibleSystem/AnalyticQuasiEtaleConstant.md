@@ -1,24 +1,24 @@
 # The constant `ℓ`-divisible system of quasi-étale `G`-sheaves
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.LocalActionConstant` (Worker 26, submitted together with
+- `Langlands.Sheaf.Equivariant.LocalActionConstant` (ported together with
   this module). It provides the constant sheaf functor with values in discrete sheaves,
   `discreteConstantSheaf L J R`, and its exactness and additivity instances.
-- `Langlands.Cohomology.DivisibleSystem.ConstantCoefficients` (Worker 61). It provides the
+- `Langlands.Cohomology.DivisibleSystem.ConstantCoefficients`. It provides the
   `ℓ`-divisible system `scalarSystem R ℓ hℓ` of the `R`-modules `R / ℓ ^ m R`, for `ℓ` a
   non-zero-divisor of `R` (`hℓ : IsSMulRegular R (ℓ : R)`), and the identification
   `scalarSystemObjIso hℓ m` of its level `m` with `R ⧸ Ideal.span {ℓ ^ m}`. Through it,
-  the module uses Worker 61's `DivisibleSystem` and its `map` along exact additive
+  the module uses the published `DivisibleSystem` and its `map` along exact additive
   functors.
-- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtale` (Worker 26). It provides
+- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtale`. It provides
   Harris's Lemma 2.2, Lemma 2.2 bis and (2.3) for an arbitrary `ℓ`-divisible system `T` of
   quasi-étale `G`-sheaves (`QuasiEtaleDivisibleSystem ρ R ℓ`), with the Godement
   functor built from the `L`-valued points of `X`. Through it, the module uses
-  `AnalyticQuasiEtaleCompactCohomology` (Worker 26): sheafification on the twisted
+  `AnalyticQuasiEtaleCompactCohomology`: sheafification on the twisted
   quasi-étale site (`twistedQuasiEtale_hasSheafify`) and Berkovich's compactly supported
   cohomology `quasiEtaleGSheafCompactCohomology L ρ h R n` (`H^n_c(X{G}, -)`). It also
-  uses Worker 21's quasi-étale site, points and point axioms.
+  uses the Library's quasi-étale site, points and point axioms.
 
 The generic declarations are in the namespace `Langlands.Cohomology.DivisibleSystem`, the
 quasi-étale ones in `Langlands.Cohomology.DivisibleSystem.Analytic`.
@@ -48,13 +48,13 @@ Grothendieck topology `J`. Assume `[HasSheafify J (ModuleCat.{w} R)]` and
 - `discreteConstantSystem_projection`, `discreteConstantSystem_inclusion`: the maps `j`
   and `i` of the system are the constant sheaf maps of those of `scalarSystem`. Under
   `scalarSystemObjIso` these are the reduction `R / ℓ ^ m R → R / ℓ ^ m' R` and
-  multiplication by `ℓ ^ (m - m')` (Worker 61). Both statements hold by `rfl`.
+  multiplication by `ℓ ^ (m - m')`. Both statements hold by `rfl`.
 
 ## The constant system of quasi-étale `G`-sheaves
 
 Data and universes are those of `AnalyticQuasiEtale`:
 
-- `K : Type u` is a complete ultrametric normed field, and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field, and `X` an object of the Library's
   `LocalizedCategory.{u, v, v} (K := K)`.
 - `G : Type z` is a group with a topology and `ρ : G →* Aut X`.
 - Write `w = max u (v + 1) uL`. The ring `R : Type w` is commutative, and sheaves take
@@ -98,7 +98,7 @@ For `R ≠ 0`, `hpoints` is false on most spaces of positive dimension, includin
 nonempty open subspace of `P^d`, `d ≥ 1`, such as Drinfeld's `Ω` and Harris's domains
 `U(f)`. There the results below hold only vacuously. See the section "Caution: `hpoints`
 fails on most spaces" in the Markdown of `AnalyticQuasiEtale` (a mathematical remark, not
-formalized). The published module `AnalyticQuasiEtalePoints` (Worker 26) gives the same
+formalized). The published module `AnalyticQuasiEtalePoints` gives the same
 results for an arbitrary family of points of the quasi-étale site.
 
 The declarations are:
@@ -149,7 +149,7 @@ The declarations are:
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*, J. Math. Kyoto
 Univ. 39 (1999), registered as
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, §2, printed pp.303–305 =
-PDF pp.5–7. Worker 26 checked p.304 with `pdftotext` and a rendering of the page for this
+PDF pp.5–7. p.304 was checked with `pdftotext` and a rendering of the page for this
 module; the p.303 and p.305 passages are those cited in `AnalyticQuasiEtale`.
 
 - p.303, Fact 2: "There is an integer `D > 0` such that `H^q_c(U, T) = 0` for all `q > D`
@@ -178,8 +178,8 @@ module; the p.303 and p.305 passages are those cited in `AnalyticQuasiEtale`.
   sheaf on the quasi-étale site of `X` and with the étale constant sheaf is not
   formalized.
 - That these sheaves form an `ℓ`-divisible system in the sense of (2.1) is implicit in
-  Harris. Here it follows from Worker 61's `scalarSystem` and the exactness of the constant
-  sheaf functor into discrete sheaves (`LocalActionConstant`). Worker 61's
+  Harris. Here it follows from the published `scalarSystem` and the exactness of the constant
+  sheaf functor into discrete sheaves (`LocalActionConstant`). The published
   `DivisibleSystem` encodes the freeness of `T_m` over `ℤ/ℓ^mℤ` and the torsion conditions
   by exactness conditions.
 - The specializations of Lemma 2.2, Lemma 2.2 bis and (2.3) are the published

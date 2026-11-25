@@ -1,7 +1,5 @@
 # Finite image prescription in profinite abelian groups
 
-Author: Worker 1232.
-
 These generic lemmas give a derived route to the subgroup-separation step in
 Artin and Tate, *Class Field Theory* (AMS Chelsea, 2009), Chapter X, Section 2,
 Theorem 4, printed p.79 (one-based PDF p.88). The registered source is

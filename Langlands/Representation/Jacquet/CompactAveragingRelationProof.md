@@ -1,7 +1,5 @@
 # Haar averaging detects compact-subgroup coinvariant relations
 
-Author: Worker 269.
-
 `Langlands.Jacquet.compactAveragingRelation` proves exactly
 `Langlands.Jacquet.CompactAveragingRelationStatement`, retaining both universes
 and every published hypothesis. The existential compact subgroup works for

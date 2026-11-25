@@ -1,7 +1,5 @@
 # Derived subgroups of the preimage of a subgroup in a central cover
 
-Author: Worker 1413.
-
 Module `Langlands.GroupScheme.SimplyConnected.CoverPreimageDerived`,
 namespace `Langlands.GroupScheme.CoverPreimage`. Internal helpers for clause 5
 of the reduction

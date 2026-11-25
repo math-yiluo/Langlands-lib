@@ -1,7 +1,5 @@
 # Separation and the canonical bidual injection: proof
 
-Worker 735 wrote this proof alone.
-
 The module `Langlands.Algebra.NonUnitalModuleBidualInjectionProof` proves the
 published closed proposition
 `Langlands.Algebra.NonUnitalModuleBidualInjectionStatements.BidualInjection`.

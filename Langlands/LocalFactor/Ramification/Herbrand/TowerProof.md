@@ -51,9 +51,8 @@ Jean-Pierre Serre, *Local Fields*, GTM 67, Springer (1979). Registered as
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`. Chapter IV, §3,
 Propositions 14 and 15 (printed p. 74), proofs on printed p. 75. The Library statement
 module cites the same places. The proofs specialize the ported Anthropic FLT theorems in
-`Langlands.AnthropicFLT` (accepted candidate `cf07dc37-888b-4c8a-8bc0-81226d21710e`).
-They also reuse the transport and comparison lemmas of `QuotientProof` (staged
-candidate `301ebebb-9ba4-46b1-8ca7-3ba077f298a3`). All declarations listed above are
+`Langlands.AnthropicFLT`.
+They also reuse the transport and comparison lemmas of `QuotientProof`. All declarations listed above are
 internal identifications.
 
 ## Proof (as implemented)

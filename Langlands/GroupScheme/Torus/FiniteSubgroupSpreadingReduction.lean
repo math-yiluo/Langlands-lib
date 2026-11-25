@@ -60,6 +60,7 @@ theorem finite_neighbourhood_of_uniformExponent
       infer_instance
     change LocallyQuasiFinite ((baseChange U.ι).obj K).X.hom
     rw [← hj, ← Over.w (baseChangeCompIso Q.ι j K).hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   obtain ⟨n, hn, hpow⟩ :=
     hexp U.toScheme KU inferInstance inferInstance inferInstance inferInstance

@@ -62,10 +62,10 @@ theorem IsSplitTorus.set_eq_empty_of_character_division
     funext j
     let ℓ : characterLattice T →+ ℤ :=
       { toFun := fun ψ => b ψ j
-        map_zero' := by simp
+        map_zero' := by simp only [AddEquiv.map_zero, Pi.zero_apply]
         map_add' := by intros; simp }
     exact integer_coordinate_eq_zero_of_division S p hp hdiv ℓ χ hχ
-  have hz : χ = 0 := b.injective (by simpa only [map_zero] using hb)
+  have hz : χ = 0 := b.injective (by simpa only [AddEquiv.map_zero] using hb)
   exact hzero (hz ▸ hχ)
 
 /-- In a family of affine locally finite type targets, central isogeny

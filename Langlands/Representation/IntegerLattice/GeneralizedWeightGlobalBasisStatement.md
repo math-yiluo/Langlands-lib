@@ -1,7 +1,8 @@
 # One global block basis for all actual integer-lattice actions
 
-Statement prepared by Worker 709; source comparison and submission by
-Worker 1195. This proposition supplies no proof. Its
+This proposition supplies no proof; it is proved by
+`Langlands.commutingTupleGeneralizedWeightGlobalBasis` in
+`GeneralizedWeightGlobalBasisProof`. Its
 actual construction is imported from the published
 `Langlands.Representation.IntegerLattice.GeneralizedWeightBlock` module.
 
@@ -47,14 +48,15 @@ of one common basis in which every `U(n)` is block diagonal and has upper
 triangular blocks with character diagonal. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-PDF285–286 were read directly for this draft. This is a derived concrete
+PDF285–286 were read directly. This is a derived concrete
 coordinate formulation indexed by the actual intersections, rather than
 the source's finite numbered list. It also records that the same local
 bases make the normalized differences strictly upper triangular.
 
 An intended proof can assemble the local bases with
-`DirectSum.IsInternal.collectedBasis` using the separately owned actual
-decomposition theorem, and compare same-block and different-block
+`DirectSum.IsInternal.collectedBasis` using the separate actual
+decomposition theorem (`commutingTupleGeneralizedWeightDecomposition` in
+`GeneralizedWeightProof`), and compare same-block and different-block
 coordinates. The all-integer local matrix properties still require proof,
 for example from the finite binomial products. This paragraph is a proof
 plan, not proof evidence.

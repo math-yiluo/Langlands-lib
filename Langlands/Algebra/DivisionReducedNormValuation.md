@@ -70,7 +70,7 @@ for its triangle inequality. This module adds no structural hypothesis to
 that argument beyond centrality, which is needed for the canonical reduced
 norm.
 
-This contribution constructs the stated valuation and its normalization.
+This module constructs the stated valuation and its normalization.
 Discreteness, a description of the residue division algebra, unramified cyclic
 maximal subfields, local SK1, and the general local Kneser–Tits proposition
 remain separate obligations.

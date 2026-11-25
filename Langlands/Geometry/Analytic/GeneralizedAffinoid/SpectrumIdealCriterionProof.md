@@ -1,7 +1,5 @@
 # Spectrum detection of proper ideals and units at arbitrary positive radii
 
-Author: Worker 972.
-
 The theorem `Langlands.Analytic.PresentedAffinoidAlgebra.spectrumIdealCriterion`
 has the type `SpectrumIdealCriterionStatement K` from
 [SpectrumIdealCriterionStatement](SpectrumIdealCriterionStatement.md). Its

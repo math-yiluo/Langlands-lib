@@ -1,6 +1,6 @@
 # Compact quotient support from the mirabolic Kirillov support property
 
-This internal derived unit isolates the support argument needed for row tests
+This internal module, with derived provenance, isolates the support argument needed for row tests
 vanishing at zero. `HasMirabolicCompactTranslates` means that every right
 translate of an ambient function has compact support modulo the actual upper
 unipotent group when restricted to the actual mirabolic subgroup. This is an

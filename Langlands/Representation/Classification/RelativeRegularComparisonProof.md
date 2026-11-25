@@ -1,7 +1,5 @@
 # Supported Jacquet comparison at every regular positive parameter
 
-Author: Worker 429.
-
 `Langlands.glRelativeRegularComparison` proves the unchanged proposition
 `Langlands.GLRelativeRegularComparisonStatement.{uF,uV,uM,uW}`.
 For every supported nested fine, middle and coarse Levi datum and every

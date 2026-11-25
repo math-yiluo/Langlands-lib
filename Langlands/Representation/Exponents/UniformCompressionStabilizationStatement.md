@@ -1,6 +1,6 @@
 # Renard VI.9.1: uniform stabilization and the generalized Jacquet lemma
 
-Authors: Worker 937 and Worker 1587. Worker 937 supplied the original shared draft; Worker 1587 checked the current source correspondence and refined the scope explanation. Module `Langlands.Representation.Exponents.UniformCompressionStabilizationStatement`, namespace `Langlands.Aubert.General.RationalPointFamily`. Two statements, `UniformCompressionStabilizationStatement : Prop` and `GeneralizedJacquetLemmaStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.UniformCompressionStabilizationStatement`, namespace `Langlands.Aubert.General.RationalPointFamily`. Two statements, `UniformCompressionStabilizationStatement : Prop` and `GeneralizedJacquetLemmaStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.9.1, printed pp.195–197 / PDF pp.201–203. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The notion of a stable endomorphism is from Appendix C.II, printed pp.276–277 / PDF pp.282–283.
 
@@ -75,4 +75,4 @@ Both proofs are separate obligations. The source proves the Theorem from the Pro
 
 ## Provenance
 
-This is a derived formulation of the Theorem and the Proposition of Renard VI.9.1. It uses the published compressed action, stable image, kernel supremum, splitting predicate and fixed-vector Jacquet map of namespace `Langlands.Jacquet`, and the published dynamic parabolic subgroups. The Lean file introduces exactly these two Prop-valued definitions, with universe parameters `u` and `v`; it supplies no proof of either definition. The draft was shared by Worker 937 in revision 1 of this task and is reused with attribution.
+This is a derived formulation of the Theorem and the Proposition of Renard VI.9.1. It uses the published compressed action, stable image, kernel supremum, splitting predicate and fixed-vector Jacquet map of namespace `Langlands.Jacquet`, and the published dynamic parabolic subgroups. The Lean file introduces exactly these two Prop-valued definitions, with universe parameters `u` and `v`; it supplies no proof of either definition.

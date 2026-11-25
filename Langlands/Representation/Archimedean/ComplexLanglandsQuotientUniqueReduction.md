@@ -1,7 +1,6 @@
 # Reduction of `ComplexLanglandsQuotientUniqueStatement` (LU)
 
-Worker 727 wrote this module for Task 7055 (`fbfc1fa1-a863-4424-800e-92f30996a1be`). That task
-proves the Library's `Langlands.Archimedean.ComplexLanglandsQuotientUniqueStatement` (LU, module
+The target of this module is the Library's `Langlands.Archimedean.ComplexLanglandsQuotientUniqueStatement` (LU, module
 `Langlands.Representation.Archimedean.ComplexStandardSurjectionInjectiveReduction`). LU says:
 if two lists `ds`, `es` of `n` complex characters in the Langlands order both have nonzero
 intertwining maps from the `U(n)`-finite functions of their standard modules into the same
@@ -116,21 +115,22 @@ it is isomorphic to the quotient `X(ds) / ker T`. So `W` is a nonzero module of 
    of those of `ds`. A `ComplexCharacterData` is determined by its character (see Notation),
    so `ds.Perm cs`.
 
-The argument uses only the BR results listed above. It uses nothing from the planned formal
+The argument uses only the BR results listed above. It uses nothing from the formal
 route described next.
 
-### Planned formal route (not provenance)
+### Formal route (not provenance)
 
-Worker 729 plans to prove Orth in Lean, in this task, by a different route: the module
+The Library proves Orth in Lean by a different route: the module
 `ComplexStandardOppositeOrderHomReduction` derives Orth from two separate statements.
 `ComplexStandardHomExponentStatement` (E) is a Bruhat-cell description of the characters of a
 nonzero intertwining map between principal series: a common permutation `σ` and shifts by
 nonnegative integer combinations of simple roots on the two factors of the Cartan subalgebra.
 `ComplexStandardHomTransposeStatement` (TP) transposes such a map into a nonzero map
 `X(cs⁻¹) → X(ds⁻¹)`. Orth then follows from a comparison of prefix sums of the sorted real
-parts. E and TP have their own candidates (`3dfcc04e-018f-469e-bac4-ed612b8ab469` and
-`af05c79b-fdc0-453a-b8cb-fdfc09ef1857`) with their own provenance, and they are not yet
-proved. This module does not import them, and the truth of Orth as stated here does not
+parts. E and TP have their own modules with their own provenance; the Library proves them
+(`ComplexStandardHomExponentProof`, `ComplexStandardHomTransposeProof`), and
+`ComplexLanglandsQuotientUniqueProof` derives Orth from them as `complexStandardOppositeOrderHom`.
+This module does not import them, and the truth of Orth as stated here does not
 depend on them.
 
 ### Checks
@@ -209,10 +209,9 @@ The hypotheses `IsComplexGKModule n ρ π`, `IsIrreducibleGKModule ρ π` and
   `IsComplexStandardIntertwining`, `surjective_of_isComplexStandardIntertwining`),
   `PrincipalSeriesGKModule` (`principalSeriesRep_apply_coe`,
   `principalSeriesLie_one_tmul_apply_coe`).
-* The reduction is fully proved in Lean. LU itself still needs proofs of S1 (Task 6828,
-  `851208ca-fcbd-4650-a2b7-10c9e542cea5`) and of Orth. Orth is to be proved in this task by
-  Worker 729's planned route through E and TP (see "Planned formal route"), whose proofs will be
-  separate units. Orth's provenance is the Badulescu–Renard argument above.
+* The reduction is fully proved in Lean. `ComplexLanglandsQuotientUniqueProof` proves LU from it,
+  with S1 (`complexLanglandsSubrepresentation`) and Orth (`complexStandardOppositeOrderHom`, by
+  the route through E and TP; see "Formal route"). Orth's provenance is the Badulescu–Renard argument above.
 * Sources: Badulescu–Renard 2010 (`badulescu-renard-2010-unitary-dual`), §1.1 (pp. 1116–1117),
   §2.2–2.4 with Definition 2.2 and Remark 2.3 (pp. 1122–1123), Proposition 2.4, §3 with
   Definition 3.2 and Theorem 3.3(i)–(iii) (pp. 1124–1125), §6 with Proposition 6.1

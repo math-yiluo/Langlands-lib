@@ -1,6 +1,6 @@
 # Schur orthogonality for essentially square-integrable representations
 
-Worker 89. The theorem
+The theorem
 `Langlands.Renard.CompactRepresentation.schurOrthogonality` proves the exact
 published proposition `SchurOrthogonalityStatement`, the fourth component of
 `UnitarySquareIntegrableStatements`. It includes both integrability conclusions,

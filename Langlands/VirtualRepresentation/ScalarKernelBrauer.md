@@ -1,7 +1,7 @@
 # Brauer induction for representations that are scalar on a finite-index kernel
 
 Helper module for the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
 It proves the scalar case: let `π : S →* Q` be a homomorphism from a topological
 group to a finite group with open kernel. Let `B` be a continuous
 finite-dimensional complex representation of `S` on which every element of

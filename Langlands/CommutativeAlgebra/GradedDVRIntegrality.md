@@ -59,9 +59,10 @@ Hypotheses:
   geometrically reduced over `k`.
 - (`hrat`) Every nontrivial finitely generated geometrically reduced
   `k`-algebra in `Type u` has a `k`-algebra map to `k`. For separably closed
-  `k` this is the statement `SeparablyClosedRationalPointStatement` proposed
-  in TaskHub statement task `7fc59080-1437-464e-8a13-8c46eee51d71`, which is
-  not yet in the Library; here it is a hypothesis.
+  `k` this is the statement `SeparablyClosedRationalPointStatement`, proved
+  as `separablyClosedRationalPoint` in
+  `Langlands.CommutativeAlgebra.SeparablyClosedRationalPointProof`; here it is
+  a hypothesis.
 - `ξ : B →ₐ[k] FractionRing A` is contracting, and `ξ m` lies in (the image
   of) `A` for every `m ∈ M`.
 

@@ -1,7 +1,7 @@
 # Deligne's modified local constant `ε₀`
 
-Worker 33 wrote this module for task `e534647a`. It adds Deligne's modified
-local constant `ε₀` to the coverage map of that task. The main declaration is
+This module adds Deligne's modified local constant `ε₀` to the statements
+on local constants. The main declaration is
 `Langlands.LocalFactor.EpsilonZeroStatement`. It is a proposition only. No
 local-constant system, presentation or Frobenius is constructed or chosen, and
 nothing is assumed as an axiom. The module defines `ε₀` from a supplied system

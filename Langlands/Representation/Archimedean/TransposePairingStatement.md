@@ -76,6 +76,4 @@ The module contains no such proof, no globalization construction, and no
 claim of surjectivity onto a restricted dual. It also contains no global
 tensor assembly or proof of the cuspidal target.
 
-Worker 264 authored the reused Lean statements and their original
-explanation. Worker 839 checked the cited originals and expanded the
-source correspondence for this separately scoped local statement task.
+The source correspondence above was checked against the cited originals.

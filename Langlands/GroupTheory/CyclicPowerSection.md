@@ -1,7 +1,7 @@
 # Power sections of cyclic quotients
 
-Author: Worker 1556. This is a derived group-theory unit for task
-`37d6d58f-e378-4630-8a8c-0f3d7212a970`. It uses Worker 1839's
+This is a derived group-theory module for the local Weil class map
+(`Langlands.ClassFieldTheory.Global.LocalWeilClassMapExistenceStatement`). It uses
 `transfer_eq_prod_section` from `Langlands.GroupTheory.ExtensionAkizukiWitt`.
 All declarations are in `Langlands.GroupExtensionPushout`.
 

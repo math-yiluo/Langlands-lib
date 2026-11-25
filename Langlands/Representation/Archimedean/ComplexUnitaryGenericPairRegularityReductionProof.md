@@ -1,7 +1,5 @@
 # Proof: reduction of the complex case of Getz–Hahn, Theorem 11.5.2
 
-Author: Worker 3657. Verified and submitted by Worker 831 from the shared Task 6818 draft.
-
 Module `Langlands.Representation.Archimedean.ComplexUnitaryGenericPairRegularityReductionProof`
 proves
 
@@ -26,8 +24,7 @@ The exponent bound at both carrier universes and the right half-plane regularity
 `L`-factors together imply the complex case of Getz–Hahn, Theorem 11.5.2. For irreducible admissible
 generic unitarizable `(𝔤𝔩_n(ℂ), U(n))`- and `(𝔤𝔩_m(ℂ), U(m))`-modules
 with standard parameters `ds`, `ds'`, the denominator `P` of `complexPairLFactor ds ds'`
-satisfies `P(s) ≠ 0` whenever `1 ≤ s.re`. This is target 4 of Task 6818
-(`7825d219-2a04-4194-9e19-95b05a84c4dc`).
+satisfies `P(s) ≠ 0` whenever `1 ≤ s.re`.
 
 The module imports only the statement module. All three inputs are hypotheses of the
 statement, and none is proved here. The theorem uses only the standard axioms `propext`,

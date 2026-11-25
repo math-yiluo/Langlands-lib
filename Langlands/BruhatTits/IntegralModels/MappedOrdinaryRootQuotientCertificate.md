@@ -1,6 +1,6 @@
 # Ordinary roots detected after a group morphism and integral reduction
 
-This internal supporting unit works at arbitrary universe over a local domain
+This module works at arbitrary universe over a local domain
 with a specified fraction field. It uses apartment data for a torus map
 `i : S → G`, a homomorphism `f : G → H`, a relative-component model of `H`,
 a compatible split integral torus for `i ≫ f`, and actual special-fibre

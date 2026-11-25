@@ -9,8 +9,8 @@ universe `u`.
 It retains the published setting: a nonarchimedean local field `F` of any
 characteristic, `K = UnramifiedClosure F`, an affine group scheme `H` over
 `Spec K`, supplied `B : MaximalUnramified.BuildingData F H`, and
-`hZ : IsTorus B.centralizer.Z`. The groups are D1's actual
-`B.moyPrasad hZ x r`, with torus filtration `B.centralizerTorusFiltration hZ r`
+`hZ : IsTorus B.centralizer.Z`. The groups are the actual
+`B.moyPrasad hZ x r` of `KPLocalMoyPrasadGroups`, with torus filtration `B.centralizerTorusFiltration hZ r`
 and its image `B.centralizerTorusImage hZ r`. The target statement, those
 definitions, and their hypotheses are unchanged.
 
@@ -20,7 +20,8 @@ The proof applies
 `localMoyPrasadGroupProperties_of_torus_filtration` from the companion module
 `KPLocalMoyPrasadGroupPropertiesReduction` to the published theorem
 `Langlands.Geometry.Building.quasiSplitLocalTorusFiltration` from
-`KPQuasiSplitLocalTorusFiltrationProof`. This supplies S1's three clauses.
+`KPQuasiSplitLocalTorusFiltrationProof`. This supplies the three clauses of
+`QuasiSplitLocalTorusFiltrationStatement`.
 In particular, ordinary torus commutator friendliness and torus/root
 compatibility have proofs rather than remaining as additional premises.
 
@@ -39,7 +40,7 @@ The reduction discharges the other global inputs as follows:
   estimate at depth `2d` whenever either opposite-root input lies in its
   doubled-root group. This estimate uses the actual torus filtration.
 
-These inputs have no S2 conclusion as a premise. In particular, the doubled-root
+These inputs have no conclusion of `LocalMoyPrasadGroupPropertiesStatement` as a premise. In particular, the doubled-root
 estimate is supplied independently of normality, factorization and intersection.
 The final theorem has no argument for an unproved proposition, apartment axiom
 or extra filtration property.
@@ -55,7 +56,8 @@ inputs at `F`, `H`, `B` and `hZ` and combines the following conclusions.
    `KPLocalMoyPrasadDoubleRootConjugation` proves that `G_{x,0}` normalizes
    `G_{x,r}`. It reduces to torus and root generators using the published
    `KPLocalMoyPrasadCovariance`. The companion integer, ordinary-opposite and
-   mixed conjugation modules give the root bounds. S1 and the independent
+   mixed conjugation modules give the root bounds.
+   `QuasiSplitLocalTorusFiltrationStatement` and the independent
    doubled-root estimate supply the central coordinates. The root-direction
    classification uses the published integer-valuation affine-root results.
 2. **Equivariance.**
@@ -112,16 +114,12 @@ The companion `BuildingData.intersectionClauses_of_statements` in
 `KPLocalMoyPrasadIntersectionAssembly` collects clauses 4–8. The reduction
 combines them with clauses 1–3 into the exact published conjunction.
 
-## Provenance and authorship
+## Provenance
 
-This is a composition of Library theorems and the submitted companion proofs.
+This is a composition of Library theorems and the companion proofs.
 The source targets are those documented in the unchanged statement pair:
 Kaletha–Prasad (2023), Proposition 7.3.17, Remark 7.6.5 and (7.6.2),
 Proposition 13.2.5(4), Proposition 7.3.12, Lemma 8.5.19 and Lemma 7.3.16.
 The companions document their implemented algebraic routes and their use of
 the 2024 corrections. This final composition introduces no further source
 claim and does not assert the existence of the supplied building data.
-
-Worker 359 supplied the conjugation, commutator and final assembly development.
-Worker 147 supplied the five intersection companion modules; their Lean proofs
-are preserved. Worker 119 contributed the published torus-normalizer input.

@@ -1,7 +1,5 @@
 # Invariant-form coefficients on the actual central quotient
 
-Author: Worker 386.
-
 This internal comparison connects the Library's smooth-dual coefficient norms
 to coefficients of an actual invariant positive Hermitian form, and connects its
 universal Borel Haar predicate to any fixed Borel Haar measure. All coefficient

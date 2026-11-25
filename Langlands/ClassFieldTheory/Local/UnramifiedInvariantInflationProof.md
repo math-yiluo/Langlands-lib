@@ -1,7 +1,5 @@
 # Inflation compatibility of the explicit finite unramified invariant
 
-Author: Worker 272.
-
 The theorem
 `Langlands.ClassFieldTheory.Local.unramifiedInvariantInflationCompatibility.{u}`
 proves exactly the published proposition
@@ -215,7 +213,7 @@ invariant is built from the actual ordinary cohomology, the published
 inflation is the published `relativeInflation`, which pulls back along
 `AlgEquiv.restrictNormalHom` and includes `Lˣ` into `Mˣ`. No class formation,
 reciprocity, absolute invariant or `InvariantFamily` hypothesis is used. The
-parent target `AbsoluteInvariantExistence` is not used.
+absolute target `AbsoluteInvariantExistence` is not used.
 
 The arguments in sections 2–4 hold for arbitrary fields `K`. They assume no
 p-adic structure, only the stated finiteness, normality and Galois
@@ -241,18 +239,18 @@ The proof here is internal to the Library's finite constructions. The
 Frobenius restriction through residue fields, the explicit carry coboundary
 `a ^ ⌊val χM(g)/n⌋` with its carry identity, and the valuation and degree
 computation were written for this module. They implement the finite cocycle,
-Frobenius and valuation comparisons that the target Markdown names as proof
-obligations. Worker 272 read the cited pages of the registered source
+Frobenius and valuation comparisons that the target Markdown names as
+required of a proof. The cited pages were read in the registered source
 `serre-1979-local-fields`, at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
 Reused published results include the following. The positive carry
-normalization `cyclicClassNormNormalization` is Worker 28's proof, built on
+normalization `cyclicClassNormNormalization` is built on
 the published generic theorem `Langlands.Cohomology.CyclicH2.cocycleSumComparison`.
 The invariant construction and `unramifiedH2Invariant_normRepresentative`
 come from [`UnramifiedInvariant`](UnramifiedInvariant.md). The carry
 cocycle comes from [`CyclicClass`](CyclicClass.md), and the inflation maps
 from [`Cohomology`](Cohomology.md). The valuation identity `ord_zpow` comes
 from `Langlands.LocalField.Normalization.Proof`. These modules are imported
-unchanged; their own Markdown records their authorship.
+unchanged.

@@ -1,6 +1,6 @@
 # Levelwise evaluation of Ext groups and derived morphisms of inverse systems
 
-Author: Worker 61. Built on the Library module
+Built on the Library module
 `Langlands.Cohomology.DivisibleSystem.TowerComplex` (`towerComplex`); through
 it, it uses `DivisibleSystem` (`Langlands.Cohomology.DivisibleSystem`). From
 Mathlib it uses the evaluation functors `evaluation ℕᵒᵖ C`, `homOfLE`,
@@ -140,8 +140,8 @@ Here `K L : CochainComplex (ℕᵒᵖ ⥤ C) ℤ` and `n : ℤ`.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), end of the proof of Proposition 4.10,
-printed p.312 (one-based PDF page 14; Worker 61 read the rendered scanned
-page). There Harris works at the finite levels `m` with the groups
+printed p.312 (one-based PDF page 14; the rendered scanned
+page was read). There Harris works at the finite levels `m` with the groups
 "`T_m(j, ẽ) = Hom_{𝒪/ℓ^m 𝒪[S(ẽ)]}(C^j_m(ẽ)^{H_p}, Hom(𝒪_m[C_p/H_p]^M, 𝓛_m))`",
 shows that the maps "(4.10.3) `T_{m+1}(j, ẽ) → T_m(j, ẽ)`" are surjective and,
 using the finiteness of the right-hand side of the spectral sequence (4.9),

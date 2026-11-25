@@ -45,7 +45,7 @@ published relative algebra `relativeIntegerAlgebra TK TM`.
   `|inertia| = ramificationIdxIn`, which equals the ramification index of the
   unique prime above (`Ideal.ramificationIdxIn_eq_ramificationIdx`). Its
   hypotheses are discharged as follows.
-  - The extension is finite (`NYLL.relativeIntegerStructure`).
+  - The extension is finite (`UniverseZero.relativeIntegerStructure`).
   - It is flat: `O_M` is torsion-free over the Dedekind domain `O_K`.
   - The residue fields are finite, hence perfect, so the residue extension
     is separable.

@@ -1,7 +1,5 @@
 # Inflation and local cup products in positive Tate degrees
 
-Author: Worker 42.
-
 For a tower of fields `K ⊆ L ⊆ M` with `L/K` normal,
 `relativeInflationLinear K L M n` is ordinary cohomological inflation
 along the actual normal restriction `Gal(M/K) → Gal(L/K)` and the

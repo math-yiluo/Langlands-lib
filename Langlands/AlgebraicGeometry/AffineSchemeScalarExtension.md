@@ -34,7 +34,7 @@ irreducible component, equivalently every minimal-prime quotient.
 These constructions permit arbitrary commutative R and B, zero rings,
 nilpotents and zero divisors, with no finite-type, flatness or field
 hypothesis. All schemes and rings are in a common universe because the
-actual Scheme category and pullback have that universe. This unit does
+actual Scheme category and pullback have that universe. This module does
 not assert invariance of pure dimension under scalar extension;
 the finite-type field theorem, nonaffine locality, constructibility
 and filtered fibre descent remain separate obligations.

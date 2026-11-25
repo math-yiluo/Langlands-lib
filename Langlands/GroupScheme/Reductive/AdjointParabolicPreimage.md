@@ -1,8 +1,9 @@
 # Preimages of parabolic subgroups of the adjoint quotient
 
-Author: Worker 5647. This module is part of the joint proof of
-`AdjointParabolicCorrespondenceStatement` with Worker 5600, who proves the other
-clauses and assembles the final proof.
+This module is part of the proof of
+`AdjointParabolicCorrespondenceStatement`. Clause 1 is proved in
+`Reductive/ParabolicContainsCenter`, clause 2 in `Reductive/AdjointParabolicImage`,
+and clause 4 and the final assembly in `Reductive/AdjointParabolicCorrespondenceProof`.
 
 This module proves clauses 3 and 5 of
 `Langlands.GroupScheme.AdjointParabolicCorrespondenceStatement` (Conrad,

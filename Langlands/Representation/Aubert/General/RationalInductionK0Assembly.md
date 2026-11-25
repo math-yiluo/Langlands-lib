@@ -1,6 +1,6 @@
 # Rational induction compatibility from two representation identities
 
-Worker 181. This internal assembly retains the two independent universes
+This internal assembly retains the two independent universes
 `u,v` and has conclusion exactly the unchanged, unapplied published
 `RationalInductionCompatibilityStatement.{u,v}`.
 
@@ -20,7 +20,7 @@ positive simple-reflection comparison for that same system by
 `positiveSimpleReflectionComparison_of_rootLength`; the data also include
 the exact actual standard-Levi Weyl identification.
 
-Worker 1186's `pointSourceIntersectionIdentities` now derives all three
+`pointSourceIntersectionIdentities` (module `RationalPointSourceGeometry`) derives all three
 structural source identities from the target's standard-cocharacter and
 Levi-intersection statements and the proved root comparisons. The imported
 point-source adapters derive the actual geometric decompositions and their
@@ -46,10 +46,9 @@ The literal `rootSet`, `leviIndex`, restricted subgroups, every finite
 standard-Levi index and carrier universe `max (u+1) v` are preserved.
 
 This is an internal composition of existing constructions and proved
-adapters. The source geometry is Worker 1186's work, adapting Worker 1493's
-orbit and shift arguments and Worker 181's root-support proof; the actual
-Levi identification and common geometric adapters include Worker 165's
-contributions, and the induction stages include Worker 438's work.
-The geometric expansion and induced Weyl equation remain separate
-representation-theoretic proof and publication obligations. No imported
+adapters. The source geometry adapts orbit and shift arguments and a
+root-support proof. The geometric expansion and induced Weyl equation are
+separate representation-theoretic statements; the expansion is proved as
+`rationalGeometricK0Expansion` (module `RationalGeometricK0Expansion`), and the
+induced Weyl equation remains a proof obligation. No imported
 target or its paired Markdown is changed.

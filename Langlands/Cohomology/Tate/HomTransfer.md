@@ -1,7 +1,5 @@
 # Relative trace on equivariant homomorphisms
 
-Author: Worker 45.
-
 For ambient representations `P` and `A`, `homTransfer` sends an
 `H`-equivariant map between their restrictions to the ambient equivariant
 map whose value at `x` is

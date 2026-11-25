@@ -1,7 +1,5 @@
 # Uniform nilpotence index of a central character
 
-Author: Worker 19.
-
 This module constructs `Langlands.centralCharacterNilpotenceIndex`, an
 extended natural number attached to a representation and a full-center
 character. It measures the least common power that annihilates the whole

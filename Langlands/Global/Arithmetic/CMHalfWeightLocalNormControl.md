@@ -1,7 +1,5 @@
 # Finite local norm control in CM extensions
 
-Author: Worker 1692.
-
 This internal arithmetic helper supports the finite-local-norm compatibility
 step in the proof of Harris–Taylor, Corollary VII.2.8, printed pp.244–245
 (PDF pp.252–253). Registered source:

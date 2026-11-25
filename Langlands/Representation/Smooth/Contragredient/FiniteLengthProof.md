@@ -1,7 +1,5 @@
 # Finite length of admissible smooth contragredients
 
-Author: Worker 1149.
-
 `Langlands.smoothContragredientFiniteLength` proves the published proposition
 `Langlands.SmoothContragredientFiniteLengthStatement.{uG,uV}`.
 For any topological group with `CompactOpenCofinal G`, the actual smooth

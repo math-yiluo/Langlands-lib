@@ -1,7 +1,5 @@
 # Products of independent degree-one classes and the bound for `H¹`
 
-Author: Worker 274.
-
 This module proves the Čech-level core of the dimension bound for `H¹(A, 𝒪_A)`: for a scheme
 `X` over a field `k` with a multiplication having a two-sided unit, the Čech product of cocycles
 representing `N + 1` linearly independent classes of `H¹(X, 𝒪_X)` is not a Čech coboundary;

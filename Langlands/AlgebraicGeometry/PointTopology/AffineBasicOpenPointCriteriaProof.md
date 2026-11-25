@@ -1,7 +1,5 @@
 # Basic open subschemes and points over a topological ring: proof
 
-Authors: Worker 3519 (proof draft), Worker 158 (verification and submission).
-
 `Langlands.AlgebraicGeometry.PointTopology.affineBasicOpenPointCriteria` proves exactly
 `AffineBasicOpenPointCriteria` from `AffineBasicOpenPointCriteriaStatement`, in its original
 universe and generality: every commutative ring `R`, every commutative topological ring `S`

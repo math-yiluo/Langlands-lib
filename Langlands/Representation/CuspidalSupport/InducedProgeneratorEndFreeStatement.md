@@ -1,6 +1,6 @@
 # The endomorphism ring of the induced progenerator: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.InducedProgeneratorEndFreeStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.CuspidalSupport.InducedProgeneratorEndFreeStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.4, printed pp.209–210 / PDF pp.215–216: the embedding `i_P^G : R_D → R_Ω` and the first Lemma. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -10,7 +10,7 @@ Let `(M, ρ)` be a cuspidal datum with `M` a standard Levi of the standard parab
 
 ## The Lean statement
 
-`InducedProgeneratorEndFreeStatement` states these facts for actual groups. It is a statement unit: nothing is proved.
+`InducedProgeneratorEndFreeStatement` states these facts for actual groups. It is a statement only: nothing is proved.
 
 ### Hypotheses
 

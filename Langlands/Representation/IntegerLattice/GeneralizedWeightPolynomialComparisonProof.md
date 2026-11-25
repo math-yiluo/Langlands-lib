@@ -1,6 +1,6 @@
 # The particular block polynomials give the actual action and coefficients
 
-Worker 88 proves the unchanged Library proposition
+This file proves the Library proposition
 `Langlands.RenardCIIIPolynomialComparisonStatement.{u}` in the theorem
 `Langlands.renardCIIIPolynomialComparison.{u}`. Its three components identify
 the particular published polynomial matrices with the actual restricted
@@ -120,6 +120,7 @@ topological assumption. The finite support and simultaneous witnesses are
 chosen before all coefficient inputs. No uniqueness, minimal truncation,
 basis independence or degree bound is asserted.
 
-This unit proves the published three-clause aggregate. Worker 1214's
-separate occurring-character proof branch and all other Appendix and book
+This file proves the published three-clause aggregate. The
+separate occurring-character proof (`renardCIIIOccurringCharacters` in
+`OccurringCharactersProof`) and all other Appendix and book
 obligations remain outside this result.

@@ -1,6 +1,6 @@
 # Affineness of a supplied quotient under geometric reductivity
 
-Worker 525. This internal derived construction completes the conditional
+This internal derived construction completes the conditional
 affineness argument for the actual supplied homogeneous quotient. Geometric
 reductivity remains an explicit hypothesis. The module does not prove the
 unconditional `ReductiveLinearQuotientAffineStatement`.
@@ -43,6 +43,11 @@ same quotient supplied to the construction.
 The provenance is internal: finite ambient certificates, the polynomial
 invariant unit-ideal argument, effective descent of invariant sections and
 Mathlib's affine basic-open criterion imply the result. This is not a
-transcription from original literature. An independently proved
-geometric-reductivity theorem and the exact reductive linear-quotient target
-adapter remain separate obligations.
+transcription from original literature. The geometric-reductivity theorem
+`IndependentHaboush.reductiveGeometricReductivity`
+(`Langlands.GroupScheme.Reductive.IndependentGeometricReductivityProof`) and the
+adapter to the exact reductive linear-quotient target,
+`reductiveLinearQuotientAffine_of_geometricReductivity`
+(`Langlands.GroupScheme.Reductive.LinearQuotientAffineOfGeometricReductivity`),
+are in separate modules; `reductiveLinearQuotientAffine` in
+`Langlands.GroupScheme.Reductive.LinearQuotientAffineProof` combines them.

@@ -97,10 +97,12 @@ value at `δ`. A proof of statement 5 therefore also proves
 
 ## Use
 
-- The proof task of `SigmaLiftCharacterIdentityStatement` (Task 7816, milestone 2:
-  `IsShintaniLift → IsSigmaLift`) needs statements 4–5 for all test functions, not only for
+- The direction `IsShintaniLift → IsSigmaLift` of `SigmaLiftCharacterIdentityStatement`
+  needs statements 4–5 (`CharacterLocalIntegrabilityStatement` and this statement) for all
+  test functions, not only for
   those supported in the regular set.
-- The input L0 of the B5 comparison in the global part of Task 7340 (a σ-stable irreducible
+- The nonvanishing input of the global comparison for local cyclic base change
+  (`TwistedTraceRegularNonvanishingStatement`: a σ-stable irreducible
   `Π` and a bijective `A` admit `φ` supported in the σ-regular set with
   `trace(Π(φ) ∘ A) ≠ 0`) needs statement 5 together with statement 7
   (`SigmaRegularOpenConullStatement`): statement 5 represents the twisted distribution by a
@@ -111,9 +113,9 @@ value at `δ`. A proof of statement 5 therefore also proves
 
 ## Hypotheses
 
-Statement 5 assumes `CharZero F`. This is the scope fixed by the task, shared with
-`TwistedCharacterRegularValuesStatement` and the other base-change statements of the
-programme. In this scope the proof named here is Clozel's Theorem 1 with Arthur–Clozel's
+Statement 5 assumes `CharZero F`. This scope is shared with
+`TwistedCharacterRegularValuesStatement` and other base-change statements of the
+Library. In this scope the proof named here is Clozel's Theorem 1 with Arthur–Clozel's
 Proposition 2.2, both in characteristic zero, for a cyclic field extension `E/F`, together
 with the reduction of HL II.2.8 for cyclic algebras (see "Cyclic algebras"). The two
 regularity conventions also coincide there. The Library's `IsSigmaRegular σ l δ` asks for an

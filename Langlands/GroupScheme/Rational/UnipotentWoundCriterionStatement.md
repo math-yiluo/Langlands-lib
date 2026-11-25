@@ -1,7 +1,5 @@
 # The central additive-subgroup criterion for unipotent woundness
 
-Author: Worker 1478.
-
 `UnipotentWoundCriterionStatement.{u}` is a Prop-valued all-field analogue
 of the equivalence of conditions (1) and (2) in Conrad–Gabber–Prasad,
 *Pseudo-reductive groups*, second edition (2015), Proposition B.3.2,

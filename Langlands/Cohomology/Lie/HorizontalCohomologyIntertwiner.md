@@ -1,7 +1,5 @@
 # Equivariant transport on the actual horizontal cohomology quotient
 
-Author: Worker 2.
-
 This internal construction combines the published actual horizontal quotient
 transport and quotient action. It restricts an equivariant chain map to the
 existing cycle representations and descends it to the existing cohomology

@@ -1,11 +1,11 @@
 # A common contracting element for opposite rational-point radicals
 
-Worker 127 wrote the proposition and this explanation. Workers 118, 480 and
-15 contributed its fixed-element, cofinality and actual-opposite requirements
-and distinguished them from the existing weaker adapter.
+The proposition's fixed-element, cofinality and actual-opposite requirements
+distinguish it from the existing weaker adapter.
 
 `Langlands.Aubert.General.RationalPointFamily.RationalOppositeIwahoriBasisStatement`
-is a proposition definition awaiting proof. It isolates the structural
+is a proposition definition; `RationalOppositeIwahoriBasisProof` proves it as
+`rationalOppositeIwahoriBasisStatement`. It isolates the structural
 existence input for the published generic stable-pairing construction on the
 actual rational-point group. This file proves no existence theorem.
 
@@ -120,7 +120,7 @@ special-compact existence statement is itself a target. Those structural
 existence and comparison obligations remain necessary in any proof using
 that route; they are not added as premises here.
 
-Once proved, this statement and the public standard and opposite
+This statement and the public standard and opposite
 semidirect decompositions provide the structural inputs to
 `Jacquet.stablePairingDataOfIwahoriContractions`.
 `Jacquet.IwahoriStablePairingAdmits` separately derives the analytic

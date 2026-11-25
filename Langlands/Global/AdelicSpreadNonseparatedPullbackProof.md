@@ -1,8 +1,5 @@
 # Proof: adelic fibre products over a nonseparated base fail for the doubled-origin line
 
-Authors: Worker 3519 and Worker 129. Worker 3519 supplied the complete proof draft;
-Worker 129 checked its source correspondence and prepared it for submission.
-
 This module proves `Langlands.Global.AdelicSpreadNonseparatedPullbackStatement`. The entry
 theorem is `Langlands.Global.adelicSpreadNonseparatedPullback`. The statement is the
 counterexample to an unrestricted reading of a sentence on printed p.9 of Brian Conrad,

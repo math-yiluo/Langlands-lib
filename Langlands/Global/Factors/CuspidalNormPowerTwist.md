@@ -24,5 +24,4 @@ This supplies the local scalar in the trace twist comparison.
 Jacquet–Shalika II, Theorem 4.2, printed pp. 806–807 (PDF pp. 31–32),
 displays (1) and (4), uses the real norm power that normalizes unitarity.
 Removing the phase too aligns the twist with the split-centre hypothesis of
-the Library's pair pole statement. The proof is adapted from Worker 3657’s
-shared Task 6446 draft.
+the Library's pair pole statement.

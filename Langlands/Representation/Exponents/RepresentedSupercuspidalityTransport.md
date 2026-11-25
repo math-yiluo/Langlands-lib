@@ -1,6 +1,6 @@
 # Transport and finite filtrations of represented supercuspidal objects
 
-Author: Worker 1452. Module
+Module
 `Langlands.Representation.Exponents.RepresentedSupercuspidalityTransport`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 

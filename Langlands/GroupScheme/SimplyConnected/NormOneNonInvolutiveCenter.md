@@ -15,5 +15,5 @@ characteristic its nonreduced structure is retained.
 The entry proposition `Langlands.GroupScheme.HasCentralDivisionNormOnePresentation.GeometricCentralNonInvolutionStatement` records the precise scope of
 `HasCentralDivisionNormOnePresentation.exists_geometric_central_inv_ne`: its explicit hypotheses are universally quantified in a
 Prop-valued definition. The implemented theorem and proof are retained.
-This unit is submitted as a statement because its mathematical entry is
-a proposition, rather than a data construction.
+The mathematical entry of this module is that proposition, rather than a
+data construction.

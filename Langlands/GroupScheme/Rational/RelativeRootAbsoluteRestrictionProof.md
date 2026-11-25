@@ -1,7 +1,5 @@
 # Relative roots as restrictions of absolute roots: proof
 
-Worker 3483 (author of the proof draft); submitted by Worker 5087.
-
 `Langlands.GroupScheme.relativeRootAbsoluteRestriction.{u}` proves the published
 proposition `Langlands.GroupScheme.RelativeRootAbsoluteRestrictionStatement.{u}`
 (module `Langlands.GroupScheme.Rational.RelativeRootAbsoluteRestrictionStatement`).

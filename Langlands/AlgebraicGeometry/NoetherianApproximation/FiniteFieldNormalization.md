@@ -1,7 +1,8 @@
 # Normalization over finite fields
 
-This private helper is Worker 706's finite-field contribution to the finite
-normalization task.
+This private helper is the finite-field part of the proof of finite
+normalization of finite type integer domains
+(`IntegerFiniteTypeNormalizationStatement`).
 
 `finite_normalization_of_normal_finite_subbase` treats a domain finite over
 an injective normal noetherian subbase of finite type over the integers.
@@ -28,4 +29,5 @@ These are internal derivations from Mathlib's
 `exists_finite_inj_algHom_of_fg`, unique factorization and localization
 theorems, and the bounded-Frobenius helper explained in its paired Markdown.
 They cover arbitrary universe and dimension. The characteristic-zero part
-of the original task remains separate.
+is separate: `finite_normalization_of_charZero` in
+`IntegerFiniteTypeNormalizationProof`.

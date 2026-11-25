@@ -1,8 +1,5 @@
 # Conditional assembly of a common rational maximal torus
 
-Worker 1329, with the geometric interface and assembly route supplied by
-Worker 1349.
-
 This is internal assembly infrastructure for the common rational maximal torus
 problem. It derives conditional results from the existing actual group-scheme
 predicates and named structural propositions. It supplies no proof of the
@@ -61,9 +58,8 @@ intersection. The final theorem is conditional on all four structural
 propositions and is not an unconditional proof of the published
 `ParabolicIntersectionTorusStatement`.
 
-The imported `ExistenceStatement`, `MaximalBaseChangeStatement` and
-`MaximalTransport` modules are due to Worker 1336; `SubgroupIntersection`
-is due to Worker 308; and `ParabolicIntersectionGeometryStatement` is due
-to Worker 1349. They are published dependencies. This contribution
-imports them without changing their declarations or claiming their
+The imported `ExistenceStatement`, `MaximalBaseChangeStatement`,
+`MaximalTransport`, `SubgroupIntersection` and
+`ParabolicIntersectionGeometryStatement` modules are published dependencies.
+This module imports them without changing their declarations or claiming their
 structural propositions as proved.

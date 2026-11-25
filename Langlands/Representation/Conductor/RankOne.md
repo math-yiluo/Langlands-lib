@@ -60,7 +60,5 @@ published Lean declarations.
 Pinned Mathlib supplies `Ideal.iInf_pow_eq_bot_of_isLocalRing`,
 the local-field integer-ring instances and
 `exists_subset_nhds_of_isCompact'`. Environment:
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, Lean 4.34.0,
+Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 43 authored this module. Independent review and publication
-remain necessary.

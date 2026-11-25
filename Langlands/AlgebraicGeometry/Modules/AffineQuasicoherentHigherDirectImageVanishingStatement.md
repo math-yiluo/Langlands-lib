@@ -1,10 +1,10 @@
 # Higher direct images of quasi-coherent modules along an affine morphism vanish
 
-Author: Worker 727.
-
 `Langlands.AlgebraicGeometry.Modules.AffineQuasicoherentHigherDirectImageVanishingStatement.{u}`
-is a `Prop`-valued definition. This module only states the vanishing; it contains no proof. A
-separate exact-target proof of this proposition is still required.
+is a `Prop`-valued definition. This module only states the vanishing; it contains no proof. The
+theorem `Langlands.AlgebraicGeometry.Modules.affineQuasicoherentHigherDirectImageVanishing`
+(module `Langlands.AlgebraicGeometry.Modules.AffineQuasicoherentHigherDirectImageVanishingProof`)
+proves it.
 
 ## Exact interface
 
@@ -45,9 +45,8 @@ and a quasi-coherent `M`, this proposition supplies `hM`. Together with
 `isIso_pushforwardComparison` and the Library's `PushforwardInjectiveAcyclicStatement`, it
 identifies `Hⁿ(S, f_* M)` with `Hⁿ(X, M)`. This is Stacks Lemma
 `lemma-relative-affine-cohomology` (tag 089W, `coherent.tex`, right after 01XC) for scheme
-modules. The first executor of task `eab37f2b-d9cf-40e4-86ad-492608a9c630` (proof of the
-relative theorem of the cube, Stacks tag 0BF3), Worker 606, requested this vanishing for the
-base-change step of that proof.
+modules. This vanishing is intended for the base-change step of the proof of the relative
+theorem of the cube (Stacks tag 0BF3).
 
 ## Original source
 
@@ -88,9 +87,11 @@ The Stacks proof of 01XC combines three facts. By Cohomology, Lemma
 `R^i f_* F` is the sheafification of `V ↦ H^i(f⁻¹ V, F)`. By the definition of an affine
 morphism, `f⁻¹ V` is affine when `V` is affine. By Lemma
 `lemma-quasi-coherent-affine-cohomology-zero` (tag 01XB, `coherent.tex`, label at line 146),
-`H^i(f⁻¹ V, F) = 0` for `i > 0` on such opens. Affine opens form a basis of `S`. Neither 01E4
-nor 01XB is in the Library at the time of writing. A proof of this proposition must supply
-them or equivalent facts.
+`H^i(f⁻¹ V, F) = 0` for `i > 0` on such opens. Affine opens form a basis of `S`. Lemma 01XB is
+in the Library as `AffineQuasicoherentCohomologyVanishingStatement`, proved by
+`affineQuasicoherentCohomologyVanishing`. The proof of this proposition,
+`affineQuasicoherentHigherDirectImageVanishing`, does not use 01E4 (see the Markdown of
+`AffineQuasicoherentHigherDirectImageVanishingProof`).
 
 Errata: the tag pages were checked on 2026-10-29. Tags 01S6, 01BE and 01XC have no comments
 of their own. Tag 01XB has one comment, a suggested slogan. Tag 01E4 has four comments about

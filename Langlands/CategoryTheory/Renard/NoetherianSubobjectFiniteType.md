@@ -1,6 +1,6 @@
 # Renard A.I.3: Noetherianity and finite type of all subobjects, proof
 
-This proof unit proves the exact published
+This proof module proves the exact published
 `Langlands.Renard.NoetherianSubobjectFiniteTypeStatement C` from
 `Langlands.CategoryTheory.Renard.NoetherianSubobjectFiniteTypeStatements`.
 The main theorem is
@@ -15,7 +15,7 @@ in namespace `Langlands.Renard`. The statement says that, when
 `IsNoetherianObject X` exactly when `IsFiniteTypeObject (P : C)` holds for
 every `P : Subobject X`, top included. The published statement pair and the
 imported definition pair `Langlands.CategoryTheory.RenardFiniteType` are
-unchanged. Worker 937 wrote the Lean proof and this Markdown.
+unchanged.
 
 ## Source
 
@@ -148,16 +148,14 @@ The imports are the published statement module and
 instance. The general Noetherian criteria, the finite-subcover
 characterization, the compact-element comparison, the actual module
 examples and the Noetherian-category and ring comparisons remain separate
-units. This proof neither closes Appendix A nor the whole-book program.
+results. This proof neither closes Appendix A nor the whole-book program.
 
 ## Development checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, draft and workspace
-checks compiled the module with no diagnostics. Inspection of
+Development checks compiled the module with no diagnostics. Inspection of
 `Langlands.Renard.noetherianSubobjectFiniteType` reported a theorem with
 universe parameters `u`, `v` and only the axioms `propext`,
 `Classical.choice` and `Quot.sound`. A private probe compiled cleanly. It
-used the theorem at the fully unfolded statement body from the task
-objective. It also instantiated the theorem at object/Hom universe pairs
-`(5, 1)` and `(0, 4)` and at the category `Type 2`. These development
-checks are not acceptance or publication evidence.
+used the theorem at the fully unfolded statement body. It also
+instantiated the theorem at object/Hom universe pairs `(5, 1)` and
+`(0, 4)` and at the category `Type 2`.

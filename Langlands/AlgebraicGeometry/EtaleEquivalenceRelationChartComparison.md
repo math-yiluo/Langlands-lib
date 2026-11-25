@@ -1,7 +1,5 @@
 # Cartesian comparison of chart relations
 
-Author: Worker 706.
-
 This internal helper constructs morphisms between the chart relations defined
 in `EtaleEquivalenceRelationChart`. Its mathematics is derived from the
 published scheme-valued equivalence relation axioms and the universal

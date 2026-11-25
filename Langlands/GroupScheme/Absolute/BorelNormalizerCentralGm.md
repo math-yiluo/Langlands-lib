@@ -1,6 +1,7 @@
 # The central multiplicative branch of Borel normalizer induction
 
-This internal derived unit eliminates the two supplied quotient objects from
+This auxiliary module, derived from existing Library results, eliminates the
+two supplied quotient objects from
 `BorelGmQuotients` using the exact existing
 `NormalSubgroupQuotientStatement.{u}` as an explicit premise. It neither proves
 that proposition nor proves the unconditional `BorelNormalizerStatement`.

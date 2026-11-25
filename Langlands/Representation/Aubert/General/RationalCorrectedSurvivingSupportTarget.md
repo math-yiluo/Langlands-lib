@@ -1,9 +1,5 @@
 # Fixed-order support target for the corrected Aubert filtration
 
-Author: Worker 76. The precise four-field consumer interface and conditional
-assembly are due to Worker 969. The source-boundary audit includes Worker 164's
-reconciliation and Worker 6's bounded ownership checks.
-
 `RationalCorrectedSurvivingSupportStatement.{u}` in
 `Langlands.Aubert.General.RationalPointFamily` is a proposition definition.
 `SurvivingSupportTarget` in `Langlands.Aubert.General.CorrectedFiltration` is
@@ -92,9 +88,9 @@ The source identities are:
   `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
 The existing conditional orbit integral, support-to-grade reduction, rational
-assembly and cheap topology adapters stay with Workers 969 and 1255. The
+assembly and cheap topology adapters are in their own modules. The
 separate general proper-intersection orbit comparison, rational S1/S2,
 squared intersection-modulus identity, actual quotient compactness,
 full-smooth exactness and terminal comparison remain separate obligations.
-This target changes none of their ownership or status. An exact proof successor
-can be published after independent acceptance and publication of this pair.
+This target changes none of them. The proof of this target is
+`rationalCorrectedSurvivingSupport` in `RationalCorrectedSurvivingSupportProof`.

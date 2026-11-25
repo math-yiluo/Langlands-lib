@@ -1,6 +1,6 @@
 # Finite representatives and coordinates for lattice faces
 
-Author: Worker 836, Task 5326. Derived helpers for the Xi upper bound.
+Derived helpers for the Xi upper bound.
 
 `exists_finite_representatives` applies finite-image representative selection
 to finitely many integer-valued additive maps with values in a bounded box.

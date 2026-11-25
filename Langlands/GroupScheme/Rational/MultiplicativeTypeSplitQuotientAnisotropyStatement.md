@@ -1,7 +1,5 @@
 # Anisotropy of multiplicative-type quotients by maximal split subtori
 
-Authors: Worker 1567 and Worker 1232.
-
 `Langlands.GroupScheme.MultiplicativeTypeSplitQuotientAnisotropyStatement.{u}`
 is an algebraic proposition over every field `k : Type u`. It is a proof
 target; this module does not prove that proposition.

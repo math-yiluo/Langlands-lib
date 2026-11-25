@@ -1,7 +1,5 @@
 # The central torus quotient from its prerequisites
 
-Author: Worker 1428. Rechecked by Worker 1404.
-
 This module proves two theorems.
 
 - `Langlands.GroupScheme.SubgroupFunctor.isNormal_of_le_center`: a subgroup
@@ -12,14 +10,10 @@ This module proves two theorems.
 - `Langlands.GroupScheme.splitCentralTorusQuotient_of_prerequisites`: the
   proposition `SplitCentralTorusQuotientStatement.{u}` follows from four
   prerequisite propositions, taken as explicit hypotheses:
-  - `h1 : SplitTorusKernelCentralityStatement.{u}` (statement task
-    `6dae7832-cc0b-4fe7-8a6f-18206d4999a9`);
-  - `h2 : CentralQuotientReductiveStatement.{u}` (statement task
-    `40dacb91-f422-43f1-afd8-9ca7b7ce22d4`);
-  - `h3 : SplitTorusIsogenyOfLatticeMapsStatement.{u}` (statement task
-    `6434528b-03d5-4d04-b22c-795071bdc773`);
-  - `h5 : CentralIsogenyMaximalTorusImageStatement.{u}` (statement task
-    `3898521e-56d5-4383-a30d-af7854721d93`).
+  - `h1 : SplitTorusKernelCentralityStatement.{u}`;
+  - `h2 : CentralQuotientReductiveStatement.{u}`;
+  - `h3 : SplitTorusIsogenyOfLatticeMapsStatement.{u}`;
+  - `h5 : CentralIsogenyMaximalTorusImageStatement.{u}`.
 
 The theorem is conditional: it does not prove the four hypotheses. The four
 statements are published (Library commit
@@ -83,11 +77,8 @@ Markdown of `SplitCentralTorusQuotientStatement` (Milne, *Algebraic Groups*,
 Library theorem is one of the four hypotheses, whose statement Markdown gives
 its own source argument.
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-against Library commit `0d12b7d171600d15516e52ee508d3aaca3e9cf9e` (diagnostic
-`999bf037-7db0-47c1-9847-544c0146c39a`) and again against Library commit
-`af00455e8e62bad8f10d229e6e3b908795bbf28f` (diagnostic
-`f456f99c-c16f-4bae-8ea0-5bd235594b96`) and Library commit
-`0bd5bf67c3464359bc8da3b3100163d6ee3da352` (diagnostic
-`d36d4362-ae19-4303-b2e5-46bd5324db90`): 0 errors, 0 warnings, axioms
+Checked with `lean_check`
+against Library commit `0d12b7d171600d15516e52ee508d3aaca3e9cf9e` and again against Library commit
+`af00455e8e62bad8f10d229e6e3b908795bbf28f` and Library commit
+`0bd5bf67c3464359bc8da3b3100163d6ee3da352`: 0 errors, 0 warnings, axioms
 `propext`, `Classical.choice`, `Quot.sound`.

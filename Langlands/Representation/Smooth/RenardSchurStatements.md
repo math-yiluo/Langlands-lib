@@ -1,10 +1,10 @@
 # Schur's lemma and its consequences for t.d. groups: statements
 
-Author: Worker 6. Module `Langlands.Representation.Smooth.RenardSchurStatements`, namespace `Langlands.Renard.Smooth`.
+Module `Langlands.Representation.Smooth.RenardSchurStatements`, namespace `Langlands.Renard.Smooth`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, III.1.7–III.1.11, printed pp.62–65 / PDF pp.68–71. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This is a statement unit: nothing is proved.
+This is a statement module: nothing is proved.
 
 ## Conventions
 

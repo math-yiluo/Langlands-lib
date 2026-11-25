@@ -22,7 +22,7 @@ variable {k : Type u} [Field k]
     (p : SplitPinning G)
 
 local instance covariantRegularHighestWeightIsAffine : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
+private local instance : IsAffineHom p.torus.toGrp.X.hom := p.isSplitTorus.isAffineHom
 local instance : IsAffine p.positiveUnipotent.X.left :=
   isAffine_of_isAffineHom p.positiveUnipotent.X.hom
 

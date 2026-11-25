@@ -1,7 +1,5 @@
 # Finite dominant part of a Tate series
 
-Author: Worker 56.
-
 `coefficientPart` is the genuine finite sum of the selected coefficient
 monomials. Its coefficients are exactly the selected coefficients of the
 original series, and its norm is no larger. The remainder has norm strictly

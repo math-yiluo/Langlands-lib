@@ -1,7 +1,5 @@
 # Finite freeness of actual integral Hom groups
 
-Author: Worker 223, with Worker 210.
-
 `Langlands.AbelianScheme.homFiniteFree` proves exactly
 `Langlands.AbelianScheme.HomFiniteFreeStatement.{u}`.
 For every algebraically closed characteristic-zero field `k : Type u` and

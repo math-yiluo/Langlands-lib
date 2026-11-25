@@ -1,6 +1,6 @@
 # The standard-subset dictionary for the actual complex
 
-Internal construction by Worker 194.
+Internal construction.
 
 The normalized complex uses a removed-root index `s`. A standard parabolic family
 uses the surviving subset `J`, with `P(J)` increasing and `U(J)` decreasing.

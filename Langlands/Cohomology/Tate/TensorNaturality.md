@@ -1,7 +1,5 @@
 # Naturality of tensor dimension shifts
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 A map of coefficient short exact sequences, together with a morphism in
 the other tensor coefficient, induces a map of their tensor sequences.
 The two commutative squares follow from functoriality of the actual

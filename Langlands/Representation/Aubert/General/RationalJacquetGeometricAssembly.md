@@ -1,6 +1,6 @@
 # Rational Jacquet compatibility from the rational geometric expansion
 
-Worker 165. This internal assembly proves
+This internal assembly proves
 `RationalGeometricK0ExpansionStatement.{u,v} →
 RationalJacquetCompatibilityStatement.{u,v}` with independent universes.
 `RationalJacquetGeometricAssemblyStatement` names this implication. The actual
@@ -52,9 +52,11 @@ remain covered.
 
 The provenance is internal composition of the two imported published modules
 and their declaration-level dependencies described above. This assembly uses
-the geometric lemma only through the explicit, still unproved
+the geometric lemma only through the explicit
 `RationalGeometricK0ExpansionStatement` premise. It introduces no Langlands
 classification, character-independence, adjointness or cuspidal-support
-premise. No external literature assertion is made. Proving that geometric
-expansion, and hence obtaining an unconditional proof of the host task's
-target, remains a separate obligation.
+premise. No external literature assertion is made. That geometric expansion
+is proved as `rationalGeometricK0Expansion` (module
+`RationalGeometricK0Expansion`), and `rationalJacquetCompatibility` (module
+`RationalJacquetCompatibilityProof`) combines the two into an unconditional
+proof of the Jacquet target.

@@ -62,7 +62,8 @@ from the full-point unique-lifting theorem. The pullback is in types of the
 functor's actual universe, with no identification of `u`, `v`, and `uL`.
 
 The argument uses `FieldValuedPoints`, `AffinoidFieldCharacters`,
-`GlobalChartSourceMaps`, Worker 659's faithful local representatives and
+`GlobalChartSourceMaps`, the faithful local representatives of
+`FieldPointFaithfulRepresentatives` and
 `FieldPointRepresentativePointPushout`, and
 `GeneralizedAffinoid.FiniteBanachPushout.Statement`. It is a supporting result:
 the two algebraic comparison statements and the finite original chart-pair

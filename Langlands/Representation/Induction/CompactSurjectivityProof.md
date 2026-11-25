@@ -1,10 +1,9 @@
 # Surjectivity of compact induction from a closed subgroup
 
-Worker 440 proves the published
+This module proves the published
 `Langlands.Induction.CompactInductionSurjectivityStatement.{uG,uV,uW}` as
 `Langlands.Induction.compactInductionSurjectivity`.
-The implementation follows the smooth-lift and quotient-cutoff route specified
-by Worker 182. The statement and every imported Lean/Markdown pair are unchanged.
+The implementation follows the smooth-lift and quotient-cutoff route. The statement and every imported Lean/Markdown pair are unchanged.
 
 ## Exact target and conventions
 
@@ -134,10 +133,9 @@ The proof referred to in the source's reference [1], chapter I, was not used.
 
 ## Development checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`), the module
+With Lean 4.34.0 and
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, the module
 compiled with zero errors and warnings. A Lake-build declaration inspection
 reported a theorem with exactly the three universe parameters `uG`, `uV`,
 `uW`, and only `propext`, `Classical.choice`, and `Quot.sound` as axioms.
-These are development checks; independent semantic review, official
-exact-target validation, and Library publication are separate requirements.
+These are development checks.

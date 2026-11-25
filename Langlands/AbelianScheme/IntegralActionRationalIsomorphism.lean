@@ -37,17 +37,17 @@ def baseChange (d : EquivariantRationalIsoIntegralData a a' e) (c : S' ⟶ S) :
   toIntegralIsoData := RationalIsoIntegralData.baseChange d.toIntegralIsoData c
   hom_intertwines := by
     intro x
-    change (AbelianScheme.baseChange c).map (a x) ≫
+    change (AbelianScheme.baseChange c).map (a x).asHom ≫
         (AbelianScheme.baseChange c).map d.hom =
       (AbelianScheme.baseChange c).map d.hom ≫
-        (AbelianScheme.baseChange c).map (a' x)
+        (AbelianScheme.baseChange c).map (a' x).asHom
     rw [← Functor.map_comp, ← Functor.map_comp, d.hom_intertwines]
   inv_intertwines := by
     intro x
-    change (AbelianScheme.baseChange c).map (a' x) ≫
+    change (AbelianScheme.baseChange c).map (a' x).asHom ≫
         (AbelianScheme.baseChange c).map d.inv =
       (AbelianScheme.baseChange c).map d.inv ≫
-        (AbelianScheme.baseChange c).map (a x)
+        (AbelianScheme.baseChange c).map (a x).asHom
     rw [← Functor.map_comp, ← Functor.map_comp, d.inv_intertwines]
 
 @[simp]
@@ -86,13 +86,13 @@ def integralActionRationalIsoData
   Rationalization.equivariantIntegralIsoData a a' b
     (RationalAlgebraAction.underlyingIso e) (by
       intro x
-      change comp0 B B C (homToHom0 (a x)) (RationalAlgebraAction.hom0 e.hom) =
-        comp0 B C C (RationalAlgebraAction.hom0 e.hom) (homToHom0 (a' x))
+      change comp0 B B C (homToHom0 (a x).asHom) (RationalAlgebraAction.hom0 e.hom) =
+        comp0 B C C (RationalAlgebraAction.hom0 e.hom) (homToHom0 (a' x).asHom)
       have h := RationalAlgebraAction.intertwines e.hom (x : A)
-      change comp0 B B C (integralActionRationalExtension B b a (x : A))
+      change comp0 B B C (integralActionRationalExtension B b a (x : A)).asHom
           (RationalAlgebraAction.hom0 e.hom) =
         comp0 B C C (RationalAlgebraAction.hom0 e.hom)
-          (integralActionRationalExtension C b a' (x : A)) at h
+          (integralActionRationalExtension C b a' (x : A)).asHom at h
       simpa only [integralActionRationalExtension_coe] using h)
 
 end RationalExtension

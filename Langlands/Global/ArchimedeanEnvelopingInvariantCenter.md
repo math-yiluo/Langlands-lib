@@ -1,6 +1,6 @@
 # Full-group invariant enveloping elements are central
 
-Author: Worker 94. Namespace: `Langlands.Global.ArchimedeanGL`.
+Namespace: `Langlands.Global.ArchimedeanGL`.
 
 For every `K : Type u` with `Field K` and `NumberField K`, and every natural
 rank `n`, this module constructs the complex algebra inclusion

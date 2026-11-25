@@ -1,7 +1,5 @@
 # Cocycles whose sections have coordinates linear in a fixed family
 
-Author: Worker 1412.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelStatement`
 (see [AffineFiniteTypeCocycleModelProof](AffineFiniteTypeCocycleModelProof.md)).

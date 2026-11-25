@@ -1,7 +1,5 @@
 # Lifts of near-identity automorphisms to compact quasi-étale spaces
 
-Author: Worker 57.
-
 This module proves `quasiEtaleAutomorphismLift`, a proof of the Library
 statement `QuasiEtaleAutomorphismLiftStatement`. That statement is the
 existence half of Key Lemma 7.2 of Berkovich, *Vanishing cycles for

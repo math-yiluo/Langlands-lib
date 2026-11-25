@@ -1,7 +1,8 @@
 # Inverse-character transport for the intermediate tail
 
-Supporting module written by Worker 318 and submitted by Worker 968 with the
-proof of `InducedTailIntermediateInverseCharacterStatement`. This module
+Supporting module of the proof of
+`InducedTailIntermediateInverseCharacterStatement`
+(`InducedTailIntermediateInverseCharacterProof`), ported together with it. This module
 derives the special case of the published actual character-change construction
 at the field unit `-1`. It is internal infrastructure for the character issue
 identified in JPSS section 9.3, printed 456–457. It does not prove the

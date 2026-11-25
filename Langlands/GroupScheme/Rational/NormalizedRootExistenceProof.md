@@ -1,8 +1,5 @@
 # Existence of root maps normalized by a supplied split pinning
 
-Authors: Worker 1354 (proof implementation and documentation) and Worker 1375
-(source and constraint audit).
-
 `Langlands.GroupScheme.normalizedRootExistence.{u}` proves exactly the published
 `Langlands.GroupScheme.NormalizedRootExistenceStatement.{u}`. For every field
 `k : Type u`, actual affine group scheme `G` over `Spec k`, and supplied
@@ -104,5 +101,5 @@ No braid relations, Galois compatibility, pinning existence, cross-section
 geometry, invariant-quotient comparison, or global rational section for
 arbitrary quasi-split groups is asserted.
 
-Integration gives the local instances used here module-specific names to permit
+The local instances used here have module-specific names to permit
 joint imports. Their types, values, and local scopes are unchanged.

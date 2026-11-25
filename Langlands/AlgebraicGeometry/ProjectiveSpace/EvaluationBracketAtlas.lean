@@ -121,7 +121,7 @@ lemma mat_restrict {V V' : X.Opens} (hV : V ≤ C.W) (h : V' ≤ V) (σ : Fin M 
   change X.presheaf.map (homOfLE h).op (C.coef hV (σ l) (C.eV hV k)) = _
   rw [coef_restrict, eV, eV, mres_mres]
 
-variable {n : ℕ} (τ : ∀ r, (Q r).tensorPow n ≅ 𝟙_ X.Modules)
+variable {n : ℕ} (τ : ∀ r, (Q r).tensorPowFLT n ≅ 𝟙_ X.Modules)
 
 /-- The powered bracket coordinate of a label tuple: the `n`-th power of the determinant of
 the coefficient matrix times the gauges of the generators at the labels. -/
@@ -238,7 +238,7 @@ variable {ev M} in
 /-- Bracket charts covering the scheme, with their powered bracket coordinates indexed through
 an enumeration of the label tuples, form a coordinate atlas. -/
 theorem isAtlas {ι : Type*} (chart : ι → Chart ev M) (hcov : ∀ x, ∃ i, x ∈ (chart i).W)
-    {n : ℕ} (τ : ∀ r, (Q r).tensorPow n ≅ 𝟙_ X.Modules) {m : ℕ}
+    {n : ℕ} (τ : ∀ r, (Q r).tensorPowFLT n ≅ 𝟙_ X.Modules) {m : ℕ}
     (eqv : Fin (m + 1) ≃ (Fin M → Λ)) :
     CoordinateAtlas.IsAtlas (V := fun i => (chart i).W)
       (fun i a => (chart i).coord τ (eqv a)) where

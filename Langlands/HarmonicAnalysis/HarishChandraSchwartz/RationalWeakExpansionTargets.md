@@ -1,14 +1,12 @@
 # Targets: the weighted weak-constant-term expansion (Waldspurger V.1.1, V.2.3)
 
-Author: Worker 131, task `b2eba110-082e-4b07-9076-f64b90cd0dc3` (Task 7454, revision 1).
-Regularity binder correction: Worker 986, task `f27f47c6-b5d0-4d3d-888a-4b73f31c1d94` (Task 7826).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeakExpansionTargets`,
 namespace `Langlands.HarishChandraSchwartz.WeakExpansion`.
 
 ## Purpose
 
-This module states the four targets of Task 7454 as named Prop-valued definitions:
+This module states the four targets of the weighted weak-constant-term expansion (Waldspurger
+V.1.1, V.2.3) as named Prop-valued definitions:
 
 - `WeightedCRegularityBorelStatement` (Corollary V.2.3; replaces `WeightedCRegularityStatement`);
 - `WeightedWeakExpansionStatement` (Proposition V.1.1, in the weighted form used on p.304);
@@ -16,13 +14,13 @@ This module states the four targets of Task 7454 as named Prop-valued definition
   specializations of fixed polynomial (algebraic) lower families);
 - `WeightedPacketIdentityStatement` (the packet identity of pp.303–304).
 
-It proves none of them. The definitions they use are in the earlier Task 7454 units:
+It proves none of them. The definitions they use are in the modules
 `RationalWeakExpansionWeyl` and `RationalWeakExpansionLowerGeometry` (`W(M'|G|M)`,
 representatives, `s·M`, `M' ∩ s·P`), `RationalWeakExpansionAuxiliaryParabolics`,
 `DynamicCommonLeviSquaredModulus`, `DynamicInducedOrbitWavePacket` (sections, coefficients and
 wave packets for the dynamic parabolic of a cocharacter), `DynamicOrbitPlancherelWeight` and
 `RationalWeakExpansionLowerOrbit` (`sπ`, `sO`, `µ^{M'}`, `χ ↦ sχ`), `RationalWeakExpansionCFamily`
-(`c` and `c̃`), and Task 7452 (`rationalOrbitWeakConstantTerm`).
+(`c` and `c̃`), and `RationalOrbitPositiveConstantTerm` (`rationalOrbitWeakConstantTerm`).
 
 ## Data (the common hypotheses of the targets)
 
@@ -31,12 +29,12 @@ wave packets for the dynamic parabolic of a cocharacter), `DynamicOrbitPlanchere
   `i` a maximal split torus (`hi`), `ν` generic (`hν`).
 - `I, I'` finite sets of simple roots; `ζ` (`hζ`) and `ζ'` (`hζ'`) standard cocharacters of `I`
   and `I'`. Properness of `I'` is the hypothesis `∃ α, α ∉ I'` of each target.
-- The data of `rationalInducedOrbitCoefficientMap` and of Task 7452: `K`, `hKc`, `hPK` (Iwasawa
+- The data of `rationalInducedOrbitCoefficientMap` and of `rationalOrbitWeakConstantTerm`: `K`, `hKc`, `hPK` (Iwasawa
   pair for `P_∅`), `π` irreducible admissible on `M_I(F)`, with
   `C_M = rationalLeviSplitCenter I sc` for a split component `sc` (`hs`, `hindex`) and a Haar
   measure `μ` on `M_I(F)/C_M`, exactly as in the published VI.3.1 targets
   (`StandardLeviPlancherelWavePacketSchwartz`). `hA` is the compatible split component of `M'`
-  used by the weak constant term of Task 7452.
+  used by the weak constant term `rationalOrbitWeakConstantTerm`.
 - **Square integrability of `π` modulo `C_M = A_M(F)` is a premise of all four targets**, as in
   the source, where V.1 (printed p.287) starts from "`(ω_0, E_0) ∈ E_2(M)`" and Corollary V.2.3 and
   the decomposition of p.304 keep this base point. In `WeightedWeakExpansionStatement` and
@@ -53,7 +51,7 @@ wave packets for the dynamic parabolic of a cocharacter), `DynamicOrbitPlanchere
   `PG : DensityPackage i ζ hRefl hCST hG (π ∘ e)` (its fields are literally those hypotheses), with
   the two global statements `hRefl` and `hCST`. The weight `Wπ` in the targets is
   `standardLeviPlancherelWeight` applied to the fields of `PG`.
-- `R : Representatives`, the representative system of `W(M'|G|M)` (Worker 614), and for each `s`
+- `R : Representatives`, the representative system of `W(M'|G|M)` (module `RationalWeakExpansionWeyl`), and for each `s`
   an explicit lower density package `PM s : LowerDensityPackage` for `M'`, `s·M`, `sπ`. The data of
   `µ^G` do not supply these packages (see `RationalWeakExpansionLowerOrbit`).
 
@@ -143,7 +141,7 @@ scheme of `I` (`lowerAmbient_isConnectedReductive`).
    `O_C` contenant `O`". Here the extension agrees with `c̃` on the interior of its convergence
    domain `D₀`, so it is the continuation of the actual integrals.
 
-   **Binder correction (Task 7826, operator ruling 8).** The original definition declared
+   **Binder correction.** The original definition declared
    `[BorelSpace (𝐌 ⧸ CM)]` as a section variable. Its body uses `μ` in the square-integrability
    premise, but does not use the Borel instance, so Lean omitted the latter from the elaborated
    statement. `Measure.IsHaarMeasure` for a given measurable structure does not imply that the
@@ -164,7 +162,8 @@ scheme of `I` (`lowerAmbient_isConnectedReductive`).
    hold, then for every `q` there are extensions `E_s` and lower sections
    `Ψ_s` with `IsWeightedCSection`, such that for **every** `ω ∈ O` and `m' ∈ M'(F)`
    `Wπ(ω) · (f_ω)^w_{P'}(m') = Σ_s µ^{M'}(sω) · (E^{M'}_{M'∩s·P} Ψ_{s,sω})(m')`.
-   Here `(f_ω)^w_{P'}` is `rationalOrbitWeakConstantTerm` of Task 7452, `µ^{M'}` is
+   Here `(f_ω)^w_{P'}` is `rationalOrbitWeakConstantTerm` (module
+   `RationalOrbitPositiveConstantTerm`), `µ^{M'}` is
    `lowerPlancherelWeight (PM s)`, `sω = lowerOrbitMap ω`, and the coefficient is
    `inducedOrbitCoefficientMap` of `DynamicInducedOrbitWavePacket`. Source, printed p.304:
    "pour tout `m' ∈ M'` et tout `χ ∈ Im X(M)`, on ait l'égalité `µ(ω⊗χ)(E^G_P sp_χ ψ)^w_{P'}(m') =
@@ -207,12 +206,11 @@ scheme of `I` (`lowerAmbient_isConnectedReductive`).
    `sp_{sz} ψ'_k`. Like the source's `ψ'`, the `ψ'_k` are families on all of `X(s·M)`, not
    sections over `sO`: no covariance under the stabilizer of `sπ` is required.
 
-   **Deviation from the contract wording.** The task contract describes the factors as "fixed
-   lower smooth sections `ψ'` over `sO`" and says that "This is the source's
-   `sp_χ c̃(s)ψ = Σ_{ψ'} φ_{ψ'}(sχ) sp_{sχ}ψ'`". The review of `eedee470` showed that with smooth
-   sections the statement is trivial (a singleton with `φ = 1` works as soon as `sω ↦ c̃(s, ω)q_ω`
-   is itself a smooth lower section). The target follows the source formula that the contract
-   cites, with the factors specializations of fixed algebraic families.
+   **Why not smooth sections.** With fixed lower smooth sections `ψ'` over `sO` as factors the
+   statement would be trivial (a singleton with `φ = 1` works as soon as `sω ↦ c̃(s, ω)q_ω`
+   is itself a smooth lower section). The target follows the source formula
+   `sp_χ c̃(s)ψ = Σ_{ψ'} φ_{ψ'}(sχ) sp_{sχ}ψ'`, with the factors specializations of fixed
+   algebraic families.
 
    **Expected proof (not formalized).** Given an extension `E = (N, d)` from the regularity target,
    `E.unitaryValue z = d(z)⁻¹ N(z)` with `d` nonvanishing on the unitary characters. The compact
@@ -235,7 +233,7 @@ scheme of `I` (`lowerAmbient_isConnectedReductive`).
    printed p.303: `f^w_{ϕ,ψ}` is defined by replacing `(E^G_P sp_χ ψ)(g)` in the packet integral
    by `(E^G_P sp_χ ψ)^w_{P'}(m')`; p.304: "`f^w_{ϕ,ψ}(m') = Σ_s ∫_{Im X(s·M)} µ^{M'}(sω ⊗ χ)ϕ(s⁻¹χ)
    Σ_{ψ'} ϕ_{ψ'}(χ)(E^{M'}_{M'∩s·P} sp_χ ψ')(m') dχ`. Autrement dit
-   `f^w_{ϕ,ψ} = Σ_s Σ_{ψ'} f^{M'}_{s(ϕ)ϕ_{ψ'},ψ'}`." As in the task, the target is the orbit
+   `f^w_{ϕ,ψ} = Σ_s Σ_{ψ'} f^{M'}_{s(ϕ)ϕ_{ψ'},ψ'}`." The target is the orbit
    integral of the weighted weak constant terms of `q` itself: the published packets of VI.3
    integrate `w(ω)(E q_ω)` over `O` and carry no separate function `ϕ`. By the decomposition
    target, the compact picture of `Ψ_s` at `sz` is `Σ_k φ_k(sz) ψ'_k(sz)`, which gives the source's
@@ -249,7 +247,8 @@ The weak constant term along `P'` is a function on `M'`, and V.1.1 expands it in
 general only semistandard in `M'`, and the representation is the conjugate `sω` of `ω`, with orbit
 `sO` under `Im X(s·M)`. All lower objects are therefore built for the actual dynamic parabolic of
 the lower cocharacter `χ_s` in the actual Levi scheme `M'` (the extension of the section,
-coefficient and packet constructions to semistandard parabolics, item 2 of the task).
+coefficient and packet constructions to semistandard parabolics, in
+`DynamicInducedOrbitWavePacket`).
 
 **No transport to standard data is used.** In particular Proposition V.3.1 (printed p.295, the
 unitary normalized `°c_{P'|P}(s, ω)` with `E^G_{P'}(°c ψ) = E^G_P ψ`) is not used by any target.
@@ -344,7 +343,7 @@ not proved in the Library). The Iwasawa pair `hPK` and compactness `hKc` stay se
 because the sections `q` are built with them; `IwasawaExistenceStatement` is the published
 existence target for `hPK`.
 
-**Why it is needed (review of the rejected `eedee470`).** Without it the identities fail for
+**Why it is needed.** Without it the identities fail for
 compact subgroups that satisfy all the other hypotheses. Take `G = SL₂(ℚ₃) × SL₂(ℚ₃)`,
 `P = P' = B × B`, `M = M' = T × T`, `K₀ = SL₂(ℤ₃)²`, and let `κ` be reduction followed by
 `PSL₂(𝔽₃) ≅ A₄ → A₄/V₄ = C₃`. The index-three subgroup `K = {(k₁, k₂) ∈ K₀ : κ(k₁) = κ(k₂)}` is
@@ -394,7 +393,7 @@ of the expansion depends on the lift `n_s`, not only on its Weyl class.
 ## Status
 
 - Imported constructions: `standardLeviPlancherelWeight`, `rationalOrbitWeakConstantTerm`
-  (Task 7452), `rationalInducedSmoothOrbitSections`, `productInducedFamilyRestriction`,
+  (`RationalOrbitPositiveConstantTerm`), `rationalInducedSmoothOrbitSections`, `productInducedFamilyRestriction`,
   `productInducedOrbitPullback`, `unramifiedRegularFunctions`, `IsPolynomialOperatorOn`,
   `IsPolynomialOn.sub`, `unramifiedCharactersHomeomorph`, `isPolynomialOn_transport_iff`,
   `rationalUnramifiedPolynomial_eq_zero_of_isOpen`, `continuous_rationalValuationImageProjection`,
@@ -407,7 +406,8 @@ of the expansion depends on the lift `n_s`, not only on its Weyl class.
   `KPApartmentData.HasBoundedOpenStabilizers`, `KPApartmentData.IsSpecialApartmentVertex`,
   `KPApartmentData.specialCompactSubgroup` and `SpecialCompactProperties` (modules
   `Langlands.Geometry.Building.KPApartmentAxioms`, `Langlands.Geometry.Building.SpecialCompact`,
-  `Langlands.BruhatTits.SpecialCompact.Properties`); and from the Task 7454 units listed above.
+  `Langlands.BruhatTits.SpecialCompact.Properties`); and from the weak-expansion modules listed
+  above.
 - New definitions: `WeightedCExtension`, `WeightedCExtension.unitaryValue`, `lowerK`,
   `weightedCompactFamily`, `dynamicSectionCompactPicture`, `sectionCompactPicture`,
   `LowerSectionsAt`, `IsWeightedCSection`, `LowerSections`, `SourceCompactNormalization`,
@@ -415,7 +415,7 @@ of the expansion depends on the lift `n_s`, not only on its Weyl class.
 - New proved lemmas: `leviPolynomial_eq_zero_of_isOpen`, `leviRationalContinuation_value_eq`,
   `WeightedCExtension.unitaryValue_eq` (uniqueness of the unitary values), `lowerK_isCompact`,
   `lowerPackage_iwasawa` (restatements of package fields).
-- Targets (unproved, for proof successors): `WeightedCRegularityBorelStatement`,
+- Targets (unproved): `WeightedCRegularityBorelStatement`,
   `WeightedWeakExpansionStatement`, `WeightedCDecompositionBorelStatement`,
   `WeightedPacketIdentityStatement`.
 - Unresolved obligations: the four targets; nonemptiness of the convergence domains is part of

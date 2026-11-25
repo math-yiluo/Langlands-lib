@@ -1,6 +1,6 @@
 # Split tori in a rank-one parabolic with descended conjugation
 
-This internal unit proves local conjugacy for actual maximal split tori in an
+This internal module proves local conjugacy for actual maximal split tori in an
 actual dynamic parabolic. It works over every field `k : Type u`. Let
 `i : T.toGrp → G` be a maximal split torus, let `a` be a nonzero character of
 `T`, and suppose an actual automorphic action `e` of the multiplicative group
@@ -80,10 +80,12 @@ The only facts used from `RootFactorPairExistenceReduction` are its
 `dynamicUnipotent_eq_subgroup_of_descendedAction` and
 `dynamicCentralizer_eq_torusCentralizer_of_descendedAction`. That imported
 module also contains a separate conditional general-Bruhat reduction; none
-of the proofs in this unit calls that reduction or assumes a general Bruhat
+of the proofs in this module calls that reduction or assumes a general Bruhat
 or Tits-system statement.
 
-This unit proves the stated local conjugacy. It does not construct a proper
+This module proves the stated local conjugacy. It does not construct a proper
 flag quotient, a nontrivial Weyl element, rank-one two-cell covering or
-opposite factor pairs, and it does not prove the host task's
-`RootRankOneFactorizationStatement`.
+opposite factor pairs, and it does not prove
+`RootRankOneFactorizationStatement`, which this module serves. The Library
+proves that statement separately, as `rootRankOneFactorization` (module
+`Rational.RootRankOneFactorizationProof`).

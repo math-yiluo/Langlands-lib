@@ -1,0 +1,229 @@
+/-
+Copyright (c) 2025 Christian Merten. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Christian Merten
+-/
+module
+
+public import Mathlib.CategoryTheory.Limits.Constructions.Over.Connected
+public import Mathlib.CategoryTheory.Limits.Preserves.Over
+public import Mathlib.CategoryTheory.Limits.Types.Filtered
+public import Mathlib.CategoryTheory.MorphismProperty.Ind
+public import Mathlib.CategoryTheory.Presentable.Finite
+public import Mathlib.CategoryTheory.WithTerminal.Cone
+public import Mathlib.CategoryTheory.WithTerminal.Lemmas
+public import Mathlib.CategoryTheory.Filtered.Final
+
+/-!
+# Ind and pro-properties
+
+Given a morphism property `P`, we define a morphism property `ind P` that is satisfied for
+`f : X ⟶ Y` if `Y` is a filtered colimit of `Yᵢ` and `fᵢ : X ⟶ Yᵢ` satisfy `P`.
+
+We show that `ind P` inherits stability properties from `P`.
+
+## TODOs:
+
+- Show `ind P` is stable under composition if `P` spreads out (Christian).
+-/
+
+@[expose] public section
+
+universe s t w' w v u
+
+namespace CategoryTheory
+
+open Limits
+
+variable {C : Type u} [Category.{v} C] (P : MorphismProperty C)
+
+instance (X : C) [HasFilteredColimits C] : ReflectsFilteredColimits (Under.forget X) := by
+  constructor
+  intro J _ _
+  exact reflectsColimitsOfShape_of_reflectsIsomorphisms
+
+open Opposite
+
+namespace ObjectProperty
+
+lemma ind_of_univLE (P : ObjectProperty C) [UnivLE.{w', w}] :
+    ind.{w'} P ≤ ind.{w} P := by
+  intro X ⟨J, _, _, pres, H⟩
+  exact of_essentiallySmall_index pres H
+
+@[gcongr]
+lemma ind_mono {P Q : ObjectProperty C} (h : P ≤ Q) :
+    ind.{w} P ≤ ind.{w} Q := by
+  intro X ⟨J, _, _, pres, H⟩
+  exact ⟨J, inferInstance, inferInstance, pres, fun i ↦ h _ (H i)⟩
+
+end ObjectProperty
+
+namespace MorphismProperty
+
+instance [P.ContainsIdentities] : (ind.{w} P).ContainsIdentities where
+  id_mem X := le_ind _ _ (P.id_mem X)
+
+lemma ind_of_univLE [UnivLE.{w', w}] : ind.{w'} P ≤ ind.{w} P := by
+  intro X Y f hf
+  rw [MorphismProperty.ind_iff_ind_underMk] at hf ⊢
+  exact ObjectProperty.ind_of_univLE P.underObj _ hf
+
+@[gcongr]
+lemma underObj_mono {P Q : MorphismProperty C} (h : P ≤ Q) (X : C) :
+    P.underObj (X := X) ≤ Q.underObj (X := X) :=
+  fun _ ↦ h _
+
+@[gcongr]
+lemma ind_mono {P Q : MorphismProperty C} (h : P ≤ Q) : ind.{w} P ≤ ind.{w} Q := by
+  intro X Y f hf
+  rw [MorphismProperty.ind_iff_ind_underMk] at hf ⊢
+  apply ObjectProperty.ind_mono _ _ hf
+  gcongr
+
+set_option backward.defeqAttrib.useBackward true in
+lemma ind_coconeι {J : Type w} [SmallCategory J] [IsFiltered J]
+    {D : J ⥤ C} {c : Cocone D} (hc : IsColimit c)
+    (j : J) (H : ∀ {i : J} (f : j ⟶ i), P (D.map f)) :
+    ind.{w} P (c.ι.app j) := by
+  refine ⟨Under j, inferInstance, inferInstance, Under.post D ⋙ CategoryTheory.Under.forget _,
+      ?_, ?_, ?_, fun k ↦ ⟨?_, ?_⟩⟩
+  · exact
+      { app i := D.map i.hom
+        naturality := by simp [← Functor.map_comp] }
+  · exact ((CategoryTheory.Under.forget _).mapCocone (c.underPost j)).ι
+  · exact isColimitOfPreserves (CategoryTheory.Under.forget _) (hc.underPost j)
+  · apply H
+  · simp
+
+variable {P}
+
+/--
+Let `P` be a property of morphisms. `P.Pro` is satisfied for `f : X ⟶ Y`
+if there exists a family of natural maps `tᵢ : Xᵢ ⟶ Y` and `sᵢ : X ⟶ Xᵢ` indexed by `J`
+such that
+- `J` is cofiltered
+- `X = lim Xᵢ` via `{sᵢ}ᵢ`
+- `tᵢ` satisfies `P` for all `i`
+- `f = sᵢ ≫ tᵢ` for all `i`.
+-/
+def pro (P : MorphismProperty C) : MorphismProperty C :=
+  fun X Y f ↦ ∃ (J : Type w) (_ : SmallCategory J) (_ : IsCofiltered J)
+    (D : J ⥤ C) (t : D ⟶ (Functor.const J).obj Y) (s : (Functor.const J).obj X ⟶ D)
+    (_ : IsLimit (Cone.mk _ s)), ∀ j, P (t.app j) ∧ s.app j ≫ t.app j = f
+
+lemma pro_eq_unop_ind_op : pro.{w} P = (ind.{w} P.op).unop := by
+  ext X Y f
+  refine ⟨fun ⟨J, _, _, D, t, s, hs, hst⟩ ↦ ?_, fun ⟨J, _, _, D, t, s, hs, hst⟩ ↦ ?_⟩
+  · exact ⟨Jᵒᵖ, inferInstance, inferInstance, D.op, NatTrans.op t,
+      NatTrans.op s, isColimitOfUnop hs, fun j ↦ ⟨(hst j.1).1, by simp [← (hst j.1).2]⟩⟩
+  · exact ⟨Jᵒᵖ, inferInstance, inferInstance, D.leftOp, NatTrans.leftOp t,
+      NatTrans.leftOp s, isLimitOfCoconeRightOpOfCone D.leftOp hs, fun j ↦ ⟨(hst _).1,
+      op_injective (hst _).2⟩⟩
+
+lemma ind_eq_unop_pro_op : ind.{w} P = (pro.{w} P.op).unop := by
+  ext X Y f
+  refine ⟨fun ⟨J, _, _, D, t, s, hs, hst⟩ ↦ ?_, fun ⟨J, _, _, D, t, s, hs, hst⟩ ↦ ?_⟩
+  · exact ⟨Jᵒᵖ, inferInstance, inferInstance, D.op, NatTrans.op t,
+      NatTrans.op s, hs.op, fun j ↦ ⟨(hst j.unop).1, by simp [← (hst j.unop).2]⟩⟩
+  · exact ⟨Jᵒᵖ, inferInstance, inferInstance, D.leftOp, NatTrans.leftOp t,
+      NatTrans.leftOp s, isColimitCoconeLeftOpOfCone D hs, fun j ↦ ⟨(hst j.unop).1,
+      Quiver.Hom.op_inj (hst j.unop).2⟩⟩
+
+@[gcongr]
+lemma unop_mono {P Q : MorphismProperty Cᵒᵖ} (h : P ≤ Q) : P.unop ≤ Q.unop :=
+  fun _ _ _ hf ↦ h _ hf
+
+@[gcongr]
+lemma op_mono {P Q : MorphismProperty C} (h : P ≤ Q) : P.op ≤ Q.op :=
+  fun _ _ _ hf ↦ h _ hf
+
+variable (P) in
+lemma le_pro : P ≤ pro.{w} P := by
+  rw [pro_eq_unop_ind_op]
+  conv_lhs => rw [← unop_op P]
+  exact unop_mono P.op.le_ind
+
+instance [P.ContainsIdentities] : (pro.{w} P).ContainsIdentities where
+  id_mem X := le_pro _ _ (P.id_mem X)
+
+attribute [local instance] Cardinal.fact_isRegular_aleph0 in
+/-- If every morphism in `P` is finitely presentable, then every morphism in `P.op.op`
+is finitely presentable in `Cᵒᵖᵒᵖ`.
+
+Note that the naive equality `(isFinitelyPresentable.{w} C).op = isFinitelyPresentable.{w} Cᵒᵖ`
+is false in general categories, hence hypotheses about pro-properties are stated in the form
+`P.op ≤ isFinitelyPresentable.{w} Cᵒᵖ` and transported along `Cᵒᵖᵒᵖ ≌ C` with this lemma. -/
+lemma le_isFinitelyPresentable_op_op {P : MorphismProperty C}
+    (H : P ≤ isFinitelyPresentable.{w} C) :
+    P.op.op ≤ isFinitelyPresentable.{w} Cᵒᵖᵒᵖ := by
+  intro X Y f hf
+  have h : IsCardinalPresentable (CategoryTheory.Under.mk f.unop.unop)
+      (Cardinal.aleph0.{w}) := H _ hf
+  have h2 := isCardinalPresentable_of_isEquivalence (CategoryTheory.Under.mk f.unop.unop)
+    Cardinal.aleph0 (CategoryTheory.Under.post (opOp C))
+  exact isCardinalPresentable_of_iso
+    (X := (CategoryTheory.Under.post (opOp C)).obj (CategoryTheory.Under.mk f.unop.unop))
+    (CategoryTheory.Under.isoMk (Iso.refl _) (by simp)) Cardinal.aleph0
+
+lemma pro_pro [LocallySmall.{w} C] (H : P.op ≤ isFinitelyPresentable.{w} Cᵒᵖ) :
+    pro.{w} (pro.{w} P) = pro.{w} P := by
+  rw [pro_eq_unop_ind_op, pro_eq_unop_ind_op, op_unop, ind_ind H]
+
+lemma pro_of_univLE [UnivLE.{w', w}] :
+    pro.{w'} P ≤ pro.{w} P := by
+  grw [pro_eq_unop_ind_op, pro_eq_unop_ind_op]
+  exact unop_mono (ind_of_univLE P.op)
+
+@[gcongr]
+lemma pro_mono {P Q : MorphismProperty C} (h : P ≤ Q) : pro.{w} P ≤ pro.{w} Q := by
+  grw [pro_eq_unop_ind_op, pro_eq_unop_ind_op]
+  gcongr
+
+lemma pro_coneπ {J : Type w} [SmallCategory J] [IsCofiltered J]
+    {D : J ⥤ C} {c : Cone D} (hc : IsLimit c)
+    (j : J) (H : ∀ {i : J} (f : i ⟶ j), P (D.map f)) :
+    pro.{w} P (c.π.app j) := by
+  rw [pro_eq_unop_ind_op]
+  exact ind_coconeι P.op hc.op _ (fun _ ↦ H _)
+
+set_option backward.defeqAttrib.useBackward true in
+instance {X Y : C} (f : X ⟶ Y) [HasPullbacksAlong f] [P.IsStableUnderBaseChangeAlong f] :
+    (pro.{w} P).IsStableUnderBaseChangeAlong f where
+  of_isPullback {Z W f' g' g} pb hg := by
+    obtain ⟨J, _, _, D, t, s, hs, hts⟩ := hg
+    -- `J` is connected, so `Over.forget` reflects `J`-indexed limits
+    have : IsConnected J := IsCofiltered.isConnected J
+    -- the diagram `D` as a diagram in `Over Y` via the structure maps `t`
+    let DY : J ⥤ CategoryTheory.Over Y := CategoryTheory.Over.lift D t
+    -- the limit cone `(Z, s)` lifted to a limit cone in `Over Y` with apex `Over.mk g`
+    let cY : Cone DY := CategoryTheory.Over.liftCone D t (Cone.mk _ s) g (fun j ↦ (hts j).2)
+    have hcY : IsLimit cY :=
+      CategoryTheory.Over.isLimitLiftCone D t (Cone.mk _ s) g (fun j ↦ (hts j).2) hs
+    -- `Over.pullback f` preserves all limits, being a right adjoint
+    have : PreservesLimitsOfSize.{w, w} (CategoryTheory.Over.pullback f) :=
+      (CategoryTheory.Over.mapPullbackAdj f).rightAdjoint_preservesLimits
+    -- push the limit cone to `Over X` along `Over.pullback f` and forget back to `C`
+    let cX : Cone ((DY ⋙ CategoryTheory.Over.pullback f) ⋙ CategoryTheory.Over.forget X) :=
+      (CategoryTheory.Over.forget X).mapCone ((CategoryTheory.Over.pullback f).mapCone cY)
+    have hcX : IsLimit cX :=
+      isLimitOfPreserves (CategoryTheory.Over.forget X)
+        (isLimitOfPreserves (CategoryTheory.Over.pullback f) hcY)
+    refine ⟨J, inferInstance, inferInstance,
+      DY ⋙ CategoryTheory.Over.pullback f ⋙ CategoryTheory.Over.forget X,
+      { app j := ((DY ⋙ CategoryTheory.Over.pullback f).obj j).hom
+        naturality i j u :=
+          (CategoryTheory.Over.w ((DY ⋙ CategoryTheory.Over.pullback f).map u)).trans
+            (by simp) },
+      (Functor.const J).map pb.isoPullback.hom ≫ cX.π, ?_, fun j ↦ ⟨?_, ?_⟩⟩
+    · refine hcX.ofIsoLimit (Cone.ext pb.isoPullback.symm (fun j ↦ ?_))
+      simp only [NatTrans.comp_app, Functor.const_map_app, Iso.symm_hom]
+      exact (Iso.inv_hom_id_assoc _ _).symm
+    · exact P.pullback_snd _ f (hts j).1
+    · have hsnd : cX.π.app j ≫ ((DY ⋙ CategoryTheory.Over.pullback f).obj j).hom =
+          pullback.snd g f :=
+        CategoryTheory.Over.w (((CategoryTheory.Over.pullback f).mapCone cY).π.app j)
+      simp only [NatTrans.comp_app, Functor.const_map_app, Category.assoc]
+      exact (congrArg (pb.isoPullback.hom ≫ ·) hsnd).trans pb.isoPullback_hom_snd
+
+end CategoryTheory.MorphismProperty

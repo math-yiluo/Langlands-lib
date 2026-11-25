@@ -1,7 +1,5 @@
 # The quotient by actual rational parabolic radicals
 
-Authors: Worker 1757.
-
 For a group scheme `G` over an arbitrary field `k : Type u`,
 `parabolicWhiteheadQuotient G` is the actual group quotient
 `rationalPoints G ⧸ parabolicElementarySubgroup G`. The imported elementary

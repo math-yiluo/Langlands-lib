@@ -1,6 +1,6 @@
 # Compression transport from an actual rational Levi to its literal subgroup
 
-Worker 1751. This internal adapter uses the canonical continuous group
+This internal adapter uses the canonical continuous group
 equivalence between the rational points of the represented standard Levi
 scheme and the literal standard Levi subgroup of the ambient rational group.
 

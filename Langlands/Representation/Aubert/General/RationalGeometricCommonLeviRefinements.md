@@ -1,6 +1,6 @@
 # Common-Levi refinements of actual rational geometric intersections
 
-This internal adapter specializes the exact all-test commuting refinement construction to the original standard rational-point subgroups and their forward conjugates. It is a prerequisite for the distinct-radical Haar balance. All declarations are in `Langlands.Aubert.General.RationalPointFamily`.
+This adapter specializes the exact all-test commuting refinement construction to the original standard rational-point subgroups and their forward conjugates. It is a prerequisite for the distinct-radical Haar balance. All declarations are in `Langlands.Aubert.General.RationalPointFamily`.
 
 For any field `k` and group scheme `G`, `IsPointCommutingRefinement P M U Q N V ψ` records five exact rational-point properties:
 
@@ -26,4 +26,4 @@ The proof now applies `Dynamic.exists_common_levi_refinements` from `CommutingRe
 
 This construction has internal provenance, consisting of the specialization of the published declarations just named. It imports `RationalGeometricStabilizerProjection` to reuse its actual standard-family and normalizer interfaces; it invokes none of that module's projection-preservation theorems. Its proof bodies use no representation-theoretic geometric lemma, adjointness, cuspidal support, character independence, Langlands classification or Aubert Proposition 3.2. The broader import closure supplies representation interfaces without providing a proof of their geometric-expansion targets.
 
-The distinct-radical modulus balance, continuous coordinates on the refinements and their intersection, normalized coefficient comparison, smooth naturality, compact/full induction comparison, filtration comparison and exact K0 expansion remain separate obligations. This unit proves their algebraic common-Levi refinement prerequisite only.
+The distinct-radical modulus balance, continuous coordinates on the refinements and their intersection, normalized coefficient comparison, smooth naturality, compact/full induction comparison, filtration comparison and exact K0 expansion are separate obligations; `rationalGeometricK0Expansion` in `RationalGeometricK0Expansion` proves the exact K0 expansion. This module proves their algebraic common-Levi refinement prerequisite only.

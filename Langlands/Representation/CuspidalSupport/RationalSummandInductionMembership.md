@@ -1,7 +1,5 @@
 # The compact induction of a norm-kernel summand lies in the inertia block
 
-Author: Worker 5104.
-
 Supporting module for the proof of Renard VI.4.5, Corollary
 (`Langlands.CuspidalSupport.rationalInertiaBlockIndecomposable`). It is also the
 membership part of the VI.4.1 and VI.4.5 statements and may be reused by their

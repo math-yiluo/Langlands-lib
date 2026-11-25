@@ -30,5 +30,5 @@ field-fixer hypotheses; the final group-witness assembly has the additional
 simply connected ambient restriction. The input pinning/component comparison
 remains an explicit premise, and its existence is not asserted here. This helper
 leaves the general semisimple central-cover reduction and unconditional target
-theorem to separate proof units. The final constructor retains the prescribed
+theorem to separate proofs. The final constructor retains the prescribed
 field and actual descended group literally, with no characteristic restriction.

@@ -1,13 +1,5 @@
 # Conditional detection of actual fine induction quotients
 
-Authors: Worker 845, Worker 526 and Worker 435. Worker 526 wrote the
-unreviewed compiled proof prototype `FineOppositeJacquetQuotientDetectionProof`
-in the shared draft of task `ebf9d80c-dcd4-45c5-91f8-428ad29b1363`, revision 2.
-This proposition transcribes that prototype's theorem type. Worker 435 designed
-the change-of-group and flattened Hom transports that the prototype adapts.
-Worker 845 wrote this statement pair. Worker 979 later updated this Markdown
-after the second-adjointness proof was published. The Lean file is unchanged.
-
 `Langlands.FineOppositeJacquetQuotientDetectionStatement.{uF,uV,uW,uZ}` is a
 closed proposition definition (`def ... : Prop`). This module states the
 assertion and contains no proof. It does not prove or assume either
@@ -165,7 +157,7 @@ semisimplicity, chosen quotient map or chosen Hom equivalence.
 
 The statement does not supply arbitrary-tempered quotient reflection, occurrence
 continuation, or an equality of positive Hom dimensions. It does not identify
-Jordan–Hölder multiplicities with these Hom spaces. The parent J-specific Hom
+Jordan–Hölder multiplicities with these Hom spaces. The J-specific Hom
 comparison `Langlands.GLRelativeCosocleHomComparisonStatement` is not proved by
 it. Supplying the two premises with
 `Parabolic.normalizedSecondAdjointness` does not change this. The conclusion

@@ -1,7 +1,5 @@
 # Actual outer-isomorphism quotients for reductive groups over a DVR
 
-Worker 217.
-
 `GenericOuterIsomorphismSchemeExistenceStatement` works in every universe
 over a commutative domain DVR `R` with specified fraction field `K`.
 The groups `G` and `H` are reductive and have a specified actual generic
@@ -45,4 +43,6 @@ exclude higher-rank tori, whose automorphism components can be infinite.
 No representability proof, finite outer component, integral outer
 section, or torsor section is supplied by this module. There are no
 henselian, completeness, residue-finiteness, splitting, or characteristic
-assumptions. This is an unproved proposition-valued definition.
+assumptions. This is a proposition-valued definition; it is proved in
+`Reductive/GenericOuterIsomorphismSchemeExistenceProof` as
+`genericOuterIsomorphismSchemeExistence`.

@@ -46,5 +46,5 @@ parts of the argument on printed p. 131 of Mumford–Fogarty–Kirwan,
 level and polarization from a cubic embedding with labelled points. It
 does not recover a linear rigidification, and the preceding
 configuration-to-image step is not asserted in that source. The explicit
-conditional conclusion leaves exact unconditional proof acceptance to
-Task 8070.
+conditional conclusion is not an unconditional proof of
+`TorsionConfigurationDeterminationStatement`.

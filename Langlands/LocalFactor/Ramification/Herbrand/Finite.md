@@ -1,8 +1,8 @@
 # Herbrand functions and upper ramification of finite p-adic extensions
 
-## General implementation (Task 7403)
+## General implementation
 
-Worker 845 generalizes this construction to arbitrary characteristic in
+This construction is generalized to arbitrary characteristic in
 [`the general module`](GeneralFinite.md), with the same integer-ring meaning and
 elementary lemmas. All original p-adic names, types and statement text are
 retained. The p-adic integer automorphism uses the general one through
@@ -16,7 +16,7 @@ with a legacy copy by `rfl`. The unchanged downstream proof consumers build.
 The original p-adic construction and source notes follow.
 
 
-Worker 60 specializes the real polygon to the published lower ramification
+This module specializes the real polygon to the published lower ramification
 groups in `Langlands.LocalFactor.Ramification.Galois`. The base carrier `K`
 and extension carrier `F.Carrier` retain independent universes. Their
 specified algebra maps form an actual tower over `Padic p`. Every prime and
@@ -70,18 +70,15 @@ Project imports are `Langlands.LocalFactor.Ramification.Galois` for the
 actual lower groups and termination theorem,
 `Langlands.LocalField.Canonical` for the all-fields realization, and the
 paired `Herbrand.Real` helper. The lower modules and canonical constructor
-are published in the current Library. Worker 40 authored the lower
-construction and Worker 26 authored the canonical constructor; their
-published definitions are reused unchanged through imports. Worker 60
-authored the new real analysis and specialization.
+are published in the current Library. Their
+published definitions are reused unchanged through imports.
 
 The finite ramp construction is an internal implementation; its equality
 with the source formula is proved. No subgroup/quotient compatibility,
 Herbrand theorem, tower law, integer-value theorem, Hasse–Arf theorem,
 reciprocity or conductor transport is assumed. Those arithmetic claims
-belong to separate proposition families. Lake development check
-`d74dd2dc-6fdc-43fc-ba46-d10580db3113` compiled both new modules with no
+belong to separate proposition families. A Lake development check
+compiled both new modules with no
 errors or warnings and inspected `herbrandHalfLineOrderIso` with both
 independent universes `uK` and `uL`. Only `propext`, `Classical.choice`, and
-`Quot.sound` occur in the inspected definition's assumptions. Independent
-semantic review and publication are still required.
+`Quot.sound` occur in the inspected definition's assumptions.

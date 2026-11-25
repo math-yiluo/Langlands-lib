@@ -9,7 +9,7 @@ for any centralizer datum `CM` of `S` in `M_J`.
 
 ## Helper modules
 
-The proof uses five new modules, listed in the candidate's repository paths:
+The proof uses five modules, listed by their module paths:
 
 - `Langlands.Geometry.Building.AffineRootSystemPullback`: affine root systems
   detected by pullback along a surjective affine map;
@@ -18,7 +18,7 @@ The proof uses five new modules, listed in the candidate's repository paths:
 - `Langlands.BruhatTits.SpecialCompact.LeviApartmentAxioms`: V 7, AS 2–AS 4,
   and the second and third sentences of AS 5 for a same-roots Levi, all for
   the restricted class `leviRestrictedApartmentData`;
-- `Langlands.Geometry.Building.LeviRestrictionCompatibility` (by Worker 119):
+- `Langlands.Geometry.Building.LeviRestrictionCompatibility`:
   one restriction pair identifies `DM` with the restricted class, V 6 for an
   arbitrary `CM`, and the semisimple case of a dynamic Levi;
 - this module.

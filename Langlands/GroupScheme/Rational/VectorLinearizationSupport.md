@@ -50,6 +50,6 @@ The characteristic-zero source comparison is documented in
 [SplitTorusVectorLinearizationStatement.md](SplitTorusVectorLinearizationStatement.md):
 Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition (2015), A.1.1.
 [VectorActionCharZero.md](VectorActionCharZero.md) documents the internal proof.
-This contribution's provenance is internal: its proofs use
+This module's provenance is internal: its proofs use
 the named, already proved Library inputs and elementary coordinate identities,
 without invoking an additional original-source theorem.

@@ -1,7 +1,5 @@
 # Ordinary coefficient-power limits of associated sheaf diagrams
 
-Author: Worker 13.
-
 This internal construction takes ordinary inverse limits of the two published
 coefficient-power systems over varying finite geometric torsors. The limit is
 taken only over the full opposite category of natural numbers, including zero.

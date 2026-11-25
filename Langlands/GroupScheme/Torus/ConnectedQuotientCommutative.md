@@ -1,6 +1,6 @@
 # Extensions of multiplicative-type groups with connected quotient are commutative
 
-Worker 603 wrote this module for Task 6776, the connected case of part 1 of
+This module treats the connected case of part 1 of
 [`MultiplicativeTypeFieldExtensionStatement`](MultiplicativeTypeFieldExtensionStatement.md)
 (SGA 3, Exposé IX, Proposition 8.2 (i)). It proves:
 
@@ -91,7 +91,7 @@ reducedness is assumed: `H` and `K` may be infinitesimal.
 
 ## Dependencies
 
-This module imports two modules staged for the same task:
+This module imports two modules written for the same result:
 
 - [`ConnectedExtensionHopf`](../../Algebra/ConnectedExtensionHopf.md), the
   algebraic core;
@@ -102,7 +102,7 @@ This module imports two modules staged for the same task:
 
 Internal to this project. The statement is the connected case of SGA 3, Exposé
 IX, Proposition 8.2 (i), as in Milne, *Algebraic Groups* (2017), source ID
-`milne-2017-algebraic-groups`, Corollary 12.42 (printed p.244). See the target
-statement's Markdown. The proof replaces Milne's rigidity argument by the
+`milne-2017-algebraic-groups`, Corollary 12.42 (printed p.244). See the page of
+`MultiplicativeTypeFieldExtensionStatement`. The proof replaces Milne's rigidity argument by the
 Hopf-algebra argument of `ConnectedExtensionHopf`, after base change to a
 common splitting field.

@@ -45,8 +45,10 @@ on every test scheme. It gives normality and complementary factors inside
 - `N = (L ∩ N) U`;
 - `P = (L ∩ P) U`.
 
-The algebraic-groups program keeps the theorem that compatible pairs have
-this decomposition. This file does not prove that theorem, and it does not
+The theorem that compatible pairs have this decomposition is
+`GroupScheme.dynamicNestedParabolicDecomposition`
+(`GroupScheme/Rational/DynamicNestedParabolicDecompositionProof`). This file
+does not prove that theorem, and it does not
 replace it by a representation-theoretic premise.
 
 `dynamic_nested_isSemidirectDecomposition_in_levi` converts the supplied
@@ -118,8 +120,8 @@ extends it to `M` by the Cartan decomposition.
 Induction transitivity then follows by adjunction and uniqueness of adjoints
 (A.V). A later proof may use any other verified route.
 
-Worker 6 wrote the statement and the first explanation. Worker 1304 supplied
-the conversion for an arbitrary pair to the existing Levi-in-Levi interface,
-following the published standard-index conversion
+The conversion for an arbitrary pair to the existing Levi-in-Levi interface,
+`dynamic_nested_isSemidirectDecomposition_in_levi`, follows the published
+standard-index conversion
 `RationalPointFamily.isSemidirectDecomposition_in_levi` in
 `RationalLeviDecomposition`.

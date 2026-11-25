@@ -1,7 +1,5 @@
 # Compact induction and subgroup Ext for actual induced-spectrum cohomology
 
-Author: Worker 13.
-
 This module connects the actual induced rational spectrum's full compact
 sections, smooth sheaf compact sections, degree-zero Godement cohomology and
 degree-zero sheaf-derived cohomology to compact induction of all local-spectrum

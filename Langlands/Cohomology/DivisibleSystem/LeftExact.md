@@ -1,6 +1,6 @@
 # Left exact functors and ℓ-divisible systems
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem` (ℓ-divisible systems, Harris 1999,
 (2.1)), `Langlands.Cohomology.DivisibleSystem.Coaugmented` (the residual and
 term systems of Harris's Lemma 2.2),
@@ -158,7 +158,7 @@ limits (published instances), so `mapLeftExact` applies to them.
 
 For the smooth Godement systems of the Coaugmented module, the exactness of
 the degree-zero smooth Godement functor is not proved in the Library. It is
-Worker 3's proposition `SmoothGodementZeroExactStatement R G X`, and the next
+the proposition `SmoothGodementZeroExactStatement R G X`, and the next
 three declarations take a proof `h` of it as an explicit argument.
 
 - `smoothGodementTermCompactSectionsSystem h T q hq` is
@@ -176,8 +176,8 @@ three declarations take a proof `h` of it as an explicit argument.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305. Worker 61 read the
-page in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305. The page was read
+in the scanned original.
 
 1. What Harris proves and what is formalized. Harris obtains the surjectivity
    of `G_m^{D+1}(U) → G_{m-1}^{D+1}(U)` from Fact 2 (vanishing of cohomology

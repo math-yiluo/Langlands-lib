@@ -1,7 +1,5 @@
 # Normalized compact smooth kernels in identity neighborhoods: proof
 
-Author: Worker 793.
-
 The theorem `Langlands.Global.ArchimedeanGL.normalizedCompactKernel` in
 `Langlands.Global.ArchimedeanNormalizedKernelProof` proves the exact published
 `NormalizedCompactKernelStatement K n` for every `K : Type u` with

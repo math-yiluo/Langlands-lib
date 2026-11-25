@@ -1,7 +1,5 @@
 # Comparing cocycles by inner twisting
 
-Worker 838.
-
 Let `ξ` and `ζ` be two natural cocycles of `G` on the same cover. Suppose a
 group scheme `H` is equipped with local identifications `e` from `G` whose
 overlap discrepancy is conjugation by `ζ`. `Cocycle.innerDifference` is an

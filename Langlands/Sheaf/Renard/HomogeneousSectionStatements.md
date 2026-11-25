@@ -1,6 +1,6 @@
 # Renard III.3.2: the literal alpha and beta section comparisons
 
-These are unproved closed proposition targets for David Renard,
+These are closed proposition targets for David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, III.3.2, printed p.85 / PDF p.91: the compact-section and
 smooth-global-section isomorphisms, the displayed alpha and beta formulas,
@@ -89,8 +89,12 @@ Naturality uses the original global-section intertwiner and its existing
 its compact-support subspace is substituted for its actual smooth part.
 
 `SectionComparisonStatement` is the conjunction of these two source
-assertions. It supplies a single inspected proposition entry while leaving
-the two full declaration names available for focused proof tasks. The
+assertions. It supplies a single proposition entry while leaving the two
+full declaration names available. The two are proved separately, as
+`HomogeneousCompactSectionProof.compactAlphaBeta` in
+`Langlands.Sheaf.Renard.HomogeneousCompactSectionProof` and
+`HomogeneousSmoothGlobalProof.smoothGlobalAlphaBeta` in
+`Langlands.Sheaf.Renard.HomogeneousSmoothGlobalProof`. The
 induction-sheaf fibre identification, singleton category equivalence,
 homogeneous categorical equivalence, arbitrary transitive-space comparison
 and the III.3.1 coinvariant assertions are separate targets.

@@ -16,6 +16,7 @@ universal affine point suffices for the character-space definition.
 `toLin_kernelDifferential_mem_representationWeightShift` packages the
 result as membership in the defined submodule of endomorphisms.
 
-This is an internal derived helper for Task 7128's group-side Lie-weight
-input. It uses no characteristic-zero, irreducibility, Freudenthal or Weyl
+This is an internal derived helper for the group-side Lie-weight input to
+the Weyl character formula for a split reductive group in characteristic
+zero. It uses no characteristic-zero, irreducibility, Freudenthal or Weyl
 character-formula premise.

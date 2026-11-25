@@ -2,7 +2,7 @@
 
 Let `p : X ⟶ Spec R`, let `M` be an actual module sheaf on `X`, let
 `q : E →ₗ[R] (relativeGlobalSections p).obj M` be a supplied actual global
-linear family, and let `C` be any base module. This internal unit computes
+linear family, and let `C` be any base module. This internal module computes
 the actual kernel and surjectivity of the previously constructed genuine
 stabilized tensor generator map on every affine open `U`.
 
@@ -34,5 +34,5 @@ The provenance is internal: the already proved actual stabilized tensor
 product formula, actual biproduct section equivalence and canonical
 complement section equivalence supply all proofs. No finite-projective,
 flatness, orbit or Grassmannian hypothesis is imposed. In particular,
-this unit does not identify any classified Grassmannian point kernel;
+this module does not identify any classified Grassmannian point kernel;
 that geometric equality is still required in a parabolic application.

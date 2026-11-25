@@ -1,7 +1,5 @@
 # Weight decomposition of the actual Lie algebra under a split torus
 
-Worker 339.
-
 `Langlands.GroupScheme.weightDecompositionStatement` proves
 `Langlands.GroupScheme.WeightDecompositionStatement` in the same universe.
 It applies to every field `k`, every affine group scheme `G` locally of finite

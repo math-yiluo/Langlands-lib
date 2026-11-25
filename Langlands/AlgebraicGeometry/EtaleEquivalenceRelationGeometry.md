@@ -1,7 +1,5 @@
 # Structural morphisms of an étale equivalence relation
 
-Author: Worker 706.
-
 This internal construction makes explicit the structural maps already determined
 by the published `EtaleEquivalenceRelation` axioms. It supports the presentation
 version of the stratification used in Stacks Project Lemma 68.8.3 (Tag 0BBN) and

@@ -1,7 +1,5 @@
 # Proof of the two-block cell sections
 
-Author: Worker 731.
-
 The theorem `Langlands.Whittaker.twoBlockCellSection` proves exactly the
 published proposition `Langlands.Whittaker.TwoBlockCellSectionStatement.{uF,uV}`.
 The statement module and the modules it imports are unchanged. The theorem

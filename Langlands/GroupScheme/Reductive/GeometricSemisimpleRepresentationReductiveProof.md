@@ -1,7 +1,5 @@
 # Proof: a geometrically semisimple faithful representation forces reductivity
 
-Worker 898. Proof for Task 7106.
-
 This module proves the Library statement
 `Langlands.GroupScheme.GeometricallySemisimpleRepresentationReductiveStatement` (Milne,
 *Algebraic Groups* (2017), Corollary 19.18, printed p. 401) at every universe `u`, as the
@@ -63,5 +61,5 @@ same body, so the hypothesis is passed unchanged.
 
 ## Axioms
 
-`lean_check` inspection of both theorems reports only `propext`, `Classical.choice` and
+The axiom check of both theorems reports only `propext`, `Classical.choice` and
 `Quot.sound`.

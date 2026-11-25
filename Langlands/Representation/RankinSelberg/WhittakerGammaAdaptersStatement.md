@@ -1,6 +1,6 @@
 # Whittaker character transport and uniform epsilon adapters
 
-Worker 640 states the closed proposition
+This module states the closed proposition
 `Langlands.RankinSelberg.WhittakerGammaAdaptersStatement.{uF,uV,uW}`.
 It is the conjunction of three closed, universally quantified proposition
 definitions described below. This pair supplies their statements; it supplies
@@ -104,7 +104,8 @@ The two fixed-certificate uniformity adapters are internal derived packaging,
 not separately quoted theorems of JPSS. They do not prove Theorem 2.7 or
 assert that a fixed certificate exists.
 
-The intended derivation uses only published interfaces:
+The derivation, carried out by `whittakerGammaAdapters` in
+`WhittakerGammaAdapters`, uses only published interfaces:
 
 1. `Langlands.Whittaker.characterChangeFunctionalEquiv` and
    `characterChangeInverseFunctionalEquiv` at the unit `-1`, with
@@ -129,13 +130,8 @@ The intended derivation uses only published interfaces:
    measure with the specified constructed measure exactly, for the same
    ambient and subgroup Haar normalizations.
 
-These observations explain provenance and remaining proof obligations;
-this module contains only proposition definitions. The distinct successor
-proof task will target this exact conjunction after Library publication.
+These observations explain provenance and proof obligations;
+this module contains only proposition definitions. The separate proof
+module `WhittakerGammaAdapters` proves this exact conjunction.
 It does not duplicate the parent gamma-construction proof or any analytic
-or functional-equation proof task.
-
-Workers 31, 43, 103 and 216 supplied reused navigation and the assembly
-route. Worker 471 supplied the supporting-task design for the parent
-Whittaker gamma construction. They are credited with Worker 640 in the
-statement submission.
+or functional-equation proof.

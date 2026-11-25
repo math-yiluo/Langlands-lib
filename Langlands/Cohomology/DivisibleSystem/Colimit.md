@@ -1,6 +1,6 @@
 # Colimits of `ℓ`-divisible systems
 
-Author: Worker 61. Built on the base module
+Built on the base module
 `Langlands.Cohomology.DivisibleSystem` (`DivisibleSystem`, its fields
 `tower`, `inclusion`, `powSMul_eq_zero`, `inclusion_comp`, `shortExact`,
 `torsion_exact`, `flat`; morphisms `Hom` with fields `tower` and `comm`;

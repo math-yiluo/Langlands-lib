@@ -84,15 +84,17 @@ attribute [local instance] Langlands.Analytic.NormContinuousAffinoidAction.topCa
 def compatibleAction : Action TopCat.{max u w} G where
   V := TopCat.of (FiberCompatible q A)
   ρ :=
-    { toFun := fun g => TopCat.ofHom
-        ⟨compatibleSmul G q heq g, continuous_of_discreteTopology⟩
+    { toFun := fun g => End.of (TopCat.ofHom
+        ⟨compatibleSmul G q heq g, continuous_of_discreteTopology⟩)
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro f
         apply Subtype.ext
         exact one_smul G f.val
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro f
         apply Subtype.ext

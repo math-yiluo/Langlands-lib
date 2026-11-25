@@ -1,6 +1,6 @@
 # JPS function-space decomposition (statement)
 
-Author: Worker 739. This unit states the full conclusion of JPS (1979),
+This module states the full conclusion of JPS (1979),
 Lemma (2.2.1), printed p.182, for the actual function spaces and
 coordinate-germ quotients published in
 `Langlands.Representation.Whittaker.JPSFunctionSpace`. It is a proposition
@@ -120,8 +120,8 @@ H. Jacquet, I. I. Piatetski-Shapiro and J. Shalika, *Automorphic forms on
 GL(3) I*, Ann. of Math. (2) 109 (1979), 169–212. Registered source
 `jps-1979-gl3-i`, file SHA256
 `6446822f267f9f95156ce7a193409209e56ce7858ed6d3d350480e73f35b1aa5`.
-Printed pp.181–183 are one-based PDF pp.14–16. Worker 739 read them in text
-and visually checked the images of printed pp.181 and 182.
+Printed pp.181–183 are one-based PDF pp.14–16. They were read in text, and
+the images of printed pp.181 and 182 were checked visually.
 
 - Printed p.181, before Proposition (2.2): a finite function on a locally
   compact abelian group is a continuous function whose translates span a
@@ -169,11 +169,15 @@ des représentations du groupe linéaire*.
 
 ## Statement versus proof
 
-This is a statement unit. The source's proof is an induction on `n`. It uses
+This is a statement module. The source's proof is an induction on `n`. It uses
 the remarks on smooth representations for `σ_n`, a small-coordinate dilation
 expansion uniform in the other coordinates for `|b| ≤ 1`, and a uniform
 choice of the inductive finite set for the slices at fixed last coordinate.
-Each of these is a proof obligation for a separate proof task. In particular,
+Each of these is a separate proof obligation. The Library proves the statement
+as `Langlands.Whittaker.jpsDecomposition` (module
+`Langlands.Representation.Whittaker.JPSDecompositionProof`), from
+`jpsUniformDilation` (module `JPSUniformDilationProof`) and
+`jpsDilationAssembly` (module `JPSDilationAssemblyProof`). In particular,
 deriving the smoothness of `σ_n` used by the source's remarks from local
 constancy and the finite operator span is not asserted here. The existing
 definitions, the parent asymptotic statements and their imported pairs are

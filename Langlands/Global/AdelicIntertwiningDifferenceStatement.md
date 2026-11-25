@@ -1,7 +1,9 @@
 # The difference operator of Bernstein–Lapid §8.5
 
-Module `Langlands.Global.AdelicIntertwiningDifferenceStatement`, written by Worker 759 for
-Task 8033 (`7895a345-127b-4a19-a506-c0f76c92c2a3`). It states
+Module `Langlands.Global.AdelicIntertwiningDifferenceStatement` serves
+`Langlands.Global.IntertwiningWeakMeromorphicContinuationStatement` (module
+`Langlands.Global.AdelicIntertwiningContinuationReduction`; its reduction is in
+`Langlands.Global.AdelicIntertwiningWeakContinuationReduction`). It states
 `Langlands.Global.IntertwiningConstantTermDifferenceStatement` as a proposition definition. It
 supplies no proof.
 

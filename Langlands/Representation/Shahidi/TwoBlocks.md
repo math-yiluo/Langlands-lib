@@ -55,7 +55,7 @@ value, without any supplied normalization compatibility assumption. The theorem
 is a formula for that published algebraic modulus character; it does not itself
 assert its interpretation as a Haar-measure scaling factor.
 
-For the surrounding induction task, Shahidi's displays on pages 67 and 72
+For the surrounding induction, Shahidi's displays on pages 67 and 72
 literally use exponents `1/2(s+n/2)` and `-1/2(s+m/2)`. The standard positive
 half of the modulus computed here, combined with twists `s/2` and `-s/2`,
 instead gives `(s+n)/2` and `-(s+m)/2`. Lemma 2.2 on page 84 supports the
@@ -63,13 +63,13 @@ latter interpretation: in equal ranks, the diagonal pair `(-a,a⁻¹)` contribut
 `|det a|^(s+n)`, and additive-matrix inversion contributes
 `|det a|^(-2n)`, giving the lemma's `|det a|^(s-n)`. The literal twice-halved
 display would give `s-3n/2`. This is an interpretation inferred from the source's
-computations, not a known published erratum. Worker 162 personally read the
-required pages 67,70–73,84–87.
+computations, not a known published erratum. The required pages
+67,70–73,84–87 were read.
 
 This helper defines neither induced representations nor analytic integrals.
 The general local-field determinant-power layer, the p-adic induction
 specialization, function carriers, swapped target, and covariance exponents
-remain the enclosing task's construction obligations. No convergence,
+are constructions of `Induction`, not of this helper. No convergence,
 meromorphic continuation, tensor-functional, or local-coefficient assertion is
 made here.
 

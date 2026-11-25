@@ -1,6 +1,6 @@
 # Proof of Renard VII.3.5 (ii): intertwining operators and induction in stages
 
-Author: Worker 115 (supporting modules shared with Worker 86). Module
+Module
 `Langlands.Representation.Intertwining.PQIntertwiningInnerLeviProof`.
 
 The theorem `Langlands.Aubert.General.RepresentedParabolic.pqIntertwiningInnerLevi` proves
@@ -68,7 +68,8 @@ follows this route.
 
 - The uniqueness is formalized by `integralIntertwiner_unique` (module
   `PQIntegralUniqueness`). It is derived from `IsPQRegular` and Frobenius reciprocity, and
-  it does not use the unproved explicit-integral statement of VII.3.4.
+  it does not use the explicit-integral statement of VII.3.4 (proved separately by
+  `pqIntegralIntertwiningOperator` in `PQIntegralIntertwiningOperatorProof`).
 - The identification of the integration domains (`InnerLeviIntegrationDomain`) and the
   vanishing of `c` on `N₂'(F)` are proved separately. Renard uses both without comment.
 - So is the transfer of the boundary condition (`InnerLeviBoundaryTransfer`, through
@@ -85,4 +86,4 @@ All are in `Langlands/Representation/Intertwining/` and each has paired Markdown
 `PQIntegralUniqueness`, `LeviInductionStagesFormula`, `HaarTransportComparison`,
 `InnerLeviIntegrationDomain`, `InnerLeviBoundaryTransfer`, `InnerLeviOperatorIdentity` and
 `InnerLeviRegularity`. The first three are shared with the proof of part (iii)
-(`PQIntertwiningOuterLeviProof`, Worker 86).
+(`PQIntertwiningOuterLeviProof`).

@@ -1,12 +1,10 @@
 # Etale local sections of smooth surjective scheme morphisms: proof
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.SmoothSurjectiveEtaleLocalSections`.
 It imports the statement module
 `Langlands.AlgebraicGeometry.SmoothSurjectiveEtaleLocalSectionsStatement`
-(Worker 59) and the Library module
-`Langlands.AlgebraicGeometry.SmoothEtaleLocalSections` (Worker 766).
+and the Library module
+`Langlands.AlgebraicGeometry.SmoothEtaleLocalSections`.
 
 `smoothSurjectiveEtaleLocalSections : SmoothSurjectiveEtaleLocalSectionsStatement.{u}`
 proves the statement at every universe `u`: for arbitrary schemes

@@ -1,7 +1,5 @@
 # Cocharacter centralizers and character kernels
 
-Worker 1107.
-
 These elementary internal lemmas relate the actual character kernel, its
 all-test centralizer, and the dynamic centralizer of a cocharacter. They are
 derived from the published constructions in

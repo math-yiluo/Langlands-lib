@@ -39,8 +39,7 @@ The argument uses central characters of both original actions directly.
 
 The provenance is an internal derivation from the imported finite-parameter,
 bilinear-covariance, central-spectral-element, and unitary-central-character
-results. Worker 1739 supplied the central-character proof route; Worker 1765
-implemented the proof and the finite-set construction. This contribution
+results. This module
 provides the unit-circle support needed when applying the supercuspidal
 factor formula. It does not assert an L-factor identity or prove the host
 associated-pair induction statement.

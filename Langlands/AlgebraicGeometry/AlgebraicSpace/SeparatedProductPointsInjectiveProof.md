@@ -1,7 +1,5 @@
 # Proof of injectivity for product-ring points of separated algebraic spaces
 
-Author: Worker 105.
-
 `separatedProductPointsInjective` proves `SeparatedProductPointsInjectiveStatement`.
 The work is done by `separatedProductPoints_injective`, for a fixed commutative ring
 `C`, a separated algebraic space `X` over `Spec C` and a family `R` of `C`-algebras.

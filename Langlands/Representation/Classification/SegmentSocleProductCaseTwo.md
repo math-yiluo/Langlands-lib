@@ -16,9 +16,9 @@ condition.
 
 ## Hypotheses
 
-None of these is proved here. `hC` and `hH` are written out inline. The
-statement of `hH` is not yet in the Library; the statement of `hC` was
-published after this module was written (see below).
+None of these is proved here. `hC` and `hH` are written out inline. Their
+statements are the published propositions `LeftMixedProductHomogeneity` and
+`CuspidalProductMirabolicSupportShift` (see below).
 
 | Hypothesis | Proposition | Source |
 | --- | --- | --- |
@@ -35,17 +35,16 @@ published after this module was written (see below).
 `hH` is the same inline hypothesis as in
 `SegmentSocleProductHomogeneityInduction`: the left mixed product of any
 representation of `GL_k` with a homogeneous representation of `P_(r+1)` is
-homogeneous. It is the instance at `ψ` of the draft statement
-`LeftMixedProductHomogeneity` (task `49d8eea3-1f52-4505-bfce-d76bf8ed5b8a`).
+homogeneous. It is the instance at `ψ` of the statement
+`LeftMixedProductHomogeneity` (module `Derivative.LeftMixedProductHomogeneityStatement`).
 
 `hC` is the instance at `ψ` of the statement
 `Langlands.Classification.CuspidalProductMirabolicSupportShift`, published
-in module `Classification.CuspidalProductMirabolicSupportShiftStatement`
-(statement task `d54cc845-00d9-44be-bff2-c7a8bf032d31`; Library commit
-`7114a390`). The inline hypothesis is the body of that published proposition
-at `ψ`; only the namespace qualification of names differs. The planned
-final assembly (not part of this submission) passes the published
-statement's instance at `ψ`. In words: let
+in module `Classification.CuspidalProductMirabolicSupportShiftStatement`.
+The inline hypothesis is the body of that published proposition
+at `ψ`; only the namespace qualification of names differs. The
+final assembly (`SegmentSocleProductHomogeneityAssembly`, not part of this
+module) passes the published statement's instance at `ψ`. In words: let
 `ρ_1, …, ρ_r` be cuspidal data with ranks adding to `N + 1`, represented by
 actual supercuspidal representations `A_i`. Let `W` be a representation of
 `P_(N+1)` (carrier in `Type (max uF uV)`) with an injective intertwiner into the

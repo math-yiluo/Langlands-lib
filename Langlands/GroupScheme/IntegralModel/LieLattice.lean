@@ -177,7 +177,7 @@ theorem lieLattice_isLattice (hM : M.IsSmooth) : Submodule.IsLattice K M.lieLatt
       rw [lieBaseChangeEquiv_tmul]
       exact Submodule.smul_mem _ a (Submodule.subset_span ⟨X, rfl⟩)
     | add s t hs ht =>
-      rw [map_add]
+      rw [LinearEquiv.map_add]
       exact Submodule.add_mem _ hs ht
 
 section Hom

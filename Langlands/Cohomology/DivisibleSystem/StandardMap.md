@@ -1,6 +1,6 @@
 # Maps of standard resolutions along a functor
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.TotalExact`
+Built on `Langlands.Cohomology.DivisibleSystem.TotalExact`
 (`standardRows`, `standardRowsAugmentation`, `standardRowsAugmentationApp`,
 the typed row and column differentials `standardRowsD₁`, `standardRowsD₂`
 with `ιTotal_standardRows_d`, the maps out of a total complex after a functor
@@ -226,7 +226,7 @@ resolution (2.5) of `M_m^{q,H}` "by iterating the functorial surjection
 which is normal in S(e), we obtain a natural isomorphism
 C_m^{•,H} = [C_m^{•,H'}]^H." (p.306 prints `S(e)` where p.305 has `S(ẽ)`.)
 He then takes the direct limit as `H` shrinks to the identity to obtain
-(2.6). Both passages were read visually from the scan by Worker 61.
+(2.6). Both passages were read visually from the scan.
 
 1. What is formalized. This module does not formalize that isomorphism, and
    does not use any identification of the `H`-invariants of the standard

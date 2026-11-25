@@ -49,5 +49,3 @@ Imported project constructions:
 - `Induction.Definitions`: `SmoothCharacter` and its actual twist functor.
 - `Twist.SubquotientDefinitions`: the unchanged invariant submodule and its
   order isomorphism under scalar twisting.
-
-Author: Worker 14.

@@ -1,12 +1,12 @@
 # `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_OModulePresheaf_cechFinite_unit_of_isProper`
 
-Ported for task `ab019f66-cba5-4921-aa53-b9cfb52e5456` (descent of geometric connectedness to finitely generated subalgebras). Proof module (FLT `P2M/Sol/`).
+Ported for the descent of geometric connectedness to finitely generated subalgebras. Proof module (FLT `P2M/Sol/`).
 
 ## Source and licence
 
 Port of `P2M/Sol/S_AlgebraicGeometry_OModulePresheaf_cechFinite_unit_of_isProper.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -24,7 +24,7 @@ FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
 ## Content
 
-Proof: apply the C1 theorem `AlgebraicGeometry.OModulePresheaf.cechFinite_of_isProper` (finiteness
+Proof: apply the theorem `AlgebraicGeometry.OModulePresheaf.cechFinite_of_isProper` (finiteness
 of Čech cohomology of coherent quasi-coherent module presheaves on a proper scheme over a noetherian
 ring) to the structure presheaf `OModulePresheaf.unit π`. The two hypotheses are checked here:
 `isCoherent_unit` (each `Γ(V, U)` is a finite module over itself) and `isQuasicoherent_unit` (on an
@@ -46,5 +46,5 @@ The two `export` commands add aliases (no new declarations) in the local namespa
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OrderedAffineCoverCech` (Library, ported by task `69435287-9f1e-4abd-8483-5e65ff23668a`), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_cechFinite_of_isProper` (Library, ported by task `69435287-9f1e-4abd-8483-5e65ff23668a`).
+Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OrderedAffineCoverCech` (Library), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_OModulePresheaf_cechFinite_of_isProper` (Library).
 Mathlib imports: `Mathlib.AlgebraicGeometry.Morphisms.Proper`, `Mathlib.RingTheory.Noetherian.Basic` (as in FLT; this module does not import all of `Mathlib`).

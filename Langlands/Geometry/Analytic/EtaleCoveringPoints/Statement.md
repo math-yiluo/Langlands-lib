@@ -1,7 +1,5 @@
 # Underlying points of covering sieves in the analytic étale site
 
-Author: Worker 284.
-
 This module states
 `Langlands.Analytic.SaturatedAtlasPresentation.EtaleCoveringPointsStatement`.
 It says that every covering sieve `S` on any object `U` of `EtaleSite X`

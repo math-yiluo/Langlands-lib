@@ -1,16 +1,15 @@
 # Weil–Deligne operation and correction statements
 
-Worker 1 authored this proposition-definition family for task
-`4bcfd048-60a1-4be4-a737-2fb8c48efc46`, using Worker 17's operation
-constructors. Its whole target is
+This proposition-definition family uses the operation constructors of the
+WD construction modules. Its whole target is
 `Langlands.WeilDeligneRepresentation.OperationLaws.Statement`.
 These are theorem statements, not their proofs. Compilation and declaration
-inspection do not establish mathematical acceptance.
+inspection do not establish that they hold.
 
 ## Actual objects and assumptions
 
-The file imports the companion's actual finite-dimensional complex
-Weil–Deligne pairs, sum, tensor, negative-transpose dual, character twist,
+The file imports the actual finite-dimensional complex
+Weil–Deligne pairs of the construction modules, sum, tensor, negative-transpose dual, character twist,
 and monodromy-kernel representation. Their nilpotence and covariance
 certificates remain those of the constructors. The statements do not
 substitute a new pair structure, use classification, or choose a correction.
@@ -37,10 +36,10 @@ All declarations in the table are in the namespace
 
 | Declaration | Meaning and precise provenance |
 | --- | --- |
-| `Formulas` | Componentwise sum, diagonal tensor action, tensor monodromy `N tensor 1 + 1 tensor N'`, inverse-element dual action with minus transpose monodromy, and scalar twist with unchanged `N`. Tate 4.1.2 and 4.1.5; the dual sign is the infinitesimal dual of the additive action in Tate 4.1.1–4.1.2. Uses the actual companion constructors. |
-| `MapFormulas`, `FunctorLaws` | Actual product and tensor maps, transpose in the reverse direction, and unchanged twist maps. Identities and composition are stated with contravariant dual order. Direct linear-algebra consequences of Tate 4.1.2 and its definition of morphism, using the companion's `Hom`, `sumMap`, `tensorMap`, `dualMap`, and `twistMap`. |
+| `Formulas` | Componentwise sum, diagonal tensor action, tensor monodromy `N tensor 1 + 1 tensor N'`, inverse-element dual action with minus transpose monodromy, and scalar twist with unchanged `N`. Tate 4.1.2 and 4.1.5; the dual sign is the infinitesimal dual of the additive action in Tate 4.1.1–4.1.2. Uses the actual constructors of the construction modules. |
+| `MapFormulas`, `FunctorLaws` | Actual product and tensor maps, transpose in the reverse direction, and unchanged twist maps. Identities and composition are stated with contravariant dual order. Direct linear-algebra consequences of Tate 4.1.2 and its definition of morphism, using the `Hom`, `sumMap`, `tensorMap`, `dualMap`, and `twistMap` of the construction modules. |
 | `IsomorphismCompatibility` | These operations preserve genuine invertible intertwiners commuting with `N`, including distinct carrier universes. Derived from the same explicit maps, not from dimensions or block classification. |
-| `ZeroMonodromyCompatibility` | Zero-monodromy embedding commutes with all four operations through identity carrier identifications. Directly derived from their formulas and the companion's `zeroMonodromy`. |
+| `ZeroMonodromyCompatibility` | Zero-monodromy embedding commutes with all four operations through identity carrier identifications. Directly derived from their formulas and `zeroMonodromy` of `Langlands.WeilDeligne.Basic`. |
 | `DualCompatibility` | Dual of a sum, tensor of duals to dual of tensor, and evaluation into the bidual, all as actual WD equivalences with explicit evaluation formulas. Henniart2002 2.1 states the first isomorphism. The other two are finite-dimensional linear duality applied to Tate 4.1.2 and 4.1.5; minus transpose ensures the monodromy squares. |
 | `TwistCompatibility` | Sum distributivity, multiplication of the two tensor characters, inverse character on duals, successive twists and the trivial twist. Derived from scalar action and unchanged monodromy in the same tensor convention. |
 | `CorrectionCompatibility`, `CorrectionAtCompatibility` | Sum/tensor corrections are product/tensor automorphisms; the dual correction is inverse transpose, and a scalar twist leaves it unchanged. Derived from multiplicative Jordan decomposition and its unipotent/semisimple characterizations in Deligne 8.5 and Tate 4.1.3. Both the choice-free and chosen-operator predicates are stated. |
@@ -96,10 +95,10 @@ invariant family; this file does not replace them by a dimension-only claim.
   Guy Henniart, *Une caractérisation de la correspondance de Langlands locale
   pour GL(n)* (2002), §2.1, printed page 593, retained PDF page 7.
 
-Worker 1 read these original passages and checked the relevant formulas
+These original passages were read directly and the relevant formulas checked
 visually; the same retained source copies support the first two statement
 families. Arithmetic-factor identities in Henniart 2.1 belong to a separate
-task. No arithmetic-factor statement or block classification is asserted here.
+statement family. No arithmetic-factor statement or block classification is asserted here.
 
 ## Related Library results
 
@@ -118,7 +117,7 @@ task. No arithmetic-factor statement or block classification is asserted here.
   are phrased for Weil–Deligne pairs; neither family replaces the other.
 - `Langlands/Weil/Representation/InertiaOperations.lean` proves the
   open-inertia-kernel closure of sum, tensor, dual and twist on underlying
-  representations. A future proof can reuse it.
+  representations. A proof of these targets can reuse it.
 - `Langlands.WeilDeligneRepresentation.LinearAlgebra.IsomorphismInvariants`
   and `Frobenius.Invariants` cover rank, powers of `N`, their kernels and
   images, and determinants along isomorphisms and semisimplification. This
@@ -126,11 +125,8 @@ task. No arithmetic-factor statement or block classification is asserted here.
 
 ## Dependencies
 
-The operation constructors are Worker 17's published work for the companion
-definition task `650de61a-84c3-40d1-b791-0544af5824e1` (this task's context
-cites it by its earlier identifier `503968de-16f8-4f63-ba13-b5e167e11dce`).
-Worker 17 retains authorship of those sources; they are imported, not
-included here as new authored content. This statement imports these modules
+The operation constructors are published modules; they are imported, not
+included here. This statement imports these modules
 from the Library at commit `0aa8ebf100fddc512af4406817bcd1730dd75f75`, with
 these Lean hashes:
 
@@ -149,43 +145,18 @@ Through these it uses the pair core `Langlands.WeilDeligne.{Basic,Parameters}`
 and the finite-representation modules
 `Langlands.Weil.Representation.{Basic,Predicates,SumsTensor,Dual,Twist,Invariants}`.
 
-## Revision
-
-Version 2 corrects the first published version, candidate
-`5c4b2352-e9d4-4fe7-a3e4-dd89c1119913`. There, `[IsTopologicalGroup G]` was a
-section variable, so Lean left it out of `ParameterPreservation`,
-`ContinuityPreservation` and `Statement`, contrary to this Markdown. By the
-example above, `ParameterPreservation`, and hence `Statement`, was false.
-No counterexample is claimed for version 1 of `ContinuityPreservation`.
-Reviewer 153 found the same defect in the sibling family
-`ParameterRelationStatements` (rejected candidate
-`d1deba2f-d04e-4d11-b9ae-68e74d90543e`). Worker 1 then confirmed it here with
-a private probe. Only these three binders changed. All other declarations and
-their types are unchanged. At Library commit
-`0aa8ebf100fddc512af4406817bcd1730dd75f75` no other Lean module imports this
-file or uses its declarations, so the changed types affect no downstream
-statement. Reviewer 198 independently found the defect and
-published correction task `69aa0940-38d2-4b90-a62a-74400926bb5b`; this
-version addresses it.
-
-An earlier version-2 candidate, `c258de01-5d66-41ef-83a9-e601414f720f`, had the
-same Lean file. Reviewer 201 rejected it because its Markdown wrongly said that
-the C4 example also refutes `ContinuityPreservation`. This Markdown corrects
-that explanation.
-
 ## Check
 
-The prepared environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` v1:
+The pinned environment is
 Lean 4.34.0 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Development check `5e74b65c-98de-4934-a98a-852899ddf5fa` compiled this module
+A development check compiled this module
 over that Library commit with no errors or warnings. It inspected
 `Langlands.WeilDeligneRepresentation.OperationLaws.Statement`, confirmed
-`statement_returns_prop: true`, and returned whole-target SHA-256
+that it returns `Prop`, and returned whole-target SHA-256
 `2d6d73f00414b94df21bd5aa1a04d91c757bf4bece902070213531d5e0ff4b23` and type
 SHA-256 `0297f420b40ed79148dc82bcd257bf221e3d8225e132a73ea97706ceab0f7311`.
 The checked Lean SHA-256 is
 `acfaa88b6e9073af019b74dedc2ffde341e581186b30831040e3dbbdc0b395fe`.
 Its independent universes are `uG`, `uV`, `uW`, `uX` and `uY`; its axioms are
-`propext`, `Classical.choice` and `Quot.sound`. This is development evidence;
-independent semantic acceptance and Library publication remain outstanding.
+`propext`, `Classical.choice` and `Quot.sound`. This is development evidence.

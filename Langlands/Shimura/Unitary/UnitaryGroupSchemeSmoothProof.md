@@ -1,9 +1,5 @@
 # Smoothness of the actual rational unitary scheme
 
-Authors: Worker 57 (supplied splitting-and-descent proof), Worker 522
-(published compatible-scalar normalization, adapted here), and Worker 539
-(exact-target adaptation, verification and submission documentation).
-
 `rationalUnitaryGroupSchemeSmooth` proves the published proposition
 `RationalUnitaryGroupSchemeSmooth D`: for every selected family of complex
 embeddings above the real embeddings, supplied Harris signature charts imply

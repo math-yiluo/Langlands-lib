@@ -93,8 +93,8 @@ displacement, including arbitrary quotient sections. -/
 theorem restriction_sectionDisplacement {U V : Domain K A} (f : U ⟶ V)
     (g : Aut A) (hU : g ∈ locusStabilizer U) (hV : g ∈ locusStabilizer V)
     (b : V.algebra) :
-    f.restriction ((stabilizerSectionAction V ⟨g, hV⟩).hom.toAlgHom b - b) =
-      (stabilizerSectionAction U ⟨g, hU⟩).hom.toAlgHom (f.restriction b) -
+    f.restriction ((stabilizerSectionAction V ⟨g, hV⟩).asIso.hom.toAlgHom b - b) =
+      (stabilizerSectionAction U ⟨g, hU⟩).asIso.hom.toAlgHom (f.restriction b) -
         f.restriction b := by
   change f.restriction (stabilizerSectionMap V ⟨g, hV⟩ b - b) =
     stabilizerSectionMap U ⟨g, hU⟩ (f.restriction b) - f.restriction b
@@ -130,7 +130,7 @@ theorem domainSpectralSubgroup_cover {V : Domain K A} (c : Domain.FiniteCover V)
       ((c.map i).restriction b) r hr g).mpr ⟨hcomp i, ?_⟩
     have hbound := SpectralBound.map hb (c.map i).restriction.toBoundedRingHom
     change SpectralBound ((c.map i).restriction
-      ((stabilizerSectionAction V ⟨g, htarget⟩).hom.toAlgHom b - b)) r at hbound
+      ((stabilizerSectionAction V ⟨g, htarget⟩).asIso.hom.toAlgHom b - b)) r at hbound
     rw [restriction_sectionDisplacement (c.map i) g (hcomp i) htarget b] at hbound
     exact hbound
 

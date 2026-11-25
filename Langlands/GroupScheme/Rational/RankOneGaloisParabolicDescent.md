@@ -1,7 +1,5 @@
 # Rank-one Galois descent of an inverse-orbit-matched standard parabolic
 
-Author: Worker 17.
-
 This internal helper module belongs to the proof of the rank-one parabolic rational-orbit
 height bound (`Langlands.Global.RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement`).
 It contains the algebraic part of Springer's descent argument in semisimple rank one
@@ -18,8 +16,8 @@ of `G_l` is `Γ`-stable, hence defined over `k`. Springer then says:
 - "if Q = P the element γ must lie in P(l)".
 
 The two main theorems below formalize these two sentences. Springer gives no proof of
-them; the statements are adapted to the Library's conventions and the proofs are ours
-(provenance: derived). The adaptation differs from Springer in one point. Springer's
+them; the statements are adapted to the Library's conventions and the proofs are the
+Library's own (provenance: derived). The adaptation differs from Springer in one point. Springer's
 Borel subgroup `B` of `G_l` lies in the minimal `k`-parabolic `P`. Here the split torus and
 the minimal standard parabolic `P(ν)` of `G_L` are arbitrary, so `P(ν)` need not lie in
 `(P_F)_L`. The second theorem therefore fixes a rational point `m₀ ∈ G(L)` with
@@ -30,7 +28,7 @@ is not needed: the descended parabolic is shown proper directly.
 The module adds no hypothesis or axiom. It uses the published Galois descent of parabolics
 `Descent.parabolicGaloisDescent`, the published inverse-orbit-matching lemma
 `SubgroupFunctor.galoisTransport_intersection_eq_of_inverse_orbit_matching`, and the helper
-module `Langlands.GroupScheme.Rational.RankOneParabolicConjugacy` (same proof, same author).
+module `Langlands.GroupScheme.Rational.RankOneParabolicConjugacy` (same proof).
 
 ## Setting and conventions
 
@@ -56,7 +54,8 @@ rational point `δ ∈ G(F)` is `δ_L = baseChangeBasePoint (algebraBaseMap F L)
 
 that is, the Galois translate by `σ` of `q⁻¹ P_{J σ⁻¹} q` is `q⁻¹ P_{J 1} q`. This is the
 hypothesis `hmatch` of both descent theorems. It is the matching condition appearing in
-Worker 5268's statement `HasTwistedOverlapMatching` (Springer's §3.5 factorization) and in
+the statement `HasTwistedOverlapMatching` (module `Global.AdelicGaloisOverlapMatching`;
+Springer's §3.5 factorization) and in
 the published `IsMaximalSplitTorus.eq_simpleRelativeRoots_of_inverse_orbit_matching`.
 
 ## Declarations

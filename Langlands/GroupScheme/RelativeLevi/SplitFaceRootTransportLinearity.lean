@@ -93,8 +93,8 @@ variable {R : Type u} [CommRing R]
     faceHeight C.base C.faceCoweight (P.rootSpanMem ℤ a) =
       faceHeight D.base D.faceCoweight (Q.rootSpanMem ℤ (e.indexEquiv a)))
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 include hroot hheight in
 /-- Actual transported term isomorphisms respect the original successive maps. -/

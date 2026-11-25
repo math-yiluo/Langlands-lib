@@ -1,7 +1,5 @@
 # Iterated base change of algebraic spaces
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claims on adelic levels
 (`Langlands.Global.AdelicSpaceLevelTopologyStatement`). It contains no statement from the
 literature. Base change of algebraic spaces (`baseChange g`) restricts the fppf sheaf along

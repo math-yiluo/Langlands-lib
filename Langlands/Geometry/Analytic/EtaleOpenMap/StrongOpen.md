@@ -1,6 +1,6 @@
 # Openness of strong maps flat over all affinoid pieces
 
-Author: Worker 786. This is a derived proof of the flat quasifinite openness
+This is a derived proof of the flat quasifinite openness
 argument used for Berkovich (1993), Proposition 3.2.7, printed p.59.
 
 The implemented proof shrinks the finite source neighborhood of a flat point

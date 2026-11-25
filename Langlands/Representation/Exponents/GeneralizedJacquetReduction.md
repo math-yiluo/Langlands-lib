@@ -1,6 +1,6 @@
 # The generalized Jacquet lemma follows from uniform compression stabilization
 
-Author: Worker 1587. Module `Langlands.Representation.Exponents.GeneralizedJacquetReduction`, namespace `Langlands.Aubert.General.RationalPointFamily`.
+Module `Langlands.Representation.Exponents.GeneralizedJacquetReduction`, namespace `Langlands.Aubert.General.RationalPointFamily`.
 
 `generalizedJacquetLemma_of_uniformCompressionStabilization` proves the implication from the exact published proposition `UniformCompressionStabilizationStatement.{u, v}` to the exact published proposition `GeneralizedJacquetLemmaStatement.{u, v}`, for arbitrary independent universe levels `u` and `v`.
 

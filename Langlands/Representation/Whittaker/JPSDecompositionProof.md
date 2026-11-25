@@ -1,7 +1,5 @@
 # JPS function-space decomposition (proof)
 
-Author: Worker 625.
-
 The theorem
 `Langlands.Whittaker.jpsDecomposition : JPSDecompositionStatement.{uF}` in
 `Langlands.Representation.Whittaker.JPSDecompositionProof` proves the entire

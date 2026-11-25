@@ -101,16 +101,16 @@ asks for two consecutive vanishing degrees on a Sylow `ℓ`-subgroup for every
 prime `ℓ`. When `G` is a `p`-group, its Sylow `p`-subgroup is `G` itself and
 the other Sylow subgroups are trivial. So `L^×` is cohomologically trivial,
 and in particular `H^2(G, L^×) = 0`. That derivation uses only the norm to the
-bottom field. The statement nevertheless assumes the whole family, as its
-specification requires. This keeps it parallel to the general statement above
+bottom field. The statement nevertheless assumes the whole family. This
+keeps it parallel to the general statement above
 and suits the proof route below.
 
 The Remark after Proposition 11 reduces the norm condition to cyclic
 extensions of prime degree. It passes to the solvable case by dévissage and
 then to the general case through the Sylow subgroups. This statement is the
 `p`-group stage of that strategy. A nontrivial finite `p`-group has a normal
-subgroup of index `p`. A later proof may induct along such subgroups,
-using the published `Langlands.ClassFieldTheory.Local.cyclicH2NormEquiv`
+subgroup of index `p`. The proof in `FinitePGroupNormH2Proof` inducts along
+such subgroups, using the published `Langlands.ClassFieldTheory.Local.cyclicH2NormEquiv`
 (ordinary relative H2 of a cyclic extension as the norm quotient),
 `Langlands.ClassFieldTheory.Local.finiteRelativeH2InflationExactness`
 (degree-two inflation–restriction exactness in finite Galois towers), and
@@ -118,9 +118,7 @@ norm transitivity. For an intermediate field `E`, every intermediate field of
 `L/E` is an intermediate field of `L/K` with the same subfield of `L`. So the
 norm-family hypothesis for `L/K` yields the corresponding hypothesis for
 `L/E`, as such an induction requires. This paragraph
-describes a possible proof route only; this module proves nothing about it.
+describes that proof route; this module proves nothing about it.
 
-Worker 262 authored the Lean/Markdown pair for the statement and source
-localization specified by Worker 68's prerequisite request. It reuses the
-norm-family formulation of the general statement written by Worker 84 to
-Worker 37's specification.
+The statement reuses the norm-family formulation of the general statement
+`FiniteNormH2Vanishing`.

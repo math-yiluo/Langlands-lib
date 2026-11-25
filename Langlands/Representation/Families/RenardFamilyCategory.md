@@ -1,6 +1,6 @@
 # Renard VI.8.1: the categories of `(G, B)`-modules and of admissible ones
 
-Author: Worker 709. Module `Langlands.Representation.Families.RenardFamilyCategory`,
+Module `Langlands.Representation.Families.RenardFamilyCategory`,
 namespace `Langlands.Renard.AlgebraicFamily`. It contains **definitions**: the
 category `FamilyModule B G` of `(G, B)`-modules, its full subcategory
 `AdmissibleFamilyModule B G` of admissible ones, and their basic accessors. It states
@@ -13,9 +13,9 @@ dated **9 July 2026**, VI.8.1 "`(G, B)`-modules", the opening paragraph and the
 Définition, printed p. 187 / PDF p. 193.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read PDF pages 193–194.
+PDF pages 193–194 were read for these definitions.
 
 The source fixes "une `ℂ`-algèbre commutative noethérienne de type fini réduite"
 `B` and defines:
@@ -62,7 +62,6 @@ morphism conversions `FamilyModule.hom` and `FamilyModule.ofHom` with their two
 1. Morphisms. The source names the category `M(G, B)` without spelling out its
    morphisms. They are read as the linear maps commuting with both actions, as in
    "morphisme de `(G, B)`-module" in VI.8.4, before its Proposition (PDF p. 198).
-   This reading is Worker 709's.
 2. Hypotheses on `B`. The definitions need only a commutative ring `B`. Renard's
    standing hypotheses (a reduced Noetherian `ℂ`-algebra of finite type) are not
    imposed here; statements about these categories impose them where the source

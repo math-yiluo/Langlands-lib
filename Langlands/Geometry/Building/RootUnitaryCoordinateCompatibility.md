@@ -1,7 +1,5 @@
 # Full V6 on multipliable roots from quadratic unitary coordinates
 
-Author: Worker 1045.
-
 For a multipliable relative root `a` of a quasi-split group, Kaletha–Prasad
 identify the root group `U_a` with the restriction of scalars of the quadratic
 unitary group of a separable quadratic extension, and define the Chevalley root

@@ -2,8 +2,6 @@
 
 `finiteTypeFieldExtensionLocalDimensionInvariance` proves the exact
 published proposition `FiniteTypeFieldExtensionLocalDimensionInvariance`.
-Worker 105 wrote the proof; Worker 1604 checked and prepared it for
-publication.
 
 The fields k and K and the commutative finite-type k-algebra A have three
 independent universes. For every prime q of K ⊗[k] A, its local dimension

@@ -1,6 +1,6 @@
 # Nontrivial filtration subgroups for actual quadratic local-field coordinates
 
-Worker 1676 derives this module internally from `SU3RootFiltration` and `SU3RootParametersLocalDepth`. The base field `F` is a nonarchimedean local field, and `L/F` is an actual separable quadratic field extension. Their universes are independent. No characteristic restriction, topology on `L`, or supplied extension valuation is required.
+This module is derived internally from `SU3RootFiltration` and `SU3RootParametersLocalDepth`. The base field `F` is a nonarchimedean local field, and `L/F` is an actual separable quadratic field extension. Their universes are independent. No characteristic restriction, topology on `L`, or supplied extension valuation is required.
 
 `quadraticFiltration F L r` specializes the published root filtration to `quadraticValuation F L` and its proved invariance under the actual quadratic conjugation. It is a subgroup of the concrete `rationalParameters F L`, with carrier given by the inequality `2*r ≤ quadraticValuation F L p.second` in `WithTop ℝ`. `quadraticCentralFiltration F L r` specializes the central filtration as a subgroup of that same ambient coordinate group. Its carrier requires zero first coordinate and the inequality `r ≤ quadraticValuation F L p.second`. Closure and the generic antitonicity, exhaustion, separation, doubling and commutator laws are inherited from the existing subgroup constructions; they are not new assumptions or separate proofs here.
 

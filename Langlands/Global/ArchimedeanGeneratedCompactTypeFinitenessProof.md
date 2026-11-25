@@ -1,7 +1,5 @@
 # Finite compact types in the actual generated differential module
 
-Author: Worker 94.
-
 `Langlands.Global.ArchimedeanGL.generatedCompactTypeFiniteness` proves the
 published `GeneratedCompactTypeFinitenessStatement K n` for every number
 field in arbitrary universe and every natural rank, including zero. The

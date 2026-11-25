@@ -17,7 +17,7 @@ morphisms of `𝒪_S`-modules. The statement pair
 hypothesis on `S`, `G` or `H` is added: no smoothness, finite presentation,
 affineness or flatness. The proof uses no dual numbers or tangent points. It
 computes the cotangent map of the group law directly with relative
-differentials. Worker 270 wrote the Lean code and this explanation.
+differentials.
 
 The module imports the statement module, which brings in the published Lie
 construction `Langlands.AbelianScheme.LieFunctor`, and the helper module

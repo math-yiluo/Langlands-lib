@@ -1,7 +1,5 @@
 # Reduction of proper Borel quotients to orbit, stabilizer and flag prerequisites
 
-Worker 1396.
-
 `SchemeAction.act_eq_act_iff` shows that for an action `a`, test points
 `g h : T ⟶ G.X` and `x : T ⟶ X`, `a.act g x = a.act h x` exactly when
 `a.act (g⁻¹ * h) x = x`. The proof cancels `g` using `act_mul` and `act_one`.
@@ -11,8 +9,8 @@ Worker 1396.
 `GeneralLinearSolvableStabilizerStatement`, `ClosedOrbitStatement` and
 `SolvableProperFixedPointStatement`. It uses the Library theorems
 `orbitMapFaithfullyFlat` and `finiteIndexQuotientProperTransfer`, and two proved
-helper results from the modules `StabilizerClosedSubgroup` and `ReducedSubgroup`
-(Worker 1399): `SchemeAction.exists_isClosedSubgroup_stabilizer` and
+helper results from the modules `StabilizerClosedSubgroup` and `ReducedSubgroup`:
+`SchemeAction.exists_isClosedSubgroup_stabilizer` and
 `ReducedSubgroup.exists_reducedIdentityComponent`. It does not use Borel conjugacy or
 dimension theory, and any Borel subgroup works.
 

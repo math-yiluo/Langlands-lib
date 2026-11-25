@@ -1,8 +1,6 @@
 # Uniform refinement Levi transport
 
-Author: Worker 167.
-
-This internal supporting unit identifies actual inverse permutation conjugation
+This internal supporting module identifies actual inverse permutation conjugation
 on a surviving uniform refinement with the nested product-Levi reindexing,
 then constructs the corresponding actual representation equivalence. It retains
 the source-intersection equality, divisibility of every source piece, and the
@@ -90,8 +88,8 @@ No original literature theorem is newly asserted. Principal proved inputs are:
 
 | Input | Origin and role | Independence |
 | --- | --- | --- |
-| `source_size_eq_of_dvd`, `source_piece_coordinates`, `refinementBlockEquiv`, `conjugatesLevi_flatten_uniform` | The finite supporting units `UniformRefinementCombinatorics`, `UniformRefinementCoordinates`, and `UniformRefinementShuffleRealization` of task `0c90f7e4-78fa-43fd-8736-238bb3e8617d`; actual sizes, coordinates, labels and subgroup conjugacy. | Derived from explicit intersection equality, divisibility and coordinate order; no Jacquet formula is assumed. |
-| `flattenedLeviProductEquiv`, `flattenedLeviEquiv_embedding` | Published `Geometric.FlattenedLevi`; actual nested and flattened matrix coordinates. | Product reindexing and entrywise block-diagonal matrix algebra. Its flattening input is `CuspidalSupport.MinimalJacquetProof`, task `f28607f5-1eef-4329-ae18-2576ef25ab6a`; its minimal-Jacquet theorem is unused. |
+| `source_size_eq_of_dvd`, `source_piece_coordinates`, `refinementBlockEquiv`, `conjugatesLevi_flatten_uniform` | The finite supporting modules `UniformRefinementCombinatorics`, `UniformRefinementCoordinates`, and `UniformRefinementShuffleRealization`; actual sizes, coordinates, labels and subgroup conjugacy. | Derived from explicit intersection equality, divisibility and coordinate order; no Jacquet formula is assumed. |
+| `flattenedLeviProductEquiv`, `flattenedLeviEquiv_embedding` | Published `Geometric.FlattenedLevi`; actual nested and flattened matrix coordinates. | Product reindexing and entrywise block-diagonal matrix algebra. Its flattening input is `CuspidalSupport.MinimalJacquetProof`; its minimal-Jacquet theorem is unused. |
 | `leviConjugation_symm_embedding`, `transport` | Published `CuspidalSupport.LeviDefinitions`; actual inverse permutation conjugation and representation pullback. | Defined from actual block embeddings and an explicit conjugacy proof; inverse group identities prove the embedding formula. |
 | `leviEmbedding_apply_same`, permutation entry formulas | Published `Group.GL.Blocks` and `Group.GL.Maps`. | Direct matrix-coordinate algebra. |
 | `nestedLeviEquiv`, `leviRefinementEquiv` | Published `Group.GL.RefinementCoordinates`. | Product reindexing by a label bijection and exact matrix-size equalities. No ambient comparison theorem is needed here. |
@@ -103,7 +101,7 @@ The complete recursive project import closure has 103 modules. Compared with
 `Tensor.FiniteEquivalences`, `Tensor.FiniteRegrouping`, and `Tensor.GLRefinement`.
 Their lower imports already occur in the realization closure. All are the
 unchanged published coordinate or tensor constructions described above.
-The classification closure consists of the five finite supporting units,
+The classification closure consists of the five finite supporting modules,
 `ConstituentRelations`, `CuspidalJacquetMultiplicityStatement`, `Essential`,
 `LanglandsData`, `SegmentEdgeCombinatorics`, `Segments`, `Supercuspidal`,
 `SupercuspidalTwist`, `Tempered`, and `TwoSegmentSocleShuffleJacquetStatement`.
@@ -111,19 +109,18 @@ The last module supplies definitions, not a proved shuffle Jacquet formula.
 The remaining imports supply lower matrix, refinement, induction, coinvariant,
 twist, tensor, representation and filtration-definition infrastructure.
 
-The recursive closure contains none of the parent's excluded reverse-product
+The recursive closure contains none of the excluded reverse-product
 structure, reducibility, socle or special-head product criterion, adjacent or
 two-segment commutation, linked gluing, ordered multisegment existence,
 exhaustion, square-integrable classification, quotient-Hom or derivative
-inputs. The independently reviewed `UniformRefinementShuffleRealization` pair
-must be published before this unit is integrated; its hypotheses remain
+inputs. The hypotheses of `UniformRefinementShuffleRealization` remain
 explicit here.
 
 `Tensor.FlattenedGLRefinement` already handles literal flattening with its
-canonical block correspondence. This unit supplies the distinct map induced
+canonical block correspondence. This module supplies the distinct map induced
 by the realized permutation into a uniform target, reusing the same general
 rank-aware tensor equivalence rather than duplicating its construction.
 
 No geometric-lemma filtration, vanishing assertion, segment Jacquet formula,
-shuffle Jacquet formula, or parent `JuxtaposedSegmentSocleReverseProductStructure`
-is proved by this supporting unit.
+shuffle Jacquet formula, or `JuxtaposedSegmentSocleReverseProductStructure`
+is proved by this supporting module.

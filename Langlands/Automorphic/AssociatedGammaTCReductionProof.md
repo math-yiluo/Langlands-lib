@@ -1,14 +1,13 @@
 # Henniart's Théorème 2.3 over totally complex fields from the totally complex functional equation
 
-Module `Langlands.Automorphic.AssociatedGammaTCReductionProof`. Author: Worker 1011. Proof
-contribution to Task 7361 (`0610fbb5-7b81-4ff7-b8bf-24d14a7a0c2d`), revision 1, link 2 of the
-totally complex chain that Task 0 published under the operator's answer
-`81ed24709e7050068786116ca6613260` (Option A).
+Module `Langlands.Automorphic.AssociatedGammaTCReductionProof`. It is the second link of the
+chain of results restricted to totally complex base fields: from the totally complex functional
+equation to Henniart's Théorème 2.3 over such fields.
 
 ## 1. What is proved
 
 The theorem
-`Langlands.ClassField.Global.RelativeWeilGroup.associatedGammaReductionTC.{u, uV, uP, uQ, uE}`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.associatedGammaReductionTC.{u, uV, uP, uQ, uE}`
 proves the published proposition
 
 ```text
@@ -97,7 +96,7 @@ Proof (as in the original):
 
 ### 3.2 `commonTwistEulerInputs_families_tc`
 
-Namespace `Langlands.ClassField.Global.RelativeWeilGroup`, universes `u uQ uV uE`. The totally
+Namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`, universes `u uQ uV uE`. The totally
 complex form of `commonTwistEulerInputs_families`. Hypotheses: a totally complex `F`, a finite
 Galois extension `E/F`, the totally complex functional equation, the epsilon existence
 statement `Correspondence.ArithmeticPairEpsilonExistenceStatement`, setups `D` and `A`, weak
@@ -120,7 +119,7 @@ both characters. Outside `B` the L-factors and dual L-factors agree
 
 ### 3.3 `hasHeckeGammaCertificate_setups_tc`
 
-Namespace `Langlands.ClassField.Global.RelativeWeilGroup`, universes `u uQ uV uE`. The totally
+Namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`, universes `u uQ uV uE`. The totally
 complex form of `hasHeckeGammaCertificate_setups`. It has the hypotheses of the original:
 
 - the stable comparison `StableTwistPairGammaMatchStatement`, the principal-series
@@ -155,7 +154,7 @@ Proof (as in the original): the bad set is `{v} ∪ W₁ ∪ W₂`.
 
 ### 3.4 `associatedGamma_of_inputs_tc`
 
-Namespace `Langlands.ClassField.Global.RelativeWeilGroup`, universes `u uV uP uQ uE`.
+Namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`, universes `u uV uP uQ uE`.
 Hypotheses `hFE : CuspidalPairGlobalFunctionalEquationTCStatement.{u, u}` and
 `hL1 : StableTwistPairGammaMatchStatement.{u, uV, uE}`. Conclusion:
 `AssociatedGammaTCStatement.{u, uV, uP, uQ, uE}`. The proof is that of
@@ -190,7 +189,7 @@ Hypotheses `hFE : CuspidalPairGlobalFunctionalEquationTCStatement.{u, u}` and
 
 ### 3.5 `associatedGammaReductionTC`
 
-Namespace `Langlands.ClassField.Global.RelativeWeilGroup`, universes `u uV uP uQ uE`, type
+Namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`, universes `u uV uP uQ uE`, type
 `AssociatedGammaReductionTCStatement.{u, uV, uP, uQ, uE}`. Proof: given `hFE`, apply
 `associatedGamma_of_inputs_tc` (§3.4) to `hFE` and to the Library theorem
 `stableTwistPairGammaMatchStatement.{u, uV, uE}`, which proves the stable comparison
@@ -242,11 +241,11 @@ Langlands pour GL(n) sur un corps p-adique*, Invent. Math. 139 (2000), 439–455
 local Langlands conjecture for GL(n): the cyclic case*, Ann. of Math. 123 (1986), 145–203
 (`henniart-1986-cyclic`), Theorem 4.1 and §4.3. The formal route is that of the published
 `associatedGamma_of_inputs` (see its Markdown). The restriction to totally complex base fields
-follows the operator's Option A. The copies in this module are internal.
+is a choice of the Library's route. The copies in this module are internal.
 
 ## 6. Check
 
-All declarations compile in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` over Library
+All declarations compile over Library
 commit `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85` with no errors or warnings.
 `associatedGammaReductionTC` has level parameters `u uV uP uQ uE`, and its axioms are
 `propext`, `Classical.choice` and `Quot.sound`. No existing module is edited.

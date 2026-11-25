@@ -1,7 +1,5 @@
 # Maximality of supplied torus images under central fppf surjections
 
-Worker 226.
-
 `Langlands.GroupScheme.RelativeCentralSurjectionMaximalImageStatement.{u}` is the named `Prop`-valued statement recording
 maximality on residue fibres of a supplied relative-torus image under a central fppf homomorphism of reductive groups.
 `Langlands.GroupScheme.relativeCentralSurjectionMaximalImage` proves this proposition by the existing helper theorem.

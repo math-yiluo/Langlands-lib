@@ -1,7 +1,5 @@
 # Transport of maximal tori through isomorphisms and closed subgroups
 
-Worker 1336.
-
 This module supplies elementary consequences of the published `IsTorus`,
 `IsMaximalTorus`, `IsClosedSubgroup`, and `SubgroupConjugate` definitions.
 It also defines the individual-group property `MaximalToriAreConjugate`.
@@ -51,5 +49,6 @@ to `G`, and applies invariance of maximality under conjugacy.
 
 This module proves no general maximal-torus existence, conjugacy,
 preservation under field extension, or parabolic-containment theorem.
-Those structural results remain separate obligations for the exact
-`ParabolicMaximalTorusStatement`.
+Those structural results are not proved here. `ParabolicMaximalTorusStatement`
+is proved as `parabolicMaximalTorus` in
+[`Absolute.ParabolicMaximalTorusProof`](../Absolute/ParabolicMaximalTorusProof.md).

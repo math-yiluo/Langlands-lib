@@ -1,7 +1,5 @@
 # Normal subgroups meet parabolic and Borel subgroups well, given the normalizer theorem
 
-Author: Worker 87.
-
 This supporting module proves clauses (ii) and (iii) of
 `NormalSubgroupIntersectionStatement`, which formalizes Conrad, *Reductive group schemes*,
 Exercise 5.5.1. The proof assumes the published statement

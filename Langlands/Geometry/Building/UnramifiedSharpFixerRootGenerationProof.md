@@ -17,12 +17,13 @@ Module `Langlands.Geometry.Building.UnramifiedSharpFixerRootGenerationProof`.
 - The derivative equality `∇Ψ = Φ` over `K` is proved inside this module by
   the private auxiliary theorem `derivativeRoots_affineRoots_eq_range_rootForm
   : UnramifiedAffineRootDerivativesStatement.{u}`. That is the exact
-  proposition of the published statement unit of Task 6608 (KP Proposition
+  proposition of the published statement module
+  `UnramifiedAffineRootDerivativesStatement` (KP Proposition
   6.3.13, derivative part): for every supplied `C`,
   `AffineRootSystem.derivativeRoots C.affineRoots = Set.range (rootForm C.i)`,
   multipliable roots and their doubles included. It is private because the
-  public theorem `unramifiedAffineRootDerivatives` for that statement belongs to
-  Task 6720 (module `UnramifiedAffineRootDerivativesProof`). This module adds
+  public theorem `unramifiedAffineRootDerivatives` for that statement is in the
+  module `UnramifiedAffineRootDerivativesProof`. This module adds
   no public name for it.
 
 Both theorems, the public one and the private one, use only the axioms

@@ -10,7 +10,7 @@ and `v̌ ∈ I_{K∩P}^K Ě` there is `C > 0` with `|⟨I_P^G(ω ⊗ χ)(g) v, v
 `χ ∈ Im X(M)` and `g ∈ G`, where `v` and `v̌` are read in the induced representations of the
 twists through their common restriction to `K`.
 
-This module proves that uniform bound: a fixed section `F₀` of Worker 200's compact picture
+This module proves that uniform bound: a fixed section `F₀` of the compact picture
 `ProductInducedCompactPicture h K A` is transported to the product-induced coefficient space of
 every twist `A ⊗ χ` by `productInducedCompactEquiv`, and one constant bounds all the
 coefficients `CompactInduction.coefficientMap` of these transports by `C Ξ(g)`, for every

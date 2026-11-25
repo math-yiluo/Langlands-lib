@@ -121,6 +121,4 @@ The Lean file defines only this proposition. It proves no Fourier
 estimate, local cutoff estimate, variable-coefficient regularity,
 analyticity or automorphic growth.
 
-Worker 94 authored the statement and initial exposition. Worker 116 identified
-the smooth-order notation defect in the first draft. Worker 88 checked the
-revised statement against the cited original and prepared this publication.
+The statement was checked against the cited original.

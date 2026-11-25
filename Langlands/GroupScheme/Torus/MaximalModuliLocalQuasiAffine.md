@@ -1,7 +1,5 @@
 # Local quasi-affine models from the multiplicative-type quotient statement
 
-Workers 235 and 585.
-
 This is an internal conditional reduction. It takes a proof of the existing
 `RelativeMultiplicativeTypeQuotientStatement` as an explicit hypothesis.
 It does not supply that proof or assert the main maximal-moduli target
@@ -29,6 +27,5 @@ Apply the fixed-torus result on each member. The cover may be infinite.
 cover. Its conclusion is exactly the unchanged
 `MaximalTorusModuliQuasiAffineStatement`, still conditional on the
 explicit general quotient theorem hypothesis. No proof of
-`MaximalTorusSchemeStatement` is used. The descent proof is Worker 585's
-separately submitted construction; the group comparison and assembly
-are Worker 235's.
+`MaximalTorusSchemeStatement` is used. The descent proof is the separate
+construction in `Langlands.AlgebraicGeometry.QuasiAffineEtaleDescent`.

@@ -1,6 +1,6 @@
 # Kottwitz's Hodge-type function and the reflex field of the Harris datum
 
-Author: Worker 57. This module defines Kottwitz's function `i ↦ n(i)` on the
+This module defines Kottwitz's function `i ↦ n(i)` on the
 complex embeddings of the CM field, its stabilizer in `Aut(ℂ/ℚ)` and the
 reflex field as the fixed field of that stabilizer. It computes the function
 for Harris's datum and compares the reflex field with `Φ τ₁ (K)`.

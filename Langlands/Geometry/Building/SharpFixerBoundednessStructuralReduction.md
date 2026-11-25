@@ -1,7 +1,6 @@
-# Singleton sharp-fixer boundedness from the remaining structural statements
+# Singleton sharp-fixer boundedness from the structural statements
 
-This derived, internal unit proves that four Library statements, which are
-not yet proved, imply the exact target
+This derived, internal module proves that four Library statements imply the exact target
 `ValuationBuildingData.SharpFixerBoundednessStatement` (Kaletha–Prasad
 Corollary 7.3.14 for a single point) for every actual
 `B : ValuationBuildingData G` over a nonarchimedean local field `F : Type u`.
@@ -23,9 +22,11 @@ The four statements are explicit hypotheses:
   (printed p. 71, PDF p. 102).
 
 The first gives the cover of `PointSharpExchange`; the last three give
-compactness of `Z(F)^1`. Once all four are proved in the Library, applying
-`sharpFixerBoundednessStructuralReduction` to their proofs proves the target
-with no hypothesis.
+compactness of `Z(F)^1`. All four are proved in the Library, by
+`rootRankOneFactorization`, `BruhatTits.Cartan.actualCentralizerStructure`,
+`centralQuotientReductive` and `anisotropicCompactness_proof`; the module
+`SharpFixerBoundednessProof` applies `sharpFixerBoundedness_of_structure` to
+these proofs and proves the target with no hypothesis.
 
 ## Statements
 
@@ -69,7 +70,7 @@ torus centralizer, because `s ≫ j = i` and `j` represents the centralizer of
 `B.centralizer`, gives that `Z` is connected reductive. Together with
 centrality and maximality of `s`,
 `BruhatTits.RationalPoints.isCompact_rationalCommonNormKernel_of_central_maximalSplit`
-(Worker 1450, module `KPCentralizerNormKernelCompactness`) gives compactness
+(module `KPCentralizerNormKernelCompactness`) gives compactness
 from the other two statements.
 
 *Boundedness.* `sharpFixerBoundedness_of_cover` (module
@@ -87,13 +88,13 @@ the compactness above. The second is
 
 ## Provenance
 
-The unit assembles published or accepted Library results and has no direct
+The module assembles Library results and has no direct
 counterpart in the book. In Kaletha–Prasad, Corollary 7.3.14 (printed p. 251,
 PDF p. 282) is proved from Proposition 7.3.12 (printed pp. 250–251, PDF
 pp. 281–282) and the boundedness of the root groups and of `Z(F)^1`; the
 existence of the elements `m(u)` used throughout Chapter 7 is Proposition
-2.11.17 (printed p. 136, PDF p. 167). The four hypotheses isolate exactly the structural facts that the
-Library does not yet prove; this unit asserts none of them.
+2.11.17 (printed p. 136, PDF p. 167). The four hypotheses isolate exactly these structural facts, which are
+proved in their own modules; this module asserts none of them.
 
 ## Sources
 

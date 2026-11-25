@@ -1,7 +1,5 @@
 # Reduction to descent of geometrically connected fibres
 
-Author: Worker 156.
-
 `SpaceLimitFlatnessDimensionReductionStatement` is an explicit conditional
 statement: descent of the published `HasGeometricallyConnectedFibres`
 property implies the unchanged `SpaceLimitFlatnessDimensionDescentStatement`.

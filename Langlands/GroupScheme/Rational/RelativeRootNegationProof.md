@@ -1,9 +1,8 @@
 # Negation stability of the actual relative roots: proof
 
-Authors: Worker 1310, with the generic-centralizer route suggested by Worker 1650.
-The generic-centralizer setup adapts Worker 1422's published
+The generic-centralizer setup adapts
 `Reductive/RootReducednessReduction`. The final splitting-field assembly
-adapts Worker 1317's published `Rational/AbsoluteRootRestriction`.
+adapts `Rational/AbsoluteRootRestriction`.
 
 `Langlands.GroupScheme.relativeRootNegation` proves exactly
 `Langlands.GroupScheme.RelativeRootNegationStatement.{u}`. For every field

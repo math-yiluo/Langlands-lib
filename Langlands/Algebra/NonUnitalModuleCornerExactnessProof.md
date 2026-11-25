@@ -1,6 +1,6 @@
 # Exactness of the actual original-module corner functors
 
-Worker 595 proves the two closed propositions in
+This module proves the two closed propositions in
 `Langlands.Algebra.NonUnitalModuleCornerExactnessStatements`. The implementation uses
 the original fixed-part subtype, its inherited additive group, the named
 corner ring and the published original-action restriction functors.

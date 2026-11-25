@@ -1,7 +1,5 @@
 # The global functional equation of Hecke L-functions
 
-Author: Worker 35. Statement contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
 All declarations are proposition definitions. Defining them neither
 proves nor assumes any existence or analytic assertion.
 
@@ -254,7 +252,7 @@ separate work.
   `henniart-2000-simple-proof`, SHA256
   `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 
-## Dependencies and acceptance boundary
+## Dependencies and checks
 
 The module imports `Langlands.Global.HeckeCharacter`,
 `Langlands.Global.CompletionPadic`, `Langlands.LocalFactor.Abelian.Padic`,
@@ -275,12 +273,10 @@ byte-identical to the Library files:
 | `Langlands.HarmonicAnalysis.Basic` | `2198cecae146fa7f904dc2c01169d6321aee8e155c99614ed92f861fd2d65aff` |
 
 The module compiled with no errors or warnings under Lean 4.34.0 and
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, in the
-project environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. Inspection
 of `HeckeGlobalFunctionalEquationStatement` reports a `Prop`-valued
 definition with level parameter `u` and only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. The elaborated
 statement was printed and keeps every hypothesis and clause above.
 
-These development checks provide neither independent semantic
-acceptance nor a proof of the functional equation.
+These checks do not prove the functional equation.

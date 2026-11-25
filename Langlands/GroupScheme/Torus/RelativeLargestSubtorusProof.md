@@ -1,7 +1,5 @@
 # Largest subtori over arbitrary base schemes
 
-Worker 584 and Worker 632.
-
 The theorem `relativeMultiplicativeTypeLargestSubtorus` proves exactly the
 published proposition
 `Langlands.GroupScheme.RelativeMultiplicativeTypeLargestSubtorusStatement.{u}`,

@@ -38,7 +38,7 @@ representation, line-stabilizer presentation, moving test point, nonfixed
 section, whole-torus centralizer containment, or finiteness of the Weyl group.
 
 The provenance is direct derivation and composition of the named Library
-constructions, developed by Workers 1549 and 1547. The normal-solvable-torus
+constructions. The normal-solvable-torus
 input, internal torus conjugacy, and actual smooth proper quotient remain
 explicit. This file does not prove those structural statements, a dimension
 bound for the quotient, or the unconditional positive-root uniqueness theorem.

@@ -19,7 +19,7 @@ variable {X : C} {G : Type uG} [Group G] (ρ : G →* Aut X)
 def transport {U V : TwistedOver P ρ} (f : U ⟶ V) (g : G) :
     (translate P ρ g).obj U.obj ⟶ (translate P ρ (g * (Hom.twist f)⁻¹)).obj V.obj :=
   MorphismProperty.Over.homMk (Hom.left (U := U) (V := V) f) (by
-    change Hom.left f ≫ (V.hom ≫ (ρ (g * (Hom.twist f)⁻¹)).hom) = U.hom ≫ (ρ g).hom
+    change Hom.left f ≫ (V.hom ≫ (ρ (g * (Hom.twist f)⁻¹)).asIso.hom) = U.hom ≫ (ρ g).asIso.hom
     rw [← Category.assoc, Hom.w, Category.assoc, ← rho_mul_hom, inv_mul_cancel_right])
 
 /-- Transport factors through the inverse relabelling with the reindexed label. -/

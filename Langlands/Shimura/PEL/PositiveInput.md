@@ -2,8 +2,9 @@
 
 This internal construction takes a proof of the specific proposition
 `PositiveRationalSkewTwistExists D C` as an explicit input. That proposition
-has a separate proof task. This module does not prove it or assume it as
-an axiom. All constructions below retain that proof argument.
+is proved separately, by `positiveRationalSkewTwistExists` in
+`Langlands.Shimura.Unitary.PositiveRationalTwistProof`. This module does not
+prove it or assume it as an axiom. All constructions below retain that proof argument.
 
 Write sigma for the original Harris involution. A witness beta has
 sigma(beta) = -beta and makes
@@ -57,8 +58,9 @@ involution, normalized trace form, group comparison and exact positive
 rational-twist proposition. Its algebra and form are constructed from the
 actual unit witness. It accepts no arbitrary output form, group or model.
 
-Until the separate existence theorem is proved and published, this remains
-a construction conditional on its explicit proof argument. Positivity
+This remains a construction conditional on its explicit proof argument, which
+the separate existence theorem `positiveRationalSkewTwistExists` supplies.
+Positivity
 here concerns the auxiliary algebra involution. It does not assert
 positivity of a polarization form relative to a Hodge homomorphism,
 choose a polarization sign, prove any finite-place condition, construct

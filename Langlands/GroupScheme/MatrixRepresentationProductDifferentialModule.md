@@ -1,7 +1,5 @@
 # Actual finite-product algebraic coefficient modules with their derived Lie action
 
-Author: Worker 2.
-
 This module puts the actual point representation and the constructed algebraic
 Lie differential of a finite-product general linear scheme representation on
 the same finite free coefficient module. Their conjugation covariance follows
@@ -144,7 +142,7 @@ type synonym uses the same type-management pattern as the single-source module.
 All new module and covariance laws are proved in Lean. No external-literature
 identification is asserted.
 
-This unit constructs algebraic coefficient modules for actual finite products
+This module constructs algebraic coefficient modules for actual finite products
 of general linear schemes. Restriction of scalars, sheaf or analytic
 differentiation comparisons, restriction to archimedean compact groups and
-attachment to automorphic coefficient cochains remain separate work.
+attachment to automorphic coefficient cochains are not part of it.

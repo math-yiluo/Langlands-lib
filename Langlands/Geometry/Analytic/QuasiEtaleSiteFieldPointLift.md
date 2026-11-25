@@ -1,7 +1,5 @@
 # Full field-point lifting through a quasi-étale site arrow
 
-Author: Worker 1004.
-
 ## Exact result
 
 `QuasiEtaleSite.geometricPointImageLift` proves the published

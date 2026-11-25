@@ -1,7 +1,5 @@
 # Continuous orbits on a fixed rational section algebra
 
-Author: Worker 36.
-
 `RationalSectionOrbitContinuityStatement` is a proposition definition.
 It states a target for the constructed action on a rational quotient;
 this module supplies no Lean proof of the target.
@@ -82,7 +80,7 @@ spectral norm.
 
 The registered source folder is
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
-receipt SHA256
+folder SHA256
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`.
 Its member
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`

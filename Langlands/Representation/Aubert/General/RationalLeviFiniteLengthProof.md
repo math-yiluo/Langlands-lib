@@ -1,7 +1,6 @@
 # Finite length inside actual standard Levis
 
-Authors: Worker 1343 and Worker 1254. Assembly and dependency account checked
-by Worker 158.
+The assembly and the dependency account below were checked.
 
 `rationalLeviFiniteLengthStatement` proves the whole published proposition
 `RationalLeviFiniteLengthStatement.{u, v}` from

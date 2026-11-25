@@ -1,7 +1,5 @@
 # Simultaneous minima along a rational subgroup chain
 
-Author: Worker 83.
-
 This derived module extends the published one-representation orbit-height minimum
 to a finite descending chain. Each step has its own actual algebraic representation,
 nonzero rational vector and rational subgroup. Later subgroups must act by nonzero

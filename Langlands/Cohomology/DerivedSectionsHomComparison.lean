@@ -125,8 +125,7 @@ def derivedHomFactors (n : ℤ) :
       simp only [Functor.comp_map] at h₁ h₂
       erw [← U.mapDerivedCategory.map_comp_assoc, h₁,
         U.mapDerivedCategory.map_comp, Category.assoc, h₂]
-      rw [Category.assoc]
-      rfl)
+      rw [Category.assoc])
 
 /-- The canonical cycle-localization map on section cohomology. -/
 def complexComparison (n : ℤ) :

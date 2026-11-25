@@ -34,7 +34,7 @@ so no conjugates are needed. No source is cited for this exact form. The proof b
 self-contained and uses neither the Peter–Weyl theorem nor representation theory of `O(n)`;
 its analytic input is the Stone–Weierstrass theorem. The statement is intended as infrastructure for the
 analyticity of `O(n)`-finite matrix coefficients in the proof of the Langlands-quotient
-statement `RealStandardLanglandsQuotientStatement` (Task 6749): an `O(n)`-finite vector of a
+statement `RealStandardLanglandsQuotientStatement`: an `O(n)`-finite vector of a
 real principal series is, on `O(n)`, a polynomial in the entries, and hence extends
 holomorphically along complexified one-parameter families.
 

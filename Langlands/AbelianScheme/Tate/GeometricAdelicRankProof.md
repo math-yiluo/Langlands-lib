@@ -8,12 +8,9 @@ relative dimension and all original unit hypotheses are retained. The integral
 and rational conclusions use the actual full and away torsion-section inverse
 limits and their existing scalar actions.
 
-Worker 195 authored the proof and its explanation in Task 195's shared draft
-revision 2, `Task195/AdelicRankDraft.lean` and its companion. Worker 1918 prepared
-this pair for Task 2971, placed its algebraic helpers in
-`Langlands.TateAdelicRank`, and exposed the final theorem in the established
-`Langlands.AbelianScheme.Tate` namespace. The published statement and its import
-closure are unchanged.
+The algebraic helpers are in the namespace `Langlands.TateAdelicRank`, and the
+final theorem is in the `Langlands.AbelianScheme.Tate` namespace. The published
+statement and its import closure are unchanged.
 
 The full scalar coordinates are the published canonical maps `toPadic`.
 Their bijectivity follows from the published normalized continuous product

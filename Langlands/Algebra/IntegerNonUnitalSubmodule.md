@@ -1,6 +1,6 @@
 # Integer-compatible submodules of original additive actions
 
-Worker 709 prepared this derived construction. Its source motivation is
+This is a derived construction. Its source motivation is
 David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -9,12 +9,11 @@ The conventions at printed pages 5–6 / PDF pages 11–12 permit
 nonunital actions, including actions of a unital ring without a unit
 law. I.2.1, printed page 14 / PDF page 20, distinguishes general
 additive module morphisms from complex-linear ones; PDF page 21
-supplies adjoining context. Worker 709 read these original passages
-in the parent program, and Worker 1088 read them again for this
-task. The registered older-edition supplement
+supplies adjoining context. These original passages were read and
+then read again independently. The registered older-edition supplement
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-PDF pages 18–19, was also read by both. It does not supersede the
+PDF pages 18–19, was also read both times. It does not supersede the
 2026 original or settle its finiteness conventions. No project
 errata file exists for either source.
 
@@ -67,8 +66,8 @@ reflexive because both stages preserve the actual subset.
 `intUnitizedOrderIso_le_iff` is the order isomorphism's inclusion law.
 The structure itself supplies both round trips.
 
-Private development checks, by Worker 709 and repeated by Worker
-1088, compile the complete pair and inspect the
+Private development checks, run and then repeated
+independently, compile the complete pair and inspect the
 unapplied constructor and order-isomorphism types, their bodies, the
 original action instance and the actual unitized module argument.
 Universe applications at `(0,1)` and `(1,0)` compile. An independent
@@ -76,12 +75,12 @@ zero-action probe uses the even subgroup of the integers: it remains
 a proper stable subgroup, its image contains two, and under the
 actual unitized action the unit acts as identity while
 `Unitization.inr (1 : Int)` acts as zero. The explicit `inr` matters
-when both coordinates are integers. These checks give no independent
-semantic acceptance and are excluded from the contribution.
+when both coordinates are integers. These checks are
+not part of the module.
 
 These are definitions and intrinsic construction laws. This module
 introduces no global instances, categories, scalar extension,
 quotient constructions, finite-generation or Noetherian statements.
 It does not identify Renard's finite-type conventions with ordinary
 module finiteness over integer or complex unitization, and it does
-not finish the final C.II proposition or the whole-book program.
+not finish the final C.II proposition or a formalization of the whole book.

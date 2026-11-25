@@ -1,7 +1,5 @@
 # Precomposition of the test relations and common strong representatives
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. It develops the
 Library's test relations `StrongNear` and `IsNear` from
 `ContinuousAnalyticAction`, which formalize Berkovich's `d(φ, ψ) < (U, f, t)`

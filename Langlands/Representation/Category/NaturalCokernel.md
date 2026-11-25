@@ -1,7 +1,7 @@
 # Natural actual cokernels under exact smooth functors
 
-Worker 1300. Internal module-quotient construction for the associated-Levi
-comparison task. This file is an internal prerequisite, not a proof of the
+Internal module-quotient construction for the associated-Levi
+comparison. This file is an internal prerequisite, not a proof of the
 associated-Levi comparison.
 
 For an arbitrary source category and smooth complex representation functors,

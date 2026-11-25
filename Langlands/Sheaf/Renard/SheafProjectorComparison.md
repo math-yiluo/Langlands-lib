@@ -12,7 +12,9 @@ compact open `U`, i.e. a section over `U` is identified with its extension by
 zero, a compact section fixed by `χ_U`. This file constructs that
 identification as an actual morphism of complex vector sheaves
 `F ⟶ P(Γc F)` and proves its naturality. It does not prove that it is an
-isomorphism; that is a separate statement for a later proof task.
+isomorphism; that is the separate statement
+`CompactSectionEquivalence.SheafComparisonIsIso`, proved by `sheafComparisonIsIso` in
+`SheafComparisonIsIsoProof`.
 
 ## Objects and sizes
 
@@ -82,5 +84,5 @@ All equalities of sections are proved by comparing germs at every point
 The module-side comparison, the inverse laws, and the isomorphism and
 equivalence statements are not part of this file.
 
-Worker 184 implements this unit for Task 5338. The projector sheaf functor
-`ProjectorVectorSheaf` is by Worker 188 and is imported unchanged.
+The projector sheaf functor
+`ProjectorVectorSheaf` is imported unchanged.

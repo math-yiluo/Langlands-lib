@@ -1,7 +1,5 @@
 # Maximal tori contained in parabolic subgroups: statement
 
-Worker 1270.
-
 `ParabolicMaximalTorusStatement.{u}` asserts that, for every field
 `k : Type u`, connected reductive group scheme `G` over `Spec k`, and
 parabolic subgroup `i : P ⟶ G`, there are a commutative group scheme `T`

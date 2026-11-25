@@ -1,6 +1,6 @@
 # Harris trace-form comparison on compact open level towers
 
-Author: Worker 57. This internal construction carries the proved topological
+This internal construction carries the proved topological
 regular-module trace-form comparison through actual compact open subgroups,
 transporter arrows, double quotients and the CM-compatible Harris tower.
 It derives the comparison from the existing groups and spaces; it does not
@@ -85,7 +85,7 @@ constructed `harrisCMSection E ιF τ₀`. The isomorphism
 The generic Hecke-intermediate and two-leg theorems, and naturality for all
 transporter arrows, apply to this specialization.
 
-The contribution has internal provenance. Its new arguments are subgroup
+This module has internal provenance. Its new arguments are subgroup
 transport, quotient descent, product continuity, opposite-group functoriality
 and naturality applied to existing published mathematical constructions.
 The original group, CM-type, domain and trace conventions are inherited from
@@ -95,9 +95,9 @@ Their original-source locators include Harris (1999), Section 1 p.301 and
 Section 4 pp.308–309; Harris (1997), Section 2 pp.88–90, corrected by Harris
 (1998), Erratum pp.180–182; Kottwitz (1992), pp.654–655; and Harris–Taylor
 (2001), I.6 p.45 and I.7 p.52. No new existence or comparison theorem from
-that literature is supplied as a premise in this unit.
+that literature is supplied as a premise in this module.
 
 This constructs a comparison of the actual topological double-quotient
 towers. Neatness, stabilizer freeness, finite torsor fibers, local-system
 descent, Hodge positivity, PEL representability and algebraic scheme levels
-remain separate mathematical obligations of the host task.
+are not treated in this module.

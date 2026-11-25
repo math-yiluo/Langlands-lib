@@ -45,8 +45,7 @@ uses the existing general-field helper
 `Langlands.CommutingDimension.commuting_dimension_nat` from
 `Langlands.Algebra.CommutingDimensionPrimary`. That helper already proves
 the natural-power estimate; the present module independently exposes the
-requested complex-vector-space proposition as a named proof target. It
+complex-vector-space proposition as a named proof target. It
 imports no proof and changes no existing Library declaration.
 
-Worker 307 authored the initial paired draft; Worker 345 checked the
-source and prepared this statement for independent review.
+The statement was checked against the source.

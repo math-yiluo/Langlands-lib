@@ -69,7 +69,4 @@ pattern also present in the published
 `Langlands.Representation.Filtration.NonzeroHomCommonSubquotientProof`.
 All imported Library results are unchanged.
 
-Worker 173 wrote the module and explanation. Worker 261 advised the
-atomic-subrepresentation route to exhaustion and identified the reusable
-semisimplicity helpers. Development compilation `78eb4744-5561-45e8-b90a-ff68b71c53c8`
-finished with no errors or warnings; acceptance and publication remain separate.
+A development compilation of the module finished with no errors or warnings.

@@ -1,7 +1,5 @@
 # Proof that group automorphisms scale compatible quotient measures
 
-Author: Worker 787.
-
 `Langlands.QuotientIntegration.compatibleQuotientAutomorphismScaling` proves
 exactly the published proposition
 `Langlands.QuotientIntegration.CompatibleQuotientAutomorphismScaling.{uG}` from
@@ -145,8 +143,8 @@ The integral against the scaled measure is `(δH / δG) * ∫ φ dν`, by
 
 This replaces the uniqueness argument mentioned in the statement Markdown:
 the two specific measures `Measure.map αQ ν` and `(δH / δG) • ν` are compared
-directly by their compact real tests. The task suggests the compact-test
-extensionality used in `Langlands.Analysis.Local.QuotientFunctional`, whose
+directly by their compact real tests. The same compact-test
+extensionality is used in `Langlands.Analysis.Local.QuotientFunctional`, whose
 `measureOfPositiveAveraging_unique` is built on the same Mathlib theorem; this
 proof calls Mathlib's theorem itself.
 
@@ -222,8 +220,9 @@ representations of reductive p-adic groups. I*, Ann. Sci. École Norm. Sup.
   prerequisite for that conjugation calculation. It does not identify the
   module with a determinant of the unipotent action. It also does not prove
   the algebraic equivariance of compact induction or the full normalized
-  orbit comparison, which belong to later work by Worker 76
-  (`Langlands.Geometric.PadicParabolicOrbitJacquetComparison`).
+  orbit comparison, which belong to
+  `Langlands.Geometric.PadicParabolicOrbitJacquetComparison` (proved in
+  `Langlands.Representation.Geometric.ParabolicOrbitJacquetProof`).
 
-No erratum for this source was found among the project notes of the current
+No erratum for this source was found among the project notes of the
 Library.

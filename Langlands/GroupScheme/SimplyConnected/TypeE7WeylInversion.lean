@@ -46,7 +46,7 @@ theorem negAut_mem_weylGroup_of_E7
   have hf : f a = a := e.injective (by simpa only [Equiv.symm_apply_apply] using hfix)
   exact congrArg Subtype.val hf
 
-local instance : Mono p.inclusion.hom.hom.left := by
+private local instance : Mono p.inclusion.hom.hom.left := by
   let : IsClosedImmersion p.inclusion.hom.hom.left := p.isMaximalTorus.2.1
   infer_instance
 

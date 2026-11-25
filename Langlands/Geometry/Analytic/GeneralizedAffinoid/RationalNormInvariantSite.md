@@ -1,7 +1,7 @@
 # Finite sites of norm-invariant positive-radius rational charts
 
-Authors: Worker 56 and Worker 36. Internal derivation adapting Worker 36's
-published strict `InvariantRationalSite` construction to the actual
+Internal derivation adapting the
+strict `InvariantRationalSite` construction to the actual
 weighted rational chart category and its norm-continuous actions.
 
 The inputs are an ultrametric normed field `K`, an actual

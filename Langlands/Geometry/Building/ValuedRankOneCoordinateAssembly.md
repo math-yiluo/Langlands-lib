@@ -73,6 +73,6 @@ coordinate records, elementary SL2 matrix identities, apartment midpoint
 action, actual opposite-pair displacement and Weyl-action results, and
 coroot calibration. No additional source-level assertion is made. The
 coordinate record, actual Weyl normalization, apartment, and norm
-calibration remain supplied data. This focused unit does not prove
+calibration remain supplied data. This module does not prove
 coordinate existence or the SU3 branch of
 `QuasiSplitValuedRankOneCoordinatesStatement`.

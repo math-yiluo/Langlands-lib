@@ -1,6 +1,6 @@
 # Admissible epimorphisms under actual affinoid pushout
 
-Worker 1685 proves that the actual second leg of an affinoid pushout is an
+This module proves that the actual second leg of an affinoid pushout is an
 admissible epimorphism whenever the original first map is an admissible
 epimorphism. The other original map is an arbitrary bounded algebra map between
 presented affinoids over the same complete ultrametric normed field. The proof
@@ -9,9 +9,9 @@ algebras, and empty spectra.
 
 This is internal derived infrastructure from `ClosedQuotientBaseChange`,
 `ClosedQuotient` and the actual bounded affinoid pushout universal property.
-Worker 1582's unchanged closed-ideal extension helper is an indirect dependency
-and is credited with its accompanying pair. No new original-source assertion is
-used.
+The closed-ideal extension helper of `FiniteDomainIdealDescent` is an indirect
+dependency. No new
+original-source assertion is used.
 
 `mapOfLeftEquiv` transports the first pushout algebra through a supplied
 bounded equivalence over the base, leaving the second algebra and its original

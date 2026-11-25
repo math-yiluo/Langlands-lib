@@ -1,9 +1,7 @@
 # Proof: large irreducible admissible `(𝔤𝔩_n(ℂ), U(n))`-modules are principal series
 
 Lean module: `Langlands.Representation.Archimedean.ComplexLargePrincipalSeriesProof`
-(namespace `Langlands.Archimedean`, universe `uV` for the module carrier). Worker 4713 wrote it
-for Task 6758 (`fc034a99-91a8-4782-be5f-e660ac20383c`), with Worker 5219. The target of that task is
-the Library statement `ComplexLargePrincipalSeriesStatement`.
+(namespace `Langlands.Archimedean`, universe `uV` for the module carrier).
 
 ## Statement proved
 

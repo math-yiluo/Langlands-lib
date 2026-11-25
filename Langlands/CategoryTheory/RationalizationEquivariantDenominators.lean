@@ -60,50 +60,50 @@ variable {O : Type w} [Ring O] {X Y : C}
 
 /-- To intertwine two integral actions, it suffices to intertwine an integer basis. -/
 theorem intertwines_of_basis {ι : Type z} (b : Basis ι ℤ O) (f : X ⟶ Y)
-    (h : ∀ i, a (b i) ≫ f = f ≫ a' (b i)) :
-    ∀ x : O, a x ≫ f = f ≫ a' x := by
+    (h : ∀ i, (a (b i)).asHom ≫ f = f ≫ (a' (b i)).asHom) :
+    ∀ x : O, (a x).asHom ≫ f = f ≫ (a' x).asHom := by
   let l : O →ₗ[ℤ] (X ⟶ Y) :=
     ((CategoryTheory.Linear.comp (S := ℤ) X X Y).flip f).comp
-      a.toAddMonoidHom.toIntLinearMap
+      ((End.addEquiv (X := X)).toAddMonoidHom.comp a.toAddMonoidHom).toIntLinearMap
   let r : O →ₗ[ℤ] (X ⟶ Y) :=
     ((CategoryTheory.Linear.comp (S := ℤ) X Y Y) f).comp
-      a'.toAddMonoidHom.toIntLinearMap
+      ((End.addEquiv (X := Y)).toAddMonoidHom.comp a'.toAddMonoidHom).toIntLinearMap
   have hlr : l = r := b.ext h
   exact fun x => DFunLike.congr_fun hlr x
 
 /-- Integral representatives of a rational isomorphism that exactly intertwine
 both integral actions in both directions. -/
 structure EquivariantIntegralIsoData (e : of X ≅ of Y) extends IntegralIsoData e where
-  hom_intertwines : ∀ x : O, a x ≫ hom = hom ≫ a' x
-  inv_intertwines : ∀ x : O, a' x ≫ inv = inv ≫ a x
+  hom_intertwines : ∀ x : O, (a x).asHom ≫ hom = hom ≫ (a' x).asHom
+  inv_intertwines : ∀ x : O, (a' x).asHom ≫ inv = inv ≫ (a x).asHom
 
 /-- Exact equivariant integral representatives exist for any rational
 isomorphism intertwining actions of a ring with a finite integer basis. -/
 theorem nonempty_equivariantIntegralIsoData {ι : Type z} [Finite ι] (b : Basis ι ℤ O)
     (e : of X ≅ of Y)
-    (he : ∀ x : O, (ofHom (a x) : of X ⟶ of X) ≫ e.hom =
-      e.hom ≫ ofHom (a' x)) :
+    (he : ∀ x : O, (ofHom (a x).asHom : of X ⟶ of X) ≫ e.hom =
+      e.hom ≫ ofHom (a' x).asHom) :
     Nonempty (EquivariantIntegralIsoData a a' e) := by
   let d := integralIsoData e
-  have hinv (x : O) : (ofHom (a' x) : of Y ⟶ of Y) ≫ e.inv =
-      e.inv ≫ ofHom (a x) := by
+  have hinv (x : O) : (ofHom (a' x).asHom : of Y ⟶ of Y) ≫ e.inv =
+      e.inv ≫ ofHom (a x).asHom := by
     apply (cancel_epi e.hom).mp
     rw [← Category.assoc, ← he x]
     simp only [Category.assoc, Iso.hom_inv_id, Iso.hom_inv_id_assoc, Category.comp_id]
-  have hhom (x : O) : ofHom (a x ≫ d.hom) = ofHom (d.hom ≫ a' x) := by
+  have hhom (x : O) : ofHom ((a x).asHom ≫ d.hom) = ofHom (d.hom ≫ (a' x).asHom) := by
     rw [ofHom_comp, ofHom_comp, d.ofHom_hom]
-    change (ofHom (a x) : of X ⟶ of X) ≫ (d.homDenom • e.hom) =
-      (d.homDenom • e.hom) ≫ ofHom (a' x)
+    change (ofHom (a x).asHom : of X ⟶ of X) ≫ (d.homDenom • e.hom) =
+      (d.homDenom • e.hom) ≫ ofHom (a' x).asHom
     rw [Preadditive.comp_zsmul, Preadditive.zsmul_comp, he x]
-  have hinv' (x : O) : ofHom (a' x ≫ d.inv) = ofHom (d.inv ≫ a x) := by
+  have hinv' (x : O) : ofHom ((a' x).asHom ≫ d.inv) = ofHom (d.inv ≫ (a x).asHom) := by
     rw [ofHom_comp, ofHom_comp, d.ofHom_inv]
-    change (ofHom (a' x) : of Y ⟶ of Y) ≫ (d.invDenom • e.inv) =
-      (d.invDenom • e.inv) ≫ ofHom (a x)
+    change (ofHom (a' x).asHom : of Y ⟶ of Y) ≫ (d.invDenom • e.inv) =
+      (d.invDenom • e.inv) ≫ ofHom (a x).asHom
     rw [Preadditive.comp_zsmul, Preadditive.zsmul_comp, hinv x]
   obtain ⟨r, hr, hrf⟩ := exists_common_zsmul_eq
-    (fun i => a (b i) ≫ d.hom) (fun i => d.hom ≫ a' (b i)) (fun i => hhom (b i))
+    (fun i => (a (b i)).asHom ≫ d.hom) (fun i => d.hom ≫ (a' (b i)).asHom) (fun i => hhom (b i))
   obtain ⟨s, hs, hsg⟩ := exists_common_zsmul_eq
-    (fun i => a' (b i) ≫ d.inv) (fun i => d.inv ≫ a (b i)) (fun i => hinv' (b i))
+    (fun i => (a' (b i)).asHom ≫ d.inv) (fun i => d.inv ≫ (a (b i)).asHom) (fun i => hinv' (b i))
   refine ⟨{
     toIntegralIsoData := d.rescale r s hr hs
     hom_intertwines := intertwines_of_basis a a' b (r • d.hom) ?_
@@ -116,8 +116,8 @@ theorem nonempty_equivariantIntegralIsoData {ι : Type z} [Finite ι] (b : Basis
 /-- A choice from the proved existence of exactly equivariant integral maps. -/
 def equivariantIntegralIsoData {ι : Type z} [Finite ι] (b : Basis ι ℤ O)
     (e : of X ≅ of Y)
-    (he : ∀ x : O, (ofHom (a x) : of X ⟶ of X) ≫ e.hom =
-      e.hom ≫ ofHom (a' x)) :
+    (he : ∀ x : O, (ofHom (a x).asHom : of X ⟶ of X) ≫ e.hom =
+      e.hom ≫ ofHom (a' x).asHom) :
     EquivariantIntegralIsoData a a' e :=
   Classical.choice (nonempty_equivariantIntegralIsoData a a' b e he)
 

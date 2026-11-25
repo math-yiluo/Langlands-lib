@@ -1,7 +1,5 @@
 # Restriction and corestriction on relative Tate cohomology
 
-Author: Worker 42.
-
 For a tower of fields `K → L → M`, the published
 `relativeGaloisSubgroup K L M` is the actual image of
 `Gal(M/L) → Gal(M/K)` under restriction of scalars. Its published group

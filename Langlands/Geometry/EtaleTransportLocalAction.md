@@ -1,7 +1,5 @@
 # Lifted subgroup actions on small-etale objects and their sections
 
-Author: Worker 13.
-
 This internal construction equips actual small-etale objects over a scheme
 with subgroup actions lifting the given scheme action. It constructs the
 corresponding category, labelled transport automorphisms, and functorial

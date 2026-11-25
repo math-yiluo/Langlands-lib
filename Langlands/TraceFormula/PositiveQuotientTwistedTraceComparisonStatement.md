@@ -66,7 +66,7 @@ normalized positive Haar measure above. Quantify over integrability proofs
 `Measure.haar`. Quantify over representations `π` of the norm-one group,
 as monoid homomorphisms to the bounded complex-linear endomorphisms of its
 quotient `L²` space. The representation hypotheses specialize those in
-`AbstractSimpleTwistedTraceFormulaStatement` (Task 7420) to this group and measure.
+`AbstractSimpleTwistedTraceFormulaStatement` to this group and measure.
 
 - `hπnorm` says each `π(g)` preserves the norm.
 - `hπmeas` says each orbit `g ↦ π(g) φ` is almost everywhere strongly measurable

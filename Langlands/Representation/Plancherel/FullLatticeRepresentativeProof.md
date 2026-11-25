@@ -1,8 +1,5 @@
 # Finite representatives of the full valuation lattice (Renard V.3.23, proof)
 
-Author: Worker 114 (Task 5679, `cce59833-87fe-4fa2-bd38-c532167817a0`).
-The product-section theorem it applies was written by Worker 1292.
-
 `Langlands.Plancherel.RenardCartan.fullLatticeRepresentative` proves exactly
 the published proposition
 `Langlands.Plancherel.RenardCartan.FullLatticeRepresentativeStatement.{u}`
@@ -45,7 +42,7 @@ The module contains three theorems.
   `σ q ∈ F0` has residue `q`.
 - `fullLatticeRepresentative` introduces `F`, `Z`, `hZ`, `T`, `s`, `hs` and
   takes the two conjuncts of the published
-  `splitComponentLattice F Z hZ T s hs` (Task 4160): finite index of
+  `splitComponentLattice F Z hZ T s hs` (module `SplitComponentLatticeProof`): finite index of
   `splitValuationImage s`, and `Set.BijOn` of the valuation from `C0 T s`
   onto `splitValuationImage s`.
   - The existence conjunct is `exists_isFiniteLatticeTransversal_of_finiteIndex`
@@ -53,8 +50,8 @@ The module contains three theorems.
   - For a given transversal `F0`, both the valuation-section property and the
     pair injectivity are exactly the conclusion of the published
     `isValuationSection_tildeC0_of_bijOn s hbij hF0`
-    (module [`RenardDominantSections`](RenardDominantSections.md),
-    Worker 1292), applied to the `BijOn` conjunct. That theorem proceeds as
+    (module [`RenardDominantSections`](RenardDominantSections.md)),
+    applied to the `BijOn` conjunct. That theorem proceeds as
     follows. Equal product valuations give equal quotient residues; points of
     `C0` have trivial residue because their valuations lie in the split image,
     so transversal injectivity identifies the `F0` factors; cancelling that

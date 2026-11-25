@@ -1,7 +1,5 @@
 # Conjugacy of maximal split tori and the split rank
 
-Author: Worker 1220.
-
 This module states, as a `Prop`-valued definition, the conjugacy theorem for
 maximal split tori of a connected reductive group over a field, together with
 the identification of the split rank with the dimension of any maximal split

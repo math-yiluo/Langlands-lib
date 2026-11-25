@@ -1,7 +1,5 @@
 # From actual Rosati positivity to positive self-isogeny multipliers
 
-Author: Worker 224.
-
 This internal reduction uses the existing actual rational Hom category,
 constructed dual, geometric polarization, Rosati conjugation and fixed geometric
 trace. It preserves the single arbitrary universe parameter `u`.
@@ -10,9 +8,10 @@ trace. It preserves the single arbitrary universe parameter `u`.
 `PositivityStatement.{u} → MultiplierPositivityStatement.{u}`. It records the
 conditional reduction with both existing statements unchanged. The theorem
 `multiplierPositivity_of_positivity` in this module implements that implication.
-The statement artifact publishes this internal reduction and its helper lemmas;
-it does not claim an exact-target proof receipt for the unconditional multiplier
-statement.
+This module states this internal reduction and supplies its helper lemmas;
+it is not a proof of the unconditional multiplier statement, which
+`multiplierPositivity` in `RosatiMultiplierPositivityProof` derives from this
+reduction.
 
 `involution_mul_self_of_pullback` takes exactly the existing
 `IsRationalDualPullbackMultiple` equation for an actual rational endomorphism
@@ -27,7 +26,7 @@ replaces the actual dual-pullback equation.
 existing `Rosati.PositivityStatement` to the full existing
 `Rosati.MultiplierPositivityStatement`. This is a conditional reduction; it
 does not prove the unconditional multiplier target. The unchanged positivity
-statement remains a separately owned proof obligation.
+statement is proved separately, by `positivity` in `RosatiPositivityProof`.
 
 The proof derives the rational-inverse instance from the published
 `Rosati.rationalInverse` theorem applied to the actual geometric polarization.

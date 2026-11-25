@@ -8,9 +8,11 @@ products.
 
 This module is a ring-level ingredient for the comodule proof of the Noetherian case of
 finite-surjective affine descent (Stacks, Cohomology of Algebraic Spaces, Lemma 69.17.3,
-Tag 07VP). It was written for the Key proof task 74e16b76 (Worker 148), whose Noetherian
-induction over invariant ideals needs the cover data to pass to closed invariant subspaces, and
-in the end for this task (Tag 07VS). Source: the registered folder
+Tag 07VP). The Noetherian induction over invariant ideals of that proof
+(`finiteCoveredRelationsVanishing_of_quotientCovers` in `GroupoidCoactionFiniteCoverVanishing`)
+needs the cover data to pass to closed invariant subspaces. That Noetherian case is in turn used
+in the Library's proof of Stacks Lemma 70.15.1 (Tag 07VS), `finiteSurjectiveAffineDescent` in
+`Langlands.AlgebraicGeometry.AlgebraicSpace.FiniteSurjectiveAffineDescentProof`. Source: the registered folder
 `stacks-noetherian-space-affine-descent-2026-11-01`, page `07VP.html`.
 
 ## Setting
@@ -131,8 +133,9 @@ subscheme of an affine scheme". Here `Z` corresponds to an invariant ideal `I` o
 `Spec (A ⧸ (A ∩ I D))`, the ring form of `Z' = Y ×_X Z`.
 
 Stacks restricts to reduced irreducible `Z`. Here `I` is an arbitrary invariant ideal, because the
-Key task runs a Noetherian induction over all invariant ideals of the chart ring. Stacks does not
+induction in `GroupoidCoactionFiniteCoverVanishing` runs over all invariant ideals of the chart ring. Stacks does not
 spell out the faithful flatness of `D ⧸ I D` over the new invariant ring or the identification
 of that ring with `A ⧸ (A ∩ I D)`. The proofs above supply them by faithfully flat descent. The
 choice of fields and the ring-level constructions are internal to this formalization and follow
-the interface of the Key task.
+the interface of `exists_genericEvaluation` and of the induction in
+`GroupoidCoactionFiniteCoverVanishing`.

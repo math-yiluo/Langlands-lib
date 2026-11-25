@@ -12,7 +12,7 @@ for compact inductions to the inducing representations, and leaves open whether 
 representation of a pro-`p` subgroup has it. On p.305 Harris takes an open normal pro-`p`
 subgroup `H ⊂ S(ẽ)` and writes: "Since `p` is prime to `ℓ`, the functor `H⁰(H, •)` is exact on
 `ℓ`-primary torsion modules". Taking a form of that exactness as the hypothesis
-`hP : ProPInvariantsExactStatement` (Worker 3's proposition, not proved here), this module
+`hP : ProPInvariantsExactStatement` (a proposition not proved here), this module
 shows:
 
 * `smoothTrivialFunctor R K`, `smoothInvariantsFunctor R K` and `smoothTrivialAdjunction R K`:

@@ -1,8 +1,9 @@
 # Structural targets for torus actions without zero Lie weights
 
-This unit states two structural prerequisites for the unipotence and splitness
-clause of semigroup realization. Both are proposition definitions with proofs
-remaining to be supplied. They use the existing actual `GroupScheme`,
+This module states two structural prerequisites for the unipotence and splitness
+clause of semigroup realization. Both are proposition definitions; their proofs
+are `torusActionUnipotence` (module `Rational/TorusUnipotenceProof`) and
+`torusActionSplitUnipotence` (module `Rational/TorusSplitUnipotenceProof`). They use the existing actual `GroupScheme`,
 `AutomorphicAction`, `actionWeightSpace`, `IsUnipotent`, and
 `IsSplitUnipotent` definitions.
 
@@ -51,4 +52,4 @@ explicit hypothesis so its proof can be developed independently of the first
 target. All three targets are polymorphic in the field universe. They make
 no representability, unipotence or split-series assumption on the original
 semigroup construction, and no proof of semigroup realization is asserted
-by this statement unit.
+by this module.

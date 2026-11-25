@@ -1,6 +1,6 @@
 # Scalar defects of actual tensor-cube splitting charts
 
-This internal derived unit proves
+This module proves
 `Langlands.CentralSimple.splittingChart_scalarDefect_cube_isCoboundary_of_tensorCube_split`.
 Let `k → L` be an arbitrary extension of fields, `A` a `k`-algebra, and `I`
 a nonempty finite matrix index type. For an actual splitting chart
@@ -29,11 +29,12 @@ claimed cube coboundary without an assumed Brauer tensor compatibility law.
 
 All comparisons are implemented directly from the supplied algebra
 equivalences and published matrix innerness and scalar-ambiguity results.
-This unit does not yet assert nonsplitting of degree-six division tensor
-cubes or perform the Sylow fixed-field descent.
+This module does not assert nonsplitting of degree-six division tensor
+cubes or perform the Sylow fixed-field descent; these are in
+`CentralDivisionTensorCubeNonSplit` and `SylowTwoOddSplitting`.
 
 The entry proposition `Langlands.CentralSimple.TensorCubeScalarDefectCoboundaryStatement` records the precise scope of
 `splittingChart_scalarDefect_cube_isCoboundary_of_tensorCube_split`: its explicit hypotheses are universally quantified in a
 Prop-valued definition. The implemented theorem and proof are retained.
-This unit is submitted as a statement because its mathematical entry is
+This module is a statement module because its mathematical entry is
 a proposition, rather than a data construction.

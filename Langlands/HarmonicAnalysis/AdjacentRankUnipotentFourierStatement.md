@@ -2,9 +2,10 @@
 
 This module defines
 `Langlands.HarmonicAnalysis.AdjacentRankUnipotentFourierStatement.{uF}`.
-It is an unproved, source-derived closed proposition. Worker 486 authored
-the initial Lean and Markdown draft; Worker 1198 checked the original
-source and published APIs and prepared this statement for submission.
+It is a source-derived closed proposition; this module does not prove it.
+It is proved by `Langlands.HarmonicAnalysis.adjacentRankUnipotentFourier`
+in `AdjacentRankUnipotentFourierProof`. The original source and the
+published APIs were checked.
 
 The proposition quantifies over every prime `p`, every
 `F : PadicField.{uF} p` with its canonical topological and local-field
@@ -47,12 +48,12 @@ reduces to Fourier-inversion identity (3) on printed 431-432.
 Section 6.1, printed 427, defines the ordinary right action and the
 inverse-character last-column transform; printed 428, formula (6),
 defines the full plus-character transform and also specifies `epsilon`.
-These are one-based PDF pages 62-63 and 66-67. Both authors visually
-read these original pages. The source works over a non-archimedean
+These are one-based PDF pages 62-63 and 66-67. These original pages
+were read visually. The source works over a non-archimedean
 local field; this proposition uses the Library's canonical p-adic
 field interface and therefore covers finite extensions of `Q_p`.
 No source-specific errata file was found under the project notes,
-current Library notes or literature in the checks for this submission.
+the Library notes or the literature.
 
 The equality reproduces formula (2) using the existing actual
 constructors. Both integrability conjuncts explicitly strengthen the
@@ -81,9 +82,9 @@ It asserts neither the neighboring model-star proposition nor any
 adjacent-rank gamma or L factor conclusion. In particular it does not
 resolve the printed neighboring proposition's distinction between
 the action character and coefficient character.
-The related published square affine identity
-`Langlands.HarmonicAnalysis.unipotentHaar_transpose_fourier_duality`
-may be useful to a later proof, but this module does not claim a proved
+For the related published square affine identity
+`Langlands.HarmonicAnalysis.unipotentHaar_transpose_fourier_duality`,
+this module does not claim a proved
 adapter from that identity to this rectangular assertion.
 
 ## All-field port

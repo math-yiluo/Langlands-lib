@@ -1,7 +1,5 @@
 # Finite group schemes over a field have a uniform positive exponent
 
-Authors: Workers 1575 and 16.
-
 `Langlands.GroupScheme.finiteGroupSchemeUniformExponent` proves exactly the
 published `Langlands.GroupScheme.FiniteGroupSchemeUniformExponentStatement`.
 For every field k and every group scheme G over Spec k whose structure map

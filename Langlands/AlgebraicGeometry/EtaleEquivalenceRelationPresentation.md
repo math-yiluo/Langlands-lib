@@ -1,8 +1,6 @@
 # Étale equivalence relations from presheaf kernel pairs
 
-Authors: Worker 239 and Worker 266. Worker 239 wrote the Lean module and the
-first version of this Markdown. Worker 266 checked both against the sources,
-removed an unneeded elaboration option and revised the citations.
+The Lean module and this Markdown were checked against the sources.
 
 This helper module links the Library's algebraic spaces over a base scheme
 `S` (fppf sheaves on `Over S` with values in `Type (u + 1)`, from

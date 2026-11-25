@@ -1,29 +1,32 @@
 # Primitive line-bundle lifting from obstruction naturality and H² injectivity
 
-Authors: Worker 5704 wrote this module. The tensor-transport lemma
-`nonempty_tensor_iso_of_comp_eq` adapts an idea from the Task 5640 draft (Worker 5640,
-building on Worker 225).
+The tensor-transport lemma
+`nonempty_tensor_iso_of_comp_eq` adapts an idea from the work on Artinian lifting of
+Picard-zero families; a lemma of the same name is in
+`Langlands.AlgebraicGeometry.Picard.PicardZeroArtinianPrimitiveTransport`.
 
 Module `Langlands.AlgebraicGeometry.Picard.ArtinianPrimitiveLineBundleLiftingFromPrerequisites`,
 namespace `Langlands.AbelianScheme`.
 
 ## Role and provenance
 
-This is internal infrastructure for task `60cd926c-5964-46c0-ad0e-111a8faf6631`, which
-proves the published `Langlands.AbelianScheme.ArtinianPrimitiveLineBundleLiftingStatement`.
-The source correspondence of that target was reviewed with the target statement. The
+This is internal infrastructure for the proof of the published
+`Langlands.AbelianScheme.ArtinianPrimitiveLineBundleLiftingStatement`.
+The source correspondence of that target is given in the target statement's Markdown. The
 target is claim 2 of the proof of Mumford–Fogarty–Kirwan, *Geometric Invariant Theory*,
 3rd edition, Proposition 6.7, printed pp.117–118 (PDF pp.130–131), registered as
 literature ID
 `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`.
 
-This module proves the target from two published statements whose proofs are not yet in
-the Library. The anchor proposition `ArtinianPrimitiveLineBundleLiftingReductionStatement`
+This module proves the target from two published statements. The anchor proposition `ArtinianPrimitiveLineBundleLiftingReductionStatement`
 is internal: it is exactly this implication, and it is proved in the same module. It follows
 the source's argument: the obstruction of `L₀` maps to the obstruction of `q(L₀)` under an
-injective map, and the second obstruction is zero. Once the two prerequisite proofs are
-published, the task's final proof applies `artinianPrimitiveLineBundleLiftingReduction` to
-them.
+injective map, and the second obstruction is zero. The Library's proof
+`artinianPrimitiveLineBundleLifting` (module
+`Langlands.AlgebraicGeometry.Picard.ArtinianPrimitiveLineBundleLiftingProof`) applies
+`artinianPrimitiveLineBundleLiftingReduction` to the proofs
+`Langlands.AlgebraicGeometry.Picard.squareZeroObstructionMorphismNaturality` and
+`artinianH2PrimitiveInjectivity`.
 
 ## The anchor statement
 
@@ -114,12 +117,11 @@ Introduce the hypotheses `hnat` and `hinj` and all binders of the target: `B'`, 
    isomorphism in `LineBundle A₀.X.left`. This is the target's conclusion with `L' := M`.
 
 The theorem uses no axioms beyond `propext`, `Classical.choice` and `Quot.sound`. The
-approved Lean service compiled the module in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` with zero errors and warnings.
+module compiles with zero errors and warnings.
 
 ## Assumptions
 
 The two prerequisite statements are hypotheses here and are not proved in this module.
-Their proofs are separate tasks. The target's forbidden inputs (the Picard-zero lifting
-statement, the dual-scheme geometry statements and the representability statements) are
+Their proofs are in separate modules. The Picard-zero lifting
+statement, the dual-scheme geometry statements and the representability statements are
 not used.

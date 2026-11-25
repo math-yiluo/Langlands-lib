@@ -1,8 +1,5 @@
 # Abelian-scheme structure from local abelian charts and a section
 
-Statement design: Workers 344 and 1109. Formalization, Markdown and Lean
-checks: Worker 1043.
-
 `Langlands.AbelianScheme.AbelianSchemeStructureOfOpenCoverStatement.{u}` is
 the proposition
 
@@ -126,8 +123,7 @@ descent hypothesis.
 
 ## Provenance
 
-This is an internal derived prerequisite. Workers 344 and 1109 designed it,
-while executing task `e78fdff3-f2d0-4fd9-9f9a-92fc56f7b43d`, for the proof of
+This is an internal derived prerequisite, designed for the proof of
 `Langlands.AbelianScheme.SmoothFamilyAbelianRepresentabilityOfOpenCoverStatement`
 (module
 `Langlands.AlgebraicGeometry.Picard.SmoothFamilyAbelianRepresentabilityOfOpenCoverStatement`).
@@ -148,9 +144,10 @@ statement and the pointed-morphism rigidity statement
 `Langlands.AbelianScheme.pointedMorphismRigidity` (module
 `Langlands.AbelianScheme.PointedMorphismRigidityProof`) are unchanged.
 
-## Intended proof route (future obligations)
+## Intended proof route
 
-The following route is recorded for the separate proof task. None of it is
+The following route was recorded for the proof, which is in the module
+`Langlands.AbelianScheme.AbelianSchemeStructureOfOpenCoverProof`. None of it is
 assumed by the proposition or proved by this module.
 
 1. Transport. For each index `i`, choose a local isomorphism and transport
@@ -189,4 +186,4 @@ assumed by the proposition or proved by this module.
 
 These are proof leads, not hypotheses or established results of this
 statement. The canonical identifications of iterated pullbacks, and any
-auxiliary lemma they require, belong to the proof task.
+auxiliary lemma they require, belong to the proof module.

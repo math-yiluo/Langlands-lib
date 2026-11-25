@@ -1,8 +1,6 @@
 # Weak stable limits of polynomial endomorphism families
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for the statement
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. It proves an
 algebraic denominator principle. If the iterates of an endomorphism, applied to
 a starting vector, converge weakly, then an annihilating polynomial of the form
@@ -147,8 +145,10 @@ normalized central action. `β₀` is the truncated integral over a compact piec
 of the target radical quotient, and `β χ` is the full standard integral. The
 module proves none of these identifications, the weak convergence of the
 truncations, the finite dimensionality or polynomiality of the actual
-families, or uniformity over all source vectors. They remain separate
-obligations of the host task.
+families, or uniformity over all source vectors. They are separate
+obligations for `ConditionalParabolicIntertwiningStatement`; the weak
+convergence of the truncations is `tendsto_compressedTruncation` in
+`StandardIntertwiningTruncation`.
 
 No literature theorem is invoked. The use of Cayley–Hamilton and of a factor
 coprime to `X - 1` is an internal algebraic substitute for the generalized

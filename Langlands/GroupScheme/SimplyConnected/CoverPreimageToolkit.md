@@ -1,7 +1,5 @@
 # Torus centralizers, character descent and maximal tori: general helpers
 
-Author: Worker 1413.
-
 Module `Langlands.GroupScheme.SimplyConnected.CoverPreimageToolkit`. Internal
 helpers for the reduction
 [`SplitTorusCentralizerCoverPreimageReduction`](SplitTorusCentralizerCoverPreimageReduction.md).

@@ -1,7 +1,5 @@
 # Descent of the DVR lifting property along algebraic field extensions
 
-Author: Worker 254.
-
 This module proves the descent of the published DVR lifting property
 `PseudoComplete.HasDVRLifting` from `Langlands.GroupScheme.PseudoComplete`,
 the valuative half of pseudo-completeness, along algebraic field extensions.

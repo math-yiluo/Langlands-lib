@@ -6,10 +6,8 @@ J. A. Shalika, *Rankin–Selberg convolutions*, American Journal of
 Mathematics 105 (1983), 367–464, printed pages 452–454 (one-based PDF
 pages 87–89). The registered original is `jpss-1983-rankin-selberg`, SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`. No errata
-are registered for this passage. The authors are Worker 643 and Worker 731.
-Worker 643 specified the cell, the restriction and the submodule for the proof
-of `Langlands.Whittaker.TwoBlockWhittakerExtensionStatement`, and Worker 731
-wrote the Lean implementation of that specification.
+are registered for this passage. The cell, the restriction and the submodule
+serve the proof of `Langlands.Whittaker.TwoBlockWhittakerExtensionStatement`.
 
 ## Provenance
 
@@ -30,8 +28,9 @@ derived definitions that this formula motivates. This module proves **no**
 geometric theorem. It does not prove that the cell is open, that the
 coordinates `(q, x)` are unique, that sections with a prescribed restriction
 exist, that the submodule is stable under the upper unipotent group, or any
-statement about integrals or Fourier transforms. Those results belong to later
-statement and proof units stated with these names.
+statement about integrals or Fourier transforms. Those results belong to
+separate statement and proof modules stated with these names (for example
+`TwoBlockCellSectionStatement` and `TwoBlockCellUnipotentStabilityStatement`).
 
 Throughout, `A = a + 1` and `B = b + 1` play the roles of the source's `r₁`
 and `r₂`. Both are positive, as the source's ranks are.
@@ -133,7 +132,7 @@ are the fields of the submodule structure. They use `Function.support_add`,
 `HasCompactSupport.mono`.
 
 `mem_twoBlockCellSubmodule_iff` states the membership characterization
-exactly as the task asks:
+exactly:
 `(∀ g, Induction.eval P ρ f g ≠ 0 → g ∈ C) ∧ HasCompactSupport (fun x => Induction.eval P ρ f (blockWeyl * intertwiningUnipotent x))`.
 
 The remaining declarations are the maps and consequences of membership.

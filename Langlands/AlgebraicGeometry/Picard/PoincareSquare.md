@@ -1,8 +1,5 @@
 # Shear maps on relative products
 
-Authors: Worker 270 wrote the Lean and initial explanation; Worker 417
-checked the interfaces and refined the explanation for submission.
-
 Module `Langlands.AlgebraicGeometry.Picard.PoincareSquare` is a helper module
 for the proof of `Langlands.AbelianScheme.FieldDualSchemeMapAdditivityStatement`.
 For an abelian scheme `B/S` and `S`-schemes `Y`, `T`, it introduces the shear
@@ -119,6 +116,6 @@ The conditional final lemma uses the supplied stability proof as described
 above. No independent literature assertion is introduced.
 
 The filename records the intended downstream use in the Poincaré-square
-argument. This unit constructs its shear-map infrastructure; it proves
+argument. This module constructs its shear-map infrastructure; it proves
 neither a Poincaré tensor-square formula nor
 `FieldDualSchemeMapAdditivityStatement`.

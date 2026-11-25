@@ -1,7 +1,6 @@
 # The scalar commutant in the separated discrete-series case, for sorted data
 
-Lean module: `Langlands.Representation.Archimedean.RealDiscreteSeparatedCore`. Author: Worker
-380, for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), as part of the proof of
+Lean module: `Langlands.Representation.Archimedean.RealDiscreteSeparatedCore`, part of the proof of
 `Langlands.Archimedean.RealTiedDiscreteSeparatedScalarCommutantStatement` (the chain ends in
 `RealDiscreteSeparatedProof`). All declarations are in the namespace
 `Langlands.Archimedean.RealDiscreteSeparated`.
@@ -10,7 +9,7 @@ Lean module: `Langlands.Representation.Archimedean.RealDiscreteSeparatedCore`. A
 
 The module proves no statement of record. Its main theorem `hasScalarCommutant_tgtList` proves
 the scalar commutant for the standard module of `tgtList cs Ds = cs, D_d, …, D_1` under the
-hypotheses `IsSepData` below and one more hypothesis: Worker 48's
+hypotheses `IsSepData` below and one more hypothesis:
 `RealSphericalCyclicStatement` (Library, module `RealSphericalCyclic`; cyclicity of a nonzero
 `O(n)`-fixed vector of an even, Langlands-ordered principal series under the Lie algebra). All
 declarations are internal. The proof assembles the earlier modules of the chain:
@@ -65,7 +64,7 @@ A structure with the fields:
   `RealTiedMinorProduct` with empty sign set is the list itself.
 * `exists_cyclic`: given spherical cyclicity, `midList cs Ds` has an `O(n)`-fixed vector that
   generates it under the Lie algebra. Proof: sort `midList` by decreasing real exponent
-  (`insertionSort LangRel`); the sorted list is Langlands ordered and even, so Worker 379's
+  (`insertionSort LangRel`); the sorted list is Langlands ordered and even, so the
   spherical vector `sphVec ∅` (Library `RealTiedMinorProduct`, fixed by `O(n)` and nonzero) is
   Lie-cyclic by `RealSphericalCyclicStatement`. By `pairwise_midList` and `unlinked_of_im_ne`,
   `hasGKSurjection_insertionSort` maps the sorted list onto `midList`, and `cyclic_map`

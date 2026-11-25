@@ -1,7 +1,5 @@
 # Imaginary determinant twists preserve whole-Levi analytic predicates
 
-Author: Worker 429.
-
 `Langlands.leviImaginaryTwistModCenter` proves the complete published
 `Langlands.LeviImaginaryTwistModCenterStatement.{uF,uV}`. The field and
 representation-carrier universes remain independent. The theorem retains

@@ -1,6 +1,6 @@
 # Actual conjugate-factor isomorphisms
 
-This internal construction by Worker 166 compares the actual scalar extensions
+This internal construction compares the actual scalar extensions
 of the descended stabilizer-field group with the original indexed factors,
 compatibly with the original descended inclusion.
 

@@ -124,7 +124,7 @@ def harrisIntegralTateOrderOperator (X : PObj) (a : O) :
   let := auxiliaryStarRing D C
   letI := adelicModule X
   letI := integralModule X
-  let f := Tate.finiteAdeleHomMap (Over.mk s) (fun _ => True) h (X.actionObj.action a)
+  let f := Tate.finiteAdeleHomMap (Over.mk s) (fun _ => True) h (X.actionObj.action a).asHom
   exact { f.toAddMonoidHom with map_smul' := fun r x => f.map_smul (r : Af) x }
 
 local notation "operator" => harrisIntegralTateOrderOperator D C P h s
@@ -178,7 +178,7 @@ theorem harrisIntegralFrame_order (X : PObj) (eta : Frame X) (a : O) (v : Vf) :
     (Tate.finiteAdeleAction X.actionObj.abelianScheme (Over.mk s) (fun _ => True) h 1
       (eta.1 v)) at he
   change eta.1 (sourceAction a v) = Tate.rationalHomMap (Over.mk s) (fun _ => True)
-    (X.actionObj.action a) (eta.1 v)
+    (X.actionObj.action a).asHom (eta.1 v)
   simpa only [map_one, Module.End.one_apply, Tate.rationalEndAction_apply] using he
 
 omit [IsScalarTower ℚ F A] in
@@ -221,7 +221,7 @@ omit [IsScalarTower ℚ F A] in
     letI := auxiliaryStarRing D C
     ((harrisIntegralFrameLatticeOrderAction D C P compatibility h s X eta a w : lattice X eta)
       : Rat X) = Tate.rationalHomMap (Over.mk s) (fun _ => True)
-        (X.actionObj.action a) w := rfl
+        (X.actionObj.action a).asHom w := rfl
 
 variable
   (hs : ∀ Y : Cover S, Finite (Fiber s Y))
@@ -293,6 +293,6 @@ omit [IsScalarTower ℚ F A] in
     letI := auxiliaryStarRing D C
     ((harrisIntegralLevelLatticeOrderAction
       D C P compatibility h s hs htor hu X K hK x a w : levelLattice X K hK x) : Rat X) =
-      Tate.rationalHomMap (Over.mk s) (fun _ => True) (X.actionObj.action a) w := rfl
+      Tate.rationalHomMap (Over.mk s) (fun _ => True) (X.actionObj.action a).asHom w := rfl
 
 end Langlands.Shimura.PEL.HarrisPolarizedWeilLevel

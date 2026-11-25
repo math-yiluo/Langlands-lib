@@ -2,9 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexKIntegralInvariance`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of the Library module
-`KIntegralInvariance` (Worker 5220, for `GL_n(ℝ)`).
+`KIntegralInvariance` (for `GL_n(ℝ)`).
 
 For every smooth function `φ` on `GL_n(ℂ)` that transforms on the left under the upper triangular
 Borel subgroup by its modulus character, the integral of `φ` over `U(n)` is invariant under right
@@ -12,7 +12,7 @@ translation by all of `GL_n(ℂ)`: `∫_{U(n)} φ(k g) dk = ∫_{U(n)} φ(k) dk`
 `Langlands.Archimedean.ComplexKIntegralInvarianceStatement`, proved as
 `Langlands.Archimedean.complexKIntegralInvariance`. In the proof of
 `ComplexStandardLanglandsQuotientStatement` it is applied to Levi subgroups of maximal parabolic
-subgroups, as in Worker 5220's real-case plan (integration formula for `P_{n-1,1}`).
+subgroups, as in the real case (integration formula for `P_{n-1,1}`).
 
 Notation: `GL_n(ℂ)` is `Langlands.GeneralLinear n ℂ`, `U(n)` is the subgroup `unitaryCompact ℂ n`
 with the Library's Haar probability measure `ComplexDuality.unitaryHaar n`. `principalSeries ℂ n χ`
@@ -23,7 +23,7 @@ Library's extension of `φ` to all matrices by `0` off the invertible ones. Decl
 prefix are in the namespace `Langlands.Archimedean.ComplexKIntegralInvariance`; `pairTerm`,
 `fderiv_mul_eq_sum_pairTerm`, `integral_fderiv_mul_eq_zero`, `coeffRe`, `coeffIm`, `skewRe`,
 `skewIm`, `continuous_fderiv_apply_val` are from the Library namespace
-`ComplexDuality.LieInvariance` (Worker 28); `expDiag`, `hasDerivAt_mul_expDiag_at` and `exists_kak`
+`ComplexDuality.LieInvariance`; `expDiag`, `hasDerivAt_mul_expDiag_at` and `exists_kak`
 are from `ComplexMatrixCoefficientAnalytic`.
 
 ## Definitions

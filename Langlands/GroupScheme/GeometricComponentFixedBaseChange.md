@@ -1,6 +1,6 @@
 # Base-field extension on Galois-fixed geometric components
 
-This derived unit extends the actual geometric base-field comparison to the
+This module extends the actual geometric base-field comparison to the
 full Galois-fixed component subgroups. It imports
 `GeometricComponentRationalBaseChange` and reuses Mathlib's existing continuous
 restriction homomorphism of absolute Galois groups.
@@ -33,7 +33,7 @@ component `c` of `H`. Here `rho` is the actual continuous restriction through
 the same specified closure embedding. The proof uses
 `AlgEquiv.restrictNormal_commutes` on each closure coefficient to discharge
 the compatibility premise of `geometricComponentBaseChangeEquiv_smul`.
-Continuity is supplied by the imported Mathlib construction; this unit does
+Continuity is supplied by the imported Mathlib construction; this module does
 not define a second restriction map.
 
 `geometricComponentFixedBaseChange k K H` is the homomorphism

@@ -1,7 +1,5 @@
 # Short roots, strings of length at most one, and a positive functional (`ShortRoots`)
 
-Author: Worker 239.
-
 This module collects three ingredients of the short-root representation built in
 `ShortRootModule` and `ShortRootRep`.
 

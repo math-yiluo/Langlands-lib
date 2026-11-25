@@ -1,7 +1,5 @@
 # Openness of adelic maps for smooth surjective maps with connected fibres
 
-Author: Worker 105.
-
 `AdelicSpreadSmoothOpenStatement` states Theorem 4.5 of Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), printed p.12, for global fields of both
 characteristics. The registered source is `conrad-2011-weil-grothendieck-adelic-points`,

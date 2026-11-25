@@ -1,8 +1,5 @@
 # Full local Harris general position from the first-order construction
 
-Authors: Worker 84 (proof and original Markdown), Worker 1677 (adoption and
-verification of published dependencies).
-
 The theorem Langlands.Global.harrisGeneralPosition implements the exact existing
 HarrisGeneralPositionStatement in one arbitrary field universe. The proof
 applies the separately proved auxiliaryGeneralPositionReduction to
@@ -25,7 +22,6 @@ The unchanged target Markdown records Harris 1998 Definition 4.5, Lemma 4.7,
 the source qualifications and actual definitions. This implementation composes
 separate formal results rather than repeating the source proof. The first-order
 construction supplies the characteristic-two alternative. Both imported proof
-modules are independently accepted, published, and present in the current
-Library. This pair imports those modules by Lean name and introduces
+modules are in the Library. This pair imports those modules by Lean name and introduces
 no additional dependency files. The local composition supplies no global Hecke
-character, weak automorphic induction or completion of the larger H2 program.
+character or weak automorphic induction.

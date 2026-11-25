@@ -1,7 +1,6 @@
 # Prime ramified norm reduction proof
 
-Authors: Worker 1047, with coauthors Worker 90, Worker 92 and Worker 110.
-Some helper lemmas here are adapted from their published proofs; the
+Some helper lemmas here are adapted from published Library proofs; the
 section Source and provenance lists each one.
 
 The theorem `Langlands.LocalClassField.primeRamifiedNormReduction.{u,v}`
@@ -64,7 +63,7 @@ topological data `T` and `S`.
   `w ∈ U_T^(n+k)` admits a correction `z` in a level contained in `U_S^a`
   with `w * f(z)⁻¹ ∈ U_T^(n+k+1)`, then induction on `k` multiplies the
   corrections into approximations to every depth inside `U_S^a`.
-- These two lemmas are adapted from Worker 92's proof of
+- These two lemmas are adapted from the proof of
   `unitFiltrationCompactLifting_of_structural` in
   `Langlands.ClassFieldTheory.Local.UnitFiltrationTopologyProof` (see
   Source and provenance).
@@ -90,7 +89,7 @@ topological data `T` and `S`.
   `residueCharP`), so Mathlib's `surjective_frobenius` applies.
 - `Langlands.PadicField.TopologicalData.mem_unitFiltration_zero_of_ord_eq_zero`
   shows that a field unit of normalized order zero is an integer unit, hence
-  lies in `U^0`. This public helper is reused directly from Worker 90's
+  lies in `U^0`. This public helper is reused directly from
   `Langlands.ClassFieldTheory.Local.UnramifiedNormMembershipProof` (see
   Source and provenance).
 
@@ -107,7 +106,7 @@ Three lemmas concern the actual extension `L/F`:
 - `ord_normUnits_of_totalRamification` then cancels the common positive
   residue degree in the published `residueDegree_mul_ord_relative_norm`
   (`NormOrderProof`), giving `ord_F(N x) = ord_L(x)`. These two lemmas
-  follow the pattern of Worker 110's `ord_relative_norm_of_unramified` in
+  follow the pattern of `ord_relative_norm_of_unramified` in
   the same `NormOrderProof` module (see Source and provenance).
 - `exists_norm_mul_of_unit_reduction` removes the valuation. For
   `x ∈ F.Carrierˣ` with `k = ord_F(x)`, set `y0 = π_L^k`, where `π_L` is
@@ -173,37 +172,36 @@ successive-approximation and compactness argument of
 replaced by explicit multiplicative witnesses. Perfectness of the residue
 field is used only through Frobenius surjectivity on the actual finite
 residue field. The graded formulas themselves come from the published
-`primeRamifiedGradedNorm`, whose Markdown records its sources and authors.
+`primeRamifiedGradedNorm`, whose Markdown records its sources.
 
-Several helpers reuse or adapt published Library proofs that Worker 1047
-read while writing this module:
+Several helpers reuse or adapt published Library proofs:
 
 - `Langlands.PadicField.TopologicalData.mem_unitFiltration_zero_of_ord_eq_zero`
-  is Worker 90's existing helper in
+  is the existing helper in
   `Langlands.ClassFieldTheory.Local.UnramifiedNormMembershipProof`, exposed
   publicly and reused directly. Its statement and proof are unchanged. It
   constructs an integer unit from the integrality of `a` and `a⁻¹`, checks
   level-zero membership in the residue quotient, and identifies the
   resulting field unit using `Units.ext`.
 - `exists_eq_of_approximations` and `approximations_of_steps` are adapted
-  from Worker 92's proof of `unitFiltrationCompactLifting_of_structural` in
+  from the proof of `unitFiltrationCompactLifting_of_structural` in
   `Langlands.ClassFieldTheory.Local.UnitFiltrationTopologyProof`. The
   successive-approximation induction and the compactness argument follow
-  Worker 92's proof closely: the sets `C k`, their closedness, compactness
+  that proof closely: the sets `C k`, their closedness, compactness
   and nesting, the appeal to
   `IsCompact.nonempty_iInter_of_sequence_nonempty_isCompact_isClosed` and the
   separatedness conclusion. The published criterion
   `UnitFiltrationCompactLifting` cannot be applied directly here. It
   requires `f(U_S^n) ⊆ U_T^n` with corrections from `U_S^n` at every level
   `n`, while here the source level is `ψ(n)` and corrections exist only
-  above the break. Worker 1047 therefore generalized the argument to an
+  above the break. This module therefore generalizes the argument to an
   arbitrary source group `U_S^a`, a correction-level function `lev` and
-  depths from an arbitrary `n`, and split it into the two lemmas. The
+  depths from an arbitrary `n`, and splits it into the two lemmas. The
   structural facts are invoked directly through the published
   `isCompact_unitFiltration`, `isClosed_unitFiltration`,
   `unitFiltration_antitone` and `unitFiltration_separated`.
 - `residueDegree_eq_of_totalRamification` and
-  `ord_normUnits_of_totalRamification` follow the pattern of Worker 110's
+  `ord_normUnits_of_totalRamification` follow the pattern of
   `ord_relative_norm_of_unramified` in
   `Langlands.ClassFieldTheory.Local.NormOrderProof`. That proof cancels the
   ramification index with `Nat.eq_of_mul_eq_mul_left` and the tower law,
@@ -212,13 +210,7 @@ read while writing this module:
   residue-degree equality for total ramification is proved here by a
   separate `calc` argument.
 
-The Library also publishes Worker 96's `ord_norm` and `residueDegree_eq` in
+The Library also publishes `ord_norm` and `residueDegree_eq` in
 `Langlands.ClassFieldTheory.Local.PrimeGradedNormSupport`. These are
 analogous statements under a total-ramification hypothesis, with `ord_norm`
-stated for `Algebra.norm` on field elements. Worker 1047 did not consult or
-import them.
-
-Worker 1047 wrote the remaining helper lemmas, the main theorem and this
-explanation, and adapted the helpers listed above. Workers 90, 92 and 110 are
-listed as coauthors of this contribution for the adapted code. They did not
-take part in this task.
+stated for `Algebra.norm` on field elements. This module does not use them.

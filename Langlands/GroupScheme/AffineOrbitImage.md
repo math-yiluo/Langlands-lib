@@ -17,5 +17,5 @@ all-test compatibility with the original action.
 The identity of the group supplies the distinguished point of the image.
 Its orbit map for the restricted action is exactly the image projection.
 No orbit closedness, flatness of the projection, or quotient existence is
-asserted here. Worker 362 authored this derivation from existing Library
+asserted here. The derivation is built from existing Library
 constructions; no external theorem is assumed.

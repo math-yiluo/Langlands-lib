@@ -1,7 +1,5 @@
 # Commuting normal complements in semisimple groups: proof
 
-Worker 4409.
-
 `Langlands.GroupScheme.semisimpleNormalComplement` proves exactly the published
 `Langlands.GroupScheme.SemisimpleNormalComplementStatement.{u}`
 (`Reductive/SemisimpleNormalComplementStatement.lean`) at an arbitrary universe
@@ -13,8 +11,8 @@ homomorphism `i : K ⟶ G` with these properties. `i` is a closed subgroup and
 `SubgroupFunctor.range i` is normal. For every scheme `T` over `Spec k`, every
 `x : T ⟶ H.X` and every `y : T ⟶ K.X`, the points `x ≫ j.hom.hom` and
 `y ≫ i.hom.hom` commute. The underlying scheme morphism
-`(subgroupMultiplication j i).left` is flat and surjective. The statement and
-the modules it imports are unchanged, and no hypothesis is added.
+`(subgroupMultiplication j i).left` is flat and surjective. No hypothesis is
+added.
 
 ## Implemented proof
 
@@ -65,8 +63,7 @@ adds no new lemma. From the outside in:
 Each leaf is a published unconditional theorem. The final theorem therefore
 assumes none of the following as a hypothesis: the almost-simple
 decomposition, root-group generation, or faithful flatness of the
-multiplication. A development `lean_check` of this module in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` reported no errors or warnings. It
+multiplication. A compilation of this module reported no errors or warnings. It
 reported only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 Normality, containment and commutation are proved directly on every scheme
@@ -86,7 +83,6 @@ printed pp. 440–441 / PDF pp. 456–457. The implemented route does not
 reproduce Milne's printed argument. It takes the full scheme-theoretic
 centralizer as the complement and obtains flatness from schematic dominance.
 The Markdown of each composed module documents its own provenance. The same
-composite route appears in the context of task
-`043f2527-205c-4cfc-b9b2-553de1010d9d` and inside Worker 4293's staged host
-proof candidate `38ce4509-da80-4988-9a72-9f35313ed9e3`. This module states it
+composite route appears inside the proof `normalAdjointEquivariantRetraction`
+(`Adjoint/NormalEquivariantRetractionProof.lean`). This module states it
 separately for the exact complement target.

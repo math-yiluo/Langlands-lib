@@ -1,7 +1,5 @@
 # Proof: groups of multiplicative type are determined by their torsion subgroups
 
-Worker 742 and Worker 452.
-
 `Langlands.GroupScheme.multiplicativeTypeTorsionDetermination` proves
 `Langlands.GroupScheme.MultiplicativeTypeTorsionDeterminationStatement.{u}` (SGA 3, Exposé IX,
 Corollaires 4.8 a), 4.8 b) and 4.9) for every universe `u`, every scheme `S` and all groups,
@@ -38,7 +36,7 @@ every torsion-closed immersion into a group of multiplicative type is an isomorp
    Using the fppf cover in the definition of `IsMultiplicativeType` and then affine open
    covers, the lemma reduces to the group-algebra models `Diagonalizable.groupScheme R Λ =
    Spec R[Λ]` over affine bases `Spec R`, with `Λ` finitely generated. The proof transports
-   along the published isomorphisms `diagonalizableBaseChangeIso` and
+   along the isomorphisms `diagonalizableBaseChangeIso` and
    `Diagonalizable.relativeModelIso`.
 4. **Core case** ([`TorsionDetermination/Diagonalizable`](TorsionDetermination/Diagonalizable.md),
    with [`TorsionDetermination/Algebra`](TorsionDetermination/Algebra.md) and
@@ -54,12 +52,12 @@ every torsion-closed immersion into a group of multiplicative type is an isomorp
 
 All helper declarations are in the namespace `Langlands.GroupScheme.TorsionDetermination`.
 
-- `Langlands.GroupScheme.Torus.TorsionDetermination.Descent` (Worker 742)
-- `Langlands.GroupScheme.Torus.TorsionDetermination.Assembly` (Worker 742)
-- `Langlands.GroupScheme.Torus.TorsionDetermination.Reduction` (Worker 742)
-- `Langlands.GroupScheme.Torus.TorsionDetermination.Algebra` (Worker 452)
-- `Langlands.GroupScheme.Torus.TorsionDetermination.FieldPointLift` (Worker 452)
-- `Langlands.GroupScheme.Torus.TorsionDetermination.Diagonalizable` (Worker 452)
+- `Langlands.GroupScheme.Torus.TorsionDetermination.Descent`
+- `Langlands.GroupScheme.Torus.TorsionDetermination.Assembly`
+- `Langlands.GroupScheme.Torus.TorsionDetermination.Reduction`
+- `Langlands.GroupScheme.Torus.TorsionDetermination.Algebra`
+- `Langlands.GroupScheme.Torus.TorsionDetermination.FieldPointLift`
+- `Langlands.GroupScheme.Torus.TorsionDetermination.Diagonalizable`
 - `Langlands.GroupScheme.Torus.MultiplicativeTypeTorsionDeterminationProof` (this module)
 
 ## Relation to the source

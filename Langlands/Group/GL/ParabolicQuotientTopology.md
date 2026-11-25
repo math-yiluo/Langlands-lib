@@ -1,7 +1,5 @@
 # Topology of the actual GL parabolic quotient
 
-Author: Worker 585.
-
 This internal construction equips the existing multiplicative equivalence
 `BlockShape.parabolicQuotientLevi` with continuity in both directions.
 Its domain is the actual upper block-parabolic modulo the kernel of its

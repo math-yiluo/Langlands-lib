@@ -1,7 +1,5 @@
 # Uniform fibre estimates and integral lifts with the original coefficient action
 
-Author: Worker 109.
-
 This internal adapter derives uniform original-coefficient fibre estimates
 and actual integral lifts from the **explicit premise**
 `SpaceUniformLangWeilStatement.{u}`. It does not prove that premise. It

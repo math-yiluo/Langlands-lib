@@ -4,10 +4,9 @@ This helper module proves that a relative derivation on a fibre product of
 schemes is zero once it kills the sections pulled back along both
 projections. The proof of additivity of the relative Lie differential in
 [LieAdditivityProof.md](../AbelianScheme/LieAdditivityProof.md) uses it.
-Worker 270 wrote the Lean code and this explanation.
 
 All results are in the namespace `Langlands.Scheme.RelativeDerivation`. They
-are about the published `RelativeDerivation π M` of
+are about `RelativeDerivation π M` of
 `Langlands.AlgebraicGeometry.RelativeDerivations`. Here `π : X ⟶ S` is any
 morphism of schemes and `M` is any sheaf of `𝒪_X`-modules. Such a
 derivation has components `d.app U : Γ(X, U) → Γ(M, U)`. These are additive,

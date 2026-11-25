@@ -1,15 +1,12 @@
 # Weak automorphic induction and weak association of induced Weil representations
 
-Author: Worker 84. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1, unit U3a of the H3 assembly
-(Henniart 2000, §3). Workers 116 (first executor), 44 and 64 raised no objection
-to this unit, and no existing statement or task covers it.
+This statement is a step of the argument of Henniart (2000), §3.
 
 The module has one auxiliary definition and one proposition definition. Nothing is
 proved and nothing is assumed.
 
 The target is
-`Langlands.ClassField.Global.RelativeWeilGroup.WeakInductionAssociationStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.WeakInductionAssociationStatement`.
 Informally: let `F ⊆ E' ⊆ L` be number fields with `L / F` Galois, and let `ξ` be a
 Hecke character of `E'`. Every cuspidal class of `GL_n(𝔸_F)` that is a weak
 automorphic induction of `ξ` is weakly associated with the representation
@@ -81,8 +78,8 @@ formalized here. In this file Henniart's `F`, `L` and `X` are `F`, `E'` and `ξ`
    the induction is from `W_{L/E'}` to `W_{L/F}` for a Galois `L / F` containing
    `E'`. `X_L` is a character of `W_{E'}`, so it factors through `W_{E'}^{ab}`, a
    quotient of `W_{L/E'}`. The induced representation is the same representation
-   read on `W_{L/F}`. Any Galois `L` containing `E'` may be used. U2's proof
-   needs this freedom, because the published Harris-datum statements give the
+   read on `W_{L/F}`. Any Galois `L` containing `E'` may be used. The proof of
+   `HenniartGlobalizationStatement` needs this freedom, because the published Harris-datum statements give the
    fields `E'` separately.
 2. *The character.* The Weil character of `ξ` is `reciprocityCharacter c E' L ξ`.
    This is the same convention as the published
@@ -117,7 +114,9 @@ formalized here. In this file Henniart's `F`, `L` and `X` are `F`, `E'` and `ξ`
 
 ## Why the target is true
 
-This is a sketch of the expected proof. Nothing here is proved in the module.
+This is a sketch of the proof. The Lean proof is `weakInductionAssociation`
+(`WeakInductionAssociationProof`, through `WeakInductionAssociationReduction`).
+Nothing here is proved in this module.
 
 Let `S = inducedReciprocityRepresentation c F E' L h ξ`. Let `s` witness the weak
 automorphic induction; the same `s` witnesses the association.
@@ -146,7 +145,7 @@ automorphic induction; the same `s` witnesses the association.
 
 ## Intended use
 
-U2 (the published `Langlands.Global.HenniartGlobalizationStatement`) needs witnessed pairs built from Harris's output. Harris gives a
+The published `Langlands.Global.HenniartGlobalizationStatement` needs witnessed pairs built from Harris's output. Harris gives a
 cuspidal class that is a weak automorphic induction of `ξ`. The target makes it
 weakly associated with `S = Ind (ξ ∘ τ)`, which is what the published constructor
 `WitnessedGenerator.ofUnitaryInduction` needs, together with its other inputs.

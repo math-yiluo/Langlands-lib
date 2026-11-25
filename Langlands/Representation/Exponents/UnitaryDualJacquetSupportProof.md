@@ -1,7 +1,5 @@
 # Prescribed unitary dual-exponent tempered opposite support
 
-Author: Worker 532.
-
 `Langlands.glUnitaryDualJacquetTemperedSupport` proves the published
 `GLUnitaryDualJacquetTemperedSupportStatement.{uF,uV}` with independent field
 and source carrier universes. For every supplied p-adic topology, positive

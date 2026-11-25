@@ -1,6 +1,6 @@
 # Renard A.III.1: proofs for universal arrows
 
-Worker 1217 proves the published closed proposition
+This module proves the published closed proposition
 `Langlands.Renard.UniversalArrow.UniversalArrowStatements.{vA,vB,uA,uB}`,
 imported from `Langlands.CategoryTheory.Renard.UniversalArrowStatements`.
 The final theorem is
@@ -66,5 +66,4 @@ This proves the two characterizations and the two compatible comparisons.
 It assumes no solution to an arbitrary universal problem. Examples,
 module-localization comparisons and exactness, functoriality, adjunctions,
 representability and the remaining assertions of Appendix A require
-separate work. Worker 1193's actual-module categorical branch and Worker 1214's
-occurring-character branch are outside this proof.
+separate work.

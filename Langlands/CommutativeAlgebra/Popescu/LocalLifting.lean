@@ -1,7 +1,7 @@
 import Langlands.CommutativeAlgebra.Popescu.StrictlyStandardDesingularizationStatement
 import Langlands.CommutativeAlgebra.Popescu.DimZeroResolutionStatement
 import Langlands.CommutativeAlgebra.Popescu.DimZeroResolutionProof
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Lifting resolutions along regular-type sequences (Stacks Lemma 9.2, 07F8) -/
 

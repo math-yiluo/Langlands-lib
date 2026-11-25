@@ -1,7 +1,5 @@
 # Bounded generation of stable families of submodules
 
-Author: Worker 1645.
-
 This module proves a graded Hilbert-basis statement in elementary form, without
 introducing graded rings. It is internal infrastructure for a uniform Serre
 vanishing argument by induction on the number of degree-raising actions.

@@ -1,7 +1,6 @@
 # Trace characters of exact virtual representations and induced lines
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. The module
 constructs the trace character on the Library's exact virtual groups and proves
 the Frobenius formula for actual finite-index induction. These traces are the

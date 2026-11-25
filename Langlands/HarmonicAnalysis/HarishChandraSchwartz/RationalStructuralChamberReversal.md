@@ -1,6 +1,6 @@
 # Reversing the structural chamber
 
-Worker 248, Task 5460. This derived module reverses the chamber used by the
+This derived module reverses the chamber used by the
 structural inputs of `RationalConstantTermEstimateStatement`. Its motivation
 is the change of minimal parabolic in Waldspurger's remark following
 Proposition II.4.5, printed p.263.
@@ -37,8 +37,12 @@ inequalities. The new finite family consists of the inverses of the old one.
 
 These are structural transport results. They do not compare the spherical
 functions for the two minimal parabolics, establish a modulus reciprocity
-formula, or prove any weighted unipotent estimate. Those comparisons remain
-separate obligations in the actual constant-term proof.
+formula, or prove any weighted unipotent estimate. Those comparisons are
+separate steps of the actual constant-term proof; the comparison of the
+spherical functions is `rationalXiChangeMinimal` (module `RationalXiChangeMinimal`),
+the modulus reciprocity is `rationalReversedModulus` (module
+`RationalReversedModulus`), and the weighted unipotent estimate
+`RationalUnipotentWeightIntegrabilityStatement` remains unproved.
 
 Source motivation: J.-L. Waldspurger, *La formule de Plancherel pour les
 groupes p-adiques, d'après Harish-Chandra* (2003), literature ID

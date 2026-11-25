@@ -1,7 +1,5 @@
 # Actual Lie kernels in a whole-torus centralizer
 
-Author: Worker 74.
-
 This internal supporting construction identifies the Lie kernel inside the actual
 whole-group centralizer functor with the zero adjoint weight space. It is derived
 from the published dual-number Lie model, all-test-algebra adjoint weight condition,
@@ -61,4 +59,4 @@ equality between its whole-group centralizer and `Dynamic.centralizer χ`.
 The resulting weight is `Gm.powerHom (Spec R) 0`. This is only the centralizer
 membership comparison: it does not prove the parabolic or unipotent dynamic Lie
 clauses, representability or smoothness of any centralizer, equality of generic
-and whole-torus group centralizers, or either exact target of the host task.
+and whole-torus group centralizers, or either exact target that this module serves.

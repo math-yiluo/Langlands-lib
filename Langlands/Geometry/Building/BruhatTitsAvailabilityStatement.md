@@ -90,7 +90,7 @@ the source in the following ways.
 The truth of the statement depends on the published formalization of
 corrected Definition 4.1.26 being satisfiable, which is what this target
 asks to establish. The published `RootValuationBuildingConstructionStatement`
-(proof task `00b6788c-23c3-4b22-88f5-41fdbc6d3654`) is a separate, weaker
+is a separate, weaker
 target: it asks only for the five Section 4.2 axioms, on parahoric building
 data. Published statements that take `𝔅.IsValid` or
 `𝔅.IsAvailableFor F G hG` as a hypothesis, such as

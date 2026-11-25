@@ -1,6 +1,6 @@
 # Real-place Whittaker regularity from smoothness and growth
 
-This internal supporting result for Task 7400 is in namespace
+This internal supporting result towards `RealPlaceFunctionalEquationStatement` is in namespace
 `Langlands.Global.RankinSelbergGlobal`. It connects the proved actual global
 Lie-curve differentiation theorem to the matrix-model right derivative in
 the real local coefficient space.
@@ -17,7 +17,7 @@ coordinate equivalence gives `adelicOneParameter_realInclusion`.
 
 `lieOperator_realInclusion` identifies the full enveloping-algebra real Lie
 generator of that supported direction with
-`realPlaceLieAction w (1 ⊗ X)`. This is the published scalar-extension
+`realPlaceLieAction w (1 ⊗ X)`. This is the Library's scalar-extension
 inclusion formula, applied to the genuine actions.
 
 For an actual cuspidal realization `T`, standard additive character `χ`,
@@ -56,9 +56,11 @@ clause.
 `RealPlaceFunctionalEquationSmoothGrowthReductionStatement.{u}` states that
 the local unequal-rank package, local positive equal-rank package, this
 smoothness-and-growth statement, and the actual contragredient pair-factor
-denominator comparison imply the exact published
+denominator comparison imply the exact Library statement
 `RealPlaceFunctionalEquationStatement.{u}`.
 `realPlaceFunctionalEquationSmoothGrowthReduction` is the composition with
 the preceding actual-model reduction. It retains the free universe `u`.
-All four inputs remain open here. The unconditional full functional equation
-is not proved by this contribution.
+None of the four inputs is proved here; the Library proves the
+smoothness-and-growth statement as `realPlaceWhittakerSmoothGrowth` (module
+`RealPlaceWhittakerAnalyticProof`). The unconditional full functional equation
+is not proved by this module.

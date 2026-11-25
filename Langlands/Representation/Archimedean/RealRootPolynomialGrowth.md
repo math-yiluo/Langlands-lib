@@ -51,8 +51,8 @@ the action `realStandardLie n ds`. The module uses `smoothLie`, `adU`, `rightTra
 
 ## Provenance
 
-Internal to Task 7070. The main theorem is the statement `RealLeftPolynomialGrowthStatement`
-(module `RealLeftPolynomialGrowth`, Worker 5731) for an arbitrary lower position `c₀`, with the
+Internal to the proof of `RealLinkedLanglandsQuotientNotLargeStatement`. The main theorem is the
+statement `RealLeftPolynomialGrowthStatement` (module `RealLeftPolynomialGrowth`) for an arbitrary lower position `c₀`, with the
 polynomial condition in the form `IsRootPoly`. Its Markdown suggests a count of polynomial
 differential operators in the noncompact picture (Knapp 1986, Chapter VII). The proof here is
 the same count, carried out algebraically through `U(𝔤)`, and not taken from a source.

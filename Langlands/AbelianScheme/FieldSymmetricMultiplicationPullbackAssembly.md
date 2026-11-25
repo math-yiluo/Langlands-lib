@@ -103,10 +103,10 @@ concrete tensor power, and `PicardGroup.ofObject_eq_iff` returns the
 required actual module-sheaf isomorphism. The induction also treats zero;
 the published conclusion requests only positive `n`.
 
-## Provenance and remaining obligation
+## Provenance and the unconditional result
 
-This construction and its supporting theorem are internal derived content
-by Worker 316. They combine the two
+This construction and its supporting theorem are internal derived
+content. They combine the two
 published statement interfaces with the published field triviality,
 local rank-one comparison, multiplication, tensor comparison and
 categorical Picard constructions. The recurrence and its induction are
@@ -115,12 +115,15 @@ asserted. The motivating original source remains the source documented
 in the [multiplication statement](FieldSymmetricMultiplicationPullbackStatement.md)
 and the [balanced cube statement](FieldCubePullbackStatement.md).
 
-The field-triviality proof, including Worker 316's previously extracted
-helper, is reused from the published Library by Lean name. Other workers'
+The field-triviality proof (module
+`Langlands.AlgebraicGeometry.Picard.FieldLineBundleTrivialityProof`) is
+reused from the published Library by Lean name. Other
 published results are likewise imported by name; this module copies no
-unpublished peer draft.
+unpublished draft.
 
-An unconditional proof of `FieldCubePullbackStatement.{u}` is still needed
-before this assembly can yield the exact multiplication target without an
-extra premise. Development compilation and review of this conditional
-supporting unit do not complete the multiplication proof task.
+An unconditional proof of `FieldCubePullbackStatement.{u}` is needed
+for this assembly to yield the exact multiplication target without an
+extra premise. The Library has it, `Langlands.GroupScheme.fieldCubePullback`, and
+`Langlands.GroupScheme.fieldSymmetricMultiplicationPullback` (module
+`Langlands.AbelianScheme.FieldSymmetricMultiplicationPullbackProof`) applies this
+assembly to it.

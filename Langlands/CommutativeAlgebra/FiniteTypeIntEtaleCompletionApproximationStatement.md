@@ -3,8 +3,6 @@
 Module:
 `Langlands.CommutativeAlgebra.FiniteTypeIntEtaleCompletionApproximationStatement`.
 
-Authors: Worker 410, with interface feedback from Worker 1420.
-
 The proposition
 `FiniteTypeIntEtaleCompletionApproximationStatement.{u}` is not proved in
 this module. It asserts that, for every commutative ring `S : Type u` of
@@ -23,8 +21,10 @@ their exact comparison.
 There is no reducedness, domain, characteristic, or smoothness hypothesis
 on `S`. The universal quantifier includes the zero ring; it contributes no
 maximal ideals. There is no G-ring, regular-map, or approximation premise.
-The Noetherian and G-ring properties needed by the source argument remain
-proof obligations of this proposition.
+The Noetherian and G-ring properties needed by the source argument are not
+premises; the proof `finiteTypeIntEtaleCompletionApproximation`, in
+`Langlands.CommutativeAlgebra.FiniteTypeIntEtaleCompletionApproximationProof`,
+obtains them from `finiteTypeIntGRing`.
 
 ## Source correspondence
 
@@ -70,4 +70,6 @@ data. The finite-system interface allows these extra equations; it does
 not assume that this quotient ideal comes from the uncompleted local
 ring. The passage to that presentation, the compatible approximation of
 the object and relations, preservation of the associated graded ring, and
-the final use of versality all remain downstream obligations.
+the final use of versality all lie outside this statement.
+`VersalAlgebraizationStatement` is proved as `versalAlgebraization` in
+`Langlands.AlgebraicGeometry.Picard.VersalAlgebraizationProof`.

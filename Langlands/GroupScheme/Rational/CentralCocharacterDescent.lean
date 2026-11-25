@@ -168,7 +168,7 @@ theorem IsSplitComponent.latticePairing_centralOrbitSum_eq_zero
   change gmEndEquiv K (((Gm.commBaseChangeIso (algebraBaseMap k K)).inv ≫
     (CommGroupScheme.baseChange (algebraBaseMap k K)).map (ζ ≫ f)) ≫ χ) = 0
   rw [Functor.map_comp, Category.assoc, Category.assoc, hχ,
-    Limits.comp_zero, Limits.comp_zero, map_zero]
+    Limits.comp_zero, Limits.comp_zero, AddEquiv.map_zero]
 
 end SplitComponent
 

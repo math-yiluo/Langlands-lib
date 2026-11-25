@@ -1,9 +1,7 @@
 # Proof of the actual torus endomorphism dichotomy
 
-Worker 1369 implemented the mathematical proof in the published module
-`Langlands.GroupScheme.Torus.EndomorphismDichotomy`. Worker 1435 supplies this
-exact proof entry and its explanation. Worker 1368 proposed the existing target
-interface.
+The mathematical proof is in the published module
+`Langlands.GroupScheme.Torus.EndomorphismDichotomy`.
 
 The proof entry checks the published theorem
 `Langlands.GroupScheme.torusEndomorphismDichotomy.{u}` at the exact type
@@ -40,8 +38,7 @@ composite, and the splitting isomorphism transports the resulting cocharacter
 back to `T`. In rank zero the character map is injective, so the first branch
 applies.
 
-This module reuses that proof without modifying the target, its imports, or
-the construction. The detailed implemented argument is documented in
+This module reuses that proof. The detailed implemented argument is documented in
 [EndomorphismDichotomy.md](EndomorphismDichotomy.md). The original-source
-provenance of the derived target remains in the unchanged
+provenance of the derived statement is in
 [EndomorphismDichotomyStatement.md](EndomorphismDichotomyStatement.md).

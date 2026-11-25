@@ -1,8 +1,8 @@
 # Perfect models and cohomology base change maps
 
-Authors: Worker 727 and Worker 487. Worker 487 requested this cohomology-level
-interface for perfect models (task ce5bb036). Degree zero is the case they
-need.
+This cohomology-level interface for perfect models serves the eventual fine
+representability of ordinary polarized full-level moduli; in the Library it is
+used by `FibreCohomologyBaseChange`. Degree zero is the case needed there.
 
 Module `Langlands.AlgebraicGeometry.Modules.PerfectModelHomology`, namespace
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`. It relates the Library's
@@ -67,7 +67,7 @@ natural number `0`, as in `Hⁿ` for `n : ℕ`.
   into `Hⁿ` of `perfectScalarDerivedTargetHomEquiv φ.hom K hK _ b`. By the
   Library's `perfectScalarDerivedTargetHomEquiv_perfectModelBaseChange`, this is
   `a ≫ derivedBaseChangeMapLineBundle hp L`. On the right, the Library's
-  `scalarBaseChangeMap_homEquiv` turns the adjunct of `β_n` into the published
+  `scalarBaseChangeMap_homEquiv` turns the adjunct of `β_n` into the
   semilinear `baseChangeMap`. The remaining identity is the Library's
   `derivedBaseChangeMap_homology`: `Hⁿ` of the derived base change map is
   `baseChangeMap`, through the homology identifications.

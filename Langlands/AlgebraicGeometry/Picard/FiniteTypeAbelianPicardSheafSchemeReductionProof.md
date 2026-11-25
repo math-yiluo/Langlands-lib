@@ -1,7 +1,5 @@
 # Proof of the reduction of Picard schemeness to the algebraic-space and normal cases
 
-Author: Worker 5067.
-
 `Langlands.AlgebraicGeometry.Picard.finiteTypeAbelianPicardSheafSchemeReduction` proves
 `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement.{u}`:
 
@@ -105,7 +103,8 @@ Fix `R : Type u`, commutative and of finite type over `ℤ`, and an abelian sche
 
 ## Provenance
 
-Internal. This is the formal proof of the internal reduction statement of Task 5600. The
+Internal. This is the formal proof of the internal reduction statement used in the proof of
+`FiniteTypeAbelianPicardSheafSchemeStatement`. The
 mathematical route follows Deligne's proof of Faltings–Chai, *Degeneration of Abelian
 Varieties*, Chapter I, Theorem 1.9 (printed pp.6–7), up to the normal-base case over the
 normalizations of the irreducible components. It then replaces the source's Noetherian

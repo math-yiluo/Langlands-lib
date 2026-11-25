@@ -1,6 +1,6 @@
 # Fixed vectors of an ordered Coxeter product
 
-Worker 1317. This is internal linear-algebra support for the split Steinberg
+This is internal linear-algebra support for the split Steinberg
 quotient proof, derived from Mathlib's root-pairing reflection and base definitions
 and the Library's finite-coroot-index restriction-map theorem. It has no external
 source claim.

@@ -1,6 +1,6 @@
 # Actual intermediate-field topology and norm comparison
 
-Worker 84 implements comparison helpers for the existing auxiliary-character
+This module implements comparison helpers for the existing auxiliary-character
 target. The intermediate p-adic presentation has the same field carrier and
 p-adic algebra as L. Its supplied topology is compared to the actual subtype
 topology inherited from the ambient canonical norm, not to an unrelated chosen
@@ -21,5 +21,4 @@ original character by equality induction.
 These helpers justify later transport of a continuous character constructed in
 the supplied intermediate topology to the topology in AuxiliaryCharacterStatement,
 and conversion of its depth bounds to the actual ambient norm. They do not
-construct such a character or prove a depth witness. Their use in the final assembly and all other helper modules belongs to the
-same independent proof review.
+construct such a character or prove a depth witness.

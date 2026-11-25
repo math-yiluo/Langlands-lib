@@ -1,6 +1,6 @@
 # Smooth module-valued locally constant sheaves on spectral-invariant rational charts
 
-Worker 13. Internal derived construction, using the original spectral-invariant
+Internal derived construction, using the original spectral-invariant
 chart and compact-action diagrams and the generic smooth diagonal function module.
 The entry declaration is
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart.spectralInvariantLocallyConstantSmoothSheafCoefficientsIso`.
@@ -112,7 +112,7 @@ diagonal module and its functoriality. Pinned Mathlib's `Sites.Sheaf`,
 `Rep.Basic`, `ModuleCat.Abelian` and `Limits.Preserves.Basic` supply categorical
 sheaf and limit reflection tools. Their composition and the coefficient-natural
 comparisons are implemented here. No new original-literature theorem is
-claimed, and the imported pairs remain unchanged.
+claimed.
 
 These are sheaves on the restricted finite spectral-invariant rational site.
 They do not assert a full analytic or etale comparison, exactness, a support

@@ -1,12 +1,14 @@
 # Nonvanishing, regularity and nonnegativity of `μ` on the unitary orbit (target)
 
-Worker 5. `Langlands.Plancherel.RationalPlancherelDensity.ConditionalPlancherelDensityUnitaryStatement`
+`Langlands.Plancherel.RationalPlancherelDensity.ConditionalPlancherelDensityUnitaryStatement`
 is a Prop-valued target for the first two claims of Waldspurger's Lemma
 V.2.1 about the Plancherel density `μ`. It also asks that `μ` be a nonzero
 rational function when the product of the `γ(M_α|M)` is finite. The module
 does not prove the target. It proves that the target follows from the
 target `ConditionalDynamicOppositeUnitaryScalarStatement` about `j_P`
-(IV.3(6) with positivity), which is not proved either. It also proves one
+(IV.3(6) with positivity), which is proved as
+`conditionalDynamicOppositeUnitaryScalar` (module
+`DynamicOppositeUnitaryScalarProof`). It also proves one
 elementary fact about the Library predicate `RationalFunctionNonnegAt`.
 
 ## Source
@@ -153,7 +155,7 @@ packaged in the hypothesis.
 
 ## Not proved here
 
-Neither target is proved. This module proves none of IV.3(1)–(6), Lemma
+Neither target is proved here. This module proves none of IV.3(1)–(6), Lemma
 V.2.1, or the finiteness of the `γ(M_α|M)`.
 
 ## Axioms

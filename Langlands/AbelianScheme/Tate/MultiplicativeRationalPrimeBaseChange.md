@@ -115,5 +115,5 @@ for iterated base change is claimed by this file. Arbitrary schemes
 and test schemes are allowed; no invertibility assumption is needed
 for these comparison identities. The geometric content is inherited
 from the integral comparison's actual finite-coordinate formula. No
-roots, basis or twist trivialization is chosen, and this unit does not
-complete the parent PEL task.
+roots, basis or twist trivialization is chosen, and this module does not
+complete the PEL level-structure construction.

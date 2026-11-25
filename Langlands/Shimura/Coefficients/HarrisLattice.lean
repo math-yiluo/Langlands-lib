@@ -333,13 +333,13 @@ def harrisLatticeAction :
     (harrisLattice ρ p U) (harrisLattice_stable ρ p U)
 
 @[simp] theorem harrisLatticeAction_apply (g : U.subgroup) (x : harrisLattice ρ p U) :
-    (harrisLattice ρ p U).subtype (((harrisLatticeAction ρ p U).ρ g).hom x) =
+    (harrisLattice ρ p U).subtype (((harrisLatticeAction ρ p U).ρ g).asHom.hom x) =
       ρ.harrisAdelic p g x := rfl
 
 /-- Integral lattice splitting intertwines the restrictions of the original actions. -/
 theorem harrisLatticeEquiv_action (g : U.subgroup) (x : harrisLattice ρ p U) :
-    harrisLatticeEquiv ρ p U (((harrisLatticeAction ρ p U).ρ g).hom x) =
-      ((harrisProductLatticeAction ρ p U).ρ g).hom (harrisLatticeEquiv ρ p U x) := by
+    harrisLatticeEquiv ρ p U (((harrisLatticeAction ρ p U).ρ g).asHom.hom x) =
+      ((harrisProductLatticeAction ρ p U).ρ g).asHom.hom (harrisLatticeEquiv ρ p U x) := by
   apply Subtype.ext
   exact ρ.harrisCoefficientEquiv_adelic p g x
 

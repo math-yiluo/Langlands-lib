@@ -35,6 +35,7 @@ heads and socles, canonical constituent equivalences, representative invariance
 of segment induction, and irreducibility under equivalence. The existential
 segment assertion is a hypothesis, not an imported proof. No multisegment
 classification, irreducibility criterion, commutation, linked gluing, derivative
-or Jacquet result is used. This module supplies a preliminary step of part H of
-task `0c90f7e4-78fa-43fd-8736-238bb3e8617d`; it does not construct the quotient
-map from a union's full decreasing induction to a product of segment socles.
+or Jacquet result is used. This module supplies a preliminary step towards the
+juxtaposed case of Proposition 4.6; it does not construct the quotient
+map from a union's full decreasing induction to a product of segment socles
+(that map is constructed in `JuxtaposedDecreasingQuotient`).

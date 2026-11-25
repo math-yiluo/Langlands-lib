@@ -1,7 +1,5 @@
 # Convergent integration on actual discrete-series twist orbits
 
-Author: Worker 200.
-
 This derived construction gives actual Bochner integration of continuous
 complex-valued functions on the existing unitary unramified twist orbit,
 with the measure fixed by `rationalNormalizedDiscreteSeriesOrbitMeasure`.

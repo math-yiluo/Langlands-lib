@@ -17,11 +17,12 @@ that conclusion. Nothing is asserted about any particular class.
   completion `F_v` as a finite extension of `ℚ_p`.
 - The published `Correspondence.IsSupercuspidalClass` says that a class lies
   in the image of the Jacquet-vanishing supercuspidal class space
-  (`PadicField.SupercuspidalClass`, built on Worker 23's
-  `GeneralLinear.IsSupercuspidal`). That predicate asks for admissibility and
+  (`PadicField.SupercuspidalClass`, built on
+  `GeneralLinear.IsSupercuspidal` of `Representation/Classification/Supercuspidal`). That predicate asks for admissibility and
   vanishing Jacquet coinvariants for every proper block parabolic subgroup.
 - A `CuspidalSpectralPresentation S` of a full cuspidal realization `S` is
-  Worker 2's published tensor presentation of a nonzero finite-adelic slice.
+  the published tensor presentation of a nonzero finite-adelic slice
+  (`Langlands/Automorphic/CuspidalSpectralPresentation`).
   Its `localComponent v` is the actual embedded local copy of the supplied
   factor at `v`.
 
@@ -53,9 +54,12 @@ that conclusion. Nothing is asserted about any particular class.
 ## Scope
 
 The definition asks for one presentation whose local component at `v` is
-supercuspidal. The Library does not yet prove that all presentations of a
+supercuspidal. The Library does not prove that all presentations of a
 cuspidal class have isomorphic local components (uniqueness of the
-restricted tensor factorization). Until then, "some presentation" is the
+restricted tensor factorization); it compares two presentations whose
+components at `v` are irreducible
+(`CuspidalSpectralPresentation.localComponent_isoClass_eq`, module
+`AssociatedPresentationComparison`). So "some presentation" is the
 faithful reading of "the local component is supercuspidal". It is the same
 choice as the published weak-induction relation, which also asks for one
 presentation. Square-integrability is not defined here.

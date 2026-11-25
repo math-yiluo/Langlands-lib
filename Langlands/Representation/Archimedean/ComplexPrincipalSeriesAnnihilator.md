@@ -2,11 +2,10 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexPrincipalSeriesAnnihilator`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of the concrete part of
-the Library module `PrincipalSeriesAnnihilator` (Worker 5220, for `GL_n(ℝ)`), whose abstract
-theorem it uses, followed by one extra step through the Library's partner construction of
-`ComplexDuality.GramWeight` (Workers 27 and 28).
+This module was written for the proof of `ComplexStandardLanglandsQuotientStatement`. It is the
+complex counterpart of the concrete part of the Library module `PrincipalSeriesAnnihilator` (for
+`GL_n(ℝ)`), whose abstract theorem it uses, followed by one extra step through the Library's
+partner construction of `ComplexDuality.GramWeight`.
 
 Let `W` be a subspace of the `U(n)`-finite functions of a principal series of `GL_n(ℂ)`, stable
 under right translation by `U(n)`, and suppose `W` is not all of that space. The module produces

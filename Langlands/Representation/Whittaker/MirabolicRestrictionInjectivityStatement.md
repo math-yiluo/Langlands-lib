@@ -1,6 +1,6 @@
 # Injectivity of restriction to the mirabolic subgroup
 
-Author: Worker 5032. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Whittaker.MirabolicRestrictionInjectivityStatement` (universes `uF`,
 `uV`). It is a statement only: nothing here proves it, and no declaration assumes
 it.
@@ -78,7 +78,9 @@ SHA-256 `c6b669ccf00a3ce35c10aa60f3dc7538d6269bf279791e5286b893c597275620`.
 
 The Lean statement is the injective half of that bijection, transported to the
 original carrier `V` through `v ↦ W_v` as explained above. Jacquet–Shalika
-state this fact in (1.1) without proof; a proof is a separate task. (PDF
+state this fact in (1.1) without proof; the Library proves it as
+`Langlands.Whittaker.mirabolicRestrictionInjectivity` in
+`MirabolicRestrictionInjectivityProof`. (PDF
 page numbers are one-indexed in the file above, whose first page is printed
 page 499.)
 

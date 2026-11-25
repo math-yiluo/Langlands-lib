@@ -1,6 +1,6 @@
 # Exact virtual groups along an isomorphism of p-adic fields
 
-Worker 5130, Task 5230. Internal derived infrastructure; no external source.
+Internal derived infrastructure; no external source.
 
 Two carrier-universe lemmas for the Library's `ExactGrothendieckGroup.universeMap`:
 `degree_universeMap` (degree is preserved) and `universeMap_continuousTwist` (it

@@ -5,9 +5,8 @@ This proof specializes the published statement in
 and imports remain unchanged. The generic theorem `jointOrbitPolynomialAnnihilation` is imported from
 `Langlands.Global.ArchimedeanJointPolynomialProof`. The actual Casimir,
 trace-form and Cartan decomposition are imported from their published
-modules. Worker 94 developed this internal algebraic specialization;
-Worker 88 checked the published inputs and prepared the focused proof
-contribution.
+modules. This is an internal algebraic specialization; the published
+inputs were checked.
 
 `cartanSquareSumPolynomialAnnihilation` proves precisely
 `CartanSquareSumPolynomialAnnihilationStatement K n`. Given an actual

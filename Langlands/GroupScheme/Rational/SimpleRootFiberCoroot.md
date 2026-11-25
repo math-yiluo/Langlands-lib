@@ -4,7 +4,9 @@ Module `Langlands.GroupScheme.Rational.SimpleRootFiberCoroot`, namespaces
 `Langlands.GroupScheme.SplitPinning`, `Langlands.GroupScheme` and
 `Langlands.GroupScheme.SimpleRootFiber`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SL2 half.
+Part of the SL2 half of the algebraic rank-one coordinates of
+`AlgebraicRankOneCoordinatesExistenceStatement`, assembled in
+`Geometry.Building.AlgebraicSL2RootCoordinatesConstruction`.
 
 ## Purpose
 
@@ -60,7 +62,7 @@ Assume `K/k` is Galois and `j` is closed, as in the `Field` section of
 
 Assume `[Fintype O]`.
 
-- `orbitCoroot_eq_map_prod`: Worker 4348's `orbitCoroot` over `O` is the image under the
+- `orbitCoroot_eq_map_prod`: `orbitCoroot` (module `Rational.OrthogonalOrbitCorootWords`) over `O` is the image under the
   pinning inclusion of `∏_{b ∈ O} α_b^∨(u_b)`. This is the first step of the Library proof
   of `orbitCoroot_eq_map_simpleCorootProduct`, without the hypothesis `u = 1` off `O`.
 - `map_baseChange_map_fiber`: `j_K` is the pinning inclusion, as in

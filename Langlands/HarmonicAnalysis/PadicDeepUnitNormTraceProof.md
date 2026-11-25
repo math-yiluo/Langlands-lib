@@ -2,8 +2,7 @@
 
 This pair proves `padicDeepUnitNormTrace`, whose type is exactly the Library
 proposition `PadicDeepUnitNormTraceStatement.{u,v}`, in independent universes.
-Workers 84 and 27 are coauthors. Worker 27 supplied the integer
-determinant/localization route, which survives in the public
+The integer determinant/localization route appears in the public
 `LocalClassField.quadraticNormTrace` and in the trace-integrality helper here.
 
 ## Trace integrality
@@ -11,7 +10,7 @@ determinant/localization route, which survives in the public
 The private helper `trace_mem_integers` shows that the field trace of an actual
 integral `y` lies in the actual integer ring of `F`. It installs the published
 relative integer scalar structures of `T` and `S`. It then uses
-`NYLL.relativeIntegerStructure` to get that `S.Integers` is the integral closure
+`UniverseZero.relativeIntegerStructure` to get that `S.Integers` is the integral closure
 of `T.Integers` in `E` and is finite over it. Torsion-freeness follows from the
 injective field map `F → E`, so `S.Integers` is free over the DVR `T.Integers`.
 Since `F` and `E` are localizations of these rings, Mathlib's
@@ -59,7 +58,7 @@ topology through published inputs, not through a new topological argument:
   relations and local-field structures of both `T` and `S`. With these, the
   integer rings get their algebra structures. `T.Integers` is a DVR and hence
   a PID through Mathlib's local-field instance, which uses local compactness.
-  `NYLL.relativeIntegerStructure` gets integral closure and finiteness from
+  `UniverseZero.relativeIntegerStructure` gets integral closure and finiteness from
   the supplied normalization results `integers_finite` for `T` and `S` and
   `integers_isIntegralClosure` for `S`. The public `quadraticNormTrace`
   installs the same structures for its determinant expansion.

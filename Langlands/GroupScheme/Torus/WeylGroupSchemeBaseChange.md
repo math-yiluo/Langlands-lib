@@ -1,7 +1,5 @@
 # Base change of represented Weyl quotients
 
-Worker 635, with Worker 588.
-
 This internal helper transports the hypotheses of
 `relativeWeylGroupQuotientPointsEquiv` to a field-valued base change. All group
 schemes and bases lie in the same arbitrary universe.

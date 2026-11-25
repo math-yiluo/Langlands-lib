@@ -69,7 +69,7 @@ theorem integralCMRepresentative_rationalAction :
     D.harrisHodgePELRationalAction C B x.restriction.action = x.data.1.actionObj.action := by
   let _ := auxiliaryStarRing D C
   exact D.harrisHodgePELRationalAction_unique C B x.restriction.action
-    x.data.1.actionObj.action (fun a => (x.restriction.agrees a).symm)
+    x.data.1.actionObj.action (fun a => CategoryTheory.End.ext (x.restriction.agrees a).symm)
 
 local notation "extension_eq" => integralCMRepresentative_rationalAction D C P Z
   compatibility h s hs htor x
@@ -161,6 +161,7 @@ def integralCMRepresentative_actionLift :
 local notation "liftAt" Q₀:max => integralCMRepresentative_actionLift D C P Z
   compatibility h s hs htor x R eR Q₀
 
+set_option backward.isDefEq.lazyProjDelta false in
 omit [IsCMField F] in
 /-- Pulling back the actual universal action along the constructed map recovers
 the literal pullback of the original integral action. -/
@@ -196,9 +197,10 @@ theorem integralCMRepresentative_action_restrict {T T' : Over Z.obj.left} (f : T
     (relativeEndRestrict B f).comp (baseChangeOrderAction T.hom B x.restriction.action) =
       baseChangeOrderAction T'.hom B x.restriction.action := by
   let _ := auxiliaryStarRing D C
-  ext a
+  ext a : 1
+  apply CategoryTheory.End.ext
   exact Langlands.GroupScheme.Cartier.restrict_baseChange_map
-    (AbelianScheme.commHom (x.restriction.action a)) f
+    (AbelianScheme.commHom (x.restriction.action a).asHom) f
 
 omit [IsCMField F] in
 /-- The actual classifying maps commute with every morphism of locally
@@ -216,15 +218,16 @@ theorem integralCMRepresentative_actionLift_naturality
   have hr := integralCMRepresentative_action_restrict D C P Z
     compatibility h s hs htor x f.hom
   rw [← hr, ← hv]
-  ext a
+  ext a : 1
+  apply CategoryTheory.End.ext
   change Langlands.GroupScheme.Cartier.restrict (B).toCommGroupScheme (B).toCommGroupScheme
-      ((f.hom ≫ liftAt Q) ≫ inc) (univAction a) =
+      ((f.hom ≫ liftAt Q) ≫ inc) (univAction a).asHom =
     Langlands.GroupScheme.Cartier.restrict (B).toCommGroupScheme (B).toCommGroupScheme f.hom
       (Langlands.GroupScheme.Cartier.restrict (B).toCommGroupScheme (B).toCommGroupScheme
-        (liftAt Q ≫ inc) (univAction a))
+        (liftAt Q ≫ inc) (univAction a).asHom)
   rw [Category.assoc]
   exact Langlands.GroupScheme.Cartier.restrict_comp (B).toCommGroupScheme
-    (B).toCommGroupScheme f.hom (liftAt Q ≫ inc) (univAction a)
+    (B).toCommGroupScheme f.hom (liftAt Q ≫ inc) (univAction a).asHom
 
 end Classification
 

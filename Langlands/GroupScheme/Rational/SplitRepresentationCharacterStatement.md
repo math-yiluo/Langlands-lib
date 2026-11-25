@@ -237,7 +237,10 @@ Chapters 21 and 22, entries on p. 440 (21.19), p. 457, p. 465 (22.8) and
 p. 478 (proof of 22.42), and, for Chapter 4, an entry on p. 89 (proof of
 4.14); none concerns the results used here.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as `splitRepresentationCharacterStatement` in
+[`Rational.SplitRepresentationCharacterProof`](SplitRepresentationCharacterProof.md).
 
 Conjunct 1: the support is finite because eigenspaces of the torus for
 distinct characters are linearly independent; reflection invariance is the

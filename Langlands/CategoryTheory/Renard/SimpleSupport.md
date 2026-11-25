@@ -1,10 +1,6 @@
 # Renard A.IX: objects supported on simple isomorphism classes
 
-Authors: Worker 6 and Worker 695. Worker 6 prepared the initial implementation and
-companion; Worker 695 checked the original passages, inherited interfaces and
-complete declarations, and prepared this submission.
-
-This construction unit defines the full subcategory `M_S` of David Renard,
+This construction module defines the full subcategory `M_S` of David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, A.IX, printed page 268 / PDF page 274. Its objects are exactly the
 objects whose simple subquotient classes all lie in `S`. The module also
@@ -110,7 +106,7 @@ source theorem.
 
 ## Remaining obligations
 
-This unit supplies the supported-object definition and the indexing set for
+This module supplies the supported-object definition and the indexing set for
 supported subobjects. It does not assert or assume isomorphism invariance,
 subobject or quotient closure, extension or colimit closure, abelianness of
 the full subcategory, the `JH` identities or zero detection. It constructs no
@@ -123,11 +119,8 @@ obligations of the whole-book program.
 
 ## Development check
 
-The module compiled without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Complete type and body inspection of all
+The module compiled without errors or warnings. Complete type and body inspection of all
 five definitions retained their common binders and independent universes `u, v`.
 A separate private probe checked all intrinsic lemma types, unapplied defining
 function identities, the inherited category in Hom universe `v`, the existing
 full and faithful inclusion instances, and the inclusion's actual morphism map.
-These are development checks; independent semantic review and publication are
-still required.

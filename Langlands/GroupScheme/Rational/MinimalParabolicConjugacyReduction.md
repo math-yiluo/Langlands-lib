@@ -53,6 +53,10 @@ cardinality of the field.
 The provenance is the inspected published definitions of parabolic and minimal
 parabolic functors, their actual-subgroup counterparts, rational conjugacy,
 affine dynamic representability and isomorphism functoriality. No additional
-literature assertion is used. All structural propositions named as premises
-remain obligations of their respective proof tasks. This module proves no
+literature assertion is used. The structural propositions named as premises
+are proved in their own modules: `Absolute.ParabolicDynamicProof`
+(`parabolicDynamic`), `Rational.GenericMinimalParabolicProof`
+(`genericMinimalParabolic`), `Rational.MinimalParabolicConjugacyProof`
+(`minimalParabolicConjugacy`) and `Rational.ParabolicContainsMinimalProof`
+(`parabolicContainsMinimalStatement`). This module proves no
 standardness-by-containment, standard-index injectivity or conjugacy rigidity.

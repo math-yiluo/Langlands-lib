@@ -1,6 +1,6 @@
 # Simple-wall factorization from chamber exchange
 
-This derived unit removes the Dynamic ordered-product premise from the
+This module removes the Dynamic ordered-product premise from the
 simple-wall inclusion. It works in arbitrary universe `u` over a
 nonarchimedean local field, for the actual `P : ParahoricBuildingData G`.
 Its structural hypotheses are precisely the apartment axioms,
@@ -62,4 +62,8 @@ module supplies the negative-wall helper; this proof does not call its
 conditional full Iwahori theorem. Rank-one factorization and the actual
 cover-image comparison remain hypotheses. The universal
 `ChamberSimpleFactorizationStatement` and the unchanged apartment-only
-`AffineIwahoriTitsStatement` remain unproved.
+`AffineIwahoriTitsStatement` are not proved here. The Library proves the
+former as `chamberSimpleFactorization` in `ChamberSimpleFactorizationProof`;
+it proves the latter only from further statements, such as
+`affineIwahoriTitsStatement_of_simplyConnectedFacetFixing` in
+`AffineIwahoriTitsNormalizerReduction`.

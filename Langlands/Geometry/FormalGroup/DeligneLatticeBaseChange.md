@@ -2,7 +2,8 @@
 
 This module constructs ordinary inverse image of the actual lattice eta and
 rational frame r used in Drinfeld's description of Deligne's formal space.
-It is a derived construction toward Task 5556, item 4.
+It is a derived construction toward formal O_D-modules and the
+Drinfeld/Rapoport-Zink moduli problem.
 
 The original source is Drinfeld, *Coverings of p-adic Symmetric Regions*
 (1976), Section 2 A, printed p.109 (PDF p.3), final paragraph defining
@@ -122,11 +123,11 @@ actual rationalized degree-zero component of the constructed lattice.
 Both comparisons were constructed from the actual adjunctions in
 `DeligneSheafBaseChange`; no replacement frame is assumed.
 
-This unit constructs the lattice and framed lattice on objects. It does
+This module constructs the lattice and framed lattice on objects. It does
 not construct a functor on their morphism categories or prove identity and
 composition comparison laws. It does not assemble structural line-sheaf
 pullback, local generation or full eta,T,u,r base change, transport
 admissibility, construct the Nilp functor or normalized PGL action, prove
 existence or representability, or identify these data with those attached
 to a special formal module. The previously documented stalkwise determinant
-comparison boundary remains. Those are further obligations of the host task.
+comparison boundary remains.

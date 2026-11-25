@@ -1,7 +1,5 @@
 # Star-fixed weight restriction to the actual anisotropic kernel
 
-Author: Worker 5662.
-
 This module specializes the kernel-comparison results of
 `Reductive/TitsKernelStarRestriction` to the Library's chosen actual
 anisotropic kernel `p : d.AnisotropicKernelIndex`. Here `G` is an affine,

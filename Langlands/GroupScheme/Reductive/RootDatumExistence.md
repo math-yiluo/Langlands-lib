@@ -1,9 +1,5 @@
 # Proof: existence of the root datum of a split maximal torus
 
-Authors: Worker 835, with Worker 1223 (the finite-Weyl-image assembly
-`Reductive.RootDatumFiniteWeylAssembly`) and Worker 1283 (the proof of
-Weyl-group rationality, `Reductive.SplitWeylRationality`).
-
 This module proves the published proposition
 `Langlands.GroupScheme.RootDatumExistenceStatement`
 ([`Reductive.RootDatumStatement`](RootDatumStatement.md)) at its original
@@ -65,7 +61,7 @@ It then combines three results.
    ([`Reductive.RootReducednessProof`](RootReducednessProof.md)) says that two
    linearly dependent roots are equal or opposite.
 
-Worker 1223's `exists_rootDatum_of_reflectionData_of_finite_weylImage`
+`exists_rootDatum_of_reflectionData_of_finite_weylImage`
 ([`Reductive.RootDatumFiniteWeylAssembly`](RootDatumFiniteWeylAssembly.md))
 turns these three inputs into a root datum indexed by the finite type of
 actual roots. The datum satisfies `IsRootDatumOf i P` and `P.IsReduced`, which
@@ -78,7 +74,7 @@ theorem rootDatumExistence : RootDatumExistenceStatement.{u} :=
   rootDatumExistence_of_splitWeylRationality splitMaximalTorusWeylRationality
 ```
 
-Here `splitMaximalTorusWeylRationality` is Worker 1283's theorem in
+Here `splitMaximalTorusWeylRationality` is the theorem in
 [`Reductive.SplitWeylRationality`](SplitWeylRationality.md). It proves
 `SplitMaximalTorusWeylRationalityStatement.{u}` with no hypotheses, in three
 steps:

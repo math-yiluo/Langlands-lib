@@ -3,7 +3,8 @@
 Module: `Langlands.Representation.Archimedean.RealInducedPairWeightZero`.
 Namespace: `Langlands.Archimedean.RealInducedPairWeightZero`.
 
-This internal unit treats the case of two induction blocks of weight zero in Task 7135.
+This internal module treats the case of two induction blocks of weight zero of
+`RealInducedInducedFiltrationStatement`.
 It also supplies two fusion rules for treating a single induction block of weight zero
 once the adjacent steps for its two characters are available. The rules and the theorem
 allow arbitrary lists before and after the exchanged blocks.
@@ -39,7 +40,7 @@ fusion rules and discharges all four character steps with the published theorem
 `Langlands.Archimedean.realCharacterPairFiltration`. In particular it treats
 the double-zero case of `RealInducedInducedFiltrationStatement` on `GL₄(ℝ)`.
 
-The unit is derived from the Library's concrete zero-weight expansion,
+The module is derived from the Library's concrete zero-weight expansion,
 finite-filtration algebra and character-pair theorem. It extends the existing
 `RealCharacterInducedWeightZero` construction to arbitrary surrounding lists and
 an arbitrary block on the other side. It does not use the Langlands classification

@@ -1,7 +1,5 @@
 # Sheaves of sections over an open, and their restriction maps
 
-Author: Worker 958.
-
 Module `Langlands.AlgebraicGeometry.Modules.CechResolution.Basic`, namespace
 `Langlands.AlgebraicGeometry.Modules.CechResolution`. It supplies the building blocks of the
 sheafified Čech complex of `Langlands.AlgebraicGeometry.Modules.CechResolution.Complex`:

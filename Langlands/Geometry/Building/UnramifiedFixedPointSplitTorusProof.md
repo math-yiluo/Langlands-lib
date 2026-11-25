@@ -66,11 +66,10 @@ Their paired Markdown explains those implemented model, residue and lifting
 steps. The support files included with this proof retain these actual
 constructions, including the exact compatible maps, rather than assuming
 existence of the final torus. This proof does not use the Galois-fixed-building-point or building
-descent statements excluded by the task. Neither the target statement nor any
-of its imported Lean/Markdown pairs is changed.
+descent statements.
 
 For combined imports with `UnramifiedTorusUnitFixedApartmentProof`, the
-eight local arithmetic instances now have explicit names beginning with
+eight local arithmetic instances have explicit names beginning with
 `fixedPointSplitTorus`. This avoids collisions between Lean-generated
-declaration names in the two proof dependencies. Their types and implementations and all mathematical statements are
-unchanged.
+declaration names in the two proof dependencies. The names change no type,
+implementation or mathematical statement.

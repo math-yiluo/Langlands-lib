@@ -1,7 +1,6 @@
 # Algebraic `(𝔤, K)`-modules of `GL_n(ℝ)` and `GL_n(ℂ)` and the local standard-parameter statements
 
-Worker 20 wrote this module for task `a2cfc970-9e20-4d56-b053-8f91a2e0b5cc` (Task 5720). All
-declarations are in the namespace `Langlands.Archimedean`. The module states, without any
+All declarations are in the namespace `Langlands.Archimedean`. The module states, without any
 topology on the module, what an irreducible admissible generic `(𝔤, K)`-module of `GL_n(ℝ)`
 or `GL_n(ℂ)` is. It defines what it means for such a module to have the standard-module
 parameter of a list of the Library's archimedean blocks, and it states the two local
@@ -139,7 +138,7 @@ case.
 1. `realRank ds = n`;
 2. there is an injective `ℂ`-linear map `A` from
    `kFiniteFunctions (realStandardModule n ds) (unitaryCompact ℝ n)` into `V`. This is the
-   `O(n)`-finite part of Worker 35's standard module, which is the Library's
+   `O(n)`-finite part of the standard module `realStandardModule n ds`, which is the Library's
    `Langlands.Automorphic.realStandardKFinite n ds` (an `abbrev` for the same term);
 3. for every `k ∈ unitaryCompact ℝ n` and every `f`, the right translate
    `Whittaker.rightTranslation … k f` is again in that space and
@@ -184,6 +183,6 @@ uses them. Mathematically they combine three results:
 these is registered in the project's literature, so they are not cited as sources here. The
 standard modules that are generic in this sense are Jacquet's "generic induced
 representations" (Jacquet 2009, `jacquet-2009-archimedean-rankin-selberg`, pp. 3–4). Whether
-the statements are provable from the Library's definitions also depends on Worker 35's
+the statements are provable from the Library's definitions also depends on the Library's
 `realStandardModule` and `complexStandardModule` being the classical standard modules. Any
-proof task must check this.
+proof must check this.

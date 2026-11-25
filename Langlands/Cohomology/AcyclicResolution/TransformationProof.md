@@ -1,7 +1,7 @@
 # The resolution comparison commutes with derived natural transformations
 
 Module `Langlands.Cohomology.AcyclicResolution.TransformationProof` proves the
-published statement `Langlands.Cohomology.ResolutionComparisonTransformationStatement`
+statement `Langlands.Cohomology.ResolutionComparisonTransformationStatement`
 (module `Langlands.Cohomology.AcyclicResolution.Statement`, component 5 of the
 acyclic-resolution comparison family).
 
@@ -77,6 +77,6 @@ with respect to the lift `φ`.
 
 ## Checks
 
-`lean_check` (environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`) compiles the
+The Lean check compiles the
 module with no errors or warnings, at the default heartbeat limit. The theorem
 depends only on the axioms `propext`, `Classical.choice` and `Quot.sound`.

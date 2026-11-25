@@ -11,7 +11,7 @@ canonical norm topology. The published normalization identity expresses the
 normalized absolute value as a natural power of the canonical norm. Continuity
 of the norm and of natural powers then proves continuity of the actual
 normalized absolute value with respect to the supplied topology.
-The Integrator moved the former private helper to that module so this proof
+The former private helper was moved to that module so this proof
 and the scalar Schwartz–Bruhat valuation-bounds proof use one declaration;
 the helper's proof and the theorem's meaning are unchanged.
 

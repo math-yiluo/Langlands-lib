@@ -1,7 +1,5 @@
 # Full automorphism group schemes with a clopen adjoint subgroup
 
-Worker 647.
-
 `Langlands.GroupScheme.ReductiveAutomorphismSchemeStatement.{u} : Prop`
 records the part of Conrad's general-base automorphism theorem needed for
 the inner-action locus. This module does not prove that proposition. It

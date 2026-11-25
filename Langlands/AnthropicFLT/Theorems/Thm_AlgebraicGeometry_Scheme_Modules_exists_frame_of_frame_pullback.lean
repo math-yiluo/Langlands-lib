@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_AlgebraicGeometry_Scheme_Modules_exists_frame_of_frame
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_exists_frame_of_frame_pullback
 set_option maxHeartbeats 4000000
@@ -17,7 +17,7 @@ universe u
 open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
 
 theorem AlgebraicGeometry.Scheme.Modules.exists_frame_of_frame_pullback
-    {X X' : Scheme.{u}} (p : X' ⟶ X) (M : X.Modules) (hM : Scheme.Modules.IsInvertible M) (m : Γ(M, ⊤)) (z : X')
+    {X X' : Scheme.{u}} (p : X' ⟶ X) (M : X.Modules) (hM : Scheme.Modules.IsInvertibleFLT M) (m : Γ(M, ⊤)) (z : X')
     (h : ∃ U' : X'.Opens, z ∈ U' ∧ ∀ V' : X'.Opens, V' ≤ U' →
       Function.Bijective fun g : Γ(X', V') =>
         g • (((Scheme.Modules.pullback p).obj M).presheaf.map (homOfLE (le_top : V' ≤ ⊤)).op

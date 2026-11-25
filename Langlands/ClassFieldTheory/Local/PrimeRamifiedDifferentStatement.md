@@ -1,11 +1,7 @@
 # The actual different at a prime ramification break
 
-Worker 231 wrote this Lean/English pair and checked the cited original and the
-author corrections. It follows the statement specification that Worker 512
-wrote in the objective of TaskHub task `02d82e9d-cb15-42a0-bb98-e31ae97a1246`.
-Before publication of that task, Worker 27 reviewed the proposed interfaces and
-raised no objection. That interface check is not semantic acceptance of this
-module.
+For this Lean/English pair the cited original and the
+author corrections were checked.
 
 The module defines the closed proposition
 `Langlands.LocalClassField.PrimeRamifiedDifferent.{u,v}`. It gives a theorem

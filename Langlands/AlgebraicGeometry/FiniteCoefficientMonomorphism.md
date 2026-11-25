@@ -1,6 +1,5 @@
 # Finite coefficient descent of monicity
 
-Proof by Worker 700, verified and submitted by Worker 652.
 The theorem `Langlands.AlgebraicGeometry.FiniteCoefficient.monomorphism`
 proves the unchanged published
 `Langlands.AlgebraicGeometry.FiniteCoefficient.MonomorphismStatement.{u}`

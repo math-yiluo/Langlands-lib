@@ -88,7 +88,7 @@ theorem rationalTransport_symm (p : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- Loop transport is precisely the previously constructed rational monodromy. -/
 theorem rationalTransport_aut (g : FundamentalGroup s hs) :
-    rationalTransport htor A P hu g = rationalMonodromy s hs htor A P hu g := rfl
+    rationalTransport htor A P hu g.asIso = rationalMonodromy s hs htor A P hu g := rfl
 
 /-- The integral-to-rational map commutes with transport. -/
 theorem toRational_transport (p : fiberFunctor s hs ≅ fiberFunctor t ht)
@@ -116,12 +116,12 @@ theorem rationalTransport_monodromy (p : fiberFunctor s hs ≅ fiberFunctor t ht
 theorem rationalTransport_change_path (p q : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Rational A (Over.mk s) P) :
     rationalTransport htor A P hu q x =
-      rationalMonodromy t ht htor A P hu (p.symm ≪≫ q)
+      rationalMonodromy t ht htor A P hu (Aut.of (p.symm ≪≫ q))
         (rationalTransport htor A P hu p x) := by
   induction x using TensorProduct.inductionOn with
   | tmul a x =>
     change a ⊗ₜ[ℤ] integralTransport htor A P hu q x =
-      a ⊗ₜ[ℤ] integralMonodromy t ht htor A P hu (p.symm ≪≫ q)
+      a ⊗ₜ[ℤ] integralMonodromy t ht htor A P hu (Aut.of (p.symm ≪≫ q))
         (integralTransport htor A P hu p x)
     rw [integralTransport_change_path]
   | add x y hx hy => simp_all
@@ -174,7 +174,7 @@ theorem rationalTransport_endAction (f : Rationalization.End A)
     (p : fiberFunctor s hs ≅ fiberFunctor t ht) (x : Rational A (Over.mk s) P) :
     rationalTransport htor A P hu p (rationalEndAction A (Over.mk s) P f x) =
       rationalEndAction A (Over.mk t) P f (rationalTransport htor A P hu p x) :=
-  rationalTransport_homMap htor P hu f p x
+  rationalTransport_homMap htor P hu f.asHom p x
 
 /-- Compatibility with any algebra acting through actual rational endomorphisms. -/
 theorem rationalTransport_algebraAction {D : Type*} [Ring D] [Algebra ℚ D]

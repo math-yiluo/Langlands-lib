@@ -1,6 +1,6 @@
 # Cocharacters factor through the fixed torus envelope
 
-Worker 1436. This internal adapter works at arbitrary universe `u` over every
+This internal adapter works at arbitrary universe `u` over every
 field `k`. Let `G` be an actual group scheme over `Spec k` with affine structure
 morphism, and let `D : TorusGeneratedEnvelope G` represent the existing fixed
 `closedTorusEnvelope G`. Smoothness and connectedness of `G` are unnecessary.

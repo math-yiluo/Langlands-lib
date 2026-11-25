@@ -1,6 +1,6 @@
 # Relative projectivity of the terms of Harris's complexes `C_m^{•,H}`
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.FreeTorsionProjective`
+Built on `Langlands.Cohomology.DivisibleSystem.FreeTorsionProjective`
 (the predicate `FreeOverPowQuotient` and
 `powTorsionProjective_of_freeOverPowQuotient`), and through it on
 `Langlands.Cohomology.DivisibleSystem.PowTorsionProjective`
@@ -161,7 +161,7 @@ the rows that are totalized are constrained.
     for an `ℓ`-divisible system `W` of `ℤ`-graded cochain complexes there.
 - The truncated smooth Godement resolutions (`h`, `T`, `D`, `hterm`, `hres` as
   in `smoothGodementInvariantTotalSystem`, all types in one universe `u`; `h`
-  is a proof of Worker 3's unproved proposition
+  is a proof of the unproved proposition
   `SmoothGodementZeroExactStatement R G X`):
   `hfree : UnderlyingPowTorsionProjectiveBelow (D + 2)
   (smoothGodementTruncatedQuotientInvariantSectionsSystem h T D H hterm hres)`.
@@ -187,7 +187,7 @@ to them.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), printed pp.304, 306 and 312 (one-based PDF
-pages 6, 8 and 14). Worker 61 read all three pages in the rendered scanned
+pages 6, 8 and 14). All three pages were read in the rendered scanned
 original.
 
 1. Harris's claims. On p.304 an `ℓ`-divisible system is "a collection `{T_m}`

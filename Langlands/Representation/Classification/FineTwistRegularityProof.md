@@ -1,7 +1,5 @@
 # Proof of actual fine real-twist regularity
 
-Author: Worker 166.
-
 `Langlands.fineTwistRegularity` proves the published fine-twist regularity
 statement by specializing scalar-twist and group-transport results.
 

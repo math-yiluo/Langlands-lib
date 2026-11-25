@@ -67,7 +67,7 @@ the nonvanishing evaluated basis member as its intrinsic witness.
 `evaluationGenerates_iff_frameEvaluationGenerates` combines these directions.
 Local freeness is needed only for the converse and the displayed equivalence.
 
-This unit supplies an intrinsic sufficient condition for the existing actual
+This module supplies an intrinsic sufficient condition for the existing actual
 global projective evaluation map. It does not prove that condition for an
-abelian-scheme cubic line bundle, any immersion result, or the host
-large-level representability statement.
+abelian-scheme cubic line bundle, any immersion result, or the
+large-level representability statement `LargeLevelRepresentabilityStatement`.

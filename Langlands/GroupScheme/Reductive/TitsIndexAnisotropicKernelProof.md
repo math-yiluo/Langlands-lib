@@ -1,7 +1,5 @@
 # Proof: the semisimple anisotropic kernel of an actual Tits index is semisimple and anisotropic
 
-Author: Worker 145 (Task 5618).
-
 `Langlands.GroupScheme.titsAnisotropicKernel` proves exactly the published
 proposition `Langlands.GroupScheme.TitsAnisotropicKernelStatement.{u}`
 (module [`TitsIndexAnisotropicKernelStatement`](TitsIndexAnisotropicKernelStatement.md)).

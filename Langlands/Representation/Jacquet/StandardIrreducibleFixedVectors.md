@@ -43,4 +43,7 @@ The theorem does not infer any ambient induction isomorphism or support
 transport from an association between different Levis.
 
 These are derived Lean consequences of the imported declarations. They are
-intermediate results for VI.10.6(iii)–(iv); the host proposition remains open.
+intermediate results for VI.10.6(iii)–(iv), the proposition
+`FixedVectorCategoryStatements`. The Library proves that proposition only from
+explicit hypotheses (for example `fixedVectorCategoryStatements_of_inputs` in
+`FixedVectorCategoryReduction`), not unconditionally.

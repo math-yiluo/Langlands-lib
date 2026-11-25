@@ -1,7 +1,5 @@
 # Componentwise bounded morphisms of disjoint affinoid families
 
-Author: Worker 36.
-
 The module constructs a category of families of actual finite
 positive-polyradius quotient algebras. Its arrows are chosen component
 functions with bounded algebra pullbacks. It realizes them on the actual
@@ -147,18 +145,16 @@ definition of composition.
 
 ## Verification and scope
 
-The complete draft module and the exact entry declaration
-`Langlands.Analytic.AffinoidFamily.spectrumFunctor` were checked with
-the project's Lean service in check
-`3755dae3-e8be-455b-a65c-fb1077b8555a`: Lake build succeeded with zero
-errors and zero warnings. Inspection reported a definition with independent
+The complete module and the exact entry declaration
+`Langlands.Analytic.AffinoidFamily.spectrumFunctor` were checked with a
+Lake build, which succeeded with zero errors and zero warnings. Inspection reported a definition with independent
 universe parameters `u` and `v`, using only `propext`, `Classical.choice`
 and `Quot.sound`.
 
-This contribution supplies actual componentwise bounded maps and compatible
+This module supplies actual componentwise bounded maps and compatible
 local affinoid morphisms on constructed disjoint atlases. Arrows include
 chosen data on empty input components. General maps that split a source
 component across several target components require a broader construction.
 General atlas refinement and gluing, strong-morphism localization, structure
 sheaves, étale and equivariant sites, and Harris's local tower remain
-separate host-task obligations.
+separate obligations.

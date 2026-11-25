@@ -46,7 +46,8 @@ def integralActionSolutionsBaseChange (b : Basis I ℤ O) (c : S' ⟶ S)
 
 @[simp] theorem integralActionSolutionsBaseChange_apply (b : Basis I ℤ O)
     (c : S' ⟶ S) (B : AbelianScheme S) (r : IntegralActionSolutions b B) (i : I) :
-    (integralActionSolutionsBaseChange b c B r).val i = (baseChange c).map (r.val i) := rfl
+    (integralActionSolutionsBaseChange b c B r).val i =
+      CategoryTheory.End.of ((baseChange c).map (r.val i).asHom) := rfl
 
 theorem integralActionEquiv_baseChange (b : Basis I ℤ O) (c : S' ⟶ S)
     (B : AbelianScheme S) (a : O →+* CategoryTheory.End B) :

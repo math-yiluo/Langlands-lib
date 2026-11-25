@@ -1,7 +1,5 @@
 # Rigidity of families of homomorphisms between diagonalizable groups over a base
 
-Worker 5698.
-
 This module proves that a family of homomorphisms between diagonalizable groups over an
 arbitrary scheme `S` does not depend on its parameter, provided the parameter scheme has
 preconnected fibres over `S`. It is a relative form of the field statement

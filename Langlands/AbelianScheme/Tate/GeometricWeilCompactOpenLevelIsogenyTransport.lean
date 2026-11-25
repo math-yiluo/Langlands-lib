@@ -62,8 +62,8 @@ local notation "pathB" => Tate.weilAdelicCompactOpenLevelTransport preservation 
 def weilAdelicCompactOpenLevelIsogenyPath
     (p : fiberFunctor s (geometricFiberFinite s) ≅ fiberFunctor t (geometricFiberFinite t))
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : TowerA s ≅ TowerB t :=
   isogenyAB s q e he hqe ≪≫ pathB p
@@ -74,8 +74,8 @@ local notation "pathIsogeny" => weilAdelicCompactOpenLevelIsogenyPath preservati
 theorem weilAdelicCompactOpenLevelIsogenyPath_eq_transport_isogeny
     (p : fiberFunctor s (geometricFiberFinite s) ≅ fiberFunctor t (geometricFiberFinite t))
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     pathIsogeny p q e he hqe = pathA p ≪≫ isogenyAB t q e he hqe := by
@@ -87,8 +87,8 @@ theorem weilAdelicCompactOpenLevelIsogenyPath_eq_transport_isogeny
 theorem weilAdelicCompactOpenLevelIsogenyPath_independent
     (p p' : fiberFunctor s (geometricFiberFinite s) ≅ fiberFunctor t (geometricFiberFinite t))
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     pathIsogeny p q e he hqe = pathIsogeny p' q e he hqe := by
@@ -104,8 +104,8 @@ local notation "transportB" => weilAdelicCompactOpenLevelGeometricTransport pres
 /-- Canonical rational-isogeny comparison between actual towers at different geometric points. -/
 def weilAdelicCompactOpenLevelGeometricIsogeny
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : TowerA s ≅ TowerB t :=
   isogenyAB s q e he hqe ≪≫ transportB s t
@@ -116,8 +116,8 @@ local notation "geometricIsogeny" => weilAdelicCompactOpenLevelGeometricIsogeny 
 theorem weilAdelicCompactOpenLevelGeometricIsogeny_eq_path
     (p : fiberFunctor s (geometricFiberFinite s) ≅ fiberFunctor t (geometricFiberFinite t))
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     geometricIsogeny q e he hqe = pathIsogeny p q e he hqe := by
@@ -127,8 +127,8 @@ theorem weilAdelicCompactOpenLevelGeometricIsogeny_eq_path
 /-- Canonical point transport followed by the target-point isogeny is the same comparison. -/
 theorem weilAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     geometricIsogeny q e he hqe = transportA s t ≪≫ isogenyAB t q e he hqe := by
@@ -140,8 +140,8 @@ theorem weilAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
 /-- Its forward component applies the actual isogeny and then canonical point transport. -/
 @[simp] theorem weilAdelicCompactOpenLevelGeometricIsogeny_hom_app
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K : LevelIndex) (x : (TowerA s).obj K) :
@@ -151,8 +151,8 @@ theorem weilAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
 /-- Its inverse component applies inverse point transport and then the inverse actual isogeny. -/
 @[simp] theorem weilAdelicCompactOpenLevelGeometricIsogeny_inv_app
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K : LevelIndex) (x : (TowerB t).obj K) :
@@ -162,8 +162,8 @@ theorem weilAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
 /-- At equal geometric endpoints the mixed comparison recovers the fixed-point isogeny. -/
 @[simp] theorem weilAdelicCompactOpenLevelGeometricIsogeny_samePoint
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     weilAdelicCompactOpenLevelGeometricIsogeny preservation composition unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA lamA hB geometryB MB evaluationB lamB additivityAB compatibility iA iB V ψ h hunit s s q e he hqe =
@@ -175,8 +175,8 @@ theorem weilAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
 /-- The canonical mixed comparison commutes with every compact-open transporter map. -/
 theorem weilAdelicCompactOpenLevelGeometricIsogeny_arrow
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     {K L : LevelIndex} (f : K ⟶ L) (x : (TowerA s).obj K) :
@@ -190,8 +190,8 @@ variable [Module.Finite ℚ V]
 /-- The mixed comparison commutes with the first actual compact-open Hecke leg. -/
 theorem weilAdelicCompactOpenLevelGeometricIsogeny_heckeLeft
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K L : LevelIndex) (g : G)
@@ -205,8 +205,8 @@ theorem weilAdelicCompactOpenLevelGeometricIsogeny_heckeLeft
 /-- The mixed comparison commutes with the second actual compact-open Hecke leg. -/
 theorem weilAdelicCompactOpenLevelGeometricIsogeny_heckeRight
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K L : LevelIndex) (g : G)
@@ -224,8 +224,8 @@ variable {Ω'' : Type u} [Field Ω''] [IsAlgClosed Ω''] (r : Spec (.of Ω'') �
 /-- A subsequent canonical change of target point composes with the mixed comparison. -/
 theorem weilAdelicCompactOpenLevelGeometricIsogeny_target_trans
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     weilAdelicCompactOpenLevelGeometricIsogeny preservation composition unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA lamA hB geometryB MB evaluationB lamB additivityAB compatibility iA iB V ψ h hunit s r q e he hqe =
@@ -237,8 +237,8 @@ theorem weilAdelicCompactOpenLevelGeometricIsogeny_target_trans
 /-- A preceding canonical change of source point gives the same mixed comparison. -/
 theorem weilAdelicCompactOpenLevelGeometricIsogeny_source_trans
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     weilAdelicCompactOpenLevelGeometricIsogeny preservation composition unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA lamA hB geometryB MB evaluationB lamB additivityAB compatibility iA iB V ψ h hunit s r q e he hqe =
@@ -272,8 +272,8 @@ local notation "pathB" => Tate.weilPrimeToAdelicCompactOpenLevelTransport preser
 def weilPrimeToAdelicCompactOpenLevelIsogenyPath
     (p : fiberFunctor s (geometricFiberFinite s) ≅ fiberFunctor t (geometricFiberFinite t))
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : TowerA s ≅ TowerB t :=
   isogenyAB s q e he hqe ≪≫ pathB p
@@ -284,8 +284,8 @@ local notation "pathIsogeny" => weilPrimeToAdelicCompactOpenLevelIsogenyPath pre
 theorem weilPrimeToAdelicCompactOpenLevelIsogenyPath_eq_transport_isogeny
     (p : fiberFunctor s (geometricFiberFinite s) ≅ fiberFunctor t (geometricFiberFinite t))
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     pathIsogeny p q e he hqe = pathA p ≪≫ isogenyAB t q e he hqe := by
@@ -297,8 +297,8 @@ theorem weilPrimeToAdelicCompactOpenLevelIsogenyPath_eq_transport_isogeny
 theorem weilPrimeToAdelicCompactOpenLevelIsogenyPath_independent
     (p p' : fiberFunctor s (geometricFiberFinite s) ≅ fiberFunctor t (geometricFiberFinite t))
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     pathIsogeny p q e he hqe = pathIsogeny p' q e he hqe := by
@@ -314,8 +314,8 @@ local notation "transportB" => weilPrimeToAdelicCompactOpenLevelGeometricTranspo
 /-- Canonical rational-isogeny comparison between actual towers at different geometric points. -/
 def weilPrimeToAdelicCompactOpenLevelGeometricIsogeny
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : TowerA s ≅ TowerB t :=
   isogenyAB s q e he hqe ≪≫ transportB s t
@@ -326,8 +326,8 @@ local notation "geometricIsogeny" => weilPrimeToAdelicCompactOpenLevelGeometricI
 theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_eq_path
     (p : fiberFunctor s (geometricFiberFinite s) ≅ fiberFunctor t (geometricFiberFinite t))
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     geometricIsogeny q e he hqe = pathIsogeny p q e he hqe := by
@@ -337,8 +337,8 @@ theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_eq_path
 /-- Canonical point transport followed by the target-point isogeny is the same comparison. -/
 theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     geometricIsogeny q e he hqe = transportA s t ≪≫ isogenyAB t q e he hqe := by
@@ -350,8 +350,8 @@ theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
 /-- Its forward component applies the actual isogeny and then canonical point transport. -/
 @[simp] theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_hom_app
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K : LevelIndex) (x : (TowerA s).obj K) :
@@ -361,8 +361,8 @@ theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
 /-- Its inverse component applies inverse point transport and then the inverse actual isogeny. -/
 @[simp] theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_inv_app
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K : LevelIndex) (x : (TowerB t).obj K) :
@@ -372,8 +372,8 @@ theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
 /-- At equal geometric endpoints the mixed comparison recovers the fixed-point isogeny. -/
 @[simp] theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_samePoint
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     weilPrimeToAdelicCompactOpenLevelGeometricIsogeny preservation composition unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA lamA hB geometryB MB evaluationB lamB additivityAB compatibility iA iB V ψ (m := m) hAway hunit s s q e he hqe =
@@ -385,8 +385,8 @@ theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_eq_transport_isogeny
 /-- The canonical mixed comparison commutes with every compact-open transporter map. -/
 theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_arrow
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     {K L : LevelIndex} (f : K ⟶ L) (x : (TowerA s).obj K) :
@@ -400,8 +400,8 @@ variable [Module.Finite ℚ V]
 /-- The mixed comparison commutes with the first actual compact-open Hecke leg. -/
 theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_heckeLeft
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K L : LevelIndex) (g : G)
@@ -415,8 +415,8 @@ theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_heckeLeft
 /-- The mixed comparison commutes with the second actual compact-open Hecke leg. -/
 theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_heckeRight
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (K L : LevelIndex) (g : G)
@@ -434,8 +434,8 @@ variable {Ω'' : Type u} [Field Ω''] [IsAlgClosed Ω''] (r : Spec (.of Ω'') �
 /-- A subsequent canonical change of target point composes with the mixed comparison. -/
 theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_target_trans
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     weilPrimeToAdelicCompactOpenLevelGeometricIsogeny preservation composition unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA lamA hB geometryB MB evaluationB lamB additivityAB compatibility iA iB V ψ (m := m) hAway hunit s r q e he hqe =
@@ -447,8 +447,8 @@ theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_target_trans
 /-- A preceding canonical change of source point gives the same mixed comparison. -/
 theorem weilPrimeToAdelicCompactOpenLevelGeometricIsogeny_source_trans
     (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     weilPrimeToAdelicCompactOpenLevelGeometricIsogeny preservation composition unitCoherence associativity comparison symmetry stability hA geometryA MA evaluationA lamA hB geometryB MB evaluationB lamB additivityAB compatibility iA iB V ψ (m := m) hAway hunit s r q e he hqe =

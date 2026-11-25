@@ -1,8 +1,8 @@
 # Finite-family projectors for an open normal subgroup
 
 This internal module contains the generic open-subgroup and open-normal-family
-constructions originally proved by Worker 1168 in
-`RationalCompactRestrictionInertiaReduction`. Worker 1740 extracted them without
+constructions originally proved in
+`RationalCompactRestrictionInertiaReduction`. They were extracted from it without
 changing any declaration name, namespace, universe binder, signature or proof.
 The module has no rational inertia statement imports and can be used with the
 actual compact-induction constructions independently of the rational reduction.

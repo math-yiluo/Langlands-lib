@@ -1,6 +1,6 @@
 # Hermitian adjunction of the opposite standard integrals (target)
 
-Worker 5. `Langlands.Plancherel.ConditionalDynamicOppositeHermitianAdjunctionStatement`
+`Langlands.Plancherel.ConditionalDynamicOppositeHermitianAdjunctionStatement`
 is a Prop-valued target. It states the Hermitian form of Waldspurger's
 adjunction IV.1 (11) for the Library's actual opposite standard integrals
 `J_{P̄|P}` and `J_{P|P̄}` in the fixed compact pictures, on their convergence
@@ -37,9 +37,8 @@ Waldspurger states it for unitary `χ`, where the operators are the rational
 continuations of the integrals. Unitary `χ` need not lie in the convergence
 domain. The Library has the integrals on their convergence domains (the
 families `conditionalForwardCompactFamily` and
-`conditionalReverseCompactFamily`), and it does not yet have their
-continuations as operators. The target is therefore stated on the
-convergence domains.
+`conditionalReverseCompactFamily`). The target does not use their
+continuations as operators; it is stated on the convergence domains.
 
 There, the Hermitian adjunction pairs the parameter `z` of `J_{P̄|P}` with
 the parameter `z† = z̄⁻¹` of `J_{P|P̄}`. The reason is the following. For a

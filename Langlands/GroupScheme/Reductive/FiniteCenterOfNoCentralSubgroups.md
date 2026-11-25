@@ -46,4 +46,5 @@ Only the topology passes through the reduced subgroup; the final coordinate
 algebra and the finite structure morphism belong to the original centre
 representative, retaining its nilpotents. No reductivity or smoothness of that
 representative is assumed. This is an internal derivation and does not assert
-the existence of the central torus or prove the host task by itself.
+the existence of the central torus or prove
+`ReductiveCentralTorusSemisimpleQuotientStatement` by itself.

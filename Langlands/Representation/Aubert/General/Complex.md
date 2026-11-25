@@ -1,7 +1,7 @@
 # Signed diagram of actual normalized induction and Jacquet terms
 
-Internal construction by Worker 194 on actual subgroup families, using the
-separately owned normalization adapter of Worker 23.
+Internal construction on actual subgroup families, using the separate
+normalization adapter of `General/Parabolic`.
 
 For removed-root sets `s`, `termObject A s` is the genuine normalized
 `inductionJacquetFunctor` object. The explicit coinvariant action, induced-function

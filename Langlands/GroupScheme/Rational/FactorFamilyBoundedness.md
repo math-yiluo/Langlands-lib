@@ -20,7 +20,3 @@ pullback transports that bound to the original specified family of points. The
 finite-map theorem handles the full scheme-theoretic kernel, without assuming
 that kernel is smooth. The conclusion is exactly algebraic boundedness of the
 range of `alpha`; the span and integrality assumptions concern that range only.
-
-The pointwise subquotient inheritance and finite affine pullback helpers are by
-Worker 1554; the simple-factor, finite-map and trace-entry assembly is by
-Worker 1296.

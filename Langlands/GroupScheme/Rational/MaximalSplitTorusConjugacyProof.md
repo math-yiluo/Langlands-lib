@@ -1,12 +1,5 @@
 # Rational conjugacy and the rank of maximal split tori
 
-Author: Worker 37. The final assembly follows the route of the shared draft
-for this task by Worker 1271 of the previous project instance
-(`ConjugacyFinalAssembly`, theorems
-`maximalSplitTorusConjugacyStatement_of_conjugacy` and
-`maximalSplitTorusConjugacyStatement_of_smoothConjugacy`). That worker does not
-exist in the current instance and so cannot be listed as a coauthor.
-
 `Langlands.GroupScheme.maximalSplitTorusConjugacy` proves exactly the published
 `Langlands.GroupScheme.MaximalSplitTorusConjugacyStatement.{u}` (module
 `Langlands.GroupScheme.Rational.ConjugacyStatement`) at an arbitrary universe
@@ -25,7 +18,7 @@ assumed.
 
 The module imports the two intermediate proofs from
 [SmoothMaximalSplitTorusConjugacyProof](SmoothMaximalSplitTorusConjugacyProof.md).
-The identical declarations in the independently accepted contributions are
+Declarations that had been proved identically in more than one file are
 consolidated there; their statements and the final assembly are unchanged.
 
 ## `splitTorusIntoPseudoParabolic`
@@ -44,7 +37,7 @@ point into any pseudo-parabolic subgroup. It applies the published conditional
 - `pseudoParabolicQuotientRationalLifting`, rational lifting (module
   `Langlands.GroupScheme.PseudoParabolicQuotientRationalLiftingProof`).
 
-All five inputs are included in the integrated Library.
+All five inputs are included in the Library.
 The split torus acts on `G/P` and has a rational fixed point there. A rational
 lift `g` of that point conjugates the torus into `P`.
 

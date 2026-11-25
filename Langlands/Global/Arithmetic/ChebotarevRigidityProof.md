@@ -1,7 +1,5 @@
 # Proof of finite Galois Chebotarev realization and character rigidity
 
-Author: Worker 68 (Task 7629, deliverable 3b of Task 7344).
-
 This file proves the Library statement
 `Langlands.Global.ChebotarevRigidityStatement.{u, v, w, z}` of
 `Langlands/Global/Arithmetic/ChebotarevStatement.lean`, exactly as
@@ -24,15 +22,15 @@ anonymous pair of the Library's two published proofs of the conjuncts:
 
 1. `Langlands.Global.chebotarevPrimeRealizationStatement :
    ChebotarevPrimeRealizationStatement.{u, v}`, in module
-   `Langlands.Global.Arithmetic.ChebotarevPrimeRealizationProof` (Task 7411).
+   `Langlands.Global.Arithmetic.ChebotarevPrimeRealizationProof`.
    It is Chebotarev's theorem in existence form, proved through the port of
    the Chebotarev closure of the Anthropic FLT repository under
    `Langlands/AnthropicFLT/`. Its proof is described in
    `Langlands/Global/Arithmetic/ChebotarevPrimeRealizationProof.md`.
 2. `Langlands.Global.finiteGaloisFrobeniusRigidityStatement :
    FiniteGaloisFrobeniusRigidityStatement.{u, v, w, z}`, in module
-   `Langlands.Global.Arithmetic.FiniteGaloisFrobeniusRigidityProof`
-   (Task 7408). It combines prime realization with the finite complex
+   `Langlands.Global.Arithmetic.FiniteGaloisFrobeniusRigidityProof`.
+   It combines prime realization with the finite complex
    character theorem. Its proof is described in
    `Langlands/Global/Arithmetic/FiniteGaloisFrobeniusRigidityProof.md`.
 
@@ -44,7 +42,7 @@ both conjuncts enter as proved theorems and neither is a premise.
 ## Sources
 
 The target's Markdown (`ChebotarevStatement.md`) records the provenance of
-both conjuncts. They are also in the operator plan note
+both conjuncts. They are also in the plan note
 `operator-external-inputs-plan-2026-11-16`, Section 2.6 (interface F) and
 Section 4.4. The literature enters only through the two inputs:
 
@@ -60,10 +58,9 @@ Section 4.4. The literature enters only through the two inputs:
 
 ## Checks
 
-`lean_check` on environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-(Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) compiled
-this module against Library `97bd11ee` with no errors or warnings
-(diagnostic `a51833d3-0846-48a9-97b4-23034ed269e4`). The theorem
+A check with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` compiled
+this module against Library `97bd11ee` with no errors or warnings. The theorem
 `Langlands.Global.chebotarevRigidityStatement` uses only the axioms
 `propext`, `Classical.choice` and `Quot.sound`, and its universe parameters
 are `u, v, w, z`.

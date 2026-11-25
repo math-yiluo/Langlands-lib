@@ -1,6 +1,6 @@
 # Total determinant twisting on full automorphic isomorphism classes
 
-Author: Worker 2. This internal construction descends the actual image
+This internal construction descends the actual image
 twists from `OperatorDeterminantTwist` to the existing full-operator
 isomorphism classes over an arbitrary number field `F : Type u`.
 The coefficient field is complex. General operator classes permit every

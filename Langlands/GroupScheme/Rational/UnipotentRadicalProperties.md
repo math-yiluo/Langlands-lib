@@ -1,8 +1,8 @@
 # Finite Galois descent of a represented unipotent radical
 
-This internal prerequisite by Worker 1333 completes the descent of a
+This internal prerequisite completes the descent of a
 supplied represented unipotent radical through a finite Galois extension.
-It uses Worker 1487's unipotence-reflection proof unchanged. The existing
+It uses the unipotence-reflection proof of `Unipotent/FieldReflectionProof` unchanged. The existing
 group-scheme, subgroup-functor and `IsUnipotentRadical` predicates are
 unchanged. All schemes and fields have an arbitrary common universe `u`.
 
@@ -74,7 +74,7 @@ extension `K/k`. If its actual pullback satisfies
 
 Closedness makes the source affine and the inclusion monic. The
 preceding reflection lemmas supply smoothness, connectedness, normality
-and greatestness over `k`. Worker 1487's
+and greatestness over `k`. The theorem
 `IsUnipotent.of_baseChange` supplies unipotence over `k`; this theorem
 uses the actual coordinate-cogroup comparison and contraction of a
 scalar-extended stable subspace. Closedness itself remains an explicit
@@ -123,7 +123,7 @@ These results are internal deductions from the published fpqc image
 descent, field-extension fpqc, geometric connectedness and unipotence
 preservation APIs, Mathlib's smooth descent and topological
 connected-image theorems, the finite Galois source-descent construction,
-and Worker 1487's unipotence reflection. The accompanying
+and the unipotence reflection. The
 `Unipotent/FieldReflectionProof` pair is reused without edits. Its
 independent proof and source explanation remain in that pair.
 
@@ -136,4 +136,4 @@ its smoothness, connectedness and solvability are not required here.
 The construction starts with a represented radical over `L`. Radical
 existence over a geometric field, finding a suitable finite Galois field
 of definition, splitness in the torus-generated situation, and the
-maximal-torus conjugacy theorem remain obligations of the host proof.
+maximal-torus conjugacy theorem are separate steps, outside this module.

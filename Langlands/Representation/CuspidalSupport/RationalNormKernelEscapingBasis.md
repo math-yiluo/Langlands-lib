@@ -4,8 +4,7 @@ This internal geometric bridge combines the integral Weyl correction,
 character detection of compact escape, and the published dynamic open-cell
 and uniform contraction arguments. It follows the explicit cocharacter
 construction in `RationalOppositeIwahoriBasisProof`, with the cocharacter
-value retained throughout the argument. Worker 485 supplied the norm-kernel
-and positive-character route.
+value retained throughout the argument.
 
 The structure `NormKernelEscapingOppositeIwahoriData` bundles a standard
 cocharacter, an actual kernel element, its Levi commutation, its ambient
@@ -45,5 +44,5 @@ Thus no nonempty-root or positive-rank assumption is imposed on the ambient
 group: when there are no proper subsets the assertion has no instances.
 The basis remains a basis of ambient compact open subgroups. Transport of
 Iwahori data to the norm-kernel subgroup, Jacquet vanishing, fixed-level
-uniform coefficient support and the whole host proposition are subsequent
-obligations.
+uniform coefficient support and the proposition they serve are later steps,
+not part of this file.

@@ -93,7 +93,9 @@ The input declarations are supplied by:
 - `Langlands.GroupScheme.HomImage` and
   `Langlands.GroupScheme.Reductive.UnipotentKernelQuotient`.
 
-This unit supplies geometric parabolic images and full inverse images
+This module supplies geometric parabolic images and full inverse images
 for a given quotient and kernel hypothesis. It constructs no integral
 model, facet association, residue-torus lift or prescribed-point
-apartment. `UnramifiedFixedPointSplitTorusStatement` remains open.
+apartment. `UnramifiedFixedPointSplitTorusStatement` is not proved here;
+it is proved as `Geometry.Building.unramifiedFixedPointSplitTorus` in
+`Geometry.Building.UnramifiedFixedPointSplitTorusProof`.

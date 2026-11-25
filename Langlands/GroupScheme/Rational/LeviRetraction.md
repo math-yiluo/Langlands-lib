@@ -1,7 +1,5 @@
 # The retraction supplied by an actual Levi multiplication isomorphism
 
-Author: Worker 1445.
-
 This internal construction unfolds the multiplication-isomorphism clause in
 `IsRationalLeviSubgroup`. It works over any base scheme. Given actual
 homomorphisms `l : L → P` and `r : U → P` whose scheme multiplication

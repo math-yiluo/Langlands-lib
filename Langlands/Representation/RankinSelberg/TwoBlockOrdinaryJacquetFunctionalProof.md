@@ -2,8 +2,6 @@
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockOrdinaryJacquetFunctionalProof`.
 
-Author: Worker 1133.
-
 The module proves
 
 ```lean

@@ -1,9 +1,9 @@
 # Kernel difference and cancellation through finite homomorphisms
 
-This derived helper unit constructs the actual kernel difference of two group-scheme
+This module constructs the actual kernel difference of two group-scheme
 homomorphisms and proves cancellation through a finite homomorphism. The motivation is the
 uniqueness argument in Milne, *Algebraic Groups* (2017), Proposition 18.8, printed p. 389 /
-PDF p. 405. The accompanying existence proof is outside this unit. The complete official
+PDF p. 405. The accompanying existence proof is outside this module. The complete official
 Milne errata retained on 2026-11-02 corrects the codomain of the lift in that proposition;
 this construction makes no choice of lift.
 

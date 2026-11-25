@@ -1,7 +1,5 @@
 # Canonical lattice comparison on the separate geometric coefficient covers
 
-Author: Worker 57.
-
 This internal construction compares the associated systems of the two canonical
 Harris lattices constructed independently at nested small CM levels `V ≤ U`.
 It uses their actual common coefficient kernels to construct two changes of
@@ -63,8 +61,8 @@ The small-etale covers use the explicit premises
 original signature, tensor, Picard-zero, Weil, adelic and torsion arguments
 shown in Lean; `q`, `dualityNaturality` and `polarizationStability` are not
 additional arguments of that predicate. Rigidity at `U` is not required by
-any declaration of this unit. The imported normal-torsor constructions use
-the published dominant-unramified-etale proof; the other named premises
+any declaration of this module. The imported normal-torsor constructions use
+the dominant-unramified-etale proof; the other named premises
 remain explicit. No desired cover comparison or coefficient map is supplied
 as a premise.
 
@@ -215,7 +213,7 @@ The proof unfolds this composite and cancels `B.inv ; B.hom` with the
 isomorphism law. This equation identifies the transported comparison with
 the same original descended coefficient inclusion on the common covers.
 
-## Provenance and remaining scope
+## Provenance and scope
 
 This is an internal deduction from
 `HarrisTaylorCMGeometricLatticeComparison`,
@@ -237,5 +235,5 @@ or independence of arbitrary lattices or rational adic systems. Identifying
 the coarse system with inverse image of the original system at `U` is a
 separate composition and additionally uses the original rigidity premise at
 `U`. Exact representability, the named moduli premises, arithmetic existence,
-source comparison and canonical-model geometry remain explicit or unfinished
-obligations of the containing task.
+source comparison and canonical-model geometry are explicit premises or are not
+treated in this module.

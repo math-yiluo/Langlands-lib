@@ -20,7 +20,7 @@ in the target chart.
 
 The source normed, chart-model and carrier universes are independent of each
 other and of the coefficient universe; only a charted source is needed.
-Worker 115 adapts Workers 383 and 1659's published
+This module adapts the published
 `PointManifold.General.RegularAtlasComparisonProof` from real smoothness to
 coefficient-field analytic regularity. This is an internal argument from the
 explicit chart fields and the existing point topology.

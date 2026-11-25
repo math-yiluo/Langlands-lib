@@ -20,9 +20,10 @@ dated **9 July 2026**:
   transfers the terminology of A.VI.3 to smooth representations.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 checked this hash and read PDF pages 66, 140, 193 and 198–201.
+The hash was checked, and PDF pages 66, 140, 193 and 198–201 were read for this
+statement.
 
 The setting on PDF p. 198 reads: "Soit `(π, V)` un `(G, B)`-module admissible,
 et soit `φ` un morphisme de `(G, B)`-module de `V` dans lui-même". VI.8.6 opens
@@ -73,7 +74,7 @@ The binders are those of the sibling module
    sets `Z(T)` of subsets `T ⊆ B`. The closure of `Ξ` is therefore `Z(I)`,
    where `I` is the set of elements of `B` vanishing at every point of `Ξ`.
    So `Ξ` is dense exactly when every element of `I` vanishes at every point of
-   `S`, which is the Lean hypothesis. This equivalence is Worker 709's remark
+   `S`, which is the Lean hypothesis. This equivalence is a remark
    and is not checked in Lean. The source's parenthetical, that the points of
    `Ξ` separate the elements of `B`, says that `I = 0`. Because `B` is reduced
    and of finite type over `ℂ`, it follows from density by the
@@ -97,8 +98,8 @@ The binders are those of the sibling module
 4. The group. Chapter VI fixes `G`: "Dans tout ce chapitre, `G` désigne un
    groupe réductif `p`-adique au sens du chapitre précédent" (printed p. 134 /
    PDF p. 140). The statement is made, like those of the sibling module, for every
-   locally profinite `G`, which is a generalization. Worker 709 checked that
-   the source's proof works in this generality. The source invokes Schur's
+   locally profinite `G`, which is a generalization. The source's proof was
+   checked to work in this generality. The source invokes Schur's
    lemma, whose version III.1.8 assumes `G` countable at infinity. Here the
    fiber is admissible by the VI.8.1 Lemma, and for an admissible irreducible
    representation `W` Schur's lemma needs no countability. Choose a compact
@@ -124,10 +125,11 @@ supercuspidal representation, is not stated here.
 
 ## Environment
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The project imports are
 `Langlands.Representation.Smooth.Definitions` (`fixedVectors`, `IsSmooth`) and
 `Langlands.Topology.LocallyProfinite` (`IsLocallyProfinite`). No construction
-or axiom is introduced. A proof belongs to a separate proof task, which must
-prove this declaration unchanged.
+or axiom is introduced. The proof is in
+[RenardFamilyEndomorphismProof](RenardFamilyEndomorphismProof.md), which proves
+this declaration unchanged.

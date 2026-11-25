@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.CyclicHasseNormProof
+import Langlands.ClassFieldTheory.Global.CyclicHasseNormProof
 import Langlands.LinearAlgebra.NumberFieldQuadraticIsometryReduction
 import Langlands.LinearAlgebra.NumberFieldQuadraticIsotropyOfCyclicNorm
 
@@ -12,6 +12,6 @@ namespace Langlands
 extensions to every completion are isometric and both forms are nondegenerate. -/
 theorem numberFieldQuadraticIsometry : NumberFieldQuadraticIsometryStatement.{u} :=
   numberFieldQuadraticIsometry_of_isotropy
-    (numberFieldQuadraticIsotropy_of_cyclicNorm ClassField.Global.cyclicHasseNorm)
+    (numberFieldQuadraticIsotropy_of_cyclicNorm ClassFieldTheory.Global.cyclicHasseNorm)
 
 end Langlands

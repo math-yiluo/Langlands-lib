@@ -1,9 +1,8 @@
 # Existence of the actual adjoint quotient: statement
 
-Worker 1400.
-
 This module defines one proposition and proves nothing. It constructs no
-quotient. A proof of the proposition is a separate task.
+quotient. The proposition is proved as `adjointQuotientExistence` in
+`Adjoint.ExistenceProof`.
 
 ## `AdjointQuotientExistenceStatement`
 
@@ -117,5 +116,4 @@ interface. The relation of each conclusion to the sources is:
   property for an arbitrary `H` follows from the scheme property applied
   to `G` and to `G × G`.
 
-This module does not prove these derivations; they are obligations of the
-proof task for this statement.
+This module does not prove these derivations.

@@ -1,6 +1,6 @@
 # Renard VII.3.4–VII.3.5 (i): the integral normalization of `J_{Q|P}(σ)` and its composition law
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.Intertwining.PQIntegralIntertwiningStatements`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u, v`. The module contains
 one auxiliary `Prop`-valued predicate and two **statements**, all `Prop`-valued definitions:
@@ -214,7 +214,7 @@ preceding it, and part (i) of the Proposition of VII.3.5. Formal choices and dep
   non-minimal `M` the book defines no length function on `W(A_M)`, which need not be a Coxeter
   group, and the remark is not used in the proof. Parts (ii) and (iii) of the VII.3.5
   Proposition, which need the identification `i_P^G ≅ i_Q^G ∘ i_{P∩L}^L` of induction in
-  stages, are left for a separate unit.
+  stages, are left for a separate module.
 
 ## Remaining obligations
 

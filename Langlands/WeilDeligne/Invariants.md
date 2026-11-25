@@ -1,6 +1,6 @@
 # Invariant Weil–Deligne pairs
 
-Worker 17 authored this construction. This module retains the actual
+This module retains the actual
 monodromy on a fixed subspace, supplementing the existing underlying invariant
 representation and the monodromy-kernel representation.
 
@@ -39,8 +39,8 @@ fixed-subspace representation and injective-intertwiner certificate.
 
 ## Included restriction module
 
-This contribution also includes `Langlands.WeilDeligne.ParameterRestriction`,
-with paired Markdown. It restricts actual open-inertia representations and
+`Langlands.WeilDeligne.ParameterRestriction`, with paired Markdown, is ported
+together with this module. It restricts actual open-inertia representations and
 parameters along a continuous group homomorphism `phi : H → G` that maps a
 specified subgroup `J ≤ H` into the specified inertia subgroup `I ≤ G`. The
 open-kernel certificate is proved by a continuous preimage argument; the pair

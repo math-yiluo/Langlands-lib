@@ -1,7 +1,7 @@
 import Langlands.LocalFactor.BrauerKernel.GlobalRelation
 import Langlands.LocalFactor.BrauerKernel.PlaceNorm
-import Langlands.ClassField.Global.RelativeWeilTransferNormProof
-import Langlands.ClassField.Global.RelativeWeilCharacterFactorization
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransferNormProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilCharacterFactorization
 import Langlands.LocalFactor.BrauerKernel.ArchimedeanTrivial
 
 /-! # The Hecke characters of a Galois type decomposition and their global relation -/
@@ -14,7 +14,7 @@ universe uF uV
 
 namespace Langlands.LocalFactor.NonabelianBrauer
 
-open CommonClosure VirtualRepresentation ClassField.Global ClassField.Global.RelativeWeilGroup
+open CommonClosure VirtualRepresentation ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.Global
 open scoped NumberField
 

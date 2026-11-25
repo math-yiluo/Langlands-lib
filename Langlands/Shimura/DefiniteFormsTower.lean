@@ -1,6 +1,6 @@
 import Langlands.Shimura.DefiniteFormsTensor
 import Langlands.Representation.Smooth.Definitions
-import Langlands.NYLL.ValuedFieldTheory.Ramification.GaloisValuation.RamificationQuotients.Filtration
+import Langlands.ClassFieldTheory.Local.NormalSubgroupFiltration
 
 /-!
 # Harris's tower of congruence subgroups `K_ℓ(n)`
@@ -35,7 +35,7 @@ noncomputable section
 
 namespace Langlands
 
-open Langlands.NYLL.RamificationTheory.DiscreteValuationField
+open RamificationTheory.DiscreteValuationField
 
 universe uG uR uV
 

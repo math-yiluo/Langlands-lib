@@ -1,6 +1,6 @@
 # Actual CM pullback on the stable automorphic operator core
 
-Worker 2. This internal construction restricts the actual CM argument pullback
+This internal construction restricts the actual CM argument pullback
 from `CMOperatorConjugation` and `AutomorphicCMTransport` to the existing
 stable automorphic core. It introduces no new original-literature
 identification or preservation assumption.

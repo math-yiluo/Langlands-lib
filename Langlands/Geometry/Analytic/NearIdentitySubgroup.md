@@ -1,7 +1,5 @@
 # Transitivity of the test relations and the subgroups `G_τ(X)`
 
-Author: Worker 57.
-
 Berkovich makes the automorphism group `G(X)` of an analytic space a
 topological group. The open subgroups `G_ε(X)` of automorphisms near the
 identity define its topology. The Library defines the sets

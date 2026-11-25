@@ -1,7 +1,5 @@
 # Split-torus domination of split solvable groups
 
-Author: Worker 755.
-
 This module proves `IsSplitSolvableGroupScheme.hasPointedSplitTorusDomination`:
 over a field `k`, every `G` with `IsSplitSolvableGroupScheme G` satisfies
 the Library's `HasPointedSplitTorusDomination G` (module

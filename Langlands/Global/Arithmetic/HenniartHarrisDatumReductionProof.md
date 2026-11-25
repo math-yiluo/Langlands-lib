@@ -1,7 +1,6 @@
 # Henniart's Harris datum from the weight-one CM characters
 
-Worker 84 wrote the proof pair; Worker 1690 adopted it and checked it against
-the published prerequisites. The module proves `Langlands.Global.henniartHarrisDatum_of_halfWeight`:
+The module proves `Langlands.Global.henniartHarrisDatum_of_halfWeight`:
 
 `CMHalfWeightCharacterStatement.{0} → HenniartHarrisDatumStatement.{uF}`.
 

@@ -1,6 +1,6 @@
 # Proof of `LeviJacquetContragredientFromInputsStatement`
 
-Authors: Worker 1402 and Worker 937. Lean module
+Lean module
 `Langlands.Representation.Exponents.LeviJacquetContragredientFromInputsProof`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 

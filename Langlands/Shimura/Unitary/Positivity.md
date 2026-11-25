@@ -1,6 +1,6 @@
 # Positive involutions and Kottwitz's homomorphism for the Harris datum
 
-Author: Worker 57. This module defines positivity of an involution of a real
+This module defines positivity of an involution of a real
 algebra and builds Kottwitz's archimedean homomorphism `h₀` for the corrected
 Harris datum. It proves that the involution twisted by `h₀(i)` is positive.
 This is the positivity hypothesis of Kottwitz (1992), p.654.

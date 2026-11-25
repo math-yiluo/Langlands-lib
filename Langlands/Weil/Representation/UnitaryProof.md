@@ -1,6 +1,6 @@
 # Proof of the unitary operation family
 
-Worker 62 proves the published `Langlands.FiniteRepresentation.UnitaryOperations`
+This module proves the published `Langlands.FiniteRepresentation.UnitaryOperations`
 target by transporting invariant positive Hermitian forms. This is an internal
 derivation from the published definitions and finite-dimensional inner-product
 linear algebra in Mathlib.

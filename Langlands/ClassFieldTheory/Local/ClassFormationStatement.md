@@ -1,7 +1,5 @@
 # Simultaneous local invariants and fundamental-class targets
 
-This proposition pair is authored by Worker 49, with invariant/comparison
-interface design by Worker 42.
 `LocalRelativeClassFormationStatement` quantifies every prime `p` and
 asserts the existence of one data-only invariant family satisfying the
 arithmetic normalization, finite-level class-formation axioms,
@@ -98,11 +96,15 @@ positive-degree part using the published comparison constructions.
 The simultaneous proposition is derived content assembling these source
 claims on one invariant family; it asserts no proof of their realization.
 
-This is a progressive realization target using the published definition
-interfaces. It does not yet contain the separately assigned absolute
-continuous corestriction or all-integer Tate restriction/corestriction
-compatibility predicates. The ordinary degree-zero inflation diagram,
-ordinary-to-Tate cup comparison, generic direct-limit comparison theorem and
-the subsequent proofs are separate bound work. These boundaries do not
-complete the umbrella task. Subsequent theorem proofs require separate
-tasks naming exact accepted Library proposition declarations.
+This is a realization target using the published definition
+interfaces. It does not contain the absolute continuous corestriction or
+all-integer Tate restriction/corestriction compatibility predicates; they
+are added in `LocalTransferCompatibleClassFormationStatement` and
+`LocalAbsoluteCorestrictionCompatibleClassFormationStatement`. The ordinary
+degree-zero inflation diagram, ordinary-to-Tate cup comparison and generic
+direct-limit comparison theorem are separate. The theorem
+`localRelativeClassFormation` (module `LocalRelativeClassFormationProof`)
+proves `LocalRelativeClassFormationStatement`, and
+`localAbsoluteCorestrictionCompatibleClassFormation` (module
+`ClassFormationAbsoluteCorestrictionProof`) proves a realization on one
+family whose clauses contain those of `LocalCompatibleClassFormationStatement`.

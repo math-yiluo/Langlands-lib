@@ -282,6 +282,7 @@ theorem unitKernel_isFinite : IsFinite (kernel (BinaryScheme.unitHom σ hdim hsy
     infer_instance
   let e := muTwoUnitKernelIso σ hdim hsym
   rw [← e.inv.hom.hom.w]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 variable [Infinite K]
@@ -316,6 +317,7 @@ theorem isometryKernel_isFinite :
     infer_instance
   let e := muTwoIsometryKernelIso σ hdim hsym
   rw [← e.inv.hom.hom.w]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 end Langlands.GroupScheme.Quaternionic.BinaryKernel

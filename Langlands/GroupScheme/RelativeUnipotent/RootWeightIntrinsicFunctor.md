@@ -27,4 +27,5 @@ is q*(d+1), for q > 0. This preserves the original unscaled filtration.
 The test schemes need not be affine, reduced or connected. The identification
 here is inside the supplied root-chart group U. Transferring it between different
 chart groups, proving the required ambient parabolic normalization and changes of
-torus, and performing effective descent remain separate steps of Task 7200.
+torus, and performing effective descent remain separate steps of the finite
+vector-bundle filtrations of supplied relative radicals.

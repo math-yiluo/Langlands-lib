@@ -1,6 +1,6 @@
 # The spectral sign in canonical tail multipliers
 
-This internal derived result tracks the sign in the canonical tail crossings.
+This result tracks the sign in the canonical tail crossings.
 For a positive natural number `ell`, `eps` equal to zero or one, and
 `ell - 1 - eps` even, `canonical_tail_eq` proves
 
@@ -43,4 +43,4 @@ The provenance is entirely internal: the explicit existing tail sequence,
 its reflection symmetry, compact polynomial mode decompositions and the actual
 Frobenius Fourier law. The sign operator is retained explicitly. No relation
 between sign operators on adjacent axes, equality of interlaced words, or
-filtration kernel-image containment follows from this unit alone.
+filtration kernel-image containment follows from this module alone.

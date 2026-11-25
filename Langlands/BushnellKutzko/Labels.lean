@@ -7,7 +7,7 @@ import Langlands.FieldTheory.IrreduciblePolynomialLabels
 
 Bushnell–Kutzko, *Simple types in GL(N): computing conjugacy classes* (Contemp. Math. 177,
 1994), (1.13) on printed pp. 115–116 and (3.7) with the paragraph after it on printed
-pp. 125–126. The field `𝔽_{q^D}` is `polarExtensionField q D` of Task 7369. See the paired
+pp. 125–126. The field `𝔽_{q^D}` is `polarExtensionField q D`. See the paired
 Markdown file for the encoding.
 -/
 

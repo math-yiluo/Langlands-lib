@@ -1,7 +1,7 @@
 # Canonical sections of an actual associated-sheaf pullback
 
 Let `R` be a commutative ring, let `C` be any `R`-module, and let
-`p : X ⟶ Spec R` be any scheme morphism. This internal unit supplies canonical
+`p : X ⟶ Spec R` be any scheme morphism. This internal module supplies canonical
 global generators and affine tensor comparisons for the actual pulled-back
 module sheaf `p*(tilde C)`. There is no finite-projective, flatness,
 compactness or noetherian hypothesis.

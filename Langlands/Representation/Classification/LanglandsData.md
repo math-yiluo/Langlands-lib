@@ -1,7 +1,5 @@
 # Langlands data for `GL_n` over a p-adic field
 
-Author: Worker 23.
-
 This module defines the data of the Langlands classification of irreducible
 representations of `GL_n(F)`, in three source forms, and the induced
 representations they determine.

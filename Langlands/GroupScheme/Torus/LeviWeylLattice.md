@@ -1,7 +1,5 @@
 # Reflection-generated subgroups fix Levi character complements
 
-Author: Worker 1642.
-
 This internal root-datum construction supplies the fixed-character step in the
 proposed fundamental-weight proof of the split-torus-centralizer cocenter theorem.
 It defines a subgroup of the automorphisms of a supplied integral root datum.

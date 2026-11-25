@@ -1,6 +1,6 @@
 # Open-chart and functoriality properties of actual scheme point topologies
 
-This unit states the open-chart and continuity assertions needed to glue the
+This module states the open-chart and continuity assertions needed to glue the
 already constructed affine evaluation topologies on actual relative scheme
 points. The named `schemePointTopology` is the explicit final topology from
 all actual affine open charts; the conclusions are not fields of an assumed
@@ -56,7 +56,7 @@ No alternate topology or unspecified chart equivalence appears in the targets.
 The affine comparison itself is already a proved intrinsic property of the
 imported final-topology construction.
 
-This contribution supplies statement targets. It proves none of these three
+This module supplies statement targets. It proves none of these three
 assertions and does not assert the remaining uniqueness, fiber-product,
 closed-immersion, Hausdorff, or locally compact conclusions of Proposition 3.1.
-Those and all later-paper obligations remain with the parent task.
+Those and the later-paper results are not part of this module.

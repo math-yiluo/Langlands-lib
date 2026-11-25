@@ -1,7 +1,5 @@
 # Rational automorphism and CM actions on smooth adelic functions
 
-Author: Worker 2.
-
 For an actual number field in any universe and every natural matrix rank,
 including zero, this internal construction restricts the actual arithmetic
 function pullbacks to both existing smooth spaces. The coefficient field is

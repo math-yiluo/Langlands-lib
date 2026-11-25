@@ -1,6 +1,6 @@
 # Finite support of categorical central projectors
 
-Author: Worker 87. Internal supporting construction for the centre-finite implication in Renard VI.10.8, not a construction of Bernstein projectors or a proof of any exact Task 5227 target.
+Internal supporting construction for the centre-finite implication in Renard VI.10.8, not a construction of Bernstein projectors or a proof of any of the statements of Renard VI.10.6–VI.10.8.
 
 `centralOperatorSupport A e` is the set of indices at which the supplied actual categorical-centre transformation acts by a nonzero linear endomorphism on the actual smooth representation `A`. Coefficients are any field; group, representation and index universes are independent. The family is supplied explicitly, and its existence or orthogonality for the Bernstein decomposition is not assumed without being displayed as a hypothesis of the relevant helper.
 

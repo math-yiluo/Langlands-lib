@@ -467,7 +467,7 @@ theorem fiberDoubleProduct :
     intro h
     apply h2a.1
     apply (characterLattice.baseChangeEquiv bK S hf.1.1).injective
-    rw [map_zero]
+    rw [AddEquiv.map_zero]
     exact h
   have h := hProd K (G_K) hGK (S_K) (T_K) j_K f_K hT hi hSK
     (characterLattice.baseChange bK S (2 • a)) hne _ ((Dπ).doubleRoot eπ)
@@ -489,7 +489,7 @@ theorem fiberNegDoubleProduct :
     intro h
     apply h2a.1
     apply (characterLattice.baseChangeEquiv bK S hf.1.1).injective
-    rw [map_zero, ← neg_eq_zero, ← map_neg, ← smul_neg]
+    rw [AddEquiv.map_zero, ← neg_eq_zero, ← AddEquiv.map_neg, ← smul_neg]
     exact h
   have h := hProd K (G_K) hGK (S_K) (T_K) j_K f_K hT hi hSK
     (characterLattice.baseChange bK S (2 • -a)) hne _ (fun l => -(Dπ).doubleRoot eπ l)

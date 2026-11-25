@@ -1,7 +1,5 @@
 # Finiteness and geometric reducedness of the normalization model
 
-Worker 6.
-
 - `finite_geometricallyReduced_of_cover`: let `X` over `Spec R` be flat, quasi-compact and
   separated, and let `R'` be a DVR with an `R`-algebra structure. Write `A` for the global sections
   of the finite affine cover `coverOver X`. Suppose the integral closure `B` of `R' ⊗[R] A` in

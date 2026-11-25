@@ -1,7 +1,5 @@
 # Simple connectedness under arbitrary field extension
 
-Author: Worker 4034.
-
 The theorem `Langlands.GroupScheme.isSimplyConnectedFieldExtension` proves exactly
 the published `Langlands.GroupScheme.IsSimplyConnectedFieldExtensionStatement.{u}`
 from `Langlands.GroupScheme.SimplyConnected.FieldExtensionStatement`.

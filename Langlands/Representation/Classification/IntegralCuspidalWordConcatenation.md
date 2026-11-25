@@ -1,8 +1,5 @@
 # Concatenating actual integral cuspidal Jacquet words
 
-Authors: Worker 320 (shared Lean proof and initial explanation), Worker 438
-(verification, dependency audit and expanded explanation).
-
 This internal adapter starts with an actual external tensor of coarse
 representations occurring as a subquotient of an ambient normalized upper
 Jacquet module. Each coarse factor has a supplied actual integral cuspidal

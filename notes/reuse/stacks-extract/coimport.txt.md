@@ -1,0 +1,143 @@
+# `coimport.txt`
+
+This page holds the text file `coimport.txt` as it is, in the code block below. To use it, save the content of the block under that name.
+
+```text
+## 1. All 609 modules of the extract and WeilConjectures
+ACCEPTED (exit 0, 42 s)
+modules loaded 35051, of weil-conjectures 26795, of the extract 609
+StacksIsNagataRing (extract): true, IsNagataRing (weil-conjectures): true
+
+## 2. Modules loaded by a file importing all modules of the extract
+modules loaded 7442
+Mathlib.CategoryTheory.GuitartExact.Prod loaded: false
+Mathlib.RingTheory.Depth.Basic loaded: false
+Mathlib.RepresentationTheory.Stabilizer loaded: false
+Mathlib loaded: false
+
+## 3. The bridge modules and WeilConjectures
+Langlands.AlgebraicGeometry.DvrAffineReducedFibre.SchemeReducedFibreProof: ACCEPTED (exit 0); Library and Nyll modules in its import closure 2, of them importing `Mathlib` or a forbidden module by name 0
+Langlands.CommutativeAlgebra.CompleteLocalNormalizationFinitenessProof: ACCEPTED (exit 0); Library and Nyll modules in its import closure 2, of them importing `Mathlib` or a forbidden module by name 0
+Langlands.AlgebraicGeometry.DvrAffineReducedFibreProof: REFUSED (exit 1); Library and Nyll modules in its import closure 483, of them importing `Mathlib` or a forbidden module by name 109
+  /srv/ll-stx/ws/.tmp/coimport/BridgesWeil2.lean:1:0: error: import WeilConjectures.FromJoel.CategoryTheory.GuitartExact.Basic failed, environment already contains 'CategoryTheory.TwoSquare.GuitartExact.prod' from Mathlib.CategoryTheory.GuitartExact.Prod
+Langlands.AlgebraicGeometry.DvrStableNormalizationProof: REFUSED (exit 1); Library and Nyll modules in its import closure 506, of them importing `Mathlib` or a forbidden module by name 112
+  /srv/ll-stx/ws/.tmp/coimport/BridgesWeil3.lean:1:0: error: import WeilConjectures.FromJoel.CategoryTheory.GuitartExact.Basic failed, environment already contains 'CategoryTheory.TwoSquare.GuitartExact.prod' from Mathlib.CategoryTheory.GuitartExact.Prod
+the four bridge modules: REFUSED (exit 1); Library and Nyll modules in its import closure 506, of them importing `Mathlib` or a forbidden module by name 112
+  /srv/ll-stx/ws/.tmp/coimport/BridgesWeil4.lean:1:0: error: import WeilConjectures.FromJoel.CategoryTheory.GuitartExact.Basic failed, environment already contains 'CategoryTheory.TwoSquare.GuitartExact.prod' from Mathlib.CategoryTheory.GuitartExact.Prod
+The Library and Nyll modules in the import closure of the four bridge modules that import `Mathlib` or a forbidden module by name:
+  Langlands.AlgebraicGeometry.DvrStableNormalization.AffineGeomReduced	import Mathlib
+  Langlands.AlgebraicGeometry.DvrStableNormalization.GenericFibre	import Mathlib
+  Langlands.AlgebraicGeometry.NoetherianValuativeCriterion	import Mathlib
+  Langlands.AlgebraicGeometry.PotentialGeometricReduction	import Mathlib
+  Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctionsProof	import Mathlib
+  Langlands.AlgebraicGeometry.SmoothReducedProof	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTensorPow	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesTensorPowV2	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelEndomorphismExtension	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronSpecialFibreRestriction	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RegularLocalRingQuotientNonZeroDivisorAscent	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RegularLocalRingRegularSequenceAscent	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_SubalgebraStages	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_Mathlib_RingTheory_KmfloorsFiberPolynomialRegularAscent	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_Mathlib_RingTheory_RegularLocalRingFlatLocalAscent	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_Mathlib_RingTheory_RegularLocalRingQuotientRegular	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_Mathlib_RingTheory_SmoothAlgebraOverFieldRegularStalks	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_Mathlib_RingTheory_SmoothFieldFiberRegularStalksStandardSmoothReduction	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_Monoidal	import Mathlib
+  Langlands.AnthropicFLT.Definitions.Def_SheafOfModules_MonoidalV2	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Algebra_IsStandardSmooth_exists_isStandardSmoothOfRelativeDimension_of_field	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Algebra_exists_finitePresentation_tensorProduct_algEquiv_of_isDirectLimit	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Flat_exists_fg_subalgebra_of_flat_pullback_snd	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_GeometricallyConnected_descendsAlong_surjective	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_GeometricallyIrreducible_geometricallyConnected	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_IdealSheafData_isReduced_subscheme_vanishingIdeal_and_le_ker	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_IsFrameOn_nonempty_pullback_iso_unit	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_exists_isFrameOn_of_pullback_iso_unit	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_exists_mem_preimage_le_of_directed_subalgebra	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Smooth_isRegularLocalRing_stalk	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_SubalgebraStages_nonempty_isLimit_cone	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_exists_fg_subalgebra_hom_pullback_of_hom_pullback_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_exists_fg_subalgebra_isPullback_of_iSup_eq_top_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_exists_fg_subalgebra_isPullback_of_isAffine_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_exists_fg_subalgebra_isPullback_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_exists_fg_subalgebra_iso_pullback_of_iso_pullback_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_exists_fg_subalgebra_opens_preimage_eq_of_isCompact	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_exists_fg_subalgebra_pullback_fst_comp_eq_of_locallyOfFiniteType	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_exists_isPullback_glue_of_isPullback_of_isOpenImmersion	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_geometricallyIntegral_of_isAlgClosed	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_isClosedMap_pullback_snd_of_directed_subalgebra	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_universallyClosed_of_forall_finite_isClosedMap_pullback_snd_mvPolynomial	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_GoodReductionJacobian_RelativeGroupLaw_eq_of_mem_irreducibleComponents_of_apply_closedPoint_mem	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_irreducibleSpace_range_eq_connectedComponent_finiteIndex	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_IsAdicComplete_of_finite_of_isNoetherianRing	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_IsLocalRing_exists_isPrime_not_mem_ringKrullDim_quotient_eq_one	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_IsLocalRing_exists_valuationSubring_isDiscreteValuationRing_dominates	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_IsNoetherianRing_of_ringKrullDim_le_one_of_finiteDimensional_subalgebra	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_IsRegularLocalRing_isDomain	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Module_Flat_exists_fg_subalgebra_flat_localization_tensorProduct	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Module_Flat_exists_fg_subalgebra_flat_tensorProduct	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Module_Flat_exists_ne_zero_flat_localization_tensorProduct	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Module_Flat_isOpen_setOf_flat_localization_atPrime	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Module_flat_of_comap_maximalIdeal_rTensor_injective	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_PresheafOfModules_isSheaf_ihomObj	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Subalgebra_fg_restrictScalars_and_le_of_fg	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_Subalgebra_isNoetherianRing_and_dimensionLEOne_of_isFractionRing_of_finite	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_ValuationSubring_exists_isDiscreteValuationRing_dominates_of_finiteDimensional	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_isRegularLocalRing_localization_atPrime_mvPolynomial	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_isRegularLocalRing_localization_atPrime_of_etale_of_comap	import Mathlib
+  Langlands.AnthropicFLT.P2M.Sol.S_isRegularLocalRing_localization_atPrime_of_isStandardSmooth	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Algebra_IsStandardSmooth_exists_isStandardSmoothOfRelativeDimension_of_field	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Algebra_exists_finitePresentation_tensorProduct_algEquiv_of_isDirectLimit	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Flat_exists_fg_subalgebra_of_flat_pullback_snd	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyConnected_descendsAlong_surjective	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyIrreducible_geometricallyConnected	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_IdealSheafData_isReduced_subscheme_vanishingIdeal_and_le_ker	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_Modules_IsFrameOn_nonempty_pullback_iso_unit	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_Modules_exists_isFrameOn_of_pullback_iso_unit	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_exists_mem_preimage_le_of_directed_subalgebra	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Smooth_isRegularLocalRing_stalk	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_SubalgebraStages_nonempty_isLimit_cone	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_hom_pullback_of_hom_pullback_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_isPullback_of_iSup_eq_top_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_isPullback_of_isAffine_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_isPullback_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_iso_pullback_of_iso_pullback_of_locallyOfFinitePresentation	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_opens_preimage_eq_of_isCompact	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_fg_subalgebra_pullback_fst_comp_eq_of_locallyOfFiniteType	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_exists_isPullback_glue_of_isPullback_of_isOpenImmersion	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_geometricallyIntegral_of_isAlgClosed	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_isClosedMap_pullback_snd_of_directed_subalgebra	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_universallyClosed_of_forall_finite_isClosedMap_pullback_snd_mvPolynomial	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_eq_of_mem_irreducibleComponents_of_apply_closedPoint_mem	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_irreducibleSpace_range_eq_connectedComponent_finiteIndex	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_IsAdicComplete_of_finite_of_isNoetherianRing	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_exists_isPrime_not_mem_ringKrullDim_quotient_eq_one	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_exists_valuationSubring_isDiscreteValuationRing_dominates	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_IsNoetherianRing_of_ringKrullDim_le_one_of_finiteDimensional_subalgebra	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_IsRegularLocalRing_isDomain	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Module_Flat_exists_fg_subalgebra_flat_localization_tensorProduct	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Module_Flat_exists_fg_subalgebra_flat_tensorProduct	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Module_Flat_exists_ne_zero_flat_localization_tensorProduct	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Module_Flat_isOpen_setOf_flat_localization_atPrime	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Module_flat_of_comap_maximalIdeal_rTensor_injective	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isSheaf_ihomObj	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Subalgebra_fg_restrictScalars_and_le_of_fg	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_Subalgebra_isNoetherianRing_and_dimensionLEOne_of_isFractionRing_of_finite	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_ValuationSubring_exists_isDiscreteValuationRing_dominates_of_finiteDimensional	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_isRegularLocalRing_localization_atPrime_mvPolynomial	import Mathlib
+  Langlands.AnthropicFLT.Theorems.Thm_isRegularLocalRing_localization_atPrime_of_etale_of_comap	import Mathlib
+  Langlands.CommutativeAlgebra.FlatDvrNormality	import Mathlib
+  Langlands.CommutativeAlgebra.IntegralClosureTransfer	import Mathlib
+
+## 4. All modules of the extract, `import Mathlib` and the five Library roots
+ACCEPTED (exit 0, 4 s)
+```

@@ -1,7 +1,5 @@
 # Universal detection of division-algebra row weights
 
-Author: Worker 179.
-
 This internal helper module extends the published `cocharacterWeightSpace`.
 It works over an arbitrary field, with a finite-dimensional division algebra,
 any first-kind involution, any form, and any cocharacter of its isometry group.

@@ -1,6 +1,6 @@
 # Equal-rank gamma with its universal JPSS relation
 
-Worker 31. The constructor `Langlands.RankinSelberg.equalRankGammaFactor`
+The constructor `Langlands.RankinSelberg.equalRankGammaFactor`
 returns a unit rational function together with a proof of the existing
 `IsPairGammaFactor` relation for a pair on `GL_(n+1)(F)`. Its underlying unit is
 the published ratio

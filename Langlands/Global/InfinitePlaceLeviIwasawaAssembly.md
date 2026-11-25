@@ -1,14 +1,14 @@
 # Archimedean Levi-compatible Iwasawa from the remaining structural inputs
 
-Author: Worker 1655.
-
 This internal conditional assembly constructs a compatible compact subgroup
 of the original completion-point group from three explicit universal
 structural premises: adjoint-stable closed realization of connected
 reductive groups, rational parabolic classification by dynamic
 cocharacters, and the geometric radical theorem for dynamic identity-limit
 subgroups. None of those premises is proved here. The exact unconditional
-host proposition remains open.
+proposition this module serves, `LeviCompatibleIwasawaStatement`, is proved
+separately, as `leviCompatibleIwasawaStatement` in
+`InfinitePlaceLeviIwasawaProof`, by way of `InfinitePlaceLeviIwasawaDynamic`.
 
 The three premise declarations are respectively
 `ConnectedReductiveSelfAdjointRealizationStatement`,

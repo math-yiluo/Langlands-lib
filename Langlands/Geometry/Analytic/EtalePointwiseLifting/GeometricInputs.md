@@ -1,7 +1,5 @@
 # Geometric inputs and fraction transport for pointwise étale lifting
 
-Author: Worker 271.
-
 This module isolates two geometric prerequisites and proves that they imply
 `EtalePointwiseLiftingStatement` for the actual analytic étale site. The two
 prerequisites are unproved propositions. The conditional reduction does not

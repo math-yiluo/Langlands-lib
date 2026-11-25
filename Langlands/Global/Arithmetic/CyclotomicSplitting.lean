@@ -455,7 +455,7 @@ theorem pow_dvd_localDegree (a : ℕ) (v : HeightOneSpectrum (𝓞 F))
       Ideal.inertiaDeg_tower (R := 𝓞 F) w.asIdeal u.asIdeal]
     ring
   have hB1 : 0 < v.asIdeal.ramificationIdx ℤ * v.asIdeal.inertiaDeg ℤ :=
-    Nat.mul_pos (Ideal.ramificationIdx_pos _ ℤ) (Ideal.inertiaDeg_pos _ ℤ)
+    Nat.mul_pos (Ideal.ramificationIdx_pos ℤ _) (Ideal.inertiaDeg_pos _ ℤ)
   have hB1' : v.asIdeal.ramificationIdx ℤ * v.asIdeal.inertiaDeg ℤ < ℓ ^ d :=
     lt_of_le_of_lt (ramificationIdx_mul_inertiaDeg_le_finrank p v.asIdeal)
       (Nat.lt_pow_self hℓ.out.one_lt)

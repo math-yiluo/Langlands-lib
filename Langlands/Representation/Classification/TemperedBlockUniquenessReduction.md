@@ -1,7 +1,5 @@
 # A conditional reduction of tempered block uniqueness
 
-Author: Worker 346.
-
 ## Scope and provenance
 
 This module supplies an internal datum constructor and a proved conditional

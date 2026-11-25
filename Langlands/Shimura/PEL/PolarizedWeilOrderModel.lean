@@ -94,7 +94,7 @@ def PolarizedAction.orderModelRestriction :
     IntegralActionRestriction P.preservation P.composition P.unitCoherence P.associativity
       P.comparison P.symmetry P.stability P.square P.universality O Y where
   action := M.action
-  agrees x := (integralActionRationalExtension_coe M.B b M.action x).symm
+  agrees x := congrArg CategoryTheory.End.asHom (integralActionRationalExtension_coe M.B b M.action x).symm
 
 omit [QuasiSeparatedSpace S] [Submodule.IsLattice ℚ O.toSubmodule] in
 /-- The model comparison multiplier is positive in the original rational order. -/

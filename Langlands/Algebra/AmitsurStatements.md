@@ -18,8 +18,8 @@ retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 PDF pages 277–278 were read in full, both as extracted text and as rendered
 images. PDF pages 11–12 (printed pages 5–6) were read for the general conventions
-on rings. The current Library has no `notes/errata` file for this source. The
-registered 2010-edition errata `renard-2010-corrections-complements`, SHA256
+on rings. The Library's errata notes for this source
+(`notes/errata/renard-*.md`) concern Chapter VII and have no entry for B.I. The registered 2010-edition errata `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, were also
 checked. Their Appendix B entries (PDF page 19) concern only B.II (2010 page 314:
 *M* a complex vector space, adjoining a unit) and B.III (2010 page 315: left
@@ -222,10 +222,12 @@ The scalar field ℂ stays in `Type`, so the algebra instances are
 - **Not B.II.** Schur's lemma in B.II concerns possibly nonunital algebras and
   simple modules. It is a separate statement.
 
-## Source proof, for later proof work
+## Source proof
 
-This is not formalized here, but it is recorded for a later proof task. Renard
-first deduces a) from b): if some *a* ∉ ℂ, every *a* − λ1_*A* is nonzero and thus
+This is not formalized here, but it is recorded for reference.
+`Langlands.Renard.amitsurTheorem` in `Langlands.Algebra.AmitsurProof` proves
+`AmitsurTheoremStatement`, and `amitsurDivisionAlgebraEquiv` there proves the optional
+`AmitsurDivisionAlgebraEquivStatement`. Renard first deduces a) from b): if some *a* ∉ ℂ, every *a* − λ1_*A* is nonzero and thus
 invertible in a division algebra, so Spec(*a*) = ∅. For b), if Spec(*a*) = ∅, the
 uncountable family {(*a* − λ1_*A*)⁻¹ | λ ∈ ℂ} is linearly dependent, since the
 dimension is at most countable. Clearing denominators yields a nonconstant
@@ -236,20 +238,18 @@ the same argument over the uncountable set ℂ ∖ {0} yields *P*(*a*) = 0 with
 *P*(*t*) = *c tⁿ* (*t* − α₁)…(*t* − α_r) and all α_j ≠ 0. Cancelling the invertible
 factors gives *n* > 0 and *a*ⁿ = 0.
 
-## Provenance and credit
+## Provenance
 
 The three required propositions are source statements from the Théorème of
 B.I. They are read through its Définition of the spectrum and its identification
 of ℂ1_*A* with ℂ. The optional `AmitsurDivisionAlgebraEquivStatement` and the entry conjunction
 `AmitsurTheoremStatement` are packagings of Théorème a) and of the whole
-Théorème. Worker 6 prepared the formulation of the three required propositions
-in the task. Worker 6 also wrote a private feasibility probe whose proof of the
-sign comparison is reused here. Both are credited as coauthorship.
+Théorème. The proof of the sign comparison is reused from a private feasibility
+probe.
 
 ## Checks
 
-The module compiles in Lean environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-with no errors or warnings. Every proposition was inspected and reports
+The module compiles with no errors or warnings. Every proposition was inspected and reports
 `statement_returns_prop: true`. A private probe printed every declaration with
 universes. It checked the presence of `[Nontrivial A]`, the failure of the
 unguarded conclusions for `PUnit`, the instance `PUnit.algebra`, and the

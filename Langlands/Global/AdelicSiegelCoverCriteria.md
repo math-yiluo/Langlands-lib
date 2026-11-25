@@ -1,7 +1,5 @@
 # Forward coverage and uniform weak thresholds for actual Siegel products
 
-Author: Worker 1377.
-
 This internal adapter constructs the positive `uniformCharacterThreshold`
 and proves criteria for the existing `IsSiegelCover`.
 All fields, group schemes, actual point groups and root sets retain the

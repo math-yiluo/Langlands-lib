@@ -1,7 +1,6 @@
 # Prime ramified graded norm formulas
 
-Worker 27 authored the statement design and initial documentation; Worker 96
-checked the source correspondence and prepared this module for submission.
+The source correspondence of this module was checked.
 The module defines the proposition
 `Langlands.LocalClassField.PrimeRamifiedGradedNorm.{u,v}` and does not
 prove its norm containments or formulas.
@@ -145,13 +144,13 @@ Serre’s books* (2019), `serre-book-corrections-2019`, PDF pp.2–3, were
 also checked. They contain no corrections to printed pp.83–88; the nearby
 corrections on pp.74–75 distinguish the Herbrand-function symbols. No
 additional source-specific errata note was found in project notes or the
-current Library.
+Library.
 
 Serre's cyclic prime-degree setting is expressed here by prime degree
 and Galoisness, since the finite Galois group is then cyclic. Canonical
 p-adic realizations, the exact norm on units, literal integral
 coefficients, actual residue maps, and the representative-level encoding
-are the derived Lean formulation. Independent proofs still need the
+are the derived Lean formulation. A proof needs the
 ramification, different/trace and norm-expansion arithmetic underlying
 these conclusions; published coordinate constructions alone do not
 provide it.

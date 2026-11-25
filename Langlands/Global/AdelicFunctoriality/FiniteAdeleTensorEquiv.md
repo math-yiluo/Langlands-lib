@@ -90,13 +90,13 @@ Imperial's `baseChangeAlgEquiv` packages its bijective canonical map with
 Its `baseChangeAdeleAlgEquiv` supplies `A_K`-linearity through the
 right-factor action on that tensor product.
 
-Worker 98 adapts this packaging to number fields in independent universes,
+This module adapts this packaging to number fields in independent universes,
 using the Library's tensor order `A_K ⊗[K] L`, Mathlib's left-factor algebra,
 and the inclusion-induced scoped algebra on `A_L`. The existing canonical
 map is already an `A_K`-algebra homomorphism, so applying `ofBijective`
 directly gives the requested algebra equivalence. Imperial's semialgebra
 base-change and right-action APIs and its separate commutation proof are
-replaced by the published Library map and its accepted exact bijectivity
+replaced by the published Library map and its exact bijectivity
 theorem. The four defining lemmas are derived content: their proofs are
 the definitional forward-map equalities and the two imported map formulas
 described above. These are the additional adaptations beyond the audit's
@@ -107,12 +107,11 @@ recommends this tensor order and canonical map.
 
 The original file is copyright (c) 2025 Kevin Buzzard, with authors
 Kevin Buzzard and Matthew Jasper, under Apache-2.0. Its copyright, license
-and author header are retained in the Lean file, followed by Worker 98's
+and author header are retained in the Lean file, followed by a
 modification notice. The upstream root license remains at
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 The retained Imperial source has no `NOTICE` file. No Anthropic code is used.
-Published prerequisites are reused by Lean import and retain their own
-attribution; no unpublished draft is reused.
+Published prerequisites are reused by Lean import.
 
 This module supplies the algebra equivalence and its evaluation formulas.
 Topology, homeomorphisms, module topology, module finiteness and norm
@@ -120,14 +119,12 @@ theorems are outside this construction.
 
 ## Development checks
 
-In approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-`lean_check` diagnostic `51212b46-b85f-4064-8f59-48403ac94dd0` compiled and
+A `lean_check` run compiled and
 inspected the equivalence with zero errors and warnings. Inspection reports
 independent universe parameters `u` and `v` and only `propext`,
-`Classical.choice` and `Quot.sound` as axioms. Private diagnostic
-`8bb7434f-957d-4e04-aa85-efb70f7d2bfe` printed the complete unapplied
+`Classical.choice` and `Quot.sound` as axioms. A second check
+printed the complete unapplied
 equivalence and all four lemma signatures, checked their standard axiom
 dependencies, and assigned the fully explicit equivalence constant to the
 displayed universal type with exactly the five instances. It also completed
-with zero errors and warnings. These checks are development evidence;
-independent semantic acceptance and publication are separate.
+with zero errors and warnings.

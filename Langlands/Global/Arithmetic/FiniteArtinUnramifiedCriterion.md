@@ -22,8 +22,10 @@ the subgroup image.
 For the canonical finite Artin map, the image of local units is the inertia
 group by the local-global square and local reciprocity. For a supplied
 normalized map, identify it with the canonical map by almost-everywhere
-Frobenius uniqueness. The Task 7345 audit §6.2 gives that uniqueness argument
-using closed subgroup density and finiteness of the ramified places. The
+Frobenius uniqueness. That uniqueness argument, using closed subgroup density
+and finiteness of the ramified places, is
+`Langlands.ClassFieldTheory.Global.Artin.eq_of_hasArithmeticArtinNormalization`
+(module `Langlands.ClassFieldTheory.Global.Artin.ArtinUniqueness`). The
 criterion extracts the specific implication from the full inertia image
 formula. It is a separate premise from the normalization in
 `FiniteAbelianClassFieldExistenceStatement`, which assumes unramifiedness at
@@ -33,3 +35,9 @@ Milne source ID `milne-2020-class-field-theory` (SHA-256
 `50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5`).
 Serre source ID `serre-abelian-l-adic-1989` (SHA-256
 `971dbfdd4414d99ea21d7d0af63dbb790d7b1188e9aec37f422181a2b543dec4`).
+
+## Proof
+
+The statement is proved in
+[`FiniteArtinUnramifiedCriterionProof`](FiniteArtinUnramifiedCriterionProof.md)
+(`Langlands.Global.finiteArtinUnramifiedCriterion`).

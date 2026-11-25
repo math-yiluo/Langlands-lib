@@ -56,5 +56,5 @@ registered source `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c
   slice described in `FrameChartRepresentabilityStatement.md`.
 
 The level conditions are those of the published `Datum.torsionPoint` (module `FrameLocus`).
-The predicates are used in `FrameHilbertLocusStatement` and in Task 7811's reduction of
-`FrameChartRepresentabilityStatement`.
+The predicates are used in `FrameHilbertLocusStatement` and in the reduction of
+`FrameChartRepresentabilityStatement` (`FrameChartRepresentabilityReduction`).

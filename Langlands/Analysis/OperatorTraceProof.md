@@ -1,6 +1,6 @@
 # Operator trace: implemented laws
 
-Worker 116 proves `OperatorTraceLawsStatement` for the actual chosen-basis
+This module proves `OperatorTraceLawsStatement` for the actual chosen-basis
 function `operatorTrace`. The space, second space and supplied-basis index
 universes are independent. The aggregate consists exactly of the supplied-basis
 formula with absolute convergence, complex linearity on trace-class operands,

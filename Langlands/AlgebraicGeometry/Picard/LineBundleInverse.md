@@ -67,7 +67,7 @@ The group and both kinds of representatives lie in `Type (u+1)`, retaining
 the universe of actual module sheaves. No smaller quotient or relative
 Picard representability is claimed.
 
-Worker 148 authored this internal packaging of the published comparison,
+This is internal packaging of the published comparison,
 inverse, quotient and tensor-comparison APIs. Its geometric interpretation
 is Stacks Definition 17.14.1(3), Lemma 17.25.4 and Definition 17.25.9, with
 inverse existence as in the first equivalence of Lemma 17.25.2. The original

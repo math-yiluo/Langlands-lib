@@ -1,7 +1,5 @@
 # Finite compact types in an actual generated differential module
 
-Authors: Worker 94 (original pair) and Worker 459 (verification and clarification of source scope).
-
 The proposition
 `Langlands.Global.ArchimedeanGL.GeneratedCompactTypeFinitenessStatement K n`
 is an internal specialization of the Harish-Chandra admissibility step to
@@ -59,8 +57,9 @@ A proof must account for the reductive central summand, finite products of
 real and complex factors, the disconnected compact factors, actual
 compact-group types versus compact-Lie types, the generated module and its
 common center annihilation. PBW, invariant-polynomial and covariant
-finiteness arguments from the algebraic source remain substantial proof
-obligations. None is supplied by defining this proposition.
+finiteness arguments from the algebraic source are substantial proof
+obligations. None is supplied by defining this proposition; the proof is
+`generatedCompactTypeFiniteness` (module `ArchimedeanGeneratedCompactTypeFinitenessProof`).
 
 Only the algebraic intersection is asserted to be finite-dimensional.
 Passing its dimension bound to the closure of the generated module needs

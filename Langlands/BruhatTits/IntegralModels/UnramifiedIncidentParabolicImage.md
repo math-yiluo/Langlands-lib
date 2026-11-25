@@ -1,6 +1,6 @@
 # Conditional parabolicity of incident special-fibre images
 
-This internal derived unit combines the actual incident cocharacter,
+This module combines the actual incident cocharacter,
 centralizer and positive dynamic image containments with full-radical
 parabolic recognition. All objects have arbitrary universe `u`. No
 unconditional radical-generation assertion is made.
@@ -60,7 +60,7 @@ entire radical preimage over O, including every residue-field radical
 point, rather than a pullback to the original field F.
 
 The provenance is composition of the imported Library interfaces and the
-actual-model supporting results just named. This unit leaves that
+actual-model supporting results just named. This module leaves that
 upstairs generation bound unproved. It does not descend parabolicity to
 F, prove the integral reduction-preimage equality, or prove
 `UnramifiedFacetParabolicImageStatement`.

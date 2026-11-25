@@ -32,9 +32,8 @@ scope. The statement's literature references are in
 
 The cover applies `HomogeneousQuotient.curveUnipotentDataOfPseudoReductive` and
 `HomogeneousQuotient.unipotent_dimension_le_one` with the dimension bound and
-noncontainment proved on the ordinary Borel quotient. This is the use permitted by
-the operator rulings `97eb98d70e9a53ca8ae15ed5b5dc9331` and
-`782343fd344b57289118d9dd4b145e89`. The dependencies from `RankOneCellData` provide
+noncontainment proved on the ordinary Borel quotient. Used in this way, the two
+lemmas reach none of the excluded inputs listed in the audit below. The dependencies from `RankOneCellData` provide
 affine coordinates and rank-one centralizer calculations. Those from the older
 root-cell proof module provide the separate scaling and Weyl-relation lemmas on
 supplied local data.
@@ -49,16 +48,16 @@ The [full list](SplitRankOneRootCellIndependentDependencies.md) identifies
 the 23,939 dependencies declared in Library modules, including their private
 declarations.
 
-Terminal check `25c22470-ecd9-4cc3-816f-263ba9107fcd` compiled the proof with
+A check of the module compiled the proof with
 zero errors and warnings. Declaration inspection reported universe `u` and axioms
-`propext`, `Classical.choice` and `Quot.sound`. Audit
-`fb3a83f9-7e58-4a22-8c92-3fc1ddb1a315` also verified that the types of the final
+`propext`, `Classical.choice` and `Quot.sound`. The audit
+also verified that the types of the final
 theorem and its cover input are exactly their respective published propositions
 at universe `u`.
 
 ## Reproducing the audit
 
-Save this module as `RootCellFinalAudit.lean` in a private draft and check it with
+Save this module as `RootCellFinalAudit.lean` and check it with
 `lean_check` after `Langlands.GroupScheme.Reductive.SplitRankOneRootCellIndependentProof`.
 The full diagnostic record contains the sorted dependency names in numbered chunks.
 The extra imports let the audit resolve excluded names.

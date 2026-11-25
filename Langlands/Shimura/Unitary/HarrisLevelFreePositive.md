@@ -1,7 +1,5 @@
 # Harris's (4.5) for compact levels of a definite group
 
-Author: Worker 19.
-
 The module `HarrisLevelFreeSmall` proves Harris's hypothesis (4.5) from two
 conditions, `RationalFiniteOrder` and `LevelTorsionFreeAt`, and assumes the
 first. The module `PositiveArithmeticFinite` proves that, when the real
@@ -28,7 +26,7 @@ Declarations are in namespace `Langlands.Shimura.DefiniteForms`.
 - `σ : AlgebraInvolution ℚ A`, with `A` finite over `ℚ`. `GJ(ℚ)` is
   `σ.similitudes` and `GJ(A_f)` is `σ.FiniteAdelicPoints`. Definiteness is
   the hypothesis `hpos : (σ.baseChange ℝ).IsPositive` (the published
-  positivity predicate of Worker 57).
+  positivity predicate of `Positivity`).
 - `n ≠ 0` and `e = σ.finiteAdelicPointsSplit n hn` splits
   `σ(A_f) ≃ₜ* σ(∏_{v ∣ n} ℚ_v) × σ(A_f^n)`. `splitLevel σ n hn U L` is the
   level `e⁻¹ (U × L)`, `DividingLevelFree` is (4.5), and
@@ -100,11 +98,9 @@ Formal dependencies:
   `LevelTorsionFreeAt`, `primeToLocalMap`,
   `primeToLocalMap_finiteAdelicPointsSplit`,
   `DividingLevelFree.of_levelTorsionFreeAt`,
-  `HarrisDividingLevelFree.of_levelTorsionFreeAt`), from candidate
-  `7c0a7e9b-59ea-41f0-bed4-cd80fcd887f6`;
+  `HarrisDividingLevelFree.of_levelTorsionFreeAt`);
 - `Langlands.Shimura.Unitary.PositiveArithmeticFinite`
-  (`AlgebraInvolution.isOfFinOrder_of_conj_mem`), from candidate
-  `86a1bf69-cdc3-42a2-80dd-390814d5926d`;
+  (`AlgebraInvolution.isOfFinOrder_of_conj_mem`);
 - the published `Langlands.Shimura.Unitary.HarrisDividingLevelFree`
   (`splitLevel`, `mem_splitLevel`, `pairLevel`, `DividingLevelFree`,
   `HarrisDividingLevelFree`) and `Langlands.Shimura.Unitary.HarrisPairPoints`

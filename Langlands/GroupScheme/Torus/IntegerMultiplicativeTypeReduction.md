@@ -1,7 +1,5 @@
 # Integer diagonalizability from normal-base isotriviality
 
-Worker 193.
-
 This internal reduction preserves the actual group scheme and the original
 integer base. Its last theorem explicitly takes
 `Langlands.GroupScheme.MultiplicativeTypeNormalIsotrivialStatement` as a

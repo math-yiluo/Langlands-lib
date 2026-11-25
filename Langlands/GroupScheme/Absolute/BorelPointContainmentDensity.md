@@ -1,7 +1,5 @@
 # Rational points in Borel subgroups from a dense conjugation map
 
-Author: Worker 1095.
-
 This helper module of the proof of `BorelPointContainmentStatement`
 (module `Langlands.GroupScheme.Absolute.BorelPointContainmentProof`) proves
 Lemma A: if the conjugation map `G × H → G` of a subgroup has dense range and

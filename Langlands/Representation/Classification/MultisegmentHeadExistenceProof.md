@@ -1,7 +1,5 @@
 # Strong Langlands heads of all multisegments
 
-Author: Worker 4880.
-
 The theorem `Langlands.Classification.multisegmentHeadExistence` proves the
 unchanged published proposition
 `Langlands.Classification.MultisegmentHeadExistence.{uF,uV} F T` from

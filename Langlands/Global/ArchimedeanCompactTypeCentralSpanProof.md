@@ -1,7 +1,5 @@
 # Finite central coverings of actual generated compact types
 
-Author: Worker 94.
-
 `Langlands.Global.ArchimedeanGL.compactTypeCentralSpan` proves exactly the
 published `CompactTypeCentralSpanStatement K n`. The number field `K` is
 in arbitrary universe and `n` is any natural number, including zero. The

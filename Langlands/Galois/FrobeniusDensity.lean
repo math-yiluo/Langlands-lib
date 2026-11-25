@@ -3,7 +3,17 @@ import Langlands.Galois.FrobeniusLift
 import Langlands.Global.Arithmetic.ChebotarevDegreeOne
 import Mathlib.NumberTheory.RamificationInertia.Galois
 
-/-! # Density of actual geometric Frobenius conjugates -/
+/-!
+# Density of actual geometric Frobenius conjugates
+
+`globalGeometricFrobenius v` is the chosen geometric Frobenius lift at `v` mapped to the global
+absolute Galois group. The section `LocalComparison` compares a subextension `E` of
+`AlgebraicClosure K` with the completion at `v`: the prime `inducedPrime v E` of `𝓞 E` induced
+by the completion embedding lies over `v`, and for normal `E` the inverse of the image of every
+geometric Frobenius lift restricts on `E` to an arithmetic Frobenius at it
+(`arithmeticFrobeniusAt_inducedPrime`). With finite Chebotarev in degree one this gives
+`dense_conjugates_globalGeometricFrobenius_degreeOne`.
+-/
 
 noncomputable section
 
@@ -22,6 +32,15 @@ def globalGeometricFrobenius (v : Global.FinitePlace K) : Field.absoluteGaloisGr
 
 section LocalComparison
 
+/-! ### The prime induced by the completion embedding
+
+For a subextension `E` of `AlgebraicClosure K`, the extension of the completion embedding at `v`
+to the algebraic closures (`chosenClosureEmbedding`, the embedding through which
+`Field.absoluteGaloisGroup.map` is defined) maps the integers of `E` into the spectral valuation
+ring of the algebraic closure of the completion; the kernel of the reduction is a prime of `𝓞 E`
+above `v`. For normal `E`, the inverse of every geometric Frobenius lift at `v`, mapped to the
+global absolute Galois group and restricted to `E`, is an arithmetic Frobenius at this prime. -/
+
 variable (v : Global.FinitePlace K) (E : IntermediateField K (AlgebraicClosure K))
 
 local notation "Kv" => Global.FiniteCompletion K v
@@ -29,20 +48,28 @@ local notation "Cv" => AlgebraicClosure Kv
 local notation "Ov" => LocalGalois.baseIntegers Kv
 local notation "Ic" => LocalGalois.extensionIntegers Kv Cv
 
-private def finiteClosureEmbedding : E →+* Cv := by
+/-- The embedding of a subextension `E` of `AlgebraicClosure K` into the algebraic closure of the
+completion at `v`: the inclusion into `AlgebraicClosure K` followed by the chosen extension
+`chosenClosureEmbedding` of the completion embedding. -/
+def finiteClosureEmbedding : E →+* Cv := by
   let : Algebra K Kv := (NumberField.FinitePlace.embedding v).toAlgebra
   let i : AlgebraicClosure K →ₐ[K] Cv :=
     chosenClosureEmbedding (NumberField.FinitePlace.embedding v)
   exact i.toRingHom.comp E.val.toRingHom
 
-private def finiteIntegersMap : (𝓞 E) →+* Ic :=
+/-- `finiteClosureEmbedding v E` on the integers of `E`, with values in the spectral valuation
+ring of the algebraic closure of the completion at `v` (integral elements have valuation at
+most `1`). -/
+def finiteIntegersMap : (𝓞 E) →+* Ic :=
   ((finiteClosureEmbedding v E).comp (algebraMap (𝓞 E) E)).codRestrict
     (Ic).toSubring fun x => by
       apply (LocalGalois.integral_iff_mem_spectralIntegers Kv Cv _).mp
       exact IsIntegral.map_of_comp_eq (algebraMap ℤ Ov) (finiteClosureEmbedding v E)
         (RingHom.ext_int _ _) x.property
 
-private theorem finiteIntegersMap_base (x : 𝓞 K) :
+/-- On the integers of `K`, `finiteIntegersMap v E` is the map to the integers of the completion
+followed by the inclusion into the spectral valuation ring. -/
+theorem finiteIntegersMap_base (x : 𝓞 K) :
     finiteIntegersMap v E (algebraMap (𝓞 K) (𝓞 E) x) =
       algebraMap Ov Ic (Global.CompletionResidue.integersMap K v x) := by
   let : Algebra K Kv := (NumberField.FinitePlace.embedding v).toAlgebra
@@ -55,15 +82,21 @@ private theorem finiteIntegersMap_base (x : 𝓞 K) :
     IsScalarTower.algebraMap_apply K Kv Cv]
   rfl
 
-private def finiteResidueMap : (𝓞 E) →+* LocalResidueClosure v :=
+/-- The reduction of the integers of `E` into the residue field `LocalResidueClosure v` of the
+spectral valuation ring: `finiteIntegersMap v E` followed by the residue map. -/
+def finiteResidueMap : (𝓞 E) →+* LocalResidueClosure v :=
   (residue Ic).comp (finiteIntegersMap v E)
 
-private def inducedPrime : Ideal (𝓞 E) := RingHom.ker (finiteResidueMap v E)
+/-- The prime of `𝓞 E` induced by the completion embedding at `v`: the kernel of
+`finiteResidueMap v E`. -/
+def inducedPrime : Ideal (𝓞 E) := RingHom.ker (finiteResidueMap v E)
 
-private theorem inducedPrime_isPrime : (inducedPrime v E).IsPrime :=
+/-- The induced prime is a prime ideal, as the kernel of a map to a field. -/
+theorem inducedPrime_isPrime : (inducedPrime v E).IsPrime :=
   RingHom.ker_isPrime (finiteResidueMap v E)
 
-private theorem inducedPrime_liesOver : (inducedPrime v E).LiesOver v.asIdeal := by
+/-- The induced prime lies over the prime `v.asIdeal` of `𝓞 K`. -/
+theorem inducedPrime_liesOver : (inducedPrime v E).LiesOver v.asIdeal := by
   constructor
   ext x
   rw [Ideal.under_def, Ideal.mem_comap]
@@ -73,7 +106,10 @@ private theorem inducedPrime_liesOver : (inducedPrime v E).LiesOver v.asIdeal :=
   rw [map_eq_zero_iff _ (algebraMap (ResidueField Ov) (LocalResidueClosure v)).injective]
   exact (Global.CompletionResidue.residueMap_eq_zero_iff K v x).symm
 
-private theorem finiteClosureEmbedding_restrict [Normal K E] (g : LocalGroup v) (x : E) :
+/-- For normal `E`, `finiteClosureEmbedding v E` is equivariant: restricting to `E` the image of a
+local automorphism `g` in the global absolute Galois group and then embedding is embedding and
+then applying `g`. -/
+theorem finiteClosureEmbedding_restrict [Normal K E] (g : LocalGroup v) (x : E) :
     finiteClosureEmbedding v E (AlgEquiv.restrictNormalHom E
       (Field.absoluteGaloisGroup.map (NumberField.FinitePlace.embedding v) g) x) =
       AlgEquiv.toRingEquiv g (finiteClosureEmbedding v E x) := by
@@ -87,11 +123,16 @@ private theorem finiteClosureEmbedding_restrict [Normal K E] (g : LocalGroup v) 
   exact (congrArg i (AlgEquiv.restrictNormalHom_apply E s x)).trans
     (restrictionAlongClosure_commutes i g (x : AlgebraicClosure K))
 
-private theorem arithmeticFrobeniusAt_inducedPrime [Normal K E] :
+/-- For normal `E` and every geometric Frobenius lift `g` at `v`, the inverse of the image of `g`
+in the global absolute Galois group restricts on `E` to an arithmetic Frobenius at the induced
+prime `inducedPrime v E`. -/
+theorem arithmeticFrobeniusAt_inducedPrime [Normal K E] {g : LocalGroup v}
+    (hg : IsGeometricFrobeniusLift v g) :
     (RingOfIntegers.mapAlgHom (AlgEquiv.restrictNormalHom E
-      ((globalGeometricFrobenius v)⁻¹))).IsArithFrobAt (inducedPrime v E) := by
-  let g : Cv ≃ₐ[Kv] Cv := geometricFrobeniusLift v
-  let σ := AlgEquiv.restrictNormalHom E ((globalGeometricFrobenius v)⁻¹)
+      ((Field.absoluteGaloisGroup.map (NumberField.FinitePlace.embedding v) g)⁻¹))).IsArithFrobAt
+        (inducedPrime v E) := by
+  let σ := AlgEquiv.restrictNormalHom E
+    ((Field.absoluteGaloisGroup.map (NumberField.FinitePlace.embedding v) g)⁻¹)
   let := inducedPrime_liesOver v E
   intro x
   have hc : Nat.card (𝓞 K ⧸ (inducedPrime v E).under (𝓞 K)) = residueCardinality v := by
@@ -114,7 +155,15 @@ private theorem arithmeticFrobeniusAt_inducedPrime [Normal K E] :
   change residue Ic (finiteIntegersMap v E (RingOfIntegers.mapAlgHom σ x)) =
     residue Ic (finiteIntegersMap v E x) ^ residueCardinality v
   rw [haction, ← LocalGalois.residueHom_apply]
-  exact geometricFrobeniusLift_spec v _
+  exact hg _
+
+/-- For normal `E`, the inverse of the global geometric Frobenius `globalGeometricFrobenius v`
+restricts on `E` to an arithmetic Frobenius at `inducedPrime v E`: the case of the chosen lift
+in `arithmeticFrobeniusAt_inducedPrime`. -/
+theorem arithmeticFrobeniusAt_inducedPrime_globalGeometricFrobenius [Normal K E] :
+    (RingOfIntegers.mapAlgHom (AlgEquiv.restrictNormalHom E
+      ((globalGeometricFrobenius v)⁻¹))).IsArithFrobAt (inducedPrime v E) :=
+  arithmeticFrobeniusAt_inducedPrime v E (geometricFrobeniusLift_spec v)
 
 end LocalComparison
 
@@ -135,7 +184,7 @@ private theorem exists_frobenius_conjugate_restrict
   obtain ⟨a, ha⟩ := Ideal.exists_smul_eq_of_isGaloisGroup v.asIdeal
     (inducedPrime v E) q.asIdeal (E ≃ₐ[K] E)
   have hfrob : IsArithFrobAt (𝓞 K) (r ((globalGeometricFrobenius v)⁻¹)) (inducedPrime v E) :=
-    arithmeticFrobeniusAt_inducedPrime v E
+    arithmeticFrobeniusAt_inducedPrime_globalGeometricFrobenius v E
   have hconj := hfrob.conj a
   rw [ha] at hconj
   have hmaps : RingOfIntegers.mapAlgHom (a * r ((globalGeometricFrobenius v)⁻¹) * a⁻¹) =

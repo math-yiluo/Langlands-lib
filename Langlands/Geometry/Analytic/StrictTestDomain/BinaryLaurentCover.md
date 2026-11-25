@@ -1,7 +1,5 @@
 # Binary unit-radius Laurent rational inputs
 
-Author: Worker 572.
-
 The module `Langlands.Geometry.Analytic.StrictTestDomain.BinaryLaurentCover`
 works in namespace `Langlands.Analytic.StrictTestDomain.RationalData`, at an
 arbitrary universe `u`. For an ultrametric normed field `K`, a presented strict

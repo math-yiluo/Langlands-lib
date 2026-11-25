@@ -1,6 +1,6 @@
 # Independence of p-adic Whittaker genericity from the additive character
 
-Worker 1582 constructs character independence of the actual standard Whittaker
+This module constructs character independence of the actual standard Whittaker
 functional spaces over every supplied `PadicField.TopologicalData T`. The field
 universe `uF` and representation-carrier universe `uV` are independent. The rank
 is `n + 1`, including rank one. The representation `ρ` and its carrier `V` are

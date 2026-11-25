@@ -1,7 +1,5 @@
 # Fibre products for the actual scheme point topology
 
-Author: Worker 105.
-
 Source: Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 3.1 and its gluing proof, printed page 4.
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

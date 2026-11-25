@@ -1,6 +1,6 @@
 # Derived gamma compatibility of supercuspidal families
 
-Author: Worker 7. This module defines the pair gamma factor on both sides of
+This module defines the pair gamma factor on both sides of
 the irreducible-Weil to supercuspidal correspondence, states the gamma
 compatibility of a supercuspidal map, and states, as a proposition only, that
 gamma compatibility follows from the pair L-, epsilon- and dual conditions.
@@ -28,7 +28,7 @@ cardinality, and factors are rational functions of `X = q^(-s)`.
   monodromy `-Nᵀ`. The monomial is the published
   `RankinSelberg.rationalEpsilonMonomial c m`.
 - `IsSupercuspidalPairGammaFactor F ψ ν π τ G`, for supercuspidal classes of
-  ranks `r + 1` and `n + 1`, is Worker 11's published
+  ranks `r + 1` and `n + 1`, is the published
   `RankinSelberg.IsPadicSymmetricGammaFactor` on representatives: the JPSS
   gamma relation with the representation of larger rank as candidate (in equal
   rank, `π`). It is defined with `Quotient.lift₂`; independence of the
@@ -55,13 +55,14 @@ gamma factor of every image pair exists.
 `SupercuspidalPairFactorCompatibility F eC ε hε c` and
 `SupercuspidalDualCompatibility F c` hold, then
 `SupercuspidalPairGammaCompatibility F eC ε hε c` holds, for the same system
-and the same map. It is a statement, not a theorem; the Library contains no
-proof of it. The intended proof applies the L condition to the duals
+and the same map. It is a statement, not a theorem, in this module; it is
+proved as `supercuspidalGammaFromFactors` (module
+`SupercuspidalGammaFromFactorsProof`). The intended proof applies the L condition to the duals
 `σ^∨`, `τ^∨`, uses dual compatibility to identify their images with the
 contragredients of `c σ` and `c τ`, and then uses the JPSS functional
 equation to identify the JPSS gamma factor with
-`ε L(1 - s, π^∨ × τ^∨)/L(s, π × τ)`. That last identification is not proved
-in the Library.
+`ε L(1 - s, π^∨ × τ^∨)/L(s, π × τ)`. That last identification is proved in
+the Library and used by that proof.
 
 The other comparison this route needs is proved. The published Rankin–Selberg
 modules use the inverse-transpose pullback `g ↦ π(ᵗg⁻¹)`, while dual
@@ -110,12 +111,12 @@ The module imports, and does not copy: `LocalFactor.WeilDelignePair`
 (`rationalLRatioClass`), `LocalFactor.ResidueReflection` (`residueReflection`), `WeilDeligne.SumsTensor`
 (`tensorClass`), `RankinSelberg.PairEpsilonFactor`
 (`rationalEpsilonMonomial`), `RankinSelberg.PadicPairFactors`
-(`IsPadicSymmetricGammaFactor` and its `congr_equiv`), and this task's
+(`IsPadicSymmetricGammaFactor` and its `congr_equiv`), and the modules
 `ArithmeticFactors`, `SupercuspidalFactorCompatibility` and
 `OperationCompatibility`.
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Every definition in this module returns `Prop`; the imported reflection
 scalar is documented in `LocalFactor/ResidueReflection`.

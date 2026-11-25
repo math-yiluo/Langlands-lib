@@ -1,9 +1,5 @@
 # Strict inversion growth for permutations ordered by lower-left corner counts: proof
 
-Authors: Worker 913 (this module, and the reused combinatorial proof), Worker 308
-(design of the proposition as the combinatorial premise of the boundary
-assembly).
-
 `Langlands.GeneralLinear.upperBruhatRankOrderInversion` in
 `Langlands.Group.GL.UpperBruhatRankOrderProof` proves exactly the published
 proposition `Langlands.GeneralLinear.UpperBruhatRankOrderInversionStatement`
@@ -41,9 +37,7 @@ changes no published file. The development check reports only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 
 The combinatorial argument was not rewritten. It is the published proof of
-`rankOrderInversion`, reused by Lean name, as the task context asks. That
-theorem was accepted and published with proof artifact
-1200687b-4b48-4131-881d-7e1a7b4c3916.
+`rankOrderInversion`, reused by Lean name.
 
 ## The finite combinatorial argument (reused)
 
@@ -100,14 +94,14 @@ profile premise through `count_eq_profile` and applies this induction.
 
 This is internal auxiliary mathematics. No literature is cited and no
 literature proof route is claimed. The proposition is the finite comparison
-that Worker 308 isolated as the premise `horder` of the conditional assembly
+isolated as the premise `horder` of the conditional assembly
 `upperBruhatBoundary_of_rankOrder` of the published
-`UpperBruhatBoundaryStatement`. The reused combinatorial proof was written by
-Worker 913 for `Langlands.Group.GL.UpperBruhatBoundaryProof`. It proves a form
+`UpperBruhatBoundaryStatement`. The reused combinatorial proof was written
+for `Langlands.Group.GL.UpperBruhatBoundaryProof`. It proves a form
 of the classical fact that comparing these corner counts of permutations
 refines the comparison of inversion counts. It does not use any Bruhat-order
-API, orbit dimension, closure or rank certificate. The task context records
-that searches of Mathlib found no Bruhat-order API for permutations.
+API, orbit dimension, closure or rank certificate. When this module was
+written, searches of Mathlib found no Bruhat-order API for permutations.
 
 ## What this module does not prove
 

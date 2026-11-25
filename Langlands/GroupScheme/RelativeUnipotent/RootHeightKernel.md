@@ -1,6 +1,6 @@
 # Successive represented root-height kernels
 
-Worker 204, Task 7200. This internal derived unit assumes the arbitrary-ring
+This internal derived module assumes the arbitrary-ring
 `RootHeightChart` interface and completes the kernel comparison for its
 represented height terms. It makes no claim that such a chart exists for
 every relative radical or that local constructions descend.

@@ -2,7 +2,6 @@
 
 Module
 `Langlands.Representation.RankinSelberg.TwoBlockLowerFirstBlockQuotientIntegrationProof`.
-Authors: Worker 1196 and Worker 1179.
 
 The theorem
 `Langlands.RankinSelberg.twoBlockLowerFirstBlockQuotientIntegration`

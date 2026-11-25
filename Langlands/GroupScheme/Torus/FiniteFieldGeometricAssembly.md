@@ -50,7 +50,9 @@ retaining the same point and conjugacy equation.
 There is no restriction on characteristic, and no reductivity or splitness
 premise on `G`. The target statement and its imports are preserved. The proof
 route avoids the no-torus/unipotence theorem and general maximal-torus
-base-change preservation. The remaining unconditional input is the separately
-owned maximal-torus conjugacy theorem. The construction is an internal
+base-change preservation. The remaining unconditional input is the separate
+maximal-torus conjugacy theorem `MaximalTorusConjugacyStatement`, which the
+Library proves as `maximalTorusConjugacy` in
+`Absolute.MaximalTorusConjugacyProof`. The construction is an internal
 composition of the cited Lean interfaces, rather than a claim to have proved
 that structural input.

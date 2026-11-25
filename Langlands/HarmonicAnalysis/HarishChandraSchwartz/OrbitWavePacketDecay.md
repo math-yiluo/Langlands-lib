@@ -3,12 +3,12 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacketDecay`, namespace
 `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacket` (Worker 249): the wave
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacket`: the wave
   packet `inducedOrbitWavePacket` (`f_ψ`), `inducedOrbitWavePacket_eq_parameterIntegral`,
   `norm_unitaryTorusParameter_apply`; through its imports `xi`, `LeviData`, `IsIwasawaPair`,
   `iwasawaWeight_nonneg`, `norm_twist_coefficientMap_le_xi`, `twistedSection`,
   `compactValue_twistedSection`, `coefficientTensorMap_twist`, `factorization_subtype`
-  (`InducedCoefficientTwistXi`), Worker 200's `CompactInduction.coefficientMap`,
+  (`InducedCoefficientTwistXi`), `CompactInduction.coefficientMap`,
   `CompactInduction.coefficientMap_integral`, `CompactInduction.integrand`,
   `CompactInduction.integrand_factorization`, `CompactInduction.integrand_isLocallyConstant`,
   `CompactInduction.integrand_integrable`, `CompactInduction.measure`,
@@ -20,14 +20,14 @@ Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacketDe
   `HasLaurentUnitaryCoordinates`, and the orbit data `discreteSeriesOrbit`,
   `discreteSeriesOrbitMap`, `isOpenQuotientMap_discreteSeriesOrbitMap`,
   `discreteSeriesOrbitMeasure`, `discreteSeriesStabilizer`, `discreteSeriesClass`;
-- `Langlands.Representation.Plancherel.ProductInducedOrbitBaseChange` (Worker 200):
+- `Langlands.Representation.Plancherel.ProductInducedOrbitBaseChange`:
   `unitaryTorusParameter_mul`;
-- `Langlands.HarmonicAnalysis.TorusFourierAveraging` (Worker 249): `norm_integral_mul_le_rpow`
+- `Langlands.HarmonicAnalysis.TorusFourierAveraging`: `norm_integral_mul_le_rpow`
   (the averaging estimate over a torus of twists); through its imports `torusCharacter` and
   `continuous_torusCharacter`;
-- `Langlands.HarmonicAnalysis.TorusFourierInversion` (Worker 249): `torusCharacter_zero`,
+- `Langlands.HarmonicAnalysis.TorusFourierInversion`: `torusCharacter_zero`,
   `torusCharacter_add`;
-- `Langlands.HarmonicAnalysis.TorusMonomialDerivative` (Worker 249, this submission):
+- `Langlands.HarmonicAnalysis.TorusMonomialDerivative` (ported with this file):
   `continuous_finiteTorusMonomial`, `isSmoothFiniteTorusFunction_comp_monomial_mul`,
   `exists_bound_comp_monomial_mul`.
 

@@ -7,7 +7,7 @@ degree-zero homogeneity. Such an integral is a weighted Lebesgue integral over t
 `v ↦ (v, 1)` of `ℝ^m`. The statement is `Langlands.Archimedean.OrthogonalLastRowIntegralStatement`,
 proved as `Langlands.Archimedean.orthogonalLastRowIntegral`.
 
-In the planned proof of `RealStandardLanglandsQuotientStatement` (Task 6749) this is the measure
+For the proof of `RealStandardLanglandsQuotientStatement`, this is the measure
 part of the integration formula for the maximal parabolic subgroup `P_{m,1}` of `GL_{m+1}(ℝ)`.
 `P_{m,1} \ GL_{m+1}(ℝ)` is parametrized by the last row up to scaling, and the chart `(v, 1)`
 corresponds to the opposite unipotent radical `v ↦ [[1, 0], [v, 1]]`.

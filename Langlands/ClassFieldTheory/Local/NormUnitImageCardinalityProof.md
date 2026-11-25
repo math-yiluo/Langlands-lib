@@ -72,7 +72,7 @@ proof is strong induction on `n`.
   the same p-adic field give the same unit filtration. By
   `unitFiltration_eq_principalUnits`, `U^n` consists of the units `x` with
   `v(x) = 1` and `v(x - 1) ≤ exp(-n)` for the discrete valuation `v` of the
-  data. `NYLL.discreteValuation_eq_of_algEquiv`, applied to the identity
+  data. `UniverseZero.discreteValuation_eq_of_algEquiv`, applied to the identity
   automorphism, says the two discrete valuations agree.
 - For the upper ramification groups the analogous fact is the published
   `HerbrandBridge.upperRamificationGroup_eq_of_realization`: `G^a` computed

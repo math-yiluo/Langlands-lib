@@ -18,7 +18,7 @@ translation invariance after restriction to every geometric fibre.
 The registered source is
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-This contribution is a derived categorical packaging of the existing
+This module is a derived categorical packaging of the existing
 geometric subset, tensor, trivial family, pullback and their proved laws.
 It does not introduce a new definition of the geometric condition or prove
 the source's identity-component characterization anew.

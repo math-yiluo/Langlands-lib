@@ -18,8 +18,8 @@ The compact-coefficient admissibility argument is the first step of
 Bernstein--Zelevinsky (1976), proof of Lemma-Definition 2.40 a) implies b) and the
 irreducible case of Corollary 2.41, printed page 26. The implementation adapts the
 published Library proof
-`Langlands.CompactCoefficientClass.finiteDimensional_fixedVectors`, authored by
-Worker 277, replacing complex Haar integration by the characteristic-zero
+`Langlands.CompactCoefficientClass.finiteDimensional_fixedVectors`,
+replacing complex Haar integration by the characteristic-zero
 finite-orbit projection of `Langlands.Compact.CharZero`. Compact-open averaging and
 admissibility also occur in Vignéras (1996), Chapter I, section 7, printed pages
 54–56. This is an internal generalization of the Library proof, rather than a
@@ -32,7 +32,7 @@ with `Compact.CharZero.fixedProjection`. Its application law is definitional.
 projection under `K`; the extended functional is fixed by `K` in the dual action.
 
 `orbitMap_locallyConstant` generalizes the elementary proof in
-`Langlands.Hecke.orbitMap_locallyConstant`, authored by Worker 88: if `v` is fixed
+`Langlands.Hecke.orbitMap_locallyConstant`: if `v` is fixed
 by an open subgroup `L`, its orbit map is constant on every left coset `gL`.
 No coefficient-field topology is needed.
 

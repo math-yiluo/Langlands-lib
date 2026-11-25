@@ -1,7 +1,5 @@
 # Split tori over an arbitrary base
 
-Author: Worker 207.
-
 This module constructs the split torus `𝔾_m^I` over an arbitrary scheme `S` as an
 actual group scheme. It defines the predicate "is a split torus" for group schemes
 over `S` and proves the basic closure properties needed later: invariance under

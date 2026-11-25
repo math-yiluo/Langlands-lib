@@ -58,8 +58,9 @@ mathematical route supporting the target, rather than assuming those
 results in its hypotheses.
 
 `AdelicSpreadTopologyIndependenceStatement` is the conjunction of the
-two clauses. This unit supplies a proposition interface; its proof
-remains a separate obligation. It does not assert existence of an
+two clauses. This module supplies a proposition interface; its proof
+is `adelicSpreadTopologyIndependence` in
+`AdelicSpreadTopologyIndependenceProof`. It does not assert existence of an
 arithmetic spread for every finite-type field-scheme, equality with an
 independently defined affine evaluation topology, or the other
 topological properties of section 4.

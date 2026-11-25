@@ -1,6 +1,6 @@
 # Complex powers of the idelic norm
 
-Author: Worker 34. This module is internal infrastructure derived from the
+This module is internal infrastructure derived from the
 Library's actual idelic norm and the complex exponential. It assumes no
 arithmetic existence theorem. It supplies the factor `‖·‖^{(n-1)/2}` of
 Harris's twisting character (Harris 1998, Erratum (E.1); see

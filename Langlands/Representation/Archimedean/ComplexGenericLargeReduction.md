@@ -28,8 +28,8 @@ The proof has three ingredients. The first is the isomorphism of complex Lie alg
 `ℂ ⊗_ℝ 𝔤𝔩_n(ℂ) ≅ 𝔤𝔩_n(ℂ) × 𝔤𝔩_n(ℂ)`. The second is the infinitesimal character of the
 transported action. The third is the transport of the Whittaker identity. The
 infinitesimal-character argument adapts the proof of
-`RealGKModuleInfinitesimalCharacterStatement` in `RealGKInfinitesimalCharacter`
-(Worker 379), whose generic lemmas this module imports: `envInduction`, `envMap`,
+`RealGKModuleInfinitesimalCharacterStatement` in `RealGKInfinitesimalCharacter`,
+whose generic lemmas this module imports: `envInduction`, `envMap`,
 `envMap_fixes_center`, `unitConj`, `idempotent_unit_mul` and
 `exists_eigenvector_of_commute`.
 
@@ -161,5 +161,5 @@ The statement is an internal reduction step, and every step of its proof is inte
 identification `ℂ ⊗_ℝ 𝔤𝔩_n(ℂ) ≅ 𝔤𝔩_n(ℂ) × 𝔤𝔩_n(ℂ)`, `z ⊗ X ↦ (zX, zX̄)`, is the standard
 description of the complexification of a complex Lie algebra viewed as a real one. The
 Whittaker coefficients `(i/2) a_p` and `(i/2) ā_p` are computed in step 6. The
-infinitesimal-character argument adapts Worker 379's proof for `(𝔤𝔩_n(ℝ), O(n))`-modules.
-That proof is accepted, and this module imports its generic lemmas.
+infinitesimal-character argument adapts the proof in `RealGKInfinitesimalCharacter` for
+`(𝔤𝔩_n(ℝ), O(n))`-modules. That proof is in the Library, and this module imports its generic lemmas.

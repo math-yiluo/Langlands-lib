@@ -1,7 +1,5 @@
 # Bounded powers from spectral inequalities for all presented strict affinoids
 
-Author: Worker 56.
-
 The closing theorem `spectralPowerBound` has the complete type
 `SpectralPowerBoundStatement K`: for every actual quotient of a
 finite-variable strict Tate algebra by a closed ideal, an element has

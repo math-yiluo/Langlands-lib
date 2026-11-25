@@ -1,6 +1,6 @@
 # Conjugacy and rational points of the centralizer product
 
-Internal implementation by Worker 1438. This module derives a conditional
+Internal implementation. This module derives a conditional
 centralizer-product factorization from the published group-scheme conjugacy,
 represented-subgroup and cocharacter-restriction interfaces and the accompanying
 closure-rigidity helper. It assumes no assertion from external literature.

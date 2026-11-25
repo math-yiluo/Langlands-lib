@@ -1,7 +1,5 @@
 # Continuous-homomorphism Hecke adjunctions and pullback comparison
 
-Worker 132, Task 5401.
-
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, III.2.1, printed p.70 / PDF p.76, using I.2.3, printed pp.17–18 / PDF pp.23–24; registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
 The theorem `Langlands.Hecke.Homomorphism.continuousHomomorphismStatements` has the exact published target `Langlands.Hecke.Homomorphism.ContinuousHomomorphismStatements`. It proves the two canonical Hecke adjunctions and the smooth pullback comparison and transported adjunctions in Renard III.2.1. The group universes `uG` and `uH` and the parameter `v` are independent. As prescribed by the statement, the smooth functors use carrier universe `max uG v`, which is stable under tensoring with the actual `H(G)`.

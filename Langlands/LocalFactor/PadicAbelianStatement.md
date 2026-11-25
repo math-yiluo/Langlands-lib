@@ -1,12 +1,12 @@
 # Abelian local analysis over a finite p-adic field
 
-Worker 33 authors this theorem-statement contribution. It uses the actual finite
+This theorem statement uses the actual finite
 extension `PadicField p`, its explicit `TopologicalData`, its valuation integer
 ring, and its residue cardinality. The single proposition
 `Langlands.LocalFactor.PadicAbelianLocalAnalysisStatement` is a coherent
 abelian theorem family. It supplies no theorem proof or chosen epsilon system.
 
-The shared `Langlands.HarmonicAnalysis.Basic` definitions belong to Worker 20:
+The shared definitions come from `Langlands.HarmonicAnalysis.Basic`:
 quasicharacters are continuous homomorphisms from field units to complex units;
 additive characters are continuous nontrivial circle-valued additive
 characters; test functions are locally constant functions with compact support;
@@ -14,7 +14,7 @@ additive Haar measures include regularity; and the Fourier kernel is `psi(x*y)`.
 The companion `Langlands.LocalFactor.Abelian.Padic` exposes the same concrete
 Euler, zeta and Gauss expressions as callable functions. Local aliases in this
 proposition use those names. Its two canonical factor constructors additionally
-use Worker 20's actual conductor constructions; this target retains its
+use the actual conductor constructions; this target retains its
 explicit least/greatest-level hypotheses and every possible uniformizer.
 It introduces no competing character or Haar structure.
 
@@ -158,21 +158,19 @@ formulations, with the source conventions preserved.
 
 ## Dependencies and status
 
-The current Library at commit
+The Library at commit
 `459d17160ca3aef5c5b4e8ba056125e56d9479a0` supplies
 `Langlands.LocalField.Definitions`,
 `Langlands.LocalField.Normalization.Definitions`, and
-`Langlands.HarmonicAnalysis.Basic`. Their published pairs and current
+`Langlands.HarmonicAnalysis.Basic`. Their published pairs and
 availability were verified. Reuse is by these Lean module and declaration
 names. The harmonic source hash is
 `2198cecae146fa7f904dc2c01169d6321aee8e155c99614ed92f861fd2d65aff`.
 
-The conductor and callable abelian constructions are also independently
-reviewed and published in this Library. Their complete final reviews and
-published pairs were read, and the actual Library sources match the checked
-development sources exactly. They retain the conductor predicates and all
-local expressions used by this statement. Workers 20 and 33's construction
-authorship is preserved; this contribution imports those published
+The conductor and callable abelian constructions are also in this Library.
+Their published pairs were read, and the actual Library sources match the
+checked development sources exactly. They retain the conductor predicates and all
+local expressions used by this statement. This module imports those
 constructions by Lean name.
 
 The following table retains the historical source fingerprints from the original
@@ -187,18 +185,17 @@ The current complete source hash is recorded in the
 | `Langlands.LocalFactor.Abelian.Definitions` | `18215959be4fdf7359708f2250aa94e60a3a78f6e99919ea0c7ada61cf74ba22` |
 | `Langlands.LocalFactor.Abelian.Padic` | `1689aa7750d78260e3657d039053e4d496a1c945a43585ecdecc1b7e4ae7bf05` |
 
-The adopted companion additionally constructs `rationalLFactor` and its
+The companion additionally constructs `rationalLFactor` and its
 nonzero, regular-domain evaluation. Its Gauss-integrability proof applies to
 every spectral parameter: the character is continuous away from zero, the
 valuation shell is compact and excludes zero, and the absolute-value power is
 constant on that shell. The bridges identify this shell with the statement's
-`gaussShell` and the canonical `deligneConstant` with the owner's abelian
-expression. They give downstream constant systems actual functions and
+`gaussShell` and the canonical `deligneConstant` with the abelian
+expression `abelianEpsilonExpression` of `Abelian.Definitions`. They give downstream constant systems actual functions and
 proved comparison lemmas. They do not assume a functional equation or a
 nonabelian system.
 
-The unchanged statement passed check
-`6d2e8dc1-20f6-4e97-afb9-296e8d3fd7a7` against the exact sources now
+The statement was checked against the exact sources now
 published under the names above and the published foundations. Incremental
 Lake build and whole-declaration inspection both terminated with exit code
 zero, no errors or warnings, and quiet process trees. Inspection confirms a
@@ -210,15 +207,13 @@ The statement source remains
 The checked snapshot is
 `980d5cf3e032274371cb56cddcffcea58d557d9f807cbf91851195e8b5c3449f`.
 
-This is a statement submission for independent semantic review. Compilation
-and target inspection do not prove the proposition or establish its independent
-semantic acceptance. No theorem proof, chosen local-factor system, or
-whole-task completion is claimed.
+This module is a statement. Compilation and target inspection do not prove the
+proposition. No theorem proof or chosen local-factor system is claimed.
 
 ## Import-path migration
 
-Worker 64 changed the single project import to
+The single project import was changed to
 [`Langlands.LocalFactor.Abelian.Padic`](Abelian/Padic.md). The proposition,
 its complete universe telescope, and every non-import source byte are unchanged.
-The preceding source/check identifiers describe the original statement submission;
+The preceding source/check identifiers describe the original statement;
 the [migration record](Abelian/Definitions.md#structural-migration-record) records the new checks.

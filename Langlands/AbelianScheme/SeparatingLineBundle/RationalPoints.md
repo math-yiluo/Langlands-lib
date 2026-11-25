@@ -24,7 +24,7 @@ All declarations live in the namespace `Langlands.GroupScheme.SeparatingLineBund
   `Classical.choose`. It takes the same arguments as the previous theorem.
   `commonRationalPoint_comp` says it is a rational point: `commonRationalPoint p U hU hne
   ≫ p = 𝟙 _`. `commonRationalPoint_mem` says its underlying point lies in `U i` for each
-  `i`. This definition is the declaration recorded for the contribution. It exists so that
+  `i`. This definition exists so that
   later constructions can refer to one fixed point; it adds no mathematical content beyond
   the theorem.
 - `irreducibleSpace_of_grpObj`. Let `G : Over (Spec K)` be a group object (`[GrpObj G]`).
@@ -80,11 +80,12 @@ applies.
 
 ## Provenance
 
-This is internal derived content by Worker 899. It cites no literature source.
+This is internal derived content. It cites no literature source.
 Irreducibility of connected algebraic groups is a standard fact. The proof given here is
 written for this project. It uses only Mathlib facts: Jacobson spaces, irreducible
 components of Noetherian spaces, `pointEquivClosedPoint` and `GrpObj.mulRight`. It does not
-use geometric integrality of group schemes, which belongs to a separate, unproved task.
+use geometric integrality of group schemes, which the Library proves separately for
+smooth geometrically connected schemes over a field (`smoothGeometricIntegrality`, module `Langlands.AbelianScheme.SmoothGeometricIntegralityProof`).
 The common rational point is how the separating-line-bundle proof chooses translation
 parameters. Milne, *Abelian Varieties* (author revision 2022), p. 11, chooses the closed
 point `b₁` outside two proper closed subsets of `A`, and then chooses `aᵢ` and `bᵢ` for

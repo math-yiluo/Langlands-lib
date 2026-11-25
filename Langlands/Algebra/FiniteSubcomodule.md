@@ -1,12 +1,10 @@
 # Finitely generated subcomodules of flat coalgebras over noetherian rings
 
-Author: Worker 1421.
-
 This module proves Serre's local finiteness theorem for the right regular
 comodule of a flat coalgebra over a noetherian ring, and the resulting
 finitely generated subcomodule that generates a bialgebra. It is an internal
-helper for the construction of charts of the closed torus subgroup functor
-(task `45ac6e52-a4d8-4414-91f1-03c3be35223e`). The statement is from J.-P.
+helper for the construction of charts of the closed torus subgroup functor.
+The statement is from J.-P.
 Serre, *Groupes de Grothendieck des schémas en groupes réductifs déployés*,
 Publ. Math. IHÉS 34 (1968), §1.5, Proposition 2. Only the case of the
 comodule `C` itself is formalized here.

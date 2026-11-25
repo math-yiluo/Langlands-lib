@@ -1,7 +1,7 @@
 # The JPSS upper-column conjugation
 
 This module proves the matrix and coefficient identities used by
-`UnequalRankFourierSmearingProof`. Worker 582 implemented these derived
+`UnequalRankFourierSmearingProof`. It implements these derived
 identities for the actual published matrices in `QuotientIntegrals` and
 `UnequalRankSmearingUnipotent`. They are proved here, without a conjugation
 or character identity as an additional hypothesis.

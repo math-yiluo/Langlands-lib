@@ -1,7 +1,5 @@
 # The surviving support step and the associated-Levi comparison
 
-Author: Worker 757 (task `f7d95940-33d0-49d3-93d6-8d5ff8d89373`).
-
 This module assembles the associated-Levi Jacquet comparison (**) of Aubert's
 1996 erratum (printed p.4690, Remark (1)) from its separate ingredients. It is
 a conditional (helper) result. It proves that one coordinate step of the
@@ -24,11 +22,11 @@ retained cokernel is filtered by the corrected support filtration, every
 graded piece except one cell dies in the cokernel, and the surviving cell is
 the Jacquet module of the associated Levi conjugated by `n`. All proofs here
 are categorical or linear assembly over published definitions: the corrected
-filtration (`CorrectedFiltration`, `CorrectedFiltrationNatural`), Worker 691's
+filtration (`CorrectedFiltration`, `CorrectedFiltrationNatural`), the
 homogeneous Jacquet diagram and degree filtration (`JacquetCutDiagram`,
-`CorrectedDegreeFiltration`), Worker 1300's natural cokernels
-(`NaturalCokernel`, `AssociatedCokernelTransport`), the graded maps of Worker
-969 (`CorrectedGradedReduction`, `CorrectedGradedNatural`), the filtered
+`CorrectedDegreeFiltration`), the natural cokernels
+(`NaturalCokernel`, `AssociatedCokernelTransport`), the graded maps
+(`CorrectedGradedReduction`, `CorrectedGradedNatural`), the filtered
 cokernel lemmas of `FiniteFilteredCokernel`, and
 `LeviComplex.sharpFunctorUnivIso` of `RationalFixedLeviComparisonProof`.
 
@@ -39,7 +37,7 @@ relative Weyl group and the Coxeter system `cs` are those of
 `CorrectedFiltration`. The complex is indexed by removed roots: the coordinate
 `s` of degree `d` (`s.card = d`) is the term `E_J = i_J r_J E` with
 `J = S \ s` (`Finset.univ \ s`). `r_I` is the normalized Jacquet functor
-`jacquetFunctor (h I) (hclosed I)`. `jacquetDegreeEquiv A I d` is Worker 691's
+`jacquetFunctor (h I) (hclosed I)`. `jacquetDegreeEquiv A I d` is the
 linear identification of `r_I` of the degree-`d` object with the product
 `∏_{s.card = d} r_I(E_{S \ s})`, which is `(jacquetDiagram A I).Degree d`.
 `degreeFiltration A I d i` is the coordinatewise step `i` of the corrected
@@ -80,8 +78,8 @@ published targets, and instantiates the linear lemmas at `max uI uV`.
   incoming differential `(StandardComplex.incomingDifferentialNat d).app A`.
   `incomingJacquet_zero_apply`: it is zero in degree `0`.
   `jacquetDegreeEquiv_incoming`: in degree `k + 1` it corresponds to the
-  homogeneous differential `degreeDifferential k` (Worker 691's
-  `jacquetDegreeEquiv_differential`).
+  homogeneous differential `degreeDifferential k`
+  (`jacquetDegreeEquiv_differential`).
 * `cokernelCoordinate A I d s0 i`: step `i` of the coordinate `s0`, followed
   by `coordinateLinear` and the quotient by the range of `incomingJacquet`.
 * `cokernelCoordinate_injective` (at step `i0 + 1`). Hypotheses:
@@ -149,8 +147,8 @@ This part assumes `[SigmaCompactSpace G] [T2Space G]`, compactness of every
   compact-limit premise `hNc` for `U_I ∩ P_I`, `hK : x ∈ M I ↔ m⁻¹ x m ∈ M K`,
   a family `DE` of orbit Jacquet data for the objects `F.obj X`, `hnat`
   (`(DE X).IsNatural (DE Y) (F.map f)` for every `f : X ⟶ Y`),
-  `hKs : K ⊆ S \ s` and `hs : IsMinimal cs (S \ s) I w`. Naturality is Worker
-  969's `stepGradedMap_natural`.
+  `hKs : K ⊆ S \ s` and `hs : IsMinimal cs (S \ s) I w`. Naturality is
+  `stepGradedMap_natural`.
 * `gradedNat_app_bijective`: if moreover
   `modifiedSupport cs (S \ s) I i = ∅`, every component is bijective. It is
   surjective by `stepGradedMap_surjective`. Its kernel lies in step `i` by
@@ -185,7 +183,7 @@ The intended instantiation for (**) is not carried out here. It takes
 ## Natural orbit Jacquet data
 
 This module proves no naturality of orbit Jacquet data. For the family `DE`
-and its hypothesis `hnat`, one can use Worker 1255's published
+and its hypothesis `hnat`, one can use the published
 `CorrectedFiltration.naturalOrbitJacquetData` and
 `naturalOrbitJacquetData_isNatural` (module `CorrectedOrbitJacquetNatural`),
 whose measures do not depend on the representation.

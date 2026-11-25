@@ -1,7 +1,5 @@
 # Scheme-theoretic centre field base change: proof
 
-Author: Worker 1401.
-
 This module proves `Langlands.GroupScheme.SchemeTheoreticCenterBaseChangeStatement`,
 stated in `Langlands.GroupScheme.Reductive.CenterStructureStatement`. The theorem
 `Langlands.GroupScheme.schemeTheoreticCenterBaseChangeStatement` has exactly that

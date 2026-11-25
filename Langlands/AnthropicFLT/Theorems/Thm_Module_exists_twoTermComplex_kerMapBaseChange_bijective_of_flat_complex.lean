@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_Module_exists_twoTermComplex_kerMapBaseChange_bijectiv
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_TwoChartCech
 import Langlands.AnthropicFLT.P2M.Sol.S_Module_exists_twoTermComplex_kerMapBaseChange_bijective_of_flat_complex
 set_option maxHeartbeats 4000000

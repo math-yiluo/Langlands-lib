@@ -1,7 +1,5 @@
 # Recovery from actual relative graph families
 
-Author: Worker 1656.
-
 This internal construction develops the inverse direction of the actual
 relative graph construction over an arbitrary scheme in universe `u`.
 It reuses `GraphBaseChange`, actual subgroup ranges and uniqueness of

@@ -195,6 +195,7 @@ section Global
 variable [ConnectedSpace S] [IsLocallyNoetherian S] [ConnectedSpace T] [IsLocallyNoetherian T]
   [IsAlgClosed Ω]
 
+set_option maxHeartbeats 1000000 in
 /-- Global level sections are natural under actual base change: the sections of the
 pulled-back normalized orbit on `T` correspond, under torsion base change, to the
 pullbacks along `b` of the sections of the original orbit on `S`. -/

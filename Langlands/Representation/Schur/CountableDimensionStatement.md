@@ -64,7 +64,6 @@ Only Mathlib is imported. `Mathlib.LinearAlgebra.Dimension.Basic` supplies
 cardinal-valued module rank; `Mathlib.RepresentationTheory.Irreducible`
 supplies the actual representation, irreducibility, and intertwiner types.
 The complex scalar type comes from `Mathlib.Basic.Complex.Basic`.
-Worker 189 authored this pair.
 
 The existing project `Langlands.AdmissibleSchurStatement` and its proof use
 admissibility to obtain a nonzero finite-dimensional fixed space. This target

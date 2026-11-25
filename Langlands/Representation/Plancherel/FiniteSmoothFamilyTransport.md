@@ -1,7 +1,5 @@
 # Coordinate and coefficient changes of finite smooth families
 
-Author: Worker 200.
-
 These are internal algebraic and calculus prerequisites for the coordinate
 and base comparisons of Waldspurger, *La formule de Plancherel pour les
 groupes p-adiques (d'après Harish-Chandra)* (2003), VI.1, printed

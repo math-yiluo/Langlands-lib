@@ -1,7 +1,5 @@
 # Rational-point matrices of actual group-scheme representations
 
-Author: Worker 1107.
-
 Let `R : CommRingCat.{u}` be any commutative ring, let `G` be a group scheme
 over `Spec R`, and let `n : Type` be a finite index type with decidable
 equality. For an actual representation

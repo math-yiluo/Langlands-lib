@@ -5,16 +5,13 @@ Namespace `Langlands.GroupScheme`. Universe parameter `u`.
 The module contains one **statement**, the `Prop`-valued definition
 `StandardWeylElementaryChainStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read the end of the proof of the Theorem of VI.5.4, printed p.175 /
+The passage read is the end of the proof of the Theorem of VI.5.4, printed p.175 /
 PDF p.181:
 
 > Soit `w ∈ W(L, M)`. On dit que `w` est élémentaire s'il existe un sous-groupe
@@ -29,8 +26,8 @@ PDF p.181:
 Renard cites [5], Lemma 2.17. That is Bernstein–Zelevinsky, *Induced representations
 of reductive p-adic groups I*, Ann. Sci. ENS (4) 10 (1977), registered as
 `bernstein-zelevinsky-1977-induced-i`, SHA256
-`8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`. Worker 1222
-read the original: 2.16(2) and Lemma 2.17 on journal pp.449–450 (PDF pp.10–11), and
+`8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`. The original
+was read: 2.16(2) and Lemma 2.17 on journal pp.449–450 (PDF pp.10–11), and
 the proof in 6.5 on journal pp.469–470 (PDF pp.30–31). In BZ, `w : M → N` is
 elementary if there is a standard `L` with `M, N < L`, `w ∈ W_L` and `l(M) = 2`
 inside `L`.
@@ -39,8 +36,8 @@ The other notation is from V.4.3–V.4.4 (printed p.119 / PDF p.125):
 `W(L, M) = {w ∈ W_G | w·L = M}`, `W(M, ∗) = ⋃_L W(M, L)` over the standard Levi
 subgroups `L`, and `l(M) = |W(M, ∗)/W_M|`.
 
-The operator approved this unit on 11 November 2026, on the actual algebraic-group
-objects of the framework and with no separate Weyl data.
+The statement is formulated on the actual algebraic-group objects of the framework,
+with no separate Weyl data.
 
 ## The statement
 
@@ -95,7 +92,8 @@ product is `((List.ofFn ws).reverse).prod`.
 
 ## Why the statement is true
 
-The implemented proof is a separate obligation. Bernstein–Zelevinsky's route (6.5)
+The implemented proof is in a separate module: `standardWeylElementaryChain`
+(`Rational.StandardWeylElementaryChainProof`). Bernstein–Zelevinsky's route (6.5)
 works in the relative root system. Write `Γ = Π ∩ L`. Assume first `w(Γ) ⊆ Π`
 (minimal representative). Induct on the length `l(w)`. If `w ≠ 1`, pick a simple
 root `α ∉ Γ` with `w(α) < 0`. Put `Γ' = Γ ∪ {α}`, `S = L_{Γ'}`,

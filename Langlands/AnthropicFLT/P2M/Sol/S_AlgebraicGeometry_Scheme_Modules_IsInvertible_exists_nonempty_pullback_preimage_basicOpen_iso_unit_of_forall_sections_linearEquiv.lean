@@ -4,7 +4,7 @@ Ported from `P2M/Sol/S_AlgebraicGeometry_Scheme_Modules_IsInvertible_exists_none
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_TwoChartCechSectionsOf
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_CoherentBaseChange
@@ -93,7 +93,7 @@ section Main
 
 theorem main
     {R : Type u} [CommRing R] [IsNoetherianRing R] {Y : Scheme.{u}} (f : Y ⟶ Spec (.of R))
-    [IsProper f] [Flat f] (P : Y.Modules) (hP : Scheme.Modules.IsInvertible P)
+    [IsProper f] [Flat f] (P : Y.Modules) (hP : Scheme.Modules.IsInvertibleFLT P)
     (hsec0 : letI := moduleSectionsOfHom f P ⊤
       Nonempty (Γ(P, ⊤) ≃ₗ[R] R))
     (hsec : ∀ (C : Type u) [CommRing C] [Algebra R C],
@@ -180,7 +180,7 @@ end
 open CategoryTheory CategoryTheory.Limits AlgebraicGeometry AlgebraicGeometry.Scheme.TwoAffineOpenCover in
 theorem solution
     {R : Type u} [CommRing R] [IsNoetherianRing R] {Y : Scheme.{u}} (f : Y ⟶ Spec (.of R))
-    [IsProper f] [Flat f] (P : Y.Modules) (hP : Scheme.Modules.IsInvertible P)
+    [IsProper f] [Flat f] (P : Y.Modules) (hP : Scheme.Modules.IsInvertibleFLT P)
     (hsec0 : letI := Scheme.TwoAffineOpenCover.moduleSectionsOfHom f P ⊤
       Nonempty (Γ(P, ⊤) ≃ₗ[R] R))
     (hsec : ∀ (C : Type u) [CommRing C] [Algebra R C],

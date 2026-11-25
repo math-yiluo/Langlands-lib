@@ -1,6 +1,6 @@
 import Langlands.Automorphic.ContragredientSphericalSpectrum
 import Langlands.Automorphic.LocalDeterminantCharacter
-import Langlands.ClassField.Global.LocalRelativeWeilUnramified
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilUnramified
 import Langlands.Global.IdeleClosedSubgroupDensity
 import Langlands.Representation.Unramified.TopHeckeOperator
 import Langlands.Automorphic.OperatorRealizationEvaluation
@@ -110,7 +110,7 @@ end AdelicGL
 
 namespace CompletionPadic
 
-open Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- A subgroup of `F_v^×` containing the integral units and the canonical uniformizer is the
 whole group. -/

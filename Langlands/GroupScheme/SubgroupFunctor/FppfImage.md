@@ -1,7 +1,5 @@
 # Fppf images and full inverse images of represented subgroup functors
 
-Worker 1372.
-
 This is derived infrastructure over any base scheme `B : Scheme.{u}`. It uses
 the published actual subgroup functors, group-scheme kernel, and effective
 epimorphism descent for represented monic subgroups. It invokes no external

@@ -1,7 +1,5 @@
 # Scalar-compatible relative weighted restricted series
 
-Authors: Worker 56; Worker 228 (renaming of `series_smul_base`).
-
 Let `r` be a positive real polyradius on a variable type `σ`, and let `A`
 be an ultrametric normed commutative ring. This file equips the existing
 actual weighted restricted series `GeneralizedTateAlgebra r A` with
@@ -85,7 +83,7 @@ value-group condition on the positive radii. The base field in the
 normed-algebra and bounded-map sections is a `NormedField`; it need not
 separately be assumed ultrametric.
 
-This unit supplies actual scalar-compatible relative series and maps.
+This module supplies actual scalar-compatible relative series and maps.
 Relative quotient comparison, surjectivity on series, independence of
 affinoid presentation, and analytic domains and sites remain separate
 obligations.

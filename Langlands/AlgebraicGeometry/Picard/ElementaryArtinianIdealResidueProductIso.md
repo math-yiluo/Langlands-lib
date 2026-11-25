@@ -184,7 +184,7 @@ on `U`.
 
 ## Provenance and scope
 
-Worker 208 authored this pair. Its provenance is internal: it combines
+The provenance of this pair is internal: it combines
 the Library's actual affine base-change kernel calculation and
 elementary-kernel tensor equivalences with actual affine section
 pushouts, finite basis coordinates, and sheaf gluing. The product

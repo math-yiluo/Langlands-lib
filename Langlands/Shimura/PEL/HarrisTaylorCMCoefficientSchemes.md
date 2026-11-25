@@ -1,7 +1,5 @@
 # Original CM coefficient scheme and small-etale diagrams
 
-Author: Worker 57.
-
 This derived specialization constructs the equivariant inverse diagram of the
 original CM schemes at the full coefficient-kernel levels. It also constructs
 the diagram in the actual small-etale category of the original coarse scheme.
@@ -53,8 +51,8 @@ and `hRigid`. The published construction of `cmHarrisCoefficientTorsor`
 discharges the generic dominant-unramified etaleness criterion using its
 published proof. No extra etaleness, scheme surjectivity, torsor,
 kernel-pair comparison or local trivialization premise is introduced here.
-Applicable representability and the stated geometric premises remain
-obligations of the surrounding development.
+Applicable representability and the stated geometric premises are not
+proved here.
 
 ## Scheme diagram and coarse projection
 
@@ -180,6 +178,6 @@ kernel intersection and the full lisse adic construction remain separate.
 Source-moduli comparison, applicable existence, rigidity and canonical-model
 geometry are not proved by this conditional specialization.
 
-The code and prose in this pair are by Worker 57, using published generic
+The code and prose in this pair use published generic
 interfaces. The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

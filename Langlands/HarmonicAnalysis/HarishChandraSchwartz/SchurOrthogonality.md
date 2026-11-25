@@ -260,13 +260,13 @@ The hypotheses of each result are:
 
 ## Relation to the Library
 
-- `IsSquareIntegrableModCentralSubgroup` (Worker 200's `CentralSubgroupCoefficients`) is used
+- `IsSquareIntegrableModCentralSubgroup` (module `CentralSubgroupCoefficients`) is used
   as the definition of square integrability. The published
   `CentralSubgroupComparisonStatement`, with its proof
   `centralSubgroupSquareIntegrabilityComparison`, compares it, for a closed central subgroup
   `A` with compact quotient in the center, with square integrability modulo the full center.
 - The unitarity result is stated with the Library's `InvariantPositiveForm` and
-  `IsUnitarizable` (`Representation/Unitary/Basic`, Worker 23). The published
+  `IsUnitarizable` (`Representation/Unitary/Basic`). The published
   `admissibleUnitarySemisimplicity` (`Representation/Unitary/AdmissibleSemisimplicityProof`)
   proves that admissible unitarizable representations are semisimple when every open subgroup
   contains a compact open one; together with a proof of unitarity for every square integrable

@@ -1,8 +1,6 @@
 # Affine quotients pull back along cartesian morphisms
 
-Authors: Worker 239 and Worker 1224. Worker 239 supplied the shared Lean and
-Markdown draft; Worker 1224 checked it against the cited sources and refined
-the correspondence.
+The Lean statement and this Markdown were checked against the cited sources.
 
 This module states, in the language of presentations of algebraic spaces by
 étale equivalence relations, a consequence of descent of affine morphisms
@@ -95,12 +93,15 @@ quotient of `E` is `Spec A`.
 
 ## Scope and role
 
-This statement is the last of three steps in the planned proof of
-`EtaleEquivalenceRelationNoetherianApproximationStatement`. It is applied to
+This statement is the last of three steps in the proof of
+`EtaleEquivalenceRelationNoetherianApproximationStatement`
+(`etaleEquivalenceRelationNoetherianApproximation`, in
+`AlgebraicSpace.FiniteSurjectiveAffineDescentProof`). It is applied to
 the cartesian morphism `E ⟶ E₁` given by
 `EtaleEquivalenceRelationNoetherianCoverLevelStatement`, once the Noetherian
 case `NoetherianEtaleEquivalenceRelationAffineDescentStatement` has made the
-quotient of `E₁` affine. The proof is a separate unit. Possible tools in the
+quotient of `E₁` affine. The proof is `etaleEquivalenceRelationCartesianAffineQuotient`,
+in `EtaleEquivalenceRelationCartesianAffineQuotientProof`. Possible tools in the
 pinned Mathlib are `ModuleCat.comonadicExtendScalars`
 (`Mathlib/Algebra/Category/ModuleCat/Descent.lean`: extension of scalars
 along a faithfully flat ring map is comonadic) and the descent of

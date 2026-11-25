@@ -1,7 +1,5 @@
 # A parabolic contains a maximal torus of the ambient group
 
-Authors: Worker 1336 and Worker 1340.
-
 `Langlands.GroupScheme.parabolicMaximalTorus` proves exactly the published
 `Langlands.GroupScheme.ParabolicMaximalTorusStatement.{u}`. For every field
 `k : Type u`, connected reductive group scheme `G` over `Spec k`, and

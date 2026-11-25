@@ -1,13 +1,11 @@
 # Proof of the hyperspecial conjugacy criterion
 
-Worker 843 and Worker 263.
-
 `Langlands.GroupScheme.reductiveHyperspecialConjugacy.{u}` proves exactly the
 published proposition
 [`ReductiveHyperspecialConjugacyStatement`](HyperspecialConjugacyStatement.md).
 It retains every universe, local-field, split reductive group, and supplied
 adjoint quotient quantifier of that statement and has no additional
-hypotheses. The statement and its import closure are unchanged.
+hypotheses. The proof does not modify the statement or its import closure.
 
 The statement corresponds to Brian Conrad, *Reductive group schemes* (2014),
 Proposition 7.2.14, p.260; its source translation is documented in the
@@ -15,7 +13,7 @@ statement's Markdown. The implemented proof uses the published dense bounded
 normalizer theorem and maximal compactness of integral points. It does not
 use Conrad's Cartan decomposition and root-coordinate argument. In fact,
 this route does not need the target's splitting premise, which is retained
-in its unchanged type.
+in its type.
 
 Let \(R=\mathcal O_F\), and write \(G_F,A_F\) for the actual generic fibres of
 the supplied integral groups \(G,G^{\mathrm{ad}}\). The proof forms

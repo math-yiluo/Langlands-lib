@@ -52,10 +52,10 @@ theorem rootRestriction_ne_nsmul_of_three_le (a : d.distinguishedVertices)
   have hR : HasRelativeRootSystem d.splitInclusion :=
     relativeRootSystem K G d.isSemisimple.isConnectedReductive
       d.splitTorus d.splitInclusion d.maximalSplit
-  have : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice d.splitTorus) :=
-    IsAddTorsionFree.of_module_rat _
-  have : IsAddTorsionFree (characterLattice d.splitTorus) :=
-    d.maximalSplit.1.1.character_toRat_injective.isAddTorsionFree
+  have : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice d.splitTorus) :=
+    HasUniqueDiv.of_module_rat _
+  have : HasUniqueDiv (characterLattice d.splitTorus) :=
+    d.maximalSplit.1.1.character_toRat_injective.hasUniqueDiv
       Langlands.LinearAlgebra.RationalSpan.toRat
   intro hb
   have hnonzero : d.rootRestriction b ≠ 0 := by

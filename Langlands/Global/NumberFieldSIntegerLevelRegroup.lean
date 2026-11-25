@@ -219,8 +219,11 @@ def adelicLevelPointHomeomorph :
   letI : ∀ i, IsOpenUnits (U₀ i) := by
     intro i
     cases i with
-    | inl p => dsimp [U₀, NumberFieldLevelFactor]; infer_instance
-    | inr z => cases z <;> dsimp [U₀, NumberFieldLevelFactor] <;> infer_instance
+    | inl p =>
+      dsimp [U₀, NumberFieldLevelFactor]
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
+    | inr z => cases z <;> dsimp [U₀, NumberFieldLevelFactor] <;>
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   let Hupper := IsHomeomorph.homeomorph (numberFieldLevelModelPointMap L T₀ Y)
     (numberFieldLevelModelPointMap_isHomeomorph_of_compact_quasiSeparated L T₀ Y)
   exact (levelPointHomeomorph K L S Y n j hj).trans
@@ -258,8 +261,11 @@ theorem adelicLevelPointHomeomorph_coordinates
   let : ∀ i, IsOpenUnits (U₀ i) := by
     intro i
     cases i with
-    | inl p => dsimp [U₀, NumberFieldLevelFactor]; infer_instance
-    | inr z => cases z <;> dsimp [U₀, NumberFieldLevelFactor] <;> infer_instance
+    | inl p =>
+      dsimp [U₀, NumberFieldLevelFactor]
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
+    | inr z => cases z <;> dsimp [U₀, NumberFieldLevelFactor] <;>
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   let Hupper := IsHomeomorph.homeomorph (numberFieldLevelModelPointMap L T₀ Y)
     (numberFieldLevelModelPointMap_isHomeomorph_of_compact_quasiSeparated L T₀ Y)
   let Hlocal := Homeomorph.piCongrRight fun i =>

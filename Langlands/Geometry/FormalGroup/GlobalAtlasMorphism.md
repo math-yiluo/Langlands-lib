@@ -1,6 +1,6 @@
 # Global formal maps and their atlas morphisms
 
-This derived unit constructs morphisms between the atlases induced by global
+This module constructs morphisms between the atlases induced by global
 formal O-module laws. It proves that the singleton atlas comparison recovers
 the original formal map on points and is natural in global formal maps.
 

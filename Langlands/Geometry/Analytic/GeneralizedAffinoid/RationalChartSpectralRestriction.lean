@@ -51,6 +51,7 @@ theorem sectionAction_extendDomain (d : RationalChart K A)
     (hW : (g : Aut A) ∈ locusStabilizer (d.extendDomain U)) :
     stabilizerSectionAction U ⟨rationalSectionAction d g, hU⟩ =
       stabilizerSectionAction (d.extendDomain U) ⟨g, hW⟩ := by
+  apply Aut.ext
   apply Iso.ext
   change stabilizerSectionMap U _ = stabilizerSectionMap (d.extendDomain U) _
   apply boundedHom_ext U
@@ -75,7 +76,7 @@ theorem domainSpectralSubgroup_comap_sectionAction (d : RationalChart K A)
     have hW := (d.mem_locusStabilizer_extendDomain_iff U g).mp hU
     apply (mem_domainSpectralSubgroup (d.extendDomain U) b r hr (g : Aut A)).mpr
     refine ⟨hW, ?_⟩
-    have heq := congrArg (fun f : Aut U.algebra => f.hom.toAlgHom b - b)
+    have heq := congrArg (fun f : Aut U.algebra => f.asIso.hom.toAlgHom b - b)
       (d.sectionAction_extendDomain U g hU hW)
     exact fun x => heq ▸ hb x
   · intro hg
@@ -84,7 +85,7 @@ theorem domainSpectralSubgroup_comap_sectionAction (d : RationalChart K A)
     have hU := (d.mem_locusStabilizer_extendDomain_iff U g).mpr hW
     apply (mem_domainSpectralSubgroup U b r hr (d.rationalSectionAction g)).mpr
     refine ⟨hU, ?_⟩
-    have heq := congrArg (fun f : Aut U.algebra => f.hom.toAlgHom b - b)
+    have heq := congrArg (fun f : Aut U.algebra => f.asIso.hom.toAlgHom b - b)
       (d.sectionAction_extendDomain U g hU hW)
     exact fun x => heq.symm ▸ hb x
 
@@ -159,8 +160,8 @@ action on the full bounded automorphisms. -/
 /-- Restriction retains the original forward action on base-algebra sections. -/
 @[simp] theorem restrictSpectralAction_baseMap (d : RationalChart K A)
     (ρ : DomainSpectralAction G A) (g : ρ.locusOpenSubgroup d.toDomain) (a : A) :
-    ((d.restrictSpectralAction ρ).toMonoidHom g).hom.toAlgHom (d.baseMap a) =
-      d.baseMap ((ρ.toMonoidHom g).hom.toAlgHom a) :=
+    ((d.restrictSpectralAction ρ).toMonoidHom g).asIso.hom.toAlgHom (d.baseMap a) =
+      d.baseMap ((ρ.toMonoidHom g).asIso.hom.toAlgHom a) :=
   ρ.sectionAction_baseMap d.toDomain g a
 
 end Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart

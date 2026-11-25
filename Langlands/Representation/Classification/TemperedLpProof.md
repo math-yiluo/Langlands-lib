@@ -1,8 +1,5 @@
 # Proof of the fixed-exponent descriptions of temperedness
 
-Authors: Worker 403 (original proof and documentation) and Worker 363
-(current-base adaptation, explicit exported universe order and validation).
-
 `Langlands.temperedLp` proves the closed proposition
 `Langlands.TemperedLpStatement.{uG,uF,uV}`. Its component lemmas are
 `Langlands.isTemperedModCenter_iff_forall_isLp` for a supplied quotient Haar
@@ -37,4 +34,4 @@ fixed-exponent definitions in `Classification/LpModCenter`, and the
 character-independence theorem in `MatrixCoefficient/ModuloCenter`.
 It invokes no original literature theorem or analytic integration estimate.
 It proves a logical compatibility of the predicates, with no block tensor
-comparison or final-task completion claim.
+comparison.

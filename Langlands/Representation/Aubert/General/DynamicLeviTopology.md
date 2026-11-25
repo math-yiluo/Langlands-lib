@@ -41,8 +41,8 @@ Van Dantzig's theorem. The local topology binder is retained explicitly, so
 the conclusion concerns exactly the ambient pinned topology and the actual
 subgroup topology.
 
-These are internal specializations of existing published constructions by
-Worker 115. They add no external-source claim and assume no connectedness,
+These are internal specializations of existing published constructions.
+They add no external-source claim and assume no connectedness,
 smoothness or reductivity of either group, no restriction on characteristic,
 and no restriction on the cocharacter. The result supplies a topological
 input for the dynamic-Levi smooth-dual proof. Admissibility and the closed

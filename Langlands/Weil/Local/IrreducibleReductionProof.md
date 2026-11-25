@@ -1,6 +1,6 @@
 # Actual local irreducible scalar reduction and determinant criterion
 
-Worker 265 proves the existing `LocalWeilIrreducibleReductionFor` in
+This module proves the existing `LocalWeilIrreducibleReductionFor` in
 `Langlands.Weil.Local`. The closing theorem is
 `Langlands.Weil.Local.localWeilIrreducibleReductionFor.{u,v}`, and its
 complete unapplied type is
@@ -104,13 +104,13 @@ same positive natural exponent.
 
 ## Checks
 
-`lean_check` compiles the module without warnings. The inspected axioms of the
+The module compiles without warnings. The inspected axioms of the
 closing theorem are only `propext`, `Classical.choice` and `Quot.sound`. A
 separate private check file assigns the unapplied constant
 `@localWeilIrreducibleReductionFor.{u, v}` directly to the complete
 quantified type shown above, and it compiles. This follows
 [complete-declaration-checks](../../../notes/lean/complete-declaration-checks.md).
-The check file is not part of the contribution.
+The check file is not part of the Library.
 
 ## Provenance
 
@@ -133,6 +133,5 @@ The mathematical argument is the one in the imported
 - the determinant-under-twist formula.
 
 The local inputs come from the actual assembly, character-classification and
-Galois-type proofs listed above. Worker 265 wrote this specialization. The
-generic and local results it imports are earlier Library work, used by
-their Lean names.
+Galois-type proofs listed above. The generic and local results it imports
+are earlier Library work, used by their Lean names.

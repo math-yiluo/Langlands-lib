@@ -1,9 +1,8 @@
 # The product of two supercuspidal representations (Ze80 1.11), proof
 
-Author: Worker 892 (task `ab61f565-1427-4746-ba77-46097563e962`, with Worker
-163 as collaborator). This module is a final assembly. It copies no code, and
-every input is a published theorem imported by Lean name. The authors of
-those inputs are listed under "Inputs" below.
+This module is a final assembly. It copies no code, and
+every input is a published theorem imported by Lean name. Those inputs are
+listed under "Inputs" below.
 
 ## Statement proved
 
@@ -66,7 +65,7 @@ beyond the statement's Markdown.
   `ρ' ⊗ ρ`, with the factors exchanged.
 - *Universes.* The field lives in `uF` and the carriers of `ρ, ρ'` in `uV`.
   These are independent universe parameters of the theorem
-  (`level_parameters = [uF, uV]` in the `lean_check` inspection). The product,
+  (`level_parameters = [uF, uV]` in the inspection of the theorem). The product,
   its invariant subspaces, its quotients and their Jacquet modules have
   carriers in `max uF uV`. The tensor targets have carriers in `uV`. The
   Jacquet clause therefore uses cross-universe `Representation.Equiv`
@@ -96,7 +95,7 @@ the result is unconditional. The three conjuncts arise as follows.
 ### Conjunct 1: nonadjacent irreducibility
 
 This conjunct is `twoSupercuspidalNonadjacentProductIrreducible F T`
-(Worker 745, module `TwoSupercuspidalNonadjacentIrreducibilityProof`). It
+(module `TwoSupercuspidalNonadjacentIrreducibilityProof`). It
 carries out the argument of BZ77 Theorem 4.2 for `ρ × ρ'` with
 Bernstein–Zelevinsky derivatives:
 
@@ -123,7 +122,8 @@ Its Markdown gives the full argument.
 For given `k, ρ, ρ'` and adjacency `h`, `productStructure_of` takes the first
 component of `adjacentStructure F T hk (hnon (k + k)) (hfilt (k + k)) ρ ρ' h`
 and applies it to the reducibility `twoSupercuspidalAdjacentProductReducible
-F T k hk ρ ρ' h : ¬ P.IsIrreducible`. The helper module (Worker 892) proves
+F T k hk ρ ρ' h : ¬ P.IsIrreducible`. The helper module
+`TwoSupercuspidalAdjacentStructure` proves
 this component with the argument of BZ77 §2.16(1) for `GL_{2k}` and the
 shape `(k, k)`:
 
@@ -158,14 +158,14 @@ Frobenius reciprocity together with Schur, and the comparison of two actual
 length-two series of `r(P)`. Second adjointness is not used. The same
 conjunct is also published as
 `twoSupercuspidalAdjacentProductJacquet` (module
-`TwoSupercuspidalAdjacentJacquetProof`, Worker 163). This module does not
+`TwoSupercuspidalAdjacentJacquetProof`). This module does not
 import it.
 
 ### The adjacent-reducibility step
 
 Ze80 gives only a sketch of reducibility in the adjacent case. The
-published proof `twoSupercuspidalAdjacentProductReducible` (Worker 1023,
-module `TwoSupercuspidalAdjacentReducibilityProof`) completes the sketch for
+published proof `twoSupercuspidalAdjacentProductReducible` (module
+`TwoSupercuspidalAdjacentReducibilityProof`) completes the sketch for
 the actual Library objects. Each obligation of the sketch is a published,
 proved theorem there, not structure data:
 
@@ -200,13 +200,13 @@ swap. The Markdown of that module gives the details.
 
 ## Inputs
 
-| Input | Lean name and module | Status, authors |
+| Input | Lean name and module | Status |
 | --- | --- | --- |
-| algebraic part of (b) and assembly | `TwoSupercuspidalAdjacent.productStructure_of`, `Classification.TwoSupercuspidalAdjacentStructure` | published, Worker 892 (source preserved by Worker 163) |
-| (a) nonadjacent irreducibility | `twoSupercuspidalNonadjacentProductIrreducible`, `Classification.TwoSupercuspidalNonadjacentIrreducibilityProof` | published, artifact `98cc1114`, task `3c9849a4`, Worker 745 |
-| adjacent reducibility | `twoSupercuspidalAdjacentProductReducible`, `Classification.TwoSupercuspidalAdjacentReducibilityProof` | published, artifact `5d030a71`, task `0988a3e0`, Worker 1023 |
-| nonassociated Jacquet subquotients (BZ77 2.13(b)) | `CuspidalSupport.nonassociatedJacquetSubquotients`, `CuspidalSupport.NonassociatedJacquetSubquotientsProof` | published, artifact `8c6610e7`, Workers 169 and 191 |
-| associated Jacquet filtration (BZ77 2.13(c)) | `CuspidalSupport.associatedJacquetFiltration`, `CuspidalSupport.AssociatedProof` | published, artifact `df6d40a0`, Workers 168 and 193 |
+| algebraic part of (b) and assembly | `TwoSupercuspidalAdjacent.productStructure_of`, `Classification.TwoSupercuspidalAdjacentStructure` | published |
+| (a) nonadjacent irreducibility | `twoSupercuspidalNonadjacentProductIrreducible`, `Classification.TwoSupercuspidalNonadjacentIrreducibilityProof` | published |
+| adjacent reducibility | `twoSupercuspidalAdjacentProductReducible`, `Classification.TwoSupercuspidalAdjacentReducibilityProof` | published |
+| nonassociated Jacquet subquotients (BZ77 2.13(b)) | `CuspidalSupport.nonassociatedJacquetSubquotients`, `CuspidalSupport.NonassociatedJacquetSubquotientsProof` | published |
+| associated Jacquet filtration (BZ77 2.13(c)) | `CuspidalSupport.associatedJacquetFiltration`, `CuspidalSupport.AssociatedProof` | published |
 
 Each input is applied at the same `F`, `T`, `uF` and `uV`. None takes a
 premise.
@@ -232,18 +232,17 @@ Outside the reducibility closure, the helper and the two Jacquet theorems
 add 140 modules. These are the geometric lemma and the filtration, count
 and length machinery of the Jacquet modules.
 
-### Independence list
+### Independence
 
-- *Task IDs and declarations.* A scan of every Lean file in the closure finds
-  none of the 22 task-ID prefixes of the Independence list, nor `8e5b4563`. It
-  also finds none of the declaration names `SegmentFullJacquetFormula`,
+- *Declarations.* A scan of every Lean file in the closure finds
+  none of the declaration names `SegmentFullJacquetFormula`,
   `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`,
   `SegmentSpecialJacquetExponentNormFormula`,
   `SegmentSocleProductIrreducibility`, `MultisegmentSocleExhaustion`,
   `OrderedMultisegmentSocleExistence`, `GenericSegmentProductUniqueness`,
   `SquareIntegrableLanglandsClassification` and
   `SegmentSpecialEssentialSquareIntegrability`. Nor does it find the
-  segment-socle statements of task `8e5b4563`: `SegmentSocleDerivatives`,
+  segment-socle derivative statements: `SegmentSocleDerivatives`,
   `HighestDerivativeSupportShift`,
   `NonjuxtaposedSegmentSocleConstituentLevel` and `castRank`. These names
   occur only in the audit sections of some Markdown files.
@@ -295,13 +294,11 @@ and length machinery of the Jacquet modules.
   and `SupercuspidalProductReducibilityTheorem` are not used. No proposition
   definition enters as a premise.
 
-### Derivative route (operator decision)
+### Derivative route
 
-The task forbids assuming a derivative formula. Conjunct 1 is proved with
-Bernstein–Zelevinsky derivatives. The trusted operator's decision on
-request `a8463ee15d57588c8de10306748b2538` (correspondence
-`bd71b9185aab5d6eafffb7891bd3a3ca`, `sender_role: operator`) allows a fully
-proved derivative route under the following conditions. Each holds for this
+The independence requirements forbid assuming a derivative formula. Conjunct 1
+is proved with Bernstein–Zelevinsky derivatives. A fully proved derivative
+route is admissible under the following conditions. Each holds for this
 closure.
 
 1. *Only BZ77's general derivative theory.* All 158 closure modules named
@@ -314,21 +311,19 @@ closure.
    BZ77 4.4. The last is proved via Whittaker multiplicity one and
    Gelfand–Kazhdan. No segment derivative formula (Ze80 3.5 or 9.6) is
    stated or used.
-2. *Every derivative result is proved, accepted and published.* These are
+2. *Every derivative result is proved and published.* These are
    the exactness, detection, BZ77 3.8, BZ77 4.4 and Leibniz proofs listed in
-   the nonadjacent proof's Markdown (tasks `44f58b77`, `a925b519`,
-   `2e5183b1`, `4e10058b`), and the nonadjacent proof itself (artifact
-   `98cc1114`). This module uses them only through that premise-free
+   the nonadjacent proof's Markdown, and the nonadjacent proof itself. This
+   module uses them only through that premise-free
    theorem, and no derivative statement is a hypothesis here.
-3. *Excluded tasks.* By the scans above, the closure contains none of
-   `ed48ae06`, `b95105c6`, `55ad1e10`, `92aea10f`, `2ae5cbe5`, `8364e73f`,
-   nor any other Independence task. It also contains no segment-socle
-   statement of `8e5b4563`. Only that task's cuspidal part enters, as
-   `SupercuspidalDerivatives` with its separate published proof (task
-   `2e5183b1`).
+3. *Excluded results.* By the scans above, the closure contains none of the
+   excluded results. It also contains no segment-socle derivative
+   statement. Only the cuspidal part of the derivative statements enters, as
+   `SupercuspidalDerivatives` with its separate published proof
+   (`Classification.SupercuspidalDerivativesProof`).
 4. *Reuse of the infrastructure.* The derivative functors are the published
-   `Derivative.generalLinearDerivative` (task `d3e94f0f`) and `level` (task
-   `dfae49d8`). The Gelfand–Kazhdan realization (task `2206daa6`) enters
+   `Derivative.generalLinearDerivative` and `level`. The Gelfand–Kazhdan
+   realization (`Smooth.Contragredient.GelfandKazhdanProof`) enters
    through BZ77 4.4. No derivative functor is redefined.
 5. *Audit recorded.* This section records the audit. The nonadjacent and
    reducibility proofs record the same audit for their own closures.

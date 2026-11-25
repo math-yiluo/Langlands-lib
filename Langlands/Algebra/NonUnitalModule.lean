@@ -191,7 +191,7 @@ instance : SetLike (NonUnitalSubmodule A M) M where
     congr 1
     exact SetLike.coe_injective h
 
-instance : PartialOrder (NonUnitalSubmodule A M) := .ofSetLike _ _
+instance : PartialOrder (NonUnitalSubmodule A M) := .ofSetLike _
 
 instance (S : NonUnitalSubmodule A M) : AddCommGroup S :=
   inferInstanceAs (AddCommGroup S.toAddSubgroup)

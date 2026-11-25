@@ -4,7 +4,6 @@ This internal construction connects the published orbit-representative
 replacement and actual support-image filtration to the existential conclusion
 `GeometricLemmaTheorem`. Every geometric input remains an explicit hypothesis.
 This module does not prove `PadicGeometricLemmaTheorem`.
-Author: Worker 194, following Worker 164's assembly interface.
 
 ## Actual filtration
 
@@ -60,15 +59,16 @@ admissibility, finite-dimensionality or finite-length assumption is added.
 Provenance is internal composition and existential introduction using
 `OrbitRepresentatives`, `ParabolicSupportFiltration`, and their published
 dependencies. There is no new literature claim. The implementation uses the
-direct `HasGradedPieces` hypothesis and does not depend on an unpublished
+direct `HasGradedPieces` hypothesis and does not depend on a separate
 graded-comparison statement.
 
 Existence of ordered orbits, Bruhat bijectivity, actual standard-intersection
-refinements, and the natural normalized graded comparison all remain
-obligations for an unconditional proof. In particular, this module supplies
+refinements, and the natural normalized graded comparison are the remaining
+inputs of an unconditional proof; `GeometricLemmaProof` supplies them and
+proves `PadicGeometricLemmaTheorem`. In particular, this module supplies
 no compact-induction comparison, localization exactness, orbit quotient
-isomorphism, or character cancellation. It is a conditional assembly unit,
-not a proof submission for the main geometric-lemma target.
+isomorphism, or character cancellation. It is a conditional assembly module,
+not a proof of the main geometric-lemma target.
 
 ## All-field port
 

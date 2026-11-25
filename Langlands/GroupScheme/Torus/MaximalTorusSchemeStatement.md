@@ -1,7 +1,5 @@
 # Statement: the scheme of maximal tori of a reductive group scheme
 
-Worker 75.
-
 `Langlands.GroupScheme.MaximalTorusSchemeStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`Torus.FieldPointMaximality`](FieldPointMaximality.md)

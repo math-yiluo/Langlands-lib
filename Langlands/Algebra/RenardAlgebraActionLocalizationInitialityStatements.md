@@ -1,10 +1,9 @@
 # Initiality of the canonical arrow of the localized algebra action
 
-Authors: Worker 709 prepared this statement unit under whole-book Renard task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 3. It imports the published
-definition unit
-[`RenardAlgebraActionLocalizationCategory`](RenardAlgebraActionLocalizationCategory.md),
-also by Worker 709. That unit in turn imports the published
+This statement module imports the published
+definition module
+[`RenardAlgebraActionLocalizationCategory`](RenardAlgebraActionLocalizationCategory.md).
+That module in turn imports the published
 [`RenardAlgebraActionLocalization`](RenardAlgebraActionLocalization.md). No
 imported object is changed. There is no proof in this file.
 
@@ -15,7 +14,7 @@ p-adiques*, French version dated 9 July 2026, Appendix A.III.1, printed
 pp.251–252 / one-based PDF257–258. Registered source identifier
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 reread these pages directly on 5 November 2026.
+These pages were reread directly on 5 November 2026.
 
 - PDF257 defines a solution (X, i) of the right universal problem posed by a
   functor F and an object Y: for every object Z and every morphism
@@ -39,7 +38,7 @@ maps intertwining the endomorphisms. The target pairs are those whose
 endomorphism is invertible.
 
 The following choices are internal derived formulations; the source makes none
-of them. They are fixed by the imported definition unit, whose Markdown
+of them. They are fixed by the imported definition module, whose Markdown
 explains them. A B-module is a k-module with an actual nonunital action
 `B →ₙₐ[k] Module.End k M`. The coefficient ring k is an arbitrary commutative
 unital ring, which contains the field case. B needs only
@@ -126,19 +125,20 @@ in a universe at least max u w is covered by choosing x. A target in a smaller
 universe has to be raised explicitly first. The statement does not identify
 independent universes or claim that the localization lives in `Type w`.
 
-## Intended proof and remaining scope
+## Proof route and scope
 
-No proof is implemented here. A future proof may take the published factor
+No proof is implemented here. The proof, `initialityStatements` in
+`RenardAlgebraActionLocalizationInitialityProof`, takes the published factor
 `EndomorphismLocalization.factor` of the underlying intertwiner of g, together
 with `factor_intertwines`, `factor_comp_iota` and `factor_unique`. The
 published `factor_map_localizedAction` shows that this factor is B-linear for
 the localized action. Transport through the `ULift` linear equivalences and
 extensionality of full-subcategory morphisms then gives the factorization.
 Initiality sends each structured arrow to its unique factor, and the field
-clause is a specialization. These are intended steps only. The published raw
-B-linear universal property is not an accepted proof of these categorical
-targets.
+clause is a specialization. These steps are not implemented in this file. The
+published raw B-linear universal property is not by itself a proof of these
+categorical targets.
 
-The other A.III examples and the rest of Appendix A remain separate
-obligations. This statement unit establishes neither a proof nor section or
+The other A.III examples and the rest of Appendix A are separate from this
+module. This statement module establishes neither a proof nor section or
 book completion.

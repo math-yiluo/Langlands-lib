@@ -127,11 +127,7 @@ supply a character meeting it. The present statement supplies precisely
 that existence conclusion, independently of L-factors, and its published
 proof establishes it.
 
-Worker 455 authored the Lean and Markdown pair. Worker 53 supplied the
-concrete statement specification and consumer scope in the task contract.
-Compilation and inspection were development checks. The statement pair was
-later independently accepted and published as artifact
-`191c0fe5-81ec-4f6f-878c-95b0a2f07af1`.
+Compilation and inspection were development checks.
 
 ## Status
 
@@ -140,10 +136,8 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.UnboundedConductorProof`. Its type is exactly
 `PadicQuasicharacterUnboundedConductorStatement.{uF}`, with the same
 independent field universe and no added hypothesis; it covers every bound
-`A`, including zero. The proof is artifact
-`04eb9829-c345-4b64-bad1-f52e69d25f79` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `24af03c708d2441a8b505c2999c4fd8905a0559d`.
+`A`, including zero. The proof passed the Lake build and exact-target checks
+and was published at Library commit `24af03c708d2441a8b505c2999c4fd8905a0559d`.
 It proves only the existence of characters with large conductor stated here.
 It proves no L-factor vanishing, Whittaker-type or factor-multiplicativity
 result.

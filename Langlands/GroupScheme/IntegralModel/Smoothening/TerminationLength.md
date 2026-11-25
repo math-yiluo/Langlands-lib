@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: length bookkeeping
 
-Author: Worker 348. Internal helper module for the termination of the smoothening sequence
+Internal helper module for the termination of the smoothening sequence
 (Kaletha–Prasad, Theorem A.6.2). It is pure module theory over a domain or a discrete valuation
 ring and uses no external result beyond Mathlib.
 

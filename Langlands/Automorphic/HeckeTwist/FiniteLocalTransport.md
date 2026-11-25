@@ -1,7 +1,5 @@
 # Transport along finite and local twists by any Hecke determinant character
 
-Author: Worker 5136.
-
 For an arbitrary Hecke character `χ`, this internal module transports invariant
 subspaces, irreducibility, central characters and cuspidality between a finite
 realization, or a local realization at a finite place `v`, and its twist by

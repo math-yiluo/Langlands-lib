@@ -30,7 +30,7 @@ relative effective divisor `W` on `X ×_A D` over `D` with the following propert
 def RelativeEffectiveDivisorHilbertPiecesStatement : Prop :=
   ∀ (A : Type u) [CommRing A] [IsNoetherianRing A] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules),
-    Flat f → Scheme.Modules.IsInvertible 𝓛X → Scheme.Modules.ClosedImmersionBySections 𝓛X f →
+    Flat f → Scheme.Modules.IsInvertibleFLT 𝓛X → Scheme.Modules.ClosedImmersionBySections 𝓛X f →
     ∃ (D : Scheme.{u}) (d : D ⟶ Spec (CommRingCat.of A))
       (W : RelativeEffectiveDivisor (pullback.snd f d)),
       LocallyOfFinitePresentation d ∧ IsSeparated d ∧

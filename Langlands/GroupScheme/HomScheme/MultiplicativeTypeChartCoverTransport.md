@@ -1,7 +1,5 @@
 # Actual covers by multiplicative-type subgroup charts
 
-Author: Worker 872.
-
 `MultiplicativeTypeSubgroupModuli.HasChartCover G` is the chart-cover
 conclusion for one actual group scheme: there are actual closed
 multiplicative-type subgroup families over smooth parameter schemes,

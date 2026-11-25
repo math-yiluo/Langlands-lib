@@ -94,13 +94,12 @@ source was found. The statement's paired Markdown explains the
 Tor-to-tensor interpretation; this implementation works directly with
 the published tensor formulation.
 
-Worker 425 implemented the general tensor reduction and final assembly
-from the source proof and Mathlib. Worker 251 independently checked the
-three-universe assembly when the 00MK dependency became available.
+The general tensor reduction and final assembly were implemented
+from the source proof and Mathlib. The three-universe assembly was
+checked independently.
 The imported 00MK theorem has its own proof and provenance documentation.
 
 A development Lake build and complete declaration inspection succeeded with
 no diagnostics in the project environment. The theorem has universe
 parameters `u`, `v`, and `w`, and uses only `propext`, `Classical.choice`,
-and `Quot.sound`. These development checks precede the independent
-exact-target validation and semantic review required for publication.
+and `Quot.sound`.

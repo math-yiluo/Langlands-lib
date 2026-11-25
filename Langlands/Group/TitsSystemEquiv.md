@@ -1,6 +1,6 @@
 # Tits systems under multiplicative equivalences
 
-This internal derived unit transports a supplied Tits-system datum along a
+This module transports a supplied Tits-system datum along a
 multiplicative equivalence of ambient groups. The full image of the source
 normalizer is required to equal the target normalizer. `equivNormalizer`
 restricts the ambient equivalence using that equality, and `equivProjection`

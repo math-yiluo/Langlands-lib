@@ -639,9 +639,7 @@ theorem diagEval_psum (hinf : HasInfinitesimalCharacter π) (l : ℕ) :
 
 end ZeroDiag
 
-/-! ## Stability of `O(n)`-stable subspaces under antisymmetric letters
-
-This section was written by Worker 725. -/
+/-! ## Stability of `O(n)`-stable subspaces under antisymmetric letters -/
 
 section SkewStability
 

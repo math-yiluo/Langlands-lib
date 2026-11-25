@@ -1,7 +1,5 @@
 # Proof of the Kostant–Rosenlicht closed-orbit theorem
 
-Worker 281 and Worker 1497.
-
 `Langlands.GroupScheme.unipotentAffineOrbitClosed` proves
 `Langlands.GroupScheme.UnipotentAffineOrbitClosedStatement.{u}`: over an
 algebraically closed field `k : Type u`, for a smooth affine unipotent group
@@ -19,7 +17,7 @@ function in the boundary's ideal. Here the orbit map is turned into an algebra
 map `φ : A → B` between coordinate algebras whose image is stable under right
 translations. Unipotence, Chevalley's constructibility theorem and the
 Jacobson property then show that `Spec B → Spec A` has closed image
-(`KostantRosenlicht.range_comap_eq_zeroLocus`, Worker 1497, modules
+(`KostantRosenlicht.range_comap_eq_zeroLocus`, modules
 `KostantRosenlicht.Points`, `KostantRosenlicht.Hopf` and
 `KostantRosenlicht.Surjective`). The passage between schemes and algebras is in
 `KostantRosenlicht.Geometry`.

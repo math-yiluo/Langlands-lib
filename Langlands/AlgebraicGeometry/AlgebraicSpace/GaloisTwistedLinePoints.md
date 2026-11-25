@@ -1,7 +1,5 @@
 # Rational points of the Galois-twisted line
 
-Author: Worker 105.
-
 This is support for clause (3) of Conrad's Example 5.13 (printed p.20). For `s ∈ K'`,
 `linePt K s : ringTest K K' ⟶ lineOver K K'` is the `K'`-point of the line with coordinate `s`.
 Its image in the Galois-twisted line `X` is `a(u_s) = atlas (linePt K s)`.

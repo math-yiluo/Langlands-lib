@@ -1,12 +1,11 @@
 # Canonical-form targets of corrected Theorem 3.6, the erratum comparisons and Corollaire 3.9
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (a): canonical forms of
-the Family 3/4 targets). This module declares ten closed Prop-valued
-definitions in namespace `Langlands.Aubert.General.RationalPointFamily`, each
-with universe parameters `u` and `v`. The review entry declaration is
-`CanonicalRationalCorrectedTheorem36Statement`. Each of the other nine is a
-separate target with its own name, so that a later exact proof task can name
-it on its own. The module proves nothing: it contains no theorem, and no
+This module declares ten closed Prop-valued definitions, the canonical forms
+of the Family 3/4 targets, in namespace
+`Langlands.Aubert.General.RationalPointFamily`, each with universe parameters
+`u` and `v`. Besides `CanonicalRationalCorrectedTheorem36Statement`, each of
+the other nine is a separate target with its own name, so that a proof can
+name it on its own. The module proves nothing: it contains no theorem, and no
 instance of any statement is claimed.
 
 ## What the module adds
@@ -188,19 +187,20 @@ proofs. The converse is not part of this statement. For the associated-Levi
 comparison, the canonical form fixes one Coxeter system, while the existing
 target quantifies over all admissible ones.
 
-Once the bridge is proved, a published proof of an existing target gives a
-proof of its canonical form. The existing targets keep their own proof owners.
+The bridge is proved (`canonicalRationalComplexTargetBridges` in
+`CanonicalRationalComplexTargetBridgesProof`), so a published proof of an
+existing target gives a proof of its canonical form.
 The fixed-Levi comparison is already proved (`rationalFixedLeviComparison` in
-`RationalFixedLeviComparisonProof`), so its canonical form will follow from
+`RationalFixedLeviComparisonProof`), so its canonical form follows from
 the bridge at once.
 
-The bridge is expected to follow by instantiation: introduce the field, group,
+The bridge follows by instantiation: introduce the field, group,
 torus and cocharacter data and the instances; then apply the existing target
 to the canonical data of the table above. For the associated-Levi comparison,
 it also takes the canonical Coxeter matrix and system, the five comparison
-theorems and the associated-Levi conjugation. A compiled Lean proof of this
-kind exists as a private draft (0 errors, 0 warnings, standard axioms only).
-It is not part of this unit and will be submitted as a separate exact proof.
+theorems and the associated-Levi conjugation. The Lean proof is the separate
+module `CanonicalRationalComplexTargetBridgesProof`; it is not part of this
+module.
 
 ## Not included
 
@@ -210,8 +210,7 @@ main results of the source, and have no canonical form here:
 `RationalCorrectedGradedVanishingStatement` and
 `RationalCorrectedGradedTransitionStatement`
 (`RationalCorrectedFiltrationTargets`), and the nine statements of
-`RationalSupportCategoryTargets`. Their existing statements and proof owners
-are unchanged.
+`RationalSupportCategoryTargets`. Their existing statements are unchanged.
 
 ## Sources and provenance
 

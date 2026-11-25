@@ -137,7 +137,9 @@ theorem weightKernelTrivial_of_rootLieLine (hLine : SplitRootLieLineStatement.{u
       · rw [two_nsmul, map_neg, LinearMap.neg_apply, map_add, LinearMap.add_apply, hann,
           add_zero, neg_zero])
     (fun j hj ψ hψ => ⟨D.weightKernelTrivial_reflection hP₁ p hj hψ.1, by
-      rw [← map_neg]
+      have hneg : P₁.reflection j (-ψ) = -P₁.reflection j ψ :=
+        (P₁.reflection j).toLinearMap.map_neg ψ
+      rw [← hneg]
       exact D.weightKernelTrivial_reflection hP₁ p hj hψ.2⟩)
   by_cases h0 : χ = 0
   · subst h0

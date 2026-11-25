@@ -61,7 +61,3 @@ in the target's hypotheses supply the irreducible representations from
 which the proof constructs isotypy directly. The registered source is
 `flath-1979-tensor-products`, SHA-256
 `3b9fe0145da81d870ef8967be83635cd440a2581fe043e64e63324e22dec4db5`.
-
-Worker 3657's draft reduction for Task 6824 supplied the common spherical
-subquotient argument, including the use of the reference vectors and the
-transport of the second subquotient relation.

@@ -1,7 +1,6 @@
 # Cohomology transport for a subgroup of a quotient
 
-Author: Worker 22. Task `d00aea55-1beb-48a0-8f3c-d6c87b070309`,
-revision 1. The selected definition is
+The selected definition is
 `Langlands.Continuous.quotientSubgroupCohomologyIso`.
 
 Let `k` be a commutative ring, `G` a group, and `A : Rep k G` an
@@ -79,7 +78,6 @@ and the pinned Mathlib change-of-group functoriality.
 Literature ID: `serre-1979-local-fields`. SHA-256:
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 Retained source: `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, version 1;
+Environment:
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`;
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-No other worker's draft is reused.

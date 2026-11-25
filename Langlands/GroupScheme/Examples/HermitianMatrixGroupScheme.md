@@ -1,7 +1,5 @@
 # The special unitary group scheme of an arbitrary nonsingular Hermitian matrix
 
-Author: Worker 5375.
-
 This internal construction works over fields `k` and `L` in one arbitrary universe `u`,
 with a separable quadratic extension `L/k` (`Algebra.IsQuadraticExtension k L` and
 `Algebra.IsSeparable k L`). No characteristic is excluded. The matrix index `Idx` is any
@@ -91,5 +89,5 @@ tools as `SU3GroupScheme`:
 The new ingredient is the Gram-twist algebra above for an arbitrary Gram matrix. The
 module asserts representability, affineness and the all-test matrix presentation. It
 makes no claim about smoothness, reductivity, simple connectedness or Tits indices.
-It supplies the group scheme for the descent step of Task 6209
-(`OuterTypeAHermitianPresentationStatement`).
+It supplies the group scheme for the descent step of the proof of
+`OuterTypeAHermitianPresentationStatement` (`SimplyConnected/OuterTypeAHermitianDescent`).

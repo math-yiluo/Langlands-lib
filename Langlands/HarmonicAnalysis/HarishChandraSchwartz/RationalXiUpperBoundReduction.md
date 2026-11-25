@@ -1,11 +1,11 @@
 # The Xi upper bound conditional on actual Jacquet unipotence
 
-Author: Worker 836, Task 5326. This is a conditional reduction.
+This is a conditional reduction.
 
 `RationalXiUpperBoundReductionStatement` names the implication below as an
-intermediate proposition. It is a derived assertion implementing the proof
-route requested by the host task; it is not a separate transcription of a
-numbered literature result.
+intermediate proposition. It is a derived assertion implementing a proof
+route for the upper bound of Lemma II.1.1 on actual points; it is not a separate
+transcription of a numbered literature result.
 
 `rationalXiUpperBound_of_jacquetUnipotent` proves
 `RationalMinimalInducedJacquetUnipotentStatement → RationalXiUpperBoundStatement`
@@ -35,5 +35,7 @@ The imported helper proofs explain the finite-face Casselman assembly,
 translated sublattice height control, and algebraic unipotent polynomial
 growth. No global Cartan extension or full-chamber transport is claimed.
 
-The host task remains incomplete until the actual Jacquet unipotence premise
-has a published proof and the unconditional Xi upper theorem is published.
+The actual Jacquet unipotence premise is proved as
+`rationalMinimalInducedJacquetUnipotent` (module `RationalMinimalInducedJacquetProof`),
+and `rationalXiUpperBound` (module `RationalXiUpperBoundProof`) applies this
+reduction to it, giving the unconditional Xi upper bound.

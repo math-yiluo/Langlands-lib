@@ -2,7 +2,7 @@
 
 The theorem
 `Langlands.Scheme.Modules.presheafPullbackTensorComparisonIsIso` has exactly
-the published type
+the type
 `Langlands.Scheme.Modules.presheafPullbackTensorComparisonIsIsoStatement.{u}`.
 It proves that, for every morphism `f : X ⟶ Y` of schemes in arbitrary
 universe `u`, the fixed natural transformation
@@ -11,7 +11,7 @@ additional hypotheses or parameters.
 
 Write `L = presheafPullback f` and
 `A(V) = (PresheafOfModules.free Y.ringCatSheaf.obj).obj (yoneda.obj V)`.
-The component in question is the published
+The component in question is
 `presheafPullbackTensorComparisonApp f M N`, from `L.obj (M ⊗ N)` to
 `L.obj M ⊗ L.obj N`. The proof keeps this component throughout its
 extension argument. Its source, target, ring-presheaf map and inverse-image
@@ -52,7 +52,7 @@ transformation
 tensorLeft M ⋙ L ⟶ L ⋙ tensorLeft (L.obj M).
 ```
 
-Its component at `N` is the published comparison. Its naturality follows
+Its component at `N` is the Library's comparison. Its naturality follows
 from `presheafPullbackTensorComparisonApp_naturality`, with the first
 morphism specialized to the identity. The preceding extension lemma
 proves this component invertible for every `N`.
@@ -63,7 +63,7 @@ Then fix an arbitrary `N` and use the transformation
 tensorRight N ⋙ L ⟶ L ⋙ tensorRight (L.obj N).
 ```
 
-Its naturality uses the same published theorem, now with the second
+Its naturality uses the same theorem, now with the second
 morphism the identity. The first extension supplies its generator
 components, and a second application gives invertibility for every `M`.
 `CategoryTheory.NatIso.isIso_of_isIso_app` assembles these componentwise
@@ -78,7 +78,7 @@ general lemma are discharged by the imported constructions.
 
 The public theorem discharges the remaining generator-pair hypothesis
 using `presheafPullbackTensorComparisonFreeYonedaIso f V W`. Its
-published hom law
+hom law
 `presheafPullbackTensorComparisonFreeYonedaIso_hom` rewrites the desired
 component to the hom of this isomorphism, which is invertible. This exact
 hom equality ensures that the theorem concerns the specified canonical
@@ -86,7 +86,7 @@ comparison.
 
 ## Internal provenance
 
-This is an internal derived proof using the pinned Mathlib free-Yoneda
+This is an internal derived proof using the Mathlib free-Yoneda
 coproduct and cokernel presentations, preservation-of-colimit APIs, and
 the imported Library generator-pair isomorphism. That isomorphism combines
 the pullback formula for a single free Yoneda generator with the
@@ -101,5 +101,4 @@ this presheaf proposition. The argument uses neither the final sheaf
 pullback tensor theorem nor a monoidal pullback structure. No flatness,
 affineness, quasicoherence, local freeness or sheafness condition is
 introduced, and no invertibility of the desired comparison is assumed.
-Worker 441 implemented the colimit extension and this final assembly;
-the generator constructions are imported by their published Lean names.
+The generator constructions are imported under their Library names.

@@ -1,7 +1,5 @@
 # Subgroup comparisons for Jacquet vanishing
 
-Author: Worker 169.
-
 These internal algebraic lemmas compare the actual subgroups in the published
 geometric-piece construction. They hold over every field, in every rank,
 including zero. They neither assert the geometric lemma nor prove either

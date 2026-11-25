@@ -1,7 +1,5 @@
 # Square integrability of coefficients from strict fundamental bounds
 
-Author: Worker 19.
-
 `Langlands.GLProductLeviStrictCoefficientL2Statement.{uF,uV}` is a closed
 proposition definition. It is an internal interface for the exponent-two
 summation step of the strict Jacquet criterion. This module supplies no proof.

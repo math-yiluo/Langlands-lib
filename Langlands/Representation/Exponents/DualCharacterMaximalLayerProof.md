@@ -1,7 +1,5 @@
 # Maximal layers of a dual-detected character quotient: proof
 
-Worker 868 wrote this proof and its explanation.
-
 The module proves
 
 ```

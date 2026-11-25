@@ -1,7 +1,5 @@
 # Pullback of actual compact induction by an automorphism
 
-Author: Worker 76.
-
 This module constructs
 `Langlands.Induction.precomposeCompactInducedEquiv` on the published actual
 compactly induced function spaces. Let `R : Type uR` be a commutative ring,
@@ -111,4 +109,7 @@ and makes no claim to reproduce a separately stated theorem in the literature.
 The intended use is automorphism transport in the relative orbit integral.
 No integral transformation formula, Haar scaling law or parabolic-orbit
 Jacquet comparison is proved here. Those remain separate obligations of the
-parent task. This module changes none of its imported Lean/Markdown pairs.
+relative orbit-integral argument. The automorphism covariance of the compact
+coinvariant integral is the proposition `CompactAutomorphismIntegralCovariance`
+(module `CompactAutomorphismIntegralStatement`), proved in
+`CompactAutomorphismIntegralProof`.

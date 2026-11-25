@@ -4,8 +4,9 @@ This internal module chooses the primitive polarization of a polarized Harris
 action and shows that the choice is compatible with the comparison of
 polarizations in the ordinary Harris relation. It adds no literature
 assertion. Positivity of polarization ratios enters only as the explicit
-hypothesis `PolarizationRayPositivityStatement`, a separately staged
-statement target.
+hypothesis `PolarizationRayPositivityStatement`, a statement defined separately
+in `Langlands.AbelianScheme.PolarizedFiniteLevel.PolarizationRayPositivityStatement`
+and not proved in the Library.
 
 ## Dual pullback as transport
 
@@ -13,8 +14,8 @@ The ordinary relation `TateNormalizedCMOrdinaryRelated` compares the
 polarization of `X` with the integral dual pullback
 `integralDualPullbackHom … g.hom (polarization of Y)` along an actual
 isomorphism `g`. `harrisDualPullback_eq_transportMap` records that this
-pullback is, by definition, the published `DualWitness.transportMap` for the
-published dual witnesses `PolarizedWeilLevel.PolarizedAction.dualWitness` of
+pullback is, by definition, the `DualWitness.transportMap` for the
+dual witnesses `PolarizedWeilLevel.PolarizedAction.dualWitness` of
 the two actions.
 
 ## The chosen primitive polarization
@@ -42,8 +43,8 @@ along `g` and the polarization of `X` carry
 `Rationalization.IntegralMultipleData` for some rational `q`, as in the
 ordinary relation. Then the dual pullback of the primitive polarization of `Y`
 is the primitive polarization of `X`. The proof is
-`DualWitness.transportMap_eq_of_primitive` applied to the published dual
-witnesses, the two published polarization properties and the integral
+`DualWitness.transportMap_eq_of_primitive` applied to the dual
+witnesses, the two polarization properties and the integral
 multiple equation. `harrisPrimitivePolarizationOf_pullback` restates this for
 the chosen primitive polarizations.
 

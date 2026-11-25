@@ -1,10 +1,9 @@
 # Brauer relations as identities in the representation ring of a finite Galois group
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. After the reduction
 to the bottom field (`BrauerKernel.BottomReduction`), Deligne's global argument needs the
-local relation in a form that can be transported to a global Galois group. This unit gives
+local relation in a form that can be transported to a global Galois group. This module gives
 that form. An actual relation `z` over the bottom field yields a finite normal intermediate
 field `K` with group `G = Gal(K/F)`, characters of subgroups of `G`, and, for every
 unramified type `τ`, an identity in the representation ring of `G`. No epsilon or L-factor
@@ -91,7 +90,7 @@ Fix `K : Extension F` with `Normal F.Carrier K.field`.
   `inflate_induce_characterLine` and `trace_induce_characterClass` that trace is the type
   component at `w`, which is zero.
 - `nonempty_galoisTypeDecomposition`: let `e` be normalized and `z` an actual relation over
-  the bottom field. Then a Galois type decomposition exists. The accepted
+  the bottom field. Then a Galois type decomposition exists. The theorem
   `exists_typeComponent_eq_zero` (`BrauerKernel.TypeChoice`) gives finite-range twisted
   characters and vanishing type components. `exists_normal_extension_trivializing` gives
   `K`, and `galoisCharacter` gives the characters. `galoisType_identity` gives the
@@ -108,7 +107,7 @@ registered as `deligne-1973-local-constants`, SHA256
 pages 542–543, PDF pages 42–43). There a representation of the Weil group is trivial on a
 finite-index subgroup of inertia, and each type component, after an unramified twist,
 becomes a representation of a finite Galois group. The global lemma 4.12 (printed page 544)
-then works with `Gal(K'/K)`. This unit is the corresponding internal derivation for the
+then works with `Gal(K'/K)`. This module is the corresponding internal derivation for the
 actual presentation. It uses the published finite-quotient tools (`exists_galois_kernel`,
 `inflate_ofClass_induce`), finite virtual-character faithfulness, Mathlib's infinite Galois
-theory, and the accepted TypeSplit, TypeChoice and Trace units.
+theory, and the TypeSplit, TypeChoice and Trace modules.

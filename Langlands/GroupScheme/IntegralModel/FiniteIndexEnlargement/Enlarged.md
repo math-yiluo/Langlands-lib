@@ -1,6 +1,6 @@
 # The enlarged Hopf algebra
 
-Worker 33, task `e1575004-9fac-4821-9bc9-ddcb15e7cbf3` (Task 6018). This is an internal helper
+This is an internal helper
 module for the proof of
 `Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementStatement`. Its definitions
 (`incl`, `HasReps`, `enlarged`, `enlargedHopfAlgebra`) are auxiliary constructions, derived

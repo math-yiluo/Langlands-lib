@@ -63,6 +63,6 @@ packages that same actual map with these two properties and its full smooth
 connected unipotent kernel.
 
 The provenance is internal composition of the named existing constructions.
-This unit provides a fibre quotient and its exact comparison maps; integral
+This module provides a fibre quotient and its exact comparison maps; integral
 opposite factors and the descended facet derivative root datum require
 further arguments.

@@ -1,7 +1,8 @@
 # The actual inverse-reversal geometric piece
 
-Author: Worker 526, adapting the published full-refinement assembly by
-Worker 289 and reusing the published reversal transport constructions.
+The construction adapts the published full-refinement assembly of
+`CuspidalSupport.AssociatedGeometricPiecesEquivalenceProof` and reuses the
+published reversal transport constructions.
 
 `Langlands.Geometric.reversedIdentityGeometricPieceEquiv` constructs an
 actual representation equivalence from the geometric piece at the raw
@@ -43,10 +44,10 @@ the inverse law of the actual Levi equivalence.
 ## Provenance and scope
 
 This is internal composition of public actual maps. The full-refinement
-assembly follows the implemented proof by Worker 289 in
+assembly follows the implemented proof in
 `CuspidalSupport.AssociatedGeometricPiecesEquivalenceProof`; only its
 unneeded source hypotheses are absent from this new explicit data interface.
-The present unit does not assume or generalize the published theorem by
+The present module does not assume or generalize the published theorem by
 ignoring hypotheses: it constructs the equivalence directly from the public
 helper definitions, which have no such hypotheses. The block-reversal
 construction is the published one, and it is not assumed involutive.

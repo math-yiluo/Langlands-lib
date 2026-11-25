@@ -1,6 +1,6 @@
 # Bivariate Taylor expansion and filtered ring homomorphisms
 
-Author: Worker 5406. Internal helper for the proof of
+Internal helper for the proof of
 `Langlands.AlgebraicGeometry.LangWeil.StepanovNormPolynomialsStatement`; not a result of the
 literature. It plays the role of the Taylor expansions with hyperderivatives `E^{(i,j)}` in
 Schmidt, *Zur Methode von Stepanov* (Acta Arith. 24, 1973), Section 3, but is set up as a ring

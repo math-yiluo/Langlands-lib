@@ -1,7 +1,5 @@
 # Base change of the fibre criterion for dynamic parabolic quotients
 
-Authors: Worker 254, Worker 266.
-
 This module proves one lemma in the namespace `Langlands.GroupScheme`. It
 imports only the Library module `Langlands.GroupScheme.Dynamic.BaseChange`.
 

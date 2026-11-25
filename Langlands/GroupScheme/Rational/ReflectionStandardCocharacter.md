@@ -57,8 +57,9 @@ statement is not needed after its reflection data have been obtained.
 pointwise-intersection comparison to obtain exactly
 `StandardCocharacterStatement` at universe `u`, on every test scheme.
 
-This is a conditional prerequisite, not an unconditional proof of that
-host statement. Neither intrinsic reflection existence nor sign-to-dynamic
+This is a conditional prerequisite, not an unconditional proof of
+`StandardCocharacterStatement`, the statement this module serves; the Library
+proves it as `standardCocharacter` (module `Rational.StandardCocharacterProof`). Neither intrinsic reflection existence nor sign-to-dynamic
 comparison is established here. No positive-root stabilizer, parabolic
 classification, Weyl generation, or Weyl faithfulness theorem is used by
 this adapter. Any proof of its structural inputs must discharge its own

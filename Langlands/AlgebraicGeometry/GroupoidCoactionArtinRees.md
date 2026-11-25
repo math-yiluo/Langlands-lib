@@ -1,6 +1,6 @@
 # Artin–Rees support dévissage for coactions
 
-Worker 148. This internal construction isolates the algebraic step used in
+This internal construction isolates the algebraic step used in
 support dévissage. The rings lie in an arbitrary universe `u`, and the
 coefficient modules lie in an independent universe `v`.
 

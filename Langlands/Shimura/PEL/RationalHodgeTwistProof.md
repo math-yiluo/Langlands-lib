@@ -1,10 +1,8 @@
 # Existence of a rational skew twist with the Kottwitz Hodge sign
 
-Authors: Worker 217 wrote the Lean proof and its documentation and checked
-them. Worker 57 is a coauthor. They designed the simultaneous
-compact-sphere route stated in the task contract. The proof also reuses the
-finite-dimensionality lines of the final theorem, which come from Worker 57's
-snippet in the earlier joint proof `PositiveRationalTwistProof`.
+The proof follows a simultaneous compact-sphere route. It also reuses the
+finite-dimensionality lines of the final theorem from the proof in
+`PositiveRationalTwistProof`.
 
 `Langlands.Shimura.CentralSimpleUnitaryData.rationalHodgePolarizingTwistExists`
 proves the exact proposition `D.RationalHodgePolarizingTwistExists C` from
@@ -145,8 +143,7 @@ are then proved as follows.
 The target's conventions come from its statement module. It uses Kottwitz
 (1992), printed p.374, for positivity of `(v, h(i) w)`, the conjugated
 Kottwitz homomorphism `h₀` of `RealPositivity`, and the Harris–Taylor (2001)
-I.7 skew-unit trace form. The proof follows the route proposed in the task
-contract. It is an internal adaptation of the compact-sphere and density
+I.7 skew-unit trace form. It is an internal adaptation of the compact-sphere and density
 argument of `PositiveRationalTwistProof` to two forms at the same explicit
 real point `h₀(-i)`, in the spirit of the openness and rational approximation
 of Kottwitz's Lemma 2.8 and Harris–Taylor I.7. It does not transcribe either
@@ -156,6 +153,6 @@ The file adds only theorems, no definitions, and imports
 `RationalHodgeTwistStatement`, `HodgeTraceForm` and
 `PositiveRationalTwistProof` unchanged. Its axioms are `propext`,
 `Classical.choice` and `Quot.sound`. It stops at this rational existence
-theorem. It does not specialize the witness for the parent task or compare
+theorem. It does not specialize the witness or compare
 adelic groups, and it does not treat coefficient descent, lattices,
 abelian-scheme polarizations or PEL moduli.

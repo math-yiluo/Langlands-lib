@@ -1,7 +1,5 @@
 # Reduction of the Isomorphism Theorem to semisimple rank at most one
 
-Author: Worker 712.
-
 This internal assembly proves one lemma and a conditional result, and bundles
 the hypotheses of the conditional result into one proposition.
 

@@ -1,8 +1,7 @@
 # Exponential type in vertical strips and Gamma factors
 
-Helper module of an intermediate result of Task 7400, towards
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones. The
+Helper module of an intermediate result towards
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Every declaration is proved, with no axioms beyond Lean's standard ones. The
 module imports `ArchimedeanInverseMellin` and Mathlib's Gamma-function files.
 
 It shows that `1/Γ`, `1/Γ_ℝ` and `1/Γ_ℂ` have exponential type in vertical strips. It also

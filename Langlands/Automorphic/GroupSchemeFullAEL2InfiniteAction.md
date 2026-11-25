@@ -1,6 +1,6 @@
 # The original infinite adelic action on the full cusp L2 space
 
-Worker 116 constructs `fullAEL2CuspidalInfiniteRightAction` on the unchanged
+This module constructs `fullAEL2CuspidalInfiniteRightAction` on the unchanged
 full all-parabolic cuspidal submodule `fullAEL2CuspidalSubmodule` of
 `Lp ℂ 2 (positiveRationalQuotientHaarMeasure F G T i)`. It is exactly the
 existing bounded full cusp right action `fullAEL2CuspidalBoundedRightAction`

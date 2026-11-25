@@ -1,7 +1,5 @@
 # Exact counts for a finite indexed filtration
 
-Author: Worker 496.
-
 `Langlands.finiteFamilyFiltrationMultiplicity` proves exactly
 `Langlands.FiniteFamilyFiltrationMultiplicityStatement`, with independent
 universes for the scalar field, monoid, finite index type, ambient carrier,

@@ -1,7 +1,5 @@
 # Equal fppf Picard classes of two actual line bundles form an immersion locus
 
-Author: Worker 766.
-
 ## Statement
 
 `Langlands.AlgebraicGeometry.Picard.FieldPicardClassEqualizerImmersionStatement.{u}`
@@ -66,7 +64,7 @@ immersions. The Library theorems
 equalizer loci of arbitrary pairs of sections of `F`. An arbitrary section of the
 sheafification is only fppf-locally of the form `sheafClassOf`. Passing from the present
 case to arbitrary sections therefore needs a separate fppf descent of immersion loci.
-That step is not part of this unit. The closedness of the diagonal, which is the
+That step is not part of this module. The closedness of the diagonal, which is the
 separatedness conjunct of the Library's `FieldPicardSheafAlgebraicSpaceStatement`, is
 also not claimed here.
 

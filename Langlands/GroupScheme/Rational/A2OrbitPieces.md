@@ -1,7 +1,5 @@
 # Piece families of `A₂` orbits of simple roots
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.A2OrbitPieces`, namespace
 `Langlands.GroupScheme.GaloisCompatiblePinningData`.
 

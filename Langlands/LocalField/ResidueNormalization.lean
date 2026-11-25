@@ -122,7 +122,7 @@ theorem residueNormalizedAbsoluteValue_of_ne_zero {x : F} (hx : x ≠ 0) :
       (residueCardinality F : ℝ) ^ WithZero.log (FML.normalizedMultiplicativeValuation F x) := by
   have hv := (FML.normalizedMultiplicativeValuation F).ne_zero_iff.mpr hx
   change (WithZeroMulInt.toNNReal _ _ : ℝ) = _
-  rw [WithZeroMulInt.toNNReal_neg_apply _ hv, WithZero.toAdd_unzero_eq_log hv]
+  rw [WithZeroMulInt.toNNReal_neg_apply _ hv]
   simp
 
 /-- Exact source formula for any finite additive order. -/

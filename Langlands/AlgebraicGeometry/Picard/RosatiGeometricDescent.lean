@@ -35,7 +35,7 @@ theorem baseChange_map_ne_zero_field
 
 namespace Rosati
 
-local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+private local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
 
 section Transport
 
@@ -81,20 +81,21 @@ theorem integralDiagonalPositive_of_threeStep_baseChange
   have hf₂ : f₂ ≠ 0 := baseChange_map_ne_zero_field c hf₁
   have hp := hpos f₂ hf₂
   let F : End0 A →ₗ[ℚ] End0 A₂ :=
-    (rationalBaseChangeHom c).comp
-      ((rationalBaseChangeHom b).comp (rationalBaseChangeHom s))
+    (rationalBaseChangeEnd c A₁).toLinearMap.comp
+      ((rationalBaseChangeEnd b A₀).toLinearMap.comp (rationalBaseChangeEnd s A).toLinearMap)
   have hprime (a : End0 A) :
       primeEndomorphismTrace A₂ 2 (F a) = primeEndomorphismTrace A 2 a := by
     change primeEndomorphismTraceAt A₂ (Over.mk (𝟙 _)) 2
-      (rationalBaseChangeHom c (rationalBaseChangeHom b (rationalBaseChangeHom s a))) =
+      (rationalBaseChangeEnd c A₁ (rationalBaseChangeEnd b A₀ (rationalBaseChangeEnd s A a))) =
       primeEndomorphismTraceAt A (Over.mk (𝟙 _)) 2 a
-    rw [primeEndomorphismTraceAt_baseChange, primeEndomorphismTraceAt_baseChange,
-      primeEndomorphismTraceAt_baseChange]
+    rw [rationalBaseChangeEnd_apply c A₁, primeEndomorphismTraceAt_baseChange,
+      rationalBaseChangeEnd_apply b A₀, primeEndomorphismTraceAt_baseChange,
+      rationalBaseChangeEnd_apply s A, primeEndomorphismTraceAt_baseChange]
     have hunit : IsUnit (2 : Γ(Spec (.of k), ⊤)) := by
       simpa only [map_ofNat] using (isUnit_iff_ne_zero.mpr (by norm_num : (2 : k) ≠ 0)).map
         (Scheme.ΓSpecIso (.of k)).inv.hom
     exact primeEndomorphismTraceAt_geometric A ((((𝟙 _) ≫ c) ≫ b) ≫ s) (𝟙 _) 2 hunit a
-  let a₂ : End0 A₂ := homToHom0 f₂
+  let a₂ : End0 A₂ := CategoryTheory.End.of (homToHom0 f₂)
   have htrace : GeometricTraceCompatibleLinearMap A A₂ F :=
     geometricTraceCompatibleLinearMap_of_target_ne_zero A A₂ F hprime
       (a₂ * @involution _ A₂ P W₂ hadd₂ lam₂ hinv₂ a₂) (ne_of_gt hp)
@@ -102,11 +103,14 @@ theorem integralDiagonalPositive_of_threeStep_baseChange
       @traceForm P C _ A₂ W₂ hadd₂ lam₂ hinv₂ (F a) (F d) =
         @traceForm P k _ A W hadd lam hinv a d := by
     change @traceForm P C _ A₂ W₂ hadd₂ lam₂ hinv₂
-      (rationalBaseChangeHom c (rationalBaseChangeHom b (rationalBaseChangeHom s a)))
-      (rationalBaseChangeHom c (rationalBaseChangeHom b (rationalBaseChangeHom s d))) = _
+      (rationalBaseChangeEnd c A₁ (rationalBaseChangeEnd b A₀ (rationalBaseChangeEnd s A a)))
+      (rationalBaseChangeEnd c A₁ (rationalBaseChangeEnd b A₀ (rationalBaseChangeEnd s A d))) = _
     rw [traceForm_apply, traceForm_apply,
+      rationalBaseChangeEnd_apply c A₁ (rationalBaseChangeEnd b A₀ (rationalBaseChangeEnd s A d)),
       involution_baseChange P c W₁ W₂ hadd₁ hadd₂,
+      rationalBaseChangeEnd_apply b A₀ (rationalBaseChangeEnd s A d),
       involution_baseChange P b W₀ W₁ hadd₀ hadd₁,
+      rationalBaseChangeEnd_apply s A d,
       involution_baseChange P s W W₀ hadd hadd₀]
     change geometricEndomorphismTrace A₂
       ((rationalBaseChangeEnd c A₁) ((rationalBaseChangeEnd b A₀)
@@ -115,11 +119,13 @@ theorem integralDiagonalPositive_of_threeStep_baseChange
         ((rationalBaseChangeEnd s A) (@involution _ A P W hadd lam hinv d)))) = _
     rw [← map_mul, ← map_mul, ← map_mul]
     exact htrace _
-  rw [← hform (homToHom0 f) (homToHom0 f)]
+  rw [← hform (CategoryTheory.End.of (homToHom0 f)) (CategoryTheory.End.of (homToHom0 f))]
   change 0 < @traceForm P C _ A₂ W₂ hadd₂ lam₂ hinv₂
-    (rationalBaseChangeHom c (rationalBaseChangeHom b (rationalBaseChangeHom s (homToHom0 f))))
-    (rationalBaseChangeHom c (rationalBaseChangeHom b (rationalBaseChangeHom s (homToHom0 f))))
-  simpa only [homToHom0_apply, rationalBaseChangeHom_tmul] using hp
+    (rationalBaseChangeEnd c A₁ (rationalBaseChangeEnd b A₀
+      (rationalBaseChangeEnd s A (CategoryTheory.End.of (homToHom0 f)))))
+    (rationalBaseChangeEnd c A₁ (rationalBaseChangeEnd b A₀
+      (rationalBaseChangeEnd s A (CategoryTheory.End.of (homToHom0 f)))))
+  simpa only [rationalBaseChangeEnd_apply, homToHom0_apply, rationalBaseChangeHom_tmul] using hp
 
 end Transport
 

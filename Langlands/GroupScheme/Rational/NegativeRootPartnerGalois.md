@@ -1,7 +1,5 @@
 # Galois transport of negative root partners
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.NegativeRootPartnerGalois`.
 
 Setting, as in the Library module `Rational.SteinbergCanonicalGaloisTransport`: fields

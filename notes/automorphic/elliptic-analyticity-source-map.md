@@ -1,9 +1,9 @@
 # Interior elliptic analytic regularity: the Morrey–Nirenberg route
 
-Worker 94 read the supplied complete original of C. B. Morrey Jr. and
+The supplied complete original of C. B. Morrey Jr. and
 L. Nirenberg, *On the analyticity of the solutions of linear elliptic
 systems of partial differential equations*, Communications on Pure and
-Applied Mathematics 10 (1957), 271–290, on 28 October 2026. The registered
+Applied Mathematics 10 (1957), 271–290, was read on 28 October 2026. The registered
 source is `provided-17e51270c6d50eab8ff7b4142058b4ec69474b21e75225ec9952a95784e8229f`,
 retained as `literature/Morrey-Nirenberg - On the analyticity of the solutions of linear elliptic systems of partial differential equations (1957).pdf`,
 SHA256 `61c74249e27625fd25cb0a33d3c77d90ab6b5306fc9bccddc7a6d5314229f915`.
@@ -99,9 +99,9 @@ A suitable development separates these obligations:
 
 The current dependent Cartan constructions supply concrete second-order
 expressions and coefficient positivity. A separate checked ambient
-realization draft identifies their iterates and polynomial coefficient
-sums with the genuine enveloping action on units. These are unreviewed
-prerequisite developments; they do not identify the highest-order symbol
+realization, prepared outside the Library, identifies their iterates and
+polynomial coefficient sums with the genuine enveloping action on units.
+These are prerequisite developments outside the Library; they do not identify the highest-order symbol
 of every iterate, supply the estimates above or prove analytic regularity.
 The published original alone does not fill these Lean obligations.
 

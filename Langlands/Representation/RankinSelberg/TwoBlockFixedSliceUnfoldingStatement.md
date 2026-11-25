@@ -3,9 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockFixedSliceUnfoldingStatement`.
 Declaration `Langlands.RankinSelberg.TwoBlockFixedSliceUnfoldingStatement.{uF,uV,uW}`.
 
-Authors: Worker 778 (Lean and Markdown) and Worker 1175 (independent reading
-of JPSS printed pages 409–412 and the errata search).
-
 This module defines one closed proposition and proves nothing. The proposition
 is the actual analytic content of the first unfolding in JPSS (1983),
 Section 4.6, printed pages 411–412. It applies to the published integrand on
@@ -26,7 +23,8 @@ convolutions*, American Journal of Mathematics 105 (1983), 367–464. Source ID
 SHA-256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The PDF has no text layer on these pages. Printed pages 410–412 (one-based PDF
 pages 45–47) were read from rendered images. No erratum for this source was
-found in the literature index, the Library notes or the project notes.
+found in the literature index, the Library notes or the project notes. An
+independent second reading covered printed pages 409–412 and the errata search.
 
 - Pages 410–411. The blocks are `σ_1 = τ_1 ⊗ α^(-u)` and `σ_2 = τ_2 ⊗ α^u` with
   `α = |det|`. The function `W'` is defined by the Jacquet integral (2) of a
@@ -199,7 +197,7 @@ the block-carrier universe `uW` are independent.
 - The representative clause identifies the radical average with
   `W(g) W'(g) Φ(ηg)`, the integrand of (4). It is the published
   `TwoBlockUnfolding.radicalAverage_integrand_mk` applied to the twisted
-  functionals; the author checked this by compiling a proof outside this
+  functionals; this was checked by compiling a proof outside this
   module. It is kept as a conclusion so that the Bochner identity below can be
   read as the source's identity between (4) and the first integral on page 412.
 - For every compatible pair `νN`, `νH`, the last clause states absolute
@@ -285,7 +283,7 @@ parameter above the bound.
 
 The source's one-sentence justification uses three ingredients. The first
 two are stated in the Library; the third is the extra step this statement
-makes explicit. This is a route for a later proof; this module does not claim
+makes explicit. This is a route for a proof; this module does not claim
 that the existing data identities or the compact-support statement alone
 prove the proposition.
 
@@ -294,7 +292,8 @@ prove the proposition.
    `π`, standard functional, actual coefficient `W`, Schwartz–Bruhat `Φ` and
    `k`, the function `N g ↦ ‖W(g)‖ ‖Φ(lastRow g)‖` restricted to the slice has
    compact support in `NQ`. This is the source's "compactly supported modulo
-   `N_r`". Its proof is the separate task `8459a926`.
+   `N_r`". Its proof is `whittakerRowSliceCompactSupport` in
+   `WhittakerRowSliceCompactSupportProof`.
 2. **Ordinary convergence for large `u`.** The published theorem
    `Langlands.RankinSelberg.twoBlockJacquetConvergence` proves
    `TwoBlockJacquetConvergenceStatement`: for nonzero `ell` there is `C` such
@@ -326,7 +325,8 @@ prove the proposition.
    restricted to the slice are continuous with compact support, and they are
    integrable for the regular measure `νN`, which is finite on compact sets.
 4. **Tower.** The published `TwoBlockUnipotentQuotientIntegrationStatement`,
-   whose proof is task `216195e1`, supplies a kernel `κ` from `NQ` to `HQ`
+   whose proof is `twoBlockUnipotentQuotientIntegration` in
+   `TwoBlockUnipotentQuotientIntegrationProof`, supplies a kernel `κ` from `NQ` to `HQ`
    with `κ [g]_N` the image of `μR` under `x ↦ fiberPoint x g`. It gives the
    criterion that a measurable `E` is integrable on `Hslice` if almost every
    fiber is integrable and `q ↦ ∫ ‖E‖ dκ(q)` is integrable on `slice`; this

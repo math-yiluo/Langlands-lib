@@ -1,7 +1,5 @@
 # Proof of existence and full independence of parabolic root presentations
 
-Author: Worker 4487.
-
 `parabolicRootPresentation` proves the published proposition
 `ParabolicRootPresentationStatement.{u}` exactly, at arbitrary universe `u`.
 The statement is the conjunction of three universal propositions. For every

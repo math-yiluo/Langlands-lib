@@ -1,7 +1,8 @@
 # Reduction of the central-intersection finiteness to an algebraic closure
 
-Author: Worker 846. The interface of the algebraically closed input was
-proposed by Worker 1408.
+The algebraically closed input is the hypothesis `hfin` below; it is
+supplied by `CentralIntersection.finite_of_isAlgClosed` (module
+`Derived.CentralIntersection.AlgClosed`).
 
 This module reduces `DerivedCentralIntersectionFinitenessStatement.{u}` to one
 assertion over algebraically closed fields, which is taken as the explicit

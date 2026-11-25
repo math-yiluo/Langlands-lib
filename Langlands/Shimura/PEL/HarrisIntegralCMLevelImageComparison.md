@@ -1,6 +1,6 @@
 # Comparison of fixed-family and arbitrary integral Harris class images
 
-This internal unit compares the normalized class image of a fixed polarized
+This internal module compares the normalized class image of a fixed polarized
 Harris family with the existing image allowing arbitrary integral-action
 representatives. It uses the same universe-zero arithmetic data, fixed abelian
 scheme, supplied dual witness and polarization, prescribed dimension and named
@@ -27,7 +27,7 @@ fixed-family inclusion as its underlying map to the original normalized
 presheaf.
 
 The provenance is internal: actual integral representatives, the proved family
-evaluation law and subtype inclusions supply all comparisons. This unit
+evaluation law and subtype inclusions supply all comparisons. This module
 asserts no converse or surjectivity, and no representing geometry, smoothness,
-projectivity or output admissibility. Those remain obligations of the host
-representability task.
+projectivity or output admissibility. Those are not part of this module; a
+representability proof must supply them.

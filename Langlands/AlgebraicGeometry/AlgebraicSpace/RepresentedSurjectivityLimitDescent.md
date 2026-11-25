@@ -1,12 +1,13 @@
 # Eventual surjectivity of represented finite-presentation morphisms
 
-This internally derived unit proves eventual surjectivity for a morphism of
+This internally derived module proves eventual surjectivity for a morphism of
 finitely presented quasi-separated algebraic spaces that is independently
 known to be representable at the original stage. It also gives the corresponding
 reduction for any scheme morphism property stable under base change and
 satisfying descent along surjective etale maps, provided that property's
 scheme structural limit-descent theorem is available. The arbitrary cofiltered
-category and universe of the host limit theorem are retained.
+category and universe of the limit theorem `SpaceLimitPropertyDescentStatement`
+are retained.
 
 `SchemeTargetAtlas.toRepresented` equips an existing scheme target-atlas square
 with a supplied representability witness. It preserves the actual source,
@@ -44,6 +45,6 @@ and limit comparisons from `SchemeLimitFiberLoci`, constructible detection from
 `ConstructibleAffineLimit`, and the published model-uniqueness, target-atlas and
 represented-chart results imported through `EventualTargetAtlasDescent` and
 `SpaceLimitUniquenessProof`. No general effective descent of representability
-is assumed or proved. This unit does not prove properness descent or the full
-eight-property `SpaceLimitPropertyDescentStatement`; those remain obligations
-of the host task.
+is assumed or proved. This module does not prove properness descent or the full
+eight-property `SpaceLimitPropertyDescentStatement`, which is proved in
+`SpaceLimitPropertyDescentProof`.

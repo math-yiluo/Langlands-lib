@@ -1,6 +1,6 @@
 # Fppf-local properties of test morphisms
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1). It has no separate literature source; it packages standard facts
 about the fppf topology on `Over S` from Mathlib.

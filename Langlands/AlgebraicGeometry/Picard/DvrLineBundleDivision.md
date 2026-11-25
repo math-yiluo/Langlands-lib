@@ -1,7 +1,5 @@
 # Dividing line-bundle sections by the uniformizer over a DVR
 
-Author: Worker 171.
-
 Module `Langlands.AlgebraicGeometry.Picard.DvrLineBundleDivision`, namespace
 `Langlands.AlgebraicGeometry.Picard.DvrAbelianGeometry`.
 

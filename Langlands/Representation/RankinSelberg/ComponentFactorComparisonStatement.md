@@ -1,7 +1,5 @@
 # Pair-factor comparison for actual irreducible components
 
-Author: Worker 1747.
-
 `Langlands.RankinSelberg.ComponentFactorComparisonStatement` is an internal
 supporting statement for the component arguments in the square-integrable
 pair-factor problem. It concerns a p-adic field with its canonical topology

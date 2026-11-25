@@ -1,7 +1,5 @@
 # Uniqueness of unipotent conjugators from self-normalization
 
-Worker 639.
-
 This is an internal construction and algebraic reduction for
 `RelativeLeviConjugacyStatement`. It does not prove that statement. All bases
 are arbitrary schemes in universe `u`.
@@ -51,6 +49,5 @@ not been established by this module.
 The provenance is internal and derived: this is elementary algebra applied to
 the published `SubgroupFunctor.range`, `innerIso`, `IsRepresentedBy` and
 `leviComponent` constructions. It introduces no additional geometric axiom
-or literature assertion. In particular it neither imports nor assumes an
-unpublished proof of either relative geometric statement. The original
-statement modules and their dependencies are unchanged.
+or literature assertion. In particular it does not import a proof of either
+relative geometric statement; both enter only as explicit inputs.

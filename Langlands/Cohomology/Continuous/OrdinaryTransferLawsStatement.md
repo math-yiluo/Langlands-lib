@@ -32,8 +32,11 @@ from cohomology of `K` to cohomology of the nested subgroup before applying
 the two transfers.
 
 `OrdinaryTransferLaws` is the conjunction of these exact targets. Coefficient
-naturality is separate work in the ordinary-comparison proof task and is not
-repeated here. Continuous transfer and its laws remain downstream.
+naturality is proved separately, as `ordinaryCohomologyCorestriction_naturality`
+in `Langlands.Cohomology.Tate.CohomologyTransferNaturality`, and is not
+repeated here. Continuous transfer and its laws are downstream, in
+`Langlands.Cohomology.Continuous.Corestriction` and
+`Langlands.Cohomology.Continuous.CorestrictionLawsStatement`.
 
 The provenance is derived from Serre, *Local Fields*, 1979 English translation,
 Chapter VII section 7, printed page 119 (PDF page 125). Serre defines degree-zero

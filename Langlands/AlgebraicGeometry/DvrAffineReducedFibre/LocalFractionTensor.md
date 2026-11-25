@@ -1,7 +1,5 @@
 # Fraction-field tensors at a vertical point
 
-Worker 594.
-
 `localizedGenericFibreFractionEquiv` identifies the base change of a
 generic localization from \(B\) to \(Q\) with the fraction field of \(Q\),
 when \(R \to Q\) is an injective local map of DVRs. Both rings localize

@@ -1,6 +1,6 @@
 # Splitting of trigonalizable extensions over algebraically closed fields
 
-Author: Worker 60 (Task 7805). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.ExtensionSplitAlgClosed`, namespace
 `Langlands.GroupScheme.TrigonalizableExtensionSplit`.
 

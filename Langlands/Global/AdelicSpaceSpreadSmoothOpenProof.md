@@ -1,7 +1,5 @@
 # Proof of Conrad's Theorem 5.9 for separated algebraic spaces
 
-Author: Worker 5254.
-
 `Langlands.Global.adelicSpaceSpreadSmoothOpen` proves the unchanged published
 proposition `Langlands.Global.AdelicSpaceSpreadSmoothOpenStatement.{u}` from
 `Langlands/Global/AdelicSpaceSpreadMapStatement.lean`, in every universe `u`, with no extra

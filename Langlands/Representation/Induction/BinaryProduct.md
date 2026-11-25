@@ -1,7 +1,5 @@
 # The binary normalized product in all ranks
 
-Author: Worker 837.
-
 This module constructs the binary normalized product `A × B` of smooth complex
 representations `A` of `GL_a(F)` and `B` of `GL_b(F)`, for every pair of ranks
 `a b : ℕ`, including rank zero. The principal declaration is

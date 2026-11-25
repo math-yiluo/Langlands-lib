@@ -6,7 +6,7 @@ proof of the transfer law for the Tits obstruction (Tits, *Représentations
 linéaires irréductibles d'un groupe réductif sur un corps quelconque*,
 J. reine angew. Math. 247 (1971), Proposition 5.1, printed p. 207 / PDF
 p. 12). The corestriction is the published tensor descent `corAlg`/`corCSAOf`
-of `Langlands/Algebra/BrauerCorestriction` (Task 7575), which follows Tits's
+of `Langlands/Algebra/BrauerCorestriction`, which follows Tits's
 §5.3 (printed p. 208 / PDF p. 13).
 
 **Main result.** Let `A` be a central simple `E`-algebra, realized inside

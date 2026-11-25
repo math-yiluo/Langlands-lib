@@ -40,7 +40,7 @@ commutativity, or other geometric hypothesis is imposed.
 
 ## Provenance
 
-This unit derives the identity-cotangent comparison from the canonical
+This module derives the identity-cotangent comparison from the canonical
 relative-differential comparison of Stacks Project Lemma 29.33.8
 (tag 01UV), specialized to the fiber-product square in Lemma 29.33.10
 (tag 01V0). Both occur in `01UM.html` of registered source

@@ -1,7 +1,5 @@
 # Subrepresentation relations for a filtered union of compact subgroups
 
-Author: Worker 269.
-
 `Langlands.Jacquet.coinvariantSubrepresentationRelations` proves exactly
 `Langlands.Jacquet.CoinvariantSubrepresentationRelationsStatement`, with the
 published hypotheses and universes.

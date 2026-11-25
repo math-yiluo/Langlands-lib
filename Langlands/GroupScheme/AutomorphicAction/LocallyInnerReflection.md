@@ -1,8 +1,6 @@
 # Fppf reflection of local innerness
 
-Worker 561.
-
-This internal unit proves that `IsFppfLocallyInner` and
+This internal module proves that `IsFppfLocallyInner` and
 `IsFppfInnerEquivalent` can be checked after one flat, surjective, locally
 finitely presented base change. The schemes, including all relative tests,
 are arbitrary.

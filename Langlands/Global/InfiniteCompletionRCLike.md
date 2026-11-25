@@ -1,7 +1,5 @@
 # Compatible real or complex structure on the actual infinite completion
 
-Author: Worker 1359.
-
 This internal derived construction places a compatible `RCLike` structure
 on the actual infinite-place completion of a field in arbitrary universe.
 It retains the given normed field structure. In particular, it leaves

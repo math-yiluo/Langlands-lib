@@ -68,11 +68,8 @@ support needs no separate case.
 This is an internal deduction from the published Schwartz–Bruhat subspace
 maps and the full algebraic dual; the paired statement Markdown explains its
 analogy with Shalika's Proposition 1.14 without identifying the two
-formulations. Worker 634 prepared this argument as the private
-`OpenRestrictionLocalityCore.locality` for the Design form of the same
-proposition. Its extension characterization reuses Worker 33's published
+formulations. Its extension characterization reuses the published
 `FiniteOrbitVanishingProof.exists_extension_eq`, and its characteristic
-cutoff and finite-union compact-cover argument adapt Worker 121's published
-`LocalizationProof`. This module ports that proof to the published statement;
-it uses neither the finite-orbit theorem itself nor any covariance or
-global-invariance result.
+cutoff and finite-union compact-cover argument adapt the published
+`LocalizationProof`. It uses neither the finite-orbit theorem itself nor any
+covariance or global-invariance result.

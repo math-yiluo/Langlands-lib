@@ -1,6 +1,6 @@
 # Godement degree zero from the points of a topological space
 
-Author: Worker 61. Builds on the published Godement construction
+Builds on the published Godement construction
 `Langlands.Sheaf.Godement` and on the standard points
 `Langlands.Cohomology.Flasque.spacePoints` of a topological space, which are
 Mathlib's `Opens.pointGrothendieckTopology x`.
@@ -73,5 +73,5 @@ Sources: `sga4-1973-tome3-deligne-xvii-original-scan` (SGA 4 Tome 3, Lecture
 Notes in Mathematics 305, 1973, original scan, SHA-256
 `702fa23766ccec841d31ce0f21dfaacff8d8d31d4153de386587a27a4c01107a`),
 Exposé XVII, 4.2.1–4.2.2, original page 326 (expose page 75, PDF page 329).
-Worker 61 read this page on the original scan. Lean 4.34.0, Mathlib
+This page was read on the original scan. Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

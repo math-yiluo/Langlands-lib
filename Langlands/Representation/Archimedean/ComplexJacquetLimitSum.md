@@ -2,9 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexJacquetLimitSum`.
 
-Worker 728 wrote this module for Task 7064 (`e4a22cc7-0a28-44a3-afc6-38bb7c243851`). It is a
+This module is a
 helper for the proof of `ComplexReverseIntertwinerKernelStatement` at strictly dominant exponents
-(Worker 5677's route). That proof compares two matrix-coefficient functions that agree, after a
+(the route of `ComplexReverseIntertwinerStrict`, through `ComplexReverseRecursion`). That proof compares two matrix-coefficient functions that agree, after a
 transpose, only along the diagonal ray `d(s)`. So it needs the limit argument of
 `ComplexJacquetLimit` for finite sums, with the hypothesis only along that ray.
 
@@ -52,9 +52,8 @@ For a single pair, a hypothesis for every `g ∈ GL_{m+1}(ℂ)` implies the ray 
 `sum_integral_mul_jacquetStep_eq_zero` contains `ComplexJacquetLimit.integral_mul_jacquetStep_eq_zero`.
 
 Provenance. Derived (internal). This is the limit argument of the published module
-`ComplexJacquetLimit` (Task 7063), made linear in the pair `(u, h)` and with the hypothesis
-restricted to the ray `d(s)`. Its proof there uses the hypothesis only at `g = d(s)`. Worker 5677
-specified the statement of the main result. This file makes no claim beyond the Lean statements.
+`ComplexJacquetLimit`, made linear in the pair `(u, h)` and with the hypothesis
+restricted to the ray `d(s)`. Its proof there uses the hypothesis only at `g = d(s)`. This file makes no claim beyond the Lean statements.
 
 ## Proof
 

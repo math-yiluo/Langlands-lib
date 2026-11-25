@@ -79,8 +79,8 @@ def integralRosatiComparisonMap (c : B' ≅ B) (lam : B ⟶ DB) : B' ⟶ DB' :=
 
 private theorem rosatiComparisonDual_intertwines
     (c : B' ≅ B) (u : CategoryTheory.End B) (u' : CategoryTheory.End B')
-    (hu : u' ≫ c.hom = c.hom ≫ u) :
-    dB u ≫ dForward c.hom = dForward c.hom ≫ dB' u' := by
+    (hu : u'.asHom ≫ c.hom = c.hom ≫ u.asHom) :
+    dB u.asHom ≫ dForward c.hom = dForward c.hom ≫ dB' u'.asHom := by
   have h := congrArg dForward hu
   rw [dualAbelianSchemeMapFromEvaluation_comp hB' geometryB' preservation MB' evaluationB'
     stability composition unitCoherence associativity comparison symmetry
@@ -94,29 +94,29 @@ private theorem rosatiComparisonDual_intertwines
 theorem integralRosatiComparison_equation_iff
     (c : B' ≅ B)
     (a : O →+* CategoryTheory.End B) (a' : O →+* CategoryTheory.End B')
-    (ha : ∀ x : O, a' x ≫ c.hom = c.hom ≫ a x) (lam : B ⟶ DB) (x : O) :
-    a' x ≫ integralRosatiComparisonMap preservation composition unitCoherence associativity
+    (ha : ∀ x : O, (a' x).asHom ≫ c.hom = c.hom ≫ (a x).asHom) (lam : B ⟶ DB) (x : O) :
+    (a' x).asHom ≫ integralRosatiComparisonMap preservation composition unitCoherence associativity
         comparison symmetry stability hB MB evaluationB geometryB hB' MB' evaluationB'
         geometryB' c lam =
       integralRosatiComparisonMap preservation composition unitCoherence associativity
         comparison symmetry stability hB MB evaluationB geometryB hB' MB' evaluationB'
-        geometryB' c lam ≫ dB' (a' (tauO x)) ↔
-      a x ≫ lam = lam ≫ dB (a (tauO x)) := by
+        geometryB' c lam ≫ dB' (a' (tauO x)).asHom ↔
+      (a x).asHom ≫ lam = lam ≫ dB (a (tauO x)).asHom := by
   let dc := dualAbelianSchemeIsoFromEvaluation preservation stability composition
     unitCoherence associativity comparison symmetry B' hB' geometryB' MB' evaluationB'
     hB geometryB MB evaluationB c
   have hl :
-      a' x ≫ integralRosatiComparisonMap preservation composition unitCoherence associativity
+      (a' x).asHom ≫ integralRosatiComparisonMap preservation composition unitCoherence associativity
         comparison symmetry stability hB MB evaluationB geometryB hB' MB' evaluationB'
         geometryB' c lam =
-      (c.hom ≫ (a x ≫ lam)) ≫ dc.hom := by
+      (c.hom ≫ ((a x).asHom ≫ lam)) ≫ dc.hom := by
     simpa only [integralRosatiComparisonMap, dc, dualAbelianSchemeIsoFromEvaluation, Category.assoc] using
       congrArg (fun k => k ≫ lam ≫ dForward c.hom) (ha x)
   have hr :
       integralRosatiComparisonMap preservation composition unitCoherence associativity
         comparison symmetry stability hB MB evaluationB geometryB hB' MB' evaluationB'
-        geometryB' c lam ≫ dB' (a' (tauO x)) =
-      (c.hom ≫ (lam ≫ dB (a (tauO x)))) ≫ dc.hom := by
+        geometryB' c lam ≫ dB' (a' (tauO x)).asHom =
+      (c.hom ≫ (lam ≫ dB (a (tauO x)).asHom)) ≫ dc.hom := by
     dsimp only [integralRosatiComparisonMap, dc, dualAbelianSchemeIsoFromEvaluation]
     simp only [Category.assoc]
     rw [← rosatiComparisonDual_intertwines preservation composition unitCoherence associativity
@@ -129,7 +129,7 @@ theorem integralRosatiComparison_equation_iff
 theorem integralRosatiBasisEquations_comparison_iff
     (c : B' ≅ B)
     (a : O →+* CategoryTheory.End B) (a' : O →+* CategoryTheory.End B')
-    (ha : ∀ x : O, a' x ≫ c.hom = c.hom ≫ a x) (lam : B ⟶ DB) :
+    (ha : ∀ x : O, (a' x).asHom ≫ c.hom = c.hom ≫ (a x).asHom) (lam : B ⟶ DB) :
     IntegralRosatiBasisEquations D C preservation composition unitCoherence associativity
       comparison symmetry stability B' hB' MB' evaluationB' geometryB' a'
       (integralRosatiComparisonMap preservation composition unitCoherence associativity
@@ -146,7 +146,7 @@ theorem integralRosatiBasisEquations_comparison_iff
 theorem integralRosatiEquations_comparison_iff
     (c : B' ≅ B)
     (a : O →+* CategoryTheory.End B) (a' : O →+* CategoryTheory.End B')
-    (ha : ∀ x : O, a' x ≫ c.hom = c.hom ≫ a x) (lam : B ⟶ DB) :
+    (ha : ∀ x : O, (a' x).asHom ≫ c.hom = c.hom ≫ (a x).asHom) (lam : B ⟶ DB) :
     IntegralRosatiEquations D C preservation composition unitCoherence associativity
       comparison symmetry stability B' hB' MB' evaluationB' geometryB' a'
       (integralRosatiComparisonMap preservation composition unitCoherence associativity

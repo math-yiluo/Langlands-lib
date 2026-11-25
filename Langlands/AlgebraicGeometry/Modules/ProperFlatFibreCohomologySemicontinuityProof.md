@@ -1,7 +1,5 @@
 # Semicontinuity of fibre cohomology for proper flat morphisms (proof)
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProperFlatFibreCohomologySemicontinuityProof`
 proves
 
@@ -44,7 +42,7 @@ gives `K` with `K ⊗_R S` isomorphic to the Čech complex of the pulled-back mo
 The Library theorem `CechResolution.nonempty_cechCochainComplex_iso` identifies that Čech complex
 with the derived sections. Its hypotheses are separatedness (from properness) and
 quasi-coherence of the pullback (`IsLocallyFreeRankOne.isQuasicoherent_pullback`). The local
-trivialisations of `M` come from `Scheme.Modules.IsInvertible`.
+trivialisations of `M` come from `Scheme.Modules.IsInvertibleFLT`.
 
 ## Step 2: the fibre model
 
@@ -55,7 +53,7 @@ trivialisations of `M` come from `Scheme.Modules.IsInvertible`.
 `exists_fibreModel`: let `V` be an affine open with `Γ(T, V)` noetherian. Apply Step 1 to the
 restriction `affineRestrict g hV = (g ∣_ V) ≫ hV.isoSpec.hom : g⁻¹(V) ⟶ Spec Γ(T, V)` (Library;
 proper by the Library instance, flat as a restriction of `g` followed by an isomorphism) and to the
-restriction of `F` (invertible by `IsInvertible.pullback`). This
+restriction of `F` (invertible by `IsInvertible.pullbackFLT`). This
 gives `K` such that for every `t ∈ V`:
 
 - `Hⁿ(Y_t, F_t) ≅ Hⁿ(K ⊗ κ(t))` for `n ≥ 0`, with `K ⊗ κ(t)` formed along `ev_t`;

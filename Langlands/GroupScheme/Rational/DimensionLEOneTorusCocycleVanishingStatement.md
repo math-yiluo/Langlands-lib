@@ -36,6 +36,11 @@ A proof must establish the comparison needed for this expression.
 The official 1 November 2024 corrections, PDF pp.24–25, do not change
 Section 2.3.
 
-This module defines a proposition only. Torus-cocycle vanishing and the
-structural passage from it to a field-defined geometric Borel remain
-proof obligations. Worker 1333 authored this statement and explanation.
+This module defines a proposition only. Torus-cocycle vanishing is proved
+as `dimensionLEOneTorusCocycleVanishing` in
+[DimensionLEOneTorusCocycleVanishingProof](DimensionLEOneTorusCocycleVanishingProof.md),
+and the structural passage from it to a field-defined geometric Borel is
+`dimensionLEOneQuasiSplit_of_structural_inputs` (module
+`Rational/SteinbergAssembly`), applied in the quasi-splitness proof
+`dimensionLEOneQuasiSplit` of
+[DimensionLEOneQuasiSplitProof](DimensionLEOneQuasiSplitProof.md).

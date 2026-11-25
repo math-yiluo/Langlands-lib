@@ -1,6 +1,6 @@
 # Source restriction for tensor-line degree-one comparisons
 
-This derived unit works over an arbitrary scheme `S : Scheme.{u}`, a module
+This derived module works over an arbitrary scheme `S : Scheme.{u}`, a module
 sheaf `M` locally free of fixed rank `n + 1`, and a locally free rank-one module
 sheaf `N`. It uses the genuine joint frame atlases and the actual local
 comparisons of `TensorLineTwistCharts`.
@@ -39,6 +39,8 @@ restriction law and the genuine chart equations.
 The provenance is derived from `TensorLineTwistCharts`,
 `FrameAtlasTwistRestriction`, and canonical pullback congruence and composition.
 No new geometric premise or external mathematical assertion is introduced.
-This unit proves the source restriction law only. The scalar cancellation for
-the tensor degree-one line times the base line, global comparison, and ordinary
-large-level representability remain separate obligations.
+This module proves the source restriction law only. The scalar cancellation for
+the tensor degree-one line times the base line and the global comparison are
+proved in `TensorLineTwistGluing`, which applies the generic cancellation of
+`TensorLineCancellation` to this law; ordinary large-level representability
+remains unproved.

@@ -1,9 +1,5 @@
 # Statement: the canonical class quotient on the supplied split Steinberg product
 
-Authors: Worker 1490 and Worker 1800. Worker 1490 designed the Lean
-proposition and the first Markdown draft; Worker 1800 reread the cited
-source pages, rechecked the declaration and refined this explanation.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.SplitSteinbergQuotientStatement.{u}`, a
 `Prop`-valued `def` with the single universe parameter `u`, in the module
@@ -156,10 +152,11 @@ isomorphism claim over an arbitrary, possibly imperfect, field `k`, for
 the canonical equalizer quotient, is the derived content of this
 statement; Steinberg states 7.9 only over an algebraically closed field.
 
-## Remaining proof obligations
+## Proof obligations
 
-The proposition is stated so that a later proof must establish, not
-assume, the following. None of them is a premise here.
+The proposition is stated so that its proof must establish, not assume,
+the following; that proof is `splitSteinbergQuotient` in
+`Rational.SplitSteinbergQuotient`. None of them is a premise here.
 
 - **Fundamental characters and invariants.** Identify
   `ClassFunctions.algebra` over an algebraically closed field with the

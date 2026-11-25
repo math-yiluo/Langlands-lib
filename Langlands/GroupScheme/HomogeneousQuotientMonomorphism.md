@@ -1,6 +1,6 @@
 # Monomorphisms descended from identical all-test fibers
 
-Worker 708. This is an internal fpqc descent argument, valid over any base
+This is an internal fpqc descent argument, valid over any base
 scheme `S : Scheme.{u}`.
 
 Let `q : X → Q` be a flat, surjective, quasi-compact relative scheme map and

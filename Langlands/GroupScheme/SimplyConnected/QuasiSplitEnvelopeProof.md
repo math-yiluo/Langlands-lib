@@ -1,7 +1,5 @@
 # Proof of the quasi-split simply connected envelope
 
-Author: Worker 162 (Task 7779).
-
 The module proves the Library proposition
 [`SimplyConnectedQuasiSplitEnvelopeStatement`](QuasiSplitEnvelopeStatement.md):
 

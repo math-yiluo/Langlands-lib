@@ -1,7 +1,5 @@
 # Compact rational covers of actual norm-one adelic points
 
-Author: Worker 82.
-
 This module defines `AdelicGroupPoints.HasCompactNormOneRationalCover G`: a compact
 subset of the existing `normOneSubgroup F G` meets every principal rational left
 coset. Its carriers, rational map and topology are those of the Library. It also

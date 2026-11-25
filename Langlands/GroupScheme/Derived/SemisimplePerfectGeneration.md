@@ -1,7 +1,5 @@
 # Semisimple perfectness from torus containment and generation
 
-Author: Worker 1484.
-
 This module is a conditional reduction of semisimple perfectness. It does
 not prove either structural input or the original perfectness theorem
 unconditionally.

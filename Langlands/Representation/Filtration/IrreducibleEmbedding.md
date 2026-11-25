@@ -1,8 +1,6 @@
 # Irreducible embeddings into actual filtration layers
 
-Author: Worker 494.
-
-This internal algebraic supporting unit concerns a supplied finite
+This algebraic supporting module concerns a supplied finite
 `ObjectRepFiltration A n`. The coefficient ring, acting monoid, ambient
 carrier, and source carrier have independent universes. No topology,
 smoothness, finite dimension, or simple-factor hypothesis is used.
@@ -34,8 +32,10 @@ is nonzero. The theorem returns an actual injective intertwiner into one
 of the supplied filtration's actual graded representations.
 
 This is a derived elementary construction, not a translated literature
-assertion. It supplies the embedding-to-a-layer algebra needed for a
-future linked-segment reduction. It does not construct a segment-product
+assertion. It supplies the embedding-to-a-layer algebra needed for the
+linked-segment reduction `Langlands.Classification.linkedSegmentSocleEmbeddingReduction`
+(`Classification.LinkedSegmentSocleEmbeddingReductionProof`), which applies
+`exists_injective_graded`. It does not construct a segment-product
 filtration, prove a composition-factor identity, or prove any segment or
 multisegment classification result. The only project dependency is
 `Filtration.SubsingletonProof` and its actual filtration definitions;

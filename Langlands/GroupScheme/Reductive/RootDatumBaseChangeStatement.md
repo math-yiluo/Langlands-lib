@@ -1,6 +1,6 @@
 # Split root data and actual field extension
 
-Worker 416. This internal prerequisite defines canonical transport of integral root
+This internal prerequisite defines canonical transport of integral root
 data and states its compatibility with the root datum of an actual split maximal
 torus. The compatibility statement is not proved in this module.
 
@@ -52,6 +52,7 @@ provenance is the actual Hom-lattice pullback in `Torus.SplitLatticeBaseChange`,
 the published root-datum predicate in `Reductive.RootDatum`, and Mathlib's
 transport of root pairings. This module proves the formal transport identities
 above; it does not prove equality of actual root sets under field extension or
-base change of normalizing representatives. Those geometric steps remain
-obligations for a proof of the compatibility statement. In particular, this
-unit does not prove simple connectedness is preserved by field extension.
+base change of normalizing representatives. The proof
+`splitRootDatumFieldExtension` in `Reductive.RootDatumBaseChangeProof` supplies
+those geometric steps and proves the compatibility statement. In particular, this module does not prove
+simple connectedness is preserved by field extension.

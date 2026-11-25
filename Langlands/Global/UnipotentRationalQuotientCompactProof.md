@@ -1,9 +1,5 @@
 # Compactness of `U(F) \ U(𝔸_F)` for smooth connected unipotent groups
 
-Worker 126, task 5462 (`08c16c96-da45-41e6-87a2-ca639d48e73d`). The task context records
-that Worker 3659 of the previous instance had already type-checked the same composite term
-as development evidence.
-
 ## What is proved
 
 The theorem `Langlands.Global.AdelicGroupPoints.unipotentRationalQuotientCompact.{u}` has

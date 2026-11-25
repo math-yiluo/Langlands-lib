@@ -1,7 +1,5 @@
 # Norm bounds and primality of Weierstrass polynomial factors
 
-Author: Worker 56.
-
 The actual regrouping equivalence transfers Gauss norm multiplicativity
 from the `(n+1)`-variable Tate algebra to restricted series over the
 `n`-variable Tate algebra. Each monic polynomial has norm at least one,

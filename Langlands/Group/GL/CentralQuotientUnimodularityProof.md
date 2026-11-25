@@ -1,7 +1,5 @@
 # Right invariance of Haar measures on actual p-adic GL central quotients: proof
 
-Author: Worker 378.
-
 `Langlands.glCentralQuotientHaarRightInvariant` proves the exact closed
 proposition `Langlands.GLCentralQuotientHaarRightInvariantStatement.{uF}`
 from `Langlands.Group.GL.CentralQuotientUnimodularityStatement`. Its type is
@@ -46,8 +44,9 @@ Hausdorffness, local compactness and second countability of the quotient from
 measure on the quotient is regular. The theorem then applies
 `GeneralLinear.haar_centralQuotient_isMulRightInvariant`, which proves right
 invariance of every regular Haar measure on the full central quotient. By
-`GeneralLinear.centralQuotient_positiveCharacter_eq_one`, built on Worker 116's
-diagonal/transvection argument, the modular character of the quotient is
+`GeneralLinear.centralQuotient_positiveCharacter_eq_one`, built on the
+diagonal/transvection argument of
+`Langlands.RankinSelberg.GeneralLinearUnimodularity.character_eq_one`, the modular character of the quotient is
 trivial. Regular Haar uniqueness then identifies each right translate of the
 measure with the measure itself. Those declarations are imported unchanged;
 this file adds only the wrapper theorem.

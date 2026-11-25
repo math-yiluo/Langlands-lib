@@ -51,17 +51,10 @@ The density premise of the earlier conditional reduction
 `reductiveSpectralBoundednessReduction` is therefore discharged internally by
 the local-field density lemma. This proof does not import that reduction.
 
-## Provenance and authorship
+## Provenance
 
 This proof follows Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023),
 Lemma 2.2.11 (printed pp. 72–73, PDF pp. 103–104). That proof uses rational
 density, the finite morphism to the direct sum of irreducible subquotients, and
 trace bounds. Here rational density comes from local-field point separation on
 the smooth coordinate domain, not from a general unirationality theorem.
-
-Worker 1554 wrote the local-field density lemma, the scalar-extension and
-valued-descent prerequisites, and identified the canonical section monoid map.
-Worker 1563 wrote the dense-family and Burnside span prerequisites. Worker 1296
-wrote the simple-factor, finite-map and trace assembly, the dense-family
-criterion and this closing proof. The source pairs of still-unpublished
-prerequisites accompany this candidate unchanged.

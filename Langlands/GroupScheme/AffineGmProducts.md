@@ -26,6 +26,6 @@ universes are retained.
 
 These are internal consequences of the existing action laws, binary-product
 universal property and actual all-test fixed/attracting representability. No
-external literature assertion is transcribed. This unit supplies neither orbit
-closedness, reductive quotient affineness nor the host dynamic quotient
-properness theorem.
+external literature assertion is transcribed. This module supplies neither orbit
+closedness, reductive quotient affineness nor the dynamic quotient
+properness theorem `DynamicQuotientProperStatement` that it serves.

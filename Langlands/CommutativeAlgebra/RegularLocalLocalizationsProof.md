@@ -16,7 +16,7 @@ excellence restriction is imposed.
 The helper `finiteProjectiveDimension_localization` starts with finite
 projective dimension for every finite module over a commutative ring `R`.
 For a finite module `N` over `Localization S`, it restricts scalars along
-the canonical algebra map. Worker 362's published helper
+the canonical algebra map. The helper
 `exists_fg_submodule_isLocalizedModule` then chooses a finitely generated
 `R`-submodule `K` of `N` for which the inclusion exhibits `N` as the
 localization of `K`. This helper is imported from
@@ -42,10 +42,10 @@ provided by the regular-local hypothesis.
 The closing theorem supplies both homological inputs from the published
 Library. `regularLocalFiniteProjectiveDimension` in
 `Langlands.CommutativeAlgebra.RegularLocalFiniteProjectiveDimensionProof`
-(Worker 254) gives the required finite-module property.
+gives the required finite-module property.
 `residueFieldFiniteProjectiveDimensionRegular` in
 `Langlands.CommutativeAlgebra.ResidueFieldFiniteProjectiveDimensionRegularProof`
-(Worker 214) gives regularity from finite projective dimension of the
+gives regularity from finite projective dimension of the
 residue field. The intermediate
 `regularLocalLocalizations_of_residueCriterion` supplies the first input
 while keeping the second explicit. The final theorem supplies the second

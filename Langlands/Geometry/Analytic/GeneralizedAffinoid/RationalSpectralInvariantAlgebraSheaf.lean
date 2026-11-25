@@ -33,23 +33,26 @@ def spectralInvariantAlgebraAction (d : SpectralInvariantChart ρ H) :
     Action (CommAlgCat K) H where
   V := CommAlgCat.of K d.obj.algebra
   ρ := {
-    toFun g := CommAlgCat.ofHom ((spectralInvariantSectionAction ρ H d).obj.ρ g).toAlgHom
+    toFun g := End.of
+      (CommAlgCat.ofHom ((spectralInvariantSectionAction ρ H d).obj.ρ g).asHom.toAlgHom)
     map_one' := by
+      apply End.ext
       apply CommAlgCat.hom_ext
       ext a
       exact congrArg (fun f : BoundedAlgHom K d.obj.algebra d.obj.algebra => f a)
-        (spectralInvariantSectionAction ρ H d).obj.ρ.map_one
+        (congrArg End.asHom (spectralInvariantSectionAction ρ H d).obj.ρ.map_one)
     map_mul' g h := by
+      apply End.ext
       apply CommAlgCat.hom_ext
       ext a
       exact congrArg (fun f : BoundedAlgHom K d.obj.algebra d.obj.algebra => f a)
-        ((spectralInvariantSectionAction ρ H d).obj.ρ.map_mul g h) }
+        (congrArg End.asHom ((spectralInvariantSectionAction ρ H d).obj.ρ.map_mul g h)) }
 
 @[simp]
 theorem spectralInvariantAlgebraAction_apply (d : SpectralInvariantChart ρ H)
     (g : H) (a : d.obj.algebra) :
-    ((spectralInvariantAlgebraAction ρ H d).ρ g).hom a =
-      ((spectralInvariantSectionAction ρ H d).obj.ρ g).toAlgHom a := rfl
+    ((spectralInvariantAlgebraAction ρ H d).ρ g).asHom.hom a =
+      ((spectralInvariantSectionAction ρ H d).obj.ρ g).asHom.toAlgHom a := rfl
 
 /-- All original rational restrictions are equivariant algebra homomorphisms. -/
 def spectralInvariantAlgebraPresheaf :
@@ -101,8 +104,8 @@ theorem spectralInvariantEquivariantAlgebraSheaf_obj (d : SpectralInvariantChart
 @[simp]
 theorem spectralInvariantEquivariantAlgebraSheaf_action_apply
     (d : SpectralInvariantChart ρ H) (g : H) (a : d.obj.algebra) :
-    (((spectralInvariantEquivariantAlgebraSheaf ρ H).obj.obj (op d)).ρ g).hom a =
-      ((spectralInvariantSectionAction ρ H d).obj.ρ g).toAlgHom a := rfl
+    (((spectralInvariantEquivariantAlgebraSheaf ρ H).obj.obj (op d)).ρ g).asHom.hom a =
+      ((spectralInvariantSectionAction ρ H d).obj.ρ g).asHom.toAlgHom a := rfl
 
 @[simp]
 theorem spectralInvariantEquivariantAlgebraSheaf_map_apply
@@ -114,9 +117,9 @@ theorem spectralInvariantEquivariantAlgebraSheaf_map_apply
 @[simp]
 theorem spectralInvariantEquivariantAlgebraSheaf_baseMap
     (d : SpectralInvariantChart ρ H) (g : H) (a : A) :
-    (((spectralInvariantEquivariantAlgebraSheaf ρ H).obj.obj (op d)).ρ g).hom
+    (((spectralInvariantEquivariantAlgebraSheaf ρ H).obj.obj (op d)).ρ g).asHom.hom
         (d.obj.baseMap a) =
-      d.obj.baseMap ((ρ.toMonoidHom (g : G)).hom.toAlgHom a) :=
+      d.obj.baseMap ((ρ.toMonoidHom (g : G)).asIso.hom.toAlgHom a) :=
   spectralInvariantSectionAction_baseMap ρ H d g a
 
 /-- The stored restriction preserves every original structural section. -/

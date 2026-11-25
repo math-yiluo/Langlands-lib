@@ -1,6 +1,6 @@
 # Compact lifting for the actual unit filtration
 
-Worker 92 implements the compact lifting argument and the complete entry theorem
+This module implements the compact lifting argument and the complete entry theorem
 `Langlands.LocalClassField.unitFiltrationTopologyTheorems.{u,v}`. Its exact type
 is the published `Langlands.LocalClassField.UnitFiltrationTopologyTheorems.{u,v}`:
 the structural laws in each of two independent carrier universes, together with
@@ -9,7 +9,7 @@ fields and arbitrary supplied `TopologicalData`. Every natural filtration level,
 including zero, is covered.
 
 The module imports `Langlands.ClassFieldTheory.Local.UnitFiltrationStructuralProof`
-and reuses `unitFiltrationStructuralLaws` in universes `u` and `v`. Worker 102's
+and reuses `unitFiltrationStructuralLaws` in universes `u` and `v`. The
 structural proof establishes compactness, closedness, antitonicity, separation
 and the zeroth-level equality for the actual reduction-kernel image. It uses
 compact local integer rings, closed ideals and compact integer units for
@@ -55,7 +55,7 @@ The underlying source is Jean-Pierre Serre, *Local Fields*, Greenberg translatio
 GTM 67 (1979), Chapter V, Section 1, Lemma 2, printed p. 81 (PDF p. 88), registered
 as `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 92 read that original page for this implementation. Serre uses convergence
+That original page was read for this implementation. Serre uses convergence
 of successive corrections in complete filtered groups. Here a derived compact
 specialization uses nested closed approximate-preimage sets instead. No arithmetic
 norm theorem or local reciprocity result is used.

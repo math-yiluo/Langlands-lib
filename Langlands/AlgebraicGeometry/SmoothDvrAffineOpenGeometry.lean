@@ -75,7 +75,7 @@ theorem isAffineOpen_of_fiberwise_closed
     have hN : IsLocallyNoetherian X := LocallyOfFiniteType.isLocallyNoetherian f
     have : IsRegularLocalRing (X.presheaf.stalk x) :=
       Smooth.isRegularLocalRing_stalk_of_isDiscreteValuationRing R f x
-    exact Langlands.AlgebraicGeometry.exists_irreducible_open X x hN (IsRegularLocalRing.isDomain _)
+    exact Langlands.AlgebraicGeometry.exists_irreducible_open X x hN (IsRegularLocalRing.isDomainFLT _)
   have hgeneric : IsClosed
       ((Subtype.val : X.basicOpen a → X) ⁻¹' (U : Set X)) := by
     exact (hclosed η).preimage (Homeomorph.setCongr hD).continuous

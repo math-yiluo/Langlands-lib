@@ -1,6 +1,6 @@
 # Proof of the parahoric contraction statement (contraction clause of KP 13.6.4)
 
-This unit proves the published target
+This module proves the published target
 `Langlands.Geometry.Building.ParahoricContractionInApartmentStatement` of
 `Langlands/Geometry/Building/KPParahoricContractionStatement.lean`. The theorem
 `Langlands.Geometry.Building.parahoricContractionInApartment` is stated at an arbitrary
@@ -96,7 +96,7 @@ Finally `p = n⁻¹ * u⁻¹ * g` by `g = u * n * p`, and `GenericLie.adjoint_mu
 
 Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (Cambridge, 2023), Proposition 13.6.4,
 printed p. 480 / PDF p. 511, contains the contraction clause. KP prove it with integral models.
-This proof follows instead the group-scheme route suggested in the task context. It uses the
+This proof follows instead a group-scheme route. It uses the
 rational conjugacy of maximal split tori and the Iwasawa decomposition
 `G(F) = U_∅(F) N(F) P_C` for the chamber `C` of `c` (KP 5.3.3). It also uses the fact that
 the minimal parabolic `P_∅` normalizes `𝔤_{>0}` of a dominant cocharacter. The proof does not

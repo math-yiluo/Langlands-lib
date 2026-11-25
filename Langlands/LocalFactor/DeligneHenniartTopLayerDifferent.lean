@@ -1,5 +1,5 @@
 import Langlands.LocalFactor.DeligneHenniartTopLayerOrders
-import Langlands.AnthropicFLT.Theorems.Thm_IsDiscreteValuationRing_exists_adjoin_singleton_eq_top_of_isSeparable_residueField
+import Langlands.LocalFactor.Ramification.Monogenic
 
 /-!
 # Hilbert's formula for the different of a Galois extension of p-adic fields
@@ -158,7 +158,7 @@ theorem differentIdeal_eq_maximalIdeal_pow [FiniteDimensional K.Carrier M.Carrie
   have := relativeIntegerTower TK TM
   have := relativeIntegerAlgebra_isTorsionFree TK TM
   have : IsLocalHom (algebraMap TK.Integers TM.Integers) := relativeIntegerMap_isLocalHom TK TM
-  have := (LocalClassField.NYLL.relativeIntegerStructure p K M TK TM).2
+  have := (LocalClassField.UniverseZero.relativeIntegerStructure p K M TK TM).2
   have : Finite (ResidueField TK.Integers) := TK.finite_residueField
   have : Finite (ResidueField TM.Integers) := TM.finite_residueField
   have : Algebra.IsSeparable (ResidueField TK.Integers) (ResidueField TM.Integers) :=
@@ -168,7 +168,7 @@ theorem differentIdeal_eq_maximalIdeal_pow [FiniteDimensional K.Carrier M.Carrie
     apply Subtype.ext
     exact (algebraMap K.Carrier M.Carrier).injective (congrArg Subtype.val h)
   obtain ⟨θ, hθ⟩ :=
-    IsDiscreteValuationRing.exists_adjoin_singleton_eq_top_of_isSeparable_residueField
+    Ramification.exists_adjoin_singleton_eq_top_of_isSeparable_residueField
       (A := TK.Integers) (B := TM.Integers) hinj
   classical
   rw [LocalClassField.different_eq_span_prod_automorphisms_of_integer_adjoin TK TM θ hθ,

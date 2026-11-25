@@ -36,8 +36,8 @@ The kernel isomorphism is induced by the isomorphism of the defining pullback
 diagrams. The root subgroup proof extends the published same-torus
 reparametrization argument to a homomorphism from a different acting group,
 then reuses the existing ambient-map orbit and extension laws. This is an
-internal derivation, with no new external structure assertion. Worker 118
-identified the cross-torus interface needed for apartment charts.
+internal derivation, with no new external structure assertion. The
+cross-torus interface is the one needed for apartment charts.
 
 These constructions supply neither torus conjugacy nor existence, a geometric
 root realization, a comparison of Lie weight spaces, building axioms, topology,

@@ -6,7 +6,7 @@ Module: `Langlands.Representation.Archimedean.RealInductionStagesInduce`.
 
 This module is internal infrastructure for the proof of
 `Langlands.Archimedean.RealAdjacentFiltrationInStagesStatement` (induction in stages of adjacent
-filtrations, Task 7068). Let
+filtrations). Let
 
 `L' = pre ++ ds' ++ post` and `L = pre ++ ds ++ post`
 

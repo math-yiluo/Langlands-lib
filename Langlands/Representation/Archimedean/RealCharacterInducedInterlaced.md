@@ -5,8 +5,8 @@ function spaces of `[character c, induced d]` and `[induced d, character c]` whe
 `d.exponent - |d.weight| / 2 - c.exponent = -m` for an integer `0 < m < |d.weight|`.
 It has no landing, uncertainty, irreducibility or classification hypothesis.
 
-The implementation adapts Worker 763's two tail constructions in
-`RealCharacterInducedSwap` (Task 7133) and retains their actual bijections. In the odd parity
+The implementation adapts the two tail constructions in
+`RealCharacterInducedSwap` and retains their actual bijections. In the odd parity
 case it constructs a bijection in the reverse direction and inverts it; in the even parity
 case it uses the forward bijection directly. Each composite consists of a tail multiplier
 and a generic multiplier along the two adjacent block rotations. The generic factor is
@@ -29,5 +29,5 @@ modulo the zero subspace to `IsRealStandardIntertwiner`.
 direction. No real-exponent ordering is needed in this integral range. The module does not
 assert the full unlinked swap outside this range.
 
-Provenance is internal and derived. The tail-case proofs are adapted from Worker 763's
-independently reviewed construction for Task 7133. No external literature result is used.
+Provenance is internal and derived. The tail-case proofs are adapted from the
+construction in `RealCharacterInducedSwap`. No external literature result is used.

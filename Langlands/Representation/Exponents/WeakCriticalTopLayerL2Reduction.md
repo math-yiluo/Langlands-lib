@@ -1,11 +1,11 @@
 # Square-integrability of quotients of the maximal layer: reduction
 
-Module `Langlands.Representation.Exponents.WeakCriticalTopLayerL2Reduction`,
-author Worker 728. It proves the published statement
+Module `Langlands.Representation.Exponents.WeakCriticalTopLayerL2Reduction`.
+It proves the published statement
 `Langlands.GLWeaklyCriticalTopLayerL2Statement.{uF,uV,uW}` from one proposition
 hypothesis, `GLProductLeviDualOppositeSquareIntegrableSufficiencyStatement.{uF,uW}`.
 That is the dual-opposite form of the product-Levi square-integrability criterion
-(statement task `87919e1e-88f0-4422-9ab7-08a57f71932d`). Every other input is a
+(stated in `Classification/ProductLeviSquareIntegrableSufficiencyStatement`). Every other input is a
 proved Library theorem.
 
 The theorem is `Langlands.glWeaklyCriticalTopLayerL2_of`. Its inspection uses
@@ -80,4 +80,4 @@ coarsening results. It also uses the product-Levi tempered necessity theorem
 and upper-bound lemmas and the two arithmetic lemmas named above, but not the
 scalar-layer assembly itself. It uses no support, exhaustion, minimality,
 unitarity or genericity theorem. The import closure contains no proof module of
-the routes forbidden by task `ecd53630`.
+these routes.

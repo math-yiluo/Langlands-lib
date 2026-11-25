@@ -1,6 +1,6 @@
 # Renard VI.1.1: the unnormalized parabolic functors
 
-Worker 124. Module
+Module
 `Langlands.Representation.Exponents.LeviUnnormalizedParabolicProof` proves
 `Langlands.Aubert.General.RepresentedParabolic.leviUnnormalizedParabolicStatements`
 with type exactly the unchanged Library proposition
@@ -15,8 +15,8 @@ version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The target is VI.1.1, printed pp.134–135 (PDF pp.140–141); VI.1.2 gives the
-normalization conventions on printed pp.135–136 (PDF pp.141–142). Worker 124
-read these three PDF pages. No source-specific errata file was found in the
+normalization conventions on printed pp.135–136 (PDF pp.141–142). These three
+PDF pages were read. No source-specific errata file was found in the
 Library or project `notes/errata` locations.
 
 The theorem applies to every actual rational parabolic in the published

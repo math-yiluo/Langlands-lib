@@ -138,7 +138,8 @@ character. It is right `GL_(n+1)(O)`-invariant and its value at `ϖ^lam` is
 
 ## Provenance
 
-These are internal supporting results for Task 5777 (the corank-one spherical
+These are internal supporting results for the proof of
+`SphericalLaurentFunctionalEquationStatement` (the corank-one spherical
 functional equation for all Satake parameters). They make explicit, for the
 Library's definitions, the identifications used without comment in JPSS 1981,
 §4: the dual integral of a coefficient of `π` is a zeta integral of a

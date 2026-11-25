@@ -1,7 +1,5 @@
 # Proof that normalized parabolic induction preserves finite character coinvariants
 
-Author: Worker 784.
-
 The closed theorem `Langlands.Whittaker.parabolicInducedCoinvariantFiniteness`
 in `Langlands.Representation.Whittaker.ParabolicInducedCoinvariantFinitenessProof`
 has type exactly
@@ -81,7 +79,7 @@ The published `closedSubgroupMackeyFiltration` (`Geometric.ClosedSubgroupMackeyP
 identifies the `i`-th graded piece with the compact induction from the stabilizer
 of `cov ∘ stabilizerToInducing P U r`. This piece is smooth because
 `stabilizerToInducing` is continuous. The published `compactLocalization`
-(`Whittaker.CompactLocalizationProof`, Worker 672) applies to the closed
+(`Whittaker.CompactLocalizationProof`) applies to the closed
 stabilizer (`isClosed_orbitStabilizer`). It identifies the `θ`-quotient of the
 graded piece with the quotient of `cov ∘ stabilizerToInducing P U r` by the full
 stabilizer and the restricted character `θ|_{H}`. These comparisons are composed

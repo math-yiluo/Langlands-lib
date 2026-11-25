@@ -1,6 +1,6 @@
 # Spectral presentations from irreducible admissible finite slices
 
-Module: `Langlands.Automorphic.CuspidalSlicePresentation`. Author: Worker 1827.
+Module: `Langlands.Automorphic.CuspidalSlicePresentation`.
 
 ## Main results
 

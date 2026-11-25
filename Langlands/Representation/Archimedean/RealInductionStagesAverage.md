@@ -6,7 +6,7 @@ Module: `Langlands.Representation.Archimedean.RealInductionStagesAverage`.
 
 This module is internal infrastructure for the proof of
 `Langlands.Archimedean.RealAdjacentFiltrationInStagesStatement` (induction in stages of adjacent
-filtrations, Task 7068). That proof needs linear maps between real standard modules on
+filtrations). That proof needs linear maps between real standard modules on
 `GL_r(ℝ)` that commute exactly with right translation by `O(r)`. Linear algebra alone only
 gives maps that commute with `O(r)` modulo a subspace. This module averages such a map over
 `O(r)` against the normalized Haar measure. The average commutes exactly with `O(r)` and still

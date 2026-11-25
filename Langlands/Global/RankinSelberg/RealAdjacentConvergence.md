@@ -47,7 +47,7 @@ coordinate formula `exists_lintegral_alphaQ` of the compatible quotient
 measure. The `H` factor is `‖F z‖ height(z)^M₂ |det z|^(Re s + r/2 + Re e)`,
 where `e` is the exponent of `c`. Its norm uses `|c(x)| = |x|^(Re e)`. It is
 integrable as soon as its exponent is at least `m + 2M₂`. This follows from
-Worker 823's `GodementJacquet.integrable_realMatrixWeightedNorm`.
+`GodementJacquet.integrable_realMatrixWeightedNorm` (module `RealMatrixConvergence`).
 Product integrability on `Q × H` follows from `Integrable.mul_prod`. The
 kernel is continuous on `Q × H` because its lift to `H × H` is continuous and
 the quotient map is open. So the product majorant gives integrability.

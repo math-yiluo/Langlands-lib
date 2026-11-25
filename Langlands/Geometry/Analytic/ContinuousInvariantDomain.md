@@ -24,6 +24,7 @@ simplification lemmas identify the underlying restricted action and inclusion.
 The provenance is internal: the construction composes the proved near-identity
 domain restriction and the existing invariant-domain action and inclusion APIs.
 It does not assume a continuity statement or a cohomological comparison. The
-exact proof record for `InvariantDomainContinuityStatement` belongs to its
-separate proof task; the present unit supplies the canonical constructions
+exact proof of `InvariantDomainContinuityStatement` is the separate module
+`InvariantDomainContinuityProof` (`invariantDomainContinuity`), which imports
+this one; the present module supplies the canonical constructions
 needed for compatible compact domains.

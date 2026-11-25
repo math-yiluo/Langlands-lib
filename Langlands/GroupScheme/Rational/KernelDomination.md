@@ -40,7 +40,7 @@ dominance and flat-base-change theorem. No additional structural theorem
 is assumed. The base is any scheme, so the result in particular retains
 every field and characteristic.
 
-This contribution does not construct a torus quotient, prove splitness,
+This module does not construct a torus quotient, prove splitness,
 or prove maximal-torus conjugacy. The source of the constructed map is
 `D × ker(φ)`; even if `D` is a split torus, `ker(φ)` need not be a torus,
 smooth, or connected. Extracting a split-torus domination of a unipotent

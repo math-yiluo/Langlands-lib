@@ -1,7 +1,6 @@
 # Proof: one Levi-central element with an opposite Iwahori basis
 
-Worker 1045 wrote this proof module and this explanation. Worker 1374
-contributed the contracting point through the separate module
+The contracting point comes from the separate module
 `Langlands.BruhatTits.Unipotent.CocharacterContraction`, which this proof
 imports.
 
@@ -50,7 +49,7 @@ gives `standardLevi i ν (rootSet i ν I) = Z(χ)` and
 - `U = unipotent i ν I` equals `U(χ)(k)`,
 - `O = oppositeUnipotent i ζ` equals `U(χ⁻¹)(k)` by definition.
 
-The element. Worker 1374's
+The element.
 `BruhatTits.DynamicUnipotentContainment.exists_central_contractingPoint`,
 applied to `χ`, gives one rational point `g`. This `g` lies in `Z(χ)(k)` and
 commutes with every element of `Z(χ)(k)`. For every compact subset of
@@ -97,4 +96,4 @@ Conrad–Gabber–Prasad, Proposition 2.1.8(3), and Conrad, *Reductive group
 schemes*, Theorem 4.1.7(4). The route above follows neither text. It
 combines the published Library results named here with the internal
 modules `OppositeIwahoriBasisAbstract`, `RationalSchemePoints`,
-`RationalOpenCell` and Worker 1374's `CocharacterContraction`.
+`RationalOpenCell` and `CocharacterContraction`.

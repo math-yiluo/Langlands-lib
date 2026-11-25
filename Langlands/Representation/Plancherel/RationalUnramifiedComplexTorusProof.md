@@ -1,7 +1,5 @@
 # The complex torus `X(G)` and its real subtorus `Im X(G)` (Renard V.3.20): proof
 
-Author: Worker 959.
-
 `Langlands.Plancherel.rationalUnramifiedComplexTorus` proves
 `Langlands.Plancherel.RationalUnramifiedComplexTorusStatement.{u}`, at the statement's universe
 parameter `u`. [Published statement](RationalUnramifiedComplexTorusStatement.md)
@@ -57,7 +55,7 @@ theorem `Langlands.Plancherel.compactSpace_rationalUnitaryUnramifiedCharacters`,
 
 ## Instance rename in `RationalUnitaryUnramifiedBasis`
 
-The four component proof modules could not be imported together before this contribution.
+The four component proof modules can be imported together only because of the following rename.
 `RationalUnramifiedBasisChartTransitionProof` (imported by the first component proof) and
 `RationalUnitaryUnramifiedBasis` (imported by the fourth) each declared, in the namespace
 `Langlands.Plancherel`, an anonymous file-local instance
@@ -66,11 +64,10 @@ only the instance attribute, and the declaration is global. Neither module impor
 Lean gave both the generated name `Langlands.Plancherel.instTopologicalSpaceRationalPoints`, and a
 joint import failed with a duplicate-declaration error.
 
-This contribution names the instance of
-`Langlands/Representation/Plancherel/RationalUnitaryUnramifiedBasis.lean` explicitly as
+With this file, the instance of
+`Langlands/Representation/Plancherel/RationalUnitaryUnramifiedBasis.lean` was named explicitly as
 `instTopologicalSpaceRationalPoints_rationalUnitaryUnramifiedBasis`. Only the name changed: the
-type and the value are as before, and no Library file refers to the instance by name. That file
-is listed in the contribution's `repository_paths`. No other existing file is changed.
+type and the value are as before, and no Library file refers to the instance by name.
 
 ## Imports
 

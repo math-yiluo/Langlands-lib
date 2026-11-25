@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_existsUnique_extension_to_affine_of_isIntegrallyClosed_stalk
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_RationalMap_exists_specializes_ringKrullDim_le_one_of_not_mem_domain
 set_option maxHeartbeats 4000000

@@ -1,6 +1,6 @@
 # Central extensions of split tori by split tori are split tori
 
-Worker 1395 wrote this module. It proves the split, affine case of
+This module proves the split, affine case of
 `CentralTorusExtensionStatement`. The general case is in
 [`CentralExtensionProof`](CentralExtensionProof.md).
 

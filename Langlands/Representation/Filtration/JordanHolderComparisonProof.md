@@ -1,9 +1,5 @@
 # Actual Jordan–Hölder comparison and transitivity
 
-Authors: Worker 185 and Worker 242. The modular-lattice instance and equivariant
-second-isomorphism construction are adapted from Worker 242's earlier draft;
-Worker 185 supplies the interval-relation argument, comparison, and transitivity.
-
 `Langlands.jordanHolderSeriesComparison` proves the published
 `JordanHolderSeriesComparisonStatement.{uK,uG,uA}`.
 `Langlands.haveSameJordanHolderFactors_trans` proves the published
@@ -14,8 +10,8 @@ Neither theorem assumes that arbitrary representations have composition series.
 All series used in the proof are supplied by the hypotheses.
 
 This pair proves the comparison and transitivity components. Transport across an
-ambient equivalence and assembly of `JordanHolderSeriesStatement` are separate
-proof work. The statement pair and its imported definitions are unchanged.
+ambient equivalence is proved in `JordanHolderTransportProof`, and
+`JordanHolderSeriesStatement` is assembled in `JordanHolderProof`. The statement pair and its imported definitions are unchanged.
 
 ## The actual quotient and action
 

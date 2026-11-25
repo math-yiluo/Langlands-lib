@@ -37,8 +37,7 @@ theorem norm_eq_topologicalData_normalizedAbs (x : u.adicCompletion 𝕃) :
     Langlands.Global.HeckeEulerProduct.residueCardinality_eq,
     PadicField.TopologicalData.ord,
     Langlands.Global.AdelicFunctoriality.FiniteExtension.topologicalData_discreteValuation,
-    NumberField.FinitePlace.norm_def, WithZeroMulInt.toNNReal_neg_apply _ hv,
-    WithZero.toAdd_unzero_eq_log, neg_neg]
+    NumberField.FinitePlace.norm_def, WithZeroMulInt.toNNReal_neg_apply _ hv, neg_neg]
   push_cast
   rfl
 
@@ -76,7 +75,7 @@ over the base embedding `F → 𝕃_u`. -/
 def realizationClosureEmbedding : w.adicCompletion K' →+* AlgebraicClosure F.Carrier :=
   (extensionClosureEquiv F (towerPadicField v u)
       (realizationBaseAlgHom v u φ hφ')).symm.toRingHom.comp
-    (ClassField.Global.RelativeWeilGroup.completionClosureEmbedding u w)
+    (ClassFieldTheory.Global.RelativeWeilGroup.completionClosureEmbedding u w)
 
 omit [w.asIdeal.LiesOver v.asIdeal] in
 /-- On `𝕃_u` the closure embedding is the chosen embedding of the standalone field. -/
@@ -84,9 +83,9 @@ theorem realizationClosureEmbedding_completionMap (x : u.adicCompletion (realiza
     realizationClosureEmbedding v K θ w φ hφ' L u (completionMap u w x) =
       extensionFieldEmbedding F (towerPadicField v u) (realizationBaseAlgHom v u φ hφ') x := by
   change (extensionClosureEquiv F (towerPadicField v u) (realizationBaseAlgHom v u φ hφ')).symm
-      (ClassField.Global.RelativeWeilGroup.completionClosureEmbedding u w
+      (ClassFieldTheory.Global.RelativeWeilGroup.completionClosureEmbedding u w
         (algebraMap (u.adicCompletion (realizationSubfield K θ L)) (w.adicCompletion K') x)) = _
-  rw [ClassField.Global.RelativeWeilGroup.completionClosureEmbedding_algebraMap]
+  rw [ClassFieldTheory.Global.RelativeWeilGroup.completionClosureEmbedding_algebraMap]
   rfl
 
 /-- The closure embedding composed with `ψ⁻¹`, as an `F`-algebra map `K → \bar F`. -/
@@ -100,7 +99,7 @@ def realizationClosureAlgHom :
         RingEquiv.apply_symm_apply]
     change realizationClosureEmbedding v K θ w φ hφ' L u
       (ψ.symm (algebraMap F.Carrier K.field a)) = _
-    rw [h1, ← ClassField.Global.CompletionTower.completionMap_comp v u w, RingHom.comp_apply,
+    rw [h1, ← ClassFieldTheory.Global.CompletionTower.completionMap_comp v u w, RingHom.comp_apply,
       realizationClosureEmbedding_completionMap, ← realizationBaseAlgHom_apply v u φ hφ',
       extensionFieldEmbedding_comp]
 
@@ -199,7 +198,7 @@ variable {k K' : Type} [Field k] [Field K'] [NumberField k] [NumberField K'] [Al
     ψ (algebraMap K' (w.adicCompletion K') (σ x)))
   (L : Extension F)
   (u : HeightOneSpectrum (𝓞 (realizationSubfield K θ L))) [w.asIdeal.LiesOver u.asIdeal]
-  [u.asIdeal.LiesOver v.asIdeal] {c : ClassField.Global.FundamentalClass.ClassFamily.{0}}
+  [u.asIdeal.LiesOver v.asIdeal] {c : ClassFieldTheory.Global.FundamentalClass.ClassFamily.{0}}
 
 include hθ in
 /-- **Galois comparison at the distinguished place.** Let `τ ∈ W_F` carry the closure embedding
@@ -211,29 +210,29 @@ theorem galoisRestriction_conj_extensionWeilMap (τ : localWeilGroup F)
         (realizationClosureEmbedding v K θ w φ hφ' L u z) =
       ((ψ z : K.field) : AlgebraicClosure F.Carrier))
     (ι : localWeilGroup (towerPadicField v u) →
-      ClassField.Global.RelativeWeilGroup c (realizationSubfield K θ L) K')
+      ClassFieldTheory.Global.RelativeWeilGroup c (realizationSubfield K θ L) K')
     (hι : ∀ (g : localWeilGroup (towerPadicField v u)) (x : K'),
-      ClassField.Global.RelativeWeilGroup.completionClosureEmbedding u w
+      ClassFieldTheory.Global.RelativeWeilGroup.completionClosureEmbedding u w
           (algebraMap K' (w.adicCompletion K')
-            (ClassField.Global.RelativeWeilGroup.projection c (realizationSubfield K θ L) K'
+            (ClassFieldTheory.Global.RelativeWeilGroup.projection c (realizationSubfield K θ L) K'
               (ι g) x)) =
         AlgEquiv.toAlgHom (localProjection (towerPadicField v u) g)
-          (ClassField.Global.RelativeWeilGroup.completionClosureEmbedding u w
+          (ClassFieldTheory.Global.RelativeWeilGroup.completionClosureEmbedding u w
             (algebraMap K' (w.adicCompletion K') x)))
     (y : localWeilGroup (towerPadicField v u)) :
     galoisRestriction F K (τ * extensionWeilMap F (towerPadicField v u)
         (realizationBaseAlgHom v u φ hφ') y * τ⁻¹) =
-      θ ((ClassField.Global.RelativeWeilGroup.projection c (realizationSubfield K θ L) K'
+      θ ((ClassFieldTheory.Global.RelativeWeilGroup.projection c (realizationSubfield K θ L) K'
         (ι y)).restrictScalars k) :=
   galoisRestriction_conj_eq_of_closure K θ (algebraMap K' (w.adicCompletion K')) ψ hθ
     (realizationBaseAlgHom v u φ hφ')
-    (ClassField.Global.RelativeWeilGroup.completionClosureEmbedding u w) τ hτ y _ (hι y)
+    (ClassFieldTheory.Global.RelativeWeilGroup.completionClosureEmbedding u w) τ hτ y _ (hι y)
 
 end Galois
 
 section Character
 
-open ClassField.Global ClassField.Global.RelativeWeilGroup LocalClassField
+open ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup LocalClassField
 
 attribute [local instance] relativeGaloisTopology
 

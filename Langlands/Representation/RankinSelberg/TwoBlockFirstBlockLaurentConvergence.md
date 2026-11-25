@@ -1,7 +1,5 @@
 # Spectral series of the original and transformed small integrals
 
-Author: Worker 1037.
-
 This module supplies the analytic inputs of the small functional-equation step in
 JPSS (1983), Section 4.9. It is derived internal packaging of published results.
 The published `unequalRankAnalytic F T n j k` is JPSS Theorem 2.7(i)–(ii). It

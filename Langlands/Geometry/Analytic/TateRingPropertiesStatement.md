@@ -1,7 +1,5 @@
 # Ring properties of actual strict Tate algebras
 
-Author: Worker 56.
-
 `StrictTateAlgebra.TateRingPropertiesStatement K` states that, for every
 finite number of variables, the actual strict Tate algebra over the
 complete ultrametric normed field `K` is Noetherian, is a domain, has

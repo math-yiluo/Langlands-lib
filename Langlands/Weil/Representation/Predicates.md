@@ -1,6 +1,6 @@
 # Separate conditions on complex Weil representations
 
-Worker 17 supplies predicates on the actual finite-dimensional complex vector
+This module supplies predicates on the actual finite-dimensional complex vector
 spaces of `Langlands.FiniteRepresentation`. The input is a group with an
 explicit inertia subgroup where needed. The generic definitions do not claim
 that an arbitrary input group is a local Weil group.
@@ -38,8 +38,8 @@ finite-dimensional representations. `ContinuousIrreducibleClasses` and
 from `Basic`, and then restrict the descended rank to `n`. No equivalence
 between continuity, open inertia kernel, or finite inertia image is used.
 Similarly, finite image is not defined to mean Galois type. Such bridges
-require hypotheses on the actual Weil and Galois groups and remain separate
-theorem obligations. No topological-group instance is needed merely to state
+require hypotheses on the actual Weil and Galois groups and are separate
+theorems. No topological-group instance is needed merely to state
 these predicates.
 
 ## Source correspondence and scope
@@ -77,4 +77,3 @@ The unitary predicate is the standard invariant positive-definite Hermitian
 form definition, expressed directly using Mathlib's inner-product core;
 no theorem about existence of such a form is assumed.
 Mathlib commit: `5ed2965256430c3649e86755f9576b54eca72435`.
-This pair and its `Basic` dependency are development pending independent review.

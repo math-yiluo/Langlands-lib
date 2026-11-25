@@ -1,7 +1,5 @@
 # Structure-morphism properties of finite products of group schemes
 
-Worker 1424.
-
 This module proves a general closure property of the finite products of group
 schemes from `Products.lean`. Fix a morphism property `P` of schemes that is
 stable under composition and base change, contains identities and respects

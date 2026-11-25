@@ -1,7 +1,5 @@
 # Original-factor equivalence onto the intrinsic smooth tensor slice
 
-Author: Worker 2.
-
 This internal construction identifies the specified original admissible local
 factor with the intrinsic locally smooth subrepresentation of its actual
 completed automorphic tensor slice. It uses the published exact image equation

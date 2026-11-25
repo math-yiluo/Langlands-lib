@@ -1,6 +1,6 @@
 # The unitarizable-constituent step of Renard VII.1.3 from two open inputs
 
-Author: Worker 58. Module
+Module
 `Langlands.Representation.Exponents.MaximalLeviUnitarizableConstituentLeafReduction`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. This module is an internal
 conditional reduction. It proves no new mathematics from the literature. It puts together
@@ -27,14 +27,14 @@ premises and the conclusion are published statements, used unchanged.
   generic cocharacter, there are one apartment datum and one special point. At these, the
   special compact subgroup `K0` has the special compact properties, standard-Levi
   inheritance, the ambient and Levi Iwasawa products, the ambient and Levi Cartan
-  comparisons and the simultaneous basis property. Task 4169 owns its proof.
+  comparisons and the simultaneous basis property. It is not proved in the Library.
 - `RationalNormKernelFixedLevelFinitenessStatement.{u, max u v}` (module
   `Langlands.Representation.CuspidalSupport.RationalNormKernelDecompositionStatement`):
   condition (KF) from the proof of Renard VI.3.4. For every compact open subgroup `K` of the
   common norm kernel of `G(F)`, only finitely many isomorphism classes of irreducible smooth
   representations with compact coefficients have a nonzero `K`-fixed vector. Here it is used
   at representation-carrier universe `max u v`. That is the universe of the induced
-  representation `i_P ρ` when `ρ` lives in universe `v`. Task 4412 owns its proof.
+  representation `i_P ρ` when `ρ` lives in universe `v`. It is not proved in the Library.
 - `MaximalLeviSupercuspidalUnitarizableConstituentStatement.{u, v}` (module
   `Langlands.Representation.Exponents.MaximalLeviReducibilityUnitaryInputs`): the
   unitarizable-constituent step of VII.1.3. Take an actual maximal proper rational parabolic
@@ -47,8 +47,8 @@ No further hypothesis is added.
 
 ## Relation to the published nine-premise reduction
 
-Worker 1714 published `maximalLeviSupercuspidalUnitarizableConstituent_of_geometricLemma`
-(module `Langlands.Representation.Exponents.MaximalLeviUnitarizableConstituentReduction`). It
+The published `maximalLeviSupercuspidalUnitarizableConstituent_of_geometricLemma`
+(module `Langlands.Representation.Exponents.MaximalLeviUnitarizableConstituentReduction`)
 derives the conclusion from nine premises. The Library now proves six of them as theorems:
 the geometric lemma, maximal-Levi containment, the cone complement, the self-normalizer,
 unimodularity and the standard-cocharacter statement. This module uses those six theorems.

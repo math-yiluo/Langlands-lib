@@ -144,17 +144,19 @@ def cmHarrisCoarseTowerCoefficientIso :
   hom :=
     { hom := 𝟙 _
       comm k g := by
-        change ((restriction).obj coefficientsV).ρ k g ≫ 𝟙 _ =
-          𝟙 _ ≫ (coefficientsT).ρ k g
+        change (((restriction).obj coefficientsV).ρ k g).asHom ≫ 𝟙 _ =
+          𝟙 _ ≫ ((coefficientsT).ρ k g).asHom
         simp only [Category.comp_id, Category.id_comp]
-        exact cmHarrisCoarseTowerCoefficient_action D ρ p U V T hVU hTV m hm k g }
+        exact congrArg CategoryTheory.End.asHom
+          (cmHarrisCoarseTowerCoefficient_action D ρ p U V T hVU hTV m hm k g) }
   inv :=
     { hom := 𝟙 _
       comm k g := by
-        change (coefficientsT).ρ k g ≫ 𝟙 _ =
-          𝟙 _ ≫ ((restriction).obj coefficientsV).ρ k g
+        change ((coefficientsT).ρ k g).asHom ≫ 𝟙 _ =
+          𝟙 _ ≫ (((restriction).obj coefficientsV).ρ k g).asHom
         simp only [Category.comp_id, Category.id_comp]
-        exact (cmHarrisCoarseTowerCoefficient_action D ρ p U V T hVU hTV m hm k g).symm }
+        exact congrArg CategoryTheory.End.asHom
+          (cmHarrisCoarseTowerCoefficient_action D ρ p U V T hVU hTV m hm k g).symm }
   hom_inv_id := by apply EquivariantDiagram.Hom.ext; exact Category.id_comp _
   inv_hom_id := by apply EquivariantDiagram.Hom.ext; exact Category.id_comp _
 

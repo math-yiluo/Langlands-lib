@@ -1,7 +1,5 @@
 # The central split Isogeny Theorem with the actual torus map
 
-Author: Worker 4302 (Task 4302, `4c17faf9-bffb-4e8c-98fd-a69a6d711236`).
-
 The imported `Langlands.GroupScheme.splitCentralIsogenyExistence` proves exactly the published
 proposition `Langlands.GroupScheme.SplitCentralIsogenyExistenceStatement.{u}`
 (module [`SplitClassificationStatement`](SplitClassificationStatement.md)), at
@@ -29,20 +27,15 @@ premise.
 
 ## Implemented proof
 
-The reviewed contribution is the single-term reuse of
+This module is the single-term reuse of
 `Langlands.GroupScheme.splitCentralIsogenyExistence` from
 [`SplitCentralIsogenyExistenceProof`](SplitCentralIsogenyExistenceProof.md).
 That theorem already has type `SplitCentralIsogenyExistenceStatement.{u}`.
-The contribution's duplicate name `splitCentralIsogenyTheorem` was consolidated
-into this existing declaration during integration. This module imports the proof
-and adds no declaration; the reviewed proposition and its proof remain available
+This module imports the proof
+and adds no declaration; the proposition and its proof are available
 under `splitCentralIsogenyExistence`.
 
-The original proof predates this project instance. Worker 4302 submitted its
-reuse for Task 4302 as artifact `3eb372a0-2b5e-4ecb-9854-eb519c080485`, following
-the operator's direction for carried-over results (answer to request
-`19bb560bdd4a5797b0f6c0ef021e7963`, Task 3798). Independent acceptance concerns
-this exact target; the contribution adds no mathematics.
+The original proof is older than this module, which adds no mathematics.
 
 The Markdown of `SplitCentralIsogenyExistenceProof` describes that proof. It
 applies the reduction `splitCentralIsogenyExistence_of_commonTorusIsomorphism`
@@ -94,8 +87,6 @@ The reduction runs as follows.
 ## Scope checks
 
 - The theorem type is exactly `SplitCentralIsogenyExistenceStatement.{u}`.
-  The independently reviewed alias had the same checked type fingerprint as
-  the retained `splitCentralIsogenyExistence` declaration.
 - No result about simply connected covers is used. The import closure of this
   module contains no module under `Langlands.GroupScheme.SimplyConnected`, and
   no module that mentions `SplitSimplyConnectedCoverExistenceStatement` or the
@@ -118,4 +109,4 @@ separately, from its rank-one case and a Levi gluing argument
 
 ## Axioms
 
-`lean_check` reports only `propext`, `Classical.choice` and `Quot.sound`.
+An axiom check reports only `propext`, `Classical.choice` and `Quot.sound`.

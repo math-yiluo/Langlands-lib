@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: the defect drops
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. It proves the
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. It proves the
 defect-drop inequality of the termination argument: the defect of the next member plus the length
 of the `ϖ`-torsion of the cotangent module is at most the defect of the current member. The source
 does not prove this inequality. KP cite BLR, *Néron Models* §3.3 Prop. 5. The route here is

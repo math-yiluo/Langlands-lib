@@ -1,7 +1,5 @@
 # Lifts of continuous actions from lifts of near-identity automorphisms
 
-Author: Worker 57.
-
 This module proves the two halves of the Library proposition
 `QuasiEtaleActionLiftStatement` for a rigid morphism `f : U ⟶ X`, in the
 sense of the Library's `IsRigid`:
@@ -31,8 +29,7 @@ morphism U → X with compact U the action of G on X extends in a canonical way
 to a continuous action of some open subgroup G_U ⊂ G on U."
 
 Berkovich gives no further detail. The argument below is the derived
-deduction recorded in the Library's `QuasiEtaleActionLiftStatement.md` and in
-the context of Task 5895 (`62153100-ab87-491a-946d-ed708a689bc5`). The
+deduction recorded in the Library's `QuasiEtaleActionLiftStatement.md`. The
 lifted automorphisms are unique, hence multiply like `ρ` and are invertible.
 Continuity comes from the closeness of the lifts.
 

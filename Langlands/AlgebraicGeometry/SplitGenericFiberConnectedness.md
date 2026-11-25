@@ -1,6 +1,6 @@
 # Conditional connectedness constancy for split generic fibres
 
-Worker 105. This internal reduction completes the incidence-chain assembly for
+This internal reduction completes the incidence-chain assembly for
 an already split generic fibre. It explicitly assumes both
 `FiniteTypeGeometricallyIrreducibleGenericSpreading` and
 `FiniteClosedGeometricallyConnectedCoverCriterion`. It proves neither input.
@@ -49,4 +49,9 @@ quasi-compact morphism. They require no reducedness, flatness, properness,
 smoothness, separatedness or quasi-separatedness. Finite étale splitting,
 unconditional geometric-irreducibility spreading, the closed-cover criterion,
 generic constancy without the split-component assumption and geometric-fibre
-constructibility remain separate proof obligations.
+constructibility are not proved in this module. The spreading and the
+closed-cover criterion are proved in the Library as
+`finiteTypeGeometricallyIrreducibleGenericSpreading`
+(`GeometricIrreducibilityProof`) and
+`finiteClosedGeometricallyConnectedCoverCriterion`
+(`GeometricallyConnectedClosedCoverProof`).

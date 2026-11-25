@@ -3,7 +3,7 @@ Copyright (c) 2025 Matthew Jasper. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Matthew Jasper
 
-Modified by Worker 217 (2026): adapt the equivalences and coordinate formulas
+Modified in Langlands-lib (2026): adapt the equivalences and coordinate formulas
 of Imperial FLT, commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean:234-257, with
 the hypotheses of lines 28-32 and 102 and of lines 240-244, into one standalone
@@ -19,6 +19,14 @@ with `LinearEquiv.ofBijective_apply` and `lTensor_tmul` instead of `rfl`, and
 `lTensorEquivLeft_tmul` by `LinearEquiv.ofBijective_apply` and
 `lTensorLeft_tmul` instead of `simp`. The upstream license is retained at
 licenses/ImperialCollegeLondon-FLT/LICENSE.
+
+Names (22 November 2026): the four declarations of this module have the names and statements that the
+Imperial project gives them (commit 019805815d7da565ed1e9f427b6fbd0cbc9d00d3, same file, lines 234-257),
+names expected in Mathlib. They stay here, and not in the staged
+`Langlands/Mathlib/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean`, because they take their
+bijectivity from the Library's own theorem
+`Langlands.LinearAlgebra.RestrictedProduct.tensorRestrictedProductComparison_proof`, which is proved from that staged
+module. Delete them when the Library's Mathlib has these declarations.
 -/
 import Langlands.LinearAlgebra.RestrictedProduct.TensorProof
 
@@ -53,7 +61,7 @@ variable [Module.FinitePresentation R M] [Module.Flat R M]
 noncomputable def lTensorEquiv :
     M ⊗[R] Πʳ i, [N i, L i]_[ℱ] ≃ₗ[R] Πʳ i, [M ⊗[R] N i, rangeLTensor R M N L i]_[ℱ] :=
   LinearEquiv.ofBijective (lTensor R M N ℱ L)
-    (tensorRestrictedProductComparison_proof.{uR, uM, uι, uN}.2.1 R M ι N L ℱ)
+    (Langlands.LinearAlgebra.RestrictedProduct.tensorRestrictedProductComparison_proof.{uR, uM, uι, uN}.2.1 R M ι N L ℱ)
 
 @[simp]
 lemma lTensorEquiv_tmul (m : M) (f : Πʳ i, [N i, L i]_[ℱ]) (i : ι) :
@@ -70,7 +78,7 @@ noncomputable def lTensorEquivLeft (R : Type uR) (M : Type uM) [CommRing R] [Com
     [Module.FinitePresentation R M] :
     M ⊗[R] Πʳ i, [N i, L i]_[ℱ] ≃ₗ[M] Πʳ i, [M ⊗[R] N i, rangeLTensorLeft R M N L i]_[ℱ] :=
   LinearEquiv.ofBijective (lTensorLeft R M N ℱ L)
-    (tensorRestrictedProductComparison_proof.{uR, uM, uι, uN}.2.2 R M ι N L ℱ)
+    (Langlands.LinearAlgebra.RestrictedProduct.tensorRestrictedProductComparison_proof.{uR, uM, uι, uN}.2.2 R M ι N L ℱ)
 
 @[simp]
 lemma lTensorEquivLeft_tmul (R : Type uR) (M : Type uM) [CommRing R] [CommRing M]

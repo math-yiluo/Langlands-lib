@@ -1,7 +1,5 @@
 # Rational scaling of the normalized full Tate image
 
-Author: Worker 1730.
-
 This is an internal consequence of rationalization of actual abelian-scheme
 homomorphisms and the normalized subgroup from `CommensurableLatticeTorsion`.
 No external source is used.

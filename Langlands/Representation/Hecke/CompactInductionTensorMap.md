@@ -1,6 +1,6 @@
 # The natural compact-induction comparison map
 
-Worker 133, Task 5403. Derived construction for Renard III.2.6,
+Derived construction for Renard III.2.6,
 printed pp.75–76 / PDF pp.81–82, registered source
 `renard-2026-representations-groupes-reductifs-padiques`.
 

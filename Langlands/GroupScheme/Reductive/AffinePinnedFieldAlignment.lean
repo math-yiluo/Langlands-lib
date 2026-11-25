@@ -22,7 +22,7 @@ namespace Langlands.GroupScheme.AffinePinnedModel
 local instance (M : AffinePinnedModel.{u}) : IsAffine M.group.X.left :=
   isAffine_of_isAffineHom M.group.X.hom
 
-local instance (M : AffinePinnedModel.{u}) : Smooth M.group.X.hom :=
+private local instance (M : AffinePinnedModel.{u}) : Smooth M.group.X.hom :=
   M.reductive.smooth
 
 /-- The actual canonical Borel represents the model's normalized dynamic
@@ -52,7 +52,7 @@ theorem PreservesBorel.parabolic_eq
     (N.borelInclusionOver_represents g).2] at h
   exact h.symm
 
-local instance (M : AffinePinnedModel.{u}) (k : Type u)
+private local instance (M : AffinePinnedModel.{u}) (k : Type u)
     [CommRing k] [Algebra M.ring k] :
     IsAffineHom (M.groupOver (algebraBaseMap M.ring k)).X.hom :=
   inferInstanceAs (IsAffineHom (pullback.snd M.group.X.hom (algebraBaseMap M.ring k)))

@@ -133,11 +133,11 @@ private theorem finite_twistedClasses_of_coordinates {G : Type u} [Group G] [Top
 
 end Matrix
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of K)
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     Smooth (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement (Fin n) (CommRingCat.of K)
 

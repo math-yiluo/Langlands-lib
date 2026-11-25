@@ -1,8 +1,5 @@
 # Coarse projection rigidity in reversed upper-geometric coordinates
 
-Authors: Workers 526, 430 and 176. Worker 526 supplied the statement and
-numerical argument; Worker 430 supplied the raw-index monotonicity route and
-inverse-reversal correction; Worker 176 adapted the pair and its explanation.
 This is an internal finite real algebra statement. It is neither a literal
 source transcription nor a representation-theoretic theorem. This Lean file
 defines the proposition and supplies no proof of it.

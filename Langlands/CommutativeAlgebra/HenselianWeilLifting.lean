@@ -1,5 +1,5 @@
 import Langlands.CommutativeAlgebra.HenselianSections
-import Langlands.TauCeti.RingTheory.WeilRestriction.Smooth
+import Langlands.RingTheory.WeilRestriction.Smooth
 
 /-! # Smooth lifting along a finite projective algebra over a Henselian ring -/
 
@@ -21,15 +21,15 @@ theorem exists_lift_of_finite_projective_smooth
     (hk : Function.Surjective (algebraMap R k))
     (φ : C →ₐ[B] B ⊗[R] k) :
     ∃ σ : C →ₐ[B] B, (Algebra.ofId B (B ⊗[R] k)).comp σ = φ := by
-  let W := TauCeti.Algebra.WeilRestriction R B C
+  let W := Langlands.Algebra.WeilRestriction R B C
   let ψ : W →ₐ[R] k :=
-    (TauCeti.Algebra.WeilRestriction.homEquiv R B C k).symm φ
+    (Langlands.Algebra.WeilRestriction.homEquiv R B C k).symm φ
   obtain ⟨τ, hτ⟩ := exists_lift_of_smooth hk ψ
   let σ₀ : C →ₐ[B] B ⊗[R] R :=
-    TauCeti.Algebra.WeilRestriction.homEquiv R B C R τ
+    Langlands.Algebra.WeilRestriction.homEquiv R B C R τ
   have hσ₀ :
       (Algebra.TensorProduct.lTensor B (Algebra.ofId R k)).comp σ₀ = φ := by
-    rw [← TauCeti.Algebra.WeilRestriction.homEquiv_comp, hτ]
+    rw [← Langlands.Algebra.WeilRestriction.homEquiv_comp, hτ]
     exact Equiv.apply_symm_apply _ φ
   have htensor :
       (Algebra.ofId B (B ⊗[R] k)).comp

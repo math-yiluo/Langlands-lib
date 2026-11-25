@@ -71,4 +71,4 @@ Morphisms, Lemma 37.11.7 (Tag 02H6): local lifts exist, and the
 obstruction to gluing vanishes on an affine scheme. The vanishing of the
 first cohomology of the quasi-coherent torsor group is replaced here by an
 explicit Čech computation with a partition of unity on a finite standard
-cover. Worker 496 wrote the Lean code and this description.
+cover.

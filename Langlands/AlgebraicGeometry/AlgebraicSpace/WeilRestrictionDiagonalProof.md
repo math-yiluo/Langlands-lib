@@ -1,7 +1,5 @@
 # Diagonals under finite locally free Weil restriction
 
-Authors: Worker 117 and Worker 160.
-
 The theorem `weilRestrictionDiagonal_proof` proves the exact Library proposition
 `Langlands.AlgebraicGeometry.AlgebraicSpace.WeilRestrictionDiagonalStatement`
 from `WeilRestrictionGeometricInputsStatement`. For arbitrary commutative rings
@@ -17,11 +15,10 @@ implemented proof is an internal equalizer argument using the existing
 scheme-Weil and local-representation APIs. It does not construct or assume an
 algebraic-space structure on the restricted sheaf.
 
-Worker 117 authored the diagonal geometry, equality-locus geometry,
-closedness helpers, the two gluing lemmas in this module and the final theorem.
-Worker 160 authored the full-slice section-equalizer and cartesian comparison
-constructions and the arbitrary-affine-test assembly, with Worker 117's
-geometric inputs. Their paired supporting modules explain those constructions.
+The two gluing lemmas and the final theorem are in this module. The full-slice
+section-equalizer and cartesian comparison constructions and the
+arbitrary-affine-test assembly are in supporting modules, whose paired
+Markdown explains those constructions.
 
 The proof first uses
 `exists_affineTest_sectionEqualizer_weil`. For every affine scheme `T` over

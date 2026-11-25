@@ -1,8 +1,8 @@
 # Shared declaration names of the Stacks and FAG closures
 
 Evidence for [`../etale-premises-sheaf-libraries-audit.md`](../etale-premises-sheaf-libraries-audit.md),
-Section 8 (Task 7360, item 6). Worker 19 prepared this list on 17 November 2026 and regenerated it on 18 November 2026 from
-the corrected closures (see "How the list was made", step 1). It is an unreviewed development
+Section 8. The list was made on 17 November 2026, and made again on 18 November 2026, from
+the corrected closures (see "How the list was made", step 1). It is a development
 record, not a Library statement.
 
 ## What is listed
@@ -12,11 +12,11 @@ The table lists the public declaration names declared both
 - in the import closure of the seven Stacks premise roots of Section 7.1 at commit `c496df0`
   (AxiomMath/Stacks; 17,881 modules: 17,435 `StacksFrontier`, 446 `StacksCore`), and
 - in the import closure of the five FAG premise roots of Section 5.6 together with the five
-  Task 7342 roots at commit `a25955c` (formal-arithmetic-geometry/weil-conjectures; 16,858
-  modules: the 16,839 of the Task 7342 closure and the 19 premise modules outside it).
+  roots for Laumon's numerical statement E1b at commit `a25955c` (formal-arithmetic-geometry/weil-conjectures; 16,858
+  modules: the 16,839 of the E1b closure and the 19 premise modules outside it).
 
 **Counts.** 332 names. Of these, 286 are declared in the closure of the five FAG premise roots
-(7,275 modules), and the other 46 only in the closure of the Task 7342 roots. On the FAG side,
+(7,275 modules), and the other 46 only in the closure of the E1b roots. On the FAG side,
 137 names are declared in `WeilConjectures/Mathlib`, 15 in `WeilConjectures/FromJoel`, and 180
 in other FAG files. On the Stacks side, 28 are in `StacksCore` and 304 in `StacksFrontier`.
 
@@ -27,8 +27,8 @@ corrected parser the Stacks closure grew from 16,918 to 17,881 modules and the F
 16,833 to 16,858. All 327 earlier rows are reproduced unchanged. Five names are new:
 `AlgebraicGeometry.irreducibleSpace_of_connectedSpace` (in the FAG premise closure), and
 `CategoryTheory.Limits.isColimitCofanMkOfIso`, `CategoryTheory.ObjectProperty.localizingClosure`,
-`…ObjectProperty.le_localizingClosure` and `…ObjectProperty.localizingClosure_le` (in the Task
-7342 closure only).
+`…ObjectProperty.le_localizingClosure` and `…ObjectProperty.localizingClosure_le` (in the E1b
+closure only).
 
 ## How the list was made
 
@@ -77,8 +77,8 @@ the toolchain file `src/lean/Lean/Environment.lean`, line 2268) accepts two decl
 same name if both are theorems with the same elaborated type, the same list of universe
 parameter names, and the same `all` field. Otherwise the import fails with "already
 imported". An instance of a class whose values are propositions (such as `Module.Flat` or
-`Functor.Additive`) is a theorem for this check. The rule was confirmed in the project's Lean
-service on test modules (Worker 19's diagnostics, 17 November 2026):
+`Functor.Additive`) is a theorem for this check. The rule was confirmed with Lean
+on test modules on 17 November 2026:
 
 | Diagnostic | Two imported modules declare the same name as | Result |
 |---|---|---|

@@ -28,5 +28,5 @@ attracting schemes are needed.
 The construction works in every universe and every characteristic, for
 arbitrary relative tests including nonaffine and nonreduced schemes, and for
 trivial and central cocharacters. It assumes neither smoothness nor reductivity.
-This unit does not prove orbit closedness, reductive quotient affineness, or
+This module does not prove orbit closedness, reductive quotient affineness, or
 `DynamicQuotientProperStatement`.

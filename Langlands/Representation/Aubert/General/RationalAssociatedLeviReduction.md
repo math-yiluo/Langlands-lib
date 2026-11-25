@@ -1,11 +1,10 @@
 # The rational associated-Levi comparison from published rational inputs
 
-Author: Worker 757 (task `f7d95940-33d0-49d3-93d6-8d5ff8d89373`). The graded
+The graded
 exactness and top-degree surjectivity lemmas used in
-`associatedGradedExactnessTarget_of_targets` are Worker 1252's modules
-`CorrectedGradedExactness` and `CorrectedGradedTopSurjectivity` (task
-`613611a4`). They build on Worker 691's `JacquetCutDiagram` and
-`CorrectedDegreeFiltration`.
+`associatedGradedExactnessTarget_of_targets` are in the modules
+`CorrectedGradedExactness` and `CorrectedGradedTopSurjectivity`. They build on
+`JacquetCutDiagram` and `CorrectedDegreeFiltration`.
 
 This module is a conditional reduction. It proves the exact rational target
 `RationalPointFamily.RationalAssociatedLeviComparisonStatement.{u, v}` (module
@@ -27,16 +26,24 @@ This module is a conditional reduction. It proves the exact rational target
   first form by `rationalAssociatedGradedExactnessStatement_of_targets`.
 
 The module proves none of these inputs and constructs no inhabitant of them.
-The rational target therefore stays open until all seven published inputs are
-proved.
+Of the seven inputs of the second form, all except
+`RationalCorrectedGradedVanishingStatement` are proved elsewhere in the Library
+(`GroupScheme.rationalBruhat`, `BruhatTits.dynamicParabolicQuotientCompact`,
+`rationalCorrectedSurvivingSupport`,
+`rationalCorrectedOrbitRadicalIntersectionStatement`,
+`rationalCorrectedOrbitSquaredModulus` and
+`rationalCorrectedGradedTransitionStatement`); the module
+`CanonicalRationalAssociatedLeviComparisonReductionProof` supplies them to
+`rationalAssociatedLeviComparisonStatement_of_published`. The rational target
+therefore stays open until `RationalCorrectedGradedVanishingStatement` is proved.
 
 Provenance: derived and internal. The inputs are the hypotheses of the
 conditional theorem `TerminalJacquet.associatedLeviComparisonStatement_of_inputs`
 (module `AssociatedLeviLongestRep`). That theorem assembles display (**) of
 Aubert's 1996 erratum (p.4690, Remark (1)) along the corrected support
 filtration of Ban–Jantzen (2016, Section 4). This module only instantiates that
-theorem at the actual rational-point families. Its structure follows Worker
-969's `rationalCorrectedGradedTransitionStatement_of_inputs` (module
+theorem at the actual rational-point families. Its structure follows
+`rationalCorrectedGradedTransitionStatement_of_inputs` (module
 `RationalCorrectedGradedReduction`).
 
 ## Declarations
@@ -62,7 +69,7 @@ theorem at the actual rational-point families. Its structure follows Worker
   `max uI uV`) and `hW : actualLeviWeylIdentification T M actual`. The proof
   takes `I`, `E` in the support category of `L_I`, and proves the three
   components separately.
-  1. Surjectivity is Worker 1252's
+  1. Surjectivity is
      `JacquetComplex.gradedDifferential_surjective_top_of_leftDescentSet_eq`
      at `i₀ = associatedGrade actual I` (bound `associatedGrade_lt`) and
      `K₀ = associatedSubset actual I`. Its three Coxeter premises are the

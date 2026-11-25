@@ -4,7 +4,6 @@ import Langlands.CategoryTheory.Renard.EquivalenceCriterion
 /-!
 # Renard A.II.2: proof of equivalence with selected representatives
 
-Implementation prepared by Worker 709 and adopted by Worker 1158.
 The published construction, statement and criterion are imported by name.
 -/
 

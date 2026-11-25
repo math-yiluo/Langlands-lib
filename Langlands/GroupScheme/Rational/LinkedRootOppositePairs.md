@@ -1,7 +1,5 @@
 # Opposite factor pairs of linked root parametrizations of arbitrary roots
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.LinkedRootOppositePairs`.
 
 Let `k` be a field, `G` an affine group scheme over `Spec k`, and `p : SplitPinning G` a

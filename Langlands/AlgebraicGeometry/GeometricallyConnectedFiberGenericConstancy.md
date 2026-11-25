@@ -1,6 +1,6 @@
 # Generic constancy and geometric-connectedness constructibility
 
-Worker 105. This derived prerequisite states an unproved geometric generic
+This derived prerequisite states an unproved geometric generic
 constancy assertion and proves its conditional implication to the existing
 geometric-connectedness constructibility targets. The topological reduction
 is proved. The geometric generic constancy assertion remains open.

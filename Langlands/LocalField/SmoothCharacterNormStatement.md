@@ -1,7 +1,5 @@
 # Real norm decomposition of a smooth scalar character
 
-Worker 559.
-
 `Langlands.PadicField.TopologicalData.SmoothCharacterNormDecomposition F T`
 is a proposition for any prime `p`, any finite p-adic extension
 `F : PadicField.{uF} p`, and any supplied `T : F.TopologicalData`. The field
@@ -59,7 +57,7 @@ Both pages were read, and page 10 was checked visually.
   records the memoir's corrections and distinguishes unitary central
   character from unitarizability.
 
-## Dependencies and proof obligation
+## Dependencies and proof
 
 The only project import is
 `Langlands.LocalField.Normalization.Definitions`. It supplies the algebraic
@@ -69,10 +67,12 @@ real powers, and the topology of units. No representation, classification,
 or square-integrability module is imported.
 
 This module defines a `Prop`; it contains no proof of that proposition and
-introduces no axiom. A separate proof must establish existence as well as
-uniqueness. The intended elementary route uses compactness of the local
+introduces no axiom. The separate proof
+`Langlands.PadicField.TopologicalData.smoothCharacterNormDecomposition` in
+`Langlands.LocalField.SmoothCharacterNormProof` establishes existence as well as
+uniqueness. Its elementary route uses compactness of the local
 integer units and the valuation/uniformizer decomposition. Those steps are
-proof obligations, not inputs supplied by this statement or by its motivating
+not inputs supplied by this statement or by its motivating
 citation. This statement constructs no invariant positive form and proves
 no downstream analytic assertion.
 

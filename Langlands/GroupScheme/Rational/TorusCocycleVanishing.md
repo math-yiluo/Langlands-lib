@@ -25,6 +25,6 @@ cohomology comparison.
 
 This is a derived internal interface for the torus-cohomology portion of
 Steinberg's theorem, expressed entirely in the existing scheme APIs.
-There is no external theorem claimed by this definition. Worker 1333
-authored the interface; the existing Čech constructions are imported
-from Worker 1515's published module without modification.
+There is no external theorem claimed by this definition. The existing
+Čech constructions are imported from the published module
+`Langlands.GroupScheme.TorsorCocycle` without modification.

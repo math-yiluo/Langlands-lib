@@ -1,7 +1,5 @@
 # Root models for actual Levi cocenters
 
-Author: Worker 1282.
-
 This module gives a derived geometric prerequisite for the fundamental-weight
 proof of inducedness of a simply connected group's split-torus-centralizer
 cocenter. It defines the prerequisite and proves naturality of the actual

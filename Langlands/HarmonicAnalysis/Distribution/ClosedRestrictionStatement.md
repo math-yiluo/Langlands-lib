@@ -58,7 +58,7 @@ imported modules are used unchanged.
 - The proposition says nothing about distributions. The resulting description
   of distributions supported on `Z` (the correspondence through
   `Distribution.closedPushforward`) and any orbit-vanishing theorem are not
-  part of this unit.
+  part of this module.
 
 ## Provenance
 
@@ -109,10 +109,8 @@ implemented Lean argument.
 ## Consumers
 
 The proposition is intended as the closed-restriction input for the Whittaker
-multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`), the
-Shalika distribution-invariance proof (task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`) and the finite-orbit vanishing proof
-(task `51a122ec-9363-4c38-9df9-593ffdb99219`). The published proofs
+multiplicity-one work, the Shalika distribution-invariance proof and the
+finite-orbit vanishing proof. The published proofs
 `Langlands.HarmonicAnalysis.Distribution.finiteOrbitAntiInvariantVanishing`
 and `Langlands.HarmonicAnalysis.Distribution.closedSupportedDescent` use
 `closedRestrictionSurjective`.
@@ -123,9 +121,7 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.SchwartzBruhat.closedRestrictionSurjective.{u}` in
 `Langlands.HarmonicAnalysis.Distribution.ClosedRestrictionProof`. Its type is
 exactly `ClosedRestrictionSurjectiveStatement.{u}`, with no added hypothesis.
-The proof is artifact `9f1d0056-dabe-4632-a2e4-dc0bcdf368e1` version 1. Its
-validation passed the Lake build and exact-target checks, an independent review
-approved it, and it was published at Library commit
-`a2f65909d0470e0c9b71d24975a4fb12723f855f`. It proves only the surjectivity of
+The proof passed the Lake build and exact-target checks and was published at
+Library commit `a2f65909d0470e0c9b71d24975a4fb12723f855f`. It proves only the surjectivity of
 `restrictClosed hZ` stated here. The distribution consequences listed under
 [Scope](#scope) are separate propositions.

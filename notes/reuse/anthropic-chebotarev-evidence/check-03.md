@@ -1,6 +1,6 @@
 # Terminal development check 03
 
-Official diagnostic `8acf1d36-4a1b-4020-a2b3-31eb70b12416`. Exact UTF-8 JSON SHA256 `d51a5d4db0a2e637ec421c49a9dfd4932d229c0d53385dd132bbfb32dc241cbc`. This record is development evidence; `proof_accepted` is false. Generated `sorryAx` entries in failed-check diagnostics are Lean error-recovery output, not accepted proofs or authored proof holes.
+Exact UTF-8 JSON SHA256 `d51a5d4db0a2e637ec421c49a9dfd4932d229c0d53385dd132bbfb32dc241cbc`. This record is development evidence; `proof_accepted` is false. Generated `sorryAx` entries in failed-check diagnostics are Lean error-recovery output, not accepted proofs or authored proof holes. The `source_sha256` values in the record are the hashes of the submitted source files as they were when the check was made.
 
 ```json
 {

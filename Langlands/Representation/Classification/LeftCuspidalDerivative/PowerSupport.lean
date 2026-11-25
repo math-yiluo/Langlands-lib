@@ -105,6 +105,7 @@ theorem isIrreducible_cuspidalPower (K : ℕ) (hK : 0 < K) {n : ℕ}
     rw [hmem Δ₁ h₁, hmem Δ₂ h₂] at hlink
     exact hlink.1 subset_rfl
   have hirr := unlinkedSegmentSocleProductIrreducible.{uF, max uF uV} F T n₀ D hD hU
+  dsimp only [D] at hirr
   exact (Weil.IsomorphismInvariance.irreducible_iff
     (SmoothRep.equivOfIso (SegmentProductDatum.ofCuspidalsInducedIso.{uF, uV} T _ h _))).mp hirr
 

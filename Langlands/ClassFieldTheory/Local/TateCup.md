@@ -1,7 +1,5 @@
 # Cup product with relative degree-two Galois classes
 
-Author: Worker 42.
-
 ## Actual cup maps
 
 For fields `K` and `L` in independent arbitrary universes, an algebra structure
@@ -31,7 +29,8 @@ postcomposes the degree-minus-two cup map with the published additive
 equivalence `tateZeroEquivNormQuotient`. Its target is the existing quotient
 `Kˣ / normSubgroup K L`, in additive notation. Its domain is still actual
 degree-minus-two integral Tate cohomology; an identification with the
-abelianization of `Gal(L/K)` is separate work.
+abelianization of `Gal(L/K)` is separate work (`abelianizationCupEquiv` in
+`TateAbelianization`).
 
 `negativeTwoCupToNormQuotient_bijective_iff` proves that this postcomposition
 is bijective exactly when the original cup map is bijective. The proof uses
@@ -80,4 +79,4 @@ published field norm-quotient comparison.
 
 Registered original: `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 42 read the cited original pages directly.
+The cited original pages were read directly.

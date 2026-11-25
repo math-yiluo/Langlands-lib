@@ -1,25 +1,21 @@
 # Compatible Galois families from unitary Shimura cohomology: declaration coverage
 
-Author: Worker 34, for task `bd93b48c-db25-4739-89f5-97cabc0f6491` (Task 34)
-revision 1: compatible Galois-family existence and multiplicity removal from
-unitary Shimura cohomology. The previous instance's Worker 34 authored the
-published units listed in section 1. Each pair's Markdown names its author.
-
-This note maps that task's objective to Lean declarations. Sections 1.1–1.4
+This note maps compatible Galois-family existence and multiplicity removal from
+unitary Shimura cohomology to Lean declarations. Sections 1.1–1.4
 describe Library commit `ed924aef420de137b4cbaa3b063a3618afcd73fd`. Section 1.5
 describes the statements on Shimura cohomology, built on Library commit
-`c0debd6f4dd02fdd68d70811cf610906b945a962`. The environment is
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). Modules are given relative to
+`c0debd6f4dd02fdd68d70811cf610906b945a962`. The checks used Lean 4.34.0 and
+Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. Modules are given relative to
 `Langlands/`. Use the declarations by their Lean names from the current
 Library. The SHA256 values in section 4 identify the versions described here.
 
 **How to read the status.** Every target below is a `Prop`-valued `def`.
-Publication accepts the formulation and its agreement with the original
-source; it does not prove the proposition. At Library commit
+A statement in the Library fixes the formulation and its agreement with the
+original source; it does not prove the proposition. At Library commit
 `320321b3cd4b5100d54cf785192677d59479e65f`, no Library theorem proves any
 statement in section 1, and no Library theorem takes one as a hypothesis. So
-every statement is an unproved obligation. Outside the modules of section 1,
+every statement is an unproved obligation. A search by name in the present
+Library finds no proof of any statement of section 1 either. Outside the modules of section 1,
 the only Lean files that use one of the statement names are three Prop-valued
 reduction statements for Harris's Proposition 4.8, in namespace
 `Langlands.Global.Harris`. Each of them takes
@@ -138,14 +134,14 @@ All three are stated for the Library's CM Shimura varieties `S_U` of Harris's
 signature and the Library's `λ`-adic cohomology with coefficients in a
 general algebraic representation `ρ` of the unitary similitude group `GG`.
 That cohomology, its tower, the Hecke multiplicity spaces and the isotypic
-parts with their Galois representations come from Task 5484
-(`Shimura/PEL/HarrisTaylorCMLambdaCohomologyObjects`,
-`Shimura/PEL/HarrisTaylorCMLambdaTower`). Each statement assumes that `A` is a
+parts with their Galois representations come from the modules
+`Shimura/PEL/HarrisTaylorCMLambdaCohomologyObjects` and
+`Shimura/PEL/HarrisTaylorCMLambdaTower`. Each statement assumes that `A` is a
 division algebra. `CMHarrisTheorem57Statement` also assumes Harris's
 condition (R) of [H1] (Harris 1997, p.79), to whose framework Harris 1999, §4,
 returns: at every finite place of `F`, `A` is split or a division algebra. It
 also assumes that the algebra `D'` of the inner form is a division algebra
-([H1], p.80). Worker 16's neighbouring statement of Harris 1999 (5.1),
+([H1], p.80). The neighbouring statement of Harris 1999 (5.1),
 `CMHarrisVanishingStatement` (`Shimura/PEL/HarrisTaylorCMHarrisVanishingStatement`),
 uses the same form of (R) but does not assume that `D'` is a division algebra.
 
@@ -155,7 +151,7 @@ has a Hodge–Tate decomposition at every place of `F` above `ℓ` as a
 `C_w`-linear, Galois-equivariant `C_w ⊗_{ℚ_ℓ} V ≅ ⊕_i C_w(k_i)`, not required
 to be `K_λ`-linear. A `K_λ`-linear form with free summands would force equal
 weights at all coefficient embeddings. Its Markdown gives an in-scope example
-where that fails (Reviewer 2555's example: the reduced norm on `GU(2,1)` with
+where that fails (the reduced norm on `GU(2,1)` with
 an inert coefficient prime).
 
 `CMHarrisKottwitzLambdaAdicStatement` is Kottwitz's Theorem 1. It has
@@ -192,7 +188,7 @@ base-change eigenvalues `UnramifiedChart.baseChangeEigenvalues`.
 ## 2. Dependencies between the statements
 
 No Lean theorem connects the statements; the following is the proof route of
-the sources, recorded for the proof tasks.
+the sources, recorded for their proofs.
 
 - Harris 1998 Thm 1.2 and Harris 1999 Thm 5.9(i) are deduced from Clozel's
   theorems (`Clozel1991Theorem57Statement` in the good-parity case,
@@ -281,8 +277,7 @@ Each is documented in the Markdown of the statement concerned.
 - For a proof of (i), Taylor's hypothesis needs a `K_λ`-linear Hodge–Tate
   decomposition of the isotypic part with `n` distinct twists of equal
   multiplicity. The Hodge–Tate statement of section 1.5 does not supply it.
-- Part (iii) belongs to the Harris–Berkovich branch (task
-  `b91b0934-0122-4c05-b359-4e7ed64bbe3d`); see
+- Part (iii) belongs to the Harris–Berkovich branch; see
   [`harris-cohomology-coverage.md`](harris-cohomology-coverage.md).
 
 ### 3.3 Hodge–Tate property (`CMHarrisLambdaCohomologyHodgeTateStatement`)
@@ -303,8 +298,8 @@ The proofs of all statements in section 1 are separate obligations. So are
 the transfer of `π_c` to the unitary group (Clozel 1991 §4, Proposition 4.11,
 printed pp.129–130; Clozel 1993 Prop. 2.3), the assembly of Taylor's `U_λ` into a compatible
 family over one coefficient field, Clozel's totally real base change
-(Corollaire 5.4.2), and Harris's reduction of Thm 1.2 to cuspidal `π`. No
-task owns these yet.
+(Corollaire 5.4.2), and Harris's reduction of Thm 1.2 to cuspidal `π`. This
+note records no proof of them.
 
 ## 4. Exact versions
 
@@ -346,7 +341,9 @@ published after the commit above):
 | `Langlands/JacquetLanglands/HarrisTransfer.md` | `0c88ef2693dc66d69904737bfc13783e319d21ced131da7241435f75691fe4f9` |
 
 SHA256 at Library commit `cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`
-(prerequisites from Tasks 5424 and 5484):
+(prerequisites: unramified parameters, Kottwitz's polynomials and unramified base
+change for unitary similitude groups; the λ-adic cohomology of Harris's CM Shimura
+tower):
 
 | File | SHA256 |
 | --- | --- |
@@ -364,7 +361,8 @@ SHA256 at Library commit `cc5aa77fa8dbdc6e723091c7b710ab0d81162c4e`
 | `Langlands/Shimura/PEL/HarrisTaylorCMScaledDescent.md` | `a47784dee244ca3c806cd343ca23f45ef3c866c36afb11b7d1cc0732eb90f7d0` |
 
 SHA256 at Library commit `c0debd6f4dd02fdd68d70811cf610906b945a962`
-(prerequisites from Task 5484 and other Library modules used by section 1.5):
+(prerequisites: the λ-adic cohomology of Harris's CM Shimura tower and other
+Library modules used by section 1.5):
 
 | File | SHA256 |
 | --- | --- |
@@ -382,11 +380,9 @@ SHA256 at Library commit `c0debd6f4dd02fdd68d70811cf610906b945a962`
 | `Langlands/Galois/UnitaryNormalization.md` | `41430f38b33f6ec1d5587363605a91bc0e665b349b289b39fbf8fd2ef0b77568` |
 
 SHA256 of the statements of section 1.5, as published at Library commit
-`70eca2e4ea526de0ce0c41e4a9ea0e7d8087cbe7` (accepted candidates
-`c1bd0a53-41a1-4f40-8562-25d75f6e854f`, `7e99ae3a-f44d-40b6-ab76-e0d4a90c0419`
-and `a921327e-9f7e-4898-aefa-8fa27eefb083`; the last corrects the earlier
-accepted `2f781688-8d28-4585-97b9-7be6062f32ad` by adding condition (R) and
-the division hypothesis on `D'`):
+`70eca2e4ea526de0ce0c41e4a9ea0e7d8087cbe7` (the Theorem 5.7 statement there
+corrects an earlier formulation by adding condition (R) and the division
+hypothesis on `D'`):
 
 | File | SHA256 |
 | --- | --- |

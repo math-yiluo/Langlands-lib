@@ -15,7 +15,7 @@ are `c ∈ ℂ` and `f ∈ kFiniteFunctions (complexStandardModule n ds) (unitar
 
 where `integrand ds hn i j hj c f z = R(c E_jj) f (C(z)) - κ_j(c) f(C(z))`
 (`ComplexSwapJacquetChart`). The integral is the Bochner integral for Lebesgue measure on `ℂ`.
-`ComplexSwapJacquetFunctional` (Worker 48) shows that `f ↦ ∫ integrand c f` is a Jacquet
+`ComplexSwapJacquetFunctional` shows that `f ↦ ∫ integrand c f` is a Jacquet
 functional with the swapped exponents. This theorem makes it nonzero.
 
 ## The test vector
@@ -79,5 +79,6 @@ By `rightDerivative_chart_diag_j` (`ComplexSwapJacquetLie`), the integrand equal
 
 This is an internal step of the proof of `ComplexStandardPermutationStatement`: the nonvanishing
 of the rank-one intertwining functional. The choice of `F` and the elementary computations above
-are our own. The interface (`exists_integral_integrand_ne_zero` with this exact type) was agreed
-with Worker 48, whose `ComplexSwapJacquetProof` consumes it.
+are our own. The interface (`exists_integral_integrand_ne_zero` with this exact type) is the
+hypothesis of `swapJacquet_of_nonvanishing` in `ComplexSwapJacquetProof`, which consumes it;
+`ComplexStandardPermutationProof` and `ComplexStandardUnlinkedSwapReduction` use the theorem.

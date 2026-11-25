@@ -1,7 +1,5 @@
 # The spectrum of a closed-ideal quotient
 
-Author: Worker 36.
-
 `Langlands.Analytic.QuotientSpectrumStatement` is a proposition about every
 normed commutative ring A. The zero locus of every ideal is closed in the
 bounded multiplicative spectrum. For each closed ideal I, pullback along the

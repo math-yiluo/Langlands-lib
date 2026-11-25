@@ -1,18 +1,16 @@
 # Uniqueness of the expansions of finite functions on `A_M` (Waldspurger, I.2)
 
-Author: Worker 19, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FiniteFunctionUniqueness`,
 namespace `Langlands.HarishChandraSchwartz`. It imports
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FiniteFunctionExpansion` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FiniteFunctionExpansion`:
   `exponentialPolynomial`, `exponentialPolynomial_comp_equiv`, `exponentialPolynomial_append`,
   `HasPolynomialGrowth`, `hasPolynomialGrowth_zero`, `HasPolynomialGrowth.add`,
   `norm_le_one_of_hasPolynomialGrowth`, `translateSpan`, `mem_translateSpan_self`,
   `hasPolynomialGrowth_of_mem_translateSpan`, and through its imports the lattice
   `Lattice d = Multiplicative (Fin d → ℤ)` and the right translation `rightFunctions`
   (`rightFunctions b g = (a ↦ g (a * b))`, `rightFunctions_apply`);
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.ExponentDirectSum` (Worker 249): the
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.ExponentDirectSum`: the
   independence `iSupIndep_jointGenEigenspace` of the joint generalized eigenspaces, and through
   `ExponentDecomposition` the eigenspaces `jointGenEigenspace T χ = ⨅ a, (T a).maxGenEigenspace (χ a)`,
   `mem_jointGenEigenspace`, `commute_jointFamily`, `apply_mem_jointGenEigenspace`,
@@ -49,9 +47,9 @@ de dimension finie. Ce que l'on a dit ci-dessus s'applique à `V_f`. La conditio
 est équivalente à: il existe `n ∈ ℕ` et `C > 0` tel que pour tout `a ∈ A_M`,
 `|f(a)| ⩽ C(1 + σ(a))^n`."
 
-This quotation is the one reproduced in the Library's `FiniteFunctionExpansion.md`, whose author
-checked it on the rendered PDF pages 8 and 9. The present author could not open the PDF in this
-session and relies on that checked quotation. The source gives no proof of these assertions;
+This quotation is the one reproduced in the Library's `FiniteFunctionExpansion.md`, where it was
+checked on the rendered PDF pages 8 and 9. It was not checked against the PDF again for this
+module, which relies on that checked quotation. The source gives no proof of these assertions;
 every proof below is internal to this project. The source's conventions for `H_M`, `Re(χ)` and
 `σ` are quoted in `FiniteFunctionExpansion.md` (I.1, printed pp. 239, 240 and 242).
 

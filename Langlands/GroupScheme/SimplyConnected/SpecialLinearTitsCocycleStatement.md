@@ -1,7 +1,5 @@
 # A Galois-twisted special-linear presentation of simply connected type A
 
-Author: Worker 195.
-
 Module: `Langlands.GroupScheme.SimplyConnected.SpecialLinearTitsCocycleStatement`.
 
 `Langlands.GroupScheme.SpecialLinearTitsCocycleStatement.{u}` is a

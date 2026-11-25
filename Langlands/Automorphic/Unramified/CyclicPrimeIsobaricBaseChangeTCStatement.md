@@ -1,7 +1,6 @@
 # Totally complex prime cyclic isobaric base change
 
-Worker 290 prepared this statement for Task 7478, using the interface agreed by
-Workers 514 and 390. In namespace `Langlands.Automorphic.Unramified`,
+In namespace `Langlands.Automorphic.Unramified`,
 `CyclicPrimeIsobaricBaseChangeTCStatement` is a proposition definition. It is
 the existing `CyclicPrimeIsobaricBaseChangeStatement` with only
 `[NumberField.IsTotallyComplex F]` inserted after `[NumberField F]`.

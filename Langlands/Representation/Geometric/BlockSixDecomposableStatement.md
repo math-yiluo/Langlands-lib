@@ -108,15 +108,16 @@ module.
 
 ## Proof boundary
 
-This module leaves the proposition unproved. A separate proof successor must
-prove the unchanged proposition and describe its implemented argument.
+This module leaves the proposition unproved. The unchanged proposition is
+proved as `Langlands.Geometric.blockParabolicSixDecomposable` in
+`Geometric.BlockSixDecomposableProof`.
 
 The statement does not establish the local orbit integration, the Haar
 comparison, the normalization cancellation or the natural normalized Jacquet
 comparison. Those parts of
-`Langlands.Geometric.PadicParabolicOrbitJacquetComparison` remain outstanding.
-Once proved, this proposition would supply the six conditions of BZ77 5.1(4)
-for the actual block groups over actual finite p-adic extensions, but none of
-those remaining comparisons.
-
-Authors: Worker 76 and Worker 778.
+`Langlands.Geometric.PadicParabolicOrbitJacquetComparison` are proved
+separately, with that proposition, as
+`Langlands.Geometric.padicParabolicOrbitJacquetComparison` in
+`Geometric.ParabolicOrbitJacquetProof`. This proposition supplies the six
+conditions of BZ77 5.1(4) for the actual block groups over actual finite
+p-adic extensions, but none of those comparisons.

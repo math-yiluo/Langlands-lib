@@ -1,7 +1,5 @@
 # Density of rational points of smooth domains over complete normed fields
 
-Author: Worker 712.
-
 This internal helper module proves the following. Let `K` be a complete
 nontrivially normed field and let `A` be a smooth `K`-algebra which is a
 domain and has at least one `K`-point. Then the `K`-points of `A` separate

@@ -1,6 +1,6 @@
 # Maximal tori on residue fibres and supplied field-valued fibres
 
-This internal unit defines `IsFibrewiseMaximalTorus i` for a map
+This internal module defines `IsFibrewiseMaximalTorus i` for a map
 `i : T.toGrp ⟶ G`, where `T` is a commutative group scheme over an arbitrary
 scheme `S`. It is the Prop-valued assertion that the actual pullback of `i`
 along `S.fromSpecResidueField s` is a maximal torus for every point `s : S`.
@@ -51,7 +51,7 @@ The provenance is internal: the new transport is a direct composition of the
 Library's canonical residue-field factorization, maximal-torus field-extension
 theorem, and composite-pullback and source-isomorphism transports. The local
 corollaries use the existing local closed-fibre propagation theorem. No new
-external structural assertion is introduced. This unit transports maximality
+external structural assertion is introduced. This module transports maximality
 of a supplied torus; it does not construct a torus, an integral representation,
 root data, or an integral group-scheme isomorphism, and does not prove
 `StrictHenselianGenericIsoStatement`.

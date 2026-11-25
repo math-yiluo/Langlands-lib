@@ -1,7 +1,5 @@
 # Actual normalized left-Phi stages coefficients
 
-Author: Worker 499.
-
 This module constructs `leftPhiNormalizedStagesTensorEquiv` in
 `Langlands.Derivative.MirabolicProductMinus`. It identifies the entire
 actual normalized identity-orbit coefficient quotient with the GL factor
@@ -10,8 +8,9 @@ identification is natural in both inputs. The module also computes the
 ambient-normalized section action and proves that the complete cycle
 coefficient quotient is subsingleton. These are lower coefficient results
 for BZ77 §4.13(b); a representation equivalence with the normalized source
-Phi coefficient, compact-induction comparison and the six-part host
-compatibility theorem remain separate obligations.
+Phi coefficient, compact-induction comparison and the six-part
+statement `MirabolicProductMinusCompatibilityStatement` are proved in
+other modules.
 
 ## Source and provenance
 
@@ -30,7 +29,7 @@ and minus functors. Section 4.12(II), printed pp.456–457 (PDF pages
 17–18), specifies the upper-block left mixed product; §4.13(b), printed
 p.458 (PDF page 19), states its functorial comparison. Section 7.2,
 printed p.471 (PDF page 32), gives the identity and cycle representatives.
-These passages and relevant page images were read during this task. The
+These passages and relevant page images were read for this construction. The
 bounded supplied-source and public-note errata search found no applicable
 BZ77 entry; no global absence is asserted.
 
@@ -43,7 +42,6 @@ published `MirabolicProductMinusLeftPhiSection`,
 `MirabolicProductMinusLeftPhiCoefficient` and
 `MirabolicProductMinusLeftPhiNormalization` modules. The source-action,
 Haar and generic character-stages comparison modules are not imported.
-Worker 499 wrote this construction; no peer draft supplies a proof body.
 
 ## Parameters, ranks and actual quotient
 
@@ -60,7 +58,7 @@ and nontriviality are bundled. The inputs are arbitrary representations
 ```
 
 Neither representation is required to be smooth in this algebraic
-coefficient unit. The field universe `uF` and carrier universes `uV,uW`
+coefficient module. The field universe `uF` and carrier universes `uV,uW`
 are independent. Naturality permits independent target carrier universes
 `uV',uW'` as well. There is no finite dimension, admissibility,
 irreducibility, finite length, genericity, nonzero vector, chosen basis,
@@ -203,9 +201,10 @@ E(A_1(l)[v ⊗ w]) = (leftPhiSectionCharacter T (k+1) r (h(l)) : ℂ) •
 ```
 
 This is an equality on every generating pure-tensor class, and the linear
-equivalence is defined on the entire quotient. This module does not yet
+equivalence is defined on the entire quotient. This module does not
 package it as a representation equivalence with the normalized source
-Phi-minus coefficient.
+Phi-minus coefficient; `leftPhiNormalizedSourceEquiv` in
+`MirabolicProductMinusLeftPhiSourceComparison` does.
 
 `leftPhiNormalizedStagesQuotient_zero_subsingleton` transfers the
 published vanishing of the complete cycle coefficient quotient through
@@ -264,12 +263,11 @@ infrastructure provide no representation-comparison conclusion.
 Whittaker modules in the closure provide algebraic group and character
 infrastructure, without any coinvariant-finiteness theorem.
 
-The following audit covers every inherited exclusion directly and
-transitively.
+The following audit covers direct and transitive inputs.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host conclusions | The host statement and proof modules are absent from the closure. No mixed-minus comparison or boundary conclusion supplies an input. The cycle coefficient vanishing is a lower quotient result, not any of the six host clauses. |
+| Six conclusions of the statement | The statement module `MirabolicProductMinusCompatibilityStatement` and the proofs of its clauses are absent from the closure. No mixed-minus comparison or boundary conclusion supplies an input. The cycle coefficient vanishing is a lower quotient result, not any of the six clauses of the statement. |
 | Plus functors, adjunction and §4.13(d) | None supplies an input. The successor and actual radical subgroup are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. The actual minus character definitions are published; no derivative comparison is a premise. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -279,25 +277,23 @@ transitively.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor its full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor its full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. |
 | Generality and normalization | All `k,r`, arbitrary supplied `T`, positive GL input rank and entire tensor factors are retained. There is no finite dimension, admissibility, irreducibility, finite length, genericity, chosen vector, universe saturation, canonical topology or theorem-valued premise. The ambient inverse-half scalar and higher covariance are computed through the actual rank cast, with no residual scalar. |
-| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions, source formulas, drafts, pending constructions and consumer tasks provide no unproved comparison premise. |
-| Separate owners and controls | The unit computes actual normalized stages coefficients; it does not duplicate restriction-sequence or exactness work. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions and source formulas provide no unproved comparison premise. |
+| Separate results | The module computes actual normalized stages coefficients; it does not duplicate restriction-sequence or exactness results. |
 
 A source scan of this module and its entire project closure finds no
-occurrence in Lean code of the host's 38 excluded task identifiers or
-24 named consumer declarations, and no proof holes, new axioms or unsafe
-evaluation commands. Excluded names in explanatory Markdown are audit
-prose. Development compilation and declaration inspection do not supply
-independent semantic acceptance or publication.
+occurrence in Lean code of 24 excluded consumer declarations, and no
+proof holes, new axioms or unsafe evaluation commands. Excluded names in
+explanatory Markdown are audit prose.
 
 ## Complete project import closure
 
 The following list contains every direct and transitive project import,
-excluding this new entry module. Mathlib is supplied by the pinned
-approved environment; no Mathlib source is modified.
+excluding this entry module. Mathlib is supplied by the pinned
+environment; no Mathlib source is modified.
 
 ```text
 Langlands.Group.GL.Basic

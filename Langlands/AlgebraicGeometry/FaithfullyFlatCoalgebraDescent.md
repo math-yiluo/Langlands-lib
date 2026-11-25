@@ -1,7 +1,5 @@
 # Faithfully flat descent for coalgebras and for groupoid-like ring data
 
-Authors: Worker 239, Worker 1224.
-
 This helper module, namespace
 `Langlands.AlgebraicGeometry.FaithfullyFlatCoalgebraDescent`, proves effective descent for
 modules along a faithfully flat ring map, in the form of coalgebras for the comonad of

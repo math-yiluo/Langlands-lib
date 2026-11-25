@@ -1,7 +1,5 @@
 # Central infinitesimal uniqueness for groups of multiplicative type
 
-Worker 890.
-
 The universal property of the ideal quotient gives the affine test schemes
 used in the reduction to diagonalizable action rigidity.
 

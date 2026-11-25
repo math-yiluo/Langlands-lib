@@ -1,6 +1,6 @@
 # Identity normalization for actual semilinear pinned lifts
 
-This internal coherence unit works with actual group schemes over an arbitrary
+This internal coherence module works with actual group schemes over an arbitrary
 scheme, then specializes to a supplied complete split pinning of an affine
 group scheme over an arbitrary field in universe `u`. It makes no additional
 field hypothesis.
@@ -30,7 +30,7 @@ original maps.
 
 The provenance is an internal derivation from the imported actual scalar
 coherence and semilinear composition constructions and the canonical
-categorical pullback identities. This unit proves an equality of actual
+categorical pullback identities. This module proves an equality of actual
 ambient group-scheme isomorphisms. It does not construct an assembled Galois
 descent datum, descend a pinning, or prove unconditional quasi-split
 inner-form existence.

@@ -1,6 +1,6 @@
 # Necessity in Casselman's criterion for represented parabolics
 
-Author: Worker 4712. Module `Langlands.Representation.Exponents.CasselmanNecessity`,
+Module `Langlands.Representation.Exponents.CasselmanNecessity`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 This module states and proves the necessity half of Casselman's

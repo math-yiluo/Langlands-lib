@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviSlices`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It is
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It is
 the first of three modules (`RealLeviSlices`, `RealLeviProducts`, `RealLeviDensity`) for the
 density step of the single-shot Langlands-quotient argument. The module states no `Prop`-valued
 statement of its own. Its results are used by `RealLeviProducts` and `RealLeviDensity`, which
@@ -19,7 +19,7 @@ namespace `Langlands.Archimedean.RealLeviSlices`.
 ## Notation
 
 `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ` and `O(N)` is the Library's `unitaryCompact ℝ N`.
-From the earlier module `RealLeviChartIntegralStatement` of this task (namespace `RealLeviChart`):
+From the earlier module `RealLeviChartIntegralStatement` (namespace `RealLeviChart`):
 for sizes `sz : Fin c → ℕ`, `start sz i = sz_0 + ⋯ + sz_{i-1}`, and `pos sz i a` is the global
 position `start sz i + a` (as `finSigmaFinEquiv ⟨i, a⟩`). From `RealLeviParabolicIntegrationStatement`:
 `blockDiagHom sz` is the ring homomorphism `(A_j)_j ↦ diag(A_0, …, A_{c-1})` (Mathlib

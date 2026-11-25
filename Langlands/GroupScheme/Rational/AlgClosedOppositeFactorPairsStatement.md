@@ -1,7 +1,5 @@
 # Opposite factor pairs over algebraically closed fields
 
-Author: Worker 1407.
-
 Module `Langlands.GroupScheme.Rational.AlgClosedOppositeFactorPairsStatement`.
 
 ## Statement
@@ -56,15 +54,15 @@ This file states the **existence** part of these results, specialized to
 The Library's `RootRankOneFactorizationStatement` states the full arbitrary-field
 proposition (uniqueness, nontriviality, the reflection, and the nonmultipliable-root
 clauses). The present statement is a weaker specialization. It is stated separately
-because Task 7459 needs only this existence over algebraically closed fields, and it
-needs a proof that is independent of the dynamic-Borel inputs excluded by that task.
-The current Library proof of `RootRankOneFactorizationStatement` does not satisfy those
-exclusions.
+because the reduction of `SteinbergBigCellStatement` to independent structural inputs
+(module `Reductive.SteinbergBigCellIndependentInputs`) needs only this existence over
+algebraically closed fields, and it needs a proof that is independent of the
+dynamic-Borel inputs. The Library's proof of `RootRankOneFactorizationStatement`
+(module `Rational.RootRankOneFactorizationProof`) is not independent of those inputs.
 
 ## Use
 
-The staged helper module `Rational.OppositePairBruhatCovering` (candidate
-`551eb120-ff06-4a67-8c02-d5cb1c8d707a`) takes `RelativeRoot.HasOppositeFactorPairs i`
+The helper module `Rational.OppositePairBruhatCovering` takes `RelativeRoot.HasOppositeFactorPairs i`
 as its only rank-one hypothesis. From it the module derives the Bruhat covering
 `BorelTorusBruhatCovering` for the dynamic parabolic of a generic cocharacter over a
 separably closed field. A proof of this statement therefore supplies that covering for

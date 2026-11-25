@@ -1,8 +1,6 @@
 # Division-algebra matrix models of actual norm-one groups
 
-Author: Worker 165.
-
-This internal derived unit uses Mathlib's Wedderburn--Artin theorem and the
+This module uses Mathlib's Wedderburn--Artin theorem and the
 published norm-one transport construction. It introduces no external
 classification assertion. All fields and algebras lie in an arbitrary
 common universe `u`. There is no restriction on the field characteristic.
@@ -52,7 +50,7 @@ to obtain `G ≅ BinaryRoot.groupScheme K D`, with the same division-algebra
 properties. It imposes no affine, simply connected, almost-simple or
 local-field hypothesis beyond the supplied norm-one presentation.
 
-This unit does not prove the matrix-rank statement. It also does not
+This module does not prove the matrix-rank statement. It also does not
 construct a central-simple-algebra presentation of an arbitrary inner
 form of type A. Those inputs, the admissible-index enumeration, and the
 other classical model identifications remain separate obligations of

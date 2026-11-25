@@ -1,6 +1,5 @@
 # Irreducible quotients of induction from an actual rational Levi
 
-Author: Worker 148, Task 5295 (`717df3ca-7a3c-40fc-a8b3-79617086393e`).
 Module `Langlands.Representation.LanglandsClassification.LeviInductionQuotient`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 

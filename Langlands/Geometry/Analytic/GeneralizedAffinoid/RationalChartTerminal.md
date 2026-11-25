@@ -1,7 +1,5 @@
 # The actual whole rational chart and its terminal property
 
-Author: Worker 56.
-
 The namespace is
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart`.
 Let `K` be an ultrametric normed field and let
@@ -108,7 +106,7 @@ In Exercise 2.2.2(ii) the displayed inequality contains a subscripted
 the published Lean rational-presentation model uses that common denominator.
 Here it is one.
 
-This contribution has derived provenance. The empty-tuple,
+This module has derived provenance. The empty-tuple,
 denominator-one specialization, the particular evaluation and norm proofs,
 and the chosen-presentation terminal-object witness are internal constructions
 from the published quotient, comparison, evaluation and restriction APIs.

@@ -1,7 +1,5 @@
 # Local-to-global isotropy over number fields
 
-Worker 787.
-
 `Langlands.NumberFieldQuadraticIsotropyStatement.{u}` states that a
 nondegenerate quadratic form on a finite-dimensional vector space over a
 number field has a nonzero zero if its scalar extension has a nonzero zero

@@ -1,6 +1,6 @@
 # Coordinate tori in the split affine rigidity reduction
 
-This internal derived unit unpacks the supplied coordinate packages in
+This internal derived module unpacks the supplied coordinate packages in
 `SplitAffineIsogenyTorusConjugacyStatement`. It does not prove the local
 existence proposition.
 
@@ -38,7 +38,7 @@ isomorphism.
 implication by packaging the supplied data with identity coordinate
 isomorphisms. Thus
 `splitAffineIsogenyTorusConjugacy_iff_coordinateSplit` is an equivalence
-of the two remaining existence obligations. The final theorem
+of the two local existence propositions. The final theorem
 `reductiveIsogenyTorusRigidity_of_coordinateSplit` composes the forward
 reduction with the imported general-base reduction, obtaining the
 unchanged global rigidity statement from coordinate local existence.
@@ -47,6 +47,6 @@ The provenance is the imported definitions of full split coordinate
 packages, all-test conjugation transport, and the general-base
 reduction. These are formal unpacking and transport arguments, with no
 new external source. Local existence, including intrinsic root-datum
-compatibility of the isogenies, remains a separate proof obligation.
+compatibility of the isogenies, is not proved in this module.
 All results preserve the universe and permit nonreduced and empty
 bases.

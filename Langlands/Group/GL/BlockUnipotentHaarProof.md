@@ -1,7 +1,5 @@
 # Product Haar measure in block unipotent coordinates
 
-Author: Worker 117.
-
 The closing theorem
 `Langlands.glBlockUnipotentCoordinateHaarStatement` proves exactly the published
 `Langlands.GLBlockUnipotentCoordinateHaarStatement`, for every field universe,

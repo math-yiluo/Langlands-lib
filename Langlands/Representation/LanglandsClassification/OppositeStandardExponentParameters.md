@@ -1,6 +1,6 @@
 # Full real parameters of actual opposite standard Jacquet exponents
 
-Worker 148. This internal specialization uses the original standard root
+This internal specialization uses the original standard root
 presentation for each label of the actual opposite Jacquet family. It keeps
 exactly the already chosen split-component scheme, inclusion and factor into
 the fixed maximal split torus. The spectra remain the spectra of the opposite

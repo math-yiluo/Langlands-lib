@@ -1,6 +1,6 @@
 # Geometry of actual inverse images under a supplied Levi retraction
 
-Worker 1452. This internal construction supplies the ambient parabolic and its
+This internal construction supplies the ambient parabolic and its
 all-test compatibility for the unchanged parabolic extension statement. It does
 not supply the new geometric radical or the decomposition with the original
 inner Levi.

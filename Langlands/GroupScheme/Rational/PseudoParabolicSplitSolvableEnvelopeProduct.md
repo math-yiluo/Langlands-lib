@@ -1,6 +1,6 @@
 # The semidirect product `U ⋊ S` as an fppf-local product inside its ambient group
 
-Worker 1405 wrote this module. It is the product half of the split solvable envelope
+This module is the product half of the split solvable envelope
 `S ⋉ R_us,k(P)` at the start of the proof of Theorem C.2.5 in Conrad–Gabber–Prasad,
 *Pseudo-reductive groups*, second edition (2015), printed p. 595 (PDF p. 621, registered source
 `conrad-gabber-prasad-2015-pseudo-reductive`). The other half, split solvability of the

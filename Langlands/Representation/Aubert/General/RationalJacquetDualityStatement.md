@@ -1,12 +1,10 @@
 # Natural opposite-Jacquet duality on the actual rational-point group
 
-Author: Worker 196. Worker 490 contributed the orientation needed by the
-downstream induction/Jacquet term comparison.
-
 `Langlands.Aubert.General.RationalPointFamily.RationalNaturalJacquetDualityStatement`
-is a proposition definition awaiting proof. It requires a coherent family of
-opposite-Jacquet duality isomorphisms on admissible smooth objects. It proves
-neither those isomorphisms nor rational-point Aubert commutation.
+is a proposition definition; `rationalNaturalJacquetDuality` in
+`RationalJacquetDualityProof` proves it. It requires a coherent family of
+opposite-Jacquet duality isomorphisms on admissible smooth objects. This module
+proves neither those isomorphisms nor rational-point Aubert commutation.
 
 ## Actual subgroups, topology and normalization
 
@@ -128,7 +126,7 @@ The existing general-linear natural Jacquet-duality statement has analogous
 orientation but does not prove this general reductive target.
 
 Using the admissible-input family on every finite-length ambient object
-still requires the separately owned ambient finite-length admissibility
+still requires the separate ambient finite-length admissibility
 proof. This proposition adds no premise to
 `RationalContragredientCommutationStatement`. It proves no finite-length
 preservation, same-parabolic induction duality, associated-Levi transport,

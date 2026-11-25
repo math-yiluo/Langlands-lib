@@ -27,4 +27,3 @@ logarithmic exponent `k log qᵥ`. `tendsto_log_inv_sub_one` proves the
 divergence of the normalizing denominator by composing the right-hand limit
 of `σ − 1` with reciprocation and the real logarithm. These are internal
 analytic lemmas for the summation in Theorem 4.2, printed p. 807 (PDF p. 32).
-The implementation is adapted from Worker 3657’s shared Task 6446 draft.

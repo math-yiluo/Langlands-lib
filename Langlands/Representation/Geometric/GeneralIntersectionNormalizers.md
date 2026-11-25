@@ -47,5 +47,3 @@ Literature ID `bernstein-zelevinsky-1977-induced-i`;
 SHA-256 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 The normalizer maps and their elementary proofs are internal constructions
 that justify the domains of the source's two displayed Haar corrections.
-
-Author: Worker 14.

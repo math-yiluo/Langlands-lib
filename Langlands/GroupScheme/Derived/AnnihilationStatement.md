@@ -1,7 +1,9 @@
 # Derived subgroups and commutative annihilation: statement targets
 
 This module supplies two exact `Prop`-valued statement definitions and their conjunction
-on the actual Library group schemes. These are unproved targets. The module supplies
+on the actual Library group schemes. They are proved in the separate modules
+`Derived.AnnihilationCommutativeProof`, `Derived.AnnihilationCharacterProof` and
+`Derived.AnnihilationProof`. The module supplies
 neither a proof of annihilation nor a chosen representing scheme.
 
 The original source is J. S. Milne, *Algebraic Groups* (2017), Corollary 6.19(d),
@@ -55,7 +57,7 @@ subgroup, or assume any annihilation property. Unconditional existence of such
 a `d` is the separate closed-representability statement in
 `Derived.StructureStatement`.
 
-The targets require substantive later proofs. The elementary intersection lemmas
+The targets require substantive proofs. The elementary intersection lemmas
 do not establish faithfully flat local generation by commutators or its
 scalar-extension annihilation consequence, and neither is proved here. Milne
 Remark 6.23, printed p.131 / PDF p.147, distinguishes the scheme-theoretic derived
@@ -69,6 +71,3 @@ The complete retained official errata HTML
 was read. Its displayed Chapter 6 correction concerns Example 6.48. The
 commented-out earlier caution about 6.19(c)–(e) is not a displayed correction;
 it is not used to add a smoothness hypothesis to these targets.
-
-Authorship: Worker 1173 authored this statement pair. Worker 153 supplied the
-prerequisite derived-subgroup interface and coordinated the statement division.

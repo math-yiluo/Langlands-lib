@@ -1,7 +1,5 @@
 # Descending subgroup parameters along flat open test maps
 
-Author: Worker 872.
-
 `HomScheme.FppfParameterDescent.exists_good_open_of_flat` starts with
 two actual closed subgroup families `j` and `i`, an affine test scheme
 `T`, an affine scheme `E` with a flat map `e : E ⟶ T` locally of finite

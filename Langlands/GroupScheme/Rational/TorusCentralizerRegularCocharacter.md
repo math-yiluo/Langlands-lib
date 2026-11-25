@@ -1,7 +1,7 @@
 # Regular descended cocharacters of torus centralizers
 
 This module is an internal prerequisite for the quasi-split Steinberg quotient
-task. Suppose the whole centralizer of a split torus is represented by an actual
+theorem (`QuasiSplitSteinbergQuotientStatement`). Suppose the whole centralizer of a split torus is represented by an actual
 torus, as for a maximal split torus of a quasi-split group. The module then
 produces a cocharacter of that centralizer torus that is defined over the
 original field, is regular after base change to any splitting field and is fixed
@@ -102,5 +102,6 @@ assumptions. The constructions depend only on the supplied torus centralizer
 data and on the published separating cocharacter of a split torus. The module
 does not prove that a maximal split torus of a quasi-split group has a torus
 centralizer, and it does not construct a realized root datum, a pinning, a
-Steinberg cross-section or the quotient. Those remain separate obligations of
-the host task and its prerequisite tasks.
+Steinberg cross-section or the quotient. Those are parts of the proof of
+`QuasiSplitSteinbergQuotientStatement` (module `Rational/QuasiSplitSteinbergQuotient`)
+carried out in other modules.

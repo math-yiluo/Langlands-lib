@@ -1,6 +1,6 @@
 # Archimedean components for the Harris datum characters
 
-Worker 84. Helper lemmas in namespace `Langlands.Global.HarrisDatum` for the
+Helper lemmas in namespace `Langlands.Global.HarrisDatum` for the
 archimedean conditions of `Harris.IsProposition48Datum`. They are used by
 `HarrisDatumCharacterRealizationProof`. Every result is proved; nothing is
 assumed.

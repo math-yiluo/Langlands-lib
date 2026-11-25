@@ -1,8 +1,5 @@
 # Reduction of the supported regular Weyl and cone comparison
 
-Authors: Worker 960, with Worker 165 (fixed-relation helper and the
-numerical comparison statement).
-
 This module is a conditional reduction. By itself it does not prove
 `Langlands.GLSupportedRegularWeylConeComparisonStatement` unconditionally.
 The final theorem `Langlands.SupportedRegularWeylCone.reduction` derives
@@ -91,7 +88,7 @@ along `h : C = C'`. It is used for `ωB_i = h_i ▸ ω_i`.
 introduces all data of the target statement and applies
 `oneSided` twice. Side 1 against side 2 gives `s`, `hs`, the twisted
 equivalence and the first cone bound. Side 2 against side 1 gives `r`,
-`hr` and `cone(V2 ∘ r⁻¹)`. Worker 165's
+`hr` and `cone(V2 ∘ r⁻¹)`.
 `SupportedRegularWeylComparison.fixedRelation_of_twistedEquiv` converts each
 equivalence into a fixed relation, `V1 ∘ s⁻¹ - A1 ∘ s⁻¹ = V2 - A2` and
 `V2 ∘ r⁻¹ - A2 ∘ r⁻¹ = V1 - A1`. The second clause of the published numerics

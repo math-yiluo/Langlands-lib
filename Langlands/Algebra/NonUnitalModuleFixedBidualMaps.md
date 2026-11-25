@@ -43,10 +43,10 @@ nondegenerate bidual and is fixed by the original e. `fromOrdinaryBidual`
 retains both of these subtype witnesses. The application and whole-functional
 formulas in Lean describe these exact maps.
 
-This unit supplies maps and their intrinsic well-definedness and linearity
+This module supplies maps and their intrinsic well-definedness and linearity
 computations. Complete unapplied signature checks retain both independent
 universes, all original algebra and module instances, both nondegeneracy
-witnesses, and the exact canonical fixed-space coefficient structures. The unit
+witnesses, and the exact canonical fixed-space coefficient structures. The module
 does not assert their inverse equations, a canonical
 evaluation square, finite-dimensional reflexivity, admissibility, or simplicity.
 Those mathematical comparisons remain separate statement and proof obligations.

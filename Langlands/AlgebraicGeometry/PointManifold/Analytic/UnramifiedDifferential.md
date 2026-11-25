@@ -1,7 +1,5 @@
 # Injectivity of the analytic differential of unramified affine maps
 
-Author: Worker 115.
-
 All charts are supplied `Analytic.RegularChart`s on actual affine scheme
 points over an arbitrary complete nontrivially normed field `k : Type u`.
 The source and target dimensions may differ in this module.

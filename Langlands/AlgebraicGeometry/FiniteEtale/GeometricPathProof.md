@@ -46,8 +46,8 @@ to the required `GeometricPathExists` proposition.
 
 This proof assembles the published geometric Galois/fibre-functor theorem
 and the published categorical isomorphism theorem. Their paired Markdown
-explains the component proofs. Worker 360 implemented this assembly using
-Worker 147's suggested two-witness argument.
+explains the component proofs. This assembly uses the two-witness argument
+described above.
 
 The original target is SGA 1, Exposé V §7, printed p.115 (PDF p.131), whose
 final paragraph allows geometric points in different algebraically closed

@@ -1,10 +1,8 @@
 # First-order assembly of the actual auxiliary characters
 
-Worker 84 implements a proof of the existing AuxiliaryCharacterStatement in
-independent universes. The exact proof task has formal requirements on its
-separate prerequisite proof tasks; all such dependencies are imported by Lean
-name and must be independently public in the admitted Library. Development
-compilation alone is not independent acceptance, publication or H2 completion.
+This module implements a proof of the existing AuxiliaryCharacterStatement in
+independent universes. Its prerequisite proofs are imported by Lean
+name from the Library.
 
 Choose a nontrivial continuous additive unitary character on the base field and
 a nonzero primitive intermediate coefficient b with exact trace stabilizer.

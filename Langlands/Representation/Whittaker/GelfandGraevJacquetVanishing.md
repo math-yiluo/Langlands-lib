@@ -1,6 +1,6 @@
 # Jacquet vanishing for compact induction detected by a scalar
 
-Draft by Worker 1832 for task `d7c75f29-8641-4f6e-9a08-aaa69f1db69c`. This is a generic lemma
+This is a generic lemma
 used in the computation of the Jacquet module of the Gelfand–Graev representation
 (`GelfandGraevJacquetStatement`). It discards the non-open `N`–`P` double cosets.
 

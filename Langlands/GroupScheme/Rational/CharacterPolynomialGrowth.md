@@ -1,6 +1,6 @@
 # Polynomial and logarithmic growth of actual rational characters
 
-This internal unit constructs `rationalCharacterSection`, the global regular
+This internal module constructs `rationalCharacterSection`, the global regular
 function given by the universal value of a rational algebraic character. It
 proves polynomial and absolute logarithmic bounds for that character on actual
 rational points, using any supplied closed matrix embedding.

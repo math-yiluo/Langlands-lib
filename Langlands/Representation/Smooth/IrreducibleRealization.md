@@ -1,6 +1,6 @@
 # Irreducible smooth classes and their exact finite-length realization
 
-Worker 981 defines genuine isomorphism classes of actual irreducible smooth
+This module defines genuine isomorphism classes of actual irreducible smooth
 representations, the free integral lattice on them, and the canonical
 integer-linear map
 
@@ -11,9 +11,9 @@ Langlands.SmoothRep.realizeIrreducibles k G :
 
 into the published exact Grothendieck group of finite-length smooth
 representations. The module imports only
-`Langlands.Representation.Smooth.FiniteLengthGrothendieck` (Worker 503) and uses
+`Langlands.Representation.Smooth.FiniteLengthGrothendieck` and uses
 its exact quotient, the free integral lattice of
-`Langlands.VirtualRepresentation.Integral` (Worker 24), and the canonical smooth
+`Langlands.VirtualRepresentation.Integral`, and the canonical smooth
 category of `Langlands.Representation.Category.Basic` through their published
 interfaces.
 
@@ -60,8 +60,7 @@ come from the identity, the inverse and the composite isomorphism.
 SmoothRep.IrreducibleIsoClass k G : Type (max uR uG (uV + 1))
 ```
 
-is the quotient by this setoid. It is the genuine quotient construction allowed
-by the task. It mirrors the published `FiniteLengthIsoClass`, which is the
+is the quotient by this setoid. It is a genuine quotient construction. It mirrors the published `FiniteLengthIsoClass`, which is the
 quotient of `FiniteLengthObject` by the same isomorphism relation. The label of
 an actual irreducible object is `irreducibleIsoClass A hA`. No representative is
 chosen and no smallness or resizing is used: the label type lives in the
@@ -156,7 +155,8 @@ ones. The following facts are proved.
 Neither injectivity nor surjectivity of `realizeIrreducibles` is stated or
 proved here. Nor are unique Jordan–Hölder expansion, an irreducible basis of the
 exact Grothendieck group, or any Aubert or analytic classification theorem. Those
-belong to later statement and proof units. The injectivity proved here is only
+belong to separate statement and proof modules; the irreducible basis is
+`IrreducibleGrothendieckStatement`, proved in `IrreducibleGrothendieckProof`. The injectivity proved here is only
 that of the forgetful map between the two genuine isomorphism-class types.
 
 ## Universe accounting
@@ -231,7 +231,7 @@ checked from the actual import lines, is
   Mathlib;
 - `Langlands.Group.GL.Basic`, which imports only Mathlib.
 
-No module from the excluded analytic classification, multisegment, strong-head,
-quotient-coverage, tempered, square-integrable or regular-exhaustion tasks, and
+No module of the analytic classification, multisegment, strong-head,
+quotient-coverage, tempered, square-integrable or regular-exhaustion results, and
 none of their dependencies, is imported or used. This module does not modify the
 existing exact-K0, category or lattice pairs.

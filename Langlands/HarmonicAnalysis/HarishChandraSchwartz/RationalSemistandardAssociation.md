@@ -44,8 +44,9 @@ from the exact `SemistandardSpectralDynamicCoverageStatement`. The
 finiteness propositions here concern the geometry and saturation of a
 given finite input index set.
 
-The construction uses the intrinsic semistandard family of Task 7229 and
-the all-test Weyl transport interface of Task 7263. It supplies the
+The construction uses the intrinsic semistandard family
+(`RationalSemistandardSpectralFamily`) and the all-test Weyl transport
+interface (`Langlands.GroupScheme.Rational.SemistandardWeylTransporters`). It supplies the
 association relation and finite support bound for VI.3 and VII.2.4. The
 normalized coefficient comparison, its induced action on sections and
 transport of the packet and form integrals are separate inputs to the

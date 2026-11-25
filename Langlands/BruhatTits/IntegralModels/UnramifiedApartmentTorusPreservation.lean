@@ -25,26 +25,26 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
   {G : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom G.X.hom]
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+private local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+private local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
 local instance : IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
   integerToFixedField_isLocalHom F
 
-local instance : HenselianLocalRing (fixedFieldIntegers F) := fixedFieldIntegersIsHenselian F
+private local instance : HenselianLocalRing (fixedFieldIntegers F) := fixedFieldIntegersIsHenselian F
 
 local instance : Algebra 𝓀[F] (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (residueToFixedField F).toAlgebra
 
-local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
+private local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).isAlgClosed
 
-local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
+private local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsDVR_of_valuesFromBase F (fixedFieldValuesFromBase F)
 
 -- The intrinsic value group lies in Type u, as required by the coefficient theorem.
@@ -77,6 +77,7 @@ theorem isMaximalTorus_specialFibreMap_of_unramified_apartment
     change _ ≤ _ ↔ MaximalUnramified.valueGroupEquiv F _ ≤
       MaximalUnramified.valueGroupEquiv F _
     rw [map_le_map_iff]
+    exact Iff.rfl
   have hb := (map_characterValuationKernel_le_zeroPoints_inf_pointwiseFixer C E Ω).trans hpts
   rw [← characterValuationKernel_eq_of_isEquiv heq C.S.toGrp] at hb
   dsimp only [IntegralModel.baseChangeUnramified] at hb

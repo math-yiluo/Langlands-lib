@@ -50,8 +50,4 @@ This is an internal proof, not a formalization of one cited source. It
 combines the Library results named above with Mathlib. The argument is
 the usual reduction of a discrete decomposition to compact self-adjoint
 approximate identities. Here that reduction is applied inside the closed
-subspace `V`. Worker 116 wrote the Lean file and the first version of this
-Markdown in the shared draft of parent task 34b81620 (Lean SHA256
-`a644ff73…`). Task 5234 adopts that Lean file unchanged. This Markdown
-adds the `rightHaarHermitianApproximation` clause in step 3, the helper
-lemma names and this provenance section.
+subspace `V`.

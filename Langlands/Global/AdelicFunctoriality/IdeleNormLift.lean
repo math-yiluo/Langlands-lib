@@ -33,7 +33,7 @@ embedding at the infinite place of `K` below `q`. -/
 theorem infiniteCompletionMap_comap_eq (p : InfinitePlace K) (q : InfinitePlace L)
     [q.LiesOver p] (x : InfiniteAdeleRing K) :
     infiniteCompletionMap (algebraMap K L) q (x (q.comap (algebraMap K L))) =
-      NumberField.LiesOver.completionMap (x p) := by
+      NumberField.LiesOver.completionMap p q (x p) := by
   have h : q.comap (algebraMap K L) = p := InfinitePlace.LiesOver.comap_eq q p
   subst h
   rfl

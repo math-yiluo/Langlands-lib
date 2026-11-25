@@ -24,7 +24,7 @@ open Langlands.LinearAlgebra.SimplyConnectedCartanComponents
 
 variable {M : AffinePinnedModel.{u}} (D : RootComponentCoordinates M)
 
-local instance : Smooth M.group.X.hom := M.reductive.smooth
+private local instance : Smooth M.group.X.hom := M.reductive.smooth
 
 private theorem componentDerivedProduct_reductive : IsReductive (pi D.componentDerivedGroup) := by
   let : MorphismProperty.ContainsIdentities (@Smooth : MorphismProperty Scheme.{u}) :=

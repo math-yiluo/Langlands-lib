@@ -27,8 +27,12 @@ Its defining central-isogeny criterion then makes `f` an isomorphism;
 
 This is a composition of the Library's simple-connectedness definition and
 the direct-factor helper. It extracts the normal-factor step also used in
-the conditional rational-generation induction by Workers 1371 and 1636,
+the conditional rational-generation induction of
+`SimplyConnected.AlmostSimpleRationalGenerationReduction`,
 so consumers can use it without importing that induction. It supplies
 neither a proof of the complement assertion nor the unconditional
-rational-generation theorem. Those structural and final proof obligations
-remain open.
+rational-generation theorem. Those are proved in other modules:
+`semisimpleNormalIsogenyComplement` (module
+`Reductive.NormalIsogenyComplementProof`) and
+`simplyConnectedAlmostSimpleRationalGeneration` (module
+`SimplyConnected.AlmostSimpleRationalGenerationProof`).

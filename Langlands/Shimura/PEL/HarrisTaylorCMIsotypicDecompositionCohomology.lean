@@ -120,9 +120,9 @@ action of its image in `Gal(F̄/F)` along `j`. -/
 theorem cmSmallLevelIsotypicDecompositionFunctor_ρ (d : ℕ)
     (j : ClosureEmbedding (NumberField.FinitePlace.embedding (K := F) w))
     (M : ModuleSheaf base R) (g : LocalGroup w) :
-    ((isotypicDecomposition d j).obj M).ρ g =
+    (((isotypicDecomposition d j).obj M).ρ g).asHom =
       isotypicMap ξ (((galoisCohomologyFunctor d).obj M).ρ
-        (DecompositionGroupAction.localRestriction w j g)) :=
+        (DecompositionGroupAction.localRestriction w j g)).asHom :=
   rfl
 
 /-- The local Galois action on the isotypic part is the restriction to the decomposition group
@@ -154,7 +154,7 @@ def cmSmallLevelIsotypicDecompositionChangeIso (d : ℕ)
         polarizationStability compatibility h htor q existence geometry hRigid criterion R ξ w d
         j k).hom.app M).hom =
       isotypicMap ξ (((galoisCohomologyFunctor d).obj M).ρ
-        (DecompositionGroupAction.localClosureChange w j k)) :=
+        (DecompositionGroupAction.localClosureChange w j k)).asHom :=
   rfl
 
 /-- If the cohomology is unramified at `w` along `j`, so is its `ξ`-isotypic part. -/
@@ -223,9 +223,9 @@ action of its image in `Gal(F̄/F)` along `j`. -/
 theorem cmPrimeToIsotypicDecompositionFunctor_ρ (d : ℕ)
     (j : ClosureEmbedding (NumberField.FinitePlace.embedding (K := F) w))
     (M : ModuleSheaf base R) (g : LocalGroup w) :
-    ((primeToIsotypicDecomposition d j).obj M).ρ g =
+    (((primeToIsotypicDecomposition d j).obj M).ρ g).asHom =
       isotypicMap ξ (((primeToGaloisCohomologyFunctor d).obj M).ρ
-        (DecompositionGroupAction.localRestriction w j g)) :=
+        (DecompositionGroupAction.localRestriction w j g)).asHom :=
   rfl
 
 /-- The local Galois action on the isotypic part is the restriction to the decomposition group
@@ -258,7 +258,7 @@ def cmPrimeToIsotypicDecompositionChangeIso (d : ℕ)
         polarizationStability compatibility h htor q existence geometry hRigid criterion R m hm
         K₀ ξ w d j k).hom.app M).hom =
       isotypicMap ξ (((primeToGaloisCohomologyFunctor d).obj M).ρ
-        (DecompositionGroupAction.localClosureChange w j k)) :=
+        (DecompositionGroupAction.localClosureChange w j k)).asHom :=
   rfl
 
 /-- If the prime-to-`m` cohomology is unramified at `w` along `j`, so is its `ξ`-isotypic
@@ -322,11 +322,11 @@ theorem cmPrimeToIsotypicDecompositionHeckeModule_ρ_smul (d : ℕ)
     (((cmPrimeToIsotypicDecompositionHeckeModuleFunctor D C preservation composition
         unitCoherence associativity comparison symmetry stability square universality
         dualityNaturality polarizationStability compatibility h htor q existence geometry hRigid
-        criterion R m hm K₀ ξ w K' d j).obj M).ρ g).hom (a • x) =
+        criterion R m hm K₀ ξ w K' d j).obj M).ρ g).asHom.hom (a • x) =
       a • (((cmPrimeToIsotypicDecompositionHeckeModuleFunctor D C preservation composition
         unitCoherence associativity comparison symmetry stability square universality
         dualityNaturality polarizationStability compatibility h htor q existence geometry hRigid
-        criterion R m hm K₀ ξ w K' d j).obj M).ρ g).hom x :=
+        criterion R m hm K₀ ξ w K' d j).obj M).ρ g).asHom.hom x :=
   map_smul _ a x
 
 /-- The endomorphism of the Hecke module of `K'`-fixed vectors of the `ξ`-isotypic part by
@@ -370,7 +370,7 @@ theorem cmPrimeToIsotypicHeckeFrobenius_eq_of_lift (d : ℕ) (M : ModuleSheaf ba
     ((cmPrimeToIsotypicDecompositionHeckeModuleFunctor D C preservation composition
         unitCoherence associativity comparison symmetry stability square universality
         dualityNaturality polarizationStability compatibility h htor q existence geometry hRigid
-        criterion R m hm K₀ ξ w K' d j).obj M).ρ g = isotypicHeckeFrobenius d M j :=
+        criterion R m hm K₀ ξ w K' d j).obj M).ρ g = End.of (isotypicHeckeFrobenius d M j) :=
   DecompositionGroupAction.geometricFrobenius_eq_of_lift hM hg
 
 /-- Natural transformations of sheaves on `Spec F` intertwine the Frobenius endomorphisms. -/
@@ -384,10 +384,10 @@ theorem cmPrimeToIsotypicHeckeFrobenius_naturality (d : ℕ) {M N : ModuleSheaf 
 element of `Gal(F̄/F)` relating them. -/
 theorem cmPrimeToIsotypicHeckeFrobenius_conj (d : ℕ) (M : ModuleSheaf base R)
     (j k : ClosureEmbedding (NumberField.FinitePlace.embedding (K := F) w)) :
-    isotypicHeckeFrobenius d M k ≫ ((primeToIsotypicHeckeModuleFunctor d).obj M).ρ
-        (DecompositionGroupAction.localClosureChange w j k) =
-      ((primeToIsotypicHeckeModuleFunctor d).obj M).ρ
-        (DecompositionGroupAction.localClosureChange w j k) ≫ isotypicHeckeFrobenius d M j :=
+    isotypicHeckeFrobenius d M k ≫ (((primeToIsotypicHeckeModuleFunctor d).obj M).ρ
+        (DecompositionGroupAction.localClosureChange w j k)).asHom =
+      (((primeToIsotypicHeckeModuleFunctor d).obj M).ρ
+        (DecompositionGroupAction.localClosureChange w j k)).asHom ≫ isotypicHeckeFrobenius d M j :=
   DecompositionGroupAction.geometricFrobenius_conj _ j k
 
 /-- The map of Hecke modules induced by the inclusion of the `ξ`-isotypic part intertwines its

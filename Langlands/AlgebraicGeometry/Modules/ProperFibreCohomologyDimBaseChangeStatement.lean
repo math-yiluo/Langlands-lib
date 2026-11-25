@@ -21,7 +21,7 @@ the same dimension. -/
 def ProperFibreCohomologyDimBaseChangeStatement : Prop :=
   ∀ (T T' Y Y' : Scheme.{u}) (g : Y ⟶ T) (h : T' ⟶ T) (g' : Y' ⟶ T') (h' : Y' ⟶ Y),
     IsPullback h' g' g h → IsProper g →
-    ∀ F : Y.Modules, Scheme.Modules.IsInvertible F → ∀ (t' : T') (p : ℕ),
+    ∀ F : Y.Modules, Scheme.Modules.IsInvertibleFLT F → ∀ (t' : T') (p : ℕ),
       fibreCohomologyDim g' t' ((Scheme.Modules.pullback h').obj F) p =
         fibreCohomologyDim g (h t') F p
 

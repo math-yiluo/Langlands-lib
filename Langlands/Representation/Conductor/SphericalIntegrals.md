@@ -130,8 +130,8 @@ spherical functions, their Satake parametrization, the normalized measure, the
 conductor condition on `ψ` and the standard L-polynomial `P` must still be
 supplied before Theorem 1's identity can be stated for these integrals. The
 two invariance results are internal algebraic bridges. The integral
-definitions are specializations of Worker 31's published corank-one JPSS
-integrals and add no new analytic content.
+definitions are specializations of the published corank-one JPSS
+integrals of `RankinSelberg.QuotientIntegrals` and add no new analytic content.
 
 ## Dependencies
 
@@ -139,8 +139,9 @@ Imports are the published modules
 `Langlands.Representation.Conductor.SphericalTests` and
 `Langlands.Representation.RankinSelberg.QuotientIntegrals` (with its imports,
 including `Langlands.Representation.Whittaker.GeneralLinear`), present in
-Library commit `22b4f024e0d4218752e970d09329d1799f6d81d1`. Environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`. Worker 43 authored this module;
-the corank-one integral, its integrand, convergence predicate and the
-coefficient-model specialization are Worker 31's published definitions.
+Library commit `22b4f024e0d4218752e970d09329d1799f6d81d1`. Environment:
+Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
+The corank-one integral, its integrand, convergence predicate and the
+coefficient-model specialization are published definitions of
+`RankinSelberg.QuotientIntegrals`.

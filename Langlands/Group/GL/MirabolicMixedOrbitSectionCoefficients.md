@@ -1,7 +1,5 @@
 # Actual mixed-orbit section coefficient homomorphisms
 
-Author: Worker 499.
-
 This module restricts the actual mixed-orbit coefficient homomorphisms along
 the successor sections and computes three complete coefficient pairs. Its
 algebraic definitions and identities hold for every commutative ring
@@ -30,11 +28,11 @@ namespace `Langlands.GeneralLinear.Mirabolic.MixedOrbit`. Their `_hom`
 corollaries assert equality of the corresponding monoid homomorphisms.
 No coefficient space or group is replaced by an arbitrarily isomorphic one.
 
-The section prerequisite is independently accepted and published, and the
-complete import closure agrees with the published Library as audited below.
-This module asserts no orbit enumeration, character comparison,
-localization equivalence, normalized representation comparison or host
-compatibility theorem.
+The section prerequisite `MirabolicMixedOrbitSections` is a published Library
+module, and the complete import closure agrees with the published Library as
+audited below. This module asserts no orbit enumeration, character comparison,
+localization equivalence, normalized representation comparison or
+compatibility theorem of the comparisons that use it.
 
 ## Provenance and conventions
 
@@ -45,7 +43,7 @@ reductive p-adic groups I* (1977), source
 Section 4.12(II),(III), printed pp.456–458 (PDF pp.17–19), specifies the
 mixed subgroup diagrams. Section 7.2, printed p.471 (PDF p.32), supplies
 the descending cycles for 4.13(b,c). The original diagrams and cycle page
-image were visually read during the host development. A bounded project
+image were visually read. A bounded project
 and literature errata search found no BZ77-specific entry; this is no
 global absence assertion.
 
@@ -76,8 +74,8 @@ equivalence, not an assumed interchange of the coefficient inputs.
 
 All ranks permit `k=0` and `r=0`. In particular, `mirabolic 0 R` is `P_1`.
 No `P_0` is introduced, and this algebraic helper imposes no condition on
-the host's arbitrary representation carriers, independent carrier universe
-or entire GL₀ output carrier.
+the arbitrary representation carriers, independent carrier universe
+or entire GL₀ output carrier of the comparisons that use it.
 
 ## Implemented proof
 
@@ -123,8 +121,9 @@ For `rightSectionCoefficient_zero`, the private four-line
 `cycle_inv_conjugate_entry` expands the actual permutation matrices and
 applies their multiplication entry formulas. Inverse conjugation reads
 the matrix at the descending permutation applied to both indices. This
-is the same elementary calculation authored by Worker 499 in the
-separate radical and section helpers; no radical helper is imported.
+is the same elementary calculation as in the separate radical and section
+helpers (`MirabolicMixedOrbitRadicals`, `MirabolicMixedOrbitSections`); no
+radical helper is imported.
 
 The two private cyclic index lemmas make the actual rank casts explicit.
 `rightCycle_upper_first` separates the last index of the first `r+1`
@@ -158,7 +157,7 @@ continuity proofs require a topological ring, as do their published
 coefficient-map continuity inputs. The algebraic formulas and homomorphism
 equalities impose no topology assumption.
 
-## Proof-dependency and inherited restriction audit
+## Proof-dependency and restriction audit
 
 The sole direct project import is
 `Langlands.Group.GL.MirabolicMixedOrbitSections`. Its closure contains
@@ -178,17 +177,17 @@ constructions and types and have no comparison role in these matrix
 proofs. The local-field imports are incidental to this ring-general
 helper; no p-adic or canonical topology is chosen.
 
-The following rows cover every host restriction directly and transitively.
-Each excluded family includes its mathematical conclusions, parent tasks,
-proof successors and downstream consequences.
+The following rows cover every restriction directly and transitively.
+Each excluded family includes its mathematical conclusions and
+downstream consequences.
 
-| Host condition or excluded family | Audit of the implemented proof and its complete closure |
+| Condition or excluded family | Audit of the implemented proof and its complete closure |
 | --- | --- |
 | Actual coefficients, ranks and both representatives | The new maps restrict the actual coefficient homomorphisms along the actual successor. All three complete-pair formulas and homomorphism equalities retain inverse rank casts and actual lower subgroup projections. The right identity includes the entire lower mirabolic block into GL. No left cyclic section coefficient formula is claimed here. |
-| Arbitrary inputs, universes and topology | The algebra holds over any `R : Type u` with `[CommRing R]`, for all `k,r`. The continuity results require a topological ring; the algebraic formulas require only a commutative ring. It assumes no representation, admissibility, irreducibility, finite dimension, finite length, genericity or unit vector. It therefore imposes no restriction on the host's independent `uF,uV`, supplied `T`, zero objects, repeated factors or full GL₀ output carrier. |
+| Arbitrary inputs, universes and topology | The algebra holds over any `R : Type u` with `[CommRing R]`, for all `k,r`. The continuity results require a topological ring; the algebraic formulas require only a commutative ring. It assumes no representation, admissibility, irreducibility, finite dimension, finite length, genericity or unit vector. It therefore imposes no restriction on the independent `uF,uV`, supplied `T`, zero objects, repeated factors or full GL₀ output carrier of the comparisons that use it. |
 | Plus functors and adjunction | No plus functor or adjunction module or theorem is imported or used. `plusSubgroup` is permitted matrix-group infrastructure in the orbit data. |
 | BZ77 4.13(d) and general Leibniz | No submodule-detection theorem, general Leibniz proof or derivative filtration supplies an input. `Filtration.Definitions` supplies only definitions. |
-| Orbit and representation comparisons | No coverage, disjointness, openness, character identity, normalization, Haar scaling, induction comparison or exactness assertion is assumed. This helper proves none of the six host compatibilities by itself. |
+| Orbit and representation comparisons | No coverage, disjointness, openness, character identity, normalization, Haar scaling, induction comparison or exactness assertion is assumed. This helper proves none of the six compatibilities of the comparisons that use it by itself. |
 | Segment derivative and Jacquet formulas | No segment derivative formula, Ze80 §3.5 or §9.6, `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula` or `SegmentSpecialJacquetExponentNormFormula` is imported or used. |
 | Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence supplies an input. |
 | Linked and unlinked socle consumers | `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `JuxtaposedSegmentSocleReverseProductStructure` and `LinkedSegmentSocleReverseProductQuotientHom` supply no input. |
@@ -196,25 +195,23 @@ proof successors and downstream consequences.
 | Special-head criterion and generic uniqueness | No `SegmentHeadProductIrreducibility` or `GenericSegmentProductUniqueness` conclusion is used. |
 | Ordered existence and multisegment exhaustion | No `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`, ordered strong-head existence, special-head multisegment exhaustion, quotient coverage or ordered conversion supplies an input. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure` or its full-product assembly supplies an input. No parent six-statement conclusion (b),(d),(e),(f) supplies an input. |
+| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure` or its full-product assembly supplies an input. |
 | Supercuspidal and single-block finiteness | No `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, all-character single-block conclusion or arbitrary-character finiteness theorem is imported or used. |
 | Other Whittaker finiteness exclusions | `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement` and the prohibited mirabolic finite-length route through that finiteness are absent from the proof dependencies and the complete import closure. |
-| Published-input requirement | The concrete orbit data and lower section equivalences are the only mathematical project inputs. Both are independently accepted and published. Every imported Lean/Markdown pair agrees with the published Library and its manifest. No proposition definition, citation, pending derivative proof or consumer conclusion supplies a premise. |
-| Separate owners and run controls | These matrix calculations do not duplicate restriction-sequence or exactness owners. Worker 127's operator pause, Worker 8's suspension and Worker 114's hold supply no input or waived obligation. |
+| Published-input requirement | The concrete orbit data and lower section equivalences are the only mathematical project inputs. Both are published Library modules. Every imported Lean/Markdown pair agrees with the published Library and its manifest. No proposition definition, citation, unproved derivative statement or conclusion of a later result supplies a premise. |
+| Separate results | These matrix calculations do not duplicate the restriction-sequence or exactness results. |
 
 
 The completed audit against Library base
 `8f53f05bb76983088fd64f190658c6ac4c3edc1b` finds exactly the 22 project
 imports below. All 22 published Lean/Markdown pairs agree byte for byte
-with that Library and its manifest, including the independently accepted
-and published section pair. The source scan finds none of
-the host's 38 excluded task identifiers or 24 named consumer declarations
+with that Library and its manifest, including the section pair. The source
+scan finds none of the 24 named excluded declarations
 in Lean code, and no proof holes, new axioms or unsafe evaluation commands.
-Excluded consumer names in imported paired Markdown are explanations of
+Excluded names in imported paired Markdown are explanations of
 independence, not proof inputs. Inspection of
 `rightSectionCoefficient_one_hom` reports the single ring universe `u` and
 only the standard `propext`, `Classical.choice` and `Quot.sound` axioms.
-Development compilation is not independent semantic acceptance or publication.
 
 ## Complete project import closure
 

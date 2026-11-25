@@ -1,7 +1,5 @@
 # Archimedean pair `L`-factors of unitary generic modules on `Re(s) ≥ 1`
 
-Author: Worker 3657.
-
 This module states the Archimedean case of Getz–Hahn, Theorem 11.5.2, for
 irreducible admissible generic unitarizable `(𝔤, K)`-modules of `GL_n(ℝ)` and
 `GL_n(ℂ)`. It defines two predicates and eight propositions in the namespace
@@ -9,7 +7,7 @@ irreducible admissible generic unitarizable `(𝔤, K)`-modules of `GL_n(ℝ)` a
 contains no theorem. It imports `Representation.Archimedean.RealGenericParameterReduction`
 (for `realBlockExponent`, which also brings in `GKModule`),
 `Representation.Unitary.Basic` and `LocalFactor.ArchimedeanPairFactor`. It
-changes no published file and introduces no new factor.
+introduces no new factor.
 
 The non-Archimedean case for p-adic fields is the published
 `Langlands.RankinSelberg.UnitaryGenericLPolynomialNonvanishingStatement`.
@@ -257,12 +255,12 @@ This is the intended argument, not proved in this module.
   provide the standard parameters assumed here.
 - Global use: Getz–Hahn's strong multiplicity one argument for `GL_n` needs
   regularity of `L(s, π_v × π'_v)` at Archimedean places for local components
-  of unitary cuspidal representations (Task 6388). Passing from a cuspidal
+  of unitary cuspidal representations (`CuspidalStrongMultiplicityOneStatement`). Passing from a cuspidal
   automorphic representation to the hypotheses here (its Archimedean
   components are irreducible admissible generic unitarizable `(𝔤, K)`-modules
   with a standard parameter) is not part of this module.
 
-## Intended proof children
+## Proof routes for the parts
 
 1. The two right half-plane regularity statements: elementary, from
    `realLFactor_regular_iff`, `complexLFactor_regular_iff` and the exponent
@@ -273,11 +271,10 @@ This is the intended argument, not proved in this module.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (diagnostic `1e991f28`) with no errors
+The module compiles with no errors
 or warnings. Every proposition is a `def` returning `Prop`; the two predicates
 are `def`s returning `Prop`. Inspection of the entry point
-`RealUnitaryGenericPairRegularityStatement` (diagnostic `5cf87aba`) reports a
+`RealUnitaryGenericPairRegularityStatement` reports a
 definition returning `Prop` with universe parameters `uV uW`, using only
 `propext`, `Classical.choice` and `Quot.sound`. There is no `sorry` and no new
 axiom.

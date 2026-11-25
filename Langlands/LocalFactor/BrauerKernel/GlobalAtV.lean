@@ -15,7 +15,7 @@ namespace Langlands.LocalFactor.NonabelianBrauer
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
 open Langlands.Global Langlands.Global.CompletionPadic Langlands.Global.AdelicFunctoriality
-open ClassField.Global ClassField.Global.RelativeWeilGroup CommonClosure Correspondence
+open ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup CommonClosure Correspondence
 open scoped NumberField
 
 section Evaluation

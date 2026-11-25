@@ -1,7 +1,5 @@
 # Actual left mixed-product identity localization
 
-Author: Worker 499.
-
 This module constructs `leftPhiProductIdentityIso` in
 `Langlands.Derivative.MirabolicProductMinus`. The actual normalized Phi-minus
 of the higher left mixed product, viewed in `Rep`, is naturally isomorphic
@@ -10,8 +8,10 @@ identity orbit. Its forward map uses the published actual Mackey projection.
 Both original representation inputs, the full quotient carriers, all
 normalization characters and the published rank transport are retained.
 
-The lower source-Phi comparison and its packaging as the host
-`LeftPhiCompatibility` remain separate. This focused construction does not
+The lower source-Phi comparison and its packaging as
+`LeftPhiCompatibility` are separate (modules
+`MirabolicProductMinusLeftPhiIdentityComparison` and
+`MirabolicProductMinusLeftPhi`). This focused construction does not
 prove the six-part `MirabolicProductMinusCompatibilityStatement`.
 
 ## Original source and derived provenance
@@ -30,8 +30,8 @@ pages 11–12), define the mirabolic groups and minus functors. Section
 4.12(II), printed pp.456–457 (PDF pages 17–18), defines the left mixed
 product. Section 4.13(b), printed p.458 (PDF page 19), states its natural
 minus compatibility, and §7.2, printed p.471 (PDF page 32), describes the
-two left orbits. These passages and relevant page images were read during
-this task. The bounded supplied-source and public-note errata search
+two left orbits. These passages and relevant page images were read for
+this construction. The bounded supplied-source and public-note errata search
 found no applicable BZ77 entry; no global absence is asserted.
 
 The present functor packaging and composition are internal derived content.
@@ -42,8 +42,8 @@ full normalized Phi-minus/kernel comparison, and the natural localized
 Mackey projection. The last input already proves its projection bijective
 from the actual two-orbit sequence, right exactness and full cycle
 vanishing. None of those results is assumed from BZ77's unformalized
-compatibility conclusion. The pending identity-to-lower-source comparison
-is not an input.
+compatibility conclusion. The identity-to-lower-source comparison
+(`MirabolicProductMinusLeftPhiIdentityComparison`) is not an input.
 
 ## Parameters, ranks and normalization
 
@@ -72,7 +72,7 @@ positive GL input has rank `k+1`, the source mirabolic representation is
 on `P_(r+2)`, the higher product is on `P_(k+r+3)`, and ambient Phi-minus
 lands on `P_(k+r+2)`. The actual source rank transport is the published
 `mirabolicRankCast T (Nat.succ_add k (r+1))`; its target index
-`k+(r+1)+1` is definitionally `k+r+2`. The host-induction comparison uses
+`k+(r+1)+1` is definitionally `k+r+2`. The induction comparison `leftPhiHostInductionIso` uses
 the proof `totalRank_eq k r` of the same rank equality. Proof irrelevance
 identifies these equality proofs without discarding the rank cast.
 All `k,r`, including zero, are allowed; no `P_0` or Phi-minus on `P_1`
@@ -148,8 +148,8 @@ Set `J = I ⋙ SmoothRep.toRep ⋙ compactInductionFunctor H`. The three
 substantive comparisons are:
 
 1. `e₁` is `leftPhiHostInductionIso` whiskered by the actual ambient
-   `Mirabolic.phiMinus T ψ (k+r+1) ⋙ SmoothRep.toRep`. The host's smooth
-   inducing coefficient functor and `I` have definitionally identical
+   `Mirabolic.phiMinus T ψ (k+r+1) ⋙ SmoothRep.toRep`. The smooth
+   inducing coefficient functor `leftPhiHostInducingFunctor` and `I` have definitionally identical
    objects, maps and functor laws, so the displayed intermediate is `J`.
 2. `e₂` whiskers the inverse of `phiMinusNormalizedKernelIso` on the
    left by `J` and on the right by `SmoothRep.toRep`. Its target is
@@ -180,7 +180,7 @@ representatives, selected input vectors or semisimplification is used.
 `SmoothRep.toRep` retains the full carrier, action and all morphisms; the
 target here is `Rep` because the published orbit localization has that
 interface. Packaging the lower-source identification back in `SmoothRep`
-remains a subsequent obligation.
+is done in `MirabolicProductMinusLeftPhi`.
 
 ## Import and mathematical dependency audit
 
@@ -195,8 +195,8 @@ Langlands.Representation.Derivative.MirabolicProductMinusLeftPhiMackeyLocalizati
 The full project import closure contains 227 modules, excluding this
 entry. All 454 imported Lean/Markdown files are nonempty, unchanged
 and verified against the published Library manifest at commit
-`fe1d50ac5fc58387b768e0341e76ab0f3146bf25`. All three direct comparison inputs are independently accepted
-and public. The complete project closure and external import boundary
+`fe1d50ac5fc58387b768e0341e76ab0f3146bf25`. All three direct comparison inputs are public.
+The complete project closure and external import boundary
 appear below.
 
 The direct mathematical inputs are the actual high compact-induction
@@ -209,18 +209,18 @@ in turn use explicit matrix subgroup and determinant calculations,
 smooth tensor and character twists, relation-span quotient transport,
 compatible Haar quotient measures, compact averaging, local sections,
 compact-induction transitivity, and the proved lower kernel/local-inverse
-arguments. Host transport uses the actual generic compact-function
+arguments. `MirabolicProductMinusLeftPhiHostTransport` uses the actual generic compact-function
 transport along the continuous rank equivalence. Kernel comparison uses
 the actual radical/kernel equivalence and full quotient naturality.
 
-The host proposition module is imported as a source of the exact
+The statement module `MirabolicProductMinusCompatibilityStatement` is imported as a source of the exact
 `leftPhiProduct` definition, and its unproved proposition definitions
 supply no comparison. Imported finiteness and irreducibility interfaces
 supply no representation hypothesis or consumer conclusion.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Exact six host conclusions | The target's proposition definitions and actual functor definitions are imported. No host compatibility or boundary theorem is used. This unit proves the full higher-product-to-identity localization only. |
+| Exact six conclusions of the statement | The statement's proposition definitions and actual functor definitions are imported. No compatibility or boundary theorem of the statement is used. This module proves the full higher-product-to-identity localization only. |
 | Plus functors, adjunction and §4.13(d) | No plus representation functor, adjunction, submodule-detection result or conclusion supplies an input. The plus subgroup, projection and successor are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No general Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -230,27 +230,25 @@ supply no representation hypothesis or consumer conclusion.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. The quotient-measure and compact-local-section results are lower induction constructions, not those finiteness conclusions. |
 | Generality and normalization | All `k,r`, arbitrary supplied `T`, independent `uF,uV`, positive GL input rank, smooth inputs and entire carriers are retained. Both complete positive inducing covariance and ambient inverse-half normalization remain present. |
-| Published-input requirement | Every imported pair is public and unchanged. Prop-valued statements, source formulas, drafts, pending identity comparison and consumer tasks supply no unproved premise. |
-| Separate owners and controls | This composition reuses the published restriction sequence and exactness results and does not duplicate their ownership. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is public and unchanged. Prop-valued statements and source formulas supply no unproved premise. |
+| Separate results | This composition reuses the published restriction sequence and exactness results and does not duplicate them. |
 | Actual maps and quotients | The forward map contains the actual natural Mackey quotient on the entire localized induction, with the full inverse from its published bijectivity proof. Both input maps are retained by whiskering and composition. |
 | Actual subgroup and rank maps | The actual higher equality rank transport, continuous compact-induction rank transport, kernel/radical equivalence and actual identity stabilizer all remain in the construction. |
 
 A scan of this entry and its complete project closure finds no Lean-code
-occurrence of the host's 38 excluded task identifiers or 24 named consumer
-declarations, and no proof holes, new axioms or unsafe evaluation commands.
-Excluded names in explanatory Markdown are audit prose. The mathematical
-dependency inspection above supports the exclusions in addition to the
-symbol scan. Successful compilation and declaration inspection do not
-replace independent semantic acceptance and publication.
+occurrence of 24 excluded consumer declarations, and no proof holes, new
+axioms or unsafe evaluation commands. Excluded names in explanatory
+Markdown are audit prose. The mathematical dependency inspection above
+supports the exclusions in addition to the symbol scan.
 
 ## Complete project import closure
 
 Every direct and transitive project import, excluding this entry, follows.
-The authorized Lean and Mathlib commits are respectively
+The Lean and Mathlib commits are respectively
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and
 `5ed2965256430c3649e86755f9576b54eca72435`.
 

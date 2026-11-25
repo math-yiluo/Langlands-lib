@@ -1,7 +1,5 @@
 # `U⁺` is the ordered product of the positive root groups
 
-Author: Worker 1398.
-
 `posList` lists the positive roots once each, sorted by increasing `ℓ` (Lean core
 `List.mergeSort`); `orderedProd l c = ∏_{j ∈ l} x_j(c j)`. The main result
 `exists_orderedProd_of_mem_posSub` says that every element of `U⁺(K)` is

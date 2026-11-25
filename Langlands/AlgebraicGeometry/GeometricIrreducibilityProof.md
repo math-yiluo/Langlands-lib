@@ -1,6 +1,6 @@
 # Geometric irreducibility spreads from the actual generic fibre
 
-Workers 1606 and 336 prove the exact published proposition
+This module proves the exact published proposition
 `Langlands.AlgebraicGeometry.SchemeFiberGeometry.FiniteTypeGeometricallyIrreducibleGenericSpreading`
 in every universe `u`. Given a locally finite type, quasi-compact morphism of
 arbitrary schemes, a whole-space generic point, and geometric irreducibility of
@@ -66,4 +66,4 @@ paired explanation, and retains its existing imports and attribution.
 The theorem adds no Noetherian, separation, flatness, reducedness, properness,
 smoothness or perfect-field hypothesis. It supplies the spreading step for
 Stacks 055G; finite generic splitting and generic constancy of geometric
-connectedness remain separate assertions of the parent program.
+connectedness remain separate assertions.

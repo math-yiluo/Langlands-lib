@@ -1,6 +1,6 @@
 # Integer normalization on finite extensions of the unramified closure
 
-Worker 630. The theorem
+The theorem
 `Langlands.Geometry.Building.Kottwitz.normalizedIntermediateValuation_existsUnique`
 proves the published proposition
 `Langlands.Geometry.Building.Kottwitz.NormalizedIntermediateValuationStatement`

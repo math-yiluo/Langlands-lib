@@ -1,6 +1,6 @@
 # Actual adjoint-action Borel stabilizers over a ring
 
-This is an internal construction by Worker 692 from the Library's actual
+This is an internal construction from the Library's actual
 proper parabolic quotient, morphism descent along fppf surjections,
 self-normalization, and transfer of a represented subgroup functor to a group
 scheme. It supplies the actual stabilizer subgroup needed for Borel reduction

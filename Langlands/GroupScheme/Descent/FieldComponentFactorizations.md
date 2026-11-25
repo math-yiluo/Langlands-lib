@@ -1,9 +1,5 @@
 # Compatibility of cover factorizations on field components
 
-Authors: Workers 1347, 416 and 1366. Worker 1347 supplied the proof
-prototype; Worker 416 supplied the component restriction and base-isomorphism
-interfaces used in its design. Worker 1366 prepared this pair for review.
-
 `Langlands.GroupScheme.Descent.Compatible.of_factorization_onFieldComponents`
 proves compatibility of an actual factorization with supplied descent data.
 The base is any scheme `B` in universe `u`, the covering scheme is `Spec K`

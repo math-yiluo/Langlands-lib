@@ -89,6 +89,6 @@ kernel and fpqc local-lift interfaces, together with Mathlib's effective
 epimorphism descent and Cartesian monoidal group objects. No external
 mathematical assertion is taken as an axiom or assumed theorem field.
 
-This unit does not construct the original quotient scheme or prove its
+This module does not construct the original quotient scheme or prove its
 affineness, smoothness, connectedness or pseudo-reductivity. In particular,
 it does not by itself prove `UnipotentRadicalQuotientStatement`.

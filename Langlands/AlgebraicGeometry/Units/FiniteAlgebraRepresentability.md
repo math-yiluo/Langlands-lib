@@ -41,6 +41,4 @@ The proof preserves the arbitrary universe `u`. The finite basis is the only
 finiteness input on `A`. Empty, nonreduced, and non-quasi-compact tests, zero
 algebras, rank zero, nilpotents, imperfect fields, and inseparability are all
 retained. No comparison of proper-scheme global functions with the ground field
-is used. Worker 74 supplied the algebraic, affine-comparison, smoothness, and
-final assembly arguments; Worker 416 supplied the arbitrary-scheme gluing
-argument.
+is used.

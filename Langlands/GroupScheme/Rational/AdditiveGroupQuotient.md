@@ -1,13 +1,13 @@
 # Quotients of a one-dimensional vector group over a field
 
-This derived unit shows that a quotient of a one-dimensional vector group over a
+This derived module shows that a quotient of a one-dimensional vector group over a
 field is trivial or again a one-dimensional vector group. Milne, *Algebraic
 Groups* (2017), 14.58 (§14.f "Algebraic groups isomorphic to Ga", printed p.298,
 PDF p.314) states: "Every nontrivial quotient of a group isomorphic to Ga is
 isomorphic to Ga (Exercise 14-3a)". Exercise 14-3(a) (printed p.301, PDF p.317)
 asks for an endomorphism `φ` of `Ga` with `e → H → Ga → Ga → e` exact for each
 algebraic subgroup `H ≠ Ga`. Here the subgroup `H` is the scheme kernel of the
-quotient map, which may also be all of `Ga`. The unit proves the statement for
+quotient map, which may also be all of `Ga`. The module proves the statement for
 the published predicates `RelativeRoot.IsVectorGroupOfDimension`,
 `RelativeRoot.IsFppfQuotient` and `RelativeRoot.HasSplitSeries` over
 `B = Spec k`, and it changes no published definition. The polynomial algebra
@@ -138,7 +138,7 @@ Let `f = kernelPolynomial q`.
 ## Scope
 
 The base is the spectrum of a field. Separatedness of `Q` is used only to make
-the kernel inclusion a closed immersion. The unit classifies kernels of flat
+the kernel inclusion a closed immersion. The module classifies kernels of flat
 surjective homomorphisms out of a one-dimensional vector group through the
 additive polynomial `f`, and it proves nothing about subgroups that are not such
 kernels.

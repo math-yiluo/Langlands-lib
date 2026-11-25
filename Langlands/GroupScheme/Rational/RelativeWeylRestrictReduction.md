@@ -1,11 +1,10 @@
 # Reduction of `N(k)/Z(k) ≅ N(U)/Z(U)` to structural statements
 
-Author: Worker 1122.
-
 This module assembles a conditional proof of the target
 `Langlands.GroupScheme.RelativeWeylGroupRestrictStatement` (module
 `Rational.TorusNormalizerStatement`). It does not prove the target: the five structural
-statements below have no Library proofs yet.
+statements below are premises. The Library proves the target as
+`relativeWeylGroupRestrict_bijective` (module `Rational.RelativeWeylGroupRestrictProof`).
 
 ## The structural inputs
 
@@ -39,7 +38,7 @@ scheme whose underlying space is connected.
 - **Injectivity.** `relativeWeylGroupRestrict_injective` of
   `Rational.TorusNormalizerRigidity` applies, since a connected space is nonempty.
 - **Surjectivity.** `RelativeWeylSurjective.relativeWeylGroupRestrict_surjective_of_rigid` of
-  `Rational.RelativeWeylSurjectiveReduction` (Worker 823) takes statements 1–4 and the body
+  `Rational.RelativeWeylSurjectiveReduction` takes statements 1–4 and the body
   of statement 5 at `k` and `G`. It also needs its rigidity hypothesis: every point of the
   torus normalizer over `U` acts on `T` through one automorphism of `T`. That is
   `TorusConjugation.exists_isNormalizingAut_of_connected` of

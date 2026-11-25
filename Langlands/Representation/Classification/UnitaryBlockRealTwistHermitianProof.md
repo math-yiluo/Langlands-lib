@@ -1,7 +1,5 @@
 # Hermitian duality of real twists of unitary blocks
 
-Author: Worker 1431.
-
 The theorem
 `Langlands.Classification.unitaryBlockRealTwistHermitianClause` proves exactly
 the published proposition

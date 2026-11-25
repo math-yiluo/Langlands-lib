@@ -1,7 +1,5 @@
 # Reduction of real-place injectivity to the all-place Hasse principle
 
-Worker 243.
-
 `SimplyConnectedRealPlacesInjectivityStatement` is the injectivity clause of
 `SimplyConnectedRealPlacesCohomologyStatement` written using the Library's
 `Cocycle.Cohomologous` relation. The reduction applies

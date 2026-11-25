@@ -1,7 +1,5 @@
 # The analytic manifold structure on rational points of all smooth spaces
 
-Author: Worker 3519.
-
 This statement formalizes the analytic-manifold assertion of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points*, December 31, 2011,
 printed p.15, Proposition 5.4, with its proof sketched in the final paragraph
@@ -11,7 +9,9 @@ on printed p.16. The registered original is
 For a complete field `k` and a smooth space `X`, Conrad asserts a unique
 `k`-analytic manifold structure on `X(k)` that is functorial in `X`, carries
 étale maps to local analytic isomorphisms and agrees with the known scheme
-case. He does not require a uniform dimension. This unit contains no proof.
+case. He does not require a uniform dimension. This module contains no proof; the
+statement is proved as `smoothSourceAnalyticManifold` in
+`SmoothSourceAnalyticManifoldProof`.
 
 `SmoothSourceAnalyticManifoldStatement` is a proposition definition in
 `Langlands.AlgebraicGeometry.AlgebraicSpace`. For every universe-`u` type `K`
@@ -58,7 +58,7 @@ The intended route of a proof is as follows. Every complete nontrivially
 normed field is henselian, by the published
 `PointTopology.completeHenselianValuedField`. The published canonical
 pure-dimensional family is admissible over complete fields. Its
-`dimensionStructure` is then admissible by the separately submitted assembly,
+`dimensionStructure` is then admissible by the separate assembly,
 functoriality, étale and affine-agreement statements, which gives existence.
-Uniqueness is the separately submitted
+Uniqueness is the separate statement
 `SmoothSourceDimensionAnalyticUniquenessStatement`.

@@ -3,7 +3,7 @@
 This internal construction transports actual subfunctors and finite filtrations
 along a natural isomorphism of representation-valued functors. It also constructs
 natural isomorphisms of their successive quotient functors and proves invariance
-of the existing ordered-filtration and gluing predicates. Author: Worker 194.
+of the existing ordered-filtration and gluing predicates.
 
 Let `F` and `F'` be functors from a category `C` to `Rep R G`, where `R` is a
 commutative ring and `G` is a monoid, and let `e : F ≅ F'`.
@@ -68,6 +68,6 @@ Provenance is internal algebraic transport of the published constructions in
 `Langlands.Representation.Filtration.Definitions`, the only project import.
 The maps, quotient operations, inverse laws, and invariance proofs are explicitly
 constructed from those definitions and pinned Mathlib. No additional literature
-claim is introduced. This unit supplies assembly tools for a geometric-lemma
+claim is introduced. This module supplies assembly tools for a geometric-lemma
 proof; it does not construct a support filtration, identify an orbit quotient,
 prove exactness of localization, or prove the geometric lemma itself.

@@ -1,6 +1,6 @@
 # Compact analytic pullbacks along étale morphisms
 
-Worker 659 combines the Library's `CompactFibreProduct` and
+This module combines the Library's `CompactFibreProduct` and
 `LocalizedEtalePullbackExistence` constructions. The field universe and the
 common space and chart-index universe are independent.
 
@@ -30,5 +30,6 @@ limiting cone over the original cospan, with the same point. The resulting
 witness in the localized category, and compact Hausdorffness.
 
 The construction supplies the compactness and analytic universal property
-for the étale-leg case of the geometry used in Task 7491. Its conclusion
+for the étale-leg case of the geometry used in the finite tuple-cone
+construction. Its conclusion
 concerns a cospan in the localized analytic category.

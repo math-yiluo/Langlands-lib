@@ -44,8 +44,7 @@ inside `namespace Langlands.AbelianScheme`, with
 The module imports only `Langlands.AlgebraicGeometry.Modules.DerivedSections`,
 `Langlands.AlgebraicGeometry.Picard.GeometricPicardZero` and
 `Mathlib.FieldTheory.IsAlgClosed.Basic`. With `pp.fieldNotation false`,
-`pp.proofs true` and `pp.funBinderTypes true`, `#print` in the approved
-environment reports:
+`pp.proofs true` and `pp.funBinderTypes true`, `#print` reports:
 
 ```text
 def Langlands.AbelianScheme.AlgClosedFieldTranslationInvariantCohomologyVanishingStatement.{u} : Prop :=
@@ -146,7 +145,10 @@ source, not additional source hypotheses. The source cohomology is ordinary
 sheaf cohomology. The Library computes right-derived functors in the
 category of sheaves of `𝒪_A`-modules. These agree by the standard
 comparison (Hartshorne, *Algebraic Geometry*, III.2.6), which the Library
-has not formalized and this statement does not claim.
+formalizes in each degree as the additive equivalence
+`AbelianSheafComparison.HAddEquiv` (module
+`Langlands.AlgebraicGeometry.Modules.AbelianSheafComparison`; naturality is
+not claimed there) and this statement does not claim.
 
 On 2026-10-29 the [author's manuscript](https://van-der-geer.nl/AV.pdf)
 was fetched and had the same SHA256 as the registered original. The
@@ -203,11 +205,12 @@ Picard-zero certificate. `TranslationBaseChange.isTranslationInvariant_of_isGeom
 derives this hypothesis from the Library's geometric-fibre Picard-zero
 condition over an algebraically closed field; it is not used here.
 
-## Proof obligations for the later exact proof
+## Proof obligations for the exact proof
 
-After independent acceptance and publication, a separate exact-target proof
-must have this entire named proposition as its type, with no extra outer
-hypotheses. The source proof has two steps; neither is proved here.
+A separate exact-target proof must have this entire named proposition as its
+type, with no extra outer hypotheses; the Library's is
+`algClosedFieldTranslationInvariantCohomologyVanishing` in
+`TranslationInvariantCohomologyVanishingProof`. The source proof has two steps; neither is proved here.
 
 1. Degree zero. From translation invariance derive `(-1)^*L ≅ L⁻¹`. A
    nonzero section of `L` then gives, by pullback under `-1`, a nonzero
@@ -232,17 +235,16 @@ hypotheses. The source proof has two steps; neither is proved here.
    makes the identity of `Hⁱ(A, L)` factor through the zero module
    `Hⁱ(A × A, m^*L)`, a contradiction.
 
-A later exact proof must therefore implement, for the published
+An exact proof must therefore implement, for the published
 `relativeCohomology`, the actual inversion and multiplication comparisons,
 the degree-zero argument, coherent Künneth in every required degree, and
 pullback functoriality along `j` and `m` with the coefficient
 identifications. The published cohomology foundation alone does not supply
-these. Substantial missing inputs need separate definitions, statements and
-unconditional proofs in dependency order; conditional assembly is not a
-proof of this proposition. Multiplication and inversion inputs should reuse
-the existing field cube and Mumford-bundle work, and Künneth and pullback
-inputs should be coordinated with the existing coherent-cohomology and
-base-change work. Neither the parent lifting statement nor any downstream
+these. The Library proof takes them from `TranslationInvariantH0VanishingProof`,
+`TranslationInvariantPullbackIdentitiesProof`,
+`CoherentFieldExternalTensorKunnethProof` and
+`CohomologyPullbackSplitRetractionProof`. Conditional assembly is not a proof
+of this proposition. Neither the parent lifting statement nor any downstream
 dual existence may be used to prove this prerequisite.
 
 ## Scope
@@ -257,17 +259,12 @@ The only hypotheses on `L` are ordinary translation invariance and
 nontriviality. The target contains no tensor operation, so there is no
 tensor-preservation binder. No cube, Künneth, cohomology-vanishing,
 comparison, compatibility, ample, projectivity, Picard, dual or existence
-premise is added. Publication of this statement records a target for a
-later proof; it is not a vanishing theorem.
+premise is added. This statement records a target; it is not a vanishing
+theorem.
 
-## Role and authorship
+## Role
 
-This is a focused prerequisite of Worker 516's exact proof
-`0d978728-03a8-4f05-b45c-8ec83a017647` of the parent
-`AlgClosedFieldTranslationDifferenceLiftingStatement`; it is obligation 3
+This is a focused prerequisite of the proof of the parent
+`AlgClosedFieldTranslationDifferenceLiftingStatement` (module
+`AlgClosedFieldTranslationDifferenceLiftingProof`); it is obligation 3
 in the parent Markdown. The parent is not used to justify it.
-
-Worker 921 implemented the Lean declaration and this Markdown. Worker 306
-audited the original source and errata and drafted the provenance,
-interpretation and proof-obligation sections. Worker 516 supplied the
-focused specification, including the binders and the conclusion.

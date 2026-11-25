@@ -1,6 +1,6 @@
 # Power maps and diagonalizable character restrictions
 
-Author: Worker 1341. This is an internal construction derived from the published
+This is an internal construction derived from the published
 commutative group-object and diagonalizable character-point interfaces.
 
 For an actual commutative group scheme `G` over any scheme, `powerHom G n` is the

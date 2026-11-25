@@ -1,7 +1,5 @@
 # Reducing the L-factor characterization of the assembly to its ingredients
 
-Author: Worker 1700.
-
 This module proves Henniart 2002, Theorem 1.8 (printed p. 591; proof in §4.5,
 printed p. 600, PDF p. 14) conditionally. The published proposition
 `AssemblyLCharacterizationStatement F` is derived from five Library statements,
@@ -67,19 +65,19 @@ correspondence `c0` supplies a self-dual measure `ν` for `ψ`
 on `k`, `c (k+1) D = τ (k+1) D` for every class `D` of rank `k + 1`:
 
 - If `D` is an irreducible Weil parameter, `c` and `τ` agree on `D` because
-  both extend `c0` (`ExtendsSupercuspidal.eq_on_irreducible`, Worker 422's
+  both extend `c0` (`ExtendsSupercuspidal.eq_on_irreducible`, in
   `ZeroMonodromyExtension`).
 - Otherwise, choose representatives `A` of `c D` and `B` of `τ D`. By the
   previous lemma, `A` is not supercuspidal. In rank 1 this contradicts
   `isSupercuspidal_rank_one`.
-- In rank `n + 2`, apply `automorphicClass_eq_of_pole_order_tests` (Worker
-  422's `AutomorphicPoleComparison`) with ingredient 4, `ψ` and `ν`. It
+- In rank `n + 2`, apply `automorphicClass_eq_of_pole_order_tests` (in
+  `AutomorphicPoleComparison`) with ingredient 4, `ψ` and `ν`. It
   remains to compare pole orders against each essentially square-integrable
   object `R` of rank `r + 1 ≤ n + 1`. Surjectivity of `c` gives `D'` with
   `c D' = [R]`. Ingredient 5 makes `D'` indecomposable, and the induction
   hypothesis gives `c D' = τ D'`. L-inheritance for `c` and the target's
   hypothesis for `τ` give two pair-L compatibilities of `(D, D')` with the
-  same second image. `IsPairLCompatibleAt.same_pole_order` (Worker 422's
+  same second image. `IsPairLCompatibleAt.same_pole_order` (in
   `PairLCompatibilityComparison`) turns them into certified polynomials with
   equal pole orders, which are the required tests after rewriting by the
   representatives.
@@ -93,7 +91,7 @@ Every positive rank is `k.succPNat` for some `k`, which gives `c = τ`.
 Given `c0`, `τ`, `ψ` and the hypotheses of the target, the existence half of
 ingredient 1 provides an assembly `c`. This is the published choice
 `assemblyOfWellDefined F hwd c0` with its law
-`assemblyOfWellDefined_isAssemblyOf` (`AssemblyConstruction`, Worker 864).
+`assemblyOfWellDefined_isAssemblyOf` (`AssemblyConstruction`).
 The induction gives `c = τ`, so
 `τ` is an assembly of `c0`. Applied to any other assembly `c'`, it gives
 `c' = τ`. The uniqueness half of ingredient 1 is used only pointwise, on
@@ -111,9 +109,9 @@ but any module or kernel replay that loads both met each of the two names twice.
 the names changed: types and values are as before, and no other module refers to these
 instances by name.
 
-## Declaration names made distinct in the Library (Task 5265)
+## Declaration names made distinct in the Library
 
-This module's record carries all renames of Task 5265, which gives distinct names to
+This module's record carries all renames of one Library-wide pass that gives distinct names to
 declarations that two Library modules declared under one name. Neither module of each pair
 imports the other, so each built on its own, but any module or kernel replay that loads
 both met the name twice. In each pair one module keeps the name and the other declares
@@ -212,19 +210,19 @@ that keeps the old name.
 - `Langlands.Representation.CompactCoefficient.CompactGroupFormalDegreeProof`:
   - `Langlands.Renard.CompactRepresentation.finiteDimensional_of_compact_irreducible` is now `finiteDimensional_of_compact_smooth_irreducible` (kept by `Langlands.Representation.Compact.CompactGroupSmoothRepresentationProof`).
 
-The Library itself has meanwhile renamed the local instances of
+The Library itself has separately renamed the local instances of
 `Langlands.Galois.Local.SeparableUnramifiedArithmeticStatement`, `SeparableValueArithmetic`,
 `SeparableUnramifiedFiniteArithmetic`, `SeparableUnramifiedStatement` and of
-`Langlands.ClassFieldTheory.Local.NYLL.SuppliedSpectralComparisonProof` and `FiniteInertiaField`
-(integration efbffba), the topology of `Langlands.Correspondence.BaseReciprocityCoherence`
-(7047367), and those of `Langlands.Automorphic.PlaceCompactAction` and `PlaceCompactCovariance`
-(task 6c50b2fd-cb4a-47b3-8f5d-d464916d69fb). Worker 181 renamed the two Bernstein topologies of
-`Langlands.Representation.CuspidalSupport` in candidate dfa664b0-ce94-4ff5-bc96-cceceef7b1a7. Those
+`Langlands.ClassFieldTheory.Local.Supplied.SuppliedSpectralComparisonProof` and `FiniteInertiaField`
+(commit efbffba), the topology of `Langlands.Correspondence.BaseReciprocityCoherence`
+(7047367), and those of `Langlands.Automorphic.PlaceCompactAction` and `PlaceCompactCovariance`.
+The two Bernstein topologies of `Langlands.Representation.CuspidalSupport` were left to a
+separate rename. Those
 files are left as the Library has them.
 
 ### How the names were checked
 
-All checks ran in the Lean service. Private draft modules imported the Library modules in
+All checks ran in Lean. Test modules outside the Library imported the Library modules in
 chunks of about 2,000, chosen so that no chunk loads two different declarations of one name.
 Each printed a 64-bit hash of every constant name its imported modules declare
 (`constNames` and `extraConstNames` of `env.header.moduleData`). Comparing the hashes across
@@ -244,5 +242,5 @@ in four modules share a base name with a renamed instance. Re-deriving their nam
 reproduces their published names and gives the same names after the renames, because the
 module that keeps each old name is among their imports. The 81 modules that Library 389dbc1
 added and the eight it changed import none of the renamed modules, so the renames cannot change
-their names. They were not scanned here, and Worker 181 is to rescan the published Library.
-Each renamed module compiles in the Lean service.
+their names. They were not scanned here.
+Each renamed module compiles.

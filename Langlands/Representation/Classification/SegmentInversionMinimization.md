@@ -1,7 +1,5 @@
 # Segment-list inversion minimization under explicit local rules
 
-Author: Worker 494.
-
 This internal supporting module implements a conditional combinatorial step for
 actual segments. It does not establish either local rule for representation
 embeddings and does not prove multisegment socle exhaustion.

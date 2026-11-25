@@ -12,7 +12,7 @@ pullbackTensorComparison f :
 Its component at `(M, N)` is the canonical map
 `f^*(M ⊗ N) → f^*M ⊗ f^*N` of sheaves of `𝒪_X`-modules. All declarations are in
 the namespace `Langlands.Scheme.Modules`. The tensor product is the explicit
-bifunctor `tensorFunctor` from the published module
+bifunctor `tensorFunctor` from the module
 `Langlands.AlgebraicGeometry.Modules.Tensor`, which this module does not change.
 Pullback, pushforward and their adjunction are Mathlib's
 `AlgebraicGeometry.Scheme.Modules.pullback f`, `Scheme.Modules.pushforward f`
@@ -96,7 +96,7 @@ adjunction bijection and uses naturality of `η'`, naturality of
 `pullbackTensorComparison f` packages these components as the natural
 transformation shown at the top. Its component at `(M, N)` is
 `pullbackTensorComparisonApp f M N` (`pullbackTensorComparison_app`, by
-definition). This is the construction prescribed by the task, with no
+definition). This is the construction described above, with no
 alternative construction substituted.
 
 ## Auxiliary lemmas and instance
@@ -133,8 +133,9 @@ This module specializes to morphisms of schemes. It constructs the canonical,
 natural morphism `f^*(ℱ ⊗ 𝒢) → f^*ℱ ⊗ f^*𝒢` underlying that identification,
 by the usual adjunction argument described above. It does **not** prove that
 this morphism is an isomorphism. Invertibility and monoidal coherence (unit,
-associativity and symmetry compatibilities) remain separate obligations of the
-parent task `85c37e67-6dd6-478e-bf85-a199cd8ba222`.
+associativity and symmetry compatibilities) are proved in separate modules:
+`PullbackTensorProof` (`pullbackTensorComparisonIsIso`), `PullbackTensorUnitProofs`,
+`PullbackTensorAssociativityProofs` and `PullbackTensorCompatibilityProofs`.
 
 The source is registered as `stacks-module-tensor-products-2026-10-21`,
 *Stacks Project - Tensor products of sheaves of modules (HTML snapshot
@@ -144,5 +145,5 @@ The source is registered as `stacks-module-tensor-products-2026-10-21`,
 The helper `restrictScalarsTensorLift`, the auxiliary lemmas and the local
 instance are internal packaging needed for this construction. They are
 derived from Mathlib's `ModuleCat.MonoidalCategory.tensorLift`, the adjunction
-API, and the published `Tensor.lean` interface. The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+API, and the `Tensor.lean` interface. The module was written for Lean 4.34.0
+and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

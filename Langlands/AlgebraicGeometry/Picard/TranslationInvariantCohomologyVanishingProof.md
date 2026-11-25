@@ -97,7 +97,5 @@ existence result is used. No positive-dimension hypothesis is needed;
 the degree-zero theorem and the induction apply with the unchanged
 binders in every dimension.
 
-Worker 306 implemented the structural split, monicity consumer, induction
-and exact theorem. Worker 100 contributed the cohomology-law interface
-and dependency design used by the consumer. The separate geometric and
+The separate geometric and
 cohomological proofs are reused through the published imports above.

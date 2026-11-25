@@ -1,8 +1,7 @@
 # Dynamic parabolics are determined by their Lie algebras
 
 Module `Langlands.GroupScheme.Dynamic.ParabolicLieCriterion`. It is derived infrastructure for
-clause 2 of `Langlands.GroupScheme.RegularCocharacterBorelStatement` (task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`).
+clause 2 of `Langlands.GroupScheme.RegularCocharacterBorelStatement`.
 
 Let `G` be a smooth connected affine group over a field `k`, and let `χ, χ'` be cocharacters
 whose points lie in each other's dynamic parabolic. The module proves that `P_G(χ) = P_G(χ')`
@@ -13,8 +12,9 @@ scheme.
 ## Structural inputs
 
 The two criteria take four published statements as explicit hypotheses and do not prove them.
-A final proof applies the criteria to the Library proofs of these statements once those
-proofs are published.
+The final proof in `Absolute.RegularCocharacterBorel` applies the criteria to the Library
+proofs `dynamicLie`, `dynamicSmooth`, `dynamicConnected` and `lieSubgroupEquality` of these
+statements.
 
 - `hLie : DynamicLieStatement` (Conrad–Gabber–Prasad, *Pseudo-reductive groups*, 2nd ed.
   (2015), Proposition 2.1.8(1), printed p.53). An element of `lieKernel G k` is a point of
@@ -71,7 +71,7 @@ Propositions 21.29–21.31 (printed pp.433–434), proves that `P(ν)` depends o
 chamber of `ν`. That argument works over an algebraically closed field and uses Borel
 theory, `C_G(T) = T` and rank-one groups. The present argument replaces that route by the
 Lie-algebra description of dynamic parabolics (CGP 2.1.8) and Milne's Proposition 10.15.
-For a regular cocharacter `ν` of a split torus `j : T ⟶ G`, Worker 303's module
+For a regular cocharacter `ν` of a split torus `j : T ⟶ G`, the module
 `Langlands.GroupScheme.Absolute.RegularCocharacterWeights` identifies the weight-space sum
 `⨆ n : ℕ, weightSpace (ν ≫ j) (Gm.powerHom _ n)` (it includes `n = 0`) with
 `weightSpace j 0 ⊔ ⨆ (α ∈ roots j, 0 < ⟨α, ν⟩), weightSpace j α`. This is the trivial-weight

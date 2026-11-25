@@ -64,6 +64,7 @@ comparison identify these local dimensions with the three scheme ranks.
 This explains the derived assertion without attributing the numerical
 formula itself to Lemma 29.49.3.
 
-This file defines the proposition for a separate proof successor. It contains
+This file defines the proposition, which is proved in
+`FiniteFlatConstantRankCompositionProof`. It contains
 no proof of rank multiplication and asserts no multiplication-by-6,
 polarization, torsion, or cohomology result.

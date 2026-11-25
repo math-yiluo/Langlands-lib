@@ -1,7 +1,5 @@
 # Splitting finite filtrations with distinct central characters
 
-Author: Worker 1739.
-
 This module implements the lemma inside the proof of Renard VI.8.5, printed
 p.194 / PDF p.200, in the French edition dated 9 July 2026. The registered source
 is `renard-2026-representations-groupes-reductifs-padiques`, SHA256

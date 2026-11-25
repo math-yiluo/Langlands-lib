@@ -66,17 +66,18 @@ finite type because its composite with the quasi-separated structure map of
 first projection of `Q_A` gives a morphism `pullback B.X.hom s ⟶ Q_A`. The
 generic factorization and the naturality of base-change projections turn
 this morphism into a generic lift of `familyHom j b` through `m_A`. A valuation
-ring is an integrally closed domain with fraction field `Ω`. Thus Worker
-640's `genericGroupMonoLift` extends this lift to a homomorphism
+ring is an integrally closed domain with fraction field `Ω`. Thus
+`genericGroupMonoLift` (module `Langlands.GroupScheme.GenericGroupMonoLift`) extends this lift to a homomorphism
 `factor : B ⟶ Q_A` with `factor ≫ m_A = familyHom j b`. The composite is a
 closed immersion by `isClosedSubgroup_familyHom`, and `m_A` is separated
 because it is a monomorphism. Hence `factor` is a closed immersion.
 
 ## Provenance and scope
 
-This is an internal construction for the Task 7782 valuative argument. It
-gives steps 1–3 of the route in that task's draft `valuation-lift-route.md`,
-the valuative form of SGA 3, Exposé XVI, Lemma 3.2. It assembles the Library
+This is an internal construction for the valuative argument toward the
+affineness of the quotient by the normalizer of a self-centralizing maximal
+torus in a smooth separated group. It gives the first steps of the route
+through the valuative form of SGA 3, Exposé XVI, Lemma 3.2. It assembles the Library
 lemmas `restrictedFamilyFactorization`, `genericGroupMonoLift` and
 `isClosedSubgroup_familyHom`, and it is not a transcription of a literature
 theorem. It does not show that `factor` is a conjugate of `d_A`. It does not

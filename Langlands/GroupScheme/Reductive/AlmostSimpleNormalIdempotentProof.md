@@ -1,7 +1,5 @@
 # Normal idempotents of almost-simple field groups
 
-Worker 632, using the field-step route proposed by Worker 47.
-
 `almostSimpleNormalIdempotent` proves the exact
 `AlmostSimpleNormalIdempotentStatement` in every universe, over any field.
 It applies the actual retract-image construction from `IdempotentImage`:

@@ -82,4 +82,5 @@ derived Library interfaces, not separately numbered theorems in Cogdell.
 
 This module states the propositions only. It does not prove the slice comparison, the local
 tests, the pointwise or integrated factorization, the integration implication, or any
-functional equation. The unrestricted equal-rank work in Task 7397 remains unchanged.
+functional equation. The unrestricted equal-rank statement `EqualArchimedeanFactorizationStatement`
+(part of `ArchimedeanFactorizationStatement`) remains unchanged.

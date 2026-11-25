@@ -16,12 +16,12 @@ evaluation of that representative; the polynomial inverse-evaluation theorem
 gives exactly the required `ContDiffOn k ω` field. The accompanying source
 membership lemma follows from the polynomial chart's source lemma.
 
-Worker 115 adapts Workers 362 and 1650's published
+This module adapts
 `PointManifold.General.SubmersivePresentationCharts`. It uses analytic
 coefficient-field calculus directly and does not restrict scalars to the reals.
 
 Throughout this module, `k : Type u` is an arbitrary complete nontrivially
 normed field, the scheme is affine over `Spec k`, and its actual point carrier
-is `PointTopology.RingPoint k X k` with its published evaluation topology.
+is `PointTopology.RingPoint k X k` with its evaluation topology.
 The analytic order is `ω` over `k`. There is no characteristic, archimedean,
 positive-dimension or point-nonemptiness assumption.

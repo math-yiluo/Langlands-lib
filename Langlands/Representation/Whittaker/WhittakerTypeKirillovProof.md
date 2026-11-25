@@ -1,7 +1,5 @@
 # Whittaker-type Kirillov surjectivity on actual mirabolic matrices
 
-Author: Worker 127.
-
 `Langlands.whittakerTypeKirillov` proves the complete current proposition
 `Langlands.WhittakerTypeKirillovStatement.{uF,uV}`. For every representation and
 chosen functional in that proposition, every smooth covariant function with

@@ -72,7 +72,7 @@ uses the actual open inclusions: they are locally of finite type and
 separated, and are quasi-compact because their targets are locally
 Noetherian. Composition then preserves all three properties.
 
-This unit states those results. It does not prove them, choose arithmetic
+This module states those results. It does not prove them, choose arithmetic
 models, enlarge a place set, make the dimensions equal across distinct
 components, prove Lang–Weil, or prove adelic openness. Compatible model
 existence and the remaining arithmetic and topological arguments are

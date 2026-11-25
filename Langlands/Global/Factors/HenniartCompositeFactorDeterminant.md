@@ -1,6 +1,7 @@
 # The determinant clause for Henniart's composite map
 
-Worker 5130, Task 5230. Internal derived lemmas; no external source.
+Internal derived lemmas for the proof of `HenniartCompositeFactorStatement`; no
+external source.
 
 * `Global.localDegreeInt_completionWeilEquiv`: `completionWeilEquiv` preserves the
   integer Weil degree.

@@ -1,6 +1,6 @@
 # Covariance of the actual enveloping and center differential actions
 
-Author: Worker 459. Module: `Langlands.Global.ArchimedeanCovarianceProof`.
+Module: `Langlands.Global.ArchimedeanCovarianceProof`.
 Namespace: `Langlands.Global.ArchimedeanGL`.
 
 This proof targets the published

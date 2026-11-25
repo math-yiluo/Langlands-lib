@@ -1,7 +1,5 @@
 # Conrad's Lemma 4.6 from the uniform Lang–Weil estimate in families
 
-Author: Worker 69.
-
 This module states the reduction of Conrad's Lemma 4.6 to the uniform Lang–Weil estimate in
 families. It is the last step of the Library's Lang–Weil route to Lemma 4.6. The module contains
 no proof.
@@ -49,4 +47,4 @@ The proof is not part of this module. It needs three facts:
 
 ## Status
 
-Open. A proof is to be supplied through its own focused proof task.
+Proved, as `uniformLangWeilOfFamily` in `UniformLangWeilOfFamilyProof`.

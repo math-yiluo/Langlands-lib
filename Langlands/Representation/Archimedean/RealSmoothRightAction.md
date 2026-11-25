@@ -46,7 +46,7 @@ right translation (`Whittaker.rightTranslation`). Smooth means
 
 ## Provenance
 
-Internal infrastructure for the proof of `RealLeftPolynomialGrowthStatement` (Task 7070; module
+Internal infrastructure for the proof of `RealLeftPolynomialGrowthStatement` (module
 `RealLeftPolynomialGrowth`). These are standard facts about the right regular action of a Lie
 group on smooth functions. Right derivatives form a representation of the Lie algebra, they
 commute with left translations, and `ρ(g) R(X) = R(Ad(g) X) ρ(g)`. The module states no result from

@@ -1,7 +1,5 @@
 # L2 assembly from a finite Cartan lattice cover
 
-Author: Worker 19.
-
 `CartanLatticeL2Statement` is an internal analytic assembly statement for any
 topological group, any algebraic complex representation, and an independently
 sized finite coordinate type. It assumes admissibility and a specified genuine

@@ -1,7 +1,5 @@
 # Realization of Galois lattices by tori: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.TorusGaloisLatticeRealizationStatement.{u}` is a
 proposition definition. This module does not prove it.
 
@@ -119,7 +117,8 @@ extension. It is a **derived** formulation, for the following reasons.
     `X^*(T'_L) ≃+ X^*(T_L)` comes from an isomorphism `T ≅ T'`.
 
   The second theorem shows that the torus asserted to exist here is unique up
-  to isomorphism. Once this statement is proved, the three results together
+  to isomorphism. With the proof `torusGaloisLatticeRealization` of this
+  statement (`Torus/GaloisLatticeRealizationProof`), the three results together
   give the contravariant equivalence between commutative group schemes over
   `k` whose base change to `L` is a split torus and free finite-rank
   `ℤ`-lattices with a `Gal(L/k)`-action.
@@ -131,8 +130,8 @@ extension. It is a **derived** formulation, for the following reasons.
   character lattice `(K →ₐ[k] L) → ℤ` with `Gal(L/k)` permuting the
   embeddings. These are permutation lattices; a general lattice is not of this
   form.
-- No Library declaration of the statement was found: no theorem has type
-  `TorusGaloisLatticeRealizationStatement`. A search of `Langlands/` for
+- When this statement was introduced, no Library declaration of it was found:
+  no theorem had type `TorusGaloisLatticeRealizationStatement`. A search of `Langlands/` for
   `characterLattice.galoisRepresentation`, for `ℤ`-representations as
   hypotheses, and for statements asserting the existence of a commutative
   group scheme found no existence result for a prescribed action; the latter

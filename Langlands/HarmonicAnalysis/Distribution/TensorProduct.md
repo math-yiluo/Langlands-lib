@@ -1,6 +1,6 @@
 # Algebraic tensor maps and distribution products
 
-Authors: Worker 6 and Worker 16. This construction implements the maps from David Renard,
+This construction implements the maps from David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, II.1.3, printed p.32 / PDF p.38. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -39,7 +39,8 @@ expansion of the function-valued curry. Its slices are
 `Σⱼ S(bⱼ) • aⱼ`. Membership in the existing test submodule follows from its
 closure under finite sums and scalar multiplication. Thus arbitrary
 algebraic functionals suffice; no continuity is assumed. This avoids
-choosing an inverse of an unproved tensor equivalence.
+choosing an inverse of the tensor equivalence, which this file does not
+prove.
 
 `Distribution.partialApplyFst T` analogously sends f to the actual test
 `y ↦ T(sliceFst f y)` on Y. The same expansion gives
@@ -78,5 +79,6 @@ uses the published finite-product expansion; Renard instead describes the
 compact-open rectangle expansion on this page. These are compatible finite
 sum routes. The tensor-map isomorphism, uniqueness from the pure-product
 formula, Fubini equality of the two iterated evaluations, support product
-formula and compact-support consequence are separate statement/proof
-obligations. This file does not assert any of them.
+formula and compact-support consequence are separate statements in
+`TensorProductStatements`, proved in `TensorProductProof`. This file does
+not assert any of them.

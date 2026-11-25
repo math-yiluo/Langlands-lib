@@ -23,9 +23,6 @@ it has no dynamic finite-length binder and no structural premise, since all
 structural data are fixed to published canonical values. The theorem is
 therefore unconditional and adds no hypothesis.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (vii)). Submitted by
-Worker 444 (Task 6881), with the Lean unchanged.
-
 ## Proof
 
 The proof is a single term:
@@ -48,7 +45,7 @@ canonicalRationalFixedLeviComparison_of_rational.{u, v}
 2. `canonicalRationalFixedLeviComparison_of_rational`
    (module `CanonicalRationalComplexTargetBridgesProof`, the second component
    of `canonicalRationalComplexTargetBridges`, the published proof of
-   Task 6425, `d7477c1e-06c2-43ec-9035-3eb6b594058b`) proves
+   `CanonicalRationalComplexTargetBridgesStatement`) proves
    `RationalFixedLeviComparisonStatement.{u, v} →
    CanonicalRationalFixedLeviComparisonStatement.{u, v}`. It specializes the
    existing target to the canonical instances
@@ -68,7 +65,6 @@ All modules named are in `Langlands/Representation/Aubert/General/`.
 ## Dependency status
 
 Every module this proof imports is in the Library (checked at Library commit
-`72480b70c88adff84a438bd7029d64ee3977469c`). Against that Library, in Lean
-environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, the module compiles with
+`72480b70c88adff84a438bd7029d64ee3977469c`). Against that Library, the module compiles with
 zero errors and zero warnings. The theorem uses only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

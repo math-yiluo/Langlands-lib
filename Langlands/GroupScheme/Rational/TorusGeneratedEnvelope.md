@@ -1,6 +1,6 @@
 # The closed envelope of all ground-field tori
 
-Worker 1333. This internal construction provides the first reduction in the
+This internal construction provides the first reduction in the
 proof route for rational conjugacy of full maximal tori. It retains the existing
 `IsTorus`, `IsClosedSubgroup`, `IsMaximalTorus` and `SubgroupConjugate` predicates
 unchanged. No splitness, perfection, characteristic or infinitude restriction
@@ -59,4 +59,4 @@ p.249 / PDF p.263, then supplies its split geometric unipotent radical.
 This module proves the elementary reduction after an actual representative is
 supplied. Smooth connected representability of the fixed envelope, the
 split-unipotent-radical theorem, and the remaining full conjugacy argument are
-separate substantial proof obligations.
+separate substantial proofs, outside this module.

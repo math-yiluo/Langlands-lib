@@ -1,7 +1,5 @@
 # Scalar spectral support of actual completed tensor slices
 
-Author: Worker 2.
-
 This is an internal construction and derivation from the published joint
 eigenspaces, full projections, original corner actions and genuine smooth-model
 fixed-space equivalence. No new identification with original literature is made.

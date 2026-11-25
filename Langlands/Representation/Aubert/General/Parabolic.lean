@@ -437,7 +437,7 @@ theorem inductionJacquetTermIso_inv_eval (h : IsSemidirectDecomposition P M U)
   rfl
 
 /-- Naturality of the comparison in the ambient representation: it intertwines
-`i (r φ)` with Worker 194's `SubgroupTransition.termMap` of `φ`. -/
+`i (r φ)` with `SubgroupTransition.termMap` of `φ`. -/
 theorem inductionJacquetTermIso_natural (h : IsSemidirectDecomposition P M U)
     (hU : IsClosed (U : Set G)) (hδ : IsUnimodularModulus U hU)
     {A B : SmoothRep.{0, uG, max uG uV} ℂ G} (φ : A ⟶ B) :

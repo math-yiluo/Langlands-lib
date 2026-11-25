@@ -1,6 +1,6 @@
 # Nonlinked arithmetic with one zero induction weight
 
-This internal derived unit connects the positive linked-gap index with the
+This module connects the positive linked-gap index with the
 concrete unlinkedness hypothesis of the single-zero exchange. It proves the
 single-zero filtration throughout the region without a positive linked index;
 it retains exactly one zero weight and the strict ascending exponent order.

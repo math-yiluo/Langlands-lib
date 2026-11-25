@@ -19,7 +19,7 @@ The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The passages read for this unit are:
+The passages read for this module are:
 
 - the conventions on printed p.6 / PDF p.12, where an A–B bimodule is a left
   A-module and right B-module whose two actions commute, with no coefficient
@@ -58,7 +58,7 @@ The additive content of all seven formulas is already published:
 and the refined (I.2.2.5)–(I.2.2.6), and
 `Langlands.Algebra.NonUnitalTensorAssociativityTheorem` gives (I.2.2.4) and
 (I.2.2.7). Both work over arbitrary nonunital rings with the original actions.
-This unit adds only the coefficient structure. It reuses the published carriers
+This module adds only the coefficient structure. It reuses the published carriers
 (`TensorHom`, `CurriedHom`, `RefinedHom`, `LeftTensor`, `RightTensor`) and the
 published canonical predicates (`Canonical`, `RefinedCanonical`) unchanged. Each
 conclusion asserts a `k`-linear equivalence whose underlying additive
@@ -292,6 +292,7 @@ Linearity is then checked on elements.
   last step uses an idempotent f' with `f' · z = z`, so that `c • z = (c f') · z`,
   and `y ⊗ (c f') · z = (y · f) ⊗ (c f') · z = y ⊗ (c f f') · z = y ⊗ (c f) · z`.
 
-Only the helper constructions above are proved in this unit. The seven
-coefficient-linearity conclusions and the two closed propositions are open
-targets for a separate exact-target proof task.
+Only the helper constructions above are proved in this module. The seven
+coefficient-linearity conclusions and the two closed propositions are proved in
+`TensorHomLinearProof`, whose theorem `Langlands.Algebra.tensorHomLinear` proves
+`TensorHomLinearTheorem`.

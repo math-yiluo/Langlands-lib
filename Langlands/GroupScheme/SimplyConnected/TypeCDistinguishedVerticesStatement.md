@@ -1,7 +1,6 @@
 # The distinguished vertices of a symplectic group of an antihermitian form: statement
 
-Author: Worker 31, for Task 5986 (`8494af77-9d10-4c2f-b1cd-60dc371fb195`). The module
-contains one `Prop`-valued definition and no proof.
+The module contains one `Prop`-valued definition and no proof.
 
 ## Statement
 
@@ -82,8 +81,8 @@ of this set along the isomorphism `G ≅ G'`.
 
 ## Role
 
-This is one of four prerequisites in the planned proof of `TypeCDivisionFormStatement`
-(Task 5986). It supplies the distinguished-vertex clause of the target once the Witt index is
+This is one of four prerequisites in the proof of `TypeCDivisionFormStatement`
+(`typeCDivisionForm`, module `TypeCDivisionFormProof`). It supplies the distinguished-vertex clause of the target once the Witt index is
 identified with the split rank.
 
 ## Source and provenance

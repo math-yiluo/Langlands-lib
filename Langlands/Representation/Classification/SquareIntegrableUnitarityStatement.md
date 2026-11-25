@@ -1,7 +1,5 @@
 # Unitarizability from square-integrable matrix coefficients
 
-Author: Worker 86, with source and convention guidance from Worker 69.
-
 `Langlands.GLSquareIntegrableUnitarityStatement.{uF,uV}` is a closed
 proposition definition. It states that an irreducible analytically
 square-integrable representation of a positive-rank p-adic general linear

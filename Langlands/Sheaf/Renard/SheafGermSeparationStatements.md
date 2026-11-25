@@ -84,7 +84,7 @@ map of `ψ` to equality of the original germs. The published
 `rawStalkMap_germ` and `rawGerm_restriction` then identify the germs of the
 two restricted image sections on `W`. Equality detection applies to the
 target sheaf `G` on `W`. This route explains the provenance and hypotheses
-of the corrected assertion; its Lean proof remains an obligation.
+of the corrected assertion; its Lean proof is in [SheafGermSeparation](SheafGermSeparation.md).
 
 `TargetGermCompatibilityStatement F G ψ` specializes this assertion to the
 actual source categories `F : Presheaf B`, `G : BasisSheaf B`, and
@@ -109,14 +109,13 @@ permits them. On an empty open the all-points premises are vacuous and
 the sheaf condition still supplies uniqueness. Empty-index compatibility
 is the literal vacuous predicate.
 
-Worker 595 authored these statement definitions and their source
-comparison. Worker 6 supplied the original-source audit, the target
-separation correction and the focused statement design. The raw-input
+The raw-input
 extension, equality consequences, cover-free local strengthening and
 closed aggregate are derived formal packaging, rather than additional
 verbatim claims of the book.
 
 The proofs of these propositions, the canonical germ-section unit,
 actual descent maps, Hom equivalence and adjunction, the sheaf unit
-isomorphism, and the basis/all-open category equivalence remain separate
-obligations. This statement family does not complete II.2.1.
+isomorphism, and the basis/all-open category equivalence are not part of
+this file; the proof of the aggregate is `renardSheafGermSeparation` in
+[SheafGermSeparation](SheafGermSeparation.md). This statement family does not complete II.2.1.

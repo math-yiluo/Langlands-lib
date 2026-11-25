@@ -117,5 +117,3 @@ covers has open and closed image, uses a two-valued test map to show that a cate
 epimorphism is surjective, and lifts geometric points through closed points of a fibre
 over the algebraically closed field `Ω`. It imports the published definitions, statement
 and limits proof by Lean name. It adds no axioms and no instances.
-
-Worker 239 authored this proof pair.

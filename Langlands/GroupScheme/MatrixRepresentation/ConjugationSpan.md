@@ -3,7 +3,7 @@
 This internal construction combines `GeneralLinearCoordinateConjugation` with
 the published `DenseRationalStability` interface and the split-coordinate
 construction in `NormalFixedRepresentation`. The coordinate-conjugation pair is
-a separately staged prerequisite, included unchanged as supporting files.
+a separate prerequisite, ported unchanged with this module.
 
 For any matrix representation over a commutative ring, `coordinateConjugation`
 is the actual group-scheme homomorphism acting by conjugation on both the matrix
@@ -35,6 +35,8 @@ gives the actual representation and intertwining law; the canonical isomorphism
 of global sections over the field spectrum gives the rational matrix formula.
 `conjugationSubrepresentation` chooses one such record.
 
-This pair constructs the restricted action. Identifying its kernel with the
-scheme center, bounding the normalizer image, and proving the host normalizer
-theorem remain separate obligations.
+This module constructs the restricted action. Identifying its kernel with the
+scheme center, bounding the normalizer image, and proving the normalizer
+theorem it serves are done in other modules: `ConjugationKernel`,
+`ConjugationBounded` and `DenseBoundedNormalizerAdjointProof`
+(`denseBoundedNormalizerAdjoint`).

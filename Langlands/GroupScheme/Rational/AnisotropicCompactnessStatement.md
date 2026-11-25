@@ -1,7 +1,5 @@
 # Compact rational points and anisotropy over a nonarchimedean local field
 
-Author: Worker 572.
-
 This module states the local-field compactness consequence of
 Kaletha--Prasad Theorem 2.2.9. Both declarations are proposition definitions.
 The module supplies no proof of either implication.

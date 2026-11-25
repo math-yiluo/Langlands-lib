@@ -136,7 +136,7 @@ comparison's naturality on their underlying sheaf maps.
 
 ## Remaining boundaries
 
-This unit constructs scalar restriction, not tensor extension of scalars or
+This module constructs scalar restriction, not tensor extension of scalars or
 reduction modulo an ideal. It does not assert preservation of injectives or a
 comparison in every derived cohomology degree. It does not construct specified
 Harris coefficient sheaves, stable lattices, Shimura spaces, analytic sites,

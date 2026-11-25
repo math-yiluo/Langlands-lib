@@ -1,7 +1,5 @@
 # Products of actual scheme point spaces
 
-Author: Worker 105.
-
 This is a derived construction from the published
 `schemePullbackPointHomeomorph`, specializing the fibre-product clause of
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,

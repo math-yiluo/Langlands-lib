@@ -1,7 +1,6 @@
 # Existence of the JPSS epsilon factor against the trivial character of `GL_1`
 
-Module `Langlands.Representation.Conductor.TrivialCharacterEpsilonProof`. Author:
-Worker 5550.
+Module `Langlands.Representation.Conductor.TrivialCharacterEpsilonProof`.
 
 `Langlands.Conductor.trivialCharacterEpsilon` proves the published
 [`Langlands.Conductor.TrivialCharacterEpsilonStatement`](TrivialCharacterEpsilonStatement.md)
@@ -36,7 +35,7 @@ trivialCharacterEpsilon_of_localFieldUnequalRankFunctionalEquation
   field. It is used at carrier universes `uV` (for `π`) and `0` (for the carrier `ℂ`
   of the trivial character).
 - `trivialCharacterEpsilon_of_localFieldUnequalRankFunctionalEquation` is the helper
-  theorem of the new module
+  theorem of the module
   [`TrivialCharacterEpsilonReduction`](TrivialCharacterEpsilonReduction.md), which
   derives the target from that functional equation:
   - **`n = 0`.** The functional equation is not used. The published
@@ -60,7 +59,6 @@ multiplicity one all come from published theorems, not from hypotheses.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiles
-`TrivialCharacterEpsilonReduction` and `TrivialCharacterEpsilonProof` with no errors
-or warnings. `trivialCharacterEpsilon` has universe parameters `uF`, `uV` and uses
+`TrivialCharacterEpsilonReduction` and `TrivialCharacterEpsilonProof` compile with
+no errors or warnings. `trivialCharacterEpsilon` has universe parameters `uF`, `uV` and uses
 only the axioms `propext`, `Classical.choice` and `Quot.sound`.

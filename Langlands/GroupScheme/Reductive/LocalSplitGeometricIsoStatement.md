@@ -1,7 +1,5 @@
 # Split reductive groups over a local ring are determined by a geometric fibre
 
-Authors: Worker 1398.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.LocalSplitReductiveGeometricIsoStatement`. The Lean
 file only defines the proposition. It proves nothing and adds no other

@@ -17,7 +17,8 @@ field.
 
 ## Role and provenance
 
-This is an internal target, isolated by Task 3269. The primitive normalized
+This is an internal target, isolated for the division-case representability of
+the normalized Harris CM presheaf. The primitive normalized
 Harris polarization `HarrisPrimitivePolarization` is an actual map `lam0`
 whose positive multiple is the given Harris polarization. The ordinary moduli
 functor of `PolarizedFiniteLevel` needs an actual polarization. This statement

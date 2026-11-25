@@ -1,7 +1,5 @@
 # Actual local rank-one Tits indices
 
-Author: Worker 165.
-
 `Langlands.GroupScheme.LocalRankOneTitsIndexStatement.{u}` is an unproved
 prerequisite for the local rank-one group classification. It enumerates
 actual Tits indices. It supplies neither a proof of the enumeration nor

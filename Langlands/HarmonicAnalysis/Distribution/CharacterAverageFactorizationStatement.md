@@ -1,8 +1,9 @@
 # Unique factorization of twisted product distributions
 
 `Langlands.HarmonicAnalysis.Distribution.CharacterAverageFactorizationStatement.{uG, uY}`
-is the following proposition. This module defines it and does not prove it. A
-separate proof task follows publication.
+is the following proposition. This module defines it and does not prove it. It
+is proved as `characterAverageFactorization` in
+`Langlands.HarmonicAnalysis.Distribution.CharacterAverageFactorizationProof`.
 
 ## Statement
 
@@ -75,7 +76,7 @@ unchanged.
 
   The left factor is translated on the left and the right factor on the right.
   `Y` is not moved.
-- `SchwartzBruhat.characterAverage χ μ` is the published complex linear map
+- `SchwartzBruhat.characterAverage χ μ` is the complex linear map
   `SchwartzBruhat (G × (Y × G)) →ₗ[ℂ] SchwartzBruhat Y` with
 
       characterAverage χ μ α y =
@@ -109,15 +110,16 @@ invariance. It also substitutes `w₂ = z₂ * b`, which preserves `μ` by right
 invariance. Applying `τ` gives the premise for `D = characterAverageDual χ μ τ`.
 So the proposition says that the converse holds and that `τ` is unique. This
 computation explains the sign. Neither this module nor its import proves it.
-The translation covariance of the average is a separate statement in a sibling
-task, and this module does not assume it.
+The translation covariance of the average is the separate statement
+`CharacterAverageCovarianceStatement` (proved as `characterAverageCovariance` in
+`CharacterAverageCovarianceProof`), and this module does not assume it.
 
 ## Role of each hypothesis
 
 - `IsMulRightInvariant μ` is used for the right translation in the last
   factor. A left Haar measure need not be right invariant. Together the two
   invariances make `G` unimodular, as Shalika's unipotent group is.
-- `SFinite μ` is needed by the published average. Mathlib's `Measure.prod`
+- `SFinite μ` is needed by the average. Mathlib's `Measure.prod`
   is controlled only for an s-finite second factor (see the
   `CharacterAverage` Markdown). In the p-adic application it is discharged
   separately.
@@ -142,7 +144,7 @@ is bijective.
 
 ## Intended proof route (not proved here)
 
-A later proof task is expected to argue with finite compact-open/tensor
+The route argues with finite compact-open/tensor
 decompositions. An algebraic `D` cannot be interchanged with an integral, so
 the argument stays finite.
 
@@ -178,14 +180,14 @@ with the following data:
 
 - `G = upperUnipotent (n + 1) F.Carrier`, with the canonical topology
   (`letI := F.canonicalNormedField`) and `letI := borel G` together with
-  `BorelSpace G` by `⟨rfl⟩`, as in the published `standardCharacterAverage`;
+  `BorelSpace G` by `⟨rfl⟩`, as in `standardCharacterAverage`;
 - `Y = Fin (n + 1) → F.Carrierˣ`, the parameter space of the diagonal torus
   `H`, with the product topology of the units topology;
 - `χ = standardCharacterContinuous ψ n` for any
   `ψ : UnitaryAdditiveCharacter F.Carrier`;
 - `μ` any Haar measure on `G` that is s-finite and right invariant.
 
-The group instances on `G` come from the published
+The group instances on `G` come from
 `PadicField.TopologicalData.upperUnipotentTopologicalGroup`,
 `upperUnipotentT2Space`, `upperUnipotentLocallyCompactSpace` and
 `upperUnipotentNonarchimedean`, applied to `F.canonicalTopologicalData` and
@@ -200,8 +202,8 @@ The group instances on `G` come from the published
 - Mathlib's finite-product instances give the same properties for
   `Fin (n + 1) → F.Carrierˣ`.
 
-The author checked by compilation, in a private draft that is not part of
-this submission, that the proposition yields the conclusion
+It was checked by compilation, in a separate file that is not part of
+this module, that the proposition yields the conclusion
 `∃! τ, characterAverageDual (standardCharacterContinuous ψ n) μ τ = D` for
 every such `F`, `n`, `ψ`, `μ` and every `D` satisfying the premise with
 `standardCharacter ψ n a` and `standardCharacter ψ n b`. For `n = 0` the
@@ -248,9 +250,8 @@ The correspondence is as follows:
   `χ(u₁u₂)` with `u₁ = a`, `u₂ = b` is `χ(a)χ(b)`, the Lean factor
   `(χ a : ℂ) * (χ b : ℂ)`. So the source premise and the Lean premise
   agree. This is also the sign forced by the conclusion `T*(α) = τ(β_α)`,
-  by the computation in "The sign convention" above, and it is the premise
-  the task specifies. Replacing `L_{a⁻¹}` by `L_a` would change the first
-  factor to `χ(a)⁻¹`.
+  by the computation in "The sign convention" above. Replacing `L_{a⁻¹}` by
+  `L_a` would change the first factor to `χ(a)⁻¹`.
 - The conclusion is the "moreover" part of Proposition 1.12: existence and
   uniqueness of `τ`.
 
@@ -267,8 +268,10 @@ on that space and imposes no continuity condition.
 
 The module defines the proposition and proves nothing about it. In
 particular it does not prove the factorization itself. Nor does it prove
-surjectivity of `characterAverage`, which is stated in a separate sibling
-task, or translation covariance of the average, also stated separately.
+surjectivity of `characterAverage`, which is the separate statement
+`CharacterAverageSurjectiveStatement` (proved in
+`CharacterAverageSurjectiveProof`), or translation covariance of the average,
+also stated separately (`CharacterAverageCovarianceStatement`).
 Cell descent, support on a compatible locus (Shalika's Proposition 1.13) and
 Shalika invariance of Whittaker distributions are not part of it either.
-None of these is assumed as a premise. No imported published pair is changed.
+None of these is assumed as a premise. No imported module is changed.

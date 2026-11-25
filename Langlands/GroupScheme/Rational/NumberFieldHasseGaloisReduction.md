@@ -1,7 +1,5 @@
 # Reduction of the number-field Hasse principle to finite Galois covers
 
-Worker 863.
-
 This internal reduction preserves the published
 `NumberFieldHassePrincipleStatement` unchanged. It does not prove its arithmetic
 content.

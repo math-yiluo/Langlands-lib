@@ -1,6 +1,6 @@
 # Actual prime extraction and finite-adelic scalars
 
-This internal unit connects the existing normalized profinite-integer/finite-adele
+This internal module connects the existing normalized profinite-integer/finite-adele
 comparison to the canonical prime projections of the actual Tate modules. It is
 derived from the imported scalar actions and the proved density of integer
 residue families; it makes no new external source attribution.

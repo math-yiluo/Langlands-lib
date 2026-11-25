@@ -34,6 +34,6 @@ nor finiteness of residue fields. The point spaces are the actual relative
 scheme morphisms and the topologies are already defined independently in
 `AdelicFixedModelCocone`, using the original arithmetic level products.
 
-This unit states the closed-embedding property and supplies no proof.
-Comparison with generic-fiber adelic points, eventual descent of a generic-fiber
-closed immersion, and whole-paper coverage remain separate obligations.
+This module states the closed-embedding property and supplies no proof.
+Comparison with generic-fiber adelic points and eventual descent of a generic-fiber
+closed immersion are not part of this statement.

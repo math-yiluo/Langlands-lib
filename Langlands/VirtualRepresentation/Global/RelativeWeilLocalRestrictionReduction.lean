@@ -1,6 +1,6 @@
-import Langlands.ClassField.Global.RelativeWeilLocalTransfer
+import Langlands.ClassFieldTheory.Global.RelativeWeilLocalTransfer
 import Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionSum
-import Langlands.ClassField.Global.IdeleClassPlaceProduct
+import Langlands.ClassFieldTheory.Global.IdeleClassPlaceProduct
 import Langlands.ClassFieldTheory.Local.WeilTransferReciprocityTower
 
 /-!
@@ -17,7 +17,7 @@ set_option autoImplicit false
 
 universe uV u
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open NumberField Langlands.VirtualRepresentation
 open scoped NumberField Langlands.Global.AdelicFunctoriality.FiniteExtension
@@ -51,4 +51,4 @@ theorem localInducedRestriction_of_extensionSquare
     ((twistedMap c K z w u).restrictScalars (Padic (residuePrime z))) hsq
     (completionClosureEmbedding_twistedMap c K z w u) eu e heu hι.1 y
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

@@ -1,7 +1,5 @@
 # Tate's invariants of the completed algebraic closure and its twists
 
-Author: Worker 773.
-
 `TateTwistInvariantsStatement` fixes a prime `p` and a finite extension
 `F` of `ℚ_p`. It uses the actual completed algebraic closure `C_F`
 with its continuous absolute Galois action and the chosen embedding

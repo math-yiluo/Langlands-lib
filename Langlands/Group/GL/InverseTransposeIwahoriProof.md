@@ -1,7 +1,5 @@
 # Inverse-transpose transport of block Iwahori data
 
-Author: Worker 363.
-
 The theorem `Langlands.GeneralLinear.BlockShape.inverseTransposeIwahori`
 proves exactly the published proposition
 `Langlands.GeneralLinear.BlockShape.InverseTransposeIwahoriStatement` from

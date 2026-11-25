@@ -15,7 +15,7 @@ group instance are existentially supplied and installed on that same type.
 Locally profinite means the existing
 `Langlands.Topology.IsLocallyProfinite`, including Hausdorffness.
 
-The quotient is the published `Langlands.Induction.LeftQuotient H`, with its
+The quotient is `Langlands.Induction.LeftQuotient H`, with its
 quotient topology. The homeomorphism
 `Langlands.QuotientIntegration.rightTranslate H g` sends `H*x` to `H*(x*g)`;
 `Distribution.pushforward` is the existing transport on the full algebraic
@@ -33,8 +33,9 @@ language on the untwisted quotient, without asserting that the twisted space
 of the subsequent Theorem lacks a positive invariant functional.
 
 This is a closed existential `Prop` definition, with no constructed witness or
-proof. It leaves the existing twisted-space theorem target and its proof task
-unchanged. The published compatible quotient-measure existence theorem under
+proof. It leaves the existing twisted-space theorem target
+`InvariantFunctionalStatement` (in `RenardHomogeneousStatements`) and its proof
+unchanged. The existing compatible quotient-measure existence theorem under
 regular two-sided Haar hypotheses is a restricted positive case; it does not
 assert existence for arbitrary closed subgroups and does not discharge this
 nonexistence statement.

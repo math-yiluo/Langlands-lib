@@ -1,6 +1,6 @@
 # The character of a rank-one segment socle
 
-This internal unit constructs the midpoint scalar representation on the tensor
+This internal file constructs the midpoint scalar representation on the tensor
 carrier of an increasing rank-one segment, and lifts its explicit injective
 intertwiner to the universe used by segment constituents.
 

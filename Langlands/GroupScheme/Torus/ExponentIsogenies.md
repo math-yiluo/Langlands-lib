@@ -1,7 +1,5 @@
 # Integral-coordinate isogenies over arbitrary affine bases
 
-Worker 688.
-
 This is an internal extension of the published diagonalizable-group algebra
 and integral-coordinate torus constructions. It supplies the torus part needed
 in the affine split isogeny theorem, without constructing an ambient reductive

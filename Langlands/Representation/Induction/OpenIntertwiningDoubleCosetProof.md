@@ -1,7 +1,5 @@
 # Double-coset parametrization of compact-induction intertwining kernels: proof
 
-Author: Worker 70.
-
 `Langlands.Induction.compactInductionDoubleCoset` proves the published
 `Langlands.Induction.CompactInductionDoubleCosetStatement.{uR,uG,uV,uW}` from
 `Langlands.Representation.Induction.OpenIntertwiningStatement`. Its type is exactly

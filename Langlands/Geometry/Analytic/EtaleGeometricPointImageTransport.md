@@ -1,7 +1,5 @@
 # Transport of prescribed field-point image lifting
 
-Author: Worker 620.
-
 This internal prerequisite isolates image lifting for the actual strong maps
 used to define localized étaleness and proves its transport to arrows of the
 analytic étale site. The strong lifting proposition and localized right

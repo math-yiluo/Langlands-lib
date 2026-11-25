@@ -1,7 +1,5 @@
 # Lifts of continuous actions to compact quasi-étale spaces
 
-Author: Worker 57, with Worker 786 (lift charts and local lifting).
-
 This module proves `quasiEtaleActionLift`. Its type is the Library
 statement `QuasiEtaleActionLiftStatement`, with the same universe
 parameters `u`, `v` and `z`. Let a topological group `G` act
@@ -42,7 +40,7 @@ modules:
 - `KeyLemma.QuasiEtaleStrongNearLifts` glues local lifts into near lifts
   of strong maps (`IsQuasiEtale.hasStrongNearLifts`).
 - `KeyLemma.ChartTestTransfer` transfers test triples to chart functions.
-- Worker 786's modules `KeyLemma.QuasiEtaleLiftChartCover`,
+- The modules `KeyLemma.QuasiEtaleLiftChartCover`,
   `KeyLemma.LiftChartCover` and `KeyLemma.LiftCharts` provide finite
   covers by lift charts. Their local lifting constructions are in
   `QuasiEtaleActionLift`.

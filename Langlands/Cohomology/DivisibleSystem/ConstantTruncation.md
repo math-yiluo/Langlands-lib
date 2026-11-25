@@ -1,8 +1,8 @@
 # Truncated constant Godement systems and their section complexes
 
-Author: Worker 61. This module builds on the following published modules:
+This module builds on the following published modules:
 
-- `Langlands.Cohomology.DivisibleSystem.Truncation` (Worker 61): the generic
+- `Langlands.Cohomology.DivisibleSystem.Truncation`: the generic
   truncation `truncation S d sq D Z p ι hpι` of a system of complexes given
   degree by degree, with terms `truncationTerm`, the identifications
   `truncationTerm_of_le` and `truncationTerm_of_eq`, the differentials
@@ -13,7 +13,7 @@ Author: Worker 61. This module builds on the following published modules:
   `smoothGodementResolutionSystem h T`, and `truncatedResolutionSystem_obj_exactAt`
   and `isZero_truncatedResolutionSystem_obj_X` state exactness in positive
   degrees and vanishing above `D + 1`.
-- `Langlands.Cohomology.DivisibleSystem.Coaugmented` (Worker 61): for a system
+- `Langlands.Cohomology.DivisibleSystem.Coaugmented`: for a system
   `T` and a coaugmented functor `η : 𝟭 C ⟶ F`, the residual systems
   `T.residualSystem F η q`, the term systems `T.termSystem F η q`, the residual
   quotients and inclusions, the differentials `termDifferential`, and the level
@@ -22,26 +22,26 @@ Author: Worker 61. This module builds on the following published modules:
   `smoothGodementResidualSystem h T q`, `smoothGodementTermSystem h T q`,
   `smoothGodementTermSystemObjIso` and `smoothGodementCoaugmentation h T`
   (Harris's `b : T ⟶ F^0`).
-- `Langlands.Cohomology.DivisibleSystem.Resolution` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.Resolution`:
   `smoothGodementResolutionSystem h T` and its level isomorphisms
   `smoothGodementResolutionSystemObjIso h T m` with the smooth Godement complex
   `smoothComplex R G X (T m)`.
-- `Langlands.Cohomology.DivisibleSystem.Sections` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.Sections`:
   `truncatedResolutionSectionsSystem`, `resolutionSectionsSystem` and
   `truncatedResolutionSectionsHom` (a sections functor `Φ` applied degreewise),
   and their compact cases `smoothGodementTruncatedCompactSectionsSystem` and
   `smoothGodementTruncatedInvariantCompactSectionsSystem`.
-- `Langlands.Cohomology.DivisibleSystem.Invariants` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.Invariants`:
   `smoothQuotientInvariants R H : SmoothRep R G ⥤ Rep R (G ⧸ H)` for a normal
   subgroup `H` and `smoothGodementTruncatedQuotientInvariantSectionsSystem`.
-- `Langlands.Cohomology.DivisibleSystem.ConstantCoefficients` (Worker 61): the
+- `Langlands.Cohomology.DivisibleSystem.ConstantCoefficients`: the
   constant sheaf system `constantSheafSystem hℓ G X` of the locally constant
   sheaves of the trivial smooth representations `R / ℓ ^ m R`, its level
   isomorphisms `constantSheafSystemObjIso`, `constantGodementResolutionSystem`
   and `constantGodementResolutionSystemObjIso`, and the `ℤ` versions
   `intConstantSheafSystem ℓ hℓ G X` and `intConstantSheafSystemObjIso` with
   levels `ZMod (ℓ ^ m)`.
-- Through them: Worker 13's cokernel construction
+- Through them: the cokernel construction
   `Langlands.Cohomology.CokernelComplex` (`residual`, `quotient`, `inclusion`),
   and the smooth Godement functor `smoothZeroFunctor R G X`, its
   coaugmentation `smoothCoaugmentation R G X`, `smoothComplexFunctor R G X` and
@@ -56,7 +56,7 @@ Write `T m` for `T.obj m`, `F^q` for the smooth Godement term systems and
 confused with the ring `R`). `R`, the groups and the spaces lie in one universe
 `u`, as in the parent modules; the `ℤ` cases use `Type`.
 
-The exactness of the degree-zero smooth Godement functor is Worker 3's
+The exactness of the degree-zero smooth Godement functor is the
 unproved proposition `SmoothGodementZeroExactStatement R G X`. Every smooth
 declaration below takes a proof `h` of it as an explicit argument.
 
@@ -267,8 +267,8 @@ restate them.
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.304–305 (one-based
 PDF pages 6–7). The quotations are those already used by the published
-ConstantCoefficients, Truncation and Sections modules; Worker 61 read the
-pages in the scanned original.
+ConstantCoefficients, Truncation and Sections modules; the pages were read
+in the scanned original.
 
 1. What Harris uses. Lemma 2.2 (p.304) resolves the constant sheaves
    `ℤ/ℓ^mℤ` by `ℓ`-divisible systems `{F_m^q}`. On p.305 he sets

@@ -1,7 +1,5 @@
 # Right-finite functions are determined by their values on cones (uniqueness in Prop. I.6.2)
 
-Author: Worker 249.
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RightFiniteUniqueness`,
 namespace `Langlands.HarishChandraSchwartz`. It imports `CoefficientIndependence` (for
 Waldspurger's coefficient space `A(π)`, `coefficientFunctionSpace`).

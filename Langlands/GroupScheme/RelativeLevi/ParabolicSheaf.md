@@ -1,6 +1,6 @@
 # The Zariski sheaf of actual relative parabolics
 
-Worker 610. For every reductive group scheme over any base scheme, the
+For every reductive group scheme over any base scheme, the
 actual parabolic presheaf from `ParabolicPresheaf` is a sheaf for the big
 Zariski topology on the slice over that base. Its sections remain the actual
 all-test subgroup functors represented by relative parabolic inclusions,

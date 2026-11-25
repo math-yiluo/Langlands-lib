@@ -35,4 +35,4 @@ This is an internal deduction from the named published constructions and
 criteria, with no new original-literature assertion. It supplies field-test
 alignment; extending that alignment to neighbourhoods, constructing correcting
 torus sections and proving relative pinned comparison existence remain outside
-this unit.
+this module.

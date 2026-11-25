@@ -98,16 +98,16 @@ The provenance is derived for three reasons:
    Proposition 19.10 the two agree for smooth connected affine groups. That
    equivalence is stated separately as
    `SemisimpleRadicalCharacterizationStatement`
-   (`Langlands.GroupScheme.Reductive.SemisimpleRadicalCharacterizationStatement`),
-   which was submitted for review as candidate
-   `8ee78533-710c-447c-b24d-5348ae0b7b21` and was not yet in the Library when
-   this unit was written.
+   (`Langlands.GroupScheme.Reductive.SemisimpleRadicalCharacterizationStatement`).
 2. Milne's "smooth connected normal commutative algebraic subgroup" is a closed
    subgroup `j : H ⟶ G` with `H` smooth, connected and commutative and with
    normal image; "trivial" is `SubgroupFunctor.range j = ⊥`.
 3. `k` lies in an arbitrary universe `u`. This is a formalization convention.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The proof is `semisimpleCommutativeNormalSubgroup` in
+`Langlands.GroupScheme.Reductive.SemisimpleCommutativeNormalProof`.
 
 Milne's proof, printed p. 398: "Suppose that G is semisimple, and let H be a
 connected normal commutative subgroup variety of G. Then H_{k^a} ⊆ R(G_{k^a}) =
@@ -126,5 +126,4 @@ last nontrivial term `D^n R(G)` is commutative because `D(D^n R(G)) = e`. In
 the Library, the radical `R(G)` exists by `solvableRadicalExistence`
 (`Langlands.GroupScheme.Rational.SolvableRadicalExistenceProof`), and
 Proposition 19.2(a) is stated as `PerfectFieldSemisimpleRadicalStatement`
-(`Langlands.GroupScheme.Reductive.PerfectFieldSemisimpleRadicalStatement`),
-submitted for review together with this unit.
+(`Langlands.GroupScheme.Reductive.PerfectFieldSemisimpleRadicalStatement`).

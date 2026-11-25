@@ -1,9 +1,8 @@
 # A rational Levi adapted to a maximal torus in a parabolic
 
-Authors: Worker 1361 and Worker 1348.
-
-`ParabolicRadicalTorusLeviStatement.{u}` is an unproved structural proposition
-over every field in universe `u`. Let `G` be connected reductive, let
+`ParabolicRadicalTorusLeviStatement.{u}` is a structural proposition over every
+field in universe `u`, proved as `parabolicRadicalTorusLevi` in
+`ParabolicRadicalTorusLeviProof`. Let `G` be connected reductive, let
 `j : P → G` be an actual rational parabolic, and let `t : T → G` be an actual
 rational maximal torus, with a specified factorization `f : T → P`.
 The torus `T` need not split over the ground field.
@@ -45,6 +44,4 @@ structure and descent comparisons implicit in passing from the source's
 smooth reduced algebraic groups to these interfaces. The proposition
 assumes no splitness or perfectness of the field, and no Levi or radical
 existence premise. It does not prove any of these geometric assertions or
-the minimal-parabolic split-part theorem. Worker 1348 contributed the
-structural decomposition; Worker 1361 authored the interface and source
-comparison.
+the minimal-parabolic split-part theorem.

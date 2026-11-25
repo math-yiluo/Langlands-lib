@@ -1,7 +1,5 @@
 # Elementary boundary theorem for actual segment-socle products
 
-Author: Worker 700.
-
 `Langlands.Classification.orderedMultisegmentSocleBoundary.{uF,uV} F T`
 proves exactly the target proposition
 `Langlands.Classification.OrderedMultisegmentSocleBoundary.{uF,uV} F T`.
@@ -60,7 +58,7 @@ representations of GL(n)* (1980), literature ID
 `zelevinsky-1980-induced-ii`, SHA256
 `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`.
 Section 4.1, printed p.184 / one-based PDF21, defines precedence;
-Theorems 6.1(a) and 6.2, printed p.188 / PDF25, explain the parent
+Theorems 6.1(a) and 6.2, printed p.188 / PDF25, explain the
 ordered-socle assertion and its endpoint condition. These passages were
 read in the registered original and the formula pages were visually
 checked. The retained full PDF hash matches registration. Bounded searches
@@ -98,21 +96,20 @@ derivative, induced-product finite length, Artinianity, homogeneity or
 analytic strong-indecomposability input. The target statement pair and its
 imports remain unchanged.
 
-The current import audit uses Library commit
-`46311733bb8c7e91d5c932b568a8f16981d98999`, which is also the refreshed
-workspace base, with no refresh conflicts. All 87 dependency pairs,
-including the independently reviewed and published target statement,
+The import audit uses Library commit
+`46311733bb8c7e91d5c932b568a8f16981d98999`. All 87 dependency pairs,
+including the published target statement,
 match that tree byte for byte; none is missing or unpaired. The statement
-and every imported pair are unchanged. Relative to the previous helper audit,
-`NormalizedCharacter` now imports `Topology.CompactNormCharacter`; its new
+and every imported pair are unchanged. At that commit
+`NormalizedCharacter` imports `Topology.CompactNormCharacter`; its
 compact-subgroup lemma applies the elementary theorem that a continuous
 positive character is trivial on a compact subgroup. That theorem bounds
 powers in a compact real image and then applies the same bound to inverses.
 The normalized determinant construction and the open-kernel proof used
-here are unchanged. The earlier move of the unchanged
-`Jacquet.twist_comp_subtype` into `Jacquet.CharacterTwistEquiv` was also
+here are unaffected by that import. `Jacquet.twist_comp_subtype`, in
+`Jacquet.CharacterTwistEquiv`, was also
 checked; that module contains only algebraic quotient/twist identifications.
-These changes introduce no classification input.
+These modules introduce no classification input.
 
 The complete 87-module project dependency list is:
 
@@ -206,8 +203,7 @@ Langlands.Topology.CompactOpen.NeighborhoodBasis
 Langlands.Topology.CompactOpen.NeighborhoodBasisStatement
 ```
 
-Development check `35fc1c61-b3f3-4e97-8b00-83e4ff655e40` completes a Lake
+A development check completes a Lake
 build and declaration inspection with zero errors or warnings. It confirms
 a theorem with independent `uF,uV` and only `propext`, `Classical.choice`
-and `Quot.sound`. This development result is distinct from independent
-semantic acceptance and the staged exact-target proof validation.
+and `Quot.sound`.

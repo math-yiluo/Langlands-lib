@@ -1,7 +1,5 @@
 # Highest derivative of a binary product
 
-Author: Worker 508.
-
 This internal consequence of the published actual all-rank Leibniz filtration
 proves two objectwise facts. If the derivatives of the two factors vanish above
 orders `r` and `s`, the derivative of their binary product vanishes above `r+s`.

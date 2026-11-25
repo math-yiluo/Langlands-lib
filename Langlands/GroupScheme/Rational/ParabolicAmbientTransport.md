@@ -1,6 +1,6 @@
 # Ambient isomorphisms of Borel and minimal parabolic subgroups
 
-Worker 1262. This internal categorical prerequisite transports the published
+This internal categorical prerequisite transports the published
 Borel, parabolic, and minimal rational parabolic predicates along an isomorphism
 of the ambient group scheme over an arbitrary field. No reductivity,
 splitness, perfectness, or characteristic assumption is used. All range

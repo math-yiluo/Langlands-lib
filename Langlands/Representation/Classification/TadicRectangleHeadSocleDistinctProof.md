@@ -1,7 +1,5 @@
 # Tadić's Lemma 6.3: `L(a(n,d)^ρ) ≇ ⟨a(n,d)^ρ⟩` for `n < d`
 
-Author: Worker 4988.
-
 `Langlands.Classification.TadicRectangleHeadSocle.tadicRectangleHeadSocleDistinct.{uF, uV}`
 proves exactly the published proposition
 `Langlands.Classification.TadicRectangleHeadSocleDistinct.{uF, uV} F T` of

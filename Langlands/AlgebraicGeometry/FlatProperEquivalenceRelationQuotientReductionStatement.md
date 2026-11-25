@@ -1,14 +1,8 @@
 # Reduction of effective quotients by flat proper equivalence relations to the Hilbert scheme
 
-Author: Worker 5705.
-
-Worker 5705 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). The proposition reduces the
-published `FlatProperEquivalenceRelationQuotientStatement` (the target of proof
-Task 6004, `150325ad-31d8-4abe-80a5-c18a5bda8474`) to the published
-`HilbertSchemeUniversalFamilyStatement`. Operator request
-`98389b48910e54088e0e2b2ba6aaad9c` allows prerequisite statements and proofs for
-the Task 5705 target to be staged under Task 5705.
+The proposition reduces the
+published `FlatProperEquivalenceRelationQuotientStatement` to the published
+`HilbertSchemeUniversalFamilyStatement`.
 
 No proof is asserted here. The module only states the implication.
 
@@ -76,9 +70,10 @@ identity of `ℙⁿ_A` is a closed immersion, `ℙⁿ_A` is flat and of finite
 presentation over `A`, and the relation `R` embeds as a closed subscheme of
 `ℙⁿ_A ×_A Z`, which is flat and proper over `Z`.
 
-## Intended proof
+## Proof
 
-The intended proof follows Nitsure's argument, with two changes.
+The proof (`FlatEquivalenceRelation.flatProperEquivalenceRelationQuotient_of_hilbertScheme` in
+`FlatProperEquivalenceRelationQuotientReductionProof`) follows Nitsure's argument, with two changes.
 
 1. **The family.** The morphism `R ⟶ ℙⁿ_A ×_A Z`, `r ↦ (i(t r), s r)`, is a
    proper monomorphism, hence a closed immersion. Its ideal sheaf is flat and
@@ -110,7 +105,10 @@ The intended proof follows Nitsure's argument, with two changes.
 
 ## Use
 
-Worker 22's published reduction
+The published reduction
 `Langlands.AlgebraicGeometry.FppfQuotientLocallyNoetherianReductionStatement`
 takes (c) as its hypothesis. A proof of the present implication, together with a
-proof of HGP, proves (c) and so discharges Task 6004.
+proof of HGP, proves (c). The Library has both
+(`flatProperEquivalenceRelationQuotient_of_hilbertScheme` and
+`hilbertSchemeUniversalFamily`); `flatProperEquivalenceRelationQuotient` in
+`FlatProperEquivalenceRelationQuotientProof` combines them.

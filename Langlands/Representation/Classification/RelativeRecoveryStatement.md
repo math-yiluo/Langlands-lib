@@ -103,8 +103,8 @@ The retained original is
 registered as
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-Worker 19 read the entire article, reread pp.99–102, and inspected the
-formula images on pp.99, 101 and 102. No retained erratum was located.
+The entire article was read, pp.99–102 were reread, and the
+formula images on pp.99, 101 and 102 were inspected. No retained erratum was located.
 
 For supported recovery, the source uses opposite reciprocity for the two
 maps onto `J`, exactness, and the all-regular relative multiplicity equality.

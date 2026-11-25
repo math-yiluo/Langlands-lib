@@ -1,6 +1,6 @@
 # Polynomial descent under truncated translations
 
-This is derived content by Worker 1369. It uses Mathlib's multivariate
+This is derived content. It uses Mathlib's multivariate
 polynomial evaluation, expansion, partial derivatives and support ideals,
 together with the published derivative criterion
 `GradedHopf.exists_expand_of_pderiv_eq_zero` from
@@ -84,7 +84,7 @@ maps agree after `expand q`, for any natural `q`.
 
 Both characterizations include height zero, exponential characteristic
 one, and an empty or infinite variable type. The universal condition
-allows nonreduced and zero coefficient algebras. This unit supplies the
+allows nonreduced and zero coefficient algebras. This module supplies the
 polynomial descent step. It does not identify actual group-coordinate
 invariants with this condition, exclude the covariant kernel vector,
 prove fixed-height restriction injectivity, or prove the whole-space

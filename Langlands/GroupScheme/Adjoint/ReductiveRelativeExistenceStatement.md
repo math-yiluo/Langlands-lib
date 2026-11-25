@@ -1,7 +1,5 @@
 # Existence of a reductive relative adjoint quotient: statement
 
-Worker 795.
-
 This module defines the proposition
 `Langlands.GroupScheme.ReductiveRelativeAdjointQuotientExistenceStatement.{u}`.
 It does not prove it unconditionally. It proves implications in both
@@ -54,9 +52,10 @@ describes the implemented proof.
 `ReductiveRelativeAdjointQuotientExistenceStatement.to_affine` proves
 the reverse implication by retaining affineness of the reductive target
 and the same actual quotient map. Thus the two proposition definitions
-are equivalent by proved implications. An unconditional construction of
-the quotient is still required; the stronger formulation needs no
-separate existence proof program.
+are equivalent by proved implications. The unconditional construction of
+the quotient is `relativeAdjointQuotientExistence` in
+`Adjoint.RelativeExistenceProof`, which proves the affine statement; the
+stronger formulation needs no separate existence proof.
 
 ## Original source and derived packaging
 
@@ -81,8 +80,9 @@ gives a flat surjective quotient morphism and the full scheme-theoretic
 kernel, rather than only exactness on rational points. Local finite
 presentation follows from the finite-presentation quotient and the
 source's smoothness and finite presentation over the base. The actual
-group-scheme quotient construction and its full fppf kernel remain
-obligations of an unconditional proof. The included internal helper
+group-scheme quotient construction and its full fppf kernel belong to the
+unconditional proof `relativeAdjointQuotientExistence`, not to this
+module. The included internal helper
 proves reductivity from the affine quotient once it is supplied.
 Triviality of the centre of the relative target is not an additional
 field of the statement.

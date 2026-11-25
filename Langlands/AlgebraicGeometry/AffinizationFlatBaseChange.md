@@ -1,7 +1,5 @@
 # Canonical affinization and flat affine base change
 
-Worker 596.
-
 Suppose that `P` is the actual pullback of `X → Z` along `Y → Z`, that `Y`
 and `Z` are affine, that `Y → Z` is flat, and that `X` is quasi-compact and
 quasi-separated. `isPullback_toSpecΓ` proves that the naturality square

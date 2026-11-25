@@ -1,7 +1,5 @@
 # Difference families for actions on central extensions
 
-Worker 302.
-
 This is an internal construction for the central-extension action argument.
 Let `j : N ⟶ H` be a monomorphism of group schemes over an arbitrary base `S`,
 and let `p : H ⟶ Q` be flat, surjective and quasi-compact, with

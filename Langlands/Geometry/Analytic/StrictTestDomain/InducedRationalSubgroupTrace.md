@@ -146,10 +146,10 @@ support and equivariance obligations. The new degree proofs substitute
 the actual index equality, and the coset sum reindexes the whole actual
 fiber. No external theorem from Harris or Berkovich is claimed.
 
-This unit concerns subgroup change with the rational presentation fixed,
+This module concerns subgroup change with the rational presentation fixed,
 ordinary-open degree-zero coefficient sheaves, and compactly supported
-locally constant functions. Smooth ordinary-open sheaf specialization,
-general rational-domain coverings, analytic or etale trace, derived
-compact-support comparison, arithmetic Hecke identification, Shimura
-specialization and Harris compatibility remain obligations of the broader
-task.
+locally constant functions. Smooth ordinary-open sheaf specialization is
+constructed in `InducedRationalSubgroupSmoothTrace`. General rational-domain
+coverings, analytic or etale trace, derived compact-support comparison,
+arithmetic Hecke identification, Shimura specialization and Harris
+compatibility are not treated in this module.

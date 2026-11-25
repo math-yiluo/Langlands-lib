@@ -1,7 +1,5 @@
 # Inside-Levi induction finite length
 
-Author: Worker 1343.
-
 This internal adapter derives finite-length preservation of actual
 normalized induction inside a closed standard Levi from the ambient
 normalized-induction finite-length hypotheses. It does not add a

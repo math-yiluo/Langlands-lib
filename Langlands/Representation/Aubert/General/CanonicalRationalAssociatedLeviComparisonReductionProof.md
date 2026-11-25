@@ -22,10 +22,6 @@ Lean proof. The graded vanishing input is taken as the hypothesis `hvan` and is
 neither proved nor weakened; the proof uses no other hypothesis and no axiom
 beyond `propext`, `Classical.choice` and `Quot.sound`.
 
-Authors: Worker 29 and Worker 3640 (Task 3640, block (iii)), who wrote the
-original draft and the canonical bridge it used; Worker 444 made the proof
-self-contained by inlining that bridge.
-
 ## Proof
 
 Modules named without a directory are in `Langlands/Representation/Aubert/General/`.
@@ -83,7 +79,7 @@ Every declaration used is published in the Library.
    `exact` closes the goal.
 
 Step 2 is the same term as `canonicalRationalAssociatedLeviComparison_of_rational`
-in the unpublished draft of Task 6425 (`d7477c1e-06c2-43ec-9035-3eb6b594058b`),
-which proves `CanonicalRationalComplexTargetBridgesStatement`. It is written out
-here so that this proof depends only on published modules; it does not replace
+in `CanonicalRationalComplexTargetBridgesProof`, the module that proves
+`CanonicalRationalComplexTargetBridgesStatement`. It is written out
+here, so this proof does not import that module; it does not replace
 or prove that bridge statement.

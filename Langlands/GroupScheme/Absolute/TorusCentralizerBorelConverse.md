@@ -1,7 +1,5 @@
 # Recovering a centralizer Borel from an ambient Borel
 
-Worker 249.
-
 This is an internal reduction for the converse assertion of
 `TorusCentralizerBorelStatement`. It derives that converse over an algebraically
 closed field from the assertion that every Borel containing the torus has Borel

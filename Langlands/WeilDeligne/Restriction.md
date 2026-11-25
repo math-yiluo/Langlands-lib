@@ -1,7 +1,6 @@
 # Restriction of Weil–Deligne pairs
 
-Worker 17 authored this construction pair for task
-`503968de-16f8-4f63-ba13-b5e167e11dce`. It imports
+This construction pair imports
 `Langlands.WeilDeligne.Basic` and `Langlands.Weil.Representation.Restriction`.
 
 For a group homomorphism `phi : H -> G`, `restrict phi A` keeps the

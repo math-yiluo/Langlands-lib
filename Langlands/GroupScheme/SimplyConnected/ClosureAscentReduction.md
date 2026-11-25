@@ -1,9 +1,10 @@
 # Conditional simple-connectedness ascent through a finite splitting field
 
-Worker 416. This internal construction assembles conditional ascent to an
+This internal construction assembles conditional ascent to an
 algebraic closure and then conditional arbitrary field-extension ascent.
 It retains every substantial structural result as an explicit input. It
-does not prove the unrestricted host proposition or any input proposition.
+does not prove the unrestricted field-extension proposition or any input
+proposition.
 Fields and schemes retain arbitrary universe `u`; the tensor descent input
 is specialized to index universe `u`.
 
@@ -67,13 +68,14 @@ No arbitrary isogeny over an extension is assumed to descend.
 
 The deduction has internal provenance: it combines the named interfaces,
 actual recovery equation, algebraic embedding and base-change comparison.
-All imported pairs are public Library modules. The split-cover statement
-interface was originally supplied by Worker 1391, and Worker 1347 supplied
-the finite-Galois tensor interface used as a literal hypothesis here. Their
-private proofs are not part of this module. The private tensor construction
-and reflection proofs are not imported by this module and supply no
-accepted evidence. The tensor-existence input has its literal type
-pending publication of its separately assigned statement. TensorFullCoverStatement and
-CoverRecovery are public at the workspace base. The construction and its
-supporting lemmas prove none of the structural input propositions. They
-provide conditional composition for the host proof, which remains open.
+All imported pairs are Library modules. The split-cover statement
+interface is `SplitSimplyConnectedCoverExistenceStatement`, and the
+finite-Galois tensor decomposition is used as a literal hypothesis here.
+No proof of either is part of this module, and no tensor construction or
+reflection proof is imported by it. The tensor-existence input is stated
+by its literal type. `TensorFullCoverStatement` and `CoverRecovery` are
+among the imported modules. The construction and its supporting lemmas
+prove none of the structural input propositions. They provide conditional
+composition; the unconditional `IsSimplyConnectedFieldExtensionStatement`
+is proved as `isSimplyConnectedFieldExtension` in
+`SimplyConnectedFieldExtensionProof`.

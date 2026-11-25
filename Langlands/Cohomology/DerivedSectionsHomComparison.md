@@ -3,7 +3,7 @@
 This is internal comparison infrastructure for relative module cohomology and
 the actual Ext-defined cohomology of underlying abelian sheaves. It constructs a
 natural comparison on bounded below derived categories, characterized on every
-complex by the existing canonical cycle-localization map. This supporting unit
+complex by the existing canonical cycle-localization map. This module
 does not prove the relative module/sheaf pullback statement.
 
 The parameters are abelian categories `C`, `D`, and `A`, with chosen derived

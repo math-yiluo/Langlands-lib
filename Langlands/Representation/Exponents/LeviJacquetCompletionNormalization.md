@@ -1,6 +1,6 @@
 # Normalization of the actual Levi Jacquet completion
 
-Author: Worker 1775. Module
+Module
 `Langlands.Representation.Exponents.LeviJacquetCompletionNormalization`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -13,7 +13,7 @@ and VI.9.7, printed pp.205–206 / PDF pp.211–212. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The VI.9.7 statement's normalization note explicitly identifies this comparison
-as an outstanding supporting step.
+as a supporting step.
 
 The field universe `u` and representation carrier universe `v` are independent.
 The inputs are a Hausdorff topological field, an affine ambient group scheme
@@ -51,5 +51,6 @@ the completed group action is asserted.
 This implements the normalization comparison needed for Renard VI.9.7, using the
 existing compact-open completion model of I.1.4. It does not identify the
 radical-fixed ambient completion with either Jacquet completion, prove
-parabolic cofinality or stabilization, or prove either exact target of the
-parent task. Those obligations remain open.
+parabolic cofinality or stabilization, or prove either
+`LeviJacquetOppositePairingStatement` (VI.9.6, Proposition) or
+`LeviCompletionOppositeJacquetStatement` (VI.9.7).

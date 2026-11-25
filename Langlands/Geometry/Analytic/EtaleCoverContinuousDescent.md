@@ -1,7 +1,5 @@
 # Continuous map descent along localized étale coverings
 
-Author: Worker 790.
-
 `EtaleCoverContinuousDescentStatement` concerns a jointly surjective
 family of localized étale maps to `S` and local analytic maps from the
 covering objects to `T`. The local maps agree after precomposition with

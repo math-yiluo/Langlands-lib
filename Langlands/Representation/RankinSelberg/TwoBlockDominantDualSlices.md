@@ -1,6 +1,6 @@
 # Actual dominant determinant slices under reversed duality
 
-This internal definition and support-lemma unit transports the actual dominant
+This internal module of definitions and support lemmas transports the actual dominant
 quotient kernels and their genuine convergence predicates across the published
 lower quotient duality. The kernel comparisons retain the explicit premise
 `TwoBlockDominantDualMatrixStatement`. The module neither proves that matrix
@@ -14,7 +14,7 @@ universe are independent. The two positive block sizes `m i + 1` have sum
 `t + 1`; each block representation `σ i` is smooth. No irreducibility,
 nonvanishing functional, factor certificate or additional representation-type
 assumption is imposed. The rank relation is `r = t + (j + k + 1)`; either
-natural rectangle dimension may be zero. Thus this unit concerns the strictly
+natural rectangle dimension may be zero. Thus this module concerns the strictly
 dominant case.
 
 Write `E = reversedDualSectionEquiv F h σ hσ` for the actual equivalence chosen
@@ -131,7 +131,7 @@ The equivalences assert no convergence by themselves. Coefficient reflection
 is an equality of individual total slice integrals. This module proves no
 whole-quotient convergence, Laurent functional equation, analytic continuation,
 rational factor identification, polynomial divisibility, equal-rank boundary,
-or final dominant-rank gamma/L statement. Those remain separate obligations.
+or final dominant-rank gamma/L statement. Those are not part of this module.
 
 ## All-field port
 

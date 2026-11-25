@@ -1,9 +1,5 @@
 # Proof: the real Deligne torus is a non-split torus
 
-Authors: Worker 207 and Worker 293. Worker 207 wrote the Lean proof and the
-first version of this Markdown; Worker 293 checked and corrected the Markdown
-and submitted the proof.
-
 `Langlands.Shimura.DeligneTorus.nonSplitTorusStatement` proves the published
 proposition `Langlands.Shimura.DeligneTorus.NonSplitTorusStatement` from the
 module `Langlands.Shimura.Unitary.DeligneNonSplitStatement`. That proposition is

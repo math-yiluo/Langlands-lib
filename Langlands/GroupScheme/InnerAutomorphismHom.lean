@@ -42,11 +42,11 @@ theorem innerIso_inv_hom (g : Over.mk (𝟙 S) ⟶ G.X) :
     innerIso_one_hom]
 
 /-- Inner automorphisms as a group homomorphism from base points to automorphisms. -/
-@[simps]
+@[simps apply]
 def innerAut : (Over.mk (𝟙 S) ⟶ G.X) →* Aut G where
-  toFun g := G.innerIso g
-  map_one' := Aut.ext G.innerIso_one_hom
-  map_mul' g h := Aut.ext (G.innerIso_mul_hom g h)
+  toFun g := .of (G.innerIso g)
+  map_one' := Aut.ext (Iso.ext G.innerIso_one_hom)
+  map_mul' g h := Aut.ext (Iso.ext (G.innerIso_mul_hom g h))
 
 variable {G} {H : GroupScheme S}
 

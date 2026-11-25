@@ -1,6 +1,6 @@
 # Central quotient and coefficient transport
 
-Author: Worker 84. Provenance: internal.
+Provenance: internal.
 
 This module derives transport constructions from
 `Langlands.Representation.MatrixCoefficient.ModuloCenter` and Mathlib's actual

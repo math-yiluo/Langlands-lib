@@ -214,19 +214,20 @@ lemma structureAutScalar_symm (e : structureModule X ≅ structureModule X) :
 
 /-- The automorphism group of the structure module is the group of global units. -/
 noncomputable def structureAutMulEquiv : Aut (structureModule X) ≃* Γ(X, ⊤)ˣ where
-  toEquiv := structureAutUnitsEquiv
+  toEquiv := Aut.isoEquiv.trans structureAutUnitsEquiv
   map_mul' e e' := by
-    change structureAutScalar (e' ≪≫ e) = structureAutScalar e * structureAutScalar e'
+    change structureAutScalar (e'.asIso ≪≫ e.asIso) =
+      structureAutScalar e.asIso * structureAutScalar e'.asIso
     rw [structureAutScalar_trans, mul_comm]
 
 @[simp]
 lemma structureAutMulEquiv_apply (e : Aut (structureModule X)) :
-    structureAutMulEquiv e = structureAutScalar e :=
+    structureAutMulEquiv e = structureAutScalar e.asIso :=
   rfl
 
 @[simp]
 lemma structureAutMulEquiv_symm_apply (r : Γ(X, ⊤)ˣ) :
-    structureAutMulEquiv.symm r = structureAutOfUnit r :=
+    structureAutMulEquiv.symm r = Aut.of (structureAutOfUnit r) :=
   rfl
 
 /-- The automorphism of the structure module of `X` obtained from an automorphism of the

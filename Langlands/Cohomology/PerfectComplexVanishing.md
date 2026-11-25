@@ -1,7 +1,5 @@
 # Vanishing of fibre homology from vanishing of homology
 
-Authors: Worker 5705.
-
 The module `Langlands.Cohomology.PerfectComplexVanishing` (namespace
 `Langlands.Cohomology.FibreDimension`) proves the algebraic form of D. Mumford, *Abelian
 Varieties*, Chapter II, §5, Corollary 3 (printed p.53; literature id

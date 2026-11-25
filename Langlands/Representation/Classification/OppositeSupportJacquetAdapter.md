@@ -1,7 +1,5 @@
 # Opposite support and the normalized Jacquet evaluation map
 
-Author: Worker 156.
-
 This is an internal algebraic construction from the published character
 reciprocity evaluation map and the actual opposite induction and Jacquet
 constructions. It supplies a concrete adapter needed to connect the injection

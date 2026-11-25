@@ -1,7 +1,5 @@
 # Scalar comparison of arbitrary invariant sesquilinear forms
 
-Author: Worker 89.
-
 `Langlands.InvariantSesquilinearScalarStatement.{uG,uV}` states that on an
 irreducible admissible complex representation, every nonzero invariant
 sesquilinear form is a nonzero complex scalar multiple of a supplied invariant

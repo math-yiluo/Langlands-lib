@@ -1,6 +1,6 @@
 # Matrix trace generating series proof
 
-Worker 203 proves the complete published proposition
+This module proves the complete published proposition
 `Langlands.Automorphic.Unramified.MatrixTraceGeneratingSeriesStatement`
 in the theorem `Langlands.Automorphic.Unramified.matrixTraceGeneratingSeries`.
 The module imports the unchanged
@@ -106,7 +106,6 @@ including arbitrary singular and nonsemisimple ones, and all positive
 exponents are covered. The coefficient at zero is outside the statement:
 there \(G(P_A)\) has coefficient \(0\) while \(\operatorname{tr}(A^0)=n\).
 
-The proof uses environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` and
-Mathlib's polynomial splitting, reverse polynomial, formal-series inverse
+The proof uses Mathlib's polynomial splitting, reverse polynomial, formal-series inverse
 and derivative, generalized eigenspace and trace theory. It introduces no
 new axioms or proof holes.

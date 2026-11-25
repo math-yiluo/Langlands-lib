@@ -1,7 +1,5 @@
 # Groups of multiplicative type over normal bases are locally isotrivial
 
-Workers 616 and 370.
-
 `Langlands.GroupScheme.multiplicativeTypeNormalIsotrivial` proves
 `Langlands.GroupScheme.MultiplicativeTypeNormalIsotrivialStatement.{u}`
 in every universe. For a group of multiplicative type over a normal

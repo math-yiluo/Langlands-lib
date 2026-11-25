@@ -1,12 +1,11 @@
 # A compatible maximal compact subgroup for the actual Siegel setup
 
-Author: Worker 4149.
-
 This module states that every actual algebraic Siegel setup admits a maximal compact
 subgroup `K` of `G(𝔸_F)` with the Iwasawa property for the canonical minimal parabolic and
 with the positive-torus compatibility required by
 `AdelicGoodSiegelReductionStatement`. It proves this statement from three published local
-Iwasawa existence statements, which are themselves unproved. No reduction-theory assertion
+Iwasawa existence statements, taken as hypotheses; the Library proves two of them (see
+below), not the finite-place one. No reduction-theory assertion
 is made.
 
 ## The statement
@@ -92,12 +91,12 @@ maximality of the coordinate subgroup, and
 The three published statements
 
 - `InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement` (archimedean Iwasawa
-  existence compatible with a rational Levi; proof task
-  `cff6372d-c8c5-4401-ba0b-dc531bbe0b01`),
-- `FinitePlaceGroupPoints.ParabolicIwasawaStatement` (finite-place Iwasawa existence; proof
-  task `c0b4e50a-0d4b-4247-8801-5eb445e19645`),
+  existence compatible with a rational Levi; proved as
+  `InfinitePlaceGroupPoints.leviCompatibleIwasawaStatement`, module
+  `InfinitePlaceLeviIwasawaProof`),
+- `FinitePlaceGroupPoints.ParabolicIwasawaStatement` (finite-place Iwasawa existence),
 - `IntegralIwasawaFamily.ExistenceStatement` (an almost-everywhere integral Iwasawa family;
-  proof task `74d01809-55d8-4867-8ffe-20dc556d7370`)
+  proved as `IntegralIwasawaFamily.existenceStatement`, module `IntegralIwasawaFamilyProof`)
 
 imply `AdelicCompatibleIwasawaCompactStatement` in the same universe.
 
@@ -118,8 +117,8 @@ element of the local compact lies in the Levi, which centralizes the torus.
 
 Together with `SiegelAlgebraicSetupExistenceStatement` and a coverage statement keeping a
 supplied Iwasawa compact subgroup (such as `exists_isSiegelCover_of_chamber`), this
-statement gives `AdelicGoodSiegelReductionStatement`. That composition is left to the
-final proof of task `6adbbc46-4bb2-4c01-843a-d8ded48189f2`.
+statement gives `AdelicGoodSiegelReductionStatement`. That composition is not carried out
+in this module.
 
 ## Sources
 

@@ -94,17 +94,18 @@ parameters of the new proposition.
 
 ## Dependency audit and independence
 
-Before integration, a recursive scan of the six original direct imports gave
+A recursive scan of the six direct imports other than
+`LeftMixedProductDerivativeProof` and `RightMixedProductDerivativeFiltrationProof` gave
 315 project modules, including this entry. The other 314 Lean files equaled the published
 Library base `e058cb4d3adbd71764731d87c4cbfcb5805696e8` byte for byte, and
-had paired Markdown. Integration additionally imports
-`LeftMixedProductDerivativeProof` and reuses its two exact all-rank results
-in place of the duplicate `leftIso` and `leftVanish` declarations. The
-positive-rank induction helpers remain available. Integration also imports
-`RightMixedProductDerivativeFiltrationProof` and uses its identical all-rank
-filtration conclusion in place of the duplicate local `rightFiltration`
-declaration. This keeps the mixed-product proof upstream of Leibniz gluing.
-Every project module in the integrated closure has a nonempty Markdown
+had paired Markdown. The module also imports
+`LeftMixedProductDerivativeProof` and reuses its two exact all-rank results,
+so it declares no separate all-rank `leftIso` and `leftVanish`. The
+positive-rank induction helpers remain available. It also imports
+`RightMixedProductDerivativeFiltrationProof` and uses its all-rank
+filtration conclusion, so it declares no local `rightFiltration`.
+This keeps the mixed-product proof upstream of Leibniz gluing.
+Every project module in the full closure has a nonempty Markdown
 companion. External imports
 are from Mathlib and Lean. The only Classification modules in this closure are `Supercuspidal`,
 `SupercuspidalContragredientAux`, and
@@ -138,7 +139,7 @@ category algebra. The recursion and cast lemmas reused from
 conditional filtration theorem is used only with every displayed premise
 supplied above.
 
-No excluded analytic segment classification, special-head or ordered-head
+No analytic segment classification, special-head or ordered-head
 existence, multisegment exhaustion, global support decomposition, general
 ordered quotient coverage, tempered uniqueness, regular or square-integrable
 exhaustion, or square-integrable Langlands classification is imported or
@@ -146,10 +147,13 @@ used. The proof uses neither a segment derivative theorem nor a special-head
 product irreducibility result. It does not turn a proposition definition
 into a proved hypothesis by assumption.
 
-## Remaining host obligations
+## What this module does not prove
 
 This result supplies actual product derivative gluing only. It computes no
 specific length-two quotient product, proves no such product irreducible,
 and proves neither repeated-cuspidal triple transfer. Those concrete
-applications and the final exact ambient conjunction remain obligations
-of the host task.
+applications and the final exact ambient conjunction are not proved here.
+The conjunction is `Classification.RepeatedCuspidalTripleJacquetTransfer`,
+proved as `Classification.repeatedCuspidalTripleJacquetTransfer` in
+`Classification.RepeatedCuspidalTripleJacquetTransferProof`, whose import
+closure contains this module.

@@ -1,8 +1,6 @@
 # Abelianness of basis sheaves at a sufficient section universe
 
-Worker 709 supplied the proof draft, source audit and universe argument.
-Worker 1153 checked the imported interfaces and source correspondence,
-prepared this proof pair and compiled both exact targets. This pair proves
+The imported interfaces and the source correspondence were checked. This pair proves
 the existing proposition
 `Langlands.Sheaf.Renard.BasisSheafAbelianStatement.{u,v}` and its
 source-axiom companion

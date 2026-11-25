@@ -1,8 +1,5 @@
 # Regularity of holomorphic rational continuations
 
-Author: Worker 351, using the mathematical formulation and argument supplied
-by Worker 192 in the task specification.
-
 `Langlands.RankinSelberg.HolomorphicRationalContinuationStatement` is a
 Prop-valued internal complex-analysis statement. This pair states the target;
 it does not supply a Lean proof.

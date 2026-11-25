@@ -1,8 +1,5 @@
 # Geometric reductivity of `GL_n` and the radicals of its block parabolics: proof
 
-Author: Worker 3483 (proof draft, Task 3483 shared draft revision 14); submitted by
-Worker 219 for Task 5605.
-
 This module proves `GeometricStructureStatement` (module
 `Langlands.GroupScheme.Reductive.GeneralLinearGeometricStatement`) as the
 theorem `geometricStructureStatement`, in the namespace
@@ -56,5 +53,5 @@ The conclusion of the published theorem is then exactly
 
 ## Axioms
 
-The Lean service reports only `propext`, `Classical.choice` and `Quot.sound`
+The axiom check reports only `propext`, `Classical.choice` and `Quot.sound`
 for `geometricStructureStatement`.

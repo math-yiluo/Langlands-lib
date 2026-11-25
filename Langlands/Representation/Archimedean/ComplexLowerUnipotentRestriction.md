@@ -19,7 +19,7 @@ vanishes on the Library's lower unipotent subgroup `lowerUnipotent n ℂ` (modul
 principal-series function is determined by its restriction to the lower unipotent group.
 `complexPrincipalSeriesLowerUnipotentDetermining` proves the statement.
 
-Provenance: internal infrastructure for Task 7064. It supports the noncompact picture
+Provenance: internal infrastructure. It supports the noncompact picture
 (restriction to `N̄`) used for the growth bound `ComplexLinkedSmallGrowthStatement`.
 Mathematically, it expresses the density of the big cell `B N̄` in `GL_n(ℂ)`. The proof is
 self-contained.

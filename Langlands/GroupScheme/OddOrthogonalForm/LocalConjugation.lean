@@ -67,7 +67,7 @@ theorem rationalMatrix_equations
 /-- The automorphism over the covering field associated with a natural local automorphism. -/
 def coverAutomorphism (χ : LocalGroupIso (splitGroup K n) (splitGroup K n) (ringTest K N)) :
     CategoryTheory.Aut (splitGroup N n) :=
-  (splitBaseChangeIso K N n).symm ≪≫ χ.toBaseChangeIso ≪≫ splitBaseChangeIso K N n
+  Aut.of ((splitBaseChangeIso K N n).symm ≪≫ χ.toBaseChangeIso ≪≫ splitBaseChangeIso K N n)
 
 /-- The unique actual conjugating point over the covering field. -/
 def conjugatorPoint (hn : 2 ≤ n)
@@ -83,7 +83,7 @@ def conjugatorMatrix (hn : 2 ≤ n)
 /-- It implements the complete covering-field group-scheme automorphism. -/
 theorem conjugatorPoint_spec (hn : 2 ≤ n)
     (χ : LocalGroupIso (splitGroup K n) (splitGroup K n) (ringTest K N)) :
-    (splitGroup N n).innerIso (conjugatorPoint hn χ) = coverAutomorphism χ :=
+    (splitGroup N n).innerIso (conjugatorPoint hn χ) = (coverAutomorphism χ).asIso :=
   fullInnerAutEquiv_symm_spec hn _
 
 /-- The chosen matrix obeys the exact quadratic and norm-one equations. -/
@@ -110,12 +110,12 @@ theorem splitMatrix_localAutomorphism (hn : 2 ≤ n)
   let c := splitBaseChangeIso K N n
   let α := coverAutomorphism χ
   let y := (LocalGroupIso.coverPointsEquiv (splitGroup K n) s).symm x
-  have hα : c.hom.hom.hom ≫ α.hom.hom.hom = χ.toBaseChangeIso.hom.hom.hom ≫ c.hom.hom.hom := by
-    have h : c.hom ≫ α.hom = χ.toBaseChangeIso.hom ≫ c.hom := by
+  have hα : c.hom.hom.hom ≫ α.asIso.hom.hom.hom = χ.toBaseChangeIso.hom.hom.hom ≫ c.hom.hom.hom := by
+    have h : c.hom ≫ α.asIso.hom = χ.toBaseChangeIso.hom ≫ c.hom := by
       simp only [α, coverAutomorphism, c, Iso.trans_hom, Iso.symm_hom, Iso.hom_inv_id_assoc]
     simpa only [Grp.comp_hom_hom] using congrArg (fun f => f.hom.hom) h
   have h1 : (pointMatrix N (LocalGroupIso.coverTest s)
-      ((y ≫ c.hom.hom.hom) ≫ α.hom.hom.hom)).val =
+      ((y ≫ c.hom.hom.hom) ≫ α.asIso.hom.hom.hom)).val =
       (conjugatorMatrix hn χ).val.map (scalarMap (LocalGroupIso.coverTest s)) *
         (pointMatrix N (LocalGroupIso.coverTest s) (y ≫ c.hom.hom.hom)).val *
           ((conjugatorMatrix hn χ)⁻¹).val.map (scalarMap (LocalGroupIso.coverTest s)) := by
@@ -130,7 +130,7 @@ theorem splitMatrix_localAutomorphism (hn : 2 ≤ n)
   rw [h3] at h2
   rw [LocalGroupIso.toFun_eq_coverPointsEquiv χ, ← splitMatrix_coverPointsEquiv]
   have hl : (y ≫ χ.toBaseChangeIso.hom.hom.hom) ≫ c.hom.hom.hom =
-      (y ≫ c.hom.hom.hom) ≫ α.hom.hom.hom := by
+      (y ≫ c.hom.hom.hom) ≫ α.asIso.hom.hom.hom := by
     simp only [Category.assoc]
     exact congrArg (fun f => y ≫ f) hα.symm
   rw [hl]

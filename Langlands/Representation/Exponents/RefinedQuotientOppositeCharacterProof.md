@@ -1,7 +1,5 @@
 # Scalar-character occurrence in opposite Jacquet modules: proof
 
-Author: Worker 99.
-
 `Langlands.Exponents.refinedQuotientOppositeCharacter` proves exactly the
 published `Langlands.Exponents.RefinedQuotientOppositeCharacterStatement`.
 The field universe `uF`, inducing-carrier universe `uV` and quotient-carrier

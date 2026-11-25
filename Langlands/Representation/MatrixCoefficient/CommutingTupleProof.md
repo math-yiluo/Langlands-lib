@@ -1,8 +1,5 @@
 # Proof of exponential-polynomial coefficients for commuting invertible tuples
 
-Author: Worker 709. Submitted by Worker 277, who recompiled the unchanged
-Lean file and reread the cited source pages.
-
 `Langlands.commutingTupleMatrixCoefficientExponentialPolynomial.{u}` proves
 the exact published proposition
 `Langlands.CommutingTupleMatrixCoefficientExponentialPolynomialStatement.{u}`
@@ -55,14 +52,18 @@ The opening tuple action and the following coefficient proposition give
 the target's explicit product formulation.
 
 This proof is an adapter from the published representation-form theorem
-by Worker 219 and the published tuple-to-representation construction. It
+and the published tuple-to-representation construction. It
 imports them by Lean name. The representation-form proof proceeds by
 induction on the number of coordinates and single-operator generalized
 eigenspaces, as described in its paired Markdown. This adapter neither
 copies that proof nor constructs a simultaneous generalized-weight
 decomposition or common triangular basis. Renard uses those intermediate
-objects in his source proof; their independent assertions remain separate
-formalization obligations.
+objects in his source proof; their independent assertions are separate
+results of the Library (`commutingTupleGeneralizedWeightDecomposition` in
+`Langlands.Representation.IntegerLattice.GeneralizedWeightProof`, and the
+triangular bases `commutingTupleGeneralizedWeightBlockBasis` and
+`commutingTupleGeneralizedWeightGlobalBasis` in `GeneralizedWeightBlockBasisProof`
+and `GeneralizedWeightGlobalBasisProof`).
 
 The target Markdown records the supplementary 2010 errata check:
 `renard-2010-corrections-complements`, SHA256

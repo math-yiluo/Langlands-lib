@@ -1,7 +1,5 @@
 # Group schemes with smooth connected fibres over a reduced base are smooth
 
-Authors: Worker 50 and Worker 9.
-
 The theorem `Langlands.GroupScheme.reducedBaseConnectedFibreSmooth.{u}` proves the
 unchanged published proposition
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement.{u}` (SGA 3, Exposé VI_B,
@@ -29,7 +27,7 @@ EGA IV₃ 15.6.7 and then applies Théorème 3.10 there. Instead it shows direct
 section lies in the smooth locus and then translates. The helper modules are in
 `Langlands/GroupScheme/ReducedBaseSmooth/`.
 
-1. **Relative dimension near each base point** (`DimensionBridge`, Worker 50).
+1. **Relative dimension near each base point** (`DimensionBridge`).
    `exists_open_smoothOfRelativeDimension_fiber` gives, for every `s : S`, an open
    `U ∋ s` and `n : ℕ` such that every residue fibre of `H.X.hom` over `U` is smooth of
    relative dimension `n`. It uses the Library theorem `smoothConnectedRelativeDimension`
@@ -37,8 +35,8 @@ section lies in the smooth locus and then translates. The helper modules are in
    smooth of relative dimension `n` over a field, and the local constancy of the fibre
    dimension.
 2. **The unit section lies in the smooth locus** (`mem_smoothLocus_of_fibres`, defined in
-   this module). It is Worker 9's `mem_smoothLocus_of_fibres_of_finrank` (`Chart`) applied
-   to Worker 50's `finrank_residueField_tensor_kaehler_eq` (`OmegaRank`). For `s ∈ U`,
+   this module). It is `mem_smoothLocus_of_fibres_of_finrank` (`Chart`) applied
+   to `finrank_residueField_tensor_kaehler_eq` (`OmegaRank`). For `s ∈ U`,
    `Chart` chooses affine opens `Spec R ⊆ S` around `s` and `Spec A ⊆ Y` around `e s`
    with `A` of finite type over `R`. The fibre of `Spec A → Spec R` over the image `x` of
    `s` is smooth of relative dimension `n` (`FibreTransfer` and Mathlib's
@@ -59,7 +57,7 @@ section lies in the smooth locus and then translates. The helper modules are in
    contains the connected component through any of its closed points, because the stalk
    map there is a surjection between domains of the same dimension `n`. Over this open set the closed immersion is surjective onto a reduced
    scheme (smooth over a reduced base), hence an isomorphism.
-3. **Translation** (`Translation`, Worker 9). `smooth_of_range_unit_subset_smoothLocus`:
+3. **Translation** (`Translation`). `smooth_of_range_unit_subset_smoothLocus`:
    if the unit section lies in the smooth locus `V` of `H.X.hom`, then the multiplication
    `V ×_S V → H` is smooth (a shear isomorphism followed by a projection) and surjective
    (on each fibre over a field, products of two points of an open set containing the
@@ -74,12 +72,12 @@ provides `η ≫ H.X.hom = 𝟙 S`.
 
 ## Module list
 
-- `Langlands.GroupScheme.ReducedBaseSmooth.Translation` (Worker 9)
-- `Langlands.GroupScheme.ReducedBaseSmooth.Core` (Worker 9)
-- `Langlands.GroupScheme.ReducedBaseSmooth.FibreTransfer` (Worker 9)
-- `Langlands.GroupScheme.ReducedBaseSmooth.Local` (Worker 9)
-- `Langlands.GroupScheme.ReducedBaseSmooth.Slice` (Worker 9)
-- `Langlands.GroupScheme.ReducedBaseSmooth.Chart` (Worker 9)
-- `Langlands.GroupScheme.ReducedBaseSmooth.DimensionBridge` (Worker 50)
-- `Langlands.GroupScheme.ReducedBaseSmooth.OmegaRank` (Worker 50)
-- `Langlands.GroupScheme.ReducedBaseSmoothProof` (this module, Worker 50)
+- `Langlands.GroupScheme.ReducedBaseSmooth.Translation`
+- `Langlands.GroupScheme.ReducedBaseSmooth.Core`
+- `Langlands.GroupScheme.ReducedBaseSmooth.FibreTransfer`
+- `Langlands.GroupScheme.ReducedBaseSmooth.Local`
+- `Langlands.GroupScheme.ReducedBaseSmooth.Slice`
+- `Langlands.GroupScheme.ReducedBaseSmooth.Chart`
+- `Langlands.GroupScheme.ReducedBaseSmooth.DimensionBridge`
+- `Langlands.GroupScheme.ReducedBaseSmooth.OmegaRank`
+- `Langlands.GroupScheme.ReducedBaseSmoothProof` (this module)

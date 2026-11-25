@@ -1,7 +1,5 @@
 # Universal perfect sections over a noetherian base
 
-Author: Worker 137.
-
 `NoetherianUniversalPerfectSectionsStatement.{u}` is the noetherian-base
 specialization of the published `UniversalPerfectSectionsStatement.{u}`.
 For an arbitrary universe-`u` commutative ring `R` with

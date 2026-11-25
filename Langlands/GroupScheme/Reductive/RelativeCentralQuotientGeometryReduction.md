@@ -1,7 +1,5 @@
 # Geometric reduction for supplied relative central quotients
 
-Worker 358.
-
 `RelativeCentralQuotientGeometryReductionStatement` is a `Prop`-valued
 definition of the conditional geometry consequence: the kernel is of
 multiplicative type, and the supplied target is affine and reductive.

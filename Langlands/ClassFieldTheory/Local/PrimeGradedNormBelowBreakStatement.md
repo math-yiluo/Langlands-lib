@@ -1,7 +1,5 @@
 # Conditional below-break prime graded norm statement
 
-Author: Worker 96.
-
 `PrimeGradedNormBelowBreakFromArithmetic` is an internal proposition isolating
 the below-break clause of the existing `PrimeRamifiedGradedNorm` target under
 explicit proofs of `PrimeRamifiedTraceIdeals` and `PrimeNormTraceExpansion`.

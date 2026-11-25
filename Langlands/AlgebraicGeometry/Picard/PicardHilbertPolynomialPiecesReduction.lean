@@ -85,7 +85,7 @@ section Trivial
 
 /-- An invertible module on a scheme with exactly one point is trivial. -/
 lemma nonempty_iso_unit_of_subsingleton {X : Scheme.{u}} [Subsingleton X] (x : X)
-    {M : X.Modules} (hM : Scheme.Modules.IsInvertible M) : Nonempty (M ≅ 𝟙_ X.Modules) := by
+    {M : X.Modules} (hM : Scheme.Modules.IsInvertibleFLT M) : Nonempty (M ≅ 𝟙_ X.Modules) := by
   obtain ⟨U, hxU, ⟨e⟩⟩ := hM.exists_trivialization x
   have hU : U = ⊤ := by
     rw [eq_top_iff]
@@ -105,12 +105,12 @@ variable {Y T : Scheme.{u}}
 
 /-- On every fibre, the pullback of an invertible module from the base is trivial. -/
 lemma nonempty_fibreModule_pullback_iso_unit (g : Y ⟶ T) (t : T) {N : T.Modules}
-    (hN : Scheme.Modules.IsInvertible N) :
+    (hN : Scheme.Modules.IsInvertibleFLT N) :
     Nonempty (fibreModule g t ((Scheme.Modules.pullback g).obj N) ≅
       𝟙_ (pullback g (T.fromSpecResidueField t)).Modules) := by
   obtain ⟨e⟩ := nonempty_iso_unit_of_subsingleton
     (X := Spec (T.residueField t)) (default : PrimeSpectrum (T.residueField t))
-    (hN.pullback (T.fromSpecResidueField t))
+    (Scheme.Modules.IsInvertible.pullbackFLT (hL := hN) (T.fromSpecResidueField t))
   exact ⟨(Scheme.Modules.pullbackComp _ _).app N ≪≫
     (Scheme.Modules.pullbackCongr pullback.condition).app N ≪≫
     ((Scheme.Modules.pullbackComp _ _).app N).symm ≪≫
@@ -160,7 +160,7 @@ def fibreModuleTensorIso (F M : Y.Modules) :
 
 /-- Tensoring with the pullback of an invertible module on the base does not change fibres. -/
 lemma nonempty_fibreModule_tensor_pullback_iso (F : Y.Modules) {N : T.Modules}
-    (hN : Scheme.Modules.IsInvertible N) :
+    (hN : Scheme.Modules.IsInvertibleFLT N) :
     Nonempty (fibreModule g t (F ⊗ (Scheme.Modules.pullback g).obj N) ≅ fibreModule g t F) := by
   obtain ⟨e⟩ := nonempty_fibreModule_pullback_iso_unit g t hN
   exact ⟨fibreModuleTensorIso g t _ _ ≪≫ whiskerLeftIso _ e ≪≫ ρ_ _⟩
@@ -193,10 +193,10 @@ section Invertible
 
 variable {X : Scheme.{u}}
 
-lemma isInvertible_twist {𝓛 F : X.Modules} (h𝓛 : Scheme.Modules.IsInvertible 𝓛)
-    (hF : Scheme.Modules.IsInvertible F) : ∀ n : ℕ, Scheme.Modules.IsInvertible (twist 𝓛 F n)
+lemma isInvertible_twist {𝓛 F : X.Modules} (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛)
+    (hF : Scheme.Modules.IsInvertibleFLT F) : ∀ n : ℕ, Scheme.Modules.IsInvertibleFLT (twist 𝓛 F n)
   | 0 => hF
-  | n + 1 => (isInvertible_twist h𝓛 hF n).tensor_monoidalV2 h𝓛
+  | n + 1 => Scheme.Modules.IsInvertible.tensor_monoidalV2 (isInvertible_twist h𝓛 hF n) h𝓛
 
 end Invertible
 
@@ -213,7 +213,7 @@ abbrev twistSheaf (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A)) :
 /-- The piece of the decomposition, as a set of points of `T`. -/
 def pieceSet (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A))
     (L : (pullback f s).Modules) (c : Polynomial ℚ × Polynomial ℚ) (m : ℕ) : Set T :=
-  {t | (∃ M : (pullback f s).Modules, Scheme.Modules.IsInvertible M ∧
+  {t | (∃ M : (pullback f s).Modules, Scheme.Modules.IsInvertibleFLT M ∧
         Nonempty (M ⊗ L ≅ 𝟙_ (pullback f s).Modules) ∧
         ∀ n : ℕ, ((fibreEulerCharacteristic (pullback.snd f s) t
           (twist (twistSheaf f 𝓛X T s) M n) : ℤ) : ℚ) = c.1.eval (n : ℚ)) ∧
@@ -251,16 +251,16 @@ invertible module is constant. -/
 lemma exists_isOpen_eulerCharacteristic_eq
     (hSC : ProperFlatFibreCohomologySemicontinuityStatement.{u})
     (hPT : ProjectiveFibreTwistCohomologyStatement.{u})
-    (hprop : IsProper f) (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertible 𝓛X)
+    (hprop : IsProper f) (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X)
     (h𝔓 : IsClosedImmersion 𝔓.toProj)
     (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of A))
-    {F : (pullback f s).Modules} (hF : Scheme.Modules.IsInvertible F) (t₀ : T) :
+    {F : (pullback f s).Modules} (hF : Scheme.Modules.IsInvertibleFLT F) (t₀ : T) :
     ∃ V : Set T, IsOpen V ∧ t₀ ∈ V ∧ ∀ t ∈ V, ∀ n : ℕ,
       fibreEulerCharacteristic (pullback.snd f s) t (twist (twistSheaf f 𝓛X T s) F n) =
         fibreEulerCharacteristic (pullback.snd f s) t₀ (twist (twistSheaf f 𝓛X T s) F n) := by
   have hPT3 := (hPT A f 𝓛X N 𝔓 hprop hflat h𝓛 h𝔓 T s F hF).2.2
   choose P hPdeg hP using hPT3
-  have h𝓛T : Scheme.Modules.IsInvertible (twistSheaf f 𝓛X T s) := h𝓛.pullback _
+  have h𝓛T : Scheme.Modules.IsInvertibleFLT (twistSheaf f 𝓛X T s) := Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _
   have hSCn : ∀ n : ℕ, ∃ V : T.Opens, t₀ ∈ V ∧ ∀ t ∈ V,
       fibreEulerCharacteristic (pullback.snd f s) t (twist (twistSheaf f 𝓛X T s) F n) =
         fibreEulerCharacteristic (pullback.snd f s) t₀ (twist (twistSheaf f 𝓛X T s) F n) :=
@@ -284,15 +284,15 @@ near `t₀`. -/
 lemma exists_isOpen_vanishing
     (hSC : ProperFlatFibreCohomologySemicontinuityStatement.{u})
     (hPT : ProjectiveFibreTwistCohomologyStatement.{u})
-    (hprop : IsProper f) (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertible 𝓛X)
+    (hprop : IsProper f) (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X)
     (h𝔓 : IsClosedImmersion 𝔓.toProj)
     (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of A))
-    {L : (pullback f s).Modules} (hL : Scheme.Modules.IsInvertible L) (m : ℕ) (t₀ : T)
+    {L : (pullback f s).Modules} (hL : Scheme.Modules.IsInvertibleFLT L) (m : ℕ) (t₀ : T)
     (h₀ : ∀ n : ℕ, m ≤ n → ∀ p : ℕ, 0 < p →
       IsZero (fibreCohomology (pullback.snd f s) t₀ (twist (twistSheaf f 𝓛X T s) L n) p)) :
     ∃ V : Set T, IsOpen V ∧ t₀ ∈ V ∧ ∀ t ∈ V, ∀ n : ℕ, m ≤ n → ∀ p : ℕ, 0 < p →
       IsZero (fibreCohomology (pullback.snd f s) t (twist (twistSheaf f 𝓛X T s) L n) p) := by
-  have h𝓛T : Scheme.Modules.IsInvertible (twistSheaf f 𝓛X T s) := h𝓛.pullback _
+  have h𝓛T : Scheme.Modules.IsInvertibleFLT (twistSheaf f 𝓛X T s) := Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _
   obtain ⟨V₁, hV₁t, n₀, hV₁⟩ := (hPT A f 𝓛X N 𝔓 hprop hflat h𝓛 h𝔓 T s L hL).1 t₀
   have hSCn := fun n : ℕ ↦ hSC T (pullback f s) (pullback.snd f s) inferInstance inferInstance _
     (isInvertible_twist h𝓛T hL n)
@@ -329,13 +329,13 @@ lemma exists_isOpen_vanishing
 lemma isOpen_pieceSet
     (hSC : ProperFlatFibreCohomologySemicontinuityStatement.{u})
     (hPT : ProjectiveFibreTwistCohomologyStatement.{u})
-    (hprop : IsProper f) (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertible 𝓛X)
+    (hprop : IsProper f) (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X)
     (h𝔓 : IsClosedImmersion 𝔓.toProj)
     (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of A))
-    {L : (pullback f s).Modules} (hL : Scheme.Modules.IsInvertible L)
+    {L : (pullback f s).Modules} (hL : Scheme.Modules.IsInvertibleFLT L)
     (c : Polynomial ℚ × Polynomial ℚ) (m : ℕ) :
     IsOpen (pieceSet f 𝓛X T s L c m) := by
-  have h𝓛T : Scheme.Modules.IsInvertible (twistSheaf f 𝓛X T s) := h𝓛.pullback _
+  have h𝓛T : Scheme.Modules.IsInvertibleFLT (twistSheaf f 𝓛X T s) := Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _
   have hSCn := fun n : ℕ ↦ hSC T (pullback f s) (pullback.snd f s) inferInstance inferInstance _
     (isInvertible_twist h𝓛T hL n)
   rw [isOpen_iff_forall_mem_open]
@@ -371,11 +371,11 @@ lemma isOpen_pieceSet
 lemma exists_mem_pieceSet
     (hPT : ProjectiveFibreTwistCohomologyStatement.{u})
     (hprop : IsProper f) (hflat : Flat f) [GeometricallyIntegral f]
-    (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) (h𝔓 : IsClosedImmersion 𝔓.toProj)
+    (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) (h𝔓 : IsClosedImmersion 𝔓.toProj)
     (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of A))
-    {L : (pullback f s).Modules} (hL : Scheme.Modules.IsInvertible L) (t : T) :
+    {L : (pullback f s).Modules} (hL : Scheme.Modules.IsInvertibleFLT L) (t : T) :
     ∃ (c : Polynomial ℚ × Polynomial ℚ) (m : ℕ), t ∈ pieceSet f 𝓛X T s L c m := by
-  obtain ⟨hD, ⟨eD⟩⟩ := hL.dual_monoidalV2
+  obtain ⟨hD, ⟨eD⟩⟩ := Scheme.Modules.IsInvertible.dual_monoidalV2 hL
   have hPTD := (hPT A f 𝓛X N 𝔓 hprop hflat h𝓛 h𝔓 T s _ hD).2.2 t
   have hPT1 := (hPT A f 𝓛X N 𝔓 hprop hflat h𝓛 h𝔓 T s _
     (Scheme.Modules.isInvertible_unit (pullback f s))).2.2 t
@@ -386,7 +386,7 @@ lemma exists_mem_pieceSet
       (T.fromSpecResidueField t)) :=
     inferInstanceAs (Nonempty ((pullback.snd f s).fiber t))
   obtain ⟨n₁, hn₁⟩ := (hPT A f 𝓛X N 𝔓 hprop hflat h𝓛 h𝔓 T s L hL).2.1 t hne
-  refine ⟨(φ, ψ), max n₀ n₁, ⟨L.dual, hD, ⟨β_ _ _ ≪≫ eD⟩, hφ⟩, hψ,
+  refine ⟨(φ, ψ), max n₀ n₁, ⟨L.dualFLT, hD, ⟨β_ _ _ ≪≫ eD⟩, hφ⟩, hψ,
     fun n hn ↦ ⟨fun p hp ↦ hn₀ t hVt n p (le_of_max_le_left hn) hp,
       hn₁ n (le_of_max_le_right hn)⟩⟩
 
@@ -406,7 +406,7 @@ lemma pieceSet_disjoint (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A))
 omit [IsNoetherianRing A] in
 /-- Twisting by the pullback of an invertible module on the base can only enlarge the pieces. -/
 lemma pieceSet_subset_of_iso (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A))
-    {L L' : (pullback f s).Modules} {N : T.Modules} (hN : Scheme.Modules.IsInvertible N)
+    {L L' : (pullback f s).Modules} {N : T.Modules} (hN : Scheme.Modules.IsInvertibleFLT N)
     (e : L ≅ L' ⊗ (Scheme.Modules.pullback (pullback.snd f s)).obj N)
     (c : Polynomial ℚ × Polynomial ℚ) (m : ℕ) :
     pieceSet f 𝓛X T s L c m ⊆ pieceSet f 𝓛X T s L' c m := by
@@ -424,7 +424,7 @@ lemma pieceSet_subset_of_iso (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A)
     obtain ⟨e'⟩ := hfib L' n
     exact ⟨fibreModuleIso _ _ (twistIso _ e n) ≪≫ e'⟩
   refine ⟨⟨M ⊗ (Scheme.Modules.pullback (pullback.snd f s)).obj N,
-    hM.tensor_monoidalV2 (hN.pullback _),
+    Scheme.Modules.IsInvertible.tensor_monoidalV2 hM (Scheme.Modules.IsInvertible.pullbackFLT (hL := hN) _),
     ⟨α_ _ _ _ ≪≫ whiskerLeftIso M (β_ _ _ ≪≫ e.symm) ≪≫ eM⟩, fun n ↦ ?_⟩, hψ,
     fun n hn ↦ ⟨fun p hp ↦ ?_, ?_⟩⟩
   · obtain ⟨e'⟩ := hfib M n
@@ -440,15 +440,15 @@ omit [IsNoetherianRing A] in
 /-- The pieces only depend on the class of `L` modulo pullbacks of invertible modules on the
 base. -/
 lemma pieceSet_eq_of_iso (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A))
-    {L L' : (pullback f s).Modules} {N : T.Modules} (hN : Scheme.Modules.IsInvertible N)
+    {L L' : (pullback f s).Modules} {N : T.Modules} (hN : Scheme.Modules.IsInvertibleFLT N)
     (e : L ≅ L' ⊗ (Scheme.Modules.pullback (pullback.snd f s)).obj N)
     (c : Polynomial ℚ × Polynomial ℚ) (m : ℕ) :
     pieceSet f 𝓛X T s L c m = pieceSet f 𝓛X T s L' c m := by
-  obtain ⟨hND, ⟨eN⟩⟩ := hN.dual_monoidalV2
+  obtain ⟨hND, ⟨eN⟩⟩ := Scheme.Modules.IsInvertible.dual_monoidalV2 hN
   refine (pieceSet_subset_of_iso (f := f) (𝓛X := 𝓛X) T s hN e c m).antisymm
     (pieceSet_subset_of_iso (f := f) (𝓛X := 𝓛X) T s hND ?_ c m)
   exact (whiskerRightIso e _ ≪≫ α_ _ _ _ ≪≫
-    whiskerLeftIso L' ((Scheme.Modules.pullbackTensorObjIso _ N N.dual).symm ≪≫
+    whiskerLeftIso L' ((Scheme.Modules.pullbackTensorObjIso _ N N.dualFLT).symm ≪≫
       (Scheme.Modules.pullback _).mapIso eN ≪≫ Scheme.Modules.pullbackTensorUnitObjIso _) ≪≫
     ρ_ L').symm
 
@@ -477,9 +477,9 @@ omit [IsNoetherianRing A] in
 /-- Fibre cohomology dimensions of twists are compatible with base change. -/
 lemma fibreCohomologyDim_twist_baseChange
     (hFE : ProperFibreCohomologyDimBaseChangeStatement.{u}) (hprop : IsProper f)
-    (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) {T T' : Scheme.{u}}
+    (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) {T T' : Scheme.{u}}
     (s : T ⟶ Spec (CommRingCat.of A)) (h : T' ⟶ T) {F : (pullback f s).Modules}
-    (hF : Scheme.Modules.IsInvertible F) (n : ℕ) (t' : T') (p : ℕ) :
+    (hF : Scheme.Modules.IsInvertibleFLT F) (n : ℕ) (t' : T') (p : ℕ) :
     fibreCohomologyDim (pullback.snd f (h ≫ s)) t' (twist (twistSheaf f 𝓛X T' (h ≫ s))
         ((Scheme.Modules.pullback
           (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj F) n) p =
@@ -488,14 +488,14 @@ lemma fibreCohomologyDim_twist_baseChange
     (pullbackTwistIso _ _ (twistSheafBaseChangeIso (f := f) (𝓛X := 𝓛X) s h) F n)]
   exact hFE T T' (pullback f s) (pullback f (h ≫ s)) (pullback.snd f s) h
     (pullback.snd f (h ≫ s)) _ (isPullback_baseChange s h) inferInstance _
-    (isInvertible_twist (h𝓛.pullback _) hF n) t' p
+    (isInvertible_twist (Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) _) hF n) t' p
 
 omit [IsNoetherianRing A] in
 lemma fibreEulerCharacteristic_twist_baseChange
     (hFE : ProperFibreCohomologyDimBaseChangeStatement.{u}) (hprop : IsProper f)
-    (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) {T T' : Scheme.{u}}
+    (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) {T T' : Scheme.{u}}
     (s : T ⟶ Spec (CommRingCat.of A)) (h : T' ⟶ T) {F : (pullback f s).Modules}
-    (hF : Scheme.Modules.IsInvertible F) (n : ℕ) (t' : T') :
+    (hF : Scheme.Modules.IsInvertibleFLT F) (n : ℕ) (t' : T') :
     fibreEulerCharacteristic (pullback.snd f (h ≫ s)) t' (twist (twistSheaf f 𝓛X T' (h ≫ s))
         ((Scheme.Modules.pullback
           (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj F) n) =
@@ -507,21 +507,21 @@ omit [IsNoetherianRing A] in
 lemma isZero_fibreCohomology_twist_baseChange
     (hSC : ProperFlatFibreCohomologySemicontinuityStatement.{u})
     (hFE : ProperFibreCohomologyDimBaseChangeStatement.{u}) (hprop : IsProper f)
-    (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) {T T' : Scheme.{u}}
+    (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) {T T' : Scheme.{u}}
     [IsLocallyNoetherian T] [IsLocallyNoetherian T']
     (s : T ⟶ Spec (CommRingCat.of A)) (h : T' ⟶ T) {F : (pullback f s).Modules}
-    (hF : Scheme.Modules.IsInvertible F) (n : ℕ) (t' : T') (p : ℕ) :
+    (hF : Scheme.Modules.IsInvertibleFLT F) (n : ℕ) (t' : T') (p : ℕ) :
     IsZero (fibreCohomology (pullback.snd f (h ≫ s)) t' (twist (twistSheaf f 𝓛X T' (h ≫ s))
         ((Scheme.Modules.pullback
           (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj F) n) p) ↔
       IsZero (fibreCohomology (pullback.snd f s) (h t') (twist (twistSheaf f 𝓛X T s) F n) p) := by
   have := (hSC T (pullback f s) (pullback.snd f s) inferInstance inferInstance
     (twist (twistSheaf f 𝓛X T s) F n)
-    (isInvertible_twist (h𝓛.pullback (pullback.fst f s)) hF n)).1 (h t') p
+    (isInvertible_twist (Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) (pullback.fst f s)) hF n)).1 (h t') p
   have := (hSC T' (pullback f (h ≫ s)) (pullback.snd f (h ≫ s)) inferInstance inferInstance
     (twist (twistSheaf f 𝓛X T' (h ≫ s)) ((Scheme.Modules.pullback
       (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj F) n)
-    (isInvertible_twist (h𝓛.pullback (pullback.fst f (h ≫ s))) (hF.pullback _) n)).1 t' p
+    (isInvertible_twist (Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) (pullback.fst f (h ≫ s))) (Scheme.Modules.IsInvertible.pullbackFLT (hL := hF) _) n)).1 t' p
   rw [isZero_fibreCohomology_iff, isZero_fibreCohomology_iff,
     fibreCohomologyDim_twist_baseChange hFE hprop h𝓛 s h hF n t' p]
 
@@ -530,16 +530,16 @@ omit [IsNoetherianRing A] in
 lemma pieceSet_baseChange
     (hSC : ProperFlatFibreCohomologySemicontinuityStatement.{u})
     (hFE : ProperFibreCohomologyDimBaseChangeStatement.{u}) (hprop : IsProper f)
-    (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertible 𝓛X) {T T' : Scheme.{u}}
+    (hflat : Flat f) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛X) {T T' : Scheme.{u}}
     [IsLocallyNoetherian T] [IsLocallyNoetherian T']
     (s : T ⟶ Spec (CommRingCat.of A)) (h : T' ⟶ T) {L : (pullback f s).Modules}
-    (hL : Scheme.Modules.IsInvertible L) (c : Polynomial ℚ × Polynomial ℚ) (m : ℕ) :
+    (hL : Scheme.Modules.IsInvertibleFLT L) (c : Polynomial ℚ × Polynomial ℚ) (m : ℕ) :
     pieceSet f 𝓛X T' (h ≫ s) ((Scheme.Modules.pullback
         (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj L) c m =
       h.base ⁻¹' pieceSet f 𝓛X T s L c m := by
   ext t'
   simp only [Set.mem_preimage]
-  obtain ⟨hD, ⟨eD⟩⟩ := hL.dual_monoidalV2
+  obtain ⟨hD, ⟨eD⟩⟩ := Scheme.Modules.IsInvertible.dual_monoidalV2 hL
   have hψ_eq : ∀ n : ℕ,
       fibreEulerCharacteristic (pullback.snd f (h ≫ s)) t'
         (twist (twistSheaf f 𝓛X T' (h ≫ s)) (𝟙_ (pullback f (h ≫ s)).Modules) n) =
@@ -552,14 +552,14 @@ lemma pieceSet_baseChange
   constructor
   · rintro ⟨⟨M', hM', ⟨eM'⟩, hφ'⟩, hψ', hvan'⟩
     have einv : (Scheme.Modules.pullback
-        (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj L.dual ⊗
+        (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj L.dualFLT ⊗
         (Scheme.Modules.pullback
           (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj L ≅
           𝟙_ (pullback f (h ≫ s)).Modules :=
       (Scheme.Modules.pullbackTensorObjIso _ _ _).symm ≪≫
         (Scheme.Modules.pullback _).mapIso (β_ _ _ ≪≫ eD) ≪≫
         Scheme.Modules.pullbackTensorUnitObjIso _
-    refine ⟨⟨L.dual, hD, ⟨β_ _ _ ≪≫ eD⟩, fun n ↦ ?_⟩, fun n ↦ ?_,
+    refine ⟨⟨L.dualFLT, hD, ⟨β_ _ _ ≪≫ eD⟩, fun n ↦ ?_⟩, fun n ↦ ?_,
       fun n hn ↦ ⟨fun p hp ↦ ?_, ?_⟩⟩
     · rw [← fibreEulerCharacteristic_twist_baseChange hFE hprop h𝓛 s h hD n t',
         fibreEulerCharacteristic_congr _ _ (twistIso _ (inverseUniqueIso einv eM') n)]
@@ -571,7 +571,7 @@ lemma pieceSet_baseChange
     · rw [← isZero_fibreCohomology_twist_baseChange hSC hFE hprop hflat h𝓛 s h hL n t' 0]
       exact (hvan' n hn).2
   · rintro ⟨⟨M, hM, ⟨eM⟩, hφ⟩, hψ, hvan⟩
-    refine ⟨⟨_, hM.pullback _, ⟨(Scheme.Modules.pullbackTensorObjIso _ _ _).symm ≪≫
+    refine ⟨⟨_, Scheme.Modules.IsInvertible.pullbackFLT (hL := hM) _, ⟨(Scheme.Modules.pullbackTensorObjIso _ _ _).symm ≪≫
         (Scheme.Modules.pullback _).mapIso eM ≪≫ Scheme.Modules.pullbackTensorUnitObjIso _⟩,
       fun n ↦ ?_⟩, fun n ↦ ?_, fun n hn ↦ ⟨fun p hp ↦ ?_, ?_⟩⟩
     · rw [fibreEulerCharacteristic_twist_baseChange hFE hprop h𝓛 s h hM n t']
@@ -588,7 +588,7 @@ omit [IsNoetherianRing A] in
 `K(j + m)` and `M(j)` have the same Euler characteristic. -/
 lemma fibreEulerCharacteristic_twist_of_inverse (T : Scheme.{u})
     (s : T ⟶ Spec (CommRingCat.of A)) {L M K : (pullback f s).Modules} {N : T.Modules}
-    (hN : Scheme.Modules.IsInvertible N) (eM : M ⊗ L ≅ 𝟙_ (pullback f s).Modules) (m : ℕ)
+    (hN : Scheme.Modules.IsInvertibleFLT N) (eM : M ⊗ L ≅ 𝟙_ (pullback f s).Modules) (m : ℕ)
     (eK : K ⊗ (twist (twistSheaf f 𝓛X T s) L m ⊗
       (Scheme.Modules.pullback (pullback.snd f s)).obj N) ≅ 𝟙_ (pullback f s).Modules)
     (t : T) (j : ℕ) :
@@ -641,7 +641,7 @@ theorem picardHilbertPolynomialPiecesReduction :
   · -- base change
     intro T T' _ _ s h L hL c m
     have hS := isOpen_pieceSet hSC hPT hprop hflat h𝓛 h𝔓 T s hL c m
-    have hS' := isOpen_pieceSet hSC hPT hprop hflat h𝓛 h𝔓 T' (h ≫ s) (hL.pullback
+    have hS' := isOpen_pieceSet hSC hPT hprop hflat h𝓛 h𝔓 T' (h ≫ s) (Scheme.Modules.IsInvertible.pullbackFLT (hL := hL)
       (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))) c m
     ext x
     change x ∈ interior _ ↔ h x ∈ interior _

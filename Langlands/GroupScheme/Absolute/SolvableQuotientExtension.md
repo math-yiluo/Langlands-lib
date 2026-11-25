@@ -1,6 +1,7 @@
 # Solvability through a represented quotient
 
-This is an internal, derived contribution to the proof of
+This is an auxiliary module, derived from existing Library results, for the
+proof of
 `FiniteFieldCentralCocharacterSolvableStatement`. It isolates the passage from a
 solvable quotient by the unipotent radical to solvability of the original group.
 It uses the existing definitions and proved point-group results, and introduces
@@ -40,4 +41,6 @@ affine, locally of finite type, and unipotent. It uses the published
 This last result proves solvability of `G` from solvability of `Q`.
 
 These declarations do not establish finite-field quasi-splitness, lift
-cocharacters, or prove the host statement. Those are separate remaining steps.
+cocharacters, or prove `FiniteFieldCentralCocharacterSolvableStatement`. Those are
+separate steps; the statement is proved as `finiteFieldCentralCocharacterSolvable`
+in `Rational.FiniteFieldCentralCocharacterSolvableProof`.

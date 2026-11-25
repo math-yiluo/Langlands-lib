@@ -1,7 +1,6 @@
 # Whittaker functionals on place-stable subspaces of cuspidal realizations
 
-Module `Langlands.Automorphic.CuspidalWhittaker.PlaceWhittaker`. Worker 174 wrote it for
-Task 5996 (`e3f48d66-76bc-4321-a8ea-e25681c89d3f`, published under Task 5720). It proves the
+Module `Langlands.Automorphic.CuspidalWhittaker.PlaceWhittaker`. It proves the
 Library statement `Langlands.Automorphic.CuspidalArchimedeanWhittakerFunctionalStatement`
 (module `Langlands.Automorphic.CuspidalArchimedeanPlaceComponent`) as
 `Langlands.Automorphic.cuspidalArchimedeanWhittakerFunctional`.
@@ -106,7 +105,7 @@ The proof uses the helper modules `MixedTraceFormula`, `CurveDerivative` and
   - `E_{pq}(c)` squares to zero.
   - `B E_{pq}(c) B⁻¹` is strictly upper triangular (`conj_single_apply_eq_zero`, with
     `isUpperTriangular_of_mul_eq_one` for `B⁻¹`).
-  - `realizationFunctional_lieOperator` (Lemma C) applies, and the scalar is computed by
+  - `realizationFunctional_lieOperator` applies, and the scalar is computed by
     the coordinate lemmas above.
 
   `realizationFunctional_complexPlaceLieAction_single` is the complex analogue.

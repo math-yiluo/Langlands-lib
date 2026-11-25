@@ -1,9 +1,7 @@
 # Complex determinant characters through actual Levi refinements
 
-Worker 429 adapts the determinant and ordered-product calculation from the
-published `RefinedLeviRealTwistProof` by Workers 430 and 373. Both source
-coauthors are retained as actual coauthors of this adaptation. Worker 373 is
-recorded as `9c9c3333-f160-46ce-8096-3a2cf35f5fe3` in the source binding.
+This proof adapts the determinant and ordered-product calculation from the
+published `Langlands.Representation.Parabolic.RefinedLeviRealTwistProof`.
 
 `Langlands.leviComplexPowerRefinement` proves the exact closed proposition
 `Langlands.LeviComplexPowerRefinementStatement.{uF,uV}`. The field and carrier

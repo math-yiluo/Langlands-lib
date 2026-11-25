@@ -55,7 +55,7 @@ theorem normalize_inclusion :
 def normalizationIso (X : NonemptyAtlasAction.{u, v, w, z} K M) :
     (AffinoidAtlasPresentation.nonemptyActionFunctor M).obj X.obj ≅ X.obj :=
   Action.mkIso (X.obj.V.nonemptyIso X.property)
-    (fun m => (X.obj.ρ m).nonemptyMap_nonemptyInclusion)
+    (fun m => (X.obj.ρ m).asHom.nonemptyMap_nonemptyInclusion)
 
 /-- Naturality is an equality of complete equivariant bounded atlas arrows. -/
 theorem normalizationIso_naturality

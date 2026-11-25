@@ -1,7 +1,5 @@
 # Actual simple relative roots as a rational basis
 
-Author: Worker 1316.
-
 This internal derived module constructs the basis and rank comparison from the
 published actual root sets and rational root span. It does not prove the
 unconditional `RelativeSimpleRootBasisStatement`: the last theorem explicitly
@@ -47,6 +45,6 @@ the field is arbitrary.
 The provenance is internal and derived: the proof composes the published
 positive-root induction, actual root-system consequences and Mathlib basis
 linear algebra. No external structural theorem is asserted or proved here. In
-particular, this conditional bridge does not resolve the general relative-root-
-system proof gap flagged in Milne's p.549 errata or replace the proof obligations
-of its owner task.
+particular, this conditional bridge does not resolve the general
+relative-root-system proof gap flagged in Milne's p.549 errata or replace a
+proof of the general relative root system.

@@ -32,6 +32,7 @@ private theorem evaluatedOpenFactor_isOpenImmersion {S : Scheme.{u}} {M U T : Ov
     IsOpenImmersion (evaluatedOpenFactor b c a).hom.hom.left := by
   have : IsOpenImmersion ((baseChange a.left).map c).hom.hom.left :=
     MorphismProperty.overPullbackMap (P := @IsOpenImmersion) _ _ inferInstance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   exact inferInstanceAs (IsOpenImmersion (((baseChange a.left).map c).hom.hom.left ≫
     (familySourceComparison N b a).hom.hom.hom.left))
 
@@ -215,6 +216,7 @@ theorem torusCentralizerJetChart : TorusCentralizerJetChartStatement.{u} := by
     have hrep := isRepresentedBy_subgroupJetStabilizer G n D j hj hjrep (v ≫ b) i hi hjet
     refine ⟨SmoothAlongUnitOfRank.of_iso (SmoothAlongUnitOfRank.baseChange hrH v.left) e,
       ⟨_, _, hjT, hrep, e.hom ≫ l, hel, ?_⟩⟩
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     exact inferInstanceAs (IsOpenImmersion (e.hom.hom.hom.left ≫ l.hom.hom.left))
   · rintro ⟨hr, ho⟩
     have hrep := isRepresentedBy_subgroupJetStabilizer G n D j hj hjrep g i hi hg

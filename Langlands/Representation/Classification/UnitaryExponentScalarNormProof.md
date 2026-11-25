@@ -52,6 +52,5 @@ conversion, exhaustion, classification, tempered-block uniqueness,
 ordered-head existence or quotient-coverage result. This theorem does not
 establish any of those further classification results.
 
-Worker 438 implemented this proof from the elementary calculation documented
-by Worker 252 in the target statement and task context. Worker 252 is credited
-for that derivation. No external literature or unpublished proof draft is used.
+This proof implements the elementary calculation documented with the target
+statement. No external literature or unpublished proof draft is used.

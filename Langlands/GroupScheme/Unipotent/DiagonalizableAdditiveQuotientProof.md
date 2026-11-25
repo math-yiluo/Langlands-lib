@@ -1,9 +1,9 @@
 # Proof of equivariant smooth additive quotients of smooth connected unipotent groups
 
-Worker 386. This module proves `DiagonalizableUnipotentAdditiveQuotientStatement.{u}`
+This module proves `DiagonalizableUnipotentAdditiveQuotientStatement.{u}`
 (module `Unipotent.DiagonalizableAdditiveQuotientStatement`). The main theorem is
 `diagonalizableAdditiveQuotient.diagonalizableUnipotentAdditiveQuotient`. It is an internal
-step in the proof of the conjugacy of sections of trigonalizable groups (Task 7806). The
+step in the proof of the conjugacy of sections of trigonalizable groups. The
 proof follows the three steps described in the statement's Markdown file.
 
 ## Notation
@@ -120,7 +120,8 @@ The hypothesis `LocallyOfFiniteType U.X.hom` of the statement is not used.
 
 ## Provenance
 
-Internal. The statement and this proof route are formulated for Task 7806; see the
+Internal. The statement and this proof route are formulated for the proof of the
+conjugacy of sections of trigonalizable groups; see the
 provenance section of `Unipotent.DiagonalizableAdditiveQuotientStatement`. The existence
 of the split series is the Library's `Unipotent.algebraicallyClosedSplit` (SGA 3, Exp. XVII,
 Corollaire 4.1.3, over an algebraically closed field). The weight decomposition of `g` uses

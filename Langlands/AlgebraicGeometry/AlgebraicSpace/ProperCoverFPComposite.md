@@ -1,6 +1,6 @@
 # Universal closedness of a scheme mapping to a universally closed space
 
-This internal unit supplies the universal-closedness part of the properness of
+This internal module supplies the universal-closedness part of the properness of
 a scheme cover U → S in the finite-presentation refinement of the weak Chow
 cover (Stacks Project, Lemma 69.18.1, tag 089I; the refinement itself is
 derived, see `ProperSchemeCoverStatement.md`). U is a scheme over S with a

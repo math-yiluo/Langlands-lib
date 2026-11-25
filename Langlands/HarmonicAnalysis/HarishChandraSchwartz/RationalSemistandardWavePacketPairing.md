@@ -53,5 +53,7 @@ The following derived adapters use the same actual packet at every step.
 | `NonconjugatePairingStatement` | The unproved VII.2.2(i) conclusion on the actual source-normalized packets. |
 
 This pair is the nonconjugate part of VII.2.2 and supports the later
-VII.2.3 deduction. The conjugate-Levi formula requires the separately
-owned normalized comparison and its quotient and representative laws.
+VII.2.3 deduction. The conjugate-Levi formula requires the normalized
+comparison and its quotient and representative laws, stated in
+`RationalSemistandardWeylSectionStatement` and
+`RationalSemistandardWeylDescentStatement`.

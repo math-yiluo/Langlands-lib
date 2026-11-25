@@ -1,7 +1,6 @@
 # Conductors under norms and traces of unramified extensions
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. It supplies
 the common-exponent hypothesis of `BrauerKernel.UnramifiedKernel` in the situation
 of the global argument's unramified places: the generator fields have the base
@@ -38,7 +37,7 @@ which is the Library's unramified condition.
 - `exists_trace_eq_of_ramificationIndex_eq` and `trace_mem_integers_of_mem`: under
   equal indices the field trace maps `S.Integers` onto `T.Integers`. The integer rings
   carry the published `relativeIntegerAlgebra` and the integral-closure and finiteness
-  structure of `NYLL.relativeIntegerStructure`. Equal indices give
+  structure of `UniverseZero.relativeIntegerStructure`. Equal indices give
   `m_F O_E = m_E` (`map_maximalIdeal_algebraMap_of_ramificationIndex_eq_mul`), so
   `O_E / m_F O_E` is the residue field of `E`. The residue field extension is finite,
   hence separable, and its trace is nonzero (Mathlib's `Algebra.trace_ne_zero`).

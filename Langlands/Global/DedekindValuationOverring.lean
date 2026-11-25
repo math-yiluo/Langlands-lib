@@ -5,7 +5,7 @@ Langlands.AnthropicFLT.Definitions.Def_JacJ1_ChartAlgebra, ported from
 Anthropic's Lean formalization of Fermat's Last Theorem, commit
 6e837e75355538c7f80bab5b956861e86c4eacc2, Copyright 2026 Anthropic, PBC,
 under Apache-2.0. See licenses/Anthropic-FLT/LICENSE, NOTICE and ATTRIBUTION.md.
-Modified by Worker 208: arbitrary Dedekind domain and original fraction field,
+Modified in Langlands-lib: arbitrary Dedekind domain and original fraction field,
 the actual maximal-ideal contraction under a compatible algebra, independent
 universes, and the original A-algebra localization comparison.
 -/

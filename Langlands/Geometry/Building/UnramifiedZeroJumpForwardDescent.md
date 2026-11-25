@@ -9,7 +9,7 @@ three hypotheses (H1)–(H3). The theorem `MaximalUnramified.unramifiedZeroJump_
 has exactly the type of the hypothesis `hfwd` of
 `unramifiedZeroJumpFieldComparison_of_galoisDescent` (module
 `UnramifiedZeroJumpFieldComparisonAssembly`). That assembly derives the target statement from
-`hfwd` and the descent principle `hdesc` of Task 6754. It shows that the torus restriction
+`hfwd` and the descent principle `hdesc`. It shows that the torus restriction
 `ψ x` of a Galois-fixed point satisfies (H1)–(H3).
 
 ## Setting and notation
@@ -56,11 +56,10 @@ It is restated here so that this module does not import
 `UnramifiedTwistedChamberThroughFixedPointReduction`, which transitively imports
 `UnramifiedOmegaGaloisStable`. That module declares an anonymous
 `local instance : NontriviallyNormedField F` with the auto-generated name
-`MaximalUnramified.instNontriviallyNormedField_langlands`. A draft of the descent module
-`UnramifiedZeroJumpGaloisDescent` once declared an instance with the same auto-generated name,
-and a module importing both would not compile. The published version names its instances
-explicitly, but this module keeps the smaller import set. The final proof of the target
-statement imports this module together with the descent module.
+`MaximalUnramified.instNontriviallyNormedField_langlands`. Another module declaring an instance
+with the same auto-generated name could not be imported together with it. The descent module
+`UnramifiedZeroJumpGaloisDescent` names its instances explicitly, but this module keeps the
+smaller import set. The final proof of the target statement imports this module together with the descent module.
 
 ### `MaximalUnramified.not_isRootFiltrationJump_fieldRestrict_of_linearization`
 
@@ -69,7 +68,7 @@ iS`, `hlin : RootGroupLinearization iS α (valuation F)`, a family `ψ` with (H1
 `hK : ¬ IsRootFiltrationJump (j_K iS) ψ α_K 0`.
 Conclusion: `¬ IsRootFiltrationJump iS (fieldRestrict ψ) α 0`.
 
-`RootGroupLinearization` (module `RootGroupLinearization`, Task 6754) provides maps
+`RootGroupLinearization` (module `RootGroupLinearization`) provides maps
 `q : G_K(K) → K^n` and `e : G_K(K) → K^m` and an integer `d`, such that:
 - for `x ∈ U_{α_K}(K)`, `q x = 0` if and only if `x ∈ U_{2α_K}(K)`;
 - `e` is additive and injective on `U_{2α_K}(K)`;
@@ -108,7 +107,7 @@ value, `x⁻¹` and `x y` have positive value. `U_{2α_K}(K) ≤ U_{α_K}(K)`, a
      with the action `rationalConjugateAction F K G`, `B`, the coordinates `e`, `hsq`, `E₀`
      and `w₀ = z⁻¹`, gives `b₁ ∈ B` such that `w = z⁻¹ b₁` is `Aut(K/F)`-fixed.
   6. `w ∈ U_{(2α)_K}(K)`. By `exists_mem_rootGroupPoints_of_galoisFixed` (module
-     `UnramifiedFixedPointRootDescent`, Task 6754; `2α ≠ 0`), `w = rationalExtend z₀` with
+     `UnramifiedFixedPointRootDescent`; `2α ≠ 0`), `w = rationalExtend z₀` with
      `z₀ ∈ U_{2α}(F)`. Because `2α` is a root, `U_{2α}(F)` is
      `doubleRootGroupPoints iS α`.
   7. `g = (g z₀) · z₀⁻¹`, where `z₀⁻¹ ∈ U_{2α}(F)` and `g z₀ ∈ U_α(F)`
@@ -139,7 +138,7 @@ Proof: `hS` is `hiS.isSplitSubtorus.1`. The opposite-factor-pair property of `iS
 `RelativeRoot.exists_oppositeFactorPair_of_componentReductivity` with the published
 `RelativeRoot.kernelCentralizerComponentReductive`, as in
 `unramifiedZeroJumpLiftMultipliable_of_fieldComparison`. With it, `rootGroupLinearization`
-(module `RootGroupLinearizationProof`, Task 6754) gives
+(module `RootGroupLinearizationProof`) gives
 `RootGroupLinearization iS α (valuation F)`. The previous theorem then concludes.
 
 ## Relation to the literature

@@ -1,8 +1,7 @@
 # Categorical universality of the actual ring localization
 
-Worker 1301 implements this proof, with Worker 709's source correspondence,
-statement design and suggested factorization route. The module imports the
-published `Langlands.Algebra.RenardLocalRingUniversalStatement` without changing
+The module imports
+`Langlands.Algebra.RenardLocalRingUniversalStatement` without changing
 its statements or the actual ring-denominator construction it imports.
 
 ## Source and formal packaging
@@ -30,22 +29,22 @@ The imported `RingPair`, `LocalRingCat`, full inclusion, chosen factor and
 structured-arrow presentation are derived internal packaging of that
 example. The localized pair designates precisely the image of the original
 submonoid under the algebra map. The source does not specify that designated
-submonoid or a carrier-universe convention. The proof retains these published
+submonoid or a carrier-universe convention. The proof retains these
 choices, so a local target may designate a proper submonoid of its units.
 
 ## Implemented proof
 
 All four theorems lie in `Langlands.Renard.RingLocalization`.
 
-`categoricalFactorizationStatement` proves the published
+`categoricalFactorizationStatement` proves
 `CategoricalFactorizationStatement.{u}`. Extensionality for the actual
 denominator-preserving morphisms reduces the canonical triangle equation
 to equality of ring homomorphisms, and then to evaluation on each original
-ring element. The published `canonicalFactor_algebraMap` law gives exactly
+ring element. The `canonicalFactor_algebraMap` law gives exactly
 that equality. Thus the constructed factor, including its already proved
 denominator-preservation property, satisfies the triangle equation.
 
-`categoricalFactorUniquenessStatement` proves the published
+`categoricalFactorUniquenessStatement` proves
 `CategoricalFactorUniquenessStatement.{u}`. Its competitor is every actual
 map `g : canonicalLocalObject A ⟶ N` satisfying the triangle equation.
 Extensionality first removes the full-subcategory and denominator-preservation
@@ -55,7 +54,7 @@ map. Evaluation of the assumed triangle equation, together with
 `canonicalFactor_algebraMap`, supplies this equality. There is no restriction
 to maps already presented as localization lifts.
 
-`categoricalInitialityStatement` proves the published
+`categoricalInitialityStatement` proves
 `CategoricalInitialityStatement.{u}`. For each actual structured arrow `B`
 out of `A`, `StructuredArrow.homMk` packages the chosen factor
 `canonicalFactor A B.right B.hom`, with the proved triangle equation.
@@ -67,7 +66,7 @@ The resulting initiality data are wrapped in `Nonempty`, exactly as required
 by `StructuredArrow.IsUniversal`.
 
 Finally, `categoricalUniversalStatements` has type exactly the closed
-published `CategoricalUniversalStatements.{u}` and combines these three
+`CategoricalUniversalStatements.{u}` and combines these three
 proofs. It takes no extra mathematical arguments or universal-property
 certificate.
 
@@ -82,7 +81,7 @@ subcategory. The localization extensionality theorem applies also to zero
 rings and submonoids containing zero. No nontriviality, domain, finiteness,
 smallness or shrinking assumption is added.
 
-This proof covers the three published categorical assertions for example 3.
+This proof covers the three categorical assertions for example 3.
 Compatible isomorphisms between different chosen solutions, localization
 functors, reflection and adjunctions, independent-target-universe transport,
-the other examples and the rest of Appendix A remain separate obligations.
+the other examples and the rest of Appendix A are outside this proof.

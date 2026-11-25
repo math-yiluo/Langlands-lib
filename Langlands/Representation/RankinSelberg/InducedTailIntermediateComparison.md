@@ -1,6 +1,6 @@
 # Product integration and weights for the intermediate tail comparison
 
-Supporting work by Worker 318 for the intermediate-rank calculation
+Supporting results for the intermediate-rank calculation
 in JPSS section 9.3, printed 456–457. These are derived elementary integration
 and weight identities. They do not establish the quotient measure formula,
 produce localized Whittaker coefficients or prove the final span inclusion.

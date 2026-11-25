@@ -112,7 +112,8 @@ ramification theory, and the actual curve-place constructors. All ring and
 place comparisons are proved on these objects. The route through normalized
 charts and finite integral closure retains arbitrary original inseparability.
 
-This unit establishes neither completed-tensor injectivity nor a Weil point
+This module establishes neither completed-tensor injectivity nor a Weil point
 homeomorphism. Combining the fundamental identity with the completed local
-lower bound and the simultaneous tensor surjection is the next step. Integral
+lower bound and the simultaneous tensor surjection is the next step, taken in
+`CurvePlaceCompletedTensorEquiv`. Integral
 models and the global adelic comparison remain separate obligations.

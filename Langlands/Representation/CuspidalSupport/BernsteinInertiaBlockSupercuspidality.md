@@ -1,7 +1,5 @@
 # Same-Levi inertia blocks of a Bernstein datum are supercuspidal
 
-Author: Worker 5313, Task 5313 (`03088b22-a403-46ae-a6ed-6dea22f5472a`).
-
 This is a derived supporting result for the proof of Renard VI.7.2
 (David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, registered as

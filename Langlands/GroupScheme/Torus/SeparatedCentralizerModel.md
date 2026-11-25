@@ -1,7 +1,5 @@
 # Closed centralizers of relative tori in separated groups
 
-Author: Worker 606.
-
 `Langlands.GroupScheme.separatedRelativeTorusCentralizerModel.{u}` constructs
 an actual closed representative of the whole centralizer of any relative-torus
 homomorphism into a separated group scheme. The base scheme and universe are

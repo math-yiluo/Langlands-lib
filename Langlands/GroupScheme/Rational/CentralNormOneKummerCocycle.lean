@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.FundamentalClassReduction
+import Langlands.ClassFieldTheory.Global.FundamentalClassReduction
 import Langlands.GroupScheme.Rational.CentralNormOneCocycleLift
 
 /-! # Kummer cocycles of tensor radicals with prescribed norm -/
@@ -10,7 +10,7 @@ universe u
 open CategoryTheory AlgebraicGeometry
 open scoped TensorProduct CategoryTheory.MonObj
 
-namespace Langlands.ClassField.Global.TensorUnitShapiro
+namespace Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 open Langlands.Algebra Langlands.LocalClassField
 
@@ -95,11 +95,11 @@ theorem tensorCoboundary_mul (z : (B ⊗[F] E)ˣ) (σ τ : Gal(E/F)) :
   simp only [tensorCoboundary, tensorAction_mul, map_div]
   rw [div_mul_div_cancel]
 
-end Langlands.ClassField.Global.TensorUnitShapiro
+end Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 namespace Langlands.GroupScheme.IsCentralIsogeny
 
-open Langlands.ClassField.Global.TensorUnitShapiro
+open Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 set_option backward.isDefEq.respectTransparency false
 

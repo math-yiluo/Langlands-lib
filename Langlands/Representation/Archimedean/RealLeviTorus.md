@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviTorus`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 is internal measure-theoretic infrastructure for the limit argument along the standard parabolic
 subgroup `Q` (module `RealLeviLimit`). The module has no `Prop`-valued statement. It only proves
 lemmas. No literature statement is claimed, and nothing here is cited from a source. Unprefixed
@@ -119,8 +119,7 @@ matrix products and of `lower sz`. `integral_adCoord` and `lintegral_adCoord` co
 `measurePreserving_adCoord` with the measurable embedding of the homeomorphism `adHomeomorph`.
 
 `gram_zero_eq`: `paddedGram 0 M = M Mᵀ`, so `G_0(M) = det(M Mᵀ) = (det M)²`.
-`norm_le_gram_fin` is `RealBlockChart.norm_le_gram` (module `RealBlockChartBound`, my accepted
-candidate present in the workspace) for `N = m + 1`, after splitting off the factor `l = 0`
+`norm_le_gram_fin` is `RealBlockChart.norm_le_gram` (module `RealBlockChartBound`) for `N = m + 1`, after splitting off the factor `l = 0`
 (`Fin.prod_univ_succ`), where `G_0(y) = 1`. For `N = 0` the group is trivial, the product is
 empty and the bound is `‖F(κ)‖ ≤ C`.
 

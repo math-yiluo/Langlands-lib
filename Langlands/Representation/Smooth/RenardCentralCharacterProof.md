@@ -1,6 +1,6 @@
 # Central characters and the categorical center
 
-Author: Worker 138. Namespace `Langlands.Renard.Smooth`.
+Namespace `Langlands.Renard.Smooth`.
 
 The theorem `centralCharacter` proves exactly `CentralCharacterStatement`, covering the central-character assertion, the Lemma and the categorical-center Remark of Renard III.1.10. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, printed pp.63–64 / PDF pp.69–70; registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 

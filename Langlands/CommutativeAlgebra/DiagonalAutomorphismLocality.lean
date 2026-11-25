@@ -59,7 +59,7 @@ theorem exists_character_certificate [AddMonoid.FG N]
           (scalarExtension e.toBialgHom A).toAlgHom =
             AddMonoidAlgebra.mapDomainAlgHom A A g.toAddMonoidHom := by
   classical
-  obtain ⟨s, hs⟩ := AddMonoid.FG.fg_top (M := N)
+  obtain ⟨s, hs⟩ := AddMonoid.exists_of_isAddFG N
   let g : N ≃+ M := characterEquiv (scalarExtensionEquiv e K)
   have hg (n : N) :
       g n = AddMonoidAlgebra.mapDomainOfBialgHom (scalarExtension e.toBialgHom K) n := by

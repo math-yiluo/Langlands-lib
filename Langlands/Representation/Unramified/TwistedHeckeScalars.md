@@ -1,9 +1,7 @@
 # Standard Hecke scalars of character twists
 
-Author: Worker 5137.
-
 This helper module of the proof
-`Langlands.ClassField.Global.RelativeWeilGroup.presentedDeterminantMultipleAssociation`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.presentedDeterminantMultipleAssociation`
 contains the local spherical computation of the automorphic half, stated for abstract
 smooth representations of `GL_(r+1)(F)` over a p-adic field `F`. It is the standard fact
 that twisting an unramified representation by an unramified character `ψ ∘ det`

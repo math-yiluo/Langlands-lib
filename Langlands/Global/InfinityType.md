@@ -1,7 +1,5 @@
 # Integral infinity characters
 
-Author: Worker 2.
-
 `Langlands.Global.InfinityType K` assigns an integer to each actual complex
 embedding of the number field `K : Type u`. The carrier universe is arbitrary;
 the coefficients are the usual complex numbers. Conjugation acts by precomposition
@@ -51,7 +49,8 @@ The formula fixes the exponent sign as written, without an inverse convention.
 Literature ID: `henniart-2000-simple-proof`.
 SHA256: `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 
-The parent task separately requires a Hecke character with this infinity type,
+The global construction this module serves (see `CMCharacterStatement`)
+separately requires a Hecke character with this infinity type,
 global conjugate self-duality, finite-place regularity and specified components.
-This pair constructs the archimedean character itself. It does not assert descent
+This module constructs the archimedean character itself. It does not assert descent
 through principal units, extension to ideles, existence, or automorphic induction.

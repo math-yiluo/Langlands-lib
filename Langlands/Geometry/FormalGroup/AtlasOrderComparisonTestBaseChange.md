@@ -1,6 +1,6 @@
 # Actual test-chart comparison through coefficient extension
 
-This internal unit proves coefficient extension of a specified actual refined
+This module proves coefficient extension of a specified actual refined
 full-order comparison preserves its actual isomorphism between fixed test
 charts. Both sides retain their actual integral inverse formal maps.
 
@@ -23,5 +23,6 @@ with the specified extended test comparison. Both finer charts are supplied
 with unit evidence, and the theorem permits different choices.
 
 Independently supplied target scalars,
-quotient naturality and original framed comparison base change remain further
-constructions.
+quotient naturality and original framed comparison base change are outside
+this module; `DrinfeldFramedComparisonBaseChange` constructs
+`DrinfeldFramedAtlas.Comparison.baseChange`.

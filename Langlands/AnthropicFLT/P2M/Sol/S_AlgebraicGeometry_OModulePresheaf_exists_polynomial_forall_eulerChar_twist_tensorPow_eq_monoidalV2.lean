@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafEulerChar
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafTensor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafConstructions
@@ -31,7 +31,7 @@ set_option backward.isDefEq.respectTransparency.types false
 namespace P2MW.S_AlgebraicGeometry_OModulePresheaf_exists_polynomial_forall_eulerChar_twist_tensorPow_eq_monoidalV2
 attribute [-instance] PresheafOfModules.PullbackMonoidal.pullback_monoidal PresheafOfModules.PullbackMonoidal.isIso_δ PresheafOfModules.pushforward_laxMonoidal PresheafOfModules.PullbackMonoidal.isIso_η PresheafOfModules.free_monoidal PresheafOfModules.restrictScalars_laxMonoidal PresheafOfModules.PullbackMonoidal.isIso_δ_gS PresheafOfModules.pullback_oplaxMonoidal PresheafOfModules.PullbackMonoidal.instPreservesColimitsOfSizeCompOppositeCommRingCatRingCatForget₂RingHomCarrierCarrierPb PresheafOfModules.pullback_monoidal' AlgebraicGeometry.Scheme.Modules.preservesBinaryProducts_opensMap AlgebraicGeometry.Scheme.Modules.pullback_monoidal AlgebraicGeometry.Scheme.Modules.sheafify_isLocalization' AlgebraicGeometry.Scheme.Modules.preservesTerminal_opensMap AlgebraicGeometry.Scheme.Modules.pullback₀_monoidal AlgebraicGeometry.Scheme.Modules.preservesFiniteProducts_opensMap AlgebraicGeometry.Scheme.Modules.instLiftingPresheafOfModulesSheafifyPresheafWOpensCarrierCarrierCommRingCatGrothendieckTopologyObjFunctorOppositeIsSheafSheafCompPullback₀Pullback AlgebraicGeometry.OModulePresheaf.Leray.relAltC_scalarTower AlgebraicGeometry.OModulePresheaf.Leray.ker_relAltd_modΓ AlgebraicGeometry.OModulePresheaf.Leray.relAltC_modΓ AlgebraicGeometry.OModulePresheaf.Leray.biC_abGrp AlgebraicGeometry.OModulePresheaf.Leray.relAltH_modΓ AlgebraicGeometry.OModulePresheaf.Leray.ker_relAltd_smul AlgebraicGeometry.OModulePresheaf.Leray.relAltH_scalarTower AlgebraicGeometry.OModulePresheaf.Leray.relAltH_smul AlgebraicGeometry.OModulePresheaf.Leray.biC_module AlgebraicGeometry.Scheme.OrderedAffineCoverOf.instDecidableEqIdx AlgebraicGeometry.Scheme.OrderedAffineCoverOf.instFintype AlgebraicGeometry.Scheme.OrderedAffineCoverOf.instLinearOrder AlgebraicGeometry.Scheme.OrderedAffineCoverOf.instFintypeIdx DoubleComplex.instModuleE₂I DoubleComplex.Bounded.modR DoubleComplex.instModuleE₂II DoubleComplex.instAddCommGroupE₂II DoubleComplex.Bounded.abGrp DoubleComplex.instAddCommGroupE₂I AlgebraicGeometry.ChowDatum.hι_closed AlgebraicGeometry.ChowDatumProj.hιN_closed AlgebraicGeometry.ChowDatumProj.hp_proper AlgebraicGeometry.ChowDatum.hp_isoU
 attribute [-instance] AlgebraicGeometry.ChowDatum.hp_proper AlgebraicGeometry.ProjSpace.algebraAway AlgebraicGeometry.ProjSpace.instIsProperProdOverπ AlgebraicGeometry.ChowDatumProj.hp_isoU AlgebraicGeometry.ProjSpace.isProper_π AlgebraicGeometry.ProjSpace.finiteType_mvPolynomial ProjSpaceCech.GradedModule.H.module ProjSpaceCech.GradedModule.H.addCommGroup ProjSpaceCech.GradedModule.sec.instAdd ProjSpaceCech.GradedModule.sec.instNeg ProjSpaceCech.GradedModule.acg ProjSpaceCech.GradedModule.Frac.setoid ProjSpaceCech.GradedModule.modR ProjSpaceCech.GradedModule.sec.instModule ProjSpaceCech.GradedModule.sec.instAddCommGroup ProjSpaceCech.GradedModule.sec.instZero ProjSpaceCech.GradedModule.Presentation.fJ ProjSpaceCech.GradedModule.sec.instSMul ProjSpaceCech.Twist.H.module ProjSpaceCech.Idx.instFintype ProjSpaceCech.Twist.H.addCommGroup ProjSpaceCech.Idx.instDecidableEq ProjSpaceCech.Twist.Mon.instDecidableEq ProjSpaceCech.Twist.cochain.instAddCommGroup ProjSpaceCech.Twist.cochain.instModule
-attribute [-simp] AlgebraicGeometry.Scheme.Modules.tensorSections_zero_right AlgebraicGeometry.Scheme.Modules.map_unitSection AlgebraicGeometry.Scheme.Modules.tensorSectionsBilin_apply AlgebraicGeometry.Scheme.Modules.tensorPowSection_zero AlgebraicGeometry.Scheme.Modules.tensorSections_zero_left PresheafOfModules.freeεIso_hom_app PresheafOfModules.freeμIso_hom_app AlgebraicGeometry.OModulePresheaf.Leray.restrictToPreimage_U AlgebraicGeometry.Scheme.OrderedAffineCover.toCoverOf_U AlgebraicGeometry.Scheme.OrderedAffineCoverOf.mk.sizeOf_spec AlgebraicGeometry.Scheme.OrderedAffineCoverOf.mk.injEq AlgebraicGeometry.Scheme.OrderedAffineCover.restrict_U DoubleComplex.Bounded.mk.injEq DoubleComplex.Bounded.mk.sizeOf_spec DoubleComplex.Convergence.mk.injEq DoubleComplex.Convergence.mk.sizeOf_spec DoubleComplex.SubQuot.mk.sizeOf_spec DoubleComplex.SubQuot.mk.injEq AlgebraicGeometry.ChowDatumProj.mk.sizeOf_spec AlgebraicGeometry.ChowDatum.mk.sizeOf_spec AlgebraicGeometry.ChowDatumProj.mk.injEq AlgebraicGeometry.ChowDatum.mk.injEq ProjSpaceCech.GradedModule.mk.injEq ProjSpaceCech.GradedModule.mk.sizeOf_spec ProjSpaceCech.GradedModule.Frac.mk.sizeOf_spec ProjSpaceCech.GradedModule.Presentation.mk.injEq ProjSpaceCech.GradedModule.Frac.mk.injEq ProjSpaceCech.GradedModule.Presentation.mk.sizeOf_spec ProjSpaceCech.GradedModule.Hom.shift_toLinearMap ProjSpaceCech.GradedModule.Hom.mk.sizeOf_spec ProjSpaceCech.GradedModule.Hom.mk.injEq
+attribute [-simp] AlgebraicGeometry.Scheme.Modules.tensorSections_zero_right AlgebraicGeometry.Scheme.Modules.map_unitSection AlgebraicGeometry.Scheme.Modules.tensorSectionsBilin_apply AlgebraicGeometry.Scheme.Modules.tensorPowSectionFLT_zero AlgebraicGeometry.Scheme.Modules.tensorSections_zero_left PresheafOfModules.freeεIso_hom_app PresheafOfModules.freeμIso_hom_app AlgebraicGeometry.OModulePresheaf.Leray.restrictToPreimage_U AlgebraicGeometry.Scheme.OrderedAffineCover.toCoverOf_U AlgebraicGeometry.Scheme.OrderedAffineCoverOf.mk.sizeOf_spec AlgebraicGeometry.Scheme.OrderedAffineCoverOf.mk.injEq AlgebraicGeometry.Scheme.OrderedAffineCover.restrict_U DoubleComplex.Bounded.mk.injEq DoubleComplex.Bounded.mk.sizeOf_spec DoubleComplex.Convergence.mk.injEq DoubleComplex.Convergence.mk.sizeOf_spec DoubleComplex.SubQuot.mk.sizeOf_spec DoubleComplex.SubQuot.mk.injEq AlgebraicGeometry.ChowDatumProj.mk.sizeOf_spec AlgebraicGeometry.ChowDatum.mk.sizeOf_spec AlgebraicGeometry.ChowDatumProj.mk.injEq AlgebraicGeometry.ChowDatum.mk.injEq ProjSpaceCech.GradedModule.mk.injEq ProjSpaceCech.GradedModule.mk.sizeOf_spec ProjSpaceCech.GradedModule.Frac.mk.sizeOf_spec ProjSpaceCech.GradedModule.Presentation.mk.injEq ProjSpaceCech.GradedModule.Frac.mk.injEq ProjSpaceCech.GradedModule.Presentation.mk.sizeOf_spec ProjSpaceCech.GradedModule.Hom.shift_toLinearMap ProjSpaceCech.GradedModule.Hom.mk.sizeOf_spec ProjSpaceCech.GradedModule.Hom.mk.injEq
 
 set_option autoImplicit false
 
@@ -146,7 +146,7 @@ section Skeleton
 variable {k : Type u} [Field k] {V : Scheme.{u}} (π : V ⟶ Spec (.of k))
 variable (K : V.OrderedAffineCover) (L : V.Modules)
 
-noncomputable def chi (G : OModulePresheaf π) (n : ℕ) : ℤ := (G.twist (L.tensorPow n)).eulerChar K
+noncomputable def chi (G : OModulePresheaf π) (n : ℕ) : ℤ := (G.twist (L.tensorPowFLT n)).eulerChar K
 
 def Good (G : OModulePresheaf π) (Y : Closeds V) : Prop := G.IsCoherent ∧ G.IsQuasicoherent ∧ G.SupportedIn Y
 
@@ -208,30 +208,30 @@ variable (K : V.OrderedAffineCover) (L : V.Modules)
 include hL in
 
 theorem locTriv_tensorPow (n : ℕ) : ∀ x : V, ∃ (U : V.Opens), x ∈ U ∧
-    Nonempty ((Scheme.Modules.pullback U.ι).obj (L.tensorPow n) ≅ SheafOfModules.unit U.toScheme.ringCatSheaf) := by
-  suffices h : Scheme.Modules.IsInvertible (L.tensorPow n) from h.1
+    Nonempty ((Scheme.Modules.pullback U.ι).obj (L.tensorPowFLT n) ≅ SheafOfModules.unit U.toScheme.ringCatSheaf) := by
+  suffices h : Scheme.Modules.IsInvertibleFLT (L.tensorPowFLT n) from h.1
   induction n with
   | zero => exact Scheme.Modules.isInvertible_unit V
-  | succ n ih => exact ih.tensor_monoidalV2 ⟨hL⟩
+  | succ n ih => exact AlgebraicGeometry.Scheme.Modules.IsInvertible.tensor_monoidalV2 ih ⟨hL⟩
 
 include hL in
 theorem good_twist (G : OModulePresheaf π) (hc : G.IsCoherent) (hq : G.IsQuasicoherent) (n : ℕ) :
-    (G.twist (L.tensorPow n)).IsCoherent ∧ (G.twist (L.tensorPow n)).IsQuasicoherent :=
-  ⟨(G.isQuasicoherent_isCoherent_supportedIn_tensor (OModulePresheaf.ofModules π (L.tensorPow n))).2.1 hc
+    (G.twist (L.tensorPowFLT n)).IsCoherent ∧ (G.twist (L.tensorPowFLT n)).IsQuasicoherent :=
+  ⟨(G.isQuasicoherent_isCoherent_supportedIn_tensor (OModulePresheaf.ofModules π (L.tensorPowFLT n))).2.1 hc
       (OModulePresheaf.isCoherent_ofModules_of_locallyTrivial π _ (locTriv_tensorPow L hL n)),
-    (G.isQuasicoherent_isCoherent_supportedIn_tensor (OModulePresheaf.ofModules π (L.tensorPow n))).1 hq
+    (G.isQuasicoherent_isCoherent_supportedIn_tensor (OModulePresheaf.ofModules π (L.tensorPowFLT n))).1 hq
       (OModulePresheaf.isQuasicoherent_ofModules_of_locallyTrivial π _ (locTriv_tensorPow L hL n))⟩
 
 include hL in
 theorem cechFinite_twist [IsProper π] (G : OModulePresheaf π) (hc : G.IsCoherent) (hq : G.IsQuasicoherent) (n : ℕ) :
-    (G.twist (L.tensorPow n)).CechFinite K :=
-  (G.twist (L.tensorPow n)).cechFinite_of_isProper (good_twist π L hL G hc hq n).1 (good_twist π L hL G hc hq n).2 K
+    (G.twist (L.tensorPowFLT n)).CechFinite K :=
+  (G.twist (L.tensorPowFLT n)).cechFinite_of_isProper (good_twist π L hL G hc hq n).1 (good_twist π L hL G hc hq n).2 K
 
 include hL in
 theorem flat_sections (n : ℕ) (U : V.affineOpens) :
-    Module.Flat Γ(V, U.1) ((OModulePresheaf.ofModules π (L.tensorPow n)).obj U.1) := by
-  haveI := Scheme.Modules.projective_sections_of_locallyTrivial (L.tensorPow n) (locTriv_tensorPow L hL n) U
-  show Module.Flat Γ(V, U.1) Γ(L.tensorPow n, U.1)
+    Module.Flat Γ(V, U.1) ((OModulePresheaf.ofModules π (L.tensorPowFLT n)).obj U.1) := by
+  haveI := Scheme.Modules.projective_sections_of_locallyTrivial (L.tensorPowFLT n) (locTriv_tensorPow L hL n) U
+  show Module.Flat Γ(V, U.1) Γ(L.tensorPowFLT n, U.1)
   exact Module.Flat.of_projective
 
 include hL in
@@ -240,7 +240,7 @@ theorem chi_add [IsProper π] {G₁ G₂ G₃ : OModulePresheaf π} (S : OModule
     (h₁c : G₁.IsCoherent) (h₁q : G₁.IsQuasicoherent) (h₂c : G₂.IsCoherent) (h₂q : G₂.IsQuasicoherent)
     (h₃c : G₃.IsCoherent) (h₃q : G₃.IsQuasicoherent) (n : ℕ) :
     chi π K L G₂ n = chi π K L G₁ n + chi π K L G₃ n := by
-  obtain ⟨S', -⟩ := OModulePresheaf.exists_affSES_tensor_of_flat S (OModulePresheaf.ofModules π (L.tensorPow n))
+  obtain ⟨S', -⟩ := OModulePresheaf.exists_affSES_tensor_of_flat S (OModulePresheaf.ofModules π (L.tensorPowFLT n))
     (flat_sections π L hL n)
   exact OModulePresheaf.eulerChar_eq_add_of_affSES S' K (cechFinite_twist π K L hL G₁ h₁c h₁q n)
     (cechFinite_twist π K L hL G₂ h₂c h₂q n) (cechFinite_twist π K L hL G₃ h₃c h₃q n)
@@ -268,7 +268,7 @@ theorem chi_eq_zero_of_subsingleton [IsSeparated π] (G : OModulePresheaf π)
     (hG : ∀ U : V.affineOpens, Subsingleton (G.obj U.1)) (n : ℕ) : chi π K L G n = 0 := by
   refine eulerChar_eq_zero_of_subsingleton π K _ fun U => ?_
   haveI := hG U
-  show Subsingleton (G.obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPow n, U.1))
+  show Subsingleton (G.obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPowFLT n, U.1))
   infer_instance
 
 def Q (Y : Closeds V) (G : OModulePresheaf π) : Prop :=
@@ -341,7 +341,7 @@ theorem card [IsProper π] (G : OModulePresheaf π)
     (Y : TopologicalSpace.Closeds V) (hY : G.SupportedIn Y)
     (d : ℕ) (hd : topologicalKrullDim Y ≤ d) :
     ∃ p : Polynomial ℚ, p.natDegree ≤ d ∧
-      ∀ n : ℕ, ((G.twist (L.tensorPow n)).eulerChar K : ℚ) = p.eval (n : ℚ) := by
+      ∀ n : ℕ, ((G.twist (L.tensorPowFLT n)).eulerChar K : ℚ) = p.eval (n : ℚ) := by
   have hd' : topologicalKrullDim Y < (d + 1 : ℕ) := by
     push_cast
     exact ENat.WithBot.lt_add_one_iff.mpr hd
@@ -365,5 +365,5 @@ theorem solution
     (hL : ∀ x : V, ∃ (U : V.Opens), x ∈ U ∧
       Nonempty ((Scheme.Modules.pullback U.ι).obj L ≅ SheafOfModules.unit U.toScheme.ringCatSheaf)) :
     ∃ p : Polynomial ℚ, p.natDegree ≤ d ∧
-      ∀ n : ℕ, ((G.twist (L.tensorPow n)).eulerChar K : ℚ) = p.eval (n : ℚ) :=
+      ∀ n : ℕ, ((G.twist (L.tensorPowFLT n)).eulerChar K : ℚ) = p.eval (n : ℚ) :=
   P2mChiDatum.card π K L hL G hc hq Y hY d hd

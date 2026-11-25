@@ -40,5 +40,5 @@ proves its exact image under the original projection.
 The provenance is an internal composition of the imported definitions and
 proved interfaces. Normality and density of the fixed envelope remain explicit
 structural inputs here. General pseudo-parabolic stabilizers still require
-the split-radical reduction and residual dynamic presentation. This unit does
+the split-radical reduction and residual dynamic presentation. This module does
 not prove the full all-field pseudo-parabolic rational-lifting statement.

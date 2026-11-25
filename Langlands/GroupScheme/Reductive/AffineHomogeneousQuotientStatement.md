@@ -1,7 +1,5 @@
 # Reductivity from an affine homogeneous quotient
 
-Author: Worker 1471.
-
 `Langlands.GroupScheme.AffineHomogeneousQuotientReductiveStatement.{u}`
 is a Prop-valued statement, with no proof supplied in this module. It asserts
 that a smooth closed subgroup of a connected reductive group over any field

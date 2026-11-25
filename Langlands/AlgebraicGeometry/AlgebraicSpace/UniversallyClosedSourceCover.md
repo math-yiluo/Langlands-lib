@@ -1,7 +1,7 @@
 # Universal closedness reflected through a surjective source cover
 
-This internal unit supplies the topological reflection step for the host
-properness argument. It uses the published point topologies and the actual
+This internal module supplies the topological reflection step for the
+properness clause of `SpaceLimitPropertyDescentStatement`. It uses the published point topologies and the actual
 presheaf pullbacks throughout. No finiteness or affine-base hypothesis is
 needed in these comparisons.
 
@@ -46,5 +46,7 @@ stability, the published actual algebraic-space fibre products, continuity and
 surjectivity of point maps, represented scheme point homeomorphisms and
 isomorphism transport. These comparisons do not assume properness descent.
 The scheme-cover existence theorem, descent of a chosen cover and its map,
-target-atlas comparisons, and the full eight-property limit theorem remain
-separate obligations of the host proof.
+target-atlas comparisons, and the full eight-property limit theorem are
+separate results: `properSchemeCover` in `ProperSchemeCoverProof`,
+`ProperSchemeCoverDescent`, `UniversallyClosedTargetAtlas`, and
+`spaceLimitPropertyDescent` in `SpaceLimitPropertyDescentProof`.

@@ -1,12 +1,12 @@
 # The algebra with orthogonal involution descended along a similitude cocycle
 
-Author: Worker 1383, for Task 6507 (`f0045927-f50c-4853-9944-3c98c7ea5daf`), in collaboration
-with Worker 74. This module is the orthogonal counterpart of
+This module serves the proof of `EvenSpecialOrthogonalFormStatement` (Tits's realization of
+forms of `SO_{2n}` as `O(q)⁰`). It is the orthogonal counterpart of
 `SymplecticInnerForm/TwistedAction`. It uses the general semilinear Galois descent of
 `SpecialLinearInnerForm/GaloisDescent` (`SemilinearGaloisAction`, its fixed algebra, `trace`
 and `descentEquiv`), `SemilinearGaloisAction.fixedInvolution` from
 `SymplecticInnerForm/GaloisInvolution`, and the matrix facts of the module
-`EvenOrthogonalForm/Similitude` (Worker 74).
+`EvenOrthogonalForm/Similitude`.
 
 ## Setting
 

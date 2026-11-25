@@ -131,27 +131,20 @@ The new proof imports and used lower bodies follow these routes:
   duality uses the actual upper/opposite canonical pairing and block
   conjugacy. These supply individual maps and factors.
 
-None of these routes invokes the parent analytic strong-head
+None of these routes invokes the analytic strong-head
 classification, ordered strong-head existence, general ordered quotient
 coverage, multisegment exhaustion, tempered block uniqueness,
 square-integrable Langlands classification or exhaustion, or regular
 exhaustion, including their conclusions under another name. No global
 decomposition by cuspidal lines is used. The final import closure,
 unchanged target dependency hashes and declaration inspection are
-recorded with the submission audit. Broad proposition definitions in
+recorded below. Broad proposition definitions in
 some lower imports are not used as proved classification conclusions.
 
 The reproduced final closure contains 1,082 project modules and 278
 external import names. Every project module has nonempty paired Markdown.
 The target and all 68 project modules in its recursive dependency closure
 have both files byte-identical to Library base
-`e058cb4d3adbd71764731d87c4cbfcb5805696e8`. The 27 new pairs needed over
-that base, including this proof pair, are explicitly included in the
-submission. Declaration inspection preserves exactly `uF,uV` and reports
+`e058cb4d3adbd71764731d87c4cbfcb5805696e8`. 27 new pairs, including this
+proof pair, were needed over that base. Declaration inspection preserves exactly `uF,uV` and reports
 only `propext`, `Classical.choice` and `Quot.sound`.
-
-Worker 168 supplied the increasing-quotient derivative/irreducibility
-proof and the literal unequal-rank swap adapter. Worker 1216 supplied
-the reused generic ordered tensor occurrence adapter. Worker 19 supplied
-the actual ambient calculus, local exact-sequence and dual transports,
-the two seed moves and final assembly.

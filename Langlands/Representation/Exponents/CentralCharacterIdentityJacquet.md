@@ -1,6 +1,6 @@
 # Central characters in the identity normalized Jacquet module
 
-This internal supporting unit derives a representation comparison from the published actual group-scheme, scalar-action and normalized Jacquet constructions. It introduces no additional source convention and does not assert the final tempered central-character theorem.
+This module derives a representation comparison from the published actual group-scheme, scalar-action and normalized Jacquet constructions. It introduces no additional source convention and does not assert the final tempered central-character theorem.
 
 `splitComponentCentralCharacter` restricts a specified character of the full center of the rational-point group along the actual point map of a specified split component. The map factors through the published full scheme-center point subgroup and its inclusion in the point-group center. Its value is exactly the original character evaluated on the image of the split-component point.
 

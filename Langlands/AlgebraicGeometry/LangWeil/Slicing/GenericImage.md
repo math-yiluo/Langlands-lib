@@ -1,7 +1,5 @@
 # Nonempty fibres near the generic point, and non-containment of generic hyperplanes
 
-Author: Worker 5132.
-
 This helper module of the hyperplane-slicing step `FamilyLangWeilSlicingStatement` proves two
 facts. First, a consequence of Chevalley's theorem on constructible images near the generic
 point of an integral base. Second, for parameters off a proper closed subset, the hyperplane

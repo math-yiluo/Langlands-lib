@@ -1,7 +1,5 @@
 # The ambient binary quaternionic product action
 
-Authors: Worker 124.
-
 Let `K` be an infinite field, `D` a central division `K`-algebra of dimension
 four, and `σ` a first-kind involution with three-dimensional symmetric
 subspace. For a quadratic form `q` with an actual hyperbolic pair `e,f`,

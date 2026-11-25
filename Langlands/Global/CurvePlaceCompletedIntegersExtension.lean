@@ -155,8 +155,7 @@ theorem valuation_completionMap (x : curvePlaceCompletion p) :
   simp only [HeightOneSpectrum.algebraMap_adicCompletion, Function.comp_apply,
     Algebra.algebraMap_self, RingHom.id_apply,
     HeightOneSpectrum.valuedAdicCompletion_eq_valuation']
-  rw [← HeightOneSpectrum.valuation_liesOver L p.heightOneSpectrum q.1.heightOneSpectrum,
-    Ideal.ramificationIdx'_eq_ramificationIdx _ _ p.heightOneSpectrum.ne_bot]
+  rw [← HeightOneSpectrum.valuation_liesOver L p.heightOneSpectrum q.1.heightOneSpectrum]
 
 /-- The adic valuation on the completed integer ring has its original normalization. -/
 theorem completionIntegers_intValuation (x : curvePlaceCompletionIntegers p) :
@@ -196,7 +195,6 @@ theorem completionIntegers_ramificationIdx :
       (IsLocalRing.maximalIdeal (curvePlaceCompletionIntegers p)))
   obtain ⟨π, hπ⟩ := m.intValuation_exists_uniformizer
   have h := HeightOneSpectrum.intValuation_liesOver m n π
-  rw [Ideal.ramificationIdx'_eq_ramificationIdx _ _ m.ne_bot] at h
   change m.intValuation π ^
       (IsLocalRing.maximalIdeal (curvePlaceCompletionIntegers q.1)).ramificationIdx
         (curvePlaceCompletionIntegers p) = n.intValuation (completionIntegersMap p q π) at h

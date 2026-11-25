@@ -1,7 +1,5 @@
 # Recognized category equivalence without original target closure
 
-Author: Worker 36.
-
 This derived construction retains the original forward recognized-image
 functor of a coherent strong quasi-isomorphism and constructs its inverse on
 the original recognized categories. It also constructs a reverse natural
@@ -27,7 +25,7 @@ It reuses the constructed full-recognition extension, its proved closure
 and coherence, and the constructed iteration and idempotence comparisons.
 The reverse objects, equivalence and natural isomorphism are outputs of
 these constructions, rather than extra input assumptions. The unrestricted
-morphism correspondence is a further obligation.
+morphism correspondence is not treated here.
 
 ## Inputs and original forward functor
 
@@ -56,7 +54,7 @@ introduced here.
 
 The full-recognition presentations `A*` and `B*` retain the respective
 ambient spaces and use the constructed full-recognition atlases. The
-previous module constructs the actual strong extension `f*`, proves it is
+module `FullRecognitionQuasiIso` constructs the actual strong extension `f*`, proves it is
 a quasi-isomorphism, and derives its intrinsic coherence. Both constructed
 atlases contain every local full domain.
 
@@ -178,9 +176,9 @@ G(W).chart x = hf.inverseBaseMap (W.chart (beta_W.spectrumHomeomorph x)).
 The original coherence law remains explicit. There is no original source
 or target full-domain closure premise, no global Hausdorffness or
 directedness premise, and no nontrivial valuation, reducedness, nonzero
-algebra or nonempty-family assumption. This unit extends the earlier
-reverse comparison by removing its original target-closure premise.
+algebra or nonempty-family assumption. This module extends the reverse
+comparison of `QuasiIsoReverseRecognition` by removing its original target-closure premise.
 Arbitrary equivalent-net invariance, maximal-atlas uniqueness, unrestricted
 analytic morphism identification, analytic and equivariant etale and
 quasi-etale sites, compact and distinguished domains, and Harris
-specializations remain further work of the broader task.
+specializations lie outside this module.

@@ -1,7 +1,5 @@
 # Geometric normalization of derived global pullback
 
-Author: Worker 13.
-
 This internal construction gives ordinary geometric section pullback and its
 termwise map on bounded-below complexes. It proves that the already
 constructed derived global pullback recovers this same map through the

@@ -1,14 +1,13 @@
 # Twisting Hopf points by automorphisms of the character group
 
-Author: Worker 1421.
-
 Endomorphisms `γ` of an additive group `M` act on Hopf points
 `A → C ⊗[R] R[M]` by `mapDomain γ` on the group-algebra factor. Geometrically,
 a homomorphism `D(M) → Spec A` is precomposed with the endomorphism `D(γ)` of
-`D(M)`. This module defines the twist and transports it to Worker 950's
-representing algebra `FiniteBialgebraHom.HomAlgebra R A R[M]`. The result is
-the action of `Aut(M)` used in the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. It is an internal module.
+`D(M)`. This module defines the twist and transports it to the
+representing algebra `FiniteBialgebraHom.HomAlgebra R A R[M]` (module
+`Langlands.Algebra.FiniteBialgebraHom`). The result is
+the action of `Aut(M)` used in the chart construction for the closed torus
+subgroup functor. It is an internal module.
 
 ## Points
 
@@ -23,7 +22,7 @@ the action of `Aut(M)` used in the chart construction of task
 ## Action on the representing algebra
 
 Assume `R[M]` is finite free over `R` and `A` is finitely presented, so that
-Worker 950's `HomAlgebra` and `homEquiv` are available. `W` denotes
+`FiniteBialgebraHom.HomAlgebra` and `homEquiv` are available. `W` denotes
 `HomAlgebra R A R[M]`.
 
 - `twistHom γ : W →ₐ[R] W` corresponds under `homEquiv` to the twist of the

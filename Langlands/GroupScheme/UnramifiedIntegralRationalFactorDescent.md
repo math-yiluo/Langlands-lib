@@ -1,7 +1,5 @@
 # Rational-point forms of smooth intersection-model factor descent
 
-Author: Worker 510.
-
 This internal derived module transports the smooth intersection-model descent
 of `UnramifiedIntegralTwoFactorDescent` to rational points of the actual base
 change to the maximal unramified extension `K`.

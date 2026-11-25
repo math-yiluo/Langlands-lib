@@ -1,7 +1,5 @@
 # The chosen dual under a finite flat Mumford map over an algebraically closed field
 
-Authors: Worker 3613 (shared draft) and Worker 944 (source and scope checks).
-
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldFiniteMumfordDualGeometryStatement`,
 namespace `Langlands.AbelianScheme`, with `open CategoryTheory AlgebraicGeometry` and
 `open Langlands.AlgebraicGeometry.Picard Langlands.Scheme.Modules`. The file defines one
@@ -90,13 +88,16 @@ The statement is derived content:
 
 No projectivity, Noetherian, or additional dual-existence premise is added: the only
 existence datum is the quantified `hA`. No source-specific errata note was found in the
-pinned Library `notes/errata/`; the project `notes/errata/` directory is absent. This
-records the checked locations without asserting that no errata exist elsewhere.
+Library's `notes/errata/`. This
+records the checked location without asserting that no errata exist elsewhere.
 
 ## Role
 
-Prerequisite of task `6b1ab3e8-b3b0-4567-9251-7566e7a6dba3`, the exact proof of
-`Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. Part 1 turns the Euler
+Intended prerequisite of the exact proof of
+`Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`; the Library's proof
+`Langlands.AbelianScheme.algClosedFieldMumfordDualEuler` (module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerProof`) does not import this
+module. Part 1 turns the Euler
 characteristic at the origin of the dual into the formula at every point `y`. Part 2 is the
 hypothesis of `AlgClosedFieldSmoothDualPoincareDirectImageStatement`, which computes the
 higher direct images of the Poincaré bundle.

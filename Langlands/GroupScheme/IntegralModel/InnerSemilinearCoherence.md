@@ -56,7 +56,7 @@ overlap: the maps `q i` have first projection the identity, second projection
 The theorem `pullIso_datumOfStableInnerGaloisPoints` proves that every supplied
 normalized component recovers the constructed integral isomorphism.
 
-This unit constructs coherent Čech data from the supplied model, extension,
+This module constructs coherent Čech data from the supplied model, extension,
 stability, and cover hypotheses. It does not construct any of those inputs,
 prove effective descent, or assert the finite-field quotient, Frobenius,
-or chamber witnesses required by the host task.
+or chamber witnesses required by the statement this module serves.

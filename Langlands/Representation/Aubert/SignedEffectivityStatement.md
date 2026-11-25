@@ -1,7 +1,5 @@
 # Signed effectivity on constituents of quasicuspidal induction
 
-Author: Worker 76.
-
 `Langlands.Aubert.SignedEffectivityStatement.{uF,uV} F T` states the following
 nonnegativity assertion. Let `B` be an ordered positive block shape of rank
 `n`, let `σ` be an actual irreducible smooth complex representation of its
@@ -77,8 +75,8 @@ of p-adic groups II: intertwining operators and duality*, Glasnik Matematički
 51 (2016), 153–163, section 4, especially printed pp.160–162. Registered
 source: `ban-jantzen-2016-duality`, PDF SHA-256
 `7885375b64f6146a16d2b7807447bb913e411bf73735877aca2d62f80dd4dac4`.
-Section 4 was read in preparing the parent work, and pp.160–162 were reread
-for this statement.
+Section 4 was read in preparing the irreducible-image argument that this
+statement serves, and pp.160–162 were reread for this statement.
 
 A proof through that complex must construct the actual transition maps,
 use support invariant on both the left and right under the appropriate Weyl
@@ -91,11 +89,14 @@ of these steps.
 
 This statement isolates only coordinate effectivity for irreducible
 constituents. It does not require a finite-length extension of a homology
-functor to arbitrary input representations. The parent irreducible-image
-argument is intended to combine this input with independently proved
+functor to arbitrary input representations. The irreducible-image
+argument that this statement serves, `irreducibleImage_of_signedEffectivity`
+in `IrreducibleImageFromEffectivity`, is intended to combine this input with independently proved
 involutivity, induction commutation, the eigenvalue on quasicuspidal inducing
 data and elementary counting in the composition-factor lattice.
 The statement and its imports make no use of segment classification,
 multisegment exhaustion, Langlands quotient coverage, tempered block
-uniqueness or square-integrable classification. A future proof must preserve
-the parent task's exclusions and independently justify all its inputs.
+uniqueness or square-integrable classification. A proof must preserve
+the exclusions of that irreducible-image argument and independently justify
+all its inputs; `signedEffectivity` in `SignedEffectivityProof` proves the
+statement.

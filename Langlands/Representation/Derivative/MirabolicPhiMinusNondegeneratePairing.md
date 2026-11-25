@@ -1,8 +1,7 @@
 # Nondegenerate pairings through normalized `Φ⁻`
 
-Author: Worker 805. This module is the `Φ⁻` step of the proof of Bernstein–Zelevinsky
-(1977), Proposition 3.8, in task `a925b519-9bb9-4927-873e-ad322d41328e` (executors
-Worker 1024 and Worker 805).
+This module is the `Φ⁻` step of the proof of Bernstein–Zelevinsky
+(1977), Proposition 3.8, in `MirabolicHighestDerivativePairingProof`.
 
 ## Main theorem
 
@@ -19,7 +18,7 @@ that is nondegenerate in `A` (`β v w = 0` for all `w` forces `v = 0`), there is
 nondegenerate in `Φ⁻ A`.
 
 No highest-derivative hypothesis is needed here. The highest-derivative hypothesis of
-Proposition 3.8 is used in the other modules of the task, which prove the `Ψ⁻` step and
+Proposition 3.8 is used in the other modules of that proof, which prove the `Ψ⁻` step and
 the assembly.
 
 ## Source and route
@@ -175,14 +174,13 @@ classes reduce to `phiMinusQuotient` images (`phiMinusQuotient_surjective`).
 ## Import and proof-dependency audit
 
 Imports: `Langlands.Representation.Derivative.MirabolicMinusPairingTransferProof`
-(published proof of the `Φ⁻` pairing-transfer statement, task
-`96a1c747-9282-43a2-b8b7-d9180675f432`), `Langlands.Representation.Derivative.MinusVanishing`
+(published proof of the `Φ⁻` pairing-transfer statement), `Langlands.Representation.Derivative.MinusVanishing`
 (published radical boxes, coordinate characters and the radical-box exhaustion),
 `Langlands.Representation.Compact.ProjectionProof` (fixed vectors of compact
 averages) and `Langlands.Group.GL.MirabolicProjection` (normality of the radical).
 The transitive Library import closure of these four modules has 101 modules. None
 of them is a plus functor, exactness, segment, socle, multisegment, classification,
 square-integrability, tempered or exhaustion module. The proof uses none of the
-Zelevinsky (1980) results or derivative results excluded by the task's Independence
-section, and no unpublished statement. It uses only the lemmas named above, all
+Zelevinsky (1980) results or derivative results excluded by the independence
+conditions of the proof of Proposition 3.8, and no unpublished statement. It uses only the lemmas named above, all
 published in the Library at base `d8292e5e`.

@@ -1,7 +1,5 @@
 # Homogeneous multiplicativity of the support-adjusted GL Aubert operator
 
-Author: Worker 105.
-
 `Langlands.Aubert.adjustedHomogeneousMultiplicativity.{uF,uV}` proves the
 published proposition
 `Langlands.Aubert.AdjustedHomogeneousMultiplicativityStatement.{uF,uV} F T hx`.

@@ -31,8 +31,8 @@ The three parts are proved in the supporting modules:
    `splitTorus.exists_isIdempotentElem_characterMapOn` gives, around every point
    `s`, an idempotent `e` of `R` with `s ∈ D(e)` and a linear map `h` such that
    `splitTorus.CharacterMapOn τ D(e) h`.
-2. [`Reductive.AffineSplitSurjectionFieldIsogeny`](AffineSplitSurjectionFieldIsogeny.md)
-   (Worker 407): `exists_rootDatumIsogeny_weightMap` gives, for every point `s`
+2. [`Reductive.AffineSplitSurjectionFieldIsogeny`](AffineSplitSurjectionFieldIsogeny.md):
+   `exists_rootDatumIsogeny_weightMap` gives, for every point `s`
    of an open set `V` with `CharacterMapOn τ V h`, a root-datum isogeny
    `r : RootDatumIsogeny p Q P` with `r.weightMap = h`.
 3. [`Reductive.AffineSplitSurjectionLocalBaseChange`](AffineSplitSurjectionLocalBaseChange.md):

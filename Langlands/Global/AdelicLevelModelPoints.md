@@ -1,6 +1,6 @@
 # Actual local-model points at an adelic level
 
-This unit constructs coordinate restriction maps for both actual number-field
+This module constructs coordinate restriction maps for both actual number-field
 adelic levels and actual curve-place adelic levels. These are arithmetic
 specializations of the published relative scheme-point and local-base-change
 constructions, with explicit original scalar actions.
@@ -54,15 +54,15 @@ S-integer conventions on printed page 1. The registered source is
 The single sum index is an implementation of the source's product of
 products; it introduces no additional factors.
 
-This definition unit proves the intrinsic algebra and coordinate identities
+This module of definitions proves the intrinsic algebra and coordinate identities
 above. It does not prove that either model-point map is bijective or a
 homeomorphism. Those conclusions require separate targets and proofs.
-The curve-place construction does not yet assume a global function field.
+The curve-place construction does not assume a global function field.
 It therefore specializes to actual global function fields without
 requiring separability or infinite constants. Arithmetic realization,
 Noetherianity of the S-integer base, the finite-type consequences needed
 for the nonaffine comparison, model descent, transition maps, and
-independence of the initial model remain separate obligations.
+independence of the initial model are not part of this module.
 The constructions allow any finite `S`; applying them with Conrad's
 conventions requires nonempty `S` in the function-field case.
 All infinite places are included in the number-field construction,

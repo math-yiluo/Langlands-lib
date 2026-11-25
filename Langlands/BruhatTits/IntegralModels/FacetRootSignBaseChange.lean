@@ -400,6 +400,8 @@ theorem isSchemeTheoreticallyDominant_squareIso_reductiveImageProjection :
       SchematicImage.projection ((φ.baseChange A L).neutralSpecialFibreMap ≫
         (Q.baseChange A L).projection)).hom.hom.left := by
   rw [Grp.comp_hom_hom, Over.comp_left]
+  have : IsIso (specialFibreSquareIso A D'.neutral.group).hom.hom.hom.left := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   infer_instance
 
 attribute [local instance] isSchemeTheoreticallyDominant_baseChange_reductiveImageProjection

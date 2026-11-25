@@ -1,12 +1,10 @@
 # Group-scheme ledger, family 8: relative structure over general bases
 
-For the dynamic statement publications and proof owners as of 13 November
-2026, see [the dated dynamic update](dynamic-relative-progress.md).
+For the dynamic statements and their proofs, see [the dynamic update](dynamic-relative-progress.md).
 It updates rows D2 and F1–F2; the labels below describe the original snapshot.
 
-Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
-ledger for family 8 of that program's contract. Family 8 covers:
+This note, dated 10 November 2026, is the source-to-declaration
+ledger for family 8 of the algebraic and reductive group-scheme program. Family 8 covers:
 
 - reductive group schemes over a base, fibrewise criteria and base change;
 - relative identity components;
@@ -17,8 +15,7 @@ ledger for family 8 of that program's contract. Family 8 covers:
 - descent, and the general-base dynamic constructions, including smoothness over a ring and
   the scheme-level decomposition `P(λ) ≅ U(λ) × Z(λ)`.
 
-It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5` and environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. Lean names are in `Langlands.GroupScheme` unless a
+It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`. Lean names are in `Langlands.GroupScheme` unless a
 namespace is shown. Module paths are relative to `Langlands/GroupScheme/` unless they start
 with `Langlands/`.
 
@@ -34,17 +31,16 @@ henselian local rings, as each row states.
 ## Status codes and evidence
 
 Each row gives the source assertion with its locator, the exact Lean statement and its
-hypotheses, a status, the evidence, and the owner task.
+hypotheses, a status and the evidence.
 
 - **D (definition or internal result).** A published construction, or a published theorem
   that is not a closed proposition (for instance a theorem with hypotheses). The evidence is
-  its module path. No owner task is needed.
+  its module path. 
 - **P (published proof).** The Library at the commit above contains a theorem whose type is
-  exactly the statement. The evidence is that theorem and its module path. The author also
-  type-checked `example : S := proof` for every P row in a private module. That check
-  passed with no errors or warnings, and `#print axioms` reported only `propext`,
-  `Classical.choice` and `Quot.sound`; it is not public evidence. No further proof work or
-  owner task is needed.
+  exactly the statement. The evidence is that theorem and its module path. Every P row was
+  also type-checked as `example : S := proof`, with no errors or warnings, and
+  `#print axioms` reported only `propext`, `Classical.choice` and `Quot.sound`. No further
+  proof work is needed.
 - **C (composite, not published).** No published theorem has the statement as its type, but
   a projection out of a published conjunction has it. The author type-checked the
   projection in the same private module. What is missing is a named wrapper theorem, not
@@ -55,8 +51,7 @@ hypotheses, a status, the evidence, and the owner task.
   statement. The author searched the statement declarations of the Library by content (for
   the predicates involved), not only by name, before recording an M row.
 
-The labels "accepted" and "published" are used only for artifacts that passed independent
-review. A "staged" candidate has passed machine validation only.
+The label "published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 
@@ -141,7 +136,7 @@ All rows are D.
   schemes. Status C: `smoothStructure.2.1`.
 - `SmoothBaseChangeStatement`: the base change of a relative identity component along any
   morphism `S' ⟶ S` is a relative identity component. Status C: `smoothStructure.2.2`.
-- Owner task for the three C rows: none; they are named wrappers only.
+- Named wrappers only.
 
 **B4. Identity components over a discrete valuation ring are affine.** Source: Prasad–Yu,
 §3.5, Lemma, author-preprint PDF pp.6–7.
@@ -170,7 +165,7 @@ All rows are D.
   `i : P ⟶ G` closed and parabolic after every base change to a field, the normalizer of
   `range i` is `range i`. Applying it to the published proofs gives the assertion for every
   such `i`.
-- Status M for a closed proposition stating this. Owner task: none.
+- Status M for a closed proposition stating this.
 
 **B7. Proper ambient schemes for self-normalizing subgroups.** Source: Conrad 2014, Theorem
 2.3.6(1), pp.72–74, with Proposition 2.1.6, pp.61–62.
@@ -191,8 +186,7 @@ Proposition 5.2.3, p.152.
   scheme `Q` over `R` and `q : G → Q`, flat, surjective and quasi-compact, whose fibres are
   exactly the cosets of `P` on every test scheme.
 - Status P: `Langlands.Global.IntegralIwasawaFamily.relativeParabolicQuotient`
-  (`Langlands/Global/IntegralIwasawaFamilyReduction`). Its owner task, Task 4778
-  (`97745234-6669-4471-92eb-334b88511721`), also has a staged candidate in a topic-local module.
+  (`Langlands/Global/IntegralIwasawaFamilyReduction`).
 
 ## C. Relative tori, maximal tori over local bases, and Hom schemes
 
@@ -222,7 +216,7 @@ pp.290–291.
 **C4. Étale-local existence and conjugacy of maximal tori.** Source: Conrad 2014, Theorem
 3.2.6, p.94, and Corollary 3.2.7, p.95, over a general base.
 - Status M for these étale-local statements over a general base; C2 is their strictly
-  henselian consequence. Owner task: none.
+  henselian consequence.
 
 **C5. Hom schemes and the scheme of subtori.** Source: SGA 3 XI, Théorème 4.1 and Corollaire
 4.2, PDF p.20.
@@ -246,7 +240,7 @@ pp.290–291.
   (`HomScheme/TorusSubgroupChartGluingProof`).
 - `HomScheme.TorusChart.EtaleSplitStatement` (`HomScheme/TorusChartOpen`): an étale cover
   splitting a closed subtorus of an affine group over an affine test scheme, with explicit
-  Hopf coordinates. Status O. Owner task: none found.
+  Hopf coordinates. Status O.
 
 ## D. Local splitting, root data and the isomorphism theorem
 
@@ -261,7 +255,7 @@ Definition 5.1.1, p.136, and Proposition 5.1.6, p.138, with Definition 3.2.1, p.
   `ℤ^I` that is the root datum of every fibre (`IsFibrewiseRootDatumOf`).
 - Scope: no étale cover and no existence of the torus appear; Conrad's Lemma 5.1.3, pp.136–137,
   that every reductive group scheme splits étale-locally, has status M, as do the root spaces
-  as line bundles in Definition 5.1.1. Owner task: none.
+  as line bundles in Definition 5.1.1.
 - Status P: `localSplitFibrewiseRootDatumExistenceProof`
   (`Reductive/LocalSplitRootDatumExistenceProof`).
 
@@ -281,7 +275,7 @@ p.110, Corollary 5.1.9, pp.140–141, and Theorem 5.1.13, p.143. The base ring i
   negative and positive root groups and the torus is an open immersion. Status P:
   `localSplitBigCell` (`Reductive/LocalSplitBigCellProof`).
 - The relative open cell `U(−λ) × P(λ) → G` of Conrad 2014, Theorem 4.1.7(4), p.113, for a
-  general cocharacter over a general base, has status M. Owner task: none.
+  general cocharacter over a general base, has status M.
 
 **D3. The isomorphism theorem over a reduced local ring.** Source: Conrad 2014, Theorem
 6.1.17, p.197, and §6.2: Theorem 6.2.1, p.198, Theorem 6.2.4, p.201, and Corollary 6.2.7,
@@ -294,12 +288,12 @@ p.204.
 
 **D4. The isomorphism theorem over a local ring.** Source: as D3.
 - Lean: `LocalSplitIsomorphismTheoremStatement` (`Reductive/LocalSplitIsomorphismTheoremStatement`):
-  as D3 without reducedness. Status O. Owner task: none found.
+  as D3 without reducedness. Status O; now proved, as `localSplitIsomorphismTheorem`.
 - Lean: `LocalSplitReductiveGeometricIsoStatement` (`Reductive/LocalSplitGeometricIsoStatement`):
   over a local ring, two reductive groups that each have a fibrewise maximal split torus and
   become isomorphic over some algebraically closed field over `R` are isomorphic. Source:
   Conrad 2014, Theorem 3.2.6, p.94, Definition 5.1.1 and Proposition 5.1.6, pp.136–138, and
-  Theorem 6.1.17, p.197. Status O. Owner task: none found.
+  Theorem 6.1.17, p.197. Status O; now proved, as `localSplitReductiveGeometricIso`.
 
 **D5. Generic-fibre determination over strictly henselian local domains.** Source: Conrad
 2014, Lemma 5.1.3, pp.136–137, Proposition 5.1.6, p.138, Theorem 3.2.6, p.94, and Theorem
@@ -308,8 +302,8 @@ p.204.
   Hypotheses: a strictly henselian local **domain** `R` with a supplied fraction field `K`;
   `G`, `H` reductive whose base changes to `K` are isomorphic. Conclusion: `G ≅ H` (an
   abstract isomorphism; no prescribed generic isomorphism is claimed to extend).
-- Status O. Owner task: Task 4991 (`ca719705-5b1e-4ffa-bb39-29feb566e8ad`), which has no proof
-  candidate.
+- Status O at the commit above. The Library now proves it, as `strictHenselianGenericIso`
+  (`Reductive/StrictHenselianGenericIsoProof.lean`).
 
 ## E. Descent, base change and examples
 
@@ -361,7 +355,7 @@ Proposition C.1.2(2), printed pp.582–583 (PDF 608–609).
 - `IsSplitTorus.IsReductiveStatement` (`Torus/SplitReductiveStatement`): a split torus over
   every scheme is reductive. Status C: `IsSplitTorus.reductiveStatement.2`
   (`Torus/SplitReductiveProof`).
-- Owner task for both: none; they are named wrappers only.
+- Named wrappers only.
 
 ## F. General-base dynamic subgroups and relative Levi subgroups
 
@@ -385,7 +379,6 @@ subgroups are those of the conjugation action through a cocharacter.
   the open cell of Theorem 4.1.7(4) is the M item of D2, and the connectedness of fibres
   (Theorem 4.1.7(2)) and the Lie algebra description (Theorem 4.1.7(4)) have no Lean
   statement either; status M. The field cases of all these assertions belong to family 4.
-  Owner task: none.
 
 **F2. The scheme-level decomposition `P(λ) ≅ U(λ) × Z(λ)` over any base.** Source: Conrad
 2014, Theorem 4.1.7(3), p.113: multiplication `Z(λ) ⋉ U(λ) → P(λ)` is an isomorphism; and
@@ -408,8 +401,7 @@ morphism.
   on the points over every test scheme, `U(λ)` normal in `P(λ)` with complement `Z(λ)`.
   Status P: `GeneralLinear.dynamicStatement` (`Dynamic/GeneralLinearProof`). Its component
   `GeneralLinear.DiagonalCocharacterLeviDecompositionStatement` (the decomposition on
-  points) is status C: `GeneralLinear.dynamicStatement.2.2.2.1`. Owner task: none; a named
-  wrapper only.
+  points) is status C: `GeneralLinear.dynamicStatement.2.2.2.1`. A named wrapper only.
 
 **F3. Relative Levi subgroups.** Sources: Conrad 2014, Corollary 5.2.5, p.153 (the
 unipotent radical `R_u(P)` of a parabolic subgroup of a reductive group scheme over any
@@ -425,8 +417,7 @@ own normalizer in `P`); Corollary 5.4.8, p.179 (over an affine base `S` a Levi
   of the functor `Lev(P)`, and no statement of the existence, torsor, conjugacy or
   uniqueness assertions above. The Library's `IsRationalLeviSubgroup` (`Rational/LeviSubgroup`)
   is defined over a field only; its rows are in family 5. Existence is local on the base in
-  general and global over an affine base (Corollary 5.4.8); no row asserts more. Owner task:
-  none.
+  general and global over an affine base (Corollary 5.4.8); no row asserts more.
 - What exists over a general base is the dynamic case: for a cocharacter `λ` with
   represented dynamic subgroups, F2 gives `P(λ) ≅ U(λ) × Z(λ)` as schemes. The Library does
   not identify `U(λ)` with a relative `R_u(P(λ))`, since the latter is not defined.
@@ -440,11 +431,11 @@ have a composite and no wrapper theorem (C): the three components of
 `IsSplitTorus.IsReductiveStatement` and
 `GeneralLinear.DiagonalCocharacterLeviDecompositionStatement` (F2). Four statements are open
 (O): `HomScheme.TorusChart.EtaleSplitStatement`, `LocalSplitIsomorphismTheoremStatement` and
-`LocalSplitReductiveGeometricIsoStatement` (no owner task found), and
-`StrictHenselianGenericIsoStatement` (Task 4991). Rows F1 and F2 are D: published theorems
+`LocalSplitReductiveGeometricIsoStatement`, and
+`StrictHenselianGenericIsoStatement`. Rows F1 and F2 are D: published theorems
 with hypotheses, not proposition declarations.
 
-Source assertions without a closed Lean statement (M), none with an owner task:
+Source assertions without a closed Lean statement (M):
 
 1. Parabolic subgroups of reductive group schemes are self-normalizing (B6; Conrad 5.2.8).
    A published theorem with hypotheses gives it.
@@ -459,7 +450,10 @@ Source assertions without a closed Lean statement (M), none with an owner task:
 6. Relative Levi subgroups (F3; Conrad 5.2.5, 5.4.2, 5.4.5, 5.4.6, 5.4.8): the unipotent
    radical of a parabolic subgroup scheme, the definition of Levi subgroups and of `Lev(P)`,
    uniqueness given a maximal torus, the torsor and conjugacy statement, and existence over
-   an affine base. These need a definitions task before statement tasks.
+   an affine base. These need definitions before statements.
 
-The wrapper theorems for the C rows need no new mathematics; the program will collect them,
-with those of the other families, in one proof task.
+The wrapper theorems for the C rows need no new mathematics. Of the four open statements, the
+Library now proves `LocalSplitIsomorphismTheoremStatement` (`localSplitIsomorphismTheorem`),
+`LocalSplitReductiveGeometricIsoStatement` (`localSplitReductiveGeometricIso`) and
+`StrictHenselianGenericIsoStatement` (`strictHenselianGenericIso`), all under `Reductive/`; this
+note records no proof of `HomScheme.TorusChart.EtaleSplitStatement`.

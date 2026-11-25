@@ -1,15 +1,12 @@
 # Nilradical reflection for reductive groups: infinitesimal-rigidity sources
 
-Worker 749, 17 November 2026.
-
-This note records a bounded source audit for the proof task of
+This note, dated 17 November 2026, records a bounded source audit for a proof of
 [`ReductiveNilradicalIsomorphismReflectionStatement`](../../Langlands/GroupScheme/Reductive/ReductiveNilradicalIsomorphismReflectionStatement.lean)
-([statement explanation](../../Langlands/GroupScheme/Reductive/ReductiveNilradicalIsomorphismReflectionStatement.md)),
-Task `295faf6f-5322-48e7-a9fd-ef01550954ac`, revision 1. It locates where SGA 3
+([statement explanation](../../Langlands/GroupScheme/Reductive/ReductiveNilradicalIsomorphismReflectionStatement.md)). It locates where SGA 3
 proves the analogous lifting statement for reductive groups and which inputs that
 proof uses. It also records the intrinsic deformation-theoretic formulation. It
-supplies no Lean proof. It does not show that the target is unprovable under the
-task's independence constraint.
+supplies no Lean proof, and this note records none in the Library. It does not show that the
+target is unprovable under the independence constraint below.
 
 ## The target and its consumer
 
@@ -26,7 +23,7 @@ local rings.
   `localSplitReducedIsomorphismTheorem` to prove
   `LocalSplitIsomorphismTheoremStatement`. That is row D4 of the
   [family-8 ledger](ledger-family-8-relative.md), with status O.
-- Constraint 2 of the task requires the proof to be independent of
+- Constraint 2 (the independence constraint) requires the proof to be independent of
   `LocalSplitIsomorphismTheoremStatement` and of results whose proofs depend on it.
 - `nilIdealHomIsomorphism`
   ([`Reductive/NilIdealHomIsomorphism.lean`](../../Langlands/GroupScheme/Reductive/NilIdealHomIsomorphism.lean))
@@ -88,7 +85,7 @@ finite-presentation reduction is again generic.
 | XXIV N.D.E. (6), p.221 / PDF 7 | The original stated 1.13(i) without the adjoint hypothesis. For `G = SL_p` in characteristic `p`, `H¹(G, Lie(G/k)) ≠ 0`. |
 | XXIV N.D.E. (8), p.221 / PDF 7 | For trivial coefficients `k`, `Hⁱ(G, k) = 0` for `i > 0` by a theorem of Kempf, citing Jantzen 1987, II 4.5 and 4.11. |
 
-## Consequence for the task
+## Consequence for a proof
 
 - In SGA 3, the infinitesimal rigidity statement (XXIV 1.13(ii)) is derived
   **from** the isomorphism theorem, not conversely. Rem. 1.14(ii) presents a
@@ -106,10 +103,8 @@ finite-presentation reduction is again generic.
   for affine reductive groups over a local ring) is the content of XXIV 1.8–1.9.
   In SGA 3, that content is proved from XXIII 5.6. These sources therefore do
   not give such an interface an independent proof, and assuming it does not by
-  itself supply an independent route. As of 17 November 2026, Worker
-  869 has staged such an interface,
-  `ReductiveSmoothIsomorphismSchemeExistenceStatement`, as candidate
-  `fa4c32bc-2a86-40cf-8960-534c21614e0a`. That candidate is not yet accepted.
+  itself supply an independent route. Such an interface was written as
+  `ReductiveSmoothIsomorphismSchemeExistenceStatement`; it is not in the Library.
 - The passage from a nil ideal to a finitely generated nilpotent one, and the
   lifting of sections of smooth schemes along nil ideals, are generic. They are
   not the obstacle.

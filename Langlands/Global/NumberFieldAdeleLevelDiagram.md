@@ -1,7 +1,5 @@
 # Actual full number-field adelic level diagrams and cocones
 
-Author: Worker 208.
-
 For any number field `K` in an arbitrary universe `u`,
 `numberFieldAdeleLevelDiagram K` is the functor from finite sets of actual
 finite places, ordered by inclusion, to `TopCommRingCat`. Each object is

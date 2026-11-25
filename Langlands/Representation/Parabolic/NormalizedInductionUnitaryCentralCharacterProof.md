@@ -1,8 +1,7 @@
 # The full unitary central character of actual normalized induction: proof
 
-Authors: Worker 379 and Worker 540. The assembly follows Worker 540's private
-application draft. That draft assumed the scalar clause; this module replaces
-the assumption by the published scalar-action theorem.
+The scalar clause is not assumed: this module uses the published
+scalar-action theorem.
 
 The theorem `Langlands.glNormalizedInductionUnitaryCentralCharacter` proves
 exactly the published closed proposition
@@ -30,8 +29,8 @@ every `z` in the full center of `GL_n(F)`. This equation holds by `rfl`.
 ## Reused published results
 
 - `PadicField.TopologicalData.hasScalarCharacter_normalizedParabolicInduced`,
-  from `Langlands.Representation.Classification.SegmentConstituentCentralCharacterProof`
-  (Worker 264, segment proof task `5093df28`, revision 2). Its full type is:
+  from `Langlands.Representation.Classification.SegmentConstituentCentralCharacterProof`.
+  Its full type is:
   for `T`, `B`, `V : Type uV`, a Levi representation `σ` and a homomorphism
   `ω : F.Carrierˣ →* ℂˣ`, the hypothesis
   `Classification.HasScalarCharacter σ (B.scalarLevi F.Carrier) ω` gives,
@@ -111,7 +110,7 @@ tempered-induction result, temperedness, exhaustion, classification,
 square-integrability or Langlands-classification result. Neither ingredient
 depends on this prerequisite. The published
 `Parabolic.normalizedInductionCentralClause` would give the same action
-identity; the proof uses the segment module's theorem as its task requires.
+identity; the proof uses the segment module's theorem instead.
 
 The provenance is internal. As the statement Markdown explains, this is the
 p-adic induction specialization of the full-center pullback construction,

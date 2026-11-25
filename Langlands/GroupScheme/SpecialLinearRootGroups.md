@@ -57,7 +57,7 @@ The provenance is internal. The all-test constructions extend the existing
 binary construction in `SpecialLinearBinaryRootGroups` using the general
 matrix and vector coordinate equivalences. The generation argument combines
 the displayed direct matrix identity with the existing Mathlib diagonal
-reduction. This unit does not identify these coordinate-root images with the
+reduction. This module does not identify these coordinate-root images with the
 Library's relative-root subgroup functors at a specified torus, prove
 parabolic-radical generation for arbitrary SLₙ, classify general simply
 connected groups, or prove the unrestricted local Kneser–Tits statement.

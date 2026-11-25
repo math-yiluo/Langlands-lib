@@ -1,7 +1,5 @@
 # Pointed étale lifting from smooth subgroup charts
 
-Author: Worker 872. The direct chart-cover route was suggested by Worker 57.
-
 `multiplicativeTypeEtaleLift_of_chartCover.{u}` proves the unchanged
 `MultiplicativeTypeEtaleLiftStatement.{u}` under the explicit
 `MultiplicativeTypeSubgroupModuli.ChartCoverStatement.{u}` hypothesis.

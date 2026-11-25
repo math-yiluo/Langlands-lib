@@ -58,9 +58,10 @@ of its kernel pair. Descent of morphisms therefore produces a map
 `g : H → G` over `S`. The same sheaf property, after base change and on
 products, gives compatibility with the group laws and the identities
 `g ∘ f = [n]_G` and `f ∘ g = [n]_H`. The tensor `(1/n) ⊗ g` is then a
-two-sided inverse to `1 ⊗ f`. These are proof obligations for the
-separate proof task; this file only defines their rational-invertibility
-conclusion as a proposition.
+two-sided inverse to `1 ⊗ f`. These steps are not formalized in this file,
+which only defines their rational-invertibility conclusion as a proposition;
+the proposition is proved as `Langlands.CommGroupScheme.isogenyInverse` in
+`Langlands.AbelianScheme.IsogenyInverse`.
 
 The companion Lean file provides no proof of this proposition and assumes
 no chosen quasi-inverse or descent map as input data.

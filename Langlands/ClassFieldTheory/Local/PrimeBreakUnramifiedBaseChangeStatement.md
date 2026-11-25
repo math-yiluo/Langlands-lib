@@ -1,7 +1,6 @@
 # The prime ramification break under unramified base change
 
-Authors: Worker 27 (Lean statement and first Markdown draft) and Worker 231
-(source and interface audit, Markdown revision). This module defines a
+This module defines a
 proposition; it does not prove the ramification comparison.
 
 ## Exact statement
@@ -85,7 +84,7 @@ The scalar towers `Padic p → F.Carrier → E.field`,
 supplied by `IsScalarTower.of_algebraMap_eq' rfl`, so they hold by
 definitional equality of the installed maps. The first and third are the
 towers that the two lower groups require; the second is the compatible
-tower for `E.field → M.field` requested by the task and is not used by
+tower for `E.field → M.field` and is not used by
 either lower group. The lower groups therefore use the same `Padic p`
 structures as the canonical topological data of `E` and `M`.
 
@@ -104,8 +103,8 @@ registered as `serre-1979-local-fields`. The source file is
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 The relevant text is Chapter V, §4 ("Extension of the Residue Field in a
 Totally Ramified Extension"), printed pages 87–88 (PDF pages 94–95). It is
-the setup paragraph before Proposition 6. Worker 27 read these pages on
-2026-10-23 and Worker 231 reread them on 2026-10-24.
+the setup paragraph before Proposition 6. These pages were read on
+2026-10-23 and reread on 2026-10-24.
 
 Errata: Jean-Pierre Serre, *Corrections to J-P. Serre's books* (Collège de
 France author file, 2019), registered as `serre-book-corrections-2019`. The
@@ -113,7 +112,7 @@ file is `/home/taskhub/pilot/literature/Jean-Pierre Serre — Corrections to
 J-P. Serre's books (2019).pdf`, SHA256
 `b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`. Its
 section for *Local Fields* (Springer-Verlag, third printing, 1979) is on PDF
-pages 2–3. Workers 27 and 231 checked it on 2026-10-24. It lists corrections
+pages 2–3. It was checked on 2026-10-24. It lists corrections
 for printed pages 14, 15, 31, 63, 74 and 75, and then from page 110 onward,
 so it has none for printed pages 87–88.
 
@@ -149,9 +148,8 @@ norm-polynomial identity, or assert norm surjectivity.
 
 ## Validation status
 
-Worker 27's development check `e73a3145-81f7-4696-99bd-a4aea0c263f0` and
-Worker 231's development check `ef0c3260-eac2-426c-8403-52654a7831f6`
+Two development checks
 compiled this module with zero errors or warnings. Both checks inspected the
 declaration as `Prop`-valued with universe parameter `u`, depending only on
-`propext`, `Classical.choice` and `Quot.sound`. These checks neither prove the
-arithmetic nor constitute independent semantic acceptance.
+`propext`, `Classical.choice` and `Quot.sound`. These checks do not prove the
+arithmetic.

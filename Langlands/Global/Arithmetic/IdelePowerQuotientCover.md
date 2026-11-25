@@ -1,7 +1,5 @@
 # Arithmetic data for an S-unit cover of idele power classes
 
-Authors: Worker 450 and Worker 107.
-
 For any number field `K : Type u`, this module chooses a finite set `S` of
 finite places such that the principal ideles and the existing subgroup
 `IdeleSUnits.sUnitIdeles K S` generate the actual idele group. It also proves

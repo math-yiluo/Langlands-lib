@@ -1,7 +1,5 @@
 # The actual finite-adelic level diagram and its canonical cocone
 
-Author: Worker 208.
-
 For a Dedekind domain `R` and its fraction field `K` in an arbitrary common
 universe `u`, `finiteAdeleLevelDiagram` is a functor from finite subsets of
 the height-one spectrum, ordered by inclusion, to the existing category

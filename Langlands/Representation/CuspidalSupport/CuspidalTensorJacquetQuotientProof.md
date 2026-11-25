@@ -1,7 +1,5 @@
 # Proof of actual cuspidal tensor Jacquet quotient existence
 
-Author: Worker 78.
-
 `Langlands.CuspidalSupport.cuspidalTensorJacquetQuotientExistence` proves the
 published proposition
 `Langlands.CuspidalSupport.CuspidalTensorJacquetQuotientExistence.{uF,uV} F T`.
@@ -76,7 +74,7 @@ the following scope.
 
 The conservative project-source import closure was checked recursively from
 this proof, including every project import of every imported module, against
-the Library base `04247de81e81d501f4b57b138c70ba2d5b16e793` and the authored
+the Library base `04247de81e81d501f4b57b138c70ba2d5b16e793` and the
 statement pair. It comprises 163 project modules. Every project import was
 resolved. None of the excluded statement modules or declarations below
 occurs anywhere in those Lean sources. This whole-module check is stronger
@@ -84,18 +82,18 @@ than checking only the imports named by the entry module; the mathematical
 roles just described also exclude assuming the same conclusions under
 different names.
 
-| Excluded family | Task |
-| --- | --- |
-| Analytic segment classification | `aca8805b-054f-4d56-8045-12db7f623404` |
-| Multisegment special-head exhaustion | `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` |
-| Ordered strong-head existence | `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` |
-| Ordered quotient coverage | `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` |
-| Tempered-block uniqueness | `52e97845-36bb-457d-b76f-70753334b88c` |
-| `SquareIntegrableLanglandsClassification` | `1cb45da2-7007-4351-a694-594fb148b8d1` |
-| Square-integrable Langlands-head exhaustion | `cd8ab97c-0b78-4bce-97c4-d307a28159a4` |
-| Regular tempered Langlands-head exhaustion | `bf433f0a-921a-428c-b0c0-6475438125ac` |
+| Excluded family |
+| --- |
+| Analytic segment classification |
+| Multisegment special-head exhaustion |
+| Ordered strong-head existence |
+| Ordered quotient coverage |
+| Tempered-block uniqueness |
+| `SquareIntegrableLanglandsClassification` |
+| Square-integrable Langlands-head exhaustion |
+| Regular tempered Langlands-head exhaustion |
 
-No proof successor can provide one of these excluded propositions through
+No proof of one of these excluded propositions can enter through
 this closure, since its statement and conclusion are absent. In addition, the
 construction invokes no global disjoint-support irreducibility, general
 ordered quotient coverage, full multisegment classification, or one-integral-line
@@ -106,5 +104,3 @@ of integral-word existence.
 
 Development compilation and theorem inspection succeed with only
 `propext`, `Classical.choice`, and `Quot.sound` among the reported axioms.
-This is a compilation and dependency account; independent review and
-publication are separate from these development checks.

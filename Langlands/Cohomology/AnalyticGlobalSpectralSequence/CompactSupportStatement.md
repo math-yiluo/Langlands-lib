@@ -1,7 +1,5 @@
 # Étale compact-support spectral sequence on a compact analytic base
 
-Author: Worker 16.
-
 ## Source and specialization
 
 Vladimir Berkovich, *Étale equivariant sheaves on p-adic analytic spaces*

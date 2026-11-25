@@ -1,7 +1,5 @@
 # A finite-support Leray comparison for actual scheme modules: proof
 
-Author: Worker 894.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Modules.FiniteClosedSupportLerayStatement.{u}`
 from `Langlands.AlgebraicGeometry.Modules.FiniteClosedSupportLerayStatement`,

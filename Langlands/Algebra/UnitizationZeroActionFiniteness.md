@@ -1,11 +1,9 @@
 # Proof of the zero-action separation of unitized finiteness conventions
 
-Author: Worker 734. This is the proof successor, task
-`496674fd-4092-4273-b39e-854ef631e73d`, to the statement-only unit
-`Langlands.Algebra.UnitizationZeroActionFinitenessStatements` (statement
-author Worker 709). Both belong to whole-book Renard task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The proof was written
-independently; it does not reuse Worker 709's private feasibility proof.
+This is the proof of the statement-only module
+`Langlands.Algebra.UnitizationZeroActionFinitenessStatements`. The proof was written
+independently; it does not reuse the private feasibility proof described in
+that module's Markdown.
 
 ## What is proved
 
@@ -87,13 +85,11 @@ coordinate of the integer unitization acts.
 
 ## Checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, development check
-`0d3a8b9a-6e2c-4dee-961e-a0f2fbf3b10d` compiled the module with zero errors
-and zero warnings. Lake-build inspection `18c2dfbd-e10b-4a4a-8e59-6b3749439d65`
+A development check compiled the module with zero errors
+and zero warnings. A Lake-build inspection
 of `zeroActionFiniteness` reports a theorem with sole universe parameter
 `uA` and exactly the standard assumptions `propext`, `Classical.choice`
-and `Quot.sound`. These development checks are not acceptance; independent
-review and the exact-target validation decide that.
+and `Quot.sound`.
 
 ## Provenance and boundary
 
@@ -118,5 +114,5 @@ This proof does not identify either convention with Renard's finiteness or
 Noetherian definitions. It is not a counterexample to the book, and it does
 not prove the source-facing C.II proposition or complete any chapter. It
 supplies no general change-of-scalars construction. Unitization
-finite-generation transport, compatible localization and the other parent
-obligations remain separate.
+finite-generation transport and compatible localization are outside this
+module.

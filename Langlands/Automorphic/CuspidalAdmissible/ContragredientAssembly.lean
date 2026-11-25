@@ -16,7 +16,7 @@ universe uF
 
 namespace Langlands.Automorphic.CuspidalAdmissible
 
-open Langlands.Global Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- Joint admissibility of every actual unitary cuspidal realization implies the existence
 of actual unitary cuspidal contragredients. -/

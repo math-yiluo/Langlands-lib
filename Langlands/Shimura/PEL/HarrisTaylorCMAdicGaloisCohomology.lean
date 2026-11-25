@@ -237,7 +237,7 @@ theorem cmHarrisAdicFrobeniusEulerPolynomial_eq_of_lift
     {j : ClosureEmbedding (NumberField.FinitePlace.embedding (K := F) w)}
     (hu : ∀ r, IsUnramifiedAlong (ModuleCat.{0} Rcoeff) w ((cohomologyAction degree).obj r) j)
     {g : LocalGroup w} (hg : IsGeometricFrobeniusLift w g) :
-    ((adicCohomology degree).ρ (localRestriction w j g)).hom.charpoly.reverse =
+    ((adicCohomology degree).ρ (localRestriction w j g)).asHom.hom.charpoly.reverse =
       cmHarrisAdicFrobeniusEulerPolynomial D C preservation composition unitCoherence
         associativity comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor q U ρ p m hm existence geometry hRigid w

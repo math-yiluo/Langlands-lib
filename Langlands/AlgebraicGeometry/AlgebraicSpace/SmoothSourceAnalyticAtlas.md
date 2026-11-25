@@ -1,7 +1,5 @@
 # Varying-dimensional charts on actual smooth-space rational points
 
-Author: Worker 3519.
-
 This is derived construction content supporting the analytic-manifold clause of
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,
 2011), printed p.15, Proposition 5.4, and the final paragraph of its proof on
@@ -110,16 +108,22 @@ transition exactly, using Mathlib's `lift_openEmbedding_trans`.
 
 The construction uses the published open-embedding theorem directly.
 It does not transport a topology along the dimension-section equivalence
-or require a pending homeomorphism statement as an assumption.
+or require a separate homeomorphism statement as an assumption.
 
-## Scope and successors
+## Scope and related modules
 
-This unit constructs topological charts and defines the analytic predicates.
+This module constructs topological charts and defines the analytic predicates.
 It does not prove analyticity of the assembled atlas, functoriality of maps
 across arbitrary target pieces, étale dimension preservation and analytic
 local isomorphisms, scheme agreement or uniqueness of the assembled
-analytic structure. Those require subsequent statement and proof units.
+analytic structure. Those are separate statements, proved in
+`SmoothSourceDimensionAnalyticAssemblyProof`,
+`SmoothSourceDimensionAnalyticFunctorialityProof`,
+`SmoothSourceDimensionEtaleAnalyticIsoProof`,
+`SmoothSourceDimensionAffineAgreement` and
+`SmoothSourceDimensionAnalyticUniquenessProof`.
 The corrected Proposition 5.4 class of smooth, quasi-separated, locally
 separated spaces over complete fields remains the intended application,
 with all dimension pieces included. This construction alone does not
-discharge that assertion or the whole-paper task.
+discharge that assertion; `smoothSourceAnalyticManifold` in
+`SmoothSourceAnalyticManifoldProof` proves it.

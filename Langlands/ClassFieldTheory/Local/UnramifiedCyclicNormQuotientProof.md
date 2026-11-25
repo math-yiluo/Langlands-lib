@@ -1,6 +1,6 @@
 # The topological cyclic quotient for unramified norms
 
-Worker 84 proves `Langlands.LocalClassField.unramifiedCyclicNormQuotient.{u,v}`
+This module proves `Langlands.LocalClassField.unramifiedCyclicNormQuotient.{u,v}`
 with exactly the published type
 `Langlands.LocalClassField.UnramifiedCyclicNormQuotient.{u,v}`.
 For every prime, compatible finite extension of p-adic fields in independent
@@ -60,7 +60,7 @@ This is the derived normalized-order and topological formulation of
 Jean-Pierre Serre, *Local Fields*, Greenberg English translation, GTM 67
 (1979), Chapter V, Section 2, Proposition 3(c), printed p.82/PDF p.89,
 together with the preceding unit-norm propositions, corollary and
-finite-residue-field remark. Worker 84 read PDF pp.88–89. The valuation
+finite-residue-field remark. PDF pp.88–89 were read. The valuation
 quotient in the source gives the cyclic group; the topology argument here
 is the explicit deduction from open valuation spheres and the quotient
 topology. The private helpers implement this deduction.
@@ -70,9 +70,9 @@ Registered source: `serre-1979-local-fields`, retained at
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 No source-specific errata file was found in the project notes.
 
-The norm-membership theorem was authored by Worker 90 and is independently
-accepted and published. It imports the published norm-order and unit-norm
-proofs by Worker 110 and Worker 26. This module imports their declarations;
+The norm-membership theorem is published in
+`UnramifiedNormMembershipProof`. It imports the published norm-order and
+unit-norm proofs, `NormOrderProof` and `UnitNormProof`. This module imports their declarations;
 it does not copy their proofs. The normalized-order API is imported from
 `Langlands.LocalField.Normalization.Proof`. The statement pair and all
 imported pairs are unchanged. The result adds no Galois, norm-membership

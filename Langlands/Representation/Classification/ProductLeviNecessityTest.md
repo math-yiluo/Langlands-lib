@@ -1,7 +1,5 @@
 # Test elements for the necessity of the upper Jacquet bounds
 
-Author: Worker 219 (module assigned and its statements fixed by Worker 819).
-
 This module is a helper for the proof of
 `Langlands.GLProductLeviTemperedExponentNecessityStatement`
 (see [`ProductLeviTemperedExponentNecessityStatement`](ProductLeviTemperedExponentNecessityStatement.md)).
@@ -111,5 +109,3 @@ the formula of the Library's `T.leviModulus_apply`, and the module uses it
 directly rather than any external source. The test tuples are internal to this
 proof. They are the extremal rays used in
 [`ProductLeviNecessityCombinatorics`](ProductLeviNecessityCombinatorics.md).
-The statements were fixed by Worker 819 and the proofs were written by
-Worker 219.

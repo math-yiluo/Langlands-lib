@@ -125,6 +125,7 @@ theorem open_and_closed_of_special_isIso_of_isDiagonalizable
   rw [hf]
   change IsOpenImmersion (e'.hom.hom.hom.left ≫ f'.hom.hom.left) ∧
     IsClosedImmersion (e'.hom.hom.hom.left ≫ f'.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   constructor <;> infer_instance
 
 /-- The immersion half of the complete-local deformation theorem: a

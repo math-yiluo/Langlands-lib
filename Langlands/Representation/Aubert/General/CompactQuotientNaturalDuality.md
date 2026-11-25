@@ -1,13 +1,11 @@
 # Natural integral duality of normalized induction from a compact quotient
 
-Author: Worker 937.
-
 This module specializes `Langlands.Induction.exists_integralDualEquiv_of_section`
 (module `Induction/CompactQuotientSmoothDuality`) to normalized induction along
 an actual semidirect decomposition `P = M ⋉ U`
 (`IsSemidirectDecomposition P M U`). It feeds the interfaces `IsIntegralDuality`
-and `IsNaturalIntegralDuality` of module `Aubert/General/NaturalIntegralDuality`
-(Worker 1402). It is the all-smooth counterpart of the Library's
+and `IsNaturalIntegralDuality` of module `Aubert/General/NaturalIntegralDuality`.
+It is the all-smooth counterpart of the Library's
 `exists_natural_of_compactSpace` (module
 `Aubert/General/RationalInductionDualityAssembly`), which covers admissible
 objects only.

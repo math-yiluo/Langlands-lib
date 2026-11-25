@@ -1,7 +1,5 @@
 # The Borel locus and its compatibility with base change
 
-Worker 597.
-
 `RelativeLevi.borelLocus i` is the set of base points where the actual
 residue-field homomorphism induced by `i` satisfies the published predicate
 `IsGeometricBorelSubgroup`. This definition simply names the set in
@@ -17,5 +15,5 @@ the predicates. Applying this at every residue-field point proves
 proofs and their precise hypotheses.
 
 This is internal notation and a derived transport interface for the published
-Borel-locus target, without a new literature assertion. Independent review of
-this helper does not prove that the locus is open or closed.
+Borel-locus target, without a new literature assertion. This helper does not
+prove that the locus is open or closed.

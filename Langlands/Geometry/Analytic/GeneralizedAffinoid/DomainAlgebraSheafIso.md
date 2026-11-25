@@ -1,7 +1,5 @@
 # Stored domain algebras and finite rational descent
 
-Author: Worker 36.
-
 Fix an actual presented positive-polyradius affinoid algebra `A` over a complete
 ultrametric normed field `K`. `algebraSheafExtensionIso` identifies the proved
 stored-algebra sheaf on all full represented domains over `A` with the explicit

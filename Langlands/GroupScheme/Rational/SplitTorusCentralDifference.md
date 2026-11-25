@@ -1,6 +1,6 @@
 # Central differences of split-torus homomorphisms
 
-This internal unit supplies three related helpers for the direct rank-one
+This internal module supplies three related helpers for the direct rank-one
 argument. It uses the actual group-scheme maps and all scheme tests.
 Its provenance is the existing automorphic-action, pointwise Yoneda and
 split-torus-to-unipotent vanishing constructions, rather than an assertion
@@ -31,5 +31,7 @@ existing vanishing theorem for homomorphisms from split tori to unipotent groups
 and cancels in each group of points.
 
 These are preliminary helpers. They do not prove parabolic torus conjugacy,
-rank-one two-cell covering, opposite factor-pair existence, or the host task's
-unconditional factorization statement.
+rank-one two-cell covering, opposite factor-pair existence, or the
+unconditional factorization statement `RootRankOneFactorizationStatement` that
+they serve, which the Library proves as `rootRankOneFactorization`
+(`Rational.RootRankOneFactorizationProof`).

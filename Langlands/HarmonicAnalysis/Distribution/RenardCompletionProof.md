@@ -1,6 +1,6 @@
 # Renard II.3.13: proof of the completed Hecke comparison
 
-Worker 107 and Worker 104, Task 5530. Source: Renard, *Représentations des
+Source: Renard, *Représentations des
 groupes réductifs p-adiques*, French version dated 9 July 2026, II.3.13,
 Theorem and its proof, printed p.55 / PDF p.61, with the Lemma and its proof,
 printed pp.54–55 / PDF pp.60–61; source registration
@@ -25,7 +25,7 @@ Haar measure `μ`, it supplies:
 
 No countability or unimodularity hypothesis is used. The proof uses the action
 laws of `RenardCompletionActions`. It constructs its own product and does not
-use a proof of the separate product-existence statement unit.
+use a proof of the separate product-existence statement.
 
 ## Idempotents and fixed tests
 

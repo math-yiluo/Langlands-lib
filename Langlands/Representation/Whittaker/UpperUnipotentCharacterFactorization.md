@@ -1,8 +1,8 @@
 # Characters of the upper unipotent group factor through the first superdiagonal
 
-Author: Worker 784. This module is an internal prerequisite of the exact proof task
-`62de5903-b616-4b5c-88eb-a066b77c5467`, which proves
-`Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`. It contains only
+This module is an internal prerequisite of the proof of
+`Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`
+(`SupercuspidalCoinvariantFinitenessProof`). It contains only
 group theory. Representations, topology, additive self-duality and derivatives do not
 appear.
 

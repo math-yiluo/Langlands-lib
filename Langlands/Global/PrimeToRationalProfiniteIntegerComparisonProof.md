@@ -1,7 +1,5 @@
 # Normalized away rational residue and finite-adele comparisons
 
-Author: Worker 315.
-
 The theorem `Langlands.Global.primeToRationalProfiniteIntegerAdeleComparisons`
 proves exactly the published proposition
 `Langlands.Global.PrimeToRationalProfiniteIntegerAdeleComparisons`, with no
@@ -11,8 +9,9 @@ and every natural modulus `m`. The proof uses exactly the coupled full
 witnesses `h.choose` and `h.choose_spec.2.2.2.choose`.
 
 This is an internal algebraic derivation using the published scalar rings,
-their restriction maps, Worker 18's published integral comparison theorem
-`primeToIntegralProfiniteIntegerAdeleComparisons`, and Mathlib's flatness and
+their restriction maps, the published integral comparison theorem
+`primeToIntegralProfiniteIntegerAdeleComparisons`
+(`PrimeToIntegralProfiniteIntegerComparisonProof`), and Mathlib's flatness and
 localization theorems. The integral theorem is imported by name; no part of
 its construction is repeated here. The argument below proves the rational
 assembly and asserts no additional result from external literature.

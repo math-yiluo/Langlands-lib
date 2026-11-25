@@ -1,6 +1,6 @@
 # Jacquet modules of supercuspidal inductions along non-conjugate Levis
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviJacquetInductionNoSupercuspidalStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviJacquetInductionNoSupercuspidalStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviJacquetInductionNoSupercuspidalStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviJacquetInductionNoSupercuspidalStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.5.3, Proposition, assertion (ii), printed p.173 / PDF p.179, with its proof on the same page. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation, the Proposition says: let `P = MN` and `Q = LU` be parabolic subgroups of `G`, `(ρ, W)` a supercuspidal representation of `M`, and put `τ = r_Q^G i_P^G ρ`. Then (ii) if `M` is not conjugate to `L` in `G`, then `τ` has no supercuspidal subquotient. The proof says this is an immediate consequence of (i) and of the Lemma of VI.5.2, which concerns irreducible subquotients. Assertion (i) is the separate statement `LeviJacquetInductionVanishingStatement`; assertion (iii) is not stated.
 

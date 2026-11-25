@@ -1,7 +1,7 @@
 # Actual formal Hom along a commutative coefficient square
 
 This is internal coefficient infrastructure for the formal module constructions,
-derived from the published coefficient extension, identity-coordinate comparisons
+derived from the coefficient extension, identity-coordinate comparisons
 and tensor Hom definitions. It attributes no numbered theorem to the literature.
 
 Let `O` be a commutative ring, and let `R`, `S`, `A` and `B` be commutative
@@ -41,5 +41,5 @@ identities and the existing bilinear composition, and that it agrees with
 successive extension on rational maps from `R`.
 
 No fraction-field, domain, nilpotence, finite-kernel or isogeny hypothesis is
-required. This unit constructs maps between actual integral Hom and tensor Hom;
+required. This module constructs maps between actual integral Hom and tensor Hom;
 the pullback of arbitrary sheaf sections is a further construction.

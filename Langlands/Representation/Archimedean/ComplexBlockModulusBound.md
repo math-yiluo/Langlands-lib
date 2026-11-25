@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockModulusBound`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It collects tools for the proof of the Library
 statement `ComplexBlockParabolicIntegrationStatement` (the proof is in
 `ComplexBlockParabolicIntegrationProof`). The tools are:

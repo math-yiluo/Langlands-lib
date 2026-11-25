@@ -1,14 +1,12 @@
 # Cancelling inverse line characters in a tensor representation
 
-Worker 239, at the request of Worker 706.
-
 This internal helper module collects matrix calculations for finite matrix
 representations of group schemes over an arbitrary commutative base ring `R`.
 Index types are finite types in `Type` with decidable equality. Every statement
 holds on arbitrary scheme tests over `Spec R`; there is no reducedness, field,
-smoothness or characteristic assumption. Worker 706 uses these lemmas in the
+smoothness or characteristic assumption. These lemmas are used in the
 proof that a normal subgroup of a smooth affine algebraic group over an
-algebraically closed field is the kernel of a representation.
+algebraically closed field is the kernel of a representation (`SmoothNormalKernel`).
 
 ## Contents
 
@@ -62,6 +60,6 @@ combines.
   fixing the tensor preserves the first line.
 
 The coordinate formulations, the arbitrary base ring and the choice of
-statements follow Worker 706's interface request. The module proves no
+statements are those used by `SmoothNormalKernel`. The module proves no
 group-theoretic existence result. It does not choose the lines or the
 representations, and it does not prove that a normal subgroup is a kernel.

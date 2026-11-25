@@ -1,6 +1,6 @@
 # Polynomial extension for finite compact multiplier families
 
-This derived internal unit proves a finite algebraic extension mechanism for the
+This module proves a finite algebraic extension mechanism for the
 existing generic block multipliers. Its crossing-word conclusion retains an
 explicit grid-equality hypothesis. It does not prove that hypothesis.
 
@@ -77,4 +77,4 @@ projections, finite sums, polynomial extensionality and algebraic dual
 separation. No literature input or differential braid is assumed. In
 particular, equality on the grid, compatibility with the actual character
 parity models, degeneration to canonical tails, and either filtration
-kernel-image containment remain separate obligations.
+kernel-image containment are separate obligations.

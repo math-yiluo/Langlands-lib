@@ -1,7 +1,5 @@
 # Proof: normalizer points of a split maximal torus map onto the Weyl group
 
-Worker 4348 and Worker 5397 (Task 6589).
-
 `Langlands.GroupScheme.affineSplitNormalizerWeyl : AffineSplitNormalizerWeylStatement.{u}` proves
 the published statement
 [`Reductive.AffineSplitNormalizerWeylStatement`](AffineSplitNormalizerWeylStatement.md)
@@ -12,10 +10,10 @@ four helper modules:
 
 | Clause | Result used | Module |
 | --- | --- | --- |
-| 1. every `w ∈ P.weylGroup` is induced by some `n ∈ G(S)` | `AffineSplitReflection.weylGroup_induced` | [`AffineSplitReflectionRepresentatives`](AffineSplitReflectionRepresentatives.md) (Worker 5397) |
-| 2. normalizer points induce Weyl elements | `AffineSplitNormalizerWeyl.exists_weylGroup_of_mem_normalizerPoints` | [`AffineSplitNormalizerWeylClauses`](AffineSplitNormalizerWeylClauses.md) (Worker 4348) |
+| 1. every `w ∈ P.weylGroup` is induced by some `n ∈ G(S)` | `AffineSplitReflection.weylGroup_induced` | [`AffineSplitReflectionRepresentatives`](AffineSplitReflectionRepresentatives.md) |
+| 2. normalizer points induce Weyl elements | `AffineSplitNormalizerWeyl.exists_weylGroup_of_mem_normalizerPoints` | [`AffineSplitNormalizerWeylClauses`](AffineSplitNormalizerWeylClauses.md) |
 | 3. centralizer points are torus points | `AffineSplitNormalizerWeyl.exists_eq_of_mem_centralizerPoints` | [`AffineSplitNormalizerWeylClauses`](AffineSplitNormalizerWeylClauses.md) |
-| 4. over a domain, a finite subgroup of normalizer points induces all of `W(P)` | `AffineSplitReflection.exists_reflection_representatives` and `AffineSplitNormalizerWeyl.exists_finite_subgroup_of_representatives` | [`AffineSplitNormalizedRepresentatives`](AffineSplitNormalizedRepresentatives.md) (Worker 5397), [`AffineSplitNormalizerWeylFinite`](AffineSplitNormalizerWeylFinite.md) (Worker 4348) |
+| 4. over a domain, a finite subgroup of normalizer points induces all of `W(P)` | `AffineSplitReflection.exists_reflection_representatives` and `AffineSplitNormalizerWeyl.exists_finite_subgroup_of_representatives` | [`AffineSplitNormalizedRepresentatives`](AffineSplitNormalizedRepresentatives.md), [`AffineSplitNormalizerWeylFinite`](AffineSplitNormalizerWeylFinite.md) |
 
 ## The proof
 
@@ -57,5 +55,4 @@ The instance `IsAffineHom G.X.hom` is taken from `hG.isAffineHom` as in the stat
 Besides this pair, the proof needs the helper modules
 `AffineSplitNormalizerWeylClauses`, `AffineSplitNormalizerWeylFinite`,
 `AffineSplitReflectionRepresentatives` and `AffineSplitNormalizedRepresentatives` (Lean and
-Markdown). They are also submitted separately, as candidates abc3f328, 30a01151, 5549a2a7 and
-3b1b1c57. All other imports are published Library modules.
+Markdown). All other imports are published Library modules.

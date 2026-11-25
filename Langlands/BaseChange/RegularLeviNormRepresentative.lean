@@ -174,13 +174,6 @@ theorem IsNormAssociated.exists_cyclicNorm_eq_and_commute
     _ = d * (d⁻¹ * baseChange F E n γ * d) := congrArg (d * ·) he
     _ = _ := by group
 
-/-- Entrywise extension of scalars preserves separability of the characteristic polynomial. -/
-theorem isRegularSemisimple_baseChange {γ : GeneralLinear n F} (hγ : IsRegularSemisimple γ) :
-    IsRegularSemisimple (baseChange F E n γ) := by
-  change (γ.val.map (algebraMap F E)).charpoly.Separable
-  rw [Matrix.charpoly_map]
-  exact Polynomial.Separable.map hγ
-
 /-- Base change and the block diagonal inclusion commute. -/
 theorem baseChange_leviEmbedding (B : BlockShape n) (m : B.Levi F) :
     baseChange F E n (B.leviEmbedding F m) =

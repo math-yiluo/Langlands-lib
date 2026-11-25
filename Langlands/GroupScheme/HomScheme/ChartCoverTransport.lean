@@ -83,6 +83,7 @@ theorem isClosedSubgroup_pushFamily (f : S' ⟶ S) {U : Over S'}
   let : IsClosedImmersion j.hom.hom.left := hj
   change IsClosedImmersion (j.hom.hom.left ≫
     (Descent.pullbackComparison f U.hom (U.hom ≫ f) rfl G).hom.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- The actual inclusion comparison for a pushed family. -/

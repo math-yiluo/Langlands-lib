@@ -1,7 +1,5 @@
 # Coroot products of Galois-equivariant unit families lie in `G(k)^+`
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.SimpleOrbitCorootGeneration`.
 
 ## Setting
@@ -71,8 +69,8 @@ The theorems about `D` assume:
 
 ## Provenance
 
-These are internal lemmas, built from published Library results, the accepted helper
-modules of this task (`Rational.OrthogonalOrbitDescent`, `Rational.A2OrbitUnits` and their
-imports) and Worker 185's accepted coordinate modules. The orbit dichotomy is the Library's
+These are internal lemmas, built from published Library results, the helper
+modules `Rational.OrthogonalOrbitDescent` and `Rational.A2OrbitUnits` with their
+imports, and the Library's coordinate modules. The orbit dichotomy is the Library's
 `Langlands.LinearAlgebra.RootDatumOrbitPairs`. They make no new mathematical assertion beyond
 the stated Lean theorems.

@@ -81,7 +81,7 @@ def weilPrimeToFiniteAdeleTwistedMonodromyRepresentation :
     TateTwist.Geometry.sectionPrimeToFiniteAdeleTransport_apply, rationalTransport_aut] using
     ((geometricCompatibility preservation composition unitCoherence associativity
     comparison symmetry stability compatibility S A hA geometryA MA evaluationA Ω Ω s s
-      hs hs htor (fun n => Nat.Coprime n m) hu hμfin hμet g).2 polarizationMap x y).symm
+      hs hs htor (fun n => Nat.Coprime n m) hu hμfin hμet g.asIso).2 polarizationMap x y).symm
 
 end Langlands.AbelianScheme.Tate
 

@@ -2,8 +2,8 @@
 
 `Langlands.AbelianScheme.UniversalMumfordClassifierStatement.{u}` is a
 proposition definition. The module states this proposition and does not prove
-it; it contains no theorem. A separate exact proof task is to follow once the
-statement is accepted.
+it; it contains no theorem. The Library proves it as `universalMumfordClassifier`
+in `UniversalMumfordClassifierProof`.
 
 ## The statement
 
@@ -210,8 +210,7 @@ compares the vanishing of `Ψ` at geometric points with the Library predicate
 `IsPicardZeroFamily`, which tests translation invariance on all geometric
 fibres. This comparison is internal to the project. It combines the description
 of `ϕ_L` on points (Chapter VI §3) with the base-change compatibility (7.11).
-The Library interfaces relevant to a proof are listed in the context of the
-statement task. They include `mumfordBundle`, `mumfordZeroParameterIso`,
+The Library interfaces relevant to a proof include `mumfordBundle`, `mumfordZeroParameterIso`,
 `classifyFamily`, `classifyFamily_pullback`, `classifyFamily_trivial`, the
 family base-change equivalence, `FieldMumfordPoint.carrierIso` and
 `picardZeroGeometricDetection`. None of them is used or asserted here.
@@ -255,7 +254,7 @@ All imported published pairs are unchanged. Neither import depends on
 
 This statement precedes `FieldPicardZeroComponentConstancyStatement`, and
 therefore also the comparison statement and the two openness statements named
-above. Its eventual proof and that proof's prerequisites must not use any of
+above. Its proof and that proof's prerequisites must not use any of
 these four statements, a result that starts from a supplied open Picard-zero
 locus and identifies it with a connected component, or an assumed
 `IsPicardZeroOpenLocus`.
@@ -263,10 +262,11 @@ locus and identifies it with a connected component, or an assumed
 ## Intended use
 
 The statement is a prerequisite of the proof of
-`FieldPicardZeroComponentConstancyStatement` in exact proof task
-`58fe8476-5045-4662-9a48-c3b2a2616489`. In that planned proof, the set of points
+`FieldPicardZeroComponentConstancyStatement` (`fieldPicardZeroComponentConstancy`
+in `FieldPicardZeroComponentConstancyProof`). In that proof, the set of points
 of `P` over which `Ψ` maps the whole fibre of `A_P` to the trivial parameter is
-to be shown open and closed in separate focused statement and proof tasks.
-Condition 3 is then to identify the geometric points of `P` that pull `L` back
+shown open and closed through the separate statements
+`FibreContractionOpenStatement` and `FieldGroupOpenSubgroupClosedStatement`.
+Condition 3 then identifies the geometric points of `P` that pull `L` back
 to a Picard-zero family with the geometric points whose image lies in that
 set. Those steps are not part of this module.

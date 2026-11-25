@@ -1,7 +1,5 @@
 # Closed vector embeddings from primitive algebra generators
 
-Author: Worker 1552, task `f02d1dea-6430-41df-bf80-bd95f132e32f`.
-
 This internal construction supplies the geometric assembly step for the embedding
 clause of Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition (2015),
 Lemma B.1.10, printed pp.565–566 / PDF pp.591–592. The registered original is
@@ -31,8 +29,8 @@ Over a field, `exists_closed_vectorEmbedding_of_primitive_generation` uses
 generators from finite type and generation by all primitive elements, and then
 applies the preceding construction. There is no smoothness, connectedness,
 perfectness or characteristic assumption in this conditional assembly lemma.
-Proving primitive generation from the exact B.1.10 hypotheses remains a separate
-obligation of the task.
+Proving primitive generation from the exact B.1.10 hypotheses is a separate
+step, outside this module.
 
 `closedVectorEmbeddingOfPrimitiveGeneration` packages this existence result as
 data: it returns a natural number, a homomorphism to the standard vector group

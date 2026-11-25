@@ -251,6 +251,6 @@ theorem universalInducedCoefficientFiniteness :
     have hf := universalInduced_fixed_finite_free (parabolicLeviRationalNormCharacters r)
       (continuous_parabolicLeviRationalNormCharacters r) h hU hr π hπ hP K hK
     have := hf.2
-    exact ⟨hf.1, inferInstance⟩
+    exact ⟨hf.1, @Module.Projective.of_free _ _ _ _ (Submodule.module _) hf.2⟩
 
 end Langlands.Plancherel.RationalNormalized

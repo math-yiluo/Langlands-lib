@@ -217,7 +217,7 @@ theorem pointAlgebraHom_borelCharacterCoordinate_add (lam mu : characterLattice 
 theorem pointAlgebraHom_borelCharacterCoordinate_zero
     (T : Over (Spec (CommRingCat.of k))) (h : T ⟶ p.negativeBorel.X) :
     AffineCoordinates.pointAlgebraHom p.negativeBorel T h (p.borelCharacterCoordinate 0) = 1 := by
-  rw [pointAlgebraHom_borelCharacterCoordinate, borelCharacter, map_zero, map_zero,
+  rw [pointAlgebraHom_borelCharacterCoordinate, borelCharacter, AddEquiv.map_zero, map_zero,
     characterEval_zero]
   rfl
 

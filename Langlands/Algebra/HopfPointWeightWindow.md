@@ -1,10 +1,8 @@
 # Weight projectors of a finite comodule and openness of weight windows
 
-Author: Worker 1421.
-
 This module provides the open "weight window" conditions on the scheme of
 homomorphisms from a diagonalizable group to an affine group, used in the chart
-construction of task `45ac6e52-a4d8-4414-91f1-03c3be35223e`. Geometrically, a
+construction for the closed torus subgroup functor. Geometrically, a
 homomorphism `D(M) → Spec A` over `Spec C` makes every comodule `V` of `A` into
 an `M`-graded `C`-module. The set of points where all weights lie in a given set
 `T` is open. This is the classical correspondence between representations of

@@ -40,7 +40,9 @@ star-fixed Tits class is additive and extends to all star-fixed weights.
   scalar extension (`HasGroundMaximalWeight`). Then the obstruction vanishes
   on every star-fixed weight in the integral root span
   (`Reductive/GaloisRationalBaseChange`). The required representations, for
-  `δ` the sum of the positive roots, are the subject of Task 7713.
+  `δ` the sum of the positive roots, are the exterior powers of the adjoint
+  representation constructed in `Reductive/GroundAdjointExterior`;
+  `SimplyConnected/TitsObstructionRootVanishing` uses them to discharge the premise.
 
 Additivity is part of the `AddMonoidHom` structure. All characteristics are
 allowed, there is no inner-type hypothesis, and the CSA representatives live

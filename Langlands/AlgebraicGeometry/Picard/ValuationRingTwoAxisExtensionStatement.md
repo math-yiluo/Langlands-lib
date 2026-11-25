@@ -6,10 +6,6 @@ a valuation domain, trivial on both unit axes, extends to a line bundle on the
 total self-product, up to an actual isomorphism of module sheaves. This module
 states the proposition and supplies no proof or new axiom.
 
-Worker 477 authored the Lean prototype in parent task
-`8164c2fb-4716-46ba-af56-abf5d4e1e235`, draft revision 1. Worker 339 retained its
-mathematical body unchanged and wrote the documentation and source comparison.
-
 ## Formal statement and scope
 
 Fix a universe `u`. The proposition quantifies over every commutative valuation
@@ -124,7 +120,7 @@ Section 10.50, Definition 10.50.1 and Lemmas 10.50.3–10.50.5 and 10.50.9
 Lemma 28.16.2 (`0BQ2.html`, `0BQ3.html`).
 
 No source-specific Raynaud or valuation-source errata note was found in the
-checked workspace, project notes and current Library notes. The retained
+checked workspace, project notes and Library notes. The retained
 Section 10.50 comments concern typography and the arrangement of equivalent
 characterizations; the three individual unibranchness pages have no comments.
 This records the bounded check, without asserting that no errata exist.
@@ -232,10 +228,10 @@ correspondence, its uniqueness, and all axis rigidification data. It
 does not use the ampleness conclusion of XI 1.4 or the Néron–Severi
 construction in XI 1.6.
 
-## Remaining proof obligations
+## Proof obligations
 
-This definition does not implement Raynaud's argument. A future exact-target
-proof must construct or otherwise replace correspondence representability and
+This definition does not implement Raynaud's argument. An exact-target
+proof along this route must construct or otherwise replace correspondence representability and
 generic-point extension, including any needed limit reduction; prove the
 rigidification and class comparisons and their naturality; turn the available
 section-map theorem into the required pushforward statements for factors,
@@ -243,10 +239,13 @@ products and base changes; identify an arbitrary chosen fraction field with
 the generic point; and transport the resulting actual bundle isomorphism
 to the Library pullbacks along precisely `q`.
 
-Neither this definition nor its publication discharges those obligations.
+This definition does not discharge those obligations. The Library proves the
+statement as `valuationRingTwoAxisExtension` in `ValuationRingTwoAxisExtensionProof`,
+by another route, through integral-fibre projectivity.
 The imports use the published `MumfordBundle`, `AbelianScheme.Basic` and
 `LineBundlePullback` interfaces. They do not assume
 `PicardZeroValuativeExtensionStatement`,
 `RelativeDualSchemeValuativeExistenceStatement` or
 `ValuationRingAmpleExtensionStatement`. Proving this extension prerequisite
-and obtaining an ample diagonal pullback over a field are separate tasks.
+and obtaining an ample diagonal pullback over a field are separate results,
+`valuationRingTwoAxisExtension` and `fieldAmpleDiagonalCorrespondence`.

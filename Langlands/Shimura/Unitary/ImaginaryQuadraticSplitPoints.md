@@ -1,7 +1,5 @@
 # Similitude points over coefficient rings on which an imaginary quadratic field splits
 
-Author: Worker 19.
-
 This internal algebraic construction identifies the similitude points of a
 rational involution of the second kind relative to an imaginary quadratic
 field `L` over every commutative `L`-algebra `S`:

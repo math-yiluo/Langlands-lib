@@ -1,7 +1,5 @@
 # Fibres of invariant scheme morphisms
 
-Worker 217.
-
 This internal construction concerns arbitrary schemes over a base `S`.
 Let `q : X → Q` be a relative morphism and `s : S → Q` a section.
 `ActionFibre.parameter q s` is the actual scheme pullback of their underlying

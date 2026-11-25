@@ -1,7 +1,5 @@
 # Hilbert functions of relative effective divisors on geometric fibres (proof)
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProjectiveRelativeDivisorFibreHilbertProof` proves
 
 ```lean

@@ -1,9 +1,9 @@
 # Constructions on actual local parameters
 
-Author: Worker 53. This definition contribution applies Worker 17's generic
+This definition module applies the generic
 parameter operations to the actual local group, inertia and norm character.
 It imports `Langlands.Weil.Local.Parameters` (published at Library commit
-`22b4f024e0d4218752e970d09329d1799f6d81d1`) and Worker 17's `Langlands.WeilDeligne.ParameterOperations`
+`22b4f024e0d4218752e970d09329d1799f6d81d1`) and `Langlands.WeilDeligne.ParameterOperations`
 and `Langlands.WeilDeligne.Invariants` (published at Library commit
 `0fbab0ee36b0ab602b6d43bc3d60ada813fcedbf`). The environment is Lean 4.34.0
 with Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
@@ -82,7 +82,7 @@ Literature ID: `tate-1979-number-theoretic-background`; PDF SHA-256:
 
 The normalization of the norm character and the geometric degree is
 documented in `Assembly.md` and `Parameters.md`. The generic constructions and
-their proofs are Worker 17's, documented in `WeilDeligne/ParameterOperations.md`,
+their proofs are documented in `WeilDeligne/ParameterOperations.md`,
 `WeilDeligne/Invariants.md` and `WeilDeligne/SpecialBlocks.md`. This module is
 derived local specialization and proves no classification theorem.
 Restriction and induction along finite extensions are not part of it; they use

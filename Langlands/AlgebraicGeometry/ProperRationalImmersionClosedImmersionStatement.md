@@ -80,7 +80,7 @@ informal remarks and are not proved in this module.
 
 The hypothesis `Picard.IsRationalPoint p x` in (T) is implied by
 `Picard.IsTangentVectorAt p x t`, by the imported lemma
-`Picard.IsTangentVectorAt.isRationalPoint`. It is kept to match the requested
+`Picard.IsTangentVectorAt.isRationalPoint`. It is kept to match the
 interface. Similarly, `[LocallyOfFiniteType p]` follows from `[IsProper f]`,
 `[LocallyOfFiniteType q]` and `f ≫ q = p`, because morphisms locally of finite
 type are stable under composition. It is also kept to match the interface. No
@@ -163,9 +163,10 @@ may follow a different valid route.
    surjectivity of `O_{Y,f(x)} → O_{X,x}`.
 
 This route explains why no properness of `Y` is needed. Every step uses only
-the closed points of `Y` and the properness of `f`. A separate statement task
-of the same project states a local version of the criterion, near the image of
-one rational point. This module does not import or depend on it.
+the closed points of `Y` and the properness of `f`. The separate module
+`ProperRationalImmersionLocalClosedImmersionStatement` states a local version
+of the criterion, near the image of one rational point. This module does not
+import or depend on it.
 
 ## Provenance
 

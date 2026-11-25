@@ -2,8 +2,9 @@
 
 This module proves one comparison between constructions that already exist in the
 Library. It is supporting work for
-`Langlands.AlgebraicGeometry.Modules.AbelianSheafComparison.RelativeAbelianSheafCohomologyPullbackStatement`
-(Task 6104). It does not prove that statement.
+`Langlands.AlgebraicGeometry.Modules.AbelianSheafComparison.RelativeAbelianSheafCohomologyPullbackStatement`,
+which is proved as `AbelianSheafComparison.relativeAbelianSheafCohomologyPullback` (module
+`RelativeAbelianSheafCohomologyPullbackProof`). It does not prove that statement.
 
 ## Main result
 
@@ -21,7 +22,7 @@ Notation:
 - `G` forgets the `R`-module structure.
 - `U = toAbSheaf X.left`: the underlying abelian sheaf.
 - `Z = constantIntegers`: the constant sheaf `ℤ_X`.
-- `relativeDerivedHomComparison X.hom n` is the published natural transformation
+- `relativeDerivedHomComparison X.hom n` is the Library's natural transformation
   `G(Hⁿ(RF K)) ⟶ Hom_{D(Ab(X))}(Z, U(K)[n])` on the bounded below derived category
   (module `RelativeDerivedHomComparison`).
 
@@ -82,7 +83,7 @@ for arbitrary `F`, `G`, `U`, `Z` and `e` as in `DerivedSectionsHomComparison`.
    `AcyclicResolution.compComparison`. `resolutionLiftInt M` is its integer-indexed extension.
    `resolutionImageAugmentation_comp_resolutionLiftInt` checks in degree zero that the augmentation
    composed with this lift is `J.ι'`.
-2. `relativeCohomologyIso_hom_eq` unfolds the published `relativeCohomologyIso` on the chosen
+2. `relativeCohomologyIso_hom_eq` unfolds the Library's `relativeCohomologyIso` on the chosen
    resolutions. `extAddEquivHomology_relativeHAddEquiv` combines this with
    `relativeCohomologyIso_relativeHAddEquiv` and `HAddEquiv_eq_of_resolution`. It identifies
    `extAddEquivHomology ℤ_X J n x` with the image of the relative class under the termwise

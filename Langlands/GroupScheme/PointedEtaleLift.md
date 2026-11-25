@@ -1,7 +1,5 @@
 # Lifting a prescribed fibre point of a smooth group scheme
 
-Worker 648.
-
 This is an internal construction derived from the published
 `Langlands.AlgebraicGeometry.pointedEtaleSection` in
 `Langlands/AlgebraicGeometry/SmoothPointedEtaleSectionConstruction.lean` and the

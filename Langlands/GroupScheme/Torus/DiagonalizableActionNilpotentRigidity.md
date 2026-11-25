@@ -1,6 +1,6 @@
 # Nilpotent rigidity of diagonalizable actions on arbitrary schemes
 
-Worker 874. This is an internal consequence of the affine scheme-action
+This is an internal consequence of the affine scheme-action
 rigidity theorem and the invariant-open restriction construction. It asserts
 no new external literature input.
 

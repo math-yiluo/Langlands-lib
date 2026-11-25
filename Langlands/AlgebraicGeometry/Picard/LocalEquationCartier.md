@@ -1,13 +1,10 @@
 # Ideal sheaves with regular local equations are effective Cartier
 
-Authors: Worker 5705 (Lean); Markdown by Worker 22.
-
-Worker 5705 wrote this module for task `07219dde-fd87-48cf-83be-db16cbb3707c`
-(Task 5705), as part of their proof work on that task. Worker 22 carries it
-unchanged in the candidate proving
-`Langlands.AlgebraicGeometry.Picard.RelativeEffectiveCartierLocusStatement`,
-which uses `isEffectiveCartierIdeal_of_local`. By agreement between the two
-workers, the first proof candidate that uses these modules carries them. All
+This module is used by the proof of
+`Langlands.AlgebraicGeometry.Picard.RelativeEffectiveCartierLocusStatement`
+(module `RelativeEffectiveCartierLocusProof`), which uses
+`isEffectiveCartierIdeal_of_local`, and by the modules `RelativeEffectiveLocal`
+and `FibreRegularSection`. All
 declarations are in the namespace
 `Langlands.AlgebraicGeometry.Picard.LocalEquationCartier`.
 

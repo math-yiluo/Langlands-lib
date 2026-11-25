@@ -1,6 +1,6 @@
 # The canonical compatible stable image of actual localization
 
-Authors: Worker 709 and Worker 977. This is a statement-only internal
+This is a statement-only internal
 refinement of the stable-image conclusion of Renard's final C.II
 proposition. It contains no proof. The two proposition definitions are
 in namespace `Langlands.Renard.AlgebraActionLocalization`.
@@ -23,20 +23,21 @@ The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 read these original passages and visually inspected PDF p. 285.
-Worker 977 independently verified the source hash and reread PDF pp. 285,
+These original passages were read and PDF p. 285 visually inspected.
+A second reader independently verified the source hash and reread PDF pp. 285,
 282, 258–259 and 12.
 The global conventions on printed p. 6 / PDF p. 12 allow nonunital rings
 and actions, including actions of unital rings without a unit law. The
-current project and Library have no separate errata note for this source.
+Library's errata note for this source,
+`notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`, concerns chapters V–VII and has no entry for these passages.
 PDF pp. 18–19 of the registered older supplementary source
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-were also read by both authors; Worker 977 verified that hash. They
+were also read by both readers; the second reader verified that hash. They
 contain no correction to the final C.II proposition or change to those
 nonunital conventions. The 2026 text governs.
 
-This unit isolates the identification once a positive stable power is
+This statement isolates the identification once a positive stable power is
 given. Its removal of finiteness and commutativity hypotheses, the
 canonical normalization of the equivalence and its uniqueness are
 **internal derived refinements**, not assertions quoted verbatim from
@@ -72,9 +73,9 @@ Noetherianity, finite-dimensionality or nontriviality premise.
 
 Put `a = f.toLinearMap`. Its commutation proof is the actual equation
 `ha b z = f.map_action' b z`. The action on the actual localization is
-`σ = localizedAction a ρ ha`, from the published
+`σ = localizedAction a ρ ha`, from
 `Langlands.Algebra.RenardAlgebraActionLocalization`. The carrier,
-canonical map and localized operator are the published `Localized a`,
+canonical map and localized operator are the Library's `Localized a`,
 `iota a` and `localizedEnd a`, unchanged. No alternative localization
 carrier, action or universal-property certificate is supplied.
 
@@ -87,14 +88,14 @@ let powers : ℕ → LinearIntertwiner ρ ρ := fun m =>
     ((CompatibleUnitization.ofLinearIntertwiner f) ^ m)
 ```
 
-The published unitization supplies a unital module for this local
+The unitization supplies a unital module for this local
 construction even when B or its action is nonunital. Its identity and
 composition are those of the actual unitized module endomorphisms;
 the power at zero is the identity. This introduces no global instance
 or new power constructor. The expected underlying map is `a ^ m`;
 this coherence is an intrinsic consequence of the public conversion
 identities and composition laws, not an additional premise or an import
-of any unreviewed power-chain statement.
+of any power-chain statement.
 
 Set `K = (powers n).ker` and `I = (powers n).range`, using the actual
 `CompatibleSubmodule ρ` kernel and range. `I.toSubmodule` is its
@@ -157,26 +158,28 @@ map surjectivity, equivalence or uniqueness is assumed.
 ## Reuse and remaining scope
 
 The only project imports are the four public construction and stability
-modules listed in the Lean file. No unreviewed criterion or power-chain
-draft is imported. A later proof may transport the published ordinary
+modules listed in the Lean file. No criterion or power-chain
+statement is imported. A proof may transport the ordinary
 stable-image identification through the underlying power coherence,
 reflect complementarity through the compatible-submodule lattice
 embedding, and prove the action equation using the inverse normalization
-and `localizedAction_iota`. This is a potential proof route, not a proof
-provided by this unit.
+and `localizedAction_iota`; the proof in
+`Langlands.Algebra.RenardCompatibleStableImageProof` takes this route. This
+is a proof route, not a proof provided by this module.
 
 The source's nonunital finite-generation and Noetherian conventions,
 eventual stability from those hypotheses, and the full general
-source-facing C.II proposition remain separate parent obligations. The
+source-facing C.II proposition are separate from this statement;
+`RenardSourceFiniteLocalizationStatements` states that proposition under each
+candidate finiteness reading. The
 B-linear universal property with arbitrary targets, power-chain criteria
-and quotient exact sequences are separate units. Neither this
+and quotient exact sequences are outside this statement. Neither this
 statement-only refinement nor its compilation completes any of them or
 the whole book.
 
 ## Development checks
 
-Worker 709 compiled the canonical module in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with zero errors or warnings.
+The canonical module was compiled with zero errors or warnings.
 The closed target returns `Prop`, has independent level parameters
 `uB uV`, and uses only `propext`, `Classical.choice` and `Quot.sound`.
 A separate private diagnostic overlay printed both complete declaration
@@ -184,10 +187,10 @@ bodies and unapplied types, including the commutation proof and local
 variable types, and checked both orders of distinct universe
 instantiations. It confirmed that all three equations are inside unique
 existence and that the closed statement has exactly the two premises
-displayed above. The diagnostics are excluded from this unit.
+displayed above. The diagnostics are excluded from this module.
 
-Worker 977 independently rechecked the unchanged Lean file in the same
-environment, with zero errors and zero warnings. The closed target
+A second reader independently rechecked the unchanged Lean file,
+with zero errors and zero warnings. The closed target
 returns `Prop`, has level parameters `uB uV`, and uses only the three
 axioms above. A second private diagnostic overlay printed both complete
 bodies with proof terms and local variable types. It shows
@@ -202,7 +205,6 @@ and (3, 2). It checked by `Iff.rfl` that the closed target unfolds to the
 displayed binder telescope with exactly the two premises. It also proved
 that for every m the underlying map of `powers m` is `a ^ m`, which
 confirms the intended power coherence. These overlays are excluded from
-this unit.
+this module.
 
-These are author development checks, not independent semantic acceptance
-or proof evidence.
+These are development checks, not proof evidence.

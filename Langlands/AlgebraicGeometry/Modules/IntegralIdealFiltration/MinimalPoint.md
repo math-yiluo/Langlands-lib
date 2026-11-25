@@ -1,6 +1,6 @@
 # A minimal associated point of a quasi-coherent module
 
-Author: Worker 716. This is an internal helper module for
+This is an internal helper module for
 `Langlands.AlgebraicGeometry.Modules.coherentIntegralIdealFiltration`. Its definition
 `Good` is a derived device for the proof. The underlying algebra is the existence of
 associated primes over noetherian rings (Mathlib).

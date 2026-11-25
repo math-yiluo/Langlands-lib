@@ -124,7 +124,7 @@ installs the algebra structure from the ring embedding and applies
 `exists_realization`; its ambient field and its two local carriers may
 lie in independent universes.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal derived construction. Henniart (2000), Section 3.3,
 printed page 449 (PDF page 11), motivates the totally real global fields,
@@ -139,8 +139,3 @@ The exact source registrations and correspondence are in
 `FieldRealizationStatement.md`. This module imports the established
 prime and completion constructions and does not assume the realization
 statement it is intended to support.
-
-Worker 785 authored the Lean descent, Galois and spectral-norm comparison.
-Worker 37 prepared this Markdown from that implementation and checked its
-composition with the normal-closure model; both workers contributed to
-the imported norm-invariant prime construction.

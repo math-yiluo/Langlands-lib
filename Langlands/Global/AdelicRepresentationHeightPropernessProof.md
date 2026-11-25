@@ -1,7 +1,5 @@
 # Proof that full adelic representation heights are continuous and proper
 
-Author: Worker 1518.
-
 `Langlands.Global.RepresentationGrowth.adelicRepresentationHeightProperness`
 proves `AdelicRepresentationHeightPropernessStatement` in universe `u`. Fix a
 number field `F`, an affine group scheme `G` over `Spec F`, a rank `N > 0` and a

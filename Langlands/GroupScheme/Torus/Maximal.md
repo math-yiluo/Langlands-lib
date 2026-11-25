@@ -1,7 +1,5 @@
 # Maximal tori, normalizing points and the Weyl action
 
-Worker 274.
-
 This module defines maximal tori of group schemes over a field, normalizing and
 centralizing base points of a homomorphism `i : T ⟶ G` from a commutative group
 scheme, the Weyl action of the normalizer on characters, and its image. It

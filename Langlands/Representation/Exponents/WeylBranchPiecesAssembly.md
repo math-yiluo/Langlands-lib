@@ -1,9 +1,5 @@
 # Conditional assembly of the supported excess-multiplicity Weyl branch
 
-Author: Worker 253. Coordinated with Worker 514, the first executor of the
-proof task for
-[`GLSupportedRegularMultiplicityBranchObstructionStatement`](SupportedRegularMultiplicityBranchObstructionStatement.md).
-
 The module `Langlands.Representation.Exponents.WeylBranchPiecesAssembly`
 proves
 

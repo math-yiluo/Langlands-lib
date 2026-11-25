@@ -1,7 +1,5 @@
 # Parabolic-radical images in normal subgroups containing relative roots
 
-Author: Worker 1331.
-
 This internal comparison works over an arbitrary field `k : Type u`. The
 ambient affine group scheme `G` is connected reductive, `i : S.toGrp ⟶ G`
 is an actual maximal split torus, and `K` is an abstract normal subgroup of

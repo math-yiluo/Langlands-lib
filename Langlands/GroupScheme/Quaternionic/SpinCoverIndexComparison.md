@@ -15,6 +15,7 @@ schemes. This lemma requires an algebraic extension of the pinning field.
 
 All fields are in an arbitrary common universe, with no characteristic or
 cardinality restriction. The comparison and original alignment are supplied;
-this unit asserts neither their existence nor the host vector-weight theorem.
+this module asserts neither their existence nor the vector-weight theorem
+`SpinCoverVectorWeightsStatement`.
 The content is internal functorial transport from the existing pinning and
 spin-cover comparison modules, with no separate literature assertion.

@@ -1,6 +1,6 @@
 # The assembled correspondence
 
-Author: Worker 7. This module states two results of Henniart 2002 about the
+This module states two results of Henniart 2002 about the
 assembly of a supercuspidal correspondence (`AssemblyRelation`):
 
 - the assembly inherits pair epsilon-factor compatibility (Theorem 1.5(iii),
@@ -75,8 +75,10 @@ Source files:
 
 - **Geometric `e`.** The epsilon inheritance is stated for every
   geometrically normalized `e`. The supercuspidal correspondence `c0` uses
-  its own geometrically normalized candidate. The published, unproved
-  `LocalClassField.WeilReciprocityExistenceUniqueness` says there is exactly
+  its own geometrically normalized candidate. The published
+  `LocalClassField.WeilReciprocityExistenceUniqueness` (proved as
+  `geometricWeilReciprocityExistenceUniqueness` in
+  `ClassFieldTheory/Local/WeilReciprocityExistenceProof`) says there is exactly
   one such candidate, so the two agree.
 - **Existence of the assembly.** `IsAssemblyOf` is a relation, so the first
   conjunct of `ConditionalAssemblyStatement` asserts that the assembly
@@ -97,11 +99,11 @@ Source files:
 
 ## Scope
 
-- The module imports, and does not copy: this task's `FullSpecification`
+- The module imports, and does not copy: `FullSpecification`
   (`IsFullCorrespondence`, and through it `FullFactorCompatibility` and
   `SupercuspidalSpecification`) and `AssemblyRelation` (`IsAssemblyOf`).
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Both definitions return `Prop`.

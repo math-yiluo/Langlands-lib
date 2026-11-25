@@ -50,7 +50,7 @@ inside `namespace Langlands.AbelianScheme`, with
 `Langlands.AlgebraicGeometry.Picard.GeometricPicardZero` and
 `Mathlib.FieldTheory.IsAlgClosed.Basic`.
 With `pp.fieldNotation false`, `pp.proofs true` and `pp.funBinderTypes true`,
-`#print` in the approved environment reports:
+`#print` reports:
 
 ```text
 def Langlands.AbelianScheme.AlgClosedFieldAmpleTranslationStabilizerFiniteStatement.{u} : Prop :=
@@ -261,11 +261,13 @@ proved in the Library as `tensorPow_isLocallyFreeRankOne`. This statement
 does not take either comparison as a premise; a proof that needs them can
 import these published theorems.
 
-## Proof obligations for the later exact proof
+## Proof obligations for the exact proof
 
-After independent acceptance and publication, a separate exact-target proof
+A separate exact-target proof
 must have this entire named proposition as its type, with no extra outer
-hypotheses. A conditional finiteness assembly is not such a proof.
+hypotheses. A conditional finiteness assembly is not such a proof. The
+Library's exact proof is `Langlands.AbelianScheme.algClosedFieldAmpleTranslationStabilizerFinite`
+(module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldAmpleTranslationStabilizerFiniteProof`).
 
 The source proof of Lemma (2.19) sets `Y = K(L)^0_red`, an abelian
 subvariety by Fact (2.13). The restriction `L'` of `L` to `Y` is ample. By
@@ -315,9 +317,9 @@ Read as a Library proof, either route leaves these obligations.
   proved in the Library as `fieldLineBundleTriviality`.
 - The Theorem of the Square or the Cube. The published
   `Langlands.GroupScheme.FieldCubePullbackStatement` is the relevant cube
-  statement. The Library has only the conditional assembly
-  `Langlands.GroupScheme.fieldCubePullbackOfIsomorphism` for it, not an
-  unconditional proof.
+  statement. It is proved in the Library as `Langlands.GroupScheme.fieldCubePullback`
+  (module `Langlands.AbelianScheme.FieldCubePullbackProof`), through the conditional
+  assembly `Langlands.GroupScheme.fieldCubePullbackOfIsomorphism`.
 - The Mumford-bundle restriction `Λ(L)|_{X×{y}} ≅ t_y^*L ⊗ L^{-1}` for
   actual pullbacks, tensor products and chosen inverses. The pullback-tensor
   comparison it needs is proved in the Library as
@@ -326,10 +328,7 @@ Read as a Library proof, either route leaves these obligations.
   point-level closedness and See-saw arguments, together with the structure
   of closed subgroups of abelian varieties used in Fact (2.13).
 
-Any genuinely missing substantial construction must be split into
-definition, statement and proof units, in that order. Existing ampleness,
-cube, tensor and pullback work should be reused, not duplicated. This
-module discharges none of these obligations.
+This module discharges none of these obligations.
 
 ## Scope
 
@@ -341,16 +340,14 @@ condition on `K`. The statement adds no symmetry, projectivity, existing
 dual or Picard scheme, scheme-theoretic stabilizer, isogeny, finiteness or
 tensor-preservation premise.
 
-## Role and authorship
+## Role
 
-This is a focused prerequisite of Worker 516's exact proof
-`0d978728-03a8-4f05-b45c-8ec83a017647` of
+This is a focused prerequisite of the exact proof
+`Langlands.AbelianScheme.algClosedFieldTranslationDifferenceLifting` (module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldTranslationDifferenceLiftingProof`) of
 `Langlands.AbelianScheme.AlgClosedFieldTranslationDifferenceLiftingStatement`.
 That proof needs only finiteness of the rational points preserving an
 ample bundle, which is its obligation 5. It keeps its final assembly and
-will use this statement's eventual theorem by Lean name. This statement
+uses this statement's theorem `algClosedFieldAmpleTranslationStabilizerFinite` by Lean name. This statement
 does not prove the lifting statement, and the lifting statement is not used
 to justify it.
-
-Worker 920 implemented this pair. Worker 516 supplied the focused
-specification, including the binders and the conclusion.

@@ -34,7 +34,7 @@ theorem range_subset_identitySet_of_evalZero_eq_one
     infer_instance
   have : GeometricallyConnected
       (AffineLine.scheme (Spec (CommRingCat.of k))).hom :=
-    GeometricallyIrreducible.geometricallyConnected _
+    GeometricallyIrreducible.geometricallyConnectedFLT _
   rintro _ ⟨z, rfl⟩
   let p : (T ⊗ AffineLine.scheme (Spec (CommRingCat.of k))).left ⟶ T.left :=
     pullback.fst T.hom (AffineLine.scheme (Spec (CommRingCat.of k))).hom

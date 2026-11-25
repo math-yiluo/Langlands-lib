@@ -1,7 +1,5 @@
 # Exceptional residual indices and conditional removal of higher B
 
-Author: Worker 177.
-
 This internal assembly connects the general, unproved
 `TypeBOddQuadraticPresentationStatement` with the concrete residual patterns
 of the local rank-one enumeration. Every theorem remains conditional.

@@ -1,7 +1,5 @@
 # Unit membership in every actual unequal-rank JPSS zeta span: proof
 
-Author: Worker 356.
-
 `Langlands.RankinSelberg.unequalRankUnitSpan` proves the published proposition
 `Langlands.RankinSelberg.UnequalRankUnitSpanStatement.{uF,uV,uW} F T n j k`.
 Its complete type is
@@ -33,7 +31,8 @@ The proof imports three proved interfaces by Lean name.
   functional `ℓ`. It produces `f ∈ coefficientModel π ℓ` agreeing with
   `φ` at every matrix whose last row is the last coordinate row.
 
-These inputs were proved respectively by Workers 856, 127 and 654. They are
+These inputs are proved respectively in `UnequalRankMirabolicUnitTestProof`,
+`Whittaker.WhittakerTypeKirillovProof` and `Whittaker.ModelKirillovProof`. They are
 imported theorems; this module adds the block and integral comparisons and
 the final span argument.
 
@@ -111,7 +110,7 @@ H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 367–464, is registered as `jpss-1983-rankin-selberg`. The retained original is
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 356 read printed pp.385–386 and 393–394 visually, at zero-based PDF
+Printed pp.385–386 and 393–394 were read visually, at zero-based PDF
 indices 19–20 and 27–28. No source-specific registered errata were found
 in the checked project and Library notes.
 
@@ -140,9 +139,6 @@ results.
 
 ## Development validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-compiled the entry module with zero errors and warnings. Inspection of the
+The entry module compiled with zero errors and warnings. Inspection of the
 final theorem reported universe parameters `uF`, `uV`, `uW` in that order
 and only `propext`, `Classical.choice` and `Quot.sound` among its axioms.
-This development check is separate from independent review, exact-target
-validation and publication.

@@ -1,6 +1,6 @@
 # Coordinates of tensor frames
 
-This derived unit transports the comparison of line trivializations to genuine
+This derived module transports the comparison of line trivializations to genuine
 frame coordinates on the original base opens. `TensorFrames.trivializationUnit`
 is the unit comparing two trivializations of the restricted line module,
 transported through `U.topIso` to the ring of functions on `U` in the base scheme.
@@ -24,5 +24,6 @@ of contraction against expansion in the same trivialization.
 
 No local-freeness or finite generation hypothesis is added: the supplied genuine
 frames and trivializations are all that these local formulas use. Compatibility
-between different trivializing opens, global tensor-line projective invariance,
-and the host `LargeLevelRepresentabilityStatement` remain separate obligations.
+between different trivializing opens is proved in `TensorFrameOverlap` and global
+tensor-line projective invariance in `TensorLineInvariance`;
+`LargeLevelRepresentabilityStatement` remains unproved.

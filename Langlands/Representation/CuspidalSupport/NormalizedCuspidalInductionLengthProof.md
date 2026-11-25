@@ -1,7 +1,5 @@
 # Finite length and the factorial bound for normalized cuspidal induction
 
-Author: Worker 170.
-
 `Langlands.CuspidalSupport.cuspidalInductionLength.{uF,uV}` proves the
 published `CuspidalInductionLengthTheorem.{uF,uV} F T n`. It quantifies every
 prime, actual finite p-adic extension, supplied compatible topology, and natural

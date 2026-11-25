@@ -69,5 +69,3 @@ function. This intersection is open and is compact as a closed subset of the
 previous compact subgroup. It remains contained in `U`. The existing
 `biInvariant_antitone` transports both the new function's invariance and the
 induction hypothesis to the smaller subgroup.
-
-Worker 108 authored the proof and this explanation.

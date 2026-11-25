@@ -1,7 +1,5 @@
 # Cohomology of natural cocycles on a fixed cover
 
-Worker 863.
-
 This internal construction gives the Library's natural cocycles the equivalence
 relation used by `NumberFieldHassePrincipleStatement`. It introduces no arithmetic
 local-to-global assertion.

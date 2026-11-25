@@ -2,7 +2,7 @@
 
 This internal adapter supports the proof of Henniart (2000), Corollaire 2.3,
 whose exact target is
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedTemperedFactorStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedTemperedFactorStatement`.
 Its constructions use the published analytic temperedness and JPSS pair-factor
 interfaces.
 

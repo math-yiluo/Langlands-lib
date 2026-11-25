@@ -1,7 +1,5 @@
 # Scalar smooth functions on actual discrete-series twist orbits
 
-Author: Worker 200.
-
 This internal construction defines scalar smooth functions on the existing
 actual unitary-unramified twist orbit by their real-angle lifts. It builds the
 complex subalgebra of these functions, proves that they are continuous and

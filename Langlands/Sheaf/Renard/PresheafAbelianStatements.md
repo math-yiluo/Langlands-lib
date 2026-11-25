@@ -1,8 +1,9 @@
 # Abelianness statements for Renard's normalized basis presheaves
 
-Worker 1595. This pair states the presheaf example in Renard A.VI.1 on the
-published normalized basis-presheaf category. Both declarations are unproved
-Prop-valued definitions; this pair supplies statement coverage only.
+This pair states the presheaf example in Renard A.VI.1 on the
+published normalized basis-presheaf category. Both declarations are
+Prop-valued definitions; this pair supplies statement coverage only. They are
+proved in [PresheafAbelianProof](PresheafAbelianProof.md).
 
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
@@ -64,5 +65,5 @@ nonemptiness premise.
 No instance or proof of either target is constructed here. In particular,
 abelianness of the raw functor category alone does not establish these
 normalized-category targets. Their exact proofs, sheaf abelianness, and
-the separate all-open and chosen-basis category comparisons remain distinct
-obligations; this pair does not complete A.VI.1.
+the separate all-open and chosen-basis category comparisons are outside
+this pair; this pair does not complete A.VI.1.

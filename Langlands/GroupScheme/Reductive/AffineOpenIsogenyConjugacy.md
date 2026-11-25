@@ -47,7 +47,8 @@ reduction. Its conclusion is the unchanged
 explicit intrinsic compatibility hypothesis. The general-base reduction
 includes the reverse implication and uniqueness modulo the scheme-theoretic
 centre. This module does not prove the intrinsic proposition and therefore
-does not constitute an unconditional proof of the host target.
+does not constitute an unconditional proof of
+`ReductiveIsogenyTorusRigidityStatement`.
 
 The provenance is direct composition of the existing neighbourhood-character
 cover construction, actual affine root-datum and free-weight transport,

@@ -136,7 +136,6 @@ theorem RankOneLaws.of_baseChange
     have hminus : Units.map (cover Z).left.appTop.hom.toMonoidHom
         (-1 : Γ(Z.left, ⊤)ˣ) = -1 := by
       convert Units.map_neg_one (cover Z).left.appTop.hom using 1
-      rfl
     simp only [MonObj.comp_mul, G.constantPoint_naturality, ← Category.assoc,
       comp_cocharPoint, hminus]
     have e := congrArg (GroupScheme.baseChangePointsEquiv (algebraBaseMap R A) G (test Z))

@@ -1,6 +1,6 @@
 # Homomorphisms from unipotent group schemes to split tori
 
-Worker 1326 adapted the coordinate argument authored by Worker 207 in the
+This module adapts the coordinate argument of the
 published `Torus.SplitReductiveProof` module. This is an internal consequence of
 that module's coordinate representation construction and the existing
 `IsUnipotent` definition; it makes no new literature assertion.

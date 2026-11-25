@@ -52,6 +52,8 @@ local instance residueRootIntegerTower :
 
 local instance residueRootIntegerLocalHom :
     IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
+  haveI : IsLocalHom (algebraMap F (inertiaFixedField F)) :=
+    isLocalHom_of_exists_map_ne_one ⟨0, by simp⟩
   Valuation.HasExtension.instIsLocalHomValuationInteger
     (vR := ValuativeRel.valuation F) (vS := fixedFieldValuation F)
 
@@ -272,7 +274,7 @@ theorem exists_quotient_root_of_vanishing_affineRoot
     apply hne
     have ha0 : T₀.genericCharacter m = 0 := by
       rw [hm0]
-      exact map_zero (T₀.genericCharacterEquiv hT₀)
+      exact AddEquiv.map_zero (T₀.genericCharacterEquiv hT₀)
     rw [ha0] at hres
     rw [hblin]
     apply LinearMap.ext

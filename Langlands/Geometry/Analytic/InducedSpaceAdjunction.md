@@ -1,7 +1,5 @@
 # Induction of analytic spaces as a left adjoint of restriction
 
-Author: Worker 21.
-
 The module `InducedAnalyticSpace` constructs Berkovich's induced space
 `X_{G/H}` of an analytic space `X` with an action of a subgroup `H ≤ G`. It
 proves the universal property as a bijection `InducedSpace.homEquiv`. This

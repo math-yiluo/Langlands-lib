@@ -1,6 +1,6 @@
 # Character-restriction bridges for relative Weyl faithfulness
 
-Author: Worker 37. This internal construction imports the published canonical
+This internal construction imports the published canonical
 full-lattice actions and rational character restriction from
 `RelativeCentralDirections` and `RelativeRank`, together with the published
 full-character faithfulness and root-kernel comparison.
@@ -8,7 +8,9 @@ full-character faithfulness and root-kernel comparison.
 The new construction and proofs are internal consequences of the actual
 published character, quotient and tensor constructions. They work for an
 arbitrary field in universe `u`. The structural root/character complement and
-the exact `RelativeRootSystemStatement` remain open.
+the exact `RelativeRootSystemStatement` are not proved here; the Library proves
+them as `relativeCharacterRootComplement` (`RelativeCharacterRootComplementProof`)
+and `relativeRootSystem` (`RelativeRootSystemProof`).
 
 `rationalCharacterRestrictRat_range` identifies the range of rationalized
 restriction with the rational span of restrictions of integral group characters.
@@ -42,9 +44,10 @@ existing root-span/full-character kernel comparison. The exact full-character
 kernel then places that representative in the centralizer. The final
 `relativeWeylAction_injective_of_isCompl` supplies this joint span from the
 intrinsic complement. Both are explicitly conditional supporting results:
-the complement for arbitrary connected reductive groups remains a separate
-structural proof obligation, and root-pairing construction and Weyl-image
-identification remain separate obligations even after faithfulness is obtained.
+the complement for arbitrary connected reductive groups is a separate
+structural statement, proved as `relativeCharacterRootComplement`, and
+root-pairing construction and Weyl-image identification are separate from
+faithfulness; `relativeRootSystem` gives both.
 All these arguments retain empty relative-root sets.
 
 `IsSplitTorus.relativeWeylEquivRootActionRange` constructs a group isomorphism
@@ -56,4 +59,5 @@ the inverse maps an image element back to its unique quotient class. The two
 displayed compatibility lemmas identify the coerced forward map and the action
 of the inverse. No finiteness or nonempty-root premise is introduced. This
 isomorphism does not identify that range with the Weyl group of a root pairing:
-constructing that pairing and proving the image equality are separate tasks.
+constructing that pairing and proving the image equality are separate results,
+both contained in `relativeRootSystem`.

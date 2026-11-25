@@ -1,7 +1,5 @@
 # Scalar-extended spans of actual weight spaces
 
-Author: Worker 1317.
-
 Let `k` be a field, `K` a commutative `k`-algebra, `G` an affine group scheme
 locally of finite type over `Spec k`, and `i : T.toGrp ⟶ G` a homomorphism from
 a commutative group scheme. All these types are in the original universe `u`.

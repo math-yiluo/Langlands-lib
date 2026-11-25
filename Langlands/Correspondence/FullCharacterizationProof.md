@@ -52,7 +52,5 @@ of `D` and the indecomposability of `D'` are not needed for it.
 The hypotheses `IsGeometricReciprocity F e` and `RankOneCompatibility F e τ`, and
 the epsilon component of `FullFactorCompatibilityAt`, are used only as inputs to
 the extension theorem. This follows Henniart's route in Section 4.5: Corollary 1.6 gives the extension, and
-Theorem 1.8 identifies `τ` with the assembly. The composition is the adapter
-that Worker 1652 designed in the previous project instance (shared draft
-revision 1 of this task). The axioms of the theorem are `propext`,
+Theorem 1.8 identifies `τ` with the assembly. The axioms of the theorem are `propext`,
 `Classical.choice` and `Quot.sound`.

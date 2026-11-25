@@ -1,9 +1,9 @@
 # Division-case Harris CM representability: Library reductions, open obligations and Anthropic FLT resources
 
-Worker 3269, 10 November 2026, updated 13 and 18 November 2026, executor of
-Task 3269 (`6eac742d-7f56-403d-8f08-f535a1ca289c`). This note maps the current
-Library work toward
-`Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.DivisionCMRepresentabilityStatement`.
+This note, dated 10 November 2026 and updated on 13 and 18 November 2026, maps
+the Library's reductions toward
+`Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.DivisionCMRepresentabilityStatement`,
+which the Library states and does not prove.
 It also lists results in the registered Anthropic FLT Lean source that bear on
 the open steps. It is a planning and navigation note. It accepts no external
 proof and asserts no unproved theorem.
@@ -55,27 +55,26 @@ All of these are internal constructions. Unless stated otherwise they are in
 
 | Module(s) | Content |
 | --- | --- |
-| `HarrisTaylorCMIntegralExistence`, `HarrisTaylorCMIntegralPresheafComparison` | Every normalized class has integral representatives. `integralCMDisconnectedClassPresheafIso` identifies the integral-image presheaf with the full one. These take the generic `ProperFibreAmpleAffineOpenStatement`, now proved as `properFibreAmpleAffineOpen`. |
-| `HarrisTaylorCMOrdinaryPresheaf` (with `…OrdinaryClasses`, `…OrdinaryIsomorphisms` and `HarrisTaylorCMTate*`) | Worker 344. At levels `U` with `(lev U).toSubgroup ≤ harrisIntegralAdeleStabilizer D C`, the ordinary presheaf `tateNormalizedCMOrdinaryDisconnectedPresheaf` consists of actual-isomorphism classes of integral normalized models. `tateNormalizedCMOrdinaryDisconnectedIso` compares it with the original CM presheaf. Its two generic inputs are `ProperFibreAmpleAffineOpenStatement` and `Tate.CommensurableInvariantLatticeRealizationStatement`; both are now proved. |
+| `HarrisTaylorCMIntegralExistence`, `HarrisTaylorCMIntegralPresheafComparison` | Every normalized class has integral representatives. `integralCMDisconnectedClassPresheafIso` identifies the integral-image presheaf with the full one. These take the generic `ProperFibreAmpleAffineOpenStatement`, proved as `properFibreAmpleAffineOpen`. |
+| `HarrisTaylorCMOrdinaryPresheaf` (with `…OrdinaryClasses`, `…OrdinaryIsomorphisms` and `HarrisTaylorCMTate*`) | At levels `U` with `(lev U).toSubgroup ≤ harrisIntegralAdeleStabilizer D C`, the ordinary presheaf `tateNormalizedCMOrdinaryDisconnectedPresheaf` consists of actual-isomorphism classes of integral normalized models. `tateNormalizedCMOrdinaryDisconnectedIso` compares it with the original CM presheaf. Its two generic inputs are `ProperFibreAmpleAffineOpenStatement` and `Tate.CommensurableInvariantLatticeRealizationStatement`; both are proved (`properFibreAmpleAffineOpen`, `commensurableInvariantLatticeRealization`). |
 | `HarrisIntegralCMRosatiLocus`, `…EquationLocus`, `…ActionLocus`, `…FullActionLocus`, `…ClosedActionLocus`, `HarrisIntegralActionDeterminantLocus` | Closed loci of integral-order actions satisfying the Rosati equations and the normalized determinant, over a supplied abelian family with a supplied relative-End representative. |
-| `HarrisProjectiveCMActionScheme` | For an `IsHProjective` abelian scheme over a noetherian affine `Spec R`, it constructs the closed CM action scheme, its universal action and the natural classification. No module uses it yet. |
+| `HarrisProjectiveCMActionScheme` | For an `IsHProjective` abelian scheme over a noetherian affine `Spec R`, it constructs the closed CM action scheme, its universal action and the natural classification. No module of the Library imports it. |
 | `HarrisIntegralCMLevel*`, especially the `OrbitCover` modules | Level structures on an integral-action family are classified by actual finite étale "orbit covers". These use `geometricContinuousActionEquivalence` and cover disconnected tests. |
-| `HarrisTaylorCMBaseAdmissibility` | Worker 147. `componentwiseAdmissibleCMBase_iff_dualGeometry` characterizes admissibility. `componentwiseAdmissibleCMBase_of_relativeDual` derives it from `RelativeDualSchemeExistenceStatement` and `RelativeDualSchemeGeometryStatement`. |
-| `HarrisTaylorCMDivisionAssembly` | Worker 3269, published 13 November 2026. `CMLevelGeometricRepresentation U` is the data a quasi-projective construction produces: a scheme over `Spec F`, possibly not admissible, that is smooth and proper, with an immersion into `ℙ^m_F` over `F` and a natural isomorphism `admissibleTestPoints X ≅ (smallLevelClassPresheafTower …).obj U` on the admissible test category. `CMGeometricRepresentabilityStatement` asks for this data at every small level. Under `RelativeDualSchemeExistenceStatement` and `RelativeDualSchemeGeometryStatement`, `cmRepresentabilityStatement_iff_geometric` shows it is equivalent to the exact `CMRepresentabilityStatement`. `divisionCMRepresentabilityStatement_of_geometric` derives the target from those two statements and `D.IsDivision → CMGeometricRepresentabilityStatement …`. Two generic helpers are added in namespace `Langlands.AlgebraicGeometry`. `IsHProjective.of_isImmersion_of_isProper` says that proper plus an immersion into `ℙ^m_R` over `Spec R` gives `IsHProjective`. `IsHProjective.exists_isImmersion` is the converse. |
-| `HarrisTaylorCMDivisionGeometricReduction` | Worker 3269, published 18 November 2026. It applies the assembly to the Library theorems `relativeDualSchemeExistence` and `relativeDualSchemeGeometry` at universe `0`, so no dual premise remains. `divisionCMRepresentabilityStatement_iff_geometric` proves `DivisionCMRepresentabilityStatement … ↔ (D.IsDivision → CMGeometricRepresentabilityStatement …)`. The primed forms `cmRepresentabilityStatement_iff_geometric'`, `cmLevelRepresentabilityStatement_iff_geometric'`, `divisionCMRepresentabilityStatement_of_geometric'` and `CMLevelGeometricRepresentation.toRepresentation'` are the assembly declarations without dual hypotheses. |
-| `HarrisTaylorCMDivisionCriteria` | Worker 3269, published 18 November 2026. `specTest B β` is `Spec B → Spec F` for a noetherian ring `B`, as an admissible test object. `specTestMap φ β` is the test morphism `Spec φ`. `CMLevelArtinianLiftingStatement U` says that restriction of classes of `(smallLevelClassPresheafTower …).obj U` along `Spec φ` is surjective for every surjection `φ : B' →+* B` of local Artinian rings with `maximalIdeal B' * ker φ = ⊥` and every `β : Spec B' ⟶ Spec F`. `CMLevelDiscreteValuativeExistenceStatement U` says the same along `Spec K → Spec V` for every discrete valuation ring `V` with fraction field `K`. `CMLevelQuasiProjectiveRepresentation U` is `CMLevelGeometricRepresentation U` without the `smooth` and `proper` fields: a scheme over `F`, an immersion into `ℙ^m_F` over `F`, and the representing isomorphism. `CMLevelQuasiProjectiveRepresentation.smooth`, `.isProper` and `.toGeometric` derive smoothness from the lifting statement and properness from the valuative statement. `divisionCMRepresentabilityStatement_of_criteria hrep hlift hval` proves the target from the three premises at every small level under `D.IsDivision`. `CMLevelGeometricRepresentation.discreteValuativeExistence` shows the valuative statement is also necessary. |
-| `Langlands.AbelianScheme.relativeDualSchemeExistence`, `Langlands.AbelianScheme.relativeDualSchemeGeometry` (`Langlands/AlgebraicGeometry/Picard/RelativeDualSchemeExistenceProof.lean`, `…/RelativeDualSchemeGeometryProof.lean`) | Proofs of `RelativeDualSchemeExistenceStatement.{u}` (Task 1012) and `RelativeDualSchemeGeometryStatement.{u}` (Task 892). Every abelian scheme over a quasi-separated base has an actual dual (`HasDualScheme`), and every such dual has `DualSchemeGeometry`. |
+| `HarrisTaylorCMBaseAdmissibility` | `componentwiseAdmissibleCMBase_iff_dualGeometry` characterizes admissibility. `componentwiseAdmissibleCMBase_of_relativeDual` derives it from `RelativeDualSchemeExistenceStatement` and `RelativeDualSchemeGeometryStatement`. |
+| `HarrisTaylorCMDivisionAssembly` | `CMLevelGeometricRepresentation U` is the data a quasi-projective construction produces: a scheme over `Spec F`, possibly not admissible, that is smooth and proper, with an immersion into `ℙ^m_F` over `F` and a natural isomorphism `admissibleTestPoints X ≅ (smallLevelClassPresheafTower …).obj U` on the admissible test category. `CMGeometricRepresentabilityStatement` asks for this data at every small level. Under `RelativeDualSchemeExistenceStatement` and `RelativeDualSchemeGeometryStatement`, `cmRepresentabilityStatement_iff_geometric` shows it is equivalent to the exact `CMRepresentabilityStatement`. `divisionCMRepresentabilityStatement_of_geometric` derives the target from those two statements and `D.IsDivision → CMGeometricRepresentabilityStatement …`. Two generic helpers are added in namespace `Langlands.AlgebraicGeometry`. `IsHProjective.of_isImmersion_of_isProper` says that proper plus an immersion into `ℙ^m_R` over `Spec R` gives `IsHProjective`. `IsHProjective.exists_isImmersion` is the converse. |
+| `HarrisTaylorCMDivisionGeometricReduction` | It applies the assembly to the Library theorems `relativeDualSchemeExistence` and `relativeDualSchemeGeometry` at universe `0`, so no dual premise remains. `divisionCMRepresentabilityStatement_iff_geometric` proves `DivisionCMRepresentabilityStatement … ↔ (D.IsDivision → CMGeometricRepresentabilityStatement …)`. The primed forms `cmRepresentabilityStatement_iff_geometric'`, `cmLevelRepresentabilityStatement_iff_geometric'`, `divisionCMRepresentabilityStatement_of_geometric'` and `CMLevelGeometricRepresentation.toRepresentation'` are the assembly declarations without dual hypotheses. |
+| `HarrisTaylorCMDivisionCriteria` | `specTest B β` is `Spec B → Spec F` for a noetherian ring `B`, as an admissible test object. `specTestMap φ β` is the test morphism `Spec φ`. `CMLevelArtinianLiftingStatement U` says that restriction of classes of `(smallLevelClassPresheafTower …).obj U` along `Spec φ` is surjective for every surjection `φ : B' →+* B` of local Artinian rings with `maximalIdeal B' * ker φ = ⊥` and every `β : Spec B' ⟶ Spec F`. `CMLevelDiscreteValuativeExistenceStatement U` says the same along `Spec K → Spec V` for every discrete valuation ring `V` with fraction field `K`. `CMLevelQuasiProjectiveRepresentation U` is `CMLevelGeometricRepresentation U` without the `smooth` and `proper` fields: a scheme over `F`, an immersion into `ℙ^m_F` over `F`, and the representing isomorphism. `CMLevelQuasiProjectiveRepresentation.smooth`, `.isProper` and `.toGeometric` derive smoothness from the lifting statement and properness from the valuative statement. `divisionCMRepresentabilityStatement_of_criteria hrep hlift hval` proves the target from the three premises at every small level under `D.IsDivision`. `CMLevelGeometricRepresentation.discreteValuativeExistence` shows the valuative statement is also necessary. |
+| `Langlands.AbelianScheme.relativeDualSchemeExistence`, `Langlands.AbelianScheme.relativeDualSchemeGeometry` (`Langlands/AlgebraicGeometry/Picard/RelativeDualSchemeExistenceProof.lean`, `…/RelativeDualSchemeGeometryProof.lean`) | Proofs of `RelativeDualSchemeExistenceStatement.{u}` and `RelativeDualSchemeGeometryStatement.{u}`. Every abelian scheme over a quasi-separated base has an actual dual (`HasDualScheme`), and every such dual has `DualSchemeGeometry`. |
 | `Langlands.AlgebraicGeometry.ArtinianLiftingSmooth.smooth_of_liftsArtinian`, `Langlands.AlgebraicGeometry.universallyClosed_of_forall_isDiscreteValuationRing_hasLift` | Generic criteria used by `HarrisTaylorCMDivisionCriteria`. The first gives `Smooth g` for a locally finite-type `g` to a locally noetherian scheme that satisfies `LiftsArtinian g`, lifting along elementary Artinian thickenings. The second gives `UniversallyClosed f` for a quasi-compact, locally finite-type `f : X ⟶ Spec R` with `R` noetherian, when every valuative square whose ring is a discrete valuation ring has a lift. |
 | `Langlands.RingTheory.Smooth.ArtinianLifting` (file `Langlands/RingTheory/Smooth/ArtinianLifting.lean`, namespace `Langlands.RingTheory.ArtinianLifting`) | `Langlands.RingTheory.ArtinianLifting.smooth`: if `C` is noetherian, `S` is a finite-type `C`-algebra and `HasArtinianLifting C S` holds, then `Algebra.Smooth C S`. `HasArtinianLifting C S` asks for lifts of `C`-algebra maps `ψ : S → B` along every surjection `φ : B' → B` of local Artinian `C`-algebras with `maximalIdeal B' * ker φ = ⊥`, but only for `ψ` whose composite with the residue map of `B` is surjective. Finite type is essential: a polynomial algebra in infinitely many variables over a field has the lifting property but is not finitely presented. |
 
-Inputs delegated to other tasks:
+Inputs stated separately:
 
-- Task 3449, `ce5bb036-afaa-497b-b2ca-ee75e40fcacb`, a child of this target,
-  proves `PolarizedFiniteLevel.LargeLevelRepresentabilityStatement`. That is
-  eventual fine representability of the ordinary full-level functor over
-  `ℤ[1/n]` (Mumford–Fogarty–Kirwan, Theorem 7.9). The cubic-bundle modules in
-  `Langlands/AbelianScheme/PolarizedFiniteLevel/` serve it. On 18 November
-  2026 its target was unproved. Its published reductions
+- `PolarizedFiniteLevel.LargeLevelRepresentabilityStatement` is eventual fine
+  representability of the ordinary full-level functor over `ℤ[1/n]`
+  (Mumford–Fogarty–Kirwan, Theorem 7.9). The cubic-bundle modules in
+  `Langlands/AbelianScheme/PolarizedFiniteLevel/` serve it. The Library states
+  it and does not prove it. Its published reductions
   `largeLevelRepresentability_of_chartCover` and
   `largeLevelRepresentability_of_eventualSheaf` derive it from
   `LevelBaseOpenChartGluingStatement`, a Zariski sheaf statement
@@ -83,26 +82,30 @@ Inputs delegated to other tasks:
   `LargeLevelChartCoverStatement` and `LargeLevelQuasiProjectivityStatement`.
   `largeLevelChartCover_of_frameCharts` further reduces the chart cover
   statement to `FrameChartRepresentabilityStatement`,
-  `FrameLocusBaseChangeStatement` and `FrameLocusCoverStatement`. All of
-  these are statements only; none had a Library proof on 18 November 2026.
-- The two relative dual statements are proved (Task 1012 and Task 892, see the
-  table above).
+  `FrameLocusBaseChangeStatement` and `FrameLocusCoverStatement`. Of these,
+  the Library proves `LevelBaseOpenChartGluingStatement` (as
+  `levelBaseOpenChartGluing`) and `FrameLocusBaseChangeStatement` (as
+  `frameLocusBaseChange`); for the others it has at most the reductions named
+  here.
+- The two relative dual statements are proved (see the table above).
 
 ## Remaining obligations
 
 By `divisionCMRepresentabilityStatement_of_criteria`, the target follows once
 the following three premises hold at every small level `U` when
 `D.IsDivision`. All three concern the existing presheaf
-`(smallLevelClassPresheafTower …).obj U` on the admissible test category. None
-had a proof owner in task searches on 18 November 2026, beyond Task 3449's
-part of premise 1.
+`(smallLevelClassPresheafTower …).obj U` on the admissible test category. This
+note records no proof of any of the three (no theorem of the Library has
+the type of premise 2 or 3); premise 1 depends in part on
+`LargeLevelRepresentabilityStatement` above.
 
 1. **`Nonempty (CMLevelQuasiProjectiveRepresentation … U)`.** A representing
    scheme over `F` with an immersion into some `ℙ^m_F` over `F`. Smoothness,
    properness and admissibility are not needed here. Expected route:
    - **PEL locus over the ordinary moduli.** Apply the projective CM action
      scheme (`HarrisProjectiveCMActionScheme`) to the universal family over
-     the ordinary moduli scheme of Task 3449, base-changed to `F`. This needs
+     the ordinary moduli scheme of `LargeLevelRepresentabilityStatement`,
+     base-changed to `F`. This needs
      relative projectivity of that universal family over affine opens, gluing
      of the closed loci, and the full-level-to-Harris-level comparison through
      the orbit covers.
@@ -144,7 +147,7 @@ Each connected component must then satisfy `AdmissibleCMBase`
 asks for `Nonempty (DualEvaluationData preservation stability B)` for every
 `B : AbelianScheme` over that component. `DualEvaluationData`
 (`HarrisPolarizedClassBaseChange.lean`) contains `hasDual : HasDualScheme B`
-and `geometry : DualSchemeGeometry B hasDual`. By Worker 147's
+and `geometry : DualSchemeGeometry B hasDual`. By
 `nonempty_dualEvaluationData_iff` and
 `componentwiseAdmissibleCMBase_iff_dualGeometry`, admissibility of a locally
 noetherian base is equivalent to `CMBaseDualGeometry` on each component
@@ -154,20 +157,20 @@ geometry.
 `componentwiseAdmissibleCMBase_of_relativeDual` derives admissibility of every
 locally noetherian scheme over `Spec F` from
 `RelativeDualSchemeExistenceStatement.{0}` and
-`RelativeDualSchemeGeometryStatement.{0}`. Both are now Library theorems.
+`RelativeDualSchemeGeometryStatement.{0}`. Both are Library theorems.
 So every locally noetherian scheme over `F` is an admissible test, and the
-criteria module uses this for the spectra `specTest B β`. Task 3449 met a
-similar gap, since a `PolarizedFiniteLevel` datum carries a dual witness.
+criteria module uses this for the spectra `specTest B β`. The same gap arises
+for `PolarizedFiniteLevel` data, since such a datum carries a dual witness.
 Locally noetherian bases are quasi-separated, so `relativeDualSchemeExistence`
-now supplies such duals there too.
+supplies such duals there too.
 
 ## Anthropic FLT resources
 
 Registered source: `anthropic-flt-complete-lean-source-6e837e75`, at
 `literature/Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2/`.
 It is licensed Apache-2.0. Lean 4.33.1 was used there, while the project uses
-Lean 4.34.0 and Mathlib `5ed2965`. About 1466 of its modules are already
-ported under `Langlands/AnthropicFLT/`. The theorem names below are the FLT
+Lean 4.34.0 and Mathlib `5ed2965`. About 1466 of its modules are ported under
+`Langlands/AnthropicFLT/`, which holds 1469 Lean files. The theorem names below are the FLT
 names. "Closure" counts the distinct source modules, including the theorem's
 own module, reached by following every import that resolves to a file of the
 source tree (its `Theorems`, `Definitions` and `P2M` directories). Imports of
@@ -202,8 +205,8 @@ need a definitional bridge, in addition to the port.
 - The characteristic-zero route, over `F` directly, proves the three premises
   of `divisionCMRepresentabilityStatement_of_criteria`. Premises 2 and 3 need
   a de Rham or Hodge-filtration deformation theory and good reduction over
-  discrete valuation rings with characteristic-zero residue field. Neither is
-  present in the Library or in the FLT source.
+  discrete valuation rings with characteristic-zero residue field. This note
+  found neither in the Library or in the FLT source.
 - The integral route mirrors Kottwitz §5, Harris–Taylor III.4 and the FLT
   Shimura-curve construction. One builds a smooth proper model over a
   finite-type `ℤ`-algebra in `F`, then base-changes to `F`. The FLT
@@ -214,11 +217,10 @@ need a definitional bridge, in addition to the port.
   directly, through `CMLevelGeometricRepresentation`, rather than the criteria
   module.
 - Under either route, premise 1 (PEL locus and finite quotients) is
-  characteristic-zero Library work. It depends on Task 3449 and the existing
-  reductions. The relative dual inputs are no longer blocking.
+  characteristic-zero Library work. It depends on
+  `LargeLevelRepresentabilityStatement` and the existing reductions. The
+  relative dual inputs are proved.
 
-This note records the state on 10 November 2026. The assembly module and the
-status of the blocking tasks were updated on 13 November 2026. The relative
-dual theorems, the geometric reduction, the criteria module and Task 3449's
-reductions were added on 18 November 2026. Check the current Library and task
-list before relying on the ownership statements above.
+The proof statuses above were checked against the Library. The "Closure /
+ported" counts of the FLT table are those recorded when the note was written;
+this note does not vouch that they match the Library.

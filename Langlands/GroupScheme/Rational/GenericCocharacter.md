@@ -1,7 +1,5 @@
 # Existence of generic integral cocharacters
 
-Author: Worker 1262.
-
 This internal deduction uses the published actual torus lattices, relative
 roots, finite Lie weight support, and denominator-clearing construction. It
 does not require a relative root-system theorem.

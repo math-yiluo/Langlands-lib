@@ -27,9 +27,9 @@ a proposition definition only; it is an internal reduction (no single source sta
 
 Each premise module's Markdown gives its sources.
 
-## Proof route (implemented in a draft, for a proof task)
+## Proof route
 
-This is Cogdell's argument (2004, §4.1–4.2, printed pp.219–222) on top of the Library's
+The Library does not prove this statement. This is Cogdell's argument (2004, §4.1–4.2, printed pp.219–222) on top of the Library's
 proved global theory:
 
 1. The finite pair L-data exist (canonical local components of a standard character, their

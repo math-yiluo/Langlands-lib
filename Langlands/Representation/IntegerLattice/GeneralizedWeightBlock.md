@@ -54,8 +54,8 @@ objects.
    (`Module.End.mem_maxGenEigenspace`). `generalizedWeightBlock_eq` states
    the defining equation as a theorem, proved by `rfl`. Its right side is
    exactly the family written inline in
-   `Langlands.CommutingTupleGeneralizedWeightDecompositionStatement` (staged
-   statement candidate `769b13a0-1fbe-4050-b5ff-52ba2d69b320`). This module
+   `Langlands.CommutingTupleGeneralizedWeightDecompositionStatement` (module
+   `IntegerLattice.GeneralizedWeightStatement`). This module
    does not import that statement. `mem_generalizedWeightBlock` gives
    membership coordinatewise. `generalizedWeightBlock_rank_zero` shows that
    at `d = 0` the empty intersection is `⊤`, the whole space.
@@ -224,7 +224,7 @@ This module does not prove, and should not be read as proving, any of the
 following:
 
 - finite nonzero support, independence or spanning of the blocks (the
-  separate decomposition task);
+  separate decomposition statement in `IntegerLattice.GeneralizedWeightStatement`);
 - identification of nonzero blocks with common eigenvalue tuples;
 - nilpotence or pairwise commutation of the differences `N_i`;
 - common strictly upper-triangular bases or global block-basis assembly;

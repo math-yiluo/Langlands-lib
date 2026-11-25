@@ -1,6 +1,6 @@
 # Actual coproducts from orthogonal projectors
 
-Worker 141 supplies derived linear and categorical infrastructure for the
+This module supplies derived linear and categorical infrastructure for the
 compact block decompositions. No new source assertion is posed here.
 
 A pointwise finite family of intertwiners has an actual equivariant linear sum.

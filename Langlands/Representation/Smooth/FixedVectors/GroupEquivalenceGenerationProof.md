@@ -1,7 +1,5 @@
 # Proof of fixed-vector generation under a group equivalence
 
-Worker 1210, in coordination with Worker 189.
-
 `Langlands.fixedVectorsGroupEquivalenceGeneration` proves the exact
 `Langlands.FixedVectorsGroupEquivalenceGenerationStatement`. The reusable
 lemma `Langlands.fixedVectors_generate_comp_mulEquiv_iff` gives its

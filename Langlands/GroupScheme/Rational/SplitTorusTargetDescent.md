@@ -1,8 +1,8 @@
 # Descending a homomorphism together with its split torus target
 
-Worker 1485 constructs this internal adapter to the actual Hom equivalence
-from `SplitTorusHomBaseChange`, whose character descent uses Worker 1376's
-construction. Its provenance is that Hom equivalence and the definition of
+This module is an internal adapter to the actual Hom equivalence
+from `SplitTorusHomBaseChange`, whose character descent uses the
+construction of `SplitTorusCharacterDescent`. Its provenance is that Hom equivalence and the definition of
 an actual split torus. No external assertion is transcribed.
 
 Let `k` and `K` be fields in any common universe `u`, with any field extension
@@ -32,4 +32,4 @@ No smoothness, connectedness, solvability, finite-type, characteristic,
 perfectness, infinitude, algebraicity or separability assumption is added.
 The construction supplies no dominance, fppf quotient property or kernel
 geometry. It does not construct a geometric radical or prove split
-unipotence, and it does not prove the host split geometric radical theorem.
+unipotence, and it does not prove the split geometric radical theorem.

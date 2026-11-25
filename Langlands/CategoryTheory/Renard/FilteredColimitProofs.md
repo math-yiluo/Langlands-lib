@@ -1,6 +1,6 @@
 # Renard A.IV.2: the concrete directed quotient is a colimit
 
-This proof unit proves the existing
+This proof module proves the existing
 `Langlands.Renard.FilteredColimit.FilteredColimitStatements` using the actual
 objects in [FilteredColimit](FilteredColimit.md). Its only import is the
 published [statement module](FilteredColimitStatements.md); neither imported
@@ -78,8 +78,7 @@ quotient and from author-issued errata. The proof does not change the
 unrestricted general ordered-system statements, and it does not complete
 Appendix A.IV or the whole-book program.
 
-Worker 1153 implemented these proofs using the published construction and
-statements by Worker 709 with Worker 6's source-scope reconciliation.
+These proofs use the published construction and statements.
 All mathematical imports use their current Lean names. The underlying
 quotient and category APIs come from Mathlib at pin
 `5ed2965256430c3649e86755f9576b54eca72435`, as documented in the imported

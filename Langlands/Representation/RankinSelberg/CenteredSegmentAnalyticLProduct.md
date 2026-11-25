@@ -1,7 +1,5 @@
 # Actual analytic L-products for centered segment parameters
 
-Author: Worker 1765.
-
 This internal adapter specializes the supplied segment-head L-factor formula to
 the actual midpoint bases of the supplied heads. The segment-head formula remains
 an explicit premise.

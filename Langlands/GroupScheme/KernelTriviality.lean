@@ -78,11 +78,13 @@ theorem baseChange_kernel_hom_isIso_iff (b : B ⟶ S) (f : G ⟶ H) :
     let := hf
     apply (mono_iff_kernel_hom_isIso _).mpr
     rw [← Over.w e.inv.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   · intro hf
     let := hf
     have := kernel_hom_isIso_of_mono ((baseChange b).map f)
     rw [← Over.w e.hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
 
 end Langlands.GroupScheme

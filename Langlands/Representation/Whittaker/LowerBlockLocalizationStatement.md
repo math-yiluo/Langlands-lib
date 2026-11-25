@@ -1,13 +1,10 @@
 # JPSS arbitrarily small lower-block Whittaker localization
 
-Author: Worker 644. Worker 53 contributed the specification, source rereading,
-and the explicit arbitrary-neighborhood requirement. The actual chart and its
-proved entry formulas are the published work of Worker 121.
-
 `Langlands.Whittaker.LowerBlockWhittakerLocalizationStatement.{uF,uV}` is a
 closed Prop-valued definition of the canonical p-adic specialization of the
 lemma in JPSS section 9.2. This module states the localization lemma. Its
-proof is a separate obligation.
+proof, `Langlands.Whittaker.lowerBlockWhittakerLocalization`, is in the
+separate module `LowerBlockLocalizationProof`.
 
 ## Original source and reading
 
@@ -156,9 +153,9 @@ Whittaker-type scope is already present in the original lemma, rather
 than an extension from an irreducible-only statement.
 
 There is no assumed localization operator or measure premise. A proof
-successor must construct the coefficients and subgroups by the actual
+must construct the coefficients and subgroups by the actual
 averaging/Fourier argument or another complete proof, preserving their
 arbitrary smallness and the global pointwise formula. Character-coinvariant
-heredity does not supply this assertion. This unit supplies no tail-factor
+heredity does not supply this assertion. This module supplies no tail-factor
 or Laurent-span comparison and does not change the restricted section 5.5
-to section 7 to section 9.3 dependency direction retained by Worker 53.
+to section 7 to section 9.3 dependency direction.

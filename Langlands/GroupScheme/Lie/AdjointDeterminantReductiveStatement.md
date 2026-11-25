@@ -1,7 +1,5 @@
 # Triviality of the actual reductive adjoint determinant
 
-Author: Worker 107.
-
 `Lie.ConnectedReductiveAdjointDeterminantStatement` asserts that the actual
 rational character `Lie.adjointDeterminantCharacter G` is zero for every
 connected reductive affine locally finite-type group scheme over every field

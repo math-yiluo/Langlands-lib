@@ -1,6 +1,6 @@
 # Transport to the normalized actual Levi Jacquet completion
 
-This derived supporting unit makes the group and quotient transports in the
+This module makes the group and quotient transports in the
 completion argument of Renard, *Représentations des groupes réductifs p-adiques*
 (2026), VI.9.7 explicit. Source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -48,10 +48,12 @@ by `SmoothRep.hom ((leviJacquetFunctor ...).map f)`. The proof chooses a
 representative of each coinvariant component, applies the two quotient component
 formulas, and uses the definitional action of the published functor on classes.
 Both representations in this lemma have the same arbitrary carrier universe,
-as in the parent naturality clause.
+as in the naturality clause of `LeviCompletionOppositeJacquetStatement`.
 
 The paired helper `Smooth/CompactCompletionEquiv` supplies only the generic
 completion of an actual intertwining equivalence; its Markdown explains that
-construction. This transport unit supplies neither a contraction basis nor
+construction. This transport module supplies neither a contraction basis nor
 compression stationarity or the fixed-completion Jacquet comparison. Both
-exact represented-parabolic parent propositions remain separate obligations.
+exact represented-parabolic propositions it serves,
+`LeviJacquetOppositePairingStatement` (VI.9.6, Proposition) and
+`LeviCompletionOppositeJacquetStatement` (VI.9.7), remain separate obligations.

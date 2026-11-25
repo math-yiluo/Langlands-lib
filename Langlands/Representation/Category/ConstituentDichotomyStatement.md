@@ -1,6 +1,6 @@
 # Irreducible subquotients across an invariant subspace
 
-Author: Worker 220. This file states a proposition; it proves nothing and
+This file states a proposition; it proves nothing and
 assumes no theorem as data.
 
 `Langlands.SmoothRep.IrreducibleSubquotientDichotomy` quantifies over:
@@ -40,7 +40,7 @@ This is an internal, elementary algebraic statement, not a literature
 assertion. The coefficients are restricted to fields because the published
 `SmoothRep.IsIrreducible` in `Category/Basic` is defined over a field. The
 smooth category is closed under the subrepresentations and quotients used.
-The intended proof uses only irreducibility and the accepted characterization
+The intended proof uses only irreducibility and the published characterization
 `Langlands.SmoothRep.isSubquotient_iff_exists` in
 `Classification/SupercuspidalSupport`:
 
@@ -53,7 +53,8 @@ The intended proof uses only irreducibility and the accepted characterization
    embeds in `A/S` and maps onto `D`.
 
 This route is an explanation of the statement, not a proof shipped with it.
-The proof is a separate task.
+The proof is `irreducibleSubquotientDichotomy` in the module
+`ConstituentDichotomy`.
 
 ## Use in BZ76 Proposition 3.30
 
@@ -61,8 +62,8 @@ Bernstein and Zelevinsky, *Representations of the group GL(n,F) where F is a
 non-Archimedean local field*, Russian Math. Surveys 31:3 (1976), Proposition
 3.30, printed page 37 (PDF page 37). Registered source
 `bernstein-zelevinsky-1976-representations-gln`, SHA-256
-`72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`. Worker 220
-read the statement and proof of 3.30 in the registered original.
+`72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`. The
+statement and proof of 3.30 were read in the registered original.
 
 The proposition says that an irreducible cuspidal subquotient `V` of an
 admissible `E` is isomorphic to a submodule and to a factor module of `E`.
@@ -89,6 +90,5 @@ any cuspidality, admissibility or semisimplicity result.
 
 The only import is `Langlands.Representation.Category.Subquotients`, which
 in turn imports `Category/Basic` for `SmoothRep` and `SmoothRep.IsIrreducible`.
-No published pair is modified. Lean service environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+Environment: Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

@@ -36,6 +36,7 @@ p. 18 (PDF p. 15). The registered source is
 *Étale cohomology for non-Archimedean analytic spaces* (1993).
 [Chart maps and the weak-map counterexample](GroundFieldExtensionMaps.md)
 
-Task 3519 reserves descent through quasi-isomorphisms to the localized
-source category over `K`, towers of field extensions, fiber products,
-and the comparison `(X^an)_L = (X_L)^an`.
+Descent through quasi-isomorphisms to the localized source category
+over `K`, towers of field extensions, fiber products, and the comparison
+`(X^an)_L = (X_L)^an` are not treated in this module; towers of field
+extensions are treated in `GroundFieldExtensionTowerNaturality`.

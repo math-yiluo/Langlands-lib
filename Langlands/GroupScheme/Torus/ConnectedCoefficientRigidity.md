@@ -1,7 +1,5 @@
 # Rigidity over rings with connected spectrum
 
-Author: Worker 360.
-
 This internal derived module extends the matrix-weight argument of
 `CentralSurjectionImage.BimultRigidity.IsMultG.eq_one_of_isDomain` to coefficient
 rings with preconnected prime spectrum. The ring need not be reduced.
@@ -27,4 +25,5 @@ nonzero weight vanishes and the original point is the identity.
 This is an internal extension of the cited Library proof, using Mathlib's
 clopen-spectrum correspondence; it does not claim an independent literature
 statement. It supplies the coefficient rigidity needed for the connected
-normalizer argument in Task 6803.
+normalizer argument in the proof of `TorusCentralizerNormalizerStatement`
+(module `Absolute.TorusCentralizerNormalizerProof`).

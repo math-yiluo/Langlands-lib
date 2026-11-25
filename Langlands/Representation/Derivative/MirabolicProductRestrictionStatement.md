@@ -1,7 +1,5 @@
 # Restriction of a binary product to the mirabolic subgroup
 
-Author: Worker 1129.
-
 This module defines
 `Langlands.Derivative.MirabolicProductRestrictionStatement.{uF,uV} F T`
 as a proposition. It states Bernstein–Zelevinsky (1977), Proposition 4.13(a),
@@ -55,7 +53,7 @@ The Lean indices `m n : ℕ` encode the positive ranks `a = m+1` and
 `b = n+1`. As `m` and `n` range over all of `ℕ`, this covers every positive
 pair `(a, b)` exactly once. The Library group `mirabolic r F.Carrier` is
 the source's `P_(r+1)`. The common target `mirabolic (m+n+1) F.Carrier`
-is `P_(a+b)`, which is `mirabolic (a+b-1)` in the task's indexing.
+is `P_(a+b)`, which is `mirabolic (a+b-1)` in terms of `a` and `b`.
 
 | Native functor | Source and target in source notation |
 | --- | --- |
@@ -91,12 +89,12 @@ The helper functors are in namespace
 2. `restrictionSubobject T m n` is `(A|P_a) × B`. It applies
    `generalLinearRestriction T m` to the first input and the identity to the
    second, then `rightMixedProductFunctor (n+1) m`, then
-   `mirabolicRankCast` along `(n+1)+m = m+n+1`. In the task's indexing this
+   `mirabolicRankCast` along `(n+1)+m = m+n+1`. In terms of `a` and `b` this
    is `rightMixedProductFunctor b (a-1)`.
 3. `restrictionQuotient T m n` is `A × (B|P_b)`. It applies the identity to
    the first input and `generalLinearRestriction T n` to the second, then
    `leftMixedProductFunctor (m+1) n`, then `mirabolicRankCast` along
-   `(m+1)+n = m+n+1`. In the task's indexing this is
+   `(m+1)+n = m+n+1`. In terms of `a` and `b` this is
    `leftMixedProductFunctor a (b-1)`.
 
 The functor names and product-category packaging are internal. Their
@@ -154,14 +152,16 @@ There are no segment, multisegment, socle, head, square-integrable, tempered,
 classification, product-irreducibility, exhaustion or two-supercuspidal
 modules in this closure. The statement uses no mathematical conclusion of the
 excluded consumers. It has no mathematical proof dependencies: the sequence is
-a proposition definition awaiting a separate proof. In particular no
+a proposition definition, proved separately. In particular no
 derivative formula, exactness theorem, finiteness result, geometric lemma or
-pending statement is used as a proved input.
+unproved statement is used as a proved input.
 
-The separate exact proof successor must preserve every inherited task
-restriction directly and transitively and audit its actual mathematical proof
-dependencies. Acceptance of this proposition definition does not establish
-the proposition.
+The proof, `mirabolicProductRestriction` in
+`Langlands.Representation.Derivative.MirabolicProductRestriction`, is subject
+to these independence restrictions directly and transitively; its page lists
+the actual mathematical proof dependencies of that module and carries its
+independence audit. This proposition definition does not establish the
+proposition.
 
 ### Complete project import inventory
 

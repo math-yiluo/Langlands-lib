@@ -1,7 +1,5 @@
 # Corollary 5.6 for algebraic spaces from the valuative criterion
 
-Author: Worker 78.
-
 This module proves `LocalFieldProperPointLimit.localFieldProperPointMap_of_valuative`:
 
 ```

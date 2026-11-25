@@ -234,13 +234,13 @@ def normOneFinitePlaceDecomposition :
     ((normOneFinitePlaceDecomposition K G v T i hi I e hc).symm x).1 =
       normOneFinitePlaceProjection K G v x := rfl
 
-variable (a : Aut G) (ha : i ≫ a.hom = i)
+variable (a : Aut G) (ha : i ≫ a.asIso.hom = i)
 
 omit [IsAffine G.X.left] [(characterRestrict i).range.FiniteIndex] in
 include ha in
 private theorem adelicAut_positivePointMap (x : intrinsicSubgroup K T) :
     adelicAut K a (positivePointMap K G T i x) = positivePointMap K G T i x := by
-  change AdelicGroupPoints.map K G G a.hom (AdelicGroupPoints.map K T.toGrp G i x.val) =
+  change AdelicGroupPoints.map K G G a.asIso.hom (AdelicGroupPoints.map K T.toGrp G i x.val) =
     AdelicGroupPoints.map K T.toGrp G i x.val
   rw [map_comp_apply, ha]
 
@@ -262,8 +262,8 @@ private theorem normOneFactor_adelicAut (x : AdelicGroupPoints K G) :
 omit [IsAffine G.X.left] [(characterRestrict i).range.FiniteIndex] in
 private theorem normOneFinitePlaceProjection_twist (x : normOneSubgroup K G) :
     normOneFinitePlaceProjection K G v (normOneAut K a x) =
-      G.affinePointsTarget a.hom (placeCompletion K (.inr v)) (normOneFinitePlaceProjection K G v x) := by
-  change atPlace K G (.inr v) (AdelicGroupPoints.map K G G a.hom x) = _
+      G.affinePointsTarget a.asIso.hom (placeCompletion K (.inr v)) (normOneFinitePlaceProjection K G v x) := by
+  change atPlace K G (.inr v) (AdelicGroupPoints.map K G G a.asIso.hom x) = _
   rw [atPlace_map]
   rfl
 
@@ -271,10 +271,10 @@ include ha in
 private theorem normOneFinitePlaceInclusion_twist (x : PlaceGroupPoints K G (.inr v)) :
     normOneAut K a (normOneFinitePlaceInclusion K G v T i hi I e hc x) =
       normOneFinitePlaceInclusion K G v T i hi I e hc
-        (G.affinePointsTarget a.hom (placeCompletion K (.inr v)) x) := by
+        (G.affinePointsTarget a.asIso.hom (placeCompletion K (.inr v)) x) := by
   change normOneAut K a (normOneFactor K G T i hi I e (finitePlacePointInclusion K G v x)) =
     normOneFactor K G T i hi I e
-      (finitePlacePointInclusion K G v (G.affinePointsTarget a.hom (placeCompletion K (.inr v)) x))
+      (finitePlacePointInclusion K G v (G.affinePointsTarget a.asIso.hom (placeCompletion K (.inr v)) x))
   rw [← finitePlacePointInclusion_map, ← adelicAut_apply, normOneFactor_adelicAut K G T i hi I e a ha]
 
 /-- The Galois or other algebraic twist restricts to the kernel of the
@@ -302,11 +302,11 @@ theorem normOneFinitePlaceDecomposition_twist
     (p : PlaceGroupPoints K G (.inr v) × (normOneFinitePlaceProjection K G v).toMonoidHom.ker) :
     normOneAut K a (normOneFinitePlaceDecomposition K G v T i hi I e hc p) =
       normOneFinitePlaceDecomposition K G v T i hi I e hc
-        (G.affinePointsTarget a.hom (placeCompletion K (.inr v)) p.1,
+        (G.affinePointsTarget a.asIso.hom (placeCompletion K (.inr v)) p.1,
           normOneFinitePlaceKernelTwist K G v a p.2) := by
   change normOneAut K a (normOneFinitePlaceInclusion K G v T i hi I e hc p.1 * p.2.val) =
     normOneFinitePlaceInclusion K G v T i hi I e hc
-      (G.affinePointsTarget a.hom (placeCompletion K (.inr v)) p.1) * normOneAut K a p.2.val
+      (G.affinePointsTarget a.asIso.hom (placeCompletion K (.inr v)) p.1) * normOneAut K a p.2.val
   rw [map_mul (normOneAut K a), normOneFinitePlaceInclusion_twist K G v T i hi I e hc a ha]
 
 end NormOne
@@ -325,9 +325,9 @@ def NormOneFinitePlaceSplitStatement : Prop :=
     let J := p.toMonoidHom.ker
     ∃ D : (PlaceGroupPoints K G (.inr v) × J) ≃ₜ* normOneSubgroup K G,
       (∀ x, (D.symm x).1 = p x) ∧
-      ∀ (a : Aut G), i ≫ a.hom = i →
+      ∀ (a : Aut G), i ≫ a.asIso.hom = i →
         ∀ z, normOneAut K a (D z) =
-          D (G.affinePointsTarget a.hom (placeCompletion K (.inr v)) z.1,
+          D (G.affinePointsTarget a.asIso.hom (placeCompletion K (.inr v)) z.1,
             normOneFinitePlaceKernelTwist K G v a z.2)
 
 set_option maxRecDepth 1800 in

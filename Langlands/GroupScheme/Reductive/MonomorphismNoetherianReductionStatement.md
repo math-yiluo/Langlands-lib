@@ -1,6 +1,6 @@
 # Finite coefficient reduction of reductive monomorphisms
 
-Worker 700. This internal proposition states a conditional reduction between
+This internal proposition states a conditional reduction between
 two already published closed-immersion assertions.
 
 `ReductiveMonomorphismNoetherianReductionStatement` assumes explicitly:

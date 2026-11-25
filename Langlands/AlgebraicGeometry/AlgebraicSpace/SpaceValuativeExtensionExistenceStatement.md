@@ -1,11 +1,10 @@
 # Existence of a valuative lift after a dominating extension
 
-Author: Worker 1543.
-
 `SpaceValuativeExtensionExistenceStatement` states existence of a valuative
 lift after a dominating valuation extension for a quasi-compact separated
-universally closed morphism of algebraic spaces. It is an unproved
-proposition definition.
+universally closed morphism of algebraic spaces. It is a proposition
+definition; its proof is `spaceValuativeExtensionExistence`, in the module
+`SpaceValuativeExtensionExistenceProof`.
 
 ## Source and specialization
 
@@ -44,11 +43,14 @@ map `A → B`, and a compatible field map `K → L`, together with a section
 There is no finite type, noetherian, decency, discrete valuation or
 rank hypothesis. There is no restriction on the degree or separability
 of `L/K`. This conclusion allows extension of the field and valuation
-ring; obtaining a lift over `A` itself is a separate descent obligation.
+ring; obtaining a lift over `A` itself is the separate descent statement
+`SpaceValuativeExtensionDescentStatement`.
 
 ## Role in the consumer
 
-This statement isolates the topological existence step for Task 5368.
+This statement isolates the topological existence step of the route to
+`SpaceValuativeExistenceStatement` through
+`SpaceValuativeExtensionDescentStatement`.
 The source proof passes to `X ×_Y Spec A`, uses universal closedness
 to find a specialization over the closed point of `Spec A`, and realizes
 the specialization over a valuation extension by Lemma 67.16.5

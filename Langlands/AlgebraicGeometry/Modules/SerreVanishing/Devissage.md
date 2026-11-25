@@ -1,6 +1,6 @@
 # Two-bundle vanishing by induction on actual support
 
-This internal unit reduces the two-ample-bundle vanishing assertion to the explicit
+This internal module reduces the two-ample-bundle vanishing assertion to the explicit
 `SectionKillingStatement` premise. `GoodInSupportDimension f L1 L2 e` says that
 every quasi-coherent coefficient with finite affine sections and actual support
 bound `e` satisfies `Good` for the two line bundles. All schemes, fields and
@@ -27,4 +27,6 @@ The Lean proof uses the existing unconditional integral-ideal filtration theorem
 The section-killing premise remains explicit. This module does not assert an
 unconditional proof of Serre vanishing, nor does it assert a finite global
 dimension bound for a proper scheme. Its provenance is the derived support
-induction and categorical extension argument for the authorized target task.
+induction and categorical extension argument for
+`ProperAmplePairSerreVanishingStatement`, which the Library proves as
+`properAmplePairSerreVanishing` in `ProperAmplePairSerreVanishingProof`.

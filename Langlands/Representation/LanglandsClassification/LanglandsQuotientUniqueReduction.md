@@ -1,6 +1,6 @@
 # The unique Langlands quotient from four closed prerequisites
 
-Worker 148. This is an internal assembly of Renard VII.4.2 (i), printed p.243 /
+This is an internal assembly of Renard VII.4.2 (i), printed p.243 /
 PDF p.249. The theorem `langlandsQuotientUnique_of_inputs` proves the exact
 published `LanglandsQuotientUniqueStatement`, with its independent universes
 and full telescope, assuming four existing closed propositions at universes
@@ -58,10 +58,14 @@ Its choice is noncanonical.
 
 This is derived internal content. It connects the preceding actual-functor
 construction to the exact published uniqueness component and packages a
-certified chosen object. The four prerequisite proofs remain obligations of
-their existing proof tasks. It proves neither parameter injectivity nor
-exhaustion and therefore does not prove `LanglandsClassificationStatement` or
-complete its proof task. The classification statement pair and everything it
+certified chosen object. Of the four prerequisites, the Library proves
+`OppositeIdentitySupportStatement` (`oppositeIdentitySupport`, module
+`Langlands.Representation.Intertwining.OppositeIdentitySupportProof`) and
+`LanglandsTripletOppositeKernelStatement` (`langlandsTripletOppositeKernel`,
+module `LanglandsTripletRegularityProof`); second adjointness and finite length
+of induction are not proved in the Library. It proves neither parameter
+injectivity nor exhaustion and therefore does not prove
+`LanglandsClassificationStatement`. The classification statement pair and everything it
 imports are unchanged.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, version

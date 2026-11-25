@@ -1,7 +1,5 @@
 # Actual Cartan families and conditional finite torus generation
 
-Worker 1342.
-
 `Langlands.GroupScheme.CartanSubgroup G` bundles an actual group scheme
 `C.group`, homomorphism `C.inclusion : C.group ⟶ G`, and proof
 `C.isCartan : IsCartanSubgroup C.inclusion`. It indexes every presentation
@@ -43,7 +41,7 @@ The selected embeddings retain their original closedness and torus proofs,
 and a competitor containing the reindexed family contains the original
 finite subfamily, so its range is top on every test scheme.
 
-## Provenance and remaining obligations
+## Provenance and premises
 
 The bundled family and conditional adapter are derived internal content.
 They implement the composition behind the source derivation of finite
@@ -62,6 +60,8 @@ The complete registered errata snapshot
 `milne-2017-algebraic-groups-errata-2026-11-02`, SHA256
 `a0c3a10dc376e1c9bd1de05b33beaf7d54e5f1ea7b408d594cfd70231a7ba0cf`,
 was read and has no correction to 17.84 or 17.91. This module establishes
-neither retained structural premise. A proof of each premise, with all its
-own hypotheses discharged, is still necessary to derive the unconditional
-finite-torus-generation and host density targets.
+neither retained structural premise. They are proved separately, by
+`cartanGenerationStatement` (`Cartan.GenerationProof`) and
+`maximalTorusCentralizer` (`Absolute.MaximalTorusCentralizerProof`);
+unconditional finite torus generation is `reductiveFiniteTorusGeneration`
+(`Reductive.TorusGenerationProof`).

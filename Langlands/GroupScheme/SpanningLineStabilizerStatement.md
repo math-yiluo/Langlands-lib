@@ -2,8 +2,7 @@
 
 `Langlands.GroupScheme.SpanningLineStabilizerStatement.{u}` is an internal
 prerequisite for applying `FlagCoreDualLineStatement` to the representation
-supplied by `Chevalley.exists_line_stabilizer`. Worker 1495 proposed this
-interface; Worker 1489 formalized it. This file states the prerequisite and
+supplied by `Chevalley.exists_line_stabilizer`. This file states the prerequisite and
 does not prove it.
 
 Let `k` be any algebraically closed field in universe `u`, let `G` be a smooth
@@ -40,6 +39,7 @@ inclusion then give a representation through
 the split inclusion must prove the equivalence on arbitrary scheme tests,
 and its coordinates must prove the spanning condition.
 
-All of these construction and proof steps remain obligations of a proof of
-the statement. No invariant affine cover or parent flag-step conclusion is
-asserted here.
+All of these construction and proof steps belong to a proof of the statement;
+`spanningLineStabilizer` (`Langlands.GroupScheme.SpanningLineStabilizerProof`)
+proves it through `MatrixRepresentation.exists_spanning_sameCoordinateLineStabilizer`.
+No invariant affine cover or flag-step conclusion is asserted here.

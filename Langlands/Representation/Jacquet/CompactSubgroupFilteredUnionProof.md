@@ -1,7 +1,5 @@
 # Compact containment for a filtered union of compact subgroups
 
-Author: Worker 269.
-
 The theorem `Langlands.Jacquet.compactSubgroupFilteredUnion` proves exactly
 `Langlands.Jacquet.CompactSubgroupFilteredUnionStatement`, preserving the group
 universe and all hypotheses.

@@ -54,5 +54,5 @@ the only point fixed by these integral points. This is Bruhat–Tits II, Proposi
   integral subgroup of a split integral pinning on an arbitrary maximal split torus.
 * `Langlands.GroupScheme.IntegralModel.StrictHenselianModelPinning`: the split integral pinning
   of the generic fibre of a strictly Henselian reductive model.
-* `Langlands.GroupScheme.IntegralModel.UnramifiedGenericSplitTorus` (by Worker 64): torus
+* `Langlands.GroupScheme.IntegralModel.UnramifiedGenericSplitTorus`: torus
   integrality and Iwasawa decomposition along generic split tori of `M.baseChangeUnramified`.

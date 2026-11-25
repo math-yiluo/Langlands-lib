@@ -1,7 +1,5 @@
 # Proof of the centralizer part of parahoric subgroups (KP Lemma 7.4.3)
 
-Author: Worker 4599 (task `c2202322-8550-47ad-99d4-b17191c493f9`).
-
 ```lean
 theorem Langlands.Geometry.Building.ParahoricBuildingData.centralizerParahoricIntersection
     (P : ParahoricBuildingData G) : P.CentralizerParahoricIntersectionStatement

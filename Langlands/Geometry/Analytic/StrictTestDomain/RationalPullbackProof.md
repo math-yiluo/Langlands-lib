@@ -1,7 +1,5 @@
 # Rational inverse images and bounded base change: proof
 
-Author: Worker 247.
-
 The theorem `Langlands.Analytic.StrictTestDomain.rationalPullback` proves
 `RationalPullbackStatement.{u,v}`, the target stated and explained in
 `RationalPullbackStatement.md`. Fix a complete ultrametric normed field `K`

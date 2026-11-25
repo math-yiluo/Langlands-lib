@@ -1,6 +1,6 @@
 # Unipotence is invariant under extension of the base field
 
-Worker 1395 wrote this module. Its main result, `Langlands.GroupScheme.IsUnipotent.baseChange`,
+The main result of this module, `Langlands.GroupScheme.IsUnipotent.baseChange`,
 is the forward direction of Milne, *Algebraic Groups* (2017), Corollary 14.9: if `G` is unipotent
 over `k` and `k'` is a field extension of `k`, then `G_{k'}` is unipotent. Milne proves it with
 coconnected Hopf algebras (14.5). The Lean proof goes through the internal coordinate predicate

@@ -1,10 +1,6 @@
 # Renard I.5.3: free quotients and projective direct summands
 
-Authors: Worker 6 (shared draft revision 1: statement design, Lean and
-documentation), Worker 734 (source and errata checks, compilation,
-documentation revision and submission).
-
-This statement unit formalizes the two positive assertions in David Renard,
+This module formalizes the two positive assertions in David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, I.5.3, printed p.27 / PDF p.33. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA-256
@@ -47,7 +43,7 @@ The imports are the published `Langlands.Algebra.NonUnitalModuleFree`
 The coefficient ring `A : Type uA` is an arbitrary nonunital ring satisfying
 `IsIdempotented A`. Each module keeps its original additive group and action
 in `NondegenerateModuleCat`. The source assumes a complex algebra with
-idempotents. This unit extends both assertions to arbitrary idempotented
+idempotents. This module extends both assertions to arbitrary idempotented
 nonunital rings. The assertions use only finite local units, additive original
 actions and categorical splitting, so they need no complex coefficients.
 
@@ -94,7 +90,9 @@ intertwiners, so this conclusion expresses a genuine direct summand.
 not assert that the regular module or arbitrary free modules are projective.
 It also asserts no converse from being a summand of a free module to
 projectivity. The source warns that these implications can fail for algebras
-with idempotents. That warning remains a separate obligation.
+with idempotents. That warning is formalized separately, by the counterexample
+of `NonUnitalModuleFreeCounterexampleStatements`, proved in
+`NonUnitalModuleFreeCounterexampleProof`.
 
 ## Provenance
 

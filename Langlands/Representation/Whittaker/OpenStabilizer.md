@@ -1,7 +1,5 @@
 # The block-reversal stabilizer and its product character
 
-Author: Worker 176.
-
 ## Scope and conventions
 
 For a field `K : Type u`, a natural number `n`, and an ordered positive block shape `B : BlockShape n`, put `P = B.parabolic K`, `U = upperUnipotent n K`, and `w = (B.reverseMatrix K)⁻¹`. The construction works at every natural rank, including the positive ranks required by the application. It uses the existing permutation that reverses whole blocks and preserves each position inside a block.

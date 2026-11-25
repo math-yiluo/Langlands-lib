@@ -92,11 +92,11 @@ theorem isComponentUnion_of_reflections_edges (R : Set M.rootIndex)
   have hi : component M.basis i = D.rootComponent r := D.rootCoordinateWitness_component r
   exact (hsimple r i hi).trans (hsimple s i (hi.trans hrs)).symm
 
-local instance : Smooth M.group.X.hom := M.reductive.smooth
+private local instance : Smooth M.group.X.hom := M.reductive.smooth
 
 variable (k : Type u) [Field k] [Algebra M.ring k]
 
-local instance : IsAffineHom ((baseChange (algebraBaseMap M.ring k)).obj M.group).X.hom :=
+private local instance : IsAffineHom ((baseChange (algebraBaseMap M.ring k)).obj M.group).X.hom :=
   (M.reductive.isConnectedReductive_algebraMap k).isAffineHom
 
 /-- Root support of an actual field subgroup functor, expressed on the

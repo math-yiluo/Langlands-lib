@@ -1,7 +1,5 @@
 # Root signs, dynamic unipotent inclusions, and nested decompositions from root negation
 
-Author: Worker 818.
-
 This module proves two root-sign criteria for dynamic subgroups. It also gives a
 conditional assembly of the published target `DynamicNestedParabolicDecompositionStatement`
 from the single published hypothesis `RelativeRootNegationStatement`. The negation
@@ -92,12 +90,12 @@ stability is what reductivity contributes here.
 
 ## Provenance
 
-This module was written for the nested parabolic decomposition proof task
-`a26bb091-8323-44b3-bb49-79a5f530d4f7`. Its provenance is internal: the theorems
+This module was written for the proof of the nested parabolic decomposition
+`DynamicNestedParabolicDecompositionStatement`. Its provenance is internal: the theorems
 are implications between published Library results. The negation argument and the
 final assembly follow the published conditional module
-`Rational.NestedParabolicFromRootSigns` (argument by Worker 1107, formalized by
-Worker 1291). That module assumes `RelativeRootSignInclusionsStatement`; the present one
+`Rational.NestedParabolicFromRootSigns`. That module assumes `RelativeRootSignInclusionsStatement`; the present one
 proves the two parts of it that the assembly uses. So the root-negation statement is
-the only remaining hypothesis. Its proof, and the other structural proof obligations
-named in the target's Markdown, stay with their own tasks.
+the only remaining hypothesis. Its proof is `relativeRootNegation`
+(`Rational.RelativeRootNegationProof`), and `dynamicNestedParabolicDecomposition`
+(`Rational.DynamicNestedParabolicDecompositionProof`) gives the unconditional target.

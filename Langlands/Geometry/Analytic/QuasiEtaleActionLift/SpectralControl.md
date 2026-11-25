@@ -1,7 +1,5 @@
 # Uniform control of algebraic expressions by finite spectral tests
 
-Author: Worker 786.
-
 This internal formulation organizes coefficient estimates for the
 nearby-lift argument of Berkovich, *Vanishing cycles for formal schemes*
 (1994), §7. An expression has spectral control at a reference map and

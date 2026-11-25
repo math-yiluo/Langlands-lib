@@ -38,6 +38,7 @@ variable (C : ValuedSL2RootCoordinates B hZ b)
 include C in
 theorem inducedCorootComponentProperty (hb : b ≠ 0) :
     InducedCorootComponentProperty B hZ b := by
+  have : Module.Free (UnramifiedClosure F) C.extension := Module.Free.of_divisionRing _ _
   refine ⟨WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension,
     ?_, WeilGm.isTorus_of_finite_separable (UnramifiedClosure F) C.extension,
     WeilGm.isInducedTorus_of_finite_separable (UnramifiedClosure F) C.extension,
@@ -54,6 +55,7 @@ variable (C : ValuedSU3RootCoordinates B hZ b)
 include C in
 theorem inducedCorootComponentProperty (hb : b ≠ 0) :
     InducedCorootComponentProperty B hZ b := by
+  have : Module.Free (UnramifiedClosure F) C.extension := Module.Free.of_divisionRing _ _
   refine ⟨WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension,
     ?_, WeilGm.isTorus_of_finite_separable (UnramifiedClosure F) C.extension,
     WeilGm.isInducedTorus_of_finite_separable (UnramifiedClosure F) C.extension,
@@ -64,6 +66,7 @@ theorem inducedCorootComponentProperty (hb : b ≠ 0) :
 include C in
 theorem double_inducedCorootComponentProperty (hb : b ≠ 0) :
     InducedCorootComponentProperty B hZ (2 • b) := by
+  have : Module.Free (UnramifiedClosure F) C.extension := Module.Free.of_divisionRing _ _
   refine ⟨WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension,
     ?_, WeilGm.isTorus_of_finite_separable (UnramifiedClosure F) C.extension,
     WeilGm.isInducedTorus_of_finite_separable (UnramifiedClosure F) C.extension,

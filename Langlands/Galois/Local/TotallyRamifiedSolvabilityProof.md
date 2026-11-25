@@ -1,7 +1,5 @@
 # Proof of solvability of totally ramified finite local Galois groups
 
-Author: Worker 231.
-
 The closing theorem `Langlands.PadicField.totallyRamifiedGaloisSolvability` has type
 `Langlands.PadicField.TotallyRamifiedGaloisSolvability.{u}`, the proposition published
 in `Langlands.Galois.Local.TotallyRamifiedSolvabilityStatement`, for an arbitrary

@@ -1,7 +1,5 @@
 # Rank-one local Kneser–Tits from the classification of rank-one groups
 
-Authors: Worker 4953.
-
 This module contains:
 
 - the theorem
@@ -16,7 +14,7 @@ This module contains:
   from this conjunction;
 - the theorem `localKneserTits_of_rankOneLeviFactors_of_classification`,
   which proves `Langlands.GroupScheme.LocalKneserTitsStatement.{u}` from all
-  the open inputs of the published route.
+  the inputs of the published route.
 
 ## Kneser–Tits for `SL₂(D)`
 
@@ -71,7 +69,7 @@ It is the conjunction of three published statements, at the same arbitrary
 universe `u`. Each has its own paired Markdown with sources.
 
 - `LocalRankOneClassificationStatement` (module
-  `SimplyConnected.LocalRankOneClassificationStatement`, Worker 5198). Over
+  `SimplyConnected.LocalRankOneClassificationStatement`). Over
   a nonarchimedean local field `K`, an affine, simply connected, absolutely
   almost-simple `G` of split rank one is isomorphic to one of the following:
   (i) `CentralSimpleUnits.BinaryRoot.groupScheme K D` for a
@@ -85,11 +83,11 @@ universe `u`. Each has its own paired Markdown with sources.
   `π : G ⟶ σ.isometryGroup q` (`σ.IsSpinCover q π`) of a nondegenerate
   quadratic form `q` of rank 4 or 5 and Witt index 1.
 - `Quaternionic.LocalSymplecticKneserTitsStatement` (module
-  `Quaternionic.LocalSymplecticKneserTitsStatement`, Worker 5197). For the
+  `Quaternionic.LocalSymplecticKneserTitsStatement`). For the
   same `K`, `D`, `σ`, `m ∈ {2, 3}` and `H`,
   `parabolicElementarySubgroup (σ.symplecticGroup H) = ⊤`.
 - `Quaternionic.LocalSpinKneserTitsStatement` (module
-  `Quaternionic.LocalSpinKneserTitsStatement`, Worker 5197). For the same
+  `Quaternionic.LocalSpinKneserTitsStatement`). For the same
   `K`, `D`, `σ`, `m ∈ {4, 5}` and `q`, and every `S` with a spin covering
   `π : S ⟶ σ.isometryGroup q`, `parabolicElementarySubgroup S = ⊤`.
 
@@ -173,17 +171,16 @@ None of the six hypotheses is proved here.
 
 ## Place in the local Kneser–Tits route
 
-This module discharges the last open input of the published route that had
-no task of its own,
-`LocalAbsolutelyAlmostSimpleRankOneKneserTitsStatement`, in terms of
-statements that each have a statement-first owner: the classification
-(Task 5198, `45286b38-e76d-4ab7-a663-9458e462226c`) and the quaternionic
-groups (Task 5197, `ae1b6a58-9119-4973-a21f-64bb2691ed4f`). The two
-quaternionic Kneser–Tits statements have proof tasks: Task 5396
-(`c8674c9e-0a34-4a6c-acc8-f12f2104dc11`, symplectic) and Task 5398
-(`45a3dc75-4340-438d-bfe4-843376d060b6`, spin). The classification has
-the proof task Task 5442 (`56866550-3ce3-4065-86ef-babcf0251a5e`), whose
-context forbids using `LocalAbsolutelyAlmostSimpleRankOneKneserTitsStatement`,
+This module reduces the input
+`LocalAbsolutelyAlmostSimpleRankOneKneserTitsStatement` of the published route
+to the classification `LocalRankOneClassificationStatement` and the two
+quaternionic Kneser–Tits statements. All three are proved in the Library:
+`localRankOneClassification` (module
+`SimplyConnected.LocalRankOneClassificationProof`), `localSymplecticKneserTits`
+(module `Quaternionic.LocalSymplecticKneserTitsProof`) and `localSpinKneserTits`
+(module `Quaternionic.LocalSpinKneserTitsProof`). The modules that the proof of
+the classification imports, directly or transitively, do not contain
+`LocalAbsolutelyAlmostSimpleRankOneKneserTitsStatement`,
 `LocalRankOneKneserTitsStatement` or `LocalKneserTitsStatement`, so the
 route stays acyclic. The route is described
 in `notes/group-schemes/local-kneser-tits-route.md`.

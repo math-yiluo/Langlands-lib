@@ -27,7 +27,7 @@ def twistOneProjPresentation (R : Type u) [CommRing R] (m : ℕ) :
 
 /-- The actual degree-one twist is invertible. -/
 theorem twistOne_isInvertible (R : Type u) [CommRing R] (m : ℕ) :
-    Scheme.Modules.IsInvertible (twistOne R m) :=
+    Scheme.Modules.IsInvertibleFLT (twistOne R m) :=
   Picard.isInvertible_of_isLocallyFreeRankOne (projectiveSpaceTwistOneLocalFrames R m).2
 
 /-- The native sections of `𝒪(1)` give a closed immersion over the affine base. -/

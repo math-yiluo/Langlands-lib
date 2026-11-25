@@ -1,7 +1,5 @@
 # A trivial maximal torus over an algebraically closed field: statement
 
-Author: Worker 1487.
-
 `AlgClosedTrivialMaximalTorusUnipotentStatement.{u}` concerns an
 algebraically closed field `k : Type u`, a smooth connected affine group
 scheme `G` over `Spec k`, and a maximal torus `i : T.toGrp ⟶ G`.

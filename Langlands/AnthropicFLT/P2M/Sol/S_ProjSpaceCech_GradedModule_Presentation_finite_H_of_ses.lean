@@ -4,7 +4,7 @@ Ported from `P2M/Sol/S_ProjSpaceCech_GradedModule_Presentation_finite_H_of_ses.l
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpaceCechTwist
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpaceCechGradedModule
 import Langlands.AnthropicFLT.Theorems.Thm_ProjSpaceCech_GradedModule_d_sq

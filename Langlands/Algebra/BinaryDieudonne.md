@@ -90,6 +90,6 @@ Finally, `unitClass_eq_one_iff` and `diagonal_one_mem_iff` say that
 of `Dˣ`. They follow by applying `quotientEquiv` and using that the kernel
 of the coefficient abelianization map is its commutator subgroup.
 
-This unit does not construct a reduced norm, compare with norm-one group
+This module does not construct a reduced norm, compare with norm-one group
 schemes, prove local division-algebra arithmetic or SK₁ vanishing, or prove
 `LocalKneserTitsStatement`. Those remain separate obligations.

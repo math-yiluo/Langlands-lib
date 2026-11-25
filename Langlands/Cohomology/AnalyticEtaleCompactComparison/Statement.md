@@ -1,7 +1,5 @@
 # Berkovich's comparison `H^q_c(X{G}, F) ≅ H^q_c(X, b^*F)` (étale)
 
-Author: Worker 16.
-
 This module defines one proposition,
 `Langlands.Cohomology.AnalyticEtaleCompactComparison.AnalyticEtaleCompactComparisonStatement`.
 It is the first assertion of Berkovich's Corollary 1.5.2(i): if a topological
@@ -9,12 +7,12 @@ group `G` acts continuously on a Hausdorff analytic space `X`, then for every
 étale `G`-sheaf `F` the comparison maps `H^q_c(X{G}, F) → H^q_c(X, b^*F)` are
 isomorphisms in every degree `q`. It is a theorem-statement definition, not a
 proof. The isomorphism is the conclusion; it is not supplied as data or as a
-hypothesis. The comparison map itself is Worker 26's published construction
+hypothesis. The comparison map itself is the Library's construction
 `etaleCompactComparison`.
 
 The Library takes compact supports in the `L`-valued points of `X` for a
-normed field `L`, while Berkovich takes them in all points of `X`. Worker 26's
-Markdown for `AnalyticEtaleComparison` shows that the comparison map is not an
+normed field `L`, while Berkovich takes them in all points of `X`. The
+Markdown file of `AnalyticEtaleComparison` shows that the comparison map is not an
 isomorphism in general when some point of `X` underlies no `L`-valued point.
 The proposition therefore adds the hypothesis that every point of `X` underlies
 an `L`-valued point. Under it the Library's compact supports agree with
@@ -22,41 +20,42 @@ Berkovich's (see "Why the proposition is expected to hold").
 
 ## Objects
 
-All objects are imported from Worker 26's published module
+All objects are imported from the module
 `Langlands.Sheaf.Equivariant.AnalyticEtaleComparison` (namespace
 `Langlands.Sheaf.Equivariant.Analytic`) and the modules it builds on, mainly
-Worker 26's `AnalyticCompactSupport`, `AnalyticEtaleCompactCohomology` and
-`AnalyticGSheaves`, and Worker 21's analytic spaces, field-valued points, étale
+`AnalyticCompactSupport`, `AnalyticEtaleCompactCohomology` and
+`AnalyticGSheaves`, and the Library's analytic spaces, field-valued points, étale
 site and continuous actions.
 
 - `K : Type u` is a complete ultrametric normed field (`NormedField`,
-  `IsUltrametricDist`, `CompleteSpace`). `X` is an object of Worker 21's
+  `IsUltrametricDist`, `CompleteSpace`). `X` is an object of the Library's
   category of analytic spaces `LocalizedCategory.{u, v, v} (K := K)`. Its
   underlying topological space is `localizedSpaceFunctor.obj X`, written `|X|`
   below.
 - `L : Type uL` is a normed field with `[NormedAlgebra K L]`.
   `(localizedFieldPointFunctor L).obj X` is the set of `L`-valued points of `X`
-  (Worker 21's `FieldValuedPoints`): a point of `|X|` together with a
+  (`FieldValuedPoints`): a point of `|X|` together with a
   compatible family of `K`-algebra characters into `L`, one for each chart
   containing the point, whose norms are the seminorm of the point.
   `pointProjection L X` sends an `L`-valued point to its underlying point of
   `|X|`.
 - `h : ∀ x, EtaleSite.PointAxioms L x` is the hypothesis, needed to form the
-  comparison map, that every `L`-valued point of `X` satisfies Worker 21's
+  comparison map, that every `L`-valued point of `X` satisfies the Library's
   point axioms: the category of elements of its fibre functor on the étale
   site is cofiltered, and every element over an object lifts to a member of
   each covering sieve. With `h`, the `L`-valued points form the family of
-  points `etalePoints L h` of the étale site of `X`. Worker 21's unproved
-  `EtaleSite.GeometricPointStatement` asserts these axioms for every complete,
-  ultrametric, algebraically closed `L`.
+  points `etalePoints L h` of the étale site of `X`.
+  `EtaleSite.GeometricPointStatement`, proved as `geometricPointStatement` in
+  `Langlands.Geometry.Analytic.EtaleGeometricPointProof`, asserts these axioms
+  for every complete, ultrametric, algebraically closed `L`.
 - `G : Type z` is a topological group (`IsTopologicalGroup`) and
   `ρ : G →* Aut X` an action of `G` on `X` by automorphisms. `Aut X` consists
   of automorphisms of `X` in the category of `K`-analytic spaces, that is,
   over `K`.
 - `R : Type (max u (v + 1) uL)` is a commutative ring. Sheaves take values in
-  `R`-modules. This coefficient universe is the one of Worker 26's derived
+  `R`-modules. This coefficient universe is the one of the Library's derived
   functors.
-- `EtaleGSheaf ρ (ModuleCat R)` is Worker 26's category of étale `G`-sheaves:
+- `EtaleGSheaf ρ (ModuleCat R)` is the Library's category of étale `G`-sheaves:
   sheaves on the twisted étale site of `X` (Berkovich's `G^d`-sheaves) whose
   sections are locally discrete for `distinguishedLiftSystem ρ`. For every
   section `s` over `U`, the arrows into `U` that factor through a
@@ -76,7 +75,7 @@ site and continuous actions.
   values are smooth representations of `G`.
 - `etaleCompactCohomology L h R q` is `H^q_c(X, -)`, the `q`-th right derived
   functor of `etaleCompactSections L h R`, the compactly supported global
-  sections of `R`-module sheaves on Worker 21's étale site of `X`. Its
+  sections of `R`-module sheaves on the Library's étale site of `X`. Its
   coverings are the families of étale morphisms whose point maps are jointly
   surjective.
 - `etaleGSheafRestriction ρ R` is Berkovich's `b^*`: the inclusion of étale
@@ -86,15 +85,15 @@ site and continuous actions.
   `H^q_c(X{G}, F) → H^q_c(X, b^*F)`. It is a natural transformation from
   `etaleGSheafCompactCohomology L ρ h R q ⋙ smoothForget R G` (the underlying
   modules of `H^q_c(X{G}, F)`) to
-  `etaleGSheafRestriction ρ R ⋙ etaleCompactCohomology L h R q`. Worker 26
-  defines it as the base change, along the exact functors `b^*` and
+  `etaleGSheafRestriction ρ R ⋙ etaleCompactCohomology L h R q`. It is
+  defined as the base change, along the exact functors `b^*` and
   `smoothForget`, of `etaleCompactInclusion`, the inclusion
   `Γ_{c,X{G}}(F) ⊆ Γ_c(X, b^*F)` of smooth compactly supported sections into
   all compactly supported sections.
 - `T2Space (localizedSpaceFunctor.obj X)` says that `|X|` is Hausdorff.
 - `Function.Surjective (pointProjection L X)` says that every point of `|X|`
   underlies an `L`-valued point.
-- `IsContinuousAction ρ`, from Worker 21's `ContinuousAnalyticAction`, is
+- `IsContinuousAction ρ`, from `ContinuousAnalyticAction`, is
   Berkovich's continuity of an action: for every test triple `τ` (Berkovich's
   `ε ∈ E(X)`), the preimage under `ρ` of the set of automorphisms within `τ` of
   the identity is a neighbourhood of `1` in `G`.
@@ -108,30 +107,30 @@ site and continuous actions.
 `IsIso` of a natural transformation means that it is a natural isomorphism.
 So the proposition asserts that each map `H^q_c(X{G}, F) → H^q_c(X, b^*F)` is
 a bijection, for every étale `G`-sheaf `F` of `R`-modules. These maps are
-natural in `F` and are the comparison maps that Worker 26 constructed.
+natural in `F` and are the comparison maps `etaleCompactComparison`.
 Isomorphisms are not merely asserted to exist.
 
 The three conditions are hypotheses of the proposition, not binders of the
 definition. The binders `L`, `h`, `[Small.{max u (v + 1) uL} G]` and
 `[(distinguishedLiftSystem ρ).HasAdmissibleRefinements (twistedEtaleTopology ρ)]`
-are needed to form the comparison map. They are the same as in Worker 26's
-declarations.
+are needed to form the comparison map. They are the same as in the
+declarations of `AnalyticEtaleComparison`.
 
 - `L` and `h` give the points in which supports are taken.
 - `[Small.{max u (v + 1) uL} G]` is a size condition. It makes the twisted
-  étale site essentially small, which the published sheafification and
+  étale site essentially small, which the Library's sheafification and
   enough-injectives results on that site use. It holds, for example, when `G`
   lies in a universe at most `max u (v + 1) uL`.
 - `[(distinguishedLiftSystem ρ).HasAdmissibleRefinements (twistedEtaleTopology ρ)]`
-  is Worker 26's class from `LocalActionSmoothPart`. It has two fields. First,
+  is the class of `LocalActionSmoothPart`. It has two fields. First,
   every arrow of the twisted étale site between objects with admissible local
   actions is compatible with the two actions on open subgroups
   (`IsRestrictionEquivariant`), so that restriction along it preserves
   discreteness of sections. Second, every cone over a cospan is covered by
   objects with admissible local actions that map to the cospan
-  (`fiberRefinementSieve`). Worker 26 uses it to make étale `G`-sheaves of
+  (`fiberRefinementSieve`). The Library uses it to make étale `G`-sheaves of
   modules an abelian category with enough injectives. It is not proved in the
-  Library. Worker 26's module `AnalyticEtaleRefinements` derives it from three
+  Library. The module `AnalyticEtaleRefinements` derives it from three
   conditions on the étale site of `X`: distinguished étale neighbourhoods of
   points, lifts of the action to distinguished étale objects, and
   compatibility of lifts along arrows over `X`. Geometrically these are
@@ -182,14 +181,14 @@ Printed page numbers equal PDF page numbers.
   Definition 1.4.1, and the characterization on p.8: "an étale `G^d`-sheaf `F`
   is a `G`-sheaf if and only if for any étale morphism `U → X` and any element
   `f ∈ F(U)` each point of `U` has a distinguished open neighborhood `𝒰` such
-  that the stabilizer of `f|𝒰` is open in `G_𝒰`". Worker 26's `EtaleGSheaf`
+  that the stabilizer of `f|𝒰` is open in `G_𝒰`". The Library's `EtaleGSheaf`
   models this characterization.
 
 ## Correspondence and modelling choices
 
-- Berkovich's étale abelian sheaves on `X(G)` are modelled by Worker 26's
+- Berkovich's étale abelian sheaves on `X(G)` are modelled by the
   étale `G`-sheaves `EtaleGSheaf ρ`, through Berkovich's Theorem 1.4.2 and the
-  characterization on p.8, as in all of Worker 26's étale modules. Theorem
+  characterization on p.8, as in all of the Library's étale `G`-sheaf modules. Theorem
   1.4.2 is not formalized.
 - Berkovich works with abelian sheaves. Here sheaves take values in
   `R`-modules for an arbitrary commutative ring `R` in the coefficient universe;
@@ -198,10 +197,10 @@ Printed page numbers equal PDF page numbers.
   to abelian groups.
 - Berkovich takes supports in all points of `X`, through the stalks at
   geometric points. The Library takes them in `L`-valued points, with the
-  topology induced from `|X|` (Worker 26's `AnalyticCompactSupport`). The
+  topology induced from `|X|` (`AnalyticCompactSupport`). The
   hypothesis that `pointProjection L X` is surjective is ours. It is not in
   Berkovich, and is what makes the two notions of compact support agree.
-  Without it the degree-zero comparison can fail. Worker 26's Markdown for
+  Without it the degree-zero comparison can fail. The Markdown file of
   `AnalyticEtaleComparison` (section "Supports in `L`-valued points") gives the
   example `K = ℚ_p`, `L = ℂ_p`, `G = ℤ_p` permuting the copies of a disjoint
   union of closed discs, and a sheaf concentrated at their Gauss points. No
@@ -211,7 +210,7 @@ Printed page numbers equal PDF page numbers.
 - Surjectivity holds when, for every point `y` of `|X|`, the completed residue
   field `ℋ(y)` admits an isometric `K`-embedding into `L`. Such an embedding
   gives an `L`-valued point over `y` by composing the canonical characters of
-  the charts into `ℋ(y)` (Worker 21's `FieldValuedPoints` Markdown, which does
+  the charts into `ℋ(y)` (the `FieldValuedPoints` Markdown, which does
   not formalize these characters). This remark is not used in the statement.
 - The hypotheses are Berkovich's (`X` is a Hausdorff `G`-space) together with
   the surjectivity hypothesis above. The binders `L`, `h` and the two instance
@@ -225,7 +224,7 @@ Printed page numbers equal PDF page numbers.
   proposition therefore covers only actions that fix the base field.
 - Only the first sentence of Corollary 1.5.2(i) is stated. The discreteness of
   the action of `G` on `H^q_c(X, b^*F)` is not stated separately. The spectral
-  sequence is not stated: the Markdown of the published
+  sequence is not stated: the Markdown of
   `Langlands.Cohomology.EquivariantComposite.Statement` shows that its
   ordinary-topological analogue fails for `G = ℤ` acting on `X = ℤ` by
   translation, and states its composite-functor form for compact `G` only.
@@ -235,7 +234,7 @@ Printed page numbers equal PDF page numbers.
 ## Why the proposition is expected to hold
 
 The following argument is ours, and follows Berkovich's two-line proof. It
-uses facts from Berkovich's theory that the Library does not prove: étale
+uses facts from Berkovich's theory: étale
 morphisms are open maps with discrete fibres, open immersions are étale, and a
 sheaf on the étale site whose stalks at all geometric points vanish is zero.
 
@@ -252,7 +251,7 @@ sheaf on the étale site whose stalks at all geometric points vanish is zero.
    `X ∖ {y}`, so it lies on an object over `U`, on which `s` vanishes. Hence
    the germ of `s` at `x` vanishes. So the Library support of `s` is the
    preimage of Berkovich's `Supp(s)` under `pointProjection L X`, and by
-   surjectivity its image is exactly `Supp(s)`. The published
+   surjectivity its image is exactly `Supp(s)`. The Library's
    `exists_isCompact_superset_iff_of_surjective` then shows that `s` is
    compactly supported in the Library's sense exactly when `Supp(s)` lies in a
    compact subset of `|X|`. Since `Supp(s)` is closed and `|X|` is Hausdorff,
@@ -292,9 +291,6 @@ sheaf on the étale site whose stalks at all geometric points vanish is zero.
    uses that `X` is a `G`-space: its proof shrinks `G` to open subgroups of
    the groups `G_U` of p.7.
 
-The Library does not yet have the Godement resolution of §1.5,
-Proposition 1.5.1 or the acyclicity of soft étale sheaves.
-
 ## Relation to other statements
 
 The ordinary comparison `H^q(X{G}, F) ≅ H^q(X, b^*F)` for compact `X` is the
@@ -311,10 +307,13 @@ Corollary 1.5.2(i) is a counterexample to this étale comparison proposition.
 
 ## Role in the Harris framework
 
-This proposition is a theorem statement for Task 16, "Formalize the Harris and
-Berkovich cohomological theorem-statement framework". That task covers
+This proposition is a theorem statement of the Harris and Berkovich
+cohomological theorem-statement framework, which covers
 Berkovich's equivariant-sheaf comparisons as part of the geometric and
-cohomological input to Harris's weak automorphic induction. The task's
+cohomological input to Harris's weak automorphic induction. The
 coverage note `notes/henniart/harris-cohomology-coverage.md` lists which
-comparisons are stated and which remain open. No other Library statement uses
-this proposition yet.
+comparisons are stated and which remain open. The reductions
+`AnalyticEtaleCompactComparison.Reduction` and `GeometryReduction` prove it
+from explicit premises, and `Langlands.Sheaf.Equivariant.AnalyticEtaleCompactSmoothness`
+and `Langlands.Cohomology.DivisibleSystem.DrinfeldLevelOneEtale` take it as a
+hypothesis.

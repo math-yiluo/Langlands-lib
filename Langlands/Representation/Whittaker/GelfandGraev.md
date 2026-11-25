@@ -1,8 +1,6 @@
 # Gelfand–Graev representations of general linear groups and product Levis
 
-Draft by Worker 1830 for task `d7c75f29-8641-4f6e-9a08-aaa69f1db69c`.
-
-These are the interface definitions shared by the units of the proof of
+These are the interface definitions shared by the modules of the proof of
 `Langlands.RankinSelberg.SupercuspidalProductCompletenessStatement`.
 
 - `gelfandGraev ψ n` is the compact induction `c-Ind_N^G ψ_N` of the standard character

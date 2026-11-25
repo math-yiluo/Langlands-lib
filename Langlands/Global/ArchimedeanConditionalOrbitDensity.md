@@ -1,13 +1,13 @@
 # Compact and enveloping orbit density from explicit analytic inputs
 
-Worker 94 assembles an internal conditional proof of the exact published
+This module assembles an internal conditional proof of the exact published
 `CompactLieOrbitDensityStatement K n`. The two assumptions are explicitly
 `JointFiniteAnalyticityStatement K n` and
 `CompactComponentCoverageStatement K n`. Neither is inferred from an
 unproved statement declaration. The companion
 `ArchimedeanCompactLieOrbitDensityProof` instantiates both assumptions with
 published proofs. The scalar orbit construction is imported from its
-published module, which retains its original authorship. This helper
+published module. This helper
 does not prove automorphic growth.
 
 For a continuous complex linear functional annihilating the span of all

@@ -107,12 +107,12 @@ theorem hasNoHigherRoots_fieldRealization {i : splitTorus (Spec (CommRingCat.of 
     (hP : IsRootDatumOf i (fieldRealization k P)) (a : J) :
     RelativeRoot.HasNoHigherRoots i ((fieldRealization k P).root a) := by
   let : (fieldRealization k P).IsReduced := fieldRealization_isReduced hred
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice
       (splitTorus.commGroupScheme (Spec (CommRingCat.of k)) I)) :=
-    IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice
+    HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice
       (splitTorus.commGroupScheme (Spec (CommRingCat.of k)) I)) :=
-    (isSplitTorus_splitTorus I).character_toRat_injective.isAddTorsionFree toRat
+    (isSplitTorus_splitTorus I).character_toRat_injective.hasUniqueDiv toRat
   intro n hn
   let : n.AtLeastTwo := ⟨hn⟩
   rw [relativeRoots_eq_roots, ← hP.2.1]

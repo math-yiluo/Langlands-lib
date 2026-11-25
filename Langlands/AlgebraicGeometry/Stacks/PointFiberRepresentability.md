@@ -35,7 +35,7 @@ scheme and map are definitionally those of `pointFiberScheme I`.
 The provenance is internal categorical infrastructure: composition of
 actual slice maps, transport of representations through an equivalence,
 and the previously constructed natural point-fibre comparison. No
-external geometric theorem is invoked. This unit requires a supplied
+external geometric theorem is invoked. This module requires a supplied
 representation of the product Hom presheaf; it does not assert that
 such representations exist. It supplies no smoothness, surjectivity,
 local finite type condition, or atlas existence.

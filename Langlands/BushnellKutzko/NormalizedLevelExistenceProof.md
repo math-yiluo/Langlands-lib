@@ -1,7 +1,5 @@
 # L0: existence of the normalized level (proof)
 
-Author: Worker 408.
-
 Module `Langlands.BushnellKutzko.NormalizedLevelExistenceProof`, namespace
 `Langlands.BushnellKutzko`. It proves the published proposition
 `NormalizedLevelExistenceStatement.{uK, uV}` of
@@ -19,7 +17,7 @@ two Library facts about principal congruence subgroups
 `Conductor.mem_principalCongruenceSubgroup_iff` and
 `Conductor.exists_pos_principalLevelOpenSubgroup_subset`.
 
-Mathematical source: the remark under L0 in the statement's Markdown and in Task 7419. The
+Mathematical source: the remark under L0 in the statement's Markdown. The
 set of values is nonempty by smoothness, and it lies in `(1/n!) ℕ` because
 `1 ≤ e(𝓛) ≤ n`. Bushnell (1987), (3.3), printed p. 196, takes this minimum without
 comment. The bound `e(𝓛) ≤ n` comes from the strict chain `L_0 ⊋ L_1 ⊋ ⋯ ⊋ L_e = 𝔭 L_0`,

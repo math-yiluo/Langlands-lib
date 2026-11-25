@@ -1,6 +1,6 @@
 # Commutative unipotent groups in characteristic zero are vector groups: proof
 
-Worker 906. The theorem `Langlands.GroupScheme.charZeroCommutativeUnipotentVectorGroup`
+The theorem `Langlands.GroupScheme.charZeroCommutativeUnipotentVectorGroup`
 proves the unchanged published proposition
 `Langlands.GroupScheme.CharZeroCommutativeUnipotentVectorGroupStatement.{u}`
 (module [`CharZeroUnipotentVectorStatement`](CharZeroUnipotentVectorStatement.md)) in every

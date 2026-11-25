@@ -1,7 +1,5 @@
 # Ordered refinement data for the two bracketings of three blocks
 
-Author: Worker 832.
-
 This internal module supplies the finite combinatorial data needed to apply
 the ordered regrouping proposition `Parabolic.OrderedProductRegrouping` to
 three consecutive blocks of positive ranks `C`, `A` and `B`, in each of the

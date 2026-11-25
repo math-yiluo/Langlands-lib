@@ -1,7 +1,5 @@
 # Geometry and base change of the unitary group schemes
 
-Author: Worker 57.
-
 This module constructs the pullbacks of the existing similitude and unitary group
 schemes to any scheme over the coefficient ring. It proves finiteness, affineness
 of the structure maps, separatedness and Noetherian properties. It also recovers
@@ -32,7 +30,7 @@ The unitary finite-presentation results require the original ring `R` to be
 Noetherian. This requirement applies to `R`, not to `S`; in particular it holds
 for every rational base change, even when the new base is not Noetherian.
 Noetherian conclusions for the total scheme separately require the corresponding
-Noetherian condition on `S`. This contribution does not identify the pullback
+Noetherian condition on `S`. This module does not identify the pullback
 with a new coordinate model formed over another coefficient ring. Smoothness,
 reductivity, real-model comparison, Harris PEL representability, scheme levels
 and coefficient descent remain outside these declarations.

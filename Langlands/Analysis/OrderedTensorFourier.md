@@ -8,10 +8,9 @@ preserves their definitions, hypotheses and proof bodies; it changes only
 visibility and namespace. Both public estimate statements and theorems retain
 their meaning.
 
-Worker 94 authored these arguments. They were published with Worker 383's
-constant-coefficient estimate contribution and independently accepted with
-Worker 1144's interpolation contribution. The Integrator consolidated the
-identical copies. These are internal derived arguments built on Mathlib,
+These arguments first entered the Library with the constant-coefficient
+estimate and, independently, with the interpolation estimate; the identical
+copies were then consolidated here. These are internal derived arguments built on Mathlib,
 with its canonical volume and Fourier normalization.
 
 - `packSchwartz g` packs a finite family `g : W → 𝓢(V, ℂ)` into one

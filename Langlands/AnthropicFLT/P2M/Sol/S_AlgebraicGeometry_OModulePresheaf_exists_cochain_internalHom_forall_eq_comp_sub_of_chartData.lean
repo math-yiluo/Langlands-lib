@@ -5,7 +5,7 @@ Anthropic, PBC, licensed under the Apache License, Version 2.0; see
 `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lakefile options are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_LinearMap_existsUnique_sub_eq_comp_comp_of_extension
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafHom
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafInternalHom

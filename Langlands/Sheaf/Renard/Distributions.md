@@ -1,6 +1,6 @@
 # Distributions on a vector sheaf
 
-Worker 1222. Module `Langlands.Sheaf.Renard.Distributions`, with the same namespace.
+Module `Langlands.Sheaf.Renard.Distributions`, with the same namespace.
 
 This module constructs Renard's distributions on a complex vector sheaf and
 their action by the full ring of locally constant functions. The underlying
@@ -14,7 +14,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French editio
 dated 9 July 2026, II.2.5, Definition, printed p.42 / PDF p.48. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read the original page. The Definition specifies the algebraic
+The original page was read. The Definition specifies the algebraic
 dual `F_c(X)^*` and the action
 
 `⟨f · T, s⟩ = ⟨T, f · s⟩`.
@@ -25,8 +25,8 @@ complex vector spaces on all open subsets of `X`. The published
 canonical locally constant scalar action, including the germ formula and
 linearity of sheaf morphisms for those scalars. This is the source's
 `𝒞^∞_X`-module structure from the Proposition on printed p.38 / PDF p.44.
-The categorical equivalence between the two notions of sheaf is a separate
-packaging obligation.
+The categorical equivalence between the two notions of sheaf is in the separate
+module `VectorSheafModuleEquivalence`.
 
 | Source object or formula | Lean construction |
 | --- | --- |
@@ -99,7 +99,7 @@ Renard's t.d. spaces without adding a compactness or finiteness hypothesis.
 
 The nearby open/closed exact-sequence Proposition, the full restriction sheaf
 on a locally closed subset, and isomorphisms over a change of base space are
-separate obligations. The same-base transpose above does not claim those
+not treated here. The same-base transpose above does not claim those
 results.
 
 Formal dependencies are the existing `VectorSheafScalars` action,

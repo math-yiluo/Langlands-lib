@@ -17,13 +17,12 @@ for irreducible admissible `π₁` of `GL_m(F)` and `π₂` of `GL_n(F)`:
    function of `q^{-s}` on `ℂ`".
 
 Neither assertion is proved or assumed here. The two `Prop` definitions are
-targets for later proof units; nothing in the Library uses them as hypotheses.
+proof targets; nothing in the Library uses them as hypotheses.
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-The author is Worker 11.
 
-The unit builds on these published modules:
+The module builds on these published modules:
 
 - `IntertwiningPadic`: the p-adic operator `shahidiIntertwining`, its
   convergence domain `shahidiSourceDomain`, and `shahidiIntertwining_eval`;
@@ -106,7 +105,7 @@ and irreducible, there is a real `a` such that for every `s` with
   `K_r`-finite functions. The Library's `ShahidiSourceSpace` uses smooth
   functions, the standard reading of the source's space over a p-adic field
   (smooth functions are `K_r`-finite). This identification is not proved in
-  the Library, and this unit does not use it.
+  the Library, and this module does not use it.
 
 ## The rationality statement
 
@@ -147,15 +146,15 @@ Two choices narrow the source's sentence; both are internal interpretations.
   determinant of `w_{m,n} u' k` is a unit, so only integral powers of
   `q^{-s}` occur. By the Iwasawa decomposition and the target transformation
   law, the values on `K_{m+n}` determine `A f_s`; this is a remark, not a
-  result of this unit.
+  result of this module.
 - *Weakly, for each `k` and `ℓ`.* The rational function may depend on `k`
   and `ℓ`. No common denominator is claimed.
 
 ## What is not claimed
 
-This unit does not claim the following:
+This module does not claim the following:
 
-- that either statement holds; both are open proof obligations;
+- that either statement holds; the Library proves neither;
 - holomorphy or nonvanishing of the continued operator, or of any normalized
   operator;
 - a common denominator for the rational functions over `k` and `ℓ`, or
@@ -163,5 +162,5 @@ This unit does not claim the following:
 - any Haar normalization of `du'`;
 - the comparison of Shahidi's `K_r`-finite functions with the Library's
   smooth functions;
-- the local coefficient relation (0.3), which later units of the parent task
-  treat.
+- the local coefficient relation (0.3), which `LocalCoefficient` and
+  `LocalCoefficientPadic` treat.

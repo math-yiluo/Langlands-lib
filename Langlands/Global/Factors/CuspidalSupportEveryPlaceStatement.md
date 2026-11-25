@@ -1,8 +1,5 @@
 # Cuspidal support of automorphic representations of `GL_n`, at every place
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** The module `Langlands.Global.Factors.CuspidalSupportEveryPlaceStatement`
 defines four predicates and states four propositions. It proves nothing.
 
@@ -73,8 +70,9 @@ Library vocabulary:
 - `Automorphic.IrreducibleOperatorSubquotient`
   (`Langlands/Automorphic/IrreducibleOperatorSubquotient.lean`).
 
-**Why it is here.** L4 of this task's contract asks for the isobaric theory of
-Getz–Hahn §10.7. The program ledger `notes/automorphic/global-program-coverage.md`
+**Why it is here.** Track L4 of the program ledger
+`notes/automorphic/global-program-coverage.md` concerns the isobaric theory of
+Getz–Hahn §10.7. The ledger
 (section "14 November 2026 local components, absolute convergence, archimedean
 Theorem 11.5.2, cuspidal support", list of remaining L4 targets) lists as
 missing statements "GH Theorem 10.7.1 at every place" and "the cuspidal-support
@@ -86,13 +84,18 @@ at every place as the existence of an isobaric sum
 (`CuspidalIsobaricAutomorphyStatement`), but not that the isobaric sum is a
 constituent of the induced representation.
 
-**Proof targets.** Later proof tasks should prove the Library statements
+**Proof targets.** The Library statements to be proved are
 `Langlands.Global.CuspidalSupportEveryPlaceStatement`,
 `Langlands.Global.CuspidalSupportDataStatement` and
 `Langlands.Global.CuspidalSupportDataReductionStatement` (universe parameter
 `u`), and `Langlands.Global.CuspidalIsobaricSupportStatement` (universe
 parameters `u` and `uQ`). `u` is the universe of the number field and of every
 local carrier; `uQ` is the factor universe of the spectral presentations.
+The Library proves the first as `cuspidalSupportEveryPlace`
+(`Langlands.Global.Factors.CuspidalSupportEveryPlaceProof`), the third as
+`cuspidalSupportDataReduction`
+(`Langlands.Global.Factors.CuspidalSupportDataReductionProof`) and the fourth
+as `cuspidalIsobaricSupport` (`Langlands.Global.Factors.CuspidalIsobaricSupportProof`).
 
 ## 1. Sources
 
@@ -313,7 +316,8 @@ universe `uQ`, and every `Q : IrreducibleOperatorSubquotient F r`,
     `I(ds i)` is irreducible and isomorphic to `π_(iv)`
     (`IsobaricAutomorphicRepresentation.md` §4, first bullet; the Library
     states the irreducibility as `CuspidalArchimedeanStandardIrreducibleStatement`,
-    not proved).
+    proved as `cuspidalArchimedeanStandardIrreducible` in
+    `Langlands.Automorphic.CuspidalArchimedeanComponentIrreducibleProof`).
   - The Library's standard module of a list of blocks is realized inside the
     principal series from the upper triangular Borel subgroup by normalized
     induction in stages (`StandardModule.md`, Derived choices 1 and 7), with
@@ -340,7 +344,9 @@ universe `uQ`, and every `Q : IrreducibleOperatorSubquotient F r`,
   This is background and is not asserted.
 - **The parameters are existential.** Condition 2 asks for some parameters
   `ds i` of the `T i` at `v`. For cuspidal `T i` they exist
-  (`CuspidalArchimedeanParameterExistenceStatement`, Task 5720, not proved)
+  (`CuspidalArchimedeanParameterExistenceStatement`, proved as
+  `cuspidalArchimedeanParameterExistence` in
+  `Langlands.Global.Factors.CuspidalArchimedeanParameterExistenceProof`)
   and are determined up to permutation, the sign of the weight of an
   induction block and the splitting of a weight-zero block
   (`IsobaricAutomorphicRepresentation.md` §4). These moves do not change the
@@ -416,7 +422,7 @@ universe `uQ`, and every `Q : IrreducibleOperatorSubquotient F r`,
   background used in §3 to read the archimedean predicates as statements
   about `Q_v`. This module does not import it.
 
-## 5. Proof routes (for the proof tasks; not part of the statements)
+## 5. Proof routes (not part of the statements)
 
 **Existence at every place** (deep). Langlands' proof (pp.204–205,
 summarized in `CuspidalSupportStatement.md` §5) realizes `π ≅ Q` as a quotient
@@ -424,7 +430,7 @@ of a space `V'` of functions in the global induced representation
 `Ind δ^(-1) σ`, through constant terms along the parabolic `P_φ` chosen there.
 The constant-term map commutes with `GL_(r+1)(𝔸_f)`, `K_∞` and the Lie
 algebra, so it relates `Q` and the induced representation at all places at
-once. At a real place `v` the proof task has to supply:
+once. At a real place `v` the proof has to supply:
 
 1. parameters `ds i` of the cuspidal blocks at `v`
    (`CuspidalArchimedeanParameterExistenceStatement`), whose standard modules
@@ -513,8 +519,7 @@ belong to this formalization:
   the factor universe of the presentations to `u`;
   `CuspidalIsobaricSupportStatement` allows any `uQ`.
 
-The Lean file was checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The four
+The Lean file was checked with `lean_check`, with no errors and no warnings. The four
 statements are `def`s returning `Prop`, with axioms `propext`,
 `Classical.choice`, `Quot.sound`. `CuspidalSupportEveryPlaceStatement`,
 `CuspidalSupportDataStatement` and `CuspidalSupportDataReductionStatement`

@@ -1,6 +1,6 @@
 # Central face lattices and their uniformizer maps
 
-Author: Worker 836, Task 5326. Derived auxiliary definitions and elementary
+Derived auxiliary definitions and elementary
 comparison lemmas for the Xi upper-bound proof.
 
 `faceCocharacterLattice J` is the kernel of the integral pairing with all roots

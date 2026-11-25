@@ -1,7 +1,5 @@
 # Statement: the Levi subgroup containing a maximal torus
 
-Worker 75.
-
 `Langlands.GroupScheme.RelativeTorusLeviStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`RelativeLevi.Basic`](Basic.md) (for

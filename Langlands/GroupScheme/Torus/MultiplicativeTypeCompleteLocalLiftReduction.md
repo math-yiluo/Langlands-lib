@@ -1,7 +1,5 @@
 # Reduction of lifting over complete local rings to adic lifting
 
-Author: Worker 741.
-
 This internal helper module reduces
 [`MultiplicativeTypeCompleteLocalLiftStatement`](MultiplicativeTypeCompleteLocalLiftStatement.md)
 (Conrad, *Reductive group schemes*, Corollary B.3.5, p.292) to two other published

@@ -34,10 +34,12 @@ triviality for every connected reductive group, and
 `MinimalPseudoParabolicConjugacyStatement`. It applies the latter statement
 to the transferred minimality proofs and retains its actual rational point,
 source group scheme isomorphism, and conjugacy equation. This conditional
-adapter does not establish the unconditional task target.
+adapter does not establish `MinimalParabolicConjugacyStatement`
+unconditionally; the Library proves it as `minimalParabolicConjugacy` (module
+`Rational.MinimalParabolicConjugacyProof`).
 
 This route is internal interface reasoning from the published definitions
 and supplied statements. Its mathematical motivation is the reductive
 comparison in Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition,
 Proposition 2.2.9, printed pages 67–68, followed by Theorem C.2.5, printed page
-595. The structural results themselves remain outside this contribution.
+595. The structural results themselves remain outside this module.

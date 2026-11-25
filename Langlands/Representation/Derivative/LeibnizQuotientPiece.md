@@ -1,7 +1,5 @@
 # The differentiated restriction quotient as a Leibniz grade
 
-Author: Worker 984.
-
 BZ77 Corollary 4.14(c) says that the `k`-th derivative of the product `ρ × σ` is glued
 from the products `ρ^(j) × σ^(k-j)`. The published statement module
 `Langlands.Representation.Derivative.GeneralLinearDerivativeLeibnizFiltrationStatement`
@@ -70,17 +68,17 @@ takes the needed instance of 4.14(a) as an explicit argument:
   `LeftMixedProductDerivativeVanishing` at `k = m + 1`, `r = n`, `i = d`.
 
 So the results are unconditional constructions from that data. They become
-statements about the target only when a consumer supplies `E` and `V` from an
-accepted, published proof of 4.14(a).
+statements about the target only when a consumer supplies `E` and `V` from a
+published proof of 4.14(a).
 
 ## Imports
 
-- `Langlands.Representation.Derivative.LeibnizZeroFirstPiece` (published, Worker 984):
+- `Langlands.Representation.Derivative.LeibnizZeroFirstPiece` (published):
   `leibnizZeroFirst_rank` and `leibnizZeroFirstSmoothPieceIso`. Through it, the module
   uses `leibnizPiece` and `leibnizZeroFirstIndex` and the published
   `generalLinearRankCast` with its lemma `generalLinearRankCast_trans` (`Iteration`),
   `mirabolicDerivativeOfOrder` (`Homogeneity`) and `mirabolicRankCastDerivativeIso`
-  (`RankCastCompat`, Worker 593 with Worker 984 as coauthor).
+  (`RankCastCompat`).
 - `Langlands.Representation.Derivative.MirabolicProductRestrictionStatement`
   (published): the definition `MirabolicProductRestriction.restrictionQuotient` only.
   The module's proposition `MirabolicProductRestrictionStatement` is not used.
@@ -122,7 +120,7 @@ mention of finite length is the definition `HasFiniteLength` in
 closure contains neither `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`,
 `IrreducibleCoinvariantFinitenessStatement` nor
 `LeviCuspidalCoinvariantFinitenessStatement`. It contains no module of the excluded
-segment, two-supercuspidal or classification tasks. It contains no proof module of
+segment, two-supercuspidal or classification results. It contains no proof module of
 4.13(a), no exactness module and no `MixedProductDerivativeStatement`. The two
 `Whittaker` modules only define additive characters, Whittaker functionals and
 function models, with elementary lemmas about them.
@@ -141,18 +139,18 @@ The proofs use only the following inputs:
 - the data `E` or `V`.
 
 No Prop-valued statement definition is used as a hypothesis. The proofs use no
-exactness, finite-length, admissibility or irreducibility theorem, and no conclusion
-of an excluded consumer task. The constructions hold for arbitrary carriers in
+exactness, finite-length, admissibility or irreducibility theorem, and no excluded
+consumer conclusion. The constructions hold for arbitrary carriers in
 universe `uV` and every unitary additive character `ψ`. They also hold at the top
 order `d = n + 1` of the zero-first piece, where `MD n d` lands in `GL_0`.
 
 ## Related Library modules
 
-`LeibnizZeroFirstPiece` (Worker 984) identifies `ρ × (σ|P)^(k)` with the zero-first
+`LeibnizZeroFirstPiece` identifies `ρ × (σ|P)^(k)` with the zero-first
 piece; this module adds the passage from the differentiated quotient term through
-4.14(a). Worker 593's `LeibnizRestrictionCompat` compares the differentiated middle
+4.14(a). `LeibnizRestrictionCompat` compares the differentiated middle
 and subobject terms of the restriction sequence with `leibnizSource` and the
-right-mixed source. Worker 593's accepted, not yet published, `LeibnizRestrictionExact`
+right-mixed source. `LeibnizRestrictionExact`
 defines `leibnizRestrictionDerivativeQuotient T ψ m n d hd` as the same composite
 `Q d`, so its objects and this module's agree definitionally. This module has no
 declaration in common with those modules and imports neither.

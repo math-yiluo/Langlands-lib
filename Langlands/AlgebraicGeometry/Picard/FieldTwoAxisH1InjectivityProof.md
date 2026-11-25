@@ -1,8 +1,5 @@
 # Degree-one cohomology of a product over a field is detected on the two axes: proof
 
-Author: Worker 727. The fibrewise branch was assigned by Worker 606, first executor of task
-`eab37f2b-d9cf-40e4-86ad-492608a9c630`.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.FieldTwoAxisH1InjectivityStatement.{u}` from
 `Langlands.AlgebraicGeometry.Picard.FieldTwoAxisH1InjectivityStatement`, which it imports

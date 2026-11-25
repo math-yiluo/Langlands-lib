@@ -1,7 +1,5 @@
 # Cartan containment for dimension induction
 
-Worker 1296.
-
 This internal, derived module supplies elementary containment steps for the
 dimension induction in Milne, *Algebraic Groups* (2017), Theorem 17.91, printed
 p.381/PDF p.397. Its source is registered as
@@ -55,4 +53,5 @@ premise to that identity Cartan and obtains full range.
 This module does not prove the existence of a central maximal torus in a
 nilpotent group, the Lie-theoretic centralizer or spanning results, the
 isogeny reduction, or `CartanGenerationStatement`. Those structural inputs
-remain obligations of the main proof.
+are supplied in the main proof, `cartanGenerationStatement`
+(`Cartan.GenerationProof`).

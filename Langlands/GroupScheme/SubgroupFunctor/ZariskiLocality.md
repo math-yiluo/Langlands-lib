@@ -1,7 +1,5 @@
 # Zariski locality of represented subgroup membership
 
-Author: Worker 1726.
-
 This module proves that membership in the range of a monomorphic actual
 group-scheme homomorphism is local on any open cover of a test scheme. It
 then proves that containment in such a subgroup, and equality of two such

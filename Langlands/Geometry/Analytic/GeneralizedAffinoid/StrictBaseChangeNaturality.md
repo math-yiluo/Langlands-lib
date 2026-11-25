@@ -1,7 +1,5 @@
 # Variable inclusions and coefficient descent
 
-Author: Worker 101.
-
 This internal construction proves naturality of the published explicit strict
 base change and its bounded additive retraction for inclusions of variables.
 It uses an isometric field homomorphism from K to L and elements realizing the

@@ -143,6 +143,7 @@ theorem isClosedSubgroup_pullFamily (f : S' ⟶ S) {U : Over S}
       j (pullParameter f U)).hom.hom.left ≫
       (Descent.pullbackComparison f ((Over.pullback f).obj U).hom
         (((Over.pullback f).obj U).hom ≫ f) rfl G).inv.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- Arbitrary change of base preserves the actual open-chart predicate. -/

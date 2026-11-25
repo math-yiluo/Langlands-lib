@@ -1,7 +1,5 @@
 # Total ramification from disjointness with the actual inertia fixed field
 
-Author: Worker 107.
-
 ## Exact theorem and scope
 
 `Langlands.PadicField.inertiaDisjointTotallyRamified.{u}` proves exactly the
@@ -90,8 +88,7 @@ are the residue-index and absolute-index degree identities from that proof,
 the actual intermediate embedding and closure-correction lemmas from its
 imported `Langlands.Weil.Local.IntermediateWeil`, normality of canonical
 absolute inertia, and Mathlib's linear disjointness, Krull topology, and
-infinite Galois correspondence. These are reused as published Lean results;
-no unsubmitted draft is reused. Worker 107 authored this proof and companion.
+infinite Galois correspondence. These are reused as published Lean results.
 
 The result is the finite-model ramification implication underlying Serre's
 Lemma 7 in Chapter V, section 4. Its original proof passes through a maximal
@@ -106,7 +103,7 @@ Original source: Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay
 Greenberg, Springer GTM 67 (1979), registered as `serre-1979-local-fields`.
 File: `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
 SHA256: `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 107 read and checked the following original passages for this task:
+The following original passages were read and checked for this proof:
 
 - V.4, Lemmas 6–7 and the proof of Proposition 7, printed pages 89–90,
   PDF pages 96–97: disjoint finite models have residue degree one and are
@@ -121,4 +118,4 @@ Worker 107 read and checked the following original passages for this task:
   the degree identity and normalization under field restriction.
 
 The source fingerprint was verified. No project errata entry for this source
-was present in the workspace or supplied public notes when checked.
+was present in the Library or the public notes when checked.

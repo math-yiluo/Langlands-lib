@@ -1,7 +1,5 @@
 # Jordan semisimple parts of tangent matrices
 
-Author: Worker 1498.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.ReductiveCharZeroSemisimplicityStatement`. It extends the
 Library theorem `tangentMatrix_semisimpleKernel` from representations indexed by

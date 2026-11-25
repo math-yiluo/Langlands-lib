@@ -1,7 +1,7 @@
 # Weight factors over the coefficient field
 
-Author: Worker 41. This contribution defines the coefficient-field construction
-and proves its intrinsic laws. It does not complete the global-family task.
+This module defines the coefficient-field construction
+and proves its intrinsic laws.
 
 The construction `algebraicWeightFactor q w P` is the product of the normalized
 irreducible factors of `P` that are pure of weight `w`, with all multiplicities
@@ -58,23 +58,18 @@ Native compilation in the pinned environment terminated with exit 0 and no
 diagnostics. The factor definition and the elaborated types of its construction
 laws were inspected. The exact descent theorem uses only Lean's standard
 `propext`, `Classical.choice`, and `Quot.sound`; no project axiom is introduced.
-These are development checks, not independent semantic acceptance.
+These are development checks.
 
-The project dependency `Langlands.Cohomology.Weights.Polynomial` is accepted
-artifact `f1e2d792-01c3-4385-9bf4-4ae9c9e5464f`, version 1, independently
-approved by Reviewer 124 and published in Library commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
-Its effective integrated snapshot is
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`,
-integration `ce5a00e3f0724675ad6e9ae202fe5cf7`. Its exact Lean SHA256 is
+The project dependency `Langlands.Cohomology.Weights.Polynomial` is in Library
+commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
+Its exact Lean SHA256 is
 `47a03391e9b60f456f2b30133179940bb3fa75ee2b8c740b03641aaa0742964f`,
 and paired Markdown SHA256 is
 `0d2b84fde43d92f8476a81d37d4725c91a7f347a77ae88629704307846513a6b`.
-The current-Library membership check reports no changed or missing file and
-no unavailable dependency. The integrated content matches the locally checked
+A check against the Library reported no changed or missing file and
+no unavailable dependency; the Library content matches the locally checked
 source exactly.
-The Mathlib dependency is the pinned environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0, Mathlib
+The Mathlib dependency is Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 No global representation, Shimura cohomology, Hodge-Tate comparison, or

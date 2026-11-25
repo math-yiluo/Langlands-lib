@@ -168,14 +168,14 @@ def inverseImageDiagonalMap (F : Action (Sheaf X.smallEtaleTopology (ModuleCat.{
   hom := inverseImageProductSheafMap f R Y.V F.V
   comm g := by
     change (inverseImage f R).map
-        (deckMap X.smallEtaleTopology (Y.ρ g⁻¹) F.V ≫
-          (productSheaf X.smallEtaleTopology Y.V).map (F.ρ g)) ≫
+        (deckMap X.smallEtaleTopology (Y.ρ g⁻¹).asHom F.V ≫
+          (productSheaf X.smallEtaleTopology Y.V).map (F.ρ g).asHom) ≫
         inverseImageProductSheafMap f R Y.V F.V =
       inverseImageProductSheafMap f R Y.V F.V ≫
-        (deckMap Z.smallEtaleTopology ((etaleObjectPullback f).map (Y.ρ g⁻¹))
+        (deckMap Z.smallEtaleTopology ((etaleObjectPullback f).map (Y.ρ g⁻¹).asHom)
             ((inverseImage f R).obj F.V) ≫
           (productSheaf Z.smallEtaleTopology ((etaleObjectPullback f).obj Y.V)).map
-            ((inverseImage f R).map (F.ρ g)))
+            ((inverseImage f R).map (F.ρ g).asHom))
     rw [CategoryTheory.Functor.map_comp, Category.assoc, inverseImageProductSheafMap_natural,
       inverseImageProductSheafMap_deck_assoc]
 

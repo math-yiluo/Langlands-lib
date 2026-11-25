@@ -107,5 +107,5 @@ Absolute global Weil groups, finite/absolute comparisons, global automorphic
 unitarity, local support existence and uniqueness, expansion existence and
 uniqueness, isometry, injectivity of either projection, spanning of either
 ambient lattice and a correspondence between them remain separate obligations.
-In particular, this contribution does not complete the absolute-global scope
+In particular, this module does not complete the absolute-global scope
 of Henniart's section 2.5.

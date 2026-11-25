@@ -1,7 +1,5 @@
 # Standard parabolic structure from the dynamic statements
 
-Author: Worker 923.
-
 This module turns facts about the dynamic subgroups `P(χ)(k)`, `Z(χ)(k)`,
 `U(χ)(k)` of a cocharacter into facts about the actual standard subgroups
 `P_I(k)`, `L_I(k)`, `U_I(k)` indexed by a set `I` of simple relative roots.

@@ -23,29 +23,30 @@ variable (L : Type u) [Field L] [NumberField L] [IsCMField L]
   {S : AlgebraicGeometry.Scheme.{w}}
   [Algebra K Γ(S, ⊤)] [Algebra ℚ Γ(S, ⊤)] [IsScalarTower ℚ K Γ(S, ⊤)]
   {M N : S.Modules} (ρ : L →+* End M) (τ : L →+* End N)
-  (f : M ⟶ N) (hf : ∀ t : L, ρ t ≫ f = f ≫ τ t)
+  (f : M ⟶ N) (hf : ∀ t : L, (ρ t).asHom ≫ f = f ≫ (τ t).asHom)
 
 omit [IsCMField L] [IsQuadraticExtension ℚ L] in
 include hf in
 /-- An actual field-action intertwiner also intertwines the constructed global tensor action. -/
 theorem sheafTensorAction_naturality (a : Γ(S, ⊤) ⊗[ℚ] L) :
-    sheafTensorAction L M ρ a ≫ f = f ≫ sheafTensorAction L N τ a := by
+    (sheafTensorAction L M ρ a).asHom ≫ f = f ≫ (sheafTensorAction L N τ a).asHom := by
   induction a using TensorProduct.inductionOn with
   | tmul r t =>
-    rw [sheafTensorAction_tmul, sheafTensorAction_tmul,
-      Linear.smul_comp, Linear.comp_smul, hf t]
+    rw [sheafTensorAction_tmul, sheafTensorAction_tmul]
+    change (r • (ρ t).asHom) ≫ f = f ≫ (r • (τ t).asHom)
+    rw [Linear.smul_comp, Linear.comp_smul, hf t]
   | add a b ha hb =>
     rw [map_add, map_add]
-    change ((sheafTensorAction L M ρ a : M ⟶ M) +
-      sheafTensorAction L M ρ b) ≫ f =
-      f ≫ ((sheafTensorAction L N τ a : N ⟶ N) + sheafTensorAction L N τ b)
+    change ((sheafTensorAction L M ρ a).asHom +
+      (sheafTensorAction L M ρ b).asHom) ≫ f =
+      f ≫ ((sheafTensorAction L N τ a).asHom + (sheafTensorAction L N τ b).asHom)
     rw [Preadditive.add_comp, Preadditive.comp_add, ha, hb]
 
 include hf in
 /-- Field-action intertwiners commute with the actual complementary sheaf projectors. -/
 theorem sheafProjector_naturality (conjugate : Bool) :
-    sheafProjector L K M ρ conjugate ≫ f =
-      f ≫ sheafProjector L K N τ conjugate :=
+    (sheafProjector L K M ρ conjugate).asHom ≫ f =
+      f ≫ (sheafProjector L K N τ conjugate).asHom :=
   sheafTensorAction_naturality L ρ τ f hf _
 
 /-- The actual eigenprojections commute with an equivariant sheaf map and its restriction. -/

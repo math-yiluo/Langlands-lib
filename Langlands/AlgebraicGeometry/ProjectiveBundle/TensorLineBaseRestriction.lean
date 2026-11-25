@@ -87,7 +87,7 @@ lemma openLineIso_restrict
     (tV : N.restrict V.ι ≅ structureSheaf V.toScheme)
     (tU : N.restrict U.ι ≅ structureSheaf U.toScheme) (h : U ≤ V) :
     openLineRestrictionIso tV h ≪≫
-        Scheme.Modules.unitAut (structureSheaf U.toScheme) (openLineTransitionUnit tV tU h) =
+        (Scheme.Modules.unitAut (structureSheaf U.toScheme) (openLineTransitionUnit tV tU h)).asIso =
       openPullbackIso N h ≪≫ openLineIso tU := by
   let f := S.homOfLE h
   let e := openLineRestrictionIso tV h
@@ -116,7 +116,7 @@ lemma openLineIso_restrict
   apply (cancel_epi e.inv).mp
   apply structureEnd_ext
   change (Scheme.Modules.unitAut (structureSheaf U.toScheme)
-      (openLineTransitionUnit tV tU h)).hom.app ⊤
+      (openLineTransitionUnit tV tU h)).asIso.hom.app ⊤
         (e.hom.app ⊤ (e.inv.app ⊤ (1 : Γ(U.toScheme, ⊤)))) =
     (openLineIso tU).hom.app ⊤
       ((openPullbackIso N h).hom.app ⊤ (e.inv.app ⊤ (1 : Γ(U.toScheme, ⊤))))

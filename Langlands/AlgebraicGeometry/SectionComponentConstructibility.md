@@ -2,7 +2,7 @@
 
 `SectionComponent.NoetherianComponentConstructibilityStatement` says that the actual selected-component union of every quasi-compact locally finite-type morphism with an actual section over a Noetherian scheme is constructible. It quantifies over arbitrary schemes in universe `u`; it assumes no flatness, reducedness, separatedness or affineness.
 
-`noetherianComponentConstructibility_of_genericConstancy` proves this assertion conditionally on the existing `SchemeFiberGeometry.NoetherianGeometricallyConnectedFiberGenericConstancy` interface. The generic-constancy premise is not proved here, and this unit does not assert unconditional constructibility or the host openness theorem.
+`noetherianComponentConstructibility_of_genericConstancy` proves this assertion conditionally on the existing `SchemeFiberGeometry.NoetherianGeometricallyConnectedFiberGenericConstancy` interface. The generic-constancy premise is not proved here, and this module does not assert unconditional constructibility or the openness statement `FlatFinitePresentationOpennessStatement` that it serves.
 
 The general topological lemma `isConstructible_of_noetherian_target_slices` uses well-founded induction on closed subsets of a Noetherian target. For any function `f : A → B` and subset `S` of a topological source `A`, assume that over a nonempty open part of every irreducible closed target subset, the intersection with `S` upstairs is constructible. Removing that open part leaves a smaller closed target subset. Reducible closed subsets split into two smaller closed subsets. The resulting finite unions prove constructibility of `S`. This lemma requires neither continuity of `f` nor Noetherianity of `A`.
 

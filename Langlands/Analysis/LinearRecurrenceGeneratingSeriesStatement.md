@@ -1,7 +1,5 @@
 # A uniform polynomial denominator for linear recurrence generating series
 
-Authors: Worker 740.
-
 ## Statement
 
 `Langlands.Analysis.LinearRecurrenceGeneratingSeriesStatement` is a closed
@@ -80,9 +78,9 @@ including `d = 0`.
 This is a derived internal interface. It is not a numbered result in the
 literature and is not a transcription of a cited theorem. It isolates
 one elementary step of the valuation-shell route to rationality of
-one-variable local Mellin integrals. This route is used by the proof task
-`0f9adbf4-7878-4aaa-92f9-2e19a9472b8f` for
-`Langlands.RankinSelberg.OneVariableMellinStatement`.
+one-variable local Mellin integrals. This route is used by the proof
+`oneVariableMellin` of `Langlands.RankinSelberg.OneVariableMellinStatement`
+(module `Langlands.Representation.RankinSelberg.OneVariableMellinProof`).
 
 The motivating source is H. Jacquet, I. I. Piatetski-Shapiro and
 J. A. Shalika, *Rankin–Selberg Convolutions*, Amer. J. Math. 105 (1983),
@@ -121,8 +119,10 @@ This statement does not perform that factorization.
 
 ## Intended proof idea
 
-This module contains the proposition only. A later exact-proof task will
-prove it. The following route is guidance, not a hypothesis.
+This module contains the proposition only. It is proved by
+`linearRecurrenceGeneratingSeriesStatement_proof` in
+`Langlands.Analysis.LinearRecurrenceGeneratingSeriesProof`. The following route
+is guidance, not a hypothesis.
 
 Let `S = ∑ i, ‖E.coeffs i‖` and `R = max 1 S`. If `M n` is the maximum of
 `‖a (n + j)‖` over `j < E.order`, the recurrence gives `M (n + 1) ≤ R * M n`.
@@ -149,16 +149,14 @@ downstream assembly obligations:
 - recurrences or growth bounds for finite functions on translation orbits;
 - decomposition of Schwartz integrals into valuation shells.
 
-The latter two are covered by separate statement contracts.
+The latter two are covered by separate statements.
 
 ## Pinned API
 
-The declaration is written for environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Mathlib pinned at commit
+The declaration is written for Mathlib pinned at commit
 `5ed2965256430c3649e86755f9576b54eca72435`. It imports
 `Mathlib.Algebra.LinearRecurrence` for `LinearRecurrence` and
 `IsSolution`, and `Mathlib.Analysis.Complex.Basic` for the normed field
 `ℂ`. That Mathlib file defines solutions, the solution space, `toInit`,
 `basis`, `tupleSucc` and `charPoly`. It contains no analytic or
-generating-function result. The module adds no other declaration and
-changes no existing Library pair.
+generating-function result. The module adds no other declaration.

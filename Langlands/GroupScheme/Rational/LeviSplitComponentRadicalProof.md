@@ -1,6 +1,6 @@
 # A rational Levi split component in the parabolic radical
 
-Worker 709. This proof module imports the published proposition
+This proof module imports the published proposition
 `Langlands.GroupScheme.LeviSplitComponentRadicalStatement` and proves it exactly
 as `Langlands.GroupScheme.leviSplitComponentRadical`, with universe parameter
 `u`. The field is arbitrary. The connected reductive ambient group, rational

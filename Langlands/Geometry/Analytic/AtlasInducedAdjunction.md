@@ -1,6 +1,6 @@
 # Induction adjunction on full nonempty-chart atlas action categories
 
-Author: Worker 56. Namespace: `Langlands.Analytic.AtlasInducedAction`.
+Namespace: `Langlands.Analytic.AtlasInducedAction`.
 
 Let `K : Type u` be a complete normed ultrametric field, `G : Type z`
 a group, and `H` a subgroup. All presentations use

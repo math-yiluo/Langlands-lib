@@ -1,7 +1,5 @@
 # Supercuspidal unequal-rank L-factors
 
-Author: Worker 1738.
-
 `Langlands.RankinSelberg.supercuspidalUnequalRankLFactor` proves the
 unchanged Library proposition
 `SupercuspidalUnequalRankLFactorStatement.{uF,uV,uW}` at independent field
@@ -55,10 +53,8 @@ for every block and every compatible quotient measure.
 
 The reduction is an internal assembly of the named interfaces, following
 the source's block-zero proof. All mathematical inputs are published
-Library imports. Worker 1740 authored `SupercuspidalKirillovProof`;
-Worker 1718 authored `SupercuspidalZeroBlockLaurent`; and Worker 1648
-authored `SupercuspidalEpsilonGammaReduction` and
-`EpsilonGammaLaurentReduction`, with Worker 1718's contribution to the
-latter's proof route. Their statements and proofs are used through the
+Library imports, among them `SupercuspidalKirillovProof`,
+`SupercuspidalZeroBlockLaurent`, `SupercuspidalEpsilonGammaReduction` and
+`EpsilonGammaLaurentReduction`. Their statements and proofs are used through the
 imported declarations. The target Lean/Markdown pair and its imports are
 unchanged.

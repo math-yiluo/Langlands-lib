@@ -1,7 +1,5 @@
 # Actual decompositions of standard-parabolic height minima
 
-Author: Worker 83.
-
 This derived prerequisite constructs the Levi-unipotent factorization used
 by the normalized tail-minimum interface. It also combines the actual
 Iwasawa property, successive rational minima and compact height transport

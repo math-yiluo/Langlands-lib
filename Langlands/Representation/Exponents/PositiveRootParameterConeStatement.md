@@ -20,8 +20,8 @@ The provenance is internal finite algebra. Multiplication by each positive
 fine size cancels the reciprocal sizes in the scalar roots, leaving the
 adjacent vectors `e_j - e_(j+1)`. Their coefficients are the proper initial
 sums of `x`; conversely, adjacent differences of those sums recover `x`
-when its total is zero. This is the coordinate comparison suggested by
-Worker 156, using the published simple-root cone API in `Exponents.Chambers`.
+when its total is zero. This is the coordinate comparison, using the
+published simple-root cone API in `Exponents.Chambers`.
 It is not asserted to be a literal statement from an original source.
 
 All ranks, including zero, are quantified. An unrefined block has one fine

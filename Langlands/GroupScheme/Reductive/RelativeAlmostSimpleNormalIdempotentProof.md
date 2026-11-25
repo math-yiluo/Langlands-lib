@@ -1,8 +1,9 @@
 # Relative normal-idempotent rigidity for almost-simple fibres
 
-Worker 632, with the relative interface and route proposed by Worker 47,
-Worker 5254's projection-injectivity theorem and induced-algebra interface,
-and Worker 96's field-ascent root-normal-closure argument.
+The proof uses the projection-injectivity theorem of
+`Reductive.IdempotentProjectionInjective`, the induced-algebra interface of
+`RestrictedAffinePointPresentation`, and the field-ascent root-normal-closure
+argument of `Reductive.AlmostSimpleGeometricBaseChange`.
 
 `relativeAlmostSimpleNormalIdempotent` proves the exact
 `RelativeAlmostSimpleNormalIdempotentStatement` in every universe. Every
@@ -26,7 +27,7 @@ formulas for every original algebra and point.
 
 For uniqueness, the quotient formulas identify the transformation with the
 factor projection at the candidate idempotent, using the existing
-`IdempotentPoints.eq_proj_iff`. Worker 5254's
+`IdempotentPoints.eq_proj_iff`.
 `IdempotentProjection.eq_of_proj_eq` distinguishes different idempotents
 by a prime and a nontrivial affine point of the corresponding field
 pullback. Almost-simple geometric fibres supply that nontriviality.

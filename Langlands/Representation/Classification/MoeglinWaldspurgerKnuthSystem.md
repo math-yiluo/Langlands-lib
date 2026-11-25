@@ -1,6 +1,6 @@
 # Word insertion through several rows and the Knuth-type system lemma
 
-Worker 5734. This is the third helper module for the proof of
+This is the third helper module for the proof of
 `Langlands.MoeglinWaldspurger.involutivity`. It imports
 `MoeglinWaldspurgerInsertion`, and through it `MoeglinWaldspurgerRowInsertion`.
 The declarations are in the namespace `Langlands.MoeglinWaldspurger.Involution`.

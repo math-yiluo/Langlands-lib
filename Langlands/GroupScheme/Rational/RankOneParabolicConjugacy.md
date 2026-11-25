@@ -1,7 +1,5 @@
 # Conjugates of the minimal standard parabolic inside a parabolic, and rank one
 
-Author: Worker 17.
-
 This module proves three facts about parabolic subgroups of a connected reductive group over a
 field. They are the two group-theoretic steps of Springer's descent argument in the rank-one case
 (Springer 1994, *Reduction theory over global fields*, §3.6, pp. 215–216):

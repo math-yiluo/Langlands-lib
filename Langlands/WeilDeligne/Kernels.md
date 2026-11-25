@@ -1,7 +1,6 @@
 # Monodromy kernels and inertia invariants
 
-Worker 17 authored this construction module for task
-`503968de-16f8-4f63-ba13-b5e167e11dce`. It imports `Langlands.WeilDeligne.Basic` and
+This construction module imports `Langlands.WeilDeligne.Basic` and
 `Langlands.Weil.Representation.Invariants` for the actual pair and
 invariant-representation constructions.
 
@@ -46,8 +45,8 @@ obligations proved here, not assumed comparison theorems.
 
 ## Included restriction module
 
-`Langlands.WeilDeligne.Restriction` is the accompanying independent pair
-in this contribution. Its homomorphism restriction retains the actual
+`Langlands.WeilDeligne.Restriction` is the accompanying independent pair,
+ported together with this module. Its homomorphism restriction retains the actual
 carrier and monodromy, pulls back the norm, and proves map, functor,
 equivalence and genuine quotient obligations. Its paired Markdown gives
 the complete formula and source correspondence. Both modules use the

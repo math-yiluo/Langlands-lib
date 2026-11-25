@@ -22,7 +22,7 @@ The explicit model, radius and proof route are internal derived content.
 They support the real-place condition asserted in Henniart (2000), Section
 3.3, printed page 449 (PDF page 11), source `henniart-2000-simple-proof`,
 SHA256 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
-Worker 37 read that original passage. The argument uses pinned Mathlib
+That original passage was read. The argument uses pinned Mathlib
 quantitative root continuity and elementary finite root counting, rather
 than claiming that the source supplies this explicit formula.
 

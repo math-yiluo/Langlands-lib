@@ -161,7 +161,10 @@ theorem adjacentModifiedData_nAlpha_mem
       rwa [hw] at hg'
     · rintro _ ⟨g, hg, rfl⟩
       have hg' := hconj _ g hg
-      rwa [map_neg, hw] at hg'
+      have hneg : weylAction p.inclusion m (-p.rootDatum.root (b : p.rootIndex)) =
+          -weylAction p.inclusion m (p.rootDatum.root (b : p.rootIndex)) :=
+        (weylAction p.inclusion m).toLinearMap.map_neg _
+      rwa [hneg, hw] at hg'
   exact hle ⟨nb.point, hnb, rfl⟩
 
 end Adjacent

@@ -1,9 +1,8 @@
 # Finite rational covers with varying open subgroups
 
-Worker 36 constructed the topology and comparisons. The retained-label
+This module constructs the topology and comparisons. The retained-label
 category and refinement pattern extend the published `RationalTransport`
-construction, whose label-category pattern adapts Worker 13's `ActionOpens`;
-both workers are credited.
+construction, whose label-category pattern adapts `ActionOpens`.
 
 Fix a complete ultrametric normed field `K`, a presented strict affinoid
 algebra `P`, a topological group `G`, and its `RationalSpectralAction G P`.

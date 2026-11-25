@@ -1,6 +1,6 @@
 # Integral coroot generation for simply connected split groups from the classification
 
-Worker 1537. This module is a derived, conditional assembly step toward
+This module is a derived, conditional assembly step toward
 `SplitSimplyConnectedCorootSpanStatement` (module
 `Langlands.GroupScheme.SimplyConnected.SplitNecessityStatement`). It proves
 that statement from three published propositions, which enter as hypotheses.

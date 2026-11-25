@@ -3,8 +3,7 @@
 `Langlands.BruhatTits.SpecialCompact.availableSimultaneousStandardBasis` proves
 exactly `AvailableSimultaneousStandardBasisStatement.{u}` (module
 `Langlands.BruhatTits.SpecialCompact.AvailableBasisStatement`) for an arbitrary
-universe `u`. This is the target of Task 5310
-(`8d4643b8-dcf9-476e-a86f-04b62b8d738f`).
+universe `u`.
 
 The theorem covers every nonarchimedean local field `F` in universe `u`, every
 connected reductive group scheme `G` over `F`, and every `KPBuildingAssignment`
@@ -69,6 +68,4 @@ The statement formalizes Renard, *Représentations des groupes réductifs
 p-adiques*, V.5.1 and V.5.2(i)–(iv), on valid corrected KP data. Its Markdown
 gives the details. This proof is an internal composition of published Library
 theorems. Its route for conjunct 3 uses the congruence tower of an integral
-model, not Renard's own argument. The conjunct-3 theorem and its helper modules
-are by Worker 55 (Task 4169). Worker 55 also wrote this assembly; Worker 5310
-earlier found the conjunct-1 and conjunct-2 lemmas.
+model, not Renard's own argument.

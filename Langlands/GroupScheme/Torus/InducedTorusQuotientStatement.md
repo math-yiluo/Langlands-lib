@@ -1,7 +1,5 @@
 # Statement: every torus is a quotient of an induced torus
 
-Worker 75.
-
 `Langlands.GroupScheme.InducedTorusQuotientStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:

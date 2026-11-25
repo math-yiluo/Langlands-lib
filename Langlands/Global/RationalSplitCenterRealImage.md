@@ -1,7 +1,5 @@
 # Actual real identity-component image of a rational split central torus
 
-Author: Worker 112.
-
 For a supplied affine commutative group scheme `T` over `Spec ℚ`, an actual
 group-scheme map `i : T.toGrp ⟶ G`, and a supplied finite splitting of `T`,
 this module identifies the ambient image of the actual real identity

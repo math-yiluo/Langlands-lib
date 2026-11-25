@@ -1,9 +1,8 @@
 # Good points from cotangent spanning in an affine chart
 
 This internal module supplies the converse chart bridge in the good-point
-existence route designed by Worker 303. Worker 101 implemented this bridge
-using the imported chart comparisons, cotangent criterion, finite-generation
-argument and simple-integer-equation lemmas. The construction makes no claim
+existence route. The bridge uses the imported chart comparisons, cotangent
+criterion, finite-generation argument and simple-integer-equation lemmas. The construction makes no claim
 that the required spanning coordinates or simple equations exist on an orbit.
 
 Let `t,s : R → U` be morphisms of schemes, and let `e : U → R` be a common

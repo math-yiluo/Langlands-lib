@@ -1,8 +1,5 @@
 # Disjoint cells below the antitone torus cone
 
-Authors: Worker 906; Worker 6 (copied diagonal-entry lemma); Worker 113 (shared diagonal
-conjugation lemmas); Worker 819 (cell pattern).
-
 This module is the second helper for the proof of
 `Langlands.RankinSelberg.SquareIntegrableWhittakerTorusSumStatement`
 (see [`SquareIntegrableWhittakerTorusSumProof`](SquareIntegrableWhittakerTorusSumProof.md)).
@@ -12,8 +9,7 @@ is at least a constant times `δ(a)⁻¹`, and a bi-`K`-invariant square-integra
 therefore has square-summable values on the antitone torus cone. The route below, through an
 index count in the upper-unipotent group and explicit disjoint cells, is internal to this
 project. The cell argument follows the pattern of `cells_tsum_lt_top` in the published module
-`Langlands.Representation.Exponents.ExtractedCoefficientL2ObstructionCells` (author
-Worker 819).
+`Langlands.Representation.Exponents.ExtractedCoefficientL2ObstructionCells`.
 
 Notation: `G = GL_(m+1)(F)`, `Z` its centre, `N = upperUnipotent (m + 1) F`,
 `K(r) = Conductor.principalLevelSubgroup F m r`, and `ϖ^lam = Iwasawa.torus ϖ lam`.
@@ -24,7 +20,7 @@ Section `Algebra` works over any field `k` with a valuative relation.
 
 - `upperTriangular_mul_diag` (private): the diagonal of a product of upper-triangular
   matrices is the product of the diagonals. It is copied verbatim from the published module
-  `Langlands.Group.GL.UpperUnipotent` (author Worker 6), where it is private.
+  `Langlands.Group.GL.UpperUnipotent`, where it is private.
 - `unipotent_torus_unipotent_diag`: for upper-unipotent `u` and `u'`, the `i`-th diagonal
   entry of `u ϖ^lam u'` is `ϖ ^ lam i`.
 - `torus_neg`: `(ϖ^lam)⁻¹ = ϖ^(-lam)`.
@@ -37,7 +33,7 @@ Section `Algebra` works over any field `k` with a valuative relation.
   element `z` as the scalar matrix `c`. Then `x = e z`, so `e⁻¹ = x⁻¹ z`. The last diagonal
   entry of `x⁻¹` is `ϖ ^ (-d_last) = 1`, so `c` is the last diagonal entry of `e⁻¹`.
   Hence `c - 1` lies in `𝔪^r`. Then `exists_mem_principalLevelSubgroup` (published module
-  `UnequalRankMirabolicUnitTestProof`, author Worker 856) puts `z` in `K(r)`, so
+  `UnequalRankMirabolicUnitTestProof`) puts `z` in `K(r)`, so
   `x = e z ∈ K(r)`. The diagonal entries `ϖ ^ d_i` of `x` and `ϖ ^ (-d_i)` of `x⁻¹` are
   then integral. Since `0 < v(ϖ) < 1`, this gives `d_i ≥ 0` and `-d_i ≥ 0`, so `d = 0`.
   Finally `x = h⁻¹ h'`.
@@ -47,7 +43,7 @@ Section `Algebra` works over any field `k` with a valuative relation.
 The declarations `diagonalConj`, `diagonalConj_val`, `continuous_diagonalConj`,
 `diagonalConj_map` and `singleton_modulus_real` are imported from
 [DiagonalUnipotentHaar](DiagonalUnipotentHaar.md). This shared module contains
-Worker 113's unchanged helpers extracted from `QuotientIwasawaIntegrationProof`.
+unchanged helpers extracted from `QuotientIwasawaIntegrationProof`.
 
 - `diagonalConj a u = diag(a) u diag(a)⁻¹`.
 - `diagonalConj_map`: it scales `unipotentHaar` by `δ(a)⁻¹`, where `δ` is the singleton

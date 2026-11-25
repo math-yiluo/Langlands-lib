@@ -1,30 +1,30 @@
 # Harris's §2 constructions on the domains `U(f)` of Drinfeld's upper half space
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Geometry.Analytic.DrinfeldFacetSpaces` (Worker 21). For a finite set `S` of
+- `Langlands.Geometry.Analytic.DrinfeldFacetSpaces`. For a finite set `S` of
   vertices of the Bruhat–Tits building (`hS : S.Finite`), a real `ε` and a subgroup `H` of
   `GL_{d+1}(F)` contained in the stabilizer `facetStabilizer S` of `S`, it provides
   `facetAction K hS ε H hH`. This is Harris's open domain `U(f) = Res⁻¹(B(f, ε))` of
-  Drinfeld's upper half space `Ω` over `K`, as an object of Worker 21's
+  Drinfeld's upper half space `Ω` over `K`, as an object of
   `LocalizedCategory.{u, u, u} (K := K)`, with the action of `H` restricted from the action
   `omegaAction` of `GL_{d+1}(F)` on `Ω`. Through it the module uses the open analytic
   domain `facetAnalyticDomain K hS ε` with carrier `facetDomain K S ε`, and the Hausdorff
   property of the space of `Ω`.
-- `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleRefinements` (Worker 26). It provides the
+- `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleRefinements`. It provides the
   three conditions (A) `HasFiniteCompactQuasiEtaleRefinements X`, (B)
   `HasCompactQuasiEtaleLifts ρ` and (C) `HasCompatibleCompactQuasiEtaleLifts ρ`, the
-  derivation `hasCompactQuasiEtaleLifts_of_actionLiftStatement` of (B) from Worker 21's
+  derivation `hasCompactQuasiEtaleLifts_of_actionLiftStatement` of (B) from
   `QuasiEtaleActionLiftStatement`, and the reduction
   `hasFiniteEquivariantRefinements_compactLiftSystem` of the finite equivariant
   refinement condition to (A), (B) and (C).
-- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtaleConstant` (Worker 26). It
+- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtaleConstant`. It
   provides the constant `ℓ`-divisible system `quasiEtaleConstantSystem ρ R hℓ` of
   quasi-étale `G`-sheaves `R / ℓ ^ m R` on a `K`-analytic space with an action of `G`, and
   Harris's Lemma 2.2, Lemma 2.2 bis and (2.3) for it. Through it the module uses
-  `AnalyticQuasiEtale` (Worker 26: Harris's (2.6), (2.7) and Lemma 2.8 for an arbitrary
+  `AnalyticQuasiEtale` (Harris's (2.6), (2.7) and Lemma 2.8 for an arbitrary
   `ℓ`-divisible system of quasi-étale `G`-sheaves) and `AnalyticQuasiEtaleCompactCohomology`
-  (Worker 26: Berkovich's `H^q_c(X{G}, -)`, `quasiEtaleGSheafCompactCohomology`).
+  (Berkovich's `H^q_c(X{G}, -)`, `quasiEtaleGSheafCompactCohomology`).
 
 The declarations about the space are in the namespace
 `Langlands.Analytic.DrinfeldUpperHalfSpace`, the cohomological ones in
@@ -71,8 +71,10 @@ hypotheses.
   equivariant refinement condition
   `(compactLiftSystem (facetρ K hS ε H hH)).HasFiniteEquivariantRefinements
   (twistedQuasiEtaleTopology (facetρ K hS ε H hH))`. Its hypotheses are:
-  - `hKL : QuasiEtaleActionLiftStatement.{u, u, u} K`, Worker 21's published, unproved
-    statement of Berkovich's lifts of actions to compact quasi-étale objects;
+  - `hKL : QuasiEtaleActionLiftStatement.{u, u, u} K`, the published statement of
+    Berkovich's lifts of actions to compact quasi-étale objects (the Library proves it as
+    `quasiEtaleActionLift` in `Langlands.Geometry.Analytic.QuasiEtaleActionLiftProof`; this
+    module takes it as a hypothesis);
   - `hc : IsContinuousAction (facetρ K hS ε H hH)`, continuity of the action of `H` on
     `U(f)`;
   - `hA`: condition (A) for `U(f)`;
@@ -113,7 +115,7 @@ vacuously on `U(f)`. `U(f)` is an open subspace of `Ω`, hence of the projective
 `P^d`. The Markdown of `AnalyticQuasiEtale` (section "Caution: `hpoints` fails on most
 spaces") and of `AnalyticQuasiEtalePoints` explains why `hpoints` fails on every nonempty
 open subspace of `P^d`, `d ≥ 1`. This is a mathematical remark. It is not formalized. The
-published module `AnalyticQuasiEtalePoints` (Worker 26) builds the same constructions from
+published module `AnalyticQuasiEtalePoints` builds the same constructions from
 an arbitrary family of points of the quasi-étale site, and it applies to `facetρ K hS ε H hH`
 as it stands. Whether some family of points of the quasi-étale site of `U(f)` has jointly
 faithful fibre functors is not known in the Library.
@@ -186,7 +188,7 @@ time limit for instance search.
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*, J. Math. Kyoto
 Univ. 39 (1999), registered as
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, §2, printed pp.303–306 =
-PDF pp.5–8. Worker 26 checked the p.303 passages on a rendering of the page for this
+PDF pp.5–8. The p.303 passages were checked on a rendering of the page for this
 module; the pp.304–306 passages are those checked for `AnalyticQuasiEtale` and
 `AnalyticQuasiEtaleConstant`.
 
@@ -239,9 +241,10 @@ in `DrinfeldFacetSpaces`.
 - The reduction of the refinement condition to (A), (B), (C) is the published one of
   `AnalyticQuasiEtaleRefinements`. The only input specific to `U(f)` that this module
   proves is the Hausdorff property. Continuity of the action would follow from the
-  published, unproved statements `OmegaActionContinuityStatement` (continuity on `Ω`) and
+  published statements `OmegaActionContinuityStatement` (continuity on `Ω`) and
   `InvariantDomainContinuityStatement` (continuity on invariant domains), as explained in
-  `DrinfeldFacetSpaces`; here it is the hypothesis `hc`.
+  `DrinfeldFacetSpaces`; the Library proves them as `omegaActionContinuity` and
+  `invariantDomainContinuity`. Here it is the hypothesis `hc`.
 
 ## Not formalized here
 
@@ -249,7 +252,8 @@ The conditions (A) and (C) on `U(f)`, `QuasiEtaleActionLiftStatement`, continuit
 action of `H` on `U(f)`, and all hypotheses inherited from `AnalyticQuasiEtale` and
 `AnalyticQuasiEtaleConstant` (the point axioms, joint faithfulness of the points, which
 fails on a nonempty `U(f)` when `R ≠ 0` as the caution above explains, exactness and acyclicity of the Godement functor, Fact 2 for constant coefficients, the
-subgroup family and its hypotheses, Worker 3's two statements, the trivial action and the
+subgroup family and its hypotheses, the two statements `ProPInvariantSubcomplexStatement`
+and `FiniteCohomologyInverseLimitStatement`, the trivial action and the
 finiteness of `H^q_c`) remain hypotheses. The tower `ℳ_N`, the domains `U(e, N, δ)`,
 Harris's group `GJ` and its subgroups `S(ẽ)`, and the comparison with étale cohomology are
 not formalized here.

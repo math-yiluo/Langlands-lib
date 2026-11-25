@@ -1,7 +1,5 @@
 # Proof of relative closed-immersion descent
 
-Worker 105 authored this proof, reused here by Worker 1596.
-
 `relativeClosedImmersionDescent` proves exactly
 `Langlands.AlgebraicGeometry.AffineLimit.RelativeClosedImmersionDescent`
 in `SchemeLimitRelativeClosedImmersionStatement`. The statement's paired
@@ -42,5 +40,6 @@ Conversely, `cone_baseChangeMap_isPullback` identifies the actual limiting
 morphism as a base change of any stage morphism. Stability under base
 change gives the reverse implication. The proof uses no affineness or
 separatedness assumption on the original models and no injectivity of
-ring transitions. The statement's original-ring specialization and the
-other clauses of Theorem 3.4(2) remain separate obligations.
+ring transitions. The statement's original-ring specialization is proved in
+`SchemeFilteredClosedImmersionProof`; the other clauses of Theorem 3.4(2)
+are not treated here.

@@ -4,9 +4,6 @@
 is a universe-polymorphic `Prop`-valued definition. It is a statement target:
 this module supplies no proof and adds no axiom.
 
-Worker 1020 wrote the Lean statement and this companion. Worker 208 specified
-the task.
-
 This proposition is the affine-open counterpart of the published target
 `Langlands.AlgebraicGeometry.Picard.FiniteFieldExtensionNormStatement`. It is a
 separate declaration in a separate module and does not modify that target, its
@@ -117,8 +114,8 @@ The difference from `FiniteFieldExtensionNormStatement` is only the index set:
 that target asks for `Nm U` and the three laws on every open `U` of `X`, this
 one on every affine open. The three clauses have the same form, with
 `U : X.Opens` replaced by `(U : X.affineOpens)` coerced to `X.Opens`. Restricting
-a family satisfying the parent target to the affine opens gives a family
-satisfying this proposition. Conversely, the accepted Library construction
+a family satisfying `FiniteFieldExtensionNormStatement` to the affine opens gives a family
+satisfying this proposition. Conversely, the Library construction
 `Langlands.AlgebraicGeometry.Picard.AffineNormGluing.norm` (module
 `Langlands.AlgebraicGeometry.Picard.FiniteFieldExtensionNormGluing`) extends a
 family on all affine opens to all opens. The hypotheses `N`, `hN` of that
@@ -126,11 +123,11 @@ construction and the hypotheses `hd` of its lemma `degree` (with
 `d := Module.finrank K L`) and `hB` of its lemma `basicOpen`, for
 `π := pullback.fst p (Spec.map (CommRingCat.ofHom (algebraMap K L)))`, have the
 forms of `Nm` and clauses 1, 2 and 3 here, and its lemmas `naturality`,
-`degree` and `basicOpen` give the three clauses of the parent target. This
-module proves neither implication. The author checked both by a private
-development compilation that is not part of this submission; the
-affine-to-all-open step belongs to the parent proof task
-`f78fa110-e7ad-4e40-bbd9-afd15533f4e5`.
+`degree` and `basicOpen` give the three clauses of `FiniteFieldExtensionNormStatement`. This
+module proves neither implication. Both were checked by a private
+development compilation that is not part of the Library; the
+affine-to-all-open step is carried out in the proof `finiteFieldExtensionNorm`
+(`FiniteFieldExtensionNormProof`) of `FiniteFieldExtensionNormStatement`.
 
 ## Source correspondence and derived provenance
 
@@ -212,18 +209,19 @@ Registered source `stacks-norms-field-ample-descent-2026-10-26`, directory
 SHA256 `af3256169e1d1a032cecd20fa228482bad8e1b478ccfc55a4a73c7ec187d9f5a`,
 retained at
 `literature/Stacks Project - Norms and field-extension ampleness descent (HTML snapshot 2026-10-26)/0BCX.html`.
-On October 29, 2026 Worker 1020 read from the retained Section 31.18: the
+On October 29, 2026 the following were read from the retained Section 31.18: the
 definition of a norm of degree `d`, the remark after it, and Lemma 31.18.6
-with its proof. Worker 1020 also read the complete published companion
+with its proof. Also read was the complete published companion
 `Langlands/AlgebraicGeometry/Picard/FiniteFieldExtensionNormStatement.md`,
 including its erratum check for this source.
 
-## Obligations for a future proof
+## Obligations for a proof
 
 A proof of the exact proposition, with no additional outer hypothesis, must
 construct `Nm U` for every affine open `U` of `X` and prove the three clauses
 for all affine opens and all affine inclusions. This module discharges none
-of these obligations. One route:
+of these obligations; the proof `finiteFieldExtensionAffineNorm` in
+`FiniteFieldExtensionAffineNormProof` does. One route:
 
 - For an affine open `U` with `A := Γ(X, U)`, identify `π⁻¹ U` with
   `Spec (A ⊗[K] L)`, for example with Mathlib's `pullbackSpecIso`,
@@ -250,7 +248,7 @@ of these obligations. One route:
   prime ideal. Both inclusions are required.
 
 Substantial canonical affine-comparison definitions may be split into a
-separate focused definition task, and the algebraic laws for
+separate focused definition module, and the algebraic laws for
 `Algebra.norm A` on `A ⊗[K] L` may come from a separate published algebraic
 statement and proof. An unproved comparison must not be added as an outer
 hypothesis.

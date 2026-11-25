@@ -113,7 +113,7 @@ equations give equal values of the residue reduced coproduct on `eX x l` and
 `residue_injective` with `s = residueBaseMap φ` gives `eX x l = eX y l`. This
 holds for every `l`, so `eX x = eX y`. Injectivity of `eX` gives `x = y`.
 
-## Provenance and authorship
+## Provenance
 
 This is internal derived mathematics. It formalizes the step in D. Mumford,
 J. Fogarty and F. Kirwan, *Geometric Invariant Theory*, 3rd edition (1994),
@@ -126,7 +126,3 @@ identification is replaced by the finite coordinate system of
 `FieldH2PrimitiveInjectivityStatement`. The structure-pullback functoriality,
 base-change comparison and flatness facts are elementary consequences of
 published Library laws and Mathlib.
-
-Worker 858 wrote this module on Task 5896. Worker 210 authored the
-`NaturalityStatement` target and the definitions of `structurePull` and
-`residuePullback` used here.

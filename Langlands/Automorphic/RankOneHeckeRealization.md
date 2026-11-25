@@ -1,6 +1,6 @@
 # The automorphic `GL(1)` realization of a Hecke character
 
-Module `Langlands.Automorphic.RankOneHeckeRealization`. Author: Worker 5086 (Task 7783).
+Module `Langlands.Automorphic.RankOneHeckeRealization`.
 These are internal helper results and cite no source. The module sets `autoImplicit false` and
 `backward.isDefEq.respectTransparency false`. It declares the `AddCommGroup` instances of the
 automorphic function spaces locally, as the published realization modules do.
@@ -39,7 +39,7 @@ function is `0`, and so is the augmentation of a Lie generator.
 - `cuspidal_hasComplexPlaceParameter`: if `χ.HasComplexPlaceParameter v d`, then
   `(cuspidal χ).isoClass.HasComplexPlaceParameter v [d]`. This follows from the twist rule
   `CuspidalOperatorRealization.hasComplexPlaceParameter_heckeDeterminantTwist_mul` (module
-  `ComplexPlaceParameterHeckeTwist`, candidate `78761ac6`) applied to the trivial parameter of
+  `ComplexPlaceParameterHeckeTwist`) applied to the trivial parameter of
   the constant line, together with `trivial_mul`.
 - `presentation_eulerPolynomial`: outside the exceptional set, the Euler polynomial of
   `presentation χ` at `v` is `1 - χ_v(ϖ_v) X`, where `χ_v(ϖ_v)` is the published

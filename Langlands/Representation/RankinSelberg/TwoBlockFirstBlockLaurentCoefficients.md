@@ -1,7 +1,5 @@
 # The two large first-block coefficients as row integrals of small coefficients
 
-Author: Worker 1037.
-
 This module carries out, at a fixed representative `g`, the row split and the
 small-integral identification of JPSS (1983), Section 4.9, printed pages 416–418.
 It is derived internal material. The supplied self-dual measure `ν`, its row measure

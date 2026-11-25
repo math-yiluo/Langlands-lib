@@ -1,6 +1,6 @@
 # The actual PQ regularity quotient and its filtered kernel criterion
 
-Author: Worker 154. Module
+Module
 `Langlands.Representation.Intertwining.PQRegularityFiltration`.
 
 This derived module constructs the actual natural quotient appearing in
@@ -8,7 +8,8 @@ This derived module constructs the actual natural quotient appearing in
 kernel and spectral criteria. The filtration, its natural grade
 identifications, and the finite action-algebra hypotheses used for the
 spectral converse are explicit premises. This is an intermediate result for
-Task 5300; it does not prove `PQRegularityLemmaStatement` or
+Renard VII.3.2–VII.3.4 (support filtrations, the PQ-regularity lemma and the
+characterization of `J_{Q|P}`); it does not prove `PQRegularityLemmaStatement` or
 `PQSupportGradedStatement`.
 
 ## Source and provenance
@@ -17,7 +18,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French versio
 of 9 July 2026, VII.3.3, Lemma and proof, printed pp.234–235 / PDF pp.240–241.
 Registered source `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 154 read both pages again while implementing this module.
+Both pages were read.
 
 The provenance is derived. Renard chooses a total refinement placing the
 strict Bruhat predecessors of the identity before it, filters the quotient
@@ -26,7 +27,7 @@ intersection of their annihilators. He then uses generalized exponents and,
 for the converse, finite-length annihilator bounds. Here the natural quotient
 and filtered kernel calculations are actual constructions from existing
 Library interfaces. The converse uses the alternative finite action-algebra
-criterion of `PQFiniteActionRegularity`; its hypotheses have not been deduced
+criterion of `PQFiniteActionRegularity`; this module does not deduce its hypotheses
 from the finite-length premise in Renard's Lemma.
 
 ## Quotient and filtration
@@ -91,9 +92,9 @@ characters. It also supplies openness of the character kernels; that
 openness is not a new premise. The converse retains the same explicit
 finite action-quotient assumptions.
 
-## Remaining exact-target obligations
+## What the exact application needs
 
-The exact VII.3.3 application must still construct the quotient filtration
+The exact VII.3.3 application must construct the quotient filtration
 whose grades are all and only the prescribed strict Bruhat predecessors
 of the identity, identify them naturally with the original
 `GeometricLemmaIntersectionDatum.pieceFunctor` values with the same action,
@@ -104,5 +105,5 @@ property of their construction from smooth functors.
 
 The imports reuse `PQFilteredKernels`, `PQFiniteActionRegularity`,
 `ArbitraryParabolicInduction`, `Category.NaturalCokernel`, and
-`Filtration.QuotientTail`. The original target statements and their import
+`Filtration.QuotientTail`. The published statements and their import
 closure are unchanged.

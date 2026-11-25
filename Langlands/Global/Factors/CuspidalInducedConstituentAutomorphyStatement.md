@@ -1,8 +1,5 @@
 # Automorphy of the constituents of cuspidally induced representations, at the finite places
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition and proves nothing:
 
 - `Langlands.Global.CuspidalInducedConstituentAutomorphyStatement`.
@@ -42,18 +39,16 @@ else is Library vocabulary:
   `OperatorSubquotient.localRepresentation`
   (`Langlands/Automorphic/OperatorSubquotient.lean`).
 
-**Why it is here.** L4 of this task's contract asks for the isobaric
-construction of GH 10.7.5–10.7.6, and its context names GH 10.2.3–10.7.6 as
-the roadmap range. GH's proof of Theorem 10.7.5 uses Theorem 10.7.1 and the
+**Why it is here.** It serves the isobaric construction of GH
+10.7.5–10.7.6. GH's proof of Theorem 10.7.5 uses Theorem 10.7.1 and the
 description of constituents after it. The Library has no global induced
 representation and no statement that its constituents are automorphic. This
 statement is the global input of the 10.7.5 proof, in a form that the
 Library can state: the finite components of a constituent are prescribed and
-an automorphic subquotient with those components is asserted. As the
-contract notes, not every such automorphic subquotient is isobaric; this
-statement does not say it is.
+an automorphic subquotient with those components is asserted. Not every
+such automorphic subquotient is isobaric; this statement does not say it is.
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalInducedConstituentAutomorphyStatement`. Its
 universe parameters are `u` (the number field and every local carrier) and
 `uQ` (the factor universe of the spectral presentations).
@@ -220,9 +215,9 @@ background facts above. It is weaker than the sources in the ways listed in
 
 ## 4. Relation to other statements
 
-- **`CuspidalIsobaricRealizationStatement`** (GH 10.7.5). Accepted by review
-  as candidate `287a6e56`; it is not in the Library at commit `aad41a6e`,
-  and this module does not import it. It has the same setup and asks for a
+- **`CuspidalIsobaricRealizationStatement`** (GH 10.7.5), in
+  `Langlands.Global.Factors.CuspidalIsobaricRealizationStatement`; this
+  module does not import it. It has the same setup and asks for a
   `Q` whose restriction to each `GL_(r+1)(F_v)` contains the local isobaric
   sum `⊞_i σ_(i,v)`. GH's proof of 10.7.5 is: the local isobaric sum is a
   constituent of `i(σ_(1,v), …, σ_(k,v))` (GH Theorem 10.6.4) and is
@@ -240,7 +235,7 @@ background facts above. It is weaker than the sources in the ways listed in
   neighbours in `Langlands/Global/AdelicEisenstein*`, are the analytic input
   of Langlands' proof (§5). They are not used by this statement.
 
-## 5. Proof route (for the proof task; not part of the statement)
+## 5. Proof route (not part of the statement)
 
 Langlands proves the direction stated here on pp.205–207. Fix an
 irreducible representation `κ` of `K` contained in `π`; it suffices to show
@@ -299,7 +294,7 @@ formalization:
   contains `A_v`;
 - only the finite places are covered.
 
-The Lean file was checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The
+The Lean file was checked in the Lean environment in which it was written,
+with no errors and no warnings. The
 declaration is a `def` returning `Prop`, with universe parameters `u` and
 `uQ` and axioms `propext`, `Classical.choice`, `Quot.sound`.

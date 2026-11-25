@@ -7,8 +7,9 @@ height-one adic completions and the actual completions at discrete curve
 places. The coefficient ring is arbitrary, and neither scheme is assumed
 affine.
 
-The generic Henselian helper first imports the published theorem
-`Langlands.NYLL.ValuationTheory.Valuations.rankOneDiscreteValuationSubring_isAdicComplete`.
+The generic Henselian helper uses NYLL’s theorem
+`ValuationTheory.Valuations.rankOneDiscreteValuationSubring_isAdicComplete`
+from `Nyll.ValuedFieldTheory.Valuation.ValuedAdicComplete`.
 For a field complete for its supplied rank-one discrete valued uniformity,
 that theorem gives maximal-ideal adic completeness of its native valuation
 subring. Mathlib's `IsAdicComplete.henselianRing` then gives Henselianity at
@@ -40,7 +41,8 @@ curve-place completion. All relative points are the existing
 `RingPoint C X R` morphisms in `Over (Spec C)`.
 
 These are noncomputable choices of actual integral lifts. Their native
-rings and topologies are unchanged. This unit does not construct residue
+rings and topologies are unchanged. This module does not construct residue
 points or prove residue-cardinality growth, a Lang–Weil estimate,
-spreading, or adelic openness. Those remain separate parts of the parent
-task.
+spreading, or adelic openness. Those remain separate parts of the proof of
+Theorem 4.5, `AdelicSpreadSmoothOpenStatement`, which the Library proves as
+`adelicSpreadSmoothOpen` in `AdelicSpreadSmoothOpenProof`.

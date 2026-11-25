@@ -1,6 +1,6 @@
 # Finite support of orthogonal matrix projections
 
-Worker 1225. This internal algebraic unit supports the rank bound for the published quasi-split unitary rank statement.
+This internal algebraic module supports the rank bound for the published quasi-split unitary rank statement.
 
 `projectionSupport P` is the set of indices at which a matrix family is nonzero. If the matrices are pairwise orthogonal idempotents over a field, `projectionSupport_finite_and_card` proves that this set is finite and its cardinality is at most the number of matrix rows. For each nonzero matrix the proof selects a nonzero column. Applying one projection to a linear relation among the selected columns isolates its own summand. The columns are therefore independent, so the dimension of the column vector space bounds their number.
 

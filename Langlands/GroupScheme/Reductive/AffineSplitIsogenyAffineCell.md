@@ -1,6 +1,6 @@
 # Powered cell compatibility over arbitrary affine bases
 
-This internal supporting unit removes locality of the original coefficient
+This internal supporting module removes locality of the original coefficient
 ring from the actual powered cell-compatibility theorem. The source and
 target retain genuine normalized simple-root data, affine structure
 morphisms and closed coordinate tori. Corresponding simple supports and

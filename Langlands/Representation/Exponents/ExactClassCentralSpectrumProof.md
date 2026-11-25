@@ -1,12 +1,9 @@
 # Central generalized spectrum of equal exact finite-length classes
 
-Author: Worker 981 (proof implementation and submission).
-
 The theorem `Langlands.exactClassCentralSpectrum` has the complete unapplied
 type `Langlands.ExactClassCentralSpectrumStatement.{uG,uA,uV}`, imported from
 `Langlands.Representation.Exponents.ExactClassCentralSpectrumStatement`. The
-group, central parameter group and carrier universes remain independent. The
-statement and all its imported Lean/Markdown pairs are unchanged.
+group, central parameter group and carrier universes remain independent.
 
 Throughout, `G` has cofinal compact open subgroups, `c : A →* Subgroup.center G`
 is continuous, and `ι = (Subgroup.center G).subtype.comp c : A →* G`.
@@ -102,11 +99,10 @@ between `R` and `S`.
 
 ## Provenance and dependencies
 
-This is project-internal derived algebra for the internal interface formulated
-by Worker 320 and stated by Worker 34 (statement task
-`e8149465-30f4-40da-99ed-948cc3fd0890`). It is not a transcription of a
+This is project-internal derived algebra for the internal interface
+`ExactClassCentralSpectrumStatement`. It is not a transcription of a
 literature result. The detection, matching and recovery outline follows the
-possible route described in the task context. The scalar-character lemma and
+route described in the statement's Markdown. The scalar-character lemma and
 the assembly are new here.
 
 The proof imports only the following modules:
@@ -132,17 +128,13 @@ the Library's generic `Representation.Category`, `Compact`, `Filtration`,
 generic character-space predicates and the lemmas `mem_characterSpace` and
 `isGeneralizedEigencharacter_iff`. No constant comes from a `Classification`,
 `Induction` or `Jacquet.*` module, and none is a GL-group, Aubert or
-parabolic-induction theorem. The proof uses no conclusion of task
-`aca8805b-054f-4d56-8045-12db7f623404`. This is an algebraic invariant. It
+parabolic-induction theorem. The proof uses no conclusion of the analytic
+segment classification. This is an algebraic invariant. It
 asserts no Aubert identity and no analytic square-integrability criterion.
 
-## Validation, review and publication
+## Validation
 
-The prescribed environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The
-development check `b10d79cc-a4ba-47e7-9fdb-13e1babf4649` compiled the module with
-zero errors and warnings. Development inspection
-`a1c49574-e279-4383-93a9-307117b9854a` reports a theorem with level parameters
+A development check compiled the module with
+zero errors and warnings. Inspection reports a theorem with level parameters
 `uG`, `uA`, `uV` and only the axioms `propext`, `Classical.choice` and
-`Quot.sound`. These are development results only. Acceptance additionally
-requires the candidate's own Lake build and exact-target checks, independent
-semantic review and Library publication.
+`Quot.sound`.

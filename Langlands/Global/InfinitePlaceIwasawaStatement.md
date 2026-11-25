@@ -1,7 +1,5 @@
 # Actual archimedean local parabolic Iwasawa existence
 
-Author: Worker 55.
-
 `Langlands.Global.InfinitePlaceGroupPoints.ParabolicIwasawaStatement` is an
 unproved proposition definition. For every number field `F : Type u`,
 actual connected reductive group scheme `G` over `Spec F`, actual

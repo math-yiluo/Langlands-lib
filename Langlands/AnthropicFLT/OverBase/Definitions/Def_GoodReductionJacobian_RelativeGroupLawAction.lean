@@ -8,7 +8,7 @@ scheme `S`, with the namespace `GoodReductionJacobian` renamed `GroupLawOverBase
 commands from `P2M.Util` are replaced by standard Lean commands. The paired Markdown file
 lists all changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.OverBase.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000

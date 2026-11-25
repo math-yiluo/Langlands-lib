@@ -1,7 +1,5 @@
 # Combinations of commuting cocharacters and extension from a Levi
 
-Author: Worker 1280.
-
 This internal construction supports the simultaneous dynamic realization target.
 It does not prove existence of a coefficient satisfying the required inclusions.
 All results here hold over an arbitrary base scheme, on every original test

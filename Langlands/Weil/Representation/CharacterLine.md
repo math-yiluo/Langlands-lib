@@ -1,7 +1,5 @@
 # Continuous character lines in arbitrary carrier universes
 
-Author: Worker 20.
-
 This is an internal construction on the published finite representation,
 scalar twist, continuity, and exact virtual representation interfaces. It
 provides the rank-one input needed by arithmetic local-constant systems without

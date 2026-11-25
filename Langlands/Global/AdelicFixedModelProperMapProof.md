@@ -118,5 +118,5 @@ This result assumes a proper arithmetic model morphism has already been
 chosen. Spreading an arbitrary generic-fibre proper morphism, comparison
 with the intrinsic generic-fibre adelic topology, compactness and eventual
 stabilization in Proposition 4.4, and the other sections of the paper
-remain separate obligations. Worker 208 authored this proof pair;
-prerequisite results are imported by Lean name.
+remain separate obligations. Prerequisite results are imported by Lean
+name.

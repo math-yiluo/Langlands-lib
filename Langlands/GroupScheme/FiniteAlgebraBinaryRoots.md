@@ -39,7 +39,7 @@ group-scheme morphisms, and its evaluation formula proves the displayed
 matrix identities. Surjectivity follows from the sum-of-coordinates
 identity for the base-changed basis.
 
-This unit concerns the full matrix-algebra unit scheme. It does not
+This module concerns the full matrix-algebra unit scheme. It does not
 assert reduced-norm-one membership, construct the diagonal cocharacter
 or its contractions, prove arithmetic generation or SK1, or prove the
 general local Kneser–Tits proposition.

@@ -1,0 +1,77 @@
+/-
+Copyright (c) 2026 Yijun Yuan. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Yijun Yuan
+-/
+module
+
+public import FontaineWintenberger.LocalField.Basic
+public import FontaineWintenberger.Mathlib.Analysis.SpectralIntegers
+public import Mathlib.RingTheory.DedekindDomain.IntegralClosure
+public import Mathlib.RingTheory.DiscreteValuationRing.TFAE
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+/-!
+# Valuation rings of finite separable extensions
+
+The spectral unit ball is the integral closure of the base unit ball.
+Integral-closure finiteness and the valuation-ring structure prove it is a DVR,
+without any finiteness hypothesis on the residue field.
+
+## Main results
+
+* `spectralIntegerRing_finrank`: the rank of the integer ring equals the extension degree.
+* `spectralIntegerRing_not_isField`: the integer ring of the extension is not a field.
+
+## Notation
+
+The local notation `OL` denotes `spectralIntegerRing K L`.
+
+## References
+
+* Serre, *Local Fields*, Chapters I–II (discrete valuation rings, completions, unramified and
+  totally ramified extensions).
+-/
+
+@[expose] public section
+
+namespace FontaineWintenberger
+
+variable (K : Type*) [NontriviallyNormedField K] [IsCompleteDiscreteValuedField K]
+variable (L : Type*) [Field L] [Algebra K L] [FiniteDimensional K L]
+variable [Algebra.IsSeparable K L]
+
+local notation "OL" => spectralIntegerRing K L
+
+instance spectralIntegerRing_moduleFinite : Module.Finite 𝒪[K] OL :=
+  IsIntegralClosure.finite (A := 𝒪[K]) (K := K) (L := L) (C := OL)
+
+instance spectralIntegerRing_moduleFree : Module.Free 𝒪[K] OL :=
+  IsIntegralClosure.module_free 𝒪[K] K L OL
+
+/-- The rank of the extension's integer ring equals the degree of the field extension. -/
+theorem spectralIntegerRing_finrank : Module.finrank 𝒪[K] OL = Module.finrank K L :=
+  IsIntegralClosure.rank 𝒪[K] K L OL
+
+instance spectralIntegerRing_isNoetherianRing : IsNoetherianRing OL :=
+  IsNoetherianRing.of_finite 𝒪[K] OL
+
+/-- The integer ring of a finite separable extension has a nonzero maximal ideal. -/
+theorem spectralIntegerRing_not_isField : ¬ IsField OL := by
+  rw [IsLocalRing.isField_iff_maximalIdeal_eq]
+  intro hm
+  obtain ⟨π, hπ⟩ := IsDiscreteValuationRing.exists_irreducible 𝒪[K]
+  have hmem : algebraMap 𝒪[K] OL π ∈ IsLocalRing.maximalIdeal OL :=
+    map_nonunit (algebraMap 𝒪[K] OL) π hπ.not_isUnit
+  have hz : algebraMap 𝒪[K] OL π = 0 := by simpa [hm] using hmem
+  apply hπ.ne_zero
+  apply FaithfulSMul.algebraMap_injective 𝒪[K] OL
+  exact hz.trans (map_zero _).symm
+
+instance spectralIntegerRing_isDiscreteValuationRing : IsDiscreteValuationRing OL := by
+  have h : ValuationRing OL := inferInstance
+  exact ((IsDiscreteValuationRing.TFAE OL (spectralIntegerRing_not_isField K L)).out 2 1).mp h
+
+end FontaineWintenberger

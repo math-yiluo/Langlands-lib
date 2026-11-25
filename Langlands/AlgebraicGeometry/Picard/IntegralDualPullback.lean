@@ -27,15 +27,15 @@ variable {S : Scheme.{u}} {R : Type v} [Ring R] [Algebra ℚ R]
 
 /-- An equivariant rational isomorphism expresses the original action by conjugation. -/
 theorem action_eq_conjugate (e : X ≅ Y) (x : R) :
-    X.action x = comp0 X.abelianScheme Y.abelianScheme X.abelianScheme (hom0 e.hom)
-      (comp0 Y.abelianScheme Y.abelianScheme X.abelianScheme (Y.action x) (hom0 e.inv)) := by
+    (X.action x).asHom = comp0 X.abelianScheme Y.abelianScheme X.abelianScheme (hom0 e.hom)
+      (comp0 Y.abelianScheme Y.abelianScheme X.abelianScheme (Y.action x).asHom (hom0 e.inv)) := by
   have he : comp0 X.abelianScheme Y.abelianScheme X.abelianScheme
       (hom0 e.hom) (hom0 e.inv) = id0 X.abelianScheme :=
     (underlyingIso e).hom_inv_id
   calc
-    X.action x = comp0 _ _ _ (X.action x) (id0 X.abelianScheme) :=
+    (X.action x).asHom = comp0 _ _ _ (X.action x).asHom (id0 X.abelianScheme) :=
       (comp0_id0 _).symm
-    _ = comp0 _ _ _ (comp0 _ _ _ (X.action x) (hom0 e.hom)) (hom0 e.inv) := by
+    _ = comp0 _ _ _ (comp0 _ _ _ (X.action x).asHom (hom0 e.hom)) (hom0 e.inv) := by
       rw [comp0_assoc, he]
     _ = _ := by rw [intertwines e.hom x, comp0_assoc]
 
@@ -44,6 +44,7 @@ theorem action_injective_of_iso (e : X ≅ Y) (h : Function.Injective X.action) 
     Function.Injective Y.action := by
   intro x y hxy
   apply h
+  apply CategoryTheory.End.ext
   rw [action_eq_conjugate e x, action_eq_conjugate e y, hxy]
 
 theorem action_injective_iff (e : X ≅ Y) :
@@ -118,7 +119,7 @@ local notation "dual0BB" => dualHom0 preservation composition unitCoherence asso
 theorem IsInvolutionCompatible.rationalDualPullback
     {R : Type v} [Ring R] [StarRing R]
     (iA : R →+* End0 A) (iB : R →+* End0 B) (f : Hom0 A B)
-    (hf : ∀ b : R, comp0 A A B (iA b) f = comp0 A B B f (iB b))
+    (hf : ∀ b : R, comp0 A A B (iA b).asHom f = comp0 A B B f (iB b).asHom)
     (lamB : Hom0 B DB)
     (hlam : IsInvolutionCompatible preservation composition unitCoherence associativity
       comparison symmetry stability hB additivityBB MB evaluationB geometryB iB lamB) :
@@ -126,8 +127,8 @@ theorem IsInvolutionCompatible.rationalDualPullback
       comparison symmetry stability hA additivityAA MA evaluationA geometryA
       iA (pullAB f lamB) := by
   intro b
-  have hd : comp0 DB DA DA (dual0AB f) (dual0AA (iA (star b))) =
-      comp0 DB DB DA (dual0BB (iB (star b))) (dual0AB f) := by
+  have hd : comp0 DB DA DA (dual0AB f) (dual0AA (iA (star b)).asHom) =
+      comp0 DB DB DA (dual0BB (iB (star b)).asHom) (dual0AB f) := by
     have h := congrArg dual0AB (hf (star b))
     rw [dualHom0_comp preservation composition unitCoherence associativity comparison
       symmetry stability hA hA additivityAA MA evaluationA MA evaluationA geometryA geometryA
@@ -136,18 +137,18 @@ theorem IsInvolutionCompatible.rationalDualPullback
       symmetry stability hA hB additivityAB MA evaluationA MB evaluationB geometryA geometryB
       hB MB evaluationB geometryB additivityBB additivityAB] at h
     exact h
-  change comp0 A A DA (iA b) (pullAB f lamB) =
-    comp0 A DA DA (pullAB f lamB) (dual0AA (iA (star b)))
+  change comp0 A A DA (iA b).asHom (pullAB f lamB) =
+    comp0 A DA DA (pullAB f lamB) (dual0AA (iA (star b)).asHom)
   calc
     _ = comp0 A DB DA
-        (comp0 A B DB (comp0 A A B (iA b) f) lamB) (dual0AB f) := by
+        (comp0 A B DB (comp0 A A B (iA b).asHom f) lamB) (dual0AB f) := by
       simp only [rationalDualPullbackHom0, comp0_assoc]
     _ = comp0 A DB DA
-        (comp0 A B DB f (comp0 B B DB (iB b) lamB)) (dual0AB f) := by
+        (comp0 A B DB f (comp0 B B DB (iB b).asHom lamB)) (dual0AB f) := by
       rw [hf b]
       simp only [comp0_assoc]
     _ = comp0 A DB DA
-        (comp0 A B DB f (comp0 B DB DB lamB (dual0BB (iB (star b)))))
+        (comp0 A B DB f (comp0 B DB DB lamB (dual0BB (iB (star b)).asHom)))
         (dual0AB f) := by rw [hlam b]
     _ = _ := by
       simp only [rationalDualPullbackHom0, comp0_assoc]

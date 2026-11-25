@@ -51,7 +51,7 @@ perfectness, characteristic, separation, properness, group structure,
 normality, regularity, reducedness, irreducibility, or prior integrality
 hypothesis is added.
 
-## Provenance and contributions
+## Provenance
 
 This is an internal assembly of the two published scheme theorems and
 Mathlib's base-change and local Noetherianity results. The unchanged
@@ -62,9 +62,6 @@ criteria instead. In particular, the connected-domain-stalk theorem's
 weaker hypothesis is justified by its own local algebra proof; it is
 not attributed verbatim to a Stacks result about normal schemes.
 
-Worker 416 wrote this assembly and its documentation. The imported
-smooth-domain-stalk proof is by Worker 669, with contributions by
-Workers 129 and 428; the connected-domain-stalk proof is by Worker 447,
-with interface and component-reduction contributions by Worker 416.
-Their paired documentation explains the respective proofs. All
+The paired documentation of the imported smooth-domain-stalk and
+connected-domain-stalk proofs explains the respective proofs. All
 prerequisites are published, and no rigidity theorem enters this proof.

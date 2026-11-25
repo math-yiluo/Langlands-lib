@@ -59,8 +59,11 @@ compatibility square, using the resulting model isomorphism's compatibility
 field. Both follow from the Library's coefficient-descent recovery and twist
 compatibility theorems.
 
-This unit does not construct the coefficient model, the upstairs model, their
+This module does not construct the coefficient model, the upstairs model, their
 recovery isomorphism, a finite field containing conjugators, or the upstairs
 integral twist. It supplies the compatibility and recovery step once those
-objects exist. In particular it does not prove the host twisted-chamber
-quotient statement or its residue, Frobenius and chamber conclusions.
+objects exist. In particular it does not prove the twisted-chamber
+quotient statement this module serves, `UnramifiedTwistedChamberQuotientStatement`
+(proved as `unramifiedTwistedChamberQuotient` in
+`Langlands.Geometry.Building.UnramifiedTwistedChamberQuotientProof`), or its residue,
+Frobenius and chamber conclusions.

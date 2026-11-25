@@ -1,6 +1,6 @@
 # Finite compact support under normalized induction
 
-This internal supporting unit passes finiteness of fixed-vector support from
+This internal supporting module passes finiteness of fixed-vector support from
 a family of inducing representations to its family of actual normalized
 inductions. The group, carrier and index universes `uG`, `uV` and `uI` are
 independent. The induced carriers have universe `max uG uV`.
@@ -31,7 +31,7 @@ Compactness of `K` is not needed for this conclusion.
 `normalizedInduction_compactFiniteFixedVectorSupport` applies this argument
 at every compact open subgroup of the ambient group.
 
-Worker 1751 derives this unit from the actual cyclic-quotient detection and
+This module is derived from the actual cyclic-quotient detection and
 normalized-induction evaluation constructions. This is an internal
 composition of those results, rather than a new assertion attributed to
 literature. It proves neither compact-level inertia finiteness nor existence

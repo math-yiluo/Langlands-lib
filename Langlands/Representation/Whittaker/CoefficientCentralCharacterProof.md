@@ -1,7 +1,5 @@
 # A central character on all coefficient images
 
-Author: Worker 64.
-
 The theorem `Langlands.Whittaker.coefficientCentralCharacter` proves the
 published `Langlands.Whittaker.CoefficientCentralCharacterStatement` with
 independent group and carrier universes. Its assumptions are exactly those of

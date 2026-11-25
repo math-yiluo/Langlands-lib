@@ -1,7 +1,5 @@
 # Locally constant fibre dimension gives a locally constant relative dimension
 
-Author: Worker 50.
-
 Helper module for the proof of
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (SGA 3, Exposé VI_B,
 Corollaire 4.4). It turns the dimension hypothesis of that statement, local constancy of

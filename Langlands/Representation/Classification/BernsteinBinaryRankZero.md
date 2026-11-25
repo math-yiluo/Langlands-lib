@@ -1,7 +1,5 @@
 # Irreducible rank-zero factors in binary normalized products
 
-Author: Worker 103.
-
 This internal boundary construction supports the rank induction for Bernstein's
 unitary product theorem. Highest derivatives of positive-rank factors may have
 rank zero. The literal all-rank binary product retains a rank-zero carrier as a

@@ -85,12 +85,11 @@ SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 PDF page 8, correction to the 2010 edition's printed page 120, line 11,
 corrects the Haar factor to the inverse absolute value. That correction is
 already present in the governing 2026 passage and changes none of this
-unit's definitions. The 2010 errata are supplementary evidence, not a
+module's definitions. The 2010 errata are supplementary evidence, not a
 replacement edition.
 
 The supplied-data p-adic comparison is in
 [PadicResidueNormalization](PadicResidueNormalization.md). This general
-unit does not prove the source's unique unit-times-uniformizer-power
+module does not prove the source's unique unit-times-uniformizer-power
 decomposition, topology and congruence-neighborhood assertions, Haar
-formula, or algebraic-group assertions. Those remain separate obligations.
-Worker 607 authored this construction and its intrinsic laws.
+formula, or algebraic-group assertions.

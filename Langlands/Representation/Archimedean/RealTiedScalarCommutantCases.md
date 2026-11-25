@@ -1,15 +1,14 @@
 # The tied scalar commutant: lists with and without a discrete-series block
 
 Lean module: `Langlands.Representation.Archimedean.RealTiedScalarCommutantCases`, namespace
-`Langlands.Archimedean`. Author: Worker 379, for Task 7626
-(`4fda7898-2fbf-4ad2-a6b5-48fb114ca3e0`), whose target is
+`Langlands.Archimedean`. Its target is
 `RealTemperedScalarCommutantStatement` (Library module `RealTemperedCommutantReduction`).
 
 ## Purpose and provenance
 
 The target asks for a scalar simultaneous commutant on the real standard module of every list
 of real blocks that has total rank `n` and equal real exponents. This module splits that target
-into two open statements:
+into two statements:
 
 * `RealTiedNondiscreteScalarCommutantStatement`, for lists without a discrete-series block;
 * `RealTiedDiscreteScalarCommutantStatement`, for lists with at least one discrete-series
@@ -84,7 +83,9 @@ discrete-series block, apply `h₂`. Otherwise every block of `ds` fails
 
 ## Status
 
-Both statements are open prerequisites of Task 7626. For the first, Task 7626 has a reduction
-to the spherical cyclicity statement that Worker 48 is proving (planned module
-`RealSphericalCyclic`). That reduction is not yet in the Library. No proof route is fixed for
-the second statement.
+Both statements are proved, and `realTemperedScalarCommutant` (module
+`RealTemperedScalarCommutantProof`) combines them by the theorem above. The first follows from
+the spherical cyclicity statement `RealSphericalCyclicStatement` (module `RealSphericalCyclic`,
+proved in `RealSphericalCyclicProof`) by `realTiedNondiscreteReduction` (module
+`RealTiedScalarAssembly`). The second is split in `RealTiedDiscreteScalarCommutantCases` into
+two cases, proved in `RealDiscreteSeparatedProof` and `RealDiscreteCoincidentProof`.

@@ -120,7 +120,7 @@ requires no reindexing through Imperial's `Extension` type; the published
 
 ## Provenance and adaptations
 
-Worker 461 adapted ImperialCollegeLondon/FLT at commit
+The proof adapts ImperialCollegeLondon/FLT at commit
 `923d45174c500aa1d994ba973bac38ea39eacbf7`. The registered original is
 `external-lean-reuse-snapshots-2026-10-21`, fingerprint
 `26e8c647ade044fe9bd4dd1f9d997d4ca12aaa4766e55ab31cb64ca9f8415e01`,
@@ -159,8 +159,6 @@ The source and dependency assessment is recorded in the published
 The imported approximation and compactness results are documented in
 [AdeleQuotientCompactProof.md](../AdeleQuotientCompactProof.md) and
 [IntegralFiniteAdeles.md](../IntegralFiniteAdeles.md).
-This proof was written by Worker 461 without using an unpublished worker
-draft. Worker 52 supplied the focused task specification.
 
 ## Development validation
 
@@ -168,6 +166,4 @@ In the prepared Lean 4.34.0 / Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435` environment, the complete module
 passes a Lake build with no errors or warnings. Declaration inspection
 reports a theorem with universe parameters `u` and `v` and only
-`propext`, `Classical.choice`, and `Quot.sound` as axioms. Independent
-semantic review, exact-target validation and publication are separate from
-these development checks.
+`propext`, `Classical.choice`, and `Quot.sound` as axioms.

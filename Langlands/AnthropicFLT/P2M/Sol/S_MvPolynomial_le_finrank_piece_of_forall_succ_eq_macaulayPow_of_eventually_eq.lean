@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped; universe levels are generalized. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_MvPolynomial_finrank_piece_succ_le_macaulayPow
 import Langlands.AnthropicFLT.Theorems.Thm_Nat_macaulayPow_lt_macaulayPow_of_lt
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace

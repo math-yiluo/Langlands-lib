@@ -1,6 +1,6 @@
 # Algebra coactions from functorial chart transitions
 
-Worker 632, using the chart-transition interface agreed with Worker 5254.
+This module uses the chart-transition interface `ChartAlgebraDescent.Datum` of `ChartAlgebraTransport`.
 
 For arbitrary commutative rings `A → B → C`, this internal module converts a
 `ChartAlgebraDescent.Datum A B C` into an actual
@@ -30,5 +30,7 @@ resulting point formula with precisely those scalar structures.
 
 This is an internally derived conversion from tensor adjunction and the three
 chart-transition laws. It supplies the coaction needed to apply the existing
-invariant-algebra effectivity theorem. This module does not yet prove the
-full finite étale chart descent statement or its universal invariant recovery.
+invariant-algebra effectivity theorem. This module does not prove the
+full finite étale chart descent statement or its universal invariant recovery;
+the statement is proved as `finiteEtaleChartDescent` in
+`FiniteEtaleChartDescentProof`, which uses `ChartAlgebraDescent`.

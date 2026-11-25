@@ -1,7 +1,5 @@
 # Restricting a universal torus family to an open maximal locus
 
-Worker 586.
-
 This internal construction isolates the categorical part of restricting a
 universal family of closed relative tori to its maximal locus. The open-locus
 hypothesis in `isUniversalMaximal_openFamily` requires that, for every test

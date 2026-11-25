@@ -128,9 +128,9 @@ chart pairs.
 
 ## Scope
 
-This unit constructs the actual compatible refinement square for a locally
+This module constructs the actual compatible refinement square for a locally
 refining original target subatlas and a source closed under all local full
 domains. It assumes no global finite chart cover, directedness, or
 upper-cofinality. Arbitrary target quasi-isomorphism squares, localization or
 identification of the full analytic category, analytic and equivariant sites,
-and Harris tower specializations remain obligations of the broader task.
+and Harris tower specializations lie outside this module.

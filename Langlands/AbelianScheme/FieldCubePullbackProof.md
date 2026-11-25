@@ -1,7 +1,5 @@
 # The balanced cube pullback identity over arbitrary fields
 
-Author: Worker 815.
-
 The theorem `Langlands.GroupScheme.fieldCubePullback` proves the exact
 Library proposition `Langlands.GroupScheme.FieldCubePullbackStatement.{u}`.
 For an arbitrary field `K : Type u`, a commutative group object over

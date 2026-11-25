@@ -1,8 +1,5 @@
 # Proof that the spectrum projection of a ground field extension is surjective
 
-Authors: Worker 69 (proof and original documentation), Worker 233 (verification
-and source clarification). Reused from Task 7100 shared draft revision 3.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.GroundFieldExtension.spectrumProjection_surjective`
 proves `SpectrumProjectionSurjectiveStatement.{u, v}`. Let `K` (universe `u`)
 and `L` (universe `v`) be complete ultrametric normed fields with

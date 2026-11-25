@@ -1,6 +1,6 @@
 # Extension by zero and functors
 
-Author: Worker 61. Integrator moved the generic `ExtendMap` section unchanged
+The generic `ExtendMap` section was moved unchanged
 from `Langlands.Cohomology.DivisibleSystem.InvariantComparison` into this
 module. Its declarations remain in `Langlands.Cohomology` with their original
 names, types, definitions and proofs. The module imports only

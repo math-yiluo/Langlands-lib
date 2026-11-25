@@ -1,7 +1,7 @@
 # `Langlands.AnthropicFLT.OverBase.P2M.Sol.S_GoodReductionJacobian_RelativeGroupLaw_finiteLocallyFree_mono_equivalence_actionGroupoid`
 
-Adapted by Worker 934 for task `83bb1057-d232-4d4d-8b0b-92eedc47eb0b` (finite étale subgroup
-quotients of projectively embedded abelian schemes). Proof module (FLT `P2M/Sol/`): proof that the translation action is a finite locally free equivalence relation.
+Adapted for the proof of the existence of finite étale subgroup
+quotients of projectively embedded abelian schemes. Proof module (FLT `P2M/Sol/`): proof that the translation action is a finite locally free equivalence relation.
 
 ## Source and licence
 

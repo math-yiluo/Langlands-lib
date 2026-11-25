@@ -233,7 +233,7 @@ theorem baseChange_ne_zero_of_simple {b : characterLattice S}
   intro h
   apply hb.1.1.1
   apply (characterLattice.baseChangeEquiv bK S hf.1.1).injective
-  rw [map_zero]
+  rw [AddEquiv.map_zero]
   exact h
 
 include ha h2a hR hProd in

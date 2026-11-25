@@ -1,7 +1,5 @@
 # Finiteness of definite double cosets for lattice stabilizers
 
-Author: Worker 19.
-
 Let `σ` be an involution of a finite-dimensional `ℚ`-algebra `A` whose real
 scalar extension is positive (`(σ.baseChange ℝ).IsPositive`), `GJ` its
 similitude group, and `b` a `ℚ`-basis of `A` indexed by `Fin n`. Let

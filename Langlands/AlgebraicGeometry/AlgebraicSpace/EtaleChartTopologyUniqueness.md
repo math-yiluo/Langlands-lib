@@ -1,7 +1,5 @@
 # Uniqueness of the topology of Conrad's Proposition 5.4
 
-Author: Worker 105.
-
 This proof module proves the uniqueness assertion of Proposition 5.4 of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed p.15
 (source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

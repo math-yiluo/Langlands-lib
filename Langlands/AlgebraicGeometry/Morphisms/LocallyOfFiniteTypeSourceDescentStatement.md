@@ -1,14 +1,14 @@
 # Local finite type descends along fppf covers of the source
 
-Author: Worker 293.
-
 `Langlands.AlgebraicGeometry.LocallyOfFiniteTypeSourceDescentStatement.{u}`
 states a proposition for an arbitrary universe `u`. It quantifies over all
 actual schemes `X Y S : Scheme.{u}` and all scheme morphisms `f : X ⟶ Y` and
 `g : Y ⟶ S`. Its hypotheses, in order, are `Surjective f`, `Flat f`,
 `LocallyOfFinitePresentation f` and `LocallyOfFiniteType (f ≫ g)`. Its
 conclusion is `LocallyOfFiniteType g`. This module defines the proposition
-and supplies no proof or default witness; a separate proof is still needed.
+and supplies no proof or default witness; the proof is
+`locallyOfFiniteType_of_surjective_flat_locallyOfFinitePresentation_comp` in
+`LocallyOfFiniteTypeSourceDescentProof`.
 
 ## Meaning of the predicates
 
@@ -106,10 +106,11 @@ The immediate application is the etale surjective case. Mathlib's
 `AlgebraicGeometry.Etale.iff_flat_and_formallyUnramified` shows that an
 etale morphism is flat and locally of finite presentation. So an etale
 surjective `f` with locally finite type `f ≫ g` gives a locally finite type
-`g`. Task `22877948-227b-4ad5-bdb3-e13f5ea18c3d` needs this for an etale
+`g`. The proof that separated commutative group algebraic spaces over a
+field are schemes was meant to use this for an etale
 surjective map `b.left` with `b.left ≫ P.hom = U.hom` and local finite type
 of `U.hom`, to conclude local finite type of `P.hom`. Stating the
-proposition establishes none of that task's remaining obligations.
+proposition establishes no other step of that proof.
 
 ## Retained source
 

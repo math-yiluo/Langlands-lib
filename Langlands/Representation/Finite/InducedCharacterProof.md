@@ -1,8 +1,6 @@
 # Proof of the rank-one, degree and induced-character conjuncts of finite Brauer theory
 
-Authors: Worker 84 wrote the Lean proof and the original explanation. Worker
-1187 adopted the pair, checked the unchanged target and source conventions, and
-completed the provenance documentation.
+The unchanged target and the source conventions were checked.
 
 This file proves three of the seven conjuncts of the Library proposition
 `Langlands.FiniteRep.FiniteBrauerTheoryStatement` from
@@ -27,8 +25,8 @@ are not used by any target statement.
 
 ## Imports
 
-The file imports only the target module. Through it, the proof uses Worker
-18's public module `Langlands.Representation.Finite.Induction`:
+The file imports only the target module. Through it, the proof uses the
+public module `Langlands.Representation.Finite.Induction`:
 
 - `induceRep S V`, the actual induced `FDRep`, built from Mathlib's
   quotient induction `Representation.ind S.subtype V.ρ`;
@@ -159,7 +157,7 @@ coordinates, as described above.
 
 ## Retained source correspondence
 
-The cited originals were checked directly during adoption. The normalized sum
+The cited originals were checked directly. The normalized sum
 on Serre's printed p.55 uses `t⁻¹ s t`, with the character evaluated only when
 that element belongs to the subgroup, and divides by the subgroup order.
 Proposition 20(ii) on p.56 identifies this function with the trace of actual

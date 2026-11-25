@@ -67,7 +67,7 @@ not a numbered theorem quoted from the manuscript or a formal Mathlib
 
 The field has only `NormedField` and `IsUltrametricDist` assumptions, in universe
 `u`; the actual topological groups occupy the independent universe `v`. No
-completeness or nontrivial valuation is assumed. This unit does not identify
+completeness or nontrivial valuation is assumed. This module does not identify
 norm-orbit continuity with the source's full analytic automorphism topology,
 and does not construct varying-field analytic spaces, geometric fiber products,
 atlases, analytic domains, etale or quasi-etale sites, coverings or cohomology.

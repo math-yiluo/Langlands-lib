@@ -250,6 +250,7 @@ local instance affineQuotientCompact (d : ℕ) :
     infer_instance
   change QuasiCompact (((GroupScheme.baseChange (algebraBaseMap R A)).map
     (C.weights.quotientMap d)).hom.hom.left ≫ (VectorGroup.baseChangeIso _).hom.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 include hG hmax hP hfam in

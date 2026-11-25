@@ -1,7 +1,7 @@
 # `Langlands.AnthropicFLT.OverBase.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw`
 
-Adapted by Worker 934 for task `83bb1057-d232-4d4d-8b0b-92eedc47eb0b` (finite étale subgroup
-quotients of projectively embedded abelian schemes). Definition module: group laws on the points of a scheme over an arbitrary base scheme `S`.
+Adapted for the proof of the existence of finite étale subgroup
+quotients of projectively embedded abelian schemes. Definition module: group laws on the points of a scheme over an arbitrary base scheme `S`.
 
 ## Source and licence
 

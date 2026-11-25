@@ -1,7 +1,5 @@
 # Proof: twisted-fixed translations of the special apartment are split directions
 
-Authors: Worker 2094 and Worker 88.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedTwistedFixedTranslationProof`.
 
 Theorem: `Langlands.Geometry.Building.unramifiedTwistedFixedTranslation :

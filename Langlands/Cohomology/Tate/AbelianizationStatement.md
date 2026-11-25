@@ -1,7 +1,5 @@
 # Tate degree-minus-two maps agree with abelianization inclusion and transfer
 
-Author: Worker 45.
-
 `Langlands.Tate.AbelianizationLaws` quantifies over a finite group `G` and a
 subgroup `H` in arbitrary universe `u`. Through the published additive
 equivalences `integralMinusTwoEquiv`, it asserts:

@@ -1,6 +1,6 @@
 # Rank-one isogenies with characteristic-power root maps
 
-This derived supporting unit applies to two connected reductive groups over any
+This derived supporting module applies to two connected reductive groups over any
 field, with supplied `RootCell.IsRootCell` witnesses. The middle commutative group
 schemes may differ. Let `t : T ⟶ T'` be an actual isogeny on the middle groups, and
 let `q = p^e`, where `ExpChar k p`. The hypotheses on the actual character and
@@ -26,5 +26,5 @@ The provenance is derived from `SplitRankOnePowerCell`,
 `SplitRankOnePowerGeometry` and `OpenCellIsogeny`; the proof applies their stated
 criteria without new original-literature input. The universe is arbitrary,
 characteristic zero (`p = 1`) and `e = 0` are included, and the field need not be
-perfect. This unit assumes the supplied cells and proves no general-rank graph
+perfect. This module assumes the supplied cells and proves no general-rank graph
 construction or general split reductive isogeny theorem.

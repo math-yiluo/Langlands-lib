@@ -70,6 +70,7 @@ theorem mono_lineBaseChange (x : Ga k ⟶ G) [Mono x.hom.hom] :
     infer_instance
   change Mono ((VectorGroup.fieldBaseChangeIso k K 1).inv.hom.hom ≫
     ((GroupScheme.baseChange bc).map x).hom.hom)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- Torus equivariance passes to the base change, with the base-changed character. -/

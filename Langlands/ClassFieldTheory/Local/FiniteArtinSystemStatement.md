@@ -1,11 +1,9 @@
 # Coherent geometric finite Artin systems
 
-Author: Worker 1771.
-
 This pair defines two propositions in namespace `Langlands.LocalClassField`:
 the relation `GeometricFiniteArtinSystemRelation` and the assertion
 `GeometricFiniteArtinSystemExistenceUniqueness`. It supplies statement targets
-for later arithmetic proofs. Defining or compiling these propositions does
+for arithmetic proofs. Defining or compiling these propositions does
 not prove them.
 
 ## Fields, topology and the candidate family
@@ -125,7 +123,7 @@ Jay Greenberg, Graduate Texts in Mathematics 67, Springer (1979), registered
 as `serre-1979-local-fields`. Its retained file is
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 1771 read the following original passages and checked the fingerprint.
+The following original passages were read and the fingerprint checked.
 
 | Original passage | Correspondence with this pair |
 | --- | --- |
@@ -158,19 +156,23 @@ not implemented or claimed as a Lean proof in this pair.
 The direct imports are the published
 `Langlands.ClassFieldTheory.Local.FiniteArtin` and
 `Langlands.LocalField.Normalization.Definitions`. Their existing Galois,
-norm and local-field constructions are reused unchanged. The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib commit
+norm and local-field constructions are reused unchanged. The development
+checks used Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 This pair states neither a proof of the coherent arithmetic family nor the
-final reconstruction of the actual profinite Galois quotient. Those remain
-separate proof obligations after independent statement acceptance and
-publication. No published Lean/Markdown pair is changed.
+final reconstruction of the actual profinite Galois quotient. The first is
+proved as `geometricFiniteArtinSystemExistenceUniqueness` (module
+`FiniteArtinSystemExistenceProof`). The reconstruction is in
+`ProfiniteReciprocityReconstruction`, and `profiniteReciprocity_of_finiteArtin`
+(module `ProfiniteReciprocityAssembly`) derives
+`ProfiniteReciprocityExistenceUniqueness` from the existence assertion. No
+published Lean/Markdown pair is changed.
 
 ## Development validation
 
-The pair compiled in the pinned Lean service with no errors or warnings.
+The pair compiled with the pinned Lean and Mathlib versions with no errors or warnings.
 Inspection of both declarations reported `statement_returns_prop: true`,
 the sole universe parameter `u`, and only `propext`, `Classical.choice`
 and `Quot.sound`. These checks establish elaboration and allowed assumptions;
-they do not prove either proposition or supply independent semantic acceptance.
+they do not prove either proposition.

@@ -1,7 +1,5 @@
 # Étale morphisms of analytic spaces are open
 
-Author: Worker 786.
-
 `Langlands.Analytic.SaturatedAtlasPresentation.etaleOpenMap` proves the exact
 Library proposition `EtaleOpenMapStatement.{u,v} K` for every complete
 ultrametric normed field `K`. It concerns the actual point map supplied by

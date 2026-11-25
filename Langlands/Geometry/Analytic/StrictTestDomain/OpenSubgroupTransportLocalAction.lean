@@ -34,19 +34,19 @@ namespace OpenSubgroupTransport
 operators. -/
 def operatorAction (X : ρ.OpenSubgroupTransport) :
     (X.subgroup : Subgroup G) →* (End X)ᵐᵒᵖ where
-  toFun k := MulOpposite.op (X.operator k)
-  map_one' := congrArg MulOpposite.op X.operator_one
-  map_mul' k l := congrArg MulOpposite.op (X.operator_mul k l)
+  toFun k := MulOpposite.op (End.of (X.operator k))
+  map_one' := congrArg (fun f => MulOpposite.op (End.of f)) X.operator_one
+  map_mul' k l := congrArg (fun f => MulOpposite.op (End.of f)) (X.operator_mul k l)
 
 @[simp]
 theorem operatorAction_unop (X : ρ.OpenSubgroupTransport) (k : (X.subgroup : Subgroup G)) :
-    (X.operatorAction k).unop = X.operator k := rfl
+    (X.operatorAction k).unop.asHom = X.operator k := rfl
 
 variable (ρ) in
 /-- The admissible local actions on the transport site: every element of the
 acting open subgroup acts through an arrow labelled by its inverse. -/
 def localActionSystem : LocalActionSystem (ρ.OpenSubgroupTransport) G where
-  IsAdmissible _ _ a := ∀ h, (a h).unop.label = (h : G)⁻¹
+  IsAdmissible _ _ a := ∀ h, (a h).unop.asHom.label = (h : G)⁻¹
 
 theorem isAdmissible_operatorAction (X : ρ.OpenSubgroupTransport) :
     (localActionSystem ρ).IsAdmissible X X.subgroup X.operatorAction :=
@@ -58,7 +58,7 @@ theorem IsAdmissible.eq_operatorAction {X : ρ.OpenSubgroupTransport} {H : OpenS
     {a : (H : Subgroup G) →* (End X)ᵐᵒᵖ} (ha : (localActionSystem ρ).IsAdmissible X H a)
     (g : G) (hgH : g ∈ H) (hgX : g ∈ X.subgroup) :
     a ⟨g, hgH⟩ = X.operatorAction ⟨g, hgX⟩ :=
-  MulOpposite.unop_injective (Hom.ext (ha ⟨g, hgH⟩))
+  MulOpposite.unop_injective (End.ext (Hom.ext (ha ⟨g, hgH⟩)))
 
 variable {A : Type uA} [Category A] {FA : A → A → Type*} {CA : A → Type wA}
 variable [∀ X Y, FunLike (FA X Y) (CA X) (CA Y)] [ConcreteCategory.{wA} A FA]

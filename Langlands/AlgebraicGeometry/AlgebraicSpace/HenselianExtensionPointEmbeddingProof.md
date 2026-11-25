@@ -1,7 +1,5 @@
 # Rational points over an extension of henselian valued fields: proof
 
-Author: Worker 114.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.henselianExtensionPointEmbedding`
 proves the unchanged proposition
 `HenselianExtensionPointEmbeddingStatement.{u}`. The target's source attribution

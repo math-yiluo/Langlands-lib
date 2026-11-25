@@ -1,8 +1,8 @@
 # Finite stable generation for the original nonunital action
 
-Worker 709 prepared these internal comparison statements in namespace
-`Langlands.Algebra.IntegerOriginalSubmoduleGeneration`; Worker 803 checked
-them and clarified this Markdown. The file contains three closed transparent
+This module gives internal comparison statements in namespace
+`Langlands.Algebra.IntegerOriginalSubmoduleGeneration`; they were checked
+independently. The file contains three closed transparent
 `def`s returning `Prop` and their ordered conjunction. It proves none of them.
 
 ## Inputs and the selected action
@@ -111,11 +111,11 @@ The motivating original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-In the parent audit Worker 709 read the conventions at printed pp.5–6 /
-PDF11–12, I.2.1 at printed p.14 / PDF20–21, and A.I.2–A.I.3 at printed
-pp.248–249 / PDF254–255, including a visual check of the latter. For this
-submission Worker 803 verified the SHA256 of the retained file and reread
-the extracted text of PDF11–12, 20–21, 254–255, 282 and 285. That reread
+The conventions at printed pp.5–6 / PDF11–12, I.2.1 at printed p.14 /
+PDF20–21, and A.I.2–A.I.3 at printed pp.248–249 / PDF254–255 were read,
+including a visual check of the latter. In a second, independent reading the
+SHA256 of the retained file was verified and the extracted text of
+PDF11–12, 20–21, 254–255, 282 and 285 was reread. That reread
 found no conflict with the descriptions below.
 
 - The conventions (PDF12) do not assume rings unital, nor modules over a
@@ -139,17 +139,17 @@ Renard's categorical finite-type or Noetherian predicates, or the source's
 convention for a possibly nonunital Noetherian algebra is claimed.
 
 The source wording repairs and boundaries recorded in the published
-`Langlands/CategoryTheory/RenardFiniteType.md` are retained. The parent
-audit consulted `notes/renard/appendix-a-corrections.md`, which addresses
+`Langlands/CategoryTheory/RenardFiniteType.md` are retained. The note
+`notes/renard/appendix-a-corrections.md` was consulted; it addresses
 other Appendix A passages; no dedicated project errata file for the 2026
 source was found. The registered older-edition supplement
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was read only at PDF18–19 and supplies no author-issued correction for
 these internal targets. Bibliography references [25] and [37] have not
-been read for this unit and supply no proof evidence.
+been read for this module and supply no proof evidence.
 
 Categorical transport, source convention comparisons, full C.II and the
-rest of the book remain parent obligations. A proof successor must name
-the exact aggregate after independent statement acceptance and current
-Library publication.
+rest of the book are not treated here. The aggregate is proved as
+`integerOriginalSubmoduleGeneration` in
+`Langlands.Algebra.IntegerOriginalSubmoduleGenerationProof`.

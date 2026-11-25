@@ -1,9 +1,9 @@
 # The smooth equivariant Godement complex
 
-Author: Worker 61. Built on Worker 13's smooth sheaf category
+Built on the smooth sheaf category
 (`Langlands.Sheaf.Equivariant.Smooth`), smooth part and abelian structure
 (`Langlands.Sheaf.Equivariant.SmoothPart`,
-`Langlands.Sheaf.Equivariant.SmoothAbelian`), on Worker 61's coinduction
+`Langlands.Sheaf.Equivariant.SmoothAbelian`), on the coinduction
 (`Langlands.Sheaf.Equivariant.Coinduction`) and underlying comparison
 (`Langlands.Sheaf.Equivariant.Godement.Underlying`), and on the published
 ordinary Godement construction `Langlands.Sheaf.Godement` and the iterated
@@ -25,8 +25,8 @@ sheaves of the stalks at `x`, and `η` for its published coaugmentation.
 `smoothForget R G X` forgets smoothness and equivariance. It is the inclusion
 `smoothInclusion` of smooth sheaves followed by `toSheaf`, and lands in
 ordinary sheaves of `R`-modules on `X`. `smoothCoinduction R G X` is
-coinduction followed by Worker 13's smooth part `smoothCoreflector`.
-`smoothCoinductionAdjunction` composes Worker 13's adjunction
+coinduction followed by the smooth part `smoothCoreflector` of `SmoothPart`.
+`smoothCoinductionAdjunction` composes the adjunction
 `smoothAdjunction : smoothInclusion ⊣ smoothCoreflector` with the
 coinduction adjunction `coinductionAdjunction : toSheaf ⊣ coinduction`, using
 Mathlib's `Adjunction.comp`. It proves `smoothForget ⊣ smoothCoinduction`.
@@ -65,7 +65,7 @@ component is monic. A faithful functor reflects monomorphisms.
 `smoothComplexFunctor R G X` is the published iterated-cokernel complex
 `CokernelComplex.functor` for `smoothZeroFunctor` and
 `smoothCoaugmentation`, computed in the abelian category of smooth sheaves
-(Worker 13's `smoothTopologicalSheaf_abelian`). Degree zero is the degree-zero
+(`smoothTopologicalSheaf_abelian` of `SmoothAbelian`). Degree zero is the degree-zero
 functor applied to the sheaf (`smoothComplex_X_zero`). Degree `n + 1` is the
 degree-zero functor applied to the cokernel of the previous map.
 `smoothAugmentation` is the map from the sheaf into degree zero. It equals the
@@ -83,7 +83,7 @@ image, giving a morphism of sites `ν : Top(I) → X(G)_ét`. It sets
 `C^{m+1}(F) = C^0(Coker d^{m-1})`. Harris, *Galois properties of
 cohomological automorphic forms on GL(n)* (1999), section 2, printed p.304,
 uses this smooth `G`-equivariant version of the Godement flasque resolution
-for étale sheaves of smooth modules. Worker 61 read these passages in the
+for étale sheaves of smooth modules. These passages were read in the
 original.
 
 The present construction is derived for the ordinary-topological transport

@@ -1,7 +1,5 @@
 # Renard VI.4.5, Corollary, from VI.4.1 and VI.3.2(i): conditional reduction
 
-Author: Worker 1842.
-
 Module `Langlands.Representation.CuspidalSupport.RationalInertiaBlockIndecomposableReduction`,
 namespace `Langlands.CuspidalSupport`.
 

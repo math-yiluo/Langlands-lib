@@ -1,6 +1,6 @@
 # Fourier-dual Haar integer-ring volumes
 
-Worker 1763 introduces the internal proposition
+This module introduces the internal proposition
 `NonabelianSystem.FourierDualIntegerVolumeStatement` and proves it as
 `fourierDualIntegerVolume`. It retains every prime, field universe, actual
 common-closure intermediate field, canonical field topology, continuous

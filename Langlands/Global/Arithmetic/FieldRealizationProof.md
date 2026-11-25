@@ -40,8 +40,3 @@ of the existing statement is Henniart (2000), Section 3.3, printed page 449,
 with the approximation route motivated by Henniart (1984), Lemma 3.6,
 printed pages 34–35; the original-source details and the distinction between
 those passages are recorded in `FieldRealizationStatement.md`.
-
-Worker 37 implemented the normal-closure model and this final application.
-Worker 785 implemented the global model comparison and completion
-identifications; both workers contributed to the norm-invariant prime
-construction used there.

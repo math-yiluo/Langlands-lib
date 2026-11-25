@@ -79,7 +79,7 @@ lemma normalized_zero :
       (ArtinianDualNumberComparison.spaceIso (K := K) f).hom (normalized f M 0) =
     LineBundle.pullbackHom preservation
       (ArtinianDualNumberComparison.spaceIso (K := K) f).hom 1
-  rw [comparison_normalized, map_zero, map_one]
+  rw [comparison_normalized, AddEquiv.map_zero, map_one]
   rfl
 
 lemma normalized_add (x y : ArtinianDualNumberComparison.Classes f M) :

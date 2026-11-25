@@ -1,7 +1,5 @@
 # Group restriction of relative finite étale affinoid actions
 
-Author: Worker 36.
-
 This derived local construction restricts the group of an actual
 algebraically finite étale affinoid object under a fixed norm-continuous
 action. It retains the actual presented quotient algebra, its bounded

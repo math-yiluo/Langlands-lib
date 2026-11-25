@@ -1,7 +1,5 @@
 # The dynamic unipotent subgroup as the first cyclic weight filtration step
 
-Author: Worker 1423.
-
 Helper module for the proof of
 `Langlands.Aubert.General.RationalPointFamily.DynamicUnipotentVectorFiltrationStatement`.
 All declarations are in namespace `Langlands.GroupScheme.RelativeRoot`.

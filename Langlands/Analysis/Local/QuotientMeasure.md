@@ -1,6 +1,6 @@
 # Integration over left cosets
 
-Worker 31 implements integration infrastructure for the actual quotient
+This module implements integration infrastructure for the actual quotient
 `H \ G`, whose points are the sets `H g`. The subgroup need not be normal.
 The carrier, invariant-function descent and `rightTranslate` homeomorphism
 are re-exported from [Group/LeftQuotient](../../Group/LeftQuotient.md), with

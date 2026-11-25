@@ -1,7 +1,7 @@
 # The BZ77 4.2 core applied to two supercuspidal blocks
 
-Author: Worker 745. Helper module of the proof of Ze80 Proposition 1.11(a),
-first conjunct (task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`).
+Helper module of the proof of Ze80 Proposition 1.11(a),
+first conjunct.
 
 ## Main theorem
 

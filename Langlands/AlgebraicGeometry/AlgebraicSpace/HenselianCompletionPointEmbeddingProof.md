@@ -1,7 +1,5 @@
 # Rational points over a henselian field embed into points over its completion
 
-Author: Worker 105.
-
 This module proves `HenselianCompletionPointEmbeddingStatement`
 (`HenselianCompletionPointEmbeddingStatement.lean`), part (2) of Proposition 5.11 of
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),

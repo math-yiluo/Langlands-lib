@@ -5,7 +5,7 @@ Licensed under Apache License 2.0; see licenses/Anthropic-FLT/LICENSE, NOTICE,
 and ATTRIBUTION.md. Imports are prefixed; utility commands are replaced by
 standard Lean commands. See the paired Markdown for changes and provenance.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_exists_hopfAlgebra_bialgHom_surjective_ker_eq_of_hopfIdeal
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000

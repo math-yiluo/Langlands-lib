@@ -1,6 +1,6 @@
 # Finite chart covers and compactness of constructed fibre products
 
-Author: Worker 611. This is an internal consequence of the published
+This is an internal consequence of the published
 `AtlasTopology.CompactSubcover`, `FibreProductAtlas` and
 `AnalyticFibreProduct` constructions. It supplies finite chart data and
 compactness for the actual glued space; it assumes no categorical pullback

@@ -1,7 +1,5 @@
 # Preservation of unipotence under field extension
 
-Author: Worker 1473.
-
 `Langlands.GroupScheme.UnipotentFieldExtensionStatement.{u}` states the
 forward implication of Milne, *Algebraic Groups* (2017), Corollary 14.9,
 printed p.282 (PDF p.298). The registered source is

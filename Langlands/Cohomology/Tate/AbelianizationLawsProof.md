@@ -1,8 +1,5 @@
 # Proof of the integral degree-minus-two subgroup laws
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 `Langlands.Tate.abelianizationLaws.{u}` has exactly the published type
 `Langlands.Tate.AbelianizationLaws.{u}`. It quantifies over every finite group
 `G : Type u` and subgroup `H` with the stated finite-type instances. The

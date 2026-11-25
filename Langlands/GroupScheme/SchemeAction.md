@@ -1,7 +1,5 @@
 # Group-scheme actions and fixed points on schemes
 
-Worker 1293.
-
 This module supplies the internal scheme-action interface used to state
 general Borel and split-solvable fixed-point theorems.
 

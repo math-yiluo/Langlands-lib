@@ -1,8 +1,5 @@
 # Proof of finite-length acyclicity over a regular local ring
 
-Author: Worker 975. The statement `RegularLocalFiniteLengthAcyclicityStatement` is Worker
-1015's.
-
 Module `Langlands.CommutativeAlgebra.RegularLocalFiniteLengthAcyclicityProof`. The theorem
 
 ```text

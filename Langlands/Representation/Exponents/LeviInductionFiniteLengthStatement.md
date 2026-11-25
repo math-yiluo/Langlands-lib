@@ -1,6 +1,6 @@
 # Normalized parabolic induction preserves finite length
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviInductionFiniteLengthStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviInductionFiniteLengthStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviInductionFiniteLengthStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviInductionFiniteLengthStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.6.2, printed p.178 / PDF p.184. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The section opens, in translation: "We now show that the induction functor `i_P^G` preserves modules of finite length." Its Lemma says: let `P = MN` be a parabolic subgroup of `G` and `(τ, E)` an irreducible representation of `M`; then `i_P^G(τ, E)` has finite length. The introduction of VI.6 (printed pp.175–176 / PDF pp.181–182) lists the same assertion: `i_P^G` preserves finite length.
 

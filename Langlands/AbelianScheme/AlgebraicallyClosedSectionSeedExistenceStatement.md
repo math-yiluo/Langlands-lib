@@ -3,8 +3,7 @@
 `Langlands.GroupScheme.AlgebraicallyClosedSectionSeedExistenceStatement`, in module
 `Langlands.AbelianScheme.AlgebraicallyClosedSectionSeedExistenceStatement`, is one
 universe-polymorphic Prop-valued definition. It is a statement target, with no proof
-of the asserted existence. Worker 143 wrote this pair using the Lean statement
-specified and previously checked by Worker 1076.
+of the asserted existence.
 
 ## Exact statement
 
@@ -112,7 +111,9 @@ vanish. This is the case explained in the `n = 0` section of the published
 
 The target has no outer assumption of a dimension bound, projectivity,
 ampleness, regularity, factoriality, supplied divisors, supplied line bundles,
-or a comparison certificate. Its planned proof must construct actual sections
+or a comparison certificate. Its proof must construct actual sections
 without using projectivity, ample existence, or their consequences. The
-divisor-to-section comparisons and existence proof remain separate work.
+divisor-to-section comparisons and the existence proof are separate modules; the proof is
+`Langlands.GroupScheme.algebraicallyClosedSectionSeedExistence`, in the module
+`Langlands.AbelianScheme.AlgebraicallyClosedSectionSeedExistenceProof`.
 This module adds no axiom and proves no existence theorem.

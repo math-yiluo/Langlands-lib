@@ -27,7 +27,7 @@ local notation "q" => preimageOpenDomainMap p (U : Set (localizedSpaceFunctor.ob
 private theorem isInvariant_preimageOpenDomain : IsInvariantDomain (analyticActionOfAut c.deck) D := by
   intro γ y hy
   change localizedSpaceFunctor.obj Y at y
-  change localizedSpaceFunctor.map p (localizedSpaceFunctor.map (c.deck γ).hom y) ∈ U
+  change localizedSpaceFunctor.map p (localizedSpaceFunctor.map (c.deck γ).asIso.hom y) ∈ U
   have h := congrArg (fun f : Y ⟶ X => localizedSpaceFunctor.map f y) (c.deck_over γ)
   simp only [Functor.map_comp, TopCat.comp_app] at h
   exact h.symm ▸ hy
@@ -37,10 +37,10 @@ private def restrictedDeck : Γ →* Aut (domainObj Y D) :=
 
 @[reassoc]
 private theorem restrictedDeck_hom_comp (γ : Γ) :
-    (c.restrictedDeck U γ).hom ≫ ιY = ιY ≫ (c.deck γ).hom :=
+    (c.restrictedDeck U γ).asIso.hom ≫ ιY = ιY ≫ (c.deck γ).asIso.hom :=
   (invariantDomainInclusion _ _ (c.isInvariant_preimageOpenDomain U)).comm γ
 
-private theorem restrictedDeck_over (γ : Γ) : (c.restrictedDeck U γ).hom ≫ q = q := by
+private theorem restrictedDeck_over (γ : Γ) : (c.restrictedDeck U γ).asIso.hom ≫ q = q := by
   have h : q ≫ ιX = ιY ≫ p :=
     preimageOpenDomainMap_comp p (U : Set (localizedSpaceFunctor.obj X)) U.isOpen
   apply (cancel_mono ιX).mp
@@ -121,7 +121,7 @@ def restrictOpen : AnalyticGaloisCover Γ q := by
 original source. -/
 @[reassoc (attr := simp)]
 theorem restrictOpen_deck_hom_comp (γ : Γ) :
-    ((c.restrictOpen U).deck γ).hom ≫ ιY = ιY ≫ (c.deck γ).hom :=
+    ((c.restrictOpen U).deck γ).asIso.hom ≫ ιY = ιY ≫ (c.deck γ).asIso.hom :=
   c.restrictedDeck_hom_comp U γ
 
 end Langlands.Analytic.SaturatedAtlasPresentation.AnalyticGaloisCover

@@ -1,9 +1,5 @@
 # Spectral bounds give radius-weighted power bounds in affinoid quotients
 
-Author: Worker 1010.
-
-Closing theorem: Worker 972.
-
 The theorem `spectralPowerBound` has the type
 `SpectralPowerBoundStatement K` for every normed field `K` that is
 ultrametric and complete. Let `P` be a presentation with arbitrary positive

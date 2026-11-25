@@ -1,7 +1,5 @@
 # Solvable fixed points on proper schemes
 
-Workers 1293 and 1351.
-
 `Langlands.GroupScheme.SolvableProperFixedPointStatement.{u}` defines the
 algebraically closed field case of the Borel fixed-point theorem in Milne,
 *Algebraic Groups* (2017), Corollary 17.3, printed p.353 (one-based PDF p.369).
@@ -31,7 +29,7 @@ exactly the published `IsSolvableGroupScheme` predicate: abstract solvability
 of the algebraic-closure point group of the base change of `H`. The paired
 Markdown for `Langlands.GroupScheme.Absolute.Borel` explains its agreement
 with Milne's derived-series notion for smooth affine groups. That comparison
-has not itself been formalized; it is not added as an assumed field here.
+is not itself formalized; it is not added as an assumed field here.
 
 Milne introduces Corollaries 17.2 and 17.3 for separated algebraic schemes
 `X`. His completeness convention is properness over the base field
@@ -69,9 +67,9 @@ solvable groups. Corollary 17.2 applies this to orbits. In 17.3, formation of
 the fixed subscheme commutes with field extension; after the algebraically
 closed and reduced reductions, a minimum-dimensional orbit is closed
 (1.66), hence complete (A.75(a)), hence a single fixed point by 17.2. These
-are literature explanations, not implemented Lean proofs. The proof of the
-exact published proposition and all needed geometric inputs and comparisons
-remain separate obligations. The arbitrary-field split-solvable
+are literature explanations, not implemented Lean proofs. The exact published
+proposition is proved by `solvableProperFixedPoint`
+(`Langlands.GroupScheme.SolvableProperFixedPointProof`) along a different route. The arbitrary-field split-solvable
 pseudo-complete theorem is outside this statement.
 
 The registered original is `milne-2017-algebraic-groups`, SHA256
@@ -79,6 +77,4 @@ The registered original is `milne-2017-algebraic-groups`, SHA256
 The complete official errata snapshot
 `milne-2017-algebraic-groups-errata-2026-11-02`, SHA256
 `a0c3a10dc376e1c9bd1de05b33beaf7d54e5f1ea7b408d594cfd70231a7ba0cf`,
-was checked; its Chapter 17 entries do not change Corollary 17.3. The Lean
-statement reuses Worker 1293's preliminary draft, with source comparison and
-expanded documentation by Worker 1351.
+was checked; its Chapter 17 entries do not change Corollary 17.3.

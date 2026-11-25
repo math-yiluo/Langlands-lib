@@ -1,6 +1,6 @@
 # Middle derivatives of supplied adjacent-product subspaces
 
-This internal prerequisite proves
+This module proves
 `twoSupercuspidalAdjacentProductMiddleDerivatives`, whose type is the
 Prop-valued definition `TwoSupercuspidalAdjacentProductMiddleDerivatives`.
 It combines existing actual Jacquet and derivative calculations; no external
@@ -105,8 +105,8 @@ not used.
 
 The derivative comparison proofs construct equivalences of the actual quotient
 presentations: localization in stages, the appropriate normalization characters,
-tensor-localization comparison and top-localization iteration. The new
-cross-universe helper uses only the quotient-transport construction and its
+tensor-localization comparison and top-localization iteration. The
+cross-universe helper `nonempty_partialDerivative_equiv` uses only the quotient-transport construction and its
 formula on representatives. No derivative Leibniz rule is used.
 
 The supercuspidal top-dimension proof first proves top nonvanishing from proper
@@ -125,14 +125,14 @@ published multiplicity-one transport, not replaced in this statement.
 No used proof route invokes global support decomposition, general ordered
 quotient coverage, full multisegment classification, strong-head classification,
 tempered uniqueness, regular or square-integrable exhaustion, or
-`SquareIntegrableLanglandsClassification`. This unit does not instantiate a
+`SquareIntegrableLanglandsClassification`. This module does not instantiate a
 conditional support-existence or support-uniqueness theorem from
 `SupercuspidalSupport`.
 
-## Remaining host obligations
+## Not proved in this module
 
-This prerequisite proves neither adjacent reducibility nor existence of a
+This module proves neither adjacent reducibility nor existence of a
 length-two segment head. It gives no top-derivative calculation for that head,
 no derivative formula for a product involving it, and no rank-three
 irreducibility or composition calculation. Both repeated-cuspidal triple
-transfers and their ambient extraction/refinement remain separate obligations.
+transfers and their ambient extraction/refinement are not part of this module.

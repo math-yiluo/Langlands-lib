@@ -1,6 +1,6 @@
 # Nonzero primitive coordinates in unipotent bialgebras
 
-Worker 1448. Derived algebraic helper.
+Derived algebraic helper.
 
 `exists_nonzero_primitive_of_oneMemStable` uses the existing coordinate unipotence
 predicate `OneMemStable K B`. If the bialgebra has a nonconstant element,

@@ -1,7 +1,5 @@
 # The diagonal of the Galois-twisted line
 
-Author: Worker 105.
-
 This module proves clauses (1) and (2) of Conrad's Example 5.13 (printed p.20) for the
 Galois-twisted line `space D`:
 

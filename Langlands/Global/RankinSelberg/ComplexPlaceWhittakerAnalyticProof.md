@@ -2,8 +2,8 @@
 
 Module `Langlands.Global.RankinSelberg.ComplexPlaceWhittakerAnalyticProof`. The main results
 are in namespace `Langlands.Global.RankinSelbergGlobal`, the helpers in
-`Langlands.Global.RankinSelbergGlobal.ComplexPlaceAnalytic`. Worker 5665 wrote it for Task 7399
-(prove `ComplexPlaceFunctionalEquationStatement`, Jacquet 2009, Theorem 2.1, at a complex
+`Langlands.Global.RankinSelbergGlobal.ComplexPlaceAnalytic`. It is a step towards
+`ComplexPlaceFunctionalEquationStatement` (Jacquet 2009, Theorem 2.1, at a complex
 place). Provenance: internal.
 
 The module proves the Library premise `ComplexPlaceWhittakerAnalyticStatement` (module
@@ -65,8 +65,8 @@ The proof reduces everything to the place-independent results of
   `|det g|^β ≤ (n!)^k ‖g‖_H^(n k)` with `k = ⌈|β|⌉`. Both `|det g|` and `|det g|⁻¹` are at most
   `n! ‖g‖_H^n`, and the Library lemma `abs_log_le_log_of_le` turns this into the bound.
 
-These lemmas adapt, from `ℝ` to `ℂ`, the real-place lemmas that Worker 771 wrote for Task 7400
-(module `RealMatrixHeightBounds` of staged candidate `ab09ece2`, not yet in the Library).
+These lemmas adapt, from `ℝ` to `ℂ`, the real-place lemmas of the module
+`RealMatrixHeightBounds`.
 
 ### The determinant norm (section `Determinant`)
 
@@ -74,7 +74,7 @@ These lemmas adapt, from `ℝ` to `ℂ`, the real-place lemmas that Worker 771 w
 `∏_v ‖(det)_v‖^(mult v)`. The component of the determinant is `1` at every place except `w`,
 where it is `det g` (`realProjection_det_complexPlaceGL`,
 `complexProjection_det_complexPlaceGL`, and the isometries of the completions). Finally
-`mult w = 2`. The proof follows Worker 771's `detNorm_realPlacePoint` (same staged candidate).
+`mult w = 2`. The proof follows `detNorm_realPlacePoint` (module `RealPlaceDeterminantGrowth`).
 
 ### Matrix coordinates at `w` (section `Coordinates`)
 

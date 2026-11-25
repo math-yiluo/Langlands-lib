@@ -1,7 +1,5 @@
 # Uniqueness in the pinned Isomorphism Theorem over an affine base
 
-Worker 163.
-
 Module `Langlands.GroupScheme.Reductive.AffinePinnedUniqueness`, namespace
 `Langlands.GroupScheme`. It proves the uniqueness half of
 [`AffinePinnedIsomorphismTheoremStatement`](AffinePinnedIsomorphismTheoremStatement.md):
@@ -14,8 +12,8 @@ This is Conrad, *Reductive group schemes* (2014), Proposition 6.1.13(2), applied
 `φ⁻¹ ∘ ψ`, as in the statement's Markdown ("Existence and uniqueness"). It does not
 prove existence.
 
-It imports [`AffineRootLieDerivative`](AffineRootLieDerivative.md) (new, in the same
-candidate) and the Library modules `LocalSimpleRootPowerRigidity`,
+It imports [`AffineRootLieDerivative`](AffineRootLieDerivative.md) and the Library
+modules `LocalSimpleRootPowerRigidity`,
 `RelativeTorusConjugationRigidity`, `GlobalSplitRootParametrization` and
 `AffinePinnedIsomorphismTheoremStatement`.
 

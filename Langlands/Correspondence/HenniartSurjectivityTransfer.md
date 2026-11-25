@@ -1,6 +1,6 @@
 # Surjectivity of the stable images from surjectivity of the extension
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartSurjectivityTransfer`,
+Module `Langlands.Correspondence.HenniartSurjectivityTransfer`,
 namespace `Langlands.Henniart.Extension`. A supporting module of
 `HenniartSurjectivityStepProof`; it defines no statement.
 

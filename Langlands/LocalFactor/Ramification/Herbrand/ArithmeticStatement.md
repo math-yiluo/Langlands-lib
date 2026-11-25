@@ -1,9 +1,9 @@
 # Arithmetic statements for actual Herbrand functions
 
-Worker 60 authored the initial statement draft. Worker 70 repaired its intrinsic
-fixed-field instances, audited the original source and complete declaration types,
-and prepared this paired module. The eight separately named proposition
-families and their aggregate are statements for later proof tasks. None is an
+The original source and the complete declaration types were audited for this
+paired module. The eight separately named proposition
+families and their aggregate are statements; seven of the components are proved
+in `Herbrand.QuotientProof`, `Herbrand.TowerProof` and `Herbrand.HasseArfProof`. None is an
 assumption in the construction of phi, psi, or the upper ramification groups.
 
 ## Fields, embeddings, and realizations
@@ -131,8 +131,8 @@ already force compatibility of `E → L` with the p-adic embeddings.
 
 The full unapplied declaration types were inspected with universe printing,
 including every instance binder. The composition laws explicitly retain the
-`K → E → L` compatibility parameter. The aggregate was also checked by the
-Lean service's exact declaration inspection: it returns `Prop` with independent
+`K → E → L` compatibility parameter. The aggregate was also checked by
+exact declaration inspection: it returns `Prop` with independent
 universe parameters `uK`, `uE`, `uL` and only the standard foundational axioms.
 Compilation and declaration inspection do not constitute proofs of the
 arithmetic proposition families.

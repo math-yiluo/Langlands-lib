@@ -37,10 +37,10 @@ local notation "Mult" => Multiple P.preservation P.composition P.unitCoherence
 /-- Actual powers of an equivariant self-isogeny retain the corresponding
 power of its rational polarization multiplier. -/
 theorem multiple_pow (X : PObj) (q : ℚˣ) (e : Aut X.actionObj)
-    (he : Mult X X q e) (k : ℕ) : Mult X X (q ^ k) (e ^ k) := by
+    (he : Mult X X q e.asIso) (k : ℕ) : Mult X X (q ^ k) (e ^ k).asIso := by
   induction k with
   | zero =>
-    have h1 : (1 : Aut X.actionObj) = Iso.refl _ := rfl
+    have h1 : (1 : Aut X.actionObj).asIso = Iso.refl _ := rfl
     simpa only [pow_zero, h1] using multiple_refl P.preservation P.composition
       P.unitCoherence P.associativity P.comparison P.symmetry P.stability
       P.square P.universality additivity X
@@ -70,11 +70,11 @@ local notation "pullB" => integralDualPullbackHom P.preservation P.composition
 automorphism, that automorphism preserves the actual model polarization. -/
 def IntegralPolarizedPowerModelStatement : Prop := by
   let M : PObj := Y
-  exact ∀ (q : ℚˣ) (e : Aut X.actionObj), Mult X X q e →
+  exact ∀ (q : ℚˣ) (e : Aut X.actionObj), Mult X X q e.asIso →
     ∀ k : ℕ, q ^ k = 1 → ∀ g : B ≅ B,
       let a : Aut (Rationalization.of X.actionObj.abelianScheme) :=
-        RationalAlgebraAction.underlyingIso (S := S) (D := R) e
-      Rationalization.ofHom g.hom = r.hom ≫ (a ^ k).hom ≫ r.inv →
+        Aut.of (RationalAlgebraAction.underlyingIso (S := S) (D := R) e.asIso)
+      Rationalization.ofHom g.hom = r.hom ≫ (a ^ k).asIso.hom ≫ r.inv →
         W.IsPolarization P M.polarization ∧
           pullB g.hom M.polarization = M.polarization
 
@@ -88,9 +88,9 @@ theorem integralPolarizedPowerModel :
     (P := P) (X := X) (B := B) (e := r) (W := W) (p := p)
   have ht := PolarizedAction.isogenyModelMultiple
     (P := P) (X := X) (B := B) (e := r) (W := W) (p := p) additivity
-  have ha : Mult X X 1 (e ^ k) := by
+  have ha : Mult X X 1 (e ^ k).asIso := by
     simpa only [hq] using multiple_pow P additivity X q e he k
-  have hconj : Mult (Y) (Y) 1 (t.symm.trans ((e ^ k).trans t)) := by
+  have hconj : Mult (Y) (Y) 1 (t.symm.trans ((e ^ k).asIso.trans t)) := by
     have hc := multiple_trans P.preservation P.composition P.unitCoherence
       P.associativity P.comparison P.symmetry P.stability P.square P.universality
       additivity
@@ -99,13 +99,13 @@ theorem integralPolarizedPowerModel :
       (multiple_trans P.preservation P.composition P.unitCoherence P.associativity
         P.comparison P.symmetry P.stability P.square P.universality additivity ha ht)
     simpa only [one_mul, inv_mul_cancel] using hc
-  have hpow : RationalAlgebraAction.hom0 (e ^ k).hom = (a ^ k).hom := by
-    exact congrArg (fun z : Aut (Rationalization.of X.actionObj.abelianScheme) => z.hom)
+  have hpow : RationalAlgebraAction.hom0 (e ^ k).asIso.hom = (a ^ k).asIso.hom := by
+    exact congrArg (fun z : Aut (Rationalization.of X.actionObj.abelianScheme) => z.asIso.hom)
       (map_pow ((RationalAlgebraAction.forget S R).mapAut X.actionObj) e k)
   have hg' : Rationalization.ofHom g.hom =
-      RationalAlgebraAction.hom0 (t.symm.trans ((e ^ k).trans t)).hom := by
+      RationalAlgebraAction.hom0 (t.symm.trans ((e ^ k).asIso.trans t)).hom := by
     change Rationalization.ofHom g.hom =
-      r.hom ≫ RationalAlgebraAction.hom0 (e ^ k).hom ≫ r.inv
+      r.hom ≫ RationalAlgebraAction.hom0 (e ^ k).asIso.hom ≫ r.inv
     rw [hpow]
     exact hg
   refine ⟨(Y).isPolarization, ?_⟩
@@ -126,7 +126,7 @@ theorem integralPolarizedPowerModel :
       P.associativity P.comparison P.symmetry P.stability W.hasDual W.hasDual
       W.geometry W.geometry W.inverseBundle W.evaluation W.inverseBundle W.evaluation
       (additivity (Y) (Y))
-      (RationalAlgebraAction.hom0 (t.symm.trans ((e ^ k).trans t)).hom)
+      (RationalAlgebraAction.hom0 (t.symm.trans ((e ^ k).asIso.trans t)).hom)
       (homToHom0 (Y).polarization) = (1 : ℚ) • homToHom0 (Y).polarization := hconj
   simpa only [one_smul] using hc
 

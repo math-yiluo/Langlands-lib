@@ -1,14 +1,12 @@
 # Torus preimages, conjugacy, and fppf locality
 
-Worker 226.
-
 `Langlands.GroupScheme.SubgroupPreimage.RelativeTorusPreimageConjugacyStatement.{u}` is the named `Prop`-valued statement recording
 relative-torus preimage transport through compatible ambient isomorphisms.
 `Langlands.GroupScheme.SubgroupPreimage.relativeTorusPreimageConjugacy` proves this proposition by the existing helper theorem.
 The helper signatures and all mathematical hypotheses are retained; the
 other results below are proved companion helpers.
 
-This internal unit supplies actual-scheme tools for the reverse torus
+This internal module supplies actual-scheme tools for the reverse torus
 construction in `RelativeCentralQuotientStatement`.
 
 The module imports the published `baseChange_innerIso_hom` comparison for

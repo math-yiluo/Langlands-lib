@@ -1,7 +1,5 @@
 # Rational points of a closed subgroup of `GL_n` through the coordinate ring
 
-Author: Worker 1532.
-
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Internal helper for the
 proof of `CentralNormKernelCompactnessStatement`. Let `K` be a field, `G` a group scheme over
 `Spec K` and `ρ : MatrixRepresentation G n`.

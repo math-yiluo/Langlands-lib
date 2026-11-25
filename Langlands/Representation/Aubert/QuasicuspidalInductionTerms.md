@@ -1,7 +1,5 @@
 # Individual induction–Jacquet terms on quasicuspidal induction
 
-Author: Worker 165.
-
 This is an internal derivation for the segment exchange task. It proves no
 signed effectivity or irreducible-image assertion.
 

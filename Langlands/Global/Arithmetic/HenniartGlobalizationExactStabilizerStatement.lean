@@ -24,7 +24,7 @@ universe uK uQ uW uP
 namespace Langlands.Global
 
 open NumberField Langlands.Weil.Local Langlands.Global.CompletionPadic
-open Langlands.ClassField.Global Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.LocalFactor.CommonClosure Langlands.VirtualRepresentation
 open Langlands.VirtualRepresentation.RelativeGlobal Langlands.Automorphic
 

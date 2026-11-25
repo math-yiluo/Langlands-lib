@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Geometry.Analytic.FinitePieceLocalMaps`
 (namespace `Langlands.Analytic.AffineAnalytification.FinitePieceLocal`). Support module for
-Task 7655.
+the proof of `AffineAnalytificationFiniteGermComparisonStatement`.
 
 ## Content
 
@@ -37,5 +37,5 @@ normed field `K`. Let `W` be a recognized affinoid subset of the analytification
 Internal. `recMap` is the Library's version of the canonical map from an algebra to the algebra
 of an affinoid domain of its analytification. Its point compatibility and its flatness are the
 statements of Berkovich 1990, §3.4 (Theorem 3.4.1 and the last paragraph of its proof, printed
-pp.63–64), reduced to the Library's chart and domain flatness statements. Task 7655 uses
-`recMap` for the witnesses `α` and `β` of `AffineAnalytificationFinitePieceLocalStatement`.
+pp.63–64), reduced to the Library's chart and domain flatness statements. `FinitePieceLocalProof`
+uses `recMap` for the witnesses `α` and `β` of `AffineAnalytificationFinitePieceLocalStatement`.

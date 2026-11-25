@@ -3,21 +3,21 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketPairing`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacket` (Worker 249): the wave packet
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacket`: the wave packet
   `inducedOrbitWavePacket`, Lemma VI.2.2 `exists_norm_unitaryOrbitCoefficientMap_le_xi` and
-  `isFiniteMeasure_discreteSeriesOrbitMeasure`; through its imports Worker 200's
+  `isFiniteMeasure_discreteSeriesOrbitMeasure`; through its imports
   `unitaryOrbitCoefficientMap` (`E_P^G ψ_ω`) with `unitaryOrbitCoefficientMap_representative` and
   `continuous_unitaryOrbitCoefficient` (Lemma VI.2.1 (i)), the section space
   `productInducedSmoothOrbitSections` (`C^∞(O, P)`), `UnitaryOrbitRepresentative`,
   `unitaryOrbitRepresentativeDiscreteSeriesOrbit` with its surjectivity, the orbit measure
   `discreteSeriesOrbitMeasure`, and `xi`, `IsIwasawaPair`, `LeviData`, `continuous_xi`;
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedFourierCoherence` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedFourierCoherence`:
   `fourierOrbitSection` (`ψ_f[O, P]`); through its imports
   `integral_conj_coefficientMap_mul_eq_inner` (Lemma VII.1.1 (ii), `InducedFourierTransform`), the space `Space Ξ σ` (`C(G)`), `pairing`,
   `L2Weights`, `HasTemperedCoefficients` and `Space.integrable_mul` (`TemperedPairing`);
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedCoefficientConvergence`:
   `nu_zero_ofReal_le_one`;
-- `Langlands.Representation.Plancherel.ProductInducedOrbitForm` (Worker 200):
+- `Langlands.Representation.Plancherel.ProductInducedOrbitForm`:
   `unitaryOrbitRepresentativeProductForm` (the product of V.2 on `L(ω, P)` at a representative),
   `unitaryOrbitProductPairing` (the scalar pairing on the orbit) and
   `unitaryOrbitProductPairing_representative`.
@@ -209,12 +209,12 @@ Write `f_ψ = inducedOrbitWavePacket … ρ w q`, `(E_P^G ψ_ω)(g) = unitaryOrb
 
 - For `w = 1` and a finite measure `ρ` positive on open sets,
   `unitaryOrbitWeightedProductPairing … ρ (fun _ => 1) q r` equals, by `one_mul`, the integral in
-  `productInducedSmoothOrbitCore_inner_integral` (Worker 200's positive core on `C^∞(O, P)`).
+  `productInducedSmoothOrbitCore_inner_integral` (the positive core on `C^∞(O, P)` of `ProductInducedOrbitForm`).
 - `rationalOrbitWavePacket` and `integral_conj_mul_rationalOrbitWavePacket`
-  (`RationalOrbitWavePacketPairing`, Worker 249) are Proposition VII.2.1 for `M = G` with the I.1
+  (`RationalOrbitWavePacketPairing`) are Proposition VII.2.1 for `M = G` with the I.1
   orbit measure, on sections given by coefficient tensors of chosen representatives. This module
-  treats formula (1) of the proof of Proposition VII.2.2 for a general `P = M U` with Worker 200's
-  `C^∞(O, P)`.
+  treats formula (1) of the proof of Proposition VII.2.2 for a general `P = M U` with
+  `C^∞(O, P)` (`productInducedSmoothOrbitSections`).
 - `pairing_swap` (`L2`) is the symmetry for elements of `C(G)`; `pairing_conj_symm` holds for all
   functions, as needed for the wave packet `f_ψ`, which is not shown to lie in `C(G)` here.
 - The hypothesis `hrf` is supplied by `fourierOrbitSection_mem_smooth_of_hasLaurent`

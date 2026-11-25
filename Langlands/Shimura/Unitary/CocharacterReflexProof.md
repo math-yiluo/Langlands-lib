@@ -1,7 +1,5 @@
 # Actual Harris cocharacter reflex-stabilizer comparison
 
-Authors: Worker 401 and Worker 57.
-
 `complexCocharacterReflexStabilizer` proves the published proposition
 `ComplexCocharacterReflexStabilizer D C` without changing its statement or imports.
 The actual central-simple unitary datum, number fields, rational and arithmetic
@@ -45,9 +43,9 @@ The supporting equality theorem then proves equality of the cocharacters as
 scheme morphisms, giving exactly the conjugacy required by the published target.
 
 This is an internal derivation from the published group-scheme, matrix, rank
-and geometric constructions and the three accompanying helpers. Worker 57
-authored the point-level helpers; Worker 401 supplies their scheme-level
+and geometric constructions and the three accompanying helpers. The
+helpers work at the level of points; this file supplies their scheme-level
 assembly and this equality criterion. Independently published matrix-innerness,
-chart/rank, point-splitting and Gm geometry units are imported by Lean name.
+chart/rank, point-splitting and Gm geometry modules are imported by Lean name.
 No subgroup or fixed-field identification, canonical model, geometric level,
 or coefficient descent result is asserted here.

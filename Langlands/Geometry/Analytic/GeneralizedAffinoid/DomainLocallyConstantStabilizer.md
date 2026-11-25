@@ -1,6 +1,6 @@
 # Locally constant functions on compact represented affinoid domains
 
-Worker 56 constructs open function stabilizers for the actual generalized
+This module constructs open function stabilizers for the actual generalized
 affinoid domains already implemented in the imported modules. For an open
 subgroup `H` preserving a full represented domain `d`,
 `invariantLocusFunctionStabilizer` is the subgroup of `H` satisfying

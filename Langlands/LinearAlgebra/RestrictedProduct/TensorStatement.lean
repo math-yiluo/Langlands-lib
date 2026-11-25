@@ -3,7 +3,7 @@ Copyright (c) 2025 Matthew Jasper. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Matthew Jasper
 
-Modified by Worker 288 (2026): package three assertions from Imperial FLT,
+Modified in Langlands-lib (2026): package three assertions from Imperial FLT,
 commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean:93-100,
 170-223 and 225-232, with hypotheses from lines 28-32 and 102, as separately
@@ -26,7 +26,9 @@ quantifies its own data, retaining the different hypotheses of the source.
 
 universe uR uM uι uN
 
-namespace RestrictedProduct
+open RestrictedProduct
+
+namespace Langlands.LinearAlgebra.RestrictedProduct
 
 /-- The scalar comparison and the two bijectivity assertions for the published
 canonical tensor maps. The comparison needs no flatness or finite presentation;
@@ -49,4 +51,4 @@ def TensorRestrictedProductComparison : Prop :=
       (L : ∀ i, Submodule R (N i)) (ℱ : Filter ι),
       Function.Bijective (lTensorLeft R M N ℱ L))
 
-end RestrictedProduct
+end Langlands.LinearAlgebra.RestrictedProduct

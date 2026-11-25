@@ -1,7 +1,5 @@
 # Compact real points and anisotropy
 
-Author: Worker 263.
-
 `Langlands.GroupScheme.HasCompactRealPoints G` means that the full real point
 set of `G` is compact in the canonical regular-evaluation topology from
 `AffinePointTopology`. Its carrier is
@@ -28,5 +26,5 @@ published proof in `Rational.CompactPointsAnisotropy`, whose field
 hypotheses are nonarchimedean. The scalar noncompactness argument here is
 the order-boundedness argument for ℝ; the split-torus homeomorphism and the
 closed-immersion comparison are imported from the published Library.
-This unit does not assert that anisotropy implies compactness or construct
+This module does not assert that anisotropy implies compactness or construct
 a real form.

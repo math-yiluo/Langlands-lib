@@ -1,7 +1,5 @@
 # Elementary boundary statements for ordered segment-socle products
 
-Author: Worker 700.
-
 `Langlands.Classification.OrderedMultisegmentSocleBoundary.{uF,uV} F T`
 groups three elementary inputs for the ordered-socle proof. Its outer
 telescope is `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)

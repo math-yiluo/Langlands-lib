@@ -1,7 +1,5 @@
 # Gradings of a Cayley datum and the rank bound
 
-Author: Worker 118.
-
 This module defines gradings of a `CayleyDatum K` (module
 `Langlands.GroupScheme.Composition.CayleyDatum`) by an additive abelian
 group, and proves that a grading whose degrees generate a lattice `ℤ^I`

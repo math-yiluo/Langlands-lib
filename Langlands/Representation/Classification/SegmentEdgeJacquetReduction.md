@@ -1,7 +1,5 @@
 # The merged-slot Jacquet filtration from the geometric lemma
 
-Author: Worker 890.
-
 This module derives the statement
 `Langlands.Classification.SegmentEdgeJacquetFiltration.{uF,uV,uW} F T`
 (module `SegmentEdgeJacquetStatement`) from the normalized geometric lemma.

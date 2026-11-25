@@ -1,7 +1,5 @@
 # Root-function families under actual cross-torus transport
 
-Author: Worker 118.
-
 For an arbitrary field, supply actual commutative-group isomorphism `e : S ≅ S'`
 and ambient group-scheme isomorphism `f : G ≅ H`. The constructor
 `RootFunctionFamily.transportEquiv e f` reindexes a full root-function family:
@@ -27,9 +25,9 @@ using exactly `normalizerPointsTransportEquiv e f h`. The proof reindexes both
 arguments by surjectivity, then uses the published character-action identity
 and the actual ambient homomorphism's multiplication and inversion laws.
 
-This unit has internal provenance: it reindexes existing full function
+This module has internal provenance: it reindexes existing full function
 families along supplied actual isomorphisms and establishes intrinsic
 identities from the published character, root-group, normalizer and pairing
 transport. No external mathematical existence assertion is introduced.
-The unit does not yet transport the valuation axioms, split-torus compatibility,
+The module does not transport the valuation axioms, split-torus compatibility,
 valid apartment data, apartment points, full building data or the A2 axiom.

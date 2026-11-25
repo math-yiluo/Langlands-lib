@@ -1,7 +1,5 @@
 # The Weil restriction of `𝔾ₘ` along `A → A^I` is the split torus
 
-Author: Worker 299.
-
 This module identifies the host group scheme `Res_{A^I/A} 𝔾ₘ`
 (`Langlands.GroupScheme.WeilGm.groupScheme A (I → A)`, module
 `Langlands.GroupScheme.Torus.WeilRestriction`) with the published split torus
@@ -26,17 +24,11 @@ instances, so `groupScheme A (I → A)` is defined.
   G_n(k_n ⊗ R)`. Here Milne's `k` is `A`, every `k_i` is `A` (indexed by `I`),
   and `G` is `𝔾ₘ`. Then each factor `(𝔾ₘ)_{A/A}` is `𝔾ₘ`, and the product is the
   split torus `𝔾ₘ^I`.
-- TauCeti, Lean source closure at commit
-  `8428d6217f74afa72531df0bc85d7b57ab72810f`. Source ID
-  `tauceti-8428d621-weil-restriction-closure`. The ported closure (modules
-  `Langlands.TauCeti.*`) provides the coordinate algebra of `groupScheme A B` for
-  `B` finite projective over a commutative ring `A`.
+- The Library constructs the coordinate algebra from a presentation and identifies its tensor-valued points with units. [Weil restriction of the multiplicative group](../../RingTheory/WeilRestriction/Units.md)
 
 **Derived generality.** Milne works over a field `k`. This module works over an
 arbitrary commutative ring `A` and for a finite index type `I`, and only for
-`G = 𝔾ₘ` with every factor equal to `A`. That ring version is derived, not taken
-from Milne. The generality of `Res_{B/A} 𝔾ₘ` over a ring is that of the TauCeti
-source. The proof follows Milne's argument on points. Points are over
+`G = 𝔾ₘ` with every factor equal to `A`. The Library's finite projective construction gives this ring version. The proof follows Milne's argument on points. Points are over
 arbitrary test schemes `T : Over (Spec A)`, through the global sections
 `Γ(T) = ((algΓ A).obj T).unop`, whose underlying ring is `Γ(T.left, ⊤)`.
 

@@ -14,6 +14,7 @@ set_option maxHeartbeats 800000
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
 set_option backward.defeqAttrib.useBackward true
+set_option backward.isDefEq.lazyProjDelta false
 set_option quotPrecheck false
 
 open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Module Opposite
@@ -257,12 +258,12 @@ def harrisIntegralCMClosedActionLocusIso :
         relativeIntegralActionUniversalHomEquiv_apply]
       ext x
       change restrict B.toCommGroupScheme B.toCommGroupScheme
-          ((f.unop.hom ≫ k.down) ≫ ι) (aU x) =
+          ((f.unop.hom ≫ k.down) ≫ ι) (aU x).asHom =
         restrict B.toCommGroupScheme B.toCommGroupScheme f.unop.hom
-          (restrict B.toCommGroupScheme B.toCommGroupScheme (k.down ≫ ι) (aU x))
+          (restrict B.toCommGroupScheme B.toCommGroupScheme (k.down ≫ ι) (aU x).asHom)
       rw [Category.assoc]
       exact restrict_comp B.toCommGroupScheme B.toCommGroupScheme
-        f.unop.hom (k.down ≫ ι) (aU x))
+        f.unop.hom (k.down ≫ ι) (aU x).asHom)
 
 local instance closedTest_isLocallyNoetherian : IsLocallyNoetherian T.obj.left := T.property
 

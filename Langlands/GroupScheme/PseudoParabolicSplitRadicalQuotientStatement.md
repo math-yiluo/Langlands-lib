@@ -3,8 +3,9 @@
 `Langlands.GroupScheme.PseudoParabolicSplitRadicalQuotientStatement.{u}` is a
 Prop-valued definition. It states the structural pseudo-parabolic descent used
 in the first reduction of the proof of Lemma C.2.1 in Conrad–Gabber–Prasad,
-*Pseudo-reductive groups*, second edition (2015). It proves nothing; its proof
-is a separate successor task.
+*Pseudo-reductive groups*, second edition (2015). It proves nothing; the
+Library proves it as `pseudoParabolicSplitRadicalQuotient` in
+`PseudoParabolicSplitRadicalQuotientProof`.
 
 ## Source basis
 
@@ -29,7 +30,7 @@ No project errata note for this source exists in the public notes.
   through `G/R_{us,k}(G)`.
 
 These passages support the statement. Their structural content, including the
-image of `R_{u,k}(G)` in `G/U`, is the successor's proof obligation; the source
+image of `R_{u,k}(G)` in `G/U`, is left to the proof; the source
 gives this reduction in one sentence.
 
 ## The Lean proposition
@@ -86,7 +87,9 @@ already follows from the hypotheses through
 Group quotient existence is deliberately outside this proposition. The quotient
 homomorphism `f` and the smoothness, affineness and connectedness of its target
 `H` are supplied. They hold for the true quotient `G/R_{us,k}(G)`. Proving that
-such an `f` exists is the separate normal affine quotient task.
+such an `f` exists is the separate normal affine quotient statement,
+`NormalSubgroupQuotientStatement` (proved as `normalSubgroupQuotient` in
+`NormalSubgroupQuotientProof`).
 
 ## Scope
 

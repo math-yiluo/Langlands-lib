@@ -1,5 +1,5 @@
 import Langlands.LocalField.ResidueNormalization
-import Langlands.NYLL.ValuedFieldTheory.LocalField.NonarchimedeanLocalField.ValuationExactSequence.Definitions
+import Nyll.ValuedFieldTheory.LocalField.NonarchimedeanLocalField.ValuationExactSequence
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
@@ -39,12 +39,12 @@ theorem fieldNormUnits_val (a : Fˣ) :
 /-- The existing units valuation with its sign converted to the source's
 positive additive order. -/
 def fieldOrderUnits : Fˣ →* Multiplicative ℤ :=
-  (NYLL.LocalFieldTheory.IsNonarchimedeanLocalField.valuationUnitsMulHom F)⁻¹
+  (LocalFieldTheory.IsNonarchimedeanLocalField.valuationUnitsMulHom F)⁻¹
 
 theorem fieldOrderUnits_toAdd (a : Fˣ) :
     (fieldOrderUnits F a).toAdd =
       -WithZero.log (FML.normalizedMultiplicativeValuation F (a : F)) := by
-  change -((NYLL.LocalFieldTheory.IsNonarchimedeanLocalField.valuationUnitsMulHom F a).toAdd) = _
+  change -((LocalFieldTheory.IsNonarchimedeanLocalField.valuationUnitsMulHom F a).toAdd) = _
   exact congrArg Neg.neg (WithZero.logEquiv_apply _)
 
 /-- This is exactly the published additive order on nonzero elements. -/

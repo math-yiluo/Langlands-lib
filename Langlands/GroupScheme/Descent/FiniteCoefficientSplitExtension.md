@@ -1,6 +1,6 @@
 # Finite coefficient models of extensions with diagonalizable endpoints
 
-Worker 875. This module combines actual affine fppf quotient models, finite
+This module combines actual affine fppf quotient models, finite
 coefficient isomorphism descent and published kernel comparison isomorphisms.
 
 `FlatAffineHomModel.kernelRecoveryIso` identifies the model kernel after base
@@ -31,7 +31,7 @@ noetherian whenever the initial ground ring is, by
 All schemes and rings lie in the same arbitrary universe. Both endpoint
 presentations use finitely generated full character groups, including
 torsion. The construction imposes no smoothness or commutativity premise
-on the middle group. It does not yet prove the middle group to be of
+on the middle group. It does not prove the middle group to be of
 multiplicative type.
 
 `kernelRepresentativeRecoveryIso` further identifies the model kernel over

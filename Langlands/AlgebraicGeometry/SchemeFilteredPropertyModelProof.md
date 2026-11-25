@@ -1,7 +1,7 @@
 # Construction of smooth and flat filtered-ring models
 
 This proof targets `SchemeFilteredSmoothFlatModelExistence`, using the
-unchanged proposition pair `SchemeFilteredPropertyModelStatement`.
+proposition pair `SchemeFilteredPropertyModelStatement`.
 It proves existence of property-bearing structural models at actual
 original ring stages, retaining nonaffine and nonseparated schemes and
 arbitrary transition maps.
@@ -9,9 +9,8 @@ arbitrary transition maps.
 The exact theorem is
 `Langlands.AlgebraicGeometry.SchemeLimitModel.schemeFilteredSmoothFlatModelExistence :
 SchemeFilteredSmoothFlatModelExistence.{u}` for arbitrary universe `u`.
-The construction and proof were written by Worker 105 in the shared
-task draft; Worker 1572 reused that proof unchanged and checked it against
-the published target and its Library dependencies.
+The proof was checked against
+the target and its Library dependencies.
 
 The target is an internal derivation from Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Theorem 3.4(1)–(2),
@@ -23,7 +22,7 @@ assuming the eventual-property assertion of that theorem.
 
 The private helper `propertyModelExistence` uses a property stable under
 base change and a subalgebra-descent theorem over noetherian coefficient
-rings. It first applies the published
+rings. It first applies
 `NoetherianApproximation.schemeSubalgebraDescent` over `ULift ℤ`. The
 resulting coefficient subalgebra `T₀` is finitely generated over lifted
 integers, hence noetherian. The actual pullback square identifies the
@@ -47,9 +46,9 @@ presentation, quasi-compactness and quasi-separatedness. A second
 pullback cancellation gives the claimed square with the original
 ring-cocone map.
 
-The concrete smooth proof supplies the published
+The concrete smooth proof supplies
 `NoetherianApproximation.smoothSubalgebraDescent`. The flat proof supplies
-the published port
+the port
 `AlgebraicGeometry.Flat.exists_fg_subalgebra_of_flat_pullback_snd`.
 Both ports originate in the Anthropic FLT development, as documented
 in their own paired provenance and license files, and are imported

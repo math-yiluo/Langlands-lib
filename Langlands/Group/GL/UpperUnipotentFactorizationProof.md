@@ -1,7 +1,5 @@
 # Proof of the plus-minus multiplication homeomorphism
 
-Author: Worker 778.
-
 The theorem `Langlands.GeneralLinear.upperUnipotentFactorization.{u}` proves the
 published proposition
 `Langlands.GeneralLinear.UpperUnipotentFactorizationStatement.{u}` of
@@ -154,8 +152,8 @@ measures, or representations.
 
 ## Complete unapplied declaration and axiom checks
 
-The following file, importing this module, was compiled in the pinned
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings:
+The following file, importing this module, was compiled with no errors or
+warnings:
 
 ```lean
 import Langlands.Group.GL.UpperUnipotentFactorizationProof
@@ -189,8 +187,6 @@ Langlands.GeneralLinear.upperUnipotentFactorization.{u_1} :
   [propext, Classical.choice, Quot.sound]
 ```
 
-The Lean service also built the proof module with Lake and inspected the
-unapplied declaration, reporting kind `theorem`, level parameters `["u"]` and
-exactly these three axioms. These are development checks; independent semantic
-review and formal exact-target validation remain separate acceptance
-requirements.
+The proof module was also built with Lake and the unapplied declaration
+inspected, reporting kind `theorem`, level parameters `["u"]` and exactly
+these three axioms. These are development checks.

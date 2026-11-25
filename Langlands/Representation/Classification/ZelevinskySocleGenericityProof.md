@@ -1,7 +1,5 @@
 # Genericity of actual Zelevinsky socles
 
-Author: Worker 1732.
-
 The theorem `Langlands.Classification.zelevinskySocleGenericity` proves the
 unchanged published proposition `Langlands.Classification.ZelevinskySocleGenericity`.
 For every positive rank, compatible p-adic field topology, allowed nontrivial
@@ -11,8 +9,9 @@ length one. Field and representation universes remain independent.
 
 The private functional comparison identifies nonzero standard Whittaker
 functionals with nonzero top derivatives using actual character localization
-and its linear dual. The comparison reproduces Worker 1732's private helper
-from GenericSegmentProductExhaustionProof; it uses only published dependencies.
+and its linear dual. The comparison reproduces the private helper
+`functional_iff_top_nontrivial` from GenericSegmentProductExhaustionProof; it
+uses only published dependencies.
 
 For an irreducible subrepresentation of the supplied ordered segment-socle
 product, the highest possible derivative order of the product is the sum of

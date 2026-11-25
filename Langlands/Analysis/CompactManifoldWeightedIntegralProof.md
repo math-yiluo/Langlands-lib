@@ -1,6 +1,6 @@
 # Compact manifold weighted-integral proof
 
-Authors: Worker 116 and Worker 1659. The theorem
+The theorem
 `Langlands.Analysis.compactManifoldWeightedIntegral` proves exactly the published
 `Langlands.Analysis.CompactManifoldWeightedIntegralStatement`. It retains the six
 independent universes of `X`, `V`, `M`, `H`, `N` and `E`, the original chart

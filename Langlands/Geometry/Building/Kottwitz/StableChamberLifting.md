@@ -1,6 +1,6 @@
 # Rational lifting from a stable chamber's neutral model
 
-This derived unit implements the geometric-to-integral bridge in KP Corollary 11.7.5. It retains the general parahoric-model theorem, smooth-model descent, the chamber exact sequence and the actual Kottwitz map laws as hypotheses. It does not prove the unconditional corollary.
+This module implements the geometric-to-integral bridge in KP Corollary 11.7.5. It retains the general parahoric-model theorem, smooth-model descent, the chamber exact sequence and the actual Kottwitz map laws as hypotheses. It does not prove the unconditional corollary.
 
 `rationalConjugate_mem_reductiveKottwitzOnBaseChange_ker` proves that equivariance of the actual Kottwitz map preserves its kernel on the rational-point carrier of the base-changed group. Its proof transports coefficient conjugation through the actual carrier equivalence and uses that every linear Galois automorphism sends zero to zero.
 
@@ -10,4 +10,4 @@ This derived unit implements the geometric-to-integral bridge in KP Corollary 11
 
 Provenance: Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), registered source `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`, Corollary 11.7.5, printed p. 434 / PDF p. 465, using Proposition 11.6.1, Theorem 8.3.13 and Lemma 8.1.4. This is an internal conditional decomposition of that proof. The November 2024 corrections do not change the corollary. Existence of the general models and their smooth descent, chamber exactness, the actual map laws, unconditional stable-chamber availability and the rational zero-kernel theorem remain separate obligations.
 
-The supporting edit to `Langlands/GroupScheme/LocalUnramifiedTwistDescent.lean` gives its two local integer-ring instances explicit names. The instance bodies and theorem statements are unchanged. This is needed to import that module, through integral-coset lifting, together with `IntegralModel.UnramifiedIntegralPointAction`, through smooth descent: their anonymous instance declarations otherwise have the same generated names. The repaired module lies outside the frozen import closure of `ChamberStatement`.
+The two local integer-ring instances of `Langlands/GroupScheme/LocalUnramifiedTwistDescent.lean` have explicit names. This is needed to import that module, through integral-coset lifting, together with `IntegralModel.UnramifiedIntegralPointAction`, through smooth descent: their anonymous instance declarations would otherwise have the same generated names. The module `Langlands.GroupScheme.LocalUnramifiedTwistDescent` lies outside the import closure of `ChamberStatement`.

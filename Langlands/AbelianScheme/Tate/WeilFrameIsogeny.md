@@ -1,6 +1,6 @@
 # Rational-isogeny transport of actual Weil-compatible frames
 
-Worker 142. This derived construction restricts the published actual Tate-frame
+This derived construction restricts the published actual Tate-frame
 isogeny transport to the existing `WeilAdelicFrame` and
 `WeilPrimeToAdelicFrame` spaces. Fix abelian schemes `A` and `B` over a
 quasi-separated base, their constructed duals, integral dual-valued maps `lamA`
@@ -47,10 +47,10 @@ Varieties*, preliminary draft built 2012-02-08, Chapter XI Definition (11.11),
 printed p.162 / PDF p.166, Proposition (11.21)(i), printed p.167 / PDF p.171,
 and paragraph (11.23), printed p.168 / PDF p.172. Their field-level finite
 identity and inverse-limit twist motivate the explicit rational theorem
-dependency; this unit does not prove it or attribute its full relative scope
+dependency; this module does not prove it or attribute its full relative scope
 literally to those passages. No source-specific errata note was found in the
 consulted project notes.
 
-This unit does not construct monodromy-fixed level transport, prove
+This module does not construct monodromy-fixed level transport, prove
 composition of geometric multiplier equations, assert frame nonemptiness or
 establish PEL nondegeneracy or compact-open topology.

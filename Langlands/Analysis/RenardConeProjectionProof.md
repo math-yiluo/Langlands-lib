@@ -1,7 +1,5 @@
 # Projection on a cone in a Euclidean space (Renard V.5.5): proof
 
-Author: Worker 229.
-
 Module `Langlands.Analysis.RenardConeProjectionProof`, namespace
 `Langlands.Renard`.
 

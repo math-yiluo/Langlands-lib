@@ -63,7 +63,7 @@ orbit coefficients, retaining unitary central character and all integrability. -
 def CuspidalHilbertOrbitCoefficientStatement : Prop :=
   ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
     (r : ℕ) (T : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
     ∀ w : CuspidalHilbertOrbitCoefficient.BandHilbertSpace F r,
       (∀ f g, Integrable (CuspidalHilbertOrbitCoefficient.integrand T w f g)
         (CuspidalHilbertOrbitCoefficient.bandMeasure F r)) ∧

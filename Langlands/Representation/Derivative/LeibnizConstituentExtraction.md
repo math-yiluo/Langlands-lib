@@ -1,7 +1,5 @@
 # Actual constituent extraction from a derivative Leibniz filtration
 
-Author: Worker 357.
-
 This internal construction locates an actual irreducible subquotient of a
 binary-product derivative in an actual smooth Leibniz piece. It also proves
 that both derivative factors of that piece are nonzero. A final corollary
@@ -59,7 +57,7 @@ No finite-length, admissibility, segment, linkage or genericity hypothesis
 is imposed. All ranks and valid orders are included. Order zero and top
 order use the same statements; arbitrary `GL_0` carriers are retained.
 There is no claim that a whole piece or a factor derivative is irreducible.
-In particular, these lemmas do not yet extract simple constituents from
+In particular, these lemmas do not extract simple constituents from
 the two factor derivatives.
 
 ## Implemented proof
@@ -164,37 +162,31 @@ module-name audit below.
 
 ## Independence and scope audit
 
-The host is task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`. The trusted
-operator decisions
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-and
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-retain its full independence conditions. The first permits independently
-proved general BZ77 derivative infrastructure; the second records further
-permitted general infrastructure; the third permits a separately proved
-support-only terminal-truncation statement, with explicit limits. This
+The results below are not used by this module; the list is the one checked
+for the special-head product criterion
+`SegmentHeadProductIrreducibility`, which this construction serves. This
 module uses only general derivative theory and generic algebra. It
-introduces no segment derivative or support statement and needs no
-strengthening of that support-only permission.
+introduces no segment derivative or support statement.
 
-| Excluded result or boundary | Verification for this module and its inherited closure |
+| Result not used, or boundary | Verification for this module and its inherited closure |
 | --- | --- |
-| Ze80 §§3.5/9.6, their segment derivative formulas and proof successors | No segment derivative module occurs. The only derivative formulas used are the general BZ77 Leibniz and exactness results just described. |
-| Full segment/head/socle Jacquet formulas and exponent norm formula, including tasks `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `55ad1e10-62d8-46b7-a081-909ef0056426`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | None occurs in the closure or supplies a proof dependency. General coinvariant exactness and elementary induction infrastructure do not use these conclusions. |
-| The host product criterion in either direction and segment-socle product criterion `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | Neither conclusion, a successor nor a downstream consumer is imported or used. No linkage hypothesis appears. |
-| Parent `GenericSegmentProductUniqueness`, task `30341ae4-65f2-4a0e-9283-763db01a409e` | No generic uniqueness or comparison of different products is used. |
-| Multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, ordered conversion `8252833d-c269-41a9-824c-5879e531b23b` | None supplies an input. Finite indexing here concerns feasible derivative orders only. |
-| Tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`, `SquareIntegrableLanglandsClassification` and task `1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`, regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac` | No such module or conclusion is a direct or transitive dependency. |
-| Segment-socle part of task `8e5b4563`, linked-pair structure, adjacent commutation and two-supercuspidal product criteria | None is imported or invoked. `ProductVanishing` uses general zero-object algebra; its proof of the lemma used here does not depend on its former two-supercuspidal consumer. |
+| Ze80 §§3.5/9.6, their segment derivative formulas and the modules proving them | No segment derivative module occurs. The only derivative formulas used are the general BZ77 Leibniz and exactness results just described. |
+| Full segment/head/socle Jacquet formulas and exponent norm formula, including `SegmentFullJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentHeadJacquetFormula` and `SegmentSpecialJacquetExponentNormFormula` | None occurs in the closure or supplies a proof dependency. General coinvariant exactness and elementary induction infrastructure do not use these conclusions. |
+| The special-head product criterion in either direction and the segment-socle product criterion `SegmentSocleProductIrreducibility` | Neither conclusion, a proof of it nor a downstream consumer is imported or used. No linkage hypothesis appears. |
+| `GenericSegmentProductUniqueness` | No generic uniqueness or comparison of different products is used. |
+| Multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion | None supplies an input. Finite indexing here concerns feasible derivative orders only. |
+| Tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable exhaustion, regular exhaustion | No such module or conclusion is a direct or transitive dependency. |
+| Segment-socle derivative results, linked-pair structure, adjacent commutation and two-supercuspidal product criteria | None is imported or invoked. `ProductVanishing` uses general zero-object algebra; its proof of the lemma used here does not depend on its former two-supercuspidal consumer. |
 | Classification-named imports | Exactly `ConstituentRelations`, `Segments`, `Supercuspidal`, `SupercuspidalContragredientAux`, `SupercuspidalContragredientStatement`, `SupercuspidalSupport` and `SupercuspidalTwist` occur. They provide definitions, actual subquotient presentations and lower equivalence/twist infrastructure. No global support existence, support uniqueness or representation classification is invoked. |
 | Whittaker irreducible/Levi/supercuspidal coinvariant finiteness and dependent mirabolic finite length | These conclusions and their proof routes are absent. General minus exactness and the conservative derivative-detection import use compact finite-orbit averaging and independent rank/Fourier arguments, not those finiteness results. |
 | Actual representations, original universes and arbitrary rank-zero carriers | The smooth piece retains both actual derivatives, their product and the prescribed cast. Exact transport is at `max uF uV`; no resize of `A,B` or scalar replacement of a `GL_0` carrier occurs. |
-| Pending work and user controls | No pending dual-head candidate, unpublished support proof or stronger segment derivative result is used. No ownership or run-control change is needed. |
+| Other constructions | No dual-head construction, unpublished support proof or stronger segment derivative result is used. |
 
-This module does not prove the host irreducibility criterion. Simple
+This module does not prove the irreducibility criterion
+`SegmentHeadProductIrreducibility`; the Library proves it separately, as
+`Langlands.Classification.segmentHeadProductIrreducibility`. Simple
 constituents of the factor derivatives, support aggregation and equality,
-nonlinkage survival, and the linked converse remain separate obligations.
+nonlinkage survival, and the linked converse are not treated here.
 
 ## Complete import inventory and validation
 
@@ -208,20 +200,17 @@ in the earlier product-top-derivative dependency inventory; no new lower
 branch is introduced.
 
 After removing nested comments and string literals, a recursive code scan
-finds no excluded name or inherited task-identifier match and no proof
+finds no match with the names above and no proof
 hole, new axiom or prohibited execution syntax. The proof-route
 inspection above supplements this scan; a name scan alone would not
-establish independence. The private reproducibility inventory is
-`.private/notes/worker357-leibniz-extraction-import-audit-2026-11-02.json`.
+establish independence.
 The complete module-name lists below make the inventory reconstructible
-from the public imports without that private file.
+from the public imports.
 
-Development check `50279aec-3cfc-422b-91ce-fa16dec08fbb`, in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, compiled the entry with zero errors
+A development check compiled the entry with zero errors
 and warnings. Inspection of the final extraction corollary reports
 independent level parameters `uF,uV` and only `propext`,
-`Classical.choice` and `Quot.sound`. This is a development check;
-independent semantic review and publication are still required.
+`Classical.choice` and `Quot.sound`.
 
 The following grouped inventories use each prefix followed by its
 immediate module suffixes; they expand to precisely the full names.

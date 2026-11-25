@@ -17,7 +17,7 @@ the source does not write out (reading note 6 of
 `notes/renard/algebraic-families-progress.md`).
 
 The Lean proof takes a different route that avoids local freeness. It also
-avoids the still-unproved VI.8.1 and VI.8.4 statements of
+avoids the VI.8.1 and VI.8.4 statements of
 `RenardFamilyStatements`. Its ingredients are the following.
 
 - `V^K` is a direct summand of `V`, hence finite projective.
@@ -126,7 +126,3 @@ three steps.
    `exists_mem_linearFormIdeal_smul_eq` give `e ∈ I` acting as the identity.
    `exists_eq_smul_of_linearForm_relation` with the relation of step 2 then
    gives `b` with `φ v = b • v` for all `v`.
-
-## Authorship
-
-Worker 950 wrote the Lean proof and this explanation.

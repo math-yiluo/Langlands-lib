@@ -1,7 +1,8 @@
 # Smooth models of the maximal bounded torus subgroup
 
 `Langlands.BruhatTits.IntegralModels.UnramifiedTorusBoundedModelStatement.{u}`
-is an unproved proposition. It is one of three focused torus inputs of
+is a proposition, proved as `unramifiedTorusBoundedModel` in
+`UnramifiedTorusBoundedModelProof`. It is one of three focused torus inputs of
 `UnramifiedTorusIwahoriModelAssemblyStatement`, which reduces
 `UnramifiedTorusIwahoriModelStatement` to them and to the published
 extension criterion `IntegralModel.SmoothHomExtensionStatement`. This
@@ -79,8 +80,10 @@ existentially quantified and need not be the source's specific `T^ft`.
 
 The source smoothens the standard model, using Appendix A. In the Library,
 the published `MaximalBoundedIntegralModelStatement`
-(`Langlands.GroupScheme.IntegralModel.MaximalBounded`, proof task Task
-6167) gives a smooth model of any maximal algebraically bounded subgroup.
+(`Langlands.GroupScheme.IntegralModel.MaximalBounded`, proved as
+`maximalBoundedIntegralModel` in
+`Langlands.GroupScheme.IntegralModel.MaximalBoundedConstruction`) gives a
+smooth model of any maximal algebraically bounded subgroup.
 Combined with maximality of `T(K)^1` among bounded subgroups (Proposition
 2.5.8) and the identification of `O` with the canonical integer ring of
 `K`, it would prove this proposition. Neither input is proved here.

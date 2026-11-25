@@ -53,7 +53,7 @@ universal propositions at universe `u`: `GenericCentralizerStatement`,
 `MinimalParabolicSplitTorusConjugacyStatement`. Its conclusion is the
 unchanged `RationalBruhatStatement.{u}`.
 
-No inhabitant of those four propositions is constructed here. This unit
+No inhabitant of those four propositions is constructed here. This module
 does not prove the unconditional Bruhat statement. All fields, including
 finite and imperfect fields, and the trivial-cocharacter and empty-root
 cases remain within the quantified scope. The provenance is internal

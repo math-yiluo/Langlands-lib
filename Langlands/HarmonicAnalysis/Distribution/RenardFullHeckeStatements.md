@@ -1,6 +1,6 @@
 # Full-distribution Hecke actions in Renard II.3.13
 
-This statement unit concerns every Hausdorff locally compact totally
+This statement module concerns every Hausdorff locally compact totally
 disconnected group, at arbitrary universe `uG`, and every Borel left Haar
 measure `μ`. There is no countability, unimodularity or measure-valued
 restriction on the full algebraic distributions.
@@ -13,7 +13,7 @@ Locators: II.3.13 first Definition, Remark and (II.3.13.1), printed p.53 /
 PDF p.59; second Definition and the following paragraph, printed p.54 /
 PDF p.60; displayed inclusion chain, printed p.55 / PDF p.61.
 
-The unit reuses `Distribution.heckeDistribution`, the two full-dual Hecke
+The module reuses `Distribution.heckeDistribution`, the two full-dual Hecke
 actions, the three essentially compact submodules, the original topological
 compact-support submodule, and the compact-distribution convolution.
 `Hecke.HeckeAlgebra μ` remains the existing function model for `H(G)`.
@@ -23,7 +23,7 @@ compact-support submodule, and the compact-distribution convolution.
 It asserts integrability and existence of genuine test functions with these
 values, and fixes both actions by evaluation on every distribution.
 These kernels expand the first Definition's pairings with the inverted
-distribution. The published left action uses `μ.inv` in its test convolution;
+distribution. The left action uses `μ.inv` in its test convolution;
 the statement retains the corresponding kernel for general nonunimodular
 groups.
 
@@ -41,8 +41,8 @@ Those extra counterparts are internal consequences, not additional numbered
 assertions in the source.
 
 `EvaluationStatement` is precisely (II.3.13.1): `h * check(f)` is represented by
-the published left-Haar test convolution, and `T * (h * check(f))` by the
-published scalar distribution/test convolution, evaluated at `1`.
+the left-Haar test convolution, and `T * (h * check(f))` by the
+scalar distribution/test convolution, evaluated at `1`.
 
 `InclusionsStatement` spells out `H(G) ⊆ E′(G) ⊆ D′(G)ec ⊆ D′(G)rec`
 and the left analogue of the last inclusion on the actual submodules.
@@ -53,4 +53,5 @@ compactness.
 `Statements` is the conjunction of these seven closed Prop-valued targets.
 No proofs or algebra instances are supplied here. The products of two
 essentially compact distributions and the completion and categorical-center
-comparisons are separate obligations.
+comparisons are separate statements, in `RenardEssentialProductsStatements`,
+`RenardCompletionStatements` and `RenardCenterStatements`.

@@ -2,9 +2,10 @@
 
 The primary declaration is
 `Langlands.Plancherel.ActualCommonLeviV3.ClosedV31Statement`.
-It is an unproved Prop-valued target for the common-Levi case `s = 1`
+It is a Prop-valued target for the common-Levi case `s = 1`
 of Waldspurger, *La formule de Plancherel pour les groupes p-adiques*
-(2003), V.3 formula (1) and Proposition V.3.1, printed p.295 / PDF p.61.
+(2003), V.3 formula (1) and Proposition V.3.1, printed p.295 / PDF p.61;
+`closedV31` in `Plancherel.ActualCommonLeviV3Proof` proves it.
 The source is registered as `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
 The whole-operator polynomial and rational conventions come from IV.1,
@@ -64,7 +65,7 @@ the particular actual forward and inverse-parameter reverse-dual standard
 continuations. `compactComparison` tensors the forward continuation with
 the transported inverse of that particular reverse operator. Its prior
 compact comparison square identifies it with the actual generic
-coefficient-fiber map. The present unit does not introduce an alternative
+coefficient-fiber map. The present module does not introduce an alternative
 operator or choose an arbitrary coefficient equivalence.
 
 `IsLocalRepresentative` specifies an ambient open set, a global operator
@@ -115,7 +116,7 @@ its image with the source coefficient for every vector, and equality of
 the exact inverse-formal-degree Hermitian inner products for every pair
 of vectors.
 
-## Closed target and remaining work
+## Closed target
 
 `ClosedV31Statement` concludes the existence of both actual continuations,
 actual `ScalarInverseData`, the nonempty/dense generic properties, whole
@@ -132,8 +133,7 @@ The predicates and structural assembly are internal specializations of
 the existing actual common-Levi tensor, full rational-character operator
 algebra, compact probability coefficients and source formal-degree form.
 The substantive assertion is the cited V.3.1 common-Levi specialization.
-This unit publishes a target, not a proof of that assertion. Existing
-analytic, composition and scalar proof owners are unchanged. Rational
+This module publishes a target, not a proof of that assertion. Rational
 conjugating points, choice comparison, cocycle and Weyl descent, and the
-intrinsic semistandard coherent-section adapter are subsequent focused
-units of the host task; this pair does not claim to complete those units.
+intrinsic semistandard coherent-section adapter are separate steps beyond
+this target; this module does not claim to complete them.

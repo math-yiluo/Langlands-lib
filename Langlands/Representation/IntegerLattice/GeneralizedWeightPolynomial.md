@@ -5,7 +5,8 @@ and coefficient polynomials for the last paragraph of Renard 2026,
 Appendix C.III, printed p.280 / PDF286. It does not prove that evaluating the
 product matrix gives the actual lattice action, or that the coefficient
 polynomials assemble into the original matrix coefficient. Those comparisons
-are intended for separate statement and proof units.
+are stated in `GeneralizedWeightPolynomialComparisonStatement` and proved in
+`GeneralizedWeightPolynomialComparisonProof` (`renardCIIIPolynomialComparison`).
 
 ## Source and provenance
 
@@ -79,14 +80,14 @@ published constructions.
    ```
 
    This is intended as the polynomial contribution of block `c` under the
-   future action comparison with the compatibility hypothesis
+   action comparison with the compatibility hypothesis
    `∀ q, B ⟨c,q⟩ = (b q : V)`. The definition accepts the two bases without a
    compatibility assumption; the equality comparing it to the action must
    state and establish that compatibility. It chooses no decomposition or
    basis and assumes no desired coefficient identity.
 
-The character factor is not part of these polynomials. A future comparison
-will multiply their evaluations by `coordinateCharacter c`.
+The character factor is not part of these polynomials. The action comparison
+multiplies their evaluations by `coordinateCharacter c`.
 The local matrix depends on the chosen basis; neither uniqueness nor basis
 independence is claimed here. The ambient coefficient coordinates in the
 last construction come from the actual supplied basis `B`.
@@ -117,7 +118,7 @@ lattice rank, all unit labels and zero blocks. Their definitions and
 intrinsic laws have no `FiniteDimensional ℂ V` premise: they use the
 natural-number `finrank` and the explicitly supplied bases, and make no
 action comparison. Existence of those bases is not asserted here. This
-algebraic generality is internal; the future action and coefficient
+algebraic generality is internal; the action and coefficient
 comparisons have the source's finite-dimensional hypothesis.
 At ambient dimension zero each factor has an empty binomial sum; its matrices
 have zero rows and columns in the finite-dimensional setting because every
@@ -128,12 +129,14 @@ of positive rank, positive dimension or a nonzero block is imposed.
 
 The published generalized-weight product theorem already gives the
 character-times-binomial product of actual endomorphisms. A separate
-statement and proof should identify the evaluation of this polynomial matrix
-with the matrix of that action and then contract its entries against the
+statement and proof, `GeneralizedWeightPolynomialComparisonStatement` and
+`GeneralizedWeightPolynomialComparisonProof`, identify the evaluation of this
+polynomial matrix with the matrix of that action and then contract its entries against the
 ambient block basis. They must choose compatible bases from the actual
 decomposition, use one finite set of all nonzero blocks for all lattice
 points, and retain negative coordinates and the zero cases.
 
 This file supplies neither a new proof of the final coefficient proposition
-nor a finite distinct enumeration of occurring characters. The latter has
-its own focused task. No Appendix or whole-book completion is asserted.
+nor a finite distinct enumeration of occurring characters. The latter is
+`CommutingTupleOccurringCharacterEnumerationStatement` (module
+`OccurringCharactersStatement`), proved in `OccurringCharactersProof`.

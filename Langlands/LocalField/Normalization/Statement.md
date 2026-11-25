@@ -1,7 +1,7 @@
 # Complete p-adic arithmetic normalization target
 
-Author: Worker 27. This module defines the complete proposition target.
-Acceptance of this statement does not establish acceptance of its proof.
+This module defines the complete proposition target. Its proof is
+`Langlands.padicNormalization` in `Langlands.LocalField.Normalization.Proof`.
 
 `Langlands.PadicNormalizationStatement` quantifies every natural number `p`
 with `Fact p.Prime`, every `F : Langlands.PadicField p` in an arbitrary
@@ -49,7 +49,7 @@ normalization hypothesis. Its seven conjuncts are named propositions in
    supplied topology and the canonical module topology.
 
 `PadicNormalizationBasicStatement` retains the first three groups as a
-reusable projection target; it is part of this same coherent submission.
+reusable projection target; it is part of this same module.
 The complete target is `PadicNormalizationStatement`.
 
 The scalar structure on integer rings is exactly `T.integerAlgebra`;
@@ -76,18 +76,13 @@ The explicit spectral-norm and module-topology formulations are internal
 interface comparisons derived from those normalizations; they are not
 presented as literal quotations from Serre.
 
-The exact accepted and published project dependencies are
-`Langlands.LocalField.Definitions`, artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0` version 1, and
-`Langlands.LocalField.Normalization.Definitions`, artifact
-`e3d7bbd4-f2b9-4970-a60f-bf6aa0b34bb2` version 1.
-The latter was published without changes at commit
-`9db46907db3181b0c1dfd287b8ab2f1f02054cab`, with final review receipt
-`5d095fa472fd49acb7a360c6f2ade9de`. Its current Library membership and
-dependency closure were confirmed. Its exact Lean SHA256 is
+The exact project dependencies are
+`Langlands.LocalField.Definitions` and
+`Langlands.LocalField.Normalization.Definitions`.
+The dependency closure of the latter was confirmed. Its exact Lean SHA256 is
 `b997a64a0f59ce13d45e2b5349de9ad87466a5e2d3e16ab3f1a4ef97a048214b`
 and Markdown SHA256 is
 `dac7d3aeb5229c505e5271f66d7decf6c7c4404853e9f15a363b4f9401902436`.
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
+Environment:
 Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

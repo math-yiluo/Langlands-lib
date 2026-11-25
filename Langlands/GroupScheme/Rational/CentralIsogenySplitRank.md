@@ -1,6 +1,6 @@
 # Central isogenies preserve split rank
 
-This internal derived unit proves that a central isogeny between affine group
+This internal derived module proves that a central isogeny between affine group
 schemes over a field preserves the split rank defined by closed split subtori.
 The groups need not be reductive or connected, and the field may have any
 characteristic. It supplies the general transport step needed by the

@@ -80,8 +80,7 @@ continuous standard or inverse character. Compact support gives integrability
 for every measure finite on compact sets, including the prescribed group Haar.
 This completes all three conjuncts. No representation or model coefficient,
 factorization of `Phi`, growth condition or additional measure compatibility
-is assumed. Worker 1198 implemented the Fourier bridge; Worker 86 contributed
-the actual matrix and convergence helpers used in it.
+is assumed.
 
 ## All-field port
 

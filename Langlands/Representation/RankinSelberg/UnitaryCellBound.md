@@ -1,6 +1,6 @@
 # Square-summability of unitary Whittaker functions on mirabolic cells
 
-Author: Worker 1797. Module `Langlands.Representation.RankinSelberg.UnitaryCellBound`,
+Module `Langlands.Representation.RankinSelberg.UnitaryCellBound`,
 namespace `Langlands.RankinSelberg.UnramifiedUnitary`.
 
 This helper module serves the proof of

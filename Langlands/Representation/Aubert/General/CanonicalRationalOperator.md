@@ -1,6 +1,6 @@
 # The rational-point operator with published structural inputs
 
-Worker 3640 assembles the published rational-point operator without the
+This module assembles the published rational-point operator without the
 separate topology, root-system and subgroup-regularity premises of
 `RationalAlternatingOperator`. This is a derived construction supporting
 Family 1 of the general Aubert program. It does not prove finite-length
@@ -63,10 +63,10 @@ The empty simple-root set is permitted. In that case the displayed sum has
 just its empty-index term with coefficient `+1`; no endpoint subgroup
 identification or identity-operator assertion is added by this module.
 
-The construction does not change any published proposition or proof-task
+The construction does not change any published proposition or
 target. In particular the two finite-length preservation targets, the
 contragredient finiteness results, the formal duality identities, corrected
-complex theorems and general-to-GL comparisons retain their existing proof
-obligations and owners. This derived assembly makes no new source translation
+complex theorems and general-to-GL comparisons are separate statements, not
+proved here. This derived assembly makes no new source translation
 claim and uses only the named published constructions and the two displayed
 unproved inputs.

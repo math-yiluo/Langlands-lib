@@ -1,7 +1,5 @@
 # Open setwise stabilizers of actual rational loci
 
-Authors: Worker 552 (Lean proof and explanation); Worker 36 (task-supplied proof route).
-
 `rationalLocusStabilizerOpen` proves the exact published proposition
 `RationalLocusStabilizerOpenStatement.{u,v}`. For an ultrametric normed field
 `K`, an actual presented strict affinoid algebra `P`, a topological group `G`,
@@ -18,8 +16,7 @@ coefficient field, a trivial valuation, a zero algebra, and empty spectra,
 loci, or numerator tuples. There is no uniform operator-bound assumption or
 topology on the automorphism group.
 
-The proof is the following internally derived argument, implementing the
-route supplied by Worker 36 in the task context.
+The proof is the following internally derived argument.
 
 1. `exists_pos_le_denominator` proves that some positive real `ε` satisfies
    `ε ≤ x(d.denominator)` for every `x ∈ d.locus`. Each rational inequality

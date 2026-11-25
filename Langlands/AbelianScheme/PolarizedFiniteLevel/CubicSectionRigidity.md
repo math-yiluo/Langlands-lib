@@ -38,5 +38,5 @@ and torsion-configuration constructions. No new external source assertion is
 used. Existence of the finite section basis, generation, preservation of the
 cubic bundle by every polarized automorphism, the closed immersion,
 nondegeneracy, the geometric count and its strict numerical range remain
-separate obligations. This unit does not assert unconditional finite-level
+separate obligations. This module does not assert unconditional finite-level
 rigidity or ordinary moduli representability.

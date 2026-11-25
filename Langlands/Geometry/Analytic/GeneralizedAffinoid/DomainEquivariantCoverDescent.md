@@ -1,7 +1,5 @@
 # Equivariant descent through actual finite cover refinements
 
-Author: Worker 56.
-
 This internal construction proves refinement invariance of equivariant
 continuous gluing for actual finite full-domain covers. It explicitly
 constructs an open subgroup preserving both covers. The two covers'
@@ -104,7 +102,7 @@ the preceding subgroup comparisons apply to the corresponding families.
 
 ## Provenance and limits
 
-This unit derives from `DomainEquivariantGluing`,
+This module derives from `DomainEquivariantGluing`,
 `DomainEquivariantSubgroupRestriction`, `DomainCoverDescent` and the
 finite common-stabilizer construction. It claims no additional
 literature theorem. The proof concerns the actual continuous maps
@@ -116,8 +114,8 @@ Empty covers and loci, nilpotents, zero quotients and trivial scalar
 valuations remain allowed. The action category supplies continuous
 fixed-element operators. Joint continuity in the group parameter,
 algebra-section descent, intersections, analytic structure sheaves,
-analytic atlases, analytic etale sites and Harris specialization remain
-further work.
+analytic atlases, analytic etale sites and Harris specialization are not
+treated in this module.
 
 The subgroup inclusion used here is the published
 `Langlands.Analytic.StrictTestDomain.RationalAutomorphism.RationalSpectralAction.openSubgroupInclusion`,

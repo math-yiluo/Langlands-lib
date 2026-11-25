@@ -1,6 +1,5 @@
 # The locally constant central L² space
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, IV.3.1 Definition, printed p. 99 (PDF p. 105).
 II.1.2, printed p. 30 (PDF p. 36), defines `C∞` by local constancy. II.3.5,

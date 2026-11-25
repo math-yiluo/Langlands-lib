@@ -1,13 +1,12 @@
 # JPSS core over all local fields: module audit
 
-Authors: Worker 788, with Worker 353 (Layer 0 and consumer coordination).
-
-This is the module-list deliverable of Task 6488. It audits the **old p-adic source
+This is the module list for generalizing the p-adic JPSS core to all nonarchimedean
+local fields. It audits the **old p-adic source
 modules** in the import closures of the three shared JPSS proof roots. It separates
 new local-field arguments from canonical instance setup, topology transport and
 ancillary imports. The audited Library commit is
-`26a5c21c0dd926a6ba1106b5c4a08f30fdea612c`; all counts below refer to that immutable
-snapshot. The accepted general proofs are already present at this pin.
+`26a5c21c0dd926a6ba1106b5c4a08f30fdea612c`; all counts below refer to that snapshot,
+in which the general proofs are already present.
 
 The direct source scan finds **78 modules**: 8 foundation modules, 12 modules needing
 a different argument, 41 setup/transport modules, 12 ancillary arithmetic imports,
@@ -16,7 +15,7 @@ L-branch high-ramification dependency and are listed separately. Of the 1,010 mo
 that explicitly spell `PadicField` in code, 62 occur in these tables and **948 remain
 parametric at this source boundary**; their counts by directory appear below.
 These are source-module counts, including statement files and examples, not counts
-of independent mathematical lemmas or new proof tasks.
+of independent mathematical lemmas or of new proofs to write.
 
 ## Scope and reproducibility
 
@@ -92,8 +91,7 @@ comparison is the existing
 `Langlands.AllField.RankinSelberg.eq_normalizedAbsoluteValue_ofInstances` in
 [the functional-equation reduction](../../Langlands/AllField/Representation/RankinSelberg/LocalFieldUnequalRankFunctionalEquationReduction.md).
 A p-adic specialization needs the canonical bridge, rather than new versions of
-these definitions. Layer 0 is owned by Worker 353; this note neither defines a
-second bridge nor asserts the publication of a pending candidate.
+these definitions. This note defines no second bridge.
 
 The genuinely different steps are concentrated in a few arguments:
 
@@ -170,7 +168,7 @@ These uses select a canonical topology or transport a supplied topology to it. T
 | `Langlands.HarmonicAnalysis.Distribution.GeneralLinear` | FE, γ, L | The only canonical-norm use is a Padic specialization example. The actual transpose homeomorphism and distribution lemmas are field/topology-generic and can be imported unchanged. | [Lean](../../Langlands/HarmonicAnalysis/Distribution/GeneralLinear.lean) |
 | `Langlands.HarmonicAnalysis.Distribution.TransposeInvariantProof` | FE, γ, L | The spectral norm and Padic properness only install topological instances before applying the generic localization/matrix inputs. Supply local compactness, nonarchimedean topology and separation from the general local-field data; the named localization inputs remain explicit. | [Lean](../../Langlands/HarmonicAnalysis/Distribution/TransposeInvariantProof.lean) |
 | `Langlands.HarmonicAnalysis.Distribution.TransposeInvariantStatement` | FE, γ, L | Its canonical norm supplies the topology in the binder. State the same distribution predicate for the supplied local-field topology; no numerical norm identity is asserted. | [Lean](../../Langlands/HarmonicAnalysis/Distribution/TransposeInvariantStatement.lean) |
-| `Langlands.Representation.Classification.ConstituentCompatibility` | γ, L | The canonical norm only supplies topology for the contragredient head/socle predicate. A general formulation uses the supplied topology. This audit adds no classification statement or task. | [Lean](../../Langlands/Representation/Classification/ConstituentCompatibility.lean) |
+| `Langlands.Representation.Classification.ConstituentCompatibility` | γ, L | The canonical norm only supplies topology for the contragredient head/socle predicate. A general formulation uses the supplied topology. This audit adds no classification statement. | [Lean](../../Langlands/Representation/Classification/ConstituentCompatibility.lean) |
 | `Langlands.Representation.RankinSelberg.EqualRankTrilinearPrerequisites` | γ, L | Remove canonical-module-topology rewrites when invoking finite length: use the finite-length input at the same supplied T. Implemented in the AllField module. | [Lean](../../Langlands/Representation/RankinSelberg/EqualRankTrilinearPrerequisites.lean) |
 | `Langlands.Representation.RankinSelberg.InducedTailIntermediateCoefficientAdapters` | γ, L | Its cutoff wrapper installs T.valuativeExtension and T.moduleTopology before invoking the cutoff theorem. Generalize that theorem and retain only the supplied local-field instances; these base-Padic instances add no cutoff estimate. | [Lean](../../Langlands/Representation/RankinSelberg/InducedTailIntermediateCoefficientAdapters.lean) |
 | `Langlands.Representation.RankinSelberg.LastRowCompactOrbitStatement` | FE, γ, L | Drops unused T.valuativeExtension and T.moduleTopology from the statement binder. Its compact/open orbit proposition is otherwise over the supplied topology. Implemented in the AllField statement. | [Lean](../../Langlands/Representation/RankinSelberg/LastRowCompactOrbitStatement.lean) |
@@ -210,7 +208,7 @@ These uses select a canonical topology or transport a supplied topology to it. T
 
 ### The twelve ancillary arithmetic imports
 
-These are present because the audit follows whole-module imports. Their standalone arithmetic generalizations are not obligations of this JPSS program. The rows identify the extra issue a full standalone port would face; generic portions of these files can already be reused. No new reciprocity, residue-exactness, number-field-completion or classification task is proposed.
+These are present because the audit follows whole-module imports. Their standalone arithmetic generalizations are not obligations of this JPSS program. The rows identify the extra issue a full standalone port would face; generic portions of these files can already be reused. No new reciprocity, residue-exactness, number-field-completion or classification statement is proposed.
 
 | Module | Closures | Source use and general argument or interface change | Source |
 | --- | --- | --- | --- |
@@ -298,8 +296,7 @@ script outputs each directory's complete module list.
 ## Provenance and reuse boundary
 
 This is an internal audit of the pinned Library source and its paired proof
-explanations. It introduces no Lean declarations and gives no independent proof
-receipt. The mathematical provenance of each audited declaration remains in its
+explanations. It introduces no Lean declarations and gives no independent proof. The mathematical provenance of each audited declaration remains in its
 paired Markdown; the implemented general proof routes are linked above. The
 names `Padic*` retained inside `Langlands.AllField` do not restrict those
 declarations to characteristic zero: their field binders and local-field data

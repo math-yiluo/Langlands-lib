@@ -1,6 +1,6 @@
 # Normal generation by the actual Hermitian upper rational points
 
-This internal unit proves normal generation by the actual upper rational points
+This module proves normal generation by the actual upper rational points
 of the weighted Hermitian group scheme under middle anisotropy. The scheme data
 are a separable quadratic extension of fields `L/k`, a finite middle index in
 `Type`, a conjugation-fixed diagonal form `H` and unit witnesses for its weights.

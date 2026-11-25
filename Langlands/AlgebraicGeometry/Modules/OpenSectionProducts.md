@@ -23,7 +23,9 @@ family of module sheaves.
 ## Provenance
 
 These are internal lemmas about Mathlib's sheaves of modules. They are used in
-the Task 7748 torsion bracket branch to turn membership in the published
-projective frame locus, defined as a supremum of opens on which the joint
+the torsion bracket part of the eventual quasi-projectivity of fine moduli
+schemes of ordinary polarized full-level data (module
+`Langlands.AbelianScheme.PolarizedFiniteLevel.TorsionBracketMapReduction`) to
+turn membership in the projective frame locus, defined as a supremum of opens on which the joint
 torsion evaluation becomes an isomorphism after pullback, into bijectivity of
 joint evaluation on sections over smaller opens.

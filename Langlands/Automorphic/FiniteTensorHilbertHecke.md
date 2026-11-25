@@ -1,7 +1,5 @@
 # Compact-open Hecke actions on entire closed Hilbert tensor slices
 
-Author: Worker 2.
-
 This internal construction gives an actual unital Hecke corner action on
 the compact-open fixed vectors of an entire closed tensor slice in the supplied
 global positive-form Hilbert completion. The ambient completed action and
@@ -51,7 +49,7 @@ tensor presentation, a global invariant positive form, the tail, the Haar
 measure and the compact open subgroup are explicit inputs. There is no
 admissibility, irreducibility or nonzero-tail premise; zero slices are included.
 The Haar measure is supplied and used in the existing convolution corner,
-including its existing normalized compact-open unit. This unit chooses no
+including its existing normalized compact-open unit. This module chooses no
 new Haar normalization.
 
 ## Provenance and limits

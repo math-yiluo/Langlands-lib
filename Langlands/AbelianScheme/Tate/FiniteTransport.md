@@ -1,7 +1,5 @@
 # Finite torsion transport along an actual geometric path
 
-Author: Worker 142.
-
 This module evaluates an isomorphism of the actual finite geometric fibre
 functors on finite étale group schemes and multiplication kernels. It constructs
 additive transport on actual torsion levels, with compatibility under composition,
@@ -149,8 +147,8 @@ homomorphism `f : A ⟶ B` and specializes the generic result using
 `AbelianScheme.groupHom f`. The finite étaleness inputs are obtained locally
 from the same `htor` for the relevant abelian schemes and orders.
 
-This focused unit does not construct transport on integral or rational Tate
+This module does not construct transport on integral or rational Tate
 limits, pointed base change, pairings, or invariant level orbits. It supplies
-the finite-level difference-of-path formula needed for later independence
-of a fixed-orbit set; it does not yet claim that independence or a canonical
+the finite-level difference-of-path formula needed for independence
+of a fixed-orbit set; it does not claim that independence or a canonical
 unpointed functor.

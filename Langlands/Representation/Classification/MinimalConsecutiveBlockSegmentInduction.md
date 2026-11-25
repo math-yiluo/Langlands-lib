@@ -1,7 +1,5 @@
 # Segment factors from minimal consecutive cuspidal blocks
 
-Author: Worker 320.
-
 This internal composition starts with an actual irreducible admissible
 finite-length representation embedded in an outer normalized product of
 inner cuspidal inductions. Each inner family has positive length and

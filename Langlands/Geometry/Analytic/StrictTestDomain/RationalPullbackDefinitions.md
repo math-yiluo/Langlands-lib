@@ -1,7 +1,5 @@
 # Pullback of rational data along bounded algebra maps
 
-Author: Worker 36.
-
 For rational data `d` on a presented strict affinoid algebra P and an actual
 bounded K-algebra map φ from P to Q, `d.pullback φ` has the same finite arity
 and has denominator φ(g) and numerators φ(f_j). Its absence-of-common-zeros

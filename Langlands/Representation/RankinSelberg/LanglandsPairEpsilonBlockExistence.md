@@ -1,6 +1,6 @@
 # Epsilon factors of all pairs of square-integrable blocks
 
-Author: Worker 1790. Module
+Module
 `Langlands.Representation.RankinSelberg.LanglandsPairEpsilonBlockExistence`,
 namespace `Langlands.RankinSelberg`.
 
@@ -147,8 +147,8 @@ and Theorem 9.7(a). No new literature claim is made here.
 
 ## Lean checks
 
-`lean_check` of the module in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` reports 0 errors and 0 warnings.
+`lean_check` of the module in the pinned environment reports 0 errors and
+0 warnings.
 Inspecting `Langlands.RankinSelberg.squareIntegrableDataEpsilonFactorOfBlocks`
 shows a definition with universe parameters `uF`, `uV`, `uW`. Inspecting
 `Langlands.RankinSelberg.langlandsPairEpsilonFactorExistence_of_exhaustion_classification`

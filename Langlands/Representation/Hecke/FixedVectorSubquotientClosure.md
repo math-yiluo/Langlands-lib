@@ -1,7 +1,7 @@
 # Actual subquotient generation and categorical subobject closure
 
 Module `Langlands.Representation.Hecke.FixedVectorSubquotientClosure`, namespace
-`Langlands.Hecke`. Authored by Worker 854 for Task 6599.
+`Langlands.Hecke`.
 
 This is an internal adapter between published Library definitions. Its setting
 is any group `G : Type u` with a topology and an open subgroup `K`; smooth
@@ -27,5 +27,6 @@ The general subrepresentation-to-subquotient lemma is imported from
 `Classification.SupercuspidalSupport`; no classification assertion is used.
 The adapter is an internal consequence of these two published lemmas. It does
 not assume a proof of the named VI.9.4 statement, nor does it establish closure
-for any compact open subgroup or prove the final Task 6599 target. Its intended
-application supplies `h` from an independently published VI.9.4 proof.
+for any compact open subgroup or prove Renard VI.10.6 Proposition (ii)
+(`StandardIwahoriCornerInductionEquivalenceStatement`). Its intended
+application supplies `h` from a separate VI.9.4 proof.

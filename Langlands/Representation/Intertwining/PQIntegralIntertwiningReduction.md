@@ -1,6 +1,6 @@
 # Renard VII.3.4, integral form: reduction to the integral identification
 
-Author: Worker 48. Module
+Module
 `Langlands.Representation.Intertwining.PQIntegralIntertwiningReduction`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u, v`.
 
@@ -13,7 +13,7 @@ that theorem's implication:
   `PQIntegralIdentificationStatement.{u, v} → PQIntegralIntertwiningOperatorStatement.{u, v}`;
 - `pqIntegralIntertwiningOperatorOfIdentification`: a `def` of the same type,
   `PQIntegralIdentificationStatement.{u, v} → PQIntegralIntertwiningOperatorStatement.{u, v}`,
-  whose value is the theorem above. It is the declaration recorded for this unit. The
+  whose value is the theorem above. It records the reduction as a declaration. The
   `linter.defProp` warning (a `def` whose type is a proposition) is switched off for it alone.
 
 This is a conditional reduction. It does not prove the published statement, because it does not
@@ -96,7 +96,7 @@ other conditional reductions (for example
 
 Derived. The definition is the first clause of a published statement (Renard VII.3.4, explicit
 form), split off so that the second clause is proved from it. The theorem is the routine
-argument of Task 5516's context: clause (b) follows from clause (a), the proved characterization
+argument: clause (b) follows from clause (a), the proved characterization
 `pqIntertwiningOperator`, and the separation of points by linear forms.
 
 ## Dependencies

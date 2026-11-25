@@ -1,12 +1,9 @@
 # Smooth parts and contragredients under open subgroup restriction
 
-Author: Worker 6.
-
 This internal construction supplies the canonical comparison for restriction to
 an actual open subgroup. It uses the published
 `Langlands.isSmoothVector_restrict_open_iff` from
-`Langlands.Representation.CuspidalSupport.HarishChandraBoundaryProof`, authored by
-Worker 200. That result says that a vector of an algebraic representation is
+`Langlands.Representation.CuspidalSupport.HarishChandraBoundaryProof`. That result says that a vector of an algebraic representation is
 smooth for an open subgroup if and only if it is smooth for the ambient group.
 Its existing proof is reused without modification.
 

@@ -1,9 +1,7 @@
 # Central torus and derived subgroup generation: reduction to surjectivity
 
-Worker 1044 wrote the assembly in this module; Worker 1425 wrote the epimorphism
-helper `Langlands.AlgebraicGeometry.SurjectiveReducedEpi` that it uses and
-packaged the module for submission. It belongs to the proof task
-`5dc6c43c-2acc-40a0-92ad-454b4232a509`.
+The assembly in this module uses the epimorphism
+helper `Langlands.AlgebraicGeometry.SurjectiveReducedEpi`.
 
 The module proves two conditional results. Neither proves
 `Langlands.GroupScheme.ReductiveCentralDerivedProductStatement` outright.
@@ -53,17 +51,19 @@ The Lean proof fixes a field `k`, a group scheme `G` over `Spec k`, and
 
 This entry declaration has type
 `ReductiveCentralTorusSurjectivityStatement.{u} → ReductiveCentralDerivedProductStatement.{u}`.
-It is a `def` whose type is this implication, with `linter.defProp` disabled,
-so that it can be submitted before its hypothesis is proved. It applies the
+It is a `def` whose type is this implication, with `linter.defProp` disabled.
+It applies the
 previous theorem to the Library proof `derivedSubgroupRepresentability`
 (module `Langlands.GroupScheme.Derived.RepresentabilityProof`) and to `hsurj`.
 
 ## Status and source route
 
-The unconditional proof will apply
-`reductiveCentralDerivedProduct_of_torusSurjectivity` to a proof of
-`ReductiveCentralTorusSurjectivityStatement`. That proof is the subject of the
-separate proof task `5c7bdf70-6574-45e3-88a3-ad60aba3e6d9`, and it carries the
+The unconditional proof `reductiveCentralDerivedProduct` (module
+`Langlands.GroupScheme.Reductive.CentralDerivedProductProof`) applies
+`reductiveCentralDerivedProduct_of_torusSurjectivity` to the proof
+`reductiveCentralTorusSurjectivity` of
+`ReductiveCentralTorusSurjectivityStatement` (module
+`Langlands.GroupScheme.Reductive.CentralTorusSurjectivityProof`), which carries the
 deep structure theory.
 
 The route follows J. S. Milne, *Algebraic Groups* (2017), Proposition 21.61

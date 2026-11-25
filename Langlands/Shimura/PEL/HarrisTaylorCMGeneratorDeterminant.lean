@@ -39,7 +39,14 @@ theorem map_linearVariables {T : Type t} [CommRing T] (f : R →+* T)
   funext j
   change MvPolynomial.map f (∑ i, C (r i j) * X i) =
     ∑ i, C (f (r i j)) * X i
-  simp only [map_sum, map_mul, map_C, map_X]
+  have key : ∀ s : Finset ι, MvPolynomial.map f (∑ i ∈ s, C (r i j) * X i) =
+      ∑ i ∈ s, C (f (r i j)) * X i := by
+    intro s
+    induction s using Finset.cons_induction with
+    | empty => rw [Finset.sum_empty, Finset.sum_empty, RingHom.map_zero]
+    | cons a s ha ih =>
+      rw [Finset.sum_cons, Finset.sum_cons, RingHom.map_add, RingHom.map_mul, map_C, map_X, ih]
+  exact key Finset.univ
 
 variable {M : Type t} [AddCommGroup M] [Module R M] [Fintype η]
     {κ : Type s} [Fintype κ] [DecidableEq κ]
@@ -55,8 +62,9 @@ theorem polynomial_sum_smul_family (b : Module.Basis κ R M)
   apply congrArg Matrix.det
   apply Matrix.ext
   intro k l
-  simp only [matrix, Matrix.map_apply, map_sum, map_mul, eval₂Hom_C,
-    eval₂Hom_X', map_smul, Matrix.sum_apply, Matrix.smul_apply, smul_eq_mul,
+  simp only [matrix, Matrix.map_apply, coe_eval₂Hom, eval₂_sum, eval₂_mul, eval₂_C,
+    eval₂_X, map_sum (LinearMap.toMatrix b b), LinearEquiv.map_smul, Matrix.sum_apply,
+    Matrix.smul_apply, smul_eq_mul, map_sum (C : R →+* MvPolynomial ι R),
     C.map_mul, Finset.sum_mul, Finset.mul_sum]
   rw [Finset.sum_comm]
   apply Finset.sum_congr rfl
@@ -357,7 +365,7 @@ variable {B}
 theorem harrisTaylorCMGeneratorLieDeterminantCondition_iso
     {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     D.HarrisTaylorCMGeneratorLieDeterminantCondition C p B i ↔
       D.HarrisTaylorCMGeneratorLieDeterminantCondition C p B' i' :=
   (D.harrisTaylorCMGeneratorLieDeterminantCondition_iff C p B i).trans

@@ -1,7 +1,5 @@
 # Separated commutative group algebraic spaces over fields
 
-Authors: Worker 144 and Worker 148.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SeparatedAddCommGroupSheafSchemeRepresentabilityStatement.{u}`
 is a proposition definition for every universe `u`. It states the commutative
 specialization of Stacks Project Lemma 79.10.2, retaining separatedness and local
@@ -56,9 +54,8 @@ The exact correspondences are:
 
 Returning separatedness and local finite type on the representing scheme is the
 internal transport of these geometric conditions under the representing natural
-isomorphism. These transports are part of the requested proposition, not lemmas
-proved in this module. The Lean formula was prepared by Worker 144 and reused
-unchanged; Worker 148 checked the sources and completed this documentation.
+isomorphism. These transports are part of the stated proposition, not lemmas
+proved in this module.
 
 The four original pages and their comments were read. The comment on `0B8D`
 corrects an introductory reference concerning separatedness of group schemes;

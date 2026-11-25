@@ -1,8 +1,8 @@
 # Generic components from irreducible admissible components and Whittaker functionals
 
-Worker 174 wrote this module for task `a2cfc970-9e20-4d56-b053-8f91a2e0b5cc` (Task 5720). The
-task's target is `Langlands.Global.CuspidalArchimedeanParameterExistenceStatement`. The
-Library module `Langlands.Automorphic.ArchimedeanParameterReduction` reduces that target to
+This module serves the proof of
+`Langlands.Global.CuspidalArchimedeanParameterExistenceStatement`. The
+Library module `Langlands.Automorphic.ArchimedeanParameterReduction` reduces that statement to
 two local statements and one global premise,
 `Langlands.Automorphic.CuspidalArchimedeanGenericComponentStatement`. This module proves the
 global premise from the two subspace statements of the Library module

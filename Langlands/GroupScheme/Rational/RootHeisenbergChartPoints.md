@@ -32,7 +32,8 @@ over `Spec k`.
 
 These are internal (derived) definitions: they write the published Heisenberg normal form of
 a unipotent group of class at most two in explicit coordinates. `rationalVectorCoordinates` and
-`chartPoint` are the interface fixed with Worker 7 for `UnitaryChartUpgradeStatement`.
+`chartPoint` are the interface used by `UnitaryChartUpgradeStatement` (module
+`Langlands.GroupScheme.Rational.RootHeisenbergUnitaryChart`).
 
 ## Results
 

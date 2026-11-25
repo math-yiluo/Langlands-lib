@@ -1,6 +1,6 @@
 # Square-integrability of tempered representations through unitary Jacquet parts
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.TemperedSquareIntegrableUnitaryPartStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedSquareIntegrableUnitaryPartStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.TemperedSquareIntegrableUnitaryPartStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedSquareIntegrableUnitaryPartStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.4, Lemma, printed p.230 / PDF p.236. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The lemma says: let `(π, V)` be an admissible tempered representation of `G` with a central character. Then `π` is square-integrable modulo the center if and only if `(r_P^G π)_0 = {0}` for every proper standard parabolic subgroup `P = MN`. The proof: "this follows from the definitions, from the fact that the central character is unitary (Remark 1, VII.2.1) and from Casselman's criterion."
 
@@ -31,8 +31,8 @@ For every `π : SmoothRep.{0, u, v} ℂ (rationalPoints G)` and every `ω : Subg
 
 The proof is a separate obligation. A proof along the source route needs:
 
-- Remark 1 of VII.2.1: the central character of a nonzero tempered representation is unitary (published statement `NormalizedTemperedCentralCharacterStatement`, proof open), so the published Casselman statement applies. The zero representation is treated separately;
-- the published Casselman statement `ArbitraryParabolicCasselmanCriterionStatement` and its proof (separate proof task);
+- Remark 1 of VII.2.1: the central character of a nonzero tempered representation is unitary (published statement `NormalizedTemperedCentralCharacterStatement`, proved in `NormalizedTemperedCentralCharacterProof`), so the published Casselman statement applies. The zero representation is treated separately;
+- the published Casselman statement `ArbitraryParabolicCasselmanCriterionStatement` and its proof (the full criterion is not proved in the Library; its necessity half is proved as `arbitraryParabolicCasselmanNecessity` in `CasselmanNecessity`);
 - for the forward direction, that `0` is not in `pres.positiveCone` for a proper parabolic. This holds because `Δ(P)` is nonempty and linearly independent. It also needs existence of a compatible presentation for every actual proper parabolic triple;
 - for the reverse direction, the following argument. Let `χ` be an exponent for a standard `P` with `ℜ(χ) = Σ_{α ∈ Δ(P)} c_α α`, all `c_α ≥ 0` by temperedness. Suppose some `c_β = 0`. Let `Q = LU ⊇ P` be the standard parabolic whose Levi `L` has simple roots `Δ_0^M ∪ {α : c_α > 0}`. Then `Q` is proper. By transitivity of Jacquet functors (VI.1.4) and Lemma VII.1.1(ii) applied in `L`, the restriction of `χ` to `A_L` is an exponent of `r_Q^G π`. Its real part is the restriction of `ℜ(χ)` to `𝔞_L`, which is `0`. This contradicts `(r_Q^G π)_0 = {0}`. Hence every exponent lies in the strictly positive cone, and Casselman's criterion applies. A Lean proof also needs presentation existence for the standard parabolics and compatibility of presentations under `Q ⊇ P`;
 - the reduction from arbitrary to standard parabolics described above.

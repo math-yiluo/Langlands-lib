@@ -2,7 +2,7 @@
 
 For a scheme `S`, module sheaves `M` and `N`, an open `U`, a genuine frame
 `e : LocalFrame M n U`, and an actual isomorphism of the restrictions of `M`
-and `N` to the open subscheme, this derived unit identifies the coordinates
+and `N` to the open subscheme, this derived module identifies the coordinates
 and basis sections of `e.ofRestrictIso f` with the published
 `SerreVanishing.modE` section transport. All identities hold on every original
 base open `V ≤ U`, with no local-freeness or coherence premise beyond the

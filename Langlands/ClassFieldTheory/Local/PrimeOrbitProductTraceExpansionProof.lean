@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.GroupWithZero.Action
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Group.Action.Pointwise.Finset
-import Mathlib.GroupTheory.SpecificGroups.Cyclic.Basic
+import Mathlib.GroupTheory.SpecificGroups.Cyclic.Subgroup
 import Mathlib.RingTheory.Ideal.Operations
 import Langlands.ClassFieldTheory.Local.PrimeOrbitProductTraceExpansionStatement
 

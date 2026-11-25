@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.Popescu.ArtinianFlatClaim
 
 /-! # The subalgebra `σ(F)[t₁, …, t_d]` in the proof of Stacks 07FG

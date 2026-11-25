@@ -3,9 +3,9 @@
 For a continuous smooth-vector functional `ℓ`, use the Hilbert Riesz
 identification on the bounded functional given by first averaging with the
 conjugate-inverted kernel and then applying `ℓ`. Conjugation in both operations
-makes the resulting map complex-linear in the original kernel. Worker 779's
-Gårding estimates and smoothness theorem construct these bounded functionals
-and show that their Riesz vectors are smooth.
+makes the resulting map complex-linear in the original kernel. The Gårding
+estimates of `GardingFunctionals` and the smoothness theorem of `GardingRiesz`
+construct these bounded functionals and show that their Riesz vectors are smooth.
 
 Moving group translations through the averaged orbit gives left covariance
 and the conjugate Whittaker multiplier for the right translations. Equality

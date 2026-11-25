@@ -142,18 +142,20 @@ def representedCMNormalFiniteEtaleAction [Etale (projection R U V hVU)] :
     Action (Cover ((schemes R).obj U)) (SmallCMResidualGroup D U V) where
   V := cover (projection R U V hVU)
   ρ :=
-    { toFun := fun g => ObjectProperty.homMk (Over.homMk ((quotientAction R U V hVU).ρ g)
+    { toFun := fun g => End.of (ObjectProperty.homMk (Over.homMk ((quotientAction R U V hVU).ρ g).asHom
         (representedCMNormalProjection_invariant D C preservation composition
           unitCoherence associativity comparison symmetry stability square universality
-          dualityNaturality polarizationStability compatibility h htor R U V hVU g))
+          dualityNaturality polarizationStability compatibility h htor R U V hVU g)))
       map_one' := by
+        apply End.ext
         apply ObjectProperty.hom_ext
         apply Over.OverMorphism.ext
-        exact (quotientAction R U V hVU).ρ.map_one
+        exact congrArg End.asHom (quotientAction R U V hVU).ρ.map_one
       map_mul' := fun g g' => by
+        apply End.ext
         apply ObjectProperty.hom_ext
         apply Over.OverMorphism.ext
-        exact (quotientAction R U V hVU).ρ.map_mul g g' }
+        exact congrArg End.asHom ((quotientAction R U V hVU).ρ.map_mul g g') }
 
 local notation "finiteAction" => representedCMNormalFiniteEtaleAction D C preservation
   composition unitCoherence associativity comparison symmetry stability square universality
@@ -167,7 +169,7 @@ local notation "finiteAction" => representedCMNormalFiniteEtaleAction D C preser
 
 @[simp] theorem representedCMNormalFiniteEtaleAction_ρ_left
     [Etale (projection R U V hVU)] (g : SmallCMResidualGroup D U V) :
-    ((finiteAction R U V hVU).ρ g).hom.left = (quotientAction R U V hVU).ρ g := rfl
+    ((finiteAction R U V hVU).ρ g).asHom.hom.left = ((quotientAction R U V hVU).ρ g).asHom := rfl
 
 /-- The existing etale torsor adapter needs no separate finiteness hypothesis. -/
 theorem representedCMNormalEtaleAction_isFiniteGeometricTorsor_of_projective

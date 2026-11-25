@@ -1,6 +1,6 @@
 # Degree support for tensor products of augmentation kernels
 
-Worker 1228. This internal algebraic consequence of the identity-slice
+This internal algebraic consequence of the identity-slice
 calculation implements the support argument in Conrad–Gabber–Prasad,
 *Pseudo-reductive Groups*, second edition (2015), Lemma 3.3.4, printed
 pp.108–109 (PDF pp.134–135), registered as
@@ -38,5 +38,5 @@ the literal sum of support sets.
 In the geometric application, injectivity comes from the dominant map to
 the image closure, the slice equations come from the commutator, and the
 homogeneous spaces come from the torus action on coordinates. Those inputs
-and the passage to a smooth connected subgroup remain separate obligations.
+and the passage to a smooth connected subgroup are not part of this module.
 The full all-test semigroup commutator statement is not proved here.

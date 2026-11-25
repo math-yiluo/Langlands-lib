@@ -1,6 +1,6 @@
 # JPS function spaces and coordinate germs
 
-Author: Worker 625. This definition unit constructs the function spaces, invariant
+This definition module constructs the function spaces, invariant
 subspaces, and quotient actions from JPS (1979), Lemma (2.2.1), printed p.182.
 It does not state or prove that lemma's decomposition conclusion.
 
@@ -146,8 +146,8 @@ spaces with the Library's right-translation convention and Mathlib's quotient
 machinery. The distinction between representation smoothness and locally
 constant scalar functions is explicit additional interface bookkeeping.
 
-This unit supplies neither the decomposition theorem nor any uniform
+This module supplies neither the decomposition theorem nor any uniform
 small-dilation expansion, Jacquet vanishing, or finite operator-span theorem.
 In particular the source proof's restriction `|b| ≤ 1`, its uniform
 small-coordinate threshold, and the eventual single finite set of functions
-chosen before `f` remain obligations for separate statement and proof units.
+chosen before `f` remain obligations for separate statement and proof modules.

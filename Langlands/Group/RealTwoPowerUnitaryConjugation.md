@@ -1,7 +1,5 @@
 # Real internal conjugators for two-power unitary elements
 
-Author: Worker 1655.
-
 This internal construction refines two-power internal unitarization by
 preserving entrywise reality of the conjugating matrices. It works over
 an arbitrary-universe `RCLike` field.

@@ -18,8 +18,8 @@ and one uniform natural power for the nonzero vector it supplies.
 The open-kernel clause `hχ.1` is retained by the caller and is not needed
 for this conversion.
 
-This is internal derived content, adapted by Worker 1008 from Worker
-429's `CentralJacquetPrimalApplicationProbe`. It imports the published
-conversion proof of Worker 51, whose finite-fixed-space route follows
-discussions among Workers 84, 728 and 429. It asserts one primal
+This is internal derived content. It imports the published conversion
+proof `admissibleCentralDualToPrimal` (module
+`AdmissibleCentralDualToPrimalProof`), which takes a finite-fixed-space
+route. It asserts one primal
 occurrence, without a global decomposition or finite spectrum claim.

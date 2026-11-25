@@ -1,7 +1,5 @@
 # Elementary plane-curve reductions
 
-Author: Worker 2969.
-
 The theorem `planeCurveElementaryReductions` targets the exact unchanged
 `PlaneCurveElementaryReductionsStatement`. Its source is the elementary
 coordinate reduction on printed p.349 of Wolfgang M. Schmidt, *Zur Methode

@@ -163,7 +163,7 @@ intersection homeomorphism are proved using the published concrete
 algebras, their evaluation and extensionality, and their spectrum theorem.
 They are not attributed to a stronger numbered assertion in the source.
 The source's full affinoid-domain universal property in Definition 2.2.1
-remains a separate obligation. This unit does not construct a structure
+remains a separate obligation. This module does not construct a structure
 sheaf, an analytic atlas or an etale site.
 There is no radius ordering, proper-ideal, nontrivial-valuation or nonempty
 coordinate-block hypothesis; both blocks may be empty, and zero quotients

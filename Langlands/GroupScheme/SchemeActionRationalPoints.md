@@ -1,7 +1,5 @@
 # Rational points and scheme-theoretic fixedness
 
-Worker 1351.
-
 This internal derived construction supports the exact solvable proper
 fixed-point proof. It constructs `SchemeAction.orbitMap` for any group scheme
 over any base, using the published actual action and the canonical map to

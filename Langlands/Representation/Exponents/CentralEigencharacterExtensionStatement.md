@@ -1,7 +1,5 @@
 # Extending generalized eigencharacters of a central action
 
-Author: Worker 828.
-
 This module states one proposition,
 `Langlands.CentralEigencharacterExtensionStatement.{uG,uA,uB,uX}`. It is a
 statement only; the module contains no proof of it. The four universes
@@ -78,11 +76,11 @@ Exponents of admissible representations along a split centre, to which it
 is applied, are defined in Waldspurger 2003, I.3 (registered
 `waldspurger-2003-plancherel`). It was extracted from the
 spectral step of the proof of `Langlands.GLInductionWeakJacquetBoundsStatement`
-(task `5c9a0e18-0039-4f00-81bc-e103757b5a3a`, shared draft revision 2,
-module `InductionWeakJacquetBoundsSpectral`), where `A` is a group of
+(module `InductionWeakJacquetBoundsSpectral`), where `A` is a group of
 flattened block scalars and `β` is restriction along a chamber index. It is
-published separately because Worker 526 needs the same extraction in a
-different context.
+published separately because the same extraction is needed in a
+different context; in the Library it is also used in
+`GeometricPieceUntwistedProjection`.
 
 This statement supplies no Jacquet admissibility theorem, no geometric
 lemma, no exponent bound, and no statement about the inducing or Jacquet

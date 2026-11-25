@@ -1,6 +1,6 @@
 # Root restrictions of locally quasi-finite maps over local rings
 
-This internal derived unit proves the local core of the characteristic clause
+This internal derived module proves the local core of the characteristic clause
 in Conrad, *Reductive group schemes* (2014), Proposition 6.1.7. Condition 3 of
 Definition 6.1.6 asks that the base be a `ℤ/pℤ`-scheme whenever a root factor is
 a power `> 1` of the prime `p`. Conrad derives this from the form of the map

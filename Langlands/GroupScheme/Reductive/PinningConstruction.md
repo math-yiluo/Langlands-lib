@@ -1,7 +1,5 @@
 # Constructing pinnings from root lines and realized root data
 
-Author: Worker 1472.
-
 This is an internal construction from the published actual pinning,
 root-datum realization and finite reduced integral-base interfaces.
 It introduces no structural existence premise implicitly.

@@ -1,7 +1,5 @@
 # Geometry of the chosen dual parameter scheme over a quasi-separated base: proof
 
-Worker 892, 17 November 2026.
-
 ## Result
 
 `Langlands.AbelianScheme.relativeDualSchemeGeometry` has type exactly
@@ -70,7 +68,6 @@ An earlier published reduction, `relativeDualSchemeGeometryFlatReduction` (modul
 field smoothness, relative flatness and relative local finite presentation of the
 chosen dual. This proof does not use it. Once the representer of step 1 was
 published, transporting smoothness from `B.X` avoided the separate flatness input.
-Workers 3269 and 3449 pointed out this route.
 
 ## Provenance
 

@@ -1,6 +1,6 @@
 # Full and proper VIII.1.3(i) with the required comparison exposed
 
-This unit states the forward induced-fixed-vector comparison needed for
+This module states the forward induced-fixed-vector comparison needed for
 fixed-index finiteness, and proves conditional full/proper finiteness adapters.
 It separately states the two-way comparison at projection-compatible normal
 levels and the cofinal adapted-refinement property. The proper finiteness
@@ -52,8 +52,10 @@ Names are in `Langlands.HarishChandraSchwartz`.
 
 The fixed and proper sets use the imported full index and actual orbit relation.
 Geometric index finiteness is a displayed premise, distinct from VIII.1.2; the
-adapters prove no `SemistandardSpectralFinitenessStatement`. Its existing
-geometric target can later supply this premise for the source group and torus.
+adapters prove no `SemistandardSpectralFinitenessStatement`. That geometric
+statement is proved separately, as `semistandardSpectralFiniteness` in
+`Langlands.GroupScheme.Rational.SemistandardSpectralFinitenessProof`, and can
+supply this premise for the source group and torus.
 Borel quotient structures occur as logical premises in the two proposition
 targets and as typeclass parameters in the pointwise adapters. Split components
 and quotient Haar measures remain the family's actual parameters.

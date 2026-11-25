@@ -1,8 +1,8 @@
 # Ueda epsilon_FML local constants: normalization audit
 
-Worker 216 wrote this audit for task `44d2f4d1` (revision 2). It compares Fukuhiro Ueda's `LanglandsFirstMainLemma.firstMainLemma` and its canonical `localConstant` with the project's rank-one epsilon expressions in `Langlands/LocalFactor/Abelian/Padic.lean` (imported by `Langlands/LocalFactor/PadicAbelian.lean`) and with `Langlands/LocalFactor/PadicAbelianStatement.lean`. It also fixes the dependency boundary to the second-main-lemma repository. This audit does not establish any external theorem, and it adds or changes no Lean target.
+This audit compares Fukuhiro Ueda's `LanglandsFirstMainLemma.firstMainLemma` and its canonical `localConstant` with the project's rank-one epsilon expressions in `Langlands/LocalFactor/Abelian/Padic.lean` (imported by `Langlands/LocalFactor/PadicAbelian.lean`) and with `Langlands/LocalFactor/PadicAbelianStatement.lean`. It also fixes the dependency boundary to the second-main-lemma repository. This audit does not establish any external theorem, and it adds or changes no Lean target.
 
-**Verdict: adapt.** Do not import or vendor the repository. Its `Δ` is Tate's Langlands-normalized root number written as a phase. For every Haar measure `μ`, the project's `epsilon T χ ψ μ s` equals `Δ(χ·|·|^{s-1/2}, ψ)` times an explicit positive real `r(χ, ψ, μ)`. The equality `langlandsConstantAtSelfDual = Δ` additionally needs two facts that the Library does not currently prove (§2.7). The proved First Main identity is a degree-zero statement, in which `r` cancels apart from the Gauss-sum modulus. Section 6 lists the smallest port units.
+**Verdict: adapt.** Do not import or vendor the repository. Its `Δ` is Tate's Langlands-normalized root number written as a phase. For every Haar measure `μ`, the project's `epsilon T χ ψ μ s` equals `Δ(χ·|·|^{s-1/2}, ψ)` times an explicit positive real `r(χ, ψ, μ)`. The equality `langlandsConstantAtSelfDual = Δ` additionally needs two facts that the Library does not currently prove (§2.7). The proved First Main identity is a degree-zero statement, in which `r` cancels apart from the Gauss-sum modulus. Section 6 lists the smallest port steps.
 
 ## 1. Pins, source closure and missing inputs
 
@@ -263,7 +263,7 @@ From `Langlands/LocalFactor/Abelian/Padic.lean`, with `F : PadicField.{u} p` and
 - `deligneConstant = epsilon · · · 0` and `centeredConstant = epsilon · · · (1/2)`. `deligneConstant_eq_abelianEpsilonExpression` (`:379`) is proved.
 - `SelfDualHaar T ψ` (`:406`) is the subtype of `LocalHaar` satisfying `HarmonicAnalysis.IsSelfDual ψ μ`. `langlandsConstantAtSelfDual T χ ψ μ := centeredConstant T χ ψ μ.val.measure` (`:422`). `langlandsEpsilonAtSelfDual` (`:430`) evaluates `epsilon` at `s`, not at `s + 1/2`.
 
-The conductors agree mathematically. FML's `lattice F (-n)` is `{ord ≥ -n}`, which equals `T.additiveLattice n = π^{-n}𝒪`. FML's `unitFiltration` matches `T.principalUnits` level by level: level 0 is the units, and level `k ≥ 1` is `1 + 𝔭^k`. Both normalize the valuation with the same map `(valuation).map valueGroupWithZeroIsoInt`; the project's `discreteValuation` is at `LocalField/Normalization/Definitions.lean:87`. No Lean lemma identifies the two exponents yet; that is units 2 and 3 in §6.
+The conductors agree mathematically. FML's `lattice F (-n)` is `{ord ≥ -n}`, which equals `T.additiveLattice n = π^{-n}𝒪`. FML's `unitFiltration` matches `T.principalUnits` level by level: level 0 is the units, and level `k ≥ 1` is `1 + 𝔭^k`. Both normalize the valuation with the same map `(valuation).map valueGroupWithZeroIsoInt`; the project's `discreteValuation` is at `LocalField/Normalization/Definitions.lean:87`. No Lean lemma identifies the two exponents yet; that is steps 2 and 3 in §6.
 
 ### 2.7 Exact relation to the project epsilon (derived here)
 
@@ -344,7 +344,7 @@ The snapshot's `STATIC-SCAN.json` likewise lists no lexical hits for the 140-mod
 
 **Author reports:** the README gives build instructions ending in `lake env leanchecker --fresh LanglandsFirstMainLemma.Main`. This is an instruction; no output or CI record is published.
 
-**Our probe (name level only):** the private draft `.private/drafts/fmlapi` ran 236 `#check`s of the Mathlib names used by the 20-module definition closure in our environment. The result was recorded as diagnostics `8c0ee64d-3d4b-4108-9d8d-010ee9b82559`, `6c101b46-3836-4ef5-82d8-8bd9d2b312bd` and `0aeb063e-3a1c-4a88-89ca-a1a33d49245c` (§5). This checks name resolution, not FML's proofs.
+**Our probe (name level only):** a private file ran 236 `#check`s of the Mathlib names used by the 20-module definition closure in our environment, in three runs (§5). This checks name resolution, not FML's proofs.
 
 ## 5. Current Mathlib/Library overlap and version/API problems
 
@@ -365,10 +365,10 @@ The Library has no counterpart to FML's `finiteGaussSum`, `deltaFinite`, the nor
 
 **Version/API findings from the probe:**
 
-- Of 14 errors in `8c0ee64d`, 13 are false positives of the probe: module-path fragments such as `Topology.Algebra.Module.Compact` read as names, `Complex.Circle`, `Ideal.Norm.AbsNorm`, and FML's own `ContinuousAddChar.*` names.
-- The 14th, `Subgroup.genLTOne_unique`, resolves in our Mathlib as `LinearOrderedCommGroup.Subgroup.genLTOne_unique` (`6c101b46`), so the open namespace must be checked during any port.
+- Of 14 errors in the first run, 13 are false positives of the probe: module-path fragments such as `Topology.Algebra.Module.Compact` read as names, `Complex.Circle`, `Ideal.Norm.AbsNorm`, and FML's own `ContinuousAddChar.*` names.
+- The 14th, `Subgroup.genLTOne_unique`, resolves in our Mathlib as `LinearOrderedCommGroup.Subgroup.genLTOne_unique` (second run), so the open namespace must be checked during any port.
 - Two deprecations remain: `Ideal.inertiaDeg'_eq_inertiaDeg` and `Ideal.ramificationIdx_mul_inertiaDeg_of_isLocalRing`, used in `LocalField/Extension.lean` and `LocalField/Valuation.lean`.
-- `0aeb063e` confirms that `set_option backward.isDefEq.respectTransparency false` is accepted by Lean 4.34, and that `IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt` and `Circle.toUnits` resolve.
+- The third run confirms that `set_option backward.isDefEq.respectTransparency false` is accepted by Lean 4.34, and that `IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt` and `Circle.toUnits` resolve.
 
 No definite API break was found, but these are name checks only. Elaboration, `simp` set and heartbeat differences across two Lean minor versions remain untested.
 
@@ -380,7 +380,7 @@ No definite API break was found, but these are name checks only. Elaboration, `s
 - Short generic names in the open namespace (`ord`, `lattice`, `trace`, `phase`, `unitFiltration`) would clash if opened alongside project names.
 - Heartbeat limits are large.
 
-## 6. Verdict and smallest next units
+## 6. Verdict and smallest next steps
 
 **Verdict: adapt.** FML is a careful, readable, Apache-licensed source whose `Δ` is exactly Tate's `ε_L` (§2.5), with the trivial-`ψ` value isolated. It remains unsuitable for import:
 
@@ -390,36 +390,36 @@ No definite API break was found, but these are name checks only. Elaboration, `s
 - the proof closure is 138k lines;
 - its relation to our normalization is `r · Δ` rather than equality, until (i) and (ii) of §2.7 are proved.
 
-A rejection is not warranted either: the definitions agree with ours up to the explicit positive factor, and `firstMainLemma_nonarchimedean` is interface-based (`IsDeltaFiniteLocalConstant`), which makes a staged port practical. Each unit below must be a separately authorized task with published statement targets, normal validation and independent semantic review. None alters an existing target.
+A rejection is not warranted either: the definitions agree with ours up to the explicit positive factor, and `firstMainLemma_nonarchimedean` is interface-based (`IsDeltaFiniteLocalConstant`), which makes a staged port practical. Each step below needs its own published statement targets, checked proofs and an independent semantic check. None alters an existing target.
 
-All ports are at universe `u`, with targeted Mathlib imports in place of `Prelude`'s `import Mathlib`. Units 1–3 replace FML's existence layer with the Library's proved conductors.
+All ports are at universe `u`, with targeted Mathlib imports in place of `Prelude`'s `import Mathlib`. Steps 1–3 replace FML's existence layer with the Library's proved conductors.
 
 1. **Definitions: valuation layer, conductor predicates and character transport.**
    - **Port** the 7-module closure of `Basic.CharacterConductors`: `Prelude`, `Basic.{Phase, CharacterTypes, CharacterConductors}` and `LocalField.{Valuation, Lattices, UnitFiltration}` (2,699 lines; its only external import is `Mathlib`).
    - **What this provides:** `ord` (`LocalField/Valuation.lean:89`), `lattice` (`LocalField/Lattices.lean:74`), `unitFiltration` (`LocalField/UnitFiltration.lean:89`), `phase`, `ContinuousAddChar`, and the predicates and packages of §2.1. These are `AddCharTrivialOnLattice`, `QuasiCharTrivialOnUnitFiltration`, `IsAdditiveConductor`, `IsMultiplicativeConductor`, `LocalAddCharData` and `LocalQuasiCharData` (`Basic/CharacterConductors.lean:30`, `:35`, `:94`, `:100`, `:394`, `:402`).
-   - **Add the transport:** `UnitaryAdditiveCharacter → ContinuousAddChar` via `Circle.toUnits`, which is injective, so `nontrivial` gives `ψ' ≠ 1`. `Quasicharacter` needs no transport. A map back to `UnitaryAdditiveCharacter` would need a modulus-one lemma such as `localAddChar_norm_eq_one`, but no unit below uses one.
-   - **Do not port `Basic.CharacterConductorExistence`.** Its existence theorems are `exists_isMultiplicativeConductor` (`:220`) and `exists_isAdditiveConductor` (`:269`). Its canonical packages are `canonicalLocalQuasiCharData` and `canonicalLocalAddCharData` (`:397`, `:442`). Porting them would also bring in `Basic.StandardCharacterBridge` and `LocalField.{ResidueField, Extension}` (an 11-module closure of 4,743 lines). The Library already proves the same existence and uniqueness, so units 2–3 use that instead.
-2. **Statements: agreement with the Library's conductors.** Prerequisites: unit 1 and `Langlands/HarmonicAnalysis/Conductor.lean`. Take `F : PadicField.{u} p` and `T : F.TopologicalData`, with FML's instances installed from `T`. The statements are:
+   - **Add the transport:** `UnitaryAdditiveCharacter → ContinuousAddChar` via `Circle.toUnits`, which is injective, so `nontrivial` gives `ψ' ≠ 1`. `Quasicharacter` needs no transport. A map back to `UnitaryAdditiveCharacter` would need a modulus-one lemma such as `localAddChar_norm_eq_one`, but no step below uses one.
+   - **Do not port `Basic.CharacterConductorExistence`.** Its existence theorems are `exists_isMultiplicativeConductor` (`:220`) and `exists_isAdditiveConductor` (`:269`). Its canonical packages are `canonicalLocalQuasiCharData` and `canonicalLocalAddCharData` (`:397`, `:442`). Porting them would also bring in `Basic.StandardCharacterBridge` and `LocalField.{ResidueField, Extension}` (an 11-module closure of 4,743 lines). The Library already proves the same existence and uniqueness, so steps 2–3 use that instead.
+2. **Statements: agreement with the Library's conductors.** Prerequisites: step 1 and `Langlands/HarmonicAnalysis/Conductor.lean`. Take `F : PadicField.{u} p` and `T : F.TopologicalData`, with FML's instances installed from `T`. The statements are:
    - `(lattice F.Carrier (-n) : Set F.Carrier) = (T.additiveLattice n : Set F.Carrier)` for all `n : ℤ` (`Conductor.lean:50`);
    - `unitFiltration F.Carrier k = T.principalUnits k` for all `k : ℕ` (`:175`);
    - `IsAdditiveConductor F.Carrier ψ' n ↔ n = T.additiveConductor ψ` (`:150`);
    - `IsMultiplicativeConductor F.Carrier χ m ↔ m = T.multiplicativeConductor χ` (`:270`).
-3. **Proofs, then canonical packages.** Prerequisite: unit 2.
+3. **Proofs, then canonical packages.** Prerequisite: step 2.
    - **Lattice and filtration agreement.** Prove both from the fact that FML's `ord` and `T.discreteValuation` (`LocalField/Normalization/Definitions.lean:87`) use the same map `(valuation).map valueGroupWithZeroIsoInt`.
    - **Conductor agreement.** Then prove both conductor equivalences from `additiveConductor_spec`/`additiveTrivialAt_iff_le_conductor` (`Conductor.lean:153`, `:158`) and `multiplicativeConductor_spec`/`multiplicativeTrivialAt_iff_conductor_le` (`:274`, `:279`).
    - **Packages.** Only after these proofs, define `T.localQuasiCharData χ := ⟨χ, T.multiplicativeConductor χ, _⟩` and `T.localAddCharData ψ := ⟨ψ', T.additiveConductor ψ, _⟩`. Their `isConductor` fields are the proved equivalences. These packages replace FML's `canonicalLocal*Data`, and they add no choice beyond the Library's.
-4. **Definitions: finite local constant.** Prerequisite: unit 3.
-   - **Port** `Delta.FiniteDefinition` and `Delta.Nonvanishing`. Beyond unit 1, they add `LocalField.{ResidueField, FiniteQuotients}` and `Mathlib.RingTheory.Ideal.Norm.AbsNorm`, for an 11-module closure of 5,346 lines.
+4. **Definitions: finite local constant.** Prerequisite: step 3.
+   - **Port** `Delta.FiniteDefinition` and `Delta.Nonvanishing`. Beyond step 1, they add `LocalField.{ResidueField, FiniteQuotients}` and `Mathlib.RingTheory.Ideal.Norm.AbsNorm`, for an 11-module closure of 5,346 lines.
    - **What this provides:** `AdmissibleGamma` with `exists_admissible` (`:49`), `finiteGaussSum` and `deltaFinite`, together with the proof ports `finiteGaussSum_ne_zero` (`:998`), `deltaFinite_gamma_independent` (`:1063`) and `deltaFinite_ne_zero` (`Delta/Nonvanishing.lean:9`).
    - **Then define** the project-side `Δ(χ, ψ')` as `deltaFinite (T.localQuasiCharData χ) (T.localAddCharData ψ) γ`, at any admissible `γ`.
    - **Leave out** `deltaIntegral` and its global measurable-space instance unless they are needed.
-5. **Statement (provable without unproved inputs).** Prerequisite: unit 4. For every Haar `μ` and every `s`, `epsilon T χ ψ μ s = r · Δ(χ·ω_{s-1/2}, ψ')` with `r = q^{(n-a)/2} μ(𝒪) |G| > 0`.
-6. **Statements.** Prerequisite: unit 4.
+5. **Statement (provable without unproved inputs).** Prerequisite: step 4. For every Haar `μ` and every `s`, `epsilon T χ ψ μ s = r · Δ(χ·ω_{s-1/2}, ψ')` with `r = q^{(n-a)/2} μ(𝒪) |G| > 0`.
+6. **Statements.** Prerequisite: step 4.
    - the Gauss-sum modulus `|G| = q^{a/2}`;
    - consequently `langlandsConstantAtSelfDual T χ ψ μ = Δ(χ, ψ')` for every `μ : SelfDualHaar T ψ`, given a lemma that `IsSelfDual` implies `μ(𝒪) = q^{-n/2}`.
 
-   These would discharge the parts of `PadicFourierNormalizationStatement`/`PadicAbelianLocalAnalysisStatement` used here only after those owners' targets are proved; this unit must not assume them.
-7. **Statement: the First Main identity in project terms.** Prerequisite: unit 4.
+   These would discharge the parts of `PadicFourierNormalizationStatement`/`PadicAbelianLocalAnalysisStatement` used here only once those statements are proved; this step must not assume them.
+7. **Statement: the First Main identity in project terms.** Prerequisite: step 4.
    - **Port** the rest of the statement layer: `Basic.CharacteristicConvention`, `LocalField.Extension` (`continuousTrace`, `continuousNormUnits`, and the `IsModuleTopology` instance, which needs the transport lemma of §2.9) and `Delta.FirstMainStatement`, plus `Delta.ErrorTerm` for `IsDeltaFiniteLocalConstant`.
    - **State** the identity for `K/F` cyclic of prime degree inside the project's extension framework, with `[Finite (NormCharacter F K)]` as a separate proved instance.
    - **Then state** its equivalence, under reciprocity, with `InductionRelation` at `([χ_K] − [1_K]) · ω_{1/2}`.
@@ -438,7 +438,7 @@ All ports are at universe `u`, with targeted Mathlib imports in place of `Prelud
 - **`ψF ≠ 1`.**
 - **Conclusion `SecondMainIdentity`** (`:169`): `inductionExpression` (`:128`), `= localConstant L θ_L (ψF ∘ Tr_{L/F}) · ∏_{ν : NormCharacter F L} localConstant F ν ψF`, is independent of `L`.
 
-SML imports FML's `Main` and about 40 internal FML modules (`Ramification.*`, `Lamprecht.*`, `FiniteField.*`, `Parameters.*`, `Cases.*`). Its *statement* closure contains `Ramification.PrimeCyclicExtension` and `Ramification.NormCharacters.primeCyclicNormCharacter_finite`. An SML adaptation therefore depends on units 1–4 and 7 above, and on a port or reproof of the finiteness of `NormCharacter F L`. Its normalization questions reduce to those settled here, since it uses only FML's `localConstant` at nontrivial `ψ`. Auditing SML's proofs is a separate unit.
+SML imports FML's `Main` and about 40 internal FML modules (`Ramification.*`, `Lamprecht.*`, `FiniteField.*`, `Parameters.*`, `Cases.*`). Its *statement* closure contains `Ramification.PrimeCyclicExtension` and `Ramification.NormCharacters.primeCyclicNormCharacter_finite`. An SML adaptation therefore depends on steps 1–4 and 7 above, and on a port or reproof of the finiteness of `NormCharacter F L`. Its normalization questions reduce to those settled here, since it uses only FML's `localConstant` at nontrivial `ψ`. Auditing SML's proofs is a separate step.
 
 ## Sources
 

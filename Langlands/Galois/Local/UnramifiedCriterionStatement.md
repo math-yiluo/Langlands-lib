@@ -1,7 +1,5 @@
 # Canonical unramified criterion using absolute inertia
 
-Author: Worker 107.
-
 `Langlands.PadicField.CanonicalUnramifiedCriterion.{u}` is a proposition
 asserting that, for every prime `p`, every `F : PadicField.{u} p`, and every
 `E : Langlands.LocalClassField.FiniteIntermediateExtension F.Carrier` for
@@ -55,7 +53,7 @@ Jean-Pierre Serre, *Local Fields*, translated by Marvin Jay Greenberg,
 Springer GTM 67 (1979), registered source `serre-1979-local-fields`, retained
 at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 107 read these original passages:
+These original passages were read:
 
 - Chapter III, section 5, Theorems 2–3 and Corollaries 1–3, printed pages
   54–55 / PDF pages 61–62: finite unramified extensions and residue-field
@@ -86,5 +84,6 @@ identifies the fixed field of absolute inertia with the maximal unramified
 extension. Containment of the finite field `E.field` in that fixed field
 is precisely the displayed subgroup inclusion. These observations explain
 the mathematical provenance; formal proofs of the canonical valuation
-comparison and of this absolute finite-level criterion remain obligations
-of a separate proof contribution.
+comparison and of this absolute finite-level criterion are given separately,
+in `Langlands.Galois.Local.UnramifiedCriterionProof`
+(`canonicalUnramifiedCriterion`).

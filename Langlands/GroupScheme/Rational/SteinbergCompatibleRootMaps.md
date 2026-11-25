@@ -61,11 +61,13 @@ under the commuting torus square, the root-character transport law and
 therefore a consequence of the actual vector and character laws and
 normalization.
 
-This unit neither constructs a compatible pinning or its vectors nor
+This module neither constructs a compatible pinning or its vectors nor
 proves the existence of normalized root maps. These existence obligations
-remain, along with orbit orthogonality, cross-section geometry and the
-parent quotient theorem. Finite and imperfect fields are retained, and
+lie outside this module, along with orbit orthogonality, cross-section
+geometry and the quotient theorem `QuasiSplitSteinbergQuotientStatement` that
+it serves, which the Library proves as `quasiSplitSteinbergQuotient`
+(`Rational.QuasiSplitSteinbergQuotient`). Finite and imperfect fields are retained, and
 no global section in exceptional even type A is asserted.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here carry module-specific names to permit joint
+imports. The names change none of their types, values, or local scopes.

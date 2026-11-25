@@ -3,7 +3,8 @@
 This module states that, for a simply connected group over the maximal unramified extension
 of a nonarchimedean local field, an element that maps a chamber of the building onto itself
 fixes that chamber pointwise. It also proves the easy converse. The main statement is not
-proved here; a separate proof task will follow publication.
+proved here; `MaximalUnramified.simplyConnectedChamberStabilizer` in
+`UnramifiedSimplyConnectedChamberStabilizerProof` proves it.
 
 ## The statement
 
@@ -38,7 +39,9 @@ The Library objects used are as follows.
 
 `G` is an arbitrary simply connected `K`-group, not necessarily the base change of an
 `F`-group. A `K`-group is the more general setting and the more natural one for the source
-results below. In Task 6208 the statement is applied to `baseChanged F K G₀` for a simply
+results below. In the proof of `LocalSimplyConnectedUnramifiedIwahoriModelStatement` (module
+`Langlands.GroupScheme.SimplyConnected.LocalUnramifiedIwahoriModelProof`) the statement is
+applied to `baseChanged F K G₀` for a simply
 connected `F`-group `G₀`. Simple connectedness passes to that base change by the published
 field-extension theorem `isSimplyConnectedFieldExtension`.
 
@@ -98,11 +101,10 @@ asserts no building axiom.
 Kaletha–Prasad prove the stabilizer result for their own apartment of `G` over `k`. A
 proof of the Library statement for arbitrary `C` therefore has to identify the apartment of
 `C` with the Kaletha–Prasad apartment, or reprove the result directly from the data in `C`.
-The expected route uses uniqueness, up to equipollence, of root-datum valuations that are
+One route uses uniqueness, up to equipollence, of root-datum valuations that are
 ω-compatible on `S(K)` and satisfy V 6 on `Z(K)` (compare `KPApartmentData.exists_eq_orbit`
 with `IsSplitTorusCompatible`, and `IntegerValuation.IsOmegaCompatible`). Without that
-uniqueness the statement is not a direct citation. This is recorded in the context of
-Task 6208 ("Arbitrary `C` and `D`"). The companion `UnramifiedParahoricModelStatement` also
+uniqueness the statement is not a direct citation. The companion `UnramifiedParahoricModelStatement` also
 quantifies over arbitrary building data in the same way.
 
 The statement is an interface: nothing here constructs a valuation, an apartment, a

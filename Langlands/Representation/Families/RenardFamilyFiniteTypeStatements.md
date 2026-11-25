@@ -14,8 +14,7 @@ of them is proved here, and the module defines nothing else.
   sentence of the Variant. Normalized parabolic induction `i_P^G` preserves `B`-modules of
   finite type.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-It covers gap 5 of the Chapter VI item ledger (`notes/renard/item-ledger-vi.md`, row
+The module covers gap 5 of the Chapter VI item ledger (`notes/renard/item-ledger-vi.md`, row
 "VI.10.7 Variant (`(G, B)`-modules)"). The ledger records that gap as needing "the action of
 `ℨ(G)` on `(G, B)`-modules and the Bernstein components of families". No new construction is
 needed for either: see "The action of `ℨ(G)`" and "Components" below.
@@ -25,8 +24,8 @@ needed for either: see "The action of `ℨ(G)`" and "Components" below.
 David Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF page numbers are
-one-based and equal printed page numbers plus six. The author read VI.10.7, printed
-pp.215–217 / PDF pp.221–223, and VI.8.1, printed pp.187–188 / PDF pp.193–194.
+one-based and equal printed page numbers plus six. VI.10.7, printed pp.215–217 / PDF
+pp.221–223, and VI.8.1, printed pp.187–188 / PDF pp.193–194, were read for these statements.
 
 The Variant (printed p.217 / PDF p.223) reads:
 
@@ -223,11 +222,11 @@ flat, is not part of this sentence. Smoothness is the published
 
 The reductions sketched below use neither flatness nor the Noetherian, finite-type or
 reducedness hypotheses on `B`. The statements keep them because they are the hypotheses under
-which Renard defines `(G, B)`-modules and states the Variant. A later unit could drop them.
+which Renard defines `(G, B)`-modules and states the Variant. A later module could drop them.
 
 ## Proof routes (not part of the statements)
 
-These remarks only guide later proof tasks.
+These remarks only guide proofs.
 
 - **First statement.** Pick `B[G(F)]`-generators `e₁, …, e_m`, and let `W ⊆ τ` be the complex
   subrepresentation that they generate over `ℂ[G(F)]`. Then `W` is of finite type, and its
@@ -246,8 +245,8 @@ These remarks only guide later proof tasks.
   intersecting with the first summand. So the classes are among the finitely many classes of
   `W`.
 - **Second statement, reverse direction.** Renard proves the complex Proposition with the
-  VI.10.6 Proposition for a well-chosen `K`. The Library versions of that input are open
-  and concern the standard family built by `standardBernsteinFamily`
+  VI.10.6 Proposition for a well-chosen `K`. The Library versions of that input are proved
+  only from further hypotheses and concern the standard family built by `standardBernsteinFamily`
   (`StandardBernsteinFixedVectorVisibilityStatement`, `bernsteinFixedVectorVisibility`).
   For an arbitrary `family`, as in the statement, the following route uses only the
   published complex characterization.
@@ -275,7 +274,7 @@ These remarks only guide later proof tasks.
      subquotient of `τ` without nonzero `K`-fixed vectors, which contradicts step 1. Hence
      `Q = 0`, and the `sⱼ` generate `E` over `B[G(F)]`.
 
-  The proof task must supply from the Library, or prove as lemmas, the existence of
+  A proof must supply from the Library, or prove as lemmas, the existence of
   irreducible subquotients and the semisimplicity facts used in step 1.
 - **Third statement.** If `σ` is generated over `B[M(F)]` by `e₁, …, e_m`, let `W` be their
   complex `ℂ[M(F)]`-span. Then `σ = B · W`, and the published complex VI.7.5 Theorem

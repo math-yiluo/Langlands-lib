@@ -1,7 +1,5 @@
 # Ring-level forms of the Lang–Weil estimate and of the point-count upper bound
 
-Author: Worker 5132.
-
 This helper module specializes the scheme-level statements `FamilyLangWeilInDimension e` and
 `FamilyPointUpperBoundStatement` to the morphism `Spec B ⟶ Spec R`. Here `B` is an algebra of
 finite type over a ring `R` of finite type over `ℤ`. Points and fibre conditions are expressed

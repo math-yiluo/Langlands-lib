@@ -20,7 +20,7 @@ set_option autoImplicit false
 
 universe u uV uP
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global
 
@@ -36,4 +36,4 @@ theorem associatedCentralCharacter : AssociatedCentralCharacterStatement.{u, uV,
       T P δ (eventually_finiteUniformizerValue_eq_elementaryCoefficient hc hP δ hδ)
   exact ⟨δ, hcent, hδ, fun ω' h' => T.hasCentralCharacter_unique h' hcent, huniq⟩
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

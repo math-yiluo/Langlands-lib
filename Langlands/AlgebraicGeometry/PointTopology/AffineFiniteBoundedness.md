@@ -42,7 +42,7 @@ with `ValuativeRel`. The direct monic-equation proof justifies this extension.
 There are no smoothness, reducedness, local-field or characteristic hypotheses.
 Both schemes and their points are the existing relative scheme objects.
 
-This unit supplies a transport construction, not the reductive spectral
+This module supplies a transport construction, not the reductive spectral
 criterion. The finite-kernel representation and the spectral bound on its
 image remain separate obligations.
 

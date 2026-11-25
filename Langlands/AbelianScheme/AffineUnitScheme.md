@@ -1,8 +1,5 @@
 # The multiplicative group represents global units of abelian schemes over an affine base
 
-Authors: Worker 840 (original draft, previous project instance) and Worker 4828
-(current revision, task `3931bd2c-94d1-4d23-acab-fbcd0c8074a7`).
-
 Module: `Langlands.AbelianScheme.AffineUnitScheme`.
 
 This internal module builds the smooth unit scheme required by the published

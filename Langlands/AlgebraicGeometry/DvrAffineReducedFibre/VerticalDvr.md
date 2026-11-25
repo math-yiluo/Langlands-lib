@@ -1,7 +1,5 @@
 # Discrete valuation rings at the generic points of a principal fibre
 
-Worker 519.
-
 In a Noetherian ring, a prime minimal over a regular principal ideal has
 height at most one by Krull's principal ideal theorem. If its local ring
 is a normal domain, the regular generator has nonzero image in the

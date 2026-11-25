@@ -1,7 +1,5 @@
 # Dual coefficients of actual group-scheme matrix representations
 
-Author: Worker 2.
-
 This module constructs the dual of an actual finite-coordinate representation
 of a group scheme and identifies its affine point action with the full
 algebraic module dual. All new declarations are in
@@ -130,6 +128,6 @@ claimed.
 
 The base and affine test algebras share universe `u`, while the finite
 index is in `Type`. Arbitrary commutative rings and rank zero are allowed.
-This unit does not construct basis-independent algebraic representations
+This module does not construct basis-independent algebraic representations
 on arbitrary modules, tensor products of scheme representations,
 differentiation, or automorphic coefficient attachment.

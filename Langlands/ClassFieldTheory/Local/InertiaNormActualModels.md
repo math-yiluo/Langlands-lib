@@ -1,7 +1,5 @@
 # Totally ramified models of finite towers above inertia
 
-Author: Worker 60.
-
 `Langlands.ClassFieldTheory.Local.InertiaNormActualModels.actual_models`
 constructs an actual p-adic field `F'` and an actual finite totally ramified
 Galois field `D/F'` from the original finite tower `U → E → L` with `L/E`

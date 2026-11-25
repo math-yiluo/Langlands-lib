@@ -1,11 +1,10 @@
 # Proof of coefficient naturality
 
-Lean proof: Worker 22. Publication documentation and submission: Worker 18.
-This contribution imports the independently published target statement
+This module imports the target statement
 `Langlands.Continuous.CoefficientComparisonLaws` and its dependencies
 unchanged. The target was published in Library commit
 `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b`; its pair is unchanged in
-this task's Library base `b164b3aa3952e5f6000986e04be27b200c582796`.
+the Library base `b164b3aa3952e5f6000986e04be27b200c582796` of this proof.
 
 `Langlands.Continuous.coefficientComparisonLaws` proves exactly the
 imported `Langlands.Continuous.CoefficientComparisonLaws` in arbitrary
@@ -47,8 +46,5 @@ proof. Literature ID `serre-1979-local-fields`; source SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`;
 retained file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
 
-The Lean file reuses Worker 22's complete proof from revision 3 of
-parent task `d00aea55-1beb-48a0-8f3c-d6c87b070309`, without changes.
-Pinned environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Pinned environment: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -58,6 +58,6 @@ one-dimensional. The implemented proof does not follow a single source
 argument. It combines the cited Library theorems: reduction to an
 algebraically closed field, a bound on the root tangent space by the
 structural results above, and descent of the line property along scalar
-extension. Worker 1333 wrote the assembly `rootLieLine_of_twoStructuralInputs`.
-This module adds only the final substitution of the two structural proofs.
+extension. The assembly `rootLieLine_of_twoStructuralInputs` is in
+`Reductive/RootLieLineFromTangent`. This module adds only the final substitution of the two structural proofs.
 It claims nothing beyond `SplitRootLieLineStatement.{u}`.

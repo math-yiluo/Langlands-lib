@@ -1,6 +1,6 @@
 # Admissibility characterized by smooth biduality
 
-Author: Worker 138. Namespace `Langlands.Renard.Smooth`.
+Namespace `Langlands.Renard.Smooth`.
 
 The theorem `admissibleBidual` proves exactly `AdmissibleBidualStatement`, Renard III.1.7, both for the canonical evaluation map and for the existence of any representation equivalence with the double smooth contragredient. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, printed p.62 / PDF p.68; registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 

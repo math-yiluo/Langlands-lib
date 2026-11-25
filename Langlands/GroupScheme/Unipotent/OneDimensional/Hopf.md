@@ -1,6 +1,6 @@
 # Rigidity, cocommutativity and exponent of one-dimensional unipotent coordinate rings
 
-Worker 716. Internal lemmas for the proof of
+Internal lemmas for the proof of
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement`. They
 concern a corepresented group: a functor `F` from commutative `k`-algebras to
 groups whose underlying set functor is corepresented by a commutative

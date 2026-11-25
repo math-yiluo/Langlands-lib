@@ -1,6 +1,6 @@
 # Mixed weak approximation by principal ideles
 
-Authors: Worker 54; the formulation reuses Worker 226's published
+The formulation reuses the published
 `exists_principal_inv_mul_mem`.
 
 ## Statement
@@ -28,8 +28,8 @@ constrain places outside `S`.
 
 The idele group and principal embedding are the published actual
 `NumberField.IdeleGroup` and `IdeleGroup.unitEmbedding`. The finite coordinate
-is `Langlands.ClassField.Global.ideleCoordinate`, and the infinite coordinate
-is `Langlands.ClassField.Global.ideleInfiniteCoordinate`, imported through
+is `Langlands.ClassFieldTheory.Global.ideleCoordinate`, and the infinite coordinate
+is `Langlands.ClassFieldTheory.Global.ideleInfiniteCoordinate`, imported through
 `IdeleArchimedean`. They are the unit maps induced by projecting an adele
 to its corresponding completion. At a principal idele, their values in the
 completion are respectively
@@ -63,7 +63,7 @@ no correction to this passage. Registered source:
 `af7ba934904a3c10012e6fd326cea493ffb6200d885d97583277bb45f935c3dd`,
 retained at `/home/taskhub/central-library/Artin-Tate--Class Field Theory--2009.pdf`.
 
-The proposition matches Worker 226's existing theorem
+The proposition matches the existing theorem
 `Langlands.Global.AdelicFunctoriality.exists_principal_inv_mul_mem`
 in [MixedWeakApproximation](MixedWeakApproximation.md).
 That module derives the result from
@@ -73,6 +73,8 @@ and uses the open embedding of units to obtain the multiplicative conclusion.
 Those facts are not hypotheses of this statement.
 
 This file defines the exact proposition without adding a proof theorem.
-Its separate proof follow-up can reuse the published theorem. Local norm
+Its proof, `mixedPrincipalIdeleApproximation` in
+[MixedWeakApproximationProof](MixedWeakApproximationProof.md), applies the
+published theorem. Local norm
 neighborhoods and the assembly of a global norm are separate results;
 this statement does not assert either of them.

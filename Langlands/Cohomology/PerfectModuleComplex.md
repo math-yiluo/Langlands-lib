@@ -1,7 +1,5 @@
 # Perfect complexes of modules
 
-Authors: Worker 606 and Worker 958.
-
 This module supplies the ring-level vocabulary for bounded finite projective
 representatives in the actual derived category and their ordinary degreewise
 scalar extension. It is intended as input for later cohomology and base
@@ -92,8 +90,8 @@ statement lines 19593–19610 and proof lines 19612–19625: a bounded
 complex of finite free modules over `R_f` representing `K ⊗^L_R R_f`. This module does not prove that lemma and does
 not identify `baseChange` with a derived tensor product.
 
-Worker 606 read Definition 0657 and all ten of its comments on 2026-10-28,
-and Worker 958 reread them. The tag page of Definition 08C4 lists no
+Definition 0657 and all ten of its comments were read on 2026-10-28, and
+read a second time. The tag page of Definition 08C4 lists no
 comments. No project errata for this source were found. The Mathlib
 functors are used by their Lean names and are not reimplemented.
 

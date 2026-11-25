@@ -1,9 +1,7 @@
 # Projective representability of the relative endomorphism functor
 
-Authors: Worker 1042.
-
-Module `Langlands.AbelianScheme.RelativeEndomorphismRepresentability`, the proof module of task
-`6d6cc279-3071-445f-adba-589e54d9816b`. It proves the published proposition
+Module `Langlands.AbelianScheme.RelativeEndomorphismRepresentability`, the proof module of
+projective representability of the relative endomorphism functor. It proves the published proposition
 `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityStatement.{u}` (module
 `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityStatement`), for an arbitrary universe
 `u`. The module adds no axioms; the proof depends only on `propext`, `Classical.choice` and
@@ -56,11 +54,11 @@ Hilbert scheme of the product, and homomorphisms a closed subscheme of that), it
 Hilbert polynomial are proper by the valuative criterion together with the Néron mapping property,
 and unramified proper morphisms are finite. The Lean proof uses the Hom scheme constructed in the Anthropic Lean formalisation of
 Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`, literature id
-`anthropic-flt-complete-lean-source-6e837e75`), ported in this contribution.
+`anthropic-flt-complete-lean-source-6e837e75`), ported to the Library.
 
 ## Dependencies
 
 - `Langlands.AbelianScheme.RelativeEndomorphismRepresentabilityStatement` (Library): the target.
 - `Langlands.AbelianScheme.RelativeHomNeronExtension` and
-  `Langlands.AbelianScheme.RelativeEndomorphismAffineHomSchemePieces` (same contribution), with
+  `Langlands.AbelianScheme.RelativeEndomorphismAffineHomSchemePieces` (companion modules), with
   their dependencies listed in their Markdown files.

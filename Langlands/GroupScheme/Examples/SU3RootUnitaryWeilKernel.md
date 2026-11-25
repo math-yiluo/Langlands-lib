@@ -77,5 +77,7 @@ This focused prerequisite assumes the quadratic and valuation data and,
 for alternative presentations, compatible model identifications. It does
 not identify the restricted lattice models with every supplied
 `RootFiltrationModelData` or prove the exact
-`UnramifiedRootDepthKernelStatement`. Root-case assembly and the remaining
-supplied-presentation comparisons remain obligations of Task 6392.
+`UnramifiedRootDepthKernelStatement`. Root-case assembly and the other
+supplied-presentation comparisons are not part of this module;
+`UnramifiedRootDepthKernelStatement` is proved as `unramifiedRootDepthKernel` in
+`BruhatTits/IntegralModels/RootDepthKernel`.

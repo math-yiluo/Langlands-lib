@@ -101,16 +101,16 @@ onto itself. `unramifiedRadicalChamberFixation` proves it by applying
 Classical.choice and Quot.sound.
 
 The transitivity premise has exactly the form of the conclusion of
-`UnramifiedZeroDatum.exists_zeroPoints_fixer_smul_chamber_eq` in Worker
-5428's candidate `SharpChamberClosureOrbit` (9f576daa, accepted but not
-yet published). This module does not import that candidate.
+`UnramifiedZeroDatum.exists_zeroPoints_fixer_smul_chamber_eq` in the module
+`Langlands.Geometry.Building.SharpChamberClosureOrbit`. This module does not
+import that module.
 
 ## Role and limits
 
 This is the kernel-fixation part of a proof of
 `UnramifiedTwistedResidueQuotientStatement`, for a point of the form
-`apartmentMap x`. The module does not construct the model D (compare the
-unproved `UnramifiedParahoricModelStatement`) or the quotient Q. It provides
+`apartmentMap x`. The module does not construct the model D (compare
+`UnramifiedParahoricModelStatement`, proved as `unramifiedParahoricModel`) or the quotient Q. It provides
 no Frobenius descent of the quotient, and it does not prove `hRad`.
 
 Set stability of a pointwise-fixed subset reuses the generic theorem in [PointwiseFixerSetStabilizer](../../Geometry/Building/PointwiseFixerSetStabilizer.md).

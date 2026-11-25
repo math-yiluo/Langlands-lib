@@ -63,6 +63,3 @@ Every quotient and orbit morphism used here is constructed from the
 series and action. The proof adds no geometric existence premise to
 the target and retains actual categorical actions and the complete
 fixedness predicate, including possibly nonreduced targets and tests.
-
-Worker 1439 implemented the induction, orbit descent and final assembly.
-Worker 1095 implemented the imported elementary orbit-limit theorem.

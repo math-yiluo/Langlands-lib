@@ -157,7 +157,7 @@ theorem scalarMap_galoisBaseMap (σ : K ≃ₐ[k] K)
 
 variable [IsAffineHom G.X.hom]
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom :=
   inferInstanceAs (IsAffineHom (Limits.pullback.snd G.X.hom (algebraBaseMap k K)))
 

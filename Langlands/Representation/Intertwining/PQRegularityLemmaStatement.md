@@ -1,6 +1,6 @@
 # The `PQ`-regularity lemma for represented parabolics (Renard VII.3.3)
 
-Author: Worker 6. Module `Langlands.Representation.Intertwining.PQRegularityLemmaStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. The module contains one **statement**: the closed `Prop`-valued definition `PQRegularityLemmaStatement` (universe parameters `u, v`), a conjunction of three parts. It proves nothing.
+Module `Langlands.Representation.Intertwining.PQRegularityLemmaStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. The module contains one **statement**: the closed `Prop`-valued definition `PQRegularityLemmaStatement` (universe parameters `u, v`), a conjunction of three parts. It proves nothing.
 
 ## Original source
 
@@ -10,7 +10,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French versio
 - VII.3.1–VII.3.2, the Bruhat order, the support subspaces and the reformulated geometric lemma, printed pp.232–233 / PDF pp.238–239;
 - VI.5.1, the geometric lemma, from printed p.161 / PDF p.167.
 
-Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 6 read PDF pages 238–241.
+Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF pages 238–241 were read.
 
 The setting is two parabolic subgroups `P` and `Q` of `G` with the same Levi factor `M`, and a smooth representation `(σ, E)` of `M`. Renard restricts `σ` to the split component `A_M` and extends it to the group algebra `ℂ[A_M]`. He then defines
 

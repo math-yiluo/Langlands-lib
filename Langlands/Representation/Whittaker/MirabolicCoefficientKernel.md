@@ -1,7 +1,7 @@
 # The mirabolic coefficient map and its kernel
 
-Author: Worker 5165. This is an internal construction and reduction for Task
-5546, derived from the published matrix-coefficient, character-localization
+This is an internal construction and reduction for the proof of
+`MirabolicRestrictionInjectivityStatement`, derived from the published matrix-coefficient, character-localization
 exactness, and full quotient-dual interfaces.
 
 `mirabolicCoefficientFunctionMap` maps an original representation vector to its

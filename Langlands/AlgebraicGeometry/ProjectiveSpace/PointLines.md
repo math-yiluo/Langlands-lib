@@ -38,4 +38,4 @@ The construction and proofs have internal provenance: they combine the existing
 normalized coordinates, published actual affine-chart comparison, and Mathlib's
 projectivization and dual-annihilator APIs. No surjectivity, field-extension
 naturality, scheme action comparison, torsion hyperplane estimate or moduli
-representability is asserted by this unit.
+representability is asserted by this module.

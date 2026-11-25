@@ -61,8 +61,8 @@ power kernel of compression by `g`; the same for `ρ`, the opposite quotient and
 `g⁻¹`. These are weaker than the Library's canonical-lift bijectivity and
 power-kernel equalities.
 
-Worker 937 later replaced the original first field, finite-dimensional `K`-fixed
-vectors, by the `duality` field, which was the only use of finiteness. The
+The original first field, finite-dimensional `K`-fixed vectors, which was the
+only use of finiteness, was later replaced by the `duality` field. The
 published `compactCompression_stableEvaluationDuality` derives `duality` from
 finite-dimensional fixed vectors, so every earlier constructor still applies;
 `Jacquet.CompressionSplittingDuality` derives it from a Fitting splitting of

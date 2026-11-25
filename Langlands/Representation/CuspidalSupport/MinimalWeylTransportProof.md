@@ -1,9 +1,5 @@
 # Quasicuspidality of minimal whole-Levi Weyl transport
 
-Authors: Worker 253, with Worker 76 (the quotient step
-`isLeviQuasicuspidal_transport_of_refinement_images`, reused verbatim from
-their shared draft for task b66849c9).
-
 This proof targets the published `MinimalWeylTransportQuasicuspidalTheorem`
 in `AssociatedGeometricPiecesStatement`. The final theorem
 `minimalWeylTransportQuasicuspidal` quantifies the implicit prime `p` with
@@ -23,7 +19,7 @@ Fix block shapes `B` and `C` of rank `n` and a permutation `w` with
 1. `swap_mem_blockWeyl_iff`: a transposition `swap a b` preserves the blocks
    of `B` exactly when `a` and `b` lie in the same block.
 2. The imported `conjugatesLevi_inv` from
-   `MinimalConjugatingCosetsProof` (Worker 165) says that `w⁻¹` conjugates the
+   `MinimalConjugatingCosetsProof` says that `w⁻¹` conjugates the
    Levi of `C` onto that of `B`.
 3. `blockIndex_eq_iff_of_conjugatesLevi`: `w a` and `w b` lie in the same
    `C`-block if and only if `a` and `b` lie in the same `B`-block. Apply the
@@ -79,7 +75,7 @@ Consequently:
 
 ## Quotient step and conclusion
 
-`isLeviQuasicuspidal_transport_of_refinement_images` (Worker 76) takes the
+`isLeviQuasicuspidal_transport_of_refinement_images` takes the
 transport premise of the two previous results. Let `R` be a proper refinement
 of `C`. The published `Jacquet.coinvariantsMapEquiv` from `GroupTransport`
 identifies the coinvariants of `transport B C w hw ρ` by the refined radical

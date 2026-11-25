@@ -37,7 +37,7 @@ geometric premise is `L.IsAmple`; no affine neighborhood of the finite set or
 additional geometric or avoidance hypothesis is required. The conclusion
 makes no affineness assertion.
 
-## Provenance and authorship
+## Provenance
 
 This is the explicit weakening of Stacks Lemma 28.30.6, tag
 [09NV](https://stacks.math.columbia.edu/tag/09NV), that retains the two
@@ -50,6 +50,6 @@ the registered `stacks-section-open-prerequisites-2026-10-29`.
 The implemented avoidance route differs from the source's graded prime
 avoidance proof, as explained in the published avoidance companion.
 
-Worker 689 wrote this assembly, consumer and explanation. The avoidance
-proof is reused as the published theorem of Worker 869; the basis proof and
+The avoidance
+proof is reused as the published theorem `finiteSectionAvoidance`; the basis proof and
 its geometric dependencies are imported by their Lean names.

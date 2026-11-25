@@ -1,7 +1,7 @@
 # The partition lemma and the rapid decrease of truncated functions
 
 Module `Langlands.Global.ArthurSiegelSetsStatement`, namespace
-`Langlands.Global.ArthurTruncation`. Worker 128, Task 5536, item 3 (second unit). The objects are
+`Langlands.Global.ArthurTruncation`. The objects are
 those of `Langlands.Global.ArthurSiegelSets` and `Langlands.Global.ArthurTruncation` (see their
 Markdown). The module defines four predicates of one compact subgroup `K`: `IsSiegelCovering`,
 `IsSiegelPartition`, `IsRelativeSiegelPartition` and `IsTruncationRapidDecay`. It states one

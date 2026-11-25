@@ -1,7 +1,5 @@
 # Locally constant sections on actual original-chart domains
 
-Author: Worker 56.
-
 Fix a published actual indexed affinoid atlas `a` on a topological space
 `X`, over a complete ultrametric normed field. Its domain objects retain
 the actual subsets, the finite relative neighborhood condition for

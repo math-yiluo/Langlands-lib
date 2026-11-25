@@ -1,9 +1,8 @@
 # Smaller-test-rank tail Laurent-span inclusion
 
-Author: Worker 647. The value-continuation transport and canonical assembly
-adapt Worker 646's shared equal-tail-rank draft, including
-`reindex_appendIdentity_congr`. Worker 53 identified the compatible-measure
-uniqueness route.
+The value-continuation transport and canonical assembly adapt the
+equal-tail-rank proof (`InducedTailEqualRankSpanProof`), including
+`reindex_appendIdentity_congr`.
 
 `Langlands.RankinSelberg.inducedTailSmallerRankSpan.{uF,uV₁,uV₂,uW}`
 proves exactly the closed published proposition

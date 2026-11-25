@@ -1,7 +1,5 @@
 # Properness of supplied dynamic parabolic quotients
 
-Author: Worker 712.
-
 `Langlands.GroupScheme.DynamicQuotientProperStatement` is a proposition at an
 arbitrary universe `u`. This module states it and does not prove it.
 

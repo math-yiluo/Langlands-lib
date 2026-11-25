@@ -2,10 +2,10 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealReverseRecursion`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
+This module is part of the proof of
 `RealStandardIrreducibleCriterionStatement`. It is the inductive core of the reversal statement
-for character lists with ties (`RealCharacterReverseKernel`). It runs Worker 5220's recursion for
-the block Jacquet functional (`RealBlockFunctional.jac_eq_zero`, Task 6749) on matrix
+for character lists with ties (`RealCharacterReverseKernel`). It runs the recursion for
+the block Jacquet functional (`RealBlockFunctional.jac_eq_zero`) on matrix
 coefficients evaluated at transposed arguments, in place of the orthogonality relation
 `∫ u h = 0`.
 
@@ -85,8 +85,7 @@ function of `principalSeries ℝ n χ` such that, for every `x ∈ X`, the funct
 Provenance. Derived, internal infrastructure. It is the leading-term (Langlands lemma) recursion
 along the maximal parabolic subgroups of a block decomposition, as in
 `RealBlockFunctional.jac_eq_zero`, applied to transposed matrix coefficients; the transposition
-device is the one of Worker 5677's complex reversal argument (`ComplexReverseRecursion`, Task
-7064). The module makes no claim beyond the Lean statements.
+device is the one of the complex reversal argument (`ComplexReverseRecursion`). The module makes no claim beyond the Lean statements.
 
 ## Proof
 

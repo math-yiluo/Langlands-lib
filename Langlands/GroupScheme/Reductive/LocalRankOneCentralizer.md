@@ -52,6 +52,7 @@ every supplied field fibre of `C` with exactly those two exponents. The
 negative root is obtained by the reflection of `a` in itself.
 
 No reducedness condition on `R`, locality, noetherian, Henselian or
-characteristic hypothesis is used. This contribution does not prove an open
-three-factor cell or construct normalized Weyl points; the unconditional
-local Isomorphism Theorem remains open.
+characteristic hypothesis is used. This module does not prove an open
+three-factor cell or construct normalized Weyl points; the Library proves the
+unconditional local Isomorphism Theorem as `localSplitIsomorphismTheorem` in
+`LocalSplitIsomorphismTheoremProof`.

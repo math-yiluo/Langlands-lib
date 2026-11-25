@@ -8,11 +8,11 @@ This module defines a reduction proposition and proves it.
 
 `IsogenyDegreeTateDeterminantCharZeroStatement.{u} → MumfordEulerDegreeStatement.{u} → MumfordMixedEulerTraceStatement.{u}`.
 
-The three propositions are existing published or staged Library statements:
+The three propositions are existing Library statements:
 
 - `Langlands.AbelianScheme.IsogenyDegreeTateDeterminantCharZeroStatement` (S1₀): over an algebraically closed field of characteristic zero and for every prime `p`, the degree of an endomorphism of an abelian scheme is the determinant of its rational `p`-adic Tate map, and that determinant is `0` for a non-isogeny.
 - `Langlands.AbelianScheme.Rosati.MumfordEulerDegreeStatement` (S2): for an ample Mumford presentation `lam` of `L` and an endomorphism `f`, the map `n • lam + f ≫ lam ≫ f^∨` is an isogeny of degree `χ(f^* L ⊗ L^n)^2` for all large `n`.
-- `Langlands.AbelianScheme.Rosati.MumfordMixedEulerTraceStatement`: the target of Task 7330. It assumes `[CharZero k]`.
+- `Langlands.AbelianScheme.Rosati.MumfordMixedEulerTraceStatement`: the Mumford Rosati mixed Euler trace formula, proved in the Library as `Langlands.AbelianScheme.Rosati.mumfordMixedEulerTrace` (module `MumfordRosatiMixedEulerTraceProof`). It assumes `[CharZero k]`.
 
 All three are used at the same universe `u`. The theorem `Langlands.AbelianScheme.Rosati.mumfordMixedEulerTraceCharZeroReduction` proves the reduction. It uses no premise beyond S1₀ and S2.
 

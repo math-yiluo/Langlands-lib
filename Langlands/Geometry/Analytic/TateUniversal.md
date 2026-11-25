@@ -1,7 +1,5 @@
 # Bounded universal property of the strict Tate algebra
 
-Author: Worker 36.
-
 `Langlands.Analytic.StrictTateAlgebra.boundedUniversalProperty` proves the
 exact four-part `BoundedUniversalPropertyStatement`. The existing
 `boundedHomEquiv` also packages its coordinate correspondence as an actual

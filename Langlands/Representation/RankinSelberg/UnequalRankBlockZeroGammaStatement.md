@@ -1,7 +1,5 @@
 # The JPSS unequal-rank rational functional equation at block zero
 
-Author: Worker 113.
-
 This module defines the fixed-data predicate
 `Langlands.RankinSelberg.UnequalRankBlockZeroGammaEquation` and the proposition
 `Langlands.RankinSelberg.UnequalRankBlockZeroGammaExistenceStatement.{uF,uV,uW}

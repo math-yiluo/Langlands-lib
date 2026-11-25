@@ -1,7 +1,5 @@
 # Independence of the adelic topology of an algebraic space from its model
 
-Author: Worker 208.
-
 This helper module proves the spread clauses `NumberFieldSpaceSpreadStatement`
 and `CurvePlaceSpaceSpreadStatement` of
 `Langlands.Global.AdelicSpacePointTopologyStatement`. The source is Brian
@@ -18,7 +16,7 @@ proves the independence clauses and combines the two.
 
 Conrad gives the independence without a detailed argument. This module
 implements the standard one. First move both models to a common ring of
-`S`-integers; by Worker 105's `AdelicSpaceSpreadInitialSet`, enlarging `S`
+`S`-integers; by `AdelicSpaceSpreadInitialSet`, enlarging `S`
 does not change the topology. Then descend the isomorphism between the generic
 fibres to a morphism of models over a still larger ring of integers. That
 morphism is continuous on adelic points, so one topology is finer than the
@@ -55,7 +53,7 @@ same way; the function-field version needs `S` nonempty wherever it uses
   Naturality of the generic-fibre point identification
   (`mapSections_naturality`) shows that, after the identification with the
   adelic points of `Y`, the identity map is `RingPoints.map φ`. That map is
-  continuous on adelic points by Worker 105's
+  continuous on adelic points by
   `AdelicSpacePointMapsProof.numberField_continuous` and
   `AdelicSpacePointMapsProof.curve_continuous`. Both spread topologies are
   induced topologies (`continuous_iff_le_induced`).

@@ -27,5 +27,3 @@ published `eq_zero_of_eval_one`, which uses the Borel–maximal-compact
 decomposition. This fixed-line assertion imposes no order, distinctness, or
 unitarity restriction on the inducing tuple. It is the linear-algebra input to
 the reduction; the spherical-head construction remains a separate obligation.
-
-Author: Worker 1650.

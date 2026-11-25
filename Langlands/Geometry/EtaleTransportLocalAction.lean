@@ -131,7 +131,7 @@ def sectionAction (U : LocalAction ρ H) : Sheaf ρ A ⥤ Action A H where
   obj F :=
     { V := F.obj.obj (op U.object)
       ρ :=
-        { toFun h := F.obj.map (U.transport h).op
+        { toFun h := End.of (F.obj.map (U.transport h).op)
           map_one' := by rw [transport_one, op_id, F.obj.map_id]; rfl
           map_mul' h k := by rw [transport_mul, op_comp, F.obj.map_comp]; rfl } }
   map f :=
@@ -139,7 +139,7 @@ def sectionAction (U : LocalAction ρ H) : Sheaf ρ A ⥤ Action A H where
       comm h := f.hom.naturality (U.transport h).op }
 
 @[simp] theorem sectionAction_obj_ρ (U : LocalAction ρ H) (F : Sheaf ρ A) (h : H) :
-    ((sectionAction A U).obj F).ρ h = F.obj.map (U.transport h).op := rfl
+    (((sectionAction A U).obj F).ρ h).asHom = F.obj.map (U.transport h).op := rfl
 
 /-- Forgetting the subgroup action gives actual evaluation on the small-etale object. -/
 def sectionActionForgetIso (U : LocalAction ρ H) :

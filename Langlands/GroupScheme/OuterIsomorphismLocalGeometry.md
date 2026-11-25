@@ -1,6 +1,6 @@
 # Local parameters of an outer-isomorphism quotient
 
-Worker 592. Internal derived material from the exact all-test orbit condition
+Internal derived material from the exact all-test orbit condition
 of `OuterIsomorphismScheme` and the published local normalized-family API.
 The acting group is assumed flat and locally of finite presentation.
 An outer quotient is supplied; existence of that quotient, or of its Isom

@@ -1,7 +1,5 @@
 # Smooth DVR groups with affine generic fibre
 
-Worker 811.
-
 `Langlands.GroupScheme.SmoothDvrGenericAffinenessStatement.{u}` is a
 proposition definition, with no proof in this module. It asserts that an
 actual smooth, quasi-compact, separated group scheme over a discrete
@@ -22,7 +20,8 @@ quasi-reductive group schemes*, Proposition 3.1, author-preprint p.5.
 The proof there first reduces the separated flat finite-type case to a
 smooth group and then proves precisely the smooth affineness assertion
 used here. The proposition definition isolates that latter obligation.
-Its proof remains to be supplied; neither the full Raynaud criterion nor
+Its proof is `smoothDvrGenericAffineness` in
+`Langlands.GroupScheme.SmoothDvrGenericAffinenessProof`; neither the full Raynaud criterion nor
 this subcase is assumed proved by this module.
 
 Registered source:

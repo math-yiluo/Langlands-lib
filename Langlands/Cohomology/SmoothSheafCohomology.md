@@ -1,8 +1,8 @@
 # Compactly supported cohomology of smooth equivariant sheaves
 
-Author: Worker 13. Built on `Langlands.Sheaf.Equivariant.SmoothAbelian` and
-`Langlands.Sheaf.Equivariant.SmoothSheafCompactSections` (this submission),
-Worker 13's published `Langlands.Cohomology.EquivariantDerivedSections` and
+Built on `Langlands.Sheaf.Equivariant.SmoothAbelian` and
+`Langlands.Sheaf.Equivariant.SmoothSheafCompactSections` (ported together with
+this module), `Langlands.Cohomology.EquivariantDerivedSections` and
 `Langlands.Representation.Category.Abelian`, and Mathlib's right derived
 functors (`Mathlib.CategoryTheory.Abelian.RightDerived`).
 
@@ -19,7 +19,7 @@ category.
 
 `compactDerived R G X q` is the degree `q` right derived functor of the left
 exact additive functor `smoothSheafCompactSections R G X` to
-`Langlands.SmoothRep R G`. That target category is abelian by the published
+`Langlands.SmoothRep R G`. That target category is abelian by
 `SmoothRep.abelian`. So every value is a smooth representation, and sheaf
 morphisms induce intertwiners.
 
@@ -34,7 +34,7 @@ morphisms induce intertwiners.
 ## Derived invariant compact sections
 
 `invariantCompactSections R G X` is the inclusion of smooth sheaves followed by
-the published `EquivariantDerivedSections.invariantCompactSections`: the
+the Library's `EquivariantDerivedSections.invariantCompactSections`: the
 compactly supported global sections fixed by every element of `G`, as an
 `R`-module. `invariantCompactSections_additive` and
 `invariantCompactSections_preservesFiniteLimits` hold for the composite of
@@ -51,8 +51,8 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 identifies with the étale `G`-sheaves of Definition 1.4.1. The derived
 functors of `Γ_{c,X(G)}`, compactly supported sections over `X(G)`, are
 `H^q_c(X(G), F)`. Those of `Γ_{c,X{G}} = lim_N Γ_{c,X(N)}`, the colimit over
-open subgroups `N`, are `H^q_c(X{G}, F)`. Worker 13 read these passages in
-the original.
+open subgroups `N`, are `H^q_c(X{G}, F)`. These passages were read in the
+original.
 
 In the proof of Theorem 1.4.2 (printed p.9, steps A.4–A.5), sections over
 `X(G)` correspond to `G`-invariant sections of the `G`-sheaf on `X`. So
@@ -88,5 +88,5 @@ Harris, `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
 All imported modules other than `SmoothSheafCompactSections` and its
-companions in this submission are present in Library commit
+companions ported together with this module are present in Library commit
 `9a0767626050f3346ad5f25e37cef39f38a5c0dc`.

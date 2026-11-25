@@ -210,8 +210,7 @@ theorem rankOneExtensionLDivisibility_of_certificates_and_span
   let := borel (LeftUnipotentQuotient (1 + t) F)
   let : BorelSpace (LeftUnipotentQuotient (1 + t) F) := ⟨rfl⟩
   intro hspan
-  have hlower : IsPadicSymmetricLPolynomial F ψ ν.val π
-      (rankOneExtensionLowerInduced F t χ σ) Pind :=
+  have hlower :=
     (rankOneExtensionSymmetricLPolynomial_iff F t χ σ hχ hσ ψ ν.val π Pind).2 hind
   have hbase' := (isPadicSymmetricLPolynomial_of_le (show t ≤ r by omega)).1 hbase
   have hlower' := (isPadicSymmetricLPolynomial_of_le (show 1 + t ≤ r by omega)).1 hlower

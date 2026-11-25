@@ -1,6 +1,6 @@
 # Split central directions and the reduced archimedean Lie algebra
 
-Author: Worker 2. Namespace: `Langlands.Global.ArchimedeanGL`.
+Namespace: `Langlands.Global.ArchimedeanGL`.
 
 This module separates the real scalar matrix direction at every infinite place
 from the published real archimedean matrix Lie algebra. It constructs the
@@ -106,15 +106,15 @@ Registered source:
 Retained file:
 `literature/Automorphic Forms, Shimura Varieties, and L-functions, Volume I (including Clozel, Motifs et formes automorphes).pdf`.
 SHA256: `ed6ec30fc1f53f7c8ac4276ef449e1cad3ab42457bf5b7ee90a33413345ff96c`.
-Worker 2 visually checked printed pp.113–114 (one-based PDF124–125) and verified
-the retained fingerprint. No source-specific errata file was present in the
+Printed pp.113–114 (one-based PDF124–125) were visually checked and the
+retained fingerprint was verified. No source-specific errata file was present in the
 project or supplied Library notes.
 
 The explicit trace maps, their kernels, scalar matrices, inverse formulas and
 tensor inclusions are derived implementations using the published
 `ArchimedeanLieAlgebra` and `ArchimedeanCompactLieAlgebra` modules and Mathlib's
 matrix trace, scalar matrices, Lie subalgebra inclusion and scalar extension.
-This unit does not construct the positive real central group, prove that its
+This module does not construct the positive real central group, prove that its
 tangent algebra is this scalar range, or identify the reduced algebra with a
 determinant-level subgroup's tangent space. It constructs no compact group
 action on cochains, relative cohomology, algebraic coefficient representation,

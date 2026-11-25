@@ -1,6 +1,6 @@
 # Evaluation of a categorical center at a generator
 
-Worker 1153. This internal categorical lemma supplies the evaluation argument
+This internal categorical lemma supplies the evaluation argument
 used in Renard VI.4.5 (printed p.160 / PDF p.166) and the module example in A.X
 (printed p.269 / PDF p.275), from the registered 9 July 2026 edition
 `renard-2026-representations-groupes-reductifs-padiques`.

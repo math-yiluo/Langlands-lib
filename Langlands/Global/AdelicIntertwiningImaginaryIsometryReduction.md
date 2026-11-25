@@ -9,11 +9,12 @@ IntertwiningMeromorphicContinuationStatement.{0} →
 IntertwiningImaginaryIsometryStatement`
 
 (theorems `intertwiningImaginaryIsometry_of_inputs` and
-`intertwiningImaginaryIsometryReduction`). Worker 48 wrote it for Task 7924,
-whose target is `IntertwiningImaginaryIsometryStatement`. It is a conditional
+`intertwiningImaginaryIsometryReduction`). Its target is
+`IntertwiningImaginaryIsometryStatement`. It is a conditional
 result: none of the three premises is proved in the Library. The cocycle
-relation is the target of Task 5503 and the meromorphic continuation that of
-Task 5501; the adjunction statement is stated in
+relation is stated in `Langlands.Global.AdelicIntertwiningCocycleStatement` and
+the meromorphic continuation in
+`Langlands.Global.AdelicIntertwiningContinuationStatement`; the adjunction statement is stated in
 `Langlands.Global.AdelicIntertwiningAdjunctionStatement`. The universe `0`
 matches the number fields `F : Type` of the target.
 

@@ -1,6 +1,6 @@
 # Zeta integrals of Fourier transforms of lattice cosets
 
-Worker 1248. Internal lemmas.
+Internal lemmas.
 
 * `zeta_const_mul`, `zeta_finset_sum`: the zeta integral is linear on finite
   combinations whose zeta integrands are integrable.

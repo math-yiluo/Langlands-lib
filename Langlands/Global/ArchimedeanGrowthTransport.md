@@ -1,7 +1,5 @@
 # Polynomial growth under arithmetic archimedean transport
 
-Author: Worker 2.
-
 For actual number fields in independent universes and every natural matrix
 rank, including zero, this internal construction proves preservation and
 reflection of the existing matrix-height polynomial-growth condition under

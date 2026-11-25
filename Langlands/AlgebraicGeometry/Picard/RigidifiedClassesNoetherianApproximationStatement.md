@@ -23,7 +23,7 @@ proposition:
             Over.mk (T'.hom ≫ Spec.map φ) ⟶ Over.mk (𝟙 (Spec R₀))) r₀
 ```
 
-This unit only defines the proposition. It proves nothing.
+This module only defines the proposition. It proves nothing.
 
 ## Meaning
 
@@ -50,8 +50,8 @@ sections and the rigidified pullbacks, and the equivalence follows.
 Together with the noetherian case
 `RigidifiedClassesEqualizerClosedNoetherianAffineStatement` applied to `R₀`, `A₀`, `q₀`, `r₀`,
 this proposition yields the affine statement `RigidifiedClassesEqualizerClosedAffineStatement`
-(statement task `40213915-546f-4273-91e7-aff363d3ca2a`) by pulling the closed immersion
-`Z₀ ⟶ Spec R₀` back along `Spec.map φ`. That derivation is not part of this unit.
+by pulling the closed immersion
+`Z₀ ⟶ Spec R₀` back along `Spec.map φ`. That derivation is not part of this module.
 
 ## Exact interface
 
@@ -94,9 +94,9 @@ finitely generated `ℤ`-subalgebras of `R`, which are noetherian (Section 32.5,
   `lemma-proper-flat-geom-red` in `more-morphisms.tex`, registered
   `stacks-picard-diagonal-seesaw-0bdp-0bf0-a04446e5`).
 
-These references explain why the proposition should hold. The unit itself states only the
+These references explain why the proposition should hold. The module itself states only the
 agreement equivalence above.
 
 The approximation is introduced as one half of the cohomological core of the proof of the
-general statement (task `e3d4a3ab-f378-42af-87c5-0cd4caec7b2e`), whose other half is the
+general statement, whose other half is the
 noetherian case `RigidifiedClassesEqualizerClosedNoetherianAffineStatement`.

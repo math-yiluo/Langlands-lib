@@ -34,28 +34,33 @@ variable (e : Rationalization.of B ≅ Rationalization.of X.actionObj.abelianSch
 
 /-- Conjugate the original rational action along the exact supplied isomorphism. -/
 def PolarizedAction.isogenyAction : R →ₐ[ℚ] End0 B where
-  toFun r := e.hom ≫ X.actionObj.action r ≫ e.inv
+  toFun r := End.of (e.hom ≫ (X.actionObj.action r).asHom ≫ e.inv)
   map_one' := by
-    change e.hom ≫ X.actionObj.action 1 ≫ e.inv = 𝟙 _
+    apply End.ext
+    change e.hom ≫ (X.actionObj.action 1).asHom ≫ e.inv = 𝟙 _
     rw [map_one]
     simp
   map_mul' r t := by
-    change e.hom ≫ X.actionObj.action (r * t) ≫ e.inv =
-      (e.hom ≫ X.actionObj.action t ≫ e.inv) ≫
-        (e.hom ≫ X.actionObj.action r ≫ e.inv)
+    apply End.ext
+    change e.hom ≫ (X.actionObj.action (r * t)).asHom ≫ e.inv =
+      (e.hom ≫ (X.actionObj.action t).asHom ≫ e.inv) ≫
+        (e.hom ≫ (X.actionObj.action r).asHom ≫ e.inv)
     rw [map_mul]
-    change e.hom ≫ (X.actionObj.action t ≫ X.actionObj.action r) ≫ e.inv = _
+    change e.hom ≫ ((X.actionObj.action t).asHom ≫ (X.actionObj.action r).asHom) ≫ e.inv = _
     simp only [Category.assoc, Iso.inv_hom_id_assoc]
   map_zero' := by
+    apply End.ext
     rw [map_zero]
     simp
   map_add' r t := by
+    apply End.ext
     rw [map_add]
-    change e.hom ≫ (X.actionObj.action r + X.actionObj.action t) ≫ e.inv =
-      (e.hom ≫ X.actionObj.action r ≫ e.inv) +
-        (e.hom ≫ X.actionObj.action t ≫ e.inv)
+    change e.hom ≫ ((X.actionObj.action r).asHom + (X.actionObj.action t).asHom) ≫ e.inv =
+      (e.hom ≫ (X.actionObj.action r).asHom ≫ e.inv) +
+        (e.hom ≫ (X.actionObj.action t).asHom ≫ e.inv)
     rw [Preadditive.add_comp, Preadditive.comp_add]
   commutes' q := by
+    apply End.ext
     rw [AlgHom.commutes]
     change e.hom ≫ (q • 𝟙 _) ≫ e.inv = q • 𝟙 _
     simp only [Linear.comp_smul, Linear.smul_comp, Category.id_comp, Iso.hom_inv_id]
@@ -67,8 +72,8 @@ def PolarizedAction.isogenyActionIso :
     RationalAlgebraAction.of B β ≅ X.actionObj :=
   RationalAlgebraAction.isoMk e (by
     intro r
-    change (e.hom ≫ X.actionObj.action r ≫ e.inv) ≫ e.hom =
-      e.hom ≫ X.actionObj.action r
+    change (e.hom ≫ (X.actionObj.action r).asHom ≫ e.inv) ≫ e.hom =
+      e.hom ≫ (X.actionObj.action r).asHom
     simp only [Category.assoc, Iso.inv_hom_id, Category.comp_id])
 
 local notation "E" => PolarizedAction.isogenyActionIso (P := P) (X := X) (B := B) (e := e)
@@ -196,12 +201,12 @@ def PolarizedAction.isogenyModel : PObj where
     · exact X.involutionCompatible
     · intro r
       have he := RationalAlgebraAction.intertwines (E).hom r
-      change comp0 B B X.actionObj.abelianScheme (β r) e.hom =
+      change comp0 B B X.actionObj.abelianScheme (β r).asHom e.hom =
         comp0 B X.actionObj.abelianScheme X.actionObj.abelianScheme
-          e.hom (X.actionObj.action r) at he
-      change comp0 B B X.actionObj.abelianScheme (β r) (Rationalization.ofHom (d).hom) =
+          e.hom (X.actionObj.action r).asHom at he
+      change comp0 B B X.actionObj.abelianScheme (β r).asHom (Rationalization.ofHom (d).hom) =
         comp0 B X.actionObj.abelianScheme X.actionObj.abelianScheme
-          (Rationalization.ofHom (d).hom) (X.actionObj.action r)
+          (Rationalization.ofHom (d).hom) (X.actionObj.action r).asHom
       rw [(d).ofHom_hom]
       simpa only [map_zsmul, LinearMap.smul_apply] using
         congrArg (fun z => (d).homDenom • z) he

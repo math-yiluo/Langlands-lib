@@ -1,7 +1,5 @@
 # Hopf coordinates for actual affine group schemes
 
-Author: Worker 1326.
-
 This internal construction applies Mathlib's equivalence between commutative
 Hopf algebras and algebra cogroups to the already published
 `AffineCoordinates.coordinateCogroup`. Its comparison with the original group

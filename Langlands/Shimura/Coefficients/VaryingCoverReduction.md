@@ -1,7 +1,5 @@
 # Power-reduction systems of varying-cover coefficient cospans
 
-Author: Worker 13.
-
 This is an internal construction from actual module quotients,
 [functorial equivariant diagrams](../../CategoryTheory/EquivariantDiagramFunctor.md),
 [associated cospans](VaryingCover.md), and the canonical comparison in

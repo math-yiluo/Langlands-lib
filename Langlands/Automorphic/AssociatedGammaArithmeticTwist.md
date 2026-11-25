@@ -1,8 +1,8 @@
 # Local twisted pair classes of relative Weil representations
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaArithmeticTwist`, namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`). It provides the local facts about the
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`). It provides the local facts about the
 arithmetic side of Henniart 2000, Théorème 2.3: the global twist `(χ ∘ τ_F) ⊗ S` of a
 relative Weil representation, restricted along a local map `ι : W_{F_z} → W_{E/F}`. These are
 internal deductions from the Library; the only external mathematical inputs are the proved

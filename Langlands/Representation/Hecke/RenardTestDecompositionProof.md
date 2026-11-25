@@ -1,8 +1,7 @@
 # Proof of Renard II.3.5 finite test-function coset expansions
 
-Worker 139 proves
-`Langlands.Hecke.RenardTestDecomposition.Statements` in the theorem
-`Langlands.Hecke.RenardTestDecomposition.statements`. Its three component
+The theorem `Langlands.Hecke.RenardTestDecomposition.statements` proves
+`Langlands.Hecke.RenardTestDecomposition.Statements`. Its three component
 theorems are `doubleCosetExpansion`, `leftInvariantExpansion` and
 `rightInvariantExpansion`, in the same namespace. Each proves the exact
 published proposition at the unrestricted group universe `uG`.
@@ -59,6 +58,5 @@ The given subgroup and compactness premise are retained.
 
 The proof requires no countability or measure hypothesis and introduces
 no normalization. The published statement pair and its imports are
-unchanged. Compilation and exact-target inspection use the task's pinned
-Lean environment; independent validation, semantic review and publication
-are separate acceptance steps.
+unchanged. Compilation and exact-target inspection use the Library's pinned
+Lean environment.

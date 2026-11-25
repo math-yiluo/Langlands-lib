@@ -1,5 +1,5 @@
 import Langlands.ClassFieldTheory.Local.TotallyRamifiedIntegerMonogeneityStatement
-import Langlands.ClassFieldTheory.Local.NYLL.RelativeIntegerStructureProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RelativeIntegerStructureProof
 import Langlands.ClassFieldTheory.Local.PrimeBreakUnramifiedBaseChangeSupport
 import Mathlib.RingTheory.Nakayama
 
@@ -84,7 +84,7 @@ theorem totallyRamifiedIntegerMonogeneity : TotallyRamifiedIntegerMonogeneity.{u
   let := TL.localField
   let := PadicField.TopologicalData.relativeIntegerFieldAlgebra (E := L) TF
   let : Module.Finite TF.Integers TL.Integers :=
-    (NYLL.relativeIntegerStructure p F L TF TL).2
+    (UniverseZero.relativeIntegerStructure p F L TF TL).2
   have hinj : Function.Injective (algebraMap TF.Integers TL.Integers) := by
     intro x y hxy
     apply Subtype.ext

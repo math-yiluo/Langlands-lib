@@ -4,7 +4,7 @@ This internal construction works over a complete ultrametric normed
 field `K` with a complete normed extension field `L`. The algebra,
 space and extension-field universes are independent. The target is
 a saturated presentation with space and chart-index universes both
-equal to the space universe, as in the localized target statement.
+equal to the space universe, as in `LocalizedEtaleFieldPointPullbackStatement`.
 
 For nested actual charts `i` and `j` containing the same full field
 point `p`, the actual bounded restriction map preserves the exact
@@ -41,5 +41,5 @@ target, giving `exists_chartTest_common_refinement`.
 The provenance is internal: bounded evaluation compatibility,
 actual character-kernel quotient descent and the atlas net axiom
 give the constructions, and faithful common-chart detection gives
-the triangles. This unit asserts no final unconditional localized
+the triangles. This module asserts no final unconditional localized
 pullback preservation.

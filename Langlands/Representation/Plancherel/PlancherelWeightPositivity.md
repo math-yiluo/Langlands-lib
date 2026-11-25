@@ -1,6 +1,6 @@
 # Positivity of the Plancherel weight on a dense open set
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.PlancherelWeightPositivity` proves that
 the Plancherel weight `μ` is a positive real number on a dense open set. This
 holds on the unitary unramified characters `Im X(Z_G(ζ ∘ i))` and on the

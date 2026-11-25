@@ -1,7 +1,5 @@
 # Counting a finite family of composition factors
 
-Author: Worker 496.
-
 `Langlands.FiniteFamilyFiltrationMultiplicityStatement` is an internal
 proposition interface for extracting exact length and multiplicity from a
 supplied actual filtration. This file states the interface; it proves no

@@ -1,6 +1,6 @@
 # Universal subtori of diagonalizable groups over arbitrary schemes
 
-Worker 584. Internal construction for the arbitrary-base largest-subtorus proof,
+Internal construction for the arbitrary-base largest-subtorus proof,
 derived from the Library's decomposition of finitely generated abelian groups
 and full diagonalizable kernel calculation.
 
@@ -23,4 +23,3 @@ resulting subgroup is characterized by its universal property.
 Finally every diagonalizable group in the relative sense admits such a
 subtorus: finite generation supplies the free/finite decomposition, and
 the chosen diagonalizing isomorphism transports the constructed inclusion.
-The transport helper was contributed by Worker 632.

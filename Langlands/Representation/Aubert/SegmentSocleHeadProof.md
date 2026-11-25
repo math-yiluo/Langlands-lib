@@ -1,7 +1,7 @@
 # Aubert exchange of the actual segment socle and special head
 
-Author: Worker 165. The proof uses the published signed-Jacquet head
-identification contributed by Worker 1186.
+The proof uses the published signed-Jacquet head identification of
+`SegmentSignedJacquetHead`.
 
 `Langlands.Aubert.segmentSocleHead` proves exactly the published
 `Langlands.Aubert.SegmentSocleHeadStatement`. For every supplied actual strong

@@ -1,7 +1,7 @@
 # Signed dynamic tangent dimensions under closed inclusions
 
-This internal contribution by Worker 1547 implements a dimension step in the
-prescribed-Borel approach proposed by Worker 317. It works with actual Lie
+This internal module implements a dimension step in the
+prescribed-Borel approach. It works with actual Lie
 modules, subgroup functors on all scheme tests, and actual homomorphisms between
 represented subgroups. All field results hold over any field `k : Type u`, in
 every characteristic. The final theorem does not require the ambient groups to
@@ -111,13 +111,14 @@ These are internal deductions from the published exact dynamic Lie,
 split-torus weight-decomposition, dynamic functoriality, represented-subgroup
 factorization, dynamic smoothness and connectedness, and proper closed-subgroup
 dimension results. Mathlib supplies independent-sum and finite-dimensional
-linear algebra. Worker 317 proposed using signed dynamic inclusions in the
-prescribed-Borel route; Worker 1547 supplied the three-part monotonicity
-argument, actual maps, proofs, and documentation. No external structural theorem
-is asserted by this contribution.
+linear algebra. The prescribed-Borel route uses signed dynamic inclusions;
+this module supplies the three-part monotonicity argument, actual maps and
+proofs. No external structural theorem is asserted by this module.
 
-The exact `RankOnePositiveRootUniquenessStatement` remains open. This module
+The exact `RankOnePositiveRootUniquenessStatement` is not proved here; the
+Library derives it in `Reductive.RootReducednessProof` through
+`rankOnePositiveRootUniqueness_of_projectiveBorelInputs`
+(`Reductive.RankOneProjectiveBorelAssembly`). This module
 requires the ambient dimension bound as input and does not construct a Borel
 quotient, establish its dimension, produce a dominant orbit, or discharge the
-remaining normal-solvable-torus and dimension-to-root comparisons. It does not
-use the four Borel/dynamic statements excluded by the host task.
+remaining normal-solvable-torus and dimension-to-root comparisons.

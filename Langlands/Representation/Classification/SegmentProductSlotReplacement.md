@@ -1,7 +1,5 @@
 # Replacement at an actual adjacent slot
 
-Author: Worker 494.
-
 This internal construction starts with actual segment-product data `d`, adjacent
 positions `j` and `j+1`, and arbitrary supplied inner data `e₂` whose rank is the
 size of the merged position. The family `adjacentReplacementDatum` uses `e₂` at

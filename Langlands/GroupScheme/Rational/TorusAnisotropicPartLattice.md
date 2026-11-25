@@ -1,6 +1,6 @@
 # Integral invariants for the anisotropic part of a torus
 
-Worker 679. This internal lattice lemma supports the proof of Renard V.2.2,
+This internal lattice lemma supports the proof of Renard V.2.2,
 Remark 2. For an integral representation of a group on a finite free module,
 `free_quotient_invariants` proves that the quotient by the invariant submodule
 is free. The difference map sends

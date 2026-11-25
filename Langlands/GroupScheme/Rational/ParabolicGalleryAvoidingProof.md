@@ -1,7 +1,5 @@
 # Proof of rank-one galleries avoiding a central split torus
 
-Author: Worker 5515.
-
 `Langlands.GroupScheme.rationalParabolicGalleryAvoiding` proves the published
 proposition `RationalParabolicGalleryAvoidingStatement.{u}` (module
 `ParabolicGalleryStatement`) exactly, at an arbitrary universe `u`, with no
@@ -15,7 +13,8 @@ centralizer `Z_G(b ≫ j)` in the same subgroup functor. Then the theorem gives
 a finite gallery from `F` to `F'` of actual rank-one walls
 (`RationalRankOneWallData`). At every wall, `b` composed with the inner Levi
 inclusion into the wall Levi is not central. This statement is the internal
-geometric input of the persistence argument for Task 5515. Its provenance is
+geometric input of the persistence argument for the existence of an
+irreducible induced unramified twist. Its provenance is
 explained in the statement pair.
 
 ## Implemented proof

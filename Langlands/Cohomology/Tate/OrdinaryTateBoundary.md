@@ -1,7 +1,5 @@
 # Ordinary-to-Tate comparison on cocycles and connecting maps
 
-Proof author: Worker 45. Proof audit and documentation preparation: Worker 54.
-
 The theorem `Langlands.Tate.ordinaryTateBoundaryLaws` proves the published
 proposition `Langlands.Tate.OrdinaryTateBoundaryLaws` exactly. This is an internal
 compatibility proof for the published ordinary-to-Tate comparison.

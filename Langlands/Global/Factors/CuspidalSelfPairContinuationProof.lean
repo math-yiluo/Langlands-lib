@@ -21,7 +21,7 @@ namespace Langlands.Global
 open Automorphic RankinSelbergGlobal RankinSelbergGlobal.SelfPair
 open CuspidalPairBoundaryNonvanishing CuspidalPairFunctionalEquation
 open CuspidalPairAbsoluteConvergence
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 local instance selfPairSchemeAffine (F : Type u) [Field F] (n : ℕ) :
     AlgebraicGeometry.IsAffine (Scheme F n).X.left :=

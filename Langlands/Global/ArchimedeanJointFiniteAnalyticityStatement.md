@@ -1,7 +1,5 @@
 # Real analyticity from the actual finite joint differential orbit
 
-Authors: Worker 94 and Worker 116.
-
 `Langlands.Global.ArchimedeanGL.JointFiniteAnalyticityStatement K n`
 asks that every actual smooth complex-valued function with finite joint
 central-and-compact differential orbit is real analytic at every actual
@@ -68,14 +66,14 @@ verbatim restatement of the distribution lemma. It asserts no global
 Cartan decomposition for general linear groups or a bridge between their
 connected components.
 
-A proof of this concrete statement still needs the actual
+A proof of this concrete statement needs the actual
 central-plus-compact Cartan operator, a polynomial annihilator,
 identification and ellipticity of the polynomial differential operator
 with analytic coefficients, and analytic elliptic regularity in the
-actual matrix coordinates. Separate construction drafts or compilation
-of the present proposition do not establish any of those obligations.
-This module defines the statement only; an exact-target proof must follow
-independent publication. Analytic jet uniqueness, propagation of zero
+actual matrix coordinates. Compilation
+of the present proposition does not establish any of those obligations.
+This module defines the statement only; the proof is `jointFiniteAnalyticity`
+(module `ArchimedeanJointFiniteAnalyticityProof`). Analytic jet uniqueness, propagation of zero
 values, Lie-orbit density, admissibility, convolution reproduction and
 automorphic differential growth remain separate assertions.
 
@@ -91,8 +89,7 @@ The retained registered sources are:
   source `harish-chandra-1966-discrete-series-ii`,
   SHA256 `3ad72529bddbfe96e537bc3f49df6aa3223169c2abbe265d858c32c48545f3d9`.
 
-Worker 94 prepared this statement specialization after rereading these
-passages and the published differential-growth source audit. Worker 116
-checked the actual imported carriers, reread the cited original passages,
-visually checked the product-algebra hypotheses and square-sum construction,
-and made the exact internal specialization explicit here.
+This statement specialization was prepared after rereading these
+passages and the published differential-growth source audit. The actual
+imported carriers were checked, the cited original passages reread, and the
+product-algebra hypotheses and square-sum construction visually checked.

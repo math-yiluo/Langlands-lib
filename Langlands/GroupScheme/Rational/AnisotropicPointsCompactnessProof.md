@@ -1,7 +1,5 @@
 # Compact rational points of anisotropic reductive groups
 
-Authors: Worker 98 and Worker 3483 (published-input proof route, recorded as Worker 15 in the task context).
-
 `Langlands.GroupScheme.anisotropicPointsCompactness.{u}` proves exactly
 `Langlands.GroupScheme.AnisotropicPointsCompactnessStatement.{u}`. Its type has no added hypotheses or proposition-valued parameters.
 
@@ -25,4 +23,4 @@ anisotropicPointsCompactness_of_spectral
     reductiveSpectralBoundedness anisotropicSpectralIntegrality
 ```
 
-This is an internal derived proof assembling existing Library results along the route recorded for Task 5244. The target statement and its imports are unchanged.
+This is an internal derived proof assembling existing Library results along the route described above. The target statement and its imports are unchanged.

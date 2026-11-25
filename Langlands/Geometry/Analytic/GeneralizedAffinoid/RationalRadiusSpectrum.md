@@ -1,6 +1,6 @@
 # Closed spectrum embeddings for smaller rational radii
 
-Worker 56 derives this construction from the published weighted rational
+This construction is derived from the published weighted rational
 spectrum theorem and the actual scalar radius restriction. It identifies
 the spectrum map for smaller radii with inclusion of the corresponding
 closed inequality subspaces.

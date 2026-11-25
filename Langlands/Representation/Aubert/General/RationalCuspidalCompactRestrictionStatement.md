@@ -130,7 +130,8 @@ V.5 says its results are proved in [14].
 `D.specialCompactSubgroup x` is the existing geometric special compact subgroup of a
 special vertex. The statement assumes the three properties for this particular `K0`. It
 does not claim that every `KPApartmentData` has a special vertex, or that the properties
-hold for an arbitrary special vertex. Those are tasks of the shared KP program.
+hold for an arbitrary special vertex. Those are questions for the shared KP development
+(`Langlands.Geometry.Building.KPApartment`), not for this statement.
 
 **The covering clause.** V.5.1(4) says
 `G = ⊔_{a ∈ C̃_∅^+} K0 a K0 = ⊔_{a ∈ C_∅^+, f ∈ F_∅} K0 a f K0`, with notation from V.3.23,
@@ -156,7 +157,7 @@ The abbreviation keeps only coverage. It omits:
 - the lattice-lifting law `C̃_∅ = C_∅ F_∅` with its unique representatives;
 - any valuation inverse or lattice basis.
 
-Each of these omissions weakens the hypothesis relative to the source. Once `simpleRelativeRoots i ν` is identified with `Δ_∅` (see the next section), the source's V.5.1(4) implies `FiniteCartanCovering`. The existence and uniqueness laws of the V.3.23 lifting remain D05 obligations.
+Each of these omissions weakens the hypothesis relative to the source. Once `simpleRelativeRoots i ν` is identified with `Δ_∅` (see the next section), the source's V.5.1(4) implies `FiniteCartanCovering`. The existence and uniqueness laws of the V.3.23 lifting are D05 obligations.
 
 No other in-book conclusion is assumed. In particular, the statement does not use:
 - `JointSpecialCompactBasisExistenceStatement`, `SpecialCompactRenardComparison`,
@@ -179,7 +180,7 @@ The Library proves one direction of the comparison. From `hRoots`, splitness of 
 `hν`, `HasRelativeRootSystem.linearIndependent_simpleRelativeRoots` gives linear
 independence of the actual simple roots. `simpleRelativeRoot_mem_indivisiblePositiveRoots`
 then shows that every actual simple root is indivisible and `ν`-positive. The following
-remain explicit comparison obligations of the general framework:
+are explicit comparison obligations of the general framework:
 - the converse inclusion (every simple root of the indivisible positive system is an
   actual simple root);
 - the identification of `relativeRoots i` with `Σ'(A_∅)`;
@@ -191,7 +192,7 @@ These obligations determine how far the cuspidality hypothesis (indexed by subse
 and `C_∅^+`. The statement uses the existing actual objects, not a separate Renard root
 theory. It does not claim independence from the choice of `(S, ν, x)`.
 
-## Proof obligations left to the proof successor
+## Proof obligations left to the proof
 
 The source proves (a) ⇒ (c) through (b), compactness modulo the center
 (PDF pp.144–145):
@@ -204,15 +205,17 @@ The source proves (a) ⇒ (c) through (b), compactness modulo the center
    `V_{N_α} ≠ 0`.
 2. **(b) ⇒ (c).** This uses compactness of `⁰G ∩ Z(G)` (V.2.6) and [32], Theorem 2.6.
 
-The following steps are not assumed and remain proof obligations:
+The following steps are not assumed and are proof obligations:
 - the D02/D05 facts used along the way: compactness of the center intersection,
   split/central/derived comparisons, the section and finite-lattice arguments, and
   extraction of a contracted wall;
 - the simple-root comparison above;
 - the smooth-dual comparison for the open subgroup.
 
-A proof may also go directly to `⁰G` without passing through (b). The successor must
-prove this implication unchanged, with no theorem-valued premises added.
+A proof may also go directly to `⁰G` without passing through (b). The proof must
+prove this implication unchanged, with no theorem-valued premises added. The theorem
+`rationalCuspidalCompactRestriction` in `RationalCuspidalCompactRestrictionProof` proves
+this statement with no further hypotheses.
 
 ## Scope
 

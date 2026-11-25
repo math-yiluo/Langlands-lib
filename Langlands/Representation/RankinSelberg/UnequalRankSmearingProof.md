@@ -1,7 +1,5 @@
 # Small normalized cutoffs for JPSS block transfer
 
-Author: Worker 180.
-
 This module supplies the small-cutoff lemmas used by
 [UnequalRankBlockSpanProof](UnequalRankBlockSpanProof.md), together with a
 generic conditional Fourier-cutoff reduction. These are internal consequences

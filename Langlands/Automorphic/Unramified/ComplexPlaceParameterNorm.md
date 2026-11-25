@@ -1,7 +1,7 @@
 # Complex-place parameters of norm pullbacks
 
 Module `Langlands.Automorphic.Unramified.ComplexPlaceParameterNorm`, namespace
-`Langlands.Automorphic.Unramified`. Author: Worker 5086 (Task 7783). Internal helper
+`Langlands.Automorphic.Unramified`. Internal helper
 results; no source is cited.
 
 Let `K ⊆ L` be number fields (`Algebra K L`), `v` a complex place of `K` and `w` a place of

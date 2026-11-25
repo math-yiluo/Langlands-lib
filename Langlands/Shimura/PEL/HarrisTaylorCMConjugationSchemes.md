@@ -101,7 +101,7 @@ conjugation isomorphisms here. The registered source is
 `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
 
-This is a derived construction by Worker 57. Its implemented proof uses
+This is a derived construction. Its implemented proof uses
 topological conjugation, the same-place smallness argument, genuine transporter
 inverse laws, and the existing exact represented Yoneda tower and canonical
 comparisons. It does not prove the source's representability or cover

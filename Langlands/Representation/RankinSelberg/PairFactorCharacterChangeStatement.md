@@ -1,6 +1,6 @@
 # Change of additive character for factors of pairs of unequal rank
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 how the Rankin-Selberg factors of Jacquet, Piatetski-Shapiro and Shalika
 change when the additive character `ψ` is replaced by `ψ^a(x) = ψ(ax)`,
 `a ∈ Fˣ`, for pairs of unequal rank:
@@ -19,7 +19,9 @@ term (see Interpretation).
 
 The relations are `IsPadicSymmetricLPolynomial` and
 `IsPadicSymmetricEpsilonFactor` (module `PadicPairFactors`). The module
-defines three statements. None of them is proved.
+defines three statements. None of them is proved here;
+`pairFactorCharacterChange` (`PairFactorCharacterChangeProof`) proves
+`PairFactorCharacterChangeStatement`.
 
 ## Source
 
@@ -157,8 +159,8 @@ normalized generator of the integrals of every block.
 
   So with self-dual measures `ε(s, Π × τ, ψ^λ) = ω_Π(λ)^m ω_τ(λ)^n |λ|^(nm(s-1/2)) ε(s, Π × τ, ψ)`.
   For `n = m + 1` (`k = 0`) there is no `x`-integral and both conventions
-  give `d = nm/2`. For `GL_3 × GL_1` the author checked both blocks
-  `j = 0, 1` by hand (a private check, not in the source). The result agrees with Tate's
+  give `d = nm/2`. For `GL_3 × GL_1` both blocks `j = 0, 1` were checked
+  by hand (a private check, not in the source). The result agrees with Tate's
   `ε(s, χ, ψ^a) = χ(a) |a|^(s-1/2) ε(s, χ, ψ)` for self-dual measures, and
   with `γ(s, π × σ, ψ) γ(1 - s, π̌ × σ̌, ψ⁻¹) = 1` (the factors for `ψ^a`
   and `(ψ⁻¹)^a` change by inverse amounts). It is also consistent with the

@@ -1,11 +1,11 @@
 # Jacquet group invariance on the original carrier
 
-This internal unit transfers the published integral Jacquet generation
+This module transfers the published integral Jacquet generation
 identities to the actual general linear group over the field and to its
 representation fixed spaces. It also applies the published negative-level
 Whittaker obstruction to the source's integer scaling convention. It is
-auxiliary progress toward the conductor theorem; the analytic derivation of
-the two invariances remains an obligation.
+an auxiliary step toward the conductor theorem; the analytic derivation of
+the two invariances is not part of this module.
 
 Let `F` be a field, `O` a subring, and the matrix rank be `n + 1`.
 `fieldJacquetLevelMirabolic O n I` is the field image of the actual integral
@@ -53,12 +53,12 @@ integer `m` and an `IsUniformizingElement` witness. If `m < 0`, the positive
 power `v(ϖ)^(-m)` is below one, a contradiction. No relation between `m`
 and any epsilon factor is assumed or proved.
 
-The provenance is internal: the new results follow from
+The provenance is internal: the results of this module follow from
 `MirabolicLevelGeneration`, `NegativeLevelGeneration`, the unchanged
 congruence definitions, and elementary properties of subgroup images,
 stabilizers, and valuations. Those imported modules document the original
 JPSS 1981 Section 5.3 argument and its corrected negative-level group
-boundary. This unit neither uses the flawed essential-vector existence
+boundary. This module neither uses the flawed essential-vector existence
 argument nor asserts full field general linear group generation.
 
 No essential vector, nonzero vector, minimal fixed level, dimension-one

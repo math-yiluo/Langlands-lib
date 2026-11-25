@@ -48,6 +48,7 @@ of the inverse full-adele comparison. This argument uses neither compactness
 nor finiteness of residue fields.
 
 The separated-base formulation includes products by taking Z to be the
-terminal model. This unit supplies a proposition target; its proof and
-the comparison with generic-fiber adelic point topologies are separate
-obligations.
+terminal model. This module supplies a proposition target; its proof is
+`Langlands.Global.adelicFixedModelPullback` in `AdelicFixedModelPullbackProof`,
+and the comparison with generic-fiber adelic point topologies is not part of
+this statement.

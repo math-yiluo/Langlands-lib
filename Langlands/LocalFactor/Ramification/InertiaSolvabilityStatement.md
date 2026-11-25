@@ -1,7 +1,5 @@
 # Solvability of actual finite p-adic inertia groups
 
-Author: Worker 109.
-
 `Langlands.Ramification.Padic.FiniteInertiaSolvability.{u,v}` is the following
 proposition, with independent universes `u` and `v`:
 

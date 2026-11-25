@@ -61,9 +61,8 @@ helper conclusions.
 ## Provenance and scope
 
 This is an internal finite-dimensional linear-algebra derivation of the
-published target. Worker 48 implemented the proof; Worker 4 supplied the
-kernel/quotient determinant route in the task context and pointed to the
-published determinant-conjugacy calculation. The implementation imports
+published target, along the kernel/quotient determinant route described
+above. The implementation imports
 existing definitions and proves no other clause of `RepresentationOperations`.
 
 The target's source boundary is Tate, *Number theoretic background*,
@@ -73,7 +72,7 @@ SHA-256 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 That original passage defines exact-sequence additivity for functions on
 representations to descend to virtual representations and discusses
 dimension and determinant. It is motivation for the target, not a quoted
-proof of these two formulas. Worker 48 read this passage. The proof above
+proof of these two formulas. This passage was read directly. The proof above
 is algebraic and needs none of the topological assumptions used in Tate's
 surrounding discussion.
 
@@ -92,5 +91,4 @@ environment. The check assigns the unapplied closing constant both to the
 published proposition and to its complete expanded telescope, with four
 independent universe levels. Declaration inspection reports precisely
 `uG`, `uV`, `uU`, `uT` and only the standard axioms `propext`,
-`Classical.choice`, and `Quot.sound`. Formal exact-target validation and
-independent semantic review are separate submission requirements.
+`Classical.choice`, and `Quot.sound`.

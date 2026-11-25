@@ -1,7 +1,5 @@
 # A single rational character direction for a maximal proper Levi
 
-Author: Worker 359.
-
 This internal structural prerequisite concerns an actual maximal proper
 rational parabolic of a connected reductive group over an arbitrary field,
 its rational Levi and a split component of that Levi. It uses the Library's

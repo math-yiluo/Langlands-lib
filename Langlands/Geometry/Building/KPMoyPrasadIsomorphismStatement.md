@@ -1,9 +1,7 @@
 # KP Theorem 13.5.1 (1): the Moy–Prasad isomorphism on supplied data
 
-Author: Worker 3557.
-
-This module belongs to the Kaletha–Prasad Bruhat–Tits program (task
-`f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`). It states part (1) of KP Theorem
+This module belongs to the Library's Kaletha–Prasad Bruhat–Tits development.
+It states part (1) of KP Theorem
 13.5.1, without the clause on unramified extensions, for the Library's
 supplied building data. For `0 < r ≤ s` satisfying one of KP's three
 alternatives, the statement asserts
@@ -188,11 +186,10 @@ over `K` and descend; the statement does not repeat that step.
 statement without the premise. The ramified quasi-split `SU_3` over `ℚ_2`
 with a small supplied filtration of `Z(F)` satisfies all the other
 hypotheses at `r = 1/2`, `s = 1` (alternative (3)), yet has a commutator of
-two elements of `P_{x,1/2}` outside `P_{x,1}`. This was found in review of
-an earlier version of this module. The Library note
+two elements of `P_{x,1/2}` outside `P_{x,1}`. The Library note
 `notes/bruhat-tits/moy-prasad-supplied-filtration-counterexample.md` treats
 the same group with a related filtration of `Z(F)`, contained in the one
-used in review. It shows that `IsDoubleRootCommutatorFriendly` fails for
+above. It shows that `IsDoubleRootCommutatorFriendly` fails for
 that filtration. The statement therefore assumes
 `Zf.IsDoubleRootCommutatorFriendly`. Under it and the apartment and
 filtration axioms, the Library proves
@@ -280,7 +277,7 @@ KP prove for their filtrations, enters through the published premise
 `MoyPrasadAlternative` and `rootBlockLie` are internal. The module uses the
 published `ParahoricBuildingData`, `CentralizerFiltration.moyPrasad`,
 `filtrationBlock`, `SatisfiesApartmentAxioms`,
-`SatisfiesFiltrationAxioms` and `IsDoubleRootCommutatorFriendly`, Worker
-13's `LieFiltrationData` with
+`SatisfiesFiltrationAxioms` and `IsDoubleRootCommutatorFriendly`,
+`LieFiltrationData` with
 `lieFiltration` and `rootLie` (module `KPLieFiltration`), and
 `HasWeaklyInducedMaximallySplitTorus` (module `KPWeaklyInducedTorus`).

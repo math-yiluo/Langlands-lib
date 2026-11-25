@@ -1,7 +1,5 @@
 # Uniform field-valued point bounds for module-finite algebras
 
-Author: Worker 90.
-
 This internal auxiliary result is derived from the elementary root bound for a
 polynomial over a field. For a commutative ring `R` and a module-finite
 commutative `R`-algebra `A`, `exists_uniform_card_algHom_le` produces a natural

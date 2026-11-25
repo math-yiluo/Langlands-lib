@@ -1,6 +1,6 @@
 # Square-root intermediate fields
 
-Worker 27 authored this internal algebraic support module for the auxiliary
+This is an internal algebraic support module for the auxiliary
 quadratic construction. `Langlands.Global.rationalRootField x` is the actual
 intermediate field `ℚ⟮x⟯` of the supplied ambient field. The definition imposes
 no square equation or degree condition; those appear in the following lemmas.
@@ -44,7 +44,7 @@ claims made by this module.
 The provenance is internal, derived algebraic infrastructure motivated by Guy
 Henniart, *Une preuve simple des conjectures de Langlands pour GL(n) sur un
 corps p-adique*, Inventiones Mathematicae 139 (2000), Section 3.3, printed page
-449, second paragraph (PDF page 11). Worker 27 read that page of the registered
+449, second paragraph (PDF page 11). That page was read from the registered
 original `henniart-2000-simple-proof`, SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 The paragraph chooses imaginary and real quadratic fields split at `p` and

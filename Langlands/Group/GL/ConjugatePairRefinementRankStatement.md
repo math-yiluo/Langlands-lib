@@ -1,7 +1,5 @@
 # Strict block-length growth for concrete conjugate pair refinements
 
-Author: Worker 328.
-
 `Langlands.ConjugatePairRefinementRankStatement.{uF}` is a closed proposition
 definition. It quantifies over every field `K : Type uF` with `[Infinite K]`
 and every natural rank `n`. Its first conjunct states that for every supplied
@@ -46,7 +44,7 @@ summing to `n`. The asserted extension to every infinite field is algebraic:
 it uses no topology, valuation or representation. In particular its quantifiers
 permit direct specialization to the carrier of every supplied p-adic field.
 
-The future proof must obtain the length comparison from the concrete subgroup
+A proof must obtain the length comparison from the concrete subgroup
 inclusions. A possible route uses the associated finite flags or the
 finite-dimensional algebras of conjugated block-scalar matrices, including
 an argument that equality of lengths under refinement forces equality of the
@@ -58,6 +56,7 @@ over small finite fields (over `𝔽₂`, all unit coordinates are trivial).
 No weakly critical support, tempered support or exhaustion, critical-to-minimal
 converse, regular exhaustion, equal-exponent grouping or other
 representation-theoretic result is assumed or established here. The separate
-exact-target proof task must retain the full quantifiers and the imported
-actual subgroup relation. Publication of this statement supplies a target,
-not proof evidence for its consumers.
+proof, `Langlands.conjugatePairRefinementRank` in
+`Langlands.Group.GL.ConjugatePairRefinementRankProof`, has exactly this type,
+with the full quantifiers and the imported actual subgroup relation. This
+module supplies the statement, not a proof of it for its consumers.

@@ -67,8 +67,7 @@ The provenance is internal: finite linear combinations, the kernel quotient
 and the first isomorphism theorem are standard module constructions; the
 p-adic specialization combines the existing constant-output witnesses,
 monomial-output spanning, actual left-translation covariance and admissible
-Schur theorem. Worker 200 supplied the corrected cross-operator order used
-here. Proving that cross identity for the actual Fourier comparison family,
+Schur theorem. Proving that cross identity for the actual Fourier comparison family,
 proving a monomial scalar and extending to arbitrary tests remain separate
 obligations of the full functional equation.
 

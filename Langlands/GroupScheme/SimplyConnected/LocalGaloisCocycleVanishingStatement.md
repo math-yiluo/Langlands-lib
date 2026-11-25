@@ -1,7 +1,5 @@
 # Local vanishing for simply connected cocycles on finite Galois covers
 
-Authors: Worker 1545.
-
 `Langlands.GroupScheme.LocalSimplyConnectedGaloisCocycleVanishingStatement.{u}`
 is a proposition definition at arbitrary universe `u`. This module states it
 and proves nothing.

@@ -1,8 +1,5 @@
 # Finite simple-module trace separation
 
-Authors: Worker 34 (Lean proof and route), Worker 751 (checking and
-documentation).
-
 This helper module, namespace `Langlands.FiniteSimpleTrace`, proves two
 theorems about a finite family of pairwise non-isomorphic simple modules. Each
 module is finite-dimensional over the complex numbers.

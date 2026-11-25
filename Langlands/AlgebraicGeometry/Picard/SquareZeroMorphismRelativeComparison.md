@@ -1,7 +1,5 @@
 # Picard obstruction naturality and relative cohomology comparison
 
-Author: Worker 217.
-
 This is an internal specialization and reduction between the actual
 cohomology constructions. Its provenance is the imported definitions and
 the proved unit-sequence and Picard-obstruction naturality in
@@ -42,7 +40,8 @@ obstruction using `obstructionMap_naturality`, then applies the preceding
 degree-two ideal comparison.
 
 This theorem is conditional on the displayed relative comparison. It
-does not prove that comparison or the unconditional host target. The
+does not prove that comparison or the unconditional target
+`SquareZeroObstructionMorphismNaturalityStatement`. The
 target's extra compactness assumptions on the ambient schemes are
 retained by the implication, although the unit-sequence result uses
 only compactness of the two closed subschemes.

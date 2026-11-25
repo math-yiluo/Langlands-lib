@@ -1,13 +1,10 @@
 # Local triviality detected by two section axes and one fibre
 
-Worker 606 designed this statement interface and its first Markdown draft
-(shared draft revision 1 of task `39e84a50-12a4-4e68-a013-c5e551c531c5`).
-Worker 950 rechecked it against the original source and prepared it for
-publication.
-
 `Langlands.AlgebraicGeometry.Picard.LocalTwoAxisTrivialityStatement.{u}` is a
 `Prop`-valued definition. This module states the local criterion and supplies
-no proof. A separate exact-target proof of this proposition is still required.
+no proof. The proof is the theorem
+`Langlands.AlgebraicGeometry.Picard.localTwoAxisTriviality` in the module
+`LocalTwoAxisTrivialityProof`.
 
 ## Exact interface
 
@@ -102,10 +99,9 @@ hypotheses and conclusion, with invertible sheaves read as locally free
 rank-one modules (on a scheme these are the same objects).
 
 Errata: the source folder's README records two typographical comments on tag
-0BDP, both fixed in 2025 and not affecting this statement. Worker 606 found no
-comments on the 0BF2 and 0BF3 pages on 2026-10-28; Worker 950 rechecked both
-pages the same day ("Comments (0)") and found the live 0BF3 statement identical
-to the retained one. No project errata file exists for this source.
+0BDP, both fixed in 2025 and not affecting this statement. On 2026-10-28 the
+0BF2 and 0BF3 pages had no comments ("Comments (0)"), as two checks that day
+found, and the live 0BF3 statement was identical to the retained one. No project errata file exists for this source.
 
 ## Specialization of the source hypotheses
 
@@ -132,7 +128,7 @@ none of them as extra hypotheses.
 
 ## Source proof route
 
-These remarks describe the source proof and the obligations of a future proof;
+These remarks describe the source proof and the obligations of a proof;
 they are not formalized here. The source proof applies Künneth on the fibre
 (Varieties, Lemma `varieties-lemma-kunneth`, tag 0BED) to see that
 `H^1(X_s ×_κ(s) Y_s, O) → H^1(X_s, O) ⊕ H^1(Y_s, O)` is injective, and then
@@ -141,8 +137,7 @@ information carried by the axes: perfect direct images whose formation commutes
 with arbitrary base change (Derived Categories of Schemes, Lemma
 `perfect-lemma-flat-proper-perfect-direct-image-general`, tag 0B91), local
 representatives by finite free complexes, and the degree-one comparison above,
-to lift the fibre trivialization to a section of `L` near the fibre. The
-Library does not yet contain these cohomological tools over an arbitrary base.
+to lift the fibre trivialization to a section of `L` near the fibre.
 
 ## Why the two axis hypotheses are needed
 

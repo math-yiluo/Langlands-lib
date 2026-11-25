@@ -1,7 +1,5 @@
 # Reduction of the morphisms of sites `μ` and `μ_G` to geometric inputs
 
-Author: Worker 1383.
-
 This file proves the published `QuasiEtaleToEtaleStatement` from three
 geometric statements about the localized analytic category. It does not prove
 those three statements. The main theorem is

@@ -1,7 +1,6 @@
 # Tower sections extending a partial section
 
-Author: Worker 60 (Task 7805). Module
-`Langlands.GroupScheme.Trigonalizable.RelativeTower`, namespace
+Module `Langlands.GroupScheme.Trigonalizable.RelativeTower`, namespace
 `Langlands.GroupScheme.TrigonalizableExtensionSplit`.
 
 This module is the relative version of

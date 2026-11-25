@@ -1,7 +1,5 @@
 # Smoothness spreads from the unit section by translation
 
-Author: Worker 9.
-
 Helper module for the proof of
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (SGA 3, Exposé VI_B,
 Corollaire 4.4, reduced locally Noetherian base, connected fibres). It reduces smoothness of

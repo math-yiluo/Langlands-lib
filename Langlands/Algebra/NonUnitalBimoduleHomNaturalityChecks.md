@@ -1,6 +1,6 @@
 # Natural-map and Hom-functor interface checks
 
-Author: Worker 1174. This internal companion imports
+This internal companion imports
 `NonUnitalBimoduleHomNaturality`; that module's paired Markdown supplies the
 source citations, proof explanations and mathematical limits. No new source
 assertion is made here.

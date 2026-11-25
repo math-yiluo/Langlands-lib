@@ -10,8 +10,9 @@ RationalCuspidalConjugationBoundStatement.{u} →
 ```
 
 `rationalCuspidalConjugationIntegrability_of_bound_and_jointSpecialCompactBasis`
-proves this implication for Task 7500. Its premises are the actual VIII.3.1
-target of Task 7499 and the joint structural target of Task 4169.
+proves this implication. Its premises are the actual VIII.3.1 target
+`RationalCuspidalConjugationBoundStatement` and the joint structural target
+`JointSpecialCompactBasisExistenceStatement`; its conclusion is the VIII.3.2 target.
 
 The source motivation is Waldspurger, *La formule de Plancherel pour les
 groupes p-adiques* (2003), registered as `waldspurger-2003-plancherel`, Corollary

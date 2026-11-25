@@ -1,6 +1,6 @@
 # Sections of a module killed by an ideal sheaf
 
-Author: Worker 716. This is an internal helper module for
+This is an internal helper module for
 `Langlands.AlgebraicGeometry.Modules.coherentIntegralIdealFiltration`. It contains no
 claim from a source; the notion below is a derived formal device.
 

@@ -25,8 +25,7 @@ separates rational points and tangent vectors replaces the projective
 embedding. This module does not import the projectivity statement and is not
 its proof.
 
-Worker 899 implemented this pair from the specification of Worker 750, who
-also published the projectivity statement whose hypothesis pattern is reused
+The hypothesis pattern of the projectivity statement is reused
 here.
 
 ## The conclusion
@@ -170,7 +169,7 @@ The passage is the same as for the published projectivity statement. The
 opening definition of Section 20, p.42, calls a group scheme over `S` an
 abelian scheme if it is proper and smooth with connected geometric fibres;
 for `S = Spec K` this gives the three geometric hypotheses. They are kept in
-the parent's form, so `GeometricallyConnected` is not replaced by
+that statement's form, so `GeometricallyConnected` is not replaced by
 connectedness. Mathlib's `GeometricallyConnected` asks for connectedness,
 including nonemptiness, after every field-valued base change.
 
@@ -192,18 +191,19 @@ group object `G` is a `K`-point, and the group-object axioms in
 a rational point is the published `Langlands.GroupScheme.translation`.
 Corollary 2.4, p.3, shows that the group law of an abelian variety is
 commutative, so the instance `IsCommMonObj G.X` is retained only to match
-the parent statements.
+the projectivity and ample-existence statements.
 
 These comparisons explain the source correspondence; this module proves
 none of them in Lean. The finite-type, separatedness, nonemptiness and
 geometric-integrality clauses are the separate published statement
-`Langlands.GroupScheme.FieldAbelianVarietyPresentationStatement` (proof task
-`2d28e6bb-86ce-4f1e-8ab2-c7264d1cbef3`, which reuses the
-geometric-integrality proof task `13d3f4b1-fadd-43c6-b422-d793dc9adf5f`).
+`Langlands.GroupScheme.FieldAbelianVarietyPresentationStatement` (proved by
+`Langlands.GroupScheme.fieldAbelianVarietyPresentation`, which reuses the
+geometric-integrality theorem `Langlands.AbelianScheme.smoothGeometricIntegrality`).
 Milne's theorem of the square is the case of the published balanced cube
 statement `Langlands.GroupScheme.FieldCubePullbackStatement` with one map the
-identity and two constant (proof task
-`10d9bd97-8b97-4937-8a1a-3c96c6fb7537`). The present module neither imports
+identity and two constant (proved by
+`Langlands.GroupScheme.fieldCubePullback`, module
+`Langlands.AbelianScheme.FieldCubePullbackProof`). The present module neither imports
 nor assumes any of these statements.
 
 Dimension zero is not excluded. Mathematically, a connected smooth proper
@@ -224,7 +224,7 @@ The page states that all listed corrections are incorporated into the
 xnotes version used here. Its entries are keyed to printed pages 104–145 of
 the 1986 article; none concerns the conventions, Section 6 or Theorem 7.1.
 No source-specific project errata note exists for either registered source
-in the current Library.
+in the Library.
 
 ## Provenance and scope
 
@@ -238,16 +238,21 @@ published projectivity statement.
 The statement covers every universe, every characteristic and dimension
 zero. It adds no projectivity, ampleness, polarization, geometric
 integrality, finite-type, separatedness, local factoriality, chosen divisor
-or comparison certificate as a premise. Its intended proof follows Milne's
-divisor route above, through the theorem of the square; it does not use the
+or comparison certificate as a premise. Its proof follows Milne's
+divisor route above in section form (line bundles and sections in place of
+divisors), through the theorem of the square; it does not use the
 ample-existence statements `Langlands.GroupScheme.FieldAmpleExistenceStatement`
 or `Langlands.GroupScheme.AlgebraicallyClosedFieldAmpleExistenceStatement`,
 which are downstream of projectivity, or any consequence of them.
 
 Together with a very-ampleness criterion (for proper `p` over an
 algebraically closed field, `SeparatesPointsAndTangents p L` implies
-H-projectivity), this statement is intended to give the published
-projectivity statement; that composition is outside this module. After
-independent acceptance and publication, a separate exact-target proof must
+H-projectivity), this statement gives the published
+projectivity statement; that composition,
+`Langlands.GroupScheme.algebraicallyClosedProjectivity` (module
+`Langlands.AbelianScheme.AlgebraicallyClosedProjectivityProof`), is outside this module.
+A proof must
 have this entire named proposition as its type, with no extra outer
-hypotheses. This module adds no axiom.
+hypotheses; the Library's proof is
+`Langlands.GroupScheme.algebraicallyClosedSeparatingLineBundle`, in the module
+`Langlands.AbelianScheme.AlgebraicallyClosedSeparatingLineBundleProof`. This module adds no axiom.

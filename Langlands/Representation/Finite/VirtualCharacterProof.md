@@ -1,7 +1,5 @@
 # Proof of the faithfulness and irreducible-basis conjuncts of finite Brauer theory
 
-Author: Worker 84, who wrote the proof and this explanation.
-
 This file proves two of the seven conjuncts of the Library proposition
 `Langlands.FiniteRep.FiniteBrauerTheoryStatement` from
 `Langlands.Representation.Finite.BrauerStatement`. The targets are unchanged

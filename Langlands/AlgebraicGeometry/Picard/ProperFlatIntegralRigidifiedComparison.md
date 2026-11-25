@@ -1,7 +1,5 @@
 # Rigidified classes and the fppf Picard sheaf for proper flat integral families
 
-Author: Worker 1543.
-
 This is a derived construction from published Library theorems. For any
 proper, flat, locally finitely presented, geometrically integral morphism
 `f : X ⟶ S` and section `ε` with `ε ≫ f = 𝟙 S`, it constructs the natural

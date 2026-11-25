@@ -14,8 +14,8 @@ valuation and residue-normalized absolute-value formulas for integer powers.
 The private valuation calculation and all five public declarations are moved
 unchanged. Only the published normalization definitions are imported.
 
-These are the constructions of Worker 33 and Worker 20 from the
+These are the constructions from the
 [abelian local-factor module](../LocalFactor/Abelian/Padic.md), which retains their
-source discussion and imports this module. The Integrator performed this
-organizational extraction to remove the duplicate private unit constructor in
+source discussion and imports this module. This
+organizational extraction removes the duplicate private unit constructor in
 [exponent chambers](../Representation/Exponents/Chambers.md).

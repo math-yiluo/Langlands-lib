@@ -1,7 +1,5 @@
 # Actual left-Phi coefficient localization
 
-Author: Worker 499.
-
 This module constructs the linear equivalence `leftPhiTensorEquiv` in
 `Langlands.Derivative.MirabolicProductMinus`. It identifies the actual
 identity-orbit coefficient localization with the tensor of the first
@@ -9,8 +7,9 @@ factor and the positive-character localization of the second factor.
 It proves naturality in both factors and proves that the actual
 left-cycle coefficient localization has a subsingleton carrier.
 These are coefficient constructions for the left mixed product.
-The normalized representation comparison and final six-part host
-statement remain separate obligations.
+The normalized representation comparison and final six-part
+statement `MirabolicProductMinusCompatibilityStatement` are proved in
+other modules.
 
 ## Source and provenance
 
@@ -28,8 +27,8 @@ functors. Section 4.12(II), printed pp.456–457 (PDF pages 17–18),
 gives the left mixed subgroup; §4.13(b), printed p.458 (PDF page 19),
 states the corresponding functorial comparisons. Section 7.2, printed
 p.471 (PDF page 32), gives the cycle representatives used here.
-These passages and the relevant page images were read during this
-task. The bounded supplied-literature and public-note errata search
+These passages and the relevant page images were read for this
+construction. The bounded supplied-literature and public-note errata search
 found no applicable BZ77 entry; no global absence is asserted.
 
 The present quotient maps, equivalence and naturality proof are
@@ -41,8 +40,7 @@ character, so this generality is not attributed verbatim to BZ77.
 The source motivates the specialization, but its representation
 comparison is not assumed. The quotient construction uses the
 published universal property of `Jacquet.Localization`, not a
-pending comparison theorem. Worker 499 wrote this construction;
-no peer draft contributes a proof body.
+comparison theorem.
 
 ## Parameters and actual carriers
 
@@ -120,7 +118,7 @@ It is the unnormalized localization carrier for
 `phiMinus T ψ r : P_(r+2) → P_(r+1)` upon a supplied p-adic
 specialization. This module neither introduces `P_0` nor applies
 Phi-minus to `P_1`. A supplied `T` and determinant characters are
-unneeded by this purely algebraic coefficient unit; no canonical
+unneeded by this purely algebraic coefficient module; no canonical
 topology or normalized absolute value is selected.
 
 ## Surjectivity and the tensor equivalence
@@ -236,9 +234,9 @@ and `Langlands.Representation.Mirabolic.MixedProducts`. The complete
 Markdown file is nonempty and byte-identical to the published
 Library and its manifest at commit
 `7ad6e7323f2d14f5ccf8d30daa428878acda72c4` (130 checked files).
-Every imported pair remains unchanged. No pending normalization,
-generic comparison statement, proof draft or host comparison is
-imported.
+Every imported pair remains unchanged. No left-Phi normalization module,
+generic comparison statement or clause of the compatibility statement
+is imported.
 
 The actual mathematical project inputs are the radical coordinates,
 actual identity-orbit coefficient formulas, positive-character
@@ -259,7 +257,7 @@ The following condition audit covers direct and transitive inputs.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host mixed-minus conclusions | No host conclusion or proof is imported. The unit proves only coefficient module assertions; the normalized natural representation comparisons, boundary maps and final conjunction remain separate. |
+| Six mixed-minus conclusions of the statement | No conclusion of the statement or proof of one is imported. The module proves only coefficient module assertions; the normalized natural representation comparisons, boundary maps and final conjunction are separate. |
 | Plus functors, adjunction, BZ77 §4.13(d) | No plus functor, adjunction or submodule-detection conclusion supplies an input. The matrix subgroup `plusSubgroup` appearing in the orbit definitions is the permitted elementary group. |
 | General Leibniz and derivative formulas | No general Leibniz proof, segment derivative formula, Ze80 §3.5 or §9.6 formula, or unproved BZ77 derivative result supplies an input. |
 | Segment head, socle and Jacquet formulas | No individual special-head or segment-socle existence, linked/unlinked or juxtaposed reverse-product conclusion, quotient homomorphism, or full/head/socle/special Jacquet formula supplies an input. |
@@ -267,20 +265,17 @@ The following condition audit covers direct and transitive inputs.
 | Special-head criterion and generic uniqueness | Neither the special-head product criterion nor generic segment-product uniqueness is used. |
 | Ordered existence and exhaustion | No ordered multisegment-socle existence, socle or special-head exhaustion, ordered strong-head existence, quotient coverage or ordered conversion supplies an input. |
 | Analytic, tempered, square-integrable conclusions | No segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable classification or exhaustion, regular exhaustion, or Ze80 9.3 assertion supplies an input. |
-| Two-supercuspidal consumers | Neither nonadjacent product irreducibility, product structure nor its full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) supplies an input. |
+| Two-supercuspidal consumers | Neither nonadjacent product irreducibility, product structure nor its full-product assembly is used. |
 | Supercuspidal and single-block finiteness | No supercuspidal coinvariant-finiteness statement, all-character single-block conclusion, arbitrary-character finiteness theorem or consequence supplies an input. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal finiteness conclusion, consequence or prohibited mirabolic finite-length route supplies an input. |
 | Generality | All natural k,r including zero and independent ring and four carrier universes are retained. The entire coefficient and source radical are used. No chosen unit vector, finite-dimensional, admissible, finite-length, generic or theorem-valued premise occurs. The character parameter is the supplied bundle. |
-| Published inputs and target preservation | Every imported pair is unchanged and public. Pending statements, drafts and citations are not theorem premises. No host statement/import pair is modified. |
-| Separate owners and user controls | This focused coefficient construction does not duplicate a restriction sequence, exactness proof or generic compact-induction comparison. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and all current suspensions remain binding; no peer message waives them. |
+| Published inputs | Every imported pair is unchanged and public. Unproved statements and citations are not theorem premises. |
+| Separate results | This focused coefficient construction does not duplicate a restriction sequence, exactness proof or generic compact-induction comparison. |
 
 A source scan of this entry and its entire project closure finds no
-occurrence in Lean code of the host's 38 excluded task identifiers
-or 24 named consumer declarations, and no proof holes, new axioms
-or unsafe evaluation commands. This syntactic scan supplements
-the mathematical dependency audit above. Development compilation
-and declaration inspection are not independent acceptance or
-publication.
+occurrence in Lean code of 24 excluded consumer declarations, and no
+proof holes, new axioms or unsafe evaluation commands. This syntactic
+scan supplements the mathematical dependency audit above.
 
 ## Complete project import closure
 

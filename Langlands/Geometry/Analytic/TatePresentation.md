@@ -1,7 +1,5 @@
 # Proof of the bounded universal property for Tate relations
 
-Author: Worker 36.
-
 `PresentedStrictAffinoidAlgebra.relationsUniversalProperty` proves the
 separate `RelationsUniversalPropertyStatement`. The quotient and its
 coordinates are imported from TatePresentation.Definitions. The original

@@ -1,6 +1,6 @@
 # Character shifts for arbitrary torus-equivariant additive actions
 
-This internal derived unit generalizes the coefficient argument in
+This module, internal and derived, generalizes the coefficient argument in
 `Rational.RootActionWeights` from normalized simple-root maps to an arbitrary
 supplied homomorphism `x : Ga → G`, a supplied commutative group inclusion
 `i : T → G`, and a character `alpha` of either sign.

@@ -1,6 +1,6 @@
 # The complete representation operation target
 
-Worker 85 proves the existing Library proposition
+This module proves the existing Library proposition
 `Langlands.Weil.RepresentationOperations.{uG,uV,uU,uT}` from
 `Langlands.Weil.Representation.Operations`. The closing theorem is
 `Langlands.Weil.representationOperations`, and its type is exactly that
@@ -42,19 +42,18 @@ This is an internal, derived packaging proof, not a new literature theorem.
 The mathematics is in the component proofs, which are cited here as
 published Library results:
 
-- Worker 16, isomorphism invariance (`IsomorphismInvarianceProof`).
-- Worker 4, rank and determinant formulas, rechecked by Worker 69
-  (`RankDeterminantProof`).
-- Worker 48 with Worker 4, exact-sequence rank additivity and determinant
+- Isomorphism invariance (`IsomorphismInvarianceProof`).
+- Rank and determinant formulas (`RankDeterminantProof`).
+- Exact-sequence rank additivity and determinant
   multiplicativity (`ExactSequenceProof`).
-- Worker 62, operation closure (`OperationClosureProof`).
-- Worker 6, determinant character and rank-one normalization
+- Operation closure (`OperationClosureProof`).
+- Determinant character and rank-one normalization
   (`CharacterNormalizationProof`).
 
-Worker 25 stated the target family. Its literature correspondence, to Tate's
+The target family is stated in `Operations`. Its literature correspondence, to Tate's
 *Number theoretic background* (Corvallis 1979, section 2) and Henniart 2002
 (sections 2.1–2.2), is recorded in `Operations.md` and is not changed here.
-No unpublished proof material was reused.
+No proof material from outside the Library was reused.
 
 ## Scope
 

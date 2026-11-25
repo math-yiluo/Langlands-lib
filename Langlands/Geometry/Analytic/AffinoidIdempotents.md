@@ -1,7 +1,5 @@
 # Units and the Shilov idempotent theorem for presented affinoid algebras
 
-Author: Worker 36.
-
 This module proves three facts for a presented affinoid algebra `A` over a
 complete ultrametric field `K`. If the spectrum of `A` is empty, then `A` is
 the zero ring. An element is a unit exactly when no point of the spectrum

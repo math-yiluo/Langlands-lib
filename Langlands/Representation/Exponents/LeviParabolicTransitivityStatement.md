@@ -1,6 +1,6 @@
 # Transitivity of normalized induction and Jacquet restriction for represented parabolics
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviParabolicTransitivityStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviParabolicTransitivityStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviParabolicTransitivityStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviParabolicTransitivityStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.1.4, printed pp.136–137 / PDF pp.142–143. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation, the paragraph before the Lemma says: let `P = MN` and `Q = LU` be semi-standard parabolic subgroups of `G` with `P ⊂ Q`; then `L ∩ P = M(L ∩ N)` is a parabolic subgroup of `L`, `N = (N ∩ L)U` and `(L ∩ P)U = MN = P`. The Lemma says: for such `P = MN ⊂ Q = LU`,
 

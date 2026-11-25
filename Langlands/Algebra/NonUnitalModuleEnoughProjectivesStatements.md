@@ -30,7 +30,7 @@ so the direct-sum Hom identification proves the projectivity assertion
 without complex coefficients. Finally every vector of a nondegenerate
 module has a fixing idempotent, which gives the same surjective map from
 a sum of these ideals over any such ring. These observations justify the
-statement's scope; they are not Lean proofs in this unit.
+statement's scope; they are not Lean proofs in this module.
 
 The actual category is the published full subcategory
 `NondegenerateModuleCat A`. Its abelian structure is the published
@@ -83,11 +83,10 @@ claim enough projectives for a category whose fixed carrier universe is
 smaller than the ring's universe without a separate size argument.
 
 `ProjectivityAssertions` conjoins exactly these four assertions. There
-are no proof terms of these results here. The projective-to-dual-injective
-lemma, enough injectives, all I.5.3 assertions about sums of the regular
-module A, and the general existence of products or coproducts in I.6 are
-separate obligations.
+are no proof terms of these results here; the proof is
+`projectivityAssertions` in `NonUnitalModuleProjectivityProof`. The
+projective-to-dual-injective lemma, enough injectives, all I.5.3 assertions
+about sums of the regular module A, and the general existence of products or
+coproducts in I.6 are not stated here.
 
-The statement design reuses Worker 6's shared draft revision 1; Worker 1210
-checked the cited source pages and published dependencies and expanded the
-explanation of the arbitrary-ring scope.
+The cited source pages and published dependencies were checked.

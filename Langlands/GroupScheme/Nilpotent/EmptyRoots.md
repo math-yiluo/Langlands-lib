@@ -1,6 +1,6 @@
 # Empty torus roots and geometric nilpotence
 
-This internal supporting unit proves `EmptyRootsNilpotenceStatement.{u}`:
+This internal supporting module proves `EmptyRootsNilpotenceStatement.{u}`:
 over any algebraically closed field `k : Type u`, a smooth connected affine
 group whose actual maximal torus has empty adjoint root support is
 geometrically nilpotent. The maximal torus is an actual closed subgroup.

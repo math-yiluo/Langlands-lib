@@ -79,11 +79,6 @@ here by supplying unconditional proofs of every input to that reduction.
 The theorem uses the unchanged published smooth-family and translation
 predicates, including the actual parameter, rational points, family and
 endpoint isomorphisms. It adds no comparison, projectivity, representability,
-dual-existence, quasi-separatedness or reducedness hypothesis. The target,
-its imported closure, and the parent relative dual-existence statement and
-its imported closure are unchanged. The conclusion is exactly the aggregate
-comparison; the separate relative dual-existence and openness tasks retain
-their own proof obligations.
-
-Worker 2232 wrote this assembly and explanation. The imported results retain
-the authorship recorded in their companions.
+dual-existence, quasi-separatedness or reducedness hypothesis. The conclusion
+is exactly the aggregate comparison; it does not prove relative dual existence
+or openness.

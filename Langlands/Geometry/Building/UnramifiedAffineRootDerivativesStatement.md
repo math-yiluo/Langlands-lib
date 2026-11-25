@@ -3,10 +3,8 @@
 `Langlands.Geometry.Building.UnramifiedAffineRootDerivativesStatement.{u}` is a
 Prop-valued statement of the derivative part of Kaletha–Prasad Proposition 6.3.13
 ("`∇Ψ = Φ`"), specialized to the maximal unramified extension `K` of a nonarchimedean
-local field. The unit only defines the proposition. Its proof is a separate obligation.
-
-Authors: Worker 1407 (original draft, Task 6579 draft revision 1) and Worker 367
-(source verification and revised Markdown, Task 6608).
+local field. The module only defines the proposition. Its proof,
+`unramifiedAffineRootDerivatives`, is in `UnramifiedAffineRootDerivativesProof`.
 
 ## Quantifiers and hypotheses
 
@@ -72,7 +70,7 @@ can be passed as `hder`.
 
 KP Proposition 6.3.13 (printed p. 221, PDF p. 252) reads: "The sets `Ψ` and `Ψ′`
 constitute affine root systems in `A*` with derivative root system equal to `Φ`. They
-have the same Weyl group. …" This unit states only "the derivative root system of `Ψ`
+have the same Weyl group. …" This module states only "the derivative root system of `Ψ`
 is `Φ`". It does not state that `Ψ` or `Ψ′` satisfies the affine root system axioms,
 the claims about `Ψ′`, or the Weyl group assertions.
 
@@ -117,7 +115,7 @@ no topology instance here.
 
 ## Why the statement holds for every supplied datum over `K`
 
-This section explains why the proposition is expected to be true. It is not a proof
+This section explains why the proposition holds. It is not a proof
 and is not formalized.
 
 1. **KP's setting covers `K`.** Chapter 6 (opening, printed p. 195, PDF p. 226) works
@@ -159,7 +157,7 @@ apply to `C.apartment` as well.
 ## Provenance
 
 Derived. KP state Proposition 6.3.13 for classes satisfying V 7 (and Proposition 6.4.8
-for the canonical class of a quasi-split group). This unit states the derivative part
+for the canonical class of a quasi-split group). This module states the derivative part
 for every supplied V 0–V 6 class over `K = inertiaFixedField F`, with the Library's
 data types. The reduction to KP's setting is the argument above (Chapter 6 opening,
 Corollary 2.3.8, Definition 6.1.27, the remark after Definition 6.1.2,
@@ -178,7 +176,6 @@ Sources:
 ## Consumer
 
 `unramifiedSharpFixerRootGeneration_of_derivativeRoots` in
-`Langlands.Geometry.Building.IntegerValuationNonnegativeRootGenerators` (candidate
-`c757a942-3d8a-46d3-8c7d-36f67e0f2103`, Task 6579) derives the published
+`Langlands.Geometry.Building.IntegerValuationNonnegativeRootGenerators` derives the published
 `UnramifiedSharpFixerRootGenerationStatement` (KP Lemma 7.4.4(3) over `K`) from a
 hypothesis `hder` whose body is this proposition's body.

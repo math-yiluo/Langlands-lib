@@ -120,11 +120,10 @@ identity of points from the corepresented model.
 
 ## Provenance
 
-This is internal infrastructure; no statement is attributed to the literature. The route
-(cocycle in coordinates, graded comultiplication, extension of `x` to `t = 0`) was proposed by
-Worker 1491. The present formalization, including the comultiplication built from the
-corepresentation, the use of unit points and the coefficient-level interface with
-`GradedCocycleExtension`, is by Worker 1515. The statement avoids the structural parameters
+This is internal infrastructure; no statement is attributed to the literature. The route is
+cocycle in coordinates, graded comultiplication, extension of `x` to `t = 0`. The
+formalization builds the comultiplication from the corepresentation, uses unit points and
+interfaces with `GradedCocycleExtension` at the coefficient level. The statement avoids the structural parameters
 carried by the published `Rational/TorusUnipotentLiftConjugacy` (split unipotent kernels and
 torsor statements). Here the unipotent subgroup is the dynamic one, and the torus is `𝔾_m`
 acting through `χ`.

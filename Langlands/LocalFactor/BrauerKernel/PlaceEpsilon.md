@@ -1,12 +1,11 @@
 # Local epsilon products of a global relation at the finite places other than `v`
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global argument
 (1973, proof of Lemma 4.12) the product of the local epsilon factors of the global relation at a
 finite place other than the distinguished one is `1`: at unramified places by Lemma 4.15, and at
 the remaining places because the global characters are twisted by a character that is highly
-ramified there (Lemma 4.16). This unit applies the standalone forms of these lemmas
+ramified there (Lemma 4.16). This module applies the standalone forms of these lemmas
 (`BrauerKernel.StandaloneEpsilon`) to the local relation produced by `BrauerKernel.LocalRelation`.
 
 Everything is in `Langlands.LocalFactor.NonabelianBrauer`. Fix number fields `k ⊆ E'`, a finite
@@ -49,5 +48,5 @@ index type `J`, integers `r j`, intermediate fields `K j` of `E'/k`, Hecke chara
 
 Deligne, *Les constantes des équations fonctionnelles des fonctions L* (1973), registered as
 `deligne-1973-local-constants`, Lemmas 4.15 and 4.16 (printed pages 545–547) as used in the proof of
-Lemma 4.12 (printed page 544). The unit only adapts the published standalone lemmas to completions
+Lemma 4.12 (printed page 544). The module only adapts the published standalone lemmas to completions
 of number fields.

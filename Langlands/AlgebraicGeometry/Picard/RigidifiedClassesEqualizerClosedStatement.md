@@ -12,7 +12,7 @@
           (unitSection_comp A) h r
 ```
 
-This unit only defines the proposition. It proves nothing.
+This module only defines the proposition. It proves nothing.
 
 ## Meaning
 
@@ -111,7 +111,8 @@ The Lean statement differs from the source in form only.
 
 ## Proof obligations
 
-They belong to a separate exact-target proof task, not to this unit. Mathlib at the pinned
+They belong to the proof of this exact statement, `rigidifiedClassesEqualizerClosed` in
+`RigidifiedClassesEqualizerClosedProof`, not to this module. Mathlib at the pinned
 commit has no coherent cohomology and no cohomology and base change, so Stacks' perfect-complex
 proof of Lemma 0BDP is not directly available. Lemma 0BF0's proof also uses Lemma 0EX8
 (`lemma-triviality-generic-fibre-valuation-ring`, same registered source) and a valuation-ring

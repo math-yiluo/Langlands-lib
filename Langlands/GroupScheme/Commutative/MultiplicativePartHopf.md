@@ -1,7 +1,5 @@
 # Characters of the multiplicative part over an algebraically closed field
 
-Author: Worker 894.
-
 Helper module for the proof of
 `Langlands.GroupScheme.CommutativeMultiplicativePartCharacterizationStatement`; see
 [`MultiplicativePartCharacterizationProof`](MultiplicativePartCharacterizationProof.md).

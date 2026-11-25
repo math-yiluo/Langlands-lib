@@ -12,7 +12,7 @@ representability includes monomorphy of the inclusion. This construction
 requires neither a split torus, local finite type, smoothness, connectedness,
 nor a Lie-image hypothesis.
 
-The exclusion results in this internal supporting unit also work over every
+The exclusion results in this internal supporting module also work over every
 field and universe. For those results the ambient
 group is affine and locally of finite type, the acting commutative group is a
 split torus, and its homomorphism into the ambient group is arbitrary.
@@ -48,7 +48,7 @@ nonzero. No smoothness or connectedness of `U` is assumed.
 
 The provenance is internal: these are consequences of the existing actual
 weight decomposition, positive Lie-image predicate, represented action,
-weight transport and character-lattice torsion-freeness results. This unit
+weight transport and character-lattice torsion-freeness results. This module
 retains the full positive Lie-image equality as an explicit premise. It
 does not prove that equality, representability, unipotence, split
 unipotence, or the unconditional `RootSubgroupRealizationStatement`.

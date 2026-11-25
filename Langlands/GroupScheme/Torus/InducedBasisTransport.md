@@ -1,6 +1,6 @@
 # Permutation bases over a prescribed splitting field
 
-Worker 1550. This internal deduction transports the basis in the published
+This internal deduction transports the basis in the published
 `IsInducedTorus` predicate to any prescribed finite Galois splitting field.
 It uses the actual character lattices and their published Galois
 representations. All fields and basis indices remain in an arbitrary universe
@@ -46,6 +46,6 @@ restriction from `L` establishes the final equality.
 Provenance is internal: the constructions and proofs combine
 `Torus.CharacterRestriction`, `Torus.LatticeGalois`, `Torus.Lattice`, and the
 published `IsInducedTorus` predicate with Mathlib's algebraic-closure and
-normal-extension APIs. The unit supplies the prescribed-field basis step;
+normal-extension APIs. The module supplies the prescribed-field basis step;
 it does not assert a Weil decomposition or prove the final decomposition
 statement.

@@ -1,14 +1,12 @@
 # Fixed-vector detection and fixed-vector dimension descent
 
-Authors: Worker 260, from the interface designed by Worker 196. This file
-defines seven propositions. It proves none of them and assumes no theorem as
-data.
+This file defines seven propositions. It proves none of them and assumes no
+theorem as data.
 
-The six clauses are the public lemmas of Worker 196's draft module
-`Langlands.Representation.Smooth.FixedVectors.Detection`, in public draft
-revision 4 of task `fe734e49-26a6-457a-89e8-3b8e66d5cd39`. Each clause keeps the
-draft lemma's hypotheses and scope. After the type and instance parameters,
-its objects and hypotheses come in the draft lemma's order. The bundle
+The six clauses are the public lemmas of the module
+`Langlands.Representation.Smooth.FixedVectors.Detection`. Each clause keeps the
+lemma's hypotheses and scope. After the type and instance parameters,
+its objects and hypotheses come in the lemma's order. The bundle
 `Langlands.FixedVectorDetectionDescentStatement.{uR, uG, uV, uW}` is the
 conjunction of the six clauses, in the order below.
 
@@ -119,14 +117,14 @@ every clause at every universe.
 
 ## Provenance
 
-These are internal algebraic statements, not literature theorems. Worker 196
-isolated them as inputs to the induction in Bernstein and Zelevinsky,
+These are internal algebraic statements, not literature theorems. They
+isolate inputs to the induction in Bernstein and Zelevinsky,
 *Representations of the group GL(n,F) where F is a non-Archimedean local
 field*, Russian Math. Surveys 31:3 (1976), Proposition 3.30, printed page 37
 (PDF page 37). Registered source
 `bernstein-zelevinsky-1976-representations-gln`, SHA-256
-`72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`. Worker 260
-read the statement and proof of 3.30 in this registered original.
+`72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`. The
+statement and proof of 3.30 were read in this registered original.
 
 Step (3) of that proof uses induction on `dim E^N`. It takes the nonzero
 operator `A = π(z) − θ(z)`, which commutes with `G`. It uses the hypothesis
@@ -142,10 +140,11 @@ general interfaces verbatim. The more general scope above (arbitrary groups,
 fields or topologies where the argument allows) is deliberate and is explained
 in the Scope section.
 
-No proof is shipped here. Worker 196's draft lemmas inhabit each clause
-exactly. A private development check by Worker 260 assigned each unapplied
-draft lemma to its clause, and the six lemmas to the bundle. The check is
-not a Library proof. The exact-target proof will be a separate submission.
+No proof is shipped here. The lemmas of `Detection` inhabit each clause
+exactly. A private development check assigned each unapplied
+lemma to its clause, and the six lemmas to the bundle. The proof of the
+bundle is `Langlands.fixedVectorDetectionDescent`, in
+`Langlands.Representation.Smooth.FixedVectors.DetectionProof`.
 
 ## Dependencies
 
@@ -158,6 +157,5 @@ Project imports:
 
 Mathlib imports: `Mathlib.RepresentationTheory.Semisimple`,
 `Mathlib.LinearAlgebra.FiniteDimensional.Defs` and
-`Mathlib.Basic.Complex.Basic`. No published pair is modified. Lean service
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+`Mathlib.Basic.Complex.Basic`. Lean service: Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,6 +1,8 @@
 # Discrepancies of axis trivializations
 
-Worker 198 wrote this internal helper module for Task 5678. It supplies the
+This is an internal helper module for the proof of
+`NormalFiniteTypeTwoAxisExtensionProperty` (module
+`NormalModelTwoAxisExtensionProof`). It supplies the
 general structure-sheaf calculations used by
 `TwoAxisCarrierIsoAbelian`. All results are in namespace
 `Langlands.AlgebraicGeometry.Picard` and hold in every universe.

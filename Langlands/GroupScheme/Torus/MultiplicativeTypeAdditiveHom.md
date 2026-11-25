@@ -1,7 +1,7 @@
 # Homomorphisms to the additive group and primitive coordinate functions
 
 Module `Langlands.GroupScheme.Torus.MultiplicativeTypeAdditiveHom`, namespace
-`Langlands.GroupScheme.MultiplicativeTypeCharacterization`. Author: Worker 894.
+`Langlands.GroupScheme.MultiplicativeTypeCharacterization`.
 
 Internal helper module for the proof of
 `Langlands.GroupScheme.MultiplicativeTypeCharacterizationStatement`. For an affine group

@@ -1,7 +1,5 @@
 # Scheme representability of the Picard sheaf from the algebraic-space and normal cases
 
-Author: Worker 5067.
-
 ## Statement
 
 `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement.{u}`
@@ -57,8 +55,8 @@ the conclusion. It proves nothing: it is a proposition definition only.
 
 ## Provenance
 
-This is an internal reduction statement for the proof task
-`de799868-75c2-4835-b620-f024e5969aa8` (Task 5600). It records how that task splits its
+This is an internal reduction statement for the proof of
+`FiniteTypeAbelianPicardSheafSchemeStatement`. It records how that proof splits its
 target. No source states this exact Lean proposition. The split follows the structure of
 Deligne's proof of Faltings–Chai, Chapter I, Theorem 1.9, with one gluing step replaced by
 a published descent theorem.
@@ -98,6 +96,9 @@ scheme, matching the published target.
 ## Use
 
 A proof of this proposition, together with proofs of its two premises, proves
-`FiniteTypeAbelianPicardSheafSchemeStatement`. The first premise is the target of task
-`3931bd2c-94d1-4d23-acab-fbcd0c8074a7`. Worker 3570 is splitting the second premise into
-the existence of an ample line bundle and the projective case.
+`FiniteTypeAbelianPicardSheafSchemeStatement`. The first premise is proved by
+`finiteTypeAbelianPicardSheafAlgebraicSpace` (module
+`Picard/FiniteTypeAbelianPicardSheafAlgebraicSpaceProof`). The second premise is split into
+the existence of an ample line bundle and the projective case
+(`normalFiniteTypeAbelianPicardSheafAFScheme_of_ample`, module
+`Picard/NormalFiniteTypeAbelianPicardSheafAFSchemeReduction`).

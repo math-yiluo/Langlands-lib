@@ -1,7 +1,5 @@
 # Equivariant compact and ordinary étale cohomology on compact bases
 
-Author: Worker 16.
-
 ## Provenance
 
 This is an internal construction for the compact-base case of the

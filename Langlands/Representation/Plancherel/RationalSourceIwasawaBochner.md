@@ -1,7 +1,5 @@
 # Actual Iwasawa weighted measure and Bochner integration
 
-Author: Worker 200.
-
 This is a derived extension of Waldspurger (2003), I.1, first formula (2),
 printed p.240 / PDF p.6, DOI 10.1017/S1474748003000082,
 registered as `waldspurger-2003-plancherel`. The original normalization

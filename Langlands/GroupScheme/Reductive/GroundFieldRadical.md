@@ -1,14 +1,13 @@
 # Ground-field radical triviality from preservation of unipotence
 
-Author: Worker 1473. Worker 1359 contributed the reduction route.
-
 This internal reduction constructs the embedding
 `connectedReductiveToPseudoReductive` from the collection of actual
 connected reductive group schemes into that of pseudo-reductive group
 schemes over a fixed field. It acts as the identity on underlying group
 schemes. The construction is conditional on
 `hU : UnipotentFieldExtensionStatement.{u}`. The latter is a separate
-structural proof obligation. This module does not prove that statement
+structural statement, proved in the Library as `unipotentFieldExtensionStatement`
+(`Reductive/UnipotentFieldExtensionProof`). This module does not prove that statement
 or supply an unconditional reductive-to-pseudo-reductive theorem.
 
 First, `SubgroupFunctor.eq_bot_of_baseChange_eq_bot` proves that any

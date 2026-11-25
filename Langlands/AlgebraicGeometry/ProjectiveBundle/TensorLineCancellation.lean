@@ -21,10 +21,10 @@ namespace Langlands.Scheme.Modules
 
 /-- The right tensor unitor carries a unit on the structure module to the same scalar. -/
 lemma tensorRightUnitor_unitAut {X : Scheme.{u}} (L : X.Modules) (c : Γ(X, ⊤)ˣ) :
-    tensorMap (𝟙 L) (unitAut (structureSheaf X) c).hom ≫
+    tensorMap (𝟙 L) (unitAut (structureSheaf X) c).asIso.hom ≫
         (tensorRightUnitor L).hom =
-      (tensorRightUnitor L).hom ≫ (unitAut L c).hom := by
-  have hc : unitEndCoefficient (unitAut (structureSheaf X) c).hom ⊤ =
+      (tensorRightUnitor L).hom ≫ (unitAut L c).asIso.hom := by
+  have hc : unitEndCoefficient (unitAut (structureSheaf X) c).asIso.hom ⊤ =
       (c : Γ(X, ⊤)) := by
     change (((c : Γ(X, ⊤)) • 𝟙 (structureSheaf X)).app ⊤
       (1 : Γ(X, ⊤))) = _
@@ -32,7 +32,7 @@ lemma tensorRightUnitor_unitAut {X : Scheme.{u}} (L : X.Modules) (c : Γ(X, ⊤)
     change X.presheaf.map (𝟙 (Opposite.op (⊤ : X.Opens))) (c : Γ(X, ⊤)) * 1 = _
     simp
   have h := SerreVanishing.tensorMap_id_unitEnd L
-    (unitAut (structureSheaf X) c).hom
+    (unitAut (structureSheaf X) c).asIso.hom
   rw [hc] at h
   exact h
 
@@ -54,13 +54,13 @@ lemma tensorContraction_pullback {X Y : Scheme.{u}} (r : X ⟶ Y)
 lemma tensorContraction_scaled {X : Scheme.{u}}
     {A B L K : X.Modules} (a : A ⟶ L) (b : B ⟶ structureSheaf X)
     (g : L ⟶ K) (c : Γ(X, ⊤)ˣ) :
-    tensorMap a b ≫ (tensorRightUnitor L).hom ≫ g ≫ (unitAut K c).hom =
-      tensorMap (a ≫ g) (b ≫ (unitAut (structureSheaf X) c).hom) ≫
+    tensorMap a b ≫ (tensorRightUnitor L).hom ≫ g ≫ (unitAut K c).asIso.hom =
+      tensorMap (a ≫ g) (b ≫ (unitAut (structureSheaf X) c).asIso.hom) ≫
         (tensorRightUnitor K).hom := by
   have ht :
-      tensorMap (a ≫ g) (b ≫ (unitAut (structureSheaf X) c).hom) =
+      tensorMap (a ≫ g) (b ≫ (unitAut (structureSheaf X) c).asIso.hom) =
         tensorMap a b ≫ tensorMap g (𝟙 (structureSheaf X)) ≫
-          tensorMap (𝟙 K) (unitAut (structureSheaf X) c).hom := by
+          tensorMap (𝟙 K) (unitAut (structureSheaf X) c).asIso.hom := by
     rw [tensorMap_comp, tensorMap_comp]
     simp
   rw [ht]
@@ -98,10 +98,10 @@ lemma tensorChartContractionIso_restrict {X U V : Scheme.{u}}
     (ha : (Scheme.Modules.pullback r).map aV.hom ≫ γ =
       compHom r jV jU hr A ≫ aU.hom)
     (hb : (Scheme.Modules.pullback r).map bV.hom ≫ (pullbackUnitIso r).hom ≫
-        (unitAut (structureSheaf U) c).hom =
+        (unitAut (structureSheaf U) c).asIso.hom =
       compHom r jV jU hr B ≫ bU.hom) :
     (Scheme.Modules.pullback r).map (tensorChartContractionIso jV aV bV).hom ≫
-        γ ≫ (unitAut LU c).hom =
+        γ ≫ (unitAut LU c).asIso.hom =
       compHom r jV jU hr (tensorObj A B) ≫
         (tensorChartContractionIso jU aU bU).hom := by
   rw [tensorChartContractionIso_hom, tensorChartContractionIso_hom,

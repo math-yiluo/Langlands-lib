@@ -1,7 +1,6 @@
 # Prepending point segments to a segment-product datum
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerPointBlocks`. Written by
-Worker 5735 for Task 5735.
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerPointBlocks`.
 
 * `iterProd T B j Y`: the right-nested product `B × (B × ⋯ × Y)` with `j` factors `B`, on the rank
   `powerRank r j m`; `powerProduct_eq_iterProd` identifies it with `powerProduct` for

@@ -48,10 +48,8 @@ omit zero quotient factors to achieve the displayed bound.
 
 ## Provenance and intended argument
 
-This is an internal algebraic prerequisite specified by Worker 39 for the proof
-of finiteness of matrix conjugacy classes with fixed characteristic polynomial
-in task `e82ee8d6-204c-40ac-85b0-968fb0a6a298`. Worker 597 formalized its
-statement and documentation. The published proof
+This is an internal algebraic prerequisite of the proof of finiteness of matrix
+conjugacy classes with fixed characteristic polynomial. The published proof
 `Langlands.matrixCharpolyFiniteConjugacy` of that finiteness uses it. It is
 not a quotation from an external source. The type synonym and scalar action
 are Mathlib's existing constructions in

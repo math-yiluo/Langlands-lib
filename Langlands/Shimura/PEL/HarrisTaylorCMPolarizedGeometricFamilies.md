@@ -1,7 +1,5 @@
 # Unpointed normalized CM class values from geometric families
 
-Author: Worker 57.
-
 This derived construction defines values of the normalized CM polarized Harris
 class problem without selecting a geometric point. A value is a family over all
 actual geometric points of the base, compatible with the already constructed
@@ -121,10 +119,11 @@ explicit evaluation equivalences. Residue fields, algebraic closure and their
 spectrum maps are Mathlib constructions; actual fibre finiteness is reused
 from the project's `GeometricFiberFiniteProof`.
 
-This pair constructs fixed-base unpointed values and their original level
-tower. It does not yet construct their pullback under a morphism of bases,
-a presheaf in bases, the extension to disconnected bases, or equivalence with
+This module constructs fixed-base unpointed values and their original level
+tower. It does not construct their pullback under a morphism of bases (the
+module `HarrisTaylorCMPolarizedFamilyBaseChange` does), a presheaf in bases,
+the extension to disconnected bases, or equivalence with
 every convention in the full original moduli problem. Representability,
-scheme levels, canonical-model comparisons, coefficient descent and completion
-of the host task remain separate obligations. No scheme or representability
-theorem is selected or supplied by this construction.
+scheme levels, canonical-model comparisons and coefficient descent remain
+separate obligations. No scheme or
+representability theorem is selected or supplied by this construction.

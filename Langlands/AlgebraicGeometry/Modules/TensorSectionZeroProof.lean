@@ -31,6 +31,7 @@ private lemma tensorMap_zero_left {M M' N N' : X.Modules} (g : N ⟶ N') :
   have hz : (0 : M ⟶ M').val ⊗ₘ g.val = 0 := by
     apply PresheafOfModules.hom_ext
     intro U
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     change (0 : M.val.obj U ⟶ M'.val.obj U) ⊗ₘ g.val.app U = 0
     exact MonoidalPreadditive.zero_tensor _
   change (sheafify X).map ((0 : M ⟶ M').val ⊗ₘ g.val) = 0
@@ -42,6 +43,7 @@ private lemma tensorMap_zero_right {M M' N N' : X.Modules} (f : M ⟶ M') :
   have hz : f.val ⊗ₘ (0 : N ⟶ N').val = 0 := by
     apply PresheafOfModules.hom_ext
     intro U
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     change f.val.app U ⊗ₘ (0 : N.val.obj U ⟶ N'.val.obj U) = 0
     exact MonoidalPreadditive.tensor_zero _
   change (sheafify X).map (f.val ⊗ₘ (0 : N ⟶ N').val) = 0

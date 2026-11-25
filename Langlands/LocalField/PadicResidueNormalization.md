@@ -42,4 +42,4 @@ and errata reading record are given in the companion
 
 This p-adic specialization does not restrict the general construction to
 characteristic zero. No inverse-sign NYLL comparison, Haar result, or claim
-about the remainder of V.1 is included. Worker 607 authored this adapter.
+about the remainder of V.1 is included.

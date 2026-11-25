@@ -1,7 +1,5 @@
 # A maximal torus of the preimage of a subgroup in a central cover
 
-Author: Worker 1413.
-
 Module `Langlands.GroupScheme.SimplyConnected.CoverPreimageTorus`, namespace
 `Langlands.GroupScheme.CoverPreimage`, over a field `k`. Internal helpers for
 clause 6 of the reduction

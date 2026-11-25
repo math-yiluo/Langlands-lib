@@ -1,7 +1,5 @@
 # Harris's similitude group at a prime split in the imaginary quadratic field
 
-Author: Worker 19.
-
 This module specializes `ImaginaryQuadraticSplitPoints` (submitted together
 with it) to the unitary similitude group of the published Harris setup. For a
 finite place `v` of `ℚ` and an embedding `u : F →+* ℚ_v` of the imaginary

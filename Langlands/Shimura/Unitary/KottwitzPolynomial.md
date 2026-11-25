@@ -3,7 +3,7 @@
 Module `Langlands.Shimura.Unitary.KottwitzPolynomial`, namespace
 `Langlands.Shimura.KottwitzDual`.
 
-This module is the third unit of item 3 of Task 5424. It has two layers.
+This module has two layers.
 
 - For a dual-torus element `t̂`, it constructs Kottwitz's unramified
   representation `V = (r ∘ φ_{E_v}) ⊗ χ` of `W_{E_v}`, where `φ` sends
@@ -22,19 +22,20 @@ It proves:
   unchanged when `√p` is negated and `t̂` is adjusted;
 - `P` is invariant under twisted conjugation of `t̂`.
 
-This module does not complete item 3. The relations do not by themselves
+The relations do not by themselves
 determine a unique `P(π_p, E_v) ∈ L[X]` for each `π_p`. The following are not
-proved: existence of a parameter; independence of the lift `t̂`, of the Weyl
+proved here: existence of a parameter; independence of the lift `t̂`, of the Weyl
 representative of the parameter, and of `θ` within the place `v`; and
 Kottwitz's descent of `P` to `L[X]`. They are listed under "What is not claimed"
-below and remain open work for the full task result.
+below. Independence of the lift, over an algebraically closed field and under
+two hypotheses on the Frobenius action, is proved in `KottwitzLiftIndependence`.
 
-It builds on three accepted units:
+It builds on:
 
 - `KottwitzDualGroup`: the dual group, the unramified L-group, and the
   Frobenius permutation attached to `θ : ℂ → Q̄_p`;
 - `KottwitzRepresentation`: the representation `r`;
-- Worker 8's `KottwitzChart` and `KottwitzPrincipalSeries`: standard unramified
+- `KottwitzChart` and `KottwitzPrincipalSeries`: standard unramified
   charts, the rational cocharacter lattice, `SqrtPrime`, and principal-series
   parameters.
 
@@ -54,7 +55,7 @@ Library's `HarrisSignatureCharts.hodgeFunction` and `standardHodgeFunction`.
 
 The prime is a natural number `p`, with the finite place
 `rationalPrimePlace p` of `ℚ`. `c` is a standard unramified chart at that
-place (Worker 8's item 1). `θ : ℂ →+* Q̄_p` determines three things:
+place (`KottwitzChart`). `θ : ℂ →+* Q̄_p` determines three things:
 
 - the place `v` of the reflex field;
 - the Frobenius permutation `frobeniusPerm` of the complex embeddings of `K`;
@@ -75,7 +76,7 @@ Kottwitz (p.656) works over an algebraic closure `L̄` of the coefficient field
   "`P(π_p, E_v)` has coefficients in `L`".
 
 Accordingly, the relations below allow any field extension `Ω` of `L`, in which
-the parameter `ξ` of Worker 8's `HasPrincipalSeriesParameter` takes values.
+the parameter `ξ` of `HasPrincipalSeriesParameter` takes values.
 `s : SqrtPrime (rationalPrimePlace p) Ω` is a square root of `p` in `Ω`.
 Kottwitz's case is `Ω = AlgebraicClosure L` (`IsKottwitzPolynomial`).
 
@@ -88,12 +89,12 @@ Kottwitz's case is `Ω = AlgebraicClosure L` (`IsKottwitzPolynomial`).
   multiplier exponent and `a_{τ,k}` is the exponent at the CM-type embedding
   `Φ τ`.
 - `twoRhoPairing a = Σ_{τ,k} (n − 1 − 2k) a_{τ,k}` is `⟨2ρ, λ⟩` for the upper
-  triangular Borel subgroup. It is the formula Worker 8 uses for item 2.
+  triangular Borel subgroup. It is the formula used in `KottwitzPrincipalSeries`.
 - `embeddingCochar θ Φ m` writes a `ℚ_p`-rational cocharacter
   `m = (m_w, m_c) ∈ localCocharacters` in these coordinates:
   `a₀ = m_c`, `a_{τ,k} = m_{w(Φτ), k}`.
 - `IsNormalizedLift c θ s ξ t` says that `t̂` lifts the unitarily normalized
-  character `χ = ξ δ_B^{-1/2}` of Worker 8's principal-series character `ξ`:
+  character `χ = ξ δ_B^{-1/2}` of the principal-series character `ξ` of `KottwitzPrincipalSeries`:
   `λ(t̂) = ξ(λ(p)) · s^{⟨2ρ, λ⟩}` for all rational `λ`. This uses Kottwitz's
   `|x|^{1/2} = (√p)^{−val x}`, so `δ_B^{1/2}(λ(p)) = s^{−⟨2ρ, λ⟩}`.
 
@@ -244,7 +245,7 @@ Proved properties:
   quotient `T̂/(1 − σ)T̂` is the torus with character group `X_*(T)^Γ`). So
   `kottwitzCharpoly_twistedConj` gives independence of the lift. This
   derivation is documented, not formalized.
-- Invariance of `P` under Worker 8's Weyl equivalence of parameters.
+- Invariance of `P` under the Weyl equivalence of parameters of `KottwitzPrincipalSeries`.
 - Kottwitz's descent: the existence of `P ∈ L[X]` for `π` irreducible over
   `L̄` (p.657). `IsKottwitzPolynomial` characterizes `P` but does not prove it
   exists.

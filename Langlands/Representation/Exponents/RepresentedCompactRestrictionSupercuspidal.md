@@ -68,7 +68,7 @@ statement depends on a torus or cocharacter.
 
 (c) implies (a). The published `rationalCompactRestrictionCuspidal` (Renard
 VI.2.1, (c) implies (a), for proper standard parabolics) turns the compact
-restriction into `IsCuspidal` for the chosen standard family. Worker 1750's
+restriction into `IsCuspidal` for the chosen standard family.
 `isSupercuspidal_of_isCuspidal` in `RepresentedCuspidalityComparison`
 conjugates every proper actual parabolic to a standard one, using `hPD` and
 `hconj`, and transfers the vanishing of the coinvariants. This is the
@@ -97,7 +97,9 @@ The iff pairs the two implications. The axioms used are `propext`,
 
 The module proves no structural existence statement. It does not prove the
 fixed-level finiteness on the norm kernel, and it does not construct a
-cuspidal/remainder splitting. The final splitting proof will apply these
-theorems once the structural statements are proved.
+cuspidal/remainder splitting. The reduction
+`representedCuspidalRemainderSplitting_of_fixedLevelFiniteness` (module
+`RepresentedCuspidalRemainderSplittingReduction`) applies these theorems to obtain the
+splitting from the fixed-level finiteness and the structural statements.
 
-Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.
+The local instances in this file have explicit module-specific names. This prevents generated-name collisions when the inertia and norm-kernel branches are imported together.

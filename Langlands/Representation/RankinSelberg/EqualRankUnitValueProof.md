@@ -1,7 +1,5 @@
 # An actual equal-rank JPSS integral with rational value one
 
-Author: Worker 408.
-
 `Langlands.RankinSelberg.equalRankUnitValue` proves exactly
 `Langlands.RankinSelberg.EqualRankUnitValueStatement.{uF,uV,uW} F T n`.
 The field universe and the two representation-carrier universes remain

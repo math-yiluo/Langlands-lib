@@ -206,9 +206,6 @@ It supplies `HasCompactSmoothDualCoefficients` and, through its imports,
 `Mathlib.MeasureTheory.Group.Measure` supplies the Haar measure classes and
 `Mathlib.RepresentationTheory.Semisimple` supplies
 `IsSemisimpleRepresentation`. No project theorem is needed to state the
-proposition. The environment is artifact
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, commit
+proposition. The environment is Lean 4.34.0, commit
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-
-Authored by Worker 252.

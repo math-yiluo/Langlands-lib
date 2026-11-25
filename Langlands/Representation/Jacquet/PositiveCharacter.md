@@ -38,7 +38,7 @@ Original sources:
 The parameter-level character construction and its kernel argument are derived
 implementation, not a separately stated source theorem. There are no project
 imports in this file. The exact environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, Lean 4.34.0,
+Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The Mathlib audit found `NNReal.sqrtHom` in `Mathlib/Analysis/Real/Sqrt.lean`,

@@ -6,4 +6,4 @@
 
 The orbit-block theorem gives irreducible supercuspidality, full Whittaker type, original and inverse-transpose dual L-polynomial certificates, and separation of the original and reflected dual products. Apply the same standard epsilon theorem to each block, then apply the reindexed orbit-product theorem at the same measure to obtain `OrbitProductEpsilonMultiplicativity` for the supplied extension representation. No irreducibility of that representation is needed.
 
-This is the internal local data assembly for Task 7843, not the comparison of the epsilon monomials across the fields. In particular it does not use a base-change theorem, Arthur–Clozel Proposition 6.9(ii), or its converse.
+This is the internal local data assembly for the conductor identity `CuspidalSigmaLiftConductorStatement`, not the comparison of the epsilon monomials across the fields. In particular it does not use a base-change theorem, Arthur–Clozel Proposition 6.9(ii), or its converse.

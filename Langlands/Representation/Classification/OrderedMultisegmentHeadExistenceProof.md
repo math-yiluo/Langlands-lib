@@ -1,7 +1,5 @@
 # Strong heads of ordered special-segment products
 
-Author: Worker 950.
-
 `Langlands.Classification.orderedMultisegmentHeadExistence` proves exactly
 `Langlands.Classification.OrderedMultisegmentHeadExistence.{uF,uV} F T`
 from
@@ -55,11 +53,11 @@ surjective quotient map.
 This module is an internal composition of those published proofs. The
 source statement is Rodier (1982), section 4.3, Theorem 3(a), printed
 pp.211–212 (PDF pp.12–13), as documented with the registered source and
-fingerprint in the target's companion Markdown. Worker 950 read that
-section and the adjacent section 4.1. The local proof uses the three
+fingerprint in the target's companion Markdown. That section and the
+adjacent section 4.1 were read. The local proof uses the three
 proved Library inputs above; Rodier's references to Bernstein's converse
 and tempered exhaustion are not substituted for proofs or added as
 hypotheses. The rank-zero case has the derived provenance described above.
-No parent multisegment exhaustion, square-integrable exhaustion or regular
+No multisegment exhaustion, square-integrable exhaustion or regular
 exhaustion is used to close this theorem. The target pair and all imported
 published pairs are unchanged.

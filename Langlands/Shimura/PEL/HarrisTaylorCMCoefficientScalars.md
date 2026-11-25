@@ -1,7 +1,5 @@
 # Quotient-ring and integral-scalar Harris coefficient sheaves
 
-Author: Worker 57.
-
 This derived specialization compares two existing coefficient constructions on
 the same original CM scheme. Restriction of scalars sends each original
 quotient-ring coefficient sheaf canonically to the corresponding integral
@@ -45,7 +43,7 @@ those of the existing Yoneda-derived `cmSchemeTower ... q`.
 `RelativeDualSchemeExistenceStatement.{0}`,
 `RelativeDualSchemeGeometryStatement.{0}` and
 `CMGeometricCoarseRigidity ... U.obj` remain the explicit arguments
-`existence`, `geometry` and `hRigid`. This unit does not prove these premises.
+`existence`, `geometry` and `hRigid`. This module does not prove these premises.
 It adds no supplied scalar comparison, inverse system or transition
 compatibility assumption.
 
@@ -161,7 +159,7 @@ The identity and composition laws follow from `copyObj`; transitions are
 constructed by this transport rather than taken as additional data.
 The integral τ_f already uses the original coefficient reduction and the
 inverse of the proved comparison between the original coefficient covers.
-This unit transports those particular transitions. It does not posit
+This module transports those particular transitions. It does not posit
 independently specified transitions between the varying scalar categories.
 
 `cmHarrisRestrictedCoefficientSystemIso` is a natural isomorphism from
@@ -210,7 +208,7 @@ is imported by Lean name. The allowed nonzero natural m and exponent zero
 come from the existing arithmetic constructors and extend the sources'
 positive prime-power parameters.
 
-This unit proves scalar restriction and transport of an already constructed
+This module proves scalar restriction and transport of an already constructed
 conditional inverse system. It does not prove applicable representability,
 dual existence, coarse rigidity or source canonical-model comparisons.
 It does not identify the sheaves with the sources' component-function
@@ -220,6 +218,6 @@ representations, prove trivial kernel intersection, or construct the
 completed lisse adic object and its cohomology. No scalar-extension or
 tensor-with-invariants comparison is asserted.
 
-This pair is by Worker 57 using published generic results. The pinned
+This pair uses published generic results. The pinned
 environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,8 +1,5 @@
 # Proof of the centre of the category of nondegenerate modules (Renard I.1.7, Theorem)
 
-Author: Worker 142 (Lean proof and Markdown), under Task 5709
-(`56b7aa00-3ccf-44fb-9c6d-7f84b98504bd`).
-
 This module proves the published statement
 `Langlands.Algebra.NondegenerateModuleCenterTheoremStatement` from
 `Langlands.Algebra.NondegenerateModuleCenterStatements`. It changes nothing in the statement

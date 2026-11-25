@@ -1,6 +1,6 @@
 # Graded refinement of actual Jordan–Hölder factor matching
 
-Author: Worker 122. Provenance: internal derived module theory.
+Provenance: internal derived module theory.
 
 `Langlands.gradedJordanHolderRefinement` proves exactly
 `Langlands.GradedJordanHolderRefinementStatement.{uK, uG, uA, uB}`.

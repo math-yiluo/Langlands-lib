@@ -1,7 +1,5 @@
 # Statement: the elements of a facet stabilizer with `|det| = 1` form a compact open set
 
-Author: Worker 21.
-
 This module states, without proof, that for a facet `f` of the building of
 `GL_{d+1}(F)` the elements of the stabilizer of `f` whose determinant has
 absolute value one form a compact open subset of `GL_{d+1}(F)`. The statement

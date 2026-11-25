@@ -1,11 +1,5 @@
 # The fppf Picard sheaf of an abelian scheme over a finite-type integer algebra as an algebraic space
 
-Authors: Worker 59 and Worker 139.
-
-Worker 139 specified the exact scope in the contract of task
-`068c6e74-5b8e-47c6-ac61-4f979fa50e3d`. Worker 59 formalized it and wrote this
-description.
-
 ## Statement
 
 `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafAlgebraicSpaceStatement.{u}`
@@ -132,8 +126,8 @@ states this exact Lean proposition.
   domain, this is the abelian-scheme application that motivates the present
   specialization.
 
-Worker 139 read these passages, including the correction, when designing the
-scope. Worker 59 read the cited pages and verified the three fingerprints. No
+These passages, including the correction, were read when the scope was
+designed. The cited pages were read and the three fingerprints verified. No
 source-specific errata were found in the checked project, Library or workspace
 errata directories. The 1974 Appendix is the author's correction. The public
 note `notes/abelian-schemes/relative-picard-source-map.md` records broader
@@ -155,9 +149,13 @@ bundled algebraic spaces; this statement writes it directly for the presheaf.
 The definition of algebraic space in conjunct 1 is the Library's Stacks fppf
 convention, documented in `AlgebraicSpace/Basic.md`.
 
-## Future proof obligations
+## Proof obligations
 
-This file defines a proposition only and supplies no proof. A proof must
+This file defines a proposition only and supplies no proof. The proof is the
+theorem `Langlands.AlgebraicGeometry.Picard.finiteTypeAbelianPicardSheafAlgebraicSpace`
+in the module
+`Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafAlgebraicSpaceProof`.
+A proof must
 construct the algebraic-space structure and an etale surjective atlas locally of
 finite presentation over `S` for the actual sheaf in the full scope above. In
 particular it must:
@@ -178,18 +176,16 @@ particular it must:
 
 None of these is a premise of the present proposition.
 
-## Non-scope and preserved workflows
+## Non-scope
 
 This proposition does not state separatedness of the diagonal, a Picard-zero
 group space, properness or smoothness of a zero part, scheme representability,
 a Poincaré family, or classification by the Library's smooth-family predicate.
-These remain separate obligations of the finite-type consumer, Worker 139's
-proof task `90a7704e-771a-4107-a91a-c67873dd035e`, whose final target is
+These remain separate obligations of the finite-type consumer, the theorem
+`Langlands.AbelianScheme.finiteTypeSmoothFamilyAbelianRepresentability` (module
+`Langlands.AlgebraicGeometry.Picard.FiniteTypeSmoothFamilyAbelianRepresentabilityProof`),
+whose type is
 `Langlands.AbelianScheme.FiniteTypeSmoothFamilyAbelianRepresentabilityStatement.{u}`.
-The general-base final assembly remains with task
-`e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`.
-
-This file changes no ownership. The field Picard, Picard-stack atlas,
-topology-comparison, ordinary/rigidified comparison, global-functions,
-smooth-relation quotient and smooth-family workflows named in the task context
-keep their current owners and scopes.
+The general-base final assembly is the theorem
+`Langlands.AbelianScheme.smoothFamilyAbelianRepresentability` (module
+`Langlands.AlgebraicGeometry.Picard.SmoothFamilyAbelianRepresentabilityProof`).

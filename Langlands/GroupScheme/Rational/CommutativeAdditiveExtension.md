@@ -1,11 +1,11 @@
 # Group sections of commutative additive extensions
 
-Worker 1485. Internal derived construction for the assigned characteristic-zero
-commutative unipotent classification. This unit constructs an actual group-scheme
+Internal derived construction for the characteristic-zero
+commutative unipotent classification. This module constructs an actual group-scheme
 section of a commutative affine extension with full monic vector kernel and
 one-dimensional vector quotient. The quotient map must be flat and surjective.
-No classification theorem is assumed; this remains a supporting unit of that
-classification task.
+No classification theorem is assumed; this module supports that
+classification.
 
 For a field `k : Type u`, let `j : K ⟶ E` be monic on underlying relative schemes,
 let `q : E ⟶ H`, and suppose the full all-test range of `j` equals the range of the
@@ -43,4 +43,4 @@ same full monic kernel, and the existing predicates `IsVectorGroupOfDimension K 
 and `IsVectorGroupOfDimension H 1`. The existing affine vector-extension section
 theorem supplies the initial scheme section, and the construction above supplies
 the group section. The finite kernel dimension may be zero. No smoothness,
-connectedness, algebraic closure, or unipotence comparison is needed in this unit.
+connectedness, algebraic closure, or unipotence comparison is needed in this module.

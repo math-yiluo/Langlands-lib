@@ -1,7 +1,5 @@
 # Three-factor determinant balance for equal dynamic centralizers
 
-Author: Worker 700.
-
 `Dynamic.centralizingDeterminantSquareDefect` is the additive rational
 character on the acting group given by the determinant on `U` plus the
 determinant on `V` minus twice the determinant on their represented

@@ -3,13 +3,11 @@
 Lean module: `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicTorsionHyperplaneBoundAssembly`,
 namespace `Langlands.AbelianScheme.PolarizedFiniteLevel`.
 
-Author: Worker 3523.
-
 ## Role and provenance
 
-This module is the conditional assembly for task `a76410a4-bece-4011-b3f8-7d87460be52c`
-(Task 3523). That task proves the published
-`Langlands.AbelianScheme.PolarizedFiniteLevel.CubicTorsionHyperplaneBoundStatement`.
+This module is the conditional assembly for the published
+`Langlands.AbelianScheme.PolarizedFiniteLevel.CubicTorsionHyperplaneBoundStatement`, which the
+Library proves as `cubicTorsionHyperplaneBound` (module `CubicTorsionHyperplaneBoundProof`).
 It concerns an algebraically closed field `K`, a datum `a` with `0 < g`, `0 < d`, `0 < n` and
 `(n : K) ≠ 0`, and a closed immersion `i` of the abelian variety into `ℙᵐ_K` over `Spec K`
 with `i^* 𝒪(1) ≅ M`, where `M = a.cubicBundle`. Assume that no nonzero linear form vanishes
@@ -32,18 +30,19 @@ premises:
   6^g * d` for every datum `a` over an algebraically closed field with `0 < g` and `0 < d`.
 
 This module derives `hA` from three more published statements. So the target follows from
-four published statements. Each has its own proof task, and none has a published proof yet:
+four published statements. Each has its own proof in the Library:
 
-| Premise | Published statement | Proof task |
+| Premise | Published statement | Proof (module) |
 | --- | --- | --- |
-| `hB` | `Langlands.GroupScheme.FieldSymmetricMultiplicationPullbackStatement` | `4db6f774-722f-405b-aeaa-8ab052f17c14` (Task 537) |
-| `hS` | `Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement` | `981f6bcb-41de-4a08-83b8-48b6eec2b236` (Task 3649) |
-| `hI` | `Langlands.AbelianScheme.AlgClosedFieldEulerInverseSymmetryStatement` | `c430e7e4-f317-40b4-8a98-6a3180453c97` (Task 3607) |
-| `hC` | `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFibreCohomologyStatement` | `baec6a6d-fe08-417e-95fd-fb8e2291cb1d` (Task 3488) |
+| `hB` | `Langlands.GroupScheme.FieldSymmetricMultiplicationPullbackStatement` | `Langlands.GroupScheme.fieldSymmetricMultiplicationPullback` (`Langlands.AbelianScheme.FieldSymmetricMultiplicationPullbackProof`) |
+| `hS` | `Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement` | `Langlands.AbelianScheme.algClosedFieldAmpleEulerInverseScaling` (`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldAmpleEulerInverseScalingProof`) |
+| `hI` | `Langlands.AbelianScheme.AlgClosedFieldEulerInverseSymmetryStatement` | `Langlands.AbelianScheme.algClosedFieldEulerInverseSymmetry` (`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldEulerInverseSymmetryProof`) |
+| `hC` | `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFibreCohomologyStatement` | `Langlands.AbelianScheme.PolarizedFiniteLevel.cubicFibreCohomology` (`Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFibreCohomologyProof`) |
 
 All four are used unchanged at the universe `u` of the target. This module does not prove
-the target statement and does not assert any premise. When the four proofs are in the
-Library, the target follows by applying `cubicTorsionHyperplaneBoundReduction` to them.
+the target statement and does not assert any premise. The target follows by applying
+`cubicTorsionHyperplaneBoundReduction` to the four proofs; `cubicTorsionHyperplaneBound` does
+exactly this.
 
 What the premises say:
 
@@ -76,8 +75,8 @@ Here `χ` is the Library's `eulerCharacteristic` of the structure morphism, and 
   `FieldSymmetricMultiplicationPullbackStatement → AlgClosedFieldAmpleEulerInverseScalingStatement →
   AlgClosedFieldEulerInverseSymmetryStatement → CubicFibreCohomologyStatement →
   CubicTorsionHyperplaneBoundStatement`, all at universe `u`. It is internal: it records
-  exactly what this module proves, so the reduction can be reviewed as a statement before the
-  premises are proved. It is not the target statement.
+  exactly what this module proves, so the reduction is a statement of its own, independent of
+  the proofs of the premises. It is not the target statement.
 - `cubicTorsionHyperplaneBoundReduction`: proves the reduction statement. It is
   `cubicTorsionHyperplaneBound_of_fibreInputs`.
 

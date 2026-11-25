@@ -9,8 +9,7 @@ the regular function obtained by evaluating it at the identity morphism of its
 source scheme. Naturality of character evaluation identifies its pullback at
 an actual rational point with the character value. The regular-function power
 bound from `RationalMatrixNormComparison` gives a uniform polynomial estimate.
-That imported development is by Worker 1633; it is used without duplicating its
-proof here.
+That imported development is used without duplicating its proof here.
 
 For the uniformizer chart, restrict the closed matrix embedding along the
 supplied closed inclusion of the commutative group scheme. Apply the character

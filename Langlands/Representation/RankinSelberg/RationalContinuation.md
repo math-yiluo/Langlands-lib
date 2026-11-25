@@ -1,7 +1,5 @@
 # Rational continuation in the local spectral variable
 
-Author: Worker 11.
-
 This pair supplies an intrinsic uniqueness argument for the rational
 continuations used in JPSS local zeta integrals. It imports only the pinned
 Mathlib environment. It does not prove convergence or existence of a rational

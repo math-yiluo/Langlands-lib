@@ -1,26 +1,24 @@
 # Wave packets for actual standard parabolic subgroups (Waldspurger VI.1–VI.3)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacket`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedCoefficients` (this author's
-  Unit 19, candidate `181a067e-76c8-4bae-b922-0bd659adbf51`): the coefficient map
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedCoefficients`: the coefficient map
   `rationalInducedCoefficientMap` (`E_P^G` on actual points) with
   `rationalInducedCoefficientMap_eq_coefficientMap`, and the actual-point facts
   `isClosed_standardParabolicPoints_rootSet`,
   `locallyCompactSpace_standardParabolicPoints_rootSet` and
-  `exists_standardParabolicPoints_rootSet_mul`. Through it come the imports of Unit 14
+  `exists_standardParabolicPoints_rootSet_mul`. Through it come the imports of
+  `RationalTemperedInduction`
   (`isUnimodularModulus_standardUnipotentPoints`, `modularCharacter_standardParabolicPoints`),
   `RationalXiLevi` (`rationalLeviXi`, `rationalLeviData`, `compactSpace_subgroupOf_standardLevi`)
   and `RationalWeights` (`rationalXi`, `rationalMinimalModulus_eq_one`).
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacket` (Worker 249): the abstract
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacket`: the abstract
   results this module instantiates. These are `inducedOrbitWavePacket`,
   `exists_norm_unitaryOrbitCoefficientMap_le_xi`, `exists_norm_inducedOrbitWavePacket_le_xi`,
   `exists_inducedOrbitWavePacket_biInvariant`, `integrable_inducedOrbitWavePacket_integrand`,
   `inducedOrbitWavePacket_smul`, `inducedOrbitWavePacket_add` and
-  `inducedOrbitWavePacket_eq_parameterIntegral`. Through it come Worker 200's
+  `inducedOrbitWavePacket_eq_parameterIntegral`. Through it come
   `productInducedSmoothOrbitSections`, `unitaryOrbitCoefficientMap` (with
   `unitaryOrbitCoefficientMap_representative` and `unitaryOrbitRepresentativeCoefficientMap`),
   `UnitaryOrbitRepresentative`, `unitaryOrbitRepresentativeDiscreteSeriesOrbit`, and the orbit
@@ -46,8 +44,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on the
-text of PDF pages 61, 62, 64, 67 and 68.
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the text
+of PDF pages 61, 62, 64, 67 and 68.
 
 - VI.1, printed pp. 295–296: "Soient `P = MU` un sous-groupe parabolique semi-standard de `G` et
   `O ∈ E₂(M)` une orbite pour l'action de `Im X(M)`. [...] Soit `ψ` une fonction qui, à un
@@ -64,7 +62,7 @@ text of PDF pages 61, 62, 64, 67 and 68.
   `f_ψ(g) = ∫_O µ(ω) (E_P^G ψ_ω)(g) dω`."
 
 The Library's abstract versions of these objects, and their relation to Waldspurger's
-definitions, are described in `OrbitWavePacket.md` and in the Markdown of Worker 200's
+definitions, are described in `OrbitWavePacket.md` and in the Markdown of
 `ProductInducedOrbitSections`. This module adds no new mathematics to them. It supplies the
 actual data of a standard parabolic `P_I(F)`, and coordinates on `Im X(M_I)`.
 
@@ -157,8 +155,8 @@ actual data of a standard parabolic `P_I(F)`, and coordinates on `Im X(M_I)`.
   `unitaryOrbitCoefficientMap` on the same data.
 - **`rationalInducedOrbitCoefficientMap_representative q A`**. At the orbit class of a
   representative `A`, the orbit coefficient of `ψ = q` is
-  `rationalInducedCoefficientMap hG hi hν I hKc hPK A A_adm (q_A)`. That is Unit 19's
-  `E_P^G` for `A`, applied to `ψ_A`. So `ω ↦ E_P^G ψ_ω` is Waldspurger's `E_P^G` at every
+  `rationalInducedCoefficientMap hG hi hν I hKc hPK A A_adm (q_A)`. That is the
+  `E_P^G` of `RationalInducedCoefficients` for `A`, applied to `ψ_A`. So `ω ↦ E_P^G ψ_ω` is Waldspurger's `E_P^G` at every
   point of the orbit.
 - **`exists_norm_rationalInducedOrbitCoefficientMap_le_rationalXi hcoeff q`** (Lemma VI.2.2 on
   `C^∞(O, P)`). There is `c > 0` with `|(E_P^G ψ_ω)(g)| ≤ c Ξ(g)` for all `ω ∈ O` and
@@ -193,7 +191,7 @@ actual data of a standard parabolic `P_I(F)`, and coordinates on `Im X(M_I)`.
 
 Every result about `C^∞(O, P)` and `f_ψ` applies the corresponding `OrbitWavePacket` lemma, with
 the same actual data as the definitions. The structural hypotheses of the bound are the same as
-in Unit 19:
+in `RationalInducedCoefficients`:
 
 - `U_I(F)` is unimodular: `isUnimodularModulus_standardUnipotentPoints`;
 - the Levi data: `rationalLeviData`;
@@ -203,7 +201,7 @@ in Unit 19:
 
 The Laurent property and the continuity of the coordinates are those proved here.
 
-Technique, as in Unit 19:
+Technique, as in `RationalInducedCoefficients`:
 
 - every Library lemma is instantiated with `(G := rationalPoints G)` and
   `(M := standardLeviPoints …)`;
@@ -222,6 +220,7 @@ Technique, as in Unit 19:
   an instance hypothesis.
 - `K`, `hKc`, `hPK` and `hM` are data (ledger rows S3 and S5). `hcoeff` is a hypothesis: for `π`
   square integrable modulo the centre it is the conclusion of Corollary III.1.2, whose actual
-  statement `RationalSquareIntegrableRapidDecayStatement` is not yet proved.
+  statement `RationalSquareIntegrableRapidDecayStatement` is proved as
+  `rationalSquareIntegrableRapidDecay` (`RationalSquareIntegrableDecayProof`).
 - Proposition VI.3.1 (`f_ψ ∈ C(G)`, and continuity of `ψ ↦ f_ψ`) is not proved here. The bound
   by `Ξ` above is the first step of its proof.

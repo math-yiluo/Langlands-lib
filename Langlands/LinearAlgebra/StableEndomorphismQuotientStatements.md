@@ -1,8 +1,8 @@
 # Exactness assertions for successive kernel and range quotients
 
-Worker 709 prepared these statements for the Renard whole-book program.
-Worker 969 independently rechecked them against the source and submitted
-them unchanged. This module defines four propositions. It proves none of them.
+These statements were prepared for the formalization of Renard's book and
+then rechecked independently against the source, without change. This
+module defines four propositions. It proves none of them.
 It imports the public construction
 `Langlands.LinearAlgebra.StableEndomorphismQuotients`, without changing
 its objects or laws. All four declarations belong to
@@ -19,21 +19,21 @@ SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The readable original is
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 read PDF pages 283–284 and inspected a rendered image of
-PDF page 284 when auditing the formulas, then reread those pages while
-preparing this pair. Worker 969 confirmed the SHA256 of that file,
-reread the text of PDF pages 283–284 and checked every formula
-below against a rendered image of PDF page 284.
+PDF pages 283–284 were read and a rendered image of PDF page 284 was
+inspected when the formulas were audited, and those pages were reread
+while this pair was prepared. The independent recheck confirmed the
+SHA256 of that file, reread the text of PDF pages 283–284 and checked
+every formula below against a rendered image of PDF page 284.
 
 The supplementary author errata for the older edition are registered as
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`.
-Workers 709 and 969 each read PDF page 19. Its correction to old printed
+PDF page 19 was read in both checks. Its correction to old printed
 page 321, line 4, replaces `k + 1` by `k + 2` in `t(N_(k+2))`. The
 governing 2026 PDF page 284 already has this corrected index; clause 5
 below retains it. The errata supplement the 2026 text and do not replace it.
-When this pair was checked, the workspace, the project notes and the
-Library had no errata note for either source.
+When this pair was checked, the project notes and the Library had no
+errata note for either source.
 
 The source states these identities inside the proof of an eventual
 stabilization result for complex vector spaces. The identities themselves
@@ -146,30 +146,31 @@ belongs to the separate existing statement module
 | `PowerQuotientExactSequenceStatements.{uR, uV}` | Conjunction of the ring-general and explicit complex targets |
 
 The complex target uses `R := ℂ` in `PowerQuotientExactnessAt` and
-retains arbitrary carrier universe and dimension. The aggregate is the
-intended exact target for a later proof unit.
+retains arbitrary carrier universe and dimension. The aggregate is
+proved as `powerQuotientExactSequenceStatements` in
+`Langlands.LinearAlgebra.StableEndomorphismQuotientProofs`.
 
 ## Verification and remaining obligations
 
-The paired Lean file is a statement unit, with no theorem proving these
-four propositions. Development checks in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` completed with no errors or
+The paired Lean file is a statement module, with no theorem proving these
+four propositions. Development checks with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` completed with no errors or
 warnings:
 
-- Aggregate inspection `b3fc41c5-4255-48c6-85f1-2f2edf568622`:
+- Aggregate inspection:
   `PowerQuotientExactSequenceStatements` returns `Prop`, with level
   parameters `uR`, `uV`.
-- Ring-target inspection `6a053a76-bd5b-4da8-833a-d869d3648f4c`:
+- Ring-target inspection:
   `PowerQuotientExactSequenceStatement` returns `Prop`, with level
   parameters `uR`, `uV`.
-- Complex-target inspection `82b13171-c876-4232-a3ca-875d04be2f28`:
+- Complex-target inspection:
   `ComplexPowerQuotientExactSequenceStatement` returns `Prop`, with
   level parameter `uV`.
 
 These three inspections report only `propext`, `Classical.choice` and
-`Quot.sound` in their axiom closures. The private complete-body diagnostic
-`09798f6c-43cc-41c3-8ce0-d5ebcea6f916` also completed cleanly. Worker
-709 read all four complete printed bodies and all eight check outputs.
+`Quot.sound` in their axiom closures. A private complete-body diagnostic
+also completed cleanly. All four complete printed bodies and all eight
+check outputs were read.
 The predicate body contains exactly the ten clauses above, including
 `N_(k+2)` in clause 5 and the two final range/kernel equalities. Its
 printed type has independent coefficient/carrier universes and exactly
@@ -181,13 +182,13 @@ parameters, and the parameterized predicate for arbitrary rings and
 complex spaces at general and zero indices. These checks inspect the
 statements and do not prove them.
 
-Worker 969 then checked the unchanged Lean file independently in the
+The independent recheck then checked the unchanged Lean file in the
 same environment:
 
-- Aggregate inspection `f2c4b5d4-76c9-4b2e-a964-a33c3ad178ca`: no
+- Aggregate inspection: no
   errors or warnings, `statement_returns_prop: true`, level parameters
   `uR`, `uV`, axioms `propext`, `Classical.choice`, `Quot.sound`.
-- Complete-body diagnostic `2aad8f04-ac3c-4bca-b22d-1096c9e9989e`:
+- Complete-body diagnostic:
   printed all four bodies with explicit universes, confirming the ten
   clauses above in order. It also elaborated the aggregate at
   independent, swapped and concrete universe levels, and the
@@ -196,13 +197,10 @@ same environment:
   exactness conjuncts by position, including at index `0` over an
   arbitrary ring.
 
-The diagnostic modules are private and excluded from the shared pair and
-any submission. Development evidence supplies neither independent
-semantic acceptance nor publication. Both are required before a proof
-successor targets the aggregate.
+The diagnostic modules are private and not part of the Library.
 
 The existing common-first-stabilization theorem remains separate.
 These statements do not close general categorical exactness,
 power-kernel-union localization, the general algebra-action extension
-or the final C.II finite-localization proposition. Those remain
-independent obligations of the whole-book program.
+or the final C.II finite-localization proposition. Those are
+separate obligations.

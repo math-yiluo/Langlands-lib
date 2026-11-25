@@ -105,7 +105,7 @@ These constructions copy, for `L_q` over `ℚ_p` through `K_p`, the construction
   place divides the different ideal of `𝓞 L` over `𝓞 K`
   (`not_dvd_differentIdeal_iff`), and this ideal is nonzero
   (`differentIdeal_ne_bot`), so it has finitely many prime factors. The
-  Library already has `Langlands.ClassField.Global.finite_setOf_ramificationIdx_ne_one`
+  Library already has `Langlands.ClassFieldTheory.Global.finite_setOf_ramificationIdx_ne_one`
   with the same proof, but only for two fields in one universe. This
   module needs independent universes `u` and `v`.
 - `eventually_ramificationIdx_eq_one K L`: for all but finitely many finite
@@ -121,8 +121,8 @@ Proposition 3 and its Corollary, printed pp.81–82 (PDF pp.88–89), registered
 source `serre-1979-local-fields`. Proposition 3 b) and the Corollary with the
 remark that condition (3) holds for finite residue fields give `U_K = N U_L`
 for an unramified extension `L/K` of local fields. The closing exercise
-extends this to unramified extensions that are not Galois. Worker 269 read
-these pages in the retained original. The local statement is published as
+extends this to unramified extensions that are not Galois. These pages were
+read in the retained original. The local statement is published as
 `UnramifiedUnitNorms` and proved as `unramifiedUnitNorms`. This module only
 transports that theorem to Mathlib's completions `K_p` and `L_q`.
 

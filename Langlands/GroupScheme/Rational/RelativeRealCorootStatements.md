@@ -1,6 +1,6 @@
 # Real coroots, real bases and standard Levi decompositions
 
-Worker 4, for Task 1222. Module
+Module
 `Langlands.GroupScheme.Rational.RelativeRealCorootStatements`, namespace
 `Langlands.GroupScheme`.
 
@@ -303,6 +303,7 @@ corrected spaces.
 
 ## Proof obligations
 
-No proof is included. After publication, proof tasks for the four component
-statements (or for `RelativeRealCorootLinearAlgebraStatement`) will be published
-separately.
+No proof is included. The four component statements are proved in
+`RelativeRealSimpleRootBasisProof`, `RelativeRealCorootProof`,
+`RelativeFundamentalWeightProof` and `StandardLeviRealDecompositionProof`, and
+`RelativeRealCorootLinearAlgebraStatement` in `RelativeRealCorootLinearAlgebraProof`.

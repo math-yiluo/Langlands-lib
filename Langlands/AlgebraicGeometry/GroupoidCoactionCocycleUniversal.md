@@ -1,7 +1,5 @@
 # Universal testing and normalization of groupoid cocycles
 
-Author: Worker 148.
-
 This internal algebraic unit imports the published cobar definitions and the
 universal points of `RingEtaleEquivalenceRelation`. Rings B and C belong to an
 arbitrary universe u; the module M may belong to an independent universe v.

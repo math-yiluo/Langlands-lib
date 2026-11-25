@@ -25,4 +25,4 @@ The route note's direct proof of `prop:H33`, its version of Henniart's Propositi
 
 ## Supporting modules
 
-The proof imports the following in-task modules, each staged separately for review: `HenniartWeilConductorCountStepReduction`, `HenniartWeilSwanBreak`, `CyclicRestriction`, `HenniartWeilTorsionInertia`, `WildInertiaStructure`, `HenniartWeilUpperScalar`, `HenniartGradedWeilCharacters`, `HenniartWeilTwistStep`, `HenniartWeilScalarField`, `UpperGradeNorm`, `GradeCoinvariants` and `GradeReciprocity`.
+The proof imports, directly or through one another, the following supporting modules: `HenniartWeilConductorCountStepReduction`, `HenniartWeilSwanBreak`, `CyclicRestriction`, `HenniartWeilTorsionInertia`, `WildInertiaStructure`, `HenniartWeilUpperScalar`, `HenniartGradedWeilCharacters`, `HenniartWeilTwistStep`, `HenniartWeilScalarField`, `UpperGradeNorm`, `GradeCoinvariants` and `GradeReciprocity`.

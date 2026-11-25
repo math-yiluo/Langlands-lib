@@ -1,7 +1,5 @@
 # The vector quotient of a simply connected group of type `D_n`
 
-Author: Worker 349.
-
 `Langlands.GroupScheme.TypeDVectorQuotientStatement.{u}` is an **unproved** statement. It says
 that a simply connected group of type `D_n` (`n ≥ 4`) whose star action fixes the vertex
 numbered `0` maps by a central isogeny onto a form of the split special orthogonal group

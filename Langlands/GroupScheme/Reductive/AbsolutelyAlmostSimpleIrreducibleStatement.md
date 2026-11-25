@@ -1,7 +1,5 @@
 # Statement: absolute almost-simplicity and irreducibility of the root system
 
-Worker 75. Statement for Task 3483 (algebraic and reductive group schemes).
-
 `AbsolutelyAlmostSimpleIrreducibleStatement` is a proposition at every universe
 `u`. It states the following for every field `k : Type u` and every group
 scheme `G` over `Spec k`.

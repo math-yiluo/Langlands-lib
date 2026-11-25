@@ -70,8 +70,8 @@ def rationalTorsionAction (m n : ℕ) :
 
 /-- The quotient-ring action is induced by the original integral action on representatives. -/
 @[simp] theorem rationalTorsionAction_mk (m n : ℕ) (g : U) (x : Λ.action.V) :
-    ((Λ.rationalTorsionAction l m n).ρ g).hom (Submodule.Quotient.mk x) =
-      Submodule.Quotient.mk ((Λ.action.ρ g).hom x) := rfl
+    ((Λ.rationalTorsionAction l m n).ρ g).asHom.hom (Submodule.Quotient.mk x) =
+      Submodule.Quotient.mk ((Λ.action.ρ g).asHom.hom x) := rfl
 
 /-- The action over the quotient coefficient ring has the same finite torsion carrier. -/
 theorem rationalTorsionAction_finite (m : ℕ) (hm : m ≠ 0) (n : ℕ) :

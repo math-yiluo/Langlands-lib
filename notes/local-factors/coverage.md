@@ -1,27 +1,23 @@
 # Rankin-Selberg local factors of pairs: statement coverage
 
-Author: Worker 11, for task `80b8ac90-940b-487d-acdf-1f228d63f8d6`
-(representation-side local-factor statements). This note maps that task's
-sources to the published Lean declarations that state them. It lists the
-supporting definitions they use, the retained source gaps, the delegated
-responsibilities and the open proof obligations.
+This note maps the sources of the representation-side local-factor
+statements to the Lean declarations that state them. It lists the
+supporting definitions they use, the retained source gaps, the related
+statements kept elsewhere and the proof obligations.
 
-Every declaration named below is in Library commit
-`67dfb8a24d65657a6bf35da262b1009383d873d5`. Every statement is a
-proposition definition (`def … : Prop`). Its publication accepts the
-formulation and the source correspondence; it does not prove the
-proposition. No statement is an axiom: a proved result that needs an
-unproved statement takes it as an explicit hypothesis. Look up a result by
-its module and declaration name in the current Library.
+Every declaration named below is in the Library. Every statement is a
+proposition definition (`def … : Prop`). Stating it fixes the formulation
+and the source correspondence; it does not prove the proposition. No
+statement is an axiom: a proved result that needs an unproved statement
+takes it as an explicit hypothesis. Look up a result by its module and
+declaration name in the Library.
 
 Sources are recorded in two places. Each module's paired Markdown names its
 original sources with section and page locators, and explains the
-quantifiers and the interpretive choices. The exact registered source
-identities are in the accepted candidate records (see "Source records"
-below). Each record has a `sources` array giving the literature ID, the
-SHA-256 of the retained file and the locator. Some module Markdown files
-repeat the literature IDs and SHA-256 values, but many of this task's do
-not. The record is the authoritative location.
+quantifiers and the interpretive choices. The literature IDs of each
+module's sources are listed under "Source records" below. Some module
+Markdown files also give the SHA-256 of each retained source file; many do
+not.
 
 ## Shared conventions
 
@@ -141,45 +137,41 @@ not. The record is the authoritative location.
 
 ## Coverage by topic
 
-Candidate IDs are those of this task; module paths are under
-`Langlands/Representation/` unless stated.
+Module paths are under `Langlands/Representation/` unless stated.
 
 ### Whittaker models, uniqueness and genericity
 
 - `Whittaker/PrerequisitesStatement`: `WhittakerPrerequisitesStatement`
   (multiplicity one, inverse-character genericity, injectivity of the
-  coefficient model). JPSS 1983 §2.1, pp. 385-386. Published before this
-  task (candidate `5b814476`).
+  coefficient model). JPSS 1983 §2.1, pp. 385-386.
 - `Whittaker/GenericDualStatement`: `GenericContragredientStatement` (the
   smooth contragredient of a generic representation is generic for `ψ⁻¹`,
-  through the inverse transpose). JPSS 1983 §0.3 and §2.1. Published before
-  this task (candidate `6d8f1fc3`).
-- `Whittaker/KirillovStatement` (`2d10d368`): `WhittakerTypeKirillovStatement`,
+  through the inverse transpose). JPSS 1983 §0.3 and §2.1.
+- `Whittaker/KirillovStatement`: `WhittakerTypeKirillovStatement`,
   `SupercuspidalKirillovStatement`, family `KirillovPrerequisitesStatement`.
   JPSS 1983 §2 (p. 386), Bernstein-Zelevinsky 1976.
-- `Whittaker/InducedStatement` (`f9df70fd`): `InducedFiniteTypeStatement`,
+- `Whittaker/InducedStatement`: `InducedFiniteTypeStatement`,
   `InducedWhittakerTypeStatement`, family `InducedWhittakerPrerequisitesStatement`.
   JPSS 1983 §2, pp. 385-387.
-- `Whittaker/AsymptoticStatement` (`313f5c28`): `WhittakerGaugeStatement`,
+- `Whittaker/AsymptoticStatement`: `WhittakerGaugeStatement`,
   `WhittakerTypeAsymptoticStatement`, `GenericWhittakerAsymptoticStatement`,
   family `WhittakerAsymptoticPrerequisitesStatement`. JPSS 1983 §2.5,
   pp. 388-389; JPS 1979 §2.
 
 ### Convergence, rationality and normalized generators
 
-- `RankinSelberg/AnalyticStatement` (published with `05a25aa0`):
+- `RankinSelberg/AnalyticStatement` (entered the Library with `RankinSelberg/FunctionalEquationStatement`):
   `QuotientHaarExistenceStatement`, `EqualRankAnalyticStatement`,
   `UnequalRankAnalyticStatement`, `UnequalRankCommonGeneratorStatement`.
   JPSS 1983 Theorem 2.7(i)-(ii), pp. 390-391: convergence in a right half
   plane, rational continuation, the fractional ideal and its normalized
   generator `1/P`, the same for every unequal-rank block.
-- `RankinSelberg/RationalContinuation` (published before this task,
-  candidate `ae8d8dfa`): definitions `spectralPoint`,
+- `RankinSelberg/RationalContinuation`: definitions `spectralPoint`,
   `HasRationalContinuation`, with proved uniqueness of rational
   continuations.
 - `RankinSelberg/RationalZeta`, `RankinSelberg/LocalFactor` and
-  `RankinSelberg/PairLFactor` are definition modules that were not produced
-  by this task. They define the Laurent span `zetaSpan`,
+  `RankinSelberg/PairLFactor` are definition modules. They define the
+  Laurent span `zetaSpan`,
   `IsNormalizedGenerator`, the Whittaker sets `whittakerSet` and
   `inverseWhittakerSet`, the zeta-value sets `equalRankZetaValues` and
   `unequalRankZetaValues`, the L relations `IsEqualRankLPolynomial`,
@@ -193,13 +185,13 @@ Candidate IDs are those of this task; module paths are under
   treats equal ranks.
   `UnequalRankCommonGeneratorStatement.pairLPolynomialExists` treats
   `n < r` and also assumes `UnequalRankAnalyticStatement` for every block.
-- `RankinSelberg/EqualRankEulerStatement` (`87c1dfdc`):
+- `RankinSelberg/EqualRankEulerStatement`:
   `UnitaryEqualRankConvergenceStatement`, `UnitaryEqualRankNonvanishingStatement`
   (Jacquet-Shalika, Euler products I, Prop. (1.5)(i)-(ii)).
 
 ### Functional equations, epsilon and gamma factors
 
-- `RankinSelberg/FunctionalEquationStatement` (`05a25aa0`):
+- `RankinSelberg/FunctionalEquationStatement`:
   `EqualRankFunctionalEquationStatement`, `UnequalRankFunctionalEquationStatement`,
   family `Theorem27Statement`. JPSS 1983 Theorem 2.7(iii), p. 391, with the
   dual models (`firstDualFunction`, `secondDualFunction`), the Weyl elements
@@ -209,16 +201,16 @@ Candidate IDs are those of this task; module paths are under
   lemmas): `EqualRankEpsilonEquation`, `UnequalRankEpsilonEquation`,
   `IsEqualRankEpsilonFactor`, `IsUnequalRankEpsilonFactor`,
   `IsPairEpsilonFactor`, `IsClassEpsilonFactor`.
-- `RankinSelberg/GammaFactor` (published with `25d647da`): `IsPairGammaFactor`,
+- `RankinSelberg/GammaFactor` (entered the Library with `RankinSelberg/GenericLocalConverseStatement`): `IsPairGammaFactor`,
   `IsPadicPairGammaFactor`, `IsClassGammaFactor` and the equations.
-- `RankinSelberg/PadicPairFactors` (published with `0ea8e52f`, definitions
+- `RankinSelberg/PadicPairFactors` (entered the Library with `RankinSelberg/HighlyRamifiedStatement`, definitions
   with proved lemmas): `IsPadicPairLPolynomial`, `IsPadicSymmetricGammaFactor`,
   `IsPadicSymmetricEpsilonFactor`, `IsPadicSymmetricLPolynomial`.
-- `RankinSelberg/LocalConverseStatement` (`80449948`): defines
+- `RankinSelberg/LocalConverseStatement`: defines
   `IsPadicPairEpsilonFactor`.
 - `Langlands/HarmonicAnalysis/RowFourier` (`9c9709ae`, definitions): the row Fourier
   transform and self-duality used by the equal-rank equation.
-- `RankinSelberg/PairEpsilonNormalizationStatement` (`716f07d6`):
+- `RankinSelberg/PairEpsilonNormalizationStatement`:
   `ContragredientEpsilonCentralValueStatement` (Bushnell-Henniart 1999,
   Théorème 2, stated there for `π` on `GL_n` as
   `ε(1/2, π × π̌, ψ) = ω_π(-1)^(n-1)`; the Lean takes generic `π` on
@@ -226,15 +218,15 @@ Candidate IDs are those of this task; module paths are under
   `PairEpsilonExponentStatement` (Bushnell-Henniart-Kutzko 1998, p. 703:
   the exponent is `n₁n₂ n(ψ) + f(π₁ × π₂)` with `f` independent of `ψ`).
 
-Constructions of the factors from the analytic inputs are published by the
-definition owners and bridge to these relations: `EqualRankGammaFactor`
+Constructions of the factors from the analytic inputs are published in the
+definition modules and bridge to these relations: `EqualRankGammaFactor`
 (`pairGammaFactor_isPairGammaFactor_equalRank`), `UnequalRankGammaFactor`,
 `PadicGammaFactor`, `ClassGammaFactor`, `PairEpsilonFactor`, `DualModels`
 (see each module's Markdown).
 
 ### Multiplicativity
 
-- `RankinSelberg/MultiplicativityStatement` (`ebc3ee58`):
+- `RankinSelberg/MultiplicativityStatement`:
   `GammaMultiplicativityStatement`, `LFactorMultiplicativityStatement`, family
   `MultiplicativityStatement`. JPSS 1983 Theorem (3.1): the gamma factor is
   multiplicative under parabolic induction of the second member, for
@@ -244,22 +236,22 @@ definition owners and bridge to these relations: `EqualRankGammaFactor`
 
 ### Special, tempered and Langlands-data formulas
 
-- `RankinSelberg/SegmentFactorStatement` (`6ddc16eb`):
+- `RankinSelberg/SegmentFactorStatement`:
   `SegmentHeadLFactorStatement`, `SegmentHeadContragredientLFactorStatement`,
   `SegmentHeadGammaFactorStatement`, family `SegmentHeadFactorStatement`.
   Henniart 2002 §2.6 (factors of `St_n(ρ) × St_n'(ρ')`).
-- `RankinSelberg/TemperedLFactorStatement` (`66547e0f`):
+- `RankinSelberg/TemperedLFactorStatement`:
   `SupercuspidalUnequalRankLFactorStatement`, `SupercuspidalEqualRankLFactorStatement`,
   `SquareIntegrableLFactorStatement`, `SquareIntegrablePoleFreeStatement`,
   `TemperedLFactorStatement`, family `TemperedLFactorFormulasStatement`.
   JPSS 1983 Proposition 8.1, Theorem 8.2 and §8.4.
-- `RankinSelberg/LanglandsQuotientLFactorStatement` (`bb2f6617`):
+- `RankinSelberg/LanglandsQuotientLFactorStatement`:
   `LanglandsTypeLFactorStatement`, `GenericLanglandsQuotientLFactorStatement`,
   `LanglandsPairLFactorExistenceStatement`, `SquareIntegrableDataLFactorStatement`,
   family `LanglandsQuotientLFactorStatement`, with the L relation
   `IsLanglandsPairLPolynomial` for arbitrary (also nongeneric) irreducible
   admissible pairs. JPSS 1983 §9.4-9.5.
-- `RankinSelberg/PairLFactorCharacterizationStatement` (`c0f82b7d`):
+- `RankinSelberg/PairLFactorCharacterizationStatement`:
   `SupercuspidalLFactorCharacterizationStatement`,
   `SquareIntegrablePoleOrderCharacterizationStatement`, family
   `PairLFactorCharacterizationStatement`. Henniart 2002 Théorèmes 1.6(b) and
@@ -267,26 +259,26 @@ definition owners and bridge to these relations: `EqualRankGammaFactor`
 
 ### Unramified computations
 
-- `RankinSelberg/UnramifiedPairStatement` (`97ec752b`):
+- `RankinSelberg/UnramifiedPairStatement`:
   `UnramifiedSphericalVectorStatement`, `UnramifiedPairIntegralStatement`,
   `UnramifiedUnitaryPoleFreeStatement`, family `UnramifiedPairStatement`.
   Jacquet-Shalika, Euler products II, §1.3-1.5.
-- `RankinSelberg/UnramifiedFactorStatement` (`e38e2eff`):
+- `RankinSelberg/UnramifiedFactorStatement`:
   `UnramifiedEqualRankIntegralStatement`, `UnramifiedPairLFactorStatement`,
   `UnramifiedPairEpsilonStatement`, `UnramifiedUnitaryParameterBoundStatement`,
   family `UnramifiedFactorStatement`. Cogdell, *Analytic theory of
   L-functions for GL_n* (2004), Theorem 3.3, and the Fields lectures (2003).
-- `RankinSelberg/EqualRankEulerStatement` (`87c1dfdc`):
+- `RankinSelberg/EqualRankEulerStatement`:
   `UnramifiedGenericEqualRankIntegralStatement` (Euler products I,
   Proposition (2.3), without unitarity), family `EqualRankEulerStatement`.
 
 ### Twisting and change of additive character
 
-- `RankinSelberg/UnramifiedTwistStatement` (`8653663a`):
+- `RankinSelberg/UnramifiedTwistStatement`:
   `UnramifiedTwistLFactorStatement`, `UnramifiedTwistEpsilonStatement`, family
   `UnramifiedTwistStatement`. Henniart 1993 §4.4 (twist by `|·|^u`), JPSS
   1983 (2.4) and (2.7)(iii).
-- `RankinSelberg/PairFactorCharacterChangeStatement` (`f3848a3b`):
+- `RankinSelberg/PairFactorCharacterChangeStatement`:
   `UnequalRankLPolynomialCharacterChangeStatement`,
   `UnequalRankEpsilonCharacterChangeStatement`, family
   `PairFactorCharacterChangeStatement`. Cogdell-Piatetski-Shapiro 1994,
@@ -303,12 +295,11 @@ definition owners and bridge to these relations: `EqualRankGammaFactor`
   EqualRankCharacterChange, UnequalRankCharacterChange,
   UnequalRankCharacterIntegrals, UnequalRankCharacterTransport,
   CharacterChangeMeasureStatement, RectangularCharacterChangeMeasureStatement,
-  UnipotentCharacterChangeModulusStatement}` (by other workers; see their
-  Markdown).
+  UnipotentCharacterChangeModulusStatement}` (see their Markdown).
 
 ### Highly ramified twists
 
-- `RankinSelberg/HighlyRamifiedStatement` (`0ea8e52f`):
+- `RankinSelberg/HighlyRamifiedStatement`:
   `HighlyRamifiedGammaStabilityStatement`, `HighlyRamifiedEpsilonStabilityStatement`,
   `HighlyRamifiedLVanishingStatement`, family
   `HighlyRamifiedStabilityStatement`, with `SameGLCentralCharacter`.
@@ -316,15 +307,14 @@ definition owners and bridge to these relations: `EqualRankGammaFactor`
 
 ### Essential vectors and conductors
 
-- `Conductor/NewvectorStatement` (published before this task, candidate
-  `38986482`): `NewvectorStatement` (least level with nonzero fixed
+- `Conductor/NewvectorStatement`: `NewvectorStatement` (least level with nonzero fixed
   vectors, one-dimensional there). It quantifies over every prime `p`,
   every `F : PadicField p` and every supplied `T : F.TopologicalData`, and
   takes the topology of `T`. The level-`a` group consists of the matrices
   with entries and inverse entries in `T.Integers` whose last row is
   congruent to `(0, …, 0, 1)` modulo the `a`-th power of the maximal ideal
   of `T.Integers`.
-- `Conductor/EssentialStatement` (`9905996f`): `EssentialVectorStatement`,
+- `Conductor/EssentialStatement`: `EssentialVectorStatement`,
   `ConductorExponentStatement`, `EssentialVectorLevelStatement`, family
   `EssentialConductorStatement`. JPSS 1981 Théorème (5.1), p. 211, with
   Jacquet's corrected existence theorem (2012, Theorem 1, p. 517); the
@@ -353,21 +343,20 @@ definition owners and bridge to these relations: `EqualRankGammaFactor`
 
 ### Local converse theorem
 
-- `RankinSelberg/LocalConverseStatement` (`80449948`):
+- `RankinSelberg/LocalConverseStatement`:
   `SupercuspidalLocalConverseStatement` (Henniart 1993, Corollary, p. 340:
   epsilon factors against supercuspidals of ranks `1, …, n - 1`), with
   `SameClassEpsilonFactors` and `SameSupercuspidalEpsilonFactors`.
-- `RankinSelberg/GenericLocalConverseStatement` (`25d647da`):
+- `RankinSelberg/GenericLocalConverseStatement`:
   `GenericLocalConverseStatement`, `GenericSupercuspidalLocalConverseStatement`,
   family `GammaLocalConverseStatement`. Henniart 1993 Theorem 1.1 and the
   referee's remark, p. 340, with the exact test ranks of the source.
 
 ### Finite-place comparison with Shahidi's local coefficients
 
-Delegated to task `8e607558-e8b2-49f9-a778-9da15e3f4ac1` (published by this
-task). At the commit pinned above the Library had no intertwining operators,
-Jacquet integrals or local coefficients. That task has since published them,
-together with Shahidi 1984 Theorem 5.1 as the statement
+This comparison is stated separately. The Library has intertwining
+operators, Jacquet integrals and local coefficients, together with Shahidi
+1984 Theorem 5.1 as the statement
 `Langlands.Shahidi.LocalCoefficientGammaStatement`
 (`Representation/Shahidi/LocalCoefficientGammaStatement`, Library commit
 `40a7d025f604f74140054607638d2af422b581ce`). The statement compares the
@@ -384,19 +373,17 @@ commit `ec55903e24f28e3dc27f6ba202ff0af22883c525`), with
 declarations, their field scope, gaps and open
 obligations are listed in
 [Shahidi local coefficients for GL_m × GL_n: declaration coverage](shahidi-coverage.md).
-The global task `91266440` (Workers 35 and 44) was told of the delegation
-and of the final p-adic and general-field declaration names.
 
 ## Retained source gaps
 
 - **Nongeneric epsilon factors.** JPSS §9.4 and Henniart 2002 §2.8 define
-  the factors of arbitrary irreducible pairs through Langlands data. This
-  task states the L relation (`IsLanglandsPairLPolynomial` and the §9.4-9.5
-  statements). The epsilon factor of §2.8 is Worker 31's published
+  the factors of arbitrary irreducible pairs through Langlands data. The L
+  relation is stated (`IsLanglandsPairLPolynomial` and the §9.4-9.5
+  statements). The epsilon factor of §2.8 is the
   definition `IsLanglandsPairEpsilonFactor` (`RankinSelberg/LanglandsFactors`),
   the product over pairs of square-integrable blocks; its block existence and
   independence of the presenting data are explicit inputs there, not proved.
-  Worker 31's `langlandsPairEpsilonFactorOfClassification`
+  `langlandsPairEpsilonFactorOfClassification`
   (`RankinSelberg/LanglandsFactorDescent`) constructs the factor of a pair
   of irreducible representations over a p-adic field. It takes the
   published square-integrable exhaustion and classification propositions
@@ -419,9 +406,9 @@ and of the final p-adic and general-field declaration names.
   `ε(s, π × 1, ψ) = ε(s, π, ψ)`. Bushnell-Henniart-Kutzko 1998 (Ann. Sci.
   ENS, §1.3, printed p. 538) state `L(χ × π) = L(χπ)` and
   `ε(χ × π, ψ) = ε(χπ, ψ)` for a quasicharacter `χ`, without proof; `χ = 1`
-  gives both comparisons. Neither is proved in a source read for this task
-  or in the Library, and the Library has no Godement-Jacquet factor
-  definition. `Conductor/EssentialStatement.md` ("Interpretation and gaps")
+  gives both comparisons. Neither is proved in a source read for this note,
+  and this note records neither a proof of them in the Library nor a
+  Godement-Jacquet factor definition there. `Conductor/EssentialStatement.md` ("Interpretation and gaps")
   gives the exact retained scope, and `RankinSelberg/LocalFactor.md` also
   says that agreement with the Godement-Jacquet standard L-factor is not
   asserted. Given both comparisons, the Lean statements are the theorems of
@@ -441,13 +428,13 @@ and of the final p-adic and general-field declaration names.
   Archimedean theory (Jacquet-Shalika, *Archimedean theory*) belongs to the
   global branch.
 - **Henniart 1986 §4.** The pole-region statement used by the global branch
-  is Worker 35's `Langlands/Global/Factors/GLPoleRegionStatement` (the `GL_n` half of
+  is `Langlands/Global/Factors/GLPoleRegionStatement` (the `GL_n` half of
   Proposition 4.5(ii)), stated with the JPSS L-polynomial relations
   `IsEqualRankLPolynomial` and `IsUnequalRankLPolynomial`.
 
 ## Proof obligations
 
-One statement is proved: `QuotientHaarExistenceStatement` is the theorem
+`QuotientHaarExistenceStatement` is proved: it is the theorem
 `quotientHaarExistence` of `RankinSelberg/QuotientHaarExistence`. It holds
 for every prime `p`, every `F : PadicField p`, every
 `T : F.TopologicalData` and every `n`. For the topology of `T` and the
@@ -466,78 +453,105 @@ compatible quotient measure on `N_(n+1)\GL_(n+1)`.
 - The base relation `IsPairLPolynomial` has no such conjunct, since it
   takes its measure as an argument.
 
-No other statement family above is proved. The other proved results in the
-modules of this task are intrinsic properties of the definitions:
-uniqueness of the factors, invariance under equivalences, rank-order
-unfolding, uniqueness of rational continuations and the row Fourier
-measure properties. Proved results elsewhere that use these statements, such
-as the two `pairLPolynomialExists` theorems above, take them as hypotheses.
-Each statement is a separate proof obligation for proof tasks that bind the
-published declaration by name.
+The Library also proves the following statements named above, each in a
+module of the same name with suffix `Proof` (in `Whittaker/` or
+`RankinSelberg/`): `WhittakerPrerequisitesStatement`,
+`GenericContragredientStatement` (`Whittaker/GenericDualProof`),
+`WhittakerTypeKirillovStatement`, `SupercuspidalKirillovStatement`,
+`InducedFiniteTypeStatement`, `InducedWhittakerTypeStatement`,
+`EqualRankAnalyticStatement`, `EqualRankFunctionalEquationStatement`,
+`UnequalRankAnalyticStatement`, `UnequalRankCommonGeneratorStatement`,
+`UnequalRankFunctionalEquationStatement`,
+`WhittakerTypeAsymptoticStatement` (`Whittaker/TypeAsymptoticProof`),
+`UnitaryEqualRankConvergenceStatement` (`RankinSelberg/UnitaryEqualRankAnalytic`),
+`GammaMultiplicativityStatement`, `LFactorMultiplicativityStatement`,
+`HighlyRamifiedGammaStabilityStatement` (`RankinSelberg/HighlyRamifiedProof`),
+`SupercuspidalLocalConverseStatement`, `LanglandsPairLFactorExistenceStatement`,
+`LanglandsTypeLFactorStatement`, `GenericLanglandsQuotientLFactorStatement`,
+`TemperedLFactorStatement`, `SquareIntegrableLFactorStatement`,
+`SquareIntegrableDataLFactorStatement`, `SquareIntegrablePoleFreeStatement`,
+`SquareIntegrablePoleOrderCharacterizationStatement`,
+`SupercuspidalEqualRankLFactorStatement`, `SupercuspidalUnequalRankLFactorStatement`,
+`SupercuspidalLFactorCharacterizationStatement`, `SegmentHeadFactorStatement`
+and `SegmentHeadLFactorStatement` (`RankinSelberg/SegmentHeadFactorProof`),
+`SegmentHeadGammaFactorStatement`, `SegmentHeadContragredientLFactorStatement`,
+`UnramifiedPairStatement` and `UnramifiedPairIntegralStatement`
+(`RankinSelberg/UnramifiedPairProof`), `UnramifiedSphericalVectorStatement`,
+`UnramifiedTwistEpsilonStatement`, `UnramifiedTwistLFactorStatement`,
+`UnramifiedUnitaryPoleFreeStatement`, `PairFactorCharacterChangeStatement` and
+`UnequalRankLPolynomialCharacterChangeStatement`
+(`RankinSelberg/PairFactorCharacterChangeAssembly`). For
+`ConductorExponentStatement`, `EssentialConductorStatement`,
+`EssentialVectorLevelStatement` and `EssentialVectorStatement` the Library has reductions to
+other statements, not unconditional proofs. `PairEpsilonExponentStatement` has no theorem but
+follows from proved results (`pairEpsilonExponentReduction` with `equalRankEpsilonCharacterChange`),
+and `UnequalRankEpsilonCharacterChangeStatement` is proved, as the second component of
+`pairFactorCharacterChange`. This
+note records no proof of the other statement families above. The other
+proved results in these statement modules are intrinsic properties of the
+definitions: uniqueness of the factors, invariance under equivalences,
+rank-order unfolding, uniqueness of rational continuations and the row
+Fourier measure properties. Proved results that use these statements, such
+as the two `pairLPolynomialExists` theorems above, take them as hypotheses
+where they are not proved. Each statement is a separate proof obligation; a
+proof binds the declaration by name.
 
 The character-change measure laws listed under "Twisting and change of
-additive character" are other workers' statements, not this task's. Of
-these, `CharacterChangeRectangularMeasureStatement` (Worker 99) is proved
-by Worker 90's theorem `characterChangeRectangularMeasureStatement` in
-`RankinSelberg/RectangularCharacterChangeMeasureProof`. No proof of
-`CharacterChangeCompatibleMeasureStatement` or
-`UnipotentCharacterChangeModulusStatement` is in the pinned commit.
+additive character" are stated in their own modules. The Library proves
+`CharacterChangeRectangularMeasureStatement` (theorem
+`characterChangeRectangularMeasureStatement` in
+`RankinSelberg/RectangularCharacterChangeMeasureProof`),
+`CharacterChangeCompatibleMeasureStatement` (`characterChangeCompatibleMeasure`)
+and `UnipotentCharacterChangeModulusStatement`
+(`unipotentCharacterChangeModulus`).
 
 ## Source records
 
-The table gives the full ID of each accepted candidate of this task and
-the modules it published, with the entry module first. TaskHub `fetch` of
-the ID returns the candidate record as its `data` part; the project
-artifact store holds the same record at `artifacts/<ID>/1/record.json`.
-The record's `sources` array lists each original source with its
-literature ID, the SHA-256 of the retained file (`content_sha256`) and a
-locator. The last column repeats the literature IDs.
+The table lists the statement modules, grouped as they entered the Library,
+with the entry module first, and the literature IDs of their original
+sources.
 
-| Candidate | Modules | Literature IDs in `sources` |
-| --- | --- | --- |
-| `9c9709ae-2bec-4ec7-94fc-0dc062983e42` | `Langlands/HarmonicAnalysis/RowFourier` | `jpss-1983-rankin-selberg` |
-| `2d10d368-431c-4f0f-8c12-ed2b0e4455dc` | `Whittaker/KirillovStatement` | `bernstein-zelevinsky-1976-representations-gln`, `jpss-1983-rankin-selberg` |
-| `f9df70fd-3b83-4acd-a90e-3b6bfbd6383e` | `Whittaker/InducedStatement` | `jpss-1983-rankin-selberg` |
-| `313f5c28-0970-49ea-8a4c-3a36f04fdd97` | `Whittaker/AsymptoticStatement` | `jps-1979-gl3-i`, `jpss-1983-rankin-selberg` |
-| `05a25aa0-2fc6-4562-b3d0-d1d0c866cecd` | `RankinSelberg/FunctionalEquationStatement`, `RankinSelberg/AnalyticStatement` | `jpss-1983-rankin-selberg` |
-| `8bfa0c63-845f-42de-b6ca-8cdf776d77cf` | `RankinSelberg/EpsilonFactor` | `henniart-1993-epsilon-pairs`, `jpss-1983-rankin-selberg` |
-| `80449948-4006-4cd7-a2cc-05a6b3c79518` | `RankinSelberg/LocalConverseStatement` | `henniart-1993-epsilon-pairs`, `jpss-1983-rankin-selberg` |
-| `25d647da-a3fd-4bb0-9370-5ca221d8cec8` | `RankinSelberg/GenericLocalConverseStatement`, `RankinSelberg/GammaFactor` | `henniart-1993-epsilon-pairs`, `jpss-1983-rankin-selberg` |
-| `0ea8e52f-37f9-4dad-b4a8-da2d75fc67b8` | `RankinSelberg/HighlyRamifiedStatement`, `RankinSelberg/PadicPairFactors` | `jacquet-shalika-1985-ramified-factors`, `jpss-1983-rankin-selberg` |
-| `9905996f-a6cd-4591-9aa4-0e1c58407ca1` | `Conductor/EssentialStatement` | `bhk-1998-conducteurs-paires`, `jacquet-2012-conductor-correction`, `jpss-1981-conductor`, `jpss-1983-rankin-selberg` |
-| `ebc3ee58-b10a-4773-939f-5dda55ee7e94` | `RankinSelberg/MultiplicativityStatement` | `jpss-1983-rankin-selberg` |
-| `bb2f6617-d42a-409a-a4b7-ee6968df5dd6` | `RankinSelberg/LanglandsQuotientLFactorStatement` | `henniart-2002-characterization`, `jpss-1983-rankin-selberg` |
-| `66547e0f-6376-4124-8b6c-b5c82e1aea1d` | `RankinSelberg/TemperedLFactorStatement` | `henniart-2002-characterization`, `jpss-1983-rankin-selberg` |
-| `8653663a-65d8-4b6e-85fa-f2d0c8ea1294` | `RankinSelberg/UnramifiedTwistStatement` | `henniart-1993-epsilon-pairs`, `jpss-1983-rankin-selberg` |
-| `c0f82b7d-7c11-4f88-9d9d-d9d71cd627a6` | `RankinSelberg/PairLFactorCharacterizationStatement` | `henniart-2002-characterization` |
-| `716f07d6-1ad0-4e6a-96d5-626bd744b9bf` | `RankinSelberg/PairEpsilonNormalizationStatement` | `bhk-1998-explicit-conductor`, `bushnell-henniart-1999-epsilon-pairs` |
-| `6ddc16eb-8047-4567-a0d1-752c2bdc1f59` | `RankinSelberg/SegmentFactorStatement` | `henniart-2002-characterization` |
-| `97ec752b-392b-4d90-adba-0e64b8bcf43c` | `RankinSelberg/UnramifiedPairStatement` | `jacquet-shalika-1981-euler-products-ii` |
-| `e38e2eff-cadf-43ee-861d-177e2e807af9` | `RankinSelberg/UnramifiedFactorStatement` | `cogdell-2003-fields-lectures-www`, `cogdell-2004-analytic-theory-gln` |
-| `87c1dfdc-b0ac-434c-bf19-5386d2628342` | `RankinSelberg/EqualRankEulerStatement` | `provided-6d5abbbab517cf7269b6ab243e0d7a101940980b658f88cb722e13748f802ad4` (Jacquet-Shalika, Euler products I) |
-| `f3848a3b-e182-41df-bcfe-803a45cef627` | `RankinSelberg/PairFactorCharacterChangeStatement` | `cogdell-piatetski-shapiro-1994-converse` |
+| Modules | Literature IDs in `sources` |
+| --- | --- |
+| `Langlands/HarmonicAnalysis/RowFourier` | `jpss-1983-rankin-selberg` |
+| `Whittaker/KirillovStatement` | `bernstein-zelevinsky-1976-representations-gln`, `jpss-1983-rankin-selberg` |
+| `Whittaker/InducedStatement` | `jpss-1983-rankin-selberg` |
+| `Whittaker/AsymptoticStatement` | `jps-1979-gl3-i`, `jpss-1983-rankin-selberg` |
+| `RankinSelberg/FunctionalEquationStatement`, `RankinSelberg/AnalyticStatement` | `jpss-1983-rankin-selberg` |
+| `RankinSelberg/EpsilonFactor` | `henniart-1993-epsilon-pairs`, `jpss-1983-rankin-selberg` |
+| `RankinSelberg/LocalConverseStatement` | `henniart-1993-epsilon-pairs`, `jpss-1983-rankin-selberg` |
+| `RankinSelberg/GenericLocalConverseStatement`, `RankinSelberg/GammaFactor` | `henniart-1993-epsilon-pairs`, `jpss-1983-rankin-selberg` |
+| `RankinSelberg/HighlyRamifiedStatement`, `RankinSelberg/PadicPairFactors` | `jacquet-shalika-1985-ramified-factors`, `jpss-1983-rankin-selberg` |
+| `Conductor/EssentialStatement` | `bhk-1998-conducteurs-paires`, `jacquet-2012-conductor-correction`, `jpss-1981-conductor`, `jpss-1983-rankin-selberg` |
+| `RankinSelberg/MultiplicativityStatement` | `jpss-1983-rankin-selberg` |
+| `RankinSelberg/LanglandsQuotientLFactorStatement` | `henniart-2002-characterization`, `jpss-1983-rankin-selberg` |
+| `RankinSelberg/TemperedLFactorStatement` | `henniart-2002-characterization`, `jpss-1983-rankin-selberg` |
+| `RankinSelberg/UnramifiedTwistStatement` | `henniart-1993-epsilon-pairs`, `jpss-1983-rankin-selberg` |
+| `RankinSelberg/PairLFactorCharacterizationStatement` | `henniart-2002-characterization` |
+| `RankinSelberg/PairEpsilonNormalizationStatement` | `bhk-1998-explicit-conductor`, `bushnell-henniart-1999-epsilon-pairs` |
+| `RankinSelberg/SegmentFactorStatement` | `henniart-2002-characterization` |
+| `RankinSelberg/UnramifiedPairStatement` | `jacquet-shalika-1981-euler-products-ii` |
+| `RankinSelberg/UnramifiedFactorStatement` | `cogdell-2003-fields-lectures-www`, `cogdell-2004-analytic-theory-gln` |
+| `RankinSelberg/EqualRankEulerStatement` | `provided-6d5abbbab517cf7269b6ab243e0d7a101940980b658f88cb722e13748f802ad4` (Jacquet-Shalika, Euler products I) |
+| `RankinSelberg/PairFactorCharacterChangeStatement` | `cogdell-piatetski-shapiro-1994-converse` |
 
-The four modules published before this task (`Whittaker/PrerequisitesStatement`,
+For the four older modules `Whittaker/PrerequisitesStatement`,
 `Whittaker/GenericDualStatement`, `RankinSelberg/RationalContinuation` and
-`Conductor/NewvectorStatement`; candidates `5b814476`, `6d8f1fc3`,
-`ae8d8dfa`, `38986482`) have no record in the project's artifact store.
-Their Markdown gives the literature ID and the SHA-256 of each retained
-source file.
+`Conductor/NewvectorStatement`, the Markdown gives the literature ID and the
+SHA-256 of each retained source file.
 
 ## Checking this map
 
 For each module in the "Source records" table, the SHA-256 of its Lean and
-Markdown files at the pinned commit was compared with the file hashes in
-the candidate's accepted manifest (`artifacts/<ID>/1/manifest.json`). For
-the entry module these equal the bundle hashes in the record. The four
-modules published before this task (`5b814476`, `6d8f1fc3`, `ae8d8dfa`,
-`38986482`) have no record in the project's artifact store; they were only
-checked to be present at the pinned commit. The hashes agree, with two
-integration-time exceptions:
+Markdown files in the Library (at commit
+`67dfb8a24d65657a6bf35da262b1009383d873d5`) was compared with the hashes of
+the files as first submitted. The four older modules were only checked to
+be present. The hashes agree, with two exceptions made when the modules
+entered the Library:
 
 - `RankinSelberg/LocalConverseStatement`: a duplicate proved lemma
   (`isClassEpsilonFactor_mk_iff`) was removed in favour of the existing
   `isClassEpsilonFactor_mk` of `EpsilonFactor`; the Markdown says so. The
   statement is unchanged.
-- `RankinSelberg/UnramifiedFactorStatement.md`: the Integrator added a
-  citation of Jacquet-Shalika, Euler products I.
+- `RankinSelberg/UnramifiedFactorStatement.md`: a citation of
+  Jacquet-Shalika, Euler products I, was added.

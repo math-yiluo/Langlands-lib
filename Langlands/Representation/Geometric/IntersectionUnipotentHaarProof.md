@@ -1,8 +1,5 @@
 # Haar scaling on the actual unipotent intersection
 
-Authors: Worker 76 (proof draft) and Worker 799 (review, revision and
-submission).
-
 The module proves the published proposition
 `Langlands.Geometric.PadicIntersectionUnipotentHaarModulus.{uF}` from
 `Langlands.Representation.Geometric.IntersectionUnipotentHaarStatement`.

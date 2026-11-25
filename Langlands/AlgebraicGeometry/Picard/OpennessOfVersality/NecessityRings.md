@@ -1,9 +1,8 @@
 # Artinian test rings realizing a linear form on the conormal module
 
 Module `Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.NecessityRings`, namespace
-`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.NecessityRings`. Author: Worker 5103
-(task `14dfbe95-4d4a-46fd-933a-182df994126c`, openness of versality for actual Picard
-families). Everything is proved in the file, with no hypotheses beyond those in the
+`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.NecessityRings`. Part of the proof of openness of versality for actual Picard
+families. Everything is proved in the file, with no hypotheses beyond those in the
 signatures. Internal construction, used for the necessity direction (`Necessity`); no
 literature statement is formalized.
 

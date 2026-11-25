@@ -63,7 +63,8 @@ theorem positiveIntegralRootCone_fieldExtend_preimage
   · rintro ⟨hc, p, q, hp, hq, heq⟩
     refine ⟨(mem_roots_baseChange_iff (K := K) G S hS i c).mp hc, p, q, hp, hq, ?_⟩
     apply (characterLattice.baseChangeEquiv b S hS).injective
-    simpa only [characterLattice.baseChangeEquiv_apply, map_add, map_nsmul] using heq
+    simp only [characterLattice.baseChangeEquiv_apply]
+    simpa only [map_add, map_nsmul] using heq
   · rintro ⟨hc, p, q, hp, hq, rfl⟩
     exact ⟨(mem_roots_baseChange_iff (K := K) G S hS i _).mpr hc,
       p, q, hp, hq, by rw [map_add, map_nsmul, map_nsmul]⟩

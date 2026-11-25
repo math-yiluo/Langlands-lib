@@ -9,10 +9,9 @@ declarations are in the namespace
 
 ## Provenance
 
-This is internal supporting material for the counterexample that the project
-operator asked for in Task 7100: "K = F2 with the trivial norm, L = F = F4, the
-two incomparable triple charts, Frobenius on one of them". It has no source in
-the literature. Each finite algebra is realized as the Library's unit-radius
+This is internal supporting material for the counterexample with K = F2 with
+the trivial norm, L = F = F4, the two incomparable triple charts, and Frobenius
+on one of them. It has no source in the literature. Each finite algebra is realized as the Library's unit-radius
 polynomial-locus chart (`PolynomialLocus.chart`, module `PolynomialLocusCharts`)
 of a chosen finite polynomial presentation. Maps are built with the lemmas of
 `PolynomialLocusTrivialNorm`.

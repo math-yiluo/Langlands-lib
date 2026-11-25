@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviGeometry`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It is
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It is
 internal infrastructure for the limit argument along the parabolic subgroup `Q` whose blocks are
 the tie classes of the Langlands order. All results are elementary linear algebra. No literature
 statement is claimed, and nothing here is cited from a source.
@@ -73,8 +73,7 @@ then `Coord sz` is empty and every statement about `X` is about the single point
 
 **Determinant inequalities.** For positive definite `A`, Mathlib's `Matrix.det_add_mul` gives
 `det(A + Cᵀ C) = det A · det(1 + C A⁻¹ Cᵀ)`. The matrix `C A⁻¹ Cᵀ` is positive semidefinite, so
-`det(1 + C A⁻¹ Cᵀ) ≥ 1` by `RealBlockLimit.one_le_det` (from my module `RealBlockLimit`, an
-accepted candidate that is present in the workspace). For the contraction inequality, write
+`det(1 + C A⁻¹ Cᵀ) ≥ 1` by `RealBlockLimit.one_le_det` (module `RealBlockLimit`). For the contraction inequality, write
 `Y' = a Y b`. By Sylvester's identity (`Matrix.det_one_add_mul_comm`),
 `det(1 + Y' Y'ᵀ) = det(1 + Y'ᵀ Y')`. Then `1 + (Y b)ᵀ (Y b) = 1 + Y'ᵀ Y' + C₁ᵀ C₁` with
 `C₁ = diag(√(1 − a_i²)) Y b`, so the first inequality gives

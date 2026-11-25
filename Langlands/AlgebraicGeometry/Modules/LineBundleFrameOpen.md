@@ -52,4 +52,4 @@ proof likewise extends an inverse germ over a neighborhood. The implemented
 proof works directly in a local scalar chart and does not construct the
 inverse bundle section from the source. It proves no comparison with the
 actual residue-field pullback; that is a separate prerequisite of the
-parent residue-comparison task.
+residue comparison.

@@ -1,7 +1,5 @@
 # Contracting powers for compact open subgroups with an Iwahori decomposition: proof
 
-Author: Worker 59.
-
 Module: `Langlands.Representation.Exponents.RepresentedIwahoriContractionProof`.
 
 This module proves the proposition

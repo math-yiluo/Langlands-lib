@@ -1,6 +1,6 @@
 # Epimorphic Hopf maps into diagonal Hopf algebras are surjective
 
-Worker 745 wrote this module. It is a helper for the proof of
+This module is a helper for the proof of
 `Langlands.GroupScheme.MultiplicativeTypeMonoClosedImmersionStatement`
 ([`GroupScheme/Torus/MultiplicativeTypeMonoClosedImmersionProof`](../GroupScheme/Torus/MultiplicativeTypeMonoClosedImmersionProof.md)).
 It proves an algebraic fact about bialgebra maps into the group algebra `R[M]` of an abelian

@@ -16,10 +16,10 @@ integer rings carry `relativeIntegerAlgebra TK TM`, and `|G_i|` is
 ## Proof
 
 - **A generator.** The published port
-  `IsDiscreteValuationRing.exists_adjoin_singleton_eq_top_of_isSeparable_residueField`
+  `Langlands.Ramification.exists_adjoin_singleton_eq_top_of_isSeparable_residueField`
   gives `θ ∈ O_M` with `O_K[θ] = O_M`. Its hypotheses hold here.
   - The map `O_K → O_M` is injective and local.
-  - `O_M` is finite over `O_K` (`NYLL.relativeIntegerStructure`).
+  - `O_M` is finite over `O_K` (`UniverseZero.relativeIntegerStructure`).
   - The residue fields are finite, hence perfect, so the residue extension
     is separable.
 - **Different of a monogenic extension.** The published

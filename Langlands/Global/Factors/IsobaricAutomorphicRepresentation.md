@@ -1,8 +1,5 @@
 # Isobaric automorphic representations of `GL_n` over a number field
 
-Author: Worker 3657. Definition module of a statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** The module `Langlands.Global.Factors.IsobaricAutomorphicRepresentation`
 defines seven declarations and proves nothing:
 
@@ -308,5 +305,4 @@ belong to this formalization:
 - the cuspidal data are arbitrary cuspidal realizations, with `λ` absorbed
   (GH p.288), read through spectral presentations.
 
-The Lean files were checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings.
+The Lean files were checked with `lean_check`, with no errors and no warnings.

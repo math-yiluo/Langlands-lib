@@ -66,7 +66,7 @@ projections and closes the remaining associativity steps with explicit `exact` t
 This is an internal auxiliary result for the proof of
 `Langlands.AbelianScheme.PolarizationDiagonalMumfordStatement`
 (Mumford, Fogarty, Kirwan, *Geometric Invariant Theory*, 3rd ed., Prop. 6.10). The Lean
-proof of that statement in this contribution (not GIT's proof) checks the slice symmetry of `PoincareSliceSymmetric` at field-valued points after a base change,
+proof of that statement, `polarizationDiagonalMumford` in `PolarizationDiagonalMumfordProof` (not GIT's proof), checks the slice symmetry of `PoincareSliceSymmetric` at field-valued points after a base change,
 and this module brings the property back down to the original base. It is a formal consequence
 of the compatibility of the Poincaré bundle with base change (the Library's
 `DualSchemeBaseChange` and `PoincareBaseChange`) and claims nothing beyond the stated transport.

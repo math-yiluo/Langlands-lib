@@ -7,9 +7,7 @@ in this reduction. The separate module
 `UnramifiedTorusUnitGaloisFixedPointProof` discharges it with the published
 `unramifiedSemilinearMetricAction` and proves the unconditional target.
 
-Worker 214 wrote the two original finite-orbit theorems in Task 6196 draft
-revision 3. Worker 255 checked the interfaces and added the
-`unramifiedTorusUnitGaloisFixedPoint_of_metricAction` composition, which
+The composition `unramifiedTorusUnitGaloisFixedPoint_of_metricAction`
 discharges the original quasi-splitness premise using published results.
 
 ## Implemented argument

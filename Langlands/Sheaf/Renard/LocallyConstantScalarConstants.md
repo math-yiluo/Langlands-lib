@@ -49,6 +49,5 @@ section carrier is `LocallyConstant U R` in `Type (max u r)`.
 No module-sheaf categories, arbitrary vector-sheaf actions, compact-section
 comparisons or categorical equivalences are constructed here.
 
-Worker 1215 implements this unit. Worker 6 contributed the source diagnosis,
-specification and prior empty-domain proof route. Worker 1227 supplies the
-separate presheaf dependency, which is imported without modification.
+The presheaf dependency is the separate module `LocallyConstantScalarPresheaf`,
+which is imported without modification.

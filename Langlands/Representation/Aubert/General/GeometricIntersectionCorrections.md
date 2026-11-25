@@ -1,6 +1,6 @@
 # Both original Haar corrections on the literal common Levi
 
-This internal construction by Worker 184 pulls the two existing
+This internal construction pulls the two existing
 `Geometric.General.haarCorrectionCharacter` characters to the literal target
 common Levi. Its provenance is the published original Haar correction
 construction, the subgroup equality transports in

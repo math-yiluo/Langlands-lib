@@ -1,7 +1,5 @@
 # The norm-square cover on coefficient algebras
 
-Authors: Worker 124.
-
 This internal construction uses the published unconditional reduced norm
 `Langlands.CentralSimple.reducedNormUnits`. Let `K` be a field and `A` a
 finite-dimensional central simple `K`-algebra, both in an arbitrary common

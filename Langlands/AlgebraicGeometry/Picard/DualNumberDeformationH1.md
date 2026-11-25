@@ -45,8 +45,9 @@ actual derived structure-sheaf H¹. The terminal formula
 `deformationH1AddEquiv_cocycleDeformationClass` identifies the image of each
 normalized cocycle bundle with its actual derived cocycle class.
 
-This unit proves an additive equivalence. It does not yet identify rigidified
+This module proves an additive equivalence. It does not identify rigidified
 classes or the parameter's tangent module, and it does not assert compatibility
 with arbitrary field scalars. Those comparisons are separate prerequisites of
-the final tangent-to-H¹ theorem. No external source-specific assertion is
+the final tangent-to-H¹ theorem `fieldUniversalRigidifiedPicardTangentH1` in
+`FieldUniversalRigidifiedPicardTangentH1Proof`. No external source-specific assertion is
 introduced here.

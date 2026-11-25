@@ -10,7 +10,8 @@ statement is
 proved as
 `Langlands.Archimedean.RealStrictCharacterLanglandsQuotient.realStrictCharacterLanglandsQuotient`.
 
-It is the strictly ordered principal-series case of statement L in Task 6749. The general L
+It is the strictly ordered principal-series case of the statement L,
+`RealStandardLanglandsQuotientStatement`. The general L
 also allows equal exponents (ties) and induced `GL_2` blocks, and is not proved here.
 
 Declarations without a prefix are in the namespace
@@ -78,7 +79,7 @@ induction in stages along the maximal parabolic subgroups `P_{n−1,1}`.
 * `JacquetNonvanishing`: `Λ_n ≠ 0`.
 * `StrictPrincipalSeriesQuotient`: the largest proper submodule.
 
-These modules rest on the accepted Library modules `MaximalParabolicIntegration`,
+These modules rest on the Library modules `MaximalParabolicIntegration`,
 `OrthogonalLastRowIntegral`, `KIntegralInvariance`, `PrincipalSeriesExtension`,
 `PrincipalSeriesAnnihilator`, `PrincipalSeriesMatrixCoefficientAnalytic`,
 `PrincipalSeriesGramFormula`, `OrthogonalFinitePolynomial` and `RealPrincipalSeriesDualityProof`.

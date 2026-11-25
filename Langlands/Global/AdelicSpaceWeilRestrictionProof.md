@@ -1,8 +1,7 @@
 # Conrad's Proposition 5.14 for separated algebraic spaces
 
 `Langlands.Global.adelicSpaceWeilRestriction` proves exactly the published
-`Langlands.Global.AdelicSpaceWeilRestrictionStatement.{u}` in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. It imports the original statement and
+`Langlands.Global.AdelicSpaceWeilRestrictionStatement.{u}`. It imports the original statement and
 leaves its Lean/Markdown pair and import closure unchanged. The statement is
 Conrad's Proposition 5.14: along a finite extension of global fields, the Weil
 restriction of a separated finite-type algebraic space is separated and of finite
@@ -78,9 +77,6 @@ the statement with the constructed homeomorphism, giving `IsHomeomorph`. This
 step preserves all arbitrary-model quantifiers. The final theorem pairs the two
 characteristic cases to prove the exact conjunction.
 
-Validation: development check `3fda23e8-b40a-4fec-8c37-d113f02aca34` compiled the
-full proof with zero diagnostics. Check `da42f013-f264-4075-b5bf-b41258208cba`
-completed the Lake build and inspected `Langlands.Global.adelicSpaceWeilRestriction`;
+Validation: a development check compiled the full proof with zero diagnostics. A
+second check completed the Lake build and inspected `Langlands.Global.adelicSpaceWeilRestriction`;
 its only reported axioms are `propext`, `Classical.choice`, and `Quot.sound`.
-Independent semantic review and official exact-target validation are separate
-requirements of the proof submission.

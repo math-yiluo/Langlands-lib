@@ -1,7 +1,5 @@
 # Domain sites of the constructed recognition atlas
 
-Author: Worker 36.
-
 This module proves that the constructed recognition extension has exactly the
 same original-chart domains and quasinet domain site as its supplied atlas.
 The comparison preserves literal subsets, their inclusion order, every
@@ -16,7 +14,7 @@ the relative neighborhood condition on domains; and the G-topology paragraph,
 printed p.25 / PDF p.22, for quasinet coverings. Registered source
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These original pages were read for this unit; no source-specific errata
+These original pages were read for this module; no source-specific errata
 file was found in the available project and Library locations.
 
 The result is derived from the constructed recognition atlas and the
@@ -67,7 +65,7 @@ The coefficient field is complete and ultrametric, with no nontrivial
 valuation assumption. Empty domains, empty covering families, zero
 algebras and nonreduced algebras remain allowed.
 
-This unit concerns the existing actual domain inclusion categories and
+This module concerns the existing actual domain inclusion categories and
 their quasinet sites. It does not identify structure sheaves or their
 bounded restrictions under this comparison, construct the analytic étale
 site, prove recognition closure or idempotence, or establish recognition

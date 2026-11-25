@@ -64,8 +64,7 @@ Hypotheses:
 Conclusion: `EtaleBaseChangeStatement.{u}`.
 
 It is declared with `def` (its type is a proposition, and the linter
-`linter.defProp` is switched off for this declaration), so that it can be
-recorded as a supporting definition artifact.
+`linter.defProp` is switched off for this declaration).
 
 Proof: apply `etaleBaseChange_of_localizedEtalePullback` with `hpull`. For each
 `K`, the hypothesis `hetale` comes from three published Library results:
@@ -84,15 +83,14 @@ Proof: apply `etaleBaseChange_of_localizedEtalePullback` with `hpull`. For each
 
 ## Status of the hypotheses
 
-- A proof of `FiniteAffinoidAlgebraDescentStatement` is the proof candidate
-  `ee637edc-ef7e-490a-9c08-af4454387d30` of Task 7635. Its review approved it
-  and it was waiting for integration when this module was written. It was not
-  yet in the Library.
-- `FibreProductPullbackStatement` is the target of Task 5642. When this module
-  was written it had no published proof and no candidate.
+- `FiniteAffinoidAlgebraDescentStatement` is proved by
+  `PresentedAffinoidAlgebra.finiteAffinoidAlgebraDescent` (module
+  `GeneralizedAffinoid.FiniteAffinoidAlgebraDescent.Proof`).
+- `FibreProductPullbackStatement` is proved by `fibreProductPullback` (module
+  `FibreProductPullbackProof`).
 
-Once both have published proofs, applying `etaleBaseChange_of_descent` to them
-proves `EtaleBaseChangeStatement`.
+Applying `etaleBaseChange_of_descent` to them proves `EtaleBaseChangeStatement`:
+this is `etaleBaseChange` in `EtaleBaseChangeProof`.
 
 ## Provenance and route
 

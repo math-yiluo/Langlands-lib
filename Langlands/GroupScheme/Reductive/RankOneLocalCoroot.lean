@@ -151,8 +151,8 @@ theorem exists_coroot [LocallyOfFiniteType D.G.X.hom] [ConnectedSpace D.G.X.left
     ∃ (h : cocharacterLattice D.T) (pair : latticePairing D.T D.α h = 2),
       σ = latticeReflectionIso D.α h pair := by
   classical
-  have : IsAddTorsionFree (TensorProduct ℤ ℚ (characterLattice D.T)) :=
-    IsAddTorsionFree.of_module_rat _
+  have : HasUniqueDiv (TensorProduct ℤ ℚ (characterLattice D.T)) :=
+    HasUniqueDiv.of_module_rat _
   have : IsAddTorsionFree (characterLattice D.T) :=
     hT.character_toRat_injective.isAddTorsionFree Langlands.LinearAlgebra.RationalSpan.toRat
   have hinj : Function.Injective (fun m : ℤ => m • D.α) := by

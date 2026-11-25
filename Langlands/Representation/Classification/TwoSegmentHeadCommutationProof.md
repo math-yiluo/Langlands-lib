@@ -1,7 +1,5 @@
 # Two unlinked segment heads commute
 
-Author: Worker 375.
-
 ## Statements
 
 Throughout, `p` is a prime, `F : PadicField.{uF} p` and `T : F.TopologicalData`.

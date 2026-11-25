@@ -13,7 +13,7 @@ import Langlands.Representation.Category.Contragredient
 import Langlands.LocalField.Normalization.Proof
 
 
-/-! Generalization of Worker 1023's inverse-transpose commutation argument. -/
+/-! Generalization of the inverse-transpose commutation argument. -/
 
 noncomputable section
 

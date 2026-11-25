@@ -1,6 +1,6 @@
 # Finite series from the actual descended face quotients
 
-This unit reduces the arbitrary-universe
+This module reduces the arbitrary-universe
 `RelativeUnipotentRadicalFiltrationStatement` to the vector-bundle
 identification of the actual globally constructed quotients.
 

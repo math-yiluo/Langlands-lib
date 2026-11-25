@@ -1,7 +1,5 @@
 # Vanishing outside actual whole-target graded pieces
 
-Author: Worker 194.
-
 This internal prerequisite proves vanishing for actual corrected singleton
 support quotients which are inactive or have proper target intersection. It
 retains the actual normalized induction and Jacquet functors and the genuine

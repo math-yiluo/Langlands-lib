@@ -1,6 +1,6 @@
 # The unitary Jacquet part at the identity parabolic
 
-This internal derived unit supplies the nonempty starting case in the first
+This module supplies the nonempty starting case in the first
 proof paragraph of Renard, *Représentations des groupes réductifs p-adiques*
 (9 July 2026), VII.2.6, printed p.231 / PDF p.237. Renard chooses a parabolic
 minimal with nonzero unitary Jacquet part and observes that the whole group

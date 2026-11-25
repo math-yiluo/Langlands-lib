@@ -11,14 +11,14 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   (`ρ(g₁) λ(g₂)`), `L2Weights`, `TranslationWeights` and `HasTemperedCoefficients`;
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedCoefficientXi`:
   `norm_coefficientMap_le_xi` (Lemma VI.2.2 for one induced representation) and, through its
-  imports, Worker 200's `productInducedCoefficientObject` (`L(ω, P)`),
+  imports, `productInducedCoefficientObject` (`L(ω, P)`),
   `CompactInduction.coefficientTensorEquiv`, `CompactInduction.coefficientMap` (`E_P^G`),
   `CompactInduction.induced_isAdmissible`, `coefficientTensorMap`, `coefficientTensorAction`,
   `xi`, `LeviData`, `IsIwasawaPair` and `IsUnimodularModulus`;
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.SquareIntegrableSemisimplicity`:
   `isUnitarizable_of_isSquareIntegrableModCentralSubgroup`, `representationFormalDegree` and
   `representationFormalDegree_pos`;
-- `Langlands.Representation.Plancherel.CompactProductInducedForm` (Worker 200): the product of
+- `Langlands.Representation.Plancherel.CompactProductInducedForm`: the product of
   V.2 on `L(ω, P)`, `CompactInduction.formalDegreeProductForm`, with
   `CompactInduction.formalDegreeProductForm_eq_coefficientForm` and
   `CompactInduction.invariantPositiveForm`.
@@ -55,7 +55,7 @@ Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S147474
 The definition and parts (i)–(iii) are source content. The construction is derived as follows: it
 is the generic transform `coefficientFourierTransform` of `FourierTransform` for the normalized
 induced representation `I_P^G E` with `d = d(ω)`, carried to `L(ω, P)` by the inverse of
-Worker 200's identification `CompactInduction.coefficientTensorEquiv` of `L(ω, P)` with
+the identification `CompactInduction.coefficientTensorEquiv` of `L(ω, P)` with
 `I_P^G E ⊗ (I_P^G E)~`. This is the identification `L(ω, P) = (I_P^G E) ⊗ (I_P^G E)ˇ` in VII.1
 (1). The imported `CompactInduction.induced_isAdmissible`,
 `coefficientTensorEquiv_inducedFourierTransform`, the

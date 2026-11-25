@@ -1,7 +1,5 @@
 # Rational points of linked root parametrizations satisfy the rank-one relation
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Reductive.LinkedRootRationalRelation`, namespace
 `Langlands.GroupScheme.LinkedRootParametrization`.
 

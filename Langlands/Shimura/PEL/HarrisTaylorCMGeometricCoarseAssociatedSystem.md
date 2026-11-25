@@ -84,7 +84,7 @@ restricting their actions along `ι_k` is used to express equivariance.
 Set `J = Scheme.smallEtaleTopology X_V`. Denote the associated invariant sheaf
 for a cover action `Y` and coefficient action `M` by `L(Y,M)`. Its canonical
 monomorphism is into the product sheaf of the constant coefficient sheaf on
-the actual cover object. The construction is the published
+the actual cover object. The construction is
 `etaleAssociatedFunctor`; it takes invariants for the existing diagonal action.
 
 `cmHarrisGeometricCoarseAssociatedSystem` is the actual functor
@@ -112,7 +112,7 @@ t_Z(f)\,;\,e_j\,;\,\operatorname{cp}(z_f,M_j)
  =e_i\,;\,\operatorname{prod}_{Z_i}(\operatorname{const}(r_f)).
 \]
 
-Here `cp` is the published `coverPullback` on product sheaves. This formula
+Here `cp` is `coverPullback` on product sheaves. This formula
 specifies the normalization of all reductions on the actual cover coordinates.
 
 `cmHarrisGeometricCoarsePulledAssociatedSystem` instead associates the original
@@ -134,7 +134,7 @@ constructed equivariant cover map `c_k`, and the identity on the restricted
 original coefficient action. The underlying coefficient modules are
 definitionally unchanged.
 
-The `isIso` theorem applies the published `etaleAssociatedCoverComparison` to
+The `isIso` theorem applies `etaleAssociatedCoverComparison` to
 the two finite geometric torsors and this equivariant map. The theorem does not
 require the horizontal group map `ι_k` to be surjective. The `inclusion`
 theorem proves the exact identity
@@ -174,7 +174,7 @@ component. All indices are in `ℕᵒᵖ`, including exponent zero.
 ## Provenance and scope
 
 This is an internal composition of the actual coarse-intersection geometry
-and coefficient restriction with the published associated-sheaf, cross-cover,
+and coefficient restriction with the associated-sheaf, cross-cover,
 finite-torsor comparison, and varying-system constructions. The direct imports
 are `HarrisTaylorCMGeometricCoarseRestriction` and
 `VaryingSystemCoverChange`. The first supplies the actual schemes, actions,
@@ -187,7 +187,8 @@ external-source assertion.
 The comparison concerns association on the literal pulled covers and the
 actual intersection covers, retaining the original lattice at `U`. Comparing
 inverse image of the original sheaf system with this intersection system is a
-subsequent composition. This unit does not choose a separate lattice at `V` or
-assert independence of all coarse levels. Representability, small-level
-existence, and the remaining exact global Harris arithmetic and canonical-model
-obligations of the containing task remain explicit or unfinished.
+further composition, carried out in `HarrisTaylorCMGeometricCoarseInverseImage`.
+This module does not choose a separate lattice at `V` or assert independence of
+all coarse levels. Representability, small-level existence, and the exact
+global Harris arithmetic and canonical-model assertions are explicit premises
+or are not treated in this module.

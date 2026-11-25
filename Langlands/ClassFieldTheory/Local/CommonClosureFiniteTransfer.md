@@ -28,4 +28,4 @@ definitions.
 
 The construction and proof are derived from the existing restriction,
 transfer and closed-commutator interfaces. No arithmetic reciprocity
-identity is assumed or concluded in this unit.
+identity is assumed or concluded in this module.

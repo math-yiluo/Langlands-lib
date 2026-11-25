@@ -1,6 +1,6 @@
 # Fixed-index presentations of the actual finite locally free determinant
 
-This internal unit compares a determinant presentation formed from a
+This internal module compares a determinant presentation formed from a
 fixed finite-index frame cover with the existing actual
 `finiteLocallyFreeDeterminant`. Let `M` be a module sheaf on a scheme
 `X`, and specify actual free frames on a covering family `T i`, all
@@ -29,5 +29,5 @@ any finite frame presentation to the chosen determinant.
 
 The provenance is internal. This is a compatibility result between two
 existing determinant presentations. A fixed-index cover is an input;
-the unit does not claim that every finite locally free sheaf admits a
+the module does not claim that every finite locally free sheaf admits a
 global cover of one fixed rank.

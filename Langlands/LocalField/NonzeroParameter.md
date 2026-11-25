@@ -24,7 +24,7 @@ restricted neighborhood filter to conclude `(𝓝[≠] (0 : F)).NeBot`.
 belongs to `V`, using the proved existence theorem and `Units.mk0`.
 No particular parameter or compatibility between choices is asserted.
 
-The proof route was suggested by Worker 1235 for the parent analytic proof and
+The proof route was suggested for the contracting-family argument and
 implemented here using Mathlib's valuation basis, nontriviality and surjectivity
 lemmas. This is an internal prerequisite, with no new literature translation.
 It does not construct the dynamic-radical contraction map, prove its continuity

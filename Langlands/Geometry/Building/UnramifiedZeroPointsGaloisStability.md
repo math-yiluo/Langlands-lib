@@ -1,6 +1,6 @@
 # Galois stability of the unramified zero subgroup
 
-This derived unit proves clause 2 of
+This derived module proves clause 2 of
 `Langlands.Geometry.Building.UnramifiedZeroDescentStatement`: for every
 nonarchimedean local field `F : Type u`, every group scheme `G` over `F`,
 every supplied `UnramifiedZeroDatum F (baseChanged F (UnramifiedClosure F) G)`,
@@ -18,9 +18,7 @@ using the published subgroup-functor conjugation comparison and range
 transport formula. `baseChange_comp_range_eq_simplyConnectedImage` identifies
 the transported range with any supplied simply connected image in the target.
 `rationalConjugate_mem_simplyConnectedImage` combines these results for the
-coefficient automorphism and canonical ambient descent isomorphism. These
-four lemmas were developed by Worker 256 and are incorporated here as a joint
-contribution.
+coefficient automorphism and canonical ambient descent isomorphism.
 
 `UnramifiedZeroDatum.rationalConjugate_mem_zeroPoints` uses the defining join
 of the simply connected image and the image of `E.torusIwahori`. It proves
@@ -34,6 +32,7 @@ torus norm subgroup and independence of the zero datum.
 `UnramifiedZeroPointsGaloisStabilityStatement` is a Prop-valued packaging of
 exactly this unconditional pointwise result. Its provenance is internal and
 derived from the named Library constructions, cover independence, range
-transport, and the previously proved torus contribution. No new original
+transport, and the torus lemma
+`rationalConjugate_torusIwahori_mem_zeroPoints`. No new original
 literature interpretation is made. The module proves no descent comparison
 with `G(F)` and does not by itself prove the full three-clause target.

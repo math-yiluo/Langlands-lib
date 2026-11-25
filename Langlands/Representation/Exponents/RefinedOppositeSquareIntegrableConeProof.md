@@ -1,8 +1,5 @@
 # Proof of the strict blockwise cones for opposite exponents
 
-Authors: Worker 953 (upper cone and final assembly) and Worker 158 (proof
-route and the separately published opposite-to-upper reversal adapter).
-
 `Langlands.Exponents.refinedOppositeSquareIntegrableCone` proves exactly the
 published closed proposition
 `Langlands.Exponents.RefinedOppositeSquareIntegrableConeStatement.{uF,uV}`.
@@ -24,7 +21,7 @@ hypotheses, and a supplied real part `x`, the proof makes three steps.
    `PadicField.TopologicalData.exists_isHaarMeasure_leviCentralQuotient` gives a
    Haar measure `μ` there. Specializing the all-Borel-Haar hypothesis gives
    `hL2 μ : IsSquareIntegrableModCenter σ.ρ μ`.
-2. **Reversal to the upper quotient.** Worker 158's module
+2. **Reversal to the upper quotient.** The module
    `Langlands.Representation.Exponents.RefinedOppositeConeReversal` maps the
    actual opposite quotient of `R` injectively to the upper quotient of
    `ProductLeviDualOpposite.reverseRefinement D R`, the refinement with each

@@ -1,6 +1,6 @@
 # The actual overlap as a closed principal quotient of the unit annulus
 
-Authors: Worker 105 and Worker 948. This statement isolates the comparison
+This statement isolates the comparison
 of two existing closed-equation quotients. It defines a proposition to
 prove; it supplies neither its proof nor a premise for the binary Laurent
 gluing statement.
@@ -80,8 +80,9 @@ XY-1=Yg+h,\qquad h=(XY-1)-Yg
 \]
 
 show that the ordinary generated ideals
-`span{XY-1, g}` and `span{g,h}` coincide. A future proof must justify the
-corresponding statement for closures and for the actual quotient map.
+`span{XY-1, g}` and `span{g,h}` coincide. A proof must justify the
+corresponding statement for closures and for the actual quotient map;
+`overlap_presentation` in `RelativeUnitAnnulusOverlapProof` is such a proof.
 It must also identify the published two-variable coefficient evaluation
 `toOverlapSeries` with the existing overlap projection, for example using
 relative bounded-homomorphism uniqueness. The approximate lift should

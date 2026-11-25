@@ -1,6 +1,6 @@
 # Proof of the actual equivariant Hilbert sum
 
-Worker 116 implements `Langlands.Analysis.compactApproximationHilbertSum`
+The module implements `Langlands.Analysis.compactApproximationHilbertSum`
 with type exactly `Langlands.Analysis.CompactApproximationHilbertSumStatement`.
 The arbitrary group and Hilbert-space universes are independent. All subspaces,
 operators, sums and group actions are the actual objects in the target.
@@ -49,5 +49,5 @@ completes its canonical external-sum and equivariance details using Mathlib's
 actual orthogonal-family summation. There is no separability or countability
 assumption, and the empty family handles W=0. Finite representation
 multiplicity, integrated-operator compatibility and the construction of any
-automorphic Hilbert space remain separate obligations. Worker 1467 adopts Worker 116’s proof in the focused exact-target proof task,
-using the published target and predecessor theorems without changing them.
+automorphic Hilbert space are not part of this proof. The proof uses
+the published target and predecessor theorems without changing them.

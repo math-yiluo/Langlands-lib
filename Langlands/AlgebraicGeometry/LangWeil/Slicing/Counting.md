@@ -1,7 +1,5 @@
 # Counting points on hyperplane sections over a finite field
 
-Author: Worker 5132.
-
 This helper module holds the elementary counting for the hyperplane-slicing step
 `FamilyLangWeilSlicingStatement` of the uniform Lang–Weil estimate. It involves no geometry. An
 affine hyperplane of `κⁿ`, for a finite field `κ`, is given by parameters

@@ -1,7 +1,5 @@
 # Tail L-polynomial divisibility for upper two-block induction
 
-Author: Worker 82.
-
 This module defines `Langlands.RankinSelberg.InducedTailLFactorStatement`, a
 proposition, and does not prove it. It states the Whittaker-type extension of
 JPSS Lemma (9.3), using the existing canonical normalized induction and certified
@@ -150,9 +148,9 @@ The proof extends as follows, with `r = A + B` and `T` the test rank.
 Thus the only potentially restrictive final step has a source-supported
 Whittaker-type input already in §2.13. No appeal to the irreducible-only
 modern highly ramified pair statement is needed. The representation `ξ`
-is itself of Whittaker type by §2.3, which is an obligation of the eventual
+is itself of Whittaker type by §2.3, which is an obligation of the
 proof, not a hypothesis added to this statement. Factor existence comes
-from Theorem 2.7 after that induction result and is also part of the eventual
+from Theorem 2.7 after that induction result and is also part of the
 proof obligation.
 
 This reading agrees with §9.4: printed 458 identifies both Langlands-type
@@ -170,18 +168,17 @@ allows all nonarchimedean local fields. All three ranks are positive and
 the two blocks have fixed order. There are no unitarity, temperedness,
 irreducibility, induced-genericity, or pre-existing factor hypotheses.
 
-This is one statement-only unit. It does not prove Lemma 9.3, the derived
+This is one statement-only module. It does not prove Lemma 9.3, the derived
 extension, Whittaker preservation under induction, Theorem 2.7, ramified
 vanishing, or multiplicativity. Those inputs and the analytic integral
-comparisons remain proof obligations; the existing published pairs are
-unchanged.
+comparisons are obligations of the proof, `inducedTailLFactor` in
+`InducedTailLFactorProof`; the existing published pairs are unchanged.
 
 ## Lean validation
 
-Development check `60c040ef-dc6f-47f6-a424-aacbf816d5fa` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled this module with zero errors
+This module compiles in the pinned environment with zero errors
 and warnings. Declaration inspection reports a definition returning `Prop`,
 universe parameters `uF`, `uV₁`, `uV₂`, `uW`, and only the standard
 `propext`, `Classical.choice`, and `Quot.sound` axioms. There are no proof
-holes or newly introduced axioms. This check is not semantic acceptance
-or a proof of the proposition.
+holes or newly introduced axioms. This check is not a proof of the
+proposition.

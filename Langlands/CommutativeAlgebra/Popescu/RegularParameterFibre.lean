@@ -1,6 +1,6 @@
 import Langlands.CommutativeAlgebra.Popescu.RegularSequenceFlatStatement
 import Langlands.Algebra.IdealLocalFlatnessCriterion
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Flatness from the closed fibre along an ideal -/
 

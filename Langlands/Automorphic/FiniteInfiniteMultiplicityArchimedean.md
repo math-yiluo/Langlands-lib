@@ -1,6 +1,7 @@
 # Admissible compact and local Lie structures on finite-factor multiplicities
 
-This internal construction for Task 7294 equips finite-factor multiplicities
+This internal construction for the cuspidal contragredient of dual cusp forms
+(`CuspidalTransposeInverseContragredientStatement`) equips finite-factor multiplicities
 with their actual compact and Lie actions at each infinite place. It proves
 the genuine local `(g,K)` axioms and admissibility for the full archimedean
 compact action. It constructs no inverse-transpose pairing and does not

@@ -148,8 +148,9 @@ automorphisms. Its dependencies are Mathlib and the published Library modules
 `sectionFamily`), `Langlands.AlgebraicGeometry.Modules.PullbackUnit`
 (`pullbackUnitIso`, `unitToPushforwardUnit`) and
 `Langlands.AlgebraicGeometry.Modules.PullbackUnitProofs` (`pullbackUnitAdjunction`).
-The module was written as a prerequisite of the intrinsic-character task
-`cda49074-0684-4906-b5cb-3c42024c36d4`. That task's motivation from EGM Chapter VII,
+The module is a prerequisite of the intrinsic kernel character construction
+`Langlands.AbelianScheme.IntrinsicKernelCharacter` (through
+`Langlands.AbelianScheme.KernelTranslationScalar`). That construction's motivation from EGM Chapter VII,
 7.3–7.4, is not claimed to contain this Lean API. The module constructs no character
 or kernel and makes no claim about invertible modules beyond `𝒪_X` itself. Similar
 scalar helpers in `LineBundleFrameOpen` and `UnitEndResidueStalkProof` are private

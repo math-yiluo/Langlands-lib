@@ -1,7 +1,7 @@
 # The surjective commutator branch through smooth quotients
 
-Author: Worker 1369. The smooth quotient route extends the suggestion of
-Worker 1499 used in `BorelNormalizerSmoothCentralGm`.
+The smooth quotient route extends the one used in
+`BorelNormalizerSmoothCentralGm`.
 
 This internal construction removes `NormalSubgroupQuotientStatement` from
 the surjective commutator branch. It constructs the homogeneous quotient of
@@ -55,5 +55,5 @@ The provenance is the stated composition of published quotient
 constructions, affineness, proper connected constancy, Borel quotient
 geometry and the Chevalley fixed-vector commutator argument. Properness of
 parabolic quotients, existence of the rational unipotent factorization,
-and the division into commutator branches remain separate obligations.
+and the division into commutator branches are not proved in this module.
 Surjectivity of quotient maps on arbitrary test points is never asserted.

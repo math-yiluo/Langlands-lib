@@ -48,7 +48,7 @@ ring. Normalization of the supplied `MulRingSeminorm` makes the prime
 quotient nonzero; no additional hypothesis on the source is needed.
 The proof uses only `propext`, `Classical.choice` and `Quot.sound`.
 
-This proof adapts Worker 74's published construction in
+This proof adapts the construction in
 `Langlands.Geometry.Analytic.Spectrum.ResidueField.Definitions`,
 removing its spectrum-point and coefficient-algebra inputs. Its
 provenance is this internal generalization and Mathlib's valuation,

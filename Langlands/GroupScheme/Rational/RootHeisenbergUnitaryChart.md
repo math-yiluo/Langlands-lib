@@ -30,11 +30,11 @@ subgroup `U_a`.
 
 ## Provenance
 
-Internal intermediate statement, introduced by Worker 7 for the proof of
-`Langlands.Geometry.Building.MultipliableRootGroupCoordinatesExistenceStatement` (Task 7077).
+Internal intermediate statement, introduced for the proof of
+`Langlands.Geometry.Building.MultipliableRootGroupCoordinatesExistenceStatement`.
 It isolates the step "a rational chart-form homomorphism is the rational-point map of a
 scheme homomorphism" from the rational algebra: over an infinite field, a chart-form
 rational homomorphism is given by polynomial formulas in the coordinates, and those formulas
 define the scheme homomorphism. The Lean statement
-is the verbatim interface agreed with Worker 7; `HeisenbergNormalForm.chartPoint` is defined
+is stated through the chart interface `HeisenbergNormalForm.chartPoint`, which is defined
 in `Langlands.GroupScheme.Rational.RootHeisenbergChartPoints`.

@@ -1,6 +1,6 @@
 # Weight projectors of a cocharacter of `GL_n`, and diagonalization over a field
 
-Worker 303. Let `χ : 𝔾_m ⟶ GL_n` be an actual cocharacter of the matrix group
+Let `χ : 𝔾_m ⟶ GL_n` be an actual cocharacter of the matrix group
 scheme `GeneralLinear.groupScheme n R` over `Spec R`. This module extracts the
 weight projectors of `χ`. Over a field, it proves that `χ` is conjugate, by a
 base point of `GL_n`, to a diagonal cocharacter `t ↦ diag(t ^ e i)`.

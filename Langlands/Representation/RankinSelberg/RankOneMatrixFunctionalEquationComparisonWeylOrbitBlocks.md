@@ -43,7 +43,9 @@ Fourier theorem and block coordinates; WeylSigns supplies the explicit
 signed matrices; FourierInvariance supplies finite-order and permutation
 determinant norms. This module proves no spectral-weight comparison,
 compact-kernel integration, same-model dual-vector extraction, or final
-gamma equation. Those remain further obligations of the host task.
+gamma equation. Those are further steps of the proof of
+`RankOneMatrixFunctionalEquationComparisonStatement`, which
+`RankOneMatrixFunctionalEquationComparisonProof` completes.
 
 ## All-field port
 

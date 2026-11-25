@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealInducedTorusCore`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module is part of the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). For
 pairwise disjoint blocks `p_1, …, p_r` the iterated mode-`0` coefficient
 `coeffs (zeroModes slots) F 1 = ∫ F(r_{p_1}(θ_1) ⋯ r_{p_r}(θ_r)) dθ_1 ⋯ dθ_r` is the integral of
@@ -164,11 +164,13 @@ The core bound.
 `π^r · expBound slots · |E(1)|` when `Re σ_s = Re α_s − M_s/2` for every slot (`α_s = s.α`,
 `M_s = s.M`). So the core bound compares the torus average of `u(· k) h(· point slots k')` with
 the torus average of `E`. This lower bound and the resulting comparison are intended for the
-torus-pairing bound in the proof of Task 6749; this module does not state them.
+torus-pairing bound in the proof of `RealStandardLanglandsQuotientStatement`; this module does not
+state them.
 
 ## Provenance
 
-This is derived, internal infrastructure for Task 6749; it states no literature result. Parseval
+This is derived, internal infrastructure for the proof of `RealStandardLanglandsQuotientStatement`;
+it states no literature result. Parseval
 along a block is the finite Fourier expansion of a right `O(N)`-finite function
 (`exists_eq_sum_blockFourierCoefficient`), and the exact average is the Iwasawa decomposition
 `r_p(θ) b(x, y, w) = b(x + y − log|Z|, log|Z|, ·) r_p(θ')` of `RealInducedBlockSlice`.

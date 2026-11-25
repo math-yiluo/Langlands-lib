@@ -30,7 +30,7 @@ Fix the data of the statement:
 `AffineCoordinates.functor G` with its corepresentation and the isomorphism
 `AffineCoordinates.groupSchemeIso G`. The model is affine over the base by
 `isAffineHom_affineCoordinates`. Its coordinate algebra is formally smooth and of finite type
-(`AffineCoordinates.formallySmooth_algebra`, `finiteType_algebra`, from Worker 1239's bridge
+(`AffineCoordinates.formallySmooth_algebra`, `finiteType_algebra`, from the bridge
 `Rational.TorusActionBridge`). The conclusion is `cyclicWeightFiltration_of_model`
 (`Rational.CyclicWeightQuotientAssembly`) for this model.
 
@@ -41,7 +41,7 @@ between affine schemes is affine.
 ## Provenance
 
 The proved statement is the Library's formalization of Conrad–Gabber–Prasad, *Pseudo-reductive
-groups*, 2nd ed., Lemma 3.3.8 (printed pp.111-112), as fixed by the task contract. The proof
+groups*, 2nd ed., Lemma 3.3.8 (printed pp.111-112). The proof
 route is internal to this formalization: explicit weight subgroups of the coordinate ring,
 their polynomial structure, maximality by the graded vanishing theorem and tangent rigidity,
-and an explicit vector-group quotient. The modules are by Worker 1224 and Worker 1239.
+and an explicit vector-group quotient.

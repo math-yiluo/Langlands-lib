@@ -1,6 +1,6 @@
 # Simple-connectedness ascent for groups with split maximal tori
 
-Worker 416. This module is an internal conditional assembly toward
+This module is an internal conditional assembly toward
 `IsSimplyConnectedFieldExtensionStatement`. It uses the actual root-datum
 base-change proof and the published group-scheme and lattice definitions.
 It proves no structural hypothesis and does not establish the unconditional

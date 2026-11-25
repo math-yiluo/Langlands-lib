@@ -1,7 +1,5 @@
 # Local products with the full kernel of an fppf subgroup image
 
-Worker 1150.
-
 This is derived infrastructure for the split-radical product argument. It uses
 only the published predicates `SubgroupFunctor.IsFppfImage` and
 `SubgroupFunctor.FppfLocallyInProduct`, the actual group-scheme kernel, and

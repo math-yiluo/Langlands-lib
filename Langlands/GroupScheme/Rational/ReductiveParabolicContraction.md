@@ -1,7 +1,5 @@
 # Original radicals and Levis in a reductive dynamic parabolic
 
-Author: Worker 1264.
-
 This internal composition applies the published theorem
 `dynamicCentralizerReductive` to the original radical and Levi maps of an
 actual dynamic-parabolic presentation. All fields and the universe `u` are

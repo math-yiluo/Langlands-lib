@@ -1,7 +1,5 @@
 # Normality of the fixed closed torus envelope over every field
 
-Worker 4296.
-
 `Langlands.GroupScheme.torusGeneratedEnvelopeNormality` proves exactly
 `Langlands.GroupScheme.TorusGeneratedEnvelopeNormalityStatement.{u}`, for an
 arbitrary universe `u`. Fix any field `k : Type u`, any group scheme `G` over
@@ -85,8 +83,7 @@ the same theorem to `torusGeneratedEnvelopeAlgebraicClosureInfinite k G`.
 
 The two finite-field helpers remain `private`, so the module's only new public
 declaration is the target theorem. The infinite-field step imports its public
-proof instead of repeating the former private composite. The private helpers
-prove published targets with their own proof tasks.
+proof. The private helpers prove published statements.
 
 ## Provenance
 
@@ -102,6 +99,6 @@ does. Each case is closed by published Library reductions whose structural input
 are all published proofs.
 
 The Lean proof itself is an internal composition of these imported declarations. It
-adds no new mathematical assertion. Worker 15's public note
+adds no new mathematical assertion. The note
 `notes/group-schemes/smooth-split-torus-conjugacy-route.md` records the same
 infinite-field composite.

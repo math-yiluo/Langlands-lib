@@ -1,6 +1,6 @@
 # Rational generation and images of Weil-restricted weighted Hermitian models
 
-This is an internal construction and proof unit for the local Kneser–Tits task. It uses the actual affine Weil restriction constructed in `HermitianRootWeilDynamics`, the normal-generation theorem of `HermitianRootNormalGeneration`, and the existing coefficient comparisons of `SU3WeilAmbientGeneration`. No external structural theorem is asserted here.
+This module gives constructions and proofs toward the local Kneser–Tits statement `LocalKneserTitsStatement` (in `Langlands.GroupScheme.SimplyConnected.LocalKneserTitsStatement`). It uses the actual affine Weil restriction constructed in `HermitianRootWeilDynamics`, the normal-generation theorem of `HermitianRootNormalGeneration`, and the existing coefficient comparisons of `SU3WeilAmbientGeneration`. No external structural theorem is asserted here.
 
 Let `F`, `k`, and `L` be fields in an arbitrary common universe. Assume that `k/F` is finite and that `L/k` is separable quadratic. Let the finite middle index lie in `Type`, let `H` be a diagonal Hermitian form for the canonical quadratic involution of `L/k`, and supply a unit `w i` representing every weight of `H`. The construction imposes no separability condition on `k/F` and no characteristic restriction.
 
@@ -10,4 +10,4 @@ The nested tensor algebra at the ground-field test is evaluated by the existing 
 
 Assuming `H.IsAnisotropic`, the upper family normally generates every actual restricted rational point. The proof pulls a normal subgroup back along `rationalPointsEquiv` and applies the original weighted Hermitian normal-generation theorem. Pulling back a normal subgroup of an arbitrary target along an actual group-scheme morphism now proves full rational-image containment whenever that subgroup contains the dynamics of the composed cocharacter. For a connected reductive target, the existing theorem `dynamicUnipotent_le_parabolicElementarySubgroup` supplies this containment, so the full rational image lies in its actual parabolic elementary subgroup.
 
-Anisotropy is required only for normal generation and the resulting full-image assertions. This unit does not prove source connected reductivity, rank-one classification, or the unrestricted local Kneser–Tits proposition.
+Anisotropy is required only for normal generation and the resulting full-image assertions. This module does not prove source connected reductivity, rank-one classification, or the unrestricted local Kneser–Tits proposition.

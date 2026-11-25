@@ -1,7 +1,5 @@
 # Rational restriction of actual finite full-domain covers
 
-Author: Worker 36.
-
 This module constructs rational restriction of finite covers by actual
 full affinoid domains. The coefficient field is any complete ultrametric
 normed field. The algebras retain finite positive-polyradius closed Tate

@@ -32,11 +32,12 @@ theorem continuous_realRatCompletion : Continuous (realRatCompletion) :=
 
 /-- The completion map from the rational real completion is the actual real embedding. -/
 theorem completionMap_realRatCompletion (v : InfinitePlace F) (r : ℝ) :
-    NumberField.LiesOver.completionMap (w := v) (realRatCompletion r) =
+    NumberField.LiesOver.completionMap Rat.infinitePlace v (realRatCompletion r) =
       PositiveRealIdeles.realEmbedding F v r := by
   have h := (Rat.denseRange_cast (𝕜 := ℝ)).equalizer
-    (g := fun r : ℝ => NumberField.LiesOver.completionMap (w := v) (realRatCompletion r))
-    (NumberField.LiesOver.continuous_completionMap.comp continuous_realRatCompletion)
+    (g := fun r : ℝ => NumberField.LiesOver.completionMap Rat.infinitePlace v (realRatCompletion r))
+    ((NumberField.LiesOver.continuous_completionMap Rat.infinitePlace v).comp
+      continuous_realRatCompletion)
     (PositiveRealIdeles.continuous_realEmbedding F v)
     (funext fun q => by simp only [Function.comp_apply, map_ratCast])
   exact congrFun h r

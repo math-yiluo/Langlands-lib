@@ -25,5 +25,6 @@ a commuting homomorphism, flatness, surjectivity and local finite presentation.
 
 The provenance is internal composition of the imported published theorems,
 parallel to the existing `Dynamic.ParabolicQuotient` construction. This supplies
-a factor quotient for Task 6404's kernel-cell application; it does not yet prove
-kernel saturation or the depth-zero opposite-factor statement.
+a factor quotient for the kernel-cell application in
+`Dynamic.UnipotentKernelOppositeCell`; it does not prove kernel saturation or the
+depth-zero opposite-factor statement `UnramifiedFixedDepthZeroOppositeStatement`.

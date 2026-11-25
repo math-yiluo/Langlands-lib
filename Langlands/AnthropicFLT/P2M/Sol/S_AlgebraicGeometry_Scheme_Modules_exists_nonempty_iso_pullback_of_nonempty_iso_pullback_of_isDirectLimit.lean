@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor
@@ -33,11 +33,11 @@ universe u
 noncomputable section
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Modules.pullback Scheme.Hom QuasiCompact Spec Spec.map Scheme QuasiCompact.compactSpace_of_compactSpace Scheme.Modules.pullbackCongr IsAffineOpen isCompact_iff_finite_and_eq_biUnion_affineOpens Scheme.Modules QuasiSeparated Scheme.Modules.map_smul quasiSeparated_iff_quasiSeparatedSpace Scheme.Modules.pullbackComp Scheme.Modules.IsInvertible Scheme.TwoAffineOpenCover Scheme.TwoAffineOpenCover.algebraOfHom Scheme.TwoAffineOpenCover.restrictAlgHom exists_algEquiv_sections_pullback_fst_preimage_tensor_of_isAffineOpen)
+export _root_.AlgebraicGeometry (Scheme.Modules.pullback Scheme.Hom QuasiCompact Spec Spec.map Scheme QuasiCompact.compactSpace_of_compactSpace Scheme.Modules.pullbackCongr IsAffineOpen isCompact_iff_finite_and_eq_biUnion_affineOpens Scheme.Modules QuasiSeparated Scheme.Modules.map_smul quasiSeparated_iff_quasiSeparatedSpace Scheme.Modules.pullbackComp Scheme.Modules.IsInvertibleFLT Scheme.TwoAffineOpenCover Scheme.TwoAffineOpenCover.algebraOfHom Scheme.TwoAffineOpenCover.restrictAlgHom exists_algEquiv_sections_pullback_fst_preimage_tensor_of_isAffineOpen)
 namespace Scheme
-export _root_.AlgebraicGeometry.Scheme (Modules.pullback Hom.id_app Hom Γ affineOpens Hom.comp_app Modules.pullbackCongr isBasis_affineOpens Modules Opens Modules.map_smul restrict Modules.pullbackComp Modules.IsInvertible Modules.pullbackLocalSection TwoAffineOpenCover TwoAffineOpenCover.algebraOfHom TwoAffineOpenCover.restrictAlgHom)
+export _root_.AlgebraicGeometry.Scheme (Modules.pullback Hom.id_app Hom Γ affineOpens Hom.comp_app Modules.pullbackCongr isBasis_affineOpens Modules Opens Modules.map_smul restrict Modules.pullbackComp Modules.IsInvertibleFLT Modules.pullbackLocalSection TwoAffineOpenCover TwoAffineOpenCover.algebraOfHom TwoAffineOpenCover.restrictAlgHom)
 namespace Modules
-export _root_.AlgebraicGeometry.Scheme.Modules (Hom.app_smul Hom.mapPresheaf pullback presheaf Hom.comp_app Hom Hom.id_app pullbackCongr restrict map_smul pullbackComp IsInvertible IsFrameOn tensor pullbackLocalSection pullbackLocalSection_smul map_homOfLE_pullbackLocalSection exists_iso_app_eq_of_iSup_eq_top_of_forall_smul_eq exists_isFrameOn_of_pullback_iso_unit)
+export _root_.AlgebraicGeometry.Scheme.Modules (Hom.app_smul Hom.mapPresheaf pullback presheaf Hom.comp_app Hom Hom.id_app pullbackCongr restrict map_smul pullbackComp IsInvertibleFLT IsFrameOn tensor pullbackLocalSection pullbackLocalSection_smul map_homOfLE_pullbackLocalSection exists_iso_app_eq_of_iSup_eq_top_of_forall_smul_eq exists_isFrameOn_of_pullback_iso_unit)
 open _root_.AlgebraicGeometry.Scheme.Modules _root_.AlgebraicGeometry.Scheme _root_.AlgebraicGeometry
 
 variable {X : Scheme.{u}}
@@ -225,12 +225,12 @@ lemma nonempty_iso_of_units {Y : Scheme.{u}} (π : Y ⟶ X) {L₁ L₂ : X.Modul
         IsFrameOn.app_trans_smul_pullbackLocalSection π hb i j])
   exact ⟨e⟩
 
-namespace IsInvertible export _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible (pullback exists_trivialization) end IsInvertible
+namespace IsInvertible export _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible (pullbackFLT) end IsInvertible namespace IsInvertibleFLT export _root_.AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT (exists_trivialization) end IsInvertibleFLT
 namespace IsInvertible
 open scoped _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible in
 
 private lemma _root_.AlgebraicGeometry.Scheme.Modules.IsInvertible.exists_fin_affine_cover_isFrameOn₂ [CompactSpace X] {L₁ L₂ : X.Modules}
-    (h₁ : IsInvertible L₁) (h₂ : IsInvertible L₂) :
+    (h₁ : IsInvertibleFLT L₁) (h₂ : IsInvertibleFLT L₂) :
     ∃ (n : ℕ) (U : Fin n → X.Opens), (∀ k, IsAffineOpen (U k)) ∧ ⨆ k, U k = ⊤ ∧
       ∃ (a : ∀ k, Γ(L₁, U k)) (b : ∀ k, Γ(L₂, U k)),
         (∀ k, IsFrameOn (a k) (U k)) ∧ (∀ k, IsFrameOn (b k) (U k)) := by
@@ -332,7 +332,7 @@ theorem solution
     {R : Type u} [CommRing R] (g : ∀ i, G i →+* R)
     (hR : IsDirectLimit (fun i j h => ⇑(φ i j h)) fun i => ⇑(g i))
     (i : ι) {X : Scheme.{u}} (fX : X ⟶ Spec (CommRingCat.of (G i))) [QuasiCompact fX] [QuasiSeparated fX]
-    (𝓛₁ 𝓛₂ : X.Modules) (h₁ : Scheme.Modules.IsInvertible 𝓛₁) (h₂ : Scheme.Modules.IsInvertible 𝓛₂)
+    (𝓛₁ 𝓛₂ : X.Modules) (h₁ : Scheme.Modules.IsInvertibleFLT 𝓛₁) (h₂ : Scheme.Modules.IsInvertibleFLT 𝓛₂)
     (hiso : Nonempty
       ((Scheme.Modules.pullback (Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (g i))))).obj 𝓛₁ ≅
        (Scheme.Modules.pullback (Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (g i))))).obj 𝓛₂)) :
@@ -411,7 +411,7 @@ theorem solution
     rw [← hε2 V V' hV hV' hle s]
     exact (Algebra.TensorProduct.comm_comp_map_apply _ _ _).symm
 
-  obtain ⟨n, U, hUaff, hUcov, fa, fb, ha, hb⟩ := h₁.exists_fin_affine_cover_isFrameOn₂ h₂
+  obtain ⟨n, U, hUaff, hUcov, fa, fb, ha, hb⟩ := AlgebraicGeometry.Scheme.Modules.IsInvertible.exists_fin_affine_cover_isFrameOn₂ h₁ h₂
   have hiso' : Nonempty
       ((Scheme.Modules.pullback (Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) R))))).obj 𝓛₁ ≅
        (Scheme.Modules.pullback (Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (algebraMap (G i) R))))).obj 𝓛₂) :=

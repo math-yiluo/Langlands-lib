@@ -1,6 +1,6 @@
 # A represented relative property tested on an étale atlas
 
-This internal unit generalizes the categorical comparison in the published
+This internal module generalizes the categorical comparison in the published
 `isClosedImmersion_of_etale_atlas`, while retaining representability as an
 explicit hypothesis. It does not prove descent of representability.
 

@@ -1,6 +1,6 @@
 # Top derivatives of supplied increasing adjacent-product quotients
 
-This internal prerequisite defines
+This module defines
 `TwoSupercuspidalIncreasingProductQuotientTopDerivative` and proves it in
 `twoSupercuspidalIncreasingProductQuotientTopDerivative`. It derives the result
 from actual published Jacquet, derivative, support-shift and multiplicity-one
@@ -124,25 +124,25 @@ geometric argument described above. Other segment-edge proposition
 imports enter through nondivisible vanishing; their only used helper is
 the elementary identification of a flattened Levi.
 
-The new singleton-support and rank-transport arguments are elementary
+The singleton-support and rank-transport arguments of this module are elementary
 actual equivalence and quotient constructions. The generic dimension-one
 argument uses admissibility and irreducibility explicitly. The
 multiplicity-one proof uses coefficient kernels, distribution invariance,
 contragredience and Haar symmetries. Integral twist freeness follows the
 proved central-character argument.
 
-No used proof depends on the host's excluded analytic segment
+No used proof depends on the analytic segment
 classification, ordered special-head existence, special-head multisegment
 exhaustion, general ordered quotient coverage, tempered uniqueness,
 regular or square-integrable exhaustion, or
 `SquareIntegrableLanglandsClassification`, including renamed versions or
-proof successors. No global support decomposition or full multisegment
+any proofs of them. No global support decomposition or full multisegment
 classification is substituted for a local argument.
 
-## Remaining host obligations
+## Not proved in this module
 
 This theorem does not construct a proper subspace, prove existence of a
 segment head, compute derivatives of a product involving that head, or
 prove rank-three irreducibility or composition structure. Both actual
 repeated-cuspidal triple transfers and their ambient extraction/refinement
-remain obligations of the host task.
+are not part of this module.

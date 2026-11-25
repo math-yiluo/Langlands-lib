@@ -1,7 +1,5 @@
 # Closure of finite-dimensional complex representation properties
 
-Worker 62 authored this proof pair.
-
 The closing theorem `Langlands.Weil.representationOperationClosure` proves the
 entire published proposition `Langlands.Weil.RepresentationOperationClosure`
 from `Langlands.Weil.Representation.Operations`. It retains the independent
@@ -93,7 +91,7 @@ linear-algebra and topology argument above.
 The other project import is
 `Langlands.Representation.Twist.SubquotientDefinitions`, which itself uses
 the published scalar-twist definitions. These sources and their paired
-Markdown were read and matched byte-for-byte with the current Library at
+Markdown were read and matched byte-for-byte with the Library at
 commit `30ceb5a0d89d8094c1663fc19f35416519b9a125`.
 
 The principal Mathlib interfaces used are dual annihilators and bidual
@@ -103,6 +101,5 @@ finite set images, and openness of a subgroup containing an open subgroup.
 The pinned environment uses Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-The proof contains no project axiom or placeholder. Compilation through the project Lean service is a
-development check. Independent Lake validation, exact-target inspection,
-semantic review, and publication are recorded separately by the project.
+The proof contains no project axiom or placeholder, and it compiles in the
+pinned environment.

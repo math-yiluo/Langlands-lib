@@ -1,8 +1,5 @@
 # Adjacent cuspidal Jacquet interchange
 
-Authors: Worker 1216, with Worker 19's coarse extraction and tensor occurrence
-adapters and Worker 289's adjacent binary induction bridge.
-
 `Langlands.Classification.adjacentCuspidalJacquetInterchange` proves exactly
 the published proposition
 `Langlands.Classification.AdjacentCuspidalJacquetInterchange.{uF,uV} F T`
@@ -237,19 +234,19 @@ import inventory:
   above, rather than support-label comparisons.
 
 The closure contains none of the following excluded conclusions, their
-closing theorem names, or their named proof successors; the implemented
+closing theorem names, or proofs of them; the implemented
 proof dependencies described above also do not invoke them:
 
-| Excluded task | Excluded conclusion |
-| --- | --- |
-| `aca8805b-054f-4d56-8045-12db7f623404` | Analytic segment classification, `SegmentEssentialSquareIntegrableClassification` |
-| `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` | Multisegment exhaustion, `MultisegmentHeadExhaustion` |
-| `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | Ordered strong-head existence, `OrderedMultisegmentHeadExistence` |
-| `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | Ordered quotient coverage, `OrderedMultisegmentQuotientExhaustion` |
-| `52e97845-36bb-457d-b76f-70753334b88c` | Tempered block uniqueness, `TemperedBlockUniqueness` |
-| `1cb45da2-7007-4351-a694-594fb148b8d1` | `SquareIntegrableLanglandsClassification` |
-| `cd8ab97c-0b78-4bce-97c4-d307a28159a4` | `SquareIntegrableLanglandsExhaustion` |
-| `bf433f0a-921a-428c-b0c0-6475438125ac` | Regular exhaustion, `GLRegularLanglandsExhaustionStatement` |
+| Excluded conclusion |
+| --- |
+| Analytic segment classification, `SegmentEssentialSquareIntegrableClassification` |
+| Multisegment exhaustion, `MultisegmentHeadExhaustion` |
+| Ordered strong-head existence, `OrderedMultisegmentHeadExistence` |
+| Ordered quotient coverage, `OrderedMultisegmentQuotientExhaustion` |
+| Tempered block uniqueness, `TemperedBlockUniqueness` |
+| `SquareIntegrableLanglandsClassification` |
+| `SquareIntegrableLanglandsExhaustion` |
+| Regular exhaustion, `GLRegularLanglandsExhaustionStatement` |
 
 In particular, no full disjoint-support decomposition, general ordered
 quotient coverage or multisegment classification is used as a shortcut.
@@ -269,8 +266,5 @@ steps that the source presents through constituent multiplicities.
 The sources' global decomposition and classification conclusions are
 not inputs.
 
-Development compilation and declaration inspection succeed in approved
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with independent
+Compilation and declaration inspection succeed, with independent
 `uF,uV` and only `propext`, `Classical.choice` and `Quot.sound`.
-Development checking is not independent semantic acceptance,
-exact-target submission validation or Library publication.

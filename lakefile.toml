@@ -1,0 +1,58 @@
+name = "LanglandsTrial"
+defaultTargets = ["Langlands"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
+
+[[lean_lib]]
+name = "Langlands"
+globs = ["Langlands.+"]
+
+[[lean_lib]]
+name = "Nyll"
+globs = ["Nyll.+"]
+
+[[lean_lib]]
+name = "FontaineWintenberger"
+globs = ["FontaineWintenberger", "FontaineWintenberger.+"]
+
+[[lean_lib]]
+name = "StacksCore"
+globs = ["StacksCore.+"]
+
+[[lean_lib]]
+name = "StacksFrontier"
+globs = ["StacksFrontier.+"]
+
+# The Lean library weil-conjectures, whole and unchanged, in external/weil-conjectures/, compiled with
+# the options of its own lakefile: its modules under WeilConjectures, and Weil.Definitions, which six
+# of them import. Neither is a default target: `lake build WeilConjectures Weil` builds them.
+[[lean_lib]]
+name = "Weil"
+srcDir = "external/weil-conjectures"
+globs = ["Weil.+"]
+
+[lean_lib.leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+backward.isDefEq.respectTransparency = false
+weak.linter.mathlibStandardSet = true
+weak.linter.style.header = false
+maxSynthPendingDepth = 3
+warn.sorry = false
+
+[[lean_lib]]
+name = "WeilConjectures"
+srcDir = "external/weil-conjectures"
+globs = ["WeilConjectures", "WeilConjectures.+"]
+
+[lean_lib.leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+backward.isDefEq.respectTransparency = false
+weak.linter.mathlibStandardSet = true
+weak.linter.style.header = false
+maxSynthPendingDepth = 3
+warn.sorry = false

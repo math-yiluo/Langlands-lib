@@ -1,6 +1,6 @@
 # Exact coefficient and form preservation for the common-Levi tensor
 
-This internal proof unit supports the existing actual common-Levi target
+This module supports the proof of the existing actual common-Levi target
 `Langlands.Plancherel.ActualCommonLeviV3.ClosedV31Statement`. Its provenance is
 Waldspurger (2003), V.3.1 and formula (1), printed p.295 / PDF p.61, with the
 source coefficient and inverse-formal-degree normalizations of V.1 and V.2,
@@ -45,4 +45,4 @@ identity is the existing pointwise coefficient transport law. The form
 identity applies the first lemma and retains the same inverse formal degree
 on both sides. Establishing the square and positive similarity for the
 particular standard tensor, and producing its algebraic regular extension at
-all unitary parameters, remain separate obligations.
+all unitary parameters, are separate obligations, outside this module.

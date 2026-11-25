@@ -1,7 +1,5 @@
 # CM rigidity from polarized-automorphism finiteness
 
-Author: Worker 335.
-
 `CMRigidityFromPolarizedAutomorphismFinitenessStatement` is an internal
 conditional reduction. With the exact datum, signature charts, universe and
 named prerequisites of the original `CMSmallLevelRigidityStatement`, it says
@@ -27,5 +25,8 @@ at the identity field point. No faithfulness premise remains in this reduction.
 
 The provenance is the internal composition of these published constructions
 and the elementary subgroup finite-order transfer. No geometric finiteness
-proof is claimed here. The remaining proposition is the exact target of
-Task 6765; the original rigidity statement and its import closure are unchanged.
+proof is claimed here. The remaining proposition
+`PolarizedAutomorphismFinitenessStatement` is proved in the Library as
+`polarizedAutomorphismFiniteness`
+(`Langlands.AlgebraicGeometry.Picard.PolarizedAutomorphismFinitenessProof`);
+the original rigidity statement and its import closure are unchanged.

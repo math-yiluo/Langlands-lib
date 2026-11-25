@@ -1,12 +1,12 @@
 # Essential vectors agree on the mirabolic subgroup
 
-This internal unit proves that two essential vectors of the same Whittaker model
+This module proves that two essential vectors of the same Whittaker model
 agree on the mirabolic subgroup of `GL_(n+2)(F)`, over every nonarchimedean local
 field `F`. It is the analytic part of the uniqueness clause of Jacquet 2012,
 Theorem 1 (printed page 517). That clause asserts uniqueness of the essential vector,
 and Jacquet attributes it to Jacquet, Piatetski-Shapiro and Shalika 1981. Full
 uniqueness additionally needs the injectivity of the restriction of the Whittaker
-model of a generic representation to the mirabolic subgroup; this unit neither
+model of a generic representation to the mirabolic subgroup; this module neither
 proves nor assumes that injectivity. It also does not assert existence of an
 essential vector or of the L-polynomial.
 

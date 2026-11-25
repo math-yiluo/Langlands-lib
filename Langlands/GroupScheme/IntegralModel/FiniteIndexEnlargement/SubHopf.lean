@@ -1,7 +1,7 @@
 /-
 Copyright 2026 Anthropic, PBC.
 Released under the Apache License 2.0; see licenses/Anthropic-FLT/LICENSE.
-Adapted by Worker 33 from the `TakK` section of
+Adapted from the `TakK` section of
 P2M/Sol/S_HopfAlgebra_faithfullyFlat_subalgebra_of_isReduced_of_fg_of_isAlgClosed.lean
 at 6e837e75355538c7f80bab5b956861e86c4eacc2 (published in this Library as
 Langlands.AnthropicFLT.P2M.Sol.S_HopfAlgebra_faithfullyFlat_subalgebra_of_isReduced_of_fg_of_isAlgClosed).

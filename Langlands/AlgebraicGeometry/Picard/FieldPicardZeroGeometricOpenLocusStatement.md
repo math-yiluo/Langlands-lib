@@ -67,16 +67,16 @@ invariance of the actual pulled-back families. A route through the identity
 component must justify its openness, transport from the universal property,
 and the required fibre and base-change comparisons.
 
-The declaration reuses Worker 390's proposed geometric-point interface and
-imports only the published parent statement. It adds no ambient existence,
+The declaration
+imports only the published statement `FieldPicardZeroOpenLocusStatement`. It adds no ambient existence,
 projectivity, identity-component comparison, openness, or dual-scheme
 assumption. It supplies a statement, not a proof.
 
 ## Relation to the all-test-scheme target
 
 The conclusion is restricted to geometric points. It does not establish the
-parent's `IsPicardZeroOpenLocus` criterion for every test scheme and map,
+`IsPicardZeroOpenLocus` criterion of `FieldPicardZeroOpenLocusStatement` for every test scheme and map,
 including nonreduced schemes. That further assembly requires geometric
 detection for actual pulled-back families, pullback composition, and geometric
-points above scheme points. The parent statement and its imported definitions
+points above scheme points. `FieldPicardZeroOpenLocusStatement` and its imported definitions
 are unchanged.

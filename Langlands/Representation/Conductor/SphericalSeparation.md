@@ -1,6 +1,6 @@
 # Separation by the spherical Laurent coefficients
 
-This internal unit proves a separation result for the uniqueness clause of Jacquet
+This module proves a separation result for the uniqueness clause of Jacquet
 2012, Theorem 1 (printed page 517). That clause says the essential vector of a generic
 representation of `GL_(n+2)` is unique once one also requires
 restriction invariance; Jacquet attributes it to Jacquet, Piatetski-Shapiro and
@@ -16,9 +16,9 @@ right `GL_(n+1)(O)`-invariant on `diag(GL_(n+1), 1)`
 `Conductor/SphericalSeries`; they are the degree-`d` parts of the corank-one integral
 of `w` against the spherical Whittaker functions.
 
-The unit has internal provenance. It does not assert the essential identity, or the
+The module has internal provenance. It does not assert the essential identity, or the
 existence or uniqueness of the essential vector. Two further steps toward uniqueness
-are not part of this unit: relating these coefficients to the corank-one integrals
+are not part of this module: relating these coefficients to the corank-one integrals
 of the essential identity, and recovering `w` from its restriction to
 `diag(GL_(n+1), 1)`.
 

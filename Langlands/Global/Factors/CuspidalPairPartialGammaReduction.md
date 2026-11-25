@@ -1,6 +1,6 @@
 # Reduction of the cuspidal-pair continuation to the partial equation with integral gamma factors
 
-Module `Langlands.Global.Factors.CuspidalPairPartialGammaReduction`. Author: Worker 5670.
+Module `Langlands.Global.Factors.CuspidalPairPartialGammaReduction`.
 
 ## 1. Content and provenance
 
@@ -22,9 +22,8 @@ further. It contains:
   `CuspidalSatakeBoundStatement.{u, uQ}` and `CuspidalPairPartialGammaEquationStatement.{u, uQ}`
   together imply the published `CuspidalPairCompletedEquationStatement.{u, uQ}`.
 
-The theorem is a reduction: it does not prove the target, and (G') is an open premise
-(Section 4). It is an intermediate result of Task 5721 in the sense of the "Intermediate
-results" section of that task's revision 2. It discharges two parts of the continuation
+The theorem is a reduction: it does not prove the target, and (G') is a premise
+(Section 4). It discharges two parts of the continuation
 statement from the Library: the comparison, at the finite places of `S`, of the
 classification factors in `FinitePairFactorChoice` with the integral gamma factors of the
 actual local components, and the passage from the partial L-functions to the completed ones.
@@ -129,7 +128,7 @@ hypothesis: the local character `CuspidalWhittaker.localCharacter F v` is nontri
 local component has a nonzero Whittaker functional for it (`exists_localWhittakerFunctional`);
 and `LocalRealization.isGeneric_of_integerTrivial_character` gives genericity for every
 nontrivial unitary additive character. The name lies in a module-specific namespace so that it
-does not collide with a later proof of that statement under its own task.
+does not collide with another proof of that statement.
 
 **Product lemmas** (namespace `Langlands.Global.CuspidalPairPartialGamma`):
 
@@ -202,12 +201,15 @@ is used with `ψv = c.additive`, `νv = c.measure` and these `G v`, whose hypoth
 `let`-definitions of the archimedean products are elaborated identically in both statements.
 
 `cuspidalPairCompletedEquation_of_satakeBound_of_partialGamma` composes this with
-`cuspidalPairCompletedEquationReduction`. The Lean service reports that it depends only on the
+`cuspidalPairCompletedEquationReduction`. It was checked to depend only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-## 4. Scope and remaining work
+## 4. Scope and the premise
 
-* (G') is open. Of the obligations in section 8 of
+* (G') is not proved in the Library; `Langlands.Global.cuspidalPairPartialGammaGlobalReduction`
+  (module `Langlands.Global.Factors.CuspidalPairPartialGammaGlobalReduction`) derives it from ten
+  statements of the global Rankin–Selberg theory, of which the two semi-local equations are not
+  proved. Of the obligations in section 8 of
   [`CuspidalPairFunctionalEquationStatement.md`](CuspidalPairFunctionalEquationStatement.md),
   it retains item 1 (the global Rankin–Selberg theory), item 3 (the archimedean parameters,
   the independence of the factors from the parameter lists, and the archimedean local theory),

@@ -3,8 +3,8 @@
 The theorem
 `Langlands.Aubert.General.RationalPointFamily.rationalCompactRestrictionCuspidal`
 proves the exact published proposition
-`RationalCompactRestrictionCuspidalStatement.{uF,uV}`. Worker 389 assembled
-the proof with Worker 1555's integral Weyl correction and actual-point
+`RationalCompactRestrictionCuspidalStatement.{uF,uV}`. The proof assembles
+the integral Weyl correction and the actual-point
 norm-kernel and compact-escape constructions.
 
 The source statement is Renard VI.2.1(c) implies (a), French edition dated

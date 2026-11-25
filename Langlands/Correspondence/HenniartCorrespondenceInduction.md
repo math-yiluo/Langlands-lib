@@ -1,6 +1,6 @@
 # Henniart's route with the rank induction carried out
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartCorrespondenceInduction`,
+Module `Langlands.Correspondence.HenniartCorrespondenceInduction`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers and local constants), `uV` (supercuspidal carriers), all
 independent. `stableCorrespondence_of_steps` also has an independent universe
@@ -13,7 +13,7 @@ The implication
 1. `CandidateExistenceStatement.{uK, uW, uV, uW, uK}`,
 2. `SurjectivityStepStatement.{uK, uW, uV, uW}`,
 3. `SupercuspidalEpsilonConductorFinitenessStatement.{uK, uV}` (items 1–3 are
-   components of Worker 14's published `HenniartStableMapStatement`: Henniart
+   components of `HenniartStableMapStatement`: Henniart
    2000, Théorème 3.1 with §§3.7–3.8, and two parts of §4.3),
 4. `LocalClassField.CommonClosureReciprocityExistence.{uK}` (normalized local
    reciprocity in a common closure),

@@ -1,6 +1,6 @@
 # Connected fibres after rebasing to a represented target
 
-This internal supporting unit compares an actual morphism to the space
+This internal supporting module compares an actual morphism to the space
 represented by a scheme V with the structural morphism of its actual rebase
 over V. It asserts equivalence of the published geometrically connected
 nonempty fibre predicates, with no finiteness or separation assumption.

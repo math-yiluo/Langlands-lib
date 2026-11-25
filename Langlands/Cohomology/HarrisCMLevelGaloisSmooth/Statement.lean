@@ -86,6 +86,6 @@ def HarrisCMLevelGaloisSmoothStatement : Prop :=
       SmoothRep.hom (((cmSmallLevelGaloisCohomologyFunctor D C preservation composition
         unitCoherence associativity comparison symmetry stability square universality
         dualityNaturality polarizationStability compatibility h htor q existence geometry
-        hRigid criterion R d).obj M).ρ σ) x = x
+        hRigid criterion R d).obj M).ρ σ).asHom x = x
 
 end Langlands.Cohomology.HarrisCMLevelGaloisSmooth

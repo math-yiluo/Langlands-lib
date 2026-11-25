@@ -1,7 +1,5 @@
 # Casselman's pairing for actual standard parabolic subgroups (Waldspurger, Théorème I.4.1)
 
-Author: Worker 19, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.Representation.Jacquet.StandardCasselmanPairing`, namespace
 `Langlands.BruhatTits.SpecialCompact`.
 
@@ -25,8 +23,7 @@ PDF page is the printed page minus 234.
 - I.1, printed p. 239 (PDF p. 5): `Σ(P)` and `Δ(P)` are the positive and the simple roots of
   `A_M` relative to `P` (as quoted in `TemperedExponentCone.md`).
 
-The present author could not open the PDF in this session and relies on these checked Library
-quotations.
+The PDF was not opened for this module; it relies on these checked Library quotations.
 
 The structural inputs are Renard's V.5.2(i)–(iv) (rows S20–S23 of the Library note
 `notes/renard/chapter-v-structural-inputs.md`: a basis of compact open subgroups normal in `K₀`,
@@ -36,8 +33,8 @@ neighbourhood-basis properties), encoded by the Library predicates
 `StandardParabolicBasisMember` and `SimultaneousStandardBasisAt`
 (`Langlands.BruhatTits.SpecialCompact.StandardBasisProperty`), and the existence of a standard
 cocharacter for the face `J` (`IsStandardCocharacter`; its existence for every face is part of
-the Library's unproved `StandardCocharacterStatement`, derived there from Borel–Tits §4.2, §5.12
-and Renard V.4.2). These are structural assertions at the Renard Chapter V boundary; they stay
+the Library's `StandardCocharacterStatement`, derived there from Borel–Tits §4.2, §5.12
+and Renard V.4.2, and proved by `Langlands.GroupScheme.standardCocharacter`). These are structural assertions at the Renard Chapter V boundary; they stay
 explicit hypotheses here and are not proved.
 
 The Library's `StablePairingAsymptotics.md` lists two obligations left open by the abstract
@@ -106,7 +103,7 @@ Hypotheses `hG`, `hi`, `hν`, `hζ`, `hB`, `hA`, `hmem` as above.
 - `hasOppositeIwahoriContractionBasis_standard`: the Library's
   `HasOppositeIwahoriContractionBasis Ū_J M_J U_J g⁻¹`.
 - `strictElement_inv_commute`: `g⁻¹` commutes with `M_J(F)`.
-- **`standardCasselmanPairingData`** (definition, the recorded declaration): the Library's
+- **`standardCasselmanPairingData`** (definition, the entry declaration): the Library's
   `StablePairingData` of `G(F)` with `N = Ū_J`, `Nbar = U_J`, `M = M_J` and contracting element
   `g⁻¹`, built by `stablePairingDataOfIwahoriContractions`. These are the data of Casselman's
   pairing for `P_J` in the Library's abstract framework (`StablePairingProof`,

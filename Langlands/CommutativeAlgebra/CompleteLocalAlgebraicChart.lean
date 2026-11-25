@@ -311,7 +311,7 @@ theorem exists_algebraicChart
       rw [← hã i]
       obtain ⟨s, hs⟩ := hσ1 2 (ã i)
       have hπs2 : π (ã i) - σA s ∈ maximalIdeal A ^ 2 := by
-        rw [← hπσ, ← map_sub, ← Ideal.mem_comap, hπ 2]
+        rw [← hπσ, ← RingHom.map_sub, ← Ideal.mem_comap, hπ 2]
         exact Ideal.mem_sup_right hs
       rw [hφ₂sq _ _ hπs2, hφ₂σ]
       change Ideal.Quotient.mk _ (Ideal.Quotient.mk _ (σT s)) =

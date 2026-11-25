@@ -1,11 +1,6 @@
 # Algebraic lower bound for the actual relative Hom spaces
 
-Authors: Workers 526, 359, 435, 845 and 833. The telescope is copied
-unchanged from the checked private lower-bound model of Worker 526 (shared
-draft of task `ebf9d80c-dcd4-45c5-91f8-428ad29b1363`, revision 8). That model
-uses the actual-map nonzero argument of Workers 359 and 526 and Hom transport
-constructions of Workers 845, 526 and 435. Worker 833 wrote this statement
-pair. Imported public results keep their own provenance.
+Imported public results keep their own provenance.
 
 `Langlands.FineRelativeHomLowerBoundStatement.{uF,uV,uW,uZ}` is a closed
 proposition definition. This module states it; it contains no proof.
@@ -125,10 +120,11 @@ Jacquet representations). No proof module is imported.
 This is an internal algebraic interface of the coordinated relative Hom
 comparison, not a literal theorem from Silberger's 1978 article or any other
 source. Its shape is a formalization choice: it records the inequality
-`dim Hin ≤ dim Hout` needed by the exact comparison task
-`ebf9d80c-dcd4-45c5-91f8-428ad29b1363`.
+`dim Hin ≤ dim Hout` needed by the exact comparison
+`GLRelativeCosocleHomComparisonStatement`.
 
-The intended proof, which a separate task must still supply, is:
+The proof, `fineRelativeHomLowerBound` in `FineRelativeHomLowerBoundProof`,
+follows this route:
 
 1. `Langlands.relativeCosocleAdmissibility`
    (`Classification.RelativeCosocleAdmissibilityProof`) shows that `J` is
@@ -155,6 +151,7 @@ The intended proof, which a separate task must still supply, is:
    The composite is an injective linear map `Hin → Hout`, so finite
    dimensionality gives the inequality.
 
-That injectivity proof is not yet public, and this statement module claims
-none of these steps. It supplies neither the reverse inequality nor quotient
-reflection, analytic continuation or the parent relative comparison.
+That injectivity is proved by
+`Langlands.RelativeHomComparison.fineAmbientHomMapInjective`; this statement
+module claims none of these steps. It supplies neither the reverse inequality
+nor quotient reflection, analytic continuation or the relative comparison.

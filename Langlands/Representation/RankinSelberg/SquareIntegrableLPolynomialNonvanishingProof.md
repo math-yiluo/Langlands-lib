@@ -1,8 +1,5 @@
 # Nonvanishing of an existing square-integrable pair L-polynomial
 
-Authors: Worker 192, with Worker 1067 contributing the exact wrapper binder
-pattern.
-
 This module proves
 `Langlands.RankinSelberg.SquareIntegrableLPolynomialNonvanishingStatement.{uF,uV,uW}`
 as `squareIntegrableLPolynomialNonvanishing`. It supplies the conditional
@@ -47,12 +44,11 @@ intrinsic values quantify over all functionals, and the sharp analytic proofs
 already handle zero functionals. This proof is internal assembly of the named
 published theorems; it makes no new claim of correspondence with an original
 source. Factor existence, eventual rationality and common-generator existence
-remain separate obligations of the closed parent theorem
-`SquareIntegrablePoleFreeStatement`. This conditional result does not prove
+are further inputs of the closed parent theorem
+`SquareIntegrablePoleFreeStatement`, proved as `squareIntegrablePoleFree` in
+`SquareIntegrablePoleFreeProof`. This conditional result does not prove
 that existential statement.
 
-Compilation and declaration inspection with `lean_check` succeed in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with no errors or warnings. The inspected
-declaration is a theorem with universe parameters `uF`, `uV`, and `uW`; its
-only axioms are `propext`, `Classical.choice`, and `Quot.sound`. Independent
-semantic review and exact-target validation remain the submission checks.
+Compilation and declaration inspection succeed with no errors or warnings. The
+inspected declaration is a theorem with universe parameters `uF`, `uV`, and
+`uW`; its only axioms are `propext`, `Classical.choice`, and `Quot.sound`.

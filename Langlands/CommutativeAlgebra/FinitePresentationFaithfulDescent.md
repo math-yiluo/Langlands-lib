@@ -1,7 +1,5 @@
 # Faithfully flat descent, localization spreading and presentations of modules
 
-Author: Worker 766.
-
 This module is `Langlands.CommutativeAlgebra.FinitePresentationFaithfulDescent`.
 It imports only Mathlib. All declarations are in the namespace
 `Langlands.CommutativeAlgebra`.

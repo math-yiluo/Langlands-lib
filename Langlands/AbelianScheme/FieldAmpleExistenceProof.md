@@ -79,7 +79,7 @@ the generation locus. All tensor-power and section comparisons are supplied
 by the imported proofs; this module does not apply the conditional
 residue-locus ampleness criterion.
 
-## Provenance, scope and authorship
+## Provenance and scope
 
 This is a derived composition of the three named published theorems.
 The existence conclusion corresponds to the first step of Corollary 7.2,
@@ -103,7 +103,7 @@ The whole affine nonvanishing-open convention and its generation-open
 interpretation are Stacks tags `01PS` and `01CY` in
 `stacks-invertible-picard-ampleness-2026-10-21`, directory SHA256
 `2a0bbd01484fc7cef97110a88cf4b3e472574fbbb9469d037170744a1462f835`.
-These originals were read during development of the inherited reduction.
+These originals were read for this reduction.
 The imported companions describe their detailed source correspondence.
 
 The proof retains arbitrary universe `u`, every characteristic, imperfect
@@ -111,9 +111,3 @@ fields and dimension zero. Finite descent includes inseparable and trivial
 extensions. Algebraic closure, projectivity and an upstairs ample bundle
 are constructed within the proof. The proof uses no symmetric
 ample-existence theorem or downstream result.
-
-Worker 404 authored the inherited conditional algebraic-closure reduction.
-Worker 1318 rechecked it and completed this unconditional proof using
-Worker 1918's published closed-field theorem. The imported spreading and
-finite-descent proofs are by Workers 768 and 770; their companions retain
-the authorship of their prerequisites.

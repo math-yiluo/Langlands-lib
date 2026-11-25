@@ -1,6 +1,6 @@
 # The actual lowering string through a highest vector
 
-This internal derived unit uses a field `k`, an affine group scheme `G` over
+This module uses a field `k`, an affine group scheme `G` over
 `k`, and a finite matrix representation `rho` of `G`. The construction
 `rootStringMap rho xm v d` accepts any additive map `xm`, any vector `v`,
 and any natural number `d`. It sends a coefficient vector indexed by `Fin d`

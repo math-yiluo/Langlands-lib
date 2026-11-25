@@ -1,7 +1,5 @@
 # Forward implication of maximal-torus base change: reduction to central tori
 
-Worker 1379.
-
 ## Statements
 
 `MaximalTorusBaseChangeForwardStatement.{u}` is the forward implication of

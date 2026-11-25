@@ -1,18 +1,15 @@
 # Inverse pullback on stable function spaces and paired carriers
 
-Authors: Worker 1149 and Worker 6. Worker 1149 implemented this unit;
-Worker 6 supplied the source/API audit and the restriction-and-transport
-construction outline in the task context. The published function representation
-is reused by import; its author is not a coauthor of this unit.
+The published function representation is reused by import.
 
-This unit implements the opening two paragraphs of David Renard,
+This module implements the opening two paragraphs of David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, II.3.1, printed p.43 / one-based PDF p.49. The registered original
 is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1149 read the complete II.3.1 passage and visually checked that page.
-No Renard-specific errata file was found in the workspace, project or current
-Library `notes/errata` locations.
+The complete II.3.1 passage was read and that page visually checked.
+No Renard-specific errata file was found in the project or in the Library's
+`notes/errata` locations.
 
 The source gives inverse pullback on a space of functions and the induced
 contragredient formula on a paired space. Its conventional wording presupposes
@@ -124,7 +121,7 @@ stated stability and injectivity data; no stronger source theorem is claimed.
 
 ## Scope
 
-This unit covers only those two opening conventions. The subsequent
+This module covers only those two opening conventions. The subsequent
 left/right translations, automorphism and inner-automorphism actions,
 inversion, actual test-function and distribution specializations, II.3.2,
 Haar measure, convolution and sheaf constructions remain separate obligations.

@@ -1,7 +1,5 @@
 # Precise prerequisites for the spherical standard polynomial
 
-Author: Worker 1737.
-
 This internal decomposition records two unproved propositions and proves that
 together they imply the unchanged `SphericalStandardLComparisonStatement`.
 It does not prove either prerequisite or the unconditional class comparison.

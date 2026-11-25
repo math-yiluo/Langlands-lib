@@ -1,6 +1,6 @@
 # Opposite dynamic intersections for affine group schemes
 
-This internal unit constructs `Dynamic.oppositeCocharacter χ` by composing `χ`
+This module constructs `Dynamic.oppositeCocharacter χ` by composing `χ`
 with inversion of the Gm parameter. It proves
 `Dynamic.opposite_unipotent_inf_parabolic χ`:
 

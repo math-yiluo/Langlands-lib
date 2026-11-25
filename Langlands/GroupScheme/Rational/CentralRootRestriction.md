@@ -1,8 +1,6 @@
 # Restricting actual roots to a central split torus
 
-Author: Worker 1311.
-
-This internal unit constructs the inclusion of the actual rational relative
+This internal module constructs the inclusion of the actual rational relative
 root span into the kernel of restriction to a supplied central split torus.
 It uses the published all-test-scheme definition of centrality and the
 independent split-torus adjoint weight decomposition. It assumes no full
@@ -41,7 +39,7 @@ that it preserves the underlying vector.
 
 The provenance is internal: these are deductions from the existing actual
 point, centrality, adjoint-weight and scalar-extension definitions and the
-published independent weight decomposition. This unit proves neither a
+published independent weight decomposition. This module proves neither a
 central embedding into a maximal split torus nor the reverse kernel inclusion,
 bijectivity of character restriction from `G`, or the unrestricted complement.
 

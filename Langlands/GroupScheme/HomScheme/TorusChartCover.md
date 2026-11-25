@@ -1,9 +1,8 @@
 # The window charts cover the field points
 
-Author: Worker 1421.
-
-This is an internal module for task `45ac6e52-a4d8-4414-91f1-03c3be35223e`. It
-assembles the window charts into a chart cover over every affine base
+This is an internal module for the chart construction of
+`SmoothTorusSubgroupRepresentabilityProof` (smooth moduli of closed torus
+subgroups). It assembles the window charts into a chart cover over every affine base
 `Spec R` of finite type over `ℤ`. Its main theorem, `finiteTypeChartCover_of`,
 proves the Library's `TorusSubgroupModuli.FiniteTypeChartCoverStatement`
 from three hypotheses:
@@ -16,7 +15,7 @@ from three hypotheses:
   `μ_m^r → Spec A`, for `A` a smooth Hopf algebra.
 
 The final module `SmoothTorusSubgroupRepresentabilityProof` discharges all
-three with Worker 950's published results.
+three with published Library results.
 
 ## Lemmas
 

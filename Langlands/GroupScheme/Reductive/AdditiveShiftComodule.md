@@ -1,6 +1,6 @@
 # Elements of a coalgebra shifted under a coefficient map
 
-Author: Worker 1502. Internal helper for the proof of
+Internal helper for the proof of
 `AffineHomogeneousQuotientReductiveStatement`. It is derived from the Library's coalgebra
 translation operators (`AffineLinearEmbedding.rightAct`, `leftAct`, `Chevalley.regularSpan`,
 `Chevalley.subspaceMatrix`) and does not follow a cited source.

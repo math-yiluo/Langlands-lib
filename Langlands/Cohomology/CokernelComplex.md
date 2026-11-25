@@ -1,7 +1,5 @@
 # Functorial cokernel complexes
 
-Author: Worker 13.
-
 This module constructs the iterative cokernel complex of a coaugmentation
 `η : 𝟭 A ⟶ T` on a universe-polymorphic abelian category `A`. It uses Mathlib
 cokernels in the functor category, so the successive objects, maps and their
@@ -29,7 +27,8 @@ p-adic analytic spaces*, the supplied unfinished 1995–1996 manuscript. It is a
 derived generalization to an arbitrary coaugmented endofunctor. No assertion
 that an arbitrary coaugmentation is injective, or that the constructed complex
 is exact or acyclic, is part of this definition. The actual sheaf functor and
-scheme specializations are constructed separately in this definition group.
+scheme specializations are constructed separately, in the modules that import
+this one.
 
 The registered source is
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
@@ -38,9 +37,9 @@ folder digest
 The cited member is
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`,
 SHA-256 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
-Worker 13 read the construction in the original. The source's exactness,
-softness and compact-support comparison results are separate theorem
-obligations, not fields assumed by this construction.
+The construction was read in the original. The source's exactness,
+softness and compact-support comparison results are separate theorems,
+not fields assumed by this construction.
 
 The only external formal dependency is the project's pinned Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`, Lean 4.34.0. There are no

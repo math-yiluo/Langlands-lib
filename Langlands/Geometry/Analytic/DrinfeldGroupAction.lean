@@ -491,9 +491,9 @@ theorem compatibleHom_mul :
 strong maps. -/
 def compatibleAction :
     Matrix.GeneralLinearGroup (Fin (d + 1)) F →* End (compatiblePresentation F K d) where
-  toFun := compatibleHom K
-  map_one' := compatibleHom_one K
-  map_mul' γ γ' := compatibleHom_mul K γ γ'
+  toFun := fun γ => End.of (compatibleHom K γ)
+  map_one' := congrArg End.of (compatibleHom_one K)
+  map_mul' γ γ' := congrArg End.of (compatibleHom_mul K γ γ')
 
 variable (F d) in
 /-- Drinfeld's upper half space as an analytic space, with the action of `GL_{d+1}(F)`: the
@@ -507,13 +507,13 @@ def omegaAction : Action (SaturatedAtlasPresentation.LocalizedCategory.{u, u, u}
 theorem omegaAction_V : (omegaAction F K d).V = SaturatedAtlasPresentation.localizationFunctor.obj
     (SaturatedAtlasPresentation.ofSaturation (exhaustionPresentation F K d)) := rfl
 
-theorem omegaAction_ρ : (omegaAction F K d).ρ γ =
+theorem omegaAction_ρ : ((omegaAction F K d).ρ γ).asHom =
     SaturatedAtlasPresentation.localizationFunctor.map
       (compatibleHom K γ).saturationExtension := rfl
 
 /-- The underlying continuous map of the action of `γ` is `z ↦ γ · z`. -/
 theorem localizedSpaceFunctor_map_omegaAction :
-    SaturatedAtlasPresentation.localizedSpaceFunctor.map ((omegaAction F K d).ρ γ) =
+    SaturatedAtlasPresentation.localizedSpaceFunctor.map ((omegaAction F K d).ρ γ).asHom =
       TopCat.ofHom (actionMap K γ) :=
   SaturatedAtlasPresentation.localizedSpaceFunctor_map _
 

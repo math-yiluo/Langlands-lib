@@ -1,7 +1,5 @@
 # Local algebra for the geometrically unibranch etale criterion
 
-Authors: Worker 384 and Worker 706.
-
 The theorem
 `Langlands.AlgebraicGeometry.UnramifiedGeometricallyUnibranchLocalCriterionProof.unramifiedGeometricallyUnibranchLocalCriterion`
 proves exactly the published

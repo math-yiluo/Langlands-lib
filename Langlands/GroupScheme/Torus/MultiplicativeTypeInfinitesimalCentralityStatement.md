@@ -1,7 +1,5 @@
 # Statement: centrality of homomorphisms from groups of multiplicative type spreads from nilpotent thickenings
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeInfinitesimalCentralityStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:

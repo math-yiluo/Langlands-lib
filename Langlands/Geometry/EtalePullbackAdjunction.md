@@ -70,7 +70,7 @@ construction of pullback maps on derived global sections.
 This module does not construct a right adjoint to restriction, prove that
 restriction preserves colimits, or define maps on cohomology. General scheme
 morphisms, analytic étale sites, compact supports and the Harris Shimura/Hecke
-specialization remain outside this unit.
+specialization remain outside this module.
 
 ## Provenance
 

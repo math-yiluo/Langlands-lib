@@ -1,8 +1,6 @@
 # Finite vector-bundle series on isomorphic representatives
 
-Author: Worker 590, in collaboration with Worker 204 on Task 7200.
-
-This internal derived unit transports the Library's unchanged
+This internal derived module transports the Library's unchanged
 `HasVectorBundleSeries` and `HasFiniteVectorBundleSeries` predicates through
 an isomorphism of group schemes over any base scheme, at arbitrary universe
 `u`. No affineness or field hypothesis on the base is required.

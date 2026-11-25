@@ -1,7 +1,5 @@
 # Identification and calculation of the actual cocharacter reflex field
 
-Author: Worker 57.
-
 This module identifies the fixed field of the actual first-factor Kottwitz
 scheme-cocharacter conjugacy class with the previously constructed real Hodge
 reflex field. It then transfers the published numerical field calculations and

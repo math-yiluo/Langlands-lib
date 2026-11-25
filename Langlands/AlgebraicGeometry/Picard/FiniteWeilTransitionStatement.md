@@ -94,10 +94,10 @@ on geometric points does not suffice, since the displayed equality
 also tests nonreduced schemes.
 
 This file supplies the precise `Prop`-valued target, with no proof
-and no new axiom. A separate proof task must establish this exact
-published declaration. It states neither Cartier duality nor
+and no new axiom. The theorem `relativeFiniteWeilTransition` in the
+module `FiniteWeilTransitionProof` establishes this exact
+declaration. It states neither Cartier duality nor
 perfectness, polarization alternation, dual-homomorphism
-functoriality, or an inverse-limit pairing. Once proved or supplied
-as an explicit theorem hypothesis, it provides the coherence
+functoriality, or an inverse-limit pairing. It provides the coherence
 required to evaluate compatible torsion families into the existing
 Tate twist without choosing roots of unity.

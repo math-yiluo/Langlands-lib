@@ -13,8 +13,8 @@ namespace Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesReduction
 open ProperFlatIntegralSheafClassTwist
 
 lemma isInvertible_pullback {Y Y' : Scheme.{u}} (φ : Y' ⟶ Y) {M : Y.Modules}
-    (hM : Scheme.Modules.IsInvertible M) :
-    Scheme.Modules.IsInvertible ((Scheme.Modules.pullback φ).obj M) :=
+    (hM : Scheme.Modules.IsInvertibleFLT M) :
+    Scheme.Modules.IsInvertibleFLT ((Scheme.Modules.pullback φ).obj M) :=
   isInvertible_lineBundle ((LineBundle.pullback φ).obj (lineBundleOfIsInvertible M hM))
 
 lemma pb_id_apply {Y : Scheme.{u}} (x : Group Y) : Group.pullback (𝟙 Y) x = x := by
@@ -35,12 +35,12 @@ lemma pb_iso_injective {Y Y' : Scheme.{u}} (e : Y ≅ Y') :
 
 /-- Every class is the class of an invertible module. -/
 lemma exists_icl {Y : Scheme.{u}} (x : Group Y) :
-    ∃ (N : Y.Modules) (hN : Scheme.Modules.IsInvertible N), icl N hN = x :=
+    ∃ (N : Y.Modules) (hN : Scheme.Modules.IsInvertibleFLT N), icl N hN = x :=
   ⟨_, isInvertible_lineBundle (Group.lineBundleRepresentative Y x),
     (icl_lineBundle _ _).trans (Group.classOf_lineBundleRepresentative Y x)⟩
 
 lemma icl_lineBundleOfIsInvertible {Y : Scheme.{u}} (M : Y.Modules)
-    (hM : Scheme.Modules.IsInvertible M) :
+    (hM : Scheme.Modules.IsInvertibleFLT M) :
     (lineBundleOfIsInvertible M hM).classOf = icl M hM := rfl
 
 section Points

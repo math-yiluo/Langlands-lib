@@ -1,7 +1,5 @@
 # Sections from a group cell in a scheme quotient
 
-Author: Worker 424.
-
 This internal construction joins `QuotientCell` to the published rational
 translation adapter. It starts with actual group schemes `G`, `P`, `U`,
 homomorphisms `iP : P → G`, `iU : U → G`, and an actual map `q : G.X → Q`

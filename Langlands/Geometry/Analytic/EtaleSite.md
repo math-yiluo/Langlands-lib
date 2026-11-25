@@ -1,7 +1,5 @@
 # Étale morphisms of analytic spaces and the étale site `Ét(X)`
 
-Author: Worker 21.
-
 The Library's `LocalizedCategory` is the category of analytic spaces: the
 localization of saturated atlas presentations with strong maps at their
 quasi-isomorphisms (`SaturatedStrongLocalization`). The Library's

@@ -1,7 +1,5 @@
 # The Levi field of concrete unramified apartment lifts
 
-Authors: Worker 257 and Worker 617.
-
 `Langlands.Geometry.Building.unramifiedComparisonLeviField` proves exactly
 `UnramifiedComparisonLeviFieldStatement.{u}` for an arbitrary universe `u`.
 It preserves all published hypotheses and works for every supplied concrete

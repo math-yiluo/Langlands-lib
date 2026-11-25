@@ -1,7 +1,5 @@
 # Positivity on the actual real Harris algebra
 
-Author: Worker 57.
-
 This internal construction transfers the positive twisted involution from the
 standard matrix product to the actual real algebra `ℝ ⊗[ℚ] A`. It constructs
 positive complex homomorphisms for both the corrected Harris convention and

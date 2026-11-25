@@ -22,4 +22,5 @@ projection extraction lemma thus realizes the simple quotient inside
 one of the finitely many remaining projected representations.
 
 This is an internal finite-support step for the algebraic projections of
-cuspidal Levi coefficients in Task 6823.
+cuspidal Levi coefficients in the argument for `CuspidalSupportExistenceStatement`
+(Langlands 1979, Proposition 2).

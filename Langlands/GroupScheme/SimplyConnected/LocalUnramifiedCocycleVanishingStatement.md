@@ -1,7 +1,5 @@
 # Local vanishing for simply connected cocycles on finite unramified covers
 
-Authors: Worker 303.
-
 `Langlands.GroupScheme.LocalSimplyConnectedUnramifiedCocycleVanishingStatement.{u}`
 is a proposition definition at arbitrary universe `u`. This module states it and
 proves nothing.

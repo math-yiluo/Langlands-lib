@@ -1,6 +1,7 @@
 # Central elements over a decomposition of a smooth category
 
-Worker 117. Internal helper module for Task 5545 (Renard, *Représentations des
+Internal helper module for the proof of `BernsteinCenterFunctionsStatements`
+(Renard, *Représentations des
 groupes réductifs p-adiques*, French version dated 9 July 2026
 (`renard-2026-representations-groupes-reductifs-padiques`), VI.10.4, Theorem,
 printed p.212 / PDF p.218). It is used by the conditional reduction

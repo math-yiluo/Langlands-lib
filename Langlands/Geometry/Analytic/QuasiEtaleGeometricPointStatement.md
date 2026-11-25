@@ -1,14 +1,15 @@
 # Geometric points are points of the quasi-étale site
 
-Author: Worker 21.
-
 This module states, without proof, that geometric points of an analytic space
 give points of its quasi-étale site. It contains one Prop-valued definition,
 `Langlands.Analytic.SaturatedAtlasPresentation.QuasiEtaleSite.GeometricPointStatement`.
 It is the quasi-étale counterpart of `EtaleSite.GeometricPointStatement`
-(module `EtaleGeometricPointStatement`). Worker 26's quasi-étale `G`-sheaves
-(Task 26) take the point axioms as a hypothesis `h` for every `L`-valued
-point. This statement makes that hypothesis an explicit open obligation.
+(module `EtaleGeometricPointStatement`). The constructions on quasi-étale
+`G`-sheaves in `Langlands.Sheaf.Equivariant`, for example their compactly
+supported cohomology (module `AnalyticQuasiEtaleCompactCohomology`), take the
+point axioms as a hypothesis `h` for every `L`-valued point. This statement makes that
+hypothesis an explicit proposition; `QuasiEtaleSite.geometricPoint` (module
+`QuasiEtaleGeometricPointProof`) proves it.
 
 ## Statement
 

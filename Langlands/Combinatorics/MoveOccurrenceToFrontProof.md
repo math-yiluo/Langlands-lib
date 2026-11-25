@@ -1,6 +1,6 @@
 # Adjacent transport of a specified original occurrence
 
-Worker 320's internal proof of `MoveOccurrenceToFront` uses an explicit
+The internal proof of `MoveOccurrenceToFront` uses an explicit
 permutation `moveToPosition i k`. It places original label `i` at position `k`,
 moves each original label `j` with `k ≤ j < i` to new position `j+1`, and fixes
 every other original label. Thus new positions `k+1` through `i` contain

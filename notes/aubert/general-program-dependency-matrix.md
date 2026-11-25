@@ -1,36 +1,35 @@
 # General Aubert duality: declaration and dependency matrix
 
 The [16 November canonical-identity and Sharp update](general-program-proof-update-2026-11-16.md)
-records fourteen further accepted and published exact proofs at its original
-audit pin, their retained premises, the public Family 1/2 reduction statements
-and a later, separately verified fixed-Levi proof publication. It supersedes
-the corresponding pending statuses below and in the 14 November update;
+records fourteen further exact proofs in the Library, their retained
+premises, the Family 1/2 reduction statements and the later fixed-Levi proof.
+It supersedes the corresponding statuses below and in the 14 November update;
 the other rows retain their historical pins.
 
 The [14 November proof publication update](general-program-proof-update-2026-11-14.md)
-records nine accepted and published exact proofs: the canonical bridges,
-six conditional reductions and the whole rational GL Theorem 2.3 target.
-It supersedes those pending proof statuses in the historical tables below
-and records the seven remaining proof tasks and staged Family 1/2 statements.
+records nine exact proofs in the Library: the canonical bridges, six
+conditional reductions and the whole rational GL Theorem 2.3 target. It
+supersedes those proof statuses in the historical tables below and records
+the seven further reductions and the Family 1/2 statements, all now proved.
 
 The [13 November publication and dependency update](general-program-publication-update-2026-11-13.md)
 records the subsequent publication of the canonical smooth complex, endpoints
 and bridge statements, the new canonical Family 3/4 and whole-graded GL
-targets, and their unreviewed proof successors. That bounded addendum
-supersedes the pending-integration statuses for those units below; the other
-rows retain this matrix's historical commit.
+targets, and their proofs. That bounded addendum supersedes the statuses for
+those modules below; the other rows retain this matrix's historical commit.
 
-This matrix covers all five families of the standalone program
-`46df6a68-5db4-4428-8044-05151d6ce1f6` (Task 3640), revision 1. Declaration
-names, proof status and premise boundaries are pinned to Library commit
-`4bd8ef92a8f330864b325814d41cb38bf51b7794`, checked on 13 November 2026.
-This refresh replaces the version pinned to
-`7dc9118a3eb340e83e65d6e4174763b7a61e573c`. The eight canonical Theorem 1.7,
-Corollary 1.10 and induced-Weyl targets are now published statements.
-Their forward-bridge statement and the canonical smooth-complex and
-full-support endpoint constructions have machine validation and independent
-review approval, but await integration. The bridge proof remains separate.
-None of these statuses discharges a representation-theoretic premise.
+This matrix covers all five families of the general Aubert duality
+program. Declaration names, proof status and premise boundaries are pinned
+to Library commit `4bd8ef92a8f330864b325814d41cb38bf51b7794`; an earlier
+version was pinned to `7dc9118a3eb340e83e65d6e4174763b7a61e573c`. At the pin
+the eight canonical Theorem 1.7, Corollary 1.10 and induced-Weyl targets were
+statements of the Library; their forward-bridge statement and the canonical
+smooth-complex and full-support endpoint constructions entered the Library
+later, and the bridge is proved (see the updates above). Checked again
+against the Library as it is, none of the targets marked Open or Reduced in
+the tables below has an unconditional proof; the targets marked Open there
+now have reductions. None of these statuses discharges a
+representation-theoretic premise.
 
 Published term transitivity
 and the top term now reduce involutivity to induced K0 Weyl conjugacy alone.
@@ -63,7 +62,7 @@ The [earlier coverage snapshot](general-program-coverage.md) records an older
 state still, and its missing-target inventory is not the current status.
 
 The [corrected source map](general-program-source-map.md) supplies the original
-reading record and correction ledger. This matrix reuses that reviewed source
+reading record and correction ledger. This matrix reuses that source
 account and the companion declaration maps linked below. It makes no
 additional original-literature reading claim. It records constructions,
 proposition targets, retained premises and proof status. It does not establish
@@ -97,8 +96,8 @@ The status of each main target is one of the following.
 - **Proved.** The Library contains a theorem whose type is exactly the target
   proposition, with no further parameters. The theorem is named.
 - **Closes by composition.** Published theorems compose to the exact target
-  with no parameters beyond the target's binders. A private compilation is
-  not a publication: the owning task must still publish the proof.
+  with no parameters beyond the target's binders. A compilation outside the
+  Library is not a proof in the Library.
 - **Reduced.** A published theorem proves the target from named propositions,
   and at least one of them is unproved. The unproved inputs are listed. Where
   a chain of published reductions leaves only a named unproved proposition,
@@ -109,21 +108,20 @@ In every table, “None” means no hypotheses beyond the target's binders.
 It does not discharge the finite-length, admissibility or other per-instance
 premises quantified inside that target.
 
-Worker 3640 recompiled the exact rational term-transitivity and top-term
-targets, the conditional involutivity and Corollary 1.10(a) targets from Weyl
-conjugacy, the Sharp irreducibility composite described below, and the
-matrix-model GL composites on 13 November. Environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` reported zero errors or warnings;
-all eleven inspected axiom lists contained only `propext`, `Classical.choice`
-and `Quot.sound`. This is development evidence, not independent acceptance.
-The earlier VI.3.5 and special-vertex composites recorded in Family 3 were
-checked for the 11 November refresh against environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` with zero errors and the same three
-axioms. Those older composites were not recompiled for this refresh.
+The exact rational term-transitivity and top-term targets, the conditional
+involutivity and Corollary 1.10(a) targets from Weyl conjugacy, the Sharp
+irreducibility composite described below, and the matrix-model GL composites
+were recompiled at the pin in the Library's Lean environment with zero errors
+or warnings; all eleven inspected axiom lists contained only `propext`,
+`Classical.choice` and `Quot.sound`. This is development evidence, not a
+check of the proofs against their targets. The earlier VI.3.5 and
+special-vertex composites recorded in Family 3 were checked at an earlier
+commit with zero errors and the same three axioms, and were not recompiled
+at the pin.
 
-For the preceding refresh at `7dc9118a`, Worker 3640 recompiled
-`GeneralLinearRationalIndexing`, `CanonicalRationalOperator` and the private
-composite audit in the same approved environment, with zero errors or
+For the preceding version at `7dc9118a`, `GeneralLinearRationalIndexing`,
+`CanonicalRationalOperator` and the composite audit were recompiled in the
+same environment, with zero errors or
 warnings, including the new two-input generic-isomorphism composite.
 The GL dependency diagnostic also compiled successfully. Its
 [separate inventory](gl-rational-comparison-dependencies.md) records the
@@ -141,8 +139,8 @@ were also searched for exact proofs; their status below is unchanged.
 That complete project-declaration traversal covers the exact GL comparison
 and its statement only; earlier main-theorem dependency accounts retain
 their stated scope.
-Staged, reviewed or approved candidates that are not yet integrated are
-mentioned separately and are never counted as proofs.
+Files outside the Library are mentioned separately and never counted as
+proofs.
 
 For this refresh, a comparison from `7dc9118a` to `4bd8ef92` found every
 existing Aubert Lean/Markdown pair unchanged. The additions are
@@ -156,10 +154,9 @@ cuspidal-support additions do not change the recorded Aubert target/proof
 pairs. The GL dependency inventory remains pinned to `7dc9118a`; no new
 transitive dependency audit is claimed for this refresh.
 
-Worker 3640 also recompiled `CanonicalRationalComplex` and
-`CanonicalRationalComplexEndpoints` in the approved environment above,
-with zero errors or warnings. Their pending construction status is recorded
-in Family 3. Development checks and review approval do not publish them.
+`CanonicalRationalComplex` and `CanonicalRationalComplexEndpoints` were also
+recompiled, with zero errors or warnings; they entered the Library after the
+pin (see the 13 November update).
 
 Only the itemized external assertions S01–S23 in the
 [Renard Chapter V ledger](../renard/chapter-v-structural-inputs.md) may form the
@@ -209,17 +206,17 @@ binder groups.
 
 The six representation prerequisites in
 [PrerequisiteStatements](../../Langlands/Representation/Aubert/General/PrerequisiteStatements.lean)
-are all **open**, each with a focused proof task. Their namespace is
+were all **open** at the pin and are still unproved. Their namespace is
 `Langlands.Aubert.General`:
 
-| Proposition | Proof task |
-| --- | --- |
-| `RationalPointsFiniteLengthAdmissibleStatement` | `aa8bb3a4-42d3-47db-9a48-98eb87ad9327` |
-| `DynamicLeviFiniteLengthAdmissibleStatement` | `96949545-6354-4d63-93f7-0e5ca1e6fdfe` |
-| `RationalPointsContragredientFiniteLengthStatement` | `3591f7ea-ad5b-4993-a0a0-e6e74f09a28b` |
-| `DynamicLeviContragredientFiniteLengthStatement` | `05a3f022-0da7-4f43-9fe8-de5b6d368de4` |
-| `DynamicInductionFiniteLengthStatement` | `174d2de0-fa21-41b4-b091-f1b86481790b` |
-| `DynamicJacquetFiniteLengthStatement` | `73e60be8-481a-4cea-b464-eed3bd89be7f` |
+| Proposition |
+| --- |
+| `RationalPointsFiniteLengthAdmissibleStatement` |
+| `DynamicLeviFiniteLengthAdmissibleStatement` |
+| `RationalPointsContragredientFiniteLengthStatement` |
+| `DynamicLeviContragredientFiniteLengthStatement` |
+| `DynamicInductionFiniteLengthStatement` |
+| `DynamicJacquetFiniteLengthStatement` |
 
 The six statements are representation-theoretic obligations, not structural
 inputs. Admissibility, Howe finite length, adjunctions, geometric
@@ -310,42 +307,35 @@ The canonical Jacquet target fixes the canonical Coxeter system.
 
 These are statements only. The distinct
 `CanonicalRationalTargetBridgesStatement` is the conjunction of the eight
-existing-to-canonical whole-proposition implications in this table.
-Its candidate `756e4d22-f4b1-438b-be63-55c2cf2b7d24` has machine validation
-and independent statement-review approval, but is not integrated or public
-at this check. Worker 29 owns its exact proof successor, to be published
-after the statement is public. His compiled private proof is development
-evidence only.
+existing-to-canonical whole-proposition implications in this table; the
+Library proves it (`canonicalRationalTargetBridges`).
 
-Once that exact bridge proof is independently accepted and published, its
-projections compose with published proofs of the existing targets. For
+The bridge's projections compose with published proofs of the existing targets. For
 example, the fifth projection can use `rationalCuspidalEigenvalue`, and the
 third can use `rationalJacquetCompatibility`. Open existing targets still
 need their proofs; the bridge supplies none of their representation-theoretic
-inputs. Worker 29's scope is the bridge statement and proof. The agreed
-plan uses this exact reuse rather than adding duplicate canonical proof
-tasks, and preserves every existing proof owner. This updates the planning
-remarks in the published target Markdown without changing any declaration.
+inputs. This reuse avoids duplicate canonical proofs; it changes no
+declaration.
 No reverse implication is claimed: old per-index premises do not supply the
 global dynamic finite-length inputs, and the canonical Jacquet target fixes
 one Coxeter system.
 
-| Main target | Status at `4bd8ef92` | Remaining inputs and evidence | Proof task |
-| --- | --- | --- | --- |
-| `RationalCuspidalEigenvalueStatement` | Proved: `rationalCuspidalEigenvalue` | None. | — |
-| `RationalGeometricK0ExpansionStatement` | Proved: `rationalGeometricK0Expansion` | None. The proof applies `rationalGeometricK0Expansion_of_standardParabolicPoints` to `GS.standardParabolicPointsStatement_proof`. | `f722f1c6-147e-453e-8664-02b7822b7bce` (completed) |
-| `RationalJacquetCompatibilityStatement` | Proved: `rationalJacquetCompatibility` | None. The proof applies `rationalJacquetCompatibility_of_rationalGeometricK0Expansion` to `rationalGeometricK0Expansion`. | `47650cf4-dbb8-4197-8730-4f9848d22955` (completed) |
-| `RationalInductionCompatibilityStatement` | Reduced | `rationalInductionCompatibility_of_expansion_and_inducedWeyl` needs the geometric expansion (proved) and `RationalInducedK0WeylConjugacyStatement`. | `475f7a39-11ad-4748-87b3-cfaef16a59cb` |
-| `RationalInducedK0WeylConjugacyStatement` and `RationalInducedClassWeylConjugacyStatement` | Reduced | The two are equivalent by published theorems. `rationalInducedK0WeylConjugacy_of_genericIso` needs the two admissibility prerequisites and `RationalSameLeviGenericInductionIsoStatement` (proof task `ba00e20e-ea55-4b97-89cc-2e9127ada887`). | `f85448c5-077a-467f-8121-66e53755fae0`, `03e05250-cda0-4d0b-a3de-d0291194f10b` |
-| `RationalTermTransitivityStatement` | Proved: `rationalTermTransitivity` | None. Actual normalized induction and Jacquet restriction in stages identify the ambient and Levi terms on exact K0. | — |
-| `RationalTopTermStatement` | Proved: `rationalTopTerm` | None. The full-index term is the identity, also for an empty simple-root set. | — |
-| `RationalInvolutivityStatement` | Reduced | `rationalInvolutivityStatement_of_inducedK0WeylConjugacy` needs only `RationalInducedK0WeylConjugacyStatement`. It supplies induction compatibility from the proved geometric expansion and this input; intersection, Levi finite length, term transitivity and the top term are proved. | `2f01b264-fb0e-4029-901c-009044feaa97` |
-| `RationalContragredientCommutationStatement` | Reduced | `rationalContragredientCommutation_of_schemeWeylDuality` needs induced-class Weyl conjugacy and the two admissibility prerequisites. Its Coxeter, conjugation, opposite-transport and natural-duality inputs are proved. A second reduction needs `RationalContragredientTermComparisonStatement`. | `54d4578e-fc6b-4995-abf4-1ca845f4ebab` |
-| `RationalCorollary110aStatement` | Reduced | `rationalCorollary110aStatement_of_inducedK0WeylConjugacy` needs only `RationalInducedK0WeylConjugacyStatement`. The intermediate theorem `rationalCorollary110aStatement_of_inductionCompatibility` needs induction compatibility alone and supplies inside-Levi finite length from the published proof. | `892c3af1-7d30-4200-b80a-f90740c269d2` |
-| `RationalCorollary110bStatement` | Reduced | `rationalCorollary110bFromRankOneInputs` needs `RationalRankOneSelfAssociationStatement`, `RationalRankOneJacquetModulesStatement` and induced K0 Weyl conjugacy. The second reduces to cuspidal Jacquet-factor extraction alone (below). | `053e93d1-59ac-48f0-bbe0-38b26225fe46` |
-| `RationalRankOneSelfAssociationStatement` | Reduced | The published bridge `rationalRankOneSelfAssociation_of_maximalLeviSupercuspidalReducibility` needs only Renard VII.1.3, `MaximalLeviSupercuspidalReducibilityStatement` (proof task `004e00e1-5995-4dc1-884e-a5f512150d0c`). | `46f751c8-0d69-40a6-ab67-4c19be8fc4c9` |
-| `RationalRankOneLengthTwoStatement` | Reduced | `rationalRankOneLengthTwo_of_extraction` needs only cuspidal Jacquet-factor extraction. It composes `rationalRankOneLengthTwoFromInputs`, `rationalMaximalCuspidalJacquetDetectionFromExtraction` and the proved budget `rationalMaximalCuspidalJacquetBudget` (proof task `cdc95bfc-a501-4693-a1d3-fcc890aee15b`). Published direct reductions now include `rationalRankOneLengthTwo_of_wholeStatement`, `rationalRankOneLengthTwo_of_specialVertexInputs` and `rationalRankOneLengthTwo_of_jointBasis`. Their respective single inputs remain unproved (Family 3). | `c53e3363-ffa5-4f01-ae77-aca8e1f49117` |
-| `RationalRankOneJacquetModulesStatement` | Reduced | `rationalRankOneJacquetModules_of_extraction` needs only cuspidal Jacquet-factor extraction. Either VI.3.5 or the special-vertex inputs suffices (Family 3). The older reduction `rationalRankOneJacquetModules_of_lengthTwo_extraction_geometry` also needs length two. | `1244dad8-89c0-4c13-95f7-1942ccf77842` |
+| Main target | Status at `4bd8ef92` | Remaining inputs and evidence |
+| --- | --- | --- |
+| `RationalCuspidalEigenvalueStatement` | Proved: `rationalCuspidalEigenvalue` | None. |
+| `RationalGeometricK0ExpansionStatement` | Proved: `rationalGeometricK0Expansion` | None. The proof applies `rationalGeometricK0Expansion_of_standardParabolicPoints` to `GS.standardParabolicPointsStatement_proof`. |
+| `RationalJacquetCompatibilityStatement` | Proved: `rationalJacquetCompatibility` | None. The proof applies `rationalJacquetCompatibility_of_rationalGeometricK0Expansion` to `rationalGeometricK0Expansion`. |
+| `RationalInductionCompatibilityStatement` | Reduced | `rationalInductionCompatibility_of_expansion_and_inducedWeyl` needs the geometric expansion (proved) and `RationalInducedK0WeylConjugacyStatement`. |
+| `RationalInducedK0WeylConjugacyStatement` and `RationalInducedClassWeylConjugacyStatement` | Reduced | The two are equivalent by published theorems. `rationalInducedK0WeylConjugacy_of_genericIso` needs the two admissibility prerequisites and `RationalSameLeviGenericInductionIsoStatement`. |
+| `RationalTermTransitivityStatement` | Proved: `rationalTermTransitivity` | None. Actual normalized induction and Jacquet restriction in stages identify the ambient and Levi terms on exact K0. |
+| `RationalTopTermStatement` | Proved: `rationalTopTerm` | None. The full-index term is the identity, also for an empty simple-root set. |
+| `RationalInvolutivityStatement` | Reduced | `rationalInvolutivityStatement_of_inducedK0WeylConjugacy` needs only `RationalInducedK0WeylConjugacyStatement`. It supplies induction compatibility from the proved geometric expansion and this input; intersection, Levi finite length, term transitivity and the top term are proved. |
+| `RationalContragredientCommutationStatement` | Reduced | `rationalContragredientCommutation_of_schemeWeylDuality` needs induced-class Weyl conjugacy and the two admissibility prerequisites. Its Coxeter, conjugation, opposite-transport and natural-duality inputs are proved. A second reduction needs `RationalContragredientTermComparisonStatement`. |
+| `RationalCorollary110aStatement` | Reduced | `rationalCorollary110aStatement_of_inducedK0WeylConjugacy` needs only `RationalInducedK0WeylConjugacyStatement`. The intermediate theorem `rationalCorollary110aStatement_of_inductionCompatibility` needs induction compatibility alone and supplies inside-Levi finite length from the published proof. |
+| `RationalCorollary110bStatement` | Reduced | `rationalCorollary110bFromRankOneInputs` needs `RationalRankOneSelfAssociationStatement`, `RationalRankOneJacquetModulesStatement` and induced K0 Weyl conjugacy. The second reduces to cuspidal Jacquet-factor extraction alone (below). |
+| `RationalRankOneSelfAssociationStatement` | Reduced | The published bridge `rationalRankOneSelfAssociation_of_maximalLeviSupercuspidalReducibility` needs only Renard VII.1.3, `MaximalLeviSupercuspidalReducibilityStatement`. |
+| `RationalRankOneLengthTwoStatement` | Reduced | `rationalRankOneLengthTwo_of_extraction` needs only cuspidal Jacquet-factor extraction. It composes `rationalRankOneLengthTwoFromInputs`, `rationalMaximalCuspidalJacquetDetectionFromExtraction` and the proved budget `rationalMaximalCuspidalJacquetBudget`. Published direct reductions now include `rationalRankOneLengthTwo_of_wholeStatement`, `rationalRankOneLengthTwo_of_specialVertexInputs` and `rationalRankOneLengthTwo_of_jointBasis`. Their respective single inputs remain unproved (Family 3). |
+| `RationalRankOneJacquetModulesStatement` | Reduced | `rationalRankOneJacquetModules_of_extraction` needs only cuspidal Jacquet-factor extraction. Either VI.3.5 or the special-vertex inputs suffices (Family 3). The older reduction `rationalRankOneJacquetModules_of_lengthTwo_extraction_geometry` also needs length two. |
 
 Proved helpers used above: `rationalNaturalInductionDuality`,
 `rationalNaturalJacquetDuality`, `rationalLeviFiniteLengthStatement`,
@@ -364,10 +354,10 @@ published reduction
 `RationalSameLeviGenericInductionIrreducibilityFromInputsStatement`.
 It needs both
 `Langlands.Renard.AlgebraicFamily.InducedIrreducibilityOpenStatement`
-(Renard VI.8.4, proof task `2113598c-9c21-461a-9a44-f46066850c3e`)
+(Renard VI.8.4)
 and `Langlands.Renard.AlgebraicFamily.IrreducibleInducedTwistExistenceStatement`
-(the existence consequence of Konno, Theorem 4.2); neither is proved at this
-commit. The conditional bridge
+(the existence consequence of Konno, Theorem 4.2); neither is proved (each
+has only conditional reductions in the Library). The conditional bridge
 `RationalSameLeviGenericInductionIsoFromIrreducibilityStatement` is now
 proved by `rationalSameLeviGenericInductionIso_of_irreducibility` in
 [RationalSameLeviGenericIsoFromIrreducibilityProof](../../Langlands/Representation/Aubert/General/RationalSameLeviGenericIsoFromIrreducibilityProof.lean).
@@ -394,18 +384,16 @@ in
 and
 [RationalCorrectedTheorem36](../../Langlands/Representation/Aubert/General/RationalCorrectedTheorem36.lean).
 
-Two additional construction candidates have machine validation and
-independent semantic-review approval but are **not integrated or public**
-at this check:
+Two further constructions entered the Library after the pin:
 
-- `0f6c1e24-4998-4e3a-bbdd-a40500235460`, module
+- module
   `CanonicalRationalComplex`, supplies the published structural, topology
   and root-finiteness inputs to the actual smooth complex. It assembles ten
   aliases for the degree objects, signed differential, incoming image,
   terminal quotient and projection, retained Sharp object and functor,
   initial map and equivalence, and first differential, with five intrinsic
   square-zero and quotient laws.
-- `ab63d266-7f7a-413f-beba-b5e4d8aa125f`, module
+- module
   `CanonicalRationalComplexEndpoints`, constructs
   `canonicalRationalSharpUnivIso`, the natural isomorphism from the retained
   cokernel functor at the full actual simple-root subset to the identity.
@@ -425,32 +413,31 @@ from the first candidate, to be integrated first or together with it.
 Neither construction proves corrected exactness, the associated-Levi
 comparison or any of the Family 4 consequences.
 
-| Main target | Status at `4bd8ef92` | Remaining inputs and evidence | Proof task |
-| --- | --- | --- | --- |
-| `RationalCorrectedTheorem36Statement` | Reduced | `rationalCorrectedTheorem36_of_inputs` needs `RationalCorrectedExactnessInputs`: Bruhat (proved), graded vanishing, graded transition (proved), support induction-Jacquet stability (reduced to VI.3.5 alone, below) and exactness detection. | `613611a4-9c0e-43e3-82aa-f91d2044cfe2` |
-| `RationalCorrectedGradedVanishingStatement` | Open | No published reduction. | `277860be-2aeb-4a85-8ccb-f1e2e5c573b9` |
-| `RationalCorrectedGradedTransitionStatement` | Proved: `rationalCorrectedGradedTransitionStatement` | None. | — |
-| `RationalFixedLeviComparisonStatement` | Proved: `rationalFixedLeviComparison` | None. | — |
-| `RationalAssociatedLeviComparisonStatement` | Reduced | `rationalAssociatedLeviComparisonStatement_of_published` needs only graded vanishing. Its other six inputs (Bruhat, dynamic quotient compactness, surviving support, orbit-radical intersection, squared orbit modulus, graded transition) are proved. | `f7d95940-33d0-49d3-93d6-8d5ff8d89373` |
-| `RationalJacquetCuspidalStatement` | Reduced | `rationalJacquetCuspidal_of_jacquetVanishing` needs support Jacquet vanishing. Either VI.3.5 or the special-vertex inputs suffices. | `b752450b-5e2d-4cb3-95f4-3812331c0b8a` |
+| Main target | Status at `4bd8ef92` | Remaining inputs and evidence |
+| --- | --- | --- |
+| `RationalCorrectedTheorem36Statement` | Reduced | `rationalCorrectedTheorem36_of_inputs` needs `RationalCorrectedExactnessInputs`: Bruhat (proved), graded vanishing, graded transition (proved), support induction-Jacquet stability (reduced to VI.3.5 alone, below) and exactness detection. |
+| `RationalCorrectedGradedVanishingStatement` | Open | No published reduction. |
+| `RationalCorrectedGradedTransitionStatement` | Proved: `rationalCorrectedGradedTransitionStatement` | None. |
+| `RationalFixedLeviComparisonStatement` | Proved: `rationalFixedLeviComparison` | None. |
+| `RationalAssociatedLeviComparisonStatement` | Reduced | `rationalAssociatedLeviComparisonStatement_of_published` needs only graded vanishing. Its other six inputs (Bruhat, dynamic quotient compactness, surviving support, orbit-radical intersection, squared orbit modulus, graded transition) are proved. |
+| `RationalJacquetCuspidalStatement` | Reduced | `rationalJacquetCuspidal_of_jacquetVanishing` needs support Jacquet vanishing. Either VI.3.5 or the special-vertex inputs suffices. |
 
 The nine support-category targets are in
 [RationalSupportCategoryTargets](../../Langlands/Representation/Aubert/General/RationalSupportCategoryTargets.lean).
 
-| Support target | Status at `4bd8ef92` | Remaining inputs | Proof task |
-| --- | --- | --- | --- |
-| `RationalCuspidalSeriesExistenceStatement` | Proved: `rationalCuspidalSeriesExistence` | None. | — |
-| `RationalSupportCategoryAssociationInvarianceStatement` | Proved: `rationalSupportCategoryAssociationInvariance` | None. | — |
-| `RationalCuspidalSupportAssociationStatement` | Reduced | Cuspidal Jacquet-factor extraction. Either VI.3.5 or the special-vertex inputs suffices. | `fc414cb1-5832-4033-a2aa-d7c27f5e4691` |
-| `RationalSupportCategoryIrreducibleJacquetDetectionStatement` | Reduced | Cuspidal Jacquet-factor extraction. Either VI.3.5 or the special-vertex inputs suffices. | `b7887025-20b3-4c11-9fad-0e70bdf59da6` |
-| `RationalSupportCategoryJacquetVanishingStatement` | Reduced | Dynamic quotient compactness (proved) and support association. Either VI.3.5 or the special-vertex inputs suffices. | `bc64458d-2bc4-438a-9992-ba06185affa7` |
-| `RationalSupportCategoryDecompositionStatement` | Reduced | `RationalCuspidalInducedEmbeddingStatement` (task `198824c2-4e2f-40c1-94a0-07fa748bede9`), `RationalInducedCuspidalSupportCategoryStatement` (task `c79b0cd0-661f-4239-9f65-483d6f319480`) and support association. The first follows from VI.3.5 by `rationalCuspidalInducedEmbedding_of_wholeStatement`; its other published reduction needs `RationalLeviJacquetCuspidalRemainderSplittingStatement`, which also has only VI.3.5 reductions. The second follows from VI.3.5 by `rationalInducedCuspidalSupportCategory_of_wholeStatement`, and from the extraction inputs by `rationalInducedCuspidalSupportCategory_of_extractionInputs`. Only VI.3.5 remains. | `8452c8a4-3686-47c2-80cf-c4ff4e16b3b2` |
-| `RationalSupportCategoryInductionJacquetStatement` | Reduced | Decomposition, `RationalLeviJacquetCuspidalRemainderSplittingStatement` and support association. The splitting follows from VI.3.5 by `rationalLeviJacquetCuspidalRemainderSplitting_of_wholeStatement`. Only VI.3.5 remains. | `09268952-5848-4585-90e4-0a12121c60ef` |
-| `RationalSupportCategoryZeroDetectionStatement` | Open | No published reduction. | `db02aabd-9901-4fae-9583-ec28c66aec3c` |
-| `RationalSupportCategoryExactnessDetectionStatement` | Open | No published reduction. | `d70a1edd-5a84-4b03-aecf-2818901809d4` |
+| Support target | Status at `4bd8ef92` | Remaining inputs |
+| --- | --- | --- |
+| `RationalCuspidalSeriesExistenceStatement` | Proved: `rationalCuspidalSeriesExistence` | None. |
+| `RationalSupportCategoryAssociationInvarianceStatement` | Proved: `rationalSupportCategoryAssociationInvariance` | None. |
+| `RationalCuspidalSupportAssociationStatement` | Reduced | Cuspidal Jacquet-factor extraction. Either VI.3.5 or the special-vertex inputs suffices. |
+| `RationalSupportCategoryIrreducibleJacquetDetectionStatement` | Reduced | Cuspidal Jacquet-factor extraction. Either VI.3.5 or the special-vertex inputs suffices. |
+| `RationalSupportCategoryJacquetVanishingStatement` | Reduced | Dynamic quotient compactness (proved) and support association. Either VI.3.5 or the special-vertex inputs suffices. |
+| `RationalSupportCategoryDecompositionStatement` | Reduced | `RationalCuspidalInducedEmbeddingStatement`, `RationalInducedCuspidalSupportCategoryStatement` and support association. The first follows from VI.3.5 by `rationalCuspidalInducedEmbedding_of_wholeStatement`; its other published reduction needs `RationalLeviJacquetCuspidalRemainderSplittingStatement`, which also has only VI.3.5 reductions. The second follows from VI.3.5 by `rationalInducedCuspidalSupportCategory_of_wholeStatement`, and from the extraction inputs by `rationalInducedCuspidalSupportCategory_of_extractionInputs`. Only VI.3.5 remains. |
+| `RationalSupportCategoryInductionJacquetStatement` | Reduced | Decomposition, `RationalLeviJacquetCuspidalRemainderSplittingStatement` and support association. The splitting follows from VI.3.5 by `rationalLeviJacquetCuspidalRemainderSplitting_of_wholeStatement`. Only VI.3.5 remains. |
+| `RationalSupportCategoryZeroDetectionStatement` | Open | No published reduction. |
+| `RationalSupportCategoryExactnessDetectionStatement` | Open | No published reduction. |
 
-`RationalCuspidalJacquetFactorExtractionStatement` has proof task
-`e6add7c5-44c5-45ea-afe9-7f48c98fb927`. Its published reduction
+`RationalCuspidalJacquetFactorExtractionStatement` is unproved. Its published reduction
 `rationalCuspidalJacquetFactorExtraction_of_inputs` needs
 `RationalCuspidalExtractionInputsStatement`. Two published theorems derive
 those inputs, and both of their premises are unproved:
@@ -458,8 +445,7 @@ those inputs, and both of their premises are unproved:
 - `rationalCuspidalExtractionInputs_of_wholeStatement` derives them from
   Renard VI.3.5, the whole-category cuspidal splitting
   `Langlands.CuspidalSupport.RationalWholeCuspidalCategoryDecompositionStatement`
-  (module `Langlands.Representation.CuspidalSupport.RationalWholeCuspidalDecompositionStatement`,
-  proof task `4bee987a-093b-4054-bd65-7360168351d2`).
+  (module `Langlands.Representation.CuspidalSupport.RationalWholeCuspidalDecompositionStatement`).
 - `rationalCuspidalExtractionInputs_of_specialVertexInputs` (module
   [RationalCuspidalExtractionFromSpecialVertex](../../Langlands/Representation/Aubert/General/RationalCuspidalExtractionFromSpecialVertex.lean))
   derives them from the special-vertex inputs
@@ -467,7 +453,7 @@ those inputs, and both of their premises are unproved:
   The published `CuspidalSupport.rationalSpecialVertexCompactInputs_of_jointBasis`
   derives those from
   `Langlands.BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement`
-  (proof task `8c39faa0-2a70-4fc4-a027-914987aba924`). This route does not use
+  This route does not use
   VI.3.5. The module also publishes
   `rationalCuspidalJacquetFactorExtraction_of_specialVertexInputs` and
   `rationalCuspidalJacquetFactorExtraction_of_jointBasis`.
@@ -483,8 +469,8 @@ the common geometric witness; separate existential witnesses do not suffice.
 
 "Only VI.3.5 remains" in the rows of Families 1–4, and the VI.3.5 alternative
 in "Either VI.3.5 or the special-vertex inputs suffices", mean the following.
-For the 11 November refresh, Worker 3640 compiled, as described under the
-status vocabulary, theorems
+For an earlier version of this matrix, theorems were compiled, as described
+under the status vocabulary,
 that derive each of these targets at universes `u, v` from the single
 hypothesis `RationalWholeCuspidalCategoryDecompositionStatement.{u, max (u + 1) v}`:
 extraction, support association, irreducible Jacquet detection, support
@@ -503,7 +489,7 @@ with `Langlands.BruhatTits.dynamicParabolicQuotientCompact`,
 `rationalSupportCategoryDecomposition_of_inducedCuspidal`,
 `rationalLeviJacquetCuspidalRemainderSplitting_of_wholeStatement`,
 `rationalSupportCategoryInductionJacquet_of_decomposition_splitting_and_association`
-and `rationalSharpSupportRetention_of_inductionJacquet`. The same draft
+and `rationalSharpSupportRetention_of_inductionJacquet`. The same composite
 derives the rank-one Jacquet-module target from that hypothesis alone,
 adding `rationalRankOneJacquetModules_of_extraction`. It also derives the
 rank-one length-two target from that hypothesis alone, adding
@@ -543,18 +529,18 @@ Source: Corollary 3.9, printed p.2189, with the corrected complex and erratum
 p.4690. All six targets are in
 [RationalSharpConsequenceTargets](../../Langlands/Representation/Aubert/General/RationalSharpConsequenceTargets.lean).
 
-| Main target | Status at `4bd8ef92` | Remaining inputs | Proof task |
-| --- | --- | --- | --- |
-| `RationalSharpFiniteLengthStatement` | Open | No published reduction. | `0da1c37e-a39a-42e1-b90d-135db6c6e5c3` |
-| `RationalSharpClassFormulaStatement` | Open | No published reduction. | `13e2abdc-2be7-4191-b74b-9eae99a56fcc` |
-| `RationalSharpSupportRetentionStatement` | Reduced | `rationalSharpSupportRetention_of_inductionJacquet` needs support induction-Jacquet stability. Only VI.3.5 remains (Family 3). | `d441ca88-a2fa-4174-93e0-97d1b9fca9ba` |
-| `RationalSharpIrreducibleStatement` | Reduced | `rationalSharpIrreducibleStatement_of_inputs` needs dynamic induction and Jacquet finite length, induction compatibility, involutivity and the Sharp class formula. The compiled composition described below replaces compatibility and involutivity by induced K0 Weyl conjugacy. | `44d0ed8c-18a6-44f8-8836-dc351694e9d9` |
-| `RationalSharpCuspidalSeriesStatement` | Open | No published reduction. | `6316db5a-5618-43bb-a920-eadd3a912b88` |
-| `RationalSharpInvolutionStatement` | Reduced | `rationalSharpInvolutionStatement_of_inputs` needs dynamic induction and Jacquet finite length, K0 involutivity, the class formula and cuspidal-series retention. K0 involutivity now reduces to induced K0 Weyl conjugacy alone. | `9d570c9e-e376-4437-8d15-3cbe9e9a0027` |
+| Main target | Status at `4bd8ef92` | Remaining inputs |
+| --- | --- | --- |
+| `RationalSharpFiniteLengthStatement` | Open | No published reduction. |
+| `RationalSharpClassFormulaStatement` | Open | No published reduction. |
+| `RationalSharpSupportRetentionStatement` | Reduced | `rationalSharpSupportRetention_of_inductionJacquet` needs support induction-Jacquet stability. Only VI.3.5 remains (Family 3). |
+| `RationalSharpIrreducibleStatement` | Reduced | `rationalSharpIrreducibleStatement_of_inputs` needs dynamic induction and Jacquet finite length, induction compatibility, involutivity and the Sharp class formula. The compiled composition described below replaces compatibility and involutivity by induced K0 Weyl conjugacy. |
+| `RationalSharpCuspidalSeriesStatement` | Open | No published reduction. |
+| `RationalSharpInvolutionStatement` | Reduced | `rationalSharpInvolutionStatement_of_inputs` needs dynamic induction and Jacquet finite length, K0 involutivity, the class formula and cuspidal-series retention. K0 involutivity now reduces to induced K0 Weyl conjugacy alone. |
 
 The irreducibility implication and its proof are published in
 [SharpIrreducibleReduction](../../Langlands/Representation/Aubert/General/SharpIrreducibleReduction.lean).
-Worker 3640 compiled its composition with
+Its composition was compiled with
 `rationalInductionCompatibility_of_expansion_and_inducedWeyl`,
 `rationalGeometricK0Expansion` and
 `rationalInvolutivityStatement_of_inducedK0WeylConjugacy`.
@@ -593,7 +579,7 @@ model and dependency boundaries.
 | `A.AdjustedInvolutivityStatement` | Proved: `A.adjustedInvolutivity` | — |
 | `A.AdjustedHomogeneousMultiplicativityStatement` | Proved: `A.adjustedHomogeneousMultiplicativity` | — |
 | `A.AdjustedMultiplicativityStatement` | Closes by composition | `A.gradedOperator_multiplicative_of_homogeneous` applied to the homogeneous proof. |
-| `A.AubertTheorem23Statement` | Proved: `A.aubertTheorem23` | None. The proof combines multiplicativity as above, the comparison from `A.gradedOperatorRingHom_eq_zelevinsky` with `A.gradedAdjustedOperator_unit` and the segment exchange, and Zelevinsky involutivity from the comparison and adjusted involutivity. It keeps the three parameters `hx`, `hl` and `hp` of the statement. Proof task `1850a779-27e5-4d34-a280-4b0c58e22a7a` (Task 5362). |
+| `A.AubertTheorem23Statement` | Proved: `A.aubertTheorem23` | None. The proof combines multiplicativity as above, the comparison from `A.gradedOperatorRingHom_eq_zelevinsky` with `A.gradedAdjustedOperator_unit` and the segment exchange, and Zelevinsky involutivity from the comparison and adjusted involutivity. It keeps the three parameters `hx`, `hl` and `hp` of the statement. |
 | `A.ZelevinskyInvolutivityStatement`, `A.AubertZelevinskyComparisonStatement` | Close by composition | They are the second and third conjuncts of Theorem 2.3: `(A.aubertTheorem23 F T hx hl hp).2.1` and `.2.2`. |
 | `A.SegmentMonomialSpanningStatement`, `A.SegmentMonomialBasisStatement` | Close by composition | With `b := A.segmentMonomialBasis F T hx hl (A.segmentPolynomialComparison F T hx hl)`, the pair `⟨b.linearIndependent, b.span_eq⟩` proves the basis statement and `b.span_eq` proves the spanning statement (`Module.Basis.linearIndependent`, `Module.Basis.span_eq`; `A.segmentMonomialBasis_apply` identifies the basis vectors with `A.segmentMonomial` by `rfl`). No standalone theorem with either type is published yet. Theorem 2.3 does not need them: it uses the polynomial comparison directly. |
 
@@ -644,8 +630,7 @@ dynamic finite-length target for arbitrary local fields and reductive groups.
 The row for `A.generalAlternatingOperator_eq` remains a distinct block-family
 comparison.
 
-Worker 97, with Worker 29, published this exact proof in Task 5922. It is
-accepted and public, as is the comparison statement. Its transitive GL
+This exact proof and the comparison statement are in the Library. Its transitive GL
 representation-theory dependencies are recorded below and in the
 [exact dependency inventory](gl-rational-comparison-dependencies.md).
 This closes the actual rational-point/matrix operator bridge in the stated
@@ -657,23 +642,23 @@ monomial comparison or support-sign adjustment by a generator calculation.
 Several open inputs each block many main targets.
 
 1. **Renard VI.3.5 whole-category cuspidal splitting**
-   (`4bee987a-093b-4054-bd65-7360168351d2`). It is the only remaining input of
+   (`RationalWholeCuspidalCategoryDecompositionStatement`). It is the only remaining input of
    support decomposition, induction-Jacquet stability and Sharp support
    retention. Through induction-Jacquet stability it is also an input of
    Theorem 3.6. It alone also suffices for cuspidal Jacquet-factor extraction
-   (`e6add7c5-44c5-45ea-afe9-7f48c98fb927`), support association, irreducible
+   (`RationalCuspidalJacquetFactorExtractionStatement`), support association, irreducible
    Jacquet detection, Jacquet vanishing, Jacquet cuspidality, induced cuspidal
    support, the rank-one Jacquet modules and the rank-one length-two target.
    Through the rank-one Jacquet modules it feeds Corollary 1.10(b).
 2. **Special-vertex inputs or joint special-compact basis existence**
-   (`8c39faa0-2a70-4fc4-a027-914987aba924`). Either one suffices, in place of
+   (`JointSpecialCompactBasisExistenceStatement`). Either one suffices, in place of
    VI.3.5, for the extraction targets listed in item 1 (all except
    decomposition, induction-Jacquet stability and Sharp support retention).
    The joint-basis route now reduces further to Bruhat–Tits availability
    and the available simultaneous standard basis, both unproved.
-3. **Admissibility** (`aa8bb3a4-42d3-47db-9a48-98eb87ad9327`,
-   `96949545-6354-4d63-93f7-0e5ca1e6fdfe`) **and generic same-Levi induction
-   isomorphism** (`ba00e20e-ea55-4b97-89cc-2e9127ada887`). Together they give
+3. **Admissibility** (`RationalPointsFiniteLengthAdmissibleStatement`,
+   `DynamicLeviFiniteLengthAdmissibleStatement`) **and generic same-Levi
+   induction isomorphism** (`RationalSameLeviGenericInductionIsoStatement`). Together they give
    induced K0 Weyl conjugacy. That in turn feeds induction compatibility,
    involutivity, Corollary 1.10(a), contragredient commutation,
    Corollary 1.10(b), Sharp irreducibility and Sharp involution.
@@ -682,22 +667,23 @@ Several open inputs each block many main targets.
    irreducibility to generic isomorphism is now proved by
    `rationalSameLeviGenericInductionIso_of_irreducibility`; it retains that
    irreducibility premise.
-4. **Corrected graded vanishing** (`277860be-2aeb-4a85-8ccb-f1e2e5c573b9`).
+4. **Corrected graded vanishing** (`RationalCorrectedGradedVanishingStatement`).
    It is the only remaining input of the associated-Levi comparison, and an
    input of Theorem 3.6.
-5. **Renard VII.1.3** (`004e00e1-5995-4dc1-884e-a5f512150d0c`). It is the only
+5. **Renard VII.1.3** (`MaximalLeviSupercuspidalReducibilityStatement`). It is the only
    remaining input of rank-one self-association.
 6. **Dynamic induction and Jacquet finite length**
-   (`174d2de0-fa21-41b4-b091-f1b86481790b`,
-   `73e60be8-481a-4cea-b464-eed3bd89be7f`). These are exactly the retained
+   (`DynamicInductionFiniteLengthStatement`,
+   `DynamicJacquetFiniteLengthStatement`). These are exactly the retained
    inputs of both the canonical ambient and standard-Levi operator
    constructions. The GL comparison supplies only its GL instances. They also enter the
    published reductions for Sharp irreducibility and involution. A proof of
    a rational proposition with these facts inside its binders does not
    discharge them for the canonical operator.
-7. **Targets with no published reduction**: support zero and exactness
-   detection, Sharp finite length, the Sharp class formula and Sharp
-   cuspidal-series retention.
+7. **Targets with no published reduction at the pin**: support zero and
+   exactness detection, Sharp finite length, the Sharp class formula and
+   Sharp cuspidal-series retention. The Library now has reductions of all
+   five (see the 14 and 16 November updates).
 
 ## Classification accounting
 
@@ -706,7 +692,7 @@ consumer decides separately whether a published proof satisfies its own route
 constraints. A final audit must traverse both declaration types and proof
 values and identify each classification declaration by exact name.
 
-- `R.rationalCuspidalEigenvalue`: its reviewed route uses no Langlands
+- `R.rationalCuspidalEigenvalue`: its route uses no Langlands
   classification, character independence or geometric lemma, under its
   visible premises.
 - `R.rationalGeometricK0Expansion`: its paired
@@ -800,12 +786,11 @@ values and identify each classification declaration by exact name.
 Families 1–4 remain open. Their actual canonical ambient, standard-Levi
 and Weyl constructions are public, but the global representation inputs
 and the remaining main proofs above still need to be supplied. The eight
-canonical theorem targets are published statements. Their forward-bridge
-statement is reviewed but awaits integration; Worker 29 retains its exact
-proof successor. The planned exact reuse preserves existing target owners
-and leaves their open inputs unchanged. The canonical smooth-complex and
-full-support endpoint candidates are reviewed constructions awaiting
-integration, without closing corrected exactness or Family 4.
+canonical theorem targets are statements of the Library, and their
+forward-bridge statement is proved; the planned reuse leaves their open
+inputs unchanged. The canonical smooth-complex and full-support endpoint
+constructions are in the Library, without closing corrected exactness or
+Family 4.
 In Family 5, the existing matrix-model targets are proved or close by
 composition, and the actual rational-point/matrix operator bridge is now
 proved in the stated `PadicField` scope, including rank zero. The full
@@ -813,27 +798,10 @@ graded-ring comparison and its monomial basis/spanning content remain part
 of the program; their matrix-model evidence is the published Theorem 2.3
 and the exact composites listed above. No arbitrary-local-field GL
 comparison is asserted by the `PadicField` theorem. Remaining work includes
-closing the bottlenecks, publishing the needed composites through their
-owning tasks and discharging each per-instance representation premise.
-Every listed proof task retains its existing owner. Supporting helper
-publications, conditional reductions and a reviewed status note do not
-complete their parent targets.
+closing the bottlenecks, putting the needed composites into the Library and
+discharging each per-instance representation premise. Supporting helpers,
+conditional reductions and status notes do not complete the targets
+they serve.
 
-Worker 76 assembled the 3 November matrix, reusing Worker 164's structural
-boundary, Worker 320's correction guidance, Workers 165/1186's rational
-formal-target map, Workers 194/379's corrected-complex and support accounts,
-and Workers 585/34's GL construction and dependency accounts. Worker 3640
-(formerly Worker 18) refreshed the status four times on 10 November 2026, at
-`e449cde`, `5263a53b`, `de0bad59` and `e7487341`, and again on 11 November
-2026 at `642008d6`, and on 13 November at `b128d289` with the published
-term/top, Corollary 1.10(a), Sharp irreducibility and direct special-vertex
-reductions of Workers 3940/3941, 4220/36 and 3915, alongside Worker 3640's
-operator and GL indexing constructions. The refresh at `7dc9118a` added
-Worker 29's canonical Levi/Weyl assembly, Worker 97's exact GL comparison
-with Worker 29, Worker 5266's generic-isomorphism bridge and the conditional
-Jacquet–Cartan/contraction construction. Worker 3640 performed that GL
-dependency traversal. This refresh at `4bd8ef92` records Worker 29's public
-canonical targets, his reviewed forward-bridge statement and planned exact
-proof, and Worker 3640's reviewed smooth-complex and full-support endpoint
-constructions. These attributions do not extend any original-source reading
-record or supply proof acceptance.
+Earlier versions of this matrix were pinned to Library commits `e449cde`,
+`5263a53b`, `de0bad59`, `e7487341`, `642008d6`, `b128d289` and `7dc9118a`.

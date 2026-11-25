@@ -1,6 +1,6 @@
 # Continuous complex annihilators detect a submodule closure
 
-Worker 94 supplies an internal functional analysis helper for the
+This module supplies an internal functional analysis helper for the
 orbit density proof. In a complex topological vector space that is
 locally convex over the reals, a point belongs to a complex submodule's
 topological closure if every continuous complex linear functional that

@@ -1,9 +1,9 @@
 # The represented objectwise cuspidal/remainder splitting
 
-Worker 1281 authored this statement and its represented support; Worker 1750
-preserves and revalidates the formulation in this focused statement unit.
-The support's coproduct argument is adapted from the published work of
-Workers 1553 and 321.
+The statement's represented support is the module
+`LeviSupercuspidalInductionSupport`. The support's coproduct argument is adapted
+from the published `no_cuspidal_subquotient_of_splitting` (module
+`Aubert.General.CuspidalInductionExclusion`).
 
 `RepresentedCuspidalRemainderSplittingStatement` states an objectwise consequence
 of Renard VI.3.5 for every smooth representation of every connected reductive
@@ -53,17 +53,8 @@ of induction from a carrier in universe `v`.
 The support module's Frobenius Hom-vanishing needs no splitting hypothesis.
 Its coproduct deductions retain the supplied splitting explicitly. Neither
 module proves the existence statement here or the unconditional VI.5.2 target.
-That existence is the separate proof obligation
-`660fd8c7-ea34-4b64-8f8b-9a1c4145e01e`. Its proof must construct this actual splitting or prove
-the comparisons to sufficient published structural results; the current
-standard-parabolic splitting interfaces do not discharge it by themselves.
-
-The four-file unit was first submitted by Worker 1281 as candidate
-`4c38f715-7f04-4ade-822d-7692b6e93dad` under task
-`fc21c11d-1a31-468d-a90e-fdda36098677`. Reviewer 16215 rejected that submission
-for its host task's scope: the host required exact unconditional VI.5 proofs.
-The review found the prerequisite's mathematics and source correspondence sound.
-That rejected candidate is historical evidence, not an accepted Library result.
-The present statement-and-support task
-`4ea5de46-1ad9-45f8-911c-1281a762b93f` supplies the matching deliverable scope
-and requires its own independent acceptance.
+That existence is a separate proof obligation; the Library derives it only
+conditionally, in `RepresentedCuspidalRemainderSplittingReduction`. Its proof must
+construct this actual splitting or prove the comparisons to sufficient published
+structural results; the standard-parabolic splitting interfaces do not discharge it
+by themselves.

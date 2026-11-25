@@ -1,8 +1,5 @@
 # Canonical base change into Galois-invariant lattices
 
-Worker 1107, with Worker 1001's contribution to the character-injectivity route
-and identification of the existing character fixedness API.
-
 This is a derived internal construction using the published actual character
 and cocharacter Hom groups, canonical `Gm` base-change comparisons, geometric
 coefficient transport, faithful field pullback and Mathlib's invariant submodules.

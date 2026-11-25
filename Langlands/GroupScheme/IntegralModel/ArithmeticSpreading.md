@@ -1,6 +1,6 @@
 # Actual smooth affine models over finite S-integer rings
 
-Worker 1572 authored this internal construction for simultaneous reductive and
+This is an internal construction for simultaneous reductive and
 parabolic spreading. It derives the result from published Library descent
 proofs and Mathlib's actual S-integer subalgebras; it introduces no additional
 geometric hypothesis or external source assertion.
@@ -44,7 +44,8 @@ The implemented proof has the following steps.
    and local finite type. Finally, classical choice packages this existence
    proof as `smoothIntegralModelData`.
 
-This unit constructs one smooth affine model at a time. It does not yet
+This module constructs one smooth affine model at a time. It does not
 extend a supplied homomorphism, prove closed immersion, or establish
 reductivity, parabolicity or connectedness of all field-valued fibres. These
-remain obligations of the unchanged `ReductiveParabolicSpreading.ExistenceStatement`.
+belong to `ReductiveParabolicSpreading.ExistenceStatement`, proved as
+`ReductiveParabolicSpreading.existence` in `ReductiveParabolicSpreadingProof`.

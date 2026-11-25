@@ -1,6 +1,6 @@
 # The Jacquet functor to the cuspidal component kills no block object: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.BernsteinBlockJacquetFaithfulStatement`, namespace `Langlands.CuspidalSupport`.
+Module `Langlands.Representation.CuspidalSupport.BernsteinBlockJacquetFaithfulStatement`, namespace `Langlands.CuspidalSupport`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.3, Proposition and proof, printed p.209 / PDF p.215. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -10,7 +10,7 @@ Let `(M, (ρ, W))` be a cuspidal datum with `M` a standard Levi, `P` the standar
 
 ## The Lean statement
 
-`BernsteinBlockJacquetFaithfulStatement` is a statement unit: nothing is proved. It uses the published standard-family framework and exactly the hypotheses of the companion VI.10.1 Theorem statement `BernsteinInducedProgeneratorStatement` (Worker 6, candidate `c8183a09-928c-4f9e-8755-071b330ec5c1`). These are:
+`BernsteinBlockJacquetFaithfulStatement` is a statement only: nothing is proved. It uses the published standard-family framework and exactly the hypotheses of the companion VI.10.1 Theorem statement `BernsteinInducedProgeneratorStatement`. These are:
 
 - a standard family `family : BernsteinStandardFamily i ν` over a nonarchimedean local field;
 - a cuspidal datum `a : BernsteinCuspidalDatum.{uF, max uF uV} i ν family`, with standard Levi `M = bernsteinLeviScheme i ν a.roots`;
@@ -32,4 +32,4 @@ The block decomposition `M(M) = ∏ M(M)_{D'}` (VI.7.2 for `M`) is not available
 
 - "Nonzero object" is `Nontrivial X.obj`, i.e. a carrier with a nonzero vector.
 - The proof (second adjointness and the VI.10.1 results) is not formalized here.
-- The VI.10.3 Corollary is the separate statement `SupercuspidalInductionLengthStatement` (candidate `9cd8e9be-876f-44bc-806a-ebade95b7e73`).
+- The VI.10.3 Corollary is the separate statement `SupercuspidalInductionLengthStatement`.

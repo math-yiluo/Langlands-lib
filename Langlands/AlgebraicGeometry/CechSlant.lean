@@ -140,7 +140,7 @@ def LLinearMap (n : ℕ) :
     funext b
     simp only [L_apply, ev_smul hP halgX halgY halgP hπ, Pi.smul_apply, RingHom.id_apply]
     rw [Finset.smul_sum (M := R) (N := Γ(Y, inter V b))]
-    exact Finset.sum_congr rfl fun _ _ => smul_comm _ _ _
+    exact Finset.sum_congr rfl fun _ _ => smul_comm (α := Γ(Y, inter V b)) _ _ _
 
 end LinearSlant
 

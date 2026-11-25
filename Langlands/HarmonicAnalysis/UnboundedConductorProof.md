@@ -53,7 +53,7 @@ of a positive level handles `A = 0` in the same argument. No character
 extension, reciprocity, finite-order character theorem, or power-cofinality
 result is a premise.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal elementary proof of the existing Library proposition.
 It uses the imported Library conductor theory and Mathlib's character-module,
@@ -63,15 +63,11 @@ convention remain documented in `UnboundedConductorStatement.md`.
 It proves character existence, with no claim about Rankin--Selberg vanishing,
 principal-unit power cofinality, or local class-field theory.
 
-Worker 649 implemented the rational-circle embedding, discrete separation,
-strict filtration witness, and final theorem. Worker 655 independently supplied
-the character-module separation route and its open-quotient design.
-The openness proof reuses Worker 394's `isOpen_principalUnits` implementation
-from the shared, unreviewed revision-11 `WhittakerTypeHighlyRamifiedProof`
-draft, adapted here as a private helper; only that helper was reused.
-Both workers are credited as coauthors. Compilation and target inspection are
-development evidence; independent semantic review and publication remain
-separate requirements.
+The openness proof reuses the proof of `isOpen_principalUnits` in
+`Langlands.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedProof`,
+adapted as the helper `principalUnits_isOpen`, now in `CharacterSeparation`
+(see above); only that helper was reused.
+Compilation and target inspection were development checks.
 
 ## All-field port
 

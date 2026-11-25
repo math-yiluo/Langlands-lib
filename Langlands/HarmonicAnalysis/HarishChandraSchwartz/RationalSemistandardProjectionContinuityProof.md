@@ -1,6 +1,6 @@
 # Continuity of the literal semistandard Levi projection
 
-Worker 680, Task 7516. `Langlands.HarishChandraSchwartz.RationalSemistandard.projectionContinuity`
+`Langlands.HarishChandraSchwartz.RationalSemistandard.projectionContinuity`
 proves the published `ProjectionContinuityStatement` for every field universe,
 with the statement's explicit local-field, connected-reductive and
 maximal-split-torus premises. The target is a derived topological formulation

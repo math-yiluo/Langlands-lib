@@ -18,8 +18,8 @@ variable {Y X P : LocalizedCategory.{u, v, v} (K := K)}
 
 /-- The graph of a deck automorphism in the analytic self-pullback of the cover. -/
 def analyticDeckGraph (h : IsPullback fst snd p p) (e : Aut Y)
-    (he : e.hom ≫ p = p) : Y ⟶ P :=
-  h.lift (𝟙 Y) e.hom ((Category.id_comp _).trans he.symm)
+    (he : e.asIso.hom ≫ p = p) : Y ⟶ P :=
+  h.lift (𝟙 Y) e.asIso.hom ((Category.id_comp _).trans he.symm)
 
 /-- A surjective étale map with deck automorphisms whose graphs partition the
 underlying space of its analytic self-pullback. -/
@@ -27,7 +27,7 @@ structure AnalyticGaloisCover (Γ : Type z) [Group Γ] (p : Y ⟶ X) where
   etale_map : etale p
   surjective : Function.Surjective (localizedSpaceFunctor.map p)
   deck : Γ →* Aut Y
-  deck_over : ∀ γ, (deck γ).hom ≫ p = p
+  deck_over : ∀ γ, (deck γ).asIso.hom ≫ p = p
   relation : LocalizedCategory.{u, v, v} (K := K)
   fst : relation ⟶ Y
   snd : relation ⟶ Y
@@ -51,12 +51,12 @@ theorem graph_fst (γ : Γ) : c.graph γ ≫ c.fst = 𝟙 Y :=
   c.isPullback.lift_fst _ _ _
 
 @[reassoc (attr := simp)]
-theorem graph_snd (γ : Γ) : c.graph γ ≫ c.snd = (c.deck γ).hom :=
+theorem graph_snd (γ : Γ) : c.graph γ ≫ c.snd = (c.deck γ).asIso.hom :=
   c.isPullback.lift_snd _ _ _
 
 /-- Each deck graph identifies its source with an open analytic domain. -/
 theorem openImmersion_graph (γ : Γ) : openImmersion (c.graph γ) := by
-  let e := c.deck γ
+  let e := (c.deck γ).asIso
   have he : e.inv ≫ p = p := by
     calc
       _ = e.inv ≫ e.hom ≫ p := congrArg (e.inv ≫ ·) (c.deck_over γ).symm
@@ -78,7 +78,7 @@ theorem openImmersion_graph (γ : Γ) : openImmersion (c.graph γ) := by
 /-- Any two ordinary points in the same fibre differ by a deck element. -/
 theorem fibre_transitive (x y : localizedSpaceFunctor.obj Y)
     (hxy : localizedSpaceFunctor.map p x = localizedSpaceFunctor.map p y) :
-    ∃ γ : Γ, localizedSpaceFunctor.map (c.deck γ).hom x = y := by
+    ∃ γ : Γ, localizedSpaceFunctor.map (c.deck γ).asIso.hom x = y := by
   obtain ⟨t, ht₁, ht₂⟩ := exists_point_of_isPullback_of_etale c.isPullback c.etale_map x y hxy
   obtain ⟨γ, s, hs⟩ := c.covers t
   change localizedSpaceFunctor.map (c.graph γ) s = t at hs
@@ -94,7 +94,7 @@ theorem exists_open_deck_eq {T : LocalizedCategory.{u, v, v} (K := K)}
     (a b : T ⟶ Y) (hab : a ≫ p = b ≫ p) (x : localizedSpaceFunctor.obj T) :
     ∃ (U : Set (localizedSpaceFunctor.obj T)) (hU : IsOpen U), x ∈ U ∧
       ∃ γ : Γ, domainι T ((presentationOf T).openDomain U hU) ≫ b =
-        domainι T ((presentationOf T).openDomain U hU) ≫ a ≫ (c.deck γ).hom := by
+        domainι T ((presentationOf T).openDomain U hU) ≫ a ≫ (c.deck γ).asIso.hom := by
   let m := c.isPullback.lift a b hab
   obtain ⟨γ, y, hy⟩ := c.covers (localizedSpaceFunctor.map m x)
   change localizedSpaceFunctor.map (c.graph γ) y = localizedSpaceFunctor.map m x at hy
@@ -115,9 +115,9 @@ theorem exists_open_deck_eq {T : LocalizedCategory.{u, v, v} (K := K)}
   have ha : j ≫ a = n := by
     rw [← c.isPullback.lift_fst a b hab, ← Category.assoc, ← hm, Category.assoc,
       c.graph_fst, Category.comp_id]
-  have hb : j ≫ b = n ≫ (c.deck γ).hom := by
+  have hb : j ≫ b = n ≫ (c.deck γ).asIso.hom := by
     rw [← c.isPullback.lift_snd a b hab, ← Category.assoc, ← hm, Category.assoc, c.graph_snd]
-  exact ⟨U, hU, hx, γ, hb.trans ((congrArg (· ≫ (c.deck γ).hom) ha).symm.trans
+  exact ⟨U, hU, hx, γ, hb.trans ((congrArg (· ≫ (c.deck γ).asIso.hom) ha).symm.trans
     (Category.assoc _ _ _))⟩
 
 end AnalyticGaloisCover

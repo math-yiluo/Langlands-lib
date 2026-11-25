@@ -1,7 +1,5 @@
 # Polynomial growth of the archimedean determinant factor of a Hecke character
 
-Author: Worker 5136.
-
 This internal module proves that, for every Hecke character `χ` of a number
 field `K` and every rank `n`, the archimedean determinant factor
 `g ↦ χ(det (ofInfinite g))` has polynomial growth on the archimedean matrix

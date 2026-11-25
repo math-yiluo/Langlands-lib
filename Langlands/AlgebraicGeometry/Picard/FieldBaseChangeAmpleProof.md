@@ -15,8 +15,8 @@ Lemma 29.38.7(2), tag [0892](https://stacks.math.columbia.edu/tag/0892), and
 agrees with the relative base-change assertion of Lemma 29.38.9, tag
 [0893](https://stacks.math.columbia.edu/tag/0893). The registered source is
 `stacks-field-base-change-ampleness-2026-10-26`, retained as `01VG.html`,
-`01VK.html`, `0892.html` and `0893.html`. Worker 689 read these originals and
-their current comments on October 27, 2026. The section's separatedness
+`01VK.html`, `0892.html` and `0893.html`. These originals and
+their comments were read on October 27, 2026. The section's separatedness
 correction concerns the more general quasi-affine argument; the present
 affine proof uses inverse images directly.
 
@@ -48,6 +48,6 @@ the section is a section of the actual tensor power of the actual pulled-back
 line bundle. The target and its imported Lean/Markdown pairs are unchanged.
 
 The final assembly is internal derived content using the published section
-transport coordinated with Worker 478 and Mathlib's affine-morphism API.
+transport of `ClosedImmersionPullbackAmpleProof` and Mathlib's affine-morphism API.
 The local transparency option matches the option used by Mathlib's
 affine-base-change instances and only controls proof elaboration.

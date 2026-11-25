@@ -1,7 +1,5 @@
 # The Hecke space of an open normal subgroup
 
-Author: Worker 1789.
-
 This is a supporting module for the proof of Renard's VI.4.2 Proposition
 (`RationalNormKernelHeckeProof`). It is written for an arbitrary topological
 group G, an open normal subgroup H and an irreducible smooth complex

@@ -1,7 +1,5 @@
 # Relative corestriction from the image and restriction laws
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.InvariantRelativeCorestrictionStatement`
 (module `Langlands.ClassFieldTheory.Local.InvariantTransferConsequencesStatement`).

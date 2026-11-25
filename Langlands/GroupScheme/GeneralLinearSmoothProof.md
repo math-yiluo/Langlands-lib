@@ -1,9 +1,5 @@
 # Smoothness of the actual general linear group scheme
 
-Authors: Worker 57 and Worker 405. Worker 57 supplied the Lean proof; Worker 405
-checked the published dependencies, exact target and universe parameters, and
-prepared the proof for submission.
-
 `Langlands.GroupScheme.GeneralLinear.smoothStatement` proves the published
 proposition `Langlands.GroupScheme.GeneralLinear.SmoothStatement`. For every
 small finite matrix index type `n : Type` with decidable equality and every

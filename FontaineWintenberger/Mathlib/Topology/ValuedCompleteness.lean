@@ -1,0 +1,73 @@
+/-
+Copyright (c) 2026 Yijun Yuan. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Yijun Yuan
+-/
+module
+
+public import Mathlib.Topology.Algebra.IsUniformGroup.Basic
+public import Mathlib.Topology.Algebra.Valued.ValuationTopology
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+/-!
+# Completeness from the valuation ring
+
+The inherited valuation-ring uniformity determines completeness of the
+valued field. A Cauchy filter is eventually contained in a translate
+of the complete valuation ring.
+
+## Main results
+
+* `completeSpace_of_completeSpace_valuationSubring`: Completeness of the valuation ring for its
+  inherited uniformity implies completeness of the valued field.
+* `completeSpace_iff_completeSpace_valuationSubring`: For the valuation uniformity, the field is
+  complete exactly when its valuation ring with the inherited subtype uniformity is complete.
+-/
+
+@[expose] public section
+
+namespace Valued
+
+open Filter
+open scoped Topology
+
+variable (F : Type*) [Field F] {Γ₀ : Type*} [LinearOrderedCommGroupWithZero Γ₀]
+    [hv : Valued F Γ₀]
+
+/-- Completeness of the valuation ring for its inherited uniformity
+implies completeness of the valued field. -/
+theorem completeSpace_of_completeSpace_valuationSubring
+    [CompleteSpace hv.v.valuationSubring] : CompleteSpace F where
+  complete {f} hf := by
+    have : f.NeBot := hf.1
+    have hO : IsComplete (hv.v.valuationSubring : Set F) :=
+      completeSpace_coe_iff_isComplete.mp inferInstance
+    have hOmem : (hv.v.valuationSubring : Set F) ∈ nhds (0 : F) :=
+      (isOpen_valuationSubring F).mem_nhds hv.v.valuationSubring.zero_mem
+    obtain ⟨a, ha⟩ : ∃ a : F, ∀ᶠ y in f, y - a ∈ hv.v.valuationSubring :=
+      ((IsUniformAddGroup.cauchy_iff_tendsto_swapped f).mp hf).2.eventually_mem hOmem
+        |>.curry.exists
+    have htranslate : IsComplete
+        ((fun y : F => y + a) '' (hv.v.valuationSubring : Set F)) :=
+      (isComplete_image_iff (isUniformEmbedding_translate_add a).isUniformInducing).mpr hO
+    obtain ⟨b, _hbmem, hb⟩ := htranslate f hf (by
+      rw [le_principal_iff]
+      filter_upwards [ha] with y hy
+      exact ⟨y - a, hy, sub_add_cancel y a⟩)
+    exact ⟨b, hb⟩
+
+/-- For the valuation uniformity, the field is complete exactly
+when its valuation ring with the inherited subtype uniformity is complete. -/
+theorem completeSpace_iff_completeSpace_valuationSubring :
+    CompleteSpace F ↔ CompleteSpace hv.v.valuationSubring := by
+  constructor
+  · intro h
+    let := h
+    exact (isClosed_valuationSubring F).isComplete.completeSpace_coe
+  · intro h
+    let := h
+    exact completeSpace_of_completeSpace_valuationSubring F
+
+end Valued

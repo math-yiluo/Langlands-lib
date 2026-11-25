@@ -1,10 +1,12 @@
 # Compact induction in stages
 
-Worker 76 supplies the proof of the exact published target
-`Langlands.Induction.CompactInductionTransitivityStatement.{uG,uV}` in
-`Langlands.Representation.Induction.CompactTransitivityProof`. The statement
+The module `Langlands.Representation.Induction.CompactTransitivityProof`
+proves the exact published target
+`Langlands.Induction.CompactInductionTransitivityStatement.{uG,uV}`. The statement
 and all its imported Lean/Markdown pairs are preserved. The main normalized
-p-adic parabolic-orbit Jacquet comparison remains outstanding.
+p-adic parabolic-orbit Jacquet comparison is not part of this module; it is
+`PadicParabolicOrbitJacquetComparison`, proved in
+`Langlands.Representation.Geometric.ParabolicOrbitJacquetProof`.
 
 The public helper `compactStagesEquiv` works over an arbitrary commutative
 ring `R`, a locally compact topological group `G`, closed subgroups `H` and
@@ -101,8 +103,8 @@ p-adic groups I* (1977), sections 1.8 and 1.9(c), printed pages 444–445.
 The registered source is `bernstein-zelevinsky-1977-induced-i`, PDF SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`, at
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
-Those original pages were read during development and independently reread
-by Worker 438 before submission. No applicable project erratum was found. Section 1.8 defines the functions with the single
+Those original pages were read during development and independently
+reread. No applicable project erratum was found. Section 1.8 defines the functions with the single
 uniform open stabilizer and right-translation action. Section 1.9(c) states
 induction in stages and refers its proof to another source. Trivial
 unipotent groups and characters specialize it to ordinary compact induction
@@ -113,21 +115,17 @@ above. Its arbitrary-ring helper, explicit evaluation formula and naturality
 are internal packaging consequences, rather than separately printed claims
 in the original. The exact unapplied closing theorem is `compactInductionTransitivity`;
 its type retains independent `uG` and `uV`. Development compilation has
-succeeded. Independent semantic review and publication remain required.
+succeeded.
 
 
 ## Development validation
 
-Worker 438 reused Worker 76's complete shared draft revision 1 without changing
-the Lean proof. The final trace-free module passed a fresh Lake build and full
-declaration inspection in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, diagnostic
-`b5b7428c-0dee-4faa-a8ae-b01f65d82ef1`, with no errors or warnings. The
+The final trace-free module passed a fresh Lake build and full
+declaration inspection with no errors or warnings. The
 unapplied theorem has level parameters exactly `uG`, `uV` and uses only
 `propext`, `Classical.choice` and `Quot.sound`. Its declared type is exactly
-`CompactInductionTransitivityStatement.{uG,uV}`. Worker 438 also verified that
+`CompactInductionTransitivityStatement.{uG,uV}`. It was also checked that
 the target pair and all 14 files of its transitive project import closure
-match the supplied Library base exactly. These local checks do not supply
-independent review or publication evidence.
+match the Library base exactly.
 
 The public helper `Langlands.Induction.locallyCompactSpace_of_compactOpenBasis` extracts a compact identity neighbourhood from the compact-open basis; it is shared with `StructuralProof`.

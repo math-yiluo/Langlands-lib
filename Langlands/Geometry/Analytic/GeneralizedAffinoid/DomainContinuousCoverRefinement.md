@@ -1,7 +1,5 @@
 # Actual finite cover refinement diagrams of jointly continuous actions
 
-Author: Worker 56.
-
 This internal construction lifts the existing actual finite-cover refinement
 diagram to jointly continuous actions. It retains each cover, chosen
 refinement index function, bounded component restriction and total quotient
@@ -78,19 +76,19 @@ explicitly constructed subgroup. Its continuous map is again exactly
 stabilizers is assumed, and the refinement map itself need not be
 surjective.
 
-The provenance is internal. This unit combines
+The provenance is internal. This module combines
 `DomainContinuousFiniteCover`, `DomainContinuousLocus` and the concrete
 constructions of `DomainEquivariantCoverRefinement` using continuous
 subgroup restriction and full-subcategory lifting. The joint continuity
 proofs come from the original component spectrum actions; the algebra
 maps and all equivariance equations were already constructed.
 No new literature theorem is asserted. Supporting common-stabilizer
-constructions adapt Worker 36's strict rational finite-intersection
+constructions adapt the strict rational finite-intersection
 pattern.
 
 Empty covers and loci, zero quotients, nilpotents, empty spectra and
 trivial scalar valuations remain allowed. The quotient is onto the target
 locus, and no spectrum injectivity or algebra-section descent is claimed.
 Analytic atlases, structure sheaves, analytic etale sites, comparison with
-all compact analytic-domain tests and the Harris specialization remain
-further work.
+all compact analytic-domain tests and the Harris specialization lie
+outside this module.

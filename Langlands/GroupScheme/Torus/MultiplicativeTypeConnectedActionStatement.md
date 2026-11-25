@@ -1,7 +1,5 @@
 # Statement: connected groups act trivially on groups of multiplicative type
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeConnectedActionStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:

@@ -1,15 +1,14 @@
 # A conditional reduction of the unequal-rank factorization over `S` and the infinite places
 
 Module `Langlands.Global.RankinSelberg.ArchimedeanFactorizationReduction`, namespace
-`Langlands.Global.RankinSelbergGlobal`. Author: Worker 394.
+`Langlands.Global.RankinSelbergGlobal`.
 
 ## 1. Content and provenance
 
 The published statement
 `Langlands.Global.RankinSelbergGlobal.UnequalArchimedeanFactorizationStatement.{u, uQ}`
 (module [`ArchimedeanFactorizationStatement`](ArchimedeanFactorizationStatement.md), called
-(U) here) is the unequal-rank conjunct of `ArchimedeanFactorizationStatement`, the target of
-Task 7397. It says that, for suitable vectors `x`, `x'` spherical outside `S`, the partial
+(U) here) is the unequal-rank conjunct of `ArchimedeanFactorizationStatement`. It says that, for suitable vectors `x`, `x'` spherical outside `S`, the partial
 global integrals `Ψ_(S∪∞)(s; W, W')` and `Ψ̃_(S∪∞)(s; ρ(w_(n,m)) W̃, W̃')` are one constant
 `c ≠ 0` times the product of archimedean local integrals and local integrals at the places of
 `S`, and that none of these local factors vanishes identically on a right half-plane.
@@ -26,9 +25,9 @@ This module contains:
   A_U, B and C together imply (U);
 * the theorem `unequalArchimedeanFactorizationReduction`, which proves it (Section 5).
 
-The theorem is a reduction. It does not prove (U), and its three premises are open. It is an
-intermediate result of Task 7397 in the sense of the "Intermediate results" section of that
-task's revision 1. The task's required result, a proof of `ArchimedeanFactorizationStatement`,
+The theorem is a reduction. It does not prove (U); of its three premises, A_U is open and B
+and C are proved elsewhere in the Library (Section 6). It is an
+intermediate result towards `ArchimedeanFactorizationStatement`, whose proof
 stays open. The equal-rank conjunct is not treated here.
 
 **Source of the reduction.** J. W. Cogdell, *Analytic theory of L-functions for GL_n*, in
@@ -163,9 +162,8 @@ times the product of these measures and of the invariant probability measure on
 the measure is invariant with full support. Since the integrand depends only on the
 coordinates at `S ∪ ∞`, Fubini for products of functions of separate variables
 (Mathlib's `integral_prod_mul`, which needs no integrability hypothesis) gives the identity,
-for every choice of functions. The premise is not formalized here: the Library does not yet
-contain this decomposition of `N(𝔸) \ GL(𝔸)` or the uniqueness of invariant measures on the
-local quotients.
+for every choice of functions. The premise is not proved here; the Library proves it as
+`UnipotentClass.unipotentClassProductStatement` (module `UnipotentClassProductProof`).
 
 ### 3.2 Premise C: `RectangleTateStatement.{u}`
 
@@ -328,15 +326,17 @@ reports only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## 6. The retained premises
 
-All three premises are new here and open:
+All three premises are new here. A_U is open; B and C are proved in the Library:
 
 * `UnequalPointwiseFactorizationStatement.{u, uQ}` (A_U): representation theory (pure tensors,
   unramified computation, Jacquet 2009 and JPSS nonvanishing);
-* `UnipotentClassProductStatement.{u}` (B): measure theory on `N(𝔸) \ GL(𝔸)`;
-* `RectangleTateStatement.{u}` (C): Tate's normalization of the adelic additive measure.
+* `UnipotentClassProductStatement.{u}` (B): measure theory on `N(𝔸) \ GL(𝔸)`; proved by
+  `UnipotentClass.unipotentClassProductStatement` (module `UnipotentClassProductProof`);
+* `RectangleTateStatement.{u}` (C): Tate's normalization of the adelic additive measure; proved
+  by `RectangleTate.rectangleTateStatement` (module `RectangleTateProof`).
 
-Proving (U) unconditionally requires proofs of all three. The equal-rank conjunct of the task's
-target is separate work.
+Proving (U) unconditionally requires proofs of all three. The equal-rank conjunct of
+`ArchimedeanFactorizationStatement` is treated in `EqualArchimedeanFactorizationReduction`.
 
 ## Sources
 

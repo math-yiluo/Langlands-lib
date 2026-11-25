@@ -1,7 +1,5 @@
 # Geometry from connected reductive residue fibres
 
-Worker 717.
-
 This derived module proves three bridges for the actual pullbacks of a group
 scheme `G` over an arbitrary scheme `S`, uniformly in universe `u`. The common
 hypothesis is that each residue-field fibre

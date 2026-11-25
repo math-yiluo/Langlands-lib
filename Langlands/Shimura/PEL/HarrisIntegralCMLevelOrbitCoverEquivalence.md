@@ -1,6 +1,6 @@
 # Direct levels on selected finite-etale orbit covers
 
-This internal unit proves that full source-point stabilizer fixedness is
+This internal module proves that full source-point stabilizer fixedness is
 automatic for actual restricted direct levels. It consequently simplifies
 the published selected-cover range equivalence to target-orbit membership
 alone and carries its level-arrow naturality to that simpler subtype.
@@ -93,10 +93,12 @@ for the original direct tower transition.
 
 All constructions are internal deductions from the published actual
 restriction, image-fixed, cover-stabilizer lifting, selected-cover range
-and transporter constructions. This unit asserts no additional
+and transporter constructions. This module asserts no additional
 original-literature result. The equivalence is for direct levels on
 selected finite-etale covers of the supplied family. Extending the
 comparison to the full admissible test category, comparing normalized
 rational-isogeny classes, constructing an actual representing PEL scheme,
-and proving its admissibility, smoothness and division-case projectivity
-remain separate obligations of the full representability target.
+and proving its admissibility, smoothness and division-case projectivity are
+not part of this module. They belong to the full representability statement
+`DivisionCMRepresentabilityStatement`, which the Library proves only under
+further premises.

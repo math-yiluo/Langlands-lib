@@ -1,7 +1,5 @@
 # Reduction of cocenter generation to kernel generation
 
-Authors: Worker 183.
-
 The module `Langlands.GroupScheme.SimplyConnected.RankOneLeviCocenterGenerationReduction` proves
 
 ```

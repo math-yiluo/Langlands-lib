@@ -24,7 +24,7 @@ spaces between `Spec R` and an absolute base.
 The theorem is `approximation_of_interfaces presentationInterface approximationInterface
 quotientInterface`. The four modules of `QuasiAffineApproximation` supply its parts:
 
-- `Skeleton` (Worker 5045) states the three interfaces. It proves
+- `Skeleton` states the three interfaces. It proves
   `approximation_of_interfaces`: the three interfaces together imply the statement. Fix
   `f : U ⟶ Y` over `Spec R`.
   1. Part I presents `f` by a cartesian morphism `(φ, g) : E' ⟶ E` of étale equivalence
@@ -46,12 +46,12 @@ quotientInterface`. The four modules of `QuasiAffineApproximation` supply its pa
   The quasi-affine quotient `U` of `E'` descends to a quasi-affine quotient at some level
   (Stacks Tag 07RN). A finite surjective level pair through that level is then chosen. The
   quotient `M₁` at that level is quasi-affine and of finite type over `ℤ`, hence Noetherian.
-- `QuotientSpace` (Part III, `quotientInterface`, Worker 5045). All schemes of the Noetherian
+- `QuotientSpace` (Part III, `quotientInterface`). All schemes of the Noetherian
   configuration are regarded as schemes over the terminal affine scheme `Spec (ULift ℤ)`.
   There, the quotient algebraic space of `E₁` receives a finite surjection from the
   Noetherian quasi-affine `M₁`, induced by `φ₁`. The hypothesis
   `NoetherianSchemeQuasiAffineSourceAFStatement` applies to this surjection.
-- `SeparatedQuotient` (Worker 5045): the relation `E` is closed in `E.U × E.U` when its finite
+- `SeparatedQuotient`: the relation `E` is closed in `E.U × E.U` when its finite
   cover has a separated quotient. Part II needs this for the first level.
 
 Each module's Markdown describes its proof in detail.

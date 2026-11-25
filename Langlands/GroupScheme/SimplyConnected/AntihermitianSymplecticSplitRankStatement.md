@@ -1,7 +1,6 @@
 # The split rank of the symplectic group of an antihermitian form is its Witt index: statement
 
-Author: Worker 31, for Task 5986 (`8494af77-9d10-4c2f-b1cd-60dc371fb195`). The module
-contains one `Prop`-valued definition and no proof.
+The module contains one `Prop`-valued definition and no proof.
 
 ## Statement
 
@@ -52,8 +51,8 @@ the special cases `splitRank (σ.symplecticGroup H) ≤ 1` when `σ.wittIndex H 
 
 ## Role
 
-This is one of four prerequisites in the planned proof of `TypeCDivisionFormStatement`
-(Task 5986). It supplies the clause `(σ.wittIndex H : ℕ∞) = splitRank G` of the target after
+This is one of four prerequisites in the proof of `TypeCDivisionFormStatement`
+(`typeCDivisionForm`, in `TypeCDivisionFormProof`). It supplies the clause `(σ.wittIndex H : ℕ∞) = splitRank G` of the target after
 transport along `G ≅ σ.symplecticGroup H` by the published `splitRank_eq_of_iso`.
 
 ## Source and provenance

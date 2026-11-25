@@ -47,7 +47,7 @@ theorem finite_quotient_nsmulRange [AddGroup.FG M] (hn : 0 < n) :
 instance finite_frames [AddGroup.FG M] [NeZero n] : Finite (Frames M n) := by
   classical
   have := finite_quotient_nsmulRange (M := M) (n := n) (Nat.pos_of_ne_zero (NeZero.ne n))
-  obtain ⟨G, hG⟩ := AddGroup.FG.out (H := M)
+  obtain ⟨G, hG⟩ := AddGroup.exists_of_isAddFG M
   let Λ : Frames M n → (G → M ⧸ nsmulRange M n) := fun φ g => φ.1 g
   refine Finite.of_injective Λ fun φ ψ e => Subtype.ext (AddMonoidHom.ext fun m => ?_)
   have hm : m ∈ AddSubgroup.closure (G : Set M) := hG ▸ AddSubgroup.mem_top m
@@ -95,7 +95,7 @@ constant as an automorphism-valued function. -/
 theorem isLocallyConstant_labelEquiv [AddGroup.FG M] (τ : constant W M ≅ constant W M) :
     IsLocallyConstant (labelEquiv τ) := by
   classical
-  obtain ⟨G, hG⟩ := AddGroup.FG.out (H := M)
+  obtain ⟨G, hG⟩ := AddGroup.exists_of_isAddFG M
   rw [IsLocallyConstant.iff_exists_open]
   intro w
   refine ⟨⋂ g : G, (fun w' => label τ.hom w' g) ⁻¹' {label τ.hom w g},

@@ -1,7 +1,5 @@
 # Composing the base of a relative presheaf
 
-Author: Worker 109.
-
 This internal construction composes the base of an actual relative presheaf and
 compares its point fibres. It is derived from the published total-presheaf and
 fibre-presheaf constructions in `OriginalBaseTransport`; no literature theorem

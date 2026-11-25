@@ -1,7 +1,5 @@
 # Dual-choice independence of normalized CM polarized pullback
 
-Author: Worker 57.
-
 This derived construction proves that the existing actual normalized CM
 polarized class and tower pullbacks are independent of their constrained dual
 evaluation families. It constructs `classTowerBaseChangeOfExists` from the

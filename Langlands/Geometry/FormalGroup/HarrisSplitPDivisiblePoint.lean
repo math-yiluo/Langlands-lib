@@ -22,12 +22,12 @@ variable {R : CommRingCat.{v}} {p : ℕ} [Fact p.Prime] {G H : PDivisibleGroup R
 variable {A : Type u} [Ring A] {a : A →+* End G} {b : A →+* End H}
 
 /-- An actual order-linear tower isomorphism induces an order-linear quasi-isogeny. -/
-def OrderQuasiIsogeny.ofIso (e : G ≅ H) (h : ∀ t, a t ≫ e.hom = e.hom ≫ b t) :
+def OrderQuasiIsogeny.ofIso (e : G ≅ H) (h : ∀ t, (a t).asHom ≫ e.hom = e.hom ≫ (b t).asHom) :
     OrderQuasiIsogeny a b where
   val := RationalCategory.inclusion.mapIso e
   commutes t := by
-    change RationalHom.comp (RationalHom.ofHom (a t)) (RationalHom.ofHom e.hom) =
-      RationalHom.comp (RationalHom.ofHom e.hom) (RationalHom.ofHom (b t))
+    change RationalHom.comp (RationalHom.ofHom (a t).asHom) (RationalHom.ofHom e.hom) =
+      RationalHom.comp (RationalHom.ofHom e.hom) (RationalHom.ofHom (b t).asHom)
     rw [← RationalHom.ofHom_comp, ← RationalHom.ofHom_comp, h t]
 
 section CommonBase

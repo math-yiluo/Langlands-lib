@@ -1,6 +1,6 @@
 # Henniart's route with Bernstein–Zelevinsky finiteness proved over p-adic fields
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartCorrespondenceSixInputs`,
+Module `Langlands.Correspondence.HenniartCorrespondenceSixInputs`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers and local constants), `uV` (supercuspidal carriers), all
 independent.
@@ -47,10 +47,9 @@ p-adic fields. The removed hypothesis is replaced by a proof of its p-adic case
 (Bernstein and Zelevinsky 1976, Corollary 4.15, printed p. 41, deduced from 3.20 b),
 3.21, 3.26, 3.29 and Theorem 4.14). This module adds no mathematics of its own.
 
-## Contribution
+## Supporting modules
 
-This entry is submitted together with two supporting modules, each with its own
-Markdown and not yet in the Library:
+The proof uses two supporting modules, each with its own Markdown:
 
 - `Langlands.Correspondence.PadicSupercuspidalFinitenessProof`: proves
   `CompactOpenFiniteness.PadicSupercuspidalCompactOpenFinitenessStatement.{uK, uV}`,
@@ -58,7 +57,7 @@ Markdown and not yet in the Library:
   every compact open subgroup, and its bounded-level form
   `CompactOpenFiniteness.centralLevelStratum_finite`, from published forms of BZ76
   3.20, 3.21, 3.26, 3.29 and 4.14. It does not prove the all-field Library statement
-  `SupercuspidalCompactOpenFinitenessStatement` (Task 5585).
+  `SupercuspidalCompactOpenFinitenessStatement`.
 - `Langlands.Correspondence.HenniartPadicConductorFinitenessProof`: proves
   `SupercuspidalEpsilonConductorFinitenessPadicReductionStatement`, the finiteness of
   Henniart's candidate sets from the Bushnell–Henniart–Kutzko and JPSS statements

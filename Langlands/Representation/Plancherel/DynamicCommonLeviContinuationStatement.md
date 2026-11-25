@@ -46,5 +46,4 @@ full convergence domain. IV.1.1 supplies rationality on a saturated cone; obtain
 an appropriate restricted open start from that result is the presentation
 comparison obligation addressed separately. No value at a pole, maximal regular
 domain, unitary regularity, invertibility, tensor comparison, composition or scalar
-identity is asserted. The existing IV.1.1 analytic owner and the structural,
-composition, scalar and geometry owners retain their proof obligations.
+identity is asserted.

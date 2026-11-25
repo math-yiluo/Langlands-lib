@@ -1,6 +1,6 @@
 # Constructed coroot quotients on every affine pinned model
 
-This internal unit combines the proved local coroot quotient with the
+This internal module combines the proved local coroot quotient with the
 local-to-arbitrary-ring assembly and full geometric-kernel comparison.
 It constructs the actual split-model quotient without any additional
 mathematical input. Only the final arbitrary-scheme descent implication
@@ -39,9 +39,11 @@ from the single explicit hypothesis
 `RelativeSemisimpleFppfPerfectStatement`. It applies the existing
 local-to-relative descent bridge to the constructed local witnesses.
 The perfectness theorem is used for admissible-subgroup comparison and
-descent, and is not proved or silently assumed in this unit. This final
-conditional implication is not an unconditional proof artifact for the
-host task.
+descent, and is not proved or silently assumed in this module. This final
+conditional implication is not an unconditional proof of
+`RelativeDerivedGroupExistenceStatement`; the Library proves that statement
+as `relativeDerivedGroupExistence` in `RelativeDerivedGroupExistenceProof`,
+by applying this implication to `relativeSemisimpleFppfPerfect`.
 
 All constructions are uniform in the universe. Neither the arbitrary-ring
 quotient construction nor the conditional arbitrary-scheme conclusion

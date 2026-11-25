@@ -47,7 +47,7 @@ preservation theorems. The old `hcalc` proof parameter remains in the
 existing form types; `adelicDifferentialCommutator_of_smooth` supplies it
 on the original atlas, and proof irrelevance identifies every such
 realization with `actualAdelicEnvelopingAction`. No additional covariance
-or calculus hypothesis is introduced. This unit does not prove uniform
+or calculus hypothesis is introduced. This module does not prove uniform
 growth from ordinary moderate growth, infer a tensor condition from
 finiteness, establish stability under all infinite translations, or
 prove preservation of cuspidality or a comparison with the original

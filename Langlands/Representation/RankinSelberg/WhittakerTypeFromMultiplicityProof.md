@@ -1,7 +1,5 @@
 # Whittaker type from scalar multiplicity
 
-Author: Worker 288.
-
 The theorem `Langlands.RankinSelberg.whittakerTypeFromMultiplicity.{uF,uV}`
 proves the closed published proposition
 `Langlands.RankinSelberg.WhittakerTypeFromMultiplicityStatement.{uF,uV}`

@@ -1,7 +1,5 @@
 # Joint fine, middle and coarse support of tempered product-Levi representations
 
-Author: Worker 517. Support-interface and dependency audit: Worker 711.
-
 `Langlands.glTemperedJointSupport` proves exactly the closed proposition
 [`Langlands.GLTemperedJointSupportStatement.{uF,uV}`](TemperedJointSupportStatement.md).
 The field universe and original carrier universe are independent. Its only

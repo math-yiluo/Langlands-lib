@@ -36,6 +36,7 @@ private instance iso_projection_dominant :
     IsSchemeTheoreticallyDominant (e.hom ≫ projection f').hom.hom.left := by
   change IsSchemeTheoreticallyDominant
     (e.hom.hom.hom.left ≫ (projection f').hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 include h in
@@ -173,6 +174,8 @@ local instance unramifiedImage_integerTower :
 
 local instance unramifiedImage_integerLocal :
     IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
+  haveI : IsLocalHom (algebraMap F (inertiaFixedField F)) :=
+    isLocalHom_of_exists_map_ne_one ⟨0, by simp⟩
   Valuation.HasExtension.instIsLocalHomValuationInteger
     (vR := ValuativeRel.valuation F) (vS := fixedFieldValuation F)
 
@@ -234,11 +237,13 @@ variable {k : Type u} [Field k]
 private instance dominant_iso_projection :
     IsSchemeTheoreticallyDominant (e.hom ≫ projection g).hom.hom.left := by
   change IsSchemeTheoreticallyDominant (e.hom.hom.hom.left ≫ (projection g).hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 omit [IsAffineHom D.X.hom] in
 private theorem inclusion_comp_iso_closed : IsClosedSubgroup (inclusion f ≫ d.hom) := by
   change IsClosedImmersion ((inclusion f).hom.hom.left ≫ d.hom.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A commutative isomorphism square identifies the actual schematic images. -/
@@ -375,6 +380,8 @@ local instance image_unramifiedIntegerTower :
 
 local instance image_unramifiedIntegerLocalHom :
     IsLocalHom (algebraMap ↥𝒪[F] (fixedFieldIntegers F)) :=
+  haveI : IsLocalHom (algebraMap F (inertiaFixedField F)) :=
+    isLocalHom_of_exists_map_ne_one ⟨0, by simp⟩
   Valuation.HasExtension.instIsLocalHomValuationInteger
     (vR := ValuativeRel.valuation F) (vS := fixedFieldValuation F)
 

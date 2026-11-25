@@ -1,7 +1,7 @@
 # Fixed-height detection of the entire canonical induced space
 
-This is derived supporting work by Worker 1369. It combines Worker 669's
-actual unipotent restriction adapter with the coordinate stabilizer and
+This is derived supporting work. It combines the
+actual unipotent restriction adapter of `CanonicalRhoUnipotentRestriction` with the coordinate stabilizer and
 simple-root generation argument. Its proofs use existing Library results;
 it makes no new assertion from external literature.
 
@@ -80,7 +80,7 @@ then transfers finiteness along the proved injection.
 The quotient dimension formula is intrinsic to the actual Lie kernel of
 `U`, rather than to a chosen polynomial presentation. The arbitrary field
 universe `u` is retained throughout. The supplied pinning and full coroot
-span remain hypotheses. This unit does not identify the Lie dimension with
+span remain hypotheses. This module does not identify the Lie dimension with
 a positive-root count, establish the universal existence of those supplied
 data, prove a matching lower bound or irreducibility of the entire space,
 or prove `SteinbergBigCellStatement`.

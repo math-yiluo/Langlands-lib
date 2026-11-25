@@ -1,7 +1,5 @@
 # Determinant-slice expansion of the actual unequal-rank integrals
 
-Author: Worker 1037.
-
 This module is derived internal material for the first-block Laurent proof of JPSS
 (1983), Sections 4.7–4.9. It concerns the published unequal-rank integral
 `unequalRankIntegral ψ abv j k μ ν W W' s`, in which the rectangular variable is

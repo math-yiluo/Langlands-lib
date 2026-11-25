@@ -1,6 +1,6 @@
 # Actual Frobenius orbits of supplied highest-weight vectors
 
-This derived unit proves injectivity and the dimension of the actual
+This module proves injectivity and the dimension of the actual
 opposite-unipotent Frobenius orbit of a supplied highest-weight vector. It
 combines the linked full-root word coordinates and original endpoint from
 `HighestWeightWordCoordinates` with `OrderedFrobeniusCyclicity`. No external
@@ -64,7 +64,7 @@ representation makes the origin orbit span equal to the whole representation,
 by equality of finite dimensions.
 
 The split pinning, full coroot span, infinitude and highest-weight representation
-remain explicit inputs. This unit does not construct the pinning or the
+remain explicit inputs. This module does not construct the pinning or the
 highest-weight representation, and it does not prove the upper bound for an
 entire covariant induced space. In particular it supplies neither the remaining
 whole-induced-space irreducibility law nor `SteinbergBigCellStatement`.

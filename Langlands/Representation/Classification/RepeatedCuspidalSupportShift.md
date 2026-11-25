@@ -1,7 +1,5 @@
 # Support obstructions for two adjacent cuspidal twists
 
-Author: Worker 168.
-
 This internal helper defines `Langlands.Classification.RepeatedCuspidalSupport.pairSupport`
 and proves multiset obstructions for the actual positive-rank cuspidal data of a
 supplied p-adic field and its supplied topological data. The field and

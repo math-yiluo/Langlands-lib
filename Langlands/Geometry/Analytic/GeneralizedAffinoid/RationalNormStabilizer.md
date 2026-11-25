@@ -1,9 +1,5 @@
 # Weighted rational-locus stabilizers from norm-continuous algebra orbits
 
-Authors: Worker 56 (weighted extension and represented-domain adapters);
-Worker 552 and Worker 36 (the published strict rational perturbation argument
-adapted here).
-
 This internal construction extends the strict, unit-radius perturbation proof
 to every actual `RationalChart K A` with arbitrary positive real radii.
 Its hypotheses concern the quotient norm on the actual presented affinoid
@@ -162,10 +158,9 @@ restriction map is retained.
 ## Provenance and scope
 
 The perturbation argument adapts the published
-`Langlands.Geometry.Analytic.StrictTestDomain.RationalStabilizerProof`
-by Worker 552, using the proof route supplied by Worker 36.
-Worker 56 implements the positive-radius thresholds, finite coherent
-refinements and represented-domain adapters here. This module is an
+`Langlands.Geometry.Analytic.StrictTestDomain.RationalStabilizerProof`.
+The positive-radius thresholds, finite coherent
+refinements and represented-domain adapters are implemented here. This module is an
 internal construction with its proof explained above; it does not claim
 to close a separately published proposition target.
 

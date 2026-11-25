@@ -1,7 +1,8 @@
 # The abstract simple twisted trace formula
 
 `Langlands.TraceFormula.AbstractSimpleTwistedTraceFormulaStatement` is a proposition
-definition. It supplies no proof.
+definition. It supplies no proof. The statement is proved by
+`abstractSimpleTwistedTraceFormula` (module `Langlands.TraceFormula.AbstractSimpleTwistedProof`).
 
 It is the geometric side of the simple twisted trace formula for a general locally compact
 group, a discrete subgroup and a continuous automorphism. It says that the trace of
@@ -40,20 +41,29 @@ The statement quantifies over:
 - a continuous compactly supported function `f : C_c(G, ℂ)`.
 
 Write `R(f) = integratedIsometricAction μG π … f …`, the operator `φ ↦ ∫_G f(g) π(g) φ dμG(g)`,
-and `I_θ = twistOperator Γ θ hθΓ ν hθν`, the operator `φ ↦ φ ∘ θ̄⁻¹` of Task 7402's module
+and `I_θ = twistOperator Γ θ hθΓ ν hθν`, the operator `φ ↦ φ ∘ θ̄⁻¹` of the module
 `Langlands.TraceFormula.TwistedOrbital`.
 
 ## Hypotheses
 
 1. `R(f) ∘ I_θ` is trace class (`Langlands.Analysis.OperatorIdeals.IsTraceClass`).
-2. A natural number `n` and representatives `r : Fin n → Γ` are given. They are pairwise not
+2. The support condition: there is a compact set `C ⊆ G` such that every `x ∈ G` with
+   `f(x⁻¹ γ θ(x)) ≠ 0` for some `γ ∈ Γ` is `g y` with `g ∈ Γ` and `y ∈ C`,
+
+   `∃ C : Set G, IsCompact C ∧ ∀ x : G, ∀ γ ∈ Γ, f (x⁻¹ * γ * θ x) ≠ 0 → ∃ g ∈ Γ, ∃ y ∈ C, x = g * y`.
+
+   So the function `x ↦ Σ_{γ ∈ Γ} |f(x⁻¹ γ θ(x))|` on `Γ \ G` vanishes outside the image of the
+   compact set `C`. The condition holds for every `f` when `Γ \ G` is compact:
+   `Langlands.TraceFormula.exists_isCompact_twistedSupport_of_compactSpace` (module
+   `Langlands.TraceFormula.TwistedGeometricUnfolding`) gives such a `C` for every function on `G`.
+3. A natural number `n` and representatives `r : Fin n → Γ` are given. They are pairwise not
    `Γ`-`θ`-conjugate: `IsTwistedConjugate Γ θ (r i) (r j)` implies `i = j`.
-3. They cover every relevant class: if `γ ∈ Γ` and `f(x⁻¹ γ θ(x)) ≠ 0` for some `x ∈ G`, then
+4. They cover every relevant class: if `γ ∈ Γ` and `f(x⁻¹ γ θ(x)) ≠ 0` for some `x ∈ G`, then
    `γ` is `Γ`-`θ`-conjugate to some `r i`. Equivalently, every `Γ`-`θ`-conjugacy class in `Γ`
    whose `G`-`θ`-conjugacy class meets the set `{f ≠ 0}` is represented. Extra
    representatives whose classes miss `{f ≠ 0}` are allowed. Their orbital integrals vanish,
    so they contribute zero.
-4. For each `i`, write `C_i = twistedCentralizer θ (r i)` (the `θ`-centralizer
+5. For each `i`, write `C_i = twistedCentralizer θ (r i)` (the `θ`-centralizer
    `{x | x⁻¹ r_i θ(x) = r_i}`) and `Γ_i = Γ ∩ C_i` (as `Γ.subgroupOf C_i`). The data are:
    - a measure `μC i` on `C_i` that is right invariant, finite on compact sets and positive
      on nonempty open sets;
@@ -66,8 +76,8 @@ and `I_θ = twistOperator Γ θ hθΓ ν hθν`, the operator `φ ↦ φ ∘ θ�
    These measures are hypotheses, not constructions: the statement does not assert that they
    exist. If for some `i` no such measures exist, the hypotheses cannot all hold and the
    statement says nothing about those data.
-5. Each `Γ_i \ C_i` has finite volume: `νΓC i univ ≠ ⊤`.
-6. Each twisted orbital integral converges absolutely: the function
+6. Each `Γ_i \ C_i` has finite volume: `νΓC i univ ≠ ⊤`.
+7. Each twisted orbital integral converges absolutely: the function
    `C_i x ↦ f(x⁻¹ r_i θ(x))` on `C_i \ G` (`twistedOrbitFunction θ (r i) f`) is
    `νC i`-integrable.
 
@@ -152,22 +162,49 @@ hypotheses are replaced by explicit hypotheses here:
   finitely many classes contribute (printed p. 482: Lemma 18.2.6 for the geometric classes
   and Theorem 17.7.10 for the `G(F)`-classes within each geometric class), that their
   volumes are finite, and that their orbital integrals converge absolutely (Proposition
-  18.2.4). Here these facts are hypotheses 2–3, 5 and 6.
+  18.2.4). Here these facts are hypotheses 3–4, 6 and 7.
+- Deligne–Kazhdan–Vignéras (printed p. 44) derive from their assumption on the support of `f`
+  that `x ↦ Σ_γ |f(x⁻¹ γ x)|` has compact support modulo `Z(A) G(F)`, which allows them to
+  exchange sum and integral. Here the corresponding property for `θ`-conjugation is
+  hypothesis 2.
 - Getz–Hahn fix Haar measures on `G(A_F)` and on the centralizers and use the induced
   quotient measures. Here the measures `μG`, `ν`, `μC i`, `νC i`, `νΓC i` are supplied,
-  tied together by the `IsCompatible` hypotheses and hypothesis 4.
+  tied together by the `IsCompatible` hypotheses and hypothesis 5.
 
-The following outline of the expected proof is explanation only; the module proves nothing,
-and the outline is not part of the statement. Since `θ` preserves `μG` and `Γ`, the operator
+The following outline of a proof is explanation only; the module proves nothing, and the
+outline is not part of the statement. Since `θ` preserves `Γ` and `θ̄⁻¹` preserves `ν`, the operator
 `R(f) ∘ I_θ` has kernel `K(x, y) = Σ_{γ ∈ Γ} f(x⁻¹ γ θ(y))` (`twistedKernel Γ θ f` in
-`Langlands.TraceFormula.TwistedOrbital`). The trace should then be `∫_{Γ \ G} K(x, x) dν`,
-using the Library statement of Brislawn's Corollary 3.2 (Task 7410,
-`Langlands.Analysis.OperatorIdeals.TraceClassContinuousKernelDiagonalStatement` in module
+`Langlands.TraceFormula.TwistedOrbital`; the computation is on the page of
+`AbstractTwistedKernelDiagonalTraceStatement`). The trace is then `∫_{Γ \ G} K(x, x) dν`: this
+is the separate statement `Langlands.TraceFormula.AbstractTwistedKernelDiagonalTraceStatement`
+(module `Langlands.TraceFormula.AbstractTwistedKernelDiagonalTraceStatement`), an instance of
+Brislawn's Corollary 3.2, which the Library states as
+`Langlands.Analysis.OperatorIdeals.TraceClassContinuousKernelDiagonalStatement` (module
 `Langlands.Analysis.TraceClassKernelDiagonalStatement`; not imported here). Grouping the `γ`
 by `Γ`-`θ`-conjugacy class, the class of `r_i` is parametrized by `Γ_i \ Γ`, and the sum over
-it unfolds to `∫_{Γ_i \ G} f(x⁻¹ r_i θ(x))`. Integration in stages over `Γ_i \ C_i` and
-`C_i \ G` gives `vol(Γ_i \ C_i) · TO_{r_i}(f)`. Hypotheses 5 and 6 make the sums and
-integrals absolutely convergent, which justifies the exchanges.
+it unfolds to `∫_{Γ_i \ G} f(x⁻¹ r_i θ(x))`. Hypothesis 2 bounds `x ↦ Σ_γ |f(x⁻¹ γ θ(x))|` on
+`Γ \ G` by a constant times the indicator of a compact set, which makes the sum over `Γ` and the
+integral over `Γ \ G` absolutely convergent and justifies the exchange. Integration in stages
+over `Γ_i \ C_i` and `C_i \ G`, with the finite volumes of hypothesis 6, gives
+`vol(Γ_i \ C_i) · TO_{r_i}(f)`; the integrability of hypothesis 7 is then a consequence.
+
+The geometric half of this outline is proved in `Langlands.TraceFormula.TwistedGeometricSide`:
+`abstractSimpleTwistedTraceFormula_of_trace_eq_integral` gives the conclusion from the hypotheses
+and the identity `tr(R(f) ∘ I_θ) = ∫_{Γ \ G} K(x, x) dν`, and
+`abstractSimpleTwistedTraceFormula_of_kernelDiagonalTrace` derives this statement from
+`AbstractTwistedKernelDiagonalTraceStatement`. The analytic half is proved as well:
+`abstractTwistedKernelDiagonalTrace` (module
+`Langlands.TraceFormula.AbstractTwistedKernelDiagonalTraceProof`) proves
+`AbstractTwistedKernelDiagonalTraceStatement` from
+`Langlands.Analysis.OperatorIdeals.traceClassContinuousKernelDiagonal` (module
+`Langlands.Analysis.TraceClassKernelDiagonalProof`), and `abstractSimpleTwistedTraceFormula` is
+`abstractSimpleTwistedTraceFormula_of_kernelDiagonalTrace` applied to it.
+
+Three hypotheses of the statement are not used by this proof: `MeasurePreserving θ μG μG` (neither
+half uses it; the kernel identity uses that `θ̄⁻¹` preserves `ν`), the positivity of `μC i` on
+nonempty open sets (`∀ i, (μC i).IsOpenPosMeasure`), and hypothesis 7, the integrability of the
+twisted orbit functions, which the geometric side proves. The right invariance of `μG` is used
+only by the geometric side, to obtain compatible measures on `(Γ ∩ C_i) \ G`.
 
 ## Relation to the specialization
 
@@ -190,6 +227,6 @@ canonically to `A^θ_G C^θ_γ(F) \ C^θ_γ(A_F)` and `(A^θ_G \ C^θ_γ(A_F)) \
 the domains of `τ(C^θ_γ)` and `TO_γ(f)`.
 
 This identification of groups is explanation only. Matching the measures with Getz–Hahn's
-`τ(C^θ_γ) TO_γ(f)` and deriving hypotheses 1–6 from Getz–Hahn's assumptions are part of the
+`τ(C^θ_γ) TO_γ(f)` and deriving hypotheses 1–7 from Getz–Hahn's assumptions are part of the
 `GL_n` specialization and are not claimed here. This statement claims only what is written
 above.

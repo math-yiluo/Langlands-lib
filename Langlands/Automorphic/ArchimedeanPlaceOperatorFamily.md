@@ -1,6 +1,7 @@
 # The finite family of actual archimedean place operators
 
-This internal construction for Task 7294 indexes all real and complex
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` indexes all real and complex
 places together while retaining their genuine orthogonal or unitary
 compact groups and their full complexified real matrix Lie algebras.
 It equips the actual realization and its finite-factor multiplicity

@@ -1,7 +1,5 @@
 # Galois orbit sums of cocharacters
 
-Worker 1272.
-
 This is an internal construction for the averaging step in the proof of
 Milne, *Algebraic Groups* (2017), Theorem 25.1, printed page 544 (PDF page
 560). It uses the published character and cocharacter lattices, pairing,

@@ -1,7 +1,5 @@
 # Actual determinant normalization for the positive Jacquet comparison
 
-Author: Worker 593.
-
 This module supplies the scalar part of the positive two-block
 Jacquet-to-derivative comparison. It constructs composite quotient maps into
 the existing derivative objects and proves their surjectivity, naturality
@@ -14,8 +12,9 @@ The namespace is `Langlands.Derivative.JacquetNormalization`. The principal
 construction is `generalLinearDerivativePositiveMk.{uF,uV}`; the final action
 identity is
 `generalLinearDerivativePositive_action_mk_eq_inverseHalf.{uF,uV}`. These
-results are a focused helper for task
-`a4119dcc-97b6-47e4-b150-d5e97a8f226b`, not a proof of
+results are a focused helper for the comparison proof
+`Langlands.Derivative.partialDerivativeJacquetComparison` (module
+`PartialDerivativeJacquetComparisonProof`), not a proof of
 `Langlands.Derivative.PartialDerivativeJacquetComparisonStatement`.
 
 ## Parameters and actual carriers
@@ -253,7 +252,7 @@ against the retained PDFs. No source-specific errata file was found in the
 supplied project literature, current public notes or central-library file
 listing; this is a bounded check.
 
-## Scope and remaining comparisons
+## Scope and the other comparisons
 
 The representation formulas use precisely the published explicit
 determinant-normalized minus functors and the published algebraic
@@ -264,15 +263,16 @@ identification is assumed in any proof here.
 It also does not prove an iterated character-localization equivalence,
 identify the combined localizing subgroups or their characters, compare
 relation subspaces, construct an inverse quotient comparison, or construct
-the natural Jacquet-to-derivative isomorphism. Those are still required by
-the parent exact proof task. In particular the separately owned tower
-construction `8656acbe-5ee9-4186-a79a-68d661771ada` is not imported or
+the natural Jacquet-to-derivative isomorphism. Those are carried out in
+`PartialDerivativeJacquetLHS`, `PartialDerivativeJacquetRHSComparison` and
+`PartialDerivativeJacquetComparisonProof`. In particular the separate tower
+construction `Jacquet.LocalizationTower` is not imported or
 duplicated.
 
 All `n,j ≥ 0` are allowed in the quotient and action helpers. The modulus
-identity requires positive `k,m`, as the current `BlockShape` does.
-These facts construct neither the separately owned `k=0` top-localization
-comparison nor the `m=0` identity/partial-zero adapter. No arbitrary
+identity requires positive `k,m`, as `BlockShape` does.
+These facts construct neither the separate `k=0` top-localization
+comparison (`TopLocalization.topLocalizationIso`) nor the `m=0` identity/partial-zero adapter. No arbitrary
 representation carrier of `GL_0` is replaced by a one-dimensional carrier.
 There is no tensor comparison, product or Leibniz filtration, plus functor,
 adjunction, duality, pairing, segment theorem or classification assertion.
@@ -281,7 +281,7 @@ adjunction, duality, pairing, segment theorem or classification assertion.
 
 The only direct project imports are
 `Langlands.Representation.Derivative.Iteration` and
-`Langlands.Representation.Shahidi.TwoBlocks`, whose complete current pairs
+`Langlands.Representation.Shahidi.TwoBlocks`, whose complete pairs
 were read. The actual transitive project closure contains 56 modules.
 All 112 Lean/Markdown files were compared byte for byte with Library
 `a9fae2951e0ea3e71a3319caba67d2b93350b350`; every pair matches.
@@ -358,8 +358,8 @@ construction is used as a definition, not as a comparison theorem.
 closure, not a duality result used here. No Whittaker uniqueness statement
 is used as a proved input.
 
-This proof route and its closure preserve the parent task's full positive
-and socle exclusions: special-head product irreducibility,
+This proof route and its closure preserve the full positive and socle
+exclusions of the comparison proof: special-head product irreducibility,
 `GenericSegmentProductUniqueness`, multisegment exhaustion, ordered
 strong-head existence, quotient coverage, ordered conversion, tempered
 uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable,
@@ -368,7 +368,8 @@ special-segment essential square-integrability, and every excluded
 unlinked/linked socle-product, segment-socle product, juxtaposed
 structure/quotient-Hom, adjacent or two-segment socle commutation, linked
 socle gluing and ordered multisegment socle-existence conclusion are
-absent. Their proof successors and downstream consequences supply no input.
+absent. The modules that prove them and their downstream consequences supply
+no input.
 
 The stronger shared tower restrictions are preserved as well. No input uses
 `TwoSupercuspidalNonadjacentProductIrreducible`,
@@ -381,21 +382,15 @@ classification or exhaustion result. No unproved general derivative
 comparison is assumed.
 
 In particular this helper is independent of
-`Langlands.Classification.SupercuspidalDerivatives` and proof task
-`2e5183b1-01e9-44fb-b26c-f4521a25c7c7`;
-`Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement` and task
-`62de5903-b616-4b5c-88eb-a066b77c5467`;
-`Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement` and parent
-task `5ab445dc-d2b4-4072-80d1-6370870a4a26`; and
-`LeviCuspidalCoinvariantFinitenessStatement` and proof task
-`3ff5c8fb-397c-4345-bcb3-5d98a0993d18`, including their successors and
-downstream consumers. No mirabolic finite-length route from
-`5428fe2c-013c-482d-aa6e-7df43e7191aa` is used. The closure contains none
+`Langlands.Classification.SupercuspidalDerivatives` and its proof;
+`Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`;
+`Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`; and
+`LeviCuspidalCoinvariantFinitenessStatement` and its proof, including their
+proofs and downstream consumers. No mirabolic finite-length route is
+used. The closure contains none
 of these conclusions or any segment or classification module.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+Environment: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. Development compilation and
 declaration inspection found no errors or warnings, independent `uF,uV`,
-and only `propext`, `Classical.choice` and `Quot.sound`. This development
-check is not independent mathematical acceptance or final exact-target
-validation.
+and only `propext`, `Classical.choice` and `Quot.sound`.

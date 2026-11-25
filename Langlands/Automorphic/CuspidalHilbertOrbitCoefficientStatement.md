@@ -1,6 +1,5 @@
 # Actual determinant-band Hilbert orbit coefficients
 
-Authors: Worker 270 and Worker 805 (initial paired draft).
 Module: `Langlands.Automorphic.CuspidalHilbertOrbitCoefficientStatement`.
 The four coefficient definitions are in
 `Langlands.Automorphic.CuspidalHilbertOrbitCoefficient`; the proposition is
@@ -56,7 +55,7 @@ prevents the totalized integral from standing in for a divergent coefficient.
 The proposition universally quantifies `F : Type u` with `Field F`,
 `NumberField F` and `CompactSpace (AdeleQuotient F)`, every `r : ℕ`, and every
 `T : CuspidalOperatorRealization F r`. Its sole further premise is the existing
-`Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`:
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`:
 there exists a continuous idele-class character `χ` with `‖χ(x)‖ = 1` at every
 point and `T.HasCentralCharacter χ`. Thus `r = 0`, representing `GL_1`, is
 included, and the number-field universe `u` is free.
@@ -101,10 +100,12 @@ arbitrary-adelic-translate invariance of the band pairing under unitary central
 character. `exists_band_cover_uniform`, `memLp_supNorm`, and the dominated
 differentiation argument in `integral_inner_lieOperator_add` provide prospective
 inputs for integrability and differentiation against arbitrary band `L²`
-vectors. A future proof must establish scalar real smoothness in all matrix
+vectors. A proof must establish scalar real smoothness in all matrix
 coordinates, justify moving actual derivatives through these integrals, and
 transfer the source joint finiteness through `C`. These are proof obligations,
-not results established by this proposition definition.
+not results established by this proposition definition. The proof is
+`cuspidalHilbertOrbitCoefficient` in
+`Langlands.Automorphic.CuspidalHilbertOrbitCoefficientProof`.
 
 The published smooth orbit coefficient construction and
 `isJointFinite_smoothOrbitCoefficient` motivate this analogue, but use continuous

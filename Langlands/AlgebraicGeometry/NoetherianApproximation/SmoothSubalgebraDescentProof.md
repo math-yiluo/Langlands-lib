@@ -1,13 +1,11 @@
 # Descent of smoothness to finitely generated subalgebras (proof)
 
-Proof for task `8836e68b-90ba-4f01-a129-026ad9adfa9d`.
-
 ## Statement proved
 
 `Langlands.AlgebraicGeometry.NoetherianApproximation.smoothSubalgebraDescent :
 SmoothSubalgebraDescentStatement.{u}`, for an arbitrary universe `u`. The statement is the published
-proposition of module `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements`
-(statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`): for commutative rings `A₀ → A` in
+proposition of module `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements`:
+for commutative rings `A₀ → A` in
 `Type u`, a quasi-compact morphism `f : X ⟶ Spec A₀` that is locally of finite presentation and whose
 base change `pullback.snd f (Spec.map (algebraMap A₀ A))` is smooth, and a finite set `s ⊆ A`, there is
 a finitely generated `A₀`-subalgebra `T ⊇ s` of `A` such that the base change
@@ -38,7 +36,7 @@ source.
 
 - `Langlands.AlgebraicGeometry.NoetherianApproximation.SubalgebraDescentStatements` (Library).
 - `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Smooth_exists_fg_subalgebra_of_smooth_pullback_snd`
-  and its import closure: 7 further ported FLT modules of the same contribution and
-  `Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit` (Library, ported by task
-  `80ab0ad1-6602-4bc6-8c52-3f88f45f4c83`). Apache License 2.0, Copyright 2026 Anthropic, PBC, see
+  and its import closure: 7 further FLT modules ported with this proof and
+  `Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit` (Library, ported with
+  `SchemeSubalgebraDescentProof`). Apache License 2.0, Copyright 2026 Anthropic, PBC, see
   `licenses/Anthropic-FLT/`.

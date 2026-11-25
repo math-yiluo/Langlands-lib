@@ -1,6 +1,6 @@
 # Unconditional geometric reduction of division-case CM representability
 
-Worker 3269. This module is an internal derivation from Library results. It
+This module is an internal derivation from Library results. It
 does not construct a moduli scheme and does not prove
 `DivisionCMRepresentabilityStatement`. It removes the two relative dual
 hypotheses from the published conditional assembly

@@ -1,7 +1,5 @@
 # Mirabolic representations with vanishing derivatives
 
-Authors: Worker 1024.
-
 This module proves the detection consequence of Bernstein–Zelevinsky,
 *Induced representations of reductive p-adic groups I* (BZ77), §3.5: a smooth
 representation of the mirabolic group all of whose derivatives vanish is zero.
@@ -47,8 +45,7 @@ for every unitary additive character `ψ`, every nontrivial smooth representatio
 
 `derivativeDetection` is deliberately not named
 `Langlands.Derivative.mirabolicDerivativeDetection`. That exact name belongs to
-the module `MirabolicDerivativeDetectionProof` required by the exact proof task
-`ed056880-a4dc-4ebf-ad26-9878e508cf6c`, which can state it as a one-line
+the module `MirabolicDerivativeDetectionProof`, which states it as a one-line
 wrapper of this theorem. The other declarations are listed under "Auxiliary
 declarations".
 
@@ -124,9 +121,8 @@ is byte-identical to the Library at `6789e5106aba61566887427750f5444a494d5879`.
 Mathematical proof dependencies: the definitions of the minus functors,
 derivatives, rank transports and level (`MirabolicMinus`, `Iteration`,
 `Homogeneity`); the coinvariant quotient (`Jacquet.Localization`); and the
-published, accepted theorem `subsingleton_of_psiMinus_phiMinus` (artifact
-`c6026915-8731-45a8-bd21-ef1ac39654b8`, task `2e5183b1-01e9-44fb-b26c-f4521a25c7c7`).
-That theorem's own route is direct: vanishing transports the `θ_ψ`-relations to
+published theorem `subsingleton_of_psiMinus_phiMinus` (module
+`MinusVanishing`). That theorem's own route is direct: vanishing transports the `θ_ψ`-relations to
 every coordinate character by Levi conjugation, and character averaging
 (`Jacquet.CharacterAveraging`), radical lattice boxes (`MirabolicLatticeBox`)
 and finite Fourier inversion kill each vector. No minus-functor exactness (the
@@ -134,14 +130,13 @@ published `MinusExactnessStatement` is neither imported nor used), no plus
 functor, no `Φ⁺Φ⁻`/`Ψ⁺Ψ⁻` exact sequence, no Haar modulus comparison, and no
 consumer result is used.
 
-The Independence exclusions of task `a925b519-9bb9-4927-873e-ad322d41328e` hold.
+The independence exclusions for the proof of BZ77 Proposition 3.8 hold.
 Neither this module nor its import closure uses: the nonadjacent product
-consumer `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`; `TwoSupercuspidalProductStructure`
-or parent task `ab61f565-1427-4746-ba77-46097563e962`; any of the excluded
-special-head, segment-socle, segment-classification, square-integrability,
-exhaustion, existence, coverage, conversion, tempered-uniqueness,
-product-irreducibility, socle-commutation or segment Jacquet-formula tasks,
-statements or conclusions listed there; Ze80's segment derivative formulas
+consumer `TwoSupercuspidalNonadjacentProductIrreducible`;
+`TwoSupercuspidalProductStructure`; any of the excluded special-head, segment-socle,
+segment-classification, square-integrability, exhaustion, existence,
+coverage, conversion, tempered-uniqueness, product-irreducibility,
+socle-commutation or segment Jacquet-formula statements or conclusions; Ze80's segment derivative formulas
 (§3.5, §9.6), Ze80 4.2, 9.3 or 9.7; or any classification or exhaustion
 theorem. A text scan of the 73 imported Lean files finds none of the excluded
 declaration names. The only hits are in two imported Markdown files

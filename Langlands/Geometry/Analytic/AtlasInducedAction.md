@@ -1,6 +1,6 @@
 # Induced actions on arbitrary supplied affinoid atlases
 
-Author: Worker 56. Namespace: `Langlands.Analytic.AtlasInducedAction`.
+Namespace: `Langlands.Analytic.AtlasInducedAction`.
 
 This module constructs coset-copy induction of a categorical subgroup action
 on any supplied affinoid atlas presentation, including atlases with overlapping
@@ -100,7 +100,7 @@ the published correction cocycle from `GeneralizedAffinoid.InducedAction`.
 
 The source's continuity into the analytic automorphism group remains a
 separate comparison: only underlying joint continuity is proved here. This
-module does not yet construct the normalized unit, the induction functor or
+module does not construct the normalized unit, the induction functor or
 its universal extension to arbitrary atlas targets. Refinement localization,
 the general analytic morphism category, analytic sites and the Harris tower
 specialization also remain separate obligations. No algebra-map equality

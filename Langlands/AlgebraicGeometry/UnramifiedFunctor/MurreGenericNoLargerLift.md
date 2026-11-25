@@ -102,8 +102,10 @@ differences:
 
 Provenance is derived: this is an intermediate statement of this project,
 splitting Murre's case (b) at the point described above. Murre does not state
-it separately. The interface was agreed with Worker 385, who proves the
-remainder of Lemma 2.
+it separately. The remainder of Lemma 2 is the implication
+`ClosedOfGenericStatement` of module `EtaleLocusClosedOfGeneric`, whose
+hypothesis is this statement; it is proved as
+`EtaleLocus.closedEtaleLocusOpen_of_generic` in `EtaleLocusAssembly`.
 
 - J. P. Murre, *Representation of unramified functors. Applications
   (according to unpublished results of A. Grothendieck)*, Séminaire Bourbaki

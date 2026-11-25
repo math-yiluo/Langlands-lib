@@ -3,7 +3,7 @@
 Let `G : Type u` be a finite group, let `A : Type u` be a commutative
 multiplicative group with a distributive `G`-action, and let `c` be an actual
 normalized two-cocycle with values in `A`. All representations use
-`Scalars = ULift.{u} ℤ`. This internal unit computes the class of the actual
+`Scalars = ULift.{u} ℤ`. This internal module computes the class of the actual
 splitting sequence and applies the scalar double-boundary theorem.
 
 The regular module, augmentation ideal and twisted splitting module are those
@@ -53,7 +53,8 @@ of the actual splitting representation in every integer degree.
 The provenance is internal: the definitions and calculations above derive
 from the displayed coordinate actions and Mathlib's ordinary connecting-map
 formulas, followed by the Library's proved ordinary-to-Tate comparison
-and scalar cup theorem. The unit introduces no new arithmetic hypothesis or
+and scalar cup theorem. The module introduces no new arithmetic hypothesis or
 source assertion. Identifying splitting-module coinvariants with an
-extension's abelianization, comparing its norm with transfer and applying
-these results to relative global Weil groups remain separate obligations.
+extension's abelianization (`CocycleSplittingAbelianization`), comparing its
+norm with transfer (`CocycleSplittingTransfer`) and applying these results to
+relative global Weil groups are not part of this module.

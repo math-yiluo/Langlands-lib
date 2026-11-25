@@ -1,6 +1,6 @@
 # Normalized covariant coordinates from top weight lines
 
-Worker 1161. This module is internal and derived. It turns the published
+This module is internal and derived. It turns the published
 extremal-line construction of `Reductive.ExtremalMatrixCoefficient` into normalized
 covariant coordinates for the parabolic subgroups attached to an arbitrary
 cocharacter. It also proves the pairing, conjugation and centralizer lemmas used to

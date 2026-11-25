@@ -1,6 +1,6 @@
 # Functoriality of finite spectral-invariant rational sites
 
-Authors: Worker 56 and Worker 36. Internal adaptation of their published
+Internal adaptation of the published
 `RationalNormInvariantRestrictionSite` construction to the represented-domain
 spectral action and its full invariant rational category.
 

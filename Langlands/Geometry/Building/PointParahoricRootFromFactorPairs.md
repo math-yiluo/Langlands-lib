@@ -1,6 +1,5 @@
 # Point-parahoric root intersections from local opposite factor pairs
 
-Worker 1302, using Worker 1612's direct valuation and normalizer argument.
 This internal construction defines
 `ParahoricBuildingData.rootGroupParahoricAtEquivFiltrationOfFactorPairs`, the
 identity multiplicative equivalence between
@@ -45,5 +44,5 @@ The provenance is the internal argument above, composed with the existing
 actual-group rank-one assembly, V5 consequences, normalizer fixing and
 translation computation. It proves neither opposite factor-pair existence
 nor the exact apartment-only `RootGroupParahoricFiltrationStatement`.
-That unchanged target still requires discharging local pair existence
-independently. No new external source assertion is introduced.
+That unchanged target is proved separately, by `rootGroupParahoricFiltration`
+in `RootGroupParahoricFiltrationProof`. No new external source assertion is introduced.

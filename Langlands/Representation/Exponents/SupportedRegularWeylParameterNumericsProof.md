@@ -1,8 +1,7 @@
-# Proof of the supported regular Weyl numerical unit
+# Proof of the supported regular Weyl numerical statement
 
-Author: Worker 165. Worker 960 adapted the assembly to the published
-statement, whose second clause returns the antitone conclusion as an
-implication from `StrictAnti t`.
+The assembly follows the published statement, whose second clause returns
+the antitone conclusion as an implication from `StrictAnti t`.
 
 `Langlands.Exponents.supportedRegularWeylParameterNumerics` proves exactly
 `Langlands.Exponents.SupportedRegularWeylParameterNumericsStatement`.

@@ -5,11 +5,10 @@ Namespace `Langlands.Algebra.NonUnitalModuleDualCompletion`. Universe parameters
 The module contains one **statement**, the `Prop`-valued definition
 `DualCompletionStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published construction
+The published construction
 [NonUnitalModuleDualCompletion](NonUnitalModuleDualCompletion.md) writes down both maps
 between `M^*` and the completion of `M̃` and proves their intrinsic laws, and says: "Nor is
-it proved that the two maps are inverse to each other." This unit states that assertion,
+it proved that the two maps are inverse to each other." This module states that assertion,
 which is the conclusion of I.4.3.
 
 ## Source and provenance
@@ -18,7 +17,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read I.4.3, printed p.25 / PDF p.31:
+The passage read is I.4.3, printed p.25 / PDF p.31:
 
 > Soit `A` une `ℂ`-algèbre à idempotents et soit `M` un `A`-module non dégénéré. On a défini
 > `M̃` comme la partie non dégénérée de `M^*`. Il est facile de voir directement que
@@ -78,9 +77,10 @@ Together with the published module-map laws, this is the isomorphism of right `A
    `f` fixing `e · m` with `e ≤ f`. Its value is `x(f)(e · m)`, which equals `x(e)(m)` by
    coherence of `x`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation.
+The proof is the theorem `dualCompletionStatement` in
+`NonUnitalModuleDualCompletionProof`.
 
 ## Imports
 

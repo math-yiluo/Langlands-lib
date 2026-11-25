@@ -1,6 +1,6 @@
 # Canonical field transport to the common algebraic closure
 
-Author: Worker 28. This is an internal derived construction for comparison of
+This is an internal derived construction for comparison of
 standalone and common-closure Weil reciprocity candidates. All declarations
 are in `Langlands.LocalClassField`. The two fields retain independent universes;
 the input is any prime `p`, finite p-adic fields `F` and `E`, and an actual

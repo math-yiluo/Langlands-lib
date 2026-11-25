@@ -1,13 +1,5 @@
 # Ordered Jacquet factors of weak segment quotients
 
-Authors: Worker 485 (the all-shape assembly: coordinate, tensor and transport
-lemmas and the induction on the number of blocks) and Worker 1039 (the
-unconditional final theorem, integration of the published prerequisites and
-the dependency audit). Imported publications keep their own attribution,
-including Workers 243 and 485 for the upper tensor construction, Workers 485
-and 931 for the conditional weak-head proof, Workers 485 and 949 for the
-factor statement, and Workers 485, 429 and 1027 for the flattened comparison.
-
 ## Declaration
 
 ```lean
@@ -153,18 +145,18 @@ coarse head/tail refinement. Thus every ordered block shape is covered.
 
 ## Published inputs
 
-All inputs are proved, independently accepted and published Library results,
-used by Lean name. The table gives each accepted candidate.
+All inputs are proved, published Library results,
+used by Lean name.
 
-| Lean name | Module | Candidate |
-| --- | --- | --- |
-| `segmentHeadJacquetFormula` | `Classification.SegmentHeadJacquetProof` | f35f4882 (task 55ad1e10) |
-| `segmentSpecialConstituentExistence` | `Classification.SegmentSpecialConstituentExistenceProof` | 2c4a3039 (task 67279e36) |
-| `segmentWeakQuotientHeadUpgrade` | `Classification.SegmentWeakQuotientHeadProof` | 3c206426 (task 396dee6d) |
-| `segmentQuotientJacquetFactors_singleBlock` | `Classification.SegmentQuotientJacquetSingleBlock` | 34ae0467 |
-| `Parabolic.normalizedRefinementJacquetTransitivity` | `Parabolic.RefinementJacquetTransitivityProof` | b11f22a1 (task ec751677) |
-| `Parabolic.flattenedJacquetComparison` | `Parabolic.FlattenedJacquetComparisonProof` | f8e6393c (task 35f93465) |
-| `RefinedJacquetTensor.jacquetEquiv` | `Parabolic.RefinedJacquetTensor` | 7b878be3 |
+| Lean name | Module |
+| --- | --- |
+| `segmentHeadJacquetFormula` | `Classification.SegmentHeadJacquetProof` |
+| `segmentSpecialConstituentExistence` | `Classification.SegmentSpecialConstituentExistenceProof` |
+| `segmentWeakQuotientHeadUpgrade` | `Classification.SegmentWeakQuotientHeadProof` |
+| `segmentQuotientJacquetFactors_singleBlock` | `Classification.SegmentQuotientJacquetSingleBlock` |
+| `Parabolic.normalizedRefinementJacquetTransitivity` | `Parabolic.RefinementJacquetTransitivityProof` |
+| `Parabolic.flattenedJacquetComparison` | `Parabolic.FlattenedJacquetComparisonProof` |
+| `RefinedJacquetTensor.jacquetEquiv` | `Parabolic.RefinedJacquetTensor` |
 
 All module names are under `Langlands.Representation`. The remaining imports
 supply definitions and elementary constructions: block shapes and head/tail
@@ -198,19 +190,19 @@ the Library.
 ### Independence exclusions
 
 The exclusions are forward special square-integrability
-(`SegmentSpecialEssentialSquareIntegrability`, 5eece9e8), ordered conversion
-(8252833d), square-integrable exhaustion (cd8ab97c), regular exhaustion
-(bf433f0a), `SquareIntegrableLanglandsClassification` (1cb45da2), the
+(`SegmentSpecialEssentialSquareIntegrability`), ordered conversion,
+square-integrable exhaustion, regular exhaustion,
+`SquareIntegrableLanglandsClassification`, the
 strong-head analytic classification
-`SegmentEssentialSquareIntegrableClassification` (aca8805b), tempered block
-uniqueness (52e97845), multisegment exhaustion (3bfb61fa), ordered strong-head
-existence (ebea9a8a), quotient coverage (20e4e1c6),
-`SegmentHeadProductIrreducibility` (8364e73f),
-`GenericSegmentProductUniqueness` (30341ae4) and
-`MultisegmentSocleExhaustion` (f3a69bc8). Their conclusions, proof successors
+`SegmentEssentialSquareIntegrableClassification`, tempered block
+uniqueness, multisegment exhaustion, ordered strong-head
+existence, quotient coverage,
+`SegmentHeadProductIrreducibility`,
+`GenericSegmentProductUniqueness` and
+`MultisegmentSocleExhaustion`. Their conclusions, proofs
 and downstream consequences are also excluded.
 
-The closure Lean sources were searched for these names, their task IDs, and
+The closure Lean sources were searched for these names and
 the obvious name variants (exhaustion, coverage, strong-head existence,
 tempered uniqueness, segment derivatives). There is exactly one Lean match:
 `Classification.RegularLanglandsStatement`. That module contains only the
@@ -264,13 +256,11 @@ conjunct, `twoSupercuspidalNonadjacentProductIrreducible`, proves BZ77
 Theorem 4.2 from general Bernstein–Zelevinsky derivative theory. All 158
 closure modules named `Derivative`, `Mirabolic`, `Whittaker` or
 `GelfandKazhdan` lie in the closure of
-`TwoSupercuspidalNonadjacentIrreducibilityProof`. All of that theory is proved and published in the Library. A trusted
-operator decision for the 1.11 task (request
-`a8463ee15d57588c8de10306748b2538`) allows such a fully proved route. Its
-exclusion list already included the head-formula task 55ad1e10 and this
-task's parent 92aea10f. The Markdown of `TwoSupercuspidalProductStructureProof`,
+`TwoSupercuspidalNonadjacentIrreducibilityProof`. All of that theory is proved and published in the Library.
+The proof of 1.11 does not depend on the head formula or on the
+exponent-norm formula. The Markdown of `TwoSupercuspidalProductStructureProof`,
 `SegmentFullJacquetProof` and `SegmentHeadJacquetProof` records the audit of
-its conditions.
+this route.
 
 The closure contains no segment derivative statement:
 `SegmentSocleDerivatives`, `HighestDerivativeSupportShift` and segment-named
@@ -279,5 +269,3 @@ derivative modules are all absent. So the derivative formula of Zelevinsky
 neither the analytic result of section 9.3 nor the conjecture of section 9.17,
 is stated or used. Only the algebraic Jacquet calculations above supply the
 factorization.
-
-This audit does not replace independent semantic review.

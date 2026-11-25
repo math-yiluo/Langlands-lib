@@ -108,7 +108,7 @@ results to this single actual complete noetherian local source.
 For a field base this covers every finite-type residue extension, including
 inseparable ones.
 
-## Provenance and retained obligations
+## Provenance and scope
 
 This is an internal composition of already constructed algebraic universal
 properties, the actual completion comparison, and the published noetherian
@@ -116,4 +116,4 @@ completion theorem. No external geometric assertion is used.
 The completed ring is an ambient algebra source for augmented tests. This
 module constructs no Picard object, versal deformation or hull, formal
 Picard family, algebraization, or smooth scheme atlas. Those geometric
-existence obligations in the host task remain to be proved.
+existence results are not part of this module.

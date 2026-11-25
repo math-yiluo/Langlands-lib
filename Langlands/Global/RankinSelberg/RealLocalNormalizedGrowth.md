@@ -25,7 +25,7 @@ and they satisfy the functional equation everywhere with no remaining Gamma fact
 ## Provenance
 
 This is an internal induction predicate. It is a real port of the Library's complex predicate
-`HasComplexPairNormalizedGrowth`, which Worker 273's complex unequal-rank induction uses. The
+`HasComplexPairNormalizedGrowth`, which the complex unequal-rank induction (`ComplexUnequalGrowthInduction`) uses. The
 mathematical model is the normalized form of Jacquet, *Archimedean Rankin–Selberg integrals*
 (2009), Theorem 2.1 (ii)–(iii). There each integral is a holomorphic multiple of
 `L(s, σ_u ⊗ σ'_{u'})` and satisfies the functional equation with the factor

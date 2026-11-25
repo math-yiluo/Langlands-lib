@@ -1,12 +1,13 @@
 # Structural statements for the Weil–Deligne quotient correction
 
-Worker 46 authors this theorem-statement family. Its seven components and
+This is a theorem-statement family. Its seven components and
 `Langlands.LocalFactor.WeilDeligneCorrectionStatement` are definitions
-returning `Prop`, not proofs. It consumes Worker 20's actual
-`Langlands.LocalFactor.WeilDeligne` quotient construction and Worker 17's
-parameter operations, together with Worker 1's explicit
-Frobenius-semisimplification relation. Those authors retain construction
-authorship. No competing quotient or chosen local-constant system is defined.
+returning `Prop`, not proofs. It consumes the actual
+`Langlands.LocalFactor.WeilDeligne` quotient construction and the parameter
+operations of `Langlands.WeilDeligne.SumsTensor` and
+`Langlands.WeilDeligne.SpecialBlocks`, together with the explicit
+Frobenius-semisimplification relation of `Langlands.WeilDeligne.FrobeniusStatements`.
+No competing quotient or chosen local-constant system is defined.
 
 ## Actual objects and conventions
 
@@ -15,7 +16,7 @@ Phi, put J=(ker N)^I and Q=V^I/J. The imported construction supplies
 both subspaces, the actual quotient, induced group actions and quotient
 maps. It proves the dimension formula, pair-isomorphism and inertia-coset
 invariance, descent to actual classes, nonvanishing, and the N=0
-normalization. Those construction results are reused rather than submitted
+normalization. Those construction results are reused rather than stated
 again as new theorem statements.
 
 The constant correction is det(-r(Phi)|Q); the polynomial correction is
@@ -148,12 +149,11 @@ Artin conductor, self-dual measure, reciprocity, or local specialization.
 
 ## Published imports and validation
 
-The imported constructions are independently published in Library
-`ff093e1033dbbc93548c106d534ab35611d2c54e`. The workspace copies of their
-Lean/Markdown pairs were checked byte-for-byte against that Library.
+The imported constructions are published in Library
+`ff093e1033dbbc93548c106d534ab35611d2c54e`. The copies of their
+Lean/Markdown pairs used here were checked byte-for-byte against that Library.
 The quotient construction uses the canonical `Euler.Definitions` import;
-its mathematical body agrees with the owner draft used during development.
-Only this authored statement pair is submitted.
+its mathematical body agrees with the version used during development.
 
 | Lean module | Published source SHA-256 |
 | --- | --- |
@@ -162,9 +162,8 @@ Only this authored statement pair is submitted.
 | `Langlands.WeilDeligne.SumsTensor` | `b022cece208c2429280b3485628442f05da9e0097cb1fb558448a36bc6e0c06d` |
 | `Langlands.WeilDeligne.FrobeniusStatements` | `1fb0329d6d33b89fec0770e8e97058265c82526e671ccf19b01c8218ee3ae5aa` |
 
-Normal-workspace check `c809ff34-8700-4546-bd91-1a746dc79b3a` on 2026-10-20
-compiled this module together with the rank-one and WD Euler statement
-modules in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+A check on 2026-10-20 compiled this module together with the rank-one and
+WD Euler statement modules.
 The build and exact-target inspection completed with zero errors and warnings.
 The definition returns `Prop`, retains four independent universes
 `uK`, `uG`, `uV`, `uW`, and uses only `propext`, `Classical.choice`,
@@ -173,7 +172,6 @@ and `Quot.sound`. The unchanged whole-target fingerprint is
 the source hash is
 `de7328bd719b3863bb595bf74ae959fbb870c3068d507bbe0be4761a87d296ad`.
 
-This check establishes well-formedness, not mathematical acceptance.
-Independent semantic review and publication of this statement pair remain
-separate; its theorem proofs and the remaining arithmetic families are
-separate responsibilities.
+This check establishes well-formedness, not mathematical verification.
+Its theorem proofs and the remaining arithmetic families are not part of
+this module.

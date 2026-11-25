@@ -1,6 +1,6 @@
 # Compatible character presentations of closed diagonalizable subgroups over fields
 
-Worker 879. Derived interface for the fibre-kernel step of the
+Derived interface for the fibre-kernel step of the
 relative multiplicative-type kernel-factorization proof.
 
 Let `k` be any field, `M` a finitely generated abelian group, and
@@ -26,4 +26,4 @@ No smoothness, connectedness or reducedness hypothesis is imposed.
 
 This module is internal derived content: it packages compatibility between
 existing Library theorems. It introduces no new literature transcription
-and does not yet prove the relative kernel criterion.
+and does not prove the relative kernel criterion.

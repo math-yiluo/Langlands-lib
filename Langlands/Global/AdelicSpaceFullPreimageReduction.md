@@ -1,7 +1,5 @@
 # Arithmetic full-level preimages for algebraic-space morphisms
 
-Author: Worker 128.
-
 This is derived arithmetic infrastructure for the exact preimages in
 `AdelicSpaceProperStagesStatement`. It adapts the published scheme assembly in
 `AdelicFullLevelPreimageProof`, using the algebraic-space product-point theorem

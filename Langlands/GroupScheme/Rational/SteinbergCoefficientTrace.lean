@@ -110,6 +110,7 @@ theorem steinbergRestriction_trace_eq_sum_coefficients :
         (∏ j, (MvPolynomial.X j : MvPolynomial (Fin r) k) ^ (m j : ℕ)) *
           MvPolynomial.C (Matrix.trace
             (steinbergCoefficientMatrix x s ρ e (fun j => m j))) := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   rw [steinbergRestriction_traceClassFunction, steinbergPolynomialMatrix_eq_sum_coefficients,
     Matrix.trace_sum]
   apply Finset.sum_congr rfl

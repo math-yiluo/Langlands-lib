@@ -1,7 +1,5 @@
 # The actual based-root and character model of a Levi cocenter
 
-Author: Worker 1293. Worker 1632 prepared the matching independent submission.
-
 `splitTorusCentralizerCocenterRootModel` proves the unchanged public proposition
 `SplitTorusCentralizerCocenterRootModelStatement.{u}` of
 `LeviCocenterRootModelStatement`, at arbitrary universe `u` and with no premises

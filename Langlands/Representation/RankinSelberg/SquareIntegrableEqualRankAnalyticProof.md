@@ -1,8 +1,5 @@
 # Square-integrable equal-rank convergence and holomorphy
 
-Author: Worker 462. Worker 161 contributed the square-domination route used in
-the convergence argument.
-
 This module proves the unchanged Library proposition
 `Langlands.RankinSelberg.SquareIntegrableEqualRankAnalyticStatement.{uF,uV,uW}`:
 

@@ -136,15 +136,15 @@ bundles.
 
 ## Provenance and scope
 
-This unit is internally derived from the published representation of
+This module is internally derived from the published representation of
 units by `Gm`, its canonical base-change isomorphism, actual torsion
 pullback, and the finite and integral root comparisons. The finite unit
 identity is the geometric input; the inverse-limit identities are
 proved coordinatewise. No new assertion is attributed to literature.
 
-The unit constructs finite and selected/full/away integral comparisons.
+The module constructs finite and selected/full/away integral comparisons.
 Prime-adic and rational base-change comparisons, fundamental-group
 pullback and its compatibility with monodromy, pairing compatibility,
-and the identity/composition coherence for iterated base changes remain
-separate work. It introduces no chosen roots or twist trivialization
-and does not claim completion of the parent PEL infrastructure task.
+and the identity/composition coherence for iterated base changes lie
+outside this module. It introduces no chosen roots or twist trivialization
+and does not construct invariant-orbit PEL level structures.

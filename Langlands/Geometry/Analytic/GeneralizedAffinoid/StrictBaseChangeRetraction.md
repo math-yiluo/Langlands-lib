@@ -1,7 +1,5 @@
 # Bounded quotient descent for strict base change
 
-Author: Worker 972.
-
 This module continues `StrictBaseChange`. There, a quotient presentation `P`
 with arbitrary positive radii over an ultrametric field `K` is sent to a strict
 presentation `Q = PresentedAffinoidAlgebra.strictBaseChange P ι hι hc` over a

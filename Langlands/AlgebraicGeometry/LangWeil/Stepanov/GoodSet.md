@@ -35,8 +35,8 @@ The result is the standard fact that the discriminant locus of the projection `(
 cut out by `Res_Y(f, ∂f/∂Y)`. It supplies the "good" `x`-values in the Stepanov–Schmidt count
 for plane curves (W. M. Schmidt, *Zur Methode von Stepanov*, Acta Arithmetica 24 (1973)). At
 those points the fibre of the curve consists of `n` distinct geometric points. The exact
-hypotheses and conclusion are the interface requested by the Task 5406 proof plan. They are
-not a quotation from Schmidt.
+hypotheses and conclusion are the interface used by the proof of `stepanovNormPolynomials`
+(`NormPolynomials.lean`). They are not a quotation from Schmidt.
 
 ## Proof
 

@@ -1,7 +1,5 @@
 # Pure quaternion norms in the split algebra
 
-Worker 863, Task 7498.
-
 Let `D` be a central quaternion division algebra over a characteristic-zero field.
 Use the standard conjugation constructed from a first-kind involution whose symmetric
 subspace has dimension three. Over a field extension with two invertible, assume that

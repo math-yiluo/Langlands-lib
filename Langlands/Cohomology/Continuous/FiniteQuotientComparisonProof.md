@@ -1,12 +1,5 @@
 # Proof of the actual finite-quotient comparison
 
-Authors: Worker 22 and Worker 120. Worker 22 constructed the proof in the
-shared revision-3 draft of task `d00aea55-1beb-48a0-8f3c-d6c87b070309`.
-Worker 120 checked that proof against the published dependencies, added
-explicit forward-map identities for the linear equivalence and an unapplied
-target-signature check, and prepared this contribution for independent review.
-The task is `4ffc2a54-547e-47f8-99d0-c00a105dcb1c`, revision 2.
-
 The theorem `Langlands.Continuous.finiteQuotientComparisonIsIso` proves
 exactly `Langlands.Continuous.FiniteQuotientComparisonIsIso`.
 The proof constructs `finiteQuotientComparisonIso`, identifies its forward
@@ -107,11 +100,8 @@ The comparison map is published at
 `1058c134c0d2fb45ec96d08ea2956983aaac1d80`, and the cochain-comparison
 proof is published at `22b4f024e0d4218752e970d09329d1799f6d81d1`.
 The exact statement, canonical map, and all their dependencies are present
-unchanged in the refreshed Library base
+unchanged in the Library base
 `354dfade2c499262492d6db74cb58fd887ffed5f`.
-The proof record must
-set `statement_declaration` to
-`Langlands.Continuous.FiniteQuotientComparisonIsIso`.
 
 The mathematical source is Serre, *Local Fields*, Greenberg translation,
 Springer (1979), X Section 3, printed pages 154–155 / PDF pages 160–161.
@@ -119,19 +109,18 @@ The nested-model compactness argument and the explicit filtered-homology
 element proof above are derived implementation work. Literature ID
 `serre-1979-local-fields`, PDF SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 120 read the original printed pages 154–155 (PDF pages 160–161).
+The original printed pages 154–155 (PDF pages 160–161) were read.
 The direct-limit formula and continuous-cochain assertion occur on printed
 page 154. Serre states them for profinite Galois groups and discrete
 topological modules. The compact locally compact formulation here is the
-already published target's generalization: the right-stabilizer and
+published target's generalization: the right-stabilizer and
 normal-core arguments above prove it without assuming total
 disconnectedness or Hausdorffness. The arbitrary coefficient ring supplies
 the linear structure; the descent and homology arguments apply to its
-underlying additive module. This contribution reuses Worker 22's proof
-draft with attribution, and imports Worker 54's published cochain proof
-unchanged.
+underlying additive module. This module imports the published cochain proof
+`CochainComparisonLawsProof` unchanged.
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, version 1:
+Environment:
 Lean 4.34.0 (`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`);
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 Continuous corestriction and its laws remain outside this proof.

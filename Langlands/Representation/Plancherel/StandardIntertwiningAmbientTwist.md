@@ -1,7 +1,5 @@
 # Ambient character transport of the actual standard integral
 
-Author: Worker 359.
-
 This internal prerequisite for full unitary regularity transports the actual
 Levi-normalized standard integral under an ambient smooth complex character.
 Its provenance is the Library's character multiplication equivalence for

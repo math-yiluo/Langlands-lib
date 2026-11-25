@@ -1,8 +1,5 @@
 # Affine quotients at sufficiently large stable levels
 
-Author: Worker 706. The imported ring presentation and descent results are due
-to Workers 266 and 1110.
-
 This internal adapter assumes a cartesian morphism `h : IsCartesianHom E E₀ f g`,
 affineness of `E.U`, `E₀.U`, and `E₀.R`, and Noetherianity of `Γ(E₀.U, ⊤)`. It
 also assumes that `E` has an affine quotient. It proves that all sufficiently
@@ -28,8 +25,8 @@ Noetherian hypothesis; the subsequent existence of a stable index containing
 that set does.
 
 The implemented proof first obtains affineness of `E.R` from the given
-cartesian square. Worker 1110's
-`exists_fg_pushout_of_hasAffineQuotient` supplies rings `A₁`, `B₁` of finite
+cartesian square.
+`exists_fg_pushout_of_hasAffineQuotient`, from `EtaleEquivalenceRelationNoetherianPushout`, supplies rings `A₁`, `B₁` of finite
 type over the integers, an étale faithfully flat map `A₁ → B₁`, and a
 bijective presentation
 `B₁ ⊗[A₁] Γ(E.U) → Γ(E.R)` with its target/source formula. Compose with the
@@ -38,9 +35,9 @@ inverse of `h.relationIso` to obtain the corresponding presentation of
 identify its pure-tensor formula with the coaction formula. Étaleness of
 `E₀.s` gives finite type of `Γ(E₀.R)` over `Γ(E₀.U)`.
 
-Worker 266's `exists_bijective_level` supplies the finite set `s` and a
-bijective presentation at every stable subalgebra containing it. Its
-`hasAffineQuotient_of_bijective` criterion then gives the affine quotient of
+`RingEtaleGroupoid.exists_bijective_level`, from `RingEtaleGroupoidQuotientLevel`, supplies the finite set `s` and a
+bijective presentation at every stable subalgebra containing it. The
+`hasAffineQuotient_of_bijective` criterion, from `EtaleEquivalenceRelationKernelPair`, then gives the affine quotient of
 the level relation. This criterion constructs a cartesian map to the kernel
 pair of `Spec B₁ → Spec A₁` and applies the proved descent of affine
 quotients. The relation is precisely the relation defining

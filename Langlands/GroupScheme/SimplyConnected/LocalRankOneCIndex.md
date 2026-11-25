@@ -1,7 +1,7 @@
 # The complete local rank-one type-C index alternative
 
-This internal unit of Task 5783 proves the complete type-C alternative in
-the published actual-index enumeration. Let `G` be a simply connected,
+This internal module proves the complete type-C alternative in
+the published actual-index enumeration `LocalRankOneTitsIndexStatement`. Let `G` be a simply connected,
 absolutely almost-simple group over any nonarchimedean local field `K`,
 with split rank one. Let `d` be its actual `TitsIndexData`, and suppose a
 numbering `e : d.Vertex ≃ Fin n` identifies every Cartan entry with

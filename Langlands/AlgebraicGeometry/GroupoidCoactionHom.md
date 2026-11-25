@@ -73,4 +73,4 @@ is scalar extension of ordinary evaluation.
 The provenance is internal: these formulas and proofs are derived from
 the existing reversal operators, universal-point constructor, and Mathlib
 base change. No geometric pushforward, support dévissage, affine-descent
-conclusion, or vanishing theorem is assumed or proved by this unit.
+conclusion, or vanishing theorem is assumed or proved by this module.

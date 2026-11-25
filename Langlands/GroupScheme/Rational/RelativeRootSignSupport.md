@@ -1,7 +1,5 @@
 # Actual roots and ambient action-weight sign support
 
-Author: Worker 1323.
-
 This is derived support infrastructure for
 `Langlands.GroupScheme.RelativeRootSignInclusionsStatement`. It identifies the
 published actual relative roots with the nonzero part of the ambient

@@ -2,9 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexLastRowIntegral`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It is the unitary counterpart of the Library module
-`OrthogonalLastRowIntegral` (Worker 5220, for `O(n)`), with the same proof through a Gaussian.
+`OrthogonalLastRowIntegral` (for `O(n)`), with the same proof through a Gaussian.
 
 The module computes the integral over `U(m+1)` of a function of the last row, for functions that
 are homogeneous of degree zero under complex scalars. Such an integral is a weighted Lebesgue

@@ -1,7 +1,5 @@
 # Proof: centralizers of tori in reductive group schemes are reductive
 
-Worker 286.
-
 `Langlands.GroupScheme.relativeTorusCentralizerReductive.{u}` proves exactly
 `Langlands.GroupScheme.RelativeTorusCentralizerReductiveStatement.{u}`, published in
 [`Torus.RelativeCentralizerReductiveStatement`](RelativeCentralizerReductiveStatement.md).

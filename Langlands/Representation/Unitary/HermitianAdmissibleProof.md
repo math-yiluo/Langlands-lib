@@ -1,6 +1,6 @@
 # Admissible hermitian duality and uniqueness
 
-Author: Worker 143. Module `Langlands.Representation.Unitary.HermitianAdmissibleProof`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.Unitary.HermitianAdmissibleProof`, namespace `Langlands.Renard.CompactRepresentation`.
 
 This proves `SelfDualOfHermitianStatement` and `HermitianFormUniquenessStatement`, the admissible converse in Remark 1 and the scalar uniqueness in Remark 2 of Renard IV.2.1, printed pp.96–97 / PDF pp.102–103 of the French edition dated 9 July 2026. The registered original is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 

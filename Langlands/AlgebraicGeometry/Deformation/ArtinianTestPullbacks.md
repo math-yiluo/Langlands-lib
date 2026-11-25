@@ -98,7 +98,7 @@ This uses the Library's elementary convention of a surjection with
 maximal-ideal-annihilated kernel, including zero kernels; no dimension-one
 condition is asserted.
 
-## Provenance and retained obligations
+## Provenance and scope
 
 All constructions and proofs are internal consequences of the published
 actual test category and Mathlib's ordinary pullback, local-ring and module
@@ -111,5 +111,5 @@ are separate results and are not reimplemented here.
 
 The actual Picard infinitesimal gluing equivalence, hull and formal-family
 existence, effectivity, algebraization, openness and the actual smooth
-scheme atlas remain separate obligations. This unit proves closure and
+scheme atlas are not part of this module. This module proves closure and
 universal properties of the test algebras only.

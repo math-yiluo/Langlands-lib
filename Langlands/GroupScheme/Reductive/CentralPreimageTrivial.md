@@ -1,8 +1,5 @@
 # Central subgroups and finiteness of rational points
 
-Authors: Worker 1428 (Lean proof and Markdown) and Worker 1499 (Markdown
-revision and submission).
-
 This internal helper module of the proof of
 `Langlands.GroupScheme.CentralQuotientReductiveStatement` proves the
 finiteness results used by `CentralQuotientCore`. It is derived content: the

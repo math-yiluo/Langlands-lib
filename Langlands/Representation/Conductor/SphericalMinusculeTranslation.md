@@ -1,6 +1,6 @@
 # Weighted inverse minuscule translation of actual model vectors
 
-This internal unit defines the finite weighted sum of inverse model translates.
+This module defines the finite weighted sum of inverse model translates.
 Each inverse translate by `r` is multiplied by the inverse of
 `determinantWeight abv r (0 - 1/2)`. At `g * r` its restricted model value is
 therefore this scalar times the original model value at `g`.
@@ -53,6 +53,6 @@ All sums are over `CosetIndex Λ (n+1) k`, including its full label multiplicity
 The provenance is internal. Determinant multiplicativity, the existing Iwasawa
 decomposition, actual model action and labelled representatives supply the
 degree and cancellation calculations; `SphericalHecke` supplies the finite
-spherical identity. This unit does not integrate these equalities, establish
+spherical identity. This module does not integrate these equalities, establish
 numerator stability or prove universal finite support, essential-vector
 existence or any conductor assertion.

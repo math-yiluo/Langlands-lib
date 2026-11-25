@@ -97,7 +97,7 @@ errata, registered `lan-2008-pel-thesis-errata-2021`, SHA-256
 `18e66df9fefa6c3d6c2ee799ec8d5c208263a22a51847032d85ccbeb6947861d`,
 were checked at pp.1 and 8–9 in this development.
 
-This contribution is the derived formal bundling step. It keeps the
+This module is the derived formal bundling step. It keeps the
 Library's parameter-first convention and the previously constructed
 positive-translation classifying morphism. Its proof uses the explicit
 unit and multiplication equations, not the source's rigidity proof.

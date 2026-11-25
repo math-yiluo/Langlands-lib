@@ -1,7 +1,5 @@
 # Square-integrability criteria for special representations
 
-Author: Worker 1765.
-
 `Langlands.Classification.segmentSpecialSquareIntegrabilityCriterion`
 proves the unchanged Library proposition
 `Langlands.Classification.SegmentSpecialSquareIntegrabilityCriterion.{uF,uV}

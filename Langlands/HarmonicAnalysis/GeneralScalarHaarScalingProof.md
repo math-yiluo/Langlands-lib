@@ -1,7 +1,5 @@
 # Residue-normalized scalar Haar scaling over general local fields
 
-Author: Worker 11.
-
 This module proves the existing proposition
 `Langlands.HarmonicAnalysis.GeneralScalarHaarScalingStatement.{uF} F` of
 [GeneralHaarScalingStatement](GeneralHaarScalingStatement.md) without changing

@@ -110,7 +110,7 @@ theorem mem_fil_of_prime_mul_mem [IsAddTorsionFree F] (hp : p ≠ 0) {k : ℕ}
     x ∈ fil F p k := by
   intro v
   obtain ⟨w, hw⟩ := h v
-  refine ⟨w, nsmul_right_injective hp ?_⟩
+  refine ⟨w, eq_of_nsmul_eq_nsmul_of_addCommute hp (AddCommute.all _ _) ?_⟩
   change p • x v = p • ((p ^ k) • w)
   rw [smul_smul, ← pow_succ', ← hw]
   rfl
@@ -122,6 +122,8 @@ theorem eq_zero_of_forall_mem_fil [IsAddTorsionFree F] [Module.Finite ℤ F] (hp
     rw [Ne, Ideal.span_singleton_eq_top, Int.isUnit_iff]
     have := hp.two_le
     omega
+  have : HasUniqueDiv F :=
+    ⟨fun _ hn a b hab ↦ eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   have key := Ideal.iInf_pow_smul_eq_bot_of_isTorsionFree (M := F) _ hI
   ext v
   rw [AddMonoid.End.zero_apply]
@@ -281,7 +283,7 @@ theorem finiteOrderCongruenceDetection : FiniteOrderCongruenceDetectionStatement
     exact ⟨y, rfl⟩
   -- `n M` is torsion-free
   have htfN : IsAddTorsionFree N := by
-    refine ⟨fun k hk v₁ v₂ h => ?_⟩
+    refine ⟨fun k hk v₁ v₂ _ h => ?_⟩
     have h' : k • ((v₁ : M) - v₂) = 0 := by
       have := congrArg Subtype.val h
       simp only [AddSubgroup.coe_nsmul] at this
@@ -290,7 +292,8 @@ theorem finiteOrderCongruenceDetection : FiniteOrderCongruenceDetectionStatement
     have hny : n • y = 0 := htors y ⟨k * n, Nat.mul_pos (Nat.pos_of_ne_zero hk)
       (Nat.pos_of_ne_zero hn0), by rw [mul_smul, ← hy, h']⟩
     exact Subtype.ext (sub_eq_zero.1 (hy.trans hny))
-  have hfgN : Module.Finite ℤ N := Module.Finite.iff_addGroup_fg.2 (AddGroup.fg_range _)
+  have hfgN : Module.Finite ℤ N := Module.Finite.iff_addGroup_fg.2
+    (IsAddFG.of_surjective _ (AddMonoidHom.rangeRestrict_surjective _))
   -- the restriction of `σ` to `n M`
   have hσN : ∀ v ∈ N, σ v ∈ N := by
     intro v hv

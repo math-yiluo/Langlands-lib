@@ -1,6 +1,6 @@
 import Langlands.GroupScheme.Rational.CentralDefectUnitLocalization
 import Langlands.GroupScheme.Rational.NumberFieldHasseKernelReduction
-import Langlands.ClassField.Global.IdeleArchimedean
+import Langlands.ClassFieldTheory.Global.IdeleArchimedean
 import Langlands.Global.AdelicFunctoriality.Extension
 
 /-! # Archimedean vanishing of the unit-valued central defect -/
@@ -15,7 +15,7 @@ open scoped Langlands.Global.AdelicFunctoriality.InfiniteExtension
 
 namespace Langlands.GroupScheme.IsCentralIsogeny
 
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local
 open Langlands.Global.AdelicFunctoriality
 
 set_option backward.isDefEq.respectTransparency false

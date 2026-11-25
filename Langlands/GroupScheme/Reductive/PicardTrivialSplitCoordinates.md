@@ -16,7 +16,9 @@ conclusion is the actual existential Borel subgroup containing the supplied
 torus, with a split projection onto that torus and an affine kernel carrying
 a finite vector-quotient series.
 
-These results are affine prerequisites for Task 6490. They do not assert
+These results are affine prerequisites for the isomorphism and
+`G(S)`-conjugacy of reductive groups with split maximal tori and Borel
+subgroups over a connected base with trivial Picard group. They do not assert
 an isomorphism between two reductive groups or a general-base global
 splitting result. No extra module-Picard, representation or local-ring
 hypothesis is introduced.

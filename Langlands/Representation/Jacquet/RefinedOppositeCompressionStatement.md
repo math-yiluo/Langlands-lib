@@ -1,7 +1,5 @@
 # Normalized opposite compression in product Levis
 
-Author: Worker 166.
-
 `Langlands.Jacquet.RefinedOppositeCompressionStatement.{uF,uV}` is a
 Prop-valued definition stating two laws of the actual compact compressed
 operator. This module does not prove those laws.

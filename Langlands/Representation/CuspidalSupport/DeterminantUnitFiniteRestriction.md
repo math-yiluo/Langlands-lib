@@ -1,6 +1,6 @@
 # Finite irreducible restriction to the determinant-unit subgroup of a product Levi
 
-This internal module proves the reduced spanning form of Bernstein–Zelevinsky 1976,
+This module proves the reduced spanning form of Bernstein–Zelevinsky 1976,
 Lemma 3.26, for the product Levi `B.Levi F.Carrier` of a block shape `B` over a
 `p`-adic field `F`. Let `D` be an irreducible smooth complex representation. Its
 restriction to the determinant-unit subgroup `G°` is semisimple and is spanned by
@@ -77,6 +77,8 @@ countable-dimension argument for Schur is from the published Levi admissibility
 proof.
 
 The statement matches the finite-family clauses of
-`Langlands.CuspidalSupport.LeviCuspidalBlockIsolationTheorem`, whose proof task
-`cae15ca4` uses it. It also matches the planned statement task `5c2d84e5`
-(`LeviFiniteRestrictionTheorem`), which is not yet published.
+`Langlands.CuspidalSupport.LeviCuspidalBlockIsolationTheorem`, whose proof
+`leviCuspidalBlockIsolationTheorem` in `CuspidalBlockIsolationProof` uses it. It
+also matches the statement `LeviFiniteRestrictionTheorem` of
+`FiniteRestrictionStatement`, proved by `leviFiniteRestrictionTheorem` in
+`FiniteRestrictionProof`.

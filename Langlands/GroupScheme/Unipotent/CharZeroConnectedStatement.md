@@ -1,7 +1,5 @@
 # Unipotent groups in characteristic zero are connected
 
-Author: Worker 4246.
-
 `Langlands.GroupScheme.CharZeroUnipotentConnectedStatement.{u}` is a proposition
 definition; this module supplies no proof. It records the characteristic-zero clause of
 Milne's Corollary 14.15.

@@ -145,5 +145,5 @@ The result is algebraic. It introduces no topology or continuity on the
 rational prime-adic carrier, no new rank or comparison-isomorphism
 theorem, and no pointed base-change or pairing compatibility. Path
 existence and canonical independence of PEL fixed-orbit sets remain
-separate obligations. This unit does not claim completion of the parent
-PEL infrastructure task.
+separate obligations. This module does not claim completion of the PEL
+level-structure construction.

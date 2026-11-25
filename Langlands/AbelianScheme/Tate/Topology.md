@@ -37,7 +37,7 @@ construction. Each asks for finiteness only at its selected levels. A geometric
 point is obtained by taking `T = Over.mk s`, where `s : Spec Ω → S` and `Ω` is
 algebraically closed. These are the same types used by `FullAt` and `AwayAt`.
 
-The finiteness hypotheses are explicit. This unit does not prove that an
+The finiteness hypotheses are explicit. This module does not prove that an
 arbitrary test scheme has finitely many torsion sections, or establish finite
 étaleness, rank, or geometric monodromy. When such geometric theorems are used,
 their actual hypotheses, including invertibility of torsion orders for finite

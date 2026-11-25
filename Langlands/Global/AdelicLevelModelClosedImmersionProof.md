@@ -1,7 +1,5 @@
 # Closed embeddings on actual arithmetic-level model points
 
-Author: Worker 208.
-
 `adelicLevelModelClosedImmersion` proves exactly
 `AdelicLevelModelClosedImmersionStatement` in its original universe.
 Both arithmetic clauses retain the original scheme models, scalar actions,

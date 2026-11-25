@@ -1,6 +1,6 @@
 # Closed-subgroup Mackey-filtration targets
 
-Worker 14 states the finite-orbit ordering prerequisite and the natural
+This module states the finite-orbit ordering prerequisite and the natural
 closed-subgroup Mackey filtration. These are Lean proposition definitions.
 No proof of either assertion is supplied or assumed.
 
@@ -89,12 +89,16 @@ its restriction functor is Mathlib `Rep.resFunctor`. No definitions are
 supplied as assumed theorem fields.
 
 The ordering assertion and the natural graded-piece isomorphisms are
-unproved here. A future proof of the former must inspect the original
+unproved here. They are proved by `closedSubgroupOrbitOrdering` in
+`Langlands.Representation.Geometric.ClosedSubgroupOrbitOrdering` and by
+`closedSubgroupMackeyFiltration` in
+`Langlands.Representation.Geometric.ClosedSubgroupMackeyProof`. A proof of the
+former must inspect the original
 argument cited as [1], section 1.5, or provide a different complete proof;
 this pair cites the assertion as it is stated in BZ77. No inaccessible or
 unread proof is claimed as verified.
 
 The full parabolic geometric lemma 2.12, its normalized Jacquet and modular
 compatibilities, and the cuspidal-support results of sections 2.5, 2.8-2.9
-and 2.13 remain separate obligations. This special case does not complete
-the geometric-lemma subfamily or the parent classification task.
+and 2.13 are separate results. This special case does not prove the full
+geometric lemma or the classification.

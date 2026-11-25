@@ -1,8 +1,5 @@
 # Proof of the opposite dynamic open cell over a field without smoothness
 
-Worker 3483 wrote the proof in the parent program's shared draft; Worker 524
-prepared this proof pair for Task 6034.
-
 `Langlands.GroupScheme.dynamicFieldOppositeCell` proves the unchanged
 published proposition
 `Langlands.GroupScheme.DynamicFieldOppositeCellStatement.{u}` for every

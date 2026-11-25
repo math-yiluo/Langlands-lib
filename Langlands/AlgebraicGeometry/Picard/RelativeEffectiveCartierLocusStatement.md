@@ -1,12 +1,11 @@
 # The relative effective Cartier locus of a flat closed subscheme of a proper flat family
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705).
-This is a prerequisite statement under Task 5705, as permitted by the operator's
-answer to request `98389b48910e54088e0e2b2ba6aaad9c`. Together with
+This is a prerequisite statement of the Library's proof of Kleiman's
+Theorem 4.8 (`NoetherianIntegralFibrePicardSheafAFSchemeProof`). Together with
 `Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyStatement`, it is one of
-the two hypotheses of a planned reduction of the published
-`Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesStatement`
-(Task 6002).
+the two hypotheses of the reduction
+`RelativeEffectiveDivisorHilbertPiecesReductionStatement` of the published
+`Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesStatement`.
 
 ## Statement
 
@@ -141,7 +140,8 @@ These steps outline a proof. They are not Lean proofs.
 
 ## Use
 
-In the planned reduction of `Picard.RelativeEffectiveDivisorHilbertPiecesStatement`,
+In the reduction of `Picard.RelativeEffectiveDivisorHilbertPiecesStatement`
+(proved as `relativeEffectiveDivisorHilbertPiecesReduction`),
 `B` is the Hilbert scheme `H` of `HilbertSchemeUniversalFamilyStatement`, `q` is
 `pullback.snd f πH : X ×_S H ⟶ H` and `Z` is the universal ideal `W`. The open
 `U` is Kleiman's `Div_{X/S}`.

@@ -1,7 +1,5 @@
 # Equality near a closed subscheme from its infinitesimal neighbourhoods
 
-Worker 606.
-
 For two `S`-maps `f` and `g` from `X` to `Y`, `agreementOpen f g` is
 the union of affine opens of `X` on which the ideal of their relative
 equalizer is zero. When `Y` is separated over `S`, the equalizer is a

@@ -104,21 +104,21 @@ theorem quasiEtaleAutomorphismLift : QuasiEtaleAutomorphismLiftStatement.{u, v} 
   obtain ⟨D, hD⟩ := exists_isNear_iso_postcomp eR.symm DB
   refine ⟨D, fun σ hσ => ?_⟩
   have hσ' : ∀ τ ∈ DB, IsNear (X := localizationFunctor.obj (ofSaturation B)) τ
-      (eR.hom ≫ σ.hom ≫ eR.inv) (𝟙 _) := fun τ hτ => by
-    have := (hD X σ.hom (𝟙 X) hσ τ hτ).precomp eR.hom
+      (eR.hom ≫ σ.asIso.hom ≫ eR.inv) (𝟙 _) := fun τ hτ => by
+    have := (hD X σ.asIso.hom (𝟙 X) hσ τ hτ).precomp eR.hom
     simpa using this
   obtain ⟨ψ₀, hψ₀g, hψ₀E⟩ := hDB _ hσ'
   refine ⟨eL.inv ≫ ψ₀ ≫ eL.hom, ?_, fun τ hτ => ?_⟩
   · have h2 : ψ₀ ≫ localizationFunctor.map g ≫ eR.hom =
-        localizationFunctor.map g ≫ eR.hom ≫ σ.hom := by
+        localizationFunctor.map g ≫ eR.hom ≫ σ.asIso.hom := by
       rw [← Category.assoc, hψ₀g]
       simp
     calc (eL.inv ≫ ψ₀ ≫ eL.hom) ≫ f = eL.inv ≫ ψ₀ ≫ localizationFunctor.map g ≫ eR.hom := by
           rw [Category.assoc, Category.assoc, hw]
-      _ = eL.inv ≫ (eL.hom ≫ f) ≫ σ.hom := by
+      _ = eL.inv ≫ (eL.hom ≫ f) ≫ σ.asIso.hom := by
           rw [h2, hw]
           simp only [Category.assoc]
-      _ = f ≫ σ.hom := by simp
+      _ = f ≫ σ.asIso.hom := by simp
   · have := (hEA _ ψ₀ (𝟙 _) hψ₀E τ hτ).precomp eL.inv
     simpa using this
 

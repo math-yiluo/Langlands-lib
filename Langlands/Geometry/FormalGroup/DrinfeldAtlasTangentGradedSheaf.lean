@@ -82,7 +82,7 @@ private theorem projectorStep_inclusion (i : ZMod d) :
 def affineGradedPiSheafOfProjectors :
     GradedPiSheaf d (Spec R).sheaf (schemeScalar (Spec R) ((Scheme.ΓSpecIso R).inv a)) :=
   affineGradedPiSheaf («R» := R) («M» := M) («d» := d) («W» := W)
-    a (ModuleCat.ofHom t) (projectorOperator_pow t a hPow)
+    a (End.of (ModuleCat.ofHom t)) (projectorOperator_pow t a hPow)
     j q (projectorInclusion_projection P hDiag) (fun h => projectorInclusion_projection_ne P hOff h)
     (projectorSum_projection_inclusion P hSum) (projectorStep P t hStep) (projectorStep_inclusion P t hStep)
 
@@ -90,7 +90,7 @@ def affineGradedPiSheafOfProjectors :
 def affineGradedPiSheafOfProjectorsComponentIso (i : ZMod d) :
     tilde (W i) ≅ (affineGradedPiSheafOfProjectors P hDiag (@hOff) hSum t a hPow hStep).componentSheaf i :=
   affineGradedPiSheafComponentIso («R» := R) («M» := M) («d» := d) («W» := W)
-    a (ModuleCat.ofHom t) (projectorOperator_pow t a hPow)
+    a (End.of (ModuleCat.ofHom t)) (projectorOperator_pow t a hPow)
     j q (projectorInclusion_projection P hDiag) (fun h => projectorInclusion_projection_ne P hOff h)
     (projectorSum_projection_inclusion P hSum) (projectorStep P t hStep) (projectorStep_inclusion P t hStep) i
 

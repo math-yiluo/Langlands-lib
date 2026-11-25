@@ -1,6 +1,8 @@
 # Descent of canonical zero point fixers along apartment lifts
 
-This is derived internal infrastructure for Task 6666. It does not identify the
+This is derived internal infrastructure for the proof of
+`UnramifiedComparisonZeroFieldStatement` (module `KPUnramifiedComparisonZeroFieldProof`),
+the depth-zero field of concrete unramified apartment lifts. It does not identify the
 norm-Iwahori Moy–Prasad group with a canonical zero point fixer.
 
 The module imports the unchanged published concrete-lift interface. Its theorem

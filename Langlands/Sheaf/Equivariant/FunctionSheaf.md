@@ -1,7 +1,5 @@
 # Constructed equivariant sheaves of module-valued functions
 
-Author: Worker 13.
-
 Let a group `G` act on a topological space `X`, let `R` be a commutative ring,
 and let `ρ` be an actual `R`-linear representation of `G` on a module `M`.
 For each open `U`, `FunctionSheaf.presheaf` assigns the module of all functions
@@ -38,7 +36,7 @@ This is a derived example for the topological transport-of-sections framework
 in the companion files. Its provenance is the compatible section transport
 described in Berkovich's unfinished *Etale equivariant sheaves on p-adic
 analytic spaces*, section 1.4, printed p.7, before Definition 1.4.1.
-Worker 13 read the original passage. The construction here uses ordinary
+The passage was read in the original. The construction here uses ordinary
 open subsets and arbitrary functions. It does not assert that this sheaf
 is locally constant, smooth, an analytic étale sheaf, or Harris's algebraic
 coefficient local system.

@@ -1,6 +1,6 @@
 # Natural group actions on the constructed Deligne Nilp functor
 
-This module packages the published natural automorphisms of
+This module packages the natural automorphisms of
 `nilpSheafClassFunctor` as group homomorphisms. It supplies corrected-pair,
 normalized GL, and actual PGL right actions, their component formulas, scalar
 triviality, and the associated ordinary left PGL action.
@@ -12,11 +12,11 @@ theorem on printed p.109. Registered source:
 `drinfeld-1976-coverings-p-adic-symmetric-regions`, SHA256
 `7dd09e1967f46c29195ec87a400e145a17374368fc3b9dd0a782b5b7bfc44e2f`.
 
-These are derived constructions on the published point model. The natural
+These are derived constructions on the point model. The natural
 automorphisms come from `DeligneActionBaseChange`. Their component group laws
 come from `DeligneShiftReframe` and `DeligneProjectiveAction`; the normalized
 correction and scalar triviality come from `DeligneValuedReframe` and
-`DeligneScalarClass`. This unit proves that these actual natural operations
+`DeligneScalarClass`. This module proves that these actual natural operations
 obey the group laws, rather than taking such laws as additional inputs.
 
 ## Parameters and conventions
@@ -33,7 +33,7 @@ supply the nonzero scalar used in the point functor. The normalized operation
 uses shift k equal to minus the coefficient order of det(g), with new degree i
 equal to old degree i+k. The corrected subgroup consists of pairs (g,k) for
 which pi^k det(g) is the image of an integral unit; its preservation of the
-published admissibility condition is already proved in the imported modules.
+admissibility condition is already proved in the imported modules.
 
 Write A(g) for the natural automorphism given by a frame change. The existing
 frame precomposition convention satisfies
@@ -44,7 +44,7 @@ Here multiplication in `CategoryTheory.Aut` is function-composition order:
 `f * g = g.trans f`, so its forward component applies g and then f. The
 homomorphisms for this right convention therefore take values in the
 multiplicative opposite of the natural automorphism group. Their evaluations
-are exactly the published point operations, with no change of convention.
+are exactly the point operations, with no change of convention.
 
 ## Corrected and normalized homomorphisms
 
@@ -77,7 +77,7 @@ actual scalar matrices via `matrixReframeEquiv_scalar`.
 
 `nilpSheafProjectiveReframeAut_mk` identifies the natural automorphism of an
 actual matrix class with the normalized automorphism of that matrix's linear
-frame map. Component extensionality reduces this to the published
+frame map. Component extensionality reduces this to the
 `projectiveReframe_mk` equation. The actual PGL identity and reversed product
 laws follow in the same way from the pointwise projective laws.
 
@@ -93,14 +93,15 @@ automorphism group. Its value at g is A(g inverse). The reversed product law
 and `(g*h) inverse = h inverse * g inverse` prove multiplicativity. Its
 `*_hom_app` equation gives inverse projective precomposition, and
 `*_mk_hom_app` expresses the result on a matrix class as the normalized frame
-change of the inverse matrix. These agree with the published pointwise
+change of the inverse matrix. These agree with the pointwise
 `projectiveLeftAction` convention.
 
 ## Scope
 
 The constructions act on the existing admissible four-data classes and the
 existing scalar-aware Nilp functor. The independent comparison of the model's
-determinant condition with equality of exterior-power subsheaves, comparison
-with special formal modules, representability, and level coverings remain
-separate obligations. No representing object, universal object, uniformization
-map, or such theorem is constructed or assumed in this unit.
+determinant condition with equality of exterior-power subsheaves is proved in
+`DeligneDeterminantSubsheaf` (`determinantSubsheavesNormalized_iff`);
+comparison with special formal modules, representability, and level coverings
+remain separate. No representing object, universal object, uniformization
+map, or such theorem is constructed or assumed in this module.

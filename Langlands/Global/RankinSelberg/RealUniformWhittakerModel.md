@@ -2,7 +2,7 @@
 
 This internal refinement introduces a new coefficient space
 `realUniformWhittakerModel r ds a`. It preserves every declaration and statement about
-the earlier `realWhittakerModel`. Worker 823 proposed the refinement after identifying
+the earlier `realWhittakerModel`. The refinement rests on
 the distinction between a separate polynomial exponent for each derivative and one
 exponent valid for every derivative word.
 
@@ -40,7 +40,7 @@ therefore bounds every word. Supremum containment in `uniformGrowthFunctions` ex
 this to the full algebraic coefficient space.
 
 Provenance is internal: all constructions are explicit refinements and elementary
-consequences of the earlier coefficient definition, the published standard-module Lie
+consequences of the earlier coefficient definition, the Library's standard-module Lie
 action, and the proved height lower bound. This result establishes neither convergence,
 continuation nor a functional equation. It does not assert that the refined and earlier
 models coincide, or that every earlier-model function has uniform derivative growth.

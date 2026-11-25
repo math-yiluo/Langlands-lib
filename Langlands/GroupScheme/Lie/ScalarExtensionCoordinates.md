@@ -1,7 +1,5 @@
 # Natural finite coordinates from actual Lie scalar extension
 
-Author: Worker 1317.
-
 For an affine group scheme locally of finite type over any field `k`,
 `finiteCoordinatesOfBasis` constructs the published `Lie.FiniteCoordinates`
 datum from a finite `k`-basis of its actual Lie kernel. `finiteCoordinates`

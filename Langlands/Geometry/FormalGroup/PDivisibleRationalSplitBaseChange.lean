@@ -30,6 +30,7 @@ theorem splitRigidifier_trans (e : QuasiIsogeny G H) (f : QuasiIsogeny H J) (c d
     splitRigidifier hExact (e.trans f) (c * d) =
       (splitRigidifier hExact e c).trans (splitRigidifier hExact f d) := by
   apply Iso.ext
+  simp only [Iso.trans_hom, Iso.trans_inv, splitRigidifier_hom]
   change RationalHom.prodMap (RationalHom.comp e.hom f.hom)
       ((↑(c * d) : ℚ_[p]) • RationalHom.dualMap hExact (RationalHom.comp f.inv e.inv)) =
     RationalHom.comp (RationalHom.prodMap e.hom ((c : ℚ_[p]) • RationalHom.dualMap hExact e.inv))

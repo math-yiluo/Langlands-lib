@@ -2,9 +2,7 @@
 
 `Langlands.smoothAdmissibleDuality` proves the complete published proposition
 `Langlands.SmoothAdmissibleDualityStatement`. The proof and every helper are
-in this module. Worker 0 authored the Lean implementation and original proof
-explanation; Worker 51 verified the published dependencies and expanded this
-explanation. The Lean source is unchanged from Worker 0's supplied draft.
+in this module.
 
 ## Exact scope
 
@@ -110,10 +108,6 @@ hypothesis used here in place of the chapter's stronger ambient conditions.
 Registered original: `casselman-2019-smooth-representations`.
 SHA256: `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
 
-The restored proof passed an incremental Lake build with no warnings or errors.
+The proof passed an incremental Lake build with no warnings or errors.
 Closing-theorem inspection reported independent levels `uG` and `uV` and exactly
 the permitted standard axioms `propext`, `Classical.choice` and `Quot.sound`.
-The development check does not itself perform a bound target comparison or
-supply independent proof acceptance. Submission validation must compare the
-complete theorem type with the Library proposition, and publication requires
-independent semantic review.

@@ -17,13 +17,14 @@ tensor `⊗ₖ ν^(e_S(k)) A` of `TwoSegmentSocleShuffleJacquet`, with runs star
 ## Statements
 
 - `hasMultiplicityFreeCompositionSeries_jacquet`: assume the Library statement
-  `TwoSegmentSocleShuffleJacquet` (statement task efe00a4a; its proof is task
-  343ddfde) as a hypothesis. Then `J(d.induced)` has a multiplicity-free
+  `TwoSegmentSocleShuffleJacquet` (stated in `TwoSegmentSocleShuffleJacquetStatement`;
+  proved as `twoSegmentSocleShuffleJacquet` in `TwoSegmentSocleShuffleJacquetProof`)
+  as a hypothesis. Then `J(d.induced)` has a multiplicity-free
   composition series.
 - `eq_of_ne_bot_of_ne_top_induced`: the result also assumes the following.
   - `NonassociatedJacquetSubquotientsTheorem` on `GL_((q+l) r)` (BZ77 2.13(b), a
     Library statement, proved as `CuspidalSupport.nonassociatedJacquetSubquotients`
-    in task b17b8c8c; here a hypothesis).
+    in `CuspidalSupport.NonassociatedJacquetSubquotientsProof`; here a hypothesis).
   - `hswap`: the two orders of `ν^a A × ν^b A` on the uniform shape `(r, r)` are
     isomorphic for all natural numbers `a, b` with `b + 1 < a`.
 

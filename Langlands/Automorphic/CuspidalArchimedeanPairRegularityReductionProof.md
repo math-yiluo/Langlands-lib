@@ -1,7 +1,5 @@
 # Proof of the reduction of the archimedean pair regularity
 
-Author: Worker 3657 (shared draft); checked and submitted by Worker 832.
-
 Module `Langlands.Automorphic.CuspidalArchimedeanPairRegularityReductionProof`
 proves
 
@@ -98,9 +96,7 @@ so no transport between carriers is needed.
 ## Provenance
 
 This is step 5 ("Reduction") of "Why the statements are true" in the statement
-Markdown (`Langlands/Automorphic/CuspidalArchimedeanComponentStatement.md`). It
-follows the route in the contract of Task 7000
-(`f273c02c-55ab-425f-b5d0-c51b0ea23a34`). The mathematics is the archimedean
+Markdown (`Langlands/Automorphic/CuspidalArchimedeanComponentStatement.md`). The mathematics is the archimedean
 step on p.309 (PDF p.320) of J. R. Getz and H. Hahn (2024), *An introduction to
 automorphic representations*. The registered file is
 `getz-hahn-2024-automorphic-representations` (SHA256
@@ -126,13 +122,23 @@ parameter of that module.
 The theorem proves none of its six hypotheses. A proof of the entry point
 `CuspidalArchimedeanPairRegularityStatement.{u}` follows by applying
 `cuspidalArchimedeanPairRegularityReduction` to proofs of the six hypotheses.
-That application is the entry-point proof child, Task 7005
-(`1a9d552f-6429-45fa-afcd-7f2806c4312f`). Proofs of the hypotheses are assigned to these
-tasks:
+The Library proves these of them:
 
-- admissibility: Task 6999 (`ae8500ea-b349-43af-a409-c33bbccb5317`);
-- irreducibility: Task 7004 (`c77dc5a4-25c6-4498-bc30-ecfbcf470106`);
-- genericity: Task 7003 (`d785ecd7-e7cc-4174-9da9-68b37467f224`);
-- unitarizability: Task 7000, the other target of this task;
-- the archimedean case of Getz–Hahn, Theorem 11.5.2: Tasks 6818, 6819
-  and 6820.
+- admissibility: `archimedeanStandardAdmissible` (module
+  `Langlands.Automorphic.ArchimedeanStandardAdmissibleProof`);
+- irreducibility: `cuspidalArchimedeanStandardIrreducible` (module
+  `Langlands.Automorphic.CuspidalArchimedeanComponentIrreducibleProof`);
+- genericity: `cuspidalArchimedeanStandardGeneric` (module
+  `Langlands.Automorphic.CuspidalArchimedeanStandardGenericProof`);
+- unitarizability: `cuspidalArchimedeanStandardUnitarizable` (module
+  `Langlands.Automorphic.CuspidalArchimedeanComponentUnitaryProof`);
+- the complex case of Getz–Hahn, Theorem 11.5.2:
+  `Archimedean.complexUnitaryGenericPairRegularity` (module
+  `Langlands.Representation.Archimedean.ComplexUnitaryGenericPairRegularityProof`).
+
+No Library theorem states the real case,
+`Archimedean.RealUnitaryGenericPairRegularityStatement`. The Library proves its
+reduction `Archimedean.realUnitaryGenericPairRegularityReduction` (module
+`Langlands.Representation.Archimedean.RealUnitaryGenericPairRegularityReductionProof`)
+and the inputs of that reduction, `Archimedean.realUnitaryGenericExponentBound`
+and `Archimedean.realPairLFactorRightHalfPlaneRegularity`.

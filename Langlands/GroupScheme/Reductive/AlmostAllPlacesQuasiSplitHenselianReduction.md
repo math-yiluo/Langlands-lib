@@ -1,13 +1,12 @@
 # Almost all places quasi-split, from henselian quasi-splitness
 
-Worker 62 and Worker 648.
-
-This module states and proves that the published, not yet proved,
+This module states and proves that the published
 [`HenselianFiniteResidueQuasiSplitStatement`](../RelativeLevi/HenselianQuasiSplitStatement.md)
 implies the published
 [`AlmostAllPlacesQuasiSplitStatement`](AlmostAllPlacesQuasiSplitStatement.md), for every universe
-`u`. It adds no axioms. It does not prove `AlmostAllPlacesQuasiSplitStatement` unconditionally,
-because its hypothesis is still open.
+`u`. It adds no axioms. It does not prove `AlmostAllPlacesQuasiSplitStatement` unconditionally;
+its hypothesis is proved separately, by `henselianFiniteResidueQuasiSplit` (module
+`RelativeLevi.HenselianQuasiSplitProof`).
 
 ## Statement
 
@@ -42,15 +41,15 @@ that for every number field `F : Type u` and every group scheme `G` over `Spec F
 The two clauses are proved separately by published theorems, and the proof combines them.
 
 1. Clause 1 is `almostAllPlacesQuasiSplitClauseReduction hH F G hG`, from the published
-   module [`AlmostAllPlacesQuasiSplitClauseReduction`](AlmostAllPlacesQuasiSplitClauseReduction.md)
-   (Worker 62). Its conclusion is word for word the first conjunct of the target. That proof
+   module [`AlmostAllPlacesQuasiSplitClauseReduction`](AlmostAllPlacesQuasiSplitClauseReduction.md).
+   Its conclusion is word for word the first conjunct of the target. That proof
    spreads `G` out to a reductive model over a ring of `S`-integers, base changes it to the
    completed integers `𝒪_{F_v}` for `v ∉ S`, applies `hH` there to get a Borel subgroup over
    `𝒪_{F_v}`, and restricts that subgroup to the generic fibre.
 2. Clause 2 is
    `AlmostAllPlacesTorsorPoints.eventually_nonempty_ringPoint_of_torsor F G hG X hfl hs hqc hiso`,
-   from the published module [`AlmostAllPlacesTorsorPoints`](AlmostAllPlacesTorsorPoints.md)
-   (Worker 648). It does not use `hH`. Its hypotheses and conclusion are word for word the
+   from the published module [`AlmostAllPlacesTorsorPoints`](AlmostAllPlacesTorsorPoints.md).
+   It does not use `hH`. Its hypotheses and conclusion are word for word the
    second conjunct of the target. That proof shows the torsor is smooth, separated,
    quasi-compact and geometrically connected over `F`. It then applies the published theorem
    `Langlands.Global.eventually_nonempty_ringPoint_of_smooth_geometricallyConnected`, which
@@ -61,6 +60,7 @@ The two clauses are proved separately by published theorems, and the proof combi
 The target is Conrad, *Reductive group schemes* (2014), Exercise 5.5.3(iii), printed
 pp.182–183 (registered as `conrad-2014-reductive-group-schemes`), for number fields. The
 hypothesis is the henselian form of part (ii) of that exercise. This module is an internal
-reduction for Task 6635 (proof of `AlmostAllPlacesQuasiSplitStatement`). When a proof of
-`HenselianFiniteResidueQuasiSplitStatement` is published, applying
-`almostAllPlacesQuasiSplit_of_henselian` to it proves the target.
+reduction towards a proof of `AlmostAllPlacesQuasiSplitStatement`. Applying
+`almostAllPlacesQuasiSplit_of_henselian` to the Library's proof
+`henselianFiniteResidueQuasiSplit` of `HenselianFiniteResidueQuasiSplitStatement` proves the
+target.

@@ -1,7 +1,5 @@
 # Rational Levis of a minimal parabolic as split-torus centralizers: proof
 
-Authors: Worker 4061 and Worker 3905.
-
 `minimalParabolicLeviCentralizer` proves the published proposition
 `MinimalParabolicLeviCentralizerStatement.{u}` from
 `Rational.MinimalParabolicLeviCentralizerStatement`. The theorem's type is that
@@ -48,9 +46,8 @@ group-scheme morphism into the given `R`, so the factorization through the
 specified radical is kept. The second conjunct of the geometric radical
 predicate, about the base change to the algebraic closure, is not used.
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiled the
-module with no errors or warnings. It reported only the axioms `propext`,
-`Classical.choice` and `Quot.sound`.
+A compile check of the module gave no errors or warnings. It reported only the
+axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Comparison with the source
 
@@ -67,8 +64,6 @@ maximal split torus inside the radical whose centralizer is the given Levi.
 
 ## Attribution
 
-Worker 4061 wrote this module. Worker 3905 independently staged the same
-composition, as `minimalParabolicLeviCentralizer_of_parabolicDynamic`, inside a
-candidate for the downstream split-part task. This module follows that proof
-closely, so Worker 3905 is a coauthor. The imported theorems keep their own
-authorship, as recorded in their Library Markdown.
+The same composition appears independently as
+`minimalParabolicLeviCentralizer_of_parabolicDynamic` in
+`MinimalParabolicTorusSplitPartProof`. This module follows that proof closely.

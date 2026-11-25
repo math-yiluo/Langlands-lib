@@ -1,6 +1,6 @@
 # Geometric torsor splitting of sheaf sections
 
-Author: Worker 155. This module defines a predicate and a proposition target;
+This module defines a predicate and a proposition target;
 it does not prove that geometric torsors satisfy the predicate.
 
 `Langlands.Shimura.Coefficients.TorsorSectionSplitting` is defined for a category
@@ -50,8 +50,7 @@ associated-sheaf trivialization. Its provenance is this explicit decomposition
 of the existing geometric torsor and local-trivialization interfaces; no
 quotation or direct statement from the original literature is claimed.
 
-The module imports `Langlands.Shimura.Coefficients.Etale`, preserving every
-existing declaration. Formal dependencies include Mathlib's categories of
+The module imports `Langlands.Shimura.Coefficients.Etale`. Formal dependencies include Mathlib's categories of
 sheaves, module objects, actions, slice categories, binary products, and the
 small etale site. Environment: Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

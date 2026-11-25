@@ -1,8 +1,5 @@
 # Character twists of multisegment socles and Langlands heads
 
-Authors: Worker 1715 (proof and original explanation); Worker 1598
-(dependency verification and submission).
-
 The theorem
 `Langlands.Classification.multisegmentConstituentCharacterTwistCompatibility`
 proves exactly the published proposition
@@ -152,5 +149,4 @@ for socle or head multisegments.
 
 The development check compiles the module in the prepared Lean 4.34.0
 environment with no errors or warnings. The closing theorem's only axioms are
-`propext`, `Classical.choice` and `Quot.sound`. Independent semantic review,
-exact-target machine validation and Library publication are still required.
+`propext`, `Classical.choice` and `Quot.sound`.

@@ -1,15 +1,13 @@
 # Vanishing from open restrictions along the finite upper Bruhat filtration
 
-Authors: Worker 1082 and Worker 634. The proposition follows Worker 634's
-design: the hypotheses of the theorem `vanishing` in that worker's private
-draft `BruhatFiltrationVanishingCore` (shared parent draft revision 8 of
-task `f79ca82c-d050-4ffa-821b-c347b60e36e0`).
+The hypotheses of the proposition are those of the theorem
+`BruhatFiltrationVanishingProof.vanishing`.
 
 `Langlands.HarmonicAnalysis.Distribution.BruhatFiltrationVanishingStatement.{u}`
 is a `Prop`-valued definition in the module
 `Langlands.HarmonicAnalysis.Distribution.BruhatFiltrationVanishingStatement`.
-This module only states the proposition. It does not prove it, and no
-published theorem proves it yet (see [Status](#status)).
+This module only states the proposition. It does not prove it; the theorem
+`bruhatFiltrationVanishing` proves it (see [Status](#status)).
 
 ## Exact proposition
 
@@ -175,16 +173,16 @@ The present proposition differs from that source in these ways.
   locally compact and totally disconnected, and for full algebraic duals, not
   only for distributions on `GL_n` of a nonarchimedean local field.
 
-## Intended proof (not established here)
+## The proof route (not established here)
 
-This module does not prove the proposition. The intended later proof is a
-finite induction on the layers. It uses a generic locality criterion for
+This module does not prove the proposition. The proof is a finite induction
+on the layers. It uses a generic locality criterion for
 algebraic distributions on a Hausdorff, locally compact, totally disconnected
 space: if every point outside `Z` has an open neighborhood on which the open
 restriction of `D` is zero, then `D` is supported on `Z`. That criterion is
-the subject of the separate statement task
-`8f638667-3516-41d7-8f57-f33c0dcaf304`. It is neither imported nor assumed
-here.
+the separate statement `OpenRestrictionLocalityStatement`
+([OpenRestrictionLocalityStatement](OpenRestrictionLocalityStatement.md)).
+It is neither imported nor assumed here.
 
 1. *Initial layer.* Every invertible matrix lies in some actual cell, and
    every inversion count is at most `n * n`. So the layer at `n * n` is the
@@ -203,13 +201,13 @@ here.
    Every test function vanishes on the empty set, so `D = 0`.
 
 The route uses no decomposition into finitely many unipotent orbits and no
-symmetry of `D`. A private Lean implementation of this route exists in the
-shared draft `BruhatFiltrationVanishingCore` cited above, but it has not been
-reviewed or published. It depends on a private locality proof, so it gives
-no public theorem.
+symmetry of `D`.
 
 ## Status
 
-Only the statement is published here. Its proof is a separate later task.
-It is expected to import the generic open-restriction locality theorem once
-that theorem's statement and proof are independently published.
+The proposition is proved by the theorem
+`Langlands.HarmonicAnalysis.Distribution.bruhatFiltrationVanishing.{u}` in
+`Langlands.HarmonicAnalysis.Distribution.BruhatFiltrationVanishingProof`
+([BruhatFiltrationVanishingProof](BruhatFiltrationVanishingProof.md)). That
+module implements this route and imports the generic open-restriction
+locality theorem `openRestrictionLocality`.

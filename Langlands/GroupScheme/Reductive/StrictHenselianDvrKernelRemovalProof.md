@@ -1,7 +1,5 @@
 # Closed-fibre kernel removal over a strictly Henselian DVR
 
-Worker 509.
-
 `Langlands.GroupScheme.strictHenselianDvrKernelRemoval.{u}` proves the exact
 published `StrictHenselianDvrKernelRemovalStatement.{u}` for every universe
 `u`, with no additional hypotheses.

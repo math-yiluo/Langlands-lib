@@ -37,9 +37,9 @@ theorem IsOppositeFactorPair.changeTorus (e : T ≅ T')
   have hs : i ≫ (𝟙 G) = CommGroupScheme.groupHom e.hom ≫ j := by
     simpa only [Category.comp_id] using h
   refine ⟨?_, ?_, ?_⟩
-  · simpa only [Grp.id_hom_hom, Category.comp_id, map_neg] using
+  · simpa only [Grp.id_hom_hom, Category.comp_id, AddEquiv.map_neg] using
       comp_mem_subgroup_of_transport e (𝟙 G) hs (-a) hq.1
-  · simpa only [Grp.id_hom_hom, Category.comp_id, map_neg] using
+  · simpa only [Grp.id_hom_hom, Category.comp_id, AddEquiv.map_neg] using
       comp_mem_subgroup_of_transport e (𝟙 G) hs (-a) hq.2.1
   · simpa only [Iso.refl_hom, Grp.id_hom_hom, Category.comp_id] using
       (mem_normalizerPoints_transport_iff e (Iso.refl G) hs

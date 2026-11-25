@@ -1,6 +1,6 @@
 # Original Weil-product coordinates as evaluation pullbacks
 
-Author: Worker 166. Internal construction and point comparisons, derived from
+Internal construction and point comparisons, derived from
 published affine-point naturality and actual pullback projections. No new
 external mathematical assertion is used.
 
@@ -39,6 +39,7 @@ the original tensor point followed by embedding evaluation. Finally,
 `embeddingProductIsoOfBijective_component_points` identifies it with the
 original coordinate of the published embedding-product isomorphism. All
 original maps, scalar actions and point equivalences are retained. This module
-establishes point equalities; the equality of group-scheme coordinate morphisms,
-canonical Galois compatibility and the structural Weil-restriction theorem are
-subsequent obligations.
+establishes point equalities; the equality of group-scheme coordinate morphisms
+is proved in `Langlands.GroupScheme.AffineWeilEmbeddingCoordinateMorphism` and
+canonical Galois compatibility in `Langlands.GroupScheme.AffineWeilEmbeddingGalois`;
+the structural Weil-restriction theorem is not proved here.

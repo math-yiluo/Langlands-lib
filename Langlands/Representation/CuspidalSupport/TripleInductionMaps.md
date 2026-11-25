@@ -1,6 +1,6 @@
 # Actual induction maps for local triple transfers
 
-This internal contribution supplies actual induction maps needed to reduce
+This internal module supplies actual induction maps needed to reduce
 the local repeated-factor transfers to product irreducibility. It does not
 prove either local transfer or the required product irreducibility.
 
@@ -48,6 +48,10 @@ ordered induction in stages, and the lower finite-length theorem for cuspidal
 induction. Those embeddings use minimal nonzero Jacquet modules and
 admissible cuspidal tensor factorization; they do not assert a global
 decomposition by cuspidal lines, ordered quotient coverage or multisegment
-exhaustion. The earlier audit of actual Jacquet constituent and tensor proofs
-is retained. The import audit records 634 project modules and finds none of
-the eight excluded classification conclusions or their proof successors.
+exhaustion. The actual Jacquet constituent and tensor proofs were audited as
+well. The import audit records 634 project modules and finds among them none
+of eight classification conclusions, nor a module that proves one of them:
+analytic segment classification, multisegment exhaustion, ordered strong-head
+existence, ordered quotient coverage, tempered block uniqueness,
+square-integrable Langlands classification, square-integrable exhaustion and
+regular exhaustion.

@@ -33,10 +33,10 @@ def stableGeneralLinearEvaluation :
     (automorphicToContinuous F n (stableAutomorphicEquiv F n f))
     (GeneralLinearGroupPoints.adelicHomeomorph F n x)
   map_add' f g := by
-    rw [map_add, map_add]
+    rw [ContinuousLinearEquiv.map_add, map_add]
     rfl
   map_smul' a f := by
-    rw [map_smul, map_smul]
+    rw [ContinuousLinearEquiv.map_smul, map_smul]
     rfl
 
 theorem stableGeneralLinearEvaluation_injective :

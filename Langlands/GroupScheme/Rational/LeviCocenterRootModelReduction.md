@@ -7,7 +7,9 @@ This internal supporting construction reduces the four structural inputs of
 `DerivedMaximalTorusIntersectionStatement`, all at arbitrary universe `u`.
 The global derived semisimplicity proposition is derived from the first two.
 These three remaining propositions are explicit premises, so this module does
-not prove the unconditional host target.
+not prove `SplitTorusCentralizerCocenterRootModelStatement` unconditionally;
+the module `Rational.LeviCocenterRootModelProof` does, as
+`splitTorusCentralizerCocenterRootModel`, by supplying the three premises.
 
 `IsDerivedSubgroup.hasFiniteCenter_of_rootDatum_product` passes from an arbitrary
 field to its algebraic closure. Published field-extension preservation supplies
@@ -48,6 +50,6 @@ the three remaining explicit structural premises. No simple connectedness,
 perfectness, characteristic restriction, or chosen parabolic is introduced.
 
 The provenance is internal composition of the named published constructions,
-the separately submitted finite-centre construction, and the retained actual
+the finite-centre construction of `DerivedTorusFiniteCenter`, and the retained actual
 root-model assembly. This module makes no new original-literature transcription
-and leaves the previously submitted assembly pair unchanged.
+and leaves the imported assembly `LeviCocenterRootModelAssembly` unchanged.

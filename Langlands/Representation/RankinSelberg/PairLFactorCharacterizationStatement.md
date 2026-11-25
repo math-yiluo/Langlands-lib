@@ -1,6 +1,6 @@
 # Characterizations by L-factors of pairs
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 two representation-side theorems of Henniart, *Une caractérisation de la
 correspondance de Langlands locale pour GL(n)*, Bull. SMF 130 (2002):
 
@@ -15,7 +15,7 @@ The L-factor of an arbitrary irreducible admissible pair is the relation
 `IsLanglandsPairLPolynomial` of the module
 `LanglandsQuotientLFactorStatement`, JPSS's definition through the Langlands
 classification. The module defines one function and three statements. None
-of the statements is proved.
+of the statements is proved here.
 
 ## Source
 
@@ -133,9 +133,7 @@ The rank of `π` is `n + 2` (Henniart's `n ≥ 2`), and the test ranks are
   invariant under equivalence, so quantifying over one universe is
   quantifying over all classes. The transport of the L relation itself is a
   separate matter: `IsLanglandsPairLPolynomial.congr_equiv` keeps the
-  universe parameters fixed, and the Library proves no transport of
-  `IsLanglandsPairLPolynomial` between different universe parameters, so no
-  Lean theorem relates the statements for different `uV`, `uW`.
+  universe parameters fixed.
 - **The L-factors.**
   - Henniart's `L(s, π × ρ)` for arbitrary irreducible pairs is that of
     JPSS. JPSS define it for nongeneric pairs through the Langlands
@@ -156,10 +154,10 @@ The rank of `π` is `n + 2` (Henniart's `n ≥ 2`), and the test ranks are
   irreducible admissible representations, as in the source.
 - **Omitted part of 1.6(b).** Condition (iii), on `γ(s, π × ρ, ψ)`, is not
   stated. For nongeneric `π` the factor `γ` is Henniart's product extension
-  (§2.8), which is not defined in the Library.
+  (§2.8).
 - **The Galois side.** Théorèmes 1.6(a) and 1.7(a), on representations of the
   Weil–Deligne group, belong to the arithmetic side and are not stated here.
-- **Measures and field.** As in the other units, `ν` is self-dual for `ψ`.
+- **Measures and field.** As in the other modules, `ν` is self-dual for `ψ`.
   The Lean relation takes `ψ` as a parameter, through the Whittaker
   functionals of the standard modules, and this module states no
   `ψ`-independence for it. `F` is a p-adic field

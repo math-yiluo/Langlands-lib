@@ -1,18 +1,18 @@
 # Uniform Whittaker vanishing on a coordinate Jacquet kernel
 
-Worker 635 defines the single closed proposition
+This module defines the single closed proposition
 `Langlands.Whittaker.CoordinateJacquetKernelStatement.{uF,uV}` in
 `Langlands.Representation.Whittaker.CoordinateJacquetKernelStatement`.
 This module states the vanishing assertion and supplies no proof of it.
-The formulation follows Worker 186's task specification and the direct
-relation-generator argument identified there by Workers 186 and 48.
+The formulation follows the direct relation-generator argument of the
+audit below.
 
 This is an internal derived prerequisite for the Jacquet-kernel step in
 JPS (1979), Proposition (2.2), rather than a verbatim theorem from that
 paper. In particular, the conclusion concerns the entire diagonal torus
 and arbitrary algebraic equivariant functionals. The mathematical audit
 below explains why those stronger quantifiers are appropriate; it is not
-a Lean proof or an assertion of independent mathematical acceptance.
+a Lean proof.
 
 ## Exact data and quantifier order
 
@@ -141,13 +141,15 @@ The published `Jacquet.mk_eq_zero` and `Jacquet.relations_eq_span`, together
 with the quotient equivalence above, identify each kernel vector with an
 element of the algebraic span of these relations. Zero vectors and scalar
 multiples preserve a positive threshold; sums use the minimum of two
-positive thresholds. Thus finite span induction is the anticipated route
-to one threshold for a kernel vector. This audit controls only the single
+positive thresholds. Thus finite span induction is the route to one
+threshold for a kernel vector. This audit controls only the single
 character factor and does not require the full conjugated matrix to tend
 to the identity. Arbitrary sizes in the other entries and an arbitrary
-central scalar do not affect that factor. Smoothness is retained as
-requested, although the displayed algebraic cancellation itself does not
-use it. Formalizing this argument is the separate proof obligation.
+central scalar do not affect that factor. Smoothness is retained as a
+hypothesis, although the displayed algebraic cancellation itself does not
+use it. The proof `Langlands.Whittaker.coordinateJacquetKernelStatement` in
+`Langlands.Representation.Whittaker.CoordinateJacquetKernelProof` formalizes
+this argument.
 
 ## Relation to JPS and source record
 
@@ -158,8 +160,8 @@ source `jps-1979-gl3-i`, SHA256
 Proposition (2.2), its proof, Lemma (2.2.1), and Remark (2.2.5), printed
 pages 181–183 (one-based PDF pages 14–16), were read in the text layer and
 visually checked. The retained PDF fingerprint was verified. No
-source-specific erratum was found at the checked project and workspace
-`notes/errata/jps-1979-gl3-i.md` paths.
+source-specific erratum was found at the checked project path
+`notes/errata/jps-1979-gl3-i.md`.
 
 The source uses the simple-root torus represented by matrices
 `diag(x₁⋯xₙ, x₂⋯xₙ, …, xₙ, 1)`. Its proof takes the space spanned by
@@ -178,6 +180,6 @@ The imported Library constructions are reused without modification:
 normalization definitions supply `T.normalizedAbs`, and the smooth
 representation definitions supply `IsSmooth`. The conductor, normalization
 proof, and prerequisite-interface lemmas named in the audit are existing
-Library results documenting a future proof route; the proposition does
+Library results documenting the proof route; the proposition does
 not assume their conclusions as additional hypotheses. The parent
 asymptotic proposition is a comparison of conventions and is not assumed.

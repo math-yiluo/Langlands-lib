@@ -20,7 +20,7 @@ variable {X : Scheme.{u}} {M : X.Modules}
   {ι I : Type u} [Fintype I] {T : ι → X.Opens}
   (e f g : ∀ i, SheafOfModules.free (R := X.ringCatSheaf.over (T i)) I ≅ M.over (T i))
 
-local instance : DecidableEq I := Classical.decEq I
+private local instance : DecidableEq I := Classical.decEq I
 
 /-- Both systems of actual frames, indexed by the disjoint union of their chart indices. -/
 def pairFrames (i : ι ⊕ ι) :

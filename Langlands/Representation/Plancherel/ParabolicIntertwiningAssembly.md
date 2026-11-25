@@ -1,10 +1,8 @@
-# Assembly of the host conclusion from convergence and domination
+# Assembly of the conclusion of `ConditionalParabolicIntertwiningStatement` from convergence and domination
 
-Author: Worker 1615.
-
-This module is a supporting construction for the host task proving
+This module is a supporting construction for
 `Langlands.Plancherel.ConditionalParabolicIntertwiningStatement`. It packages
-every conjunct of the host conclusion that follows from published results and
+every conjunct of its conclusion that follows from published results and
 from `ParabolicPointUniformNumerator`. Two analytic inputs are left as explicit
 hypotheses: full convergence on a region and local integrable domination on
 its twist-orbit saturation.
@@ -25,8 +23,8 @@ proposition, not an assertion.
 
 ## The theorem
 
-`parabolicLevi_intertwiningConclusion_of_dominated` works in the host's actual
-rational-point setting, with the same data as the section `Host` of
+`parabolicLevi_intertwiningConclusion_of_dominated` works in the actual
+rational-point setting of `ConditionalParabolicIntertwiningStatement`, with the same data as the section `Host` of
 `ParabolicPointUniformNumerator`:
 
 - presentations `r` and `r'` with the same Levi composite and split component;
@@ -38,8 +36,8 @@ rational-point setting, with the same data as the section `Host` of
 Let `π` be an admissible finite-length representation of the literal Levi
 point subgroup. Let `C` be a set of unramified parameters of the full rational
 norm family with `ParabolicLeviAnalyticInputs … π C`, and let `Ω` be its
-published `unramifiedTwistOrbitSaturation`. Then the theorem gives exactly the remaining conjuncts of the host conclusion
-for this region:
+published `unramifiedTwistOrbitSaturation`. Then the theorem gives exactly the remaining conjuncts of the conclusion of
+`ConditionalParabolicIntertwiningStatement` for this region:
 
 1. `C` is nonempty and open, and its published `unramifiedTwistOrbitRegion` is
    open;
@@ -66,8 +64,8 @@ for this region:
 ## Scope and provenance
 
 The theorem does not prove convergence, domination, radical unimodularity or the
-squared-modulus compatibility. It does not choose the host region
-`parabolicPointUnramifiedIntertwiningRegion` or prove its nonemptiness or
-openness, and it does not prove the host theorem. It is an internal composition
+squared-modulus compatibility. It does not choose the region
+`parabolicPointUnramifiedIntertwiningRegion` of `ConditionalParabolicIntertwiningStatement` or prove its nonemptiness or
+openness, and it does not prove that statement. It is an internal composition
 of the published declarations named above and of
 `ParabolicPointUniformNumerator`; no literature theorem replaces a proof.

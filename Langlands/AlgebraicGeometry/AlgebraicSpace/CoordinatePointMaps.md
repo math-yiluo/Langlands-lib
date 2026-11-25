@@ -1,7 +1,5 @@
 # Morphisms on coordinate point topologies
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claims on adelic points
 (`Langlands.Global.AdelicSpacePointTopologyStatement`). It treats morphisms on the topologies
 of the adelic levels from `Langlands.Global.AdelicSpaceLevelTopology`:

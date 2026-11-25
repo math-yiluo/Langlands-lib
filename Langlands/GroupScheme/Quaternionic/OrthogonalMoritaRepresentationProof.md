@@ -1,7 +1,5 @@
 # Orthogonal Morita comparison with the actual coefficient row action
 
-Authors: Worker 334 and Worker 257.
-
 `orthogonalMoritaRepresentation` proves the unchanged Library proposition
 `Langlands.GroupScheme.Quaternionic.OrthogonalMoritaRepresentationStatement.{u}`
 for every universe `u`. Its hypotheses are precisely those of that proposition:

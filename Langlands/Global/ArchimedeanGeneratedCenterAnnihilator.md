@@ -1,7 +1,5 @@
 # Common center annihilation in the actual generated module
 
-Author: Worker 94.
-
 This internal algebraic prerequisite uses the published actual center action,
 compact action and covariance. The number-field universe and natural rank
 are unrestricted. No analytic or growth assumption is used.

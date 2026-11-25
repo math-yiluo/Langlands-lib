@@ -1,7 +1,5 @@
 # Integrals of periodic functions over powers of `𝔸_K / K`
 
-Author: Worker 1709.
-
 This is internal infrastructure for the proof of
 `Langlands.Automorphic.CuspidalUnitaryLocalGenericityStatement`. It has no literature
 counterpart beyond standard facts about Haar measure on compact abelian groups. Every result is

@@ -1,7 +1,5 @@
 # Exclusion and persistence of the inducing exponent in quotients of induced twists
 
-Author: Worker 5120.
-
 This module states three closed propositions in
 `Langlands.Renard.AlgebraicFamily`:
 

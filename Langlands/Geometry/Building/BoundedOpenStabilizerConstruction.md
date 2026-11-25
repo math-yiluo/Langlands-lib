@@ -1,6 +1,6 @@
 # Bounded open stabilizers from rank-one exchange and open generation
 
-This internal derived unit assembles the existing exact KP bounded-open
+This module assembles the existing exact KP bounded-open
 stabilizer predicate on supplied actual parahoric-building data. It uses the
 unconditional actual centralizer norm-kernel construction to remove
 centralizer boundedness, the published point sharp-exchange proof to remove a
@@ -11,8 +11,9 @@ All results apply at every universe `u` over nonarchimedean local fields of
 either characteristic. The original ambient group, represented centralizer,
 root groups, normalized valuation apartment, quotient and rational-point
 action are retained. Every topology is the canonical rational-point topology.
-The supplied data and the remaining hypotheses are explicit; this unit does
-not construct general building data or prove the unrestricted parent theorem.
+The supplied data and the remaining hypotheses are explicit; this module does
+not construct general building data or prove the unrestricted
+`RootValuationBuildingConstructionStatement`.
 
 `ValuationBuildingData.sharpFixerBoundedness_of_rankOneFactorization` assumes
 `RelativeRoot.HasRankOneFactorization B.i`, the opposite-factor-pair input
@@ -20,7 +21,7 @@ retained by `PointSharpExchange`. Under the apartment axioms appearing in
 `SharpFixerBoundednessStatement`, that published exchange theorem covers each
 singleton sharp fixer by the product of its negative-root subgroup, its
 positive-root subgroup and its sharp normalizer stabilizer. The existing
-`sharpFixerBoundedness_of_cover` bounds this product using the now-proved
+`sharpFixerBoundedness_of_cover` bounds this product using the proved
 bounded image of the actual centralizer norm kernel. Thus neither a cover nor
 a centralizer bound is an additional premise of the new theorem.
 
@@ -54,10 +55,17 @@ proved Galois norm smoothness as above.
 stabilizer as an open subgroup with equality of underlying subgroups and
 algebraic boundedness.
 
-The provenance is this composition of named published or separately staged
-actual-object results; no new independent literature assertion is used.
-Apartment axioms including AS 5, opposite factor pairs, open root-centralizer
-generation and derived-cover/torus product smoothness remain proof
-obligations, as does existence of the supplied data for arbitrary connected
-reductive groups. The compact-open centralizer-zero conclusion in the second
-variant remains conditional on product smoothness.
+The provenance is this composition of named published actual-object results;
+no new independent literature assertion is used. Apartment axioms including
+AS 5, opposite factor pairs, open root-centralizer generation and
+derived-cover/torus product smoothness are hypotheses here, and existence of
+the supplied data for arbitrary connected reductive groups is not proved here.
+Of these hypotheses the Library proves opposite factor pairs for
+parahoric-building data (`ParahoricBuildingData.hasRankOneFactorization_actual`
+in `ChamberIwahoriCompactOpenProof`), open root-centralizer generation
+(`RelativeRoot.openRootCentralizerGeneration` in
+`GroupScheme/Rational/OpenRootGenerationProof`) and product smoothness
+(`derivedCoverTorusProductSmooth` in
+`GroupScheme/SimplyConnected/DerivedCoverTorusProductSmoothProof`). The
+compact-open centralizer-zero conclusion in the second variant remains
+conditional on product smoothness.

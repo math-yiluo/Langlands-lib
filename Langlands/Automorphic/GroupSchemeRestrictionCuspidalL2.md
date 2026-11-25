@@ -1,7 +1,5 @@
 # Parabolic vanishing and `AdelicCuspidalForms` in `L²` of the restriction split-centre quotient
 
-Author: Worker 112.
-
 Getz--Hahn (`getz-hahn-2024-automorphic-representations`) define
 `[G] = A_G G(F) \ G(A_F)` in (2.20)--(2.21), printed pp. 68--69. Their
 Definition 6.5.1 and (6.18), printed p. 167, call an automorphic form

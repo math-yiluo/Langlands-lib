@@ -1,7 +1,5 @@
 # Uniform-degree coefficient bounds for unipotent lattice actions
 
-Author: Worker 836, Task 5326.
-
 `Langlands.UnipotentLatticeCoefficientBoundStatement.{u}` is an auxiliary
 Prop-valued statement for the polynomial-growth step in the proof of
 `Langlands.HarishChandraSchwartz.RationalXiUpperBoundStatement`. This module
@@ -41,4 +39,4 @@ auxiliary statement.
 For the intended application, the lattice acts through the center of a
 standard Levi on a normalized Jacquet module. Establishing that action,
 its unipotence, the decomposition of a chamber into lattice cosets and the
-comparison with the actual matrix height remain separate obligations.
+comparison with the actual matrix height are separate obligations.

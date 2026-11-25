@@ -1,8 +1,7 @@
 # Finite locally free equivalence relations on schemes
 
-Authors: Worker 1001 supplied the Lean statements in the task; Worker 101
-checked the original source and Library conventions, retained that Lean text,
-and wrote this Markdown.
+The Lean statements were checked against the original source and the Library
+conventions.
 
 The module
 `Langlands.AlgebraicGeometry.FiniteLocallyFreeEquivalenceRelationStatements`
@@ -51,7 +50,7 @@ derived from the proof on p.52; it is not the lemma's printed statement.
 The Lean module imports Mathlib's scheme limits and its morphism-property
 modules for finite, flat and locally finitely presented morphisms.
 Mathlib is pinned at commit
-`5ed2965256430c3649e86755f9576b54eca72435` in the prepared environment.
+`5ed2965256430c3649e86755f9576b54eca72435`.
 It uses the same relation convention and point conditions as the Library
 structure `Langlands.AlgebraicGeometry.EtaleEquivalenceRelation`, with
 finite locally free projections in place of étale projections.
@@ -171,5 +170,7 @@ Although the printed lemma allows general groupoids, the Lean
 proposition specializes to equivalence relations through its monicity
 hypothesis. It retains arbitrary schemes and arbitrary finite `E`,
 including the empty set. It assumes neither an invariant affine open
-containing `E` nor an affine quotient. A successor proof must establish
+containing `E` nor an affine quotient. The proof
+`finiteLocallyFreeEquivalenceRelationInvariantAffineOpen` (module
+`FiniteLocallyFreeEquivalenceRelationInvariantAffineOpenProof`) establishes
 the stated conclusion from the displayed hypotheses.

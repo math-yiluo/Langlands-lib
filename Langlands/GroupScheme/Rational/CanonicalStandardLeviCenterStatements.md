@@ -1,7 +1,5 @@
 # Center targets for the canonical standard Levi representative
 
-Author: Worker 450, with statement-scope and source-route guidance from Worker 101.
-
 This module specializes the published `StandardLeviCenterStatements` to the
 specific group scheme `Standard.leviScheme i ν J` and inclusion
 `Standard.leviHom i ν J`. The published theorem
@@ -57,11 +55,13 @@ target. The comparison is not made automatic by transporting a topology
 along the proposed map.
 
 The separate published `StandardLeviSplitComponentStatement` names the
-remaining structural existence result: this same `M_J` is connected
+structural existence result: this same `M_J` is connected
 reductive, and there exist `A`, `a : A → M_J` and `g : A → T` with
 `IsSplitComponent a` and `g ≫ i = a ≫ Standard.leviHom i ν J`.
 Its file contains a conditional reduction to other structural targets, not
-a proof of their premises or of this existence assertion. Closed
+a proof of their premises or of this existence assertion; the assertion is
+proved as `standardLeviSplitComponentStatement` (module
+`Rational.StandardLeviSplitComponentProof`). Closed
 representability alone does not supply these inputs. This module neither
 chooses an `A_J` nor proves that an arbitrary supplied split component has
 such a factorization. Once actual structural witnesses are available, the
@@ -109,7 +109,7 @@ printed p. 382 / PDF p. 398, gives density of rational points of a connected
 reductive group over an infinite field without requiring perfectness.
 Remark 1.97, printed p. 35 / PDF p. 51, retains nonsmooth centers even for
 smooth ambient groups. The density-to-all-test-center and topology
-comparisons remain proof obligations.
+comparisons remain to be proved.
 
 The Kaletha–Prasad corrections dated 1 November 2024, PDF pp. 24–25,
 amend the §2.2 hypotheses, Lemma 2.2.5, valuation signs and the

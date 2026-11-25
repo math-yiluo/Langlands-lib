@@ -1,8 +1,7 @@
 # Renard 2026, Chapter IV: item-by-item coverage ledger
 
-Worker 1222, executor of the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 1. This note is the Chapter IV part of
-the item ledger that the task contract requires, in the format of the published
+This note is the Chapter IV part of the item ledger of the whole book
+([coverage.md](coverage.md)), in the format of the published
 [Chapter V](item-ledger-v.md), [Chapter VI](item-ledger-vi.md) and
 [Chapter VII](item-ledger-vii.md) ledgers (status codes as there). It lists every headed
 item of Chapter IV and the unheaded assertions found, with printed / PDF pages
@@ -12,23 +11,22 @@ Proposition statements at `24a49431a1a304ab4190fc6ef1f7e7d21c2d41be`. On 14 Nove
 the six formerly statement-only rows were updated against published proofs in Library
 `e13a307a22881999a6db8ebc753d4d0b6dd359e5`; the evidence, hypotheses and implemented routes
 appear below. The further IV.3.2 statement update uses Library
-`457e31a2131a1083c26931d33fec09a71fea54d6` and records the remaining exact proof task.
+`457e31a2131a1083c26931d33fec09a71fea54d6` and records the proof then still missing.
 The IV.3.2 definition update additionally verifies the published raw predicates and
 their admissibility comparison at Library `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`.
 The 16 November 2026 update adds the separate IV.3.2 counterexample assertion,
-its published statement and exact proof owner, checked at Library
+its published statement, checked at Library
 `b4005ae3c4a406e2d1193548306b79d7ab745811`.
-On 17 November 2026, Worker 5099 (executor of Task 6678) updated clarification C3 and the
-IV.3.2 Remark row against Library `b369a8f280229cf081a17f96b81c7a8c1ff1f539`, at the
-operator's request.
-On 18 November 2026, Worker 4988 (executor of Task 6678) updated the two IV.3.2 Remark rows,
-clarification C3 and the Summary against Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`, after both exact proofs were
-published.
-On 20 November 2026, Worker 1222 checked positive-form uniqueness against Library
-`74c4eb01e237c126a7194e8eee1bc9606ef2ffc8` and added the unnumbered IV.2.1 assertion on
-unnormalized induction.
-On 21 November 2026, Worker 1222 checked the opening of IV.3.1 against Library
-`a11d1e75f52192f694c9901f4b7fd7098b0f8ff9` and recorded the central-quotient Haar measure.
+On 17 November 2026, clarification C3 and the IV.3.2 Remark row were updated against
+Library `b369a8f280229cf081a17f96b81c7a8c1ff1f539`.
+On 18 November 2026, the two IV.3.2 Remark rows, clarification C3 and the Summary were
+updated against Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`, after both exact proofs
+had entered the Library.
+On 20 November 2026, positive-form uniqueness was checked against Library
+`74c4eb01e237c126a7194e8eee1bc9606ef2ffc8` and the unnumbered IV.2.1 assertion on
+unnormalized induction was added.
+On 21 November 2026, the opening of IV.3.1 was checked against Library
+`a11d1e75f52192f694c9901f4b7fd7098b0f8ff9` and the central-quotient Haar measure recorded.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
@@ -36,10 +34,10 @@ French version dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Chapter IV is printed
 pp.87–102 / PDF pp.93–108.
 
-Worker 1222 read each item in the source and the docstring and Markdown of each matched
+Each item was read in the source, together with the docstring and Markdown of each matched
 declaration. The original proof-status scan sought theorems whose type is exactly the
-statement. The six updates additionally check the published proof files and, for the five
-records available in this instance, their acceptance and publication evidence. Unless
+statement. The six updates additionally check the published proof files and, for five of
+them, the Library commit where the proof first appeared. Unless
 another namespace is written, statements are in
 `Langlands.Renard.CompactRepresentation` (abbreviated `CR`).
 
@@ -80,7 +78,7 @@ another namespace is written, statements are in
 | IV.2.1 `V̄`, `π^h` and Definition: hermitian representations | 96 / 102 | hermitian forms in [HermitianRepresentationStatements](../../Langlands/Representation/Unitary/HermitianRepresentationStatements.md) | D |
 | IV.2.1 Remark 1: `π^h ≅ π` implies hermitian; converse for admissible `π` | 97 / 103 | `CR.HermitianOfSelfDualStatement`, `CR.SelfDualOfHermitianStatement` | P (`hermitianOfSelfDual`, `selfDualOfHermitian`). The printed one-line argument for the first assertion is incomplete; see clarification C2 |
 | IV.2.1 Remark 2: uniqueness of the form up to a scalar | 97 / 103 | `CR.HermitianFormUniquenessStatement` | P: `hermitianFormUniqueness` |
-| IV.2.1 unnormalized induction can fail to preserve hermitian representations even when `H \ G` is compact | 97 / 103 | Counterexample still to formalize in Task 1222 | Open. The candidate witness is the trivial representation of the upper Borel of `GL₂(ℚ₂)`. |
+| IV.2.1 unnormalized induction can fail to preserve hermitian representations even when `H \ G` is compact | 97 / 103 | [`UnnormalizedInductionHermitianCounterexampleStatement`](../../Langlands/Representation/Unitary/UnnormalizedInductionHermitianCounterexampleStatement.md); the Library does not prove it | Open. The candidate witness is the trivial representation of the upper Borel of `GL₂(ℚ₂)`. |
 | IV.2.1 (IV.2.1.1)–(IV.2.1.2): normalized induction `i_H^G` and its compatibility with `~` and `h` | 97 / 103 | `CR.CompactQuotientNormalizedInductionDualityStatement` | P: [`compactQuotientNormalizedInductionDuality`](../../Langlands/Representation/Unitary/CompactQuotientNormalizedInductionDualityProof.md), carried Library theorem |
 | IV.2.2 definition of a unitary representation | 97 / 103 | `Langlands.InvariantPositiveForm` and `Langlands.IsUnitarizable` | D. The first carries a chosen invariant positive form, and the second asserts its existence. |
 | IV.2.2 uniqueness of the invariant positive form up to a positive real scalar | 97 / 103 | [`Langlands.InvariantPositiveForm.exists_pos_rescale_eq`](../../Langlands/Representation/Unitary/AdmissibleFormUniqueness.md) | P (checked Library reuse at the source hypotheses). |
@@ -97,8 +95,8 @@ another namespace is written, statements are in
 | IV.3.1 Definition: `L²(G, χ, dg*)₀`, its invariant positive form | 99 / 105 | [`Langlands.Induction.CentralL2`, `centralL2Representation`, `centralL2Form`](../../Langlands/Representation/MatrixCoefficient/CentralL2.md) | D for the smooth right-regular subspace, where each entire function has an open right stabilizer. The action and form use the two-sided quotient measure. The larger space of locally constant functions in the literal definition remains open. See the [faithfulness discussion](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsStatement.md#faithfulness-notes). |
 | IV.3.1 Remark: `L²(G, χ, dg*)₀` is the space of smooth vectors of its completion | 99 / 105 | `CR.CentralL2SmoothVectorsStatement` | P for the smooth reading of the Definition: [`centralL2SmoothVectors`](../../Langlands/Representation/MatrixCoefficient/CentralL2SmoothVectorsProof.md) |
 | IV.3.2 Definition: square integrable modulo the centre, essentially square integrable | 99 / 105 | `Langlands.SmoothRep.IsSquareIntegrableModuloCenter` and `Langlands.SmoothRep.IsEssentiallySquareIntegrableModuloCenter` in [SmoothSquareIntegrability](../../Langlands/Representation/MatrixCoefficient/SmoothSquareIntegrability.md) | D: neither assumes admissibility or irreducibility. The older `Langlands.IsSquareIntegrableModCenter` is admissibility conjoined with the first predicate, by `Langlands.SmoothRep.isSquareIntegrableModCenter_iff` |
-| IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | P: [`singleCoefficientSquareIntegrability`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityProof.md) (exact proof Task 6678, `cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`), without admissibility, countability or reductivity. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
-| IV.3.2 Remark, second assertion: this criterion fails without irreducibility | 100 / 106 | [`CR.NonirreducibleSquareIntegrabilityCounterexampleStatement`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md), using the raw all-coefficients predicate | P: [`nonirreducibleSquareIntegrabilityCounterexample`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleProof.md) (exact proof Task 7180, `a326697e-2603-4828-9948-308b70e7369c`): the left regular representation of the discrete infinite dihedral group on its complex group algebra |
+| IV.3.2 Remark: one nonzero square-integrable coefficient suffices for irreducible `π` with unitary central character | 100 / 106 | [`CR.SingleCoefficientSquareIntegrabilityStatement`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md), without assumed admissibility | P: [`singleCoefficientSquareIntegrability`](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityProof.md), without admissibility, countability or reductivity. The older `CR.SquareIntegrableCoefficientCriterionStatement` is P (`squareIntegrableCoefficientCriterion`) with admissibility; see C3 |
+| IV.3.2 Remark, second assertion: this criterion fails without irreducibility | 100 / 106 | [`CR.NonirreducibleSquareIntegrabilityCounterexampleStatement`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md), using the raw all-coefficients predicate | P: [`nonirreducibleSquareIntegrabilityCounterexample`](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleProof.md): the left regular representation of the discrete infinite dihedral group on its complex group algebra |
 | IV.3.2 Proposition: essentially square integrable irreducible implies admissible | 100 / 106 | `CR.EssentiallySquareIntegrableAdmissibleStatement` | P |
 | IV.3.2 Lemma: admissible square integrable implies unitary and semisimple | 100 / 106 | `CR.SquareIntegrableUnitarySemisimpleStatement` | P |
 | IV.3.3 Lemma (i)–(ii): Schur orthogonality and the formal degree | 101 / 107 | `CR.SchurOrthogonalityStatement` | P: `schurOrthogonality` |
@@ -134,9 +132,8 @@ another namespace is written, statements are in
   The newly published
   [SingleCoefficientSquareIntegrabilityStatement](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityStatement.md)
   states the general t.d.-group Remark without admissibility, using the all-coefficients
-  condition directly. Its exact proof was then open in Task 6678
-  (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`); it is now published, see the 18 November
-  update below. The published
+  condition directly. Its proof was then open; it is now in the Library, see the
+  18 November update below. The published
   `essentiallySquareIntegrableAdmissible` theorem consumes the all-coefficients condition;
   it can yield admissibility after this implication is proved, not as an initial input.
   A reductive-group admissibility theorem alone cannot discharge this general t.d.-group
@@ -150,8 +147,8 @@ another namespace is written, statements are in
 
   - *Status (as of 17 November; superseded by the 18 November update below).* No Library
     theorem had type `CR.SingleCoefficientSquareIntegrabilityStatement`. The statement was
-    unproved in Lean and was not to be used as a premise. Task 6678 stayed open for its
-    proof. Its statement Markdown is unchanged.
+    unproved in Lean and was not to be used as a premise. Its statement Markdown is
+    unchanged.
   - *Admissible case.* Under admissibility the Remark is proved. The published
     `squareIntegrableCoefficientCriterion` concludes `IsSquareIntegrableModCenter`, which
     contains the all-coefficients condition for some unitary central character. By
@@ -171,8 +168,7 @@ another namespace is written, statements are in
     ℂ[G]-submodule. The infinite-quotient hypothesis is
     needed: for the trivial group, ℓ²(G/Z, χ) = ℂ is itself simple. When `G/Z(G)` is
     finite, every coefficient is in L² and there is nothing to prove.
-  - *Paper route for every t.d. group.* Worker 4988 proposed this route, and Worker 5099
-    checked it on paper. It uses no countability, no von Neumann dimension theory and no
+  - *Paper route for every t.d. group.* This route was checked on paper. It uses no countability, no von Neumann dimension theory and no
     reductive structure. Write `χ` for the central character and `ℓ` for the functional
     of the given coefficient.
     1. The map `y ↦ (g ↦ ℓ(π(g) y))` is an injective linear map from `V` into the
@@ -208,19 +204,17 @@ another namespace is written, statements are in
 
     The argument computes traces only of operators in `N`. An earlier version wrote the
     vectors of `V_K` as `x ξ` with `x ∈ N`, which would need coefficient vectors to be
-    bounded vectors. The version being formalized avoids that step.
-  - *Formalization.* The route is being formalized in Task 6678. At the operator's
-    direction, it is staged in reviewable pieces: the bounded Schur lemma, the tracial
-    finiteness, then the Hecke operators and the admissibility theorem. If a step fails,
-    the failure is to be reported, and C3 then reverts to an unresolved gap. The
+    bounded vectors. The formalized version avoids that step.
+  - *Formalization.* The route is formalized in pieces: the bounded Schur lemma, the
+    tracial finiteness, then the Hecke operators and the admissibility theorem (see the
+    18 November update below). The
     [analysis note](iv32-single-coefficient-analysis.md) predates this route, and its
     Section 4 calls the general case unresolved. This update supersedes that assessment,
     not the note's proofs.
 
-  *Update, 18 November 2026 (Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`).* C3 is resolved. The exact proof
-  `82d49555-92de-46ac-ba53-8c6023899f61` of Task 6678 is independently accepted and
-  public, with accepted machine validation for `lake-build`, `exact-target`,
-  `unchanged-statement` and `frozen-inputs`. Its theorem
+  *Update, 18 November 2026 (Library `ba9d1e9ac8e4b6f239a8bbf0ba15e6743fd140c9`).* C3 is resolved. The proof
+  was checked by a Lake build against the exact target, with the statement and its
+  inputs unchanged. Its theorem
   `CR.singleCoefficientSquareIntegrability`
   ([SingleCoefficientSquareIntegrabilityProof](../../Langlands/Representation/MatrixCoefficient/SingleCoefficientSquareIntegrabilityProof.md))
   has type exactly `CR.SingleCoefficientSquareIntegrabilityStatement.{u, v}`. The
@@ -237,46 +231,43 @@ another namespace is written, statements are in
     elements `χ` is trivial; coefficient functions are recorded at chosen coset
     representatives. With Mathlib's inner product, which is conjugate-linear in the
     first argument, the trace is written `τ(x) = ⟨ξ, x ξ⟩`.
-  - *Pieces.* As the operator directed, the route was published in three reviewed
-    pieces. Definition `c451c9a6-eb97-47f6-8138-1a5c5c7d822d` contains the bounded
+  - *Pieces.* The route entered the Library in three pieces. The first contains the bounded
     Schur lemma and the tracial finiteness theorem
     (`Langlands/Analysis/BoundedSchur.lean`, `Langlands/Analysis/TracialFiniteness.lean`).
-    Definition `623e2c9c-8405-43cf-9920-8e7132a6c839` contains the Hecke operators on the
+    The second contains the Hecke operators on the
     twisted coset space and their support files
     (`Langlands/Representation/MatrixCoefficient/HeckeOperator.lean`, `TwistedCosetSpace.lean`,
-    `CentralCosetSum.lean` and `Langlands/Analysis/FiberLIntegral.lean`). The proof
-    `82d49555-92de-46ac-ba53-8c6023899f61` contains the admissibility theorem and the target.
+    `CentralCosetSum.lean` and `Langlands/Analysis/FiberLIntegral.lean`). The third,
+    the proof, contains the admissibility theorem and the target.
   - *Scope.* The Lean theorem has no admissibility, countability, reductivity or
     finite-dimensionality hypothesis, and the group and carrier universes are independent.
-    The second assertion of the Remark, failure without irreducibility, is the separate
-    exact proof `8ce9377f-9877-4bc9-8716-6b42762d9824` of Task 7180 (accepted by
-    Reviewer 7809, Task 7180 done); its table row is updated together with this one.
+    The second assertion of the Remark, failure without irreducibility, has a separate
+    proof; its table row is updated together with this one.
 
-## Proof-publication update, 14 November 2026
+## Proof update, 14 November 2026
 
-The following five exact proof records are independently accepted and public. Each has
-accepted machine validation for `lake-build`, `exact-target`, `unchanged-statement` and
-`frozen-inputs`, with no reviewer qualifications. Their frozen Lean/Markdown pairs still
-equal the files at the update's Library commit `e13a307a22881999a6db8ebc753d4d0b6dd359e5`.
+The following five proofs are in the Library. Each was checked by a Lake build against
+the exact target, with the statement and its inputs unchanged. Their Lean/Markdown pairs,
+as first checked, equal the files at the update's Library commit
+`e13a307a22881999a6db8ebc753d4d0b6dd359e5`.
 The theorem names and links are in the corresponding rows above.
 
-| Item | Accepted proof record | Independent reviewer | Published Library commit |
-| --- | --- | --- | --- |
-| IV.1.4 Remark 1 | `91ee69d3-815d-4155-8774-e9c45467978b` | Reviewer 746 | `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3` |
-| IV.2.2 Proposition | `7f378503-003f-448b-805a-ab518c4c2315` | Reviewer 736 | `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3` |
-| IV.2.3 | `dbfe5c3f-6375-4511-b33e-deb54dcc5494` | Reviewer 42 | `b128d289028bf75629e9e364ecf151c484b27a85` |
-| IV.3.1 Remark | `2a372f49-7294-4240-b742-1d5dc2cec511` | Reviewer 41 | `b128d289028bf75629e9e364ecf151c484b27a85` |
-| IV.3.3 Remark | `237d0820-b6ed-4a7e-9931-ae2fcf534325` | Reviewer 77 | `b128d289028bf75629e9e364ecf151c484b27a85` |
+| Item | First appeared at Library commit |
+| --- | --- |
+| IV.1.4 Remark 1 | `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3` |
+| IV.2.2 Proposition | `51e4d8972659f1ffcf0ca89e8eee9540a30b52d3` |
+| IV.2.3 | `b128d289028bf75629e9e364ecf151c484b27a85` |
+| IV.3.1 Remark | `b128d289028bf75629e9e364ecf151c484b27a85` |
+| IV.3.3 Remark | `b128d289028bf75629e9e364ecf151c484b27a85` |
 
-For IV.2.1, the carried published
+For IV.2.1, the published
 [`CR.compactQuotientNormalizedInductionDuality`](../../Langlands/Representation/Unitary/CompactQuotientNormalizedInductionDualityProof.lean)
-by Worker 142 has exactly the unchanged target statement as its type. Its current Library
-declaration and paired proof Markdown supply the evidence recorded here; the original
-proof-review receipt was not recovered in this instance. A development check inspected
+has exactly the unchanged target statement as its type. Its Library
+declaration and paired proof Markdown supply the evidence recorded here. A separate check
+inspected
 the theorem at independent universes `uG` and `v`, using only `propext`, `Classical.choice`
 and `Quot.sound`. All six proof modules also compile at the update's Library base with
-zero errors or warnings. These development checks do not create new proof-acceptance
-receipts.
+zero errors or warnings.
 
 The six proof links document the implemented arguments in detail. Their scope and routes
 are:
@@ -318,10 +309,8 @@ are:
 
 ## IV.3.2 statement publication, 14 November 2026
 
-Statement `71f341e5-5a75-4c1d-86b0-ea5a0b549815` is independently accepted by
-Reviewer 2594 and public, with no qualifications. Integration
-`8b2b359c401f4733aecb8b222ae9db53` first published its pair at Library
-`b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a`. Both frozen file hashes agree with
+The statement's pair first appeared at Library
+`b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a`. Both file hashes, as first checked, agree with
 the pair at the update's Library commit `457e31a2131a1083c26931d33fec09a71fea54d6`.
 The original IV.3.1–IV.3.2 passage, printed pp.99–100 / PDF pp.105–106, was read
 again for this update.
@@ -334,19 +323,17 @@ the same for every smooth coefficient, using the same character and measure.
 There is no admissibility, reductivity, countability or finite-dimensionality
 hypothesis, and the group and representation-carrier universes remain independent.
 The source leaves the proof to the reader; this publication supplies only its
-Prop-valued statement. Exact proof Task 6678
-(`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) targets
+Prop-valued statement,
 `Langlands.Renard.CompactRepresentation.SingleCoefficientSquareIntegrabilityStatement.{u,v}`.
-Neither the statement publication nor creation of that task closes C3.
+The Library proves it, as `CR.singleCoefficientSquareIntegrability` (see the
+18 November update of C3).
 
 ## IV.3.2 definition publication, 14 November 2026
 
-Definition `b9326b4f-014a-4bd7-897b-b0f99847a221` is independently accepted by
-Reviewer 2950 and public, with no qualifications. Integration
-`9c9266a91bce45419ef9e64faaf4642c` first published its
+The
 [SmoothSquareIntegrability pair](../../Langlands/Representation/MatrixCoefficient/SmoothSquareIntegrability.md)
-at Library `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`. The frozen hashes below
-equal both the local files and the files at this update's Library commit
+first appeared at Library `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`. The hashes below,
+as first checked, equal the files at this update's Library commit
 `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e`.
 
 | File in `Langlands/Representation/MatrixCoefficient/` | SHA256 |
@@ -380,10 +367,8 @@ character used by the separate
 
 These intrinsic comparisons supply neither the IV.3.2 admissibility theorem nor
 the single-coefficient implication. The admissibility theorem is already
-published separately as recorded above. The general single-coefficient
-statement and its exact proof Task 6678
-(`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) retain their statement-only and open-proof
-statuses, respectively; C3 is unchanged by this definition publication.
+published separately as recorded above. At this update the general
+single-coefficient statement was not proved; it is proved now (see C3).
 
 ## IV.3.2 counterexample statement publication, 16 November 2026
 
@@ -393,12 +378,10 @@ leaves the proof to the reader. It is a separate obligation from the positive
 irreducible implication. The original IV.3.1–IV.3.2 passage, printed pp.99–100 /
 PDF pp.105–106, was read again for this update.
 
-Statement `a6d3d023-4703-4073-8124-4de70be9c6b8` is independently accepted by
-Reviewer 4321 without qualifications and public. Integration
-`be26ad70dedc4ea6b2f91438c6f45330` first published its
+The statement's
 [Lean/Markdown pair](../../Langlands/Representation/MatrixCoefficient/NonirreducibleSquareIntegrabilityCounterexampleStatement.md)
-at Library `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`. The frozen hashes agree
-with the workspace and this update's Library `b4005ae3c4a406e2d1193548306b79d7ab745811`:
+first appeared at Library `0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18`. The hashes,
+as first checked, agree with this update's Library `b4005ae3c4a406e2d1193548306b79d7ab745811`:
 
 | File in `Langlands/Representation/MatrixCoefficient/` | SHA256 |
 | --- | --- |
@@ -418,33 +401,26 @@ an ambient bi-invariant Borel Haar measure and a separate bi-invariant Borel
 Haar measure on the actual quotient `G/Z(G)`. Both the group and representation
 carrier lie in `Type 0`, as appropriate for this existence assertion. It assumes
 no admissibility, reductivity, finite dimension, finite length or countability.
-Fresh development check `41ba672e-419c-4fba-b53a-3c7429d043ba` compiled the
+A fresh check compiled the
 statement without errors or warnings and inspected it as a Prop-valued
 definition. This check supplies no proof of the counterexample assertion.
 
-Exact proof Task 7180 (`a326697e-2603-4828-9948-308b70e7369c`), revision 1,
-targets
-`Langlands.Renard.CompactRepresentation.NonirreducibleSquareIntegrabilityCounterexampleStatement`.
-Its contract pins environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` and
-preserves the published target and imported objects. At this update it is ready
-and has no proof candidate. The positive criterion's Task 6678
-(`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) was also inspected at revision 1:
-it remains ready with no candidate. Both assertions remained unproved at this
+Both assertions remained unproved at this
 update; both are now proved (see the table rows and the 18 November update of C3).
 
 ## Summary
 
 The six formerly open proof rows now have proofs of their published propositions.
 The IV.3.2 Remark additionally has published statements and published exact proofs for
-the general irreducible criterion without admissibility (Task 6678) and for its failure
-without irreducibility (Task 7180).
+the general irreducible criterion without admissibility and for its failure
+without irreducibility.
 The IV.3.2 Definition now has published reusable
 predicates without admissibility and a proved comparison with the older predicate.
 The IV.2.2 uniqueness check applies `exists_pos_rescale_eq` to two positive forms on an
 irreducible admissible smooth complex representation. The hypotheses of a Hausdorff,
 locally compact totally disconnected group give compact-open cofinality by
 `CR.HermitianProof.compactOpenCofinal`. The example compiled with independent group and
-carrier universes in development check `8542112d-4eba-4b0a-a4fa-200055c19859`.
+carrier universes in a separate check.
 The implemented proof compares the two Hermitian identifications, applies admissible Schur
 and obtains strict positivity by taking the ratio of the two diagonal values on a nonzero vector.
 The IV.3.1 reuse check applies the published right-invariance theorem to a regular left
@@ -453,10 +429,11 @@ Its left Haar measure is right invariant by commutativity, so its modular charac
 The quotient is locally compact and Hausdorff with its quotient topology, and Mathlib
 supplies its regular left Haar measure in the Borel measurable structure. The ambient
 modular character is assumed trivial as in the source. The published theorem gives right
-invariance by the normal-subgroup formula for conjugation moduli. Development check
-`214a5b6b-59b3-4b5c-82c2-54bcec6641ab` compiled this application with an arbitrary group
+invariance by the normal-subgroup formula for conjugation moduli. A separate check
+compiled this application with an arbitrary group
 universe and no countability hypothesis.
-The unnumbered IV.2.1 counterexample remains an open obligation.
+The unnumbered IV.2.1 counterexample is stated as
+`UnnormalizedInductionHermitianCounterexampleStatement`; the Library does not prove it.
 C1 and C2 remain relevant: the
 IV.1.3 Lemma needs a nonzero representation, and the printed argument of IV.2.1 Remark 1 is
 incomplete. C3 is resolved: the IV.3.2 Remark without admissibility is proved in Lean

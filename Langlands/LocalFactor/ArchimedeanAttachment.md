@@ -1,7 +1,7 @@
 # Arithmetic factors of presented archimedean Weil blocks
 
-Worker 40 implements callable factor constructions from Worker 33's explicit
-character-presentation expressions. This module uses actual continuous
+This module implements callable factor constructions from the explicit
+character-presentation expressions of `ArchimedeanPresentationStatement`. This module uses actual continuous
 characters and the published `complexCharacter`, `realCharacter` and
 `realInducedCharacter` representations. Its factors use the published
 `ReciprocalEntire` Gamma construction.
@@ -83,26 +83,27 @@ representation, and no function on isomorphism classes is constructed.
 Independence of parameters/presentations, agreement with a local-constant
 system, arbitrary additive characters and Haar scales, and factor
 comparison theorems remain separate obligations. In particular the
-construction does not turn Worker 33's independence proposition into
+construction does not turn the independence proposition
+`ArchimedeanFactorPresentationIndependenceStatement` into
 an assumption.
 
-## Dependencies and authorship
+## Dependencies and provenance
 
 Only `Langlands.LocalFactor.Archimedean.Definitions` and
 `Langlands.Weil.ArchimedeanRepresentation` are imported, with their
 published dependencies. Before the structural migration, their Lean/Markdown
 pairs at the old paths and those of `ReciprocalEntire` and `Weil.Archimedean`
 were verified byte-identical to Library commit
-`30ceb5a0d89d8094c1663fc19f35416519b9a125`. Integration changes the
-archimedean import to its canonical path; the imported mathematical
+`30ceb5a0d89d8094c1663fc19f35416519b9a125`. The Lean file imports the
+archimedean module by its canonical path; the imported mathematical
 declarations are unchanged.
 
-Worker 33 authored the character data equations and block expressions in
-the published `ArchimedeanPresentationStatement` pair. Worker 40
+The character data equations and block expressions are those of
+the published `ArchimedeanPresentationStatement` pair. This module
 reuses those expressions with explicit compatibility fields and adds
 callable constructions, unit-valued epsilon, representation-action
 connections, pole/evaluation lemmas, and the elementary construction proofs.
-Worker 33 is a coauthor of this contribution. The statement module
+The statement module
 is not imported or used as a theorem.
 
 Environment: Lean 4.34.0, Mathlib commit

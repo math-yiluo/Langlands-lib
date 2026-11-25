@@ -1,10 +1,11 @@
 # Valued-field amalgamation: tensor sources and proof route
 
-Author: Worker 74. This note records an original-source route to a missing
+This note records an original-source route to an
 analytic prerequisite of the full presented-affinoid domain spectrum
 embedding. It supplies source correspondence and a mathematical derivation;
 it supplies no Lean proof of tensor norm properties, general Banach spectrum
-nonemptiness, field amalgamation, or `Domain.SpectrumEmbeddingStatement`.
+nonemptiness, field amalgamation, or `Domain.SpectrumEmbeddingStatement`
+(the Library's proofs are named in the last section).
 
 ## Sources and reading
 
@@ -32,8 +33,7 @@ nonemptiness, field amalgamation, or `Domain.SpectrumEmbeddingStatement`.
   pages 76–78 / PDF pages 23–25 were read; the page 77 formulas were
   checked in the rendered original.
 
-No corresponding errata file was present in the inspected Library
-`b4b4160d118213b51ef28eb814f1828ac3902ada`.
+The Library's `notes/errata/` has no note for these sources.
 
 ## The tensor estimate includes trivial valuations
 
@@ -67,7 +67,7 @@ Gruson–van der Put's Lemma 5.2 also supplies a tensor norm and the pure
 tensor identity, including an elementary proof using finite approximately
 orthogonal bases. Their global setup assumes a nontrivial valuation.
 Ben Yaacov's Lemma 7 is therefore the more directly applicable source for
-the pure tensor identity in the unrestricted present task.
+the pure tensor identity in the unrestricted setting needed here.
 
 ## Derived common-field route
 
@@ -111,15 +111,21 @@ agree on A and realize exactly x and y.
 The focused helper
 `Langlands.Analytic.BanachSpectrum.completedResidueComap`, in
 `Langlands.Geometry.Analytic.Spectrum.ResidueField.Lift`, constructs
-those isometric residue-field maps. At this note's preparation it had
-passed machine validation and independent semantic review as candidate
-`04290b67-829b-45ad-b225-2c235122c6b6`, with publication pending.
+those isometric residue-field maps; it is in the Library.
 This helper alone supplies no common field.
 
-The outstanding Lean work includes the ultrametric projective tensor
-seminorm and its pure tensor identity, its separated Banach-algebra
-completion and factor maps, general Banach spectrum nonemptiness, and
-the common-field and compatible-point assembly. The existing
+The Library proves the common-field step and its application by a
+variant of this route that uses no tensor completion:
+`Langlands.Analytic.completeFieldAmalgamation`
+(`Langlands/Geometry/Analytic/ValuedField/AmalgamationProof.lean`)
+combines the ultrametric tensor seminorm (`ValuedField/TensorSeminorm.lean`),
+nonarchimedean domination (`Spectrum/NonarchimedeanDominationProof.lean`)
+and seminorm realization (`ValuedField/SeminormRealizationProof.lean`);
+`PresentedAffinoidAlgebra.pointAmalgamation`
+(`GeneralizedAffinoid/PointAmalgamationProof.lean`) realizes compatible
+points in one field, and `Domain.spectrumEmbedding`
+(`GeneralizedAffinoid/DomainSpectrumProof.lean`) proves
+`Domain.SpectrumEmbeddingStatement`. The existing
 `Langlands.Geometry.Analytic.SpectrumNonemptyProof` treats strict presented
 affinoids and does not supply nonemptiness for this arbitrary T.
 The implementation must also check all scalar structures and the

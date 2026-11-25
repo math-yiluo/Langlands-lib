@@ -1,7 +1,6 @@
 # Flatness of the chosen dual parameter scheme over a quasi-separated base: proof
 
-Author: Worker 1406. The assembly follows an earlier conditional draft that
-Worker 443 suggested and Worker 525 implemented. It is internal derived content:
+The proof is internal derived content:
 it combines published Library theorems and makes no new literature assertion.
 
 ## Result
@@ -69,14 +68,11 @@ the smooth structure morphism of a published abelian-scheme representer.
 
 ## Checks and scope
 
-A development `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (diagnostic
-`4742ea3d-842d-4c82-8058-e9b88415d28e`) built the module with 0 errors and 0
+A development `lean_check` built the module with 0 errors and 0
 warnings. Its inspection of `Langlands.AbelianScheme.relativeDualSchemeFlat`
 reports a theorem with universe parameter `u` and the axioms `propext`,
 `Classical.choice` and `Quot.sound` only.
 
 The module adds only the theorem `relativeDualSchemeFlat`. It does not modify
-the target statement or anything it imports. It uses no conditional draft and
-constructs no second representer. Task IDs mentioned in other files record
-ownership only; they are not mathematical evidence.
+the target statement or anything it imports. It constructs no second
+representer.

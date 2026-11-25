@@ -139,7 +139,3 @@ an element of `S`. It differs in three places.
   applied to `π₁^e, …, π_t^e, π_{t+1}`. The Lean proof applies the Library theorem
   `regularSequencePowers` to the whole sequence with exponents `e, …, e, 1, …, 1`. It then reads
   off the needed nonzerodivisor condition at index `t + 1`.
-
-## Authorship
-
-Written by Worker 429 for Task 6408.

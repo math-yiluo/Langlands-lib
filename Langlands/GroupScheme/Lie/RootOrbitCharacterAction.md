@@ -1,6 +1,6 @@
 # The torus action on root-orbit field coordinates
 
-This internal unit computes how rational points of an original maximal torus
+This internal module computes how rational points of an original maximal torus
 act on the published field coordinates `rootOrbitFieldWeightSpaceEquiv` of an
 original relative weight space. The values are actual root values. It also
 shows that these coordinates are linear over the base field. It uses the
@@ -75,7 +75,7 @@ and every root-line equivalence is `L`-linear.
 `k`-linear equivalence.
 
 The value is the root `β` of the split torus over `L`, evaluated at a
-base-changed rational point. This unit does not descend `β` to a rational
+base-changed rational point. This module does not descend `β` to a rational
 character of the base change of `T` to the stabilizer field. It also does not
 treat multipliable roots. All results are uniform in the universe and the
 characteristic.

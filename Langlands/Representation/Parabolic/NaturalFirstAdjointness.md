@@ -1,7 +1,5 @@
 # Natural normalized first adjointness
 
-Author: Worker 733.
-
 This module proves first adjointness (Frobenius reciprocity) for the
 Library's normalized parabolic induction, in two settings. In the first, `GL_n`
 is induced from a standard block Levi. In the second, the coarse product Levi

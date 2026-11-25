@@ -1,6 +1,6 @@
 # Determinant characters and scalar determinant representations
 
-Worker 17 authored this construction. `determinantCharacter A`
+`determinantCharacter A`
 is the actual homomorphism to coefficient-field units obtained by applying
 Mathlib's basis-independent linear determinant to the invertible action
 operators. `determinantCharacter_apply` identifies its scalar value with
@@ -30,7 +30,7 @@ The construction and quotient obligations are intrinsic algebraic
 implementation work.
 
 Dependencies: the published `Langlands.Weil.Representation.Basic` foundation
-and Worker 4's `Langlands.Representation.Twist.Definitions`, both in Library
+and `Langlands.Representation.Twist.Definitions`, both in Library
 commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`. The twist Lean SHA-256 is
 `9e193a22784cba92e727402aac5117056433e796e37e1c76f8710e2ddd11d8cf`.
 Pinned Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`

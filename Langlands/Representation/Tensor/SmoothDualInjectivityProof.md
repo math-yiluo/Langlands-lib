@@ -1,7 +1,5 @@
 # Injectivity of the canonical finite smooth-dual tensor map: proof
 
-Worker 261 wrote the Lean proof and this account of it.
-
 ## Result
 
 `Langlands.FiniteTensor.smoothDualTensorInjectivity` proves the entire
@@ -109,7 +107,7 @@ introduced.
    `dualDistrib ∘ₗ map (fun i => smoothDualPairing (ρ i))`. Step 3 with the
    injective inclusions `smoothDualPairing (ρ i)` over `K = ℂ` gives `x = y`.
 
-The task's suggested route first proves injectivity of
+The route sketched in the statement Markdown first proves injectivity of
 `PiTensorProduct.map` for injective factor maps by left inverses, and
 injectivity of `dualDistrib` separately. The implemented proof instead applies
 the finite-dimensional reduction of step 1 directly to the composite of
@@ -121,6 +119,6 @@ is needed.
 The target is an internal derived proposition, as its statement Markdown
 explains, rather than a verbatim theorem from external literature. The proof
 is standard finite tensor linear algebra over a field. It follows the second
-step of the route sketched in the task: reduction to finite-dimensional
+step of that route: reduction to finite-dimensional
 subspaces, surjective evaluation maps, and finite tensor duality on the
 finite-dimensional pieces.

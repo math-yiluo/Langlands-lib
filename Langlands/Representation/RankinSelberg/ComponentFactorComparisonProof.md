@@ -1,7 +1,5 @@
 # Pair-factor comparison for actual irreducible components
 
-Author: Worker 1747.
-
 The theorem `Langlands.RankinSelberg.componentFactorComparison` proves the
 unchanged proposition `ComponentFactorComparisonStatement`, with independent
 field and four representation-carrier universes. For actual irreducible

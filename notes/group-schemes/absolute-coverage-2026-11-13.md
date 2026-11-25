@@ -1,16 +1,12 @@
 # Absolute structure: family 4 coverage update
 
-Worker 3483, 13 November 2026, for Task 3483
-(`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`).
-
-At Library commit `aad41a6eb68efecf631ccac31f2e33766f3711f1`, four
-entries listed as composites in the
+This note is dated 13 November 2026. Four entries listed as composites in the
 [family 4 ledger](ledger-family-4-absolute.md) have exact named proof
-theorems: C13, E3 and the first two internal interfaces of F. This update
+theorems: C13, E3 and the first two internal interfaces of F. This note
 marks those entries P under the ledger's convention: a theorem in the
 published Library has exactly the named statement as its type. The
-[21 November update](#verified-proof-publications-21-november-2026) records
-the later publications for C11 and the third interface of F.
+[section on C11 and the third interface of F](#proofs-of-c11-and-of-the-third-interface-of-f)
+records the proofs for those two entries.
 
 All declaration names below have prefix `Langlands.GroupScheme`; module
 paths have prefix `Langlands/GroupScheme/`.
@@ -101,16 +97,12 @@ rank-one cocharacter in `SubgroupFunctor.range i`, on every test scheme.
 These are internal interfaces derived from the published rank-one,
 Lie-weight and centralizer constructions. Smoothness and connectedness of
 `P` remain explicit premises. These two theorems alone do not construct
-the cocharacter of a general Borel overgroup. No duplicate wrapper tasks
-are needed.
+the cocharacter of a general Borel overgroup.
 
-## Proof status on 13 November 2026
+## C11 and the third interface of F: the targets
 
-**C11, supplied dynamic quotient properness.** The current owner is
-Task 6453, `5934d030-06ab-45a5-bed4-6bd68943c20d`, revision 1, for
-`DynamicQuotientProperStatement`. The historical Task 4665 identifier
-in the ledger is unavailable after restoration; exact and broader task
-searches preceded publication of this successor.
+**C11, supplied dynamic quotient properness.** The target is
+`DynamicQuotientProperStatement`.
 
 The unchanged [target](../../Langlands/GroupScheme/Dynamic/QuotientProperStatement.md)
 retains every algebraically closed field, every cocharacter including
@@ -120,18 +112,17 @@ and quasi-compact; `q` is smooth, surjective and quasi-compact.
 The right-coset fiber equality holds on every relative scheme test.
 The conclusion is properness of that particular `Q`.
 
-Task 6453 retains the independent-route restriction documented in the
-[source map](dynamic-quotient-source-map.md). It excludes the
+Its proof must follow the independent route documented in the
+[source map](dynamic-quotient-source-map.md). That route excludes the
 regular-cocharacter/Borel route, parabolic-dynamic classification,
 rank-one solvable obstruction, rank-one Borel-dynamic theorem,
 rank-one positive-root uniqueness, and results proved downstream from
-those inputs. Their present publication does not waive the restriction.
+those inputs. Their publication does not waive the restriction.
 The ledger's composite through `parabolicDynamic` therefore does not
-discharge this obligation. No full independent proof draft was supplied.
+count as a proof of this entry.
 
-**F, third interface, triangular diagonal kernel tower.** Task 6428,
-`70f1e978-f31e-4051-a9cb-8cff40e69c8a`, revision 1, owns the exact
-`TriangularDiagonalKernelTowerStatement`. The
+**F, third interface, triangular diagonal kernel tower.** The target is
+the exact `TriangularDiagonalKernelTowerStatement`. The
 [target](../../Langlands/GroupScheme/Absolute/TriangularDiagonalKernelTowerStatement.md)
 retains every field, the supplied closed triangular inclusion and its
 actual fppf diagonal quotient `q : H ⟶ D(Λ)`, with finitely generated
@@ -140,55 +131,49 @@ this very `q`, with actual quotient kernels and an isomorphism as the
 terminal structural map. No smoothness, connectedness or reducedness
 premise is added; no section is asserted.
 
-A complete unreviewed proof pair is shared as that task's draft revision 1.
-It applies
+Its proof applies
 `TriangularLayer.admitsTower_diagonalizable_of_affine_image_and_normal_quotient`
 to the published proofs `affineHomImage` and
-`affineNormalSubgroupQuotient`. The draft compiles with zero errors and
+`affineNormalSubgroupQuotient`. It compiles with zero errors and
 warnings and uses only `propext`, `Classical.choice` and `Quot.sound`.
-Thus this entry can now be classified C rather than O. Exact-target
-validation, independent semantic acceptance and proof publication remain
-outstanding. At the task inspections for this update, both proof tasks
-were ready, with no executor or submitted artifact.
 
 ## Verification and retained limits
 
-Worker 3483 reread the complete Lean and Markdown pairs for all four
-statements and proofs in the table. All sixteen files match the stated
-Library commit byte for byte. A development Lake check rebuilt the four
-proof modules with zero errors and warnings; inspection of
+The complete Lean and Markdown pairs for all four statements and proofs
+in the table were reread. All sixteen files matched Library commit
+`aad41a6eb68efecf631ccac31f2e33766f3711f1` byte for byte. A Lake check
+rebuilt the four proof modules with zero errors and warnings; inspection of
 `absoluteBorelOvergroupRankOneContainment` reported only `propext`,
-`Classical.choice` and `Quot.sound`. Development checks verify this
-reconciliation and provide no new independent proof acceptance.
+`Classical.choice` and `Quot.sound`.
 
 The theorem/module pairs in the table are the published mathematical
 evidence. The source locators above are inherited from their paired
-Markdown; this update introduces no new source assertion or Lean result.
-The five components of C12 remain available by projection from the
+Markdown; this note introduces no new source assertion or Lean result.
+The five components of C12 are available by projection from the
 published `GeneralLinear.dynamicStatement` conjunction, as recorded in
-the ledger; no separate wrapper task is needed.
+the ledger.
 
 The ledger's other scope differences remain: A6 gives a point form of the
 normalizer theorem, A10 does not assert `P = N_G(P)`, A11 gives the
 existence half, B7 is over algebraically closed fields without the Lie
 comparison, and D7 gives a Bruhat covering without disjointness.
-The separate [dynamic update](dynamic-relative-progress.md) records
-additional field and arbitrary-base obligations. The broader program,
-including rational and general-base structure, remains incomplete.
+The separate [dynamic note](dynamic-relative-progress.md) records
+additional field and arbitrary-base statements. This note does not cover
+the broader program, including rational and general-base structure.
 
-## Verified proof publications, 21 November 2026
+## Proofs of C11 and of the third interface of F
 
-Both remaining targets from the 13 November update have published proofs.
-Their Lean and Markdown pairs match the archived submissions at their
-publication commits and in Library `a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`.
-The statement pairs also match the ones at the proof submissions' Library
-bases. Two exact-type applications compiled with zero errors or warnings
-over that current Library.
+Both targets of the previous section are proved in the Library. Their Lean
+and Markdown pairs were checked on 21 November 2026 in Library
+`a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`, where they match the versions
+that first entered the Library; the statement pairs are those the proofs
+were written against. Two exact-type applications compiled with zero errors
+or warnings over that Library.
 
-| Ledger entry | Exact theorem | Proof candidate and publication commit | Independent review task and exact-target validation receipt |
-| --- | --- | --- | --- |
-| C11, Task 6453 | `dynamicQuotientProper : DynamicQuotientProperStatement.{u}` | `3d9b328b-a689-4d58-a01b-6ace8b31d0d8` at `032961776f43ccd672c6266d265a9c644faeba13` | `6d48d57f-fa53-4614-a734-5b7593213345` and `7f02986a-03ee-4c66-906d-7aad48ad668c` |
-| F, third interface, Task 6428 | `triangularDiagonalKernelTower : TriangularDiagonalKernelTowerStatement.{u}` | `0c7fd545-28ce-4ac7-9f07-91dbe42c9a79` at `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e` | `e9e5dd07-1744-42c0-85bc-d5a73eab3bb9` and `13fd8441-ffaa-4328-a1f3-381970d58a3d` |
+| Ledger entry | Exact theorem | First appeared at Library commit |
+| --- | --- | --- |
+| C11 | `dynamicQuotientProper : DynamicQuotientProperStatement.{u}` | `032961776f43ccd672c6266d265a9c644faeba13` |
+| F, third interface | `triangularDiagonalKernelTower : TriangularDiagonalKernelTowerStatement.{u}` | `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e` |
 
 For C11 the theorem proves properness of the supplied `Q` over an
 algebraically closed field of arbitrary characteristic. It retains all
@@ -196,9 +181,9 @@ test schemes in the right-coset equality and includes trivial and central
 cocharacters. The proof uses affineness of a linear homogeneous quotient,
 proved using geometric reductivity from the independent rank-one central
 cover. A closed orbit in the affine quotient gives a closed immersion of
-the supplied `Q` into the proper general linear dynamic quotient. The
-independent review verified the type-and-value dependency audit against
-Task 6453's exclusions.
+the supplied `Q` into the proper general linear dynamic quotient. Its
+type-and-value dependency audit was checked against the exclusions of the
+independent route (see the previous section).
 [Statement](../../Langlands/GroupScheme/Dynamic/QuotientProperStatement.md),
 [proof and dependency audit](../../Langlands/GroupScheme/Dynamic/QuotientProperProof.md).
 

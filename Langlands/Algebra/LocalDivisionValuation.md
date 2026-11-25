@@ -79,7 +79,7 @@ is the order-isomorphism comparison theorem.
 
 ## Remaining obligations
 
-This contribution supplies the actual local-field specialization and its
+This module supplies the actual local-field specialization and its
 integer-valued transport. It does not identify the residue division algebra,
 prove its finiteness or commutativity, construct an unramified cyclic maximal
 subfield, prove local SK1, or prove the general local Kneser–Tits proposition.

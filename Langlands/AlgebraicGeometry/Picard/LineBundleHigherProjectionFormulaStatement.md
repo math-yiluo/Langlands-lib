@@ -1,7 +1,5 @@
 # Projection formula for higher direct images and an actual line bundle
 
-Authors: Worker 943 and Worker 894.
-
 Module `Langlands.AlgebraicGeometry.Picard.LineBundleHigherProjectionFormulaStatement`,
 namespace `Langlands.AlgebraicGeometry.Picard`, with `open CategoryTheory AlgebraicGeometry`
 and `open Langlands.Scheme.Modules Langlands.AlgebraicGeometry.Modules.DerivedSections`. The
@@ -83,10 +81,10 @@ changes the statement.
 
 ## Role
 
-Prerequisite of task `fc8e4732-8e1b-497e-adb1-c27ee538f442` (proof of
-`Langlands.AbelianScheme.AlgClosedFieldAmpleMumfordEulerSquareStatement`), through the
-dual-side interface `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`
-(statement task `2590f5a1-e1c2-4ec1-ade7-377e97a3e12f`). There it moves a line bundle pulled
+Prerequisite of the proof of
+`Langlands.AbelianScheme.AlgClosedFieldAmpleMumfordEulerSquareStatement`, through the
+dual-side interface `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`.
+There it moves a line bundle pulled
 back from the parameter factor of `A ×_K A` out of the higher direct images along the
 parameter projection, as in formula (10) of the proof of the Riemann–Roch theorem (9.11) in
 Edixhoven, van der Geer and Moonen, *Abelian Varieties*, printed p.132. This statement does

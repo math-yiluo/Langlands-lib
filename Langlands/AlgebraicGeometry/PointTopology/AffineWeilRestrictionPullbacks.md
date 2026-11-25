@@ -43,6 +43,6 @@ identities. Mathlib's `IsPullback.mk'` packages existence and uniqueness into
 the new cartesian square; `IsPullback.isoPullback` supplies the actual
 isomorphism and projection identities.
 
-This unit supplies overlap compatibility for later gluing. It does not
+This module supplies overlap compatibility for later gluing. It does not
 construct a general nonaffine Weil restriction or assert quasi-projectivity
 preservation or a local or adelic topology comparison.

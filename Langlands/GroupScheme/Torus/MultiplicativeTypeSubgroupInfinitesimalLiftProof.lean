@@ -73,6 +73,9 @@ theorem multiplicativeTypeSubgroupInfinitesimalLift :
     have hred : IsImmersion (F.map h).hom.hom.left := by
       rw [hh]
       change IsImmersion (e₀.hom.hom.hom.left ≫ h₀.hom.hom.left)
+      have : IsIso e₀.hom.hom.hom.left := by
+        set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+        infer_instance
       infer_instance
     refine ⟨H, h, isImmersion_of_nilpotent_baseChange A J hJ h.hom.hom hred, hflat, ?_⟩
     rw [hh]

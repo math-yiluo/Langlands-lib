@@ -1,7 +1,5 @@
 # Actual blocks in fixed-rank segment replacements
 
-Author: Worker 494.
-
 This internal construction packages segment occurrences with their supplied
 actual representations. `SegmentBlock T` is the dependent pair of a segment
 `Δ` and a smooth complex representation of `GL_(Δ.degree)(F)`. Its carrier

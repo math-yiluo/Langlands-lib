@@ -2,7 +2,7 @@
 
 The selected definition
 `identityComponentReductiveNeighbourhood_of_lifting` constructs an actual
-open neighbourhood at every point of the unchanged reductive geometric
+open neighbourhood at every point of the reductive geometric
 identity-component locus of a smooth affine group scheme over an arbitrary
 scheme. The only retained universal structural premise is
 `RelativeSplitTorusLiftingStatement`. The theorem
@@ -65,14 +65,14 @@ descends through the etale projection. The pointwise criterion for open sets
 then proves the stated conditional universal openness theorem.
 
 The provenance is internal composition, adapting the earlier conditional
-neighbourhood assembly by Worker 1621 and Worker 1683 to the intrinsic
-reflection construction and the published field proofs. The earlier
-conditional constructors remain unchanged. The full-kernel condition and
-integral coroot data of the universal field-reflection statement are
-unnecessary here.
+neighbourhood assembly to the intrinsic reflection construction and the
+published field proofs. The full-kernel condition and integral coroot data
+of the universal field-reflection statement are unnecessary here.
 
-Relative split-torus lifting remains an explicit unproved input of this
-module. Accordingly, this contribution does not prove unconditional openness
-or close its proof task. The original base is arbitrary, including
+Relative split-torus lifting is an explicit input of this module; the Library
+proves it as `relativeSplitTorusLifting` (`Torus/RelativeLiftingProof`), and
+`identityComponentReductiveLocusOpen` (`Reductive/IdentityComponentLocusProof`)
+combines the two. Accordingly, this module does not itself prove
+unconditional openness. The original base is arbitrary, including
 nonreduced and nonnoetherian bases, and the original ambient fibres may be
 disconnected. There is no characteristic restriction.

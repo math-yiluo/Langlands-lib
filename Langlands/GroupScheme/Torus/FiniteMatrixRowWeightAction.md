@@ -1,6 +1,6 @@
 # All-test row weights of a split torus in a finite matrix algebra
 
-This internal unit identifies the idempotent-defined division-algebra row spaces with the
+This internal module identifies the idempotent-defined division-algebra row spaces with the
 character equations on points over every commutative coefficient algebra. It retains
 arbitrary fields and every characteristic.
 
@@ -20,6 +20,6 @@ point recovers the fixed-projection equation. This proves
 `mem_rowWeightSpace_iff_allTest`, including for finite ground fields.
 
 The mathematical provenance is the published universal point, universal idempotents, and
-tensor-matrix comparison, together with finite sums and coefficient extraction. This unit
+tensor-matrix comparison, together with finite sums and coefficient extraction. This module
 supplies an action interpretation of the row decomposition; it does not establish
 maximality or the multiplicities of a maximal isometry torus.

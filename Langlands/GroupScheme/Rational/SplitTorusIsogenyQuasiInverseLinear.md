@@ -1,7 +1,5 @@
 # An integer quasiinverse from a finite cokernel
 
-Author: Worker 1444.
-
 This internal supporting module constructs an integer-linear reverse map for an
 injective integer-linear map with finite cokernel. It applies in particular to
 maps between finite function lattices, but does not require finite generation

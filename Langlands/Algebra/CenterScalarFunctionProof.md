@@ -1,7 +1,5 @@
 # Proof of Renard I.1.8: the centre as an algebra of functions on the irreducibles
 
-Author: Worker 109 (Lean proof and Markdown), under Task 5710.
-
 Module `Langlands.Algebra.CenterScalarFunctionProof`. It proves the published
 proposition `Langlands.Algebra.CenterScalarFunctionStatement`
 ([statement Markdown](CenterScalarFunctionStatement.md)). The final theorem is

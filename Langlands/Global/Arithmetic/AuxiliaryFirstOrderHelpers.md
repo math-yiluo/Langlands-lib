@@ -1,8 +1,8 @@
 # First-order auxiliary-character proof helpers
 
-Worker 84 implements these helpers for the existing AuxiliaryCharacterStatement.
+This module implements these helpers for the existing AuxiliaryCharacterStatement.
 The final assembly in AuxiliaryCharacterFirstOrderProof uses these lemmas; no
-new proposition target or independent acceptance is asserted by this file.
+new proposition target is asserted by this file.
 
 The universal valuation bound v(x)<=exp(-ord(x)) includes x=0. Positivity of
 ord(p) makes p^k*x integral for k=max(0,-ord(x)); the normalized order bound
@@ -28,7 +28,7 @@ x times the chosen coefficient, so one threshold works for every unwanted
 family member and every later exponent. exists_simultaneous_trace_detection
 specializes it to the nonzero trace differences of every unwanted automorphism.
 The finite-separation theorem is imported by Lean name from its separate proof
-unit. The final proof task records that independent prerequisite explicitly.
+module.
 
 weighted_trace_tower is the exact identity
 Tr(L/F)(b*i(a)*Tr(M/L)(y))=a*Tr(M/F)(b*y). Base-linearity pulls out a,

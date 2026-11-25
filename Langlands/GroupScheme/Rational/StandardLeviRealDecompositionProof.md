@@ -1,6 +1,6 @@
 # Proof of the corrected standard Levi real decompositions
 
-Worker 624, Task 6348. The theorem
+The theorem
 `Langlands.GroupScheme.standardLeviRealDecomposition.{u}` has type exactly
 `Langlands.GroupScheme.StandardLeviRealDecompositionStatement.{u}` from the
 unchanged module `Langlands.GroupScheme.Rational.RelativeRealCorootStatements`.

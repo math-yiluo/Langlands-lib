@@ -1,7 +1,8 @@
 # The actual full semistandard Fourier product
 
-This second unit of Task 7260 constructs the raw family `psi_f` in the full
-intrinsic dependent product of Task 7229. It supplies elementary coherence,
+This module, the second step of the full Fourier product construction after
+`RationalSemistandardFourierTransform`, constructs the raw family `psi_f` in the
+full intrinsic dependent product of `RationalSemistandardSpectralFamily`. It supplies elementary coherence,
 base-point and model transport, and actual `G × G` equivariance. The substantive
 regularity and cross-normalization comparisons are named, unproved Prop targets.
 
@@ -16,13 +17,13 @@ and the direct sum on printed p. 305 (PDF p. 71).
 
 The full Fourier family here takes values in a **product**, as required before
 VIII.1 finiteness. The source's finite-support direct sum is an input space for
-wave packets; it is not the codomain of the general Fourier family in this unit.
+wave packets; it is not the codomain of the general Fourier family in this module.
 The uniform finite-dimensional compact range in the compact-level target is an
 internal formulation of the finite compact-picture condition used by the
 published standard smoothness and continuity interfaces. It does not assert
 finiteness of the set of nonzero `(P,O)` components.
 
-The scope and scalar conventions are those of the first unit,
+The scope and scalar conventions are those of
 `RationalSemistandardFourierTransform`: independent field and representation
 universes, arbitrary nonarchimedean local field, affine locally finite type
 connected reductive ambient group, canonical rational-point topology, and
@@ -56,8 +57,8 @@ actual normalized inductions. For the full family the last input is quantified
 over every actual discrete series modulo the indicated split center. Quotient
 measures are Borel Haar measures invariant under inversion. Ambient left and
 right invariance are retained; coherence additionally uses ambient inversion
-invariance. These analytic inputs remain obligations of the surrounding
-program, not permanent external structural assertions.
+invariance. These analytic inputs remain obligations for other modules,
+not permanent external structural assertions.
 
 ## Elementary laws and declaration dependencies
 
@@ -67,10 +68,10 @@ namespace is written explicitly.
 | Declaration | Implemented result and immediate dependency |
 | --- | --- |
 | `rationalSemistandardFourierOrbit`, `..._apply`, `..._eq` | Actual tensor at every inducing representative; equality with the published generic `fourierOrbitSection` is reflexive. |
-| `rationalSemistandardFourierOrbit_coherent` | Every inducing equivalence, including every self-twist, by the first unit's actual transport theorem. |
+| `rationalSemistandardFourierOrbit_coherent` | Every inducing equivalence, including every self-twist, by the actual transport theorem of `RationalSemistandardFourierTransform`. |
 | `rationalSemistandardFourierOrbit_baseChange` | The published `productInducedOrbitBaseEquiv` keeps the same actual object and tensor at each point; reflexivity and proof irrelevance. |
 | `rationalSemistandardFourierOrbit_modelChange` | The specified `LeviModel.orbitSectionsModelEquiv` fixes literal Levi elements and representation values; reflexivity and proof irrelevance. |
-| `rationalSemistandardFourierOrbit_translate` | Pointwise application of the first unit's VII.1.1(i). |
+| `rationalSemistandardFourierOrbit_translate` | Pointwise application of VII.1.1(i) from `RationalSemistandardFourierTransform`. |
 | `rationalSemistandardFourierFamily`, `..._apply` | Full dependent product and its exact tensor evaluation; pointwise linearity and reflexivity. |
 | `rationalSemistandardFourierFamily_baseChange` | The dependency's actual `orbitSectionsBaseEquiv` sends the full component to its raw construction at any other representative of the same actual orbit; reflexivity. |
 | `rationalSemistandardFourierProductRepresentation` | Pointwise action of `productInducedOrbitRepresentation`, hence of the actual normalized induced coefficient fibers. The representation laws follow from their pointwise laws. |
@@ -79,12 +80,12 @@ namespace is written explicitly.
 | `rationalSemistandardFourierOrbitSpace_standard` | The standard component space is the existing `rationalInducedOrbitSectionSpace`; reflexivity. |
 
 The translation is `f(x) ↦ f(g2⁻¹*x*g1)` with the action at `(g1,g2)`, exactly as
-in the first unit. No transport map is chosen to force these identities.
+in `RationalSemistandardFourierTransform`. No transport map is chosen to force these identities.
 
 Changing an auxiliary Levi model reindexes actual unitary characters and
 representatives by the dependency's specified model comparison. The transform
 itself uses only the literal Levi. For changes of the split presentation or
-quotient measure, the first unit's `rationalSemistandardFourier_normalization`
+quotient measure, `rationalSemistandardFourier_normalization` of `RationalSemistandardFourierTransform`
 requires equality of the actual formal degrees; arbitrary Haar rescaling does
 not disappear. Smooth comparison between different model coordinates and
 compact choices remains the dependency's `ModelSmoothComparisonStatement`.
@@ -162,17 +163,17 @@ of the full family after **the specified** `rationalStandardFullRestrict` with
 `rationalFourierThetaFamily`. The restriction already includes actual orbit
 reindexing, representative base change, and scheme-model comparison; no free
 comparison equivalence is a parameter. The existing standard transform's closed
-matrix, height, Levi Iwasawa and temperedness inputs remain explicit. The old
-`rationalOrbitSectionsBaseEquiv_rationalFourierThetaFamily` and the proved new
+matrix, height, Levi Iwasawa and temperedness inputs remain explicit. The existing
+`rationalOrbitSectionsBaseEquiv_rationalFourierThetaFamily` and the proved
 `rationalSemistandardFourierFamily_baseChange` supply the two representative
-comparisons independently of that outstanding full comparison target.
+comparisons independently of that full comparison target.
 
-## Ownership and later results
+## Dependencies and related results
 
-The construction imports Task 7229's exact carriers and the first unit's actual
-operator. It does not reconstruct an invariant projector, synthesis, density or
-global form. V.3 normalized comparison and VII.1.4 covariance form the third
-unit, using Task 7257's specified comparison and Task 7258's invariant predicate.
-General Fourier support finiteness, VII.2.5 and VIII.1 inversion remain later
-work. Existing scalar, topology, constant-term and wave-packet owners, including
-Tasks 7228, 7224–7226, 5460 and 7217, retain their obligations and controls.
+The construction imports the exact carriers of `RationalSemistandardSpectralFamily`
+and the actual operator of `RationalSemistandardFourierTransform`. It does not
+reconstruct an invariant projector, synthesis, density or global form. V.3
+normalized comparison and VII.1.4 covariance are a separate step, using the
+specified normalized Weyl/intertwiner comparison of V.3 and the invariant
+predicate of the invariant spectral families. General Fourier support
+finiteness, VII.2.5 and VIII.1 inversion are not treated here.

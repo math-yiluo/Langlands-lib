@@ -1,10 +1,5 @@
 # Flasque Godement resolutions and cohomology with supports
 
-Author: Worker 3.
-
-Documentation corrections I003 and I023: Worker 100, with source and publication
-audit contributions from Worker 291.
-
 This pair defines eight propositions and their conjunction
 `Langlands.Cohomology.FlasqueGodementCohomologyStatements`. They concern the
 published Godement, compact-support and derived-section constructions. The
@@ -185,7 +180,7 @@ asserted by this pair. It supplies the ordinary topological and scheme-etale
 counterparts: flasqueness, acyclicity for ordinary and compactly supported
 sections, and the computation of cohomology by Godement complexes. Softness,
 the analytic etale site, smooth group actions, and the Shimura and Drinfeld
-specializations remain separate obligations. No banality, torsion or
+specializations are separate obligations. No banality, torsion or
 characteristic hypothesis is introduced.
 
 ## Registered sources
@@ -212,8 +207,7 @@ characteristic hypothesis is introduced.
   `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`;
   member `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`
   in the same-title literature folder. Example 1.1.3, p.3, and section 1.5,
-  pp.10-12, were independently read for this correction and are cited for
-  context only.
+  pp.10-12, were read and are cited for context only.
 - `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`: Harris 1999,
   PDF SHA-256
   `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`;
@@ -223,9 +217,8 @@ No claim is made to have read either SGA 4 volume in full.
 
 ## Formal dependencies and checks
 
-The pair imports published modules by Lean name. Their bytes in the current
-Library commit `a6142598ca59c1c7c4408d715a4ae77cfe7469bc` equal the local
-workspace bytes:
+The pair imports published modules by Lean name. In the checks below their bytes
+were those of Library commit `a6142598ca59c1c7c4408d715a4ae77cfe7469bc`:
 
 | Module | Lean SHA-256 | Markdown SHA-256 |
 | --- | --- | --- |
@@ -236,19 +229,19 @@ workspace bytes:
 | `Langlands.Geometry.EtaleGodement` | `d0aded4edc3cf5bcff2bba08a843fc3836b2320cb6aadcc6fea2b8a7bafee461` | `07d39153a258525766ace53417297a7b14b9f3b951c9fadbacc085f991c46718` |
 | `Langlands.Geometry.EtaleDerivedSections` | `66abab55a791a1aabad61b3a9c3ce8bfffb35b70312b24c71c2940b1bb74d5df` | `cc73094a54f44304d8cbf80e756fd07761a88a44862a198590437ccd80eaa2e7` |
 
-These constructions are by Worker 13. The Mathlib imports
+The Mathlib imports
 `Mathlib.Topology.Sheaves.Flasque` and `Mathlib.Topology.Sheaves.Points`
 provide `TopCat.Sheaf.IsFlasque` and `Opens.pointGrothendieckTopology`. The
-environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, commit
+environment is Lean 4.34.0, commit
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Development check `7f965453-014b-48e8-adba-c94713450c64` built this module with
+A development check built this module with
 no errors or warnings. It inspected
 `Langlands.Cohomology.FlasqueGodementCohomologyStatements` as a definition
 returning `Prop`, with universe parameter `u` and only the axioms `propext`,
-`Classical.choice` and `Quot.sound`. Check
-`9ac6b16e-e2a4-412c-aa88-dca6d610f124` printed every component, both helper
+`Classical.choice` and `Quot.sound`. A second check
+printed every component, both helper
 abbreviations and the conjunction with universe annotations, and the output
 was read. The prints show:
 

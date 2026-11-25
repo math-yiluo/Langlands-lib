@@ -1,9 +1,8 @@
 # Block standard subgroups of GL_N
 
-Worker 185, using the simple-root computation of Worker 163.
-
 This derived helper proves the all-test-scheme parabolic, Levi and unipotent
-comparisons needed by `GeneralLinearStandardParabolicStatement`. It works over
+comparisons needed by `GeneralLinearStandardParabolicStatement`, using the
+simple-root computation of `GeneralLinearSimpleRootsProof`. It works over
 an arbitrary field and for every natural rank, including zero and one. Only
 strict decrease of the chosen cocharacter coordinates is needed.
 

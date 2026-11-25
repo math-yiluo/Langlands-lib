@@ -2,7 +2,7 @@
 
 `Langlands.RootWeightConeDecompositionStatement` is a proposition definition,
 not a theorem proof. It states the finite Euclidean lemma used in Silberger's
-exhaustion argument. Worker 19 authored this pair.
+exhaustion argument.
 
 Let \(\{\alpha_i\}_{i\in I}\) and \(\{\lambda_i\}_{i\in I}\) be bases of a real
 inner product space, with \(I\) finite, such that
@@ -52,9 +52,8 @@ established when the lemma is applied to a constructed reductive root datum or
 to block parabolics of \(\mathrm{GL}_n\); the current proposition does not
 postulate that geometric identification.
 
-This statement has no project definition dependencies. Its environment is the
-accepted environment artifact `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-with the pinned Mathlib revision
+This statement has no project definition dependencies. Its environment has
+the pinned Mathlib revision
 `5ed2965256430c3649e86755f9576b54eca72435`.
 Its only imported objects are Mathlib's real inner product spaces, bases,
 finite sets, finite sums, and scalar multiplication.
@@ -70,10 +69,9 @@ Proposition 7.2 proof (PDF page 10).
 
 Silberger attributes the proof to Langlands, *On the classification of
 irreducible representations of real algebraic groups*, preprint,
-Lemma 4.4, p. 87. The exact retained edition and its proof have been requested
-under literature request `8adf3edf2a955df79dd1d7f9fbd54a34`.
-The IAS-hosted retypesettings are leads with different pagination; they have
-not yet been retained or identified with the cited preprint pagination.
+Lemma 4.4, p. 87. That edition and its proof were not consulted.
+The IAS-hosted retypesettings are leads with different pagination; they were
+not retained or identified with the cited preprint pagination.
 This is an explicit transitive proof-source gap, not a claim that the result
 is unproved in the literature. No Lean proof of the cone lemma or of the
 Langlands quotient theorem is supplied by this proposition definition.

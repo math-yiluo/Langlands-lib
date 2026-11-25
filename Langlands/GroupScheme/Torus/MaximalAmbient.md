@@ -1,7 +1,5 @@
 # Maximal tori in an ambient torus
 
-Author: Worker 1459.
-
 This internal construction supplies the torus base case for the rational
 conjugacy proof. It uses the unchanged `IsTorus`, `IsMaximalTorus` and
 `SubgroupConjugate` predicates. It applies over every field, including

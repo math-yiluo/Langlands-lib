@@ -1,7 +1,5 @@
 # Images of anisotropic factors in arbitrary rational norm kernels
 
-Authors: Worker 1676.
-
 For a connected reductive anisotropic group `A` over a nonarchimedean local
 field `F`, every group-scheme homomorphism `f : A ⟶ Z` sends all rational
 points of `A` into `Plancherel.rationalCommonNormKernel Z`, the subgroup

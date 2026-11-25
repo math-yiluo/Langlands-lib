@@ -1,7 +1,5 @@
 # Bounded transport on the actual induced affinoid atlases
 
-Author: Worker 36.
-
 This module constructs bounded pullbacks on the actual positive-polyradius
 quotient algebras of the published induced affinoid atlases. The pullbacks
 retain the subgroup correction associated with chosen coset representatives.

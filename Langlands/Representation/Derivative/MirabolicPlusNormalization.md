@@ -1,7 +1,5 @@
 # Normalized mirabolic plus functors
 
-Author: Worker 984.
-
 This module constructs the normalized Bernstein–Zelevinsky plus functors
 `Ψ⁺ : Alg GL_n → Alg P_(n+1)` and `Φ⁺ : Alg P_(n+1) → Alg P_(n+2)` on the
 actual published smooth complex representations. Each functor first twists
@@ -356,8 +354,8 @@ function of the full mirabolic group is not used.
 
 The recursive `Langlands` import closure of this module at Library base
 `c59c0940bd7d47ad634dc767445532ca1108111f` consists of 65 modules. All
-are published and paired, and their Lean and Markdown bytes in the
-authoring workspace match that tree and the later Library commit
+are published and paired, and their Lean and Markdown bytes
+match that tree and the later Library commit
 `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11`, so the closure is unchanged
 there. They are the `GL`, mirabolic and
 radical-Haar group modules; the harmonic-analysis modules (additive
@@ -372,20 +370,25 @@ representation modules. The only derivative modules are
 The closure contains no classification, segment, multisegment, socle, head,
 Jacquet-formula, square-integrability, tempered, exhaustion, product
 irreducibility, detection, highest-derivative or pairing module. Hence
-neither this module nor any import depends on the tasks listed in the
-Independence restrictions of task `562456a0-6ff7-4895-a1e5-fcf99f122ff8`
-(including `67279e36…`, `4ca79bbd…`, `aca8805b…`, `5eece9e8…`,
-`3bfb61fa…`, `ebea9a8a…`, `20e4e1c6…`, `8252833d…`, `52e97845…`,
-`1cb45da2…`, `cd8ab97c…`, `bf433f0a…`, `8364e73f…`, `30341ae4…`,
-`23189526…`, `f3a69bc8…`, `2ae5cbe5…`, `e3634665…`, `ed48ae06…`,
-`55ad1e10…`, `b95105c6…` and `92aea10f…`), their conclusions or
-consequences. It does not depend on the consumers `3c9849a4…` and
-`a925b519…`, the `TwoSupercuspidalProductStructure` conclusion, parent
-task `ab61f565…`, the segment-socle part of `8e5b4563…`, or the paused
-minus-exactness proof `b65bc667…`. It uses no Zelevinsky 1980 result
+neither this module nor any import depends on the excluded results
+(individual special-head and segment-socle existence, analytic segment
+classification, forward special-segment square-integrability, special-head
+exhaustion, ordered special-head existence, quotient coverage, ordered
+conversion, tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable and regular
+exhaustion, the special-head criterion, `GenericSegmentProductUniqueness`,
+ordered-socle existence, socle exhaustion,
+`SegmentSocleProductIrreducibility`, adjacent socle commutation and the
+segment full, head, socle and special-exponent Jacquet formulas), their
+conclusions or consequences. It does not depend on the consumers
+`TwoSupercuspidalNonadjacentProductIrreducible` and the highest-derivative
+pairing (BZ77 Proposition 3.8), the `TwoSupercuspidalProductStructure`
+conclusion, the segment-socle statements of
+`Classification.SegmentSocleDerivativesStatement`, or the minus-exactness
+proof `MirabolicMinusExactnessProof`. It uses no Zelevinsky 1980 result
 (neither the segment derivative formulas of §3.5/§9.6, nor 4.2, 9.3 or
 9.7), and no BZ77 derivative theorem (3.2–3.8): only the §1.8 and §3.2
 definitions are implemented. No derivative result, exactness, adjunction
 or classification theorem is assumed, and no theorem-valued premise is
 added. The proofs use no `sorry`, `admit` or new axiom. This closure
-inventory is an author audit, not independent acceptance evidence.
+inventory was made with the module; it is not an independent check.

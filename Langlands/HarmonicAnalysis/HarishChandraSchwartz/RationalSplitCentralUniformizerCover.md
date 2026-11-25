@@ -1,6 +1,7 @@
 # The actual split-central chamber cover from the joint structural input
 
-This internal auxiliary construction for Task 7500 derives the split-central
+This internal auxiliary construction for Waldspurger's Corollary VIII.3.2 on
+the actual compatible split-central quotient derives the split-central
 quotient cover used in the cell-volume and height-series arguments from the
 published proposition `JointSpecialCompactBasisExistenceStatement`.
 

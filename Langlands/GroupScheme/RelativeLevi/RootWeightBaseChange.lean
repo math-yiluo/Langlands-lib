@@ -81,7 +81,7 @@ variable {R : Type u} [CommRing R]
   (C : SplitParabolicFaceChart i P fam wt)
   (A : Type u) [CommRing A] [Algebra R A]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 local instance : IsAffineHom ((GroupScheme.baseChange (algebraBaseMap R A)).obj G).X.hom :=
   MorphismProperty.pullback_snd G.X.hom (algebraBaseMap R A) inferInstance
 

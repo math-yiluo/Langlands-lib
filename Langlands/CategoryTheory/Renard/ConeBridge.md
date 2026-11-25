@@ -1,10 +1,9 @@
 # Renard A.IV.1–A.IV.2: corrected cone and constant-functor bridge
 
-Authors: Worker 610 (Lean implementation and source correspondence) and Worker 6
-(the mathematical diagnosis and requested counterexample, reused from the task
-and [Appendix A source audit](../../../notes/renard/appendix-a-corrections.md)).
+The mathematical diagnosis and the counterexample come from the
+[Appendix A source audit](../../../notes/renard/appendix-a-corrections.md).
 
-This is one definition unit for the general cone and cocone interfaces. All
+This is one definition module for the general cone and cocone interfaces. All
 declarations below belong to `Langlands.CategoryTheory.Renard` in
 `Langlands.CategoryTheory.Renard.ConeBridge`. Categorical foundations, universal
 witnesses and standard equivalences are reused from Mathlib; the additional
@@ -17,8 +16,8 @@ p-adiques*, French version dated 9 July 2026, Appendix A.IV.1–A.IV.2, printed
 pages 256–257 / PDF pages 262–263. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 610 read both original pages and visually inspected their formulas and
-arrows.
+Both original pages were read and their formulas and arrows visually
+inspected.
 
 The supplementary author errata for the 2010 edition are registered as
 `renard-2010-corrections-complements`, SHA256
@@ -175,7 +174,7 @@ arbitrary vertex isomorphisms preserve the cone or cocone structure.
 ## Counterexample, empty index and checked scope consumers
 
 These declarations are derived internal examples. The two-object diagnosis
-comes from Worker 6's source audit; the book does not state this counterexample.
+comes from the Appendix A source audit; the book does not state this counterexample.
 
 `TwoPointIndex := Discrete Bool` and `twoPointTransformation` implement the
 explicit transformation from constant `PUnit` to constant `Bool`.
@@ -225,9 +224,9 @@ The implementation imports `Mathlib.CategoryTheory.IsConnected` and
 unfinished proofs. All laws grouped here are intrinsic to the displayed
 definitions and reused universal witnesses.
 
-This unit covers the constant functor, the corrected general definitions, Hom
+This module covers the constant functor, the corrected general definitions, Hom
 correspondences and canonical uniqueness, together with the explicit diagnostic
 examples. The detailed examples and existence results for products, pullbacks,
 kernels, filtered colimits of abelian groups, universal-arrow and adjunction
-theory, and the separate module-localization discrepancy in A.III.1 remain
-outside this unit. It does not establish whole-Appendix coverage.
+theory, and the separate module-localization discrepancy in A.III.1 are
+outside this module. It does not establish whole-Appendix coverage.

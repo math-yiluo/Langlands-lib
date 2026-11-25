@@ -1,7 +1,5 @@
 # From tensor preservation to arbitrary affine test pullbacks
 
-Author: Worker 790.
-
 `isIso_localizedHom_of_algEquiv` uses the identity and composition clauses
 of the localized affine functoriality proposition to give inverse
 analytic maps for an actual algebra equivalence.

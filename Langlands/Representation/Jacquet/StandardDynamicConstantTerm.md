@@ -1,12 +1,9 @@
 # The standard and the dynamic constant terms of Proposition I.6.2 agree
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.Representation.Jacquet.StandardDynamicConstantTerm`, namespace
 `Langlands.Jacquet`.
 
-The Library has two published actual forms of Waldspurger's Proposition I.6.2, both by this
-author:
+The Library has two published actual forms of Waldspurger's Proposition I.6.2:
 
 - the **standard form** `Langlands.Representation.Jacquet.StandardCasselmanConstantTerm`
   (`IsStandardConstantTerm`, `HasStandardConstantTerm`, `standardConstantTerm`), on the actual
@@ -33,7 +30,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082
 (literature id `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-numbers; the PDF page is the printed page minus 234. The author checked the quotation below on the
+numbers; the PDF page is the printed page minus 234. The quotation below was checked on the
 rendered PDF pages 15 and 16.
 
 - Proposition I.6.2, printed pp. 249–250: "Soient `f ∈ A(G)` et `P = MU` un sous-groupe
@@ -87,7 +84,7 @@ Each theorem assumes only the hypotheses it lists. `Δ(P_J)` is
 
 ### Comparison for a cocharacter with `M_J = Z(χ)`, `U_J = U(χ)` (section `Rational`)
 
-- **`standardLeviDynamicEquiv χ hM`** (definition, the recorded declaration): for
+- **`standardLeviDynamicEquiv χ hM`** (definition, the entry declaration): for
   `hM : standardLevi i ν J = Dynamic.centralizer χ`, the group isomorphism
   `Z(χ)(F) ≃* M_J(F)`, which is the identity on underlying points of `G(F)`
   (`coe_standardLeviDynamicEquiv`). It is `MulEquiv.subgroupCongr` of the equality of the two

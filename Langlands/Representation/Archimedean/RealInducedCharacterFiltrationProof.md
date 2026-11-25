@@ -14,8 +14,7 @@ of size 2. Let `c : RealCharacterData` be a real character `sgn^ε |·|^s`. If
 `Re t < Re s`, then the standard module on `GL₃(ℝ)` of `[induced d, character c]` has the
 filtration `RealAdjacentFiltration 3 [] [] (RealBlock.induced d) (RealBlock.character c)`.
 
-This file contains only the final assembly. The proof is internal to this project (Tasks 7134
-and 7133). The case analysis and the analytic lemmas are not taken from a literature proof.
+This file contains only the final assembly. The proof is internal to this project. The case analysis and the analytic lemmas are not taken from a literature proof.
 
 ## Declaration
 
@@ -23,12 +22,12 @@ and 7133). The case analysis and the analytic lemmas are not taken from a litera
 `RealInducedCharacter.realInducedCharacterFiltration_of_landing` (module
 `RealInducedCharacterFiltration`) to two proofs:
 
-* `RealSwapLandingIntegral.inducedFirst : RealSwapLandingInducedFirstStatement` (Worker 763,
-  module `RealSwapLandingIntegral`);
+* `RealSwapLandingIntegral.inducedFirst : RealSwapLandingInducedFirstStatement` (module
+  `RealSwapLandingIntegral`);
 * `RealSwapLandingMirror.characterFirst_of_inducedFirst RealSwapLandingIntegral.inducedFirst :
   RealSwapLandingCharacterFirstStatement` (module `RealSwapLandingMirror`).
 
-The two landing statements are defined in Worker 763's module `RealSwapLandingStatement`.
+The two landing statements are defined in module `RealSwapLandingStatement`.
 
 ## Route of the whole proof
 
@@ -56,7 +55,7 @@ coefficients `Φ^0_k` along the rotation `r_0` vanish for `|k| < ℓ`.
    `RealBlockPositionData` and `RealBlockFrobeniusMap`. The landing statements show that
    composites of two such maps along `r_0` and `r_1` land in a standard module, not only in
    the principal series.
-2. **Landing, induced-first half** (`RealSwapLandingIntegral.inducedFirst`, Worker 763). Module
+2. **Landing, induced-first half** (`RealSwapLandingIntegral.inducedFirst`). Module
    `RealSwapLandingAlgebra` reduces the statement to its special case `SpecialLanding`, with
    explicit sine-power multipliers. Module `RealSwapLandingIntegral` proves `SpecialLanding`
    with a chart integral over `ℝ²`. The helper modules are `RealSwapLandingKernel`,

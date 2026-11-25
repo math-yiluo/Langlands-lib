@@ -1,6 +1,6 @@
 # Actual torus/root comparison kernels
 
-This internal supporting unit combines supplied torus/root model families
+This module combines supplied torus/root model families
 `A` and `B` over the maximal unramified integers, their actual comparison
 maps and the ordered product-chart kernel comparison. The families share
 `F`, `G`, `C`, `E` and `x`, with subsets `Ω` and `Ω'` and ambient models
@@ -44,8 +44,11 @@ handles an empty list.
 
 The provenance is internal composition of the published kernel, model,
 comparison and product APIs, together with the explicitly named root-depth
-premise. This unit constructs neither family, proves no open immersion
-or full-kernel lift, and proves no ambient unipotence. It therefore leaves
-the unconditional host theorem and the root-depth proof as separate
-obligations. Affine closure ordering can supply its depth inequalities
+premise. This module constructs neither family, proves no open immersion
+or full-kernel lift, and proves no ambient unipotence. It therefore proves
+neither the unconditional statement `UnramifiedModelKernelStatement` nor the
+root-depth statement `UnramifiedRootDepthKernelStatement`; the theorems
+`unramifiedModelKernel` (module `UnramifiedModelKernelProof`) and
+`unramifiedRootDepthKernel` (module `RootDepthKernel`) prove them. Affine closure ordering
+can supply its depth inequalities
 through `rootDepth_le_of_subset_affineClosure` from the companion module.

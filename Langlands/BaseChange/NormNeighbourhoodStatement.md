@@ -36,22 +36,22 @@ Let `F : Type u` be a nonarchimedean local field of characteristic zero (`[Field
   separable and irreducible);
 - and for every commutative `F`-algebra `E : Type v` with `[TopologicalSpace E]
   [IsTopologicalRing E] [IsModuleTopology F E]`, every `σ : E ≃ₐ[F] E` and every `l : ℕ` with
-  `IsCyclicAlgebra σ l` (Task 7405):
+  `IsCyclicAlgebra σ l` (module `Langlands.BaseChange.Norm`):
   - **(a)** there is a neighbourhood `V` of `1` in `GL_n(F)` such that every `γ ∈ V` satisfies
-    `IsNorm σ l γ` (Task 7405: `γ` is associated with some `δ ∈ GL_n(E)`, that is,
+    `IsNorm σ l γ` (`γ` is associated with some `δ ∈ GL_n(E)`, that is,
     `N(δ) = δ δ^σ ⋯ δ^{σ^{l-1}}` is conjugate in `GL_n(E)` to `γ`);
   - **(c)** the set `{γ : GL_n(F) | JacquetLanglands.IsRegularSemisimple γ ∧ IsNorm σ l γ}`
     of regular semisimple norms is open in `GL_n(F)`.
 
 In Lean, clause (b) comes first, before the quantifier over `E`, since it does not involve `E`.
-The labels (a), (b), (c) follow the task.
 
 ## Use
 
 In the global comparison of HL II.6.7–II.6.10 (printed pp. 123–126), the global regular
 elliptic norm `γ` is chosen close, at the places `v₀` and `v₁`, to local regular elliptic
-elements where the orbital integrals of the chosen test functions are nonzero; Tasks 7446 and
-7457 give these nonzero orbital integrals near `1`. Clauses (a) and (b) provide, near `1`,
+elements where the orbital integrals of the chosen test functions are nonzero;
+`CuspidalPseudoCoefficientExistenceStatement` (clause (d)) and `SupercuspidalCuspFormStatement`
+give these nonzero orbital integrals near `1`. Clauses (a) and (b) provide, near `1`,
 regular elliptic elements that are norms. At the other places of `S`, the test function is the
 indicator of a small neighbourhood of `γ` inside the open set of regular semisimple norms
 (clause (c)), and outside `S` the unit of the spherical Hecke algebra; both have positive
@@ -61,7 +61,7 @@ orbital integral at `γ` (statement 13, `OrbitalIntegralPositivityStatement`).
 
 - **(a)** In characteristic zero, an element `γ` close enough to `1` has an `l`-th root
   `γ^{1/l} ∈ GL_n(F)` given by the binomial series `∑ binom(1/l, k) (γ - 1)^k`, which converges
-  for `γ - 1` small. Then `δ = baseChange F E n (γ^{1/l})` (Task 7405) is σ-fixed, so
+  for `γ - 1` small. Then `δ = baseChange F E n (γ^{1/l})` is σ-fixed, so
   `N(δ) = δ^l` is `γ` viewed in `GL_n(E)`, and `γ` is a norm.
 - **(b)** Take the unramified extension `K/F` of degree `n` and `α` in its ring of integers
   with `K = F(α)`. Multiplication by `1 + ϖ^k α` on `K ≅ F^n` (`ϖ` a uniformizer of `F`) is an
@@ -75,7 +75,8 @@ orbital integral at `γ` (statement 13, `OrbitalIntegralPositivityStatement`).
 
 ## Hypotheses
 
-- `CharZero F`, as in Tasks 7416, 7432 and 7446: the Library's `IsRegularSemisimple` and
+- `CharZero F`, as in the statements on orbital integrals, twisted characters and functions
+  whose orbital integrals vanish off the elliptic set: the Library's `IsRegularSemisimple` and
   `IsRegularElliptic` ask for a separable characteristic polynomial, which is HL's regularity
   in characteristic zero; and the proof idea of (a) (the binomial series for `γ^{1/l}`) uses
   characteristic zero.
@@ -90,6 +91,6 @@ No measure enters this statement.
 
 ## Dependencies and names
 
-The module imports Task 7405's `Langlands.BaseChange.Norm` (`IsNorm`, `IsCyclicAlgebra`) and
+The module imports `Langlands.BaseChange.Norm` (`IsNorm`, `IsCyclicAlgebra`) and
 the Library's `Langlands.JacquetLanglands.RegularElliptic` (`IsRegularElliptic`,
-`IsRegularSemisimple`), with the names and argument orders cited in the task.
+`IsRegularSemisimple`), with the names and argument orders as published.

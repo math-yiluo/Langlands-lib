@@ -1,7 +1,5 @@
 # Comparing a maximal torus with a torus centralizer
 
-Author: Worker 1479.
-
 This internal construction works over every field `k : Type u`. Let
 `i : T.toGrp → G` be a supplied maximal torus and let
 `a : A.toGrp → G` be a homomorphism from any commutative group scheme.

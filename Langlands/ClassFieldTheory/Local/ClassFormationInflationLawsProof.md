@@ -1,7 +1,5 @@
 # Fundamental-class cup inflation laws of a finite class formation
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.ClassFormationInflationLawsStatement`
 (module `Langlands.ClassFieldTheory.Local.ClassFormationCupLawsStatement`).

@@ -1,7 +1,5 @@
 # Exclusion of an isolated exponent from quotients of a filtered representation
 
-Author: Worker 5120.
-
 This internal supporting module contains the representation-theoretic algebra behind the
 exclusion half of the induced-twist irreducibility argument. It uses no group-scheme
 structure. Its provenance is internal: it combines the published generalized-weight

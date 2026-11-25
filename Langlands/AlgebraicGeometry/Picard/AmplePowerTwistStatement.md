@@ -99,15 +99,18 @@ negative.
 This module defines the proposition only; it proves nothing and installs no
 axiom. At Library commit `facdf46f0abfca9e85d49d3a35285c513a96d886` there
 is no Library notion of a globally generated module sheaf and no Serre-type
-twisting theorem, so the proof successor must supply a Lean form of
+twisting theorem, so a proof must supply a Lean form of
 (1) ⇒ (7) for line bundles or a direct argument (for instance covering `X`
 by finitely many affine `X_{s_i}` and extending sections of `N` from them
 after multiplying by powers of `s_i`, Stacks Lemma 18.2, tag 01PW, PDF
 p.22). The published results `AmpleTensorStatement` (Lemma 27.5 when `M`
 is itself ample), `PositiveTensorPowerAmpleStatement` and
-`AmpleIsoStatement` are proved in the Library and may be imported.
+`AmpleIsoStatement` are proved in the Library and may be imported. The Library's
+proof `amplePowerTwist` (module `Langlands.AlgebraicGeometry.Picard.AmplePowerTwistProof`)
+uses Lemma 18.2 for the twisted tower and carries out (1) ⇒ (7) in pointwise form, without
+global generation for one uniform exponent.
 
-The intended consumer is the proof route for
+The consumer is the proof `Langlands.AbelianScheme.algClosedFieldEulerInverseSymmetry` of
 `Langlands.AbelianScheme.AlgClosedFieldEulerInverseSymmetryStatement`, which
 reduces an arbitrary `N` to the ample bundles `N ⊗ H^{⊗b}`, `b ≥ b₀`. This
 module imports only `Langlands.AlgebraicGeometry.Picard.Ample`, whose
@@ -115,5 +118,5 @@ import closure contains neither that statement nor
 `Langlands.AbelianScheme.AlgClosedFieldAmpleMumfordEulerSquareStatement`
 (both live in modules under `Langlands.AlgebraicGeometry.Picard`).
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`).
+The Lean environment is
+Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

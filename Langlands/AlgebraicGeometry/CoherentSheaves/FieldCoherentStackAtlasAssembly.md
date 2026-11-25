@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.CoherentSheaves.FieldCoherentStackAtlasAssembly`.
 
-Author: Worker 3694, for task `5b9ad399-34f2-4314-bb39-902f491aad01`.
-
 The main theorem `fieldCoherentStackAtlas_of_inputs` derives the published
 `FieldCoherentStackAtlasStatement.{u}` from three published propositions. They
 remain hypotheses here and are not proved:

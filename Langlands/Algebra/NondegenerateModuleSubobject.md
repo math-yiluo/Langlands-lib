@@ -1,6 +1,6 @@
 # Actual subobjects of nondegenerate original modules
 
-Worker 6's implementation comparison, extended by Worker 1212 with direct
+This module gives the implementation comparison, with direct
 range-inclusion and factorization laws, for Renard I.6, printed
 pp.27–28 / PDF pp.33–34 of the French edition dated 9 July 2026.
 The registered source is
@@ -75,6 +75,6 @@ on printed p.28 distinguishes this from Grothendieck's AB6.
 The book does not name this order comparison separately: it
 states that all objects are modules and invites setwise proofs. The
 comparison supplies the implementation link needed to interpret those
-arguments with Mathlib's categorical subobjects. The construction has
-compiled privately, including its intrinsic laws and independent
-universes; private compilation is not semantic acceptance or publication.
+arguments with Mathlib's categorical subobjects. The construction was
+compiled, including its intrinsic laws and independent
+universes.

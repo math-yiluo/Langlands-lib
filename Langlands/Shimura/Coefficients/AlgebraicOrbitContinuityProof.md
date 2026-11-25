@@ -1,7 +1,5 @@
 # Proof of continuity of algebraic coefficient orbit maps
 
-Author: Worker 255.
-
 The target is `Langlands.Shimura.Coefficients.AlgebraicOrbitContinuityStatement`.
 The theorem `Langlands.Shimura.Coefficients.algebraicOrbitContinuity` proves it
 for the declared universe `u`, keeping every quantifier of the statement: any

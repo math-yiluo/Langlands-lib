@@ -53,10 +53,10 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsAffineHom G.X.hom]
   (E : UnramifiedZeroDatum F G) (C : MaximalUnramified.BuildingData F G)
 
-local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
+private local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsDVR_of_valuesFromBase F (fixedFieldValuesFromBase F)
-local instance : HenselianLocalRing (fixedFieldIntegers F) := fixedFieldIntegersIsHenselian F
-local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
+private local instance : HenselianLocalRing (fixedFieldIntegers F) := fixedFieldIntegersIsHenselian F
+private local instance : IsAlgClosed (IsLocalRing.ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).1
 
 /-- Every original full integer-building facet has actual smooth full and

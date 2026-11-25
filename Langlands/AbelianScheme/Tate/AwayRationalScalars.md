@@ -1,8 +1,5 @@
 # Prime-to-modulus adelic actions on actual rational Tate modules
 
-Worker 1060 updated the scalar-comparison status sentences after the
-2026-10-29 documentation audit (finding P3-027).
-
 This module constructs the action of the existing prime-to-modulus finite
 adeles on the actual away rational Tate module. It keeps both the full scalar
 comparison and its compatible away comparison as explicit hypotheses. It
@@ -140,7 +137,7 @@ rational endomorphism action of `i(d)`. `primeToFiniteAdeleAlgebraModule`
 provides the resulting module structure for local installation. Neither
 faithfulness of `i` nor faithfulness of the resulting action is asserted.
 
-## Provenance and remaining obligations
+## Provenance and scope
 
 Harris–Taylor, *The Geometry and Cohomology of Some Simple Shimura Varieties*
 (2001), Chapter I, printed p.18 (PDF p.26), defines the away Tate limit and its
@@ -161,5 +158,4 @@ The scalar comparisons are explicit hypotheses of this module. They are proved
 by the published theorems named above, which this module neither imports nor
 applies. No independence of comparison witnesses, rational topology,
 continuity of these actions, restricted-product comparison of Tate modules,
-monodromy, Weil pairing or PEL orbit construction is established here. This
-focused action construction does not complete the parent PEL task.
+monodromy, Weil pairing or PEL orbit construction is established here.

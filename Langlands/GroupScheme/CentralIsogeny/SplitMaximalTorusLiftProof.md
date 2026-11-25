@@ -1,8 +1,5 @@
 # Split maximal tori lift through central isogenies
 
-Author: Worker 1437. The proof uses contributions by Workers 1358, 1384,
-1482 and 1508, as described below.
-
 `Langlands.GroupScheme.centralIsogenySplitMaximalTorusLift` proves the
 published proposition
 `Langlands.GroupScheme.CentralIsogenySplitMaximalTorusLiftStatement.{u}`.
@@ -19,7 +16,7 @@ The universe `u` is arbitrary.
 
 The implemented proof composes the following constructions.
 
-1. Worker 1384's `IsCentralIsogeny.exists_pow_eq_one_kernel` in
+1. `IsCentralIsogeny.exists_pow_eq_one_kernel` in
    `CentralIsogeny.KernelTorsion` gives a positive integer `N` killing
    every point of the actual kernel over every test scheme. Centrality
    makes this finite kernel commutative. Its coordinate Hopf algebra is
@@ -27,27 +24,26 @@ The implemented proof composes the following constructions.
    convolution rings proves that its dimension kills its points.
    Transport through the actual affine Hopf-coordinate isomorphism and
    precomposition gives the assertion on arbitrary test schemes.
-2. Worker 1508's `IsCentralIsogeny.exists_comp_eq_multiplication_comp`
+2. `IsCentralIsogeny.exists_comp_eq_multiplication_comp`
    in `CentralIsogeny.PowerLift` gives a map `a : S → G` with
    `a ≫ π = [2N] ≫ i`. In the inverse image of `S`, commutators lie
    in the central kernel. Its exponent makes the `2N`-th power
    multiplicative and trivial on the kernel of the projection to `S`;
    fpqc homomorphism descent therefore constructs `a`.
-3. Worker 1508's `IsSplitTorus.flat_and_surjective_multiplication`
+3. `IsSplitTorus.flat_and_surjective_multiplication`
    in `Torus.SplitMultiplication` proves that `[2N]` is surjective
    on the split torus `S`. The construction
    `exists_splitSubtorus_lift_of_surjective_splitParametrization`
-   in Worker 1437's `CentralIsogeny.SplitParametrization` takes the
+   in `CentralIsogeny.SplitParametrization` takes the
    dominant closed split image of `a`. Schematic dominance descends
    containment of its composite with `π` in the closed subgroup `i`.
    Represented-subgroup factorization gives the actual map `f : T → S`.
    The composite from `S` to this image and then to `S` is `[2N]`,
    so `f` is surjective on underlying schemes.
-4. Worker 1482's
-   `finiteHomMaximalTorusReflection_of_torusImage` in
+4. `finiteHomMaximalTorusReflection_of_torusImage` in
    `Torus.FiniteHomMaximalityReduction` proves that this `T` is
    maximal among all tori of `G`. Its image premise is supplied by
-   Worker 1358's `torusImageClosedTorusStatement` in `Torus.ImageProof`,
+   `torusImageClosedTorusStatement` in `Torus.ImageProof`,
    which also applies to nonsplit tori.
 
 For the last step, take any closed torus `M` of `G` containing `T`.

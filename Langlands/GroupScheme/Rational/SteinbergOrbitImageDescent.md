@@ -64,7 +64,7 @@ image-ideal equality and applies
 The extension need not have finite degree. There are no perfectness or
 infinitude assumptions; the rank-zero case and empty blocks are allowed.
 
-The provenance is internal. This unit specializes the existing actual
+The provenance is internal. This module specializes the existing actual
 coordinate and image descent constructions to the supplied Steinberg
 product using polynomial renaming, functoriality and ordered list
 multiplication. It claims no new literature-specific theorem. The original
@@ -77,5 +77,7 @@ choose preserved blocks in the required order and prove their commutation.
 This helper does not prove that these data exist for arbitrary quasi-split
 groups. Immersion, regularity, canonical-quotient identification, intersection
 geometry and rational lifting remain separate obligations. It asserts no
-global section in the exceptional even type A cases. The parent quasi-split
-quotient statement and its imported pairs are unchanged.
+global section in the exceptional even type A cases. It does not alter the
+quasi-split quotient statement `QuasiSplitSteinbergQuotientStatement` that it
+serves, which the Library proves as `quasiSplitSteinbergQuotient`
+(`Rational.QuasiSplitSteinbergQuotient`), or the modules that statement imports.

@@ -11,21 +11,22 @@ The inverse functor sends a nondegenerate `D(X)`-module `M` to the sheaf
 construction, this identification sends `m` to the global section whose value
 on each compact open `U` is `χ_U · m`. This file constructs that map as a
 morphism of nondegenerate test modules `M ⟶ Γc(P M)` and proves its
-naturality. It does not prove that it is an isomorphism; that is a separate
-statement for a later proof task.
+naturality. It does not prove that it is an isomorphism; that is the separate
+statement `ModuleComparisonIsIso` of `ModuleProjectorComparisonStatement`, proved
+by `moduleComparisonIsIso` in `ModuleProjectorComparisonProof`.
 
 ## Objects and sizes
 
 `X : Type` carries a topology with `hX : Langlands.Topology.IsLocallyProfinite X`.
 `M` ranges over the published `NondegenerateModuleCat.{0, 0}` of the pointwise
-test algebra `PointwiseTestAlgebra.Carrier X`. `P` is Worker 188's
+test algebra `PointwiseTestAlgebra.Carrier X`. `P` is
 `ProjectorVectorSheaf.functor.{0, 0} hX` with `P M = sheaf hX M.property`.
 `Γc` is `CompactSectionTestModule.compactSectionFunctor hX`: the published compact
 sections `CompactSupport.submodule (P M).presheaf` with the test action through
 locally constant scalars. Everything is at `Type` because the published
 `CompactSupport` ties the universes.
 
-The underlying complex-linear map is Worker 188's published
+The underlying complex-linear map is the published
 `ProjectorVectorSheaf.compactOriginal hX hM`. Its value at `m` is the global
 section `originalSection ⊤ m` with components `χ_U · m`. It is compactly
 supported because some compact-open `χ_K` fixes `m`. Its naturality is
@@ -72,7 +73,6 @@ compares germs at each point `x`:
 
 No inverse, isomorphism or equivalence is constructed or assumed here.
 
-Worker 184 implements this unit for Task 5338. Worker 188 designed the
-module-side comparison: `compactOriginal`, its support and naturality
-proofs, and the germ-formula route. Those published pieces are imported
-unchanged.
+The module-side comparison `compactOriginal`, with its support and
+naturality proofs, comes from the module `ProjectorVectorSheafSections`
+and is imported unchanged.

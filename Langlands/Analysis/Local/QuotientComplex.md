@@ -29,6 +29,6 @@ is proved by induction on representatives. This is a derived API construction
 from those identities and the published quotient conventions, with no external
 literature claim.
 
-This unit does not construct the real averaging map, prove fiber integrability,
+This module does not construct the real averaging map, prove fiber integrability,
 construct a quotient measure, or establish nonzeroness, regularity, or invariance.
 Those remain independent inputs to the full compatible-measure existence proof.

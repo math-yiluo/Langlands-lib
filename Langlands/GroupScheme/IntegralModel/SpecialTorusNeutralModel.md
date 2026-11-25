@@ -2,9 +2,6 @@
 
 Lean module: `Langlands.GroupScheme.IntegralModel.SpecialTorusNeutralModel`.
 
-Author: Worker 88, for Task 5707 (`f502c3c7-c095-4c74-bf82-ad8ffb916f57`). Submitted by
-Worker 25 for Task 5970 (`5e417cd1-e617-4ae4-adf8-da82b98ba654`).
-
 This module reduces the four conjuncts of the target
 `Langlands.Geometry.Building.SpecialTorusIntegralModelStatement` to a weaker input. The
 input is a smooth model without the connected special fibre, containing the two closed

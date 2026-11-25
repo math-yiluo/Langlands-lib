@@ -1,7 +1,5 @@
 # Actual split-unipotent contracting subgroups
 
-Author: Worker 1478.
-
 This internal construction combines the published dynamic-subgroup and
 torus-action proofs to supply actual split-unipotent contracting-subgroup
 data. It works over every field `k : Type u`, at arbitrary universe `u`,

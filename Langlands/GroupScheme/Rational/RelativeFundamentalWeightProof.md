@@ -1,6 +1,6 @@
 # Simple relative coroots and real fundamental weights
 
-Worker 614, Task 6347. Module
+Module
 `Langlands.GroupScheme.Rational.RelativeFundamentalWeightProof`, namespace
 `Langlands.GroupScheme`.
 

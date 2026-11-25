@@ -1,25 +1,26 @@
 # Harris's divisible systems on the quasi-étale site with an arbitrary family of points
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtale` (Worker 26). It specializes
+- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtale`. It specializes
   Harris's §2 constructions to quasi-étale `G`-sheaves, with the Godement functor
   `quasiEtaleGodementFunctor L ρ h R` built from the `L`-valued points of `X`. It also
   provides the Kan extension instance `quasiEtale_hasPointwiseRightKanExtension` and the
   divisible-system types `QuasiEtaleDivisibleSystem` and
   `QuasiEtaleComplexDivisibleSystem`.
-- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtaleConstant` (Worker 26). It provides
+- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtaleConstant`. It provides
   the constant system `quasiEtaleConstantSystem ρ R hℓ` of the constant quasi-étale
   `G`-sheaves `R / ℓ ^ m R`, the identification `quasiEtaleConstantSystemObjIso`, and
   `isZero_quasiEtaleGSheafCompactCohomology_constantSystem_obj`, which turns the bound
   `hC` for the constant sheaves into the bound `hT` for the constant system.
-- Through these modules: `AnalyticQuasiEtaleCompactCohomology` (Worker 26: sheafification,
+- Through these modules: `AnalyticQuasiEtaleCompactCohomology` (sheafification,
   enough injectives, `Γ_{c,X{G}}` and `H^q_c(X{G}, -)`), the twisted-site modules
   `Langlands.Sheaf.Equivariant.TwistedGodement`, `DivisibleSystem.TwistedGodement`,
-  `TwistedTruncation` and `TwistedInverseLimit` (Worker 26), Worker 21's quasi-étale site
-  with its `L`-valued points, and Worker 3's statements `ProPInvariantSubcomplexStatement`
-  and `FiniteCohomologyInverseLimitStatement`. Neither of Worker 3's statements is proved
-  in the Library; they appear here only as hypotheses `hS` and `hS'`.
+  `TwistedTruncation` and `TwistedInverseLimit`, the Library's quasi-étale site
+  with its `L`-valued points, and the statements `ProPInvariantSubcomplexStatement`
+  (`Langlands.Cohomology.ProPInvariants.Statement`) and
+  `FiniteCohomologyInverseLimitStatement` (`Langlands.Cohomology.InverseLimit.Statement`).
+  Neither of these statements is proved in the Library; they appear here only as hypotheses `hS` and `hS'`.
 
 All declarations are in the namespace `Langlands.Cohomology.DivisibleSystem.Analytic`.
 
@@ -117,7 +118,7 @@ as compactly supported. This module keeps that definition unchanged.
 
 As in `AnalyticQuasiEtale`:
 
-- `K : Type u` is a complete ultrametric normed field, and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field, and `X` an object of the Library's
   `LocalizedCategory.{u, v, v} (K := K)`.
 - `G` is a group with `ρ : G →* Aut X` and `[TopologicalSpace G]`. It lies in `Type z`,
   except in the inverse-limit sections, where `G : Type u`. The compact-section and
@@ -206,7 +207,7 @@ These declarations also take `L`, `h`, `hF` and `hT`.
 
 Here `G : Type u`. The further data are those of `TwistedInverseLimit`: a filtered preorder
 `ι : Type u`, an antitone family `H : ι → Subgroup G` of normal subgroups of finite index
-with `Fintype` and `DecidableEq` instances on the quotients, and Worker 61's hypotheses
+with `Fintype` and `DecidableEq` instances on the quotients, and the hypotheses
 `hK` (projections of the compact section system stay epimorphisms on `H i`-invariants) and
 `hk` (the orders of the kernels of `G ⧸ H j ⟶ G ⧸ H i` are invertible in `R`).
 

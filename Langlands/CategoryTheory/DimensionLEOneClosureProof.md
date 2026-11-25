@@ -1,9 +1,8 @@
 # Proof that the dimension-at-most-one property is closed under subobjects and quotients
 
-Author: Worker 894. This file proves the published statement
+This file proves the published statement
 `Langlands.CategoryTheory.DimensionLEOneClosedUnderSubobjectsQuotients`
-(module `Langlands.CategoryTheory.AbelianSubcategoryStatement`, by
-Worker 633). The statement and its supporting definition
+(module `Langlands.CategoryTheory.AbelianSubcategoryStatement`). The statement and its supporting definition
 `dimensionLEOneProperty` are unchanged and imported by their Lean names.
 
 ## Theorem

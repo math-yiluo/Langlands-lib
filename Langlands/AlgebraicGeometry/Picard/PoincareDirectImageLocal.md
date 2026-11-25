@@ -1,7 +1,8 @@
 # The perfect complex of the Poincaré bundle at the origin of the dual
 
-Author: Worker 975. The shape of the support hypothesis of `homology_of_perfectModel` was
-agreed with Worker 1165, who supplies it in the final assembly.
+The support hypothesis of `homology_of_perfectModel` is supplied in the final assembly
+(`PoincareDirectImageAssembly`, by `poincare_isZero_homology_localization_of_mem_originIdeal`
+of the module `PoincareDirectImageAffineVanishing`).
 
 Module `Langlands.AlgebraicGeometry.Picard.PoincareDirectImageLocal`, namespace
 `Langlands.AbelianScheme.PoincareDirectImage`. This is an internal helper module for the
@@ -124,7 +125,7 @@ It concludes that `Hⁿ(Kc) = 0` for `n ≠ g` and `H^g(Kc) ≅ B ⧸ originIdea
 Proof. Let `R` be the stalk of `D` at the origin. It is the localization of `B` at
 `originIdeal hV hx` (Mathlib's `IsAffineOpen.isLocalization_stalk`), and that ideal is
 maximal because the origin is closed. `R` is regular by the Library's
-`AlgebraicGeometry.Smooth.isRegularLocalRing_stalk`. It has Krull dimension `g` by
+`AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT`. It has Krull dimension `g` by
 `fieldSmoothClosedPointStalkDimension`. Apply `hAL` to `Kc ⊗ R`. Its four hypotheses are
 checked as follows; the residue field is reached through the Library's
 `baseChangeCompIso`.

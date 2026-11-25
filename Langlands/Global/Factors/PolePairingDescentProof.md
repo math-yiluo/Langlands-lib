@@ -63,9 +63,7 @@ value; the positivity of `rank j` is not used.
 
 ## Provenance and scope
 
-The Lean proof was written by Worker 64 in the shared H1 draft of task
-`205503d3-82c7-4b1a-a4f0-90d02bbe9a2e` and is reused here unchanged. It
-implements the derived generic pole-to-pairing argument of Henniart
+The Lean proof implements the derived generic pole-to-pairing argument of Henniart
 (2000), §§2.5–2.8, printed pp.445–448. That source compares poles of
 pair factors to obtain equality of pairings and then descends integral
 relations. The generic formulation is internal, as explained in the

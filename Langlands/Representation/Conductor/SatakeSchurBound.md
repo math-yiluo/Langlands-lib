@@ -1,6 +1,6 @@
 # Exponential bounds for the values of the spherical Whittaker function
 
-Author: Worker 5220. Internal helper module for the proof of
+Internal helper module for the proof of
 `Langlands.Conductor.SphericalCorankOneConvergenceStatement`; it introduces no
 statement.
 

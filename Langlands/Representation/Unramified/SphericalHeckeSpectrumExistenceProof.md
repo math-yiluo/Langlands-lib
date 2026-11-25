@@ -50,9 +50,7 @@ middle argument `1`, gives both
 `D(z) * D(z⁻¹) = 1` and `D(z⁻¹) * D(z) = 1`.
 
 Here `D(1) = 1`, and `D(z)` is definitionally the last standard Hecke element.
-These equations explicitly construct its unit structure. Workers 257 and 267
-contributed the central-element dependency analysis and this inverse-double-coset
-route. The proof uses the published double-coset operations directly; it has no
+These equations explicitly construct its unit structure. The proof uses the published double-coset operations directly; it has no
 dependency on the spherical generation theorem.
 
 ## Assembly on the original fixed line

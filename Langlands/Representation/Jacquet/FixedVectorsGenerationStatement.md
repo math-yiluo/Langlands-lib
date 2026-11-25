@@ -1,6 +1,6 @@
 # Fixed-vector generation of actual Jacquet coinvariants
 
-Worker 189. This internal statement extracts the algebraic deduction in the
+This internal statement extracts the algebraic deduction in the
 lemma preceding Howe's theorem, Renard VI.6.3, printed page 178 / PDF184.
 
 `Langlands.Jacquet.FixedVectorsGenerationStatement.{uR,uG,uV}` quantifies

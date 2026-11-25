@@ -1,6 +1,6 @@
 # Descent of affine characters along a field tower
 
-This internal unit descends characters along a tower of fields
+This internal module descends characters along a tower of fields
 `k -> E -> L`. Let `G` be an affine group scheme over `k`, and let `ψ` be an
 actual character of the base change `G_L`. If the universal tensor value of
 `ψ` has coefficients in `E`, then `ψ` comes from an actual character of
@@ -110,7 +110,7 @@ Assume `L/E` is Galois; it need not be finite.
 This is standard Galois descent for vector spaces, applied to the coordinate
 algebra of an affine group scheme. The descent of characters is internal
 infrastructure, built from the published finite Galois reconstruction route.
-The unit does not show that a particular character, such as a root of a
+The module does not show that a particular character, such as a root of a
 torus, has a Galois-fixed universal tensor value; applications must prove
 that hypothesis. All results hold in every universe `u` and for arbitrary
 fields. The only assumptions are the stated affineness, the scalar tower and,

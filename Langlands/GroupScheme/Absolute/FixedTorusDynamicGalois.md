@@ -1,6 +1,6 @@
 # Galois action on actual fixed-torus dynamic presentations
 
-Worker 1270. This is an internal construction from the actual lattice Galois
+This is an internal construction from the actual lattice Galois
 representation, the subtype `FixedTorusDynamicPresentations`, and the naturality
 and subgroup-functor formulas for canonical descent transport.
 

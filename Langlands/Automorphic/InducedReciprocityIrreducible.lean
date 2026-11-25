@@ -1,7 +1,7 @@
 import Langlands.Automorphic.WeakInductionAssociationStatement
 import Langlands.Global.Arithmetic.GeneralPositionMackeyProof
 import Langlands.Global.Arithmetic.HarrisDatumArchimedean
-import Langlands.ClassField.Global.IdeleGaloisDescentProof
+import Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof
 import Langlands.Global.Factors.RelativeWeilLocalEuler
 import Langlands.Representation.Filtration.CentralEigenspaceSplitting
 
@@ -27,7 +27,7 @@ noncomputable section
 
 universe u uV
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open NumberField
 open scoped NumberField NumberField.LiesOver
@@ -361,4 +361,4 @@ end Irreducible
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

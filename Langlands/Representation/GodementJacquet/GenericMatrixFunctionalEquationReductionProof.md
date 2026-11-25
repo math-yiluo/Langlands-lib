@@ -5,7 +5,10 @@ internal `GenericMatrixFunctionalEquationReductionStatement`, with independent
 field and actual representation-carrier universes. Its only two premises are
 the unchanged closed Tate and higher-rank supercuspidal matrix
 functional-equation statements. This conditional theorem supplies no proof of
-either base and does not establish the unconditional host theorem.
+either base and does not establish the unconditional
+`GenericMatrixFunctionalEquationStatement`, which
+`genericMatrixFunctionalEquation` (module `GenericMatrixFunctionalEquationProof`)
+proves from this reduction and the two bases.
 
 The implemented proof first obtains a continuous scalar central quasicharacter
 for each irreducible admissible factor. The published admissible Schur theorem

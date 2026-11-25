@@ -1,6 +1,6 @@
 # Regular CM unit prescription from its three inputs
 
-Worker 84. This derived proposition concerns the assembly step in Henniart
+This derived proposition concerns the assembly step in Henniart
 2000, Section 3.6, Lemma 3, printed p.451. It reuses the actual objects and
 four targets of `Langlands.Global.Arithmetic.CMCharacterStatement`.
 
@@ -34,7 +34,7 @@ implication would not prove the CM existence theorem until all three inputs
 are proved. It also supplies no Harris normalization, central-character
 comparison, or auxiliary general-position construction.
 
-The original passage was read directly by Worker 84 in the registered
+The original passage was read directly in the registered
 Henniart source `henniart-2000-simple-proof`, SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`,
 pp.448–451, including all three character lemmas and their proofs.

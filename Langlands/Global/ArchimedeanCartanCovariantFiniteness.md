@@ -1,6 +1,6 @@
 # Actual covariants over full-group invariants
 
-Author: Worker 94. This is an internal scalar-transfer construction from
+This is an internal scalar-transfer construction from
 `ArchimedeanCartanInvariantFiniteness` and `ArchimedeanCartanCovariants`.
 It retains every number-field universe and every natural rank, including zero.
 

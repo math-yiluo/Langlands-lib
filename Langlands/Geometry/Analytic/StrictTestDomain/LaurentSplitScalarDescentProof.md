@@ -36,8 +36,6 @@ motivated by Achinger, *Introduction to non-Archimedean Geometry*, November
 and its fingerprint are recorded in the statement's Markdown. The
 implementation uses only unique scalar lifting and separation, and makes
 every required pullback comparison an actual proved bounded map.
-Worker 146 contributed the formal compatibility and refinement preparation
-used in `ScalarCoverDescent`; Worker 572 wrote this chase.
 
 The field and index universes remain independent. No finite or point-covering
 hypothesis is added, and the argument allows empty families, zero and

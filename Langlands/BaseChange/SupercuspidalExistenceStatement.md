@@ -1,7 +1,7 @@
 # Existence of supercuspidal representations of `GL_n(F)`
 
 Lean module: `Langlands.BaseChange.SupercuspidalExistenceStatement`, namespace
-`Langlands.BaseChange`. Author: Worker 820, for Task 7457.
+`Langlands.BaseChange`.
 
 This module defines one proposition, `SupercuspidalExistenceStatement.{u, uV} : Prop`. It is
 a statement only: nothing here proves it, and no declaration assumes it.
@@ -18,15 +18,15 @@ For every field `F : Type u` with `[ValuativeRel F] [TopologicalSpace F]` and Ma
 such that `π.IsIrreducible` (Mathlib), `GeneralLinear.IsSupercuspidal π` (the Library's
 predicate: `IsAdmissible π` and vanishing Jacquet modules along every conjugate of the
 unipotent radical of every proper standard block parabolic subgroup) and
-`HasCentralCharacterRep π χ` (Task 7442: `π z v = χ(z) • v` for every central `z` and every
-`v`).
+`HasCentralCharacterRep π χ` (`Langlands.BaseChange.PseudoCoefficient`: `π z v = χ(z) • v`
+for every central `z` and every `v`).
 
 No `CharZero F` hypothesis is assumed: the statement covers finite extensions of `ℚ_p` and
 Laurent-series fields `𝔽_q((t))`.
 
 Names: `HasCentralCharacterRep` is imported from the published module
-`Langlands.BaseChange.PseudoCoefficient` (Task 7442). Its published name and argument order
-(`HasCentralCharacterRep ρ χ`) are those cited in the objective, so no correspondence is needed.
+`Langlands.BaseChange.PseudoCoefficient`. The statement uses its published name and argument
+order (`HasCentralCharacterRep ρ χ`) directly, so no correspondence is needed.
 
 ## Sources and why it holds (not formalized)
 
@@ -45,7 +45,7 @@ Names: `HasCentralCharacterRep` is imported from the published module
 
 ## Hypotheses and universes
 
-- `0 < n` is the objective's hypothesis; it restricts the statement to the meaningful range.
+- `0 < n` is a hypothesis of the statement; it restricts the statement to the meaningful range.
   It is not needed for truth: for `n = 0` the group `GL_0(F)` is trivial, its trivial
   representation on `ℂ` is irreducible and admissible, and its Jacquet condition is vacuous
   because every block parabolic subgroup of the trivial group is the whole group.
@@ -55,12 +55,12 @@ Names: `HasCentralCharacterRep` is imported from the published module
 
 ## Use
 
-The global comparison of Task 7340 evaluates the simple trace formula and its twisted form
-(Worker 4918's package) on test functions with a cusp form at one place (Henniart-Lemaire 2011,
+The global comparison for local cyclic base change of prime degree evaluates the simple trace
+formula and its twisted form on test functions with a cusp form at one place (Henniart-Lemaire 2011,
 II.6.3, printed p. 120, condition `c_{v₁}(f)`). `SupercuspidalCuspFormStatement` provides a cusp
 form that isolates a given supercuspidal representation, and this statement shows that such
 representations exist, so that the hypotheses of that statement can be met. The companion
-statements of Task 7457 are `CuspFormConvolutionStatement` (convolution with Hecke operators)
+statements are `CuspFormConvolutionStatement` (convolution with Hecke operators)
 and `SplitTensorCuspFormStatement` (passage from `GL_n(F)` to `GL_n(F^l)` at a split place).
 
 ## Sources

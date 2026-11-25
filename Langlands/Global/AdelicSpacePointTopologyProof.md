@@ -1,7 +1,5 @@
 # Conrad's p.17 claims on adelic points of separated algebraic spaces
 
-Author: Worker 105.
-
 This module assembles `Langlands.Global.AdelicSpacePointTopologyStatement`, the claims of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (2011), printed p.17, for separated
 algebraic spaces of finite type over the `S`-integers of global fields. It takes two inputs as

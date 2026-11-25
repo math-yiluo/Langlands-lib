@@ -68,7 +68,7 @@ local notation "FiniteOrder" =>
   (∀ (Ω : Type) [Field Ω] [IsAlgClosed Ω] [CharZero Ω]
     (B : AbelianScheme (Spec (CommRingCat.of Ω)))
     (W : DualWitness B) (lam : B ⟶ W.dual P), W.IsPolarization P lam →
-      ∀ g : Aut B, g.hom ≫ lam ≫ W.map P W g.hom = lam → IsOfFinOrder g)
+      ∀ g : Aut B, g.asIso.hom ≫ lam ≫ W.map P W g.asIso.hom = lam → IsOfFinOrder g)
 
 local notation "PrimeFaithful" =>
   (∀ (Ω : Type) [Field Ω] [IsAlgClosed Ω] [CharZero Ω]

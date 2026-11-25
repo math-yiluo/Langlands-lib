@@ -74,8 +74,8 @@ section CanonicalTopology
 
 variable [IsAffine G.X.left] [IsAffine H.X.left] [IsAffine K.X.left]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) := rationalPointTopology F G.X
-local instance : TopologicalSpace (GroupScheme.rationalPoints H) := rationalPointTopology F H.X
+private local instance : TopologicalSpace (GroupScheme.rationalPoints G) := rationalPointTopology F G.X
+private local instance : TopologicalSpace (GroupScheme.rationalPoints H) := rationalPointTopology F H.X
 local instance : TopologicalSpace (GroupScheme.rationalPoints K) := rationalPointTopology F K.X
 
 /-- Multiply the two restrictions to the common source. -/

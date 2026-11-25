@@ -1,9 +1,6 @@
 # Principal regular ideals descend along flat local base changes of a flat family
 
-Authors: Worker 22.
-
-Worker 22 wrote this helper module for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). It supplies the
+This helper module supplies the
 commutative algebra of the proof of
 `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveCartierLocusStatement`.
 The main theorem and the full route are in

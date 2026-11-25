@@ -1,7 +1,5 @@
 # A common ambient maximal torus of two Borel subgroups
 
-Workers 1458 and 1440.
-
 `Langlands.GroupScheme.twoBorelCommonMaximalTorus.{u}` proves the unchanged
 [`TwoBorelCommonMaximalTorusStatement.{u}`](TwoBorelCommonMaximalTorusStatement.md).
 For every algebraically closed field `k : Type u`, every actual connected
@@ -27,7 +25,7 @@ where `n` normalizes that torus. The published
 and its two factorization maps from these data. Thus the conclusion gives
 equalities of group-scheme morphisms, with their full all-test meaning.
 
-The contribution is an internal assembly of these Library results.
+This module is an internal assembly of these Library results.
 The original common-torus assertion is Borel–Tits, *Groupes réductifs*
 (1965), registered source `borel-tits-1965-groupes-reductifs`, §2.4,
 printed p.65 / one-based PDF p.12; its correspondence is documented in the
@@ -40,5 +38,5 @@ The complete transitive project import closure contains neither
 `ParabolicIntersectionGeometryStatement` nor
 `ParabolicIntersectionTorusStatement`, nor a use of rational Bruhat.
 The rational Bruhat proposition definitions in `Rational.Statement` are
-unused elsewhere in this closure. No forbidden downstream result is used
+unused elsewhere in this closure. None of these downstream results is used
 directly or indirectly.

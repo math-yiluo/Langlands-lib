@@ -1,7 +1,5 @@
 # Exponents of normalized Jacquet modules along the split centre
 
-Author: Worker 23.
-
 This module defines the exponents of a representation of `GL_n(F)` along a
 standard block parabolic, and the real parts of characters of `(F^×)^r`. These
 are the inputs of Casselman's square-integrability criterion and of the tempered

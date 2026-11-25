@@ -48,6 +48,7 @@ Choose a principal scalar `a` with `a s⁻¹ t ∈ C`. Commutativity gives
 set, and the existing norm-one fundamental-set theorem provides the final
 unconditional existential assertion.
 
-This unit does not yet prove finiteness of bounded-height rational classes,
+This module does not prove finiteness of bounded-height rational classes,
 existence of rational height minima, rank-one reduction, or the general
-reductive Siegel-cover theorem. Those require further arguments.
+reductive Siegel-cover theorem. Those require further arguments; rational
+height minima are constructed in `PrimitiveAdelicMinimum`.

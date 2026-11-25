@@ -55,7 +55,7 @@ theorem eulerPolynomial_coeff_rank {n : ℕ} (s : Eigenvalues n) :
 
 end Langlands.Unramified.Eigenvalues
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open Langlands.Unramified
@@ -100,4 +100,4 @@ theorem IsUnramifiedMatchAt.determinantCharacter_eq_prod {n : ℕ}
       (s : Multiset ℂˣ).prod :=
   determinantCharacter_eq_prod_of_localEulerPolynomial S hn ι s ((h w).2 e ι hι).2
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

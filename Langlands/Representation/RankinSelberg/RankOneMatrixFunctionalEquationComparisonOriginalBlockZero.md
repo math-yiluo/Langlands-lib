@@ -1,6 +1,6 @@
 # The actual original block-zero integral from matrix analytic data
 
-Worker 396. Internal derived prerequisite for the matrix functional-equation
+Internal derived prerequisite for the matrix functional-equation
 comparison. All original field and representation-carrier universes remain
 independent. No original-source transcription is asserted.
 
@@ -57,4 +57,6 @@ The proof reuses published actual rank-one quotient compatibility and
 uniqueness, zero-row point mass, rank-cast integrands, the canonical second
 model vector, and the positive-volume box convergence transfer. The genuine
 dual integral, paired Fourier extraction, normalized equation and final
-all-rank gamma comparison remain later obligations.
+all-rank gamma comparison are not proved here; the final comparison is
+`rankOneMatrixFunctionalEquationComparison` in
+`RankOneMatrixFunctionalEquationComparisonProof`.

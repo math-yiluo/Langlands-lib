@@ -12,10 +12,13 @@ Langlands.GroupScheme.MultiplicationIsogenyStatement ->
 Langlands.AbelianScheme.RelativeFiniteWeilAlternationStatement.
 ```
 
-The first proposition remains an explicit premise. This contribution does
+The first proposition remains an explicit premise. This module does
 not prove the unconditional relative alternation target. It supplies the
-assembly that can be applied once the general multiplication-isogeny
-theorem is proved independently.
+assembly, which `Langlands.AbelianScheme.relativeFiniteWeilAlternation`
+(module `Langlands.AlgebraicGeometry.Picard.FiniteWeilAlternationProof`)
+applies to the general multiplication-isogeny theorem
+`Langlands.GroupScheme.multiplicationIsogeny` (module
+`Langlands.AbelianScheme.MultiplicationIsogenyProof`).
 
 ## Inputs and conventions
 
@@ -134,14 +137,13 @@ introduced. The module imports the relative target and all prerequisite
 modules unchanged.
 
 The only external mathematical premise of the final assembly is
-`MultiplicationIsogenyStatement`. Its proof task is
-`77b25bab-7d58-4dc8-91e0-ffe9faebbceb`; this reduction does not discharge
-it or add it to the unconditional target. A final exact-target
-`lean.proof` submission still requires an independently published
-proof of that premise, or another proved way to supply the actual
-doubling epimorphism for every polarization in the target.
+`MultiplicationIsogenyStatement`. It is proved by
+`Langlands.GroupScheme.multiplicationIsogeny`; this reduction does not discharge
+it or add it to the unconditional target. The unconditional statement is
+proved in `FiniteWeilAlternationProof` by applying the assembly to that
+theorem.
 
-This unit does not prove Cartier perfectness, nondegeneracy, or any
+This module does not prove Cartier perfectness, nondegeneracy, or any
 inverse-limit assertion. It preserves the scheme-morphism diagonal
 identity over all bases and in all residue characteristics,
 conditionally as stated above.

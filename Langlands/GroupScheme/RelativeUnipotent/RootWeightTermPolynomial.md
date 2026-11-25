@@ -30,4 +30,5 @@ The construction works on the actual positive subgroup, so it can be used when
 a later ambient conjugation preserves that subgroup but does not preserve the
 auxiliary full regular root-chart group. This module does not construct that
 conjugation, prove its equivariance, or supply the remaining change-of-torus and
-descent arguments of Task 7200.
+descent arguments of the finite vector-bundle filtrations of supplied relative
+radicals.

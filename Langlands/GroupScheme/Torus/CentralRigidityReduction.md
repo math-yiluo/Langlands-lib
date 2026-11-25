@@ -1,7 +1,5 @@
 # From local central equality to local triviality
 
-Worker 890.
-
 This internal reduction is derived from the published group-scheme definitions.
 Its mathematical source is the deduction of SGA 3, Exposé IX, Corollary 5.2 from
 Theorem 5.1, in the registered Gille–Polo 2009 recomposed edition

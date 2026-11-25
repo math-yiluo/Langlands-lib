@@ -1,7 +1,5 @@
 # Integral Iwasawa families from supplied-model maximal compactness
 
-Worker 4256.
-
 This internal composition constructs simultaneous good arithmetic models and
 discharges relative parabolic quotient existence using published Library
 proofs. It reduces the complete
@@ -60,5 +58,8 @@ The universe `u` is arbitrary. Non-split, anisotropic and improper-parabolic
 cases are retained. The original statement and all its imports are
 unchanged. The provenance is entirely internal composition of the named
 Library constructions and proofs; no additional assertion from external
-literature is introduced. Independent proof and publication of the maximal
-compactness premise are still needed for the unconditional task.
+literature is introduced. The maximal compactness premise is proved as
+`IntegralModel.maximalCompactStatement` (module
+`Langlands.GroupScheme.IntegralModel.MaximalCompact`), and
+`IntegralIwasawaFamilyProof` combines the two into the unconditional
+`existenceStatement`.

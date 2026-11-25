@@ -1,14 +1,12 @@
 # Reduction of rational rank-one self-association
 
-Author: Worker 167.
-
-This internal supporting unit isolates the subset equality in the published
+This module isolates the subset equality in the published
 `RationalRankOneSelfAssociationStatement` and proves that it suffices for
 the full target under that target's existing premises. In particular, those
 premises already supply the actual subgroup conjugation needed to deduce
 normalization by every lift of the specified longest representative.
 The implication from reducibility to the subset equality remains unproved.
-This unit therefore does not prove the full self-association statement.
+This module therefore does not prove the full self-association statement.
 
 ## Generic equality and normalization
 
@@ -109,7 +107,7 @@ predicate is obtained by projecting the conclusion of an existing target;
 the proof is subgroup transport and logical assembly. No independent
 assertion from the original literature is introduced.
 
-| Published declaration or predicate | Use in this unit |
+| Published declaration or predicate | Use in this module |
 | --- | --- |
 | `Langlands.Aubert.General.rankOneSelfAssociation` in `GeneralCorollaryTargets` | Original generic target, including the every-lift conclusion. |
 | `Langlands.Aubert.General.IsMaximalStandard` and `IsCorollaryLeviCuspidal` in `GeneralCorollaryTargets` | Original rank-one and actual restricted-Jacquet hypotheses, reused without modification. |
@@ -141,5 +139,5 @@ geometric lemma, adjointness or cuspidal-support theorem. Representation
 functors occur in the predicates inherited from the target; no theorem
 about their irreducibility or composition factors is applied. In
 particular, the representation-theoretic implication from reducibility
-to `associatedSubset actual J = J` is still required for completion of the
-original proof task. This unit makes no use of Aubert Proposition 3.2.
+to `associatedSubset actual J = J` is still required for a proof of
+`RationalRankOneSelfAssociationStatement`. This module makes no use of Aubert Proposition 3.2.

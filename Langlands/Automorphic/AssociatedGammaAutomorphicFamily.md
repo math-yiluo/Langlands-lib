@@ -1,13 +1,13 @@
 # The automorphic Hecke Euler family of a cuspidal pair
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaAutomorphicFamily`, namespace
 `Langlands.Global.CuspidalPairFunctionalEquation`). It builds the automorphic side `D` of the
 two-twist comparison engine used for `AssociatedGammaStatement` (Henniart 2000, Théorème
 2.3, which applies the global Rankin–Selberg functional equation to `(Π ⊗ χ) × Π'` for
 characters `χ` with prescribed local behaviour). It derives the engine's analytic input from
 the completed global equation `CuspidalPairGlobalFunctionalEquationStatement`. That
-statement is a hypothesis here; its proof is owned by Task 5493.
+statement is a hypothesis here.
 
 ## Data
 

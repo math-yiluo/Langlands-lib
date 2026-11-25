@@ -1,14 +1,12 @@
 # Group actions on the field-valued points of an analytic space
 
-Author: Worker 21.
-
 A group `G` acting on an analytic space `X` by automorphisms
 (`ρ : G →* Aut X` in the localized category) permutes the `L`-valued points of
 `X` (module `FieldValuedPoints`). This module records the action and the
 compatibility of the points of `Ét(X)` (module `EtaleGeometricPoints`) with
 the translations `U ↦ gU` (module `EtaleSite`). It packages them in the
 published `Langlands.Sheaf.Equivariant.TwistedOver.PointEquivariance` of
-module `Langlands.Sheaf.Equivariant.TwistedCompactSupport` (Worker 26), which
+module `Langlands.Sheaf.Equivariant.TwistedCompactSupport`, which
 is used there for compactly supported sections.
 
 ## Original source and derived provenance
@@ -43,7 +41,7 @@ In `Langlands.Analytic.SaturatedAtlasPresentation.EtaleSite`, for
   action `pointAction L ρ`, a `TwistedOver.PointEquivariance` for the
   morphism property `etale`, the topology `etaleTopology X` and the family of
   points `fun x => toPoint L x (h x)`. Its field `fiberIso g x` is
-  `pointTranslate L (ρ g) x (h x) (h (g • x))`. Worker 26's `translate etale ρ g`
+  `pointTranslate L (ρ g) x (h x) (h (g • x))`. `TwistedOver.translate etale ρ g`
   is definitionally `(translate (ρ g)).functor`.
 
 ## Scope

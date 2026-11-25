@@ -1,6 +1,6 @@
 # The levels of an `ℓ`-divisible system of modules are free over `R ⧸ (ℓ ^ m)`
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.InvariantTotalProjective`
+Built on `Langlands.Cohomology.DivisibleSystem.InvariantTotalProjective`
 (the definition `UnderlyingPowTorsionProjectiveBelow` and its lemmas for
 `groupStandardTotalSystem`, `quotientInvariantsTotalSystem`,
 `smoothGodementInvariantTotalSystem` and `proPSmoothGodementInvariantTotalSystem`), and
@@ -136,7 +136,7 @@ of `G ⧸ H`. Each proof applies the InvariantTotalProjective lemma to
 The families keep their other hypotheses: a finite group `Γ` for `groupStandardTotalSystem`;
 for `quotientInvariantsTotalSystem` a normal subgroup `H` of finite index and the
 surjectivity hypothesis `hK` of the Invariants module; for the truncated smooth Godement
-resolutions `h` (a proof of Worker 3's unproved proposition
+resolutions `h` (a proof of the unproved proposition
 `SmoothGodementZeroExactStatement R G X`), `T`, `D`, `H`, `hterm` and `hres`; and in the
 pro-`p` case also `hP` (the unproved proposition `ProPInvariantsExactStatement`), `hH` and
 `hR`. The `towerHomEval` and limit-projection lemmas of the InvariantTotalProjective module

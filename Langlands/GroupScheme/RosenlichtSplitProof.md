@@ -1,7 +1,5 @@
 # Rosenlicht's criterion for split solvable groups: proof
 
-Author: Worker 91.
-
 `Langlands.GroupScheme.rosenlichtSplitSolvable` proves the published proposition
 [`RosenlichtSplitSolvableStatement.{u}`](RosenlichtSplitStatement.md) exactly, in
 every universe `u`. The statement's Lean/Markdown pair and everything it imports

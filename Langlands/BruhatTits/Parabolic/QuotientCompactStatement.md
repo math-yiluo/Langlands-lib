@@ -1,6 +1,6 @@
 # Compactness of actual dynamic-parabolic quotients
 
-This unit states the compactness target for both coset conventions of an actual
+This module states the compactness target for both coset conventions of an actual
 dynamic parabolic over an arbitrary nonarchimedean local field. It defines a
 proposition and supplies no proof of compactness.
 
@@ -13,7 +13,7 @@ The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The corollary asserts that every parabolic subgroup is conjugate under the
 adapted compact subgroup `K₀` to a standard parabolic and that `G/P` is compact.
-This unit isolates the compactness assertion. The opening of V.5, printed page
+This statement isolates the compactness assertion. The opening of V.5, printed page
 122 / PDF page 128, attributes the section's results to Renard's reference [14],
 Bruhat–Tits, *Groupes réductifs sur un corps local*, IHÉS Publications
 Mathématiques 41 (1972), 5–251. No independent reading of [14] is claimed here.
@@ -57,7 +57,7 @@ The statement installs `hG.isAffineHom` and derives `IsAffine G.X.left` by
 `isAffine_of_isAffineHom G.X.hom`. It then explicitly equips this exact point
 carrier with
 `Langlands.AlgebraicGeometry.PointTopology.rationalPointTopology F G.X`,
-imported from its owning module
+imported from its defining module
 `Langlands.AlgebraicGeometry.PointTopology.RationalPoints`.
 That published topology is induced from the affine evaluation topology on
 `RingPoint F G.X F` through `rationalPointEquiv F G.X`; the comparison preserves
@@ -91,13 +91,12 @@ supplied `IsTopologicalGroup`, continuous inversion or group-topology comparison
 compactness is meaningful on these quotient spaces before those continuity
 properties have been proved.
 
-A proof of this exact proposition remains a separate obligation. The general
+This exact proposition is proved separately, as
+`dynamicParabolicQuotientCompact` in
+`Langlands.BruhatTits.Parabolic.QuotientCompactProof`. The general
 inversion-induced comparison of these two quotient conventions is also a
 separate construction beside the existing quotient API; it is neither assumed
-nor constructed here. The `K₀`-conjugacy assertion of the source corollary and all
-remaining Chapter V structural and in-book deductions retain their obligations.
+nor constructed here. The `K₀`-conjugacy assertion of the source corollary and the
+other Chapter V structural and in-book deductions are not part of this statement.
 This statement uses the shared algebraic-group and point-topology definitions
-outside the Renard tree and changes none of those definitions or consumer holds.
-
-Author: Worker 125. Worker 6 contributed the source locator, exact target design
-and scope guidance used in this formulation.
+outside the Renard tree and changes none of those definitions.

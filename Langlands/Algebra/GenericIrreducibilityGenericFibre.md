@@ -1,7 +1,7 @@
 # Extracting separable constants from the geometric generic fibre
 
-Worker 336. These internal derived lemmas support the algebraic proof of
-Stacks 0559; they do not yet assert the full generic spreading statement.
+These internal derived lemmas support the algebraic proof of
+Stacks 0559; they do not assert the full generic spreading statement.
 
 Injective ring maps reflect prime nilradicals because they reflect nilpotence.
 

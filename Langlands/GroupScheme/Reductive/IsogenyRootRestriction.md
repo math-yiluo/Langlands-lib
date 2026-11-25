@@ -1,6 +1,6 @@
 # Actual root restrictions and fppf images
 
-This internal derived unit constructs
+This internal derived module constructs
 `RelativeRoot.rootRestrictionOfRootDatumIsogeny`, the actual homomorphism between
 arbitrary supplied representatives of corresponding intrinsic split root
 subgroups. The base is any field `k : Type u`. The input includes affine ambient
@@ -50,7 +50,7 @@ fppf-image relation holds exactly when `j = f.indexEquiv j'`.
 The provenance is an internal composition of the published intrinsic-root
 comparison, representability, represented Lie-kernel comparison, split-root
 Lie-line and finite-homomorphism results. No independent assertion from external
-literature is used as a new premise. This is the root-image part of the host
-split-isogeny target; its characteristic-power coordinate formula remains
-outside this unit. The universe and field are arbitrary, and the subgroup
+literature is used as a new premise. This is the root-image part of
+`IsogenyRootSubgroupStatement` (proved in `IsogenyRootSubgroupProof`); its
+characteristic-power coordinate formula is not part of this module. The universe and field are arbitrary, and the subgroup
 comparisons retain every relative test scheme.

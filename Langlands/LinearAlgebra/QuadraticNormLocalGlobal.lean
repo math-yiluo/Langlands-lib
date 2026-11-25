@@ -1,5 +1,5 @@
-import Langlands.ClassField.Global.CyclicHasseNormStatement
-import Langlands.ClassField.Global.IdeleDivisor
+import Langlands.ClassFieldTheory.Global.CyclicHasseNormStatement
+import Langlands.ClassFieldTheory.Global.IdeleDivisor
 import Langlands.Global.AdelicFunctoriality.IdeleClassNormIndexReduction
 import Langlands.Global.AdelicFunctoriality.IdeleNormLift
 import Langlands.Global.Arithmetic.CyclicNonsplitPrimeProof
@@ -16,7 +16,7 @@ open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Filter
 open scoped NumberField NumberField.LiesOver
 open scoped Langlands.Global.AdelicFunctoriality.FiniteExtension
 open scoped Langlands.Global.AdelicFunctoriality.InfiniteExtension
-open Langlands.Global.AdelicFunctoriality Langlands.ClassField.Global
+open Langlands.Global.AdelicFunctoriality Langlands.ClassFieldTheory.Global
 open Langlands.Global.Arithmetic.KummerRadical QuadraticNormEquation
 
 universe u

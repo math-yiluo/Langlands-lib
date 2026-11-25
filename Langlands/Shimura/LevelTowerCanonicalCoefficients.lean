@@ -492,7 +492,7 @@ theorem smoothCanonicalPullback_of_eq_comp (χ φ ψ : T ⟶ T) [∀ K, Etale (�
   subst e
   exact (smoothCanonicalPullback_comp R p φ hφ hT hT hT ψ hψ hχ n).symm
 
-variable {Γ : Type v} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+variable {Γ : Type v} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 /-- A group acting on the tower by automorphisms over the base acts on the colimit
 cohomology with pulled-back coefficients by morphisms of smooth representations: `γ` acts
@@ -500,20 +500,21 @@ by pullback along the automorphism of `γ`. -/
 def automorphismAction (n : ℕ) (M : ModuleSheaf X R) : Action (SmoothRep.{u, u, u} R G) Γ where
   V := (smoothCanonicalCohomologyFunctor R p hT n).obj M
   ρ :=
-    { toFun γ := (smoothCanonicalPullback R p (ρ γ).unop.hom (hρ γ) hT hT n).app M
+    { toFun γ := End.of ((smoothCanonicalPullback R p (ρ γ).unop.asIso.hom (hρ γ) hT hT n).app M)
       map_one' := by
         rw [smoothCanonicalPullback_of_eq_id R p hT _ _
           (by rw [map_one, MulOpposite.unop_one]; rfl)]
         rfl
       map_mul' γ δ := by
-        rw [End.mul_def, smoothCanonicalPullback_of_eq_comp R p hT (ρ (γ * δ)).unop.hom
-          (ρ δ).unop.hom (ρ γ).unop.hom (hρ _) (hρ _) (hρ _)
+        apply End.ext
+        rw [End.mul_def, smoothCanonicalPullback_of_eq_comp R p hT (ρ (γ * δ)).unop.asIso.hom
+          (ρ δ).unop.asIso.hom (ρ γ).unop.asIso.hom (hρ _) (hρ _) (hρ _)
           (by rw [map_mul, MulOpposite.unop_mul, Aut.Aut_mul_def, Iso.trans_hom])]
         rfl }
 
 theorem automorphismAction_ρ (n : ℕ) (M : ModuleSheaf X R) (γ : Γ) :
-    (automorphismAction R p hT ρ hρ n M).ρ γ =
-      (smoothCanonicalPullback R p (ρ γ).unop.hom (hρ γ) hT hT n).app M := rfl
+    ((automorphismAction R p hT ρ hρ n M).ρ γ).asHom =
+      (smoothCanonicalPullback R p (ρ γ).unop.asIso.hom (hρ γ) hT hT n).app M := rfl
 
 /-- The action is natural in the base sheaf. -/
 def automorphismActionFunctor (n : ℕ) :
@@ -521,7 +522,7 @@ def automorphismActionFunctor (n : ℕ) :
   obj M := automorphismAction R p hT ρ hρ n M
   map α :=
     { hom := (smoothCanonicalCohomologyFunctor R p hT n).map α
-      comm γ := ((smoothCanonicalPullback R p (ρ γ).unop.hom (hρ γ) hT hT n).naturality α).symm }
+      comm γ := ((smoothCanonicalPullback R p (ρ γ).unop.asIso.hom (hρ γ) hT hT n).naturality α).symm }
   map_id M := Action.Hom.ext ((smoothCanonicalCohomologyFunctor R p hT n).map_id M)
   map_comp α β := Action.Hom.ext ((smoothCanonicalCohomologyFunctor R p hT n).map_comp α β)
 

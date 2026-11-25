@@ -79,8 +79,8 @@ theorem primeEndomorphismTrace_rosati_swap (p : ℕ) [Fact p.Prime]
     change e (E x x) = 0
     rw [hAlt x, map_zero]
   have hadj : ∀ (c : End0 A) x y,
-      B (Tate.PrimeAdic.rationalHomMap T p c x) y =
-        B x (Tate.PrimeAdic.rationalHomMap T p (involution P W hadd lam c) y) := by
+      B (Tate.PrimeAdic.rationalHomMap T p c.asHom x) y =
+        B x (Tate.PrimeAdic.rationalHomMap T p (involution P W hadd lam c).asHom y) := by
     intro c x y
     exact congrArg e (primeWeil_involution P W hadd relativeFiniteWeilTransition T p
       lam c x y)

@@ -20,13 +20,13 @@ Statements only (Prop-valued definitions); nothing is proved here.
     and `Π_{t-1} = Π(e,t-1) ⊞ α(Π(e,t-1)) ⊞ ⋯ ⊞ α^{q-1}(Π(e,t-1))`;
   - lines 1663–1664: "It is thus clear that `Π` is a weak automorphic
     induction of `ξ`".
-- Operator plan note `operator-external-inputs-plan-2026-11-16`
+- Plan note `operator-external-inputs-plan-2026-11-16`
   (`external-inputs-plan.tex`), Section 4.8: Remark 4.2 (lines 859–894),
   including the fibres of `A_{i-1} → A_i` (line 860) and
   `α Π(b,i-1) = Π(αb,i-1)` (line 881); the induction (line 899); the prime
   branch (line 908); the infinity type (lines 910–912).
-- Operator ruling R2
-  (`/home/taskhub/pilot/correspondence/a79e2e832569567a8582b3c994f2fc1b.md`):
+- The design of the exact-stabilizer branches
+  (`HarrisProposition48ExactStabilizerParameterData`):
   solutions carry the complex-place parameters of the representation induced
   from `ξ`, in the vocabulary and normalization of the archimedean bridge.
   Regularity of the induced class comes from these parameters.
@@ -125,7 +125,8 @@ and `Q.mackeyCharacter D a = a(ξ) ∘ N_{D·a(E')/a(E')}`.
   the child problem `(E_{t-1}, a(E') · E_{t-1}, a(ξ) ∘ N)` is used directly
   as a constituent over `E_{t-1}`. The Library's children are abstract
   problems linked to the parent by isomorphisms, so the identification needs
-  this transport. Ruling R2 for the parameters.
+  this transport. The parameters follow the design of
+  `HarrisProposition48ExactStabilizerParameterData`.
 
 The other transported properties used by the branches (unitary central
 character, supercuspidal components at corresponding places, conjugate
@@ -150,7 +151,8 @@ self-duality) are general and are stated in
   coordinates of `v`: `complexPlaceParameterTransport` conjugates exactly when
   the restricted embedding differs, and two conjugations cancel. `List.Perm`
   is preserved by `map` and `flatten`.
-- Source: ruling R2 (solutions carry the parameters of `Ind ξ`); plan note
+- Source: the design of `HarrisProposition48ExactStabilizerParameterData`
+  (solutions carry the parameters of `Ind ξ`); plan note
   lines 908–912. Harris has no counterpart, because he does not track the
   infinity type through the induction (his Remark, lines 1615–1628).
 
@@ -174,9 +176,8 @@ self-duality) are general and are stated in
 ### `Proposition48InducedParameterRegularAlgebraicStatement.{uF}`
 
 - Hypotheses: the archimedean bridge
-  `CuspidalComplexParameterBridgeTCStatement.{0}` (Task 7463,
-  `665f4f54-6ef1-4d47-afd2-b5c1114af734`; operator ruling
-  `/home/taskhub/pilot/correspondence/89b70579f7465ae3994e304e80cf284b.md`);
+  `CuspidalComplexParameterBridgeTCStatement.{0}` (module
+  `CuspidalComplexParameterBridgeStatement`);
   for a problem `Q`, `IsAlgebraicAfterTwist (finrank Q.E Q.E' - 1) Q.ξ`,
   `IsRelativelyRegular Q.E Q.ξ` and `IsConjugateInverse Q.ξ`; and a cuspidal
   class `c` over `E` with `Q.HasInducedComplexPlaceParameters c`. No other
@@ -196,8 +197,9 @@ self-duality) are general and are stated in
   `z̄`-exponents. Each induced list is therefore
   `ComplexPlaceParameter.IsClozelRegularAlgebraic n`, and the bridge gives a
   regular algebraic infinitesimal character for a representative.
-- Source: plan note lines 910–912 (the infinity type); ruling R2 ("regularity
-  of the induced class comes from B7(2) and the children's parameters").
+- Source: plan note lines 910–912 (the infinity type); in the design of the
+  branches, regularity of the induced class comes from B7(2) and the children's
+  parameters.
 
 ### `WeakInductionConjugateInverseSelfDualStatement.{uV, uE, uE'}` and its TC form
 
@@ -234,7 +236,7 @@ and `uE'`.
 
 ## Consumers
 
-- Task 7785 (`2cdbece0-e746-4cbc-8ecb-0cc9273a8a76`): the reduction of
+- `HarrisProposition48ExactStabilizerPrimeBranchReductionStatement`: the reduction of
   `Proposition48ExactStabilizerPrimeBranchStatement` and its TC form uses all
   eight statements. The route: the trivial double coset's child is moved to
   `D` (child transport). By the Galois conjugation and fibre statements, the
@@ -242,22 +244,14 @@ and `uE'`.
   `Gal(D/E)`. Weak induction in stages and the parameter stages give the
   weak induction of `ξ` and the induced parameters. The regular-algebraicity
   statement and conjugate self-duality finish the argument.
-- Task 7786 (`794a4691-1e86-44f4-a28d-d79270146b71`), the exact-stabilizer
-  singleton branch decomposition, uses the child transport (with any double
-  coset `a`), the regular-algebraicity statement and conjugate self-duality.
-- Task 7221 (`528311c0-f3fd-4553-ad48-a6bed4282b5a`), the general-position
-  prime branch decomposition, lists the transport of children to `D`, Galois
+- The exact-stabilizer singleton branch
+  (`Proposition48ExactStabilizerSingletonBranchStatement` in
+  `HarrisProposition48ExactStabilizerBranchStatement`, and its restricted form in
+  `HarrisProposition48ExactStabilizerRestrictedDescentStatement`): its proof route uses
+  the child transport (with any double coset `a`), the regular-algebraicity statement
+  and conjugate self-duality.
+- The general-position prime branch reduction
+  (`HarrisProposition48PrimeBranchReductionStatement`) has the transport of children to `D`, Galois
   invariance, Mackey's formula and conjugate self-duality among its
   obligations. It can reuse the child transport, the Galois conjugation of
   Mackey constituents, weak induction in stages and conjugate self-duality.
-
-## Changes from the task's shared draft
-
-None in the Lean. In this Markdown: the title of Harris (1998) is corrected
-(the draft gave the title of Harris's Invent. Math. 129 paper on Drinfel'd
-upper half spaces; the source `harris-1998-local-langlands`, Invent. Math.
-134, 177–210, is *The local Langlands conjecture for GL(n) over a p-adic
-field, n < p*). The line references are made precise, and for every
-statement the exact hypotheses, conclusion, reason, source and consumers are
-given, including what a proof of the stages and self-duality statements needs
-beyond the named premises.

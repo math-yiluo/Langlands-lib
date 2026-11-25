@@ -82,7 +82,7 @@ affine and therefore separated, `Y` is absolutely separated. Its diagonal
 is affine, so Mathlib's `IsAffineOpen.inf` proves the required affine
 intersection property. The result still quantifies over every test scheme.
 
-This unit constructs the intersection and test-chart maps and proves their
+This module constructs the intersection and test-chart maps and proves their
 intrinsic laws, including uniqueness for the actual global comparison.
 It does not establish surjectivity of that comparison. The finite-fiber
 affine-neighborhood and inverse-gluing arguments for full nonaffine

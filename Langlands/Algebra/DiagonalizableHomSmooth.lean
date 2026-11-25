@@ -1,6 +1,6 @@
 import Langlands.Algebra.FiniteBialgebraHom
 import Langlands.GroupScheme.Torus.FixedPointLifting
-import Langlands.TauCeti.RingTheory.WeilRestriction.Smooth
+import Langlands.RingTheory.WeilRestriction.Smooth
 import Mathlib.RingTheory.HopfAlgebra.Convolution
 import Mathlib.RingTheory.Bialgebra.MonoidAlgebra
 import Mathlib.RingTheory.Finiteness.Finsupp
@@ -489,22 +489,22 @@ variable {R A M}
 /-- Points of the Weil restriction are algebra maps `A → C ⊗[R] R[M]`. -/
 def weilPtEquiv (C : CommAlgCat.{u} (CommRingCat.of R)) : (weilObj R A M ⟶ C) ≃ Pt R A M C where
   toFun x := toConv
-    (TauCeti.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A C x.hom)
+    (Langlands.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A C x.hom)
   invFun φ := CommAlgCat.ofHom
-    ((TauCeti.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A C).symm φ.ofConv)
+    ((Langlands.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A C).symm φ.ofConv)
   left_inv x := by
     apply CommAlgCat.hom_ext
-    exact (TauCeti.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A
+    exact (Langlands.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A
       C).symm_apply_apply x.hom
   right_inv φ := by
-    change toConv (TauCeti.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A C
-      ((TauCeti.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A C).symm
+    change toConv (Langlands.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A C
+      ((Langlands.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A C).symm
         φ.ofConv)) = φ
     rw [Equiv.apply_symm_apply]
 
 theorem weilPtEquiv_comp {C D : CommAlgCat.{u} (CommRingCat.of R)} (x : weilObj R A M ⟶ C)
     (f : C ⟶ D) : weilPtEquiv D (x ≫ f) = pushPt R f.hom (weilPtEquiv C x) :=
-  congrArg toConv (TauCeti.Algebra.WeilRestriction.tensorHomEquiv_comp x.hom f.hom)
+  congrArg toConv (Langlands.Algebra.WeilRestriction.tensorHomEquiv_comp x.hom f.hom)
 
 /-- The normalised translation action of characters on the points of the Weil restriction. -/
 def weilAction : CharacterAction.Action (M := M) (weilObj R A M) where
@@ -552,7 +552,7 @@ instance formallySmooth_homAlgebra [Algebra.FormallySmooth R A] :
   let x : weilObj R A M ⟶ CommAlgCat.of (CommRingCat.of R) (Bc ⧸ I) :=
     CommAlgCat.ofHom (g.comp (Ideal.Quotient.mkₐ R _))
   have hxpt : (weilPtEquiv _ x).ofConv = (homEquiv R A _ (B ⧸ I) g).1 := by
-    change TauCeti.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A (B ⧸ I)
+    change Langlands.Algebra.WeilRestriction.tensorHomEquiv R (AddMonoidAlgebra R M) A (B ⧸ I)
       (g.comp (Ideal.Quotient.mkₐ R _)) = _
     rw [tensorHomEquiv_eq, homEquiv_apply, universalPoint, pushPoint_pushPoint]
   have hxH : IsHopfPoint R (weilPtEquiv _ x).ofConv := hxpt ▸ (homEquiv R A _ (B ⧸ I) g).2

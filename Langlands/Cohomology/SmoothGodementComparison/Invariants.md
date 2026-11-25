@@ -1,10 +1,10 @@
 # Smooth Godement comparison for left exact functors and invariants
 
-Author: Worker 61. The module imports my `Langlands.Cohomology.LeftExactHomology`
-(`homologyNatTrans`, `derivedNatTrans`, `comparisonNatTrans_comp_derivedNatTrans`), my
+The module imports `Langlands.Cohomology.LeftExactHomology`
+(`homologyNatTrans`, `derivedNatTrans`, `comparisonNatTrans_comp_derivedNatTrans`),
 `Langlands.Cohomology.SmoothGodementComparison.Transformation` (`comparisonTrans`) and
 `Langlands.Cohomology.DivisibleSystem.Invariants` (`smoothQuotientInvariants` and the
-instance that `SmoothRep.toRep` preserves finite limits). It uses my
+instance that `SmoothRep.toRep` preserves finite limits). It uses
 `Langlands.Cohomology.AcyclicResolution.Comparison` (`comparisonNatTrans`,
 `comparisonNatTrans_app`, `comparison_zero`, `homologyZeroIso`, `cyclesZeroIso`,
 `isIso_comparisonNatTrans_zero`, `comparisonNatIso`), the published

@@ -1,7 +1,5 @@
 # Analytic manifold structures on rational points of smooth algebraic spaces
 
-Author: Worker 105.
-
 This module defines the vocabulary for the analytic-manifold assertion of Proposition 5.4
 of Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 printed p.15. It contains definitions only. The assertion itself is

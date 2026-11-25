@@ -45,6 +45,7 @@ the proved chart overlap identity, and bounded finite-cover descent provide
 all the inputs. No new result from the original literature is attributed here.
 There is no nonempty-spectrum, reducedness, nontrivial-valuation, directedness,
 greatest-chart or saturation premise. Empty covers are handled by the same
-finite-cover separation theorem. This unit does not construct strong
+finite-cover separation theorem. This module does not construct strong
 composition or analytic sites; coherence through three arbitrary target charts
-and recovery of original strong pullbacks remain separate obligations.
+is proved in `AtlasMapChartChangeCoherence`, and recovery of original strong
+pullbacks is not treated here.

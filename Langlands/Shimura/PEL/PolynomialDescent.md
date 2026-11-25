@@ -31,4 +31,4 @@ nonzero target ring.
 
 The provenance is a direct derivation from the cited Mathlib interfaces.
 This helper constructs no reflex field, Hodge representation, integral
-coefficient theorem, Lie module or moduli scheme. Worker 57 authored it.
+coefficient theorem, Lie module or moduli scheme.

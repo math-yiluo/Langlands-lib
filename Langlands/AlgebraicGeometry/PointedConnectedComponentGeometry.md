@@ -1,6 +1,6 @@
 # Geometric connectedness of connected schemes with rational points
 
-This internal supporting unit proves geometric connectedness of an arbitrary
+This internal supporting module proves geometric connectedness of an arbitrary
 connected scheme over a field when the structure morphism has an actual
 rational section. It requires no finite type, smoothness, reducedness,
 quasi-compactness or separation assumption for this theorem.
@@ -29,8 +29,8 @@ the published surjective-base-change descent theorem returns geometric
 connectedness over the original field.
 
 The singleton-fibre argument reuses
-`connectedSpace_of_open_closed_singleton_fiber` from Worker 513's published
-`SmoothPointedGeometricConnectedness` unit. Here smoothness is replaced by
+`connectedSpace_of_open_closed_singleton_fiber` from the published
+`SmoothPointedGeometricConnectedness` module. Here smoothness is replaced by
 the preceding general algebraically closed field result, so no integrality
 or domain-stalk conclusion about the scheme is needed.
 

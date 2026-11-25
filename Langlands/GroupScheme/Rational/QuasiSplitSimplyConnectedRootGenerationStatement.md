@@ -1,7 +1,5 @@
 # Rational root generation for quasi-split simply connected groups
 
-Author: Worker 185.
-
 `Langlands.GroupScheme.QuasiSplitSimplyConnectedRootGenerationStatement.{u}`
 is a proposition definition. It asserts that, over any field `k : Type u`,
 the rational points of a quasi-split simply connected group `G` are generated

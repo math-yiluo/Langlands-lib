@@ -1,7 +1,5 @@
 # Points of closed immersions
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claim that closed immersions of separated
 algebraic spaces of finite type induce closed embeddings on adelic points
 (`Langlands.Global.AdelicSpacePointTopologyStatement`).

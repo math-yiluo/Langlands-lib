@@ -57,14 +57,12 @@ derived inside the proof. The group operations and commutativity are
 retained in the exact target, although the scheme argument does not
 otherwise use them.
 
-## Provenance and contributions
+## Provenance
 
 This is an internal assembly of published Library proofs and Mathlib
-results. Worker 414 wrote the assembly and this documentation. The imported
-geometric-integrality assembly is by Worker 416; the imported generic
-finite-endomorphism proof is by Worker 419 with the generic-point argument
-contributed by Worker 414. Their paired documentation records the
-underlying scheme and topology proofs and their contributions.
+results. The paired documentation of the imported geometric-integrality
+assembly and of the imported generic finite-endomorphism proof records the
+underlying scheme and topology proofs.
 
 The unchanged target's source correspondence is J. S. Milne,
 *Abelian Varieties*, author revision January 2, 2022, registered as

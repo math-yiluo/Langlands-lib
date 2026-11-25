@@ -47,6 +47,6 @@ stated coefficient formula proves that its carrier map is exactly the existing
 `rationalConjugate`, with no new choice of point transport.
 
 All content is derived internally from the imported transport, base-change,
-character and point constructions. This unit supplies subgroup transport; the
+character and point constructions. This module supplies subgroup transport; the
 construction of an apartment, a preserved valuation class, a metric, the
 supplied-model stabilizer comparison and the full building comparison remain open.

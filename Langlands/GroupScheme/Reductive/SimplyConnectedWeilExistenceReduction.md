@@ -1,8 +1,9 @@
 # Simply connected affine Weil existence from split isomorphism and pair descent
 
-Worker 634, with Worker 632's actual finite-family field products.
+This module uses the actual finite-family field products of
+`Reductive.RootComponentFieldProduct`.
 
-Assume the unchanged affine split isomorphism theorem and the generic
+Assume the affine split isomorphism theorem and the generic
 almost-simple étale pair-descent statement. For every supplied affine simply
 connected pinned model with nontrivial geometric fibres, the module constructs
 an actual simply connected finite étale Weil presentation. A final wrapper

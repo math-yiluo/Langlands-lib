@@ -1,7 +1,5 @@
 # Spatial maps on equivariant stalk families
 
-Author: Worker 13.
-
 This internal construction supplies the actual degree-zero spatial comparison
 for the existing ordinary-topological equivariant Godement functor. It uses
 the complete direct-image sheaf, every group-labelled restriction, and the
@@ -64,10 +62,10 @@ comparison map or assume right exactness of direct image. The dependency
 versions are Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-This unit concerns the ordinary-open equivariant sheaf of arbitrary stalk
+This module concerns the ordinary-open equivariant sheaf of arbitrary stalk
 families. It does not construct spatial maps in higher Godement degrees,
 prove acyclicity, identify this construction with derived compact
 cohomology or the equivariant-topos Godement resolution, or assert
 smoothness of arbitrary stalk families. Those constructions and comparisons,
 the analytic equivariant etale realization, arithmetic towers and the
-Harris specialization remain separate obligations.
+Harris specialization are not part of this module.

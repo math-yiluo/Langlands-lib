@@ -1,6 +1,6 @@
 # Checks for compatible-input tensor-dual evaluation
 
-Worker 321. This is a derived internal interface and example companion to
+This is a derived internal interface and example companion to
 `NonUnitalTensorDualMaps` and `NonUnitalTensorDualMapsParts`. The governing
 mathematical context is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, I.1.1, printed pp.5–6 / PDF11–12;

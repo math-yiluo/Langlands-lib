@@ -1,6 +1,6 @@
 # General-linear plot-smooth functions and the original archimedean space
 
-This derived unit compares functions on actual general-linear scheme points with the existing matrix-units manifold, and specializes that comparison to the original `Langlands.Global.ArchimedeanGL.smoothFunctions`. It preserves the existing point carriers and the positive right-translation actions.
+This module compares functions on actual general-linear scheme points with the existing matrix-units manifold, and specializes that comparison to the original `Langlands.Global.ArchimedeanGL.smoothFunctions`. It preserves the existing point carriers and the positive right-translation actions.
 
 Let R be a commutative base ring object, A a bundled commutative R-algebra, B a complete real normed commutative algebra, and e : A ≃+* B a ring equivalence. For a finite matrix index n with decidable equality, `coefficientCoordinatesEquiv` is the existing actual-point group equivalence to GL_n(A), followed by entrywise coefficient change through e. Its inverse uses entrywise e⁻¹ followed by the inverse actual-point equivalence. The inverse laws hold entrywise by the ring-equivalence inverse laws. No topology on A, continuity of e, or compatibility of e with the R-algebra structure is assumed. The source has only its actual group structure here.
 
@@ -12,7 +12,7 @@ For a number field F, specialize A to the completion-based infinite adele ring a
 
 `plotSmoothGeneralLinearEquiv` is the resulting complex linear equivalence to `ArchimedeanGL.SmoothFunctions F n`. It sends f to the function x ↦ f(`infiniteHomeomorph.symm` x). Its inverse pulls back by `infiniteHomeomorph`. Its inverse laws use the existing point-equivalence inverse laws. `plotSmoothGeneralLinearEquiv_rightAction` proves that it intertwines the actual plot-smooth positive translation with the original `ArchimedeanGL.smoothRightAction`, using multiplicativity of that same point comparison.
 
-The provenance is internal and derived: actual scheme-point equivalences, coefficient changes, the proved coordinate-smooth family criterion, and the existing mixed-coordinate smooth-function definition. No algebraic-to-analytic manifold existence theorem is invoked. This gives the GL function-space comparison; a manifold construction and corresponding comparison for a general smooth affine scheme remain separate obligations. No general growth, differential, reduction-theory or automorphic-finiteness assertion is made by this unit.
+The provenance is internal and derived: actual scheme-point equivalences, coefficient changes, the proved coordinate-smooth family criterion, and the existing mixed-coordinate smooth-function definition. No algebraic-to-analytic manifold existence theorem is invoked. This gives the GL function-space comparison; a manifold construction and corresponding comparison for a general smooth affine scheme remain separate obligations. No general growth, differential, reduction-theory or automorphic-finiteness assertion is made by this module.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here have module-specific names to permit joint
+imports.

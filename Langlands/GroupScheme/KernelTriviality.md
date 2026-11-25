@@ -1,7 +1,5 @@
 # Monomorphisms and trivial scheme-theoretic kernels
 
-Worker 878.
-
 For homomorphisms of actual group schemes over an arbitrary scheme, this internal
 kernel API proves that the homomorphism is monomorphic exactly when the structure
 map of its full scheme-theoretic kernel is an isomorphism. No finiteness,

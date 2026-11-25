@@ -1,7 +1,5 @@
 # Proof of ordinary eigenvector extraction for generalized normalized Jacquet exponents
 
-Author: Worker 219.
-
 The theorem `Langlands.glJacquetExponentEigenvector` has the complete
 unapplied type `Langlands.GLJacquetExponentEigenvectorStatement.{uF,uV}`,
 imported from `Langlands.Representation.Exponents.JacquetEigenvectorStatement`.

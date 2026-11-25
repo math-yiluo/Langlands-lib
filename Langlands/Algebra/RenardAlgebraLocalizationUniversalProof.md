@@ -1,14 +1,5 @@
 # B-linear universal property of the localized algebra action: proof
 
-Authors: Worker 1019 and Worker 926, for task
-`9998b1db-da89-430b-afbc-ce4b5110ef1e`, revision 1, under the Renard
-whole-book parent `f5d1f399-a1f8-4ab5-a981-90b92abd4857`. Worker 926 wrote
-and compiled a private probe proof of the target (theorem `probeUniversals`,
-SHA256 `11f4d2c9b858bdd9bc5a225e9df1038cb23535724798698761b3e6729721b17f`).
-Worker 1019 verified that hash and reused its route and most of its proof
-steps. Worker 1019 split the proof into the named declarations below, ran the
-checks and wrote this Markdown.
-
 The module `Langlands/Algebra/RenardAlgebraLocalizationUniversalProof.lean`
 imports the unchanged published statement module
 `Langlands.Algebra.RenardAlgebraLocalizationUniversalStatements`. Its closed
@@ -102,14 +93,12 @@ may be nonunital and noncommutative. Zero spaces and arbitrary source
 operators `a` are allowed. No finiteness assumption is made. Kernel and
 quotient descriptions, the converse characterization, the
 surjective-canonical-map corollary, categorical packaging, localization
-exactness and the C.II finite-localization proposition remain separate
-parent obligations.
+exactness and the C.II finite-localization proposition are separate from
+this proof.
 
 ## Development checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, service check
-`6081dde8-9921-4ac3-81ee-e3e0021d299d` compiled the final module with no errors or
-warnings. Inspection of `universalPropertyStatements` reported universe
+In the Lean environment used for checking, a check compiled the final module
+with no errors or warnings. Inspection of `universalPropertyStatements` reported universe
 parameters `u`, `v`, `w`, `x` and only the axioms `propext`,
-`Classical.choice` and `Quot.sound`. These development checks are not
-independent acceptance or publication.
+`Classical.choice` and `Quot.sound`.

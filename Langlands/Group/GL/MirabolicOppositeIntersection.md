@@ -1,7 +1,5 @@
 # The binary opposite-parabolic intersection with the mirabolic group
 
-Author: Worker 593.
-
 This module constructs the actual binary opposite-parabolic intersection
 inside the published mirabolic matrix group, together with a split diagonal
 projection. Its algebra works for arbitrary `a b : ℕ`, `ha : 0 < a` and

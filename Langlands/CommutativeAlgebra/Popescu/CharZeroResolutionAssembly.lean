@@ -4,7 +4,7 @@ import Langlands.CommutativeAlgebra.Popescu.StrictlyStandardRetractStatement
 import Langlands.CommutativeAlgebra.Popescu.RegularParameterChoiceStatement
 import Langlands.CommutativeAlgebra.Popescu.ArtinianBottom
 import Langlands.CommutativeAlgebra.Popescu.SmoothingAlgebra
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Assembly of Stacks Lemma 10.3 (07FE) in characteristic zero -/
 

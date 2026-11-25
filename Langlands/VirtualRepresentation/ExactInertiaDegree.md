@@ -1,8 +1,7 @@
 # Inertia dimension and unramifiedness on exact virtual groups
 
-Author: Worker 1646. This is internal infrastructure for task
-`f096b984-dff5-4425-861f-8f298e5896fb`, whose exact target is
-`Langlands.ClassField.Global.RelativeWeilGroup.WeakInductionAssociationStatement`.
+This is internal infrastructure for the proof of
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.WeakInductionAssociationStatement`.
 It derives a detection criterion from already published finite-dimensional
 representations, actual invariant spaces, and exact virtual groups.
 
@@ -33,6 +32,6 @@ every continuous representation, so
 `Langlands.Weil.Local.isUnramified_of_continuousClass_eq_sum` needs only a
 continuous exact-class identity and unramifiedness of its summands.
 
-This module neither constructs a local reciprocity map nor proves any pending
+This module neither constructs a local reciprocity map nor proves any
 arithmetic restriction formula. Its provenance is the structural exactness and
 dimension arguments just described.

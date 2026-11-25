@@ -7,7 +7,7 @@ The map is literal postcomposition by the given closed immersion on actual
 full-adele-valued relative scheme points. Source and target carry the
 independently specified arithmetic spread topologies in the target statement.
 
-The proof is by Worker 208, reusing Worker 105's scheme-limit morphism and
+The proof reuses the scheme-limit morphism and
 closed-immersion descent proofs. The imported target and prerequisite
 constructions are unchanged.
 
@@ -119,11 +119,11 @@ closed-immersion descent, and the compatibility calculation;
 `numberFieldSpreadClosedImmersion` handles the two independent initial
 sets by their union. The final theorem pairs the two arithmetic proofs.
 
-This contribution proves the specified-spread closed-embedding target.
-Existence of spreads and the other conclusions of the whole-paper program
-remain separate obligations.
+This module proves the specified-spread closed-embedding target.
+Existence of spreads and the other conclusions of Conrad's paper
+are separate statements.
 
 The model-cone projection, morphism-descent and pullback-composition helpers are
 shared with the related spread proofs through
-[`AdelicSpreadModelMorphisms`](AdelicSpreadModelMorphisms.md). This integration
-consolidation preserves their definitions, hypotheses and conclusions.
+[`AdelicSpreadModelMorphisms`](AdelicSpreadModelMorphisms.md). The shared versions
+have the definitions, hypotheses and conclusions described above.

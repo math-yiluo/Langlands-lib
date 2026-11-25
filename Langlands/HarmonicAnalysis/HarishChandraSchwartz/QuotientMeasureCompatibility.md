@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.QuotientMeasureCompatibility`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.TraceFamilyScalar` (Worker 249), for
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.TraceFamilyScalar`, for
   `measurable_quotientMk` (measurability of `G → G / A`);
 - `Mathlib.MeasureTheory.Measure.Haar.Unique`, for `isMulLeftInvariant_eq_smul` and
   `haarScalarFactor` (uniqueness of Haar measure on a locally compact second countable group);

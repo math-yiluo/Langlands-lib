@@ -1,6 +1,6 @@
 # The represented-parabolic assembly for Renard VI.6.4
 
-Author: Worker 1777. This internal supporting unit defines
+This internal supporting module defines
 `Langlands.Aubert.General.RepresentedParabolic.LeviJacquetFiniteLengthReductionStatement`
 and proves it as `leviJacquetFiniteLength_reduction`. It retains four global
 propositions as antecedents and does not prove the unconditional
@@ -19,8 +19,10 @@ The four antecedents are the published propositions:
 - `LeviJacquetFiniteTypeStatement.{u, v}`;
 - `ArbitraryParabolicJacquetAdmissibilityStatement.{u, v}`.
 
-Their exact proofs remain separate obligations. This reduction is a consumer
-assembly, and its publication would not complete the host proof task.
+Their exact proofs are separate obligations; `LeviJacquetFiniteTypeStatement` and
+`ArbitraryParabolicJacquetAdmissibilityStatement` are proved in the Library
+(`leviJacquetFiniteType`, `arbitraryParabolicJacquetAdmissibility`). This
+reduction is a consumer assembly.
 
 For a finite-length smooth representation `π` of `G(k)`, the proof extracts
 Noetherianity of its actual group-algebra module using

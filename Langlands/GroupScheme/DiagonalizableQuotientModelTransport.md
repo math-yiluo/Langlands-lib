@@ -1,6 +1,7 @@
 # Transport of direct diagonalizable quotient models
 
-Worker 587. Internal derived transport for Task 7326.
+Internal derived transport for the construction of affine quotients by central
+multiplicative-type subgroups over arbitrary bases.
 
 `AffineDiagonalizableModelQuotientStatement` asserts quotient existence for
 an affine group over `Spec R` with a specified closed normal inclusion of

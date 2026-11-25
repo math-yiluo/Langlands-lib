@@ -74,7 +74,7 @@ local notation "G_K" => CategoryTheory.Functor.obj (GroupScheme.baseChange b) G
 local notation "j_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) j
 local notation "f_K" => CategoryTheory.Functor.map (CommGroupScheme.baseChange b) f
 
-local instance : IsAffineHom (G_K).X.hom := by
+private local instance : IsAffineHom (G_K).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom b)
   infer_instance
 
@@ -261,8 +261,13 @@ private theorem multipleSimpleRootFiber_coordinate_zero
       map_nsmul, Finset.smul_sum] using hsum
   have hsumcoord : (∑ σ : K ≃ₐ[k] K, e.repr (P.root (A σ t)) s) = 0 := by
     have hh := congrArg (fun χ => e.repr χ s) hsum
+    have hrsum : ∀ (S : Finset (K ≃ₐ[k] K)) (g : (K ≃ₐ[k] K) → characterLattice T_K),
+        e.repr (∑ σ ∈ S, g σ) = ∑ σ ∈ S, e.repr (g σ) :=
+      fun S g => map_sum e.repr.toLinearMap g S
+    have hrnsmul : ∀ (n : ℕ) (x : characterLattice T_K), e.repr (n • x) = n • e.repr x :=
+      fun n x => map_nsmul e.repr.toLinearMap n x
     simpa only [CharacterAveraging.galoisOrbitSum, CocharacterAveraging.orbitSum,
-      map_sum, map_nsmul, Finsupp.finsetSum_apply, Finsupp.nsmul_apply, ← hAr,
+      hrsum, hrnsmul, Finsupp.finsetSum_apply, Finsupp.nsmul_apply, ← hAr,
       hzcoord, Finset.sum_const_zero, smul_zero] using hh
   have hle := Finset.single_le_sum (fun σ (_ : σ ∈ Finset.univ) => hnonneg σ)
     (Finset.mem_univ (1 : K ≃ₐ[k] K))

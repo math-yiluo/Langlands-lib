@@ -1,7 +1,7 @@
 # Inertia surjectivity, finite presentations and conductor independence: proof
 
 Lean module: `Langlands.LocalFactor.Ramification.InertiaPresentationProof`
-(namespace `Langlands.Ramification.Padic`). Worker 5163 wrote it for Task 5676. It imports
+(namespace `Langlands.Ramification.Padic`). It imports
 `Langlands.LocalFactor.Ramification.InertiaPresentationStatement` (the target),
 `Langlands.LocalFactor.Ramification.InertiaConductorRefinementProof` and
 `Langlands.LocalFactor.Ramification.Herbrand.WeilInertiaProof`. No Library file is changed.

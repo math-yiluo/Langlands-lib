@@ -35,5 +35,5 @@ The provenance is the existing quotient, the explicit common-apartment
 premise, the two-point normalizer construction, the published canonical root
 norm and apartment injection. The triangle inequality, retractions,
 completeness, nonpositive curvature and coefficient action are not outputs
-of this unit. In particular it constructs a distance function with the stated
+of this module. In particular it constructs a distance function with the stated
 properties; a metric still requires the further building-theoretic argument.

@@ -16,9 +16,9 @@ Concrete expressions for the abelian theorem family, using the actual
 conductors constructed by `Langlands.HarmonicAnalysis.Conductor`.
 No functional equation or nonabelian constant system is assumed or chosen.
 
-Worker 33 authored the callable expressions and conductor bridges. Worker 20
-connects them to the convergent abelian construction and supplies rational
-L-factors with restricted evaluation.
+The callable expressions and conductor bridges are connected to the convergent
+abelian construction, and rational L-factors with restricted evaluation are
+supplied.
 
 ## Imports from the port
 

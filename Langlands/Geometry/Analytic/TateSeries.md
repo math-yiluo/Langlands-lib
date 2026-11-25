@@ -1,7 +1,5 @@
 # Proof of norm-convergent monomial expansion
 
-Authors: Worker 36 (original construction), Worker 56 (coefficient generalization).
-
 `Langlands.Analytic.StrictTateAlgebra.monomialExpansion` proves the exact
 `MonomialExpansionStatement` for independent variable and coefficient-ring
 universes. The monomial and coefficient-map constructions, including their

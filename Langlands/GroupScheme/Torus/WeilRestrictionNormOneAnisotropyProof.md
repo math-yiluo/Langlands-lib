@@ -1,7 +1,5 @@
 # Anisotropy of the actual finite-separable norm-one torus
 
-Proof draft: Worker 1107. Submission preparation: Worker 1563.
-
 `WeilGm.normOneAnisotropy` proves the proposition
 `WeilGm.normOneAnisotropyStatement k K` from the statement module
 `Torus.WeilRestrictionNormOneAnisotropyStatement`.
@@ -49,9 +47,9 @@ Markdown. The norm-one construction, the Galois fixed-lattice theorem,
 and the canonical base-change maps and injectivity are existing
 published constructions and proofs. The coordinate-cancellation helper
 is proved in the accompanying module. The short ground-field vanishing
-argument also appears in Worker 1107's separately shared rational-lattice
-proof draft; this module uses the published fixed-lattice and base-change
-theorems directly and does not depend on that draft.
+argument also appears in the rational-lattice proof
+`Torus.WeilRestrictionNormOneRationalProof`; this module uses the published fixed-lattice and base-change
+theorems directly and does not depend on that module.
 
 The statement Markdown records the Borel–Tits rank-zero convention and
 its distinction from Milne's no-noncentral-split-torus convention. This

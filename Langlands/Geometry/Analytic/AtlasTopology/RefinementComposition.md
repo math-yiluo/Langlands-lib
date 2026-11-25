@@ -7,7 +7,7 @@ printed pp.13–14 (PDF pp.10–11), registered as
 `berkovich-1993-etale-cohomology`. The retained original is
 `Berkovich--Etale cohomology for non-Archimedean analytic spaces--1993.pdf`,
 SHA-256 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These pages were reread for this unit; no source-specific project errata file
+These pages were reread for this module; no source-specific project errata file
 was found. The two results here are derived consequences of the finite
 relative-neighborhood definition, rather than numbered source theorems.
 

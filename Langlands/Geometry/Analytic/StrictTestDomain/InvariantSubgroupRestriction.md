@@ -1,7 +1,5 @@
 # Common open stabilizers and subgroup restriction of rational spectra
 
-Author: Worker 36.
-
 This derived construction starts with the Library's actual presented strict
 affinoid algebra `P` over a complete ultrametric normed field `K`, a topological
 group `G`, and `ρ : RationalSpectralAction G P`. It constructs common open

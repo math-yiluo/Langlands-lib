@@ -5,7 +5,7 @@ Stacks Project, Lemma 37.24.8 (0551), as actual schemes and morphisms.
 The registered source is
 `stacks-generic-geometric-irreducibility-2026-11-04`, `0551.html`, especially
 the monic-model and shrinking argument in its proof. The source treats arbitrary
-irreducible scheme bases; this unit treats the domain case only.
+irreducible scheme bases; this module treats the domain case only.
 
 Let `R`, `K`, and `L` be in one arbitrary universe, with `R` a commutative domain,
 `K` its specified fraction field, and compatible `R`- and `K`-algebra structures
@@ -55,7 +55,7 @@ the inverse comparison followed by the fibre's residue-field projection equals
 specified field extension rather than asserting only an abstract scheme
 isomorphism.
 
-This unit supplies the actual domain scheme cover and its generic comparison.
+This module supplies the actual domain scheme cover and its generic comparison.
 It does not construct the finite extension that splits geometric components,
 prove the splitting conclusion, handle a nonreduced irreducible base, or prove
-full Stacks 0551. Those remain separate obligations in the Conrad program.
+full Stacks 0551. Those steps of the Conrad program are outside this module.

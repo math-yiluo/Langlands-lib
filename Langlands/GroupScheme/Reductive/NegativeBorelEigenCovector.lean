@@ -157,7 +157,7 @@ theorem exists_negativeBorel_eigenCovector [Nonempty n] (ρ : MatrixRepresentati
   intro T h
   have hlam : p.borelCharacter (-(rationalCharacters.equivCharacterLattice p.torus χ)) =
       -characterRestrict p.negativeBorelToTorus χ := by
-    rw [borelCharacter, map_neg, AddEquiv.symm_apply_apply, map_neg]
+    rw [borelCharacter, AddEquiv.map_neg, AddEquiv.symm_apply_apply, map_neg]
   have h1 := hσ T h⁻¹
   rw [MatrixRepresentation.pointMatrix_restrict, MatrixRepresentation.dual_pointMatrix,
     GrpObj.inv_comp, map_inv, map_inv] at h1

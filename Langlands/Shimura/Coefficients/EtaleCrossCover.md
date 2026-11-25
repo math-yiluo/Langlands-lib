@@ -1,6 +1,6 @@
 # Cross-cover maps of associated small-etale coefficient sheaves
 
-Worker 13. Internal specialization of `CrossCover` to the actual small-etale
+Internal specialization of `CrossCover` to the actual small-etale
 site and `etaleAssociatedFunctor` from `Etale`. The scheme, coefficient ring,
 module carriers, and all groups share universe `u`. An equivariant map `Z → Y`
 for `H → G` and an equivariant coefficient map `M|H → N` construct a sheaf map

@@ -1,7 +1,5 @@
 # Siegel coverage from Springer's compactness and chamber reduction theorems
 
-Author: Worker 4149 (formerly Worker 0).
-
 This module splits the analytic coverage in the Library predicate `IsSiegelCover` into two
 classical theorems of reduction theory, states both as propositions, and proves that they
 give the coverage. It proves neither proposition. Compactness of the unipotent rational
@@ -145,10 +143,11 @@ to the minimal parabolic, `exists_isSiegelCover_of_chamber` gives
 `IsPositiveTorusCompatible` (`AdelicCompatibleIwasawaCompactStatement`, module
 `Langlands.Global.AdelicCompatibleIwasawaCompact`), the same theorem gives
 `AdelicGoodSiegelReductionStatement`, because it keeps the supplied `K` as the compact
-subgroup. These compositions are left to the
-final proof of task `6adbbc46-4bb2-4c01-843a-d8ded48189f2`. The two statements of this module
-remain unproved: compactness (C) is the Godement compactness criterion, and the chamber
-reduction is the core of the fundamental set theorem.
+subgroup. These compositions are not part of this module. The two statements of this module
+are proved in other modules: compactness (C), the Godement compactness criterion, as
+`centralSplitCompactQuotient` (module `AdelicSpringerCentralCompactnessProof`), and the chamber
+reduction, the core of the fundamental set theorem, as `adelicSiegelChamberReduction` (module
+`AdelicSiegelChamberReductionProof`).
 
 ## Sources
 

@@ -9,7 +9,7 @@ import Mathlib.Basic.Complex.Basic
 # Strong irreducible heads from a positive total count
 
 The proof reuses the actual product construction and split image maps from the
-published multiplicity-one argument of Workers 495 and 502 for any positive total.
+published multiplicity-one argument for any positive total.
 -/
 
 noncomputable section

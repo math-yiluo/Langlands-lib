@@ -61,7 +61,7 @@ and applies it.
 
 ## Supporting modules
 
-All are new internal modules of this contribution:
+All are internal modules ported with this file:
 
 * `Kottwitz.CompositumUniformizer`: for a finite extension `E'` of `F` in `Ω`,
   every absolute value on `K ⊔ E'` is attained on `E'`. Hence a finite extension

@@ -15,10 +15,8 @@ The registered source ID is
 The statement file records the conditional generalization and the scope of
 each clause.
 
-Worker 834 authored the reused aggregate proof and both helper implementations.
-Worker 1004 checked the complete implementation against the current Library
-and original source, preserved the Lean files unchanged, and revised the paired
-English documentation for this focused proof.
+The complete implementation was checked against the Library and the original
+source.
 
 ## Route
 

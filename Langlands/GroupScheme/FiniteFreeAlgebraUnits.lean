@@ -447,7 +447,7 @@ instance geometricallyIrreducible : GeometricallyIrreducible (groupScheme b).X.h
 
 /-- Every fibre of the unit group scheme is geometrically connected. -/
 instance geometricallyConnected : GeometricallyConnected (groupScheme b).X.hom :=
-  GeometricallyIrreducible.geometricallyConnected _
+  GeometricallyIrreducible.geometricallyConnectedFLT _
 
 /-! ### Change of algebra and the matrix algebra -/
 

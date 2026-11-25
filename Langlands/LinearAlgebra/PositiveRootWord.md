@@ -1,6 +1,6 @@
 # Simple reflection words enumerating positive roots
 
-This derived unit concerns an integral root datum `P : RootDatum J X Y`,
+This module concerns an integral root datum `P : RootDatum J X Y`,
 with `X` and `Y` additive commutative groups in arbitrary universes, and a
 supplied base `b`. The enumeration theorem assumes `Fintype J` and
 `P.IsReduced`. It constructs a word in the simple reflections without
@@ -52,5 +52,5 @@ its base, and the imported Mathlib root-system and finite-set lemmas.
 No external source is cited. The construction does not produce root
 subgroup parameters, rational normalizer representatives, a pinning or
 a highest-weight module. Those geometric and representation inputs,
-as well as the whole Steinberg and induced-space conclusions, remain
-separate obligations.
+as well as the whole Steinberg and induced-space conclusions, are not
+part of this module.

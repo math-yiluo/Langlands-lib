@@ -15,12 +15,13 @@ matrices over `K_v` and all `x, y ∈ GL_n(𝔸_K)`,
 
 `∫ f(x · ι_v([[1, Z], [0, 1]]) · y) dZ = 0`.
 
-This is the local hypothesis of the cuspidal image statement for `GL_n` (Task 7577) and of the
-radical vanishing statement for `GL_n` (Task 7581). It is a change of variables from the
+This is the local hypothesis of the cuspidal image statement for `GL_n`
+(`GeneralLinearCuspidalImageStatement`) and of the radical vanishing statement for `GL_n`
+(`GeneralLinearRadicalIntegralVanishingStatement`). It is a change of variables from the
 unipotent radical of the two-block parabolic to its matrix coordinates. Derived content: it
 connects the cusp-form condition at one place (Getz–Hahn 2024, Definition 16.4.1 and the proof
 of Lemma 16.4.2, printed p. 430; Henniart–Lemaire 2011, II.6.3, printed p. 120, condition
-`c_{v₁}(f)`) with the matrix-coordinate hypothesis of Tasks 7577 and 7581; see
+`c_{v₁}(f)`) with the matrix-coordinate hypothesis of these two statements; see
 `GeneralLinearCuspFormLocalVanishingStatement.md`.
 -/
 

@@ -60,7 +60,7 @@ theorem exists_integral_root_quotient_lift_of_perfectResidue (a : characterLatti
     apply ha
     have he := (T.genericCharacterEquiv hT).apply_symm_apply a
     change T.genericCharacterEquiv hT χ = a at he
-    rw [h, map_zero] at he
+    rw [h, AddEquiv.map_zero] at he
     exact he.symm
   have hχa : T.genericCharacter χ = a :=
     (T.genericCharacterEquiv hT).apply_symm_apply a
@@ -146,6 +146,8 @@ theorem exists_integral_root_point_outside_nsmul_of_perfectResidue
           (n • T.characterSpecialization hT a)).carrier _ ∧
       D.neutral.integralPointMap x ∉ rootGroupPoints i (n • a) := by
   let : Smooth Q.quotient.X.hom := hQ.2.2.smooth
+  have : AddMonoidHomClass (characterLattice S ≃+ characterLattice T.specialFibre) _ _ :=
+    AddEquivClass.instAddMonoidHomClass _
   have hs := hT.baseChange (IntegralModel.residueBaseMap R)
   have ha0 : a ≠ 0 := by
     intro hz

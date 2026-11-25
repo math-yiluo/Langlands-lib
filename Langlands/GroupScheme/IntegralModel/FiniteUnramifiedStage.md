@@ -47,8 +47,8 @@ separate theorem `enlargedModel_smooth` follow by base change of the properties
 of `D.group`. `enlargedModelIso` compares the scalar extension of its integral
 group to `N.group`, via `stageIntegralComparison` and `D.iso.symm`.
 
-This unit constructs the finite integral model and the comparison of its
-integral group. It does not yet assert that `enlargedModelIso` is compatible with
+This module constructs the finite integral model and the comparison of its
+integral group. It does not assert that `enlargedModelIso` is compatible with
 the two specified generic identifications in the sense of `IntegralModel.Iso`;
 that requires a further coherence proof from the `IsoStage.recovery` equation.
 It also does not construct semilinear descent data or assert effective descent.

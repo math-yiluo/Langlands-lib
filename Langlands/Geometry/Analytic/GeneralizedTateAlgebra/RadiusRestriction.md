@@ -113,7 +113,7 @@ reuses the actual series, norm and coordinate constructions from
 `GeneralizedTateAlgebra.Definitions` and `EvaluationDefinitions`, and the
 variable inclusions from `GeneralizedTateAlgebra.Embedding`.
 
-This unit establishes algebra restriction and its intrinsic norm and
+This module establishes algebra restriction and its intrinsic norm and
 compatibility obligations. It does not assert analytic-domain
 representability, an image description on spectra, or a quotient
 restriction for general affinoid presentations. Those require additional

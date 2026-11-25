@@ -48,13 +48,14 @@ The original source is the final paragraph of Stacks Project Lemma
 `stacks-hom-functor-08js-2026-11-02`, folder SHA-256
 `2d60cda5ae13d9daa5c318ca4cd199e47a3a00b39f5062492b2207f7b56432c4`.
 There the finite-matrix solution functor on all schemes is represented by
-this quotient spectrum. The present unit is a derived expansion of that
-step using Mathlib's Gamma-Spec adjunction, the coordinate-algebra unit,
+this quotient spectrum. The present module is a derived expansion of that
+step using Mathlib's Gamma-Spec adjunction, the coordinate-algebra module
+`FiniteLinearEquations`,
 and the affine and finite-presentation criteria for spectrum maps. The
 retained full section and its two typo-only comments were read; no project
 errata entry was found.
 
-This unit represents finite linear solutions. The geometric construction
+This module represents finite linear solutions. The geometric construction
 of a finite linear model for actual coherent-family Hom, including
 perfect approximation and descent over arbitrary bases, remains an
 additional obligation in the proper-Hom proof.

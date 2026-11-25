@@ -69,9 +69,11 @@ is inherited unchanged.
 
 ## Intended proof
 
-A private proof compiles. It applies the separately staged
-`InvariantSubspaceDiscreteDecompositionStatement`, with `E = S` and
-`V = ⊤`, to `πc`:
+The Library does not prove this statement. A proof applies
+`InvariantSubspaceDiscreteDecompositionStatement` (proved in the Library as
+`invariantSubspaceDiscreteDecomposition`, module
+`Langlands.Representation.Unitary.InvariantSubspaceDiscreteDecompositionProof`),
+with `E = S` and `V = ⊤`, to `πc`:
 
 - `πc` preserves norms, by `norm_fullAEL2CuspidalBoundedRightAction`, and
   hence inner products.

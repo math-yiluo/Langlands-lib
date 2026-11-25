@@ -1,7 +1,5 @@
 # Finite vector-bundle series for supplied relative unipotent radicals
 
-Author: Worker 204.
-
 `Langlands.GroupScheme.RelativeUnipotentRadicalFiltrationStatement` is a
 universe-polymorphic proposition target. This module defines the proposition;
 it does not construct a filtration or prove that the proposition holds.

@@ -1,6 +1,6 @@
 # The gamma factor of a finite pair factor choice
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaLocalLink`), glue step linking the local factors used in the
+Supporting module for the proof of `AssociatedGammaStatement` (module `Langlands.Automorphic.AssociatedGammaLocalLink`), glue step linking the local factors used in the
 comparison engine to the actual automorphic pair gamma factor. This supplies the
 `IsAutomorphicPairGammaFactor` and `HasRationalContinuation` conjuncts of
 `HasHeckeGammaCertificate` (module `Langlands.Automorphic.AssociatedGammaHeckeReduction`).

@@ -14,8 +14,8 @@ subquotient. It uses `ExactSmoothTransport.map_injective` and the existing
 [`ShortExactFunctorLaws`](../Derivative/ShortExactFunctorLaws.md).
 The actual presentation criterion then gives the conclusion.
 
-This is the shared elementary lemma from the independently accepted Worker 19
-`CoarseJacquetExtraction` and `ExactFunctorIrreducibility` contributions. It is
+This is the elementary lemma shared by the modules
+`CoarseJacquetExtraction` and `ExactFunctorIrreducibility`. It is
 placed here so both consumers use one declaration without importing each
 other's applications. Its statement and proof argument are unchanged. The
 old `ExactFunctorIrreducibility.map_isSubquotient` name is consolidated into

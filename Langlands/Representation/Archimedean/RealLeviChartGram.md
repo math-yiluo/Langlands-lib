@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviChartGram`.
 
-Worker 5220 wrote this helper module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`). It
+This helper module
 contains the matrix identities used by the proof of `RealLeviChartIntegrableStatement`
 (module `RealLeviChartIntegrable`, see `RealLeviChartIntegrable.md`). It states no proposition of
 its own and cites no literature; all its content is elementary linear algebra written for that

@@ -1,7 +1,5 @@
 # A finite closed locus where a Mumford family is trivial
 
-Author: Worker 372.
-
 This internal helper module works with an abelian scheme `A` over `Spec K`, for an arbitrary
 field `K`. It produces a relative line-bundle class over the parameter space `A`, trivial at the
 unit parameter, whose trivial locus is a closed subscheme of `A` finite over `K`. In classical

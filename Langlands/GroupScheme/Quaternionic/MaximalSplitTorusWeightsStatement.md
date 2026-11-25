@@ -1,7 +1,5 @@
 # Weights of a maximal split torus of `O(q)⁰` on `D^n`
 
-Author: Worker 73.
-
 Module `Langlands.GroupScheme.Quaternionic.MaximalSplitTorusWeightsStatement`, namespace
 `Langlands.GroupScheme.Quaternionic`. It contains one `Prop`-valued definition,
 `IsometryMaximalSplitTorusWeightsStatement`, with universe parameter `u`, and proves

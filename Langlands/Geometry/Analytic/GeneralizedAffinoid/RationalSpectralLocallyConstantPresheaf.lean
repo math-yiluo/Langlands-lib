@@ -43,9 +43,9 @@ theorem spectralInvariantLocusLocallyConstantPresheaf_action_apply (H : OpenSubg
     (d : SpectralInvariantChart ρ H) {C : Type w} (g : H)
     (f : DiscreteLocallyConstant d.obj.locus C) (x : d.obj.locus) :
     (DiscreteLocallyConstant.toLocallyConstant (ConcreteCategory.hom
-      (((spectralInvariantLocusLocallyConstantPresheaf ρ H C).obj (Opposite.op d)).obj.ρ g)
+      (((spectralInvariantLocusLocallyConstantPresheaf ρ H C).obj (Opposite.op d)).obj.ρ g).asHom
         f)) x =
-      f (ConcreteCategory.hom (((spectralInvariantLocusFunctor ρ H).obj d).obj.ρ g⁻¹) x) := rfl
+      f (ConcreteCategory.hom (((spectralInvariantLocusFunctor ρ H).obj d).obj.ρ g⁻¹).asHom x) := rfl
 
 @[simp]
 theorem spectralInvariantLocusLocallyConstantPresheaf_map_apply (H : OpenSubgroup G)
@@ -74,10 +74,10 @@ theorem spectralInvariantSpectrumLocallyConstantPresheaf_action_apply (H : OpenS
     (f : DiscreteLocallyConstant (BanachSpectrum d.obj.algebra) C)
     (x : BanachSpectrum d.obj.algebra) :
     (DiscreteLocallyConstant.toLocallyConstant (ConcreteCategory.hom
-      (((spectralInvariantSpectrumLocallyConstantPresheaf ρ H C).obj (Opposite.op d)).obj.ρ g)
+      (((spectralInvariantSpectrumLocallyConstantPresheaf ρ H C).obj (Opposite.op d)).obj.ρ g).asHom
         f)) x =
       f (BanachSpectrum.comap
-        ((spectralInvariantSectionAction ρ H d).actionAut g⁻¹).inv.toBoundedRingHom x) := rfl
+        ((spectralInvariantSectionAction ρ H d).actionAut g⁻¹).asIso.inv.toBoundedRingHom x) := rfl
 
 @[simp]
 theorem spectralInvariantSpectrumLocallyConstantPresheaf_map_apply (H : OpenSubgroup G)

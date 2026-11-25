@@ -1,7 +1,7 @@
 # Core of the BZ77 Theorem 4.2 argument
 
-Author: Worker 745. Helper module of the proof of Ze80 Proposition 1.11(a),
-first conjunct (task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`). It is imported
+Helper module of the proof of Ze80 Proposition 1.11(a),
+first conjunct. It is imported
 by `NonadjacentSpecialization` and, through it, by the final module
 `TwoSupercuspidalNonadjacentIrreducibilityProof`.
 
@@ -103,7 +103,7 @@ Namespace `Langlands.Classification.NonadjacentAssembly`.
      derivative of `X` is nontrivial.
   4. By exactness (`isSubOrQuotient_map`), these derivatives are a
      subrepresentation or a quotient of the `d`-th derivatives of `π` and of
-     `ν π~`. `length_eq_zero_of_isSubOrQuotient` (my published module
+     `ν π~`. `length_eq_zero_of_isSubOrQuotient` (published module
      `Filtration.InvariantBilinearSubquotientBounds`) and the filtrations
      from hypothesis 5 make the space of such forms zero. Hence `γ = 0`, a
      contradiction.
@@ -130,7 +130,7 @@ uses `u = max uF uV`, the carrier universe of `ρ × ρ'`.
 
 All proofs here are original to this module; no code is adapted from other
 Library proofs. Direct imports: `Filtration.InvariantBilinearSubquotientBounds`
-(my published module), `Classification.TwoSupercuspidalDerivativeBridge`, the
+(a published module), `Classification.TwoSupercuspidalDerivativeBridge`, the
 statement modules `Derivative.GeneralLinearDerivativeExactnessStatement`,
 `Derivative.MirabolicHighestDerivativePairingStatement` and
 `Derivative.MirabolicDerivativeDetectionStatement`,

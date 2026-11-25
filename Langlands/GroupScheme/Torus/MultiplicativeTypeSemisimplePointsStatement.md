@@ -184,7 +184,8 @@ identity, which acts trivially in every representation; but the inclusion
 Hom(G, Ga) = 0") `α_p` is not of multiplicative type.
 
 Relation to the Library. The Library has no Lean notion of semisimple
-elements of `G(kᵃ)` and no statement of Corollary 12.21. The Lean condition
+elements of `G(kᵃ)` and, apart from this module, no statement of Corollary
+12.21. The Lean condition
 follows the pattern of `Lie.IsSemisimpleElement` (in
 [`Lie.SemisimpleElement`](../Lie/SemisimpleElement.md)), which tests
 semisimplicity of an element of the Lie algebra in every representation
@@ -223,7 +224,11 @@ Chapter 12, one entry, on p. 234 (Example 12.10), and for Chapter 4 one
 entry, on p. 89 (proof of 4.14); it has no entry for printed pp. 83, 87, 166,
 170, 171, 238 or 239.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as
+`Langlands.GroupScheme.multiplicativeTypeSemisimplePoints` in
+[`MultiplicativeTypeSemisimplePointsProof`](MultiplicativeTypeSemisimplePointsProof.md).
 
 Milne's proof, printed p. 239: "We may suppose that k is algebraically
 closed. Choose a faithful finite-dimensional representation (V, r) of G, and
@@ -261,7 +266,7 @@ p. 234). A proof of the Lean statement can follow these steps.
   (printed p. 233: "Algebraic subgroups and quotient groups of
   diagonalizable algebraic groups are diagonalizable"). So `G` is of
   multiplicative type.
-- The same author has separately submitted Milne's Theorem 12.18 as
-  `MultiplicativeTypeCharacterizationStatement`; it was not in the Library
-  base commit `2016a0d994180c702214a75514a08546aa930f07` when this unit was
-  written.
+- Milne's Theorem 12.18 is `MultiplicativeTypeCharacterizationStatement` (in
+  [`MultiplicativeTypeCharacterizationStatement`](MultiplicativeTypeCharacterizationStatement.md)),
+  proved as `multiplicativeTypeCharacterization` in
+  [`MultiplicativeTypeCharacterizationProof`](MultiplicativeTypeCharacterizationProof.md).

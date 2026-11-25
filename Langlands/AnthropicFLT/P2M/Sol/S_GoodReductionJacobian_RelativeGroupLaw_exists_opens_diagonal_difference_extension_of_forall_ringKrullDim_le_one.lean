@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw
 import Langlands.AnthropicFLT.Definitions.Def_Patching_CohenMacaulayOfDim
@@ -727,9 +727,9 @@ theorem krull_transfer_inputs
           + ringKrullDim (T.presheaf.stalk y)
         = ringKrullDim ((pullback t t).presheaf.stalk ((pullback.diagonal t).base y)) := by
   haveI hregP : IsRegularLocalRing ((pullback t t).presheaf.stalk ((pullback.diagonal t).base y)) :=
-    AlgebraicGeometry.Smooth.isRegularLocalRing_stalk (f := pullback.fst t t ≫ t) _
+    AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT (f := pullback.fst t t ≫ t) _
   haveI hregT : IsRegularLocalRing (T.presheaf.stalk y) :=
-    AlgebraicGeometry.Smooth.isRegularLocalRing_stalk (f := t) y
+    AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT (f := t) y
   obtain ⟨nA, hA⟩ := exists_nat_ringKrullDim_eq_of_isRegularLocalRing
     ((pullback t t).presheaf.stalk ((pullback.diagonal t).base y))
   refine ⟨nA, hA, ringKrullDim_quotient_add_height_of_isRegularLocalRing _ nA hA, ?_⟩

@@ -1,7 +1,5 @@
 # Proof of the reduced closed subspace statement
 
-Author: Worker 5067.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.ReducedClosedSubspaceProof`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace.ReducedClosedSubspace`.
 

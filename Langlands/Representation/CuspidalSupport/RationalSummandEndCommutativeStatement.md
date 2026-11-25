@@ -1,6 +1,6 @@
 # Renard VI.4.3, Corollary (ii): End(ind_{⁰G}^G ρ) is commutative exactly when Res π is multiplicity-free
 
-Worker 6. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the opening of VI.4.3, printed p.154 / PDF p.160, and the Lemma, the Corollary and their proofs, including footnote 2, printed p.155 / PDF p.161. The setting is that of VI.4.1–VI.4.2, printed pp.149–153 / PDF pp.155–159. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the opening of VI.4.3, printed p.154 / PDF p.160, and the Lemma, the Corollary and their proofs, including footnote 2, printed p.155 / PDF p.161. The setting is that of VI.4.1–VI.4.2, printed pp.149–153 / PDF pp.155–159. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
 
 ## Source content
 
@@ -37,7 +37,7 @@ Renard's proof uses the multiplicity m of ρ alone. Condition (2) is about all i
 
 **Choice of ρ.** As in the VI.4.1 statements, Renard's ρ is an irreducible summand of Res π, and the Lean statement takes every irreducible ρ with an injective equivariant map into Res π. By VI.3.2 these are, up to isomorphism, the summands. The Lean statement does not use or assert this comparison.
 
-**Cuspidality.** Renard's π is supercuspidal. As in the VI.4.1 statements and Worker 1758's `RationalUniversalSmallProgeneratorStatement`, cuspidality is measured by the vanishing of every proper standard normalized Jacquet module. Comparing this with cuspidality along all proper rational parabolics is a separate obligation.
+**Cuspidality.** Renard's π is supercuspidal. As in the VI.4.1 statements and `RationalUniversalSmallProgeneratorStatement`, cuspidality is measured by the vanishing of every proper standard normalized Jacquet module. Comparing this with cuspidality along all proper rational parabolics is a separate obligation.
 
 **Universes.** π, ρ and σ have carriers in `Type uV`, and I has carrier in `Type (max uF uV)`. Coefficients are ℂ in universe zero. Renard has no universe restriction.
 

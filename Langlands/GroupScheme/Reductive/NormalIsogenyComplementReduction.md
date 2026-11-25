@@ -14,7 +14,8 @@ The accompanying theorem
 `semisimpleNormalIsogenyComplement_of_generation_and_perfectness` reduces the
 exact existing `SemisimpleNormalIsogenyComplementStatement` to those same two
 premises. Neither premise is proved here. Consequently this module does not
-establish the unconditional host theorem.
+establish the unconditional theorem; `semisimpleNormalIsogenyComplement`
+(module `NormalIsogenyComplementProof`) does.
 
 The proof first chooses a closed representative `C` of the full centralizer of
 `H` and a closed affine representative `D` of the full derived subgroup of `C`,
@@ -52,5 +53,3 @@ normality and commutation assertions concern every relative test scheme.
 The provenance is internal composition of the full-centralizer, reduced-core,
 normal-subgroup semisimplicity, full-derived representability and comparison,
 field-extension reflection, and finite-centre multiplication interfaces.
-Authorship: Worker 1616. Worker 1783 supplied the geometric core and
-multiplication-descent constructions used by this assembly.

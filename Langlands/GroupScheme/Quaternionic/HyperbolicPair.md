@@ -1,6 +1,6 @@
 # Hyperbolic pairs over a division algebra with involution
 
-This internal derived unit constructs a hyperbolic pair for the published
+This internal derived module constructs a hyperbolic pair for the published
 quotient-valued quadratic form, from a nonzero singular vector and an invertible
 polar Gram matrix. It works in every characteristic over any division algebra
 with an involution of the first kind. A positive quadratic Witt index supplies

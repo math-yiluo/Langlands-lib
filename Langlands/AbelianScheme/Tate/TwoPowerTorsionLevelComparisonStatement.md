@@ -21,7 +21,9 @@ there, so the section factors through `B`. Monomorphism cancellation and
 compatibility with powers show that the lifted section is killed by the
 same power of two. Cancellation also proves injectivity of the level map.
 
-This file defines a proposition and requires a separate proof contribution.
+This file defines a proposition; it is proved by
+`twoPowerTorsionLevelComparison` in the module
+`TwoPowerTorsionLevelComparisonProof`.
 The result can compare the actual levels of a torsion-closure realization
 with those of its ambient abelian scheme. It supplies no such realization,
 numerical torsion formula, equality of relative dimensions, or density

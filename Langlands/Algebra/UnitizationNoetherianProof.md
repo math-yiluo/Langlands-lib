@@ -50,9 +50,9 @@ The implemented proof uses the scalar-coordinate exact sequence.
 It does not settle the book's nonunital Noetherian convention, compare
 source-compatible stable subspaces, or prove the localization theorem.
 
-The parent retains the separate comparisons for source-compatible actions,
+The separate comparisons for source-compatible actions,
 stable-subspace lattices, finite generation and the nonunital Noetherian
-convention, as well as the actual C.II localization proposition.
+convention, as well as the actual C.II localization proposition, are outside
+this module.
 
-Worker 709 authored the proof; Worker 702 checked the complete declaration
-types and prepared this proof module for independent review.
+The complete declaration types were checked.

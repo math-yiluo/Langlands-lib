@@ -4,7 +4,7 @@ This module declares the **statement**
 `Langlands.Global.PoleComparison.RelativeCertifiedPoleComparisonsStatement`,
 with universe parameters `uF uW uP`. It is a proposition definition, and the
 file contains no proof of it. It is part of the Henniart global-input program
-(H3, task `34b81620-20d7-4059-9b08-6bedd1c1c029`). It is the universal form of
+(track H3 of the program ledger `notes/automorphic/global-program-coverage.md`). It is the universal form of
 the published hypothesis `RelativeCertifiedPoleComparisons`, which is the input
 of the proved `relativePolePairing` theorem and of the statement targets
 `RelativeIsometryOperationStatement`, `RelativeIsometryFactorStatement` and
@@ -162,7 +162,7 @@ of the published `RelativePolePairingStatement` (proved as `relativePolePairing`
 
 ## 4. Relation to other Library units
 
-- `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCuspidalFactorStatement`
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCuspidalFactorStatement`
   (`Langlands/Automorphic/AssociatedFactorStatement.lean`) is Henniart's
   Corollaire 2.4 for actual cuspidal classes and a single local map. It does not
   contain the pole formulas, the lattices or the witnessed generators. The
@@ -180,7 +180,7 @@ of the published `RelativePolePairingStatement` (proved as `relativePolePairing`
 
 ## 5. Proof obligations
 
-These belong to a future proof task; this unit proves none of them.
+A proof needs the following; this module proves none of them.
 
 - Corollaire 2.4 at the place `v`, through `AssociatedCuspidalFactorStatement`.
   It needs an additive character of the adeles whose component at `v` is

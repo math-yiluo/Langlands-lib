@@ -138,7 +138,7 @@ equalities and the imported continuation constructions.
 
 ## Scope and remaining obligations
 
-This unit preserves arbitrary field characteristic and independent field,
+This module preserves arbitrary field characteristic and independent field,
 ambient-group and inducing-carrier universes. It does not introduce a
 competing representation framework or restrict to split groups.
 The actual topological Levi identification and the structural induction
@@ -146,7 +146,7 @@ hypotheses are supplied; their realization for every reductive group is
 not asserted.
 
 The original families, both rational continuation data and the original
-ambient square are premises. This unit does not prove convergence or
+ambient square are premises. This module does not prove convergence or
 rationality of standard integrals, nor identify the continued families
 with standard integrals. The fixed ordinary compact maps retain dependence
 on the chosen `a`, including its scalar ambiguity. No stabilizer or orbit

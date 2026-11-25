@@ -1,7 +1,5 @@
 # The general semistandard parabolic intersection theorem: proof
 
-Author: Worker 4048.
-
 `Langlands.GroupScheme.dynamicSemistandardIntersection` proves exactly
 `Langlands.GroupScheme.DynamicSemistandardIntersectionStatement.{u}` for an
 arbitrary universe `u`. Fix a field `k`, a connected reductive group scheme
@@ -67,6 +65,6 @@ definition pairs are unchanged. Their Markdown records the original sources:
 Renard V.3.8 and V.3.10, Borel–Tits 1965 and Milne 2017. The three structural
 theorems and the reduction keep their own published pairs, authorship and
 proof explanations. Dynamic representability and centralizer reductivity
-remain with their independent owners and are only reused here. Standard
+are results of other modules and are only reused here. Standard
 cocharacter realization and the nested standard-index proof are neither used
 nor replaced by this composition.

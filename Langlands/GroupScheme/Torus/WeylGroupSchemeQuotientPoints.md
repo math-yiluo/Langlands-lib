@@ -1,7 +1,5 @@
 # Algebraically closed points of a represented Weyl quotient
 
-Worker 635, with Worker 588.
-
 This is a derived helper for `WeylGroupSchemeFiniteEtaleStatement`. It identifies
 the rational points of a supplied quotient with the Library's relative Weyl
 group. It does not construct the quotient or assert its finiteness or étaleness.

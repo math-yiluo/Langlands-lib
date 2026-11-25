@@ -28,7 +28,7 @@ def RestrictedCyclicBaseChangeComplexPlaceCompatibilityStatement : Prop :=
       (wc : FinitePlacesAbove E (Harris.conjPlace F v₀)),
       (∀ w', w' = w₀) → (∀ w', w' = wc) →
       ∀ (r : ℕ) (S : CuspidalOperatorRealization F r) (D : IsobaricData E),
-        ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+        ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
         S.isoClass.HasSupercuspidalComponent.{uF,uV} v₀ →
         S.isoClass.HasSupercuspidalComponent.{uF,uV} (Harris.conjPlace F v₀) →
         D.IsUnitary →

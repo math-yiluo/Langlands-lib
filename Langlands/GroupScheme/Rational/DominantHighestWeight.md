@@ -1,7 +1,5 @@
 # Highest-weight representation existence at integral dominant characters
 
-Author: Worker 1744.
-
 `SplitPinning.IsDominantWeight p λ` means that the integral character `λ` of the actual supplied torus has nonnegative pairing with every simple coroot of `p.base`. This uses the given perfect integral root-datum pairing. It places no condition on the component of a character perpendicular to all coroots. Nonnegativity on simple coroots is the usual dominance condition: positive coroots are nonnegative integral combinations of the simple coroots.
 
 The unproved `Prop`-valued definition `SplitDominantHighestWeightRepresentationsExistStatement.{u}` quantifies over every algebraically closed field `k : Type u`, every actual affine group scheme `G`, every supplied `p : SplitPinning G` and every dominant integral character of its torus. Connected reductivity and a split maximal torus are supplied by `p`; simple connectedness and full integral coroot span are not hypotheses. The field can have any characteristic.

@@ -16,7 +16,7 @@ original incident facets.
 `incidentFacetKernelChart` constructs these data from any downstairs
 `ValuationBuildingData B`, maximal-unramified building data `C`, building map
 `e`, affine apartment map `a`, and incident downstairs facets. It requires just
-three of the apartment-descent hypotheses in the host statement: equivariance
+three of the apartment-descent hypotheses in `UnramifiedFacetParabolicImageStatement`: equivariance
 of `e` under rational extension, compatibility of `e` and `a` on the displayed
 apartments, and the exact restricted-facet preimage identity. It needs none of
 the seven additional building predicates of that statement.
@@ -61,7 +61,7 @@ connectedness and unipotence through the actual residue-field extension.
 The three local integer-algebra instances have explicit names so that this
 module can be combined with other unramified comparison modules.
 
-This contribution discharges the facet-specific geometric hypotheses needed
+This module discharges the facet-specific geometric hypotheses needed
 to consume the full-kernel statement. It does not prove that statement,
 parabolicity of the special-fibre image, the reduction-preimage equality, or
-the host theorem.
+`UnramifiedFacetParabolicImageStatement`.

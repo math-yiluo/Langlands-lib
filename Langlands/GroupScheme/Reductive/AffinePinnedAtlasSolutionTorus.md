@@ -26,5 +26,5 @@ quasi-compact or nonempty base.
 
 The provenance is internal composition of the published actual pullback,
 dynamic centralizer transport, canonical positive-coroot centralizer,
-relative torus locality and field maximality reflection results. This unit
+relative torus locality and field maximality reflection results. This module
 does not assert comparison existence, solution existence, or inner discrepancy.

@@ -1,13 +1,14 @@
 # Simultaneous basis property on actual standard subgroups
 
-This internal definition unit connects the compact-basis and contraction
+This internal definition module connects the compact-basis and contraction
 predicates to the existing actual algebraic standard subgroups. Its principal
 declaration is
 `Langlands.BruhatTits.SpecialCompact.SimultaneousStandardBasisAt`.
 It defines the required property of a supplied subgroup `K0`; it states no
-universal theorem about arbitrary subgroups. The later structural statement
-must apply it to the same geometric special compact stabilizer as the sibling
-compact-package tasks.
+universal theorem about arbitrary subgroups. The structural statements
+`AvailableSimultaneousStandardBasisStatement` and
+`SimultaneousStandardBasisExistenceStatement` apply it to the same geometric
+special compact stabilizer as the other compact-package statements.
 
 The source conventions are David Renard, *Représentations des groupes réductifs
 p-adiques*, 9 July 2026 edition, V.2.5 (printed107/PDF113), V.3.14
@@ -44,8 +45,8 @@ conclusion hidden in them.
 The property quantifies existence of these data for every standard index; it
 does not merely assume that a family exists or allow its absence to make all
 parabolic clauses vacuous. Constructing compatible represented Levis and
-their split components remains a proof obligation, to be supplied by the
-owning algebraic construction.
+their split components is a separate algebraic construction:
+`exists_compatibleStandardSplitComponent` (module `CompatibleComponent`).
 
 ## Characters, sections and chambers
 
@@ -94,31 +95,35 @@ induced subgroup topologies.
 For each `J`, `InheritedCompactOpenNormalBasis` uses exactly the image
 family `{K.comap M_J.subtype | K ∈ B}` and the ambient compact
 `K0.comap M_J.subtype`. It does not choose an unrelated family inside the
-Levi. Identifying the latter compact with the sibling's adapted special
-compact in the standard Levi remains the shared standard-Levi comparison
-obligation. This smaller normal basis is distinct from a chamber Iwahori.
+Levi. Identifying the latter compact with the adapted special compact in
+the standard Levi is a separate standard-Levi comparison; for the data of a
+valid corrected KP assignment it is `availableSpecialLeviCompact` (module `AvailableSpecialLeviCompactProof`).
+This smaller normal basis is distinct from a chamber Iwahori.
 
-## Retained construction and theorem obligations
+## Constructions and theorems outside this module
 
-This definition unit does not establish the existence or any property of
+This definition module does not establish the existence or any property of
 the geometric `K0`, actual KP apartment/building data, special points,
 parahorics, or compact stabilizers. It does not assume a completed-building
 typeclass or an arbitrary good-position certificate. The supplied-data
-target on explicitly valid KP data must substitute the shared
-`SpecialVertex.K0` once that actual interface is available. A separate
+statement on explicitly valid KP data, `AvailableSimultaneousStandardBasisStatement`,
+uses the shared geometric `K0 = D.apartment.specialCompactSubgroup x`. A separate
 general existence target must retain construction of valid actual data
 and a special point for every connected reductive group over every
-nonarchimedean local field, of either characteristic. Those final targets,
-and their proofs, remain outstanding here.
+nonarchimedean local field, of either characteristic.
+`availableSimultaneousStandardBasis` (module `AvailableBasisProof`) proves the
+supplied-data statement; the general existence statements
+`SimultaneousStandardBasisExistenceStatement` and
+`JointSpecialCompactBasisExistenceStatement` are not proved in the Library.
 
-The current property is characteristic unrestricted and imposes no
+The property is characteristic unrestricted and imposes no
 splitness, quasi-splitness, tameness, large-residue-characteristic, or
-positive-rank hypothesis on `G`. Its intended structural statements add
+positive-rank hypothesis on `G`. The structural statements add
 actual connected reductivity, maximal splitness of `i`, and genericity of
 `ν`; these hypotheses do not occur as substitutes for the conclusions.
 The section theorem, represented-Levi and opposite-radical comparisons,
 canonical topology comparisons, and simultaneous KP filtration
-construction still require proofs.
+construction are not proved here.
 
 The existing
 `Langlands.BruhatTits.DynamicUnipotentCompactOpenContainmentStatement`

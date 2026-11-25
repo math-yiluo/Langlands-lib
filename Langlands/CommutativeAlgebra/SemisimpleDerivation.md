@@ -1,6 +1,6 @@
 # Smooth quotients by semisimple derivations
 
-This is an internal algebraic prerequisite by Worker 1296 for the smoothness
+This is an internal algebraic prerequisite for the smoothness
 of semisimple Lie-element centralizers. It is derived from Mathlib's
 eigenspace results and the existing `GradedFixedQuotientSmooth` construction.
 It does not yet construct a group-scheme conjugation derivation or identify

@@ -153,4 +153,4 @@ The module imports the Library statements `StandardSmoothRetractStatement` and
 `LocalizationStandardDescentStatement`. It uses only the standard axioms. To get
 the Library proof of `LocalizationStandardDescentStatement`, apply
 `localizationStandardDescent_of` to the published proof of
-`StandardSmoothRetractStatement` (Task 6000).
+`StandardSmoothRetractStatement`.

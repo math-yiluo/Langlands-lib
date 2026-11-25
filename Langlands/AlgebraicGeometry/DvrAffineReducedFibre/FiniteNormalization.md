@@ -1,7 +1,5 @@
 # Finiteness of normalization over a complete DVR
 
-Worker 594.
-
 The definition `normalizationToComponents` maps the integral closure
 in total fractions to the product of the integral closures of the
 minimal-prime quotients in their fraction fields. Non-zero-divisors

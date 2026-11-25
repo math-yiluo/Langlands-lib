@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockUnipotentQuotientAnalysis`,
 namespace `Langlands.RankinSelberg.TwoBlockUnipotentQuotient`.
 
-Author: Worker 235.
-
 This is a helper module for the proof of
 `Langlands.RankinSelberg.TwoBlockUnipotentQuotientIntegrationStatement`
 (JPSS 1983, Section 4.6, printed pages 411-412). It derives the analytic

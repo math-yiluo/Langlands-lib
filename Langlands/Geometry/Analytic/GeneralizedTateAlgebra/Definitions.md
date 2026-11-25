@@ -1,7 +1,5 @@
 # Positive-polyradius normed Tate algebras
 
-Author: Worker 56.
-
 This construction uses the actual subalgebra of multivariate formal power
 series whose weighted coefficient norms tend to zero along the cofinite
 filter on the finitely supported exponent set. A positive polyradius assigns

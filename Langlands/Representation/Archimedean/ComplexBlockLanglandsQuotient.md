@@ -2,15 +2,15 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockLanglandsQuotient`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It assembles the block chain
 (`ComplexBlockLimit`, `ComplexBlockJacquet`, `ComplexBlockDual`, `ComplexBlockFunctional`,
 `ComplexBlockNonvanishing`) into the target statement. Three statements of the Library remain as
 hypotheses; none of them is proved here.
 
-* `ComplexBlockChartIntegrableStatement`, proof task Task 7161.
-* `ComplexBlockParabolicIntegrationStatement`, proof task Task 7162.
-* `ComplexTemperedStandardIrreducibleStatement`, proof task Task 7113.
+* `ComplexBlockChartIntegrableStatement`, proved in `ComplexBlockChartIntegralProof`.
+* `ComplexBlockParabolicIntegrationStatement`, proved in `ComplexBlockParabolicIntegrationProof`.
+* `ComplexTemperedStandardIrreducibleStatement`, proved in `ComplexTemperedStandardIrreducibleProof`.
 
 ## The statement
 
@@ -24,8 +24,9 @@ The last statement says that for every list `ds` of `n` complex characters in th
 functions of `complexStandardModule n ds` have a largest proper `(𝔤𝔩_n(ℂ), U(n))`-submodule `R`.
 That is, `R` is a proper `IsGKSubmodule` that contains every proper `IsGKSubmodule`.
 
-It is proved as `Langlands.Archimedean.complexBlockLanglandsQuotient`. Once the three hypotheses are
-proved, applying this theorem to their proofs proves `ComplexStandardLanglandsQuotientStatement`.
+It is proved as `Langlands.Archimedean.complexBlockLanglandsQuotient`. Applying this theorem to the
+proofs of the three hypotheses proves `ComplexStandardLanglandsQuotientStatement`
+(`ComplexStandardLanglandsQuotientProof`).
 
 Provenance. Derived: the assembly of the Langlands-lemma argument. No literature statement is
 claimed beyond the cited target and hypothesis statements.

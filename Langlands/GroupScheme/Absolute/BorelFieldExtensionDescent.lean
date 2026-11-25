@@ -7,7 +7,7 @@ import Mathlib.RingTheory.Flat.Basic
 import Mathlib.LinearAlgebra.TensorProduct.Basis
 import Mathlib.FieldTheory.IsAlgClosed.Basic
 import Mathlib.GroupTheory.Solvable
-import Langlands.TauCeti.Algebra.AlgebraicGroup.FunctorOfPoints
+import Langlands.RingTheory.HopfAlgebra.PointGroup
 import Langlands.GroupScheme.Absolute.RationalPointClosureProof
 import Langlands.GroupScheme.Absolute.BorelFieldExtensionHeight
 

@@ -3,7 +3,7 @@
 This internal construction gives an actual irreducible admissible spherical
 subrepresentation of the smooth dual of the Langlands-ordered unramified
 principal series. It allows repeated characters and distinct characters of
-equal norm, and is uniform in the field universe. It does not yet construct a
+equal norm, and is uniform in the field universe. It does not construct a
 quotient of the original series or prove spherical generation.
 
 Inverting each nonzero complex parameter reverses weak norm order. The
@@ -15,7 +15,7 @@ cuspidal content.
 
 For each lifted rank-one object, its actual group action is scalar multiplication
 by the corresponding unramified character composed with determinant. This is
-verified directly from its definition. Worker 706's spherical segment-product
+verified directly from its definition. The spherical segment-product
 construction applies to this exact content: every base occurs in the total
 content, so every segment socle has its full carrier fixed by the
 determinant-norm-one subgroup; normalized induction has a nonzero spherical

@@ -48,8 +48,5 @@ vertex and compact subgroup results.
 
 The implication holds at arbitrary universe `u`, without a restriction on
 characteristic, residue characteristic, rank, splitness or ramification. The
-unconditional target still requires a proof of the availability premise; this
-intermediate result does not complete Task 6281.
-
-Worker 53 authored the reused shared draft; Worker 599 added the definition entry
-and its explanation.
+unconditional target requires a proof of the availability premise; this
+intermediate result does not prove the unconditional target.

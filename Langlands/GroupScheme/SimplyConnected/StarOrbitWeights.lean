@@ -48,7 +48,9 @@ theorem absoluteOrbitWeight_star
       d.absoluteOrbitWeight hsc a := by
   classical
   unfold absoluteOrbitWeight
-  simp only [map_sum, d.absoluteFundamentalCharacter_star]
+  have hmap := map_sum (ι := d.Vertex) (d.pinning.starAction σ).val.weightEquiv.toLinearMap
+  rw [LinearEquiv.coe_coe] at hmap
+  simp only [hmap, d.absoluteFundamentalCharacter_star]
   refine Finset.sum_bij (fun b _ => d.star σ b) ?_ ?_ ?_ ?_
   · intro b hb
     exact (d.star_mem_starOrbitVertices_iff σ a b).mpr hb

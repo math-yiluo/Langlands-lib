@@ -1,7 +1,5 @@
 # Affineness from connected reductive residue fibres
 
-Workers 717 and 852.
-
 `Langlands.GroupScheme.ReductiveFiberAffinenessStatement.{u}` is a Prop-valued
 statement definition. This module does not prove it.
 

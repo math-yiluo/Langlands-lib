@@ -1,7 +1,5 @@
 # Proofs of Renard A.IV elementary limit and colimit characterizations
 
-Author: Worker 1158.
-
 This module proves the eight supplied-cone and supplied-cocone
 characterizations in
 [`ElementaryLimitColimitStatements`](ElementaryLimitColimitStatements.md).
@@ -108,5 +106,5 @@ This proves characterizations of the supplied cones and cocones. It
 does not assert existence of these shapes in every category. The general
 `ConeBridge`, A.IV.1 examples 5–6 and their duals, concrete abelian-group
 product/direct-sum constructions, filtered-colimit branches and
-A.VI.2(7) remain with their existing owners. This module makes no claim
+A.VI.2(7) are not proved in this module. This module makes no claim
 of A.IV, Appendix A or whole-book completion.

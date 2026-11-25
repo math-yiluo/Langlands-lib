@@ -1,7 +1,7 @@
 # Finite generation of normalized standard Jacquet modules
 
-Author: Worker 319. The proof reuses the published representative calculation
-and adapts the single-vector cover argument by Worker 238, credited as coauthor.
+The proof reuses the published representative calculation and adapts the
+single-vector cover argument of `CuspidalSupport.QuasicuspidalEmbeddingProof`.
 
 The theorem `Langlands.Parabolic.normalizedJacquetFiniteGeneration` has the
 complete unapplied type
@@ -91,8 +91,8 @@ of the scalar normalization is the explicit derived calculation above.
 The proof directly reuses
 `Langlands.CuspidalSupport.QuasicuspidalEmbedding.jacquetMk_parabolic` and
 adapts the single-vector cover step from `exists_finset_generating` in the published
-`Langlands.Representation.CuspidalSupport.QuasicuspidalEmbeddingProof`, by
-Worker 238. The present proof imports that module, the quotient construction,
+`Langlands.Representation.CuspidalSupport.QuasicuspidalEmbeddingProof`.
+The present proof imports that module, the quotient construction,
 actual quotient compactness, finite double-coset cover theorem, and Mathlib's
 subrepresentation/group-algebra correspondence.
 The intersection subrepresentation and finite-union construction extend the

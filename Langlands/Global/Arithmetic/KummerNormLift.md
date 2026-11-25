@@ -1,7 +1,5 @@
 # Ideles that are norms from a Kummer extension of prime degree
 
-Author: Worker 269.
-
 This module, in namespace `Langlands.Global.Arithmetic.KummerNormLift`, gives a sufficient
 condition for an idele of a number field `K` to be the norm of an idele of a Kummer extension
 `L = K(β)` of prime degree `p`, `β ^ p = a ∈ K`. It combines the local norm facts of
@@ -10,12 +8,12 @@ condition for an idele of a number field `K` to be the norm of an idele of a Kum
 definitions.
 
 Notation: `ideleCoordinate v y` is the unit of `K_v = v.adicCompletion K` at a finite place `v`
-(module `Langlands.ClassField.Global.IdeleCohomology`), and `ideleInfiniteCoordinate w y` the
+(module `Langlands.ClassFieldTheory.Global.IdeleCohomology`), and `ideleInfiniteCoordinate w y` the
 unit of `K_w = w.Completion` at an infinite place `w` (module
-`Langlands.ClassField.Global.IdeleArchimedean`). `localPowers v p` is the subgroup of `p`-th
-powers in `K_vˣ` (module `Langlands.ClassField.Global.LocalPowerIndex`), and
+`Langlands.ClassFieldTheory.Global.IdeleArchimedean`). `localPowers v p` is the subgroup of `p`-th
+powers in `K_vˣ` (module `Langlands.ClassFieldTheory.Global.LocalPowerIndex`), and
 `infiniteUnitPowers w p` the subgroup of `p`-th powers in `K_wˣ` (module
-`Langlands.ClassField.Global.LocalUnitPowers`).
+`Langlands.ClassFieldTheory.Global.LocalUnitPowers`).
 
 ## The local conditions
 
@@ -94,5 +92,5 @@ prime degree. The hypotheses are local:
 - outside `S`, units are local norms.
 
 The packaging of these hypotheses and the choice of one place above each place of `K` are
-internal. The exact shape of the main theorem was requested by Worker 226 for the Kummer case
-of the prime-degree second inequality.
+internal. The main theorem has the shape used for the Kummer case of the prime-degree second
+inequality (module `KummerSecondInequality`).

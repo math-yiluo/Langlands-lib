@@ -59,5 +59,5 @@ it still permits infinite Galois extensions and every characteristic.
 Application to the aligned type-D cover still requires an actual split
 vector quotient, its numbered maximal-torus square and exact character
 image, and the star-fixed-vertex input that ensures stability of that
-image. The results here do not by themselves prove the host task's
-aligned spin-cover existence statement.
+image. The results here do not by themselves prove the aligned spin-cover
+existence statement `ClassicalTypeDAlignedSpinCoverStatement`.

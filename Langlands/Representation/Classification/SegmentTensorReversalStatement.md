@@ -1,7 +1,5 @@
 # Reversal association for segment tensors
 
-Author: Worker 495.
-
 `Langlands.Classification.SegmentTensorReversalAssociation.{uF,uV} F T`
 is an internal proposition about the actual Levi representations used to
 induce a segment. It keeps the field universe `uF` and representation-carrier

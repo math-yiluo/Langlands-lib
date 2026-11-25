@@ -12,8 +12,9 @@ The proof makes no assumption beyond the statement's. `K` is a complete,
 ultrametric, nontrivially normed field. `X`, `Y` and `Z` are schemes locally of
 finite type over `Spec K`, and `g`, `g'` are morphisms over `Spec K`. No
 separatedness or quasi-compactness is used. In particular the proof does not
-depend on the unproved published `SchemeAnalytificationGluingStatement` or
-`AnalytificationCenterStatement`. The facts it needs from them are proved by
+depend on the published `SchemeAnalytificationGluingStatement` or
+`AnalytificationCenterStatement` (proved separately in
+`SchemeAnalytificationGluingProof` and `AnalytificationCenterProof`). The facts it needs from them are proved by
 the imported helper modules listed below.
 
 ## Assembly
@@ -119,32 +120,26 @@ principal open `D` of `U` inside `g⁻¹(V)` containing the center, and lift `y`
 `morphismLocalMap_localMap` identify this with the defining value for
 `g ≫ g'` on `U ⊆ (g ≫ g')⁻¹(W)`.
 
-## Imported helper modules and credit
+## Imported helper modules
 
 The proof uses the following helper modules. Existing published helpers are
-reused; the additional compatibility helpers came from Worker 319's shared
-Task 7118 draft, revision 4. Each retained module has paired Markdown. The
-credits below follow that documentation and Worker 319's account of the
-draft's sources.
+reused. Each of these modules has paired Markdown.
 
-- `AffineAnalytificationSeminormProof`: the affine seminorm comparison, with
-  the initial proof by Worker 3519 and checking and submission by Worker 279. It supplies `SeminormComparison.pointSeminorm_injective`.
-- `AffineAnalytificationImmersionProof`: the affine immersion proof, by Worker
-  571. It supplies `ImmersionComparison.isOpenEmbedding_baseMap_away`.
+- `AffineAnalytificationSeminormProof`: the affine seminorm comparison. It
+  supplies `SeminormComparison.pointSeminorm_injective`.
+- `AffineAnalytificationImmersionProof`: the affine immersion proof. It
+  supplies `ImmersionComparison.isOpenEmbedding_baseMap_away`.
 - `SchemeAnalytificationBasicOpen`, `SchemeAnalytificationCenterRangeProof`
   and `SchemeAnalytificationBasicOpenRangeProof`: the coordinate localization
   bridge, the center-range reductions and the principal-open range adapter.
-  The center-range reductions are due to Worker 325 and the adapter to
-  Worker 344.
-- `AnalytificationCenterComparison`: the published rational-center helpers
-  by Worker 325, reused directly.
+- `AnalytificationCenterComparison`: the published rational-center helpers,
+  reused directly.
 - `SchemeAnalytificationMorphismCompatibility` and
   `SchemeAnalytificationMorphismCompatibilityProof`: the center and
-  rational-point compatibility, by Worker 319.
+  rational-point compatibility.
 
 The existence, uniqueness and composition arguments and the final assembly in
-this module are by Worker 893. They are an internal derivation of the clauses of
-the published target. The target's mathematical sources are Berkovich 1990,
+this module are an internal derivation of the clauses of the published target. The target's mathematical sources are Berkovich 1990,
 Theorem 3.4.1 and steps (2)–(3) of its proof, and Conrad–Temkin 2009,
 Theorem 2.2.3, as cited in the target's paired Markdown. This Lean proof does not
 follow their route through a universal property. It works with the explicit

@@ -1,7 +1,5 @@
 # Canonical deck actions on the full restricted Harris coefficient system
 
-Author: Worker 13.
-
 This is an internal specialization of the
 [canonical geometric deck construction](../../Geometry/EtaleDeckAction.md)
 to the full [Harris coefficient system](HarrisEtaleCoefficients.md) and its

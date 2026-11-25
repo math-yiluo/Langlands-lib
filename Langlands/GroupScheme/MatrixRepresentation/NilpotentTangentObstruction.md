@@ -1,6 +1,6 @@
 # No nonzero nilpotent tangent matrices for linearly reductive groups
 
-For a field `k` of nonzero characteristic `p`, assume exactly the task's
+For a field `k` of nonzero characteristic `p`, assume exactly the following
 linear-reductivity condition: every actual matrix representation on `Fin d`
 is semisimple in the published all-affine-test stable-subspace sense.
 `tangentMatrix_eq_zero_of_isNilpotent_of_linearlyReductive` proves that
@@ -53,6 +53,6 @@ the source, which applies it to a faithful representation of alpha_p.
 The implemented theorem records the more general consequence for every
 nilpotent actual tangent matrix. The classification of connected groups
 and the conversion to the full identity-component conclusion of Nagata's
-theorem remain separate obligations; this unit does not prove that theorem.
+theorem remain separate obligations; this module does not prove that theorem.
 
 Source: M. Demazure and P. Gabriel, *Groupes algebriques*, Tome I (1970), IV, section 3, proof of Theorem 3.6, printed p.510 (PDF p.540). Registered source `provided-fbc22c29e33197d3b9f2e242cdac44714e2e1a2f5faa337e9ebc1d657ad1d6fe`, SHA-256 `fbb2f907cc281afba245917449bae4bca1175c35215539c700575c517069e127`.

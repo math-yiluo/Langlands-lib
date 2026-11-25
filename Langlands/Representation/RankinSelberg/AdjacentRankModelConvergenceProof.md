@@ -3,8 +3,7 @@
 `Langlands.RankinSelberg.adjacentRankModelConvergence.{uF,uV}` proves the
 unchanged closed Library proposition
 `Langlands.RankinSelberg.AdjacentRankModelConvergenceStatement.{uF,uV}`.
-Worker 455 implemented the proof and this explanation; Worker 450 contributed
-the source, dependency and full-telescope audit.
+The source, the dependencies and the full telescope were audited.
 
 The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 *Rankin–Selberg Convolutions*, Amer. J. Math. 105 (1983), 367–464, registered

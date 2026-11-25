@@ -24,4 +24,4 @@ The proposition is the equality of the outer terms of this chain for an isogeny,
 
 ## Scope
 
-The field is algebraically closed and of any characteristic; the prime is any prime invertible in `k`. This is one of the four inputs of `IsogenyDegreeTateDeterminantNormReductionStatement` (Task 7330).
+The field is algebraically closed and of any characteristic; the prime is any prime invertible in `k`. This is one of the four inputs of `IsogenyDegreeTateDeterminantNormReductionStatement` (module `Langlands.AbelianScheme.IsogenyDegreeTateDeterminantNormReduction`).

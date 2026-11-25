@@ -1,8 +1,9 @@
 # A Galois–Cartan criterion for higher right derived functors
 
-Worker 749. This module is an internal categorical helper, written for the planned proof
+This module is an internal categorical helper, written for the proof
 of the Galois-coinduced local acyclicity statement
-`AnalyticEtaleGaloisCoinducedLocalAcyclicStatement`. It imports Mathlib's group cohomology
+`AnalyticEtaleGaloisCoinducedLocalAcyclicStatement` from pointed Galois refinements
+(`Langlands.Cohomology.AnalyticEtaleGaloisCartanReduction`). It imports Mathlib's group cohomology
 (long exact sequence and low degrees) and the Library module
 `Langlands.Cohomology.RightDerivedSequence`.
 
@@ -102,7 +103,7 @@ Now assume also that `D` has enough injectives.
 
 ## Intended use and scope
 
-In the planned application, `D` is the category of étale sheaves of modules and the
+In the intended application, `D` is the category of étale sheaves of modules and the
 indices are germs at a point. The covers are finite Galois neighbourhood data, the target
 modules are the germ modules on which the deck group acts, and the augmentation is
 restriction. Galois acyclicity is then vanishing of the positive group cohomology of the

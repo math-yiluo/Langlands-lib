@@ -1,7 +1,5 @@
 # Open charts of closed torus subgroups tested on affine schemes
 
-Author: Worker 1421.
-
 This module defines a predicate `IsOpenChartOnAffines` and states one
 proposition, `IsOpenChartOfAffinesStatement`, in namespace
 `Langlands.GroupScheme.TorusSubgroupModuli`. It proves nothing.
@@ -47,8 +45,8 @@ along open covers. The intended argument:
   into the `T_k`, so the image of `b` lies in `V`.
 - Injectivity for general `T` follows from injectivity on an affine open cover.
 
-This is a project-internal interface for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e` (the torus case of SGA 3, Exposé XI,
+This is a project-internal interface for the chart construction of
+`SmoothTorusSubgroupRepresentabilityProof` (the torus case of SGA 3, Exposé XI,
 Theorem 4.1, registered source `sga3-exposes-xi-xii-xiv-gille-polo-2008`). It is
 not a literal statement of the source. Zariski locality of representable open
 subfunctors is standard; compare Stacks Project, Tag 01JJ.

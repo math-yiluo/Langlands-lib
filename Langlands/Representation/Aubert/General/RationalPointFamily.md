@@ -54,7 +54,7 @@ explicitly binds this topology on the same rational-point carrier. Continuity
 of group operations, local compactness and the nonarchimedean group property
 are separate obligations.
 
-The remaining realization work includes finiteness of the actual simple-root
+The realization work outside this module includes finiteness of the actual simple-root
 subtype; existence of standard cocharacters and equality of the intersection
 definitions with dynamic subgroups; Levi decomposition, endpoint and
 Levi-in-Levi assertions; the scheme-versus-image subgroup and Weyl quotient
@@ -70,7 +70,7 @@ représentations lisses de longueur finie* (1995), printed pp.2180–2182,
 especially Definition 1.5 and Theorem 1.7, and Renard, *Représentations des
 groupes réductifs p-adiques*, version of 9 July 2026, V.3.12 and V.4.1–V.4.3,
 printed pp.112 and 118–119. The full-centralizer quotient follows the
-Renard convention and the host task; Aubert's printed denominator is the
+Renard convention and that of the statements this module serves; Aubert's printed denominator is the
 torus itself, as explained in the published `Group.RelativeWeyl` companion.
 The finite-subset image and identity-test packaging are internal constructions,
 not additional assertions attributed to either source. The implemented proofs

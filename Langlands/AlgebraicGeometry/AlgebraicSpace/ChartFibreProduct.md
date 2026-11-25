@@ -1,7 +1,5 @@
 # Fibre products of algebraic spaces with schemes
 
-Author: Worker 78.
-
 For a morphism of algebraic spaces `f : X ⟶ Y` over a scheme `S` and a map
 `g : h_V ⟶ Y` from the functor of points of an actual scheme `V` over `S`, this module
 constructs the fibre product `X ×_Y h_V` as an algebraic space when `f` is separated and

@@ -1,7 +1,5 @@
 # Affineness of quasi-compact separated etale valuation schemes
 
-Proof by Worker 606.
-
 `Langlands.AlgebraicGeometry.valuationRingEtaleAffineness` has exactly the type
 `Langlands.AlgebraicGeometry.ValuationRingEtaleAffinenessStatement.{u}`.
 For every valuation domain `R` and every quasi-compact separated etale morphism

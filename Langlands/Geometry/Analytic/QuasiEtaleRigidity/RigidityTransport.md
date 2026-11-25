@@ -1,7 +1,5 @@
 # Rigidity over a set and its transport along monomorphisms
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. It is internal.
 
 - `IsRigidOn p L`, for `p : U ⟶ X` and a set `L` of points of `U`, is a local

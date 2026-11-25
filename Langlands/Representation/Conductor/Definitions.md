@@ -1,7 +1,7 @@
 # Fixed levels and the newvector construction
 
 For a representation `ρ` of the actual group `GL_(n+1)(F)`,
-`levelFixedVectors ρ a` is the accepted project invariant-submodule
+`levelFixedVectors ρ a` is the project invariant-submodule
 construction applied to the concrete subgroup `levelSubgroup F n a`.
 Coefficients may lie in an arbitrary commutative ring, independently of
 the field and representation-space universes. For the source's
@@ -27,7 +27,7 @@ For a nonarchimedean local field with its specified valuative topology,
 the preceding congruence module supplies an actual open subgroup at
 each level. Consequently every level-fixed vector is smooth. An
 admissible representation has a finite module at each level, by
-applying its accepted all-open-subgroups definition.
+applying its all-open-subgroups definition.
 
 Finally, over a field of coefficients, `normalizeFixedVector` rescales
 a specified level-fixed vector by the inverse of its value under a
@@ -102,14 +102,10 @@ Exact sources:
 The congruence construction is the paired sibling module
 `Langlands.Representation.Conductor.Congruence`. The project invariant
 submodule and smoothness/admissibility predicates are imported from
-`Langlands.Representation.Smooth.Definitions`, accepted published
-artifact `665022df-625b-44ae-9dbd-425f6e266bab`, version 1, verified
-current in Library `9007729971e6e6ecea63b5567b6d1621769ccfb0`.
+`Langlands.Representation.Smooth.Definitions`, verified
+in Library commit `9007729971e6e6ecea63b5567b6d1621769ccfb0`.
 Its Lean SHA256 is
 `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb`.
 
-Prepared environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`,
-version 1; Lean 4.34.0 and Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`. Worker 43 authored
-this construction. Development compilation does not establish
-independent semantic acceptance or Library publication.
+Environment: Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

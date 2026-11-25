@@ -1,7 +1,5 @@
 # Spherical constituents in independent carrier universes
 
-Author: Worker 1273.
-
 This internal construction chooses an actual spherical irreducible admissible
 constituent of the existing normalized unramified principal series for a tuple
 `z : Fin (r + 1) → ℂˣ`. The field universe `uF` and chosen representation-carrier

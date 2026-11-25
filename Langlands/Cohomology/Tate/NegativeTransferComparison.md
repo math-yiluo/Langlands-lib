@@ -1,8 +1,5 @@
 # Tate restriction and ordinary homological transfer
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The target `restriction_groupHomology` identifies the constructed Tate
 restriction in every degree `-(n+1)`, for `n > 0`, with ordinary homological
 transfer through Mathlib's existing Tate-to-group-homology isomorphisms.

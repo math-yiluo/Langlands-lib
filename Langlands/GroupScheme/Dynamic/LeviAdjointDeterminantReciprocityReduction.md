@@ -1,10 +1,8 @@
 # Opposite adjoint determinants on a dynamic Levi, from structural inputs
 
-Author: Worker 1415.
-
 This module proves the published proposition
 `Langlands.GroupScheme.Dynamic.LeviAdjointDeterminantReciprocityStatement`
-under three published hypotheses that are still unproved. The main result is
+under three published hypotheses. The main result is
 
 ```
 theorem Langlands.GroupScheme.leviAdjointDeterminantReciprocity_of_structure
@@ -174,9 +172,12 @@ one-dimensional absolute root spaces.
   algebraic form of the fact that the opposite radical has the opposite roots with
   the same multiplicities.
 
-The three hypotheses are published proposition definitions with open proof tasks:
-`RelativeRootReflectionExistenceStatement` (task 5c031416),
-`CentralSplitTorusCharacterStatement` (task 4f432abe) and
-`DynamicCentralizerReductiveStatement` (task ccd6e0f7). Once they are proved, applying
-this theorem to their proofs proves `LeviAdjointDeterminantReciprocityStatement`
-unconditionally.
+The three hypotheses are published proposition definitions, and the Library proves
+each of them: `RelativeRootReflectionExistenceStatement` as
+`relativeRootReflectionExistence` (`Rational.RootReflectionExistenceProof`),
+`CentralSplitTorusCharacterStatement` as `centralSplitTorusCharacter`
+(`Rational.CentralSplitTorusCharacterProof`) and
+`DynamicCentralizerReductiveStatement` as `dynamicCentralizerReductive`
+(`Dynamic.CentralizerReductiveProof`). Applying this theorem to their proofs proves
+`LeviAdjointDeterminantReciprocityStatement` unconditionally; this is
+`leviAdjointDeterminantReciprocity` in `Dynamic.LeviAdjointDeterminantReciprocityProof`.

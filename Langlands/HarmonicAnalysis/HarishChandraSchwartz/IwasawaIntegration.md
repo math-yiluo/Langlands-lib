@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.IwasawaIntegration`,
 namespace `Langlands.HarishChandraSchwartz`. It imports the published modules
-`Langlands.Analysis.Local.CompactFactorizationIntegral` (Worker 235: the theorem
+`Langlands.Analysis.Local.CompactFactorizationIntegral` (the theorem
 `CompactFactorization.lintegral_restrict_lintegral_mul`, integration over a factorization
 `G = ι(X) K`) and `Langlands.HarmonicAnalysis.HarishChandraSchwartz.ConstantTermBound`
 (through which it uses `conjUnipotent` of `ConstantTerm`, and `IsConjModulus` and

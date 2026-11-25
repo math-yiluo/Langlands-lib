@@ -1,6 +1,6 @@
 # Universal normalized tensor models and coefficient maps
 
-Worker 1585. This is a derived construction from
+This is a derived construction from
 `UnramifiedUniversalTwist`, `UnramifiedNormalizedModels`,
 `Induction.Definitions`, and `Jacquet.Localization`, motivated by
 Waldspurger 2003 I.5, printed p.245, and IV.1, printed p.277

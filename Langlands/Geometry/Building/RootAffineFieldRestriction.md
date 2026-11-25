@@ -58,9 +58,9 @@ The provenance is internal: the existing literal apartment restriction,
 its bijectivity and exact filtration preimages, actual relative-root base
 change and reduced root-form comparison, the definitions of affine root
 groups and extended roots, and the existing affine transport and sign
-relations. This unit does not assert equality of the complete extended
+relations. This module does not assert equality of the complete extended
 root arrangements. Ordinary affine roots involve the extra doubled-root
 product condition, and their preservation is not proved here. Initial
 apartment existence, a larger split torus, Galois fixed-locus geometry,
 building axioms, metric construction, and the supplied-model special point
-and unique fixation remain separate obligations.
+and unique fixation are not treated here.

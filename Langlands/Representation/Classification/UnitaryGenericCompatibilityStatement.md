@@ -1,12 +1,9 @@
 # Compatibility of unitary generic inducing parameters
 
-Worker 17 authored the Lean installment and this account. Workers 192 and 69
-contributed the original-source and convention audit incorporated below.
-Worker 1058 updated the proof status for the 2026-10-29 documentation audit;
-the Lean file is unchanged. These are nine proposition definitions, not proofs
+These are nine proposition definitions, not proofs
 or assumptions supplying classification results. Separate published proof
-modules prove three of the clauses by theorems of exactly those types, and a
-published construction supplies the content of a fourth; see
+modules prove four of the clauses by theorems of exactly those types, and a
+published construction supplies the content of a fifth; see
 [Proof status](#proof-status).
 
 `Langlands.Classification.UnitaryGenericCompatibilityStatement F T` conjoins
@@ -71,8 +68,8 @@ is asserted.
 ## Original-source map
 
 The following registered originals were read at the stated locations. The
-source hashes below were recomputed from the retained original PDFs. Workers
-69 and 192 supplied additional convention checks; Worker 69's visual reading
+source hashes below were recomputed from the retained original PDFs.
+Additional convention checks were made; a visual reading
 of Tadić's conjugation bars resolves the loss of those bars in text extraction.
 
 | Source | Locations and role |
@@ -147,10 +144,10 @@ constituting Lean proofs.
 Tadić p.339 records the use in the main proof of Theorem D of a then-unwritten
 general irreducibility property of the Zelevinsky involution and points to
 the characteristic-zero appendix route avoiding that assumption. Theorem D
-is classification context here; this installment proves neither that theorem
+is classification context here; this module proves neither that theorem
 nor its deep analytic and global inputs. Construction, exhaustion, strict
 exponent bounds, same-block multiplicity symmetry, and unordered uniqueness
-remain in the separate unitary generic classification installment. No
+belong to the separate unitary generic classification (`UnitaryGenericStatement`). No
 permutation invariance of arbitrary reducible induced representations is
 claimed here.
 
@@ -186,20 +183,19 @@ The six direct project imports were hash-matched to published Library commit
 | `Parabolic.NormalizedCompatibilityStatement` | `31896f590b2f394f7237e2296927410ded686ad3a2cc224d106095d0dc888f88` |
 | `Parabolic.NormalizedInductionStatement` | `15c31e074841a316baf63908f17f7c0417f32f1a9918443b09ec5a4db10b78b8` |
 
-The prepared environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-Lean 4.34.0 and Mathlib commit
+The check used Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Development check `ffeafce0-477d-40af-872d-5e2e0ee66589` completed the Lake
+A development check completed the Lake
 build with zero errors and warnings and inspected the all-fields aggregate as
 a definition with `statement_returns_prop: true`. Its inspected statement
 fingerprint is
 `c059e300f68eb80ad37c42cccd63fd79b98321f51947324b6140698687d6cc91`.
-This establishes elaboration and proposition shape, not proof acceptance or
-independent semantic acceptance.
+This establishes elaboration and proposition shape, not a proof or an
+independent semantic check.
 
 ## Proof status
 
-Three of the nine clauses are proved by published theorems whose types are
+Four of the nine clauses are proved by published theorems whose types are
 exactly those clauses, for every prime `p`, `F : PadicField.{uF} p` and
 `T : F.TopologicalData`, with independent universes `uF` and `uV` and no
 further hypotheses:
@@ -208,6 +204,9 @@ further hypotheses:
   `Langlands.Representation.Classification.UnitaryAdmissibleHermitianProof`,
   proves `UnitaryAdmissibleHermitianClause.{uF, uV} F T`. Like the clause, it
   requires neither irreducibility nor square-integrability.
+- `Langlands.Classification.unitaryBlockRealTwistHermitianClause`, in
+  `Langlands.Representation.Classification.UnitaryBlockRealTwistHermitianProof`,
+  proves `UnitaryBlockRealTwistHermitianClause.{uF, uV} F T`.
 - `Langlands.Classification.twistedProductOrdinaryDual`, in
   `Langlands.Representation.Classification.TwistedProductOrdinaryDualProof`,
   proves `TwistedProductOrdinaryDualClause.{uF, uV} F T`.
@@ -215,7 +214,7 @@ further hypotheses:
   `Langlands.Representation.Classification.TwistedProductCharacterTwistProof`,
   proves `TwistedProductCharacterTwistClause.{uF, uV} F T`.
 
-A fourth clause, `RealTwistOrdinaryDualClause`, has no separately named
+A fifth clause, `RealTwistOrdinaryDualClause`, has no separately named
 theorem of its type. Its mathematical content is nevertheless already
 implemented. The public definition
 `Langlands.Classification.segmentFactorSmoothDualEquiv`, in the same module
@@ -227,23 +226,16 @@ It does this for every rank `r`, every smooth block `A` and every real `s`, and
 the equivalence keeps every underlying functional. It assumes neither positive
 rank, admissibility, irreducibility nor unitarity, and its universes `uF` and
 `uV` are independent. Introducing the clause's variables and wrapping this
-equivalence in `Nonempty` gives the clause exactly. A private development check
-(`lean_check` diagnostic `125b5be2-bca6-4f9e-b740-226cc8b79f9b`) confirmed this
+equivalence in `Nonempty` gives the clause exactly. A development check
+confirmed this
 with zero errors and zero warnings. That check is not a published theorem. The
 proof of `twistedProductOrdinaryDual` uses the same equivalence for each block.
 
-For each of the remaining five clauses there is neither a published theorem of
+For each of the remaining four clauses there is neither a published theorem of
 that type nor a published declaration supplying its full content. Published
 results cover some components, as listed below. Combining them into the
 clauses would be new proof work; this account does not claim that work is done.
 
-- `UnitaryBlockRealTwistHermitianClause`. The proved
-  `unitaryAdmissibleHermitianClause` applies to a square-integrable block,
-  because `Langlands.PadicField.TopologicalData.IsSquareIntegrable.isAdmissible`
-  makes the block admissible. `segmentFactorSmoothDualEquiv` identifies the
-  smooth dual of `ν^s δ` with a twist of that of `δ`. No published declaration composes them
-  into the required conjugate-linear equivalence with source action
-  `ν^(-s) δ`.
 - `UnitaryBlockOrdinaryDualClause`. For irreducible admissible
   representations, irreducibility of the smooth contragredient is published as
   `Langlands.CompactSplitting.isIrreducible_smoothContragredient`, assuming
@@ -280,8 +272,7 @@ clauses would be new proof work; this account does not claim that work is done.
   abbreviation for `HasScalarCharacter` at the scalar matrices. Taking
   `χ.toMonoidHom` and the representation of `π` gives the clause's first
   conjunct, `ω * χ.toMonoidHom ^ n`, exactly. That conjunct needs no
-  admissibility, unitarity or irreducibility. A private development check
-  (`lean_check` diagnostic `ee67e681-1923-4dcc-ae81-8fbc7856dc97`) confirmed
+  admissibility, unitarity or irreducibility. A development check confirmed
   this instantiation with zero errors; that check is not a published theorem.
   `Langlands.Classification.hasScalarCharacter_twist` gives the same
   character in the form
@@ -300,6 +291,6 @@ clauses would be new proof work; this account does not claim that work is done.
   `Langlands.CentralCharacterContragredientStatement`, for central characters
   with open kernel. So the whole clause is not supplied.
 
-Because no published declaration supplies these five clauses, none proves
+Because no published declaration supplies these four clauses, none proves
 `UnitaryGenericCompatibilityStatement F T` or
 `AllPadicUnitaryGenericCompatibilityStatement`.

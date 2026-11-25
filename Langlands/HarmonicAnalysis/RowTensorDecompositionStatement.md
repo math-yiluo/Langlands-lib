@@ -24,8 +24,7 @@ space has one point and the empty product is `1`; the explicit coefficient
 allows any value of `f` at that point, even when `X` is empty. The finite sum
 may also be empty (`N = 0`).
 
-This is an internal derived prerequisite for the row Fourier argument, authored
-by Worker 128 from the task specification supplied by Worker 110. It is not a
+This is an internal derived prerequisite for the row Fourier argument. It is not a
 transcription of an external theorem. Its intended use is to reduce statements
 about row test functions to one-coordinate products by linearity and finite
 product integration.

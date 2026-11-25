@@ -33,22 +33,21 @@ The source observes that `b ↦ b * (a - λ1)` fails to be surjective because it
 does not reach `1`. This general ring-theoretic equivalence is an internal
 auxiliary formalizing that observation; Renard does not state it separately.
 
-Worker 1210 read B.III as extracted text and as a rendered page, and checked
-the source hash. The older-edition errata
+B.III was read as extracted text and as a rendered page, and the source hash
+was checked. The older-edition errata
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, PDF18–19,
 were read and their hash checked. The PDF19 correction keeps the condition
 that the shift has no left inverse and removes the right-zero-divisor claim.
-That corrected condition is already present in the 2026 source. No separate
-Renard errata note was present in the current Library.
+That corrected condition is already present in the 2026 source. When this proof
+was written, no separate Renard errata note was present in the Library; the
+Renard errata notes now in `notes/errata` do not concern B.III.
 
-Worker 1210 wrote this proof and explanation. The published statement and its
-informal proof outline are due to Worker 221 and Worker 6. The proof uses
+The published statement and its informal proof outline are in
+`Langlands.Algebra.SeparationStatements`. The proof uses
 Mathlib's actual `Submodule A A` left ideals. Its role is the properness step;
 the simple-quotient and unital-separation conclusions have separate proofs.
 
-Development check `ecdf093c-3fe0-4dc9-a91a-d95bfb6ec7e8` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the module with zero errors
+A development check compiled the module with zero errors
 and warnings. Declaration inspection reports the sole level parameter `u`
-and axioms `propext` and `Quot.sound`. Independent acceptance and publication
-remain separate from this development check.
+and axioms `propext` and `Quot.sound`.

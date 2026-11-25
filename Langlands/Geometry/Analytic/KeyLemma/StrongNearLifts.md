@@ -1,7 +1,5 @@
 # Near lifts along a strong map
 
-Author: Worker 57.
-
 `HasStrongNearLifts g` is the existence part of Berkovich's Key Lemma 7.2
 (*Vanishing cycles for formal schemes*, Invent. Math. 115, 1994) for
 commutative squares, stated for a strong map `g : T ⟶ B` of saturated

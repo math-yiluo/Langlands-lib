@@ -23,4 +23,5 @@ and the enveloping algebra give stability under every differential
 operator. The resulting subrepresentation is stable under the entire
 concrete operator algebra. The argument takes compact differentiation
 against linear functionals on the chosen carrier and applies to the
-quotient carriers used in the constant-term argument of Task 6823.
+quotient carriers used in the constant-term argument for
+`CuspidalSupportExistenceStatement`.

@@ -1,9 +1,8 @@
 # Tempered block factorization of whole-Levi representations
 
-Author: Worker 219. The target, its exact input predicate and its dependency
-boundary were specified by task `45fb735a-dbfb-4b2f-9fea-5a2402894488` for the
-whole-Levi recovery proof task `707cfa4e-a9aa-4748-8f7a-0074d8ee5a3d`
-(Worker 545).
+The target, its exact input predicate and its dependency boundary are those
+needed by the proof of the whole-Levi recovery statement
+`Langlands.GLWholeLeviLanglandsRecoveryStatement`.
 
 `Langlands.GLWholeLeviTemperedFactorizationStatement.{uF,uV}` is a closed
 proposition definition. It is a derived theorem target. This pair does not
@@ -144,13 +143,13 @@ step 3 to the irreducible admissible factors. This route uses no parameter
 uniqueness, Langlands recovery, tempered classification or semistandard
 conjugacy.
 
-## The open analytic input
+## The analytic input
 
-Steps 1 and 2 are closed published theorems. Step 3 is only a published
-proposition: its exact proof task `ef5468e7-d124-4931-b938-d4757c2188c8`
-(Worker 403) had not been completed when this pair was written. Only its
+Steps 1 and 2 are closed published theorems. Step 3 is a published
+proposition, proved by `Langlands.glBlockTensorTempered` in
+`Representation.Classification.BlockTensorTemperedProof`. Only its
 reverse direction, from temperedness of the tensor to temperedness of each
-factor, is needed here. That direction still requires, among the obligations
+factor, is needed here. That direction requires, among the obligations
 listed in `BlockTensorAnalyticStatement.md`, the identification of the Levi
 center and its central quotient with the products of the factor centers and
 quotients, restriction of the tensor's unitary central character to each
@@ -161,11 +160,11 @@ must use a proved and published closing theorem of
 `GLBlockTensorTemperedStatement` (or prove that analytic content itself); it
 must not take that proposition, or the present one, as a hypothesis.
 
-The implementer checked privately, outside this submission, that the route
+It was checked, outside this file, that the route
 above type-checks as a conditional reduction from `GLBlockTensorTemperedStatement.{uF,uV}`
 to this proposition, in the same universes, using only the three published
-interfaces above. That reduction is not part of this pair, is not a proof of
-the target, and confers no evidence about the open analytic input.
+interfaces above. That reduction is not part of this pair and is not a proof of
+the target.
 
 ## Dependencies
 
@@ -175,9 +174,9 @@ The imports are `Representation.Classification.RelativeRegularComparisonStatemen
 (`BlockShape.blockTensor` and, transitively, `SmoothRep`). No imported file is
 changed. Neither this file nor its import closure depends on
 `SemistandardLanglandsStatement` or on any downstream recovery or
-classification conclusion. The environment is Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`, environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Compilation and declaration inspection
-show only that this is a well-formed closed proposition with level parameters
-`uF` and `uV`; independent semantic review and publication are required, and
-a separate proof of this exact target is a later task.
+classification conclusion. The environment in which it was checked is Lean
+4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. Compilation
+and declaration inspection show only that this is a well-formed closed
+proposition with level parameters `uF` and `uV`. The proof of this exact target
+is `Langlands.glWholeLeviTemperedFactorization` in
+`Representation.Classification.WholeLeviTemperedFactorizationProof`.

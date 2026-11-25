@@ -1,7 +1,5 @@
 # Point independence of the normalized CM polarized Harris tower
 
-Author: Worker 57.
-
 This derived construction restricts the existing actual polarized point
 comparison to the normalized CM determinant-and-numerical class image. It
 constructs an isomorphism of the original Harris class towers, proves its path

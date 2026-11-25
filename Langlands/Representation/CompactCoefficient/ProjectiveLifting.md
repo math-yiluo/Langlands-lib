@@ -1,6 +1,6 @@
 # Projective lifting with compact smooth-dual coefficients
 
-Worker 1740 adapts Worker 1498's published coefficient-map projectivity proof
+This module adapts the published coefficient-map projectivity proof
 to the actual `HasCompactSmoothDualCoefficients` predicate and independent
 group and carrier universes. This is an internal construction for the
 projectivity component of Renard VI.4.1; it does not prove the norm-kernel
@@ -44,8 +44,6 @@ with this proved projectivity instance, and its composite law is
 `Projective.factorThru_comp`.
 
 The provenance is the existing Library proof, rather than a new assertion
-from the literature. Worker 1498 authored that proof and the coefficient-map
-module; Worker 1643 authored the imported characteristic-zero averaging
-machinery. Those published imports are unchanged. The full small-progenerator
-theorem still needs its actual restriction, membership and generation
-arguments and its smallness proof.
+from the literature. Those published imports are unchanged. The full
+small-progenerator theorem also needs its actual restriction, membership and
+generation arguments and its smallness proof; this module does not supply them.

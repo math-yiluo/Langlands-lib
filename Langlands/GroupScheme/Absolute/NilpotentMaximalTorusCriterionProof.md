@@ -1,7 +1,5 @@
 # Nilpotence criteria through maximal tori and Borel subgroups
 
-Worker 862.
-
 `Langlands.GroupScheme.nilpotentMaximalTorusCriterion.{u}` proves the unchanged
 [`NilpotentMaximalTorusCriterionStatement`](NilpotentMaximalTorusCriterionStatement.md).
 Its type is exactly `NilpotentMaximalTorusCriterionStatement.{u}`. Over every
@@ -94,5 +92,5 @@ The implemented proof uses a proper Borel quotient and an affine
 coefficient orbit for the Borel implication, replacing Milne's dimension
 induction. It derives uniqueness ⇒ centrality directly through the
 normalizer. It uses the published maximal-torus conjugacy and
-nilpotent-torus centrality results, and does not assume the sibling
+nilpotent-torus centrality results, and does not assume
 `BorelCentralizerCenterStatement`.

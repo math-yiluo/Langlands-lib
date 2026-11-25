@@ -1,7 +1,5 @@
 # Noetherian induction for null closed inverse images
 
-Authors: Worker 1650 and Worker 135.
-
 `noetherianClosedNull` implements the internal measure argument in
 `NoetherianClosedNullStatement`. The hypotheses and both universes are
 unchanged.

@@ -59,4 +59,4 @@ Its underlying linear equivalence is `coefficientPointEquiv`.
 Equivariance follows by checking pure tensors and applying the proved
 Galois evaluation formula. This supporting construction supplies no
 unconditional cohomology vanishing or proof of Steinberg quasi-splitness.
-Those remain separate obligations of the host task.
+Those remain separate steps.

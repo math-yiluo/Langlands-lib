@@ -1,7 +1,5 @@
 # The standard symplectic group scheme over a field
 
-Author: Worker 118.
-
 `Langlands.GroupScheme.Symplectic.groupScheme K n` is the actual affine group
 scheme of isometries of the standard alternating form on a vector space of
 dimension `2n`, for every field `K : Type u` and every natural number `n`.

@@ -1,6 +1,7 @@
 # Retaining nonzero local components after tensor separation
 
-This internal construction for Task 7294 preserves a nonzero local
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` preserves a nonzero local
 component when another tensor factor is removed. It works with any
 complex-linear tensor equivalence `e : A ⊗ B ≃ W`. It assumes that the
 compact and Lie actions being retained act on the second tensor factor

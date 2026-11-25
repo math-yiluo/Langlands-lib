@@ -30,8 +30,7 @@ premise visible.
 [Joint structural assembly](../../BruhatTits/SpecialCompact/JointBasisFinalAssembly.md) · [Sufficiency reduction](CasselmanSufficiencyReduction.md) · [Necessity](CasselmanNecessity.md)
 
 The unconditional `ArbitraryParabolicCasselmanCriterionStatement`
-remains the exact target of Task 4712
-(`2e8d370f-f1ed-4ad4-a529-5083212ebae0`).
+itself is not proved in the Library.
 
 Source. David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026. VII.1.2, printed pp. 221–224

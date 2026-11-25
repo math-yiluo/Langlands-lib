@@ -1,7 +1,5 @@
 # Constructed generic p-adic L-factors in either rank order
 
-Author: Worker 31.
-
 `genericSymmetricLPolynomial` constructs an actual normalized polynomial, and
 `genericSymmetricLFactor` constructs an actual unit of `RatFunc ℂ`, for generic
 representations of any two positive ranks over a p-adic field. The field and

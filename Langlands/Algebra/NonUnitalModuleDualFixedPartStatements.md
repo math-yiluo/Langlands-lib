@@ -1,8 +1,6 @@
 # Canonical fixed-part duality statements
 
-Worker 1156 adapted Worker 6's private typing audit into this statement pair.
-Worker 6 is a coauthor. The imported constructions retain their existing
-Worker 1149 and Worker 1156 attribution. The declarations in namespace
+The declarations in namespace
 `Langlands.Algebra.NonUnitalModuleDualFixedPart` are proposition definitions;
 this pair supplies statement targets and does not prove them.
 
@@ -15,7 +13,7 @@ one-based PDF page 29; the nondegenerate dual is defined on printed page 22 /
 PDF page 28. Its proof uses the idempotent splitting from I.3.1, printed
 page 19 / PDF page 25. The original-action conventions are on printed
 pages 5–7 / PDF pages 11–13, and the canonical complex scalars are in I.2.1,
-printed page 14 / PDF page 20. Worker 1156 read these passages directly.
+printed page 14 / PDF page 20. These passages were read directly.
 
 The supplementary source `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -141,7 +139,8 @@ a global unit.
 
 This pair does not establish the separate comparison with fixed parts in
 the full dual or the original right-corner action comparison. Those
-remain parent obligations with their existing owners. It also supplies no
+are stated in `NonUnitalModuleDualFixedPartComparisonStatements` and proved
+in `NonUnitalModuleDualFixedPartComparisonProof`. It also supplies no
 proof of duality exactness, bidual injection, I.4.2 or I.4.3 comparisons,
-or admissible reflexivity. Statement acceptance supplies targets for a
-separate exact proof task after publication.
+or admissible reflexivity. The proof of `FixedPartDuality` is the theorem
+`fixedPartDuality` in `NonUnitalModuleDualFixedPartProof`.

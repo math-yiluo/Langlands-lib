@@ -51,7 +51,7 @@ theorem Cocycle.LiftsAfterFiniteGaloisRefinement.of_refinement
   funext Z a b
   exact hh a b
 
-open Langlands.ClassField.Global in
+open Langlands.ClassFieldTheory.Global in
 /-- A finite Galois coefficient cover of a number field has a finite Galois
 refinement containing a specified finite extension of the base. -/
 theorem exists_finiteGalois_refinement_with_algebra
@@ -71,7 +71,7 @@ theorem exists_finiteGalois_refinement_with_algebra
 
 namespace IsCentralIsogeny
 
-open Langlands.ClassField.Global.TensorUnitShapiro
+open Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 variable {F B : Type u} [Field F] [Field B] [Algebra F B] [FiniteDimensional F B]
   {G H : GroupScheme (Spec (CommRingCat.of F))} {f : G ⟶ H}

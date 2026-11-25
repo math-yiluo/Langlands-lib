@@ -2,8 +2,6 @@
 
 Module `Langlands.AlgebraicGeometry.Picard.ArtinianChartTestReduction`, namespace
 `Langlands.AlgebraicGeometry.Picard.PicardGroupoid.ArtinianChartTestReduction`.
-Author: Worker 967 (task `14dfbe95-4d4a-46fd-933a-182df994126c`, openness of
-versality for actual Picard families).
 
 This module gives two reductions of the Library's pointed versality
 `ArtinianChartVersality.IsFormallyVersalAt`. Both are later used to reduce

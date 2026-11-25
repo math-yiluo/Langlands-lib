@@ -31,5 +31,5 @@ reduction are discharged, and the conclusion is the original proposition
 with no additional hypotheses. The imported statement and its dependencies
 are unchanged. The statement's source is Conrad's *Reductive group schemes*
 (2014), Proposition 5.3.4; its paired Markdown records the source and encoding.
-Worker 715 assembled this final proof from the torus and parabolic support
-developed with Worker 680.
+This final proof is assembled from the torus and parabolic support results
+of the reduction.

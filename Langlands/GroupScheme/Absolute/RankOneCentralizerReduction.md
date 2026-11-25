@@ -1,6 +1,6 @@
 # The exact centralizer-intersection reduction for opposite Lie weights
 
-Worker 1453. This internal contribution assembles published lattice and actual
+This internal module assembles published lattice and actual
 Lie-image interfaces into a conditional Borel case of the rank-one solvable
 obstruction. It does not prove `RankOneSolvableObstructionStatement`.
 
@@ -37,7 +37,7 @@ that the ambient roots are pairwise dependent. It assumes
 `HasBorelCentralizerIntersections j b`, together with the same connected
 reductive group, split maximal torus, Borel embedding, and specified torus
 factorization. Its conclusion is again the exact exclusion for every actual
-root. None of the three geometric inputs is proved by this contribution.
+root. None of the three geometric inputs is proved by this module.
 
 For a chosen root `α`, the proof uses the published
 `RootReducedness.exists_cocharacter_pairing_eq_zero` with the finite actual

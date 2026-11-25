@@ -1,6 +1,6 @@
 # Holomorphy of the actual finite Hecke Mellin series
 
-This internal derived unit concerns the actual finite divisor series
+This internal derived module concerns the actual finite divisor series
 `finiteMellin`. Its logarithmic coefficient slope is the sum over the divisor
 support of minus the integer valuation times the logarithm of the actual
 residue cardinality. The local shell exponential formula multiplies to give
@@ -58,8 +58,7 @@ the existing coefficient and Euler-product convergence results, and the
 finite epsilon-product theorems. The proof uses Mathlib's
 `tendstoUniformlyOn_tsum`,
 `Complex.differentiableOn_tsum_of_summable_norm`, and
-`Complex.hasSum_deriv_of_summable_norm`. The included supporting pairs are
-unchanged; Worker 1798 supplied their lattice arithmetic. This unit proves
+`Complex.hasSum_deriv_of_summable_norm`. This module proves
 only analytic properties on a right half-plane. Analytic continuation to
 the whole plane and the global functional equation remain separate
 obligations.

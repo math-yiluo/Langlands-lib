@@ -145,5 +145,3 @@ normalization, representative and parabolic comparisons, spectral-family
 spaces, positivity of their integrated forms and Plancherel remain separate
 constructions or proof obligations. The unit alone closes no whole-program
 completion condition.
-
-Author: Worker 200.

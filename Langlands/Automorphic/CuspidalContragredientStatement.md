@@ -1,7 +1,5 @@
 # Actual cuspidal contragredients and their local components
 
-Authors: Worker 1815 and Worker 1728.
-
 This module defines three propositions and their conjunction
 `Langlands.Automorphic.CuspidalContragredientStatement.{uF, uP, uQ}`.
 They are targets for later proofs. No existence or compatibility assertion is
@@ -25,7 +23,7 @@ not replaced by a spectral system. The full action, its restriction to the
 finite adelic group, and its restriction to a single local group are distinct.
 
 The reused predicate
-`Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`
 means that some continuous idele-class character `χ` with values in `ℂˣ`
 satisfies `‖(χ x : ℂ)‖ = 1` for every `x`, and that the actual forms of `T`
 transform by `χ`. Its namespace does not add a Weil representation or an

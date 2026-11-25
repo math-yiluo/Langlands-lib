@@ -15,9 +15,8 @@ for all `f ∈ I(s,π)`, where `π = π₁ ⊗ π₂` and `π' = π₂ ⊗ π₁
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-The author is Worker 11.
 
-The unit specializes the published function-level relation
+The module specializes the published function-level relation
 `IsLocalCoefficient` of `Langlands.Representation.Shahidi.LocalCoefficient`.
 There, `f` is an arbitrary function with values in a space `V`, and two
 arbitrary functionals `ℓ` and `ℓ'` stand in for `λ₁ ⊗ λ₂` and `λ₂ ⊗ λ₁`.
@@ -205,10 +204,11 @@ published `isModulusScaling_padic` supplies `hμ`.
 
 ## What is not claimed
 
-This unit does not claim the following:
+This module does not claim the following:
 
 - that a local coefficient exists, for any `π₁` and `π₂`. Existence is a
-  separate obligation of the parent task;
+  separate statement, `ShahidiLocalCoefficientExistenceStatement` in
+  `JacquetStatements`;
 - that the intertwining or Jacquet integrals converge or stabilize on
   `I(s, π₁ ⊗ π₂)`, or that the Jacquet functional is nonzero there;
 - multiplicity one of Whittaker functionals;

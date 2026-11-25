@@ -1,6 +1,6 @@
 # Well-definedness of the cuspidal support
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviCuspidalSupportAssociationStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviCuspidalSupportAssociationStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviCuspidalSupportAssociationStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviCuspidalSupportAssociationStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.7.1, Lemma, printed p.180 / PDF p.186, with its proof on the same page. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation, the Lemma says: let `P_i = M_i N_i`, `i = 1, 2`, be parabolic subgroups of `G`, `(M_i, (ρ_i, W_i))` cuspidal data and `(π, V)` an irreducible smooth representation of `G` such that `(ρ_i, W_i)` is a composition factor of `r_{P_i}^G(π, V)`. Then the cuspidal data `(M_1, (ρ_1, W_1))` and `(M_2, (ρ_2, W_2))` are associated. The source uses the Lemma to define the cuspidal support map `Sc : Irr(G) → Ω(G)`.
 

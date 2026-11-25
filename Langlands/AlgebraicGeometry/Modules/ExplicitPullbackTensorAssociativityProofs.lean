@@ -12,7 +12,6 @@ namespace Langlands.Scheme.Modules
 
 set_option backward.isDefEq.respectTransparency false
 
--- Adapted from Worker 339's private adjoint_tensor calculation.
 private lemma adjoint_tensor {X Y : Scheme.{u}} (f : X ⟶ Y)
     {M N : Y.Modules} {P Q : X.Modules}
     (a : (Scheme.Modules.pullback f).obj M ⟶ P)

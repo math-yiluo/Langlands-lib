@@ -1,7 +1,5 @@
 # Flatness and fixed-space finiteness of actual universal normalized induction
 
-Workers 1754 and 1582.
-
 `universalInducedCoefficientFiniteness.{u, uV}` proves exactly the published
 proposition `UniversalInducedCoefficientFinitenessStatement.{u, uV}` from
 [`UnramifiedRationalNormalizedInducedFiniteness`](UnramifiedRationalNormalizedInducedFiniteness.md).

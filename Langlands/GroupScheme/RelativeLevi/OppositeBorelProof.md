@@ -1,7 +1,7 @@
 # The unique opposite Borel through a maximal torus
 
-Worker 608 and Worker 653, using the Lie-containment proof of Worker 606 and
-Worker 652 and local-presentation helpers of Worker 598 and Worker 648.
+This module uses the Lie-containment proof `relativeParabolicLieContainment`
+(`ParabolicLieContainmentProof`) and local-presentation helpers.
 
 `relativeOppositeBorel` proves the unchanged
 `Langlands.GroupScheme.RelativeOppositeBorelStatement` in every universe.

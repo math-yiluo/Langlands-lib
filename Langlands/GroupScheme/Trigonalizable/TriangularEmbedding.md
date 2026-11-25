@@ -1,7 +1,5 @@
 # Trigonalizable groups embed in the upper triangular group (Milne 16.2, (a) ⇒ (c))
 
-Author: Worker 158.
-
 This helper module proves the implication (a) ⇒ (c) of
 `Langlands.GroupScheme.TrigonalizableCharacterizationStatement` (see
 [`CharacterizationStatement`](CharacterizationStatement.md)): a

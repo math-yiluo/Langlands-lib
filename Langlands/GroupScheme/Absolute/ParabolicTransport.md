@@ -1,6 +1,6 @@
 # Parabolic subgroup presentations and base change of ranges
 
-Worker 1270. This is an internal categorical prerequisite for the exact
+This is an internal categorical prerequisite for the exact
 `Langlands.GroupScheme.ParabolicDynamicStatement` in `Absolute.BorelStatement`.
 It does not prove that a dynamic subgroup is parabolic or that a parabolic
 subgroup admits a cocharacter over its field of definition.
@@ -42,5 +42,5 @@ Theorem 17.16, printed p.356 (PDF p.372), source
 explained in the published `Absolute.Borel` Markdown. These transport results
 are derived from that predicate and the Library's categorical representation
 interfaces; they are not independent structure theorems from Milne. The
-implemented proof does not assume any of the unproved Borel, maximal-torus,
+implemented proof does not assume any of the Borel, maximal-torus,
 regular-cocharacter, or parabolic-dynamic statements.

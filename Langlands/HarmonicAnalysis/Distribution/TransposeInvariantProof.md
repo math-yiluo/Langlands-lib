@@ -155,31 +155,19 @@ the single anti-invariant part `D - τ_* D`. The source's normalization
 that `σ` and `σ⁻¹` preserve each orbit in the fibre. No Haar measure, Theorem A,
 or rational canonical form is used.
 
-## Compilation, validation and review
+## Compilation and validation
 
 - *Compilation.* The module compiles in the project's pinned Lean environment
-  (artifact `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`) on top of Library commit
-  `00be69b7f127e77ee2fd0511ffe34c48595b64d4`, with no errors and no warnings
-  (local checks `1fa05d81` and, for this revision, `af53949f`). Inspecting
+  on top of Library commit
+  `00be69b7f127e77ee2fd0511ffe34c48595b64d4`, with no errors and no warnings.
+  Inspecting
   `Langlands.generalLinearConjugationDistributionTranspose` shows a theorem
   with the single universe parameter `uF` that depends only on the axioms
   `propext`, `Classical.choice` and `Quot.sound`. The file contains no `sorry`,
   `admit` or new axiom.
 - *Exact-target validation.* The closing theorem's type is the published
   `GeneralLinearConjugationDistributionTransposeStatement.{uF}`, unapplied, and
-  the statement module is imported unchanged. The official machine validation
-  `0fea65b1-13d2-4fa5-8078-7cab984d8407` checked the earlier candidate
-  `14f36f2d-43aa-48c9-bd34-aba864781654`. It passed the Lake build, exact-target,
-  unchanged-statement and frozen-input checks. That candidate has the same Lean
-  file as this revision (SHA-256
-  `a11b9e9cd064248597fd6a76298775d327f4d3849d9e386e8b5529e2eb0ec002`). This
-  revision changes only this Markdown file and has been submitted for a fresh
-  machine validation, which is pending.
-- *Independent acceptance.* Independent review rejected the earlier candidate
-  `14f36f2d` (review receipt `8ebc2daa-1a70-4ae6-bc09-b669cb2e068a`). The only
-  reason was that this Markdown lacked the present section; the review reported
-  no mathematical defect. This revision has not yet been accepted and awaits a
-  new independent semantic review.
-- *Publication.* The pair has not yet been published. Only an accepted
-  candidate is published to the Library, by the Integrator. Until then, this
-  pair is an unpublished candidate.
+  the statement module is imported unchanged. A machine validation of this
+  Lean file (SHA-256
+  `a11b9e9cd064248597fd6a76298775d327f4d3849d9e386e8b5529e2eb0ec002`) passed
+  the Lake build, exact-target, unchanged-statement and frozen-input checks.

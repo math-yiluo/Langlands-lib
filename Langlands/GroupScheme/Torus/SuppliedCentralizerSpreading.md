@@ -1,7 +1,5 @@
 # Spreading self-centralization using a supplied closed centralizer
 
-Author: Worker 606.
-
 `Langlands.GroupScheme.selfCentralizingTorusOpen.{u}` constructs an open
 neighbourhood where an actual closed relative torus is self-centralizing and
 maximal on every residue fibre. The base `S : Scheme.{u}` is arbitrary. The

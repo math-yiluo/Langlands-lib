@@ -1,7 +1,5 @@
 # Closed immersions from isotrivial groups of multiplicative type over local bases
 
-Author: Worker 741.
-
 This internal helper module proves the closed-immersion clause (3) of
 [`MultiplicativeTypeCompleteLocalLiftStatement`](MultiplicativeTypeCompleteLocalLiftStatement.md)
 (Conrad, *Reductive group schemes*, Corollary B.3.5, p.292). It proves the clause in more

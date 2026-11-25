@@ -84,8 +84,7 @@ clause of `IsQuasiIso`.
 The proof is the Library's own argument; the statement's provenance
 (Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993),
 Definition 1.2.9 and §1.4, registered `berkovich-1993-etale-cohomology`) is
-recorded in the statement's Markdown. The proof was drafted by Worker 3519
-(shared draft revision 1 of Task 8237) and is submitted unchanged in Lean.
+recorded in the statement's Markdown.
 
 This proves preservation of full strong quasi-isomorphisms by the actual
 ground field extension of compatible strong maps. The resulting functor on the

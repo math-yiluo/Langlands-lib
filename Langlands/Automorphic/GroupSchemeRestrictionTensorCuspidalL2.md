@@ -1,7 +1,5 @@
 # Tensor-smooth cusp forms in `L²` of the restriction split-centre quotient
 
-Author: Worker 112.
-
 Getz--Hahn (`getz-hahn-2024-automorphic-representations`) define
 `[G] = A_G G(F) \ G(A_F)` in (2.20)--(2.21), printed pp. 68--69. Their
 (6.1), printed p. 158, builds smooth functions from the algebraic tensor

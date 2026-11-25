@@ -19,15 +19,15 @@ The original source for the Galois case is Jean-Pierre Serre,
 *Local Fields*, English translation by Marvin Jay Greenberg, GTM 67,
 Springer, 1979, Chapter X, section 1, Proposition 2, printed page 150
 (PDF page 156). The source proves that every multiplicative cocycle is a
-coboundary by the linear independence of field automorphisms. Worker 80
-read that original passage.
+coboundary by the linear independence of field automorphisms. That
+original passage was read.
 
 The extension to finite, possibly non-Galois field extensions is a derived
 formulation. The same proof uses only the finite group of distinct
 automorphisms. The pinned Mathlib theorem
 `groupCohomology.isMulCoboundary₁_of_isMulCocycle₁_of_aut_to_units`
 already proves this elementary version for independent field universes.
-The later proof of this target must connect that cocycle result to the
+A proof of this target must connect that cocycle result to the
 published lifted-scalar representation and its actual cohomology.
 Mathlib's separate bundled `H1ofAutOnUnitsUnique` has carriers in
 `Type 0` and does not by itself prove this target.

@@ -1,14 +1,14 @@
 # Split unipotence for split torus actions without zero Lie weights
 
-Authors: Worker 1389 wrote this file (the assembly and the two transport lemmas below) and
-the Hopf-level core `Langlands.Algebra.GradedHopf.*`. The proof also uses:
+This file holds the assembly and the two transport lemmas below. The proof uses the Hopf-level
+core `Langlands.Algebra.GradedHopf.*` and also:
 
-- Worker 1419's `𝔾ₐ`-quotient step (`Langlands.GroupScheme.HopfPrimitiveQuotient`) and
+- the `𝔾ₐ`-quotient step (`Langlands.GroupScheme.HopfPrimitiveQuotient`) and
   unitriangular matrix coefficients (`Langlands.Algebra.GradedHopf.UnipotentFlag`);
-- Worker 1324's grading from the torus action
+- the grading from the torus action
   (`Langlands.GroupScheme.Rational.TorusHopfGradingAdapter`). That grading is built on the
-  coordinate infrastructure `Rational/TorusUnipotence/*` of Workers 1285, 1388 and 1398, and on
-  Worker 1285's `Rational/HopfCoordinateComparison`.
+  coordinate infrastructure `Rational/TorusUnipotence/*` and on
+  `Rational/HopfCoordinateComparison`.
 
 This file proves `TorusActionSplitUnipotenceStatement.{u}`
 (`Langlands/GroupScheme/Rational/TorusUnipotenceStatement.lean`), the splitness part of CGP
@@ -44,7 +44,7 @@ The `IsAffineHom H.X.hom` hypothesis gives `IsAffine H.X.left` (`isAffine_of_isA
 That is what the Library's coordinate Hopf algebra `A = AffineCoordinates.hopfAlgebra H`
 needs. Let `e = AffineCoordinates.hopfSpecIso H : hopfSpec A ≅ H`.
 
-1. Worker 1324's `TorusGradedHopf.exists_graded_of_noZeroWeight` turns `hSmooth`, the split
+1. `TorusGradedHopf.exists_graded_of_noZeroWeight` turns `hSmooth`, the split
    torus, the action `b` and `actionWeightSpace b 0 = ⊥` into the following data. There is a
    `ℤ`-grading `𝒜` of `A` (a `GradedAlgebra 𝒜`) compatible with the bialgebra structure
    (`IsGradedBialgebra 𝒜`: the comultiplication maps degree `n` into total degree `n` of
@@ -54,7 +54,7 @@ needs. Let `e = AffineCoordinates.hopfSpecIso H : hopfSpec A ≅ H`.
    `hopfSpec A`. The Library's `IsUnipotent.of_iso e` gives its unipotence.
    `smooth_hopfSpec_iff` (from `GradedHopf.SplitUnipotent`) makes `A` a smooth `k`-algebra, so
    `A` is of finite type over `k`.
-3. Worker 1419's `exists_unitriangular_of_isUnipotent` applies to `A`, `𝒜` and the unipotence
+3. `exists_unitriangular_of_isUnipotent` applies to `A`, `𝒜` and the unipotence
    of `hopfSpec A`. It gives `G : GradedMatrixCoefficients 𝒜` with `G.M i i = 1` for all `i` and
    `G.M i j = 0` for `j < i`. These are homogeneous generators of `A` arranged in a
    multiplicative, upper unitriangular matrix.

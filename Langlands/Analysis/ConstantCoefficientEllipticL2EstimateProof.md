@@ -4,8 +4,7 @@
 published `ConstantCoefficientEllipticL2EstimateStatement d r` for every
 dimension and order. It imports the unchanged statement and uses the
 actual Euclidean space, standard basis, canonical volume and extended
-L² norms. Worker 94 authored this proof; Worker 383 recompiled it
-against the published imports and submitted it.
+L² norms.
 
 The Fourier helpers are shared with the interpolation proof through
 [`OrderedTensorFourier`](OrderedTensorFourier.md), in the namespace

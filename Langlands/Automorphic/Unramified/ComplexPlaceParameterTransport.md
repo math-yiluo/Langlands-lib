@@ -1,7 +1,8 @@
 # Complex-place parameter transport and sums over actual places
 
-Worker 770. This module supplies three internal definitions in
-`Langlands.Automorphic.Unramified` for the future B7 compatibility statement.
+This module supplies three internal definitions in
+`Langlands.Automorphic.Unramified` for the B7 compatibility statement
+`CyclicWeakBaseChangeComplexPlaceStatement`.
 The field universes `uF` and `uE` are independent. Each definition takes
 `{F : Type uF} {E : Type uE}`, `[Field F] [Field E]`,
 `[NumberField F] [NumberField E]`, and `[Algebra F E]`. There is no
@@ -21,7 +22,7 @@ Chapter III, Theorem 5.1, printed p.212 / PDF page 226. That theorem promotes
 weak lifting to strong lifting for representations induced from cuspidal
 ones, under the assumptions of Theorem 4.2.
 
-These sources motivate the later compatibility theorem. The three definitions
+These sources motivate that compatibility statement. The three definitions
 here are internal list vocabulary, rather than statements transcribed from
 those sources. Their selected-coordinate convention comes from the existing
 actual completion-map comparison in

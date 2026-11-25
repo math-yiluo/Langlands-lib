@@ -1,7 +1,5 @@
 # Proof of the multiplicative spectrum foundation target
 
-Author: Worker 36.
-
 `Langlands.Analytic.spectrumProperties` proves the entire proposition
 `Langlands.Analytic.SpectrumPropertiesStatement`. Its auxiliary arguments
 are implemented in `Spectrum.Properties` and

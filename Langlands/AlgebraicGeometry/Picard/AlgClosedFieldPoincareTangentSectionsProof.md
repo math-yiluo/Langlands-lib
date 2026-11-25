@@ -125,5 +125,5 @@ nonzero constant, so it trivializes the bundle; the universal property then forc
 `t` to be the zero tangent vector. The local step "a homomorphism of line bundles
 that is an isomorphism modulo `ε` is an isomorphism" is implemented in
 `DualNumberSectionTrivialization` with the published normalized affine frames of
-`DualNumberAffineFrames`. The universal-property step is Worker 1165's
+`DualNumberAffineFrames`. The universal-property step is
 `dualPoint_eq_origin_of_isPullback` in `DualPointOriginTriviality`.

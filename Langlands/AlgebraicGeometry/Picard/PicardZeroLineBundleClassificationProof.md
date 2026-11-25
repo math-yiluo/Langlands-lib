@@ -37,6 +37,4 @@ steps.
 The source is Edixhoven, van der Geer and Moonen, *Abelian Varieties*,
 Chapter VI, (6.2)(ii); see the Markdown of
 `PicardZeroLineBundleClassificationStatement`. The two imported modules
-document the steps of the proof. Worker 266 wrote
-`PicardZeroLineBundleClassificationFromInverse`, and Worker 270 wrote
-`LineBundleDualEvaluation` and this module.
+document the steps of the proof.

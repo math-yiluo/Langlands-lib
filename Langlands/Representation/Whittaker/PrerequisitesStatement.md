@@ -1,8 +1,8 @@
 # Whittaker uniqueness and model prerequisites
 
-Worker 11 authored this proposition definition for task
-`19386941-0953-4643-af19-0918862be824`. The current Library contains this
-proposition definition; no proof of it is claimed here.
+This module contains this proposition definition; no proof of it is claimed
+here. The Library proves it as `Langlands.whittakerPrerequisites` in
+`PrerequisitesProof`.
 
 `Langlands.WhittakerPrerequisitesStatement` quantifies over every prime `p`,
 every specified finite extension `F : Langlands.PadicField p`, and every
@@ -19,7 +19,7 @@ residue-cardinality absolute value therefore introduces no factor convention.
 
 The additive character is an actual `AddChar F.Carrier ℂ`, explicitly
 continuous, nontrivial and unitary. The representation is admissible using
-the accepted `Langlands.IsAdmissible` predicate, which includes smoothness,
+the `Langlands.IsAdmissible` predicate, which includes smoothness,
 and irreducible using Mathlib's `Representation.IsIrreducible`.
 
 For a matrix unit `g`, the conditions that every entry below the diagonal is
@@ -72,8 +72,8 @@ H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 Original file:
 `C:/Central-Library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.
 
-Worker 11 verified the fingerprint and visually read the retained scan's
-printed pages 375-378 and 381-386. Printed page `a` is PDF page `a - 365`.
+The fingerprint was verified, and the retained scan's printed pages 375-378
+and 381-386 were read visually. Printed page `a` is PDF page `a - 365`.
 Only the following passages are the basis of this target:
 
 - Section 0.3, pages 375-377 defines the actual matrix group, standard upper
@@ -103,38 +103,33 @@ The scalar formulation of dimension at most one and the injectivity formulation
 of the irreducible Whittaker model are derived reformulations. The bundled
 model equivalence and change-of-character equivalences described above are
 already constructed, and the published raw-to-bundled adapters supply proofs
-of the second and third clauses. The multiplicity-one argument remains a
-proof obligation; no proof of the full three-clause proposition is supplied.
+of the second and third clauses. The multiplicity-one argument is a separate
+proof obligation; no proof of the full three-clause proposition is supplied
+here. `PrerequisitesProof` proves it from `Whittaker.multiplicityOne` and
+these adapters.
 
 ## Dependencies and boundary
 
-Project imports are `Langlands.LocalField.Definitions` (definition artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, version 1) and
-`Langlands.Representation.Smooth.Definitions` (definition artifact
-`665022df-625b-44ae-9dbd-425f6e266bab`, version 1).
-Both exact versions are accepted, published and current at Library commit
-`d0f5322f745425b08ae8e72c1031206f45cb049e`. Worker 11 read their complete final
-semantic reports and matched the local pairs to their effective published
-hashes:
+Project imports are `Langlands.LocalField.Definitions` and
+`Langlands.Representation.Smooth.Definitions`. When this statement was
+checked, the two imported pairs had these hashes:
 
 | Dependency | Lean SHA256 | Markdown SHA256 |
 | --- | --- | --- |
-| LocalField definitions v1 | `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517` | `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf` |
-| Smooth definitions v1 | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` | `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569` |
+| LocalField definitions | `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517` | `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf` |
+| Smooth definitions | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` | `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569` |
 
 Mathlib supplies additive characters, irreducible representations,
-matrix units and their topology. The environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0 and Mathlib
+matrix units and their topology. The environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-The representation-factor definitions remain owned by task
-`f32964a1-f713-4836-87b6-3a69dbbdf771` (Worker 31), and the group/classification
-definitions by task `d3d94910-f173-4702-9fc9-b48753f5bbcc` (Worker 23).
+The representation-factor definitions and the group/classification
+definitions are not part of this module.
 This statement does not implement JPSS integrals or factors, assume their
 existence, construct normalized induction, or assert that every irreducible
 representation is generic.
 
-Development check `cbf472fd-b5ca-4566-a00d-bca6144946d0` compiled the two
+A development check compiled the two
 dependencies and the entry module with zero errors and warnings. Inspection
 found a definition returning `Prop`, with independent universe parameters
 `uF` and `uV`, no declared or disallowed axioms, and target fingerprint
@@ -144,4 +139,4 @@ quantifiers, the actual matrix group, the three character hypotheses,
 admissibility, irreducibility, and all three conclusion clauses. Its axiom
 closure contains only `propext`, `Classical.choice`, and `Quot.sound`,
 inherited from the mathematical definitions. These checks establish successful
-elaboration, not truth of this proposition or independent semantic acceptance.
+elaboration, not truth of this proposition.

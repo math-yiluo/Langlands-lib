@@ -1,12 +1,12 @@
 # Actual point restriction and the original stabilizer stalk
 
-Worker 151, Task 5297. Derived comparison for Renard III.3.2, printed p.84 /
+Derived comparison for Renard III.3.2, printed p.84 /
 PDF p.90, the restriction-functor paragraph and its sentence identifying point
 restriction with the original smooth stabilizer representation. Source:
 `renard-2026-representations-groupes-reductifs-padiques`, French edition dated
 9 July 2026, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-This unit completes the implementation comparison between the existing actual
+This module completes the implementation comparison between the existing actual
 subgroup-space restriction and the existing original-stalk functor.
 
 All names have prefix
@@ -73,5 +73,5 @@ with the original smooth stalk, including original maps.
 This comparison does not claim that every singleton action sheaf is recovered
 from its compact sections, the general singleton categorical equivalence,
 the sheaf/test-module equivalence, the induction/coinvariant sheaves, or the
-main III.3 theorem statements. Those constructions and statements remain
-separate units.
+main III.3 theorem statements. Those constructions and statements are not
+part of this module.

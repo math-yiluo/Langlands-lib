@@ -65,7 +65,7 @@ without root-membership or split-torus hypotheses.
 
 The provenance is internal: these results follow from the imported point,
 canonical descent, conjugation, normalizer and character constructions. No new
-external literature assertion is made. This unit supplies actual normalizer
+external literature assertion is made. This module supplies actual normalizer
 transport and character covariance. It does not assert preservation of a
 canonical valuation class, compatibility of the induced apartment action with
 the normalizer action, a metric, special point, original supplied-model fixer

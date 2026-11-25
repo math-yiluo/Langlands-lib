@@ -1,12 +1,8 @@
 # The rank-one boundary of mirabolic derivative detection
 
-Author: Worker 700. Workers 749 and 1024 identified this boundary as a
-separate obligation when checking the positive-rank joint-detection
-interface. Worker 984 rechecked the module and its import closure
-against the current Library before submission.
-
-`Langlands.Derivative.MirabolicRankOneDetection.{uF,uV} F T` is an
-unproved proposition definition with outer telescope
+`Langlands.Derivative.MirabolicRankOneDetection.{uF,uV} F T` is a
+proposition definition, proved separately by `mirabolicRankOneDetection`
+(`MirabolicRankOneDetectionProof`), with outer telescope
 `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData)`.
 The field and representation-carrier universes are independent, and the
 supplied topology is installed.
@@ -53,44 +49,39 @@ derivative filtration; section 3.2, printed p.451 / PDF page 12, gives its
 lower functor identities and exact sequence. For `τ` in `Alg P_n`, the
 `n`-th derivative `τ^(n) = Ψ⁻ (Φ⁻)^(n-1) (τ)` of section 3.5 applies `Ψ⁻`
 to a representation of `P_1`; the present proposition concerns that last
-step. Those passages motivate the all-order detection consumer. The present rank-one `Subsingleton`
+step. Those passages motivate the all-order detection statement. The present rank-one `Subsingleton`
 assertion is an internal consequence of elementary group and quotient
 definitions, not a claim that the source states this Lean formulation.
 The registered source passages were read for the detection route. No
-source-specific applicable erratum was found in the supplied notes or
-the recorded search; this does not assert that none exists.
+source-specific applicable erratum was found in the project's literature
+records; this does not assert that none exists.
 
 The positive-rank joint-detection statement
-`Langlands.Derivative.MirabolicOneStepDetection`, proposed in task
-`77ea7de9-a4f6-4ed4-a532-d7dbf0180707` and not in the Library at the
-audited commit below, starts with `P_2`. The present proposition
+`Langlands.Derivative.MirabolicOneStepDetection`
+(`MirabolicOneStepDetectionStatement`, proved in
+`MirabolicOneStepDetectionProof`) starts with `P_2`. The present proposition
 addresses its missing `P_1` boundary. It neither implies nor assumes the
 positive-rank assertion. It also proves no
 derivative-order iteration bridge, positive-level assertion, exactness,
 plus-functor identity, adjunction, canonical filtration or
-strong-indecomposability result. A future all-order proof must separately
+strong-indecomposability result. An all-order proof must separately
 establish the iteration bridges using the actual derivative construction.
 
 The sole direct project import is the published
 `Langlands.Representation.Derivative.MirabolicMinus`. The full import
 closure contains no segment, parabolic-product, head, socle,
-classification, plus-model or exactness module. The full inherited
-consumer exclusion set is preserved in the task contract and must remain
-in every proof successor or lower split. The operator-paused minus
-exactness task `b65bc667-6951-4bd5-82af-10fb7046df7f` is neither duplicated
-nor requested to resume. No theorem from that task is assumed.
+classification, plus-model or exactness module. No mirabolic minus
+exactness theorem is assumed.
 
-The development check `5e7dd604-92ca-4ef8-961b-ca988d5856f1`, in approved
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` over Library commit
-`7e295ceb7e82495464061fe18449b6e968161ab6`, compiled the module with zero
+A check over Library commit
+`7e295ceb7e82495464061fe18449b6e968161ab6` compiled the module with zero
 errors and warnings. Inspection of the unapplied proposition reported
 `statement_returns_prop: true`, independent universe parameters `uF`,
 `uV`, and only `propext`, `Classical.choice`, `Quot.sound`. A separate
-private check `caf18379-7fdf-457d-af5d-1013190c5aa5` confirmed by `rfl`
+check confirmed by `rfl`
 that the declaration at universes `uF, uV` is exactly the displayed
-proposition over the telescope above. The earlier draft check
-`eb3d9023-f169-408f-b160-46ecabe2d1a9` also passed. Compilation is not a
-proof, independent semantic acceptance or Library publication.
+proposition over the telescope above. Compilation is not a
+proof.
 
 The complete transitive project import closure was audited against Library
 commit `7e295ceb7e82495464061fe18449b6e968161ab6`. It consists of

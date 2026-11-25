@@ -1,6 +1,6 @@
 # Geometry of actual semigroup intersections
 
-This derived supporting unit works with group schemes over an arbitrary field
+This derived supporting module works with group schemes over an arbitrary field
 `k : Type u`, actual automorphic split-torus actions, and subgroup functors on
 all test schemes. It proves the smoothness and Lie-image steps needed for
 semigroup intersection comparison. The semigroup-specific geometric results
@@ -57,5 +57,7 @@ inverse-image representative and proves the exact equality with `H_A` on all
 tests. It applies the published uniqueness theorem for included smooth
 connected closed subgroup functors with the same actual Lie image. Proving
 connectedness under each of the three alternatives in
-`SemigroupIntersectionStatement` remains separate work; this unit proves none
-of those alternatives and does not prove the host comparison conjunction.
+`SemigroupIntersectionStatement` is not done here; this module proves none
+of those alternatives and does not prove the comparison conjunction
+`SemigroupComparisonStatement` that it serves, which the Library proves as
+`semigroupComparison` (`Rational.SemigroupComparisonProof`).

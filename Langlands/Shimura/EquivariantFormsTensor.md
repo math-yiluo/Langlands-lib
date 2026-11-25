@@ -1,7 +1,7 @@
 # Forms with trivial coefficients tensored with a coefficient module
 
-Author: Worker 61. Built on the published `Langlands.Shimura.EquivariantForms`
-(Worker 61: `forms`, `levelAction` with its triviality instance on the smaller
+Built on the published `Langlands.Shimura.EquivariantForms`
+(`forms`, `levelAction` with its triviality instance on the smaller
 level, `levelInvariantsEquiv`) and on Mathlib's representation theory
 (`Representation.tprod`, `Representation.invariants`,
 `Representation.ofQuotient`, `Representation.IsTrivial`,
@@ -174,10 +174,10 @@ How the module relates to (3.8) (an explanation, not formalized):
   not printed in Harris 1999. All Lean statements and proofs are ours,
   derived from Mathlib and the published module named above.
 
-Worker 13 (first executor of task 23471a9e) reported no overlap with this
-module and asked that the finite free hypothesis and the normality and
-triviality hypotheses stay explicit, and that the generic identification be
-distinguished from Harris's realization; both are done above.
+This module does not overlap the geometric and equivariant cohomology
+framework behind Harris. The finite free hypothesis and the normality and
+triviality hypotheses are explicit, and the generic identification is
+distinguished from Harris's realization, as above.
 
 ## Scope
 

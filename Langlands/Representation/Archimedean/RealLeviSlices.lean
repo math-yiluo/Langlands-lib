@@ -10,8 +10,8 @@ Restriction of functions on `GL_N(ℝ)` to one diagonal block `GL_{sz_i}(ℝ)` o
 diagonal Levi subgroup. For a concatenation `flat dss` of lists of real blocks, the restriction of
 the dual principal series lies in the dual principal series of the class list `cl dss i`
 twisted by `|·|^{s_i}`, `s_i = start_i - (N - sz_i)/2` (`slice`). It intertwines the actions of
-the block's `O(sz_i)` and Lie algebra. Internal infrastructure for Task 6749; see
-`RealLeviSlices.md`.
+the block's `O(sz_i)` and Lie algebra. Internal infrastructure for the proof of
+`RealStandardLanglandsQuotientStatement`; see `RealLeviSlices.md`.
 -/
 
 noncomputable section

@@ -9,7 +9,9 @@ There are no additional hypotheses on the base or the factors.
 This is an internal consequence of the existing definition of reductivity,
 smoothness of products, affine morphism properties and the proved field-level
 product theorem. It supplies the reductivity of the source `Z ⊗ D` when applying
-a fibrewise central-isogeny criterion in Task 6385. It does not establish
+a fibrewise central-isogeny criterion in
+`Reductive.DerivedCentralIsogenyStructuralReduction`, which imports this module.
+It does not establish
 existence of `Z`, preservation of maximal centrality on fibres or the
 multiplication central isogeny itself.
 

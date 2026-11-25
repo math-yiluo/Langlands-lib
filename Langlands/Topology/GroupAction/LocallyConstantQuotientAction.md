@@ -1,6 +1,6 @@
 # Continuous equivariant locally constant quotient descent
 
-Worker 56 constructs continuous equivariant descent for an actual equivariant
+This module constructs continuous equivariant descent for an actual equivariant
 quotient map `q : C(X, Y)` between compact action spaces of a topological
 group `G`. The original group topology is retained. The coefficient set `A`
 has an independent universe and no topology or action.

@@ -69,14 +69,17 @@ functors of subtori. Its proof applies Exposé XI, Corollary 6.10 to a torus.
 
 ## Provenance of the formulation
 
-The statement splits the target statement of Task 7782 into steps. It is not
+The statement splits the target statement
+`SelfCentralizingTorusConjugacyQuotientAffineStatement` into steps. It is not
 literally a statement of SGA 3. It differs from the target in two ways.
 
 - It assumes the local representations with central kernel rather than
   deriving them. `Langlands.GroupScheme.LocalCentralKernelRepresentationStatement`
   derives them from the hypotheses on `G` stated here (smooth, separated,
   quasi-compact, connected residue-field fibres). So the extra hypothesis
-  does not narrow the scope once that statement is proved.
+  does not narrow the scope: the proof
+  `selfCentralizingTorusConjugacyQuotientAffine` obtains that statement from
+  Library results.
 - It takes the quotient `(Y, p)` as input and concludes affineness, instead
   of asserting that an affine quotient exists. Two such quotients represent
   the same fppf sheaf `G/N`, so they are isomorphic over `S`. Hence this

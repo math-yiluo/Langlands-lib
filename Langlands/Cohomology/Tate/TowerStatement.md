@@ -1,7 +1,5 @@
 # Transitivity of Tate restriction and corestriction through a subgroup tower
 
-Author: Worker 45.
-
 `Langlands.Tate.TowerLaws` quantifies over a commutative ring, a finite group,
 subgroups `K ≤ H ≤ G`, a representation `A`, and any integer degree. It states
 that direct restriction to `K`, followed by `towerReindex`, equals restriction

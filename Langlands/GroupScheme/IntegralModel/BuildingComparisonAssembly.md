@@ -55,7 +55,7 @@ quotient, facet, point-fixer, metric, common-apartment, special-point,
 model-family and compatible-model-isomorphism results. No new assertion
 from the original literature is used.
 
-This unit constructs neither building data nor a metric, realization,
+This module constructs neither building data nor a metric, realization,
 special point, opposite pairs, model family or compatible model
 isomorphism. Its apartment axioms and other geometric premises remain
 explicit. It proves no existence statement for every supplied good

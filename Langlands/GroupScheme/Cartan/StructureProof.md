@@ -1,7 +1,5 @@
 # Smooth connected nilpotent structure of Cartan subgroups
 
-Author: Worker 1588.
-
 `Langlands.GroupScheme.cartanStructure` proves the unchanged
 `Langlands.GroupScheme.CartanStructureStatement.{u}`. For every field
 `k : Type u`, every smooth connected affine group scheme `G` over `k`,

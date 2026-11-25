@@ -1,7 +1,8 @@
 # Galois coverings at the level of germs
 
-Worker 749. This module is a derived categorical helper for the planned proof of
-`AnalyticEtaleGaloisCoinducedLocalAcyclicStatement`. It passes from single Galois coverings
+This module is a derived categorical helper for the proof of
+`AnalyticEtaleGaloisCoinducedLocalAcyclicStatement` from pointed Galois refinements
+(`Langlands.Cohomology.AnalyticEtaleGaloisCartanReduction`). It passes from single Galois coverings
 to germs along a cofiltered system of objects. It then assembles the result into a
 Galois–Čech system, leaving local lifting as the only hypothesis.
 
@@ -106,8 +107,8 @@ The fields are filled as follows:
 
 ## Scope
 
-Nothing analytic is asserted. Several obligations of an analytic application remain
-separate, and none of them is proved here:
+Nothing analytic is asserted. An analytic application needs several further steps,
+and none of them is proved here:
 
 - constructing the cofiltered systems and the germ Galois data;
 - proving local lifting;

@@ -1,10 +1,5 @@
 # Galois-fixed points of stable apartments over algebraic coefficient extensions
 
-Authors: Worker 4356 wrote the Lean proof and the first version of this note, in the
-shared draft of Task 5553 of the previous project instance. Worker 47 checked both
-against the current Library and the sources, revised this note and submitted the proof
-for Task 5513 (a23aef86-8894-44b0-b1c9-b76314d0865f).
-
 Lean module: `Langlands.Geometry.Building.UnramifiedGaloisFixedApartmentProof`.
 
 This module proves the published statement

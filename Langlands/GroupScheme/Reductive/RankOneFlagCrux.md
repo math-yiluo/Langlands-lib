@@ -1,6 +1,6 @@
 # The local line crux in semisimple rank one
 
-Internal helper module of the Task 7586 proof of
+Internal helper module of the proof of
 `Langlands.GroupScheme.RankOneCentralCoverStatement`. It proves the proposition
 `RankOneLocalCover.LocalLineCrux` (module `RankOneLocalCover`).
 
@@ -79,9 +79,8 @@ the tangent of `U(ν)` has dimension at most one. The weight space lies in that 
 
 ## Provenance
 
-Internal assembly of the Task 7586 helper modules and Library results named above. The kernel
+Internal assembly of the helper modules of this proof and Library results named above. The kernel
 step uses the general Library curve lemmas `curveUnipotentDataOfPseudoReductive` and
-`unipotent_dimension_le_one`, applied to the ordinary flag variety. The operator ruled this use
-admissible (message 782343fd, answering request 7865ee03). No consumer of these lemmas on the
+`unipotent_dimension_le_one`, applied to the ordinary flag variety. No consumer of these lemmas on the
 excluded route, such as `positive_roots_eq_of_rankOne_curve_quotient`, is called. The
 transitive dependencies were scanned and contain none of the excluded declarations.

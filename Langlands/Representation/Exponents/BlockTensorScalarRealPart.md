@@ -1,8 +1,7 @@
 # Scalar real parts on arbitrary actual block tensors
 
 `Langlands.blockTensorScalarRealPart` is an internal scalar calculation for
-actual smooth complex block factors. Worker 320 supplied the Lean proof;
-Worker 544 checked its published inputs and prepared the paired documentation.
+actual smooth complex block factors.
 
 Let `Y i` be a smooth representation of the block `GL_(B.size i)(F)`, with
 supplied scalar character `c i` and real coordinate `x i` satisfying

@@ -1,6 +1,6 @@
 # Truncated ℓ-divisible systems of resolutions
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem` (ℓ-divisible systems, Harris 1999,
 (2.1)), `Langlands.Cohomology.DivisibleSystem.Coaugmented` (the residual and
 term systems of Harris's Lemma 2.2) and
@@ -144,7 +144,7 @@ The degree-`(D + 1)` term is Harris's kernel: the Coaugmented module's
 `residualInclusion_termDifferential_exact` says that
 `R (D + 1) m ⟶ F^{D+1} m ⟶ F^{D+2} m` is exact, and the residual inclusion is
 monic, so it is a kernel of `d^{D+1}` at level `m`. The module
-`Langlands.Cohomology.DivisibleSystem.LeftExact` (accepted for the Library, not
+`Langlands.Cohomology.DivisibleSystem.LeftExact` (in the Library, not
 imported here) states this as `residualInclusionIsKernel`.
 
 The degree-zero term is `F^0` because `0 ≤ D`. As in the Resolution module, the
@@ -155,7 +155,7 @@ degree 0 of the augmented complex is not stated here.
 
 `R`, `G`, `X` and `T : SmoothSheafDivisibleSystem R G X ℓ` are as in the smooth
 section of the Resolution module. The exactness of the degree-zero smooth
-Godement functor is Worker 3's unproved proposition
+Godement functor is the unproved proposition
 `SmoothGodementZeroExactStatement R G X`, and the declarations below take a
 proof `h` of it as an explicit argument.
 
@@ -172,7 +172,7 @@ proof `h` of it as an explicit argument.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305 (Fact 2 on p.303).
-Worker 61 read the pages in the scanned original.
+The pages were read in the scanned original.
 
 1. Truncation. Harris's `τ_{≤D+1}` keeps the terms in degrees `≤ D`, puts the
    kernel of `C^{D+1} → C^{D+2}` in degree `D + 1` and zero above. The generic

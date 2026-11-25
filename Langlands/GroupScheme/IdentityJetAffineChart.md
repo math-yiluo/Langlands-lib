@@ -1,10 +1,8 @@
 # Identity jets inside an affine open containing the unit section
 
-Worker 946, Task 7782.
-
 This internal module describes the identity jets of a separated group by
 commutative algebra. It is the first step toward
-`IdentityJetLocallyFreeStatement` in Task 7782.
+`IdentityJetLocallyFreeStatement`.
 
 ## Arbitrary base
 

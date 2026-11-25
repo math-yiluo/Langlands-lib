@@ -40,7 +40,7 @@ with `U(1,n-1)`. No declaration here depends on this remark.
 This module depends on the accompanying `CMData` and the published
 `Langlands.Shimura.Unitary.Involution` and `Similitude` modules. It retains independent field/algebra
 universes and fixes the archimedean target as the actual real and complex
-numbers. All code and intrinsic certificates are by Worker 57.
+numbers.
 
 ## Exact source and environment record
 

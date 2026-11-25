@@ -45,18 +45,18 @@ theorem characterActionAddHom_apply {H G : SplitMultiplicativeType k L}
 for the canonical `ℤ`-module structure of its additive group. -/
 def actionRepresentation (A : Action (FGModuleCat.{u} ℤ) (L ≃ₐ[k] L)) :
     @Representation ℤ (L ≃ₐ[k] L) A.V _ _ _ (AddCommGroup.toIntModule A.V) where
-  toFun σ := (A.ρ σ).hom.hom.toAddMonoidHom.toIntLinearMap
+  toFun σ := (A.ρ σ).asHom.hom.hom.toAddMonoidHom.toIntLinearMap
   map_one' := DFunLike.ext _ _ fun v => by
-    change (A.ρ 1).hom.hom v = v
+    change (A.ρ 1).asHom.hom.hom v = v
     simp
   map_mul' σ τ := DFunLike.ext _ _ fun v => by
-    change (A.ρ (σ * τ)).hom.hom v = (A.ρ σ).hom.hom ((A.ρ τ).hom.hom v)
+    change (A.ρ (σ * τ)).asHom.hom.hom v = (A.ρ σ).asHom.hom.hom ((A.ρ τ).asHom.hom.hom v)
     simp [End.mul_def]
 
 @[simp]
 theorem actionRepresentation_apply (A : Action (FGModuleCat.{u} ℤ) (L ≃ₐ[k] L))
     (σ : L ≃ₐ[k] L) (v : A.V) :
-    actionRepresentation A σ v = (A.ρ σ).hom.hom v := rfl
+    actionRepresentation A σ v = (A.ρ σ).asHom.hom.hom v := rfl
 
 variable [FiniteDimensional k L] [IsGalois k L]
 
@@ -112,7 +112,7 @@ theorem characterFunctor_essSurj :
   apply LinearMap.ext
   intro χ
   change e.symm (characterLattice.galoisRepresentation k L T σ χ) =
-    (A.ρ σ).hom.hom (e.symm χ)
+    (A.ρ σ).asHom.hom.hom (e.symm χ)
   obtain ⟨m, rfl⟩ := e.surjective χ
   rw [← he σ m, AddEquiv.symm_apply_apply, AddEquiv.symm_apply_apply]
   rfl

@@ -1,6 +1,6 @@
 # Actual unequal-rank zeta values at the inverse character
 
-Worker 318's internal proposition
+The internal proposition
 `InducedTailIntermediateInverseCharacterStatement.{uF,uV,uW}` states equality
 of the actual unequal-rank rational zeta-value sets at `ψ` and
 `ψ.scale (-1)`. The latter character is the pointwise inverse of `ψ`.

@@ -1,10 +1,8 @@
 # Base change of the relative Picard class sheaf
 
-Author: Worker 5067.
-
 Helper module for the proof of
-`Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement`
-(Task 5600). Throughout, `f : X ⟶ S` and `g : S' ⟶ S` are arbitrary morphisms of schemes in
+`Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeReductionStatement`.
+Throughout, `f : X ⟶ S` and `g : S' ⟶ S` are arbitrary morphisms of schemes in
 `Scheme.{u}`, and `pullback.snd f g : X ×_S S' ⟶ S'` is the base change of `f` along `g`.
 No hypothesis is placed on `f` or `g`.
 

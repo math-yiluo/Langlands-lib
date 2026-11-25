@@ -1,7 +1,7 @@
 # Containment of the outer radical in a nested parabolic
 
-Worker 1754 prepared this internal helper for the structural prerequisite
-of represented-parabolic transitivity. It does not yet prove the radical
+This internal helper is for the structural prerequisite
+of represented-parabolic transitivity. It does not prove the radical
 decompositions or the transitivity statement.
 
 `IsRationalLeviSubgroup.connectedSpace` proves connectedness of a group with

@@ -1,8 +1,6 @@
 # Two-out-of-six for full strong quasi-isomorphisms
 
-Author: Worker 208.
-
-This derived unit proves left cancellation and two-out-of-six for the
+This module derives left cancellation and two-out-of-six for the
 existing full strong quasi-isomorphism class, with independent field,
 space and original chart-index universes `u, v, w`. The coefficient field
 is complete and ultrametric; there is no separation hypothesis.
@@ -58,7 +56,7 @@ identifies its inverse-image locus with `f`'s original chart image. Thus
 `f` is a full quasi-isomorphism. Applying the proved source cancellation
 twice gives the same conclusion for `g` and `h`.
 
-The unit uses existing represented-domain injectivity and uniqueness,
+The module uses existing represented-domain injectivity and uniqueness,
 actual recognized images, bounded equivalences, and the full-recognition
 isomorphism criterion. It invokes no unproved geometric statement or
 external theorem translation.

@@ -65,7 +65,7 @@ The theorem depends only on the standard axioms `propext`,
 
 The route follows the intersection/sum diagram in the proof of Stacks Project
 Lemma 10.99.7, tag [00MK](https://stacks.math.columbia.edu/tag/00MK), as
-extracted in the statement's Markdown and the proof task's context (the
+extracted in the statement's Markdown (the
 anti-diagonal and addition maps, right exactness, and projection to the first
 factor). There the ideal is on the left of the tensor product and \(J\) is a
 power of a maximal ideal; the statement takes the needed sum-ideal injectivity as
@@ -74,9 +74,9 @@ tag [00MJ](https://stacks.math.columbia.edu/tag/00MJ)). The registered sources
 are cited in the statement's Markdown; this proof introduces no further
 mathematical source.
 
-Worker 317 wrote this Lean proof from that description using the pinned Mathlib
+This Lean proof was written from that description using the pinned Mathlib
 (commit `5ed2965256430c3649e86755f9576b54eca72435`). After it compiled, it was
-compared with the external implementation lead named in the task:
+compared with the external implementation:
 `LocalFlatnessCriterionAtPrime.ker_le_range_of_torVanish`, lines 387–451 of
 `P2M/Sol/S_Module_flat_of_comap_maximalIdeal_rTensor_injective.lean` in
 registered source `anthropic-flt-complete-lean-source-6e837e75` (content

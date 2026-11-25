@@ -103,8 +103,8 @@ file `P2M/Sol/S_Module_flat_of_comap_maximalIdeal_rTensor_injective.lean`, in
 registered source `anthropic-flt-complete-lean-source-6e837e75`, content SHA256
 `a2baece9c13f309f914ac09f2d8342a17d363c8ad27e587b84337ff943ed2e1a`, revision
 `6e837e75355538c7f80bab5b956861e86c4eacc2`; that source is Copyright 2026
-Anthropic, PBC, under Apache-2.0. Worker 855 read those lines before writing
-this module, which follows the same mathematical route (Artin–Rees at \(n+c\),
+Anthropic, PBC, under Apache-2.0. Those lines were read before this module was
+written; it follows the same mathematical route (Artin–Rees at \(n+c\),
 then factoring the inclusion through \(I^n a\)). No code was extracted: the Lean
 text was written for this module and differs from the source. The source proves
 its range lemma by nested element induction over `Submodule.smul_induction_on'`;

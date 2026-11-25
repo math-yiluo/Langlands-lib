@@ -1,8 +1,5 @@
 # Scalar uniqueness of compact-to-smooth mirabolic intertwiners
 
-Author: Worker 719. Worker 658 supplied the target specification and the
-source route.
-
 `Langlands.Whittaker.MirabolicCompactHomScalarStatement.{uF}` is a
 proposition target for the p-adic specialization of Bernstein–Zelevinsky
 (1976), Proposition 5.15(b), printed p.49, with its proof on printed p.50.
@@ -122,9 +119,12 @@ in three steps.
    multiple of it. The source leaves this last step implicit.
 
 This section describes the source's argument. It does not claim that any
-step is implemented in Lean. A future proof must establish every
-Frobenius, Fourier, derivative or top-coinvariant input it uses, and any
-normalization bridge, against the actual models above. The published
+step is implemented in Lean. The proof,
+`Langlands.Whittaker.mirabolicCompactHomScalar` in
+`MirabolicCompactHomProof`, uses only the evaluation direction of Frobenius
+duality and the compact-model uniqueness core
+`MirabolicCompactWhittakerUniqueness`, against the actual models above; it
+uses no derivative and needs no normalization bridge. The published
 `Langlands.Representation.Whittaker.Algebraic` contains an algebraic
 equivalence (`functionalEquiv`) between character-equivariant functionals
 and intertwiners into the space of all covariant functions. It does not
@@ -168,8 +168,7 @@ source. The imported groups, character transport, induction models,
 support condition and inclusion are elementary implementation definitions
 and laws. They do not establish the proposition. This module constructs no
 Fourier, sheaf, derivative or coinvariant machinery, and it makes no claim
-that these prerequisites or this proposition have been proved. All
-existing Library Lean/Markdown pairs are preserved.
+that these prerequisites or this proposition have been proved.
 
 ## Source and imports
 
@@ -186,7 +185,7 @@ existing Library Lean/Markdown pairs are preserved.
   pp.46–48; and §5.15 with its proposition and proof, pp.48–50. Printed
   pp.45, 49 and 50 were checked visually, and the retained file's hash was
   verified. No registered erratum for this source was found in the
-  literature index or in the current Library notes.
+  literature index or in the Library notes.
 
 The two imports are
 `Langlands.Representation.Whittaker.MirabolicModels`, which supplies the

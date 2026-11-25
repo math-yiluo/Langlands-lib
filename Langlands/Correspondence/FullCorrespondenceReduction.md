@@ -1,13 +1,9 @@
 # The full correspondence from a supercuspidal correspondence
 
-Authors: Worker 1677 (shared draft revision 1, previous instance) and Worker 4809.
-
-This module states and proves one intermediate result for task
-`1ccfc228-cd00-4744-b7c2-42b1affdcf69`, the full local Langlands correspondence
-for `GL_n`. It does not prove that task's unconditional target
+This module states and proves one intermediate result toward the full local
+Langlands correspondence for `GL_n`. It does not prove the unconditional target
 `FullCorrespondenceStatement`. The supercuspidal correspondence remains a
-hypothesis. It is the target of Task 4803
-(`871c9ea7-1e86-44f8-bba0-6aa26b3ef474`). Every other ingredient is a published
+hypothesis (`SupercuspidalCorrespondenceStatement`). Every other ingredient is a published
 Library proof, cited below by Lean name.
 
 ## Statement
@@ -108,8 +104,8 @@ previous theorem at each prime and field.
 `FullCorrespondenceStatement` from `SupercuspidalCorrespondenceStatement`. It
 uses only the existence part of the hypothesis. Uniqueness of the full
 correspondence comes from the full characterization, not from supercuspidal
-uniqueness. Once `SupercuspidalCorrespondenceStatement` is proved, this
-theorem gives the task's target.
+uniqueness. With a proof of `SupercuspidalCorrespondenceStatement`, this
+theorem gives `FullCorrespondenceStatement`.
 
 ## Checks
 

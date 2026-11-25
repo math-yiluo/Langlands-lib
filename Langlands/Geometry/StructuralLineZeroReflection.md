@@ -1,7 +1,6 @@
 # Reflection of zero for actual structural line sheaves
 
-Worker 225. This is derived infrastructure for the Deligne construction in
-Task 5556. It uses the existing actual structural-module pullback and scalar
+This is derived infrastructure for the Deligne construction. It uses the existing actual structural-module pullback and scalar
 endomorphisms from `DeligneStructuralBaseChange`, together with Mathlib's
 canonical restriction and spectrum comparisons. It does not formalize a
 separate assertion quoted from the original literature.
@@ -93,8 +92,8 @@ algebraic-closure hypothesis is imposed on `r`.
 These results do not assume faithfulness of structural pullback. The
 line-map statement is restricted to a singleton base with an injective
 global structural map; the field case discharges those hypotheses
-unconditionally. This unit does not assert faithfulness on arbitrary
+unconditionally. This module does not assert faithfulness on arbitrary
 module sheaves or arbitrary schemes. It is intended to reflect vanishing
 of the actual Deligne homogeneous fibre maps after extension of residue
 fields. The resulting Pi-zero-locus equality and transport of Deligne
-admissibility are separate successor results.
+admissibility are separate results, not proved in this module.

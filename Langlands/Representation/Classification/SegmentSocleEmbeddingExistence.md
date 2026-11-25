@@ -1,7 +1,5 @@
 # Nonempty actual segment-socle embedding data
 
-Author: Worker 494.
-
 This internal construction proves that every irreducible smooth complex
 representation of `GL_n(F)` embeds into the actual normalized product of
 some actual segment socles. The field universe `uF` and carrier parameter

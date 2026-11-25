@@ -17,7 +17,7 @@ representations has no positive cohomology
 
 ## Provenance
 
-This is a derived helper module written for Task 7634, the local acyclicity of restricted
+This is a derived helper module written for the local acyclicity of restricted
 smooth analytic point products. Both results are adapted from standard ones:
 
 - Serre, *Local Fields* (GTM 67), Ch. VII §2, Proposition 1 (p. 112; source

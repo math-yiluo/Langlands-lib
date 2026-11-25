@@ -1,8 +1,5 @@
 # Representatives at the Tate splice
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 This module uses Mathlib's actual Tate complex and its homology
 objects. It identifies the existing invariant class `zeroClass` with the class
 of the corresponding ordinary zero-cochain. It defines `minusOneClass` from a

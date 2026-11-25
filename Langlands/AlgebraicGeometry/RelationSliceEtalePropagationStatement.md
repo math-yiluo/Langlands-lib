@@ -2,7 +2,7 @@
 
 `RelationSliceEtalePropagationStatement.{u}` is an internal supporting
 proposition for the smooth equivalence relation slicing theorem. It
-uses the unchanged published `AlgebraicSpace.AtlasRelation.IsEquivRel`
+uses `AlgebraicSpace.AtlasRelation.IsEquivRel`
 on `t,s : R → U`, with `U`, `R`, and the slicing scheme `V` in an
 arbitrary universe `u`.
 
@@ -31,7 +31,7 @@ morphism is open. Taking its inverse image under `σ` as `W`, this
 propagation shows that every stalk of the restricted slice is
 formally etale, so that the entire slice is etale.
 
-Worker 303 supplied the double-pullback propagation route. Worker
-101 supplied the scheme etale-locus API used in its private
-implementation. This pair states the resulting intermediate
-proposition; its formal proof is a separate contribution.
+The proof follows this double-pullback propagation route and uses the
+scheme etale-locus API of the module `SchemeEtaleLocus`. This pair states
+the resulting intermediate proposition; its formal proof is
+`relationSliceEtalePropagation` in `RelationSliceEtalePropagationProof`.

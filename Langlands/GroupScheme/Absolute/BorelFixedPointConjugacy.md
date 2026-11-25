@@ -1,7 +1,5 @@
 # Actual Borel conjugacy data from a fixed quotient point
 
-Worker 1293.
-
 This internal construction starts with two actual Borel embeddings
 `i : B ⟶ G` and `i' : B' ⟶ G` over an algebraically closed field of arbitrary
 characteristic and universe. A supplied morphism `q : G.X ⟶ Q` is locally of
@@ -31,4 +29,5 @@ The provenance is internal composition of rational point lifting, the
 all-test fixed-coset factorization and Borel transport. Classical choice is
 used only to select the rational lift. This construction assumes the fixed
 point and quotient/action inputs; their existence, quotient properness and
-the general Borel conjugacy theorem remain separate obligations.
+the general Borel conjugacy theorem are separate results, assembled in
+`Absolute.BorelConjugacyProof`.

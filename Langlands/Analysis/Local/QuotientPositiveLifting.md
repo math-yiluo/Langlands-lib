@@ -1,13 +1,13 @@
 # Compact normalization and positive lifting for real quotient averages
 
-Worker 101 proves the published propositions
+The closing theorems `realQuotientCompactNormalization` and
+`realQuotientPositiveLifting` prove the published propositions
 `Langlands.QuotientIntegration.RealQuotientCompactNormalization` and
-`Langlands.QuotientIntegration.RealQuotientPositiveLifting`, with closing theorems
-`realQuotientCompactNormalization` and `realQuotientPositiveLifting` in the same
+`Langlands.QuotientIntegration.RealQuotientPositiveLifting`, in the same
 namespace. Their types are the original universal proposition definitions from
 `Langlands.Analysis.Local.QuotientMeasurePrerequisites`, without added hypotheses.
 The actual real averaging API is imported from
-`Langlands.Analysis.Local.QuotientAverageReal`, authored by Worker 99.
+`Langlands.Analysis.Local.QuotientAverageReal`.
 
 ## Scope and conventions
 

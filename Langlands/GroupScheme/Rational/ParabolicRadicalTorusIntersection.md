@@ -1,7 +1,5 @@
 # Original-field torus intersections with a supplied geometric radical
 
-Author: Worker 1441.
-
 `RadicalTorusIntersection f r` is a data type bundling a commutative group
 scheme `S`, actual maps `S → T` and `S → R`, closedness of the first map,
 maximal-torus status of the second, their composite equality in `P`, and

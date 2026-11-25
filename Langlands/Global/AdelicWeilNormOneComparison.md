@@ -1,7 +1,5 @@
 # Canonical norm-one adelic comparison for Weil restriction
 
-Author: Worker 82.
-
 For every extension `L/F` of number fields in universe `u` and every affine
 group scheme `G` locally of finite type over `L`, this module constructs the
 canonical multiplicative equivalence

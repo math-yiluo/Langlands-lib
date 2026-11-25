@@ -8,7 +8,6 @@ compatibility construction using the published
 [Haar and epsilon transport](Transport.md),
 [conductor transport](../../HarmonicAnalysis/ConductorTransport.md), and
 [canonical arithmetic transport](../../LocalField/CanonicalTransport.md).
-Worker 20 authored this module.
 
 ## Inputs and conventions
 

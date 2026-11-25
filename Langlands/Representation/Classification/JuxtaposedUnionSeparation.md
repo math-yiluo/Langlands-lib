@@ -1,7 +1,5 @@
 # No nonzero subrepresentation of `⟨Δ₀⟩ × ⟨Δ₁⟩` is equivalent to the union socle
 
-Author: Worker 1032.
-
 This internal helper of the proof of
 `Langlands.Classification.JuxtaposedSegmentSocleReverseProductStructure`
 (Zelevinsky 1980, Proposition 4.6, step (1), juxtaposed case) makes no literature

@@ -37,7 +37,7 @@ theorem lieRationalSectionDeterminant_overlap
   let : DecidableEq J := Classical.decEq J
   exact Langlands.Shimura.HodgeDeterminant.polynomial_basis_independent_commRing
     (localSectionBasis e (Over.mk i)) (localSectionBasis e' (Over.mk j))
-    (fun k => (lieMap0 p (α (a k))).val.app (op W) |>.hom)
+    (fun k => (lieMap0 p (α (a k)).asHom).val.app (op W) |>.hom)
 
 variable (naturality : LieBaseChangeNaturalityStatement S)
 

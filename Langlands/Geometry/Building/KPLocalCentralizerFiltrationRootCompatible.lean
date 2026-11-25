@@ -5,10 +5,11 @@ import Langlands.Geometry.Building.KPZeroNormKernel
 
 /-! # Root compatibility of the torus filtration over `F^ur`
 
-Clause 2 of the `K`-level copy of KP Lemma 7.2.3 (Task 5890), for D1's filtration
+Clause 2 of the `K`-level copy of KP Lemma 7.2.3 (`QuasiSplitLocalTorusFiltrationStatement`),
+for D1's filtration
 `j(Z(K)_r) = B.centralizerTorusImage hZ r`: for `z ∈ j(Z(K)_r)` and `u ∈ U_{a,x,s}`,
 `z u z⁻¹ u⁻¹ ∈ U_{a,x,r+s} U_{2a,x,r+s}`. Depth `0` is proved from V6; positive depth is
-derived from `KPLocalTorusRootCommutatorStatement` (Task 5918).
+derived from `KPLocalTorusRootCommutatorStatement`.
 -/
 
 noncomputable section

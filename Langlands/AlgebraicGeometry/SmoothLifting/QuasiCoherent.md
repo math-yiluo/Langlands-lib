@@ -38,7 +38,8 @@ global lifts based at `e`. It is defined in `LiftModule.lean`.
 
 ## Provenance
 
-The statements are internal to Task 6989 (Worker 496). They formalize, in
+The statements are internal to the lifting of homomorphisms from groups of
+multiplicative type through nilpotent thickenings. They formalize, in
 the explicit chart language of this development, that lifts along a
 square-zero thickening form a quasi-coherent module. Compare Stacks
 Project, More on Morphisms, Lemma 37.11.7 (Tag 02H6), where lifts form a

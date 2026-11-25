@@ -8,8 +8,8 @@ following remark and VI.2.4, printed pp.140–142 / PDF pp.146–148, together
 with VI.2.1(b) implies (c). Source ID:
 `renard-2026-representations-groupes-reductifs-padiques`; SHA256:
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 485 read the original VI.3.4 and VI.2.3–VI.2.4 pages used to isolate
-this obligation. The statement supplies no proof of uniform support.
+The original VI.3.4 and VI.2.3–VI.2.4 pages used to isolate this obligation
+were read. The statement supplies no proof of uniform support.
 
 `Langlands.CuspidalSupport.RationalNormKernelUniformSupportStatement` has
 exactly the structural telescope of the published
@@ -42,6 +42,9 @@ Those are proof obligations, not assumptions hidden in this proposition.
 No ambient extension, admissibility, finite restriction family, support bound,
 finiteness or category decomposition is a premise. The statement does not use
 the determinant-unit product-Levi finiteness theorem. Its proof is a separate
-substantial prerequisite for the current fixed-level task, and would still
-leave the generic common-support finiteness argument to apply. Norm-kernel
+substantial prerequisite for the fixed-level finiteness statement
+`RationalNormKernelFixedLevelFinitenessStatement`, and would still
+leave the generic common-support finiteness argument to apply.
+`RationalNormKernelSupportGeometry` proves it from
+`JointSpecialCompactBasisExistenceStatement`. Norm-kernel
 category decomposition remains a separate obligation.

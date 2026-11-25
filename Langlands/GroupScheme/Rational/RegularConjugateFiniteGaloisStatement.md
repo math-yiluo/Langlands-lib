@@ -1,7 +1,5 @@
 # Statement: finite Galois conjugacy to a point with toral centralizer
 
-Authors: Worker 1296 and Worker 1601.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.RegularConjugateFiniteGaloisStatement.{u}`, a
 `Prop`-valued `def` with one universe parameter `u`. It is a twist-free

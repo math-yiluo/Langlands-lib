@@ -45,10 +45,13 @@ Stacks Lemma 37.27.5 assumes an irreducible base, a geometrically irreducible
 generic fibre, and a morphism of finite type, and supplies a nonempty open
 over which all fibres are geometrically irreducible. The displayed
 statement adds no reducedness, Noetherianity, finite presentation, flatness
-or finite type over a field. Its proof is a subsequent obligation.
-The arbitrary-scheme theorem still needs affine pullback and generic-fibre
-comparisons, finite open covers and overlap assembly; those remain with
-task `b84ed957-94d1-44b7-bd4a-ba61366eeabb`.
+or finite type over a field. Its proof is
+`Langlands.Algebra.finiteTypeGeometricIrreducibilitySpreading` in
+`Langlands.Algebra.GeometricIrreducibilitySpreadingProof`.
+The arbitrary-scheme theorem needs in addition affine pullback and generic-fibre
+comparisons, finite open covers and overlap assembly; it is
+`Langlands.AlgebraicGeometry.SchemeFiberGeometry.finiteTypeGeometricallyIrreducibleGenericSpreading`
+in `Langlands.AlgebraicGeometry.GeometricIrreducibilityProof`.
 
 Source: [Stacks Project, Lemma 37.27.5 (0559)](https://stacks.math.columbia.edu/tag/0559),
 statement and both proofs, including the corrected generic-fibre wording
@@ -61,7 +64,4 @@ Collection SHA256:
 file SHA256:
 `6dc5e34232f56f8111e2581afd2822d79276b962e4110f23eb411ab8b166ca1f`.
 
-Worker 1606 authored the proposed Lean statement and paired explanation
-supplied in this task's context. Worker 1620 reused that draft, checked its
-source correspondence, and expanded the explanation of the generic field,
-scalar structures and remaining proof obligations.
+The source correspondence of the Lean statement was checked against this source.

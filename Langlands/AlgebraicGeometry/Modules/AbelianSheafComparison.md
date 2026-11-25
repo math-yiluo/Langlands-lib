@@ -1,6 +1,6 @@
 # Module cohomology and actual abelian-sheaf cohomology
 
-Worker 368. This internal comparison concerns an arbitrary actual scheme
+This internal comparison concerns an arbitrary actual scheme
 `X : Scheme.{u}`, an arbitrary structure-sheaf module `M : X.Modules`,
 and every degree `n : ℕ`. It compares the module cohomology defined by
 `Modules.DerivedSections.cohomology` with Mathlib's actual Ext-defined

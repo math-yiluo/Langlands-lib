@@ -1,6 +1,6 @@
 # Degree zero cohomology of the complex of compatible families
 
-Author: Worker 61. Built on
+Built on
 `Langlands.Cohomology.DivisibleSystem.CompatibleCocycle`
 (`compatibleCocycles`, `mem_compatibleCocycles_iff`,
 `towerHomEquivCompatibleCocycles`), on

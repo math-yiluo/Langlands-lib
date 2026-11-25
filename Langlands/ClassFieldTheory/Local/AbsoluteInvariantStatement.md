@@ -1,7 +1,5 @@
 # Existence of absolute local invariants compatible with restriction
 
-Author: Worker 80.
-
 `AbsoluteInvariantExistence.{u}` asserts that, for every prime `p`, there is
 one family of additive isomorphisms
 
@@ -35,8 +33,8 @@ law is imposed directly without introducing unused relative maps.
 It asserts neither the arithmetic normalization on cyclic classes nor
 uniqueness of the family. The fields and their closures share the
 arbitrary universe `u`, matching the absolute restriction API. Relative
-invariants for independent field universes remain a separate obligation
-of `CohomologyExistence.{u,v}`.
+invariants for independent field universes are part of the separate
+statement `CohomologyExistence.{u,v}`.
 
 ## Source correspondence
 
@@ -46,7 +44,7 @@ pages 193–194 / PDF pages 198–199. Registered source:
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 80 read these original pages and the supporting Chapter X,
+These original pages were read, with the supporting Chapter X,
 sections 3–4, printed pages 154–156 / PDF pages 160–162. No project
 errata entry for this source was present when checked.
 

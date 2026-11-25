@@ -33,8 +33,8 @@ parametrizations `u α : 𝔾ₐ ⟶ G` of all roots. Moreover, for each simple 
   `u (P.reflectionPerm a a)` is a root parametrization of `P.root (P.reflectionPerm a a) = -a`.
   Moreover, `IsWeylPoint i (weylPoint (u a) (u (P.reflectionPerm a a))) (P.reflection a)`
   holds for every simple `a`. Here `weylPoint u v` is `v(-1) u(1) v(-1)`. The values of `u` at
-  the other roots are unconstrained. This is the form of the root-group input agreed with
-  Worker 712, who is proving it.
+  the other roots are unconstrained. This is the form of the root-group input that
+  `localSplitSimpleRootGroup` (module `LocalSplitReducedIsomorphismProof`) proves.
 
 ## Results
 
@@ -88,7 +88,7 @@ Choose a base `b` of `P` (Library `RootDatumBase.nonempty_base`). `hRG` gives ro
 parametrizations `u` for `G` and `u'` for `H`, Weyl-normalized at the simple roots. Choose a
 simple word for every root (`nonempty_simpleWord`) and form the Weyl families of `u` and `u'`.
 They are root parametrizations of all roots (`isRootParametrization_weylFamily`). Enumerate the
-negative and the positive roots. Worker 712's theorem `localSplitBigCell`
+negative and the positive roots. The theorem `localSplitBigCell`
 (`LocalSplitBigCellStatement`, module `LocalSplitBigCellProof`) shows that both big-cell maps
 are open immersions. Finally, `nonempty_iso_of_fieldAlgebras` (module
 `LocalSplitCellIsomorphism`) glues `G ≅ H` from the big cells. Its field-point hypothesis is

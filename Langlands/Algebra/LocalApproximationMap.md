@@ -98,7 +98,7 @@ Thus the additive direct limits can lie in the different universes
 All ambient assumptions are those required by the existing systems, together
 with the two `S`-module structures.
 
-This unit constructs no approximating system and asserts no existence of a
+This module constructs no approximating system and asserts no existence of a
 compatible map. The intended later existence statement uses a local map
 `R → S` that is essentially of finite presentation, finitely presented
 `S`-modules `M,N`, and an `S`-linear map `f`. Those hypotheses are unnecessary

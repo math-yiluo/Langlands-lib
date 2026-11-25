@@ -1,7 +1,5 @@
 # Compact probability coefficients on actual product induction
 
-Author: Worker 200.
-
 This module constructs the coefficient map on the actual product-induced
 function space with an exact diagonal integral against Haar probability on a
 supplied compact open subgroup. It proves integrability for every vector,

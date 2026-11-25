@@ -1,7 +1,5 @@
 # Statement: containment of Lie algebras at a point spreads to a Zariski neighbourhood
 
-Worker 75.
-
 `Langlands.GroupScheme.RelativeParabolicLieContainmentStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports [`RelativeLevi.Basic`](Basic.md), for

@@ -1,7 +1,5 @@
 # Geometric points are points of the quasi-étale site
 
-Author: Worker 1004.
-
 `QuasiEtaleSite.geometricPoint` proves the published
 `QuasiEtaleSite.GeometricPointStatement.{u, v, uL}`. For every complete
 ultrametric normed ground field `K`, every complete, ultrametric,

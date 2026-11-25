@@ -1,7 +1,5 @@
 # Kernel coactions and transport
 
-Author: Worker 101.
-
 This is an internal algebraic construction derived from the published
 coaction formulas and the universal-point constructor in
 `GroupoidCoactionUniversal`. The published definitions remain unchanged.

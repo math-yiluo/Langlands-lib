@@ -107,4 +107,4 @@ remain proof obligations of the proposition.
 This prerequisite supplies no Morita comparison for division algebras,
 no descent of characters from an algebraically closed extension, and no
 formula for the division-algebra dimensions of cocharacter weight spaces.
-Those comparisons are still needed for the host statement.
+Those comparisons are still needed for `SpinCoverVectorWeightsStatement`.

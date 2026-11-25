@@ -1,7 +1,8 @@
 # An admissible carrier for the place actions at a real place
 
-Module `Langlands.Automorphic.PlaceComponentCarrier`. Worker 174 wrote it as a step towards G1
-(Task 5992). Provenance: internal.
+Module `Langlands.Automorphic.PlaceComponentCarrier`, a step towards
+`CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (proved in `PlaceComponentExistence`).
+Provenance: internal.
 
 Let `S` be an operator realization of `GL_n` over a number field `F` and `v` a real place.
 `ArchimedeanCompactFactors F n = ∏_{w real} O(n) × ∏_{w complex} U(n)`. Its Library map

@@ -1,7 +1,5 @@
 # Strictly local affine limits of etale neighbourhoods
 
-Worker 875.
-
 `Langlands.AlgebraicGeometry.StrictLocalEtaleLimit S s` packages the following
 actual data: a ring in the same universe, a Henselian local ring instance,
 a separably closed residue field, a small cofiltered diagram of affine schemes

@@ -1,7 +1,5 @@
 # Actual lifts of based root-datum automorphisms
 
-Author: Worker 1472.
-
 This internal construction starts with a supplied `SplitPinning p` on an actual
 group scheme over an arbitrary field `k : Type u`. It uses the complete integral
 root datum, including the central-torus directions.

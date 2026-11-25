@@ -1,7 +1,5 @@
 # Common epsilon tests for actual supercuspidal families
 
-Author: Worker 357.
-
 This internal correspondence adapter defines
 `Langlands.Correspondence.CommonSupercuspidalEpsilonFactors` and its comparison
 API. All classes, characters, measures and factor certificates are the actual

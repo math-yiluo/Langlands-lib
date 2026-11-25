@@ -1,7 +1,5 @@
 # Pointed étale lifting of homomorphisms from split tori
 
-Worker 598.
-
 `HomScheme.exists_pointed_etale_lift` works over an arbitrary scheme `S` in
 universe `u`. Given a split torus `H`, a smooth affine group scheme `G`, a point
 `s : S`, and an actual homomorphism between their residue fibres, it constructs

@@ -1,8 +1,5 @@
 # Strong multiplicity one for isobaric automorphic representations of `GL_n`
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition and proves nothing:
 
 - `Langlands.Global.IsobaricStrongMultiplicityOneStatement`.
@@ -13,7 +10,7 @@ representations of `GL_n(𝔸_F)` whose local components agree outside a finite
 set of places are isomorphic. "Isobaric" is the predicate
 `IrreducibleOperatorSubquotient.IsIsobaric` (GH Definition 10.7.6) of the
 definition module `Langlands.Global.Factors.IsobaricAutomorphicRepresentation`,
-which is part of the same contribution (`IsobaricAutomorphicRepresentation.md`
+which was ported together with this module (`IsobaricAutomorphicRepresentation.md`
 §5). The statement module defines one `local instance`: the canonical
 topology on `GL_n(F_v)`, the one of the correspondence category
 `AutomorphicObject (padicField v)`, as in
@@ -27,12 +24,12 @@ itself:
 - `Correspondence.AutomorphicObject`
   (`Langlands/Correspondence/AutomorphicRelations.lean`).
 
-**Why it is here.** GH Corollary 11.7.3 is an L4 target of this task's
-contract. The program ledger `notes/automorphic/global-program-coverage.md`
+**Why it is here.** GH Corollary 11.7.3 is a target of track L4 of the program
+ledger `notes/automorphic/global-program-coverage.md`, which
 lists it as unstated in representation form; the Library has only its
 numerical counterpart `CuspidalSpectralRigidityStatement` (§4).
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The Library statement to be proved is
 `Langlands.Global.IsobaricStrongMultiplicityOneStatement`. Its universe
 parameters are `u` (the number field and every local carrier) and `uQ` (the
 factor universe of the spectral presentations inside `IsIsobaric`).
@@ -126,22 +123,20 @@ translations above.
   cuspidal case of Corollary 11.7.3. Neither Lean statement is derived from
   the other here.
 - **`CuspidalSpectralRigidityStatement`**
-  (`Langlands/Automorphic/Unramified/CuspidalSpectralRigidityStatement.lean`,
-  proof Task 6446 `c4f0be57-1a49-4a42-b813-4354e297ab3f`): its
+  (`Langlands/Automorphic/Unramified/CuspidalSpectralRigidityStatement.lean`): its
   `CuspidalEulerConstituentRecoveryStatement` recovers a list of cuspidal
   classes, with multiplicity, from the products of their unramified Euler
   polynomials outside a finite set. This is the numerical form of the
   cuspidal-data step of Corollary 11.7.3, without local components or
   isobaric representations.
-- **`CuspidalInducingDataRigidityStatement`** (GH Theorem 10.7.2, published;
-  proof Task 6447 `c6bba40a-b120-420c-9c51-9eae3198c17e`): cuspidal data
+- **`CuspidalInducingDataRigidityStatement`** (GH Theorem 10.7.2, published): cuspidal data
   whose induced representations share a spherical constituent at almost all
   finite places agree up to permutation.
 - **`CuspidalIsobaricAutomorphyStatement`** (GH Theorem 10.7.5 at every
-  place, same contribution): existence of an isobaric `Q` for given cuspidal
+  place, ported together with this module): existence of an isobaric `Q` for given cuspidal
   data. This statement is the matching uniqueness up to equivalence.
 
-## 5. Proof route (for the proof task; not part of the statement)
+## 5. Proof route (not part of the statement)
 
 GH leave the proof as Exercise 11.8. A route with the Library's statements:
 
@@ -193,7 +188,6 @@ to this formalization:
   places (§3);
 - `π ≅ π'` is `Nonempty (Q.Equivalence Q')`.
 
-The Lean files were checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The
+The Lean files were checked with `lean_check`, with no errors and no warnings. The
 declaration is a `def` returning `Prop`, with universe parameters `u` and
 `uQ`.

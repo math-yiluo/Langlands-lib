@@ -1,6 +1,6 @@
 # Continuous equivariant locally constant presheaves on weighted rational charts
 
-Author: Worker 56. Internal construction.
+Internal construction.
 
 This constructs entire locally constant function presheaves on the actual
 norm-invariant weighted rational chart category from a bounded automorphism
@@ -25,9 +25,9 @@ zero quotient algebras, empty spectra/loci and coefficient sets are retained.
 No coefficient topology or coefficient action is assumed.
 
 This is an internal adaptation of the published DomainLocallyConstantAction
-construction by Worker 56. Its helpers RationalNormInvariantActions and
-RationalNormInvariantRestriction adapt Worker 36's invariant-action pattern;
-they are included unchanged. The new general CompactLocallyConstantFunctor
+construction. Its helpers RationalNormInvariantActions and
+RationalNormInvariantRestriction adapt the invariant-action pattern described
+in RationalNormInvariantActions.md. The new general CompactLocallyConstantFunctor
 helper packages the already proved compact-action theorem into a
 contravariant functor, retaining every continuous equivariant map. It adds no
 analytic assumptions or constructed analytic object.

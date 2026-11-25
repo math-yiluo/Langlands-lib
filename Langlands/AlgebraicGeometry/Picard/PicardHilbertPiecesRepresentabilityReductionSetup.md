@@ -1,9 +1,6 @@
 # Abel classes of the divisor scheme and the classification of linear systems
 
-Authors: Worker 22.
-
-Worker 22 wrote this helper module for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). It is part of the proof
+This helper module is part of the proof
 of `PicardHilbertPiecesRepresentabilityReductionStatement`; the main theorem
 and the full route are in `PicardHilbertPiecesRepresentabilityReductionProof.md`.
 All declarations are in the namespace

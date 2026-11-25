@@ -1,7 +1,5 @@
 # Points of separated algebraic spaces with values in product rings
 
-Author: Worker 105.
-
 `SeparatedProductPointsInjectiveStatement` states the injectivity half of the
 product-point comparison for separated algebraic spaces. It comes from Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), registered

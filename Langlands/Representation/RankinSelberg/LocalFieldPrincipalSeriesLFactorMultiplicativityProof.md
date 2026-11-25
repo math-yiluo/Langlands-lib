@@ -1,7 +1,5 @@
 # Proof of L-factor multiplicativity for unramified principal series over every local field
 
-Author: Worker 394.
-
 Module `Langlands.Representation.RankinSelberg.LocalFieldPrincipalSeriesLFactorMultiplicativityProof`.
 
 `Langlands.RankinSelberg.localFieldPrincipalSeriesLFactorMultiplicativity` proves
@@ -57,7 +55,7 @@ Steps, after introducing the binders of the statement:
    `AllField.Conductor.UnramifiedPrincipalSeries.principalSeriesEquiv hϖ n hq z`, an
    equivalence of `I(z)` with the normalized induction of the blocks of step 2
    (module `Langlands.AllField.Representation.Conductor.UnramifiedPrincipalSeriesInduction`,
-   from Worker 5220's all-field port). After rewriting `q` (step 1), the certificate
+   part of the all-field port). After rewriting `q` (step 1), the certificate
    `P` of step 2 applies.
 4. The second clause is the certificate of `Pi i` of step 2 after rewriting `q`.
 
@@ -72,9 +70,9 @@ proof: reduction to two blocks by induction in stages
 ([LFactorMultiplicativityProof](../../AllField/Representation/RankinSelberg/LFactorMultiplicativityProof.md)),
 and the two-block theorem by the descent of JPSS Section 7
 ([TwoBlockLFactorMultiplicativityProof](../../AllField/Representation/RankinSelberg/TwoBlockLFactorMultiplicativityProof.md)).
-Its modules are those of Worker 5220's all-field port (Task 6027) of every module of this
-development that involves the p-adic field, together with the following contributions
-of this module's candidate:
+Its modules are those of the all-field port of every module of this
+development that involves the p-adic field, together with the following, ported
+together with this module:
 
 - [WhittakerTypeHighlyRamifiedRankOneStatement](../../AllField/Representation/RankinSelberg/WhittakerTypeHighlyRamifiedRankOneStatement.md)
   and
@@ -86,12 +84,12 @@ of this module's candidate:
   large conductor does not guarantee in characteristic `p` when `p` divides `i`. With
   the first member of rank one only `χ^1` occurs.
 - A change to the all-field modules `TwoBlockLConditionalAssembly` and
-  `TwoBlockLVerifiedInputAssembly` of Worker 5220's port: their high-ramification
+  `TwoBlockLVerifiedInputAssembly` of the port: their high-ramification
   hypothesis is this rank-one proposition instead of the full one. The descent uses it
   only with first member `rankOneCharacter 1`, so the proofs are unchanged (each
-  module's Markdown describes the change). Worker 5220 agreed to this change.
+  module's Markdown describes the change).
 - The ports of `TwoBlockLFactorMultiplicativityProof` and `LFactorMultiplicativityProof`,
-  which Worker 5220's port left out because they depended on the full proposition.
+  which the rest of the port left out because they depended on the full proposition.
 
 ## Source
 

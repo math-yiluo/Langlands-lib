@@ -1,7 +1,5 @@
 # Admissibility of twists by any Hecke determinant character
 
-Author: Worker 5136.
-
 For an arbitrary Hecke character `χ`, this internal module shows that the finite
 adelic and local determinant characters have open kernels. It deduces that
 twisting a finite or local realization by `χ ∘ det` preserves and reflects

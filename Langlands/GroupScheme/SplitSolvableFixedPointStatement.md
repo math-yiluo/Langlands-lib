@@ -1,8 +1,5 @@
 # Split-solvable fixed points on pseudo-complete schemes
 
-Worker 1364 prepared this statement from the interface draft of Workers 1293
-and 1305. All three are coauthors.
-
 `Langlands.GroupScheme.SplitSolvablePseudoCompleteFixedPointStatement.{u}`
 is a proposition-valued definition expressing Conrad–Gabber–Prasad,
 *Pseudo-reductive groups*, second edition (2015), Proposition C.1.5,
@@ -107,7 +104,7 @@ group scheme, whose proof uses the fixed-point subfunctor on all
 universal-product criterion; no fixed-locus representability theorem is
 needed to define this proposition.
 
-## Source proof route and remaining obligations
+## Source proof route
 
 On printed pp.585–586, CGP first treats the trivial group and then inducts
 on the dimension of `H`, choosing a split solvable smooth connected normal
@@ -123,10 +120,11 @@ and its value at the fixed point at infinity gives the required rational
 fixed point.
 
 These are the source's mathematical proof steps, not results established
-by this statement module. The exact proof of the proposition, the closed
-fixed-locus construction and its pseudo-completeness, quotient-action
-descent, and the orbit-extension and equivariance arguments remain proof
-obligations. The split-torus-to-split-solvable adapter, pseudo-completeness
+by this statement module. The exact proposition is proved by
+`splitSolvablePseudoCompleteFixedPoint`
+(`Langlands.GroupScheme.SplitSolvableFixedPointProof`) by a different route,
+through equivariant orbit descent and a local power-series argument.
+The split-torus-to-split-solvable adapter, pseudo-completeness
 of a pseudo-parabolic quotient (C.1.6), and rational lifting from such a
 quotient are separate consumer inputs. None is assumed in this proposition,
 and properness of a general pseudo-parabolic quotient is not a substitute.

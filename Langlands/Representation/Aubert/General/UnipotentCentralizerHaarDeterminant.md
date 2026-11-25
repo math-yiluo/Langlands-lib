@@ -1,6 +1,6 @@
 # Haar determinants on actual positive/zero intersections
 
-This is an internal deduction by Worker 184 from represented dynamic
+This is an internal deduction from represented dynamic
 centralizers, closed subgroup topology, the smooth affine unipotent Haar
 determinant formula, and the actual conjugation action on an intersection.
 Its namespace is `Langlands.Aubert.General.RationalPointFamily`.

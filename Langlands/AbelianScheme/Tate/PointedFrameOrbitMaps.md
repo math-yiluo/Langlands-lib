@@ -65,7 +65,7 @@ only the explicit specialization of that Library theorem to the existing
 ambient frame-orbit maps and their coherence laws; it attributes no new
 geometric theorem to the literature.
 
-The objects are ambient tensor-linear frame orbits. This unit does not impose
+The objects are ambient tensor-linear frame orbits. This module does not impose
 the Weil-pairing similitude condition or choose a Tate-twist trivialization.
 It does not prove surjectivity of the fundamental-group map or of the map on
 fixed orbits, independence from scalar-comparison witnesses, or canonical

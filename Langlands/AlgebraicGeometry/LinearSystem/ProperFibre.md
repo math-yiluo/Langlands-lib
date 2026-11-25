@@ -24,4 +24,6 @@ the chosen point on which the relative linear-system morphism is finite.
 The proofs are internal compositions of the existing relative linear-system
 inverse-image identity, relative-projective-space chart geometry, properness
 cancellation, and `ProperFibreFiniteSpreading`. No section lifting is assumed or
-proved here, and this unit leaves the full fibre ampleness spreading target open.
+proved here, and this module does not prove the full fibre ampleness spreading
+statement, `ProperFibreAmpleSpreadingStatement`; the Library proves it as
+`properFibreAmpleSpreading` in `Picard/ProperFibreAmpleSpreadingProof`.

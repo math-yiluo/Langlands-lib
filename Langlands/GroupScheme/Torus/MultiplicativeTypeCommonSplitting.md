@@ -1,7 +1,5 @@
 # A common splitting field for two groups of multiplicative type
 
-Author: Worker 3502.
-
 `Langlands.GroupScheme.IsMultiplicativeType.HasCommonSplitting Q N` is a
 proposition about two group schemes `Q` and `N` over a field `k : Type u`. It
 asks for one field extension `K : Type u` of `k`, two finitely generated

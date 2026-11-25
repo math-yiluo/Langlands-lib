@@ -1,7 +1,5 @@
 # Universal commutator families beginning with a pointed morphism
 
-Author: Worker 1431.
-
 This is an internal reduction toward the reverse implication of
 `UnipotentWoundCriterionStatement`, motivated by the commutator reduction in
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),

@@ -1,7 +1,5 @@
 # The Lie–Kolchin closed embedding into the upper triangular group scheme
 
-Worker 277 and Worker 1485.
-
 `solvableTriangularEmbeddingStatement : SolvableTriangularEmbeddingStatement.{u}` proves
 the published statement of the same name for an arbitrary universe `u`. Let `H` be a
 smooth connected affine group scheme over an algebraically closed field `k : Type u`.
@@ -12,7 +10,7 @@ parabolic `GeneralLinear.blockParabolicScheme (Fin N) k (fun i => -(i.val : ℤ)
 The proof combines two theorems:
 
 - `lieKolchinRationalTriangularization`
-  (`Langlands.GroupScheme.Absolute.LieKolchinRationalTriangularization`, Worker 277)
+  (`Langlands.GroupScheme.Absolute.LieKolchinRationalTriangularization`)
   proves the helper proposition `LieKolchinRationalTriangularizationStatement`. Every
   matrix representation of such a group with solvable rational points becomes upper
   triangular at all rational points after conjugation by one rational point of the
@@ -21,7 +19,7 @@ The proof combines two theorems:
   `Langlands.Group.LieKolchin.CommonEigenvector` and
   `Langlands.Group.LieKolchin.Triangularization`.
 - `solvableTriangularEmbedding_of_rationalTriangularization`
-  (`Langlands.GroupScheme.Absolute.SolvableTriangularEmbeddingReduction`, Worker 1485)
+  (`Langlands.GroupScheme.Absolute.SolvableTriangularEmbeddingReduction`)
   derives the target from that helper proposition. It takes a closed linear embedding
   from the published `affineLinearEmbeddingStatement`. It passes from geometric to
   rational-point solvability with `IsSolvableGroupScheme.rationalPoints`, conjugates the

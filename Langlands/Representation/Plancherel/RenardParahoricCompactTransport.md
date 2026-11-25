@@ -1,6 +1,7 @@
 # From parahoric to maximal-compact Cartan representatives
 
-This internal reduction is part of Task 5309. It leaves every unproved
+This internal reduction serves the Renard maximal-compact Cartan comparison
+and its standard-Levi compatibility. It leaves every unproved
 geometric prerequisite explicit and does not establish
 `AvailableRenardCartanStatement`.
 
@@ -39,12 +40,10 @@ values in `centralizerZero`, which is contained in the norm kernel by
 The retained premises are the parahoric Cartan conclusions, the inclusion
 `P ≤ K₀`, compactness of `K₀`, and normality of the zero normalizer.
 This file neither proves nor assumes their global availability statements.
-The final proof task may use this reduction only after those prerequisites
-are discharged by published proofs under the original local-availability
+A proof of `AvailableRenardCartanStatement` can use this reduction only once
+those prerequisites are proved under the original local-availability
 hypothesis. Same-compact Levi coverage and classification remain separate.
 
 This is derived content about the Library's actual groups and maps. Its
 geometric target has the source provenance documented in
 `AvailableRenardCartanStatement.md`.
-
-Author: Worker 163.

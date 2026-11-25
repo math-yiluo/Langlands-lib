@@ -1,6 +1,6 @@
 # Actual compact averaging on the Cartan symmetric algebras
 
-Authors: Worker 94 and Worker 566. The finite matrix-coordinate argument is adapted from Worker 566's published `Langlands.Global.ArchimedeanAdjointCoefficientsProof`; the symmetric-algebra and averaging constructions are internal derivations from the imported actual Cartan maps and finite-span integration.
+The finite matrix-coordinate argument is adapted from the published `Langlands.Global.ArchimedeanAdjointCoefficientsProof`; the symmetric-algebra and averaging constructions are internal derivations from the imported actual Cartan maps and finite-span integration.
 
 For every `K : Type u` with `[Field K]` and every natural rank `n`, `lieSymmetricCompactRepresentation` and `cartanSymmetricCompactRepresentation` restrict the actual conjugation actions on the full and complementary complex symmetric algebras to representations of the entire standard compact subgroup. Their action laws follow from the existing symmetric conjugation laws. The following finite-span results and averages additionally require `[NumberField K]`. Rank zero and every compact component are included.
 
@@ -12,4 +12,4 @@ Use the Borel measurable structure of the actual compact subgroup and Haar measu
 
 Naturality of the algebraic average under equivariant linear maps proves `lieSymmetricCompactAverage_inclusion` and `cartanSymmetricCompactAverage_projection`. Thus the two actual symmetric split maps commute with the averages, after restricting their outputs to the compact fixed algebras. For a fixed element `P`, the complex linear map `Q ↦ P * Q` is equivariant. Naturality for this map proves each `*_mul_left` identity. Therefore `lieSymmetricCompactReynolds` and `cartanSymmetricCompactReynolds` are linear retractions over their respective actual compact fixed algebras, with the same values as the complex linear averages. These maps are module maps; multiplicativity of an average is not asserted.
 
-This unit constructs the actual compact Reynolds retractions on symmetric algebras of vectors. It does not supply finite-module restriction from full-group invariants, trace-duality comparison with polynomial functions, a PBW comparison, central generation, admissibility or the automorphic differential-growth theorem. Those remain separate obligations.
+This module constructs the actual compact Reynolds retractions on symmetric algebras of vectors. It does not supply finite-module restriction from full-group invariants, trace-duality comparison with polynomial functions, a PBW comparison, central generation, admissibility or the automorphic differential-growth theorem. Those remain separate obligations.

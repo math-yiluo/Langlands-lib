@@ -125,9 +125,9 @@ supplement. No source claims that arbitrary finite image implies continuity.
 The proof uses no degree map, Frobenius lift, irreducibility, normality of
 inertia, or finite image of the full representation. The complex topology is
 unchanged. No norm/module-topology or bundled-predicate adapters are redefined.
-The compact-group helper is intended for the separate unramified-reduction
-and finite-image-extension proof tasks. Compilation alone does not establish
-semantic acceptance or Library publication.
+The compact-group helper is used by the separate unramified-reduction
+and finite-image-extension proofs, `UnramifiedReductionProof` and
+`FiniteImageExtensionProof`.
 
 ## Development validation
 
@@ -135,7 +135,6 @@ The proof module compiles without errors or warnings. Private development checks
 assigned the entire unapplied closing constant both to the published target
 and to its fully expanded five-clause telescope, with independent universes.
 A second unapplied assignment checked the complete compact-group helper type.
-The Lean service's Lake build and declaration inspection succeeded. Both the
+The Lake build and declaration inspection succeeded. Both the
 main theorem and compact-group helper depend only on `propext`,
-`Classical.choice`, and `Quot.sound`. These checks precede, and do not replace,
-formal exact-target validation and independent semantic review of the candidate.
+`Classical.choice`, and `Quot.sound`.

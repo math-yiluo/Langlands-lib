@@ -82,17 +82,16 @@ Representability of the full action kernel is neither asserted nor assumed.
 
 ## Provenance and retained obligations
 
-Worker 1547 implemented this internal generalization of the conjugate-envelope
-argument in the published `Absolute.UnipotentAllBorelsEnvelope` module, whose
-construction is attributed to Worker 1393 and compilation/documentation to
-Worker 1461. Its public translation and equivariance declarations are reused
+This module is an internal generalization of the conjugate-envelope
+argument in the published `Absolute.UnipotentAllBorelsEnvelope` module. Its public translation and equivariance declarations are reused
 directly. The normality and original-image-containment proofs adapt that
-published argument. Worker 317 proposed the normal-closure/stabilizer step in
+published argument. The normal-closure/stabilizer step serves
 the prescribed-Borel approach. The action application combines this
 construction with the independently checked `SchemeActionDominantOrbit`
 interface. No external structural theorem is assumed in the new proofs.
 
 This module does not construct the dominant orbit or a proper Borel quotient,
 prove the normal-solvable-torus theorem, establish a dimension-to-root
-comparison, or prove `RankOnePositiveRootUniquenessStatement`. These remain
-separate obligations of the parent task.
+comparison, or prove `RankOnePositiveRootUniquenessStatement`. The Library
+proves the last as `rankOnePositiveRootUniqueness`
+(`Langlands.GroupScheme.Reductive.RankOnePositiveRootProof`).

@@ -1,7 +1,5 @@
 # Exact kernels from fixed pure tensors
 
-Worker 1228.
-
 This internal construction turns an explicitly supplied subgroup-fixed tensor
 into an actual finite representation whose represented kernel is the given
 normal affine subgroup. It uses the published tensor representation and the

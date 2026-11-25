@@ -203,9 +203,11 @@ The provenance is derived for these reasons:
 - `k`, `G`, `H`, `K`, `Λ` and the test algebras in `IsStableSubspace` lie in
   one universe `u`. This is a formalization convention.
 
-Relation to the Library. The Library has no notion of linear reductivity and
-no statement of Nagata's theorem; the two statements named above use the same
-semisimplicity condition.
+Relation to the Library. Apart from this module, the Library has no statement
+of Nagata's theorem; [`NagataReductionStatements`](NagataReductionStatements.md)
+states its three implications and defines linear reductivity,
+`IsLinearlyReductive`, as the first condition above. The two statements named
+above use the same semisimplicity condition.
 
 Errata. The official errata snapshot of 2026-11-04 for the 2022 reprint
 (source ID `milne-2022-algebraic-groups-errata-2026-11-04`, SHA-256
@@ -223,17 +225,20 @@ for p. 249 an entry on the proof of Theorem 12.57 only; it has no entry for
 Remark 12.56 and none for printed pp. 3, 6, 14, 16, 41, 83, 86, 90, 97, 230,
 233, 236 or 248.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
 
-Milne gives no proof. Two parts can be derived from statements already
-submitted or in the Library:
+The Library proves the statement as `Langlands.GroupScheme.nagataLinearlyReductive`
+in [`NagataLinearlyReductiveProof`](NagataLinearlyReductiveProof.md).
+
+Milne gives no proof. Two parts can be derived from statements in the
+Library:
 
 - If `G°` is of multiplicative type and `p ∤ (G : G°)`, then `G` is
   linearly reductive: every representation of `G°` is semisimple by the
-  first part of Theorem 12.30 (its Lean form,
-  `MultiplicativeTypeRepresentationGaloisOrbitStatement`, was submitted
-  separately by the same author and was not in the Library when this unit
-  was written). Exercise 4-3 of the 2022 reprint (printed p. 97) asks the
+  first part of Theorem 12.30 (its Lean form is
+  `MultiplicativeTypeRepresentationGaloisOrbitStatement`, proved as
+  `multiplicativeTypeRepresentationGaloisOrbit` in
+  [`Rational.MultiplicativeTypeRepresentationProof`](../Rational/MultiplicativeTypeRepresentationProof.md)). Exercise 4-3 of the 2022 reprint (printed p. 97) asks the
   reader to show that a representation of `G` is semisimple when its
   restriction to `G°` is semisimple and `π₀(G)` has order prime to `p`. A proof must restrict
   matrix representations of `G` along `i`.

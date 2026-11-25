@@ -1,7 +1,5 @@
 # Axiom T3 for the Chevalley group
 
-Author: Worker 1398.
-
 `tits_mul_mem`: for a simple root `i`, a representative `n = n_i t` of `s_i`, `m ∈ N` and
 `g = u' t' x_i(a) ∈ B`, `n g m ∈ B m B ∪ B (n m) B`. First `n u' n⁻¹ ∈ U'_i` (`n_i` permutes the
 positive roots other than `i`, Mathlib `IsPos.reflectionPerm`) and `n t' n⁻¹ ∈ T`. Then

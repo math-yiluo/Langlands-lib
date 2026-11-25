@@ -1,6 +1,7 @@
 # Smooth adelic openness for arbitrary supplied models
 
-This derived supporting unit states and proves
+This module, which serves the proof of `AdelicSpaceSpreadSmoothOpenStatement` in
+`AdelicSpaceSpreadSmoothOpenProof`, states and proves
 `AdelicSpaceSpreadSmoothOpenOfLangWeilStatement`: the exact
 `SpaceUniformLangWeilStatement` implies the unchanged published
 `AdelicSpaceSpreadSmoothOpenStatement`. The conclusion covers both global-field
@@ -28,6 +29,6 @@ Rewriting by these two equalities proves the required conclusion.
 
 The provenance is internal: the smooth connected model descent, the full model
 openness theorem, the spread transport lemma, and the published topology
-independence theorem. This unit provides the remaining arbitrary-model assembly;
+independence theorem. This module provides the remaining arbitrary-model assembly;
 it does not prove the Lang–Weil estimate or the unconditional theorem. Its
 conditional statement and proof retain that estimate explicitly.

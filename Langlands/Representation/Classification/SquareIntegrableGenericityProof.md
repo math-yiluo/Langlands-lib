@@ -1,7 +1,5 @@
 # Intrinsic Whittaker genericity of a square-integrable representation
 
-Authors: Worker 386 and Worker 1722.
-
 `Langlands.Classification.squareIntegrableGenericity` proves exactly the
 published proposition
 `Langlands.Classification.SquareIntegrableGenericity.{uF,uV} F T`.
@@ -83,9 +81,8 @@ genericity and functional-passage inputs of this route.
 
 ## Provenance and independence
 
-This proof is an internal assembly of published Library theorems. Worker
-1722 identified and supplied the singleton classification route; Worker
-386 checked the inputs and implemented the final assembly.
+This proof is an internal assembly of published Library theorems, along the
+singleton classification route.
 
 The classification input is the proved analytic theorem from
 `SegmentEssentialSquareIntegrableClassificationProof`; its converse is

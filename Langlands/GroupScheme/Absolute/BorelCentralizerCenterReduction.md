@@ -1,6 +1,6 @@
 # Borel centralizer equality from homomorphism rigidity
 
-Worker 848. This internal reduction follows the inner-automorphism argument in Milne,
+This internal reduction follows the inner-automorphism argument in Milne,
 *Algebraic Groups* (2017), Proposition 17.22, printed p.359, using Proposition 17.21.
 It imports both published statement definitions unchanged. Its last theorem is conditional
 on `BorelHomomorphismRigidityStatement`; this module does not claim the unconditional target.

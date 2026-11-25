@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesGlueOfCocycle
@@ -35,7 +35,7 @@ universe u
 noncomputable section
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Spec.map_comp Scheme.Modules.pullback Scheme.Hom QuasiCompact Spec Spec.map Scheme Scheme.Hom.preimage_top Scheme.Modules.pullbackCongr Scheme.Modules.pullbackId Scheme.Modules QuasiSeparated Scheme.Hom.preimage_iSup Scheme.Hom.comp_preimage Scheme.Modules.map_smul Scheme.Modules.pullbackComp Scheme.Modules.UnitCocycle Scheme.Modules.IsInvertible Scheme.Modules.exists_pullback_glueOfCocycle_iso Scheme.Modules.exists_iso_app_eq_of_iSup_eq_top_of_forall_smul_eq Scheme.Modules.isInvertible_glueOfCocycle Scheme.Modules.UnitCocycle.exists_comap_eq_of_isDirectLimit Scheme.Modules.IsInvertible.exists_isAffineOpen_isFrameOn_preimage_of_isDirectLimit)
+export _root_.AlgebraicGeometry (Spec.map_comp Scheme.Modules.pullback Scheme.Hom QuasiCompact Spec Spec.map Scheme Scheme.Hom.preimage_top Scheme.Modules.pullbackCongr Scheme.Modules.pullbackId Scheme.Modules QuasiSeparated Scheme.Hom.preimage_iSup Scheme.Hom.comp_preimage Scheme.Modules.map_smul Scheme.Modules.pullbackComp Scheme.Modules.UnitCocycle Scheme.Modules.IsInvertibleFLT Scheme.Modules.exists_pullback_glueOfCocycle_iso Scheme.Modules.exists_iso_app_eq_of_iSup_eq_top_of_forall_smul_eq Scheme.Modules.isInvertible_glueOfCocycle Scheme.Modules.UnitCocycle.exists_comap_eq_of_isDirectLimit Scheme.Modules.IsInvertible.exists_isAffineOpen_isFrameOn_preimage_of_isDirectLimit)
 namespace LimitPic
 open _root_.AlgebraicGeometry
 
@@ -166,9 +166,9 @@ theorem solution
     {R : Type u} [CommRing R] (g : ∀ i, G i →+* R)
     (hR : IsDirectLimit (fun i j h => ⇑(φ i j h)) fun i => ⇑(g i))
     (i : ι) {X : Scheme.{u}} (fX : X ⟶ Spec (CommRingCat.of (G i))) [QuasiCompact fX] [QuasiSeparated fX]
-    (𝓛 : (Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i)))).Modules) (h𝓛 : Scheme.Modules.IsInvertible 𝓛) :
+    (𝓛 : (Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i)))).Modules) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛) :
     ∃ (j : ι) (hij : i ≤ j) (𝓛j : (Limits.pullback fX (Spec.map (CommRingCat.ofHom (φ i j hij)))).Modules),
-      Scheme.Modules.IsInvertible 𝓛j ∧
+      Scheme.Modules.IsInvertibleFLT 𝓛j ∧
       ∀ cX : Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i))) ⟶
           Limits.pullback fX (Spec.map (CommRingCat.ofHom (φ i j hij))),
         cX ≫ Limits.pullback.fst fX (Spec.map (CommRingCat.ofHom (φ i j hij))) =
@@ -235,7 +235,7 @@ theorem solution
         · rw [Category.assoc, eh₂, ei₂, Category.id_comp] }
 
   let 𝓛' : X'R.Modules := (Scheme.Modules.pullback e.hom).obj 𝓛
-  have h𝓛' : IsInvertible 𝓛' := h𝓛.pullback e.hom
+  have h𝓛' : IsInvertibleFLT 𝓛' := AlgebraicGeometry.Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛) e.hom
   have hO : ∀ k, pr'R ⁻¹ᵁ W k = e.hom ⁻¹ᵁ (c₀ ⁻¹ᵁ W k) := fun k => by
     rw [← Scheme.Hom.comp_preimage]; exact congrArg (· ⁻¹ᵁ W k) heh_c₀.symm
   let s' : ∀ k, Γ(𝓛', pr'R ⁻¹ᵁ W k) := fun k =>
@@ -261,7 +261,7 @@ theorem solution
   have hV : ∀ k, cX' ⁻¹ᵁ (pr'j ⁻¹ᵁ W k) = pr'R ⁻¹ᵁ W k := fun k => by
     rw [← Scheme.Hom.comp_preimage]; exact congrArg (· ⁻¹ᵁ W k) hcX'₁
   let 𝓛'j : X'j.Modules := glueOfCocycle c
-  have h𝓛'j : IsInvertible 𝓛'j := AlgebraicGeometry.Scheme.Modules.isInvertible_glueOfCocycle hcovj c
+  have h𝓛'j : IsInvertibleFLT 𝓛'j := AlgebraicGeometry.Scheme.Modules.isInvertible_glueOfCocycle hcovj c
   obtain ⟨iso₁⟩ : Nonempty ((Scheme.Modules.pullback cX').obj 𝓛'j ≅ 𝓛') := by
     refine nonempty_pullback_glueOfCocycle_iso' cX' hcovj c (fun k => pr'R ⁻¹ᵁ W k) hV 𝓛' s' hs' ?_
     intro a b hab
@@ -299,7 +299,7 @@ theorem solution
         · rw [Category.assoc, ejh₁, ← Category.assoc, eji₁, hd₁, Category.id_comp]
         · rw [Category.assoc, ejh₂, eji₂, Category.id_comp] }
   let 𝓛j : Xj.Modules := (Scheme.Modules.pullback ej.inv).obj 𝓛'j
-  refine ⟨j, hij₀.trans hj₀j, 𝓛j, h𝓛'j.pullback ej.inv, fun cX h1 h2 => ?_⟩
+  refine ⟨j, hij₀.trans hj₀j, 𝓛j, AlgebraicGeometry.Scheme.Modules.IsInvertible.pullbackFLT (hL := h𝓛'j) ej.inv, fun cX h1 h2 => ?_⟩
 
   haveI : Mono ej.hom := (Iso.isIso_hom ej).mono_of_iso
   have hkey : cX ≫ ej.inv = e.inv ≫ cX' := by

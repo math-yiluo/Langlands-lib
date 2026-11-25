@@ -51,14 +51,13 @@ unproved mathematical assumptions.
 There are no project dependencies. The module imports
 `Mathlib.RepresentationTheory.Intertwining`, using its existing `Representation`,
 `Representation.IntertwiningMap`, and `Representation.Equiv` interfaces.
-The prepared environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`:
+The prepared environment is
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 4 searched the pinned `Mathlib/RepresentationTheory` sources for twist
-constructors and inspected `Basic.lean` and `Intertwining.lean`. No matching
-scalar twist constructor was found. This module reuses their representation
+A search of the pinned `Mathlib/RepresentationTheory` sources for twist
+constructors, inspecting `Basic.lean` and `Intertwining.lean`, found no
+matching scalar twist constructor. This module reuses their representation
 and morphism types instead of adding parallel types.
 
-Compilation is an elaboration check. Independent review is required for
-mathematical acceptance and publication.
+Compilation is an elaboration check.

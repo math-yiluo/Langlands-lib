@@ -1,9 +1,5 @@
 # Coarse scalar character of a nested fine twist
 
-Authors: Worker 526 wrote the draft; Worker 359 supplied the
-effective-parameter and fibre-sum design calculation; Worker 252 checked and
-submitted it.
-
 `Langlands.Exponents.CoarseFineTwistScalarCharacterStatement.{uF,uV}` is an
 internal Prop-valued definition. This module states a character interface;
 it supplies no proof. The field and representation-carrier universes are
@@ -59,7 +55,8 @@ over each coarse fibre. The transported coarse-coordinate zero sums in
 `(S i).indexEquiv` identifies those coordinate sums with size-weighted fine
 sums; the fine sizes sum to `B.size i`. Continuity of tuple repetition
 preserves the open kernel. These named ingredients motivate the interface;
-their assembly remains a separate proof obligation.
+their assembly is the proof `Langlands.Exponents.coarseFineTwistScalarCharacter`
+in `CoarseFineTwistScalarCharacterProof`.
 
 This character statement establishes no Jacquet occurrence, generalized
 block decomposition, surjectivity on a block, opposite-Jacquet

@@ -1,6 +1,6 @@
 # Reciprocity systems in a common algebraic closure
 
-Author: Worker 21. This pair defines families of candidate reciprocity
+This pair defines families of candidate reciprocity
 isomorphisms over every finite extension of a finite extension `F` of `Q_p`
 inside one algebraic closure. It defines their compatibility relations,
 their normalization, and the existence and uniqueness properties of a
@@ -156,8 +156,8 @@ uniqueness properties on these actual objects.
 `CommonClosure.canonicalData F` supplies, for every finite intermediate
 field, the published `canonicalTopologicalData` of its `asPadicField`. With
 `T := F.canonicalTopologicalData`, it gives the canonical formulations.
-The degree map `φ` remains explicit until the actual local Weil assembly is
-published by its assigned owner. The intended theorems use that actual map.
+The degree map `φ` remains explicit in this file. The intended theorems use
+the actual map `Weil.Local.localResidueDegree F` of `Weil.Local.Assembly`.
 
 ## Scope
 
@@ -167,9 +167,12 @@ condition (W4), that the Weil group is the inverse limit of its relative
 quotients, concerns the Weil group itself and is not part of these
 relations. The fixing subgroups in the common closure are not identified
 with separately presented absolute Galois or Weil groups of the fields `E`.
-Independence of the choice of closure is also not addressed. Any
-existence or uniqueness theorem for these propositions belongs to the
-companion statement task and to later proof tasks.
+Independence of the choice of closure is also not addressed. No
+existence or uniqueness theorem for these propositions is in this file. For
+the actual degree map and canonical data (`ReciprocitySystemStatement`),
+existence is proved as `commonClosureReciprocityExistence` in
+`CommonClosureExistenceProof` and uniqueness as
+`commonClosureReciprocityUniqueness` in `ReciprocitySystemUniquenessProof`.
 
 ## Sources
 
@@ -199,7 +202,7 @@ companion statement task and to later proof tasks.
   uniqueness argument. Milne uses the arithmetic convention. The geometric
   convention here inverts the map, which does not affect uniqueness.
 
-Worker 21 read these passages in the original files. The Lean formulations,
+These passages were read in the original files. The Lean formulations,
 including the absolute-value form of the normalization and uniqueness for
 the Weil-side isomorphisms, are derived formulations rather than literal
 translations.
@@ -213,10 +216,10 @@ The direct project imports are the published modules
 `Langlands/ClassFieldTheory/Local` (formerly at `Langlands/LocalClassField`).
 Declarations use the namespace `Langlands.LocalClassField`. The prepared
 environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 and Mathlib
+Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`, on Library commit
 `fe68653a42ed5ae0a2d7f5cef0697a68e8acc978`. The development check
-`869a47a3-28c4-414b-86ba-977f97b58336` reports 0 errors and 0 warnings.
+reports 0 errors and 0 warnings.
 It inspected `CommonClosure.NormalizedSystemUniqueness`, which returns
 `Prop` and uses only `propext`, `Classical.choice` and `Quot.sound`. The
 check confirms that the definitions compile, not that their propositions

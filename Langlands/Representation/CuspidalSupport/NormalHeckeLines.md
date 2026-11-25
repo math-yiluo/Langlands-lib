@@ -1,11 +1,9 @@
 # The lines F_x(ρ) of the Hecke algebra of an open normal subgroup
 
-Author: Worker 40.
-
 This supporting module is written for the proof of Renard VI.4.3, "Structure de A"
 (the statement `RationalNormKernelHeckeStructureStatement`). It extends the generic
-modules `NormalSubgroupHecke` (Worker 1789), `NormalSubgroupHeckeDomain` and
-`NormalHeckeGrading` (Worker 1826), all in namespace
+modules `NormalSubgroupHecke`, `NormalSubgroupHeckeDomain` and
+`NormalHeckeGrading`, all in namespace
 `Langlands.CuspidalSupport.NormalHecke`. Source: David Renard, *Représentations des
 groupes réductifs p-adiques* (registered source
 `renard-2026-representations-groupes-reductifs-padiques`), VI.4.3, printed

@@ -30,4 +30,5 @@ cutoff d+1 remain unscaled.
 This identifies the intrinsic filtration on the appropriate actual positive
 object. Constructing and checking equivariance of ambient conjugation or
 change-of-torus maps, proving parabolic normalization, and effective descent
-remain separate steps in Task 7200.
+remain separate steps of the finite vector-bundle filtrations of supplied
+relative radicals.

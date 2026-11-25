@@ -1,6 +1,6 @@
 # Harris's twisting characters `ν(Gπ)` and `ν̄(π)`
 
-Author: Worker 34. This module defines the Hecke character `ν̄(π)` (nu-bar)
+This module defines the Hecke character `ν̄(π)` (nu-bar)
 of Harris 1999, (5.4) and Theorem 5.7, from the corrected formula in the
 erratum of Harris 1998. It also defines the unconjugated character `ν(Gπ)`
 of the same erratum, and the relation saying that a `λ`-adic character realizes

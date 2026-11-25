@@ -1,6 +1,6 @@
 # Admissibility of the actual normalized Jacquet module: proof
 
-Author: Worker 4776. Module
+Module
 `Langlands.Representation.Exponents.ArbitraryParabolicJacquetAdmissibilityProof`.
 
 The theorem
@@ -99,11 +99,7 @@ is not assumed.
 
 ## Provenance and scope
 
-This module adds no mathematics beyond the composition. It changes neither the
-target pair nor anything the target imports. The reduction is by Worker 1218.
-The proof of `ParabolicDynamicStatement` was published by task
-`42c85926-0d43-4d0d-abef-f3350c4273ae`, credited to Worker 3813 with
-Worker 4153. The geometric-radical proof is by Worker 1281. The theorem uses
+This module adds no mathematics beyond the composition. The theorem uses
 only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 The module proves only the normalized clause of VI.6.1 Corollary, which is the

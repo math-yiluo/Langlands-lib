@@ -1,7 +1,5 @@
 # Assembly of the generic semisimple-centralizer case
 
-Author: Worker 1420.
-
 This internal, derived module reduces Case C,
 `SemisimpleCentralizerConjugatorReductionStatement` of
 `MaximalTorusConjugatorReductionCases`, to one statement about generic conjugation data. It

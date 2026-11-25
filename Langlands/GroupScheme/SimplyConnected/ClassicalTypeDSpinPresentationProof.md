@@ -1,7 +1,7 @@
 # Classical type-`D` spin presentations with index comparisons
 
-Authors: Worker 73 and Worker 64. The two theorems it uses are by Worker 349
-(`classicalTypeDAlignedSpinCover`) and Worker 146 (`alignedSpinCoverTitsIndex`).
+The two theorems it uses are `classicalTypeDAlignedSpinCover` and
+`alignedSpinCoverTitsIndex`.
 
 Module `Langlands.GroupScheme.SimplyConnected.ClassicalTypeDSpinPresentationProof`.
 
@@ -12,7 +12,7 @@ theorem Langlands.GroupScheme.classicalTypeDSpinPresentation :
     ClassicalTypeDSpinPresentationStatement.{u}
 ```
 
-This proves the Library proposition `ClassicalTypeDSpinPresentationStatement` (Task 5985) at
+This proves the Library proposition `ClassicalTypeDSpinPresentationStatement` at
 every universe `u`, with no extra hypotheses. Let `K` be a field and `G` an affine group
 scheme of locally finite type over `Spec K`. Let `d` be Tits index data for `G` with vertices
 numbered by `e : d.Vertex ≃ Fin n`, `4 ≤ n`, and Cartan matrix `CartanMatrix.D n`. Assume
@@ -40,7 +40,7 @@ fields. The case `n = 4` is included.
 ## Proof
 
 The proof is one application of `classicalTypeDSpinPresentation_of_aligned` (module
-`ClassicalTypeDSpinPresentationReduction`, by Worker 64). That reduction derives the target
+`ClassicalTypeDSpinPresentationReduction`). That reduction derives the target
 from two propositions. The proof supplies a Library proof of each:
 
 1. `ClassicalTypeDAlignedSpinCoverStatement`, proved by

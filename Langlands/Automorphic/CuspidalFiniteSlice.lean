@@ -11,13 +11,13 @@ open Langlands.Global NumberField
 
 variable (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
 
-local instance (n : ℕ) : AddCommGroup (RationalInvariantFunctions F n) :=
+private local instance (n : ℕ) : AddCommGroup (RationalInvariantFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (ContinuousRationalFunctions F n) :=
+private local instance (n : ℕ) : AddCommGroup (ContinuousRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F n) :=
+private local instance (n : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F n) :=
   Submodule.addCommGroup _
-local instance (n : ℕ) : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
+private local instance (n : ℕ) : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
 local instance (n : ℕ) : AddCommGroup (StableAutomorphicFunctions F n) :=
   Submodule.addCommGroup _
 

@@ -1,7 +1,5 @@
 # Integral away comparison compatible with a supplied full comparison
 
-Author: Worker 18.
-
 `Langlands.Global.PrimeToIntegralProfiniteIntegerAdeleComparisons` is a
 no-parameter definition with type `Prop`. It states the integral residue-to-adele
 comparison away from every natural modulus, relative to a supplied normalized

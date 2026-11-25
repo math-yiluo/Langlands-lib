@@ -1,6 +1,6 @@
 # Statement: a maximal torus of a connected reductive group is its own centralizer
 
-Worker 303. This module states one proposition and proves nothing:
+This module states one proposition and proves nothing:
 `Langlands.GroupScheme.MaximalTorusCentralizerStatement`.
 
 Let `k` be a field and `G` a group scheme over `Spec k` with
@@ -62,13 +62,14 @@ no entry for these items.
 
 ## Use
 
-This is the missing centralizer input for clause 1 of
-`Langlands.GroupScheme.RegularCocharacterBorelStatement`, proof task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`. That task also needs a second input,
-`GenericCentralizerStatement` (`Rational/Statement`). That statement is
-published but not yet proved. Its proof is the open target of task
-`07f71149-a274-48a4-9fc8-e29fd7e04cb9`. For a split maximal torus and a regular
-cocharacter `ν`, it identifies `Dynamic.centralizer (ν ≫ j)` with
-`torusCentralizer j`. Once both statements are proved, they will combine to
-identify the dynamic Levi subgroup `Z(ν)` with `T`. Until then, neither
-prerequisite is available as a proved result.
+This is the centralizer input for clause 1 of
+`Langlands.GroupScheme.RegularCocharacterBorelStatement`. That clause also needs
+a second input, `GenericCentralizerStatement` (`Rational/Statement`). For a
+split maximal torus and a regular cocharacter `ν`, it identifies
+`Dynamic.centralizer (ν ≫ j)` with `torusCentralizer j`. The two statements
+combine to identify the dynamic Levi subgroup `Z(ν)` with `T`. Both are proved
+in the Library: this statement by `maximalTorusCentralizer`
+(`Absolute/MaximalTorusCentralizerProof`) and `GenericCentralizerStatement` by
+`genericCentralizer` (`Rational/GenericCentralizerProof`).
+`RegularCocharacterBorelStatement` itself is proved by `regularCocharacterBorel`
+(`Absolute/RegularCocharacterBorelProof`).

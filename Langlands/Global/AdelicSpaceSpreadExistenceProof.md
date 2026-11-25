@@ -1,7 +1,5 @@
 # Separated models of algebraic spaces over rings of `S`-integers
 
-Author: Worker 208.
-
 This helper module proves the existence clauses of
 `Langlands.Global.CurvePlaceSpaceSpreadStatement` and
 `Langlands.Global.NumberFieldSpaceSpreadStatement`, from

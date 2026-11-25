@@ -20,9 +20,8 @@ Harris (1999), *Galois properties of cohomological automorphic forms on
 GL(n)*, works with coefficients modulo powers of the coefficient prime `ℓ`
 (printed p. 308) and forms from them the lisse `ℓ`-adic sheaf (printed
 p. 311). §5 on printed p. 313 considers the resulting `λ`-adic
-representations. The review of the torsion-limit construction (candidate
-`99335a4c-07bc-4e82-b20c-e6ac07f1c0f2`, review `71cdcf38`) left the
-specialization of the scalar `m` relative to `p` as a future obligation.
+representations. The torsion-limit construction leaves the scalar `m`
+unspecialized relative to `p`.
 This module supplies that specialization: `m` becomes the residue
 characteristic of `p`. The module proves that `ℓ` lies in every place `l`
 of `K` above `p`. A scalar outside some such `l` would have vanishing
@@ -46,17 +45,17 @@ formalized.
 - From the published `Langlands.Global.AdelicFunctoriality`:
   `FinitePlacesAbove K p`, the places `l` of `K` whose ideal lies over
   `p.asIdeal`.
-- From `Langlands.Shimura.PEL.HarrisTaylorCMAdicGaloisCohomology` (candidate
-  `d74b579d-a959-4356-9ab5-6ce21cbcbfbc`, accepted and awaiting
-  publication): `cmHarrisAdicCohomology`, `CMHarrisAdicSpace`,
+- From `Langlands.Shimura.PEL.HarrisTaylorCMAdicGaloisCohomology`:
+  `cmHarrisAdicCohomology`, `CMHarrisAdicSpace`,
   `continuous_cmHarrisAdicAction` and `cmHarrisAdicFrobeniusEulerPolynomial`.
-- From `Langlands.Shimura.PEL.HarrisTaylorCMLambdaAdicRepresentation`
-  (candidate `7140e878-3de0-439e-bfaf-6f52ad786d28`, accepted and awaiting
-  publication): `harrisCoefficientComponentMap`,
+- From `Langlands.Shimura.PEL.HarrisTaylorCMLambdaAdicRepresentation`:
+  `harrisCoefficientComponentMap`,
   `CMHarrisAdicIsLatticeContinuous`, `cmHarrisLambdaAdicRepresentation` and
   `cmHarrisLambdaAdicRepresentation_hasEulerPolynomialAt`.
-- Worker 3's published `HarrisCMGaloisCohomologySmoothStatement` and Worker
-  57's published `cmHarrisGeometricGaloisCohomologyAction`.
+- `HarrisCMGaloisCohomologySmoothStatement` (in
+  `Langlands.Cohomology.HarrisCMCohomology.Statement`) and
+  `cmHarrisGeometricGaloisCohomologyAction` (in
+  `Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology`).
 - From Mathlib: `ringChar.Nat.cast_ringChar`,
   `CharP.ringChar_ne_zero_of_finite`, `CharP.char_is_prime_or_zero`,
   `Ideal.finiteQuotientOfFreeOfNeBot`, `Ideal.Quotient.eq_zero_iff_mem` and

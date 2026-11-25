@@ -116,7 +116,7 @@ Weil restriction `Weil R A R[M]` exists.
 
 - `weilObj R A M` is `Weil R A R[M]` as an object of `CommAlgCat (CommRingCat.of R)`.
 - `weilPtEquiv C : (weilObj R A M ⟶ C) ≃ Pt R A M C` is the Library's
-  `TauCeti.Algebra.WeilRestriction.tensorHomEquiv`. It is natural in `C` (`weilPtEquiv_comp`,
+  `Langlands.Algebra.WeilRestriction.tensorHomEquiv`. It is natural in `C` (`weilPtEquiv_comp`,
   from `tensorHomEquiv_comp`).
 - `weilAction : CharacterAction.Action (weilObj R A M)` is the Library's notion of an action of
   characters `Multiplicative M →* Cˣ` on the points of `weilObj`. It is obtained by transporting
@@ -129,7 +129,7 @@ Weil restriction `Weil R A R[M]` exists.
 - `formallySmooth_homAlgebra` uses `Algebra.FormallySmooth.of_comp_surjective`. Let `I` be a
   square-zero ideal of `B` and `g : HomAlgebra →ₐ[R] B ⧸ I`. Its Weil point `x` is a Hopf point,
   hence fixed. `Weil R A R[M]` is formally smooth by the Library instance
-  `TauCeti.Algebra.WeilRestriction.instFormallySmooth`, since Mathlib makes `R[M] ⊗[R] A`
+  `Langlands.Algebra.WeilRestriction.instFormallySmooth`, since Mathlib makes `R[M] ⊗[R] A`
   formally smooth over `R[M]`. So `CharacterAction.exists_fixed_lift` gives a fixed lift `y` of
   `x` to `B`. The normalisation of `y` is a Hopf point over `B`, and `homEquiv` turns it into an
   algebra map `HomAlgebra → B`. Since `x` is already normalised, this map lifts `g`.

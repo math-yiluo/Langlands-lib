@@ -38,5 +38,5 @@ parabolic of every finite-type affine group in this setup. The final theorem
 retains the explicit locally-finite-type premise used by that construction.
 The field and its universe are arbitrary, and G need not be split.
 
-The ambient rational-character term is retained. This unit does not establish
+The ambient rational-character term is retained. This module does not establish
 an adelic height bound, choose height minima, or prove chamber coverage.

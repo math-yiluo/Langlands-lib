@@ -1,9 +1,10 @@
 # Finite length under the actual normalized parabolic functors
 
-Author: Worker 270, for task 58159589 (objective by Worker 320). This module
+This module
 declares three proposition definitions and five compilation-checked
-`example`s. It declares no theorem and proves neither clause. A proof is a
-separate later task.
+`example`s. It declares no theorem and proves neither clause. The proof is
+`Langlands.Parabolic.normalizedParabolicFiniteLength`, in the separate module
+`Langlands.Representation.Parabolic.FiniteLengthFunctorProof`.
 
 ## The declarations
 
@@ -25,10 +26,10 @@ arguments `{p} [Fact p.Prime] F T`.
 - `NormalizedParabolicFiniteLengthStatement.{uF, uV} F T` is the conjunction
   of the two clauses at the same `F`, `T`, `uF` and `uV`. Rank and shape are
   quantified inside each conjunct, so the conjunction keeps only `F` and `T`
-  outside. It is the intended exact target of the later proof. Inspection
+  outside. It is the exact statement of `normalizedParabolicFiniteLength`. Inspection
   reports its level parameters as `[uF, uV]` and its type as `Prop`.
 
-The suggested names were unused in the Library and are adopted unchanged. The
+The three names were otherwise unused in the Library. The
 Library already has an unrelated lowercase theorem
 `Langlands.Parabolic.normalizedJacquetFiniteLength`. Its name is different, and
 it is discussed under *Relation to existing results*.
@@ -174,8 +175,9 @@ The admissibility input is the published statement
 smooth representations of `GL_n(F)` and of `B.Levi F.Carrier` are admissible.
 Its Markdown cites Bernstein and Zelevinsky (1976), Theorem 4.1, pp.37-38:
 finite length is equivalent to admissible plus finitely generated. That
-statement is still unproved in the Library. It is cited here for provenance,
-not as a proved input.
+statement is proved as `Langlands.finiteLengthAdmissibility` in
+`Smooth/Admissibility/FiniteLengthProof`. It is cited here for provenance,
+not as an input.
 
 ## Correspondence with the source
 
@@ -201,7 +203,7 @@ not as a proved input.
 ## Derivation, for explanation only
 
 The following explains why the statement is expected to hold. It is not a
-proof, and a later proof may follow another route.
+proof, and the proof in `FiniteLengthFunctorProof` need not follow this route.
 
 - *Induction, positive rank.* A finite-length `σ` of the Levi is admissible by
   the Levi clause of `FiniteLengthAdmissibilityStatement`. Twisting by
@@ -227,8 +229,9 @@ proof, and a later proof may follow another route.
   (`Classification/FiniteLengthProof`, published) proves for every `T`, rank
   and shape, including rank zero: if `ρ` of `GL_n(F)` is admissible and
   finitely generated over `ℂ[GL_n(F)]`, then `T.normalizedJacquet B ρ` has
-  finite length. With the GL clause of `FiniteLengthAdmissibilityStatement`,
-  once proved, it yields the Jacquet clause here.
+  finite length. With the GL clause of `FiniteLengthAdmissibilityStatement`
+  (proved as `glFiniteLengthAdmissibility` in
+  `Smooth/Admissibility/FiniteLengthProof`), it yields the Jacquet clause here.
 - `Langlands.Classification.AdmissibleFiniteLengthProductPreservation`
   (`Classification/NormalizedProductFiniteLengthStatement`) concerns
   normalized product induction of external families of GL block factors, for

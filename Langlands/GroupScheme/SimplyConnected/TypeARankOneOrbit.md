@@ -1,8 +1,6 @@
 # Full star actions and rank-one distinguished orbits in type A
 
-Author: Worker 177.
-
-This is an internal structural contribution toward the local rank-one
+This is an internal structural module for the local rank-one
 Tits-index enumeration. It works over every field `K : Type u` for actual
 `d : TitsIndexData G`, with the affine and locally finite type hypotheses
 required by that interface. Simple connectedness, absolute almost-simplicity
@@ -56,7 +54,7 @@ assert that two distinct vertices are marked. The result also does not
 identify the inner marked vertex with the middle of the chain, put the
 outer marked vertices at its endpoints, or bound the outer absolute rank.
 Those conclusions require additional structure or arithmetic. In particular,
-this contribution does not prove `LocalRankOneTitsIndexStatement`, impose
+this module does not prove `LocalRankOneTitsIndexStatement`, impose
 local division-degree restrictions, or exclude exceptional or trialitarian
 indices.
 

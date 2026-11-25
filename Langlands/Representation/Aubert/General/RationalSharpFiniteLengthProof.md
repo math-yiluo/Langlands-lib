@@ -2,30 +2,18 @@
 
 Module `Langlands.Representation.Aubert.General.RationalSharpFiniteLengthProof`.
 
-Authors:
-
-* Worker 4216: the conditional reduction
-  `rationalSharpFiniteLengthStatement_of_dynamic` and its description below.
-  It is reused unchanged from the shared draft of Task 4216
-  (`0da1c37e-a39a-42e1-b90d-135db6c6e5c3`, revision 1).
-* Worker 29, with coauthor Worker 3640 (Task 3640): the statement import and
-  the final theorem `rationalSharpFiniteLengthReduction`. Worker 29 rechecked
-  the module against Library `c0debd6f4dd02fdd68d70811cf610906b945a962`
-  together with the statement module
-  [`RationalDetectionFiniteLengthReductionStatements`](RationalDetectionFiniteLengthReductionStatements.md).
-* Worker 264: exact-target and protected-import checks for Task 6581, preserving
-  the Lean assembly above unchanged.
+The module was checked against the statement module
+[`RationalDetectionFiniteLengthReductionStatements`](RationalDetectionFiniteLengthReductionStatements.md),
+including an exact-target check and a check of its imports.
 
 **Status.** The module is conditional. It proves the published reduction
 proposition `RationalSharpFiniteLengthReductionStatement.{u, v}`, which says
 that the target `RationalSharpFiniteLengthStatement.{u, v}` follows from the
 two dynamic finite-length propositions at carrier universe `max (u + 1) v`.
 It does not prove the target unconditionally. The two dynamic propositions are published
-but unproved targets of `PrerequisiteStatements`, with their own owner tasks
-(`174d2de0-fa21-41b4-b091-f1b86481790b` and
-`73e60be8-481a-4cea-b464-eed3bd89be7f`). Once both are proved at independent
+but unproved targets of `PrerequisiteStatements`. Once both are proved at independent
 universes `u, uV`, the target is this reduction applied to them at
-`uV := max (u + 1) v`; Task 4216 owns that final theorem.
+`uV := max (u + 1) v`.
 
 ## Target of the conditional reduction
 
@@ -42,7 +30,7 @@ standard families.
 
 ## Declarations
 
-### `rationalSharpFiniteLengthStatement_of_dynamic` (Worker 4216)
+### `rationalSharpFiniteLengthStatement_of_dynamic`
 
 It takes
 
@@ -84,7 +72,7 @@ order. It then closes the goal in two published steps.
 premise is added to the target; the two dynamic statements are hypotheses of
 this conditional theorem only.
 
-### `rationalSharpFiniteLengthReduction` (Worker 29)
+### `rationalSharpFiniteLengthReduction`
 
 `theorem rationalSharpFiniteLengthReduction :
 RationalSharpFiniteLengthReductionStatement.{u, v}`.
@@ -103,12 +91,12 @@ inputs keep their order and universes, and no premise is added.
 
 ## Dependencies
 
-Declarations used by name: `RationalSharpFiniteLengthStatement` (Worker 379,
-`RationalSharpConsequenceTargets`); `RationalSharpFiniteLengthReductionStatement`
+Declarations used by name: `RationalSharpFiniteLengthStatement`
+(`RationalSharpConsequenceTargets`); `RationalSharpFiniteLengthReductionStatement`
 (`RationalDetectionFiniteLengthReductionStatements`);
-`sharpFiniteLengthTarget_of_inductionJacquet` (Worker 508, `SharpFiniteLength`);
-`standardInductionJacquet_preservesFiniteLength_of_dynamic` (Worker 749,
-`RationalStandardFiniteLength`); `simpleRelativeRootFintype`
+`sharpFiniteLengthTarget_of_inductionJacquet` (`SharpFiniteLength`);
+`standardInductionJacquet_preservesFiniteLength_of_dynamic`
+(`RationalStandardFiniteLength`); `simpleRelativeRootFintype`
 (`GroupScheme.Rational.RootFiniteness`); `pointTopology`;
 `DynamicInductionFiniteLengthStatement` and `DynamicJacquetFiniteLengthStatement`
 (`PrerequisiteStatements`).

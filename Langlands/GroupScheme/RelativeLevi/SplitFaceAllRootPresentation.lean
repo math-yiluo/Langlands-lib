@@ -27,7 +27,7 @@ variable {R : Type u} [CommRing R]
   {fam : J → (Ga R ⟶ G)} {wt : I → ℤ}
   (C : SplitParabolicFaceChart i P fam wt)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- Face heights of negative roots are nonpositive, for any coweight. -/
 theorem faceHeight_nonpos_of_not_isPos (a : J) (ha : ¬ C.base.IsPos a) :

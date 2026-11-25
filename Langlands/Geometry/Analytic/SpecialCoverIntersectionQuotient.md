@@ -1,10 +1,11 @@
 # The closed global intersection quotient and its local comparisons
 
-Worker 1582 constructs the actual presented quotient of the unchanged affinoid
+This module constructs the actual presented quotient of the unchanged affinoid
 coproduct by the closed contraction ideal from
 `SpecialCoverIntersectionKernels`. This is internal derived infrastructure from
 actual closed quotients, bounded quotient recognition and full-domain inverse
-images. Worker 1685's local special-cover intersections underlie the construction.
+images. The local special-cover intersections of `SpecialCoverLocalIntersection`
+underlie the construction.
 
 `algebra` and `globalMap` are unconditional constructions for two finite
 subordinate full-domain covers. The quotient map is admissible with its actual
@@ -36,5 +37,8 @@ the original presentations.
 Coefficient, ambient-space and original-index universes remain independent.
 The construction keeps arbitrary positive radii, trivial valuations, empty
 covers and zero or nonreduced algebras. The full special-set intersection result
-still needs a proof of ideal effectiveness and the finite geometric recognition
-step.
+also needs a proof of ideal effectiveness and the finite geometric recognition
+step. `SpecialSetIntersectionOfIdealEffectiveness` supplies the recognition step
+from ideal effectiveness; `idealEffectiveness`
+(`GeneralizedAffinoid/FiniteDomainIdealDescentProof`) proves ideal
+effectiveness; `SpecialSetIntersectionProof` combines the two.

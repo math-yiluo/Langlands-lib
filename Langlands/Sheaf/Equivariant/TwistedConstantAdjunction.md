@@ -1,28 +1,28 @@
 # Constant equivariant sheaves on the twisted site and injectivity of global sections
 
-Author: Worker 26. The twisted-site analogue of Worker 134's published
+The twisted-site analogue of
 `Langlands.Cohomology.EquivariantComposite.ConstantAdjunction`, which does the same for
 equivariant sheaves on a topological space (transport category of opens). It uses:
 
-- `Langlands.Sheaf.Equivariant.TwistedOver` (Worker 26): the twisted category, its morphisms
+- `Langlands.Sheaf.Equivariant.TwistedOver`: the twisted category, its morphisms
   with a `twist` and an arrow `left` (`homMk`, `hom_ext`, `comp_twist`), the base object
   `base P ρ` with `hom_base`, its endomorphisms `baseEndo g` (twist `g`, arrow `ρ g`), the
   action `baseAction P ρ` (`g` acts through `baseEndo g⁻¹`), `twistedTopology`, and
   `IsLiftSystem` (every admissible action of `h` has twist `h⁻¹`);
-- `Langlands.Sheaf.Equivariant.LocalActionCohomology` (Worker 13): `sectionsRep R a`, the
+- `Langlands.Sheaf.Equivariant.LocalActionCohomology`: `sectionsRep R a`, the
   sections over an object as a representation (`actionRepresentation_apply`);
 - `Langlands.Sheaf.Equivariant.TwistedGlobalSections` and
-  `Langlands.Sheaf.Equivariant.TwistedExactGlobalComparison` (Worker 26):
+  `Langlands.Sheaf.Equivariant.TwistedExactGlobalComparison`:
   `sheafGlobalSectionsRep` (`sheafToPresheaf` followed by `sectionsRep R (baseAction P ρ)`),
   `sheafGlobalSectionsSmooth` (its smooth part), `discreteGlobalSections` and
   `exactGlobalSections`, Berkovich's `Γ_{X{G}}`;
 - `Langlands.Sheaf.Equivariant.LocalAction`, `LocalActionDiscretePart`,
-  `LocalActionSmoothPart` (Workers 13 and 26): `IsDiscrete`, `IsLocallyDiscrete`,
+  `LocalActionSmoothPart`: `IsDiscrete`, `IsLocallyDiscrete`,
   `discreteSheafProperty`, `smoothSheafProperty`, `DiscreteSheaf`, `SmoothSheaf` and their
   inclusions, `IsDiscrete.isLocallyDiscrete`, `HasAdmissibleRefinements.covers`;
 - `Langlands.Sheaf.Equivariant.LocalActionConstant` (`isDiscrete_sheafify`) and
-  `Langlands.Sheaf.Equivariant.LocalActionSmoothConstant` (`isLocallyDiscrete_sheafify`)
-  (Worker 26): sheafification preserves discreteness, resp. local discreteness;
+  `Langlands.Sheaf.Equivariant.LocalActionSmoothConstant` (`isLocallyDiscrete_sheafify`):
+  sheafification preserves discreteness, resp. local discreteness;
 - `Langlands.Representation.Category.SmoothPartAdjunction`: `SmoothRep.toRep ⊣
   smoothPartFunctor` (`toRepSmoothPartAdjunction`); `SmoothRep.toRep` preserves
   monomorphisms (`Langlands.Representation.Category.Abelian`);
@@ -148,8 +148,8 @@ SHA-256 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`, memb
 ## Provenance and correspondence
 
 Derived. Berkovich states the spectral sequence without proof in this passage. The
-construction here is ours: it transfers to the twisted site the argument of Worker 134's
-published `ConstantAdjunction` for equivariant sheaves on a topological space (constant
+construction here is ours: it transfers to the twisted site the argument of
+`ConstantAdjunction` for equivariant sheaves on a topological space (constant
 presheaf with inverse-label action, maps out of it as equivariant global maps, sheafification,
 and preservation of injectives by a right adjoint whose left adjoint preserves monomorphisms).
 The convention that a twisted morphism with twist `g` acts by `g⁻¹` matches `baseAction`

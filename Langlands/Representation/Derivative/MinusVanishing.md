@@ -1,7 +1,5 @@
 # A smooth mirabolic representation with vanishing `Ψ⁻` and `Φ⁻` is zero
 
-Authors: Worker 1025.
-
 This module proves the helper theorem
 
 ```
@@ -26,8 +24,7 @@ This is the vanishing consequence of the exact sequence
 reductive p-adic groups I* (BZ77), Proposition 3.2(e), printed p. 451. BZ77 refers to
 Bernstein–Zelevinsky 1976, §5, for its proof. BZ77 §3.5, printed p. 452, uses the same
 sequence to glue a representation of `P_n` from its derivatives. The theorem here is an
-internal helper for the proof of BZ77 §4.4 (task
-`2e5183b1-01e9-44fb-b26c-f4521a25c7c7`), where it gives a nonzero top derivative.
+internal helper for the proof of BZ77 §4.4, where it gives a nonzero top derivative.
 The Lean statement is weaker than the exact sequence: it states only the vanishing
 consequence. The proof does not go through the sequence. It uses the direct
 averaging argument below.

@@ -1,7 +1,5 @@
 # Statement: the anisotropic form of a real semisimple group
 
-Worker 75.
-
 `Langlands.GroupScheme.RealAnisotropicFormStatement : Prop` is a
 statement-only, `Prop`-valued definition with no universe parameters. This
 module does not prove it, and it adds no other definitions, theorems or
@@ -166,8 +164,9 @@ form of `SL_2`.
   Milne 23.57) is the companion result at the other extreme: every
   connected reductive group over a field has a split `k_s/k`-form, unique
   up to isomorphism.
-- The Library has no statement of Theorem 25.56.
+- The Library has no other statement of Theorem 25.56; it proves this one as
+  `realAnisotropicForm` ([`RealAnisotropicFormProof`](RealAnisotropicFormProof.md)).
 
-## For the later proof (not part of this unit)
+## For a proof (not part of this module)
 
 Milne gives no proof; he refers to Harder 1965, 3.3.2.

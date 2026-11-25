@@ -1,7 +1,5 @@
 # Homology of an exact functor on derived categories
 
-Author: Worker 13.
-
 This internal construction descends the canonical homology comparison
 for an exact functor between abelian categories to their unbounded
 derived categories. The result is a natural isomorphism on the whole

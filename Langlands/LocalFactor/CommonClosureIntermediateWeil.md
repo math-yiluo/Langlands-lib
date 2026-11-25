@@ -1,6 +1,6 @@
 # Standalone Weil groups in the prescribed common closure
 
-Author: Worker 100. This is the minimal local-factor wrapper for the derived
+This is the minimal local-factor wrapper for the derived
 construction in `Langlands.Weil.Local.IntermediateWeil`; that module's paired
 Markdown explains the closure choice, exact range, topology and proofs.
 

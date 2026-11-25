@@ -222,8 +222,11 @@ Relation to the Library. The Library has the Galois action on characters
 representations, and the character decomposition for split tori
 (`iSup_characterSpace_eq_top_of_isSplitTorus` in
 [`MatrixRepresentation.SplitTorusCharacterDecomposition`](../MatrixRepresentation/SplitTorusCharacterDecomposition.md)).
-It has no statement of Theorem 12.30 or of the representation theory of a
-non-split group of multiplicative type.
+Theorem 12.30 is stated in this module and proved in
+[`Rational.MultiplicativeTypeRepresentationProof`](MultiplicativeTypeRepresentationProof.md)
+as `multiplicativeTypeRepresentationGaloisOrbit`; the representation theory of
+a non-split group of multiplicative type used there is in modules it imports,
+for instance `MatrixRepresentation.MultiplicativeTypeSemisimplicity`.
 
 Corrected reprint. The 2022 corrected reprint (in the project literature
 folder, registered as `milne-2022-algebraic-groups`, SHA-256
@@ -245,7 +248,10 @@ Chapter 12, one entry, on p. 234: in the last sentence of Example 12.10 the
 base field is algebraically closed. It does not concern Theorem 12.30, and
 its Chapter 4 entry (p. 89, proof of 4.14) does not concern Definition 4.15.
 
-## For the later proof (not part of this unit)
+## Notes for a proof (not part of this module)
+
+The module `Rational.MultiplicativeTypeRepresentationProof` proves the
+statement as `multiplicativeTypeRepresentationGaloisOrbit`.
 
 Milne's proof (printed p. 242) uses Galois descent. One possible route:
 
@@ -277,6 +283,8 @@ Milne's proof (printed p. 242) uses Galois descent. One possible route:
 The Library's `characterSpace_iSupIndep` (in
 [`MatrixRepresentation.CharacterSpaces`](../MatrixRepresentation/CharacterSpaces.md))
 gives the independence of the `V_χ`. The Library proves that the
-character spaces span the whole space only for split tori
-(`iSup_characterSpace_eq_top_of_isSplitTorus`), so the case of a
-diagonalizable group `D(M)` with torsion in `M` is still needed.
+character spaces span the whole space for split tori
+(`iSup_characterSpace_eq_top_of_isSplitTorus`) and for a diagonalizable
+group `D(M)` with torsion in `M` (`iSup_characterSpace_eq_top_diagonalizable`
+in
+[`MatrixRepresentation.DiagonalizableCharacterDecomposition`](../MatrixRepresentation/DiagonalizableCharacterDecomposition.md)).

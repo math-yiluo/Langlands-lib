@@ -1,7 +1,5 @@
 # Uniform two-sided contraction by `A^+(ε)` of compact subsets of `N(F)` and `N̄(F)`
 
-Author: Worker 167.
-
 Module: `Langlands.Representation.Exponents.SplitComponentOppositeContractionStatement`.
 Declaration:
 `Langlands.Aubert.General.RepresentedParabolic.SplitComponentOppositeContractionStatement.{u}`.
@@ -11,8 +9,7 @@ compact-containment clauses of Renard V.5.2 (iii) (for `N` and for `N̄`), on th
 
 It is the geometric input of the Remark 3 target
 `RepresentedParabolic.GeneralizedJacquetContractingRangeStatement` (module
-`Langlands.Representation.Exponents.GeneralizedJacquetRemarksStatements`) of task
-`7a03c792-1d54-4a95-89b7-dd1aa5e82a5e`. It extends the published
+`Langlands.Representation.Exponents.GeneralizedJacquetRemarksStatements`). It extends the published
 `PresentationConeContractionStatement` (the `N` clause on `C_A^+(ε)` only).
 
 ## Quantifiers and hypotheses
@@ -106,4 +103,4 @@ The provenance is **derived**:
 
 The comparison of the presentation's conventions with the source, the identification of
 the supplied radicals, the decomposition `A(F) = C_A · A(F)⁰` and the uniform contraction
-argument remain obligations for a proof.
+argument are left to the proof, `SplitComponentOppositeContractionProof`.

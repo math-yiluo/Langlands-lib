@@ -1,13 +1,13 @@
 /-
 Copyright 2026 Anthropic
 Licensed under the Apache License, Version 2.0.
-Ported by Worker 137 from Anthropic FLT commit
+Ported from Anthropic FLT commit
 6e837e75355538c7f80bab5b956861e86c4eacc2, P2M/Sol/S_Module_Flat_ker_baseChange_eq_bot_and_ker_le_range_of_flat_of_exact.lean.
 Changes: FLT imports moved under Langlands.AnthropicFLT; P2M.Util removed;
 P2M commands replaced by standard Lean commands; finite port options added.
 See licenses/Anthropic-FLT/LICENSE and licenses/Anthropic-FLT/NOTICE.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_Module_Flat_lTensor_injective_of_exact_of_surjective_of_flat
 import Langlands.AnthropicFLT.Theorems.Thm_Module_Flat_ker_of_surjective_of_flat
 

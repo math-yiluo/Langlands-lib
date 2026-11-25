@@ -1,8 +1,6 @@
 # Composition of actual subgroup-family evaluation
 
-Author: Worker 1656.
-
-This internal unit proves composition for the actual family evaluation
+This module proves composition for the actual family evaluation
 of `TorusSubgroupModuli`. It is valid in arbitrary universe `u` for any
 actual subgroup-family homomorphism. Neither closedness nor the
 relative-torus condition is needed.

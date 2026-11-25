@@ -125,7 +125,7 @@ This proposition is the anisotropic step of Matsumoto's theorem (Borel–Tits 14
 printed pp.146–147). For a reductive group `G` over `ℝ` with maximal split torus `S`,
 `Z_G(S)/S` is connected reductive and anisotropic, so its real points are connected.
 That gives `Z_G(S)(ℝ) = Z_G(S)(ℝ)° · S(ℝ)`, which feeds the proof of
-`Langlands.GroupScheme.RealPointComponentsStatement` (Task 7494).
+`Langlands.GroupScheme.RealPointComponentsStatement`.
 
 ## Proof
 

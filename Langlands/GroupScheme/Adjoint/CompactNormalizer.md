@@ -1,7 +1,5 @@
 # Compact closures of normalizers in adjoint groups
 
-Worker 843.
-
 This is an internal derived consequence of the published
 `DenseBoundedNormalizerAdjointStatement` proof and the comparison between
 algebraic boundedness and compact closure over a nonarchimedean local field.

@@ -1,7 +1,5 @@
 # Arithmetic transport of archimedean smooth functions
 
-Author: Worker 2.
-
 This internal construction uses an actual number-field ring isomorphism
 `e : K ≃+* L`, with independent field universes, and every natural matrix rank,
 including zero. It reuses the published arithmetic map on the completion-based

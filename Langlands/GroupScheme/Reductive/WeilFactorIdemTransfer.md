@@ -1,7 +1,5 @@
 # Natural multiplicative bijections of idempotents and the algebra isomorphisms they induce
 
-Worker 47.
-
 Module `Langlands.GroupScheme.Reductive.WeilFactorIdemTransfer`, namespace
 `Langlands.GroupScheme.WeilFactor`. It imports [`WeilFactorCanonical`](WeilFactorCanonical.md),
 and through it the graph-idempotent machinery of
@@ -13,7 +11,7 @@ Provenance: derived/internal. The algebra part of the uniqueness argument in
 [`WeilFactorAlgebraRecovery`](WeilFactorAlgebraRecovery.md) only uses formal properties of
 the transfer of idempotents. Here those properties become a structure `IdemTransfer`, so that
 transfers built in other ways (for example, comparing two presentations in an étale-descent
-argument, Worker 5254's Task 6584) also induce algebra isomorphisms. The underlying
+argument, as `chartIdemTransfer` in `WeilChartAlgebra` does) also induce algebra isomorphisms. The underlying
 mathematical fact: for finite étale `A`-algebras `B` and `B''`, a family of bijections
 `Idem(B ⊗_A X) ≅ Idem(B'' ⊗_A X)` that is natural in `X`, multiplicative and sends `0` to `0`
 comes from a unique `A`-algebra isomorphism `B'' ≅ B`.

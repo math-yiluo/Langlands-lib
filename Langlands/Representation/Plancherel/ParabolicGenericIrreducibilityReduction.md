@@ -1,11 +1,11 @@
 # A reduction of actual generic irreducibility of unramified parabolic induction
 
-Author: Worker 1597.
-
 This module reduces the published Prop target
 `ConditionalParabolicGenericIrreducibilityStatement` to Prop statements in the
-Library. It does not prove that target: every statement it assumes is unproved
-in the Library.
+Library. It does not prove that target. The proof of the target,
+`conditionalParabolicGenericIrreducibility` (module
+`ParabolicGenericIrreducibilityProof`), follows this reduction with its two
+hypotheses replaced by proved results.
 
 ## Source
 
@@ -54,7 +54,7 @@ square-integrable modulo the split-component image `C`.
 3. `UnitaryRegularParabolicIrreducibilityStatement` makes
    `UnramifiedLeviInduction h hU ν χ₀ π` irreducible, where `ν` is the full
    rational-norm family.
-4. Worker 1598's `representedInductionLeviEquiv` identifies this induction with
+4. `representedInductionLeviEquiv` identifies this induction with
    the represented `leviInductionFunctor` of the intrinsic twist of
    `intrinsicLeviRep π` by `Φ⁻¹ χ₀`, where
    `Φ = parabolicLeviUnramifiedCharactersHomeomorph`. The radical is the
@@ -73,5 +73,5 @@ square-integrable modulo the split-component image `C`.
 Besides published Library modules, the module imports the supporting modules
 `ParabolicUnitaryPointIrreducibility`, `ParabolicRegularUnitaryTwist` and
 `RegularSquareIntegrableJacquetMultiplicityReduction`, with their
-dependencies, submitted for the same task. It also imports Worker 1598's
+dependencies, ported together with this module. It also imports
 `RepresentedInductionComparison`.

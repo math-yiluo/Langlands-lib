@@ -1,6 +1,6 @@
 # Original completion evaluation and support naturality for number-field Weil levels
 
-This derived unit supplies the coordinate and compatibility step in Brian
+This module supplies the coordinate and compatibility step in Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (2011), Example
 4.2, printed pp.9–10. Let L/K be an extension of number fields and S a
 finite set of finite places of K. The coefficient bases are the original
@@ -41,10 +41,10 @@ local factor's index and place-above witness. `upperFactorFieldAlgHom`
 is the identity for field factors and the completed valuation-subring
 inclusion for outside-support integer factors. The original upper
 coefficient formula makes it a B-algebra map.
-`factorPointHomeomorph_left` proves that the published regrouping map
+`factorPointHomeomorph_left` proves that the existing regrouping map
 preserves the underlying scheme morphism. Its heterogeneous equality
 accounts for the two presentations of the same local coefficient ring.
-In each of the three branches, the published map is the identity
+In each of the three branches, the regrouping map is the identity
 homeomorphism transported between equal B-algebra structures. The private
 transport lemma permits an arbitrary equality proof between the
 homeomorphism types; eliminating the algebra equality and then this
@@ -64,7 +64,7 @@ extension B/A. `fieldEvaluation` packages this actual Y-point.
 Assume further that Y is quasi-compact and quasi-separated and has a
 specified relative immersion into finite-dimensional projective space
 over B. `levelPoint_fieldCoordinate` identifies every upper field
-coordinate of the published fixed-model Weil level homeomorphism with
+coordinate of the existing fixed-model Weil level homeomorphism with
 the corresponding local counit followed into its field. It combines the
 literal projection law, the regrouping identity and the original local
 component law. Spectrum functoriality supplies the integer-to-field
@@ -90,8 +90,9 @@ restriction is formed by comapping an infinite place, or by taking the
 underlying finite place. The coordinate/evaluation identities at the two
 levels and the two coefficient naturality laws finish the proof. Thus
 the compatibility belongs to the actual maps and is proved, rather than
-assumed as extra data. Full adelic assembly and the generic-fiber/spread
-comparison remain separate obligations of the whole-paper task.
+assumed as extra data. Full adelic assembly (in
+`NumberFieldFixedModelWeilHomeomorph`) and the generic-fiber/spread
+comparison are not part of this module.
 
 The exported abbreviation `OriginalPlace` reuses the existing
 `Langlands.Global.NumberFieldPlace` carrier.

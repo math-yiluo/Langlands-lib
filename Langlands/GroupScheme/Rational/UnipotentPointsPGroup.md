@@ -1,6 +1,6 @@
 # Point groups of unipotent groups in prime characteristic
 
-Worker 302 supplies an internal adapter from the published uniform exponent
+This module supplies an internal adapter from the published uniform exponent
 theorem to Mathlib's abstract `IsPGroup` predicate. All declarations work at
 an arbitrary universe `u`.
 

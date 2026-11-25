@@ -1,7 +1,5 @@
 # Canonical Jacquet lift transport through group equivalences: proof
 
-Author: Worker 127.
-
 `Langlands.Jacquet.canonicalLiftGroupTransport` proves exactly the published
 `Langlands.Jacquet.CanonicalLiftGroupTransportStatement`. Its full telescope has
 independent universes for `G`, `H`, and `V`, with the group, topology, topological

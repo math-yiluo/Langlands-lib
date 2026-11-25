@@ -1,7 +1,5 @@
 # Levi-compatible Iwasawa conclusions from diagonal star realization
 
-Author: Worker 1655.
-
 This internal construction combines the existing affine polar compact
 construction, diagonal dynamic parabolic covering, and the actual unitary
 intersection results. It works over an arbitrary-universe `RCLike` field

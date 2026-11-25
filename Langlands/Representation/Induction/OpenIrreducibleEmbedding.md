@@ -1,6 +1,6 @@
 # Open-subgroup embeddings with independent carrier universes
 
-This internal unit applies the published
+This internal module applies the published
 `Langlands.Induction.openIrreducibleExtension` without requiring the original
 subgroup carrier universe to dominate the group universe. It uses the
 published carrier lift and its actual representation equivalence.

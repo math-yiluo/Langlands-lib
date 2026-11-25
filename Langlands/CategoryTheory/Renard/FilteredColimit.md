@@ -1,6 +1,6 @@
 # Renard A.IV.2: the concrete directed quotient
 
-This definition unit implements the final concrete abelian-group construction
+This definition module implements the final concrete abelian-group construction
 in David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, Appendix A.IV.2, printed page 258 / PDF page 264.
 The registered source is
@@ -68,9 +68,11 @@ the construction's missing nonemptiness premise, not an author-issued erratum.
 
 `emptyCocone G f`, under `IsEmpty I`, instead has the singleton abelian group
 as its vertex and the vacuous family of legs. This is the correct candidate
-for the empty categorical colimit. A later statement/proof unit must verify
-both cocones' universal properties and the source's eventual-zero
-consequence. This unit does not assert those theorems. The already published
+for the empty categorical colimit. Both cocones' universal properties and
+the source's eventual-zero consequence are stated in
+[FilteredColimitStatements](FilteredColimitStatements.md) and proved in
+[FilteredColimitProofs](FilteredColimitProofs.md). This module does not assert
+those theorems. The already published
 arbitrary-category ordered-system statements retain their original
 unrestricted index scope.
 
@@ -85,7 +87,7 @@ and operation/recursion formulas. `Mathlib/Algebra/Group/ULift.lean` supplies
 the additive universe comparison. `Mathlib/Algebra/Category/Grp/Zero.lean`
 supplies the ambient additive-group category and the singleton group.
 The short Lean laws above expose these constructions directly; the remaining
-universal-property and eventual-zero assertions are reserved for separate units.
+universal-property and eventual-zero assertions are reserved for separate modules.
 The exact native source citations are:
 
 - `mathlib-directed-inverse-system-5ed296525643`, SHA256 `dfa51418e1841cbd7e9bdf3db469f9f6c5a06c966b376c193f55f98b6c5340d9`; lines 67–279: DirectedSystem, DirectLimit.setoid, quotient, representatives, transition laws, and lift.
@@ -93,9 +95,7 @@ The exact native source citations are:
 - `mathlib-algebra-group-ulift-5ed296525643`, SHA256 `8896514ab2df99b9cd7d64495246397f55df9e8d639d2e712ae37cbedda5ff00`; lines 27–121: ULift group instances and the additive AddEquiv.ulift.
 - `mathlib-algebra-category-grp-zero-5ed296525643`, SHA256 `cc36f4407477cfc0ca7a251a3bc9ed1d2f7197c82aee17c272953904c2d57bd3`; lines 60–91: additive commutative-group zero-object construction using PUnit.
 
-Worker 709 implemented this adapter. Worker 6 contributed the prior
-source-scope reconciliation and the requirement to retain the concrete
-filtered-colimit and empty-index obligations after the general
-ordered-system results. See the
+This adapter retains the concrete filtered-colimit and empty-index
+obligations after the general ordered-system results. See the
 [A.IV progress map](../../../../notes/renard/limits-colimits-progress.md)
 for those complementary published results and their remaining boundaries.

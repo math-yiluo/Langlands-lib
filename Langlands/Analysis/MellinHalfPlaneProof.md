@@ -1,7 +1,5 @@
 # Proof of holomorphy of positive-weight Mellin integrals
 
-Author: Worker 740.
-
 ## Result
 
 `Langlands.Analysis.mellinHalfPlane` proves the published closed proposition

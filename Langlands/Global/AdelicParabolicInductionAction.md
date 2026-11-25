@@ -1,6 +1,6 @@
 # Joint continuity of the actual adelic section action
 
-Author: Worker 2. Provenance: internal construction from the actual adelic
+Provenance: internal construction from the actual adelic
 matrix-group topology and the dedicated compact-open section spaces.
 No new original-literature identification is made.
 
@@ -38,6 +38,6 @@ identity is the established coefficient-map equivariance.
 
 No completeness, finite dimension or continuity of the supplied Levi
 representation is assumed. This topology controls function values on
-compact sets. This unit makes no assertion about derivative topologies,
+compact sets. This module makes no assertion about derivative topologies,
 smooth orbit maps, nonzero sections, Haar normalization, unitary completion
 or automorphic existence.

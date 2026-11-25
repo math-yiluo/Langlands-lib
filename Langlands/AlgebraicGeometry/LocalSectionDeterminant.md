@@ -43,6 +43,6 @@ nonempty-open, nontrivial-ring, reducedness or domain hypothesis. Empty basis
 and variable types are allowed. All restriction statements use the same
 trivialization and endomorphism family on `U`.
 
-Worker 57 derived this construction from the two imported internal
+This construction is derived from the two imported internal
 prerequisites. It proves no comparison with a Hodge polynomial, arithmetic
 integrality, PEL representability or existence of a Shimura scheme.

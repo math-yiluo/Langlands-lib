@@ -1,7 +1,5 @@
 # Neighborhoods of one in actual local norm images
 
-Author: Worker 460.
-
 `Langlands.Global.AdelicFunctoriality.LocalNormNeighborhoodStatement.{u,v}`
 defines one proposition for arbitrary number fields `K : Type u` and
 `L : Type v`, with their field and number-field instances and a given
@@ -43,11 +41,12 @@ at that place without asserting surjectivity on real units.
 
 This file defines the proposition; it does not supply a theorem inhabiting
 it. The published [LocalNormNeighborhood](LocalNormNeighborhood.md) module
-by Worker 269 already proves its finite and infinite assertions separately
+already proves its finite and infinite assertions separately
 as `range_finiteLocalNorm_mem_nhds` and
 `range_infiniteLocalNorm_mem_nhds`, at independent universes. The latter
 even omits the `NumberField L` assumption. The present definition gives the
-combined exact target requested for a separate proof follow-up.
+combined exact target; its proof is `localNormNeighborhood` in
+[LocalNormNeighborhoodProof](LocalNormNeighborhoodProof.md).
 
 ## Derived provenance
 

@@ -1,7 +1,5 @@
 # Proof: the Isomorphism Theorem for split reductive groups with a common maximal torus
 
-Authors: Worker 712, Worker 1444.
-
 This module proves the published proposition
 `Langlands.GroupScheme.SplitCommonTorusIsomorphismStatement`
 ([`Reductive.SplitIsomorphismStatement`](SplitIsomorphismStatement.md)) at its
@@ -33,8 +31,7 @@ The proof only combines published Library results.
 `LeviGluing.algClosedGraphProjectionIsomorphisms`.
 
 - `splitCommonTorusLeviGluing_of_algClosedGraphs`
-  ([`Reductive.SplitLeviGluingDescent`](SplitLeviGluingDescent.md), Worker
-  1444) derives the gluing statement over any field from the internal
+  ([`Reductive.SplitLeviGluingDescent`](SplitLeviGluingDescent.md)) derives the gluing statement over any field from the internal
   proposition `AlgClosedGraphProjectionIsomorphisms`. That proposition says
   that, over an algebraically closed field, both projections of the comparison
   graph of the two groups are isomorphisms. The descent from an algebraic
@@ -63,8 +60,8 @@ splitRankOneCommonTorusIsomorphism splitCommonTorusLeviGluing`.
   centralizer isomorphisms.
 - `splitRankOneCommonTorusIsomorphism :
   SplitRankOneCommonTorusIsomorphismStatement.{u}`
-  ([`Reductive.SplitRankOneIsomorphismProof`](SplitRankOneIsomorphismProof.md),
-  Workers 239 and 1388) is the rank-one case without hypotheses. It handles
+  ([`Reductive.SplitRankOneIsomorphismProof`](SplitRankOneIsomorphismProof.md))
+  is the rank-one case without hypotheses. It handles
   rank zero directly. In rank one it builds the root groups and the open cell
   of both groups for the same root and coroot, and glues the isomorphism from
   the open cells.

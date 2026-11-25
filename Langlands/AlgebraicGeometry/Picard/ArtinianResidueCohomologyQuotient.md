@@ -40,7 +40,11 @@ The affine and closed-immersion vanishing proofs occur only as proofs of the
 same vanishing proposition.
 
 This is a formal consequence of the imported constructions and their
-transitivity theorem. It does not yet identify the independently constructed
+transitivity theorem. It does not identify the independently constructed
 finite-product quotient map in residue cohomology coordinates, prove tensor
-or obstruction naturality, or construct a Picard-stack atlas. Those remain
-further obligations of the host task.
+or obstruction naturality, or construct a Picard-stack atlas. Those are
+further steps, in modules built on this one: `ArtinianKernelQuotientCoordinates`
+and `ArtinianKernelQuotientCohomologyCoordinates`,
+`ArtinianKernelQuotientTensorNaturality`, `ArtinianKernelQuotientObstruction`,
+and the atlas proofs `FieldPicardStackAtlasProof` and
+`FiniteTypePicardStackAtlasProof`.

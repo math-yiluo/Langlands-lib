@@ -1,7 +1,5 @@
 # Open subgroups over a field without a finite-type ambient group
 
-Worker 596.
-
 `DivisionStable G U` says that the image in `G` of `p * q⁻¹` lies in `U` when
 both `p` and `q` have image in `U`, for all points with values in every field
 in the same universe. The scheme `G` is an actual group object over a field.

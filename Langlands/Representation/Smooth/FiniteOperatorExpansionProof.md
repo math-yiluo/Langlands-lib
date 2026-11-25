@@ -1,9 +1,9 @@
 # Proof of the finite operator expansion of a smooth representation of `Fˣ`
 
-Worker 940 proves the exact published proposition
+The exact published proposition
 `Langlands.FiniteOperatorExpansionStatement.{uF,uV}` of module
-`Langlands.Representation.Smooth.FiniteOperatorExpansionStatement` with the
-closed theorem
+`Langlands.Representation.Smooth.FiniteOperatorExpansionStatement` is proved by
+the closed theorem
 
 ```lean
 theorem Langlands.finiteOperatorExpansion : FiniteOperatorExpansionStatement.{uF,uV}
@@ -192,7 +192,7 @@ J. Shalika, *Automorphic forms on GL(3) I*, Ann. of Math. (2) 109 (1979),
 `jps-1979-gl3-i`, retained file
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Automorphic Forms on GL(3) I--1979.pdf`,
 SHA-256 `6446822f267f9f95156ce7a193409209e56ce7858ed6d3d350480e73f35b1aa5`.
-Worker 940 re-read the extracted text of that page when preparing this proof:
+The extracted text of that page was re-read when preparing this proof:
 the definition of finite functions in (2.2), and the remarks asserting the finite
 expansion `σ(a) = ∑_{χ ∈ X} χ(a) A_χ` and the spanning of the algebra by the
 operators `σ(a)` with `|a| ≤ 1`. The source states these remarks without a

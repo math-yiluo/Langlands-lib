@@ -116,8 +116,8 @@ universe lifting.
 
 ## Checks
 
-Development `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-compiles the module with no errors or warnings. Inspection of
+In the pinned Lean 4.34.0 environment
+the module compiles with no errors or warnings. Inspection of
 `Langlands.HarmonicAnalysis.padicUnitaryAdditiveCharacterExists` reports level
 parameter `u` and the axioms `propext`, `Classical.choice` and `Quot.sound`. The
 module uses no `sorry`, `admit`, new axioms or `native_decide`.
@@ -145,14 +145,14 @@ directly or transitively:
 
 None of these modules is representation-theoretic. None contains or imports
 `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`,
-`SegmentSocleProductIrreducibility`, their proof successors or conclusions. None
+`SegmentSocleProductIrreducibility`, their proofs or conclusions. None
 contains or imports any derivative statement that takes
 `PadicUnitaryAdditiveCharacterExistsStatement` or an instance of it as an input.
 The only use of `PadicUnitaryAdditiveCharacterExistsStatement` is as the target
 type. The modules `Langlands.Representation.Whittaker.PrerequisiteInterfaces` and
 `Langlands.HarmonicAnalysis.FieldTransport` are not imported.
 
-## Provenance and authorship
+## Provenance
 
 The target comes from J. T. Tate, *Fourier analysis in number fields and Hecke's
 zeta-functions*, in Cassels–Fröhlich, *Algebraic Number Theory* (1967), §2.2,
@@ -163,5 +163,3 @@ transport and his key properties: the character is trivial on the open
 subgroup `ℤ_p` and nontrivial at `p⁻¹`. However, it obtains the character of
 `ℚ_p ⧸ ℤ_p` from Mathlib's character-module duality (divisibility of `ℚ/ℤ`)
 instead of Tate's explicit fractional part `λ`.
-
-Worker 1000 wrote the Lean proof and this Markdown.

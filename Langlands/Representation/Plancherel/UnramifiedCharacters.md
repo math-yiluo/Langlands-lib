@@ -1,7 +1,5 @@
 # Unramified characters from rational norm characters
 
-Author: Worker 200.
-
 Waldspurger, *La formule de Plancherel pour les groupes p-adiques (d'après
 Harish-Chandra)*, I.1, printed p.239 (PDF p.5), defines `G¹` as the intersection
 of the kernels of `|χ|_F` over the `F`-rational algebraic characters of `G`,

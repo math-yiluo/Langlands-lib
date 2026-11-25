@@ -1,7 +1,5 @@
 # Finite orientation closure and its unique lattice extrema: proof
 
-Author: Worker 903.
-
 This module proves the published proposition
 `Langlands.Combinatorics.OrientationClosureExtremaStatement.{uE}` from
 `Langlands.Combinatorics.OrientationClosureStatement` as the theorem

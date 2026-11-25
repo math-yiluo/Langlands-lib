@@ -1,8 +1,5 @@
 # Continuity from finite coordinates of actual weighted quotients
 
-Authors: Worker 56 (positive-radius extension); Worker 474 and Worker 36
-(published strict coordinate-continuity proof and its proof route).
-
 This module adapts the generic coordinate and approximation lemmas of
 `StrictTestDomain.RationalSectionContinuityProof` to arbitrary positive-radius
 presentations. It constructs a full norm-continuous action from continuity of
@@ -124,10 +121,8 @@ No action, topology, norm, coordinate or quotient presentation is replaced.
 
 ## Provenance and scope
 
-Worker 56 implements the weighted extension of the generic lemmas in
-`Langlands.Geometry.Analytic.StrictTestDomain.RationalSectionContinuityProof`,
-whose Lean proof is by Worker 474 and whose proof route was supplied by
-Worker 36. Both are credited as coauthors of this adaptation.
+This module implements the weighted extension of the generic lemmas in
+`Langlands.Geometry.Analytic.StrictTestDomain.RationalSectionContinuityProof`.
 The radius-specific neighborhood thresholds replace the strict proof's
 unit thresholds. The zero-safe weighted monomial theorem replaces the
 strict proof's nonzero-target normalization step. The constructor from

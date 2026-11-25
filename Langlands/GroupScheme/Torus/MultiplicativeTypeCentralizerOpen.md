@@ -31,6 +31,6 @@ idempotent defines a basic open. A morphism has range in this open exactly when
 its pullback is a unit; an idempotent unit is one. Naturality of the point
 comparison then gives the stated equivalence.
 
-This unit supplies open loci under the stated coordinate hypotheses. The
+This module supplies open loci under the stated coordinate hypotheses. The
 passage to arbitrary closed multiplicative-type subgroups by descent and the
 quotient-existence theorem remain separate proof obligations.

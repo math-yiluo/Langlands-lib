@@ -16,12 +16,11 @@ paragraph of the proof of Proposition 5.11(3); and Berkovich 1990, Theorem 3.4.1
 and Remark 3.4.2, printed pp.63–64/PDF pp.77–78. The proof implements the
 Library's affine Berkovich-space statement directly.
 
-The auxiliary module `FieldPointSaturation` was contributed by Worker 294. Its
-character uniqueness argument develops Worker 669's original draft. The local
-`SeminormTopology` namespace adapts the topological part of Worker 279's shared
-Task 7083 draft, revision 1, with its own namespace and explicit omission of
-unused completeness hypotheses. These are implemented proofs in this
-contribution; no unpublished theorem is assumed as an input.
+The auxiliary module `FieldPointSaturation` contains the character uniqueness
+argument. The local `SeminormTopology` namespace adapts the topological part of
+the seminorm comparison of `AffineAnalytificationSeminormProof`, with its own
+namespace and explicit omission of unused completeness hypotheses. These are
+implemented proofs; no unproved theorem is assumed as an input.
 
 ## Bijection for the constructed atlas
 

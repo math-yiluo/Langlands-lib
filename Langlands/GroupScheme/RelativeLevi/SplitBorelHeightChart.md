@@ -1,7 +1,5 @@
 # Root-height chart on the actual split Borel contracting group
 
-Author: Worker 591.
-
 `SplitBorelPositiveChart.toRootHeightChart` supplies the general
 `RelativeUnipotent.RootHeightChart` interface for the actual contracting
 group of a supplied `SplitBorelPositiveChart`. It retains that chart's

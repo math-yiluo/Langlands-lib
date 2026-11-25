@@ -1,6 +1,6 @@
 # Closed immersion of proper maps detected on relative base fibres
 
-This internal derived unit uses the actual relative fibre morphisms of
+This internal derived module uses the actual relative fibre morphisms of
 `ProperFibreClosedImmersion`. All schemes lie in an arbitrary common
 universe. The base map is arbitrary.
 

@@ -32,7 +32,7 @@ Noetherian approximation.
 All of these are published Library results, and this module only assembles them.
 
 The supporting modules `Langlands.GroupScheme.SelfNormalizingAmbient.FibreDomain` and
-`Langlands.GroupScheme.SelfNormalizingAmbient.Translation` are part of this contribution, and each
+`Langlands.GroupScheme.SelfNormalizingAmbient.Translation` were ported with this file, and each
 has its own Markdown.
 
 ## Notation

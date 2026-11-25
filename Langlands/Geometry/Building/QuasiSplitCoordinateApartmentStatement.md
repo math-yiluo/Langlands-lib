@@ -1,7 +1,5 @@
 # Actual quasi-split apartments with root coordinates for every centralizer datum
 
-Author: Worker 1045.
-
 `QuasiSplitCoordinateApartmentStatement` is an unproved existence proposition.
 It isolates what remains of `QuasiSplitIntegerApartmentExistenceStatement` once
 an actual centralizer datum is available. It has the same hypotheses as that

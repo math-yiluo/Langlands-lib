@@ -1,11 +1,11 @@
 # Renard C.I: proof of the actual joint decomposition
 
 `Langlands.Renard.commutingGeneralizedEigenspaceDecomposition.{u}` proves
-exactly the unchanged published proposition
+exactly the proposition
 `Langlands.Renard.CommutingGeneralizedEigenspaceDecompositionStatement.{u}`.
 It establishes all six conclusions for every finite-dimensional complex
 module in arbitrary carrier universe, every natural tuple length, and every
-pairwise commuting original tuple. The proof imports the published actual
+pairwise commuting original tuple. The proof imports the actual
 joint-space construction and statement without changing either pair.
 
 The governing original is David Renard, *Représentations des groupes
@@ -15,7 +15,7 @@ source is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 308 reread PDF281–282 and verified that fingerprint while preparing
+PDF281–282 were reread and that fingerprint verified for
 this proof. The source successively refines the characteristic spaces of
 the original generators and obtains invariant direct summands. Their
 actual intersections are the imported `CommutingReduction.jointSpace`.
@@ -30,7 +30,7 @@ The supplementary registered source
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 is retained at
 `/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`.
-Worker 308 reread PDF18–19 and checked that fingerprint. Its C.I entries
+PDF18–19 were reread and that fingerprint checked. Its C.I entries
 correct later numerical steps in the older edition; the 2026 original
 governs the present decomposition.
 
@@ -79,13 +79,13 @@ supremum is top, so that kernel contains all of `V`. Extensionality of
 linear maps and of the original algebra subtype gives `r = s`.
 
 For the last assertion, again for each supplied `Fintype` structure, the
-proof applies the published
+proof applies
 `Langlands.CommutingDimension.dimension_le_sum_restrictions` to `R` and
 the supported actual joint spaces. Stability is the imported
 `jointSpace_stable`, for every element of the original generated algebra.
 The generic restriction homomorphism specializes definitionally to the
 original `blockRestriction`; its range is the actual action image. The
-published `blockAlgebra_eq_range` identifies each such image with
+lemma `blockAlgebra_eq_range` identifies each such image with
 `blockAlgebra a hcomm χ.val`. Applying finrank to that equality and summing
 proves precisely the dimension comparison with the actual block algebras.
 No full block endomorphism algebra replaces an action image.
@@ -104,17 +104,15 @@ also zero-dimensional and its restriction function remains injective.
 The generic lemmas used in the proof include these boundary cases. Scalars
 and the identity consume no tuple entry.
 
-Worker 308 implemented this extraction. The independence, supported
-spanning, direct-sum dimension and kernel arguments adapt Worker 307's
-published `Langlands.Algebra.CommutingDimensionPrimary`, which also
-supplies the imported range-dimension helper. Worker 709 supplied the
-actual-block target's source correspondence and the extraction plan used
-here. Both are credited as coauthors. The published actual-block
-construction, credited there to Workers 709, 307 and 1044, is imported
+The independence, supported
+spanning, direct-sum dimension and kernel arguments adapt
+`Langlands.Algebra.CommutingDimensionPrimary`, which also
+supplies the imported range-dimension helper. The actual-block
+construction is imported
 unchanged.
 
 This proof establishes the joint-decomposition and original-restriction
 intermediate result. The later comparison by real powers, the actual-block
 nilpotent-maximum reduction, the floor recurrence and the maximum bound
-remain separate units. The proof does not invoke the known final commuting
+are in separate modules. The proof does not invoke the known final commuting
 dimension theorem to replace any of the six assertions.

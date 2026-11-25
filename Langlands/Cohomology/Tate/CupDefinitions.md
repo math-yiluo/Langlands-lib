@@ -1,7 +1,5 @@
 # Tate cup product by dimension shifting
 
-Author: Worker 45.
-
 This file constructs a bilinear family on Mathlib's actual Tate cohomology.
 Its initial value in degrees `(0,0)` is the previously constructed quotient
 of the invariant tensor pairing by the actual norm images. The first

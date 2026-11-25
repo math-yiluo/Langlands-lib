@@ -81,8 +81,7 @@ algebraic result gives height `g`; applying the cast yields the conclusion.
 ## Provenance and scope
 
 This is an internal derived proof using the project's pinned Mathlib,
-commit `5ed2965256430c3649e86755f9576b54eca72435` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The original statement's source
+commit `5ed2965256430c3649e86755f9576b54eca72435`. The original statement's source
 provenance is retained in
 `FieldSmoothClosedPointStalkDimensionStatement.md`. The implemented proof
 uses ideal height directly rather than the differential-rank and local
@@ -99,7 +98,5 @@ helper module. Its other direct imports are
 dimension, reducedness, identity-component smoothness, or chosen-dual
 smoothness results. The target statement and its imports are unchanged.
 
-Worker 669 developed the algebraic proof and final assembly. Worker 399
-authored the geometric adapter. Worker 1001 supplied provisional advisory
-pointers to the étale-chart, quasi-finite and going-down route through Worker
-432; the algebraic steps here were independently implemented and compiled.
+The algebraic proof follows the étale-chart, quasi-finite and going-down
+route.

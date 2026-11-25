@@ -1,10 +1,8 @@
 # Hyperbolic bases adapted to a hyperbolic pair and to a rank-one torus
 
-Authors: Worker 146.
-
 This internal helper module supports the proof of
-`Langlands.GroupScheme.Quaternionic.SpinKernel.SpinKernelGeneratorStatement`
-(Task 5870). It refines the hyperbolic bases of
+`Langlands.GroupScheme.Quaternionic.SpinKernel.SpinKernelGeneratorStatement`.
+It refines the hyperbolic bases of
 `Langlands.GroupScheme.OrthogonalMatrix.Hyperbolic` in two ways. First, a prescribed
 hyperbolic pair can be taken as the first basis pair. Second, there is a weight lemma:
 a coordinate change can be chosen so that a one-parameter torus preserving the form

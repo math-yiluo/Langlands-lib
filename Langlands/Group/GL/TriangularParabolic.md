@@ -1,7 +1,5 @@
 # Upper triangular matrices inside standard block parabolics
 
-Author: Worker 6.
-
 This module constructs the actual upper triangular subgroup of
 `Langlands.GeneralLinear n R` and its inclusion into every published standard
 block parabolic. It works for every commutative ring `R`, in an arbitrary

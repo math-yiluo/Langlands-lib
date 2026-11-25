@@ -1,6 +1,6 @@
 # Pair factors and the extended stable map
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartExtensionFactors`,
+Module `Langlands.Correspondence.HenniartExtensionFactors`,
 namespace `Langlands.Henniart.Extension`.
 
 Henniart (2000), §4.3 (4.2 c), "découle aussi de 3.8"), extended by unramified

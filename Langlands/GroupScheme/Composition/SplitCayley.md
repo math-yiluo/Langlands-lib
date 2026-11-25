@@ -1,7 +1,5 @@
 # The split Cayley datum
 
-Author: Worker 161.
-
 This module constructs `CayleyDatum.split K`, an actual Cayley datum over
 every field `K`, in every characteristic including two. The multiplication
 is Zorn's vector-matrix product. An element of `R⁸`, for any commutative

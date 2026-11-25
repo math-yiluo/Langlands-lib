@@ -5,7 +5,7 @@ Licensed under Apache License 2.0; see licenses/Anthropic-FLT/LICENSE, NOTICE,
 and ATTRIBUTION.md. Imports are prefixed; utility commands are replaced by
 standard Lean commands. See the paired Markdown for changes and provenance.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_Subalgebra_faithfullyFlat_of_faithfullyFlat_range_baseChange
 import Langlands.AnthropicFLT.Theorems.Thm_Subalgebra_faithfullyFlat_of_directed_of_forall_faithfullyFlat
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_exists_fg_subalgebra_comul_mem_antipode_mem_of_finset_subset

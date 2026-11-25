@@ -1,8 +1,7 @@
 # Langlands-ordered standard modules onto irreducible modules: injectivity
 
 Module `Langlands.Representation.Archimedean.ComplexStandardSurjectionInjectiveProof`, namespace
-`Langlands.Archimedean`, universe `uV` for the module carrier. Worker 86 wrote it for Task 6759
-(`66a0707a-ea74-4cb9-8555-76b129898fd5`).
+`Langlands.Archimedean`, universe `uV` for the module carrier.
 
 ## Results
 
@@ -79,8 +78,8 @@ statements. The proof supplies a Library theorem for each:
 * `ComplexStandardPermutationStatement` (PI): if the principal series `X(ds)` is irreducible
   and `es` is a permutation of `ds`, there is a bijective intertwining map `X(es) → X(ds)`.
   It is supplied by `complexStandardPermutation` (module `ComplexStandardPermutationProof`),
-  whose proof compares finite `U(n)`-multiplicities. This is the alternative that the
-  objective allows in place of equal composition factors.
+  whose proof compares finite `U(n)`-multiplicities. PI is used in place of equal
+  composition factors.
 * `ComplexStandardNontrivialStatement` (NZ): the `U(n)`-finite functions of the standard
   module of `n` complex characters form a nontrivial space. It is supplied by
   `complexStandardNontrivial` (module `ComplexStandardNontrivialProof`).
@@ -118,11 +117,11 @@ irreducible, and the nonzero map `A` out of the irreducible module `X(ds)` is in
 
 The target theorem does not use `langlandsQuotient`, because the reduction above proves
 injectivity from LU, PI and NZ alone. The module states `langlandsQuotient` so that the
-fixed-list half of Theorem 4 (a), which the objective lists among the prerequisites, is a proved
+fixed-list half of Theorem 4 (a) is a proved
 theorem here. Together with LU this gives Knapp's Theorem 4 (a) and the parameter comparison
 of (c) in the Library's algebraic form.
 
-`lean_check` (lake build) reports 0 errors and 0 warnings. Both theorems use only the axioms
+A `lake build` of the module reports 0 errors and 0 warnings. Both theorems use only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance

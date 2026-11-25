@@ -1,7 +1,5 @@
 # Fppf quotients on subgroup preimages
 
-Worker 324, with interface input from Worker 5698.
-
 This module supplies derived geometry for the inverse image of a subgroup under
 an fppf quotient. It works over every scheme `S : Scheme.{u}` and in every
 universe `u`. It does not prove that an extension is of multiplicative type.

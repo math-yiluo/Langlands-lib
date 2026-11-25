@@ -28,6 +28,8 @@ assume or prove a stronger condition on arbitrary generated weight blocks.
 
 The provenance is internal: these are set and additive-semigroup consequences
 of the definitions and explicit hypotheses imported from
-`Rational.RootProductStatement`. Their intended role is to adapt the separately
-owned ray-decomposition theorem to the CGP ordered-product interface. No
+`Rational.RootProductStatement`. Their intended role is to adapt the
+ray-decomposition theorem `RelativeRootRayDecompositionStatement`, which the
+Library proves as `relativeRootRayDecomposition`
+(`Rational.RootRayDecompositionProof`), to the CGP ordered-product interface. No
 additional source assertion is introduced here.

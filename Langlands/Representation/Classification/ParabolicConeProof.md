@@ -1,7 +1,5 @@
 # Root/weight cone theorem for GL block parabolics
 
-Author: Worker 534.
-
 `Langlands.glParabolicRootWeightCone` proves exactly the published
 `Langlands.GLParabolicRootWeightConeStatement`, with arbitrary ring universe
 `uR`. For every positive rank, actual fine block shape and real exponent

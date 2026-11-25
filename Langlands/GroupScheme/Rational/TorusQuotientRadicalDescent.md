@@ -1,7 +1,5 @@
 # Geometric radicals and actual finite Galois torus-quotient descent
 
-Worker 1333.
-
 This internal construction recognizes geometric unipotent radicals from
 actual torus quotients, and descends a supplied torus quotient over a finite
 Galois extension. All fields and characteristics are retained, at the

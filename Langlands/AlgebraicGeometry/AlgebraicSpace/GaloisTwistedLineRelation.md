@@ -1,7 +1,5 @@
 # The étale equivalence relation of the Galois-twisted line
 
-Author: Worker 105.
-
 This is support for Conrad's Example 5.13 (printed p.20). It contains no statement from the
 paper.
 

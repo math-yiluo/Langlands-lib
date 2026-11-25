@@ -22,8 +22,8 @@ variable {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
 /-- Renard IV.1.5, Remark 3: the isotypic projector is a natural endomorphism
 of the identity of the smooth representation category. -/
 def projectorCenter : CatCenter (SmoothRep.{0, u, v} ℂ G) where
-  app A := SmoothRep.ofHom (projector μ D A)
-  naturality A B f := by
+  asHom.app A := SmoothRep.ofHom (projector μ D A)
+  asHom.naturality A B f := by
     ext x
     exact (projector_natural μ D (SmoothRep.hom f) x).symm
 
@@ -60,7 +60,7 @@ def projectorImageProjection : 𝟭 _ ⟶ projectorImageFunctor μ D where
     exact Subtype.ext (projector_natural μ D (SmoothRep.hom f) x).symm
 
 theorem projectorImageProjection_comp_inclusion :
-    projectorImageProjection μ D ≫ projectorImageInclusion μ D = projectorCenter μ D := rfl
+    projectorImageProjection μ D ≫ projectorImageInclusion μ D = (projectorCenter μ D).asHom := rfl
 
 theorem projectorImageInclusion_comp_projection :
     projectorImageInclusion μ D ≫ projectorImageProjection μ D = 𝟙 (projectorImageFunctor μ D) := by

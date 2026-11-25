@@ -1,7 +1,5 @@
 # Actual Tate degree minus two and abelianization
 
-Author: Worker 45.
-
 Let `G` be a finite group and `A` a representation of `G` over a commutative
 ring `R` on which `G` acts trivially. `minusTwoTensorEquiv A` is Mathlib's
 comparison `TateCohomology.isoGroupHomology (-2) 1` from Tate degree minus

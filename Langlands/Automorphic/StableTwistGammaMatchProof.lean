@@ -12,7 +12,7 @@ factors under highly ramified twists, and the principal-series comparison.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uE
 
@@ -24,4 +24,4 @@ theorem stableTwistPairGammaMatchStatement :
     ArithmeticStableTwist.arithmeticStableTwistGamma.{u, uV, uE}
     principalSeriesPairGammaMatchStatement.{u, uV, uE}
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

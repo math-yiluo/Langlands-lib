@@ -177,7 +177,7 @@ theorem exists_principal_isomorphism_certificate [AddMonoid.FG N]
       ∀ (A : Type y) [CommRing A] [Algebra R A],
         IsUnit (algebraMap R A r) → Function.Bijective (scalarExtension f A) := by
   classical
-  obtain ⟨s, hs⟩ := AddMonoid.FG.fg_top (M := N)
+  obtain ⟨s, hs⟩ := AddMonoid.exists_of_isAddFG N
   let e := BialgEquiv.ofBijective (scalarExtension f K) hf
   let g : N ≃+ M := characterEquiv e
   have he : e.toBialgHom = scalarExtension f K := by

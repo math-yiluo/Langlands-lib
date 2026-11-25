@@ -1,10 +1,8 @@
 # The whole-block case of weak segment Jacquet factorization
 
-Authors: Worker 485 and Worker 964.
-
-This internal helper module proves only the one-block case of the proposed
-all-shape weak segment Jacquet factor assertion. It does not prove the
-all-shape assertion or the parent norm formula. Its provenance is elementary
+This internal helper module proves only the one-block case of the
+all-shape weak segment Jacquet factor assertion `SegmentQuotientJacquetFactors`.
+It does not prove the all-shape assertion or the scalar norm formula. Its provenance is elementary
 composition of published Jacquet, single-block, singleton tensor and
 rank-transport maps; no literature result beyond those published maps is used.
 
@@ -106,8 +104,8 @@ independent. The corollary also keeps both universe parameters independent. It
 uses the carrier universe `max uF uV` that the weak segment relation requires.
 All shapes in this module have exactly one block. Proper-block vanishing, the
 proper two-block formula, all-shape transitivity, tensor Jacquet compatibility
-and the weak-to-strong bridge remain separate obligations with their own
-owners.
+and the weak-to-strong bridge are not proved here; the inputs used for them in
+the all-shape proof are listed in `SegmentQuotientJacquetFactorsProof`.
 
 ## Dependency audit
 
@@ -117,21 +115,20 @@ The module imports `Langlands.Representation.Classification.Segments`,
 complete project import closure has 96 published modules, and all 96 imported
 Lean/Markdown pairs are byte-identical to Library commit
 `4021bb1d1ec99e65990e08addda3ade7caa73058`. Neither the Lean closure nor its
-paired Markdown names any of the thirteen excluded tasks inherited from the
-parent norm-formula task. These cover forward special square-integrability,
+paired Markdown names any of the thirteen excluded results. These cover
+forward special square-integrability,
 ordered conversion, square-integrable and regular exhaustion, both
 classifications, tempered block uniqueness, multisegment exhaustion, ordered
 strong-head existence, quotient coverage, segment-head product
 irreducibility, generic segment-product uniqueness and Zelevinsky multisegment
-socle exhaustion. The closure also does not name the named conclusions of those
-tasks, such as `SegmentSpecialEssentialSquareIntegrability` or
+socle exhaustion. The closure also does not name the Lean statements of those
+results, such as `SegmentSpecialEssentialSquareIntegrability` or
 `MultisegmentSocleExhaustion`. The proof uses no derivative formula,
 Zelevinsky's section 9.3 analytic result, his section 9.17 conjecture or any
-downstream classification. The all-shape factor statement owned by task
-`15540667-d654-4bfa-b699-c20981ea964c` is not imported.
+downstream classification. The all-shape factor statement
+`SegmentQuotientJacquetFactorsStatement` is not imported.
 
-Development compilation in the approved environment returned zero
+Development compilation returned zero
 diagnostics. Inspection of all four declarations reported level parameters
 `uF, uV` and only the standard axioms `propext`, `Classical.choice` and
-`Quot.sound`. These checks are development evidence only; independent review
-and Library publication are still required.
+`Quot.sound`.

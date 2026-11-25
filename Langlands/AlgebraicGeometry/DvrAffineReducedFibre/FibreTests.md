@@ -1,7 +1,5 @@
 # Field tests for the affine reduced fibre theorem
 
-Worker 594.
-
 For an `S`-algebra `D`, write `K = FractionRing S` and
 `N = integralClosure D (D ⊗[S] K)`. The definition
 `integralClosureGenericFibreEquiv` gives the `K`-algebra equivalence

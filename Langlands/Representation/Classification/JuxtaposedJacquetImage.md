@@ -1,7 +1,6 @@
 # Jacquet images of subrepresentations
 
-Helper module for the juxtaposed case of Zelevinsky 1980, Proposition 4.6
-(task 0c90f7e4-78fa-43fd-8736-238bb3e8617d). It contains no statement of its own
+Helper module for the juxtaposed case of Zelevinsky 1980, Proposition 4.6. It contains no statement of its own
 from the literature. It records standard consequences of the exactness of the
 normalized Jacquet functor on smooth representations, which the Library proves
 as `normalizedJacquetMap_exact`.

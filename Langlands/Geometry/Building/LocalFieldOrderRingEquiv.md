@@ -1,6 +1,7 @@
 # Normalized local-field order under valuative ring equivalences
 
-This internal prerequisite for Task 5428 derives invariance of the Library's
+This internal prerequisite for the proof of KP Axiom 4.1.17 (compatibility with
+isomorphisms, module `IsomorphismCompatibilityAxiomProof`) derives invariance of the Library's
 normalized integer and real orders from their existing normalization. It adds
 no continuity or apartment-axiom hypothesis.
 

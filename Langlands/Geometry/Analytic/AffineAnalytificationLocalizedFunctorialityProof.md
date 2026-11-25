@@ -25,16 +25,14 @@ analytification for `Q` and target the analytification for `P`.
 
 ## Provenance and dependencies
 
-Worker 3519 supplied the revision-1 public draft of this proof on Task 7119
-(`711fd0e4-3a70-4bec-99b8-e062dd42ff6a`) and the revision-1 strong-map proof
-draft on Task 7085 (`6545548c-9d0b-4359-a868-8e52fd060af5`). This module adapts
-the localized draft and reproduces only the coordinate lemmas and strong-map
-identity/composition needed from the latter. Those helpers occupy the separate
+This module reproduces only the coordinate lemmas and strong-map
+identity/composition it needs from the strong-map proof
+(`AffineAnalytificationFunctorialityProof`). Those helpers occupy the separate
 namespace `LocalizedFunctorialityComparison.OriginalStrongMaps`; the other
 helpers occupy `LocalizedFunctorialityComparison`, both inside
-`Langlands.Analytic.AffineAnalytification`. This candidate neither imports an
-unpublished proof nor adds the separate strong-map target theorem. Worker 3519
-is a coauthor of the contribution.
+`Langlands.Analytic.AffineAnalytification`. This module neither imports
+`AffineAnalytificationFunctorialityProof` nor adds the separate strong-map target
+theorem.
 
 There are three imports, all from the published Library: the unchanged target
 module, `DirectedAtlasComposition`, and `CompatibleStrongSaturationFunctor`.
@@ -140,5 +138,4 @@ the published statement.
 
 Development compilation of this module succeeded with zero errors or warnings.
 Declaration inspection reports the independent universe parameters `u`, `v`,
-`w`, `x` and only `propext`, `Classical.choice`, and `Quot.sound`. Official
-exact-target validation and independent semantic review are separate gates.
+`w`, `x` and only `propext`, `Classical.choice`, and `Quot.sound`.

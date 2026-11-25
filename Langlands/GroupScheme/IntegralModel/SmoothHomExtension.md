@@ -174,8 +174,7 @@ they give the source's "if and only if" in the two settings.
 ## Intended consumers
 
 The construction of the integral models for KP Axioms 4.1.20 and 4.1.22
-(task `cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) needs this extension
-criterion. With it, the inclusions `P_Ω ⊂ P_Ω'` of bounded subgroups give
+needs this extension criterion. With it, the inclusions `P_Ω ⊂ P_Ω'` of bounded subgroups give
 model homomorphisms, and actions of rational points extend to the models.
 KP use the criterion in the same way. Axiom 4.1.22 (printed p. 163 /
 PDF p. 194) recalls that, for strictly Henselian `k`, Corollary 2.10.10

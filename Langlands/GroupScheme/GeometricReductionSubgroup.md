@@ -1,7 +1,5 @@
 # The reduced subgroup under geometric reducedness
 
-Worker 572.
-
 This module constructs an actual smooth reduced subgroup of a group
 scheme `G` locally of finite type over any field `k`, under the explicit
 hypothesis that the canonical reduced closed subscheme of `G` is

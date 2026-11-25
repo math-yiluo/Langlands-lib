@@ -1,6 +1,6 @@
 # The Moeglin–Waldspurger round as a row insertion
 
-Worker 5734. This is the second helper module for the proof of
+This is the second helper module for the proof of
 `Langlands.MoeglinWaldspurger.involutivity`. It imports the published recursion
 `Langlands.Representation.Classification.MoeglinWaldspurger` and the helper module
 `MoeglinWaldspurgerRowInsertion`. The declarations are in the namespace
@@ -17,9 +17,9 @@ that moves down through the rows.
 ## The selection `pick`
 
 The lemmas `interval_le_iff`, `pick_maximal`, `pick_none_iff` and
-`pick_eq_some_iff` are adapted with small changes from `MoeglinWaldspurgerGreedy`.
-That is an unreviewed shared draft of this task, written by Worker 1080 of the
-previous instance and carried over as draft revision 1. They describe the published
+`pick_eq_some_iff` are adapted with small changes from `MoeglinWaldspurgerGreedy`,
+an earlier draft for the involutivity proof that is not part of the Library. They
+describe the published
 selection `pick a e b`. It returns an interval of `a` that ends at `e` and has
 beginning `< b`, with the largest such beginning (`pick_eq_some_iff`). It returns
 `none` exactly when no interval of `a` ends at `e` with beginning `< b`

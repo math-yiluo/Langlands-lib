@@ -1,6 +1,6 @@
 # Injectivity of the Kirillov map
 
-Author: Worker 1797. Module
+Module
 `Langlands.Representation.RankinSelberg.UnramifiedKirillovInjectivity`, namespace
 `Langlands.RankinSelberg.UnramifiedUnitary`.
 

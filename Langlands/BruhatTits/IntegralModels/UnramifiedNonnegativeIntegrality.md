@@ -1,6 +1,6 @@
 # Nonnegative restricted root depth gives lower neutral integrality
 
-This internal supporting unit combines published sharp-fixer containment and
+This internal supporting module combines published sharp-fixer containment and
 exact recovery of integral models. It does not assert existence of a fixer
 model or prove the unconditional depth-zero opposite-factor statement.
 
@@ -50,4 +50,6 @@ neutral fixer-image equality, or a zero datum.
 The provenance is the internal composition of the three published
 lemmas named above. The converse from lower root integrality to
 nonnegative restricted depth, radical nonvanishing at value zero, and
-existence of all required models remain separate obligations.
+existence of all required models are not proved here; for the converse see
+`nonnegative_restrictedDepth_of_mem_full_integralPoints` in
+`UnramifiedRootIntegrality`.

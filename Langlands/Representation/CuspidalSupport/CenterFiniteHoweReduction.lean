@@ -144,9 +144,9 @@ faithful carrier lift. -/
 def catCenterUniverseRestrict
     (z : CatCenter (SmoothRep.{0, uG, max uV uX} ℂ G)) :
     CatCenter (SmoothRep.{0, uG, uV} ℂ G) where
-  app X := (universeLiftFunctor.{uX, uG, uV} G).preimage
+  asHom.app X := (universeLiftFunctor.{uX, uG, uV} G).preimage
     (z.app ((universeLiftFunctor.{uX, uG, uV} G).obj X))
-  naturality X Y f := by
+  asHom.naturality X Y f := by
     apply (universeLiftFunctor.{uX, uG, uV} G).map_injective
     simp only [Functor.id_obj, Functor.id_map, Functor.map_comp, Functor.map_preimage]
     exact (z.naturality ((universeLiftFunctor.{uX, uG, uV} G).map f))

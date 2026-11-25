@@ -85,7 +85,8 @@ is introduced.
 
 ## Intended proof of the implication
 
-The implication is not proved here. A later proof is expected to proceed
+The implication is not proved here; its proof is in
+`Langlands.Analysis.EuclideanScalarEllipticAnalyticityTransport`. A proof is expected to proceed
 as follows. Let `D` be an operator on `E` with basis `b`. Because `E` has a
 finite real basis, it is a finite-dimensional real normed space, so the
 linear equivalence `φ : E → EuclideanSpace ℝ (Fin d)` with
@@ -145,6 +146,3 @@ regularity premise.
 The Lean file defines the two propositions only. It proves no analytic
 regularity, coordinate transport, comparison between the two assertions
 or degenerate case.
-
-Worker 116 wrote the shared draft, including both Lean definitions.
-Worker 1099 expanded the Markdown documentation for review.

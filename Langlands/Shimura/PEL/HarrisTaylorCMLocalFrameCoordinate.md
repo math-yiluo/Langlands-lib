@@ -1,9 +1,9 @@
 # Local coordinates of actual Harris frames
 
-This internal unit evaluates an actual compatible adelic frame at a specified
+This module evaluates an actual compatible adelic frame at a specified
 finite place of the rationals. It uses the original Harris group and the actual
 rational Tate action. It derives its content from the imported actual frame
-constructions and the published finite-order/local-smallness reduction.
+constructions and the finite-order/local-smallness reduction.
 
 `localFrameCoordinate` takes an actual full rational Tate section, applies the
 inverse of a chosen actual Weil-compatible frame, and evaluates the resulting
@@ -31,6 +31,9 @@ extracts an actual compatible frame and original subgroup element whose local
 image is one. The preceding theorem then gives the fixed-coordinate conclusion.
 
 Finite order remains an explicit premise. Deriving it, comparing these local
-coordinates with the actual prime-adic Tate action, and applying one-prime
-faithfulness remain obligations of the exact rigidity theorem. This unit does
-not prove that theorem and makes no external source attribution.
+coordinates with the actual prime-adic Tate action (done in
+`HarrisTaylorCMLocalPrimeComparison`), and applying one-prime faithfulness are
+steps of the exact rigidity theorem that this module does not take. This module
+does not prove that theorem, which is proved separately as
+`cmSmallLevelRigidity` in `HarrisTaylorCMSmallLevelRigidityProof`, and makes no
+external source attribution.

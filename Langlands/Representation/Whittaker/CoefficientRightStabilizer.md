@@ -1,7 +1,5 @@
 # Common compact open right stabilizers for actual coefficients
 
-Author: Worker 408.
-
 This internal adapter keeps two specified coefficient functions fixed and
 chooses one compact open subgroup that fixes each under right translation.
 The carrier universes of the two representations are independent.

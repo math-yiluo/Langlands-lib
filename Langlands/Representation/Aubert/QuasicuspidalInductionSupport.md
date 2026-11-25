@@ -1,7 +1,5 @@
 # Support preservation for quasicuspidal induction
 
-Author: Worker 165.
-
 This internal derivation proves support preservation for the actual exact
 finite-length Grothendieck group in positive rank. It makes no effectivity
 claim for the alternating operator.

@@ -22,19 +22,19 @@ variable {G : PDivisibleGroup R p}
 
 /-- The automorphisms of the actual rational tower that commute with the order. -/
 def orderAut (a : A →+* End G) : Subgroup (Aut (RationalCategory.of G)) where
-  carrier := {g | ∀ t, RationalHom.comp (RationalHom.ofHom (a t)) g.hom =
-    RationalHom.comp g.hom (RationalHom.ofHom (a t))}
+  carrier := {g | ∀ t, RationalHom.comp (RationalHom.ofHom (a t).asHom) g.asIso.hom =
+    RationalHom.comp g.asIso.hom (RationalHom.ofHom (a t).asHom)}
   one_mem' t := by
-    change RationalHom.comp (RationalHom.ofHom (a t)) (RationalHom.id G) =
-      RationalHom.comp (RationalHom.id G) (RationalHom.ofHom (a t))
+    change RationalHom.comp (RationalHom.ofHom (a t).asHom) (RationalHom.id G) =
+      RationalHom.comp (RationalHom.id G) (RationalHom.ofHom (a t).asHom)
     rw [RationalHom.comp_id, RationalHom.id_comp]
   mul_mem' {g h} hg hh :=
-    (OrderQuasiIsogeny.trans (a := a) (b := a) (d := a) ⟨h, hh⟩ ⟨g, hg⟩).commutes
-  inv_mem' {g} hg := (OrderQuasiIsogeny.symm (a := a) (b := a) ⟨g, hg⟩).commutes
+    (OrderQuasiIsogeny.trans (a := a) (b := a) (d := a) ⟨h.asIso, hh⟩ ⟨g.asIso, hg⟩).commutes
+  inv_mem' {g} hg := (OrderQuasiIsogeny.symm (a := a) (b := a) ⟨g.asIso, hg⟩).commutes
 
 /-- Regard an actual order-linear automorphism as a rigidifier of the fixed frame. -/
 def OrderQuasiIsogeny.ofAut {a : A →+* End G} (g : orderAut a) : OrderQuasiIsogeny a a :=
-  ⟨g.val, g.property⟩
+  ⟨g.val.asIso, g.property⟩
 
 /-- The actual rational isomorphism determines the order-linear isomorphism. -/
 theorem OrderQuasiIsogeny.ext_val {H : PDivisibleGroup R p} {a : A →+* End G} {b : A →+* End H}
@@ -52,11 +52,12 @@ variable (hExact : FiniteCartierDualExactnessStatement.{u})
 /-- The split frame similitudes act by actual order-linear automorphisms of the split frame. -/
 def splitFrameAut (a : A →+* End G) :
     SplitFrameSimilitudes a →* orderAut (splitOrderAction a hExact) where
-  toFun g := ⟨(splitOrderRigidifier hExact (OrderQuasiIsogeny.ofAut g.1) g.2).val,
+  toFun g := ⟨Aut.of (splitOrderRigidifier hExact (OrderQuasiIsogeny.ofAut g.1) g.2).val,
     (splitOrderRigidifier hExact (OrderQuasiIsogeny.ofAut g.1) g.2).commutes⟩
   map_one' := by
     apply Subtype.ext
     apply Aut.ext
+    apply Iso.ext
     change RationalHom.prodMap (RationalHom.id G)
       ((↑(1 : ℚ_[p]ˣ) : ℚ_[p]) • RationalHom.dualMap hExact (RationalHom.id G)) =
       RationalHom.id (G.splitWithDual hExact)
@@ -64,10 +65,11 @@ def splitFrameAut (a : A →+* End G) :
     rfl
   map_mul' g h := by
     apply Subtype.ext
-    change splitRigidifier hExact (h.1.val.trans g.1.val) (g.2 * h.2) =
-      (splitRigidifier hExact h.1.val h.2).trans (splitRigidifier hExact g.1.val g.2)
+    apply Aut.ext
+    change splitRigidifier hExact (h.1.val.asIso.trans g.1.val.asIso) (g.2 * h.2) =
+      (splitRigidifier hExact h.1.val.asIso h.2).trans (splitRigidifier hExact g.1.val.asIso g.2)
     rw [mul_comm g.2 h.2]
-    exact splitRigidifier_trans hExact h.1.val g.1.val h.2 g.2
+    exact splitRigidifier_trans hExact h.1.val.asIso g.1.val.asIso h.2 g.2
 
 end Langlands.PDivisibleGroup
 
@@ -94,8 +96,8 @@ theorem act_mul (g h : orderAut a) (X : PolarizedFramedTower (R := R) a) :
       (OrderQuasiIsogeny.ofAut g).symm.trans ((OrderQuasiIsogeny.ofAut h).symm.trans X.rigidifier) := by
     apply OrderQuasiIsogeny.ext_val
     apply CategoryTheory.Iso.ext
-    change RationalHom.comp (RationalHom.comp g.val.inv h.val.inv) X.rigidifier.val.hom =
-      RationalHom.comp g.val.inv (RationalHom.comp h.val.inv X.rigidifier.val.hom)
+    change RationalHom.comp (RationalHom.comp g.val.asIso.inv h.val.asIso.inv) X.rigidifier.val.hom =
+      RationalHom.comp g.val.asIso.inv (RationalHom.comp h.val.asIso.inv X.rigidifier.val.hom)
     exact RationalHom.comp_assoc _ _ _
   exact congrArg (fun e => { X with rigidifier := e }) hcomp
 
@@ -106,6 +108,7 @@ def Iso.act {X Y : PolarizedFramedTower (R := R) a} (e : Iso X Y) (g : orderAut 
   order := e.order
   pairing := e.pairing
   frame := by
+    dsimp only [PolarizedFramedTower.act]
     let q := (OrderQuasiIsogeny.ofAut g).val.inv
     change RationalHom.comp (RationalHom.comp q X.rigidifier.val.hom)
       (RationalHom.ofHom ((baseChangeFunctor R S p).map e.targetIso.hom)) =

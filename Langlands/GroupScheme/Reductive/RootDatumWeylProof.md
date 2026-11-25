@@ -1,7 +1,5 @@
 # The Weyl group of a split maximal torus and its supplied root datum
 
-Workers 1446 and 1577.
-
 `Langlands.GroupScheme.weylGroup` has exactly the published type
 `Langlands.GroupScheme.WeylGroupStatement.{u}`. For every field in universe
 `u`, connected reductive group, split maximal torus embedding `i`, and

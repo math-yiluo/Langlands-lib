@@ -1,7 +1,5 @@
 # Scalar norms of Jacquet exponents of a segment special quotient
 
-Author: Worker 561.
-
 `Langlands.Classification.SegmentSpecialJacquetExponentNormFormula` is a
 proposition definition. It states an algebraic formula; this module supplies no
 proof of that formula.
@@ -122,9 +120,9 @@ The public source-boundary note
 distinguishes the special quotient from the increasing-product submodule and
 records corrections to Auel's later classification argument. Those
 classification and analytic results are not inputs here. No source-specific
-Zelevinsky errata file was present in the current public notes.
+Zelevinsky errata file was present in the public notes.
 
-## Missing proof obligations and independence
+## Proof obligations and independence
 
 A proof must justify the calculation for every weak segment quotient, including
 representative transport and any needed independent algebraic special-quotient
@@ -134,17 +132,18 @@ calculations and their passage to all generalized eigencharacters; and the
 finite interval arithmetic in the actual normalization.
 Any admissibility or finite-length facts used for character transfer must
 themselves be proved or independently available.
-The existing constituent-existence, general scalar-compatibility,
-admissibility and Casselman tasks remain distinct obligations.
+Constituent existence, general scalar compatibility, admissibility and the
+Casselman results are distinct statements, not proved here.
 
 No analytic square-integrability, invariant positive Hermitian form,
 temperedness, converse, classification or exhaustion theorem occurs as a
-hypothesis or conclusion. The proof successor must remain independent, directly
-and transitively, of the forward special-square-integrability proof, its parent
+hypothesis or conclusion. A proof must remain independent, directly
+and transitively, of the forward special-square-integrability proof,
 ordered conversion, square-integrable or regular exhaustion, strong-head
 analytic classification, tempered block uniqueness, multisegment exhaustion,
 ordered-head existence, quotient coverage, and their downstream consequences.
 Zelevinsky §9.3's analytic result and §9.17's conjecture cannot supply this
 algebraic input. Shared lower-level results require an independence check.
-Statement publication, bibliographic formulas and pending tasks do not
-constitute a proof.
+Statement publication and bibliographic formulas do not constitute a proof.
+The module `Classification.SegmentSpecialJacquetExponentProof` proves the
+formula as `segmentSpecialJacquetExponentNormFormula`.

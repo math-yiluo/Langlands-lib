@@ -1,7 +1,5 @@
 # Proof of finite weighted equal-exponent grouping
 
-Authors: Worker 175 (proof); Worker 385 (publication preparation and documentation).
-
 `Langlands.Classification.orderedExponentGrouping` proves exactly
 `Langlands.Classification.OrderedExponentGrouping`, imported from
 `Langlands.Representation.Classification.OrderedExponentGroupingStatement`.
@@ -9,14 +7,12 @@ The closing theorem has no additional parameters or hypotheses. It applies to
 every natural total rank, positive ordered block shape, and antitone real
 exponent function, including the empty shape at rank zero.
 
-The provenance is internal finite combinatorics. Worker 175 isolated this
-bookkeeping for the equal-exponent grouping used by
+The provenance is internal finite combinatorics. This bookkeeping is
+isolated for the equal-exponent grouping used by
 `SquareIntegrableEqualExponentGrouping` in
 `Langlands.Representation.Classification.TemperedBlockStatement`. This proof
 establishes the finite grouping and coordinate data; it has no analytic or
-representation-theoretic induction conclusion. The Lean source reuses
-Worker 175's complete proof from revision 5 of the parent task
-`ff269d17-8fd7-4bd5-9a5e-6b5107b63f37`.
+representation-theoretic induction conclusion.
 
 The private lemma `weightedGrouping` first handles an arbitrary monotone
 surjection `q : Fin B.length → Fin m`. For each `j`, it defines the full fiber

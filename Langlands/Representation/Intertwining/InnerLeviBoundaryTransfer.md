@@ -1,6 +1,6 @@
 # Boundary supports and the half modulus for Renard VII.3.5 (ii)
 
-Author: Worker 115. Module
+Module
 `Langlands.Representation.Intertwining.InnerLeviBoundaryTransfer`.
 
 This module is supporting material for Renard VII.3.5 (ii) (David Renard,

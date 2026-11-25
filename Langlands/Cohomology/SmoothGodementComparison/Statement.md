@@ -1,15 +1,13 @@
 # Smooth Godement compact cohomology computes derived compact sections
 
-Author: Worker 3.
-
 This module defines a comparison map `comparisonMap` and four propositions,
 the last of which is the conjunction
 `Langlands.Cohomology.SmoothGodementComparison.SmoothGodementComparisonStatements`.
 The setting is a topological group acting on a topological space, and smooth
 equivariant sheaves of modules on it. Two compactly supported cohomologies
-are attached to such a sheaf `F`. The first is Worker 61's smooth Godement
+are attached to such a sheaf `F`. The first is the smooth Godement
 compact cohomology: the homology of compact sections of the smooth Godement
-complex of `F`. The second is Worker 13's right derived functors of compact
+complex of `F`. The second is the right derived functors of compact
 sections, computed in the abelian category of smooth equivariant sheaves.
 The comparison map goes from the first to the second. It is induced by a map
 from the smooth Godement complex to an injective resolution of `F` that is
@@ -36,10 +34,10 @@ All declarations quantify over a commutative ring `R`, a group `G` and a
 topological space `X`, all in one universe `u`. `G` is a topological group
 (`IsTopologicalGroup`). It acts on `X` by `MulAction`, and each element acts
 continuously (`ContinuousConstSMul`). The hypothesis
-`Langlands.Sheaf.Equivariant.HasStableNeighbourhoods G X`, from Worker 13's
+`Langlands.Sheaf.Equivariant.HasStableNeighbourhoods G X`, from
 `Langlands.Sheaf.Equivariant.SmoothPart`, says that every open neighbourhood
 of every point contains an open neighbourhood of that point that is
-stabilized by some open subgroup. Worker 13 publishes instances for discrete
+stabilized by some open subgroup. That module provides instances for discrete
 `G`, and for nonarchimedean `G` acting continuously (`NonarchimedeanGroup G`,
 `ContinuousSMul G X`). The published smooth Godement construction, the
 abelian structure on smooth sheaves and the derived functors below need
@@ -50,40 +48,41 @@ conjunction also assume that `X` is Hausdorff (`T2Space`) and locally compact
 
 The objects are the published ones:
 
-- `Langlands.Sheaf.Equivariant.SmoothTopologicalSheaf R G X` is Worker 13's
+- `Langlands.Sheaf.Equivariant.SmoothTopologicalSheaf R G X` is the
   full subcategory of smooth sheaves inside the equivariant sheaves of
   `R`-modules on `X`. A sheaf is smooth when every local section is, near
   every point of its domain, fixed by an open subgroup on an open
-  neighbourhood stabilized by that subgroup. Worker 13's
+  neighbourhood stabilized by that subgroup.
   `Langlands.Sheaf.Equivariant.SmoothAbelian` makes this subcategory abelian
   and proves that it has enough injectives.
-- `Langlands.Sheaf.Equivariant.smoothSheafCompactSections R G X` is Worker
-  13's functor sending a smooth sheaf to its compactly supported global
+- `Langlands.Sheaf.Equivariant.smoothSheafCompactSections R G X` is the
+  functor sending a smooth sheaf to its compactly supported global
   sections, as an object of the published abelian category
-  `Langlands.SmoothRep R G` of smooth representations. Worker 13 publishes
+  `Langlands.SmoothRep R G` of smooth representations. Its module
+  `Langlands.Sheaf.Equivariant.SmoothSheafCompactSections` shows
   that it is additive and preserves finite limits.
 - `Godement.smoothZeroFunctor R G X` and `Godement.smoothCoaugmentation R G X`
-  are Worker 61's degree-zero smooth Godement functor `D` and its
+  are the degree-zero smooth Godement functor `D` and its
   coaugmentation `η : 𝟭 ⟶ D`, which is monic at every object
   (`Godement.mono_smoothCoaugmentation_app`). `Godement.smoothComplex R G X F`
-  is Worker 61's smooth Godement complex of `F`, by definition the published
+  is the smooth Godement complex of `F`, by definition the published
   cokernel complex `Langlands.Cohomology.CokernelComplex.complex D η F`.
 - `Langlands.Cohomology.CokernelComplex.augmentationMap D η F` is the
   published augmentation from `F`, placed in degree zero, to this complex, in
-  Worker 3's `Langlands.Sheaf.Godement.ExactnessStatement`. Its degree-zero
+  `Langlands.Sheaf.Godement.ExactnessStatement`. Its degree-zero
   component is `η.app F` (`augmentationMap_f_zero`).
 - `Langlands.Cohomology.SmoothGodementCohomology.smoothGodementCompactCohomology R G X q`
-  is Worker 61's degree-`q` homology, computed in `SmoothRep R G`, of compact
+  is the degree-`q` homology, computed in `SmoothRep R G`, of compact
   sections applied termwise to the smooth Godement complex.
-  `smoothGodementCompactCohomologyZeroIso R G X` is Worker 61's natural
+  `smoothGodementCompactCohomologyZeroIso R G X` is the natural
   isomorphism from its degree-zero part to `smoothSheafCompactSections R G X`.
-  It is an instance of Worker 13's
+  It is an instance of
   `EquivariantGodementCohomology.homologyZeroIso`, whose component at `F` is
   the inverse of `EquivariantGodementCohomology.homologyIso`. That map sends
   compact sections of `F` into the degree-zero cycles by compact sections of
   the augmentation (`cyclesIso`), and then to homology.
 - `Langlands.Cohomology.SmoothSheafCohomology.compactDerived R G X q` is
-  Worker 13's `q`-th right derived functor, Mathlib's `Functor.rightDerived`,
+  the `q`-th right derived functor, Mathlib's `Functor.rightDerived`,
   of `smoothSheafCompactSections R G X`. `compactDerivedZeroIso R G X` is
   Mathlib's `Functor.rightDerivedZeroIsoSelf`, the identification of the
   zeroth derived functor of a left exact functor with the functor.
@@ -151,7 +150,7 @@ Degree zero. Mathlib's `InjectiveResolution.toRightDerivedZero_eq` says that
 `Γc.toRightDerivedZero.app F`, the inverse of the component of
 `compactDerivedZeroIso`, is the map from `Γc F` into the degree-zero cycles
 of `Γc I` induced by `Γc (I.ι.f 0)`, followed by the projection to homology
-and by the inverse of `compactDerivedIso R G X I 0`. Worker 13's
+and by the inverse of `compactDerivedIso R G X I 0`.
 `homologyIso` is the map from `Γc F` into the degree-zero cycles of `Γc K`
 induced by `Γc (η.app F)` (`cyclesIso_hom_iCycles`), followed by the
 projection to homology. The map induced by `φ` on homology commutes with
@@ -238,9 +237,10 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces*, unfinished
 
 The propositions transcribe these to the ordinary open-set site:
 
-- Worker 61's smooth Godement complex is the counterpart of Berkovich's
-  `C^•(F)` and of the resolutions `F^•_m` of Harris's Lemma 2.2 (Worker 61's
-  `Smooth.md` explains the correspondence `D ↔ ν_*ν^*`), and
+- The smooth Godement complex is the counterpart of Berkovich's
+  `C^•(F)` and of the resolutions `F^•_m` of Harris's Lemma 2.2 (the page
+  `Smooth.md` of `Langlands.Sheaf.Equivariant.Godement.Smooth` explains the
+  correspondence `D ↔ ν_*ν^*`), and
   `smoothGodementCompactCohomology` is the counterpart of `H^q(G^•_m(U(ẽ)_F̄))`
   in (2.3).
 - `compactDerived` is the counterpart of `H^q_c(X{G}, F)`: for a smooth sheaf
@@ -254,7 +254,7 @@ The propositions transcribe these to the ordinary open-set site:
   proposition renders "canonical".
 - Harris's (2.3) has on its left side the compactly supported cohomology of
   the underlying sheaf, that is, Berkovich's `H^q_c(X, b^*F)`. Its ordinary
-  analogue is related to `compactDerived` by Worker 3's published
+  analogue is related to `compactDerived` by
   `Langlands.Cohomology.SmoothCompactComparison.SmoothCompactDerivedComparisonStatement`.
   Together with that statement, the propositions here transcribe the
   computation of compactly supported cohomology by the resolutions of
@@ -278,8 +278,8 @@ The propositions transcribe these to the ordinary open-set site:
   `ℓ`-divisible systems in `m`, and the torsion coefficients `ℤ/ℓ^m ℤ` are
   not stated. The coefficients are an arbitrary commutative ring.
 - Compatibility of the comparison with connecting morphisms is not stated.
-- No invariant version, comparing Worker 61's
-  `smoothGodementInvariantCompactCohomology` with Worker 13's invariant
+- No invariant version, comparing
+  `smoothGodementInvariantCompactCohomology` with the invariant
   derived functors, is stated; no consulted source states it.
 - The comparison with the compactly supported cohomology of the underlying
   sheaf is not restated; it is the published
@@ -321,34 +321,32 @@ The direct project imports are byte-identical in Library commits
 `983d968c2bdcb4cc242ffa0a4ee087f40fd86436` and
 `55cf6172e313c02aa8f5978501d957bfa08de20d`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Cohomology.SmoothGodementCohomology` | Worker 61 | `9ff0b420e63b253af00ed18af353d5daefdd0b75a1c09c90726563f3695a37c7` | `121a57c44e58c2ead87812ae506b7eac044be97ad089b87ffac5b0390b833a16` |
-| `Langlands.Sheaf.Godement.ExactnessStatement` | Worker 3 | `66c45b9d460fce4935aa869c1db1c932ca9e60fe95188ea3a6895ae9d0037435` | `d9776b5f0107c1f34b83b8a03fee2ba25a3e6904faa288eb51512bd951b0f4b5` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Cohomology.SmoothGodementCohomology` | `9ff0b420e63b253af00ed18af353d5daefdd0b75a1c09c90726563f3695a37c7` | `121a57c44e58c2ead87812ae506b7eac044be97ad089b87ffac5b0390b833a16` |
+| `Langlands.Sheaf.Godement.ExactnessStatement` | `66c45b9d460fce4935aa869c1db1c932ca9e60fe95188ea3a6895ae9d0037435` | `d9776b5f0107c1f34b83b8a03fee2ba25a3e6904faa288eb51512bd951b0f4b5` |
 
 From the first the module uses `smoothGodementCompactCohomology` and
-`smoothGodementCompactCohomologyZeroIso`. Through it, it uses Worker 61's
+`smoothGodementCompactCohomologyZeroIso`. Through it, it uses
 `Langlands.Sheaf.Equivariant.Godement.Smooth` (`smoothZeroFunctor`,
 `smoothCoaugmentation`, `smoothComplex`; Lean SHA-256
 `c87bbf5eef53c9d4b6e1b2c9d30f834d14533f3e963b489a2fa96ccd7c1e37cc`) and
-Worker 13's `Langlands.Cohomology.SmoothSheafCohomology` (`compactDerived`,
+`Langlands.Cohomology.SmoothSheafCohomology` (`compactDerived`,
 `compactDerivedZeroIso`, `compactDerivedIso`; Lean SHA-256
 `f1365e1fcf6064dbbc6bacd8491c16ce24fe3a76215dc606adc263032be3c7d1`). From the
 second it uses `CokernelComplex.augmentationMap`.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Check `c005da11-9cb6-4b87-ada4-39f9a06db7ae` built this module from a draft
-directory against the published imports, with no errors or warnings. Check
-`0a9e1571-7e8f-45bd-9228-2b6045ad3253` built it with Lake from the
-workspace, against Library `55cf6172`, with no errors or warnings. The Lean
+A first check built this module against its imports, with no errors or
+warnings. A second check built it with Lake against Library `55cf6172`, with
+no errors or warnings. The Lean
 file is unchanged since the first check. The second check inspected
 `SmoothGodementComparisonStatements` as a `Prop`-valued definition with the
 single universe parameter `u`, depending only on `propext`,
-`Classical.choice` and `Quot.sound`. Check
-`fb947c49-6989-4b8a-bbbf-55633bc810ba` compiled a test file against the same
-Lean file, with no errors or warnings, and its output was read. It printed
+`Classical.choice` and `Quot.sound`. A third check compiled a test file
+against the same Lean file, with no errors or warnings, and its output was read. It printed
 `comparisonMap` and the four propositions with universes shown, and the
 axioms of the conjunction. The prints show:
 
@@ -371,9 +369,9 @@ acting continuously, and for the trivial group acting on a point. It
 elaborates the degree-zero proposition without the two topological
 hypotheses. This shows only that the statements are well formed there.
 
-Check `a91c0cc2-a9dd-45d3-bcb8-0af24caa4ffb` compiled a private test file
-against the same Lean file, with no errors or warnings. The file is not part
-of this submission. It proves the degree-zero proposition outright, by the
+A fourth check compiled a separate test file
+against the same Lean file, with no errors or warnings. That test file is not
+part of this module. It proves the degree-zero proposition outright, by the
 argument above. It derives the invertibility proposition from the published
 `AcyclicResolutionComparisonStatement`, `CokernelResolutionStatement` and
 `SmoothGodementCompactDerivedAcyclicStatement`. It derives the naturality
@@ -384,4 +382,4 @@ together with the invertibility proposition. These derivations take the
 published statements as hypotheses. They do not prove them.
 
 Compilation and inspection establish well-formed statements. Apart from the
-private degree-zero proof, they do not prove any component.
+degree-zero proof in that test file, they do not prove any component.

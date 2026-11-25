@@ -22,7 +22,7 @@ variable {S : AlgebraicGeometry.Scheme.{u}} {R : Type v} [Ring R]
 
 /-- Sections on which every element acts by the specified actual scalar section. -/
 def scalarEigenSections (U : S.Opens) : Submodule Γ(S, U) Γ(M, U) where
-  carrier := {x | ∀ a : R, (ρ a).app U x = restrictScalar U (χ a) • x}
+  carrier := {x | ∀ a : R, (ρ a).asHom.app U x = restrictScalar U (χ a) • x}
   zero_mem' := by intro a; simp
   add_mem' := by
     intro x y hx hy a
@@ -35,16 +35,17 @@ def scalarEigenSections (U : S.Opens) : Submodule Γ(S, U) Γ(M, U) where
 @[simp]
 theorem mem_scalarEigenSections (U : S.Opens) (x : Γ(M, U)) :
     x ∈ scalarEigenSections ρ χ U ↔
-      ∀ a : R, (ρ a).app U x = restrictScalar U (χ a) • x := Iff.rfl
+      ∀ a : R, (ρ a).asHom.app U x = restrictScalar U (χ a) • x := Iff.rfl
 
 /-- The simultaneous scalar eigensections are stable under actual restriction. -/
 def scalarEigenPresheafSubmodule : PresheafOfModules.Submodule M.val where
   obj U := scalarEigenSections ρ χ U.unop
   map {U V} f x hx := by
     intro a
-    change (ρ a).val.app V (M.val.map f x) =
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    change (ρ a).asHom.val.app V (M.val.map f x) =
       restrictScalar V.unop (χ a) • M.val.map f x
-    have ha : (ρ a).val.app U x = restrictScalar U.unop (χ a) • x := hx a
+    have ha : (ρ a).asHom.val.app U x = restrictScalar U.unop (χ a) • x := hx a
     rw [PresheafOfModules.naturality_apply, ha, M.val.map_smul]
     congr 1
     exact restrictScalar_map f.unop (χ a)
@@ -57,10 +58,11 @@ def scalarEigenSubmodule : SheafOfModules.Submodule M where
     apply M.isSheaf.isSeparated U.unop
       ((scalarEigenPresheafSubmodule ρ χ).toSubfunctor.sieveOfSection x) hx
     intro V j hj
-    change M.val.map j.op ((ρ a).val.app U x) =
+    change M.val.map j.op ((ρ a).asHom.val.app U x) =
       M.val.map j.op (restrictScalar U.unop (χ a) • x)
-    rw [← PresheafOfModules.naturality_apply (ρ a).val j.op x, M.val.map_smul]
-    change (ρ a).val.app (op V) (M.val.map j.op x) =
+    rw [← PresheafOfModules.naturality_apply (ρ a).asHom.val j.op x, M.val.map_smul]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    change (ρ a).asHom.val.app (op V) (M.val.map j.op x) =
       S.presheaf.map j.op (restrictScalar U.unop (χ a)) • M.val.map j.op x
     rw [restrictScalar_map j]
     exact hj a
@@ -83,7 +85,7 @@ theorem scalarEigensheafι_app (U : S.Opens) (x : Γ(scalarEigensheaf ρ χ, U))
     (scalarEigensheafι ρ χ).app U x = x.val := rfl
 
 variable {ρ χ} (τ : R →+* End N) (f : M ⟶ N)
-  (hf : ∀ a : R, ρ a ≫ f = f ≫ τ a)
+  (hf : ∀ a : R, (ρ a).asHom ≫ f = f ≫ (τ a).asHom)
 
 include hf in
 /-- An equivariant actual sheaf morphism preserves the same scalar eigencondition. -/
@@ -92,7 +94,7 @@ theorem map_mem_scalarEigenSections (U : S.Opens) (x : Γ(M, U))
     f.app U x ∈ scalarEigenSections τ χ U := by
   intro a
   have h := congrArg (fun g : M ⟶ N => g.app U x) (hf a)
-  change f.app U ((ρ a).app U x) = (τ a).app U (f.app U x) at h
+  change f.app U ((ρ a).asHom.app U x) = (τ a).asHom.app U (f.app U x) at h
   rw [← h, hx a, Scheme.Modules.Hom.app_smul]
 
 /-- Restrict an equivariant morphism to the constructed simultaneous eigensubsheaves. -/
@@ -131,7 +133,7 @@ variable {ρ χ τ f hf}
 
 /-- Restricting an equivariant composite is the composite of its restrictions. -/
 theorem scalarEigensheafMap_comp (υ : R →+* End P) (g : N ⟶ P)
-    (hg : ∀ a : R, τ a ≫ g = g ≫ υ a) :
+    (hg : ∀ a : R, (τ a).asHom ≫ g = g ≫ (υ a).asHom) :
     scalarEigensheafMap (χ := χ) υ (f ≫ g)
         (fun a => by rw [← Category.assoc, hf a, Category.assoc, hg a,
           ← Category.assoc]) =
@@ -142,7 +144,7 @@ theorem scalarEigensheafMap_comp (υ : R →+* End P) (g : N ⟶ P)
 /-- An actual equivariant isomorphism restricts to an actual eigenmodule-sheaf isomorphism. -/
 def scalarEigensheafIso (ρ : R →+* End M) (τ : R →+* End N)
     (χ : R →+* Γ(S, ⊤)) (e : M ≅ N)
-    (he : ∀ a : R, ρ a ≫ e.hom = e.hom ≫ τ a) :
+    (he : ∀ a : R, (ρ a).asHom ≫ e.hom = e.hom ≫ (τ a).asHom) :
     scalarEigensheaf ρ χ ≅ scalarEigensheaf τ χ where
   hom := scalarEigensheafMap τ e.hom he
   inv := scalarEigensheafMap ρ e.inv (fun a => by

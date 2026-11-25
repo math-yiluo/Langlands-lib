@@ -1,7 +1,5 @@
 # Nonconstant Harris coefficients over specified CM coarse-level transporters
 
-Author: Worker 57.
-
 This module places the entire existing nonconstant Harris coefficient system
 on the geometric CM scheme tower over a fixed coarse level U. The index
 retains each specified transporter to U. The sheaves, their transitions in

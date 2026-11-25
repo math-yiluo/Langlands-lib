@@ -1,7 +1,5 @@
 # Disjoint unions of analytic spaces in the localized category
 
-Author: Worker 21.
-
 This module constructs disjoint unions (coproducts) of arbitrary families of
 analytic spaces in the Library's category of analytic spaces,
 `SaturatedAtlasPresentation.LocalizedCategory`: saturated presentations with
@@ -17,8 +15,8 @@ underlying spaces. The construction is needed for Berkovich's induced spaces
 1. Every saturated presentation `T` is quasi-isomorphic to a saturated
    presentation without empty original charts.
    `nonemptyReplacement T := saturationFunctor.obj ⟨T.presentation.nonemptyPresentation⟩`
-   saturates the subpresentation of the nonempty charts (`AtlasNonemptyCharts`,
-   Worker 56). `nonemptyReplacementHom T` is the saturation of the compatible
+   saturates the subpresentation of the nonempty charts (`AtlasNonemptyCharts`).
+   `nonemptyReplacementHom T` is the saturation of the compatible
    subatlas inclusion followed by the comparison isomorphism `saturationIso`.
    Its base map is the identity (`nonemptyReplacementHom_baseMap`), and it is
    a quasi-isomorphism (`isQuasiIso_nonemptyReplacementHom`): saturation

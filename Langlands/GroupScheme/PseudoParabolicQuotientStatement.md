@@ -1,7 +1,5 @@
 # Pseudo-completeness of pseudo-parabolic quotients
 
-Author: Worker 1369.
-
 `Langlands.GroupScheme.PseudoParabolicQuotientPseudoCompleteStatement` is a
 Prop-valued statement of CGP Proposition C.1.6 for actual group schemes and a
 supplied actual homogeneous quotient. This module defines the proposition;

@@ -1,17 +1,17 @@
 # Smoothness of the action of `G` on `H^q_c(X, b^*F)`, granting Berkovich's comparison
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Cohomology.AnalyticEtaleCompactComparison.Statement` (Worker 16, accepted
-  candidate `a205a1a2`): `AnalyticEtaleCompactComparisonStatement L X h G ρ R`, the statement
+- `Langlands.Cohomology.AnalyticEtaleCompactComparison.Statement`:
+  `AnalyticEtaleCompactComparisonStatement L X h G ρ R`, the statement
   without proof of the first assertion of Berkovich's Corollary 1.5.2(i) for étale sheaves. It
   says: if the underlying space of `X` is Hausdorff (`T2Space (localizedSpaceFunctor.obj X)`),
   every point of it underlies an `L`-valued point
   (`Function.Surjective (pointProjection L X)`), and the action is continuous
   (`IsContinuousAction ρ`), then `etaleCompactComparison L ρ h R q` is an isomorphism for
   every `q`.
-- `Langlands.Sheaf.Equivariant.AnalyticRepSmoothness` (Worker 26, accepted candidate
-  `3192666c`): `etaleRestrictionCompactCohomologyAction_isSmooth_of_surjective`,
+- `Langlands.Sheaf.Equivariant.AnalyticRepSmoothness`:
+  `etaleRestrictionCompactCohomologyAction_isSmooth_of_surjective`,
   `etaleRestrictionCompactCohomologySmoothRep` and `etaleCompactComparisonSmoothIso`. Through
   its imports: the comparison map `etaleCompactComparison L ρ h R q` from
   `H^q_c(X{G}, F)` (`etaleGSheafCompactCohomology L ρ h R q`, a smooth representation) to
@@ -27,8 +27,8 @@ All declarations are in the namespace `Langlands.Sheaf.Equivariant.Analytic`.
 
 Berkovich's Corollary 1.5.2(i) has two assertions: the comparison maps
 `H^q_c(X{G}, F) → H^q_c(X, b^*F)` are isomorphisms, and "in particular" the canonical action of
-`G` on `H^q_c(X, b^*F)` is discrete, that is, smooth. Worker 16 states the first assertion
-for étale sheaves as `AnalyticEtaleCompactComparisonStatement`. This module derives the second
+`G` on `H^q_c(X, b^*F)` is discrete, that is, smooth. The first assertion for étale sheaves
+is stated as `AnalyticEtaleCompactComparisonStatement`. This module derives the second
 assertion from it, so that the smoothness used in Harris 1997 Lemma 6(i) depends only on
 that statement. The statement itself is not proved here.
 
@@ -83,7 +83,7 @@ a spectral sequence `E_2^{p,q} = H^p(G, H^q_c(X, b^*F)) ⟹ H^{p+q}_c(X(G), F)`.
 Derived. Berkovich's "discrete" action is a smooth action in the sense of `Langlands.IsSmooth`:
 every vector is fixed by an open subgroup. Berkovich obtains the discreteness from the
 comparison isomorphism ("In particular"); this module formalizes that step, with the
-comparison isomorphism taken from Worker 16's statement as a hypothesis. The hypotheses
+comparison isomorphism taken from that statement as a hypothesis. The hypotheses
 `hT`, `hS` and `hρ` are those of the statement. As explained in the statement's Markdown,
 `hS` is not in Berkovich: it makes the supports in `L`-valued points agree with Berkovich's
 supports in all points. The restriction to a subgroup `H` is our addition, for subgroups such
@@ -93,6 +93,6 @@ as Harris's `GJ^0 ⊂ GJ` (Harris 1997 (A.8), recorded in the Library's coverage
 Not formalized here: a proof of `AnalyticEtaleCompactComparisonStatement`, the spectral
 sequence of Corollary 1.5.2(i), and the quasi-étale analogue of these consequences for
 `H^q_c`. The quasi-étale compact comparison is not stated in the Library: the coverage note
-explains that on the current quasi-étale model it fails already in degree 0. The quasi-étale
+explains that on the Library's quasi-étale model it fails already in degree 0. The quasi-étale
 consequences for `H^q` with compact `X` are in `AnalyticRepSmoothness`. No unconditional
 smoothness of the action on `H^q_c(X, b^*F)` is proved.

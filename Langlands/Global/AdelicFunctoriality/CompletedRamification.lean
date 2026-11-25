@@ -30,8 +30,7 @@ theorem valuation_completionMap (x : p.adicCompletion K) :
   rw [completionMap_coe]
   simp only [algebraMap_adicCompletion, Function.comp_apply, Algebra.algebraMap_self,
     RingHom.id_apply, valuedAdicCompletion_eq_valuation']
-  rw [← valuation_liesOver L p q,
-    Ideal.ramificationIdx'_eq_ramificationIdx p.asIdeal q.asIdeal p.ne_bot]
+  rw [← valuation_liesOver L p q]
 
 theorem completionMap_mem_integers_iff (x : p.adicCompletion K) :
     completionMap p q x ∈ q.adicCompletionIntegers L ↔ x ∈ p.adicCompletionIntegers K := by
@@ -107,7 +106,6 @@ theorem completionIntegers_ramificationIdx :
       (IsLocalRing.maximalIdeal (p.adicCompletionIntegers K)))
   obtain ⟨π, hπ⟩ := m.intValuation_exists_uniformizer
   have h := intValuation_liesOver m n π
-  rw [Ideal.ramificationIdx'_eq_ramificationIdx _ _ m.ne_bot] at h
   change m.intValuation π ^
     (IsLocalRing.maximalIdeal (q.adicCompletionIntegers L)).ramificationIdx
       (p.adicCompletionIntegers K) = n.intValuation (completionIntegersMap p q π) at h

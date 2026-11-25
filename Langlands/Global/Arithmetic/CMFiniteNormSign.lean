@@ -1,6 +1,6 @@
-import Langlands.ClassField.Global.GlobalReciprocityProof
-import Langlands.ClassField.Global.H1VanishingProof
-import Langlands.ClassField.Global.CompletionTower
+import Langlands.ClassFieldTheory.Global.GlobalReciprocityProof
+import Langlands.ClassFieldTheory.Global.H1VanishingProof
+import Langlands.ClassFieldTheory.Global.CompletionTower
 import Langlands.ClassFieldTheory.Local.ClassFormationAbsoluteCorestrictionProof
 import Mathlib.NumberTheory.NumberField.CMField
 
@@ -12,8 +12,8 @@ open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Algebra
 open scoped NumberField Langlands.Global.AdelicFunctoriality.FiniteExtension
 open Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open Langlands.ClassFieldTheory.Local
-open Langlands.ClassField.Global Langlands.ClassField.Global.Reciprocity
-open Langlands.ClassField.Global.LocalSymbolIdentity
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Global.Reciprocity
+open Langlands.ClassFieldTheory.Global.LocalSymbolIdentity
 
 namespace Langlands.Global.CMHalfWeight
 

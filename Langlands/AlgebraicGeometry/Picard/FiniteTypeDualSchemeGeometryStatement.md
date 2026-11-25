@@ -1,10 +1,8 @@
 # Geometry of the chosen dual parameter scheme over a finite-type integer algebra
 
-This pair reuses the compiled statement drafted by Worker 3233 for the
-finite-type existence task `90a7704e-771a-4107-a91a-c67873dd035e` (shared
-draft, revision 1). It is published by the statement task
-`ff51b9fb-319f-41aa-a59d-d9c7d2d08ae9`. The module states a proposition and
-proves nothing.
+The module states a proposition and proves nothing. The proof is the theorem
+`Langlands.AbelianScheme.finiteTypeDualSchemeGeometry` in the module
+`Langlands.AlgebraicGeometry.Picard.FiniteTypeDualSchemeGeometryProof`.
 
 ## Statement
 
@@ -63,28 +61,30 @@ one. This module neither states nor proves that implication as a Lean lemma.
 ## Why a separate finite-type statement
 
 The finite-type statement is needed because the relative statement cannot
-currently serve its consumer without a cycle.
+serve its consumer without a cycle.
 
-- The consumer is the exact-target proof task
-  `90a7704e-771a-4107-a91a-c67873dd035e`. That task proves
-  `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement` and needs the geometry
-  of the chosen dual over finite-type bases. Its shared draft applies this
+- The consumer is the proof of
+  `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement` (module
+  `FiniteTypeSmoothFamilyAbelianRepresentabilityProof`, through
+  `FiniteTypeSmoothFamilyAbelianRepresentabilityAssembly`). It needs the
+  geometry of the chosen dual over finite-type bases and applies this
   statement as `geometry R A hA`.
 - The published reduction
   `RelativeDualSchemeGeometryStatement.of_flat_finitePresentation_proper` derives
-  the relative statement (task `522d3c86-486f-49bb-8fc1-68a353b0fdd5`) from
+  the relative statement from
   field geometry, flatness, local finite presentation and properness. The
   published `relativeDualSchemeProper_of_prerequisites` derives properness from
   quasi-compactness, among other inputs.
-- Revision 3 of the shared draft of the quasi-compactness task
-  `0ff404f4-93f4-4645-9d0c-88e8638852af` uses
-  `SmoothFamilyAbelianRepresentabilityStatement`, the target of task
-  `e9fb02f6-3fec-4e98-84cf-fcbd2b47f407`. That target consumes task
-  `90a7704e-771a-4107-a91a-c67873dd035e`, which consumes the present
-  statement.
+- The proof `relativeDualSchemeGeometry` of the relative statement (module
+  `RelativeDualSchemeGeometryProof`) goes through `RelativeDualSchemeExistenceProof`,
+  which uses `finiteTypeSmoothFamilyAbelianRepresentability`, the proof of
+  `FiniteTypeSmoothFamilyAbelianRepresentabilityStatement`. The general-base
+  `SmoothFamilyAbelianRepresentabilityStatement` is proved from that
+  finite-type theorem (`smoothFamilyAbelianRepresentability`), and the
+  finite-type theorem uses the present statement.
 
 A proof of the present statement must therefore not use those two
-representability targets or any route through them. The finite-type
+representability statements or any route through them. The finite-type
 restriction also matches the source. A finite-type `ℤ`-algebra `R` is
 noetherian, and `Spec R` and `A` are locally of finite type over `ℤ`, an
 excellent Dedekind domain. This is the scope of Artin's theorem as quoted on

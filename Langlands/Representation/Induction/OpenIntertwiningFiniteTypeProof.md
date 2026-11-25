@@ -1,14 +1,11 @@
 # The finite-type support criterion for compact-induction intertwining kernels: proof
 
-Author: Worker 67.
-
 `Langlands.Induction.compactInductionFiniteTypeKernel` proves the published
 `Langlands.Induction.CompactInductionFiniteTypeKernelStatement.{uR,uG,uV,uW}`
 from `Langlands.Representation.Induction.OpenIntertwiningStatement`. Its type is
 exactly that proposition at arbitrary universes `uR`, `uG`, `uV`, `uW`. It adds no
 parameters, typeclasses or hypotheses. The module imports only the statement module.
-It contains this theorem and four helper declarations, described below. The
-statement pair and every pair it imports are unchanged. No unproved proposition is
+It contains this theorem and four helper declarations, described below. No unproved proposition is
 assumed.
 
 ## The statement being proved
@@ -109,33 +106,34 @@ The source is M.-F. Vignéras, *Représentations ℓ-modulaires d'un groupe réd
 p-adique avec ℓ ≠ p*, Progress in Mathematics 137, Birkhäuser, 1996. Literature ID
 `provided-74667a7cddb3bdafff85f01c658605ce7d929f6da73950d79457c46bcd761dd4`, SHA-256
 `4d2daeee16515f994dfb04157915179b55b30d5bf2f874a16f13e7cb6fa7d657`. The relevant
-part is Chapter I, 8.5, printed pp.67–68 (PDF pp.85–86), which the author read.
+part is Chapter I, 8.5, printed pp.67–68 (PDF pp.85–86), which was read.
 There, condition a) on the support of `f` follows from the per-vector condition by
 the single sentence "Comme `W ∈ Mod_R K` est de type fini, la fonction `f` vérifie
 a)". The forward direction above spells out that sentence through the generators of
 `σ.asModule`.
 
-The source does not spell out the converse inclusion. The statement's Markdown and the task suggest
+The source does not spell out the converse inclusion. The statement's Markdown suggests
 that each double coset `H g H` is a finite union of right cosets, because
 `H ∩ g⁻¹ H g` has finite index in the compact group `H`. The implemented proof
 reaches the same conclusion differently: `H g H` is compact, and its image in the
 discrete space `H \ G` is therefore finite. It does not form the quotient
-`H / (H ∩ g⁻¹ H g)`. No separate double-coset finiteness theorem is published. The
+`H / (H ∩ g⁻¹ H g)`. The
 reverse-direction helper is stated for an arbitrary `Φ` with finitely many double
-cosets in its support, so a proof of `CompactInductionDoubleCosetStatement` can reuse
-the same compactness argument.
+cosets in its support. The proof of `CompactInductionDoubleCosetStatement`,
+`compactInductionDoubleCoset` in `OpenIntertwiningDoubleCosetProof`, uses the same
+compactness argument in its lemma `finite_range_quotientMap_mul` (finitely many right
+cosets in `H x H`).
 
 ## Scope
 
-This unit proves only `CompactInductionFiniteTypeKernelStatement`. It does not prove
+This file proves only `CompactInductionFiniteTypeKernelStatement`. It does not prove
 `CompactInductionKernelStatement`, `CompactInductionDoubleCosetStatement` or their
 conjunction `CompactInductionIntertwiningStatement`. Neither smoothness of `σ` or `τ`
 nor any property of `G` beyond `IsTopologicalGroup` is used.
 
 ## Development check
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiled the module
+`lean_check` compiled the module
 with no errors or warnings. Inspection of `compactInductionFiniteTypeKernel` reported
 level parameters `uR`, `uG`, `uV`, `uW` and exactly the axioms `propext`,
-`Classical.choice` and `Quot.sound`. This is development evidence. Independent review,
-the Lake build and the exact-target check are separate.
+`Classical.choice` and `Quot.sound`.

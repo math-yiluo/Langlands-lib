@@ -1,7 +1,5 @@
 # Statement: subgroups containing a Borel subgroup are connected and self-normalizing
 
-Worker 75.
-
 `Langlands.GroupScheme.BorelContainingSubgroupSelfNormalizerStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no other
 definitions, theorems or axioms. It imports:

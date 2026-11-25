@@ -1,6 +1,6 @@
 # Algebraic admissibility on genuine compact-finite smooth vectors
 
-Worker 1028, Task 7767. This internal comparison works for the given representation of actual `GL_n(F)` on a complex normed space (Lean parameters `F : Type` and `[RCLike F]`). It does not assume completeness, joint continuity, or irreducibility of the full action. Its conclusion is `IsAdmissibleGKModule` on the genuine compact-finite submodule, not the smooth-carrier admissibility predicate already proved in [SmoothCompactAdmissibility](SmoothCompactAdmissibility.md).
+This internal comparison works for the given representation of actual `GL_n(F)` on a complex normed space (Lean parameters `F : Type` and `[RCLike F]`). It does not assume completeness, joint continuity, or irreducibility of the full action. Its conclusion is `IsAdmissibleGKModule` on the genuine compact-finite submodule, not the smooth-carrier admissibility predicate already proved in [SmoothCompactAdmissibility](SmoothCompactAdmissibility.md).
 
 `unitaryCompactMatrix` is a continuous surjective monoid homomorphism from the compact subgroup of matrix units to the matrix unitary group, sending each unit to its underlying matrix. Applying `Unitary.toUnits` recovers the original unit. Over `ℝ` it is the matrix comparison also used by `InductionStages.toUnitary`.
 

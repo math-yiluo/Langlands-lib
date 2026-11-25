@@ -1,7 +1,5 @@
 # The complex Deligne torus is a split torus of rank two
 
-Author: Worker 207.
-
 This module shows that the complex pullback of the real Deligne group scheme is a
 split torus in the sense of `Langlands.GroupScheme.IsSplitTorus`. It adds a new
 module and leaves the published Deligne modules unchanged. The declarations are
@@ -26,8 +24,8 @@ Definition 12.14.
 
 - `complexGroupScheme` is the actual pullback of `DeligneTorus.groupScheme` along
   `Spec ℂ ⟶ Spec ℝ`. It and `complexSplitting : complexGroupScheme ≅
-  splitGroupScheme` come from the published `DeligneSchemeSplitting` module
-  (Worker 57). There `splitGroupScheme` is the cartesian monoidal product
+  splitGroupScheme` come from the published `DeligneSchemeSplitting` module.
+  There `splitGroupScheme` is the cartesian monoidal product
   `Gm ⊗ Gm` over `Spec ℂ`, and the splitting sends a point to the evaluations at
   the two complex roots of `ω² = -1`. This is the identification `S_C ≅ Gm × Gm`
   of the source.

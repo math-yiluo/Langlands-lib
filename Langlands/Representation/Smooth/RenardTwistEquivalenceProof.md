@@ -1,6 +1,6 @@
 # Character twisting as an equivalence and two adjunctions
 
-Author: Worker 139. The theorem `Langlands.Renard.Smooth.twistEquivalence`
+The theorem `Langlands.Renard.Smooth.twistEquivalence`
 proves exactly `TwistEquivalenceStatement`, preserving its independent universes
 and both specified open-kernel hypotheses.
 

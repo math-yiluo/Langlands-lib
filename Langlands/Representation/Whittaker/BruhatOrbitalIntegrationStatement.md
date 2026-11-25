@@ -1,8 +1,6 @@
 # Orbital integration onto test functions on an upper Bruhat cell
 
-Authors: Worker 883 and Worker 634. Worker 634 wrote the exact Lean
-proposition in the task objective, and it is used here verbatim. Worker 883
-wrote the module and this Markdown.
+The exact Lean proposition is a design statement, used here verbatim.
 
 This module states one proposition,
 `Langlands.Whittaker.BruhatOrbitalIntegrationStatement.{uF} : Prop`. It does
@@ -108,16 +106,16 @@ functions. So `I` sends test functions on `M` to test functions on the cell
   sets. `bruhatFiberAverage` needs only `IsFiniteMeasureOnCompacts μ`, which
   is found from this instance.
 - `μ.IsMulRightInvariant` is an explicit separate hypothesis: `μ` is invariant
-  under every right multiplication `u ↦ u * g`. The intended proof needs it
+  under every right multiplication `u ↦ u * g`. The proof needs it
   because the orbit of `v • m` is reparametrized by `u ↦ u * v`.
 - No `SFinite`, σ-finiteness, regularity or normalization hypothesis is
   assumed. The raw average is a Bochner integral of a single continuous,
   compactly supported function on `P`, so it needs no product measure.
 
 The proposition is about every such `μ`. It does not assert that such a
-measure exists. A right-invariant Haar measure on the actual `P` is expected
-to exist, because `P` is a unipotent group and hence unimodular. Providing one
-is a separate later obligation and is not claimed here.
+measure exists. A right-invariant Haar measure on the actual `P` exists,
+because `P` is a unipotent group and hence unimodular; the published
+`Langlands.Whittaker.bruhatHaarMeasure` provides one. This is not claimed here.
 
 ### The integral formula
 
@@ -142,7 +140,7 @@ function on `C`; this is not assumed.
 
 `∃! I, A I ∧ B I ∧ S I` says that one complex-linear map satisfies the whole
 conjunction, and that every complex-linear map satisfying the whole
-conjunction equals it. The intended proof gets uniqueness from the formula
+conjunction equals it. The proof gets uniqueness from the formula
 clause alone. Every point of `C` has the form `π m` (see the proof plan), so
 the formula fixes `I α` at every point of `C`. The Lean statement claims only
 uniqueness among maps satisfying all three clauses.
@@ -166,8 +164,8 @@ J. A. Shalika, *The multiplicity one theorem for GLn*, Ann. of Math. (2)
 `shalika-1974-multiplicity-one`. The original PDF is
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`,
 SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`.
-Printed pp.176–177 (one-based PDF pages 7–8) were read and visually checked
-by Worker 883. No source-specific erratum was found.
+Printed pp.176–177 (one-based PDF pages 7–8) were read and visually checked.
+No source-specific erratum was found.
 
 On printed p.176 Shalika puts `M₁ = U × H × U` and `M₂ = G_w`, and defines
 `π(u₁, h, u₂) = u₁ w h u₂`. **Lemma 1.10**, for a local field `k`, says: given
@@ -205,13 +203,13 @@ paper. The following parts are internal.
   its `f_α` is tied to the invariant measures and differential forms chosen
   on p.176. The proposition quantifies over every left Haar measure on `P`
   that is also right invariant. This is a precise internal consequence of the
-  one-measure version, intended for the later proof. On the locally compact
+  one-measure version. On the locally compact
   group `P`, two left Haar measures differ by a scalar `c` with `0 < c < ∞`.
   Replacing `μ` by `c • μ` multiplies the raw average by the real number
   `c`. So the map `c • I` satisfies all three clauses for `c • μ`.
 - **Support inclusion.** In this formulation the support clause is a precise
-  internal consequence of the formula clause, intended for the later proof,
-  not taken from Harish-Chandra's argument. If `I α (π m) ≠ 0`, the published
+  internal consequence of the formula clause, used in the proof, not taken
+  from Harish-Chandra's argument. If `I α (π m) ≠ 0`, the published
   `exists_bruhatFiberAct_mem_tsupport_of_mem_support` gives `u` with
   `u • m ∈ tsupport α`, and `π (u • m) = π m`. So the nonzero set of `I α`
   lies in `π '' tsupport α`. This set is compact, since `tsupport α` is
@@ -225,16 +223,18 @@ paper. The following parts are internal.
   on the test-function spaces is used. The archimedean case, with smooth
   rather than locally constant test functions, is not covered.
 
-## Intended proof (not formalized here)
+## Outline of the proof (not formalized here)
 
-The following plan is for the separate proof task. Nothing in this module
-proves it. It uses the trivialization of the fibers of `π` by coordinates.
+The following plan outlines the proof in
+`Langlands.Representation.Whittaker.BruhatOrbitalIntegrationProof`. Nothing in
+this module proves it. It uses the trivialization of the fibers of `π` by
+coordinates.
 
 1. **Geometry.** Use the published statements
    `Langlands.GeneralLinear.UpperUnipotentFactorizationStatement` and
-   `Langlands.GeneralLinear.UpperBruhatCoordinatesStatement`, once their exact
-   proofs are published (tasks `a8e4c0ca-ae06-4409-a11f-83ea76aefd10` and
-   `fd59b42f-6374-40fa-91ea-0dd9de25ea17`). The first gives a homeomorphism
+   `Langlands.GeneralLinear.UpperBruhatCoordinatesStatement`, proved by the
+   published `Langlands.GeneralLinear.upperUnipotentFactorization` and
+   `Langlands.GeneralLinear.upperBruhatCoordinates`. The first gives a homeomorphism
    `P × U_w⁻ ≃ₜ U`, `(u⁺, u⁻) ↦ u⁺ * u⁻`, where
    `U_w⁻ = permutationUnipotentMinus (n + 1) F.Carrier w`. The second gives a
    homeomorphism `U × (H × U_w⁻) ≃ₜ C`, `(u₁, d, v) ↦ u₁ * p_w * h(d) * v`. In
@@ -270,7 +270,6 @@ any average, surjectivity of orbital integration, or the existence of a
 right-invariant Haar measure on `P`. It also proves no Shalika distribution
 invariance, cellwise or global. The proposition has no geometry, surjectivity,
 descent, orbital-integration or invariance premise. It supplies an
-intermediate analysis target for Worker 634's Shalika distribution invariance
-task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, toward Worker 16's multiplicity
-one task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`. It proves neither parent
+intermediate analysis target for the Shalika distribution invariance
+theorem, toward Whittaker multiplicity one. It proves neither parent
 theorem.

@@ -63,5 +63,7 @@ assumption on the full adjoint group.
 This module does not construct the anchor, its full-centre quotient or
 any of the supplied sectioned geometry. In particular it proves no
 unconditional quasi-split existence or semi-local inner-form statement.
-The unchanged host target still requires these inputs for every
+The statement this module serves, `ReductiveSemilocalQuasiSplitInnerFormStatement`
+(assembled in `Langlands.GroupScheme.Reductive.SemilocalInnerFormAssembly`),
+still requires these inputs for every
 reductive group and each of its supplied quotient actions.

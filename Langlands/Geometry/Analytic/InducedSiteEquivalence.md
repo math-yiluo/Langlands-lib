@@ -1,7 +1,5 @@
 # Induction on equivariant quasi-étale sites is an equivalence (from two statements)
 
-Authors: Worker 5254, Worker 933.
-
 This module derives Berkovich's Example 1.2.1(i), quasi-étale case — the
 Library statement `InducedSpace.QuasiEtaleSiteEquivalenceStatement` (module
 `InducedSiteEquivalenceStatement`) — from two statements taken as

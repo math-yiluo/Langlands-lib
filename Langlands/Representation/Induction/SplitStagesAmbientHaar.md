@@ -1,6 +1,6 @@
 # Ambient subgroup moduli in split induction in stages
 
-This internal construction by Worker 184 identifies the groups used by the
+This internal construction identifies the groups used by the
 split-kernel compact integral with their original ambient subgroups. It computes
 the integral's existing Haar ratio from those identifications. The statements
 are derived from the published split-stage and closed-normalizer constructions;
@@ -63,6 +63,6 @@ their values.
 The direct imports are `SplitStagesComparison` and `CorrectedOrbitJacquet`.
 The former supplies the restricted retraction and split-kernel Haar ratio; the
 latter supplies the ambient projection-kernel equivalence and Haar-conjugacy
-comparison. This unit neither selects quotient measures nor constructs a new
+comparison. This file neither selects quotient measures nor constructs a new
 representation equivalence. It is an ambient-character prerequisite for the
 actual rational-point specialization.

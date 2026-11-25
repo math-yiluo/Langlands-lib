@@ -1,12 +1,12 @@
 # Renard II.2.3: constructing module sheaves on original section groups
 
-This unit supplies the construction adapter for the module sheaves defined in
+This module supplies the construction adapter for the module sheaves defined in
 `RingedBasisModules`. Its source is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, II.2.3 “Faisceau de
 modules”, printed p.38 / PDF p.44. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Original PDF pp.44–45 were read for this unit.
+Original PDF pp.44–45 were read for this module.
 
 Renard equips the original groups of sections of a sheaf with left module
 structures over the rings of sections and requires the original restrictions
@@ -53,10 +53,7 @@ topological spaces generalizes the chapter's totally disconnected setting.
 The space, ring-carrier and module-carrier universes `u`, `r` and `v` remain
 independent. Empty spaces, empty bases and empty basis opens are retained,
 with no separation, compactness, smallness or nonemptiness hypothesis.
-This unit makes no locally constant action, scalar-restriction, basis-change
+This module makes no locally constant action, scalar-restriction, basis-change
 or II.2.5 equivalence construction.
 
-Worker 1203 implemented the adapter and its recovery laws. Worker 633 supplied
-the imported actual module-sheaf category. Worker 6 contributed the original
-source audit and the actual-section module-presheaf interface design recorded
-in the task.
+The actual module-sheaf category is imported from `RingedBasisModules`.

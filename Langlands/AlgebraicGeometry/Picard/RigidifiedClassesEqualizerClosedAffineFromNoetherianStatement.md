@@ -1,7 +1,5 @@
 # The affine agreement locus from the noetherian case and noetherian approximation (statement)
 
-Author: Worker 848.
-
 This module defines one proposition and proves nothing:
 
 ```lean
@@ -46,4 +44,5 @@ it over `Spec R`. The affine statement it concludes specialises the published
 `Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedStatement`, derived from Stacks tags 0BDP
 and 0BF0 (registered `stacks-picard-diagonal-seesaw-0bdp-0bf0-a04446e5`); the provenance of the
 two hypotheses is described in their own Markdown files. The decomposition of the affine case into
-these two hypotheses was chosen for task `e3d4a3ab-f378-42af-87c5-0cd4caec7b2e`.
+these two hypotheses was chosen for the proof of the general
+`RigidifiedClassesEqualizerClosedStatement`.

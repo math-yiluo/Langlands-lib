@@ -128,7 +128,7 @@ theorem fullSubcategoryTensorEvaluation_surjective_and_ker
     Function.Surjective (fullSubcategoryTensorEvaluation P Y) ∧
       LinearMap.ker (fullSubcategoryTensorEvaluation P Y) = Submodule.span ℤ (Set.range
         (fun q : End P × (P ⟶ Y) × P.obj =>
-          (q.1 ≫ q.2.1) ⊗ₜ[ℤ] q.2.2 - q.2.1 ⊗ₜ[ℤ] (hom q.1.hom q.2.2))) := by
+          (q.1.asHom ≫ q.2.1) ⊗ₜ[ℤ] q.2.2 - q.2.1 ⊗ₜ[ℤ] (hom q.1.asHom.hom q.2.2))) := by
   have : HasFiniteBiproducts p.FullSubcategory := HasFiniteBiproducts.of_hasFiniteProducts
   exact Langlands.Renard.tensorEvaluation_surjective_and_ker
     (V := fun X : p.FullSubcategory => (X.obj : Type uV))
@@ -149,7 +149,7 @@ theorem exists_tensorEvaluation_of_projective_isSeparator
       Function.Surjective ev ∧
       LinearMap.ker ev = Submodule.span ℤ (Set.range
         (fun q : End P × (P ⟶ Y) × P.obj =>
-          (q.1 ≫ q.2.1) ⊗ₜ[ℤ] q.2.2 - q.2.1 ⊗ₜ[ℤ] (hom q.1.hom q.2.2))) :=
+          (q.1.asHom ≫ q.2.1) ⊗ₜ[ℤ] q.2.2 - q.2.1 ⊗ₜ[ℤ] (hom q.1.asHom.hom q.2.2))) :=
   ⟨fullSubcategoryTensorEvaluation P Y, fun α w => fullSubcategoryTensorEvaluation_tmul α w,
     fullSubcategoryTensorEvaluation_surjective_and_ker P hP Y⟩
 

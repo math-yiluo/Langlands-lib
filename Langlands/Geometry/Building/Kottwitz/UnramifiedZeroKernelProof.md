@@ -47,9 +47,7 @@ The accompanying `zeroKernel_of_unramifiedZeroDescent` applies the published
 remaining premise is `UnramifiedZeroDescentStatement`, the assertion
 including descent of the actual zero subgroups. Consequently this
 corollary is conditional: it does not establish the unconditional rational
-`ZeroKernelStatement` or complete Task 6367. No map or subgroup definition,
-target statement, or imported module is changed.
+`ZeroKernelStatement`.
 
-Worker 3557 supplied the published-input route to the unramified equality.
-The implementation uses the subsequently published full z-extension
-kernel theorem, so the original assembly applies directly.
+The implementation uses the published full z-extension kernel theorem, so
+the assembly of `ZeroKernelAssembly` applies directly.

@@ -6,7 +6,7 @@ The construction takes an actual scheme morphism `s : H.X → G.X`, together wit
 
 `coordinateAlgebra_flat` proves that the chosen affine coordinate algebra of a flat affine source is flat over `R`. It transports scheme-theoretic flatness through the chosen coordinate isomorphism and uses the characterization of flat spectrum maps.
 
-For a flat test algebra `A`, `flatConjugationAction` transfers the genuine linear conjugation action on `Additive(kernel G (IA))` through Worker 496's canonical flat comparison with `A ⊗[R] M`. `flatComparison_naturality` and its inverse form restate the comparison's naturality in the regular coefficient functor. `flatConjugationAction_naturality` combines these comparisons with naturality of actual conjugation. No kernel comparison on nonflat tests is used.
+For a flat test algebra `A`, `flatConjugationAction` transfers the genuine linear conjugation action on `Additive(kernel G (IA))` through the canonical flat comparison with `A ⊗[R] M` of `Lie.NonaffineKernelFlat`. `flatComparison_naturality` and its inverse form restate the comparison's naturality in the regular coefficient functor. `flatConjugationAction_naturality` combines these comparisons with naturality of actual conjugation. No kernel comparison on nonflat tests is used.
 
 `liftTensorAction` applies the genuine kernel action of the map `s`, whose reduction is the supplied homomorphism, at each flat test algebra. It is natural between flat tests because `s` is an actual scheme morphism. `liftKernelCoaction` evaluates that action at the universal source point over the flat coordinate algebra, on vectors `1 ⊗ m`. This is an `R`-linear map `M → C_H ⊗[R] M`.
 
@@ -14,4 +14,4 @@ For a flat test algebra `A`, `flatConjugationAction` transfers the genuine linea
 
 `regularKernelRepresentation` is the resulting `ModuleRepresentation M H` on all affine test algebras. Its naturality and group-action laws follow from the universal construction in `AffineModuleActions`. The theorem `regularKernelRepresentation_action` identifies it with genuine kernel conjugation on every flat test. On a nonflat test it is the regular action obtained by coordinate specialization; the module asserts no comparison with that test's actual reduction kernel.
 
-This is an internal derived construction for the homomorphism deformation argument. The new action uses the actual nonaffine kernel and its canonical flat scalar extension, with unchanged supporting sources by Worker 496. It introduces no cohomological vanishing, defect primitive, or homomorphism lifting existence theorem.
+This is an internal derived construction for the homomorphism deformation argument. The new action uses the actual nonaffine kernel and its canonical flat scalar extension, with the supporting modules `Lie.NonaffineKernelCocycles` and `Lie.NonaffineKernelFlat` unchanged. It introduces no cohomological vanishing, defect primitive, or homomorphism lifting existence theorem.

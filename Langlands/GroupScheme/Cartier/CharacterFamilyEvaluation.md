@@ -1,7 +1,5 @@
 # Evaluate an abelian family of actual characters
 
-Worker 616.
-
 All declarations belong to `Langlands.GroupScheme.Cartier` and are
 universe-polymorphic. Let `G` be any commutative group scheme over an
 arbitrary scheme `S`, let `M : AddCommGrpCat.{u}`, and let

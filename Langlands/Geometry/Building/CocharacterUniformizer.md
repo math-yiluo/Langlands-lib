@@ -43,10 +43,12 @@ cocharacter representative modulo the actual common norm kernel.
 nonarchimedean local fields and actual split tori, without restricting
 characteristic or choosing coordinates. It is a proposition definition and is
 not proved here. The public coordinate-torus valuation and uniformizer proofs
-in `SplitTorusValuation` motivate this general target; their transport to an
-arbitrary actual split torus remains a proof obligation.
+in `SplitTorusValuation` motivate this general target; the Library proves it
+for an arbitrary actual split torus as
+`CocharacterUniformizer.splitTorusUniformizerSection` in
+`CocharacterUniformizerProof`.
 
-This unit supplies the section/cone vocabulary used by S21–S23. It asserts
+This module supplies the section/cone vocabulary used by S21–S23. It asserts
 neither the existence of the S20 simultaneous basis nor contraction or
 cofinality. Those statements must apply these definitions to the actual
 standard-Levi split components and the fixed geometrically defined `K0`.

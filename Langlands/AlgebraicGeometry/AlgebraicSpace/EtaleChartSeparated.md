@@ -1,7 +1,5 @@
 # Separated spaces: Hausdorff and locally compact rational points
 
-Author: Worker 105.
-
 This proof module proves two of the three separated-space properties of Proposition 5.4
 of Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 printed p.15 (source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

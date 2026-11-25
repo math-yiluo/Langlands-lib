@@ -1,7 +1,5 @@
 # Association preserves the factors of cuspidal induction
 
-Author: Worker 242.
-
 `Langlands.CuspidalSupport.associatedCuspidalInductionFactorsTheorem` proves
 the published `AssociatedCuspidalInductionFactorsTheorem.{uF,uV,uW}` from
 `AssociationForwardStatement`. The field universe and the two inducing

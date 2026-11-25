@@ -1,7 +1,5 @@
 # Normalizer orbits in supplied universal maximal-torus moduli
 
-Worker 235.
-
 This internal construction uses the Library's actual conjugate-family API
 and the all-test universal maximal-torus property. It assumes a smooth
 affine ambient group over an arbitrary base scheme. It assumes both the
@@ -21,4 +19,4 @@ test scheme with membership of their right quotient in the full
 normalizer subgroup functor. Evaluation injectivity for the universal
 family reduces this to the published exact normalizer criterion for
 conjugate families, including all refinements of the test scheme.
-No scheme quotient or quasi-affineness is concluded by this unit.
+No scheme quotient or quasi-affineness is concluded by this module.

@@ -18,7 +18,7 @@ rank-one slice range is the indicated character model. Choose a local vector
 with Whittaker value one at the identity and the scalar Gaussian test realizing
 the archimedean L-factor. The ordinary normalization at each place is thus one.
 
-Worker 679's prescribed residual product and pure tensor normalization combine
+The prescribed residual product and pure tensor normalization combine
 these local data on the two actual global presentations. The two infinite
 products and the comparison of quotient measures give a fixed nonzero scalar.
 The formula for the entire normalization of the global test reduces to that

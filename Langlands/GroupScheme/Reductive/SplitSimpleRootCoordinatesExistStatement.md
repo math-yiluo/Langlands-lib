@@ -20,9 +20,9 @@ This is an internal prerequisite extracted from the explicit inputs of the
 supplied-family Steinberg word-coordinate and Frobenius arguments. It asserts
 no existence of a split pinning under the final Steinberg hypotheses and is
 not the final Steinberg statement. The Library's canonical linked-root family
-has the same mathematical data but its existing proof uses dependencies
-excluded by Task 7459. A proof for that task must independently construct the
-stated family and its actual full-root comparisons; merely invoking or copying
-the canonical construction does not discharge that requirement. Independence
-is a proof-task constraint, not an additional mathematical hypothesis in this
+has the same mathematical data but its existing proof uses the excluded
+dynamic-Borel inputs. A proof independent of those inputs must construct the
+stated family and its actual full-root comparisons itself; merely invoking or copying
+the canonical construction does not give that independence. Independence
+is a constraint on the proof, not an additional mathematical hypothesis in this
 proposition. No new external source claim is added by this internal statement.

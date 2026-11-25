@@ -1,7 +1,5 @@
 # Generalized Whittaker coefficient distributions
 
-Author: Worker 16.
-
 This module constructs an actual bilinear map from two spaces of Whittaker
 functionals to the algebraic distributions satisfying the published
 bi-equivariance law. All new declarations are in `Langlands.Whittaker`.

@@ -1,7 +1,5 @@
 # fpqc descent of flatness, separatedness, properness and finiteness
 
-Author: Worker 712.
-
 Module `Langlands.AlgebraicGeometry.Morphisms.FpqcFiniteDescent`, namespace
 `Langlands.AlgebraicGeometry.FpqcDescent`. All declarations are in the universe
 of `Scheme.{u}` for arbitrary `u`. The covering class is Mathlib's fpqc class

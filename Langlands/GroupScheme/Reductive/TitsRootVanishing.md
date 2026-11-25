@@ -25,8 +25,8 @@ among the weights of such a representation has trivial obstruction
 `Reductive/GaloisRationalBaseChange` derives it from the premise
 `HasGroundMaximalWeight`: a matrix representation of `G` over `k` on
 `k^{m+1}` whose base change to `K` has the weight with multiplicity one and
-no weight strictly above it in the order of `Q⁺`. Those
-witnesses are the subject of Task 7713.
+no weight strictly above it in the order of `Q⁺`.
+`Reductive/GroundAdjointExterior` constructs those witnesses.
 
 This module reduces root-span vanishing to the existence of such
 representations. The hypotheses are:
@@ -58,7 +58,8 @@ representations. The hypotheses are:
   obstruction vanishes on every star-fixed element of the integral root
   span.
 
-The intended witnesses are exterior powers of the adjoint representation,
+The witnesses used in `SimplyConnected/TitsObstructionRootVanishing` are
+exterior powers of the adjoint representation,
 which is defined over `k`. Let `N` be the number of positive roots and `δ`
 their sum. Then `δ` is the largest weight of `Λ^N(Lie G)`, with multiplicity
 one. For each orbit `q`, `δ - s_q` is a maximal weight of multiplicity one of

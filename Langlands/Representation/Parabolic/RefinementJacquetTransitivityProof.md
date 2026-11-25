@@ -1,7 +1,5 @@
 # Natural transitivity of the normalized upper Jacquet quotients
 
-Author: Worker 834.
-
 `Langlands.Parabolic.normalizedRefinementJacquetTransitivity` proves the
 unchanged Library proposition
 `Langlands.Parabolic.NormalizedRefinementJacquetTransitivityClause.{uF,uV} F T B S`

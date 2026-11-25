@@ -1,7 +1,5 @@
 # Complex determinant characters through actual Levi refinements
 
-Author: Worker 429.
-
 `Langlands.LeviComplexPowerRefinementStatement.{uF,uV}` states three related
 compatibilities for the published complex determinant characters and scalar
 twists. It is a closed proposition definition; this module supplies no proof.

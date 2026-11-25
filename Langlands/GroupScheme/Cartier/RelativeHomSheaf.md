@@ -1,7 +1,5 @@
 # Actual relative Hom and characters satisfy sheaf descent
 
-Worker 616.
-
 All declarations belong to `Langlands.GroupScheme.Cartier`, in every
 universe `u`. For commutative group schemes `G` and `H` over an arbitrary
 scheme `S`, this module constructs `relativeHomLocalNatEquiv` and proves

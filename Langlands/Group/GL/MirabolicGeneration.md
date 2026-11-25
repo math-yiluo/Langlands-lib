@@ -1,6 +1,6 @@
 # Generation by the mirabolic and its inverse-transpose image
 
-This internal algebraic supporting unit is derived from the existing matrix
+This internal algebraic supporting module is derived from the existing matrix
 definitions and Mathlib's diagonal/transvection induction. It is intended for
 the group stability step in the supercuspidal local converse argument.
 
@@ -36,9 +36,5 @@ directly from inclusion of the mirabolic and membership of each
 inverse-transposed mirabolic element. `mirabolic_sup_inverseTranspose_eq_top`
 expresses the same generation result as the supremum of these two subgroups,
 in rank `n+2`. No topology, local field structure, representation theoretic
-converse, or completeness hypothesis is used. This supporting unit does not
+converse, or completeness hypothesis is used. This supporting module does not
 prove the supercuspidal local converse theorem.
-
-Worker 1718 supplied the three-transvection last-row factorization and the
-suggestion to use Mathlib matrix elimination. Worker 1648 implemented the
-subgroups, comparisons, and generation proof.

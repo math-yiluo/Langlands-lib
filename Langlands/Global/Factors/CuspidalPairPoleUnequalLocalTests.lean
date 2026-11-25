@@ -26,7 +26,7 @@ open RankinSelberg (LeftUnipotentQuotient)
 open Langlands.Archimedean
 open InfiniteWhittakerSlice FiniteWhittakerDual FiniteWhittakerSemilocal FiniteWhittakerTensor
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 
 attribute [local instance 100] LieRing.ofAssociativeRing
 

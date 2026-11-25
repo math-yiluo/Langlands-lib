@@ -103,7 +103,7 @@ half-plane. Defining these relations asserts no witness exists for arbitrary
 input data.
 
 The source's convergence, rationality and common-denominator assertions and its
-subsequent comparisons require separate statement and proof tasks. This module
+subsequent comparisons are not stated or proved in this module. This module
 selects no rational continuation, normalized generator, L polynomial or gamma
 factor. It asserts no convergence, rationality, bounded denominator,
 `I₁ = I₂ = I₃`, product-ideal generation, functional equation or

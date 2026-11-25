@@ -82,4 +82,5 @@ small actual affinoid spectrum and its full pullbacks, and refined strong
 localization descent. It transcribes no external theorem. The smallness or
 finite hypotheses are explicit, and the construction assumes greatest
 charts on the three cospan objects. It asserts no etaleness and does not
-construct the unrestricted global etale pullback of Task 7349.
+construct the unrestricted global etale pullback of
+`LocalizedEtalePullbackStatement`.

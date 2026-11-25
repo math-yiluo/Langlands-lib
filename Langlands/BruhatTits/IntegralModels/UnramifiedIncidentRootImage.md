@@ -52,8 +52,9 @@ equality premise.
 The provenance is internal: actual zero-fixer root models, smooth
 homomorphism extension, generic rigidity, the schematic-image
 factorization, facet constancy, and the proved adapted-cocharacter
-comparison supply all steps. The unit does not identify root-model
+comparison supply all steps. The module does not identify root-model
 residue images with residue-root subgroups, prove that the actual
 descent map sends the two downstairs facets into incident upstairs
 facets, establish parabolicity, or prove the exact reduction-preimage
-assertion. These remain obligations in the host task.
+assertion. These are left to the proof of `UnramifiedFacetParabolicImageStatement`
+(module `UnramifiedFacetParabolicImageProof`).

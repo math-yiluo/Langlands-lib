@@ -3,7 +3,8 @@
 Module `Langlands.GroupScheme.Rational.PartnerOrbitSpecialUnitary`, namespace
 `Langlands.GroupScheme.SplitPinning`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SU3 half.
+This module belongs to the `SU₃` half of the coherent algebraic `SL₂`/`SU₃` rank-one
+coordinates with Weyl normalization.
 
 ## Purpose
 
@@ -159,7 +160,6 @@ later modules. The module does not prove `AdjacentSimpleRootSpecialLinearStateme
 
 ## Imports
 
-`Langlands.GroupScheme.Rational.OrthogonalOrbitSpecialLinear` (Library) and
-`Langlands.GroupScheme.Rational.AdjacentSimpleRootSpecialLinearStatement` (Worker 195's
-accepted candidate `d1e8d725`, which also brings in
+`Langlands.GroupScheme.Rational.OrthogonalOrbitSpecialLinear` and
+`Langlands.GroupScheme.Rational.AdjacentSimpleRootSpecialLinearStatement` (which also brings in
 `Langlands.GroupScheme.SpecialLinearTernaryPresentation`).

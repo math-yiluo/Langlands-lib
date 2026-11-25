@@ -2,15 +2,15 @@
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockFirstBlockQuotientIntegrationStatement`.
 Declaration `Langlands.RankinSelberg.TwoBlockFirstBlockQuotientIntegrationStatement.{uF}`.
-Author: Worker 823.
 
 This closed proposition states the normalized measure disintegration
 underlying JPSS (1983), Section 4.6, printed page 412, equation (6). It also
 states the resulting Tonelli law, the absolute-integrability criterion and
 the Bochner identity. The measure identity is the analytic content of the
 source equation. The kernel packaging and the integrability criterion are
-derived. This module supplies the statement only; its proof is a separate,
-later obligation.
+derived. This module supplies the statement only; its proof is separate:
+`twoBlockFirstBlockQuotientIntegration` in
+`TwoBlockFirstBlockQuotientIntegrationProof`.
 
 ## Source equation (6)
 
@@ -52,7 +52,7 @@ subgroups it comes through the subtype embedding.
 
 All group, quotient, slice and fiber data are the published objects. Their
 namespaces are `Langlands.RankinSelberg.TwoBlockFirstBlockQuotient` (the
-first-block data module, abbreviated `TwoBlockFirstBlock` in the task text),
+first-block data module),
 `Langlands.RankinSelberg.TwoBlockUnipotentQuotient` and `Langlands.RankinSelberg`.
 
 | Symbol | Actual object |
@@ -257,7 +257,7 @@ SHA-256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed pages 406, 411 and 412 (one-based PDF pages 41, 46 and 47) were read
 visually. The project literature notes record no errata for this source.
 
-Outside this unit are source equation (7), section covariance with a
+Outside this module are source equation (7), section covariance with a
 half-modulus factor, Fourier and Mellin identities, and factor identities. So
 are the Section 9.3 lower-block disintegration and the tower `H \ G → N \ G` of
 `TwoBlockUnipotentQuotientIntegrationStatement`. No downstream result is

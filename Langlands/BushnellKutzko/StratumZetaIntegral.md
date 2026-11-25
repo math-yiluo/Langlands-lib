@@ -1,7 +1,5 @@
 # The zeta integral of the test function attached to a stratum
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Setting
 
 `K` is a `p`-adic field (`PadicField p`) with its canonical topology, valuation and local-field
@@ -68,7 +66,7 @@ the third condition of membership; for the other, `LatticeChain.exists_mem_unitF
 `y`.
 
 Openness and compactness of `1 + 𝔓^k(𝓛)` follow by transporting `isOpen_unitSubgroup` and
-`isCompact_unitSubgroup` (published module `FundamentalStratumLevelCore`, Task 7681) along the
+`isCompact_unitSubgroup` (published module `FundamentalStratumLevelCore`) along the
 open embedding `GL_{n+1}(K) → M_{n+1}(K)` (`RankinSelberg.isOpenEmbedding_generalLinear_val`) and
 the continuous map `Units.val`.
 

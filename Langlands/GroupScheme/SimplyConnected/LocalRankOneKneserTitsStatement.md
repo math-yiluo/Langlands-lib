@@ -1,7 +1,5 @@
 # Local Kneser–Tits for groups of split rank one
 
-Authors: Worker 1757.
-
 `Langlands.GroupScheme.LocalRankOneKneserTitsStatement.{u}` is a
 proposition definition, with arbitrary universe `u`. It states the local
 Kneser–Tits theorem for almost-simple simply connected groups of split rank

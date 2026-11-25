@@ -115,6 +115,7 @@ theorem exists_away_factorization {R : CommRingCat.{u}} {T G : GroupScheme (Spec
   refine ⟨⟨D, p, j, Diagonalizable.isSplitTorus a l, ?_, ?_, ?_, ?_⟩⟩
   · change IsClosedImmersion (eD.inv.hom.hom.left ≫ ((hopfSpec a).map q.op).hom.hom.left ≫
       e₂.hom.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   · change Flat (e₁.hom.hom.hom.left ≫ ((hopfSpec a).map i.op).hom.hom.left ≫
       eD.hom.hom.hom.left)

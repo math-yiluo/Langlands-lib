@@ -1,7 +1,5 @@
 # Proof that associated supercuspidal tensors have equal multisets of factors
 
-Author: Worker 219.
-
 `Langlands.CuspidalSupport.glCuspidalTensorAssociation` proves the published
 proposition `Langlands.CuspidalSupport.GLCuspidalTensorAssociationStatement` in
 `Langlands.Representation.CuspidalSupport.CuspidalTensorStatement`. The

@@ -1,7 +1,5 @@
 # The Serre criterion for Noetherian affine étale equivalence relations
 
-Authors: Worker 101, Worker 1203, Worker 424, Worker 122 and Worker 239.
-
 The theorem has exactly the published proposition `EtaleEquivalenceRelationSerreCriterionStatement.{u}` as its type, for an arbitrary universe u. It adds no hypotheses and uses the published scheme relation, coaction, acyclicity and affine quotient predicates unchanged.
 
 The proof applies `serreCriterion_of_ringForm_of_nonzeroInvariant` to two unconditional inputs: `etaleEquivalenceRelationRingForm`, the ring form of an affine closed étale equivalence relation, and `groupoidCoactionNonzeroInvariant`, which proves that acyclicity of all coactions implies a nonzero invariant in every nontrivial coaction over a Noetherian ring. Both rings and all modules tested by acyclicity remain in the same arbitrary universe `u`.

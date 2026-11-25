@@ -1,7 +1,5 @@
 # Points of dynamic extension inside its represented Levi
 
-Author: Worker 1212.
-
 This internal comparison identifies the actual subgroup points used when
 induction in a represented dynamic centralizer is compared with induction
 inside the ambient group. It does not prove finite length or transitivity.

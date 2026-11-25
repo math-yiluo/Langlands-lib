@@ -1,6 +1,6 @@
 # A central induced-block quotient for negative signed inner weight
 
-This internal derived unit applies the concrete adjacent-window projections to
+This module applies the concrete adjacent-window projections to
 the published two-block quotient presentation. It introduces no literature
 premise or assumed range identification.
 

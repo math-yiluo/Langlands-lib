@@ -1,7 +1,6 @@
 # The distance of two minimal semi-standard parabolics is a Weyl length (Renard VII.3.5, opening paragraph, corrected form): proof
 
 Module `Langlands.GroupScheme.Rational.MinimalParabolicDistanceLengthProof`.
-Author: Worker 164, under task `bcd5a768-26e2-4fa1-a8f3-4bc6f23a730f`.
 
 `Langlands.GroupScheme.minimalParabolicDistanceLength` proves the published proposition
 `MinimalParabolicDistanceLengthStatement.{u}` from
@@ -11,9 +10,9 @@ its imports are unchanged. The proof only combines published, unconditional Libr
 theorems with the elementary lemmas below, all in the namespace
 `Langlands.GroupScheme.MinimalParabolicDistanceLength`.
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiled the module
-with no errors or warnings. For `minimalParabolicDistanceLength` it reported only the
-axioms `propext`, `Classical.choice` and `Quot.sound`.
+A compile check of the module gave no errors or warnings. For
+`minimalParabolicDistanceLength` it reported only the axioms `propext`,
+`Classical.choice` and `Quot.sound`.
 
 ## Notation
 

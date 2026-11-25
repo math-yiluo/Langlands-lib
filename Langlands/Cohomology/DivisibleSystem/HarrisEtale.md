@@ -1,25 +1,25 @@
 # Harris's étale coefficient sheaves as `ℓ`-divisible systems
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem` (`DivisibleSystem` with `tower`,
 `inclusion`, `projection`, `powSMul`, `comp_powSMul`,
 `powSMul_comp_powSMul`, `map_powSMul`, `shortComplex_exact_congr`, `Hom`,
 `hom_ext`, `id_tower`, `comp_tower` and `map`),
 `Langlands.Cohomology.DivisibleSystem.LeftExact` (`mapLeftExact`),
 `Langlands.Cohomology.DivisibleSystem.ReductionLattice`
-(`harrisReductionSystem`, `harrisReductionSystemTowerIso`), Worker 13's
+(`harrisReductionSystem`, `harrisReductionSystemTowerIso`),
 `Langlands.Shimura.Coefficients.HarrisEtaleCoefficients`
 (`harrisEtaleCoefficientSystem`, `harrisEtaleSectionsSystem`) and
 `Langlands.Shimura.Coefficients.EtaleExact`
 (`etaleAssociatedFunctorPreservesFiniteLimits`,
 `etaleAssociatedFunctorPreservesFiniteColimits`). Through their imports it
-uses Worker 13's `EquivariantDiagram` with `action` and `transition`
+uses `EquivariantDiagram` with `action` and `transition`
 (`Langlands.CategoryTheory.EquivariantDiagram`),
 `etaleAssociatedVaryingSystem`, `etaleAssociatedComparisonIso` and
 `etaleAssociatedReduction`
 (`Langlands.Shimura.Coefficients.VaryingCoverInverse`) and
 `EtaleDerivedSections.sections` (`Langlands.Geometry.EtaleDerivedSections`,
-with its additivity and finite-limit instances); Worker 57's
+with its additivity and finite-limit instances);
 `IsFiniteGeometricTorsor` and `etaleAssociatedFunctor`
 (`Langlands.Shimura.Coefficients.Etale`), `harrisCongruenceGroups` and
 `harrisCoefficientDiagram`
@@ -55,7 +55,7 @@ published module the index starts at `0`, and `T 0` is zero.
 For a group `G` and a category `V`, `Action V G` is Mathlib's category of
 objects of `V` with an action of `G`; for a group homomorphism `φ`,
 `Action.res V φ` restricts actions along `φ`. For an inverse system of groups
-`D : ℕᵒᵖ ⥤ GrpCat`, Worker 13's `EquivariantDiagram D C` is an inverse
+`D : ℕᵒᵖ ⥤ GrpCat`, the published `EquivariantDiagram D C` is an inverse
 system `obj : ℕᵒᵖ ⥤ C` with actions `ρ n` of `D n` on `obj n` for which the
 maps of `obj` are equivariant along the maps of `D`; `action n` is the object
 `obj n` of `Action C (D n)`, and `transition f : action i ⟶ res (action j)` is
@@ -172,15 +172,15 @@ of the sheaves.
 
 `ℓ` is a nonzero natural number (`[NeZero ℓ]`). As in the published
 `HarrisEtaleCoefficients`, `A` is a finite-dimensional `ℚ`-algebra with
-Worker 13's involution `σ`, `L` a number field, `W` a finite-dimensional
+an involution `σ`, `L` a number field, `W` a finite-dimensional
 `L`-module with an algebraic representation `ρ` of `σ.baseChange L`, `p` a
 finite place of `ℚ` and `U` a compact open level of `σ.FiniteAdelicPoints`.
 `R = HarrisCoefficientIntegers L p` is the product of the completed integer
-rings of `L` at the places above `p`, and `𝓛` is Worker 57's stable lattice
+rings of `L` at the places above `p`, and `𝓛` is the published stable lattice
 with the action `harrisLatticeAction ρ p U` of `U.subgroup`. The published
 `harrisCoefficientScalarIdeal L p ℓ` is the ideal `(ℓ)` of `R`, so the
 published `harrisCoefficientDiagram ρ p U ℓ` has the modules `𝓛 / ℓ ^ m 𝓛`
-(Worker 57's `torsionSystem`), with actions of the groups
+(the published `torsionSystem`), with actions of the groups
 `harrisCongruenceGroups ρ p U ℓ`: at `m`, the quotient of `U.subgroup` by the
 kernel `congruenceKernel` of its action on `𝓛 / ℓ ^ m 𝓛`.
 
@@ -221,7 +221,7 @@ X.Etale` and `hY : ∀ n, IsFiniteGeometricTorsor X (Y.action n)`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned pages):
+J. Math. Kyoto Univ. 39-2 (1999) (read in the rendered scanned pages):
 
 - §2, printed p.304 (one-based PDF page 6), the definition of `ℓ`-divisible
   systems, quoted and interpreted in the published `DivisibleSystem` module:

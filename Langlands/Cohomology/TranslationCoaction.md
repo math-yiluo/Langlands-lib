@@ -1,6 +1,6 @@
 # Actions on derived functors from structure maps into translates
 
-Author: Worker 13. Companion of Worker 13's `Langlands.Cohomology.TranslationAction`,
+Companion of `Langlands.Cohomology.TranslationAction`,
 whose translation data `Data Γ T` and helper lemmas it reuses, in the same
 namespace.
 
@@ -51,7 +51,7 @@ Fix an injective resolution `I` of `F.obj`.
 This is derived infrastructure, like `TranslationAction`. Harris, *Galois
 properties of cohomological automorphic forms on GL(n)*, J. Math. Kyoto Univ.
 39-2 (1999), Theorem 5.7, printed p.313, uses Galois actions on étale
-cohomology with coefficients. Worker 13 read this passage in the original. Not
+cohomology with coefficients. This passage was read in the original. Not
 treated here: independence of the resolution as an isomorphism of actions,
 functoriality in morphisms, and any topology on `G`.
 
@@ -59,5 +59,6 @@ Source registration:
 Harris, `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-Project imports outside this submission are present in Library commit
+Project imports other than the modules ported together with this module are
+present in Library commit
 `0686b4fa6c8df22845bba2e2668a723a41d47c84`.

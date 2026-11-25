@@ -1,7 +1,5 @@
 # Rational points of relative root groups in a split group: statement
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b).
-
 `Langlands.Geometry.Building.SplitRelativeRootGroupProductStatement.{u}` is a
 proposition definition. This module does not prove it.
 
@@ -32,14 +30,16 @@ For `n = 0` this says that the relative root group has only the identity point.
 
 ## Intended use
 
-Task 6836 builds rank-one coordinates over an arbitrary field `k` by Galois
-descent from a finite Galois splitting field `K` of the centralizer torus. A
+The algebraic rank-one coordinate constructions over an arbitrary field `k`
+(modules `AlgebraicSL2RootCoordinatesConstruction` and
+`AlgebraicSU3RootCoordinatesConstruction`, where this statement is a hypothesis)
+work by Galois descent from a finite Galois splitting field `K` of the centralizer torus. A
 rational point `y` of the relative root group `U_b` over `k` extends to a rational
 point of the relative root group of `b_K` for the base-changed torus `S_K`, which
 is not a maximal split torus of `G_K`. This statement writes that point uniquely as
 a product of absolute root points over `K`. Galois invariance of `y` and uniqueness
-then identify the factors with Galois-conjugate coordinates. This is how
-surjectivity of the coordinate map onto `U_b(k)` will be proved.
+then identify the factors with Galois-conjugate coordinates. This is the route to
+surjectivity of the coordinate map onto `U_b(k)`.
 
 ## Source
 
@@ -72,7 +72,7 @@ arbitrary injective enumeration.
 
 Borel–Tits take `S` to be a subtorus of `T`. Here `f : S ⟶ T` is any
 homomorphism, and the statement still holds. Here is why; the proof itself is
-left to the proof task. Choose a cocharacter `λ` of `S` with `⟨a, λ⟩ > 0`. A
+in `SplitRelativeRootGroupProductProof`. Choose a cocharacter `λ` of `S` with `⟨a, λ⟩ > 0`. A
 point of the relative root group then lies in the unipotent radical of the
 dynamic parabolic subgroup of `f ∘ λ`. That radical is the product, in any
 order, of the root groups `U_β` with `⟨β, f ∘ λ⟩ > 0`. Under conjugation by

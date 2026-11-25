@@ -29,6 +29,7 @@ theorem isOpenImmersion_evaluate {S : Scheme.{u}} {C D : GroupScheme S}
     ((Descent.pullbackComparison T.hom a.left T'.hom (Over.w a) C).inv.hom.hom.left ≫
       ((baseChange a.left).map i).hom.hom.left ≫
       (Descent.pullbackComparison T.hom a.left T'.hom (Over.w a) D).hom.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- Isomorphism of an evaluation is equivalent to isomorphism of its raw pullback. -/

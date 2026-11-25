@@ -2,15 +2,13 @@
 
 This is an internal construction and two conditional lemmas supporting
 `Langlands.AbelianScheme.RelativeDualSchemeGeometryStatement`. It uses the
-published universal-base-change proof and retains the four still-required
+published universal-base-change proof and retains the four
 geometric inputs explicitly. It does not prove the relative geometry statement
 without those inputs.
 
-The fibre argument and final reduction develop the carried Task 892 draft,
-originally designed by Worker 301. Worker 892 introduces the named
-residue-field comparison and discharges the draft's former
-`PicardZeroUniversalBaseChangeStatement` premise using the published theorem
-`picardZeroUniversalBaseChange`.
+The module introduces the named residue-field comparison and does not take
+`PicardZeroUniversalBaseChangeStatement` as a premise: it uses the published
+theorem `picardZeroUniversalBaseChange`.
 
 ## The actual residue-field comparison
 
@@ -80,7 +78,7 @@ alone does not supply flatness or properness.
 
 ## Provenance and source scope
 
-The comparison is a specialization of accepted Library constructions;
+The comparison is a specialization of Library constructions;
 the subsequent arguments use Mathlib's results about scheme morphisms.
 This internal derivation does not invoke a new literature theorem.
 The mathematical scope of the final target remains Lan's
@@ -88,5 +86,4 @@ Theorem 1.3.2.3, as documented in
 `RelativeDualSchemeGeometryStatement.md`: arbitrary quasi-separated
 bases, without a noetherian, reducedness or projectivity assumption.
 That source scope does not discharge any of the four proposition
-inputs above. The exact target, `HasDualScheme`, `dualScheme`, and their
-dependency closure are unchanged.
+inputs above.

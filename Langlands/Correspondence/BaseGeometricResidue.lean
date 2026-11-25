@@ -1,6 +1,6 @@
 import Langlands.Correspondence.BaseNormResidue
 import Langlands.Weil.Local.ExtensionWeil
-import Langlands.ClassFieldTheory.Local.NYLL.SuppliedResidueProof
+import Langlands.ClassFieldTheory.Local.Supplied.SuppliedResidueProof
 
 /-! # Geometric residue normalization of the actual base candidate -/
 
@@ -134,7 +134,7 @@ theorem finite_inverse_power_congruence (L : LocalFiniteAbelianExtension F)
       (e (LocalGalois.integerAut F.Carrier L.field ((L.restriction σ)⁻¹) xR)) =
     S.residue (e xR) ^ F.canonicalTopologicalData.residueCardinality at hr
   rw [← map_pow] at hr
-  exact (NYLL.suppliedResidueCongruence (L.asPadicField (p := p)) S _ _).mp hr
+  exact (UniverseZero.suppliedResidueCongruence (L.asPadicField (p := p)) S _ _).mp hr
 
 /-- The geometric order condition on an actual local Weil candidate already
 forces the finite geometric residue-action clause. -/

@@ -21,8 +21,8 @@ subspace `V` of `Y` the module defines the orthogonal `perp ds V ⊆ X` and prov
   with some member of `V`. In other words, the annihilator of `perp ds V` in `Y` is `V` plus
   the annihilator of `X` in `Y`.
 
-This is internal infrastructure for the reverse-intertwiner step of Task 7069
-(`RealReverseIntertwinerKernelStatement`, module `RealStandardIrreducibleCriterionReduction`)
+This is internal infrastructure for the reverse-intertwiner step of the proof of
+`RealStandardIrreducibleCriterionStatement` (`RealReverseIntertwinerKernelStatement`, module `RealStandardIrreducibleCriterionReduction`)
 for lists with induction blocks: a proper `(𝔤, K)`-submodule `V` of `Y` gives the
 `(𝔤, K)`-submodule `perp ds V` of `X`, and the second fact identifies the functionals of `Y`
 that vanish on it. The statements are standard finite-dimensional duality applied blockwise

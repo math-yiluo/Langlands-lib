@@ -92,13 +92,13 @@ theorem groupDirectionalValue_of_tendstoLocallyUniformly
         ContinuousLinearMap.id ℝ (TangentSpace 𝓘E (e 1)) := hid
     rw [hid'] at hcomp
     change mvfderiv 𝓘E (v ∘ e.symm) (e 1) X = mvfderiv 𝓘E v 1 X at hcomp
-    rw [← mvfderiv_eq_fderiv]
+    rw [mvfderiv_eq_fderiv, ContinuousLinearMap.comp_apply] at hcomp
     exact hcomp
   have hBi (i : ι) : B i (e 1) X = groupDirectionalValue 𝓘E X (f i) x :=
     (congrArg (fun d : E →L[ℝ] ℂ => d X) (hB i (e 1) he).fderiv.symm).trans (htrans _ (hf i))
   have hCi : C (e 1) X = groupDirectionalValue 𝓘E X g x :=
     (congrArg (fun d : E →L[ℝ] ℂ => d X) hC.fderiv.symm).trans (htrans _ hg)
-  have ht := ((ContinuousLinearMap.apply (E := E) ℝ ℂ X).continuous.tendsto _).comp
+  have ht := ((ContinuousLinearMap.apply (E' := E) ℝ ℂ X).continuous.tendsto _).comp
     (hBC.tendsto_at he)
   change Tendsto (fun i => B i (e 1) X) l (𝓝 (C (e 1) X)) at ht
   rw [funext hBi, hCi] at ht

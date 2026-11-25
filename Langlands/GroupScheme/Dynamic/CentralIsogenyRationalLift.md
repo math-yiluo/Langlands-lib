@@ -23,7 +23,7 @@ curve therefore produces a point of `C(k)` mapping to `g`.
 The choice is a point, with no claim that these choices form a group
 homomorphism or are unique.
 
-This unit derives its result from the Library's all-test commutator descent
+This module derives its result from the Library's all-test commutator descent
 and the relative proper extension helper. Its conclusion concerns the
 identity field-valued test scheme only. It neither asserts general
 rational-point surjectivity of central isogenies nor lifting on arbitrary

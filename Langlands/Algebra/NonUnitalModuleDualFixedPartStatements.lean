@@ -3,7 +3,6 @@ import Langlands.Algebra.NonUnitalModuleDualMap
 
 /-!
 Canonical fixed-part duality statement targets for Renard I.4.1.
-Adapted by Worker 1156 from Worker 6's private typing audit.
 -/
 
 set_option autoImplicit false

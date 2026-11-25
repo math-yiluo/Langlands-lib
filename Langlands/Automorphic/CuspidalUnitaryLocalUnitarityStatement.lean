@@ -20,7 +20,7 @@ an invariant positive definite Hermitian form on its original carrier. -/
 def CuspidalUnitaryLocalUnitarityStatement : Prop :=
   ∀ (F : Type uF) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
     (r : ℕ) (T : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
   ∀ (P : CuspidalSpectralPresentation.{uF, uQ} T) (v : FinitePlace F)
     (hI : (P.localComponent v).IsIrreducible) (hA : (P.localComponent v).IsAdmissible),
     letI := (padicField v).canonicalTopologicalData.topology

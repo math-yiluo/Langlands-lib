@@ -1,7 +1,5 @@
 # Translation invariance of actual pulled-back families at geometric points
 
-Authors: Worker 967.
-
 Module `Langlands.AlgebraicGeometry.Picard.PicardZeroFamilyGeometricPointComparison`
 is a helper module for the proof of
 `Langlands.AbelianScheme.FiniteTypePicardZeroOpenLocusStatement`. It is an

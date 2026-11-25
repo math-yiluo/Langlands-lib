@@ -1,7 +1,6 @@
 # A conditional fixed-torus parabolic classification reduction
 
-Worker 1358, with Worker 146 identifying the algebraic-closure base-change
-theorem used below. This is an internal composition of the published Borel,
+This is an internal composition of the published Borel,
 standard parabolic, smooth point comparison, and split-torus descent interfaces. It
 retains five structural statements as explicit premises; it does not prove the
 unconditional fixed-torus classification.
@@ -68,8 +67,7 @@ of represented subgroup functors. The result is an equality over `k` on all
 test schemes, including nonaffine and nonreduced schemes.
 
 All five structural statements remain assumptions of the final theorem.
-Neither acceptance of this reduction nor the fact that its conclusion names
-the target proposition discharges those assumptions or completes its proof
-task. There is no appeal to `ParabolicDynamicStatement`. The construction
+The fact that its conclusion names the target proposition does not discharge
+those assumptions. There is no appeal to `ParabolicDynamicStatement`. The construction
 requires neither a nonempty root set nor positive torus rank, and retains the
 full-group case whenever its displayed premises hold.

@@ -1,10 +1,8 @@
 # Actual local Weil reciprocity and quasicharacter transport
 
-Author: Worker 10. This proposition family states actual geometric local
+This proposition family states actual geometric local
 Weil reciprocity and its quasicharacter consequences. All construction
-imports are published. No reciprocity theorem is claimed as proved.
-Worker 159 corrected the documentation of the separate published
-coherent-system and absolute-filtration definitions and targets.
+imports are published. This module proves no reciprocity theorem.
 
 ## Objects and normalization
 
@@ -120,9 +118,11 @@ published units:
   characterization. These targets quantify a supplied map satisfying
   `GeometricProfiniteReciprocityRelation`; they do not construct one.
 
-These definitions and statement targets are already available in the Library.
-Proofs of the Weil, common-closure and absolute-reciprocity targets remain
-outstanding. None of the separate system or higher-filtration targets is an
+These definitions and statement targets are in the Library.
+The Weil target is proved as `weilReciprocityTheorems` in
+`WeilReciprocityProof`, and the absolute-reciprocity target as
+`absoluteUpperReciprocityTheorems` in `AbsoluteReciprocityProof`; no Lean
+file of the Library proves `CommonClosureReciprocityTheorems`. None of the separate system or higher-filtration targets is an
 additional conjunct or an assumed input of the six-part Weil aggregate.
 
 ## Original-source correspondence
@@ -133,8 +133,8 @@ registered source `tate-1979-number-theoretic-background`, SHA256
 retained at
 `/home/taskhub/central-library/Borel-Casselman--Automorphic Forms, Representations and L-Functions (Corvallis)--1979/Part II.pdf`.
 
-Worker 10 read the original printed pages 3-7 / PDF pages 12-16 and
-printed page 20 / PDF page 29. The first pages define the topological
+The original printed pages 3-7 / PDF pages 12-16 and
+printed page 20 / PDF page 29 were read. The first pages define the topological
 abelianizations and reciprocity isomorphisms. Section 1.4.1, printed
 page 6 / PDF page 15, describes the actual nonarchimedean Weil subgroup
 and its topology and explicitly chooses the geometric convention.
@@ -177,10 +177,9 @@ Development compilation against the published imports succeeded with
 zero errors and warnings. Exact inspection of
 `Langlands.LocalClassField.WeilReciprocityTheorems` confirmed `Prop`,
 unrestricted universe `u`, and the standard axioms `propext`,
-`Classical.choice` and `Quot.sound`. The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+`Classical.choice` and `Quot.sound`. The checks used
+Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
-This statement pair has independent semantic acceptance and is published;
-that status does not supply proofs of its proposition definitions.
+This statement pair is published;
+that does not supply proofs of its proposition definitions.
 The separate definitions and targets linked above are also published.
-This documentation correction changes no Lean declaration or import.

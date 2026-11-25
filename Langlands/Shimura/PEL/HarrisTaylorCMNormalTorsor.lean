@@ -140,8 +140,8 @@ variable (existence : RelativeDualSchemeExistenceStatement.{0})
     [Etale (projection R U V hVU)]
     [IsIso (kernelComparison R U V hVU)]
     (g : SmallCMResidualGroup D U V) :
-    ((torsor R U V hVU existence geometry).val.ρ g).left =
-      (quotientAction R U V hVU).ρ g := rfl
+    ((torsor R U V hVU existence geometry).val.ρ g).asHom.left =
+      ((quotientAction R U V hVU).ρ g).asHom := rfl
 
 end Identifications
 

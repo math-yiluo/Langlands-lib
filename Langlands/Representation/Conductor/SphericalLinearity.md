@@ -1,13 +1,13 @@
 # Linearity of the actual spherical coefficients and finite numerators
 
-This internal unit proves linearity in the actual Whittaker model vector
+This module proves linearity in the actual Whittaker model vector
 through the constructions of `SphericalSeries`, `SphericalProduct` and
 `SphericalEvaluation`. It constructs the subspace of finite numerators.
 It does not establish that this subspace is an ideal or that it contains one.
 
 The results are direct deductions from the imported constructions, finite
 sum identities and scalar integration. There is no new literature input.
-In particular, the unit supplies an algebraic prerequisite for an
+In particular, the module supplies an algebraic prerequisite for an
 essential-vector argument, rather than invoking an essential-vector theorem.
 
 ## Finite sums and cancellation
@@ -108,15 +108,15 @@ product has finite support, and equality with its constructed numerator.
 Thus the subspace consists exactly of the finite numerators, rather than
 their abstract linear span or an arbitrary replacement family.
 
-## Retained obligations
+## Not proved in this module
 
-Finite support of the denominator product for every model vector remains
-unproved. The construction does not assert existence of an L-polynomial,
+Finite support of the denominator product for every model vector is not
+proved here. The construction does not assert existence of an L-polynomial,
 an analytic functional equation, an upper degree bound or a comparison
 between the formal series and an analytic zeta integral.
 
 Multiplicative stability of the numerator subspace, the absence of common
 zeros, the production of the constant numerator one, actual spherical
 realization, the essential identity and uniqueness, conductor conclusions
-and the exact `EssentialConductorStatement` remain separate obligations.
+and the exact `EssentialConductorStatement` are not part of this module.
 None is added as a premise of these results.

@@ -1,10 +1,11 @@
 # Generic finite zero-fixer reduction to the normalizer
 
-This internal support draft for Task 6309 adapts the implemented finite-set
+This internal support module for `UnramifiedZeroFixerAffineRootStatement`
+adapts the implemented finite-set
 induction in `ZeroFixerNormalizerReduction` to apartment data over any field,
 with a connected reductive group and a maximal split torus. It uses the published
 `ApartmentFacetClosureFixing` for generic cocharacters and the unipotent/normalizer
-stabilizer step, together with the sibling draft modules
+stabilizer step, together with the sibling modules
 `GenericFiniteSharpExchange` and `GenericPositiveRootFixerCoordinates`.
 
 The ambient subgroup `H` contains every sharp fixer. The subgroup `Q` of the

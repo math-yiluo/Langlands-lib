@@ -206,6 +206,6 @@ etaleness and the representing witnesses.
 Canonical-model comparison, uniformization, coefficient local systems
 and their descent comparison are not proved here.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

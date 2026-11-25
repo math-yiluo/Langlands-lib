@@ -107,7 +107,7 @@ theorem primeTransport_symm (γ : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- Loop transport agrees with the actual prime-adic geometric root monodromy. -/
 theorem primeTransport_aut (g : FundamentalGroup s hs) :
-    primeTransport p (hμfin := hμfin) (hμet := hμet) g =
+    primeTransport p (hμfin := hμfin) (hμet := hμet) g.asIso =
       primeMonodromy s hs p (hμfin := hμfin) (hμet := hμet) g := by
   apply LinearEquiv.ext
   intro x
@@ -151,7 +151,7 @@ theorem primeTransport_monodromy (γ : fiberFunctor s hs ≅ fiberFunctor t ht)
 theorem primeTransport_change_path (γ δ : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Integral Ω p) :
     primeTransport p (hμfin := hμfin) (hμet := hμet) δ x =
-      primeMonodromy t ht p (hμfin := hμfin) (hμet := hμet) (γ.symm ≪≫ δ)
+      primeMonodromy t ht p (hμfin := hμfin) (hμet := hμet) (Aut.of (γ.symm ≪≫ δ))
         (primeTransport p (hμfin := hμfin) (hμet := hμet) γ x) := by
   rw [← primeTransport_aut, ← primeTransport_trans]
   simp

@@ -15,12 +15,17 @@ uses classical choice on the fully proved
 slicing and propagation argument is described in
 `GoodPointEtaleSliceProof.md`. The chosen data are not canonical.
 
-This is an internal local construction by Workers 101, 303 and 424.
-The candidate includes their algebraic differential slicing,
-good-point chart comparison, and relation propagation proofs, together
-with the unchanged supporting definitions and statements they import.
+This is an internal local construction. It rests on the algebraic
+differential slicing, good-point chart comparison, and relation
+propagation proofs, together with the unchanged supporting definitions
+and statements they import.
 No unproved Library proposition is assumed. This construction supplies
 one local input to the smooth equivalence relation slicing theorem.
 Existence of a good point on every orbit and a globally surjective
-family of slices remain separate obligations. Acceptance of this
-definition candidate does not certify the final exact theorem.
+family of slices are separate results
+(`SmoothRelationGoodPoint.exists_isGoodPoint` in
+`SmoothRelationGoodPointExistence`,
+`exists_etale_surjective_slice_of_orbit_slices` in
+`RelationEtaleSliceOfOrbits`). This definition does not by itself prove
+the final exact theorem, `smoothEquivalenceRelationEtaleSlice` in
+`SmoothEquivalenceRelationEtaleSliceProof`.

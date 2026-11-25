@@ -1,8 +1,6 @@
 # Subgroup embeddings on supplied quotients
 
-Author: Worker 1369.
-
-This internal derived unit constructs the induced subgroup morphism on two
+This internal derived module constructs the induced subgroup morphism on two
 supplied fpqc quotient groups over an arbitrary base scheme in universe
 `u`. It constructs no quotient scheme.
 

@@ -22,9 +22,6 @@ statement, its meaning and its provenance are described in the statement
 module's Markdown. This file describes only the Lean proof. The proof uses no
 hypothesis beyond the statement's five inputs.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (iv)).
-Worker 272 checked the assembly and prepared this proof pair for submission.
-
 This is a derived, internal composition of whole published propositions. Its
 literature interpretation is inherited from
 `CanonicalRationalSharpReductionStatements.md` and the imported target
@@ -52,7 +49,7 @@ It first derives the support-category inputs of the class formula:
    applied to `rationalSupportCategoryDecomposition_of_wholeStatement hwhole`,
    to `rationalLeviJacquetCuspidalRemainderSplitting_of_wholeStatement hwhole`
    at `.{u, max (u + 1) v}`, and to step 2;
-4. exactness detection, from the block (ii) reductions
+4. exactness detection, from the reductions
    `rationalSupportCategoryZeroDetectionReduction` and
    `rationalSupportCategoryExactnessDetectionReduction` applied to step 1;
 5. support-category Jacquet vanishing, from
@@ -90,20 +87,19 @@ All modules named are in `Langlands/Representation/Aubert/General/`, except
 `Langlands/Representation/CuspidalSupport/`) and `QuotientCompactProof` (in
 `Langlands/BruhatTits/Parabolic/`).
 
-## Reused proofs and ownership
+## Reused proofs
 
 The canonical specialization in step 10 is supplied by
-`CanonicalRationalComplexTargetBridgesProof` (Task 6425). The class-formula
-reduction in step 6 is supplied by `RationalSharpClassFormulaInputs` (Task
-6483), which credits Workers 751 and 4217 for its conditional assembly.
-Step 4 imports the separate block (ii) proofs
-`RationalSupportCategoryZeroDetectionProof` (Task 6582) and
-`RationalSupportCategoryExactnessReduction` (Task 6583). Their Markdown
-records the conditional assemblies of Tasks 4193 and 4194 and the generic
-reductions they apply.
+`CanonicalRationalComplexTargetBridgesProof`. The class-formula
+reduction in step 6 is supplied by `RationalSharpClassFormulaInputs`, which
+records its conditional assembly.
+Step 4 imports the separate proofs
+`RationalSupportCategoryZeroDetectionProof` and
+`RationalSupportCategoryExactnessReduction`. Their Markdown
+records the conditional zero-detection and exactness-detection assemblies and
+the generic reductions they apply.
 
 This module imports those results without reproducing their proofs. Their
-statements and proof ownership, the five bottleneck targets and their proof
-owners, and the unconditional class-formula and irreducibility tasks remain
-separate. The only new Lean declaration is the theorem of the reduction
+statements, the five bottleneck targets, and the unconditional class formula
+and irreducibility remain separate. The only new Lean declaration is the theorem of the reduction
 proposition named above.

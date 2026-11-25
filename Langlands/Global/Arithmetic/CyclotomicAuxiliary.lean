@@ -174,7 +174,7 @@ theorem exists_galois_ramified (F : Type u) [Field F] [NumberField F] (n : ℕ) 
   have h2 : Q.ramificationIdx ℤ = P.ramificationIdx ℤ * Q.ramificationIdx (𝓞 F) :=
     Ideal.ramificationIdx_tower P Q
   have h3 : P.ramificationIdx ℤ ∣ d.factorial :=
-    Nat.dvd_factorial (Ideal.ramificationIdx_pos P ℤ) (ramificationIdx_int_le_finrank q P)
+    Nat.dvd_factorial (Ideal.ramificationIdx_pos ℤ P) (ramificationIdx_int_le_finrank q P)
   have h4 : n * d.factorial ∣ q - 1 := dvd_auxiliaryPrime_sub_one F hn
   have h5 : d.factorial * n ∣ d.factorial * Q.ramificationIdx (𝓞 F) := by
     rw [mul_comm d.factorial n, mul_comm d.factorial]

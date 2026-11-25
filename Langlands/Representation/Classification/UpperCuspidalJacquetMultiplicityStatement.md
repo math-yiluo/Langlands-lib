@@ -1,7 +1,5 @@
 # Upper cuspidal Jacquet counts from the associated filtration
 
-Author: Worker 500.
-
 `Langlands.GLUpperCuspidalJacquetMultiplicityFromFiltrationStatement` is a
 focused algebraic adapter for the upper clause of
 `GLCuspidalJacquetMultiplicityPrerequisitesStatement`. It is a proposition

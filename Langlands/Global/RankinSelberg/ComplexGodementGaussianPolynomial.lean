@@ -2,6 +2,7 @@ import Langlands.Global.RankinSelberg.ComplexGodementFourier
 import Langlands.Global.RankinSelberg.ComplexGodementKFinite
 import Langlands.Representation.Archimedean.ComplexMaximalParabolicIntegration
 import Langlands.Global.Hecke.MixedSpaceFourier
+import Langlands.Analysis.SchwartzGaussian
 import Mathlib.RingTheory.MvPolynomial.Basic
 import Mathlib.Algebra.MvPolynomial.Monad
 
@@ -60,48 +61,6 @@ theorem eval_hasTemperateGrowth {E : Type*} [NormedAddCommGroup E] [NormedSpace 
   | mul_X p i hp =>
       simp only [map_mul, eval_X]
       exact hp.mul (c i).hasTemperateGrowth
-
-/-- The radial Gaussian on a real inner product space. -/
-def radialGaussian {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] : 𝓢(E, ℝ) where
-  toFun x := Real.exp (-‖x‖ ^ 2)
-  smooth' := Real.contDiff_exp.comp <| (show (fun x : E => -‖x‖ ^ 2).HasTemperateGrowth by
-    fun_prop).1
-  decay' k n := by
-    let Q : E → ℝ := fun x => -‖x‖ ^ 2
-    have hQ : Q.HasTemperateGrowth := by dsimp [Q]; fun_prop
-    obtain ⟨l, C, _, hderiv⟩ := hQ.norm_iteratedFDeriv_le_uniform n
-    obtain ⟨B, _, hgauss⟩ := exists_exp_neg_mul_sq_le_rpow (c := 1)
-      one_pos ((k + l * n : ℕ) : ℝ)
-    let A := max 1 C
-    refine ⟨(n.factorial : ℝ) * A ^ n * B, fun x => ?_⟩
-    let R := 1 + ‖x‖
-    have hR : 1 ≤ R := le_add_of_nonneg_right (norm_nonneg x)
-    have hA : 1 ≤ A := le_max_left _ _
-    have hD : 1 ≤ A * R ^ l := one_le_mul_of_one_le_of_one_le hA (one_le_pow₀ hR)
-    have hbound := norm_iteratedFDeriv_comp_le (g := Real.exp) (f := Q) (n := n)
-      Real.contDiff_exp hQ.1 (by exact_mod_cast le_top) x
-      (C := Real.exp (Q x)) (D := A * R ^ l)
-      (fun i _ => by
-        rw [norm_iteratedFDeriv_eq_norm_iteratedDeriv, iteratedDeriv_eq_iterate,
-          Real.iter_deriv_exp, Real.norm_eq_abs, Real.abs_exp])
-      (fun i hi hin => (hderiv i hin x).trans <|
-        (mul_le_mul_of_nonneg_right (le_max_right _ _) (by positivity)).trans
-          (le_self_pow₀ hD (by omega)))
-    have hdecay : R ^ (k + l * n) * Real.exp (Q x) ≤ B := by
-      have h := hgauss ‖x‖ (norm_nonneg x)
-      simp only [one_mul] at h
-      change Real.exp (Q x) ≤ B * R ^ (-((k + l * n : ℕ) : ℝ)) at h
-      rw [Real.rpow_neg (by positivity), Real.rpow_natCast, le_mul_inv_iff₀ (by positivity)] at h
-      rwa [mul_comm]
-    change ‖x‖ ^ k * ‖iteratedFDeriv ℝ n (Real.exp ∘ Q) x‖ ≤ _
-    calc
-      _ ≤ R ^ k * ((n.factorial : ℝ) * Real.exp (Q x) * (A * R ^ l) ^ n) := by
-            gcongr
-            exact le_add_of_nonneg_left zero_le_one
-      _ = (n.factorial : ℝ) * A ^ n * (R ^ (k + l * n) * Real.exp (Q x)) := by
-        rw [mul_pow, ← pow_mul, pow_add]
-        ring
-      _ ≤ (n.factorial : ℝ) * A ^ n * B := mul_le_mul_of_nonneg_left hdecay (by positivity)
 
 private def matrixEuclidean (m n : ℕ) : Mat m n ≃L[ℝ] EuclideanSpace ℂ (Fin m × Fin n) :=
   ((curryLinearEquiv (Fin m) (Fin n) ℝ ℂ).symm.trans

@@ -1,8 +1,6 @@
 # The stable-image completion and the Jacquet completion
 
-Author: Worker 1775.
-
-This derived unit implements the inverse-limit comparison in David Renard,
+This derived module implements the inverse-limit comparison in David Renard,
 *Représentations des groupes réductifs p-adiques*, version dated 9 July 2026,
 VI.9.7, printed pp.205–206 / PDF pp.211–212. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -49,9 +47,10 @@ that its image is the original Jacquet completion family.
 proved bijectivity. The construction uses the actual unnormalized descended
 Jacquet action, compact averages, stable images and completion objects.
 
-This unit retains the two cofinality inputs and pointwise Jacquet bijectivity.
+This module retains the two cofinality inputs and pointwise Jacquet bijectivity.
 It does not prove the structural contraction basis or stabilization theorem,
 identify stable completion with subgroup-fixed completion, transport to
 normalized represented-parabolic functors, establish the final naturality or
-arbitrary-contraction characterization clauses, or prove either exact parent
-proposition.
+arbitrary-contraction characterization clauses, or prove either of the exact
+propositions `LeviJacquetOppositePairingStatement` (VI.9.6) and
+`LeviCompletionOppositeJacquetStatement` (VI.9.7).

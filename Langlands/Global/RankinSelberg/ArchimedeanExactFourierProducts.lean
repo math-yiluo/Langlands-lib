@@ -8,7 +8,7 @@ universe u
 open NumberField MeasureTheory
 open Langlands.Global.HeckeFunctionalEquation Langlands.Global.CuspidalPairFunctionalEquation
 open Langlands.LocalFactor.Archimedean Langlands.Global.CompletionPadic
-open Langlands.ClassField.Global.RelativeWeilGroup Langlands.HarmonicAnalysis
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup Langlands.HarmonicAnalysis
 open scoped Classical
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

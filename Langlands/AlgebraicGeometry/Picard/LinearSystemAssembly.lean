@@ -53,7 +53,7 @@ lemma prop_pullback_snd_comp (Q : MorphismProperty Scheme.{u}) [Q.IsStableUnderB
   exact MorphismProperty.of_isPullback hsq ((Q.cancel_right_of_respectsIso l' e.hom).mpr hl')
 
 variable {T Y : Scheme.{u}} [IsLocallyNoetherian T] (g : Y ⟶ T) [IsProper g] [Flat g]
-  [GeometricallyIntegral g] (M : Y.Modules) (hM : Scheme.Modules.IsInvertible M)
+  [GeometricallyIntegral g] (M : Y.Modules) (hM : Scheme.Modules.IsInvertibleFLT M)
 
 /-- **Local universal families over the affine opens of the base.** -/
 theorem exists_local (V : T.affineOpens) :
@@ -80,7 +80,7 @@ system over an affine open is flat and locally of finite presentation when the f
 `H¹`, and surjective when moreover they have nonzero `H⁰`. -/
 def LocalFibreFlatness : Prop :=
   ∀ (T Y : Scheme.{u}) [IsLocallyNoetherian T] (g : Y ⟶ T) [IsProper g] [Flat g]
-    [GeometricallyIntegral g] (M : Y.Modules) (hM : Scheme.Modules.IsInvertible M)
+    [GeometricallyIntegral g] (M : Y.Modules) (hM : Scheme.Modules.IsInvertibleFLT M)
     (V : T.affineOpens) (P : Scheme.{u}) [IsLocallyNoetherian P] (l : P ⟶ T)
     (W : (pullback g l).IdealSheafData),
     IsUniversalOn g (icl M hM) V.1 l W →
@@ -106,7 +106,7 @@ lemma nonempty_iso_of_class {X Z : Scheme.{u}} (q₁ : X ⟶ Y) (q₂ : X ⟶ Z)
 
 /-- A class equation from an isomorphism with a twist. -/
 lemma class_of_nonempty_iso {X Z : Scheme.{u}} (q₁ : X ⟶ Y) (q₂ : X ⟶ Z)
-    (Ld : LineBundle X) (N' : Z.Modules) (hN' : Scheme.Modules.IsInvertible N')
+    (Ld : LineBundle X) (N' : Z.Modules) (hN' : Scheme.Modules.IsInvertibleFLT N')
     (e : Ld.obj ≅ (Scheme.Modules.pullback q₁).obj M ⊗ (Scheme.Modules.pullback q₂).obj N') :
     Ld.classOf = Group.pullback q₁ (icl M hM) + Group.pullback q₂ (icl N' hN') := by
   have hT := isInvertible_tensor (isInvertible_pullback q₁ hM) (isInvertible_pullback q₂ hN')

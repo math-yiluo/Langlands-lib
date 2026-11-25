@@ -1,6 +1,6 @@
 # Standard cocharacters annihilating ambient rational characters
 
-Worker 1555 derives an integral cocharacter construction from the published
+This module derives an integral cocharacter construction from the published
 actual relative Weyl action. This is an internal construction for the compact
 restriction converse; it does not assert that the converse is proved.
 

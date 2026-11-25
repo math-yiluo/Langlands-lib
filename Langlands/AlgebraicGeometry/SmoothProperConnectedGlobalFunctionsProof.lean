@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions
 import Langlands.AlgebraicGeometry.FieldSmoothProperConnectedGlobalFunctionsProof
 import Langlands.Algebra.SmoothEqualizerFibreCriterionProof

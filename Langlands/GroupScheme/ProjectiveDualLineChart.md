@@ -1,9 +1,7 @@
 # Invariant coordinate charts of matrix-equivariant maps to projective space
 
-Author: Worker 967.
-
 This internal module provides glue for the invariant-affine-neighbourhood step of
-the flag argument (task `877d0194-f7d3-4c1e-8e72-e81d1a772c0c`). Suppose a group
+the flag argument. Suppose a group
 scheme acts on `X` and a map `φ : X → Pⁿ` intertwines that action with a matrix
 representation. Suppose also that a subgroup fixes a linear form up to units.
 Then the inverse image under `φ` of the corresponding chart is an open subscheme

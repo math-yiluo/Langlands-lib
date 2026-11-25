@@ -74,7 +74,7 @@ character of `ω` has a unitary central character. -/
 theorem hasUnitaryCentralCharacter_heckeDeterminantTwist_unitarizingCharacter
     (T : CuspidalOperatorRealization F r) {ω : HeckeCharacter F}
     (hω : T.HasCentralCharacter ω) :
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter
       (T.heckeDeterminantTwist (unitarizingCharacter r ω)) := by
   refine ⟨unitarizingCharacter r ω ^ (r + 1) * ω,
     norm_unitarizingCharacter_pow_mul r ω, ?_⟩

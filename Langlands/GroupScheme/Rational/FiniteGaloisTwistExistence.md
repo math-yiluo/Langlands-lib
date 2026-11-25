@@ -1,7 +1,5 @@
 # Proof of the existence of finite-Galois twisted forms
 
-Author: Worker 1534.
-
 This module proves the published proposition
 `Langlands.GroupScheme.FiniteGaloisTwistExistenceStatement.{u}` from
 `Langlands.GroupScheme.Rational.FiniteGaloisTwistExistenceStatement`, in

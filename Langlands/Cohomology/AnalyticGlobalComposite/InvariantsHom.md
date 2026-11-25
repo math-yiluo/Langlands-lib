@@ -1,7 +1,5 @@
 # Smooth invariants as maps from the trivial representation
 
-Author: Worker 280.
-
 This internal helper adapts the published
 `Langlands.Cohomology.EquivariantComposite.InvariantsHom` to smooth
 representations with independent coefficient and group universes. It uses the

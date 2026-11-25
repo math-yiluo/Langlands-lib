@@ -1,9 +1,7 @@
 # Relative Borel conjugacy from relative parabolic conjugacy
 
-Worker 607.
-
 This derived internal reduction keeps both published statement definitions
-unchanged. It uses the current Library's rational minimal-parabolic conjugacy
+unchanged. It uses the Library's rational minimal-parabolic conjugacy
 theorem to supply the residue-field hypothesis of
 `RelativeParabolicEtaleLocalConjugacyStatement`.
 
@@ -17,8 +15,9 @@ minimal rational parabolic. The published `minimalParabolicConjugacy` gives a
 rational conjugating point and an isomorphism between the sources. Taking
 all-test ranges removes that source isomorphism.
 
-`relativeBorelEtaleConjugacyData` assumes the still separate proposition
-`RelativeParabolicEtaleLocalConjugacyStatement.{u}` and constructs an actual
+`relativeBorelEtaleConjugacyData` assumes the separate proposition
+`RelativeParabolicEtaleLocalConjugacyStatement.{u}` (proved as
+`relativeParabolicEtaleLocalConjugacyStatement` in `ParabolicEtaleConjugacyProof`) and constructs an actual
 étale cover together with a conjugating section and its all-test range equality
 on every member. Apply the assumed
 parabolic proposition at each base point with the residue-field conjugacy

@@ -12,32 +12,6 @@ open Matrix Correspondence IsLocalRing PadicField.TopologicalData
 
 universe u v
 
-section Fields
-
-variable {K : Type u} {L : Type v} [Field K] [Field L] [Algebra K L]
-
-/-- An entrywise fixed invertible matrix descends when the fixed scalars lie in
- the image of the base field. -/
-theorem exists_baseChange_eq_of_entrywiseAut_eq {σ : L ≃ₐ[K] L}
-    (hfix : ∀ a : L, σ a = a → a ∈ (algebraMap K L).range)
-    {n : ℕ} {x : GeneralLinear n L} (hx : entrywiseAut σ n x = x) :
-    ∃ y : GeneralLinear n K, baseChange K L n y = x := by
-  classical
-  have hentry (i j : Fin n) : x i j ∈ (algebraMap K L).range :=
-    hfix _ (congrArg (fun g : GeneralLinear n L => g i j) hx)
-  choose a ha using hentry
-  let A : Matrix (Fin n) (Fin n) K := a
-  have hmap : A.map (algebraMap K L) = x.val := Matrix.ext ha
-  have hdet : A.det ≠ 0 := by
-    intro h
-    apply x.det_ne_zero
-    rw [← hmap]
-    change ((RingHom.mapMatrix (algebraMap K L)) A).det = 0
-    rw [← RingHom.map_det, h, map_zero]
-  exact ⟨GeneralLinearGroup.mkOfDetNeZero A hdet, GeneralLinearGroup.ext ha⟩
-
-end Fields
-
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p) (E : PadicField.{v} p)
 variable [Algebra F.Carrier E.Carrier] [IsScalarTower (Padic p) F.Carrier E.Carrier]
 

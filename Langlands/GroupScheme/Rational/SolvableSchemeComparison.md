@@ -1,6 +1,6 @@
 # Uniform all-test solvability and geometric solvability
 
-This internal supporting unit relates the two existing solvability predicates
+This internal supporting module relates the two existing solvability predicates
 used by the ordered-product and structural group-scheme developments. It does
 not introduce a replacement predicate.
 
@@ -42,7 +42,7 @@ regularity premise. Conversely, for a smooth affine group, the published
 `SolvableFieldExtensionProof.exists_uniform_derivedSeries_eq_bot` gives the
 required uniform bound. The resulting equivalence needs neither connectedness
 nor an algebraically closed base. The converse reuses that theorem's
-derived-word and geometric-point equality argument; this unit does not repeat it.
+derived-word and geometric-point equality argument; this module does not repeat it.
 
 The provenance is internal: choice from the existing uniform-solvability
 existential, functoriality of abstract derived series, the standard semidirect

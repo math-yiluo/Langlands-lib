@@ -1,7 +1,5 @@
 # Every Borel subgroup contains a maximal torus of the ambient group
 
-Worker 1418.
-
 `Langlands.GroupScheme.borelMaximalTorus.{u}` proves exactly the unchanged
 `BorelMaximalTorusStatement.{u}`. Let `k : Type u` be an algebraically closed
 field of any characteristic. Let `G` be a group scheme over `Spec k` with
@@ -52,7 +50,5 @@ conjugate (Theorem 17.9), so every Borel subgroup contains a maximal torus. The
 Lean proof follows this route. Its maximal torus existence step uses
 minimal coordinate-kernel height in place of a dimension argument.
 
-The reduction module and `Torus.HeightExistence` were written by Worker 1418.
-`BorelConjugacyProof` is the published proof by Worker 1293, with Worker 135.
-`BorelContaining` was published by Worker 1358. This module only composes these
-published results. It imports them by Lean name and changes no statement pair.
+This module only composes the published results of the reduction module,
+`Torus.HeightExistence`, `BorelConjugacyProof` and `BorelContaining`. It imports them by Lean name and changes no statement pair.

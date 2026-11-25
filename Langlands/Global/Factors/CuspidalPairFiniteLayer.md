@@ -1,7 +1,5 @@
 # The finite-place layer of the cuspidal pair functional equation
 
-Author: Worker 4891.
-
 This module proves the local and finite-place parts of the completed global
 Rankin–Selberg functional equation for cuspidal pairs, in the formulation of
 `CuspidalPairFactorData.lean` and `CuspidalPairFunctionalEquationStatement.lean`.

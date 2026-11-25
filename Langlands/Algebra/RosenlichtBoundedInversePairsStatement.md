@@ -13,7 +13,8 @@ hypothesis on `B`. The finite-dimensional hypotheses use `Module.Finite`
 on the submodule types. Finiteness is `Set.Finite` for the indicated subset
 of the actual Cartesian product `B × B`.
 
-This is an internally formulated supporting statement for Task 7474, not a
+This is an internally formulated supporting statement for the Rosenlicht
+tensor-unit splitting `Langlands.Algebra.RosenlichtTensorUnitsStatement`, not a
 quotation or translation of a numbered result in the literature. Normalizing
 both factors removes the scalar rescaling of inverse pairs. Applying the
 statement to the finite-dimensional spaces containing the specializations

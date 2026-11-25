@@ -1,9 +1,9 @@
 # A fixed split torus containing the full centre
 
-Worker 1372.
-
-`FixedCenterContainingTorusStatement.{u}` is an unproved structural proposition
-target. Over every algebraically closed field `k : Type u`, a connected
+`FixedCenterContainingTorusStatement.{u}` is a structural proposition; this module
+does not prove it, and
+[`FixedCenterContainingTorusProof`](FixedCenterContainingTorusProof.md) proves it as
+`fixedCenterContainingTorus`. Over every algebraically closed field `k : Type u`, a connected
 reductive group `G` with an actual automorphic action of a split torus `S`
 admits a closed split torus `j : T ⟶ G` that contains the full scheme-theoretic
 centre of `G` and is fixed pointwise by `S`.
@@ -31,8 +31,8 @@ PDF pp.521–523; the proof treats actual group functors and their base changes.
 The exact proposition is derived from that argument: it records only the
 fixed closed split torus and centre containment needed by the semigroup
 application, rather than an adjoint action factorization or maximality.
-Constructing the quotient action, lifting the torus and establishing the
-all-test identities remain obligations of a separate proof.
+This module does not construct the quotient action, lift the torus or
+establish the all-test identities.
 
 The companion module `Rational.SemigroupCenterContainment` proves a generic
 fixed-torus semigroup inclusion and deduces full-centre containment

@@ -28,9 +28,9 @@ variable {p : ℕ} [Fact p.Prime] (F : PadicField.{u} p) (E : PadicField.{v} p)
 local notation "TF" => F.canonicalTopologicalData
 local notation "TE" => E.canonicalTopologicalData
 
-local instance : TopologicalSpace F.Carrier := (TF).topology
+private local instance : TopologicalSpace F.Carrier := (TF).topology
 local instance : TopologicalSpace E.Carrier := (TE).topology
-local instance : ValuativeRel F.Carrier := (TF).valuativeRel
+private local instance : ValuativeRel F.Carrier := (TF).valuativeRel
 local instance : ValuativeRel E.Carrier := (TE).valuativeRel
 
 private theorem unramifiedCharacter_comp_localNorm {f : ℕ}

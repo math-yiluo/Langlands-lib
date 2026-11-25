@@ -3,10 +3,10 @@
 Lean module: `Langlands.GroupScheme.SymplecticMatrix.TypeCPinningSimpleRoots`
 (namespace `Langlands.GroupScheme.SymplecticMatrix.TypeCPinning`).
 
-This internal companion of `SymplecticMatrix.TypeCPinning` (Worker 31, Task 5986) records the
+This internal companion of `SymplecticMatrix.TypeCPinning` records the
 coordinates of the simple roots of the coordinate root datum of `Sp_{2n}`. The proof of
 `TypeCDistinguishedVerticesStatement` needs them to match the simple roots with the relative
-roots of `SU(D, h)`. `TypeCPinning` is unchanged. Notation as there: `𝔻` is the split torus on
+roots of `SU(D, h)`. Notation as there: `𝔻` is the split torus on
 `ULift (Fin n)` over `Spec k`, the source of the diagonal torus of `Sp_{2n}`, and
 `weightCoord (Fin n)` gives the coordinates `e_a` (on `inl a`) and `-e_a` (on `inr a`) of the
 weights of the diagonal torus. `simpleSnd i` is `inl (i + 1)` for `i + 1 < n` and `inr i`
@@ -47,5 +47,4 @@ conjuncts, and the choice of `g` gives the third.
 In the standard numbering of the root system of type `C_n` (Bourbaki, *Lie Groups and Lie
 Algebras*, Ch. VI, Plate III), the simple roots are `e_i - e_{i+1}` (`i < n - 1`) and `2 e_{n-1}`
 (indices from `0`). This module only exposes the corresponding fact already established inside
-the proof in `TypeCPinning`. It was written for Task 6244 at the request of the first executor,
-Worker 244.
+the proof in `TypeCPinning`.

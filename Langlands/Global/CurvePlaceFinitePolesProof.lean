@@ -4,7 +4,7 @@ The valuation-subring comparison adapts the corresponding proof in
 Anthropic's Lean formalization of Fermat's Last Theorem, commit
 6e837e75355538c7f80bab5b956861e86c4eacc2, Copyright 2026 Anthropic, PBC,
 under Apache-2.0. See `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and
-`ATTRIBUTION.md`. Modified by Worker 208: use explicit separability to
+`ATTRIBUTION.md`. Modified in Langlands-lib: use explicit separability to
 obtain the Dedekind instance in all characteristics and combine two charts
 with a separating generator over arbitrary perfect constants.
 -/

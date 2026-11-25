@@ -1,7 +1,5 @@
 # Comparing normalization in the generic fibre and in the total fraction ring
 
-Worker 594.
-
 For a flat `S`-algebra `D`, its localization at the image of
 the non-zero-divisors of `S` embeds in the total fraction ring of `D`.
 Flatness ensures that these denominators act injectively on `D`. The

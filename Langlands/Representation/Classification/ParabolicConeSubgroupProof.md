@@ -1,7 +1,5 @@
 # Matrix containments for consecutive block coarsenings
 
-Author: Worker 534.
-
 The theorem `Langlands.glBlockCoarseningSubgroups` proves exactly
 `Langlands.GLBlockCoarseningSubgroupStatement`, with arbitrary ring universe
 `uR`. For every rank, two actual block shapes, and a monotone surjection whose

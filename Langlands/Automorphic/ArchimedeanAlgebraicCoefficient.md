@@ -1,7 +1,5 @@
 # Algebraic coefficients on the actual archimedean group and Lie algebra
 
-Author: Worker 2.
-
 This internal construction attaches an actual finite-product general linear
 scheme representation to the completion-based archimedean group and its
 complexified Lie algebra on the same full coefficient space. It derives the Lie

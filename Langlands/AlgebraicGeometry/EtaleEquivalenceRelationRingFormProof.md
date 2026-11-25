@@ -1,7 +1,5 @@
 # Ring form of an affine étale equivalence relation
 
-Author: Worker 424.
-
 The theorem in this module proves the published proposition
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelationRingFormStatement.{u}`
 with the theorem `Langlands.AlgebraicGeometry.etaleEquivalenceRelationRingForm`.

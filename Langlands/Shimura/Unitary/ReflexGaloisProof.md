@@ -1,7 +1,5 @@
 # Subfields of the complex numbers are fixed fields
 
-Author: Worker 109.
-
 `Langlands.Shimura.complexFixedField` proves the complete published proposition
 `Langlands.Shimura.ComplexFixedFieldStatement`: for every intermediate field
 L of ℂ/ℚ, the fixed field of its fixing subgroup equals L. The theorem has no

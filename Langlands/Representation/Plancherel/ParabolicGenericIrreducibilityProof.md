@@ -1,10 +1,11 @@
 # Generic irreducibility of actual unramified parabolic induction: proof
 
-Author: Worker 52. Module
+Module
 `Langlands.Representation.Plancherel.ParabolicGenericIrreducibilityProof`,
-namespace `Langlands.Plancherel`. Entry module of the proof for Task 5066. The
-argument is Worker 1597's reduction `ParabolicGenericIrreducibilityReduction`,
-with both of its hypotheses discharged.
+namespace `Langlands.Plancherel`. Entry module of the proof of generic
+irreducibility of actual unramified parabolic induction. The argument is the
+reduction `ParabolicGenericIrreducibilityReduction`, with both of its
+hypotheses discharged.
 
 ## What is proved
 
@@ -79,7 +80,8 @@ statement in the order used by
 
 ## Supporting modules
 
-The candidate also ships these modules, each with its own Markdown:
+These modules were ported together with this module, each with its own
+Markdown:
 
 - `Langlands/Representation/Families/SubrepDetectionPrincipalOpen.lean`:
   irreducibility neighborhoods from detection of subrepresentations by fixed
@@ -92,11 +94,8 @@ The candidate also ships these modules, each with its own Markdown:
 - `Langlands/Representation/Plancherel/RegularSquareIntegrableJacquetMultiplicityProof.lean`:
   the multiplicity statement.
 
-No Library file is edited.
-
 ## Checks
 
-A `lean_check` of the five modules in the environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` gives zero errors and zero warnings.
+A Lean check of the five modules gives zero errors and zero warnings.
 `conditionalParabolicGenericIrreducibility` depends only on the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

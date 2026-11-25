@@ -1,7 +1,5 @@
 # Geometric recovery after Frobenius descent
 
-Authors: Worker 1442.
-
 This internal supporting construction composes the two actual recovery
 isomorphisms in finite-model Frobenius descent. For fields `k` and `Ω` in an
 arbitrary common universe, a finite model `D` of a specified inclusion

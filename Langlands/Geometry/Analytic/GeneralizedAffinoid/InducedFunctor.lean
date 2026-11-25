@@ -38,10 +38,10 @@ theorem familyMap_comm {X Y : NormContinuousSpace K H} (f : X ⟶ Y) (g : G) :
   change G ⧸ H at c
   apply BoundedAlgHom.ext
   intro a
-  change (X.unop.actionAut (correction H g c)).inv.toAlgHom
+  change (X.unop.actionAut (correction H g c)).asIso.inv.toAlgHom
       (NormContinuousAction.homMap f.unop a) =
     NormContinuousAction.homMap f.unop
-      ((Y.unop.actionAut (correction H g c)).inv.toAlgHom a)
+      ((Y.unop.actionAut (correction H g c)).asIso.inv.toAlgHom a)
   exact (NormContinuousAction.homMap_apply_action f.unop (correction H g c)⁻¹ a).symm
 
 @[simp]
@@ -77,13 +77,15 @@ def balancedAction (X : NormContinuousSpace K H) :
     ContAction TopCat.{max u v} G :=
   ⟨{ V := TopCat.of (Spectrum H X.unop)
      ρ :=
-       { toFun := fun g => TopCat.ofHom ⟨(g • ·), continuous_const_smul g⟩
+       { toFun := fun g => End.of (TopCat.ofHom ⟨(g • ·), continuous_const_smul g⟩)
          map_one' := by
+           apply End.ext
            apply TopCat.ext
            intro z
            exact one_smul G z
          map_mul' := by
            intro g k
+           apply End.ext
            apply TopCat.ext
            intro z
            exact mul_smul g k z } },

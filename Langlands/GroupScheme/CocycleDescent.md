@@ -1,7 +1,5 @@
 # Descent of fibrewise trivial cocycles along fpqc refinements
 
-Authors: Worker 303.
-
 This internal helper extends the natural cocycles of
 `Langlands.GroupScheme.TorsorCocycle` and the refinements of
 `Langlands.GroupScheme.CocycleRefinement`. It imposes no field, reductivity or

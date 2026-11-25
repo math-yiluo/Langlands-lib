@@ -1,6 +1,6 @@
 # The actual smooth Aubert complex with published structural inputs
 
-Internal construction by Worker 3640. This module instantiates the published
+Internal construction. This module instantiates the published
 `RationalStandardComplex` on the actual rational points of a connected reductive
 group over an arbitrary nonarchimedean local field. Its source motivation is
 Aubert (1995), printed pp.2186–2187, and the official erratum (1996), printed
@@ -79,8 +79,7 @@ proofs have no classification dependencies.
 The support-category exactness theorem, corrected two-sided Bruhat filtration,
 comparison of graded transition maps, associated-Levi Jacquet comparison,
 finite-length specialization, Sharp irreducibility and double-Sharp results
-remain separate proof obligations. No statement target or proof owned by
-another task is changed here. The imported operator module contains conditional
+are not proved in this module. The imported operator module contains conditional
 finite-length constructions, but none of those conditional declarations is
 called by this module's constructions or intrinsic laws. No classification
 independence conclusion about the remaining representation-theoretic results

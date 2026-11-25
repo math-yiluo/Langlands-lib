@@ -1,10 +1,9 @@
 # Norm minimality on weak Siegel products from a diagonal height inequality
 
-Author: Worker 5414.
-
-This module assembles the planned proof of
-`Langlands.Global.AdelicSiegelFactors.SiegelNormMinimalityStatement` (Task 5910). It
-reduces the statement to Part A of the plan, the diagonal inequality for positive points
+This module assembles the proof of
+`Langlands.Global.AdelicSiegelFactors.SiegelNormMinimalityStatement` (module
+`AdelicSiegelNormMinimalityProof`). It
+reduces the statement to Part A, the diagonal inequality for positive points
 of split tori. Part B is the conjugation bound `exists_adelicHeight_conj_unipotent_le`
 (module [`AdelicSiegelConjugationBound`](AdelicSiegelConjugationBound.md)). All
 declarations are in the namespace `Langlands.Global.AdelicSiegelFactors`. Write
@@ -57,8 +56,8 @@ H (map F T₀.toGrp G f a) ≤ c * H (rational F G q * map F T₀.toGrp G f a)
 ```
 
 for every `a : PositiveRealTorus.intrinsicSubgroup F T₀` and every rational point `q`.
-This is the interface fixed for Part A in Task 5910's context, under the name
-`exists_adelicHeight_map_le_rational_mul`. The theorem proves the statement with
+This is the interface of Part A, proved as `exists_adelicHeight_map_le_rational_mul`
+(module `AdelicSiegelDiagonalHeightBound`). The theorem proves the statement with
 exponent `e = 1`.
 
 ## Provenance
@@ -66,8 +65,9 @@ exponent `e = 1`.
 The statement being proved is Mœglin–Waldspurger 1995
 (`moeglin-waldspurger-1995-spectral-decomposition`), I.2.2 (vii), printed pp. 20–21. The
 Markdown of `SiegelNormMinimalityStatement` records the correspondence. The two
-theorems here are the assembly step of the proof plan in Task 5910's context. The
-hypotheses `hdiag` and `hA` are Part A of that plan, not published results.
+theorems here are the assembly step of the proof in `AdelicSiegelNormMinimalityProof`. The
+hypotheses `hdiag` and `hA` are Part A of that proof, proved in
+`AdelicSiegelDiagonalHeightBound`; this module takes them as hypotheses.
 
 ## Proof
 
@@ -109,15 +109,11 @@ The hypothesis `IsClosedSubgroup rho` of the statement is not used.
 
 ## Checks
 
-`lean_check` of this module in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-reports no errors or warnings (diagnostic `bcdb3097-cf4d-455e-a2b9-19d75cc7406b`). The
+`lean_check` of this module reports no errors or warnings. The
 declaration inspections with a Lake build show only `propext`, `Classical.choice` and
 `Quot.sound` for
-- `exists_adelicHeight_le_mul_rational_of_diagonal` (diagnostic
-  `15ac5672-b1a6-45a4-b8cf-7f012e8830bf`);
-- `siegelNormMinimalityStatement_of_diagonal` (diagnostic
-  `3a255bd5-0763-43a7-9a0d-2c17c5cb9725`).
+- `exists_adelicHeight_le_mul_rational_of_diagonal`;
+- `siegelNormMinimalityStatement_of_diagonal`.
 
 A Lake build of this module with the three others of the proof over Library commit
-`f2b3d7dcdd52af1923cd0bf5c4d90beda3118720` again reports no errors or warnings (diagnostic
-`12ca220b-423d-4a37-b422-3120df9ecce6`).
+`f2b3d7dcdd52af1923cd0bf5c4d90beda3118720` again reports no errors or warnings.

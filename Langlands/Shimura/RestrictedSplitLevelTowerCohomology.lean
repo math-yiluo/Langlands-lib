@@ -164,7 +164,7 @@ theorem translate_awayCohomologyComparison_apply_of_mem
     [Nonempty (awayProperty e P K₀).FullSubcategory] {D : CoefficientDiagram R T.op}
     (hD : IsLevelTrivialCoefficients D) (q : ℕ) {k : H} (hk : k ∈ K₀.subgroup)
     (x : (awayColimitCohomology e K₀ D q).V) :
-    ((colimitCohomology D q).ρ (factorHom e k)).hom
+    ((colimitCohomology D q).ρ (factorHom e k)).asHom.hom
         ((awayCohomologyComparison e K₀ D q).hom.hom x) =
       (awayCohomologyComparison e K₀ D q).hom.hom x :=
   translate_colimitCohomologyComparison_apply_of_mem (awayOver e K₀) _ hD q
@@ -229,8 +229,8 @@ theorem galois_awayComparison_apply (n : ℕ) (M : ModuleSheaf X R) (σ : L ≃�
     (RestrictedLevelColimit.reindexComparison (awayOver e K₀)
         ((awayOver e K₀).mapsTo_inverseImage (P := P))
         ((canonicalCoefficients R (baseChangeProjection F L s ≫ p) M).cohomology n)).hom
-        ((((awayGaloisCohomologyFunctor e K₀ F L s p R hT n).obj M).ρ σ).hom.hom x) =
-      (((galoisCohomologyFunctor F L s p R hT n).obj M).ρ σ).hom.hom
+        ((((awayGaloisCohomologyFunctor e K₀ F L s p R hT n).obj M).ρ σ).asHom.hom.hom x) =
+      (((galoisCohomologyFunctor F L s p R hT n).obj M).ρ σ).asHom.hom.hom
         ((RestrictedLevelColimit.reindexComparison (awayOver e K₀)
           ((awayOver e K₀).mapsTo_inverseImage (P := P))
           ((canonicalCoefficients R (baseChangeProjection F L s ≫ p) M).cohomology n)).hom x) :=

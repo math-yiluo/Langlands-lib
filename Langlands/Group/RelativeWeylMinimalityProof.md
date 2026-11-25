@@ -126,5 +126,5 @@ The direct imports are the unchanged published target module and the
 companion exchange module. Apart from those, the proof uses subgroup
 closure and membership laws, word products and length bounds, natural-number
 minimization, inversion, and elementary natural-number arithmetic. The
-Coxeter prerequisites are derived within this contribution rather than
+Coxeter prerequisites are derived within this module rather than
 added to the target's assumptions.

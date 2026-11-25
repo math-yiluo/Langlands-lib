@@ -1,7 +1,5 @@
 # Finite fibre generic points of smooth DVR schemes
 
-Author: Worker 219.
-
 For a smooth quasi-compact scheme `p : X ⟶ Spec R` over an arbitrary DVR
 `R : Type u`, `smoothDvrFibreGenericPoints R X p` is an actual `Finset X`
 containing exactly the images of generic points of components of the two

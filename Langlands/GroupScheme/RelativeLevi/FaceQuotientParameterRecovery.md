@@ -1,6 +1,7 @@
 # Original term and quotient recovery on arbitrary chart parameters
 
-This internal Task 7200 adapter constructs actual original term and quotient
+This internal adapter for the proof of `RelativeUnipotentRadicalFiltrationStatement`
+(finite vector-bundle filtrations of supplied relative unipotent radicals) constructs actual original term and quotient
 isomorphisms after any scheme map into an original affine chart, with a
 prescribed equal map to the original base.
 

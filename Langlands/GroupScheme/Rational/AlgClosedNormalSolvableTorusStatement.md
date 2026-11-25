@@ -1,7 +1,5 @@
 # Normal solvable subgroups of reductive groups over algebraically closed fields
 
-Author: Worker 1378.
-
 `AlgClosedReductiveNormalSolvableTorusStatement.{u}` is a proposition
 target over every algebraically closed field `k : Type u`. Let `G` be an
 actual group scheme over `Spec k` with `IsPseudoReductive G`. Let

@@ -6,8 +6,8 @@ French version dated 9 July 2026, printed p.34 / PDF p.40. The registered source
 is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The precise passage runs from the ordered neighborhood set through the
-canonical germ maps. The explicit representative description is a separate
-obligation.
+canonical germ maps. The explicit representative description is stated in
+`BasisStalkRepresentativesStatement` and proved in `BasisStalkRepresentatives`.
 The supplementary 2010-edition errata, PDF pp.2–3, do not correct this stalk
 passage.
 
@@ -46,7 +46,3 @@ nonemptiness, intersection closure, or nonzero group hypothesis is used.
 Empty spaces are allowed, and an empty basis open cannot contain a supplied
 point. The construction does not use representative-existence/equality results,
 etale spaces, or sheafification.
-
-Worker 1215 implemented the construction and intrinsic laws. Worker 633
-contributed source and scope checks. Worker 6 supplied the original passage
-audit and suggested the universe-lift and categorical construction route.

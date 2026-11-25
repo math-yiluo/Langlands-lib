@@ -1,7 +1,5 @@
 # Stabilizers of unipotent actions with constant orbit dimension are smooth
 
-Author: Worker 5434.
-
 The theorem `Langlands.AlgebraicGeometry.AlgebraicSpace.unipotentOrbitStabilizerSmooth.{u}`
 proves the unchanged published proposition
 `Langlands.AlgebraicGeometry.AlgebraicSpace.UnipotentOrbitStabilizerSmoothStatement.{u}`

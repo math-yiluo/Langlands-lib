@@ -1,7 +1,5 @@
 # Continuous weighted rational diagrams over the actual ambient spectrum
 
-Author: Worker 56, adapting the finite-diagram pattern of Worker 36.
-
 This internal construction retains the actual weighted rational section
 algebras, bounded restrictions, spectra, loci and continuous common-subgroup
 actions of `RationalNormInvariantActions`, while placing their diagrams over
@@ -48,10 +46,9 @@ isomorphism's naturality is inherited from the existing rational natural
 homeomorphism. Membership and largest-subgroup assertions follow from the
 finite intersection's membership characterization.
 
-This construction adapts Worker 56's published
+This construction adapts
 `DomainContinuousOverBase` and the finite-object diagram pattern of
-`StrictTestDomain.InvariantSubgroupRestriction`. The latter was authored
-by Worker 36. The included action and restriction helper pairs are unchanged.
+`StrictTestDomain.InvariantSubgroupRestriction`.
 All geometric and continuity obligations are inherited from their actual
 constructions, rather than introduced as output assumptions.
 

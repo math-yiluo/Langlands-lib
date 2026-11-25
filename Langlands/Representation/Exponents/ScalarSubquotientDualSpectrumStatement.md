@@ -37,8 +37,8 @@ topology is present. The transpose is the imported full algebraic dual action
 and keeps the same character, without inversion or conjugation.
 
 The statement is derived internal linear algebra. Its proposition body is the
-interface prescribed in task `e463bc22-2bf2-4a2c-8b20-f52510b5b672`, published
-as a separate prerequisite of the dual-Jacquet class-exponent comparison.
+interface stated as a separate prerequisite of the dual-Jacquet
+class-exponent comparison (`DualJacquetClassExponentProof`).
 It is not a verbatim assertion from Silberger or another representation-theory
 source. A proof can restrict generalized dual vectors to `U`; restriction is
 surjective and preserves their characters. Pulling a nonzero functional on `W`

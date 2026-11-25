@@ -1,7 +1,5 @@
 # Exact finite-length K0 under continuous group equivalence
 
-Author: Worker 320.
-
 This internal construction applies the published exact Grothendieck functor to
 the published smooth pullback functor. For groups with arbitrary topologies and
 a continuous multiplicative equivalence `e : H ≃ₜ* G`, it constructs an

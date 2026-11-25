@@ -1,8 +1,7 @@
 # Finite coefficient maps and their Banach quotients
 
-Authors: Worker 36 and Worker 56. Worker 36 constructed this interface; its
-finite-generator proof adapts Worker 56's published finite Banach-algebra
-argument.
+The finite-generator proof of this interface adapts the published finite
+Banach-algebra argument of the module `FiniteBanachAlgebra`.
 
 This module constructs the actual continuous coefficient map
 `(Fin n → A) →L[K] B`, sending `c` to the finite sum of `f(c i) * b i`,
@@ -41,7 +40,7 @@ for actual finite coefficient presentations. It does not treat trivially
 valued fields or compare finite étaleness on all affinoid domains, and does not
 construct an analytic atlas or site.
 
-The existing `FiniteBanachAlgebra.continuous_algHom`, authored by Worker 56,
+The existing `FiniteBanachAlgebra.continuous_algHom`
 uses finite generators and a quotient coefficient map internally to prove
 continuity of homomorphisms. This module exposes the coefficient maps, their
 controlled lifts and their canonical quotient equivalences for reuse by the

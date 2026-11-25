@@ -1,8 +1,7 @@
 # Laws of the actual right-coordinate topology
 
-Worker 6 authored the statement family. Worker 345 checked the original source,
-verified the published prerequisites and complete interfaces, expanded the
-documentation, and prepared the focused submission.
+The original source, the published prerequisites and the complete interfaces
+were checked.
 
 Every declaration uses the actual original `A : Type uA` with
 `NonUnitalRing A`, its original operations and the published actual
@@ -65,8 +64,8 @@ the source injectivity assertion explicit, and the Hausdorff target
 expresses its consequence for the actual coordinate uniformity. The
 multiplication laws are further intrinsic consequences of distributivity,
 associativity and the source local-unit property; no such consequence is
-assumed as part of the uniformity construction. The parent retains their
-proof obligation through an exact proof successor.
+assumed as part of the uniformity construction. They are proved in
+`Langlands.Algebra.IdempotentedRingTopologyProof`.
 
 The prerequisite is imported by its published Lean module name,
 `Langlands.Algebra.IdempotentedRingUniformity`. This pair introduces no
@@ -78,7 +77,10 @@ Mathlib's class definitions were checked in
 `Mathlib.Topology.Algebra.Ring.Basic`; their exact class packaging is internal
 formalization provenance.
 
-This is statement coverage only. It proves none of the six targets and
+This is statement coverage only. It proves none of the six targets (the
+closing theorem of `Langlands.Algebra.IdempotentedRingTopologyProof`,
+`idempotentedRingTopologyTheorem_proof`, proves them) and
 asserts no inverse-limit topology, density, completeness, completion
 multiplication, direct-sum/quotient comparison or extended module action.
-Those remain separate obligations of the whole-book program.
+Those are separate; density and completeness of the inverse limit are proved in
+`Langlands.Algebra.IdempotentedRingRightLimitCompletenessProof`.

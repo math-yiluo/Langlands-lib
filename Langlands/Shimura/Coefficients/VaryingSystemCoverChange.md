@@ -1,7 +1,5 @@
 # Contravariant cover change of whole varying-torsor systems
 
-Author: Worker 13.
-
 This internal construction makes the associated-sheaf system on varying finite
 geometric torsors contravariant in its whole cover diagram. Its inputs and maps
 are the actual constructions in [VaryingCoverInverse](VaryingCoverInverse.md),
@@ -93,9 +91,9 @@ isomorphism `L_Z(-) ≅ L_Y(-)`. Its forward and inverse maps are cover
 change along `e.hom` and `e.inv`. The two inverse laws follow from the
 proved composition and identity laws and the inverse laws of `e`.
 
-This unit treats changes of cover diagrams over a fixed scheme and group
-diagram. Identity and composition coherence for whole-system base change,
-non-etale inverse image, algebraic-closure base change, compact supports,
-cohomology comparisons and actual Shimura realization remain separate
-obligations. In particular, the torsor hypotheses are inputs to the existing
+This module treats changes of cover diagrams over a fixed scheme and group
+diagram. Identity and composition coherence for whole-system base change
+(proved in `EtaleVaryingSystemPullbackCoherence`), non-etale inverse image,
+algebraic-closure base change, compact supports, cohomology comparisons and
+actual Shimura realization are not part of this module. In particular, the torsor hypotheses are inputs to the existing
 system construction; this file does not construct Harris's particular torsors.

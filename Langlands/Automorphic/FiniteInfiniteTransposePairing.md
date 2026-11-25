@@ -1,6 +1,7 @@
 # The intrinsic global transpose pairing from factor forms
 
-This internal construction for Task 7294 assembles an actual finite
+This internal construction for the cuspidal contragredient of dual cusp forms
+(`CuspidalTransposeInverseContragredientStatement`) assembles an actual finite
 adelic transpose pairing and a full archimedean transpose pairing into
 the intrinsic pairing on the original automorphic realization.
 

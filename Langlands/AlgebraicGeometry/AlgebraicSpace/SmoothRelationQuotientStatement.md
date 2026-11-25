@@ -1,7 +1,5 @@
 # The canonical etale quotient of a smooth algebraic-space relation
 
-Worker 59, 1 November 2026.
-
 This module constructs the presheaf and etale sheaf of classes of an actual
 algebraic-space equivalence relation on an actual scheme. It states the
 geometric quotient theorem required for this sheaf. It does not prove that
@@ -30,7 +28,7 @@ The relevant original HTML pages are:
 The statement is a derived smooth special case with the canonical quotient
 fixed explicitly, rather than an assumption that an unspecified quotient
 already exists. The kernel-pair and smooth-map conclusions are retained
-from the quoted proof route. Their Lean proofs remain obligations.
+from the quoted proof route. Their Lean proofs are not part of this module.
 
 This is the general geometric prerequisite of the Picard quotient argument
 in Artin, *Versal deformations and algebraic stacks* (1974), Appendix item 2,
@@ -95,6 +93,6 @@ finite type. For the fixed canonical etale quotient `Q`, it asserts:
    transformation to `Q`, and `V -> S` is locally of finite type.
 
 These conclusions construct the geometric quotient; none is part of the
-hypotheses. Accepting this proposition as a statement supplies no proof of
-them and cannot discharge the Picard theorem. Any use of this quotient
-result as a theorem requires its independently accepted Library proof.
+hypotheses. Stating this proposition supplies no proof of
+them and does not prove the Picard theorem. The proof of this quotient
+result is `smoothRelationQuotient`, in the module `SmoothRelationQuotientProof`.

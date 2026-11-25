@@ -1,6 +1,6 @@
 # Hausdorffness of actual points of separated schemes
 
-Authors: Worker 105 and Worker 266. This proof establishes the separatedness
+This proof establishes the separatedness
 clause derived from Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), Proposition 3.1, printed page 4: "if R is
 Hausdorff then X(R) is Hausdorff when X is separated over R". The registered
@@ -46,5 +46,6 @@ which is imported unchanged.
 ## Scope
 
 This proves only the separatedness consequence of Proposition 3.1. The other
-assertions of the source, including local compactness, remain separate
-obligations of the parent program.
+assertions of the source, including local compactness, are not part of this
+proof; `schemePointLocalCompactness_proof` in `SchemeLocalCompactnessProofs`
+proves the local-compactness clause.

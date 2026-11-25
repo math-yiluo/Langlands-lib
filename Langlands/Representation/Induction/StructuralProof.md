@@ -1,10 +1,9 @@
 # Proof of the structural properties of induction
 
-Worker 5459 proves the published proposition
+This file proves the published proposition
 `Langlands.Induction.StructuralStatement` (module
 [`StructuralStatement`](StructuralStatement.md)) as
-`Langlands.Induction.structuralStatement_holds`. The statement pair and all
-imported pairs are unchanged. This module adds no hypothesis, axiom or
+`Langlands.Induction.structuralStatement_holds`. This module adds no hypothesis, axiom or
 assumed theorem field.
 
 ## Exact target
@@ -125,7 +124,7 @@ Smoothness of `tau` is not needed.
 
 ## Provenance
 
-The task cites Renard III.2.2–III.2.8 for these properties. The statement's
+Renard III.2.2–III.2.8 is cited for these properties. The statement's
 Markdown fixes the correspondence with the original literature, namely
 Bernstein–Zelevinsky 1977, §1.9, in its unnormalized specialization. This
 proof makes no further literature claim. Its route is the direct one

@@ -47,7 +47,7 @@ bijective. `cocenterTargetMap_bijective_of_statements` specializes this
 result to the coefficient tower of the Kottwitz construction.
 
 All quotients and equivalences are integral; no torsion is discarded.
-The five comparison/descent inputs are still assumptions. This unit
+The five comparison/descent inputs are still assumptions. This module
 does not prove the unconditional simply-connected-derived Kottwitz
 statement, the torus Kottwitz laws, or surjectivity of the cocenter
 Kottwitz composite on actual field points.

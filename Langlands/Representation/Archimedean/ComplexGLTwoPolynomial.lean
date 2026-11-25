@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Polynomial algebra for the irreducibility of `GL_2(ℂ)` principal series

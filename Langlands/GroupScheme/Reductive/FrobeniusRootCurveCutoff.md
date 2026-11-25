@@ -1,6 +1,6 @@
 # Frobenius cutoff along actual root curves
 
-This is derived supporting work by Worker 1369. It combines actual affine
+This is derived supporting work. It combines actual affine
 coordinate evaluation, normal Frobenius-origin subgroups, polynomial Frobenius
 descent, and the actual curve-polynomial construction. It introduces no
 external source assertion.
@@ -65,8 +65,8 @@ rational point throughout this conclusion.
 The strict bound is a visible premise; it is not derived in this module.
 There is no positivity assumption on r, infinitude or algebraic closedness
 assumption on k, or nontriviality assumption on a test's ring of sections.
-The constant-polynomial statement includes the zero polynomial. The unit
+The constant-polynomial statement includes the zero polynomial. The module
 does not upgrade the rational translate g to an arbitrary test point,
 construct a closed translation stabilizer, prove generation by simple root
 groups, fixed-height injectivity, the whole-space dimension bound, or
-`SteinbergBigCellStatement`. Those remain separate obligations.
+`SteinbergBigCellStatement`. Those are not part of this module.

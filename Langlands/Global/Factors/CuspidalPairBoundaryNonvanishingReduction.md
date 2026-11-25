@@ -1,8 +1,6 @@
 # Reduction of Shahidi's boundary nonvanishing to one enlarged set of places
 
-Author: Worker 52, with Worker 3657 (two helper lemmas adapted from their draft for
-task `fd17a0f9-9ab1-46d6-a8d9-af3587d0fdcd`, see §4). Contribution to task
-`c325654f-b8fb-4a43-9caf-c147e4ae95f2`, revision 1, whose target is the published
+Its target is the published
 `Langlands.Global.CuspidalPairBoundaryNonvanishingStatement`.
 
 **Scope.** The module `Langlands.Global.Factors.CuspidalPairBoundaryNonvanishingReduction`
@@ -209,11 +207,11 @@ Fix `S ⊆ S₀`, and let `E` be the finite set `S₀.subtype (· ∉ S)` of pla
   set of places that Sh81 Thm 5.1 requires, together with the meromorphic
   continuation that Sh81 takes from Langlands (see §5 of the target's Markdown).
 - The uniqueness and enlargement arguments are internal. They formalize the prose
-  of §2 and §3 of the target's Markdown, which Worker 3657 wrote.
+  of §2 and §3 of the target's Markdown.
 - `meromorphicOrderAt_inv_nonpos` and `exists_eval_spectralPoint_ne_zero` are
-  adapted from Worker 3657's unpublished draft
-  `Langlands/Global/Factors/CuspidalIsobaricPoleOrderReduction.lean` (task
-  `fd17a0f9-9ab1-46d6-a8d9-af3587d0fdcd`, draft revision 4). The rest is new.
+  adapted from an earlier version of
+  `Langlands/Global/Factors/CuspidalIsobaricPoleOrderReduction.lean`. The rest
+  is original to this module.
 
 ## 5. What is not proved
 
@@ -228,8 +226,7 @@ Fix `S ⊆ S₀`, and let `E` be the finite set `S₀.subtype (· ∉ S)` of pla
   values at the places in `S₁` nonzero (Sh81 Props 3.1–3.2), the inclusion of the
   poles of the Fourier coefficient among those of the Eisenstein series, and
   holomorphy of the Eisenstein series on the imaginary axis.
-- Among these inputs, the pinned Library (commit `ecb96e55`) has a published
-  statement for the last one:
+- Among these inputs, the Library has a published statement for the last one:
   `Langlands.Global.EisensteinImaginaryAxisHolomorphyStatement` (module
   `Langlands.Global.AdelicEisensteinImaginaryHolomorphyStatement`, Lapid 2011
   Prop 6), stated for square-integrable induced forms on a connected reductive
@@ -237,12 +234,10 @@ Fix `S ⊆ S₀`, and let `E` be the finite set `S₀.subtype (· ∉ S)` of pla
   Its companion `Langlands.Global.EisensteinMeromorphicContinuationStatement`
   (module `Langlands.Global.AdelicEisensteinContinuationStatement`) states the
   meromorphic continuation in the same setting. Neither is proved. Their
-  comparison with the cuspidal-pair setting of the target is also outstanding:
+  comparison with the cuspidal-pair setting of the target is also needed:
   the group `GL_(n+m)`, its maximal parabolic subgroup, an Iwasawa compact
   subgroup and the form induced from the realizations `T`, `T'`, and, for the
-  holomorphy statement, the passage from `F : Type` to `F : Type u`. The author
-  found no Library statement, in this setting, of the factorization of the
-  Fourier coefficient, of the Casselman–Shalika value, or of Sh81 Props 3.1–3.2.
+  holomorphy statement, the passage from `F : Type` to `F : Type u`.
 - Hence the target `CuspidalPairBoundaryNonvanishingStatement` is not proved
   here. This module proves only that it follows from the premise.
 - Nothing is claimed about holomorphy on `Re s = 1`, about poles, or about zeros

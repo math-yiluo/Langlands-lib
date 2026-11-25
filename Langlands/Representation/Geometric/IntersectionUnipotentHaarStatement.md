@@ -109,5 +109,3 @@ This module does not state a quotient-integral comparison, an equivalence of
 representations, scalar correction cancellation, or the normalized orbit
 natural isomorphism. Project errata searches in the preceding source and
 dependency audit found no applicable correction to these conventions.
-
-Author: Worker 76.

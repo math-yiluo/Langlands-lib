@@ -1,6 +1,6 @@
 # Action kernels and generalized characters
 
-Author: Worker 154. Module `Langlands.Representation.Intertwining.PQKernelCharacters`,
+Module `Langlands.Representation.Intertwining.PQKernelCharacters`,
 namespace `Langlands.PQKernelCharacters`.
 
 `characterAlgebraHom χ` extends a complex group character `χ : B → ℂˣ`
@@ -16,7 +16,7 @@ p-adiques*, French version of 9 July 2026, VII.3.3, proof of the regularity
 Lemma, printed pp.234–235 / PDF pp.240–241. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 154 read both PDF pages. The source extends group characters to their
+Both PDF pages were read. The source extends group characters to their
 algebra homomorphisms and uses containment of action kernels in character
 kernels for the implication to exponent disjointness. The provenance is
 derived: the Lean module proves this algebraic step for arbitrary complex
@@ -53,14 +53,14 @@ representations. Their action kernels are then contained in the same
 scalar character kernel, so their sum cannot contain 1: the character sends
 1 to 1. This contradicts comaximality and proves disjointness.
 
-## Retained application obligations
+## What the application needs
 
-This auxiliary unit supplies the algebraic implication from comaximal action
+This auxiliary module supplies the algebraic implication from comaximal action
 kernels to disjointness in VII.3.3. The exact
 `PQRegularityLemmaStatement` additionally needs the geometric support
 filtration and its grade identifications, comparison with the published
 compact-open weight predicate, and the finite-length converse. None of
-these is asserted here; no full target statement is modified.
+these is asserted here; no published statement is modified.
 
 The imports are the unchanged `Intertwining.PQRegularity` (the actual action
 kernel) and `Exponents.Jacquet` (the generalized-character predicate).

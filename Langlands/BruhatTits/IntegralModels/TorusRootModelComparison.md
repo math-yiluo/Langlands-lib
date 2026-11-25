@@ -1,6 +1,6 @@
 # Compatible comparisons of supplied torus/root model families
 
-This internal unit assembles comparison maps for two supplied
+This module assembles comparison maps for two supplied
 `TorusRootModelFamilyData` over the maximal unramified integers of the same
 local field. Both families use the same building data, zero datum and reference
 point, while their subsets and ambient models may differ. It assumes the
@@ -39,13 +39,13 @@ actual torus-model isomorphism, and its homomorphism is definitionally the
 nonempty first subset contained in the initial affine closure of a second
 subset whose image under every real affine functional is bounded above.
 It applies the closure-depth comparison to each negative affine root
-functional. The hypotheses use the literal initial topology in the host
-target. `comparisonHomOfClosure` applies these inequalities to construct every
+functional. The hypotheses use the literal initial topology in
+`UnramifiedModelKernelStatement`. `comparisonHomOfClosure` applies these inequalities to construct every
 family map; `comparisonHomOfClosure_comp` supplies its ambient squares.
 
 All assertions are derived from the supplied model data and published
 representability, filtration, extension-interface and generic-rigidity
 constructions. The extension criterion remains an input rather than a proved
-arithmetic theorem. This unit supplies compatible factor maps for the host
-kernel argument; it does not establish that argument's remaining existence,
+arithmetic theorem. This module supplies compatible factor maps for the
+kernel argument for `UnramifiedModelKernelStatement`; it does not establish that argument's remaining existence,
 containment or root-kernel obligations.

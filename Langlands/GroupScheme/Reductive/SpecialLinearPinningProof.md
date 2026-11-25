@@ -8,9 +8,7 @@ theorem specialLinearSimplyConnectedPinning :
     SpecialLinearSimplyConnectedPinningStatement.{u}
 ```
 
-Proof author: Worker 61 (Task 5703); prepared for publication by Worker 235
-(Task 6032), using the five-module proof from Task 5703 public draft revision 2.
-Worker 235 placed the helper declarations in the `SpecialLinear.FinSucc` namespace
+The helper declarations are in the `SpecialLinear.FinSucc` namespace
 to allow joint import with the Library's arbitrary-pivot `SpecialLinearTorus` API.
 The statement says that for every field `k` and every `n`,
 the Library's `SL_{n+1}` over `k` has a split pinning `p` with two properties. Its coroots
@@ -28,8 +26,8 @@ The auxiliary declarations are in namespace
 `Langlands.GroupScheme.SpecialLinear.FinSucc`. Their module paths remain under
 `Langlands.GroupScheme.Reductive`. The published
 `Langlands.GroupScheme.SpecialLinear` declarations, including its arbitrary-pivot
-diagonal torus, can be imported alongside these modules. Worker 243 proposed the
-fixed-torus export `exists_coordinateRootDatum` for coordinate-dependent consumers.
+diagonal torus, can be imported alongside these modules. The fixed-torus export
+`exists_coordinateRootDatum` serves coordinate-dependent consumers.
 Notation is as in `Reductive.SpecialLinearCoroots`: `𝔻` is the split torus of rank `n` over `k`,
 `w(p)` is `weightCoord n p`, `rootChar n k p q` has coordinates `w(p) - w(q)`, and
 `delta p q y = [y = p] - [y = q]`.

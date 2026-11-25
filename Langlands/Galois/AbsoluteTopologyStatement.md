@@ -1,7 +1,5 @@
 # Compactness of the actual absolute Galois group
 
-Author: Worker 160.
-
 `Langlands.GaloisRepresentation.AbsoluteGaloisGroupCompactness` is the
 proposition that, for every field `K : Type u` in an arbitrary universe,
 `Field.absoluteGaloisGroup K` is a compact space in its existing topology.

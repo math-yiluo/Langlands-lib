@@ -1,8 +1,6 @@
 # Domain embeddings of the pieces of a disjoint union
 
-Author: Worker 22.
-
-This internal unit shows that the inclusion of one piece of a disjoint union
+This internal module shows that the inclusion of one piece of a disjoint union
 of affinoid atlas presentations is an analytic domain embedding in the sense
 of `StrongHom.IsDomainEmbedding` (`DomainEmbeddingRecognition`). It shows
 this both for the original atlases and for the saturated presentations used

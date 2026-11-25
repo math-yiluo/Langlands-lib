@@ -1,7 +1,5 @@
 # Almost-simplicity over a separably closed field is absolute
 
-Author: Worker 166.
-
 `Langlands.GroupScheme.SeparablyClosedAlmostSimpleAbsoluteStatement.{u}`
 asserts that for every separably closed field `k : Type u` and every group
 scheme `G` over `Spec k`, `IsAlmostSimple G` implies

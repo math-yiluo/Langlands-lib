@@ -4,9 +4,6 @@
 universe-polymorphic definition of type `Prop`. This module states the result
 and supplies no proof.
 
-Worker 712 implemented this pair. Worker 404 supplied the specification, the
-source selection and the reuse boundaries in the task contract.
-
 ## Exact statement
 
 The checked declaration, in namespace `Langlands.AlgebraicGeometry` with
@@ -20,7 +17,7 @@ def ProjectiveSpaceTwistOneAmpleStatement : Prop :=
 ```
 
 Its type is `Prop`, with the single universe parameter `u`. The body is
-literally the proposition displayed in the task contract. A private check
+literally the proposition displayed in its specification. A private check
 compiled the identification `Iff.rfl` between the declaration and that text.
 
 The module imports only `Langlands.AlgebraicGeometry.ProjectiveSpace.TwistOne`
@@ -119,7 +116,8 @@ conversely a generator near `x` is a basis of the stalk, so it is not in
 `Langlands.AlgebraicGeometry.Modules.SectionResidueComparison`, proves that
 hypothesis. This statement does not use the residue formulation.
 
-The derivation, which the proof successor is expected to formalize, is the
+The derivation, which `projectiveSpaceTwistOneAmple` in
+`Langlands.AlgebraicGeometry.ProjectiveSpace.TwistOneAmpleProof` formalizes, is the
 following.
 
 1. **Bundling.** Lemma 27.10.2, for `f = X i` of degree one, trivializes
@@ -183,19 +181,20 @@ slogan. The snapshot of `01PS.html` reports five further comments on Section
 28.27 but does not retain their text. None of the retained comments changes
 the passages used here.
 
-## Owners and remaining obligations
+## Results reused by the proof
 
-This unit is a prerequisite of the arbitrary-field ample-existence route
-coordinated by Worker 404. The exact proof of this statement must reuse,
-after their publication, the following owners. It must not keep them as outer
-hypotheses or duplicate them.
+This module is a prerequisite of the arbitrary-field ample-existence route.
+The proof `projectiveSpaceTwistOneAmple` of this statement reuses the
+following results. It does not keep them as outer hypotheses or duplicate them.
 
-- The local-frame workflow (task `5b16e18e-acbd-4449-8966-975c52bbee25`).
-  Its statement `ProjectiveSpaceTwistOneLocalFramesStatement` is published,
-  and its exact proof successor supplies local rank one.
-- The whole-coordinate-generation-open workflow (task
-  `4b81eafb-03e2-4a09-b57d-af7d8ee3c8b7`). It owns
-  `ProjectiveSpaceCoordinateGenerationOpenStatement` and its proof successor.
+- The local frames of `𝒪(1)`: the statement
+  `ProjectiveSpaceTwistOneLocalFramesStatement` and its proof
+  `projectiveSpaceTwistOneLocalFrames`
+  (`...ProjectiveSpace.TwistOneLocalFramesProof`), which supplies local rank one.
+- The whole coordinate generation open: the statement
+  `ProjectiveSpaceCoordinateGenerationOpenStatement` and its proof
+  `projectiveSpaceCoordinateGenerationOpen`
+  (`...ProjectiveSpace.CoordinateGenerationOpenProof`).
 - The published coordinate-cover proof `projectiveSpaceCoordinateCover`.
 - The published section/isomorphism transport
   `trivializationOpen_mapIso` and the right unitor `tensorRightUnitor`.
@@ -206,8 +205,8 @@ This module states only the proposition above. It does not state or prove:
 
 - any comparison `𝒪(1)^{⊗ m} ≅ 𝒪(m)` or any property of twists other than
   degree one;
-- ampleness of a pullback along a closed immersion (an existing downstream
-  owner), projectivity of abelian varieties, field descent, or any
+- ampleness of a pullback along a closed immersion (stated in
+  `ClosedImmersionPullbackAmpleStatement`), projectivity of abelian varieties, field descent, or any
   group-scheme ample-existence result;
 - the identification `Γ(D₊(f), 𝒪(1)) = S(1)_(f)` or any chart isomorphism of
   `D₊(X i)` with affine space.

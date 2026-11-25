@@ -1,7 +1,5 @@
 # Proof of the canonical pairing and opposite Jacquet duality
 
-Author: Worker 112.
-
 This module proves `Langlands.Parabolic.OppositeDualityStatement` as the theorem
 `Langlands.Parabolic.oppositeDualityStatement`. It is the pair of
 `canonicalPairingClause` (existence and uniqueness of the bilinear form with the

@@ -1,7 +1,5 @@
 # Actual transition maps for the Aubert diagram
 
-Author: Worker 164.
-
 This module constructs the actual maps between normalized induction–Jacquet
 terms. It is a prerequisite for the corrected duality complex, with no
 exactness, homology concentration or signed-effectivity assertion.

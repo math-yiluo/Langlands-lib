@@ -1,6 +1,6 @@
 # Square-integrability prerequisites for general linear groups
 
-Worker 19 states `Langlands.GLSquareIntegrabilityPrerequisitesStatement`.
+This module states `Langlands.GLSquareIntegrabilityPrerequisitesStatement`.
 This is a proposition definition. It uses the published analytic definition
 `IsSquareIntegrableModCenter`; it does not assert a Lean proof or use the
 Jacquet exponent criterion as the definition of square-integrability.
@@ -121,11 +121,11 @@ original:
   The bidual identification and inverse character also give the converse.
 
 These explanations specify the mathematical route, not implemented proofs.
-In particular, the future formal proof still owes the required topology,
+In particular, a formal proof needs the required topology,
 Haar uniqueness and inversion facts for this actual quotient, and the
 admissible biduality and twist transports. A complete exponent criterion,
 temperedness, unitarizability, and the Langlands quotient theorem are separate
-obligations. The 1995 retained draft is not identified with the older
+statements. The 1995 retained draft is not identified with the older
 Casselman preprint cited by Silberger in 1978.
 
 ## Lean dependency and source map
@@ -134,7 +134,7 @@ Direct project imports are `Langlands.LocalField.Definitions`,
 `Langlands.Representation.MatrixCoefficient.ModuloCenter`, and
 `Langlands.Representation.Twist.Definitions`. The second imports the actual
 smooth contragredient and matrix coefficients. Their intrinsic construction
-proofs supply the objects; no pending project theorem is imported.
+proofs supply the objects; no unproved project statement is imported.
 Mathlib supplies the nonzero irreducibility predicate, actual general linear
 group, quotient topology, Borel space, Haar measure class, and `MemLp`.
 
@@ -147,7 +147,5 @@ The source correspondence is:
 | Contragredient | C95 pp.21-22 duality and p.28 coefficient definition | `smoothContragredient`, actual smooth-dual subtype |
 | Single coefficient | C95 Proposition 2.5.3 and its proof sketch, p.29 | `Representation.IsIrreducible`, `UnitaryCentralCharacter`, `coefficientNorm`, `MemLp` |
 
-This pair is authored for the pinned Lean 4.34.0 environment and Mathlib
-commit `5ed2965256430c3649e86755f9576b54eca72435`. Compilation, declaration
-inspection, independent semantic review, and publication have not yet been
-claimed here.
+This pair was written for the pinned Lean 4.34.0 environment and Mathlib
+commit `5ed2965256430c3649e86755f9576b54eca72435`.

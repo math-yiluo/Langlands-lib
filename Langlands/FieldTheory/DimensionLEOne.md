@@ -1,7 +1,5 @@
 # The norm criterion for fields of dimension at most one
 
-Author: Worker 1673.
-
 `Langlands.FieldTheory.HasDimensionLEOne K` is the finite-separable norm
 criterion for field-theoretic dimension at most one. It is a proposition
 definition; this module proves no dimension bound.

@@ -4,16 +4,13 @@ Module `Langlands.Representation.CuspidalSupport.BernsteinBlockCharacterizationS
 Namespace `Langlands.CuspidalSupport`.
 Entry proposition `BernsteinBlockCharacterizationStatement`; nothing is proved here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.7.1–VI.7.4, printed pp.180–186 / PDF pp.186–192. The
+VI.7.1–VI.7.4, printed pp.180–186 / PDF pp.186–192, were read. The
 statement is the Proposition of VI.7.2, printed p.184 / PDF p.190; its proof
 continues on printed p.185 / PDF p.191:
 
@@ -39,11 +36,11 @@ supercuspidal decomposition of `M(M)`).
 ## The objects
 
 All objects are published; this file constructs nothing. The setting is that
-of the companion VI.7.2 statement unit `BernsteinDecompositionStatements`
-(Worker 1222), on the standard-family framework of Worker 1153 (modules
+of the companion module `BernsteinDecompositionStatements` (statements of VI.7.2),
+on the standard-family framework (modules
 `BernsteinData` and `BernsteinBlock`). The binders and the instance
 declarations for the standard Levi follow the published VI.10.3 statement
-`BernsteinBlockJacquetFaithfulStatement` (Worker 6).
+`BernsteinBlockJacquetFaithfulStatement`.
 
 - `F`, `G`, `T`, `i`, `ν` and `family : BernsteinStandardFamily i ν` are as in
   `BernsteinDecompositionStatements`: a nonarchimedean local field, a group
@@ -134,9 +131,10 @@ equivalences:
 
 ## Scope
 
-This file states the VI.7.2 Proposition and proves nothing. A proof belongs to
-a separate `lean.proof@1` task targeting
-`BernsteinBlockCharacterizationStatement`. The source proof reads (i) and
+This file states the VI.7.2 Proposition and proves nothing. The Library derives
+`BernsteinBlockCharacterizationStatement` from named input statements (modules
+`BernsteinBlockCharacterizationReduction`, `BernsteinFixedLeviEmbeddingReduction`
+and `BernsteinBlockCharacterizationStatementInputs`). The source proof reads (i) and
 (iii) off the proof of the Bernstein decomposition, through the embedding
 `V ↪ IR(V)` and (VI.7.2.1). It deduces (ii) ⇒ (iii) from the exactness of
 `r_P^G` and the geometric lemma (VI.5.3).
@@ -145,9 +143,10 @@ Not stated here: the VI.7.3 Proposition. Its first assertion says that
 `i_P^G` maps `M(M)_𝔰` into `M(G)_{i_{MG}(𝔰)}`; its second, that `r_P^G` maps
 `M(G)_𝔱` into `∏_{𝔰 ∈ i_{MG}^{-1}(𝔱)} M(M)_𝔰`. It needs the Bernstein data of
 the Levi `M` itself (its own cuspidal data up to `M`-conjugacy) and the map
-`i_{MG}`. Neither is available in the published framework.
+`i_{MG}`. The module `BernsteinInductionRestrictionStatement` states it, with
+the fibre of `i_{MG}` expressed through the cuspidal data of `G` whose standard
+Levi lies in `M`.
 
 The file imports `Langlands.Representation.CuspidalSupport.BernsteinBlock` and
-`Langlands.Representation.Category.SmoothCoproducts` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+`Langlands.Representation.Category.SmoothCoproducts` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

@@ -1,8 +1,7 @@
 # The diagonal torus of the special linear group and its Lie weights
 
 Helper module for the proof of
-`Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement`. Author: Worker 61
-(Task 5703). It defines a rank-`n` diagonal torus of the Library's group scheme
+`Langlands.GroupScheme.SpecialLinearSimplyConnectedPinningStatement`. It defines a rank-`n` diagonal torus of the Library's group scheme
 `SpecialLinear.groupScheme (Fin (n + 1)) R`, which is `SL_{n+1}`. It also computes the torus
 weights on the Lie algebra in the matrix coordinates `lieMatrix` of
 `Reductive.SpecialLinearLieMatrix`. All declarations are in namespace

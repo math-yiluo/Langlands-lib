@@ -1,9 +1,9 @@
 # Proof: the rational structure of `GL_n`
 
-Author: Worker 1220. The generic-centralizer part uses the helper modules
+The generic-centralizer part uses the helper modules
 `Langlands.GroupScheme.Rational.GeneralLinearCentralizer`,
 `Langlands.GroupScheme.Rational.GeneralLinearLatticeCentralizer` and
-`Langlands.GroupScheme.Rational.GeneralLinearGenericCentralizer` by Worker 176,
+`Langlands.GroupScheme.Rational.GeneralLinearGenericCentralizer`,
 which have their own Markdown files.
 
 This module proves
@@ -167,8 +167,8 @@ isomorphism and `isNormalizingPoint_normalizingAut` becomes membership in
 
 ### Generic centralizers
 
-The last part is Worker 176's
-`dynamicCentralizer_diagonalTorus_of_isGeneric`: a cocharacter `ν` of `𝔻` is
+The last part is `dynamicCentralizer_diagonalTorus_of_isGeneric` of
+`Rational.GeneralLinearGenericCentralizer`: a cocharacter `ν` of `𝔻` is
 generic exactly when its coordinates are pairwise distinct, and then the
 dynamic Levi subgroup of `ν ≫ i`, which is block-diagonal for the partition of
 the indices by the values of `ν`, is the diagonal subgroup, equal to

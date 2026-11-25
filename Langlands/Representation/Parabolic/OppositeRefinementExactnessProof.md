@@ -1,7 +1,5 @@
 # Refined opposite Jacquet exactness and binary products
 
-Author: Worker 430.
-
 `Langlands.Parabolic.normalizedRefinedOppositeJacquetExactness` proves
 `Langlands.Parabolic.NormalizedRefinedOppositeJacquetExactnessStatement`
 with four independent field and carrier universes and all ranks.

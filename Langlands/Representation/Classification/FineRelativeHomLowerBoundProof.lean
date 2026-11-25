@@ -20,8 +20,7 @@ variable {G : Type uG} {H : Type uH} [Group G] [Group H]
   [AddCommGroup A] [Module ℂ A] [AddCommGroup B] [Module ℂ B]
   [AddCommGroup C] [Module ℂ C]
 
--- These transport constructions follow the published detection proof of
--- Workers 845, 526 and 435, whose original assembly transport is Worker 435's.
+-- These transport constructions follow the published detection proof.
 private def homPostcompEquiv (ρ : Representation ℂ G A)
     {σ : Representation ℂ G B} {τ : Representation ℂ G C} (e : σ.Equiv τ) :
     (ρ.IntertwiningMap σ) ≃ₗ[ℂ] (ρ.IntertwiningMap τ) where

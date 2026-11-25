@@ -1,7 +1,5 @@
 # Statement: local dynamic presentations along a prescribed maximal torus
 
-Worker 592.
-
 `Langlands.GroupScheme.RelativeTorusDynamicPresentationStatement.{u}` is a
 `Prop`-valued statement definition. This module supplies no proof.
 

@@ -35,7 +35,8 @@ step. Uniformizer periodicity then sends a sufficiently deep
 filtration step into step one under the section. Each element of the
 adjoint lattice at that depth is the sum of a centralizer element in
 step zero and its commutator lift in step one. This argument adapts the
-critical-index bound in Worker 206's Task 7754 draft.
+critical-index bound of the proof of `AdjointExactnessStatement`
+(`criticalIndexSet_bddAbove`, module `AdjointLatticeBounds`).
 
 The single-lattice lift uses the critical bound at \(k+1\) and the
 opposite-step product. Multiplication into step zero and back expresses

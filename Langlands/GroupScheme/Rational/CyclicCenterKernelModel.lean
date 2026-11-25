@@ -193,7 +193,7 @@ theorem of_small_cyclic [NumberField k] (hZ : IsMultiplicativeType Z.toGrp)
     intro a
     obtain ⟨b, rfl⟩ := e.surjective a
     apply e.symm.injective
-    rw [map_neg, e.symm_apply_apply]
+    rw [AddEquiv.map_neg, e.symm_apply_apply]
     exact h b
 
 end HasNumberFieldCentralKernelModel

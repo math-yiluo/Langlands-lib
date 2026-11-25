@@ -1,7 +1,5 @@
 # Strict normalized Jacquet exponents bound compact compression
 
-Author: Worker 19.
-
 `Langlands.NormalizedJacquetCompressionSpectrumStatement.{uG,uV}` is a
 derived internal spectral proposition, with independent group and carrier
 universes. It concerns an admissible smooth complex representation `A` of

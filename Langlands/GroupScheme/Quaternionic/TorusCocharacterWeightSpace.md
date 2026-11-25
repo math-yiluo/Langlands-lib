@@ -2,7 +2,7 @@
 
 Let `K` be any field, `D` a finite-dimensional division `K`-algebra, `σ` an
 involution of the first kind, and `q` a `σ`-quadratic form on the finite row space
-`D^n`. For any morphism `i : 𝔾ₘ^I ⟶ O(q)`, this internal unit compares the published
+`D^n`. For any morphism `i : 𝔾ₘ^I ⟶ O(q)`, this internal module compares the published
 all-test cocharacter weight spaces with the generic finite matrix row
 decomposition.
 
@@ -32,7 +32,7 @@ to `c`, so each summand lies in the cocharacter weight space.
 
 The provenance is internal and derived from the published isometry inclusion
 and cocharacter definition together with the generic row-weight restriction
-unit. The argument imposes no centrality, nondegeneracy, smoothness, faithfulness,
+module `Torus.FiniteMatrixRowWeightCocharacter`. The argument imposes no centrality, nondegeneracy, smoothness, faithfulness,
 or maximality assumption. It retains finite fields and characteristic 2.
 It proves the grouping step and leaves the maximal-torus multiplicities and
 Witt-index comparison to further arguments.

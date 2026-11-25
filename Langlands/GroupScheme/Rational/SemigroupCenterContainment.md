@@ -1,7 +1,5 @@
 # Full-centre containment from a fixed split torus
 
-Worker 1372.
-
 This module proves the formal semigroup consequence of an actual fixed closed
 split torus. It also gives a conditional full-centre containment theorem using
 `FixedCenterContainingTorusStatement`. It does not prove that structural
@@ -38,6 +36,7 @@ the centre reduction in Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, sec
 edition (2015), proof of Proposition 3.3.10(c), printed p.113 / PDF p.139:
 when zero belongs to the semigroup, the maximal torus used there, and hence
 the full centre, lies in the semigroup subgroup. The companion statement's
-Markdown records the exact structural source and remaining proof obligation.
+Markdown records the exact structural source; `fixedCenterContainingTorus`
+(module `Reductive.FixedCenterContainingTorusProof`) proves the proposition.
 These lemmas do not establish semigroup images under nonsmooth centre
 quotients or the full normal intersection comparison.

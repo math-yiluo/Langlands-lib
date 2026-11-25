@@ -1,7 +1,5 @@
 # Joint imports of actual source normalization modules
 
-Author: Worker 200.
-
 This internal assembly contains only imports and no declarations. It brings
 actual global open-cell and coordinate Bochner integration, weighted
 Iwasawa Bochner integration, finite-index gamma evaluation, opposite

@@ -52,28 +52,29 @@ structure Hom (U V : TwistedOver P ρ) where
   twist : G
   /-- The underlying arrow. -/
   left : U.obj.left ⟶ V.obj.left
-  w : left ≫ V.hom = U.hom ≫ (ρ twist).hom
+  w : left ≫ V.hom = U.hom ≫ (ρ twist).asIso.hom
 
 attribute [reassoc] Hom.w
 
-theorem rho_mul_hom (g g' : G) : (ρ (g * g')).hom = (ρ g').hom ≫ (ρ g).hom := by
+theorem rho_mul_hom (g g' : G) :
+    (ρ (g * g')).asIso.hom = (ρ g').asIso.hom ≫ (ρ g).asIso.hom := by
   rw [map_mul]
   rfl
 
-theorem rho_one_hom : (ρ 1).hom = 𝟙 X := by
+theorem rho_one_hom : (ρ 1).asIso.hom = 𝟙 X := by
   rw [map_one]
   rfl
 
 @[simp]
-theorem rho_inv_hom_hom (g : G) : (ρ g⁻¹).hom ≫ (ρ g).hom = 𝟙 X := by
+theorem rho_inv_hom_hom (g : G) : (ρ g⁻¹).asIso.hom ≫ (ρ g).asIso.hom = 𝟙 X := by
   rw [← rho_mul_hom, mul_inv_cancel, rho_one_hom]
 
 @[simp]
-theorem rho_hom_inv_hom (g : G) : (ρ g).hom ≫ (ρ g⁻¹).hom = 𝟙 X := by
+theorem rho_hom_inv_hom (g : G) : (ρ g).asIso.hom ≫ (ρ g⁻¹).asIso.hom = 𝟙 X := by
   rw [← rho_mul_hom, inv_mul_cancel, rho_one_hom]
 
 theorem hom_comp_rho_hom_inv (U : TwistedOver P ρ) (g : G) :
-    (U.hom ≫ (ρ g).hom) ≫ (ρ g⁻¹).hom = U.hom := by
+    (U.hom ≫ (ρ g).asIso.hom) ≫ (ρ g⁻¹).asIso.hom = U.hom := by
   rw [Category.assoc, rho_hom_inv_hom, Category.comp_id]
 
 /-- The identity: trivial twist and identity arrow. -/
@@ -117,16 +118,16 @@ theorem comp_left {U V W : TwistedOver P ρ} (f : U ⟶ V) (g : V ⟶ W) :
 
 /-- Build a twisted morphism from a group element and a covering arrow. -/
 def homMk {U V : TwistedOver P ρ} (g : G) (f : U.obj.left ⟶ V.obj.left)
-    (w : f ≫ V.hom = U.hom ≫ (ρ g).hom) : U ⟶ V :=
+    (w : f ≫ V.hom = U.hom ≫ (ρ g).asIso.hom) : U ⟶ V :=
   ⟨g, f, w⟩
 
 @[simp]
 theorem homMk_twist {U V : TwistedOver P ρ} (g : G) (f : U.obj.left ⟶ V.obj.left)
-    (w : f ≫ V.hom = U.hom ≫ (ρ g).hom) : Hom.twist (homMk g f w) = g := rfl
+    (w : f ≫ V.hom = U.hom ≫ (ρ g).asIso.hom) : Hom.twist (homMk g f w) = g := rfl
 
 @[simp]
 theorem homMk_left {U V : TwistedOver P ρ} (g : G) (f : U.obj.left ⟶ V.obj.left)
-    (w : f ≫ V.hom = U.hom ≫ (ρ g).hom) : Hom.left (homMk g f w) = f := rfl
+    (w : f ≫ V.hom = U.hom ≫ (ρ g).asIso.hom) : Hom.left (homMk g f w) = f := rfl
 
 variable (P ρ)
 
@@ -170,7 +171,7 @@ variable (P ρ)
 same underlying arrows. For a space with a left action this is isomorphic over
 `X` to `U ×_{X, g⁻¹} X`. -/
 def translate (g : G) : P.Over ⊤ X ⥤ P.Over ⊤ X :=
-  (MorphismProperty.Comma.mapRightIso (𝟭 C) (Discrete.natIso fun _ => (ρ g : X ≅ X)) :
+  (MorphismProperty.Comma.mapRightIso (𝟭 C) (Discrete.natIso fun _ => ((ρ g).asIso : X ≅ X)) :
     P.Over ⊤ X ≌ P.Over ⊤ X).functor
 
 variable {P ρ}
@@ -181,7 +182,7 @@ theorem translate_obj_left (g : G) (U : P.Over ⊤ X) : ((translate P ρ g).obj 
 
 @[simp]
 theorem translate_obj_hom (g : G) (U : P.Over ⊤ X) :
-    ((translate P ρ g).obj U).hom = U.hom ≫ (ρ g).hom :=
+    ((translate P ρ g).obj U).hom = U.hom ≫ (ρ g).asIso.hom :=
   rfl
 
 @[simp]
@@ -191,7 +192,7 @@ theorem translate_map_left (g : G) {U V : P.Over ⊤ X} (f : U ⟶ V) :
 
 theorem hom_translate (g : G) (U : P.Over ⊤ X) :
     TwistedOver.hom ((ι P ρ).obj ((translate P ρ g).obj U)) =
-      TwistedOver.hom ((ι P ρ).obj U) ≫ (ρ g).hom :=
+      TwistedOver.hom ((ι P ρ).obj U) ≫ (ρ g).asIso.hom :=
   rfl
 
 variable (ρ) in
@@ -386,7 +387,7 @@ action of `H` on `X` when `h` acts through a twisted endomorphism with twist
 `h⁻¹`. Then `h` acts on the sections of a presheaf by restriction along it, a
 left action. -/
 def IsLift {U : TwistedOver P ρ} {H : Subgroup G} (a : H →* (End U)ᵐᵒᵖ) : Prop :=
-  ∀ h : H, Hom.twist (a h).unop = (h : G)⁻¹
+  ∀ h : H, Hom.twist (a h).unop.asHom = (h : G)⁻¹
 
 variable [TopologicalSpace G]
 
@@ -417,13 +418,14 @@ theorem hom_base : TwistedOver.hom (base P ρ) = 𝟙 X := rfl
 
 /-- The twisted endomorphism of the base given by the action of `g`. -/
 def baseEndo (g : G) : base P ρ ⟶ base P ρ :=
-  homMk g (ρ g).hom ((Category.comp_id (ρ g).hom).trans (Category.id_comp (ρ g).hom).symm)
+  homMk g (ρ g).asIso.hom
+    ((Category.comp_id (ρ g).asIso.hom).trans (Category.id_comp (ρ g).asIso.hom).symm)
 
 @[simp]
 theorem baseEndo_twist (g : G) : Hom.twist (baseEndo (P := P) (ρ := ρ) g) = g := rfl
 
 @[simp]
-theorem baseEndo_left (g : G) : Hom.left (baseEndo (P := P) (ρ := ρ) g) = (ρ g).hom := rfl
+theorem baseEndo_left (g : G) : Hom.left (baseEndo (P := P) (ρ := ρ) g) = (ρ g).asIso.hom := rfl
 
 theorem baseEndo_mul (g g' : G) :
     baseEndo (P := P) (ρ := ρ) (g * g') = baseEndo g' ≫ baseEndo g :=
@@ -437,7 +439,7 @@ variable (P ρ)
 /-- The action of `G` on the base: `g` acts by the twisted endomorphism given by
 `g⁻¹`, so that `g` acts on sections by restriction along it. -/
 def baseAction : G →* (End (base P ρ))ᵐᵒᵖ where
-  toFun g := MulOpposite.op (baseEndo g⁻¹)
+  toFun g := MulOpposite.op (End.of (baseEndo g⁻¹))
   map_one' := by
     rw [inv_one, baseEndo_one]
     rfl
@@ -449,7 +451,7 @@ def baseAction : G →* (End (base P ρ))ᵐᵒᵖ where
 
 variable {P ρ}
 
-theorem baseAction_apply (g : G) : (baseAction P ρ g).unop = baseEndo g⁻¹ := rfl
+theorem baseAction_apply (g : G) : (baseAction P ρ g).unop.asHom = baseEndo g⁻¹ := rfl
 
 /-- The action of `G` on the base lifts the action on `X`. -/
 theorem isLift_baseAction :

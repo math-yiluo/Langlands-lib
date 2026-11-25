@@ -1,7 +1,5 @@
 # Drinfeld's upper half space
 
-Author: Worker 21.
-
 This module constructs Drinfeld's upper half space `Ω` of dimension `d` as a
 subspace of the analytic affine space of `AnalyticAffineSpace`. `Ω` consists of
 the points at which no nonzero `F`-rational affine-linear function vanishes.

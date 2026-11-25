@@ -1,6 +1,6 @@
 # Open-cell uniqueness for the groups `G(K)_{x,r}` over `K = F^ur`
 
-Helper module for Task 6191 (`LocalMoyPrasadGroupPropertiesStatement`), clauses 7 and 8
+Helper module for the proof of `LocalMoyPrasadGroupPropertiesStatement`, clauses 7 and 8
 (KP Lemma 7.3.16 and separation of the filtration, at positive depth). Nothing here is a
 new definition; every result is a theorem about the published objects
 `BuildingData.moyPrasad`, `BuildingData.rootGroupSpan`, `BuildingData.rootFiltrationSpan`,
@@ -66,10 +66,11 @@ Fix building data `B` over `K = F^ur` with `Z = Z_G(S)` a torus (`hZ`).
 ## Clauses 7 and 8 at positive depth, from a product cover
 
 The cover hypotheses below are inline premises of these helper lemmas. They are exactly
-what the conclusion of Task 6542 (`LocalMoyPrasadPositiveProductStatement`, the
-positive-depth sign product cover of KP Lemma 7.3.11 and Proposition 7.3.12) supplies once
-that statement is proved; the final proof of Task 6191 will discharge them by that
-published theorem, not assume them.
+what the conclusion of `LocalMoyPrasadPositiveProductStatement` (the
+positive-depth sign product cover of KP Lemma 7.3.11 and Proposition 7.3.12) supplies. The
+Library proves that statement (`localMoyPrasadPositiveProduct`, module
+`KPLocalMoyPrasadPositiveProductProof`), and the final proof of
+`LocalMoyPrasadGroupPropertiesStatement` discharges them by that theorem, not by assuming them.
 
 `comap_moyPrasad_eq_of_cover`. Let `r : ℝ≥0` and let `μ` be a cocharacter. Suppose every
 `g ∈ G(K)_{x,r}` can be written `g = u · j(z) · v` with `u ∈ U_{Φ⁺(-μ),x,r}`,

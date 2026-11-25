@@ -1,8 +1,5 @@
 # Translations and base change
 
-Authors: Worker 270 wrote the Lean and initial explanation; Worker 417
-checked the interfaces and refined the explanation for submission.
-
 Module `Langlands.AlgebraicGeometry.Picard.TranslationBaseChange` is a helper
 module for the proof of
 `Langlands.AbelianScheme.FieldDualSchemeMapAdditivityStatement`. It relates

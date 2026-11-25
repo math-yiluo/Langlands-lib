@@ -123,7 +123,7 @@ theorem upperNeutralApartmentTorus_quotient_isMaximalTorus
   let : IsAffineHom M.upper.neutral.specialFibre.X.hom := by
     change IsAffineHom (CategoryTheory.Limits.pullback.snd M.upper.neutral.group.X.hom
       (IntegralModel.residueBaseMap (fixedFieldIntegers F)))
-    infer_instance
+    exact MorphismProperty.pullback_snd _ _ inferInstance
   let : LocallyOfFiniteType M.upper.neutral.specialFibre.X.hom := by
     change LocallyOfFiniteType
       (CategoryTheory.Limits.pullback.snd M.upper.neutral.group.X.hom

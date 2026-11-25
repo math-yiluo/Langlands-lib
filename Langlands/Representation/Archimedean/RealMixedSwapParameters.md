@@ -1,6 +1,7 @@
 # Parameters for signed reversal of mixed real blocks
 
-This internal helper for Task 7171 defines the parameters needed when the signed
+This internal helper for the proof of `RealInducedCharacterSwapStatement` defines the
+parameters needed when the signed
 rank-three reversal is applied to a real induction block and a character block.
 It uses the existing Library character constructions, with no classification or
 irreducibility assumption.
@@ -42,7 +43,6 @@ exponent differences. Negating both exponents exchanges those differences.
 
 This module supplies parameter computations only. It does not construct an
 intertwiner or prove the mixed swap. Provenance is internal and derived from the
-published Library definitions in `StandardModule`,
+Library definitions in `StandardModule`,
 `RealLargeStandardIrreducibleReduction`, `RealStandardIrreducibleCriterionReduction`,
-`RealJacquetFrobeniusProof`, and `ComplexJacquetBorel`. The signed-reversal strategy
-and division of work were developed with Worker 767.
+`RealJacquetFrobeniusProof`, and `ComplexJacquetBorel`.

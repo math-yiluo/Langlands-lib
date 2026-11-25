@@ -69,7 +69,7 @@ rigidity at `T`.
 
 Let `R = HarrisCoefficientIntegers K p` and let `U_k`, `V_k`, `T_k` be the
 original canonical coefficient-kernel levels for the same `ρ`, `p`, `m` and
-exponent `k`. These are the published levels obtained from the canonical
+exponent `k`. These are the levels obtained from the canonical
 level-stable orbit-span lattices and their reductions. The original pair kernel
 and the triple kernel are literally
 
@@ -79,7 +79,7 @@ L_k = (T_k ∩ (T ∩ U_k)) ∩ (T ∩ V_k).
 ```
 
 All intersections denote the existing small-level constructions, with the
-indicated original subgroup carriers. The published containment
+indicated original subgroup carriers. The containment
 `cmHarrisTripleCommonLevel_le_upperPair` proves `L_k ≤ P_k`. The residual
 groups are the existing quotients
 
@@ -88,7 +88,7 @@ G_k = T / (L_k.subgroupOf T),
 H_k = V / (P_k.subgroupOf V).
 ```
 
-The kernels are normal in their indicated ambient groups by the published
+The kernels are normal in their indicated ambient groups by the existing
 kernel results. The arithmetic prerequisite `HarrisTaylorCMCoefficientUpperPair`
 constructs a natural group map `φ : G ⟶ H`, whose component sends `[g]` to
 `[inclusion(g)]`. It also constructs identity isomorphisms from restriction of
@@ -222,21 +222,21 @@ tripleMiddle.map(i→j) ; α.inv_j
 These are the original triple and pair transitions. Every construction and
 identity includes exponent zero.
 
-## Provenance and remaining scope
+## Provenance and scope
 
-This unit is derived from the original published triple and pair kernels,
+This module is derived from the original triple and pair kernels,
 represented geometric tower, finite geometric torsors, associated-system
 construction and genuine inverse-image comparison, together with the arithmetic
 upper-pair comparison. The proof constructs the new geometric map from actual
 level inclusions and then applies those general constructions. It makes no new
 external-source claim and assumes none of the displayed comparison identities.
 
-This unit does not yet identify the upper leg of the separately constructed
+This module does not identify the upper leg of the separately constructed
 triple chain with inverse image of the original named pair comparison on its
 separate covers. That further normalization and the resulting original
-three-level inverse-image coherence remain obligations. General commensurable
+three-level inverse-image coherence are proved in
+`HarrisTaylorCMGeometricUpperPairCoherence`. General commensurable
 lattice comparison, rational adic independence, Hecke compatibility, the full
 source-specific unitary geometry, arithmetic existence, representability and
-canonical-model theorems also remain outside this unit. The named premises
-above remain explicit. This is one construction toward the containing task,
-not its completion.
+canonical-model theorems also remain outside this module. The named premises
+above remain explicit.

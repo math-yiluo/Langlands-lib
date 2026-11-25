@@ -44,5 +44,5 @@ pure-dimension conjunct. The compatible-model clause is exactly the
 smooth surjective geometrically connected model step used on printed
 p.12 before the componentwise dimension reduction.
 
-These are proposition definitions, not proofs. This unit does not prove
+These are proposition definitions, not proofs. This module does not prove
 Lang–Weil, integral-point lifting, local openness, or adelic openness.

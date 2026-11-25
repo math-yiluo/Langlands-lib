@@ -1,7 +1,5 @@
 # Actual factor supports for derivatives of finite ordered products
 
-Author: Worker 357.
-
 This internal constructor selects an actual irreducible constituent of a
 derivative of each original factor of an ordered normalized product. The
 selected orders add to the supplied derivative order, and the selected support
@@ -10,7 +8,7 @@ Finite length of all factor derivatives and suitable supports for all their
 irreducible subquotients are explicit hypotheses.
 
 The namespace is `Langlands.Derivative.ProductDerivativeSupport`. The entry
-constructor is `supportData`. The same focused unit contains `FactorSupportData`,
+constructor is `supportData`. The same module contains `FactorSupportData`,
 `SupportData`, and `supportDataOfSubquotient`.
 
 ## Parameters, universes and scope
@@ -32,7 +30,7 @@ SmoothRep.IsSubquotient D
     ((T.normalizedProductInductionFunctor B).obj σ)).
 ```
 
-All representation carriers in this unit have universe `max uF uV`, with
+All representation carriers in this module have universe `max uF uV`, with
 independent `uF,uV`. Derivatives and equality transport preserve that carrier
 universe. Products have the same universe since
 `max uF (max uF uV) = max uF uV`.
@@ -101,7 +99,7 @@ hSupport :
 ```
 
 It also takes `0 < n`, `hd`, irreducibility of `D` and its actual derivative
-occurrence. These hypotheses are not conclusions of this unit.
+occurrence. These hypotheses are not conclusions of this module.
 
 ## Implemented construction
 
@@ -236,26 +234,24 @@ induction on the ordered block shape. The positive-rank binary step uses
 proved general normalized-product finite length and finite-length
 admissibility. Zero-rank binary factors use actual tensor models and
 finite-dimensionality for the trivial group. Its imported module also
-proves the independently permitted supercuspidal derivative finite-length
+proves the supercuspidal derivative finite-length
 case, but the call here is the general conditional `product_derivatives`,
 with every factor premise supplied explicitly.
 
 ## Dependency audit
 
-At the refreshed Library base
+At Library base
 `578442903325ac58fd3108d9bb76624bb791faf9`, the recursive inventory has
-961 project modules including this entry, and 294 directly named external
-import roots. Every inherited module has a nonempty paired Markdown file.
+961 project modules including this module, and 294 directly named external
+import roots. Every imported module has a nonempty paired Markdown file.
 There are no missing project imports. The complete inventory below
 recurses through project imports and lists external roots directly; it
 does not claim a separate recursive traversal of Mathlib.
 
-All 960 inherited Lean/Markdown pairs are byte-identical to that Library.
-The first/tail adapter is now independently accepted and published, and
-its pair at this base is identical to the frozen reviewed pair. The
-refreshed inventory has the same project and external names and inherited
-fingerprints as the earlier recovery audit. No new inherited source
-change remains to reconcile.
+All 960 imported Lean/Markdown pairs are byte-identical to that Library.
+The first/tail adapter `Induction.HeadTailBinaryProduct` is published at
+this base. The inventory has the same project and external names and
+fingerprints as an earlier audit.
 
 The audit compared fingerprints with the earlier binary aggregation,
 first/tail adapter, head-product finite-length, dual-head and top-head
@@ -280,11 +276,10 @@ each read in full with its Markdown:
 - `Representation.Tensor.FactorMatchingStatement`
   and `FactorMatchingProof`.
 
-All names in this list have prefix `Langlands.`. The only historical
+All names in this list have prefix `Langlands.`. The only
 fingerprint mismatch among the earlier covered pairs is completion of the
 binary aggregation's documentation after its earlier inventory. Its
-accepted published pair was read and matched. Recovery against the
-current base leaves no new inherited fingerprint change.
+published pair was read and matched.
 
 The newly inspected routes are general infrastructure. Nested refinement
 preserves actual ordered coordinates, using the composite numbering and
@@ -330,66 +325,59 @@ The actual general proofs just described supply the inputs used here.
 Broader Prop-valued statement interfaces inherited through imports are not
 treated as established conclusions.
 
-## Host independence boundaries
+## Independence boundaries
 
-The trusted operator responses
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-and [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-were read in full. They permit independently proved general derivative
-infrastructure while retaining all host exclusions. The third separately
-permits a newly proved exactly support-only terminal-truncation bound.
-This constructor proves no such segment bound and uses none as an input.
+The construction uses independently proved general derivative
+infrastructure and keeps every exclusion listed below. It proves no
+support-only terminal-truncation segment bound and uses none as an input.
 
 | Excluded result or boundary | Check on the closure and implemented route |
 | --- | --- |
-| Ze80 §§3.5/9.6, their formulas, proofs and proof successors | No segment derivative formula is imported or invoked. The derivative routes are general Leibniz, exactness and permitted supercuspidal derivative theory. |
-| Full segment/head/socle Jacquet formulas and exponent norm formula, including tasks `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `55ad1e10-62d8-46b7-a081-909ef0056426`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | None supplies a proof dependency. General refined Jacquet quotient and embedding arguments apply no such formula. |
-| Host criterion `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` in either direction and socle product criterion `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | Neither conclusion, a proof successor nor a downstream criterion consumer is imported or used. |
-| Parent uniqueness `30341ae4-65f2-4a0e-9283-763db01a409e` | No uniqueness or comparison of different segment products is used. |
-| Multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, ordered conversion `8252833d-c269-41a9-824c-5879e531b23b` | None supplies an input. The original factor family is supplied and the recursion preserves its ordered labels. |
-| Tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`, `SquareIntegrableLanglandsClassification` and task `1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`, regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac` | These conclusions and their proof routes are absent. |
-| Segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292` | Absent. The separate independently proved supercuspidal-derivative part is present and permitted; the segment-socle derivative statement and its successors are absent. |
+| Ze80 §§3.5/9.6, their formulas, proofs and the modules that prove them | No segment derivative formula is imported or invoked. The derivative routes are general Leibniz, exactness and permitted supercuspidal derivative theory. |
+| Full segment/head/socle Jacquet formulas and exponent norm formula (`SegmentFullJacquetFormula`, `SegmentSocleJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`) | None supplies a proof dependency. General refined Jacquet quotient and embedding arguments apply no such formula. |
+| The criterion `SegmentHeadProductIrreducibility` in either direction and the socle product criterion `SegmentSocleProductIrreducibility` | Neither conclusion, a module proving one, nor a downstream criterion consumer is imported or used. |
+| `GenericSegmentProductUniqueness` | No uniqueness or comparison of different segment products is used. |
+| Multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion | None supplies an input. The original factor family is supplied and the recursion preserves its ordered labels. |
+| Tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable exhaustion, regular exhaustion | These conclusions and their proof routes are absent. |
+| Segment-socle part of the excluded derivative statements (`Classification.SegmentSocleDerivativesStatement`) | Absent. The separate independently proved supercuspidal-derivative part is present and permitted; the segment-socle derivative statement and its proofs are absent. |
 | Linked-pair structure, adjacent commutation and two-supercuspidal product criteria | None supplies an input. General normalized-product finite length and actual product filtrations require no such criterion. |
 | Whittaker irreducible/Levi/supercuspidal coinvariant finiteness and dependent mirabolic finite length | These excluded routes are absent. The tail argument uses independently proved general product finite length and explicit finite-length hypotheses on original factor derivatives. |
 | Original datum universe and repeated support entries | Actual carriers remain at `max uF uV`, supplied support witnesses remain at original `uV`, and multiset sums retain all multiplicities. |
-| Segment results and run controls | No support-only segment proof or stronger intermediate from it supplies an input. Every inherited pair, including the general adapter, is published at the recorded Library base. No paused owner is contacted or needed to finish this construction. |
+| Segment results | No support-only segment proof or stronger intermediate from it supplies an input. Every imported pair, including the general adapter, is published at the recorded Library base. |
 
 A recursive lexical scan after removing nested comments and strings found
-no audited excluded-name or task-identifier matches, proof holes, new
+no audited excluded-name matches, proof holes, new
 axioms or prohibited execution syntax. The actual route inspection above
 supplements that scan; a name scan alone would not establish independence.
 
-## Development validation and remaining scope
+## Development validation and scope
 
-Approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-complete private module, including `supportDataOfSubquotient`, with zero
-errors and warnings in check `c3b686ed-52a3-4b4e-8f6f-a7d10ca3b49e`.
-Recovery check `f611303d-7ceb-4fe4-b65d-5090483514b7` reproduced that result
+The complete module, including `supportDataOfSubquotient`, compiled with zero
+errors and warnings.
+A second check reproduced that result
 and inspected the exact entry `supportData`: kind `definition`, independent
 levels `uF,uV`, and only `propext`, `Classical.choice` and `Quot.sound`.
-Refreshed-base recovery checks
-`6412648e-bc5c-4ef2-bf82-3d7c493dcc02` (ordinary binary aggregation and
-first/tail adapter) and `ed497a8f-5d13-42e8-a340-6e4bc3d28bf6` (complete
-private entry and exact declaration) again returned zero errors and
+Checks at the newer Library base (ordinary binary aggregation and
+first/tail adapter; complete
+entry and exact declaration) again returned zero errors and
 warnings, with the same entry kind, universe parameters and allowed
 axioms. The final ordinary-module check
-`585daab3-94d0-491c-af6f-4cfd4f47fb8c` compiled this same complete Lean
+compiled this same complete Lean
 source and inspected the exact entry with zero errors and warnings,
 confirming the same declaration kind, universe parameters and axioms.
-No Lean edit followed these checks. Development checks establish neither
-independent semantic acceptance nor publication.
+No Lean edit followed these checks.
 
-This unit proves finite-product support aggregation from its explicit
+This module proves finite-product support aggregation from its explicit
 hypotheses. It proves no unconditional factor-support existence, support
 uniqueness, equality with an independently specified support, derivative
 irreducibility, truncated-head identification, multiplicity statement or
-full segment derivative formula. A future application to special heads
-still needs permitted factor finite length and segment support bounds.
-The dual initial bound, support comparison needed by the host,
-nonlinkage survival and the linked converse remain separate obligations.
+full segment derivative formula. An application to special heads
+needs factor finite length and segment support bounds.
+The dual initial bound, the support comparison needed by
+`SegmentHeadProductIrreducibility`, nonlinkage survival and the linked
+converse are not proved here.
 The full repeated-segment special-head product irreducibility criterion
-remains unproved by this contribution.
+is not proved by this module.
 
 ## Complete import inventory
 

@@ -1,7 +1,7 @@
 # Twisting complex principal series by a character of the determinant
 
 Module `Langlands.Representation.Archimedean.ComplexStandardDeterminantTwist`, namespace
-`Langlands.Archimedean.ComplexDeterminantTwist`. Author: Worker 5086 (Task 7783).
+`Langlands.Archimedean.ComplexDeterminantTwist`.
 
 Local helper lemmas on `GL_n(ℂ)` for the twist rule of complex-place parameters
 (`Langlands.Automorphic.ComplexPlaceParameterHeckeTwist`). Everything here is elementary and

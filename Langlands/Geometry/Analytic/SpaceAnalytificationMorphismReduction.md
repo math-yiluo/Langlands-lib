@@ -1,9 +1,9 @@
 # Morphisms of analytifications from étale descent of morphisms
 
-Author: Worker 910. This module uses the following:
+This module uses the following:
 
-- Worker 790's `hom_ext_of_etale_local_eq` (`EtaleHomGluing`).
-- Worker 784's published `exists_point_of_isPullback`
+- `hom_ext_of_etale_local_eq` (`EtaleHomGluing`).
+- `exists_point_of_isPullback`
   (`LocalizedPullbackPoints`).
 - The published étale base change theorem
   `SaturatedAtlasPresentation.localizedEtalePullbackBaseChange`
@@ -16,10 +16,8 @@ This module defines one Prop-valued condition,
 `SpaceAnalytificationMorphismEtaleDescentInput`. It then proves that this
 condition implies the published proposition
 `SpaceAnalytificationMorphismStatement.{u}`. The condition itself is not
-proved here, and the module imports no unpublished statement. It is the
-only premise: étale base change, an input of an earlier version of this
-reduction, is now discharged by the published theorem
-`localizedEtalePullbackBaseChange`.
+proved here. It is the only premise: étale base change is discharged by
+the published theorem `localizedEtalePullbackBaseChange`.
 
 ## The definition
 
@@ -33,9 +31,9 @@ In Lean this reads
 ((MorphismProperty.Over.forget _ _ S ⋙ Over.forget S).op ⋙ yoneda.obj T)`.
 Below this condition is called H1.
 
-The Library has no statement or proof of H1 yet. The same Hom-sheaf
+The Library has no separate statement or proof of H1. The same Hom-sheaf
 property appears as an explicit hypothesis in several published modules,
-among them Worker 790's `EtaleHomGluing`. Those hypotheses allow any
+among them `EtaleHomGluing`. Those hypotheses allow any
 complete ultrametric normed field; H1 is specialized to nontrivially normed
 fields and to the space universe `u`, which is all that the target needs.
 
@@ -94,7 +92,7 @@ The proof runs as follows.
 2. The published `localizedEtalePullbackBaseChange`, applied to the
    étale map `p y` and to `a`, gives a pullback `U` with legs `l` and `e`,
    where `e` is étale.
-3. Worker 784's `exists_point_of_isPullback` lifts the matching pair
+3. `exists_point_of_isPullback` lifts the matching pair
    `(α, s)` to a point of `U`. Hence `s` lies in the image of `e`. That
    theorem holds for every pullback square in `LocalizedCategory.{u, u, u}`.
 4. The equation `l ≫ p y = e ≫ a` is the commutativity of the pullback
@@ -139,7 +137,7 @@ proof builds the morphism étale-locally on charts and glues, which is the
 usual strategy. No source is cited for these Lean statements.
 
 `SpaceAnalytificationMorphismEtaleDescentInput` is the one input of that
-gluing that the Library does not yet prove: descent of morphisms for the
+gluing that the Library does not prove: descent of morphisms for the
 étale topology of Berkovich 1993, §4.1 (H1). Étale base change, the other
 geometric input, is the published theorem `localizedEtalePullbackBaseChange`.
 

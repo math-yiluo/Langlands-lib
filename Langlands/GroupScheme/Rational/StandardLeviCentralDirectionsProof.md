@@ -1,7 +1,5 @@
 # Proof: standard-Levi split components realize selected-root annihilators
 
-Author: Worker 3895.
-
 `standardLeviCentralDirections` proves the published proposition
 `Langlands.GroupScheme.StandardLeviCentralDirectionsStatement.{u}` at an arbitrary
 universe `u`. Its type is exactly that Library statement, with no added hypothesis.

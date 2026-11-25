@@ -66,17 +66,17 @@ theorem comap_mem_locus_of_displacement_lt (d : RationalChart K A) {ε : ℝ}
 weighted rational subset under inverse seminorm pullback. -/
 theorem locus_image_eq_of_displacement_lt (d : RationalChart K A) {ε : ℝ}
     (hε : ∀ x ∈ d.locus, ε ≤ x d.denominatorClass) (g : Aut A)
-    (hb : ‖g.hom.toAlgHom d.denominatorClass - d.denominatorClass‖ < ε)
-    (hf : ∀ j, ‖g.hom.toAlgHom (d.numeratorClass j) - d.numeratorClass j‖ < d.radii j * ε)
-    (hib : ‖g.inv.toAlgHom d.denominatorClass - d.denominatorClass‖ < ε)
-    (hif : ∀ j, ‖g.inv.toAlgHom (d.numeratorClass j) - d.numeratorClass j‖ < d.radii j * ε) :
+    (hb : ‖g.asIso.hom.toAlgHom d.denominatorClass - d.denominatorClass‖ < ε)
+    (hf : ∀ j, ‖g.asIso.hom.toAlgHom (d.numeratorClass j) - d.numeratorClass j‖ < d.radii j * ε)
+    (hib : ‖g.asIso.inv.toAlgHom d.denominatorClass - d.denominatorClass‖ < ε)
+    (hif : ∀ j, ‖g.asIso.inv.toAlgHom (d.numeratorClass j) - d.numeratorClass j‖ < d.radii j * ε) :
     (fun x : BanachSpectrum A => g • x) '' d.locus = d.locus := by
   apply Set.Subset.antisymm
   · rintro _ ⟨x, hx, rfl⟩
-    exact comap_mem_locus_of_displacement_lt d hε g.inv hib hif hx
+    exact comap_mem_locus_of_displacement_lt d hε g.asIso.inv hib hif hx
   · intro x hx
     refine ⟨g⁻¹ • x, ?_, smul_inv_smul g x⟩
-    exact comap_mem_locus_of_displacement_lt d hε g.hom hb hf hx
+    exact comap_mem_locus_of_displacement_lt d hε g.asIso.hom hb hf hx
 
 /-- The full setwise stabilizer of the actual weighted rational locus. -/
 def locusStabilizer (d : RationalChart K A) : Subgroup (Aut A) :=
@@ -89,7 +89,7 @@ theorem mem_locusStabilizer (d : RationalChart K A) (g : Aut A) :
 
 variable {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* Aut A)
-  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
 
 include hρ in
 /-- Norm-continuous forward algebra orbits derive openness of the full
@@ -98,25 +98,25 @@ theorem isOpen_locusStabilizer (d : RationalChart K A) :
     IsOpen ((d.locusStabilizer.comap ρ : Subgroup G) : Set G) := by
   obtain ⟨ε, hε, hbound⟩ := d.exists_pos_le_denominator
   have hf (a : A) (δ : ℝ) (hδ : 0 < δ) :
-      ∀ᶠ g in 𝓝 (1 : G), ‖(ρ g).hom.toAlgHom a - a‖ < δ := by
-    have hc : Continuous (fun g : G => ‖(ρ g).hom.toAlgHom a - a‖) :=
+      ∀ᶠ g in 𝓝 (1 : G), ‖(ρ g).asIso.hom.toAlgHom a - a‖ < δ := by
+    have hc : Continuous (fun g : G => ‖(ρ g).asIso.hom.toAlgHom a - a‖) :=
       ((hρ a).sub continuous_const).norm
-    have hz : ‖(ρ (1 : G)).hom.toAlgHom a - a‖ < δ := by
+    have hz : ‖(ρ (1 : G)).asIso.hom.toAlgHom a - a‖ < δ := by
       rw [map_one]
       change ‖a - a‖ < δ
       simpa only [sub_self, norm_zero] using hδ
     exact hc.continuousAt.eventually (gt_mem_nhds hz)
   have hi (a : A) (δ : ℝ) (hδ : 0 < δ) :
-      ∀ᶠ g in 𝓝 (1 : G), ‖(ρ g).inv.toAlgHom a - a‖ < δ := by
-    have horbit : Continuous (fun g : G => (ρ g).inv.toAlgHom a) := by
+      ∀ᶠ g in 𝓝 (1 : G), ‖(ρ g).asIso.inv.toAlgHom a - a‖ < δ := by
+    have horbit : Continuous (fun g : G => (ρ g).asIso.inv.toAlgHom a) := by
       apply ((hρ a).comp continuous_inv).congr
       intro g
-      change (ρ (g⁻¹)).hom.toAlgHom a = (ρ g).inv.toAlgHom a
+      change (ρ (g⁻¹)).asIso.hom.toAlgHom a = (ρ g).asIso.inv.toAlgHom a
       rw [map_inv]
       rfl
-    have hc : Continuous (fun g : G => ‖(ρ g).inv.toAlgHom a - a‖) :=
+    have hc : Continuous (fun g : G => ‖(ρ g).asIso.inv.toAlgHom a - a‖) :=
       (horbit.sub continuous_const).norm
-    have hz : ‖(ρ (1 : G)).inv.toAlgHom a - a‖ < δ := by
+    have hz : ‖(ρ (1 : G)).asIso.inv.toAlgHom a - a‖ < δ := by
       rw [map_one]
       change ‖a - a‖ < δ
       simpa only [sub_self, norm_zero] using hδ
@@ -191,8 +191,8 @@ def normSectionAction (d : RationalChart K A) :
 @[simp]
 theorem normSectionAction_baseMap (d : RationalChart K A)
     (g : normOpenStabilizer ρ hρ d) (a : A) :
-    (normSectionAction ρ hρ d g).hom.toAlgHom (d.baseMap a) =
-      d.baseMap ((ρ g.val).hom.toAlgHom a) :=
+    (normSectionAction ρ hρ d g).asIso.hom.toAlgHom (d.baseMap a) =
+      d.baseMap ((ρ g.val).asIso.hom.toAlgHom a) :=
   DomainAutomorphism.stabilizerSectionAction_baseMap d.toDomain (normStabilizerHom ρ hρ d g) a
 
 /-- Local bounded section operators commute with actual chart restrictions
@@ -200,8 +200,8 @@ when the same parameter preserves both rational loci. -/
 theorem normSectionAction_restriction {d e : RationalChart K A} (f : d ⟶ e)
     (g : G) (hd : g ∈ normOpenStabilizer ρ hρ d)
     (he : g ∈ normOpenStabilizer ρ hρ e) :
-    ((normSectionAction ρ hρ d ⟨g, hd⟩).hom).comp f.restriction =
-      f.restriction.comp (normSectionAction ρ hρ e ⟨g, he⟩).hom :=
+    ((normSectionAction ρ hρ d ⟨g, hd⟩).asIso.hom).comp f.restriction =
+      f.restriction.comp (normSectionAction ρ hρ e ⟨g, he⟩).asIso.hom :=
   DomainAutomorphism.stabilizerSectionMap_restriction
     ((toDomainFunctor K A).map f) (ρ g) hd he
 

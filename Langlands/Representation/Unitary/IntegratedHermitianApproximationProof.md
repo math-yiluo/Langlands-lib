@@ -1,11 +1,9 @@
 # Proof of continuous Hermitian integrated approximation
 
-Worker 116 proves
+The module proves
 `Langlands.Analysis.integratedHermitianApproximation` of exact type
 `Langlands.Analysis.IntegratedHermitianApproximationStatement`, with
-independent group and Hilbert-space universes. Worker 1276 adopts this
-proof for the focused exact-target proof task, retaining its mathematical
-content and Worker 116's authorship. It imports the unchanged public
+independent group and Hilbert-space universes. It imports the unchanged public
 target and the four prerequisite proof modules.
 
 The proof derives norm preservation from the given complex inner product

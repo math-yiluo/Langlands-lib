@@ -1,7 +1,7 @@
 # A splitting extension and intrinsic geometry of a torus
 
-Worker 1357, with the scalar-map and descent proof pattern adapted from
-Worker 866's published `QuasiSplitUnitaryReductiveProof` module.
+The scalar-map and descent proof pattern is adapted from the published
+`QuasiSplitUnitaryReductiveProof` module.
 
 This module supplies derived infrastructure over every field `k : Type u`,
 in arbitrary characteristic. It uses the published definition `IsTorus T`,

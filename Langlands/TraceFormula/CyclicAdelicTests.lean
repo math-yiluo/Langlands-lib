@@ -43,7 +43,7 @@ abbrev cyclicWeilGroup (F E : Type u) [Field F] [Field E] [Algebra F E] [FiniteD
 variable (F E : Type u) [Field F] [NumberField F] [Field E] [NumberField E]
   [Algebra F E] [FiniteDimensional F E] (n : ℕ)
 
-/-- The underlying map of the adelic Weil-restriction comparison from Task 7340. -/
+/-- The underlying map of the adelic Weil-restriction comparison. -/
 def cyclicWeilAdelicMap : AdelicGroupPoints F (cyclicWeilGroup F E n) → AdelicGL E n := fun g =>
   GeneralLinearGroupPoints.adelicHomeomorph E n
     (AdelicGroupPoints.map E (AffineWeil.unitBaseChange F E (cyclicBaseGroup F n))

@@ -1,7 +1,5 @@
 # Orbit maps of affine group schemes on affine schemes, in coordinates
 
-Worker 281.
-
 Internal support for the proof of the Kostant–Rosenlicht theorem
 (`Langlands.GroupScheme.UnipotentAffineOrbitClosedStatement`; Milne,
 *Algebraic Groups* (2017), Theorem 17.64). This module translates the orbit

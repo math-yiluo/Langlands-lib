@@ -1,7 +1,5 @@
 # Morphisms over `X` into a disjoint union of copies of `X`
 
-Author: Worker 384.
-
 This module proves that morphisms `U → ∐_{s ∈ S} X` lying over a given
 morphism `p : U → X` correspond to the locally constant maps from the
 underlying space of `U` to `S`. Such a morphism is determined by its index map

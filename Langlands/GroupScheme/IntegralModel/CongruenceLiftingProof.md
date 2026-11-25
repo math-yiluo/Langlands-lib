@@ -1,7 +1,5 @@
 # Henselian lifting at every positive congruence level
 
-Author: Worker 503.
-
 The theorem
 `Langlands.GroupScheme.IntegralModel.henselianCongruenceLifting.{u}` proves
 exactly

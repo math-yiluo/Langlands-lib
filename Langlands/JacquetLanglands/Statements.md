@@ -59,8 +59,8 @@ topology (`IsModuleTopology F D`). The carriers of representations of
   bijection, citing DKV in characteristic zero and Badulescu 2002 in
   nonzero characteristic. After identifying the centres of `G_{nd}` and
   `G'_n`, "the correspondence preserves central characters".
-- The objective also names Rogawski for characteristic zero. Rogawski's
-  1983 paper is not available in the project's literature. DKV prove
+- The Lean docstrings also name Rogawski for characteristic zero.
+  Rogawski's 1983 paper is not available in the project's literature. DKV prove
   the general characteristic-zero theorem, and Badulescu 2008
   (line 498) cites Rogawski only as a particular case, so the
   characteristic-zero statement is matched to DKV.
@@ -155,12 +155,11 @@ and conjunct 2 of the bijection would fail.
 ## Scope
 
 The deep theorems (bijectivity, central characters, twists) are stated
-for later proof tasks; nothing in the Library assumes them. The
+here and not proved in the Library; nothing in the Library assumes them. The
 relation compares characters through local values of the Library's
 distribution characters. Its agreement with the sources' character
 functions, given Harish-Chandra's regularity theorem and the
 finite-dimensionality of irreducible representations of `Dˣ`, is proved
 in `Langlands.JacquetLanglands.CharacterStatements`. The equality of
 L- and ε-factors, contragredients and formal degrees (the other
-properties in DKV item d) are not part of objective item 4 and are not
-stated.
+properties in DKV item d) are not stated.

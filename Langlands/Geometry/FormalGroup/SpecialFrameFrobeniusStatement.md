@@ -1,7 +1,7 @@
 # Relative Frobenius on a special frame: exact global inverse target
 
 `Langlands.FormalGroup.LocalDivision.SpecialModule.RelativeFrobeniusQuasiIsogenyStatement`
-is an UNPROVED proposition asserting actual global rational invertibility of
+is a proposition asserting actual global rational invertibility of
 the already constructed relative Frobenius map on a supplied height-certified
 special formal frame.
 
@@ -30,11 +30,12 @@ map and exposes its exact forward tensor. Neither this conditional definition
 nor uniqueness proves existence.
 
 The provenance is internal: this is the specific fixed-frame global inverse
-obligation needed toward the natural Frobenius quasi-isogeny used in Drinfeld
+statement needed toward the natural Frobenius quasi-isogeny used in Drinfeld
 1976, §2 A, printed p.109. The source's final normalization uses the residue
 cardinality, inverse residue-Frobenius twisting and integer iterates; those
-comparisons and the kernel-rank height formula are further work. The present
-statement neither asserts a Hasse-invariant classification nor constructs a
-frame or a representing object. A focused proof task is to follow publication
-of this exact target. General rational Hom sheaf-section inverse results remain
-a separate obligation and are not assumed here.
+comparisons and the kernel-rank height formula are not part of this
+statement. The present statement neither asserts a Hasse-invariant
+classification nor constructs a frame or a representing object. The
+statement is proved in `SpecialFrameFrobenius`, as
+`Langlands.FormalGroup.LocalDivision.SpecialModule.relativeFrobeniusQuasiIsogeny`.
+General rational Hom sheaf-section inverse results are not assumed here.

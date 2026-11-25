@@ -232,7 +232,7 @@ def subgroupUntwist (g : G) {U : TwistedOver P ρ} {U' : TwistedOver P (ρ.comp 
     (f : U ⟶ (subgroupInclusion ρ H).obj U') (hf : Hom.twist f * g⁻¹ ∈ H) :
     (⟨(translate P ρ g).obj U.obj⟩ : TwistedOver P (ρ.comp H.subtype)) ⟶ U' :=
   homMk ⟨Hom.twist f * g⁻¹, hf⟩ (Hom.left (ρ := ρ) f) (by
-    change Hom.left f ≫ U'.hom = (U.hom ≫ (ρ g).hom) ≫ (ρ (Hom.twist f * g⁻¹)).hom
+    change Hom.left f ≫ U'.hom = (U.hom ≫ (ρ g).asIso.hom) ≫ (ρ (Hom.twist f * g⁻¹)).asIso.hom
     rw [Category.assoc, ← rho_mul_hom, inv_mul_cancel_right]
     exact Hom.w f)
 

@@ -1,7 +1,5 @@
 # Statement: quotient maps and parabolic, Borel, maximal unipotent and maximal toric subgroups
 
-Worker 75.
-
 `Langlands.GroupScheme.AlgClosedQuotientSubgroupImageStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`Absolute.Borel`](Borel.md), for `IsBorelSubgroup` and
@@ -184,7 +182,8 @@ so `q⁻¹(H')_red` contains `B`, is parabolic, and has image `H'`. This is expl
 
 - The field is algebraically closed, as in Section 17b. Over an arbitrary field, the image part
   for parabolic and Borel subgroups is Milne 17.69, stated as `QuotientParabolicImageStatement`
-  (candidate module `Rational.QuotientParabolicImageStatement`, not yet in the Library).
+  (module `Rational.QuotientParabolicImageStatement`, proved as `quotientParabolicImage` in
+  `Rational.QuotientParabolicImageProof`).
 - The statement does not construct `q(H)` or `q⁻¹(H')`. It does not state Theorem 17.9 or
   Proposition 17.14 themselves.
 

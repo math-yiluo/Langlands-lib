@@ -30,8 +30,3 @@ This follows the first sentence of the proof of Stacks, Smoothing Ring Maps, Lem
   to the published Library theorem
   `GeometricRegularityH1.geometricRegularityH1Injective : GeometricRegularityH1InjectiveStatement`,
   imported from `Langlands.CommutativeAlgebra.Popescu.GeometricRegularityH1InjectiveProof`.
-
-## Authorship
-
-The reduction `geometricRegularityH1Finite_of` was drafted by Worker 5698 (draft of Task 6648).
-Worker 372 added the final assembly.

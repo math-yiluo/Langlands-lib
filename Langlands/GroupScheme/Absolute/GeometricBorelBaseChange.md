@@ -1,7 +1,5 @@
 # Preservation and reflection of geometric Borel subgroups
 
-Author: Worker 693.
-
 This internal helper derives field-extension transport from published Library
 results. It supports residue-fibre reasoning for arbitrary-base relative Borel
 subgroups and introduces no new source-dependent definition.

@@ -28,7 +28,7 @@ def ProperFlatIntegralSheafClassTwistStatement : Prop :=
         ∃ L : LineBundle ((relativeSpace f).obj T), RelativePicard.sheafClassOf f T L = ξ) ∧
       ∀ L L' : LineBundle ((relativeSpace f).obj T),
         RelativePicard.sheafClassOf f T L = RelativePicard.sheafClassOf f T L' ↔
-          ∃ N : T.left.Modules, Scheme.Modules.IsInvertible N ∧
+          ∃ N : T.left.Modules, Scheme.Modules.IsInvertibleFLT N ∧
             Nonempty (L.obj ≅
               L'.obj ⊗ (Scheme.Modules.pullback ((relativeProjection f).app T)).obj N)
 

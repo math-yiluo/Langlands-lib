@@ -1,0 +1,123 @@
+/-
+Copyright (c) 2026 Yijun Yuan. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Yijun Yuan
+-/
+module
+
+public import FontaineWintenberger.LocalField.Basic
+public import FontaineWintenberger.LocalField.Spectral.Uniqueness
+public import FontaineWintenberger.Ramification.Lower.Index
+public import Mathlib.NumberTheory.RamificationInertia.Valuation
+public import Mathlib.RingTheory.Flat.TorsionFree
+public import Mathlib.RingTheory.Valuation.Extension
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+/-!
+# Normalized field valuations and ramification indices in towers
+
+The normalized field formula specializes Mathlib's adic valuation theorem.
+It uses the maximal ideals and canonical local-length ramification index.
+
+## Main results
+
+* `normalizedValuation_algebraMap`: The normalized field valuation restricts by the canonical
+  ramification-index power.
+* `local_ramificationIdx_tower`: Canonical ramification indices multiply in a tower of local DVR
+  maps.
+* `extensionValuationSubring_map_maximalIdeal`: The index ideal identity for a chosen
+  finite-extension valuation ring.
+* `extensionValuationSubring_normalizedValuation_algebraMap`: Normalized numerical scaling on the
+  and chosen extension fields.
+
+## References
+
+* Serre, *Local Fields*, Chapter IV (ramification groups, Herbrand functions, the different).
+-/
+
+@[expose] public section
+
+namespace FontaineWintenberger
+
+section FractionFields
+
+variable (R S : Type*) [CommRing R] [IsDomain R] [IsDiscreteValuationRing R]
+    [CommRing S] [IsDomain S] [IsDiscreteValuationRing S] [Algebra R S]
+    [FaithfulSMul R S] [IsLocalHom (algebraMap R S)]
+variable (K L : Type*) [Field K] [Field L] [Algebra K L]
+    [Algebra R K] [IsFractionRing R K] [Algebra R L] [IsScalarTower R K L]
+    [Algebra S L] [IsFractionRing S L] [IsScalarTower R S L]
+
+local notation "vR" => IsDedekindDomain.HeightOneSpectrum.valuation K
+  (IsDiscreteValuationRing.maximalIdeal R)
+local notation "vS" => IsDedekindDomain.HeightOneSpectrum.valuation L
+  (IsDiscreteValuationRing.maximalIdeal S)
+
+/-- The normalized field valuation restricts by the canonical ramification-index power. -/
+theorem normalizedValuation_algebraMap (x : K) :
+    vS (algebraMap K L x) = vR x ^ (IsLocalRing.maximalIdeal S).ramificationIdx R := by
+  have : (IsDiscreteValuationRing.maximalIdeal S).asIdeal.LiesOver
+      (IsDiscreteValuationRing.maximalIdeal R).asIdeal :=
+    (inferInstance : (IsLocalRing.maximalIdeal S).LiesOver (IsLocalRing.maximalIdeal R))
+  exact (IsDedekindDomain.HeightOneSpectrum.valuation_liesOver L
+    (IsDiscreteValuationRing.maximalIdeal R) (IsDiscreteValuationRing.maximalIdeal S) x).symm
+
+/-- The canonical normalized field valuations are compatible as valuations. -/
+instance normalizedValuation_hasExtension : (vR).HasExtension (vS) where
+  val_isEquiv_comap := by
+    intro x y
+    simp only [Valuation.comap_apply, normalizedValuation_algebraMap R S K L]
+    exact (pow_le_pow_iff_left₀ zero_le zero_le
+      (local_ramificationIdx_pos R S).ne').symm
+
+end FractionFields
+
+section Tower
+
+variable (R S T : Type*) [CommRing R] [IsDomain R] [IsDiscreteValuationRing R]
+    [CommRing S] [IsDomain S] [IsDiscreteValuationRing S]
+    [CommRing T] [IsDomain T] [IsDiscreteValuationRing T]
+    [Algebra R S] [Algebra S T] [Algebra R T] [IsScalarTower R S T]
+    [FaithfulSMul S T] [IsLocalHom (algebraMap S T)]
+
+omit [IsDomain R] [IsDiscreteValuationRing R] in
+/-- Canonical ramification indices multiply in a tower of local DVR maps. -/
+theorem local_ramificationIdx_tower :
+    (IsLocalRing.maximalIdeal T).ramificationIdx R =
+      (IsLocalRing.maximalIdeal S).ramificationIdx R *
+        (IsLocalRing.maximalIdeal T).ramificationIdx S :=
+  Ideal.ramificationIdx_tower (R := R) (IsLocalRing.maximalIdeal S) (IsLocalRing.maximalIdeal T)
+
+end Tower
+
+section ChosenExtension
+
+variable (K : Type*) [NontriviallyNormedField K] [IsCompleteDiscreteValuedField K]
+variable (L : Type*) [Field L] [Algebra K L] [FiniteDimensional K L]
+variable [Algebra.IsSeparable K L]
+variable {Γ : Type*} [LinearOrderedCommGroupWithZero Γ] (w : Valuation L Γ)
+variable [(NormedField.valuation (K := K)).HasExtension w]
+
+local notation "OL" => Valuation.valuationSubring w
+
+/-- The index ideal identity for a chosen finite-extension valuation ring. -/
+theorem extensionValuationSubring_map_maximalIdeal :
+    (IsLocalRing.maximalIdeal 𝒪[K]).map (algebraMap 𝒪[K] OL) =
+      IsLocalRing.maximalIdeal OL ^ (IsLocalRing.maximalIdeal OL).ramificationIdx 𝒪[K] := by
+  have := extensionValuationSubring_isDiscreteValuationRing K L w
+  exact map_maximalIdeal_eq_pow_ramificationIdx 𝒪[K] OL
+
+/-- Normalized numerical scaling on the and chosen extension fields. -/
+theorem extensionValuationSubring_normalizedValuation_algebraMap (x : K) :
+    letI := extensionValuationSubring_isDiscreteValuationRing K L w
+    (IsDiscreteValuationRing.maximalIdeal OL).valuation L (algebraMap K L x) =
+      ((IsDiscreteValuationRing.maximalIdeal 𝒪[K]).valuation K x) ^
+        (IsLocalRing.maximalIdeal OL).ramificationIdx 𝒪[K] := by
+  have := extensionValuationSubring_isDiscreteValuationRing K L w
+  exact normalizedValuation_algebraMap 𝒪[K] OL K L x
+
+end ChosenExtension
+
+end FontaineWintenberger

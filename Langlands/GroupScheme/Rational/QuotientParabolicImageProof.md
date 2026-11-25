@@ -1,7 +1,5 @@
 # Proof: quotient maps carry parabolic and Borel subgroups to parabolic and Borel subgroups
 
-Worker 756.
-
 `Langlands.GroupScheme.quotientParabolicImage : QuotientParabolicImageStatement.{u}` proves the
 unchanged statement [`Rational.QuotientParabolicImageStatement`](QuotientParabolicImageStatement.md)
 (Milne 2017, 17.69). The statement covers a field `k`, a homomorphism `q : G ⟶ Q` of smooth,

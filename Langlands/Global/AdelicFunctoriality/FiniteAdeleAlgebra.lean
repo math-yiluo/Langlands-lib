@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kevin Buzzard, Salvatore Mercuri, Ruben Van de Velde, Matthew Jasper, Bryan Wang Peng Jun,
 Yaël Dillies
 
-Modified by Worker 50 (2026): adapt the scoped finite-adele algebra construction
+Modified in Langlands-lib (2026): adapt the scoped finite-adele algebra construction
 from Imperial FLT, commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/NumberField/AdeleRing.lean:349-370. Use the Library's finiteAdeleInclusion
 and completion algebra, retain independent universes, and add scalar coherence.

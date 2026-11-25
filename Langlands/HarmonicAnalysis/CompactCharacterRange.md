@@ -1,7 +1,7 @@
 # Surjectivity detected by compact-group characters
 
 This internal auxiliary construction implements the compact-dual averaging step
-in Worker 1843's plan for restriction matching. It uses the previously developed
+for restriction matching. It uses the previously developed
 Stone–Weierstrass density of the span of a separating character subgroup.
 
 The construction `average` integrates a continuous complex function along a

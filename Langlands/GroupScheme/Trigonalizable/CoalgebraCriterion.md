@@ -1,7 +1,5 @@
 # A coalgebra criterion for stable lines
 
-Author: Worker 5157.
-
 This internal module proves a purely algebraic fact used for
 [`SubgroupQuotientProof`](SubgroupQuotientProof.md). Let `B` be a bialgebra over a field. If
 every nonzero finite matrix corepresentation of `B` has a stable line, then the same holds for

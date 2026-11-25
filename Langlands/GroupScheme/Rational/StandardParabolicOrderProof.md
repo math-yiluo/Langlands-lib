@@ -1,7 +1,5 @@
 # Proof of the order on standard parabolics
 
-Authors: Worker 26, with Worker 21 (standard-cocharacter existence composition).
-
 `Langlands.GroupScheme.standardParabolicOrder` proves the exact
 `StandardParabolicOrderStatement.{u}` from
 [`StandardParabolicOrderStatement`](StandardParabolicOrderStatement.md).
@@ -78,7 +76,7 @@ The same assembly for the order statement appears inside the published
 `Langlands/Representation/Jacquet/StandardFixedVectorDetectionAssembly.lean`.
 There, standard-cocharacter existence comes from a separate root-system
 premise. Here it comes from proved theorems. The composition for
-`StandardCocharacterStatement` is the same as in Worker 21's proof candidate
-`7527fdc5-e3af-450b-9b75-44133322c56b` for Task 3775. This module does not
-import that unpublished candidate; it composes the published theorems
+`StandardCocharacterStatement` is the same as in the proof of
+`standardCocharacter` (module `Rational.StandardCocharacterProof`). This module does not
+import that module; it composes the published theorems
 directly.

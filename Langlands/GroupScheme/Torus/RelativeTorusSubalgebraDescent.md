@@ -1,7 +1,5 @@
 # Relative tori over finitely generated intermediate algebras
 
-Author: Worker 668.
-
 Let \(R\) be a noetherian ring, \(A\) an \(R\)-algebra, and \(G\) a smooth
 relatively affine group over \(\operatorname{Spec} R\). If the actual pullback
 over \(\operatorname{Spec} A\) is a relative torus, then it is already a
@@ -23,4 +21,7 @@ claimed subalgebra over \(R\) and the interpretation of the group there.
 
 This is an internal consequence of the Library's constructible fibre-locus
 and torus spreading theorems. It supplies the torus condition in finite
-coefficient models of closed torus-subgroup families for Task 7705.
+coefficient models of closed torus-subgroup families for the proof
+`smoothAffineFiberTorusSubgroupRepresentability` of
+`SmoothAffineFiberTorusSubgroupRepresentabilityStatement` (smooth torus-subgroup
+representability for groups with affine residue fibres).

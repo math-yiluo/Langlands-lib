@@ -1,7 +1,5 @@
 # The center of End(ind_H^G ρ)
 
-Author: Worker 1826.
-
 This is a supporting module for the proofs of Renard VI.4.4 (the Theorem
 `RationalSummandEndCenterStatement`, the Corollary
 `RationalSummandEndNoetherianStatement` and the Proposition

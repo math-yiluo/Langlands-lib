@@ -1,6 +1,6 @@
 # Character lifting from a Picard-trivial split reductive target
 
-Worker 159, Task 7608. This module proves
+This module proves
 `Langlands.GroupScheme.SplitCentralIsogenyPicardCharacterLiftingStatement.{u}`
 as `Langlands.GroupScheme.splitCentralIsogenyPicardCharacterLifting`. Let `f : H ⟶ G` be a central isogeny
 of connected reductive groups over a field `k`, where `H` and `G` each have a
@@ -160,7 +160,7 @@ a character `χ` of `kernel f`.
 hypotheses. It applies
 `splitCentralIsogenyPicardCharacterLifting_of_rosenlichtTensorUnits` to the
 published proof `Langlands.Algebra.rosenlichtTensorUnits.{u, u, u}` (module
-`Langlands.Algebra.RosenlichtTensorUnits`, Task 7617). That proof establishes
+`Langlands.Algebra.RosenlichtTensorUnits`). That proof establishes
 Rosenlicht's splitting of units in a tensor product of finite-type domains
 over an algebraically closed field (Milne, Proposition 12.48).
 

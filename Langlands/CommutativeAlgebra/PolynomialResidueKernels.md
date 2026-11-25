@@ -49,5 +49,6 @@ The imported valuation-kernel finiteness result and Mathlib's Nakayama lemma
 give the claimed containment.
 
 Finite generation of full polynomial relation modules, homogeneous residue
-generator lifting, homogenization and the host two-axis extension statement
-remain outside this contribution.
+generator lifting, homogenization and the two-axis extension statement that
+this module serves, `Langlands.AbelianScheme.ValuationRingTwoAxisExtensionStatement`,
+remain outside this module.

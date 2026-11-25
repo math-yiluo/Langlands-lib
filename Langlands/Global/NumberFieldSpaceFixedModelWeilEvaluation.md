@@ -1,6 +1,6 @@
 # Original counit evaluation on number-field space stages
 
-This internal unit identifies the previously constructed fixed-model Weil stage
+This module identifies the previously constructed fixed-model Weil stage
 homeomorphism with evaluation of the original algebraic-space counit. It also
 proves the resulting square with the literal full adele inclusions. It does not
 assert the full adelic homeomorphism or independence of models.
@@ -11,11 +11,11 @@ and upper integers outside the full preimage of `S`.
 
 `levelInclusion` restricts the original `adeleInclusion` to the lower `T`-level
 and the upper level outside the full preimage of `T`. Its construction uses the
-published equivalence between integrality of a completion image and integrality
+existing equivalence between integrality of a completion image and integrality
 of its source. `levelInclusion_compatible` proves compatibility with the two
 integral bases using the original diagonal inclusion formula.
 `levelInclusion_coordinate` identifies every upper local projection of this
-level inclusion with the original local coefficient map. It uses the published
+level inclusion with the original local coefficient map. It uses the existing
 full-adele projection formula, including the original integer subtype at
 integral coordinates.
 
@@ -45,7 +45,7 @@ upper stage inclusion. After replacing the stage homeomorphism by the preceding
 identity, the proof applies lower and upper coefficient naturality; both
 coefficient composition equations are the literal inclusion identities.
 
-The provenance is internal: these identities follow from the published original
+The provenance is internal: these identities follow from the existing original
 local coefficient and projection formulas, the actual fixed-level space Weil
 homeomorphism and its coordinate formula, and the general space counit
 evaluation naturality API. Representability, finite-type geometry, and

@@ -1,5 +1,5 @@
 import Langlands.Global.AdelicFunctoriality.FiniteComparisonReduction
-import Langlands.ClassField.Global.IdeleArchimedean
+import Langlands.ClassFieldTheory.Global.IdeleArchimedean
 
 /-! # Weak approximation at finitely many finite places and all infinite places -/
 
@@ -8,7 +8,7 @@ noncomputable section
 namespace Langlands.Global.AdelicFunctoriality
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Topology
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 open scoped NumberField
 
 universe u

@@ -1,7 +1,5 @@
 # Relative corestriction after restriction
 
-Author: Worker 23.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.RelativeH2CorestrictionRestrictionStatement`
 (module `Langlands.ClassFieldTheory.Local.RelativeH2CorestrictionRestrictionStatement`).
@@ -85,8 +83,7 @@ only the finiteness and Galois instances it uses).
    isomorphisms `(TateCohomology.isoGroupCohomology n).app A` and
    `.app (Rep.res H.subtype A)`. The published comparison
    `Langlands.Tate.restriction_groupCohomology H A n` (module
-   `Langlands.Cohomology.Tate.PositiveRestriction`, owned by task
-   c75747af) states that the constructed Tate restriction equals
+   `Langlands.Cohomology.Tate.PositiveRestriction`) states that the constructed Tate restriction equals
    `eA.hom ≫ groupCohomology.map H.subtype (𝟙 _) n ≫ eB.inv`. Applying it
    to `eA.inv x`, cancelling `eA.hom (eA.inv x) = x`, and applying item 1
    to `x` gives the auxiliary equation `key`:

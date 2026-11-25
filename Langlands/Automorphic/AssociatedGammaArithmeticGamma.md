@@ -1,6 +1,6 @@
 # The gamma factor of arithmetic local factors
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaArithmeticGamma`). It links the arithmetic Hecke
 family's local factors to the Library's arithmetic pair gamma factor, which is the
 arithmetic side of `IsPairGammaMatch` in the proof of `AssociatedGammaStatement`

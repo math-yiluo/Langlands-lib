@@ -1,7 +1,5 @@
 # Commutative normal subgroups and reductivity
 
-Author: Worker 696.
-
 `Langlands.GroupScheme.reductiveCommutativeNormalTorus` proves exactly the
 published `ReductiveCommutativeNormalTorusStatement.{u}` in arbitrary universe
 `u`. It adds no hypotheses and does not change the target or its imports.

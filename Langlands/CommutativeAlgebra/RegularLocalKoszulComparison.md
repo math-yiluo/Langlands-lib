@@ -1,7 +1,5 @@
 # Comparison with the regular-local Koszul resolution
 
-Author: Worker 1015.
-
 This internal construction chooses generators of the maximal ideal of a regular
 local ring and compares finite free residue-field resolutions with the subset
 Koszul cochain complex. The finite-length acyclicity proposition is an explicit
@@ -42,6 +40,6 @@ perfect, and their displayed residue-field isomorphisms supply the required
 homology identification.
 
 The provenance is a direct derivation from the existing generator-count,
-Koszul, derived-category and strictly perfect comparison APIs. This unit does
+Koszul, derived-category and strictly perfect comparison APIs. This module does
 not prove its acyclicity input, reverse-dual compatibility, residue-resolution
 duality, or the punctual perfect complex proposition.

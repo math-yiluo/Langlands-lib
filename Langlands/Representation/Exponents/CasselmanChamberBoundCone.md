@@ -1,18 +1,18 @@
 # Positive root cones and strict bounds on the closed restricted-root chamber
 
-Author: Worker 4712. Module
+Module
 `Langlands.Representation.Exponents.CasselmanChamberBoundCone`. Its one new
 definition is `Langlands.GroupScheme.ParabolicRootPresentation.latticePair`, the
 pairing of a real character with integral cocharacters; the remaining
 declarations are theorems about it and about normalized exponents.
 
-This supporting unit proves the last step of the proof of Casselman's criterion,
+This supporting module proves the last step of the proof of Casselman's criterion,
 Renard 2026, VII.1.2 (printed p.224 / PDF p.230): from strict bounds
 `|χ(t)| < 1` at the split-component points of the closed chamber, "en utilisant
 V.3.21, on retrouve la condition de l'énoncé". In the formulation of the
 published `ArbitraryParabolicCasselmanCriterionStatement` that condition is
 membership of the `q^(-s)` real part in the strictly positive root cone
-`pres.positiveCone`. The unit proves this conversion, and its converse, for every
+`pres.positiveCone`. The module proves this conversion, and its converse, for every
 normalized exponent of a representation with a unitary central character. It does
 not prove either analytic implication of the criterion.
 
@@ -133,12 +133,12 @@ The iff theorem combines this with `norm_lt_one_of_normalizedRealPart_mem_positi
 This is a derived formulation of the final step of the proof of Renard VII.1.2
 together with V.3.21, for the published represented-parabolic interface and its
 `q^(-s)` normalization. Renard tests the specific points `t_{α_i}` of a basis with
-`|α(t_α)| < 1` and `|β(t_α)| = 1` for `β ≠ α`; the unit tests all points of the
+`|α(t_α)| < 1` and `|β(t_α)| = 1` for `β ≠ α`; the module tests all points of the
 closed chamber with a positive valuation, which includes points of that type (the
 uniformizer points of the dual cocharacters `ν α`). Under a unitary central
 character the root cone and the coroot chamber condition of the printed theorem
 differ, as explained in the statement Markdown `ArbitraryParabolicCasselmanStatement.md`;
-this unit concerns only the root cone `pres.positiveCone`.
+this module concerns only the root cone `pres.positiveCone`.
 
 Nothing here constructs presentations, Iwahori decompositions, power-cell volumes
 or Casselman's asymptotics. The analytic implications of the criterion remain

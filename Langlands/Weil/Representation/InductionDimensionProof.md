@@ -1,6 +1,6 @@
 # Dimension and rank of finite-index Weil induction
 
-Worker 265 proves the published proposition
+This module proves the published proposition
 `Langlands.Weil.RepresentationInductionDimension.{uG,uV}` from
 [`InductionFinitenessStatements`](InductionFinitenessStatements.md) by the
 closed theorem `Langlands.Weil.representationInductionDimension`. The module
@@ -71,7 +71,7 @@ unapplied constant `@representationInductionDimension.{uG, uV}` to
 statement's fully unfolded universally quantified formula. The theorem's level
 parameters are `[uG, uV]`, in the statement's order.
 
-A development check in the pinned environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+A development check in the pinned environment
 compiled the module with no errors or warnings. Inspecting the theorem reported
 only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
@@ -103,11 +103,11 @@ with no copied or adapted code:
 - `Representation.equivOfIso`, in `Mathlib/RepresentationTheory/Rep/Basic.lean`
   (line 174). Both files are at the pinned Mathlib commit
   `5ed2965256430c3649e86755f9576b54eca72435`.
-- Worker 17's published coset-coordinate results `Induction.coordinates`,
+- The published coset-coordinate results `Induction.coordinates`,
   `finite_coindV` and `rank_induce` in
   [`Induction`](Induction.md).
 
 This proves only the dimension component. The finite-image component, both
 semisimplicity components, their aggregate assembly, topology, induction
 compatibilities, actual local specialization and the Langlands correspondence
-remain separate work.
+are not proved here.

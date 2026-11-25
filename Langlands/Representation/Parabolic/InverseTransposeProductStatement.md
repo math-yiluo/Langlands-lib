@@ -1,7 +1,5 @@
 # Inverse transpose and normalized upper block products
 
-Author: Worker 357.
-
 This pair states an internal transport property of the existing normalized
 upper block induction construction. All five declarations are `Prop`-valued
 `def` or `abbrev` declarations; the pair supplies no proof of these propositions.

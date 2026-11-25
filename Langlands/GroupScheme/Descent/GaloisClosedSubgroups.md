@@ -1,7 +1,7 @@
 # Closed-subgroup descent from finite Galois invariance
 
-Author: Worker 1442. The component comparison argument is adapted from Worker
-1333's published `Rational.UnipotentRadicalDescent` construction.
+The component comparison argument is adapted from the published
+`Rational.UnipotentRadicalDescent` construction.
 
 This is an internal generalization of the finite Galois component assembly in
 `IsUnipotentRadical.finiteGaloisOverlap` to an arbitrary actual closed subgroup.
@@ -64,8 +64,8 @@ affineness of the ambient group.
 These constructions require invariance under every automorphism of a finite
 Galois extension. Establishing that invariance from a single Frobenius
 comparison, producing a finite field of definition for a geometric subgroup,
-and constructing an invariant geometric maximal torus remain separate
-obligations. This module neither proves the finite-field maximal-torus target
+and constructing an invariant geometric maximal torus are not done
+here. This module neither proves the finite-field maximal-torus target
 nor uses the no-torus unipotence theorem or forward maximal-torus base-change
 preservation. Its provenance is the internal categorical composition described
 above, not an assertion of an external existence theorem.

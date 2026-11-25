@@ -40,9 +40,10 @@ using one basis can subsequently be used with any basis. No separability
 claim is made for any measure space.
 
 The module imports only Mathlib's Hilbert-basis theory. In particular, it
-expresses the prerequisite directly in basis sums and does not import or
-resubmit the separately staged operator definitions. Once proved, it can be
-applied to the basis sums used there. Relating its conclusion to a particular
+expresses the prerequisite directly in basis sums and does not import the
+operator definitions of `Langlands.Analysis.OperatorIdeals`. Its proof,
+`hilbertSchmidtBasisIndependence` in `Langlands.Analysis.HilbertSchmidtBasisProof`,
+can be applied to the basis sums used there. Relating its conclusion to a particular
 existential operator predicate or packaging a canonical norm is a further
 implementation step.
 

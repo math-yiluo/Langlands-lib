@@ -1,7 +1,5 @@
 # Applying the literal valuation chamber condition to uniformizer rays
 
-Author: Worker 19.
-
 `rationalLatticeStrictExponent` proves the complete
 `RationalLatticeStrictExponentStatement` at independent universes `u` and `v`.
 

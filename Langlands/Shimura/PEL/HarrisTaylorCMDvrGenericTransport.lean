@@ -27,14 +27,16 @@ private def conjugateEnd0 {S : Scheme.{0}} {B C : AbelianScheme S} (e : B ≅ C)
   let h := eQ.symm.conj
   refine { h with map_add' := ?_, commutes' := ?_ }
   · intro f g
-    change comp0 B C B (homToHom0 e.hom) (comp0 C C B (f + g) (homToHom0 e.inv)) =
-      comp0 B C B (homToHom0 e.hom) (comp0 C C B f (homToHom0 e.inv)) +
-        comp0 B C B (homToHom0 e.hom) (comp0 C C B g (homToHom0 e.inv))
-    simp only [map_add, LinearMap.add_apply]
+    apply CategoryTheory.End.ext
+    change comp0 B C B (homToHom0 e.hom) (comp0 C C B (f + g).asHom (homToHom0 e.inv)) =
+      comp0 B C B (homToHom0 e.hom) (comp0 C C B f.asHom (homToHom0 e.inv)) +
+        comp0 B C B (homToHom0 e.hom) (comp0 C C B g.asHom (homToHom0 e.inv))
+    simp only [CategoryTheory.End.add_asHom, map_add, LinearMap.add_apply]
   · intro q
+    apply CategoryTheory.End.ext
     change comp0 B C B (homToHom0 e.hom)
-        (comp0 C C B (algebraMap ℚ (End0 C) q) (homToHom0 e.inv)) =
-      algebraMap ℚ (End0 B) q
+        (comp0 C C B (algebraMap ℚ (End0 C) q).asHom (homToHom0 e.inv)) =
+      (algebraMap ℚ (End0 B) q).asHom
     rw [Algebra.algebraMap_eq_smul_one, Algebra.algebraMap_eq_smul_one]
     change comp0 B C B (homToHom0 e.hom)
         (comp0 C C B (q • id0 C) (homToHom0 e.inv)) = q • id0 B
@@ -43,10 +45,10 @@ private def conjugateEnd0 {S : Scheme.{0}} {B C : AbelianScheme S} (e : B ≅ C)
 
 private theorem conjugateEnd0_intertwines {S : Scheme.{0}} {B C : AbelianScheme S}
     (e : B ≅ C) (f : End0 C) :
-    comp0 B B C (conjugateEnd0 e f) (homToHom0 e.hom) =
-      comp0 B C C (homToHom0 e.hom) f := by
+    comp0 B B C (conjugateEnd0 e f).asHom (homToHom0 e.hom) =
+      comp0 B C C (homToHom0 e.hom) f.asHom := by
   change comp0 B B C
-      (comp0 B C B (homToHom0 e.hom) (comp0 C C B f (homToHom0 e.inv)))
+      (comp0 B C B (homToHom0 e.hom) (comp0 C C B f.asHom (homToHom0 e.inv)))
       (homToHom0 e.hom) = _
   simp only [comp0_assoc, comp0_homToHom0, Iso.inv_hom_id, homToHom0_id, comp0_id0]
 

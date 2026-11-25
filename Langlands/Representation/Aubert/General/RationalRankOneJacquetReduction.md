@@ -1,15 +1,14 @@
 # Rational rank-one Jacquet pattern: geometric input and assembly
 
-Author: Worker 3917.
-
 This module isolates the geometric input of the rank-one Jacquet pattern on the
 actual rational-point families as a named proposition. It then proves that this
 input, the published length-two proposition and the published support-category
-detection proposition together imply the exact host target
+detection proposition together imply the exact target
 `RationalRankOneJacquetModulesStatement.{u, v}` of
 [RationalCorollaryTargets](RationalCorollaryTargets.md). The module proves an
-implication only. The three inputs remain unproved, so the host target is not
-proved here.
+implication only. The geometric input is proved separately, by
+`rationalRankOneGeometricJacquet` in `RationalRankOneGeometricJacquetProof`; the
+Library does not prove the other two, so the target is not proved here.
 
 ## `IsMaximalStandard.ne_univ`
 
@@ -35,14 +34,14 @@ relative root system `hRoots`, and closedness of every actual unipotent radical
 `SimpleRoot i ν` receive the finite enumeration `simpleRelativeRootFintype` and
 classical decidable equality.
 
-The Coxeter data are the same as in the host target: a finite relative Weyl
+The Coxeter data are the same as in the target: a finite relative Weyl
 group, the point normalizer and centralizer comparisons `hN`, `hZ`, a Coxeter
 matrix `C` on the simple-root labels, an `ActualCoxeterSystem` of the torus point
 normalizer modulo the full centralizer, and the premises
 `RootLengthComparison`, `PositiveSimpleReflectionComparison`,
 `actualLeviWeylIdentification`, `minimalityLengthCriterion` and
 `associatedSubsetLaws`. They are retained so that `longestRep actual J` has the
-meaning it has in the host target.
+meaning it has in the target.
 
 ### Hypotheses on the datum
 
@@ -101,7 +100,7 @@ The following differences from these sources are deliberate.
   Casselman's unnormalized Jacquet module do not appear.
 - Self-duality `P = P̄` is expressed by the witness `hself`: the chosen lift `n`
   of `longestRep actual J` normalizes `levi i ν J`. The exact representative, the
-  direction of conjugation and the inverse pullback follow the published host
+  direction of conjugation and the inverse pullback follow the published
   target and `HasRankOneJacquetMiddleSequence`; no new convention is introduced.
 - Casselman assumes `σ` irreducible and absolutely cuspidal. The present
   proposition only assumes `IsCorollaryLeviCuspidal`. The geometric lemma holds
@@ -109,7 +108,7 @@ The following differences from these sources are deliberate.
   other than those of the identity and of `w`. Every proper `K ≠ J` has no
   surviving term: a surviving term needs `w J = K` for a Weyl element `w`, and
   the only standard associate of a self-associated maximal `J` is `J` itself.
-  The host target applies the proposition only to irreducible `σ`.
+  The target applies the proposition only to irreducible `σ`.
 - Reducibility of the induced representation is not assumed; the computation
   does not need it.
 
@@ -126,7 +125,7 @@ RationalRankOneLengthTwoStatement.{u, v} →
 
 and `rationalRankOneJacquetModulesAssembly` proves it as
 `rationalRankOneJacquetModules_of_lengthTwo_detection_geometry`. That proof
-introduces exactly the binders of the host target: the field, group, torus,
+introduces exactly the binders of the target: the field, group, torus,
 topology instances, cocharacter, structural statements, closed families, Coxeter
 data, a maximal standard `J`, a finite-length `σ` with irreducibility,
 cuspidality and reducibility of `i_J σ`, a lift `n` with
@@ -144,9 +143,9 @@ cuspidality and reducibility of `i_J σ`, a lift `n` with
    cuspidality of `σ`, the same `n` and `hself`, and the outputs of steps 1 and 2,
    returns an ordered pair `(ρ₊, ρ₋)` of actual finite-length objects with
    `HasTwoConstituents (i_J σ) ρ₊ ρ₋` and `RankOneJacquetPattern`. This is the
-   witness the host target asks for.
+   witness the target asks for.
 
-Every lift `n` and every witness `hself` supplied by the host target is passed
+Every lift `n` and every witness `hself` supplied by the target is passed
 unchanged, so the object isomorphisms `r_J ρ₊ ≅ σ` and
 `r_J ρ₋ ≅ Ad(n⁻¹) σ` hold for that lift. No finite-length, exactness,
 classification or self-association premise is added beyond the three named
@@ -172,8 +171,9 @@ and [RankOneJacquetSupportDeduction](RankOneJacquetSupportDeduction.md). The
 extraction variant also uses
 `rationalSupportCategoryIrreducibleJacquetDetection_of_cuspidalFactors`.
 
-The geometric lemma enters only through the unproved premise
-`RationalRankOneGeometricJacquetStatement`. A cuspidal-support theorem (Renard
+The geometric lemma enters only through the premise
+`RationalRankOneGeometricJacquetStatement`, proved separately by
+`rationalRankOneGeometricJacquet`. A cuspidal-support theorem (Renard
 VI.5.4 in the form of support-category detection) enters only through the
 unproved premise `RationalSupportCategoryIrreducibleJacquetDetectionStatement` or
 the unproved extraction premise. Length two enters only through the unproved
@@ -183,9 +183,10 @@ cuspidal-support theorem is invoked.
 
 ## What remains
 
-To prove the host target unconditionally one must prove
-`RationalRankOneLengthTwoStatement` (its own proof task),
+To prove the target unconditionally one must prove
+`RationalRankOneLengthTwoStatement`,
 `RationalSupportCategoryIrreducibleJacquetDetectionStatement` or the extraction
-proposition, and `RationalRankOneGeometricJacquetStatement`. An empty simple-root
-type has no maximal standard subset, so the geometric proposition and the host
+proposition, and `RationalRankOneGeometricJacquetStatement`; the last is proved by
+`rationalRankOneGeometricJacquet`. An empty simple-root
+type has no maximal standard subset, so the geometric proposition and the
 target are then vacuous; no nonemptiness premise is added.

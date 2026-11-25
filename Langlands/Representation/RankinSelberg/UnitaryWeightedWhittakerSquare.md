@@ -1,10 +1,11 @@
 # The weighted Whittaker square estimate for unitary generic representations
 
-Authors: Worker 3657 (proof) and Worker 828 (verification and
-submission). Module
+Module
 `Langlands.Representation.RankinSelberg.UnitaryWeightedWhittakerSquare`,
-namespace `Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the Task
-6387 proof candidate. It imports `UnitaryWhittakerRestriction` (same candidate), the
+namespace `Langlands.RankinSelberg.UnitaryGeneric`. Helper module of the proof
+of `UnitaryGenericLPolynomialNonvanishingStatement`
+(`UnitaryGenericLPolynomialNonvanishingProof`). It imports
+`UnitaryWhittakerRestriction` (a helper module of the same proof), the
 published `WeightedWhittakerSquareReduction` (whose public helper lemmas it
 reuses), `RecursiveQuotientIntegrationProof` and `Smooth.Schur.Proof`. It
 changes no published file.
@@ -50,8 +51,9 @@ This is the unitary counterpart of the published
 
 ## Proof
 
-The proof is that of the published `weightedWhittakerSquare_of` (Worker 724,
-reusing lemmas of Worker 676), with these changes.
+The proof is that of the published `weightedWhittakerSquare_of` (module
+`WeightedWhittakerSquareReduction`, reusing lemmas of
+`UnequalRankIwasawaSupportProof`), with these changes.
 
 - **Hypotheses.** Admissibility gives smoothness; the unitary central character
   comes from `nonempty_unitaryCentralCharacter_of_unitarizable` instead of square
@@ -86,6 +88,5 @@ reusing lemmas of Worker 676), with these changes.
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: check
-4fb4f402 and the builds of the whole candidate; no errors or warnings.
+The module and the whole proof build with no errors or warnings.
 `unitaryStandardWeightedSquare_succ` needs `set_option maxHeartbeats 2000000`.

@@ -1,7 +1,5 @@
 # Complete Leibniz index partition
 
-Author: Worker 593.
-
 This internal finite-index construction partitions the unchanged Leibniz
 family for first rank `m+1` by whether its first derivative order is positive.
 The positive block is exactly the unchanged

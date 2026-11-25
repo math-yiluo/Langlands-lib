@@ -1,7 +1,5 @@
 # Anticommutativity of two connecting maps
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 The input is a commuting three-by-three diagram of actual cochain complexes
 of modules. Its top and bottom rows and its three columns are short exact.
 The middle row is already a complex with zero composite; no further exactness

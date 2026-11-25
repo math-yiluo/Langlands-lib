@@ -1,6 +1,6 @@
 # Split tori without proper rational parabolics
 
-Worker 184. This is the algebraic containment step used in Kaletha–Prasad,
+This is the algebraic containment step used in Kaletha–Prasad,
 *Bruhat–Tits Theory: A New Approach* (2023), §9.3.2, printed p.331
 (PDF p.362), and the proof of Proposition 9.3.8, printed pp.334–335
 (PDF pp.365–366). The Chapter 9 corrections (2024), PDF pp.39–41,

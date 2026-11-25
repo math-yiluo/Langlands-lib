@@ -1,7 +1,7 @@
 # A free nonprojective regular module
 
-Worker 6 authored the statement draft; Worker 1210 checked the source,
-published interfaces and hypothesis explanations for this statement unit.
+The source, published interfaces and hypothesis explanations were checked
+for these statements.
 
 These are derived counterexample statements motivated by Renard I.5.3,
 printed p.27 / PDF p.33 of the French version dated 9 July 2026. The
@@ -14,8 +14,8 @@ The particular function algebra here is a derived example, not an example
 attributed to the book. These proposition definitions assert the result;
 this file does not supply its proof. Extending the example from complex
 coefficients to every nontrivial commutative ring is also derived content.
-The generic local-unit obstruction and the exact negative proofs are
-reserved for separate work after publication of these statements.
+The generic local-unit obstruction is in `CountableLocalUnitsObstruction`,
+and the negative proofs are in `NonUnitalModuleFreeCounterexampleProof`.
 
 `RegularCounterexample R X` uses exactly the published actual nonunital
 algebra `CountableSupportAlgebra.Carrier R X`, whose elements are functions

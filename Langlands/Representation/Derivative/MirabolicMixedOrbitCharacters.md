@@ -1,7 +1,5 @@
 # Positive characters at the actual mixed-orbit representatives
 
-Author: Worker 499.
-
 This internal helper calculates the positive ambient character on each of
 the four actual radical intersections from `MirabolicMixedOrbitData`.
 It factors the actual coefficient homomorphisms through the source
@@ -21,8 +19,7 @@ localization. Sections 3.1–3.2, printed pp.450–451 (PDF pp.11–12), fix
 the positive last-coordinate character and the minus functors.
 Section 4.12(II),(III), printed pp.456–458 (PDF pp.17–19), specifies the
 mixed subgroups. Section 7.2, printed p.471 (PDF p.32), gives the cycles
-for 4.13(b,c). These passages and the cycle page image were read during
-the host development. A bounded project and literature errata search
+for 4.13(b,c). These passages and the cycle page image were read. A bounded project and literature errata search
 found no specific BZ77 errata entry; this is no global absence assertion.
 
 The source supplies the groups, representatives, character and intended
@@ -163,10 +160,10 @@ smoothness or finite-dimensional hypothesis on either carrier.
 This is a statement about explicit linear equivariance. It does not
 identify an induced representation with an orbit piece, construct a
 filtration, or claim a normalized Phi comparison. Those constructions,
-their natural maps, determinant normalizations and exactness remain
-separate host obligations.
+their natural maps, determinant normalizations and exactness belong to the
+product-minus compatibility proved in `MirabolicProductMinusCompatibility`.
 
-## Proof-dependency and inherited restriction audit
+## Proof-dependency and restriction audit
 
 The direct imports are
 `Langlands.Group.GL.MirabolicMixedOrbitRadicals` and
@@ -190,17 +187,17 @@ The concrete orbit root contributes stabilizer definitions, not a
 geometric-lemma proof or any orbit-coverage assertion.
 
 Every row below covers direct and transitive proof dependencies.
-Excluded families include their mathematical conclusions, parent
-tasks, proof successors and downstream consequences.
+Excluded families include their mathematical conclusions, proof
+successors and downstream consequences.
 
-| Host condition or excluded family | Audit of this helper |
+| Condition or excluded family | Audit of this helper |
 | --- | --- |
 | Actual coefficients and rank transports | The source maps are restrictions of the published coefficient projections. Both GL components are proved to be `1`. The underlying inverse conjugation, representatives and `totalRank_eq` transport are unchanged. |
 | Arbitrary inputs and universes | Every `k,r : ℕ` is allowed. The ring universe and both carrier universes are independent. No admissibility, irreducibility, finite dimension, finite length, genericity, chosen vector, unit input or saturation hypothesis occurs. Zero carriers and repeated factors remain allowed. |
-| Supplied topology and GL₀ boundary | The character uses any supplied coefficient topology. This successor-source helper concerns `P_(r+2)` only; it creates no `P_0`, applies no Phi to `P_1`, and imposes no condition on the host's entire arbitrary GL₀ carrier. |
+| Supplied topology and GL₀ boundary | The character uses any supplied coefficient topology. This successor-source helper concerns `P_(r+2)` only; it creates no `P_0`, applies no Phi to `P_1`, and imposes no condition on the entire arbitrary GL₀ carrier of the product-minus compatibility. |
 | Plus functors and adjunction | No plus functor, plus comparison or adjunction theorem occurs in the closure or the proof. The matrix `plusSubgroup` in the concrete data is permitted group infrastructure. |
 | BZ77 4.13(d), general Leibniz and derivative comparisons | No submodule-detection, general Leibniz, derivative-filtration or minus-comparison conclusion is used. Imported filtration and localization definitions are not treated as proofs of comparisons. |
-| Orbit geometry, normalization and exactness | No orbit cover, disjointness, openness, Haar-scaling or induction theorem supplies a premise. This helper proves none of the six host clauses or their natural maps. |
+| Orbit geometry, normalization and exactness | No orbit cover, disjointness, openness, Haar-scaling or induction theorem supplies a premise. This helper proves none of the six clauses of `MirabolicProductMinusCompatibilityStatement` or their natural maps. |
 | Segment derivative and Jacquet formulas | No Ze80 §3.5 or §9.6 result, `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula` or `SegmentSpecialJacquetExponentNormFormula` supplies an input. |
 | Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence is used. |
 | Linked and unlinked socle consumers | `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `JuxtaposedSegmentSocleReverseProductStructure` and `LinkedSegmentSocleReverseProductQuotientHom` are absent as inputs. |
@@ -208,25 +205,23 @@ tasks, proof successors and downstream consequences.
 | Special-head criterion and generic uniqueness | Neither `SegmentHeadProductIrreducibility` nor `GenericSegmentProductUniqueness` supplies an input. |
 | Ordered existence and multisegment exhaustion | No `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`, ordered strong-head existence, special-head multisegment exhaustion, quotient coverage or ordered conversion supplies an input. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure` or its full-product assembly supplies an input. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure` or its full-product assembly supplies an input. No conclusion (b),(d),(e),(f) of the six statements of `Classification.SegmentSocleDerivativesStatement` is used. |
 | Supercuspidal and single-block finiteness | No `SupercuspidalCoinvariantFinitenessStatement`, all-character single-block conclusion or arbitrary-character finiteness theorem supplies an input. |
 | Other Whittaker finiteness exclusions | Neither `IrreducibleCoinvariantFinitenessStatement` nor `LeviCuspidalCoinvariantFinitenessStatement` supplies an input. No prohibited mirabolic finite-length route through that finiteness occurs. The elementary Whittaker character definitions and laws in the closure assert no such finiteness. |
-| Published-input requirement | Both direct roots and all 44 imported project pairs are published and were checked unchanged against the audited Library commit. Proposition definitions, citations and pending derivative proofs supply no mathematical premise. No downstream consumer conclusion is used upstream. |
-| Separate owners and run controls | The helper does not duplicate restriction-sequence or exactness work, invoke a consumer as an upstream premise, or alter Worker 127's operator pause, Worker 8's suspension or Worker 114's hold. |
+| Published inputs | Both direct roots and all 44 imported project pairs are published and were checked unchanged against the audited Library commit. Proposition definitions, citations and unproved derivative statements supply no mathematical premise. No downstream consumer conclusion is used upstream. |
+| Separate results | The helper does not duplicate restriction-sequence or exactness results or invoke a consumer as an upstream premise. |
 
 The audit against published Library commit
 `cb42061b82d3b398d42ee1f25159daec0f54e40d` finds the 44 project imports
 listed below. Every imported Lean/Markdown pair is byte-identical to
 that Library and matches its manifest, including the radical-calculation
-prerequisite. The complete independent semantic review of that prerequisite
-and its accepted publication were verified before this submission. A source scan finds no inherited excluded
-task identifier or any of the 24 named consumer declarations in Lean
+prerequisite. A source scan finds none of the 24 named consumer
+declarations in Lean
 code, and no proof holes, new axioms or unsafe evaluation commands.
 Occurrences of excluded names in paired Markdown explain independence.
 The inspection of the terminal vanishing theorem reports only
 `propext`, `Classical.choice` and `Quot.sound`, with independent level
-parameters `u`, `uV`, `uW`. Development checking supplies no independent
-semantic acceptance or publication.
+parameters `u`, `uV`, `uW`.
 
 ## Complete project import closure
 

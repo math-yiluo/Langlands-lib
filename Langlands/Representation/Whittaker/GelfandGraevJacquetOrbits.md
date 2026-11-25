@@ -1,6 +1,6 @@
 # The `N`–`P` double cosets for the Gelfand–Graev Jacquet module
 
-Draft by Worker 1832 for task `d7c75f29-8641-4f6e-9a08-aaa69f1db69c`. This module provides the
+This module provides the
 orbit data for the computation of the Jacquet module of the Gelfand–Graev representation
 (`GelfandGraevJacquetStatement`). Restrict `c-Ind_N^G ψ` to a standard block parabolic `P`. The
 Mackey filtration (`Geometric.closedSubgroupMackeyFiltration`) has one graded piece per `N`–`P`

@@ -78,7 +78,7 @@ theorem dualWhittaker_mul_localPoint_torus
     {x : T.Space} (hx : IsSphericalOutside F T S x)
     {x' : T'.Space} (hx' : IsSphericalOutside F T' S x') {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a b : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -168,7 +168,7 @@ theorem dualIntegrand_localPoint_torus_mul
     {Φ : RowVector F (r + 1) → ℂ} (hΦ : IsStandardOutside F (r + 1) S Φ)
     {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a b : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -228,7 +228,7 @@ theorem integrand_shift
     {Φ : RowVector F (r + 1) → ℂ} (hΦ : IsStandardOutside F (r + 1) S Φ)
     {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a b : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =

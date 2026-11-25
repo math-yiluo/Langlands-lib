@@ -1,12 +1,10 @@
 # Full cuspidal Jacquet modules of segment subrepresentations and quotients, proof
 
-Author: Worker 964 (collaborator on task `b331611c-526d-4925-87fe-ea67ed6e6fed`,
-whose first executor is Worker 890). This module is the final assembly. It
+This module is the final assembly. It
 copies no code. Every input is a published declaration imported by Lean name.
-The helper modules of the route are by Worker 964 (central-character
-splitting and the two clauses) and Worker 890 (edge filtration, edge maps and
-factor hypotheses). The authors of the three prerequisite theorems are listed
-under "Inputs".
+The helper modules of the route supply the central-character splitting and
+the two clauses, and the edge filtration, edge maps and factor hypotheses;
+they and the three prerequisite theorems are listed under "Inputs".
 
 ## Statement proved
 
@@ -22,7 +20,7 @@ The theorem proves the published proposition
 statement pair and every pair it imports are unchanged. The theorem has no
 hypotheses beyond the outer telescope `{p : ℕ} [Fact p.Prime]
 (F : PadicField.{uF} p) (T : F.TopologicalData)`. It has no theorem-valued
-premise. `lean_check` inspection reports `level_parameters = [uF, uV]` and
+premise. Declaration inspection reports `level_parameters = [uF, uV]` and
 the axioms `propext`, `Classical.choice` and `Quot.sound` only.
 
 The proposition is the conjunction of two clauses. Each quantifies over every
@@ -68,7 +66,7 @@ SegmentFullJacquet.segmentFullJacquetFormula_of_prerequisites F T
 ```
 
 `segmentFullJacquetFormula_of_prerequisites` (module
-`SegmentFullJacquetEdgeData`, Worker 964) derives
+`SegmentFullJacquetEdgeData`) derives
 `SegmentFullJacquetFormula F T` from four theorem-valued arguments:
 
 - `hassoc : ∀ n, AssociatedJacquetFiltrationTheorem.{uF,uV} F T n`, the
@@ -136,7 +134,7 @@ This central-character separation replaces the multiplicity bookkeeping of
 Ze80 §2 (2.1–2.10). It needs no separate multiplicity-one theorem: distinct
 scalars of `z` make the graded pieces pairwise non-isomorphic.
 
-### The edge representations (Worker 890's modules)
+### The edge representations (the edge modules)
 
 For each `k` with `k + 1 < m`, merge blocks `k` and `k + 1`. The merged slot
 carries the product `ν^k A × ν^(k+1) A`. These two factors are adjacent,
@@ -254,14 +252,14 @@ This is `quotient_jacquet_equiv`, module `SegmentFullJacquetAssembly`.
 
 ## Inputs
 
-| Input | Lean name and module | Status, authors |
+| Input | Lean name and module | Status |
 | --- | --- | --- |
-| conditional assembly | `SegmentFullJacquet.segmentFullJacquetFormula_of_prerequisites`, `Classification.SegmentFullJacquetEdgeData` (with `SegmentFullJacquetCentral`, `…Splitting`, `…Adjunction`, `…Edges`, `…Assembly`) | published, artifact `f006c144`, Worker 964 |
-| eigenspace isolation | `CentralEigenspaceSplitting.nonempty_equiv_graded_of_sub`, `…_of_quot`, `Filtration.CentralEigenspaceSplitting` | published, artifact `d6af361f`, Worker 964 |
-| edge filtration, edge maps, (H1)/(H2) | `SegmentEdge.segmentEdgeJacquetFiltration_of_padicGeometricLemma`, `segmentEdgeQuotientMap`, `segmentEdgeSubMap`, `segment_updateQuotient_hypotheses`, `segment_updateSubrepresentation_hypotheses` in `SegmentEdgeJacquetReduction`, `SegmentEdgeMaps`, `SegmentEdgeFamilyHypotheses`, `SegmentEdgeFactorHypotheses` | published, Worker 890 |
-| associated Jacquet filtration (BZ77 2.13(c)) | `CuspidalSupport.associatedJacquetFiltration`, `CuspidalSupport.AssociatedProof` | published, artifact `df6d40a0`, Workers 168 and 193 |
-| geometric lemma (BZ77 2.12) | `Geometric.padicGeometricLemma`, `Geometric.GeometricLemmaProof` | published, artifact `f606bb75`, Workers 164 and 194 |
-| Ze80 1.11 | `Classification.twoSupercuspidalProductStructure`, `Classification.TwoSupercuspidalProductStructureProof` | published, artifact `f10f67f3`, Worker 892 with Worker 163 |
+| conditional assembly | `SegmentFullJacquet.segmentFullJacquetFormula_of_prerequisites`, `Classification.SegmentFullJacquetEdgeData` (with `SegmentFullJacquetCentral`, `…Splitting`, `…Adjunction`, `…Edges`, `…Assembly`) | published |
+| eigenspace isolation | `CentralEigenspaceSplitting.nonempty_equiv_graded_of_sub`, `…_of_quot`, `Filtration.CentralEigenspaceSplitting` | published |
+| edge filtration, edge maps, (H1)/(H2) | `SegmentEdge.segmentEdgeJacquetFiltration_of_padicGeometricLemma`, `segmentEdgeQuotientMap`, `segmentEdgeSubMap`, `segment_updateQuotient_hypotheses`, `segment_updateSubrepresentation_hypotheses` in `SegmentEdgeJacquetReduction`, `SegmentEdgeMaps`, `SegmentEdgeFamilyHypotheses`, `SegmentEdgeFactorHypotheses` | published |
+| associated Jacquet filtration (BZ77 2.13(c)) | `CuspidalSupport.associatedJacquetFiltration`, `CuspidalSupport.AssociatedProof` | published |
+| geometric lemma (BZ77 2.12) | `Geometric.padicGeometricLemma`, `Geometric.GeometricLemmaProof` | published |
+| Ze80 1.11 | `Classification.twoSupercuspidalProductStructure`, `Classification.TwoSupercuspidalProductStructureProof` | published |
 
 Other published tools used by the helper modules are named above:
 `Parabolic.FirstAdjointness.equiv`, `Parabolic.normalizedSecondAdjointness`,
@@ -294,12 +292,8 @@ modules in the transitive closure, this module included. Per input:
 
 ### Independence list
 
-- *Task IDs and declarations.* A scan of every Lean file in the 1038-module
-  closure finds none of the task-ID prefixes `8364e73f`, `30341ae4`,
-  `3bfb61fa`, `ebea9a8a`, `20e4e1c6`, `8252833d`, `52e97845`, `1cb45da2`,
-  `cd8ab97c`, `bf433f0a`, `5eece9e8`, `aca8805b`, `f3a69bc8`, `2ae5cbe5`,
-  `e3634665`, `23189526`, `55ad1e10`, `b95105c6`, `92aea10f` or `8e5b4563`.
-  It also finds none of the declaration names
+- *Declarations.* A scan of every Lean file in the 1038-module
+  closure finds none of the declaration names
   `SegmentHeadProductIrreducibility`, `GenericSegmentProductUniqueness`,
   `SquareIntegrableLanglandsClassification`,
   `SegmentSpecialEssentialSquareIntegrability`, `MultisegmentSocleExhaustion`,
@@ -329,16 +323,17 @@ modules in the transitive closure, this module included. Per input:
   matrices. No Lean file among the 158 cites Ze80 §3.5, §9.3, §9.6, 4.2 or
   9.7. The citations of the 1.11 closure are recorded in that module's
   Markdown.
-- *One-block helper.* `SegmentQuotientJacquetSingleBlock` (Workers 485 and
-  964) lies in the closure through `SegmentEdgeFactorHypotheses`. It was
-  written as a one-block construction unit for the weak-segment
-  Jacquet-factor work around the consumer `92aea10f`. The route uses only its
+- *One-block helper.* `SegmentQuotientJacquetSingleBlock` lies in the
+  closure through `SegmentEdgeFactorHypotheses`. It is a one-block
+  construction for the weak-segment Jacquet-factor results that serve
+  `SegmentSpecialJacquetExponentNormFormula`. The route uses only its
   `singleBlockNormalizedJacquetEquiv`: for a one-block shape, the Jacquet
   quotient map is an equivalence, since the half modulus is one. The module
-  composes published maps. It proves neither the consumer's norm formula nor
-  its all-shape factor assertion (task `15540667`, not imported). Its own
+  composes published maps. It proves neither that norm formula nor
+  its all-shape factor assertion `SegmentQuotientJacquetFactors`, which is
+  not imported. Its own
   96-module closure contains no `SegmentFullJacquet` module. So it is not a
-  conclusion, proof successor or consequence of an excluded task, and it
+  conclusion or consequence of an excluded result, nor proved from one, and it
   creates no circularity.
 - *Segment-named modules.* The closure reaches `Classification.Segments`,
   `ConstituentRelations`, `CanonicalConstituents`, `ConstituentCompatibility`
@@ -359,8 +354,8 @@ modules in the transitive closure, this module included. Per input:
   criterion (Ze80 4.2 or 9.7), no segment derivative formula (Ze80 3.5 or
   9.6), no analytic or square-integrability result (Ze80 9.3), and no
   classification or exhaustion theorem. Ze80 1.11 concerns two supercuspidal
-  representations. It is the lower ingredient named by the task, not such a
-  criterion. No proposition definition enters as a premise.
+  representations. It is a lower ingredient, one of the three prerequisite
+  theorems of this proof, not such a criterion. No proposition definition enters as a premise.
 
 ### Derivative results
 
@@ -371,20 +366,18 @@ reached from `SegmentFullJacquetEdgeData` is `Whittaker.Iwasawa`, the Iwasawa
 decomposition of `GL_n`, which contains no derivative. Derivatives enter
 only through conjunct (a) of 1.11, the published premise-free theorem
 `twoSupercuspidalNonadjacentProductIrreducible`, which proves BZ77
-Theorem 4.2 with Bernstein–Zelevinsky derivatives. This task's clause "do not
-assume a derivative formula (Ze80 3.5 or 9.6, BZ77 derivative results)" was
-inherited verbatim by the 1.11 task `ab61f565`. The trusted operator's
-decision on request `a8463ee15d57588c8de10306748b2538` (correspondence
-`bd71b9185aab5d6eafffb7891bd3a3ca`, `sender_role: operator`) interprets it.
-The clause forbids assuming derivative results without proof and any
+Theorem 4.2 with Bernstein–Zelevinsky derivatives. The independence
+condition of this proof, "do not assume a derivative formula (Ze80 3.5 or
+9.6, BZ77 derivative results)", applies verbatim to the 1.11 proof as well.
+The condition forbids assuming derivative results without proof and any
 circular dependency. It does not forbid a fully proved BZ77 derivative
-route. The conditions of that decision hold for this closure:
+route. The conditions for such a route hold for this closure:
 
 1. only BZ77's general derivative theory is used, and no segment derivative
    formula (Ze80 3.5 or 9.6) is stated or used;
-2. every derivative result is proved, accepted and published;
-3. the closure contains no excluded task, nor the segment-socle part of task
-   `8e5b4563`.
+2. every derivative result is proved and published in the Library;
+3. the closure contains no excluded result, nor the segment-socle derivative
+   statements of `SegmentSocleDerivativesStatement`.
 
 The 1.11 Markdown records the details of this audit. No derivative result is
 a hypothesis anywhere in this proof.

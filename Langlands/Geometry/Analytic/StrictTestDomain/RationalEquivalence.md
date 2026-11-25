@@ -1,7 +1,5 @@
 # Rational sites and presheaves under bounded algebra equivalences
 
-Author: Worker 36.
-
 This derived construction works over a complete ultrametric normed field K.
 Its inputs P and Q are actual presented strict affinoid algebras, and e is an
 actual K-algebra equivalence with bounded forward and inverse maps. No site

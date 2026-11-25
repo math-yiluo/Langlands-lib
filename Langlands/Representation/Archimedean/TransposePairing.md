@@ -1,7 +1,7 @@
 # Inverse-transpose pairings for archimedean local modules
 
 This internal interface isolates the local archimedean pairing obligation needed
-by Task 7294. It works for `RCLike` scalars, in particular for the real and complex
+by the proof of `CuspidalTransposeInverseContragredientStatement`. It works for `RCLike` scalars, in particular for the real and complex
 groups, and retains an arbitrary universe for the representation carrier.
 It states no existence theorem.
 

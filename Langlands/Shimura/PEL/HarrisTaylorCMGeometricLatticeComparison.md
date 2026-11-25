@@ -69,7 +69,7 @@ signature, tensor, Picard-zero, Weil, adelic and torsion parameters in its
 Lean type; `dualityNaturality`, `polarizationStability` and `q` are not extra
 arguments of that predicate. There is no rigidity premise at `U`.
 The generic dominant-unramified-etale criterion used by the normal-level
-construction is discharged by the published proof
+construction is discharged by the proof
 `DominantUnramifiedEtaleProof.dominantUnramifiedEtale`. The other named
 premises remain explicit.
 
@@ -108,7 +108,7 @@ invariance to the actual common kernel.
 
 `cmHarrisGeometricLatticeCommonTorsor k` applies
 `cmGeometricNormalGeometricTorsor_of_dominantCriterion` to exactly `N_k ≤ V`,
-with the published dominant criterion proof. It returns an action in
+with the dominant criterion proof. It returns an action in
 `X_V.Etale` on the original source `Sbar(N_k)`, with the original projection
 and deck maps, together with `IsFiniteGeometricTorsor X_V` for that action.
 The property asserts finiteness of `Q_k`, finiteness and surjectivity of
@@ -132,7 +132,7 @@ same structure morphism.
 ## Association of both full coefficient diagrams
 
 Put `J = Scheme.smallEtaleTopology X_V`, and write `Z` for the constructed
-small-etale diagram. The imported arithmetic unit gives two equivariant
+small-etale diagram. The imported arithmetic module gives two equivariant
 coefficient diagrams over the same group functor `Q`:
 
 - `cmHarrisLatticeCommonOwnCoefficients`, whose underlying functor is the
@@ -179,7 +179,7 @@ t_f\,;\,e_j\,;\,\operatorname{cp}(z_f,M_j)
  =e_i\,;\,\operatorname{prod}_{Z_i}(\operatorname{const}(r_f)).
 \]
 
-Here `cp` is the published `coverPullback`. Finally, with `b_k` the
+Here `cp` is `coverPullback`. Finally, with `b_k` the
 geometric coefficient inclusion, its `inclusion` theorem applies
 `etaleAssociatedInclusion_natural` to give
 
@@ -192,7 +192,7 @@ Thus the comparison applies the original included coefficient vector on
 the same cover, and both original reductions define the descended
 transitions. All statements hold for every arrow of `ℕᵒᵖ`.
 
-## Provenance and remaining scope
+## Provenance and scope
 
 This is an internal deduction from the actual arithmetic common-kernel
 comparison, geometric normal-torsor construction, and varying-cover
@@ -204,11 +204,12 @@ exact geometric tower and normal torsors, and invariant-sheaf functors.
 The new diagram and naturality fields are proved as described above.
 No additional assertion is attributed to external literature.
 
-This unit constructs a morphism of the two systems associated on the
+This module constructs a morphism of the two systems associated on the
 common covers. Comparisons with the separate own-`V` and original coarse
-cover systems are further constructions. It asserts neither injectivity
+cover systems are further constructions, made in
+`HarrisTaylorCMGeometricLatticeCoverComparison`. It asserts neither injectivity
 nor invertibility of the reduced coefficient map, arbitrary-lattice or
 rational adic independence, nor equality of the two lattices.
 Representability, the named moduli prerequisites, arithmetic existence,
-source comparison and canonical-model geometry remain explicit or
-unfinished obligations of the containing task.
+source comparison and canonical-model geometry are explicit premises or are
+not treated in this module.

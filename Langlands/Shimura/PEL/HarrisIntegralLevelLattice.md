@@ -1,7 +1,5 @@
 # The integral submodule carried by an original Harris level orbit
 
-Author: Worker 344.
-
 This internal construction attaches an integral finite-adele submodule of the
 actual rational Tate space to an original Harris compatible-frame orbit at a
 level that preserves the existing integral source span. For a geometrically
@@ -20,7 +18,7 @@ The inputs retain the existing totally real number field `E`, totally complex
 quadratic extension `F`, central simple unitary data `D` on `A`, Harris
 signature charts `C`, and displayed algebra and scalar-tower instances. The
 charts may use any section `Φ` of complex embeddings allowed by their type;
-this unit imposes no CM-section specialization or division hypothesis.
+this module imposes no CM-section specialization or division hypothesis.
 
 `P : Prerequisites` supplies the named tensor, Picard, duality and polarization
 prerequisites used by `PositivePolarizedAction`. The base scheme `S` is
@@ -81,7 +79,7 @@ finiteness and etaleness instances for every corresponding roots-of-unity
 scheme. They use the existing `PolarizedWeilLevel.levelTower` on finite-adelic
 scalar-extension levels, with its unchanged actual Weil-compatible frames and
 geometrically fixed right orbits. The actual monodromy action uses the
-published `rationalWeilGeometricTransport` proof.
+proof `rationalWeilGeometricTransport`.
 
 For a level `K` whose subgroup is contained in the source integral stabilizer,
 `harrisIntegralLevelLattice X K hK x` evaluates the descended submodule at the
@@ -104,7 +102,7 @@ rational Tate monodromy value `eta (g v)`. Frame surjectivity reduces arbitrary
 stabilizer equivalence then give both implications. Orbit fixedness is used
 exactly here; fixedness of the frame itself is neither assumed nor concluded.
 
-## Full integral image and remaining obligations
+## Full integral image and what is not proved here
 
 `harrisIntegralFrameCondition_iff_lattice` identifies the existing frame
 normalization predicate with equality, as subsets of the rational Tate
@@ -122,13 +120,14 @@ orbit and uses representative independence plus the frame equality criterion.
 It assumes neither injectivity of rationalization nor existence of a
 normalized model.
 
-The provenance is internal: the unit derives image constructions and their
-laws from the published source span, compatible frames, opposite right
+The provenance is internal: the module derives image constructions and their
+laws from the source span, compatible frames, opposite right
 action, original quotient and actual monodromy formulas. It imports these
 mathematical objects by Lean name and invokes no external existence result.
 No new literature assertion is introduced. The construction is an input for
-the normalization route in the division representability task. Lattice
-realization, normalized-model existence, integral reflection of rational
-isogenies, the complete natural moduli comparison, representing schemes,
-admissibility, smoothness and projectivity remain separate obligations. The
-exact `DivisionCMRepresentabilityStatement` is not proved by this unit.
+the normalization route to division-case representability of the normalized
+Harris CM presheaf. Lattice realization, normalized-model existence, integral
+reflection of rational isogenies, the complete natural moduli comparison,
+representing schemes, admissibility, smoothness and projectivity are not proved
+in this module. The exact `DivisionCMRepresentabilityStatement` is not proved
+by this module.

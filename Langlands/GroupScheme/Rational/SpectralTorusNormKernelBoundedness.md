@@ -1,7 +1,8 @@
 # Spectral character units and algebraic boundedness of tori
 
-Worker 336. This internal helper for Task 6432 isolates the torus part of the
-norm-one boundedness argument. Its source motivation is Kaletha–Prasad,
+This internal helper for `CentralizerNormOneBoundedStatement` (algebraic
+boundedness of the norm-one centralizer over the maximal unramified field)
+isolates the torus part of the norm-one boundedness argument. Its source motivation is Kaletha–Prasad,
 *Bruhat–Tits Theory: A New Approach* (2023), Proposition 2.5.8, printed pages
 88–89 / PDF pages 119–120. The precise spectral formulation below is derived
 content. It is not asserted to be a verbatim statement of that proposition.
@@ -48,6 +49,7 @@ with spectral tower compatibility and extension of the norm on \(F\), shows
 that the image of \(b\) in \(K\) bounds the original function.
 
 This helper proves no assertion about the structure of a reductive
-centralizer. In particular, applying it to the centralizer in Task 6432 still
-requires a proof that that centralizer is a torus and a comparison with the
-task's prescribed character kernel and valuative relation.
+centralizer. In particular, applying it to the centralizer of
+`CentralizerNormOneBoundedStatement` requires a proof that that centralizer is
+a torus and a comparison with that statement's prescribed character kernel and
+valuative relation.

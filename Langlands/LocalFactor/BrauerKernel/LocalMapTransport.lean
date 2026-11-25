@@ -1,5 +1,5 @@
-import Langlands.ClassField.Global.LocalRelativeWeilMapStatement
-import Langlands.ClassField.Global.LocalRelativeWeilTransferStatement
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapStatement
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferStatement
 
 /-! # Local relative Weil maps on a prime-transported completion package -/
 
@@ -9,7 +9,7 @@ set_option autoImplicit false
 
 namespace Langlands.LocalFactor.NonabelianBrauer
 
-open NumberField ClassField.Global ClassField.Global.RelativeWeilGroup
+open NumberField ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.Global.CompletionPadic
 open scoped NumberField
 

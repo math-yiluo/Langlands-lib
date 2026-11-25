@@ -2,12 +2,11 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockChartIntegralProof`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It integrates the block chart bound
 `ComplexBlockChart.blockChartBound` (`ComplexBlockChartIntegralStatement`) over its first row. As
 a consequence it proves the Library statement `ComplexBlockChartIntegrableStatement` as the
-theorem `Langlands.Archimedean.complexBlockChartIntegrable`. That statement is also the target of
-the proof task Task 7161.
+theorem `Langlands.Archimedean.complexBlockChartIntegrable`.
 
 Notation: for `X ∈ M_{k×a}(ℂ)`, `colsUpTo X l` and `rowsFrom X j` are the columns `0, …, l` and
 the rows `j, …, k−1` of `X`. `colGram X l = Re det(1 + X_{≤l}ᴴ X_{≤l})` and

@@ -1,8 +1,5 @@
 # The published JPSS quotient Haar existence statement
 
-Proof and original exposition: Worker 27. Preparation, complete-type check,
-and submission: Worker 116.
-
 `quotientHaarExistence` proves the existing proposition
 `Langlands.RankinSelberg.QuotientHaarExistenceStatement F T n` from
 `AnalyticStatement`, for every prime `p`, p-adic field `F`, topological data

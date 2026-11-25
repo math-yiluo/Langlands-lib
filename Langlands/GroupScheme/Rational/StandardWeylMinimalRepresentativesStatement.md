@@ -5,16 +5,13 @@ Namespace `Langlands.GroupScheme`. Universe parameter `u`.
 The module contains one **statement**, the `Prop`-valued definition
 `StandardWeylMinimalRepresentativesStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read V.4.3–V.4.6, printed pp.119–121 / PDF pp.125–127. For standard
+The passages read are V.4.3–V.4.6, printed pp.119–121 / PDF pp.125–127. For standard
 parabolic subgroups `P = MN` and `Q = LU`, Renard sets
 
 > (V.4.6.1) `W^{L,M} = {w ∈ W_G | w·(L ∩ P_∅) ⊂ P_∅, w⁻¹·(M ∩ P_∅) ⊂ P_∅}`
@@ -37,8 +34,8 @@ Here `W_G = N_G(A_∅)/Z_G(A_∅)`, `W_M = N_M(A_∅)/Z_M(A_∅) ⊆ W_G` (V.4.3
 `W(L, M) = {w ∈ W_G | w·L = M}` (V.4.3.2). The length is the Coxeter length for
 the simple reflections of `Δ_∅`.
 
-The operator approved resuming this unit on 11 November 2026, on the actual
-algebraic-group objects of the framework and with no separate Weyl data.
+The statement is formulated on the actual algebraic-group objects of the framework,
+with no separate Weyl data.
 
 ## The statement
 
@@ -130,9 +127,10 @@ Carter, *Finite groups of Lie type*, Prop. 2.7.3 (his [9] and [19]); the length
 facts are from Steinberg's *Lectures on Chevalley groups* (his [43]). (iii) follows
 from (i) and `W_M · W(L, M) · W_L = W(L, M)` (V.4.3).
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. It needs V.4.2 on the actual groups (the
+The proof is in a separate module: `standardWeylMinimalRepresentatives`
+(`Rational.StandardWeylMinimalRepresentativesProof`). It needs V.4.2 on the actual groups (the
 published standard parabolic interface), the proved Coxeter realization
 `relativeWeylCoxeter`, and the abstract double-coset results of
 `Langlands.Group.RelativeWeylIndexing`.

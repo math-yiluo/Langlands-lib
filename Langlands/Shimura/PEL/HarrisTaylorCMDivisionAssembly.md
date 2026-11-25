@@ -1,6 +1,6 @@
 # Conditional assembly of division-case CM representability
 
-Worker 3269. This module is an internal derivation from imported Library
+This module is an internal derivation from imported Library
 constructions. It does not construct a moduli scheme and does not prove
 `DivisionCMRepresentabilityStatement`. It rewrites the exact consequent
 `CMRepresentabilityStatement` in a form that a quasi-projective
@@ -100,8 +100,12 @@ definition is transcribed. The new structure only repackages the fields
 of the existing `CMLevelRepresentation`: it drops admissibility and
 weakens a closed immersion to an immersion plus properness.
 
-The two relative dual statements are unproved Library propositions.
-Separate tasks own them, and this module proves neither. They are
+The two relative dual statements are Library propositions, proved in
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`
+(`relativeDualSchemeExistence`) and
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`
+(`relativeDualSchemeGeometry`); this module does not import those proofs
+and proves neither. They are
 hypotheses of this conditional assembly only. They are not hypotheses of
 the published target, which this module does not prove. The premise
 `CMGeometricRepresentabilityStatement` is the actual construction of

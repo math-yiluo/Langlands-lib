@@ -20,13 +20,13 @@ private theorem stalk_sheafifyMap_scalar
     (P : (Opens X)ᵒᵖ ⥤ ModuleCat.{u} F) (a : F) (x : X) :
     let J := Opens.grothendieckTopology X
     let T := TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x
-    T.map (sheafifyMap J (algebraMap F (End P) a)) =
+    T.map (sheafifyMap J (algebraMap F (End P) a).asHom) =
       ModuleCat.ofHom (LinearMap.lsmul F (T.obj (sheafify J P)) a) := by
   dsimp only
   let J := Opens.grothendieckTopology X
   let T := TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x
   let j := toSheafify J P
-  have hp : T.map (algebraMap F (End P) a) =
+  have hp : T.map (algebraMap F (End P) a).asHom =
       ModuleCat.ofHom (LinearMap.lsmul F (T.obj P) a) := by
     apply TopCat.Presheaf.stalk_hom_ext
     intro U hx
@@ -34,7 +34,7 @@ private theorem stalk_sheafifyMap_scalar
     ext s
     exact (TopCat.Presheaf.germ P U x hx).hom.map_smul a s
   let _ := TopCat.Presheaf.stalkFunctor_map_unit_toSheafify_isIso x (ModuleCat.{u} F) P
-  have hn := congrArg T.map (toSheafify_naturality J (algebraMap F (End P) a))
+  have hn := congrArg T.map (toSheafify_naturality J (algebraMap F (End P) a).asHom)
   rw [T.map_comp, T.map_comp, hp] at hn
   apply (cancel_epi (T.map j)).mp
   rw [← hn]
@@ -45,7 +45,7 @@ set_option backward.isDefEq.respectTransparency false in
 /-- The d-th power on the actual rational stalk is multiplication by pi. -/
 theorem rationalPiStalkAut_pow_hom (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π)))
     (hπ : algebraMap O F π ≠ 0) (x : X) :
-    ((rationalPiStalkAut F X d π M hπ x) ^ d).hom =
+    ((rationalPiStalkAut F X d π M hπ x) ^ d).asIso.hom =
       ModuleCat.ofHom (LinearMap.lsmul F (rationalLatticeStalk F X d π M x) (algebraMap O F π)) := by
   let J := Opens.grothendieckTopology X
   let T := (presheafToSheaf J (ModuleCat.{u} F)) ⋙
@@ -53,16 +53,17 @@ theorem rationalPiStalkAut_pow_hom (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π))
   let P := (rationalPresheafFunctor F X).obj (latticeScalarSheaf d π X M)
   let a := rationalPiPresheaf F X d π M
   let b := rationalPiStalkAut F X d π M hπ x
-  have hb : b.hom = T.map a := by
+  have hb : b.asIso.hom = T.map a.asHom := by
     change (TopCat.Presheaf.stalkFunctor (ModuleCat.{u} F) x).map
-      (rationalPiAut F X d π M hπ).hom.hom = _
+      (rationalPiAut F X d π M hπ).asIso.hom.hom = _
     rw [rationalPiAut_hom]
     rfl
   calc
-    (b ^ d).hom = (Aut.toEnd (rationalLatticeStalk F X d π M x) b) ^ d :=
-      (Aut.toEnd _).map_pow b d
-    _ = T.map (a ^ d) := by
-      have hba : Aut.toEnd (rationalLatticeStalk F X d π M x) b = (T.mapEnd (X := P)) a := hb
+    (b ^ d).asIso.hom = ((Aut.toEnd (X := rationalLatticeStalk F X d π M x) b) ^ d).asHom :=
+      congrArg End.asHom ((Aut.toEnd (X := rationalLatticeStalk F X d π M x)).map_pow b d)
+    _ = T.map (a ^ d).asHom := by
+      have hba : Aut.toEnd (X := rationalLatticeStalk F X d π M x) b = (T.mapEnd (X := P)) a :=
+        End.ext hb
       rw [hba, ← (T.mapEnd (X := P)).map_pow a d]
       rfl
     _ = _ := by
@@ -105,14 +106,14 @@ theorem translatedFrameStalkLattice_add_period
       scaleStalkLattice F (algebraMap O F π) _ (M.translatedFrameStalkLattice F hπ n x) := by
   let b := rationalPiStalkAut F X d π M.lattice.sheaf hπ x
   let R := ModuleCat.restrictScalars (algebraMap O F)
-  have hb : (b ^ (n + (d : ℤ))).hom = (b ^ n).hom ≫ (b ^ d).hom := by
+  have hb : (b ^ (n + (d : ℤ))).asIso.hom = (b ^ n).asIso.hom ≫ (b ^ d).asIso.hom := by
     rw [add_comm n (d : ℤ), zpow_add, zpow_natCast]
     rfl
-  have hv : (b ^ d).hom = ModuleCat.ofHom
+  have hv : (b ^ d).asIso.hom = ModuleCat.ofHom
       (LinearMap.lsmul F (rationalLatticeStalk F X d π M.lattice.sheaf x) (algebraMap O F π)) :=
     rationalPiStalkAut_pow_hom F d π M.lattice.sheaf hπ x
-  change (M.frameStalkLattice F x).map (R.map ((b ^ (n + (d : ℤ))).hom)).hom =
-    ((M.frameStalkLattice F x).map (R.map (b ^ n).hom).hom).map
+  change (M.frameStalkLattice F x).map (R.map ((b ^ (n + (d : ℤ))).asIso.hom)).hom =
+    ((M.frameStalkLattice F x).map (R.map (b ^ n).asIso.hom).hom).map
       (R.map (ModuleCat.ofHom (LinearMap.lsmul F
         (rationalLatticeStalk F X d π M.lattice.sheaf x) (algebraMap O F π)))).hom
   rw [hb, hv, R.map_comp, ModuleCat.hom_comp, Submodule.map_comp]

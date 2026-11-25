@@ -90,7 +90,7 @@ theorem eq_zero_of_comp_eq_zero [ρ.representation.IsIrreducible]
     (T₁ : (inducedRep H ρ).representation.IntertwiningMap τ₁)
     (T₂ : (inducedRep H ρ).representation.IntertwiningMap τ₂)
     (h : ∀ β : End (inducedRep H ρ),
-      T₁.comp (SmoothRep.hom β) = 0 → T₂.comp (SmoothRep.hom β) = 0)
+      T₁.comp (SmoothRep.hom β.asHom) = 0 → T₂.comp (SmoothRep.hom β.asHom) = 0)
     (F : CompactFunctions H ρ.representation) (hF : T₁ F = 0) : T₂ F = 0 := by
   have hsemi := isSemisimpleModule_res H ρ hH
   let A₁ := Representation.IntertwiningMap.equivLinearMapAsModule _ _ (resIntertwining H τ₁ T₁)
@@ -118,20 +118,21 @@ theorem eq_zero_of_comp_eq_zero [ρ.representation.IsIrreducible]
     have hSu : S (E u) = u := congrArg Subtype.val (e.symm_apply_apply ⟨u, hu⟩)
     let σ := translateBack H ρ x S
     let β : End (inducedRep H ρ) :=
-      SmoothRep.ofHom ((frobenius H ρ hH (inducedRep H ρ).representation).symm σ)
-    have hβ : ∀ w, SmoothRep.hom β (unitFunction H hH ρ.representation ρ.isSmooth w) = σ w :=
+      End.of (SmoothRep.ofHom ((frobenius H ρ hH (inducedRep H ρ).representation).symm σ))
+    have hβ : ∀ w, SmoothRep.hom β.asHom (unitFunction H hH ρ.representation ρ.isSmooth w) = σ w :=
       fun w => congrArg (fun T => T w)
         ((frobenius H ρ hH (inducedRep H ρ).representation).apply_symm_apply σ)
-    have h1 : T₁.comp (SmoothRep.hom β) = 0 := by
+    have h1 : T₁.comp (SmoothRep.hom β.asHom) = 0 := by
       apply (frobenius H ρ hH τ₁).injective
       rw [map_zero]
       refine Representation.IntertwiningMap.ext (LinearMap.ext fun w => ?_)
-      change T₁ (SmoothRep.hom β (unitFunction H hH ρ.representation ρ.isSmooth w)) = 0
+      change T₁ (SmoothRep.hom β.asHom (unitFunction H hH ρ.representation ρ.isSmooth w)) = 0
       rw [hβ]
       change T₁ ((inducedRep H ρ).representation x (S w)) = 0
       rw [T₁.isIntertwining, hSK, map_zero]
     have h2 := congrArg (fun T => T (unitFunction H hH ρ.representation ρ.isSmooth (E u))) (h β h1)
-    change T₂ (SmoothRep.hom β (unitFunction H hH ρ.representation ρ.isSmooth (E u))) = 0 at h2
+    change T₂ (SmoothRep.hom β.asHom (unitFunction H hH ρ.representation ρ.isSmooth (E u))) = 0
+      at h2
     rw [hβ] at h2
     change T₂ ((inducedRep H ρ).representation x (S (E u))) = 0 at h2
     rw [T₂.isIntertwining, hSu] at h2
@@ -151,11 +152,11 @@ theorem eq_zero_of_comp_eq_zero [ρ.representation.IsIrreducible]
 theorem exists_comp_eq_of_ne_zero [ρ.representation.IsIrreducible]
     (B : SmoothRep.{0, uG, max uG uV} ℂ G) [B.representation.IsIrreducible]
     (φ : inducedRep H ρ ⟶ B) (hφ : φ ≠ 0) (ψ : inducedRep H ρ ⟶ B) :
-    ∃ α : End (inducedRep H ρ), α ≫ φ = ψ := by
+    ∃ α : End (inducedRep H ρ), α.asHom ≫ φ = ψ := by
   have hφ' : SmoothRep.hom φ ≠ 0 := fun h0 => hφ (by rw [← SmoothRep.ofHom_hom φ, h0]; rfl)
   obtain ⟨β, hβ⟩ := exists_end_comp_eq H ρ hH B.representation (SmoothRep.hom φ)
     (SmoothRep.hom ψ) (surjective_of_ne_zero B.representation _ hφ')
-  exact ⟨β, by rw [← SmoothRep.ofHom_hom (β ≫ φ), SmoothRep.hom_comp, hβ]; rfl⟩
+  exact ⟨β, by rw [← SmoothRep.ofHom_hom (β.asHom ≫ φ), SmoothRep.hom_comp, hβ]; rfl⟩
 
 /-- For an irreducible `B` with `Hom(ind_H^G ρ, B) ≠ 0` and a character `ω` with open kernel, an
 `End(ind_H^G ρ)`-equivariant linear bijection `Hom(ind ρ, B ⊗ ω) ≃ Hom(ind ρ, B)` forces
@@ -164,23 +165,23 @@ theorem nonempty_twist_iso_of_linearEquiv [ρ.representation.IsIrreducible]
     (B : SmoothRep.{0, uG, max uG uV} ℂ G) (hB : B.IsIrreducible) [Nontrivial (inducedRep H ρ ⟶ B)]
     (ω : G →* ℂˣ) (hω : IsOpen (ω.ker : Set G))
     (Ψ : (inducedRep H ρ ⟶ B.twist ω hω) ≃ₗ[ℂ] (inducedRep H ρ ⟶ B))
-    (hΨ : ∀ (α : End (inducedRep H ρ)) φ, Ψ (α ≫ φ) = α ≫ Ψ φ) :
+    (hΨ : ∀ (α : End (inducedRep H ρ)) φ, Ψ (α.asHom ≫ φ) = α.asHom ≫ Ψ φ) :
     Nonempty (B.twist ω hω ≅ B) := by
   obtain ⟨φ', hφ'⟩ := exists_ne (0 : inducedRep H ρ ⟶ B)
   let φ := Ψ.symm φ'
-  have hΨs : ∀ (α : End (inducedRep H ρ)) φ₁, Ψ.symm (α ≫ φ₁) = α ≫ Ψ.symm φ₁ :=
+  have hΨs : ∀ (α : End (inducedRep H ρ)) φ₁, Ψ.symm (α.asHom ≫ φ₁) = α.asHom ≫ Ψ.symm φ₁ :=
     fun α φ₁ => Ψ.injective (by rw [hΨ, Ψ.apply_symm_apply, Ψ.apply_symm_apply])
   have hhom : ∀ {X : SmoothRep.{0, uG, max uG uV} ℂ G} (f : inducedRep H ρ ⟶ X),
       SmoothRep.hom f = 0 ↔ f = 0 := fun f =>
     ⟨fun h0 => by rw [← SmoothRep.ofHom_hom f, h0]; rfl, fun h0 => by rw [h0]; rfl⟩
-  have h1 : ∀ β : End (inducedRep H ρ), (SmoothRep.hom φ).comp (SmoothRep.hom β) = 0 →
-      (SmoothRep.hom φ').comp (SmoothRep.hom β) = 0 := fun β hβ => by
+  have h1 : ∀ β : End (inducedRep H ρ), (SmoothRep.hom φ).comp (SmoothRep.hom β.asHom) = 0 →
+      (SmoothRep.hom φ').comp (SmoothRep.hom β.asHom) = 0 := fun β hβ => by
     rw [← SmoothRep.hom_comp, hhom] at hβ ⊢
     rw [← Ψ.apply_symm_apply φ', ← hΨ, hβ, map_zero]
-  have h2 : ∀ β : End (inducedRep H ρ), (SmoothRep.hom φ').comp (SmoothRep.hom β) = 0 →
-      (SmoothRep.hom φ).comp (SmoothRep.hom β) = 0 := fun β hβ => by
+  have h2 : ∀ β : End (inducedRep H ρ), (SmoothRep.hom φ').comp (SmoothRep.hom β.asHom) = 0 →
+      (SmoothRep.hom φ).comp (SmoothRep.hom β.asHom) = 0 := fun β hβ => by
     rw [← SmoothRep.hom_comp, hhom] at hβ ⊢
-    change β ≫ Ψ.symm φ' = 0
+    change β.asHom ≫ Ψ.symm φ' = 0
     rw [← hΨs, hβ, map_zero]
   have : B.representation.IsIrreducible := hB
   have : (B.twist ω hω).representation.IsIrreducible :=
@@ -250,7 +251,7 @@ theorem rationalSummand_cyclic_of_isIrreducible (hπ : π.IsIrreducible) (hρ : 
     (φ : NormalHecke.inducedRep (rationalCommonNormKernel G) ρ ⟶ rationalInertiaBaseLift G π)
     (hφ : φ ≠ 0)
     (ψ : NormalHecke.inducedRep (rationalCommonNormKernel G) ρ ⟶ rationalInertiaBaseLift G π) :
-    ∃ α : End (NormalHecke.inducedRep (rationalCommonNormKernel G) ρ), α ≫ φ = ψ := by
+    ∃ α : End (NormalHecke.inducedRep (rationalCommonNormKernel G) ρ), α.asHom ≫ φ = ψ := by
   have : ρ.representation.IsIrreducible := hρ
   have : (rationalInertiaBaseLift G π).representation.IsIrreducible :=
     isIrreducible_rationalInertiaBaseLift hπ
@@ -268,7 +269,7 @@ theorem rationalSummand_twistIso_of_isIrreducible (hπ : π.IsIrreducible) (hρ 
         (rationalInertiaBaseLift G π).twist ω hω) ≃ₗ[ℂ]
       (NormalHecke.inducedRep (rationalCommonNormKernel G) ρ ⟶ rationalInertiaBaseLift G π))
     (hΨ : ∀ (α : End (NormalHecke.inducedRep (rationalCommonNormKernel G) ρ)) φ,
-      Ψ (α ≫ φ) = α ≫ Ψ φ) :
+      Ψ (α.asHom ≫ φ) = α.asHom ≫ Ψ φ) :
     Nonempty ((rationalInertiaBaseLift G π).twist ω hω ≅ rationalInertiaBaseLift G π) := by
   have : ρ.representation.IsIrreducible := hρ
   exact NormalHecke.nonempty_twist_iso_of_linearEquiv _ ρ (isOpen_rationalCommonNormKernel G) _

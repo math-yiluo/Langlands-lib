@@ -98,5 +98,6 @@ claim a new direct formulation of a literature theorem.
 The quotient inclusion gives only generic root support. It does not identify
 which neutral weight spaces survive the radical quotient, characterize those
 roots by affine roots vanishing on a facet, construct facet reflection
-representatives, or compare coroots. In particular, the host proposition
-`UnramifiedFacetRootDatumStatement` remains an additional proof obligation.
+representatives, or compare coroots. In particular, this module does not prove
+the proposition `UnramifiedFacetRootDatumStatement`; the theorem
+`unramifiedFacetRootDatum` in `UnramifiedFacetRootDatumProof` proves it.

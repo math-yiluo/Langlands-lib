@@ -1,8 +1,5 @@
 # Arbitrary-field vector embeddings of smooth commutative p-torsion groups
 
-Worker 1552, with algebraic descent by Workers 1353 and 1589 and smooth-coordinate
-scalar extension by Worker 1366, task `f02d1dea-6430-41df-bf80-bd95f132e32f`.
-
 The theorem proves the unchanged published proposition
 `RelativeRoot.SmoothCommutativePTorsionVectorEmbeddingStatement` in an
 arbitrary universe.

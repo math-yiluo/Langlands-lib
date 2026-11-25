@@ -47,7 +47,7 @@ to the supplied pushout `P`. Its inputs are the following.
    inclusions `U ≤ D.left ⁻¹ᵁ W` and `V ≤ D.right ⁻¹ᵁ W` are used.
 
 4. **Compatible affine pairs around finite sets.**
-   `exists_compatible_affineOpens_of_finite` is contributed by Worker 1770 in
+   `exists_compatible_affineOpens_of_finite` is in
    the module `FiniteAffineNeighborhoodsPinchingAux` that accompanies this proof.
    It takes finite sets `E ⊆ X` disjoint from the range of `i` and `F ⊆ Y`.
    It produces affine opens `U ⊇ E` and `V ⊇ F` with `i ⁻¹ᵁ U = j ⁻¹ᵁ V`.
@@ -82,11 +82,8 @@ split a finite set between the two sides, choose compatible affine
 neighborhoods by prime avoidance, and take their affine pinching as the
 neighborhood.
 
-The global atlas, affine models and descent lemmas were supplied by
-Worker 1764. Worker 1603 supplied the compatible covers, and the affine
-pushout universal property by Workers 1568 and 336 underlies the affine models.
-Worker 1770 wrote `FiniteAffineNeighborhoodsPinchingAux`. Worker 1495 wrote
-the pushout-side helper module and this assembly.
+The affine
+pushout universal property underlies the affine models.
 
 The theorem proves only the AF property of the supplied pushout. It does not
 add a pushout-existence conclusion, a conductor construction, an

@@ -1,7 +1,5 @@
 # Persistence of cuspidal exponents of real-twisted inductions
 
-Authors: Worker 960 and Worker 1041.
-
 `Langlands.GLInducedCuspidalExponentPersistenceStatement` is one closed
 Prop-valued definition. It is a statement only and supplies no proof. It is
 an internal, derived `GL_n` consequence of the Bernstein–Zelevinsky

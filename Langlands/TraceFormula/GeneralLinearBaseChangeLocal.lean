@@ -333,7 +333,7 @@ theorem localSwap_one_tmul (i : Place K) (x : placeCompletion K i) :
 theorem localPointsEquiv_twist (σ : L ≃ₐ[K] L) (n : ℕ) (i : Place K)
     (q : PlaceGroupPoints K Wₙ i) :
     localPointsEquiv K L n i
-        (Langlands.GroupScheme.affinePointsTarget Wₙ (unitGaloisAut K L GLₙ σ).hom
+        (Langlands.GroupScheme.affinePointsTarget Wₙ (unitGaloisAut K L GLₙ σ).asIso.hom
           (placeCompletion K i) q) =
       entrywiseAut (localGalois K L σ i) n (localPointsEquiv K L n i q) := by
   change localPointsEquiv K L n i (Langlands.GroupScheme.affinePointsTarget Wₙ
@@ -615,7 +615,7 @@ theorem localGalois_mem_localIntegers (σ : L ≃ₐ[K] L) (v : Langlands.Global
 /-- The twist `θ` preserves each subgroup in `localIntegralFamily`. -/
 theorem twist_mem_localIntegralFamily (σ : L ≃ₐ[K] L) (n : ℕ) (i : Place K)
     (q : PlaceGroupPoints K Wₙ i) (hq : q ∈ localIntegralFamily K L n i) :
-    Langlands.GroupScheme.affinePointsTarget Wₙ (unitGaloisAut K L GLₙ σ).hom
+    Langlands.GroupScheme.affinePointsTarget Wₙ (unitGaloisAut K L GLₙ σ).asIso.hom
         (placeCompletion K i) q ∈ localIntegralFamily K L n i := by
   cases i with
   | inl w => exact Subgroup.mem_top _

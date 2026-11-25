@@ -1,6 +1,6 @@
 # Radius decrease as an actual Weierstrass quotient
 
-Worker 56 derives an isometric algebra equivalence between the actual scalar
+This module derives an isometric algebra equivalence between the actual scalar
 rational quotient at smaller radii and a relative Weierstrass quotient over
 the quotient at the original radii. The construction uses the published
 scalar radius map, intrinsic bounded evaluation and scalar-to-relative

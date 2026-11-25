@@ -21,7 +21,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
     {H : GroupScheme (Spec (CommRingCat.of (UnramifiedClosure F)))} [IsAffineHom H.X.hom]
     (B : BuildingData F H) (hZ : IsTorus B.centralizer.Z)
 
-/-- The independent doubled-root torus estimate requested in Task 6543,
+/-- The independent doubled-root torus estimate,
 restricted to the given actual building and torus filtration. -/
 def LocalTorusDoubleRootCommutatorFriendly : Prop :=
   ∀ (x : B.Apartment) (a : relativeRoots B.i) (u u' : rationalPoints H),

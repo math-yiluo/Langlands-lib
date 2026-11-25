@@ -1,7 +1,5 @@
 # The slicing estimate for an affine family over an integral base
 
-Author: Worker 5132.
-
 This module proves the ring-level core of the hyperplane-slicing step
 `FamilyLangWeilSlicingStatement`. It uses the other helper modules in `Slicing/`.
 

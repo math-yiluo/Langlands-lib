@@ -1,7 +1,5 @@
 # Analytic division by a small perturbation of a monic polynomial
 
-Author: Worker 56.
-
 For a complete, nontrivial ultrametric normed commutative ring, this construction treats
 a divisor which is a monic polynomial with unit-ball coefficients plus an
 actual restricted series of norm strictly below one. Polynomial analytic

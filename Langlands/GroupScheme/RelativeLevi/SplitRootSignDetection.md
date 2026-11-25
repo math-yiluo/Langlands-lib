@@ -1,6 +1,6 @@
 # Detecting root signs by actual contracting subgroup ranges
 
-This derived unit works with an affine group over an arbitrary commutative
+This derived module works with an affine group over an arbitrary commutative
 base ring, a supplied coordinate split torus and actual torus-equivariant
 root maps. Its sign-detection conclusions additionally require a nontrivial
 base ring and genuine `IsRootParametrization` certificates.
@@ -31,6 +31,6 @@ to two equal actual contracting functors.
 
 Provenance is actual torus equivariance, fixed coordinate exponent
 cocharacters, represented centralizer factorization, additive-line coordinates
-and the published all-test opposite-intersection theorem. This unit does not
+and the published all-test opposite-intersection theorem. This module does not
 assume a desired filtration equality, and does not compare maximal tori or
 perform global descent.

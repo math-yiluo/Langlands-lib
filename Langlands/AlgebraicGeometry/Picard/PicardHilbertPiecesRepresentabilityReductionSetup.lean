@@ -118,7 +118,7 @@ end General
 section Data
 
 variable {S X : Scheme.{u}} (f : X ⟶ S) (𝓛X : X.Modules)
-  (h𝓛X : Scheme.Modules.IsInvertible 𝓛X) {D : Scheme.{u}} (d : D ⟶ S)
+  (h𝓛X : Scheme.Modules.IsInvertibleFLT 𝓛X) {D : Scheme.{u}} (d : D ⟶ S)
   (W : RelativeEffectiveDivisor (pullback.snd f d)) (m : ℕ)
 
 /-- The class of the pullback of `𝓛X` to `X ×_S T`. -/
@@ -137,10 +137,10 @@ def cLW : Group (pullback f d) := dcl W.ideal W.2.1 - m • cP f 𝓛X h𝓛X d
 def LW : (pullback f d).Modules :=
   (Group.lineBundleRepresentative _ (cLW f 𝓛X h𝓛X d W m)).obj
 
-lemma isInvertible_LW : Scheme.Modules.IsInvertible (LW f 𝓛X h𝓛X d W m) :=
+lemma isInvertible_LW : Scheme.Modules.IsInvertibleFLT (LW f 𝓛X h𝓛X d W m) :=
   isInvertible_lineBundle _
 
-lemma icl_LW (h : Scheme.Modules.IsInvertible (LW f 𝓛X h𝓛X d W m)) :
+lemma icl_LW (h : Scheme.Modules.IsInvertibleFLT (LW f 𝓛X h𝓛X d W m)) :
     icl (LW f 𝓛X h𝓛X d W m) h = cLW f 𝓛X h𝓛X d W m :=
   (icl_lineBundle _ _).trans (Group.classOf_lineBundleRepresentative _ _)
 
@@ -160,7 +160,7 @@ lemma pb_mapX_pt {T T' : Scheme.{u}} {s : T ⟶ S} {s' : T' ⟶ S} (h : T' ⟶ T
   rw [pt, pt, ← pb_comp_apply, mapX_comp]
 
 lemma icl_twist_pt {T : Scheme.{u}} {s : T ⟶ S} (y : T ⟶ D) (w : y ≫ d = s)
-    (h : Scheme.Modules.IsInvertible (twist ((Scheme.Modules.pullback (mapX f y w)).obj
+    (h : Scheme.Modules.IsInvertibleFLT (twist ((Scheme.Modules.pullback (mapX f y w)).obj
       (LW f 𝓛X h𝓛X d W m)) ((Scheme.Modules.pullback (pullback.fst f s)).obj 𝓛X) m)) :
     icl _ h = pt f 𝓛X h𝓛X d W m y w + m • cP f 𝓛X h𝓛X s := by
   rw [pt, cP, icl_twist (isInvertible_pullback _ (isInvertible_LW f 𝓛X h𝓛X d W m))
@@ -207,8 +207,8 @@ whose class is that of `M` up to a class from `Λ`. -/
 lemma linsys_classify (hcl : Classifies f d W)
     (hbc : RelativeEffectiveDivisorBaseChangeStatement.{u}) {T Λ : Scheme.{u}} {s : T ⟶ S}
     (l : Λ ⟶ T) (WΛ : RelativeEffectiveDivisor (pullback.snd (pullback.snd f s) l))
-    (M : (pullback f s).Modules) (hM : Scheme.Modules.IsInvertible M) (NΛ : Λ.Modules)
-    (hN : Scheme.Modules.IsInvertible NΛ)
+    (M : (pullback f s).Modules) (hM : Scheme.Modules.IsInvertibleFLT M) (NΛ : Λ.Modules)
+    (hN : Scheme.Modules.IsInvertibleFLT NΛ)
     (e : WΛ.toEffectiveCartierDivisor.lineBundle.obj ≅
       (Scheme.Modules.pullback (pullback.fst (pullback.snd f s) l)).obj M ⊗
         (Scheme.Modules.pullback (pullback.snd (pullback.snd f s) l)).obj NΛ) :
@@ -248,8 +248,8 @@ statement. -/
 def HU1 : Prop :=
   ∀ (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ S)
     (L L' : (pullback f s).Modules) (N : T.Modules),
-    Scheme.Modules.IsInvertible L → Scheme.Modules.IsInvertible L' →
-    Scheme.Modules.IsInvertible N →
+    Scheme.Modules.IsInvertibleFLT L → Scheme.Modules.IsInvertibleFLT L' →
+    Scheme.Modules.IsInvertibleFLT N →
     Nonempty (L ≅ L' ⊗ (Scheme.Modules.pullback (pullback.snd f s)).obj N) →
     ∀ (c : κ) (m : ℕ), U T s L c m = U T s L' c m
 
@@ -257,7 +257,7 @@ def HU1 : Prop :=
 def HU2 : Prop :=
   ∀ (T T' : Scheme.{u}) [IsLocallyNoetherian T] [IsLocallyNoetherian T']
     (s : T ⟶ S) (h : T' ⟶ T) (L : (pullback f s).Modules),
-    Scheme.Modules.IsInvertible L → ∀ (c : κ) (m : ℕ),
+    Scheme.Modules.IsInvertibleFLT L → ∀ (c : κ) (m : ℕ),
       U T' (h ≫ s) ((Scheme.Modules.pullback
           (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj L) c m =
         h ⁻¹ᵁ U T s L c m
@@ -266,7 +266,7 @@ def HU2 : Prop :=
 from the base, is the preimage of the open `Z₀` of `L_W`. -/
 lemma U_eq_preimage (hU1 : HU1 f U) (hU2 : HU2 f U) [IsLocallyNoetherian D] {T : Scheme.{u}}
     [IsLocallyNoetherian T] {s : T ⟶ S} (y : T ⟶ D) (w : y ≫ d = s)
-    (L : (pullback f s).Modules) (hL : Scheme.Modules.IsInvertible L) (n : Group T)
+    (L : (pullback f s).Modules) (hL : Scheme.Modules.IsInvertibleFLT L) (n : Group T)
     (hn : icl L hL = pt f 𝓛X h𝓛X d W m y w + Group.pullback (pullback.snd f s) n) (c : κ) :
     U T s L c m = y ⁻¹ᵁ U D d (LW f 𝓛X h𝓛X d W m) c m := by
   obtain ⟨N, hN, rfl⟩ := exists_icl n

@@ -2,8 +2,8 @@
 
 This internal construction specializes published closed stable dynamic limits
 to the actual standard rational-point families. It provides algebraic
-prerequisites for the proper-intersection geometric comparison in task
-`f722f1c6-147e-453e-8664-02b7822b7bce`.
+prerequisites for the proper-intersection geometric comparison of the
+rational geometric K0 expansion.
 
 ## Scope and literal subgroups
 
@@ -121,7 +121,7 @@ Importing those modules does not discharge their representation targets.
 
 ## Remaining consumer obligations
 
-This unit establishes the two algebraic projection images. It supplies no
+This module establishes the two algebraic projection images. It supplies no
 continuity assertion for the restricted maps, rational orbit enumeration,
 ordered geometric filtration or normalized graded-piece comparison. It
 uses no Coxeter, root-length, finite-length or
@@ -131,4 +131,5 @@ both normalization corrections, the actual distinct-radical modulus
 comparison, smooth realization and compact-induction/full-induction
 comparison. Neither image identity proves the surviving-orbit radical
 statements with their different target subgroups. The exact rational
-geometric K0 expansion remains a separate obligation.
+geometric K0 expansion is a separate result (`rationalGeometricK0Expansion`,
+module `RationalGeometricK0Expansion`).

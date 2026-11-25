@@ -1,7 +1,5 @@
 # Exhaustion of absolute H² by finite unramified extensions
 
-Author: Worker 80.
-
 `UnramifiedH2Exhaustion.{u}` states that every element of the actual continuous
 absolute cohomology group `absoluteCohomology F.Carrier 2` belongs to the
 range of `closureInflation F.Carrier E.field 2` for some finite unramified
@@ -36,7 +34,7 @@ degree-two class maps to `x`; no cohomology carrier or comparison map is
 replaced.
 
 The chosen intermediate field and the closure have the base universe
-`u`. This prerequisite does not assert the host theorem's
+`u`. This prerequisite does not assert the
 independent-universe finite-extension case. It also does not assert
 injectivity of inflation, select a degree or Frobenius generator for `E`,
 construct a local invariant, or give its compatibility with restriction.
@@ -49,9 +47,9 @@ GTM 67 (1979), Chapter XII, section 3, Proposition 3, printed page 184 /
 PDF page 189. Registered source: `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 80 read this original page, the supporting unramified-splitting
+This original page, the supporting unramified-splitting
 Theorem 1 in XII.1 (printed page 181 / PDF page 186), and X.3–4
-(printed pages 154–156 / PDF pages 160–162). No project errata entry for
+(printed pages 154–156 / PDF pages 160–162) were read. No project errata entry for
 this source was present when checked.
 
 Serre's base field `K` is `F.Carrier`; his finite unramified Galois field

@@ -1,7 +1,5 @@
 # Simply connected almost-simple groups are actual Weil restrictions
 
-Author: Worker 166.
-
 `Langlands.GroupScheme.simplyConnectedAlmostSimpleWeilRestriction.{u}` proves
 exactly the published
 `Langlands.GroupScheme.SimplyConnectedAlmostSimpleWeilRestrictionStatement.{u}`.

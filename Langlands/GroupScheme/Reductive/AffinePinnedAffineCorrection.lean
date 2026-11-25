@@ -60,6 +60,7 @@ theorem affineSectionPoint_dual
 
 variable {N : AffinePinnedModel.{u}} [Algebra N.ring A]
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- A normalized target torus section corrects every local-test pinning equation
 when its actual simple-root values are inverse unit discrepancies. -/
 theorem preservesLocalPinning_corrected
@@ -146,6 +147,7 @@ theorem preservesLocalPinning_corrected
     exact congrArg (fun X => X.toMul.val) hcorrect
   exact congrArg (fun k => k.left) hpoint
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Inverse actual simple-root values suffice for all-test pinning correction. -/
 def AffinePinningCorrectionCriterion : Prop :=
   ∀ (M N : AffinePinnedModel.{u}) (A : Type u) [CommRing A]

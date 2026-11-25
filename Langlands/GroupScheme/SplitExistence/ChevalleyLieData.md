@@ -1,12 +1,10 @@
 # Integral Chevalley data with Lie relations (`ChevalleyLieData`)
 
-Authors: Worker 239 (interface and construction), Worker 1398 (the underlying `ChevalleyData`
-interface).
-
 This module defines the structure `ChevalleyLieData P b` for a root datum
 `P : RootDatum J X Y` with base `b`. It is the interface between the integral Lie-algebra layer
-(Worker 239: modules, divided powers, `SL₂` maps, root operators for all roots) and the step that
-derives the group commutator relations (Worker 1398).
+(modules, divided powers, `SL₂` maps, root operators for all roots) and the step that
+derives the group commutator relations (`ChevalleyLieData.toChevalleyData`, module
+`ToChevalleyData`).
 
 The fields are those of `ChevalleyData P b` (module
 `Langlands.GroupScheme.SplitExistence.ChevalleyData`), with identical names and types, except

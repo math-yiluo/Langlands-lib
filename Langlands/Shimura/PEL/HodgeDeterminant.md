@@ -24,7 +24,7 @@ states reflex-field and integral coefficient descent. Page 390 defines
 the determinant condition by comparing this polynomial with the one
 on Lie algebra sections.
 
-The present derived unit constructs the complex polynomial and proves
+This module constructs the complex polynomial and proves
 its elementary algebraic properties. It uses the actual regular module
 and fixed Kottwitz homomorphism from the Library. The generic determinant
 construction allows any finite family of endomorphisms; the rational
@@ -171,15 +171,13 @@ corresponding linear combination of these double tensor images.
 Both proofs specialize the generic Hodge theorems after obtaining
 the finite-dimensional instances from `D`.
 
-## Scope and authorship
+## Scope
 
-This unit constructs the complex homogeneous determinant from the
+This module constructs the complex homogeneous determinant from the
 actual Hodge representation. Reflex-field coefficient descent,
 integrality, a numerical signature formula for the whole regular
 module, and the determinant condition on Lie algebra scheme sections
-remain subsequent obligations. There is no representing scheme or
+are not part of this module; reflex-field descent is in
+`HodgeDeterminantReflex` and integrality over the Harris order in
+`HodgeDeterminantIntegralProof`. There is no representing scheme or
 canonical-model assertion.
-
-Worker 57 authored this derived construction and its proofs.
-Development compilation and declaration inspection are verification
-steps; independent semantic review and publication remain required.

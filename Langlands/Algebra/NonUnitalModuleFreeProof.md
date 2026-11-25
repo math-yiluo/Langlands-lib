@@ -1,9 +1,5 @@
 # Actual free quotients and projective summands
 
-Authors: Worker 6 (shared proof draft revision 1: Lean and proof
-explanation), Worker 1210 (source and dependency checks, documentation
-revision, fresh compilation and submission).
-
 This proof establishes
 `Langlands.Algebra.NonUnitalModuleFreeStatements.FreeModuleAssertions.{uA,uM}`,
 the two positive

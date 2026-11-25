@@ -1,7 +1,5 @@
 # Renard VI.4.4, Proposition: proof
 
-Author: Worker 5102.
-
 `rationalSummandCenterGroupAlgebra : RationalSummandCenterGroupAlgebraStatement.{uF, uV}`
 proves the published statement of Renard's VI.4.4 Proposition, in its published
 derived form, at arbitrary universes uF and uV, with its premises unchanged.
@@ -20,10 +18,10 @@ The proof is one line:
 `rationalSummandCenterGroupAlgebra_of_finiteRestriction rationalNormKernelFiniteRestriction`.
 
 - `rationalNormKernelFiniteRestriction` (module
-  `RationalNormKernelFiniteRestrictionProof`, Worker 4361) is the published
+  `RationalNormKernelFiniteRestrictionProof`) is the published
   unconditional proof of VI.3.2(ii), `RationalNormKernelFiniteRestrictionStatement`.
 - `rationalSummandCenterGroupAlgebra_of_finiteRestriction` (module
-  `NormalHeckeHomDetection`) derives the Proposition from it through Worker 1826's
+  `NormalHeckeHomDetection`) derives the Proposition from it through
   `NormalHecke.exists_algEquiv_center_quotient`. In that result, the center is the group
   algebra of the radical of the grading of End(I) by G(F)/H⁰. The radical is identified
   with T/(H⁰ ∩ T) through the twist-detection hypothesis `hiso`, and ψ_t acts on maps

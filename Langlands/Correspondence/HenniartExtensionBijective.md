@@ -1,6 +1,6 @@
 # Bijectivity of the extended stable map
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartExtensionBijective`,
+Module `Langlands.Correspondence.HenniartExtensionBijective`,
 namespace `Langlands.Henniart.Extension`.
 
 Henniart (2000), §4.4, with Henniart (1993), §4.3. The extended map of

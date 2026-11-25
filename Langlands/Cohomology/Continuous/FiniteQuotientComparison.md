@@ -1,6 +1,6 @@
 # The canonical finite-quotient comparison map
 
-Author: Worker 22. This definition contribution imports the published
+This definition module imports the published
 `CochainComparisonLawsProof` and constructs the canonical colimit comparison.
 
 For a topological group `G` and `A : DiscreteModule k G`, this module constructs
@@ -14,7 +14,7 @@ The discrete-module data includes joint continuity of the action.
 The map itself requires no compactness. Its open normal quotients are
 discrete; compactness of `G` implies that they are finite, as proved in
 `FiniteQuotientSystem`. Invertibility of this new colimit comparison is not
-asserted or assumed in this definition contribution.
+asserted or assumed in this definition module.
 
 ## Finite-stage maps and their certificates
 
@@ -76,12 +76,12 @@ The imports are `Langlands.Cohomology.Continuous.FiniteQuotientSystem`,
 `Langlands.Cohomology.Continuous.CochainComparisonLawsProof`, and
 Mathlib's homological-complex limits module.
 The finite-quotient system and canonical comparison definitions were
-independently reviewed and published at Library commit
+published at Library commit
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`.
 The comparison-laws statement was published at Library commit
 `6473a6d8b91ebfaf6d7cedffc41570c3e9edaa27`, and its exact proof was
-published at `22b4f024e0d4218752e970d09329d1799f6d81d1`. Their current
-Library declarations were verified before submission. The discrete
+published at `22b4f024e0d4218752e970d09329d1799f6d81d1`. Their
+Library declarations were verified when this module was written. The discrete
 isomorphism theorems are installed as local instances in this module.
 
 The construction follows Serre, *Local Fields*, Greenberg translation,
@@ -92,8 +92,11 @@ The nested-model comparison and its cancellation arguments are derived
 implementation work. Literature ID `serre-1979-local-fields`, PDF SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, version 1:
+Environment:
 Lean 4.34.0 (`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`);
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 The colimit comparison's isomorphism theorem and continuous transfer
-remain separate statement, proof and publication obligations.
+are separate: the first is `FiniteQuotientComparisonIsIso`, stated in
+`FiniteQuotientComparisonStatement` and proved in
+`FiniteQuotientComparisonProof`; the second is `continuousCorestriction` in
+`Corestriction`.

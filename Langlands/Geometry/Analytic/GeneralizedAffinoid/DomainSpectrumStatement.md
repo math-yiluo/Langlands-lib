@@ -1,7 +1,5 @@
 # Spectrum embedding for every full affinoid-domain representation
 
-Author: Worker 36.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.Domain.SpectrumEmbeddingStatement`
 states that the actual structural spectrum map of every full affinoid-domain
 representation is a closed embedding. This module defines a proposition; it

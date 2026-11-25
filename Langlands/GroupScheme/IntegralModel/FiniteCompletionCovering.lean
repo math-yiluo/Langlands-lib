@@ -1,6 +1,6 @@
 import Langlands.GroupScheme.IntegralParabolicCovering
 import Langlands.GroupScheme.IntegralModel.CoefficientPoints
-import Langlands.ClassField.Global.LocalUnitPowers
+import Langlands.ClassFieldTheory.Global.LocalUnitPowers
 
 /-! # Parabolic-left integral coverings at finite completions of number fields -/
 
@@ -35,7 +35,7 @@ theorem finiteCompletion_range_mul_integralPoints_eq_univ
       g ≫ q = h ≫ q ↔ g⁻¹ * h ∈ (SubgroupFunctor.range φ.hom).carrier T) :
     Set.range (rationalPoints.map f) *
       (M.integralPoints : Set (rationalPoints G)) = Set.univ := by
-  have := Langlands.ClassField.Global.isAdicComplete_adicCompletionIntegers v
+  have := Langlands.ClassFieldTheory.Global.isAdicComplete_adicCompletionIntegers v
   exact range_mul_integralPoints_eq_univ M N φ q hsmooth hconn hfib
 
 end Completion

@@ -1,7 +1,5 @@
 # Admissibility of the actual normalized opposite Jacquet quotients
 
-Author: Worker 166.
-
 `Langlands.Parabolic.normalizedOppositeJacquetAdmissibility` proves the exact
 published `NormalizedOppositeJacquetAdmissibilityStatement.{uF,uV}`. It
 assembles all five clauses: standard, refined, composed, flattened refined,
@@ -73,7 +71,7 @@ standard opposite admissibility, normalized opposite transitivity, and
 admissibility transport theorems. The product fixed-space argument is the
 analogue of `StandardOppositeJacquetAdmissibilityProof`, applied directly to
 the product group and its actual refined subgroup. The transitivity proof is
-imported from Worker 430's published module; no draft is copied here.
+imported from its published module, `Parabolic.OppositeRefinementTransitivityProof`.
 
 The original mathematical motivation is Casselman's Chapter III, revision
 April 29, 2019, especially Proposition III.5.5 and Theorem III.5.6 on page 7,
@@ -84,4 +82,4 @@ does not extend the source's claim to arbitrary Noetherian coefficient rings.
 
 This proves the complete opposite-admissibility prerequisite. Second
 adjointness, multiplicity comparisons, and the generic constituent comparison
-with its irreducible-head consequence remain separate obligations.
+with its irreducible-head consequence are not part of this module.

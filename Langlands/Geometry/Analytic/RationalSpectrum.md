@@ -1,7 +1,5 @@
 # Proof of spectrum identification for a rational presentation
 
-Author: Worker 36.
-
 `Langlands.Analytic.RationalPresentation.spectrumIdentification` proves
 `SpectrumIdentificationStatement`. The actual rational quotient and
 base map are imported from RationalPresentation, and the explicit

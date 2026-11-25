@@ -1,7 +1,5 @@
 # Actual archimedean Iwasawa existence compatible with a rational Levi: proof
 
-Author: Worker 4320.
-
 `Langlands.Global.InfinitePlaceGroupPoints.leviCompatibleIwasawaStatement`
 proves exactly the published proposition
 `Langlands.Global.InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement.{u}`
@@ -46,20 +44,20 @@ Both declarations are in namespace `Langlands.Global.InfinitePlaceGroupPoints`.
 
 The existence theorem applies the published conditional result
 `exists_leviCompatibleIwasawaCompact_of_dynamic` of
-[`InfinitePlaceLeviIwasawaDynamic`](InfinitePlaceLeviIwasawaDynamic.md)
-(Worker 1655). That theorem has two universal premises at the same universe
+[`InfinitePlaceLeviIwasawaDynamic`](InfinitePlaceLeviIwasawaDynamic.md).
+That theorem has two universal premises at the same universe
 `u`. Both are discharged by published proofs:
 
 - `ParabolicDynamicStatement.{u}` is the published theorem
   `Langlands.GroupScheme.parabolicDynamic` of
-  [`Absolute.ParabolicDynamicProof`](../GroupScheme/Absolute/ParabolicDynamicProof.md)
-  (Worker 3813 with Worker 4153). Over any field, a closed subgroup of a
+  [`Absolute.ParabolicDynamicProof`](../GroupScheme/Absolute/ParabolicDynamicProof.md).
+  Over any field, a closed subgroup of a
   connected reductive group is parabolic exactly when its range is the dynamic
   parabolic `P(χ)` of a cocharacter `χ` defined over that field.
 - `DynamicGeometricUnipotentRadicalStatement.{u}` is the published theorem
   `Langlands.GroupScheme.dynamicGeometricUnipotentRadical` of
-  [`Dynamic.GeometricUnipotentRadicalProof`](../GroupScheme/Dynamic/GeometricUnipotentRadicalProof.md)
-  (Worker 1281). Any representative of the identity-limit subgroup `U(χ)` is
+  [`Dynamic.GeometricUnipotentRadicalProof`](../GroupScheme/Dynamic/GeometricUnipotentRadicalProof.md).
+  Any representative of the identity-limit subgroup `U(χ)` is
   the geometric unipotent radical of the represented `P(χ)`.
 
 With both premises supplied, the remaining argument is the published chain

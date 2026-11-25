@@ -1,11 +1,11 @@
 # Reduction of space model existence to scheme-relation descent
 
-Authors: Worker 116, with atlas naturality comparisons supplied by Worker 131.
-
 This construction gives the full model-existence conclusion under the explicit
 scheme-only assumption
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelation.LimitModelExistence`.
-That assumption remains unproved. This is a conditional reduction, not a proof
+That assumption is proved separately, as
+`EtaleEquivalenceRelation.limitModelExistence` in the module
+`EtaleEquivalenceRelationLimitModelProof`. This is a conditional reduction, not a proof
 of the unconditional target `SpaceLimitModelExistenceQuasiSeparated`.
 
 The initial lemmas turn an actual scheme pullback square into its isomorphism
@@ -48,7 +48,7 @@ neither weakens the original target's indexing or universe quantifiers.
 
 Provenance: this is the presentation/quotient argument in the proof of Stacks
 Project Lemma 70.7.1 (Tag 07SK), specialized to affine scheme bases and with
-the unresolved scheme descent step made explicit. Registered source
+the scheme descent step made explicit. Registered source
 `stacks-limit-morphism-review-2026-11-07`, directory SHA-256
 `35f3718ed86ff158e3a8f3765940bd0a8e69861a3af500daf315ec210efe1663`,
 file `07SK.html`, essential-surjectivity portion.

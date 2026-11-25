@@ -1,6 +1,6 @@
 # Dividing split-torus actions and roots by the characteristic
 
-This internal supporting unit extends the split-torus zero-differential
+This module extends the split-torus zero-differential
 theorem to homomorphisms from a split torus into any affine group scheme.
 The base is an arbitrary field `k : Type u`; the target need not be
 commutative, smooth, connected or of finite type. The differential is the
@@ -32,6 +32,6 @@ action `j : T → H` with `χ = p • ψ`. It retains the equality
 `i ≫ q = [p] ≫ j` of actual homomorphisms.
 
 These are internal deductions from the named Library constructions.
-There is no embedding or maximality premise on the source map. This unit
+There is no embedding or maximality premise on the source map. This module
 does not prove that suitable successive quotients exist, that iteration
 terminates, or the arbitrary-field no-torus unipotence target.

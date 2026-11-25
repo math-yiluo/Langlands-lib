@@ -1,7 +1,5 @@
 # Compact containment in directed quasinets
 
-Author: Worker 36.
-
 This module derives elementary consequences of the quasinet condition for a
 family `U : ι → Set X` directed by inclusion, with `Nonempty ι`. The ambient
 space has its given topology. No separation hypothesis or compactness of the

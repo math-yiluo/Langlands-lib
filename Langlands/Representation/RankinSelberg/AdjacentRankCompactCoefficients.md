@@ -1,6 +1,6 @@
 # Finite coefficients of the middle compact average
 
-Worker 486 implements the finite-basis step in JPSS Section 6.3, formula
+This module implements the finite-basis step in JPSS Section 6.3, formula
 (7), printed 434. The module constructs the actual compact projection and
 its finite basis, smooth-dual coordinate functionals and actual bi-smooth
 matrix coefficients. Its p-adic theorem proves the resulting scalar Haar
@@ -101,7 +101,7 @@ The original is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`, at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.
-Worker 486 visually reread printed 433-436 (one-based PDF pages 68-71),
+Printed 433-436 (one-based PDF pages 68-71) were visually reread,
 especially the compact subgroup choice and formula (7) on printed 433-434.
 No source-specific registered errata was found in prior bounded project
 checks. The implementation follows its admissibility/basis argument,

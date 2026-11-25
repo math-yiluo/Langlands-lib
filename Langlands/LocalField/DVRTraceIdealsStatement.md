@@ -56,7 +56,7 @@ hypotheses. Both `A → K` (`IsFractionRing.injective`) and the field map
 `K → L` are injective, so the two elements are equal. The helper uses only
 the domain, field, fraction-ring and scalar-tower structures, not any
 arithmetic. Torsion-freeness is a proposition, so any other proof of it,
-such as a host instance, gives the same `differentIdeal A B`.
+such as an instance available where the proposition is applied, gives the same `differentIdeal A B`.
 
 ## Hypotheses
 
@@ -176,9 +176,9 @@ them. They are supplied separately when the statement is specialized.
 
 ## Intended specialization
 
-This statement is a prerequisite for the host target
+This statement is a prerequisite for the statement it serves,
 `Langlands.LocalClassField.PrimeRamifiedTraceIdeals` in
-`Langlands.ClassFieldTheory.Local.PrimeRamifiedTraceIdealsStatement`. The host
+`Langlands.ClassFieldTheory.Local.PrimeRamifiedTraceIdealsStatement`. That
 proposition is the case `A = TF.Integers`, `B = TL.Integers`, `K = F.Carrier`,
 `L = L.Carrier`, `e = ell` and `d = (t + 1) * (ell - 1)`, at universes
 `{u, v, u, v}`. In that case:
@@ -188,30 +188,26 @@ proposition is the case `A = TF.Integers`, `B = TL.Integers`, `K = F.Carrier`,
   `relativeIntegerFieldTower` and `relativeIntegerTower` in namespace
   `Langlands.PadicField.TopologicalData`, from
   `Langlands.LocalField.RelativeIntegers`;
-- `IsIntegralClosure` and `Module.Finite` come from the accepted statement
-  `Langlands.LocalClassField.NYLL.RelativeIntegerStructureStatement` and its
+- `IsIntegralClosure` and `Module.Finite` come from the statement
+  `Langlands.LocalClassField.UniverseZero.RelativeIntegerStructureStatement` and its
   proof `relativeIntegerStructure`;
 - the fraction-ring instances are Mathlib's instances for valuation integers,
   and separability holds because the fields have characteristic zero;
-- hypothesis 2 is the small total-ramification ideal-map adapter owned by
-  Worker 521;
+- hypothesis 2 is the small total-ramification ideal-map adapter
+  `map_maximalIdeal_algebraMap_of_ramificationIndex_eq_mul` of
+  `Langlands.LocalField.RelativeIdealPowers`;
 - hypothesis 3 is the separately stated `PrimeRamifiedDifferent`.
 
-During authoring, a private draft not included in this module derived
+A private check file not included in this module derived
 `PrimeRamifiedTraceIdeals.{u,v}` from `DVRTraceIdeals.{u,v,u,v}`,
-`PrimeRamifiedDifferent.{u,v}` (from its staged candidate), and the adapter in
+`PrimeRamifiedDifferent.{u,v}`, and the adapter in
 the shape `Ideal.map (algebraMap TF.Integers TL.Integers) mTF = mTL ^ ell`. It
 compiled with no errors. The final step applied this proposition directly, so
-the host's coercions and `algebraMap` forms agree. No generic premise of this
+the coercions and `algebraMap` forms of `PrimeRamifiedTraceIdeals` agree. No generic premise of this
 proposition remains undischarged in that specialization. This check is
-interface evidence only. It is not part of this candidate, and it proves
+interface evidence only. It is not part of this module, and it proves
 nothing about the trace formula.
 
-## Authors
-
-The interface was specified by Worker 512, who owns the contract and the
-host proof task. It was formalized and documented by Worker 726. Worker 27
-reviewed the proposed interface against the host target and Mathlib's
-`Different.lean` before formalization and raised no objection. That
-coordination is not semantic acceptance of this module. A separate proof task
-must establish this proposition.
+The interface was checked against `PrimeRamifiedTraceIdeals` and Mathlib's
+`Different.lean` before formalization. The proof of this proposition is
+`Langlands.LocalField.dvrTraceIdeals` in `Langlands.LocalField.DVRTraceIdealsProof`.

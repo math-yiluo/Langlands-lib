@@ -1,6 +1,6 @@
 # The actual affine Iwahori–Tits datum
 
-This unit defines the fixed-data assertion for the `G(F)^0` branch of
+This module defines the fixed-data assertion for the `G(F)^0` branch of
 Kaletha–Prasad Theorem 7.5.3(1),(2). It proves only intrinsic subtype and
 projection identities. It does not prove that the assertion holds.
 
@@ -93,13 +93,14 @@ This is the subgroup intersection `⋂ n, n I n⁻¹ = I ∩ N` in `G(F)^0`.
 `AffineIwahoriTits P C` existentially quantifies the comparison `e` and asserts
 `P.AffineIwahoriTitsWith C e`. The definitions supply the concrete data;
 containment, action comparison, the Tits axioms and saturation are assertions
-still to be proved. There is no assertion about the separate `G(F)^♮` branch
+not proved here. There is no assertion about the separate `G(F)^♮` branch
 or independence of the chosen torus or chamber.
 
 ## Retained consumer obligations
 
-The later global target must conclude the normality witnesses and this fixed
-predicate from only the apartment axioms and the chamber premise. This module
+The global target `AffineIwahoriTitsStatement` must conclude the normality
+witnesses and this fixed predicate from only the apartment axioms and the
+chamber premise. This module
 does not discharge those normalities, actual-action kernel and range comparisons,
 geometric generation, chamber transitivity, or the structural assertions of
 Theorem 7.5.3. Facet stabilizers and generated facet parahorics need the separate
@@ -109,5 +110,7 @@ The unchanged global `IwahoriDoubleCosetStatement` and
 `ParahoricDoubleCosetStatement` additionally need the component extension,
 normalizing chamber representatives and the generic double-coset transports
 with their values on every full normalizer representative. None is proved here.
-The future validity predicate for corrected Axiom 4.1.9 is stronger input and
-does not discharge these apartment-only Chapter 7 statements.
+The validity predicate for corrected Axiom 4.1.9,
+`ParahoricBuildingData.HasTitsSystem` in `FullValidity/ChamberAxioms`, is
+stronger input and does not discharge these apartment-only Chapter 7
+statements.

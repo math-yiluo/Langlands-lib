@@ -30,7 +30,7 @@ def ofOver (Y : Over S) [IsFinite Y.hom] [Etale Y.hom] : Cover S :=
 /-- Evaluation on the actual points of a finite étale object of the slice. -/
 def act (Y : Over S) [IsFinite Y.hom] [Etale Y.hom]
     (g : FundamentalGroup s hfin) (x : Over.mk s ⟶ Y) : Over.mk s ⟶ Y :=
-  g.hom.app (ofOver Y) x
+  g.asIso.hom.app (ofOver Y) x
 
 theorem act_naturality {Y Z : Over S} [IsFinite Y.hom] [Etale Y.hom]
     [IsFinite Z.hom] [Etale Z.hom] (f : Y ⟶ Z)
@@ -85,11 +85,11 @@ def groupMonodromy (g : FundamentalGroup s hfin) : AddAut (Additive (Over.mk s �
     { toFun := fun x => Additive.ofMul (act s hfin G.X g x.toMul)
       invFun := fun x => Additive.ofMul (act s hfin G.X g⁻¹ x.toMul)
       left_inv := fun x => by
-        change g.inv.app (ofOver G.X) (g.hom.app (ofOver G.X) x) = x
-        exact ConcreteCategory.congr_hom (g.hom_inv_id_app (ofOver G.X)) x
+        change g.asIso.inv.app (ofOver G.X) (g.asIso.hom.app (ofOver G.X) x) = x
+        exact ConcreteCategory.congr_hom (g.asIso.hom_inv_id_app (ofOver G.X)) x
       right_inv := fun x => by
-        change g.hom.app (ofOver G.X) (g.inv.app (ofOver G.X) x) = x
-        exact ConcreteCategory.congr_hom (g.inv_hom_id_app (ofOver G.X)) x
+        change g.asIso.hom.app (ofOver G.X) (g.asIso.inv.app (ofOver G.X) x) = x
+        exact ConcreteCategory.congr_hom (g.asIso.inv_hom_id_app (ofOver G.X)) x
       map_add' := fun x y => act_mul s hfin G g x.toMul y.toMul }
 
 theorem groupMonodromy_one (x : Additive (Over.mk s ⟶ G.X)) :
@@ -329,7 +329,7 @@ theorem levelMonodromy_kernel (g : FundamentalGroup s hfin)
       (GroupScheme.multiplication A.toGrp n)).X)) :
     levelMonodromy s hfin htor A n hn hu g (kernelLevelEquiv A (Over.mk s) n x) =
       kernelLevelEquiv A (Over.mk s) n
-        (Additive.ofMul (g.hom.app (torsionCover htor A n hn hu) x.toMul)) := by
+        (Additive.ofMul (g.asIso.hom.app (torsionCover htor A n hn hu) x.toMul)) := by
   have := torsionKernel_isFinite htor A n hn hu
   have := torsionKernel_etale htor A n hn hu
   exact GroupScheme.Tate.finiteLevelMonodromy_kernel A.toGrp s hfin n g x
@@ -339,7 +339,7 @@ theorem kernelPoint_levelMonodromy (g : FundamentalGroup s hfin)
     (x : Level A (Over.mk s) n) :
     ((kernelLevelEquiv A (Over.mk s) n).symm
       (levelMonodromy s hfin htor A n hn hu g x)).toMul =
-        g.hom.app (torsionCover htor A n hn hu)
+        g.asIso.hom.app (torsionCover htor A n hn hu)
           ((kernelLevelEquiv A (Over.mk s) n).symm x).toMul := by
   obtain ⟨y, rfl⟩ := (kernelLevelEquiv A (Over.mk s) n).surjective x
   rw [levelMonodromy_kernel, AddEquiv.symm_apply_apply, AddEquiv.symm_apply_apply]

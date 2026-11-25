@@ -1,7 +1,5 @@
 # Closed subgroup embeddings of norm-one rational quotients
 
-Author: Worker 82.
-
 `AdelicGroupPoints.normOneRationalQuotientMap F G H f` is the actual map
 `G(F) \ G(𝔸_F)¹ → H(F) \ H(𝔸_F)¹` induced by the published continuous
 `mapNormOne F G H f`. Naturality for principal points makes it descend to left

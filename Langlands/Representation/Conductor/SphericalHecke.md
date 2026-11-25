@@ -1,6 +1,6 @@
 # The actual minuscule sum and its full-group spherical eigenidentity
 
-This internal unit defines the finite minuscule right-translation operator on
+This module defines the finite minuscule right-translation operator on
 actual functions on `GL_(n+1)`, with values in any commutative semiring. It is
 linear over that semiring. The operator sums the values at `g * labelledRep`.
 

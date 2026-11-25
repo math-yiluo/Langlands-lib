@@ -1,7 +1,5 @@
 # Extending multiplicative-type charts from affine tests
 
-Author: Worker 872.
-
 `MultiplicativeTypeSubgroupModuli.isOpenChartOfAffines` proves
 `IsOpenChartOfAffinesStatement`: affine injectivity and affine
 open-subfunctor criteria suffice for all test schemes. It constructs

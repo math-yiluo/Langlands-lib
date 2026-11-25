@@ -1,7 +1,5 @@
 # The polynomial set `𝔍(n, k)` of Bushnell–Kutzko
 
-Author: Worker 377 (Task 7401).
-
 ## Definition
 
 For a natural number `n` and a field `k` (in any universe `u`),

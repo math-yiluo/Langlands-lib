@@ -3,7 +3,7 @@
 Module `Langlands.Representation.CuspidalSupport.RationalInertiaOrbitTorusAlgebra`.
 Namespace `Langlands.CuspidalSupport.OrbitTorus`.
 
-Worker 5102 wrote this supporting module for the proof
+This is a supporting module for the proof
 `Langlands.CuspidalSupport.rationalInertiaOrbitTorus` of Renard V.2.7,
 Corollary (module `RationalInertiaOrbitTorusProof`). It imports only Mathlib.
 It has no representation theory: it contains the algebra behind the

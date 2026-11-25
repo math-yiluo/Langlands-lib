@@ -16,7 +16,7 @@ minimal-Levi shifted closed chamber.
 The implemented theorem composes three proved interfaces. The preceding
 full-minimal-Levi Xi comparison supplies an ambient-Xi upper estimate by
 the target-Levi Xi, the exact constant-term half modulus and a height
-polynomial. Worker 658's unchanged original-orbit coefficient theorem gives
+polynomial. The original-orbit coefficient theorem (`StandardLeviOriginalOrbitXiBound`) gives
 one global coefficient constant from the original simultaneous basis,
 source-Levi Cartan cover and central square integrability. The exact
 `RationalOrbitConstantTermThresholdStatement` identifies the original
@@ -24,14 +24,16 @@ coefficient with the half modulus times its actual constant term on a single
 shifted closed chamber. The generic polynomial-bound adapter cancels this
 nonzero half modulus and multiplies the two bound constants.
 
-This theorem retains the separately owned `RationalXiUpperBoundStatement`
+This theorem retains `RationalXiUpperBoundStatement`
 and the exact full-chamber threshold statement as explicit intermediate
 inputs. It also retains the Borel-space compatibility of the displayed
 central quotient needed by the reused original coefficient theorem.
-Neither a fixed-ray asymptotic formula nor the current supporting reductions
-discharges the full-chamber threshold or removes this measure compatibility.
-Consequently this unit does not prove the published unconditional positive
-constant-term decay target.
+A fixed-ray asymptotic formula does not discharge the full-chamber threshold
+or remove this measure compatibility. This module does neither, and it does
+not prove the unconditional positive constant-term decay target;
+`RationalOrbitPositiveConstantTermDecayProof` proves that target from the
+proved Xi upper bound (the proof term of `rationalXiUpperBound`) and
+`rationalOrbitConstantTermThreshold`.
 
 Provenance is internal composition of the displayed Library and supporting
 interfaces. Its source context is Waldspurger (2003), Lemma VI.2.3 and proof,

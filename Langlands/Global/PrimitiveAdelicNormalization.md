@@ -44,8 +44,10 @@ proved content-idele identities without changing the carriers or topology.
 
 ## Scope
 
-This unit proves compact normalization and the displayed factorization. It does
+This module proves compact normalization and the displayed factorization. It does
 not prove Springer's height limit properties (c)–(d), existence of rational
 height minima, Gauss reduction, rank induction or Galois descent. Connected
 reductive Siegel coverage, algebraic setup existence and the compatible compact
-subgroup remain obligations of the original reduction task.
+subgroup are not proved here; algebraic setup existence is proved as
+`AdelicSiegelFactors.siegelAlgebraicSetupExistence` in
+`AdelicSiegelSetupExistenceProof`.

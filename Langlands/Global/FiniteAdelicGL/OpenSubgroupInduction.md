@@ -1,7 +1,5 @@
 # Open subgroups of `GL_n(𝔸_K,f)` and induction over local factors
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Global.FiniteAdelicGL.OpenSubgroupInduction`. It
 imports `Langlands.Global.FiniteAdelicGL.RestrictedProduct` and
 `Langlands.Representation.Smooth.Definitions` and changes no published file.

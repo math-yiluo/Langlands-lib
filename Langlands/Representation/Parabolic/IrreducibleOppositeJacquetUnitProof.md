@@ -1,7 +1,5 @@
 # Irreducible opposite-Jacquet unit embeddings: proof
 
-Author: Worker 166.
-
 `Langlands.Parabolic.irreducibleOppositeJacquetUnit` proves the exact
 `Langlands.Parabolic.IrreducibleOppositeJacquetUnitStatement.{uF,uV}`. The field
 and inducing-carrier universes remain independent. The theorem assumes no

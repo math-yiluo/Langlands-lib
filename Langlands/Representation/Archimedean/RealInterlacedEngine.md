@@ -8,7 +8,7 @@ Fourth of the six modules that prove `RealInterlacedInducedInducedLinkedJacquetF
 `main_value`, which is shared by the two cases `A ≥ C` (`RealInterlacedProof`) and `C > A`
 (`RealInterlacedMirror`), and the test functions and test vectors. The notation is that of
 `RealInterlacedJacquet.md`, `RealInterlacedColumns.md` and `RealInterlacedChain.md`. `Ψ = frobMap`
-denotes Frobenius maps (Worker 5731).
+denotes Frobenius maps (module `RealCharacterCrossing`).
 
 ## Generic lemmas (section Generic)
 
@@ -94,7 +94,7 @@ The module compiles with no errors or warnings.
 
 ## Provenance
 
-Internal to Task 7070. The test functions are products of a complex coordinate of one column and
+Internal to the proof of `RealInterlacedInducedInducedLinkedJacquetFunctionalStatement`. The test functions are products of a complex coordinate of one column and
 self-dual Plücker coordinates of two columns. They were chosen so that the middle block has a
 one-dimensional space of top modes on `Sm` (`hasExpTop_Sm1`), and so that their modes along the
 blocks `0` and `2` lie outside the windows of the two induction blocks. This makes the

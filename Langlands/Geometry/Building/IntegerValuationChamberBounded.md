@@ -98,7 +98,8 @@ arbitrary supplied building data, as in the parahoric model statements.
 
 ## Use
 
-Task 6208 (`LocalSimplyConnectedUnramifiedIwahoriModelStatement`) applies
+The proof of `LocalSimplyConnectedUnramifiedIwahoriModelStatement` (module
+`LocalUnramifiedIwahoriModelAssembly`) applies
 `UnramifiedParahoricModelStatement` to a chamber of supplied building data.
 `MaximalUnramified.isChamber_exists_bounded` provides the nonempty bounded `Ωa` and the
 translation `g` it needs.

@@ -1,7 +1,5 @@
 # Actual relative root ranks and rational character restriction
 
-Author: Worker 1230.
-
 This internal interface measures ranks on the existing group-scheme lattices. For an arbitrary field `k : Type u`, `splitTorusRank T` is the rational dimension of the full lattice `characterLattice T`, namely `finrank ℚ (ℚ ⊗[ℤ] characterLattice T)`. Its geometric interpretation as a split rank is intended when `T` is a split torus. `splitTorusRank_splitTorus` proves that for the actual split torus indexed by any finite type `I` it equals `Nat.card I`. The proof uses the published lattice equivalence, `RationalSpan.tensorEquivPi`, and the dimension of a finite function space. Empty `I` is allowed.
 
 `rationalCharacterRank G` similarly measures the rationalized module of actual homomorphisms `G → 𝔾_m`. `rationalCharacterRestrictRat f` is Mathlib scalar extension of the published `characterRestrict f`; it sends `q ⊗ χ` to `q ⊗ (χ ∘ f)`. Its pure-tensor and `toRat` computation rules are definitional equalities. These definitions require no reductivity or finiteness assumption; the structural statements must supply finiteness when using these natural-number ranks.

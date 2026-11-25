@@ -1,7 +1,5 @@
 # Corrected finite Weil restriction point homeomorphism
 
-Author: Worker 172.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.henselianWeilRestrictionPointHomeomorphOfModuleTopology`
 proves exactly the published proposition
 [`HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement`](HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement.md).

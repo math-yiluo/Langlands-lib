@@ -21,7 +21,7 @@ some `g` with `ord(det g) = -a` has a nonzero Fourier transform of the test func
 With `ψ` of conductor `𝔬_K`, `t = ϖ⁻¹` and `j = -m` this reads `e a ≤ N (e + m)`: the exponent of
 the functional equation is at most `N (1 + m/e)`.
 
-This is piece UB of the analytic part of the proof of T2 (Task 7683).
+This is the upper bound of the analytic part of the proof of T2 (applied in `ConductorFormula`).
 -/
 
 noncomputable section
@@ -217,7 +217,7 @@ theorem exists_ord_det_eq_of_stratum
     g.val hΦ, hf,
     𝓛.toLin'_mem_endFiltration_of_rectangularFourierIntegral_ne_zero (k : ℤ) ψ ν ht hψt b' g.val hΦ⟩
 
-/-- **The upper bound for the exponent** (piece UB). Under the hypotheses of
+/-- **The upper bound for the exponent**. Under the hypotheses of
 `exists_ord_det_eq_of_stratum`, `e a ≤ -N j - e N ord(t)`, where `N = n + 1` and `e` is the
 period of `𝓛`. -/
 theorem period_mul_le_of_stratum

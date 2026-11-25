@@ -1,6 +1,6 @@
 # Density of nonzero unramified regular scalars
 
-This derived supporting unit proves uniqueness and density for the existing
+This auxiliary module, whose provenance is derived, proves uniqueness and density for the existing
 algebra of actual unramified regular scalar functions. It applies to a connected
 reductive group over an arbitrary nonarchimedean local field, using the full
 rational-character norm family. With a supplied topology on rational points,

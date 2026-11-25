@@ -13,7 +13,7 @@ between two existing Library propositions in the namespace
 `Langlands.AlgebraicGeometry.Picard.PicardZeroValuativeExtensionStatement`
 and
 `Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeValuativeExistenceStatement`.
-Their paired Markdown files give their complete quantifiers. This unit only
+Their paired Markdown files give their complete quantifiers. This module only
 defines the implication. It does not prove the implication or either
 constituent proposition, and it introduces no axiom.
 
@@ -85,17 +85,20 @@ resulting lift over `R'` must be turned into a lift over `R`.
 ## Internal provenance
 
 This is a derived, internal proposition and not a translation of an
-original-literature assertion. Worker 2093 formulated it as a focused
-prerequisite for the exact-target proof task
-`54d4a7cc-7607-4c5a-82e7-25bafba9e3e9`, whose target is
+original-literature assertion. It is a focused prerequisite for the proof of
 `RelativeDualSchemeValuativeExistenceStatement`. That proposition's paired
 Markdown gives the source background (Lan's thesis, Theorem 1.3.2.3) and
 says why a direct internal route avoids a comparison with a source Picard
 functor. The antecedent's paired Markdown describes the same route.
 
-The intended proof works with the Library's actual rigidified classes,
+The route below works with the Library's actual rigidified classes,
 actual pullbacks and geometric-fibre Picard-zero predicate. It is described
-here as a plan, not as proof evidence:
+here as a plan, not as proof evidence. The Library proves the implication as
+`relativeDualSchemeValuativeExistenceReduction` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeValuativeExistenceReduction`),
+whose Markdown describes the implemented proof, and
+`relativeDualSchemeValuativeExistence` applies it to
+`picardZeroValuativeExtension`.
 
 1. Pull the class of the chosen Poincaré family `poincareFamily A hA` back
    along the top map `i₁` of a valuative square, viewed as a morphism
@@ -122,15 +125,7 @@ here as a plan, not as proof evidence:
 
 Step 3 is where the change of valuation ring is undone. It needs only that
 `φ` is local and that the ring-level square with `ψ` commutes. It does not
-use any geometric property of the dual. Worker 2093 reports an unreviewed
-compiled Lean draft of this route, shared as a public draft of task
-`54d4a7cc-7607-4c5a-82e7-25bafba9e3e9`. That draft is not part of this unit
-and is not evidence for it.
+use any geometric property of the dual.
 
-## Authorship
-
-Worker 2093 specified the exact Lean statement in the objective of task
-`4c2d89fa-73d6-4f69-a6eb-439a293038d1` and wrote the first draft of this
-module and Markdown. Worker 3612 checked the draft against the two imported
-statement pairs and the Library's `DualScheme` module, and expanded this
-Markdown.
+The statement was checked against the two imported statement pairs and the
+Library's `DualScheme` module.

@@ -1,9 +1,10 @@
 # Elementary combinatorics for the derivative comparison of the MW recursion
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerDerivationCombinatorics`,
-namespace `Langlands.MoeglinWaldspurger.Derivation`. Author: Worker 5735;
-`round_first_maximal` and `round_chain_eq` retain Worker 1080's development
-lemmas from the shared draft of Task 5734. The module reuses
+namespace `Langlands.MoeglinWaldspurger.Derivation`.
+`round_first_maximal` and `round_chain_eq` retain development lemmas from
+`MoeglinWaldspurgerGreedy`, a draft for the involutivity proof that is not part of the
+Library. The module reuses
 `Involution.interval_le_iff` and `Involution.pick_none_iff` from
 `MoeglinWaldspurgerInsertion`, and `Langlands.MoeglinWaldspurger.round_first_mem`
 and `round_ending_le_first` from `SpehNeighborMWBound`, with their existing meanings.

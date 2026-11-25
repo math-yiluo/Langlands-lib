@@ -104,6 +104,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
   {H : GroupScheme (Spec (CommRingCat.of (UnramifiedClosure F)))} [IsAffineHom H.X.hom]
 
+attribute [local instance 1100] Module.Free.of_divisionRing in
 /-- Opposite nonmultipliable root coordinates with one SL2 map, an actual induced-torus
 coroot morphism, and one point realizing both original-base-normalized depths. -/
 structure ValuedSL2RootCoordinates (B : MaximalUnramified.BuildingData F H)
@@ -142,6 +143,7 @@ structure ValuedSL2RootCoordinates (B : MaximalUnramified.BuildingData F H)
 attribute [instance] ValuedSL2RootCoordinates.field ValuedSL2RootCoordinates.algebra
   ValuedSL2RootCoordinates.finite ValuedSL2RootCoordinates.separable
 
+attribute [local instance 1100] Module.Free.of_divisionRing in
 /-- Opposite multipliable root coordinates on one quadratic tower with one SU3 map,
 an actual induced-torus morphism, and a common point for both roots and their doubles. -/
 structure ValuedSU3RootCoordinates (B : MaximalUnramified.BuildingData F H)

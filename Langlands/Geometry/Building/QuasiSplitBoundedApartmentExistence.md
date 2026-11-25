@@ -43,5 +43,8 @@ restriction evaluation, so the strengthened descent helper applies. No completen
 compactness or residue-field condition is used.
 
 This result assumes quasi-splitness over the henselian base. It does not by itself
-prove quasi-splitness over the actual maximal unramified field or the host task's
-unconditional target. The original target and its imported files are unchanged.
+prove quasi-splitness over the actual maximal unramified field or the unconditional
+`MaximalUnramified.ZeroRootFiltrationBoundedStatement` that it serves;
+`MaximalUnramified.zeroRootFiltrationBounded` (module
+`UnramifiedZeroRootFiltrationBoundedProof`) combines it with
+`Langlands.GroupScheme.henselianDiscreteQuasiSplit` to prove that statement. The original target and its imported files are unchanged.

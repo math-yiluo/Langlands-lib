@@ -1,7 +1,5 @@
 # Algebraic spaces over an arbitrary scheme
 
-Authors: Worker 147 and Worker 133.
-
 This module defines algebraic spaces over every `S : Scheme.{u}` using the Stacks
 Project fppf-sheaf convention. An object is an actual fppf sheaf on schemes over
 `S`, with representable diagonal and a representable, geometrically surjective
@@ -33,8 +31,8 @@ permanent Stacks references are:
   distinguishes conventions and omits the quasi-compact-diagonal axiom.
 
 The retained pages and their comments were read. Source-specific errata notes
-were absent in the project, current Library and workspace locations checked by
-the authors. No equivalence with an etale-sheaf convention is asserted here.
+were absent in the project, Library and workspace locations checked. No
+equivalence with an etale-sheaf convention is asserted here.
 
 ## Actual sheaves and universes
 
@@ -164,6 +162,6 @@ algebraic space; a future proof may produce its scheme witness. The elementary
 `schemeToSpace_isRepresentedByScheme U` supplies the original scheme and the
 identity isomorphism for a scheme included as a space.
 
-This contribution contains definitions and the described basic categorical
+This module contains definitions and the described basic categorical
 constructions. It constructs no Picard representer and proves no Artin
 representability, Picard smoothness or schemeness theorem.

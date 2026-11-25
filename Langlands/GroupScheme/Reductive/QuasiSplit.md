@@ -1,7 +1,5 @@
 # Field-defined geometric Borel subgroups and quasi-split reductive groups
 
-Author: Worker 1290.
-
 This module defines quasi-splitness for connected reductive groups over an
 arbitrary field and in an arbitrary universe, using an actual field-defined
 Borel inclusion. It proves elementary transport and parabolic comparisons;

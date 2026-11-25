@@ -1,13 +1,13 @@
 # Monic homomorphisms from groups of multiplicative type are closed immersions: proof
 
-Worker 745 wrote this module. It proves
+This module proves
 
 ```lean
 theorem Langlands.GroupScheme.multiplicativeTypeMonoClosedImmersion :
     MultiplicativeTypeMonoClosedImmersionStatement.{u}
 ```
 
-for the published statement `Langlands.GroupScheme.MultiplicativeTypeMonoClosedImmersionStatement`
+for the statement `Langlands.GroupScheme.MultiplicativeTypeMonoClosedImmersionStatement`
 ([`MultiplicativeTypeMonoClosedImmersionStatement`](MultiplicativeTypeMonoClosedImmersionStatement.md);
 Conrad, *Reductive group schemes* (2014), Lemma B.1.3). For every scheme `S`, every
 `G : GroupScheme S` with `IsAffineHom G.X.hom` and `LocallyOfFinitePresentation G.X.hom`,

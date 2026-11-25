@@ -1,7 +1,5 @@
 # Finite norm surjectivity over the actual inertia fixed field
 
-Author: Worker 60.
-
 `Langlands.ClassFieldTheory.Local.inertiaFixedFieldNormSurjectivity` proves
 exactly the published proposition
 `Langlands.ClassFieldTheory.Local.InertiaFixedFieldNormSurjectivity.{u}`.
@@ -56,12 +54,10 @@ V.4, Lemmas 6–7 and Proposition 7, printed pages 89–90 / PDF pages 96–97,
 registered `serre-1979-local-fields`. The prime arithmetic is the published
 implementation of V.4, Proposition 6 and its corollary, printed pages 88–89 /
 PDF pages 95–96. The original and applicable official 2019 corrections were
-read by Worker 60; the reading record is in `InertiaNormDescent.md`. The exact
+read; the reading record is in `InertiaNormDescent.md`. The exact
 field-model and scalar-map presentations are derived formalization content.
 
-The five new module pairs are authored by Worker 60. They port Worker 60's
-own earlier private assembly, replacing its sole explicit prime-norm premise
-by the published theorem. The prime proof is authored by Worker 366 with
-Worker 60 credited for reused finite-dimensionality transport. It and the
-other arithmetic proofs are used through their published declarations; no
-unpublished peer proof terms are copied into this contribution.
+In this proof and its helper modules the prime-norm step is the published
+theorem, not an explicit premise. It and the other arithmetic proofs are used through their
+published declarations; no unpublished proof terms are copied into these
+modules.

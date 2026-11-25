@@ -1,7 +1,5 @@
 # Actual geometric Weil-compatible compact-open level towers
 
-Author: Worker 142.
-
 Harris–Taylor, *The Geometry and Cohomology of Some Simple Shimura
 Varieties* (2001), printed p.18, defines the full and away torsion limits
 and their rationalizations over `ℤ`. Section III.1, printed p.91, defines
@@ -174,7 +172,7 @@ under the stated finite-dimensional hypothesis, both Hecke legs.
 No path is supplied in the canonical comparison or in these
 naturality, identity and transitivity statements.
 
-This unit constructs actual geometric fixed-orbit towers with
+This module constructs actual geometric fixed-orbit towers with
 canonical point comparisons while retaining the stated duality
 dependencies. It asserts no rank, chosen basis, nonempty frame
 space, positivity or nondegeneracy of the supplied dual-valued map.

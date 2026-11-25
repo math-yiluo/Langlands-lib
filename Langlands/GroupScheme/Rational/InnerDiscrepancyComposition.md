@@ -1,7 +1,5 @@
 # Composition and comparison of local families with inner discrepancy
 
-Worker 692.
-
 This is an internal formal transport result for local group isomorphisms over
 an arbitrary scheme `S`. It combines the published `LocalGroupIso`,
 `InnerDiscrepancy`, `InnerDiscrepancySymmetry` and

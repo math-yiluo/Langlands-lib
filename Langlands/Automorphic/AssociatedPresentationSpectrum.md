@@ -1,6 +1,6 @@
 # Spherical spectra across actual cuspidal presentations
 
-This supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedPresentationSpectrum`, written by Worker 1679) extends the local comparison work to the unramified spectral data in a weak-association witness. Its generic helper transfers a scalar compact-open Hecke corner action from a smooth source to a smooth target when the sum of all source intertwiner images is the entire target. Neither source nor target is assumed irreducible.
+This supporting module of the gamma comparison for weakly associated cuspidal pairs, `AssociatedGammaStatement` (module `Langlands.Automorphic.AssociatedPresentationSpectrum`), extends the local comparison work to the unramified spectral data in a weak-association witness. Its generic helper transfers a scalar compact-open Hecke corner action from a smooth source to a smooth target when the sum of all source intertwiner images is the entire target. Neither source nor target is assumed irreducible.
 
 The proof composes the target corner action, minus its prescribed scalar, with the actual normalized fixed-vector projection. Naturality of both operators makes this linear map vanish on every source intertwiner image, hence on their sum. Its vanishing on a target fixed vector gives the scalar identity because the projection fixes that vector. This is an internal deduction from the published actual Hecke action and projection identities.
 

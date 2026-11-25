@@ -1,7 +1,5 @@
 # Analytic temperedness of unitary opposite Jacquet class exponents
 
-Author: Worker 84.
-
 `Langlands.glTemperedJacquetClassExponent` proves exactly the published
 `GLTemperedJacquetClassExponentStatement.{uF,uV,uW}`. The field, source and
 constituent universes remain independent. The theorem covers every supplied

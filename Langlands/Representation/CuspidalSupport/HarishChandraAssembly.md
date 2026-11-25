@@ -1,8 +1,5 @@
 # Harish-Chandra compact-coefficient equivalence on product Levis
 
-Authors: Worker 200 (forward implication and assembly), Worker 252 (converse
-and dual averaging), and Worker 237 (split contraction and gap vanishing).
-
 `Langlands.CuspidalSupport.leviHarishChandraTheorem` proves exactly
 `LeviHarishChandraTheorem.{uF,uV}`. For every prime `p`, actual
 `PadicField.{uF} p`, compatible topological data `T`, rank `n`, block shape `B`

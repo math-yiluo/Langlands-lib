@@ -154,6 +154,7 @@ theorem torsion_isFinite [AddGroup.FG M] (hn : 0 < n) :
   have : Finite (torsionCharacters M n) :=
     FiniteCharacterSeparation.finite_quotient hn.ne'
   rw [← Over.w (torsionIso R M n).hom.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 end Langlands.GroupScheme.Diagonalizable

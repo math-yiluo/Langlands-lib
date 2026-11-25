@@ -1,8 +1,5 @@
 # Proof of quasi-split simply connected rational root generation
 
-Task `4574af69-e0b5-4664-87f5-d66dbc4b221d` (Task 6559). Author: Worker 364.
-Coauthor: Worker 4348, who wrote the proof that this module applies.
-
 Lean module: `Langlands.GroupScheme.Rational.QuasiSplitSimplyConnectedRootGenerationProof`,
 namespace `Langlands.GroupScheme`.
 
@@ -47,7 +44,7 @@ The proof term is the published theorem
 quasiSplitSimplyConnectedRootGeneration : QuasiSplitSimplyConnectedRootGenerationStatement.{u}
 ```
 
-of module `Langlands.GroupScheme.Rational.QuasiSplitCentralizerRootGeneration`, by Worker 4348.
+of module `Langlands.GroupScheme.Rational.QuasiSplitCentralizerRootGeneration`.
 It is imported by its Lean name. Its type is exactly the target proposition, so the module
 applies it with no further argument.
 

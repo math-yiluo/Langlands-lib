@@ -1,6 +1,6 @@
 # Finite subcomodules of a flat coalgebra over a noetherian ring
 
-Worker 700. Construction following J. S. Milne, *Basic Theory of Affine Group
+Construction following J. S. Milne, *Basic Theory of Affine Group
 Schemes*, version 1.00 (2012), Chapter VIII, Aside 4.7, printed p.117. The source
 is registered as `milne-2012-basic-affine-group-schemes`; its SHA-256 is
 `6e252b8fe636dd2aaabd97415a8b2a1ab83e84a38a1b4a46db5301d4c43dabc7`.

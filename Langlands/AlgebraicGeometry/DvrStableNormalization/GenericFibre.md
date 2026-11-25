@@ -1,7 +1,5 @@
 # Generic fibres of schemes over a discrete valuation ring
 
-Worker 6.
-
 Namespace `Langlands.AlgebraicGeometry.DvrStableNormalization`. Let `R` be a DVR.
 
 - `sec r`: the global section of `Spec R` given by `r`.

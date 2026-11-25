@@ -1,7 +1,5 @@
 # Homeomorphisms from continuous comparisons of stages
 
-Author: Worker 113.
-
 This internal topological construction supports comparison of adelic point
 topologies defined as final topologies of arithmetic stages. It is derived
 from Mathlib's universal properties `continuous_iSup_dom` and

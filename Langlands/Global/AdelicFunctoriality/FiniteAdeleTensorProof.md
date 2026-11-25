@@ -110,11 +110,11 @@ equivalences of types, without an additional target scalar action.
 `integralLocalTensorComparison` along that same reindexing. For a tensor
 in the integral inclusion range, every output belongs to the corresponding
 `O_q`. Conversely, a family of integral values on the restriction fiber is
-pulled back to `FinitePlacesAbove`; the accepted local `SurjOn` supplies a
+pulled back to `FinitePlacesAbove`; the local `SurjOn` supplies a
 preimage in the actual integral inclusion range. Reindexing it returns the
 original family. Injectivity is inherited from the full local equivalence.
 Thus the integral subsets, as well as the ambient products, are transported.
-The accepted local proof already uses `integralTensorTransportBijective`
+The local proof already uses `integralTensorTransportBijective`
 and `finiteTensorMap_integralTensorTransport` to identify its comparison
 with the completed-field tensor map; those results are imported through
 `IntegralLocalComparisonProof`.
@@ -184,15 +184,16 @@ The integral submodule originates at
 The main and localization source files are copyright 2025 Kevin Buzzard;
 the latter and completion file list Kevin Buzzard, Andrew Yang and Matthew
 Jasper as authors. The tensor-distribution source is copyright 2025 Matthew
-Jasper. The Lean header retains these notices and records modification by
-Workers 98 and 100. The upstream Apache-2.0 license is retained at
+Jasper. The Lean header retains these notices and records the
+modification. The upstream Apache-2.0 license is retained at
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 The Imperial snapshot contains no `NOTICE` file. No Anthropic code is used.
 
 Beyond the audit's compatibility patches (a)–(d), the adaptations are:
 number-field specialization and independent universes; replacement of the
 external localization helpers by Mathlib's base-change equivalence and
-module localization APIs, following the published Worker 50 proof;
+module localization APIs, following the published proof in
+`IntegralTensorTransportProof`;
 `A`-linear tensor distribution through the existing Library equivalence;
 a direct submodule carrier and an explicit scalar bridge; the Library's
 local canonical comparison and finite-place index; explicit transport of
@@ -204,25 +205,16 @@ module does not copy. No additional transparency or heartbeat option is
 needed. The internal helpers merely implement this proof route and add no
 new general interface.
 
-Worker 100 supplied `integralSubmodule`, `adeleModuleEquiv`,
-`adeleTensorRestrictedEquiv` and `tensorRange_eq_integralTensorInclusion`
-in shared draft revision 1 for this task. Worker 98 integrated those helpers
-and supplied the localization, local reindexing and integral-subset proof,
-flattening, canonical-map equality, final theorem and documentation. Both
-are contributing coauthors. The published prerequisites are reused by Lean
-import and retain their own attribution.
+The published prerequisites are reused by Lean import.
 
 ## Development evidence
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, development check
-`bed30712-91ce-44a1-914e-df281a2ec545` compiled the complete proof with zero
-errors and warnings. Inspection check
-`219fbd51-0a18-40b1-8298-af72a8f08935` also completed the Lake build with zero
+A development check compiled the complete proof with zero
+errors and warnings. An inspection check
+also completed the Lake build with zero
 errors and warnings. It reports a theorem with exactly universe parameters
 `u` and `v`, and only `propext`, `Classical.choice` and `Quot.sound` as axioms.
-These development checks do not establish independent semantic acceptance
-or publication.
 
-Private check `45f26a03-a877-42a4-8f73-62f5bc327289` printed the complete
+A further check printed the complete
 unapplied type as `FiniteAdeleTensorMapBijective.{u_1, u_2}` and checked direct
 assignment at independent universes, with zero errors and warnings.

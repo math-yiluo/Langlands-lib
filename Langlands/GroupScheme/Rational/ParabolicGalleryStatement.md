@@ -1,7 +1,8 @@
 # Existence of rational parabolic galleries
 
-These are internal geometric targets for the persistence argument in
-Task 5515. Neither target is proved in this module.
+These are internal geometric targets for the persistence argument toward
+the existence of an irreducible induced unramified twist. Neither target is
+proved in this module.
 
 `RationalParabolicGalleryStatement` asserts that any two actual rational
 parabolic subgroup functors of a connected reductive group over any field,

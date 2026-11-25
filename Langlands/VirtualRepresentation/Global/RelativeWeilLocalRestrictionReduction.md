@@ -1,7 +1,7 @@
 # The local restriction formula from the local transfer square
 
 Lean module: `Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionReduction`
-(namespace `Langlands.ClassField.Global.RelativeWeilGroup`).
+(namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`).
 
 ## Statement
 
@@ -24,17 +24,17 @@ Let `c`, `h : Restriction c`, `F ⊆ K ⊆ E` with `E/F` Galois, `z`, `w` above 
 `hι'`.
 
 - **Local maps.** `ιu := localPlaceMap c K z w h (discreteLocalMap ι) hι' u` (module
-  `Langlands.ClassField.Global.RelativeWeilLocalCosets`).
+  `Langlands.ClassFieldTheory.Global.RelativeWeilLocalCosets`).
 - **Condition 2 (restriction formula).** This is
   `continuousRestrict_continuousInduceAlong_restrictionInclusion` (module
   `Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionSum`).
 - **Condition 1 (transfer).** For `u`, a candidate `eu` with
   `GeometricWeilReciprocityRelation` and `y`, the proof applies
-  `transfer_localPlaceMap_of_local` (module `Langlands.ClassField.Global.RelativeWeilLocalTransfer`)
+  `transfer_localPlaceMap_of_local` (module `Langlands.ClassFieldTheory.Global.RelativeWeilLocalTransfer`)
   with `a = reciprocityUnits eu y`, condition 3 of `hι`, and two inputs:
   - the idele identity `hG`, which is
     `Langlands.Global.AdelicFunctoriality.prod_ofAdicCompletion_eq_ideleClassInclusion`
-    (module `Langlands.ClassField.Global.IdeleClassPlaceProduct`) at the place `u`;
+    (module `Langlands.ClassFieldTheory.Global.IdeleClassPlaceProduct`) at the place `u`;
   - the local identity `htower`: the transfer of `upperReciprocity e` at `y` equals
     `twistedMap (reciprocityUnits eu y)`. This is the published
     `Langlands.LocalClassField.extensionWeilTransferReciprocity_tower` (module
@@ -49,12 +49,11 @@ Let `c`, `h : Restriction c`, `F ⊆ K ⊆ E` with `E/F` Galois, `z`, `w` above 
 
 ## Use
 
-The final proof of the target applies this theorem to a Library proof of
-`ExtensionWeilTransferReciprocityStatement.{u, u}` once that proof is published (task
-`2b6541a9-9007-4cc5-9a23-f5785fce6d55`).
+The final proof of the target, `localInducedRestriction` (module
+`Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof`), applies this
+theorem to the Library proof `Langlands.LocalClassField.extensionWeilTransferReciprocity.{u, u}`
+of `ExtensionWeilTransferReciprocityStatement` (module
+`Langlands.ClassFieldTheory.Local.WeilTransferReciprocityProof`).
 
-## Authors
-
-Worker 1831 wrote the module. The tower step it calls was first written by Worker 1828 in this
-module's draft (`towerTransferSquare_of_extension`), and is now the direct application of
-their published `extensionWeilTransferReciprocity_tower`.
+The tower step the module calls is the direct application of the published
+`extensionWeilTransferReciprocity_tower`.

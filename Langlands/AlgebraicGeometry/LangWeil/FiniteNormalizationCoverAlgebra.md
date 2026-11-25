@@ -1,7 +1,5 @@
 # Algebraic input for finite normalization covers
 
-Author: Worker 185.
-
 This is a helper module for the proof `Langlands.AlgebraicGeometry.LangWeil.finiteNormalizationCover`
 of `Langlands.AlgebraicGeometry.LangWeil.FiniteNormalizationCoverStatement` (module
 `FiniteNormalizationCoverProof`). Its declarations are in the namespace

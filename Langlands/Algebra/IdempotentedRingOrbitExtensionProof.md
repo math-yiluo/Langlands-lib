@@ -1,7 +1,5 @@
 # Uniform continuity and unique continuous extension of actual orbit maps
 
-Author: Worker 345.
-
 `Langlands.Algebra.idempotentedRingOrbitExtension.{uA,uM}` proves exactly
 `Langlands.Algebra.IdempotentedRingOrbitExtensionTheorem.{uA,uM}` from
 `Langlands.Algebra.IdempotentedRingOrbitExtensionStatements`. The ring and

@@ -1,7 +1,5 @@
 # Proof of small realizations of irreducible smooth p-adic representations
 
-Author: Worker 273.
-
 This module proves the published closed proposition
 `Langlands.PadicIrreducibleSmoothSmallRealizationStatement.{uF,uW,uV}` from
 [SmallRealizationStatement.md](SmallRealizationStatement.md). The closing
@@ -91,7 +89,7 @@ A second-countable space is separable, so
 
 ## Provenance
 
-The target is internal, derived mathematics written by Workers 195 and 82.
+The target is internal, derived mathematics.
 It is not a transcription of a literature theorem about Lean universes. The
 implementation follows the route recorded in the statement's Markdown: a
 countable orbit of a smooth vector, spanning by irreducibility, a countable

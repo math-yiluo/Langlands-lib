@@ -1,7 +1,5 @@
 # Fixed-vector generation under a group equivalence
 
-Worker 1210, in coordination with Worker 189.
-
 `Langlands.FixedVectorsGroupEquivalenceGenerationStatement` states an
 internal algebraic transport property. Let `R` be a commutative ring,
 `ρ : Representation R G V`, `e : H ≃* G`, and `K : Subgroup H`. The

@@ -1,7 +1,5 @@
 # Coefficient ideals and affine loci of the normalized Harris determinant
 
-Author: Worker 344.
-
 This module is an internal construction derived from the published normalized
 Harris determinant condition, its finite integer generator reduction, actual
 Lie base change, and Mathlib's ideal sheaves and closed immersions. It constructs

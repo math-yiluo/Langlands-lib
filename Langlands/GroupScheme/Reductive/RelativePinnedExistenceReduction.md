@@ -39,6 +39,9 @@ composition, geometric compatibility and adjoint-section clauses through the
 existing normalization construction.
 
 There are no restrictions on the common or relative test schemes beyond
-those in the unchanged target. The local-existence hypothesis is still open;
-this conditional reduction is a prerequisite and is not an unconditional
-proof or completion of the host task.
+those in the unchanged target. The local-existence hypothesis is not proved
+here; this conditional reduction is a prerequisite and is not an unconditional
+proof of `RelativePinnedComparisonExistenceStatement`. The Library proves the
+hypothesis as `AffinePinnedModel.hasFppfLocalPinnedRepresentatives` and the
+statement as `relativePinnedComparisonExistence`, both in
+`RelativePinnedComparisonProof`.

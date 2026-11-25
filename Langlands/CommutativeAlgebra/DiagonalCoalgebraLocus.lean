@@ -135,7 +135,7 @@ theorem exists_away_surjective [AddMonoid.FG M]
     (hφ : Function.Surjective (scalarExtension φ.toAlgHom K)) :
     ∃ r : R, algebraMap R K r ≠ 0 ∧
       Function.Surjective (scalarExtension φ.toAlgHom (Localization.Away r)) := by
-  obtain ⟨s, hs⟩ := AddMonoid.FG.fg_top (M := M)
+  obtain ⟨s, hs⟩ := AddMonoid.exists_of_isAddFG M
   obtain ⟨r, hr, h⟩ :=
     exists_unit_surjectivity_certificate φ s hs K hφ
   exact ⟨r, hr, h _ (IsLocalization.Away.algebraMap_isUnit r)⟩

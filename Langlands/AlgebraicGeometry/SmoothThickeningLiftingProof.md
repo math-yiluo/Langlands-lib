@@ -63,5 +63,3 @@ Morphisms, Definition 37.11.1 (Tag 02H0) and Lemma 37.11.7 (Tag 02H6).
 - The square-zero argument replaces the torsor under
   `Hom(a*Ω_{X/S}, C_{T/T'})` and the vanishing of its `H¹` by an explicit
   Čech computation.
-
-Worker 496 wrote the Lean code and this description.

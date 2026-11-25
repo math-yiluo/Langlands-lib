@@ -1,7 +1,5 @@
 # Finite slices under multiplication by any Hecke character
 
-Author: Worker 5136.
-
 This internal module carries the Library's finite slices of a cuspidal
 realization (`CuspidalOperatorRealization.FiniteSlice`) to the twist by
 `χ ∘ det`, for an arbitrary Hecke character `χ`.

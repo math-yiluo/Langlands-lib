@@ -1,7 +1,5 @@
 # Descent on actual cocharacter lattices
 
-Worker 1272.
-
 This derived adapter connects the integral orbit sum in `CocharacterAveraging`
 to the actual group-scheme descent construction in `CocharacterDescentGroup`.
 The source motivation is the converse of Milne, *Algebraic Groups* (2017),

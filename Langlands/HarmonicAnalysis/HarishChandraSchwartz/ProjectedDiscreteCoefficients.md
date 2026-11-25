@@ -1,6 +1,6 @@
 # Canonical discrete-series coefficients of projected function representations
 
-This derived unit connects the representation-theoretic argument in Waldspurger
+This derived module connects the representation-theoretic argument in Waldspurger
 (2003), Theorem VIII.4.2, printed pp.330–331 (PDF pp.96–97), to the Library's
 canonical discrete-series coefficient sum. All positive-form and coefficient-L²
 assumptions remain explicit auxiliary inputs.
@@ -34,5 +34,6 @@ coefficient-L² inputs have been supplied. This implementation uses smooth
 evaluation directly instead of constructing the source's reproducing vector.
 Both the original-carrier and enlarged-carrier conclusions are proved.
 
-No analytic input is proved here, and neither closed Task 7440 target follows
-without those inputs. The central Haar measure is unchanged throughout.
+No analytic input is proved here, and neither closed VIII.4.2 target
+(`RationalCuspidalDiscreteCoefficientStatement`, `RationalCuspidalFixedCoefficientLiftingStatement`)
+follows without those inputs. The central Haar measure is unchanged throughout.

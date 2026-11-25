@@ -1,7 +1,5 @@
 # Normalized induction of square-integrable GL blocks
 
-Author: Worker 162.
-
 `Langlands.Classification.squareIntegrableBlockInduction` proves the published
 proposition `Langlands.Classification.SquareIntegrableBlockInduction.{uF,uV} F T`
 from [TemperedBlockStatement](TemperedBlockStatement.md). Its outer parameters

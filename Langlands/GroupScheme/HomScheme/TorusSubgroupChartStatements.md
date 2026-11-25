@@ -1,7 +1,5 @@
 # Chart covers of the functor of closed torus subgroups
 
-Author: Worker 1421.
-
 This module states four propositions in namespace
 `Langlands.GroupScheme.TorusSubgroupModuli`. They split the proof of
 `SmoothTorusSubgroupRepresentabilityStatement` into three independent steps. The

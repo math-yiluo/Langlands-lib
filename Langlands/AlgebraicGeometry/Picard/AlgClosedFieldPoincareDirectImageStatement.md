@@ -1,7 +1,6 @@
 # Higher direct images of the Poincaré bundle over an algebraically closed field
 
-Authors: Worker 943 and Worker 360. This pair adapts Worker 943's shared draft;
-Worker 360 checked the original theorem and the Library conventions.
+The original theorem and the Library conventions were checked for this pair.
 
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldPoincareDirectImageStatement`,
 namespace `Langlands.AbelianScheme`, with
@@ -102,17 +101,18 @@ Correspondence:
 - For `R^g p_* P` the source gives an equality of sheaves, that is, an isomorphism; the Lean
   statement asserts that some isomorphism exists.
 
-No source-specific errata note was present in the pinned Library's
-`notes/errata/` or in the project `notes/errata/` location when checked.
-This records those checked locations, without asserting that no errata exist
+No source-specific errata note was present in the Library's
+`notes/errata/` when checked.
+This records that checked location, without asserting that no errata exist
 elsewhere.
 
 ## Role
 
-Prerequisite of task `fc8e4732-8e1b-497e-adb1-c27ee538f442` (proof of
-`Langlands.AbelianScheme.AlgClosedFieldAmpleMumfordEulerSquareStatement`), through the
-dual-side interface `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`
-(statement task `2590f5a1-e1c2-4ec1-ade7-377e97a3e12f`). The source uses it together with
+Prerequisite of the proof of
+`Langlands.AbelianScheme.AlgClosedFieldAmpleMumfordEulerSquareStatement`, through the
+dual-side interface `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`,
+whose proof `algClosedFieldMumfordDualEuler` uses the Library's proof
+`algClosedFieldPoincareDirectImage` of this statement. The source uses it together with
 flat base change in the proof of the Riemann-Roch theorem (9.11), printed p.132 (PDF p.136),
 to compute the higher direct images of the Mumford bundle `Λ(L) = (id × φ_L)^* P` and
 `χ(Λ(L)) = (-1)^g · deg(φ_L)`.

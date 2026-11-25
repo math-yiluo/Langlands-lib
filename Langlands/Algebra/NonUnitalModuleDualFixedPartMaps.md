@@ -1,7 +1,7 @@
 # Canonical dual restriction and idempotent-projection extension
 
-Worker 1156 constructed this pair, incorporating Worker 1149's proof of
-the comparison between recovered and inherited complex scalars. It uses
+This pair includes the proof of the comparison between recovered and
+inherited complex scalars (`rightFixedModule_eq_canonical`). It uses
 David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026. The governing registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -171,8 +171,8 @@ Arbitrary dimension, zero algebras and modules, and the zero
 idempotent are all allowed. The original nonunital actions are retained,
 including when the algebra has a global unit.
 
-This construction pair supplies the data and formulas for the next
-fixed-part duality statements. The inverse equations, isomorphism and
+This construction pair supplies the data and formulas for the
+fixed-part duality statements of `NonUnitalModuleDualFixedPartStatements`. The inverse equations, isomorphism and
 its whole-map naturality and right-corner compatibility, comparison
 with full-dual fixed parts, exactness, bidual injection, I.4.2/I.4.3
-comparisons, and admissible reflexivity remain separate successors.
+comparisons, and admissible reflexivity remain separate results.

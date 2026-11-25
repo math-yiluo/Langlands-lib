@@ -1,7 +1,5 @@
 # Existence of an irreducible induced unramified twist
 
-Author: Worker 145.
-
 This module states
 `Langlands.Renard.AlgebraicFamily.IrreducibleInducedTwistExistenceStatement`.
 It supplies no proof. This is a derived existence consequence of Konno's

@@ -1,7 +1,6 @@
 # Brauer relations among small twists of a highly ramified norm pullback
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. It is the
 local half of Deligne's Lemma 4.16, used in the global argument at ramified places
 other than the distinguished one. After a global twist by a character `α` that is
@@ -10,7 +9,7 @@ form `χ₀ · (α ∘ N)` with `χ₀` of bounded conductor. The relation-level
 `exists_bound_evaluationMap_eq_zero_of_ramified_normPullback`. The general kernel
 statement is not claimed.
 
-It builds on `BrauerKernel.LinearTwist` (the same candidate) and the accepted units
+It builds on `BrauerKernel.LinearTwist` and the modules
 `BrauerKernel.Determinant` (`characterRatioMap_eq_zero`) and
 `BrauerKernel.UnramifiedExponent` (`normPullback`, `normPullback_apply`).
 
@@ -52,7 +51,7 @@ arbitrary topological data `T`, `S`.
   `ε(χ₀ β) = χ₀(γ) ε(β)` and `ε(χ₀' β) = χ₀'(γ) ε(β)`, for `ψ ∘ Tr_{L/E}` and the
   supplied Haar measure of `L`. Then each generator value is the character ratio
   `χ(γ) / χ'(γ)`, so the evaluation equals `characterRatioMap F E γ z`. That vanishes
-  by the accepted `characterRatioMap_eq_zero`.
+  by `characterRatioMap_eq_zero`.
 - `exists_bound_abelianEpsilonExpression_twist`: fix `E ⊆ L`, `ψ` on `E` and `K`.
   There is `B` with the following property. Suppose `a(α) ≥ B` and
   `IsHalfLinearizer F E ψ α c`. Then for every `χ₀` on `L` with `a(χ₀) ≤ K` and every Haar measure `μ` on `L`:

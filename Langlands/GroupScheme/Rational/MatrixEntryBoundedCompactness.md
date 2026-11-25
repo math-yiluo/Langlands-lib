@@ -28,4 +28,5 @@ homeomorphisms. Its compact image has a nonzero scalar valuative bound by
 
 The argument includes dimension zero and both local-field characteristics.
 It uses neither reductivity nor a finite-type assumption, and leaves the
-spectral and anisotropy inputs to the host theorem open.
+spectral and anisotropy inputs to the compactness theorem this module serves
+open.

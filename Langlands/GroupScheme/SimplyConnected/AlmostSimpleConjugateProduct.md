@@ -1,6 +1,6 @@
 # The actual embedding-conjugate product
 
-This internal construction by Worker 166 assembles the actual conjugate-factor
+This internal construction assembles the actual conjugate-factor
 isomorphisms into an isomorphism from their categorical finite product to the
 original upper-field group. It assumes an actual smooth affine almost-simple
 product presentation after a Galois field extension, an affine almost-simple

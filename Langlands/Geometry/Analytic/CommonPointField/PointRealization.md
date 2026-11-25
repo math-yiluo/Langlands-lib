@@ -1,6 +1,6 @@
 # Compatible realization of one analytic point
 
-Worker 310. Internal derived construction for the common analytic point field.
+Internal derived construction for the common analytic point field.
 For an affinoid atlas presentation `A` and a point `x`, this module constructs a
 complete ultrametric normed `K`-algebra field `PointField.Carrier A x` and a
 `FieldPoint` over it with underlying point `x`.

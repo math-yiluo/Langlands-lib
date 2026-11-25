@@ -20,7 +20,7 @@ variable {G : Type v} [Group G] {A : Type w} [Group A] [IsMulTorsionFree A]
 /-- A homomorphism to a torsion-free group with finite kernel quotient is trivial. -/
 theorem eq_one_of_finite_kernel_quotient (f : G →* A) [Finite (G ⧸ f.ker)]
     (g : G) : f g = 1 := by
-  apply pow_left_injective f.ker.index_ne_zero_of_finite
+  apply (Commute.one_right (f g)).eq_of_pow_eq_pow f.ker.index_ne_zero_of_finite
   change f g ^ f.ker.index = 1 ^ f.ker.index
   rw [one_pow, ← map_pow]
   exact f.ker.pow_index_mem g

@@ -1,6 +1,6 @@
 # Vector filtrations and Haar determinants for smooth affine groups
 
-Authors: Worker 184 and Worker 1423. Worker 184 adapts Worker 1423's published
+This module adapts the published
 `DynamicUnipotentVectorFiltrationProof` graded-coordinate proof. The original
 published statement and proof remain unchanged.
 
@@ -105,11 +105,11 @@ restriction, and equality of the two actual normalizer points.
 
 This is an internal generalization and construction from Library results,
 with no new external-source assertion. The substantive vector proof is
-adapted from Worker 1423's published
+adapted from the published
 `DynamicUnipotentVectorFiltrationProof`, keeping its exact rational-coordinate,
 Lie-coordinate and weight-block route. The Haar step reuses the published
 vector-filtration Haar theorem and general dynamic compact-open containment.
-The smaller centralizing-group step adapts Worker 184's
+The smaller centralizing-group step adapts the
 `CentralizingUnipotentHaarDeterminant` proof with the new smooth affine formula.
 
 The module proves neither a Haar formula for an arbitrary intersection of
@@ -117,5 +117,7 @@ two dynamic unipotent subgroups nor a comparison between the Haar factors
 of the same subgroup in different ambient groups. Those require further
 actual-object identifications and topological transport. Whole-common-Levi
 character detection, normalized half-modulus comparison, the geometric
-filtration and the exact-K0 expansion remain separate obligations. The host
-`RationalGeometricK0ExpansionStatement` receives no new premise.
+filtration and the exact-K0 expansion are not proved in this module; the Library
+proves the expansion as `rationalGeometricK0Expansion` (module
+`RationalGeometricK0Expansion`). `RationalGeometricK0ExpansionStatement`
+receives no new premise.

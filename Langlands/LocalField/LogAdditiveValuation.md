@@ -1,7 +1,5 @@
 # A normalized negative-logarithm adapter for valuations
 
-Author: Worker 1676.
-
 This is an internal derived construction from Mathlib's multiplicative valuation
 and real logarithm APIs. It provides the change of convention needed when a
 spectral norm is to supply a real additive root-parameter valuation. It makes no

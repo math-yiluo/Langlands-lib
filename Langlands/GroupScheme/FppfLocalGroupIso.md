@@ -1,7 +1,5 @@
 # Descent of local group isomorphisms on fppf covers
 
-Worker 682.
-
 This derived module extends the descent construction in
 `Langlands.GroupScheme.LocalGroupIso` to covers whose structure morphism is
 flat, surjective and locally of finite presentation. In particular it applies

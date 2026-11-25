@@ -1,7 +1,5 @@
 # Proof: unitary constituents of an admissible character limit
 
-Author: Worker 5667.
-
 This module proves `Langlands.UnitaryCharacterLimitSubquotientsStatement.{uG, uV}`
 (`Langlands/Representation/Unitary/CharacterLimitSubquotientsStatement.lean`).
 The group universe `uG` and the carrier universe `uV` are independent.
@@ -60,7 +58,7 @@ Fix the data of the statement and an irreducible actual subquotient `τ` of `ρ`
 ## Final theorem
 
 `Langlands.unitaryCharacterLimitSubquotients : UnitaryCharacterLimitSubquotientsStatement.{uG, uV}`
-is the reduction lemma applied to `Langlands.CornerFormGluing.cornerFormGluing`, Worker 4713's
+is the reduction lemma applied to `Langlands.CornerFormGluing.cornerFormGluing`, the
 published proof of `CornerFormGluingStatement.{uG, uV}`
 (`Langlands/Representation/Unitary/CornerFormGluingProof.lean`, with the helper module
 `CornerFormGluing.lean`). As its Markdown describes, that proof chooses a form at every level
@@ -76,17 +74,17 @@ corner element `e_L ⋆ δ_g ⋆ e_L` (`translateCornerElement`) and its involut
 
 - `Langlands.Representation.Unitary.CharacterLimitLevelInput`: level-wise trace positivity
   and corner-linear fixed-vector maps.
-- `Langlands.LinearAlgebra.PositiveTraceForms` (Worker 5219): star-invariant forms on simple
+- `Langlands.LinearAlgebra.PositiveTraceForms`: star-invariant forms on simple
   subquotients of a module with positive trace.
 - `Langlands.Representation.Unitary.CornerFormGluingStatement` and its proof
-  `Langlands.Representation.Unitary.CornerFormGluingProof` (Worker 4713).
+  `Langlands.Representation.Unitary.CornerFormGluingProof`.
 - Published Library results named above (character positivity, subquotient realization,
   corner simplicity, fixed-vector maps, common compact open invariance, inversion invariance
   of a two-sided Haar measure).
 
 ## Validation
 
-`lean_check` diagnostic `a0977658-1ceb-4eaa-9a9f-8f13644deb44` compiled this module against
+This module compiled against
 Library `2e46b9ca` without errors or warnings. `Langlands.unitaryCharacterLimitSubquotients` has
 universe parameters `uG, uV` and depends only on the axioms `propext`, `Classical.choice` and
 `Quot.sound`.

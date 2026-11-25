@@ -1,7 +1,5 @@
 # Rational charts as represented affinoid domains
 
-Author: Worker 56.
-
 This module connects the actual positive-radius rational chart category to the
 full represented-domain category. It uses the published
 `RationalChart.represents` theorem; no factorization property is assumed as new

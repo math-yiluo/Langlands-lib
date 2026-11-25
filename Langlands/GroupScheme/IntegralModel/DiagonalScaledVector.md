@@ -29,7 +29,8 @@ of the underlying scheme and representation-theoretic unipotence of its
 scheme-theoretic kernel. Different residue coefficients may vanish
 independently. Equal scales and dimension zero are included.
 
-This is derived infrastructure for Task 6392, extending the uniform scalar
+This is derived infrastructure for KP C.5.3 for actual unramified root-depth
+special-fibre kernels, extending the uniform scalar
 model construction coordinate by coordinate. Its source motivation is the
 additive models of Kaletha–Prasad, *Bruhat–Tits theory: a new approach* (2023),
 Section C.2 and Fact C.2.1, printed pp.697–698 / PDF pp.728–729, registered as

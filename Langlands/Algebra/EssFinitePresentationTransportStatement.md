@@ -71,7 +71,8 @@ transport from an arbitrary finitely presented algebra to this standard
 presentation. Isomorphism invariance expresses preservation of the same
 presentation-and-localization description under changing source or target
 by a ring isomorphism. These explanations justify the derived statements;
-their formal proofs are reserved for a separate proof task.
+their formal proofs are `essFinitePresentationTransport` in the module
+`EssFinitePresentationTransportProof`.
 
 The statement does not assert general composition or base-change closure,
 or any theorem about scheme stalks or `Localization.localRingHom`.

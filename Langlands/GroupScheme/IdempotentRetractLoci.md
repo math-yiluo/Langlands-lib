@@ -1,7 +1,5 @@
 # Identity and triviality opens of an idempotent
 
-Worker 632.
-
 For an actual closed retract image of a group-scheme endomorphism, the
 identity open is the locus where its inclusion is étale at the unit.
 When the source and target of this inclusion are smooth and the ambient

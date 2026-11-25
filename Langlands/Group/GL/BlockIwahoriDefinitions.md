@@ -1,6 +1,6 @@
 # Actual block Iwahori interfaces
 
-Authors: Worker 114 and Worker 118. This module supplies one construction API
+This module supplies one construction API
 for the actual general linear groups and ordered positive block shapes already
 published in `Blocks` and `OppositeBlocks`. It preserves those definitions.
 All declarations below are in `Langlands.GeneralLinear.BlockShape`.

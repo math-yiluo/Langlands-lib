@@ -1,7 +1,5 @@
 # Rational similitude group scheme and multiplier
 
-Author: Worker 57.
-
 This module realizes the existing finite-basis similitude functor as an actual
 affine group scheme, constructs its multiplier morphism to the existing `Gm`,
 and specializes both to the rational involution of a central simple CM algebra.
@@ -19,7 +17,7 @@ group scheme and recover its points on all test schemes. The present module
 supplies the concrete generic and rational specializations and reconstructs
 the multiplier from its natural point maps. It asserts no new external
 existence theorem. The original arithmetic input and multiplier convention
-are those documented in the imported `CMData` and `Similitude` pairs.
+are those documented in the imported `CMData` and `Similitude` modules.
 
 The generic base ring `R`, algebra `A` and finite basis index share a universe.
 The base is any commutative ring, and `A` is a possibly noncommutative ring

@@ -1,9 +1,7 @@
 # Linearity, right translation and the trilinear continuation family
 
-Authors: Worker 233 and Worker 762. Written for helper task
-`bd2991bb-7582-4786-bb5b-da489d7eb049`; its consumer is the proof task
-`1f6f86ac-1105-4f57-b067-1fe692fb2683` for the published statement
-`Langlands.RankinSelberg.EqualRankContinuedFormsStatement`.
+This module is used by the proof `EqualRankContinuedFormsProof` of the published
+statement `Langlands.RankinSelberg.EqualRankContinuedFormsStatement`.
 
 This module proves the multilinearity and the right-translation law of the
 actual equal-rank Rankin--Selberg integrals of the Library, and packages their
@@ -95,7 +93,7 @@ quotient integrals.
 states `|det g|^(-s) = spectralPoint q s ^ m`, where
 `spectralPoint q s = q^(-s)`. The absolute value `abv` is an explicit argument
 and `g` may lie in `GL_d(F)` for any `d`, matching the published
-`determinantWeight_eq_spectralPoint_zpow`; the task's case is `d = n + 1`. It is the published
+`determinantWeight_eq_spectralPoint_zpow`; the case used here is `d = n + 1`. It is the published
 `determinantWeight_eq_spectralPoint_zpow` at exponent `-m` and parameter `-s`,
 together with `spectralPoint q (-s) = (spectralPoint q s)⁻¹`.
 

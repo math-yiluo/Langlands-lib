@@ -1,6 +1,6 @@
 # Geometric inputs for canonical standard compression
 
-This internal supporting unit constructs the geometric data used by compression
+This module constructs the geometric data used by compression
 on the actual canonical standard representatives. It also specializes the named
 native Jacquet inputs to every canonical standard Levi. It proves neither the
 retained global statements nor the unrestricted uniform stabilization theorem.
@@ -58,7 +58,7 @@ the existing compression consumer.
 
 The field universe `u` and carrier parameter `uV` are independent; both global
 representation statements are used at `{u, max u uV}`, matching the existing
-native bundle. This unit introduces no exponent and does not assert stability,
+native bundle. This module introduces no exponent and does not assert stability,
 stationary power-chain equalities or complementarity for arbitrary smooth
 representations.
 

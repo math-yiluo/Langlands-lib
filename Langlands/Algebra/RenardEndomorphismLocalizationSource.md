@@ -1,6 +1,6 @@
 # Raised sources and the transported chosen localization arrow
 
-Worker 1581. This is the source-side internal construction for the chosen
+This is the source-side internal construction for the chosen
 endomorphism-localization comparison. All declarations are in
 `Langlands.Renard.EndomorphismLocalization.ChosenComparison`.
 
@@ -10,14 +10,14 @@ arbitrary modules, including zero modules, and arbitrary specified endomorphisms
 The zero ring is allowed. No finiteness, injectivity, invertibility, nontriviality
 or smallness assumption is added to the source pairs.
 
-`chosenFunctor` is exactly the published composite `toPolynomial R`,
+`chosenFunctor` is exactly the composite `toPolynomial R`,
 `ModuleLocalization.chosenLocalFunctor (powersX R)` and
 `localFromPolynomial R`. Its codomain is the actual full subcategory of
 invertible pairs in carrier universe κ. The declarations `chosenFunctor_obj`
 and `chosenFunctor_map` expose the original chosen objects and localized
 polynomial maps in that composite.
 
-`polynomialRaisedFunctor` is exactly `toPolynomial R`, then the published
+`polynomialRaisedFunctor` is exactly `toPolynomial R`, then
 `sourceRaisingFunctor` on polynomial modules, then `fromPolynomial R`.
 `raisedFunctor` instead sends a pair A to `ModuleCat.of R (ULift.{max u w} A.a)`
 with operator `x ↦ ULift.up (A.str x.down)`. Every original intertwiner f is sent
@@ -37,9 +37,9 @@ object names. `sourceIso` bundles this equivalence as an isomorphism of pairs;
 every intertwiner by equality of the underlying functions. The two component
 formulas and both inverse equations are recorded explicitly.
 
-`polynomialArrow` is theta: the published `chosenLocalizationUnit`, whiskered
+`polynomialArrow` is theta: `chosenLocalizationUnit`, whiskered
 on the right by `fromPolynomial R` and on the left by `toPolynomial R`.
-The published inclusion-square definitions identify its codomain with
+The inclusion-square definitions identify its codomain with
 `chosenFunctor R` followed by the inclusion of invertible pairs.
 `polynomialArrow_app` identifies the component with `fromPolynomial R` applied
 to the actual `canonicalModuleMap`; `polynomialArrow_up` gives its exact
@@ -57,16 +57,18 @@ p-adiques*, French version 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 A.III.1, printed251–252 / one-based PDF257–258, defines the right universal
 problem and translates module localization in example 4 to endomorphism
-localization in example 5 by the polynomial-module equivalence. Worker 1581
-reread both pages for this construction. The general commutative-ring form,
+localization in example 5 by the polynomial-module equivalence. Both pages
+were reread for this construction. The general commutative-ring form,
 ULift choices and explicit natural source comparison are derived internal
 content, rather than extra literal assertions of the book. The construction
 uses endomorphism invertibility as locality; the printed stronger scalar-inverse
-parenthesis in example 4 is not used. See the published
+parenthesis in example 4 is not used. See the
 [discrepancy note](../../notes/renard/appendix-a-corrections.md).
 
 This pair constructs the source and transported arrow. The explicit localized
-target functor, target comparison and structured-arrow isomorphism are the
-next unit of the same task. Initiality, factorization, uniqueness, adjunctions,
-chosen-model exactness and the source B-module comparison remain separate
-successor obligations. No universal property is asserted here.
+target functor, target comparison and structured-arrow isomorphism are in
+the next module, `RenardEndomorphismLocalizationComparison`. Initiality,
+factorization and uniqueness are stated in
+`RenardEndomorphismLocalizationInitialityStatements` and proved in
+`RenardEndomorphismLocalizationInitialityProof`; adjunctions, chosen-model
+exactness and the source B-module comparison are outside this pair. No universal property is asserted here.

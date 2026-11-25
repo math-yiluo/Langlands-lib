@@ -1,7 +1,5 @@
 # Proof of `AdelicParabolicModulusStatement`
 
-Author: Worker 759.
-
 This module proves the unchanged published proposition
 `Langlands.Global.AdelicGroupPoints.AdelicParabolicModulusStatement` (module
 `Langlands.Global.AdelicParabolicModulusStatement`) at every universe `u`:
@@ -120,8 +118,7 @@ published lemmas; no inverse is inserted.
 `adelicParabolicModulus` introduces the statement's data and installs the same instances as the
 statement (`hG.isAffineHom`, `hG.smooth`, `isAffine_parabolic`, `locallyOfFiniteType_parabolic`,
 `isAffine_unipotent`). It then applies the two theorems above with the published centralizer
-representative. The proof was checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`. It depends only on the axioms `propext`,
+representative. The proof was checked with `lean_check`. It depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
 ## Published inputs
@@ -137,4 +134,4 @@ representative. The proof was checked with `lean_check` in environment
 - `modularCharacter_continuousMulEquiv` (`Langlands.Representation.Aubert.General.RationalLeviUnimodularityReduction`)
 - `dynamicSmooth`, `dynamicConnected`, `dynamicUnipotentUnipotence`, `dynamicCentralizerReductive`, `Lie.connectedReductiveAdjointDeterminant`, `Dynamic.adjointDeterminantCentralizerRestriction`
 - `Dynamic.Affine.centralizerScheme`, `centralizerHom`, `isRepresentedBy_centralizerHom`, `Dynamic.limitGroupHom`, `centralizerToParabolic`, `unipotentToParabolic`
-- the helper module `Langlands.GroupScheme.Dynamic.ParabolicLieDecomposition`, submitted with this proof.
+- the helper module `Langlands.GroupScheme.Dynamic.ParabolicLieDecomposition`, written for this proof.

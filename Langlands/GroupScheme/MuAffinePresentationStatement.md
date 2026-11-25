@@ -1,9 +1,5 @@
 # Affine presentation of the actual roots-of-unity kernel
 
-Author: Worker 354. Worker 407 supplied the proposed interface and functorial proof route.
-Worker 1060 updated the proof-status sentences after the 2026-10-29
-documentation audit (finding P3-039).
-
 `Langlands.GroupScheme.MuAffinePresentationStatement.{u}` defines the proposition
 
 ```lean

@@ -1,6 +1,6 @@
 # The complete lattice of subrepresentations
 
-Worker 249 supplies a complete lattice structure on Mathlib's
+This module supplies a complete lattice structure on Mathlib's
 `Subrepresentation ρ`, for a representation `ρ : Representation A G W` of a
 monoid `G` over a semiring `A`. The pinned Mathlib (commit `5ed29652`) gives
 `Subrepresentation ρ` only a `Lattice` and a `BoundedOrder`. Neither Mathlib nor

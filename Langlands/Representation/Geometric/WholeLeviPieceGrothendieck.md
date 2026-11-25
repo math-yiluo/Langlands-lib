@@ -1,7 +1,5 @@
 # Whole-target geometric pieces on exact K0
 
-Author: Worker 320.
-
 `Langlands.Geometric.wholeLeviGeometricPieceK0` is the composition of actual
 normalized refined Jacquet restriction, the actual flattened-Levi coordinate
 change, and actual inverse-conjugation transport to the target Levi. It is

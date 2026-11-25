@@ -24,8 +24,9 @@ of equivalent Weil representations, allowing separate carrier universes.
 Every occurrence of `P.representation` has separately quantified surjectivity
 evidence for that exact Weil inertia restriction. None of these targets assumes
 upper quotient compatibility, conductor independence, or break equality.
-The universal surjectivity and presentation-existence statements belong to
-task 1c3e2c0d and are not duplicated here.
+The universal surjectivity and presentation-existence statements are in
+`Langlands.LocalFactor.Ramification.InertiaPresentationStatement` and are not
+duplicated here.
 
 `FiniteUpperBreakWeightedSwan` equates the actual rational Swan conductor,
 coerced to `ℝ`, with the sum of `r * multiplicity(r)` over the actual finite
@@ -46,8 +47,8 @@ The internal comparison route is to use the finite and absolute upper-image
 arithmetic theorems, then restriction/descent evaluation and invariance of
 fixed-space dimension under equivalence. Common composita compare arbitrary
 presentations. Finite summation by parts and the actual Herbrand increments
-give the weighted Swan formula. These are future proof routes, not hypotheses
-or proofs included in this statement artifact.
+give the weighted Swan formula. These are proof routes, not hypotheses
+or proofs included in this statement module.
 
 `WeilTrivialityThresholdsNonempty` states that the actual set of nonnegative
 indices at which every upper-group element acts as the identity is nonempty
@@ -106,8 +107,8 @@ not additional hypotheses or implemented proofs.
 ## Original-source correspondence
 
 This is an internal comparison family, derived from the following originals,
-read directly by Worker 38. There was no source-specific errata file in the
-published notes at the task's base.
+which were read directly. There was no source-specific errata file in the
+published notes.
 
 - Serre, *Local Fields* (Greenberg translation, 1979), IV.1, printed pp.61–63
   (PDF pp.68–70): actual integer-ring lower groups, inertia at zero, and
@@ -135,4 +136,4 @@ comparison uses `<`. Thus at positive `a`, the intended conclusion is
 
 There are no multiplicities on exact K0, no identification of virtual Weil
 support with cancelled inertia support, and no epsilon or DH81 stability
-statement in this unit.
+statement in this module.

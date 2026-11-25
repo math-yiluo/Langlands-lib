@@ -1,6 +1,6 @@
 # Canonical standard parabolics as actual parabolic data
 
-Worker 148. This internal construction bundles existing canonical standard
+This internal construction bundles existing canonical standard
 group schemes as `ParabolicDatum`, for use with actual Jacquet exponents in
 Renard VII.4.2. It assumes a connected reductive group over a field, a maximal
 split torus and a generic cocharacter, and treats every subset of the actual
@@ -41,6 +41,6 @@ exponents. The source is registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This unit does not select split components, form the finite exponent family,
+This module does not select split components, form the finite exponent family,
 construct real-character lifts or positive parts, or prove temperedness,
 exhaustion or the Langlands classification.

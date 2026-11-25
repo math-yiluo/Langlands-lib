@@ -100,7 +100,7 @@ variable {r : ℕ} (T : CuspidalOperatorRealization F r)
 translate of the original carrier, including its finite component. -/
 theorem translatedToL2_mem_sourceBandClosure_adelic
     (hcoeff : CuspidalHilbertOrbitCoefficientStatement.{u})
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (a : AdelicGL F (r + 1)) (f : T.Space) :
     translatedToL2 T.realization T.cuspidal a f ∈ sourceBandClosure T := by
   have h := translatedToL2_mem_sourceBandClosure_of_coefficients T hcoeff hT

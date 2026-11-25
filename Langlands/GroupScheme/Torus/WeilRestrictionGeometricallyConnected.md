@@ -1,7 +1,5 @@
 # Geometric connectedness of `Res_{B/A} 𝔾ₘ`
 
-Author: Worker 33.
-
 This module proves that the Library's Weil restriction of the multiplicative
 group, `Langlands.GroupScheme.WeilGm.groupScheme A B` (module
 `Langlands.GroupScheme.Torus.WeilRestriction`), has geometrically connected

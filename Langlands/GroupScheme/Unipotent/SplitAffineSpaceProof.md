@@ -1,7 +1,5 @@
 # Split unipotent groups are affine spaces
 
-Worker 315.
-
 `Langlands.GroupScheme.splitUnipotentAffineSpaceStatement.{u}` proves exactly
 the published proposition
 `Langlands.GroupScheme.SplitUnipotentAffineSpaceStatement.{u}`. It has no
@@ -38,7 +36,7 @@ typographical inconsistency. The retained official errata snapshot
 correction to 14.61, 14.62 or 14.66.
 
 The proof below follows the induction and torsor-trivialization route
-recorded in the task and the statement Markdown, using a published product
+recorded in the statement Markdown, using a published product
 decomposition. The coordinate comparison and finite product lemmas are
 internal derived constructions from Yoneda, the existing Library
 affine-space coordinate equivalence, and finite tuple concatenation.

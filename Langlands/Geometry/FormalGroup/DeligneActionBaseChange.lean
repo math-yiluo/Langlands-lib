@@ -104,19 +104,19 @@ theorem nilpSheafClassMap_shiftReframe (hπ : algebraMap O F π ≠ 0) (f : B �
 def nilpSheafShiftReframeAut (hπ : algebraMap O F π ≠ 0)
     (p : shiftReframeSubgroup (d := d) hπ) :
     Aut (nilpSheafClassFunctor d π F hπ) :=
-  NatIso.ofComponents
+  Aut.of (NatIso.ofComponents
     (fun B => (SheafDatum.IsoClass.shiftReframeEquiv
       (φ := nilpGlobalScalar π B) hπ p).toIso) (by
         intro B B' f
         ext q
-        exact (nilpSheafClassMap_shiftReframe hπ f p q).symm)
+        exact (nilpSheafClassMap_shiftReframe hπ f p q).symm))
 
 /-- The natural component is precisely the published corrected class operation. -/
 @[simp]
 theorem nilpSheafShiftReframeAut_hom_app (hπ : algebraMap O F π ≠ 0)
     (p : shiftReframeSubgroup (d := d) hπ) (B : FormalGroup.Nilp.{u, u} O π)
     (q : NilpSheafIsoClass d π F hπ B) :
-    (nilpSheafShiftReframeAut hπ p).hom.app B q =
+    (nilpSheafShiftReframeAut hπ p).asIso.hom.app B q =
       SheafDatum.IsoClass.shiftReframe hπ p q := rfl
 
 section Valued
@@ -196,25 +196,25 @@ def nilpSheafNormalizedReframeAut (hπ : Irreducible π)
 theorem nilpSheafNormalizedReframeAut_hom_app (hπ : Irreducible π)
     (g : (Fin d → F) ≃ₗ[F] (Fin d → F)) (B : FormalGroup.Nilp.{u, u} O π)
     (q : NilpSheafIsoClass d π F (coefficientUniformizer_ne_zero (F := F) hπ) B) :
-    (nilpSheafNormalizedReframeAut hπ g).hom.app B q =
+    (nilpSheafNormalizedReframeAut hπ g).asIso.hom.app B q =
       SheafDatum.IsoClass.normalizedReframe hπ g q := rfl
 
 /-- Actual projective elements give natural automorphisms of the Nilp point functor. -/
 def nilpSheafProjectiveReframeAut (hπ : Irreducible π) (g : PGL(d, F)) :
     Aut (nilpSheafClassFunctor d π F (coefficientUniformizer_ne_zero (F := F) hπ)) :=
-  NatIso.ofComponents
+  Aut.of (NatIso.ofComponents
     (fun B => (SheafDatum.IsoClass.projectiveReframeEquiv
       (φ := nilpGlobalScalar π B) hπ g).toIso) (by
         intro B B' f
         ext q
-        exact (nilpSheafClassMap_projectiveReframe hπ f g q).symm)
+        exact (nilpSheafClassMap_projectiveReframe hπ f g q).symm))
 
 /-- The projective natural component is the published action of the actual quotient. -/
 @[simp]
 theorem nilpSheafProjectiveReframeAut_hom_app (hπ : Irreducible π)
     (g : PGL(d, F)) (B : FormalGroup.Nilp.{u, u} O π)
     (q : NilpSheafIsoClass d π F (coefficientUniformizer_ne_zero (F := F) hπ) B) :
-    (nilpSheafProjectiveReframeAut hπ g).hom.app B q =
+    (nilpSheafProjectiveReframeAut hπ g).asIso.hom.app B q =
       SheafDatum.IsoClass.projectiveReframe hπ g q := rfl
 
 end Valued

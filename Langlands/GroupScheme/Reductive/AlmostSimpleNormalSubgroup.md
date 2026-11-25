@@ -1,7 +1,5 @@
 # Almost-simple normal factors and connected normal subgroups
 
-Author: Worker 1454.
-
 This derived helper proves `IsAlmostSimple.range_le_or_commute_of_normal` for
 arbitrary fields and universes. If `G` is smooth affine, `a : A → G` and
 `j : H → G` are closed normal subgroup inclusions, `A` is almost-simple and

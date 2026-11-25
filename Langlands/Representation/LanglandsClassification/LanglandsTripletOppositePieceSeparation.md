@@ -1,6 +1,6 @@
 # Actual tempered piece offset and opposite spectral separation
 
-Worker 135. This internal derived unit defines the actual real-part offset of
+This internal derived module defines the actual real-part offset of
 a geometric-lemma piece and proves the existing
 `LanglandsTripletOppositePieceSeparationStatement`. It introduces no new
 literature transcription. The proof implements the spectral step of the
@@ -73,7 +73,7 @@ disjointness for every original datum. The implementation uses the bound
 twist and one named intersection datum throughout to avoid repeated
 elaboration of equivalent large Jacquet and induction constructions.
 
-This unit proves the full piece-separation prerequisite. It does not by
+This module proves the full piece-separation prerequisite. It does not by
 itself prove `IsPQRegular`, the intertwining dimension statement, the
 geometric lemma or the regularity criterion. All target and imported
 statement pairs remain unchanged.

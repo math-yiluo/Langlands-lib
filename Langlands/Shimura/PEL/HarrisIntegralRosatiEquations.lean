@@ -57,7 +57,7 @@ local notation "BasisEquations" => IntegralRosatiBasisEquations D C preservation
 
 /-- Rosati equations on the entire actual integral order. -/
 def IntegralRosatiEquations (a : O →+* CategoryTheory.End B) (lam : B ⟶ DB) : Prop :=
-  ∀ x, a x ≫ lam = lam ≫ dualInt (a (tauO x))
+  ∀ x, (a x).asHom ≫ lam = lam ≫ dualInt (a (tauO x)).asHom
 
 include additivity in
 /-- Actual integral Rosati compatibility is detected on the finite integer basis. -/
@@ -71,10 +71,13 @@ theorem integralRosatiEquations_iff_basis
     exact h (basisO k)
   · intro h
     let L : O →ₗ[ℤ] (B ⟶ DB) :=
-      (Linear.rightComp ℤ B lam).comp a.toAddMonoidHom.toIntLinearMap
+      (Linear.rightComp ℤ B lam).comp
+        ((CategoryTheory.End.addEquiv (X := B)).toAddMonoidHom.comp a.toAddMonoidHom).toIntLinearMap
     let R : O →ₗ[ℤ] (B ⟶ DB) :=
       (Linear.leftComp ℤ DB lam).comp
-        ((dualAdd).toIntLinearMap.comp (a.toAddMonoidHom.toIntLinearMap.comp (tauO).linear))
+        ((dualAdd).toIntLinearMap.comp
+          (((CategoryTheory.End.addEquiv (X := B)).toAddMonoidHom.comp
+            a.toAddMonoidHom).toIntLinearMap.comp (tauO).linear))
     have eqMaps : L = R := by
       apply (basisO).ext
       intro k
@@ -85,7 +88,7 @@ theorem integralRosatiEquations_iff_basis
 /-- Explicit finite Rosati equations in the endomorphism tuple coordinates. -/
 def IntegralRosatiTupleEquations
     (r : IntegralActionSolutions basisO B) (lam : B ⟶ DB) : Prop :=
-  ∀ k, r.val k ≫ lam = lam ≫ dualInt (∑ j, (basisO).repr (tauO (basisO k)) j • r.val j)
+  ∀ k, (r.val k).asHom ≫ lam = lam ≫ dualInt (∑ j, (basisO).repr (tauO (basisO k)) j • r.val j).asHom
 
 include additivity in
 /-- Reconstruction identifies the tuple equations with all actual order equations. -/

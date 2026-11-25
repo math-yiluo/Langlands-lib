@@ -1,7 +1,5 @@
 # Matrix coefficients of finite subsets of a coalgebra over a field
 
-Author: Worker 1240.
-
 This helper module proves the linear-algebra core of the closed linear embedding
 theorem `Langlands.GroupScheme.affineLinearEmbeddingStatement`
 ([`AffineLinearEmbeddingProof`](../AffineLinearEmbeddingProof.md)). It works with

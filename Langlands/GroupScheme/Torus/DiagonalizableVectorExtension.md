@@ -1,6 +1,6 @@
 # Group sections of diagonalizable extensions by linear vector groups
 
-Worker 1552. This internal construction generalizes the published `Rational.SplitTorusVectorExtension` argument to `Diagonalizable.groupScheme k Λ` for any abelian character group `Λ`, including torsion. It works over any field `k`, with no finite generation assumption on `Λ`.
+This internal construction generalizes the published `Rational.SplitTorusVectorExtension` argument to `Diagonalizable.groupScheme k Λ` for any abelian character group `Λ`, including torsion. It works over any field `k`, with no finite generation assumption on `Λ`.
 
 ## Data and scope
 
@@ -11,7 +11,7 @@ Write `D = Diagonalizable.groupScheme (CommRingCat.of k) Λ`. The inputs are gro
 - A section `s : D.X ⟶ E.X` as schemes, with `s ≫ q.hom.hom = 𝟙`.
 - Group isomorphisms `e T : (T ⟶ N.X) ≃* Multiplicative (Fin d → Γ(T.left, ⊤))` on all test schemes. The condition `he : RelativeRoot.IsLinearVectorCoordinates (splitTorus.conj i hn) e` requires these coordinates to be natural and the conjugation action to be linear over the ring of global functions.
 
-These are explicit premises of the construction. The module proves no scheme-section existence theorem and does not treat proper closed additive subgroups without vector coordinates. The unrestricted `LinearAdditiveExtensionSplittingStatement` remains a separate obligation.
+These are explicit premises of the construction. The module proves no scheme-section existence theorem and does not treat proper closed additive subgroups without vector coordinates. The unrestricted `LinearAdditiveExtensionSplittingStatement` is a separate result, proved as `linearAdditiveExtensionSplitting` (module `GroupScheme.LinearAdditiveExtensionSplittingProof`).
 
 ## Main construction
 

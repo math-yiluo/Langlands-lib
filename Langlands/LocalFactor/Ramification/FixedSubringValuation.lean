@@ -1,0 +1,171 @@
+/-
+Adapted from the Anthropic Lean formalisation of Fermat's Last Theorem, commit
+6e837e75355538c7f80bab5b956861e86c4eacc2, files
+`Theorems/Thm_card_lowerRamificationGroup_zero_eq_ramificationIdxIn.lean`,
+`P2M/Sol/S_card_lowerRamificationGroup_zero_eq_ramificationIdxIn.lean`,
+`Theorems/Thm_IsDiscreteValuationRing_addVal_coe_eq_lowerRamificationCard_zero_mul_addVal_fixedPoints.lean`,
+`P2M/Sol/S_IsDiscreteValuationRing_addVal_coe_eq_lowerRamificationCard_zero_mul_addVal_fixedPoints.lean`.
+Copyright 2026 Anthropic, PBC. Licensed under the Apache License, Version 2.0; see
+`licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
+Modified: the four files (two statements and their proofs) are one module; statements are on the
+Library's `Langlands.Ramification.lowerGroup`; names follow the Library; the FLT proof of the first
+theorem used the lemma `Ideal.card_inertia_eq_ramificationIdxIn'`, Mathlib v4.30 text kept in
+`Definitions/Def_Compat_Mathlib430.lean`, and now uses the present Mathlib's
+`Ideal.card_inertia_eq_ramificationIdxIn` with `hasSeparableResidueFieldsAt_maximalIdeal_of_isSeparable`
+of `SeparableResidueField.lean`; no options are set.
+The paired Markdown file lists the changes.
+-/
+import Langlands.LocalFactor.Ramification.FixedSubring
+import Langlands.LocalFactor.Ramification.Herbrand.Rational
+import Langlands.LocalFactor.Ramification.SeparableResidueField
+import Mathlib.NumberTheory.RamificationInertia.Galois
+import Mathlib.RingTheory.DedekindDomain.IntegralClosure
+import Mathlib.RingTheory.DiscreteValuationRing.Basic
+
+/-!
+# The valuation of the fixed subring and the order of the inertia group
+
+Two facts on the extension of a discrete valuation ring `R` over the invariants of a finite group
+`H`. First, for a finite Galois extension `A → B` of local Dedekind domains with Galois group `G`
+and separable residue extension, the order of the zeroth lower group `G_0` (the inertia group) is
+the ramification index of the maximal ideal of `A` in `B`. Second, for `H` acting faithfully on
+`R` with separable residue extension over `FixedPoints.subring R H`, the valuation of `R`
+restricted to the invariants is `|H_0|` times the valuation of the invariants:
+`v_R(z) = |H_0| · v_{R^H}(z)`.
+-/
+
+namespace Langlands.Ramification
+
+section
+
+section
+
+theorem card_lowerGroup_zero_eq_ramificationIdxIn {A : Type*} [CommRing A] [IsLocalRing A]
+    {B : Type*} [CommRing B] [IsDedekindDomain B] [IsLocalRing B]
+    [Algebra A B] [Module.IsTorsionFree A B]
+    {G : Type*} [Group G] [MulSemiringAction G B]
+    [IsDedekindDomain A] [Module.Finite A B] [IsGaloisGroup G A B] [Finite G]
+    [(IsLocalRing.maximalIdeal B).LiesOver (IsLocalRing.maximalIdeal A)]
+    [Algebra.IsSeparable (A ⧸ IsLocalRing.maximalIdeal A) (B ⧸ IsLocalRing.maximalIdeal B)]
+    (hp : IsLocalRing.maximalIdeal A ≠ ⊥) :
+    Nat.card (lowerGroup B G 0)
+      = (IsLocalRing.maximalIdeal A).ramificationIdxIn B := by
+  rw [lowerGroup_zero]
+  have := hasSeparableResidueFieldsAt_maximalIdeal_of_isSeparable (A := A) (B := B) hp
+  exact Ideal.card_inertia_eq_ramificationIdxIn (IsLocalRing.maximalIdeal A)
+    (IsLocalRing.maximalIdeal B)
+
+end
+
+end
+
+section
+
+section
+
+open IsLocalRing
+
+attribute [local instance] FractionRing.liftAlgebra FractionRing.isScalarTower_liftAlgebra
+
+namespace FixedSubringValuation
+
+theorem module_finite_fixedSubring
+    {R : Type*} [CommRing R] [IsDomain R] [IsIntegrallyClosed R]
+    {H : Type*} [Group H] [Finite H] [MulSemiringAction H R] [FaithfulSMul H R]
+    [IsNoetherianRing (FixedPoints.subring R H)] [IsIntegrallyClosed (FixedPoints.subring R H)] :
+    Module.Finite (FixedPoints.subring R H) R := by
+  haveI : IsGaloisGroup H (FixedPoints.subring R H) R := isGaloisGroup_fixedSubring
+  letI := IsFractionRing.mulSemiringAction H R (FractionRing R)
+  haveI hG : IsGaloisGroup H (FractionRing (FixedPoints.subring R H)) (FractionRing R) :=
+    IsGaloisGroup.toFractionRing H (FixedPoints.subring R H) R
+  haveI := IsGaloisGroup.finiteDimensional H (FractionRing (FixedPoints.subring R H)) (FractionRing R)
+  haveI := IsGaloisGroup.isGalois H (FractionRing (FixedPoints.subring R H)) (FractionRing R)
+  haveI : Algebra.IsIntegral (FixedPoints.subring R H) R :=
+    Algebra.IsInvariant.isIntegral (FixedPoints.subring R H) R H
+  exact IsIntegralClosure.finite (FixedPoints.subring R H)
+    (FractionRing (FixedPoints.subring R H)) (FractionRing R) R
+
+theorem addVal_algebraMap_irreducible_eq_ramificationIdx
+    {R : Type*} [CommRing R] [IsDomain R] [IsDiscreteValuationRing R]
+    {S : Type*} [CommRing S] [IsDomain S] [IsDiscreteValuationRing S] [Algebra R S]
+    (hf : Function.Injective (algebraMap R S)) {π : R} (hπ : Irreducible π) :
+    IsDiscreteValuationRing.addVal S (algebraMap R S π) =
+      ((IsLocalRing.maximalIdeal R).ramificationIdx' (IsLocalRing.maximalIdeal S) : ℕ∞) := by
+  open IsDiscreteValuationRing in
+  have hfπ : algebraMap R S π ≠ 0 := fun h => hπ.ne_zero (hf (h.trans (map_zero _).symm))
+  obtain ⟨e, he⟩ :=
+    WithTop.ne_top_iff_exists.mp (fun h => hfπ (addVal_eq_top_iff.mp h))
+  have hmap :
+      (IsLocalRing.maximalIdeal R).map (algebraMap R S) = Ideal.span {algebraMap R S π} := by
+    rw [hπ.maximalIdeal_eq, Ideal.map_span, Set.image_singleton]
+  have key : ∀ n, (IsLocalRing.maximalIdeal R).map (algebraMap R S) ≤
+      (IsLocalRing.maximalIdeal S) ^ n ↔ n ≤ e := fun n => by
+    obtain ⟨ϖ, hϖ⟩ := exists_irreducible S
+    rw [hmap, Ideal.span_singleton_le_iff_mem, hϖ.maximalIdeal_eq, Ideal.span_singleton_pow,
+      Ideal.mem_span_singleton, ← addVal_le_iff_dvd, addVal_pow, addVal_uniformizer hϖ,
+      nsmul_one, ← he]
+    exact Nat.cast_le
+  exact he.symm.trans (congrArg Nat.cast (Ideal.ramificationIdx'_spec
+    ((key e).mpr le_rfl) ((key (e + 1)).not.mpr e.not_succ_le_self)).symm)
+
+theorem addVal_map_eq_mul_of_irreducible {R S : Type*} [CommRing R]
+    [CommRing S] [IsDomain R] [IsDomain S] [IsDiscreteValuationRing R]
+    [IsDiscreteValuationRing S] (f : S →+* R) {π : S} (hπ : Irreducible π)
+    {e : ℕ} (he : e ≠ 0) (hval : IsDiscreteValuationRing.addVal R (f π) = e) (y : S) :
+    IsDiscreteValuationRing.addVal R (f y) = e * IsDiscreteValuationRing.addVal S y := by
+  open IsDiscreteValuationRing in
+  by_cases hy : y = 0
+  · subst hy
+    have : ((e : ℕ∞)) ≠ 0 := by exact_mod_cast he
+    simp [ENat.mul_top this]
+  · obtain ⟨n, u, rfl⟩ := eq_unit_mul_pow_irreducible hy hπ
+    have hu : addVal R (f (u : S)) = 0 := by
+      rw [← le_zero_iff, ← (addVal R).map_one, addVal_le_iff_dvd]
+      exact (u.isUnit.map f).dvd
+    have hu' : addVal S (u : S) = 0 := by
+      rw [← le_zero_iff, ← (addVal S).map_one, addVal_le_iff_dvd]
+      exact u.isUnit.dvd
+    rw [map_mul, map_pow, addVal_mul, addVal_pow, hu, zero_add, addVal_mul, addVal_pow, hu',
+      zero_add, addVal_uniformizer hπ, hval, nsmul_one, nsmul_eq_mul, mul_comm]
+
+end FixedSubringValuation
+
+theorem addVal_coe_eq_lowerGroupCard_zero_mul_addVal_fixedPoints
+    {R : Type*} [CommRing R] [IsDomain R] [IsDiscreteValuationRing R]
+    {H : Type*} [Group H] [Finite H] [MulSemiringAction H R] [FaithfulSMul H R]
+    [IsDiscreteValuationRing (FixedPoints.subring R H)]
+    [(IsLocalRing.maximalIdeal R).LiesOver (IsLocalRing.maximalIdeal (FixedPoints.subring R H))]
+    [Algebra.IsSeparable
+      (FixedPoints.subring R H ⧸ IsLocalRing.maximalIdeal (FixedPoints.subring R H))
+      (R ⧸ IsLocalRing.maximalIdeal R)]
+    (z : FixedPoints.subring R H) :
+    IsDiscreteValuationRing.addVal R (z : R) =
+      (lowerGroupCard R H 0 : ℕ∞) *
+        IsDiscreteValuationRing.addVal (FixedPoints.subring R H) z := by
+  haveI : Module.Finite (FixedPoints.subring R H) R :=
+    FixedSubringValuation.module_finite_fixedSubring
+  haveI : IsGaloisGroup H (FixedPoints.subring R H) R := isGaloisGroup_fixedSubring
+  have hp : IsLocalRing.maximalIdeal (FixedPoints.subring R H) ≠ ⊥ := by
+    simpa using (Ring.ne_bot_of_isMaximal_of_not_isField inferInstance
+      (IsDiscreteValuationRing.not_isField _))
+  obtain ⟨π, hπ⟩ := IsDiscreteValuationRing.exists_irreducible (FixedPoints.subring R H)
+  have hπval : IsDiscreteValuationRing.addVal R (algebraMap (FixedPoints.subring R H) R π) =
+      (lowerGroupCard R H 0 : ℕ) := by
+    rw [FixedSubringValuation.addVal_algebraMap_irreducible_eq_ramificationIdx Subtype.coe_injective hπ,
+      Ideal.ramificationIdx'_eq_ramificationIdx (IsLocalRing.maximalIdeal (FixedPoints.subring R H))
+        (IsLocalRing.maximalIdeal R) hp,
+      ← Ideal.ramificationIdxIn_eq_ramificationIdx
+        (IsLocalRing.maximalIdeal (FixedPoints.subring R H)) (IsLocalRing.maximalIdeal R) H,
+      ← card_lowerGroup_zero_eq_ramificationIdxIn (G := H) hp,
+      lowerGroupCard]
+  have hne : lowerGroupCard R H 0 ≠ 0 := by
+    haveI : Finite (lowerGroup R H 0) := inferInstance
+    exact Nat.card_pos.ne'
+  exact FixedSubringValuation.addVal_map_eq_mul_of_irreducible
+    (algebraMap (FixedPoints.subring R H) R) hπ hne hπval z
+
+end
+
+end
+
+end Langlands.Ramification

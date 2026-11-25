@@ -1,7 +1,5 @@
 # Fibres of strict-test representations
 
-Author: Worker 1010.
-
 Fix a normed field K with ultrametric absolute value. Presented strict
 affinoid algebras over K are the published `PresentedStrictAffinoidAlgebra K`.
 Bounded maps are the published `BoundedAlgHom K`. For a point x of a Banach

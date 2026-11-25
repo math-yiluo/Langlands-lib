@@ -1,7 +1,5 @@
 # Field fibres of relative groups of multiplicative type
 
-Worker 873.
-
 This internal comparison derives the field-level predicate
 `Langlands.GroupScheme.IsMultiplicativeType` from the relative predicate
 `RelativeMultiplicativeType.IsMultiplicativeType` over the spectrum of a field.

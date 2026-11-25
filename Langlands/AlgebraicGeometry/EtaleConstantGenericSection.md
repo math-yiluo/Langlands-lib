@@ -1,6 +1,6 @@
 # Generic sections of étale locally constant parameters over a DVR
 
-Worker 607. This is an internal derived geometric unit. It combines the published
+This is an internal derived geometric module. It combines the published
 `EtaleGenericPullback`, `ConnectedCoproductFactorization`, and `SmoothReducedBase`
 results with Mathlib's flat-base-change theorem for scheme-theoretic dominance,
 separated-target equality theorem, and effective-epimorphism descent. The proof
@@ -61,6 +61,6 @@ cancellation proves that the descended section restricts to the original p.
 Finally, the same separated-target equality theorem on the reduced base
 Spec R and its dominant fraction-field map proves uniqueness.
 
-This unit assumes a supplied connected étale trivialization. It does not
+This module assumes a supplied connected étale trivialization. It does not
 construct a trivialization for outer-isomorphism schemes or a finite
-outer-class carrier; those are separate inputs and consequences in the host task.
+outer-class carrier; those are separate inputs and consequences.

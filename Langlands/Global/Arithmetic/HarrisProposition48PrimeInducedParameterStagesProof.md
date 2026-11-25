@@ -13,8 +13,7 @@ n < p*, Invent. Math. 134 (1998), 177–210
 (`harris-1998-local-langlands`), gives the Mackey character on printed p. 202
 and uses the identity constituent in the prime branch on p. 203. The
 complex-place statement is an internal consequence of the parameter
-formalization required by operator ruling R2
-(`a79e2e832569567a8582b3c994f2fc1b`); see
+formalization of design decision R2 (parameter-carrying solutions); see
 `operator-external-inputs-plan-2026-11-16`, `external-inputs-plan.tex`
 lines 908–912. It is not a separate assertion in Harris, whose Remark on
 p. 202 (`math_9611226v1.tex` lines 1615–1628) notes that the proof omits the
@@ -48,7 +47,7 @@ weak-induction analogue.
    routes, through `D` or through `Q.E'`, therefore give the same block
    at `v`, because the two composed embeddings from `Q.E` into `M` use
    the same algebra map. There is no additional twist of the blocks.
-5. `transport_eq_map` identifies the published transport of lists with
+5. `transport_eq_map` identifies the existing transport of lists with
    mapping `readBlock`. Mapping each supplied permutation and then
    concatenating gives a permutation of the staged sum to the flattened
    list of blocks indexed by the pairs. `ofFn_sigma_perm` compares the

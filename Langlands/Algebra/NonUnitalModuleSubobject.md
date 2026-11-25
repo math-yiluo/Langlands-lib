@@ -204,10 +204,9 @@ objects, so no other scalar action on `ℤ` is involved.
 
 ## Scope
 
-This unit identifies the subobjects of every object of `NonUnitalModuleCat A`
+This module identifies the subobjects of every object of `NonUnitalModuleCat A`
 with its stable additive subgroups, together with the representative formulas
 above. It asserts nothing about categorical Noetherian or finite-type transport,
 the source's finite-type conventions, unions or intersections of subobjects,
 abelian or exact functors, tensor products, complex scalars on nondegenerate
-modules, or the rest of Renard's book. Those are separate obligations of the
-parent program.
+modules, or the rest of Renard's book. Those are outside this module.

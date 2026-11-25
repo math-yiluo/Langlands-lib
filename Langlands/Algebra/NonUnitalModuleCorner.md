@@ -2,7 +2,7 @@
 
 ## Source and scope
 
-This unit implements the idempotent decomposition and unital corner action in
+This module implements the idempotent decomposition and unital corner action in
 David Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated **9 July 2026**, Chapter I conventions, printed page 6 / PDF page 12,
 and the construction of the functor \(j_e\) in I.3.1, printed page 19 /
@@ -16,7 +16,7 @@ The first two pages of the registered supplement
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 were also read. Its corrections to the I.3.2 tensor injection and simple-module
-arguments concern later constructions, which this unit does not implement.
+arguments concern later constructions, which this module does not implement.
 No correction to the two constructions treated here was found on those pages.
 
 All declarations below are in `Langlands.Algebra.NonUnitalModuleCorner`.
@@ -35,17 +35,17 @@ idempotented algebra and nondegenerate modules. Specializing the ring to that
 algebra and restricting the functor along the published nondegenerate inclusion
 gives the source's construction on underlying original modules and their
 morphisms. The output has an ordinary unital corner-module structure.
-This unit neither constructs an additional complex scalar action nor asserts
+This module neither constructs an additional complex scalar action nor asserts
 a categorical equivalence with a separately bundled complex module category.
 
-The exactness proposition of I.3.1 is outside this definition unit. It requires
+The exactness proposition of I.3.1 is outside this module of definitions. It requires
 a separate proposition declaration and proof. I.3.2 induction, simple-class
 correspondence, generated subcategories, and annihilator quotients are also
 outside its scope.
 
 ## The fixed subgroup and split maps
 
-The unit imports the original actions and actual intertwiners from
+The module imports the original actions and actual intertwiners from
 `Langlands.Algebra.NonUnitalModule`, the published pointwise Hom group
 structures through `Langlands.Algebra.NondegenerateModuleAdditive`, and the
 published coordinate and complementary kernel from

@@ -62,7 +62,7 @@ and constant rank already give free charts
 (`Module.Free.away_of_finite_of_flat_of_rankAtStalk_constant`, used in
 `exists_isFreeChart`).
 
-## Dependencies and authorship
+## Dependencies
 
 New helper modules in this development:
 
@@ -70,7 +70,7 @@ New helper modules in this development:
   `Γ(X, U) ⊗_{Γ(Y, V)} Γ(M, V) ≅ Γ(f^* M, U)` over affine opens;
 - `FiniteFlatTrace`: free charts and the local trace.
 
-Published modules by Worker 1223:
+Published modules used:
 
 - `PullbackQuasicoherent`: pullbacks of quasi-coherent modules are quasi-coherent;
 - `BasisHomGluing` and `BasicOpenHomGluing`: gluing morphisms of modules from maps on an
@@ -78,4 +78,6 @@ Published modules by Worker 1223:
 - `FiniteFlatCohomologyRetractAssembly`: the retraction from a trace with
   `η ≫ t = d • 𝟙`.
 
-Worker 1223 and Worker 281 agreed on the task split and the gluing interface.
+The gluing interface is `BasisHomGluing.homOfBasicOpen` (module `BasicOpenHomGluing`); the
+retraction from the trace is `finiteFlatCohomologyRetract_of_trace` (module
+`FiniteFlatCohomologyRetractAssembly`).

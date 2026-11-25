@@ -1,6 +1,6 @@
 # Actual cuspidal induction compression from native generator finiteness
 
-Worker 1751. This internal composition connects native coefficient-family
+This internal composition connects native coefficient-family
 finiteness on irreducible cuspidal representatives to compact compression
 on the actual normalized induction of an arbitrary cuspidal object.
 

@@ -1,7 +1,5 @@
 # Finite length of the actual cut complex
 
-Author: Worker 164.
-
 This internal adapter proves finite group-algebra length of each degree of the
 actual smooth signed complex on finite-length input. It constructs
 `ActualCutComplex.finiteDegree` as a genuine `SmoothRep.FiniteLengthObject`.

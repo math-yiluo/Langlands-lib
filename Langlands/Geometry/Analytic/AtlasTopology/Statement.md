@@ -1,6 +1,6 @@
 # Topology target for compact affinoid atlases
 
-Author: Worker 36. This proposition target is not an asserted theorem.
+This proposition target is not an asserted theorem.
 
 `Langlands.Analytic.AtlasTopology.QuasinetTopologyStatement` quantifies
 over arbitrary topological spaces in two independent universes. It uses

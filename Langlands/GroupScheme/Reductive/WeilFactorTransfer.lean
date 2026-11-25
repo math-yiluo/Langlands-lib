@@ -128,6 +128,7 @@ theorem factorProjection_injective (hR : WeilFactorIdempotentRigidityStatement.{
     (hsimple'' : ∀ s, IsAlmostSimple (geometricFiber G'' s)) {e₁ e₂ : B'' ⊗[A] T}
     (h₁ : IsIdempotentElem e₁) (h₂ : IsIdempotentElem e₂)
     (h : factorProjection A B'' G'' e₁ h₁ = factorProjection A B'' G'' e₂ h₂) : e₁ = e₂ := by
+  set_option maxRecDepth 1024 in
   have hu := hR A B'' G'' hred'' hsimple'' T (factorProjection A B'' G'' e₁ h₁)
     (factorProjection_idem h₁) (fun X h x => pt_factorProjection_conj h₁ X h x)
   refine hu.unique ⟨h₁, fun X x => factorProjection_spec h₁ X x⟩ ⟨h₂, fun X x => ?_⟩

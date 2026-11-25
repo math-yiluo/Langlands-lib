@@ -3,7 +3,7 @@
 Module `Langlands.GroupScheme.CentralSurjection.DerivedMap`, namespace
 `Langlands.GroupScheme`. Internal helper for the comparison of buildings along
 a surjection with central kernel (Kaletha–Prasad Axiom 4.1.1, case of a central
-quotient). Author: Worker 230.
+quotient).
 
 Throughout, `k` is a field, `G`, `G'` are group schemes over `Spec k`,
 `f : G ⟶ G'` is a homomorphism, and `d : D ⟶ G`, `d' : D' ⟶ G'` exhibit the

@@ -1,7 +1,5 @@
 # Proof of finite-length GL and product-Levi admissibility
 
-Author: Worker 863.
-
 `Langlands.finiteLengthAdmissibility` proves exactly the published
 `Langlands.FiniteLengthAdmissibilityStatement.{uF, uV} F T`. Its only outer
 arguments are `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)` and
@@ -128,7 +126,7 @@ where F is a non-archimedean local field (survey)*, 1976:
 - SHA256 `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
 - Original:
   `/home/taskhub/central-library/Bernstein-Zelevinsky--Representations of the group GL(n,F) where F is a non-archimedean local field (survey)--1976.pdf`.
-- Worker 863 read original printed/PDF pages 15–17, 29 and 35–38.
+- Original printed/PDF pages 15–17, 29 and 35–38 were read.
   Definition 2.1(b), page 15, tests fixed vectors for every open subgroup;
   section 2.8, pages 16–17, discusses finite module length; Definition 3.4,
   page 29, defines the ordered product groups. Theorem 3.25, page 35,
@@ -142,7 +140,7 @@ groups*, Chapter II, *Smooth representations*, revision June 16, 2019:
 - SHA256 `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
 - Original:
   `/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter II - Smooth representations--2019.pdf`.
-- Worker 863 read original PDF pages 2–4. Smoothness and admissibility are
+- Original PDF pages 2–4 were read. Smoothness and admissibility are
   defined on page 2. Proposition II.1.3 and Corollary II.1.4, page 4, give
   smoothness of subobjects and quotients, compact-open fixed-vector
   exactness, and admissibility in short exact sequences.
@@ -171,7 +169,7 @@ The five direct project imports are:
 At Library commit `771cfc69d1ff795522e29cdead1b7c40f1a1c308`, recursive
 traversal of the actual project `import` lines gives 135 modules including
 this new proof. All 134 imported Lean/Markdown pairs agree byte for byte
-with that Library. This contribution changes none of them, including the
+with that Library. This module changes none of them, including the
 target pair and its dependencies. The irreducible-Levi proof was verified
 actually published before it was imported.
 
@@ -202,30 +200,27 @@ The only two modules under `Representation.Classification` are
 predicates, equivalences and twisting compatibility.
 
 The complete import graph and source texts were checked against the
-declarations and modules named in the following excluded tasks:
+declarations and modules of the following excluded results:
 
-- Segment classification `aca8805b-054f-4d56-8045-12db7f623404`.
-- Multisegment special-head exhaustion
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`.
-- Ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`.
-- Quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`.
-- Tempered block uniqueness `52e97845-36bb-457d-b76f-70753334b88c`.
-- Square-integrable Langlands classification
-  `1cb45da2-7007-4351-a694-594fb148b8d1`.
-- Square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`.
-- Regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`.
+- Segment classification.
+- Multisegment special-head exhaustion.
+- Ordered strong-head existence.
+- Quotient coverage.
+- Tempered block uniqueness.
+- Square-integrable Langlands classification.
+- Square-integrable exhaustion.
+- Regular exhaustion.
 
 None of those conclusion or proof modules occurs in the transitive closure,
 and none of their identified conclusion declarations is referenced by the
 implemented proof route. The downstream normalized parabolic-functor
-finite-length proof `2a216dfa-5b20-4b4b-9ff8-50b41a0b28f7` is likewise
-absent. This proof does not duplicate or depend on the separately owned
-admissible-induction finite-length task
-`62571b78-5017-45b0-ad9f-10c4b34a924b` or admissible finitely generated GL
-finite-length task `dac75ee7-f2bc-4efb-9c77-4894aa48d134`.
+finite-length proof is likewise
+absent. This proof does not duplicate or depend on the
+admissible-induction finite-length result or the finite-length result for
+admissible finitely generated GL representations.
 The published `Smooth.FiniteLengthGrothendieck` definitions are imported by
-the target itself, but no functor-map conclusion from task
-`9672d6e2-a0d3-4fc0-b6ef-d1048ddb97a8` is used or reproved.
+the target itself, but no functor-map conclusion about these Grothendieck
+groups is used or reproved.
 
 The closure contains no admissible-factorization or second-adjointness
 module. A full source scan for the excluded declaration/module names found
@@ -240,17 +235,14 @@ import in `Category.Basic`, and the Prop-valued
 use in `Parabolic.GeometricPrerequisitesStatement`. Those unrelated
 proposition definitions supply no proof input or hypothesis to this theorem.
 
-## Development checks and authorship
+## Development checks
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` uses Lean 4.34.0 and
+The environment uses Lean 4.34.0 and
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. The complete
 module passed a development Lake build and declaration inspection, with zero
-errors and zero warnings, in diagnostic
-`9cc867a0-e897-4652-b4a9-f0471c025184`. This build includes the closing
+errors and zero warnings. This build includes the closing
 example at the saturated carrier universe. Inspection reports exactly the
 independent universe parameters `uF` and `uV`, and only `propext`,
-`Classical.choice` and `Quot.sound` as axioms. The development check is not
-independent acceptance: staged exact-target validation, independent semantic
-review and publication remain separate requirements.
-There are no proof holes or new axioms. Worker 863 wrote this proof and its
-explanation from scratch, using the named published results as imports.
+`Classical.choice` and `Quot.sound` as axioms.
+There are no proof holes or new axioms. The proof uses the named published
+results as imports.

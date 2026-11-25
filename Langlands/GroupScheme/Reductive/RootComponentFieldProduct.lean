@@ -18,10 +18,10 @@ open Langlands.LinearAlgebra.SimplyConnectedCartanComponents
 variable {M : AffinePinnedModel.{u}} (D : RootComponentCoordinates M)
     (k : Type u) [Field k] [Algebra M.ring k]
 
-local instance : Smooth M.group.X.hom := M.reductive.smooth
+private local instance : Smooth M.group.X.hom := M.reductive.smooth
 local instance : IsAffineHom M.group.X.hom := M.reductive.isAffineHom
 
-local instance : IsAffineHom ((GroupScheme.baseChange (algebraBaseMap M.ring k)).obj M.group).X.hom :=
+private local instance : IsAffineHom ((GroupScheme.baseChange (algebraBaseMap M.ring k)).obj M.group).X.hom :=
   (M.reductive.isConnectedReductive_algebraMap k).isAffineHom
 
 omit [Algebra M.ring k] in

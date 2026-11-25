@@ -1,6 +1,6 @@
 # Extensionality and functorial laws of equivariant horizontal transport
 
-This internal unit derives congruence, identity and composition laws for the
+This internal module derives congruence, identity and composition laws for the
 published `Horizontal.mapCyclesIntertwiner` and
 `Horizontal.mapCohomologyIntertwiner`. The source and target are the existing
 horizontal kernels and cycle quotients with their given monoid actions; no

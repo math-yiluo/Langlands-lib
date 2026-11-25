@@ -1,6 +1,6 @@
 # Source character measure at the full standard Levi
 
-This derived unit compares precisely the character measures in the two
+This derived module compares precisely the character measures in the two
 group-Levi packet constructions used for Waldspurger VIII.4.2, printed p.330
 (PDF p.96). It retains the I.1 character normalization from printed p. 239
 (PDF p. 5).
@@ -11,7 +11,7 @@ source torus is unchanged, and it is proved to be a split component of the
 actual standard Levi scheme by the existing `IsSplitComponent.comp_iso`.
 
 `rationalFullLeviCharacterEquiv` first transports ambient unitary unramified
-characters to this intrinsic Levi scheme, then applies the published
+characters to this intrinsic Levi scheme, then applies the
 intrinsic-to-literal character homeomorphism. Its evaluation theorem gives the
 original ambient character at the literal Levi element.
 
@@ -19,7 +19,7 @@ original ambient character at the literal Levi element.
 `standardLeviUnitaryUnramifiedCharacterHaar` with the pushforward of the ambient
 `rationalUnitaryUnramifiedCharacterHaar` for the originally supplied split
 component. The finite-index valuation-image hypotheses on both sides follow
-from the published split-component theorem. The proof uses the actual
+from the split-component theorem. The proof uses the actual
 restriction-kernel cardinality preservation under the scheme isomorphism and
 the defining measure transport to the literal Levi. No measure is changed to
 the defining measure transport to the literal Levi. In this split-component

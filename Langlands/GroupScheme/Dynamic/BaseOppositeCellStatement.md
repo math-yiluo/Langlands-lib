@@ -1,7 +1,5 @@
 # Statement: the opposite dynamic open cell over any base scheme
 
-Worker 3483.
-
 `Langlands.GroupScheme.DynamicBaseOppositeCellStatement.{u} : Prop` is a
 proposition target. This module declares the proposition and supplies no proof.
 

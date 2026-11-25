@@ -1,6 +1,6 @@
 # Irreducible reduction in the actual common closure
 
-Worker 1727 derives this comparison from the published local irreducible
+This comparison is derived from the published local irreducible
 reduction and the published topological group equivalence
 `intermediateWeilEquiv`. No new arithmetic classification premise is introduced.
 The field and representation-carrier universes remain independent.

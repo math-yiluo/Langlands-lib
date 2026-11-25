@@ -1,6 +1,6 @@
 # Source categorical finiteness for smooth representations
 
-Worker 1212. This proof establishes the exact published proposition
+This proof establishes the exact published proposition
 `Langlands.SmoothRep.RenardFinitenessStatement`, imported from
 [RenardFinitenessStatement](RenardFinitenessStatement.md). The proof theorem is
 `Langlands.SmoothRep.renardFinitenessStatement`.
@@ -89,6 +89,5 @@ finite-type predicate retains the statement's documented source repairs,
 including nonempty chains of proper subobjects. The Hecke equivalence
 and the III.1.4 irreducible-existence assertions remain separate results.
 
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean
-4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
+Environment: Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.

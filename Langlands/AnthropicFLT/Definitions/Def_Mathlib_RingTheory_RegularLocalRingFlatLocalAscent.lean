@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_RingTheory_RegularLocalRingQuotientRegular
 import Langlands.AnthropicFLT.Theorems.Thm_IsRegularLocalRing_isDomain
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RegularLocalRingRegularSequenceAscent
@@ -119,7 +119,7 @@ theorem exists_isWeaklyRegular_ofList_eq_maximalIdeal_aux :
         rw [Ideal.ofList_cons]
         exact hcomap
 
-    haveI : IsDomain R := IsRegularLocalRing.isDomain R
+    haveI : IsDomain R := IsRegularLocalRing.isDomainFLT R
     have hx0 : x ≠ 0 := fun h => hx2 (h ▸ Submodule.zero_mem _)
     have hxreg : IsSMulRegular R x :=
       Module.Flat.isSMulRegular_of_nonZeroDivisors (mem_nonZeroDivisors_of_ne_zero hx0)
@@ -249,7 +249,7 @@ theorem not_forall_ascent_dropping_flat :
 
   haveI := hSreg
   haveI : IsDomain (ℤ_[2] ⧸ Ideal.span {((2 : ℕ) : ℤ_[2]) ^ 2}) :=
-    IsRegularLocalRing.isDomain _
+    IsRegularLocalRing.isDomainFLT _
   have hmk0 : (Ideal.Quotient.mk (Ideal.span {((2 : ℕ) : ℤ_[2]) ^ 2}) ((2 : ℕ) : ℤ_[2])) ^ 2
       = 0 := by
     rw [← map_pow, Ideal.Quotient.eq_zero_iff_mem]

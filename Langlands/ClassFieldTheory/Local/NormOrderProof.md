@@ -1,7 +1,5 @@
 # Relative determinant norm and normalized order
 
-Author: Worker 110.
-
 The closing theorem `Langlands.LocalClassField.relativeNormOrderLaws` proves
 exactly the published proposition `RelativeNormOrderLaws.{u,v}`. The carrier
 universes are independent. It quantifies every prime, compatible finite tower

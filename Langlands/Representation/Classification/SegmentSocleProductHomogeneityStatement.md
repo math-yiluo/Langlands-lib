@@ -1,7 +1,5 @@
 # Homogeneity of endpoint-separated segment-socle products
 
-Authors: Worker 700 and Worker 999.
-
 `Langlands.Classification.SegmentSocleProductHomogeneity F T` is a
 proposition definition for every prime, supplied p-adic field `F`, and
 compatible topology datum `T`. It retains independent field and
@@ -73,15 +71,17 @@ derivatives of products and shifted support. This route is independent
 of the subsequent linked-pair theorem in Ze80 section 4.6, the final
 unlinked-product irreducibility criterion, and classification. It also
 precedes the derivation of section 6.1(a); the ordered-socle conclusion
-of that derivation is not an input here. All these analytic lower
-ingredients remain future proof obligations. No errata note for either
+of that derivation is not an input here. These analytic lower
+ingredients are not proved here; their proofs are in separate modules,
+assembled in `SegmentSocleProductHomogeneityProof`. No errata note for either
 source exists in the Library notes (there is no `notes/errata` directory)
 or in the project literature index, and the rendered source pages show no
 applicable correction.
 
 The imported derivative normalization uses explicit determinant
 absolute-value twists with exponent `-1/2`; comparison with the source
-Haar-modulus normalization remains a separate obligation. This module
+Haar-modulus normalization is the separate statement
+`Group.GL.MirabolicModulusStatement` (proved in `Group.GL.MirabolicModulusProof`). This module
 supplies no homogeneity proof, derivative calculation, filtration,
 commutation, finite-length theorem, irreducibility criterion or
 classification theorem. Its only premises are the supplied segment-socle
@@ -94,7 +94,7 @@ The complete transitive project import closure was traversed and checked against
 
 The closure has 78 project modules, listed completely below. The derivative branch contains actual quotient/functor constructions, rank transport and the level/homogeneity definitions. The product branch contains actual parabolic induction and segment data; its Essential and Tempered modules supply definitions, not classification conclusions. No ordered-socle, socle exhaustion, segment-classification, product irreducibility, segment commutation, special-head existence/exhaustion, quotient coverage or uniqueness theorem is imported. The scalar norm formula in SupercuspidalTwist was checked directly: it expands the real-power character and determinant norm of a scalar matrix and uses real-power arithmetic only. Its original placement in a linked-head module supplies no proof dependency here. SupercuspidalTwist now imports `Langlands.Representation.Jacquet.CharacterTwistEquiv`, which received the unchanged theorem `twist_comp_subtype`; that module imports only Jacquet coinvariants and twist definitions and supplies elementary identifications of actual coinvariant quotients before and after a character twist trivial on the radical. `Twist.ContinuousCharacterProof` gained only an elementary local-constancy lemma for continuous complex characters.
 
-The published Homogeneity pair was independently accepted and was verified byte-for-byte before this statement was authored. All transitive imports are lower constructions or elementary laws. The source proof dependencies described above are obligations of later proof tasks, not hidden hypotheses or claims of this proposition definition. The full task exclusion set also applies to every later proof split.
+The published Homogeneity pair was verified byte-for-byte against that commit. All transitive imports are lower constructions or elementary laws. The source proof dependencies described above belong to the proofs, not to hidden hypotheses or claims of this proposition definition.
 
 ```text
 Langlands.Group.GL.Basic
@@ -177,4 +177,4 @@ Langlands.Representation.Whittaker.GeneralLinear
 Langlands.Topology.Nonarchimedean.Subgroup
 ```
 
-Development check `e47cf7b2-8305-4968-acad-3707955f01d1` of this workspace pair in approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` succeeded with zero errors or warnings, `statement_returns_prop: true`, exactly the independent universe parameters `uF` and `uV`, and only the standard axioms `propext`, `Classical.choice` and `Quot.sound`. A separate private check `4244b2ae-cd06-4f5d-9d90-7632cb36b92e` confirmed by `Iff.rfl` that the definition unfolds to the fully explicit form with `Segment.base`, `CuspidalDatum.twist (1 : ℝ)` applied to the member of index `length - 1`, and `IsHomogeneous` of the actual restriction `(generalLinearRestriction N).obj` of `d.induced`. These development results establish elaboration and proposition kind; independent semantic review and publication are still required. No proof of the proposition is supplied.
+A development check of this pair succeeded with zero errors or warnings, `statement_returns_prop: true`, exactly the independent universe parameters `uF` and `uV`, and only the standard axioms `propext`, `Classical.choice` and `Quot.sound`. A separate check confirmed by `Iff.rfl` that the definition unfolds to the fully explicit form with `Segment.base`, `CuspidalDatum.twist (1 : ℝ)` applied to the member of index `length - 1`, and `IsHomogeneous` of the actual restriction `(generalLinearRestriction N).obj` of `d.induced`. These development results establish elaboration and proposition kind. No proof of the proposition is supplied here.

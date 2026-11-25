@@ -1,6 +1,6 @@
 # Coherence for successive coefficient changes of rational sections
 
-This internal unit proves the identity and composition coherence of the actual
+This module proves the identity and composition coherence of the actual
 coefficient pullback of rational Hom sheaf sections. It uses actual maps and
 the existing canonical comparisons of coefficient-extended formal modules.
 
@@ -47,5 +47,5 @@ the open-set category. The representative calculation is isolated before
 the covering-sieve argument.
 
 No global representative, fraction-field, nilpotence or isogeny hypothesis
-is imposed. This unit does not construct the moduli functor or a local
+is imposed. This module does not construct the moduli functor or a local
 quasi-isogeny inverse.

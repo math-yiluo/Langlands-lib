@@ -1,6 +1,6 @@
 # Compact-finite intertwiner into the inverse-transpose twisted continuous dual
 
-Worker 1028. The declarations are in `Langlands.Archimedean`. Write `θ(g) = (g⁻¹)ᵀ` for the published `Langlands.GeneralLinear.inverseTranspose n F`. For the matrix model over `F : Type` with `RCLike F` and a bounded-operator representation `R` on a complex normed space `E`, `inverseTransposeDualRepresentation F n R` is the composition of `continuousDualRepresentation R` with `θ`. Its space is `StrongDual ℂ E`, the continuous complex-linear dual, and its action is
+The declarations are in `Langlands.Archimedean`. Write `θ(g) = (g⁻¹)ᵀ` for the published `Langlands.GeneralLinear.inverseTranspose n F`. For the matrix model over `F : Type` with `RCLike F` and a bounded-operator representation `R` on a complex normed space `E`, `inverseTransposeDualRepresentation F n R` is the composition of `continuousDualRepresentation R` with `θ`. Its space is `StrongDual ℂ E`, the continuous complex-linear dual, and its action is
 
 `S(g)L = L ∘ R(θ(g)⁻¹) = L ∘ R(gᵀ)`.
 

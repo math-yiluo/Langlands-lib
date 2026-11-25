@@ -54,7 +54,7 @@ def integerCyclicAddCoordinates : O_D ≃+ (Fin d → C) :=
     map_add' := fun x y => by
       change coords (x + y) = coords x + coords y
       have h (a b : Fin d → C) : (coords).symm (a + b) = (coords).symm a + (coords).symm b := by
-        simp only [integerCyclicCoordinates_symm_apply, Pi.add_apply, map_add, add_mul,
+        simp only [integerCyclicCoordinates_symm_apply, Pi.add_apply, map_add iC, add_mul,
           Finset.sum_add_distrib]
       apply (coords).symm.injective
       simpa only [(coords).symm_apply_apply] using (h (coords x) (coords y)).symm }

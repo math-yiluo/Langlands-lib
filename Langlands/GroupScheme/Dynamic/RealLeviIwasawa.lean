@@ -108,6 +108,7 @@ theorem realHermitianConjugate_spec :
   constructor
   · let : IsClosedImmersion ρ.hom.hom.left := hρ
     change IsClosedImmersion (ρ.hom.hom.left ≫ _)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   · exact ⟨hg.2, ρ.conjugate_baseOfMatrix_range_eq_of_mem g hg.1⟩
 

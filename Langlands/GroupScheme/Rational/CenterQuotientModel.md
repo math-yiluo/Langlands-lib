@@ -1,7 +1,5 @@
 # A supplied algebraic model of the literal full-center point quotient
 
-Author: Worker 1232.
-
 This is derived infrastructure for the full-center compactness target. It
 combines the actual all-test fppf kernel identity with the closed-center
 representative and point-quotient homeomorphisms. It constructs neither an

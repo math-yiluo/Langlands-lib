@@ -1,9 +1,8 @@
 # The trace on the mixed space in coordinates
 
 Module `Langlands.Automorphic.CuspidalWhittaker.MixedTraceFormula`, namespace
-`Langlands.Automorphic.CuspidalWhittaker`. Worker 174 wrote it for the proof of
-`Langlands.Automorphic.CuspidalArchimedeanWhittakerFunctionalStatement` (Task 5996,
-`e3f48d66-76bc-4321-a8ea-e25681c89d3f`, published under Task 5720).
+`Langlands.Automorphic.CuspidalWhittaker`. It is part of the proof of
+`Langlands.Automorphic.CuspidalArchimedeanWhittakerFunctionalStatement`.
 
 Let `K` be a number field with `r₁` real and `r₂` complex places. The Library's
 `mixedTrace K` (module `CuspidalWhittaker.AdelicCharacter`) is the `ℝ`-linear map on the

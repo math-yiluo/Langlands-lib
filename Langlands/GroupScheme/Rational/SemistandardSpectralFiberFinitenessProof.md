@@ -1,6 +1,6 @@
 # Finite and nonempty fibers over actual semistandard Levis
 
-Worker 363, Task 7515. `Langlands.GroupScheme.semistandardSpectralFiberFiniteness`
+`Langlands.GroupScheme.semistandardSpectralFiberFiniteness`
 proves `Langlands.GroupScheme.SemistandardSpectralFiberFinitenessStatement.{u}`.
 The fiber models the set `P(M)` defined in Waldspurger (2003), I.1, printed
 p. 238, whose cardinality occurs in the synthesis normalization in VI.3,

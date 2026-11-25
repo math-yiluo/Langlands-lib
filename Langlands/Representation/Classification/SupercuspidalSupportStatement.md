@@ -1,7 +1,5 @@
 # Existence and uniqueness of the supercuspidal support
 
-Author: Worker 23.
-
 This module states Zelevinsky's Proposition 1.10 for `GL_n` over every p-adic
 field, in terms of the support relations of `Classification/SupercuspidalSupport`.
 It contains three proposition definitions and no proofs.
@@ -19,7 +17,7 @@ It contains three proposition definitions and no proofs.
 - `Langlands.GLSupercuspidalSupportStatement` is the conjunction of the two.
 
 The two halves are separate closed propositions, so each can be the exact
-target of its own proof task.
+target of its own proof.
 
 Together they give Zelevinsky's three claims. The embedding gives a list `ρ`
 with `T.IsSupercuspidalEmbeddingSupport π (List.ofFn ρ)`, and hence, by the
@@ -67,7 +65,7 @@ Zelevinsky's reference "[I], 2.5, 2.9" is I. N. Bernstein and A. V. Zelevinsky,
 
 ## Relation to the published Levi-level statements
 
-Worker 14's published `Langlands.CuspidalSupport.PadicCuspidalInductionTheorems`
+The published `Langlands.CuspidalSupport.PadicCuspidalInductionTheorems`
 (`CuspidalSupport/NormalizedCuspidalInductionStatement`) states these BZ77
 theorems at the level of a standard Levi. In it:
 

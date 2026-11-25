@@ -1,10 +1,9 @@
 # Kernel and power exhaustion of actual endomorphism localization
 
-Authors: Worker 709, who read the original passages, wrote the Lean
-statements and drafted this Markdown; Worker 900, who rechecked the pair
-against the original pages and the construction module and submitted it.
+The original passages were read, and the pair was rechecked by a second
+reader against the original pages and the construction module.
 
-This statement unit uses the actual localization and canonical map from
+This statement module uses the actual localization and canonical map from
 `Langlands.Algebra.RenardEndomorphismLocalization`. It specifies their kernel,
 the injectivity implication, and exhaustion by inverse powers of the localized
 operator. It contains proposition definitions, not proofs of these assertions.
@@ -40,7 +39,7 @@ The converse kernel inclusion, the exact kernel criterion, the submodule
 supremum formulation, and exhaustion using the canonical image of the
 original L are internal derived formulations. They are consistent with the
 source's quotient comparison but do not assume that comparison. They can
-instead be proved directly from the published equality and representation
+instead be proved directly from the equality and representation
 formulas for actual fractions. Extending these assertions from fields to
 commutative unital rings is also internal; it is not attributed to Renard.
 
@@ -50,7 +49,7 @@ Let `R : Type u` with `[CommRing R]`, `V : Type v` with `[AddCommGroup V]`
 and `[Module R V]`, and `a : Module.End R V`. The universes u and v are
 independent. The imported construction provides:
 
-| Mathematical object | Published Lean declaration |
+| Mathematical object | Lean declaration |
 | --- | --- |
 | Evaluation module, with X acting by a | `EvalModule a` |
 | Actual localization at powers of X | `Localized a` |
@@ -78,7 +77,7 @@ power, not a scalar inverse. It is defined by the imported construction.
   equality of actual R-submodules
   `LinearMap.ker (iota a) = ⨆ n : ℕ, LinearMap.ker (a ^ n)`.
   The kernels increase with n, so their supremum is their set union.
-  This order-theoretic explanation does not supply a proof in this unit.
+  This order-theoretic explanation does not supply a proof in this module.
   Including n = 0 changes no union, because the identity has zero kernel.
 - `InjectivityStatement.{u,v}` quantifies over R, V and a, asserting
   `Function.Injective a → Function.Injective (iota a)`.
@@ -109,28 +108,27 @@ conjunction of `KernelExhaustionStatement` and
 `FieldKernelExhaustionStatement`. Every statement is a `def` returning
 `Prop`. The closed aggregate introduces no unnamed section parameters.
 
-## Proof route and retained obligations
+## Proof route and separate results
 
-The published `frac_eq_frac_iff`, applied at denominator exponent zero with a zero
+The lemma `frac_eq_frac_iff`, applied at denominator exponent zero with a zero
 numerator, gives the kernel criterion. Increasing power kernels translate
 it into the submodule equality. Injectivity of a implies injectivity of
 every power, which gives injectivity of the canonical map.
 `frac_surjective` and `frac_eq_localizedInv_pow` give the literal
-exhaustion. These are proposed proof routes, not completed proofs.
+exhaustion. These are proof routes, not proofs in this module;
+`RenardEndomorphismLocalizationKernelProof` proves the targets along them.
 
-Separate units retain the stability of K and actual induced quotient
+The stability of K and actual induced quotient
 operator, its injectivity, the localization comparison for V/K,
 the converse universal characterization of extensions exhausted by
 inverse powers, and the source corollary when the canonical map is
-surjective. The general possibly noncommutative and nonunital B-action
+surjective are separate from this module. The general possibly noncommutative and nonunital B-action
 extension, categorical packaging, localization exactness and the final
-C.II finite-localization proposition also remain separate. This unit
+C.II finite-localization proposition also remain separate. This module
 does not claim coverage of all of lemma (ii) or of the corollary.
 
-Development checks `1d05c129-3bd6-416d-8467-19dbca1da271` and, on the
-submitted Lean file, `59030112-ac8e-4387-9290-8c8d8be87fe3` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the entry module without
-diagnostics. They inspected the complete aggregate as a definition
+Two development checks, the second on the final Lean file, compiled the
+entry module without diagnostics. They inspected the complete aggregate as a definition
 returning `Prop`, with universe parameters u and v and only `propext`,
-`Classical.choice` and `Quot.sound`. These checks are neither independent
-semantic acceptance nor proofs of the targets.
+`Classical.choice` and `Quot.sound`. These checks are not proofs of the
+targets.

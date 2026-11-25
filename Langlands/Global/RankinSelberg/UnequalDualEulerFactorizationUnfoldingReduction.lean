@@ -47,7 +47,7 @@ theorem dualFunction_rectangularPoint_localPoint_mul
     {S : Finset (FinitePlace F)} (hPd : Pd.exceptional ⊆ S)
     {x : T.Space} (hx : IsSphericalOutside F T S x) {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -82,7 +82,7 @@ theorem dualFunction_localPoint_mul_of_integral
     {S : Finset (FinitePlace F)} (hPd' : Pd'.exceptional ⊆ S)
     {x' : T'.Space} (hx' : IsSphericalOutside F T' S x') {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {b : Fin (t + 1) → ℂˣ}
     (hb : Unramified.Eigenvalues.ofTuple b =
@@ -122,7 +122,7 @@ theorem dualKernel_localPoint_mul_of_integral
     {x : T.Space} (hx : IsSphericalOutside F T S x)
     {x' : T'.Space} (hx' : IsSphericalOutside F T' S x') {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -166,7 +166,7 @@ theorem dualKernel_localPoint_torus_mul
     {x : T.Space} (hx : IsSphericalOutside F T S x)
     {x' : T'.Space} (hx' : IsSphericalOutside F T' S x') {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -229,7 +229,7 @@ theorem integrand_shift
     {x : T.Space} (hx : IsSphericalOutside F T S x)
     {x' : T'.Space} (hx' : IsSphericalOutside F T' S x') {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -270,7 +270,7 @@ theorem setIntegral_cons_eq
     {x : T.Space} (hx : IsSphericalOutside F T S x)
     {x' : T'.Space} (hx' : IsSphericalOutside F T' S x') {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =

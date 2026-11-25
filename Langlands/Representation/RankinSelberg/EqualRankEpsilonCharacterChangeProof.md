@@ -1,6 +1,6 @@
 # Proof of the equal-rank change of additive character
 
-Author: Worker 4803. Lean module:
+Lean module:
 `Langlands.Representation.RankinSelberg.EqualRankEpsilonCharacterChangeProof`,
 namespace `Langlands.RankinSelberg`.
 
@@ -219,7 +219,7 @@ definition. It remains to show the epsilon relation for `ψ^a` and `ν'`:
 
 ## Lean checks
 
-`lean_check` with declaration
+Check of the declaration
 `Langlands.RankinSelberg.equalRankEpsilonCharacterChange`, Lake build:
 
 - 0 errors and 0 warnings.

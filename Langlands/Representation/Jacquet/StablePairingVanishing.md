@@ -1,6 +1,6 @@
 # Vanishing detected by the stable opposite-Jacquet pairing
 
-Worker 480 derives this module from the published abstract stable evaluation
+This module is derived from the published abstract stable evaluation
 pairing. Its inputs are `D : Langlands.Jacquet.StablePairingData G`, a smooth
 complex representation `ρ`, and the existing `D.Admits ρ hρ`. The group and
 representation universes are independent. No reductive-group realization of
@@ -13,7 +13,7 @@ class, `exists_open_stable_lift` and `exists_good_le` give a stable representati
 `Admits.duality` field identifies the full algebraic dual of that stable image
 with the stable image on the smooth contragredient. (The module originally
 derived this duality from an `Admits.finite` field through the published
-`compactCompression_stableEvaluationDuality`; Worker 937 replaced that field by
+`compactCompression_stableEvaluationDuality`; that field was later replaced by
 `duality` itself.) Every functional therefore evaluates to zero on `t`: its value
 is the stable pairing of an upper class with the original opposite class.
 Algebraic dual separation forces `t = 0`, and its quotient class is zero.
@@ -33,8 +33,8 @@ surjectivity onto that full algebraic dual is asserted.
 
 The provenance is internal: the only mathematical inputs are the published
 stable pairing and stable-image evaluation duality, together with algebraic
-dual separation. This supplies a conditional vanishing consequence used in
-auditing the self-association proof. The actual rational contraction geometry,
-the `Admits` input, and the analytic irreducibility argument remain obligations.
+dual separation. This supplies a conditional vanishing consequence for the
+self-association proof. The actual rational contraction geometry,
+the `Admits` input, and the analytic irreducibility argument are not supplied here.
 There is no additional use of classification, a geometric lemma, adjointness,
 or cuspidal support.

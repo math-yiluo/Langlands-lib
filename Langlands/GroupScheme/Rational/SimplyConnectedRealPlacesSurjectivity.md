@@ -1,7 +1,5 @@
 # Reduction of real-place surjectivity to tori
 
-Worker 243.
-
 `SimplyConnectedRealPlacesSurjectivityStatement` is the surjectivity clause of
 the Library's real-place comparison. It uses `Cocycle.Cohomologous` to express
 the twist on the common cover. The three premises of

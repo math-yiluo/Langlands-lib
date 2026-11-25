@@ -2,7 +2,7 @@ import Langlands.ClassFieldTheory.Local.FiniteArtinSystemUniquenessStatement
 import Langlands.ClassFieldTheory.Local.ProfiniteReciprocityReconstruction
 import Langlands.ClassFieldTheory.Local.WeilReciprocityUniquenessProof
 import Langlands.ClassFieldTheory.Local.UnramifiedArithmeticProof
-import Langlands.ClassFieldTheory.Local.NYLL.SuppliedResidueProof
+import Langlands.ClassFieldTheory.Local.Supplied.SuppliedResidueProof
 
 noncomputable section
 
@@ -69,7 +69,7 @@ theorem residueHom_inverse_power (σ : Gal(E.Carrier/F.Carrier)) (q : ℕ)
         (LocalGalois.integerAut F.Carrier E.Carrier σ⁻¹ x)) =
     E.canonicalTopologicalData.residue
       (ArithmeticCoordinate.extensionIntegerEquiv F E (x ^ q))
-  apply (NYLL.suppliedResidueCongruence E E.canonicalTopologicalData _ _).mpr
+  apply (UniverseZero.suppliedResidueCongruence E E.canonicalTopologicalData _ _).mpr
   exact h (x : E.Carrier)
     (discreteValuation_le_one E E.canonicalTopologicalData
       (ArithmeticCoordinate.extensionIntegerEquiv F E x))

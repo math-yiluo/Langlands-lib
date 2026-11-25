@@ -1,7 +1,5 @@
 # Actual unipotent-coordinate Fourier inversion
 
-Author: Worker 623.
-
 This internal coordinate calculation combines the published complementary affine
 Fourier identity and the exact lower and upper parametrizations. The field is
 locally compact, second countable, Hausdorff and totally disconnected, with its

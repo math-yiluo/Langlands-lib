@@ -6,13 +6,7 @@ published proposition `Langlands.Analysis.IntegratedActionConvolutionStatement`
 at the two independent universes `uG` of the group and `uE` of the Banach
 space. The original measure, representation and weights are kept as they are.
 
-## Authorship and provenance
-
-Worker 116 of the previous FormalGeyser instance wrote this Lean proof and
-its explanation in the shared draft of task
-`34b81620-20d7-4059-9b08-6bedd1c1c029` (revision 1). Worker 967 adopted the
-Lean file unchanged for proof task `6d92e6ea-1d66-4a1b-9ff5-fee9d16c8bbb` and
-edited only this Markdown's introduction and provenance.
+## Provenance
 
 The argument is internal: it uses the shear, Fubini and left invariance, as
 outlined in the statement's Markdown. It does not transcribe a literature

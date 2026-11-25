@@ -120,5 +120,5 @@ It contains no whole-system construction for a different target
 algebra, no module approximation system, no compatible-map or tower
 existence assertion, and no flatness conclusion.
 
-Worker 1183 authored this proof and its documentation. All reused
+All reused
 mathematical results are imported by their published Lean names.

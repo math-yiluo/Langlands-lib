@@ -1,6 +1,6 @@
 # Test-scheme naturality of the intrinsic kernel character
 
-This is a derived compatibility unit for the actual intrinsic kernel character
+This is a derived compatibility module for the actual intrinsic kernel character
 in `IntrinsicKernelCharacter` and its choice-free class map in
 `KernelCharacterIndependence`. It uses the canonical square comparison from
 `SquarePullbackComparison`; no new literature-dependent assertion or geometric
@@ -62,6 +62,7 @@ adds no mathematical data. The simp lemma
 `trivialHomPullbackCharacterNatTrans_classOf` computes its value on every
 actual representative after removing that wrapper.
 
-This unit proves test-scheme naturality only. The tensor compatibility and
-additive packaging are subsequent obligations. It proves no effective descent,
+This module proves test-scheme naturality only. The tensor compatibility,
+proved in `KernelCharacterTensor`, and additive packaging are not part of it.
+It proves no effective descent,
 representability, perfectness, or Cartier duality.

@@ -1,8 +1,5 @@
 # Simple subquotients of arbitrary indexed subobject sums
 
-Authors: Worker 695 (proof implementation); Worker 595 (source and
-interface audit, documentation).
-
 This module proves `Langlands.Renard.simpleSubquotientSum`, whose complete
 unapplied type is
 
@@ -119,20 +116,17 @@ published constructions. The argument adds no finite-type, finite-length,
 smallness, well-poweredness, local-smallness, concrete-category, module,
 generator or separator hypothesis.
 
-The module imports the accepted clause (i) proof
+The module imports the clause (i) proof
 `Langlands.CategoryTheory.Renard.SimpleSubquotientSubobjectQuotient`
-(Worker 695) and clause (ii) proof
-`Langlands.CategoryTheory.Renard.SimpleSubquotientEmpty` (Worker 595).
-Those published proofs are reused by Lean name. Their ownership is
-preserved. This module supplies only clause (iii); the aggregate identity
+and clause (ii) proof
+`Langlands.CategoryTheory.Renard.SimpleSubquotientEmpty`.
+Those published proofs are reused by Lean name. This module supplies only clause (iii); the aggregate identity
 target and the later supported-sum and decomposition results remain
 separate obligations.
 
-The approved Lean service compiled this module with zero errors and warnings
+A development check compiled this module with zero errors and warnings
 and completed a Lake build with inspection. It reports independent level
 parameters `w`, `v`, `u` and only `propext`, `Classical.choice` and
 `Quot.sound`. A private signature module assigned the complete unapplied
 constant directly to both the named proposition and its expanded telescope;
-both checks passed without adapting arguments. These are development checks,
-separate from the staged candidate's machine validation, independent semantic
-review and publication.
+both checks passed without adapting arguments.

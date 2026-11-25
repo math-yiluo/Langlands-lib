@@ -23,7 +23,7 @@ additive commutative group. `IsVectorGroupOfDimension.pointsCommGroup`
 packages this fact as a commutative group structure on each test-point
 group, preserving its existing multiplication, identity and inversion.
 
-This internal unit uses the existing polynomial standard smoothness
+This internal module uses the existing polynomial standard smoothness
 instances and natural-coordinate comparison. It supplies geometric and
 nontriviality consequences for the stable-vector subgroup target. It
 does not construct a stable subgroup or prove a conjugacy theorem.

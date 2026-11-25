@@ -17,7 +17,7 @@ property as an explicit hypothesis `hK`, and derives it from the published
   Godement cohomology `smoothGodementCompactCohomology R G X q` to derived compact sections
   `compactDerived R G X q`, namely `AcyclicResolution.comparisonNatTrans` for compact
   sections and the smooth Godement resolution.
-* `comparisonTrans_app`: its component at `F` is Worker 3's `comparisonMap R G X I φ q` for
+* `comparisonTrans_app`: its component at `F` is `comparisonMap R G X I φ q` for
   every injective resolution `I` of `F` and every augmentation-compatible `φ`.
 * `comparisonTrans_zero`: in degree zero it is the published identification of both sides
   with compact sections.
@@ -65,7 +65,7 @@ def comparisonTrans (q : ℕ) :
     (CokernelComplex.augmentationNat (Godement.smoothZeroFunctor R G X)
       (Godement.smoothCoaugmentation R G X)) hK q
 
-/-- Each component of the comparison transformation is Worker 3's `comparisonMap` for every
+/-- Each component of the comparison transformation is `comparisonMap` for every
 injective resolution and every augmentation-compatible map to it. -/
 theorem comparisonTrans_app (F : SmoothTopologicalSheaf R G X) (I : InjectiveResolution F)
     (φ : Godement.smoothComplex R G X F ⟶ I.cocomplex)

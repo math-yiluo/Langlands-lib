@@ -1,9 +1,6 @@
 # The linear system of an invertible module on a proper flat family with geometrically integral fibres
 
-Authors: Worker 5705.
-
-Worker 5705 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705), after reading p.15 (the
+The Lean file and this description were written after reading p.15 (the
 locally noetherian convention) and pp.22–26 of Kleiman's survey (Section 3,
 from Definition 3.3 to Exercise 3.14). The
 proposition is the linear-system ingredient of Grothendieck's construction of
@@ -26,10 +23,10 @@ whose body is
 ```lean
 ∀ (T : Scheme.{u}) [IsLocallyNoetherian T] {Y : Scheme.{u}} (g : Y ⟶ T),
   IsProper g → Flat g → GeometricallyIntegral g →
-  ∀ M : Y.Modules, Scheme.Modules.IsInvertible M →
+  ∀ M : Y.Modules, Scheme.Modules.IsInvertibleFLT M →
     ∃ (Λ : Scheme.{u}) (l : Λ ⟶ T) (W : RelativeEffectiveDivisor (pullback.snd g l))
       (N : Λ.Modules),
-      IsProper l ∧ Scheme.Modules.IsInvertible N ∧
+      IsProper l ∧ Scheme.Modules.IsInvertibleFLT N ∧
       Nonempty (W.toEffectiveCartierDivisor.lineBundle.obj ≅
         (Scheme.Modules.pullback (pullback.fst g l)).obj M ⊗
           (Scheme.Modules.pullback (pullback.snd g l)).obj N) ∧
@@ -39,7 +36,7 @@ whose body is
             W.ideal.comap
               (pullback.map g t' g l (𝟙 Y) k (𝟙 T) (by simp) (by simp [hk])) = E) ↔
           ∃ hE : IsRelativeEffectiveCartierIdeal (pullback.snd g t') E,
-            ∃ N' : T'.Modules, Scheme.Modules.IsInvertible N' ∧
+            ∃ N' : T'.Modules, Scheme.Modules.IsInvertibleFLT N' ∧
               Nonempty ((EffectiveCartierDivisor.lineBundle ⟨E, hE.1⟩).obj ≅
                 (Scheme.Modules.pullback (pullback.fst g t')).obj M ⊗
                   (Scheme.Modules.pullback (pullback.snd g t')).obj N')) ∧
@@ -66,7 +63,7 @@ whose body is
   `Spec K ⟶ T` the fibre product `Y ×_T Spec K` is integral). This is
   Kleiman's hypothesis "X/S is proper and flat, and its geometric fibers are
   integral" of Theorem 3.13.
-- `M` is an invertible `𝒪_Y`-module: `Scheme.Modules.IsInvertible M` is the
+- `M` is an invertible `𝒪_Y`-module: `Scheme.Modules.IsInvertibleFLT M` is the
   predicate of the FLT port, defined by local trivialisations. Every point of
   `Y` has an open neighbourhood `U` such that the pullback of `M` along the
   inclusion `U.ι` is isomorphic to the structure sheaf of `U`; that is, `M` is
@@ -158,8 +155,8 @@ keep Kleiman's p.15 convention exactly: the base `T` and every test scheme
 `T'` are locally noetherian, and nothing is claimed for other test schemes.
 The Picard scheme over a noetherian base is built in this setting (Kleiman,
 proof of Theorem 4.8, pp.28–30), and the consumer of this statement, the
-Picard-scheme construction of Task 5705, only applies it to locally
-noetherian test schemes (schemes locally of finite type over a noetherian
+Picard-scheme construction (`noetherianIntegralFibrePicardSheafAFScheme`),
+only applies it to locally noetherian test schemes (schemes locally of finite type over a noetherian
 ring). Kleiman's hypothesis that the geometric fibres are integral is
 Mathlib's `GeometricallyIntegral`.
 

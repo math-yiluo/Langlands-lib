@@ -57,7 +57,7 @@ in the rational Hom groups, with `e∨` constructed by `dualHom0`.
 The square additionally assumes the corresponding identity `hqeb`
 for `rationalBaseChangeIso b e` and the two specified canonical
 base-changed integral maps. The same scalar `q` is used. Dual-map
-additivity is retained for both pairs of schemes. This unit proves
+additivity is retained for both pairs of schemes. This module proves
 neither multiplier stability under pullback nor a new duality theorem;
 the new multiplier equation is an explicit geometric hypothesis.
 

@@ -1,7 +1,5 @@
 # Continuous properties of the local invariant family
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.LocalInvariantFamilyContinuousStatement`
 (module `Langlands.ClassFieldTheory.Local.LocalInvariantFamilyLawsStatement`).

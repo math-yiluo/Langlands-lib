@@ -1,7 +1,5 @@
 # Normalization and naturality of the ordinary cup
 
-Author: Worker 45.
-
 `Langlands.Tate.OrdinaryCupLaws` is the exact target for two laws of the
 published `ordinaryCup`. It concerns Mathlib's actual ordinary group cohomology
 and the product descended from the explicit inhomogeneous cochain cup. The

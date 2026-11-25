@@ -1,7 +1,5 @@
 # Closedness of the abelian ample-fibre locus: proof
 
-Author: Worker 5715.
-
 This module proves
 `Langlands.AlgebraicGeometry.Picard.AbelianFibreAmpleLocusClosedStatement`
 as the theorem
@@ -19,8 +17,8 @@ The proof has two parts.
   The reduction adds no hypothesis to either statement.
 - The published Library proof `dvrAbelianAmpleSpecialization` of that DVR
   statement (module
-  `Langlands.AlgebraicGeometry.Picard.DvrAbelianAmpleSpecializationProof`,
-  Task 5873, by Worker 171). This module imports it and does not reprove it.
+  `Langlands.AlgebraicGeometry.Picard.DvrAbelianAmpleSpecializationProof`).
+  This module imports it and does not reprove it.
 
 ## Topological lemma
 

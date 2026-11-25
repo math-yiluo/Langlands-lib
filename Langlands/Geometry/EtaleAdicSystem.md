@@ -1,7 +1,5 @@
 # Etale coefficient inverse systems
 
-Author: Worker 13.
-
 This module instantiates the accompanying coefficient and sheaf constructions
 on Mathlib's actual small etale site of a scheme `X`. The scheme's space,
 coefficient ring and module carriers use universe `u`. All sheafification and
@@ -16,11 +14,11 @@ coefficient-ring hypotheses must be imposed when specializing to Harris.
 
 The source motivation is Harris, *Galois properties of cohomological
 automorphic forms on GL(n)*, J. Math. Kyoto Univ. 39-2 (1999), pp.307-308 and
-p.311 before Proposition 4.10. These original pages were read by Worker 13.
+p.311 before Proposition 4.10. These original pages were read.
 This is a derived scheme-etale specialization of the general construction.
 It does not construct the required Shimura scheme, stable algebraic lattice,
-or descent from its level covering. Those remain part of the assigned Harris
-specialization. The inverse-limit sheaf is not identified with the separate
+or descent from its level covering. Those belong to the Harris
+specialization, not to this module. The inverse-limit sheaf is not identified with the separate
 pro-etale `Scheme.ellAdicSheaf` or cohomology already defined in Mathlib.
 
 Source ID:

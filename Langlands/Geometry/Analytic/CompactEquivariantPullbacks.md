@@ -1,6 +1,6 @@
 # Compact continuous pullbacks from geometric inputs
 
-This internal construction combines two explicit, still separate geometric
+This internal construction combines two explicit, separate geometric
 prerequisites. It does not prove either prerequisite or the unconditional
 finite tuple-cone statement.
 
@@ -23,5 +23,6 @@ second prerequisite gives Berkovich continuity of this constructed action.
 The field and space universes are `u,v,v` and the acting group has independent
 universe `z`. The group only carries a topology. The ambient space `X` need not
 be compact, Hausdorff, or carry a continuous global action. Provenance is an
-internal assembly for Task 7491 using the categorical universal property; no
+internal assembly for the finite tuple-cone statement
+`CompactCompatibleTupleConesStatement`, using the categorical universal property; no
 pointwise injectivity or action-lift uniqueness is invoked.

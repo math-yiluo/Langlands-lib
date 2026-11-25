@@ -21,9 +21,9 @@ real constant `C` and exponents `e : Fin m → ℕ` such that, for every
 
 The bound holds for every `a`. When the set is empty, the left side is `0`.
 
-This is internal derived content. It is the volume estimate that the planned
+This is internal derived content. It is the volume estimate that a
 reduction of the coefficient rationality statement (C) to the coefficient torus
-expansion needs, in the exact form Worker 249 requested. It is the standard step
+expansion needs. It is the standard step
 behind the convergence of Whittaker integrals for Schwartz–Bruhat data: the support
 of `a ↦ ∫_N Φ(u diag(a)) du` is bounded in every `|a_i|`, and its size is
 controlled by a monomial in `|a_i|⁻¹`. No literature statement is formalized here.

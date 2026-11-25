@@ -1,6 +1,6 @@
 # The explicit localized functor and chosen-arrow comparison
 
-Worker 1581. This is the target and canonical-arrow unit of the chosen
+This is the target and canonical-arrow module of the chosen
 endomorphism-localization construction. All declarations are in
 `Langlands.Renard.EndomorphismLocalization.ChosenComparison`.
 It imports the actual source construction in
@@ -18,12 +18,12 @@ all allowed.
 The imported F, U, P, beta, theta and lambda are respectively `chosenFunctor`,
 `raisedFunctor`, `polynomialRaisedFunctor`, `sourceComparison`,
 `polynomialArrow` and `chosenArrow`. In particular F remains the exact
-published `toPolynomial R`, `ModuleLocalization.chosenLocalFunctor S`,
-`localFromPolynomial R` composite. J is the published
+`toPolynomial R`, `ModuleLocalization.chosenLocalFunctor S`,
+`localFromPolynomial R` composite. J is
 `invertibleEndomorphismInclusion R`. This file constructs E, alpha and iota
 and identifies the two actual canonical arrows.
 
-`liftedLocalizedEquiv` conjugates the published native R-linear
+`liftedLocalizedEquiv` conjugates the native R-linear
 `localizedEquiv a` through `ULift.moduleEquiv`. Its forward and inverse
 formulas are
 
@@ -32,13 +32,13 @@ ULift.up z ↦ ULift.up (localizedEnd a z),
 ULift.up z ↦ ULift.up (localizedInv a z).
 ```
 
-The underlying `localizedEquiv` was constructed from the published identities
+The underlying `localizedEquiv` was constructed from the identities
 `localizedEnd_localizedInv` and `localizedInv_localizedEnd`. The two lifted
 inverse identities are recorded as `liftedLocalizedEquiv_apply_symm` and
 `liftedLocalizedEquiv_symm_apply`. `explicitObject` bundles
 `ModuleCat.of R (ULift.{w} (Localized a))` and the forward operator in the
 actual invertible full subcategory. It uses the native R-module action of the
-published explicit quotient. Its invertibility proof applies
+explicit quotient. Its invertibility proof applies
 `Module.End.isUnit_iff` to this actual linear equivalence.
 
 For every original intertwiner f from A to B, `localizedPolynomialMap R f`
@@ -80,8 +80,8 @@ laws.
 `targetLinearEquiv R A` compares F's restricted coefficient action with E's
 native R-action on the same localized quotient carrier. Its forward and
 inverse functions are both `ULift.up z ↦ ULift.up z`. Its scalar proof first
-writes the restricted action as `(C r : R[X]) • z` and then applies the
-published `smul_eq_C_smul a r z` in the reverse direction. The proof
+writes the restricted action as `(C r : R[X]) • z` and then applies
+`smul_eq_C_smul a r z` in the reverse direction. The proof
 explicitly annotates z with the native `Localized a` carrier to select its
 native R-module structure. It does not assume the native and restricted
 R-actions are definitionally equal. `targetLinearEquiv_intertwines`
@@ -98,7 +98,7 @@ the naturality equation there explicitly.
 
 `explicitArrowComponent` is the native R-linear map `iota a`, conjugated
 through U's and E's actual lifts. It sends `ULift.up x` to
-`ULift.up (iota a x)`, and its pair-morphism equation is the published
+`ULift.up (iota a x)`, and its pair-morphism equation is
 `iota_intertwines`. `explicitArrow` bundles these components into the natural
 transformation iota from U to E followed by J. Naturality is proved by the
 denominator formula at s = 1 for every original intertwiner.
@@ -135,18 +135,20 @@ p-adiques*, French version 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 A.III.1, printed251–252 / one-based PDF257–258, introduces the right universal
 problem and obtains the endomorphism-localization example 5 from the module
-localization example 4 through the polynomial-module equivalence. Worker 1581
-reread both pages for this task. The commutative-ring generalization and the
+localization example 4 through the polynomial-module equivalence. Both pages
+were reread for this construction. The commutative-ring generalization and the
 specified lift, functor and arrow comparisons are derived internal
 constructions; these formulas are not extra literal statements of the book.
 Locality here means invertibility of the actual endomorphism. The stronger
-printed scalar-inverse parenthesis in example 4 is not used; see the published
+printed scalar-inverse parenthesis in example 4 is not used; see the
 [discrepancy note](../../notes/renard/appendix-a-corrections.md).
 
 This pair constructs the functors, canonical natural map, target natural
 isomorphism and structured-arrow comparison, with their intrinsic laws.
 Initiality, universal factorization and uniqueness in the structured-arrow
 category, an adjunction, chosen-model exactness, and the source B-module
-comparison remain separate statement and proof obligations. The existing
-scalar-linear universal theorem is an input for those successors, and is
+comparison are outside this pair; initiality, factorization and uniqueness
+are stated in `RenardEndomorphismLocalizationInitialityStatements` and proved
+in `RenardEndomorphismLocalizationInitialityProof`. The existing
+scalar-linear universal theorem is an input for that proof, and is
 not invoked to assert any such categorical universal property here.

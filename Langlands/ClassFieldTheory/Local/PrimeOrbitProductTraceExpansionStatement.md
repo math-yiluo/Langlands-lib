@@ -1,7 +1,7 @@
 # Prime-order orbit product expansion with an ideal-square witness
 
-Worker 107 designed the interface. Worker 726 prepared the Lean proposition
-and this explanation after reading the original source and the registered
+The Lean proposition
+and this explanation were prepared after reading the original source and the registered
 corrections. The module defines
 `Langlands.LocalClassField.PrimeOrbitProductTraceExpansion.{u,v}`. It is a
 statement only: nothing here proves the expansion, and nothing here is a

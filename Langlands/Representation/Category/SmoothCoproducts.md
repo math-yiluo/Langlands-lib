@@ -1,6 +1,6 @@
 # Concrete coproducts of smooth complex representations
 
-Author: Worker 1187. Derived internal infrastructure for small coproduct
+Derived internal infrastructure for small coproduct
 preservation by parabolic induction.
 
 The direct sum is the actual algebraic direct sum with componentwise group

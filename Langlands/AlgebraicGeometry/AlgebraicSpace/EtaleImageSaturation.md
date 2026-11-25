@@ -40,5 +40,6 @@ The statement is therefore a presheaf generalization of the indicated source
 identity, with its extra sheaf assumption stated explicitly.
 
 The full representability induction and effective descent are not asserted
-by this helper. The supporting `EtaleOffDiagonal` pair is unchanged from the
-separately submitted helper by Worker 1150.
+by this helper. The supporting `EtaleOffDiagonal` pair
+(`Langlands.AlgebraicGeometry.EtaleOffDiagonal`) is a separate helper module,
+used unchanged.

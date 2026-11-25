@@ -1,6 +1,6 @@
 # Closure embeddings and continuous Galois representation restriction
 
-Author: Worker 41. This module constructs restriction along an explicitly
+This module constructs restriction along an explicitly
 specified embedding of algebraic closures and proves independence, up to an
 actual intertwining equivalence, of that embedding. It imports the published
 `Langlands.Galois.CompatibleFamily` and, through it, the coefficient
@@ -120,10 +120,9 @@ Registered source: `serre-1979-local-fields`, file
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 The cited pages were read in the original and this fingerprint was recomputed.
-Mathlib is pinned at `5ed2965256430c3649e86755f9576b54eca72435` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+Mathlib is pinned at `5ed2965256430c3649e86755f9576b54eca72435`.
 
-This contribution proves independence of the global-to-local closure
+This module proves independence of the global-to-local closure
 embedding while retaining the same algebraic closure of the completion and
 the same residue-action construction. It supplies no canonical restriction
 homomorphism, comparison between different residue-closure models, ramified
@@ -131,4 +130,5 @@ Euler factor, automorphic existence theorem, cohomological realization,
 Hodge-Tate assertion or multiplicity-removal statement. Independence from
 the Frobenius element itself is the separate result already present in
 `CompatibleFamily`; lift existence is supplied separately by `FrobeniusLift`.
-The full Kottwitz, Clozel, Taylor and Harris statement task remains open.
+The module does not state the full Kottwitz, Clozel, Taylor and Harris
+theorem.

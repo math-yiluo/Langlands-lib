@@ -1,7 +1,5 @@
 # Split-torus rank bounds from the division-algebra Witt index
 
-Author: Worker 118.
-
 Over an infinite field `K`, let `D` be a finite-dimensional division
 `K`-algebra with a first-kind involution and let `H` be any square matrix
 over `D`. If its division-algebra Witt index is at most one, the actual

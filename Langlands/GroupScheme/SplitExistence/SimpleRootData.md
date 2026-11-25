@@ -1,7 +1,5 @@
 # Integral `SL₂`-data for the simple roots (`SimpleRootData`)
 
-Author: Worker 239.
-
 This module defines the structure `SimpleRootData P b` for a root datum `P : RootDatum J X Y`
 with base `b`. It is the interface between two steps of the construction:
 
@@ -30,7 +28,7 @@ The fields are:
 - `E_F_comm`: `E i 1` and `F i' 1` commute for distinct simple roots `i ≠ i'`.
 
 The names `sl2Upper`, `sl2Lower`, `sl2Diag`, `sl2Weyl` and `divExp` come from `ChevalleyData`
-and `RootExp` (Worker 1398). The module contains only this definition and states no theorem.
+and `RootExp`. The module contains only this definition and states no theorem.
 
 ## Provenance
 

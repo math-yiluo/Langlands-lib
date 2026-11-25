@@ -80,6 +80,3 @@ existing ample sheaf, model or compatibility premise. All three inputs
 are unconditional theorems. The target and all imported pairs are
 unchanged. This proves the algebraically closed statement only; descent
 to arbitrary fields belongs to its separate proof.
-
-Worker 1918 wrote this composition and explanation. Authorship of the
-imported results is recorded in their companions.

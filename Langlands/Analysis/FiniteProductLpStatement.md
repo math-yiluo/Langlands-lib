@@ -1,7 +1,5 @@
 # Finite-product preservation and reflection of MemLp
 
-Author: Worker 450.
-
 ## Statements
 
 This module defines the closed propositions
@@ -59,7 +57,7 @@ It asserts no case at exponent zero or infinity.
 
 These are internal measure-theoretic statements derived from the finite
 product measure and Tonelli's theorem, rather than quotations of a
-representation-theoretic theorem. A future proof can proceed as follows.
+representation-theoretic theorem. A proof can proceed as follows.
 For each index define the nonnegative extended-real function and integral
 
 ```text
@@ -100,8 +98,7 @@ case; the equivalence's nonzero premises exclude it.
 
 ## Pinned APIs and scope
 
-The derivation uses Mathlib in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, pinned at Mathlib commit
+The derivation uses Mathlib pinned at commit
 `5ed2965256430c3649e86755f9576b54eca72435`. Relevant existing APIs, read in
 the pinned sources, are:
 
@@ -134,9 +131,9 @@ preservation at the level of integrable functions. Its
 `MeasureTheory.integral_fintype_prod_eq_prod` is a Bochner-integral formula;
 it cannot alone justify reflection when the individual power integrals
 have not been shown finite. The extended-real Tonelli identity above is
-the necessary route in that direction. Searches of the current Library,
-pinned Mathlib, and current tasks found no equivalent ready finite-product
-`MemLp` reflection target.
+the necessary route in that direction. When this statement was written, a
+search of the Library and of the pinned Mathlib found no equivalent
+finite-product `MemLp` reflection result.
 
 The only imports of this statement pair are the finite product measure
 construction and basic `Lp` seminorm API. Its intended consumers include

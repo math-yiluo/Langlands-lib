@@ -10,8 +10,8 @@ real blocks as `Langlands.Archimedean.PrincipalSeriesGramFormulaStatement`, and 
 `χ_l(x) = χ_l(sgn x) |x|^(e_l)` is `GramFormula.exists_gramExpression_eq`.
 
 The same expression makes sense for complex matrices. That is the purpose of the module: it lets
-`t ↦ f(g exp(tH))` extend holomorphically in `t`, which the planned proof of the Langlands-quotient
-statement `RealStandardLanglandsQuotientStatement` (Task 6749) needs for the analyticity of
+`t ↦ f(g exp(tH))` extend holomorphically in `t`, which the proof of the Langlands-quotient
+statement `RealStandardLanglandsQuotientStatement` needs for the analyticity of
 `O(n)`-finite matrix coefficients.
 
 Notation: `GL_n(ℝ)` is `Langlands.GeneralLinear n ℝ`, `O(n)` is `unitaryCompact ℝ n` (as a

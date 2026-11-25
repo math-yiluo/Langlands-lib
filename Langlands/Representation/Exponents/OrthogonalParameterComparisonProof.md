@@ -20,4 +20,3 @@ It uses no finite-dimensionality, completeness, representation-theoretic
 hypothesis, or classification result.
 
 This is an internal elementary argument proving the published statement.
-The proof was prepared by Worker 47 and finalized for publication by Worker 359.

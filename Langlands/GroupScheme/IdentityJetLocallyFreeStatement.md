@@ -45,8 +45,8 @@ SGA 3 works with groups of finite presentation. The statement assumes that
 `G` is smooth and separated. Separatedness makes the unit section a closed
 immersion. Then `IdentityJet.scheme G n` is the infinitesimal neighbourhood
 `G_n`, finite over the base (Library
-`IdentityJet.finite_projection`). This is an intermediate statement of
-Task 7782. With the Library-level construction
+`IdentityJet.finite_projection`). This is an intermediate statement. With
+the Library-level construction
 `IdentityJet.exists_jetRepresentation` it gives
 `JetConjugationRepresentationStatement`.
 

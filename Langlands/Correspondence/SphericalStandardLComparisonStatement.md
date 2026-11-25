@@ -1,7 +1,5 @@
 # The standard L-polynomial on spherical classes
 
-Author: Worker 1273.
-
 `Langlands.Correspondence.SphericalStandardLComparisonStatement` is an internal
 comparison obligation for the unramified-normalization proof. It is a
 proposition definition. This module supplies no proof of the comparison or of

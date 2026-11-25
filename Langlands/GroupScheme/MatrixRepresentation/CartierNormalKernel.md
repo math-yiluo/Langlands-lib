@@ -30,7 +30,8 @@ equality
 That equality is the existing full subgroup-functor equality on every relative
 scheme test, including nonreduced tests.
 
-This contribution retains both algebraic closedness and the explicit Cartier
+This module retains both algebraic closedness and the explicit Cartier
 input. It proves no arbitrary-field descent, quotient representability,
 flatness or surjectivity. The unrestricted normal quotient existence target
-therefore remains a separate obligation.
+is therefore not proved here; the Library proves it as
+`normalSubgroupQuotientExistence` in `NormalQuotientExistenceProof`.

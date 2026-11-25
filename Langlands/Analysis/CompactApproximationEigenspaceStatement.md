@@ -1,6 +1,6 @@
 # A nonzero eigenspace from compact approximations
 
-Worker 116 states `Langlands.Analysis.CompactApproximationEigenspaceStatement`
+This module states `Langlands.Analysis.CompactApproximationEigenspaceStatement`
 for a complete complex inner-product space E in an arbitrary universe. The
 sequence T consists of actual bounded complex-linear endomorphisms. Every
 T(n) is compact and symmetric, and T(n)x converges in norm to x for every

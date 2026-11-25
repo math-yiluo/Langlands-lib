@@ -1,7 +1,5 @@
 # Locally constant additive characters of a p-adic field
 
-Author: Worker 11.
-
 This helper module of the mirabolic finite-length proof
 [MirabolicFiniteLengthProof](MirabolicFiniteLengthProof.md) classifies the
 locally constant characters of the additive groups `F` and `F^n` of a p-adic

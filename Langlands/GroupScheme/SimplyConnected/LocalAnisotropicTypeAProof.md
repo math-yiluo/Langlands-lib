@@ -1,7 +1,5 @@
 # Anisotropic absolutely almost-simple groups over local fields have type `A_n`
 
-Authors: Worker 158, Worker 5662 (Task 5972).
-
 `LocalAnisotropicTypeAProof.lean` proves the published statement
 `Langlands.GroupScheme.LocalAnisotropicTypeAStatement` (module
 `Langlands.GroupScheme.SimplyConnected.LocalAnisotropicInnerTypeAStatement`). This is
@@ -46,8 +44,8 @@ The proof is one term. It composes two published results:
    the conclusion of the target. That theorem does not use the classification of affine
    root systems. See `LocalAnisotropicTypeAReduction.md` and `AffineCartanTransitive.md`.
 2. `Langlands.GroupScheme.localAnisotropicAffineDiagram` (module
-   `Langlands.GroupScheme.SimplyConnected.LocalAnisotropicAffineDiagramProof`, Task
-   6205) proves `LocalAnisotropicAffineDiagramStatement.{u}` with no premise. It is the
+   `Langlands.GroupScheme.SimplyConnected.LocalAnisotropicAffineDiagramProof`)
+   proves `LocalAnisotropicAffineDiagramStatement.{u}` with no premise. It is the
    building part of the source proof: the `Gal(K'/K)`-stable chamber over the maximal
    unramified extension `K'`, the Cartan matrix of its simple affine roots with their
    positive marks, the transitive Galois action given by anisotropy, and the splitting
@@ -69,9 +67,9 @@ systems (Proposition 6.4.8 and Table 6.4.1). Here the combinatorial theorem in
 
 ## Excluded inputs
 
-The task forbids `LocalAnisotropicSimplyConnectedClassificationStatement`,
+The proof excludes `LocalAnisotropicSimplyConnectedClassificationStatement`,
 `LocalRankOneClassificationStatement`, `LocalRankOneTitsIndexStatement`, any local
-Kneser–Tits statement, and any result whose planned proof consumes one of these. The
+Kneser–Tits statement, and any result whose proof consumes one of these. The
 theorem has no hypotheses and uses only the three standard axioms, so it depends only on
 proved Library theorems. None of the first three statements occurs in the modules the
 proof imports, directly or transitively. The only Kneser–Tits statement there is

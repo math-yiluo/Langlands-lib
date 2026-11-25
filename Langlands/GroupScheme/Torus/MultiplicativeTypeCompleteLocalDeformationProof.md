@@ -1,6 +1,6 @@
 # Homomorphisms into complete-local deformations of multiplicative-type groups
 
-Worker 356 and Worker 748, Task 6952. This module proves the unchanged
+This module proves the unchanged
 published `MultiplicativeTypeCompleteLocalDeformationStatement` in every
 universe, with exactly its stated hypotheses. No target or imported Library statement is changed.
 
@@ -37,4 +37,4 @@ does not replace group morphisms by rational points. The source comparison
 is Conrad, *Reductive group schemes* (2014), Theorem B.3.2(2), pp.288-290;
 the implemented immersion proof uses the coordinate criterion rather than
 the formal-completion argument of the source. Split adic effectivity is
-provided by the independently developed SGA 3 IX 7.1 comparison.
+provided by the separate SGA 3 IX 7.1 comparison.

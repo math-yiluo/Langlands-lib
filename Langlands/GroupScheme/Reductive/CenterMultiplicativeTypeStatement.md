@@ -1,7 +1,5 @@
 # The full reductive center is of multiplicative type
 
-Author: Worker 1232.
-
 `Langlands.GroupScheme.CenterMultiplicativeTypeStatement.{u}` says that for
 every field `k : Type u`, every connected reductive group scheme `G` over `k`,
 and every actual full scheme-theoretic center inclusion `z : Z ⟶ G`, the group

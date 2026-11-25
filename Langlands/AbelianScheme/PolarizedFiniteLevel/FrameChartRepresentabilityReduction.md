@@ -59,7 +59,7 @@ Axioms: `propext`, `Classical.choice`, `Quot.sound`.
 
 The six arguments above. `HL` is the deep geometric input (GIT steps I–VI: smooth and
 connected locus, Theorem 6.14, torsion and level loci, Proposition 6.11, rigidification
-locus). `HE` needs the Lefschetz statement `CubicFieldEmbeddingStatement` (Task 7747).
+locus). `HE` needs the Lefschetz statement `CubicFieldEmbeddingStatement`.
 
 ## Provenance
 

@@ -1,8 +1,7 @@
 # The splitting of the quasi-split unitary group `U(1,1)` over `E`
 
-Author: Worker 293. This is definition unit 3 of task
-`be70310c-1939-4a82-8293-c4d33f5883ae`. It builds on unit 1,
-`Langlands.GroupScheme.Examples.QuasiSplitUnitary` (Worker 399). That unit
+This module builds on
+`Langlands.GroupScheme.Examples.QuasiSplitUnitary`. That module
 defines the involution `σ X = J (X.map c)ᵀ J` of `Matrix (Fin 2) (Fin 2) E`,
 the group scheme `groupScheme b c` over `Spec F`, the point subgroups
 `matrixPoints R c` and the point equivalence `pointsEquiv`.
@@ -47,8 +46,8 @@ involution `(a, b) ↦ (σ b, σ a)` of `A × A` and `Aˣ`. It takes the first
 component, and its inverse sends `a` to `(a, σ(a⁻¹))`
 (`exchangeUnitaryEquiv_apply`, `exchangeUnitaryEquiv_symm_apply`).
 
-`transposeInvolution R` is the unit-1 `matrixInvolution` with the identity
-conjugation, so `M ↦ J Mᵀ J` (`transposeInvolution_apply`; entrywise
+`transposeInvolution R` is the `matrixInvolution` of `QuasiSplitUnitary` with the
+identity conjugation, so `M ↦ J Mᵀ J` (`transposeInvolution_apply`; entrywise
 `transposeInvolution_adjoint`).
 
 ## Splitting of the coefficient algebra
@@ -64,7 +63,7 @@ For a commutative `E`-algebra `R` (with compatible `F`-algebra structure),
 `algebraEquiv R c hc : R ⊗[F] E ≃ₐ[R] R × R` sends `r ⊗ e` to
 `(r e, r c(e))`. It is obtained from `tensorEquiv` by cancelling base change.
 `tensorSplit R c hc : E ⊗[F] R ≃ₐ[R] R × R` is the same map with the factors
-in the order of unit 1 (`R` acting on the right factor). It sends `e ⊗ r` to
+in the order of `QuasiSplitUnitary` (`R` acting on the right factor). It sends `e ⊗ r` to
 `(r e, r c(e))` (`tensorSplit_tmul`). Under it, `c ⊗ id` becomes the swap of
 the two factors (`tensorSplit_scalarConjugation`).
 
@@ -72,8 +71,8 @@ the two factors (`tensorSplit_scalarConjugation`).
 
 `matrixSplit R c hc` applies `tensorSplit` to every entry. It identifies
 `Matrix (Fin 2) (Fin 2) (E ⊗[F] R)` with a pair of matrices over `R`
-(`matrixSplit_apply`). By `matrixSplit_involution` it carries the unit-1
-involution `X ↦ J (X.map c_R)ᵀ J` to the exchange involution of
+(`matrixSplit_apply`). By `matrixSplit_involution` it carries the involution
+`X ↦ J (X.map c_R)ᵀ J` of `QuasiSplitUnitary` to the exchange involution of
 `transposeInvolution R`. Composing the transported unitary groups with
 `exchangeUnitaryEquiv` gives `pointsSplitting R c hc : matrixPoints R c ≃*
 GL (Fin 2) R`. By `pointsSplitting_val` it is the first coordinate of
@@ -92,7 +91,7 @@ first coordinate commutes with every `F`-algebra map that is compatible with the
 For every `T : Over (Spec E)`, `basePointsEquiv b c hc T` identifies its
 `T`-points with `GL (Fin 2) Γ(T.left, ⊤)` in three steps. A point first
 becomes a point of `groupScheme b c` over `T` regarded as an `F`-scheme
-(`GroupScheme.baseChangePointsEquiv`). Then unit 1's `pointsEquiv` gives an
+(`GroupScheme.baseChangePointsEquiv`). Then the `pointsEquiv` of `QuasiSplitUnitary` gives an
 element of `matrixPoints`, and `pointsSplitting` applies. The coefficient ring
 is the Library's `SchemeModel.restrictedSections F E T`, that is
 `Γ(T.left, ⊤)` with its `F`-structure through `Spec E ⟶ Spec F`. Its
@@ -100,10 +99,10 @@ is the Library's `SchemeModel.restrictedSections F E T`, that is
 `sectionsSAlgebra` and `sectionsScalarTower` of `Shimura/Unitary/
 SchemeScalarExtension`, used here as local instances). `basePointsEquiv_apply`
 gives the entry formula. The `(i, j)` entry is the first coordinate under
-`tensorSplit` of the `(i, j)` entry of the unit-1 matrix of the point.
+`tensorSplit` of the `(i, j)` entry of the `QuasiSplitUnitary` matrix of the point.
 `basePointsEquiv_naturality` states that restriction along any `a : T' ⟶ T`
 applies `a.left.appTop` entrywise. Its proof combines the naturality of the
-pullback point equivalence, unit 1's `pointsEquiv_naturality` and
+pullback point equivalence, the `pointsEquiv_naturality` of `QuasiSplitUnitary` and
 `tensorSplit_coefficientMap_fst`.
 
 `splittingIso b c hc` is the isomorphism of group schemes over `Spec E`
@@ -119,8 +118,9 @@ reducedness or finiteness hypothesis is imposed.
 
 ## Not included here
 
-The task's supporting lemma that `splittingIso` carries the base change of the
-cocharacter `t ↦ diag(t, t⁻¹)` of unit 2 to the diagonal cocharacter of `GL₂`
-needs unit 2 (`QuasiSplitUnitaryDynamic`, Worker 399). It is not in this
-module. The dynamic subgroups, rank, noncommutativity and reductivity are not
+The supporting lemma that `splittingIso` carries the base change of the
+cocharacter `t ↦ diag(t, t⁻¹)` of `QuasiSplitUnitaryDynamic` to the diagonal
+cocharacter of `GL₂` needs that module. It is not in this module; it is
+`baseChangeCocharacter_cocharacter_splittingIso`, in
+`QuasiSplitUnitarySplittingCocharacter`. The dynamic subgroups, rank, noncommutativity and reductivity are not
 asserted here either.

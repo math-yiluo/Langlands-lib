@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Quotients of regular local rings by part of a regular system of parameters -/
 

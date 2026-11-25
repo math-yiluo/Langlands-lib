@@ -47,21 +47,21 @@ every literal unramified character `χ` in its principal open
 
 ## Provenance
 
-The statement is derived. It records which published, still unproved inputs the
-reduction in
+The statement is derived. It records which published inputs, not proved in the
+Library, the reduction in
 `Langlands.Representation.Aubert.General.RationalSameLeviGenericIrreducibilityReduction`
 uses to reach the target. The target's own route follows Konno, Theorem 4.2
 (registered original `konno-2003-langlands-classification`, pp.402–405;
 arbitrary characteristic on p.384) together with algebraic openness. It applies
 the argument to both actual parabolics and intersects their polynomial loci.
-Each premise has its own source provenance and its own proof task:
+Each premise has its own source provenance:
 
-- Renard VI.8.4 is Task 5147 (`2113598c`);
-- the twist-existence statement is owned by Worker 145, as a prerequisite of
-  this task.
+- Renard VI.8.4 is `InducedIrreducibilityOpenStatement`;
+- the twist-existence statement is `IrreducibleInducedTwistExistenceStatement`.
 
 Neither premise mentions a particular group, parabolic or representation. The
 conclusion adds no hypothesis to the target.
 
-This is a proof target, not a theorem. It does not prove the target. The
-target still needs proofs of both premises.
+This is a proposition, not a theorem; `RationalSameLeviGenericIrreducibilityReduction`
+proves it. It does not prove the target. A proof of the target through this
+implication needs proofs of both premises.

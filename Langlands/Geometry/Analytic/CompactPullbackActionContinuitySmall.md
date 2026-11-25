@@ -43,7 +43,7 @@ deliberately not `UnivLE.{u, v}` itself, which would ask for more.
 
 `CompactPullbackActionContinuityStatement` has the same body without the
 smallness hypothesis, so it covers independent universes `u` and `v`. The proof
-route of Task 7765 works with pair charts. Take a chart algebra `A` of `U` and a
+route (`CompactPullbackContinuityOfSmall`) works with pair charts. Take a chart algebra `A` of `U` and a
 chart algebra `B` of `V` over a common chart algebra `C` of the base. The completed
 affinoid pushout `A ⊗̂_C B` gives a pair-chart object (the Library's
 `greatestChartPullback` in `SaturatedTopChartComparison`). The pullback's
@@ -73,15 +73,17 @@ points as `K`. The Library's own pullback theorem `smallFibreProduct_isPullback`
 (`FibreProductLocalizedLimit`) likewise takes smallness as an explicit instance
 hypothesis, there for the point space of the glued fibre product.
 
-The old proposition is neither proved nor refuted. Its Lean text remains in the
-Library unchanged. Its Markdown now marks it as not to be used as a target or as
-a premise. Consumers that took it as a hypothesis (the conditional construction
-of Task 7491) take this statement instead.
+The old proposition is neither proved nor refuted at independent universes;
+`CompactPullbackContinuityOfSmall` derives it under `UnivLE.{u, v}`. Its Lean text
+remains in the Library unchanged. Its Markdown marks it as not to be used as a
+target or as a premise. The conditional construction `compactContinuousPullback`
+(module `CompactEquivariantPullbacks`) still takes the old statement as a
+hypothesis.
 
 ## Provenance
 
-Internal. The statement was corrected at the operator's ruling on request
-`a87ede08952355398eb14c6ddc2957c0` (option (a), by the procedure of standing
-ruling 8). It is not a transcription of a cited source. The smallness hypothesis
-is what the proof route of Task 7765 uses: the pair charts must be objects of the
+Internal. The statement is the corrected form of
+`CompactPullbackActionContinuityStatement`. It is not a transcription of a cited
+source. The smallness hypothesis is what the proof route of
+`CompactPullbackContinuityOfSmall` uses: the pair charts must be objects of the
 localized category.

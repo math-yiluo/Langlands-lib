@@ -1,7 +1,7 @@
 # Orbit grades of `r_I ∘ i_J` as actual normalized geometric terms
 
 Module: `Langlands.Representation.Aubert.General.RationalGeometricOrbitTerm`,
-namespace `Langlands.Aubert.General`. Author: Worker 4021.
+namespace `Langlands.Aubert.General`.
 
 This module works with the actual rational standard family. It takes the
 published support filtration of `r_I ∘ i_J` (`jacquetSupportFiltration`,
@@ -81,7 +81,7 @@ the published `reductiveRationalPoint_secondCountable`.
 
   `(jacquetSupportFiltration dJ (hU J) dI (hU I) s).graded q ≅ geometricTermFunctor … I J n hSource hTarget ⋙ SmoothRep.toRep`.
 
-  The isomorphism composes five published or previously staged pieces:
+  The isomorphism composes five pieces:
   1. `jacquetSupportOrbitIso`. It needs compactness of `P_J \ G(k)`, obtained
      from `compactSpace_leftQuotient_parabolic` with
      `dynamicParabolicQuotientCompact`, and `U_I.subgroupOf P_I` being a limit

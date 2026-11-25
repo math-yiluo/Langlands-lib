@@ -50,10 +50,10 @@ end SplittingFieldRootRestriction
 
 variable [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
 
-local instance : IsAffineHom (G_L).X.hom :=
+private local instance : IsAffineHom (G_L).X.hom :=
   MorphismProperty.baseChange_obj (P := @IsAffineHom) b G.X inferInstance
 
-local instance : LocallyOfFiniteType (G_L).X.hom :=
+private local instance : LocallyOfFiniteType (G_L).X.hom :=
   MorphismProperty.baseChange_obj (P := @LocallyOfFiniteType) b G.X inferInstance
 
 namespace IsQuasiSplit

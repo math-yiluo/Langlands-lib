@@ -8,14 +8,14 @@ of an action) and the Library modules `EtaleEquivalenceRelationFiniteTypeSystem`
 pulled back action `Action.pullbackAction` of `EtaleEquivalenceRelationActionDescent`).
 
 This module is the third generic bridge module for the first-level step of absolute Noetherian
-approximation (FL task 8d02331e, Workers 706 and 416). Through that step it serves this task
-(Tag 07VS). In that step one has, at every level `i` of a cofiltered system, an étale
-equivalence relation `D i`, an action of `D i` on a scheme `P i` étale over `(D i).U`, and the
-quotient `O i = P i / D i`. The étale equivalence relation `O i ×_{X i} O i` on `O i` is
+approximation. Through that step it serves the proof of Tag 07VS. In that step one has, at
+every level `i` of a cofiltered system, an étale equivalence relation `D i`, an action of
+`D i` on a scheme `P i` étale over `(D i).U`, and the quotient `O i = P i / D i`. The étale
+equivalence relation `O i ×_{X i} O i` on `O i` is
 `(A i).quotientRelation (Q i) (Q₂ i)` from the imported module. This module makes these
 relations into a diagram with cartesian transition maps. It proves that the object schemes of
 the diagram have the expected limit, and packages the result as a `FiniteTypeCartesianSystem`,
-which is the input format of the FL induction.
+which is the input format of the first-level induction.
 
 The last part of the module constructs such diagrams of actions by base change. A single action
 `B` of a relation `F` on `q : Q ⟶ F.U` pulls back along a cartesian comparison
@@ -285,7 +285,7 @@ Provenance: derived. The proof of Stacks, Limits of Algebraic Spaces, Propositio
 (Tag 07SU) sets `W_i = W_0 ×_{U_0} U_i` and notes `W = lim W_i`. It then uses the étale
 equivalence relations `W_i ×_{U_i} W_i`. It proves that the squares formed by the source maps
 `s_i` for `i ≥ i'` (its diagram 70.8.1.1) are cartesian, because
-`(W_{i'} ×_{U_{i'}} W_{i'}) ×_{U_{i'}} U_i = W_i ×_{U_i} W_i`. In the FL task the algebraic space
+`(W_{i'} ×_{U_{i'}} W_{i'}) ×_{U_{i'}} U_i = W_i ×_{U_i} W_i`. In the first-level step the algebraic space
 `U_i` is presented by an étale equivalence relation `D i`. `W_i` is the quotient
 `O i = P i / D i` of an action of `D i` on `P i = W_i ×_{U_i} (D i).U`, and
 `W_i ×_{U_i} W_i` is the quotient relation of the imported module. The base change formula of
@@ -298,7 +298,7 @@ schemes of the presentations. The finiteness fields are the hypotheses that the 
 records for `W_i` and `W_i ×_{U_i} W_i`: finite type over `ℤ`, quasi-compactness, and affine
 transition morphisms. The packaging (`ActionDiagram`, `ActionCone`, explicit quotients `Q`,
 `Q₂`, `Qc`, `Q₂c`, and the comparison `φ`) is internal. It follows the input format
-`FiniteTypeCartesianSystem` of the FL task's induction (Library module
+`FiniteTypeCartesianSystem` of the first-level induction (Library module
 `EtaleEquivalenceRelationFiniteTypeSystem`).
 
 The base change part corresponds to the definition `W_i = W_0 ×_{U_0} U_i` in the same proof of

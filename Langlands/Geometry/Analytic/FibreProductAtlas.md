@@ -1,7 +1,5 @@
 # The affinoid atlas of a fibre product of analytic spaces
 
-Author: Worker 21.
-
 This module completes the construction of the fibre product `X ×_S Y` of two
 compatible strong maps `f : X → S` and `g : Y → S` as an affinoid atlas
 presentation. It assumes that:

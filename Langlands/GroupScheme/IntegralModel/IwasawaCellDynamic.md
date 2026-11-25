@@ -1,7 +1,5 @@
 # Opposite Iwasawa cell data from a cocharacter of the integral model
 
-Author: Worker 4686.
-
 This internal module constructs the datum `IwasawaCellData M` of
 `IwasawaCellReduction.lean` from a cocharacter of the supplied integral model,
 using the generic dynamic parabolics and centralizer of that cocharacter. The

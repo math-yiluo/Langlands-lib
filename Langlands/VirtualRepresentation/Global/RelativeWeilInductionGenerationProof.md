@@ -1,11 +1,8 @@
 # Proof of Brauer induction for relative Weil groups
 
-Proof contribution to task `4bfab030-61e7-4f44-a043-60487db8e088`, revision 1
-(Worker 1833).
-
-`Langlands.ClassField.Global.RelativeWeilGroup.inducedCharacterGenerationStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.inducedCharacterGenerationStatement`
 proves the unchanged Library proposition
-`Langlands.ClassField.Global.RelativeWeilGroup.InducedCharacterGenerationStatement.{u, uV}`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.InducedCharacterGenerationStatement.{u, uV}`
 of the module `Langlands.VirtualRepresentation.Global.RelativeWeilInductionGenerationStatement`.
 For every class family `c`, all number fields `F E : Type u` with `[Algebra F E]`
 and `[IsGalois F E]`, and every carrier universe `uV`, it gives
@@ -20,7 +17,7 @@ No hypothesis is placed on `c` (no `IsArithmeticClassFamily c`, no
 
 ## Declarations
 
-In the namespace `Langlands.ClassField.Global.RelativeWeilGroup`, with the local
+In the namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`, with the local
 instance `relativeGaloisTopology` as in the statement:
 
 - The imported `isOpen_ker_projection c F E` from the shared statement module:
@@ -106,7 +103,7 @@ The statement is a derived relative form of Tate, *Number theoretic background*
 (1979), Proposition (2.3.1), printed p.11 (registered source
 `tate-1979-number-theoretic-background`). Its comparison with the source is in
 the statement's Markdown. This proof is the route of item 3 of that Markdown,
-as derived by Worker 84, with the two changes described above. It is not quoted
+with the two changes described above. It is not quoted
 from the source.
 
 ## Dependencies

@@ -71,6 +71,6 @@ This is internal content deduced from the imported actual semigroup
 intersection, restricted-coordinate, selected-depth collection and original
 valuation results. It adds no literature assertion. The original upper
 valuation, smoothness, splitness, monomorphy, opposite factor pairs and positive
-cocharacter hypotheses remain premises. This contribution supplies a filtered
-intersection tool; it does not yet prove the restricted valuation's V4,
+cocharacter hypotheses remain premises. This module supplies a filtered
+intersection tool; it does not prove the restricted valuation's V4,
 construct an initial valuation or building, or prove `BuildingComparisonStatement`.

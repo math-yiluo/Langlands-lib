@@ -1,6 +1,6 @@
 # The actual rational cuspidal upper inclusion under local estimates
 
-This derived unit records and proves the local upper-inclusion step of
+This derived module records and proves the local upper-inclusion step of
 Waldspurger VIII.4.2 on the actual rational-point interfaces. It retains
 the structural choices and the `max u uV` carrier convention of the
 published equality target.
@@ -33,8 +33,8 @@ convolution and reproducing-vector steps. Haar measures and their finite
 comparison scalars are preserved.
 
 This is a local estimate reduction, not a proof of either closed
-Task 7440 target. The central height and Xi estimates and the finite
-projected-level input must still be obtained from their owning proof
-tasks. The finite-level input can be supplied by a local VIII.4.1
+VIII.4.2 target (`RationalCuspidalDiscreteCoefficientStatement`,
+`RationalCuspidalFixedCoefficientLiftingStatement`). The central height and Xi
+estimates and the finite projected-level input are not proved here. The finite-level input can be supplied by a local VIII.4.1
 rank step; the proposition introduces no same-rank reconstruction or
 VIII.1 spectral-finiteness premise.

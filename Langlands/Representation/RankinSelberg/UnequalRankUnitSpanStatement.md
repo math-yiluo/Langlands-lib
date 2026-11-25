@@ -1,10 +1,10 @@
 # Unit membership in every actual unequal-rank JPSS zeta span
 
-Author: Worker 356. Worker 329 supplied the focused target specification.
 The module defines the proposition
 `Langlands.RankinSelberg.UnequalRankUnitSpanStatement.{uF,uV,uW} F T n j k`.
 It states the unit-membership step in the unequal-rank proof of JPSS
-Theorem 2.7. It does not prove that proposition.
+Theorem 2.7. It does not prove that proposition; `unequalRankUnitSpan` in
+`UnequalRankUnitSpanProof` does.
 
 ## Data and hypotheses
 
@@ -91,7 +91,7 @@ denominator and normalized-generator existence also remain separate
 obligations. The chosen span-membership conclusion is the input required
 by the algebraic normalization step.
 
-## Original source and remaining proof work
+## Original source and proof work
 
 Source: H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 *Rankin-Selberg Convolutions*, American Journal of Mathematics 105 (1983),
@@ -131,9 +131,7 @@ proposition supplies none of these adapters or the test-vector proof.
 
 ## Lean validation
 
-Development `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the entry module with no
-errors or warnings. Exact declaration inspection reported a proposition-valued
+The entry module compiled with no errors or warnings. Exact declaration inspection reported a proposition-valued
 definition with independent universe parameters `uF`, `uV`, `uW` and only
 `propext`, `Classical.choice` and `Quot.sound` among its axioms. This checks
 the statement definition; it does not prove the proposition.

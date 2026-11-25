@@ -1,6 +1,6 @@
 # Positive-weight terms and the actual contracting subgroup
 
-This derived unit compares a supplied regular root-height chart, equipped with
+This derived module compares a supplied regular root-height chart, equipped with
 independent nonnegative root weights, to an actual dynamic contracting group.
 The chart lies in a group `U` with a monomorphic homomorphism `j : U → G`.
 Its factored roots must recover exactly the ambient root maps in the positive

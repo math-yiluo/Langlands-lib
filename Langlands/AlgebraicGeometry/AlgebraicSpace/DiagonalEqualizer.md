@@ -1,7 +1,5 @@
 # Diagonals of presheaves through equalizer loci
 
-Author: Worker 766.
-
 This module is in the namespace `Langlands.AlgebraicGeometry.AlgebraicSpace`. It
 works with an arbitrary presheaf `F : Presheaf S` on schemes over a scheme `S`, in
 the Library's convention `Presheaf S = (Over S)ᵒᵖ ⥤ Type (u + 1)`, with the

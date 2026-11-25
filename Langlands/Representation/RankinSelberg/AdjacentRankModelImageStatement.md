@@ -1,10 +1,11 @@
 # Large-second-twist image equality for the JPSS adjacent-rank model
 
-Worker 1197 states
-`Langlands.RankinSelberg.AdjacentRankModelImageStatement.{uF,uV}` in module
-`Langlands.Representation.RankinSelberg.AdjacentRankModelImageStatement`.
+The module
+`Langlands.Representation.RankinSelberg.AdjacentRankModelImageStatement` states
+`Langlands.RankinSelberg.AdjacentRankModelImageStatement.{uF,uV}`.
 This closed `Prop` definition is a source-derived interface for the image
-assertion in JPSS Section 6.1, formula (8). It supplies no proof.
+assertion in JPSS Section 6.1, formula (8). It supplies no proof;
+`adjacentRankModelImage` in `AdjacentRankModelImageProof` proves it.
 
 ## Exact assertion
 
@@ -87,8 +88,8 @@ J. A. Shalika, *Rankin-Selberg Convolutions*, American Journal of
 Mathematics 105 (1983), 367–464, source ID
 `jpss-1983-rankin-selberg`. The retained Central-Library scan has SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 1197 visually read printed 376 and 427–431 (zero-based PDF
-indices 10 and 61–65). The source-specific errata path
+Printed 376 and 427–431 (zero-based PDF indices 10 and 61–65) were
+read visually. The source-specific errata path
 `notes/errata/jpss-1983-rankin-selberg.md` was absent from the declared
 project, Library, and literature notes locations; no registered correction
 was available there. This is a bounded registration check, not a claim
@@ -137,8 +138,8 @@ both that arbitrary test tensors are finite sums of pure tensors and
 that the sections constructed by (10) span the induced representation.
 These steps motivate both directions of the set equality and a single
 functional on the induced representation. The analytic rearrangement,
-uniform bound, functional construction, and spanning arguments remain
-proof obligations.
+uniform bound, functional construction, and spanning arguments are not part
+of this statement; they belong to its proof.
 
 ## Original carrier and remaining obligations
 
@@ -152,7 +153,7 @@ claims it is injective.
 
 Consequently the interface is a source-derived assertion extending the
 paper's chosen realization, not a verbatim theorem formulated in the
-paper. A later proof owes actual transport between induction from the
+paper. A proof must supply actual transport between induction from the
 coefficient model and this particular induction from `V`. In particular,
 it must justify the induced coefficient image and the nonzero common
 functional despite a possible coefficient-map kernel. No such induction
@@ -164,8 +165,8 @@ character, two-block induction constructors, and opposite induction.
 It changes no published pair. It proves neither the image equality nor
 convergence, lower-to-upper reversal, star transforms, determinant-shell
 expansions, or adjacent-rank gamma/L identities. It uses no unrestricted
-multiplicativity or later adjacent-rank consequence. An independent
-proof must target this exact proposition after its statement is public.
+multiplicativity or later adjacent-rank consequence. A proof must target
+this exact proposition.
 
 ## All-field port
 

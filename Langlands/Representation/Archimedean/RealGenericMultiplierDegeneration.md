@@ -1,6 +1,6 @@
 # Exact binomial and canonical-tail degenerations of generic multipliers
 
-This internal derived unit identifies two scalar specializations of the
+This module identifies two scalar specializations of the
 finite-product generic multipliers in the Library. Its inputs are
 `RealBlockMultiplier` and the published analytic pole-removal construction
 `RealBlockMultiplierNormalization`. No external literature assertion is used.
@@ -44,7 +44,7 @@ sequences by the same reflection sign proves the multiplier identities for
 all integer indices. Coordinatewise analyticity follows from the published
 finite-product and erased-product formulas.
 
-These are scalar identities. This unit constructs no rational operator family,
+These are scalar identities. This module constructs no rational operator family,
 limiting intertwiner, braid relation, or GL4 kernel-image or filtration proof.
 Such uses require a common finite compact space and justified propagation of
 an operator identity to the indicated specializations.

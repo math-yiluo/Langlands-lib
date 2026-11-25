@@ -57,6 +57,3 @@ dimension or rank hypothesis is introduced. The argument uses no
 full arbitrary-valuation existence premise and does not assume
 closedness of any image. It concludes the stated closed-image property
 on the displayed base.
-
-The finite-generator DVR factorization was contributed by Worker 208;
-the scheme adapters and final assembly were contributed by Worker 336.

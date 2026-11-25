@@ -1,6 +1,6 @@
 # Compact levels and actual stable coefficient lattices
 
-Author: Worker 57. This is a derived construction of local coefficient data.
+This is a derived construction of local coefficient data.
 
 ## Inputs and topology
 
@@ -92,6 +92,6 @@ completion; it does not assemble Harris's tensor coefficient algebra over
 all places above a rational prime. It does not prove coefficient-field
 descent from an algebraic closure, unconditional continuity of arbitrary
 algebraic representations, independence of the initial coordinate lattice,
-or a finite torsion carrier. The constructed quotient is not yet identified
-with a geometric deck group, and no scheme level or sheaf descent is asserted
-by this module. Those remain obligations of the surrounding construction.
+or a finite torsion carrier. The constructed quotient is not identified
+with a geometric deck group here, and no scheme level or sheaf descent is
+asserted by this module.

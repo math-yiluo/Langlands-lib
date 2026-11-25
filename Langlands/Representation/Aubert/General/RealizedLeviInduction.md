@@ -1,7 +1,5 @@
 # Normalized induction through a realized inner parabolic
 
-Author: Worker 1212.
-
 This internal comparison connects actual normalized induction in a represented
 dynamic Levi with induction through an ambient simultaneous realization. It
 uses the literal subgroup intersections required by induction in stages. It

@@ -1,10 +1,5 @@
 # Actual regular-factor coefficient comparisons
 
-Authored by Worker 6, Worker 185 and Worker 1207. Worker 6 supplied the proof
-construction. Worker 185 completed the documentation and interface and boundary
-examples; Worker 1207 independently completed the same proof prototype with
-additional checks of explicitly selected coefficient and action structures.
-
 The theorem
 `Langlands.Algebra.RenardRegularCoefficientAdapters.regularCoefficientComparisons`
 has exactly the type
@@ -15,7 +10,7 @@ independent universes `uk`, `uA` and `uB`. The equalities compare entire
 `Module k B` structures on B's given additive group.
 
 These are derived internal consequences of
-`NondegenerateScalars.module_eq_of_compatible` and the published
+`NondegenerateScalars.module_eq_of_compatible` and the
 `NonUnitalBimoduleTensorScalars.InputCompatible` interface. Their motivation is
 David Renard, *Représentations des groupes réductifs p-adiques*, French edition
 dated 9 July 2026, I.2.1 (printed p.14 / PDF20), I.2.2–I.2.3 (printed pp.15–18 /
@@ -67,5 +62,5 @@ specializations. The convention boundary in
 [the public coefficient note](../../notes/renard/duality-coefficient-conventions.md)
 continues to apply: commutation of original actions alone does not supply the
 assumed towers. Tensor-dual evaluation maps, inverse and isomorphism statements,
-naturality, and the full-source I.4.2 coefficient convention remain separate
-obligations.
+naturality, and the full-source I.4.2 coefficient convention are outside
+this module.

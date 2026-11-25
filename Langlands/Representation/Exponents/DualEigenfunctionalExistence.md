@@ -1,7 +1,5 @@
 # Dual eigenfunctionals from generalized eigencharacters
 
-Author: Worker 23.
-
 This module shows that a generalized eigencharacter of a family of central
 elements acting on an admissible representation is also the eigencharacter of
 a nonzero functional on the whole carrier, for the transposed action. The

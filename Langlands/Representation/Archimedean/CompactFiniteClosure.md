@@ -1,6 +1,6 @@
 # Norm closure of compact-invariant subspaces on compact-finite vectors
 
-Worker 1028, Task 7767. This internal comparison uses the actual compact-group action on a complex Banach space and the weighted orbit integrals of [CompactWeightedOrbit](CompactWeightedOrbit.md). It extends the coordinate reconstruction used in [CompactFiniteSmoothness](CompactFiniteSmoothness.md) to a norm-closure argument. No invariant inner product is needed.
+This internal comparison uses the actual compact-group action on a complex Banach space and the weighted orbit integrals of [CompactWeightedOrbit](CompactWeightedOrbit.md). It extends the coordinate reconstruction used in [CompactFiniteSmoothness](CompactFiniteSmoothness.md) to a norm-closure argument. No invariant inner product is needed.
 
 For a jointly continuous bounded-operator action `R` of a topological group `G`, restrict it to a compact subgroup `K`. On a finite-dimensional subrepresentation `S` of that restriction, `continuous_normCompact_subMatrix` proves continuity of the matrices in the chosen basis. Each matrix entry is a continuous coordinate functional on the finite-dimensional normed subspace applied to a continuous orbit. `compactReconstructionWeight` is the continuous function `k ↦ (R(k⁻¹)v)ᵢ` for a vector `v` of `S`, using the chosen coordinates of `S`.
 

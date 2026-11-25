@@ -137,13 +137,12 @@ modules, which import this generic construction.
 
 ## Dependencies and validation
 
-There are no project mathematical dependencies. The prepared environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`: Lean 4.34.0, commit
+There are no project mathematical dependencies. The environment in which it
+was checked is Lean 4.34.0, commit
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The imports supply the profinite completion, continuous monoid homomorphisms,
 and the standard integer topology. All structural proof fields in this file
 are ordinary construction obligations. There are no axioms, placeholders,
-or claimed universal-property proofs. Compilation checks elaboration;
-independent source and semantic review is required for acceptance.
+or claimed universal-property proofs. Compilation checks elaboration.

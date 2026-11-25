@@ -35,12 +35,14 @@ theorem isUnramifiedAlong_limit
     (hM : ∀ j, IsUnramifiedAlong (ModuleCat.{u} R) v (M.obj j) ι) :
     IsUnramifiedAlong (ModuleCat.{u} R) v (limit M) ι := by
   intro i
-  change (limit M).ρ (localRestriction v ι i.val) = 𝟙 (limit M).V
+  apply End.ext
+  change ((limit M).ρ (localRestriction v ι i.val)).asHom = 𝟙 (limit M).V
   apply (isLimitOfPreserves (Action.forget (ModuleCat.{u} R) _) (limit.isLimit M)).hom_ext
   intro j
   have hc := (limit.π M j).comm (localRestriction v ι i.val)
-  have hj : (M.obj j).ρ (localRestriction v ι i.val) = 𝟙 (M.obj j).V := hM j i
-  change (limit M).ρ (localRestriction v ι i.val) ≫ (limit.π M j).hom =
+  have hj : ((M.obj j).ρ (localRestriction v ι i.val)).asHom = 𝟙 (M.obj j).V :=
+    congrArg End.asHom (hM j i)
+  change ((limit M).ρ (localRestriction v ι i.val)).asHom ≫ (limit.π M j).hom =
     𝟙 (limit M).V ≫ (limit.π M j).hom
   rw [hc, hj, Category.comp_id, Category.id_comp]
 

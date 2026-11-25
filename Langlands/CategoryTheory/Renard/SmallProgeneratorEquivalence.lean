@@ -54,7 +54,7 @@ omit [HasCoproducts.{v} C] in
 /-- Precomposition with an endomorphism is the module action on `Hom(P, X)`. -/
 theorem preadditiveCoyonedaObj_comp_eq_smul {X : C} (f : P ⟶ P)
     (x : (preadditiveCoyonedaObj P).obj X) :
-    (f ≫ x : (preadditiveCoyonedaObj P).obj X) = (MulOpposite.op f : (End P)ᵐᵒᵖ) • x :=
+    (f ≫ x : (preadditiveCoyonedaObj P).obj X) = (MulOpposite.op (End.of f) : (End P)ᵐᵒᵖ) • x :=
   rfl
 
 omit [HasCoproducts.{v} C] in
@@ -62,7 +62,7 @@ omit [HasCoproducts.{v} C] in
 theorem preadditiveCoyonedaObj_hom_comp {X : C} {M : ModuleCat.{v} (End P)ᵐᵒᵖ}
     (φ : (preadditiveCoyonedaObj P).obj X ⟶ M) (f : P ⟶ P)
     (x : (preadditiveCoyonedaObj P).obj X) :
-    φ (f ≫ x) = (MulOpposite.op f : (End P)ᵐᵒᵖ) • φ x := by
+    φ (f ≫ x) = (MulOpposite.op (End.of f) : (End P)ᵐᵒᵖ) • φ x := by
   rw [preadditiveCoyonedaObj_comp_eq_smul, map_smul]
 
 /-- Module maps out of `Hom(P, ∐ P)` agree once they agree on the coprojections. -/
@@ -111,12 +111,12 @@ theorem preadditiveCoyonedaObj_full_of_homSmallProgenerator
 noncomputable def preadditiveCoyonedaObjEvalHom (M : ModuleCat.{v} (End P)ᵐᵒᵖ) (m : M) :
     (preadditiveCoyonedaObj P).obj P ⟶ M :=
   ModuleCat.ofHom
-    { toFun := fun f => (MulOpposite.op f : (End P)ᵐᵒᵖ) • m
+    { toFun := fun f => (MulOpposite.op (End.of f) : (End P)ᵐᵒᵖ) • m
       map_add' := fun f g => by
-        rw [MulOpposite.op_add]
+        change (MulOpposite.op (End.of f) + MulOpposite.op (End.of g) : (End P)ᵐᵒᵖ) • m = _
         exact add_smul _ _ m
       map_smul' := fun r f => by
-        change (r * (MulOpposite.op f : (End P)ᵐᵒᵖ)) • m = r • (MulOpposite.op f : (End P)ᵐᵒᵖ) • m
+        change (r * (MulOpposite.op (End.of f) : (End P)ᵐᵒᵖ)) • m = r • (MulOpposite.op (End.of f) : (End P)ᵐᵒᵖ) • m
         exact mul_smul _ _ m }
 
 /-- Every right `End P`-module is a quotient of `Hom(P, ∐ P)` for a `Type v`-indexed
@@ -134,7 +134,7 @@ theorem preadditiveCoyonedaObj_exists_epi_sigma (hP : HomSmallProgenerator.{v} P
     ⟨Sigma.ι (fun _ : M => P) m, ?_⟩⟩
   have h := congrArg (fun φ => φ (𝟙 P)) (hc.fac s ⟨m⟩)
   change hc.desc s (𝟙 P ≫ Sigma.ι (fun _ : M => P) m) =
-    (MulOpposite.op (𝟙 P) : (End P)ᵐᵒᵖ) • m at h
+    (MulOpposite.op (End.of (𝟙 P)) : (End P)ᵐᵒᵖ) • m at h
   rw [Category.id_comp] at h
   rw [h]
   exact one_smul _ m

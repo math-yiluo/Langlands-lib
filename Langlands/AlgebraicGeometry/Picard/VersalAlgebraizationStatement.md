@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.VersalAlgebraizationStatement`.
 
-Author: Worker 1420, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`.
-
 This module contains one proposition, `VersalAlgebraizationStatement.{u}`,
 which is not proved here. It is an intermediate statement for the proof of
 the published `FiniteTypePicardStackAtlasStatement`. It specializes Stacks

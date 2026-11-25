@@ -7,9 +7,7 @@ has no additional premises. The two constituent closed families are also proved
 as `idempotentAnnihilatorQuotientIdempotence` and
 `idempotentAnnihilatorFixedPartComparison`.
 
-Worker 1151 authored this Lean proof and English documentation. Worker 6 supplied
-the passage analysis and elementary ambient-generalization argument used by the
-task. The statement pair and all its imports are retained unchanged. Helpers
+The statement pair and all its imports are retained unchanged. Helpers
 below are in `Langlands.Algebra.IdempotentAnnihilatorComparisons`.
 
 ## Source and scope

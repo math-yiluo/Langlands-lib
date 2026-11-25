@@ -1,6 +1,6 @@
 # The chamber Iwasawa decomposition from the relative Tits system
 
-This derived internal unit reduces the chamber Iwasawa decomposition, Kaletha–Prasad
+This module reduces the chamber Iwasawa decomposition, Kaletha–Prasad
 Theorem 5.3.3 (`G(F) = U(F) N(F) P_C` for a chamber `C`), to algebraic statements about the
 rational points of the reductive group. It does not prove the exact global target
 `IwasawaDecompositionStatement`. The algebraic inputs stay explicit premises, and none of
@@ -101,9 +101,12 @@ applied to `RelativeRootSystemStatement`, `StandardParabolicEndpointsStatement`,
 The conclusion is KP Theorem 5.3.3 (Kaletha–Prasad, *Bruhat–Tits theory: a new approach*,
 §5.3; PDF pp. 220–221). The proof route is internal and differs from KP's. KP derives the
 Iwasawa decomposition from the rational Bruhat decomposition and an analysis of the open cell.
-This unit instead uses the standard argument that a subset stable under `B` and the simple
+This module instead uses the standard argument that a subset stable under `B` and the simple
 reflections of a Tits system is the whole group. Borel–Tits 5.15–5.16 supplies the relative
 Tits system, and KP 2.11.17 supplies the rank-one factorization. KP Lemma 5.3.1 is used only at
 a chamber, where it follows from valuation axiom V 5 and the constancy of the root filtrations
-on a facet. The five premises of `IwasawaDecompositionReductionStatement` are unproved Library
-statements that are owned elsewhere. This unit claims only the conditional implication.
+on a facet. The five premises of `IwasawaDecompositionReductionStatement` are Library
+statements proved in other modules, by the theorems `Langlands.GroupScheme.relativeTitsSystem`,
+`rootRankOneFactorization`, `relativeRootSystem`, `standardParabolicEndpoints` and
+`RelativeRoot.dynamicRootOrderedProduct` (the `…Proof` modules of
+`Langlands.GroupScheme.Rational`). This module claims only the conditional implication.

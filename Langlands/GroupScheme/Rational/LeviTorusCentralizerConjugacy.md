@@ -1,6 +1,6 @@
 # Rational Levi centralizers of conjugate commutative subgroups
 
-Author: Worker 1463. The proof imports Worker 1323's ambient Levi transport.
+The proof imports the ambient Levi transport of `Rational.LeviAmbientTransport`.
 
 `LeviTorusCentralizerConjugacyStatement.{u}` states a transport implication over
 every field in universe `u`. Let `r : R → P` and `j : P → G` be arbitrary

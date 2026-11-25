@@ -1,7 +1,5 @@
 # Association through one common actual cuspidal Jacquet factor
 
-Authors: Worker 55.
-
 This internal construction compares two actual smooth data through a common
 conjugate datum. Supporting conditional assembly results combine it with the
 named cuspidal Jacquet-factor extraction target. This pair proves neither the

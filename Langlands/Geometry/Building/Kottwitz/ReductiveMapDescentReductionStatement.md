@@ -1,6 +1,6 @@
 # Inputs and formal reduction for reductive Kottwitz descent
 
-This unit states a reduction of the published
+This module states a reduction of the published
 `ReductiveKottwitzDescentStatement`; it does not prove that target or its
 prerequisites. Its provenance is derived: it isolates the exact input statements
 for the cocenter and z-extension argument in Kaletha–Prasad, *Bruhat–Tits theory:
@@ -20,7 +20,7 @@ There are no splitting, rank or residue-characteristic restrictions.
 
 KP Proposition 11.1.1, printed p. 421 / PDF p. 452, gives the torus equivariance
 argument in the book's Henselian discretely valued setting introduced on printed
-p. 420. The new declaration is an explicit prerequisite at the already published
+p. 420. The declaration is an explicit prerequisite at the published
 reductive target's coefficient-field generality. It does not assert that an
 arbitrary `k` here is a local field, that `K` is its maximal unramified extension,
 or that the existing `TorusKottwitzDescentStatement`, which quantifies only over
@@ -50,5 +50,8 @@ through its bijective target map, using residual equivariance of the two maps
 composing that comparison. It then transfers equivariance along a z-extension
 using surjectivity on K-points and equivariance of the induced inertia map.
 Finally it applies the rational restriction step. These implications neither
-supply proofs of the five inputs nor weaken the protected descent target.
-The three declarations are Prop-valued definitions awaiting proofs.
+supply proofs of the five inputs nor weaken the descent target.
+The three declarations are Prop-valued definitions. The Library proves them as
+`generalTorusKottwitzEquivariance` (module `TorusKottwitzEquivariance`),
+`reductiveKottwitzRationalRestriction` and `reductiveKottwitzDescent_of_inputs`
+(module `ReductiveMapDescentReduction`).

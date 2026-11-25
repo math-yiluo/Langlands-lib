@@ -2,9 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypeSmoothFamilyAbelianRepresentabilityProof`.
 
-Author: Worker 3233, for task `90a7704e-771a-4107-a91a-c67873dd035e`. The
-published input theorems listed below were written by other workers.
-
 ## Result
 
 The theorem
@@ -40,15 +37,15 @@ It uses two inputs:
 
 1. `Langlands.AlgebraicGeometry.Picard.finiteTypeAbelianPicardSheafScheme`
    (published module
-   `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeProof`,
-   Task 5600). It proves
+   `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardSheafSchemeProof`).
+   It proves
    `FiniteTypeAbelianPicardSheafSchemeStatement.{u}`: for the same `R` and
    `A`, the fppf Picard class sheaf `RelativePicard.classSheafPresheaf A.X.hom`
    is represented by a scheme over `Spec R`. The theorem has no hypotheses.
 2. `Langlands.AbelianScheme.finiteTypeSmoothFamilyAbelianRepresentability_of_picardSheafScheme`,
    from the companion module
-   `Langlands.AlgebraicGeometry.Picard.FiniteTypeSmoothFamilyAbelianRepresentabilityAssembly`
-   in this contribution. It derives the target from
+   `Langlands.AlgebraicGeometry.Picard.FiniteTypeSmoothFamilyAbelianRepresentabilityAssembly`.
+   It derives the target from
    `FiniteTypeAbelianPicardSheafSchemeStatement.{u}`.
 
 The assembly theorem works as follows; its
@@ -65,13 +62,13 @@ details.
   locus, and `hasDualScheme_of_isPicardZeroOpenLocus` gives
   `HasDualScheme A`.
 - The published `finiteTypeDualSchemeGeometry` (module
-  `Langlands.AlgebraicGeometry.Picard.FiniteTypeDualSchemeGeometryProof`,
-  Task 5599) shows that the chosen dual is smooth, proper and geometrically
+  `Langlands.AlgebraicGeometry.Picard.FiniteTypeDualSchemeGeometryProof`)
+  shows that the chosen dual is smooth, proper and geometrically
   connected.
 - `exists_isUniversalSmoothFamilyOnQuasiSeparatedTests_of_hasDualScheme`, from
   the companion module
-  `Langlands.AlgebraicGeometry.Picard.SmoothFamilyUniversalOfPicardZeroUniversal`
-  in this contribution, combines these. It uses the published
+  `Langlands.AlgebraicGeometry.Picard.SmoothFamilyUniversalOfPicardZeroUniversal`,
+  combines these. It uses the published
   `dualAbelianSchemeFromEvaluation` for the abelian-scheme structure,
   `poincareFamily_universal` for the universal Picard-zero family, and the
   published comparison `smoothFamilyPicardZeroComparison` between smooth-family
@@ -80,7 +77,7 @@ details.
 
 ## Checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiles
+`lean_check` compiles
 the two companion modules and this module with no errors or warnings. The
 theorem's axioms are `propext`, `Classical.choice` and `Quot.sound`.
 

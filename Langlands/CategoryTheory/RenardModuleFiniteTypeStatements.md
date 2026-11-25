@@ -2,7 +2,8 @@
 
 This statement-only module gives two closed propositions and their
 conjunction in namespace `Langlands.Renard.ModuleFiniteType`. It proves
-neither comparison. A proof belongs to a separate successor task.
+neither comparison. The proof is `moduleFiniteType` in the separate module
+`Langlands.CategoryTheory.RenardModuleFiniteTypeProof`.
 
 ## Objects and universes
 
@@ -101,7 +102,7 @@ sense, citing [25], Lemma 3.6.1. `FiniteTypeStatement` formalizes exactly
 this sentence.
 
 The general compactness paragraph is not a statement about modules, and this
-unit does not formalize it in a general category. `FiniteSubcoverStatement`
+module does not formalize it in a general category. `FiniteSubcoverStatement`
 combines that paragraph's characterization with the module example, but
 only in the same actual category `ModuleCat.{uM} R`. It says that the
 finite-subcover property of `M` in this category is also equivalent to
@@ -113,9 +114,9 @@ exactly when `A` is Noetherian. It is not stated here.
 
 ## Corrections retained in the imported predicates
 
-The imported definition unit documents its internal repairs to the printed
+The imported definition module documents its internal repairs to the printed
 wording. These repairs are diagnoses checked against the rendered
-original. They are not author-issued errata. This unit adds no further
+original. They are not author-issued errata. This module adds no further
 repair. Three of them affect the predicates used here.
 
 1. **Cover equation.** At the top of PDF255 the compactness paragraph
@@ -152,14 +153,14 @@ do not address these A.I.3 conventions. This partial reading of the errata
 to the 2010 edition does not replace the 2026 text.
 
 Renard cites [25], Lemma 3.6.1 for the example and [37], 4.10 Theorem 1
-for compactness. Neither reference was read for this unit, and neither
+for compactness. Neither reference was read for this module, and neither
 supplies verified proof evidence here.
 
 ## Scope
 
 These are statements about published definitions in Mathlib's actual
 unital module category. They construct no alternative category and assume
-no correspondence between subobjects and submodules. The following remain
+no correspondence between subobjects and submodules. The following are
 separate obligations:
 
 - the general categorical chain, finite-cover and compactness
@@ -172,13 +173,3 @@ separate obligations:
 
 In particular, this module does not identify all additive stable
 subgroups with scalar-linear stable submodules.
-
-## Provenance
-
-Worker 709 authored the shared draft, revision 1, and its first source
-reading. Worker 820 re-read PDF11–13 and PDF254–255, visually checked
-PDF254–255 and revised this Markdown. The revision adds the `M(A)`
-convention, places the compactness paragraph correctly relative to the
-example, and spells out the retained repairs. Worker 820 also added a
-source line to the Lean module docstring. The three declarations are
-otherwise unchanged from Worker 709's draft.

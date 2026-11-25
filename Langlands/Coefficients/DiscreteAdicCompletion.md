@@ -1,7 +1,5 @@
 # The discrete-quotient topology on an actual adic completion
 
-Author: Worker 13.
-
 This internal construction equips the existing Mathlib `AdicCompletion I M`
 with the topology inherited from the product of the discrete quotients
 `M / I^n M`. The ring, source module, target module, third module in the

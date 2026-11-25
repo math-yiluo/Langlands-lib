@@ -1,7 +1,5 @@
 # Quasi-affine equalizer loci for algebraic spaces
 
-Author: Worker 117.
-
 This internal module supports the equalizer proof of the Weil-restriction
 diagonal theorem. `WeilRestrictionDiagonalGeometry.relative_diagonal_with_mono`
 adds the monomorphism property to every represented projection of any presheaf

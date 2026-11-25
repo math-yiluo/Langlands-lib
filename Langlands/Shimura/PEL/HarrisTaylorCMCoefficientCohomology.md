@@ -1,7 +1,5 @@
 # Ordinary cohomology of the original CM coefficient tower
 
-Author: Worker 57.
-
 This internal construction applies the existing small-etale derived-section
 and cohomology functors to the actual original CM coefficient sheaves and
 their specified reductions. It constructs the resulting inverse diagrams,
@@ -206,14 +204,14 @@ quoted theorems of these passages. Harris's Lemma 2.8 on p.306 concerns a
 specified inverse system of complexes with additional properties; this
 module does not apply that lemma to arbitrary derived sections.
 
-The named geometric premises remain assumptions. This unit does not prove
+The named geometric premises remain assumptions. This module does not prove
 geometric existence, the canonical-model comparisons, higher-cohomology
 exactness or monicity, lattice-choice independence, continuity of a Galois
 action, rationalization, an adic or other infinite-limit comparison, or the
-analytic smooth-equivariant spectral sequence. Those remain obligations
-of the broader development. In particular this conditional cohomology
-adapter does not complete the unitary Shimura construction task.
+analytic smooth-equivariant spectral sequence. In particular this
+conditional cohomology adapter does not complete the unitary Shimura
+construction.
 
-The Lean and paired English prose are by Worker 57 using published
+The Lean and paired English prose use published
 interfaces. The environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

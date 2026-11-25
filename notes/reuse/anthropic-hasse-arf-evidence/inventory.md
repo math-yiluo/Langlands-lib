@@ -2,7 +2,7 @@
 
 Supporting evidence for the [audit note](../anthropic-hasse-arf-audit.md). These records are development evidence, not mathematical acceptance.
 
-The JSON gives the complete dependency-first import closure and boundary. The second block gives hashes after the two-file patch; all module names stay unchanged.
+The JSON gives the complete dependency-first import closure and boundary. The second block gives hashes after the two-file patch; all module names stay unchanged. Those adapted hashes are of the adapted files as they were when the evidence was taken; the patch in [compatibility.md](compatibility.md) now gives its adaptation notices without the name of the adapter, so files rebuilt from it differ from those hashes in those lines.
 
 <!-- evidence-file: closure.json -->
 

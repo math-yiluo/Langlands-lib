@@ -1,6 +1,6 @@
 # Actual formal maps under equality of scalar structures
 
-This internal unit transports actual global formal-module data through an
+This module transports actual global formal-module data through an
 equality of two `O`-algebra structures on the same coefficient ring `R`. It is
 the global counterpart of the existing atlas scalar transports. It is needed
 when an induced scalar structure and a supplied target structure give distinct
@@ -29,7 +29,7 @@ an actual isomorphism, inversion and composition of quasi-isogenies.
 Every definition and equation eliminates the supplied equality of scalar
 structures; at reflexivity it retains the original data. Thus no formal map is
 chosen independently, no extra equivalence is assumed, and no point-evaluation
-criterion is used. This unit does not assert invariance under arbitrary changes
+criterion is used. This module does not assert invariance under arbitrary changes
 of the scalar action.
 
 The parameters are arbitrary commutative rings `O` and `R`, two equal algebra

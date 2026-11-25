@@ -1,5 +1,5 @@
 import Langlands.ClassFieldTheory.Local.QuadraticNormTraceStatement
-import Langlands.ClassFieldTheory.Local.NYLL.RelativeIntegerStructureProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RelativeIntegerStructureProof
 import Mathlib.RingTheory.Localization.NormTrace
 import Mathlib.RingTheory.NormTrace
 import Mathlib.LinearAlgebra.FreeModule.PID
@@ -25,7 +25,7 @@ theorem quadraticNormTrace : QuadraticNormTraceStatement.{u,v} := by
   let := T.relativeIntegerFieldAlgebra (E := E)
   let := T.relativeIntegerFieldTower (E := E)
   let := T.relativeIntegerTower S
-  obtain ⟨hclosure, hfiniteInt⟩ := NYLL.relativeIntegerStructure p F E T S
+  obtain ⟨hclosure, hfiniteInt⟩ := UniverseZero.relativeIntegerStructure p F E T S
   let := hclosure
   let := hfiniteInt
   let : Module.IsTorsionFree T.Integers S.Integers :=

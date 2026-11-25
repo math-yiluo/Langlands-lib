@@ -1,7 +1,5 @@
 # Character-coordinate input for component centralizers
 
-Worker 634.
-
 `RootComponentCoordinates M` is a generic integral input for a supplied affine
 pinned model. It consists of a linear equivalence from the full character
 lattice to integer coordinates indexed by the simple roots, a Cartan-component
@@ -25,5 +23,5 @@ used for other classes of pinned models.
 The structure and results are internally derived interface material for the
 component-centralizer proof route motivated by Conrad, *Reductive group
 schemes* (2014), Proposition 6.4.4, pp.232–233. This module defines and verifies
-the lattice input; it does not yet prove almost simplicity, normality, or a
+the lattice input; it does not prove almost simplicity, normality, or a
 product isomorphism for derived centralizers.

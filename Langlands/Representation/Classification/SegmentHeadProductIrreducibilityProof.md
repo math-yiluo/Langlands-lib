@@ -1,7 +1,5 @@
 # Irreducibility of products of special segment heads
 
-Author: Worker 357.
-
 `Langlands.Classification.segmentHeadProductIrreducibility` proves exactly
 `Langlands.Classification.SegmentHeadProductIrreducibility.{uF,uV} F T`
 from the unchanged published `SegmentGenericStatement`. A finite product of
@@ -172,8 +170,8 @@ p-adic groups II. On irreducible representations of GL(n)*, Ann. Sci. ENS
 `663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`.
 The retained original is
 `/home/taskhub/central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf`.
-The author read §9.1, printed p.197, and Theorem 9.7(a) with the complete
-§§9.8–9.9, printed pp.199–201. No applicable registered errata entry was
+§9.1, printed p.197, and Theorem 9.7(a) with the complete §§9.8–9.9,
+printed pp.199–201, were read. No applicable registered errata entry was
 found in the supplied literature index or public notes.
 
 The target is the irreducibility clause of Theorem 9.7(a). The separate
@@ -242,31 +240,25 @@ derivative, rather than a full derivative identification. The support
 branch invokes the final `segmentHeadDerivativeSupportTruncation` through
 the product terminal/dual-support adapters only.
 
-## Operator rulings and independence
+## Permitted inputs and independence
 
-These trusted operator responses were read in full:
+The independence boundary of this criterion admits the following inputs:
 
-- [bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md)
-  permits the fully proved, independently published general BZ77 route.
-- [0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-  applies the general Ze80 3.7(b)/Lemma 4.7(b) closure, Ze80 5.3
-  `leftMixedProductHomogeneity`, and the nine generic infrastructure
-  rulings to this host. BZ77 4.11 is an intended lower input.
-- [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-  permits proving and using exactly the support-only terminal bound after
-  its separate statement, exact proof, independent acceptance and
-  publication. That final theorem is now published.
-- [ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md)
-  confines `core_mid` and its at-most-one-simple-factor consequence to the
-  support proof's length-two base case.
-- [2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-  and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-  permit the published adjacent-supercuspidal reducibility closure solely
-  for reducibility of `ρ × νρ` within that base case.
+- the fully proved, published general BZ77 route;
+- the general Ze80 3.7(b)/Lemma 4.7(b) closure, Ze80 5.3
+  `leftMixedProductHomogeneity`, and nine generic infrastructure modules.
+  BZ77 4.11 is an intended lower input;
+- exactly the support-only terminal bound, with its own separate statement
+  and proof. That final theorem is published as
+  `segmentHeadDerivativeSupportTruncation`;
+- `core_mid` and its at-most-one-simple-factor consequence, confined to the
+  support proof's length-two base case;
+- the published adjacent-supercuspidal reducibility closure, solely for
+  reducibility of `ρ × νρ` within that base case.
 
-These rulings specify eligible foundations; they supply no mathematical
+These permissions specify eligible foundations; they supply no mathematical
 premise. All inherited mathematics is reused by published Lean name.
-No pending contribution or reused peer draft is consumed.
+No unpublished input is consumed.
 
 The full recursive inventory below is against Library
 `0bd5bf67c3464359bc8da3b3100163d6ee3da352`: 1344 project modules, including
@@ -280,14 +272,14 @@ combines published lower used-body audits, direct-interface inspection,
 recursive byte comparison and name scans; it does not claim every inherited
 file was reread line by line in this final assembly.
 
-The closure includes the authorized final support theorem and its internal
+The closure includes the permitted final support theorem and its internal
 helpers. Removing `SegmentHeadDerivativeSupportTruncationProof` from
 traversal removes `SegmentHeadSupportStep`,
 `SegmentHeadDerivativeSupportLengthTwo`,
 `TwoSupercuspidalAdjacentReducibilityProof` and
 `TwoSupercuspidalNonadjacentIrreducibilityProof` entirely. Thus these
 restricted modules enter solely through the final support proof. This
-host invokes none of their restricted intermediate results separately.
+module invokes none of their restricted intermediate results separately.
 `SegmentHeadJacquetReduction` and `TwoSupercuspidalProductStructureProof`
 are absent. Broad `TwoSupercuspidalProductStructureStatement` Prop
 interfaces in that restricted closure supply no assumed structure theorem.
@@ -301,21 +293,19 @@ tempered, segment-socle and classification data predicates likewise carry
 no proved classification premise.
 
 The mathematical dependency closure is independent of the parent
-`GenericSegmentProductUniqueness` task
-`30341ae4-65f2-4a0e-9283-763db01a409e` and its conclusion;
-multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-ordered conversion `8252833d-c269-41a9-824c-5879e531b23b`;
-tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`;
-`SquareIntegrableLanglandsClassification` and task
-`1cb45da2-7007-4351-a694-594fb148b8d1`;
-square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-and regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`.
-It uses neither Ze80 3.5/9.6 nor their proof successors, the excluded
+`GenericSegmentProductUniqueness` and its conclusion;
+multisegment exhaustion;
+ordered strong-head existence;
+quotient coverage;
+ordered conversion;
+tempered uniqueness;
+`SquareIntegrableLanglandsClassification`;
+square-integrable exhaustion;
+and regular exhaustion.
+It uses neither Ze80 3.5/9.6 nor their proofs, the excluded
 segment/head/socle and full Jacquet conclusions, nor the segment-socle
-part of task `8e5b4563-0365-41c7-b134-70f2a0b36292`. Both directions of
-this host criterion are absent as inherited inputs; this root proves both.
+derivative statements such as `SegmentSocleDerivatives`. Both directions of
+this criterion are absent as inherited inputs; this root proves both.
 
 General `Representation.Derivative` and `Representation.Mirabolic` modules
 are present and permitted. Generic matrix-subgroup modules under
@@ -325,16 +315,13 @@ below list those imports explicitly.
 
 ## Validation and scope
 
-Full-module development compilation succeeds with zero errors and warnings
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Declaration
-inspection reports a theorem with independent levels `uF,uV` and only
-`propext`, `Classical.choice` and `Quot.sound`. The Lean theorem returns the
-named target in its source. Development checks are author evidence;
-exact-target candidate validation, independent semantic review and Library
-publication remain separate admission requirements.
+Full-module development compilation succeeds with zero errors and warnings.
+Declaration inspection reports a theorem with independent levels `uF,uV`
+and only `propext`, `Classical.choice` and `Quot.sound`. The Lean theorem
+returns the named target in its source.
 
-Only this new Lean/Markdown pair is submitted. No existing statement or
-imported pair is edited. The result proves the criterion for supplied
+This Lean/Markdown pair edits no existing statement or imported pair. The
+result proves the criterion for supplied
 special heads in arbitrary finite families; it adds no exhaustion,
 uniqueness or classification assertion.
 

@@ -1,7 +1,5 @@
 # Higher direct images of flasque modules and the square vanishing condition
 
-Author: Worker 727.
-
 Module `Langlands.AlgebraicGeometry.Modules.DerivedRestrictionVanishing`,
 namespace `Langlands.AlgebraicGeometry.Modules.DerivedSections`. It proves:
 

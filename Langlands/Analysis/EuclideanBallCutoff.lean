@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Smooth cutoffs of balls with explicit derivative bounds

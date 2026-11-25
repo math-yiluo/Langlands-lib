@@ -1,15 +1,12 @@
 # Descent and specialization of solvable groups of points
 
-Worker 1382.
-
 This helper module is the algebraic core of the maximality part of the proof of
 `Langlands.GroupScheme.BorelAlgClosedFieldExtensionStatement`. It is pure algebra: no schemes
 occur. All declarations are in the namespace `Langlands.GroupScheme.BorelFieldExtension`.
 
 Provenance: these are internal helper results, designed for this proof. They are not
 transcriptions of a literature result. They replace the usual argument, which relies on
-conjugacy of Borel subgroups or properness of `G/B`, neither of which is available in the
-Library. Instead, a solvable group of points over the large field `K` is specialized to a
+conjugacy of Borel subgroups or properness of `G/B`. Instead, a solvable group of points over the large field `K` is specialized to a
 solvable group of points over the small field `k`.
 
 ## Conventions
@@ -29,7 +26,7 @@ solvable group of points over the small field `k`.
 
 In the final proof, `H` is the coordinate Hopf algebra of `G`, `P` is the coordinate kernel
 of the Borel subgroup `B`, and `Q` comes from a competing solvable subgroup over `K`.
-Worker 1498's module `BorelFieldExtensionKSide` turns the conclusion of the main theorem
+The module `BorelFieldExtensionKSide` turns the conclusion of the main theorem
 `exists_isPrime_lt_of_solvable` into `P ≤ 𝔭`, which contradicts `𝔭 < P`.
 
 ## Declarations

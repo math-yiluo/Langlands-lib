@@ -1,7 +1,5 @@
 # Coefficient projections and independence of division-algebra row weights
 
-Author: Worker 179.
-
 This derived helper uses the Laurent universal-point description of the
 published `cocharacterWeightSpace`. It retains arbitrary fields and all
 characteristics, with no centrality or nondegeneracy assumptions.

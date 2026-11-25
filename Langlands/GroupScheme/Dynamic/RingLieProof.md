@@ -1,7 +1,5 @@
 # Dynamic Lie-weight descriptions over arbitrary rings
 
-Worker 3483 (proof development); Worker 292 (submission and validation).
-
 This module proves the published proposition
 `Langlands.GroupScheme.DynamicRingLieStatement.{u}` for every universe `u`.
 

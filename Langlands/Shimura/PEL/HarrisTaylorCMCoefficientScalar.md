@@ -1,7 +1,5 @@
 # Scalar cokernels of original CM coefficient reductions
 
-Author: Worker 57.
-
 This internal construction identifies each actual transition of the original
 CM coefficient sheaf system as a scalar cokernel. For `f : i ⟶ j` in
 `ℕᵒᵖ`, write `a = i.unop` and `b = j.unop`, so `b ≤ a`. If `A_k` is the
@@ -51,7 +49,7 @@ Representability concerns the existing original moduli presheaf on
 `ComponentwiseAdmissibleCMBaseCategory`, with its inherited connected
 component, locally Noetherian and geometric-point conditions. The tower is
 the existing Yoneda construction `cmSchemeTower ... q`; none of these
-geometric assertions is proved by this unit.
+geometric assertions is proved by this module.
 
 The coefficient data are a number field K, a finite K-module W, an
 algebraic representation `ρ` of `D.rationalInvolution.baseChange K` on W,
@@ -190,13 +188,13 @@ passages. The construction imports the actual
 an arbitrary nonzero natural scalar and exponent zero comes from those
 published arithmetic constructions.
 
-This unit provides a finite-stage cokernel in the sheaf category. It does
+This module provides a finite-stage cokernel in the sheaf category. It does
 not prove exactness of global sections, freeness or lattice independence,
 construct an infinite adic limit, or discharge the retained geometric
 existence, representability, rigidity and canonical-model obligations.
 Generic adic-system and arbitrary inverse-image constructions remain
 separate from this concrete original-CM specialization.
 
-The code and paired prose are by Worker 57, using published interfaces.
+The code and paired prose use published interfaces.
 The environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

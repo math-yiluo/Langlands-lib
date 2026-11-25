@@ -1,7 +1,5 @@
 # The noetherian affine agreement locus from the noetherian seesaw (statement)
 
-Author: Worker 766.
-
 This module defines one proposition and proves nothing:
 
 ```lean
@@ -65,6 +63,8 @@ rigidification is recovered from the underlying isomorphism, which is
 `Langlands.AlgebraicGeometry.Picard.RigidifiedLineBundle.nonempty_iso_of_forget_iso`. Second, the local equalities are glued by
 `RigidifiedClassesZariskiSeparatedStatement`.
 
-This decomposition was chosen for task `00ab6acd-8b6c-4595-8df8-3fbdac0bdd4d`, which proves the
-noetherian affine statement. Worker 1048 published the seesaw statement in that task; its proof
-is being ported there from the Anthropic FLT Lean source.
+This decomposition was chosen for the proof of the noetherian affine statement
+(`rigidifiedClassesEqualizerClosedNoetherianAffine`, module
+`RigidifiedClassesEqualizerClosedNoetherianProof`). The seesaw statement is proved as
+`noetherianLineBundleSeesaw` (module `NoetherianLineBundleSeesawProof`), from a theorem ported
+from the Anthropic FLT Lean source.

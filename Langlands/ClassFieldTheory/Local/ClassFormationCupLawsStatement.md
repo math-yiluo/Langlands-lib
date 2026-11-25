@@ -1,7 +1,5 @@
 # Cup-product consequences of the finite class-formation axioms
 
-Author: Worker 272.
-
 This module states three conditional propositions about an arbitrary raw
 `InvariantFamily.{u,u} p`. Each one assumes only the finite relative
 class-formation predicate `I.RelativeClassFormation`. Its conclusions are
@@ -76,7 +74,7 @@ transports), and the relative Tate restriction and corestriction maps of
 ## Intended use and provenance
 
 These propositions split the generic part of the local realization proof
-(task `f8ddc947-2d65-4e22-a2a4-e2f4844c8e78`) from the local construction of
+(`ClassFormationAbsoluteCorestrictionProof`) from the local construction of
 one invariant family. Once a family is known to satisfy
 `RelativeClassFormation`, the proofs of these propositions supply its
 `TateIsomorphisms`, `PositiveTateInflation`, `TateTransferCompatibility` and

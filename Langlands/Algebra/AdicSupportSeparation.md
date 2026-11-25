@@ -1,6 +1,6 @@
 # Adic separation for submodules supported on a closed locus
 
-Worker 801 supplies an internal algebraic form of the last step in SGA 3,
+This module supplies an internal algebraic form of the last step in SGA 3,
 Exposé IX, Lemma 6.2 (registered source `sga3-expose-ix-gille-polo-2009`, printed
 p.54, retained PDF p.24). The source separates a finite-length ideal from a
 sufficiently deep power of the maximal ideal. The implemented argument instead

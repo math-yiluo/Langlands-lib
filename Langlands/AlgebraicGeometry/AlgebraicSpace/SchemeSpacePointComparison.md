@@ -1,7 +1,5 @@
 # Point topologies of schemes viewed as algebraic spaces
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claim that the topology on adelic points of
 algebraic spaces recovers the scheme case
 (`Langlands.Global.AdelicSpacePointTopologyStatement`). For a scheme `U` over a ring `C`, the

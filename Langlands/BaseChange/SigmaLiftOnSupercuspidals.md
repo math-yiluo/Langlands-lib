@@ -19,8 +19,8 @@ Ch : ∀ k : ℕ, SupercuspidalAutomorphicClass.{uK, uV} L k.succPNat →
 ```
 
 that sends each supercuspidal class of `GL_{k+1}(L)` to a finite multiset of supercuspidal
-classes over `M` of various positive ranks `k' + 1`. This is the type of Task 7375's
-`CyclicBaseChangeMap S` for a step with `S.base = L` and `S.top = M`. The explicit arguments
+classes over `M` of various positive ranks `k' + 1`. This is the type of
+`CyclicBaseChangeMap S` (module `Langlands.Correspondence.HenniartCyclicBaseChange`) for a step with `S.base = L` and `S.top = M`. The explicit arguments
 are, in this order, `ι`, `Ch`, `σ`.
 
 `IsSigmaLiftOnSupercuspidals ι Ch σ` holds when, for every `k : ℕ`, every supercuspidal class
@@ -38,18 +38,18 @@ are, in this order, `ι`, `Ch`, `σ`.
 such that both of the following hold.
 
 1. `IsSigmaLift σ (orderOf σ) A.obj.representation A.property.2.1 τ.representation hτ I c`.
-   This is Task 7432's σ-lift relation (Henniart–Lemaire II.2.7, Définition, printed p. 67):
+   This is the σ-lift relation of `Langlands.BaseChange.TwistedCharacter` (Henniart–Lemaire II.2.7, Définition, printed p. 67):
    `c ≠ 0`, and for all Haar measures `μF` on `GL_{k+1}(L)` and `μE` on `GL_{k+1}(M)` and
    all Schwartz–Bruhat functions `φ` on `GL_{k+1}(M)` and `f` on `GL_{k+1}(L)` that are
-   concordant (Task 7416's `AreConcordant σ (orderOf σ) μF μE φ f`), the twisted trace
+   concordant (`AreConcordant σ (orderOf σ) μF μE φ f`), the twisted trace
    `trace(τ(φ) ∘ I)` equals `c · trace A(f)`. The degree argument `l` of `IsSigmaLift` is the
    order of `σ`. The proof `A.property.2.1` is the admissibility of `A`, which is part of
    being supercuspidal (`A.property` is irreducibility together with `IsSupercuspidal`, whose
    first component is admissibility).
 2. `M.canonicalTopologicalData.IsSupercuspidalSupport τ ((Ch k π).map
    (supercuspidalSupportDatum M))`. Each entry `⟨k', Π⟩` of `Ch k π` is read as the cuspidal
-   datum of rank `k' + 1` and class `Π` by Task 7460's
-   `Langlands.Correspondence.supercuspidalSupportDatum`. The Library's relation
+   datum of rank `k' + 1` and class `Π` by
+   `Langlands.Correspondence.supercuspidalSupportDatum` (module `Langlands.Automorphic.IsobaricLocalSupport`). The Library's relation
    `IsSupercuspidalSupport` (after Zelevinsky 1980, Proposition 1.10) then says that some
    ordering `ρ_1, …, ρ_r` of this multiset has ranks adding up to `k + 1` and that, for some
    actual supercuspidal representatives of the `ρ_i`, `τ` is irreducible and is a subquotient
@@ -102,28 +102,27 @@ identities, not only about the shape of the multisets `Ch k π`.
 
 ## Provenance and intended use
 
-The definition is internal vocabulary of Task 7340 (`0407c885-1c0b-496b-a8bf-829f3c1a7038`),
-the program for the simple trace formula with its twisted form and local cyclic base change of
-prime degree. It introduces no new mathematical notion: it composes published definitions,
-namely Task 7432's `IsSigmaLift` and `SigmaIntertwiner` (Henniart–Lemaire II.2.7), the
-Library's `IsSupercuspidalSupport` (Zelevinsky 1980, 1.10) and Task 7460's
+The definition is internal vocabulary of the program for the simple trace formula with its
+twisted form and local cyclic base change of prime degree. It introduces no new mathematical
+notion: it composes published definitions, namely `IsSigmaLift` and `SigmaIntertwiner`
+(Henniart–Lemaire II.2.7), the Library's `IsSupercuspidalSupport` (Zelevinsky 1980, 1.10) and
 `supercuspidalSupportDatum`, to express what it means for a map on supercuspidal classes to be
 the local base change of Arthur–Clozel, Chapter 1, §6, on supercuspidal classes.
 
-- The E2 interface of Task 7340 is to state, for each cyclic prime step `S` of Task 7375 and its
+- The E2 interface is to state, for each cyclic prime step `S` (`CyclicPrimeStep`) and its
   canonical map `Ch_can S`, that `IsSigmaLiftOnSupercuspidals S.embedding (Ch_can S) σ` holds
   for every `σ ≠ 1` in `Gal(S.top/S.base)`. All such `σ` can be allowed because, by
   Arthur–Clozel, Chapter 1, Theorem 6.2(c) (printed p. 51, proof on printed p. 57), local
   lifting of tempered representations does not depend on the choice of the generator `σ`.
-- Task 7343's general strong-support premise (Worker 514) takes
+- The general strong-support premise `CyclicStrongBaseChangeSupportStatement` takes
   `∀ σ ≠ 1, IsSigmaLiftOnSupercuspidals S.embedding Ch σ` as its hypothesis on an arbitrary
   map `Ch`. A hypothesis at the level of character identities is needed there: the weak laws of
-  Task 7375's `IsWeakCyclicBaseChange` (sizes, Galois invariance, fibres under twists by norm
+  `IsWeakCyclicBaseChange` (sizes, Galois invariance, fibres under twists by norm
   characters) do not determine `Ch`, and a support conclusion for every map satisfying only
   those laws could be false.
 
-The predicate is stated for an arbitrary embedding `ι` rather than for Task 7375's
-`CyclicPrimeStep`, so that it does not depend on that unpublished task and can also serve other
+The predicate is stated for an arbitrary embedding `ι` rather than for
+`CyclicPrimeStep`, so that it does not depend on that structure and can also serve other
 pairs of p-adic fields. Dot notation `Ch.IsSigmaLiftOnSupercuspidals σ` is therefore not
 available; users write `IsSigmaLiftOnSupercuspidals S.embedding Ch σ`, which needs the step's
 `L`-algebra instance on `M` to be definitionally `S.embedding.toRingHom.toAlgebra`.
@@ -133,7 +132,7 @@ available; users write `IsSigmaLiftOnSupercuspidals S.embedding Ch σ`, which ne
 - Henniart–Lemaire, *Changement de base et induction automorphe pour `GL_n` en
   caractéristique non nulle* (Mém. SMF 124, 2011), Chapter II, §II.2.7, Définition, printed
   p. 67 (PDF p. 75): the σ-lift ("σ-relèvement") through concordant functions, reused here
-  through Task 7432's `IsSigmaLift`; §II.2.1, printed p. 61 (PDF p. 69): the generator `σ` of
+  through `IsSigmaLift`; §II.2.1, printed p. 61 (PDF p. 69): the generator `σ` of
   the cyclic group `Σ` of order `d`.
 - Zelevinsky, *Induced representations of reductive p-adic groups II. On irreducible
   representations of GL(n)* (Ann. Sci. ENS 1980), §1.10, Proposition, printed p. 174 (PDF

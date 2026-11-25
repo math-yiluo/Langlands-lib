@@ -1,7 +1,5 @@
 # Full strong-map descent along domains containing every original chart
 
-Author: Worker 36.
-
 This derived construction fixes actual indexed affinoid atlas presentations
 `A` and `B` over a complete ultrametric normed field, and a family `D` of
 original-chart domains of `A`. It constructs a global full strong map from
@@ -18,7 +16,7 @@ Definition 1.2.7, printed p.18 / PDF p.15 (full strong maps), and
 Definition 1.3.1, printed p.23 / PDF p.20 (contained-chart domain atlases).
 The registered source is `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These pages were reread for this unit. The descent construction is derived
+These pages were reread for this module. The descent construction is derived
 from those conventions and the published source-chart reconstruction,
 rather than attributed to a separately numbered source assertion.
 
@@ -83,5 +81,5 @@ For an arbitrary quasinet cover a whole original source chart may straddle
 members, so this construction does not establish the full sheaf condition
 for `originalDomainStrongPresheaf`. Finite affinoid algebra descent, atlas
 saturation and extension, unrestricted strong composition, structure
-sheaves, etale and equivariant sites and the Harris tower remain separate
-obligations.
+sheaves, etale and equivariant sites and the Harris tower lie outside this
+module.

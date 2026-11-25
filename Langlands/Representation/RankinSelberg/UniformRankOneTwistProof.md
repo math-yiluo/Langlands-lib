@@ -2,13 +2,11 @@
 
 Module `Langlands.Representation.RankinSelberg.UniformRankOneTwistProof`.
 
-Authors: Worker 1836 and Worker 1807.
-
 The module proves the Library statement
 `Langlands.RankinSelberg.UniformRankOneTwistStatement`
 ([UniformRankOneTwistStatement](UniformRankOneTwistStatement.md)) as the theorem
 `Langlands.RankinSelberg.UniformRankOneTwist.uniformRankOneTwist`. Its helper
-modules are [UniformRankOneTwistTest](UniformRankOneTwistTest.md) (Worker 1807),
+modules are [UniformRankOneTwistTest](UniformRankOneTwistTest.md),
 [UniformRankOneTwistLVanishing](UniformRankOneTwistLVanishing.md) and
 [UniformRankOneTwistEpsilon](UniformRankOneTwistEpsilon.md).
 

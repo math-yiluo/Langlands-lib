@@ -12,11 +12,12 @@ the global-input instantiations below are intentional.
 Four unproved implications: the prime-orbit and singleton branches of the
 induction for Harris 1998, Proposition 4.8, when the auxiliary character
 satisfies condition (4.12) instead of general position, and their totally
-complex (TC) forms. **None of them is proved here.** Each is its published
+complex (TC) forms. **None of them is proved here.** Each is its general-position
 counterpart (`Proposition48PrimeBranchStatement`,
 `Proposition48SingletonBranchStatement`, and the TC forms in
 `HarrisProposition48ReductionTCStatement`) with exactly the changes listed
-below. All other premises, binders, conjuncts and universes are as published.
+below. All other premises, binders, conjuncts and universes are as in those
+counterparts.
 
 ## Common changes to all four
 
@@ -29,7 +30,7 @@ below. All other premises, binders, conjuncts and universes are as published.
   induced from `R.ξ`.
 - The conclusion `Q.HasSolution.{uF, uV}` becomes
   `Q.HasParameterSolution.{uF, uV}`, which adds the induced complex-place
-  parameters of `Q` to the four published properties.
+  parameters of `Q` to the four properties of `Q.HasSolution`.
 - Two premises are added at the end of the named global inputs:
   `RestrictedCyclicWeakBaseChangeComplexPlaceStatement.{0, 0, uV, uV}`
   (restricted B7, for complex-place parameters across a prime cyclic step with
@@ -86,7 +87,7 @@ The full named-premise order and universes are:
 7. `RestrictedCyclicWeakBaseChangeComplexPlaceStatement.{0, 0, uV, uV}`;
 8. `CuspidalComplexParameterBridgeTCStatement.{0}`.
 
-In the published branch, A2 and general position serve to show that the
+In the general-position branch, A2 and general position serve to show that the
 Mackey constituents of different double cosets have different supercuspidal
 components above the auxiliary place. Under (4.12) this distinctness is the
 separate statement `Proposition48ExactStabilizerDistinctnessStatement`, which
@@ -99,7 +100,7 @@ components along base-change chains is needed.
 
 Further change: the premise
 `CyclicWeakBaseChangeSupercuspidalStatement.{0, 0, uV, uV}` (B5) is added after
-`CyclicStableDescentStatement.{0, 0, uV, uV}`. None of the published premises
+`CyclicStableDescentStatement.{0, 0, uV, uV}`. None of the general-position premises
 says anything at the auxiliary place, and the conclusion does: the selected
 descent must be supercuspidal at `Q.Ps.v`. B5 gives this from the
 supercuspidal component of its base change, the child's constituent. This is
@@ -133,7 +134,7 @@ positions and universe instantiations:
 | `CyclicStableDescentStatement.{0, 0, uV, uV}` (singleton) | `CyclicStableDescentTCStatement.{0, 0, uV, uV}` |
 | `CyclicWeakBaseChangeSupercuspidalStatement.{0, 0, uV, uV}` (singleton) | `CyclicWeakBaseChangeSupercuspidalTCStatement.{0, 0, uV, uV}` |
 
-Compared directly with the published `Proposition48PrimeBranchTCStatement`
+Compared directly with `Proposition48PrimeBranchTCStatement`
 and `Proposition48SingletonBranchTCStatement` in
 `HarrisProposition48ReductionTCStatement`, the common changes and the
 respective prime or singleton changes listed above are the complete changes.
@@ -143,12 +144,12 @@ exact-stabilizer forms.
 
 ## Why the branches should hold (proof obligations)
 
-This is a sketch for the proof tasks, not a proof.
+This is a sketch of a proof, not a proof.
 
 *Prime branch.* For each `a`, the child supplies an untwisted constituent
 `S_a` over `R.E ≅ D`: a weak induction of the Mackey character, conjugate
 self-dual, supercuspidal at the child's auxiliary place, with the parameters
-induced from the Mackey character. As in the published branch, transport
+induced from the Mackey character. As in the general-position branch, transport
 `S_a` to `D` and use rigidity and isobaric invariance to identify its
 Galois translates with the classes indexed by the translates of its Mackey
 class. The transitive action on the `[D : E]` Mackey classes has trivial
@@ -157,7 +158,7 @@ constituents, giving the trivial stabilizer required by restricted B7(2).
 Arthur–Clozel induction (B2, B3)
 gives a cuspidal class `Π` over `E` inducing one constituent, B4 gives its
 supercuspidal component at `Q.Ps.v`, and Mackey's formula gives weak induction
-of `ξ`; conjugate self-duality is as in the published branch. Restricted B7(2)
+of `ξ`; conjugate self-duality is as in the general-position branch. Restricted B7(2)
 applied to `S_a` and `Π` gives the parameters of `Π` at a complex place `v` as
 the Langlands sum of those of `S_a` at the places of `D` above `v`; Mackey's
 formula for the induced parameters (a `List.Perm` identity) turns this into
@@ -174,7 +175,7 @@ parameters from `R.E` to `D`; and the permutation identities.
 
 *Singleton branch.* There is one Mackey class, so the child's constituent `S`
 over `D` is Galois stable by invariance, and B1 gives its cyclic descents to
-`E`. The published branch selects the descent that weakly induces `ξ`. B5
+`E`. The general-position branch selects the descent that weakly induces `ξ`. B5
 gives its supercuspidal component at `Q.Ps.v`. Restricted B7(1) relates the
 parameters of the descent at `v` to those of `S` at a place `w` of `D` above
 `v`. The singleton parameter identity must identify the list at `w` with
@@ -195,13 +196,11 @@ Design: the operator's plan note, source
 Section 2.2 (B5–B7, TeX lines 196–199) and Section 4.8 (Remark 4.2, lines
 859–894; the prime branch, line 908; the singleton branch, line 909; B7,
 line 911). The restriction of B7 to supercuspidal components at a conjugate
-pair and the parameter-carrying solutions are the operator's later decision
+pair and the parameter-carrying solutions are a later design decision
 for these branches (option R2), which replaces the use of canonical B7 on the
 members of base-change chains.
 
-The precise decision is the
-[operator's R2 ruling](/home/taskhub/pilot/correspondence/a79e2e832569567a8582b3c994f2fc1b.md),
-answer to request `c292736a05f55d4fba67d1a01b7fb2e2`. Restricted B7 has no
+Restricted B7 has no
 algebraicity hypothesis on either class: its later applications must establish
 unitarity and supercuspidality at the auxiliary conjugate pair, then use the
 children's parameters and the bridge for regular algebraicity. In particular,
@@ -211,5 +210,5 @@ archimedean transport and an endpoint lemma beyond rank one are not premises.
 
 The parameter predicates, distinctness and these parameter-carrying branches
 are internal interfaces of R2, not statements of Harris. These are unproved
-restatements of the published branch interfaces; all proof obligations in
-the sketches remain obligations. No published declaration is changed.
+restatements of the general-position branch interfaces; all proof obligations in
+the sketches remain obligations. No existing declaration is changed.

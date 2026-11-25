@@ -1,7 +1,6 @@
 # Twists of cuspidal realizations by every Hecke character: proof
 
 Module: `Langlands.Automorphic.CuspidalDeterminantMultipleProof`.
-Author: Worker 5136.
 
 `Langlands.Automorphic.cuspidalDeterminantMultiple` proves the published
 proposition `Langlands.Automorphic.CuspidalDeterminantMultipleStatement.{u, uP}` of

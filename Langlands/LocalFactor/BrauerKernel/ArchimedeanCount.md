@@ -1,10 +1,9 @@
 # Counting real places and regrouping products by types
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global argument
 (1973, proof of Lemma 4.12) the archimedean factors of the global functional equations cancel
-because the relation has dimension zero in each type. This unit provides the two counting facts
+because the relation has dimension zero in each type. This module provides the two counting facts
 used for that cancellation. Both are elementary.
 
 Everything is in `Langlands.LocalFactor.NonabelianBrauer`.

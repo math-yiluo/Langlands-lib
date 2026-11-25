@@ -1,7 +1,5 @@
 # Proof: purely inseparable extensions do not change groups of multiplicative type
 
-Worker 5163.
-
 This module proves
 
 ```lean
@@ -9,7 +7,7 @@ theorem Langlands.GroupScheme.multiplicativeTypePurelyInseparable :
     MultiplicativeTypePurelyInseparableStatement.{u}
 ```
 
-where `MultiplicativeTypePurelyInseparableStatement` is the unchanged Library statement in
+where `MultiplicativeTypePurelyInseparableStatement` is the Library statement in
 [`Torus.MultiplicativeTypePurelyInseparableStatement`](MultiplicativeTypePurelyInseparableStatement.md).
 That statement formalizes Milne, *Algebraic Groups* (2017), Corollary 12.20 (p.238) and
 Corollary 12.25 (p.240); its Markdown records the correspondence with the source. The proof adds
@@ -51,8 +49,9 @@ inside the auxiliary namespace. These options only affect elaboration; they add 
 
 Milne proves Corollary 12.25 by taking Galois invariants over a finite Galois extension that
 splits both groups, and deduces Corollary 12.20 from Exercise 11-1. That route would need the
-Galois full faithfulness `MultiplicativeTypeGaloisFullFaithfulnessStatement`, which is not proved
-in the Library. The Lean proof takes a different route:
+Galois full faithfulness `MultiplicativeTypeGaloisFullFaithfulnessStatement` (proved in the
+Library as `multiplicativeTypeGaloisFullFaithfulness`, which this module does not import). The
+Lean proof takes a different route:
 
 1. **Part 2 by fpqc descent.** `p = Spec k' → Spec k` is fpqc. So a homomorphism
    `f : G_{k'} ⟶ H_{k'}` descends uniquely once it is compatible with the canonical descent data

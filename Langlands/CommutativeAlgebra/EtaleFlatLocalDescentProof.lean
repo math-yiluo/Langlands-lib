@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.EtaleLocalizedBaseChangeDescentStatement
 
 /-! # Local flatness and local etaleness -/

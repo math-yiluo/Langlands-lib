@@ -1,8 +1,6 @@
 # Rectangular Haar measure under JPSS character change
 
-Author: Worker 99.
-
-This internal statement unit connects the existing JPSS inverse row scaling to
+This internal module connects the existing JPSS inverse row scaling to
 the residue-normalized rectangular Haar law. It defines propositions; it does
 not prove either change-of-measure identity.
 
@@ -86,12 +84,14 @@ not additional assumptions or claims of a Haar scaling proof.
 The conclusion uses exactly the predicate consumed by
 `integral_characterChangeRectangular` and the unequal-rank integral,
 convergence, rational-continuation and Laurent-span transport interfaces.
-Those interfaces remain conditional until a proof supplies this conclusion
-and any other hypotheses they require, including their separate quotient law.
+Those interfaces are conditional on this conclusion and on any other
+hypotheses they require, including their separate quotient law;
+`RectangularCharacterChangeMeasureProof` proves this conclusion.
 
 `Langlands.RankinSelberg.CharacterChangeRectangularMeasureStatement` is the
 conjunction of the two named propositions, in general-then-product order. It
-provides one exact target for a subsequent proof.
+provides one exact target; `characterChangeRectangularMeasureStatement` in
+`RectangularCharacterChangeMeasureProof` proves it.
 
 ## Exponent and boundary cases
 
@@ -115,7 +115,7 @@ At `n=0` there is one column, and the same row formula and exponent apply.
 
 ## Internal provenance and later proof
 
-This unit transcribes no new literature theorem. Its objects and normalization
+This module transcribes no new literature theorem. Its objects and normalization
 are those already published in `CharacterChangeBlocks`,
 `UnequalRankCharacterTransport`, `UnequalRankCharacterIntegrals`, `Measures`,
 `HarmonicAnalysis.Basic`, and `AnalyticStatement`. The only additional import,
@@ -139,13 +139,14 @@ Jacobian reverses the negative exponent in the row dilation. It is not the
 volume factor of the row dilation itself.
 
 The general determinant theorem is already proved in the separately published
-`HarmonicAnalysis.PadicRectangularHaarScalingProof`. A future focused proof
-must apply it to the actual diagonal, establish the determinant and modulus
-identities in Lean, and specialize to the actual product measure using the
-intrinsic instances above. This explanation records the internal derivation;
-this statement file performs none of those Haar-law proof steps. Neither
-publication of these propositions nor creation of that proof task establishes
-the JPSS character-change Haar identity.
+`HarmonicAnalysis.PadicRectangularHaarScalingProof`. The proof in
+`RectangularCharacterChangeMeasureProof` applies it to the actual diagonal,
+establishes the determinant and modulus identities in Lean, and specializes to
+the actual product measure using the intrinsic instances above. This
+explanation records the internal derivation; this statement file performs
+none of those Haar-law proof steps. Stating these propositions does not
+establish the JPSS character-change Haar identity;
+`RectangularCharacterChangeMeasureProof` does.
 
 ## All-field port
 

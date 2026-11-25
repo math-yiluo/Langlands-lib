@@ -33,5 +33,5 @@ cocharacter all ambient rational characters therefore evaluate to one. Over
 a nonarchimedean local field, its image in the ambient rational points lies
 in `Plancherel.rationalCommonNormKernel`.
 
-This unit constructs neither an escaping sequence nor an Iwahori basis. Those
+This module constructs neither an escaping sequence nor an Iwahori basis. Those
 are subsequent geometric obligations, as is the class-uniform support bound.

@@ -1,4 +1,4 @@
-import Langlands.TauCeti.Algebra.AlgebraicGroup.MultiplicativeGroup.WeilRestriction
+import Langlands.RingTheory.WeilRestriction.Units
 import Langlands.GroupScheme.CorepresentedPoints
 import Langlands.GroupScheme.Torus.Split
 import Mathlib.AlgebraicGeometry.Morphisms.Smooth
@@ -6,7 +6,7 @@ import Mathlib.AlgebraicGeometry.Morphisms.Smooth
 /-! # The Weil restriction `Res_{B/A} 𝔾ₘ` as a host group scheme
 
 For a commutative `A`-algebra `B` that is finite projective as an `A`-module, this module builds
-`Res_{B/A} 𝔾ₘ` as a group scheme over `Spec A` from TauCeti's corepresentation of
+`Res_{B/A} 𝔾ₘ` as a group scheme over `Spec A` from the corepresentation of
 `T ↦ (B ⊗[A] T)ˣ` by `WeilRestriction A B B[T;T⁻¹]`. It identifies its points over every test
 scheme naturally with `(B ⊗[A] Γ(T))ˣ`, proves smoothness, and transports it along
 `A`-algebra isomorphisms `B ≃ₐ[A] B'`. -/
@@ -21,7 +21,7 @@ open scoped TensorProduct LaurentPolynomial
 
 namespace Langlands.GroupScheme.WeilGm
 
-open TauCeti.Algebra
+open Langlands.Algebra
 
 variable (A : CommRingCat.{u}) (B : Type u) [CommRing B] [Algebra A B]
   [Module.Finite A B] [Module.Projective A B]
@@ -42,7 +42,7 @@ def functor : CommAlgCat.{u} A ⥤ GrpCat.{u} where
 abbrev coordinateAlgebra : CommAlgCat.{u} A :=
   CommAlgCat.of A (WeilRestriction A B B[T;T⁻¹])
 
-/-- TauCeti's `multiplicativeGroupPoints` as a corepresentation of `functor A B`. -/
+/-- The equivalence `multiplicativeGroupPoints` as a corepresentation of `functor A B`. -/
 def corepresentableBy :
     (functor A B ⋙ forget GrpCat).CorepresentableBy (coordinateAlgebra A B) where
   homEquiv :=
@@ -80,7 +80,7 @@ theorem pointsEquiv_naturality {T T' : Over (Spec A)} (a : T' ⟶ T)
         B ⊗[A] _ →* B ⊗[A] _) (pointsEquiv A B T x) :=
   GroupScheme.Corepresented.pointsEquiv_naturality (functor A B) (corepresentableBy A B) a x
 
-/-- TauCeti's `instSmooth` gives smoothness of the host group scheme. -/
+/-- The Weil restriction's `instSmooth` gives smoothness of the host group scheme. -/
 theorem smooth : Smooth (groupScheme A B).X.hom := by
   change Smooth (Spec.map (CommRingCat.ofHom (algebraMap A (WeilRestriction A B B[T;T⁻¹]))))
   rw [HasRingHomProperty.Spec_iff (P := @Smooth)]

@@ -1,6 +1,8 @@
 # Actual coordinate split data under arbitrary scalar extension
 
-This internal unit supports the unchanged étale-local splitting target.
+This internal module supports the unchanged étale-local splitting target
+`EtaleLocalSplitReductiveStatement` (proved by `etaleLocalSplitReductive` in
+`Langlands.GroupScheme.Reductive.EtaleLocalSplitProof`).
 It derives scalar-extension comparisons from the previously implemented
 coordinate pullback coherence and actual ambient-isomorphism transport.
 

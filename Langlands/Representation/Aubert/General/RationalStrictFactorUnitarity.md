@@ -1,6 +1,6 @@
 # Strict exponents and asymmetric actual associated Jacquet factors
 
-This derived supporting unit composes the published strict-exponent tests for the
+This module composes the published strict-exponent tests for the
 actual induction subspace and quotient with the coefficient-integral positive
 form and the conditional unitary associated-support comparison. It retains the
 exact strict-Jacquet square-integrability statement, the exact opposite Haar

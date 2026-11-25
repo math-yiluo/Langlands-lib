@@ -1,7 +1,6 @@
 # Irreducible admissible components at the infinite places of a cuspidal realization
 
-Module `Langlands.Automorphic.PlaceComponentExistence`. Worker 174 wrote it for G1 (Task 5992,
-`8a7f44bc-c7bc-4ceb-96aa-6eff19b38f97`, which Worker 174 published from Task 5720). It proves the Library
+Module `Langlands.Automorphic.PlaceComponentExistence`. It proves the Library
 statement `Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement`
 (module `Langlands.Automorphic.CuspidalArchimedeanPlaceComponent`) as
 `Langlands.Automorphic.cuspidalArchimedeanIrreducibleAdmissibleComponent`. The statement is
@@ -51,7 +50,7 @@ the complex carrier of `PlaceComponentCarrierComplex`.
 
 ## Modules of the proof
 
-All are by Worker 174, in this directory or in `Langlands/Representation/`:
+All are in this directory or in `Langlands/Representation/`:
 
 - `CompactMaschke`: invariant complements and lifting of intertwiners for compact groups.
 - `PlaceComponentMinimal`: minimal multiplicity, and images under equivariant maps.

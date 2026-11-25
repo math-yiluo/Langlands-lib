@@ -1,7 +1,5 @@
 # Field-point image lifting along quasi-étale morphisms
 
-Author: Worker 1004.
-
 `localizedQuasiEtaleFieldPointImageLift` proves exactly
 `LocalizedQuasiEtaleFieldPointImageLiftStatement.{u, v, uL} K L`. Here
 `K : Type u` is complete and ultrametric, and `L : Type uL` is complete,

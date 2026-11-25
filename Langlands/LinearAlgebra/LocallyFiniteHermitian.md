@@ -1,6 +1,6 @@
 # Symmetrizing a pairing with locally finite asymmetry
 
-Author: Worker 143. Module `Langlands.LinearAlgebra.LocallyFiniteHermitian`, namespace `Langlands.LinearAlgebra`.
+Module `Langlands.LinearAlgebra.LocallyFiniteHermitian`, namespace `Langlands.LinearAlgebra`.
 
 This is derived internal linear algebra supporting the first assertion of Renard IV.2.1, Remark 1. It supplies the symmetrization that is needed after identifying a representation with its hermitian contragredient. The exact source target is documented in `Langlands/Representation/Unitary/HermitianRepresentationStatements.md`. The argument below is an implementation proof, rather than a claim that the source spells out these steps.
 

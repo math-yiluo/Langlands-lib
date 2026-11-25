@@ -2,9 +2,9 @@ import Langlands.Global.Arithmetic.AuxiliaryPrimes
 import Langlands.Global.Arithmetic.IdeleSUnits
 import Langlands.Global.Arithmetic.KummerNormLift
 import Langlands.Global.AdelicFunctoriality.IdeleClassCyclotomicSecondInequalityStatement
-import Langlands.ClassField.Global.CyclicIdeleClassHerbrandQuotientStatement
-import Langlands.ClassField.Global.CyclicH2NormIndexComparisonProof
-import Langlands.ClassField.Global.IdeleClassNormGaloisProductProof
+import Langlands.ClassFieldTheory.Global.CyclicIdeleClassHerbrandQuotientStatement
+import Langlands.ClassFieldTheory.Global.CyclicH2NormIndexComparisonProof
+import Langlands.ClassFieldTheory.Global.IdeleClassNormGaloisProductProof
 import Mathlib.FieldTheory.KummerExtension
 
 /-! # The second inequality for Kummer extensions of prime degree -/
@@ -12,7 +12,7 @@ import Mathlib.FieldTheory.KummerExtension
 namespace Langlands.Global.Arithmetic.KummerSecondInequality
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Polynomial
-open Langlands.ClassField.Global Langlands.Global.AdelicFunctoriality
+open Langlands.ClassFieldTheory.Global Langlands.Global.AdelicFunctoriality
   Langlands.Global.Arithmetic.SUnitIndex Langlands.Global.Arithmetic.KummerRadical
   Langlands.Global.Arithmetic.IdeleSUnits Langlands.Global.Arithmetic.AuxiliaryPrimes
   Langlands.Global.Arithmetic.KummerNormLift

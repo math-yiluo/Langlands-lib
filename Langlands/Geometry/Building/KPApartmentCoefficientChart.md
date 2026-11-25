@@ -1,7 +1,5 @@
 # Coefficient charts on a KP apartment
 
-Author: Worker 47 (Task 6502).
-
 This module supplies the generic part of a coefficient action on the reduced building
 `ApartmentQuotient D.sharpFixerFamily` of a Kaletha–Prasad apartment datum
 `D : KPApartmentData i ω`. Here `i : S → G` is a monomorphism from a commutative group scheme
@@ -15,7 +13,7 @@ reduced building.
 Nothing here is specific to Galois groups or to unramified extensions. The intended use takes
 `k = K`, a maximal unramified extension of a local field `F`, with `θ_σ` the conjugation
 action of `σ ∈ Aut(K/F)` on `G(K)` and `s_σ = σ⁻¹` on `Kˣ`. Constructing the charts for that
-case is separate work.
+case is not part of this module.
 
 ## Torus points (`section TorusPoints`)
 

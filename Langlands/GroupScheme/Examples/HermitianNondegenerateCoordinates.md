@@ -1,13 +1,12 @@
 # Orthogonal bases and hyperbolic coordinates for nondegenerate Hermitian spaces
 
-Author: Worker 166.
-
 This module gives linear coordinates for nondegenerate Hermitian spaces over a
 separable quadratic extension `L/K`. It covers any characteristic and makes no
 hypothesis on the base field. The fields `K` and `L` share one arbitrary universe,
 and the vector space `V` may lie in a different universe. The module also provides a
 dictionary between Hermitian matrices on `Index ι` and their pairings on column
-vectors. It is linear algebra for Task 5973 and does not prove
+vectors. It is linear algebra for the result that simply connected anisotropic
+groups of type `A_n` over local fields are inner forms, and does not prove
 `LocalAnisotropicTypeAInnerStatement` or any classification statement.
 
 ## Conventions

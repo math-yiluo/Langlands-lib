@@ -836,7 +836,7 @@ theorem exists_derivative_isLabel (hstep : HighestDerivativeLabelStep.{uF, uV} F
   exact ⟨_, sum_rank_pos F T d hm, hk, GeneralLinear.irreducibleIsoClass _ F.Carrier π' hπ',
     ⟨π', hπ', rfl, d', hd'm, hd'⟩, coeff_gradedDerivative_pos F T ψ m _ hk A hA π' hπ' hsub⟩
 
-/-- The highest-derivative step holds: it is Worker 237's
+/-- The highest-derivative step holds: it is
 `ZelevinskyHighestDerivative.exists_label_subquotient` applied to the homogeneity of
 precedence-ordered products of segment socles (Ze80 Theorem 6.2). -/
 theorem highestDerivativeLabelStep : HighestDerivativeLabelStep.{uF, uV} F T ψ :=

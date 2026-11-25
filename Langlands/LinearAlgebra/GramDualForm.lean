@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # The form dual to a weighted Gram matrix of a pairing
 

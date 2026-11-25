@@ -26,7 +26,7 @@ theorem exists_segmentSocleEmbedding {n : ℕ}
     exact ⟨.empty, SegmentProductDatum.empty_hasSegmentSocles, hπ, j, hj⟩
   · obtain ⟨_, ρ, hρ⟩ :=
       Langlands.glSupercuspidalEmbedding.{max uF uV, uF} p F T n hn π hπ
-    exact IsCuspidalSubrepresentation.exists_segmentSocleProduct T hρ
+    exact IsCuspidalSubrepresentation.exists_segmentSocleProduct.{uF, uV} T hρ
 
 /-- Choose actual segment-socle product data carrying the given irreducible
 embedding. The existence theorem supplies every representation-theoretic input. -/

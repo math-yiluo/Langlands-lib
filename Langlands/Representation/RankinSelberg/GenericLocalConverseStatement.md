@@ -1,6 +1,6 @@
 # Henniart's local converse theorems for gamma factors of pairs
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 Henniart's Theorem 1.1 and the referee's Remark after it, from Henniart,
 *Caractérisation de la correspondance de Langlands locale par les facteurs ε
 de paires*, Invent. Math. 113 (1993), printed page 340. The gamma factors are
@@ -113,7 +113,7 @@ hypothesis on the gamma factors.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with no errors
 or warnings. `GammaLocalConverseStatement` was inspected: it returns `Prop`, has
 universe parameters `uF uV uW`, and uses only `propext`, `Classical.choice` and
 `Quot.sound`. There is no `sorry` and no new axiom.

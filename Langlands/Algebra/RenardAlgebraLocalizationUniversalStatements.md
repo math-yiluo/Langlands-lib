@@ -1,14 +1,5 @@
 # B-linear universal property of the localized algebra action
 
-Authors: Worker 926 and Worker 709, for task
-`43950ba3-b202-4a68-94f2-885fbcd81582`, revision 2. Worker 709 wrote an
-earlier private statement design. This unit reuses its module name,
-declaration names, explicit binder layout, field interface and aggregate
-conjunction. Worker 926 reread the source passages and changed the operator
-condition to the pointwise form the task requires. Worker 926 also made the
-field statement use the published field constructor, ran the checks and wrote
-this Markdown.
-
 The module `Langlands/Algebra/RenardAlgebraLocalizationUniversalStatements.lean`
 contains three Prop-valued definitions in namespace
 `Langlands.Renard.AlgebraActionLocalization`. They state the B-linear
@@ -25,7 +16,7 @@ SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Printed body page = PDF page minus 6.
 
-Worker 926 reread these passages for this unit:
+These passages were reread for this module:
 
 - A.III.1, printed p. 251 / PDF p. 257: the definition of a solution `(X, i)`
   of the right universal problem posed by a functor F and an object Y. For
@@ -45,14 +36,14 @@ Worker 926 reread these passages for this unit:
   assumed unital unless stated. Modules over a unital ring are not assumed
   unital.
 
-This unit states the universal-property part of that final sentence. The
+This module states the universal-property part of that final sentence. The
 same B-module version is formed from B-modules, B-module endomorphisms and
 B-module maps intertwining the endomorphisms. The final sentence adds no unit,
 commutativity or nondegeneracy hypothesis on B or on its modules.
 
 The registered supplementary source `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-was checked by Worker 926 on PDF pp. 15 and 17–19 for the published
+was checked on PDF pp. 15 and 17–19 for the published
 construction. No correction to A.III.1 example 5 was found. This is a limited
 reading of the errata of an older edition; the 2026 original governs.
 
@@ -88,11 +79,11 @@ quoted from the book.
   `g : LinearIntertwiner (localizedAction a ρ ha) σ` together with the
   pointwise equation `∀ z, g (localizedEnd a z) = c (g z)`. The equation
   `f = f̃ ∘ ι` is `g.comp (iotaIntertwiner a ρ ha) = f`. By intertwiner
-  extensionality, the pointwise equation is equivalent to Worker 709's bundled
+  extensionality, the pointwise equation is equivalent to the bundled
   form `g.comp (localizedEndIntertwiner a ρ ha) = c.comp g`. The evaluated form
-  of the second equation is `∀ v, g (iota a v) = f v`. Worker 926 checked
-  both equivalences in a private development file; they are not declarations
-  of this unit.
+  of the second equation is `∀ v, g (iota a v) = f v`. Both equivalences
+  were checked in a separate development file; they are not declarations
+  of this module.
 - **Coefficients and universes.** The general statement allows a commutative
   ring k. The field statement is the source-facing case. Universes are
   independent: `k : Type u`, `B : Type v`, `V : Type w`, `W : Type x`. The
@@ -139,7 +130,7 @@ operator c is assumed invertible.
 No hypothesis says that the published scalar-linear factor
 `Langlands.Renard.EndomorphismLocalization.factor` is B-linear. No hypothesis
 supplies a factorization or the B-linearity of the inverse of c. These belong
-to the later proof.
+to the proof, in `RenardAlgebraLocalizationUniversalProof`.
 
 ## Statement declarations
 
@@ -164,39 +155,36 @@ source-facing constructor. The composite with `iotaIntertwiner a ρ ha`
 type-checks because `fieldLocalizedAction a ρ ha` is by definition
 `localizedAction a ρ ha`; the published `fieldLocalizedAction_eq` proves this
 by `rfl`. The field statement follows from the general one by instantiation;
-a private development check confirmed this. It is a source-facing
+a separate development check confirmed this. It is a source-facing
 specialization, not an additional source result.
 
 `UniversalPropertyStatements` is the conjunction
 `UniversalPropertyStatement.{u, v, w, x} ∧ FieldUniversalPropertyStatement.{u, v, w, x}`
-with all four universe parameters. The later exact-target proof task should
-prove this aggregate.
+with all four universe parameters. This aggregate is proved by
+`Langlands.Renard.AlgebraActionLocalization.universalPropertyStatements` in
+`RenardAlgebraLocalizationUniversalProof`.
 
-## Reuse, checks and remaining obligations
+## Reuse, checks and scope
 
 The module imports the published
 `Langlands.Algebra.RenardAlgebraActionLocalization` by Lean name. That module
-was implemented by Workers 709 and 926 and imports the scalar-linear
+imports the scalar-linear
 localization `Langlands.Algebra.RenardEndomorphismLocalization` and the
-compatible-action API `Langlands.Algebra.CompatibleNonUnitalAction`, both
-implemented by Worker 751. Their full attribution, including Worker 709's
-contributions, is recorded in their paired Markdown. This module
+compatible-action API `Langlands.Algebra.CompatibleNonUnitalAction`. This module
 copies no implementation bodies and introduces no axioms.
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` the module compiled with
+In the Lean environment used for checking, the module compiled with
 no errors or warnings. Inspection of `UniversalPropertyStatements` reported
 `statement_returns_prop: true`, independent universe parameters u, v, w and x,
-and only the axioms `propext`, `Classical.choice` and `Quot.sound`. These
-checks are development evidence, not semantic acceptance.
+and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-A private draft proof by Worker 926 also compiled in that environment, using
-only those three axioms; it was not submitted. Its route takes the published
+The proof in `RenardAlgebraLocalizationUniversalProof` takes the published
 scalar factor of f through the invertible c. It then applies `factor_unique`
 to both `g₀ ∘ localizedAction a ρ ha b` and `σ b ∘ g₀` to get B-linearity, and
 uses `factor_unique` again for uniqueness. This module neither contains nor
-depends on that proof; the proof is the obligation of a separate task.
+depends on that proof.
 
 Kernel and quotient descriptions, the converse characterization, the
 surjective-canonical-map corollary, categorical packaging, localization
-exactness and the finite-localization proposition of C.II remain separate
-obligations. This unit makes no whole-book coverage claim.
+exactness and the finite-localization proposition of C.II are separate from
+this module. This module makes no whole-book coverage claim.

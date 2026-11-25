@@ -48,27 +48,27 @@ def PicardHilbertPiecesRepresentabilityStatement : Prop :=
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules),
     IsProper f → Flat f → GeometricallyIntegral f →
     (∃ ε : Spec (CommRingCat.of A) ⟶ X, ε ≫ f = 𝟙 _) →
-    Scheme.Modules.IsInvertible 𝓛X → Scheme.Modules.ClosedImmersionBySections 𝓛X f →
+    Scheme.Modules.IsInvertibleFLT 𝓛X → Scheme.Modules.ClosedImmersionBySections 𝓛X f →
     ∀ (κ : Type) (θ : κ → ℕ → Polynomial ℚ)
       (U : ∀ (T : Scheme.{u}) (s : T ⟶ Spec (CommRingCat.of A)),
         (pullback f s).Modules → κ → ℕ → T.Opens),
       -- invariance under twisting by invertible modules from the base
       (∀ (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of A))
           (L L' : (pullback f s).Modules) (N : T.Modules),
-          Scheme.Modules.IsInvertible L → Scheme.Modules.IsInvertible L' →
-          Scheme.Modules.IsInvertible N →
+          Scheme.Modules.IsInvertibleFLT L → Scheme.Modules.IsInvertibleFLT L' →
+          Scheme.Modules.IsInvertibleFLT N →
           Nonempty (L ≅ L' ⊗ (Scheme.Modules.pullback (pullback.snd f s)).obj N) →
           ∀ (c : κ) (m : ℕ), U T s L c m = U T s L' c m) →
       -- base change
       (∀ (T T' : Scheme.{u}) [IsLocallyNoetherian T] [IsLocallyNoetherian T']
           (s : T ⟶ Spec (CommRingCat.of A)) (h : T' ⟶ T) (L : (pullback f s).Modules),
-          Scheme.Modules.IsInvertible L → ∀ (c : κ) (m : ℕ),
+          Scheme.Modules.IsInvertibleFLT L → ∀ (c : κ) (m : ℕ),
             U T' (h ≫ s) ((Scheme.Modules.pullback
                 (pullback.map f (h ≫ s) f s (𝟙 X) h (𝟙 _) (by simp) (by simp))).obj L) c m =
               h ⁻¹ᵁ U T s L c m) →
       -- fibrewise cohomology of `L(m)` on a whole piece
       (∀ (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of A))
-          (L : (pullback f s).Modules), Scheme.Modules.IsInvertible L →
+          (L : (pullback f s).Modules), Scheme.Modules.IsInvertibleFLT L →
           ∀ (c : κ) (m : ℕ), U T s L c m = ⊤ → ∀ t : T,
             IsZero ((relativeCohomology
                 (pullback.snd (pullback.snd f s) (T.fromSpecResidueField t)) 1).obj
@@ -85,11 +85,11 @@ def PicardHilbertPiecesRepresentabilityStatement : Prop :=
       -- Hilbert polynomial of the divisors in the linear system of `L(m)`
       (∀ (B : Type u) [CommRing B] [IsNoetherianRing B]
           (s : Spec (CommRingCat.of B) ⟶ Spec (CommRingCat.of A))
-          (L : (pullback f s).Modules), Scheme.Modules.IsInvertible L →
+          (L : (pullback f s).Modules), Scheme.Modules.IsInvertibleFLT L →
           ∀ (c : κ) (m : ℕ), U (Spec (CommRingCat.of B)) s L c m = ⊤ →
           ∀ (I : (pullback f s).IdealSheafData)
             (hI : IsRelativeEffectiveCartierIdeal (pullback.snd f s) I)
-            (N : (Spec (CommRingCat.of B)).Modules), Scheme.Modules.IsInvertible N →
+            (N : (Spec (CommRingCat.of B)).Modules), Scheme.Modules.IsInvertibleFLT N →
             Nonempty ((EffectiveCartierDivisor.lineBundle ⟨I, hI.1⟩).obj ≅
               Nat.rec (motive := fun _ => (pullback f s).Modules) L
                   (fun _ M => M ⊗ (Scheme.Modules.pullback (pullback.fst f s)).obj 𝓛X) m ⊗

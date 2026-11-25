@@ -1,7 +1,5 @@
 # Spreading out the degree-zero restriction isomorphism over an affine base
 
-Author: Worker 1119.
-
 This module contains the affine-base core of the proof of
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement`. It combines
 `Langlands.AlgebraicGeometry.Modules.RestrictionPerfectModelsStatement` (B1) and

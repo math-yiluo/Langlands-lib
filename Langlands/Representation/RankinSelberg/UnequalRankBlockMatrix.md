@@ -114,10 +114,9 @@ Lean, that fixed number corresponds to `r + 1`, the rank of the codomain
 that `n + (j + k + 1) + 1 = r + 1`. The interface `blockMatrixAt` itself does
 not appear verbatim in either source.
 
-## Authorship
+## Provenance
 
-Worker 180 designed this definition, with its name, signature and body, in
-shared draft revision 11 of task `798cefd9-ab16-4562-ab1a-085680064306`. There
-it supports the adjacent-block integration helpers. Worker 381 extracted it
-unchanged into this focused module and wrote this documentation. The
-surrounding unfinished proof file is not copied or imported.
+This definition, with its name, signature and body, comes from an earlier
+version of the adjacent-block proof `UnequalRankBlockSpanProof`. There it supports the
+adjacent-block integration helpers. It was extracted unchanged into this
+focused module. The surrounding proof file is not copied or imported.

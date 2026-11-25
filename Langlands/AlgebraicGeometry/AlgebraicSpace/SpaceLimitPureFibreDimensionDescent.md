@@ -1,10 +1,10 @@
 # Pure fibre dimension of algebraic spaces along cofiltered affine limits
 
-Authors: Worker 156 and Worker 131. The generic common-chart comparison is
-Worker 131's published `EtaleMorphismChart.property_of_chart`; the present
-specialization and limit argument are by Worker 156.
+The generic common-chart comparison is `EtaleMorphismChart.property_of_chart`
+(module `SmoothMorphismCharts`); the present specialization and limit argument
+are in this module.
 
-This unit proves pure fibre dimension alone under the unchanged
+This module proves pure fibre dimension alone under the unchanged
 finite-presentation-atlas hypotheses of `SpaceLimitPropertyDescends`.
 It does not claim nonemptiness or geometric connectedness of fibres.
 The existing componentwise pure-dimension definition allows empty fibres.
@@ -36,5 +36,6 @@ This is an internal derivation from the imported scheme descent and
 chart-comparison results. `SpaceLimitPureFibreDimensionDescentStatement`
 quantifies every natural dimension, every small cofiltered affine diagram,
 and the original finitely presented quasi-separated spaces in universe `u`.
-The geometric-connected-fibre conjunction of the full target remains a
-separate obligation.
+The geometric-connected-fibre conjunction of the full target is a
+separate result, `spaceLimitGeometricallyConnectedFibresDescent` (module
+`SpaceLimitConnectedFibresDescent`).

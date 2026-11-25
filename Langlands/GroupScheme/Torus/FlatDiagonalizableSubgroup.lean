@@ -87,6 +87,7 @@ theorem span_groupLike_of_closedSubgroup (i : H ⟶ (groupScheme R Λ).toGrp)
 theorem flat_hopfAlgebra [Flat H.X.hom] :
     Module.Flat R (AffineCoordinates.hopfAlgebra H) := by
   have h : Flat ((AffineCoordinates.hopfSpecIso H).hom.hom.hom.left ≫ H.X.hom) := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   rw [Over.w] at h
   change Flat (Spec.map (CommRingCat.ofHom

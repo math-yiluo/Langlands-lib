@@ -1,7 +1,5 @@
 # Localized compact-central approximation in the genuine derivative topology
 
-Author: Worker 94.
-
 `compactCentralConvolutionApproximation K n` proves exactly the published
 `CompactCentralConvolutionApproximationStatement K n`. Every number field
 in arbitrary universe and every natural rank, including zero, is retained.

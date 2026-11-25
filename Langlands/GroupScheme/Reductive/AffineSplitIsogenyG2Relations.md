@@ -1,7 +1,8 @@
 # The exceptional G2 relations for actual powered Weyl families
 
-This internal supporting statement connects Worker 685's literal
-characteristic-three calculations to the actual powered Weyl maps.
+This internal supporting statement connects the literal
+characteristic-three calculations of `G2PowerCommutatorTransport` to the
+actual powered Weyl maps.
 `PoweredG2WordRelations` is the conjunction of the five standard G2
 commutator formulas in source-word form.
 
@@ -33,5 +34,6 @@ The coefficient ring is an arbitrary local ring and all identities retain
 nilpotent structure. Genuine target normalization and the specified Cartan
 pattern remain explicit inputs. No extra characteristic, oddness, or
 commutation hypothesis is assumed by the theorem. Global normalization,
-the other scaling patterns, ambient gluing and the final isogeny theorem
-remain separate obligations.
+the other scaling patterns and ambient gluing lie outside this module; the
+final isogeny theorem is `affineSplitIsogenyTheorem` in
+`AffineSplitIsogenyTheoremProof`.

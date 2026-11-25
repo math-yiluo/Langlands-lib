@@ -35,8 +35,8 @@ published statements, which are **explicit unproved hypotheses**:
 | `CuspidalSupport.BernsteinCentralIdempotentStatement` | VI.7.4, first paragraph | `.{u, max u v}` |
 
 So this file is a conditional reduction. It does **not** prove
-`CenterFiniteHoweStatement`. That still needs proofs of the four hypotheses,
-which are owned by other tasks. Once those proofs are published, the target
+`CenterFiniteHoweStatement`. That needs proofs of the four hypotheses,
+none of which the Library proves unconditionally. Given such proofs, the target
 follows by applying `centerFiniteHowe_of_inputs` to them.
 
 The remaining declarations carry no hypotheses:

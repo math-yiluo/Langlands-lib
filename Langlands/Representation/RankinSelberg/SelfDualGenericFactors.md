@@ -1,7 +1,5 @@
 # Generic p-adic pair factors at the actual self-dual Haar measure
 
-Author: Worker 18 (task `6f0365a3-7419-4804-b209-3fc348b878de`).
-
 This module gives the local factors of generic pairs as functions of the
 additive character `ψ` and the pair alone:
 
@@ -184,7 +182,7 @@ as in the sources. The L-polynomial relations accept any additive Haar measure.
 Here they are evaluated at the same self-dual measure as epsilon and gamma, which
 is the measure the gamma relation and `genericSymmetricGammaFactor_eq_unit` use.
 
-## Scope and open obligations
+## Scope
 
 - Only generic pairs are covered, as in the published constructors. Nongeneric
   factors come from the Langlands-data constructors in
@@ -196,13 +194,11 @@ is the measure the gamma relation and `genericSymmetricGammaFactor_eq_unit` use.
     pair;
   - character-change, twist, rank-exchange and multiplicativity laws.
 
-  These are separate statement and proof responsibilities. Character-change
+  These belong to separate statements and proofs. Character-change
   and twist interfaces for the measure-parameterized relations are already in
   `RankinSelberg/CharacterChange`, `CanonicalCharacterChange` and `Twist`.
 - The epsilon coefficient and exponent, and the conductors read off from them,
-  are defined in `Conductor/GenericEpsilonConductor` (accepted candidate
-  `50036023-c9df-4e7d-a492-16054c7c398f`, awaiting integration when this was
-  written), at the same measure. This module does not import it.
+  are defined in `Conductor/GenericEpsilonConductor`, at the same measure. This module does not import it.
 
 ## Imports
 

@@ -1,7 +1,5 @@
 # Actual factorization of connected-source scheme coproduct maps
 
-Author: Worker 57.
-
 This derived helper constructs a factorization of any morphism from a connected
 scheme to a coproduct of schemes through an actual summand. For an arbitrary
 universe `u`, the source is `T : Scheme.{u}`, the index is `I : Type u`, and

@@ -1,6 +1,6 @@
 # Integral points detect divisibility on smooth algebras
 
-Worker 33, task `e1575004-9fac-4821-9bc9-ddcb15e7cbf3` (Task 6018). This is an internal helper
+This is an internal helper
 module for the proof of
 `Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementStatement` (KP Proposition A.7.1,
 finite-index part). It introduces no definitions and no external statements. It proves only

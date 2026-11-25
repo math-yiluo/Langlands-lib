@@ -1,7 +1,6 @@
 # Canonical norm depth and multiplicative conductor
 
-Author: Worker 84. Proposition definitions for task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
+This module contains proposition definitions.
 No truth of these propositions or existence of an auxiliary character is asserted.
 
 `CanonicalPrincipalUnitDepthStatement` says that for every finite p-adic
@@ -40,11 +39,10 @@ This is a derived interface, rather than a verbatim theorem of the
 literature. Harris, *The local Langlands conjecture for GL(n) over a p-adic
 field, n < p* (1998), Lemma 4.7 and its proof, printed pp.201 and 204–206,
 uses unbounded conductor while retaining the stabilizer condition (4.12).
-The passage on printed p.205 / PDF p.29 was read directly again for this
-unit. Source `harris-1998-local-langlands`, SHA-256
+The passage on printed p.205 / PDF p.29 was read directly. Source `harris-1998-local-langlands`, SHA-256
 `7934239ea37d0b91f741ae70c2ac157fe5d619cda4dd992ac24e39ae460c375b`.
 The Library's `AuxiliaryCharacterStatement` instead specifies nontriviality
-in canonical norm balls. This unit isolates the elementary topological
+in canonical norm balls. This module isolates the elementary topological
 comparison needed between those conventions. It neither constructs the
 characters in Harris's argument nor repairs his characteristic-two
 construction, nor transports the norm stabilizer to the Weil group.
@@ -53,11 +51,10 @@ The project dependency `Langlands.HarmonicAnalysis.Conductor` supplies
 the actual principal-unit filtration, the least triviality level
 `multiplicativeConductor`, and the quasicharacter topology convention.
 `F.canonicalNorm` is imported through its local-field dependencies.
-The expected proof uses openness of valuation lattices, the published
+The proof, `canonicalConductorDepth` in `CanonicalConductorDepthProof`, uses openness of valuation lattices, the published
 comparison of `T.topology` to the canonical norm topology, cofinality of
 principal units among neighborhoods of one, and the conductor's proved
 minimality. Those results give cofinal neighborhood systems, rather than
 an equality of the canonical norm and the residue-normalized absolute value.
 
-Compilation and independent review of these proposition definitions do
-not prove either comparison; a theorem requires a separate proof contribution.
+These proposition definitions do not prove either comparison.

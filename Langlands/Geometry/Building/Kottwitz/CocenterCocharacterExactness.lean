@@ -72,6 +72,7 @@ theorem cocenter_cover_isDerivedSubgroup :
   refine ⟨?_, ?_⟩
   · change IsClosedImmersion
       (a.covering.hom.hom.left ≫ a.derivedInclusion.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   · exact (SubgroupFunctor.range_iso_comp (asIso a.covering) a.derivedInclusion).trans
       a.isCover.isDerivedSubgroup.2

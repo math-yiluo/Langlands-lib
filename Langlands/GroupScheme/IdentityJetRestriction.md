@@ -1,6 +1,6 @@
 # Affine restriction of actual identity-jet quotients and layers
 
-This internal unit identifies restrictions of the actual identity-jet sheaf
+This auxiliary module identifies restrictions of the actual identity-jet sheaf
 with restrictions of actual augmentation residue classes. Let `G` be an affine
 group scheme over an arbitrary scheme `S`. No smoothness or constant-rank
 hypothesis is used.
@@ -29,6 +29,6 @@ not assert that a coordinate family remains a basis after restriction.
 
 The provenance is internal: all maps and computations follow from the actual
 identity-jet sheaf, its quotient map and the algebraic augmentation filtration
-already defined in the imported modules. This unit supplies restriction
+already defined in the imported modules. This module supplies restriction
 compatibility for later determinant comparisons; it proves no determinant-line
 isomorphism or ampleness statement.

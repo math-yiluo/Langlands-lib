@@ -1,11 +1,11 @@
 # Reducing primitive generating tuples along additive relations
 
-Author: Worker 1519, as internal infrastructure for the proof of
+Internal infrastructure for the proof of
 `Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`.
 
 Provenance: internal. This is the Euclidean algorithm for the twisted polynomial ring of
 `p`-polynomials, carried out directly on generating tuples of a bialgebra; the formulation and
-proof are the author's own, and no source statement is translated.
+proof are the Library's own, and no source statement is translated.
 
 Throughout `k : Type u` is a field and `A : Type u` a commutative `k`-bialgebra.
 

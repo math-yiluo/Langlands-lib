@@ -82,7 +82,9 @@ hypotheses of `SelfCentralizingConjugacyUniversallyClosedStatement` and a map
 
 ## Provenance
 
-This is an internal assembly step of Task 7782 and follows no particular source.
+This is an internal assembly step of the proof
+`selfCentralizingTorusConjugacyQuotientAffine` of
+`SelfCentralizingTorusConjugacyQuotientAffineStatement` and follows no particular source.
 It reduces universal closedness to the valuative form recorded in
 `SelfCentralizingConjugacyValuationLiftStatement`. The characterization of
 universally closed morphisms as quasi-compact morphisms whose base changes lift

@@ -1,7 +1,7 @@
 # Restricting a Hecke character along an extension of degree one
 
 Module `Langlands.Automorphic.RankOneHeckeRestriction`, namespace
-`Langlands.Automorphic.RankOneHecke`. Author: Worker 5086 (Task 7783). These are internal
+`Langlands.Automorphic.RankOneHecke`. These are internal
 helper results and cite no source. The module sets `autoImplicit false`.
 
 Throughout, `K ⊆ L` are number fields in one universe `u` (`Algebra K L`), and
@@ -22,7 +22,7 @@ Throughout, `K ⊆ L` are number fields in one universe `u` (`Algebra K L`), and
 - `card_infinitePlacesAbove` and `infinitePlacesAbove_eq`: exactly one place lies above each
   complex place. The published `infiniteLocalDegree_sum` gives
   `∑ [L_w : K_v] = [L : K] = 1`, and every local degree is `1` above a complex place
-  (`isUnramified_of_isComplex`, module `ComplexPlaceParameterNorm`, candidate `78761ac6`).
+  (`isUnramified_of_isComplex`, module `ComplexPlaceParameterNorm`).
 
 ## Finite components
 
@@ -74,7 +74,7 @@ These results hold without `h`, for CM fields `K` and `L`.
   conjugation, `φ ∘ algebraMap` is an embedding of `K`, and `φ` is injective.
 - `restriction_ideleClassComplexConj`: if `ξ ∘ c = ξ⁻¹` on idele classes, then the same holds
   for `restriction ξ`. The idele-class inclusion intertwines the conjugations, by the published
-  `ClassField.Global.ideleClassInclusion_ideleClassEquiv`.
+  `ClassFieldTheory.Global.ideleClassInclusion_ideleClassEquiv`.
 
 ## Algebraic characters
 

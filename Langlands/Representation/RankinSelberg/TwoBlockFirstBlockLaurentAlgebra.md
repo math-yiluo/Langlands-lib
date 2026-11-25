@@ -1,7 +1,5 @@
 # Finite Laurent algebra for the first-block calculation
 
-Author: Worker 1191.
-
 This module supplies derived algebraic helpers for the polynomial-cleared
 first-block identity. It imports the published bilateral Laurent module,
 `EpsilonFactor` and `EqualRankSwapTransport`. Every series is an arbitrary

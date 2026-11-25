@@ -19,10 +19,10 @@ namespace Langlands.AlgebraicGeometry.Picard
 open Langlands.AlgebraicGeometry.Modules
   Langlands.AlgebraicGeometry.Modules.DerivedSections
 
-local instance (X : Scheme.{u}) : (structureModule X).IsQuasicoherent :=
+private local instance (X : Scheme.{u}) : (structureModule X).IsQuasicoherent :=
   (LineBundle.trivial X).property.isQuasicoherent
 
-local instance {X : Scheme.{u}} (N : LineBundle X) : N.obj.IsQuasicoherent :=
+private local instance {X : Scheme.{u}} (N : LineBundle X) : N.obj.IsQuasicoherent :=
   N.property.isQuasicoherent
 
 local instance {X : Scheme.{u}} (N : LineBundle X) (s : GlobalSections N.obj) :

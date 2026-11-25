@@ -19,10 +19,10 @@ universe uF uA uB
 
 variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p)
 
-local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+private local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
 local instance (n : ℕ) : TopologicalSpace (GeneralLinear n F.Carrier) :=
   F.canonicalGeneralLinearTopology n
-local instance (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
+local instance sphericalStandardTwistFactorsIsTopologicalGroup (n : ℕ) : IsTopologicalGroup (GeneralLinear n F.Carrier) :=
   F.canonicalGeneralLinearTopologicalGroup n
 
 local notation "T" => F.canonicalTopologicalData

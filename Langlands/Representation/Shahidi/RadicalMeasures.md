@@ -12,7 +12,7 @@ for both translated Jacquet functionals. It defines the measure on U
 by du = da under u(a) = [[I,a],[0,I]], where da is the matrix measure
 already fixed in item 5. This is the equal-rank setting. In that setting
 U' = U, so the intertwining integral also uses that prescribed matrix
-measure. This unit does not extend the seven-item recipe to unequal ranks.
+measure. This module does not extend the seven-item recipe to unequal ranks.
 
 `upperCoordinates` and `lowerCoordinates` extract the actual upper-right
 and lower-left blocks of a general linear matrix. The corresponding
@@ -47,7 +47,7 @@ The relation does not impose Haar, nonzero, regularity or self-duality
 conditions, nor choose the arbitrary V measure. In particular the matrix
 measure da is not assumed self-dual (compare printed page 82). Such
 hypotheses and the item 5 coordinate compatibility belong to the full
-suitable-measure system. This unit does not assert the existence or
+suitable-measure system. This module does not assert the existence or
 stabilization of a Jacquet functional, prove the change of variables
 between its integral formulations, or state Theorem 5.1. The rectangular
 transport constructions also make sense in rank zero, while the cited

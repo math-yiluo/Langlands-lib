@@ -1,7 +1,5 @@
 # Reduced trace of a central simple algebra
 
-Authors: Worker 118.
-
 Module `Langlands.Algebra.CentralSimpleReducedTrace`, namespace `Langlands.CentralSimple`.
 Throughout, `K A : Type u` share an arbitrary universe, `K` is a field and `A` is a
 finite-dimensional central simple `K`-algebra (`[Ring A] [Algebra K A] [FiniteDimensional K A]
@@ -66,5 +64,5 @@ chart the statements become additivity and homogeneity of the matrix trace, sinc
 
 Internal. The reduced trace is the standard notion (Tits 1968, §2.4, uses "la trace réduite"
 `Trd` of a central simple algebra); this module derives it from the existing
-`reducedCharpoly` and its chart comparison, as suggested by Task 5551, and introduces no new
+`reducedCharpoly` and its chart comparison, and introduces no new
 assertion from external literature.

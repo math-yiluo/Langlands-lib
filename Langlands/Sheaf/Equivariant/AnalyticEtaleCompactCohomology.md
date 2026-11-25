@@ -1,14 +1,14 @@
 # Compactly supported cohomology of étale `G`-sheaves on analytic spaces
 
-Author: Worker 26. Uses the published `Langlands.Sheaf.Equivariant.AnalyticCompactSupport`
-(topology on `L`-valued points and `Γ_{c,X{G}}` on étale `G`-sheaves, Worker 26),
+Uses the published `Langlands.Sheaf.Equivariant.AnalyticCompactSupport`
+(topology on `L`-valued points and `Γ_{c,X{G}}` on étale `G`-sheaves),
 `Langlands.Sheaf.Equivariant.AnalyticGSheaves` (twisted étale site, lifts on
-distinguished étale objects, étale `G`-sheaves, Worker 26),
+distinguished étale objects, étale `G`-sheaves),
 `Langlands.Sheaf.Equivariant.TwistedCompactSupport` (compactly supported sections on a
-twisted site, Worker 26) and `Langlands.Cohomology.DerivedPlus` (derived complexes in the
+twisted site) and `Langlands.Cohomology.DerivedPlus` (derived complexes in the
 bounded below derived category). It also uses the module
-`Langlands.Sheaf.Equivariant.LocalActionSmoothPart` (Worker 26; abelian structure and
-enough injectives of locally discrete sheaves). From Worker 21 it uses the étale site `EtaleSite` and its points given by
+`Langlands.Sheaf.Equivariant.LocalActionSmoothPart` (abelian structure and
+enough injectives of locally discrete sheaves). It also uses the étale site `EtaleSite` and its points given by
 `L`-valued points (`EtaleSite.PointAxioms`, `EtaleSite.toPoint`,
 `EtaleSite.pointEquivariance`).
 
@@ -42,7 +42,7 @@ other declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field and `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - `L : Type uL` is a normed field with `[NormedAlgebra K L]`. Write
   `P = localizedFieldPointFunctor L`.
@@ -50,12 +50,12 @@ other declarations are in `Langlands.Sheaf.Equivariant.Analytic`.
   smooth representations and the cohomology also use `[IsTopologicalGroup G]`.
 - Coefficients: `R : Type (max u (v + 1) uL)` is a commutative ring and sheaves take
   values in `ModuleCat.{max u (v + 1) uL} R`. As in `AnalyticCompactSupport`, this is
-  the universe of Worker 21's points `EtaleSite.toPoint L x (h x)`. Write
+  the universe of the points `EtaleSite.toPoint L x (h x)`. Write
   `w = max u (v + 1) uL`.
 - `[Small.{w} G]` is assumed for the statements about the twisted site. It holds,
   for example, when `G` lies in a universe at most `w`.
 - `h : ∀ x : P.obj X, EtaleSite.PointAxioms L x`: every `L`-valued point satisfies
-  Worker 21's point axioms. This is a hypothesis, as in `AnalyticCompactSupport`.
+  the point axioms `EtaleSite.PointAxioms`. This is a hypothesis, as in `AnalyticCompactSupport`.
 
 ## Size, sheafification and injectives
 

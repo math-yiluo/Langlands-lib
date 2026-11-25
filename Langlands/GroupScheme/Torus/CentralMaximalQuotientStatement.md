@@ -1,7 +1,5 @@
 # The quotient by a central maximal torus contains no torus: statement
 
-Worker 1379.
-
 `CentralMaximalTorusQuotientStatement.{u}` concerns a field `k : Type u`,
 a smooth affine group scheme `H` over `Spec k`, a commutative group
 scheme `Z` and a homomorphism `j : Z.toGrp ⟶ H` with `IsCentral j`

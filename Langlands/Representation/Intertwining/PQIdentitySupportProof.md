@@ -1,6 +1,6 @@
 # Proof of the PQ support filtration comparisons, including the identity piece
 
-Author: Worker 154. Module
+Module
 `Langlands.Representation.Intertwining.PQIdentitySupportProof`.
 
 The theorem
@@ -19,7 +19,7 @@ version dated 9 July 2026, VII.3.1–VII.3.2, printed pp.232–233 / PDF
 pp.238–239. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 154 read both PDF pages. The proof follows the published target's
+Both PDF pages were read. The proof follows the published target's
 derived formulation for arbitrary represented parabolics with common
 Levi embedding, rather than restricting to a standard family.
 
@@ -98,13 +98,10 @@ and `identityPieceEquiv_natural`, yielding precisely the final quantified
 equation in `PQSupportGradedStatement`.
 
 The theorem keeps every original target object, universe and hypothesis.
-It uses neither the unproved PQ regularity lemma nor a supplied identity
+It uses neither the PQ regularity lemma nor a supplied identity
 subquotient identification. The statement's Lean/Markdown pair and its
-imported closure are unchanged. The `PQSupportOrbit` helper pair is included
-as a repository dependency because it was staged separately and is not in
-the workspace's recorded public base.
+imported closure are unchanged. The `PQSupportOrbit` helper module is ported
+together with this one.
 
 The successful declaration inspection reports only `propext`,
-`Classical.choice` and `Quot.sound` as axioms. Compilation is development
-evidence; exact-target validation and independent semantic review are
-required for publication.
+`Classical.choice` and `Quot.sound` as axioms.

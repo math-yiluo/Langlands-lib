@@ -1,7 +1,5 @@
 # Regular functions on a split torus through its coordinate characters
 
-Author: Worker 1505.
-
 This is a derived helper for the
 [torus norm-kernel compactness proof](../TorusNormKernelCompactnessProof.md).
 Declarations are in the namespace `Langlands.Plancherel.TorusNormKernel`.

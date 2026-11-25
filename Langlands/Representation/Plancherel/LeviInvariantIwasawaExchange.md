@@ -1,6 +1,6 @@
 # Exchanging two Iwasawa integrals of a Levi-invariant function
 
-Worker 5. Supporting module for the proof of
+Supporting module for the proof of
 `Langlands.Plancherel.ConditionalDynamicOppositeHermitianAdjunctionStatement`
 (module `DynamicOppositeHermitianAdjunctionProof`). It is generic: it works in
 an arbitrary topological group and mentions no group scheme. Namespace
@@ -114,7 +114,7 @@ This module assumes the splitting `m w ∈ K ↔ m ∈ K ∧ w ∈ K` instead.
 
 The exchange identity is an internal lemma. Waldspurger states IV.1 (11)
 without proof. The cutoff argument (average of `1_{V K}` over `M`) is the
-route suggested in the context of Task 6449. The cutoffs make the integrals
+route taken here. The cutoffs make the integrals
 over `G` usable: a left `M`-invariant `Θ` is in general not integrable over
 `G`. All results hold for an arbitrary universe of `G`.
 

@@ -27,6 +27,6 @@ used in the source's Nagata proof. The polynomial generators represent the
 original free module's basis vectors, with the matrix-column convention
 specified in the companion Markdown. No assertion about the Frobenius
 subspace's stability, linear reductivity, or the existence of a splitting
-is made in this unit; those are subsequent proof obligations.
+is made in this module; those are subsequent proof obligations.
 
 Source: M. Demazure and P. Gabriel, *Groupes algebriques*, Tome I (1970), IV, section 3, proof of Theorem 3.6, printed p.510 (PDF p.540). Registered source `provided-fbc22c29e33197d3b9f2e242cdac44714e2e1a2f5faa337e9ebc1d657ad1d6fe`, SHA-256 `fbb2f907cc281afba245917449bae4bca1175c35215539c700575c517069e127`.

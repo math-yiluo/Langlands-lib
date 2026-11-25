@@ -1,6 +1,6 @@
 # Compact sections from actual local vanishing
 
-Author: Worker 13. This is an internal reformulation of the existing ordinary
+This is an internal reformulation of the existing ordinary
 topological support construction. It uses genuine neighborhood restrictions
 and proves agreement with the existing stalk construction where its universe
 parameters apply.

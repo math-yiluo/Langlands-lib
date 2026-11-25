@@ -1,6 +1,6 @@
 # The actual conjugation integral split
 
-This internal unit constructs the truncated open cell and specializes the
+This internal module constructs the truncated open cell and specializes the
 Library's generic complex-integral split to actual rational points.
 It proves an integral identity from integrability, with no decay assertion.
 
@@ -16,7 +16,7 @@ coordinate point in the image.
 For a connected reductive group over a nonarchimedean local field, choose
 any cocharacter `χ`, any compact open subgroup `H`, and any ambient Haar
 measure `muG`. The dynamic centralizer, parabolic and radicals are the
-actual identity-test subgroups with the published rational-point topology.
+actual identity-test subgroups with the rational-point topology.
 The measures on the centralizer and both radicals are the existing Haar
 measures normalized on their intersections with `H`.
 `rationalDynamicConjugationCell` uses `A = H` and `B = H ∩ V`, where
@@ -30,14 +30,14 @@ the integral over the complement of the constructed cell plus the scalar
 `rationalDynamicConjugationScalar` times the centralizer integral of the
 cuspidal and unipotent factors. The first factor uses the inverse of the
 actual positive-radical Haar character; identifying it with the
-opposite-radical character is a separate published reciprocity result.
+opposite-radical character is a separate reciprocity result.
 
 The implemented proof uses
 `isHomeomorph_leviUnipotentCoord_rationalPoint`,
 `isOpenEmbedding_openCellMap_rationalPoint` and the closed theorem
 `rationalDynamicOpenCellConull` for the geometry and null boundary.
 Reductive unimodularity supplies ambient right invariance.
-The published dynamic radical Haar measures supply inversion invariance.
+The dynamic radical Haar measures supply inversion invariance.
 `isConjModulus_semidirect_closedCharacter` supplies the positive-radical
 change of variables, and the inverse character gives the scalar identity
 used in the two factors. The function invariances remove the two
@@ -47,5 +47,6 @@ truncated radical variables. The generic theorem
 The scalar uses the explicitly displayed Levi-product parabolic measure;
 there is no premise that `H` is stable under the dynamic limit.
 The functions need not be Schwartz or cuspidal for this identity.
-Convergence remains the precise integrability premise, to be discharged
-separately for Schwartz functions by the weighted Xi-square estimate.
+Convergence remains the precise integrability premise; for Schwartz functions
+it is discharged separately by the weighted Xi-square estimate, in
+`RationalDynamicConjugationEstimate`.

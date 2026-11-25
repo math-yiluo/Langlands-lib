@@ -7,7 +7,9 @@ of the ambient group by the embedded subgroup. It also proves
 `ReductiveLinearQuotientAffineStatement` implies the exact published
 `DynamicQuotientProperStatement`, in every universe and arbitrary
 characteristic, retaining every supplied quotient and all relative scheme tests.
-The affineness premise remains an unproved independent input to this unit.
+The affineness premise is an independent input to this module; it is proved
+separately, as `reductiveLinearQuotientAffine` in
+`Langlands.GroupScheme.Reductive.LinearQuotientAffineProof`.
 
 For an arbitrary connected reductive group, the published linear embedding
 reduction supplies a closed representation and an actual affine homogeneous
@@ -23,6 +25,8 @@ is the original supplied structure morphism, which is therefore proper.
 The provenance is internal composition of these actual morphism constructions.
 No nontriviality, regularity or noncentrality assumption on the cocharacter is
 made. The proof uses no excluded regular-cocharacter/Borel or rank-one value.
-This is a conditional reduction and does not supply the missing independent
-proof of reductive linear quotient affineness or an unconditional proof of
-the host target.
+This is a conditional reduction and does not itself prove reductive linear
+quotient affineness or `DynamicQuotientProperStatement` unconditionally. The
+unconditional theorem `dynamicQuotientProper` in
+`Langlands.GroupScheme.Dynamic.QuotientProperProof` combines this reduction
+with `reductiveLinearQuotientAffine`.

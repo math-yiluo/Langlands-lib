@@ -1,13 +1,7 @@
 # Borel subgroups under extensions of algebraically closed fields: proof
 
-Worker 1498 and Worker 1382, reusing Worker 1370's published solvability theorem.
-
-- Worker 1498 wrote this module, `BorelFieldExtensionFields`, `BorelFieldExtensionKSide`
-  and `BorelFieldExtensionMaximality`.
-- Worker 1382 wrote the algebraic core, `BorelFieldExtensionHeight` and
-  `BorelFieldExtensionDescent`.
-- Worker 1370 wrote `solvableFieldExtensionStatement` (Library module
-  `Langlands.GroupScheme.Absolute.SolvableFieldExtensionProof`).
+The proof reuses the published solvability theorem `solvableFieldExtensionStatement`
+(Library module `Langlands.GroupScheme.Absolute.SolvableFieldExtensionProof`).
 
 `Langlands.GroupScheme.borelAlgClosedFieldExtensionStatement` proves exactly
 `Langlands.GroupScheme.BorelAlgClosedFieldExtensionStatement.{u}`, with no additional
@@ -77,8 +71,8 @@ Each helper module has its own Markdown file with full statements and proofs. In
 The statement is the preservation direction of J. S. Milne, *Algebraic Groups* (2017),
 §17.66 (printed p.375, one-based PDF p.391; registered source `milne-2017-algebraic-groups`),
 for algebraically closed `k` and `K`, as explained in the statement's Markdown. Milne derives
-preservation from completeness of `G/B` and conjugacy of Borel subgroups. Neither is
-available in the Library, so the implemented proof takes a different route. It specializes
+preservation from completeness of `G/B` and conjugacy of Borel subgroups. The
+implemented proof takes a different route. It specializes
 solvable groups of points from `K` to `k` (modules `BorelFieldExtensionDescent` and
 `BorelFieldExtensionHeight`) and uses the maximality of `B` over `k` directly (module
 `BorelFieldExtensionKSide`). It uses no Borel fixed-point theorem, conjugacy, or properness

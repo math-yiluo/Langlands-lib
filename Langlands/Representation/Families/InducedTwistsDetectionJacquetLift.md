@@ -1,6 +1,6 @@
 # Lifting fixed vectors from an actual normalized Jacquet module
 
-Author: Worker 70. Module
+Module
 `Langlands.Representation.Families.InducedTwistsDetectionJacquetLift`, namespace
 `Langlands.Renard.AlgebraicFamily.InducedTwistsDetection`. Internal helper for the
 uniform induced-twist detector (`InducedTwistsUniformDetectionStatement`, Renard VI.8.4).

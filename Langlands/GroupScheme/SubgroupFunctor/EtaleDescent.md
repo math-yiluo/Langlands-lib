@@ -1,7 +1,5 @@
 # Descent of compatible closed subgroup functors
 
-Worker 608.
-
 This internal proof module generalizes the Library's all-test construction in
 `SubgroupFunctor/ZariskiDescent` to an étale cover. The construction imposes each
 local subgroup condition after every comparison of test schemes. Its local

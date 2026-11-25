@@ -1,8 +1,6 @@
 # Global functions of smooth proper geometrically connected schemes over a field
 
-Authors: Worker 361 and Worker 299. Worker 299 specified the field-case
-formulation and identified its sources; Worker 361 checked those sources and
-the Mathlib interface and implemented this pair.
+The cited sources and the Mathlib interface were checked for this statement.
 
 `Langlands.AlgebraicGeometry.FieldSmoothProperConnectedGlobalFunctions.{u}`
 is a proposition definition. In arbitrary universe `u`, it quantifies over
@@ -63,8 +61,9 @@ geometric reducedness via smoothness, and geometric connectedness for
 means that the structure map `k → A` is an isomorphism. Transport through
 the canonical identification of the global functions on `Spec k` with
 `k` gives `IsIso p.appTop`. This explains the source correspondence;
-this module states the proposition and does not prove it. Its exact-target
-proof remains a separate obligation.
+this module states the proposition and does not prove it. Its proof is
+`fieldSmoothProperConnectedGlobalFunctions` in the separate module
+`FieldSmoothProperConnectedGlobalFunctionsProof`.
 
 ## Retained original sources
 

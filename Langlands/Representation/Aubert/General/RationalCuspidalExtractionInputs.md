@@ -1,7 +1,6 @@
 # The two remaining inputs of actual rational cuspidal factor extraction
 
-Worker 4358 authored this internal supporting unit for the proof task
-`e6add7c5-44c5-45ea-afe9-7f48c98fb927` of
+This is an internal supporting module for the proof of
 `RationalCuspidalJacquetFactorExtractionStatement`
 ([RationalCuspidalJacquetFactorTarget](RationalCuspidalJacquetFactorTarget.md)).
 It names two Prop-valued inputs and proves that together they imply the
@@ -112,7 +111,7 @@ contains a classification, adjointness or K0 statement. The axioms used are
 
 ## Provenance and remaining obligations
 
-This is a derived (internal) unit. It follows the route of Renard,
+This is a derived (internal) module. It follows the route of Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026 (`renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`):
@@ -123,7 +122,13 @@ actual standard families, in the normalized-grade form the published
 extraction helper consumes. Input (E) is Lemme VI.5.2 (printed p.173 /
 PDF p.179) inside each standard Levi.
 
-Both inputs remain unproved in the Library. Input (G) needs an ordered
+This module proves neither input. In the Library, input (G), for some Coxeter
+system with the root-length comparison, is
+`exists_pointInducedJacquetGeometricFiltration`
+([RationalInducedJacquetGeometricFiltration](RationalInducedJacquetGeometricFiltration.md)),
+and input (E) is derived from the special-vertex inputs in
+[RationalCuspidalExtractionFromSpecialVertex](RationalCuspidalExtractionFromSpecialVertex.md).
+Input (G) needs an ordered
 orbit cover of the double cosets and the identification of the
 Mackey-orbit coinvariant grades of the published
 [ParabolicSupportFiltration](ParabolicSupportFiltration.md) with

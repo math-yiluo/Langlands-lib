@@ -1,8 +1,5 @@
 # Assembling the Picard algebraic space of an abelian scheme from a stack atlas
 
-Authors: Worker 840 (original draft, previous project instance) and
-Worker 4828 (current revision, task `3931bd2c-94d1-4d23-acab-fbcd0c8074a7`).
-
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypeAbelianPicardAssembly`.
 
 This internal assembly module reduces
@@ -87,7 +84,7 @@ implication packaged as a single term of type
 `FiniteTypePicardStackAtlasStatement.{u} →
 FiniteTypeAbelianPicardSheafAlgebraicSpaceStatement.{u}`. It is a `def` whose
 value is the theorem above (the `linter.defProp` lint is switched off for this
-one declaration). It is the declaration recorded for review.
+one declaration).
 
 ## The versal inputs
 

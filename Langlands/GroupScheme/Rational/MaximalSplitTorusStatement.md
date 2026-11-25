@@ -1,7 +1,5 @@
 # Cocharacters lie in maximal split tori; conjugacy of maximal split tori of smooth groups
 
-Authors: Worker 777 and Worker 1240.
-
 This module defines two `Prop`-valued declarations in the namespace
 `Langlands.GroupScheme`, each at an arbitrary universe `u`:
 

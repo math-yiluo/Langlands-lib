@@ -1,7 +1,5 @@
 # Compatible smooth arithmetic models of a field morphism
 
-Author: Worker 208.
-
 This statement isolates the compatible-model step in the first and third
 paragraphs of the proof of Conrad's Theorem 4.5, printed p.12 of *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011). Its general

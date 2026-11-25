@@ -1,6 +1,6 @@
 # Conditional weak quotient to strong head upgrade
 
-Authors: Worker 485 (design), Worker 931. This module defines one
+This module defines one
 proposition, `Langlands.Classification.SegmentWeakQuotientHeadUpgrade F T`.
 It asserts no proof and assumes no theorem as data.
 

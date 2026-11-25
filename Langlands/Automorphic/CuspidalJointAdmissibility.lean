@@ -92,7 +92,7 @@ theorem isJointlyAdmissible_of_heckeDeterminantTwist (χ : HeckeCharacter F)
     · have hσ' : σ' k v = ((χ.compactAdelicDeterminant n k : ℂˣ) : ℂ) • σ k v := rfl
       have e1 : e (φ (σ' k v)) = ((χ.compactAdelicDeterminant n k : ℂˣ) : ℂ) • e (φ (σ k v)) :=
         (congrArg (fun y => e (φ y)) hσ').trans
-          ((congrArg e (map_smul φ _ (σ k v))).trans (map_smul e _ (φ (σ k v))))
+          ((congrArg e (map_smul φ _ (σ k v))).trans (ContinuousLinearEquiv.map_smul e _ (φ (σ k v))))
       have e2 : ((χ.compactAdelicDeterminant n k : ℂˣ) : ℂ) • e (φ (σ k v)) =
           ((χ.compactAdelicDeterminant n k : ℂˣ) : ℂ) • e (S.compactRepresentation k (φ v)) :=
         congrArg (fun y => ((χ.compactAdelicDeterminant n k : ℂˣ) : ℂ) • e y) (hφ.2 k v)

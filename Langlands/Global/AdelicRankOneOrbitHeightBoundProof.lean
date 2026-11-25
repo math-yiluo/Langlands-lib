@@ -34,10 +34,12 @@ theorem rankOneParabolicRationalOrbitHeightBound_of_springerInputs
   let _ : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
   obtain ⟨D, ν, hν, htw⟩ := hT F G hG
   let _ : NumberField D.carrier := NumberField.of_module_finite F D.carrier
+  have h2 : HasTwistedOverlapMatching F D.carrier G D.torus D.inclusion ν :=
+    hM hF hO F G hG D ν hν htw
   exact hasUniformNormOneRationalOrbitHeightBound_of_twistedOverlapMatching F D.carrier G hG
     iF hiF νF hνF αF hαF ρ j hstab D.torus D.inclusion (D.isConnectedReductive hG)
     (D.isMaximalTorus.isMaximalSplitTorus D.isSplitTorus) ν hν D.isMaximalTorus
-    (hM hF hO F G hG D ν hν htw)
+    h2
 
 /-- The same assembly with the two split inputs discharged by their published proofs:
 Springer's split fundamental-set theorem and the split overlap estimate. -/

@@ -1,6 +1,6 @@
 # Full-rank simple-root and last-coordinate Mellin convergence
 
-This internal supporting unit proves convergence of the separated diagonal
+This module proves convergence of the separated diagonal
 majorant used for the full-rank Whittaker–Schwartz kernel. It derives its
 estimates from `AdelicSchwartzMellinProduct`, the adjacent-root torus coordinate
 identities, and `AdelicSimpleRootGaugeHaarModulus`. It makes no new
@@ -35,13 +35,13 @@ normalization. No gauge, right-compact invariance, or quotient integration
 hypothesis enters this torus theorem.
 
 The proof first establishes
-`AdelicSchwartzMellin.lintegral_split_schwartz_mellin_lt_top`. The published
+`AdelicSchwartzMellin.lintegral_split_schwartz_mellin_lt_top`. The existing
 product-majorant theorem bounds the first Schwartz function by a finite
 scalar times a product of one-coordinate Schwartz functions. When `r = 0`,
 the row space is a singleton: its norm is retained as that finite scalar,
 and the empty product is one. The supplied final-coordinate Schwartz
 function is then appended with `Fin.lastCases`. Each weighted coordinate
-kernel is measurable. Finite-product Tonelli and the published rank-one
+kernel is measurable. Finite-product Tonelli and the existing rank-one
 Mellin estimate give finiteness for product Haar when every exponent exceeds
 three. Haar uniqueness transfers this finiteness to the supplied arbitrary
 Haar measure. This argument asserts no equality of Haar normalizations.
@@ -54,7 +54,7 @@ b_j = -tau for j < r, and b_r = 0.
 ```
 
 `gaugeFullRank_scalarWeight` proves the exact weight identity using the
-published determinant formula in adjacent-root coordinates, the actual
+existing determinant formula in adjacent-root coordinates, the actual
 inverse Haar weight formula, finite-product real powers, and addition of
 exponents of positive reals. The final coordinate therefore has exponent
 `(r+1)*sigma`; it receives no simple-root gauge power or Haar-modulus power.
@@ -67,6 +67,6 @@ through `GaugeTorusCoordinates.lintegral_blockRoots_lt_top_iff`, and uses
 the exact scalar identity to recover the displayed integrand. The coordinate
 transport preserves finiteness for arbitrary Haar normalization.
 
-This unit supplies the uniform torus convergence input. The compact-uniform
+This module supplies the uniform torus convergence input. The compact-uniform
 kernel bound, the actual Whittaker quotient application, and the final
 unchanged `WhittakerSchwartzGaugeStatement` are separate results.

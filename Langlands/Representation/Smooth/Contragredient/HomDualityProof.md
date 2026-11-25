@@ -77,5 +77,4 @@ commutative coefficient ring.
 The registered original is `casselman-2019-smooth-representations`, SHA256
 `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
 Pages 1, 6 and 7 and the source fingerprint were checked for this proof.
-All supporting component lemmas are retained in this module. Worker 0 authored
-the supplied proof and its explanation.
+All supporting component lemmas are retained in this module.

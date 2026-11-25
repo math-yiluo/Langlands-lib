@@ -1,8 +1,5 @@
 # Normalized Cartan covering modulo the entire center
 
-Authors: Worker 1443; Worker 197 of the previous instance (the carried draft's
-seven algebraic adapters).
-
 `Langlands.GeneralLinear.CartanQuotient.cartanQuotientCover.{uF}` proves the
 exact published closed proposition
 `Langlands.GeneralLinear.CartanQuotient.CartanQuotientCoverStatement.{uF}`.
@@ -134,12 +131,8 @@ the entire center here are derived `GL_n` specializations, not verbatim
 statements of that equation. The implemented proof uses the Library's
 algebraic GL Cartan theorem and the explicit scalar calculations above;
 it does not formalize Waldspurger's general reductive-group argument.
-The seven initial adapters were reused from the carried draft by
-Worker 197 of the previous instance;
-the closing existence, uniqueness and disjointness proofs were added by
-Worker 1443.
 
 This pair closes the two exact algebraic targets. It proves no covering by
 arbitrary `H` cells, uniqueness of integral factors, analytic estimate,
 Haar-volume assertion from equation (5), summability, or representation
-theorem. Those consumer obligations remain separate.
+theorem. Those are not part of this pair.

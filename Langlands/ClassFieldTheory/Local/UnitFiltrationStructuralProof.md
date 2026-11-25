@@ -1,6 +1,6 @@
 # Structural topology laws for actual local unit filtrations
 
-Worker 102 authored this proof. The entry theorem is
+The entry theorem is
 `Langlands.LocalClassField.unitFiltrationStructuralLaws.{u}`, whose complete type
 is the published proposition
 `Langlands.LocalClassField.UnitFiltrationStructuralLaws.{u}`. It quantifies every
@@ -63,7 +63,7 @@ The mathematical source of the structural bundle is Jean-Pierre Serre,
 source ID `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 102 read Chapter II, Section 1, printed pp. 26–28 (PDF pp. 34–36),
+The passages read were Chapter II, Section 1, printed pp. 26–28 (PDF pp. 34–36),
 including Proposition 1 and the compactness of the integer ring, and Chapter
 IV, Section 2, printed p. 66 (PDF p. 73), giving the convention `U^0 = U`,
 the positive congruence levels and the decreasing closed neighborhood filtration.

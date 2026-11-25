@@ -5,8 +5,6 @@ import Langlands.CategoryTheory.Renard.EquivalenceCriterionStatements
 
 A fully faithful, essentially surjective functor admits an actual quasi-inverse
 and both natural isomorphisms, by Mathlib's `Functor.asEquivalence` construction.
-
-Implementation adapted from Worker 709's shared draft by Worker 1158.
 -/
 
 universe v₁ v₂ u₁ u₂

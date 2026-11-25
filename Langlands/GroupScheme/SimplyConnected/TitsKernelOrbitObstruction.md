@@ -1,8 +1,7 @@
 # Tits obstructions of full star orbit weights and the actual anisotropic kernel
 
-Author: Worker 5662.
-
-This module proves the obstruction part of clause 3 of Task 7605. Let `G` be simply
+This module proves the obstruction part of the comparison of actual Tits obstructions with
+the anisotropic kernel, for full star orbit weights. Let `G` be simply
 connected with actual Tits index data `d` over `k`, and let `p` be the Library's actual
 anisotropic kernel. For a simple vertex `a`, the full star orbit weight
 `d.absoluteOrbitWeight hsc a` (published module `SimplyConnected/StarOrbitWeights`) is the

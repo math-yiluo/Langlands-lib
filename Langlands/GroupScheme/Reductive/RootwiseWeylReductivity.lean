@@ -66,7 +66,7 @@ theorem IsWeylInversion.map_weightSpace {α : characterLattice T} {c : T.toGrp �
   have hcongr_neg : characterLattice.congr σ (-α) = α := by
     rw [characterLattice.congr_apply, ← hσα, Iso.inv_hom_id_assoc]
   have hcongr : characterLattice.congr σ α = -α := by
-    have h1 := map_neg (characterLattice.congr σ) α
+    have h1 := AddEquiv.map_neg (characterLattice.congr σ) α
     rw [hcongr_neg] at h1
     exact neg_eq_iff_eq_neg.mp h1.symm
   rw [← hcongr]

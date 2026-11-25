@@ -1,6 +1,6 @@
 # The rank-one type-D branch in ranks at least five from local components
 
-This internal unit proves conditional consequences for an actual index `d`
+This internal module proves conditional consequences for an actual index `d`
 of a simply connected absolutely almost-simple affine group locally of
 finite type over a nonarchimedean local field. The group has split rank one
 and a supplied numbering of every actual Cartan entry by `D_n`. Each theorem
@@ -40,4 +40,4 @@ elementary Cartan arguments; it does not use the downstream local rank-one
 classification or local Kneser--Tits. It retains arbitrary universes and
 every field and residue characteristic, including characteristic two.
 Rank four, its possible full-star images, and exceptional types are outside
-this unit.
+this module.

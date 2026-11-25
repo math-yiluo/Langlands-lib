@@ -18,7 +18,8 @@ actual `FiniteSeparableNilradicalEtaleModel R K L`, write `A` for its
 unlocalized monic quotient, `r` for its denominator, `B = R[1/r]`, and
 `C = B tensor_R A`. These are the literal types used in the definitions,
 not abstract scheme presentations assumed to have the desired properties.
-The predecessor's proved constructor supplies such a model whenever
+The proved constructor `finiteSeparableNilradicalEtaleModel` of
+`Langlands.CommutativeAlgebra.FiniteSeparableNilradicalEtaleModel` supplies such a model whenever
 `L/K` is finite dimensional and separable.
 
 The construction proceeds as follows.
@@ -32,8 +33,8 @@ The construction proceeds as follows.
   proves `C` is nontrivial. Thus `Spec C` is nonempty. The earlier
   nilradical computation makes `Spec A` irreducible, and its nonempty open
   subscheme `Spec C` is irreducible as well.
-- `toBase` is the spectrum map induced by `B -> C`. The predecessor's
-  finite, free, and etale algebra instances give a finite etale scheme
+- `toBase` is the spectrum map induced by `B -> C`. The
+  finite, free, and etale algebra instances of that module give a finite etale scheme
   morphism. A nontrivial free algebra is faithful; integrality then gives
   surjectivity of the actual spectrum map.
 - `baseOpen` is the principal open `D(r)` in `Spec R`. The denominator
@@ -78,7 +79,7 @@ open-immersion compatibility prove this identity. Thus the construction
 preserves the specified extension and its map to the original,
 potentially nonreduced affine base.
 
-This unit establishes the affine scheme cover and its actual generic
+This module establishes the affine scheme cover and its actual generic
 residue-field triangle. It imposes no reducedness, domain, or
 Noetherianity condition on `R`. Transport to an arbitrary irreducible
 scheme, geometric splitting of components, the complete assertion of

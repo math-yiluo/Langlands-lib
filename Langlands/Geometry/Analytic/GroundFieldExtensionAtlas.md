@@ -36,4 +36,5 @@ conventions of Definition 1.2.3 and Remark 1.2.4, printed p. 16
 
 Descent through quasi-isomorphisms to the localized category over `K`,
 towers of field extensions, fiber products, and the comparison
-`(X^an)_L = (X_L)^an` are reserved for Task 3519.
+`(X^an)_L = (X_L)^an` are not treated in this module; towers of field
+extensions are treated in `GroundFieldExtensionAtlasTower`.

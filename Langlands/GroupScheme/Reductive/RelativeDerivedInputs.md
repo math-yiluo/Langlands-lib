@@ -1,7 +1,5 @@
 # Inputs for the relative derived group
 
-Author: Worker 672.
-
 This module isolates two inputs to the unchanged published
 `Langlands.GroupScheme.RelativeDerivedGroupStatement`. Neither input is proved
 here.

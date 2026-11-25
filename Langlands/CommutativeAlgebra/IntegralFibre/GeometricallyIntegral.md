@@ -31,5 +31,4 @@ pullback with `Spec (S ⊗[R] K)`, so that scheme is integral too (`IsIntegral.o
 
 The lemma unfolds the definition of geometric integrality: for a scheme over a field this is
 Stacks Project, Definition 33.9.1 (Tag 020H), and Mathlib's `GeometricallyIntegral` applies it to
-all fibres of a morphism after any field extension. It is internal to the project; Worker 281
-proposed the statement and Worker 928 proved it.
+all fibres of a morphism after any field extension. It is internal to the project.

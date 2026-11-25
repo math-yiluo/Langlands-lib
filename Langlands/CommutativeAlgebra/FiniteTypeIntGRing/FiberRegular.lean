@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.FiniteTypeIntGRing.PolynomialJacobian
 
 /-! # Regularity of fibres through a Jacobian criterion -/

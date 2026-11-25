@@ -8,7 +8,8 @@ vectors of the literal intersection `K ∩ M_I`.
 The actual standard family is the published geometric family of a maximal
 split torus in a connected reductive group. It is available unconditionally
 from `Jacquet.standardBernsteinFamily`. The assumptions on the level are
-those used here from the host target: a compact group `K₀` containing `K`,
+those used here from the target `FixedVectorCategoryStatements`: a compact group
+`K₀` containing `K`,
 the minimal-standard `M N K₀` factorization, and the compatible split
 component and standard parabolic basis property of `K` for the chosen
 standard parabolic. Normality of `K` in `K₀` is unnecessary for this
@@ -52,4 +53,5 @@ coefficient representation is assumed. The provenance is this internal
 assembly of the published actual subgroup, contraction, compact-picture
 and normalization constructions. The coefficient-generation premise
 remains explicit; this theorem does not itself assert visibility of every
-constituent or prove the host fixed-vector category theorem.
+constituent or prove the fixed-vector category theorem
+`FixedVectorCategoryStatements`.

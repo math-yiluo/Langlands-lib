@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.KIntegralInvariance`.
 
-The Library's `RealPrincipalSeriesDualityProof` (Worker 5459) proves the infinitesimal invariance
+The Library's `RealPrincipalSeriesDualityProof` proves the infinitesimal invariance
 `∫_{O(n)} (R(X) φ)(k) dk = 0` of the `O(n)`-integral. It holds for every smooth function `φ` on
 `GL_n(ℝ)` that transforms on the left by the modulus character of the upper triangular Borel
 subgroup (`RealPrincipalSeriesDuality.integral_rightDerivative_eq_zero`). This module integrates
@@ -10,7 +10,8 @@ that to invariance under the whole group: `∫_{O(n)} φ(k g) dk = ∫_{O(n)} φ
 `g ∈ GL_n(ℝ)`. The statement is `Langlands.Archimedean.KIntegralInvarianceStatement`, proved as
 `Langlands.Archimedean.kIntegralInvariance`.
 
-In the planned proof of `RealStandardLanglandsQuotientStatement` (Task 6749) it is used for the
+In the proof of `RealStandardLanglandsQuotientStatement` (through the module
+`MaximalParabolicIntegration`) it is used for the
 Levi subgroup `GL_{n-1}(ℝ)` of the maximal parabolic subgroup `P_{n-1,1}`: averaging over `O(n-1)`
 turns a modulus-equivariant function for the Borel subgroup into one for `P_{n-1,1}`.
 

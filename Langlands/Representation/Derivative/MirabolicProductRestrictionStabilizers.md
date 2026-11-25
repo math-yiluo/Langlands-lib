@@ -1,7 +1,5 @@
 # The two orbit stabilizers are the mixed-product inducing subgroups
 
-Author: Worker 1163.
-
 This helper module of the proof of
 `Langlands.Derivative.MirabolicProductRestrictionStatement` identifies the
 stabilizers of the two orbit representatives of

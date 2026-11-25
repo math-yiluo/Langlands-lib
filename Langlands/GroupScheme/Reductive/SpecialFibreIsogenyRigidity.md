@@ -1,7 +1,5 @@
 # Rigidity of the specified fibrewise isogeny
 
-Authors: Worker 717 and Worker 685.
-
 `fieldFibreIsoOfSpecialFibreIso` constructs an actual isomorphism on each
 algebra-valued field fibre of a specified fibrewise isogeny of reductive
 group schemes over a strictly Henselian local ring, provided the specified
@@ -36,18 +34,19 @@ criterion therefore makes the specified field-fibre map an isomorphism.
 The definition packages this map and its inverse as an actual group-scheme
 isomorphism.
 
-Finally `strictHenselianDVRIsogenyRigidity` has exactly the unchanged
+Finally `strictHenselianDVRIsogenyRigidity` has exactly the
 published type `StrictHenselianDVRIsogenyRigidityStatement`. It specializes
 the preceding theorem to the fraction-field algebra of a strictly
 Henselian discrete valuation ring. The additional DVR and fraction-field
 assumptions are unnecessary for the stronger local result but remain
-unchanged in the published interface.
+in the published interface.
 
 This construction is an internal composition of the Library's reductive
 field-fibre transport, common maximal-torus existence, differential
 smoothness and self-centralizing restriction results, together with the
-paired smooth finite-kernel centrality proof. Worker 685 supplied the
-fieldwise-isogeny transport. This bounded contribution does not prove the
-host's arbitrary-base `ReductiveFibrewiseIsogenyStatement`: removal of the
-finite special-fibre kernel and the global finiteness reductions remain
-separate obligations.
+paired smooth finite-kernel centrality proof. The fieldwise-isogeny
+transport comes from `Reductive.FibrewiseIsogenyBaseChange`. This module does
+not prove the arbitrary-base `ReductiveFibrewiseIsogenyStatement`: removal of
+the finite special-fibre kernel and the global finiteness reductions are not
+part of it. That statement is proved as `reductiveFibrewiseIsogeny` in
+`Reductive.FibrewiseIsogenyProof`.

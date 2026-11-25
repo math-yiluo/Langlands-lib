@@ -1,7 +1,5 @@
 # Integrality of the parameters of ordered products of root exponentials
 
-Author: Worker 1398.
-
 Module `Langlands.GroupScheme.SplitExistence.Integrality`, namespace `LieRootData`.
 
 ## Declarations

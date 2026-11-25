@@ -108,8 +108,9 @@ With `largeLevelAmple_of_quasiFiniteProjective` and
 `largeLevelQuasiProjectivity_of_ample`, this definition reduces the finite-type
 input `LargeLevelFiniteTypeStatement` of the target
 `LargeLevelQuasiProjectivityStatement` to three statements:
-`FrameChartFiniteTypeStatement`, which is staged with this candidate, and the
-published `FrameLocusBaseChangeStatement` and `FrameLocusCoverStatement`.
+`FrameChartFiniteTypeStatement` (module `FrameChartFiniteTypeStatement`, ported
+with this file), and the published `FrameLocusBaseChangeStatement` and
+`FrameLocusCoverStatement`.
 
 ## Provenance
 

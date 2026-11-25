@@ -3,12 +3,12 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacket`, namespace
 `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedCoefficientTwistXi` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedCoefficientTwistXi`:
   `norm_family_coefficientMap_le_xi` (the uniform `Ξ`-bound for smooth families in the compact
   picture), `twistedSection` and `factorization_subtype`; through its imports `xi`, `LeviData`,
-  `IsIwasawaPair`, `iwasawaWeight_nonneg`, Worker 200's `CompactInduction.coefficientMap`,
+  `IsIwasawaPair`, `iwasawaWeight_nonneg`, `CompactInduction.coefficientMap`,
   `ProductInducedCompactPicture`, `productInducedCompactEquiv` and `finiteSmoothFamilies`;
-- `Langlands.Representation.Plancherel.ProductInducedOrbitCoefficientSmoothness` (Worker 200):
+- `Langlands.Representation.Plancherel.ProductInducedOrbitCoefficientSmoothness`:
   `continuous_unitaryOrbitCoefficient` (continuity in `ω` of the coefficient, from Lemma
   VI.2.1 (i)); through its imports `HasLaurentUnitaryCoordinates`,
   `ProductInducedOrbitCoefficients` (`unitaryOrbitCoefficientMap`,
@@ -40,7 +40,7 @@ page minus 234.
   `v ∈ I_{K∩P}^K E`, `v̌ ∈ I_{K∩P}^K Ě`; alors il existe `C > 0` tel que pour tous
   `χ ∈ Im X(M)` et tout `g ∈ G`, on ait `|⟨I_P^G(ω ⊗ χ)(g) v, v̌⟩| ≤ C Ξ(g)`." The reduced
   assertion is `norm_family_coefficientMap_le_xi` (`InducedCoefficientTwistXi`). This module
-  carries out the reduction "on se ramène facilement" for Worker 200's `C^∞(O, P)`.
+  carries out the reduction "on se ramène facilement" for `C^∞(O, P)` (`productInducedSmoothOrbitSections`).
 - VI.3, printed p. 302 (PDF p. 68): "On a muni `Im X(M)` d'une mesure. On munit `O` d'une mesure
   telle que l'application `Im X(M) → O`, `χ ↦ ω ⊗ χ` préserve localement les mesures. Pour
   `ψ ∈ C^∞(O, P)` définissons une fonction `f_ψ` sur `G` par
@@ -180,13 +180,13 @@ Corollary III.1.2 for `π`, used in the proof of Lemma VI.2.2). `Ξ` is `xi hP�
 
 ## Relation to the Library
 
-- `rationalOrbitWavePacket` (`RationalOrbitWavePacketPairing`, Worker 249) is the wave packet for
+- `rationalOrbitWavePacket` (`RationalOrbitWavePacketPairing`) is the wave packet for
   `M = G` with the I.1 orbit measure, on sections given by coefficient tensors of chosen
-  representatives; there `µ = 1`. This module treats a general `P = M U` with Worker 200's
+  representatives; there `µ = 1`. This module treats a general `P = M U` with the
   section space `C^∞(O, P)`.
 - `InducedCoefficientTwistXi` proves the bound for smooth families in the compact picture and
   states that the passage to `C^∞(O, P)` is not done there; this module does it.
-- Lemma VI.2.1 (i) (smoothness and continuity of `ω ↦ (E_P^G ψ_ω)(g)`) is Worker 200's
+- Lemma VI.2.1 (i) (smoothness and continuity of `ω ↦ (E_P^G ψ_ω)(g)`) is the module
   `ProductInducedOrbitCoefficientSmoothness`; it is used, not reproved.
 
 ## Open obligations

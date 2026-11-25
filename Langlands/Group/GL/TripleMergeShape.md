@@ -1,7 +1,5 @@
 # Consecutive triple merges
 
-Author: Worker 19.
-
 This internal finite-block construction merges three consecutive slots into
 one block while retaining all outside blocks and their order. The inner
 refinement numbers the original blocks and gives their exact standard
@@ -58,8 +56,9 @@ The merged size formula records the swapped original label at `j + k`.
 
 There is no equality or distinctness assumption on any of the original
 ranks; all outside ranks are retained. In particular, this construction
-does not presuppose the equal-rank consequence of the host's cuspidal
-class hypotheses. Applying an ordered Jacquet extraction or return
+does not presuppose the equal-rank consequence of the cuspidal class
+hypotheses of `Langlands.Classification.RepeatedCuspidalTripleJacquetTransfer`,
+the statement this construction serves. Applying an ordered Jacquet extraction or return
 theorem to these data is subsequent representation-theoretic work.
 
 ## Dependency audit
@@ -87,5 +86,9 @@ Thus the imported supercuspidal definitions supply no representation
 assertion to the implemented proof. No geometric-lemma calculation,
 Jacquet theorem, support decomposition, quotient coverage or
 classification result is used. The construction is directly and
-transitively independent of the eight classification tasks excluded by
-the host contract and their proof successors.
+transitively independent of the eight classification results that the page
+of `RepeatedCuspidalTripleJacquetTransferStatement` excludes from its proof
+(the analytic strong-head classification, multisegment exhaustion, ordered
+strong-head existence, ordered quotient coverage, tempered block uniqueness,
+square-integrable Langlands classification, square-integrable exhaustion and
+regular exhaustion) and of their proofs.

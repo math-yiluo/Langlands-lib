@@ -1,13 +1,13 @@
 # Right-translation covariance of the actual enveloping and center actions
 
-Author: Worker 381. Module: `Langlands.Global.ArchimedeanCovarianceStatement`.
+Module: `Langlands.Global.ArchimedeanCovarianceStatement`.
 Namespace: `Langlands.Global.ArchimedeanGL`.
 
 This module states, without proving, that right translation on actual smooth
 archimedean functions intertwines the universal enveloping differential action
 with its adjoint twist, and that the same holds for the action of the
 enveloping center. All three declarations are Prop-valued definitions; no
-theorem is asserted and no proof is implemented in this unit.
+theorem is asserted and no proof is implemented in this module.
 
 ## Parameters and objects
 
@@ -58,7 +58,8 @@ that is, `R(g) (D(a) f) = D(AdU(g) a) (R(g) f)`.
 
 `EnvelopingCenterRightCovarianceStatement K n` is exactly the conjunction
 `EnvelopingRightCovarianceStatement K n ∧ CenterRightCovarianceStatement K n`,
-in that order. It is the single target for a subsequent proof.
+in that order. It is the single target of the proof
+`envelopingCenterRightCovariance` (module `ArchimedeanCovarianceProof`).
 
 The statements carry no automorphy, compact-finiteness, center-finiteness or
 growth hypothesis, and `g` ranges over the whole infinite group, not merely a
@@ -73,10 +74,10 @@ The orientation follows from the published conventions. For a real direction
 `(x * g) * X`. On the right side, the chain rule for `x ↦ x * g` sends the
 direction `x * (g X g⁻¹)` to `(x * g) * X`. This real-generator identity is the
 smooth component of the separately published
-`Langlands.Automorphic.RealDifferentialCovarianceStatement`, whose proof is a
-separate task.
+`Langlands.Automorphic.RealDifferentialCovarianceStatement`, whose proof is
+`realDifferentialCovariance` in `Langlands.Automorphic.RealDifferentialCovarianceProof`.
 
-The intended later proof extends that identity in two algebraic steps. First,
+A proof extends that identity in two algebraic steps. First,
 complex linearity extends it to `ComplexLieAlgebra K n`, using
 `complexSmoothLieAction_tmul` and `complexLieConjugation_tmul`. Second, since
 `R(g)` is invertible, `a ↦ R(g) ∘ D(a) ∘ R(g)⁻¹` and `a ↦ D(AdU(g) a)` are both
@@ -86,7 +87,7 @@ agree on generators by `envelopingAction_generator` and
 property. The center statement then follows by applying the enveloping statement
 to `centerInclusion K n z` and rewriting with `centerAction_apply` and
 `centerInclusion_centerConjugation`. This paragraph is motivation for that
-subsequent proof, not a claim that this unit implements it.
+proof, not a claim that this module implements it.
 
 ## Original source and provenance
 
@@ -104,8 +105,8 @@ Sections 4.2(c) and 4.3, printed p. 195 (PDF p. 190), impose the
 corresponding adelic condition with an ideal of `Z(g_∞)` and transcribe it to
 the archimedean slices. The present statements isolate the compatibility of
 the enveloping and center actions with right translation that such arguments
-use. Worker 381 read both original pages. No errata note for this source exists
-in the current Library's public notes.
+use. Both original pages were read. No errata note for this source was found
+in the Library's public notes.
 
 Registered source: `borel-jacquet-1979-automorphic`,
 `/home/taskhub/central-library/Borel-Casselman--Automorphic Forms, Representations and L-Functions (Corvallis)--1979/Part I.pdf`,

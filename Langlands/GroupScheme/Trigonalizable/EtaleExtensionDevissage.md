@@ -1,6 +1,6 @@
 # Reduction from smooth unipotent kernels to vector groups
 
-Author: Worker 3502 (Task 7944). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.EtaleExtensionDevissage`.
 
 `EtaleExtensionSplit.exists_section_of_vector_splitting` fixes a group

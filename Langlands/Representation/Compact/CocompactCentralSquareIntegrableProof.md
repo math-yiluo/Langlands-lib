@@ -1,7 +1,5 @@
 # Renard IV.3.3, Remark: integrals over `G/A` for a cocompact central subgroup
 
-Author: Worker 27.
-
 The theorem
 `Langlands.Renard.CompactRepresentation.cocompactCentralSquareIntegrable`
 proves the published proposition

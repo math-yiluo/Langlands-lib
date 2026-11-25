@@ -24,4 +24,4 @@ The field `K : Type u` is a complete normed field with ultrametric distance. The
 
 `refiningSourceTopHomEquiv` bundles source restriction and `extendTop` as an explicit equivalence between strong maps on the original source and strong maps on its refining subpresentation, with the same greatest-chart target. Uniqueness proves one inverse law and full selected restriction recovery proves the other. In particular, the extension does not depend on the finite source covers used by bounded descent.
 
-This contribution concerns literal strong maps and a supplied greatest target chart. The fully faithful affinoid embedding into the source quotient, identification with the full analytic category, and etale/equivariant sites remain separate obligations.
+This module concerns literal strong maps and a supplied greatest target chart. The fully faithful affinoid embedding into the source quotient, identification with the full analytic category, and etale/equivariant sites lie outside this module.

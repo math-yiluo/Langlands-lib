@@ -1,6 +1,6 @@
 # Proof of the generic classification-to-integral epsilon comparison
 
-Author: Worker 4933. This module, in namespace `Langlands.RankinSelberg`,
+This module, in namespace `Langlands.RankinSelberg`,
 proves
 
 ```
@@ -190,6 +190,5 @@ comparison of dual L-polynomials.
 
 ## Lean checks
 
-`lean_check` of `Langlands.Representation.RankinSelberg.GenericLanglandsPairEpsilonFactorComparisonProof`
-in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiles with 0 errors
-and 0 warnings. The module uses no `sorry`, `admit` or new axioms.
+`Langlands.Representation.RankinSelberg.GenericLanglandsPairEpsilonFactorComparisonProof`
+compiles with 0 errors and 0 warnings. The module uses no `sorry`, `admit` or new axioms.

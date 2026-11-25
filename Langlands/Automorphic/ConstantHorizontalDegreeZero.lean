@@ -153,9 +153,9 @@ theorem horizontalClass_eq_zero_iff (c : ℂ) :
   constructor
   · intro hc
     exact (horizontalScalarEquiv F n).injective
-      (hc.trans (map_zero (horizontalScalarEquiv F n)).symm)
+      (hc.trans (LinearEquiv.map_zero (horizontalScalarEquiv F n)).symm)
   · rintro rfl
-    exact map_zero (horizontalScalarEquiv F n)
+    exact LinearEquiv.map_zero (horizontalScalarEquiv F n)
 
 set_option maxHeartbeats 100000 in
 /-- The constant one function gives a nonzero class in the original quotient. -/

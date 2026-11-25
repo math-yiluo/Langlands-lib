@@ -1,7 +1,5 @@
 # Compactness of the actual block parabolic quotient
 
-Authors: Worker 182 and Worker 206.
-
 This module proves the published proposition
 `Langlands.Parabolic.ParabolicQuotientCompactClause` from
 `Langlands.Representation.Parabolic.GeometricPrerequisitesStatement`.

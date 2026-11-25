@@ -1,11 +1,5 @@
 # Finite-dimensional relative Hom comparison for every outer quotient
 
-Worker 526 assembled this proof with the central-block and source-twist
-design of Workers 430 and 359, the literal shape transport of Worker 435,
-and the Hom transport of Workers 845, 526 and 435. The imported geometric,
-analytic, adjunction, finite-length and lower-bound results retain their
-own documented authorship.
-
 `Langlands.relativeCosocleHomComparison.{uF,uV,uM,uW,uZ}` proves exactly
 `Langlands.GLRelativeCosocleHomComparisonStatement`. The field, fine,
 middle, coarse and outer-carrier universes remain independent. The exact

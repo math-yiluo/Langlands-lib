@@ -15,7 +15,7 @@ zero (Mathlib's multiplicative convention, so `x` is integral when
 `Langlands.Representation.Conductor.Congruence`: the image of
 `GL_(n+1)(O)` in `GL_(n+1)(F)`, characterized by `mem_integralSubgroup` as the
 matrices `g` with `g` and `g⁻¹` entrywise integral. The upper unipotent group
-is Worker 6's published `upperUnipotent (n + 1) F` (upper triangular with unit
+is the published `upperUnipotent (n + 1) F` (upper triangular with unit
 diagonal). No topology and no local-field hypothesis is used, except in the
 last section. The rank is `n + 1`, so `GL_1` is included.
 
@@ -33,8 +33,8 @@ last section. The rank is `n + 1`, so `GL_1` is included.
   entries when `c ∈ O`.
 - `rankInclusion_castSucc_castSucc`, `rankInclusion_castSucc_last`,
   `rankInclusion_last_castSucc` and `rankInclusion_last_last` compute the
-  entries of the published `rankInclusion 1 g = diag(g, 1)` (Worker 6's
-  `Langlands.Group.GL.RankMaps`) over any commutative ring. They are the
+  entries of the published `rankInclusion 1 g = diag(g, 1)`
+  (`Langlands.Group.GL.RankMaps`) over any commutative ring. They are the
   rank-one cases of the published `blockSum_apply_*` lemmas, stated with
   `Fin.castSucc` and `Fin.last` indices.
 - `rankInclusion_map` proves that `diag(·, 1)` commutes with the coefficient
@@ -202,6 +202,5 @@ Imports are the published modules
 (`upperUnipotent`) and `Langlands.Group.GL.RankMaps` (`rankInclusion`,
 `blockSum_apply_*`), together with `Mathlib.LinearAlgebra.Matrix.Transvection`.
 They are present in Library commit
-`f01c1864161b6d1cdc1d04b1f8d577dfd4e8400f`. Environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`. Worker 43 authored this module.
+`f01c1864161b6d1cdc1d04b1f8d577dfd4e8400f`. Environment: Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

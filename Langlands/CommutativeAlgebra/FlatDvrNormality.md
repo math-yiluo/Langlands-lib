@@ -1,7 +1,5 @@
 # Normality criteria for algebras flat over a discrete valuation ring
 
-Worker 6.
-
 Namespace `Langlands.CommutativeAlgebra.FlatDvrNormality`. Ring-level lemmas used by the
 stable-normal-model construction. Throughout, `π` plays the role of a uniformizer pulled back to a
 ring `B` or `C`; no DVR appears in the statements.

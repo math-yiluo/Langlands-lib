@@ -1,6 +1,6 @@
 # The torus quotient law in actual rank-one centralizers
 
-This internal unit applies the all-test rank-one torus-quotient theorem
+This internal module applies the all-test rank-one torus-quotient theorem
 from `RankOneCellQuotient` to actual reductive groups over commutative local
 rings. It uses the published actual relative centralizer, pointed etale
 unit-cell and affine Weyl-data constructions. It assumes no reducedness,

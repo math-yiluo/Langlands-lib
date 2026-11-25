@@ -1,9 +1,8 @@
 # Actual rational-point duality factorization and term comparison
 
 This is an internal conditional specialization of
-`ContragredientTermFactorization` and `RationalFiniteLengthDuality`. The former
-was authored by Worker 490; the rational specialization was authored by
-Worker 196. The two closed natural-duality propositions and the closed ambient
+`ContragredientTermFactorization` and `RationalFiniteLengthDuality`. The two
+closed natural-duality propositions and the closed ambient
 and dynamic-Levi finite-length admissibility propositions remain explicit
 inputs. Neither this construction nor its supporting theorem proves them or
 the closed `RationalContragredientCommutationStatement`.
@@ -64,6 +63,6 @@ The Grothendieck classes retain every actual short-exact-sequence relation.
 The proof uses no Langlands classification, character independence, geometric
 lemma, adjointness or cuspidal-support theorem. Actual opposite-to-standard
 geometry, opposite/standard induction class comparison, and the four closed
-representation-theoretic inputs still require their separately owned proofs.
+representation-theoretic inputs still require their separate proofs.
 The original closed commutation target and all its visible premises are
 unchanged.

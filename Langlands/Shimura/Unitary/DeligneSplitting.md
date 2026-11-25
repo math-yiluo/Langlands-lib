@@ -1,7 +1,5 @@
 # Complex splitting of the quadratic Deligne point functor
 
-Author: Worker 57.
-
 This module constructs a natural algebraic splitting of the quadratic model
 `Complexification S = QuadraticAlgebra S (-1) 0` over every commutative
 complex algebra `S`. It then gives a multiplicative natural isomorphism from

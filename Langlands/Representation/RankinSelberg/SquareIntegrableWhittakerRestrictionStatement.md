@@ -1,7 +1,5 @@
 # The square-integrable Whittaker restriction-square estimate
 
-Author: Worker 381.
-
 This module defines the closed proposition
 `Langlands.RankinSelberg.SquareIntegrableWhittakerRestrictionStatement.{uF,uV}`.
 It states JPSS's restriction-square estimate, formula (7) on printed p.450:
@@ -137,7 +135,7 @@ found in the project literature index or the public or project notes.
   with `g` in `N_t \ G_t`, `h` in `N_(r-t-1) \ G_(r-t-1)` and `k` in the
   maximal compact subgroup (printed `K_r`), shows that (2) implies (7):
   `∫_{N_t\G_t} |W|²[diag(g, 1)] |det g|^(-(r-t)) dg < +∞`.
-  This unit formalizes (7). The same page introduces the zero-row integral.
+  This module formalizes (7). The same page introduces the zero-row integral.
 - p.451: Cauchy–Schwarz bounds the square of the cut-off zero-row integral
   by the product of (7) and the smaller-rank integral; "the first by (7)"
   is finite.
@@ -159,8 +157,10 @@ square-integrability of Whittaker functions modulo `N_r Z_r`.
 Deriving that Whittaker square-integrability from matrix-coefficient
 square-integrability, then (2) and the passage (6) ⟹ (7), together with all
 bridges between the supplied topology, the Borel structures and the
-compatible quotient measures, is a substantial future proof obligation. It
-is not a hypothesis here. The statement does not replace
+compatible quotient measures, is a substantial proof obligation. It
+is not a hypothesis here; `squareIntegrableWhittakerRestriction` in
+`SquareIntegrableWhittakerRestrictionProof` proves the statement. The
+statement does not replace
 `T.IsSquareIntegrable` by a classification, Whittaker, tempered or
 assumed-estimate predicate.
 
@@ -184,6 +184,7 @@ following points are derived formulation, marked explicitly:
 4. **Literal rank expressions.** `r = n + (0 + k + 1) + 1` and `t = n + 1`
    are kept as written to match the published Whittaker norm data.
 
-The statement is a prerequisite of the exact proof task for
-`SquareIntegrableZeroRowAnalyticStatement`: it isolates the first square
+The statement is a hypothesis of `squareIntegrableZeroRowAnalytic_of_estimates`,
+which proves `SquareIntegrableZeroRowAnalyticStatement` in
+`SquareIntegrableZeroRowAnalyticProof`: it isolates the first square
 factor of the Cauchy–Schwarz step on p.451.

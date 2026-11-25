@@ -1,12 +1,5 @@
 # Harris's Proposition 4.8 from its named inputs, over totally complex fields
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `d9c91a7e0fcb5cabbc936380004a4ae7` (option b1) to request
-`99dd5c974ab65af5a036022f960632d5`, which asked for
-`Proposition48ReductionTCStatement` in the convention of the operator's answer
-`81ed24709e7050068786116ca6613260` (Option A).
-
 **Scope.** The module
 `Langlands.Global.Arithmetic.HarrisProposition48ReductionTCStatement` defines four
 propositions in the namespace `Langlands.Global.Harris` and proves nothing. The
@@ -37,15 +30,14 @@ universes.
 
 ## 1. Why inputs 5, 6 and 10 are restated too
 
-The operator's answer named the totally complex forms of inputs 9 and 11–14 and
-of the reduction. Three further inputs have to change with them, because they
+Inputs 9 and 11–14 and the reduction have totally complex forms. Three further inputs have to change with them, because they
 take inputs 9–14 as hypotheses:
 
 - input 5, the prime branch, assumes inputs 7, 8, 9, 10, 11, 12 and 14;
 - input 6, the singleton branch, assumes inputs 7, 9, 10 and 13;
 - input 10, isobaric invariance, assumes input 9.
 
-The intended proof of the reduction discharges these hypotheses with the separately
+The proof of the reduction discharges these hypotheses with the separately
 supplied inputs 7–14. If only inputs 9 and 11–14 were restricted, the published
 inputs 5, 6 and 10 could not be applied to their totally complex forms, and the
 reduction would still need the unrestricted inputs. So each of inputs 5, 6 and 10
@@ -65,8 +57,6 @@ copied verbatim:
 - `Proposition48SingletonBranchTCStatement.{uF, uV}`: the hypotheses 9, 10 and 13
   become their totally complex forms; 7 and the body are unchanged.
 
-The operator is informed of this addition.
-
 ## 2. The statement
 
 `Proposition48ReductionTCStatement.{uF, uV}` says: the conjunction of the fourteen
@@ -82,7 +72,7 @@ The meaning of every input and of the conclusion is explained in
 
 ## 3. Relation to the published statements
 
-A private development check of Worker 0 compiled:
+A check outside the Library compiled:
 
 - each of inputs 9 and 11–14 implies its totally complex form (forget the
   instance);
@@ -95,9 +85,9 @@ A private development check of Worker 0 compiled:
 No implication between the two reductions is claimed in either direction: the
 totally complex reduction has weaker inputs 9–14 but stronger inputs 5, 6 and 10.
 
-## 4. Why the totally complex forms are stated, and the expected proof
+## 4. Why the totally complex forms are stated, and the proof
 
-The goal of Task 0 is local. On the Library's route to the local correspondence
+The Library's goal is local. On the Library's route to the local correspondence
 (route note `notes/henniart/llc-proof-route.md`), Proposition 4.8 is hypothesis 1
 of `Langlands.Henniart.CandidateExistenceTCReductionStatement`, and its unrestricted
 inputs 9 and 11–14 rest on global results whose proofs involve the real places:
@@ -113,16 +103,16 @@ proof applies inputs 9–14 — the fields of the problem, the intermediate fiel
 `L/E` and the prime cyclic steps between them — is totally complex, and the
 restriction loses nothing.
 
-Expected proof. In the reduction itself, inputs 7–14 are only passed to inputs 5
-and 6, which take exactly their totally complex forms. So the intended proof of
+Proof. In the reduction itself, inputs 7–14 are only passed to inputs 5
+and 6, which take exactly their totally complex forms. So the proof of
 the published reduction (strong induction on `Proposition48Problem.inductionDegree`,
 described in `HarrisProposition48ReductionStatement.md`) proves this statement with
-the hypotheses renamed. The applications at particular number fields happen inside
+the hypotheses renamed: `proposition48ReductionTC` (module
+`HarrisProposition48ReductionTCProof`) reuses the general theorems of
+`HarrisProposition48ReductionProof`. The applications at particular number fields happen inside
 proofs of inputs 5, 6 and 10; their totally complex forms obtain the instances at
-those fields from the two Mathlib lemmas above. The published reduction and its
-inputs have no Lean proof yet; they belong to Task 6413, whose executors are asked
-to stage proofs of these forms as supporting candidates, following the operator's
-answers.
+those fields from the two Mathlib lemmas above. The published reduction is proved
+as `proposition48Reduction` (module `HarrisProposition48ReductionProof`).
 
 ## 5. Sources and provenance
 

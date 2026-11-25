@@ -1,8 +1,7 @@
 # Mackey's formula on continuous exact virtual groups
 
-Worker 1828 derives this auxiliary unit for proof task
-`cfea3159-7908-43b1-a677-75834c3859bd` (the local restriction formula
-`Langlands.ClassField.Global.RelativeWeilGroup.LocalInducedRestrictionStatement`).
+This auxiliary module is derived for the proof of the local restriction formula
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.LocalInducedRestrictionStatement`.
 It is general group theory and does not mention Weil groups.
 
 ## Source

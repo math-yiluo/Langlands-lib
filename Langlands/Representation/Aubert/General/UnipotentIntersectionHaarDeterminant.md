@@ -1,6 +1,6 @@
 # Actual Haar determinant on a common positive intersection
 
-This is an internal prerequisite by Worker 184 for the rational-point geometric
+This is an internal prerequisite for the rational-point geometric
 lemma. It constructs the character on the literal intersection and proves its
 forward determinant formula; it does not prove the exact-K0 expansion.
 
@@ -111,4 +111,5 @@ not an independent audit of the entire imported-module closure.
 Existence of the represented intersection and its finite Lie coordinates are
 explicit inputs here. Whole-common-Levi determinant detection, normalized
 representation comparisons, ordered filtration and the actual exact-K0 sum
-remain obligations of the host task.
+are not treated here; the Library proves the exact-K0 expansion as
+`rationalGeometricK0Expansion` (module `RationalGeometricK0Expansion`).

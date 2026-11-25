@@ -50,8 +50,7 @@ hypothesis wherever the integer quotient is asserted to be all of `ℤ`.
   PDF page 5.
 - [Original source DOI](https://doi.org/10.5169/seals-51064).
 
-This is not a quotation of a general theorem from that source. The generic
-statement and its dependencies must be independently reviewed.
+This is not a quotation of a general theorem from that source.
 
 ## Exact dependencies and validation boundary
 
@@ -62,16 +61,15 @@ The actual p-adic specialization and geometric sign convention are supplied
 by [Local/Assembly](Local/Assembly.md) and
 [Local/AssemblyProof](Local/AssemblyProof.md).
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0 at
+Environment: Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Compilation and target inspection check this proposition definition. Its proof
 is the theorem in `AlgebraicProof`, including `degree_surjective`, which still
 requires `Function.Surjective φ`. The current theorem and its full declaration
-were checked for this documentation correction. The exported Test 2 receipts
-record independent approval by Reviewer 82, accepted proof validation including
-the exact target, and publication of `AlgebraicProof` at Test 2 commit
-`5bc58c2525e0499012801c80f17b6a9c04d57263`. Its archived final Lean/Markdown
-pair matches the pair carried into the current pilot Library. That commit
-belongs to Test 2, whose Library seeded this pilot; it is not a pilot commit.
+were checked. `AlgebraicProof` was first
+published, after a proof validation against the exact target, at commit
+`5bc58c2525e0499012801c80f17b6a9c04d57263` of the earlier Library from which
+this Library was seeded. Its final Lean/Markdown pair there matches the pair
+in this Library.

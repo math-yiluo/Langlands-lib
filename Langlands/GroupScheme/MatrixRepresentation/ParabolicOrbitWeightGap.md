@@ -1,6 +1,6 @@
 # Strict orbit weights of an actual parabolic eigenline
 
-This unit supplies the algebraic coordinate gap used in Waldspurger,
+This module supplies the algebraic coordinate gap used in Waldspurger,
 *La formule de Plancherel pour les groupes p-adiques (d'après
 Harish-Chandra)*, Lemma II.3.5, proof step (2), printed pp.257–258:
 the third listed condition requires a positive constant controlling
@@ -78,7 +78,7 @@ are conclusions. No line representation, highest-weight theorem,
 irreducibility, orbit-gap, or analytic estimate is a premise of this
 existence result.
 
-The unit also proves
+The module also proves
 `HasTorusCharacterDiagonal.rationalMatrix_eq_diagonal`. It uses the
 published `Langlands.Plancherel.rationalMatrix_eq_affineMatrix`,
 `rationalPointEquiv_left`, and

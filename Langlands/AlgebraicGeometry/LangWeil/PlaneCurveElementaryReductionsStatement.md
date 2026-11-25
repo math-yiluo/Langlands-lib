@@ -1,7 +1,5 @@
 # Elementary coordinate reductions for plane curves
 
-Author: Worker 96.
-
 `PlaneCurveElementaryReductionsStatement` is a proposition with two
 elementary conclusions needed before the Stepanov norm construction.
 Neither conclusion is proved in this module.

@@ -1,7 +1,5 @@
 # Statement: automorphisms of a pinned split reductive group over a connected affine base
 
-Author: Worker 75.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.AffinePinnedAutomorphismGroupStatement.{u}`. The Lean file only
 defines the proposition. It contains no proof of it and adds no other declarations or
@@ -228,13 +226,15 @@ affine base `S = Spec R`.
 
 ## Role in the Library
 
-This is a statement for the program of reductive group schemes over a base. A separate
-proof task will prove it. The intended route follows Conrad p.246: reduce to `S′`-points
+This is a statement for the program of reductive group schemes over a base. It is proved
+as `affinePinnedAutomorphismGroup` in
+[`Reductive.AffinePinnedAutomorphismGroupProof`](AffinePinnedAutomorphismGroupProof.md).
+The route sketched here follows Conrad p.246: reduce to `S′`-points
 over local `S`-schemes, conjugate `(σ(T), σ(B))` back to `(T, B)` over local rings
 (Proposition 6.2.11(2)), correct the pinning by a point of `(T/Z_G)(S′)` (the
 unit-correction argument in the proof of Corollary 6.1.15), and apply the pinned Isomorphism Theorem
 ([`Reductive.AffinePinnedIsomorphismTheoremStatement`](AffinePinnedIsomorphismTheoremStatement.md)).
-The field form, Conrad's Proposition 7.1.6, is submitted separately as a statement
-candidate (planned module `Reductive.PinnedAutomorphismGroupStatement`); it is not part
-of this candidate and is not imported. This module proves no relation between these
+The field form, Conrad's Proposition 7.1.6, is `PinnedAutomorphismGroupStatement` in the
+module [`Reductive.PinnedAutomorphismGroupStatement`](PinnedAutomorphismGroupStatement.md);
+it is not part of this module and is not imported. This module proves no relation between these
 statements.

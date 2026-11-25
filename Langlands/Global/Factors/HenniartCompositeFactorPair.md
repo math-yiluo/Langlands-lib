@@ -2,7 +2,8 @@
 
 Lean module: `Langlands.Global.Factors.HenniartCompositeFactorPair`.
 
-Worker 5130, Task 5230. Internal derived lemma. Its only sources are published
+Internal derived lemma for the proof of `HenniartCompositeFactorStatement`. Its
+only sources are published
 Library results and the companion transport modules named below.
 
 `PoleComparison.pairFactorCompatibility_henniartCompositeMap` proves the
@@ -22,7 +23,7 @@ of `F_v`. After `subst h`, `f : K ≅ F_v`. The proof goes as follows.
   composite on them as `completionSupercuspidalLatticeEquiv (T x₀)`.
 * L-factors: `unitaryPairLFactor_restrictUnitaryLatticeEquiv` (from
   `HenniartCompositeFactorWeil`, with `localDegreeInt_completionWeilEquiv`)
-  identifies the Weil-side L-factor at `K` with the one at `F_v`. Worker 5731's
+  identifies the Weil-side L-factor at `K` with the one at `F_v`.
   `isUnitaryPairLFactor_unitaryLatticeEquiv_iff_transport`
   (`UnitaryPairFactorTransport`) moves the supercuspidal L-factor relation from
   `F_v` (with `ψ_v`, `ν_v`) to `K`.
@@ -32,9 +33,9 @@ of `F_v`. After `subst h`, `f : K ≅ F_v`. The proof goes as follows.
   which form a local-constant system by `isSystem_transportAssignment`
   (`NonabelianSystemFieldTransportSystem`). It gives one certificate `e` for both
   sides at `F_v`, and `e` is moved back to `K`:
-  - Weil side: `completionWeilEquiv` equals `weilEquiv F_v K f⁻¹`, so Worker
-    5731's `FieldTransport.isUnitaryPairEpsilonFactor_transport`
+  - Weil side: `completionWeilEquiv` equals `weilEquiv F_v K f⁻¹`, so
+    `FieldTransport.isUnitaryPairEpsilonFactor_transport`
     (`NonabelianSystemFieldTransportPairEpsilon`) applies, with `ψ ∘ f⁻¹ = ψ_v`
     holding by definition.
-  - Supercuspidal side: Worker 5731's
+  - Supercuspidal side:
     `isUnitaryPairEpsilonFactor_unitaryLatticeEquiv_iff_transport`.

@@ -1,9 +1,8 @@
 # Opposite Jacquet functors for an actual block refinement
 
-Author: Worker 19. The quotient-action, map and functor patterns are adapted
-from Worker 8's `Parabolic.ComposedFunctors` and Worker 14's
-`Geometric.RefinementFunctors`; their contribution is retained in the submission
-attribution. The actual opposite subgroup geometry is imported from
+The quotient-action, map and functor patterns are adapted
+from `Parabolic.ComposedFunctors` and
+`Geometric.RefinementFunctors`. The actual opposite subgroup geometry is imported from
 `Parabolic.OppositeRefinementDefinitions`.
 
 For an ordered block shape `B : BlockShape n` and an inner block refinement
@@ -153,9 +152,9 @@ categorical packaging are internal extensions of the sources. Their laws use
 the published generic coinvariant, twist, smoothness and character constructions.
 
 The characters named `...Modulus` here are explicitly defined algebraic
-characters. Their identification with Haar conjugation scaling remains a
+characters. Their identification with Haar conjugation scaling is a
 separate analytic obligation. This module proves the intrinsic quotient, map,
 normalization, smoothness and functor laws only. It asserts no transitivity,
 exactness, admissibility preservation, relative multiplicity comparison,
 inducing-data recovery or Langlands classification theorem. In particular,
-Silberger's Lemma 5.3 is a later statement and proof obligation.
+Silberger's Lemma 5.3 is a separate statement and proof obligation.

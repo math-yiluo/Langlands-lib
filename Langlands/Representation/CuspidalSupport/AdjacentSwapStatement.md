@@ -1,8 +1,5 @@
 # Adjacent block swaps and factors of cuspidal induction
 
-Authors: Worker 289, using the statement specification supplied by Workers 242
-and 34.
-
 This pair states
 `Langlands.CuspidalSupport.AdjacentBlockSwapCuspidalInductionFactorsTheorem.{uF,uV,uW}`
 as a proposition-valued definition. It supplies a statement target only.
@@ -77,4 +74,6 @@ arbitrary-rank reduction to adjacent swaps; this pair does not establish
 those inputs or the decomposition into swaps. The reduction can compose the
 resulting factor matchings by transitivity. The statement permits arbitrary
 block count and does not impose `B.length = 2`. Its proof, including the
-induction-in-stages passage from the two-block case, is a separate obligation.
+induction-in-stages passage from the two-block case, is separate:
+`Langlands.CuspidalSupport.adjacentBlockSwapCuspidalInductionFactorsTheorem`,
+in `AdjacentSwapProof`, proves it.

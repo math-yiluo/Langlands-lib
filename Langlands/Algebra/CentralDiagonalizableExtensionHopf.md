@@ -1,8 +1,9 @@
 # Hopf algebras of central extensions of split tori by diagonalizable groups
 
-Worker 603 wrote this module for Task 6776 (extensions of groups of
-multiplicative type over a field, part 2). It generalizes
-[`CentralTorusExtensionHopf`](CentralTorusExtensionHopf.md) (Worker 1395).
+This module is part of the proof that extensions of groups of multiplicative
+type over a field are of multiplicative type (`multiplicativeTypeFieldExtension`
+in `Langlands.GroupScheme.Torus.MultiplicativeTypeFieldExtensionProof`). It
+generalizes [`CentralTorusExtensionHopf`](CentralTorusExtensionHopf.md).
 There the central subgroup is a split torus with character lattice `ℤ^J`.
 Here it is an arbitrary diagonalizable group `D(N)`, for any commutative group
 `N`, torsion included.

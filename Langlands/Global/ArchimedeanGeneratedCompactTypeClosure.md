@@ -1,7 +1,5 @@
 # Finite compact types in the closed generated module
 
-Author: Worker 94.
-
 This internal assembly proves finite dimension of each actual compact-type
 intersection in the closure of the algebraic span of `R(k) D(a) f`. It
 retains every number field in arbitrary universe, every natural rank,
@@ -35,7 +33,7 @@ finite-dimensional intersection already proved.
 
 These are internal consequences of the published algebraic finiteness,
 action covariance, compact-finite subrepresentation and actual projector
-construction. No unpublished peer proof is used. The last theorem keeps
-orbit density explicit; this unit does not prove unconditional density,
+construction. The last theorem keeps
+orbit density explicit; this module does not prove unconditional density,
 finite dimension of a whole group orbit, convolution reproduction or
 automorphic differential growth.

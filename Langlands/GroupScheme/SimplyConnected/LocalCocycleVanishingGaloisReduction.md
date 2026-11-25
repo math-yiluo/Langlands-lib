@@ -1,7 +1,5 @@
 # From finite Galois covers to finite separable covers
 
-Authors: Worker 1545.
-
 This internal module proves that the finite-Galois form and the
 finite-separable form of local cocycle vanishing for simply connected groups
 are equivalent. Neither form is proved unconditionally here.

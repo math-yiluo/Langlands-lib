@@ -1,7 +1,5 @@
 # Waldspurger's Lemma II.3.1 on actual rational points
 
-Author: Worker 248, Task 5460, revision 1.
-
 The proposition `Langlands.HarishChandraSchwartz.RationalSigmaProductStatement`
 asserts the second inequality of Waldspurger's Lemma II.3.1 for every actual
 standard parabolic over a nonarchimedean local field, at arbitrary universe `u`.

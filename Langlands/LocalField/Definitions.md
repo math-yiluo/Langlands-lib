@@ -1,8 +1,8 @@
 # P-adic fields as finite extensions
 
-## General base implementation (Task 7403)
+## General base implementation
 
-Worker 845 now delegates the spectral constructions to the characteristic-free
+This module delegates the spectral constructions to the characteristic-free
 [`Extension`](Extension.md) module. The original `PadicField` and
 `PadicField.TopologicalData` structures and every original declaration name and
 type are retained. The new `.toLocalData` and `.ofLocalData` conversions copy all
@@ -109,18 +109,18 @@ extension. For `Q_p` the two conventions agree.
 
 ## Audit of the pinned Mathlib
 
-The exact environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`:
+The exact environment is
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 There are no project mathematical dependencies.
 
-| Topic | Existing pinned Mathlib support | Boundary of this contribution |
+| Topic | Existing pinned Mathlib support | Boundary of this module |
 | --- | --- | --- |
 | Extension norm | `Analysis/Normed/Unbundled/SpectralNorm.lean`: `spectralNorm_extends`, `isNonarchimedean_spectralNorm`, `spectralAlgNorm_mul`, `spectralMulAlgNorm`, `spectralNorm_unique`, `NormedAlgebra.norm_eq_spectralNorm`, and the explicit spectral normed structures. | The definitions directly reuse the constructors. No norm-existence or uniqueness theorem remains to be invented. |
 | Completeness | `spectralNorm.completeSpace` proves completeness of the spectral uniform space for finite extensions. `FiniteDimensional.complete` in `Topology/Algebra/Module/FiniteDimension.lean`, re-exported by `Analysis/Normed/Module/FiniteDimension.lean`, handles finite-dimensional normed spaces over a complete base. `PadicNumbers.lean` has `CompleteSpace (Padic p)`. | No blanket completeness instance is installed on the bare algebraic carrier, which has no uniform space. |
-| Canonical topology | `Topology/Algebra/Module/FiniteDimension.lean`: `isModuleTopologyOfFiniteDimensional`, `continuous_equivFun_basis`, and `LinearMap.continuous_of_finiteDimensional`. `IsModuleTopology.eq_moduleTopology'` and `eq_moduleTopology` identify the topology. | The topological package requires the module-topology certificate. No new equality theorem between the module and spectral topologies is submitted. |
+| Canonical topology | `Topology/Algebra/Module/FiniteDimension.lean`: `isModuleTopologyOfFiniteDimensional`, `continuous_equivFun_basis`, and `LinearMap.continuous_of_finiteDimensional`. `IsModuleTopology.eq_moduleTopology'` and `eq_moduleTopology` identify the topology. | The topological package requires the module-topology certificate. No new equality theorem between the module and spectral topologies is added. |
 | Local compactness | `NumberTheory/Padics/ProperSpace.lean` gives properness of `Padic p`. `FiniteDimensional.proper` proves properness for finite-dimensional normed spaces over a locally compact nontrivially normed field; it is deliberately not a general instance. | Thus local compactness for the spectral norm already follows from an existing theorem. Assembly of a compatible valuative relation and all fields of `TopologicalData` for arbitrary `F` remains unimplemented here. |
-| General local fields | `NumberTheory/LocalField/Basic.lean`: `IsNonarchimedeanLocalField` and its instances for a topological division ring, compact integer ring, discrete valuation ring, discrete rank-one value group, and finite residue field. Completeness follows with a compatible additive uniformity. `valueGroupWithZeroIsoInt` gives the ordered value group with zero. | These consequences require the local-field certificate; this contribution does not use them to justify that certificate circularly. |
+| General local fields | `NumberTheory/LocalField/Basic.lean`: `IsNonarchimedeanLocalField` and its instances for a topological division ring, compact integer ring, discrete valuation ring, discrete rank-one value group, and finite residue field. Completeness follows with a compatible additive uniformity. `valueGroupWithZeroIsoInt` gives the ordered value group with zero. | These consequences require the local-field certificate; this module does not use them to justify that certificate circularly. |
 | Base field | `NumberTheory/Padics/LocalField.lean` supplies `IsNonarchimedeanLocalField (Padic p)`. `Padics/ValuativeRel.lean` supplies the relation from `Padic.mulValuation`, its compatibility, nontriviality, rank one, and valuative topology. | These instances construct `rationalTopologicalData`. |
 | Valuation compatibility | `RingTheory/Valuation/ValuativeRel/Basic.lean` defines `ValuativeExtension` by reflection and preservation of comparisons along the algebra map. | This is an explicit field of `TopologicalData`; its arbitrary-extension construction remains to be assembled. |
 | Residue field | The general local-field interface gives `Finite` for its residue field. `NumberTheory/Padics/RingHoms.lean`, `PadicInt.residueField`, identifies the residue field of `PadicInt p` with `ZMod p`. | The latter concerns the named p-adic integer ring. No transport identifying it with every integer-ring presentation is claimed. General `F` still needs the topological realization and residue-characteristic/degree identifications. |
@@ -168,8 +168,8 @@ in the audit. This file states their role and the limits of their reuse.
 
 The Lean file contains data definitions and constructors using existing
 instances. It introduces no theorem statements, project axioms, or proof
-placeholders. There is consequently no new proposition target to fingerprint.
-Native compilation and the development `lean_check` for the entry declaration
+placeholders. There is consequently no new proposition target.
+Native compilation and a development check of the entry declaration
 `Langlands.PadicField` succeeded with no errors or warnings. The inspection
 reported no declared or disallowed axioms, and only `propext`,
 `Classical.choice`, and `Quot.sound` as module axioms.
@@ -181,5 +181,4 @@ division-ring, discrete valuation-ring, and finite residue-field instances.
 The properness diagnostic additionally imports
 `Mathlib.Analysis.Normed.Module.FiniteDimension`; the base residue-field
 identification additionally imports `Mathlib.NumberTheory.Padics.RingHoms`.
-These checks establish elaboration in the pinned environment. Independent
-semantic review and publication establish acceptance of this definition layer.
+These checks establish elaboration in the pinned environment.

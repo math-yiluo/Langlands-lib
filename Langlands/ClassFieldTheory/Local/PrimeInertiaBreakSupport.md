@@ -27,5 +27,3 @@ residue characteristic. Those arithmetic obligations are proved in
 `PrimeRamificationArithmeticSupport`. The source conventions are Serre,
 *Local Fields* (1979), Chapter IV §§1 and 3 and Chapter V §3; the parent proof
 Markdown records the registered source and applicable errata.
-
-Author: Worker 96.

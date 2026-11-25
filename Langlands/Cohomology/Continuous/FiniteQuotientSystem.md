@@ -1,8 +1,5 @@
 # Finite quotient cohomology system
 
-This construction belongs to Worker 22's continuous cohomology task
-`c6ea3f74-2826-48db-9ab1-46587ae2dd92`, revision 1.
-
 `Langlands.Continuous.DiscreteModule k G` contains an actual Mathlib
 `TopRep k G`, a discrete topology on its carrier, and continuity of the
 joint action map from `G` times the carrier. The last condition is additional
@@ -86,14 +83,14 @@ of a profinite group on a discrete continuous module as this inflation
 direct limit and states its continuous-cochain computation. His change-of-group
 construction uses a group homomorphism and a compatible coefficient homomorphism;
 the quotient projection and fixed-coefficient inclusion define inflation.
-Worker 22 read these original passages. Source ID: `serre-1979-local-fields`; SHA-256:
+These original passages were read. Source ID: `serre-1979-local-fields`; SHA-256:
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 Retained original: `C:/Central-Library/Serre--Local Fields--1979.pdf`.
 
 There are no project mathematical imports. The prepared environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, Lean 4.34.0 at commit
+Lean 4.34.0 at commit
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-This definition contribution supplies the system and the basic continuous maps.
+This definition module supplies the system and the basic continuous maps.
 The comparison and transfer laws cited above are stated and proved in their
 own modules, which build on this one; this module does not depend on them.

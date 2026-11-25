@@ -1,7 +1,5 @@
 # Tensor points over a varying common point
 
-Author: Worker 105.
-
 This is derived point-space infrastructure for the fibre-product assertion in
 Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1 and its proof, printed pages 2–3.
@@ -33,6 +31,6 @@ tensors. `tensorFiberPointHomeomorph` packages the resulting homeomorphism.
 No topology is imposed on R,C,A,B. Finite generation, Hausdorffness and
 locality are not needed. The arbitrary-coordinate-algebra and independent
 value-universe scope is a derived extension of the source's finite-type
-case. This unit does not identify arbitrary categorical pushout cocones
+case. This module does not identify arbitrary categorical pushout cocones
 or actual scheme fibre-product points, and does not assert the complete
 axiomatic existence or uniqueness result.

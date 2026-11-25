@@ -1,7 +1,5 @@
 # Comultiplication, antipode and classifying maps of corepresented group functors
 
-Author: Worker 228.
-
 This module extends the published `Corepresented` interface
 ([`Corepresented`](Corepresented.md), [`CorepresentedPoints`](CorepresentedPoints.md)).
 It concerns a group-valued functor `F : CommAlgCat R ⥤ GrpCat` with a corepresentation

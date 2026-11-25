@@ -123,16 +123,18 @@ def cmGeometricNormalEtaleAction_of_dominantCriterion :
   exact
     { V := Scheme.Etale.mk geometricMap
       ρ :=
-        { toFun := fun g => MorphismProperty.Over.homMk ((geometricAction).ρ g)
+        { toFun := fun g => End.of (MorphismProperty.Over.homMk ((geometricAction).ρ g).asHom
             (cmGeometricNormalProjection_invariant D C preservation composition
               unitCoherence associativity comparison symmetry stability square universality
-              dualityNaturality polarizationStability compatibility h htor q U V hVU g)
+              dualityNaturality polarizationStability compatibility h htor q U V hVU g))
           map_one' := by
+            apply End.ext
             apply MorphismProperty.Over.Hom.ext
-            exact (geometricAction).ρ.map_one
+            exact congrArg End.asHom (geometricAction).ρ.map_one
           map_mul' := fun g g' => by
+            apply End.ext
             apply MorphismProperty.Over.Hom.ext
-            exact (geometricAction).ρ.map_mul g g' } }
+            exact congrArg End.asHom ((geometricAction).ρ.map_mul g g') } }
 
 local notation "etaleAction" => cmGeometricNormalEtaleAction_of_dominantCriterion D C
   preservation composition unitCoherence associativity comparison symmetry stability
@@ -147,7 +149,7 @@ local notation "etaleAction" => cmGeometricNormalEtaleAction_of_dominantCriterio
 
 @[simp] theorem cmGeometricNormalEtaleAction_of_dominantCriterion_ρ_left
     (g : ResidualGroup) :
-    ((etaleAction).ρ g).left = (geometricAction).ρ g := rfl
+    ((etaleAction).ρ g).asHom.left = ((geometricAction).ρ g).asHom := rfl
 
 local notation "pulledAction" =>
   (etaleTorsorPullbackFunctor ((projection).app U) ResidualGroup).obj
@@ -161,14 +163,14 @@ def cmGeometricNormalEtaleActionPullbackIso : etaleAction ≅ pulledAction :=
       (normalSquare).isoPullback_hom_snd) (by
     intro g
     apply MorphismProperty.Over.Hom.ext
-    change (geometricAction).ρ g ≫ (normalSquare).isoPullback.hom =
-      (normalSquare).isoPullback.hom ≫ ((pulledAction).ρ g).left
+    change ((geometricAction).ρ g).asHom ≫ (normalSquare).isoPullback.hom =
+      (normalSquare).isoPullback.hom ≫ ((pulledAction).ρ g).asHom.left
     have hf :
-        ((pulledAction).ρ g).left ≫ pullback.fst originalMap ((projection).app U) =
-          pullback.fst originalMap ((projection).app U) ≫ (originalAction).ρ g :=
+        ((pulledAction).ρ g).asHom.left ≫ pullback.fst originalMap ((projection).app U) =
+          pullback.fst originalMap ((projection).app U) ≫ ((originalAction).ρ g).asHom :=
       etaleTorsorPullbackFunctor_ρ_fst ((projection).app U) (originalTorsor).val g
     have hs :
-        ((pulledAction).ρ g).left ≫ pullback.snd originalMap ((projection).app U) =
+        ((pulledAction).ρ g).asHom.left ≫ pullback.snd originalMap ((projection).app U) =
           pullback.snd originalMap ((projection).app U) :=
       etaleTorsorPullbackFunctor_ρ_snd ((projection).app U) (originalTorsor).val g
     apply pullback.hom_ext
@@ -208,8 +210,8 @@ theorem cmGeometricNormalEtaleAction_isFiniteGeometricTorsor_of_dominantCriterio
     change IsIso (normalSquare).isoPullback.hom
     infer_instance
   have hc (g : ResidualGroup) :
-      ((etaleAction).ρ g).left ≫ (etaleIso).hom.hom.left =
-        (etaleIso).hom.hom.left ≫ ((pulledAction).ρ g).left :=
+      ((etaleAction).ρ g).asHom.left ≫ (etaleIso).hom.hom.left =
+        (etaleIso).hom.hom.left ≫ ((pulledAction).ρ g).asHom.left :=
     congrArg (fun k => k.left) ((etaleIso).hom.comm g)
   have hw : (etaleIso).hom.hom.left ≫ (pulledAction).V.hom = geometricMap :=
     MorphismProperty.Over.w (etaleIso).hom.hom
@@ -254,6 +256,6 @@ local notation "geometricTorsor" => cmGeometricNormalGeometricTorsor_of_dominant
 
 @[simp] theorem cmGeometricNormalGeometricTorsor_of_dominantCriterion_ρ_left
     (g : ResidualGroup) :
-    ((geometricTorsor).val.ρ g).left = (geometricAction).ρ g := rfl
+    ((geometricTorsor).val.ρ g).asHom.left = ((geometricAction).ρ g).asHom := rfl
 
 end Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel

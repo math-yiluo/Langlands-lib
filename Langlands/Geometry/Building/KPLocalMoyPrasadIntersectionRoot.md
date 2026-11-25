@@ -1,6 +1,6 @@
 # Root intersections of the groups `G(K)_{x,r}` at positive depth
 
-Helper module for Task 6191 (`LocalMoyPrasadGroupPropertiesStatement`). It proves clause 4
+Helper module for the proof of `LocalMoyPrasadGroupPropertiesStatement`. It proves clause 4
 (`LocalMoyPrasadRootIntersection`) for `r > 0`, assuming the sign product cover described
 below. The module introduces no definitions. Its results are theorems about the published
 objects `BuildingData.moyPrasad`, `BuildingData.rootGroupSpan` and
@@ -83,7 +83,7 @@ Fix building data `B` over `K = F^ur` with `Z = Z_G(S)` a torus (`hZ`).
 
   `G(K)_{x,r} = U_{Φ⁺(-μ),x,r} · j(Z(K)_r) · U_{Φ⁺(μ),x,r}`.
 
-  This is exactly the conclusion of the statement of Task 6542. Let `Ψ` be closed with
+  This is exactly the conclusion of `LocalMoyPrasadPositiveProductStatement`. Let `Ψ` be closed with
   `⟨b, ν⟩ > 0` for every `b ∈ Ψ`, where `ν` is real. Then for `r > 0`,
   `U_Ψ ⊓ G(K)_{x,r} = U_{Ψ,x,r}`.
 

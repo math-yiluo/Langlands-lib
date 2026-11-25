@@ -1,7 +1,5 @@
 # The Appendix L-product from actual mixed segment pairs
 
-Author: Worker 1765.
-
 This internal adapter combines the centered-segment analytic product with the
 actual finite Euler functions of the chosen midpoint bases. The
 segment-head L-factor formula and the equal-rank supercuspidal L-factor

@@ -37,8 +37,8 @@ variable {R : Type u} [CommRing R]
   (D : SplitParabolicFaceChart j Q fam' wt')
   (e : RootPairing.Equiv P Q)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
-local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 /-- Match the entire two root families through a full root-datum equivalence. -/
 def rootTransportIndex : Fin (Nat.card J) ≃ Fin (Nat.card J') :=

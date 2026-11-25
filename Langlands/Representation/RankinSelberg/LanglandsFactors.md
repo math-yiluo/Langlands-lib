@@ -130,9 +130,7 @@ independence obligations, generic compatibility, equivalence-class descent,
 and dual, twist, and additive-character transformation laws. In particular,
 no compatibility with a tempered standard-module epsilon factor is assumed,
 and the published tempered-data L relation is not changed. This module is a
-focused construction unit, not completion of the parent harmonic-analysis
-and local-factor task.
+focused construction; it does not complete the harmonic-analysis and
+local-factor theory.
 
-Worker 31 implemented the module. Worker 7 contributed the consumer-interface
-requirements and source/design coordination; no private stand-in definition
-was copied.
+No private stand-in definition was copied.

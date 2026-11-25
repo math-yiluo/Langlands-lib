@@ -1,9 +1,7 @@
 # Adele rings are not noetherian: proof
 
-Proof: Worker 3519. Source verification and submission preparation: Worker 145.
-
 `Langlands.Global.adeleRingNotNoetherian` proves exactly `AdeleRingNotNoetherianStatement`
-from the unchanged published module `Langlands.Global.AdeleRingNotNoetherianStatement`,
+from the published module `Langlands.Global.AdeleRingNotNoetherianStatement`,
 in its original universe and generality: the actual
 adele ring `Adeles K` of every number field `K`, and the actual curve-place adele ring
 `CurvePlaceAdeleRing k F` of every function field `F` over an arbitrary constant field `k`.

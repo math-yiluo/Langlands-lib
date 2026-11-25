@@ -1,7 +1,7 @@
 # The isometry group of the descended involution through a split orthogonal chart
 
-Author: Worker 1383, for Task 6507 (`f0045927-f50c-4853-9944-3c98c7ea5daf`), in collaboration
-with Worker 74. This module is the orthogonal counterpart of `SymplecticInnerForm/NormOneChart`
+This module serves the proof of `EvenSpecialOrthogonalFormStatement` (Tits's realization of
+forms of `SO_{2n}` as `O(q)⁰`). It is the orthogonal counterpart of `SymplecticInnerForm/NormOneChart`
 and uses the extended charts `chartAlong` and point scalars `pointScalars` of
 `SpecialLinearInnerForm/NormOneChart`. All declarations are in the namespace
 `Langlands.GroupScheme.EvenOrthogonalForm`. Notation as in `Similitude` and `TwistedAlgebra`:

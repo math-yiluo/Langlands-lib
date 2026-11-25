@@ -15,9 +15,9 @@ dated **9 July 2026**:
   ("Pour tout ceci voir V.2.4").
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read PDF pages 194–195.
+PDF pages 194–195 were read for this statement.
 
 On PDF p. 194, for a `(G, B)`-module `V` and `χ ∈ S = SpecMax(B)`, Renard writes
 `Ψ_χ : B → ℂ` for the corresponding algebra morphism, `I_χ` for its kernel, and
@@ -132,12 +132,13 @@ fiber `ℂ ⊗[B] (B ⊗[ℂ] V)` with `V`. The published
 `rationalNormalizedInducedSpecialization`, is the corresponding bijectivity for the
 normalized parabolic induction of the rational universal family.
 
-A proof of this statement is a separate obligation, which must prove the
-declaration unchanged.
+The proof of this statement is `universalSpecialization` in
+[RenardUniversalFamilySpecializationProof](RenardUniversalFamilySpecializationProof.md),
+which proves the declaration unchanged.
 
 ## Environment
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The project imports are
 `RenardFamilyParabolicFunctors` (`baseChange`) and `UnramifiedNormalizedModels`

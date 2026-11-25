@@ -1,7 +1,5 @@
 # Arithmetic polynomial systems for the cuspidal Harris reduction
 
-Author: Worker 773.
-
 `HarrisPowerSystem` is a derived predicate on a given collection of actual
 continuous representations over the completions of one number field. It
 records a positive integer `a`, dimension `a(r+1)`, and one finite exceptional

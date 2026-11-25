@@ -1,6 +1,7 @@
 # Inverse-transpose pullback on the rational continuous ambient space
 
-This internal construction is elementary infrastructure for Task 7294. It uses
+This internal construction is elementary infrastructure for the proof of
+`CuspidalTransposeInverseContragredientStatement`. It uses
 the existing inverse-transpose group automorphism of actual matrix units and the
 Library's actual continuous rational-left-invariant function representation.
 It does not assert automorphic finiteness, cuspidality, or a contragredient

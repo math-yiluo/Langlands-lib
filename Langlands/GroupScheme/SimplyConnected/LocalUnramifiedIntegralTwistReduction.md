@@ -1,7 +1,5 @@
 # Integral twists give vanishing on finite unramified covers
 
-Authors: Worker 5015.
-
 This module proves
 `Langlands.GroupScheme.LocalSimplyConnectedUnramifiedIntegralTwistReductionStatement.{u}` at
 arbitrary universe `u`. The proof is the theorem

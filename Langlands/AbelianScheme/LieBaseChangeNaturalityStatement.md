@@ -78,7 +78,7 @@ module does not assert a determinant identity.
 all-homomorphism and endomorphism propositions, in that order, providing
 one exact proof target.
 
-## Existing laws and remaining proof
+## Existing laws and the proof
 
 `Langlands.Scheme.Modules.dualMap` is already contravariantly functorial:
 `dualMap_id` and `dualMap_comp` are proved in `ModuleDual.lean`.
@@ -91,7 +91,7 @@ For a module morphism `a : M ⟶ N` it states
   dualPullbackComparison b N ≫ dualMap ((pullback b).map a).
 ```
 
-The remaining proof content is naturality of the actual cotangent
+The rest of the proof content is naturality of the actual cotangent
 base-change map in `CotangentBaseChangeNaturalityStatement`, followed by
 dualization and cancellation. More precisely, let `k` be the cotangent
 map of `f` and `k_T` its base change. The cotangent square gives
@@ -102,14 +102,14 @@ the two canonical equations, and using the existing dual-pullback
 naturality identifies both composites. Invertibility of `c_B` makes
 its dual invertible, allowing cancellation. Both cotangent `IsIso`
 hypotheses are retained in the statement to match the canonical
-comparison setting requested here.
+comparison setting. The proof is
+`Langlands.AbelianScheme.lieBaseChangeNaturalityStatements`, in the module
+`Langlands.AbelianScheme.LieBaseChangeNaturalityProof`.
 
 These are internal derived coherence statements for the cited Library
 constructions and laws; no additional theorem is attributed to original
 literature. No affine, reducedness, characteristic, flatness or
 surjectivity hypothesis is imposed on the base schemes or their
-morphism. Worker 274's separate Lie base-change existence proof is
+morphism. The separate Lie base-change existence proof is
 reused through its published characterization and is outside this
 statement group's proof obligations.
-
-Worker 208 authored these statements and their explanation.

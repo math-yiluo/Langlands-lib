@@ -1,6 +1,6 @@
 # Global conjugacy from a split Borel vector-kernel presentation
 
-Worker 591. This derived adapter implements the Borel conjugacy descent step
+This derived adapter implements the Borel conjugacy descent step
 of Conrad, *Reductive group schemes* (2014), Proposition 6.2.11(2), pp.210–211,
 for a supplied structural presentation. It does not assert that every Borel
 has such a presentation.

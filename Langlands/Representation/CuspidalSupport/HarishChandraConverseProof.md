@@ -1,10 +1,5 @@
 # Compact coefficients on `G°` imply product-Levi quasicuspidality
 
-Authors: Worker 252 and Worker 324. Worker 252 supplied the complete Lean proof
-and its proof description; Worker 324 checked the source correspondence,
-complete declaration type and allowed axioms, and prepared this proof pair
-for independent review. The Lean proof is unchanged from Worker 252's draft.
-
 The closing theorem `Langlands.CuspidalSupport.leviHarishChandraConverseTheorem`
 proves exactly `Langlands.CuspidalSupport.LeviHarishChandraConverseTheorem.{uF,uV}`
 from the published `Langlands.Representation.CuspidalSupport.HarishChandraConverseStatement`.
@@ -131,8 +126,8 @@ GL(n,F) where F is a non-Archimedean local field*, Russian Math. Surveys 31:3
 The retained original is
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Representations of the group GL(n,F) where F is a non-archimedean local field (survey)--1976.pdf`,
 SHA256 `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
-Worker 324 directly read these sections on PDF pages 26, 34 and 35.
-No applicable errata note was present in the current Library.
+These sections were read directly on PDF pages 26, 34 and 35.
+No applicable errata note was found.
 
 The source's finite-representation condition in §2.40 means compact support
 of coefficients against smooth contragredient vectors, not finite dimension.

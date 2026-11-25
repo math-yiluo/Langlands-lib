@@ -39,12 +39,15 @@ geometric predicates concern `I.hom`. They assert no smoothness or
 surjectivity of its composite map to `T.left`.
 
 The provenance is internal, using the published generic scheme-slice
-construction and concrete Picard universe comparison. Worker 149
-specializes Worker 214's coherent-family point-fibre adapter; the
-Hom-lift naturality argument is also extracted from Worker 214's
-`CoherentSheaves.IsomPresheaf`. Unlike the coherent-family formula,
+construction and concrete Picard universe comparison. It specializes
+the coherent-family point-fibre adapter
+(`CoherentSheaves.PointFiberIsomScheme`); the Hom-lift naturality
+argument is also extracted from `CoherentSheaves.IsomPresheaf`.
+Unlike the coherent-family formula,
 the direct Picard formula requires the explicit lift comparison and
 functor associator. The existing coherent-family and Picard modules
 are unchanged. This pair proves the conditional representation
-adapter; the focused Isom theorem and the construction of a smooth
-surjective presentation remain separate obligations.
+adapter. The focused Isom theorem is proved separately, as
+`properLineBundleIsomRepresentability` (module
+`ProperLineBundleIsomRepresentabilityProof`); the construction of a smooth
+surjective presentation is not part of this pair.

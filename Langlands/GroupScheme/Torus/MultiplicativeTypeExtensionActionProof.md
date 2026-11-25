@@ -1,7 +1,5 @@
 # Proof: connected groups act trivially on central extensions of multiplicative type
 
-Worker 3502 and Worker 302 (Task 6779).
-
 `Langlands.GroupScheme.multiplicativeTypeExtensionAction` proves the Library statement
 [`MultiplicativeTypeExtensionActionStatement`](MultiplicativeTypeExtensionActionStatement.md):
 
@@ -18,20 +16,20 @@ and no axioms. The proof uses only `propext`, `Classical.choice` and `Quot.sound
 
 ## Inputs
 
-- `diagonalizableRigidity : DiagonalizableRigidityStatement.{u}` (Worker 383,
-  [`Torus.DiagonalizableRigidityProof`](DiagonalizableRigidityProof.md)): rigidity of
+- `diagonalizableRigidity : DiagonalizableRigidityStatement.{u}`
+  ([`Torus.DiagonalizableRigidityProof`](DiagonalizableRigidityProof.md)): rigidity of
   homomorphism families between diagonalizable groups (Milne, Theorem 12.36).
 - From [`Torus.MultiplicativeTypeExtensionActionReduction`](MultiplicativeTypeExtensionActionReduction.md)
   (namespace `MultiplicativeTypeExtensionAction`): `act_comp_eq`, `act_comp_quotient`,
   `quasiCompact_quotient`, `homFamily_eq` and `act_eq_of_difference`. Each rigidity lemma
   there takes the rigidity proposition as the hypothesis `hRig`. Through `homFamily_eq` these
-  lemmas use `HomFamily.eq_one_of_multiplicativeType` (Worker 798,
-  [`Torus.MultiplicativeTypeHomFamily`](MultiplicativeTypeHomFamily.md)). That lemma combines
+  lemmas use `HomFamily.eq_one_of_multiplicativeType`
+  ([`Torus.MultiplicativeTypeHomFamily`](MultiplicativeTypeHomFamily.md)). That lemma combines
   `IsMultiplicativeType.exists_common_splitting`
   ([`Torus.MultiplicativeTypeCommonSplitting`](MultiplicativeTypeCommonSplitting.md)) with
   `HomFamily.eq_one_of_commonSplitting` ([`Torus.HomFamilyFieldRigidity`](HomFamilyFieldRigidity.md)).
-- `AutomorphicAction.centralDifference` and its lemmas (Worker 302,
-  [`AutomorphicAction.CentralDifference`](../AutomorphicAction/CentralDifference.md)): the
+- `AutomorphicAction.centralDifference` and its lemmas
+  ([`AutomorphicAction.CentralDifference`](../AutomorphicAction/CentralDifference.md)): the
   difference family `ψ : G × Q → N` obtained by descending `(g, x) ↦ x⁻¹ (g · x)` along `G × p`.
 
 ## Proof

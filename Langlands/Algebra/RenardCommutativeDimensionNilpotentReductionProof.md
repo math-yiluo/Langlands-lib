@@ -15,9 +15,9 @@ printed p.275 / one-based PDF281. The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Workers 709 and 16 read PDF281–282 and visually checked PDF281 in the
-source work underlying this reduction; Worker 16 reread those pages and
-visually checked PDF281 when preparing this proof. The opening proof
+PDF281–282 were read and PDF281 was visually checked in the
+source work underlying this reduction; those pages were reread and
+PDF281 visually checked again for this proof. The opening proof
 paragraph successively refines characteristic spaces, uses the finite-sum
 power comparison and subtracts scalar parts. The following paragraph
 defines the largest nilpotent-generated algebra dimension.
@@ -105,12 +105,9 @@ These three explicit interfaces are derived from the source's opening
 reduction and maximum definition, rather than three separately displayed
 source lemmas. This proof establishes the reduction without asserting an
 unconditional real-power bound for every canonical maximum. That bound,
-the floor recurrence and numerical induction, and the remaining
-whole-book program are separate obligations.
+the floor recurrence and numerical induction, and the rest of the
+book are separate from this proof.
 
-Worker 709 authored the reused conditional proof blueprint, including
-the block comparison, finite-index power reindexing and assembly helper.
-Worker 16 checked the published inputs and source correspondence,
-applied the published joint proof to obtain the exact theorem, and
-prepared this proof pair. The imported statement and supporting
-published proofs are unchanged and retain their own authorship.
+The published inputs and the source correspondence were checked, and
+the exact theorem is obtained by applying the published joint proof.
+The imported statement and supporting published proofs are unchanged.

@@ -1,7 +1,5 @@
 # The integral norm of the actual relative Weyl action on a torus
 
-Author: Worker 1374.
-
 This internal construction uses the actual rational normalizer and centralizer
 of a map `i : T.toGrp ⟶ G` over a field `k : Type u`, where `T` is a
 commutative group scheme. The underlying scheme map of `i` is monomorphic.

@@ -8,16 +8,14 @@ algebraic closure, finite type, smoothness, properness, projectivity or
 ampleness. It includes the zero tangent vector.
 
 The field, trivialization-open and dual-number arguments are adapted from
-Worker 899's shared `SectionCalculus` and `TensorFamily` drafts on task
-`eda1f6ff-d036-4f23-aabb-7663e7606b42`, revision 2. Worker 354 extracted
-them into the general Picard namespace, replaced their repeated transport
-and tensor algebra with the generic section-transport and tensor-zero
-proof APIs, and assembled the seven-clause theorem. Worker 152 retained
-the seven public Picard lemmas and initially adapted the tensor comparison and
-frame arguments as private helpers. The integrated module now imports the
-public `Modules.TensorSectionZeroProof` API in place of those identical helpers.
-Workers 354 and 899 are actual coauthors. No external literature theorem is
-asserted here.
+section-calculus and tensor-family arguments first written for the proof of
+`Langlands.GroupScheme.AlgebraicallyClosedSeparatingLineBundleStatement`.
+Here they are placed in the general Picard namespace, their repeated
+transport and tensor algebra is replaced by the generic section-transport
+and tensor-zero proof APIs, and they are assembled into the seven-clause
+theorem. For the tensor comparison and frame arguments the module imports
+the public `Modules.TensorSectionZeroProof` API. No external literature
+theorem is asserted here.
 
 ## Field-valued points
 

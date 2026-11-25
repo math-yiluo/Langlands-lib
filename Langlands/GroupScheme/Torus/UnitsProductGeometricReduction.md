@@ -6,7 +6,9 @@ and proves
 that input implies the unchanged
 `Langlands.GroupScheme.UnitsProductDecompositionStatement` in every universe.
 The module does not discharge the affine input and is therefore an intermediate
-unit of Task 6784, rather than a closed proof of Milne's proposition.
+step, rather than a closed proof of Milne's proposition; the proof is completed
+by `Langlands.GroupScheme.unitsProductDecomposition` (module
+`Torus.UnitsProductDecomposition`).
 
 The mathematical source is James S. Milne, *Algebraic Groups* (2017),
 Proposition 12.48, printed pages 246–247 (PDF pages 262–263), registered as
@@ -59,4 +61,4 @@ The implemented proof proceeds as follows.
 The final theorem accepts all hypotheses of the original target. Its proof
 needs no extra hypotheses; quasi-compactness and separatedness of the two
 input varieties are not needed for this conditional geometric step.
-The remaining affine theorem is the substantive missing input.
+The remaining affine theorem is the substantive input not supplied here.

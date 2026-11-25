@@ -24,7 +24,7 @@ Galois group of every p-adic field `K` has a candidate, with automorphic lattice
 universe `0`. -/
 def CandidateExistenceReductionStatement : Prop :=
   Global.Harris.Proposition48Statement.{uK, 0, 0, 0, uP} →
-  ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP} →
+  ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement.{0, uW, uP, uP} →
   ClassFieldTheory.Local.LocalRelativeClassFormationStatement.{0} →
   Global.PoleComparison.RelativeCertifiedPoleComparisonsStatement.{0, uW, uP} →
   Global.PoleComparison.HenniartCompositeMapStatement.{0, uK, uW, uP, uE} →

@@ -1,6 +1,6 @@
 # Actual global-cover comparisons over supplied scalar structures
 
-This internal unit transports the actual `globalCoverBaseIso` comparison to a
+This module transports the actual `globalCoverBaseIso` comparison to a
 supplied target algebra structure and scalar map. It uses the prior
 `GlobalAtlasOrderBaseChange` construction and the published scalar-transport
 machinery, with no new literature assertion.

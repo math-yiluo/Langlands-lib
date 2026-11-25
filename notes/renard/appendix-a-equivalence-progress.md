@@ -1,8 +1,8 @@
 # Renard A.II.2: equivalence criterion, representatives and vector spaces
 
-Worker 709 verified the publications below through 3 November 2026.
-The construction, statement and proof pairs agree with their frozen submissions
-and remain unchanged in Library `e01d121751dd80ba2ce2d21544b43f6e8df18007`.
+The Library modules below were checked through 3 November 2026.
+The construction, statement and proof pairs agree with their first published
+versions and are unchanged in Library `e01d121751dd80ba2ce2d21544b43f6e8df18007`.
 This supplements the [whole-book coverage ledger](coverage.md) with the
 sufficient equivalence criterion, the representative-subcategory comparison,
 and the exact equivalence in the fixed-dimension example. A.I and the other A.II
@@ -17,7 +17,7 @@ French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 The original A.II.1–2, printed pp.250–251 / PDF256–257, was read, including
 the natural-transformation definition, quasi-inverse definition, fixed-dimension
 example and final unnumbered sufficient criterion. PDF257 was also inspected
@@ -74,28 +74,20 @@ The categories have independent object and Hom universes:
 additive, abelian or finiteness premise. The theorem proves the source's
 sufficiency direction.
 
-## Independent acceptance and publication
+## In the Library
 
-Exact fetches report both candidates accepted and public.
+| Module | First appeared at Library commit |
+| --- | --- |
+| Statement | `7543113c99690e18b45f3b22d252e8cf77c3964e` |
+| Exact proof | `286dd3b743f0437d22db0e793222073b9424e3eb` |
 
-| Unit | Candidate and authorship | Independent review | Publication |
-| --- | --- | --- | --- |
-| Statement | `7fd0ac10-e1db-4d5f-b3e6-da7d2375f304`, Worker 709 | Reviewer 9220, review task `e64628a8-864c-4a62-b567-08aa444ada0d`; unqualified approval | Integration `565a9e9b7e524cb18c14053786d43c07`, Library `7543113c99690e18b45f3b22d252e8cf77c3964e` |
-| Exact proof | `1b81864e-a45f-4c00-a314-e84a17bea5a4`, Worker 1158 with Worker 709 as coauthor | Reviewer 9310, review task `1c08481f-ab9d-4f25-a1c3-d8a5a756dbbb`; unqualified approval | Integration `b4d19c8e78014c66bc277f636ab2323b`, Library `286dd3b743f0437d22db0e793222073b9424e3eb` |
+The proof was checked by a Lake build against the exact target, with the
+statement and its inputs unchanged. The source correction and the
+Lean/Markdown agreement were also checked.
 
-Statement validation `691acf77-714c-476d-9fcf-0136e46df9e3` is accepted.
-Proof validation `19ad668a-4555-466b-b978-829d1003f738` accepts Lake build,
-exact-target, unchanged-statement and frozen-inputs checks under
-`lean.proof@1`. The independent semantic reviews also verify the source
-correction and Lean/Markdown agreement. Worker 709's implementation
-attribution is retained in the proof pair.
-
-A recovery compilation of both modules,
-`dd07d3f8-39b0-495f-ba42-8e1c977ef92e`, completed with zero errors or
+A separate compilation of both modules completed with zero errors or
 warnings and inspected four independent universe parameters. Its only
 reported axioms are `propext`, `Classical.choice` and `Quot.sound`.
-This development check supplies no additional mathematical acceptance;
-proof acceptance rests on the exact candidate's machine and review receipts.
 
 ## The representative-subcategory comparison
 
@@ -130,16 +122,14 @@ finiteness, additive or abelian premise, and includes the empty category.
 It does not prescribe the reverse functor's object map or assert a strict
 inverse or uniqueness.
 
-| Unit | Candidate and authorship | Independent review | Publication |
-| --- | --- | --- | --- |
-| Construction | `3c0c8e64-7561-4170-a603-6a322a051dc3`, Worker 709 | Reviewer 9582, review task `fd5440f9-410c-495f-841c-785a9774e4bf`; unqualified approval | Integration `36359437d16e416aa9104983ac53eee7`, Library `9d1720cbedcfd184cf48bf36249fc3029583cafa` |
-| Statement | `4edfbd2a-aee6-44f3-a57a-2495d9d132c7`, Worker 709 | Reviewer 9689, review task `792508b2-0754-4771-b41d-cfb8dc5bee3d`; unqualified approval | Integration `57823dd58c3045749d53fd468519d108`, Library `fe38b3e353a7b1fb30017218b2ee1f7f87f979fd` |
-| Exact proof | `2b2971c4-58bc-42ad-a727-688f9043f67a`, Worker 1158 with Worker 709 as coauthor | Reviewer 9900, review task `28d6a294-cdf6-466b-8c89-3461bbf23ef9`; unqualified approval | Integration `f18665986b0542a6b419db1e15fd294d`, Library `405ff58c5df69766419c9941161444531c1979ae` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Construction | `9d1720cbedcfd184cf48bf36249fc3029583cafa` |
+| Statement | `fe38b3e353a7b1fb30017218b2ee1f7f87f979fd` |
+| Exact proof | `405ff58c5df69766419c9941161444531c1979ae` |
 
-Proof validation `7c58c717-efbe-4611-94e4-8969c2c67acc` accepts Lake build,
-exact-target, unchanged-statement and frozen-inputs checks. The full
-integrated semantic reports were read. Acceptance and publication, rather
-than the task's completion report alone, support this coverage claim.
+The proof was checked by a Lake build against the exact target, with the
+statement and its inputs unchanged.
 
 ## The fixed-dimension vector-space equivalence
 
@@ -165,15 +155,9 @@ are independent, with carriers in `Type (max u v)`. The construction works
 for every field and every natural `n`, including zero, with no
 characteristic, field-size or positivity restriction.
 
-Candidate `3985c1e3-aaec-4266-bcf4-8db62e405f7f`, authored by Worker 709,
-was independently approved without qualifications by Reviewer 9944 in
-review task `364f9b8c-5785-45d9-98ba-affb643d5b96`. Validation
-`51419c4d-7b91-469f-85a7-7202e2be7699` is accepted; integration
-`05e4d685b56d4cc68a7802dc65363e2e` published it at Library
-`405ff58c5df69766419c9941161444531c1979ae`. Its full integrated report
-was read and its files were checked against the frozen candidate.
-Resume compilation `7604b1f9-fb19-4cd7-b564-8842a510de15` completed
-with zero errors or warnings.
+This construction first appeared in the Library at
+`405ff58c5df69766419c9941161444531c1979ae`; its files were checked against
+that version. A separate compilation completed with zero errors or warnings.
 
 The published [statement pair](../../Langlands/CategoryTheory/Renard/FixedDimensionVectorSpacesStatements.md)
 defines `Langlands.Renard.FixedDimensionVectorSpaceEquivalenceStatement k n`.
@@ -183,8 +167,7 @@ isomorphisms for that same functor. The conclusion uses the correctly typed
 identity categories described above.
 
 The [exact proof](../../Langlands/CategoryTheory/Renard/FixedDimensionVectorSpacesProof.md)
-is `Langlands.Renard.fixedDimensionVectorSpaceEquivalence`. Worker 1158
-implemented it following the proof route supplied by Worker 709.
+is `Langlands.Renard.fixedDimensionVectorSpaceEquivalence`.
 It applies the published general criterion to the prescribed inclusion.
 The full-subcategory inclusion supplies surjectivity and injectivity of
 every actual Hom map; `oneObjectVectorSpace k n` and
@@ -195,27 +178,22 @@ The objectwise coordinate isomorphisms are inputs to this construction.
 The theorem retains the arbitrary field, independent universes and every
 natural dimension, including zero, with no additional premise.
 
-| Unit | Candidate and authorship | Independent review | Publication |
-| --- | --- | --- | --- |
-| Statement | `03e3ce0d-969d-4ad7-8d09-82cbfae80e45`, Worker 709 | Reviewer 10262, review task `1228ea55-41c8-4a17-817a-f24054360586`; unqualified approval | Integration `428a84d4069a4e519413f0c2db51eb8a`, Library `a89596feabc7e1db11dbefead1032c9cfc0d1409` |
-| Exact proof | `78d2acbe-b931-4068-85f2-b64b67a6da74`, Worker 1158 with Worker 709 as coauthor | Reviewer 10443, review task `325a616e-bae9-421b-9921-372fb7e5a5fa`; unqualified approval | Integration `267e72966387449bbf8d5e1b0f0dcb52`, Library `428fa7c08e2fd98ecc08fa4e170f793c3c868556` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Statement | `a89596feabc7e1db11dbefead1032c9cfc0d1409` |
+| Exact proof | `428fa7c08e2fd98ecc08fa4e170f793c3c868556` |
 
-Exact fetches report both candidates accepted and public. Statement validation
-`93a48101-2285-4327-b671-b814237697df` is accepted; its inspection confirms
-a Prop-valued definition with independent `u` and `v`. Proof validation
-`f2a5872d-80c1-4ce2-ba24-1ab3b9316b88` accepts Lake build, exact-target,
-unchanged-statement and frozen-inputs checks under `lean.proof@1`.
-The full integrated semantic reports were read.
+An inspection of the statement confirms a Prop-valued definition with
+independent `u` and `v`. The proof was checked by a Lake build against the
+exact target, with the statement and its inputs unchanged.
 
-Native SHA256 comparisons match the frozen proof pair with its publication
-and Library `e01d121751dd80ba2ce2d21544b43f6e8df18007`.
+SHA256 comparisons match the proof pair as first published with Library
+`e01d121751dd80ba2ce2d21544b43f6e8df18007`.
 The four recursively imported Langlands Lean/Markdown pairs are unchanged
-between the candidate base, publication and that Library.
-Recovery check `fdbb355d-0462-47a9-a0e4-4198401854d3` recompiles the published
-statement and proof with zero errors or warnings; the proof inspection
-retains independent `u` and `v` and reports only `propext`, `Classical.choice`
-and `Quot.sound`. This is development evidence; independent acceptance rests
-on the exact candidate's validation and semantic review.
+between the proof's base, its first publication and that Library.
+A separate build recompiles the published statement and proof with zero
+errors or warnings; the proof inspection retains independent `u` and `v` and
+reports only `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Source map and remaining work
 
@@ -229,35 +207,23 @@ on the exact candidate's validation and semantic review.
 | A.II.2, printed pp.250–251 / PDF256–257: general representative-subcategory discussion | Actual full representative subcategory, inclusion, representative isomorphisms, uniqueness law, quasi-inverse statement and exact proof are published as above. |
 | Remaining A.I and A.II content | Other source bridges, examples and assertions retain their obligations; a converse criterion would be additional derived content. |
 
-The direct source map, candidate `a0d743bb-9f9a-4760-bc13-61eae2349ea0`
-by Worker 709, also compares the product and opposite categories in A.I.5.
-Reviewer 10525 approved it without qualifications in review task
-`7503ec1a-217f-4570-a3a1-902b8eaad382`; integration
-`dbd5b7590a3c42a0b4409ccc8530ba6b` published it at Library
-`e01d121751dd80ba2ce2d21544b43f6e8df18007`.
-The integrated report and frozen/published files were checked. This is
-reviewed documentation of direct Mathlib reuse, with no new Lean artifact.
+The direct source map
+([category-constructions-source-map](category-constructions-source-map.md))
+also compares the product and opposite categories in A.I.5. It first appeared
+in the Library at `e01d121751dd80ba2ce2d21544b43f6e8df18007`. It documents
+direct Mathlib reuse, with no new Lean artifact.
 
-Its duality extension, candidate `6bddccd7-9ae6-4e61-831b-ec7aa69084ab`
-by Worker 709, is also independently accepted and public. Reviewer 10834
-approved it without qualifications in review task
-`47f3abc7-b53d-4016-a653-f08178f4e477`; integration
-`36cb566142aa4f58913a1b7e7118a6cb` published it at Library
+Its duality extension first appeared in the Library at
 `690e7bce992fb723bd66806fa2db3acd6dc07d78`. It supplies the four
-named duality-pair correspondences listed above. Its complete integrated
-report was read and frozen/public/current note hashes match.
+named duality-pair correspondences listed above.
 
-The elementary source map, candidate `6ada1814-c6cc-4818-a2b6-fef80c156277`
-by Worker 709, was independently approved without qualifications by
-Reviewer 10898 in review task `5aaa7e1b-bb70-4883-aa53-63d98eaf6470`.
-Integration `f51b0383873740f6839ca06d5510a5c8` published it at Library
-`f3b542a2044236604234c42094d278dbc4167f40`. The complete integrated
-report was read and the frozen/public/current files compared. The only
-integration change identifies the full/faithful paragraph as the one
-beginning “Le foncteur” after the vector-space example, rather than the
-opening paragraph of A.II.2. The published correction is retained.
-Both maps document direct reuse; their cited Library proofs remain separate
-mathematical contributions with the authorship and acceptance recorded
+The elementary source map
+([elementary-categories-source-map](elementary-categories-source-map.md))
+first appeared in the Library at `f3b542a2044236604234c42094d278dbc4167f40`.
+A correction made when it entered the Library identifies the full/faithful
+paragraph as the one beginning “Le foncteur” after the vector-space example,
+rather than the opening paragraph of A.II.2.
+Both maps document direct reuse; their cited Library proofs are recorded
 above or in their paired Markdown. A.I.3 and the other A.I–A.II assertions,
 examples and constructions retain their separate obligations.
 

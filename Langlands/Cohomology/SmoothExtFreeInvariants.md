@@ -1,25 +1,25 @@
 # Free invariants of smooth representations and the smooth `Ext` comparison class
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.SmoothExtBaseChangeSummand` (`HasFreeFixedBasis.of_iso`,
 `isOpen_subgroupOf`,
 `HasFreeFixedBasis.hasProPFreeFixedBasis_smoothCompactInduction`,
-`isFreeOnFixedVectors_smoothPermutation`; Worker 61) and
+`isFreeOnFixedVectors_smoothPermutation`) and
 `Langlands.Cohomology.DivisibleSystem.FreeQuotientLimit`
 (`Induction.invariantsInflation`, `Induction.permutationQuotientEquiv`,
 `Induction.IsFreeOnInvariants`, `Induction.IsFreeLimit`,
-`Induction.IsFreeLimit.isFreeOnInvariants_of_isOpen`; Worker 61). Through
+`Induction.IsFreeLimit.isFreeOnInvariants_of_isOpen`). Through
 these imports it also uses `Langlands.Cohomology.SmoothExtBaseChange`
-(`IsFreeOnFixedVectors`, `HasFreeFixedBasis`, `HasProPFreeFixedBasis`;
-Worker 61), `Langlands.Cohomology.HyperextExtBaseChangeSummand`
+(`IsFreeOnFixedVectors`, `HasFreeFixedBasis`, `HasProPFreeFixedBasis`),
+`Langlands.Cohomology.HyperextExtBaseChangeSummand`
 (`IsSummandOfFiniteSum`, `IsSummandOfFiniteSum.of_prop`,
-`IsSummandOfFiniteSum.biproduct`; Worker 61),
+`IsSummandOfFiniteSum.biproduct`),
 `Langlands.Representation.Induction.PermutationModule`
-(`Induction.permutation`, `Induction.smoothPermutation`; Worker 61),
+(`Induction.permutation`, `Induction.smoothPermutation`),
 `Langlands.Representation.Induction.OpenAdjunction`
-(`Induction.smoothCompactInduction`; Worker 61),
-`Langlands.Cohomology.DivisibleSystem.ProPInvariants` (`IsProPSubgroup`;
-Worker 61), `Langlands.Representation.Category.Basic` (`SmoothRep`,
+(`Induction.smoothCompactInduction`),
+`Langlands.Cohomology.DivisibleSystem.ProPInvariants` (`IsProPSubgroup`),
+`Langlands.Representation.Category.Basic` (`SmoothRep`,
 `SmoothRep.of`, `SmoothRep.ofHom`, `SmoothRep.hom`, `SmoothRep.mkIso`) and
 `Langlands.Representation.Smooth.Definitions` (`Langlands.IsSmooth`).
 

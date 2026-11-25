@@ -1,6 +1,6 @@
 # Nonnegativity of `j_P` at unitary points (target and reduction)
 
-Worker 5. `Langlands.Plancherel.ConditionalDynamicOppositeUnitaryNonnegStatement`
+`Langlands.Plancherel.ConditionalDynamicOppositeUnitaryNonnegStatement`
 is a Prop-valued target. It says that the Library's canonical scalar `j_P`
 of `J_{P|P̄} J_{P̄|P}` is regular with a nonnegative real value at every
 unitary unramified character where both chosen continuations are regular.

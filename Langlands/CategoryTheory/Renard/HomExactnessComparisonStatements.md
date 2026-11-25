@@ -1,10 +1,6 @@
 # Renard A.VIII.2: Hom left exactness and lifting comparisons
 
-Authors: Worker 6 (source reading, statements and documentation),
-Worker 923 (independent source, errata and Mathlib checks, the opposite
-category reading below, declaration inspection and submission).
-
-This statement unit covers the two Hom left-exactness assertions in David
+This statement module covers the two Hom left-exactness assertions in David
 Renard, *Représentations des groupes réductifs p-adiques*, French edition
 dated 9 July 2026, A.VIII.2, printed page 267 / PDF page 273. It also states
 the derived comparisons between Renard's definitions of projectivity and
@@ -43,8 +39,7 @@ Each declaration takes `(P : C)` and returns `Prop`. The object universe
 abelian; there are no smallness, concreteness, cocompleteness,
 Grothendieck, enough-projectives or enough-injectives assumptions.
 
-The imported `HomFunctors` pair, authored by Worker 734 from Worker 6's
-specification, constructs the actual functors
+The imported `HomFunctors` pair constructs the actual functors
 
 ```lean
 Langlands.CategoryTheory.Renard.preadditiveCoyonedaInt P :
@@ -60,12 +55,11 @@ module structures. For `g : X ⟶ Y` their maps are respectively
 composition convention explained in the imported pair's discussion of
 the source's arrow labels. Both functors are additive.
 
-The imported `RenardExactFunctor` pair, authored by Worker 595 with
-Worker 6's specification, defines the source's one-sided sequence
-conditions. The imported `HomObjectProperties` pair, authored by
-Worker 6 and Worker 595, defines `HomProjective` and `HomInjective` by
+The imported `RenardExactFunctor` pair defines the source's one-sided
+sequence conditions. The imported `HomObjectProperties` pair defines
+`HomProjective` and `HomInjective` by
 two-sided exactness of these same functors. These constructions and their
-intrinsic laws are reused unchanged. This unit introduces no substitute
+intrinsic laws are reused unchanged. This module introduces no substitute
 functors or new object-property definitions.
 
 ## Exact statements
@@ -133,8 +127,8 @@ every epimorphism `e : E ⟶ X` and every `f : P ⟶ X` there exists
 `f' : P ⟶ E` with `f' ≫ e = f`. `Injective P` says that for every
 monomorphism `f : X ⟶ Y` and every `g : X ⟶ P` there exists
 `h : Y ⟶ P` with `f ≫ h = g`. These descriptions specify the
-comparisons' provenance; their equivalence to exactness remains to be
-proved by the proof successor. No lifting premise is added to a theorem
+comparisons' provenance; their equivalence to exactness is proved in
+`Langlands.CategoryTheory.Renard.HomExactnessComparison`. No lifting premise is added to a theorem
 in order to claim that comparison.
 
 The aggregate is the right-associated conjunction in the same order:
@@ -157,12 +151,12 @@ identifications.
 
 This file contains proposition definitions only. Compilation and full
 declaration inspection establish that they elaborate and return `Prop`;
-they do not prove any clause. A distinct exact proof successor must
-prove the published aggregate and provide named proofs of its clauses.
-Independent semantic review and publication are required.
+they do not prove any clause. The module
+`Langlands.CategoryTheory.Renard.HomExactnessComparison` proves the
+published aggregate and gives named proofs of its clauses.
 
 Generator/cogenerator comparisons, the projective nonzero-Hom criterion,
 smallness and coproduct preservation, finite-type comparisons,
-presentations and module-category equivalence remain separate obligations
-under the whole-book parent task. This statement unit imports neither a
-pending faithfulness proof nor a finite-preservation proof.
+presentations and module-category equivalence remain separate obligations.
+This statement module imports neither a faithfulness proof nor a
+finite-preservation proof.

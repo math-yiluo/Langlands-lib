@@ -1,6 +1,6 @@
 # Canonical spherical projections on full completed tensor slices
 
-This internally derived unit specializes the existing orthogonal joint Hecke
+This internally derived module specializes the existing orthogonal joint Hecke
 projection to the canonical spherical data. Its inputs remain a genuine tensor
 presentation and an invariant positive form on the actual global realization.
 It also relates identity of the constructed projection to the existing
@@ -52,6 +52,6 @@ The number field and original local-factor family have independent universes.
 Coefficients are complex and the rank is every positive natural number,
 written `r + 1`. The complementary tensor may be zero. Neither construction
 nor the spectrum equivalence assumes factor irreducibility, admissibility or
-a nonzero tail. The unit does not assert nontriviality, existence of a
+a nonzero tail. The module does not assert nontriviality, existence of a
 prescribed spectrum, commutativity, a spectral decomposition, automorphic
 occurrence, a tensor presentation or a positive form.

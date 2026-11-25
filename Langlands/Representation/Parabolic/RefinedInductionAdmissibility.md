@@ -1,7 +1,5 @@
 # Admissibility of actual normalized refined induction
 
-Author: Worker 717.
-
 This module proves that actual normalized induction from a refined parabolic
 of a product Levi preserves admissibility. Its closing theorem
 `Langlands.Parabolic.refinedCuspidalInduction_isAdmissible` is exactly the
@@ -140,8 +138,8 @@ Zelevinsky). Here the ambient group is the product Levi `B.Levi F.Carrier`, a
 product of general linear groups, and the parabolic is the product of the
 inner block parabolics of `S`. Compactness is proved blockwise from the same
 Iwasawa decomposition. The module serves the admissibility conjunct of the
-refined cuspidal induction target of task
-`41b7dd0e-c19d-48ad-944c-f1ab3cf3e96b`.
+refined cuspidal induction target
+`Langlands.CuspidalSupport.RefinedCuspidalInductionFiniteLengthStatement`.
 
 ## All-field port
 

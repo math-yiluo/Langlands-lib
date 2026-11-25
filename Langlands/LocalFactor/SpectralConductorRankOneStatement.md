@@ -1,6 +1,6 @@
 # Rank-one conductors at intermediate fields of the common closure
 
-Statement only. Worker 4803 introduces it as the arithmetic premise of
+Statement only. It is the arithmetic premise of
 `SpectralConductor.spectralConductorRankOneReduction`. No proof is claimed here.
 
 ## Statement
@@ -47,7 +47,9 @@ Proved in the Library: the comparison of a normalized family with standalone
 geometric reciprocity at finite extensions (`commonClosureGeometricProof`) and the
 finite upper reciprocity theorems
 (`finiteUpperReciprocityTheorems_of_normCardinality finiteAbelianNormUnitImageCardinality`).
-Unproved ingredients have tasks: `FiniteCharacterConductorTheorems` (finite abelian
-conductor transport, Task 5738) and `FiniteGaloisConductorInflationStatement`
-(Task 5739). The statement here is their transport to the intermediate fields of the
+Also proved in the Library: `FiniteCharacterConductorTheorems` (finite abelian
+conductor transport; `finiteCharacterConductorTheorems` in module
+`Langlands.ClassFieldTheory.Local.FiniteConductorProof`) and
+`FiniteGaloisConductorInflationStatement` (`finiteGaloisConductorInflation` in module
+`Langlands.LocalFactor.Ramification.InflationProof`). The statement here is their transport to the intermediate fields of the
 common closure and the supplied family.

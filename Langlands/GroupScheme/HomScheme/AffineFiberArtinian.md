@@ -1,6 +1,6 @@
 # Affineness on local Artinian tests
 
-Worker 584. `AffineResidueFiberArtinianPullbackStatement` says that
+`AffineResidueFiberArtinianPullbackStatement` says that
 a locally finite-type group scheme over any base, with affine actual
 residue fibres, has affine actual pullback to the spectrum of every
 local Artinian ring.
@@ -16,4 +16,5 @@ schemes is affine.
 This is a derived application of base-change stability and affineness
 reflection across the nilpotent base reduction. It supplies the
 affineness premise for using existing affine-target constructions on
-local Artinian tests in Task 7705.
+local Artinian tests in the proof `smoothAffineFiberTorusSubgroupRepresentability`
+of `SmoothAffineFiberTorusSubgroupRepresentabilityStatement`.

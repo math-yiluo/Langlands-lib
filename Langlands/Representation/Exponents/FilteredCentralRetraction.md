@@ -1,6 +1,6 @@
 # Retraction from an isolated irreducible central grade
 
-Author: Worker 526. The namespace is
+The namespace is
 `Langlands.FilteredCentralRetraction`. This internal algebraic deduction
 combines the published `IsolatedCentralCharacter` construction with
 `groupedCentralCharacterRetraction`. The group, ambient carrier and source

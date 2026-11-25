@@ -1,13 +1,11 @@
 # Saturated affine opens from finite group orbits
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.OrbitSaturatedAffineOpen`, namespace
 `Langlands.AlgebraicGeometry.OrbitSaturatedAffineOpen`.
 
-This is a scheme-level step for the task "AF representability from a finite
-surjection with quasi-affine source" (Gross, *Tensor generators on schemes and
-stacks*, Proposition 3.5). The route of that task does not use Gross's
+This is a scheme-level step toward AF representability from a finite
+surjection with quasi-affine source (Gross, *Tensor generators on schemes and
+stacks*, Proposition 3.5). The route taken here does not use Gross's
 normalization, conductor and pushout argument. It covers an algebraic space `Y`
 by open subspaces whose preimages in a quasi-affine source `W` are affine and
 saturated. The main theorem `exists_saturated_isAffineOpen` constructs such an
@@ -130,8 +128,8 @@ follows.
 
 ## Sources and provenance
 
-Internal. The statement is designed for the route of the host task, which
-replaces Gross's normalization/conductor induction (Gross 2017, proof of
+Internal. The statement is designed for this route to AF representability,
+which replaces Gross's normalization/conductor induction (Gross 2017, proof of
 Proposition 3.5, Steps 2–3) by an orbit-and-closed-part induction. Steps 1–2
 (norms along a finite group to obtain an invariant affine open) follow the
 classical argument for quotients of schemes by finite groups. The coset form of

@@ -1,6 +1,6 @@
 # Finite-separable norm and scalar maps on Galois lattices
 
-This internal comparison unit specializes the actual determinant norm and scalar
+This internal comparison module specializes the actual determinant norm and scalar
 maps of `WeilGm` to the canonical finite-separable embedding decomposition. It
 also constructs their intrinsic integer augmentation maps on the actual
 cocharacter and character lattices.
@@ -57,7 +57,7 @@ degree.
 
 ## Provenance and scope
 
-This is a derived internal construction and comparison unit. The implemented
+This is a derived internal construction and comparison module. The implemented
 proofs specialize `WeilRestrictionNormSplit` along
 `separableEmbeddingDecomposition`, use the canonical evaluation comparison in
 `WeilRestrictionEmbeddings`, and use the actual permutation-action comparison in
@@ -65,6 +65,6 @@ proofs specialize `WeilRestrictionNormSplit` along
 embedding cardinality. No additional literature assertion or unproved
 structural hypothesis is used.
 
-This unit does not construct a norm-kernel group scheme, identify its lattices,
+This module does not construct a norm-kernel group scheme, identify its lattices,
 or classify subtori. Its Galois conclusions concern the ordinary actions on
 the actual Weil-restriction lattices.

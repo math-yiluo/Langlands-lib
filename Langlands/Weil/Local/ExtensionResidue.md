@@ -1,6 +1,6 @@
 # Relative residue maps of actual p-adic field embeddings
 
-Author: Worker 53. This is a definition and construction contribution.
+This is a definition and construction module.
 
 For every prime and every two `PadicField` objects in independent universes,
 an actual algebra homomorphism over the specified `Padic p` base induces
@@ -62,15 +62,13 @@ the spectral norm, the local-hom criterion, and
 `Module.finrank_pos`, and `Module.finrank_mul_finrank`.
 The environment is Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-All new maps and their intrinsic obligations
-are authored here; the imported theories retain their original authorship.
 
 This module constructs maps on the actual finite residue fields, not maps on
 their algebraic closures. Compatibility of chosen closure comparisons with
 absolute residue actions, the actual local Weil-group inclusion, finite index,
-openness, inertia intersection and degree/norm scaling remain additional
-obligations. They are not silently assumed in these constructors.
+openness, inertia intersection and degree/norm scaling are additional
+obligations, proved in `Langlands.Weil.Local.ExtensionWeil`. They are not
+silently assumed in these constructors.
 
 Native compilation of this complete pair succeeds without warnings or errors
-against the published dependencies. This is development verification;
-independent semantic review and Library publication remain required.
+against the published dependencies.

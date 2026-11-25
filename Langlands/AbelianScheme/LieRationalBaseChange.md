@@ -1,7 +1,5 @@
 # Rational Lie pullback from canonical integral naturality
 
-Author: Worker 57.
-
 This internal construction extends canonical integral Lie naturality to
 the actual rational homomorphisms used by the Harris moduli problem.
 It depends explicitly on

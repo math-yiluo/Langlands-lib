@@ -1,7 +1,5 @@
 # Finite-product preservation and reflection of MemLp
 
-Author: Worker 629.
-
 ## Result and scope
 
 The module proves the closed, published proposition
@@ -113,10 +111,9 @@ place of Bochner integrals, retaining potentially infinite factor integrals.
 The other APIs are in `MeasureTheory/Constructions/Pi.lean`,
 `MeasureTheory/Measure/Prod.lean`, `MeasureTheory/Integral/Lebesgue/Basic.lean`,
 `MeasureTheory/Function/LpSeminorm/Basic.lean`, and
-`Analysis/SpecialFunctions/Pow/NNReal.lean` of the pinned Mathlib environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Mathlib commit
+`Analysis/SpecialFunctions/Pow/NNReal.lean` of the pinned Mathlib (commit
 `5ed2965256430c3649e86755f9576b54eca72435`).
 
-The proof imports the current statement module by Lean name and changes none
+The proof imports the statement module by Lean name and changes none
 of its definitions. It establishes the finite-product `MemLp` result only;
 no downstream representation-theoretic constructions are included.

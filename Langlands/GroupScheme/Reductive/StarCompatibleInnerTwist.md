@@ -1,6 +1,6 @@
 # Star-compatible torus comparisons have inner discrepancy
 
-Worker 227. This supporting module is internal to the proof of
+This supporting module is internal to the proof of
 `Langlands.GroupScheme.InnerFormStarActionStatement`. Its provenance is the
 composition of the published star-action projection, actual torus-compatible
 root-data transport, pinned Weyl innerness, adjoint quotient transport, and
@@ -48,4 +48,4 @@ this point back to the base change of the supplied source quotient;
 `IsAdjointQuotient.hasInnerDiscrepancy_of_galois_baseChange` promotes these
 pointwise finite-Galois identities to the required property on every scheme
 and every further test map. No extra quotient, centre, or rational-point
-hypothesis is imposed on the host statement.
+hypothesis is imposed on `InnerFormStarActionStatement`.

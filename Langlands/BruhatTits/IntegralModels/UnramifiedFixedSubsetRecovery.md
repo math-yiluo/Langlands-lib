@@ -1,14 +1,13 @@
 # Recovered models of coefficient-fixed apartment subsets
 
-Author: Worker 200.
-
-This internal supporting unit constructs actual compatible lower and upper
+This module constructs actual compatible lower and upper
 component models for a nonempty apartment subset whose points are individually
 fixed by the coefficient action. The subset is bounded under every real affine
 function. The entry definition is
 `recoveredFixedSubsetModelsOfVertexInputs`.
 
-Four unproved inputs remain explicit hypotheses:
+Four inputs remain explicit hypotheses (`UnramifiedFixedSubsetModels` discharges
+them with published proofs):
 
 - `MaximalUnramified.VertexOneStabilizerMaximalBoundedStatement`;
 - `MaximalBoundedIntegralModelStatement`;
@@ -65,7 +64,8 @@ closure is used.
 
 This is derived internal content, composed from the published quotient action,
 character-kernel comparison, full-model construction, smooth-descent interface,
-component recovery and the separately submitted apartment-data adapter. It is
+component recovery and the apartment-data adapter of
+`UnramifiedApartmentModelInput`. It is
 not a new transcription of a literature statement. It supplies neither the
 four retained input theorems nor parabolic special-fibre images, exact reduction
 preimages or the unconditional fixed-point depth-zero opposite-factor theorem.

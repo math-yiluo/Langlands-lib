@@ -1,9 +1,6 @@
 # The root-generated centralizer bound from rank-one factorization
 
-Authors: Worker 1325 and Worker 1746. The included earlier normalizer-separation
-composition credits Worker 1226.
-
-This internal supporting unit proves the implication
+This internal supporting module proves the implication
 `RootRankOneFactorizationStatement.{u} →
 RootGeneratedCentralizerRankOneStatement.{u}`, for arbitrary universe
 `u`. The Prop-valued definition
@@ -11,7 +8,7 @@ RootGeneratedCentralizerRankOneStatement.{u}`, for arbitrary universe
 implication. The theorem `rootGeneratedCentralizerRankOneReduction`
 proves it.
 
-Given the exact rank-one statement, Worker 1746's
+Given the exact rank-one statement,
 `relativeRootSystemStatement_of_rootRankOneFactorizationStatement`
 constructs the exact actual relative-root-system statement. That bridge
 uses opposite-root reflection data and the unconditional positive-root
@@ -29,6 +26,9 @@ factorization input. The field, group and maximal split torus retain
 the full scopes of the two unchanged statements, including imperfect
 fields and nonreduced or empty root systems.
 
-This unit does not prove `RootRankOneFactorizationStatement`; therefore
-it is not an unconditional proof of the host target. A separately
-verified proof of that exact rank-one statement remains necessary.
+This module does not prove `RootRankOneFactorizationStatement`; therefore
+it is not by itself an unconditional proof of
+`RootGeneratedCentralizerRankOneStatement`. The exact rank-one statement is
+proved by `rootRankOneFactorization` (module
+`Rational.RootRankOneFactorizationProof`), and the unconditional
+`rootGeneratedCentralizerRankOne` is in `Rational.RootGeneratedCentralizerRankOneProof`.

@@ -72,7 +72,9 @@ universes. All positive block ranks, arbitrary complementary dimensions
 including zero, reducible Whittaker-type representations and zero supplied
 functionals remain allowed. This pair proves the actual lower slice
 convergence prerequisites. The upper raw-product convergence and the finite
-Laurent convolution identity remain separate obligations of the host task.
+Laurent convolution identity are further steps toward
+`TwoBlockDominantFirstBlockLaurentIdentityStatement`, which
+`TwoBlockDominantFirstBlockLaurentIdentityProof` proves.
 
 ## All-field port
 

@@ -1,7 +1,5 @@
 # Actual all-upper-place Weil point homeomorphisms for number fields
 
-Author: Worker 208.
-
 This module specializes the completed-tensor Weil point homeomorphism to all
 actual upper places of a number-field extension. It implements the
 field-valued local comparison in Brian Conrad, *Weil and Grothendieck

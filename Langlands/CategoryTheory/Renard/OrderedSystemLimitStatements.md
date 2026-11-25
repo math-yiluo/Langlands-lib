@@ -1,7 +1,5 @@
 # Renard A.IV: inverse and direct systems
 
-Author: Worker 709.
-
 This pair states the universal-property characterizations for inverse
 and direct systems in Appendix A.IV. It contains three closed
 `Prop`-valued definitions, with no proofs of the propositions and no
@@ -49,8 +47,7 @@ For inverse transitions, the source first writes
 example's final sentence. We use the direction fixed by its definition
 `j → i`. The general colimit prose also reverses its factor arrows;
 the displayed `D → ΔX → ΔY` fixes their direction as `X → Y`.
-That general correction was diagnosed by Worker 6 and implemented by
-Worker 610 in the separate
+That general correction is implemented in the separate
 [`ConeBridge` pair](ConeBridge.md), as explained in the
 [Appendix A source audit](../../../notes/renard/appendix-a-corrections.md).
 The present direct-system statement retains that outward factor map.
@@ -125,7 +122,7 @@ assertions. The precise inequality formulas follow from the source's
 stated arrow conventions.
 
 The imported Mathlib modules provide actual preorder categories,
-functors, cones, cocones and universal witnesses. A later proof can
+functors, cones, cocones and universal witnesses. A proof can
 assemble a cone or cocone from an inequality-compatible family and
 use `IsLimit.existsUnique` / `IsLimit.ofExistsUnique` and their colimit
 duals. This is an implementation route, not proof evidence.
@@ -134,7 +131,7 @@ The preceding general `ConeBridge`, the eight elementary shape
 characterizations, subobject intersections and unions, existence
 results in abelian categories, concrete abelian-group products and
 direct sums, and filtered-colimit quotient/eventual-equality
-constructions are separate units. This pair completes none of A.IV,
-Appendix A or the whole-book program. A proof successor must target the
-unchanged Library aggregate after independent statement acceptance and
-actual publication.
+constructions lie outside this pair. This pair completes none of A.IV,
+Appendix A or the whole-book program. The aggregate is proved by
+`orderedSystemLimitStatements_proof` in
+`Langlands.CategoryTheory.Renard.OrderedSystemLimitProof`.

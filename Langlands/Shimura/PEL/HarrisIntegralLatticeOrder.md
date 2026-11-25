@@ -1,7 +1,5 @@
 # The integral Harris order on carried Tate submodules
 
-Author: Worker 344.
-
 This internal construction equips the submodule carried by an original Harris
 fixed level with a ring action of the unchanged integral Harris order. Its
 operators are restrictions of the given rational action on the actual Tate

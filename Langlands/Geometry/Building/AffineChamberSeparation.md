@@ -1,6 +1,6 @@
 # Finite separation and actual affine chamber transport
 
-This helper unit belongs to the proof of the published
+This module supplies lemmas for the proof of the published
 `Langlands.Geometry.Building.AffineChamberSimpleTransitivityStatement`.
 It proves finite separation, covariance under the existing actual affine action,
 and the empty-arrangement case; it does not establish nonempty chamber transport
@@ -42,7 +42,7 @@ subgroup membership to prove the exact existence-and-uniqueness conclusion.
 These arguments in fact hold on any real torsor, without needing the
 rank-zero root-system premise.
 
-## Provenance and remaining work
+## Provenance and scope
 
 These are internal derived lemmas, proved directly from the published definitions
 and AR4. The source motivation is Kaletha–Prasad, *Bruhat–Tits Theory: A New
@@ -50,5 +50,6 @@ Approach* (2023), Definition 1.3.1 and Remark 1.3.16, with the November 2024
 correction to AR4. The exact source IDs, hashes and interpretation of rank zero
 are recorded in the unchanged imported statement's Markdown. No external Lean
 implementation is adopted. The general finite-separation reflection-arrangement
-argument and its application to nonempty affine root systems remain required
-before the global simple-transitivity target can be proved.
+argument and its application to nonempty affine root systems are not part of
+this module; the global simple-transitivity statement is proved by
+`affineChamberSimpleTransitivity` in `AffineChamberTransitivity`.

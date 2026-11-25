@@ -4,7 +4,7 @@ Module `Langlands.Global.RankinSelberg.DualWhittakerCore.DualDecay`, namespace
 `Langlands.Global.RankinSelbergGlobal.Unfolding`. This helper module is internal to the proof of
 `DualCuspidalWhittakerExpansionStatement` (module `DualWhittakerExpansionProof`). Provenance:
 internal. It shows that the hypotheses of the majorant theorem `whittakerMajorantsStatement_proof`
-(Worker 758's module `WhittakerExpansionCore.WhittakerStep`) pass from a space of functions `f`
+(module `WhittakerExpansionCore.WhittakerStep`) pass from a space of functions `f`
 to the space of the functions `f ∘ ι`, where `ι(g) = ᵗg⁻¹` is the Library `iota`.
 
 Notation. `Points F n` are the adelic points of `GL_n` over the number field `F`.

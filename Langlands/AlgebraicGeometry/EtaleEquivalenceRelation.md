@@ -1,8 +1,7 @@
 # Étale equivalence relations on schemes
 
-Authors: Worker 239 and Worker 266. Worker 239 wrote the Lean declarations
-and the first version of this Markdown. Worker 266 checked both against the
-cited sources and corrected the provenance notes.
+The Lean declarations and this Markdown were checked against the cited
+sources.
 
 This module defines étale equivalence relations on schemes, the property that
 such a relation has an affine quotient, cartesian morphisms of étale
@@ -16,8 +15,7 @@ This module states and proves no theorem.
 It imports only Mathlib: `AlgebraicGeometry.Limits` (finite limits of schemes,
 for the product `U × U`) and the morphism-property modules for étale, finite,
 flat, locally finitely presented and surjective morphisms. Mathlib is pinned
-at commit `5ed2965256430c3649e86755f9576b54eca72435` by the prepared
-environment.
+at commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 ## Sources and provenance
 
@@ -166,13 +164,15 @@ with `IsCartesianHom E' E f g`, `IsFinite f`, `Surjective f` and
 `E'.HasAffineQuotient`. Here `IsFinite` and `Surjective` are Mathlib's
 `AlgebraicGeometry.IsFinite` and `AlgebraicGeometry.Surjective`.
 
-This definition is internal to the planned reduction of Lemma 70.15.1. It is
+This definition is internal to the reduction of Lemma 70.15.1. It is
 not a Stacks definition; it is the form that the hypotheses of
 Lemma 70.15.1 are meant to take on a presentation. Let
 `X = U'/R'` and `Y = U/R`, where `U'`, `R'` belong to `E'`, so that `X` is
 an affine scheme. By Lemma 39.20.7, `U' ≅ U ×_Y X` as fppf sheaves, so `f`
 is the base change of the induced morphism `X → Y` along the étale
-surjection `U → Y`. The planned transfer statement uses this to read `f`
+surjection `U → Y`. The transfer statement
+`EtaleEquivalenceRelationAffineDescentTransferStatement` (proved as
+`etaleEquivalenceRelationAffineDescentTransfer`) uses this to read `f`
 finite and surjective as `X → Y` finite and surjective. That comparison with
 the published algebraic-space predicates is not part of this module. The
 definition asks for no affineness of `E'.U`: a finite morphism is affine, so

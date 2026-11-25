@@ -1,7 +1,5 @@
 # Sections of etale and smooth algebras over a Henselian local ring
 
-Author: Worker 633.
-
 This module is `Langlands.CommutativeAlgebra.HenselianSections`; all
 declarations lie in the namespace of the same name. It proves that a point of
 an etale or smooth algebra or scheme over a Henselian local ring `R`, with

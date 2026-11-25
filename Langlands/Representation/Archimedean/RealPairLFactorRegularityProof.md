@@ -1,7 +1,5 @@
 # Proof: right half-plane regularity of real pair `L`-factors
 
-Author: Worker 3657. Verified and submitted by Worker 831 from the shared Task 6818 draft.
-
 Module `Langlands.Representation.Archimedean.RealPairLFactorRegularityProof` proves
 
 ```lean
@@ -9,9 +7,9 @@ theorem Langlands.Archimedean.realPairLFactorRightHalfPlaneRegularity :
     RealPairLFactorRightHalfPlaneRegularityStatement
 ```
 
-The target is the published proposition
+The target is the proposition
 `Langlands.Archimedean.RealPairLFactorRightHalfPlaneRegularityStatement` of module
-`Langlands.Representation.Archimedean.UnitaryGenericPairRegularityStatement`, unchanged:
+`Langlands.Representation.Archimedean.UnitaryGenericPairRegularityStatement`:
 
 ```lean
 ∀ (ds ds' : List RealBlock) (s : ℂ),
@@ -20,8 +18,7 @@ The target is the published proposition
 ```
 
 The real pair `L`-factor `L(s, ds × ds') = 1 / P(s)` has no pole at `s`, that is `P(s) ≠ 0`,
-when `Re(s) + Re(t) + Re(t') > 0` for every block exponent `t` of `ds` and `t'` of `ds'`. This
-is target 1 of Task 6818 (`7825d219-2a04-4194-9e19-95b05a84c4dc`).
+when `Re(s) + Re(t) + Re(t') > 0` for every block exponent `t` of `ds` and `t'` of `ds'`.
 
 The module imports the statement module and the helper
 `Langlands.Representation.Archimedean.PairBlockExponent` (paired Markdown beside it). The
@@ -31,7 +28,7 @@ theorem uses only the standard axioms `propext`, `Classical.choice` and `Quot.so
 
 The proof follows step 1 of "Why the statements are true" in the statement Markdown.
 
-1. By definition `realPairLFactor ds ds' = realLFactor (realPairBlocks ds ds')`. The published
+1. By definition `realPairLFactor ds ds' = realLFactor (realPairBlocks ds ds')`. The Library's
    `realLFactor_regular_iff` (module `Langlands.LocalFactor.ArchimedeanPresentation`) turns
    `P(s) ≠ 0` into two conditions.
    - For every character block `character d` of the pair presentation and every `k : ℕ`,
@@ -57,7 +54,7 @@ of `Γ_ℂ(s) = 2 (2π)^(−s) Γ(s)` at `s = −k`, `k ∈ ℕ`. The Library ha
 `realLFactor_regular_iff`, so the proof only adds the exponent bookkeeping. The archimedean
 `L`-factors are the Library's factors of local Langlands parameters: A. W. Knapp (1994),
 *Local Langlands correspondence: the archimedean case*, registered as
-`knapp-1994-archimedean-llc`, (3.4)–(3.5) and Theorem 2, p.403 (PDF 413), through the published
+`knapp-1994-archimedean-llc`, (3.4)–(3.5) and Theorem 2, p.403 (PDF 413), through the
 `StandardModule` and `ArchimedeanPresentation` Markdown. The statement is used in the
 reduction of the real case of J. R. Getz and H. Hahn (2024), *An introduction to automorphic
 representations* (`getz-hahn-2024-automorphic-representations`), Theorem 11.5.2, p.305

@@ -22,7 +22,7 @@ inverse standard character, and nonzero functionals `ℓ`, `ℓ'`. For all of th
 3. the block values have a common denominator;
 4. they have a normalized generator.
 
-The binders copy the accepted Task 5889 statement `LocalFieldUnequalRankFunctionalEquationStatement`.
+The binders copy the statement `LocalFieldUnequalRankFunctionalEquationStatement`.
 The differences: the ranks are `(n j k)` in place of `(n r)` with `n < r`, `ν` need not be
 self-dual, and `π` has rank `n + (j + k + 1) + 1`. The conclusion is the one used by the
 published p-adic `UnequalRankAnalyticStatement`. That statement is for `PadicField` only, takes `q`

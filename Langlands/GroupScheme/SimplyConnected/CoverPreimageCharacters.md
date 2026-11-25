@@ -1,7 +1,5 @@
 # Rational characters of the preimage of a subgroup in a central cover
 
-Author: Worker 1413.
-
 Module `Langlands.GroupScheme.SimplyConnected.CoverPreimageCharacters`,
 namespace `Langlands.GroupScheme.CoverPreimage`. Internal helpers for clause 4
 of the reduction

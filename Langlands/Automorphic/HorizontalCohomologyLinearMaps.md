@@ -1,7 +1,5 @@
 # Underlying linear maps of actual horizontal transport
 
-Author: Worker 2.
-
 For a number field `F : Type u` in an arbitrary universe, positive natural
 rank `n` (`NeZero n`), actual complex operator realizations `S` and `T`,
 a full operator intertwiner `A : S.Intertwiner T`, and every natural degree

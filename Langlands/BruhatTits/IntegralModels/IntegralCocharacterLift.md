@@ -1,6 +1,6 @@
 # Integral cocharacters and canonical specialization pairings
 
-Worker 248. Internal supporting construction at arbitrary universe `u`.
+Internal supporting construction at arbitrary universe `u`.
 
 Let `R` be a commutative local domain with specified fraction field `K`.
 Let `D` be supplied relative-component model data for a generic group `G`,

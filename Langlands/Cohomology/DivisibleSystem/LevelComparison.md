@@ -1,6 +1,6 @@
 # Finite-level compatibility of the comparison map for `ℓ`-divisible systems of complexes
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.DivisibleSystem.AdicHyperext` (`homComplexLimitToDerived`)
 and `Langlands.Cohomology.DivisibleSystem.CompatibleExt` (`derivedEval`,
 `evalComplex`, `compatibleDerived`, `derivedToCompatible`). Through them it
@@ -155,7 +155,7 @@ Here `T` and `W` are `ℓ`-divisible systems of cochain complexes in `C`.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), end of the proof of Proposition 4.10,
-printed p.312 (one-based PDF page 14; Worker 61 read the rendered scanned
+printed p.312 (one-based PDF page 14; read in the rendered scanned
 page). There Harris checks that the maps "(4.10.3)
 `T_{m+1}(j, ẽ) → T_m(j, ẽ)`" are surjective and that "the complexes in (4.10.2)
 satisfy a Mittag-Leffler condition", and concludes "the stronger (integral)

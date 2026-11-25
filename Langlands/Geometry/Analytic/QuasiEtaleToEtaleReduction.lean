@@ -209,10 +209,10 @@ theorem exists_gSpace_pullback (h1 : LocalizedEtalePullbackStatement.{u, v} K)
     ∃ (Z : GSpace.{u, v, v} K G) (p : Z ⟶ A) (q : Z ⟶ B),
       IsPullback p q f g ∧ GSpace.etale q := by
   obtain ⟨P, p, q, hP, hq⟩ := h1 (GSpace.forget.map f) (GSpace.forget.map g) hf
-  have hfe : ∀ a, (A.obj.ρAut a).hom ≫ GSpace.forget.map f =
-      GSpace.forget.map f ≫ (Y.obj.ρAut a).hom := fun a => f.hom.comm a
-  have hge : ∀ a, (B.obj.ρAut a).hom ≫ GSpace.forget.map g =
-      GSpace.forget.map g ≫ (Y.obj.ρAut a).hom := fun a => g.hom.comm a
+  have hfe : ∀ a, (A.obj.ρAut a).asIso.hom ≫ GSpace.forget.map f =
+      GSpace.forget.map f ≫ (Y.obj.ρAut a).asIso.hom := fun a => f.hom.comm a
+  have hge : ∀ a, (B.obj.ρAut a).asIso.hom ≫ GSpace.forget.map g =
+      GSpace.forget.map g ≫ (Y.obj.ρAut a).asIso.hom := fun a => g.hom.comm a
   let σ := CategoricalPullback.pullbackAction hP A.obj.ρAut B.obj.ρAut Y.obj.ρAut hfe hge
   have hσp := CategoricalPullback.pullbackAction_fst hP A.obj.ρAut B.obj.ρAut Y.obj.ρAut hfe hge
   have hσq := CategoricalPullback.pullbackAction_snd hP A.obj.ρAut B.obj.ρAut Y.obj.ρAut hfe hge
@@ -220,8 +220,8 @@ theorem exists_gSpace_pullback (h1 : LocalizedEtalePullbackStatement.{u, v} K)
     A.property.1 B.property.1 Y.property.1 σ A.obj.ρAut B.obj.ρAut A.property.2 B.property.2
     hσp hσq
   let Pa : Action (LocalizedCategory.{u, v, v} (K := K)) G :=
-    { V := P, ρ := (Aut.toEnd P).comp σ }
-  have hρ : Pa.ρAut = σ := MonoidHom.ext fun a => Iso.ext rfl
+    { V := P, ρ := (Aut.toEnd (X := P)).comp σ }
+  have hρ : Pa.ρAut = σ := MonoidHom.ext fun a => Aut.ext (Iso.ext rfl)
   let Z : GSpace.{u, v, v} K G := ⟨Pa, hT2, by rw [hρ]; exact hcont⟩
   let p' : Z ⟶ A := ObjectProperty.homMk ⟨p, fun a => hσp a⟩
   let q' : Z ⟶ B := ObjectProperty.homMk ⟨q, fun a => hσq a⟩

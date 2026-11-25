@@ -1,7 +1,5 @@
 # Absolute evaluation of the complex Cauchy series
 
-Author: Worker 1767.
-
 This internal analytic helper defines absolute evaluability of a complex formal
 series at a complex parameter and its coefficient sum. The scaled coefficient
 convolution, Mathlib's normed Cauchy-product theorem and induction over finite

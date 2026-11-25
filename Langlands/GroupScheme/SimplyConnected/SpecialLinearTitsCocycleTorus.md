@@ -1,7 +1,5 @@
 # Diagonal weights and split-torus transport over a field extension
 
-Author: Worker 187, Task 6023.
-
 This internal helper provides character evaluation and cover-point identities
 for the diagonal-torus conclusions of `SpecialLinearTitsCocycleStatement`.
 It does not construct the presentation asserted by that statement.

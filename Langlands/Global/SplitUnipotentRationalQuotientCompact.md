@@ -1,7 +1,6 @@
 # Compactness of `U(F) \ U(𝔸_F)` for split unipotent groups
 
-Author: Worker 1179. Part of task 40747bb3 (finite volume of `G(F) \ G(𝔸_F)¹`), with
-Worker 235.
+Written for the finite volume of `G(F) \ G(𝔸_F)¹`.
 
 This module proves the Library proposition `UnipotentRationalQuotientCompactStatement`
 (`Langlands/Global/TriangularRationalQuotientCompact.lean`) from two other Library

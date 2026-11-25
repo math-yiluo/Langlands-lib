@@ -57,15 +57,13 @@ def AlgClosedFieldRigidifiedPicardOriginDimensionLowerBoundStatement : Prop :=
 
 inside `namespace Langlands.AbelianScheme`, with
 `open CategoryTheory AlgebraicGeometry` before the namespace and
-`open Langlands.AlgebraicGeometry.Picard` inside it. The body is exactly
-the one in the task objective. The module imports
+`open Langlands.AlgebraicGeometry.Picard` inside it. The module imports
 `Langlands.AlgebraicGeometry.Picard.FieldPicardIdentityComponent`,
 `Mathlib.AlgebraicGeometry.Properties` and
 `Mathlib.FieldTheory.IsAlgClosed.Basic`.
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiles the
-module with no errors or warnings and reports
-`statement_returns_prop: true`. The only axioms are `propext`,
+The module compiles with no errors or warnings, and the declaration has
+type `Prop`. The only axioms are `propext`,
 `Classical.choice` and `Quot.sound`. With `pp.fieldNotation false`,
 `pp.proofs true` and `pp.funBinderTypes true`, `#print` reports:
 
@@ -328,13 +326,16 @@ The extraction makes three changes.
 
 The source proves Theorem (6.18), using the Picard scheme whose existence §3
 admits. The Lean declaration here is only a stated proposition, not a
-proved theorem. Its proof is a separate successor task, after this statement
-is accepted and published.
+proved theorem. Its proof is the separate module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldRigidifiedPicardOriginDimensionLowerBoundProof`
+(`Langlands.AbelianScheme.algClosedFieldRigidifiedPicardOriginDimensionLowerBound`).
 
-## Remarks on a later proof
+## Remarks on a proof
 
-The following route was proposed by Worker 432. It is not a formal proof,
-and nothing here claims that it has been carried out.
+The following route is not a formal proof, and nothing here claims that it
+has been carried out. The Library's proof goes through the Mumford classifier of
+`Langlands.AlgebraicGeometry.Picard.PicardOriginMumfordClassifier` and the quasi-finite
+stalk inequality `Langlands.AlgebraicGeometry.quasiFiniteAtStalkDimension`.
 
 Rigidify `L` using triviality of line bundles over `Spec k` and choose an
 ordinary inverse by published results. Build the parameter-first Mumford
@@ -355,23 +356,16 @@ additivity of the Mumford map nor a finite kernel group scheme.
 
 ## Boundaries and intended use
 
-This unit states only a conditional local-dimension bound. It is an
-independently stated, planned input for the geometric-reducedness proof task
-`9cd303c4-a699-432a-8e44-0c6446ebc0df`, but it does not depend on that task,
-on the identity-component smoothness proof
-`e689d392-8896-4255-835c-4beab40a2d45` or on the chosen-dual smoothness proof
-`4ef972f8-8ae6-4f1a-b440-857530de2ca6`.
+This module states only a conditional local-dimension bound. It is an
+independently stated input for the geometric-reducedness proof
+`Langlands.AbelianScheme.algClosedFieldRigidifiedPicardParameterReduced` (module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldRigidifiedPicardParameterReducedProof`),
+but it does not depend on that proof,
+on the identity-component smoothness proof or on the chosen-dual smoothness proof.
 
-The finite-stabilizer proof `d37659ae-d0c6-464f-9fb7-17a4685cf349`, the
-ample-existence proof `a43c8316-5f2d-44a1-ac62-75f4fb902aa1`, ambient
-representability `9d039bac-24d3-4106-869b-bd98894b444d`, field existence
-`f38215ec-58a9-488f-8fd0-305952a3db2b` and the smooth-family comparison
-`b879dd05-2261-4214-a0d1-57cdb62b5634` are paused. This unit does none of
-their work. A later application that discharges the premise from an ample
-bundle needs the corresponding theorems to be independently proved and
-published first.
-
-Worker 1001 wrote the Lean statement and this explanation, reread the cited
-source passages and checked the reused declarations, and compiled the module
-in the pinned environment. Worker 432 supplied the specification of the
-binders and conclusion, and the proposed proof route.
+This module does none of the work of the finite-stabilizer proof, the
+ample-existence proof, ambient representability, field existence or the
+smooth-family comparison. The geometric-reducedness proof discharges the premise
+from an ample bundle, using the Library's proofs
+`algClosedFieldAmpleTranslationStabilizerFinite` and
+`Langlands.GroupScheme.algebraicallyClosedFieldAmpleExistence`.

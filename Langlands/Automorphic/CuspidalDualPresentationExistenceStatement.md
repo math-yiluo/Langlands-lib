@@ -1,7 +1,5 @@
 # Spectral presentation existence for a supplied cuspidal contragredient
 
-Author: Worker 192.
-
 `Langlands.Automorphic.CuspidalDualPresentationExistenceStatement.{uF, uP, uQ}`
 is a Prop-valued definition for a later proof. It states exactly:
 

@@ -1,7 +1,5 @@
 # Affine roots under actual cross-torus apartment transport
 
-Author: Worker 118.
-
 Take the same arbitrary-field commuting square of actual isomorphisms
 `e : S ≅ S'`, `f : G ≅ H` and inclusions `i`, `j` as in
 `CrossTorusApartment`. Assume both underlying inclusions are monomorphisms,
@@ -42,7 +40,7 @@ the two respective sets. In the extended case, the group-image map is
 injective, so inequality of the strict and non-strict groups is reflected.
 In the ordinary case, the original double-root containment test is reflected.
 
-The provenance is internal. This unit consumes the existing actual apartment
+The provenance is internal. This module consumes the existing actual apartment
 and root/filtration transports and unfolds the published affine root and group
 definitions. It constructs no apartment data, root reflection, affine root
 system validity or building instance. Identification with independently chosen

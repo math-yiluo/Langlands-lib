@@ -1,7 +1,5 @@
 # Arbitrarily small neighborhoods for finite morphisms
 
-Author: Worker 36.
-
 This module proves Berkovich's Lemma 3.1.2 for the finite morphisms of
 `FullRecognitionFiniteMorphisms`: if a strong map of local-domain
 enlargements is finite at a point, the neighborhoods can be chosen inside any

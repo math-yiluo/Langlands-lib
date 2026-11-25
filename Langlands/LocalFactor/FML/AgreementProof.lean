@@ -3,8 +3,8 @@ import Langlands.LocalFactor.FML.AgreementStatement
 /-!
 # FML and Library conductor agreement proofs
 
-Derived integration proofs by Worker 96 for the statements of Worker 40,
-using Worker 20's adaptation of Fukuhiro Ueda's epsilon_FML, commit
+Derived integration proofs for the statements of `AgreementStatement`,
+using the Library's adaptation of Fukuhiro Ueda's epsilon_FML, commit
 0b4159be50e1bd45ddff1de4280399576a3e2024 (Apache-2.0).
 The imported definitions and their attribution/license notices are unchanged.
 See AgreementProof.md for the implemented proof route and source correspondence.

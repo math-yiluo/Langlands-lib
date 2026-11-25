@@ -21,8 +21,9 @@ Coefficient groups `M N P : AddCommGrpCat.{v}` are in universe `v`. Presheaves
 *trivialization* of `F` over `f : X ⟶ S` is an isomorphism
 `ef : restrict f F ≅ constant X M`.
 
-This is an internal derived module of Task 6942 (Conrad, *Reductive group schemes*,
-Corollary B.3.6). Its role in Conrad's proof is explained in "Correspondence with the
+This is an internal derived module of the proof that groups of multiplicative type over
+normal bases are locally isotrivial (Conrad, *Reductive group schemes*,
+Corollary B.3.6; `multiplicativeTypeNormalIsotrivial` in `Langlands.GroupScheme.Torus.MultiplicativeTypeNormalIsotrivialProof`). Its role in Conrad's proof is explained in "Correspondence with the
 source" below.
 
 ## 1. Transition isomorphisms

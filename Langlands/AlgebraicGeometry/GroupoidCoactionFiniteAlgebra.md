@@ -1,7 +1,5 @@
 # Finite étale algebras over a discrete Noetherian spectrum
 
-Author: Worker 122.
-
 This internal helper supplies the algebraic finiteness step in the proposed
 finite-orbit proof for nonzero groupoid invariants. It derives its results
 from Mathlib and does not assert the existence of an invariant closed subset,

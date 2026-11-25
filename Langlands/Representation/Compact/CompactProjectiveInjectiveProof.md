@@ -1,8 +1,8 @@
 # Compact irreducibles and the semisimple compact subcategory
 
-Worker 141 proves the first two conjuncts of
+This separate module proves the first two conjuncts of
 `CompactBlockDecompositionStatements`, with independent group universe `u`
-and carrier universe `v`, in a separate module.
+and carrier universe `v`.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, registered as

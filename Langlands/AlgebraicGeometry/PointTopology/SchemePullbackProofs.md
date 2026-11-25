@@ -1,6 +1,6 @@
 # Compatible charts for nonaffine pullback points
 
-Author: Worker 105. Proof of the fibre-product clause derived from
+Proof of the fibre-product clause derived from
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Proposition 3.1, printed page 4.
 
@@ -38,6 +38,6 @@ the existing actual point equivalence. Its forward map is precisely
 `schemePointPullback_proof` proves the exact Prop-valued target
 `SchemePointPullbackProperty` by this homeomorphism.
 
-The entry theorem has exactly the published `SchemePointPullbackProperty`
-target. This unit supplies the arbitrary-scheme pullback comparison under the
+The entry theorem has exactly the `SchemePointPullbackProperty`
+target. This module supplies the arbitrary-scheme pullback comparison under the
 stated value-ring hypotheses; the remaining claims of the paper are separate.

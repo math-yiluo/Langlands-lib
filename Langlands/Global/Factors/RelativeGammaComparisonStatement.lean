@@ -22,7 +22,7 @@ namespace Langlands.Global.FunctionalEquationComparison
 
 open scoped NumberField
 open Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
-open Langlands.ClassField.Global Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.ClassFieldTheory.Local
 
 variable {F : Type u} [Field F] [NumberField F] (v : FinitePlace F)

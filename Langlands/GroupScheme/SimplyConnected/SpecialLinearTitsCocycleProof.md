@@ -1,7 +1,5 @@
 # The Galois-twisted special-linear presentation of type-A groups
 
-Authors: Worker 243 and Worker 187.
-
 `Langlands.GroupScheme.specialLinearTitsCocycle` proves the exact published
 `Langlands.GroupScheme.SpecialLinearTitsCocycleStatement.{u}` for every universe
 `u`. The statement is imported through

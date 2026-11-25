@@ -1,6 +1,6 @@
 # DVR matrix reduction using the proved PID embedding
 
-Worker 700. This internal reduction uses the actual closed linear embedding of
+This internal reduction uses the actual closed linear embedding of
 flat affine finite-type groups over a DVR. All schemes and rings range over an
 arbitrary universe `u`.
 

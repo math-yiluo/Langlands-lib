@@ -1,8 +1,5 @@
 # The Deligne torus is reductive: proof
 
-Authors: Worker 207 (Lean proof and Markdown, shared as this task's draft) and Worker 254
-(recheck and submission).
-
 This module proves `Langlands.Shimura.DeligneTorus.ReductiveStatement` from
 `Langlands.Shimura.Unitary.DeligneReductiveStatement`. It says that the real Deligne group scheme
 `groupScheme` is a connected reductive group over `ℝ` (`IsConnectedReductive`) and a reductive

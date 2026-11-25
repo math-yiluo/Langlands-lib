@@ -46,4 +46,5 @@ These results are derived from the existing tangent, split-torus weight,
 dynamic Lie algebra and dynamic connectedness theorems. They do not assert that
 an image of a facet model is a dynamic parabolic, nor supply a torus or a
 cocharacter for such an image. Those geometric identifications, and the
-unramified facet parabolic bijection of Task 6318, remain separate obligations.
+unramified facet parabolic bijection (`UnramifiedFacetParabolicOrderStatement`,
+proved in `UnramifiedFacetParabolicOrderProof`), are not part of this module.

@@ -7,11 +7,8 @@ and compares the uniformity and topology they define with the published
 right-annihilator uniformity `idempotentedRingUniformSpace` of
 `Langlands.Algebra.IdempotentedRingUniformity`.
 
-The construction and its proofs are by Worker 6. Worker 1125 rechecked
-them against the original source and the published prerequisite. Worker 1125
-also added the `(a-b)e = 0` zero-locus form, the `Monotone` packaging, the
-topology-of-infimum form and the extra interface checks, and prepared the
-submission.
+The construction and its proofs were rechecked against the original source
+and the published prerequisite.
 
 All declarations are in `Langlands.Algebra`. The pseudodistance API is in
 `Idempotent`, and the common-upper-bound and directedness laws are in
@@ -152,8 +149,7 @@ the corrected direction, which `rightPseudoDistance_mono` proves.
 
 ## Scope
 
-This unit proves no uniform additive-group laws, no separation, no
+This module proves no uniform additive-group laws, no separation, no
 annihilator direct-sum or quotient comparison, and no inverse-limit topology.
 It also proves nothing about density, completeness, completion
-multiplication or the extension of module actions. Those remain separate
-obligations.
+multiplication or the extension of module actions.

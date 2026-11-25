@@ -1,6 +1,6 @@
 # Locally constant character maps of split torus homomorphisms
 
-This internal derived unit proves the first step of Conrad, *Reductive group
+This internal derived module proves the first step of Conrad, *Reductive group
 schemes* (2014), Proposition 6.1.7, over an affine base `Spec R`. A homomorphism
 `τ : 𝔾_m^I → 𝔾_m^{I'}` of coordinate split tori acts on character lattices
 through a linear map that is locally constant on `Spec R`. Conrad states this on

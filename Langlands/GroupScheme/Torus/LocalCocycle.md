@@ -1,7 +1,5 @@
 # Local trivializations of split-torus cocycles
 
-Author: Worker 1232.
-
 For a scheme `S` in an arbitrary universe, a finite index type `I` in that
 universe, and a cover `U → S`, this module constructs local trivializations of
 cocycles valued in the actual group scheme `splitTorus S I`. The cover is assumed

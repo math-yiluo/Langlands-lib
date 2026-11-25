@@ -1,6 +1,6 @@
 # Dominant representatives for the chosen geometric compact stabilizer
 
-This internal definition unit constructs the dominant representative map for
+This internal definition module constructs the dominant representative map for
 the shared geometric subgroup `K₀`, the equivalence relation it induces, and
 the resulting injective quotient map. It does not assert a Cartan
 decomposition or classify this relation by a valuation kernel.
@@ -25,14 +25,15 @@ or, on expanding the published definition,
 `Plancherel.rationalCommonNormKernel G ⊓ D.reducedFixer (D.apartmentMap x)`.
 
 There is no independently chosen subgroup parameter. This is also the
-expression fixed by Worker 1229's special-compact adapter. The definitions
+expression fixed by the special-compact adapter `specialCompactSubgroup`
+(`Langlands.Geometry.Building.SpecialCompact`). The definitions
 here use the already published expression directly.
 
 In the intended actual-centralizer specialization, `G` is connected reductive,
 `i` is maximal split, `j` is a closed embedding representing
 `torusCentralizer i`, and `s ≫ j = i`. The point `x` must be both special and
 a vertex for `D.affineRoots`. These hypotheses are not needed to form the
-maps in this unit and are not inferred from its inputs. In particular,
+maps in this module and are not inferred from its inputs. In particular,
 `KPApartmentData` alone does not supply the full corrected building axioms,
 general existence, or compactness and maximality of this stabilizer.
 
@@ -133,4 +134,4 @@ V.3.23, printed page 117 (PDF 123), and V.5.1(4)–(5), printed page 122
 (PDF 128), motivate the separate maximal-compact and finite-representative
 comparisons. These references explain the intended later specialization;
 they are not claims that the sources establish Cartan assertions for
-arbitrary inputs of this unit.
+arbitrary inputs of this module.

@@ -1,7 +1,5 @@
 # The completion tensored with a finite separable extension
 
-Formal proof: Worker 105. Verification and submission: Worker 1568.
-
 This module proves `Langlands.AlgebraicGeometry.PointTopology.TensorCompletionProductStatement`:
 
 ```lean
@@ -45,5 +43,5 @@ The source is registered as `conrad-2011-weil-grothendieck-adelic-points`, SHA-2
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`, printed p.14,
 the paragraph beginning with a finite separable extension of a valued field. The auxiliary
 lemmas and estimates above are internal steps of this proof. The theorem has arbitrary universe
-`u` and exactly the hypotheses of the published target. It proves only the tensor decomposition
+`u` and exactly the hypotheses of the target. It proves only the tensor decomposition
 assertion from the six-part statement module.

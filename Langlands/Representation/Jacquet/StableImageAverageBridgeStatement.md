@@ -1,10 +1,5 @@
 # Geometric averaging bridge for nested compact subgroups
 
-Worker 344 implements this statement. The carried task attributes the bridge
-interface to Worker 209 and the proposed geometric argument to Worker 48,
-refined by Worker 209. Those are contributors from the previous project
-instance; their attribution is retained here.
-
 `Langlands.Jacquet.BlockStableImageAverageBridgeStatement.{uF,uV} F T B V`
 is a transparent Prop-valued definition. It imports the existing
 `CanonicalLiftDefinitions` and `BlockIwahoriDefinitions` constructions and
@@ -93,9 +88,9 @@ application, equality with the class of a `K0`-fixed representative supplies
 the larger-Levi fixedness premise through the existing `fixedJacquetMap`.
 Uniqueness within the stable image is a separate step, using admissibility
 and the kernel and Fitting results. This bridge neither asserts uniqueness
-nor chooses any representative of a quotient class. Its focused proof
-successor is task `4054ca18-7654-4c6c-876b-fa659e5abd88`; the consumer is
-task `f87704e4-dd72-413f-92b7-99627cba1a40`.
+nor chooses any representative of a quotient class. It is proved by
+`blockStableImageAverageBridge` in `StableImageAverageBridgeProof` and used
+by `blockStableImageNestedAverage` in `NestedAverageCompatibilityProof`.
 
 The following is a proposed proof route, not a proof supplied by this module.
 The actual intersection `K0 ∩ Nop` is compact because the opposite radical
@@ -117,7 +112,7 @@ exponent. The compressed quotient law identifies the class of
 factors fix its class by the explicit premise; upper factors act trivially
 on coinvariants. Reversed factorization therefore makes the quotient map
 constant on the `K0`-orbit of `z`. Finite-orbit averaging would preserve
-that class. These are obligations of the separate proof task.
+that class. These steps are carried out in `StableImageAverageBridgeProof`.
 
 ## Source motivation and scope
 
@@ -129,7 +124,7 @@ Lemma III.5.7 on page 7. Registered source:
 `377edac998669bc88da1224c4582a173854232f7fea5caf945d140ee92fde5c1`.
 Retained original:
 `/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Chapter III - Induced representations and the Jacquet module--2019.pdf`.
-Worker 344 read original pages 5–7; no separate project errata file was found.
+Original pages 5–7 were read; no separate project errata file was found.
 
 III.5.7 compares canonical representatives for nested factorizing compact
 open subgroups when they have the same Jacquet image. The bridge here is

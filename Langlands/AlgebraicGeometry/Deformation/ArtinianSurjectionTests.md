@@ -20,10 +20,9 @@ of the composite residue map. These identities connect the pointed-test
 API to arbitrary ring surjections. No coefficient field or section of a
 residue map is required.
 
-This is internal infrastructure for Task 5896. It follows directly from
+This is internal infrastructure for the proof of reduced-coproduct injectivity
+on the ideal H² of elementary Artinian thickenings of abelian schemes. It follows directly from
 the published `ArtinianTest.mk`, `ArtinianTest.homMk`, and Mathlib's residue
 field quotient. It does not identify cohomology after pullback along the
 identity, establish naturality of the residue-cohomology comparison, or
 prove reduced-coproduct injectivity.
-
-Authored by Worker 210.

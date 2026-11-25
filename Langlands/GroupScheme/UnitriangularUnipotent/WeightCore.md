@@ -13,8 +13,8 @@ The coordinate ring of `U_N` over a field `k` is the polynomial ring in the entr
 `x_ij` with `i < j`. Milne (2017), *Algebraic Groups*, proof of Theorem 14.5, gives
 `x_ij` the weight `j - i` and uses that the comultiplication
 `Δ(x_ij) = ∑_l x_il ⊗ x_lj` is `x_ij ⊗ 1 + 1 ⊗ x_ij` plus terms of lower weight
-in the second factor. The definitions here encode that setting in the form agreed with
-Worker 1405, who supplied them verbatim. The theorems are derived lemmas for that
+in the second factor. The definitions here encode that setting in the form used by
+`Langlands.GroupScheme.UnitriangularUnipotentProof`. The theorems are derived lemmas for that
 proof and do not appear separately in the literature.
 
 ## Definitions
@@ -70,7 +70,7 @@ lemmas, and the closure properties of `TotalWeightLE`.
 
 ## Extracting an outer coefficient through a tensor product
 
-`rid_lTensor_eval₂Hom` is an auxiliary lemma requested by Worker 1405 for the final
+`rid_lTensor_eval₂Hom` is an auxiliary lemma for the final
 assembly. Its setting is a `k`-algebra map `θ : MvPolynomial σ k →ₐ[k] B` (with
 `DecidableEq σ`), a `k`-linear functional `φ : B →ₗ[k] k`, and an exponent `m` with
 `φ (θ (monomial d 1)) = if d = m then 1 else 0` for every `d`. For every

@@ -12,7 +12,7 @@ and commutative supplied `𝒪[K]`-algebras `R`, `S`, `T` in the same universe
 `v`. A special atlas has coordinates `Fin (reducedDegree K D)`, the
 full integer-order action, the existing full-degree unramified
 integer-subfield certificate and the actual geometric tangent condition.
-This unit retains that general-division-algebra interface; existence and
+This module retains that general-division-algebra interface; existence and
 specialization to invariant `1/d` remain separate.
 
 For supplied maps `f : R →ₐ[𝒪[K]] S` and

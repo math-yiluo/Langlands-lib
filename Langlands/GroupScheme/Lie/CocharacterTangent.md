@@ -33,7 +33,8 @@ it does not assert injectivity of the integral cocharacter map there.
 The evaluation proof rewrites the composite `y` followed by `chi` as the power map
 with exponent given by `gmEndEquiv`, then uses the published integral-power
 formula for `splitTorus.infinitesimalUnit`. This is an internal derived
-construction and linear-algebra helper for the cocharacter action in Task 7128's Lie-weight input to
-Freudenthal's formula. The basic construction and evaluation make no character-formula,
+construction and linear-algebra helper for the cocharacter action in the Lie-weight input to
+Freudenthal's formula, toward the Weyl character formula for split reductive groups in
+characteristic zero. The basic construction and evaluation make no character-formula,
 characteristic-zero, splitness or reductivity assumption. The further
 injectivity and span theorems have the hypotheses stated above.

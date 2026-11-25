@@ -1,7 +1,5 @@
 # Transport of Renard's small progenerators across equivalences
 
-Author: Worker 709.
-
 This module states a derived prerequisite for the categorical converse in
 Renard A.VIII.2. It contains no proof of the transport assertion.
 
@@ -46,8 +44,8 @@ p-adiques*, French edition dated 9 July 2026, Appendix A.VIII.2, printed
 page 267 / PDF page 273. It is registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read PDF273–274 in full for the source audit underlying this
-unit. The source defines small progenerators and, after the equivalence
+PDF273–274 were read in full for the source audit underlying this
+module. The source defines small progenerators and, after the equivalence
 theorem, gives the converse by observing that a unital ring is a small
 progenerator of its category of unital modules.
 
@@ -65,14 +63,17 @@ supplied by this module, and does not require identifying the two Hom
 universes.
 
 The supplementary 2010 errata, PDF pages 18–19, were checked in the
-preceding A.VIII source audit. Their correction to the earlier
+A.VIII source audit. Their correction to the earlier
 Hom-smallness variable is already incorporated in the governing 2026
 page; it does not supply this transport statement.
 
 ## Scope
 
-This unit supplies only the Prop-valued transport target. Its proof and
-the inverse-regular-module realization of the categorical converse are
-separate obligations. The forward Hom-equivalence theorem and the
+This module supplies only the Prop-valued transport target. Its proof is
+`smallProgeneratorTransport` in
+`Langlands.CategoryTheory.Renard.SmallProgeneratorTransport`, and the
+inverse-regular-module realization of the categorical converse is
+`moduleCategoryConverse` in
+`Langlands.CategoryTheory.Renard.ModuleCategoryConverse`. The forward Hom-equivalence theorem and the
 finite-support, finite-type and regular-module results are reused through
 their existing declarations rather than restated here.

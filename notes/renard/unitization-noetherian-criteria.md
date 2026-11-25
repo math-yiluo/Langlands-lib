@@ -1,15 +1,15 @@
 # Renard I.2.1 and C.II: unitization Noetherian and stable-generation criteria
 
-Worker 709 wrote this note on 6 November 2026 against Library
+This note was written on 6 November 2026 against Library
 `ded343f95a7ebe4954d12a37616f22db56be249c`. It records fourteen published
-internal units that connect Renard's unitized algebra to finiteness and
+modules that connect Renard's unitized algebra to finiteness and
 Noetherian conditions on stable subspaces, stable additive subgroups and left
-ideals. Before this note, no Renard note described these units.
+ideals. Before this note, no Renard note described these modules.
 
 The note supplements the [C.II quotient and finite-localization
 audit](stable-quotients.md), whose localization proofs use several of the
 criteria below, and the [finiteness source audit](nonunital-finiteness-sources.md).
-Every unit here is a derived internal comparison. None selects Renard's
+Every module here is a derived internal comparison. None selects Renard's
 convention for a Noetherian nonunital algebra or a finite-type nonunital
 module, and none closes a section, appendix or the book.
 
@@ -19,7 +19,7 @@ The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Printed page `p` is PDF page `p + 6`. Worker 709 reread these passages for this
+Printed page `p` is PDF page `p + 6`. These passages were reread for this
 note:
 
 - I.2.1, printed 14 / PDF 20. For a complex algebra `A` without unit, Renard
@@ -32,9 +32,9 @@ note:
 
 The Lean model of `Ã` is Mathlib's `Unitization R A`: the product `R × A`
 with multiplication `(r, a)(s, b) = (rs, r • b + s • a + ab)` and scalar
-projection `Unitization.fstHom R A`. Most units allow an arbitrary
+projection `Unitization.fstHom R A`. Most modules allow an arbitrary
 commutative scalar ring `R` in place of `ℂ`. The additive and original-module
-units use `ℤ`, and the zero-action pair compares `ℂ` with `ℤ`. This
+modules use `ℤ`, and the zero-action pair compares `ℂ` with `ℤ`. This
 generalization belongs to the implementation, not to the book. No global
 instance selects the unitized action. A statement either binds a supplied
 `Module (Unitization R A) M` together with the explicit coordinate law
@@ -51,7 +51,7 @@ supplied-action criteria.
 
 ## 1. Stable subspaces as unitized submodules
 
-The definition unit `Langlands.Algebra.CompatibleUnitization.submoduleOrderIso`
+The definition `Langlands.Algebra.CompatibleUnitization.submoduleOrderIso`
 ([module](../../Langlands/Algebra/CompatibleUnitizationSubmodule.md)) takes
 `[CommRing k]`, a bilinear `[NonUnitalRing A]` over `k`, a `k`-module `M` and
 an arbitrary `ρ : A →ₙₐ[k] Module.End k M`, including `ρ = 0`. It gives
@@ -185,7 +185,7 @@ inclusion of the kernel and the projection.
 
 ### Regular module and kernel
 
-The definition unit
+The definition
 `Langlands.Algebra.UnitizationRegularKernel.regularKernelEquiv`
 ([module](../../Langlands/Algebra/UnitizationRegularKernel.md)) takes a
 supplied `Module (Unitization R A) A` satisfying
@@ -272,65 +272,40 @@ statements, and `UnitizationIdealNoetherianProof` imports the kernel,
 regular-kernel and both supplied-action generation proofs. At Library
 `ded343f9`, no module imports the zero-action pair.
 
-## 6. Receipts
+## 6. In the Library
 
-All fourteen units are accepted and published. Each independent reviewer
-approves without qualifications. Worker 709 coauthored the eleven units
-`24bab392`, `ec01566a`, `a624dde0`, `14a798af`, `7c48789a`, `0fb092c3`,
-`7b21ee27`, `8932a7bc`, `f3e166b1`, `2e767a1d` and `1048611f`, so this note
-documents those units and is not a review of them. Worker 709 is neither an
-author nor a coauthor of `fa45496e`, `b366acb7` or `95d5be87`. Submitter and coauthors below come from
-the review-task bindings. Several unit Markdown files also say who drafted and
-who checked the content.
+All fourteen modules are published; this note documents them.
 
-| Unit | Accepted artifact | Submitted by; coauthors | Reviewer | Publication commit |
-| --- | --- | --- | --- | --- |
-| Unitized submodule comparison (definition) | `fa45496e-d183-4461-937c-9ec258f9fa9b` | Worker 734 | Reviewer 3575 | `914d13e3395c5a4417f36ffd7646c45c721a4b3e` |
-| Scalar stable-generation statement | `7b21ee27-b25a-407c-8244-c3c5f0adff99` | Worker 790; Worker 709 | Reviewer 3540 | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Scalar stable-generation proof | `8932a7bc-731e-4e61-9116-feb48384eb08` | Worker 877; Worker 709 | Reviewer 3926 | `f4b4c23a7ab185fd0e15d16d2864b818a083a194` |
-| Additive stable-generation statement | `f3e166b1-9df7-41e2-82ce-410ea0341a7b` | Worker 803; Worker 709 | Reviewer 3549 | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Additive stable-generation proof | `2e767a1d-aa56-459d-8103-bf36ccac7a48` | Worker 803; Worker 709 | Reviewer 3941 | `4021bb1d1ec99e65990e08addda3ade7caa73058` |
-| Original-module generation statement | `1048611f-c392-4ec8-ae72-1d3c28d3d4b0` | Worker 803; Worker 709 | Reviewer 4991 | `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` |
-| Original-module generation proof | `95d5be87-3e8f-405c-bd7a-aa5776977d76` | Worker 1101 | Reviewer 5037 | `333fb3981b648b8ba9f29c1123c27ef3d8626c90` |
-| Kernel criterion statement | `24bab392-5d7f-4bce-a0e8-b7b7b16884ea` | Worker 774; Worker 709 | Reviewer 3533 | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Kernel criterion proof | `ec01566a-e483-4177-bdff-6159b9f43414` | Worker 702; Worker 709 | Reviewer 3932 | `f4b4c23a7ab185fd0e15d16d2864b818a083a194` |
-| Regular-kernel equivalence (definition) | `a624dde0-e0e7-41e0-9e34-044a7705bae5` | Worker 782; Worker 709 | Reviewer 3536 | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Regular and left-ideal criteria statement | `14a798af-b3a1-4e61-8636-94e5fbde422a` | Worker 850; Worker 709 | Reviewer 3569 | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Regular and left-ideal criteria proof | `7c48789a-a354-442f-a8d1-e74fd420d682` | Worker 850; Worker 709 | Reviewer 3988 | `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
-| Zero-action separation statement | `0fb092c3-dbb1-4b1d-b6d1-f7850b37ff86` | Worker 633; Worker 709 | Reviewer 4514 | `3987c3d7445531c2c7f784464a3fd47061ba0865` |
-| Zero-action separation proof | `b366acb7-f654-4fa9-b8a5-da7053b4d0dc` | Worker 734 | Reviewer 4572 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Unitized submodule comparison (definition) | `914d13e3395c5a4417f36ffd7646c45c721a4b3e` |
+| Scalar stable-generation statement | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Scalar stable-generation proof | `f4b4c23a7ab185fd0e15d16d2864b818a083a194` |
+| Additive stable-generation statement | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Additive stable-generation proof | `4021bb1d1ec99e65990e08addda3ade7caa73058` |
+| Original-module generation statement | `2b8beb8bd3034a40aeb5dc7b2de17b607fae8d11` |
+| Original-module generation proof | `333fb3981b648b8ba9f29c1123c27ef3d8626c90` |
+| Kernel criterion statement | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Kernel criterion proof | `f4b4c23a7ab185fd0e15d16d2864b818a083a194` |
+| Regular-kernel equivalence (definition) | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Regular and left-ideal criteria statement | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Regular and left-ideal criteria proof | `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
+| Zero-action separation statement | `3987c3d7445531c2c7f784464a3fd47061ba0865` |
+| Zero-action separation proof | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
 
-| Unit | Review task | Machine receipt (policy) | Integration | Proof task |
-| --- | --- | --- | --- | --- |
-| `fa45496e` | `4702b18a-02f4-440c-aba1-9428ef550de5` | `1ae49d6b-beb8-47b7-87a9-a892fc0b6bcd` (`lean.definition@1`) | `0e1fb1db6710404aa7b2eff678ca2a09` | |
-| `7b21ee27` | `0b340bd1-14ce-491d-b2d7-7f59d48f93fb` | `534393e7-f5e7-414c-9044-8e75a204b99a` (`lean.statement@1`) | `289e2df5a635475f88ca0c67eec57194` | |
-| `8932a7bc` | `85f64478-899b-4ed4-8ce8-f27e12f3227c` | `586ab4cc-f2ba-41d2-aff1-d8db308e23ef` (`lean.proof@1`) | `50ba17cb475c4a0394c4838afc062ac2` | `81ab914e-8b84-4e69-99b4-a1d8e574208a` |
-| `f3e166b1` | `258d0688-ac1a-464c-b863-351631dc564f` | `f0d35e4a-2a74-4089-9b56-61d47759893b` (`lean.statement@1`) | `c5a8c746c34b416697a978f21aa8f2d5` | |
-| `2e767a1d` | `67d371a5-e92b-44c3-a423-823547396fd0` | `4936fa2a-117f-443b-84fe-c224ca4a5973` (`lean.proof@1`) | `18d718a004d44521a6bb70e59dca6a32` | `96937867-a950-4320-b4a3-d5256b76318c` |
-| `1048611f` | `7c79c3f3-79c9-4abb-b014-0ca622849117` | `ae9dc13f-d0ec-4f9a-837a-962615f33c44` (`lean.statement@1`) | `750a03a503cc450c967ecf7fad82e17c` | |
-| `95d5be87` | `571dc008-4ba3-4057-b0e1-df5d23d74553` | `9e7042bb-5094-46fb-bf24-ca7916406f0b` (`lean.proof@1`) | `f6385f49f1614fcab243cf54593e2f9c` | `1ac1f4eb-ccc6-4bba-afa5-e120455acbc1` |
-| `24bab392` | `93e76999-d87b-43e3-a382-d9fa0218d94c` | `2d3192f9-29ae-4b2e-a67e-14f726afd272` (`lean.statement@1`) | `ba3a56454e3c49bc9545e775fe84bdd9` | |
-| `ec01566a` | `6aabcc46-a261-4b53-a24d-dd395df81c05` | `470e2362-716b-4210-8ffb-93b96b18072f` (`lean.proof@1`) | `1b1e1cb140044b5fb9787b09429aa4ad` | `48eb050c-dc44-4250-9ee8-d508c04d8abf` |
-| `a624dde0` | `0420a709-dfc8-4b8c-a7a4-4ea783257532` | `408a7f3e-b8e1-49d7-b649-7857d07c998c` (`lean.definition@1`) | `3b5a5a7a9ed24bec9b5196eaeae3f2bb` | |
-| `14a798af` | `e6bacbc5-4132-4807-8543-3e0e84556211` | `a9b6071f-7cc3-4dd8-8d63-f6ef7861c192` (`lean.statement@1`) | `9bff81ab82bc4ef5be3bad21fc923edb` | |
-| `7c48789a` | `a87c9c63-dfc9-4da9-9f6e-d54c2a60886e` | `9f6ed2f6-af20-41c0-a1da-2b7d33fe6cbb` (`lean.proof@1`) | `fed0fd418a28417b88fc1faf19313733` | `10d1037b-5171-4d91-99d5-3393fde34360` |
-| `0fb092c3` | `deedb2a1-af9a-4059-b82b-1edc1cb65db8` | `df9071d2-2ac1-4230-8c4f-885b098d8ead` (`lean.statement@1`) | `276b946620b841e98ce02030c27278a9` | |
-| `b366acb7` | `95bf0971-5049-4f11-b658-4812eee3f4f6` | `372140bd-ff34-4b23-8df5-d5c7a627c61b` (`lean.proof@1`) | `08caf48cec1a46d5b23cd06b5d263a93` | `496674fd-4092-4273-b39e-854ef631e73d` |
+Each proof was checked by a Lake build against its exact target, with the
+statement and its inputs unchanged. Each statement or definition module was
+checked by a Lake build and for declaration kinds; a statement module proves
+nothing. Several modules record derived or statement-only scope. The
+regular-kernel equivalence records that the regular action is a supplied
+hypothesis.
 
-Each machine receipt is accepted. Each proof receipt accepts the Lake build,
-exact target, unchanged statement and frozen inputs. Each statement or
-definition receipt checks the schema, immutable content, reference integrity,
-exact reference policies, Lake build and declaration kind; a statement
-receipt proves nothing. Several author qualifications record derived or
-statement-only scope. The qualification of `a624dde0` records that the
-regular action is a supplied hypothesis.
-
-Worker 709 checked the 29 Lean/Markdown files of these units at Library
-`ded343f95a7ebe4954d12a37616f22db56be249c` and in the workspace. Each equals
-its frozen bundle. The definition unit `fa45496e` also updated
+The 29 Lean/Markdown files of these modules were checked at Library
+`ded343f95a7ebe4954d12a37616f22db56be249c`. Each equals its first published
+version. The unitized submodule comparison (definition) also updated
 `CompatibleUnitization.md`.
 
-| File | SHA256 at Library `ded343f9`, frozen and in the workspace |
+| File | SHA256 at Library `ded343f9` |
 | --- | --- |
 | `Langlands/Algebra/CompatibleUnitization.md` | `2ae4d09143e2f44a646744e4d1f7940877fc20ace5402a3111c0e1690cb0ead8` |
 | `Langlands/Algebra/CompatibleUnitizationSubmodule.lean` | `8478b62934a862430fdd0d6a1bdef40ee00c16d5369dd87168298c07d26a6cb3` |
@@ -364,11 +339,11 @@ its frozen bundle. The definition unit `fa45496e` also updated
 
 ## Scope
 
-These records verify the listed internal publications. They do not resolve
+These checks concern the listed modules. They do not resolve
 which reading of Renard's nonunital Noetherian and finite-type phrases is
 meant; that comparison stays with the [C.II audit](stable-quotients.md) and
 the [finiteness source audit](nonunital-finiteness-sources.md). The
 unitized tensor comparison of I.2.1 is outside this note; the
 [I.2.1 assertion map](unitization-tensor-progress.md) records it. The whole-book
-parent task keeps every unassigned assertion, and this note declares no
+coverage ([coverage.md](coverage.md)) keeps every other assertion, and this note declares no
 section, appendix or book completion.

@@ -1,7 +1,5 @@
 # Transport and composition of fppf-locally inner automorphisms
 
-Worker 561.
-
 This internal module develops the formal calculus for the local-innerness
 predicate defined in `AutomorphicAction.LocallyInner`. It is intended for the
 comparison of pinned models; it does not prove existence of a pinned

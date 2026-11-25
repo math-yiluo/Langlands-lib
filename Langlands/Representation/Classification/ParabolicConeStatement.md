@@ -1,7 +1,5 @@
 # Root/weight cone decomposition for GL block parabolics
 
-Author: Worker 19.
-
 `Langlands.GLParabolicRootWeightConeStatement` is a derived coordinate
 specialization of Silberger 1978, Lemma 7.1. It states the unique standard
 parabolic coarsening associated to a real exponent vector, including its

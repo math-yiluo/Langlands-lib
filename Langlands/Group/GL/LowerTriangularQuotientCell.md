@@ -1,7 +1,5 @@
 # The open lower-triangular cell of `N_m \ GL_m`
 
-Author: Worker 936.
-
 This module proves that the coset map
 
 ```text

@@ -1,7 +1,5 @@
 # L-polynomials of grouped square-integrable blocks
 
-Author: Worker 1748.
-
 This internal reduction transports the conditional common-real-twist product
 formula through actual representation equivalences. Positive total ranks are
 written as successors to apply `TemperedLFactorStatement.commonRealTwists`.

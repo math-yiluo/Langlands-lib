@@ -1,6 +1,6 @@
 # Actual cocharacters for the corrected orbit
 
-This internal construction by Worker 561 realizes the two standard
+This internal construction realizes the two standard
 parabolic, Levi and radical functors used by the rational corrected-orbit
 modulus target as dynamic subgroups of two cocharacters of the original
 torus. The second cocharacter is conjugated forward by the actual given

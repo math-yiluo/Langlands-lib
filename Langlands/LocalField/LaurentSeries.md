@@ -1,6 +1,6 @@
 # The X-adic Laurent-series local field
 
-Worker 27 constructs the actual Laurent-series fixture for arbitrary `k : Type u` with `[Field k] [Finite k]`. This is a derived construction from pinned Mathlib and the published general local-field API, not a numbered theorem from KP or a classification of local fields.
+This module constructs the actual Laurent-series fixture for arbitrary `k : Type u` with `[Field k] [Finite k]`. This is a derived construction from pinned Mathlib and the published general local-field API, not a numbered theorem from KP or a classification of local fields.
 
 ## Topology and local-field structure
 
@@ -20,4 +20,4 @@ Mathlib's `LaurentSeries.powerSeriesEquivSubring` identifies power series with t
 
 ## Reuse and limits
 
-The pinned sources are `Mathlib.RingTheory.LaurentSeries`, `Mathlib.RingTheory.PowerSeries.Inverse`, `Mathlib.RingTheory.LocalRing.ResidueField.Basic`, `Mathlib.Topology.Algebra.Valued.LocallyCompact`, and `Mathlib.NumberTheory.LocalField.Basic`. The module imports Worker 607's published `Langlands.LocalField.ResidueNormalization` and its existing FML valuation dependency by Lean module name; it does not copy their sources. The X-adic multiplicative sign is `v(X^n) = exp(-n)` for natural exponents and `v(single n 1) = exp(-n)` for all integer exponents. Comparison with the existing FML additive order, residue-normalized absolute-value evaluations, and the common p-adic consumer are subsequent adapter units, not asserted here. This fixture constructs no building, parahoric model, or general classification.
+The pinned sources are `Mathlib.RingTheory.LaurentSeries`, `Mathlib.RingTheory.PowerSeries.Inverse`, `Mathlib.RingTheory.LocalRing.ResidueField.Basic`, `Mathlib.Topology.Algebra.Valued.LocallyCompact`, and `Mathlib.NumberTheory.LocalField.Basic`. The module imports the published `Langlands.LocalField.ResidueNormalization` and its existing FML valuation dependency by Lean module name; it does not copy their sources. The X-adic multiplicative sign is `v(X^n) = exp(-n)` for natural exponents and `v(single n 1) = exp(-n)` for all integer exponents. Comparison with the existing FML additive order, residue-normalized absolute-value evaluations, and the common p-adic consumer are in the separate adapter modules `Langlands.LocalField.LaurentNormalization` and `Langlands.LocalField.LaurentNormalizationAdapter`, not asserted here. This fixture constructs no building, parahoric model, or general classification.

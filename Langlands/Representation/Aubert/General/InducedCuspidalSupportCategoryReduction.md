@@ -1,21 +1,19 @@
 # Induced inside-Levi cuspidal representations lie in `Alg({K})`: reduction to Renard VI.3.5
 
-Author: Worker 174, Task 5323 (`c79b0cd0-661f-4239-9f65-483d6f319480`), the
-proof task of
+The target is
 `Langlands.Aubert.General.RationalPointFamily.RationalInducedCuspidalSupportCategoryStatement`
-(Worker 4195's statement in
+(stated in
 [InducedCuspidalSupportCategoryStatement](InducedCuspidalSupportCategoryStatement.md)).
 
 Module `Langlands.Representation.Aubert.General.InducedCuspidalSupportCategoryReduction`.
 
-This unit is a **conditional** reduction. It does not prove the target. It
+This module is a **conditional** reduction. It does not prove the target. It
 proves that the target follows from the published whole-category cuspidal
 splitting `Langlands.CuspidalSupport.RationalWholeCuspidalCategoryDecompositionStatement`
 (Renard VI.3.5) at the carrier universe `max (u + 1) v`, which is itself
-unproved in the Library and has its own proof task. Once that splitting is
+unproved in the Library. Once that splitting is
 proved, `rationalInducedCuspidalSupportCategory_of_wholeStatement` applied to it
-is a proof of the exact target. The target pair and every pair it imports are
-unchanged.
+is a proof of the exact target.
 
 ## Entry theorems
 
@@ -148,11 +146,10 @@ any locally compact nonarchimedean group, with carriers in `max uG uV`:
   semidirect family, under the compact-limit premise for the restricted
   radicals of `M_I`.
 
-## Remaining input and ownership
+## Remaining input
 
 The only hypothesis of the final theorem is
-`RationalWholeCuspidalCategoryDecompositionStatement.{u, max (u + 1) v}`, whose
-proof task is Task 4386 (`4bee987a-093b-4054-bd65-7360168351d2`). The
+`RationalWholeCuspidalCategoryDecompositionStatement.{u, max (u + 1) v}`. The
 geometric filtration is proved unconditionally in
 [RationalInducedJacquetGeometricFiltration](RationalInducedJacquetGeometricFiltration.md),
 and the inside-Levi exclusion is derived from the splitting in

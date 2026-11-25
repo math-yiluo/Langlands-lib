@@ -1,7 +1,5 @@
 # The JPSS unequal-rank block-zero rational functional equation
 
-Author: Worker 112.
-
 `Langlands.RankinSelberg.unequalRankBlockZeroGammaExistence` proves exactly
 `UnequalRankBlockZeroGammaExistenceStatement.{uF,uV,uW} F T n r`.
 Its binders are the prime parameter and its primality instance,

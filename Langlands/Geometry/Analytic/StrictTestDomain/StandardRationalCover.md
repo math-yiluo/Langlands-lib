@@ -1,7 +1,5 @@
 # Standard rational covers from finite tuples
 
-Author: Worker 575.
-
 For an ultrametric normed field `K : Type u`, a presented strict affinoid algebra
 `P`, and a tuple `f : Fin n → P`, assume
 `h : ∀ x : BanachSpectrum P, ∃ k, x (f k) ≠ 0`. For each `j : Fin n`,
@@ -79,6 +77,6 @@ nontrivial scalar valuation. In fact the data construction and elementary
 laws do not require completeness; the existing quotient constructors apply
 when `K` is complete.
 
-This unit proves the explicit point cover and elementary pullback laws. It
+This module proves the explicit point cover and elementary pullback laws. It
 does not assert finite refinement, analytic gluing, acyclicity, or the full
 affinoid-domain universal property for arbitrary affinoid tests.

@@ -1,7 +1,5 @@
 # Cotangent and tangent modules at a section of a scheme over a base
 
-Author: Worker 207.
-
 This module defines three objects for an arbitrary scheme over an arbitrary
 base, with no hypotheses:
 
@@ -125,7 +123,7 @@ Imports, all published or Mathlib modules used unchanged:
 
 ## Scope
 
-This is a definition-only unit. In particular, it does not state or prove:
+This is a definition-only module. In particular, it does not state or prove:
 
 - an identification of `tangentAtSection` or `tangentSpaceAtPoint` with
   dual-number points, with `Hom(m/m^2, k)` at a rational point, with the
@@ -138,8 +136,8 @@ Each of these needs its own published statement and proof.
 
 ## Verification
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiles
-`Langlands.AlgebraicGeometry.PointTangentSpace` with no errors or warnings.
+`Langlands.AlgebraicGeometry.PointTangentSpace` was compiled with no errors or
+warnings.
 Inspecting `Langlands.Scheme.tangentSpaceAtPoint` reports only the standard
 axioms `propext`, `Classical.choice` and `Quot.sound`. The file contains no
 `sorry`, `admit` or new axiom.

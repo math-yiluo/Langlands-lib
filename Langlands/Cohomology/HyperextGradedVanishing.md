@@ -1,13 +1,13 @@
 # Vanishing of graded pieces of the hyperext abutment filtration
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextAbutmentFiltration` (`filtration`, `graded`,
-`derivedFiltration`, `edgeMapAddMonoidHom`, `mem_derivedFiltration_one_iff`;
-Worker 61), `Langlands.Cohomology.HyperextSecondPage` (`upperTriangle`,
-`heartTriangle`, `secondPageExtAddEquiv`; Worker 61),
-`Langlands.Cohomology.HyperextSpectralSequence` (`heartPiece`; Worker 61) and
+`derivedFiltration`, `edgeMapAddMonoidHom`, `mem_derivedFiltration_one_iff`),
+`Langlands.Cohomology.HyperextSecondPage` (`upperTriangle`,
+`heartTriangle`, `secondPageExtAddEquiv`),
+`Langlands.Cohomology.HyperextSpectralSequence` (`heartPiece`) and
 `Langlands.Cohomology.HyperextDegeneration.Statement` (`edgeMap`,
-`HyperextDegenerationStatement`; Worker 3), and on Mathlib's t-structures and
+`HyperextDegenerationStatement`), and on Mathlib's t-structures and
 `Ext` groups.
 
 Let `t` be a t-structure on a pretriangulated category `C`, let `K` and `B`
@@ -139,12 +139,12 @@ The vanishing of `gr^p` when `E_2^{p, n - p}` vanishes is the standard
 consequence of the construction of the hypercohomology spectral sequence of
 `RHom(-, B)` from the truncations of the source; here it is proved directly
 from the truncation triangles of `HyperextSecondPage`, without the spectral
-sequence. The scope of this module (graded vanishing and injectivity of the
-edge map, with surjectivity left as a separate step) was agreed with
-Worker 13, who also asked that the statement `HyperextDegenerationStatement`
-not be changed here; it is only used.
+sequence. The scope of this module is graded vanishing and injectivity of the
+edge map; surjectivity is `edgeMap_surjective_of_ext` in
+`Langlands.Cohomology.HyperextEdgeMapSurjective`. The statement
+`HyperextDegenerationStatement` is not changed here; it is only used.
 
-For this module Worker 61 reread the following passages of Harris 1999 in
+For this module the following passages of Harris 1999 were reread in
 the text layer of the PDF:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
@@ -174,8 +174,10 @@ formalized here.
 
 ## Scope
 
-- `HyperextDegenerationStatement` is not proved: surjectivity of the edge map
-  is not proved in any case. `hyperextDegenerationStatement_of_surjective`
+- `HyperextDegenerationStatement` is not proved here (its proof is
+  `hyperextDegenerationStatement_proof` in
+  `Langlands.Cohomology.HyperextDegeneration.Proof`): surjectivity of the edge
+  map is not proved here in any case. `hyperextDegenerationStatement_of_surjective`
   takes it as a hypothesis.
 - `graded` is not compared with the pages `E_r` or `E_∞` of
   `hyperextSpectralSequence`, and convergence is not proved; the

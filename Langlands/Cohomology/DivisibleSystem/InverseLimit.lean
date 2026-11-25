@@ -15,7 +15,7 @@ of complexes to the limit of the homologies is invertible if and only if it is a
 preserving homology and limits and reflecting isomorphisms
 (`isIso_limit_post_homology_iff`). For an `ℓ`-divisible system of complexes,
 `inverseLimit` is the limit of its tower and `inverseLimitHomologyComparison` is this
-comparison. Given Worker 3's `FiniteCohomologyInverseLimitStatement`, it is an isomorphism for
+comparison. Given `FiniteCohomologyInverseLimitStatement`, it is an isomorphism for
 systems of `ℤ`-graded complexes of modules or of representations with finite cohomology
 (`isIso_inverseLimitHomologyComparison_of_finite`, `isIso_inverseLimitHomologyComparison_rep`);
 the surjectivity of the transition maps holds for every `ℓ`-divisible system.

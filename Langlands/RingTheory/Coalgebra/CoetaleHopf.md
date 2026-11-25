@@ -1,7 +1,6 @@
 # Coétale subcoalgebras of Hopf algebras without primitive elements
 
 Module `Langlands.RingTheory.Coalgebra.CoetaleHopf`, namespace `Langlands.CoetaleHopf`.
-Author: Worker 894.
 
 Internal helper module for the proof of
 `Langlands.GroupScheme.MultiplicativeTypeCharacterizationStatement` (Milne,

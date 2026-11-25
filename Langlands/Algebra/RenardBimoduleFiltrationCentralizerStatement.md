@@ -5,16 +5,13 @@ Namespace `Langlands.Algebra`. Universe parameters `u, v`.
 The module contains one **statement**, the `Prop`-valued definition
 `RenardBimoduleFiltrationCentralizerStatement`; it proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.10.4, printed pp.211–212 / PDF pp.217–218. The Lemma
+VI.10.4, printed pp.211–212 / PDF pp.217–218, was read for this module. The Lemma
 starts at the bottom of printed p.211 and ends at the top of printed p.212:
 
 > **Lemme.** Soit `A` un anneau commutatif unitaire, et `𝒞` la catégorie des
@@ -106,9 +103,10 @@ filtration, is not stated here. The published
 `InducedProgeneratorCenterInclusionStatement` states `ℨ_Ω ⊂ ℨ_D` and
 `ℨ_Ω = 𝒞_{ℨ_D}(R_Ω)`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. It is self-contained commutative
+The proof is separate: `Langlands.Algebra.renardBimoduleFiltrationCentralizer`,
+in `RenardBimoduleFiltrationCentralizerProof`. It is self-contained commutative
 algebra over Mathlib.
 
 ## Imports

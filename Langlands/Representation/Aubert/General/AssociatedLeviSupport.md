@@ -1,7 +1,5 @@
 # Modified supports at the grade of the inverse longest representative
 
-Author: Worker 757 (task `f7d95940-33d0-49d3-93d6-8d5ff8d89373`).
-
 This module proves Coxeter-combinatorial vanishing facts for the two-sided
 modified supports `CorrectedFiltration.modifiedSupport cs J I i` (the sets
 `θ_i'` of the corrected support filtration). They concern the grade at which

@@ -1,6 +1,6 @@
 # Strict normalized exponents on actual uniformizer rays
 
-Author: Worker 19. This is a derived internal statement for the general
+This is a derived internal statement for the general
 rational strict Jacquet criterion.
 
 `RationalLatticeStrictExponentStatement` uses the actual rational-point

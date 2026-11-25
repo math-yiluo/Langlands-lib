@@ -1,6 +1,6 @@
 # The grading defined by a bialgebra map to a group algebra
 
-Worker 1395 wrote this module. Let `K` be a commutative ring, `N` a commutative
+Let `K` be a commutative ring, `N` a commutative
 group, `A` a commutative `K`-bialgebra and `π : A →ₐc[K] K[N]` a bialgebra map.
 Geometrically, `π` is a homomorphism from the diagonalizable group `D(N)` to
 `Spec A`. Then `A` becomes a right comodule algebra over `K[N]` through

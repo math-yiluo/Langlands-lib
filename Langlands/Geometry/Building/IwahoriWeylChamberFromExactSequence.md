@@ -4,7 +4,7 @@
 the published global `IwahoriWeylExactSequenceStatement.{u}` to the unchanged
 global `IwahoriWeylChamberSplittingStatement.{u}`.
 `iwahoriWeylChamberExactSequenceReduction` proves this implication.
-The exact sequence remains an explicit intermediate premise. This unit does
+The exact sequence remains an explicit intermediate premise. This module does
 not prove either global target without that premise.
 
 The new deduction removes the separate generic chamber-transport premise of
@@ -36,8 +36,9 @@ and chamber in the unchanged global target.
 All statements retain the arbitrary field universe `u`, both local-field
 characteristics, the actual normalizer action, and the original apartment
 axioms. No new normality, action, component or chamber-group hypothesis is
-hidden in the deduction. Proving the actual exact sequence remains the
-separate algebraic obligation of the host task.
+hidden in the deduction. Proving the actual exact sequence
+`IwahoriWeylExactSequenceStatement` is a separate algebraic step, not taken in
+this module.
 
 The provenance is internal assembly from the published generic chamber proof
 and the published actual quotient and chamber-complement lemmas. Its

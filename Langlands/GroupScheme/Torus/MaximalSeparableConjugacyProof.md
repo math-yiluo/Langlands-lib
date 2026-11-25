@@ -1,7 +1,5 @@
 # Maximal tori are conjugate over a finite separable extension: proof
 
-Worker 172.
-
 `Langlands.GroupScheme.maximalTorusSeparableConjugacy` proves the published
 `Langlands.GroupScheme.MaximalTorusSeparableConjugacyStatement.{u}`
 ([`Torus.MaximalSeparableConjugacyStatement`](MaximalSeparableConjugacyStatement.md)) in every

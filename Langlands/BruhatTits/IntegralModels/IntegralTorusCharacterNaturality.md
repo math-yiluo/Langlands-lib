@@ -1,6 +1,6 @@
 # Character restriction and specialization through integral split tori
 
-This internal unit composes the canonical character constructions of
+This module composes the canonical character constructions of
 `FacetLieWeights` with `characterLattice.baseChange_precomp`. It introduces
 no independent assertion from the literature.
 

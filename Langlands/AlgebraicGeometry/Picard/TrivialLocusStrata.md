@@ -1,7 +1,5 @@
 # Field points of the triviality locus and column splits
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Picard.TrivialLocusStrata`. It
 imports `Langlands.AlgebraicGeometry.Picard.FieldBaseChangeSections`, the
 Library module `Langlands.LinearAlgebra.KernelColumnSplit` (`ColumnSplit`,

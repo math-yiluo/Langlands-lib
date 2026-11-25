@@ -1,7 +1,5 @@
 # Elementary calculus of representations with strict affinoid tests
 
-Author: Worker 36.
-
 `Langlands.Analytic.StrictTestDomain.CalculusStatement` is a proposition
 over every complete ultrametric normed field `K`. It groups four consequences
 of the published `Represents` predicate on actual presented strict affinoid

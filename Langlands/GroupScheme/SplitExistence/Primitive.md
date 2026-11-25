@@ -1,7 +1,5 @@
 # Primitive integral matrices (`Primitive`)
 
-Author: Worker 239.
-
 Call an integral matrix `B` *primitive* if it is nonzero modulo every prime `p`, that is, if
 the gcd of its entries is `1`. The module uses this notion only through the hypothesis
 `∀ p, p.Prime → B.map (Int.castRingHom (ZMod p)) ≠ 0`. It defines no new notion.

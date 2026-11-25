@@ -1,6 +1,6 @@
 # Actual rational lattice coefficients from a simultaneous standard basis
 
-Author: Worker 19. This is an internal derived statement toward the general
+This is an internal derived statement toward the general
 rational strict Jacquet square-integrability criterion.
 
 `RationalLatticeCoefficientDecayStatement.{u,v,w}` retains arbitrary connected
@@ -46,7 +46,8 @@ factorizations and contraction clauses. These realize every geometric
 hypothesis of `HaarNormalizedLatticeCoefficientBoundStatement`. The strict
 spectral input comes from `RationalLatticeStrictExponentStatement`, applied
 to the very same actual full-center points. Both intermediate statements
-still require their independent proofs for this derivation to be a proof.
+are proved in the Library, by `haarNormalizedLatticeCoefficientBound` and
+`rationalLatticeStrictExponent`.
 
 This statement supplies no existence theorem for the simultaneous basis,
 no Haar volume estimate, no finite chamber cover and no integrability result.

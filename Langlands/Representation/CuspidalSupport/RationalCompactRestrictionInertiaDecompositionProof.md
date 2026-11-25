@@ -64,7 +64,7 @@ the inertia relation turns this into `IsRationalInertiaRelated G π D`.
 The proof follows Renard's route for VI.3.3.1. The inertia block is built from the
 finitely many restriction types given by VI.3.2(ii), using the IV.1.5 projectors,
 and identified with the inertia class by VI.3.2(iii). This module proves nothing
-about VI.3.2 itself. It only composes the separately owned and independently
+about VI.3.2 itself. It only composes the separately
 published proofs of VI.3.2(ii) and VI.3.2(iii) with the published reduction. None
 of these inputs uses this theorem or any downstream finiteness or decomposition
 result. The theorem depends only on the axioms `propext`, `Classical.choice` and

@@ -39,7 +39,7 @@ the acting subgroup fixes it. -/
 def IsDiscreteSection (F : Tᵒᵖ ⥤ A) {U : T} {H : OpenSubgroup G}
     (a : (H : Subgroup G) →* (End U)ᵐᵒᵖ) (s : ToType (F.obj (op U))) : Prop :=
   ∃ K : OpenSubgroup G, K ≤ H ∧
-    ∀ h : (H : Subgroup G), (h : G) ∈ K → F.map (a h).unop.op s = s
+    ∀ h : (H : Subgroup G), (h : G) ∈ K → F.map (a h).unop.asHom.op s = s
 
 theorem IsDiscreteSection.map {F F' : Tᵒᵖ ⥤ A} (φ : F ⟶ F') {U : T} {H : OpenSubgroup G}
     {a : (H : Subgroup G) →* (End U)ᵐᵒᵖ} {s : ToType (F.obj (op U))}
@@ -231,7 +231,7 @@ object with a local action. -/
 def localRepresentation (F : Tᵒᵖ ⥤ ModuleCat.{wR} R) {U : T} {H : OpenSubgroup G}
     (a : (H : Subgroup G) →* (End U)ᵐᵒᵖ) :
     Representation R (H : Subgroup G) (F.obj (op U)) where
-  toFun h := (F.map (a h).unop.op).hom
+  toFun h := (F.map (a h).unop.asHom.op).hom
   map_one' := by
     rw [map_one]
     change (F.map (𝟙 (op U))).hom = 1
@@ -243,7 +243,7 @@ def localRepresentation (F : Tᵒᵖ ⥤ ModuleCat.{wR} R) {U : T} {H : OpenSubg
 
 theorem localRepresentation_apply (F : Tᵒᵖ ⥤ ModuleCat.{wR} R) {U : T} {H : OpenSubgroup G}
     (a : (H : Subgroup G) →* (End U)ᵐᵒᵖ) (h : (H : Subgroup G)) (s : F.obj (op U)) :
-    localRepresentation F a h s = (F.map (a h).unop.op).hom s := rfl
+    localRepresentation F a h s = (F.map (a h).unop.asHom.op).hom s := rfl
 
 /-- A section is discrete exactly when it is a smooth vector of the local
 representation, for the subspace topology on the acting open subgroup. -/

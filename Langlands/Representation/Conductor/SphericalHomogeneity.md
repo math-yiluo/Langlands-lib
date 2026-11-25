@@ -37,8 +37,8 @@ This identity uses the chosen Iwasawa exponents and holds for the same valued
 field, uniformizer, character and natural parameter `q` as the defining
 formula. It requires no additional topology or characteristic assumption.
 
-Jacquet states the degree using the determinant norm. This unit establishes
+Jacquet states the degree using the determinant norm. This module establishes
 the degree in Iwasawa exponent coordinates; it does not assert a new
 comparison with a determinant norm, principal-series Whittaker realization,
 compact-set finiteness, an integral transform, or the essential-vector and
-conductor conclusions. These remain separate obligations of the host proof.
+conductor conclusions. These are not part of this module.

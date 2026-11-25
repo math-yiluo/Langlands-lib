@@ -35,8 +35,8 @@ These fields construct
 Derivative spanning includes rank zero without requiring a root to exist.
 Finally, `IntegerValuationBuildingData.affineWeylGroup_le_range` realizes every
 coroot reflection as the action of an actual opposite-pair normalizer element;
-subgroup closure gives the exact second conjunct. The host theorem pairs these
-two conclusions.
+subgroup closure gives the exact second conjunct. The main theorem
+`integerValuationAffineWeyl` pairs these two conclusions.
 
 This is an internal assembly of the proved helper interfaces, following the
 route already used by `ValuationAffineRootSystems` for local-field data.

@@ -1,7 +1,5 @@
 # Scalar real parts of fine twists of unitary data
 
-Author: Worker 510.
-
 `Langlands.Exponents.UnitaryFineTwistScalarCharacterStatement.{uF,uV}` is a
 closed Prop-valued definition. It states a small internal character interface;
 it supplies no proof.

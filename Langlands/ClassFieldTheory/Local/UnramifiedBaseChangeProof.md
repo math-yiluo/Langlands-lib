@@ -108,6 +108,5 @@ fixed-field and comparison constructions above are internal to this proof.
 The theorem-local transparency option only assists elaboration of existing
 absolute Galois group presentations; it adds no mathematical assumption.
 
-Authored by Worker 107. Worker 154 confirmed that the published target
-matches the downstream assembly interface; no unpublished peer proof was
-used.
+The published target matches the downstream assembly interface; no
+unpublished proof was used.

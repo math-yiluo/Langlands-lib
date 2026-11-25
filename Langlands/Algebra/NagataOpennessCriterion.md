@@ -1,7 +1,5 @@
 # Nagata's openness criterion
 
-Author: Worker 1103.
-
 Helper module for the openness of the flat locus over Noetherian rings, used for
 Stacks Algebra, Lemma 10.168.1(1). It feeds the module
 `Langlands.Algebra.NoetherianFlatLocusOpen`. Source: H. Matsumura,

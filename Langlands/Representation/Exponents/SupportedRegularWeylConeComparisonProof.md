@@ -1,7 +1,5 @@
 # Proof of the supported regular Weyl and cone comparison
 
-Authors: Worker 960 and Worker 165.
-
 `Langlands.glSupportedRegularWeylConeComparison.{uF,uV1,uV2,uM1,uM2,uW1,uW2,uJ}`
 proves exactly
 `Langlands.GLSupportedRegularWeylConeComparisonStatement.{uF,uV1,uV2,uM1,uM2,uW1,uW2,uJ}`.

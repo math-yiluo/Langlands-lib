@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
 set_option backward.isDefEq.respectTransparency.types false
@@ -338,6 +338,7 @@ theorem exists_pow_mul_res_mem_T {U : Y.affineOpens} (g : Γ(Y, U.1))
   have h2 : Y.presheaf.map (homOfLE hW₀U).op (Y.presheaf.map (homOfLE (Y.basicOpen_le g)).op a₀) ∈
       T (I j) (Y.affineBasicOpen rg) hW₀j := by
     rw [← hy0, map_mul]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     exact Ideal.mul_mem_right _ _ h1
   have h3 : Y.presheaf.map (homOfLE (Y.basicOpen_le rg)).op
       (Y.presheaf.map (homOfLE (Y.basicOpen_le f)).op a₀) ∈

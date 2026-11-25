@@ -1,6 +1,6 @@
 # Local inputs of the stable comparison at ramified places
 
-Supporting module of Task 5003 (module
+Supporting module of the gamma comparison for weakly associated cuspidal pairs (module
 `Langlands.Automorphic.AssociatedGammaRamifiedInputs`). It checks, at a finite place `z`,
 the hypotheses of the published `StableTwistPairGammaMatchStatement` (Henniart 1986,
 Lemma 4.2) for the local classes of a cuspidal pair and the local restrictions of weakly

@@ -1,7 +1,5 @@
 # Existence of the ground-field solvable radical
 
-Author: Worker 1378.
-
 `Langlands.GroupScheme.SolvableRadicalExistenceStatement.{u}` is a
 Prop-valued statement for every universe `u`. For every field `k : Type u`
 and every actual group scheme `G` over `Spec (CommRingCat.of k)` with

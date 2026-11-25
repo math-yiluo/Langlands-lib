@@ -1,7 +1,5 @@
 # Reduction of refined cuspidal induction to standard cuspidal induction
 
-Author: Worker 717.
-
 This module reduces the published proposition
 `Langlands.CuspidalSupport.RefinedCuspidalInductionFiniteLengthStatement`
 from [`RefinedCuspidalInductionLengthStatement`](RefinedCuspidalInductionLengthStatement.md)

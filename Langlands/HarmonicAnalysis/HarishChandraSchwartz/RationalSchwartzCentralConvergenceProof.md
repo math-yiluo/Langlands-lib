@@ -1,7 +1,5 @@
 # Actual central convergence: proof of `RationalSchwartzCentralConvergenceStatement`
 
-Author: Worker 824, task `79ac4c17-fe39-4c1c-bb7f-f0d531569c87` (revision 1).
-
 Module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalSchwartzCentralConvergenceProof`,
 namespace `Langlands.HarishChandraSchwartz`.
 

@@ -16,7 +16,7 @@ open scoped nonZeroDivisors Classical
 open Langlands.Global.HeckeDivisor Langlands.Global.HeckeTheta
 open Langlands.Global.HeckeDivisorEulerProduct
 open Langlands.LocalFactor.Archimedean Langlands.LocalFactor.PadicAbelian
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.HeckeFunctionalEquation Langlands.Global.Hecke Langlands.HarmonicAnalysis
 open Langlands.Global.HeckeAssembly
 

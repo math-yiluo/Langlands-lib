@@ -78,10 +78,6 @@ proof of Theorem 2.7. The continuity statement and this proof are internal: they
 are derived from published Library definitions and do not follow a route in
 JPSS.
 
-The helper `appendIdentity_continuous` and the main argument come from Worker
-331's continuity section (`appendIdentity_continuous` and
-`zero_row_integrand_continuous`) in the draft for task
-`d76b5b0f-33ec-486d-881e-b4c1e3494d40`, revision 2. Worker 381 adapted it to the
-published statement and added the specialization `example`, in the draft for
-task `56ea14bb-e69e-4795-8f19-e21b15f59aba`, revision 1. Worker 771 submitted it
-for this proof task.
+The helper `appendIdentity_continuous` and the main argument come from the
+continuity section (`appendIdentity_continuous` and
+`zero_row_integrand_continuous`) of an earlier zero-row analytic development.

@@ -102,7 +102,7 @@ theorem transport_symm (e : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- Loop transport is the previously constructed actual prime-adic monodromy. -/
 theorem transport_aut (g : FundamentalGroup s hs) :
-    transport htor A p hu g = monodromy s hs htor A p hu g := rfl
+    transport htor A p hu g.asIso = monodromy s hs htor A p hu g := rfl
 
 /-- Continuity for the existing product-subspace topology. -/
 theorem continuous_transport (e : fiberFunctor s hs ≅ fiberFunctor t ht) :
@@ -134,7 +134,7 @@ theorem transport_monodromy (e : fiberFunctor s hs ≅ fiberFunctor t ht)
 theorem transport_change_path (e f : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Integral A (Over.mk s) p) :
     transport htor A p hu f x =
-      monodromy t ht htor A p hu (e.symm ≪≫ f) (transport htor A p hu e x) := by
+      monodromy t ht htor A p hu (Aut.of (e.symm ≪≫ f)) (transport htor A p hu e x) := by
   apply Subtype.ext
   funext n
   exact levelTransport_change_path htor A (p ^ n) (pow_pos (Fact.out : p.Prime).pos n)
@@ -218,7 +218,7 @@ theorem rationalTransport_symm (e : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- Loop transport is precisely the existing rational prime-adic monodromy. -/
 theorem rationalTransport_aut (g : FundamentalGroup s hs) :
-    rationalTransport htor A p hu g = rationalMonodromy s hs htor A p hu g := rfl
+    rationalTransport htor A p hu g.asIso = rationalMonodromy s hs htor A p hu g := rfl
 
 /-- The existing integral-to-rational prime map commutes with transport. -/
 theorem toRational_transport (e : fiberFunctor s hs ≅ fiberFunctor t ht)
@@ -245,12 +245,12 @@ theorem rationalTransport_monodromy (e : fiberFunctor s hs ≅ fiberFunctor t ht
 theorem rationalTransport_change_path (e f : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Rational A (Over.mk s) p) :
     rationalTransport htor A p hu f x =
-      rationalMonodromy t ht htor A p hu (e.symm ≪≫ f)
+      rationalMonodromy t ht htor A p hu (Aut.of (e.symm ≪≫ f))
         (rationalTransport htor A p hu e x) := by
   induction x using TensorProduct.inductionOn with
   | tmul a x =>
     change a ⊗ₜ[ℤ_[p]] transport htor A p hu f x =
-      a ⊗ₜ[ℤ_[p]] monodromy t ht htor A p hu (e.symm ≪≫ f)
+      a ⊗ₜ[ℤ_[p]] monodromy t ht htor A p hu (Aut.of (e.symm ≪≫ f))
         (transport htor A p hu e x)
     rw [transport_change_path]
   | add x y hx hy => simp_all

@@ -1,6 +1,6 @@
 # Character values of a root and its orbit partner
 
-Worker 244. This internal unit supplies the character-value comparison left
+This internal module supplies the character-value comparison left
 open in `RootPartnerFields`. Work over fields `k,L : Type u` with an algebra
 `k → L`, a commutative group scheme `T`, an affine group scheme `G`, and a
 homomorphism `j : T.toGrp → G`. Absolute roots refer to the actual base change

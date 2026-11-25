@@ -1,7 +1,5 @@
 # Positive forms invariant under the actual relative Weyl quotient
 
-Author: Worker 200.
-
 This internal construction reuses the published relative Weyl action on the
 full real character space of an actual split torus. A finite sum of pullbacks
 of a positive coordinate form constructs a positive symmetric bilinear form

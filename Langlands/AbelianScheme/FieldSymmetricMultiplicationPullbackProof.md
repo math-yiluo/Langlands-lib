@@ -1,7 +1,5 @@
 # Multiplication pullback of symmetric line bundles over arbitrary fields
 
-Author: Worker 537.
-
 The theorem `Langlands.GroupScheme.fieldSymmetricMultiplicationPullback`
 proves the exact published proposition
 `Langlands.GroupScheme.FieldSymmetricMultiplicationPullbackStatement.{u}`.

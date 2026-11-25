@@ -1,6 +1,6 @@
 # The full-flag locus of a quotient Grassmannian
 
-Author: Worker 1399. Internal helper module for the proof of
+Internal helper module for the proof of
 `Langlands.GroupScheme.GeneralLinearSolvableStabilizerStatement`. It realizes full flags of
 `K^n` as the points of one Library quotient Grassmannian that satisfy a linear stability
 condition. The construction (several copies of `K^n` with multiplicities `(n + 1)^j` and a

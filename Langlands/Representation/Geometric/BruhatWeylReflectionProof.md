@@ -1,7 +1,5 @@
 # Weyl-class reflection from a determinant term
 
-Author: Worker 179.
-
 `Langlands.Geometric.padicBruhatWeylReflection` proves exactly the published
 `Langlands.Geometric.PadicBruhatWeylReflectionTheorem.{u}` from
 `Langlands.Representation.Geometric.BruhatMatrixStatement`. The statement and

@@ -1,6 +1,8 @@
 # Canonical open presentations after etale descent of quasi-affineness
 
-Worker 585. This is an internal derived construction for Task 6831.
+This is an internal derived construction for the quasi-affineness of
+supplied universal maximal-torus moduli (`maximalTorusModuliQuasiAffine` in
+`Langlands.GroupScheme.Torus.MaximalTorusModuliQuasiAffineProof`).
 
 For any morphism f : X → S and any etale cover U_i → S, assume that each
 projection X ×_S U_i → U_i has the following property: its inverse image
@@ -52,4 +54,6 @@ Library descent construction with Mathlib's etale openness, finite affine
 cover refinement, scheme restrictions and pullback identities. It does
 not assert a translation of an additional structural theorem from the
 literature. This supplies the generic etale descent step; local
-quasi-affineness of maximal-torus moduli remains a separate obligation.
+quasi-affineness of maximal-torus moduli is a separate step
+(`Langlands.GroupScheme.Torus.MaximalModuliLocalQuasiAffine`, which imports
+this module).

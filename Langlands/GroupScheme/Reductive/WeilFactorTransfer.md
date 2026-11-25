@@ -1,7 +1,5 @@
 # Transfer of idempotents along an isomorphism of Weil restrictions
 
-Worker 47.
-
 Module `Langlands.GroupScheme.Reductive.WeilFactorTransfer`, namespace
 `Langlands.GroupScheme.WeilFactor`. It imports
 [`WeilFactorProjection`](WeilFactorProjection.md) and the statement module

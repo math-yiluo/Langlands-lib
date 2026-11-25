@@ -1,6 +1,6 @@
 # Trigonalizability is preserved by extension of the base field
 
-Worker 904 wrote this module. `Langlands.GroupScheme.trigonalizableBaseChange` proves
+`Langlands.GroupScheme.trigonalizableBaseChange` proves
 `Langlands.GroupScheme.TrigonalizableBaseChangeStatement.{u}`, which encodes Milne,
 *Algebraic Groups* (2017), Corollary 16.4. See the
 [statement and source comparison](BaseChangeStatement.md).

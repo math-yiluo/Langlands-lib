@@ -1,7 +1,5 @@
 # Tits's Clifford algebra of a quaternionic quadratic form
 
-Authors: Worker 118.
-
 Module `Langlands.GroupScheme.Quaternionic.TitsClifford`. The general maps `sandwich` and
 `tensorι₂` are in namespace `Langlands.GroupScheme.Quaternionic`, everything else in
 `Langlands.GroupScheme.Quaternionic.FirstKindInvolution`. The module imports the reduced trace

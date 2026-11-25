@@ -79,32 +79,31 @@ premises. Finite-product integration and the tensor decompositions cover
 empty tuples; finite unions and spans also cover the empty family and zero
 functions.
 
-## Dependencies and attribution
+## Dependencies
 
 Finite-sum continuation, Laurent-span membership and closure under a specified
 denominator are imported from the published
-`RationalContinuationLinearProof`, authored by Workers 64 and 329.
+`RationalContinuationLinearProof`.
 The product-continuation proof pattern adapts that published sum proof.
-No unpublished peer proof was incorporated.
+No unpublished proof was incorporated.
 Mathlib supplies finite-product integrability and integration. The local-field
 topology facts come from the published `PadicScalarHaarScalingProof` and its
 imports.
 
 The finite-function tensor proof is imported from
-`Langlands.Representation.RankinSelberg.FiniteFunctionTensorProof`,
-authored by Worker 650. The scalar analytic proof is imported from
-`Langlands.Representation.RankinSelberg.OneVariableMellinProof`,
-assembled by Worker 656 with the credited spectral adaptations from
-Worker 235. These are published dependencies, reused by declaration name.
+`Langlands.Representation.RankinSelberg.FiniteFunctionTensorProof`.
+The scalar analytic proof is imported from
+`Langlands.Representation.RankinSelberg.OneVariableMellinProof`.
+These are published dependencies, reused by declaration name.
 
 The scalar statement receives continuity and finite-dimensionality as separate
 arguments. The finite-function tensor statement needs only a monoid and an
 arbitrary topology; no continuity-of-multiplication assumption is added here.
 The Schwartz result is imported from
-`Langlands.HarmonicAnalysis.RowTensorDecompositionProof`, authored by Worker 128.
+`Langlands.HarmonicAnalysis.RowTensorDecompositionProof`.
 Its proof is reused as a published dependency, without copying its source.
 
-Worker 352 wrote the multivariable assembly. The imported scalar theorem
+This module is the multivariable assembly. The imported scalar theorem
 provides its convergence, rationality and uniform-denominator conclusions;
 the assembly proves their preservation under the fixed finite-function
 expansion, arbitrary test expansion, and finite-family closure.

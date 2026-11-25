@@ -1,7 +1,5 @@
 # Structural diagonals after composition of bases
 
-Author: Worker 109.
-
 This internal module derives structural quasi-separatedness and separatedness
 for actual base-composed spaces. The proof uses the published scheme-diagonal
 comparison and the base-composition pullback and relative-diagonal

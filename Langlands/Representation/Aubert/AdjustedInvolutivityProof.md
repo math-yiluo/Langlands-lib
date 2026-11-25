@@ -1,7 +1,5 @@
 # Involutivity of the support-adjusted graded Aubert operator
 
-Author: Worker 104.
-
 `Langlands.Aubert.adjustedInvolutivity.{uF, uV} F T` proves exactly the
 published `Langlands.Aubert.AdjustedInvolutivityStatement.{uF, uV} F T`.
 It has only the target's ambient parameters: a prime `p` with

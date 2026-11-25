@@ -98,7 +98,6 @@ theorem groupDirectionalValue_const_smul (X : GroupLieAlgebra I G) (c : ℂ)
     1 (((L.contDiff (n := ∞)).contMDiff).mdifferentiableAt (by simp))
     ((hf.comp hL).mdifferentiableAt (by simp))]
   simp [mvfderiv, mfderiv_eq_fderiv, L, ContinuousLinearMap.fderiv, groupDirectionalValue]
-  rfl
 
 omit [LieGroup I ∞ G] in
 /-- Left pullback commutes with the orbit derivative by associativity of the

@@ -3,7 +3,7 @@
 This internal adapter is derived from `NormalQuotient.groupScheme`,
 `NormalQuotient.hom`, `NormalQuotient.isFppfQuotient`, and the existing
 `RelativeRoot.IsFppfQuotient.exists_action_relativeDimension_of_kernel`.
-Worker 362 authored the adapter. It adds no quotient existence assumption to
+It adds no quotient existence assumption to
 the supplied `HomogeneousQuotient` data.
 
 For an actual homogeneous quotient `D` of `i : H → G` over any scheme, normality

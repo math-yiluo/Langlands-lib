@@ -22,10 +22,8 @@ as the only added restriction. Only the conclusion differs: an actual
 projective embedding replaces an ample line bundle. The module imports
 neither ample-existence statement and is not their proof.
 
-Worker 750 implemented this pair. The hypothesis pattern adapts the published
-ample-existence statements by Workers 420 and 299. Worker 404 supplied the
-focused specification and coordinates the downstream ample-existence
-assembly.
+The hypothesis pattern adapts the published
+ample-existence statements.
 
 ## The H-projectivity predicate
 
@@ -117,8 +115,8 @@ It is a strictly weaker intermediate target than the arbitrary-field
 projectivity theorem, which would drop that instance.
 
 Within the project, this statement supplies the geometric part of the
-algebraically closed input to the ample-existence workflow coordinated by
-Worker 404. The published `AlgebraicallyClosedFieldAmpleExistenceStatement`
+algebraically closed input to the ample-existence route.
+The published `AlgebraicallyClosedFieldAmpleExistenceStatement`
 and `FieldAmpleExistenceStatement` are downstream of projectivity in that
 route. The same holds for the symmetric statement
 `FieldSymmetricAmpleExistenceStatement`, which follows Corollary 7.2, p.12.
@@ -130,7 +128,7 @@ The opening definition of Section 20, p.42, calls a group scheme over `S` an
 abelian scheme if it is proper and smooth with connected geometric fibres.
 In the presence of the first condition, this is equivalent to the fibres
 being abelian varieties. For `S = Spec K` this gives the three geometric
-hypotheses of the Lean statement. They are kept in the parent's form, so
+hypotheses of the Lean statement. They are kept in the form of the ample-existence statements, so
 `GeometricallyConnected` is not replaced by connectedness even though `K`
 is algebraically closed. Mathlib's `GeometricallyConnected` asks for
 connectedness after every field-valued base change, and connectedness
@@ -151,15 +149,16 @@ its irreducible components are disjoint and open. The unit of the actual
 group object `G` is a `K`-point. The group-object axioms in
 `Over (Spec K)` give the group laws on points. Corollary 2.4, p.3, shows
 that the group law of an abelian variety is commutative. The instance
-`IsCommMonObj G.X` is retained only to match the parent statements.
+`IsCommMonObj G.X` is retained only to match the ample-existence statements.
 
 These comparisons explain the source correspondence; this module proves
 none of them in Lean. The local finite type, quasi-compactness,
 separatedness, nonemptiness and geometric-integrality clauses are the
 separate published statement
 `Langlands.GroupScheme.FieldAbelianVarietyPresentationStatement`, with exact
-proof task `2d28e6bb-86ce-4f1e-8ab2-c7264d1cbef3`. That task reuses the
-geometric-integrality proof task `13d3f4b1-fadd-43c6-b422-d793dc9adf5f`. The
+proof `Langlands.GroupScheme.fieldAbelianVarietyPresentation` (module
+`Langlands.AbelianScheme.FieldAbelianVarietyPresentationProof`). That proof reuses the
+geometric-integrality theorem `Langlands.AbelianScheme.smoothGeometricIntegrality`. The
 present module neither imports nor assumes that presentation statement.
 
 Dimension zero is not excluded. Mathematically, a connected smooth proper
@@ -181,7 +180,7 @@ xnotes version used here. Its entries are keyed to the printed pages
 Proposition 12.1. The two printed-p.145 entries correct Corollary 19.4 and
 its proof, which precede Section 20. No listed entry concerns Theorem 7.1,
 the conventions or Section 20. No source-specific project errata note
-exists for either registered source in the current Library.
+exists for either registered source in the Library.
 
 ## Provenance and scope
 
@@ -197,15 +196,15 @@ The statement covers every universe, every characteristic and dimension
 zero. Its only restriction beyond the arbitrary-field hypotheses is
 algebraic closure. It adds no projectivity, ample sheaf, polarization,
 geometric-integrality, finite-type, separatedness or supplied comparison
-premise. An eventual proof must derive such geometric inputs from the
+premise. A proof must derive such geometric inputs from the
 given hypotheses.
 
-After independent acceptance and publication, a separate exact-target proof
-must have this entire named proposition as its type, with no extra outer
-hypotheses. Substantial missing geometric prerequisites belong in focused
-definition, statement and proof tasks, in that order. The existing
-source-presentation and geometric-integrality owners are to be reused
-rather than duplicated. Worker 404 retains coordination of the actual
+A proof must have this entire named proposition as its type, with no extra
+outer hypotheses; the Library's proof is
+`Langlands.GroupScheme.algebraicallyClosedProjectivity`, in the module
+`Langlands.AbelianScheme.AlgebraicallyClosedProjectivityProof`. The existing
+source-presentation and geometric-integrality results are to be reused
+rather than duplicated. The actual
 twisting sheaf, the ampleness comparison and the final arbitrary-field
-assembly. This module adds no axiom and discharges none of those proof
+assembly are separate results. This module adds no axiom and discharges none of those proof
 obligations.

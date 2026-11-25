@@ -1,7 +1,5 @@
 # Acyclicity after restriction of injective quasi-étale G-sheaves
 
-Author: Worker 512.
-
 `QuasiEtaleRestrictedInjectivesAcyclicStatement` isolates the higher-cohomology
 vanishing premise needed by the compact quasi-étale comparison theorem. It is a
 proposition definition, with no proof of the vanishing claim.

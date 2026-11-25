@@ -1,7 +1,5 @@
 # Statement: the largest relative subtorus
 
-Worker 673.
-
 `Langlands.GroupScheme.RelativeMultiplicativeTypeLargestSubtorusStatement.{u}`
 is a statement-only `Prop`-valued definition. This module proves nothing and
 introduces no axioms.

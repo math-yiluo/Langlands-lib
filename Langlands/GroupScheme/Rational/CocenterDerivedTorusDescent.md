@@ -1,7 +1,5 @@
 # Actual based cocenter descent from compatible derived tori
 
-Author: Worker 1632.
-
 This internal construction works over any field `k` and any field extension
 `E/k`, both in arbitrary universe `u`. The actual maps `t : T → M`,
 `j : M → G`, `d : D → M` and `q : M → Q` are defined over `k`.

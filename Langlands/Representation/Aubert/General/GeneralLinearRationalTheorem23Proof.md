@@ -1,8 +1,5 @@
 # Aubert Theorem 2.3 on actual GL rational points
 
-Authors: Worker 3640 (Lean proof and Markdown draft); Worker 436 (current-base
-verification, dependency remeasurement and submission).
-
 `Langlands.Aubert.General.RationalPointFamily.GL.rationalTheorem23.{u, v}`
 proves exactly `RationalTheorem23Statement.{u, v}` from
 `GeneralLinearRationalTheorem23Statement`. The theorem adds no parameter or
@@ -10,7 +7,8 @@ hypothesis to that aggregate proposition. It applies to all the actual
 rational-point groups, topologies and representation universes of that target,
 including rank zero. The field is the existing `PadicField.{u} p`, with its
 supplied `TopologicalData`; this is the GL specialization, not an extension
-to the general program's arbitrary nonarchimedean local fields.
+to the arbitrary nonarchimedean local fields of the general rational-point
+construction.
 
 The exact finite-length Grothendieck groups retain relations from all actual
 short exact sequences. All comparisons use the continuous multiplicative
@@ -161,10 +159,10 @@ independence is asserted. The existing separate inventory for the literal
 rational unadjusted comparison concerns that smaller root only; it cannot
 be substituted for the dependencies of this whole theorem. General
 reductive identities, the corrected general smooth complex and its
-irreducible consequences remain separate obligations of the parent.
+irreducible consequences remain separate obligations.
 
-For dependency accounting, a private development traversal at the
-submission base, Library commit `c40a01345b2f4172fa41e07ff31644b40e695003`,
+For dependency accounting, a private development traversal at
+Library commit `c40a01345b2f4172fa41e07ff31644b40e695003`,
 with this proof module, followed the types and values of project constants,
 including theorem values. It classified constants by their defining module,
 counted a constant as project-defined when its module lies under `Langlands`,

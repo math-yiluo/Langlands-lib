@@ -1,6 +1,6 @@
 # Uniqueness of a multiplicative-unipotent decomposition
 
-This internal derived unit proves the uniqueness clause of Milne 2017,
+This module proves the uniqueness clause of Milne 2017,
 Theorem 16.13(b). Let `k` be a field and `G` a commutative group scheme over
 `Spec k` that is affine and locally of finite type. Suppose `u : U ⟶ G` and
 `s : S ⟶ G` are subgroups such that the multiplication map

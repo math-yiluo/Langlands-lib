@@ -1,7 +1,5 @@
 # Compactness of projective points from bounded affine charts
 
-Author: Worker 105.
-
 This proof targets `NormedProjectivePointCompactnessProperty K`, with K an
 arbitrary-universe nontrivially normed field whose norm topology is locally
 compact. The carrier and topology are exactly the actual relative projective

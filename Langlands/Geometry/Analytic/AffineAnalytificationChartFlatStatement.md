@@ -1,8 +1,5 @@
 # Statement: the chart algebras of the affine analytification are flat
 
-Authors: Worker 554 (proposal and Lean form), Worker 3519 (review, Markdown and
-submission through parent Task 3519).
-
 `AffineAnalytificationChartFlatStatement` says the following. Let `K` be a
 complete, ultrametric, nontrivially normed field, and let `A` be a commutative
 `K`-algebra with a finite polynomial presentation `P`. Then for every chart
@@ -19,10 +16,10 @@ the weighted Tate algebra in `P.arity` variables of polyradius
 relations of `P`. Geometrically, it is the affinoid algebra of the closed
 polydisc chart of `Spec(A)ᵃⁿ`, an affinoid domain of the analytification.
 
-This is a statement only; its proof is a separate successor. It is a
-prerequisite proposed for the proof of
+This is a statement only; its proof is `AffineAnalytificationChartFlatProof`.
+It is a prerequisite for the proof of
 `AffineAnalytificationFiniteGermComparisonStatement`, and through it of
-`AffineAnalytificationEtaleStatement` (Task 7169). That proof compares
+`AffineAnalytificationEtaleStatement`. That proof compares
 analytic and algebraic local rings by faithfully flat descent. Since chart
 points lie over primes of `A`, flatness of the charts makes the localized maps
 local and flat, hence faithfully flat.

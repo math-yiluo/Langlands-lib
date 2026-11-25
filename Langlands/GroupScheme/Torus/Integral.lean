@@ -26,6 +26,7 @@ theorem IsSplitTorus.isIntegral {k : Type u} [Field k]
     change IsIntegral (Spec (CommRingCat.of
       (splitTorus.LaurentAlgebra I (CommRingCat.of k))))
     infer_instance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   exact IsIntegral.of_isIso e'.inv.hom.hom.left
 
 /-- A torus over a field is integral, even when it is not split over that field. -/

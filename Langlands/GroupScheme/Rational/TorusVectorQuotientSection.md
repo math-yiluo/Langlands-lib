@@ -1,6 +1,6 @@
 # Complementary quotient sections from torus retractions
 
-This internal derived unit combines actual fpqc homomorphism descent with
+This internal derived module combines actual fpqc homomorphism descent with
 the original-field torus retraction constructed in
 `TorusVectorRetractionDescent`. It supplies a complementary quotient
 section for the characteristic-zero rational-point factorization.

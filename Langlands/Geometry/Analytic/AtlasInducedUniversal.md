@@ -1,6 +1,6 @@
 # Normalized arbitrary-atlas induction into arbitrary action targets
 
-Author: Worker 56. Namespace: `Langlands.Analytic.AtlasInducedAction`.
+Namespace: `Langlands.Analytic.AtlasInducedAction`.
 
 This internal construction gives a relative induction correspondence for
 complete chosen bounded atlas arrows. Let `K : Type u` be a complete normed

@@ -1,8 +1,9 @@
 # Pointed separable residue extensions over strictly Henselian algebras
 
-Worker 517, using Worker 872's relative Henselian etale lifting. This internal
-derived construction for Task 7685 combines existing prime-local G-ring
-approximation, etale residue extensions, separably closed field embeddings,
+This internal derived construction, for lifting prescribed diagonalizations to
+clopen subgroups over strictly Henselian local rings, uses the relative
+Henselian etale lifting of `Langlands.CommutativeAlgebra.HenselianEtaleAlgebraLift`
+and combines existing prime-local G-ring approximation, etale residue extensions, separably closed field embeddings,
 and Henselian lifting. All carriers have an arbitrary fixed universe `u`.
 
 `etaleCompletionApproximation_atPrime` exposes finite-order etale approximation

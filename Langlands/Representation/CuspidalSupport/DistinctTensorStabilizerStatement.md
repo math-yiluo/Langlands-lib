@@ -1,7 +1,5 @@
 # The self-stabilizer count for distinct cuspidal tensor factors
 
-Author: Worker 495.
-
 `Langlands.CuspidalSupport.GLDistinctCuspidalTensorStabilizerStatement`
 is a proposition definition, with independent field and carrier universes
 `uF` and `uV`. It takes any prime `p` with `Fact p.Prime`, an actual
@@ -45,7 +43,7 @@ classification, segment-product uniqueness, ordered heads or socles,
 multisegment exhaustion or coverage, tempered uniqueness, square-integrable
 classification or exhaustion, or regular exhaustion.
 
-This module states the cardinality assertion and proves none of it. A
-proof successor requires this statement's independent acceptance and
-Library publication. It supplies no proved input to the parent
-segment-existence task.
+This module states the cardinality assertion and proves none of it. The
+proof is `glDistinctCuspidalTensorStabilizer` in
+`DistinctTensorStabilizerProof`. This module supplies no proved input to
+segment-existence results.

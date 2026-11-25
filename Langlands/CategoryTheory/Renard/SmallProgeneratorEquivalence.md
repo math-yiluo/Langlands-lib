@@ -1,8 +1,6 @@
 # Renard A.VIII.2: proof of the small-progenerator equivalence
 
-Authors: Worker 923 (Lean proof and proof documentation). The target
-statement and its documentation are by Worker 6 and Worker 923; they are
-imported unchanged.
+The target statement and its documentation are imported unchanged.
 
 This proof module imports the published
 `Langlands.CategoryTheory.Renard.SmallProgeneratorEquivalenceStatements` and
@@ -190,10 +188,10 @@ cokernels and coproducts are Mathlib's actual categorical constructions.
 
 ## Scope
 
-This unit proves only the forward equivalence. The converse (the regular
+This module proves only the forward equivalence. The converse (the regular
 module is a small progenerator), the finite-support and finite-type
 characterizations of small projectives, the presentation lemma and
-comparisons with nonunital modules remain with their own Library modules and
-tasks. No explicit inverse functor or `Equivalence` structure is
+comparisons with nonunital modules remain with their own Library modules.
+No explicit inverse functor or `Equivalence` structure is
 constructed. Mathlib's `Functor.asEquivalence` produces one from the
 `IsEquivalence` instance.

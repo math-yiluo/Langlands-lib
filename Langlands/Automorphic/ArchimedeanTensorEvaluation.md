@@ -1,6 +1,7 @@
 # Tensor evaluation of compact and Lie intertwiners
 
-This internal construction for Task 7294 defines tensor evaluation for
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` defines tensor evaluation for
 simultaneous compact and Lie intertwiners and proves its injectivity from
 the published `(g,K)` Jacobson density theorem. It uses the existing
 `Archimedean.gkHoms` space. No tensor surjectivity or pairing is assumed or

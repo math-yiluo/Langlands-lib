@@ -44,4 +44,4 @@ an arbitrary common universe; no separability is required. Y is locally of
 finite type and has the specified relative projective immersion. The result
 does not claim that every Y admits such an immersion. The actual model
 existence is proved separately; the finite-level adelic product and full
-adelic Weil comparison remain obligations of the host task.
+adelic Weil comparison are not part of this module.

@@ -38,5 +38,4 @@ set of `k`-algebra maps `K → Ω`. The proof has four steps.
 The mathematical target and its source, Milne, *Algebraic Groups* (2017), 2.61,
 are described in the paired statement Markdown. The route here is a derived
 linear algebra proof of its finite separable field specialization. It does
-not add hypotheses to that statement. Worker 207 wrote the original draft of
-this proof.
+not add hypotheses to that statement.

@@ -1,9 +1,13 @@
 # Intrinsic semistandard spectral indices
 
-Worker 568, Task 7229. Source: Waldspurger (2003), I.1, printed pp.238–239,
+Source: Waldspurger (2003), I.1, printed pp.238–239,
 and VI.3, printed p.305, registered source `waldspurger-2003-plancherel`, DOI
 10.1017/S1474748003000082. These original pages were read directly. This is a
-construction with proved elementary laws and explicit unproved geometric targets.
+construction with proved elementary laws and explicit geometric targets, which
+are not proved here; the modules `SemistandardSpectralCoverageProof`,
+`SemistandardSpectralUniquenessProof`, `SemistandardSpectralDynamicCoverageProof`,
+`SemistandardSpectralFinitenessProof` and `SemistandardSpectralFiberFinitenessProof`
+prove them.
 
 ## Carrier and source comparison
 
@@ -34,9 +38,9 @@ subgroup functor with an existential Prop witness. `SemistandardSpectralParaboli
 is the fiber over that exact subgroup functor: the unquotiented P(M) needed by
 the synthesis coefficient on p.305. `toLevi` and `inFiber` give its projections.
 `nonempty_semistandardSpectralParabolicFiber` proves nonemptiness by unpacking the
-image witness; it requires no finiteness assumption. Once the source uniqueness
-target is proved these fibers count parabolics, without duplicating Levi/radical
-choices.
+image witness; it requires no finiteness assumption. With the source uniqueness
+target (proved as `semistandardSpectralUniqueness`) these fibers count parabolics,
+without duplicating Levi/radical choices.
 
 ## Dynamic and existing standard triples
 

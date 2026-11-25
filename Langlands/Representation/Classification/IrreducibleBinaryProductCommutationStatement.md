@@ -1,7 +1,5 @@
 # Actual commutation of an irreducible binary normalized product
 
-Author: Worker 78.
-
 `Langlands.Classification.IrreducibleBinaryProductCommutation.{uF,uV} F T`
 is an internal derived proposition, for any prime-certified `p`, finite p-adic
 field `F`, and the supplied compatible topological data `T`. The field and

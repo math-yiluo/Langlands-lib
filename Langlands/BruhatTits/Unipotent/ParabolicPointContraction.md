@@ -1,6 +1,6 @@
 # Bounded conjugation of dynamic parabolic points
 
-Author: Worker 4712. Module `Langlands.BruhatTits.Unipotent.ParabolicPointContraction`,
+Module `Langlands.BruhatTits.Unipotent.ParabolicPointContraction`,
 namespace `Langlands.BruhatTits.DynamicUnipotentContainment`. This is a supporting
 module for the necessity half of Casselman's criterion (Renard 2026, VII.1.2). It
 extends the published contraction coordinates of

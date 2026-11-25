@@ -290,7 +290,7 @@ theorem rationalSummandCenterVariety : RationalSummandCenterVarietyStatement.{uF
   obtain ⟨e, he⟩ : ∃ e : MonoidAlgebra ℂ (T ⧸ (rationalCommonNormKernel G).subgroupOf T) ≃ₐ[ℂ]
       Subalgebra.center ℂ (End I), ∀ (t : T) (ω : X)
       (φ : I ⟶ rationalUnramifiedTwist G ω (rationalInertiaBaseLift G π)),
-      (e (MonoidAlgebra.of ℂ _ (QuotientGroup.mk t)) : End I) ≫ φ =
+      (e (MonoidAlgebra.of ℂ _ (QuotientGroup.mk t)) : End I).asHom ≫ φ =
         ((ω.val t : ℂˣ) : ℂ) • φ := by
     obtain ⟨e, he⟩ := rationalSummandCenterGroupAlgebra F G hG S i hi ν hν hStandard hRoots hU
       π hπ hcusp ρ hρ j hj
@@ -317,7 +317,7 @@ theorem rationalSummandCenterVariety : RationalSummandCenterVarietyStatement.{uF
   rw [hΨ]
   let L : MonoidAlgebra ℂ (T ⧸ (rationalCommonNormKernel G).subgroupOf T) →ₗ[ℂ]
       (I ⟶ rationalUnramifiedTwist G ω (rationalInertiaBaseLift G π)) :=
-    { toFun := fun a => (e a : End I) ≫ φ
+    { toFun := fun a => (e a : End I).asHom ≫ φ
       map_add' := fun x y => by
         rw [map_add e x y, Subalgebra.coe_add]
         exact Preadditive.add_comp _ _ _ _ _ _

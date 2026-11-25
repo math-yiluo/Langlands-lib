@@ -54,7 +54,7 @@ versions discharge both premises and give continuous rational-linear
 equivalences without extra geometric hypotheses. Their projection lemmas
 identify the underlying equivalences with the previously defined `rationalIso`.
 
-This unit makes no assertion of joint continuity for finite-adelic scalars,
+This module makes no assertion of joint continuity for finite-adelic scalars,
 continuity of the homomorphism parameter, a topological restricted-product
 identification, pairing compatibility, or canonical independence of a chosen
 path.

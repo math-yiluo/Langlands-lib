@@ -1,7 +1,5 @@
 # Parabolic subgroups, unipotent radicals and Levi subgroups over a base scheme
 
-Author: Worker 75.
-
 This module supplies three predicates on homomorphisms of group schemes over
 an arbitrary base scheme `S`. They are the relative counterparts of the existing
 ground-field predicates `IsParabolicSubgroup`, `IsUnipotentRadical` and

@@ -1,7 +1,5 @@
 # Compatible affinoid pair systems on full recognition atlases
 
-Author: Worker 36.
-
 This module starts the morphism description of Berkovich's Proposition
 1.2.15(i). A morphism of analytic spaces gives a compatible system of affinoid
 maps for *all* pairs of affinoid domains `V`, `V'` with `φ(V) ⊆ V'`. Such a

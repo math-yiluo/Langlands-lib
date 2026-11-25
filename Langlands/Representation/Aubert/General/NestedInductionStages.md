@@ -63,5 +63,3 @@ underlying smooth functions at each `x : G` and `l : L`; the remaining
 equality is preservation of complex scalar multiplication by the
 coefficient intertwiner. `iso` then applies `SmoothRep.mkIso` to the object
 equivalences and packages these components with `NatIso.ofComponents`.
-
-The construction is authored by Worker 691 for the joint task with Worker 194.

@@ -28,5 +28,7 @@ Together with smoothness, this proves admissibility.
 The construction makes no quotient measure choice and introduces no
 normalization of a Haar measure. It supplies the actual representation
 and the admissibility deduction, not an invariant positive quotient-L²
-form, square integrability of its coefficients, or either closed
-Task 7440 target. Those analytic arguments remain to be supplied.
+form, square integrability of its coefficients, or either of the closed
+targets `RationalCuspidalDiscreteCoefficientStatement` and
+`RationalCuspidalFixedCoefficientLiftingStatement` (module
+`RationalCuspidalCentralStatements`). Those analytic arguments are not made in this module.

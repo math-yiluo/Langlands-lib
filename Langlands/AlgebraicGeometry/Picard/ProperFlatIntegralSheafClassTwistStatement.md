@@ -1,13 +1,10 @@
 # Fppf Picard classes of a proper flat family with integral fibres and a section
 
-Authors: Worker 5705.
-
-Worker 5705 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). The proposition restates,
+The proposition restates,
 for the Library's fppf Picard class sheaf, Kleiman's description of
 `Pic_{(X/S)(fppf)}(T)` as `Pic(X_T)/Pic(T)` when `f` has a section and
-`O_S ⥲ f_*O_X` holds universally. The assembly proof of Kleiman's Theorem 4.8 in
-Task 5705 needs it in this explicit form: every section of the sheaf is the
+`O_S ⥲ f_*O_X` holds universally. The Library's proof of Kleiman's Theorem 4.8
+(`NoetherianIntegralFibrePicardSheafAFSchemeProof`) needs it in this explicit form: every section of the sheaf is the
 class of an actual line bundle, and two line bundles have the same class
 exactly when they differ by the pullback of an invertible module on the base.
 
@@ -43,7 +40,7 @@ Then both of the following hold.
    `RelativePicard.sheafClassOf f T L` for some `L : LineBundle X_T`.
 2. **Equality of classes.** For `L L' : LineBundle X_T`,
    `sheafClassOf f T L = sheafClassOf f T L'` if and only if there is a module
-   `N : T.left.Modules` with `Scheme.Modules.IsInvertible N` and an isomorphism
+   `N : T.left.Modules` with `Scheme.Modules.IsInvertibleFLT N` and an isomorphism
    of modules `L.obj ≅ L'.obj ⊗ (Scheme.Modules.pullback g).obj N`.
 
 The Library objects used are:
@@ -61,9 +58,9 @@ The Library objects used are:
 
 The tensor product `⊗` elaborates to the FLT port's monoidal structure on
 module sheaves (`AlgebraicGeometry.Scheme.Modules.monoidalCategory`, from
-`Def_SheafOfModules_MonoidalV2`). `Scheme.Modules.IsInvertible` is the FLT port's
+`Def_SheafOfModules_MonoidalV2`). `Scheme.Modules.IsInvertibleFLT` is the FLT port's
 notion of an invertible module. These are the same tensor product and
-invertibility predicate as in the accepted companion statement
+invertibility predicate as in the companion statement
 `PicardHilbertPolynomialPiecesStatement`, whose twist-invariance clause has the
 same shape (`L ≅ L' ⊗ g^* N` with `N` invertible).
 
@@ -123,7 +120,7 @@ statement of the source.
   `properFlatIntegralClassIso`, written as explicit arguments, with the
   section as an existential.
 - Both conclusions are stated for every `T : Over S`. The intended consumer, the
-  assembly proof for Task 5705, uses them for locally noetherian `T`; there
+  Library's proof of Kleiman's Theorem 4.8, uses them for locally noetherian `T`; there
   `S` is the spectrum of a noetherian ring.
 - The invertible module `N` in conclusion 2 is existential and not asserted to
   be unique. (Uniqueness up to isomorphism also holds, by Kleiman's Lemma 2.7,

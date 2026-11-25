@@ -1,6 +1,6 @@
 # Tits-system comparison on actual valuation quotients
 
-This derived unit transports all six clauses of `IsBuildingTitsSystem`,
+This module transports all six clauses of `IsBuildingTitsSystem`,
 then `HasTitsSystem` for every target chamber, on two supplied actual
 parahoric-building data over the same field and group at arbitrary universe
 `u`. The group of rational points and its action are the existing ones.

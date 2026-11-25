@@ -1,7 +1,5 @@
 # Openness of the flat locus over a Noetherian base
 
-Author: Worker 1103.
-
 This helper module supplies the generic-fibre and local-flatness steps for
 openness of the flat locus of a finite type algebra over a Noetherian ring.
 The final openness theorem is reused from the published
@@ -22,7 +20,7 @@ Lemma 10.168.1(1)). The module adds no axioms. The main theorems live in
   *Commutative Ring Theory*, Theorem 24.3: Nagata's openness criterion
   (`Langlands.Algebra.isOpen_of_stableUnderGeneralization_of_forall_exists`,
   module `Langlands.Algebra.NagataOpennessCriterion`), generic flatness
-  (`Langlands.Algebra.GenericFlatness.genFlat_of_finiteType`, by Worker 866)
+  (`Langlands.Algebra.GenericFlatness.genFlat_of_finiteType`)
   and the local flatness criterion. The local flatness criterion comes from
   the Library: `Langlands.Algebra.localFlatnessCriterion` (Stacks 10.99.7,
   Tag 00MK) and its ideal variant
@@ -96,7 +94,7 @@ the ideal `p ≤ Q' ∩ A`) show that `B_{Q'}` is flat over `A`.
 `((A ⧸ p) ⊗[A] B)[1/a]` flat over `A ⧸ p`. This is the flatness form of
 generic flatness (Stacks Algebra, Lemma 10.118.1, Tag 051R) over the
 Noetherian domain `A ⧸ p`.
-The Lean proof applies Worker 866's `genFlat_of_finiteType` to the module
+The Lean proof applies `genFlat_of_finiteType` to the module
 `(A ⧸ p) ⊗[A] B` over itself. This gives a nonzero `d ∈ A ⧸ p` such that
 the localized module at the powers of `d` is flat. Then `d` is lifted to
 `a ∈ A`, and the localized module is identified with the localization
@@ -104,5 +102,5 @@ the localized module at the powers of `d` is flat. Then `d` is lifted to
 
 The imported `Module.Flat.isOpen_setOf_flat_localization_atPrime` states
 openness of the same flat locus. The two preceding helper theorems also
-derive that proposition, so the integrated Library keeps the existing
+derive that proposition, so the Library keeps the existing
 public declaration instead of introducing a duplicate final theorem.

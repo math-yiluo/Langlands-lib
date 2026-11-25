@@ -1,7 +1,5 @@
 # Assembly of the actual derived-centralizer coroot comparison
 
-Authors: Worker 1352 and Worker 1577.
-
 This internal reduction assembles the actual geometry and integral lattice
 constructions for the published
 `SplitTorusCentralizerDerivedCorootComparisonStatement`. Two structural results
@@ -52,5 +50,8 @@ together with their support inclusion and exact integral span equality.
 The provenance is composition of the existing proved constructions and the
 two explicitly named structural premises. There is no passage to rational
 spans or saturation, replacement of the supplied centralizer or derived
-subgroup, or assumption of the desired coroot-span equality. Acceptance of
-this conditional reduction does not complete the unconditional proof task.
+subgroup, or assumption of the desired coroot-span equality. This
+conditional reduction does not by itself prove the statement unconditionally;
+`splitTorusCentralizerDerivedCorootComparison` in
+`SplitTorusCentralizerDerivedCorootComparisonProof` applies it to
+`rootDatumExistence` and `dynamicCentralizerReductive`.

@@ -35,6 +35,6 @@ formula and `N - (N - a) = a` for `a <= N`. Consequently every nonzero
 element has a multiplier whose product has nonzero top coefficient:
 the top-coefficient multiplication pairing is nondegenerate.
 
-This unit has no external source assertion. It concerns an explicit
+This module has no external source assertion. It concerns an explicit
 polynomial quotient, without any group action or root coordinate premise.
 It does not prove existence or irreducibility of Steinberg representations.

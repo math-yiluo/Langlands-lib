@@ -1,7 +1,5 @@
 # Parabolics with a maximal Levi determined by a missed direction: proof
 
-Worker 5004.
-
 `Langlands.GroupScheme.maximalLeviConeComplement` proves exactly the published
 proposition `Langlands.GroupScheme.MaximalLeviConeComplementStatement.{u}` of module
 `Langlands.GroupScheme.Rational.MaximalLeviConeComplementStatement`. It has the same

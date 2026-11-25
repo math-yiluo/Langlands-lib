@@ -1,12 +1,13 @@
 # Unfolding for actual unequal-rank cuspidal pairs
 
 `Langlands.Global.RankinSelbergGlobal.UnequalUnfoldingStatement` is
-the unproved, Prop-valued ordinary and dual unfolding assertion from
+the Prop-valued ordinary and dual unfolding assertion from
 Cogdell, *Analytic theory of L-functions for GL_n* (2004), §2.2,
 printed pp.205–207 (PDF pp.208–210), source
 `cogdell-2004-analytic-theory-gln`. The ordinary unfolding starts on
 p.205 and ends on p.206; the dual unfolding and its rectangular
-integral appear on p.207.
+integral appear on p.207. The statement is proved as
+`unequalUnfoldingStatement_proof` in `UnequalUnfoldingProof`.
 
 ## Objects and uniformity
 
@@ -84,5 +85,5 @@ are the concrete definitions of the two imported definition
 modules. Every convergence claim and identity is in the conclusion.
 The only additional premise is the stipulated additive-character
 condition; no binder supplies analytic estimates, continuations,
-unfolding identities, or integral values. This unit states no
+unfolding identities, or integral values. This module states no
 equal-rank result, Euler factorization, or proof of unfolding.

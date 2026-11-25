@@ -1,7 +1,5 @@
 # Ideal zero loci and bounded quotient projections
 
-Author: Worker 36.
-
 For a normed commutative ring A, `BanachSpectrum.zeroLocus I` is the set of
 actual bounded multiplicative seminorms whose kernels contain the ideal I.
 No closedness assumption on I is needed for this set. For a closed ideal I,

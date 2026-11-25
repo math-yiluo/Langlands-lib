@@ -1,7 +1,5 @@
 # Statement: the automorphism group of a pinned split reductive field group
 
-Author: Worker 75.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.PinnedAutomorphismGroupStatement.{u}`. The Lean file only
 defines the proposition. It contains no proof of it and adds no other declarations
@@ -147,8 +145,9 @@ non-split groups, where the extension need not split (Conrad, Example 7.1.12).
 
 ## Role in the Library
 
-This is a statement for the program of reductive group schemes over fields. A
-separate proof task will prove it. The intended route follows Conrad pp.242–243:
+This is a statement for the program of reductive group schemes over fields. The
+Library proves it as `pinnedAutomorphismGroup` in `PinnedAutomorphismGroupProof`.
+The intended route follows Conrad pp.242–243:
 conjugacy of split maximal tori and Borel subgroups containing them
 (Proposition 6.2.11(2)), simple transitivity of `(T/Z_G)(k)` on pinnings, and the
 Isomorphism Theorem with pinnings (Theorem 6.1.17; Library

@@ -1,6 +1,6 @@
 # Proof of the actual standard-family comparison inside a Levi
 
-Author: Worker 189. This is an internal proof of `Langlands.GroupScheme.StandardLeviStandardFamiliesStatement`, supporting task `03a0d235-af42-49a9-bee7-7d971c0dcc4a`.
+This is an internal proof of `Langlands.GroupScheme.StandardLeviStandardFamiliesStatement`, supporting the rational-point Howe implication.
 
 The helper `relativeRoots_centralizer_factor` treats a represented dynamic cocharacter centralizer and a torus factor through it. Its actual relative roots are exactly the ambient relative roots whose integral pairing with the centralizing cocharacter is zero. The forward inclusion uses `relativeRoots_subset_of_factor` and `relativeRoot_pairing_eq_zero_of_le_dynamicCentralizer`. For the reverse inclusion, `DynamicLieStatement` places every vector of an ambient zero-pairing weight space in the centralizer's actual dual-number points. The represented-subgroup tangent-range lemma then lifts the vector. Functoriality of weight spaces shows that its lift has the same torus weight, so the differential maps that weight space onto the ambient one. Thus a nonzero ambient weight space cannot vanish in the centralizer.
 
@@ -10,4 +10,4 @@ To identify simple roots, a positive root of the Levi which decomposes into two 
 
 For each `K ⊆ J`, an ambient standard cocharacter for `K` is standard for the Levi as well, by that simple-root equality. Maximality of the torus factor is the published `isMaximalSplitTorus_standardLeviTorusFactor`. Applying `StandardCocharacterStatement` to both reductive groups identifies their standard functors with the dynamic functors of the same cocharacter. The dynamic closed-subgroup comparison gives the three inverse-image equalities on all test schemes.
 
-All hypotheses of the statement are retained. This proof does not prove either global structural antecedent or connected reductivity of the represented Levi, and it does not yet transport cuspidality or prove the rational-point Howe theorem. Its provenance is entirely the named Library constructions and lemmas, rather than a new translation of an external source.
+All hypotheses of the statement are retained. This proof does not prove either global structural antecedent or connected reductivity of the represented Levi, and it does not transport cuspidality or prove the rational-point Howe theorem. Its provenance is entirely the named Library constructions and lemmas, rather than a new translation of an external source.

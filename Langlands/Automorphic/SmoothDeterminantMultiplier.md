@@ -1,7 +1,5 @@
 # Finite-order determinant multiplication on actual smooth adelic functions
 
-Author: Worker 2.
-
 This internal construction restricts the actual automorphism from
 `Langlands.Automorphic.DeterminantMultiplier` to the published smooth spaces
 from `Langlands.Automorphic.Smooth`. It uses the proved local constancy of

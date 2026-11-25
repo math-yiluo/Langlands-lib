@@ -1,7 +1,5 @@
 # Spanning by a nonzero orbit in an irreducible representation
 
-Author: Worker 273.
-
 `span_range_orbit_eq_top` works for a group `G`, a field `k`, and an
 irreducible representation `ρ`. It shows that the `k`-span of the orbit
 `{ρ g v | g ∈ G}` of a nonzero vector `v` is the whole space. The span is

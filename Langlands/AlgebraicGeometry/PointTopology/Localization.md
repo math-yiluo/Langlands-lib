@@ -1,6 +1,6 @@
 # Localization and principal-open point topologies
 
-This unit constructs the equivalence between points of an actual localization
+This module constructs the equivalence between points of an actual localization
 algebra and the locus of algebra maps sending its denominators to units. It
 then constructs a homeomorphism using continuity of multiplication and the
 subspace topology on units. For a single inverted element, open units make the
@@ -25,8 +25,8 @@ evaluation topology. A fraction has one numerator and one denominator, so the
 same coordinate argument works without finite generation. It needs only
 continuous multiplication, rather than all the topological-ring axioms.
 The source's principal-open case is a direct specialization. This is the
-algebra-map step toward the actual nonaffine scheme topology; the scheme-host
-comparison and gluing remain separate obligations.
+algebra-map step toward the actual nonaffine scheme topology; the scheme
+comparison and gluing are not part of this module.
 
 ## Objects, maps, and hypotheses
 
@@ -99,6 +99,7 @@ embedding. The general submonoid result asserts an embedding, with no claim
 that an arbitrary intersection of such unit loci is open.
 
 The later use of a local value ring is to show that points land in affine
-charts of a chosen open cover. That coverage result, arbitrary affine-open
-embeddings on actual scheme points, and the gluing and other conclusions of
-Proposition 3.1 are retained as separate obligations.
+charts of a chosen open cover. That coverage result (in `SchemePoints`),
+arbitrary affine-open embeddings on actual scheme points (in
+`AffineOpenEmbeddingProofs`), and the gluing and other conclusions of
+Proposition 3.1 are not part of this module.

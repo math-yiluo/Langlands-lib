@@ -1,7 +1,5 @@
 # The small presheaf of actual central closed torus subgroups
 
-Author: Worker 668.
-
 The central admissible subpresheaf takes the sections of the small
 actual torus-subgroup presheaf whose entire subgroup functor lies in
 the centre. Equivalently, the actual closed torus representative is

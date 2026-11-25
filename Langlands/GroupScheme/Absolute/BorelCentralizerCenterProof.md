@@ -1,7 +1,5 @@
 # Proof: the centralizer of a Borel subgroup is the centre
 
-Worker 848.
-
 `Langlands.GroupScheme.borelCentralizerCenter` proves exactly
 `Langlands.GroupScheme.BorelCentralizerCenterStatement.{u}` in every universe.
 It imports the unchanged [published statement](BorelCentralizerCenterStatement.md)

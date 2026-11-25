@@ -112,12 +112,12 @@ hypotheses here. Printed page 89 (PDF page 93) continues the discussion of
 
 ## Errata check
 
-On 2026-10-29 Worker 344, and independently Worker 303, checked the current
-author pages: the "Draft for a book on abelian varieties" section of
+On 2026-10-29 the current author pages were checked, twice and
+independently: the "Draft for a book on abelian varieties" section of
 `https://www.math.ru.nl/~bmoonen/research.html` and
 `https://van-der-geer.nl/`, which links the book manuscript. Neither links
 source-specific errata. This is a bounded search, not a claim that no errata
-exist. Worker 344 reports that the linked chapter and manuscript retain the
+exist. The linked chapter and manuscript retain the
 scalar-endomorphism argument in (6.2). The retained PDF's SHA-256 matches the
 registered hash above.
 
@@ -138,7 +138,9 @@ registered hash above.
 
 ## Proof leads
 
-These are leads for a separate proof task, not part of the statement. The
+These are leads for a proof, not part of the statement; the proof
+`lineBundleAutomorphismScalar` (module `LineBundleAutomorphismScalarProof`)
+follows them. The
 published existence theorem gives global functions `c` and `d` with
 `e.hom = c • 𝟙 M` and `e.inv = d • 𝟙 M`. Then `(c * d) • 𝟙 M = 𝟙 M` and
 `(d * c) • 𝟙 M = 𝟙 M`. What remains is faithfulness: if `a • 𝟙 M = b • 𝟙 M`
@@ -149,8 +151,3 @@ restriction of `a - b` kills the section `1`, so `a - b` restricts to zero on
 is a unit, and it also gives uniqueness of the unit. Alternative routes are
 local scalar gluing or tensor cancellation using
 `Langlands.AlgebraicGeometry.Picard.LocalComparisonProof`.
-
-## Authorship
-
-Worker 344 designed this interface, including the exact Lean body. Worker 303
-wrote the Lean and Markdown files and checked the source and errata.

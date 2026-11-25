@@ -1,9 +1,5 @@
 # Steps (1) and (2) of Zelevinsky's Proposition 4.6 for segment socles
 
-Authors: Worker 999 and Worker 219 (planning draft), for task
-`7ff2a1e9-89dc-439e-a861-a567b3db92bf` (published by Worker 219 as a
-prerequisite of the exact proof task `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`).
-
 This module contains two Prop-valued definitions and no theorems:
 
 - `Langlands.Classification.JuxtaposedSegmentSocleReverseProductStructure.{uF,uV} F T`,
@@ -13,12 +9,15 @@ This module contains two Prop-valued definitions and no theorems:
   the nonzero intertwining map `⟨Δ⟩ × ⟨Δ'⟩ → ⟨Δ ∪ Δ'⟩ × ⟨Δ ∩ Δ'⟩` for every
   precedence pair (step (2) of its proof).
 
-**Both propositions are unproved by this contribution.** They are definitions
-of statements. They are steps of the exact proof task
-`a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9` of the published
+**Both propositions are unproved in this module.** They are definitions
+of statements. They are steps of the proof of the published
 `Langlands.Classification.LinkedSegmentSocleReverseProductStructure` (the full
 Proposition 4.6) in `Langlands.Representation.Classification.SegmentSocleCriterionHalvesStatement`.
-Their proofs are separate proof tasks.
+Their proofs are in separate modules:
+`juxtaposedSegmentSocleReverseProductStructure` in
+`Classification.JuxtaposedSegmentSocleReverseProductStructureProof` and
+`linkedSegmentSocleReverseProductQuotientHom` in
+`Classification.LinkedSegmentSocleReverseProductQuotientHomProof`.
 
 ## Common parameters
 
@@ -183,25 +182,21 @@ and `ω₀`, `π/ω₀` are an actual two-step filtration with simple graded pie
 ## Intended use
 
 This module does not state or prove the assembly. The proof of
-`LinkedSegmentSocleReverseProductStructure` (task
-`a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`) is planned as a strong induction on
-`n`. In the juxtaposed case it applies statement 1. Otherwise statement 2,
+`LinkedSegmentSocleReverseProductStructure` (through the conditional theorem
+of `Classification.LinkedSegmentSocleReverseProductConditional`) is a strong
+induction on `n`. In the juxtaposed case it applies statement 1. Otherwise statement 2,
 with the irreducibility of `ω` (`UnlinkedSegmentSocleProductIrreducible`),
 gives a surjection `π ↠ ω`, and the derivative comparison of step (3)
 finishes.
 
 ## Development checks
 
-These private `lean_check` diagnostics in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` are development evidence, not
-acceptance:
+These `lean_check` diagnostics, run in the Lean environment in which the
+module was written, are development evidence:
 
-- `8a6defe0-fdc7-4fa1-bf41-de572d87a8c1` and
-  `558b5964-c4ed-4ff4-8233-56bf1e440456`: this module compiles with no errors
-  or warnings, and both definitions return `Prop` with level parameters
-  `uF uV`.
-- `d6f2d43c-0f22-46e3-8eb8-02415bda3a4c`: a private check module, not part of
-  this contribution, proves statement 1 from
+- this module compiles with no errors or warnings, and both definitions
+  return `Prop` with level parameters `uF uV`;
+- a private check module, not part of the Library, proves statement 1 from
   `LinkedSegmentSocleReverseProductStructure` by
   `fun n d h₂ hs hp _ => h n d h₂ hs hp`. Conversely, it derives the juxtaposed
   case of the full proposition from statement 1 by
@@ -211,14 +206,13 @@ acceptance:
   the type of `hfull n d h₂ hs hp`. Finally, it checks that both statements
   elaborate at `.{uF, max uF uV}`.
 
-## Proof successors and independence
+## Proofs and independence
 
-After acceptance and publication, two exact `lean.proof@1` tasks will prove
-statement 1 and then statement 2. The proof of statement 2 may import the
-published proof of statement 1.
+Statement 1 and statement 2 are proved in the two modules named above. The
+proof of statement 2 imports the published proof of statement 1.
 
 - Statement 1. Source route: Ze80 4.6 step (1), via §2 (2.2–2.10), 1.6 and
-  3.1. An independently proved replacement is also acceptable.
+  3.1.
 - Statement 2. Source route: Ze80 4.6 step (2). It uses Frobenius
   reciprocity (1.1), the normalized geometric lemma
   `Langlands.Geometric.PadicGeometricLemmaTheorem`, the socle Jacquet
@@ -232,45 +226,31 @@ Neither step needs derivatives.
 These statements are upstream inputs of the proof of
 `LinkedSegmentSocleReverseProductStructure`. Their proofs must preserve
 direct and transitive independence from every item below. This covers their
-conclusions, proof successors and transitive proof dependencies:
+conclusions, their proofs and transitive proof dependencies:
 
-- `LinkedSegmentSocleReverseProductStructure` and task
-  `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`;
-- `LinkedSegmentSoclePairReducible` and task
-  `8fa9f68b-fa1b-431a-97f6-5b163964d1fc`;
-- `SegmentSocleProductIrreducibility` and task
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`;
-- adjacent socle commutation `AdjacentUnlinkedSegmentSocleSwap`, task
-  `e3634665-571b-4852-9f4c-bab8a1053434` and its proof successor
-  `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`;
-- `TwoSegmentSocleCommutation`, tasks
-  `426911b4-6620-413f-8065-04b25287f3bd` and
-  `66e3b87c-647e-41e4-af18-df4d436765f0`;
-- `LinkedSegmentSocleGluing`, tasks `c84cd52c-3ff3-4024-be50-8b84dd480888`
-  and `6780b79c-9526-46aa-b8b4-00377d68b1ea`;
-- `OrderedMultisegmentSocleExistence` and task
-  `23189526-80b0-4828-a6d4-7ebec2cbeef5`;
-- socle exhaustion, task `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`;
-- segment analytic classification, task
-  `aca8805b-054f-4d56-8045-12db7f623404`;
-- special-head multisegment exhaustion, task
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-- ordered special-head existence, task `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-- quotient coverage, task `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-- tempered block uniqueness, task `52e97845-36bb-457d-b76f-70753334b88c`;
-- `SquareIntegrableLanglandsClassification` and task
-  `1cb45da2-7007-4351-a694-594fb148b8d1`;
-- square-integrable exhaustion, task `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-- regular exhaustion, task `bf433f0a-921a-428c-b0c0-6475438125ac`;
-- the special-head criterion `SegmentHeadProductIrreducibility`, task
-  `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`.
+- `LinkedSegmentSocleReverseProductStructure`;
+- `LinkedSegmentSoclePairReducible`;
+- `SegmentSocleProductIrreducibility`;
+- adjacent socle commutation `AdjacentUnlinkedSegmentSocleSwap`;
+- `TwoSegmentSocleCommutation`;
+- `LinkedSegmentSocleGluing`;
+- `OrderedMultisegmentSocleExistence`;
+- socle exhaustion, `MultisegmentSocleExhaustion`;
+- segment analytic classification,
+  `SegmentEssentialSquareIntegrableClassification`;
+- special-head multisegment exhaustion, `MultisegmentHeadExhaustion`;
+- ordered special-head existence, `OrderedMultisegmentHeadExistence`;
+- quotient coverage, `OrderedMultisegmentQuotientExhaustion`;
+- tempered block uniqueness, `TemperedBlockUniqueness`;
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion, `SquareIntegrableLanglandsExhaustion`;
+- regular exhaustion, `GLRegularLanglandsExhaustion`;
+- the special-head criterion `SegmentHeadProductIrreducibility`.
 
 The proofs may import the published proofs of
-`UnlinkedSegmentSocleProductIrreducible` (task
-`23e98d90-6055-4e35-91a9-b0f5d8a84961`) and of
-`TwoFactorProductConstituentCommutativity` (task
-`1b2016bd-4fd3-4ec6-a1b4-ec0788046ed9`). Shared lower inputs, such as the
+`UnlinkedSegmentSocleProductIrreducible` and of
+`TwoFactorProductConstituentCommutativity`. Shared lower inputs, such as the
 geometric lemma, Jacquet formulas, cuspidal support and finite length, may be
 reused only after their direct and transitive independence has been checked.
-Proposition definitions, citations, conditional assemblies and pending tasks
-are not proof evidence.
+Proposition definitions, citations and conditional assemblies are not proof
+evidence.

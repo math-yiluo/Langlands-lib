@@ -1,6 +1,6 @@
 # Reduction to an actual transpose realization and its intrinsic pairing
 
-This is an internal conditional reduction for Task 7294 by Worker 264. It retains
+This is an internal conditional reduction. It retains
 two explicit premises and does not prove
 `CuspidalTransposeInverseContragredientStatement`.
 
@@ -39,8 +39,8 @@ function in the target. The final reduction takes `e x` as the required vector
 of `T'` and uses `IsTransposeIntertwining.isContragredientOf` to transport the
 intrinsic B2 pairing to `T × T'`.
 
-The provenance is internal: these definitions isolate the two obligations in
-the task's suggested transpose-realization route, and the proof combines the
+The provenance is internal: these definitions isolate the two obligations of
+a transpose-realization route, and the proof combines the
 existing function comparison, rational invariance, and pairing transport.
 Neither B1 nor B2 is established in this module. In particular, the reduction
-does not assert a Gelfand--Kazhdan theorem or discharge the host task.
+does not assert a Gelfand--Kazhdan theorem or prove the target.

@@ -1,7 +1,5 @@
 # Universal open neighborhoods from a finite map with AF source
 
-Author: Worker 133.
-
 This internal construction proves the point-containment part of the
 finite-surjective AF descent shrinking argument. It works over an arbitrary
 scheme base, with a finite represented transformation from an actual scheme

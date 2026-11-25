@@ -30,6 +30,7 @@ the two conventions. Both rationalization equations come from integral Tate
 reflection on the specified realizing scheme.
 
 The provenance is an internal composition of these imported, proved geometric
-and Tate results. This unit constructs an integral automorphism; it does not yet
+and Tate results. This module constructs an integral automorphism; it does not
 prove that g preserves a polarization, that g has finite order, or that the
-original self-isogeny is the identity at sufficiently small level.
+original self-isogeny is the identity at sufficiently small level (the last is
+proved as `cmSmallLevelRigidity` in `HarrisTaylorCMSmallLevelRigidityProof`).

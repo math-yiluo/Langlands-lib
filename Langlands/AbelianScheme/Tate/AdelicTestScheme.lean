@@ -20,7 +20,7 @@ theorem rationalTestRestrict_endAction (a : T' ⟶ T) (f : Rationalization.End A
     (x : Rational A T P) :
     rationalTestRestrict A P a (rationalEndAction A T P f x) =
       rationalEndAction A T' P f (rationalTestRestrict A P a x) :=
-  rationalTestRestrict_homMap P a f x
+  rationalTestRestrict_homMap P a f.asHom x
 
 variable {D : Type*} [Ring D] [Algebra ℚ D] (i : D →ₐ[ℚ] Rationalization.End A)
   (h : Global.RationalProfiniteIntegerAdeleComparison)

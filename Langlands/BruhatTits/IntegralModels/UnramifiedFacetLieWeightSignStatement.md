@@ -161,7 +161,7 @@ fppf quotient and `Q.quotient` is connected reductive. So `Q.quotient` is
 
 ## Intended consumer
 
-Task 6320 (`0d9f960a-6d9d-4ba2-bc9b-3c0a847189c2`) proves the published
+`unramifiedFacetCommonTorus` (module `UnramifiedFacetCommonTorusProof`) proves the published
 `UnramifiedFacetCommonTorusStatement`. Its sign part, for models over `𝒪[F]`
 characterized by their points after base change to `O`, is deduced from this
 statement as in KP §9.5: base change `D`, `D′`, `φ` and `Q` to `O` and to the

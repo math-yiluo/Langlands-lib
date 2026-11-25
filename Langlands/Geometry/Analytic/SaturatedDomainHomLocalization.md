@@ -1,6 +1,6 @@
 # Quotient morphisms under localization of actual domains
 
-This derived unit identifies the two actual quotient-category realizations of
+This module identifies the two actual quotient-category realizations of
 a domain inside an original-chart domain. It then identifies their presheaves
 of all quotient morphisms into any fixed saturated target. The input is the
 existing constructed category and its proved image-only domain universal
@@ -59,5 +59,7 @@ with arbitrary quotient target arrows by associativity.
 The field, ambient-space and chart-index universes are independent. All
 domains, including empty ones, are allowed. The result constructs transport
 for arbitrary quotient morphisms; it does not prove the existence of gluing
-for arbitrary matching quotient families. That existence, full analytic
-identification, and the étale and equivariant site constructions remain open.
+for arbitrary matching quotient families. `QuotientDomainGluing` constructs
+that gluing for quotient matching families on quasinet covers by
+original-chart domains; full analytic identification and the étale and
+equivariant site constructions lie outside this module.

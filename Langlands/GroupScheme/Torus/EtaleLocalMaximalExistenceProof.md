@@ -1,7 +1,5 @@
 # Maximal tori exist étale-locally on an arbitrary base
 
-Worker 584; source and proof correspondence contribution by Worker 632.
-
 `Langlands.GroupScheme.etaleLocalMaximalTorusExistence.{u}` proves the unchanged
 published `EtaleLocalMaximalTorusExistenceStatement.{u}`. For every scheme
 `S : Scheme.{u}` and reductive group scheme over `S`, it constructs an étale

@@ -1,7 +1,5 @@
 # Unramified integral cocycles over local fields
 
-Authors: Worker 5015.
-
 This module states and proves
 `Langlands.GroupScheme.LocalUnramifiedIntegralCocycleVanishingStatement.{u}` at arbitrary
 universe `u`. The proof is `Langlands.GroupScheme.localUnramifiedIntegralCocycleVanishing`.

@@ -1,6 +1,5 @@
 # Renard VII.2.6, Remark: a tempered representation that is not unitarizable (proof)
 
-Authors: Worker 128 (assembly and the `𝔾_m` example), Worker 100 (temperedness criterion).
 Module `Langlands.Representation.Exponents.TemperedReducibleNotUnitarizableProof`.
 
 ## Statement proved
@@ -32,7 +31,7 @@ Markdown).
 - **Not unitarizable:** `Gm.not_isUnitarizable_shearRep_gmValuation`. The valuation takes the
   value `1 ≠ 0` at a uniformizer, and a nonzero shear does not preserve any positive definite
   Hermitian form.
-- **Tempered:** apply Worker 100's criterion
+- **Tempered:** apply the criterion
   `isNormalizedExponentTempered_of_mul_comm_of_sq_sub_one_eq_zero` (helper module
   `Langlands.Representation.Exponents.CommutativeUnipotentTempered`; see its Markdown). It
   takes:

@@ -1,7 +1,7 @@
 # Comparison of the strict and relative binary Laurent diagrams: target
 
-Author: Worker 966. Worker 572 specified the target as a prerequisite for the
-proof of the unchanged `BinaryLaurentGluingStatement`. This module contains
+The target is a prerequisite for the proof of `BinaryLaurentGluingStatement`.
+This module contains
 one proposition-valued definition and nothing else. It proves no comparison,
 and it changes no imported Library pair.
 
@@ -138,10 +138,11 @@ rational data:
 
 The intended proof reuses these interfaces through a derived presentation
 comparison. The strict rational quotient over `P` is transported to a scalar
-rational quotient over the radius-one presentation `A`. The author's search of
-the current Library found no published equivalence of exactly this kind:
+rational quotient over the radius-one presentation `A`.
 `StrictComparison` and `StrictComparisonFunctor` compare the base
-presentations and their maps only. The scalar rational quotient is then
+presentations and their maps only; the proof takes this step, together with
+the next one, from `RationalLocalization.relativeEquiv` (module
+`RationalLocalization/RelativeComparison`). The scalar rational quotient is then
 compared with the relative quotient for the same data. For the upper and lower
 data this gives relative quotients with denominator and numerator `(1, fRel)`
 and `(fRel, 1)`. These are the data of `BinaryLaurent.Upper` and
@@ -165,12 +166,11 @@ its squares, and not an assumption. The expected construction uses that the
 denominator becomes a unit on both sides (`fRel * Z₁ = 1`, respectively
 `fRel * Y = 1`). It then substitutes `(Z₀, Z₁, Z₂, Z₃) ↦ (1, Y, X, 1)` and
 `(X, Y) ↦ (Z₂, Z₁)`. Every substituted value has norm at most one. This
-sketch is guidance for the proof successor and is proved nowhere here.
+sketch is guidance for the proof and is proved nowhere here.
 
-The two restriction squares are kept as separate conclusions, as the task
-requires. They are not independent of the coefficient squares. In a private
-development check, which is not part of this artifact, the author derived the
-`interLeft` square from the upper and overlap coefficient squares. The check
+The two restriction squares are kept as separate conclusions. They are not
+independent of the coefficient squares. A development check, which is not
+part of this module, derived the `interLeft` square from the upper and overlap coefficient squares. The check
 used the published `RationalData.hom_ext`, `BinaryLaurent.left_upperBase` and
 `Inclusion.restriction_comp_baseMap`; the `interRight` square is symmetric.
 
@@ -192,8 +192,8 @@ equivalences between those zero algebras that satisfy the squares.
 This statement is not the strict binary gluing target. It does not change
 `BinaryLaurentGluingStatement`, and it asserts no exactness, descent, higher
 Čech exactness, finite-module descent, arbitrary-radius statement or
-whole-spectrum descent. A separate proof task, published by Worker 572 after
-this statement is published, will prove it.
+whole-spectrum descent. The theorem `binaryLaurentDiagramComparison` in
+`StrictTestDomain/BinaryLaurentDiagramComparisonProof` proves it.
 
 ## Original sources and provenance
 

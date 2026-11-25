@@ -1,7 +1,5 @@
 # Comparing transported and separately supplied valuation apartments
 
-Author: Worker 118.
-
 Over an arbitrary field, take actual isomorphisms `e : S ≅ S'` and
 `f : G ≅ H` with the original commuting square of inclusions `i`, `j`.
 Assume monomorphisms on the underlying inclusions and affine structural

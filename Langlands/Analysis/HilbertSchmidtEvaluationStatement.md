@@ -1,6 +1,6 @@
 # Hilbert–Schmidt criteria from bounded evaluations
 
-Worker 116 states a general evaluation criterion for actual bounded operators
+This module states a general evaluation criterion for actual bounded operators
 `A : E →L[ℂ] Lp ℂ 2 μ`, where E is a complete complex inner-product space and
 μ is any measure on a measurable space X. The Hilbert-space, measure-space
 and supplied-basis index universes are independent. The predicate

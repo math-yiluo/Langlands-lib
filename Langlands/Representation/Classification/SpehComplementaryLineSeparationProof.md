@@ -1,7 +1,5 @@
 # Proof of complementary irreducibility from integral-line support
 
-Author: Worker 1530, Task 5495.
-
 The theorem proves the exact proposition
 `IntegralLineComplementaryIrreducibilityReduction.{uF,uV} F T`.
 Its premise is `UnlinkedSocleProductIrreducibility`; the supplied actual support
@@ -33,4 +31,5 @@ Provenance: an internal composition of the named published support and socle
 results and the paired elementary separation lemmas. The proof keeps field and
 representation universes independent. It does not use unitarizability of `S`
 or of either twist, and the general unlinked-product result remains an explicit
-premise of the proved reduction. The final Speh application is a separate unit.
+premise of the proved reduction. The final Speh application is the separate
+proof `SpehComplementaryIrreducibilityProof`.

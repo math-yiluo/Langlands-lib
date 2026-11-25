@@ -13,7 +13,7 @@ SchemeSubalgebraDescentStatement.{u} →
 ```
 
 in module `Langlands.AbelianScheme.SubalgebraDescentReductionStatement`, with
-`open Langlands.AlgebraicGeometry.NoetherianApproximation`. This unit only defines the
+`open Langlands.AlgebraicGeometry.NoetherianApproximation`. This module only defines the
 proposition. It proves none of the seven named propositions. It says only that the last
 follows from the first six.
 
@@ -44,8 +44,9 @@ universe `u`.
 
 ## Provenance
 
-Internal. The implication is a decomposition step of proof task
-`a825ba6f-ac5b-43b7-8794-52b2039388f7` and adds no mathematics of its own. It is the assembly
+Internal. The implication is a decomposition step of the proof of
+`Langlands.AbelianScheme.SubalgebraDescentStatement` (`subalgebraDescent`, module
+`Langlands.AbelianScheme.SubalgebraDescentProof`) and adds no mathematics of its own. It is the assembly
 described in the conclusion's Markdown. Descend the underlying scheme over the prime subring,
 then the group law. Then descend separatedness, properness, smoothness and geometric
 connectedness in turn, base-changing the descended group scheme at each step. Finitely generated

@@ -48,5 +48,7 @@ closedness of an unrelated map with the same source and target.
 
 All constructions and proofs are universe-polymorphic and valid over arbitrary
 base schemes. The closedness of the centralizer restriction is an explicit
-premise, not a result of this unit. The reductive host theorem still requires
+premise, not a result of this module. The reductive monomorphism
+closed-immersion theorem, `ReductiveMonomorphismClosedImmersionStatement`
+(which the Library proves only under further hypotheses), still requires
 that premise and the global arguments.

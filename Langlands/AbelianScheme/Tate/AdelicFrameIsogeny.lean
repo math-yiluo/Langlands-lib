@@ -27,16 +27,16 @@ variable {S : Scheme.{u}} {A B C : AbelianScheme S}
 
 /-- Postcompose actual Tate frames with an intertwining rational isogeny. -/
 def adelicFrameIsogeny (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     AdelicFrame A h iA V s ≃ AdelicFrame B h iB V s := by
   letI := finiteAdeleAlgebraModule A (Over.mk s) (fun _ => True) h iA
   letI := finiteAdeleAlgebraModule B (Over.mk s) (fun _ => True) h iB
   exact LinearFrame.postcomp (finiteAdeleAlgebraIso (Over.mk s) (fun _ => True) h iA iB e he)
 
 @[simp] theorem adelicFrameIsogeny_apply (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (eta : AdelicFrame A h iA V s) (x : V) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (eta : AdelicFrame A h iA V s) (x : V) :
     adelicFrameIsogeny h iA iB V s e he eta x =
       rationalHomMap (Over.mk s) (fun _ => True) e.hom (eta x) := rfl
 
@@ -49,10 +49,10 @@ def adelicFrameIsogeny (e : Rationalization.of A ≅ Rationalization.of B)
 theorem adelicFrameIsogeny_trans (iC : D →ₐ[ℚ] Rationalization.End C)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d)) (eta : AdelicFrame A h iA V s) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom) (eta : AdelicFrame A h iA V s) :
     adelicFrameIsogeny h iA iC V s (e.trans f)
         (rationalIntertwines_comp iA iB iC e.hom f.hom he hf) eta =
       adelicFrameIsogeny h iB iC V s f hf (adelicFrameIsogeny h iA iB V s e he eta) := by
@@ -61,8 +61,8 @@ theorem adelicFrameIsogeny_trans (iC : D →ₐ[ℚ] Rationalization.End C)
   exact LinearMap.congr_fun (rationalHomMap_comp (Over.mk s) (fun _ => True) e.hom f.hom) (eta x)
 
 theorem adelicFrameIsogeny_symm (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     (adelicFrameIsogeny h iA iB V s e he).symm =
       adelicFrameIsogeny h iB iA V s e.symm (rationalIntertwines_inverse iA iB e he) := by
   apply Equiv.ext
@@ -80,8 +80,8 @@ variable {G : Type z} [Group G]
 /-- Rational-isogeny transport on fixed right orbits for the same geometric point. -/
 def adelicFrameOrbitIsogeny (U : Subgroup G)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     AdelicFrameOrbit A h iA V s ρ hs htor hu U ≃
       AdelicFrameOrbit B h iB V s ρ hs htor hu U := by
   letI := finiteAdeleAlgebraModule A (Over.mk s) (fun _ => True) h iA
@@ -119,10 +119,10 @@ def adelicFrameOrbitIsogeny (U : Subgroup G)
 theorem adelicFrameOrbitIsogeny_trans (iC : D →ₐ[ℚ] Rationalization.End C) (U : Subgroup G)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom) :
     adelicFrameOrbitIsogeny h iA iC V s ρ hs htor hu U (e.trans f)
         (rationalIntertwines_comp iA iB iC e.hom f.hom he hf) =
       (adelicFrameOrbitIsogeny h iA iB V s ρ hs htor hu U e he).trans
@@ -149,8 +149,8 @@ theorem adelicFrameOrbitIsogeny_trans (iC : D →ₐ[ℚ] Rationalization.End C)
 
 theorem adelicFrameOrbitIsogeny_symm (U : Subgroup G)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) :
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) :
     (adelicFrameOrbitIsogeny h iA iB V s ρ hs htor hu U e he).symm =
       adelicFrameOrbitIsogeny h iB iA V s ρ hs htor hu U e.symm
         (rationalIntertwines_inverse iA iB e he) := by
@@ -174,8 +174,8 @@ theorem adelicFrameOrbitIsogeny_symm (U : Subgroup G)
 
 theorem adelicFrameOrbitIsogeny_translate {U U' : Subgroup G}
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (g : G)
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (g : G)
     (hg : ∀ u ∈ U, g⁻¹ * u * g ∈ U')
     (x : AdelicFrameOrbit A h iA V s ρ hs htor hu U) :
     adelicFrameOrbitIsogeny h iA iB V s ρ hs htor hu U' e he
@@ -200,8 +200,8 @@ theorem adelicFrameOrbitIsogeny_translate {U U' : Subgroup G}
 
 theorem adelicFrameOrbitIsogeny_forget {U U' : Subgroup G}
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (hU : U ≤ U')
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (hU : U ≤ U')
     (x : AdelicFrameOrbit A h iA V s ρ hs htor hu U) :
     adelicFrameOrbitIsogeny h iA iB V s ρ hs htor hu U' e he
         (adelicFrameOrbitForget A h iA V ρ htor hu hU x) =
@@ -213,8 +213,8 @@ variable {t : Spec (.of Ω') ⟶ S} {ht : ∀ Y : Cover S, Finite (Fiber t Y)}
 
 /-- Rational-isogeny transport commutes with geometric path transport on frames. -/
 theorem adelicFrameIsogeny_transport (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (p : fiberFunctor s hs ≅ fiberFunctor t ht) (eta : AdelicFrame A h iA V s) :
     adelicFrameTransport B h iB V htor hu p (adelicFrameIsogeny h iA iB V s e he eta) =
       adelicFrameIsogeny h iA iB V t e he (adelicFrameTransport A h iA V htor hu p eta) := by
@@ -225,8 +225,8 @@ theorem adelicFrameIsogeny_transport (e : Rationalization.of A ≅ Rationalizati
 /-- The isogeny/path square on geometrically fixed right-orbit classes. -/
 theorem adelicFrameOrbitIsogeny_transport (U : Subgroup G)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (p : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : AdelicFrameOrbit A h iA V s ρ hs htor hu U) :
     adelicFrameOrbitTransport B h iB V ρ htor hu U p

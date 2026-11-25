@@ -248,7 +248,7 @@ theorem isDiscrete_constantTwisted (hL : L.IsLiftSystem) (M : SmoothRep.{w, uG, 
   obtain ⟨K, hK⟩ := M.isSmooth m
   refine ⟨H ⊓ K, inf_le_left, fun h hh => ?_⟩
   have hhK : (h : G) ∈ K := hh.2
-  change M.representation (Hom.twist (a h).unop)⁻¹ m = m
+  change M.representation (Hom.twist (a h).unop.asHom)⁻¹ m = m
   rw [hL U H a ha h, inv_inv]
   exact (Representation.mem_invariants _ _).mp hK ⟨h, hhK⟩
 

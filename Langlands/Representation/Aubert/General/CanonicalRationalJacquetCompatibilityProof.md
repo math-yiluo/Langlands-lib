@@ -20,9 +20,6 @@ finite-length binders `hiFl : DynamicInductionFiniteLengthStatement` and
 `hrFl : DynamicJacquetFiniteLengthStatement`. The proof keeps them as binders
 of the proposition. It does not discharge them and adds no other hypothesis.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (vi)). Submitted by
-Worker 444 under Task 6834 (`4d40d605-58ba-419c-90a8-4d86db07c98a`).
-
 ## Proof
 
 The proof is a single term:
@@ -33,12 +30,12 @@ canonicalRationalJacquetCompatibility_of_rational.{u, v}
 ```
 
 1. `rationalJacquetCompatibility : RationalJacquetCompatibilityStatement.{u, v}`
-   (module `RationalJacquetCompatibilityProof`, Worker 3977) is the published
+   (module `RationalJacquetCompatibilityProof`) is the published
    proof of the existing rational-point target. That target quantifies every
    Coxeter system and all structural premises.
 2. `canonicalRationalJacquetCompatibility_of_rational`
    (module `CanonicalRationalTargetBridgesProof`, the published proof of
-   Task 6316, `4320e0f3-a054-4148-bc31-69a2529b0d13`) proves
+   `CanonicalRationalTargetBridgesStatement`) proves
    `RationalJacquetCompatibilityStatement.{u, v} →
    CanonicalRationalJacquetCompatibilityStatement.{u, v}`. It specializes the
    rational target to the canonical topology, torus, cocharacter and relative
@@ -55,7 +52,6 @@ All modules named are in `Langlands/Representation/Aubert/General/`.
 ## Dependency status
 
 Every module this proof imports is in the Library (checked at Library commit
-`2016a0d994180c702214a75514a08546aa930f07`). Against that Library, in Lean
-environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`, the module compiles with
+`2016a0d994180c702214a75514a08546aa930f07`). Against that Library, the module compiles with
 zero errors and zero warnings. The theorem has level parameters `u`, `v` and
 uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.

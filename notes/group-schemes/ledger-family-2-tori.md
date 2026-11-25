@@ -1,8 +1,7 @@
 # Group-scheme ledger, family 2: tori and groups of multiplicative type
 
-Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
-ledger for family 2 of that program's contract. Family 2 covers:
+This note, dated 10 November 2026, is the source-to-declaration
+ledger for family 2 of the algebraic and reductive group-scheme program. Family 2 covers:
 
 - finite-rank split tori, their character and cocharacter lattices and the perfect pairing;
 - diagonalizable groups and groups of multiplicative type, including finite non-smooth ones;
@@ -11,15 +10,13 @@ ledger for family 2 of that program's contract. Family 2 covers:
 - finite separable Weil restriction of `𝔾_m`, with the real Deligne torus `Res_{ℂ/ℝ} 𝔾_m`;
 - norm-one tori, and the central-torus results that the program needs.
 
-It describes Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0` and environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. All Lean names are in `Langlands.GroupScheme`
+It describes Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`. All Lean names are in `Langlands.GroupScheme`
 unless a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that
 commit, except paths beginning `Shimura/`, which are relative to `Langlands/`. "Field
 group" means a group scheme over `Spec k` for a field `k : Type u`. D4 records
-publications verified on 18 November 2026. The theorem types and paired files
+results checked on 18 November 2026. The theorem types and paired files
 for the D5 and F8 updates were checked at Library commit
-`ecb96e554fed652972a5c0308d69b041f6bc54e4`. The earlier independent coverage
-review is `1b928d65-4b9f-4177-b79c-9774be021f81`, and its published note gives
+`ecb96e554fed652972a5c0308d69b041f6bc54e4`. The coverage note linked here gives
 the proof routes. [14 November coverage note](diagonalizable-galois-coverage-2026-11-14.md)
 
 D6 was checked at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
@@ -32,28 +29,25 @@ F8.
 ## Status codes and evidence
 
 Each row gives the source assertion with its locator, the exact Lean statement and its
-hypotheses, a status, the evidence, and the owner task.
+hypotheses, a status and the evidence.
 
 - **D (definition or internal result).** A published construction, or a published
   theorem that is not a proposition declaration, with the hypotheses listed in the row.
-  The evidence is its module path. No owner task is needed.
+  The evidence is its module path. 
 - **P (published proof).** The cited Library commit contains a theorem whose type is
   exactly the statement. For a statement with parameters, the row lists the hypotheses
   under which the theorem proves it. The evidence is that theorem and its module path. The
-  author also type-checked `example : S := proof` for every P row in a private module.
-  That check passed with no errors or warnings, but it is not public evidence. No further
-  proof work or owner task is needed.
+  row was also type-checked as `example : S := proof`, with no errors or warnings. No further
+  proof work is needed.
 - **C (composite, not published).** No published theorem has the statement as its type.
-  However, a term built only from published theorems has that type: the author type-checked
-  it in the same private module, and its axioms are `propext`, `Classical.choice` and
-  `Quot.sound`. The composite is not an accepted artifact. The row names the owner task,
-  or says that there is none. A projection out of a published conjunction is also listed
+  However, a term built only from published theorems has that type: it was type-checked
+  in the same way, and its axioms are `propext`, `Classical.choice` and
+  `Quot.sound`. The composite is not itself in the Library. A projection out of a published conjunction is also listed
   as C: what is missing is then a named wrapper theorem, not mathematics.
 - **O (open).** No published proof and no composite from published results is known.
 - **G (gap).** No Lean declaration of the source assertion was found.
 
-The labels "accepted" and "published" are used only for artifacts that passed independent
-review.
+The label "published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 - `milne-2017-algebraic-groups`: J. S. Milne, *Algebraic Groups* (2017). PDF page = printed
@@ -71,7 +65,7 @@ Source locators use these registered sources, cited by source id:
 - `borel-tits-1965-groupes-reductifs`: Borel and Tits, *Groupes réductifs*, Publ. Math.
   IHÉS 27 (1965). Journal page numbers are given.
 
-The author re-read every locator below in the original source for this note, on 10 November
+Every locator below was re-read in the original source for this note, on 10 November
 2026, and checked that the cited item is on the cited page.
 
 ## A. Split tori, lattices and the pairing
@@ -328,9 +322,7 @@ assumes the extension connected; here centrality replaces this.
   Hypotheses: an algebraic extension `E/k` and a commutative group scheme `T` over `Spec k`
   with `T_E` split. Conclusion: some finite-dimensional intermediate field `L` has the
   property that every `σ` fixing `L` acts trivially on `X^*(T_E)` and `X_*(T_E)`.
-- Status P: `torusLatticeGaloisContinuity` (`Torus/LatticeGaloisContinuityProof`), published
-  from candidate `faea411e-8f86-46be-ba5a-8be80ea8ce78` of Task 5263
-  (`bfb511f7-800a-4ce4-afc4-cf2e243e9ff6`). Its proof is a new argument (a finite field of
+- Status P: `torusLatticeGaloisContinuity` (`Torus/LatticeGaloisContinuityProof`). Its proof is a new argument (a finite field of
   definition of the splitting isomorphism), not a composite.
 - Continuity for the Weil restrictions of E2 and the norm-one tori of F1 is proved
   separately; see those rows.
@@ -341,18 +333,14 @@ assumes the extension connected; here centrality replaces this.
   `MultiplicativeTypeAbsoluteEquivalenceStatement.{u}` for the contravariant
   functor `MultiplicativeTypeGroup.characterFunctor k` from actual groups of
   multiplicative type over any field `k` to `FGDiscreteGaloisModule.{u,u} k`.
-  Task 7346 (`39eda79f-8035-40ec-88d5-1448b9256c56`) published proof
-  `cb1c6305-cb95-417e-a84a-8f3226a7ce58` at
-  `42c696807fd25d6ea96d001a596d7bba7b4b52b9`.
+  The proof first appeared in the Library at `42c696807fd25d6ea96d001a596d7bba7b4b52b9`.
 - Status P for the short exact sequence clause. `multiplicativeTypeAbsoluteExactness`
   proves `MultiplicativeTypeAbsoluteExactnessStatement.{u}`. For any composable
   pair in the same group category, a closed immersion with its represented fppf
   quotient corresponds to injective, exact and surjective character pullbacks.
   The quotient uses the kernel on every test scheme. Both theorems admit
-  torsion character groups. Task 7761 (`786e06b5-2256-43b7-9bfb-7007258ac237`)
-  published proof `8da8da3c-ab65-4e77-bc97-7a67d6694700` at
-  `bb9e086196d00484fd52204977452d922bf3c660`.
-  [Modules, statement and proof receipts](multiplicative-type-absolute-galois-progress.md)
+  torsion character groups. The proof first appeared in the Library at `bb9e086196d00484fd52204977452d922bf3c660`.
+  [Modules, statements and proofs](multiplicative-type-absolute-galois-progress.md)
 
 **D5. Smoothness and connectedness of diagonalizable groups.** Source: Milne 2017, §12.b, opening paragraph,
 printed p.230 (PDF 246), which fixes a **finitely generated** commutative group `M`, and
@@ -383,12 +371,7 @@ algebraic groups with the fixed characters over the separable closure.
   the commutative finite-type case of Milne's formula.
 - Status P. `galoisInvariantLattices` uses injectivity of scalar extension
   and descends each fixed homomorphism by the affine Galois graph descent
-  theorem, with `𝔾_m` on the target or source side. Task 7959
-  (`7bb1a480-7982-4b50-b08c-204069bb66ff`) published proof
-  `a36c4dfb-7c34-461f-983e-6cb1f929067a` at
-  `2d12bd934a2a0da7808014bfe52c6d67fde3eb62`, with independent review
-  `07b968c9-4fef-4832-b2ce-ac745417c7df` and Lake and exact-target receipt
-  `c5332c0a-6a14-4f31-ab80-b23e60e116a5`.
+  theorem, with `𝔾_m` on the target or source side. The proof first appeared in the Library at `2d12bd934a2a0da7808014bfe52c6d67fde3eb62`, with Lake and exact-target checks.
   [Statement](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesStatement.md),
   [proof](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesProof.md)
 
@@ -505,8 +488,8 @@ of `K/k`.
     are C under the three hypotheses of `normOneGaloisFixedLatticesStatement`, as
     projections of `normOneGaloisFixedLattices k K Ω hsep hnormal hsplit`.
 
-  The author type-checked `WeilGm.embeddingActionTransitive` against its statement and all
-  six projections in the private module. The four fixed-lattice components also follow from
+  `WeilGm.embeddingActionTransitive` was type-checked against its statement and all
+  six projections. The four fixed-lattice components also follow from
   published component theorems in `Torus/WeilRestrictionNormOneFixedProof`, with their own
   hypotheses:
   - `WeilGm.embeddingSumZeroFixed` and `WeilGm.embeddingQuotientFixed`, assuming a nonempty
@@ -516,7 +499,7 @@ of `K/k`.
     result instead.
 
   For the six C components, what is missing is only a named theorem under these
-  hypotheses, not mathematics. No owner task exists or is needed.
+  hypotheses, not mathematics.
 
 **F3. Smoothness of the Galois norm.** Source: Kaletha–Prasad, proof of Lemma 2.5.12,
 printed pp.89–90 (PDF 120–121).
@@ -541,9 +524,7 @@ printed pp.282–284 (PDF 298–300). The statement is derived.
   fields `k`, `K` with `Algebra k K`, and a smooth field group `Q` with affine structure map
   such that every homomorphism from a torus over `k` to `Q` has trivial range. Conclusion:
   the same holds for tori over `K` mapping to `Q_K`.
-- Status P: `noTorusBaseChange` (`Torus/NoTorusBaseChangeProof`), published from candidate
-  `fed3b6b1-222c-4310-88ec-87c3aa172edb` of Task 5243
-  (`054c9e79-c59d-4325-a96b-8c82a40df80b`). Its proof is the composite
+- Status P: `noTorusBaseChange` (`Torus/NoTorusBaseChangeProof`). Its proof is the composite
   `noTorusBaseChangeReduction noTorusUnipotent` (`Torus/NoTorusBaseChangeReduction`,
   `Torus/NoTorusUnipotent`).
 
@@ -560,8 +541,7 @@ Theorem 17.82, printed p.379 (PDF 395) (the central case of its proof).
 - Lean: `CentralMaximalTorusBaseChangeStatement` (`Torus/CentralMaximalBaseChangeStatement`).
   Hypotheses: fields `k`, `K`, a smooth field group `H` with affine structure map, and a
   central maximal torus `j : Z ⟶ H`. Conclusion: `j_K` is a maximal torus of `H_K`.
-- Status P: `centralMaximalTorusBaseChange` (`Torus/CentralMaximalBaseChangeProof`),
-  published from candidate `16548b25-b004-4fd4-a202-fa6891fa2328` of Task 5243. Its proof is
+- Status P: `centralMaximalTorusBaseChange` (`Torus/CentralMaximalBaseChangeProof`). Its proof is
   the composite `centralMaximalTorusBaseChangeReduction normalSubgroupQuotient
   centralMaximalTorusQuotientStatement` applied to the F5 composite
   (`Torus/CentralMaximalBaseChangeReduction`, `NormalSubgroupQuotientProof`,
@@ -594,9 +574,7 @@ printed p.236 (PDF 252).
   `IsSchemeTheoreticCenter z` (a closed subgroup whose subgroup functor is the centre of `G`
   on every test scheme). Conclusion: `IsMultiplicativeType Z`. The centre need not be smooth
   or connected.
-- Status P: `centerMultiplicativeType` (`Reductive/CenterMultiplicativeTypeProof`), published
-  from candidate `574605df-e99d-400a-a0eb-52e7a1114693` of Task 5242
-  (`043f2527-205c-4cfc-b9b2-553de1010d9d`). Its proof is the composite
+- Status P: `centerMultiplicativeType` (`Reductive/CenterMultiplicativeTypeProof`). Its proof is the composite
   `centerMultiplicativeTypeCentralizerReduction (algClosedMaximalTorusCentralizerReduction
   dynamicCentralizerReductive noTorusUnipotent solvableTorusQuotient)`
   (`Reductive/CenterMultiplicativeTypeReduction`,

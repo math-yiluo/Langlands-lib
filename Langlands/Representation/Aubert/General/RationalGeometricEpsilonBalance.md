@@ -1,7 +1,7 @@
 # Cancellation of the two original epsilon corrections
 
 Module: `Langlands.Representation.Aubert.General.RationalGeometricEpsilonBalance`,
-namespace `Langlands.Aubert.General.RationalPointFamily`. Author: Worker 4021.
+namespace `Langlands.Aubert.General.RationalPointFamily`.
 
 This module proves that the two original Haar corrections of the rational
 geometric lemma cancel. The corrections are `geometricEpsilonOne` and

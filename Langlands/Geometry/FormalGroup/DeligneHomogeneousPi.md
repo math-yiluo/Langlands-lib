@@ -19,7 +19,7 @@ one. The first of Deligne's four data is a flat graded sheaf over this algebra;
 the fourth is a rational frame in degree zero. The conditions continue on
 printed p.110.
 
-The published `LatticePiSheaf` supplies the actual coefficient-module sheaf,
+`LatticePiSheaf` supplies the actual coefficient-module sheaf,
 flat stalks, homogeneous inclusions and component maps of multiplication by
 `Π`. This module derives finite iterates and their inverses from those data.
 These are implementation lemmas and constructions implied by the algebra
@@ -111,8 +111,12 @@ square for genuine lattice morphisms.
 All maps, inclusions and scalar extensions here are constructed from the actual
 sheaves. The rational inverse is built before sheafification, so the proof
 does not require preservation of monomorphisms or an unproved decomposition
-of the total rational sheaf. This unit supplies the component isomorphisms
-needed to construct a rational frame in a shifted degree. It does not yet
+of the total rational sheaf. This module supplies the component isomorphisms
+needed to construct a rational frame in a shifted degree. It does not
 construct that frame, the normalized projective action, preservation of all
 four-data admissibility conditions, base-change comparisons, exterior
-subsheaf comparisons or representability.
+subsheaf comparisons or representability. The Library constructs the shifted
+frame in `DeligneFramedShift`, the projective action in
+`DeligneProjectiveAction`, shift base-change comparisons in
+`DeligneShiftBaseChange` and the exterior subsheaf comparison in
+`DeligneDeterminantSubsheaf`.

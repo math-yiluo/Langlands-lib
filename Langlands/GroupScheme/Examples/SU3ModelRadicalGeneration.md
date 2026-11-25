@@ -1,10 +1,10 @@
 # Parabolic radical generation for actual SU3 models
 
-This internal derived unit packages the proved actual SU3 and Weil-restricted
+This module packages the proved actual SU3 and Weil-restricted
 SU3 image theorems for use with actual source models. It imports
 `SU3WeilAmbientGeneration`, which also imports `SU3AmbientGeneration`.
 Every use of a model supplies an actual ground-field group-scheme isomorphism;
-this unit does not construct such an isomorphism by classification.
+this module does not construct such an isomorphism by classification.
 
 In `SchemeModel` the assumptions are fields `k` and `L` in any common universe,
 with a separable quadratic `k`-algebra extension `L`. In `WeilSchemeModel` there

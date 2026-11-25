@@ -1,7 +1,5 @@
 # Supplied schemes representing group-scheme automorphisms
 
-Worker 647.
-
 This internal construction uses the existing `AutomorphicAction` and
 `LocalGroupIso` interfaces over an arbitrary scheme. It asserts no
 representability theorem.

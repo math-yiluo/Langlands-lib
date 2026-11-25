@@ -1,6 +1,6 @@
 # Integral coordinates adapted to an actual valuation kernel
 
-This derived unit supplies product coordinates for the actual valuation-image
+This module, whose provenance is derived, supplies product coordinates for the actual valuation-image
 map of a morphism of connected reductive groups over a nonarchimedean local
 field. The map and its kernel are the ones used by actual unramified character
 restriction; no abstract replacement lattice is assumed.

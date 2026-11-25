@@ -2,7 +2,7 @@
 
 This is an internal construction derived from the published actual quotient
 and universal property in `Langlands.Representation.Jacquet.Localization`.
-All declarations lie in `Langlands.Jacquet.Localization`. Author: Worker 194.
+All declarations lie in `Langlands.Jacquet.Localization`.
 
 Let `U ≤ N` be actual subgroups of an arbitrary group `G`. Let `θ : U →* Rˣ`
 and `η : N →* Rˣ` be characters over a commutative ring, with
@@ -41,7 +41,7 @@ by the published functors, rather than a new input.
 No continuity of multiplication or closedness hypothesis is needed here.
 
 The intended Aubert application is the quotient part of a canonical
-transition, with trivial localization characters. This unit does not
+transition, with trivial localization characters. This module does not
 construct the surrounding normalized parabolic-induction transition.
 For that application, the actual radical containments, restriction of
 acting Levi groups, Haar normalization identities, and compatibility with
@@ -50,7 +50,7 @@ introduces no alternate reductive framework and assumes no geometric
 lemma, support classification, exactness of a complex, or finite-length
 preservation.
 
-The mathematical provenance of this unit is the universal property of the
+The mathematical provenance of this module is the universal property of the
 explicit quotient already published in `Localization`, not an additional
 literature theorem. The proof applies directly to the actual relations
 `ρ u v - θ(u) • v`; there are no new axioms or proposition assumptions

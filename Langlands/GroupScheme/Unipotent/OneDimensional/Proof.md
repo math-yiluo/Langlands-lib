@@ -1,6 +1,6 @@
 # One-dimensional unipotent groups over perfect fields are vector groups
 
-Worker 716. This module proves the published statement
+This module proves the published statement
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement.{u}`
 (module `Langlands.GroupScheme.Unipotent.OneDimensionalStatement`) as
 `Langlands.GroupScheme.perfectFieldOneDimensionalUnipotent`, at an arbitrary

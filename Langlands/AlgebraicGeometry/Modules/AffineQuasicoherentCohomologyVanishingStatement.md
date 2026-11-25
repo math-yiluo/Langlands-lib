@@ -1,10 +1,9 @@
 # Higher cohomology of quasi-coherent modules on affine schemes vanishes
 
-Author: Worker 958.
-
 `Langlands.AlgebraicGeometry.Modules.AffineQuasicoherentCohomologyVanishingStatement.{u}` is a
-`Prop`-valued definition. This module only states the vanishing; it contains no proof. A
-separate exact-target proof of this proposition is still required.
+`Prop`-valued definition. This module only states the vanishing; it contains no proof. The
+theorem `Langlands.AlgebraicGeometry.Modules.affineQuasicoherentCohomologyVanishing` (module
+`Langlands.AlgebraicGeometry.Modules.AffineQuasicoherentCohomologyVanishingProof`) proves it.
 
 ## Exact interface
 
@@ -43,9 +42,9 @@ Part 2 says that `relativeGlobalSections g` has vanishing higher right-derived f
 quasi-coherent modules of an affine scheme. It is the acyclicity input for the comparison of
 the alternating Čech complex of a finite affine open cover of a separated scheme `Y ⟶ Spec R`
 with the actual derived sections `DerivedPlus.derivedComplex (relativeGlobalSections _)`
-(Stacks Lemma 01XD), which the executor needs for the proof of
-`Langlands.AlgebraicGeometry.Modules.UniversalPerfectSectionsStatement` (task
-`5056e5fc-5861-489e-adae-be84a23164c5`). There each finite intersection `U_s` of cover members
+(Stacks Lemma 01XD), which the proof of
+`Langlands.AlgebraicGeometry.Modules.UniversalPerfectSectionsStatement` needs. There each
+finite intersection `U_s` of cover members
 is affine, and the Čech terms are pushforwards of quasi-coherent modules on `U_s`.
 
 ## Original source

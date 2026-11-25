@@ -181,6 +181,20 @@ def iso :
   refine NatIso.ofComponents (fun R => (pointsEquiv h H R).toGrpIso) ?_
   intro R R' a
   ext x
+  have e1 : ((AffineWeil.groupScheme A B H).affinePointFunctor.map a).hom x =
+      (AffineWeil.groupScheme A B H).affinePointMap a x := rfl
+  have e2 : ∀ y : (AffineWeil.groupScheme A B H).affinePoints R',
+      (MulEquiv.toGrpIso (X := (AffineWeil.groupScheme A B H).affinePointFunctor.obj R')
+        (Y := (GroupScheme.pi (component (A := A) (D := D) H)).affinePointFunctor.obj R')
+        (pointsEquiv h H R')).hom.hom y = pointsEquiv h H R' y := fun _ => rfl
+  have e3 : ∀ y : (GroupScheme.pi (component (A := A) (D := D) H)).affinePoints R,
+      ((GroupScheme.pi (component (A := A) (D := D) H)).affinePointFunctor.map a).hom y =
+      (GroupScheme.pi (component (A := A) (D := D) H)).affinePointMap a y := fun _ => rfl
+  have e4 : ∀ y : (AffineWeil.groupScheme A B H).affinePoints R,
+      (MulEquiv.toGrpIso (X := (AffineWeil.groupScheme A B H).affinePointFunctor.obj R)
+        (Y := (GroupScheme.pi (component (A := A) (D := D) H)).affinePointFunctor.obj R)
+        (pointsEquiv h H R)).hom.hom y = pointsEquiv h H R y := fun _ => rfl
+  rw [GrpCat.hom_comp, GrpCat.hom_comp, MonoidHom.comp_apply, MonoidHom.comp_apply, e1, e2, e4, e3]
   exact pointsEquiv_naturality h H a x
 
 end Langlands.GroupScheme.AffineWeil.AlgebraProduct

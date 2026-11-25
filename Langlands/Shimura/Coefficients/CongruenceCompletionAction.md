@@ -51,7 +51,7 @@ The rational algebra, number field and representation space share universe
 
 The provenance is internal composition of the published algebraic and
 congruence constructions and pinned Mathlib compatible-family completion
-operations. No new statement is attributed to Harris. This unit constructs
+operations. No new statement is attributed to Harris. This module constructs
 actions on the actual completion; it does not identify the initial lattice
 with its completion, assert inverse-limit smoothness or scalar multiplication
 continuity for a chosen ring topology, descend a sheaf, or compare cohomology.

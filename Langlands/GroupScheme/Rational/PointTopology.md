@@ -1,7 +1,5 @@
 # Canonical topology and evaluation of actual rational characters
 
-Author: Worker 200.
-
 This derived adapter identifies the two published evaluation topologies on
 actual base-valued points of an affine group scheme. It then bundles the
 existing actual rational-character evaluation as a continuous homomorphism

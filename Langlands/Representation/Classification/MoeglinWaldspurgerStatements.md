@@ -1,6 +1,6 @@
 # Unproved combinatorial Moeglin–Waldspurger targets
 
-Worker 963. Every declaration in this module is a proposition definition, not
+Every declaration in this module is a proposition definition, not
 a proof. The targets refer to the actual total recursion `dual` from the
 paired algorithm module; none is a field or premise of that recursion.
 
@@ -27,4 +27,6 @@ length at most the number of input interval occurrences, counted with
 multiplicity. This pointwise form avoids a separate convention for maximum
 length of the empty output and is equivalent to the source's maximum-length
 form for nonempty multisegments. `CombinatorialProperties` simply groups the
-four separately named targets. No proof of any of them is supplied here.
+four separately named targets. No proof of any of them is supplied here; they
+are proved in `MoeglinWaldspurgerSupportProof`, `MoeglinWaldspurgerInvolutivityProof`,
+`MoeglinWaldspurgerEndingBoundProof` and `MoeglinWaldspurgerThicknessBoundProof`.

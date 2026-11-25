@@ -3,7 +3,7 @@ import Langlands.Global.Factors.RelativeWitnessedDualClosure
 import Langlands.Global.Factors.RelativeWitnessedTwistClosure
 import Langlands.VirtualRepresentation.Global.RelativeTrivialGenerator
 import Langlands.Correspondence.RankOneOperationCompatibility
-import Langlands.ClassField.Global.LocalRelativeWeilMapStatement
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapStatement
 import Langlands.ClassFieldTheory.Local.WeilReciprocityStatement
 
 /-!
@@ -80,7 +80,7 @@ end Langlands.Correspondence
 
 namespace Langlands.VirtualRepresentation.RelativeGlobal
 
-open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality
 
 variable (F E : Type uF) [Field F] [NumberField F] [Field E] [NumberField E]
@@ -90,7 +90,7 @@ variable (F E : Type uF) [Field F] [NumberField F] [Field E] [NumberField E]
 arithmetic class family. Neither existence input is asserted here. -/
 def localMapFamilyOfClassField
     (hrec : Langlands.LocalClassField.WeilReciprocityExistenceUniqueness.{uF})
-    (hmap : Langlands.ClassField.Global.LocalRelativeWeilMapExistenceStatement.{uF})
+    (hmap : Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceStatement.{uF})
     (hc : RelativeWeilGroup.IsArithmeticClassFamily c) : RelativeLocalMapFamily F E c := by
   have H : ∀ (v : FinitePlace F) (w : FinitePlacesAbove E v),
       ∃ (e : LocalFactor.RankOne.ReciprocityCandidate (towerPadicField v w.1))
@@ -111,7 +111,7 @@ end Langlands.VirtualRepresentation.RelativeGlobal
 namespace Langlands.Global.PoleComparison
 
 open Langlands.VirtualRepresentation Langlands.VirtualRepresentation.RelativeGlobal
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality
 
 variable (F E : Type uF) [Field F] [NumberField F] [Field E] [NumberField E]
@@ -276,7 +276,7 @@ theorem relativeIsometryOperations_of_dual_twist
 dual and twisted witnessed-generator constructions still remain explicit. -/
 theorem relativeIsometryOperations_of_classField
     (hrec : Langlands.LocalClassField.WeilReciprocityExistenceUniqueness.{uF})
-    (hmap : Langlands.ClassField.Global.LocalRelativeWeilMapExistenceStatement.{uF})
+    (hmap : Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceStatement.{uF})
     (hc : RelativeWeilGroup.IsArithmeticClassFamily c)
     (hdual : RelativeWitnessedDualClosure.{uF, uW, uP} F E c v)
     (htwist : ∀ (e : Correspondence.ReciprocityCandidate (padicField v)),
@@ -294,7 +294,7 @@ still an explicit proof input of this intermediate theorem. -/
 theorem relativeIsometryOperations_of_globalInputs
     (hc : RelativeWeilGroup.IsArithmeticClassFamily c)
     (hrec : Langlands.LocalClassField.WeilReciprocityExistenceUniqueness.{uF})
-    (hmap : Langlands.ClassField.Global.LocalRelativeWeilMapExistenceStatement.{uF})
+    (hmap : Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceStatement.{uF})
     (hcentral : RelativeWeilGroup.AssociatedCentralCharacterStatement.{uF, uW, uP})
     (hdual : Langlands.Automorphic.CuspidalUnitaryContragredientExistenceStatement.{uF})
     (hdualpres : Langlands.Automorphic.CuspidalContragredientPresentationExistenceStatement.{uF, uP, uP})
@@ -319,13 +319,13 @@ end Langlands.Global.PoleComparison
 namespace Langlands.Global.PoleComparison
 
 open Langlands.VirtualRepresentation Langlands.VirtualRepresentation.RelativeGlobal
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 
 /-- Full-universe reduction of the exact target. This is deliberately conditional:
 none of the eleven global proof inputs is asserted by this theorem. -/
 theorem relativeIsometryOperationStatement_of_globalInputs
     (hrec : Langlands.LocalClassField.WeilReciprocityExistenceUniqueness.{uF})
-    (hmap : Langlands.ClassField.Global.LocalRelativeWeilMapExistenceStatement.{uF})
+    (hmap : Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceStatement.{uF})
     (hcentral : RelativeWeilGroup.AssociatedCentralCharacterStatement.{uF, uW, uP})
     (hdual : Langlands.Automorphic.CuspidalUnitaryContragredientExistenceStatement.{uF})
     (hdualpres : Langlands.Automorphic.CuspidalContragredientPresentationExistenceStatement.{uF, uP, uP})

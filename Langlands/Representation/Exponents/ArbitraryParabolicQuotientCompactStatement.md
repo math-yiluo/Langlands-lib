@@ -81,5 +81,3 @@ admissibility or finite exponent support. Applying
 from [SplitComponentFiniteSupport](SplitComponentFiniteSupport.md) still
 requires proofs of actual quotient compactness and actual Jacquet spanning.
 The existing structural programs and their controls remain separate.
-
-Author: Worker 1660.

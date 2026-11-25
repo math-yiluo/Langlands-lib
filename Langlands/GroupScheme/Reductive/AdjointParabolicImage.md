@@ -1,6 +1,6 @@
 # Images of parabolic subgroups in a quotient by the centre
 
-Author: Worker 5600. This module is a helper for the proof of
+This module is a helper for the proof of
 `AdjointParabolicCorrespondenceStatement` (Conrad, *Reductive group schemes*
 (2014), Exercise 5.5.8). It proves clause 2 of that statement: every relative
 parabolic `P` of a reductive `G` is the full inverse image of a relative

@@ -1,7 +1,5 @@
 # Proper-standard induction exclusion inside a Levi from the whole-category splitting
 
-Author: Worker 174, Task 5323 (`c79b0cd0-661f-4239-9f65-483d6f319480`).
-
 Module `Langlands.Representation.Aubert.General.RationalLeviInductionExclusionFromWhole`,
 namespace `Langlands.Aubert.General.RationalPointFamily`.
 
@@ -50,7 +48,7 @@ extraction target to the splitting; that composite is not stated here.
 Fix `J`, a proper `K`, `ρ`, and an irreducible inside-Levi cuspidal `τ` with
 `τ` a subquotient of `i^{M_J}_K(ρ)`.
 
-1. Worker 1570's `hasLeviCuspidalRemainderSplitting_of_wholeStatement`
+1. `hasLeviCuspidalRemainderSplitting_of_wholeStatement`
    (module [RationalLeviSplittingFromWhole](../../CuspidalSupport/RationalLeviSplittingFromWhole.md))
    applies the whole-category statement to the actual standard Levi scheme of
    `J` and transports the resulting coproduct to the literal subgroup

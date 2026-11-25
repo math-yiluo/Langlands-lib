@@ -27,5 +27,6 @@ weight-detection theorem supplies the final conjunct.
 The theorem `pairLieWeightDataStatement` has exactly the unchanged shared
 interface proposition as its type in every universe. It assumes no
 Freudenthal or Weyl character formula. This is an internal derived
-structural input for Task 7128's Casimir argument. The fixed interface was
-authored by Worker 903; this module implements its group-side proof.
+structural input for the Casimir argument of the proof of the Weyl character
+formula for a split reductive group in characteristic zero. This module
+implements the group-side proof of the fixed interface.

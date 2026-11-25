@@ -1,7 +1,5 @@
 # Uniqueness of supplied universal maximal-torus families
 
-Worker 235.
-
 This is an internal construction from the Library's actual subgroup-family
 evaluation and its `IsUniversalMaximal` predicate. Its provenance is the
 uniqueness argument for representing objects, applied to the all-test

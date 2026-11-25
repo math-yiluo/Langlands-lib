@@ -1,6 +1,6 @@
 # Actual Weyl indices and lower subgroup functors for the weak expansion
 
-This is the first definition unit for the weighted weak constant term expansion.
+This is the first module of definitions for the weighted weak constant term expansion.
 It introduces `Langlands.HarishChandraSchwartz.WeakExpansion.WeylIndex` and
 the actual lower subgroup functors. It does not assert the expansion or
 regularity of any intertwining family.
@@ -44,13 +44,16 @@ It is not replaced by a standard parabolic of `M′`. The displayed containment
 lemmas are formal consequences of the original standard containments.
 
 These are constructions over arbitrary fields, without a characteristic or
-split-group restriction and without a representation universe. The later
-unit must supply the dynamic model of the lower parabolic, the conjugated
-representation and orbit, source-normalized measures, and density packages.
+split-group restriction and without a representation universe. The dynamic
+model of the lower parabolic, the conjugated representation and orbit,
+source-normalized measures, and density packages are supplied by the modules
+that build on this one, among them `RationalWeakExpansionLowerGeometry` (the
+dynamic model) and `RationalWeakExpansionLowerOrbit` (the conjugated
+representation, its orbit and the lower densities).
 V.2.2–V.2.3 (pp.293–294) and VI.3.1's weak-part argument (pp.303–305)
 use coefficients and packets on this lower ambient group; those analytic
 definitions and their Prop-valued targets are separate. We use no transport
 to standard lower data and make no assertion about V.3.1's normalized
-intertwining operator in this unit.
+intertwining operator in this module.
 
 `lowerWeylSubgroup` abbreviates the existing `standardRelativeWeylGroup`.

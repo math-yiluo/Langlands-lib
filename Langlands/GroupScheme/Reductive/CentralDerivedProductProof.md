@@ -1,7 +1,5 @@
 # Central torus and derived subgroup generation: the proof
 
-Author: Worker 4015.
-
 `Langlands.GroupScheme.reductiveCentralDerivedProduct` proves exactly the
 published proposition
 `Langlands.GroupScheme.ReductiveCentralDerivedProductStatement.{u}` (module

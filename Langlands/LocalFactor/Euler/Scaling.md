@@ -8,5 +8,5 @@ so polynomial extensionality proves the identity.
 
 This shared module retains the existing theorem's namespace, statement and
 proof from `HenniartArithmeticTwistProof`. Both that arithmetic-twist module
-and `ClassField.Global.RelativeWeilUnramifiedTwist` reuse it. There are no
+and `ClassFieldTheory.Global.RelativeWeilUnramifiedTwist` reuse it. There are no
 Weil-group or arithmetic hypotheses on this linear-algebra identity.

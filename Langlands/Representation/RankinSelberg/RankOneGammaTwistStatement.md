@@ -1,7 +1,5 @@
 # Rank-one determinant twists of gamma certificates
 
-Author: Worker 1062.
-
 The module defines the proposition
 `Langlands.RankinSelberg.RankOneGammaTwistStatement.{uF, uV}`.
 It says that a gamma certificate can be moved between two pairs: the

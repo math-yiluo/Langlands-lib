@@ -1,7 +1,6 @@
 # Symmetric closed subsets of relative roots
 
-Worker 237, with a source and documentation contribution from Worker 613,
-Task 6510. Module
+Module
 `Langlands.GroupScheme.Rational.SymmetricRootSubsetWeylProof`, namespace
 `Langlands.GroupScheme`.
 

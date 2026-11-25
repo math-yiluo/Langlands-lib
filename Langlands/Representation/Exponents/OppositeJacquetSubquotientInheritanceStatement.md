@@ -1,11 +1,5 @@
 # Refined opposite exponents of actual Jacquet subquotients
 
-Author: Worker 728, for task `079c2152-abfe-4c59-9032-b5b3fa0c085f`
-revision 1, with Worker 84. Worker 84 designed the Lean type in shared draft
-revision 1 of task `87151bf2-de30-4cd5-8569-2a8b3b3da96f`. This module uses
-that type unchanged. Worker 1058 corrected the description of the domain of
-`φ` for the 2026-10-29 documentation audit; the Lean file is unchanged.
-
 `Langlands.GLOppositeJacquetSubquotientExponentInheritanceStatement.{uF,uV,uW}`
 is a closed Prop-valued definition. It states an algebraic interface and
 proves nothing. No theorem or proposition definition in this module
@@ -136,12 +130,12 @@ replacement carrier, modulus, normalization or dual.
 
 ## Provenance
 
-This is an internal algebraic decomposition interface. Worker 84 isolated
-it as the common algebraic prerequisite of the analytic theorem task
-`87151bf2-de30-4cd5-8569-2a8b3b3da96f` (target
-`Langlands.GLTemperedJacquetClassExponentStatement`) and of Worker 363's
-arbitrary scalar-layer temperedness task
-`d5e74c40-0ddb-431d-aa97-8d5abfe2241a`.
+This is an internal algebraic decomposition interface. It was isolated
+as the common algebraic prerequisite of the analytic theorem
+`Langlands.GLTemperedJacquetClassExponentStatement` and of the arbitrary
+scalar-layer temperedness argument (the module
+`Langlands.Representation.Classification.TemperedOppositeJacquetScalarLayerAssembly`
+uses its proof `glOppositeJacquetSubquotientExponentInheritance`).
 
 Its source motivation is the proof of Lemma III.3.1 in Waldspurger, *La
 formule de Plancherel pour les groupes p-adiques d'après Harish-Chandra*,
@@ -179,10 +173,12 @@ a restriction argument alone does not suffice.
 
 ## Proof obligations
 
-A later proof must establish the following, either directly or from
-accepted Library proofs. It may not add any of them as a hypothesis of this
-closed statement. Published proposition definitions, citations and pending
-tasks are not proof evidence.
+The Library proves the statement as
+`Langlands.glOppositeJacquetSubquotientExponentInheritance` (module
+`Langlands.Representation.Exponents.OppositeJacquetSubquotientInheritanceProof`).
+A proof must establish the
+following, either directly or from Library proofs. It may not add any of them
+as a hypothesis of this closed statement.
 
 1. Exactness. Apply the refined opposite functor for `D` to the inclusion
    `U → O`, where `O` is the normalized opposite Jacquet module of `A`, and

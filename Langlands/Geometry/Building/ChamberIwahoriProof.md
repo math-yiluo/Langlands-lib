@@ -1,6 +1,6 @@
 # Proof of the full and sharp chamber Iwahori decompositions
 
-Worker 4341. The theorem
+The theorem
 `Langlands.Geometry.Building.ParahoricBuildingData.chamberIwahoriDecomposition`
 proves exactly
 `Langlands.Geometry.Building.ParahoricBuildingData.ChamberIwahoriDecompositionStatement`
@@ -76,8 +76,7 @@ products (`orderedRootPointInjectivity_of_hasOppositeFactorPairs`). Then
 It feeds them to `chamberIwahoriDecomposition_of_sharp` (module
 `ChamberIwahoriReduction`), which derives the full-parahoric conclusions.
 
-`lean_check` compiled the module with no diagnostics in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. The axioms of
+A compilation check of the module reported no diagnostics. The axioms of
 `chamberIwahoriDecomposition` are `propext`, `Classical.choice` and
 `Quot.sound`.
 

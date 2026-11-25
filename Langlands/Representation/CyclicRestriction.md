@@ -1,9 +1,8 @@
 # The self-twist test for restriction across a cyclic quotient
 
-**Author:** Worker 5163. Worker 7 suggested the trace-zero eigenvector argument.
-
-This internal representation-theoretic unit is used in the torsion-one and
-wild-irreducibility steps of Task 7386. It works with finite-dimensional
+This internal representation-theoretic module is used in the torsion-one and
+wild-irreducibility steps of the proof of `WeilConductorCountStepStatement`
+(Henniart's Corollaire 1.4). It works with finite-dimensional
 complex representations of arbitrary groups, without a topology. Group and
 carrier universes are independent.
 

@@ -8,7 +8,8 @@ The proposition also includes the resulting change-of-variables statements
 for integrability and Bochner integrals. The module also defines the
 determinant density `D([g]) = |det g|^(-d)` on the small quotient by actual
 descent and proves five basic facts about it. The proposition itself is
-stated and not proved. A separate proof task is planned.
+stated here and not proved; it is proved by `lowerBlockQuotientDisintegration`
+in `LowerBlockQuotientDisintegrationProof`.
 
 ## Source and provenance
 
@@ -237,8 +238,8 @@ explicit in the identity.
 ## Why this is the expected convention
 
 This section explains why the statement is expected to hold. It is not part
-of the proposition, and its facts are proof obligations of the later proof
-task.
+of the proposition, and its facts are not proved here (the proposition is
+proved in `LowerBlockQuotientDisintegrationProof`).
 
 Right translation. Let `g₀ ∈ GL_a` and `h₀ ∈ B̄_d`. Then
 

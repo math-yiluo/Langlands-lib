@@ -1,7 +1,5 @@
 # Inverse transpose of normalized block products
 
-Author: Worker 163.
-
 `Langlands.Parabolic.inverseTransposeProduct.{uF,uV}` proves the unchanged
 published proposition `Langlands.Parabolic.InverseTransposeProductStatement`.
 It combines the actual product equivalence, determinant-twist equality, and

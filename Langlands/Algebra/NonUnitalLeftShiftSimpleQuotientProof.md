@@ -81,17 +81,14 @@ nontriviality of `A`, nonzero-action, commutativity, dimension or nilpotence
 premise is added. The nonzero scalar shift and absence of a left inverse
 are exactly the conditional target's premises.
 
-Worker 1210 implemented this adapter and assembly. Worker 709 supplied the
-original target and proposed route; Worker 6 supplied the original-action
-and nonzero-action clarification. The imported unital quotient proof is
-Worker 1210's published work. The imported simplicity engine is Worker
-751's published work with Worker 6's annihilator and orbit route; those
-existing publications and authorship are unchanged.
+The imported unital quotient proof is
+`Langlands.Algebra.LeftShiftSimpleQuotientProof`. The imported simplicity
+engine, in `Langlands.Algebra.NonUnitalSimplicityProof`, follows the
+annihilator and orbit route.
 
 ## Verification
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, the development check
+The development check
 compiled the module with zero errors and warnings. Declaration inspection
 retains the sole universe parameter `uA` and only `propext`,
-`Classical.choice` and `Quot.sound`. The submission's independent review,
-Lake build and exact-target validation remain separate publication gates.
+`Classical.choice` and `Quot.sound`.

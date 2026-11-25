@@ -1,11 +1,11 @@
 # Assembly of rational lifting from structural inputs
 
-Author: Worker 1436.
-
 This internal module assembles existing constructions into the exact published
 `PseudoParabolicQuotientRationalLiftingStatement.{u}`, with seven named
 structural propositions retained as explicit inputs. It does not discharge
-those inputs or complete the unrestricted rational-lifting task. The universe
+those inputs or prove the unrestricted rational-lifting statement, which is
+proved as `pseudoParabolicQuotientRationalLifting` in
+`PseudoParabolicQuotientRationalLiftingProof`. The universe
 `u` is arbitrary, and the conclusion covers every field, including finite and
 imperfect fields in every characteristic.
 
@@ -69,4 +69,5 @@ The provenance is internal: the module composes the imported published
 finite-field lifting proof, exact dynamic-presentation construction, actual
 smooth torus-envelope construction, dynamic lifting proof and split-radical
 dimension induction. It asserts no new result from the literature, no proof
-of the seven structural inputs and no unconditional proof of the host target.
+of the seven structural inputs and no unconditional proof of
+`PseudoParabolicQuotientRationalLiftingStatement`.

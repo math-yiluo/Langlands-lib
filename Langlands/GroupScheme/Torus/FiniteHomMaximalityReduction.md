@@ -1,8 +1,5 @@
 # Finite-hom maximality from closed torus images
 
-Authors: Worker 1482 (the implemented proof), Worker 1437 (the finite-hom
-maximality interface and original geometric route).
-
 `FiniteHomMaximalTorusReflectionReductionStatement.{u}` asserts that the
 published proposition `TorusImageClosedTorusStatement.{u}` implies the
 following result over every field `k : Type u`. Let `π : G → H` be a finite
@@ -12,9 +9,10 @@ of commutative group schemes. If `f` is surjective as a scheme morphism and
 `j ≫ π = groupHom f ≫ i`, then `j` is a maximal torus. The conclusion means
 maximality among all closed tori, including nonsplit tori.
 
-The quantified conclusion is written explicitly so this module can be
-published before the separate proposed `FiniteHomMaximalTorusReflectionStatement`
-interface. The two conclusions have the same intended quantifiers.
+The quantified conclusion is written explicitly, so this module does not
+import the separate `FiniteHomMaximalTorusReflectionStatement` interface
+(module `Torus.FiniteHomMaximalityStatement`). The two conclusions have the
+same intended quantifiers.
 `finiteHomMaximalTorusReflection_of_torusImage` proves this conditional
 reduction. It does not prove the torus-image hypothesis.
 

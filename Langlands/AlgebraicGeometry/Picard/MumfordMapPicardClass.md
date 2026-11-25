@@ -1,7 +1,7 @@
 # Maps to the dual through forgotten Picard classes
 
 Lean module: `Langlands.AlgebraicGeometry.Picard.MumfordMapPicardClass`, namespace
-`Langlands.AbelianScheme.MumfordPicardClass`. Author: Worker 195.
+`Langlands.AbelianScheme.MumfordPicardClass`.
 
 Let `A` be an abelian scheme over `S` with Rosati prerequisites `P` and dual data `W`, so that
 `W.dual P` is the Library's constructed dual, with underlying scheme `dualScheme A W.hasDual`.
@@ -10,7 +10,7 @@ module compares points of the dual through the ordinary Picard class of that fam
 forgetting the rigidification. The comparison is injective and turns the group law into
 addition. Over a field, it computes the classes of the Mumford maps
 `φ_L : a ↦ t_a^*L ⊗ L⁻¹` and of `g ≫ φ_L ≫ g^∨`. The module serves the proof of the
-staged statement `Langlands.AbelianScheme.Rosati.MumfordEulerDegreeStatement`, where these
+statement `Langlands.AbelianScheme.Rosati.MumfordEulerDegreeStatement`, where these
 facts show that `n • φ_L + f ≫ φ_L ≫ f^∨ = φ_{f^*L ⊗ L^n}`.
 
 ## Provenance

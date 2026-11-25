@@ -447,7 +447,9 @@ lemma J_basicOpen_le'
     change ρ (h ^ (e + n) * t₀) ∈ _
     rw [hrw]
     rw [show (h' ^ e) * (ρ t₀ * h' ^ n) = (h' ^ e) * (y * h' ^ m) from hc]
-    exact Ideal.mul_mem_left _ _ (Ideal.mul_mem_right _ _ hy)
+    exact Ideal.mul_mem_left _ _
+      (set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+        Ideal.mul_mem_right _ _ hy)
   choose! nf hnf using key
   let N := sV.sup nf
   have hN : ∀ g ∈ (sV : Set Γ(X, V)),

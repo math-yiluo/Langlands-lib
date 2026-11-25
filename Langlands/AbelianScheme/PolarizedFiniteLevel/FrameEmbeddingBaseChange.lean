@@ -21,9 +21,7 @@ open Langlands.SchemeModule
 
 variable {P : Prerequisites.{u}} {S S' : Scheme.{u}} {g d n m : ℕ}
 
-/-- The torsion points of a pulled-back datum lie over the original torsion points.
-(The same computation appears in the unpublished frame-locus base-change draft of
-Task 3449's frame-locus base-change task.) -/
+/-- The torsion points of a pulled-back datum lie over the original torsion points. -/
 theorem Datum.pullback_torsionPoint_fst (a : Datum P S g d n) (f : S' ⟶ S)
     (r : Fin (2 * g) → ZMod n) :
     (a.pullback f).torsionPoint r ≫ pullback.fst a.abelian.X.hom f = f ≫ a.torsionPoint r := by

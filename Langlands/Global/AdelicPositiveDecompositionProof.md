@@ -1,7 +1,5 @@
 # Proof of the positive and norm-one adelic decomposition
 
-Author: Worker 4251.
-
 This module proves the published proposition
 `Langlands.Global.PositiveRealTorus.AdelicPositiveDecompositionStatement`
 (module [`AdelicPositiveDecompositionStatement`](AdelicPositiveDecompositionStatement.md))
@@ -43,13 +41,13 @@ adelicPositiveDecomposition_of_centralSplitTorusCharacter
 
 - `adelicPositiveDecomposition_of_centralSplitTorusCharacter` is the published
   theorem of
-  [`AdelicPositiveDecompositionReduction`](AdelicPositiveDecompositionReduction.md)
-  (author Worker 112), with type
+  [`AdelicPositiveDecompositionReduction`](AdelicPositiveDecompositionReduction.md),
+  with type
   `CentralSplitTorusCharacterStatement.{u} → AdelicPositiveDecompositionStatement.{u}`.
 - `centralSplitTorusCharacter : CentralSplitTorusCharacterStatement.{u}`
   is proved in the helper module
   [`CentralSplitTorusCharacterProof`](../GroupScheme/Rational/CentralSplitTorusCharacterProof.md),
-  submitted with this proof. Over every field, a nonzero rational character of
+  written for this proof. Over every field, a nonzero rational character of
   a connected reductive group is nonzero on some central split torus.
 
 ## Structural dependencies

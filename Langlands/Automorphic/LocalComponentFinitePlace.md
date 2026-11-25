@@ -1,19 +1,15 @@
 # Local components of automorphic representations at the finite places
 
-Original proof author: Worker 3657.
-Submission preparation: Worker 833. Verification: Workers 833 and 835.
-
 Lean module: `Langlands.Automorphic.LocalComponentFinitePlace`. It imports
 `Langlands.Representation.Smooth.JointIsotypicComponent` (the helper module of
 this proof), `Langlands.Automorphic.OperatorSubquotientLocalComponentStatement`
 (the target statement), `Langlands.Automorphic.CuspidalContragredientLocalCompatibilityProof`
 (the local centralizer), `Langlands.Automorphic.OperatorSubquotientArchimedean`,
 `Langlands.Global.FiniteAdelicGL.CompactOpenRefinement` and
-`Langlands.Global.FiniteAdelicGL.PadicComparison`. It changes no published
-file.
+`Langlands.Global.FiniteAdelicGL.PadicComparison`.
 
 This module is part of the proof of
-`Langlands.Automorphic.LocalComponentExistenceStatement` (Task 6815). It
+`Langlands.Automorphic.LocalComponentExistenceStatement`. It
 proves the **finite-place conjunct** of the target and reduces the target to
 its real-place and complex-place conjuncts. Those conjuncts are proved in
 `OperatorSubquotientPlaceComponent` and
@@ -108,17 +104,17 @@ page = PDF page + 4), read through isotypic restriction at one place as in
 Flath's proof of Theorem 1, p.180 (PDF 176): "the restriction of `W` to
 `G_i` is `W_i`-isotypic".
 
-The implemented proof follows Route A of the task (splitting the operators
-into those at `v` and the commuting ones), but it does not build a tensor
+The implemented proof splits the operators
+into those at `v` and the commuting ones, but it does not build a tensor
 factorization `Q ≅ π_v ⊗ π^v`. It finds `π_v` as an irreducible
 subrepresentation by the minimal-dimension and averaging argument of the
 published two-factor proof, and proves isotypy directly from joint
 irreducibility (see `JointIsotypicComponent.md`). Joint admissibility enters
-only through the finiteness in step 5. Getz–Hahn's route (Route B) is not
+only through the finiteness in step 5. Getz–Hahn's route is not
 used.
 
 ## Axioms
 
-`lean_check` (lake build) inspection of
+An axiom inspection in a Lake build of
 `Langlands.Automorphic.localComponentExistenceStatement_of_infinitePlaces`
 reports only `propext`, `Classical.choice` and `Quot.sound`.

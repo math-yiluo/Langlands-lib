@@ -46,4 +46,4 @@ the displayed properties for that translation.
 No independent assumption that `a` preserves face incidence is used. The
 upstairs incidence conclusion depends on the supplied model morphism.
 Smoothness, connectedness, parabolicity and generation are not hypotheses
-or conclusions of this unit.
+or conclusions of this module.

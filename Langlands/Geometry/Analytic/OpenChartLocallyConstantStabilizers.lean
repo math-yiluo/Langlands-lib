@@ -71,7 +71,7 @@ namespace AffinoidAtlasPresentation.ChosenAtlasSectionAction
 
 variable {G : Type t} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (X : Action (AffinoidAtlasPresentation.{u, v, w} K) G)
-  (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+  (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
   (hO : ∀ i, IsOpen (Set.range (X.V.atlas.chart i)))
   {D : Type z} {S : X.V.atlas.OriginalChartDomain}
   (hS : IsCompact (S : Set X.V.space))

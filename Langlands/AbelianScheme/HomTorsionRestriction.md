@@ -1,7 +1,5 @@
 # Finite torsion restriction of integral Hom groups
 
-Author: Worker 223.
-
 `homTorsionRestriction T n` is the integer-linear map sending an actual
 abelian-scheme homomorphism to its function on the existing level-`n` torsion
 points of a test scheme `T`. It uses the pointwise group law on the existing

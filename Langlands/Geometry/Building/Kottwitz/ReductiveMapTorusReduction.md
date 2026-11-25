@@ -1,7 +1,7 @@
 # Reductive Kottwitz descent from torus existence
 
 This conditional reduction connects the published torus norm and cocenter
-reductions to the fixed-group reductive construction of Task 6363. It does not
+reductions to the fixed-group construction of the reductive Kottwitz map. It does not
 prove `ReductiveKottwitzExistenceStatement` unconditionally.
 
 `simplyConnectedDerivedKottwitzNaturalAt_of_torus_existence` chooses actual

@@ -321,6 +321,9 @@ theorem rootSL2_weyl_mul_weyl_conj_lower (a b : p.base.support)
   rw [← hM]
   rw [← hM] at hupper
   have hact : weylAction p.inclusion m (-p.rootDatum.root a) = -p.rootDatum.root b := by
+    have : AddMonoidHomClass (characterLattice p.torus ≃ₗ[ℤ] characterLattice p.torus)
+        (characterLattice p.torus) (characterLattice p.torus) :=
+      SemilinearMapClass.instAddMonoidHomClass _
     rw [hm, map_mul, LinearEquiv.mul_apply, weylAction_rootWeyl, weylAction_rootWeyl, map_neg,
       map_neg, reflection_root_of_pairing_eq_neg_one b a hab', map_add,
       reflection_root_of_pairing_eq_neg_one a b hba, RootPairing.reflection_apply_self]

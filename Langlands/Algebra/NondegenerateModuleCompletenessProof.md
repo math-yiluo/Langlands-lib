@@ -1,7 +1,6 @@
 # Completeness and cocompleteness of original nondegenerate modules
 
-This module reuses Worker 6's shared Lean proof and explanation; Worker 695
-prepared the exact-target submission. It implements the first assertion of
+This module implements the first assertion of
 the Proposition of Renard I.6,
 printed pp.27–28 / PDF pp.33–34 of the French edition dated 9 July 2026.
 The governing source is registered as
@@ -50,4 +49,6 @@ finite-dimensional, finite-generation, unital-action or nonempty-index
 assumption. Examples retain the full targets and test unequal universes.
 
 AB5, local finite type (the source's AB6) and filtered-colimit exactness
-are separate I.6 obligations. They are not asserted by this proof.
+are separate I.6 assertions, proved in `NondegenerateModuleAB5Proof`,
+`NondegenerateModuleLocallyFiniteTypeProof` and
+`NondegenerateModuleFilteredColimitsProof`. They are not asserted by this proof.

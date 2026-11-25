@@ -1,9 +1,5 @@
 # Rank-one highly ramified twist stability
 
-Worker 46 authors this proposition family for task
-`e534647a-77a5-4c12-91d7-8a00fe104fc4`. Worker 33 contributed the concrete
-rank-one interface and the review of the conductor endpoint translation.
-The definitions imported from Workers 20 and 33 retain their authorship.
 This is a rank-one specialization of Deligne--Henniart's theorem, expressed
 using actual character conductors and the actual Gauss integral. It neither
 formalizes the general virtual-representation theorem nor proves stability.
@@ -57,8 +53,8 @@ valuation.
 The supplied Haar measure remains the same on both sides. Neither its
 normalization nor Fourier self-duality is assumed. Epsilon on this
 ramified domain is an entire exponential times a finite Gauss constant,
-so every complex s is a legitimate evaluation point. The adopted
-companion now proves convergence for precisely these compact-annulus,
+so every complex s is a legitimate evaluation point. The companion
+`Langlands.LocalFactor.Abelian.Padic` proves convergence for precisely these compact-annulus,
 continuous-character inputs in `gaussIntegrand_integrable`. Although
 the underlying Bochner integral is a total function, this statement
 uses convergent integrals. No integrability assumption is used to hide
@@ -157,7 +153,7 @@ imported project Lean/Markdown pairs were checked against that historical Librar
 Their Lean sources agree with the sources used by the whole-target check
 below. In particular, the statement uses these actual constructors:
 
-Integration uses the canonical direct import
+The module uses the canonical direct import
 `Langlands.LocalFactor.Abelian.Padic` and its dependency
 `Langlands.LocalFactor.Abelian.Definitions`. The migration preserves their
 mathematical declarations; the table retains the original paths and fingerprints.
@@ -169,12 +165,11 @@ mathematical declarations; the table retains the original paths and fingerprints
 | `Langlands.LocalFactor.Abelian` | `18215959be4fdf7359708f2250aa94e60a3a78f6e99919ea0c7ada61cf74ba22` |
 | `Langlands.LocalFactor.PadicAbelian` | `1689aa7750d78260e3657d039053e4d496a1c945a43585ecdecc1b7e4ae7bf05` |
 
-Worker 20 adopted Worker 33's callable companion without changing the
-used conductor or epsilon expressions, and added rational L-factors,
+The callable companion `Langlands.LocalFactor.Abelian.Padic` uses the
+conductor and epsilon expressions unchanged, and adds rational L-factors,
 restricted evaluation, the proved all-spectral-parameter convergence, and
 the equality with the separately constructed abelian constant.
-The complete independent semantic report approves the three construction
-pairs without qualifications; the final integration published them at
+The three construction pairs were published at Library commit
 `e4e22245747ec04edd4445d4557b746f8f53de29`. The migrated Library retains their
 mathematical bodies with canonical dependency imports. The historical published Markdown hashes for `Conductor`,
 `Abelian`, and `PadicAbelian` are respectively
@@ -182,24 +177,21 @@ mathematical bodies with canonical dependency imports. The historical published 
 `129f034c9b060d474b4eab1c2379529ec067b8a16123abc4098f7194f03e87c2`,
 and `1f9bbd7495ab99fd5a3d915d44cda05345b1c1fa0bbfee4e3d9e1089b3fd9d0c`.
 The imported local-field normalization and continuous-character results
-are also present unchanged. No unreviewed project source is needed by
-this statement.
+are also present unchanged.
 
 The generic virtual theorem still needs actual virtual Weil representations,
 upper ramification breaks, tensor and determinant operations on those
 classes, and the independently specified local-constant system. This
 rank-one statement does not supply those objects or count as completion of
-that theorem. It is distinct from Worker 33's abelian functional-equation
-family, whose actual expressions it reuses.
+that theorem. It is distinct from the abelian functional-equation
+family `PadicAbelianLocalAnalysisStatement`, whose actual expressions it reuses.
 
 ## Whole-target development check
 
 Development checks establish well-formedness, not mathematical
-verification. Independent semantic review and publication of this
-statement remain separate obligations.
+verification.
 
-Before the pilot restart, the extended target completed managed check
-`9f2ffaa4-47d9-43f3-b7db-ca29c1cc0f3d`: the nine-module incremental Lake
+The extended target was checked: the nine-module incremental Lake
 build and exact declaration inspection both returned zero, without diagnostics,
 and both process trees were quiet. The declaration returns `Prop` at its
 independent carrier universe `u`. Its complete target fingerprint is
@@ -211,14 +203,13 @@ The checked snapshot is
 The inspection reports only `propext`, `Classical.choice`, and `Quot.sound`.
 
 The mathematical dependencies are the named Lean modules and declarations
-in the current Library. The check identifiers record development evidence.
+in the Library.
 
-The pilot recheck on 2026-10-20 completed as
-`cf256ca3-5250-49f6-9f86-e11eff0beae6` in the pinned Lean 4.34.0 /
+A recheck on 2026-10-20 ran in the pinned Lean 4.34.0 /
 Mathlib 5ed29652 environment. The Lake build returned zero with no
 diagnostics, and exact inspection reports `statement_returns_prop: true`,
 the same carrier universe `u`, the same complete target fingerprint
 `24ec0a52922740dd70d76c062ed2c68d34a664b1107599941402de357573983e`,
 and only `propext`, `Classical.choice`, and `Quot.sound`. The Lean source
-is unchanged. The imported project files match the assigned pilot Library
+is unchanged. The imported project files match the Library at commit
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`.

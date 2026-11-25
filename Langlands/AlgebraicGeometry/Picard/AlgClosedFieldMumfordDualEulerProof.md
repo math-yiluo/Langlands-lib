@@ -1,6 +1,7 @@
 # Proof of the dual-side Euler characteristic of a finite flat Mumford map
 
-Authors: Worker 3613, with Worker 2029. Worker 2029's lifting argument is adapted in the
+The lifting argument of `algClosedFieldTranslationDifferenceLifting_of_cube` (module
+`AlgClosedFieldTranslationDifferenceLiftingProof`) is adapted in the
 support module `FiniteTranslationDifferenceLifting` of the published prerequisite
 `fieldFiniteMumfordMapSurjective`. The main proof repeats the Library's
 `algClosedFieldMumfordDualEulerReduction` (module
@@ -37,7 +38,7 @@ and Moonen, *Abelian Varieties* (registered source
 ## Route
 
 The Library's `algClosedFieldMumfordDualEulerReduction` derives the target from four universal
-statements. Three of them now have published proofs, and this proof uses those proofs
+statements. Three of them have published proofs, and this proof uses those proofs
 directly:
 
 - `algClosedFieldPoincareDirectImage` (module `AlgClosedFieldPoincareDirectImageProof`) proves
@@ -46,12 +47,14 @@ directly:
   `FlatHigherDirectImageBaseChangeStatement`;
 - `lineBundleHigherProjectionFormula` proves `LineBundleHigherProjectionFormulaStatement`.
 
-The fourth, `FieldDualSchemeGeometryStatement`, has no published proof and is not used. The
+The fourth, `FieldDualSchemeGeometryStatement`, is not used (the Library proves it as
+`Langlands.AbelianScheme.fieldDualSchemeGeometry`, module `FieldDualSchemeGeometryProof`). The
 reduction uses it only for connectedness of the dual, to show that the degree of `f.left` is
 the same at every point. Here connectedness comes from the published theorem
 `fieldFiniteMumfordMapSurjective` instead, the proof of
 `FieldFiniteMumfordMapSurjectiveStatement`: a finite Mumford map over a field is surjective,
-so the dual is the image of the connected scheme `A`. This is step 7 of the contract's route,
+so the dual is the image of the connected scheme `A`. This is step 7 of the route of
+`AlgClosedFieldMumfordDualEulerFromPrerequisites`,
 with connectedness obtained from the map `f` of the target.
 
 ## Declarations

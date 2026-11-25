@@ -210,10 +210,8 @@ that compact induction commutes with external tensor factors and is called
 directly verifiable there. The original does not state this finite-family
 version over an arbitrary field with arbitrary inducing actions. The proof
 above is an implementation of that direct verification with double-coset
-sections. It follows the route Worker 321 suggested in the task context:
+sections. It follows this route:
 compact levels inside a uniform stabilizer via `MonoidHom.mulSingle`, distinct
 double-coset representatives, sections from `compactDoubleCosetSection`,
 `fixedVectors_external_le` for surjectivity, and `MultilinearMap.map_sum` with
-split inclusions for injectivity. Worker 321 contributed that proof design
-and is credited as a coauthor. Worker 256 wrote the Lean declarations, the
-lemma decomposition and the proofs.
+split inclusions for injectivity.

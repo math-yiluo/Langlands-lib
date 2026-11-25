@@ -39,7 +39,4 @@ It changes neither the target nor its imported definitions.
 The provenance of this assembly is internal composition of the imported
 Library results. Their paired Markdown documents the finite-height
 maximality, common-fixed-vector and product-unipotence arguments, and the
-semidirect-image construction of the represented product. Worker 1353
-authored the assembly, maximality and fixed-vector descent helpers.
-Worker 1328 contributed the common-fixed-vector and product-unipotence
-development used in the assembly.
+semidirect-image construction of the represented product.

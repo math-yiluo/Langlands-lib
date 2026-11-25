@@ -110,10 +110,10 @@ local notation "isogenyBA" => weilAdelicLevelIsogeny preservation composition un
 def weilAdelicLevelIsogenyComp (U : Subgroup G) (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -131,10 +131,10 @@ local notation "isogenyComp" => weilAdelicLevelIsogenyComp preservation composit
 theorem weilAdelicLevelIsogenyComp_eq_trans (U : Subgroup G) (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -163,8 +163,8 @@ theorem weilAdelicLevelIsogenyComp_eq_trans (U : Subgroup G) (q r : ℚˣ)
 /-- Direct inverse-isogeny transport uses its derived reciprocal multiplier. -/
 def weilAdelicLevelIsogenyInverse (U : Subgroup G) (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : LevelB U ≃ LevelA U :=
   isogenyBA U q⁻¹ e.symm (rationalIntertwines_inverse iA iB e he)
@@ -177,8 +177,8 @@ local notation "isogenyInverse" => weilAdelicLevelIsogenyInverse preservation co
 /-- Reversing the isogeny induces the inverse equivalence of fixed orbit sets. -/
 theorem weilAdelicLevelIsogeny_symm (U : Subgroup G) (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     (isogenyAB U q e he hqe).symm = isogenyInverse U q e he hqe := by
@@ -248,10 +248,10 @@ local notation "isogenyBA" => weilPrimeToAdelicLevelIsogeny preservation composi
 def weilPrimeToAdelicLevelIsogenyComp (U : Subgroup G) (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -269,10 +269,10 @@ local notation "isogenyComp" => weilPrimeToAdelicLevelIsogenyComp preservation c
 theorem weilPrimeToAdelicLevelIsogenyComp_eq_trans (U : Subgroup G) (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -301,8 +301,8 @@ theorem weilPrimeToAdelicLevelIsogenyComp_eq_trans (U : Subgroup G) (q r : ℚˣ
 /-- Direct inverse-isogeny transport uses its derived reciprocal multiplier. -/
 def weilPrimeToAdelicLevelIsogenyInverse (U : Subgroup G) (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : LevelB U ≃ LevelA U :=
   isogenyBA U q⁻¹ e.symm (rationalIntertwines_inverse iA iB e he)
@@ -315,8 +315,8 @@ local notation "isogenyInverse" => weilPrimeToAdelicLevelIsogenyInverse preserva
 /-- Reversing the isogeny induces the inverse equivalence of fixed orbit sets. -/
 theorem weilPrimeToAdelicLevelIsogeny_symm (U : Subgroup G) (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     (isogenyAB U q e he hqe).symm = isogenyInverse U q e he hqe := by

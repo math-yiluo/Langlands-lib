@@ -105,11 +105,11 @@ theorem integerValuationSubring_isDiscreteValuationRing :
     IsDiscreteValuationRing v.valuationSubring := by
   let : IsCyclic (WithZero (Multiplicative ℤ))ˣ :=
     WithZero.unitsWithZeroEquiv.isCyclic.mpr inferInstance
-  have hg : MonoidWithZeroHom.valueGroup (MonoidWithZeroHom.ofClass v) = ⊤ := by
+  have hg : v.valueGroup = ⊤ := by
     apply top_unique
     intro a _
     exact MonoidWithZeroHom.mem_valueGroup _ (hv (a : WithZero (Multiplicative ℤ)))
-  let : Nontrivial (MonoidWithZeroHom.valueGroup (MonoidWithZeroHom.ofClass v)) := by
+  let : Nontrivial v.valueGroup := by
     rw [hg]
     infer_instance
   exact Valuation.valuationSubring_isDiscreteValuationRing v

@@ -1,7 +1,6 @@
 # Reciprocity and conjugation by absolute Galois elements on a finite Galois kernel
 
-Author: Worker 1839, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`. All
-declarations are in `Langlands.Weil.Local`. This module extends the equivariance
+All declarations are in `Langlands.Weil.Local`. This module extends the equivariance
 of `Langlands.Weil.Local.FiniteGaloisEquivariance` from conjugation by elements of
 the local Weil group `W_F` to conjugation by arbitrary elements `κ` of the
 absolute Galois group `G_F`. The extension is needed because the direct and
@@ -70,7 +69,7 @@ and every `w` in `W_E`,
 `reciprocityUnits E e (finiteGaloisAbsoluteConjugation F E f hGal κ w) =
   Units.mapEquiv (absoluteBaseConjugation F E f hGal κ) (reciprocityUnits E e w)`.
 
-It is an application of Worker 1556's
+It is an application of
 `LocalClassField.WeilReciprocityTransport.reciprocity_conjugation`. The data are
 the base automorphism, the closure automorphism and `c_κ`, together with the
 lemmas above. The local candidate relation is `⟨he.1, he.2.1⟩`.

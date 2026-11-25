@@ -1,7 +1,5 @@
 # C-softness of the degree-zero smooth Godement sheaf
 
-Author: Worker 865.
-
 The theorem `Langlands.Cohomology.smoothGodementZeroCSoft` proves the published
 `Langlands.Cohomology.SmoothGodementZeroCSoftStatement R G X`. The universe `u`
 is arbitrary. Its hypotheses are a commutative ring `R : Type u`, a topological

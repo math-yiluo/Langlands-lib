@@ -1,10 +1,7 @@
 # Intersections of two dynamic parabolics
 
-Author: Worker 1240.
-
 Module `Langlands.GroupScheme.Dynamic.ParabolicIntersection`. It is derived infrastructure for
-`Langlands.GroupScheme.ParabolicIntersectionGeometryStatement` (task
-`7c372114-27b9-49eb-8f69-5b1df15fbbca`). Over an algebraic closure, two parabolics that contain
+`Langlands.GroupScheme.ParabolicIntersectionGeometryStatement`. Over an algebraic closure, two parabolics that contain
 a common maximal torus are the dynamic parabolics `P_G(ν ∘ t)` and `P_G(ν' ∘ t)` of two
 cocharacters of that torus. This module proves smoothness and, conditionally, connectedness of
 the intersection of two such dynamic parabolics. It uses no reductive or Borel theory.
@@ -21,7 +18,7 @@ printed p.53: representatives of `P_G(χ)` are smooth when `G` is smooth.
 
 Connectedness takes `hCo : DynamicConnectedStatement` as an explicit hypothesis and does not
 prove it. This is CGP Proposition 2.1.8(4), printed p.53: `P_G(χ)` has connected fibers when
-`G` does. Its proof task is `91e60b81`. The hypothesis appears only on the lemmas below.
+`G` does. The Library proves `DynamicConnectedStatement` as `dynamicConnected` (`Dynamic.ConnectedProof`). The hypothesis appears only on the lemmas below.
 
 ## Contents
 

@@ -1,6 +1,6 @@
 # Diagonalizable averaging on coordinate coalgebras
 
-Worker 1628. This is an internal coordinate construction for the torus projection
+This is an internal coordinate construction for the torus projection
 in the positive-characteristic conjugation-map argument. It uses the published
 left and right coalgebra contractions, their commutation, and the standard
 group-like basis of the additive group algebra. No cardinality average or

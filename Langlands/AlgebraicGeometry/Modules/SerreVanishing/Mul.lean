@@ -33,6 +33,7 @@ lemma tensorMap_id_unitEnd (G : Y.Modules) (φ : structureSheaf Y ⟶ structureS
     ext U : 1
     apply ModuleCat.MonoidalCategory.tensor_ext
     intro g a
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     change φ.app U.unop a • g = restrictScalar U.unop (unitEndCoefficient φ ⊤) • (a • g)
     have h1 := unitEndCoefficient_app φ U.unop a
     rw [unitEndCoefficient_res φ (homOfLE (le_top : U.unop ≤ ⊤))] at h1

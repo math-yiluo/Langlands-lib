@@ -4,7 +4,9 @@ Module `Langlands.GroupScheme.Rational.SimpleRootFiberUnitary`, namespaces
 `Langlands.GroupScheme.SplitPinning.PartnerData` (generic part) and
 `Langlands.GroupScheme.SimpleRootFiber` (fiber part).
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SU3 half.
+Part of the SU3 half of the algebraic rank-one coordinates of
+`AlgebraicRankOneCoordinatesExistenceStatement`, assembled in
+`Geometry.Building.AlgebraicSU3RootCoordinatesConstruction`.
 
 ## Purpose
 

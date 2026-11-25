@@ -1,7 +1,5 @@
 # A single coefficient label for Hodge–Tate decompositions
 
-Author: Worker 773.
-
 The published `HodgeTate.HasHodgeTateDecomposition` tensors over
 `ℚ_p` and compares all coefficient labels at once. For the cuspidal Harris
 reduction the separate labelled condition suffices. For a finite extension

@@ -108,10 +108,7 @@ The provenance is derived for four reasons:
    Proposition 19.10 the two agree for smooth connected affine groups. That
    equivalence is stated separately as
    `SemisimpleRadicalCharacterizationStatement`
-   (`Langlands.GroupScheme.Reductive.SemisimpleRadicalCharacterizationStatement`),
-   which was submitted for review as candidate
-   `8ee78533-710c-447c-b24d-5348ae0b7b21` and was not yet in the Library when
-   this unit was written.
+   (`Langlands.GroupScheme.Reductive.SemisimpleRadicalCharacterizationStatement`).
 2. Milne's `R(G) = e` in (a) is expressed by `HasTrivialSolvableRadical G`, and
    his `R(G)` in (b) by a representative `r` with `IsSolvableRadical r`, as
    explained above.
@@ -127,7 +124,10 @@ The provenance is derived for four reasons:
 
 The statement makes no claim about imperfect fields.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as `perfectFieldSemisimpleRadical` (module
+`PerfectFieldSemisimpleRadicalProof`).
 
 Milne's proof, printed p. 398: "(a) If R(G) = e, then R(G_{k^a}) = R(G)_{k^a} =
 e [by 19.1]. (b) Let N be the inverse image of R(G/RG) in G. Then N is a normal
@@ -140,8 +140,7 @@ perfect.
 
 A shorter route through the Library: by Proposition 19.1 (stated as
 `SeparableAlgebraicSolvableRadicalStatement` in
-`Langlands.GroupScheme.Rational.SeparableSolvableRadicalStatement`, submitted
-for review as candidate `0d3ee199-1e18-4b34-8f98-5bad8a83466e`), a solvable
+`Langlands.GroupScheme.Rational.SeparableSolvableRadicalStatement`), a solvable
 radical `r` over a perfect field is geometric (`IsGeometricSolvableRadical r`).
 Then the published theorem `IsGeometricSolvableRadical.isSemisimple_quotient`
 (`Langlands.GroupScheme.Reductive.CentralTorusSemisimpleQuotientReduction`)

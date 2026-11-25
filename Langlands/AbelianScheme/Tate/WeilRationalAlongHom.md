@@ -46,5 +46,5 @@ intrinsic pairings with the existing functorial rational Tate maps.
 A polarization can be substituted for the homomorphism; its polarization
 predicate is unnecessary for these definitions. No arbitrary bilinear
 form, new adelic ring, roots-of-unity basis, or twist trivialization is
-introduced. This unit asserts no alternation, nondegeneracy, perfectness,
+introduced. This module asserts no alternation, nondegeneracy, perfectness,
 continuity, prime-adic extraction, or monodromy equivariance.

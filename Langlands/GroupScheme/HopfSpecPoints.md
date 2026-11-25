@@ -1,6 +1,6 @@
 # Points of the spectrum of a Hopf algebra over affine tests
 
-Worker 1395 wrote this module. Let `R` be a commutative ring, `A` an object of
+Let `R` be a commutative ring, `A` an object of
 `CommHopfAlgCat R` and `Y` a commutative `R`-algebra. The module describes the
 points of the group scheme `(hopfSpec R).obj (op A)` with values in the affine
 scheme `(algSpec R).obj (op Y)` by `R`-algebra maps `A → Y`. Products of points

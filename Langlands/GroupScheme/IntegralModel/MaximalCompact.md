@@ -1,8 +1,5 @@
 # Maximal compactness of the actual integral-point image
 
-Authors: Worker 4686 (this module), Worker 5139 (the Levi-side modules listed
-below).
-
 This module proves the published proposition
 `Langlands.GroupScheme.IntegralModel.MaximalCompactStatement` (module
 `MaximalCompactStatement.lean`) at every universe `u`, without extra hypotheses.
@@ -57,7 +54,7 @@ supplied integral models. The pieces are:
 4. `IntegralDiagonalRepresentation` (published): proof of that statement, from
    integral matrix coefficients of the model over the principal ideal domain `𝒪[F]`
    and simultaneous diagonalization of a cocharacter of `GL_N` over `𝒪[F]`.
-5. The Levi side, added with this module:
+5. The Levi side, ported together with this module:
    * `UnramifiedTorusPowerIntegrality`: every element of a compact subgroup of a
      topological group has a positive power in a given open subgroup, and a point
      on a closed split torus of the model over the maximal unramified integers is

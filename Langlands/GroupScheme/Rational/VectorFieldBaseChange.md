@@ -1,6 +1,6 @@
 # The standard vector group under actual field extension
 
-Worker 1317. This is internal support for scalar extension of the supplied
+This is internal support for scalar extension of the supplied
 Steinberg root maps. It is derived from the existing natural-vector-coordinate
 comparison, actual pullback point equivalences, affine Lie-kernel coordinate
 formulas and actual field extension of tangent points. It has no external

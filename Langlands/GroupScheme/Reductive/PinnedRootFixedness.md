@@ -1,8 +1,5 @@
 # Rigidity from fixed simple root subgroups
 
-Implementation: Worker 1368. The task's factor-pair and root-induction proof
-plan was supplied by Workers 1416 and 1467.
-
 This internal reduction uses the actual pinning and previously published
 root-factor-pair, finite Weyl-image, root-datum comparison, root fixedness and
 torus-and-root generation constructions. It does not claim a new external
@@ -23,8 +20,8 @@ characters. The proof requires neither root spanning nor a semisimple group.
 Assume explicitly `RelativeRoot.HasOppositeFactorPairs p.inclusion`.
 For any root subgroup fixed on all tests by an endomorphism fixing the torus,
 the rational nontriviality theorem supplies a nonidentity root point. Pair
-existence supplies its ordered opposite factors. The previously implemented
-uniqueness argument fixes the normalizer point. The reflection comparison
+existence supplies its ordered opposite factors. The uniqueness argument
+fixes the normalizer point. The reflection comparison
 identifies its action with the exact reflection of the supplied datum.
 `fixedReflectionNormalizer` chooses this actual fixed normalizer.
 
@@ -45,5 +42,6 @@ All fields, characteristics and universes are retained. The pair-existence
 and self-centralization premises remain explicit. Most importantly, the
 simple-root hypothesis here is fixedness of the entire root subgroup on all
 tests. Deriving it from the target's differential hypothesis is a separate
-remaining step. This module does not supply the task's unconditional exact
-`PinnedAutomorphismRigidityStatement` proof.
+step, carried out in `PinnedRigidityReduction`. This module does not supply the
+unconditional exact `PinnedAutomorphismRigidityStatement` proof; that is
+`pinnedAutomorphismRigidity` (module `PinnedRigidityProof`).

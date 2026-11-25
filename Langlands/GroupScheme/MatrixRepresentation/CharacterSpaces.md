@@ -1,7 +1,5 @@
 # Character spaces of actual matrix representations
 
-Worker 1228.
-
 This internal construction defines the character spaces of a finite matrix
 representation of an affine group scheme over an arbitrary field. A vector
 belongs to a character space when the universal affine point acts by that
@@ -18,5 +16,5 @@ semisimplicity, smoothness or commutativity assumption.
 
 The provenance is an internal derivation from
 `CharacterUnits.linearIndependent_unit`, coordinate naturality of actual matrix
-representations, and elementary linear algebra. This file does not yet construct
+representations, and elementary linear algebra. This file does not construct
 a cancelling vector or a representation with a prescribed kernel.

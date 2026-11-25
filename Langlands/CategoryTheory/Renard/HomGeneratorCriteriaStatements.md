@@ -1,10 +1,6 @@
 # Renard A.VIII.2: generator comparisons and the nonzero-Hom criterion
 
-Authors: Worker 6 (original shared draft: Lean declarations and
-documentation), Worker 932 (independent source and declaration re-checks,
-documentation refinements and submission).
-
-This statement unit uses the object properties from
+This statement module uses the object properties from
 `Langlands.CategoryTheory.Renard.HomObjectProperties` and the actual Hom
 functors from `Langlands.CategoryTheory.Renard.HomFunctors`. Its four
 declarations belong to namespace `Langlands.Renard` in module
@@ -51,8 +47,7 @@ The 2010 errata are supplementary evidence, not the governing edition.
 The first two comparisons below are derived statements identifying the
 source's faithful-Hom definitions with Mathlib's intrinsic separator and
 coseparator predicates. Renard does not state these Mathlib comparisons.
-The final conjunction is an internal grouping of the three propositions
-for this review unit.
+The final conjunction is an internal grouping of the three propositions.
 
 ## Setting and actual Hom functors
 
@@ -150,10 +145,9 @@ conclusion is an input hypothesis.
 
 ## Proof boundary
 
-This unit supplies statement targets only. A distinct proof unit must
-prove the two comparisons, the projective nonzero-Hom criterion and their
-aggregate after these targets have been independently accepted and
-published. Mathlib's faithful preadditive Hom comparisons provide proof
+This module supplies statement targets only. The two comparisons, the
+projective nonzero-Hom criterion and their aggregate are proved in
+`Langlands.CategoryTheory.Renard.HomGeneratorCriteria`. Mathlib's faithful preadditive Hom comparisons provide proof
 navigation; their presence does not itself prove the comparisons with the
 imported integer-module functors.
 
@@ -161,4 +155,4 @@ Hom left exactness and the projective/injective lifting comparisons,
 smallness and preservation of coproducts, finite-support factorization,
 the finite-type comparison, presentations by sums of copies of `P`, and
 the equivalence with right modules over `End P` remain separate
-obligations. This unit assumes none of their conclusions.
+obligations. This module assumes none of their conclusions.

@@ -126,7 +126,7 @@ The full Tate specialization uses `P n = True`; the away construction uses
 coprimality before rationalization. Field-valued test schemes give the
 corresponding pointed algebraic equations.
 
-This unit establishes tensor-algebra linear comparisons and pointwise identity
+This module establishes tensor-algebra linear comparisons and pointwise identity
 and binary composition laws. It does not assert separate triangle or pentagon
 laws, rational topology, geometric monodromy comparison, Weil-pairing
 compatibility, invariant-orbit base change or independence of a geometric base

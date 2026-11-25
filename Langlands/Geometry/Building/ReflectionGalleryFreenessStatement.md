@@ -36,14 +36,14 @@ topological meaning. Thus the target is triviality of the stabilizer of the
 distinguished chamber within this subgroup. It does not assert chamber
 transitivity or that this subgroup is all of `G`.
 
-This contribution defines the target proposition and supplies no proof of it.
-The interface and target come from Worker 1622's internal finite-word
-development, reused here with its five laws unchanged. The intended proof is
-a finite-word deletion argument: a separating label cancels one letter, and a
+This module defines the target proposition and supplies no proof of it.
+The interface and target come from an internal finite-word
+development, reused here with its five laws unchanged. The proof, in
+`ReflectionGalleryFreeness`, is a finite-word deletion argument: a separating label cancels one letter, and a
 returning word can be shortened by two letters. This is internal provenance;
 no external formalization or source theorem is used to define the interface.
 Application to affine Weyl chambers retains the obligations to verify all five
 laws for the actual affine action and to identify the geometrically relevant
 group with the generated subgroup. Chamber transitivity remains a separate
 obligation for simple transitivity. These geometric assertions are not proved
-by this statement unit.
+by this statement module.

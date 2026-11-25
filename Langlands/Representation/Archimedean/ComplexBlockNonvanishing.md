@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockNonvanishing`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It shows that the block Jacquet functional
 `ComplexBlockFunctional.jac` of `ComplexBlockFunctional` is nonzero on the `U(n)`-finite principal
 series. It generalizes the published `ComplexJacquetNonvanishing` (one row at a time, strictly
@@ -21,8 +21,8 @@ and the identity elsewhere; `ComplexBlockChart.gramRe y s` is the Gram determina
 
 ## The statement
 
-`ComplexBlockNonvanishingStatement` assumes `ComplexBlockChartIntegrableStatement`, which is only
-stated, not yet proved, in the Library. Under that assumption it says the following.
+`ComplexBlockNonvanishingStatement` assumes `ComplexBlockChartIntegrableStatement`, which the
+Library proves as `complexBlockChartIntegrable`. Under that assumption it says the following.
 
 Let `ks` be a block decomposition of `n = dim ks` and `χ` characters with
 `χ_l(z) = χ_l(z/|z|)(|z|²)^{e_l}`, `χ_l(1) = 1` and `χ_l(u) = u^{p_l}` for `|u| = 1`, such that

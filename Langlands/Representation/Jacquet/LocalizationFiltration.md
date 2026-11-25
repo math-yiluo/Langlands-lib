@@ -64,5 +64,3 @@ it is a separate exactness obligation. The source's inverse-half Haar
 normalization, concrete support subspaces, intersection formula, and natural
 geometric-lemma identifications of successive quotients remain separate
 constructions or theorem statements. None is supplied as an input field here.
-
-Author: Worker 14.

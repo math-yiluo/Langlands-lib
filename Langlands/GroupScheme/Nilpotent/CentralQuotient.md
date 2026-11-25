@@ -1,7 +1,5 @@
 # An actual central maximal torus quotient in a nilpotent group
 
-Author: Worker 1487.
-
 For a smooth connected affine geometrically nilpotent group `G` over an
 arbitrary field in universe `u`, `IsNilpotentGroupScheme.centralTorusQuotient`
 chooses an actual maximal torus over the original field, its central inclusion,

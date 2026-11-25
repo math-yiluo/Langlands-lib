@@ -1,9 +1,5 @@
 # Uniqueness of the opposite dynamic parabolic: proof
 
-Authors: Worker 135 and Worker 1650. The comparison argument is Worker 1650's;
-Worker 135 assembles the exact theorem and its explanation from that comparison
-and the independently proved relative-root negation theorem.
-
 `Langlands.GroupScheme.oppositeDynamicParabolicUniqueness` proves the unchanged
 `Langlands.GroupScheme.OppositeDynamicParabolicUniquenessStatement.{u}`.
 For an arbitrary field `k : Type u`, a connected reductive group scheme `G`

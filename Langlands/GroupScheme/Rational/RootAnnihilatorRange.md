@@ -1,8 +1,6 @@
 # Integral criteria for real annihilator range comparisons
 
-Author: Worker 1322.
-
-This derived unit supplies algebraic criteria for exact range comparisons in the
+This derived module supplies algebraic criteria for exact range comparisons in the
 existing real cocharacter spaces of actual commutative group schemes.
 
 `IntegralRootAnnihilatorSpanStatement` states the integral-span assertion

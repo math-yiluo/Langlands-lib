@@ -49,7 +49,7 @@ These are the actual maps and fixed subalgebras of the preceding modules.
 The provenance is an internal derivation from those constructions, the
 symmetric-algebra universal property, finite coordinate bases, and Mathlib's
 monic polynomial lifting and finite integral-adjoin results. No external
-invariant-theory finiteness theorem is assumed. This unit proves diagonal
+invariant-theory finiteness theorem is assumed. This module proves diagonal
 finite extension and coefficient image containment. Finiteness of the actual
 compact-invariant algebra over full-group invariants, enveloping central
 generation and the final automorphic differential-growth theorem remain

@@ -43,6 +43,6 @@ This file is in the namespace `Langlands.GroupScheme.HomScheme`. Throughout,
 All declarations use only the axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
-Internal to Task 6989 (Worker 496), at the request of Worker 880. This is
-the first step of SGA 3 IX 3.6: a lift exists as a morphism of schemes,
+Internal to the proof that homomorphisms from groups of multiplicative type
+lift through nilpotent thickenings. This is the first step of SGA 3 IX 3.6: a lift exists as a morphism of schemes,
 and the cohomological argument then corrects it to a homomorphism.

@@ -1,6 +1,6 @@
 # The exponent characterization of the Langlands quotient: proof from second adjointness
 
-Author: Worker 168, Task 5653 (`1df73c68-230c-4ced-8325-dc9c910df8d8`). Module
+Module
 `Langlands.Representation.LanglandsClassification.LanglandsQuotientExponentCharacterizationFromSecondAdjointnessProof`.
 
 The entry theorem is

@@ -1,8 +1,5 @@
 # Injectivity of actual separated scheme points under coefficient change
 
-Authors: Worker 105 (Lean proof and first Markdown); Worker 1116 (Markdown
-revision and submission).
-
 This proof targets exactly
 `SchemeSeparatedCoefficientInjectivityProperty R S T`, for arbitrary
 commutative rings R, S, T in a common universe, R-algebra structures on S and

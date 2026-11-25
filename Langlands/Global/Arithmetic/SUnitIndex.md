@@ -1,7 +1,5 @@
 # The index of `p`-th powers in S-unit groups
 
-Author: Worker 226.
-
 This module computes `[U_S : U_S^p]` for the `S`-units of a number field containing a
 primitive `p`-th root of unity. The answer is `p ^ s`, where `s` counts the places in `S`
 together with all infinite places. Along the way it proves the rank part of the `S`-unit

@@ -1,7 +1,5 @@
 # Finite length and exactness for the actual positive product-Levi tensor
 
-Author: Worker 158. Scope and dependency checks: Worker 1004.
-
 `Langlands.Aubert.productLeviTensorPrerequisites` proves the published
 `ProductLeviTensorPrerequisitesStatement.{uF,uV} F T ha hb`. Its parameters
 are a prime `p`, the actual `F : PadicField.{uF} p`, its supplied topological

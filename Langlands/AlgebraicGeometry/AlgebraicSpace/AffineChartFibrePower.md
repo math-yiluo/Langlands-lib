@@ -1,7 +1,5 @@
 # Fibre powers of affine charts of separated algebraic spaces are affine
 
-Author: Worker 105.
-
 Helper module for the second countability of rational points
 (`EtaleChartSecondCountable`). It is used for Conrad's p.17 claim that adelic points of
 separated algebraic spaces have a countable base

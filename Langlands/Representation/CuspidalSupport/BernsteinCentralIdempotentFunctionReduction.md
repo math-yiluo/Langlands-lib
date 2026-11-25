@@ -1,6 +1,6 @@
 # Renard VI.10.4, Remark 2, from the Theorem with Remark 1 and the VI.7.4 idempotents
 
-Worker 117. Derived conditional reduction for Renard, *Représentations des
+Derived conditional reduction for Renard, *Représentations des
 groupes réductifs p-adiques*, French version dated 9 July 2026
 (`renard-2026-representations-groupes-reductifs-padiques`), VI.10.4,
 Remarks 1–2, printed p.212 / PDF p.218, with VI.7.4, printed pp.185–186 /

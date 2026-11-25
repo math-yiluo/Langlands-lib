@@ -1,6 +1,6 @@
 # Explicit regularized four-crossing families
 
-This internal unit applies the scalar normalization and finite-layer analytic
+This module applies the scalar normalization and finite-layer analytic
 tools to the four actual Frobenius crossings at fixed endpoint exponents.
 Its inputs are the published generic and erased-denominator product formulas,
 parity restriction, symmetric Frobenius maps, compact polynomial-degree layers,
@@ -23,7 +23,7 @@ support bound with cutoff `ε.toNat + 2r + 1`.
 `Choices` supplies one such option for each of `BC`, `AC`, `BD` and `AD`.
 `Valid d e c` requires each choice to be valid for its actual constituent
 exponent difference and parity. It allows several removed denominators; this
-unit does not assert that an unlinked pair has at most one pole.
+module does not assert that an unlinked pair has at most one pole.
 
 The four `crossingData` instances use only reflection symmetry and define
 actual Frobenius maps for every complex parameter on the fixed expanded

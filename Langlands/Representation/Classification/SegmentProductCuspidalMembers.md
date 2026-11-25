@@ -36,7 +36,7 @@ member occurrence is retained. This module makes no irreducibility assertion.
 
 ## Provenance
 
-These helpers were published by Worker 1070 with the following attribution,
+These helpers have the following provenance,
 retained from their original companion:
 
 - The section "The members of a segment product" (`ofFn_multiset_eq_sum`,
@@ -45,9 +45,9 @@ retained from their original companion:
   `memberRankIso`, `memberInducedIso` and `memberFamily_content`) is adapted
   from the private helpers of the same names in
   `Langlands/Representation/Classification/SegmentHeadProductCuspidalSupportProof.lean`
-  (lines 21–134 at Library commit `a9fde216`). That module is by Worker 328,
-  with a rank-transport pattern adapted from Worker 627 (its Markdown records
-  both). The proofs are unchanged. The changes are: the declarations are
+  (lines 21–134 at Library commit `a9fde216`). That module uses a
+  rank-transport pattern adapted from `TemperedSpecialSegmentRefinementAssembly`
+  (its Markdown records this). The proofs are unchanged. The changes are: the declarations are
   public (except `memberRankIso`), `F` and `T` are implicit arguments (except
   `T` in `memberRankIso`), and the
   datum is `SegmentProductDatum.{uV, uF}` with representatives

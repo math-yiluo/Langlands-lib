@@ -1,13 +1,15 @@
 # Pair factors after highly ramified twists
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 the stability and vanishing properties of local factors of pairs under twists
 by highly ramified characters, from Jacquet and Shalika, *A Lemma on Highly
 Ramified ε-Factors*, Math. Ann. 271 (1985), 319-332. The factors are the
 relations `IsPadicSymmetricGammaFactor`, `IsPadicSymmetricEpsilonFactor` and
 `IsPadicSymmetricLPolynomial` of the module `PadicPairFactors`, which cover
 both rank orders. The module defines `SameGLCentralCharacter` and four
-statements, none of them proved.
+statements, none of them proved here. `highlyRamifiedGammaStability` in
+`HighlyRamifiedProof` proves `HighlyRamifiedGammaStabilityStatement`; the
+Library has no proof of the other three.
 
 ## Source
 
@@ -151,8 +153,8 @@ encodes `ε(s) = c q^{-ms}`, as in the published epsilon relation.
   existence by `unipotent_compatibleMeasureExists`. This uniqueness concerns
   those fixed Haar measures. Separately, a positive scalar does not change
   the L-polynomial (published `isPairLPolynomial_smul_measure`). The
-  L-polynomial does not depend on `ν` or `ψ` either, which is not proved in the
-  Library; the L-statement keeps the paper's standing assumption on `ψ`.
+  L-polynomial does not depend on `ν` or `ψ` either; the L-statement keeps the
+  paper's standing assumption on `ψ`.
 - **Epsilon statement.** Section 1.1 asserts the pair analogue of display (2)
   and announces its proof in Section 4. The ε-equality follows from
   Propositions 4.1 and 5.1: by 5.1, applied also to the contragredients
@@ -178,7 +180,7 @@ encodes `ε(s) = c q^{-ms}`, as in the published epsilon relation.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with no errors
 or warnings. `HighlyRamifiedStabilityStatement` was inspected: it returns
 `Prop`, has universe parameters `uF uV uW`, and uses only `propext`,
 `Classical.choice` and `Quot.sound`. There is no `sorry` and no new axiom.

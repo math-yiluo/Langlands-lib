@@ -1,7 +1,5 @@
 # Full Whittaker type conditional on square-integrable genericity
 
-Author: Worker 192.
-
 `Langlands.RankinSelberg.SquareIntegrableWhittakerTypeOfGenericityStatement`
 is a closed, `Prop`-valued definition of an internal adapter statement.
 It assumes

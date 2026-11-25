@@ -1,7 +1,5 @@
 # Transport of coordinate normalizing points between field fibres
 
-Authors: Worker 239.
-
 This module reduces
 [`LocalSplitFibrewiseRootDatumExistenceStatement`](LocalSplitRootDatumExistenceStatement.md)
 to two inputs that it does not prove:

@@ -1,7 +1,5 @@
 # Constructing nongeneric L-factors through tempered Langlands data
 
-Author: Worker 31.
-
 This module constructs a polynomial certified by the existing
 `RankinSelberg.IsLanglandsPairLPolynomial` relation, and the actual rational
 unit `1 / P(X)` from any such certified polynomial. Its classification,

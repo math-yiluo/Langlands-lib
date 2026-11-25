@@ -40,7 +40,8 @@ on `fˇ`.
 
 The provenance is internal: the construction and laws are derived from
 `Hecke.IntegratedAction`, `Smooth.Contragredient.LawsProof`, and Mathlib's
-measure-preserving inversion formula. This unit does not prove inversion
+measure-preserving inversion formula. This module does not prove inversion
 invariance for a particular Haar measure, any equality of traces or distribution
-characters, or the Gelfand–Kazhdan equivalence. Those remain separate
-obligations in the parent generic-contragredient proof.
+characters, or the Gelfand–Kazhdan equivalence. Those are separate
+obligations in the generic-contragredient proof `genericContragredient`
+(module `Whittaker.GenericDualProof`), which depends on this module.

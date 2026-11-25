@@ -1,7 +1,6 @@
 # Proof that surjective endomorphisms of abelian varieties are isogenies
 
-Lean module: `Langlands.AbelianScheme.FieldSurjectiveEndomorphismIsogenyProof`. Author:
-Worker 195.
+Lean module: `Langlands.AbelianScheme.FieldSurjectiveEndomorphismIsogenyProof`.
 
 `Langlands.AbelianScheme.fieldSurjectiveEndomorphismIsogeny :
 FieldSurjectiveEndomorphismIsogenyStatement.{u}` proves the Library statement

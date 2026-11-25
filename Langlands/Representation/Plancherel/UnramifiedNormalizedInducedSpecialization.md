@@ -1,7 +1,5 @@
 # Generic specialization of full normalized induction
 
-Worker 1444, adapting Worker 1635's published compact-open specialization proof.
-
 This derived helper exposes the group-generic argument already implemented privately
 in `RationalNormalizedInducedSpecializationProof.lean`. It constructs the canonical
 complex-linear equivalence `UnramifiedNormalized.inducedSpecializationEquiv` from the

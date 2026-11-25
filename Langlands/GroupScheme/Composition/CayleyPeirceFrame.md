@@ -1,7 +1,5 @@
 # The Peirce frame of an isotropic Cayley datum and its ℤ²-grading
 
-Author: Worker 118.
-
 Let `c : CayleyDatum K` be a Cayley datum over a field `K`, in any
 characteristic. This module shows how an isotropic norm gives a vector
 `e` with `N(e) = 0` and `T(e) = 1`. It then shows that such an `e`,
@@ -61,7 +59,7 @@ For a Peirce pair `P : IsPeircePair e f` the following hold:
 
 ## Peirce frames
 
-`PeirceFrame` bundles the data that Worker 622's `exists_peirceFrame`
+`PeirceFrame` bundles the data that `exists_peirceFrame`
 (module `Langlands.GroupScheme.Composition.CayleyPeirceExistence`)
 produces:
 

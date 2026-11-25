@@ -1,13 +1,14 @@
 # The eventual Zariski sheaf property from Lefschetz's theorem and gluing
 
-This unit derives the published statement `EventualModuliZariskiSheafStatement` from two
+This module derives the published statement `EventualModuliZariskiSheafStatement` from two
 statements:
 
 - `CubicFieldEmbeddingStatement.{0}`: Lefschetz's embedding theorem for the cubic bundle
-  of a datum over a field (published, unproved; Task 7747);
+  of a datum over a field (published; `CubicFieldEmbeddingReduction` derives it from the
+  proved `AlgClosedFieldAmpleCubeSeparationStatement`, but no module states it as a theorem);
 - `ModuliZariskiSheafOfRigidityStatement`: at a fixed level `n ≥ 3`, triviality of all
   polarized automorphisms over all level bases implies that the moduli functor is a
-  Zariski sheaf (new in this unit's companion module).
+  Zariski sheaf (module `ModuliZariskiSheafOfRigidityStatement`).
 
 ## Declaration
 
@@ -39,4 +40,4 @@ its consequence Corollary 7.8. The Library route uses the same count to prove tr
 of polarized automorphisms (`CanonicalCubicRigidity`, `GeometricPointRigidity`) and
 derives the sheaf property by gluing; this split, and the bound `N`, are internal and
 not claimed to be Mumford's. The remark after Theorem 7.9 notes that `n ≥ 3` suffices by
-Serre's lemma, which this unit does not use.
+Serre's lemma, which this module does not use.

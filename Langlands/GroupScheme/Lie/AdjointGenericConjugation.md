@@ -1,7 +1,5 @@
 # Generic conjugation into an adjoint slice
 
-Author: Worker 1630.
-
 This derived helper module turns dominance of the adjoint slice map
 `G × 𝔸^e → 𝔤`, `(g, t) ↦ Ad(g) (B t)`, into a pointwise statement about the
 generic Lie element. Let `K` be the function field of `𝔸^d` and `X_gen` the Lie

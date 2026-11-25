@@ -76,7 +76,7 @@ theorem rootRestriction_negAut (a : d.pinning.rootIndex) :
       d.splitTorus d.maximalSplit.1.1).symm
     ((CommGroupScheme.baseChange (algebraBaseMap k (SeparableClosure k))).map d.torusMap ≫
       d.pinning.rootDatum.root ((negAut d.pinning.rootDatum).indexEquiv a)) = _
-  rw [hroot, Preadditive.comp_neg, map_neg]
+  rw [hroot, Preadditive.comp_neg, AddEquiv.map_neg]
   rfl
 
 /-- The canonical based representative of minus identity on the full lattices. -/

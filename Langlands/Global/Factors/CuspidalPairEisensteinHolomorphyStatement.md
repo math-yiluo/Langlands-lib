@@ -43,8 +43,7 @@ The continuation is unique where it is analytic, because \(\mathbb C\) is
 connected and the poles of a meromorphic function are isolated.
 
 The named arguments in `coeff (r := r) (t := t) ψ φ s` only fix the implicit
-block sizes. Otherwise the Lean is the display of the task contract, with
-the definitions of the series module in place of the placeholder names.
+block sizes.
 
 ## Parameter and the imaginary axis
 
@@ -129,17 +128,17 @@ This route needs no restriction on the universe of `F`.
 
 ## Relation to the published general statements
 
-The task asks how S2 follows from
+This section explains how S2 follows from
 `Langlands.Global.EisensteinMeromorphicContinuationStatement` (module
 `Langlands.Global.AdelicEisensteinContinuationStatement`, for `F : Type u`)
 and `Langlands.Global.EisensteinImaginaryAxisHolomorphyStatement` (module
 `Langlands.Global.AdelicEisensteinImaginaryHolomorphyStatement`, for
 `F : Type`). Both are stated for a parabolic of a group scheme. Applying
-them to \(\mathrm{GL}_N\) needs data that the Library does not yet supply:
+them to \(\mathrm{GL}_N\) needs the following data:
 
 - the group-scheme block parabolic `p : P ⟶ G`, `l : M ⟶ P`, its unipotent
   radical `iU`, and a `ParabolicRootPresentation p l a` for
-  \(G=\mathrm{GL}_N\) (no `GL` instance exists);
+  \(G=\mathrm{GL}_N\);
 - `IsIwasawaCompact p K` for the transported standard compact subgroup. The
   matrix input is `exists_isStandardIwasawaFactorization`, and maximality is
   `PrimitiveAdelicHeight.isMaximalCompactSubgroup_generalLinear`, which
@@ -226,7 +225,10 @@ a Lean proof.
 
 ## Use
 
-Task 5816 combines S2 with S1 (`CuspidalPairEisensteinCoefficientStatement`).
+`Langlands.Global.cuspidalPairBoundaryNonvanishingEnlarged_of_eisenstein`
+(module `Langlands.Global.Factors.CuspidalPairEisensteinDerivation`), on the
+way to `CuspidalPairBoundaryNonvanishingStatement`, combines S2 with S1
+(`CuspidalPairEisensteinCoefficientStatement`).
 At a point \(s_0\) of the imaginary axis, S1 gives a section and a
 numerator \(c\), nonzero at \(s_0\), with
 \(c(s)=L^{S_0}(1+s,\pi\times\pi')\cdot\mathrm{coeff}(\psi,\phi,s)\) on a

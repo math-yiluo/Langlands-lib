@@ -39,7 +39,7 @@ theorem _root_.Langlands.Shimura.DecompositionGroupAction.IsUnramifiedAlong.mapA
     {ι : ClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)}
     (hM : IsUnramifiedAlong V v M ι) :
     IsUnramifiedAlong W v ((F.mapAction (Field.absoluteGaloisGroup K)).obj M) ι :=
-  fun i => (congrArg F.map (hM i)).trans (F.map_id M.V)
+  fun i => End.ext ((congrArg (fun e : End M.V => F.map e.asHom) (hM i)).trans (F.map_id M.V))
 
 /-- The Frobenius endomorphism of an action mapped through a functor is the image of the
 Frobenius endomorphism. -/

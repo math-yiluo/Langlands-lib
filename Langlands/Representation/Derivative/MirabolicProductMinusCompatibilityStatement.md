@@ -1,7 +1,5 @@
 # Mixed products and normalized mirabolic minus functors
 
-Author: Worker 593.
-
 This module defines
 `Langlands.Derivative.MirabolicProductMinusCompatibilityStatement.{uF,uV} F T`
 as a proposition. It states the minus clauses of Bernstein–Zelevinsky (1977),
@@ -159,14 +157,17 @@ There are no segment, multisegment, socle, head, square-integrable, tempered,
 classification, product-irreducibility or exhaustion modules in this closure.
 The statement uses no mathematical conclusion of the excluded consumers and
 has no mathematical proof dependencies for any comparison: those comparisons
-are proposition definitions awaiting a separate proof. In particular no
+are proposition definitions, proved separately. In particular no
 derivative formula, exactness theorem, finiteness result, detection theorem,
-geometric lemma or pending statement is used as a proved input.
+geometric lemma or unproved statement is used as a proved input.
 
-The separate exact proof successor must preserve every inherited task
-restriction directly and transitively and audit each comparison's actual
-mathematical proof dependencies. Acceptance of this proposition definition
-does not establish the proposition. Plus functors, adjunction, 4.13(d),
+The proof, `mirabolicProductMinusCompatibility` in
+`Langlands.Representation.Derivative.MirabolicProductMinusCompatibility`, is
+subject to these independence restrictions directly and transitively; its page
+checks the combined proof against every independence restriction, including
+transitive use, and the pages of its six clause modules audit each
+comparison's actual mathematical proof dependencies. This proposition
+definition does not establish the proposition. Plus functors, adjunction, 4.13(d),
 Leibniz filtrations, arbitrary-character finiteness, supercuspidal and segment
 results remain outside this statement.
 

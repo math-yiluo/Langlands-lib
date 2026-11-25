@@ -1,6 +1,6 @@
 # Borel conjugacy through the identity component
 
-Worker 1358. This is an internal derived construction using the published
+This is an internal derived construction using the published
 identity component and Borel transport results.
 
 For a smooth affine group scheme `P` over a field `k`, the construction

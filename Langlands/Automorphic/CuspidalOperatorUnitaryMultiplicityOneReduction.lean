@@ -113,8 +113,8 @@ whose central characters are unitary. This proposition is retained as an open pr
 def CuspidalOperatorUnitaryMultiplicityOneStatement : Prop :=
   ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] (r : ℕ)
     (T T' : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T' →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T' →
     Nonempty (T.Equivalence T') → T.realization = T'.realization
 
 /-- Reducing to the unitary-central-character case adds no hypothesis to the consequent. -/

@@ -1,7 +1,5 @@
 # Finite coordinate power lifting from geometric reductivity
 
-Worker 690.
-
 This derived interface applies the existing `IsGeometricallyReductive`
 predicate to a supplied finite representation and a nonzero functional fixed
 by its dual. It keeps geometric reductivity explicit and does not prove that
@@ -33,5 +31,5 @@ formula prove this directly.
 The provenance is the published geometric-reductivity predicate, dual-matrix
 formula, homogeneous scaling theorem, polynomial evaluation naturality and
 right-invariance definition. This interface supplies finite algebra steps for
-a later affine-quotient proof; it asserts neither local finiteness of an
+an affine-quotient proof; it asserts neither local finiteness of an
 arbitrary algebra action nor affineness of a homogeneous quotient.

@@ -1,8 +1,7 @@
 # Wall-reflection generation and galleries for locally finite arrangements
 
 This is an internal generic geometry prerequisite for affine Weyl chamber
-simple transitivity. Worker 455 supplied the initial definition and statement
-design. It uses the published interfaces imported from
+simple transitivity. It uses the published interfaces imported from
 `Langlands.Geometry.Building.AffineWeylGroups`, including the existing
 `IsCoroot`, `affineReflection`, `affineWeylGroup` and `facetRel`.
 The vector space `V : Type uV` and its affine torsor `A : Type uA` have
@@ -67,7 +66,8 @@ in rank zero: when `V` is zero-dimensional its dual is trivial, the five
 premises hold for `Ψ = ∅`, and its nonempty torsor has one point.
 Nonreduced root sets are allowed, with separation counted by reflections.
 This file defines the proposition and its supporting notions; both
-geometric conclusions remain unproved.
+geometric conclusions are proved separately, by
+`affineReflectionGalleryGeometry` in `AffineReflectionGalleryGeometry`.
 
 The definitions and statement are internally formulated from the published
 affine-root interfaces. The motivating source is the gallery geometry behind

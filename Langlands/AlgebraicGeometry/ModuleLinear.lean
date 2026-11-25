@@ -96,7 +96,7 @@ def endAlgebra {R : Type*} [CommRing R] (a : R →+* Γ(S, ⊤)) (M : S.Modules)
 lemma endAlgebra_map_app {R : Type*} [CommRing R] (a : R →+* Γ(S, ⊤))
     (M : S.Modules) (r : R) (U : S.Opens) (x : Γ(M, U)) :
     letI := endAlgebra a M
-    ((algebraMap R (End M)) r).app U x = restrictScalar U (a r) • x := by
+    ((algebraMap R (End M)) r).asHom.app U x = restrictScalar U (a r) • x := by
   let := endAlgebra a M
   change ((a r • (𝟙 M : M ⟶ M)).app U x) = _
   simp

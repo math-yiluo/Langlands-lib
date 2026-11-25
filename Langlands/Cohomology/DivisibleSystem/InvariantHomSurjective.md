@@ -1,6 +1,6 @@
 # Surjectivity of the Hom transitions out of invariants
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Representation.Induction.QuotientAdjunction`
 (`coinvariantsInflationAdjunction`, `invariantsToCoinvariantsNatTrans`,
 `isIso_invariantsToCoinvariantsNatTrans_app`),
@@ -165,7 +165,7 @@ complexes of smooth representations (`SmoothRep.{uR, uG, uV} R G`).
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10, printed p.312
-(one-based PDF page 14; Worker 61 read the rendered scanned page), after the
+(one-based PDF page 14; read in the rendered scanned page), after the
 definition of `T_m(j, ẽ)` and the maps (4.10.3) `T_{m+1}(j, ẽ) → T_m(j, ẽ)`:
 "But we have seen in §2 that the maps `C^j_{m+1}(ẽ)^{H_p} → C^j_m(ẽ)^{H_p}`
 are surjective. Since `C^j_m(ẽ)^{H_p}` and `Hom(𝒪_m[C_p/H_p]^M, 𝓛_m)` are

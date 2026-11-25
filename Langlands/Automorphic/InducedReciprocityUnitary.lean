@@ -14,7 +14,7 @@ noncomputable section
 
 universe u uV
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open scoped NumberField
 open Langlands.Global
@@ -62,4 +62,4 @@ theorem inducedReciprocityRepresentation_isUnitary_of_isConjugateInverse
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

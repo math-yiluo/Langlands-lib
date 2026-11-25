@@ -34,8 +34,7 @@ functor to the core, and its naturality isomorphisms lift by `Core.isoMk`.
 Core morphism extensionality reduces the identity and composition laws
 to the original laws. Its target directly reuses the shared
 `CoherentSheaves.corePseudofunctor` from
-[CoherentSheaves/Pullback](../CoherentSheaves/Pullback.md), constructed by
-Worker 214. Its three coherence proofs translate the original associativity
+[CoherentSheaves/Pullback](../CoherentSheaves/Pullback.md). Its three coherence proofs translate the original associativity
 and unit laws to component equations and apply core morphism extensionality.
 
 These lifts initially give components propositionally equal to

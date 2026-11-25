@@ -12,10 +12,9 @@ use reductive structure; the general structure theory stays in the Jacquet
 directory, and this module is a thin adapter.
 
 It supplies the fifth clause of
-`Langlands.Jacquet.IwahoriContractionJacquetStatement` for focused proof task
-`70794755-13dc-4217-9b1e-b9e13ed7910d`. The closed target
-`Langlands.Aubert.General.DynamicJacquetFiniteLengthStatement` in task
-`73e60be8-481a-4cea-b464-eed3bd89be7f` remains a separate consumer. The
+`Langlands.Jacquet.IwahoriContractionJacquetStatement`. The closed target
+`Langlands.Aubert.General.DynamicJacquetFiniteLengthStatement` is a separate
+consumer. The
 structural realization of `hbasis` for actual reductive rational-point
 parabolics remains separate (rows S20–S23 of
 `notes/renard/chapter-v-structural-inputs.md`).
@@ -25,9 +24,8 @@ French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 V.5.2(ii)–(iv), printed p.123 / PDF p.129, supplies the source structural
-conditions. Worker 834 authored the reused Lean proof. Worker 1004 checked its
-Library and source correspondence and revised this documentation; the Lean
-implementation is unchanged.
+conditions. The Library and source correspondence of the reused Lean proof
+was checked.
 
 ## Statements
 

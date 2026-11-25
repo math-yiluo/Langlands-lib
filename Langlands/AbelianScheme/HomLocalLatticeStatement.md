@@ -1,7 +1,5 @@
 # Integral Hom in finite-dimensional rational subspaces
 
-Author: Worker 223.
-
 `Langlands.AbelianScheme.HomLocalLatticeStatement.{u}` concerns actual abelian
 schemes `A` and `B` over `Spec k`, where `k : Type u` is an algebraically closed
 field of characteristic zero. For every finitely generated rational submodule

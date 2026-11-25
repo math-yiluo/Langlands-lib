@@ -1,7 +1,5 @@
 # Sections of a line bundle twisted by the pullback of a rational point
 
-Author: Worker 935.
-
 Module `Langlands.AlgebraicGeometry.Picard.FiniteFlatPointFibreSections`, namespace
 `Langlands.AlgebraicGeometry.Picard.FiniteFlatPointFibre`. Throughout, `K` is a field,
 `𝒪` is the structure sheaf (`structureSheaf`), `Γ_π` is the Library's
@@ -11,13 +9,14 @@ point.
 
 ## Role and provenance
 
-This is internal infrastructure for task `6b1ab3e8-b3b0-4567-9251-7566e7a6dba3`, which
-proves the published `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`.
-The module is Step 6 of that task's route. Step 6 computes the dimension of the global
-sections of the one nonzero higher direct image `R^g p_* Q`, after Steps 1–4 identify it
+This is internal infrastructure for the proof `algClosedFieldMumfordDualEuler` (module
+`AlgClosedFieldMumfordDualEulerProof`) of the published
+`Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. In that proof's route
+this module computes the dimension of the global
+sections of the one nonzero higher direct image `R^g p_* Q`, after earlier steps identify it
 with `N ⊗ f^*(e_* 𝒪_K)`. Here `f` is the finite flat Mumford map and `e` is the origin of
-the dual. Step 6 also shows that this module has finite closed support. The final proof
-of the task will use this module; it is not that proof.
+the dual. It also shows that `N ⊗ f^*(e_* 𝒪_K)` has finite closed support. The proof
+uses this module; it is not that proof.
 
 Source: B. Edixhoven, G. van der Geer and B. Moonen, *Abelian Varieties* (registered source
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`), proof of (9.11), printed p.132
@@ -25,8 +24,9 @@ Source: B. Edixhoven, G. van der Geer and B. Moonen, *Abelian Varieties* (regist
 whose space of sections has dimension `deg(φ_L)`, giving formula (8). The source's
 second computation trivializes a line bundle over the finite scheme `K(L)`. This
 module proves the general form of these facts. Here `f` is any finite flat morphism of
-schemes over `K` and `e` any `K`-point of the target. Flat base change is not yet proved
-in the Library. Its published statement `FlatHigherDirectImageBaseChangeStatement` is an
+schemes over `K` and `e` any `K`-point of the target. Flat base change is proved
+in the Library (`flatHigherDirectImageBaseChange`, module
+`FlatHigherDirectImageBaseChangeProof`), but here its published statement `FlatHigherDirectImageBaseChangeStatement` is an
 explicit hypothesis, used only in degree `0` and only along the closed immersion `e`. On
 the finite fibre the line bundle is not trivialized. Instead its sections are compared
 with those of `𝒪` through the Library's Euler-polynomial theory. No literature definition

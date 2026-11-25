@@ -1,6 +1,6 @@
 # Continuous limit actions for varying profinite groups
 
-Author: Worker 13. This is an internal construction for the continuous
+This is an internal construction for the continuous
 inverse-limit actions needed by level towers. It combines the published
 `EquivariantDiagram` with Mathlib's actual profinite group and topological
 space limits. It does not assume a limit action as input.
@@ -77,7 +77,7 @@ The provenance is this explicit composition of the published
 `Topology.Category.TopCat.Limits.Basic`, continuous-action and
 product/subtype topology constructions. No additional literature claim
 or geometric comparison is invoked. Empty index categories and empty
-compatible-space limits are permitted. The unit does not specialize to
+compatible-space limits are permitted. The module does not specialize to
 Shimura schemes, identify a geometric deck group, construct a torsor, or
 assert cofinality, surjectivity or an isomorphism from an original level
 group to the group limit.

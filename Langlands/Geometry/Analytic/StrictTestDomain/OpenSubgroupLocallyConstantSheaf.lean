@@ -32,7 +32,7 @@ def Hom.locusMap {X Y : ρ.OpenSubgroupTransport} (f : X ⟶ Y) :
   continuous_toFun := by
     apply Continuous.subtype_mk
     exact (BanachSpectrum.comapContinuous
-      (ρ.toMonoidHom f.label).inv.toBoundedRingHom).continuous.comp
+      (ρ.toMonoidHom f.label).asIso.inv.toBoundedRingHom).continuous.comp
         continuous_subtype_val
 
 @[simp] theorem Hom.locusMap_val {X Y : ρ.OpenSubgroupTransport} (f : X ⟶ Y)

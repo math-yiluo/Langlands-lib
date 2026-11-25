@@ -6,4 +6,4 @@ Evaluating the descended finite and compact operators gives the actual right tra
 
 The finite adelic action on the translated quotient is smooth. Each spanning map intertwines the smooth finite action on the original realization with the action on the quotient.
 
-These are internal evaluation identities for the actual functions used in the standard parabolic step of Task 6823.
+These are internal evaluation identities for the actual functions used in the standard parabolic step of the proof of `CuspidalSupportExistenceStatement`.

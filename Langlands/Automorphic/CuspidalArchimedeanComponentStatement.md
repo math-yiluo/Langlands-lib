@@ -1,7 +1,5 @@
 # Archimedean standard-module components of cuspidal realizations
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Automorphic.CuspidalArchimedeanComponentStatement`.
 
 This module states six propositions in the namespace `Langlands.Automorphic`.
@@ -26,14 +24,14 @@ the product of the inverses of the denominators
 `dC v`, `dC' v`) are standard-module parameters of `T` and `T'` at the infinite
 place `v`, in the sense of `OperatorRealization.HasRealPlaceParameter`
 (resp. `HasComplexPlaceParameter`). The strong multiplicity one argument of
-Getz–Hahn (Theorem 11.7.2, worked in Task 6388) needs these denominators to be
+Getz–Hahn (Theorem 11.7.2, `CuspidalStrongMultiplicityOneStatement`) needs these denominators to be
 nonzero at `s = 1`.
 
 The published Archimedean case of Getz–Hahn, Theorem 11.5.2
 (`Archimedean.RealUnitaryGenericPairRegularityStatement`,
 `Archimedean.ComplexUnitaryGenericPairRegularityStatement`) gives this for
 `(𝔤, K)`-modules that are irreducible, admissible, generic and unitarizable and
-have the given standard parameter. The step missing in the Library is the
+have the given standard parameter. The step between the two is the
 global-to-local passage: if `ds` is a parameter of a cuspidal realization at `v`,
 then the standard module of `ds` itself has these four properties. This module
 states that passage and the resulting pair regularity.
@@ -140,8 +138,9 @@ This holds for every real and every complex standard module. `IsAdmissibleGKModu
 every continuous `τ : K →* Matrix (Fin d) (Fin d) ℂ`, the space of
 `K`-intertwiners `ℂ^d → V` is finite-dimensional. The statement is local. It has
 no rank hypothesis and involves no global object. It is placed here because the
-reduction below needs it, and because the Library has no admissibility statement
-for these carriers.
+reduction below needs it. The real half is also stated as
+`Archimedean.RealStandardAdmissibleStatement` (module
+`Langlands.Representation.Archimedean.RealStandardModuleAdmissible`).
 
 ### `CuspidalArchimedeanStandardIrreducibleStatement.{u}`
 
@@ -171,7 +170,7 @@ character `u ↦ exp(i ∑ a_i u_{i,i+1})` (over `ℂ`: `exp(i Re ∑ a_i u_{i,i
 ### `CuspidalArchimedeanStandardUnitarizableStatement.{u}`
 
 For every `F`, `r` and `T` with
-`Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`
 (published, `AssociatedFactorStatement`: `T` has a central character
 `χ : C_F →ₜ* ℂˣ` with `‖χ x‖ = 1` for all `x`), the same parameter hypotheses
 give
@@ -239,12 +238,13 @@ The local statements are used at universe `0`, because the carriers
   unitary (`HasUnitaryCentralCharacter`). That assumption suffices for the
   unitarity of the components, and it is the hypothesis of the published
   p-adic analogue `CuspidalUnitaryLocalUnitarityStatement`.
-  `CuspidalPairPoleStatement` uses `IsTrivialOnSplitCentre`. The Library has
-  no lemma deriving `HasUnitaryCentralCharacter` from `IsTrivialOnSplitCentre`,
-  so a consumer working under that normalization must supply the step: an
-  irreducible cuspidal realization has a central character, and a central
-  character trivial on `A_{GL_n}` is unitary because cusp forms are bounded
-  modulo `A_{GL_n}`.
+  `CuspidalPairPoleStatement` uses `IsTrivialOnSplitCentre`. The step from
+  `IsTrivialOnSplitCentre` to `HasUnitaryCentralCharacter` is proved in the
+  Library as `cuspidalSplitCentreUnitaryCentralCharacter` (module
+  `Langlands.Global.Factors.CuspidalSplitCentreUnitaryProof`): an
+  irreducible cuspidal realization has a central character, triviality on
+  `A_{GL_n}` makes it trivial on the positive real ideles `A_{G_m}`, and such
+  a character is unitary (`HeckeCharacter.isUnitary_of_positiveRealIdeles`).
 - **Pair factor.** GH define `L(s, π_v × π'_v)` through the Archimedean local
   Langlands correspondence (GH p. 305). The Library's factor of the standard
   parameters `ds`, `ds'` is the `L`-function of the tensor product of their
@@ -342,19 +342,28 @@ This is the intended argument; none of it is proved in this module.
 6. **Entry point.** It follows from the reduction once the four component
    statements and the two published local statements are proved.
 
-## Intended proof children
+## Proofs of the statements
 
 1. `ArchimedeanStandardAdmissibleStatement`: elementary (step 1). It needs the
-   Iwasawa decomposition for `GL_n(ℝ)` and `GL_n(ℂ)`.
+   Iwasawa decomposition for `GL_n(ℝ)` and `GL_n(ℂ)`. Proved as
+   `archimedeanStandardAdmissible` (module
+   `Langlands.Automorphic.ArchimedeanStandardAdmissibleProof`).
 2. `CuspidalArchimedeanStandardGenericStatement`: short, from the published
-   `cuspidalArchimedeanWhittakerFunctional` (step 3).
+   `cuspidalArchimedeanWhittakerFunctional` (step 3). Proved as
+   `cuspidalArchimedeanStandardGeneric` (module
+   `Langlands.Automorphic.CuspidalArchimedeanStandardGenericProof`).
 3. `CuspidalArchimedeanStandardUnitarizableStatement`: short to moderate, from
    `isUnitarizable_of_hasUnitaryCentralCharacter` and the relation between place
-   actions and the global compact and Lie actions (step 4).
+   actions and the global compact and Lie actions (step 4). Proved as
+   `cuspidalArchimedeanStandardUnitarizable` (module
+   `Langlands.Automorphic.CuspidalArchimedeanComponentUnitaryProof`).
 4. `CuspidalArchimedeanStandardIrreducibleStatement`: deep (step 2). It needs the
    tensor factorization at `v` and BR's Langlands classification for
-   Harish-Chandra modules.
+   Harish-Chandra modules. Proved as `cuspidalArchimedeanStandardIrreducible`
+   (module `Langlands.Automorphic.CuspidalArchimedeanComponentIrreducibleProof`).
 5. `CuspidalArchimedeanPairRegularityReductionStatement`: immediate (step 5).
+   Proved as `cuspidalArchimedeanPairRegularityReduction` (module
+   `Langlands.Automorphic.CuspidalArchimedeanPairRegularityReductionProof`).
 
 ## What is not asserted
 
@@ -377,8 +386,7 @@ internal design decision that matches the published p-adic analogue.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (diagnostic `0655ce6d`) with no errors or
+The module compiles with `lean_check` with no errors or
 warnings. Inspection of the entry point
 `CuspidalArchimedeanPairRegularityStatement` reports a definition returning
 `Prop` with universe parameter `u`, using only `propext`, `Classical.choice` and

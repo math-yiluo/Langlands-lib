@@ -1,8 +1,5 @@
 # Renard II.2.2: fixed-open compact germ-section functors
 
-Worker 865 implemented the functors and their laws. Worker 6 supplied the
-source audit and concrete successor specification.
-
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.2.2, printed pp.37–38 /
 PDF pp.43–44, registered as

@@ -1,7 +1,5 @@
 # Proof of compactness of the determinant-unit central intersection
 
-Author: Worker 225.
-
 The target is
 `Langlands.CuspidalSupport.LeviDeterminantUnitCentralCompactnessTheorem F T B`
 from `Langlands.Representation.CuspidalSupport.DeterminantUnitCentralCompactnessStatement`.

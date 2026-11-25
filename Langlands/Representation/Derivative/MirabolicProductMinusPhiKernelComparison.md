@@ -1,7 +1,5 @@
 # Actual Phi-minus as positive kernel localization
 
-Author: Worker 499.
-
 This module constructs `phiMinusKernelIso` and
 `phiMinusNormalizedKernelIso` in
 `Langlands.Derivative.MirabolicProductMinus`. These are natural
@@ -12,9 +10,10 @@ complete inverse-half determinant character. The module also gives the
 actual equivariant linear equivalences, their quotient-class formulas,
 smoothness and naturality across independent coefficient universes.
 
-This is a focused prerequisite for the mixed-product minus task. It does
-not establish a mixed-product comparison, an orbit-localization theorem,
-a short exact sequence, or the six-part host proposition.
+This is a focused prerequisite for the mixed-product minus compatibility
+`MirabolicProductMinusCompatibilityStatement`. It does not establish a
+mixed-product comparison, an orbit-localization theorem, a short exact
+sequence, or the six-part proposition.
 
 ## Source and provenance
 
@@ -31,7 +30,7 @@ normalization. Sections 3.1–3.2, printed pp.450–451 (PDF pages 11–12),
 define the positive radical character and the minus functors. Section
 4.13(b), printed p.458 (PDF page 19), is the eventual mixed-product
 compatibility target. These passages and their relevant page images were
-read during this task. The bounded supplied-source and public-note errata
+read for this construction. The bounded supplied-source and public-note errata
 search found no applicable BZ77 entry; this does not assert global absence.
 
 The present comparison is internal derived content. The actual
@@ -43,8 +42,7 @@ equivalence, transports the full character quotient. Quotient induction
 then verifies the successor action and every induced map. Finally the
 published twist equivalence and twist functor retain exactly the prescribed
 normalization. BZ77 motivates these objects; no source theorem or
-unproved mixed-product conclusion supplies the comparison. Worker 499
-wrote this construction, without a reused peer draft.
+unproved mixed-product conclusion supplies the comparison.
 
 ## Parameters, groups and full quotient carriers
 
@@ -190,7 +188,7 @@ The only direct imports are
 The full closure below contains 87 project modules. All 174 imported
 Lean/Markdown files are nonempty, unchanged and byte-identical to the
 published Library and manifest at commit
-`1741653e5f4f861282ff64d062269adbcc65c686`. No pending candidate is imported.
+`1741653e5f4f861282ff64d062269adbcc65c686`.
 
 The actual mathematical inputs are the elementary plus kernel/radical
 equivalence and positive-character section invariance; quotient transport,
@@ -210,7 +208,7 @@ The following conditions apply both directly and transitively.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host mixed-minus conclusions | No mixed-product comparison or exact sequence is a proof input. This module proves only the actual Phi-minus kernel-model comparison. The complete host theorem remains open. |
+| Six mixed-minus conclusions of the statement | No mixed-product comparison or exact sequence is a proof input. This module proves only the actual Phi-minus kernel-model comparison. The complete theorem is proved in `MirabolicProductMinusCompatibility`. |
 | Plus functors, adjunction and BZ77 §4.13(d) | No plus representation functor, adjunction or submodule-detection conclusion is used. The elementary matrix subgroup, projection and successor are the permitted actual group constructions. |
 | General Leibniz and derivative formulas | No general Leibniz proof, segment derivative formula, Ze80 §3.5 or §9.6 formula, or unproved BZ77 derivative result is used. |
 | Segment existence and Jacquet consumers | No individual special-head/reverse-socle or segment-socle/reverse-head existence, linked/unlinked or juxtaposed reverse-product structure, linked-pair reducibility or quotient homomorphism, or full/head/socle/special Jacquet formula supplies an input. |
@@ -218,20 +216,17 @@ The following conditions apply both directly and transitively.
 | Special-head criterion and generic uniqueness | Neither the special-head product criterion nor generic segment-product uniqueness is used. |
 | Ordered existence and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion supplies an input. |
 | Analytic, tempered and square-integrable consumers | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable classification or exhaustion, regular exhaustion, or Ze80 9.3 assertion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent product irreducibility, product structure nor its full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) supplies an input. |
+| Two-supercuspidal consumers | Neither nonadjacent product irreducibility, product structure nor its full-product assembly is used. |
 | Supercuspidal and single-block finiteness | No supercuspidal coinvariant-finiteness statement, all-character single-block conclusion, arbitrary-character finiteness theorem or downstream consequence supplies an input. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion, consequence or prohibited mirabolic finite-length route is used. |
 | Generality and conventions | All natural n including zero, arbitrary supplied T and ψ, arbitrary smooth objects and independent field/carrier universes remain. Both the full positive quotient and actual inverse-half twist are retained. No P_0 is introduced. |
-| Published inputs and target preservation | Every imported pair is unchanged and public. Prop-valued statement definitions, citations, drafts and pending proofs are not theorem premises. The exact host statement and its imports are untouched. |
-| Ownership and user controls | This unit does not duplicate a restriction-sequence, exactness or general compact-induction comparison task. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and all current suspensions remain binding. No suspended worker is contacted to execute work. |
+| Published inputs | Every imported pair is unchanged and public. Prop-valued statement definitions, citations and unproved statements are not theorem premises. |
+| Separate results | This module does not duplicate a restriction-sequence, exactness or general compact-induction comparison. |
 
 A source scan of this entry and the complete project closure finds no Lean
-code occurrence of the host's 38 excluded task identifiers or 24 named
-consumer declarations, and no proof holes, new axioms or unsafe evaluation
-commands. This supplements the mathematical audit; mere absence of names
-is not the independence argument. Compilation and declaration inspection
-are development checks. Independent semantic acceptance and publication
-are still required.
+code occurrence of 24 excluded consumer declarations, and no proof holes,
+new axioms or unsafe evaluation commands. This supplements the
+mathematical audit; mere absence of names is not the independence argument.
 
 ## Complete project import closure
 

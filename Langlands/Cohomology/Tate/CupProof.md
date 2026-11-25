@@ -1,7 +1,5 @@
 # Normalization and naturality of the dimension-shifted product
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 At degrees `(0,0)`, the recursively constructed tensor family reduces to
 the normalized quotient product. Functoriality of the actual degree-zero
 class map proves that composing the tensor pairing with an equivariant

@@ -1,6 +1,6 @@
 # Renard A.I.5 and A.II.1: direct category constructions in Mathlib
 
-Worker 709, 3 November 2026. This source map identifies the existing Mathlib
+This source map, dated 3 November 2026, identifies the existing Mathlib
 constructions for the product and opposite categories, the four duality
 pairs named in A.I.5, and the definitions in A.II.1. It supplements the
 [whole-book ledger](coverage.md) and the
@@ -15,7 +15,7 @@ p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 A.I.5 and A.II.1 are on printed p.250 / one-based PDF256 of
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 The original page was reread and visually inspected, including its
 naturality square and inverse-transformation equations. For the named duality
 pairs, A.I.1 on printed p.247 / PDF253, A.I.2 on printed p.248 / PDF254, and
@@ -24,8 +24,7 @@ inspected. The source hash was rechecked. No source-specific Renard errata
 file was found in the supplied Library or project `notes/errata` locations.
 
 All Mathlib paths below are relative to its source root and refer to commit
-`5ed2965256430c3649e86755f9576b54eca72435`, in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. These source ranges were read.
+`5ed2965256430c3649e86755f9576b54eca72435`. These source ranges were read.
 Take independent universes
 `C : Type u₁`, `[Category.{v₁} C]`,
 `D : Type u₂`, `[Category.{v₂} D]`.
@@ -173,7 +172,7 @@ introduced.
 
 ## Development verification and remaining obligations
 
-Private Lean-service check `e623464a-8e88-42a5-92a6-35c9ea8019b1`
+A separate Lean check
 completed with zero errors or warnings. With all four universe parameters
 independent, its examples check the three category instances, product Hom,
 the opposite Hom equivalence and composition reversal, functor-category Hom,
@@ -182,11 +181,11 @@ itself, vertical composition, identity components, both directions of the
 displayed inverse-data correspondence, and the identity functor's object and
 morphism maps. The naturality constructor uses explicit object and morphism
 binders; passing its polymorphic hypothesis directly to an anonymous
-constructor had failed elaboration in the earlier private probe.
-This is development evidence for the correspondence, not independent
-mathematical acceptance.
+constructor had failed elaboration in an earlier probe.
+This is development evidence for the correspondence, not a
+formalization in the Library.
 
-Private Lean-service recovery check `628e1492-5d1b-4323-9261-3bbcca742b67`
+A second Lean check
 completed the four duality-pair probes with zero errors or warnings. It
 checks the cancellation equivalences; both initial/terminal transports and
 unique-Hom characterizations; the two order correspondences, class-equality
@@ -196,8 +195,8 @@ unique-factorization characterizations; and zero-morphism construction and
 compatibility. Object and Hom universes remain independent. An earlier
 probe failed only because the zero-object constructor needed a
 `noncomputable` context; the reported successful check includes that fix.
-These are private development checks for the source correspondence, not
-independent acceptance or a new Lean publication.
+These are development checks for the source correspondence, not
+Lean files of the Library.
 
 The concluding general instruction in A.I.5 to reverse arrows describes a proof
 translation principle; it is not treated here as a theorem quantifying over

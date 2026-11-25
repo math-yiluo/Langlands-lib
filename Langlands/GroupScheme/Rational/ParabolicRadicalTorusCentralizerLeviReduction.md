@@ -1,7 +1,5 @@
 # Reduction to one suitable maximal torus of the supplied radical
 
-Author: Worker 1463.
-
 This is internal derived assembly infrastructure. It imports the unchanged
 published proposition `ParabolicRadicalTorusCentralizerLeviStatement.{u}` and
 does not prove that proposition unconditionally.

@@ -6,14 +6,15 @@ states that the actual derived sections of a line bundle on a smooth proper
 family over an affine base have one bounded finite projective model computing
 every base change, and that restriction to a smooth closed subscheme is
 represented by a chain map of such models, compatibly with every base change.
-This file supplies a statement only; it proves nothing. Worker 950 prepared it
-as a prerequisite of the proof task `e969f1c2-7aa6-4731-abaa-2f7455f32265`
-(`Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement`).
+This file supplies a statement only; it proves nothing. It is a prerequisite
+of the proof of `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement`
+(`fibreFrameLifting`, module
+`Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingProof`).
 
 ## Complete statement
 
-The file locally selects Mathlib's `HasDerivedCategory.standard`, as the
-published `UniversalPerfectSectionsStatement` does. Write
+The file locally selects Mathlib's `HasDerivedCategory.standard`, as
+`UniversalPerfectSectionsStatement` does. Write
 `Q = DerivedCategory.Q`, `ι = DerivedCategory.Plus.ι`,
 `RΓ(f', M) = ι.obj ((DerivedPlus.derivedComplex (DerivedSections.relativeGlobalSections f')).obj M)`
 for `f' : X' ⟶ Spec T` and an `𝒪_{X'}`-module `M`, and
@@ -63,11 +64,11 @@ same isomorphisms `α` serve every closed restriction.
 
 ## Conventions
 
-- `DerivedSections.relativeGlobalSections f'` is the published functor
+- `DerivedSections.relativeGlobalSections f'` is the Library's functor
   `Scheme.Modules.pushforward f' ⋙ moduleSpecΓFunctor` from all
   `𝒪_{X'}`-modules to `T`-modules. `DerivedPlus.derivedComplex F` places an
   object in degree zero and applies the right derived functor of `F` on bounded
-  below derived categories; its cohomology in degree `n ≥ 0` is the published
+  below derived categories; its cohomology in degree `n ≥ 0` is
   `relativeCohomology f' n`, and it has none in negative degrees.
 - The closed-restriction map is the derived image of the actual adjunction unit
   `M ⟶ g'_* g'^* M` of `Scheme.Modules.pullbackPushforwardAdjunction g'` at
@@ -116,7 +117,7 @@ specialization of that input, before the later choice of local minimal models.
 Specialization. Smoothness gives flatness and local finite presentation, and
 properness gives quasi-compactness and quasi-separatedness, so `f` and `g ≫ f`
 are proper of finite presentation. A line bundle `L` is of finite presentation
-and flat over `R`, and so is `g^*L` on `Y`. Higher direct images along a closed immersion vanish (the published
+and flat over `R`, and so is `g^*L` on `Y`. Higher direct images along a closed immersion vanish (the Library's
 `closedImmersionHigherDirectImageVanishing`), so `RΓ(X', g'_* 𝒢) = RΓ(Y', 𝒢)`
 and the target
 `RΓ(X', g'_* g'^* p^* L)` is the base change of `RΓ(Y, g^*L)` along `φ`, because
@@ -132,13 +133,13 @@ from the source, not a transcription of its full generality.
 
 ## Relation to existing statements
 
-The published `UniversalPerfectSectionsStatement` (Worker 1013) asserts only
+`UniversalPerfectSectionsStatement` asserts only
 objectwise `Nonempty` isomorphisms for the chosen fibre product
 `pullback f (Spec.map φ)`. Objectwise isomorphisms do not identify restriction
 maps, so that statement does not provide the chain maps `ψ` and the commuting
 squares asserted here. Specialized to the canonical square
 `IsPullback.of_hasPullback f (Spec.map φ)`, the family `α` has the shape of the
-base-change isomorphisms of that statement. The current Library also contains `universalPerfectSections`, which proves that
+base-change isomorphisms of that statement. The Library also contains `universalPerfectSections`, which proves that
 objectwise statement. This file proves no relation between the two statements;
 objectwise existence alone supplies no restriction compatibility.
 

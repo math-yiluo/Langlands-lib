@@ -232,7 +232,7 @@ Here `ι_V,k` is the original coarse associated invariant inclusion over
 inverse-image comparisons. This formula preserves each original coordinate
 and supplies a normalization for further endpoint comparisons.
 
-## Provenance and retained obligations
+## Provenance and what is not proved here
 
 This is an internal construction from the existing represented geometric
 tower, coarse intersections and torsors, complete associated systems, the
@@ -240,12 +240,15 @@ arithmetic coarse-tower comparison and the genuine small-etale inverse-image
 comparison. Its maps and equations are derived as above. It introduces no
 new external-source assertion and assumes none of the constructed comparisons.
 
-The module does not yet normalize the original upper-pair second endpoint
-against this canonical coarse-tower inverse-image isomorphism, compare that
-isomorphism with genuine inverse-image composition from `X_U`, or prove
-original own-system lattice-map composition. Those are subsequent deductions.
+The module does not normalize the original upper-pair second endpoint
+against this canonical coarse-tower inverse-image isomorphism (this is done in
+`HarrisTaylorCMGeometricUpperPairOriginalEndpoint`), compare that isomorphism
+with genuine inverse-image composition from `X_U` (done in
+`HarrisTaylorCMGeometricCoarseTowerCoherence`), or prove original own-system
+lattice-map composition (done in
+`HarrisTaylorCMGeometricLatticeInverseImageCoherence`). Those are further
+deductions.
 General commensurable lattice comparison, rational adic independence, Hecke
 compatibility, the full source-specific unitary geometry, arithmetic
-existence, representability and canonical-model theorems remain obligations.
-All named premises above are retained explicitly; this unit does not complete
-the containing task.
+existence, representability and canonical-model theorems are not proved in this
+module. All named premises above are retained explicitly.

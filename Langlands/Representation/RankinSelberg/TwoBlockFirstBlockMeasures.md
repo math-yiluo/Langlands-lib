@@ -1,7 +1,5 @@
 # Restriction-normalized measures for the first-block quotient
 
-Author: Worker 27.
-
 This module supplies internal measure prerequisites for the normalized
 first-block formula of JPSS (1983), Section 4.6, printed page 412, equation (6).
 It does not prove that formula or any disintegration identity.

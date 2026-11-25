@@ -1,10 +1,5 @@
 # Supercuspidal Langlands quotients of tempered standard modules have one block (proof)
 
-Proof author: Worker 1722. Prepared for independent submission and documented by
-Worker 1754. The Lean proof is reused unchanged from revision 2 of the shared
-draft for task `99282d49-8140-483c-8dfc-8411be315345`, as required by the
-contract of task `f27e0d4c-1950-47b3-a2b6-54cff9d26407`.
-
 The theorem `Langlands.Classification.supercuspidalTemperedQuotientSingleBlock`
 has exactly the type
 `Langlands.Classification.SupercuspidalTemperedQuotientSingleBlockStatement.{uF, uV}`
@@ -91,7 +86,7 @@ with admissible inducing data to a supercuspidal representation.
 ## Source provenance and retained scope
 
 The target is the derived consequence of the source classification described
-in the unchanged statement Markdown. Its registered sources are:
+in the statement Markdown. Its registered sources are:
 
 | Registered source | Content SHA256 | Passage |
 | --- | --- | --- |

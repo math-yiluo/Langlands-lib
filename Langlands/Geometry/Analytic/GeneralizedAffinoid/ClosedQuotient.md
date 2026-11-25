@@ -1,6 +1,6 @@
 # Actual presented closed quotients and bounded quotient recognition
 
-Worker 1685 constructs a quotient presentation for every closed ideal `J` in a
+This module constructs a quotient presentation for every closed ideal `J` in a
 presented affinoid algebra `A`. The presentation retains `A`'s arity and arbitrary
 positive polyradius and pulls `J` back through the actual weighted Tate quotient
 map. No Noetherianity, strict radii, reducedness, nonzero algebra, nontrivial

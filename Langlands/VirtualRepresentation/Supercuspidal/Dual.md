@@ -1,9 +1,8 @@
 # Smooth contragredient on supercuspidal integral lattices
 
-This module extends the published actual supercuspidal class contragredient
-by integer linearity. It is a conditional construction: preservation of
-supercuspidality remains an explicit input. It does not prove that input or
-complete the unconditional duality part of the parent task.
+This module extends the published actual supercuspidal class contragredient by
+integer linearity. It is a conditional construction: preservation of
+supercuspidality remains an explicit input. It does not prove that input.
 
 ## Source and derivation
 
@@ -15,7 +14,7 @@ pairing for which that basis is orthonormal. The registered original is
 `henniart-2000-simple-proof`, SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 Section 2.6 also specifies quasicharacter twists on this module. The present
-contribution constructs these intrinsic duality operations; it does not prove
+module constructs these intrinsic duality operations; it does not prove
 any compatibility with the correspondence in Proposition 2.6.
 
 The implementation is derived from the published modules
@@ -23,8 +22,8 @@ The implementation is derived from the published modules
 `Representation/Classification/SupercuspidalContragredient`. The last supplies
 the actual smooth contragredient on objects and their isomorphism classes,
 its canonical bidual involution, its forgetful compatibility, and its
-inverse-character twist law, with explicit closure hypotheses. The new
-contribution reuses those results and Mathlib's finite-support reindexing; it
+inverse-character twist law, with explicit closure hypotheses. This
+module reuses those results and Mathlib's finite-support reindexing; it
 does not reconstruct the class quotient or replace the smooth dual by the
 full algebraic dual.
 
@@ -96,5 +95,7 @@ character identity.
 This module does not construct a restriction to the unitary basis, prove
 supercuspidal closure, establish global image spanning, or identify the
 coefficient pairing with any analytic integral or correspondence isometry.
-The unconditional canonical operations still require publication of a proof
-of the named supercuspidal contragredient statement.
+The unconditional canonical operations require a proof of the named
+supercuspidal contragredient statement; the Library proves it as
+`Langlands.GeneralLinear.supercuspidalContragredient` in
+`Langlands.Representation.Classification.SupercuspidalContragredientProof`.

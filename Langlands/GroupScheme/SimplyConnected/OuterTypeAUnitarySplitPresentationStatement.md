@@ -1,11 +1,11 @@
 # Outer forms of type A are special unitary groups when unitary algebras split
 
-Author: Worker 150.
-
 Module: `Langlands.GroupScheme.SimplyConnected.OuterTypeAUnitarySplitPresentationStatement`.
 
 `Langlands.GroupScheme.OuterTypeAUnitarySplitPresentationStatement.{u}` is a
-prerequisite statement for Task 5973. It is not proved here. Over a field `K`
+prerequisite statement for `LocalAnisotropicTypeAInnerStatement` (simply
+connected anisotropic groups of type `A_n` over local fields are inner forms).
+It is not proved here. Over a field `K`
 where every central simple algebra with a unitary involution is split (the
 property `Langlands.UnitaryInvolutionSplitting K` of
 `Langlands.Algebra.UnitaryInvolutionStatements`), it says that every simply

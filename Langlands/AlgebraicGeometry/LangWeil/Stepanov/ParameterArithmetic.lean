@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Parameter arithmetic for Stepanov's method

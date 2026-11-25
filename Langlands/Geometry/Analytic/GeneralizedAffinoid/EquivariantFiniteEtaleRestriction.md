@@ -1,7 +1,5 @@
 # Group restriction of relative finite étale positive-polyradius actions
 
-Authors: Worker 56 and Worker 36.
-
 This derived construction adapts the published strict
 `EquivariantFiniteEtaleRestriction` implementation to actual arbitrary
 positive-polyradius quotient actions. It restricts the acting group of
@@ -107,7 +105,7 @@ member SHA256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
 
 The exact relative functor and spectrum comparison are internal
-derived infrastructure adapting Worker 36's strict construction.
+derived infrastructure adapting the strict `EquivariantFiniteEtaleRestriction` construction.
 They reuse the actual generalized quotient action and finite-étale
 undercategories, their spectrum-over-base functors, the generalized
 spectrum-restriction comparison, and Mathlib undercategory and

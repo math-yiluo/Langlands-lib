@@ -1,8 +1,6 @@
 # Central vector and quotient consequences of closed-subgroup unipotence
 
-Author: Worker 362.
-
-This internal derived unit supplies the published
+This internal derived module supplies the published
 [`unipotentClosedSubgroup`](../UnipotentClosedSubgroupProof.md) proof to the
 existing central quotient and central-vector assemblies. Every declaration
 retains arbitrary universe `u`.
@@ -42,5 +40,5 @@ result with `centralSmoothQuotient`, yielding exactly
 The provenance is composition of the named Library declarations; no new
 source translation is involved. The two characteristic classification
 results and whole-vector torus linearization remain proof obligations.
-This unit supplies no unconditional central-vector existence theorem or
+This module supplies no unconditional central-vector existence theorem or
 semigroup ordered-product theorem.

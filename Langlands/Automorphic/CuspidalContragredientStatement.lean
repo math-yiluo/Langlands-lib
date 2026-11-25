@@ -23,10 +23,10 @@ full-operator contragredient with unitary central character. -/
 def CuspidalUnitaryContragredientExistenceStatement : Prop :=
   ∀ (F : Type uF) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
     (r : ℕ) (T : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
     ∃ T' : CuspidalOperatorRealization F r,
       T'.realization.IsContragredientOf T.realization ∧
-        Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T'
+        Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T'
 
 /-- A supplied full-operator dual of a unitary-central-character cusp object has
 an actual spectral presentation in any independently specified factor universe,
@@ -34,7 +34,7 @@ with irreducible admissible components at every finite place. -/
 def CuspidalContragredientPresentationExistenceStatement : Prop :=
   ∀ (F : Type uF) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
     (r : ℕ) (T T' : CuspidalOperatorRealization F r),
-    Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+    Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
     T'.realization.IsContragredientOf T.realization →
   ∀ (_P : CuspidalSpectralPresentation.{uF, uP} T),
     ∃ P' : CuspidalSpectralPresentation.{uF, uQ} T',

@@ -5,8 +5,6 @@ import Mathlib.Tactic.NoncommRing
 /-!
 # The algebraic Casimir of an invariant nondegenerate Lie form
 
-Authors: Worker 94, Worker 566
-
 The finite-sum construction uses Mathlib's left dual basis. Nondegeneracy and
 invariance suffice for centrality; symmetry is not required.
 -/

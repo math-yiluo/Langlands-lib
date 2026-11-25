@@ -1,6 +1,6 @@
 # The actual opposite-radical height cutoff
 
-This unit proves the geometric tail inclusion used in the proof of
+This module proves the geometric tail inclusion used in the proof of
 Waldspurger, *La formule de Plancherel pour les groupes p-adiques
 (d'après Harish-Chandra)*, Proposition VIII.3.1, printed p.325.
 The original is registered as `waldspurger-2003-plancherel`,
@@ -29,7 +29,7 @@ radical point `u` outside the conjugated subgroup
 b * (1 + rationalHeight rho a) <= 1 + rationalHeight rho u.
 ```
 
-The sector is the already published part of the full actual chamber
+The sector is the part of the full actual chamber
 in the common norm kernel where `alpha` has largest simple-root
 order. There is no common-uniformizer section restriction. The
 conjugated subgroup is expressed by the ordinary subgroup map
@@ -70,7 +70,7 @@ actual inverse-conjugation bound from II.3.3 then gives one
 ```
 
 Combining the two inequalities bounds `order_alpha(a)` by
-`(C8+1)/C6 * (1+sigma(u))`. The published sector-height comparison
+`(C8+1)/C6 * (1+sigma(u))`. The sector-height comparison
 supplies `H > 0` with
 `1+sigma(a) <= H*(1+order_alpha(a))`. Since matrix height is
 nonnegative, one may take

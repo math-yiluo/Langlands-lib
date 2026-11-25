@@ -1,6 +1,6 @@
 # Exact additive and multiplicative Tate integrals
 
-Worker 357 derives an exact comparison between the existing additive-Haar
+This module derives an exact comparison between the existing additive-Haar
 abelian Tate zeta integral and the multiplicative-Haar scalar Mellin integral.
 The field has its canonical p-adic topological data, the prime and field
 universe are arbitrary, and the additive Haar measure is supplied without a

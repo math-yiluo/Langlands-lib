@@ -1,7 +1,5 @@
 # Actual reversed-Levi Jacquet compatibility of the Aubert operator
 
-Authors: Worker 165 and Worker 1186.
-
 `Langlands.Aubert.jacquetCompatibility` proves exactly the published
 `Langlands.Aubert.JacquetCompatibilityStatement.{uF,uV} F T`, without modifying
 that statement or its imported definitions. For every natural rank and actual

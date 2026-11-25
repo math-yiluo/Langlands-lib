@@ -1,7 +1,5 @@
 # Generic ampleness on abelian schemes over noetherian affine domains
 
-Author: Worker 1318.
-
 `Langlands.AlgebraicGeometry.Picard.NoetherianAffineAbelianGenericAmpleStatement.{u}`
 is a proposition with one universe parameter. It quantifies over every
 noetherian commutative integral domain `R : Type u`, every actual Library
@@ -34,9 +32,9 @@ SHA-256 `f53b164d7d783ca55a5b6ae6b0885601264f13f2a2660a1d689813715899f20e`,
 Chapter I, Remark 1.10(b), printed p.7 (PDF p.19), states that for an
 invertible sheaf on an abelian algebraic space the fibrewise ample locus
 is closed as well as open. The proof of Theorem 1.9, printed p.6 (PDF p.18),
-uses fibrewise ampleness to conclude relative ampleness. Worker 1318 read
-these pages of the registered copy. No source-specific errata note was
-found in the current Library's `notes/errata/` directory.
+uses fibrewise ampleness to conclude relative ampleness. These pages of the
+registered copy were read for this statement. No source-specific errata note
+was found in the Library's `notes/errata/` directory.
 
 The Lean proposition is a derived affine integral specialization, rather
 than a verbatim statement from the book. The spectrum of a domain is
@@ -56,6 +54,8 @@ with the separately defined
 `Langlands.AbelianScheme.NormalFiniteTypeTwoAxisExtensionProperty` and the
 published field ample diagonal correspondence. The normal extension
 input constructs a total line bundle with ample generic restriction;
-the present criterion must still be proved to conclude total ampleness.
+the present criterion, proved as `noetherianAffineAbelianGenericAmple`
+(module `NoetherianAffineAbelianGenericAmpleProof`), is needed to conclude
+total ampleness.
 This criterion assumes that a total line bundle has already been supplied,
 so it is distinct from existence of such a bundle over a normal base.

@@ -1,7 +1,5 @@
 # Conjugate-inverse weight-one characters on CM fields
 
-Authors: Worker 1692 and Worker 1690.
-
 `Langlands.Global.cmHalfWeightCharacter` proves the unchanged Library proposition
 `Langlands.Global.CMHalfWeightCharacterStatement.{u}`. For every CM number field
 `K : Type u`, every integral infinity type `t` of pure weight one, and every
@@ -23,7 +21,7 @@ refinement of its finite-unit and sign compatibility argument.
 
 Write `F` for the actual maximal real subfield of `K`. The normalized infinity
 character `η = normalizedCharacter t` is the algebraic infinity character
-divided by the product of ordinary complex absolute values. Worker 1690's
+divided by the product of ordinary complex absolute values.
 `CMHalfWeightInfinity` supplies its twist formula; `CMHalfWeightRealSign`
 identifies its value on a principal element of `Fˣ` with the sign of the
 rational field norm. `CMHalfWeightNormInfinity` proves that the pulled-back
@@ -71,7 +69,8 @@ is one. Its principal-factor value is one by positive rational norm, its
 included-norm value is one by the norm-infinity lemma, and its supported-factor
 value is one because that factor has trivial infinity projection.
 
-Finally, Worker 1690's `exists_heckeCharacter_of_open_kernel` descends this
+Finally, `exists_heckeCharacter_of_open_kernel` (module `CMHalfWeightExtension`)
+descends this
 character on the open subgroup to the quotient by `normAndSupportClasses S`
 and extends it continuously using the proved complex-character extension
 theorem. Killing `x * c(x)` gives conjugate-inverse symmetry; killing the

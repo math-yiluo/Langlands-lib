@@ -1,18 +1,8 @@
 # Reductions of Sharp finite length, zero detection and exactness detection
 
 Module `Langlands.Representation.Aubert.General.RationalDetectionFiniteLengthReductionStatements`.
-Author: Worker 29, with Worker 3640, who chose this block for the general
-Aubert program (Task 3640). Each input set is the one used by a conditional
-theorem already in the shared draft of the proof task for that conclusion:
-
-- Sharp finite length: Worker 4216, Task 4216
-  (`0da1c37e-a39a-42e1-b90d-135db6c6e5c3`), shared draft revision 1;
-- zero detection: Worker 4193, Task 4193
-  (`db02aabd-9901-4fae-9583-ec28c66aec3c`), shared draft revision 1, applying
-  Worker 379's generic reduction;
-- exactness detection: Worker 128 wrote it and Worker 4194 checked it, Task
-  4194 (`d70a1edd-5a84-4b03-aecf-2818901809d4`), shared draft revision 2,
-  applying Worker 499's generic reduction.
+Each input set is the one used by a conditional theorem for that conclusion;
+the routes are in the Provenance section below.
 
 The module declares three propositions in
 `Langlands.Aubert.General.RationalPointFamily`. Each is an implication
@@ -83,10 +73,11 @@ The implication passes through the intermediate published proposition
 (`RationalSupportCategoryTargets`): an irreducible member of `Alg({I})` has a
 nonzero Jacquet module along some associated standard Levi. The published
 theorem `rationalSupportCategoryIrreducibleJacquetDetection_of_cuspidalFactors`
-(`RationalIrreducibleJacquetFactorDetection`, Worker 658) proves that
-extraction implies irreducible detection. Task 4193's draft proves that
-irreducible detection implies zero detection. That intermediate theorem
-keeps its owner. This statement uses the extraction input because it is the
+(`RationalIrreducibleJacquetFactorDetection`) proves that
+extraction implies irreducible detection.
+`rationalSupportCategoryZeroDetection_of_irreducibleJacquetDetection`
+(`RationalSupportCategoryZeroDetectionProof`) proves that irreducible detection
+implies zero detection. This statement uses the extraction input because it is the
 premise both routes end at.
 
 ## `RationalSupportCategoryExactnessDetectionReductionStatement`
@@ -134,7 +125,7 @@ These are derived, internal statements. They make no new claim from the
 literature. Their mathematical content is that of the cited sources through
 the published targets, whose own Markdown records the source correspondence.
 Aubert's Proposition 3.2 is not used. The routes of the conditional theorems
-in the three shared drafts are as follows.
+are as follows.
 
 - Sharp finite length. `sharpFiniteLengthTarget_of_inductionJacquet`
   (`SharpFiniteLength`) embeds each degree of the complex in a finite
@@ -157,5 +148,9 @@ in the three shared drafts are as follows.
 In the last two routes the compact-limit property of the standard unipotent
 radicals is proved from `hStandard`
 (`standardUnipotent_isLimitOfCompactSubgroups_of_standardCocharacterStatement`),
-so it is not an input. The proofs belong to separate `lean.proof@1`
-successor tasks. Statement review does not establish them.
+so it is not an input. The three implications are proved in other modules:
+`rationalSharpFiniteLengthReduction` (`RationalSharpFiniteLengthProof`),
+`rationalSupportCategoryZeroDetectionReduction`
+(`RationalSupportCategoryZeroDetectionProof`) and
+`rationalSupportCategoryExactnessDetectionReduction`
+(`RationalSupportCategoryExactnessReduction`).

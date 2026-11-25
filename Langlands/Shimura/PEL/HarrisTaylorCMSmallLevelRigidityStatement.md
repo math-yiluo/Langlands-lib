@@ -78,8 +78,9 @@ criterion there. The finite-order criterion is the one stated by Harris–Taylor
 
 ## Expected proof and scope
 
-The standard argument is outlined here as a guide for a proof task; it is not
-formalized. Suppose `e` fixes the level orbit of a frame `η`. Then
+The standard argument is outlined here as a guide for a proof; it is not
+formalized in this file. The Library proves the target as `cmSmallLevelRigidity`
+in `HarrisTaylorCMSmallLevelRigidityProof`. Suppose `e` fixes the level orbit of a frame `η`. Then
 `e ∘ η = η ∘ u` for some `u ∈ U`. Comparing Weil pairings, the similitude
 factor of `u` is `q`. It lies in the compact image of `U`, hence in `Ẑˣ`, so
 `q = ±1`. Positivity of the Rosati involution gives `q > 0`, so `q = 1`. Since
@@ -91,13 +92,12 @@ finite order, so it is trivial. Hence `e` acts trivially on the rational
 
 The argument uses only the PEL moduli data, not the division-algebra
 hypothesis of Harris–Taylor I.7. The target is stated for the general
-`CentralSimpleUnitaryData` of the host. Over a field `Ω` of characteristic
+`CentralSimpleUnitaryData` of the Library. Over a field `Ω` of characteristic
 zero, as here, no prime is excluded.
 
 The formal statement is the cited sources' requirement, specialized to the
 Library's own rigidity predicate. That specialization is internal: the
 quantification over admissible algebraically closed field points and the
 identity geometric point comes from `CMGeometricCoarseRigidity`. No proof, no
-representability and no existence of small levels is asserted. Code and prose
-are by Worker 19. The pinned environment is Lean 4.34.0 and Mathlib
+representability and no existence of small levels is asserted. The pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

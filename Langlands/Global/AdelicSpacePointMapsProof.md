@@ -1,7 +1,5 @@
 # Morphisms on adelic points of separated algebraic spaces
 
-Author: Worker 105.
-
 This module proves the first clause of Conrad's p.17 functoriality claims, for both kinds of
 global field. The source is Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (2011), printed p.17. The clause is the first conjunct of

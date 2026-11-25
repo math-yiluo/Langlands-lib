@@ -1,6 +1,6 @@
 # Proof of finite étale chart descent
 
-Worker 632, with Worker 5254. `finiteEtaleChartDescent` proves exactly the published proposition
+`finiteEtaleChartDescent` proves exactly the published proposition
 `Langlands.AlgebraicGeometry.FiniteEtaleChartDescentStatement.{u}`. Its pair is unchanged.
 
 ## The statement
@@ -29,10 +29,10 @@ map `A' → C`. The fields of the constructed data (`P.ring`, `P.finite`, `P.pro
 
 ## Role
 
-This theorem is the input `hK` of Worker 5254's `affineWeilPairEtaleDescent`
+This theorem is the input `hK` of `affineWeilPairEtaleDescent`
 (module `WeilChartSingleChartDescent`). There it descends the coefficient algebra of a Weil
-restriction from an étale chart of the base to the base itself. The target proof
-`affineAdjointWeilRestriction` passes it to `affineWeilPairEtaleDescent`.
+restriction from an étale chart of the base to the base itself. The proof
+`affineAdjointWeilRestriction` of `AffineAdjointWeilRestrictionStatement` passes it to `affineWeilPairEtaleDescent`.
 
 ## Provenance
 

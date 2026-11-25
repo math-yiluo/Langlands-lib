@@ -1,13 +1,12 @@
 # Generic helpers for the identity geometric piece
 
-Author: Worker 1033.
-
 This module provides generic tensor, matrix-entry and transport lemmas. The
 overlapping case of `LinkedSegmentSocleReverseProductQuotientHom` (Zelevinsky
 1980, Proposition 4.6, step (2)) uses them. Everything lives in the namespace
 `Langlands.Classification.QuotientHom`. Nothing here concerns segments. These
 are internal helpers, not results from the literature. The module is the first
-of five supporting modules for the exact proof task ba6ec030; the chain ends in
+of five supporting modules for the exact proof of
+`LinkedSegmentSocleReverseProductQuotientHom`; the chain ends in
 [LinkedSegmentOverlapAssembly](LinkedSegmentOverlapAssembly.md).
 
 ## Tensor products
@@ -55,12 +54,10 @@ of five supporting modules for the exact proof task ba6ec030; the chain ends in
   is that of `e`. For intertwining, the published
   `intersectionLeviConjugation_symm_embedding` shows that at `w = 1` the inverse
   conjugation preserves the ambient matrix, so `hψ` applies. This gives the
-  `key` step. The statement and the `key` step are mine. The rest of the proof,
-  from `refine Representation.Equiv.mk e.toLinearEquiv` on, is adapted line for
-  line from the published `SegmentEdge.intersectionTransportEquivOf` of
-  `Classification/SegmentEdgeJacquetReduction` (Worker 890, artifact
-  `936ff465-c0b4-4e1f-8c8a-ef6139f08699`, task
-  `b331611c-526d-4925-87fe-ea67ed6e6fed`). That declaration pulls the target
+  `key` step. The statement and the `key` step are new here. The rest of the
+  proof, from `refine Representation.Equiv.mk e.toLinearEquiv` on, is adapted
+  line for line from the published `SegmentEdge.intersectionTransportEquivOf` of
+  `Classification/SegmentEdgeJacquetReduction`. That declaration pulls the target
   back to a third Levi through `transport`. Here the target is pulled back to
   an arbitrary monoid `P`, which the identity case needs.
 
@@ -70,15 +67,11 @@ Two helpers come from published modules imported here; this module does not
 restate them.
 
 - `Langlands.CuspidalSupport.LeviAdmissibility.index_val` from
-  `CuspidalSupport/LeviSplitContraction` (artifact
-  `c862f739-656d-4705-89a9-0db3bfc7d716`, task
-  `e1237fc1-de75-4a4d-924b-d509dc475361`). It computes the ambient coordinate
+  `CuspidalSupport/LeviSplitContraction`. It computes the ambient coordinate
   `B.index i b` as `∑_{k < i} B.size k + b`.
   [LinkedSegmentOverlapShapes](LinkedSegmentOverlapShapes.md) uses it.
 - `Langlands.Classification.SegmentEdge.subgroupEqualityCompEquiv` from
-  `Classification/SegmentEdgeJacquetReduction` (artifact
-  `936ff465-c0b4-4e1f-8c8a-ef6139f08699`, task
-  `b331611c-526d-4925-87fe-ea67ed6e6fed`). It relabels a representation along
+  `Classification/SegmentEdgeJacquetReduction`. It relabels a representation along
   an equality of subgroups and keeps an equivalence with a pulled-back
   representation.
   [LinkedSegmentOverlapInduction](LinkedSegmentOverlapInduction.md) uses it.

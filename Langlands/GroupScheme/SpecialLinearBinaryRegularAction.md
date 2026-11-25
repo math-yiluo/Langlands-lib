@@ -41,7 +41,7 @@ actual finite regular representation in a basis of the entire covariant
 subspace. The comparison statements hold over every field and degree, while
 the irreducibility theorem retains the explicit infinitude premise.
 
-This derived unit uses the existing actual subgroup, full covariant-space
+This module uses the existing actual subgroup, full covariant-space
 equivalence, homogeneous action, finite regular representation and generic
 pullback constructions. It assumes no Steinberg irreducibility or structural
 group-theory assertion beyond these proved Library results. It does not

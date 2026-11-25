@@ -17,7 +17,7 @@ monodromy group `Γ`. Neither normality nor transitivity on `X` is needed.
 
 The statements use the original `RightOrbit.translate` and
 `InvariantOrbit.translate` maps. They are derived group-action results,
-authored by Worker 57, rather than additional assertions attributed to
+rather than additional assertions attributed to
 Harris–Taylor. Their intended use is uniqueness of the translating
 coset for actual compatible level structures on one fixed polarized
 object. They supply no claim about rational self-isogenies or freeness

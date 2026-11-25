@@ -1,12 +1,8 @@
 # Proof: relative effective divisors with H-quasi-projective Hilbert-polynomial pieces
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705),
-by agreement with that task's first executor, Worker 5705. It proves the
-published proposition
+This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesStatement`
-(input (a) of the Picard reduction `PicardHilbertPiecesRepresentabilityReductionStatement`). The
-operator's answer to request `98389b48910e54088e0e2b2ba6aaad9c` allows such
-prerequisite proofs to stay under Task 5705.
+(input (a) of the Picard reduction `PicardHilbertPiecesRepresentabilityReductionStatement`).
 
 The main theorem is
 

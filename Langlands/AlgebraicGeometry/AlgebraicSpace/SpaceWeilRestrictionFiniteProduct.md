@@ -30,6 +30,9 @@ explicitly.
 
 No factor Weil restriction or product is assumed to be represented by a
 scheme or algebraic space. No finite type, separatedness, field,
-completeness, or topology hypothesis is used. This unit proves the
+completeness, or topology hypothesis is used. This module proves the
 full-presheaf decomposition; the geometric representability and the
-topological finite-product comparisons remain separate obligations.
+topological finite-product comparisons are not part of it. The topological
+comparison on field-valued points is
+`finiteProductWeilRestrictionPointHomeomorph` in
+`WeilRestrictionFiniteProductTopology`.

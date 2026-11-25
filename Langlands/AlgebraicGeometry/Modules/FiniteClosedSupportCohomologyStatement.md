@@ -1,11 +1,10 @@
 # Cohomology and zero detection for scheme modules with finite closed support
 
-Authors: Worker 360 and Worker 716.
-
 This file defines a proposition and does not prove it.
 `Langlands.AlgebraicGeometry.Modules.FiniteClosedSupportCohomologyStatement.{u}`
 is a Prop-valued definition for an arbitrary universe `u`. It is a target for a
-separate later proof. The module imports
+separate proof, `finiteClosedSupportCohomology` in `FiniteClosedSupportCohomologyProof`.
+The module imports
 `Langlands.AlgebraicGeometry.Modules.ModuleSupport` and
 `Langlands.AlgebraicGeometry.Modules.DerivedSections` unchanged and defines
 nothing else.
@@ -131,17 +130,22 @@ implemented Lean proof.
    the underlying abelian group. It therefore preserves and reflects zero objects, so
    steps 2 and 3 transfer to the affine base.
 
-## Separate obligations
+## Related statements
 
 The published statement `Langlands.Cohomology.FiniteClosedSupportSheafStatement`
 formulates steps 1 and 2 for arbitrary abelian sheaves on a topological space, with the
-support contained in a finite set of closed points. That statement and its eventual proof
-are independent obligations owned by a separate task. This file neither proves it nor
-assumes it. A later proof of the present proposition can apply a proof of that sheaf
-statement to the abelian sheaf underlying `M` with `S = stalkSupport M`, then use steps 3
-and 4. That module proof is also a separate obligation, not supplied here.
+support contained in a finite set of closed points. That statement is separate; it is
+proved as `finiteClosedSupportSheaf` in `Langlands.Cohomology.FiniteClosedSupportSheafProof`.
+This file neither proves it nor assumes it. A proof of the present proposition can apply a
+proof of that sheaf statement to the abelian sheaf underlying `M` with `S = stalkSupport M`,
+then use steps 3 and 4. That proof is not supplied here; it is
+`finiteClosedSupportCohomology` in `FiniteClosedSupportCohomologyProof`, which imports
+`FiniteClosedSupportSheafProof`.
 
-Downstream finite-support cohomology detection for the projections of the square of an
-abelian scheme plans to use this proposition as its acyclicity and zero-detection input.
+Finite-support cohomology detection for the projections of the square of an abelian
+scheme uses this proposition as its acyclicity and zero-detection input: for the second
+projection, `algClosedFieldSquareSecondProjectionFiniteSupportDetection` in
+`Picard/SquareSecondProjectionFiniteSupportDetectionProof` applies
+`finiteClosedSupportCohomology`.
 The file proves no finite-support property of higher direct images, and no coherence,
 Leray comparison or geometric base change.

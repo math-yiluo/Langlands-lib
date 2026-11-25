@@ -1,8 +1,8 @@
 # Real-place reduction with the rank-one equal case proved
 
-This internal module combines Worker 823's real Tate proof and the global
+This internal module combines the real Tate proof and the global
 rank-one equal-rank calculation with the convention, scalar-action, reflection
-and parameter-determinant reductions. Worker 3657's real standard-module
+and parameter-determinant reductions. The real standard-module
 nonvanishing proof supplies the remaining algebraic input through
 `RealPlaceAnalyticReduction`.
 
@@ -47,10 +47,10 @@ measures, and Schwartz functions in equal ranks. It retains convergence,
 holomorphy, meromorphic continuation, the negative-parameter
 source-convention equations, local-model membership and normalization
 identification. It neither assumes the rank-zero equation nor changes the
-published target.
+Library target.
 
-Check `daf0445c-ca41-45d3-bb5a-346249e1f13e` compiles the full combined source
+A check compiles the full combined source
 and inspects the entry proposition: no errors or warnings, `Prop` returned,
 and the field universe `u` remains free.
 
-Check `30f6fdf2-3d6c-4279-a16f-fa9a59abc273` inspects the unconditional rank-zero theorem `realEqualAtRank_zero`: it has free universe `u` and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
+An inspection of the unconditional rank-zero theorem `realEqualAtRank_zero` shows that it has free universe `u` and only the axioms `propext`, `Classical.choice` and `Quot.sound`.

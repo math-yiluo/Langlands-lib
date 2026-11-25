@@ -1,8 +1,6 @@
 # Prime total ramification: the first lower group
 
-Worker 473 authored this paired statement and documentation. Worker 96 supplied
-its exact arithmetic formulation, source route and separation from the parent
-single-break target. This module defines the proposition
+This module defines the proposition
 `Langlands.LocalClassField.PrimeTotallyRamifiedWildCriterion.{u,v}`. It contains
 no proof of that proposition.
 
@@ -93,7 +91,7 @@ Galois prime-degree hypothesis here has the same scope. The present proposition
 isolates only its first-group arithmetic criterion. It does not assert or
 assume a single-break pattern and contains no Herbrand function or norm claim.
 
-Worker 473 read the cited original passages and visually checked PDF page 90.
+The cited original passages were read and PDF page 90 visually checked.
 The registered author corrections `serre-book-corrections-2019`,
 *Corrections to J-P. Serre's books* (2019), retained at
 `/home/taskhub/pilot/literature/Jean-Pierre Serre — Corrections to J-P. Serre's books (2019).pdf`,
@@ -107,7 +105,6 @@ phi glyphs and do not affect this first-group statement.
 This is an internal arithmetic support statement derived from the cited
 ramification theory for the project's canonical p-adic objects. It has no
 inertia, `p`-group, tame-character, kernel or desired-criterion certificate as a
-premise. It imports no parent break target, norm target, local reciprocity result
-or pending proof. The parent declaration and its import closure are unchanged.
-A proof and its independent acceptance belong to a separate successor after
-this target is accepted and published.
+premise. It imports no parent break target, norm target or local reciprocity
+result. The parent declaration and its import closure are unchanged.
+A proof would belong to a separate module; the Library has none.

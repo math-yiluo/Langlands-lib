@@ -1,7 +1,5 @@
 # Centralizing the rational points of a split torus
 
-Authors: Worker 88, with Worker 2094 (route).
-
 Lean module: `Langlands.Geometry.Building.TwistedFixedTranslationCentralizer`.
 
 This module is a helper for the proof of `UnramifiedTwistedFixedTranslationStatement`

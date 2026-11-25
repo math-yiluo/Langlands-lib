@@ -1,7 +1,5 @@
 # Automorphisms of the split even special orthogonal group
 
-Author: Worker 74.
-
 `Langlands.GroupScheme.OrthogonalMatrix.SpecialOrthogonalAutomorphismStatement.{u}` is an
 **unproved** statement: over every field, every automorphism of the split group `SO_{2n}`
 (`n ≥ 2`) is conjugation by a similitude of the hyperbolic quadratic form. In other words

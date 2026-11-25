@@ -1,7 +1,5 @@
 # Structural laws for support association
 
-Author: Worker 12.
-
 This internal module develops the actual normalizer and nested-subset laws
 needed to transport the support-category witnesses. Inverse and product
 representatives act by the inverse and composite character automorphisms.
@@ -49,6 +47,6 @@ They add no support theorem, finite-length condition or representation
 theoretic input. Empty finite root subsets are allowed.
 
 The inverse and product laws are imported unchanged from
-`RootAssociationComposition`, authored by Worker 78. The character-image
+`RootAssociationComposition`. The character-image
 wrapper with an explicit normalizer-membership proof reuses
 `rootAssociation_character_image` from `RationalRootAssociationLeviTransport`.

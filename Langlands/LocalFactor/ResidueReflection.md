@@ -1,7 +1,5 @@
 # Reflection at the canonical residue cardinality
 
-Definition: Worker 7. Coercion theorem: Worker 31. Integration: Integrator.
-
 `Langlands.LocalFactor.residueReflection F` is the unit `q⁻¹`, where `q` is
 `F.canonicalTopologicalData.residueCardinality` for `F : PadicField p`.
 It specializes `WeilDeligne.reflectionScale` with the published proof that
@@ -10,7 +8,7 @@ It specializes `WeilDeligne.reflectionScale` with the published proof that
 
 The definition is moved unchanged from
 `Correspondence/SupercuspidalGammaCompatibility`, where it was named
-`Langlands.Correspondence.residueReflection`. The reviewed duplicate
+`Langlands.Correspondence.residueReflection`. The duplicate
 `RankinSelberg.padicGammaReflectionScale` is replaced by this same declaration.
 Both definitions applied the same `WeilDeligne.reflectionScale` to the same
 residue cardinality; their positivity proofs are propositionally irrelevant.

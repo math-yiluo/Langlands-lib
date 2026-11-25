@@ -40,7 +40,7 @@ theorem prod_zpow_single (τ : ULift.{u} l → Aˣ) (a : l) (m : ℤ) :
     ∏ c : ULift.{u} l, τ c ^ (Pi.single a m : l → ℤ) c.down = τ ⟨a⟩ ^ m := by
   rw [Finset.prod_eq_single (⟨a⟩ : ULift.{u} l) (fun c _ hc => ?_) (by simp)]
   · simp
-  · rw [Pi.single_eq_of_ne (fun h => hc (ULift.ext _ _ h)), zpow_zero]
+  · rw [Pi.single_eq_of_ne (fun h => hc (ULift.ext h)), zpow_zero]
 
 theorem torusWeights_eq_prod (τ : ULift.{u} l → Aˣ) (x : l ⊕ l) :
     torusWeights τ x = ∏ c : ULift.{u} l, τ c ^ weightCoord l x c.down := by

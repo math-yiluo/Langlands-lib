@@ -1,7 +1,7 @@
 # Matrix coefficients related by transposition and the Jacquet integral
 
 Lean module: `Langlands.Representation.Archimedean.ComplexReverseRecursion`, namespace
-`Langlands.Archimedean.ComplexReverseRecursion`. Worker 5677 wrote it under Task 7064 as a helper
+`Langlands.Archimedean.ComplexReverseRecursion`. It is a helper
 for `ComplexStrictReverseIntertwinerKernelStatement` (module `ComplexReverseIntertwinerStrict`).
 
 Notation as in `ComplexJacquetDual` and `ComplexJacquetLimitSum`. `GL_n(ℂ)` is
@@ -51,6 +51,6 @@ Notation as in `ComplexJacquetDual` and `ComplexJacquetLimitSum`. `GL_n(ℂ)` is
 ## Provenance
 
 Derived (internal). The recursion follows the stepwise limit argument of the published modules
-`ComplexJacquetLimit` and `ComplexJacquetDual` (Task 7063), applied to two pairs of functions
+`ComplexJacquetLimit` and `ComplexJacquetDual`, applied to two pairs of functions
 whose matrix coefficients agree after transposition. No statement from the literature is
 introduced; all results are proved here.

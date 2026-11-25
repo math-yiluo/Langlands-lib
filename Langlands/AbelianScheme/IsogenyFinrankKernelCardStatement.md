@@ -20,4 +20,4 @@ A reduced finite group scheme over an algebraically closed field has as many `k`
 
 ## Scope
 
-The characteristic-zero hypothesis is needed: in characteristic `p > 0` an inseparable isogeny has a non-reduced kernel, and the equality fails. This is one of the four inputs of `IsogenyDegreeTateDeterminantNormReductionStatement` (Task 7330).
+The characteristic-zero hypothesis is needed: in characteristic `p > 0` an inseparable isogeny has a non-reduced kernel, and the equality fails. This is one of the four inputs of `IsogenyDegreeTateDeterminantNormReductionStatement` (module `Langlands.AbelianScheme.IsogenyDegreeTateDeterminantNormReduction`).

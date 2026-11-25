@@ -1,7 +1,5 @@
 # The analytic affine space as an increasing union of closed polydiscs
 
-Author: Worker 21.
-
 This module constructs the `d`-dimensional analytic affine space over a
 nontrivially valued complete ultrametric field `K`. It is glued from the
 increasing chain of closed polydiscs `E(0, ‖ϖ‖⁻ᵐ)`, `m ∈ ℕ`, along the radius

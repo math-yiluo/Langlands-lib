@@ -1,6 +1,6 @@
 # The geometric side of the head comparison
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiGeometricSide`,
+Module `Langlands.Representation.Classification.A6iiGeometricSide`,
 namespace `Langlands.Classification.A6ii`. Internal helper for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`).
 

@@ -53,7 +53,7 @@ uniqueness of this space functor among strict extensions.
 The provenance is entirely internal: the actual saturated category,
 full quasi-isomorphism property, original homeomorphism condition, and
 Mathlib's localization construction and universal property supply the
-inputs. This unit does not identify this localization with the full
+inputs. This module does not identify this localization with the full
 category of analytic spaces or prove extension from arbitrary original
 atlases. Those comparisons, and the analytic and equivariant site
-constructions, remain separate obligations.
+constructions, lie outside this module.

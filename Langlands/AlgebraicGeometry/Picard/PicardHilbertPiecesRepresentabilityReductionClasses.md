@@ -1,9 +1,6 @@
 # Picard classes of invertible modules and twists
 
-Authors: Worker 22.
-
-Worker 22 wrote this helper module for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). It is the first module of
+This helper module is the first module of
 the proof of `PicardHilbertPiecesRepresentabilityReductionStatement`; the
 main theorem and the full route are in
 `PicardHilbertPiecesRepresentabilityReductionProof.md`. All declarations are

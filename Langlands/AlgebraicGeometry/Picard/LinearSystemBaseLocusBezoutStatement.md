@@ -126,8 +126,8 @@ characteristics, tag 0BEI, source
 `stacks-euler-characteristics-0BEI-2026-11-01`).
 
 The statement serves the proof of
-`Langlands.AbelianScheme.PolarizedFiniteLevel.CubicTorsionHyperplaneBoundStatement`
-(task `a76410a4-bece-4011-b3f8-7d87460be52c`). That target follows Mumford,
+`Langlands.AbelianScheme.PolarizedFiniteLevel.CubicTorsionHyperplaneBoundStatement`.
+That target follows Mumford,
 Fogarty and Kirwan, *Geometric Invariant Theory*, 3rd edition (1994), proof of
 Proposition 7.7, printed pp.138-139 (source
 `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`).
@@ -138,9 +138,11 @@ nonzero linear form pulled back along the embedding. `S` is the set of
 pulled-back linear forms through the origin, transported along
 `[n]^* M ≅ M^(n*n)`.
 
-## Intended proof route
+## Proof route
 
-The statement records no proof. One route, in coherent sheaves:
+The statement records no proof; the proof is the theorem
+`Langlands.AlgebraicGeometry.Picard.linearSystemBaseLocusBezout` in the module
+`LinearSystemBaseLocusBezoutProof`. One route, in coherent sheaves:
 
 1. Cut `O_X` by `s`, which is injective since `X` is integral. The published
    `SectionCokernelEulerCoefficientStatement` gives the cokernel's degree

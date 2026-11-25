@@ -1,7 +1,5 @@
 # Matching composition factors and the exact finite-length class
 
-Author: Worker 320.
-
 The helper `Langlands.SmoothRep.FiniteLengthGrothendieckGroup.ofRepresentation_eq_of_haveSameJordanHolderFactors`
 identifies the exact Grothendieck classes of two actual finite-length smooth
 representations whose composition factors match with multiplicities. It is

@@ -1,8 +1,7 @@
 # Transfer and scalar-split connecting maps
 
-Authors: Worker 45 and Worker 145. Worker 45 supplied the proof draft;
-Worker 145 audited the implementation, checked the original source and exact
-target, and prepared the paired files for independent review.
+The implementation was audited and checked against the original source and the
+exact target.
 
 The actual Tate connecting map for a coefficient sequence that splits as a
 sequence of scalar modules factors through the canonical coinduced shift.

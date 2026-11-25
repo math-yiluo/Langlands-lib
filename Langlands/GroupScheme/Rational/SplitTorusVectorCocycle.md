@@ -65,7 +65,7 @@ the self-algebra affine test with the base scheme. No density of field-valued
 points, rational lifting, or separate choices on individual test schemes
 enter the proof.
 
-This unit applies to the specified split-torus model with supplied natural
+This module applies to the specified split-torus model with supplied natural
 linear vector coordinates. It does not establish linearization of an arbitrary
 torus action, descent from a splitting field, or cocycle vanishing for a
 nonsplit torus. Those obligations and the full rational conjugacy theorem for

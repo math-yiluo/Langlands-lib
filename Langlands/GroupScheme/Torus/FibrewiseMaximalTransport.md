@@ -8,10 +8,9 @@ at every point of `S`; its meaning and source group are unchanged here.
 All schemes, field types and coordinate index types lie in the same
 arbitrary universe `u`.
 
-The residue-field reflection, arbitrary-base-change and ambient-isomorphism
-lemmas are retained from the published module. This extension adds
-source-isomorphism transport, its coordinate specialization, and an explicit
-proposition with its proof. The provenance is derived from the Library's
+The module contains the residue-field reflection, arbitrary-base-change and
+ambient-isomorphism lemmas, source-isomorphism transport, its coordinate
+specialization, and an explicit proposition with its proof. The provenance is derived from the Library's
 residue-field factorization, field-extension reflection, field-point
 maximality and actual base-change coherence lemmas; no new geometric
 existence input or external structural assertion is assumed.
@@ -72,5 +71,5 @@ source-isomorphism transport above. The same lemmas then apply to further
 local-ring base morphisms. Closedness of a supplied torus map can be
 transported separately with `IsClosedSubgroup.baseChange` and `.iso_comp`.
 
-This unit constructs neither a splitting cover nor a quotient group
+This module constructs neither a splitting cover nor a quotient group
 scheme, and asserts no Weyl-group order or finite étaleness.

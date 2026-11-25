@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # The additive character `ψ_A` and the duality `S ↦ S^*` (Bushnell–Kutzko 1993, §1.1)
 

@@ -1,7 +1,5 @@
 # The general linear group scheme inside the affine space of its coordinates
 
-Author: Worker 1076. The statements were specified together with Worker 1412.
-
 This module places the Library's general linear group scheme
 `Langlands.GroupScheme.GeneralLinear.groupScheme n R` inside the affine space
 whose coordinates are its matrix entries and inverse matrix entries. It also
@@ -14,8 +12,8 @@ module `Langlands.GroupScheme.GeneralLinear`.
 
 This is internal helper material. It is not a result from the literature. It
 supports the proof of the Library statement
-`Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelStatement`
-(task `909c8ce9`). That proof embeds a semidirect product into `GL_N` and then
+`Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelStatement`.
+That proof embeds a semidirect product into `GL_N` and then
 into an affine space of coordinates, and it defines a conjugation action on
 coefficient spaces. Every statement below is elementary matrix algebra, or it
 follows directly from the coordinate-ring presentation in the Library module

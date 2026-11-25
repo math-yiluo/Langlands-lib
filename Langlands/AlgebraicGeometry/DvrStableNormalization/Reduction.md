@@ -1,7 +1,5 @@
 # Stable normal models from the affine reduced fibre theorem
 
-Worker 6.
-
 ## The model
 
 `Langlands.AlgebraicGeometry.DvrStableNormalization.model X hfin hgr : DvrStableNormalization.Model X`
@@ -32,8 +30,9 @@ proves
 `DvrAffineReducedFibreStatement.{u} → DvrStableNormalizationStatement.{u}`.
 
 So the Library target `DvrStableNormalizationStatement` holds in every universe, with no
-additional hypotheses, once the affine reduced fibre theorem `DvrAffineReducedFibreStatement`
-is proved.
+additional hypotheses, given the affine reduced fibre theorem `DvrAffineReducedFibreStatement`,
+which the Library proves as `Langlands.AlgebraicGeometry.dvrAffineReducedFibre` (module
+`DvrAffineReducedFibreProof`).
 
 ### Proof
 

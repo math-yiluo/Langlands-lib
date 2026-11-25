@@ -1,7 +1,5 @@
 # Reduction of affine-fibre torus-subgroup moduli to noetherian affine bases
 
-Author: Worker 668.
-
 `NoetherianAffineTorusSubgroupRepresentabilityStatement` specializes the
 published smooth affine-fibre representability statement to spectra of
 noetherian rings in the same universe. It retains smoothness, separatedness,
@@ -26,4 +24,5 @@ published statement.
 
 The specialized proposition is internal, obtained by restricting the base
 in the published target. The proved implication supplies the arbitrary-base
-step for Task 7705, with the noetherian affine proposition as its premise.
+step for `SmoothAffineFiberTorusSubgroupRepresentabilityStatement`, with the
+noetherian affine proposition as its premise.

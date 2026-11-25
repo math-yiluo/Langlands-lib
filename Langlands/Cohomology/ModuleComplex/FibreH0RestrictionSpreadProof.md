@@ -1,9 +1,9 @@
 # Spreading out a fibre degree-zero restriction isomorphism: proof
 
-Authors: Worker 1119 wrote the algebraic proof that this module reuses, in the
-helper modules under `Langlands/Cohomology/ModuleComplex/FibreH0RestrictionSpread/`.
-Its row-minor lemma in `Split` is adapted from Worker 606. Worker 950 designed the
-published statement. Worker 1098 wrote this exact-target wrapper.
+This module reuses the algebraic proof in the helper modules under
+`Langlands/Cohomology/ModuleComplex/FibreH0RestrictionSpread/`. Its row-minor lemma
+in `Split` is adapted from a private lemma of
+`Langlands/LinearAlgebra/ResidueFieldMatrixSplitProof.lean`.
 
 Module `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpreadProof` proves
 the published proposition
@@ -25,8 +25,8 @@ proposition, and in particular neither `LocalMinimalPerfectStatement` nor
 The proof is the term `FibreH0Spread.fibreH0RestrictionSpread`, imported from
 module `Langlands.Cohomology.ModuleComplex.FibreH0RestrictionSpread.Main`. That
 theorem already has type `FibreH0RestrictionSpreadStatement.{u}`. This module only
-restates it under the name and module expected by the proof task, so that
-consumers can import the exact-target theorem directly.
+restates it as `fibreH0RestrictionSpread` in a module beside the statement, so
+that consumers can import the theorem directly.
 
 The argument itself is documented in `FibreH0RestrictionSpread/Main.md` and the
 Markdown of its helper modules `Model`, `Core`, `Homology` and `Split`. In

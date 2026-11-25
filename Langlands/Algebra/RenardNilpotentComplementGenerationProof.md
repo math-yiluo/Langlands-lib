@@ -1,8 +1,8 @@
 # Renard C.I: generation by a complement to the first ideal-power level
 
-Worker 88 proves
+This module proves
 `Langlands.Renard.nilpotentComplementGeneration.{u}` with exactly the closed
-published proposition
+proposition
 `Langlands.Renard.NilpotentComplementGenerationStatement.{u}` as its type.
 The statement and all its imported constructions are used unchanged.
 
@@ -13,7 +13,7 @@ original is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 88 read PDF281–282 and visually checked PDF281. The supplementary
+PDF281–282 were read and PDF281 visually checked. The supplementary
 2010-edition errata, registered as `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 were read on PDF18–19. Their C.I corrections concern inequalities and
@@ -62,13 +62,13 @@ membership, including `n = 0`.
 
 For the reverse inclusion, each displayed evaluation vector belongs to
 the actual `I^n V` by `Submodule.smul_mem_smul`, and the next filtration
-level lies there by the published `idealPowerSubspace_antitone` law.
+level lies there by the `idealPowerSubspace_antitone` law.
 Complex span closure and the supremum property finish the equality.
 
 ## Implemented proof of full generation
 
 The main theorem derives commutativity of `R` from the original tuple
-commutation, using the published
+commutation, using the
 `generatedAlgebra_isMulCommutative` law. It then proves
 `I ≤ (⊥ : Ideal R).radical`. Indeed, every original generator is
 nilpotent in `R`: its vanishing power is obtained from the given power
@@ -79,24 +79,24 @@ the actual ideal `I` in it.
 The complement condition gives `W + I V = V`. At this point the proof
 imports
 `Langlands.CommutingDimension.span_action_of_sup_radical_eq_top` from
-`Langlands.Algebra.CommutingDimensionHelpers`, authored by Worker 307.
-This published helper applies Nakayama to the same finite `R`-module `V`,
+`Langlands.Algebra.CommutingDimensionHelpers`.
+This helper applies Nakayama to the same finite `R`-module `V`,
 the same ideal `I`, and `span_R W`, and concludes that the complex span
 of all `r(w)` is `V`. Its finite-module input follows from finite
 dimension over the scalar field. Each `r(w)` belongs to `span_R W`,
 so this full complex span is contained in the restriction to `ℂ` of
 `span_R W`. Consequently `span_R W = ⊤`, the required second conjunct.
-Only the named published helper is imported; its proof is not copied.
+Only the named helper is imported; its proof is not copied.
 
-This is the permitted Nakayama alternative to the source's use of the
+This is the Nakayama alternative to the source's use of the
 vanishing filtration. No vanishing or generation premise is added.
 All natural tuple lengths and filtration indices, arbitrary carrier
 universe, zero vector spaces, empty tuples, zero entries, repetitions
 and redundant generators remain within the exact theorem. The proof
 makes no positivity or nontriviality assumption.
 
-The separately owned sharp filtration endpoint, restriction injection,
+The sharp filtration endpoint, restriction injection,
 algebra splitting, dimension estimates, maximum monotonicity, floor
 recurrence, numerical base cases, carrier transport and other source
-obligations remain separate. This pair proves only the named generation
+assertions are separate results. This pair proves only the named generation
 statement and its internal quotient-generation helper.

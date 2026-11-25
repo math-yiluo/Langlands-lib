@@ -1,7 +1,5 @@
 # Actual finite original-chart refinement after iterated recognition
 
-Author: Worker 36.
-
 This module constructs a finite full-domain cover of an affinoid chart
 obtained by iterating full recognition. Every flattened component retains
 an actual chart algebra from the first saturated atlas, its complete
@@ -112,11 +110,11 @@ There is no ambient Hausdorff, reducedness, nonzero-algebra or
 nonempty-cover hypothesis. Empty finite dependent families and empty
 spectra remain allowed.
 
-This unit constructs the actual finite refinement with complete maps
-and full representations. It does not yet construct the flattened
+This module constructs the actual finite refinement with complete maps
+and full representations. It does not construct the flattened
 pairwise overlap charts, prove their completed-tensor specialness, or
 recognize the whole iterated chart relative to the first saturated atlas.
 Recognition idempotence, equivalent-net invariance, maximal-atlas
-uniqueness and unrestricted analytic morphism identification remain
-later obligations. The general special-intersection lemma and
+uniqueness and unrestricted analytic morphism identification are not
+treated here. The general special-intersection lemma and
 closed-ideal effectiveness are not assumed.

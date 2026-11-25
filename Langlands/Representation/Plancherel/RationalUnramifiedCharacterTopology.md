@@ -1,7 +1,5 @@
 # Compact-open topology on actual unramified characters
 
-Author: Worker 200.
-
 This derived comparison equips the existing actual-image/unramified character
 equivalence with continuity in both directions and identifies the existing
 unitary unramified subgroup with the compact circle-valued dual of the actual

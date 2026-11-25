@@ -1,6 +1,6 @@
 # Splitting of trigonalizable extensions with connected quotient over perfect fields
 
-Author: Worker 60 (Task 7805). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.ExtensionSplitPerfectConnected`,
 namespace `Langlands.GroupScheme.TrigonalizableExtensionSplit`.
 

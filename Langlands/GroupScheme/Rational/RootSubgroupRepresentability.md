@@ -1,6 +1,6 @@
 # Smooth closed representatives of intrinsic root functors
 
-This internal supporting unit concerns the actual all-test subgroup functor `RelativeRoot.subgroup i a`. It applies over every field in universe `u`, for a smooth affine group scheme `G`, a split torus `S`, any group homomorphism `i : S.toGrp ⟶ G`, and every nonzero character `a`. It requires neither connectedness nor reductivity of `G`, maximality or injectivity of `i`, occurrence of `a` as a relative root, nor primitivity of `a`. The actual character kernel retains its possible nonsmoothness.
+This internal supporting module concerns the actual all-test subgroup functor `RelativeRoot.subgroup i a`. It applies over every field in universe `u`, for a smooth affine group scheme `G`, a split torus `S`, any group homomorphism `i : S.toGrp ⟶ G`, and every nonzero character `a`. It requires neither connectedness nor reductivity of `G`, maximality or injectivity of `i`, occurrence of `a` as a relative root, nor primitivity of `a`. The actual character kernel retains its possible nonsmoothness.
 
 `IsSmoothClosed F` is the proposition that an all-test subgroup functor has a smooth closed representative. It is defined over any base scheme and requires no connectedness.
 
@@ -12,4 +12,4 @@ The existing `AutomorphicAction.Affine` construction gives an actual closed repr
 
 `subgroup_isSmoothClosed` packages smooth closed representability using the new predicate. `subgroup_isClosedRepresentable` packages the unconditional closed representability. `smooth_of_isRepresentedBy_subgroup` transfers smoothness to every representative using the canonical represented-subgroup isomorphism. `connected_of_isRepresentedBy_subgroup` transfers the conditional connectedness in the same way. `subgroup_isSmoothConnectedClosed` packages a smooth connected closed representative when the dynamic connectedness proposition is supplied.
 
-These are internal consequences of the imported constructions and proved kernel-centralizer and character-descent results. No additional literature assertion is used. This unit does not prove dynamic connectedness, the positive Lie-weight characterization, split unipotence, or the host `CyclicRootFunctorComparisonStatement`. Those remain separate obligations.
+These are internal consequences of the imported constructions and proved kernel-centralizer and character-descent results. No additional literature assertion is used. This module does not prove dynamic connectedness, the positive Lie-weight characterization, split unipotence, or `CyclicRootFunctorComparisonStatement`, the statement this module serves, which the Library proves as `cyclicRootFunctorComparison` (`Rational.CyclicRootFunctorComparisonProof`). Those remain separate obligations.

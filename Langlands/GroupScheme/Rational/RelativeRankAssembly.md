@@ -1,6 +1,6 @@
 # Rank assembly from independent geometric comparisons
 
-This derived unit constructs the actual linear decomposition associated with an independently established rational root/character complement and injectivity of rational character restriction. It is conditional and does not prove either geometric premise or the full `RelativeRankIdentityStatement`.
+This derived module constructs the actual linear decomposition associated with an independently established rational root/character complement and injectivity of rational character restriction. It is conditional and does not prove either geometric premise or the full `RelativeRankIdentityStatement`.
 
 For the actual map `i : T.toGrp ⟶ G`, `relativeRootCharacterEquiv` maps a pair `(x, χ)` to `x + rationalCharacterRestrictRat i χ`. First `LinearEquiv.ofInjective` identifies the rationalized character module with the range of restriction. Mathlib's `Submodule.prodEquivOfIsCompl` then identifies the product of that range with the actual relative root span with the full rational character space of `T`. The accompanying formula specifies this map.
 

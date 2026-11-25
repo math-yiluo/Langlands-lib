@@ -1,6 +1,6 @@
 # The kernel and forward-exponent clauses of Renard VII.3.3
 
-Worker 154. `PQRegularityPredecessorCriteriaStatement` isolates the first two clauses of the
+`PQRegularityPredecessorCriteriaStatement` isolates the first two clauses of the
 published regularity lemma. The module proves this specialization as
 `pqRegularity_predecessorCriteria`, for the original regularity quotient and every
 supplied full geometric piece at a strict Bruhat predecessor of identity.

@@ -157,20 +157,20 @@ its attribution table has no separate entry for this source module.
 These are chartwise scalar coordinates and their identities. The module
 does not construct a representing Grassmannian scheme, a morphism to
 projective space, or a projective embedding. Those require additional
-gluing and geometric arguments. Within the host division-CM task, the
+gluing and geometric arguments. Within the host `DivisionCMRepresentabilityStatement`, the
 representing CM scheme, its admissibility, smoothness, projectivity and
 the natural comparison with the exact normalized CM presheaf remain
 separate obligations.
 
-## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+## Universe generalization
 
-Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+This module is generalized from universe zero to an arbitrary universe `u`, so that the
 universe-polymorphic port of the FLT Hom-scheme construction (used by
 `Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
 duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
-the previous ones, so existing universe-zero uses still apply.
+the universe-zero statements, so universe-zero uses still apply.
 
 - A line `universe u` is added after the imports.
 - Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
   `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
-- In total 16 lines of the published file are changed and 2 lines added; no proof step changes otherwise.
+- In total 16 lines of the universe-zero version are changed and 2 lines added; no proof step changes otherwise.

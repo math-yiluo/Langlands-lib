@@ -118,9 +118,9 @@ theorem cmGeometricProjectiveImmersion_galoisMap
 /-- The same geometric map intertwines the inverse-comorphism left actions. -/
 theorem cmGeometricProjectiveImmersion_galoisAction
     (σ : AlgebraicClosure F ≃ₐ[F] AlgebraicClosure F) :
-    ((galoisAction) σ).hom.app U ≫ geometricImmersion =
+    ((galoisAction) σ).asIso.hom.app U ≫ geometricImmersion =
       geometricImmersion ≫
-        (ProjectiveSpace.galoisAction F (AlgebraicClosure F) d σ).hom := by
+        (ProjectiveSpace.galoisAction F (AlgebraicClosure F) d σ).asIso.hom := by
   simpa only [cmGeometricGaloisAction_hom, ProjectiveSpace.galoisAction_hom] using
     cmGeometricProjectiveImmersion_galoisMap D C preservation composition unitCoherence
       associativity comparison symmetry stability square universality dualityNaturality
@@ -131,10 +131,10 @@ theorem cmGeometricProjectiveImmersion_galoisLevelAction
     (σ : AlgebraicClosure F ≃ₐ[F] AlgebraicClosure F) :
     (cmGeometricGaloisLevelAction D C preservation composition unitCoherence
       associativity comparison symmetry stability square universality dualityNaturality
-      polarizationStability compatibility h htor q U σ).hom ≫ geometricImmersion =
+      polarizationStability compatibility h htor q U σ).asIso.hom ≫ geometricImmersion =
       geometricImmersion ≫
-        (ProjectiveSpace.galoisAction F (AlgebraicClosure F) d σ).hom := by
-  change ((galoisAction) σ).hom.app U ≫ geometricImmersion = _
+        (ProjectiveSpace.galoisAction F (AlgebraicClosure F) d σ).asIso.hom := by
+  change ((galoisAction) σ).asIso.hom.app U ≫ geometricImmersion = _
   exact cmGeometricProjectiveImmersion_galoisAction D C preservation composition
     unitCoherence associativity comparison symmetry stability square universality
     dualityNaturality polarizationStability compatibility h htor q U i hi σ

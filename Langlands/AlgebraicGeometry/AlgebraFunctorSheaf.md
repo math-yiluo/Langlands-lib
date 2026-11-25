@@ -26,7 +26,7 @@ homomorphism `φ : A →ₐ[R] B`. The morphism on spectra is `Spec.map φ` and
 naturality is stated in the over category with its commutative triangle.
 This is an extension and sheaf theorem. A representing scheme, an affine
 chart cover, properness, smoothness and the normalized Harris CM comparison
-are further obligations of the host task.
+are not part of this theorem.
 
 The implementation helpers live in
 `AlgebraicGeometry.Scheme.AlgebraFunctorSheaf`:
@@ -89,8 +89,7 @@ The complete files used are:
   lines 1–37, SHA-256 `4c213899ad1a5dbcddd5af49bd6375b76176edada491db4983831c0dcc502470`. The port's exported theorem
   signature is byte-identical to this wrapper's full signature.
 
-Worker 344 read the full implementation and wrapper, including the
-compatibility differences from the earlier private feasibility copy.
+The full implementation and wrapper were read.
 The adaptation replaces `import Mathlib` with focused imports, reuses the
 published total-presheaf module, renames the implementation namespace,
 and removes the P2M commands and wrapper tactic. Helper simplification and
@@ -108,17 +107,17 @@ The distribution's attribution list has no separate entry for these two
 files. The local project source-errata directories contain no entry for
 this source. Imported Library Lean/Markdown pairs remain unchanged.
 
-## Universe generalization (task `6d6cc279-3071-445f-adba-589e54d9816b`)
+## Universe generalization
 
-Worker 1109 generalized this module from universe zero to an arbitrary universe `u`, so that the
+This module is generalized from universe zero to an arbitrary universe `u`, so that the
 universe-polymorphic port of the FLT Hom-scheme construction (used by
 `Langlands.AbelianScheme.relativeEndomorphismRepresentability`) can use these results in place of
 duplicate copies of the same FLT theorems. Statements are otherwise unchanged; for `u = 0` they are
-the previous ones, so existing universe-zero uses still apply.
+the universe-zero statements, so universe-zero uses still apply.
 
 - A line `universe u` is added after the imports.
 - Every universe-zero `Type` in binders, quantifiers, structure fields and type ascriptions becomes
   `Type u`, and every `Scheme.{0}` becomes `Scheme.{u}`.
 - Explicit universe-zero instantiations become universe `u`: `CommRingCat.{0}`, `Scheme.zariskiTopology.{0}` and `Functor.IsOneHypercoverDense.{0}` become `.{u}`, and the sheaf `G₀ : Sheaf J₀ (Type 0)` becomes `Sheaf J₀ (Type u)`.
 - In `generate_std_mem` the standard open cover `(Scheme.affineOpenCoverOfSpanRangeEqTop f hf).openCover`, indexed by `Fin n`, is replaced by its `ulift` (Mathlib's `Cover.ulift`), because a covering in the Zariski topology on `Scheme.{u}` must be indexed by a type in universe `u`; for each index `x` of the lifted cover the proof uses the original index `(…).openCover.idx x`. The sieve membership proved is unchanged.
-- In total 84 lines of the published file are changed (the two-line cover step of `generate_std_mem` becomes three lines) and 2 lines added; no proof step changes otherwise.
+- In total 84 lines of the universe-zero version are changed (the two-line cover step of `generate_std_mem` becomes three lines) and 2 lines added; no proof step changes otherwise.

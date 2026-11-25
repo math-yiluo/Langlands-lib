@@ -1,8 +1,7 @@
 # Renard C.II: quotient maps and finite localization
 
-Worker 709, updated 6 November 2026, coordinated with Worker 6 under whole-book
-task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 3. This passage audit
-records verified publications for the stable-endomorphism lemma, its auxiliary
+This passage audit, updated 6 November 2026, is part of the whole-book coverage
+([coverage.md](coverage.md)). It records the Library's results for the stable-endomorphism lemma, its auxiliary
 quotient sequence and actual localization constructions. It also distinguishes
 the published internal finite-localization theorems from the unresolved
 source-facing nonunital finiteness convention. The additive-to-scalar comparison
@@ -18,22 +17,22 @@ statement/proof pairs: the compatible stability criteria, the Noetherian
 localization core, ordinary-module actual-localization stability and the
 canonical compatible stable image. The last three supply steps of the
 localization results below.
-This documentation records partial Appendix C coverage; the whole-book
-formalization remains open.
+This documentation records partial Appendix C coverage of the whole-book
+formalization.
 
 ## Source and reading
 
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`. The readable original is
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 with SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 independently rechecked for this audit. It has 296 PDF pages; the passages here
 have PDF page = printed page + 6.
 
-Worker 709 read PDF282–285 and visually checked the quotient formulas on
-PDF284 and the final proposition on PDF285. A.III.1 on PDF258–259 and the
+PDF282–285 were read, and the quotient formulas on PDF284 and the final
+proposition on PDF285 were checked visually. A.III.1 on PDF258–259 and the
 global module conventions on PDF12 were also read, including their rendered
 pages. The registered supplementary author errata
 `renard-2010-corrections-complements`, SHA256
@@ -96,7 +95,7 @@ criterion, exact-row transfer, monotonicity and the common first stabilization
 index for arbitrary-dimensional complex spaces with independent carrier
 universes. The theorem `stableEndomorphism` in
 [StableEndomorphismProofs](../../Langlands/LinearAlgebra/StableEndomorphismProofs.md)
-proves exactly `StableEndomorphismStatement.{uV, uA, uB, uC}`. The accepted
+proves exactly `StableEndomorphismStatement.{uV, uA, uB, uC}`. The
 proof retains the common **first** stabilization index, one-sided exact-row
 hypotheses and all four independent carrier universes; it adds no dimension or
 finiteness hypothesis. This lemma aggregate and the auxiliary quotient
@@ -121,11 +120,11 @@ equivalence and persistence under eventual stability, and the common first
 stabilization index. The eventual-stability witness is positive; the first
 index may be zero. Algebra and carrier universes remain independent, and
 possibly noncommutative nonunital algebras, degenerate actions and arbitrary
-dimensions are included. Worker 691 proves power coherence by induction,
-then transports Worker 277's published complex-linear chain theorems through
+dimensions are included. The proof establishes power coherence by induction,
+then transports the published complex-linear chain theorems through
 the injective, order-reflecting compatible-submodule forgetful map. This
 adapter does not prove the compatible square/complement/exact-row
-criteria, which are the separate unit described next. Nor does it prove
+criteria, which are the separate module described next. Nor does it prove
 the auxiliary quotient sequences or the source finiteness comparison.
 
 ### Compatible stability criteria
@@ -133,10 +132,10 @@ the auxiliary quotient sequences or the source finiteness comparison.
 In namespace `Langlands.Algebra.CompatibleStability`, the theorem
 `compatibleStability` proves exactly
 `CompatibleStabilityStatements.{uB, uV, uA, uM, uC}`. Its
-[statement](../../Langlands/Algebra/CompatibleStabilityStatements.md),
-by Workers 709 and 345, and
-[proof](../../Langlands/Algebra/CompatibleStabilityProofs.md), by
-Worker 1044, specialize the definition and Lemma (i)–(iii) on
+[statement](../../Langlands/Algebra/CompatibleStabilityStatements.md)
+and
+[proof](../../Langlands/Algebra/CompatibleStabilityProofs.md)
+specialize the definition and Lemma (i)–(iii) on
 printed276–278/PDF282–284 to actual compatible actions
 `ρ : B →ₙₐ[ℂ] Module.End ℂ V` of a possibly noncommutative, nonunital
 complex algebra B. The maps are actual `LinearIntertwiner`s with their
@@ -165,26 +164,23 @@ use other routes.
 
 ## Actual localization prerequisites
 
-The following replaces the earlier construction backlog. It credits the
-actual public interfaces at their verified scope.
+The following lists the actual interfaces of the Library at their verified
+scope.
 
-| Passage or prerequisite | Current interface or task | Remaining boundary |
+| Passage or prerequisite | Interface in the Library | Remaining boundary |
 | --- | --- | --- |
 | A.III.1 example 4, printed252/PDF258 | `Langlands.Renard.ModuleLocalization` in `Langlands/Algebra/RenardModuleLocalization.lean`: actual `LocalizedModule`, `IsSLocal`, inverse action, `factor`, representative, factorization, uniqueness and comparison laws | Full-subcategory and universal-arrow category packaging remain separate |
 | First assertion of example 5, printed252/PDF258 | `Langlands.Algebra.PolynomialEndomorphism.equivalence` and `fieldEquivalence`, with actual evaluation actions and linear-intertwiner correspondence | The separate localization construction is given in the next row |
-| Localization at powers of X in example 5, printed252–253/PDF258–259 | `Langlands.Renard.EndomorphismLocalization.Localized`, `iota`, `localizedEnd`, `localizedInv`, `localizedEquiv`, `frac`, `factor`, `hasUniversalProperty` | Actual scalar-linear construction and universal property are public; categorical packaging is separately tracked |
-| Final sentence of example 5 | `Langlands.Renard.AlgebraActionLocalization.localizedAction` and `fieldLocalizedAction`, with fraction/canonical-map laws, actual intertwiners, inverse commutation and intrinsic uniqueness of the action extension | Construction is public for possibly noncommutative and nonunital actions. The arbitrary-target B-linear universal property is a separate assertion, not supplied by the action-construction receipt |
-| Unnumbered lemma and corollary, printed253/PDF259 | Separately tracked assertions over the actual localization | Injective case; K = union_n ker(a^n); induced injective quotient action; compatible quotient-localization identification; inverse-iterate exhaustion and its converse; surjective canonical map gives localization isomorphic to V/K. This note does not re-audit each successor's coverage |
+| Localization at powers of X in example 5, printed252–253/PDF258–259 | `Langlands.Renard.EndomorphismLocalization.Localized`, `iota`, `localizedEnd`, `localizedInv`, `localizedEquiv`, `frac`, `factor`, `hasUniversalProperty` | Actual scalar-linear construction and universal property are in the Library; categorical packaging is not part of this interface |
+| Final sentence of example 5 | `Langlands.Renard.AlgebraActionLocalization.localizedAction` and `fieldLocalizedAction`, with fraction/canonical-map laws, actual intertwiners, inverse commutation and intrinsic uniqueness of the action extension | Construction is public for possibly noncommutative and nonunital actions. The arbitrary-target B-linear universal property is a separate assertion, not supplied by the action construction |
+| Unnumbered lemma and corollary, printed253/PDF259 | Assertions over the actual localization, recorded in [endomorphism-localization.md](endomorphism-localization.md) | Injective case; K = union_n ker(a^n); induced injective quotient action; compatible quotient-localization identification; inverse-iterate exhaustion and its converse; surjective canonical map gives localization isomorphic to V/K. This note does not re-audit their coverage |
 
-The example-4 artifact 9652aa10-f220-4739-a962-777ceedbd047 was verified as
-accepted and public at commit 6e568b3024e33889aa9fcaae1e910b0ff99f9b59; the
-exact public Lean/Markdown pair was read. The construction retains arbitrary
+The example-4 construction first appeared in the Library at commit
+6e568b3024e33889aa9fcaae1e910b0ff99f9b59; its Lean/Markdown pair was read. The construction retains arbitrary
 commutative coefficient rings, arbitrary unital modules, independent source
 and target universes, and zero denominators. Its formal counterexample explains
 why invertibility of a scalar endomorphism does not imply an inverse coefficient
-in the original ring. Preserve Worker 618's example-4 task ownership
-08bb9432-0606-45f0-a725-70e8b0dda929 and Worker 490's polynomial-equivalence
-work under task 959d6ee1-9a1f-4812-a911-7cf695869dd1.
+in the original ring.
 
 The actual
 [endomorphism-localization pair](../../Langlands/Algebra/RenardEndomorphismLocalization.md)
@@ -208,7 +204,7 @@ assert B-linearity of a factor into an arbitrary target.
 
 ## Noetherian core and ordinary-module stability
 
-Two published internal units for ordinary unital modules prepare the
+Two published Lean files for ordinary unital modules prepare the
 final proposition. Both are derived content motivated by printed279/PDF285,
 with the localization of A.III.1 example 5 on printed252–253/PDF258–259.
 Neither is a translation of the source proposition.
@@ -219,11 +215,9 @@ In namespace `Langlands.LinearAlgebra.NoetherianLocalizationCore`, the
 theorem `noetherianLocalizationCore` proves exactly
 `NoetherianLocalizationCoreStatement.{uR, uM, uN}`. Its
 [statement](../../Langlands/LinearAlgebra/NoetherianLocalizationCoreStatements.md)
-was derived by Worker 709; Worker 735 rechecked it and submitted it with
-Worker 709 as coauthor. The
+and
 [proof](../../Langlands/LinearAlgebra/NoetherianLocalizationCoreProof.md)
-was written by Worker 709, then checked and submitted by Worker 735 under
-proof task `d5b1de4a-fa7c-47b9-9f10-d8a35ac539c0`. The coefficient ring is
+are in `Langlands/LinearAlgebra/`. The coefficient ring is
 an arbitrary unital ring, not necessarily commutative or Noetherian. The
 ring, source and target universes are independent. The three conjuncts
 are:
@@ -252,9 +246,9 @@ In namespace `Langlands.Renard.EndomorphismLocalization`, the theorem
 `actualLocalizationStabilityStatements` proves exactly
 `ActualLocalizationStabilityStatements.{uR, uV}`. Its
 [statement](../../Langlands/Algebra/RenardLocalizationStabilityStatements.md)
-is by Workers 709 and 977, and its
-[proof](../../Langlands/Algebra/RenardLocalizationStabilityProof.md) is by
-Worker 977 under proof task `c9d7a084-4b9f-4094-a4d9-88126e384078`. The
+and its
+[proof](../../Langlands/Algebra/RenardLocalizationStabilityProof.md) are in
+`Langlands/Algebra/`. The
 data are an arbitrary commutative ring R, an ordinary unital R-module V,
 an endomorphism a, and the actual `Localized a`, `iota a` and
 `localizedEnd a` described above. Zero rings and modules of any size are
@@ -286,15 +280,15 @@ gives the complement, and the canonical map restricted to the range is
 bijective. The third obtains Noetherian modules by Mathlib's
 `isNoetherian_of_isNoetherianRing_of_finite` and combines the first two.
 
-The published pair differs from the frozen bundle in one respect. The
-frozen proof proved a local `iota_eq_zero_iff` helper. The published
+The pair in the Library differs in one respect from the version first
+checked, whose proof proved a local `iota_eq_zero_iff` helper. The Library's
 proof instead imports
 `Langlands.Algebra.RenardEndomorphismLocalizationKernelProof` and reuses
 `Langlands.Renard.EndomorphismLocalization.iota_eq_zero_iff`, and its
 Markdown describes that reuse. This proof and the kernel and
-exhaustion proof `16d1ce28-f650-452d-8a80-7fd08a520767`, recorded in the
-[endomorphism-localization audit](endomorphism-localization.md), were
-published in the same commit `b7a6ea71635c439ae131d5b451e5f403e32dc1c7`. The
+exhaustion proof, recorded in the
+[endomorphism-localization audit](endomorphism-localization.md), first
+appeared in the Library in the same commit `b7a6ea71635c439ae131d5b451e5f403e32dc1c7`. The
 second conjunct is used at ℂ by the canonical compatible stable image
 below and at ℤ by the additive stable-image proof described later.
 
@@ -304,10 +298,9 @@ In namespace `Langlands.Renard.AlgebraActionLocalization`, the theorem
 `compatibleStablePowerImageStatement` proves exactly
 `CompatibleStablePowerImageStatement.{uB, uV}`. Its
 [statement](../../Langlands/Algebra/RenardCompatibleStableImageStatements.md)
-is by Workers 709 and 977, and its
-[proof](../../Langlands/Algebra/RenardCompatibleStableImageProof.md) is by
-Workers 490 and 926 under proof task
-`80c2c945-109d-4be9-bf55-50bd374aa1fa`. For an actual compatible action
+and its
+[proof](../../Langlands/Algebra/RenardCompatibleStableImageProof.md) are in
+`Langlands/Algebra/`. For an actual compatible action
 ρ of a possibly noncommutative, nonunital complex algebra B, a
 self-intertwiner f with `a = f.toLinearMap`, and every n with `0 < n` and
 `Stable (a ^ n)`, it gives `CompatibleStablePowerImageAt ρ f n`. Here K
@@ -391,7 +384,7 @@ internal theorem.
 
 ### Statements under the three candidate readings
 
-Worker 709's statement unit
+The statement module
 [RenardSourceFiniteLocalizationStatements](../../Langlands/Algebra/RenardSourceFiniteLocalizationStatements.md)
 states the proposition once for each candidate model named in the
 finiteness source audit. All three take a commutative, possibly nonunital
@@ -417,10 +410,8 @@ complex dimension is assumed.
 
 [RenardSourceFiniteLocalizationProof](../../Langlands/Algebra/RenardSourceFiniteLocalizationProof.md)
 proves the unchanged aggregate as `sourceFiniteLocalizationStatements`,
-with uB and uV independent and no added hypothesis. Worker 709 wrote the
-proof draft. Worker 1581 checked its source correspondence and submitted
-it under exact proof task `211bc556-3c01-4948-97c8-d2e3407747a9`
-revision 1. The proof first builds an order isomorphism between the
+with uB and uV independent and no added hypothesis. Its correspondence with
+the source was checked. The proof first builds an order isomorphism between the
 categorical subobjects of an object of `ActionModuleCat` and its stable
 subspaces, and composes it with the published unitized submodule
 comparison. This turns the categorical Noetherian and finite-type
@@ -436,8 +427,8 @@ not follow Renard's argument through finiteness of the endomorphism module.
 The proof establishes the conclusion under each of the three models; it
 does not decide which model is the author's.
 
-The [unitization criteria note](unitization-noetherian-criteria.md) records,
-with receipts, the published units behind these steps and behind the internal
+The [unitization criteria note](unitization-noetherian-criteria.md) records
+the published modules behind these steps and behind the internal
 stable-ideal proof above. They include
 `CompatibleUnitization.submoduleOrderIso`,
 `UnitizationIdealNoetherian.noetherian_iff_scalar_and_regular` and
@@ -486,10 +477,10 @@ The original action remains separate from canonical integer scalars,
 including when A is ℤ and the original action is zero. No complex
 vector-space structure is imposed.
 
-Worker 735 authored both
+The
 [complex-compatible](../../Langlands/Algebra/RenardCompatibleLocalizationNoetherianProof.md)
 and [additive](../../Langlands/Algebra/RenardAdditiveLocalizationNoetherianProof.md)
-proofs. They build the unitized automorphism from the actual localized
+proofs build the unitized automorphism from the actual localized
 operator and inverse. Actual fraction exhaustion, intertwining and the
 canonical-map kernel criterion supply the hypotheses of the published
 `NoetherianLocalizationCore` described above. The proof transports its kernel and range
@@ -513,10 +504,10 @@ The published theorem
 `Langlands.Renard.AdditiveActionLocalization.additiveStablePowerImageStatement`
 proves exactly
 `Langlands.Renard.AdditiveActionLocalization.AdditiveStablePowerImageStatement.{uA, uV}`.
-Its [statement](../../Langlands/Algebra/RenardAdditiveStableImageStatements.md),
-authored by Workers 709 and 926, and
-[proof](../../Langlands/Algebra/RenardAdditiveStableImageProof.md),
-authored by Workers 490 and 926, give an internal, finiteness-free refinement
+Its [statement](../../Langlands/Algebra/RenardAdditiveStableImageStatements.md)
+and
+[proof](../../Langlands/Algebra/RenardAdditiveStableImageProof.md)
+give an internal, finiteness-free refinement
 motivated by the stable-image conclusion on printed279/PDF285.
 
 The data are an arbitrary nonunital ring A, an additive commutative group V
@@ -562,8 +553,7 @@ The published theorem
 Its [statement](../../Langlands/Algebra/RenardAdditiveScalarFiniteLocalizationStatements.md)
 and [proof](../../Langlands/Algebra/RenardAdditiveScalarFiniteLocalization.md)
 give an internal implication from explicit additive generation assumptions
-to the scalar-linear hypotheses just described. Worker 490 authored the
-published proof.
+to the scalar-linear hypotheses just described.
 
 For a supplied compatible action, the first generic component says that a
 finite set generating among all stable additive subgroups also generates
@@ -597,96 +587,73 @@ does not identify these explicit additive premises with Renard's intended
 Noetherian or finite-type terminology; that source-facing comparison and
 the complete C.II proposition remain open.
 
-## Verified acceptance and publication
+## In the Library
 
-These are exact receipts, not task-publication or compilation-only claims.
-The stable-lemma, quotient and internal-localization proof receipts include
-independent unqualified approval, exact-target/unchanged-input checks, a Lake
-build and fresh integrated validation. The corresponding pairs were checked
-against the published Library.
+The stable-lemma, quotient and internal-localization proofs were each checked
+by a Lake build against the exact target, with the statement and its inputs
+unchanged, and by a fresh build of the Library with them. The corresponding
+pairs were checked against the Library.
 
-| Unit | Accepted artifact / independent reviewer | Publication commit |
-| --- | --- | --- |
-| Stable-endomorphism lemma proof | `7e459a2c-e520-488a-b102-1c94e5ad2441`, Reviewer 3448 | `6d91111e6f9b7a27124b1de32a4984bbdd222a61` |
-| Successive quotient exactness proof | `e8d09f33-46c5-48a6-a495-7c070345d3f9`, Reviewer 4224 | `b7a6ea71635c439ae131d5b451e5f403e32dc1c7` |
-| Compatible-action power-chain proof | `c601c63c-4fc2-41f8-b132-1b2663cccf23`, Reviewer 4485 | `771cfc69d1ff795522e29cdead1b7c40f1a1c308` |
-| Actual scalar-linear localization construction | `b3b9bc36-a869-4b1a-a4c1-4e4c7263f87d` | `476e67f4df29c0dcafabdb5af459b61964b720a4` |
-| Actual compatible algebra-action construction | `ce219e42-e734-408f-a5b7-32d786a5a581`, Reviewer 4091 | `355c05239d7704a3ed5d72bad864cb1d542b647a` |
-| Complex-compatible unitized Noetherian proof | `cc923777-9dbd-44e9-9753-6154fc2dd6ca`, Reviewer 4582 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| Original-additive unitized Noetherian proof | `ac573fe2-4e6b-41d5-8195-c6b4014a4b32`, Reviewer 4838 | `d3985dbb10c55a703b1ca560439739837d09e8a6` |
-| Original-additive canonical stable-image statement | `0b6b9832-9dcc-4643-a427-94c24dfcb09d`, Reviewer 4816 | `7e64f8e360c8778e04e5da7f9cd382cda7c837f6` |
-| Original-additive canonical stable-image proof | `932a8912-e918-40ae-807a-3d1a542501cd`, Reviewer 4888 | `e4fe0c0f7a3256e25c5a2d255ea294641c141ac5` |
-| Internal stable-ideal finite localization proof | `9bba1e51-88ef-4b14-830e-f1c480e324c3`, exact statement `554ff789-621a-4049-a9c2-ef9778dc73e8` | `ddcb24bcc9c4fe817800414f5fd5f3536da42760` |
-| Internal additive-to-scalar statement | `142cecb6-aba9-4fec-ad2f-7cb993888218`, Reviewer 5746 | `26e9adf301abba95f343f5005d9f478af9fc09d4` |
-| Internal additive-to-scalar finite-localization proof | `f4447811-d9db-47ac-8da3-ae255a859613`, Reviewer 5804 | `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` |
-| Three-reading source statements | `0b44a67d-ab25-4432-a1c0-9826e8467f30`, Reviewer 14742 | `542eaca02a9f2d14f175497b7bf6459436ac5c6d` |
-| Three-reading source proof | `7646164d-c224-44cd-b3f6-902fd2d99866`, Reviewer 15061 | `50126e1b2b20b62d408b52dc3552f01089dd1d11` |
-| Compatible stability criteria statement | `3e01bae5-3faf-42da-9896-9c62405b14b8`, Reviewer 4273 | `a781b405546498b2d765aa36bf30e49c1aeb32a3` |
-| Compatible stability criteria proof | `f0b9cad3-5d08-48a9-857b-f8a2070a4107`, Reviewer 4527 | `b58bd42aee6a565b689f0f0c008506e23b1b6560` |
-| Noetherian localization core statement | `c299c22c-8f8a-4b83-bc16-c3c4541997aa`, Reviewer 3508 | `5b9935101c61f2c53bff91434ebe60bcd5719881` |
-| Noetherian localization core proof | `2a850cbc-c905-463f-9d42-8853b40278f3`, Reviewer 3888 | `910a6df80701415e9aa68c646393c66ac9bc7512` |
-| Actual-localization stability statement | `775d3dc9-2f3c-4f90-937c-fc724c5be241`, Reviewer 4082 | `355c05239d7704a3ed5d72bad864cb1d542b647a` |
-| Actual-localization stability proof | `623a5905-faa5-43d8-b53d-b7b82af1c032`, Reviewer 4228 | `b7a6ea71635c439ae131d5b451e5f403e32dc1c7` |
-| Canonical compatible stable-image statement | `b5a2b7ee-addb-4933-a865-ed7e51e890eb`, Reviewer 4369 | `84ad0affe3e3e8feae73b57da624fc1f16a6923b` |
-| Canonical compatible stable-image proof | `598b9cce-85ed-4c21-9f48-ca6ebe1074cc`, Reviewer 4486 | `771cfc69d1ff795522e29cdead1b7c40f1a1c308` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Stable-endomorphism lemma proof | `6d91111e6f9b7a27124b1de32a4984bbdd222a61` |
+| Successive quotient exactness proof | `b7a6ea71635c439ae131d5b451e5f403e32dc1c7` |
+| Compatible-action power-chain proof | `771cfc69d1ff795522e29cdead1b7c40f1a1c308` |
+| Actual scalar-linear localization construction | `476e67f4df29c0dcafabdb5af459b61964b720a4` |
+| Actual compatible algebra-action construction | `355c05239d7704a3ed5d72bad864cb1d542b647a` |
+| Complex-compatible unitized Noetherian proof | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| Original-additive unitized Noetherian proof | `d3985dbb10c55a703b1ca560439739837d09e8a6` |
+| Original-additive canonical stable-image statement | `7e64f8e360c8778e04e5da7f9cd382cda7c837f6` |
+| Original-additive canonical stable-image proof | `e4fe0c0f7a3256e25c5a2d255ea294641c141ac5` |
+| Internal stable-ideal finite localization proof | `ddcb24bcc9c4fe817800414f5fd5f3536da42760` |
+| Internal additive-to-scalar statement | `26e9adf301abba95f343f5005d9f478af9fc09d4` |
+| Internal additive-to-scalar finite-localization proof | `6cb15022e66f7f1f171e7e8d563e74b92072e5ba` |
+| Three-reading source statements | `542eaca02a9f2d14f175497b7bf6459436ac5c6d` |
+| Three-reading source proof | `50126e1b2b20b62d408b52dc3552f01089dd1d11` |
+| Compatible stability criteria statement | `a781b405546498b2d765aa36bf30e49c1aeb32a3` |
+| Compatible stability criteria proof | `b58bd42aee6a565b689f0f0c008506e23b1b6560` |
+| Noetherian localization core statement | `5b9935101c61f2c53bff91434ebe60bcd5719881` |
+| Noetherian localization core proof | `910a6df80701415e9aa68c646393c66ac9bc7512` |
+| Actual-localization stability statement | `355c05239d7704a3ed5d72bad864cb1d542b647a` |
+| Actual-localization stability proof | `b7a6ea71635c439ae131d5b451e5f403e32dc1c7` |
+| Canonical compatible stable-image statement | `84ad0affe3e3e8feae73b57da624fc1f16a6923b` |
+| Canonical compatible stable-image proof | `771cfc69d1ff795522e29cdead1b7c40f1a1c308` |
 
-For the internal additive-to-scalar finite-localization proof
-`f4447811-d9db-47ac-8da3-ae255a859613`, machine receipt
-`23ce8c73-c13a-4665-8703-16b70ac268ec` accepts the Lake build, exact
-target, unchanged statement and frozen inputs.
-Independent Reviewer 5804 approves without qualifications. Integration
-`96de716bca444889b0d086698ced52cc` publishes the pair with a successful fresh
-integrated build. Worker 709 read the complete independent report and
-verified equality of the frozen, published, current and workspace proof
-hashes, as well as unchanged bytes for the 28 Lean/Markdown files in the
-target statement's project import closure. Focused proof task
-`551264ec-c65e-43eb-8047-daafd431ed28` revision 1 is complete; the parent
-book task remains open.
+The internal additive-to-scalar finite-localization proof was checked by a
+Lake build against the exact target, with the statement and its inputs
+unchanged, and by a fresh build of the Library with it. Its proof hashes were
+the same in the version checked and in the Library, and the 28 Lean/Markdown
+files in the target statement's project import closure were unchanged.
 
-For the three additional proofs checked on 4 November, the respective
-machine receipts are `81197c8b-30f4-4687-82b1-f506a26103e6`,
-`71555b38-5a00-4705-af60-ae7d5dcfdc9a` and
-`cdb5c669-bbb1-4fa2-9df7-347b11d6779b`. Each accepts the Lake build,
-exact target, unchanged statement and frozen inputs under `lean.proof@1`.
-The complete independent reports approve without qualifications.
-Integrations `ab17c6563ceb454592906d4e4cc55cdf`,
-`773deeda5f8d4314b60fe9f0be6ff400` and
-`b903c2c45bbb4c5aa6bc109a5690c4d1` publish them with successful fresh
-integrated builds.
+The three additional proofs checked on 4 November were each checked by a Lake
+build against the exact target, with the statement and its inputs unchanged
+(the proof checks), and by a fresh build of the Library with them.
 
-Worker 709 read all three current proof/statement pairs and their complete
-independent reports. Each proof pair's hashes agree across its frozen
-artifact, publication commit, current Library
-`32eba017c96530e6a6723f7224c04e2cece5ee5d` and workspace. The respective
+The three proof/statement pairs were read. Each proof pair's hashes were the
+same in the version checked, at the commit where it first appeared and in
+Library `32eba017c96530e6a6723f7224c04e2cece5ee5d`. The respective
 14, 22 and 20 Lean/Markdown files in the target statements' project import
-closures are unchanged across each proof's Library base, publication,
-current Library and workspace. These checks verify the listed internal
-publications; they do not resolve the source-convention comparison.
+closures are unchanged across each proof's Library base, first appearance
+and that Library commit. These checks verify the listed internal
+results; they do not resolve the source-convention comparison.
 
-For the additive stable-image proof, machine receipt
-`f1ab16ea-bf2d-45c0-b9eb-4cd1913c8f4d` accepts the Lake build, exact
-target, unchanged statement and frozen inputs under `lean.proof@1`.
-Independent Reviewer 4888 approves without qualifications; integration
-`ee57f3bb638d48048e394ac94ee5fc70` publishes the pair with a successful
-fresh integrated build. Worker 709 read the complete independent report
-and both current proof/statement pairs. Their hashes match their frozen
-artifacts, publication commits, current Library
-`66022d3631d55433e7dc5f97f0e78671522d05a3` and workspace. All 22
+The additive stable-image proof was checked by a Lake build against the exact
+target, with the statement and its inputs unchanged (the proof checks),
+and by a fresh build of the Library with it. Both proof/statement pairs were
+read. Their hashes were the same in the version checked, at the commits where
+they first appeared and in Library
+`66022d3631d55433e7dc5f97f0e78671522d05a3`. All 22
 Lean/Markdown files in the target statement's project import closure are
-unchanged across the proof's original Library base, integration base,
-publication, current Library and workspace. Focused proof task
-`41265157-23db-48f3-87f6-a116b5c57781` revision 1 is complete; this
+unchanged across the proof's original Library base, the base of its build,
+its first appearance and that Library commit. This
 verifies the listed internal result, with the source-facing boundary
 described above.
 
-For the three-reading source proof, by Worker 1581 with Worker 709,
-machine receipt `f4c460c1-c7aa-48a5-be85-4636509e5136` accepts the Lake
-build, exact target, unchanged statement and frozen inputs under
-`lean.proof@1`. Independent Reviewer 15061 approves without qualifications
-or suggestions in review task `c86aa372-0d21-4247-b091-54c66800d812`.
-Integration `f63ed287534d40d88be40b717c46c312` publishes the pair at
-`50126e1b2b20b62d408b52dc3552f01089dd1d11` with a successful fresh
-integrated build. The published pair equals its frozen bundle: Lean
+The three-reading source proof was checked by a Lake build against the exact
+target, with the statement and its inputs unchanged (the proof checks).
+It first appeared in the Library at
+`50126e1b2b20b62d408b52dc3552f01089dd1d11`, after a fresh build of the
+Library with it. The pair there equals the version checked: Lean
 SHA256 `6bc36019b3f2e58a2b751c8d0fbf08f6cb4d1420cda59b1d84d3b381511c9eae`,
 Markdown SHA256
 `7245104f98dc10fd79add97000c09598d8c3d2028b3c2abc75dcc3a3e62f03c6`. At that
@@ -694,56 +661,34 @@ commit the statement pair is unchanged, with Lean SHA256
 `06692eff8d95f2b541707ce27490b58c7ff45a63a762716c7f24ed113a24cadf` and
 Markdown SHA256
 `f6f99dd14ddd2e3b527560e5be896526c5b4ee9c94cf291786478eb16a09ae96`.
-Worker 709 is a coauthor of this proof, so this record is documentation,
-not an independent review. The source-facing convention comparison stays
+The source-facing convention comparison stays
 open.
 
-The three-reading statements are public under `lean.statement@1` with
-Reviewer 14742's approval without qualifications, in review task
-`1d770d85-135c-4d50-b16e-6338fa34b65c`. Machine receipt
-`c4b5fc6f-ed79-494e-b542-b0424543c7f2` checks statement compilation and
-declaration kind; it proves none of the readings. Integration
-`7af7edd3efc24cdfbd93cc385ca8ec2d` publishes the pair. Its Lean/Markdown
+The three-reading statements are in the Library; their compilation and
+declaration kind were checked as statements, which proves none of
+the readings. Their Lean/Markdown
 SHA256 values
 `06692eff8d95f2b541707ce27490b58c7ff45a63a762716c7f24ed113a24cadf` /
 `f6f99dd14ddd2e3b527560e5be896526c5b4ee9c94cf291786478eb16a09ae96`
-are equal in Library `dd78edadc914cf56ca81c595cee581a3570d415c` and the
-workspace. The integration keeps the derived, statement-only scope; it does
+are those of Library `dd78edadc914cf56ca81c595cee581a3570d415c`. The
+statements keep the derived, statement-only scope; they do
 not resolve the author's convention.
 
-For the eight units added on 6 November, each independent reviewer
-approves without qualifications. The review tasks, machine receipts and
-integrations are:
+The eight modules added on 6 November are the last eight rows of the table
+above: the statements and proofs of the compatible stability criteria, the
+Noetherian localization core, actual-localization stability and the canonical
+compatible stable image. Each proof was checked by a Lake build against the
+exact target, with the statement and its inputs unchanged (the proof checks).
+Each statement was checked for compilation and declaration kind
+(the statement checks); this proves nothing.
 
-| Unit | Review task | Machine receipt (policy) | Integration |
-| --- | --- | --- | --- |
-| `3e01bae5` | `00050a91-4c85-4b1a-a8d5-11c7b61427d6` | `a6018a9c-ab5b-469d-b207-692a197a6005` (`lean.statement@1`) | `da8f27c269fa41379dea874cb80a2b67` |
-| `f0b9cad3` | `4e9e23a0-c899-4649-a9df-0c845021ced3` | `587dd4b6-7403-4ec6-ac1f-fb686f499e59` (`lean.proof@1`) | `83986632f5d74d648ac7c9468ca6eb2d` |
-| `c299c22c` | `842967f2-dc53-49c4-b682-2c5ea9afa51f` | `be1270ae-4b63-49c2-b32f-0d20079c43a7` (`lean.statement@1`) | `6f7d8019c4274aa08c42fd2d3635dfe9` |
-| `2a850cbc` | `3bf0d098-4f7a-4c73-b9f2-eabbc6f5763b` | `8e23e285-3678-437e-bf30-1f385721345b` (`lean.proof@1`) | `8e61746bd6cf442384ed9b94ac859618` |
-| `775d3dc9` | `04dde906-f4b9-4f4c-9e1f-fa76c4d066e4` | `b159abde-457f-4ef5-9f79-1c7c622fd2ca` (`lean.statement@1`) | `c9cfcda653ca4c019e0a5c8557e8b3fd` |
-| `623a5905` | `f3342009-c333-4a9c-b561-4636fb7987b7` | `9a07409e-a7b5-4352-aac8-74ee4765bcd6` (`lean.proof@1`) | `fe20e9fc271b413683b756d7ca7b1b82` |
-| `b5a2b7ee` | `2920c95d-dd93-4a07-9865-aba55b320d55` | `eea56298-94e3-43c0-bb80-42d5750aa694` (`lean.statement@1`) | `1ee4048a4413467b87c045752cbf9d72` |
-| `598b9cce` | `16be14d1-3693-40e6-a03b-3da7b20fa880` | `dbbf4939-67ee-4258-88f9-683c55073f6c` (`lean.proof@1`) | `33c2c0a29b58450184d07e3b35fd008c` |
-
-Each proof receipt accepts the Lake build, exact target, unchanged
-statement and frozen inputs. Each statement receipt checks compilation and
-declaration kind; it proves nothing. The proof tasks
-`a80d0a05-3a61-4e29-a4c0-0ca8c70c53af`,
-`d5b1de4a-fa7c-47b9-9f10-d8a35ac539c0`,
-`c9d7a084-4b9f-4094-a4d9-88126e384078` and
-`80c2c945-109d-4be9-bf55-50bd374aa1fa` are complete; the parent book task
-remains open. Worker 709 is a coauthor of the statements `3e01bae5`,
-`c299c22c`, `775d3dc9` and `b5a2b7ee` and wrote the proof `2a850cbc`, so
-those records are documentation, not independent review.
-
-Worker 709 checked the sixteen Lean/Markdown files of these pairs at
-current Library `87e695f5180726de47820341b89accb81c4e1033` and in the
-workspace. Fourteen equal their frozen bundles. The published
-actual-localization proof pair differs from its frozen bundle by the
+The sixteen Lean/Markdown files of these pairs were checked at
+Library `87e695f5180726de47820341b89accb81c4e1033`. Fourteen equal the
+versions first checked. The
+actual-localization proof pair in the Library differs from its first checked version by the
 kernel-lemma reuse described above:
 
-| File | SHA256 at Library `87e695f5` and in the workspace | Frozen SHA256, if different |
+| File | SHA256 at Library `87e695f5` | SHA256 as first checked, if different |
 | --- | --- | --- |
 | `Langlands/Algebra/CompatibleStabilityStatements.lean` | `35489cfd0ab61bc48a2747f659bfe5b2826f7c708c338152c11edb729e348240` | |
 | `Langlands/Algebra/CompatibleStabilityStatements.md` | `bd3aec5626e7514d7ea20089a07481dd1cdccd319b83289d8650347653b2215d` | |
@@ -762,9 +707,9 @@ kernel-lemma reuse described above:
 | `Langlands/Algebra/RenardCompatibleStableImageProof.lean` | `209de9be738f6a7daf32c49df6bdc9716717cec53d410cdd16a447b8908fd68a` | |
 | `Langlands/Algebra/RenardCompatibleStableImageProof.md` | `b904afea49fdd640cb87893adb8ee076ed167590402c64410dd721fecebb8156` | |
 
-These checks verify the listed internal publications. They do not resolve
+These checks verify the listed internal results. They do not resolve
 the source-convention comparison.
 
-The whole-book parent retains the source-convention comparison and every other
-unassigned assertion. This note updates only the listed passages and preserves
-the ownership of other statement, proof and categorical successors.
+The source-convention comparison and the other assertions of Appendix C are
+outside this note; [coverage.md](coverage.md) covers the whole book. This note
+covers only the listed passages.

@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: homogeneous forms in generators of the augmentation ideal
 
-Author: Worker 348. Internal helper module for the final step of Kaletha–Prasad, Theorem A.6.2.
+Internal helper module for the final step of Kaletha–Prasad, Theorem A.6.2.
 A member of the smoothening sequence with torsion-free cotangent module is smooth. This module
 supplies the commutative algebra for that step. The argument is internal to this project.
 

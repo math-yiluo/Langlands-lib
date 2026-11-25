@@ -14,7 +14,7 @@ inner product is a positive Haar-measure scalar times `inducedInnerProduct K hK.
 `x i ∈ ℂ`, the statement says that the Gram sum `∑ i, ∑ i', x i · conj (x i') · (φ i, φ i')_P`
 is a nonnegative real number (`0 ≤` in `ComplexOrder`), and that it is `0` exactly when
 `∑ i, x i • φ i = 0`. Lapid defines the norm and gives no separate argument for positive
-definiteness. The proof below follows the proof guide of the task and computes directly in the
+definiteness. The proof below computes directly in the
 Library's model of the quotient.
 
 The statement and its hypotheses are unchanged. The proof uses: the rational Levi `l` (through
@@ -68,8 +68,8 @@ linear maps, each a bijection:
   (`characterRestrict_injective_of_levi`): write a point of `P` as `l(m) u` with `u` in the
   unipotent radical; a rational character is trivial on a unipotent group
   (`IsUnipotent.comp_eq_one_of_isSplitTorus`), so it is determined by its restriction to `M`.
-  This lemma reproduces a private lemma of `Langlands.Global.AdelicIntertwiningImaginaryUnitarityReduction`
-  (written after Worker 587, Task 5502), under a new public name in this module's namespace;
+  This lemma reproduces a private lemma of `Langlands.Global.AdelicIntertwiningImaginaryUnitarityReduction`,
+  under a new public name in this module's namespace;
 - the coordinates `H ↦ (⟨e(b_j), H⟩)_j` dual to `e`. These are injective (Library
   `coordinateMap_injective`) and surjective (`coordinateMap_surjective`). For `y ∈ ℝⁿ` let
   `ψ = (v ↦ ∑ j y_j v_j) ∘ e⁻¹` and `H(χ) = ψ(1 ⊗ χ)`. Then `⟨μ, H⟩ = ψ(μ)` for all

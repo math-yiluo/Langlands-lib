@@ -1,10 +1,5 @@
 # Standard Langlands recovery for arbitrary whole-Levi inputs
 
-Worker 545 authored the shared conditional assembly. Worker 1155 supplied
-the closed assembly with fixed-parameter recovery on the original carriers.
-Worker 1437 combined and checked this work and prepared the contribution.
-The imported results retain their documented authorship.
-
 `Langlands.glWholeLeviLanglandsRecovery.{uF,uV,uW,uJ,uK}` has exactly the
 type `Langlands.GLWholeLeviLanglandsRecoveryStatement.{uF,uV,uW,uJ,uK}`.
 The field and all four representation carrier universes are independent.

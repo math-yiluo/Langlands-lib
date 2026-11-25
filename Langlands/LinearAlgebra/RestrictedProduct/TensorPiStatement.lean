@@ -3,7 +3,7 @@ Copyright (c) 2025 Madison Crim. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Madison Crim
 
-Modified by Worker 376 (2026): this module states, as a `Prop`-valued
+Modified in Langlands-lib (2026): this module states, as a `Prop`-valued
 definition, the bijectivity assertion proved inside
 `tensorPiEquivPiTensor'` of Imperial FLT, commit
 923d45174c500aa1d994ba973bac38ea39eacbf7,
@@ -28,7 +28,7 @@ family of `R`-modules `N i`, Mathlib's canonical map
 This module only states the target; it proves nothing.
 -/
 
-namespace RestrictedProduct
+namespace Langlands.LinearAlgebra.RestrictedProduct
 
 universe uR uM uι uN
 
@@ -42,4 +42,4 @@ def TensorPiComparison : Prop :=
     [∀ i, AddCommGroup (N i)] [∀ i, Module R (N i)],
     Function.Bijective (TensorProduct.piRightHom R R M N)
 
-end RestrictedProduct
+end Langlands.LinearAlgebra.RestrictedProduct

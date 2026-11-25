@@ -1,6 +1,6 @@
 # Geometric reductivity excludes coordinates shifted by a nonconstant function
 
-Author: Worker 1502. Internal helper for the proof of
+Internal helper for the proof of
 `AffineHomogeneousQuotientReductiveStatement`. The argument is derived here and does not follow a
 cited source. The input it uses is the published statement
 `ReductiveGeometricReductivityStatement` (Haboush's theorem; MFK, *Geometric Invariant Theory*,

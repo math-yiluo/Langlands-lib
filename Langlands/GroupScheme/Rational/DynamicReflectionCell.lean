@@ -59,11 +59,15 @@ theorem dynamic_conj_opposite_mem_unipotent_of_cyclic_support
   have hb : weylAction i n b.val = -b.val := by
     obtain ⟨r, hr⟩ := AddSubgroup.mem_zmultiples_iff.mp
       (hcyclic b.val b.property.1.1.1)
-    rw [← hr, map_zsmul, hn, smul_neg]
+    have hz : weylAction i n (r • a) = r • weylAction i n a :=
+      (weylAction i n).toLinearMap.toAddMonoidHom.map_zsmul r a
+    rw [← hr, hz, hn, smul_neg]
   rw [b.property.2.2] at hw
   rw [b.property.2.1]
   have h := normalizer_conj_mem i (-b.val) n hw
-  simpa only [map_neg, hb, neg_neg] using h
+  have hneg : weylAction i n (-b.val) = -weylAction i n b.val :=
+    (weylAction i n).toLinearMap.map_neg _
+  simpa only [hneg, hb, neg_neg] using h
 
 end CyclicConjugation
 

@@ -25,4 +25,5 @@ and the finite source stays diagonalizable, so
 `diagonalizableAdicInjectivity_of_iso` gives the equality from the reductions.
 
 This is an internal comparison for the proof of adic Hom effectivity. It uses
-Worker 668's finite-source algebraization and algebraized torsion restrictions.
+the finite-source algebraization (`FiniteSourceAdicHom`) and the algebraized torsion
+restrictions (`AdicTorsionRestriction`).

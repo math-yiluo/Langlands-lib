@@ -52,6 +52,7 @@ The provenance is internal composition of the existing actual restriction,
 relative-global-section and affine point comparisons. The section-isomorphism
 calculation relates the original coordinate-root morphism to its affine
 description; all remaining formulas follow from the stated naturality and
-actual induced-map formulas. This unit does not yet construct a cocharacter
-or contraction of restricted roots, compare parabolic radicals under
+actual induced-map formulas. This module does not construct a cocharacter
+or contraction of restricted roots (those are in
+`SpecialLinearWeilDynamicRoots`), compare parabolic radicals under
 restriction, or prove the unrestricted local Kneser–Tits theorem.

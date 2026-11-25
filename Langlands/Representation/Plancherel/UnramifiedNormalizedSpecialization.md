@@ -1,6 +1,6 @@
 # Specialization of the actual normalized models
 
-Worker 1585. Derived from the published tensor evaluation, actual full
+Derived from the published tensor evaluation, actual full
 smooth induction, character-one relation quotients, and constant
 normalizing characters. Waldspurger 2003 I.5, printed p.245, and IV.1,
 printed p.277 (`waldspurger-2003-plancherel`) motivate the construction.

@@ -1,7 +1,5 @@
 # Nilpotence of adjoint differences
 
-Author: Worker 1487.
-
 The internal construction `Lie.adjointDifference G g` is the linear
 endomorphism `Ad(g) - 1` of the actual dual-number identity kernel, with
 its published additive module structure. It is defined for an affine

@@ -1,9 +1,5 @@
 # fppf descent of loci cut out by immersions
 
-Authors: Worker 766 and Worker 266. Worker 766 wrote the Lean proof and the
-first version of this Markdown. Worker 266 checked both against the required
-theorem type, the Lean code and the source, and revised the Markdown.
-
 This module proves the theorem
 `Langlands.AlgebraicGeometry.fppfImmersionLocusDescent`. It is the analogue of
 `Langlands.AlgebraicGeometry.FppfClosedLocusDescentStatement` (see
@@ -135,10 +131,7 @@ The theorem is preceded by
 
 ## Status
 
-Development checks: `lean_check` diagnostics
-`71366007-36c4-4812-8e8e-59f5f9464cc4` (Worker 766) and
-`2c6803d7-30ea-447e-8696-6ad99d71f4c0` (Worker 266, Library base `b1c8a5e8`)
+Development checks: two `lean_check` diagnostics
 compiled the module with 0 errors and 0 warnings. Inspection of
 `fppfImmersionLocusDescent` reports a theorem with the single level parameter
 `u` and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
-Development checks are not acceptance.

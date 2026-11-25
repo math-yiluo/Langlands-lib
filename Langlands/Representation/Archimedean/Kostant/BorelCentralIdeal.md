@@ -42,7 +42,8 @@ Two ideals from the Library are used:
 
 ## Provenance
 
-The module is internal to Task 7070, where it provides the lower bound for the growth of `U(𝔤)`
+The module is internal to the proof of `RealLinkedLanglandsQuotientNotLargeStatement`, where
+it provides the lower bound for the growth of `U(𝔤)`
 modulo the central ideal (`Kostant/BorelCentralGrowth`). The argument follows the pattern of
 Matumoto's proof of Kostant's theorem (Matumoto 1987, §2; Library `Kostant/Assembly`): show that
 the symbols vanish on a set whose orbit closure is the nilpotent cone, then apply the Library's

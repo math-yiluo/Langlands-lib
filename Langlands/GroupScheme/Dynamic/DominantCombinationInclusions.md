@@ -1,7 +1,5 @@
 # Dynamic inclusions for a dominant combination of commuting cocharacters
 
-Author: Worker 1068.
-
 ## Main result
 
 `Langlands.GroupScheme.Dynamic.exists_dominant_inclusions` takes the

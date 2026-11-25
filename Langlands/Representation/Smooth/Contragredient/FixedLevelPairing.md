@@ -1,7 +1,5 @@
 # Perfectness of an invariant pairing from surjectivity at each compact open level
 
-Author: Worker 937.
-
 `Langlands.exists_smoothDualEquiv_of_fixedSurjective` is a generic criterion
 for an invariant pairing to identify one smooth representation with the smooth
 contragredient of another. It is an internal derivation from the Library's

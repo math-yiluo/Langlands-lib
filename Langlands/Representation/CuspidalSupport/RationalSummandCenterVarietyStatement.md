@@ -1,6 +1,6 @@
 # Renard VI.4.4: the center of `A` is the algebra of functions on `Irr(G)[π]`
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.CuspidalSupport.RationalSummandCenterVarietyStatement`, namespace
 `Langlands.CuspidalSupport`. Statement `RationalSummandCenterVarietyStatement : Prop`
 (universe parameters `uF`, `uV`); nothing is proved here.
@@ -94,9 +94,10 @@ polynomial functions on `Irr(G)[π]`.
   equivalence `M(G)[π] ≃ M(A)_d`) is not stated here; the center of the block is the subject
   of VI.4.5.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. It follows from the published Proposition (the basis
+The proof is `rationalSummandCenterVariety` in `RationalSummandCenterVarietyProof`.
+It follows from the published Proposition (the basis
 `ψ_t` of `Z` acting by `ω(t)`) and the description `F^Stab = span{χ ↦ χ(t) | t ∈ T}`, which
 uses the linear independence of the characters `χ ↦ χ(g)`, `g ∈ G/⁰G`, of `X(G)` and
 `T = ⋂_{s ∈ Stab} ker s`.

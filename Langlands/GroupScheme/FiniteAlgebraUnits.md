@@ -22,7 +22,7 @@ The polynomial ring `coordinateRing k n` supplies the coefficients of
 The polynomial `determinant b` is the determinant of left multiplication
 by this generic element. The Mathlib operation `Algebra.norm` used to
 define it supports associative, possibly noncommutative algebras.
-In this unit that operation is the regular multiplication determinant;
+In this module that operation is the regular multiplication determinant;
 no identification with a reduced norm is asserted.
 The ring `candidateRing b` is its away-localization.
 

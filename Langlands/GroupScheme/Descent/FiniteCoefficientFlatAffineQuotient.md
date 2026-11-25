@@ -1,6 +1,6 @@
 # Finite coefficient models of affine fppf group quotients
 
-Worker 875. Internal derivation from actual flat affine homomorphism models,
+Internal derivation from actual flat affine homomorphism models,
 published relative flatness and surjectivity descent, and the actual
 group-scheme kernel.
 

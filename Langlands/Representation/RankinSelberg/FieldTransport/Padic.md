@@ -1,7 +1,7 @@
 # p-adic JPSS factors along an isomorphism of p-adic fields
 
-Author: Worker 5731. This is a supporting lemma module for the proof of
-`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement` (Task 5230).
+This is a supporting lemma module for the proof of
+`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement`.
 It states no new published mathematics. It specializes
 `FieldTransport.Factors` to isomorphisms of p-adic fields, where the Haar
 measure hypotheses of that module hold, and so shows that the published p-adic

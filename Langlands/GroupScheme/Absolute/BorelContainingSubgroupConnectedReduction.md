@@ -1,7 +1,7 @@
 # Connectedness of subgroups containing a Borel, from conjugacy and the normalizer theorem
 
-Worker 1427. The module uses the published helper
-[BorelContainingFactor](BorelContainingFactor.md) by Worker 1368 and the
+The module uses the published helper
+[BorelContainingFactor](BorelContainingFactor.md) and the
 published [identity component](../IdentityComponent.md).
 
 This module proves `BorelContainingSubgroupConnectedStatement.{u}` from two

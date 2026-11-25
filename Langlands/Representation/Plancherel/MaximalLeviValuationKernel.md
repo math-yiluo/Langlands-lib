@@ -1,6 +1,6 @@
 # The cyclic valuation kernel of an actual maximal proper Levi
 
-This derived unit applies the actual rational character decomposition in
+This module applies the actual rational character decomposition in
 `MaximalLeviCharacterDirection` to the valuation kernel defined in
 `RationalUnramifiedRestrictionKernel`. It retains a connected reductive ambient
 group over an arbitrary field, an actual maximal proper parabolic, its rational

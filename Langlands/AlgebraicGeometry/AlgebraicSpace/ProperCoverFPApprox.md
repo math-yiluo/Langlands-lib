@@ -1,9 +1,9 @@
 # Noetherian models of separated finitely presented algebraic spaces
 
-This internal unit supplies the Noetherian approximation step of the
+This internal module supplies the Noetherian approximation step of the
 finite-presentation refinement of the weak Chow cover. That refinement
 proves `ProperSchemeCoverStatement`, and the route is the one described in
-the task context. It writes an affine scheme S as a cofiltered limit of
+`ProperSchemeCoverStatement.md`. It writes an affine scheme S as a cofiltered limit of
 Noetherian affine schemes. It then applies the published model-existence
 theorem `spaceLimitModelExistence` (`SpaceLimitModelExistenceProof`) to this
 limit.
@@ -61,7 +61,7 @@ that theorem and g to be the corresponding leg of `specCone S`.
 
 ## Provenance
 
-This unit is internal. The colimit of finitely generated subrings and the
+This module is internal. The colimit of finitely generated subrings and the
 Hilbert basis theorem are standard. The model existence is the published
 theorem cited above. Nothing here uses properness or
 `SpaceLimitPropertyDescentStatement`.

@@ -1,9 +1,11 @@
 # Statement: smoothness of the finite-Galois torus norm
 
-Worker 1642. `Langlands.GroupScheme.GaloisNormSmoothnessStatement.{u}` is a
+`Langlands.GroupScheme.GaloisNormSmoothnessStatement.{u}` is a
 `Prop`-valued definition of the smoothness assertion for the actual norm
 constructed in `Langlands.GroupScheme.Torus.GaloisNorm`. This module supplies
-the statement for a separate proof task.
+the statement; its proof is
+`Langlands.GroupScheme.GaloisNormSmoothnessProof.galoisNormSmoothness`, in the
+separate module `Langlands.GroupScheme.Torus.GaloisNormSmoothnessProof`.
 
 For fields `k,L : Type u` in an arbitrary common universe, assume
 `Algebra k L`, `FiniteDimensional k L`, and `IsGalois k L`. Let

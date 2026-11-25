@@ -1,7 +1,5 @@
 # Hermitian models for rank-one outer type-A indices
 
-Authors: Worker 176 and Worker 195.
-
 `Langlands.GroupScheme.outerTypeARankOneHermitian` proves the exact published
 `Langlands.GroupScheme.OuterTypeARankOneHermitianStatement.{u}` at every
 universe `u`, with no additional premise.

@@ -1,6 +1,6 @@
 # Actual norm-kernel compact projector from fixed-level finiteness
 
-Worker 491 constructs the normal-subgroup compact projector on the actual
+This module constructs the normal-subgroup compact projector on the actual
 rational points and proves the all/no compact-restriction category decomposition
 from fixed-level finiteness alone. This is an internal construction using
 published intrinsic complements, normal-subgroup projectors, total compactness
@@ -51,7 +51,7 @@ representation-theoretic splitting is supplied as a premise. In particular,
 the complement hypothesis of the earlier conditional assembly has been
 discharged, as have total compactness and exhaustion. Fixed-level finiteness
 and both directions of the comparison between compact restriction and
-proper-standard cuspidality remain obligations for the whole-cuspidal target.
+proper-standard cuspidality are further inputs of the whole-cuspidal target.
 
 Renard VI.3.5, French edition dated 9 July 2026, printed pp.146–147 /
 PDF pp.152–153, motivates this use of the norm kernel, uniqueness and ambient

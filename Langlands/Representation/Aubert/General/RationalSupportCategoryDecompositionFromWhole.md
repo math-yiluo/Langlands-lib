@@ -1,13 +1,13 @@
 # The actual rational support decomposition from the whole-category splitting
 
-Worker 4195. This module reduces the exact Library proposition
+This module reduces the exact Library proposition
 `Langlands.Aubert.General.RationalPointFamily.RationalSupportCategoryDecompositionStatement.{u, v}`
 (Renard, Théorème VI.7.2, grouped by association classes of standard Levis) to
-one published proposition that is not yet proved: the first decomposition of
-Renard VI.3.5,
+one published proposition that the Library does not prove: the first
+decomposition of Renard VI.3.5,
 `Langlands.CuspidalSupport.RationalWholeCuspidalCategoryDecompositionStatement.{u, max (u + 1) v}`.
 It therefore does not prove the support decomposition. It is an internal step
-of proof task `8452c8a4-3686-47c2-80cf-c4ff4e16b3b2`. No source states this
+toward a proof of the support decomposition. No source states this
 implication as a separate result.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French
@@ -61,14 +61,14 @@ obtained from the single hypothesis `hwhole`:
    association statement.
 
 The binders of all statements are the same structural telescope as the
-target, so no transport is needed. `lean_check` reports zero errors and
-warnings and only the standard axioms `propext`, `Classical.choice` and
+target, so no transport is needed. The module checks with zero errors and
+warnings, and uses only the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
 ## Dependencies and scope
 
-The only hypothesis is VI.3.5 at universes `u, max (u + 1) v`; its proof is
-task `4bee987a-093b-4054-bd65-7360168351d2`. No finite-length, admissibility,
+The only hypothesis is VI.3.5 at universes `u, max (u + 1) v`, which the
+Library does not prove. No finite-length, admissibility,
 finite-generation, exactness, compactness, endpoint or compact-limit premise
 is added. The transitive dependencies are those of the published reductions
 named above: Frobenius reciprocity and the actual geometric filtration of

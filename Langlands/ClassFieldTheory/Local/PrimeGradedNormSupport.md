@@ -1,6 +1,6 @@
 # Integral norm and residue support for the prime graded norm
 
-Worker 96 authored this module. It defines `PrimeGradedNorm.integerNorm` as the
+This module defines `PrimeGradedNorm.integerNorm` as the
 actual field norm restricted to the canonical integer rings and proves the
 support facts below. It does not prove `PrimeRamifiedGradedNorm` or assume any
 trace-image or norm-expansion formula.
@@ -41,8 +41,8 @@ identification is chosen.
 These are internal consequences of the imported arithmetic and coordinate
 constructions. Their role follows the zero-level part of Jean-Pierre Serre,
 *Local Fields*, V.3, Proposition 5 (printed pp.84–85 / PDF pp.91–92), registered
-source `serre-1979-local-fields`. Worker 96 read V.3, printed pp.83–85 / PDF
-pp.90–92 and the registered 2019 author corrections, PDF pp.2–3. No correction
+source `serre-1979-local-fields`. V.3, printed pp.83–85 / PDF
+pp.90–92, and the registered 2019 author corrections, PDF pp.2–3, were read. No correction
 affects that passage. The implementation above describes the actual Lean
 proofs and makes no claim about the positive graded formulas, filtration
 containments, or the literal trace coefficients.

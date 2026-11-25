@@ -1,8 +1,5 @@
 # Inner conjugation and actual opposite-dual Jacquet exponents
 
-Author: Worker 556.
-Statement formulation and transport route contributed by Worker 436.
-
 `Langlands.GLDualJacquetInnerConjugationStatement.{uF,uV}` states that, for
 every prime `p`, supplied `F : PadicField.{uF} p`, supplied topological data
 `T`, rank `n`, concrete conjugate block pair `P`, complex representation
@@ -58,8 +55,11 @@ eigen-equation. The normalization scalar
 same on both sides. An actual linear equivalence intertwining the
 transpose actions then preserves the same-character eigenspaces and
 their nonzeroness. The open-kernel and norm-one conditions depend only
-on the unchanged `χ` and `T`. These are proof obligations for the
-successor, not assumed structure fields or proved lemmas in this module.
+on the unchanged `χ` and `T`. These are obligations of the separate proof
+(`Langlands.glDualJacquetInnerConjugation` and
+`Langlands.glDualJacquetInnerConjugationNonunitary` in
+`DualJacquetInnerConjugationProof`), not assumed structure fields or proved
+lemmas in this module.
 
 The motivating original is A. J. Silberger, *Introduction to harmonic
 analysis on reductive p-adic groups* (1979), registered source
@@ -76,4 +76,4 @@ not a transcription of a separately numbered source theorem.
 This elementary inner action does not supply a comparison with class
 exponents, an analytic temperedness criterion, a finite-spectrum theorem,
 or existence of minimal pairs. Those substantive assertions and their
-proofs remain separate. No existing target or import is edited.
+proofs remain separate.

@@ -1,6 +1,6 @@
 # Internal direct sum of central Hecke ideals
 
-This derived unit supplies the additive direct sum argument used in Renard
+This derived module supplies the additive direct sum argument used in Renard
 (9 July 2026), VI.7.4, printed pp.185–186 / PDF pp.191–192. It imports the
 categorical central multiplier and central ideal constructions.
 

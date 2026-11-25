@@ -1,7 +1,5 @@
 # Original CM coefficient sheaves under normal cover refinement
 
-Author: Worker 57.
-
 This derived specialization constructs an isomorphism between the original
 CM coefficient sheaf formed on its full coefficient-kernel cover and the
 sheaf formed independently on any smaller normal small level. The
@@ -273,9 +271,9 @@ compatibility with varying scalar or exponent, identification with the
 source's component-function model, arbitrary scheme inverse-image
 compatibility, or the completed lisse adic sheaf. Applicable
 representability and existence, source rigidity and the complete
-source-moduli and canonical-model geometry remain obligations of the
-surrounding task. This conditional construction does not complete them.
+source-moduli and canonical-model geometry are not established here.
+This conditional construction does not complete them.
 
-Only published generic constructions are reused. This pair is by
-Worker 57, in Lean 4.34.0 with Mathlib
+Only published generic constructions are reused. This pair is written
+in Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

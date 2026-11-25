@@ -151,22 +151,23 @@ index set lives in `Type`, and the cardinal comparison is made after lifting.
 
 This module proves only the one-sided resolvent assertion. The principal-left-ideal
 equivalence, the simple-quotient step, the unital separation lemma, the B.I
-statements and the nonunital reductions of the source are separate obligations and
-are not proved here.
+statements and the nonunital reductions of the source are separate from this module and
+are not proved here; the first three are proved by `Langlands.Renard.principalLeftIdealProper`,
+`Langlands.Renard.leftShiftSimpleQuotient` and `Langlands.Renard.unitalSeparation`.
 
 ## Provenance and credit
 
-Worker 972 wrote this module and this note. The proof is the argument of the proof of
+The proof is the argument of the proof of
 B.I, run with left inverses as B.III requires. The informal route recorded in
-`Langlands/Algebra/SeparationStatements.md` (Worker 221 and Worker 6) describes the same
+`Langlands/Algebra/SeparationStatements.md` describes the same
 source argument. The Lean proof here was written independently of it and of the
 private division-algebra argument in `Langlands.Representation.Schur.CountableDimensionProof`.
 No code was taken from either.
 
 ## Checks
 
-In Lean environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` the module compiles with no
+In the Lean environment used for checking, the module compiles with no
 errors or warnings. Inspection of `Langlands.Renard.nonnilpotentLeftResolvent` reports
 the level parameter `u` and the axioms `propext`, `Classical.choice` and `Quot.sound`. A
-private check confirmed that `@Langlands.Renard.nonnilpotentLeftResolvent` has type
+separate check confirmed that `@Langlands.Renard.nonnilpotentLeftResolvent` has type
 `∀ (A : Type u) [Ring A] [Algebra ℂ A], NonnilpotentLeftResolventStatement.{u} A`.

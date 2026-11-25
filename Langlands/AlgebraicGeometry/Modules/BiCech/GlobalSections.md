@@ -1,7 +1,5 @@
 # Global sections of the bi-Čech terms
 
-Author: Worker 1147.
-
 Lean module: `Langlands.AlgebraicGeometry.Modules.BiCech.GlobalSections`.
 It is a helper for the proof of
 `Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethStatement`.

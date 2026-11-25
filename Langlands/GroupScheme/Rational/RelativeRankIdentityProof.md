@@ -1,7 +1,5 @@
 # Intrinsic split-rank and rational-character rank identities
 
-Author: Worker 3893 (Task 3893, `9548db09-113b-4d98-89df-2b8794fd75cf`).
-
 `Langlands.GroupScheme.relativeRankIdentity` proves exactly the published
 proposition `Langlands.GroupScheme.RelativeRankIdentityStatement.{u}` (module
 [`RelativeRankStatement`](RelativeRankStatement.md)), at every universe `u`, with
@@ -70,4 +68,4 @@ the split component (Renard V.2.5–6), passed to `ℚ` by scalar extension.
 
 ## Axioms
 
-`lean_check` reports only `propext`, `Classical.choice` and `Quot.sound`.
+A compile check of the module reports only `propext`, `Classical.choice` and `Quot.sound`.

@@ -1,7 +1,5 @@
 # Actual characters form an étale local system
 
-Worker 616.
-
 `Langlands.GroupScheme.relativeCharacterLocalConstancy` proves
 `RelativeCharacterLocalConstancyStatement.{u}`. The relative Hom sheaf
 theorem gives étale descent for the actual characters. The étale

@@ -63,6 +63,6 @@ literal products, their exact normalized Haar product identities, the
 regularity and measurable-structure premises in the actual application,
 and analytic convergence remain obligations. The product identities are
 premises of this intermediate deduction, not permanent structural assumptions
-authorized to close the Plancherel program. This unit does not prove rational
-continuation, the root-distance composition assertion, or any whole-program
-completion condition.
+that the main Plancherel results may keep. This module does not prove rational
+continuation, the root-distance composition assertion, or any top-level
+requirement of the full Plancherel formula.

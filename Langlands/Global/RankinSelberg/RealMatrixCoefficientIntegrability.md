@@ -54,5 +54,5 @@ absolutely on a right half-plane, by Lemma 3.3, because the coefficients have po
 growth. The continuity statement and the integrability statement for the coefficients of
 compact-derivative-bounded forms are internal. The module proves no continuation or
 functional equation. It covers only the integrability clauses of
-`RealMatrixCoefficientNormalizedGrowth`. The normalized-growth clause is expected from Worker
-823's planned `RealMatrixPairNormalizedGrowthStatement`.
+`RealMatrixCoefficientNormalizedGrowth`. The Library does not prove its normalized-growth
+clause.

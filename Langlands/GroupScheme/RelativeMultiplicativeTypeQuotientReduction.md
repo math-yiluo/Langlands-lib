@@ -1,6 +1,8 @@
 # Reduction of multiplicative-type quotients to affine diagonalizable kernels
 
-Worker 587. Internal derived reduction for Task 7326.
+Internal derived reduction toward affine quotients by central
+multiplicative-type subgroups over arbitrary bases
+(`RelativeCentralMultiplicativeTypeQuotientStatement`).
 
 `AffineDiagonalizableNormalQuotientStatement` asks for an affine fppf quotient
 of an affine group over an affine base by a closed normal diagonalizable

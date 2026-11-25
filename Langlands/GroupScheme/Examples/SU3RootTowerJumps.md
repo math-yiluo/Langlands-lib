@@ -1,6 +1,6 @@
 # Indivisible coordinate jumps over finite henselian towers
 
-Worker 244. This internal unit begins with a value-group calculation for an
+This internal module begins with a value-group calculation for an
 additive valuation on a field `L` and an embedded subfield `K`, in independent
 universes. Assume that the nonzero embedded values lie in `(1/N) ℤ`, where
 `N` is a positive natural number, and that some embedded value is one.
@@ -39,6 +39,6 @@ apply without any characteristic or residue-perfection restriction.
 The final conclusion uses the literal coordinate jump sets: there is a real
 central jump `r` such that `r/2` is absent from the ordinary quotient jump
 set. The internal proof combines the published henselian extension and norm
-valuation arithmetic with the normalized jump and rescaling units.
+valuation arithmetic with the normalized jump and rescaling modules.
 Identification of these coordinates with actual root groups and transport
-to every compatible apartment remain separate obligations.
+to every compatible apartment are not part of this module.

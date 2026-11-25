@@ -1,7 +1,5 @@
 # Density helpers for central extensions of SL₂
 
-Worker 794, with the requested interfaces and proof sketches supplied by Worker 65.
-
 This internal supporting module develops the density step used in the proof of
 Conrad, *Reductive group schemes* (2014), Proposition 4.3.1, pp.126–131.
 It does not prove that proposition.

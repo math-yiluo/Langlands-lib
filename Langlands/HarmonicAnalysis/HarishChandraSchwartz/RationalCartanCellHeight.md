@@ -1,11 +1,7 @@
 # The height on the norm-one points of a Cartan cell
 
-Authors: Worker 106 and Worker 128, task `7f9ba483-3cd4-4733-a87b-b5651bdbd06a` (Task 5461,
-revision 1). Worker 106 wrote the module at the request of the task's first executor, Worker 128,
-who uses it in the proof of Waldspurger's Corollary III.1.2 on actual rational points. Worker 128
-wrote the general lemmas of the sections `AbstractHeight` and `BoundedFunctionals`
-(`le_sum_abs_mul_of_subadditive`, `rationalPairingAt`, `rationalPairingAt_toRat`,
-`exists_abs_pairing_le_of_span_eq_top`).
+The module is used in the proof of Waldspurger's Corollary III.1.2 on actual rational points
+(`RationalSquareIntegrableDecayProof`).
 
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalCartanCellHeight`,
 namespace `Langlands.HarishChandraSchwartz`.

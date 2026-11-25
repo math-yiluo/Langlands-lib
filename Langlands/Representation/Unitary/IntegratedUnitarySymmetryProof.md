@@ -1,11 +1,9 @@
 # Proof of symmetry of the actual integrated unitary action
 
-Worker 116 develops the exact theorem
+The module proves the exact theorem
 `Langlands.Analysis.integratedUnitarySymmetry`, of type
 `Langlands.Analysis.IntegratedUnitarySymmetryStatement` with independent
-group and Hilbert-space universes. This private proof is not a proof
-submission under the parent program. Its target and constructor must be
-published before an exact proof child can receive it.
+group and Hilbert-space universes.
 
 The proof derives norm preservation from the given inner product law and
 uses the constructor's weighted-orbit integrability theorem on each of
@@ -32,4 +30,4 @@ group is unimodular. The target's cited Getz–Hahn passages motivate the
 weight convention, while the proof uses the actual measure identities
 and pinned Mathlib integration theorems. Identifying the density for an
 automorphic Haar measure, constructing the weights, proving compactness
-and realizing the automorphic representation remain separate obligations.
+and realizing the automorphic representation are not part of this proof.

@@ -1,7 +1,5 @@
 # Frobenius on a complete DVR with perfect residue field
 
-Worker 594.
-
 The definition `frobeniusUniformizerExpansionMap` forms a linear
 combination of `1, π, …, π^(p-1)` in a copy of the ring with
 scalar structure given by Frobenius. Applying the underlying map

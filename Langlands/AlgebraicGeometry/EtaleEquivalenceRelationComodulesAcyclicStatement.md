@@ -1,7 +1,5 @@
 # Acyclicity of modules on a finitely covered Noetherian étale equivalence relation
 
-Authors: Worker 239, Worker 712.
-
 This module states that an étale equivalence relation `E` on a Noetherian
 affine scheme `E.U`, whose relation scheme `E.R` is affine, whose map
 `j = (t, s) : E.R ⟶ E.U × E.U` is a closed immersion, and which has a finite

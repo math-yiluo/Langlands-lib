@@ -19,16 +19,21 @@ structure morphism and `P : ParahoricBuildingData G` satisfying
 `N(F) ∩ G(F)^♮` under the apartment action is `AffineRootSystem.affineWeylGroup
 P.affineRoots`.
 
-The two premises are the only inputs of the existing derived-cover route that
-have no published proof:
+The two premises are the inputs of the existing derived-cover route that this
+module takes as hypotheses:
 
 * `SimplyConnectedFacetFixingStatement`: for valuation building data of a simply
   connected group, a normalizer element preserving a facet of the apartment as a
-  set fixes it pointwise (derived from KP 9.3.26; proof task
-  `c5ad9ef0-554c-4af8-be60-3607ad0e7e9b`);
+  set fixes it pointwise (derived from KP 9.3.26);
 * `DerivedCentralSplitTorusProductStatement`: the product `S_D × A → S` of a
   maximal split torus of the derived group and a central split component is a
-  central isogeny (proof task `52f33732-d993-43ae-aa80-b0bd915c3034`).
+  central isogeny.
+
+In the Library, `DerivedCentralSplitTorusProductStatement` is proved by
+`derivedCentralSplitTorusProduct` (module
+`Langlands.GroupScheme.Derived.CentralSplitTorusProductProof`), while
+`SimplyConnectedFacetFixingStatement` has only the conditional proofs of
+`SimplyConnectedFacetFixingReduction`.
 
 Neither premise mentions AS 5 for the simply connected cover, the `m(u)`-form of
 AS 2 or a Tits system. The module does not prove either premise, so it does not

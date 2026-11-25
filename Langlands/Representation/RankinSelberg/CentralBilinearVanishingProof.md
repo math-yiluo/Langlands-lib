@@ -55,8 +55,7 @@ for every covariant form simultaneously.
 
 ## Provenance and scope
 
-Worker 353 authored this proof by adapting the compiled private feasibility
-example to the published target. The proof imports the statement unchanged and
+The proof imports the statement unchanged and
 uses only the published `IntertwinerFiniteness`, `BilinearSpectralSupport`, and
 `CentralSpectralElement` helpers.
 

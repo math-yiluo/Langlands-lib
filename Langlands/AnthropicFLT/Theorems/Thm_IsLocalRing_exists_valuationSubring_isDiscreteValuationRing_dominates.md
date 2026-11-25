@@ -1,12 +1,12 @@
 # `Langlands.AnthropicFLT.Theorems.Thm_IsLocalRing_exists_valuationSubring_isDiscreteValuationRing_dominates`
 
-Ported for task `ab019f66-cba5-4921-aa53-b9cfb52e5456` (descent of geometric connectedness to finitely generated subalgebras). Statement module (FLT `Theorems/`).
+Ported for the descent of geometric connectedness to finitely generated subalgebras. Statement module (FLT `Theorems/`).
 
 ## Source and licence
 
 Port of `Theorems/Thm_IsLocalRing_exists_valuationSubring_isDiscreteValuationRing_dominates.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -35,5 +35,5 @@ Names, namespaces and statements are the FLT ones. Solution modules put their au
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.P2M.Sol.S_IsLocalRing_exists_valuationSubring_isDiscreteValuationRing_dominates` (same contribution).
+Ported FLT modules imported: `Langlands.AnthropicFLT.P2M.Sol.S_IsLocalRing_exists_valuationSubring_isDiscreteValuationRing_dominates` (ported together with this module).
 All modules also import `Mathlib`.

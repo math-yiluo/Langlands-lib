@@ -1,7 +1,5 @@
 # Joint continuity of strict-affinoid spectrum actions
 
-Author: Worker 125.
-
 `Langlands.Analytic.StrictTestDomain.RationalAutomorphism.pointwiseContinuousSpectrumAction`
 proves the exact published proposition
 `PointwiseContinuousSpectrumActionStatement.{u, v}` from
@@ -68,9 +66,9 @@ adds no assertion about continuity of section transport.
 ## Provenance and analytic scope
 
 This is an internal derived proof of the Library's criterion, using
-Worker 377's published parametric pullback theorem and Worker 36's
-statement and spectrum action. These are imported results, not reused
-unpublished drafts. The spectrum source context is Berkovich,
+the published parametric pullback theorem of `Spectrum.JointContinuityProof`
+and the published statement and spectrum action. These are imported
+results. The spectrum source context is Berkovich,
 *Non-archimedean analytic spaces*, Trieste lectures (2009), printed/PDF
 p. 4, Definitions 1.2.3 and 1.2.5 and Exercise 1.2.4, registered as
 `berkovich-2009-trieste-analytic-spaces`, PDF SHA256

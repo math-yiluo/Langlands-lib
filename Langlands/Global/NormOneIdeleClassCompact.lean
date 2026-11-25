@@ -1,6 +1,6 @@
 import Langlands.Global.IdeleAbsoluteValue
 import Langlands.Global.IntegralFiniteAdeles
-import Langlands.ClassField.Global.IntegralIdeleClassQuotientFinite
+import Langlands.ClassFieldTheory.Global.IntegralIdeleClassQuotientFinite
 import Mathlib.NumberTheory.NumberField.CanonicalEmbedding.FundamentalCone
 
 /-!
@@ -20,7 +20,7 @@ namespace Langlands.Global.NormOneIdeleClass
 
 open NumberField NumberField.InfinitePlace NumberField.mixedEmbedding NumberField.Units
   NumberField.Units.dirichletUnitTheorem Module
-open Langlands.Global Langlands.ClassField.Global
+open Langlands.Global Langlands.ClassFieldTheory.Global
 open scoped NNReal RestrictedProduct
 
 variable (F : Type u) [Field F] [NumberField F]

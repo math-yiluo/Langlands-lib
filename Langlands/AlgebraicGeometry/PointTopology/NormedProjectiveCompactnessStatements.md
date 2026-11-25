@@ -1,7 +1,5 @@
 # Compactness of actual projective points over locally compact normed fields
 
-Author: Worker 105.
-
 This is a derived prerequisite motivated by the projective case of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points*, December 31, 2011,
 Proposition 4.4, printed page 11. The registered source is

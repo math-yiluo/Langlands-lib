@@ -157,7 +157,7 @@ theorem representedCMConnectedHom_exists_normalTranslate
     (hxy : x ≫ (baseTower R).map (smallCMInclusion D hVU) =
       y ≫ (baseTower R).map (smallCMInclusion D hVU)) :
     ∃ g : U.obj.subgroup,
-      x ≫ (baseAction R U V hVU).ρ (QuotientGroup.mk g) = y := by
+      x ≫ ((baseAction R U V hVU).ρ (QuotientGroup.mk g)).asHom = y := by
   let qx : (distower X).obj V.obj :=
     (R V).represents.hom.app (Opposite.op X) (ULift.up x)
   let qy : (distower X).obj V.obj :=
@@ -181,7 +181,7 @@ theorem representedCMConnectedHom_exists_normalTranslate
   apply ULift.up_injective
   apply ((R V).represents.app (Opposite.op X)).toEquiv.injective
   change (R V).represents.hom.app (Opposite.op X)
-    (ULift.up (x ≫ (baseAction R U V hVU).ρ (QuotientGroup.mk g))) = qy
+    (ULift.up (x ≫ ((baseAction R U V hVU).ρ (QuotientGroup.mk g)).asHom)) = qy
   rw [representedCMNormalQuotientBaseAction_mk_classes D C preservation composition
     unitCoherence associativity comparison symmetry stability square universality
     dualityNaturality polarizationStability compatibility h htor R U V hVU g X x]
@@ -195,7 +195,7 @@ theorem representedCMConnectedMap_exists_normalTranslate
     {T : Scheme.{0}} [ConnectedSpace T] [IsLocallyNoetherian T]
     (a b : T ⟶ (schemes R).obj V)
     (hab : a ≫ projection R U V hVU = b ≫ projection R U V hVU) :
-    ∃ g : SmallCMResidualGroup D U V, a ≫ (quotientAction R U V hVU).ρ g = b := by
+    ∃ g : SmallCMResidualGroup D U V, a ≫ ((quotientAction R U V hVU).ρ g).asHom = b := by
   let p := a ≫ (R V).base.obj.hom
   let : ConnectedSpace (Over.mk p).left := show ConnectedSpace T from inferInstance
   let : IsLocallyNoetherian (Over.mk p).left :=
@@ -267,8 +267,8 @@ theorem representedCMNormalKernelConnectedTranslation_action
     (geometry : RelativeDualSchemeGeometryStatement.{0})
     {T : Scheme.{0}} [ConnectedSpace T] [IsLocallyNoetherian T]
     (c : T ⟶ kernelPair R U V hVU) :
-    (c ≫ pullback.fst _ _) ≫ (quotientAction R U V hVU).ρ
-        (translation R U V hVU existence geometry c) = c ≫ pullback.snd _ _ :=
+    (c ≫ pullback.fst _ _) ≫ ((quotientAction R U V hVU).ρ
+        (translation R U V hVU existence geometry c)).asHom = c ≫ pullback.snd _ _ :=
   Classical.choose_spec (representedCMConnectedMap_exists_normalTranslate D C preservation
     composition unitCoherence associativity comparison symmetry stability square
     universality dualityNaturality polarizationStability compatibility h htor
@@ -348,7 +348,7 @@ theorem cmConnectedMap_exists_normalTranslate
     (a b : T ⟶ (chosenSchemes q).obj V)
     (hab : a ≫ (chosenSchemes q).map (smallCMInclusion D hVU) =
       b ≫ (chosenSchemes q).map (smallCMInclusion D hVU)) :
-    ∃ g : SmallCMResidualGroup D U V, a ≫ (chosenAction q).ρ g = b :=
+    ∃ g : SmallCMResidualGroup D U V, a ≫ ((chosenAction q).ρ g).asHom = b :=
   representedCMConnectedMap_exists_normalTranslate D C preservation composition
     unitCoherence associativity comparison symmetry stability square universality
     dualityNaturality polarizationStability compatibility h htor

@@ -1,8 +1,6 @@
 # Connected groups without cocharacters over algebraically closed fields
 
-Author: Worker 1487.
-
-This internal supporting unit proves
+This supporting module proves
 `AlgClosedNoCocharacterUnipotentStatement.{u}`: for any algebraically
 closed field `k : Type u`, a smooth connected affine group scheme `G`
 is unipotent if every actual group scheme homomorphism `Gm ⟶ G` is zero.
@@ -55,6 +53,7 @@ route through existing Library constructions and asserts no additional
 structural input. The proper quotient criterion uses an affine vector
 map in place of a quasi-affineness theorem.
 
-The arbitrary-field `NoTorusUnipotentStatement` remains a separate proof
-obligation. In particular this unit does not assert that a ground-field
+The arbitrary-field `NoTorusUnipotentStatement` is not proved here; it is
+proved as `noTorusUnipotent` in `Torus.NoTorusUnipotent`, which uses this
+module. In particular this module does not assert that a ground-field
 maximal torus remains maximal after extending the field.

@@ -1,6 +1,6 @@
 # Normalized Jacquet modules and evaluation reciprocity
 
-Author: Worker 8. This pair imports the independently published
+This pair imports the independently published
 `Langlands.Representation.Parabolic.LeviBridges` construction.
 
 Fix a prime `p`, a finite extension `F : PadicField p`, a compatible
@@ -39,7 +39,7 @@ existing quotient and character constructions and defines no new functor.
 The full block product is mathematically the absolute determinant of
 conjugation on the upper radical Lie algebra: each rectangular block
 `X_ij` transforms as `m_i X_ij m_j^(-1)` and contributes the displayed
-factor. Its formal determinant or Haar-scaling identification remains a
+factor. Its formal determinant or Haar-scaling identification is a
 separate proof obligation. The target specifies the explicit product and
 does not assume an identification theorem as a hypothesis.
 
@@ -96,7 +96,7 @@ Theorem III.5.6, p.7, states admissibility of the Jacquet module under the
 explicit field restriction immediately before III.5.5. The warning after
 III.5.7 about an erroneous general-Noetherian-ring argument is respected:
 all coefficients here are complex. Original pp.1-4 and 7-8 were read;
-the retained earlier visual checks distinguish the half powers and
+visual checks of these pages distinguish the half powers and
 opposite-radical notation.
 
 These assertions are documented specializations to actual `GL_n` blocks
@@ -113,7 +113,7 @@ Registered sources:
   `377edac998669bc88da1224c4582a173854232f7fea5caf945d140ee92fde5c1`,
   Section 3, pp.3-4, and field restriction and III.5.6/III.5.7 warning, p.7.
 
-## Dependencies and remaining obligations
+## Dependencies and scope
 
 The imported `Group.GL.BlockModulus` and `Representation.Induction.Definitions`
 and the algebraic `Parabolic.LeviBridges` pair are published. The bridge's
@@ -122,8 +122,12 @@ a conclusion; it does not assume that theorem.
 
 Formal modulus identification, the four theorem proofs, normalized
 refinement transitivity, twist and central-character compatibilities,
-opposite-parabolic duality and the canonical pairing remain separate
-obligations. In particular the ordinary Jacquet quotient of the smooth
+opposite-parabolic duality and the canonical pairing are not part of this
+pair. The admissibility clause is proved as
+`Langlands.Parabolic.normalizedJacquetAdmissibility`
+(`Parabolic.NormalizedJacquetAdmissibilityProof`) and the exactness clause as
+`Langlands.Parabolic.normalizedJacquetExactness`
+(`Parabolic.NormalizedJacquetExactnessProof`). In particular the ordinary Jacquet quotient of the smooth
 dual is not asserted to be the dual of the same-parabolic quotient.
 
 ## All-field port

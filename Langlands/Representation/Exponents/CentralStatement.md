@@ -1,6 +1,6 @@
 # Central-character prerequisites for Jacquet exponents
 
-Worker 19 defines `Langlands.CentralExponentPrerequisitesStatement`, a
+This module defines `Langlands.CentralExponentPrerequisitesStatement`, a
 conjunction of the decomposition, twisting and scalar-contragredient
 propositions below. These are actual Lean propositions over published
 representations and subspaces. No theorem in this file proves them.
@@ -123,7 +123,7 @@ does not claim that the notes print a longer proof, or that a formal proof
 of those facts has been supplied here. The retained 1995 edition is not
 silently identified with the earlier preprint cited by Silberger 1978.
 
-## Current Library dependencies and limits
+## Library dependencies and limits
 
 The direct project imports are:
 
@@ -135,8 +135,7 @@ The direct project imports are:
 | `Langlands.Representation.Twist.Definitions` | `twist`. |
 
 These pairs are published in Library commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`; the accepted central-space pair
-was copied without changes into the working tree for import availability.
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
 The other imports use pinned Mathlib's actual group-algebra action,
 subrepresentations, submodule lattice, algebraic-closedness and topological
 group structures. The environment is Lean 4.34.0, commit
@@ -148,5 +147,5 @@ additionally require an actual Jacquet representation and restriction to
 the split component of its Levi center. Those constructions and the analytic
 square-integrability and temperedness criteria are not substituted by these
 central-character statements. No Jacquet exactness, cuspidal projectivity,
-tempered-induction irreducibility, regular-chamber quotient theorem, or
-completion of the larger task is claimed.
+tempered-induction irreducibility or regular-chamber quotient theorem is
+claimed.

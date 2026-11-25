@@ -1,6 +1,6 @@
 # Inner forms have equivalent star actions
 
-Worker 838. Internal development of the forward implication of
+Internal development of the forward implication of
 `InnerFormStarActionStatement`. The proof follows the geometric comparison in
 Conrad, *Reductive group schemes* (2014), Lemma 7.1.1, pp.238–239, and Proposition
 7.2.2, p.252, using the star action described on p.256.

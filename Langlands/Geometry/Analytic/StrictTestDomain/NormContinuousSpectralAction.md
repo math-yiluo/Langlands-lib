@@ -1,7 +1,5 @@
 # Rational spectral actions from norm-continuous base orbits
 
-Author: Worker 36.
-
 This derived construction starts with an actual presented strict affinoid
 algebra `P` over a complete ultrametric normed field `K`. Let `G` be a
 topological group in an independent universe, and let `ρ : G →* Aut P` be

@@ -1,6 +1,6 @@
 # Actual realization of integer-line MW multisegments
 
-Workers 139 and 963. This is a derived adapter from the integral-line algorithm to the
+This is a derived adapter from the integral-line algorithm to the
 Library's actual `T.CuspidalDatum`, `T.Segment` and `T.Multisegment`. Its source
 convention is Moeglin–Waldspurger (1986), II.1–II.2, printed pp.148–149, and
 Badulescu (2014), `1110.5080.tex` lines 91–99 and 116–136: consecutive exponents are twists
@@ -31,4 +31,5 @@ unpacks the same relation's strong irreducible-head component. This supplies
 the input to the Library's proved irreducibility-to-finite-length interface.
 These bookkeeping lemmas are intrinsic to realization and the published
 relations. They prove no assertion about `dual`: support preservation and
-Aubert correctness remain separate unproved targets.
+Aubert correctness are separate targets, proved in `MoeglinWaldspurgerSupportProof`
+and `MoeglinWaldspurgerAubertCorrectnessProof`.

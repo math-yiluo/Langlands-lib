@@ -1,7 +1,5 @@
 # The norm criterion for Henselian discrete fields with algebraically closed residue
 
-Authors: Worker 1651 and Worker 1607.
-
 `Langlands.FieldTheory.henselianDiscreteDimensionLEOne.{u}` proves the
 exact published proposition
 `Langlands.FieldTheory.HenselianDiscreteDimensionLEOneStatement.{u}`.
@@ -42,8 +40,9 @@ For arbitrary finite separable E/K and finite Galois L/E, form the
 composite K-algebra on L. Transitivity of separability provides an
 embedding L into the chosen separable closure of K (`IsSepClosed.lift`).
 The proof constructs the E- and L-algebra structures and every required
-scalar tower on that ambient field explicitly. Worker 1607's proved
-`AmbientHyp.surjective_unit_norm` then gives surjectivity of precisely
+scalar tower on that ambient field explicitly. The proved
+`AmbientHyp.surjective_unit_norm`
+(`Langlands.ClassFieldTheory.Local.SeparableInertiaFullNorm`) then gives surjectivity of precisely
 `Units.map (Algebra.norm E : L →* E)`.
 
 The full-norm helpers first prove the cyclic prime-degree case using an

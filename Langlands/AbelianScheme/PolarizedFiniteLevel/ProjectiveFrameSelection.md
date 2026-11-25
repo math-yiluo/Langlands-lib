@@ -1,6 +1,6 @@
 # Selecting a projective frame from a configuration with sparse hyperplane sections
 
-This internal linear-algebra support unit selects a projective frame from a
+This internal linear-algebra helper module selects a projective frame from a
 finite configuration. It works over a field `K` with a vector space `V`. The
 configuration is an indexed family `v : I → V` over a finite type `I`. It
 uses the Library predicate `HyperplaneBound v q` from
@@ -57,6 +57,6 @@ union bound for `HyperplaneBound`. It isolates the frame-choice step behind
 the chart construction in Mumford, Fogarty and Kirwan, *Geometric Invariant
 Theory*, third edition (1994). There the hyperplane estimate for torsion
 points (Proposition 7.7, printed pp.138–139 / one-based PDF pp.151–152) is
-used to show that the configuration of torsion points is stable. This unit
+used to show that the configuration of torsion points is stable. This module
 proves only the linear-algebra selection over a field. It says nothing about
 abelian varieties, torsion points or moduli.

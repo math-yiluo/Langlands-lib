@@ -9,7 +9,7 @@ Module `Langlands.Representation.Archimedean.RealReverseIntertwinerKernel`.
 
 `realReverseIntertwinerKernel` (and its packaged form `realReverseIntertwinerKernelReduction`)
 proves `RealReverseIntertwinerKernelStatement` (Library module
-`RealStandardIrreducibleCriterionReduction`, Task 7069) from three inputs passed as hypotheses.
+`RealStandardIrreducibleCriterionReduction`) from three inputs passed as hypotheses.
 That statement says: for a Langlands-ordered list `ds` of real blocks of rank `n`, every
 `(𝔤𝔩_n(ℝ), O(n))`-intertwiner `T` from the `O(n)`-finite standard module of `ds` to that of
 `ds.reverse` vanishes on every proper `(𝔤, K)`-submodule `W` (`W ≤ ker T`).
@@ -39,17 +39,16 @@ along the standard parabolic subgroup whose diagonal blocks are the tie classes 
 The result is conditional. The three inputs are hypotheses of `realReverseIntertwinerKernel`, and
 none is proved here:
 
-- `RealLeviChartIntegrableStatement` (`hT1`, module `RealLeviChartIntegralStatement`, Worker 5220,
-  Task 6749). It is proved in the Library as `realLeviChartIntegrable` (module
+- `RealLeviChartIntegrableStatement` (`hT1`, module `RealLeviChartIntegralStatement`). It is proved in the Library as `realLeviChartIntegrable` (module
   `RealLeviChartIntegrable`); this module keeps it as a hypothesis and does not import that proof;
 - `RealLeviParabolicIntegrationStatement` (`hT3`, module
-  `RealLeviParabolicIntegrationStatement`, Worker 5220, Task 6749);
+  `RealLeviParabolicIntegrationStatement`);
 - `RealTemperedStandardIrreducibleStatement` (`htemp`, Library module
   `RealTemperedIrreducibleStatement`): standard modules whose blocks all have the same real
   exponent are irreducible.
 
-The nonvanishing of the limit pairing for the tie data is not an extra input: it is Worker 5220's
-`realLeviWitness` (Library module `RealLeviWitness`, Task 6749) under `hT1`, used inside
+The nonvanishing of the limit pairing for the tie data is not an extra input: it is
+`realLeviWitness` (Library module `RealLeviWitness`) under `hT1`, used inside
 `RealReverseInduced.reverseKernel`.
 
 ## Statements

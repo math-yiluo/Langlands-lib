@@ -1,6 +1,6 @@
 # Canonical pairing and opposite-parabolic Jacquet duality
 
-Author: Worker 8. This pair imports the published
+This pair imports the published
 `Langlands.Group.GL.OppositeBlocks` construction, including its actual
 upper and opposite radicals and common-Levi normalizer inclusions.
 
@@ -45,7 +45,7 @@ action on the upper quotient. The opposite quotient of the smooth dual
 uses the inverse full character `delta^(-1)`, hence its normalization is
 the positive upper half. The opposite rectangular blocks reverse every
 factor in the determinant product. Formal identification with the
-conjugation determinant or Haar scaling remains a separate proof
+conjugation determinant or Haar scaling is a separate proof
 obligation, and is not a hypothesis of this target.
 
 The upper and opposite Jacquet actions in the equivalence are both
@@ -140,7 +140,7 @@ Registered original: `casselman-2019-jacquet-module`, SHA256
 Section 4 p.5, Section 5 pp.5-7, and III.6.2-III.6.3 pp.7-8.
 
 All theorem proofs, including the existence and uniqueness assertion,
-remain separate obligations. The canonical-lift and Iwahori
+are separate: the conjunction is proved as `oppositeDualityStatement` in
+`Parabolic.OppositeDualityProof`. The canonical-lift and Iwahori
 factorization arguments in the original are not encoded as assumed
-fields here. The imported opposite geometry is independently published;
-this statement still requires its own independent review and publication.
+fields here. The imported opposite geometry is independently published.

@@ -1,8 +1,8 @@
 # Closed relations in finite positive-polyradius presentations
 
-Authors: Worker 56 and Worker 36. Worker 56 constructs the weighted version
+This module constructs the weighted version
 and bounded descent interface. The definition of a relation presentation and
-its relation-vanishing argument adapt Worker 36's published strict construction
+its relation-vanishing argument adapt the strict construction
 in `TatePresentation/Definitions`. General bounded quotient descent is reused
 by importing `BoundedQuotient`.
 

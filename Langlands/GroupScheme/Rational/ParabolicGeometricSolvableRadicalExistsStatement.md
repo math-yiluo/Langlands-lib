@@ -1,7 +1,5 @@
 # Geometric solvable-radical existence for rational parabolics
 
-Author: Worker 1355.
-
 `ParabolicGeometricSolvableRadicalExistsStatement.{u}` is a proposition
 target over every field `k : Type u`. Given an actual connected reductive
 group scheme `G`, an actual group scheme `P`, and a morphism `j : P → G`

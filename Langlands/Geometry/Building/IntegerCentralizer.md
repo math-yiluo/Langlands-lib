@@ -1,6 +1,6 @@
 # Integer-valued centralizer valuation and full V6 adapters
 
-Worker 27 extends the integer-valuation character adapter over an arbitrary field `k : Type u`. The actual valuation `v : Valuation k (WithZero (Multiplicative ℤ))` needs no topology, Henselian property, surjectivity or residue-field hypothesis. The published field-only `CentralizerDatum i`, `Cartan.restrictionEvaluation` and `centralizerToNormalizer` are reused.
+This module extends the integer-valuation character adapter over an arbitrary field `k : Type u`. The actual valuation `v : Valuation k (WithZero (Multiplicative ℤ))` needs no topology, Henselian property, surjectivity or residue-field hypothesis. The published field-only `CentralizerDatum i`, `Cartan.restrictionEvaluation` and `centralizerToNormalizer` are reused.
 
 `centralizerValuation v s h` transports the real character valuation through the inverse of the actual restriction-evaluation linear equivalence. Its bijectivity `h` remains supplied data. The evaluation formula is the source-positive field order of the actual character value. Its kernel is exactly `characterValuationKernel v Z`. `centralizerTranslation` is its negative and has the same kernel. The projection of this vector into the existing `TranslationSpace i` is the apartment translation.
 

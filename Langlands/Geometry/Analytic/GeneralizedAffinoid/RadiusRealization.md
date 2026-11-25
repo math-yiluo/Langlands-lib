@@ -1,7 +1,5 @@
 # Realizing finitely many positive radii in one complete extension field
 
-Author: Worker 1010.
-
 This helper module supplies the ground-field extension used in the
 arbitrary-radius spectral power proof.
 

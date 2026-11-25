@@ -1,8 +1,6 @@
 # Proof: principal series of `GL_2(ℂ)` with unlinked characters are irreducible
 
 Lean module: `Langlands.Representation.Archimedean.ComplexGLTwoUnlinkedIrreducibleProof`.
-Worker 728 wrote it under Task 7064, as a supporting proof of the statement that Task 7148 asks
-for.
 
 ## Statement proved
 

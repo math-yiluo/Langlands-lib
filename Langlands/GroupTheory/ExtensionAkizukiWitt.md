@@ -1,10 +1,10 @@
 # The Akizuki–Witt factor-extension cocycle and inflation
 
-Author: Worker 1839, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`. This module
+This module
 formalizes Artin–Tate, *Class Field Theory* (2009), Chapter XIII §3: the cocycle
 formula of Theorem 5 for the Akizuki–Witt map and its inflation law, Theorem 6
 (`inf v α = (H:1) α`). It is stated for the pushout extensions of
-`Langlands.GroupTheory.ExtensionPushout` (Worker 1556). It also records Mathlib's
+`Langlands.GroupTheory.ExtensionPushout`. It also records Mathlib's
 transfer computed with an arbitrary section.
 
 There is no arithmetic content. The module is the group-cohomological input for
@@ -86,7 +86,7 @@ Then for every normalized section `s` of `π ∘ q`
 `cohomologyClass (inflate π ι hι (s.cocycle r' hr')) = |ker π| • cohomologyClass (t.cocycle r hr)`.
 
 The proof replaces `s` by `Section.lift π t σ`, where `σ = Section.ofSurjective hπ`.
-This uses Worker 1556's section independence `Section.cohomologyClass_eq` and
+This uses the section independence `Section.cohomologyClass_eq` of `ExtensionPushout` and
 `cohomologyClass_inflate_congr`. It writes `|ker π| •` as the class of `npow`.
 `cohomologyClass_eq_of_cochain` with the cochain `akizukiWittCochain` reduces the
 goal to `akizukiWitt_identity` for `rep x = σ (π x)`, after the kernel values are

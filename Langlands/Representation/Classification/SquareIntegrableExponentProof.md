@@ -1,7 +1,6 @@
 # The strict square-integrability criterion for normalized GL Jacquet exponents
 
-Authors: Worker 19 and Worker 728. Worker 19 wrote the assembly and analytic
-transport reductions. The private fundamental-tuple argument adapts Worker 728's
+The private fundamental-tuple argument adapts the
 published `ProductLeviSquareIntegrable.strictFundHypothesis_of_core`.
 
 `Langlands.glSquareIntegrableExponentCriterion` proves exactly the published
@@ -40,8 +39,8 @@ actual `C.leviEmbedding`. The proof first supplies four private reductions.
    for every generalized character of the refined scalar action. A fundamental
    tuple is blockwise monotone and has entries of absolute values `q⁻¹` and `1`
    in the selected block. These differ since `q > 1`, so the strict premise
-   applies. This specializes Worker 728's argument by omitting its unused
-   weak conjunct.
+   applies. This specializes the argument of `strictFundHypothesis_of_core`
+   by omitting its unused weak conjunct.
 4. `squareIntegrable_of_singleBlock_strictFundHypothesis` pulls admissibility
    and a genuine unitary central character back to `σ`. For each GL quotient
    Haar measure, the published
@@ -154,7 +153,6 @@ They supply no theorem-valued assumption. The proof imports neither
 The generic analytic transport module contributes centre, dual, coefficient
 and group-equivalence laws, without an excluded classification conclusion.
 
-Development compilation and declaration inspection succeeded in the approved
-environment. Inspection reports the independent level parameters `uF`, `uV`
+Development compilation and declaration inspection succeeded. Inspection reports the independent level parameters `uF`, `uV`
 and only `propext`, `Classical.choice`, and `Quot.sound`. The theorem has the
 named proposition as its complete type, without extra theorem-valued premises.

@@ -1,18 +1,18 @@
 # Étale `GL_{d+1}(F)`-sheaves and `H^q_c` on the level-one space `ℳ_1 = Ω × Δ`
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Geometry.Analytic.DrinfeldLevelOneBase` (Worker 21, published):
+- `Langlands.Geometry.Analytic.DrinfeldLevelOneBase`:
   `levelOneBase K`, the level-one space `Ω × Δ` for the matrix factor `GL_{d+1}(F)` with its
   action, and `levelOneGSpace K hΩ hSI`, the same space as a `GL_{d+1}(F)`-space given
-  continuity of the action on `Ω` (`hΩ`) and the published, unproved statement
+  continuity of the action on `Ω` (`hΩ`) and the published statement
   `SetInducedSpace.ContinuityStatement` (`hSI`). Through it, `omegaAction F K d`, the action
   on Drinfeld's upper half space `Ω`.
-- `Langlands.Sheaf.Equivariant.AnalyticEtaleRefinements` (Worker 26, published): the
+- `Langlands.Sheaf.Equivariant.AnalyticEtaleRefinements`: the
   conditions `HasDistinguishedEtaleNeighbourhoods`, `HasDistinguishedEtaleLifts` and
   `HasCompatibleDistinguishedEtaleLifts`, and
   `hasAdmissibleRefinements_distinguishedLiftSystem`.
-- `Langlands.Cohomology.DivisibleSystem.AnalyticEtaleConstant` (Worker 26, published): the
+- `Langlands.Cohomology.DivisibleSystem.AnalyticEtaleConstant`: the
   constant étale `G`-sheaves `etaleConstantSheaf`, the constant system `etaleConstantSystem`,
   Harris's Lemma 2.2, Lemma 2.2 bis and (2.3) for it with a family of points
   (`etaleConstantFamily*`), and `etaleConstantCompactHomologyToPlain`. Through it,
@@ -20,13 +20,13 @@ Author: Worker 26. Builds on the following modules:
   `etaleFamilyGodementFunctor`), `AnalyticEtaleComparison` (`etaleCompactCohomology`) and
   `AnalyticEtaleCompactCohomology` (`EtaleGSheaf`, `etaleGSheafCompactCohomology`,
   `twistedEtale_hasSheafify`, `etale_hasSheafify`).
-- `Langlands.Sheaf.Equivariant.AnalyticSubgroupRestriction` (Worker 26, published):
+- `Langlands.Sheaf.Equivariant.AnalyticSubgroupRestriction`:
   `etaleGSheafSubgroupRestriction` and `etaleSubgroupRestrictionCompactCohomologyIso`.
-- `Langlands.Sheaf.Equivariant.AnalyticEtaleCompactSmoothness` (Worker 26, published):
+- `Langlands.Sheaf.Equivariant.AnalyticEtaleCompactSmoothness`:
   `etaleCompactComparison_app_bijective_of_statement`,
   `etaleRestrictionCompactCohomologyAction_isSmooth_of_statement`,
   `etaleRestrictionCompactCohomologyAction_comp_subtype_isSmooth_of_statement` and
-  `etaleCompactComparisonSmoothIsoOfStatement`. Through it, Worker 16's
+  `etaleCompactComparisonSmoothIsoOfStatement`. Through it,
   `AnalyticEtaleCompactComparisonStatement` (module
   `Langlands.Cohomology.AnalyticEtaleCompactComparison.Statement`), which appears here only
   as a hypothesis and is not proved in the Library, and `AnalyticRepSmoothness`
@@ -44,8 +44,8 @@ to that action: Berkovich's étale `GL_{d+1}(F)`-sheaves on `Ω × Δ`, their co
 cohomology `H^q_c(ℳ_1{G}, -)` as smooth representations, the constant `ℓ`-divisible system
 `{R / ℓ ^ m R}`, the analogues of Harris's Lemma 2.2, Lemma 2.2 bis and (2.3) for it, the map
 to plain compactly supported cohomology, restriction to subgroups, and smoothness of the
-canonical action of `GL_{d+1}(F)` on `H^q_c(ℳ_1, b^*F)` under Worker 16's comparison
-statement. The only input specific to `Ω × Δ` that is used is that `levelOneGSpace` makes
+canonical action of `GL_{d+1}(F)` on `H^q_c(ℳ_1, b^*F)` under the comparison
+statement `AnalyticEtaleCompactComparisonStatement`. The only input specific to `Ω × Δ` that is used is that `levelOneGSpace` makes
 the underlying space Hausdorff and the action continuous, given `hΩ` and `hSI`. Every
 declaration is a specialization; no new construction is made.
 
@@ -124,7 +124,7 @@ Restriction to subgroups (no refinement instance needed):
   étale `GL_{d+1}(F)`-sheaf `F` (`etaleSubgroupRestrictionCompactCohomologyIso`). Examples of
   `H` are `detNormOne F d`, the stabilizer of every copy of `Ω` (`stabilizer_levelOneIndex`).
 
-Smoothness, granting Worker 16's statement. Each declaration takes
+Smoothness, granting `AnalyticEtaleCompactComparisonStatement`. Each declaration takes
 `hB : AnalyticEtaleCompactComparisonStatement L (levelOneSpace F K d) h GL_{d+1}(F) (levelOneρ F K d) R`,
 `hS : Function.Surjective (pointProjection L (levelOneSpace F K d))` (every point of `Ω × Δ`
 underlies an `L`-valued point), `hΩ` and `hSI`, a degree `q` and an étale
@@ -185,8 +185,10 @@ Harris's Fact 2, and the Godement resolutions use an arbitrary family of points,
 
 The three conditions of `AnalyticEtaleRefinements` on `Ω × Δ`, the point axioms, `hS`, a
 family of points satisfying `hpoints`, exactness and acyclicity of the Godement functor,
-`hdim`, a proof of `AnalyticEtaleCompactComparisonStatement`, `hΩ` and `hSI` (published
-statements that are still unproved), that the map to plain cohomology is an isomorphism, the
+`hdim`, a proof of `AnalyticEtaleCompactComparisonStatement`, `hΩ` and `hSI` (hypotheses
+here; the Library proves `OmegaActionContinuityStatement` and
+`SetInducedSpace.ContinuityStatement` as `omegaActionContinuity` and
+`SetInducedSpace.continuityStatement`), that the map to plain cohomology is an isomorphism, the
 decomposition of `H^q_c(ℳ_1)` as an induced representation from the copies of `Ω`
 (Harris 1997 (A.8) at level one), Harris's group `GJ`, the tower `ℳ_N` for `N ≥ 2` and its
 domains `U(e, N, δ)`.

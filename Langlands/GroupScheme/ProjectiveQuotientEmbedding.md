@@ -1,9 +1,7 @@
 # Projective orbit maps on supplied homogeneous quotients
 
-Author: Worker 967.
-
 This internal module provides glue for the invariant-affine-neighbourhood step of
-the flag argument (task `877d0194-f7d3-4c1e-8e72-e81d1a772c0c`). Let `G` be a
+the flag argument. Let `G` be a
 group scheme over a field `k`. Let `i : H → G` be a subgroup that is the
 stabilizer, on all tests, of the line of the coordinate vector `e_j` under a
 matrix representation `ρ`. Let `q : G → Q` be a supplied quotient of `G` by `H`.

@@ -1,7 +1,5 @@
 # The Harris numerical Weil tower with normalized CM coefficients
 
-Author: Worker 57.
-
 This is an internal specialization of `HarrisNumericalWeilTower` using
 the normalized comparison proved in `HarrisTaylorCMLieDeterminant`. It makes the existing
 actual fixed-base level tower use one CM structure map for the actual
@@ -197,12 +195,11 @@ coefficient is `-3i`, with the same sign as the numerical condition.
 This theorem is conditional on the displayed datum, charts and
 anti-invariance equation and asserts no compatible object's existence.
 
-This unit constructs the specialized tower of actual fixed-base
+This module constructs the specialized tower of actual fixed-base
 classes. The geometric point and finite-etale hypotheses remain
 displayed, and the predicates remain conditions on actual objects.
 It proves neither equivalence with the full Lie-plus compatibility
 condition nor geometric-dimension invariance on all representatives.
 It does not prove actual Lie-sheaf base-change naturality, define a
 functor on varying scheme bases, provide representability, or
-construct scheme levels. Those requirements of the broader task
-remain in force.
+construct scheme levels.

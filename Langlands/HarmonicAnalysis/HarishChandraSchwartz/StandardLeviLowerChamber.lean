@@ -300,7 +300,7 @@ variable (hRefl : RelativeRootReflectionExistenceStatement.{u})
   (hCST : CentralSplitTorusCharacterStatement.{u})
 
 /-- **The lower density packages are the target's density hypotheses at `M'`.** A lower density
-package `LowerDensityPackage` for `s` (Task 7454) is, field by field, the data
+package `LowerDensityPackage` for `s` is, field by field, the data
 `(K, hK, hPK, hOppK, p, q, D_forward, D_reverse, D, hirr, hreg)` that the source-normalized
 target asks for at the ambient group `M'`, its maximal split torus, the chamber of `sζ`, the
 labels `J''`, the cocharacter `sζ` and the representation `lowerChamberRepresentation`. -/

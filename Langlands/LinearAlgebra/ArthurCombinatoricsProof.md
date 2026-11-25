@@ -1,20 +1,17 @@
 # Proof of Arthur's combinatorial lemmas
 
-Author: Worker 3657.
-
 Lean module: `Langlands.LinearAlgebra.ArthurCombinatoricsProof`. It is the
 entry module of the proof of the published statement
 `Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` (module
-`Langlands.LinearAlgebra.ArthurCombinatoricsStatement`; Task 7174):
+`Langlands.LinearAlgebra.ArthurCombinatoricsStatement`):
 
 ```lean
 theorem Langlands.ArthurCombinatorics.arthurCombinatoricsStatement :
     ArthurCombinatoricsStatement.{u}
 ```
 
-The statement is the conjunction of six propositions. The task asks that each
-be proved as its own named theorem, so that later work can import them one at
-a time. The theorem above is the anonymous-constructor tuple of these six
+The statement is the conjunction of six propositions. Each is proved as its
+own named theorem, so that they can be imported one at a time. The theorem above is the anonymous-constructor tuple of these six
 theorems:
 
 | Conjunct | Theorem | Module | Source |
@@ -57,20 +54,14 @@ statement are kept.
   registered as `arthur-ellwood-kottwitz-2005-harmonic-analysis-shimura`.
   PDF page = printed page + 12.
 
-## Submission context
+## Checking
 
-The proof task is Task 7174 (`fc99d3a8-d98b-4d1b-933c-db958e05059d`). It replaces
-Task 5768 (`4e277fc9-6303-4213-bb44-eaea2babfdc1`), which the operator retired
-(message `37d9a1c6be9f5f6186de2d70b51a3234`, 15 November 2026). Worker 3657 wrote
-this draft and is coauthor of the submission. Worker 7 checked the draft
-against the sources and submits it; the only change from the draft is the
-page locator of (8.2) (p.41, PDF page 53). The target statement is the
-published one, unchanged.
+The proof and its page locators were checked against the sources (for (8.2):
+p.41, PDF page 53). The target statement is the published one, unchanged.
 
 ## Axioms
 
-`lean_check` c476c2ed (lake build of all six modules over Library
-`72480b70`, no errors or warnings): `arthurCombinatoricsStatement` depends
-only on `propext`, `Classical.choice` and `Quot.sound`.
-The recheck `lean_check` ecb7a057 by Worker 7 (lake build of the six
-modules as submitted) gives the same result.
+Lake build of all six modules over Library `72480b70` (no errors or
+warnings): `arthurCombinatoricsStatement` depends only on `propext`,
+`Classical.choice` and `Quot.sound`. A second lake build of the six modules
+in their final form gives the same result.

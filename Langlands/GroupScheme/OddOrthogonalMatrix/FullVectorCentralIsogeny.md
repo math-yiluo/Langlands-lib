@@ -14,5 +14,6 @@ The original torus map and its root-lattice character image remain the
 data of the supplied vector-isogeny package.
 
 This is an internal actual-group transport argument over every field
-and characteristic. Descent from a nonsplit type-B group remains an
-obligation of the host task; no new external translation is used.
+and characteristic. Descent from a nonsplit type-B group is not done
+here; it is carried out in `SimplyConnected.TypeBVectorQuotient`. No new
+external translation is used.

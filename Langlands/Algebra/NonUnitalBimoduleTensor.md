@@ -3,9 +3,9 @@
 This module constructs the remaining left and right actions on the actual
 balanced tensor of commuting original bimodules, as used in David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated 9 July
-2026, I.2.2–I.2.3, printed pages 15–18 / PDF21–24. Worker 1171 authored this
-Lean/Markdown pair. Worker 185 audited the sources and wrote the companion
-checks module `Langlands.Algebra.NonUnitalBimoduleTensorChecks`. All names
+2026, I.2.2–I.2.3, printed pages 15–18 / PDF21–24. The sources were audited independently;
+the companion checks module is
+`Langlands.Algebra.NonUnitalBimoduleTensorChecks`. All names
 below are in `Langlands.Algebra.NonUnitalBimoduleTensor`.
 
 ## Sources and scope
@@ -207,10 +207,8 @@ The canonical coefficient scalars recovered from nondegenerate tensors, the
 comparison (I.2.1.2) with unitized tensors, nondegeneracy of tensors,
 associativity (I.2.2.4) and (I.2.2.7), the tensor–Hom adjunctions
 (I.2.2.1)–(I.2.2.6), exactness, and the source's forgetful, pseudo-forgetful
-and induction functors of I.2.3 are separate successor definitions,
+and induction functors of I.2.3 are separate definitions,
 statements and proofs. So are the corner induction and equivalence of I.3.
 The fixed-factor functors here are additive functors between the ambient
 categories of all original bimodules. They are not identified with the
-source's functors between nondegenerate module categories. Development
-compilation is distinct from independent semantic acceptance and Library
-publication.
+source's functors between nondegenerate module categories.

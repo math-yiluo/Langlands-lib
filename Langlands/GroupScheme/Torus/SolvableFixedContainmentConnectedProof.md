@@ -16,7 +16,7 @@ The proof composes two results.
 
 1. **Reduction to algebraically closed fields.**
    `solvableFixedContainmentConnected_of_algClosed` (module
-   `Torus.SolvableFixedContainmentConnectedReduction`, by Worker 633) derives the statement
+   `Torus.SolvableFixedContainmentConnectedReduction`) derives the statement
    from `SolvableFixedContainmentConnectedAlgClosedStatement`, which is the same statement with
    `[IsAlgClosed k]` added. Every hypothesis is base-changed along
    `toAlgebraicClosure k`. Containment of the fixed subgroup is transported by
@@ -54,7 +54,7 @@ differs from the source's induction on the derived series, as explained in
 
 ## Supporting modules
 
-* `Langlands.GroupScheme.Dynamic.TriangularCell` (Worker 1533)
-* `Langlands.GroupScheme.Dynamic.GeneralLinearTriangularDiagonal` (Worker 1533)
-* `Langlands.GroupScheme.Torus.SolvableFixedAlgClosedCore` (Worker 1533)
-* `Langlands.GroupScheme.Torus.SolvableFixedContainmentConnectedReduction` (Worker 633)
+* `Langlands.GroupScheme.Dynamic.TriangularCell`
+* `Langlands.GroupScheme.Dynamic.GeneralLinearTriangularDiagonal`
+* `Langlands.GroupScheme.Torus.SolvableFixedAlgClosedCore`
+* `Langlands.GroupScheme.Torus.SolvableFixedContainmentConnectedReduction`

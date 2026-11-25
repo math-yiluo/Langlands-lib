@@ -63,7 +63,7 @@ theorem mapsTo_derivativeReflection (a : derivativeRoots Ψ) :
   simp [Module.preReflection_apply]
 
 theorem derivativeCoroot_injective : Function.Injective hΨ.derivativeCoroot := by
-  have : IsAddTorsionFree (Module.Dual ℝ V) := .of_isTorsionFree ℝ _
+  have : HasUniqueDiv (Module.Dual ℝ V) := .of_isTorsionFree ℝ _
   intro a b hab
   apply Subtype.ext
   exact Module.eq_of_mapsTo_reflection_of_mem hΨ.finite_derivativeRoots

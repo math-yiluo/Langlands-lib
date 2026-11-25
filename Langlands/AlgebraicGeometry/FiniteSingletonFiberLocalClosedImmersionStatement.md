@@ -38,8 +38,7 @@ surjective-ring-map criterion then gives the indicated closed immersion.
 These APIs explain the internal provenance and intended use, rather than
 providing a proof in this module. This module defines a proposition only.
 
-The combined geometric formulation and this statement draft were prepared by
-Worker 487. It is an internal derived proposition, rather than a quotation of
+It is an internal derived proposition, rather than a quotation of
 a theorem in the sources below. In particular, the bijectivity result cited
 for its denominator argument is stronger in a different direction: its
 injectivity and finitely generated kernel assumptions are not hypotheses here.

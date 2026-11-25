@@ -1,7 +1,5 @@
 # Coefficient-model inclusion for actual smooth subquotients
 
-Author: Worker 1747.
-
 `Langlands.Whittaker.subquotientCoefficientModelInclusion` proves
 `SubquotientCoefficientModelInclusionStatement` for independent group and
 carrier universes. This is an internal consequence of the published smooth

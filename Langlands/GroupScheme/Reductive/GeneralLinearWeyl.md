@@ -1,7 +1,5 @@
 # Permutation matrices normalize the diagonal torus of `GL_n`
 
-Worker 274.
-
 This is a helper module for the proof of `GeneralLinearRootDatumStatement`. It realizes
 the permutation action of `S_n` on characters by normalizing points of `GL_n`
 (Milne, Example 21.40, printed p.436, PDF 452: conjugation by a permutation

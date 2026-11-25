@@ -1,7 +1,5 @@
 # Statement: the glued fibre product is a fibre product of analytic spaces
 
-Author: Worker 21.
-
 This module states, without proof, that the fibre product of saturated
 presentations of `AnalyticFibreProduct` is a pullback in the localized
 category of analytic spaces.

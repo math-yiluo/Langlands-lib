@@ -61,9 +61,9 @@ theorem placeLFactorProduct_eq_one (eC : ReciprocityFamily (padicField z))
     quasicharacterAt j.2.1 (residuePrime_eq z j.2.1) ((Λ₂ j.1).finiteComponent j.2.1)
   have hgeo : ∀ j, IsGeometricReciprocity (E j)
       (LocalClassField.extensionReciprocityCandidate (padicField z) (E j)
-        (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) eC) := fun j =>
+        (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) eC) := fun j =>
     (LocalClassField.commonClosureGeometricProof (residuePrime z) (padicField z) eC heC).2 (E j)
-      (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1)
+      (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1)
   have hL₁ : ∀ j, LocalFactor.PadicAbelian.lFactor (E j).canonicalTopologicalData (η₁ j) s =
       heckeL (Λ₁ j.1) j.2.1 s := fun j =>
     lFactor_quasicharacterAt j.2.1 (residuePrime_eq z j.2.1) _ s
@@ -71,7 +71,7 @@ theorem placeLFactorProduct_eq_one (eC : ReciprocityFamily (padicField z))
       heckeL (Λ₂ j.1) j.2.1 s := fun j =>
     lFactor_quasicharacterAt j.2.1 (residuePrime_eq z j.2.1) _ s
   have h := Weil.Local.InertiaEuler.prod_lFactor_eq_one_of_relation (padicField z) E
-    (fun j => ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) hgeo η₁ η₂
+    (fun j => ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z j.2.1) hgeo η₁ η₂
     (fun j => r j.1) hrel s (fun j => by rw [hL₁]; exact (hs j).1)
     (fun j => by rw [hL₂]; exact (hs j).2)
   unfold placeLFactorProduct
@@ -103,11 +103,11 @@ theorem weilCharacter_quasicharacterAt_inv {M : IntermediateField k E'} (Λ : He
     (eC : ReciprocityFamily (padicField z)) (u : FinitePlacesAbove M z) :
     LocalFactor.RankOne.weilCharacter (towerPadicField z u.1)
         (LocalClassField.extensionReciprocityCandidate (padicField z) (towerPadicField z u.1)
-          (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z u.1) eC)
+          (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z u.1) eC)
         (quasicharacterAt u.1 (residuePrime_eq z u.1) (Λ⁻¹.finiteComponent u.1)) =
       (LocalFactor.RankOne.weilCharacter (towerPadicField z u.1)
         (LocalClassField.extensionReciprocityCandidate (padicField z) (towerPadicField z u.1)
-          (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z u.1) eC)
+          (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z u.1) eC)
         (quasicharacterAt u.1 (residuePrime_eq z u.1) (Λ.finiteComponent u.1)))⁻¹ :=
   DFunLike.ext _ _ fun _ => rfl
 
@@ -152,9 +152,9 @@ theorem prod_finiteEpsilon_eq_placeEpsilonRatioProduct
   unfold placeEpsilonRatioProduct
   rw [Fintype.prod_sigma]
   refine Finset.prod_congr rfl fun i _ => ?_
-  rw [← ClassField.Global.RelativeWeilGroup.prod_epsilon_quasicharacterAt_eq_prod_finiteEpsilon
+  rw [← ClassFieldTheory.Global.RelativeWeilGroup.prod_epsilon_quasicharacterAt_eq_prod_finiteEpsilon
       (K i) (Λ₁ i) ψf z ψz hψf (μK i) 0,
-    ← ClassField.Global.RelativeWeilGroup.prod_epsilon_quasicharacterAt_eq_prod_finiteEpsilon
+    ← ClassFieldTheory.Global.RelativeWeilGroup.prod_epsilon_quasicharacterAt_eq_prod_finiteEpsilon
       (K i) (Λ₂ i) ψf z ψz hψf (μK i) 0,
     ← Finset.prod_inv_distrib, ← Finset.prod_mul_distrib, ← Finset.prod_zpow]
   rfl

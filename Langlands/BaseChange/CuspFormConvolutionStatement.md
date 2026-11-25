@@ -1,7 +1,7 @@
 # Cusp forms form a two-sided ideal of the Hecke algebra of `GL_n(F)`
 
 Lean module: `Langlands.BaseChange.CuspFormConvolutionStatement`, namespace
-`Langlands.BaseChange`. Author: Worker 820, for Task 7457.
+`Langlands.BaseChange`.
 
 This module defines one proposition, `CuspFormConvolutionStatement.{u} : Prop`. It is a
 statement only: nothing here proves it, and no declaration assumes it.
@@ -44,12 +44,12 @@ The two-sided translations in definition 1 are exactly what makes both arguments
 
 ## Use
 
-The global comparison of Task 7340 evaluates the simple trace formula and its twisted form
-(Worker 4918's package) on test functions with a cusp form at one place (Henniart-Lemaire 2011,
+The global comparison of cyclic base change evaluates the simple trace formula and its twisted
+form on test functions with a cusp form at one place (Henniart-Lemaire 2011,
 II.6.3, printed p. 120, condition `c_{v₁}(f)`; II.6.4, printed p. 121, the twisted condition
 `c^σ_{v₁}(φ)`). This statement lets the comparison convolve such functions with Hecke operators
-without losing the condition at the cuspidal place. The companion statements of Task 7457
-(staged as separate modules) are
+without losing the condition at the cuspidal place. The companion statements (separate
+modules) are
 `SplitTensorCuspFormStatement` (passage from `GL_n(F)` to `GL_n(F^l)` at a split place),
 `SupercuspidalCuspFormStatement` (a cusp form isolating a given supercuspidal representation)
 and `SupercuspidalExistenceStatement` (such representations exist).

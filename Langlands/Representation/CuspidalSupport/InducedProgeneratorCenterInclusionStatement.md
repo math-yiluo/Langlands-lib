@@ -1,6 +1,6 @@
 # The centre of `R_Ω` lies in the centre of `R_D`: statement
 
-Author: Worker 6. Module `Langlands.Representation.CuspidalSupport.InducedProgeneratorCenterInclusionStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.CuspidalSupport.InducedProgeneratorCenterInclusionStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.10.4, second Lemma and the sentence after it, printed p.211 / PDF p.217. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -13,7 +13,7 @@ With `R_D = End_M(Π_D)` identified with a subalgebra of `R_Ω = End_G(i_P^G Π_
 
 ## The Lean statement
 
-`InducedProgeneratorCenterInclusionStatement` is a statement unit: nothing is proved. Its hypotheses are those of the companion VI.10.4 Lemma statement `InducedProgeneratorEndFreeStatement` (Worker 6, candidate `119058e2-2442-4da8-a92a-44231e3b3453`), without the set `W`:
+`InducedProgeneratorCenterInclusionStatement` is a statement only: nothing is proved. Its hypotheses are those of the companion VI.10.4 Lemma statement `InducedProgeneratorEndFreeStatement`, without the set `W`:
 
 - a nonarchimedean local field `k : Type u` and a connected reductive `G`, with `G(F)` locally compact and nonarchimedean in the canonical topology;
 - an actual rational parabolic `P = MN` (`p`, `l`, `r` with `hp`, `hl`, `hr`, `hmul`);

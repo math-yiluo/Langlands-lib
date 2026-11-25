@@ -1,8 +1,5 @@
 # Equivariant retractions onto grouped generalized central spaces
 
-Worker 526, with the actual-projector and full-central-character design
-guidance of Workers 430 and 359.
-
 `Langlands.GroupedCentralCharacterRetractionStatement.{uG,uV}` is an
 internal Prop-valued definition. It states an interface and supplies no
 proof. The group and complex representation carrier universes are independent.
@@ -37,9 +34,9 @@ identity on the entire grouped space. This describes the intended route,
 not a proof supplied by this statement.
 
 The imported grouping definition is the published actual
-`groupedCentralCharacterSpace` in Exponents.RealCentralBlock. The private
-implementation of the proposed retraction compiles; this statement pair
-supplies no proof, and that implementation is not accepted evidence here.
+`groupedCentralCharacterSpace` in Exponents.RealCentralBlock. This statement
+pair supplies no proof; `groupedCentralCharacterRetraction` in
+`Exponents.GroupedCentralCharacterRetractionProof` proves it.
 This pair supplies no full-centre finiteness for an actual Jacquet module,
 geometric identity layer, exponent exclusion, analytic block isolation,
 Jacquet compatibility, Hom factorization or relative dimension comparison.

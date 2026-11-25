@@ -1,8 +1,5 @@
 # Absolute convergence of partial cuspidal pair Euler products for `Re s > 1`
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states three propositions, defines one auxiliary function,
 and proves nothing:
 
@@ -20,25 +17,30 @@ reuses the published unramified pair factor
 `Langlands.Global.Factors.CuspidalPairBoundaryNonvanishingStatement`) and the
 published `HasUnitaryCentralCharacter` and `OperatorRealization.IsContragredientOf`.
 Nothing from those modules is rebuilt. The namespace `CuspidalPairAbsoluteConvergence`
-is new. It is separate from the existing namespace `CuspidalPairEulerConvergence` of
+is separate from the namespace `CuspidalPairEulerConvergence` of
 `CuspidalPairCompletedEquationReduction`, which holds lemmas about convergence on some
 right half-plane.
 
-**Why it is here.** The proof task of
-`Langlands.Automorphic.Unramified.CuspidalSpectralRigidityStatement` (Task
-`c4f0be57-1a49-4a42-b813-4354e297ab3f`) follows Jacquet–Shalika 1981 II, Theorem
-(4.1). That theorem uses the absolute convergence of the double series
-`l(σ, π × π')` for real `σ > 1`. The task's objective says that TaskHub and the
-Library contain no form of this convergence. It asks for a helper module or a
-separate statement and proof task. This module is that separate statement. Getz–Hahn
+**Why it is here.** A proof of
+`Langlands.Automorphic.Unramified.CuspidalSpectralRigidityStatement` can follow
+Jacquet–Shalika 1981 II, Theorem (4.1). That theorem uses the absolute
+convergence of the double series `l(σ, π × π')` for real `σ > 1`. This module
+states that convergence. Getz–Hahn
 p.309 also cites JS I Theorem (5.3) for the absolute convergence of the global
 Rankin–Selberg product for `Re s > 1`.
 
-**Proof targets.** Later proof tasks should prove
+**Proof targets.** The proof targets are
 `CuspidalSelfPairContinuationStatement`,
 `CuspidalPairAbsoluteConvergenceReductionStatement` and, from the two,
-`CuspidalPairAbsoluteConvergenceStatement`. Each has universe parameters `u` (the
-number field) and `uQ` (the factor universe of the spectral presentations).
+`CuspidalPairAbsoluteConvergenceStatement`. The Library proves them as
+`cuspidalSelfPairContinuation` (module
+`Langlands.Global.Factors.CuspidalSelfPairContinuationProof`),
+`cuspidalPairAbsoluteConvergenceReduction` (module
+`Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceProof`) and
+`cuspidalPairAbsoluteConvergence` (module
+`Langlands.Global.Factors.CuspidalPairAbsoluteConvergence`). Each has universe
+parameters `u` (the number field) and `uQ` (the factor universe of the spectral
+presentations).
 
 ## 1. Sources
 
@@ -252,14 +254,14 @@ Since `exp` never vanishes, conjunct 3 says that `L^S(s, π × π') ≠ 0` for `
   `CuspidalPairBoundaryNonvanishingStatement`, Shahidi 1981 Theorem 5.2), meromorphic
   continuation to `ℂ`, poles, or growth.
 
-## 6. Proof routes (for the proof tasks)
+## 6. Proof routes
 
 **Lemma (5.2).** JS's proof (p.555) writes the global Rankin–Selberg integral
 `I(s, W', W, Φ)` as `A(s) L_S(s, π × π̃)` for `Re s` large. Here `A(s)` is the product
 of local integrals at `S`, chosen nonzero at a given `s₀` (JS I (1.5), (3.17)). By
 JS I (4.6), `I` is holomorphic for `Re s > 1`. An alternative route goes through the
-published, unproved `Langlands.Global.CuspidalPairPoleStatement` (GH Theorem 11.7.1;
-proof Task 5921). Twist `T` to be trivial on the split centre. The self-pair
+published, unproved `Langlands.Global.CuspidalPairPoleStatement` (GH Theorem 11.7.1).
+Twist `T` to be trivial on the split centre. The self-pair
 `L^S(s, π × π̃)` does not change under `π ↦ π|det|^x`, `π̃ ↦ π̃|det|^(-x)`. Then
 divide the completed function by the archimedean factors and the local factors at
 `S`, whose reciprocals are entire. The local factors outside `S` must be identified
@@ -285,6 +287,3 @@ with `partialEulerFactor`.
 3. Landau's theorem for the Dirichlet series (5.3.3) with nonnegative coefficients,
    with Lemma (5.2), gives convergence for `Re s > 1`. Then Cauchy–Schwarz gives
    conjunct 1 for every pair, and conjuncts 2 and 3 follow by `exp`.
-
-The proof tasks may choose other established routes. Each must record the route it
-uses.

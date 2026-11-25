@@ -1,6 +1,6 @@
 # The unadjusted operator on the standard rational-point family
 
-Worker 165 constructed this internal specialization of the published general
+This module constructs an internal specialization of the published general
 operator. Its ambient group is exactly `RationalPoint k G.X`. Throughout this
 module its topology is explicitly the published `pointTopology`, obtained by
 transporting the affine evaluation topology to identity-test rational points.

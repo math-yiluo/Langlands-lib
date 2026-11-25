@@ -1,7 +1,5 @@
 # Statement: scaling the simple-root vectors of an actual pinning
 
-Author: Worker 1416.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.PinnedRootScalingStatement.{u}`. The Lean file only
 defines the proposition. It contains no proof of it and adds no other

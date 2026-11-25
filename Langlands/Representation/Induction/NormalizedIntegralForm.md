@@ -1,7 +1,5 @@
 # A scalar integral form on actual normalized GL induction
 
-Author: Worker 117.
-
 `Langlands.PadicField.TopologicalData.normalizedIntegralForm` constructs an
 actual `InvariantPositiveForm` on `T.normalizedParabolicInduced B σ` from a
 supplied invariant positive form on the actual Levi representation `σ` and

@@ -1,6 +1,6 @@
 # The analytic structure of the glued analytification of a scheme
 
-This unit proves that the Library's `SchemeAnalytificationAnalyticStructureStatement`
+This module proves that the Library's `SchemeAnalytificationAnalyticStructureStatement`
 follows from the Library's `SchemeAnalytificationGluingStatement`. The main
 results are:
 
@@ -13,9 +13,13 @@ results are:
   SchemeAnalytificationAnalyticStructureStatement.{u}`, obtained by projecting
   clauses (2) and (3) of the gluing statement.
 
-The gluing statement is published as a statement and is not yet proved. The
-present unit therefore reduces the analytic-structure statement to it and proves
-no unconditional instance.
+The present module reduces the analytic-structure statement to the gluing
+statement and proves no unconditional instance. The gluing statement is proved
+as `schemeAnalytificationGluing` in `SchemeAnalytificationGluingProof`, and
+`SchemeAnalytificationAnalyticStructureProof` proves the analytic-structure
+statement as `schemeAnalytificationAnalyticStructure`, by applying
+`analyticStructure_of_openGluing` to the open-gluing theorems of
+`SchemeAnalytificationOpenGluing`.
 
 ## Construction
 
@@ -76,7 +80,7 @@ The witnesses are `S = schemePresentation hg`, `e = Homeomorph.refl`,
 
 ## Provenance
 
-Internal proof unit. It implements the truth sketch in the Markdown of the
+Internal. This module implements the truth sketch in the Markdown of the
 target statement `SchemeAnalytificationAnalyticStructureStatement`, which follows
 Berkovich, *Spectral Theory and Analytic Geometry over Non-Archimedean Fields*
 (1990), proof of Theorem 3.4.1, step (3), printed p.64/PDF p.78 (registered
@@ -89,5 +93,5 @@ Proposition 1.3.3, printed p.24/PDF p.21 (registered source
 departs from the sketch: the bounded restriction maps between charts coming from
 different affine opens are not glued by Tate acyclicity. They are obtained from
 the scheme-morphism calculus of `SchemeAnalytificationAffinoidPoints` and
-`SchemeAnalytificationLocalCharts`. The only unproved inputs are clauses (2)
+`SchemeAnalytificationLocalCharts`. The only inputs assumed here are clauses (2)
 and (3) of `SchemeAnalytificationGluingStatement`.

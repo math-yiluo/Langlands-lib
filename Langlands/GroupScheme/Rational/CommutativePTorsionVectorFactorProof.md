@@ -53,12 +53,11 @@ The canonical `kernelBaseChangeIso` identifies the actual changed complement
 with this full kernel; constancy transports along its monic underlying
 morphism. This proves the exact separable-closure conclusion in the target.
 
-Worker 1561 assembled the proof and the relation, intersection-induction,
-retraction, product and geometric-unipotence adapters. Worker 864 supplied
-the polynomial-kernel ambient factor and capture constructions. Worker 1371
-supplied the generic pointed affine-line and constant split-kernel adapter.
-The vector embedding reuses Worker 1552's exact embedding proof and its
-bundled helpers by Workers 1353, 1366 and 1589. Unpublished reused pairs are
-included unchanged with the submission so that validation and independent
-review can inspect the complete dependency closure. Their own focused
-candidates may be integrated first.
+The proof is assembled from the relation, intersection-induction,
+retraction, product and geometric-unipotence adapters, the polynomial-kernel
+ambient factor and capture constructions
+(`Unipotent.PolynomialKernelAmbientFactor`,
+`Unipotent.PolynomialKernelAmbientCapture`) and the generic pointed
+affine-line and constant split-kernel adapter. The vector embedding reuses the
+exact embedding proof `smoothCommutativePTorsionVectorEmbedding`
+(`SmoothCommutativePTorsionVectorEmbeddingProof`) and its helpers.

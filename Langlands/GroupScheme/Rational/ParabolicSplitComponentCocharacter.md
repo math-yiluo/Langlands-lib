@@ -1,7 +1,5 @@
 # Defining cocharacters in the specified Levi split component
 
-Author: Worker 200.
-
 This is an internal derived construction on the existing
 `Langlands.GroupScheme` framework. It combines the published
 [whole-group centralizer factorization](TorusCentralizerFactorization.md),

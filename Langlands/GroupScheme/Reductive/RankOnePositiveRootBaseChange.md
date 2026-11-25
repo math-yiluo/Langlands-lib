@@ -56,14 +56,20 @@ conclusion to `k`.
 
 This reduction proves neither input. In particular, the published general
 maximal-torus forward reduction retains structural premises, and the
-algebraically closed geometric dimension argument remains open. Acceptance of
-this helper does not prove properness of a dynamic quotient, a fixed-point
-dimension bound, maximal-torus conjugacy or the exact parent target. It uses
-none of the four theorem families excluded by the parent task.
+algebraically closed geometric dimension argument is not given here. The
+Library proves the two inputs as `maximalTorusBaseChangeForward` (in
+`Torus.MaximalBaseChangeForwardProof`) and
+`rankOneAlgClosedPositiveRootUniqueness` (in
+`RankOneAlgClosedPositiveRootUniquenessProof`). This module does not prove
+properness of a dynamic quotient, a fixed-point dimension bound, maximal-torus
+conjugacy or the exact target `RankOnePositiveRootUniquenessStatement`, which
+the Library proves as `rankOnePositiveRootUniqueness` in
+`RankOnePositiveRootProof`. It does not use the first three as premises or
+proof dependencies either.
 
 The two local instances for affineness and local finite type of the pulled-back
 group have explicit names beginning with `rankOnePositiveRootBaseChange`.
 These module-specific names prevent their generated declaration names from
 colliding with local instances in other base-change developments during joint
-kernel replay. The instance types and bodies, the mathematical definitions,
-and all theorem statements and proof scripts are unchanged.
+kernel replay. The names do not change the instance types and bodies, the
+mathematical definitions, or any theorem statement or proof script.

@@ -1,6 +1,8 @@
 # Dependencies of the local rank-one Tits index proof
 
-Audit `0b12b646-dfc1-4ede-bf65-0a9916693abe` ran on Library commit `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a` in the task's pinned Lean
+The list at the end of this page names the Library declarations on which the proof depends. The Weil restriction and its point operations come from the Library's own modules `Langlands.RingTheory.WeilRestriction.PresentedAlgebra` (the Weil restriction, its universal point, representing bijection and functoriality), `Langlands.RingTheory.WeilRestriction.Smooth` (its smoothness), `Langlands.RingTheory.WeilRestriction.PointMultiplication` (its bialgebra structure and the convolution product of its points) and `Langlands.RingTheory.WeilRestriction.Units` (the points of the Weil restriction of the multiplicative group as units); further entries come from `Langlands.RingTheory.HopfAlgebra.PointGroup`, `Langlands.RingTheory.Coalgebra.TensorConvolution`, `Langlands.RingTheory.HopfAlgebra.CocommutativePoints`, `Langlands.RingTheory.Extension.Presentation.MapsOut`, `Langlands.RingTheory.TensorProduct.QuotientKernel` and `Langlands.Algebra.Polynomial.Laurent.Smooth`. The list contains only public declarations of the modules named here, not their private declarations or generated auxiliary lemmas such as `_proof_` lemmas.
+
+The audit ran on Library commit `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a` in its pinned Lean
 environment. It checked that the type of `Langlands.GroupScheme.localRankOneTitsIndex`
 is literally `Langlands.GroupScheme.LocalRankOneTitsIndexStatement.{u}`, with
 the single universe parameter `u`.
@@ -15,7 +17,7 @@ and found zero hits.
 ## Reproduce the audit
 
 Save this scanner as `LocalRankOneTitsIndexDependencyAudit.lean` at the corresponding module path in a
-private draft and run `lean_check` on `Langlands.GroupScheme.SimplyConnected.LocalRankOneTitsIndexDependencyAudit`. The
+checkout of the Library and compile the module `Langlands.GroupScheme.SimplyConnected.LocalRankOneTitsIndexDependencyAudit`. The
 information messages give the sorted list in blocks of at most 512 entries.
 
 ```lean
@@ -89,18 +91,13 @@ elab "#auditLocalRankOneTitsIndex" : command => do
 
 ## Library constants reached
 
-This list contains all 73,082 reached constants defined in
+This list contains 72,903 reached constants defined in
 `Langlands` modules, including declarations defined outside the `Langlands`
-namespace and the supporting modules submitted with the proof.
+namespace and the supporting modules ported together with the proof.
 
 ```text
 AlgHom.antipodeComp
 AlgHom.convGroupOfSemiring
-AlgHom.convGroupOfSemiring._proof_1
-AlgHom.convGroupOfSemiring._proof_2
-AlgHom.convGroupOfSemiring._proof_3
-AlgHom.convGroupOfSemiring._proof_4
-AlgHom.convGroupOfSemiring._proof_7
 AlgHom.convInvOfSemiring
 AlgHom.mapValue
 AlgHom.mapValue_apply
@@ -116,9 +113,6 @@ Algebra.IsStandardSmooth.exists_isStandardSmoothOfRelativeDimension_of_field
 Algebra.Presentation.lift
 Algebra.Presentation.lift_val
 Algebra.Smooth.isDomain_and_isIntegrallyClosed_of_isIntegrallyClosed_of_isLocalization_atPrime
-Algebra.TensorProduct.assoc_comp_includeLeft_comp_includeLeft
-Algebra.TensorProduct.assoc_comp_includeLeft_comp_includeRight
-Algebra.TensorProduct.assoc_comp_includeRight
 Algebra.TensorProduct.isField_of_isSeparable_of_forall_isSeparable_mem_range
 Algebra.TensorProduct.lTensor.eq_1
 Algebra.TensorProduct.nilradical_isPrime_of_isAlgebraic_of_forall_isSeparable_mem_range
@@ -3396,6 +3390,35 @@ Langlands.Algebra.WeightGradedFormallySmooth.mem_pow_two_of_minimal
 Langlands.Algebra.WeightGradedFormallySmooth.mem_pow_two_of_minimal._proof_1_1
 Langlands.Algebra.WeightGradedFormallySmooth.mem_pow_two_of_minimal._proof_1_2
 Langlands.Algebra.WeightGradedFormallySmooth.weightedHomogeneousComponent_zero_eq
+Langlands.Algebra.WeilRestriction
+Langlands.Algebra.WeilRestriction.OfPresentation
+Langlands.Algebra.WeilRestriction.OfPresentation.homEquiv
+Langlands.Algebra.WeilRestriction.OfPresentation.instFiniteTypeOfFinite
+Langlands.Algebra.WeilRestriction.OfPresentation.universalPoint
+Langlands.Algebra.WeilRestriction.assoc_comp_map_comul_comp_comul
+Langlands.Algebra.WeilRestriction.comul
+Langlands.Algebra.WeilRestriction.counit
+Langlands.Algebra.WeilRestriction.homEquiv
+Langlands.Algebra.WeilRestriction.homEquiv_apply
+Langlands.Algebra.WeilRestriction.homEquiv_comp
+Langlands.Algebra.WeilRestriction.homEquiv_ofId_comp_counit
+Langlands.Algebra.WeilRestriction.hom_ext
+Langlands.Algebra.WeilRestriction.instAlgebraOfPresentation
+Langlands.Algebra.WeilRestriction.instBialgebra
+Langlands.Algebra.WeilRestriction.instCommRingOfPresentation
+Langlands.Algebra.WeilRestriction.instFinitePresentation
+Langlands.Algebra.WeilRestriction.instFormallySmooth
+Langlands.Algebra.WeilRestriction.instSmooth
+Langlands.Algebra.WeilRestriction.map_counit_comp_comul
+Langlands.Algebra.WeilRestriction.map_id_counit_comp_comul
+Langlands.Algebra.WeilRestriction.multiplicativeGroupPoints
+Langlands.Algebra.WeilRestriction.multiplicativeGroupPoints_naturality
+Langlands.Algebra.WeilRestriction.pointsMulEquiv
+Langlands.Algebra.WeilRestriction.pointsMulEquiv_apply
+Langlands.Algebra.WeilRestriction.pointsMulEquiv_naturality
+Langlands.Algebra.WeilRestriction.tensorHomEquiv
+Langlands.Algebra.WeilRestriction.tensorHomEquiv_comp
+Langlands.Algebra.WeilRestriction.universalPoint
 Langlands.Algebra.WeilRestrictionFiniteType
 Langlands.Algebra.WeilRestrictionFiniteType.finitePresentationAlgEquiv
 Langlands.Algebra.WeilRestrictionFiniteType.finitePresentationAlgEquiv._proof_1
@@ -3450,11 +3473,13 @@ Langlands.Algebra.idealTensorCokernelFlatness
 Langlands.Algebra.idealTensorIntersectionKernel
 Langlands.Algebra.idealTensorKernelSeparation
 Langlands.Algebra.idealTensor_injective_of_quotient_flat
+Langlands.Algebra.instAlgebraWeilRestriction
 Langlands.Algebra.instAlgebraWeilRestrictionFiniteType
 Langlands.Algebra.instAlgebraWeilRestrictionFiniteType._aux_1
 Langlands.Algebra.instAlgebraWeilRestrictionFiniteType._aux_3
 Langlands.Algebra.instAlgebraWeilRestrictionFiniteType._proof_5
 Langlands.Algebra.instAlgebraWeilRestrictionFiniteType._proof_6
+Langlands.Algebra.instCommRingWeilRestriction
 Langlands.Algebra.instCommRingWeilRestrictionFiniteType
 Langlands.Algebra.instCommRingWeilRestrictionFiniteType._aux_1
 Langlands.Algebra.instCommRingWeilRestrictionFiniteType._aux_13
@@ -9612,6 +9637,7 @@ Langlands.Aubert.General.RationalPointFamily.schemeWeylCharacterAction
 Langlands.Aubert.General.RationalPointFamily.schemeWeylCharacterAction._proof_1
 Langlands.Aubert.General.RationalPointFamily.schemeWeylCharacterAction_image_relativeRoots
 Langlands.Aubert.General.RationalPointFamily.schemeWeylCharacterAction_mk
+Langlands.Bialgebra.comulPoint_eq_include_mul
 Langlands.Brauer.IsSplit
 Langlands.Brauer.baseChange
 Langlands.Brauer.baseChange._proof_1
@@ -12278,8 +12304,8 @@ Langlands.CentralTorusExtensionHopf.sect
 Langlands.CentralTorusExtensionHopf.sect._proof_1
 Langlands.CentralTorusExtensionHopf.sect._proof_2
 Langlands.CentralTorusExtensionHopf.span_isGroupLikeElem
-Langlands.ClassField.Global.rationalClass_half_ne_zero
-Langlands.ClassField.Global.rationalClass_half_ne_zero._proof_1_1
+Langlands.ClassFieldTheory.Global.rationalClass_half_ne_zero
+Langlands.ClassFieldTheory.Global.rationalClass_half_ne_zero._proof_1_1
 Langlands.ClassFieldTheory.Local.AbsoluteH2Assembly.linearExactness_of_comparison
 Langlands.ClassFieldTheory.Local.ClosureNaturality.continuousInflation
 Langlands.ClassFieldTheory.Local.ClosureNaturality.continuousInflationCoefficients
@@ -63645,6 +63671,7 @@ Langlands.GroupTheory.normalizingCentralizerModulo._proof_2
 Langlands.GroupTheory.normalizingCentralizerModulo._proof_3
 Langlands.HasAlgebraAntiEquivalence
 Langlands.HasAlgebraAntiEquivalence.reducedDegree_dvd_two
+Langlands.HopfAlgebra.commute_includeLeft_includeRight_iff_isCocomm
 Langlands.IntLatticeAlgebra.congrEquiv
 Langlands.IntLatticeAlgebra.congrEquiv.eq_1
 Langlands.IntLatticeAlgebra.exists_eq_single_of_isUnit
@@ -70974,58 +71001,6 @@ Subalgebra.faithfullyFlat_of_faithfullyFlat_range_baseChange
 Subalgebra.fg_restrictScalars_and_le_of_fg
 Subalgebra.isNoetherianRing_and_dimensionLEOne_of_isFractionRing_of_finite
 Submodule.exists_dual_ne_zero_of_infinite_quotient
-TauCeti.Algebra.WeilRestriction
-TauCeti.Algebra.WeilRestriction.OfPresentation
-TauCeti.Algebra.WeilRestriction.OfPresentation.homEquiv
-TauCeti.Algebra.WeilRestriction.OfPresentation.instFiniteTypeOfFinite
-TauCeti.Algebra.WeilRestriction.OfPresentation.universalPoint
-TauCeti.Algebra.WeilRestriction.assoc_comp_map_comul_comp_comul
-TauCeti.Algebra.WeilRestriction.comul
-TauCeti.Algebra.WeilRestriction.comulAlgHom_eq
-TauCeti.Algebra.WeilRestriction.counit
-TauCeti.Algebra.WeilRestriction.homEquiv
-TauCeti.Algebra.WeilRestriction.homEquiv_apply
-TauCeti.Algebra.WeilRestriction.homEquiv_comp
-TauCeti.Algebra.WeilRestriction.homEquiv_comp_comul
-TauCeti.Algebra.WeilRestriction.homEquiv_counit
-TauCeti.Algebra.WeilRestriction.homEquiv_lift_comp_comul
-TauCeti.Algebra.WeilRestriction.homEquiv_ofId_comp_counit
-TauCeti.Algebra.WeilRestriction.hom_ext
-TauCeti.Algebra.WeilRestriction.instAlgebraOfPresentation
-TauCeti.Algebra.WeilRestriction.instBialgebra
-TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation
-TauCeti.Algebra.WeilRestriction.instFinitePresentation
-TauCeti.Algebra.WeilRestriction.instFormallySmooth
-TauCeti.Algebra.WeilRestriction.instSmooth
-TauCeti.Algebra.WeilRestriction.map_counit_comp_comul
-TauCeti.Algebra.WeilRestriction.map_id_counit_comp_comul
-TauCeti.Algebra.WeilRestriction.multiplicativeGroupPoints
-TauCeti.Algebra.WeilRestriction.multiplicativeGroupPoints_naturality
-TauCeti.Algebra.WeilRestriction.pointsMulEquiv
-TauCeti.Algebra.WeilRestriction.pointsMulEquiv_apply
-TauCeti.Algebra.WeilRestriction.pointsMulEquiv_naturality
-TauCeti.Algebra.WeilRestriction.tensorHomEquiv
-TauCeti.Algebra.WeilRestriction.tensorHomEquiv_apply
-TauCeti.Algebra.WeilRestriction.tensorHomEquiv_comp
-TauCeti.Algebra.WeilRestriction.universalPoint
-TauCeti.Algebra.instAlgebraWeilRestriction
-TauCeti.Algebra.instCommRingWeilRestriction
-TauCeti.Bialgebra.comulPoint_eq_include_mul
-TauCeti.Bialgebra.toConv_comp_comulAlgHom
-TauCeti.Coalgebra.comul_eq_convMul_includeLeft_includeRight
-TauCeti.HopfAlgebra.commute_includeLeft_includeRight_iff_isCocomm
-TauCeti.HopfAlgebra.convMul_includeRight_includeLeft
-TauCeti.MultiplicativeGroup.pointsMulEquiv
-TauCeti.MultiplicativeGroup.pointsMulEquiv_apply
-TauCeti.MultiplicativeGroup.pointsMulEquiv_mapValue
-TauCeti.laurentEval
-TauCeti.laurentEvalEquiv
-TauCeti.laurentEvalEquiv_symm_apply
-TauCeti.laurentEvalEquiv_symm_comp
-TauCeti.laurentEval_T
-TauCeti.laurentEval_T_one
-TauCeti.laurentEval_unique
-WithConv.algHom_inv_def
 WithConv.mulTensor
 WithConv.mulTensor_apply_tmul
 WithConv.mulTensor_convMul
@@ -73007,158 +72982,6 @@ _private.Langlands.LocalFactor.FML.Valuation.0.Langlands.FML.min_multiplicativeT
 _private.Langlands.LocalFactor.FML.Valuation.0.Langlands.FML.multiplicativeToAdditiveOrder
 _private.Langlands.LocalFactor.FML.Valuation.0.Langlands.FML.multiplicativeToAdditiveOrder_mul
 _private.Langlands.RingTheory.Coalgebra.ConvolutionBaseChange.0.Langlands.CoalgebraDescent.convMul_tmul
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.FunctorOfPoints.0.AlgHom.antipodeComp._proof_1
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.FunctorOfPoints.0.AlgHom.convGroupOfSemiring._simp_5
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.FunctorOfPoints.0.AlgHom.convGroupOfSemiring._simp_6
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.FunctorOfPoints.0.AlgHom.mapValue._proof_1
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.FunctorOfPoints.0.AlgHom.mapValue._proof_2
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.MultiplicativeGroup.Basic.0.TauCeti.MultiplicativeGroup.pointsMulEquiv._proof_1
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.MultiplicativeGroup.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.multiplicativeGroupPoints._proof_1
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.MultiplicativeGroup.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.multiplicativeGroupPoints._proof_2
-_private.Langlands.TauCeti.Algebra.AlgebraicGroup.MultiplicativeGroup.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.multiplicativeGroupPoints_naturality._simp_1_2
-_private.Langlands.TauCeti.Algebra.Coalgebra.Convolution.0.WithConv.mulTensor._proof_1
-_private.Langlands.TauCeti.Algebra.HopfAlgebra.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.comul._proof_1
-_private.Langlands.TauCeti.Algebra.HopfAlgebra.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.comul._proof_2
-_private.Langlands.TauCeti.Algebra.HopfAlgebra.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.comul.eq_1
-_private.Langlands.TauCeti.Algebra.HopfAlgebra.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.counit.eq_1
-_private.Langlands.TauCeti.Algebra.HopfAlgebra.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.pointsMulEquiv._proof_1
-_private.Langlands.TauCeti.Algebra.HopfAlgebra.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.pointsMulEquiv._proof_2
-_private.Langlands.TauCeti.Algebra.HopfAlgebra.WeilRestriction.0.TauCeti.Algebra.WeilRestriction.pointsMulEquiv._proof_3
-_private.Langlands.TauCeti.Algebra.Polynomial.Laurent.Basic.0.TauCeti.laurentEval.eq_1
-_private.Langlands.TauCeti.Algebra.Polynomial.Laurent.Basic.0.TauCeti.laurentEvalEquiv._proof_1
-_private.Langlands.TauCeti.Algebra.Polynomial.Laurent.Basic.0.TauCeti.laurentEvalEquiv._proof_2
-_private.Langlands.TauCeti.Algebra.Polynomial.Laurent.Basic.0.TauCeti.laurentEvalEquiv._proof_3
-_private.Langlands.TauCeti.Algebra.Polynomial.Laurent.Basic.0.TauCeti.laurentEvalEquiv._proof_4
-_private.Langlands.TauCeti.Algebra.Polynomial.Laurent.Basic.0.TauCeti.laurentEvalEquiv._proof_5
-_private.Langlands.TauCeti.Algebra.Polynomial.Laurent.Basic.0.TauCeti.laurentEvalEquiv._proof_6
-_private.Langlands.TauCeti.RingTheory.Extension.Presentation.Basic.0.Algebra.Presentation.lift._proof_1
-_private.Langlands.TauCeti.RingTheory.Extension.Presentation.Basic.0.Algebra.Presentation.lift._proof_2
-_private.Langlands.TauCeti.RingTheory.Extension.Presentation.Basic.0.Algebra.Presentation.lift._proof_3
-_private.Langlands.TauCeti.RingTheory.Extension.Presentation.Basic.0.Algebra.Presentation.lift._proof_4
-_private.Langlands.TauCeti.RingTheory.Extension.Presentation.Basic.0.Algebra.Presentation.lift.eq_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.b
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.coord
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.coord._proof_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.coord._proof_2
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.coord_lTensor
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.mk
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.n
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.sum_smul
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.sum_tmul_coord
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.sum_tmul_coord._simp_1_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.Coords.φ
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.RepresentingAlgebra
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.aeval_coordsOf_relation
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.aeval_coordsOf_relation._simp_1_4
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.aeval_coordsOf_relation._simp_1_6
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.coords
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.coordsOf
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.homEquivOfPresentation
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.homEquivOfPresentation._proof_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.homEquivOfPresentation._proof_2
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.homEquivOfPresentation._proof_3
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.homEquivOfPresentation._proof_4
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.homEquivOfPresentation.match_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instAlgebraOfPresentation._aux_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instAlgebraOfPresentation._aux_3
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instAlgebraOfPresentation._proof_5
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instAlgebraOfPresentation._proof_6
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_13
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_15
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_20
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_28
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_3
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_32
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_34
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_36
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_43
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._aux_8
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_10
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_11
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_12
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_17
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_18
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_19
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_22
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_23
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_24
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_25
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_26
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_27
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_30
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_31
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_38
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_39
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_40
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_41
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_42
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_45
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_46
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_47
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_5
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_6
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.instCommRingOfPresentation._proof_7
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.lTensor_aeval_coordsOf_pt
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.nonempty_coords
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.nonempty_coords._simp_1_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.nonempty_coords._simp_1_2
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.nonempty_coords._simp_1_3
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.pt
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.relation
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.relation._proof_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.relation.eq_2
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.relation.match_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.tensorHomEquiv._proof_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.tensorHomEquiv._proof_2
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.universalPointOfPresentation
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.universalPointOfPresentation._proof_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.universalPointOfPresentation._proof_2
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.universalPointOfPresentation._proof_3
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.universalPointOfPresentation._proof_4
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.universalPointOfPresentation._simp_4
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.WeilRestriction.universalPointOfPresentation.eq_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instAlgebraWeilRestriction._aux_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instAlgebraWeilRestriction._aux_3
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instAlgebraWeilRestriction._proof_5
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instAlgebraWeilRestriction._proof_6
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_1
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_13
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_15
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_20
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_28
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_3
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_32
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_34
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_36
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_43
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._aux_8
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_10
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_11
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_12
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_17
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_18
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_19
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_22
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_23
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_24
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_25
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_26
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_27
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_30
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_31
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_38
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_39
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_40
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_41
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_42
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_45
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_46
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_47
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_5
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_6
-_private.Langlands.TauCeti.RingTheory.WeilRestriction.Basic.0.TauCeti.Algebra.instCommRingWeilRestriction._proof_7
 iSupIndep.eq_of_le_of_iSup_eq_top
 instDecidableEq_langlands
 isRegularLocalRing_localization_atPrime_mvPolynomial

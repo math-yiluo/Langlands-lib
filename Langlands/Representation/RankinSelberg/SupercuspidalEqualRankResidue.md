@@ -1,6 +1,6 @@
 # Denominator roots give contragredient twists
 
-This internal derived unit constructs `equalRankVectorResidue`, the
+This internal module, with derived provenance, constructs `equalRankVectorResidue`, the
 denominator-cleared Laurent continuation on the original representation
 vectors, evaluated at a nonzero complex number. It assumes the actual
 equal-rank analytic conclusion and a supplied normalized generator P.
@@ -23,8 +23,9 @@ with the actual weight |det|^u.
 If the second representation is additionally irreducible and admissible,
 the published p-adic covariant-pairing theorem identifies the first
 representation twisted by |det|^(-u) with the smooth contragredient of the
-second. This is the sign and contragredient convention in the target
-equal-rank L-factor statement. The full Kirillov and analytic conclusions
-remain explicit premises of this unit. The converse assertion that every
+second. This is the sign and contragredient convention in the equal-rank
+L-factor statement `SupercuspidalEqualRankLFactorStatement`. The full Kirillov
+and analytic conclusions remain explicit premises of this module. The converse
+assertion that every
 such twist gives a root, and the final polynomial product formula, are not
 proved here.

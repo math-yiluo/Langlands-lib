@@ -35,17 +35,17 @@ def baseChangeSplitTowerIso (e : G.splitWithDual hExact ≅ H.splitWithDual hExa
 theorem baseChangeSplitTowerIso_order {A : Type v} [Ring A]
     (a : A →+* End G) (a' : A →+* End H)
     (e : G.splitWithDual hExact ≅ H.splitWithDual hExact) (t : Aᵐᵒᵖ × A)
-    (h : splitOrderAction a hExact t ≫ e.hom = e.hom ≫ splitOrderAction a' hExact t) :
-    splitOrderAction ((baseChangeEnd (S := S) G).comp a) hExact t ≫
+    (h : (splitOrderAction a hExact t).asHom ≫ e.hom = e.hom ≫ (splitOrderAction a' hExact t).asHom) :
+    (splitOrderAction ((baseChangeEnd (S := S) G).comp a) hExact t).asHom ≫
         (baseChangeSplitTowerIso (S := S) hExact e).hom =
       (baseChangeSplitTowerIso (S := S) hExact e).hom ≫
-        splitOrderAction ((baseChangeEnd (S := S) H).comp a') hExact t := by
+        (splitOrderAction ((baseChangeEnd (S := S) H).comp a') hExact t).asHom := by
   let i := baseChangeSplitIso (S := S) G hExact
   let j := baseChangeSplitIso (S := S) H hExact
-  let x := (F).map (splitOrderAction a hExact t)
-  let y := (F).map (splitOrderAction a' hExact t)
-  let x' := splitOrderAction ((baseChangeEnd (S := S) G).comp a) hExact t
-  let y' := splitOrderAction ((baseChangeEnd (S := S) H).comp a') hExact t
+  let x := (F).map (splitOrderAction a hExact t).asHom
+  let y := (F).map (splitOrderAction a' hExact t).asHom
+  let x' := (splitOrderAction ((baseChangeEnd (S := S) G).comp a) hExact t).asHom
+  let y' := (splitOrderAction ((baseChangeEnd (S := S) H).comp a') hExact t).asHom
   let f := (F).map e.hom
   have hi : x ≫ i.hom = i.hom ≫ x' := baseChangeSplitIso_order (S := S) G hExact a t
   have hj : y ≫ j.hom = j.hom ≫ y' := baseChangeSplitIso_order (S := S) H hExact a' t
@@ -54,8 +54,8 @@ theorem baseChangeSplitTowerIso_order {A : Type v} [Ring A]
     rw [Category.assoc, i.inv_hom_id, Category.comp_id, Category.assoc, hi,
       ← Category.assoc, i.inv_hom_id, Category.id_comp]
   have hf : x ≫ f = f ≫ y := by
-    change (F).map (splitOrderAction a hExact t) ≫ (F).map e.hom =
-      (F).map e.hom ≫ (F).map (splitOrderAction a' hExact t)
+    change (F).map (splitOrderAction a hExact t).asHom ≫ (F).map e.hom =
+      (F).map e.hom ≫ (F).map (splitOrderAction a' hExact t).asHom
     rw [← (F).map_comp, h, (F).map_comp]
   change x' ≫ i.inv ≫ f ≫ j.hom = (i.inv ≫ f ≫ j.hom) ≫ y'
   rw [← Category.assoc x', hi', Category.assoc, ← Category.assoc x, hf,
@@ -112,7 +112,7 @@ theorem baseChangeSplitTowerIso_pairing
   let y₁ := y ≫ m
   let x₂ := x₁ ≫ k
   let y₂ := y₁ ≫ k
-  have hi : m ≫ m' = 𝟙 _ := congrArg (fun f : End (((F).obj G).splitWithDual hExact) =>
+  have hi : m ≫ m' = 𝟙 _ := congrArg (fun f : ((F).obj G).splitWithDual hExact ⟶ ((F).obj G).splitWithDual hExact =>
     (f.app n).toMul.hom.hom) i.inv_hom_id
   have hx : x₁ ≫ m' = x := by
     change (x ≫ m) ≫ m' = x

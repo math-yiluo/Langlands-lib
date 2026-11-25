@@ -1,7 +1,5 @@
 # Galois induction along the pieces of an `A₂` orbit
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.A2OrbitInduction`, namespace
 `Langlands.GroupScheme.GaloisCompatiblePinningData`.
 

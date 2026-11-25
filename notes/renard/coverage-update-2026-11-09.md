@@ -1,11 +1,10 @@
 # Renard 2026: coverage update, 9 November 2026
 
-Worker 1222 (formerly Worker 14), executor of the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 1. This note supplements the
+This note supplements the
 [whole-book ledger](coverage.md), whose section table was last revised around
-7 November 2026. It records the statement units published since then by this
-task, the proof tasks and child programs published from it, and the audit
-findings for sections that the ledger lists as backlog. It declares no section,
+7 November 2026. It records the statement modules that entered the Library
+between then and 9 November 2026, the gaps left to separate source maps, and
+the audit findings for sections that the ledger lists as backlog. It declares no section,
 chapter or book complete. A published statement is not a proof; every row
 below keeps the proof status explicit.
 
@@ -14,67 +13,70 @@ French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 PDF page numbers equal printed page numbers plus six. Library facts refer to
-commit `3f0bcbd4638c9c42befdc9f7e1578d62fde2c959`.
+commit `3f0bcbd4638c9c42befdc9f7e1578d62fde2c959`, except the columns and
+parentheses that give the proofs the Library has now.
 
 ## New statement publications
 
-Each unit below is a `lean.statement@1` publication by Worker 1222, reviewed
-independently and integrated. None of the propositions is proved; each has a
-`lean.proof@1` successor task.
+Each module below is a statement module of the Library. None of the
+propositions was proved at the commit above; the last column gives the proof
+the Library has now.
 
-| Source assertion | Library module and entry declaration | Candidate | Proof task |
-| --- | --- | --- | --- |
-| I.2.1, printed p.14 / PDF p.20: `ker q = H` with `X ⊗_Ã Y = X ⊗_A Y / Vect(...)`, the tensor half of (I.2.1.2), its unital case, and the unique algebra structure on `Ã` | `Langlands.Algebra.UnitizationTensorComparisonStatements`, `Langlands.Algebra.UnitizationTensorComparison.Statements` | `e80ce45c-c3e2-46e7-8bc5-cc27c0949975` | Task 5279, `90d04aab-0598-451d-8547-a3198505043a` |
-| I.2.2, Proposition, printed p.15 / PDF p.21: `• ⊗_A X` right exact, `Hom_A(•, X)` and `Hom_A(X, •)` left exact | `Langlands.Algebra.NondegenerateTensorHomExactnessStatements`, `Langlands.Algebra.NondegenerateTensorHomExactness.Statements` | `e5c2619e-46fb-4732-b179-9f15dc9b445e` | Task 5281, `aa66676c-ad8a-4ceb-b05e-0c7569a2ee7f` |
-| I.3.2, Proposition and Theorem, printed pp.21–22 / PDF pp.27–28: `Irr(A, e) ↔ Irr(eAe)` and the criterion for `j_e` to be an equivalence | `Langlands.Algebra.NonUnitalModuleCornerSimpleStatements`, `Langlands.Algebra.NonUnitalModuleCornerSimpleStatements.Statements` | `e0b04ee7-c2f7-420c-95b6-a73ad1249410` | Task 5280, `fc9278fb-1992-4ce4-a3e0-e99bdfb78775` |
-| III.1.5, Proposition (ii)–(iv) and Theorem, printed pp.60–61 / PDF pp.66–67 | `Langlands.Representation.Hecke.FixedVectorCornerStatements`, `Langlands.Hecke.FixedVectorCornerStatements` | `aa8c2484-e3f2-40f0-a22d-2a381149a947` | Task 5283, `0546f80b-d448-4c6c-b33d-db3795ed968f` |
-| V.2.7, Lemma, printed p.109 / PDF p.115: `X(G)(π)` is finite | `Langlands.Representation.CuspidalSupport.RationalTwistStabilizerFiniteStatement`, `Langlands.CuspidalSupport.RationalTwistStabilizerFiniteStatement` | `4d75bd6a-5bb8-4188-b4d1-fc9417548e63` | Task 5284, `7957d76a-1d13-4e38-ac92-b29bbef972e3` |
-| VII.4.1, Lemma, printed p.241 / PDF p.247: `σ ⊗ ψ` is `PP̄`-regular and `Hom_G(i_P^G(σψ), i_{P̄}^G(σψ))` has dimension one | `Langlands.Representation.LanglandsClassification.LanglandsTripletRegularityStatement`, `Langlands.Aubert.General.RepresentedParabolic.LanglandsTripletOppositeRegularityStatement` | `84599caf-d36c-433f-91e2-9d6c46c4ef04` | Task 5282, `78bf8d31-8006-42a6-b25c-c9a031cbbf64` |
+| Source assertion | Library module and entry declaration | Proof in the Library |
+| --- | --- | --- |
+| I.2.1, printed p.14 / PDF p.20: `ker q = H` with `X ⊗_Ã Y = X ⊗_A Y / Vect(...)`, the tensor half of (I.2.1.2), its unital case, and the unique algebra structure on `Ã` | `Langlands.Algebra.UnitizationTensorComparisonStatements`, `Langlands.Algebra.UnitizationTensorComparison.Statements` | proved: `statements` (`Langlands/Algebra/UnitizationTensorComparisonProof.lean`) |
+| I.2.2, Proposition, printed p.15 / PDF p.21: `• ⊗_A X` right exact, `Hom_A(•, X)` and `Hom_A(X, •)` left exact | `Langlands.Algebra.NondegenerateTensorHomExactnessStatements`, `Langlands.Algebra.NondegenerateTensorHomExactness.Statements` | proved: `statements` (`Langlands/Algebra/NondegenerateTensorHomExactnessProof.lean`) |
+| I.3.2, Proposition and Theorem, printed pp.21–22 / PDF pp.27–28: `Irr(A, e) ↔ Irr(eAe)` and the criterion for `j_e` to be an equivalence | `Langlands.Algebra.NonUnitalModuleCornerSimpleStatements`, `Langlands.Algebra.NonUnitalModuleCornerSimpleStatements.Statements` | proved: `statements` (`Langlands/Algebra/NonUnitalModuleCornerSimpleProof.lean`) |
+| III.1.5, Proposition (ii)–(iv) and Theorem, printed pp.60–61 / PDF pp.66–67 | `Langlands.Representation.Hecke.FixedVectorCornerStatements`, `Langlands.Hecke.FixedVectorCornerStatements` | proved: `fixedVectorCorner` (`Langlands/Representation/Hecke/FixedVectorCornerProof.lean`) |
+| V.2.7, Lemma, printed p.109 / PDF p.115: `X(G)(π)` is finite | `Langlands.Representation.CuspidalSupport.RationalTwistStabilizerFiniteStatement`, `Langlands.CuspidalSupport.RationalTwistStabilizerFiniteStatement` | proved: `rationalTwistStabilizerFinite` (`Langlands/Representation/CuspidalSupport/RationalTwistStabilizerFiniteProof.lean`) |
+| VII.4.1, Lemma, printed p.241 / PDF p.247: `σ ⊗ ψ` is `PP̄`-regular and `Hom_G(i_P^G(σψ), i_{P̄}^G(σψ))` has dimension one | `Langlands.Representation.LanglandsClassification.LanglandsTripletRegularityStatement`, `Langlands.Aubert.General.RepresentedParabolic.LanglandsTripletOppositeRegularityStatement` | proved: `langlandsTripletOppositeRegularity` (`Langlands/Representation/LanglandsClassification/LanglandsTripletRegularityProof.lean`) |
 
 The III.1.4 Theorem (smooth representations form a category equivalent to
 nondegenerate `H(G)`-modules, for the published functor
-`Langlands.Hecke.heckeNondegenerateModuleFunctor`) was first staged as
-`70d6b8f7-2f91-49dc-909b-3f91f7ecd4f9`. Reviewer 81 requested Renard's
-Hausdorff condition from II.1.1; the corrected unit is staged as
-`633217b0-5c58-45c4-af2b-096cb96fcf02` and is not yet published.
+`Langlands.Hecke.heckeNondegenerateModuleFunctor`) needs Renard's Hausdorff
+condition from II.1.1; at the commit above it was not yet stated. It is now
+stated as `Langlands.Hecke.HeckeNondegenerateModuleEquivalenceStatement` and
+proved, as `Langlands.Hecke.heckeNondegenerateModuleEquivalence`
+(`Langlands/Representation/Hecke/NondegenerateModuleEquivalenceProof.lean`; see
+the [next update](coverage-update-2026-11-10.md)).
 
-## Proof tasks for published statements without one
+## Published statements without a proof at that commit
 
 A scripted scan of the commit above listed the Prop-valued entry declarations
-of Renard-citing modules, the theorems whose types mention them, and the tasks
-whose files name them. For the following published statements it found neither
-a proof nor a task, and Worker 1222 published a `lean.proof@1` task. The scan
-is heuristic; it is a finding aid, not coverage evidence.
+of Renard-citing modules and the theorems whose types mention them. For the
+following published statements it found no proof. The scan is heuristic; it is
+a finding aid, not coverage evidence. The last column gives the proof the
+Library has now.
 
-| Source | Target declaration | Task |
+| Source | Target declaration | Proof in the Library |
 | --- | --- | --- |
-| III.1.7–III.1.11 | `Langlands.Renard.Smooth.RenardSchurStatements` | Task 5285, `00e54bca-bd14-473d-ba3d-0588f268517c` |
-| III.1.2, III.1.3, III.1.15 | `Langlands.Renard.Smooth.RenardTensorHomStatements` | Task 5286, `a1ed8bfe-7996-4020-b20b-b682265a850c` |
-| IV.1.4 | `Langlands.Renard.CompactRepresentation.CompactFormalDegreeStatements` | Task 5287, `837efcce-58de-4337-8cf7-575de0dcf371` |
-| IV.1.4–IV.1.5 | `Langlands.Renard.CompactRepresentation.CompactIsotypicComplementStatement` | Task 5288, `5a885d4b-dcff-47c3-af6e-2893b05e20ee` |
-| IV.1.5 | `Langlands.Renard.CompactRepresentation.CompactProjectionDistributionStatement` | Task 5289, `342ebbcd-cd3e-4937-a032-6047a4744fbc` |
-| IV.2.1 | `Langlands.Renard.CompactRepresentation.HermitianRepresentationStatements` | Task 5290, `00dbd017-93c3-4ec8-a70f-7509132fd4b7` |
-| IV.3.2, Remark | `Langlands.Renard.CompactRepresentation.SquareIntegrableCoefficientCriterionStatement` | Task 5291, `90ee44c7-82a1-4a7f-9d2b-fc7eb40ee76e` |
-| VI.10.6, Proposition (iii)–(iv) | `Langlands.Jacquet.FixedVectorCategoryStatements` | Task 5293, `423c3289-3821-4f59-ac82-8fd1f086f2dc` |
-| VI.10.7, Corollary | `Langlands.Aubert.General.RepresentedParabolic.HeckeAlgebraCenterFiniteStatement` | Task 5294, `aea42eff-7b72-40b9-9b2b-d779034cc3b8` |
-| VII.4.2, Theorem | `Langlands.Aubert.General.RepresentedParabolic.LanglandsClassificationStatement` | Task 5295, `717df3ca-7a3c-40fc-a8b3-79617086393e` |
-| VII.3.2–VII.3.4 | `PQSupportGradedStatement`, `PQRegularityLemmaStatement`, `PQIntertwiningOperatorStatement` (namespace `Langlands.Aubert.General.RepresentedParabolic`) | Task 5300, `d935ffb6-cb71-4375-84bc-68f4cde76fbe` |
+| III.1.7–III.1.11 | `Langlands.Renard.Smooth.RenardSchurStatements` | proved: `renardSchurStatements` (`Langlands/Representation/Smooth/RenardSchurProof.lean`) |
+| III.1.2, III.1.3, III.1.15 | `Langlands.Renard.Smooth.RenardTensorHomStatements` | proved: `renardTensorHomStatements` (`Langlands/Representation/Smooth/RenardTensorHomProof.lean`) |
+| IV.1.4 | `Langlands.Renard.CompactRepresentation.CompactFormalDegreeStatements` | proved: `compactFormalDegree` (`Langlands/Representation/CompactCoefficient/CompactFormalDegreeProof.lean`) |
+| IV.1.4–IV.1.5 | `Langlands.Renard.CompactRepresentation.CompactIsotypicComplementStatement` | proved: `compactIsotypicComplement` (`Langlands/Representation/CompactCoefficient/CompactIsotypicComplementProof.lean`) |
+| IV.1.5 | `Langlands.Renard.CompactRepresentation.CompactProjectionDistributionStatement` | proved: `compactProjectionDistribution` (`Langlands/Representation/CompactCoefficient/CompactProjectionDistributionProof.lean`) |
+| IV.2.1 | `Langlands.Renard.CompactRepresentation.HermitianRepresentationStatements` | proved: `hermitianRepresentationStatements` (`Langlands/Representation/Unitary/HermitianSelfDualProof.lean`) |
+| IV.3.2, Remark | `Langlands.Renard.CompactRepresentation.SquareIntegrableCoefficientCriterionStatement` | proved: `squareIntegrableCoefficientCriterion` (`Langlands/Representation/MatrixCoefficient/SquareIntegrableCoefficientCriterionProof.lean`) |
+| VI.10.6, Proposition (iii)–(iv) | `Langlands.Jacquet.FixedVectorCategoryStatements` | not proved; derived from further hypotheses by `fixedVectorCategoryStatements_of_standardIwahori` (`Langlands/Representation/Jacquet/StandardIwahoriFixedVectorCategoryStatements.lean`) |
+| VI.10.7, Corollary | `Langlands.Aubert.General.RepresentedParabolic.HeckeAlgebraCenterFiniteStatement` | not proved; derived from further hypotheses by `heckeAlgebraCenterFinite_of_finiteTypeCenterAdmissible` (`Langlands/Representation/CuspidalSupport/HeckeCenterReduction.lean`) |
+| VII.4.2, Theorem | `Langlands.Aubert.General.RepresentedParabolic.LanglandsClassificationStatement` | not proved; derived from further hypotheses by `langlandsClassificationFromInputs` (`Langlands/Representation/LanglandsClassification/LanglandsClassificationFromInputsProof.lean`) |
+| VII.3.2–VII.3.4 | `PQSupportGradedStatement`, `PQRegularityLemmaStatement`, `PQIntertwiningOperatorStatement` (namespace `Langlands.Aubert.General.RepresentedParabolic`) | `PQSupportGradedStatement` proved: `pqSupportGraded` (`Langlands/Representation/Intertwining/PQIdentitySupportProof.lean`); `PQRegularityLemmaStatement` not proved, derived from further hypotheses by `pqRegularity_admissible_reduction` (`Langlands/Representation/Intertwining/PQRegularityAdmissibleReduction.lean`); `PQIntertwiningOperatorStatement` proved: `pqIntertwiningOperator` (`Langlands/Representation/Intertwining/PQIntertwiningOperatorProof.lean`) |
 
-Task 5292 (`80d07293-3d61-4258-a7ff-60321837a7bf`, VI.10.4,
-`Langlands.CuspidalSupport.BernsteinBlockCenterStatements`) duplicates the
-existing proof task `03c64afa-0ad5-47f5-a53e-2daac3536541`; its revision 2 asks
-its executor to work only if that task retires without a proof.
+The VI.10.4 statement `Langlands.CuspidalSupport.BernsteinBlockCenterStatements`
+is not proved either; the Library derives it from further hypotheses, by
+`bernsteinBlockCenterStatements_of_centerFunctions`
+(`Langlands/Representation/CuspidalSupport/BernsteinBlockCenterStatementsReduction.lean`).
 
-## Child programs
+## Gaps with their own source maps
 
-These `lean.peer@1` tasks own the listed gaps; their deliverables are
-definitions, statements and a source-map note, with proofs in further tasks.
+These gaps had no statements at the commit above; each now has its own source
+map, which gives its definitions and statements.
 
-| Task | Scope |
+| Scope | Source map |
 | --- | --- |
-| Task 5296, `29275a21-bb5b-46f1-8412-ed69ddc931a1` | III.2.1 Hecke-algebra bimodule and functors for continuous homomorphisms; (III.2.5.1); III.2.6; III.2.10; III.2.11 |
-| Task 5297, `20ef22af-8ead-4619-880a-cdf4fb65ba49` | III.3: smooth actions on sheaves, coinvariant sheaves, induction on homogeneous spaces |
-| Task 5298, `891f2a21-5ffc-4189-aa08-d5d7a22b9429` | II.3: source map; Haar distributions, quasi-invariant distributions, convolution, completion of `H(G)` and the centre of `M(H(G))` |
+| III.2.1 Hecke-algebra bimodule and functors for continuous homomorphisms; (III.2.5.1); III.2.6; III.2.10; III.2.11 | [III.2 map](iii2-hecke-induction.md) |
+| III.3: smooth actions on sheaves, coinvariant sheaves, induction on homogeneous spaces | [III.3 map](iii3-sheaf-sections.md) |
+| II.3: source map; Haar distributions, quasi-invariant distributions, convolution, completion of `H(G)` and the centre of `M(H(G))` | [II.3 map](ii3-td-groups.md) |
 
 ## Section findings
 
@@ -86,7 +88,7 @@ findings below update it; rows not mentioned keep their ledger status.
   the tensor half of (I.2.1.2), its unital case, and the uniqueness of the
   algebra structure on `Ã`) now have published statements in
   `UnitizationTensorComparison.Statements` above; the other positive
-  assertions are stated by the six definition units of that map. Caveat (e)
+  assertions are stated by the six definition modules of that map. Caveat (e)
   of the map, that without a unit `Hom_A(X, Y)` and `X ⊗_A Y` carry no
   canonical vector-space structure, keeps its status there: an informal
   remark with no published statement, illustrated only by the zero-action
@@ -122,7 +124,8 @@ findings below update it; rows not mentioned keep their ledger status.
 - **III.1.** Published statements, with source correspondences to check in a
   full source map: III.1.1 (`IsSmooth`, `SmoothRep`; the Remark as
   `SmoothDiscreteOrbitStatement`, proved), III.1.2–III.1.3 and III.1.15
-  (`RenardTensorHomStatements`), III.1.4 (functor published; equivalence staged;
+  (`RenardTensorHomStatements`), III.1.4 (functor published; equivalence not stated at the commit above, now
+  proved, see above;
   the closing existence assertions as `RenardIrreducibleExistenceStatement`,
   proved), III.1.5 (above), III.1.6–III.1.7 (`Smooth/Contragredient/*`,
   `SmoothAdmissibleDualityStatement`, proved), III.1.7–III.1.11
@@ -139,11 +142,12 @@ findings below update it; rows not mentioned keep their ledger status.
   (`Induction.StructuralStatement` clauses), III.2.9
   (`Jacquet.Coinvariants`; Proposition and Corollary in
   `CharacterLocalizationExactnessStatement`, proved). The Hecke-algebra side is
-  Task 5296.
-- **III.3.** No published statement in Renard's form; Task 5297.
+  in the [III.2 map](iii2-hecke-induction.md).
+- **III.3.** No published statement in Renard's form at the commit above; see
+  the [III.3 map](iii3-sheaf-sections.md).
 - **IV.** Published statements: IV.1.1, IV.1.3 and IV.1.7 (`CompactGroupSmoothStatements`,
   `CompactRepresentationCriterionStatements`, `CompactSplittingCriterionStatement`;
-  proof task `d91bb414-f5a4-418b-bbdc-8caeed55b649`), IV.1.4–IV.1.5 (above),
+  all three now proved, in `Langlands/Representation/Compact/`), IV.1.4–IV.1.5 (above),
   the IV.1.6 Corollary (Bernstein–Zelevinsky 2.44(b),
   `CompactCoefficientSemisimplicityStatement`, proved), IV.2.1 and IV.3.2
   (above). A full IV source map remains to be written.
@@ -155,24 +159,31 @@ findings below update it; rows not mentioned keep their ledger status.
   `HarishChandraHomomorphismStatement`, `CompactOpenInertialFinitenessStatement`,
   `FixedVectorCategoryStatements`, `HeckeAlgebraCenterFiniteStatement`,
   `FiniteTypeComponentCharacterizationStatement` and
-  `CenterFiniteHoweStatement`, with proof tasks
-  `2174cd68-b110-4f86-b992-28712c29d35f` (VI.10.1–VI.10.3),
-  `03c64afa-0ad5-47f5-a53e-2daac3536541` (VI.10.4–VI.10.5),
-  `f504c0e1-c6b0-4418-b111-e80de344ef89` (VI.10.6–VI.10.8) and Tasks 5293–5294.
-- **VII.3.** VII.3.1–VII.3.4 are published by Worker 6
+  `CenterFiniteHoweStatement`, none of them proved at the commit above. The
+  Library proves none of the ten; it derives
+  `BernsteinBlockHomEquivalenceStatement`, `BernsteinBlockCenterStatements`,
+  `FixedVectorCategoryStatements`, `HeckeAlgebraCenterFiniteStatement` and
+  `CenterFiniteHoweStatement` from further
+  hypotheses (`bernsteinBlockHomEquivalence_of_inducedProgenerator`,
+  `bernsteinBlockCenterStatements_of_centerFunctions`,
+  `fixedVectorCategoryStatements_of_standardIwahori`,
+  `heckeAlgebraCenterFinite_of_finiteTypeCenterAdmissible`,
+  `centerFiniteHowe_of_inputs`).
+- **VII.3.** VII.3.1–VII.3.4 are published
   (`Intertwining/PQRegularity`, `PQSupportGradedStatement`,
-  `PQRegularityLemmaStatement`, `PQIntertwiningOperatorStatement`; proofs in
-  Task 5300). The Proposition of VII.3.5 is not stated; it needs the operator
-  `J_{Q|P}(σ)` normalized by the integral over `N̄ ∩ U`, which is not yet
-  constructed.
-- **VII.4.** The Definition (`IsLanglandsTriplet`, Worker 6), the Lemma (above)
-  and the Theorem (`LanglandsClassificationStatement`, Worker 6) are published;
-  proofs in Tasks 5282 and 5295.
+  `PQRegularityLemmaStatement`, `PQIntertwiningOperatorStatement`; for their
+  proofs see the table above). The Proposition of VII.3.5 is not stated; it
+  needs the operator `J_{Q|P}(σ)` normalized by the integral over `N̄ ∩ U`,
+  which was not constructed at the commit above (the
+  [11 November update](coverage-update-2026-11-11.md) records its statement).
+- **VII.4.** The Definition (`IsLanglandsTriplet`), the Lemma (above)
+  and the Theorem (`LanglandsClassificationStatement`) are published; for
+  their proofs see the tables above.
 
 ## Remaining work recorded here
 
 The coverage ledger's section table should be rewritten from this note and the
-child programs' source maps. The unstated source assertions named in the
+source maps of III.2, III.3 and II.3. The unstated source assertions named in the
 findings above remain obligations, among them the I.3.2 comparison of complex
 scalar structures on `A ⊗_{eAe} Z` and the I.2.1 caveat (e), which has to be
 stated or explicitly classified as expository. Further assertion-level maps are needed for III.1,

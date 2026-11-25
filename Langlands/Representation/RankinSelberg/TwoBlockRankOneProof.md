@@ -1,6 +1,6 @@
 # Closed rank-one test gamma and L bases
 
-Worker 468 proves exactly the two existing propositions
+This module proves exactly the two existing propositions
 `Langlands.RankinSelberg.TwoBlockGammaRankOneStatement.{uF,uV,uW}` and
 `Langlands.RankinSelberg.TwoBlockLRankOneStatement.{uF,uV,uW}` with
 `twoBlockGammaRankOne` and `twoBlockLRankOne`, respectively. Both theorems

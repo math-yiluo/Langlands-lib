@@ -1,6 +1,6 @@
 # Actual anisotropic kernels of the branch-marked E6 and E7 indices
 
-This internal contribution transports an actual inner type-A zero diagram to
+This internal module transports an actual inner type-A zero diagram to
 the actual anisotropic kernel and gives its division norm-one model. Every
 result is over an arbitrary field, in every characteristic and universe.
 The statements about E6 and E7 retain explicit hypotheses on the entire Cartan
@@ -42,6 +42,9 @@ models of exact reduced degrees six and seven under those hypotheses.
 The provenance is internal: these are transports and compositions of the
 published actual kernel comparison, the split-torus centralizer derived-group
 simple-connectedness theorem and the actual inner-type-A division-model
-construction. No algebra anti-equivalence is produced by this unit. The
+construction. No algebra anti-equivalence is produced by this module. The
 relative-Weyl-to-anti-equivalence bridge, the local E6/E7 exclusions and the
-full local rank-one Tits-index enumeration remain open.
+full local rank-one Tits-index enumeration are not part of this module; the
+exclusions are in `LocalRankOneE6Exclusion` and `LocalRankOneE7Exclusion`, and
+`localRankOneTitsIndex` in `LocalRankOneTitsIndexProof` proves the enumeration
+`LocalRankOneTitsIndexStatement`.

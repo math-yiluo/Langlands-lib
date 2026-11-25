@@ -1,7 +1,5 @@
 # Pullback on Ext-defined cohomology of abelian sheaves
 
-Author: Worker 217.
-
 This internal construction supplies the sheaf-cohomology map needed for naturality of square-zero Picard obstructions. It uses only Mathlib constructions and does not assert any comparison with Picard pullback or relative module cohomology.
 
 For a continuous map `f : X ⟶ Y` of topological spaces in universe `u`, let `P = TopCat.Sheaf.pullback AddCommGrpCat f` and `Q = TopCat.Sheaf.pushforward AddCommGrpCat f`. Mathlib's `Sheaf.H A n` is `Extⁿ(ℤ_Y, A)`, with the lifted integer constant sheaf and Ext universe `u`.

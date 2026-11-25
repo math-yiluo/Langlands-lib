@@ -1,7 +1,5 @@
 # Adjoint pinned charts with nontrivial geometric fibres
 
-Worker 632.
-
 This internal construction applies the proved étale local splitting
 theorem to the exact hypotheses of the affine adjoint Weil-restriction
 problem. The motivating source is Brian Conrad, *Reductive group

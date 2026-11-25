@@ -56,6 +56,7 @@ extension's ring of integers. Lemma C.5.3, printed p.705 / PDF p.736, states
 the desired special-fibre kernel properties. The explicit polynomial
 corepresentation and quotient proof here are internal derived constructions;
 they are not assertions that the book states this general bilinear theorem.
-This unit does not identify an arbitrary supplied apartment or root-depth
+This module does not identify an arbitrary supplied apartment or root-depth
 model, or compare its special fibre with this restriction. It does not prove
-the full root-depth kernel statement or invoke the host Proposition 8.4.15.
+the full root-depth kernel statement or invoke Proposition 8.4.15 of the book,
+the result this construction serves.

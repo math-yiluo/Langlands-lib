@@ -1,7 +1,5 @@
 # Rational points as centralizer points times the elementary subgroup
 
-Author: Worker 1757.
-
 Let `G` be a connected reductive group over a field `k` and `χ` a
 cocharacter of `G` defined over `k`. This module proves
 `G(k) = E · Z_G(χ)(k)` when the rational points of `G` are Zariski dense.
@@ -149,6 +147,6 @@ Choosing `χ` with `Z_G(χ) = Z(S)` for a maximal split torus `S` would give
 the classical `G(k) = Z(S)(k) · E`. That choice of cocharacter is not made
 or formalized here.
 
-This module belongs to the reduction half of the host task, the proof of
+This module belongs to the reduction half of the proof of
 `Langlands.GroupScheme.LocalKneserTitsStatement`. It proves neither that
 statement nor Prasad–Raghunathan's Theorem A.

@@ -1,7 +1,5 @@
 # Proof: spreading out a factorization from the local scheme at a point
 
-Worker 5600.
-
 `Langlands.AlgebraicGeometry.specStalkFactorizationSpreading :
 SpecStalkFactorizationSpreadingStatement.{u}` proves the Library statement
 `Langlands.AlgebraicGeometry.SpecStalkFactorizationSpreadingStatement` (module

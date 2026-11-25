@@ -1,7 +1,5 @@
 # The full cuspidal Jacquet module of a segment induction, split by a central element
 
-Author: Worker 964.
-
 Module `Langlands.Representation.Classification.SegmentFullJacquetSplitting`,
 namespace `Langlands.SegmentFullJacquet`. This is an internal helper for the proof
 of `Langlands.Classification.SegmentFullJacquetFormula`. Throughout,

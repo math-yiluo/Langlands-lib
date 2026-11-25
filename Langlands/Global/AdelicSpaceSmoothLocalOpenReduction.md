@@ -1,8 +1,7 @@
 # Local smooth openness and adelic factors of algebraic spaces
 
-Author: Worker 109.
-
-This is a derived reduction for Task 5254. It does not prove
+This is a derived reduction for Conrad's Theorem 5.9
+(`AdelicSpaceSpreadSmoothOpenStatement`). It does not prove
 `CompleteFieldSmoothSpacePointOpenStatement` or
 `AdelicSpaceSpreadSmoothOpenStatement`.
 
@@ -57,8 +56,9 @@ Both level and stage results retain the explicit hypothesis that the
 point maps of all but finitely many factors are surjective. In the
 function-field case they retain the nonempty initial set of places.
 
-The missing local smooth-openness theorem is tracked by Task 5359,
-`f1585194-c81c-4c5b-a346-e4e15f1a05ad`. Compatible arithmetic models,
-almost-all component surjectivity, source-stage coverage, open target
-stage maps and independence of models remain obligations of the adelic
-argument or its existing prerequisite tasks.
+The local smooth-openness theorem is `completeFieldSmoothSpacePointOpen`
+(module `AlgebraicGeometry.AlgebraicSpace.CompleteFieldSmoothPointOpenProof`).
+Compatible arithmetic models, almost-all component surjectivity, source-stage
+coverage, open target stage maps and independence of models are further
+inputs of the adelic argument, not supplied here; the adelic theorem itself is
+`adelicSpaceSpreadSmoothOpen` (module `AdelicSpaceSpreadSmoothOpenProof`).

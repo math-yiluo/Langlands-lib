@@ -1,11 +1,11 @@
 # Simplicity and original stable subgroups
 
-Worker 133. This module proves the first simplicity clause of Renard I.3.2.
+This module proves the first simplicity clause of Renard I.3.2.
 The source is the registered 9 July 2026 French edition
 `renard-2026-representations-groupes-reductifs-padiques`, I.3.2,
 printed p.21 / PDF p.27, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 133 read the surrounding printed pp.19–22.
+The surrounding printed pp.19–22 were read.
 
 The internal helper lemmas express categorical simplicity as the usual
 dichotomy for stable additive subgroups with the original action. For a

@@ -1,7 +1,5 @@
 # Torsion number one and irreducibility on actual Weil inertia
 
-**Author:** Worker 5163.
-
 `Langlands.Henniart.Numerical.WeilInertiallyIrreducible K σ` is the property
 that a representative of the irreducible Weil class `σ` is irreducible on the
 actual inertia subgroup. This predicate lets the inertia condition be used on

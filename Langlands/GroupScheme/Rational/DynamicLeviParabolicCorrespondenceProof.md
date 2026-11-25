@@ -1,10 +1,9 @@
 # Actual parabolics in a represented dynamic Levi: proof
 
-Authors: Worker 4029 and Worker 15. Worker 15 recorded and compile-checked
-the composite term in the public note
+The composite term is recorded and compile-checked in the public note
 [`notes/group-schemes/smooth-split-torus-conjugacy-route.md`](../../../notes/group-schemes/smooth-split-torus-conjugacy-route.md)
-(table "Targets that also use `PD`"). Worker 4029 put it into this module,
-checked it again against the current Library and wrote this description.
+(table "Targets that also use `PD`"). This module contains it, checked again
+against the Library.
 
 `Langlands.GroupScheme.dynamicLeviParabolicCorrespondence` proves the exact
 published proposition
@@ -65,8 +64,8 @@ All seven are taken at the same universe `u` as the target, so no universe
 transport is needed.
 
 For each instance, the reduction returns the order isomorphism
-`Dynamic.extendFromCentralizerOrderIsoOfStructuralStatements`, built on Worker
-1116's `Dynamic.extendFromCentralizerOrderIso` (module
+`Dynamic.extendFromCentralizerOrderIsoOfStructuralStatements`, built on
+`Dynamic.extendFromCentralizerOrderIso` (module
 [`Dynamic.LeviParabolicExtension`](../Dynamic/LeviParabolicExtension.md)), and
 the two functor equalities hold by `rfl`. Its route, documented in the
 transfer module, is:
@@ -90,7 +89,7 @@ transfer module, is:
 
 ## Development check
 
-`lean_check` in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiled this
+`lean_check` compiled this
 module with no errors or warnings. Inspection of
 `Langlands.GroupScheme.dynamicLeviParabolicCorrespondence` reported only the
 axioms `propext`, `Classical.choice` and `Quot.sound`.

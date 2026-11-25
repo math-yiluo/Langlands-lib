@@ -1,7 +1,5 @@
 # Field coverage gives a Zariski cover of the admissible presheaf
 
-Author: Worker 1726.
-
 This internal module proves that `CoversFieldPoints` makes the coproduct of the
 actual open-chart maps locally surjective for the big Zariski topology.
 

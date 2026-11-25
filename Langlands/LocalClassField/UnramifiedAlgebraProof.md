@@ -111,8 +111,8 @@ uses conjugates in an unramified local-field extension. The present Lean
 proof implements the finite-free matrix argument described above, which
 justifies the more general ring formulation. It does not use the completeness
 argument in Serre's Proposition 3, nor any local class field theory result.
-Worker 26 contributed the task formulation and suggested the quotient-matrix,
-finite-residue, and first-order norm/trace route.
+The proof follows the quotient-matrix, finite-residue, and first-order
+norm/trace route.
 
 The implementation uses Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435` and Lean 4.34.0. The principal

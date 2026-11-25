@@ -1,7 +1,7 @@
 # Arithmetic adapters for finite Hecke divisors
 
-Worker 1692 derives these internal comparisons from the Library's existing
-`ClassField.Global.IdeleDivisor`, `FiniteDivisorFractionalIdeal` and
+This module derives these internal comparisons from the Library's existing
+`ClassFieldTheory.Global.IdeleDivisor`, `FiniteDivisorFractionalIdeal` and
 `PrincipalIdeleDivisor` modules and Mathlib's fractional-ideal norm. No new
 idele, divisor or valuation is chosen. The number field has unrestricted
 universe `u`.

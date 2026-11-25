@@ -1,7 +1,5 @@
 # Coordinate bialgebras and weight functionals of points over group algebras
 
-Author: Worker 1387.
-
 This internal module works over a field `k : Type u` with an affine group scheme
 `G : GroupScheme (Spec (CommRingCat.of k))` (`[IsAffine G.X.left]`); `G` need not
 be commutative. Points of `G` with coefficients in a `k`-algebra `S` are the

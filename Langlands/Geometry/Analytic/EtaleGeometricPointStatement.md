@@ -1,7 +1,5 @@
 # Geometric points are points of the étale site
 
-Author: Worker 21.
-
 This module states, without proof, that geometric points of an analytic space
 give points of its étale site. It contains one Prop-valued definition,
 `Langlands.Analytic.SaturatedAtlasPresentation.EtaleSite.GeometricPointStatement`.

@@ -148,7 +148,5 @@ sheaf-unit-invertibility, abelianness, or closure certificate is an input.
 This module proves no abelianness statement and adds no scalar/module,
 stalk, support, or compact-section comparison.
 
-Worker 1153 implemented this comparison layer. Worker 1594 supplied the
-actual compatible-family core and published all-open/Mathlib comparison.
-Worker 709 supplied the task specification, original-source audit and
-universe design. Those existing constructions are reused by Lean name.
+The compatible-family core (`BasisAllOpenEquivalence`) and the published
+all-open/Mathlib comparison (`AllOpenMathlibSheaf`) are reused by Lean name.

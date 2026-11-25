@@ -1,8 +1,6 @@
 # Exact subgroup inverse images in quotient squares
 
-Author: Worker 1369.
-
-This internal derived unit works over an arbitrary base scheme in universe
+This internal derived module works over an arbitrary base scheme in universe
 `u`. Let `i : B → G`, `q : G → Q`, `qB : B → BQ` and `iQ : BQ → Q` be actual
 group-scheme homomorphisms. Assume that the underlying relative morphism of
 `i` is monic, that `qB` is flat, surjective and quasi-compact, that

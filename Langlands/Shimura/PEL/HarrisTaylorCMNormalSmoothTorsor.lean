@@ -145,8 +145,8 @@ section Identifications
     (hRigid : Rigid U.obj)
     (criterion : DominantUnramifiedEtaleStatement.{0})
     (g : SmallCMResidualGroup D U V) :
-    ((derivedTorsor R U V hVU existence geometry hRigid criterion).val.ρ g).left =
-      (quotientAction R U V hVU).ρ g := rfl
+    ((derivedTorsor R U V hVU existence geometry hRigid criterion).val.ρ g).asHom.left =
+      ((quotientAction R U V hVU).ρ g).asHom := rfl
 
 @[simp] theorem representedCMNormalFiniteEtaleAction_of_dominantCriterion_left
     (existence : RelativeDualSchemeExistenceStatement.{0})
@@ -170,8 +170,8 @@ section Identifications
     (hRigid : Rigid U.obj)
     (criterion : DominantUnramifiedEtaleStatement.{0})
     (g : SmallCMResidualGroup D U V) :
-    ((derivedFiniteAction R U V hVU existence geometry hRigid criterion).ρ g).hom.left =
-      (quotientAction R U V hVU).ρ g := rfl
+    ((derivedFiniteAction R U V hVU existence geometry hRigid criterion).ρ g).asHom.hom.left =
+      ((quotientAction R U V hVU).ρ g).asHom := rfl
 
 end Identifications
 
@@ -241,8 +241,8 @@ section ChosenIdentifications
     (hRigid : Rigid U.obj)
     (criterion : DominantUnramifiedEtaleStatement.{0})
     (g : SmallCMResidualGroup D U V) :
-    ((chosenDerivedTorsor existence geometry hRigid criterion).val.ρ g).left =
-      (chosenQuotientAction q).ρ g := rfl
+    ((chosenDerivedTorsor existence geometry hRigid criterion).val.ρ g).asHom.left =
+      ((chosenQuotientAction q).ρ g).asHom := rfl
 
 @[simp] theorem cmNormalFiniteEtaleAction_of_dominantCriterion_left
     (existence : RelativeDualSchemeExistenceStatement.{0})
@@ -266,8 +266,8 @@ section ChosenIdentifications
     (hRigid : Rigid U.obj)
     (criterion : DominantUnramifiedEtaleStatement.{0})
     (g : SmallCMResidualGroup D U V) :
-    ((chosenDerivedFiniteAction existence geometry hRigid criterion).ρ g).hom.left =
-      (chosenQuotientAction q).ρ g := rfl
+    ((chosenDerivedFiniteAction existence geometry hRigid criterion).ρ g).asHom.hom.left =
+      ((chosenQuotientAction q).ρ g).asHom := rfl
 
 end ChosenIdentifications
 

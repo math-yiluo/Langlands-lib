@@ -1,8 +1,6 @@
 # Inner correction preserving the diagonal split torus
 
-Author: Worker 239.
-
-This internal unit combines the actual all-test weight calculation,
+This internal module combines the actual all-test weight calculation,
 blockwise matrix Hilbert 90, and the coordinate-change construction. It
 starts from a local presentation `E : SL_(n+1) → G` over `Spec L`, a split
 commutative group scheme `S` over a field `K`, a homomorphism `f : S → G`,
@@ -36,6 +34,6 @@ on every test scheme.
 The proof is derived from the imported weight-line, coordinate-change,
 and block-descent results. The normalized inner cocycle is supplied;
 its construction from distinguished end vertices is available separately
-in `SpecialLinearTitsWeightLines`. This unit constructs no quadratic
+in `SpecialLinearTitsWeightLines`. This module constructs no quadratic
 field or Hermitian form and does not assert the final outer type A
 presentation.

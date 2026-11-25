@@ -1,6 +1,6 @@
 # The actual binary triangular special linear parabolic
 
-This internal unit proves that the existing upper-triangular determinant-one
+This auxiliary module proves that the existing upper-triangular determinant-one
 binary group inclusion is parabolic over every field, in arbitrary universe
 `u` and characteristic. `parabolicRepresentative` packages the actual inclusion
 and the proved `IsParabolicSubgroup` predicate.
@@ -28,4 +28,8 @@ The proof is derived from the published triangular Borel construction, all-test
 matrix descriptions, pullback adjunction, Yoneda, and Borel transport. It assumes
 no Borel base-change or parabolicity theorem. The opposite-root comparison,
 general local rank-one classification, and unrestricted local Kneser–Tits
-statement remain separate obligations.
+statement are not proved in this module. The Library proves the local rank-one
+classification as `localRankOneClassification` in
+`SimplyConnected.LocalRankOneClassificationProof`; it derives
+`LocalKneserTitsStatement` only from further inputs (for example
+`localKneserTits_of_rankOne_of_reduction`).

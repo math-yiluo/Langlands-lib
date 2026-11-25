@@ -33,6 +33,7 @@ nonzero-ring assumption on the original coefficient ring is used, and the proof
 does not require reductivity beyond what a caller may use to supply the stated
 hypotheses.
 
-The result supports comparison of cocharacter centralizers in Task 7200. It does
+The result supports the comparison of cocharacter centralizers in
+`RelativeLevi.SplitCentralizerComparison`, which imports this module. It does
 not by itself prove parabolic equality, canonical filtration overlap compatibility
 or the final descent theorem.

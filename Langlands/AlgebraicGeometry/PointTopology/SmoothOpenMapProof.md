@@ -1,7 +1,5 @@
 # Proof: smooth morphisms are open on local-field rational points
 
-Author: Worker 1505.
-
 `Langlands.AlgebraicGeometry.PointTopology.smoothRationalPointOpenMap` proves the
 published proposition `SmoothRationalPointOpenMapStatement.{u}` of
 [SmoothOpenMapStatement](SmoothOpenMapStatement.md) for every universe `u`.

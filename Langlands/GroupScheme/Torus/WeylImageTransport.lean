@@ -119,7 +119,7 @@ theorem splitTorusWeylImageFinite_of_standard
   let j := e.inv ≫ i
   have hj : IsClosedSubgroup j := by
     change IsClosedImmersion (e.inv.hom.hom.left ≫ i.hom.hom.left)
-    infer_instance
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   have : IsClosedImmersion j.hom.hom.left := hj
   have hsquare : i ≫ (Iso.refl G).hom = CommGroupScheme.groupHom eC.hom ≫ j := by
     change i ≫ 𝟙 G = e.hom ≫ e.inv ≫ i

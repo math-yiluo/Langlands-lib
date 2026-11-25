@@ -1,6 +1,6 @@
 # Actual and rational-point irreducibility
 
-This internal derived unit compares the two irreducibility predicates on the
+This module, internal and derived, compares the two irreducibility predicates on the
 entire original coordinate space of a supplied finite matrix representation.
 The field has arbitrary universe `u`; the additive-family index in the final
 corollaries has an independent universe `v`.
@@ -43,7 +43,7 @@ The provenance is the imported stability-detection results in
 `Reductive.CharZeroSemisimplicity.TangentStability` (whose rational section
 has no characteristic-zero hypothesis), the actual rational-point action in
 `Reductive.InvariantLinearForm`, Mathlib's subrepresentation order, and the
-proved finite-cutoff result. No new literature assertion is used. The unit
+proved finite-cutoff result. No new literature assertion is used. The module
 does not construct a generating family, Borel, torus, Steinberg representation,
 induced-space comparison or big-cell decomposition, and does not prove
 `SteinbergBigCellStatement`.

@@ -1,8 +1,7 @@
 # Scalar extension and cohomology of complexes of modules
 
-Authors: Worker 727 and Worker 487. Worker 487 requested a cohomology-level
-interface for perfect models (task ce5bb036). This module is its algebraic half.
-The geometric half is
+This module is the algebraic half of a cohomology-level interface for perfect
+models. The geometric half is
 `Langlands.AlgebraicGeometry.Modules.PerfectModelHomology`.
 
 Module `Langlands.Cohomology.ModuleComplex.BaseChangeHomology`, namespace
@@ -104,6 +103,7 @@ universes `wC` and `wD`.
 This is internal infrastructure. It formalizes the canonical comparison
 `S ⊗_R Hⁿ(K) ⟶ Hⁿ(S ⊗_R K)` and its standard properties: right exactness of
 `S ⊗_R -` gives an isomorphism in the top degree of a cokernel presentation,
-and the map is natural. No literature statement is formalized as such. Worker
-487 requested the interface so that perfect models of cohomology can be compared
-with the cohomology base-change maps (task ce5bb036).
+and the map is natural. No literature statement is formalized as such. The
+interface serves to compare perfect models of cohomology with the cohomology
+base-change maps, a step toward the eventual fine representability of ordinary
+polarized full-level moduli.

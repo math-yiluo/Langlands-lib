@@ -1,21 +1,19 @@
 # Renard VI.9.1–VI.9.3: uniform compression stabilization and the generalized Jacquet lemma
 
-Worker 709 wrote this note on 6 November 2026 against Library
+This note was written on 6 November 2026 against Library
 `63d0c9b9d2720e646aa7abb360a08988aee052bf`. It maps every printed assertion
 of VI.9.1, and the proof steps of VI.9.2 and VI.9.3, to the published Lean
 declarations that state or prove them. Where no declaration does, the note
 says so. It also records one source discrepancy, after (VI.9.1.2). It
-extends the VI.9.1 paragraph of Worker 6's
-[parabolic functors note](parabolic-functors-tempered-progress.md). That
+extends the VI.9.1 paragraph of the [parabolic functors note](parabolic-functors-tempered-progress.md). That
 paragraph describes the published statement pair and how it differs from
 the source, and this note does not repeat it.
 
-Seventeen published units carry the material. They are two statement units
-and fifteen definition units, listed under Receipts. Worker 709 is neither
-an author nor a coauthor of any of them. This note documents them and is
-not a review of them. The C.II statement `ActualLocalizationStabilityStatements`,
-cited once below, is by Workers 709 and 977. It is documented in the
-[C.II note](stable-quotients.md) and is not re-receipted here.
+Seventeen publications carry the material. They are two statement publications
+and fifteen definition publications, listed under "In the Library". This note
+documents them. The C.II statement `ActualLocalizationStabilityStatements`,
+cited once below, is documented in the
+[C.II note](stable-quotients.md) and is not listed again here.
 
 ## Source context
 
@@ -28,7 +26,7 @@ généralisé", is on printed pp.195–197 / PDF pp.201–203, and the proofs of
 its Remarks continue on printed p.198 / PDF p.204. VI.9.2, "Un cas
 particulier", is on printed pp.198–199 / PDF pp.204–205. VI.9.3, "Fin de la
 démonstration du lemme de Jacquet", is on printed p.200 / PDF p.206.
-Worker 709 read PDF pp.201–206 for this note.
+PDF pp.201–206 were read for this note.
 
 VI.9.1 fixes a parabolic `P = MN` with split component `A`, a smooth
 representation `(π, V)`, a compact open `K` with an Iwahori decomposition
@@ -141,14 +139,14 @@ surjective under the same hypotheses on `g`.
 
 | Assertion | Published declarations | Status |
 | --- | --- | --- |
-| (T) Theorem | `GeneralizedJacquetLemmaStatement`; `Langlands.Aubert.General.RationalPointFamily.generalizedJacquetLemma_of_uniformCompressionStabilization` in [GeneralizedJacquetReduction](../../Langlands/Representation/Exponents/GeneralizedJacquetReduction.md) | Stated for dynamic parabolics. Proved only conditionally: the reduction derives it from `UniformCompressionStabilizationStatement`. Proof task `cac6f709-2a1b-4eaa-a16d-63f2e40f3b29` is open |
+| (T) Theorem | `GeneralizedJacquetLemmaStatement`; `Langlands.Aubert.General.RationalPointFamily.generalizedJacquetLemma_of_uniformCompressionStabilization` in [GeneralizedJacquetReduction](../../Langlands/Representation/Exponents/GeneralizedJacquetReduction.md) | Stated for dynamic parabolics. Proved only conditionally: the reduction derives it from `UniformCompressionStabilizationStatement`. The Library has no unconditional proof |
 | (VI.9.1.1) | `mk_compressedAction_of_iwahoriContraction` (`m = 1`) in [IwahoriContractionAdmissibility](../../Langlands/Representation/Jacquet/IwahoriContractionAdmissibility.md); `mk_compressedAction_pow_of_iwahoriContraction` (all `m`) in [StationaryRangeLift](../../Langlands/Representation/Jacquet/StationaryRangeLift.md) | Proved, with no finiteness premise |
 | (VI.9.1.2) | none named | The inclusion follows directly from `mk_compressedAction_pow_of_iwahoriContraction`. The source's strictness sentence is a source discrepancy, not a result to formalize; see "Source discrepancy after (VI.9.1.2)" |
 | (VI.9.1.3), (VI.9.1.4), (VI.9.1.6) | `exists_pow_fixedJacquetMap_preimage_of_iwahoriContraction` (StationaryRangeLift); `fixedJacquetMap_power_exhaustion` and, for `g` central in `M`, `fixedJacquetCentralEquiv_power_exhaustion` in [CompressionLocalization](../../Langlands/Representation/Jacquet/CompressionLocalization.md) | Proved in the form of (VI.9.1.3): some power of `g` carries each fixed Jacquet vector into the image of `j`. The union form is not stated separately |
 | `a_{t^i,K} = (a_{t,K})^i` (V.5.3) | `IsIwahoriContraction.compressedAction_pow` (IwahoriContractionAdmissibility) | Proved for `g` |
 | (L1) first Lemma | `powerKernelSup_eq_ker_of_iwahoriContraction` (IwahoriContractionAdmissibility): `powerKernelSup = ker fixedJacquetMap` | Proved, with no centrality or finiteness premise |
 | (L2) second Lemma | `compressionJacquetLocalizationEquiv : Localized C ≃ₗ[ℂ] (V_N)^{K ∩ M}`, with `compressionJacquetLocalizationEquiv_iota` (composite with `iota C` is `fixedJacquetMap`) and `compressionJacquetLocalizationEquiv_intertwines` (`localizedEnd C` goes to `fixedJacquetCentralEquiv`, the action of `g`), in CompressionLocalization; generic `Langlands.Renard.EndomorphismLocalization.localizationEquivOfKernelExhaustion`; coefficient version `coefficientCompressionJacquetLocalizationEquiv` in [CompressionCoefficientLocalization](../../Langlands/Representation/Jacquet/CompressionCoefficientLocalization.md) | Constructed, for `g` central in `M`, with no finiteness premise. It uses the unnormalized Jacquet action. `Localized`, `iota` and `localizedEnd` are the A.III.1 localization of the [endomorphism-localization note](endomorphism-localization.md) |
-| (P) Proposition | `UniformCompressionStabilizationStatement` | Stated with `b` chosen after `χ`, `K` and `g`, not as `b(G, K)`. Unproved; proof task `47e556e6-6b2a-40dc-ba66-d6a0585f5220` is open. The reductions in the next table are proved |
+| (P) Proposition | `UniformCompressionStabilizationStatement` | Stated with `b` chosen after `χ`, `K` and `g`, not as `b(G, K)`. Unproved: the Library derives it only from further hypotheses, by `uniformCompressionStabilization_of_representationStatements` (`Langlands/Representation/Exponents/UniformCompressionRepresentationReduction.lean`). The reductions in the next table are proved |
 | (P-loc) second localization | none for `compressedAction` | **Not stated.** The C.II theorem `Langlands.Renard.EndomorphismLocalization.stablePowerImageStatement` in [RenardLocalizationStabilityProof](../../Langlands/Algebra/RenardLocalizationStabilityProof.md) gives, for any module endomorphism `a` and positive `n` with `ker (a ^ n) = ker ((a ^ n) ^ 2)` and `range (a ^ n) = range ((a ^ n) ^ 2)`, complementary `ker (a ^ n)` and `range (a ^ n)` and a unique intertwining `Localized a ≃ range (a ^ n)` whose inverse is `iota a` on the range. It is described in the [C.II note](stable-quotients.md). Its application to `compressedAction` is not published |
 | (P-bound) `b ≤ c(G, K)` | none | **Not stated** |
 | (T-end) end of the proof | Unconditional: `powerKernelSup_eq_ker_of_iwahoriContraction`. Conditional: `fixedJacquetMap_surjective_of_stationaryRanges` (stationary ranges), `stableImageJacquetMap_bijective_of_stationaryRanges` and `stationaryRangeJacquetEquiv : stableImage ≃ₗ[ℂ] (V_N)^{K ∩ M}` (stationary ranges and `CompactCompressionSplits`), in StationaryRangeLift; `fixedJacquetMap_surjective_of_splits`, `stableImageJacquetMap_bijective_of_splits`, `stableImageAction_bijective_of_splits` and `compactCompressionSplits_of_eventuallyStable` in [CompressionSplittingDuality](../../Langlands/Representation/Jacquet/CompressionSplittingDuality.md) | The kernel of `j` on `V^K` is `powerKernelSup`, unconditionally. The isomorphism from `stableImage` and the section are proved under the stated hypotheses, which the Proposition would supply. CompressionSplittingDuality obtains them from the contraction hypothesis and `CompactCompressionSplits` alone |
@@ -187,24 +185,22 @@ this is false under the hypotheses of VI.9.1. Put `W = (V_N)^{K_M}`.
 So the inclusion (VI.9.1.2) is an equality for every smooth
 representation. The sentence can only be read as a remark about the stage
 of the proof: at that point only the inclusion is available. The
-following derivation is Worker 709's and is not in the source. Given
+following derivation is the and is not in the source. Given
 (VI.9.1.4), equality in (VI.9.1.2) for `m = 1` already implies the
 Theorem. If `π_N(t) j(V^K) = j(V^K)`, then `π_N(t^{-m}) j(V^K) = j(V^K)`
 for every `m`, and (VI.9.1.4) gives `j(V^K) = W`. So the equality is as
 strong as the Theorem and cannot be used in its proof.
 
 The strictness sentence is therefore not a result to formalize, and it is
-not listed among the unpublished assertions below. Reviewer 16429
-identified this discrepancy in review `e1da1ee0-a35a-4eb1-b2e7-79d769bbcb3b`
-of an earlier version of this note. In the Lean model, `g` is central in
+not listed among the unpublished assertions below. In the Lean model, `g` is central in
 `M`, and `fixedJacquetCentralEquiv` in CompressionLocalization is the
 action of `g` as a linear automorphism `E` of the fixed Jacquet space.
 `fixedJacquetMap_intertwines_centralEquiv` gives `j(C x) = E(j x)` for
 `C = compressedAction`, which is the inclusion (VI.9.1.2) for `m = 1`.
 Since `E` is bijective, the equality `E(range j) = range j` would follow
-from `GeneralizedJacquetLemmaStatement`, which is unproved. Worker 709 has
-not checked this in Lean, and no published declaration states the
-equality.
+from `GeneralizedJacquetLemmaStatement`, which the Library proves only
+conditionally. This has not been checked in Lean, and no published
+declaration states the equality.
 
 ## Proof steps VI.9.2–VI.9.3
 
@@ -212,41 +208,32 @@ equality.
 | --- | --- | --- |
 | (S1) coefficient algebra | `Langlands.Plancherel.RationalNormalized.regularAlgebraLaurentEquiv`, `regularAlgebra_isNoetherianRing`, `regularAlgebra_finiteType`, `regularAlgebra_isDomain` in [UnramifiedRationalCoefficientAlgebra](../../Langlands/Representation/Plancherel/UnramifiedRationalCoefficientAlgebra.md) | Proved for the complete rational-norm algebra `RegularAlgebra r`. The VI.4.1 progenerator statements are listed below |
 | (S2) admissible `(G, F)`-module, (VI.9.2.1) | VI.8.1–VI.8.2 statements below | Proved for the universal normalized induced family. For a general `B`, the VI.8.1 admissibility criterion and specialization Lemma are stated and unproved, and induction of `(G, B)`-modules (VI.8.2) is not stated. See the [VI.8 assertion map](algebraic-families-progress.md) |
-| (S3) Jacquet module finite | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` in [UnramifiedRationalJacquetFinitenessStatement](../../Langlands/Representation/Plancherel/UnramifiedRationalJacquetFinitenessStatement.md) | Stated, unproved |
+| (S3) Jacquet module finite | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` in [UnramifiedRationalJacquetFinitenessStatement](../../Langlands/Representation/Plancherel/UnramifiedRationalJacquetFinitenessStatement.md) | Stated; proved as `rationalSupercuspidalJacquetFamilyFinite` (`Langlands/Representation/Plancherel/UnramifiedRationalJacquetFinitenessProof.lean`) |
 | (S4) finite stability, (VI.9.2.2) | `fixedJacquetMap_surjective_and_eventuallyStable_of_finite_coefficients` (CompressionCoefficientLocalization) over a Noetherian `R` with `V^K` and the target finite; `fixedJacquetMap_surjective_and_eventuallyStable_of_compatible_coefficients` in [CompatibleCoefficientActions](../../Langlands/Representation/Jacquet/CompatibleCoefficientActions.md); `CoefficientRestriction.compressedAction_eventuallyStable_of_native_finite` in [CoefficientScalarRestriction](../../Langlands/Representation/Jacquet/CoefficientScalarRestriction.md); `Langlands.Plancherel.UnramifiedNormalized.compressedAction_eventuallyStable_of_normalized_finite` and `normalizedJacquetFixedEquiv` in [UnramifiedCompressionCriterion](../../Langlands/Representation/Plancherel/UnramifiedCompressionCriterion.md) | Proved conditionally. The finiteness of `V^K` and of the normalized Jacquet fixed module over the coefficient algebra are hypotheses. The C.II input is `finiteActualLocalizationStatement`. No eventual-stability theorem for the universal family itself is published |
 | (S5) `b ≤ c(G, K)` | none | **Not stated** |
 | (S6) passage to quotients and sums | `compressedAction_stablePower_of_rightExact`, `compressedAction_pow_directSum`, `compressedAction_stablePower_directSum_iff`, `Langlands.fixedVectorsDirectSumEquiv`, and `Langlands.LinearAlgebra.StableEndomorphism.stable_of_equiv`, `stable_directSum` and `stable_directSum_iff`, in [StableCompressionPropagation](../../Langlands/Representation/Jacquet/StableCompressionPropagation.md) | Proved for a fixed exponent |
 | (S7) kernels and the decomposition | `compressedAction_stablePower_of_leftExact` (StableCompressionPropagation); `compressedAction_eventuallyStable_directSum_of_finite_support` and `FiniteFixedVectorSupport` in [CompressionFiniteSupport](../../Langlands/Representation/Jacquet/CompressionFiniteSupport.md); `Langlands.SmoothRep.HasFixedVectorConstituent`, `hasFixedVectorConstituent_of_nontrivial` and `finite_fixedVectorSupport_of_finite_constituent_classes` in [FixedVectorConstituent](../../Langlands/Representation/Category/FixedVectorConstituent.md); `Langlands.Aubert.General.FiniteInductionFixedVectorVisibility` and `finiteInductionFixedVectorVisibility` in [InductionCompactVisibility](../../Langlands/Representation/Aubert/General/InductionCompactVisibility.md); the VI.7.2 embedding statement below | Kernel passage proved. The direct-sum step is proved under finiteness of the set of summands with nonzero `K`-fixed vectors, together with stability of each summand. CompressionFiniteSupport calls this a derived alternative to Renard's uniform bound. The decomposition and embedding inputs are open |
 
-The Markdown of StableCompressionPropagation, CompatibleCoefficientActions,
-CoefficientScalarRestriction and UnramifiedCompressionCriterion names
-Worker 1755 as author, with interface and reuse guidance from Worker 1751.
-The Markdown of CompressionFiniteSupport names Worker 1751, using Worker
-1755's interface.
+## Prerequisite statements
 
-## Prerequisite statements and proof tasks
-
-Worker 709 updated this section against Library
+This section was updated against Library
 `f73044d93e675a78ed75830ef026b3224514e510`. At that commit the three VI.8
-statements and the VI.4.1 comparison statement are proved. No proof of the
-other statements in this section is published. The receipts of the four
-proofs are in the [VI.8 note](algebraic-families-progress.md).
+statements and the VI.4.1 comparison statement were proved, and no proof of
+the other statements in this section was published. The four proofs are
+recorded in the [VI.8 note](algebraic-families-progress.md). The last column
+gives the proof the Library has now.
 
-| Source input | Published statement (unit) | Statement task | Proof task |
-| --- | --- | --- | --- |
-| VI.8.1–VI.8.2 flatness and fixed-space finite projectivity of universal normalized induction | `Langlands.Plancherel.RationalNormalized.UniversalInducedCoefficientFinitenessStatement` in [UnramifiedRationalNormalizedInducedFiniteness](../../Langlands/Representation/Plancherel/UnramifiedRationalNormalizedInducedFiniteness.md), Worker 1761 (`4bbbe11b-5b49-40a3-9815-e2498e18a7e8`) | `e2884067-b19a-4685-91d9-e62316299fc3` | `edf79294-fb4f-4072-ad09-dfddf0a5c868`; proved by `c957a9bb-50b1-4f6d-b535-43592cbaa9c7` |
-| VI.8.1 universal tensor finiteness | `Langlands.Plancherel.RationalNormalized.RationalUniversalTensorFinitenessStatement` in [RationalUniversalTensorFinitenessStatement](../../Langlands/Representation/Plancherel/RationalUniversalTensorFinitenessStatement.md), Worker 1759 (`4c9fbac3-c131-450d-97dd-fc3653bfa0fa`) | `e2884067-b19a-4685-91d9-e62316299fc3` | none; proved by `40b11f3f-f58c-4dd5-bd3f-d444ab6aba1f` under the (S3) proof task `c1f3c743-2a62-415c-8640-714b9f6a27c4` |
-| VI.8.2 specialization, (VI.9.2.1) | `Langlands.Plancherel.RationalNormalized.RationalNormalizedInducedSpecializationStatement` in [RationalNormalizedInducedSpecializationStatement](../../Langlands/Representation/Plancherel/RationalNormalizedInducedSpecializationStatement.md), Worker 1759 (`f1e0aa3d-8a98-4791-805b-e989ee12f85a`) | `e2884067-b19a-4685-91d9-e62316299fc3` | `1f1a983d-e797-4c9c-984d-0657760c61c6`; proved by `d9e1f423-ca9d-4ef4-b77b-fad2889616c2` |
-| VI.9.2 Jacquet family finiteness, (S3) | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement`, Workers 1775 and 1780 (`189928cb-791b-4fb7-8f47-25bd9b45117a`) | `63bb431b-78f9-45c9-839c-0ba2153de95d` | `c1f3c743-2a62-415c-8640-714b9f6a27c4` |
-| VI.7.2 finite induced-cuspidal embedding, (S7) | `Langlands.Aubert.General.RationalPointFamily.RationalCuspidalInducedEmbeddingStatement` in [RationalCuspidalInducedEmbeddingStatement](../../Langlands/Representation/CuspidalSupport/RationalCuspidalInducedEmbeddingStatement.md), Worker 1751 (`0b91ec1f-fec4-433b-aabf-8fe57cc79af0`, published under proof task `47e556e6`) | none | `198824c2-4e2f-40c1-94a0-07fa748bede9` |
-| VI.4.1 progenerator, (S1) | `Langlands.CuspidalSupport.RationalUniversalProgeneratorComparisonStatement` in [RationalUniversalProgeneratorComparisonStatement](../../Langlands/Representation/CuspidalSupport/RationalUniversalProgeneratorComparisonStatement.md) (`63d570a0-eb69-4f06-a94e-6b18ecdd4d95`) and `Langlands.CuspidalSupport.RationalUniversalSmallProgeneratorStatement` in [RationalUniversalSmallProgeneratorStatement](../../Langlands/Representation/CuspidalSupport/RationalUniversalSmallProgeneratorStatement.md) (`c4ad87ce-810c-43ea-bdf7-db36fc9bf55d`) | `3e43c59a-2f05-433e-a739-54f50fcea0d3` | `0bb65e53-06b7-4274-92ba-fee1666298eb`, whose comparison proof `700fc1f0-b6e7-41c8-98da-cb2203be406f` is published, and `0ba788d6-b9d9-4a76-a017-972f8cad288f` |
+| Source input | Published statement | Proof in the Library |
+| --- | --- | --- |
+| VI.8.1–VI.8.2 flatness and fixed-space finite projectivity of universal normalized induction | `Langlands.Plancherel.RationalNormalized.UniversalInducedCoefficientFinitenessStatement` in [UnramifiedRationalNormalizedInducedFiniteness](../../Langlands/Representation/Plancherel/UnramifiedRationalNormalizedInducedFiniteness.md) | proved: `universalInducedCoefficientFiniteness` (`Langlands/Representation/Plancherel/UnramifiedRationalNormalizedInducedFinitenessProof.lean`) |
+| VI.8.1 universal tensor finiteness | `Langlands.Plancherel.RationalNormalized.RationalUniversalTensorFinitenessStatement` in [RationalUniversalTensorFinitenessStatement](../../Langlands/Representation/Plancherel/RationalUniversalTensorFinitenessStatement.md) | proved: `rationalUniversalTensorFiniteness` (`Langlands/Representation/Plancherel/RationalUniversalTensorFinitenessProof.lean`) |
+| VI.8.2 specialization, (VI.9.2.1) | `Langlands.Plancherel.RationalNormalized.RationalNormalizedInducedSpecializationStatement` in [RationalNormalizedInducedSpecializationStatement](../../Langlands/Representation/Plancherel/RationalNormalizedInducedSpecializationStatement.md) | proved: `rationalNormalizedInducedSpecialization` (`Langlands/Representation/Plancherel/RationalNormalizedInducedSpecializationProof.lean`) |
+| VI.9.2 Jacquet family finiteness, (S3) | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` | proved: `rationalSupercuspidalJacquetFamilyFinite` (`Langlands/Representation/Plancherel/UnramifiedRationalJacquetFinitenessProof.lean`) |
+| VI.7.2 finite induced-cuspidal embedding, (S7) | `Langlands.Aubert.General.RationalPointFamily.RationalCuspidalInducedEmbeddingStatement` in [RationalCuspidalInducedEmbeddingStatement](../../Langlands/Representation/CuspidalSupport/RationalCuspidalInducedEmbeddingStatement.md) | not proved; derived from further hypotheses by `rationalCuspidalInducedEmbedding_of_leviJacquetSplittings` (`Langlands/Representation/CuspidalSupport/RationalFiniteCuspidalEmbeddingReduction.lean`) |
+| VI.4.1 progenerator, (S1) | `Langlands.CuspidalSupport.RationalUniversalProgeneratorComparisonStatement` in [RationalUniversalProgeneratorComparisonStatement](../../Langlands/Representation/CuspidalSupport/RationalUniversalProgeneratorComparisonStatement.md) and `Langlands.CuspidalSupport.RationalUniversalSmallProgeneratorStatement` in [RationalUniversalSmallProgeneratorStatement](../../Langlands/Representation/CuspidalSupport/RationalUniversalSmallProgeneratorStatement.md) | comparison statement proved: `rationalUniversalProgeneratorComparison` (`Langlands/Representation/CuspidalSupport/RationalUniversalProgeneratorComparisonProof.lean`); small-progenerator statement not proved, derived from further hypotheses by `rationalUniversalSmallProgenerator_of_specialVertexInputs_of_restriction` (`Langlands/Representation/CuspidalSupport/RationalUniversalSmallProgeneratorSpecialVertexReduction.lean`) |
 
 Further inputs to (S7) are the compact-level cuspidal inertia finiteness of
-VI.3.4, proof task `61b5cb94-c808-4499-9efb-ec1ae6c0cecb`, and the inertial
-cuspidal data and Bernstein blocks of VI.7.1–VI.7.2, definition task
-`b0b200c0-5960-4909-a733-0bcbcc0f0dde`, which was done on 6 November.
-Staged candidates of these tasks and of the proof tasks `47e556e6` and
-`cac6f709` are not cited here.
+VI.3.4 and the inertial cuspidal data and Bernstein blocks of VI.7.1–VI.7.2.
 
 ## Unpublished assertions
 
@@ -267,78 +254,52 @@ At Library `63d0c9b9` these printed assertions have no published statement:
 The strictness sentence after (VI.9.1.2) is omitted from this list: it is
 the source discrepancy recorded above, not an assertion to formalize.
 
-Worker 709 has not checked the following route in Lean; it is a
+The following route has not been checked in Lean; it is a
 suggestion only. Given the Proposition's conclusion at a fixed
 representation, `Stable (C ^ n)` holds for `n = max b 1`. Then
 `stablePowerImageStatement` at `n` would give (P-loc), because the
 Proposition also identifies `range (C ^ n)` with `stableImage`.
 
-## Receipts
+## In the Library
 
-All seventeen units are accepted and published. Each independent reviewer
-approves without qualifications, and no author qualification is recorded.
-Submitter and coauthors come from the review-task bindings.
+All seventeen publications are in the Library.
 
-| Unit | Accepted artifact | Submitted by; coauthors | Reviewer | Publication commit |
-| --- | --- | --- | --- | --- |
-| VI.9.1 statements (`UniformCompressionStabilizationStatement`) | `bb2fbd21-111b-4b02-8f0e-9e2d1a35f3c1` | Worker 1587; Worker 937 | Reviewer 15654 | `86cf8f8984679ba48ded6fa152c55ec38b532d97` |
-| Stationary-range lift and Theorem reduction (`stationaryRangeJacquetEquiv`) | `a8d8276b-c48b-477a-a480-5dc005405185` | Worker 1587; Worker 834 | Reviewer 15906 | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
-| Pointwise reduction (`PointwiseCompressionStabilizationStatement`) | `49af884f-e10c-438d-a4cc-57a6a212072b` | Worker 1751 | Reviewer 15995 | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
-| Coefficient localization (`coefficientCompressionJacquetLocalizationEquiv`) | `7eca911d-0eb2-4f81-8464-d49e4dab0dc2` | Worker 1755; Worker 1751 | Reviewer 16008 | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
-| Uniformity (`UniformCompressionStationary`) | `51e943df-6948-4108-b4fd-b3044b55a9bb` | Worker 1751 | Reviewer 15967 | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
-| Stable powers (`CompactCompressionStationaryFrom`) | `99ff320b-831f-46c4-95d2-9f9763a0cbec` | Worker 1751 | Reviewer 15909 | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
-| Propagation (`fixedVectorsDirectSumEquiv`) | `e54d97a0-ce6f-46b6-bed9-376cc0f78712` | Worker 1755; Worker 1751 | Reviewer 16035 | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
-| Second Lemma (`compressionJacquetLocalizationEquiv`) | `b90ccca6-8937-4875-99a4-14e89e841570` | Worker 1755; Worker 1751 | Reviewer 15983 | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
-| Normalized criterion (`normalizedJacquetFixedEquiv`) | `677b4adb-48d9-4626-b2d0-15911a7812af` | Worker 1755; Worker 1751 | Reviewer 16118 | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
-| Coefficient algebra (`regularAlgebraLaurentEquiv`) | `28559051-813c-4e20-b2e0-a1b0189287d3` | Worker 1755 | Reviewer 16236 | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
-| Scalar restriction (`CoefficientRestriction.coinvariantsEquiv`) | `ae095ee8-2aa1-4eb1-a4de-138938a1796f` | Worker 1755; Worker 1751 | Reviewer 16093 | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
-| Compatible coefficients (`coefficientRelations`) | `d8ba1ab4-8c00-4a0b-8df4-9d2f9f6e97d0` | Worker 1755; Worker 1751 | Reviewer 16064 | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
-| Finite support (`FiniteFixedVectorSupport`) | `b7527e7b-7d97-4a63-8336-98fc66154651` | Worker 1751; Worker 1755 | Reviewer 16067 | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
-| Fixed-vector constituent (`SmoothRep.HasFixedVectorConstituent`) | `d70fd4f7-f3af-4132-b967-7ee58ef98976` | Worker 1751 | Reviewer 16090 | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
-| Induction visibility (`FiniteInductionFixedVectorVisibility`) | `939215b9-9d44-4f43-86f1-c39471af742f` | Worker 1751 | Reviewer 16222 | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
-| VI.7.2 embedding statement (`RationalCuspidalInducedEmbeddingStatement`) | `0b91ec1f-fec4-433b-aabf-8fe57cc79af0` | Worker 1751 | Reviewer 16041 | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
-| Splitting duality (`contragredientNormalizedJacquetIsoOfSplits`) | `2870987f-0042-46f0-b35f-8e9c36fc206c` | Worker 937 | Reviewer 15722 | `8b3ba080b2e8bcecb1612373f236b9ad96423d12` |
+| Publication | First appeared at Library commit |
+| --- | --- |
+| VI.9.1 statements (`UniformCompressionStabilizationStatement`) | `86cf8f8984679ba48ded6fa152c55ec38b532d97` |
+| Stationary-range lift and Theorem reduction (`stationaryRangeJacquetEquiv`) | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
+| Pointwise reduction (`PointwiseCompressionStabilizationStatement`) | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
+| Coefficient localization (`coefficientCompressionJacquetLocalizationEquiv`) | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
+| Uniformity (`UniformCompressionStationary`) | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
+| Stable powers (`CompactCompressionStationaryFrom`) | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
+| Propagation (`fixedVectorsDirectSumEquiv`) | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
+| Second Lemma (`compressionJacquetLocalizationEquiv`) | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
+| Normalized criterion (`normalizedJacquetFixedEquiv`) | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
+| Coefficient algebra (`regularAlgebraLaurentEquiv`) | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
+| Scalar restriction (`CoefficientRestriction.coinvariantsEquiv`) | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
+| Compatible coefficients (`coefficientRelations`) | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
+| Finite support (`FiniteFixedVectorSupport`) | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
+| Fixed-vector constituent (`SmoothRep.HasFixedVectorConstituent`) | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
+| Induction visibility (`FiniteInductionFixedVectorVisibility`) | `80f702330eab13242c1eb52eee2757a5d07eb1ba` |
+| VI.7.2 embedding statement (`RationalCuspidalInducedEmbeddingStatement`) | `1eb9a9ee0815224a368f8dc58b7d95f024cfff05` |
+| Splitting duality (`contragredientNormalizedJacquetIsoOfSplits`) | `8b3ba080b2e8bcecb1612373f236b9ad96423d12` |
 
-The unit `a8d8276b` carries both StationaryRangeLift and
-GeneralizedJacquetReduction. The unit `2870987f` has entry module
+The stationary-range lift and Theorem reduction publication carries both
+StationaryRangeLift and GeneralizedJacquetReduction. The splitting-duality
+publication has entry module
 [IwahoriNaturalJacquetDuality](../../Langlands/Representation/Aubert/General/IwahoriNaturalJacquetDuality.md)
-and carries CompressionSplittingDuality. The Markdown of
-CompressionSplittingDuality names no author. The Markdown of
-IwahoriNaturalJacquetDuality names Worker 1004 as author, with
-contributions by Workers 127 and 937.
+and carries CompressionSplittingDuality.
 
-| Unit | Host task | Review task | Machine receipt (policy) | Integration |
-| --- | --- | --- | --- | --- |
-| `bb2fbd21` | `f0a4d6b4-8a85-4ce9-972d-7e4958be7bb2` | `1f264052-ec57-45d5-ba3e-696511ec088e` | `e769e587-4d50-41ad-b8a9-40fcebccd4dc` (`lean.statement@1`) | `3b3933d000d2439593e90bcd705f4fa9` |
-| `a8d8276b` | `cac6f709-2a1b-4eaa-a16d-63f2e40f3b29` | `8aa2e6e3-a520-4d85-9eca-553bf5d91529` | `979cbfa1-209c-40e0-840d-f8ac37199e02` (`lean.definition@1`) | `cdd40c5f06c04d82b6fa02c302bc84af` |
-| `49af884f` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `ba358bc5-527c-42fd-aa94-fd48c009b5cb` | `2254f885-44b4-4e8c-a7bf-f77fe605133f` (`lean.definition@1`) | `008a08d7d7674b6ebe64899f6b85f423` |
-| `7eca911d` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `2d0739c8-6c0e-47c0-ba57-a2acea16823c` | `67392c3d-4320-4d5a-8d6d-4424b4052c1d` (`lean.definition@1`) | `f49c986100b344f1b409e2e4eb70b452` |
-| `51e943df` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `75c6040f-b94a-49ae-bb1d-dd761da7f4c7` | `f9d0c0b5-bb25-4350-a28c-58295ffca1de` (`lean.definition@1`) | `ff2a1bbb78d34cd396dcb738c7f04bbe` |
-| `99ff320b` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `dac5a0cb-d618-4071-8e5c-bed9e275b719` | `42d8511f-f572-44c8-aad2-dbbf331f99d3` (`lean.definition@1`) | `7abdcff61f2f41faaecaaec4bb893007` |
-| `e54d97a0` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `494d6844-b26a-46ec-9046-3f557037fa18` | `be70eeac-83d9-4438-a8af-066a5a87e8bd` (`lean.definition@1`) | `72da23584c8748d7b57d60e48f58d4ff` |
-| `b90ccca6` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `cbb7fecb-098e-415d-9d67-996b5e8fbafe` | `f0a0bc34-7fa9-4989-b504-402cef15484c` (`lean.definition@1`) | `870e9b70c9c14047929ee0e1b0efe2c6` |
-| `677b4adb` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `5d96fd2c-65b4-47c6-9dc7-9fb31b0b4af4` | `3ef83454-e70c-4fc0-bf1c-ee1e405db7a0` (`lean.definition@1`) | `84d3bd273b02437a9f4c448778e0c483` |
-| `28559051` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `b6d6a6c7-22ed-436a-afdf-7614c4a6d911` | `22cac98e-46f5-4456-9899-cccf3815041a` (`lean.definition@1`) | `d98adac08cdb4d9b9994929b35621a58` |
-| `ae095ee8` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `a59b3294-a3ad-4f66-8282-e36045b2b681` | `0da9020e-b24a-4e2c-beea-d093fd652ff0` (`lean.definition@1`) | `672f6636b63b48dfad0b65b347c4e549` |
-| `d8ba1ab4` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `711cc9b7-bc68-4afd-80ff-8ea07fc1d615` | `76038249-35bd-47ad-b363-0fd680aef0f8` (`lean.definition@1`) | `1fbab2e22b074612951cb4c76fe80237` |
-| `b7527e7b` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `939a8eaf-92f6-4469-a6ca-cd0a27284218` | `629b447a-c4a8-4fcf-accd-ccc26feca14b` (`lean.definition@1`) | `77d73d6595d546b9bccc4f7f882b7efd` |
-| `d70fd4f7` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `e6121a53-e9e3-433e-b653-82e4c8ec4320` | `0873633a-6a2d-4666-9b1e-106f2425ace5` (`lean.definition@1`) | `b7dbace46b7b41bcad700859e7aa949f` |
-| `939215b9` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `70f43316-56bc-4aa2-b53f-612342a85bef` | `d2286e47-2cb8-4865-8743-10b22ff941e1` (`lean.definition@1`) | `320522509fbe478f890d51beee9a0788` |
-| `0b91ec1f` | `47e556e6-6b2a-40dc-ba66-d6a0585f5220` | `3ad79651-8aa7-4e84-a6a4-06bbc9871a96` | `6206ad62-1f13-4779-a3ac-58b6f00a8b0e` (`lean.statement@1`) | `4a484365a69149afb0f088e927ac9d5a` |
-| `2870987f` | `c0fa1878-6cee-4435-8484-2fc15ea04a17` | `9a633515-0555-48bf-822a-052fd5b41546` | `babcef6e-1a0b-459c-90ee-a5d96cc9aef7` (`lean.definition@1`) | `fad079c6835443b3928edc18fbb459f0` |
+Each publication was checked by a fresh Lake build of the Library with it. The
+build checks compilation, not mathematical fidelity.
 
-Each machine receipt is accepted. Each publication record gives the
-validation method `lake-build`, a successful fresh integrated build and the
-scope `source-compilation-only`. The build does not check mathematical
-fidelity, which the independent review covers.
+The Lean and Markdown files of the nineteen modules below were checked at
+Library `63d0c9b9`. Each equals its copy in every publication, as first checked,
+that contains it, with one exception: the coefficient-localization and
+second-Lemma publications contained an earlier StableCompressionPropagation pair,
+which the propagation publication superseded.
 
-Worker 709 checked the Lean and Markdown files of the nineteen modules
-below at Library `63d0c9b9` and in the workspace. Each equals its copy in
-every frozen bundle of these units that contains it, with one exception.
-The bundles of `7eca911d` and `b90ccca6` also froze an earlier
-StableCompressionPropagation pair, which `e54d97a0` superseded.
-
-| File under `Langlands/Representation/` | SHA256 at Library `63d0c9b9` and in the workspace |
+| File under `Langlands/Representation/` | SHA256 at Library `63d0c9b9` |
 | --- | --- |
 | `Exponents/UniformCompressionStabilizationStatement.lean` | `f326323a374173794c5dfda7dbf0003505410b9fcf6577cbb8ffb962a79dad8f` |
 | `Exponents/UniformCompressionStabilizationStatement.md` | `61f7fd8af518824e729ca5a0fae16d93567eea16a62cadd8559c789e063f7162` |
@@ -383,6 +344,4 @@ StableCompressionPropagation pair, which `e54d97a0` superseded.
 
 This note covers VI.9.1–VI.9.3 only. VI.9.4–VI.9.7, including the VI.9.6
 second-adjointness statements described in the parabolic functors note, are
-outside it. The listed proof tasks and the unpublished assertions remain
-with their owners and with the whole-book parent task. This note declares
-no section, chapter or book completion.
+outside it. This note declares no section, chapter or book completion.

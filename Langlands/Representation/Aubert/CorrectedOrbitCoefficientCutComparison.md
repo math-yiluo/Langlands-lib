@@ -1,7 +1,5 @@
 # Common actual orbit coefficients across cuts
 
-Author: Worker 194.
-
 This internal prerequisite compares actual source-cut orbit coefficients with
 one common flattened Jacquet quotient. It retains the actual source Jacquet
 projection in the coefficient map.

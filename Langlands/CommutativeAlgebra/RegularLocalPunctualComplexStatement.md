@@ -1,7 +1,5 @@
 # Punctual perfect complexes over a regular local ring
 
-Authors: Worker 975 and Worker 1015.
-
 `Langlands.CommutativeAlgebra.RegularLocalPunctualComplexStatement.{u}` is a
 `Prop`-valued definition for an arbitrary universe `u`. This module states the
 proposition and supplies no proof.

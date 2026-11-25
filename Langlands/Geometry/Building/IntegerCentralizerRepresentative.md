@@ -1,6 +1,6 @@
 # Independence of integer-valued V 6 from the centralizer representative
 
-Worker 312. This is derived content for the Library's actual centralizer functor
+This is derived content for the Library's actual centralizer functor
 and its integer-valued V 6 interface. It has no valuation-topology assumption.
 
 `IntegerValuation.IsCentralizerCompatible.changeCentralizer` transfers full V 6

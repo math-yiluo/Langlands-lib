@@ -160,6 +160,7 @@ theorem hOneVanishes_of_isFormallyVersalAt (hπ : Function.Surjective (algebraMa
   simp only [LinearMap.add_apply, LinearMap.comp_apply, deltaMap_apply, LinearMap.zero_apply]
   apply hιinj
   rw [map_add, map_zero, ← hD'' (jQ x), hδ'' (jQ x)]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   have h1 : (χ'.comp (IsScalarTower.toAlgHom R P A₀)) (jQ x) = 0 := by
     change χ' (algebraMap P A₀ (jQ x)) = 0
     rw [hjQ0 x, map_zero]

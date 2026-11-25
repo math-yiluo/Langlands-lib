@@ -17,7 +17,7 @@ set_option maxHeartbeats 800000
 
 namespace Langlands.GroupScheme.AffinePinnedModel
 
-local instance (P : AffinePinnedModel.{u}) (B : Type u)
+private local instance (P : AffinePinnedModel.{u}) (B : Type u)
     [CommRing B] [Algebra P.ring B] :
     IsAffineHom (P.groupOver (algebraBaseMap P.ring B)).X.hom :=
   inferInstanceAs (IsAffineHom (pullback.snd P.group.X.hom (algebraBaseMap P.ring B)))
@@ -37,6 +37,7 @@ variable (M N : AffinePinnedModel.{u}) (A : Type u) [CommRing A]
       splitTorus.exponentCharacter (Spec (CommRingCat.of A)) N.coordinates
         (N.rootDatum.root (σ s)))
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 include hτ hχ in
 /-- Actual scalar-extended chosen pinning vectors have unique unit
 discrepancies under a supplied torus- and simple-character-aligned comparison. -/
@@ -56,6 +57,7 @@ vectors on the common coefficient ring. -/
 def pinningUnitDiscrepancies : M.basis.support → Aˣ :=
   (existsUnique_pinning_units M N A τ Φ hτ σ hχ).choose
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 theorem pinningUnitDiscrepancies_spec (s : M.basis.support) :
     Lie.targetMapLinear Φ.hom A
         (M.scalarWeightTrivialization A (M.rootDatum.root s) (M.pinning s) 1).val =
@@ -63,6 +65,7 @@ theorem pinningUnitDiscrepancies_spec (s : M.basis.support) :
         (N.scalarWeightTrivialization A (N.rootDatum.root (σ s)) (N.pinning (σ s)) 1).val :=
   (existsUnique_pinning_units M N A τ Φ hτ σ hχ).choose_spec.1 s
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- A supplied target torus section with the inverse simple-root values
 corrects the chosen actual pinning vectors. -/
 theorem correct_pinning_units
@@ -88,6 +91,7 @@ theorem correct_pinning_units
     (M.scalarWeightTrivialization A (M.rootDatum.root s) (M.pinning s) 1).val
     (N.scalarWeightTrivialization A (N.rootDatum.root (σ s)) (N.pinning (σ s)) 1) (c s) (hc s) t (ht s)
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- The corrected differential equation is an equality of the actual
 dual-number pinning points of the original models on the coefficient test. -/
 theorem correct_rootVectorPoint

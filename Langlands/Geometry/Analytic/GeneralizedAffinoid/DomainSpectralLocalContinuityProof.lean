@@ -3,7 +3,8 @@ import Langlands.Geometry.Analytic.Spectrum.SpectralJointContinuityProof
 
 /-! # Local spectral continuity for full represented affinoid domains
 
-The displacement proof adapts Worker 730's strict local continuity proof.
+The displacement proof adapts the strict local continuity proof of
+`StrictTestDomain.SpectralLocalContinuityProof`.
 Joint continuity uses the published general spectral pullback theorem.
 -/
 
@@ -30,21 +31,21 @@ automorphisms, before specializing to an actual rational quotient. -/
 private theorem spectral_displacement_all
     (hσ : ∀ (b : A) (ε : ℝ), 0 < ε →
       ∀ᶠ g in 𝓝 (1 : H),
-        BanachSpectrum.SpectralBound ((σ g).hom.toAlgHom b - b) ε)
+        BanachSpectrum.SpectralBound ((σ g).asIso.hom.toAlgHom b - b) ε)
     (b : A) (g₀ : H) (ε : ℝ) (hε : 0 < ε) :
     ∀ᶠ g in 𝓝 g₀,
       BanachSpectrum.SpectralBound
-        ((σ g).hom.toAlgHom b - (σ g₀).hom.toAlgHom b) ε := by
+        ((σ g).asIso.hom.toAlgHom b - (σ g₀).asIso.hom.toAlgHom b) ε := by
   have ht : Tendsto (fun g : H => g₀⁻¹ * g) (𝓝 g₀) (𝓝 1) := by
     simpa only [inv_mul_cancel] using (continuous_const_mul g₀⁻¹).tendsto g₀
   filter_upwards [ht (hσ b ε hε)] with g hg
-  have hm := hg.map (σ g₀).hom.toBoundedRingHom
-  have heq : (σ g₀).hom.toAlgHom ((σ (g₀⁻¹ * g)).hom.toAlgHom b) =
-      (σ g).hom.toAlgHom b := by
-    change ((σ g₀) * (σ (g₀⁻¹ * g))).hom.toAlgHom b = _
+  have hm := hg.map (σ g₀).asIso.hom.toBoundedRingHom
+  have heq : (σ g₀).asIso.hom.toAlgHom ((σ (g₀⁻¹ * g)).asIso.hom.toAlgHom b) =
+      (σ g).asIso.hom.toAlgHom b := by
+    change ((σ g₀) * (σ (g₀⁻¹ * g))).asIso.hom.toAlgHom b = _
     rw [← map_mul, mul_inv_cancel_left]
   change BanachSpectrum.SpectralBound
-    ((σ g₀).hom.toAlgHom ((σ (g₀⁻¹ * g)).hom.toAlgHom b - b)) ε at hm
+    ((σ g₀).asIso.hom.toAlgHom ((σ (g₀⁻¹ * g)).asIso.hom.toAlgHom b - b)) ε at hm
   rw [map_sub, heq] at hm
   exact hm
 
@@ -60,7 +61,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 /-- A positive single-section test gives uniform spectral displacement at one. -/
 theorem eventually_spectralBound_one (b : d.algebra) (ε : ℝ) (hε : 0 < ε) :
     ∀ᶠ g in 𝓝 (1 : ρ.locusOpenSubgroup d),
-      BanachSpectrum.SpectralBound ((ρ.sectionAction d g).hom.toAlgHom b - b) ε := by
+      BanachSpectrum.SpectralBound ((ρ.sectionAction d g).asIso.hom.toAlgHom b - b) ε := by
   have hc : Continuous (fun g : ρ.locusOpenSubgroup d =>
       ρ.toMonoidHom (g : G)) :=
     ρ.continuous_toMonoidHom.comp continuous_subtype_val
@@ -88,10 +89,10 @@ theorem domainSpectralLocalContinuity :
     (ρ.eventually_spectralBound_one d)
   have hcomap := BanachSpectrum.spectralParametricPullbackContinuity
     d.algebra d.algebra (ρ.locusOpenSubgroup d)
-    (fun g => (ρ.sectionAction d g).hom.toBoundedRingHom) hbound
+    (fun g => (ρ.sectionAction d g).asIso.hom.toBoundedRingHom) hbound
   have heval : ∀ b : d.algebra,
       Continuous (fun p : ρ.locusOpenSubgroup d × BanachSpectrum d.algebra =>
-        p.2 ((ρ.sectionAction d p.1).hom.toAlgHom b)) :=
+        p.2 ((ρ.sectionAction d p.1).asIso.hom.toAlgHom b)) :=
     fun b => (BanachSpectrum.evaluation b).continuous.comp hcomap
   refine ⟨hbound, heval, ?_⟩
   apply continuous_induced_rng.mpr
@@ -100,8 +101,8 @@ theorem domainSpectralLocalContinuity :
   have h := (heval b).comp (continuous_fst.inv.prodMk continuous_snd)
   apply h.congr
   intro p
-  change p.2 ((ρ.sectionAction d (p.1⁻¹)).hom.toAlgHom b) =
-    p.2 ((ρ.sectionAction d p.1).inv.toAlgHom b)
+  change p.2 ((ρ.sectionAction d (p.1⁻¹)).asIso.hom.toAlgHom b) =
+    p.2 ((ρ.sectionAction d p.1).asIso.inv.toAlgHom b)
   rw [map_inv]
   rfl
 

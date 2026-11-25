@@ -1,7 +1,5 @@
 # Arbitrary tori are central in nilpotent groups
 
-Author: Worker 1487.
-
 This internal construction concerns any smooth connected affine group scheme
 with the existing geometric nilpotence predicate, over an arbitrary field in
 universe `u`. Every homomorphism from a torus is central on every relative test

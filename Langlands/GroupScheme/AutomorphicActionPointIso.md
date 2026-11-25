@@ -1,7 +1,5 @@
 # Evaluation of an automorphic action at a base point
 
-Author: Worker 1467.
-
 This internal construction follows from the published all-test point action,
 constant-point naturality, and Yoneda realization of natural point equivalences.
 It introduces no external-source claim.

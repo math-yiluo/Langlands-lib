@@ -1,7 +1,8 @@
 # Conditional reduction for unramified root-filtration boundedness
 
-Worker 312. This is a derived reduction for Task 6433. It retains two explicit
-unproved inputs: `HenselianDiscreteQuasiSplitStatement` and
+This is a derived reduction for the algebraic boundedness of depth-zero root
+filtrations over the maximal unramified field. It retains two explicit inputs,
+not proved here: `HenselianDiscreteQuasiSplitStatement` and
 `QuasiSplitIntegerBoundedApartmentExistenceStatement`. It does not prove the
 unconditional `MaximalUnramified.ZeroRootFiltrationBoundedStatement`.
 
@@ -18,7 +19,7 @@ transfers boundedness at every point and every relative root to the supplied
 filtration.
 
 `UnramifiedZeroRootFiltrationBoundedReductionStatement` packages the implication
-from the two structural inputs to the exact current unramified target, at
+from the two structural inputs to the exact unramified target, at
 arbitrary universe `u`. The theorem
 `unramifiedZeroRootFiltrationBounded_of_henselianDiscrete_of_boundedApartment`
 proves that implication. It uses
@@ -34,4 +35,3 @@ same supplied datum, apartment point and root.
 
 All mathematical steps in this file are internal consequences of the named
 interfaces and published uniqueness and unramified-valuation results.
-No target or imported statement is changed.

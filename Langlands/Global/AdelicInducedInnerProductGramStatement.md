@@ -2,8 +2,8 @@
 
 Module `Langlands.Global.AdelicInducedInnerProductGramStatement` states
 `Langlands.Global.InducedInnerProductGramStatement` as a proposition
-definition. It supplies no proof. Worker 106 wrote it for Task 5682 (target
-`IntertwiningImaginaryUnitarityStatement`), where it bounds the coefficients
+definition. It supplies no proof. It is stated for
+`IntertwiningImaginaryUnitarityStatement`, where it bounds the coefficients
 of `M(w, λ)φ` on the imaginary axis.
 
 ## Source

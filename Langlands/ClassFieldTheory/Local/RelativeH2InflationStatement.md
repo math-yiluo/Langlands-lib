@@ -1,7 +1,5 @@
 # Degree-two inflation and restriction in finite Galois towers
 
-Author: Worker 80.
-
 `FiniteRelativeH2InflationExactness` states that for every tower of fields
 `K → L → M`, with both `L/K` and `M/K` finite Galois, the sequence
 
@@ -37,7 +35,7 @@ GTM 67, Springer, 1979, Chapter X, section 4, Proposition 6, printed
 page 156 / PDF page 162. Registered source `serre-1979-local-fields`,
 SHA256 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 80 read this original passage and the supporting passages below.
+This original passage and the supporting passages below were read.
 No project errata entry for this source was present when checked.
 
 Serre writes the tower as `k ⊆ K ⊆ L`; these fields are named `K`, `L`,
@@ -57,6 +55,7 @@ proof provide that input in the project. The lifted integer scalar ring
 is isomorphic to the integers, and range/kernel equality expresses the
 same underlying abelian-group exactness as Serre's sequence.
 
-This file defines a proposition target. Its independent proof, and the
-passage to absolute cohomology, remain separate obligations. It supplies
+This file defines a proposition target. Its proof
+(`finiteRelativeH2InflationExactness` in `RelativeH2InflationProof`) and the
+passage to absolute cohomology are separate. It supplies
 no local invariant, unramified splitting, or denominator computation.

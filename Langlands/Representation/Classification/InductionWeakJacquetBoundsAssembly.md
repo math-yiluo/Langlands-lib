@@ -1,7 +1,5 @@
 # Weak upper Jacquet bounds of induced representations from the geometric lemma
 
-Author: Worker 828.
-
 This module derives the exact proposition
 `Langlands.GLInductionWeakJacquetBoundsStatement.{uF,uV}` from the normalized
 geometric lemma `Langlands.Geometric.PadicGeometricLemmaTheorem.{uF,uV}`, in
@@ -71,8 +69,9 @@ discharges it with the published proof
     equalities, the enumeration `e` of minimal representatives, and the
     natural filtration `s` of `jacquetInductionFunctor T B C` with graded
     isomorphisms to the geometric pieces.
-  - Worker 573's published
-    `RepFunctorFiltration.exists_graded_isGeneralizedEigencharacter` places
+  - The published
+    `RepFunctorFiltration.exists_graded_isGeneralizedEigencharacter`
+    (`Filtration.GeneralizedEigencharacterProof`) places
     `χ` in some graded piece `i`, with the same uniform power.
   - `isGeneralizedEigencharacter_comp_of_iso` moves it to the geometric piece
     of `w = e (perm i)`.

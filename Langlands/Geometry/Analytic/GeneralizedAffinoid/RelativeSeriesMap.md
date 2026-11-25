@@ -1,6 +1,6 @@
 # The forward map from variable adjunction to relative series
 
-Worker 56 constructed this derived unit from the published weighted evaluation,
+This derived module is constructed from the published weighted evaluation,
 relative scalar structures, and closed-relation descent interfaces.
 
 ## Objects and hypotheses
@@ -123,7 +123,7 @@ derived here from those concrete objects, weighted evaluation and quotient
 descent. They are not attributed to a numbered comparison theorem in the source.
 The auxiliary norm estimates have the broader hypotheses explicitly stated above.
 
-This unit proves no injectivity, surjectivity, exact kernel description,
+This module proves no injectivity, surjectivity, exact kernel description,
 isometry of `Φ`, or independence from the presentation of `A`. Those are further
 comparison obligations. It also supplies no analytic atlas, analytic-domain
 representation or etale site.

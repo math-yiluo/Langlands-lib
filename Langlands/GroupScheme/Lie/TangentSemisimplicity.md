@@ -1,6 +1,7 @@
 # Tangent matrix operations and semisimplicity
 
-This internal supporting unit concerns actual algebraic representations and their
+This internal module, which supports `ConjugationSemisimple`, concerns actual
+algebraic representations and their
 actual dual-number differentials. It derives its results from the imported
 matrix-point equivalence, dual and tensor representations, finite reindexing,
 and the squarefree-minimal-polynomial criterion for semisimplicity. No external

@@ -1,6 +1,6 @@
 # Nonidentity rational points in every actual root subgroup
 
-This internal derived unit proves nonidentity rational point existence for
+This internal derived module proves nonidentity rational point existence for
 every actual relative root of a smooth affine group over an arbitrary field,
 acted on by a split torus through the given homomorphism. It uses the existing
 actual orbit-extension subgroup functor. Connected reductivity, maximal
@@ -29,5 +29,5 @@ not assume that rational points lift along an arbitrary quotient.
 
 `RootSubgroupRationalNontrivialStatement` packages this full arbitrary-universe
 result, and `rootSubgroupRationalNontrivial` proves it. The provenance is the
-internal composition of the cited imported Library proofs. This unit does not
+internal composition of the cited imported Library proofs. This module does not
 construct opposite factor pairs or prove the rank-one factorization theorem.

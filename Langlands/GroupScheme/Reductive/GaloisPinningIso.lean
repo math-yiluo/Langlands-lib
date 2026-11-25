@@ -82,7 +82,8 @@ include hb in
 theorem weightMap_mem_positiveRootMonoid_iff (χ : characterLattice p.torus) :
     e.weightMap χ ∈ q.positiveRootMonoid ↔ χ ∈ p.positiveRootMonoid := by
   rw [← map_positiveRootMonoid e hb]
-  exact AddSubmonoid.mem_map_iff_mem e.weightEquiv.injective
+  exact AddSubmonoid.mem_map_iff_mem (f := e.weightEquiv.toLinearMap.toAddMonoidHom)
+    e.weightEquiv.injective
 
 include hb in
 /-- A base-preserving equivalence of root data preserves dominance. -/

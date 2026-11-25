@@ -1,6 +1,6 @@
 # Relative local dimension under arbitrary scheme base change
 
-Worker 105 states Stacks Lemma 29.29.3(1) and the resulting equality of
+This module states Stacks Lemma 29.29.3(1) and the resulting equality of
 actual source sublevels, as a prerequisite for the retrocompactness
 argument of Lemma 29.29.6 and Conrad Theorem 3.4(2).
 
@@ -43,6 +43,10 @@ The source is registered as
 Section 29.29, Lemma 29.29.3(1). That lemma's proof reduces the
 pointwise equality to Algebra Lemma 10.116.6.
 
-This file states a proposition. Its proof, sublevel retrocompactness,
-geometric-connectedness constructibility, Conrad's filtered descent
-and whole-paper coverage remain separate obligations.
+This file states a proposition. Its proof is
+`relativeDimensionBaseChangeInvariance` in
+`SchemeLocalDimensionBaseChangeProof`. Sublevel retrocompactness,
+geometric-connectedness constructibility and Conrad's filtered descent
+are separate results, in `RelativeDimensionSublevelRetrocompactnessProof`,
+`GeometricallyConnectedFiberConstructibilityProof` and
+`SchemeFilteredFiberGeometryProof`.

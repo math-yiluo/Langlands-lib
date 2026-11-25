@@ -1,6 +1,6 @@
 # Inversion of actual chambers and opposite contraction
 
-This derived supporting unit for Waldspurger II.3.3 and the VIII.3.1
+This derived supporting module for Waldspurger II.3.3 and the VIII.3.1
 tail cutoff proves that inversion sends the full actual minimal
 chamber to its opposite. Its source is the exchange of `P₀` with its
 opposite at the start of the proof of Lemma II.3.3, printed p.256,
@@ -43,6 +43,7 @@ allows every nonempty finite matrix index type.
 The field universe and characteristic are arbitrary, and no closedness
 of the finite nonempty matrix realization, compact adaptation, Cartan
 or Iwasawa decomposition is assumed.
-This unit gives the opposite contraction bound. It does not yet prove
+This module gives the opposite contraction bound. It does not prove
 the maximal-parabolic open-cell estimate or the outside-truncation
-tail cutoff.
+tail cutoff; these are proved in `RationalOpenCellHeight` and
+`RationalOppositeTailCutoff`.

@@ -1,7 +1,5 @@
 # Actual adelic block determinant characters
 
-Author: Worker 2.
-
 `Langlands.Global.AdelicBlockDeterminantCharacter` constructs continuous positive
 characters on actual number-field matrix groups and their block parabolics.
 The field `F : Type uF` has arbitrary universe, with `Field F` and `NumberField F`.

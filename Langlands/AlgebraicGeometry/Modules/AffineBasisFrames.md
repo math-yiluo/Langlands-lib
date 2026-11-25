@@ -1,6 +1,6 @@
 # Free sheaf frames from bases on affine subopens
 
-This internal unit constructs an actual free sheaf frame from a finite
+This internal module constructs an actual free sheaf frame from a finite
 family of sections. Let `M` be a module sheaf on an arbitrary scheme `X`,
 let `U` be an open, and let `m : I → Γ(M,U)` have a finite index type `I`.
 Assume that on every affine open `V ≤ U`, the restricted family is the

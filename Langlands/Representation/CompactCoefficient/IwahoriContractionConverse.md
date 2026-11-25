@@ -1,6 +1,6 @@
 # Compact restriction coefficients and escaping Iwahori contractions
 
-This internal unit isolates a representation-theoretic argument used in the
+This module isolates a representation-theoretic argument used in the
 compact-restriction converse of Renard VI.2.1. It is derived from the published
 compact-coefficient predicate, finite-orbit averaging, the linear-algebra
 sequence lemma in `CuspidalSupport.HarishChandraConverseProof`, and the abstract
@@ -36,8 +36,8 @@ specified subgroup and escaping powers. Smoothness then permits choosing a
 level fixing each vector. All its Jacquet classes vanish, so the actual
 coinvariant space is a subsingleton.
 
-The basis is an explicit hypothesis of this generic helper. This unit does not
+The basis is an explicit hypothesis of this generic helper. This module does not
 construct it for rational points or for the actual rational norm kernel, and
 does not prove the general compact-restriction converse or common fixed-level
-coefficient support. Those geometric and uniformity obligations remain in the
-unchanged application targets.
+coefficient support. Those geometric and uniformity obligations are not part of
+this module.

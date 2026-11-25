@@ -1,6 +1,6 @@
 # Assembly from a concrete same-coefficient paired matrix comparison
 
-Worker 396. Internal derived assembly adapter for the positive-rank part of the
+Internal derived assembly adapter for the positive-rank part of the
 actual matrix functional-equation comparison. Field and representation-carrier
 universes remain independent.
 
@@ -14,7 +14,7 @@ not assume equality of reduced denominator polynomials, require nonvanishing
 of unreduced polynomial presentations, or restrict the original domain.
 
 `PairedMatrixBlockComparison` records the precise simultaneous scalar integral
-comparison still needed from the Fourier calculation. For each original actual
+comparison required of the Fourier calculation. For each original actual
 model vector `w`, it requires a full-matrix Schwartz test `Phi`, one actual
 bi-smooth coefficient `f` of the original specified model representation, and
 one complex number `C != 0`. On a right half-plane,
@@ -65,10 +65,14 @@ self-dual additive measure is retained throughout.
 No analytic premise beyond the parent matrix data is added by this assembly
 argument, and no irreducibility, finite length, model equivalence, selected
 factor certificate or multiplicativity is assumed. All reused mathematical
-steps are published or included as unchanged separately submitted pairs.
+steps are published Library modules, imported unchanged.
 No new original-source transcription is asserted. The concrete predicate
-`PairedMatrixBlockComparison` remains an explicit unresolved Fourier-extraction
-hypothesis: this module does not establish it or the closed parent theorem.
+`PairedMatrixBlockComparison` is an explicit Fourier-extraction
+hypothesis here: this module does not establish it or the closed parent theorem.
+Both are proved in `RankOneMatrixFunctionalEquationComparisonProof`, by
+`pairedMatrixBlockComparison_of_rawIotaConvergence` (under a raw convergence
+premise that the closed theorem discharges) and
+`rankOneMatrixFunctionalEquationComparison`.
 
 ## All-field port
 

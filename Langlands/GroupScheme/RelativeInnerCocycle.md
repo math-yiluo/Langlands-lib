@@ -1,7 +1,5 @@
 # Faithful central-quotient actions and inner discrepancy cocycles
 
-Worker 682.
-
 This derived supporting construction applies over any scheme `S`. Let
 `p : G ⟶ A` be a `RelativeRoot.IsFppfQuotient (center G) p` and let
 `c : AutomorphicAction A G` restrict along `p` to conjugation on `G`.

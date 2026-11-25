@@ -1,7 +1,5 @@
 # The noncentral branch with a canonical centralizer
 
-Author: Worker 1446.
-
 This internal deduction combines the published affine dynamic representatives,
 dynamic smoothness and connectedness, the actual-intersection Borel adapter,
 and the proper-centralizer Lie-dimension induction step. The two membership

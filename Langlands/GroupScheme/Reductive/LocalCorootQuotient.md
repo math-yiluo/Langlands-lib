@@ -1,6 +1,6 @@
 # Actual local coroot quotients from the negative-simple cell law
 
-This internal unit constructs the actual local torus quotient needed by
+This internal module constructs the actual local torus quotient needed by
 the relative derived-group existence argument. The input is a reductive
 group scheme `G` with affine structure morphism over any commutative local
 ring `R`, a closed coordinate split torus `i` maximal on every field fibre,

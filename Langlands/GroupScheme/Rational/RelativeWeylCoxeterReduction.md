@@ -84,11 +84,18 @@ reduction with the hypotheses bundled in `RelativeWeylCoxeterPremises`.
 ## Status and provenance
 
 None of the three premises is proved here, so this module does not prove
-`RelativeWeylCoxeterStatement`. At the time of writing each one has its own
-open proof task: `RelativeRootSystemStatement` (task 51ecd216),
-`RelativeRootReflectionExistenceStatement` (task 5c031416), and
-`RootPairingWeylCoxeterStatement` (task b4659a9e). Once proofs of the three are
-in the Library, applying the reduction to them proves the target.
+`RelativeWeylCoxeterStatement`. The Library proves each of them elsewhere:
+`RelativeRootSystemStatement` as `relativeRootSystem` (module
+`Rational.RelativeRootSystemProof`), `RelativeRootReflectionExistenceStatement`
+as `relativeRootReflectionExistence` (module
+`Rational.RootReflectionExistenceProof`), and `RootPairingWeylCoxeterStatement`
+as `rootPairingWeylCoxeterStatement_proof` (module
+`Group.RootPairingCoxeterProof`). Applying the reduction to proofs of the three
+proves the target. The Library's proof `relativeWeylCoxeter` (module
+`Rational.RelativeWeylCoxeterProof`) does so through
+`RootGeneratedCentralizerStructuralPremises.relativeWeylCoxeter` (module
+`Rational.RootGeneratedCentralizerReduction`), with the first two premises
+derived from `rootRankOneFactorization`.
 
 The content is internal. It is a direct composition of published Library
 results and introduces no mathematics of its own. The route through the

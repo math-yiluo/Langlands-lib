@@ -3,7 +3,7 @@
 Lean module: `Langlands.Automorphic.CuspidalHilbertOrbitCoefficientJointFinite`.
 
 This is an internal helper module for the proof of
-`Langlands.Automorphic.CuspidalHilbertOrbitCoefficientStatement` (Task 7661). It proves
+`Langlands.Automorphic.CuspidalHilbertOrbitCoefficientStatement`. It proves
 the last conclusion of that statement, `ArchimedeanGL.IsJointFinite F (r + 1) (C f)`.
 It does so for any complex-linear coefficient map `C` that realizes the actual coefficient
 integrals and commutes with the genuine enveloping action. It does not construct `C` and

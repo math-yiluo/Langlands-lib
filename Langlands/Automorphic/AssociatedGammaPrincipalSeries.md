@@ -1,6 +1,7 @@
 # Principal-series constituents and their character twists
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaPrincipalSeries`).
+Supporting module of the gamma comparison for weakly associated cuspidal pairs,
+`AssociatedGammaStatement` (module `Langlands.Automorphic.AssociatedGammaPrincipalSeries`).
 It supplies the automorphic hypotheses of the published
 `PrincipalSeriesPairGammaMatchStatement` for twists of unramified local components. Standard
 representation theory.

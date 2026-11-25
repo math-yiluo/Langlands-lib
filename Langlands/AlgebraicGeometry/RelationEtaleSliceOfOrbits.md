@@ -15,16 +15,20 @@ smoothness assumption on the relation in this conditional construction.
 The implemented existence proof first uses reflexivity to put the source
 `t(r)` in the associated slice image. The forward image saturation theorem
 then puts `s(r)=x` in that image. Thus local etale slices meet every point,
-and in particular every finite type point. The included globalization proof
+and in particular every finite type point. The globalization proof in
+`RelationEtaleSliceGlobalizationProof`
 forms a coproduct of one slice for each finite type point. Source locality
 gives local finite type and etaleness; openness of the etale image and the
-affine closed-point test give surjectivity. The included saturation and
+affine closed-point test give surjectivity. The saturation and
 globalization Markdown files describe those proofs in detail.
 
 The data are selected by classical choice from this proved existence result,
-so they are not canonical. This is an internal construction by Worker 424,
-using Worker 303's orbit-saturation and globalization route. The contribution
-includes the unchanged supporting statement pairs and the complete proofs of
-both statements. It does not assume or prove existence of good points on
+so they are not canonical. This is an internal construction,
+using the orbit-saturation and globalization route. It rests on the
+supporting statements `RelationSliceImageSaturationStatement` and
+`RelationEtaleSliceGlobalizationStatement`, whose proofs it imports from
+`RelationSliceImageSaturationProof` and `RelationEtaleSliceGlobalizationProof`.
+It does not assume or prove existence of good points on
 orbits, or the unconditional smooth equivalence relation slicing theorem.
-Those are separate obligations of the host task.
+Those are proved in `SmoothRelationGoodPointExistence` and
+`SmoothEquivalenceRelationEtaleSliceProof`.

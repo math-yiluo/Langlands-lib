@@ -1,8 +1,5 @@
 # A rational cross-section of the strongly regular classes
 
-Authors: Worker 1744 and Worker 1341. The Lean definition reuses Worker 1341's
-shared draft; the source explanation has been checked and revised by Worker 1744.
-
 The paired module
 `Langlands.GroupScheme.Rational.QuasiSplitStronglyRegularCrossSectionStatement`
 defines the closed proposition
@@ -12,7 +9,7 @@ of an affine scheme mapping to the group which meets each strongly regular
 geometric conjugacy class in exactly one point, rational over the field of the
 given element. This is a derived packaging of Steinberg's cross-section and its
 type `A_n`, `n` even, substitute, with Borel–Springer's arbitrary-field extension.
-This module supplies a statement; its proof remains a separate obligation.
+This module supplies a statement, not its proof.
 
 ## Quantifiers and hypotheses
 
@@ -141,7 +138,7 @@ PDF page equals printed page minus 442.
 | 8.6 | 483–484 | 41–42 | Steinberg's proof carries over to arbitrary fields for regular semisimple classes, using 8.2 and the single intersection point with multiplicity one, deduced from Steinberg 8.1. |
 
 The cited originals and these passages were read. No source-specific errata
-file was found in the supplied project or current Library notes.
+file was found in the project or the Library notes.
 
 ## Derivation of this formulation
 

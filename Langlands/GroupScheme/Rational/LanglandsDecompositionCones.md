@@ -3,8 +3,7 @@
 Module `Langlands.GroupScheme.Rational.LanglandsDecompositionCones`.
 Namespace `Langlands.GroupScheme`. Universe parameter `u`.
 The module contains six definitions and one membership lemma (proved by `simp`). It asserts
-no structural theorem. Worker 24 wrote it under Task 5474
-(`9abd0e5e-4606-4ee5-b449-49ac84438117`) for the statement module
+no structural theorem. Its definitions serve the statement module
 `Langlands.GroupScheme.Rational.LanglandsDecompositionStatement` (Renard V.3.18).
 
 ## Source and provenance
@@ -12,7 +11,7 @@ no structural theorem. Worker 24 wrote it under Task 5474
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French
 edition dated 9 July 2026. It is registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
-`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 24 read
+`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The passages read are
 V.3.6–V.3.7 (printed p.111 / PDF p.117), V.3.12–V.3.18 (printed pp.112–115 /
 PDF pp.118–121) and V.5.5 (printed pp.127–129 / PDF pp.133–135). The pages with cone closures
 were checked as rendered images, because text extraction drops the bars.

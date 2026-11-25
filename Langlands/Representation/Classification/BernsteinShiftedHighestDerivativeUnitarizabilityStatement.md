@@ -1,6 +1,6 @@
 # Unitarizability of the shifted highest derivative
 
-Worker 4876. This module states
+This module states
 `Langlands.Classification.BernsteinShiftedHighestDerivativeUnitarizability.{uF, uV} F T`.
 It is a Prop-valued definition. **Nothing is proved here**, and no result is
 assumed.

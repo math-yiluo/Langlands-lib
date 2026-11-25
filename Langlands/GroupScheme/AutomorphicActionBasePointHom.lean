@@ -22,15 +22,17 @@ variable {S : Scheme.{u}} {A G : GroupScheme S} (a : AutomorphicAction A G)
 /-- Evaluating an automorphic action on sections is a group homomorphism
 to the group of actual group-scheme automorphisms. -/
 def basePointHom : (Over.mk (𝟙 S) ⟶ A.X) →* CategoryTheory.Aut G where
-  toFun := a.basePointIso
+  toFun x := Aut.of (a.basePointIso x)
   map_one' := by
     apply Aut.ext
+    apply Iso.ext
     change (a.basePointIso 1).hom = 𝟙 G
     refine hom_ext_points fun T x => ?_
     rw [Grp.id_hom_hom, comp_basePointIso_hom, constantPoint_one,
       act_one_left, Category.comp_id]
   map_mul' x y := by
     apply Aut.ext
+    apply Iso.ext
     change (a.basePointIso (x * y)).hom =
       (a.basePointIso y).hom ≫ (a.basePointIso x).hom
     refine hom_ext_points fun T g => ?_
@@ -40,7 +42,7 @@ def basePointHom : (Over.mk (𝟙 S) ⟶ A.X) →* CategoryTheory.Aut G where
 
 @[simp]
 theorem basePointHom_apply (x : Over.mk (𝟙 S) ⟶ A.X) :
-    a.basePointHom x = a.basePointIso x := rfl
+    (a.basePointHom x).asIso = a.basePointIso x := rfl
 
 /-- A faithful action is injective on base-point automorphisms. -/
 theorem basePointHom_injective (ha : a.IsFaithful) :
@@ -48,7 +50,7 @@ theorem basePointHom_injective (ha : a.IsFaithful) :
   intro x y hxy
   apply ha x y
   intro W t g
-  have h := congrArg (fun e : CategoryTheory.Aut G => g ≫ e.hom.hom.hom) hxy
+  have h := congrArg (fun e : CategoryTheory.Aut G => g ≫ e.asIso.hom.hom.hom) hxy
   rw [basePointHom_apply, basePointHom_apply, comp_basePointIso_hom,
     comp_basePointIso_hom] at h
   have hx : A.constantPoint x W = t ≫ x := by
@@ -134,11 +136,11 @@ theorem basePointHom_range_normal_of_center_quotient :
     a.basePointHom.range.Normal := by
   refine ⟨?_⟩
   rintro n ⟨x, rfl⟩ e
-  refine ⟨x ≫ (hq.mapIso hq e).hom.hom.hom, ?_⟩
+  refine ⟨x ≫ (hq.mapIso hq e.asIso).hom.hom.hom, ?_⟩
   have he :
       e * a.basePointHom x =
-        a.basePointHom (x ≫ (hq.mapIso hq e).hom.hom.hom) * e :=
-    basePointIso_trans_center_quotient hq ha e x
+        a.basePointHom (x ≫ (hq.mapIso hq e.asIso).hom.hom.hom) * e :=
+    Aut.ext (basePointIso_trans_center_quotient hq ha e.asIso x)
   exact (mul_inv_eq_iff_eq_mul.mpr he).symm
 
 end Langlands.GroupScheme.AutomorphicAction

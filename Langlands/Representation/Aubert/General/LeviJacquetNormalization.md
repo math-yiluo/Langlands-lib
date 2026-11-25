@@ -57,5 +57,3 @@ normalized representation constructions and
 `GeneralLinearDerivativeDeterminantTwistProof`, including its
 general-linear-specific results; only its two generic twist isomorphisms
 are used in this proof.
-
-Author: Worker 1263.

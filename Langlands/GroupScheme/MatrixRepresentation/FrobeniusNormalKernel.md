@@ -27,7 +27,7 @@ by Milne, *Algebraic Groups* (2017), Lemmas 5.16–5.17, printed pp. 102–103
 (PDF pp. 118–119). Its positive-characteristic character input uses nilpotent
 coordinate defects rather than constructing a smooth Frobenius image. The
 tensor input uses ambient representations as required by the official erratum
-to Corollary 4.29, printed p. 95. This unit proves the algebraically closed
+to Corollary 4.29, printed p. 95. This module proves the algebraically closed
 positive-characteristic exact-kernel result; characteristic zero, descent to
 arbitrary fields, and existence of a faithfully flat quotient remain separate
 obligations of the general quotient theorem.

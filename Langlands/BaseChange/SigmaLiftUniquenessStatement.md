@@ -63,10 +63,10 @@ in HL for representations of `GL_n(F)`.
 
 ## Explanations
 
-- **σ-lifts.** `IsSigmaLift σ l π hπ ρ hρ A c` (module `Langlands.BaseChange.TwistedCharacter`, Task 7432) is HL's σ-relèvement (II.2.7,
+- **σ-lifts.** `IsSigmaLift σ l π hπ ρ hρ A c` (module `Langlands.BaseChange.TwistedCharacter`) is HL's σ-relèvement (II.2.7,
   printed p. 67): `c ≠ 0`, and for all Haar measures on `GL_n(F)` and `GL_n(E)` and every
-  pair `(φ, f)` of concordant test functions (`AreConcordant` of `Langlands.BaseChange.OrbitalIntegral`, Task 7416), the twisted trace
-  `trace(ρ(φ) ∘ A)` equals `c` times the trace `trace(π(f))`. Task 7432's
+  pair `(φ, f)` of concordant test functions (`AreConcordant` of `Langlands.BaseChange.OrbitalIntegral`), the twisted trace
+  `trace(ρ(φ) ∘ A)` equals `c` times the trace `trace(π(f))`. The
   `SigmaLiftCharacterIdentityStatement` (HL II.2.9, Proposition) states its equivalence with
   the Shintani identity `IsShintaniLift` of AC Definition 6.1.
 - **The constant.** HL show that `c = 1` when `A` is the Whittaker-normalized intertwiner
@@ -79,12 +79,12 @@ in HL for representations of `GL_n(F)`.
   (II.2.8, Remarque; II.2.9, Remarque (1)), so this statement allows `IsCyclicAlgebra σ l`
   with `E` a commutative ring, which includes the split algebra `F^l` with the cyclic shift.
   The degree `l` is not assumed prime.
-- **`CharZero F`.** As in Tasks 7416, 7432 and 7442: the Library's `IsRegularSemisimple` asks
+- **`CharZero F`.** As in the statements on orbital integrals, twisted characters and pseudo-coefficients: the Library's `IsRegularSemisimple` asks
   for a separable characteristic polynomial, while HL's regular elements have squarefree
   characteristic polynomial; the two agree in characteristic zero, where HL's results and
   AC's apply verbatim.
 - **Proof route.** HL deduce Remarque (2) from the Lemme of II.2.8 (linear independence of the
   twisted characters of pairwise non-isomorphic irreducible σ-stable representations) and the
   Proposition of II.2.9 (σ-lifts are Shintani lifts): two lifts of `π` have proportional
-  twisted characters on the σ-regular set, so they are isomorphic. A later proof task must not
+  twisted characters on the σ-regular set, so they are isomorphic. A later proof must not
   derive this statement from a result that depends on it.

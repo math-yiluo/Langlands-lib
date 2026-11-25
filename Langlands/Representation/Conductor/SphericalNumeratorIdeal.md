@@ -1,6 +1,6 @@
 # The ideal of actual finite spherical numerators
 
-This internal unit constructs the ideal structure on the actual numerator
+This module constructs the ideal structure on the actual numerator
 image from `SphericalLinearity`. It proves closure of that existing image
 under every symmetric Laurent multiplier, and applies the established weak
 Nullstellensatz conditionally on pointwise nonvanishing.
@@ -86,7 +86,7 @@ actual finite-support model vector with numerator one.
 The provenance is internal: the arguments combine localization and the
 fundamental theorem of symmetric polynomials with the existing actual
 minuscule and central model actions, their numerator identities, and the
-proved symmetric Laurent weak Nullstellensatz. This unit does not establish
+proved symmetric Laurent weak Nullstellensatz. This module does not establish
 pointwise nonvanishing, universal finite support, a standard L-polynomial,
-the essential-vector identity or any conductor conclusion. Those remain
-separate obligations for `EssentialConductorStatement`.
+the essential-vector identity or any conductor conclusion. Those are steps
+toward `EssentialConductorStatement` that are not part of this module.

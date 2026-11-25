@@ -1,6 +1,6 @@
 # Actual Bernstein Levi splittings from whole-category decomposition
 
-Worker 132. Derived supporting content for Task 5419, concerning Renard
+Derived supporting content for the proof of `BernsteinCuspAdjunctionStatement`, concerning Renard
 2026, VI.3.5 and VI.7.2 second Lemma, printed pp.182–183 / PDF pp.188–189
 for the latter, registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256

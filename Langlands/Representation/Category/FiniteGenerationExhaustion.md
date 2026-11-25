@@ -1,6 +1,6 @@
 # Exhaustion by finitely generated invariant submodules
 
-This is an internal algebraic construction by Worker 288, used in the passage
+This is an internal algebraic construction, used in the passage
 from finitely generated inputs to arbitrary smooth inputs for support
 preservation. It has independent coefficient, group and carrier universes and
 retains the original carrier universe for all subrepresentations.

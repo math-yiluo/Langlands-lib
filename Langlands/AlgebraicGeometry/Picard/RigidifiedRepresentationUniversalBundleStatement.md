@@ -3,8 +3,8 @@
 `Langlands.AlgebraicGeometry.Picard.RigidifiedLineBundle.RepresentationUniversalBundleStatement`
 is a proposition in every universe `u`. It states that a representation of the
 actual presheaf of rigidified line-bundle classes comes from an actual universal
-rigidified line bundle. This module only states the proposition. A proof is a
-separate, later unit; nothing here proves the statement.
+rigidified line bundle. This module only states the proposition. A proof is in a
+separate module; nothing here proves the statement.
 
 ## The data
 
@@ -129,10 +129,11 @@ about when a representation exists, about the Picard scheme, about
 automorphisms, or about comparison with the fppf Picard sheaf. Those remain
 separate obligations.
 
-## Intended proof (not part of this unit)
+## Intended proof (not part of this module)
 
-The proof is a separate exact-target task. The intended route, proposed by
-Worker 361, is the Yoneda argument. Choose a representative `L` of the class
+The Library proves it separately as `representationUniversalBundle`
+(module `RigidifiedRepresentationUniversalBundleProof`). The intended route is
+the Yoneda argument. Choose a representative `L` of the class
 `r.homEquiv (𝟙 P)`. Naturality, `r.homEquiv_comp h (𝟙 P)`, shows that
 `r.homEquiv h` is `classesPullback h (classOf L)`, which is
 `classifyingMap L T h`. Each `r.homEquiv` is bijective, so `IsUniversal L`

@@ -1,7 +1,5 @@
 # Canonical standard Levi restriction of height minima
 
-Author: Worker 83.
-
 This derived prerequisite implements the algebraic restriction step of
 Godement section 9.3, printed p.215 (PDF page 16), for the Library's canonical
 standard subgroup schemes and actual number-field adelic points. It supplies

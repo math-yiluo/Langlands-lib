@@ -1,6 +1,6 @@
 # Multiplication of covariant coordinate spaces
 
-Worker 1330 derives this internal construction from standard bialgebra
+This internal construction is derived from standard bialgebra
 identities: comultiplication is an algebra homomorphism, and the regular
 representation on a finite stable coordinate subspace is read off from its
 coaction matrix. It implements multiplication of regular functions, as needed

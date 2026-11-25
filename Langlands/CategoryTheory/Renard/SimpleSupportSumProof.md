@@ -1,7 +1,5 @@
 # Renard A.IX: support and maximality of the actual supported sum
 
-Author: Worker 199.
-
 This module proves the unchanged public
 `Langlands.Renard.SimpleSupportSumStatement`. Its two named components
 establish support of the actual coproduct-image sum of all supported
@@ -41,8 +39,8 @@ printed page 268 / PDF274. Registered source:
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`;
 SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 199 read original PDF269–270 and PDF273–275 in full and visually
-checked PDF274. Renard defines `E_S` as the sum of all subobjects of `E`
+Original PDF269–270 and PDF273–275 were read in full and PDF274 was
+visually checked. Renard defines `E_S` as the sum of all subobjects of `E`
 belonging to the supported full subcategory `M_S`, and asserts that
 `E_S` belongs to `M_S`. This is the source support conclusion proved here.
 The greatest-element formulation is an internal order-theoretic consequence.
@@ -116,29 +114,30 @@ and the unchanged public coproduct-image construction.
 
 ## Reused work and scope
 
-The unchanged support predicate and supported-subobject family were
-authored by Workers 6 and 695. The public sum construction was authored
-by Worker 985, specified by Worker 6; its universe explanation was
-corrected by Workers 6 and 199. The unchanged target statements are by
-Workers 6 and 985. The arbitrary-sum proof is by Worker 695, with source
-and interface audit and documentation by Worker 595. Its published
-dependencies include the clause (i) proof by Worker 695 and the
-zero-detection proof by Worker 595. These results and their unchanged
-underlying public constructions are reused by Lean name. Worker 199
-authored the reindexing helper and this support/maximum assembly.
+The unchanged support predicate and supported-subobject family are in
+`Langlands.CategoryTheory.Renard.SimpleSupport`. The public sum
+construction is in `Langlands.CategoryTheory.Renard.SimpleSupportSum`; its
+universe explanation was later corrected. The unchanged target statements
+are in `Langlands.CategoryTheory.Renard.SimpleSupportSumStatements`. The
+arbitrary-sum proof is in `Langlands.CategoryTheory.Renard.SimpleSubquotientSum`.
+Its published dependencies include the clause (i) proof
+(`Langlands.CategoryTheory.Renard.SimpleSubquotientSubobjectQuotient`) and
+the zero-detection proof
+(`Langlands.CategoryTheory.Renard.SimpleSubquotientEmpty`). These results
+and their unchanged underlying public constructions are reused by Lean
+name. The reindexing helper and this support/maximum assembly are new in
+this module.
 
 This module proves support and greatest-element maximality of `E_S`.
 Closure and abelianness of `M_S`, Hom orthogonality, disjointness,
 splitting and the equivalence with a product of categories remain
 separate obligations.
 
-The approved Lean service compiled the proof with zero errors and
+A development check compiled the proof with zero errors and
 warnings and inspected the aggregate theorem with independent level
 parameters `w, u, v` and only `propext`, `Classical.choice` and
 `Quot.sound`. A separate private diagnostic also printed all four complete unapplied
 types and axiom sets, assigned the three closing constants directly to
 their named propositions, and assigned the two component constants to
 the expanded telescopes with both local instances unchanged. All checks
-passed with zero errors and warnings. These development checks are
-separate from exact-target validation, independent semantic review and
-publication.
+passed with zero errors and warnings.

@@ -1,10 +1,10 @@
 # Nonvanishing of the L-polynomial of a unitary generic pair on `Re(s) ≥ 1`
 
-Author: Worker 3657.
-
 This module defines the proposition
 `Langlands.RankinSelberg.UnitaryGenericLPolynomialNonvanishingStatement.{uF,uV,uW}`.
-It is a statement target, not a proof. It states the non-Archimedean case of
+It is a statement target, not a proof; the theorem
+`unitaryGenericLPolynomialNonvanishing` in
+`UnitaryGenericLPolynomialNonvanishingProof` proves it. It states the non-Archimedean case of
 Getz–Hahn, Theorem 11.5.2, for p-adic fields: for irreducible admissible
 generic unitary representations `π` and `σ` of general linear groups,
 `L(s, π × σ)` is holomorphic and nonzero for `Re(s) ≥ 1`. The module imports
@@ -153,8 +153,9 @@ variable `z = q^(-s)` the condition `Re(s) ≥ 1` is `0 < ‖z‖ ≤ q^(-1)`.
   the region `Re(s) ≥ 1` is smaller than `Re(s) > 0`.
 - `UnitaryEqualRankConvergenceStatement` (module `EqualRankEulerStatement`,
   Jacquet–Shalika, Euler products I, Proposition (1.5)(i)) states the
-  equal-rank half of GH's Proposition 11.5.1(a). As of Library commit
-  `77763a3f` it has no proof, and no unequal-rank analogue exists.
+  equal-rank half of GH's Proposition 11.5.1(a). It is proved as
+  `unitaryEqualRankConvergence` (module `UnitaryEqualRankAnalytic`). The
+  Library has no unequal-rank analogue of `UnitaryEqualRankConvergenceStatement`.
 - Global link: the published theorems `cuspidalUnitaryLocalGenericity` and
   `cuspidalUnitaryLocalUnitarity` (modules
   `Automorphic.CuspidalUnitaryLocalGenericity` and
@@ -169,7 +170,8 @@ variable `z = q^(-s)` the condition `Re(s) ≥ 1` is `0 < ‖z‖ ≤ q^(-1)`.
 
 ## Intended proof route
 
-This route is described here and is not proved in this module. It follows
+This route is described here and is not proved in this module (the proof
+module `UnitaryGenericLPolynomialNonvanishingProof` follows it). The route follows
 GH's deduction from Proposition 11.5.1 and the implemented proof of the
 square-integrable case (`SquareIntegrableLPolynomialNonvanishingProof`):
 
@@ -192,9 +194,7 @@ case.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (diagnostic `36f9a6fb`) with no errors
-or warnings. Inspection of `UnitaryGenericLPolynomialNonvanishingStatement`
+The module compiles with no errors or warnings. Inspection of `UnitaryGenericLPolynomialNonvanishingStatement`
 reports a definition returning `Prop`, with universe parameters `uF uV uW`,
 using only `propext`, `Classical.choice` and `Quot.sound`. There is no
 `sorry` and no new axiom.

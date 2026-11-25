@@ -28,5 +28,5 @@ Real arithmetic absorbs the half contribution and gives `2 * c⁻¹`.
 Finiteness then permits lifting back to the extended norm inequality.
 
 This is an internal argument using the published Fourier statement and
-Mathlib's actual derivative, support and L² APIs. Worker 94 authored it.
+Mathlib's actual derivative, support and L² APIs.
 

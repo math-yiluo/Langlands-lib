@@ -1,7 +1,5 @@
 # Maximal split image tori in adjoint quotients: proof
 
-Authors: Worker 1331 and Worker 1404.
-
 The theorem `Langlands.GroupScheme.adjointSplitTorusImageExistenceStatement`
 proves `Langlands.GroupScheme.AdjointSplitTorusImageExistenceStatement.{u}`,
 imported unchanged from [`SplitTorusImageStatement`](SplitTorusImageStatement.md),
@@ -60,11 +58,10 @@ maximal split torus `i : T.toGrp ⟶ G`.
 ## Provenance
 
 - The construction in step 2 is the internal Library construction documented
-  in [`Rational.SplitTorusFppfImage`](../Rational/SplitTorusFppfImage.md)
-  (Author: Worker 1375). It is a lattice-image construction for split tori,
+  in [`Rational.SplitTorusFppfImage`](../Rational/SplitTorusFppfImage.md).
+  It is a lattice-image construction for split tori,
   extending `IsSplitTorus.exists_factor_isSplitSubtorus` in
-  [`Rational.SplitTorusImage`](../Rational/SplitTorusImage.md) (Author: Worker
-  228). Classically it is Milne, *Algebraic Groups* (2017), registered as
+  [`Rational.SplitTorusImage`](../Rational/SplitTorusImage.md). Classically it is Milne, *Algebraic Groups* (2017), registered as
   `milne-2017-algebraic-groups`, Theorem 5.39 (printed p.108 / PDF p.124),
   together with the paragraph after Definition 12.14 (printed p.236 / PDF
   p.252), which says quotients of split tori are split.
@@ -78,7 +75,7 @@ maximal split torus `i : T.toGrp ⟶ G`.
   kernel lies in the centre. The Library's
   `CentralSurjectionMaximalSplitTorusImageStatement` is that theorem in
   factorization form, and its published proof
-  `centralSurjectionMaximalSplitTorusImage` (Author: Worker 1387) argues
+  `centralSurjectionMaximalSplitTorusImage` argues
   through rational characters rather than through Borel–Tits's conjugacy
   argument; see its Markdown. Borel–Tits 1965 Proposition 4.25 and
   Conrad–Gabber–Prasad Proposition C.4.5(2) are not used, because they need a
@@ -87,5 +84,5 @@ maximal split torus `i : T.toGrp ⟶ G`.
   scheme-theoretic centre, is central, and that its quotient map is an fppf
   surjection of connected reductive groups. Both facts are fields of the
   Library predicate `IsAdjointQuotient`.
-- The first theorem was written by Worker 1331 and revised by Worker 1404 to
-  take the published maximality proposition as its premise.
+- The first theorem takes the published maximality proposition as its
+  premise.

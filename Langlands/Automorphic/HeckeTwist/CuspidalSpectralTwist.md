@@ -1,7 +1,5 @@
 # Twists of cuspidal spectral presentations by any Hecke determinant character
 
-Author: Worker 5136.
-
 A cuspidal spectral presentation `P` of an irreducible cuspidal realization `S`
 of `GL_{r+1}(𝔸_F)` (the Library's `CuspidalSpectralPresentation`) consists of a
 finite slice of `S`, local factors, a finite tensor presentation of the slice,

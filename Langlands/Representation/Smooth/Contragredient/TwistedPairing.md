@@ -1,6 +1,9 @@
 # Twisted forms from a smooth-dual equivalence
 
-This internal construction for Task 7294 extracts the finite-place
+This internal construction, used by
+`Langlands.Automorphic.FiniteAdelicTransposePairing` toward
+`CuspidalTransposeInverseContragredientStatement` (the dual cusp forms of a
+cuspidal realization lie in a cuspidal contragredient), extracts the finite-place
 forms needed for restricted tensor assembly from a supplied
 Gelfand--Kazhdan equivalence. The construction itself works for an
 arbitrary topological group and supplied twist.

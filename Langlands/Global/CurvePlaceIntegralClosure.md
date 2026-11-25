@@ -10,7 +10,7 @@ ideal. The original rational-function presentation can be inseparable.
 These are derived arithmetic prerequisites for Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), Example 4.2,
 printed page 10. That passage uses global-field arithmetic in the completed
-tensor decomposition and the integral-model reduction. This unit supplies
+tensor decomposition and the integral-model reduction. This module supplies
 finite normalization and the degree identity on its actual prime ideals;
 comparison with all actual upper curve places remains separate.
 
@@ -157,12 +157,15 @@ completed-tensor product and integral-model reduction.
 This explicit normalization construction and its localization proof
 are derived prerequisite arithmetic. The normalization theorem, finite
 chart comparisons and the general ramification-inertia sum theorem
-are reused by their Lean names. The unit does not attribute this
+are reused by their Lean names. The module does not attribute this
 specific implementation route as a separate assertion in Conrad.
 
 The index of the final sum is all actual prime ideals of the integral
 closure lying over the original maximal ideal. Identifying these
 with all upper curve places and comparing their ramification and
-inertia data remain necessary. Tensor injectivity, the associated
+inertia data remain necessary; `CurvePlaceIntegralPrimes` does this
+(`primeEquivUpperPlaces`). Tensor injectivity, the associated
 Weil point homeomorphism, integral models and passage to adelic
-limits also remain obligations of the whole-paper task.
+limits are also outside this module; the Library proves the comparison
+of Example 4.2 as `adelicProjectiveWeilComparison` in
+`AdelicProjectiveWeilComparisonProof`.

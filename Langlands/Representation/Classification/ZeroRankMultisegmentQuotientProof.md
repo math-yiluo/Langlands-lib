@@ -1,7 +1,5 @@
 # Rank-zero ordered special-segment quotient coverage
 
-Authors: Worker 391 and Worker 342.
-
 `Langlands.Classification.zeroRankMultisegmentQuotientExhaustion` proves the
 published proposition
 `Langlands.Classification.ZeroRankMultisegmentQuotientExhaustion.{uF,uV} F T`.

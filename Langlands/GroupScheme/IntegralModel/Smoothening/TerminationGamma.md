@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: the Γ-trick
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. It supplies one of
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. It supplies one of
 the relations used in the defect count (the hypothesis `hQ1` of `exists_relation` in
 `TerminationDilatation`). The argument is internal to this project.
 

@@ -61,12 +61,10 @@ asserted.
 
 This focused module supplies the actual cycles, boundaries, quotient and
 projection. Explicit automorphic-namespaced class lemmas, finite adelic
-quotient action and transport by full operator maps are separate units.
+quotient action and transport by full operator maps are separate modules.
 No sheaf, analytic or Ext comparison, general algebraic tensor coefficient
 attachment, cohomological infinity criterion or nonvanishing theorem is
 asserted.
-
-Authorship: Worker 2.
 
 The inherited additive group instances have explicit names specific to this
 module. Their definitions and local scope are unchanged; the names avoid

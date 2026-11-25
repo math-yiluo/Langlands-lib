@@ -1,6 +1,6 @@
 # Conditional intermediate-tail span assembly
 
-Worker 318 and Worker 829 implement
+This module implements
 `inducedTailIntermediateDiagonalExtensionSpan`, whose type is exactly
 `InducedTailIntermediateDiagonalExtensionSpanStatement` with independent
 field, full-representation and test-representation universes.
@@ -39,7 +39,8 @@ applies. The canonical p-adic field is second countable, which makes the
 matrix product measurable structure Borel and the open localizers measurable.
 The quotient density is measurable and finite everywhere.
 
-Worker 829's `mem_zetaSpan_of_localized_disintegration` then combines that
+`mem_zetaSpan_of_localized_disintegration` (module
+`InducedTailIntermediateIntegralAssembly`) then combines that
 transfer with the weighted pointwise equality. Moving the finite density
 into the integrand reduces absolute integrability and the integral to a
 product with the two indicators. Product integration yields the original

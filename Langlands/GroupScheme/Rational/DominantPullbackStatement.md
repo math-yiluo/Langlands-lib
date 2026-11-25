@@ -20,7 +20,9 @@ linear injection.
 
 This file defines the target and does not prove it. Together with the
 proved `support_subset_of_injective`, it gives the support containment
-needed for dominant pointed equivariant maps. A focused proof successor
-must connect topological dominance over a reduced target to injectivity
+needed for dominant pointed equivariant maps. A proof must connect
+topological dominance over a reduced target to injectivity
 of this precise coordinate pullback, for example through scheme-theoretic
-dominance and the affine coordinate isomorphisms.
+dominance and the affine coordinate isomorphisms. The module
+`Rational.DominantPullbackProof` proves the statement as
+`dominantPullbackStatement`.

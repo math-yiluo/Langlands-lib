@@ -1,8 +1,6 @@
 # Actual coefficient-tensor forms and inverse dual scaling
 
-Author: Worker 200.
-
-This unit reuses the existing Hermitian equivalence and positive smooth-dual
+This module reuses the existing Hermitian equivalence and positive smooth-dual
 form to construct an invariant positive form on the actual coefficient tensor
 of a canonical admissible smooth complex representation. It proves inverse
 dual scaling and cancellation on the whole tensor after positive real rescaling.
@@ -124,4 +122,4 @@ such a rescaling. Actual parabolic integral forms and their Haar normalization,
 induction-duality and product-induction comparisons, the source's inverse
 formal-degree factor, representative independence of this positive form,
 smooth spectral-family forms, and the analytic Plancherel obligations remain
-separate. No whole-task completion condition is closed by this helper.
+separate.

@@ -44,7 +44,8 @@ exterior/coproduct comparison.
 
 The module is derived and internal. It introduces no external theorem. It instantiates the
 general formula with the abelian scheme's unit point, product projections and chosen affine
-cover. Its import closure contains none of the six excluded Picard or dual-scheme statements
-named by Task 6105. Through `DegreeTwoComparisonAssembly` it contains the statement modules
+cover. Its import closure contains none of the six Picard or dual-scheme statements excluded
+from the proof of the degree-two exterior and canonical coproduct comparison. Through
+`DegreeTwoComparisonAssembly` it contains the statement modules
 `FieldH2PrimitiveInjectivityStatement` and `FieldH2ExteriorCoproductComparisonStatement`, but
 no proof of either.

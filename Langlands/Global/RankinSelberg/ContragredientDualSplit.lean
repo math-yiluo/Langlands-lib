@@ -279,7 +279,7 @@ theorem whittaker_split_of_corner (ψ : HarmonicAnalysis.UnitaryAdditiveCharacte
     (T : CuspidalOperatorRealization F r) {S : Finset (FinitePlace F)}
     {x : T.Space} (hx : IsSphericalOutside F T S x) {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     (a : Fin (r + 1) → ℂˣ)
     (hT : ∀ (b : fixedVectors (T.realization.localRepresentation v)
@@ -410,7 +410,7 @@ theorem dualWhittaker_split (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Ade
     (hPd : Pd.exceptional ⊆ S)
     {x : T.Space} (hx : IsSphericalOutside F T S x) {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =

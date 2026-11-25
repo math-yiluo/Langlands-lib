@@ -6,4 +6,4 @@ In the mixed matrix chart, the inclusion is affine in the local matrix. Its real
 
 `archimedeanHalfDerivative` differentiates the ambient half-character extension at the identity in a real Lie direction. The chain rule gives that same derivative on every infinite parabolic curve with the given tangent. On the one-place curves the extension agrees with the corresponding local Levi half modulus. These identities let the local standard and adelic scalar derivative formulas use the same tangent and normalization term.
 
-This is an internal comparison for Task 6553. Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the normalization and scalar inducing model. The proof uses the Library's actual place inclusions, mixed matrix chart, and one-place half modulus equalities.
+This is an internal comparison toward `CuspidalIsobaricAutomorphyStatement` (automorphy of isobaric sums of cuspidal representations at every place). Getz and Hahn (2024), §10.1, pp. 270–271 (PDF 282–283), give the normalization and scalar inducing model. The proof uses the Library's actual place inclusions, mixed matrix chart, and one-place half modulus equalities.

@@ -1,7 +1,5 @@
 # Smooth connected commutative groups killed by `p` are vector groups
 
-Author: Worker 1519 (task `c8e71bce-b184-446c-af50-7ac4df6401a3`).
-
 This module proves the existing proposition
 `Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`
 (module `Langlands.GroupScheme.Rational.CommutativeVectorClassificationStatement`) at

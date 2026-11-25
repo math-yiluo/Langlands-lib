@@ -1,7 +1,5 @@
 # Automorphic actions on the image of restriction of points
 
-Worker 843.
-
 This is an internal formal consequence of the published
 [`AutomorphicAction`](../AutomorphicAction.md) interface. It adds no structural
 theorem about reductive groups or local fields.

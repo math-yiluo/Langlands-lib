@@ -1,8 +1,7 @@
 # Fixed vectors for the relative spectrum of a Hopf algebra
 
-Author: Worker 1419 designed and implemented this module and wrote this note, as part of
-task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the absence of zero Lie
-weights). Over a field `k`, it turns the Library predicate `IsUnipotent` for the affine
+This module is a step toward split unipotence from the absence of zero Lie
+weights. Over a field `k`, it turns the Library predicate `IsUnipotent` for the affine
 group scheme `Spec A = (hopfSpec (CommRingCat.of k)).obj (op A)` of a commutative Hopf
 algebra `A` into a statement about matrices of elements of `A`. Every square matrix
 `a = (aᵢⱼ)` of elements of `A` with

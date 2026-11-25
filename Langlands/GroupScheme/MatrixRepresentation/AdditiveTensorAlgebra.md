@@ -1,6 +1,6 @@
 # Conditional separation of actual additive tensor coefficient algebras
 
-This internal derived unit concerns supplied actual additive-group
+This module, internal and derived, concerns supplied actual additive-group
 representations over a field `k : Type u`, on finite coordinate types. It uses
 the actual diagonal tensor representation and its previously proved coefficient
 convolution. It introduces no group-structure or highest-weight assumption.
@@ -39,6 +39,6 @@ restrictedness implies a first-factor degree bound is used. The second premise
 concerns the actual Frobenius-powered representations, including the
 Frobenius transformation of their coefficient entries; it is not silently
 identified with fullness before Frobenius. No perfectness or infinitude
-assumption is needed for the stated conditional result. This unit does not
+assumption is needed for the stated conditional result. This module does not
 construct a generating root family or a Steinberg representation and does not
 prove `SteinbergBigCellStatement`.

@@ -189,7 +189,7 @@ theorem exists_injective_rightZero {a c : ℕ} (ha : 0 < a) (hc : c = 0) (hac : 
         exact LinearMap.congr_fun (key g) x.down }
   refine ⟨SmoothRep.ofHom φ, ?_⟩
   intro x y hxy
-  exact ULift.ext _ _ (e.injective hxy)
+  exact ULift.ext (e.injective hxy)
 
 /-- `⟨Δ⟩ × ⟨Δ'_1⟩ × ⋯ × ⟨Δ'_s⟩` embeds in the cuspidal product of all members,
 written as the binary product of `⟨Δ⟩` with the product of the others. -/

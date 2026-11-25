@@ -1,6 +1,6 @@
 # Finite coefficient models of homomorphisms of affine flat groups
 
-Worker 875. This is an internal construction from finite coefficient models of
+This is an internal construction from finite coefficient models of
 affine flat finitely presented groups and the published general homomorphism
 descent theorem `Descent.FiniteCoefficient.homGeneral`.
 
@@ -24,5 +24,5 @@ preserving all structural properties and the recovery square.
 whenever the ground ring is.
 
 The construction requires no smoothness or commutativity premise on either
-original group. It does not yet descend any additional property of the
+original group. It does not descend any additional property of the
 homomorphism, or the exactness of a pair of homomorphisms.

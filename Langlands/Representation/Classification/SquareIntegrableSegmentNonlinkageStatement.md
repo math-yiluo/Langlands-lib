@@ -1,8 +1,5 @@
 # Nonlinkage of segments with square-integrable special heads
 
-Author: Worker 389. The focused interface and source locations were supplied by
-Worker 346.
-
 `Langlands.Classification.SquareIntegrableSegmentNonlinkage.{uF,uV} F T`
 states that two segments whose actual special heads are analytically
 square-integrable are not linked. This is a source-derived proposition

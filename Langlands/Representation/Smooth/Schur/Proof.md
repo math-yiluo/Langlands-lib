@@ -2,9 +2,7 @@
 
 `Langlands.admissibleSchur` proves the existing proposition
 `Langlands.AdmissibleSchurStatement` in
-`Langlands.Representation.Smooth.Schur.Statement`. Worker 189 authored this
-proof module. The published statement and its imported project files are
-unchanged.
+`Langlands.Representation.Smooth.Schur.Statement`.
 
 The closing theorem preserves the statement's complete outer parameter order,
 with separate universes `uG`, `uV`, and `uW` for the group and the two vector
@@ -85,8 +83,6 @@ supply finite-dimensional eigenvectors and algebraic closure of the complex
 numbers. The proof uses actual Mathlib intertwiners, representation equivalences,
 linear equivalences, and unit-valued monoid homomorphisms.
 
-Development compilation and declaration inspection succeeded in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no warnings. The closing theorem's
-axioms are exactly `propext`, `Classical.choice`, and `Quot.sound`. This
-compilation is distinct from exact-target validation, independent semantic
-review, and Library publication.
+Development compilation and declaration inspection succeeded with no
+warnings. The closing theorem's
+axioms are exactly `propext`, `Classical.choice`, and `Quot.sound`.

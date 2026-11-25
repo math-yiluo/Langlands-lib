@@ -1,7 +1,5 @@
 # Integral evaluation on original CM normal refinements
 
-Author: Worker 57.
-
 Construct canonical evaluation of the independently descended integral
 coefficient sheaf on a finer original CM normal cover. Prove that both
 integral cover refinement and quotient-ring scalar restriction preserve
@@ -21,7 +19,7 @@ an algebraic representation of `D.rationalInvolution.baseChange K` on
 `W`. Fix the rational finite place `p`, small CM level `U`, natural
 scalar `m` with `hm : m ≠ 0`, and exponent `k : ℕ`.
 
-This unit retains every named premise of
+This module retains every named premise of
 [HarrisTaylorCMCoefficientRefinementScalars](HarrisTaylorCMCoefficientRefinementScalars.md):
 
 - `pullbackTensorComparisonIsIsoStatement`,
@@ -48,7 +46,7 @@ conditions. The actual scheme tower and its maps are constructed from
 representing witnesses for that presheaf. The imported original-cover
 results derive the finite geometric torsors from these exact premises.
 No arbitrary scheme outputs, chosen trivializations or desired
-comparison equations are additional inputs to this unit.
+comparison equations are additional inputs to this module.
 
 Use the notation
 
@@ -303,15 +301,15 @@ sources. The nonzero natural scalar and exponent zero are the existing
 arithmetic constructors' extension of the sources' positive prime-power
 parameters.
 
-This unit fixes the coarse level, algebraic representation, stable
+This module fixes the coarse level, algebraic representation, stable
 lattice, scalar and exponent. Applicable representability and dual
 existence/geometry theorems, source rigidity, full source-moduli and
 canonical-model geometry, and identification with the original
-component-function sheaves remain required in the surrounding program.
-This unit does not establish lattice independence, scalar extension,
+component-function sheaves are not established here.
+This module does not establish lattice independence, scalar extension,
 arbitrary scheme inverse-image compatibility or completion to a lisse
 adic sheaf. It does not construct a varying-cover exponent system.
 
-Only published dependencies are imported. This pair is by Worker 57,
-using Lean 4.34.0 and Mathlib
+Only published dependencies are imported. This pair uses
+Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

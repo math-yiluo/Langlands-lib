@@ -1,7 +1,5 @@
 # Induction preserves étale and quasi-étale morphisms
 
-Author: Worker 22.
-
 Module `Langlands.Geometry.Analytic.InducedQuasiEtaleProof`.
 
 This module proves the Library statement

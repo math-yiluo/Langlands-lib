@@ -1,7 +1,5 @@
 # Closed inversion layers and open cell neighborhoods: proof
 
-Author: Worker 176.
-
 `Langlands.GeneralLinear.upperBruhatFiltrationGeometry.{u}` in
 `Langlands.Group.GL.UpperBruhatFiltrationGeometryProof` proves exactly the
 published proposition

@@ -1,6 +1,6 @@
 # Opposite chambers and the two uniform basis clauses
 
-This internal derived unit is at arbitrary universe `u`. The root-reversal lemmas are over an arbitrary field `F` and an affine ambient group scheme, with a specified torus map `i : S → G`, cocharacter `ν` and face `J`. The character-reversal identity assumes negation stability of the actual relative roots. The compatible-component reversal theorem obtains that stability for connected reductive `G`, maximal split `i`, generic `ν`, and `J` contained in its simple relative roots.
+This internal derived module is at arbitrary universe `u`. The root-reversal lemmas are over an arbitrary field `F` and an affine ambient group scheme, with a specified torus map `i : S → G`, cocharacter `ν` and face `J`. The character-reversal identity assumes negation stability of the actual relative roots. The compatible-component reversal theorem obtains that stability for connected reductive `G`, maximal split `i`, generic `ν`, and `J` contained in its simple relative roots.
 
 The epsilon-chamber map, opposite-radical contraction and uniform basis clauses are over a nonarchimedean local field `F`. For contraction and the final predicates, `G` is connected reductive, `i` is maximal split, `ν` is generic, `J` is a subset of its simple relative roots, and `IsCompatibleStandardSplitComponent i ν J A q` specifies the actual component and map. All ambient topology is the canonical `rationalPointTopology F G.X`; each radical has its inherited subgroup topology. The final theorem takes an arbitrary compact open ambient subgroup `K`.
 
@@ -12,4 +12,4 @@ Two general arguments for a group with a topology translate these uniform estima
 
 `uniform_containment_and_cofinality` applies both arguments to the actual standard and opposite standard radicals. Closedness comes from their canonical closed representatives. Normalization comes from the published standard-parabolic normalization of its literal unipotent subgroup and from the compatible component's inclusion in the standard Levi. The conclusion is exactly `UniformCompactContainment` and `UniformCompactOpenCofinality` for every compact open ambient subgroup.
 
-The common normal Iwahori basis, weak-chamber preservation of its intersections and the full available-data theorem remain separate obligations.
+The common normal Iwahori basis, weak-chamber preservation of its intersections and the full available-data theorem are not proved here; the full available-data theorem `AvailableSimultaneousStandardBasisStatement` is proved as `availableSimultaneousStandardBasis` (module `AvailableBasisProof`).

@@ -1,6 +1,6 @@
 # The unitary part of the Jacquet module of a tempered representation
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.UnitaryJacquetPartTemperedStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `UnitaryJacquetPartTemperedStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.UnitaryJacquetPartTemperedStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `UnitaryJacquetPartTemperedStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.3, Lemma, printed p.229 / PDF p.235, with its proof on the same page. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The lemma says: let `(π, V)` be a tempered representation of `G` and `P = MN` a standard parabolic subgroup. Decompose the Jacquet module as a direct sum of representations of `M`,
 
@@ -38,9 +38,9 @@ The published predicate `IsNormalizedExponentTempered` is a derived formulation 
 - **No other hypotheses.** No irreducibility, finite length, central character or finite-dimensionality is assumed. The source's `π` is any tempered representation, and temperedness includes admissibility.
 - **Topology.** The local-compactness and nonarchimedean-group instances of `G(F)` are hypotheses, as in the published temperedness predicate. Those of `M(F)` are derived from them, not assumed.
 
-## Remaining obligations
+## Proof obligations
 
-The proof is a separate obligation. The source proof fixes an exponent `χ` with `ℜ(χ) = 0`. A standard parabolic of `M` is `M ∩ Q` for a standard parabolic `Q = LU ⊂ P` of `G`. By transitivity of the restriction functors (VI.1.4), every normalized exponent `χ_Q` of `(r_P^G π)_χ` relative to `M ∩ Q` is a normalized exponent of `π` relative to `Q`, so `ℜ(χ_Q) ∈ ^+[𝔞_L^*]^G_Q` by temperedness of `π` (VII.2.3.1). By Lemma VII.1.1(ii) the restriction of `χ_Q` to `A_M` is `χ`. With the decomposition `𝔞_L^* = 𝔞_M^* ⊕ (𝔞_L^M)^*` of V.3.13, the projection of `ℜ(χ_Q)` to `𝔞_M^*` is `ℜ(χ) = 0`. Hence `ℜ(χ_Q) ∈ (𝔞_L^M)^* ∩ ^+[𝔞_L^*]^G_Q ⊂ ^+[(𝔞_L^M)^*]^M_{Q∩M}`.
+The proof is separate, in `UnitaryJacquetPartTemperedProof`. The source proof fixes an exponent `χ` with `ℜ(χ) = 0`. A standard parabolic of `M` is `M ∩ Q` for a standard parabolic `Q = LU ⊂ P` of `G`. By transitivity of the restriction functors (VI.1.4), every normalized exponent `χ_Q` of `(r_P^G π)_χ` relative to `M ∩ Q` is a normalized exponent of `π` relative to `Q`, so `ℜ(χ_Q) ∈ ^+[𝔞_L^*]^G_Q` by temperedness of `π` (VII.2.3.1). By Lemma VII.1.1(ii) the restriction of `χ_Q` to `A_M` is `χ`. With the decomposition `𝔞_L^* = 𝔞_M^* ⊕ (𝔞_L^M)^*` of V.3.13, the projection of `ℜ(χ_Q)` to `𝔞_M^*` is `ℜ(χ) = 0`. Hence `ℜ(χ_Q) ∈ (𝔞_L^M)^* ∩ ^+[𝔞_L^*]^G_Q ⊂ ^+[(𝔞_L^M)^*]^M_{Q∩M}`.
 
 A Lean proof also needs these facts, none of which is asserted here:
 

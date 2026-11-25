@@ -1,7 +1,5 @@
 # Unitary extension of an arbitrary finite local character
 
-Author: Worker 5167.
-
 `Langlands.Global.unitaryLocalCharacterExtension.{u}` proves the unchanged
 published proposition
 `Langlands.Global.UnitaryLocalCharacterExtensionStatement.{u}`.

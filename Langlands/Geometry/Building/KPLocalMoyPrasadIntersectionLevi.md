@@ -1,6 +1,6 @@
 # Levi decomposition of the groups `G(K)_{x,r}` at positive depth
 
-Helper module for Task 6191 (`LocalMoyPrasadGroupPropertiesStatement`). It proves
+Helper module for the proof of `LocalMoyPrasadGroupPropertiesStatement`. It proves
 clauses 5 and 8, and clauses 6 and 7 for `r > 0`. Every result assumes the sign product
 cover described below. No new definitions are introduced. Every result is a theorem about
 the published objects `BuildingData.moyPrasad`, `BuildingData.rootGroupSpan`,
@@ -118,9 +118,10 @@ G(K)_{x,r} = U_{Φ⁺(-μ),x,r} · j(Z(K)_r) · U_{Φ⁺(μ),x,r}
 ```
 
 as sets. This is word for word the conclusion of `LocalMoyPrasadPositiveProductStatement`
-(Task 6542, the positive-depth form of KP Lemma 7.3.11 and Proposition 7.3.12). It is an
-inline premise of these helper lemmas only. The final proof of Task 6191 will discharge it
-with that published theorem, not assume it.
+(the positive-depth form of KP Lemma 7.3.11 and Proposition 7.3.12). It is an
+inline premise of these helper lemmas only. The final proof of
+`LocalMoyPrasadGroupPropertiesStatement` discharges it with the published theorem
+`localMoyPrasadPositiveProduct`, not by assuming it.
 
 - `exists_mul_of_productCover`: the elementwise form of the cover.
 - `exists_levi_mul_of_productCover`: for `r > 0` there is an integral `λ` with the signs of

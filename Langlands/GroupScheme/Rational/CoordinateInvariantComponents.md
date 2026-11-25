@@ -1,6 +1,6 @@
 # Invariant augmentation functions detect connected components
 
-This derived supporting unit concerns the actual coordinate algebra of an affine
+This derived supporting module concerns the actual coordinate algebra of an affine
 group scheme over an arbitrary field, with an action by a commutative group
 scheme. `HasTrivialInvariantAugmentation b` means that the zero character does
 not occur in the actual augmentation support. The final theorem
@@ -60,6 +60,7 @@ injective and surjective. Its algebra equivalence gives an isomorphism of the
 actual affine schemes, and connectedness transfers from `G⁰` to `G`.
 
 The result supplies a connectedness tool for the zero-excluded semigroup
-intersection case. This unit does not itself prove the semigroup intersection
-equality, the remaining intersection alternatives, or the host comparison
-statement.
+intersection case. This module does not itself prove the semigroup intersection
+equality, the remaining intersection alternatives, or the comparison
+statement `SemigroupComparisonStatement` (proved in
+`Rational.SemigroupComparisonProof`).

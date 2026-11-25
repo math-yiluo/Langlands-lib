@@ -1,6 +1,6 @@
 # Exact Haar expressions for corrected-orbit cocharacters
 
-This internal construction and deduction by Worker 561 connects the
+This internal construction and deduction connects the
 actual cocharacter realization with the exact Haar expressions in
 `RationalCorrectedOrbitSquaredModulusStatement`.
 

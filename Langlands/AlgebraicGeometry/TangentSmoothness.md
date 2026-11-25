@@ -1,7 +1,5 @@
 # Smoothness and dense range from surjectivity on rational tangent vectors
 
-Author: Worker 1630.
-
 This derived helper module proves the standard tangent-space criterion: a
 morphism from a smooth scheme over a field `K` is smooth at a rational point
 when it is surjective on tangent vectors there, and so it has dense image in

@@ -34,6 +34,7 @@ structure SmoothAffineFiberGroupModel (G : GroupScheme (Spec (CommRingCat.of A))
 
 private theorem groupIsoPullback {S : Scheme.{u}} {G H : GroupScheme S} (e : G ≅ H) :
     IsPullback e.inv.hom.hom.left H.X.hom G.X.hom (𝟙 S) :=
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   IsPullback.of_horiz_isIso ⟨by rw [Category.comp_id]; exact e.inv.hom.hom.w⟩
 
 private def baseChangeSubalgebraIso (B : Subalgebra R A)

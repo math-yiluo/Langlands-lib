@@ -1,6 +1,6 @@
 # Tempered Frobenius reciprocity through the unitary Jacquet part
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.TemperedInductionUnitaryReciprocityStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedInductionUnitaryReciprocityStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.TemperedInductionUnitaryReciprocityStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `TemperedInductionUnitaryReciprocityStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.4, Proposition, printed p.229 / PDF p.235. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation, the Proposition says: let `P = MN` be a parabolic subgroup of `G`; for every tempered representation `(σ, E)` of `M` and every tempered representation `(π, V)` of `G` there is a natural isomorphism
 
@@ -40,7 +40,7 @@ where `(F x)(1)` is `Induction.eval (pointImage p) (inducingRepresentation …) 
 
 ## The isomorphism
 
-Every element of the Jacquet module is a class `[x]`, so every `y` in the unitary part satisfies the hypothesis of the formula for some `x`. The formula therefore determines `e F` on the whole unitary part, and `e` is unique. In terms of the published inclusion, `e F` is the restriction to `(r_P^G π)_0` of the Frobenius map `[x] ↦ (F x)(1)` on `r_P^G π`. That map is the explicit adjunction of VI.1.2, staged separately as `LeviFrobeniusReciprocityStatement`. The source's "natural" is not stated as a separate clause. Naturality in `π` and in `σ` follows from the formula by the same direct computation as for Frobenius reciprocity, which is not carried out here.
+Every element of the Jacquet module is a class `[x]`, so every `y` in the unitary part satisfies the hypothesis of the formula for some `x`. The formula therefore determines `e F` on the whole unitary part, and `e` is unique. In terms of the published inclusion, `e F` is the restriction to `(r_P^G π)_0` of the Frobenius map `[x] ↦ (F x)(1)` on `r_P^G π`. That map is the explicit adjunction of VI.1.2, stated separately as `LeviFrobeniusReciprocityStatement`. The source's "natural" is not stated as a separate clause. Naturality in `π` and in `σ` follows from the formula by the same direct computation as for Frobenius reciprocity, which is not carried out here.
 
 ## Faithfulness notes
 
@@ -49,11 +49,11 @@ Every element of the Jacquet module is a class `[x]`, so every `y` in the unitar
 - The carrier universes of `π` and `σ` are independent. The induced representation has carrier universe `max u v`, and the unitary part has the carrier universe `w` of `π`.
 - The local-compactness and nonarchimedean-group instances of `G(F)` are hypotheses, as in the published temperedness predicate. Those of `M(F)` are derived from them, not assumed.
 
-## Remaining obligations
+## Proof obligations
 
-The proof is a separate obligation. Along the source route it needs:
+The proof is separate, in `TemperedInductionUnitaryReciprocityProof`. Along the source route it needs:
 
-- Frobenius reciprocity for the normalized functors (VI.1.2, staged as `LeviFrobeniusReciprocityStatement`). This in turn needs the unimodularity of the radical `N(F)`;
+- Frobenius reciprocity for the normalized functors (VI.1.2, stated as `LeviFrobeniusReciprocityStatement`). This in turn needs the unimodularity of the radical `N(F)`;
 - the restriction step, in the form of the published `TemperedJacquetUnitaryRestrictionStatement`. That statement takes `π` and `σ` in one carrier universe, so a proof for independent universes `w` and `v` must either reprove the step or transport carriers;
 - the decomposition `r_P^G π = (r_P^G π)_0 ⊕ (r_P^G π)_+` (published statement `UnitaryJacquetPartTemperedStatement`), together with unitarity of the exponents of a tempered `σ` relative to its own split component (VII.2.1, Remark 1; Lemma III.1.10, printed p.63 / PDF p.69, for characteristic spaces of a central subgroup);
 - existence of compatible root presentations for the parabolic triples involved, which the published temperedness predicate needs to make its cone condition effective.

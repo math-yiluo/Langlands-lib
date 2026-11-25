@@ -22,7 +22,7 @@ completed integers form a valuation subring of `v.adicCompletion F`. Finiteness
 of the residue field is the published instance
 `Langlands.Global.CompletionResidue.finite_adicResidueField`. Completeness for
 the maximal ideal is the published theorem
-`Langlands.ClassField.Global.isAdicComplete_adicCompletionIntegers`.
+`Langlands.ClassFieldTheory.Global.isAdicComplete_adicCompletionIntegers`.
 
 ## Declarations
 

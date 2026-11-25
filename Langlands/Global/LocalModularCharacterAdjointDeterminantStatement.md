@@ -1,7 +1,5 @@
 # Local analytic modulus on actual completion-valued point groups
 
-Author: Worker 107.
-
 `PlaceGroupPoints.LocalModularCharacterAdjointDeterminantStatement` states
 the number-field completion case of Getz–Hahn, *An Introduction to
 Automorphic Representations* (2024), §3.6, Proposition 3.6.1, equation

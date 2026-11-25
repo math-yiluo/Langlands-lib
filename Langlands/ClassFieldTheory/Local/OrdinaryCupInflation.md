@@ -1,7 +1,5 @@
 # Ordinary local cup products and inflation
 
-Author: Worker 42.
-
 `relativeOrdinaryCup K L n c` cups an actual ordinary relative degree-two
 unit class `c` on the left with ordinary degree-`n` cohomology of the
 trivial lifted-integer representation. It specializes the published

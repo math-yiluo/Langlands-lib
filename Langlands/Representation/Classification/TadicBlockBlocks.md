@@ -1,6 +1,6 @@
 # Classes of rectangles and unitary blocks
 
-Author: Worker 5121. Module `Langlands.Representation.Classification.TadicBlockBlocks`,
+Module `Langlands.Representation.Classification.TadicBlockBlocks`,
 namespace `Langlands.Classification.TadicBlockBlocks`. Helper module of the proofs of
 `Langlands.Classification.TadicBlockReductionFromInputs` and
 `Langlands.Classification.TadicBlockReduction`. Throughout, `hA` is

@@ -24,5 +24,5 @@ theorem identifies these ambient characters with the symmetric part.
 The Prop-valued `ConvexRootCocharacterStatement` packages this assertion over
 all fields in universe `u`, split tori, finite negation-stable ambient character
 sets and convex subsets. The theorem `convexRootCocharacter` proves that
-proposition. This supporting unit does not prove a group-subset intersection
+proposition. This supporting module does not prove a group-subset intersection
 or identify a Weyl group.

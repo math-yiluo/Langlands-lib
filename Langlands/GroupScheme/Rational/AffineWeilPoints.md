@@ -34,6 +34,6 @@ rational-point homomorphism of `f`. This is a comparison of the actual
 restricted morphism and its actual section map.
 
 The provenance is internal composition of the existing restriction and
-coefficient comparisons. This unit supplies no statement about restriction
+coefficient comparisons. This module supplies no statement about restriction
 of parabolics, geometric unipotent radicals or dynamic subgroups, and proves
 no Kneser–Tits theorem.

@@ -20,4 +20,5 @@ supplies `c` over the extension integers with `x⁻¹σ(x) σ(c) = c`. The matri
 `xc` represents the same coset and is fixed entrywise. Each entry is the image
 of an element of the base field, and the determinant of the resulting matrix
 is nonzero because its image is the determinant of `xc`. This gives a
-representative in the image of the base general linear group.
+representative in the image of the base general linear group
+(`exists_baseChange_eq_of_entrywiseAut_eq` of `Langlands.BaseChange.Norm`).

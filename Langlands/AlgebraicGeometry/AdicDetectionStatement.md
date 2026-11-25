@@ -16,7 +16,8 @@ scheme pullbacks. The hypotheses use Mathlib's `IsFinite` and
 `IsImmersion`; there are no additional hypotheses on `Z`, no reduction
 assumption, and no separatedness or finite-presentation assumption on `i`.
 
-This unit states the lemma; it does not supply its proof.
+This module states the lemma; it does not supply its proof, which is in
+`AdicDetectionProof`.
 The two auxiliary definitions only expose the canonical maps used in the
 statement and impose no mathematical conditions.
 

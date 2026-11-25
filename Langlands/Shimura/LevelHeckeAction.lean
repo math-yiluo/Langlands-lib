@@ -28,8 +28,8 @@ abbrev fixedVectorsActionFunctor (H : Subgroup G) :
 
 theorem fixedVectorsActionFunctor_obj_ρ (H : Subgroup G) (A : Action (SmoothRep.{t, v, w} R G) Γ)
     (γ : Γ) :
-    ((fixedVectorsActionFunctor R Γ H).obj A).ρ γ =
-      ModuleCat.ofHom (fixedVectorsMap (A.ρ γ).hom.hom H) := rfl
+    (((fixedVectorsActionFunctor R Γ H).obj A).ρ γ).asHom =
+      ModuleCat.ofHom (fixedVectorsMap (A.ρ γ).asHom.hom.hom H) := rfl
 
 variable [IsTopologicalGroup G] (K L : CompactOpenLevel G) (g : G)
 
@@ -42,7 +42,7 @@ def heckeActionNatTrans :
     where
   app A :=
     { hom := (heckeNatTrans R K L g).app A.V
-      comm := fun γ => (heckeNatTrans R K L g).naturality (A.ρ γ) }
+      comm := fun γ => (heckeNatTrans R K L g).naturality (A.ρ γ).asHom }
   naturality _ _ f := Action.Hom.ext ((heckeNatTrans R K L g).naturality f.hom)
 
 @[simp] theorem heckeActionNatTrans_app_hom (A : Action (SmoothRep.{t, v, w} R G) Γ) :
@@ -77,7 +77,7 @@ variable (K L : CompactOpenLevel G) (g : G)
 
 section Automorphisms
 
-variable {Γ : Type u''} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+variable {Γ : Type u''} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 /-- The `K`-fixed vectors of the colimit over levels of `H^n(T(U), p_U^* M)`, with the action
 of `Γ` by pullback along the automorphisms of the tower, natural in the base sheaf `M`. -/
@@ -123,9 +123,9 @@ def galoisHecke (n : ℕ) :
 
 /-- Each Galois element commutes with the double-coset operator. -/
 theorem galoisHecke_comm (n : ℕ) (M : ModuleSheaf X R) (σ : E ≃ₐ[F] E) :
-    ((galoisFixedFunctor R p hT L F E s n).obj M).ρ σ ≫ ((galoisHecke R p hT K L g F E s n).app M).hom =
+    (((galoisFixedFunctor R p hT L F E s n).obj M).ρ σ).asHom ≫ ((galoisHecke R p hT K L g F E s n).app M).hom =
       ((galoisHecke R p hT K L g F E s n).app M).hom ≫
-        ((galoisFixedFunctor R p hT K F E s n).obj M).ρ σ :=
+        (((galoisFixedFunctor R p hT K F E s n).obj M).ρ σ).asHom :=
   ((galoisHecke R p hT K L g F E s n).app M).comm σ
 
 end Galois
@@ -155,7 +155,7 @@ variable (K L : CompactOpenLevel G) (g : G)
 
 section Automorphisms
 
-variable {Γ : Type u''} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+variable {Γ : Type u''} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 /-- The `K`-fixed vectors of the colimit over levels satisfying `P` of `H^n(T(U), p_U^* M)`,
 with the action of `Γ` by pullback along the automorphisms of the tower, natural in the base
@@ -210,10 +210,10 @@ def restrictedGaloisHecke (n : ℕ) :
 
 /-- Each Galois element commutes with the double-coset operator. -/
 theorem restrictedGaloisHecke_comm (n : ℕ) (M : ModuleSheaf X R) (σ : E ≃ₐ[F] E) :
-    ((restrictedGaloisFixedFunctor R p hT L F E s n).obj M).ρ σ ≫
+    (((restrictedGaloisFixedFunctor R p hT L F E s n).obj M).ρ σ).asHom ≫
         ((restrictedGaloisHecke R p hT K L g F E s n).app M).hom =
       ((restrictedGaloisHecke R p hT K L g F E s n).app M).hom ≫
-        ((restrictedGaloisFixedFunctor R p hT K F E s n).obj M).ρ σ :=
+        (((restrictedGaloisFixedFunctor R p hT K F E s n).obj M).ρ σ).asHom :=
   ((restrictedGaloisHecke R p hT K L g F E s n).app M).comm σ
 
 end Galois
@@ -235,10 +235,10 @@ variable (K L : CompactOpenLevel G) (g : G)
 section Automorphisms
 
 variable {Γ : Type u''} [Group Γ]
-variable (ρ₀ : Γ →* (Aut T₀)ᵐᵒᵖ) (hρ₀ : ∀ γ, (ρ₀ γ).unop.hom ≫ p₀ = p₀)
+variable (ρ₀ : Γ →* (Aut T₀)ᵐᵒᵖ) (hρ₀ : ∀ γ, (ρ₀ γ).unop.asIso.hom ≫ p₀ = p₀)
 variable (ρ : Γ →* (Aut (P.ι ⋙ T₀))ᵐᵒᵖ)
-  (hρ : ∀ γ, (ρ γ).unop.hom ≫ restrictProjection P p₀ = restrictProjection P p₀)
-  (hρρ₀ : ∀ γ, (ρ γ).unop.hom = Functor.whiskerLeft P.ι (ρ₀ γ).unop.hom)
+  (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ restrictProjection P p₀ = restrictProjection P p₀)
+  (hρρ₀ : ∀ γ, (ρ γ).unop.asIso.hom = Functor.whiskerLeft P.ι (ρ₀ γ).unop.asIso.hom)
 
 /-- For the restriction of a tower over all levels, the `K`-fixed vectors with the action of
 `Γ` agree with those of the tower over all levels, naturally in the base sheaf. -/

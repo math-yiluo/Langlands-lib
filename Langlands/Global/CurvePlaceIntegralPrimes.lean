@@ -74,6 +74,7 @@ def centerAbove :
 variable [FiniteDimensional K L]
   [Finite k] [Algebra (RatFunc k) K] [IsScalarTower k (RatFunc k) K] [FunctionField k K]
 
+set_option synthInstance.maxSize 256 in
 /-- The nonzero height-one prime represented by an integral-closure prime above the place. -/
 def heightOne
     (P : p.heightOneSpectrum.asIdeal.primesOver (curvePlaceIntegralClosure L p)) :
@@ -99,6 +100,7 @@ def upperPlace
   rw [← HeightOneSpectrum.valuation_liesOver L p.heightOneSpectrum Q]
   have he : p.heightOneSpectrum.asIdeal.ramificationIdx' Q.asIdeal ≠ 0 :=
     Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver _ p.heightOneSpectrum.ne_bot
+  rw [Ideal.ramificationIdx'_eq_ramificationIdx _ _ p.heightOneSpectrum.ne_bot] at he
   rw [pow_le_one_iff_of_nonneg zero_le he]
   exact (p.mem_iff_adicValuation_le_one).symm
 
@@ -181,6 +183,7 @@ theorem centerAbove_upperPlace
   apply (primeEquivUpperPlaces p).injective
   exact upperPlace_center p (upperPlace p P)
 
+set_option synthInstance.maxSize 256 in
 omit [IsScalarTower k K L] in
 /-- The ramification index of the localization itself is one. -/
 theorem localization_ramificationIdx (q : CurvePlacesAbove k L p) :
@@ -210,6 +213,9 @@ omit [IsScalarTower k K L] in
 theorem localization_inertiaDeg (q : CurvePlacesAbove k L p) :
     q.1.heightOneSpectrum.asIdeal.inertiaDeg (curvePlaceIntegralClosure L p) = 1 := by
   let := Localization.AtPrime.algebraOfLiesOver (center p q) q.1.heightOneSpectrum.asIdeal
+  have : IsScalarTower (curvePlaceIntegralClosure L p) (Localization.AtPrime (center p q))
+      (Localization.AtPrime q.1.heightOneSpectrum.asIdeal) :=
+    Localization.AtPrime.instIsScalarTower (center p q) q.1.heightOneSpectrum.asIdeal
   rw [Ideal.inertiaDeg_eq (center p q) q.1.heightOneSpectrum.asIdeal]
   apply Module.finrank_of_bijective_algebraMap
     (R := (center p q).ResidueField) (S := q.1.heightOneSpectrum.asIdeal.ResidueField)
@@ -225,6 +231,7 @@ theorem inertiaDeg_center (q : CurvePlacesAbove k L p) :
   rw [Ideal.inertiaDeg_tower (R := p.toValuationSubring) (center p q)
     q.1.heightOneSpectrum.asIdeal, localization_inertiaDeg p q, mul_one]
 
+set_option synthInstance.maxSize 256 in
 /-- The fundamental degree identity is indexed by every actual upper curve place. -/
 theorem sum_ramification_inertia :
     (∑ q : CurvePlacesAbove k L p,

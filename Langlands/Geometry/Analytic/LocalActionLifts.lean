@@ -31,7 +31,7 @@ structure ActionLift (ρ : G →* Aut X) {U : LocalizedCategory.{u, v, v} (K := 
   action : subgroup →* Aut U
   isContinuousAction : IsContinuousAction action
   /-- `f` is `H`-equivariant. -/
-  equivariant : ∀ h : subgroup, (action h).hom ≫ f = f ≫ (ρ h).hom
+  equivariant : ∀ h : subgroup, (action h).asIso.hom ≫ f = f ≫ (ρ h).asIso.hom
 
 namespace ActionLift
 

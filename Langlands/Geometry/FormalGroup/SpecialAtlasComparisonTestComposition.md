@@ -1,6 +1,6 @@
 # Actual test-comparison composition over supplied scalar structures
 
-This internal unit retains the previously proved actual comparison square for
+This module retains the previously proved actual comparison square for
 successive coefficient extension after retyping the intermediate and final
 scalar structures. `iteratedReAlgebraComparison` and
 `directReAlgebraComparison` retain the two specified actual extended comparisons.
@@ -26,5 +26,6 @@ central division algebra and embedded field hypotheses. Coefficient rings
 have universe `v` independent of the local-field universe; covers may be
 infinite and scalar maps may merge generators. Generic rationalization permits
 separate universes and arbitrary finite coordinate types, with the existing
-domain/fraction-field assumptions. This unit does not yet assert commuting
-coefficient-square naturality or original framed comparison base change.
+domain/fraction-field assumptions. This module does not assert commuting
+coefficient-square naturality (proved in `SpecialAtlasComparisonTestSquare` as
+`testIso_baseAlongSquare`) or original framed comparison base change.

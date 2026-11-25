@@ -1,11 +1,11 @@
 # Quasi-splitness at almost all places from henselian quasi-splitness
 
-Worker 62.
-
 This module states and proves that the quasi-splitness clause of the published
 [`AlmostAllPlacesQuasiSplitStatement`](AlmostAllPlacesQuasiSplitStatement.md) follows from
-the published, not yet proved,
-[`HenselianFiniteResidueQuasiSplitStatement`](../RelativeLevi/HenselianQuasiSplitStatement.md).
+the published
+[`HenselianFiniteResidueQuasiSplitStatement`](../RelativeLevi/HenselianQuasiSplitStatement.md),
+which the Library proves by `henselianFiniteResidueQuasiSplit` (module
+`RelativeLevi.HenselianQuasiSplitProof`).
 It does not prove the torsor clause, and it adds no axioms.
 
 ## Statement
@@ -66,6 +66,6 @@ the henselian local ring `𝓞_{F_v}` to its fraction field `F_v` (part (ii)).
 
 ## Provenance
 
-This is an internal reduction for Task 6635 (proof of `AlmostAllPlacesQuasiSplitStatement`).
+This is an internal reduction towards a proof of `AlmostAllPlacesQuasiSplitStatement`.
 Its hypothesis and conclusion are published statements. The torsor clause of the target is
 handled separately, and the final proof combines the two clauses.

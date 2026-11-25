@@ -1,6 +1,6 @@
 # Native Jacquet fixed modules of the actual universal induced family
 
-Workers 1775 and 1780. The source is David Renard,
+The source is David Renard,
 *Représentations des groupes réductifs p-adiques*, 2026 version, VI.9.2,
 printed pp.198–199 / PDF pp.204–205, especially the paragraph on printed
 p.199 applying VI.5.3 to the universal supercuspidal family. Registered
@@ -12,8 +12,8 @@ The supercuspidality definition is VI.2.1, printed p.137 / PDF p.143.
 states finite generation over the complete rational-norm algebra of every
 compact-open fixed module of every output normalized Jacquet action of the
 actual universal induced supercuspidal family. It is a `Prop`-valued
-definition; the coefficient-geometric-lemma argument is a remaining proof
-obligation.
+definition; `rationalSupercuspidalJacquetFamilyFinite` in
+`UnramifiedRationalJacquetFinitenessProof` proves it.
 
 The field and group schemes range over universe `u`, and the inducing
 carrier `E` ranges independently over `uV`. The field is an arbitrary
@@ -139,11 +139,11 @@ he applies VI.5.3 to the universal supercuspidal family. The output
 Jacquet module has a finite filtration whose nonzero pieces are induced
 conjugate coefficient families when the inducing Levi is conjugate to
 a Levi subgroup of the output Levi; the other pieces vanish. This
-deduces coefficient admissibility of the Jacquet module. In the present
-formalization, the coefficient version of that geometric lemma,
-the actual filtration and its identifications, and the resulting
-compact-open fixed-module finite generation remain to be proved.
-None is supplied as a premise or a model field. VI.8.3 alone is not a
+deduces coefficient admissibility of the Jacquet module. This module does
+not prove the coefficient version of that geometric lemma,
+the actual filtration and its identifications, or the resulting
+compact-open fixed-module finite generation; the statement is proved in
+`UnramifiedRationalJacquetFinitenessProof`. None is supplied as a premise or a model field. VI.8.3 alone is not a
 general coefficient-Jacquet admissibility theorem.
 
 This statement isolates that representation-theoretic input to the

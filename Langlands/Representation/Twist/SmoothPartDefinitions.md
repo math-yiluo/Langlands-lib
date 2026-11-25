@@ -1,6 +1,6 @@
 # Character twists of smooth parts and smooth contragredients
 
-Worker 4 constructs two representation equivalences for a commutative ring
+The module constructs two representation equivalences for a commutative ring
 `R`, a topological group `G`, an `R`-module `V`, a character
 `chi : G →* Rˣ`, and an explicit open-kernel hypothesis on `chi`.
 The coefficient ring, group and module inhabit independent universes.
@@ -55,14 +55,12 @@ The topological-group assumption is needed for the existing smooth-part
 and smooth-contragredient actions. Character continuity is not a premise:
 the open kernel is stated explicitly.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0,
+Environment: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Development check `91e75698-7d2c-4a7e-869c-89cd9c793a4d` compiled
+A compilation check compiled
 the pair without errors or warnings and inspected the selected definition.
 Its three independent universes are retained; its only assumptions beyond
 the explicit parameters are the standard Lean axioms `propext`,
 `Classical.choice`, and `Quot.sound`. The Lean source and all imported
 project pairs remain unchanged since that check.
-Compilation is development evidence; independent semantic review and
-publication are required.
-The full local Langlands correspondence remains unproved.
+This file does not prove the local Langlands correspondence.

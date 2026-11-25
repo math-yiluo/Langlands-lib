@@ -1,7 +1,6 @@
 # Compact simple-root boxes in the positive torus
 
-Author: Worker 1179. Part of task 40747bb3 (finite volume of `G(F) \ G(𝔸_F)¹`), with
-Worker 235.
+Written for the finite volume of `G(F) \ G(𝔸_F)¹`.
 
 This module proves `SimpleRootBoxCompactStatement`
 (`Langlands/Global/AdelicSiegelMeasureReduction.lean`) from two existing Library

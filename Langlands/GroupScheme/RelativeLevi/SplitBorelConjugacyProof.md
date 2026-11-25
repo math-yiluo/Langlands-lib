@@ -1,6 +1,6 @@
 # Zariski-local conjugacy of Borel subgroups of a split reductive group
 
-Worker 670, with Worker 696's local normalizer-conjugacy reduction.
+The local normalizer-conjugacy reduction it uses is in `BorelNormalizerLocalConjugacy`.
 
 `Langlands.GroupScheme.splitBorelZariskiLocalConjugacy` proves exactly
 `Langlands.GroupScheme.SplitBorelZariskiLocalConjugacyStatement.{u}`.

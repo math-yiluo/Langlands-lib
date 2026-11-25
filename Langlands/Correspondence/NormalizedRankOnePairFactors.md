@@ -33,7 +33,7 @@ and epsilon-factor certificates.
 
 This provenance is entirely internal: the geometric theorem proves the
 finite norm-residue and residue-action conditions, and the pair-factor
-theorem supplies the analytic/arithmetic comparison. This unit constructs
+theorem supplies the analytic/arithmetic comparison. This module constructs
 no normalized reciprocity family, local-constant system or all-rank
 supercuspidal map. Their stated premises remain explicit. Higher-rank
 compatibility and the unchanged closed supercuspidal correspondence

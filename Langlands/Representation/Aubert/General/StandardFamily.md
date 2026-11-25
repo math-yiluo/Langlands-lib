@@ -1,16 +1,12 @@
 # The actual standard family as semidirect decompositions
 
-Implementation and documentation: Worker 23 (task
-`593ef603-6672-4424-976c-14e11e920d9c`, the initial adapter unit of the general
-Aubert program `46df6a68-5db4-4428-8044-05151d6ce1f6`).
-
 This module connects the published actual standard family of
 [`Aubert.General.RationalPointFamily`](RationalPointFamily.md) to the semidirect
 decomposition predicate of [`Aubert.General.Parabolic`](Parabolic.md). The
 normalized functors, their K0 maps and `alternatingOperator` can then be applied
 to the actual standard parabolics `P_I(k) = L_I(k) ⋉ U_I(k)`. **The result is
 conditional** on the published Prop target
-`GroupScheme.StandardCocharacterStatement` (task `8ace819d`). This target is
+`GroupScheme.StandardCocharacterStatement`. This target is
 taken as the explicit hypothesis `hstd`, and nothing here proves it.
 
 ## Setting

@@ -1,6 +1,6 @@
 # Separate pair-factor compatibility for the actual rank-one correspondence
 
-Worker 357 combines the actual arithmetic construction of Worker 1555
+This module combines the actual arithmetic construction
 with the full analytic Gauss certificate and the published rank-one
 pair-L comparison. The field, Weil-parameter carrier, two automorphic
 carriers and supplied-system carrier have independent universes.
@@ -43,4 +43,4 @@ This is an internal derivation from the existing arithmetic, analytic
 and class-realization results. It constructs no reciprocity family or
 local-constant system and makes no assertion about higher-rank
 factor compatibility. The unchanged closed all-field supercuspidal
-correspondence remains a separate obligation.
+correspondence is not part of this module.

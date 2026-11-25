@@ -105,8 +105,8 @@ and the right unitor give the displayed functor endpoints.
 coefficient representation. Both constructions retain the entire sheaves and
 all coefficient maps; no submodule of specially chosen sections replaces them.
 
-This unit concerns ordinary-open equivariant smooth sheaves on the actual
+This module concerns ordinary-open equivariant smooth sheaves on the actual
 balanced quotient. Rational specialization and variation, compact support,
 supported Godement and higher derived comparisons, analytic or etale
-identification, arithmetic level towers and the Harris specialization remain
-obligations of the wider framework.
+identification, arithmetic level towers and the Harris specialization belong
+to the wider framework and are not constructed here.

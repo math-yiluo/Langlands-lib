@@ -1,8 +1,7 @@
 # Valuation axioms under actual derived pullback
 
-Authors: Worker 27 and Worker 1631. Worker 1631 supplied the
-`DerivedRootTransport` support and the earlier central-isogeny transfer
-infrastructure used in this construction.
+This construction uses the `DerivedRootTransport` support and the earlier
+central-isogeny transfer infrastructure.
 
 Over a field `k : Type u`, let `d : D ⟶ G` be a supplied actual derived
 inclusion. The group `D` is affine and locally of finite type, and `G` is
@@ -91,8 +90,8 @@ membership under torus conjugation, maps conjugation through the commuting
 square, and uses naturality of the actual character evaluation.
 `DerivedApartment` imports this result for its apartment construction.
 
-The integrated valuation map and V0–V5 helpers retain the published
-implementations and signatures. The accepted alternative character helpers
+The valuation map and V0–V5 helpers retain the published
+implementations and signatures. The alternative character helpers
 are represented by the existing `derivedRoot_mem_iff_of_central_vanishing`
 and `RootFunctionFamily.derivedPullback_apply_character`; their central
 vanishing hypotheses and conclusions coincide.

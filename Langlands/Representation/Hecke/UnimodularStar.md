@@ -1,9 +1,11 @@
 # The unimodular involution on actual Hecke functions and corners
 
-Author: Worker 143.
-
 This internal construction supplies the involution needed for the
-character-limit proof in Task 5667. On the existing Schwartz–Bruhat test
+character-limit proof, the unitarity of the irreducible constituents of an
+admissible finite-length character limit
+(`Langlands.Representation.Unitary.CharacterLimitSubquotientsProof`); the
+modules `Langlands.Representation.Unitary.CharacterPositivity` and
+`CornerFormGluing` on its route import this one. On the existing Schwartz–Bruhat test
 functions it is the conjugate-linear equivalence
 `TestFunction.adjoint f (x) = conj (f (x⁻¹))`. Local constancy and compact
 support follow by composition with inversion and conjugation.

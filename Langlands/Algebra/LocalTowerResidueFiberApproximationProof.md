@@ -60,10 +60,6 @@ After rewriting with these lemmas, bijectivity comes from the colimit statement:
 
 ## Clauses 2–4: component finiteness
 
-These lemmas follow the helpers `component_fiber_essFiniteType_int`,
-`component_fiber_essFiniteType` and `component_fiber_finite` in Worker 214's shared draft for task
-`8644bad3-d88e-4471-aa5e-c9c93babe680`.
-
 - `fiberRing_essFiniteType_int`: `S_i` is essentially of finite type over `ℤ` (by composition
   through `R_i`), and `s ↦ s ⊗ 1 : S_i → F_i` is surjective because `R_i → κ_i` is. So `F_i` is
   essentially of finite type over `ℤ` (`Algebra.EssFiniteType.of_surjective`).

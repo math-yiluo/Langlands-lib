@@ -1,6 +1,7 @@
 # Exact upper cuspidal Jacquet counts
 
-Authors: Worker 500, using the finite-family counting theorem of Worker 496.
+The proof uses the finite-family counting theorem
+`finiteFamilyFiltrationMultiplicity`.
 
 `Langlands.glUpperCuspidalJacquetMultiplicityFromFiltration` proves exactly
 `Langlands.GLUpperCuspidalJacquetMultiplicityFromFiltrationStatement`, with
@@ -35,5 +36,7 @@ type or semisimplicity assumption is introduced.
 The proof covers rank zero and arbitrary target representations, matching
 the adapter statement. It changes no normalization, assumes no Langlands
 classification or generic relative comparison, and constructs no geometric
-filtration. The complete upper-and-opposite theorem still needs the
-independently proved associated filtration and actual opposite transfer.
+filtration. The complete upper-and-opposite theorem,
+`glCuspidalJacquetMultiplicityPrerequisites` in `CuspidalJacquetMultiplicityProof`,
+combines this result with the independently proved associated filtration and
+the actual opposite transfer.

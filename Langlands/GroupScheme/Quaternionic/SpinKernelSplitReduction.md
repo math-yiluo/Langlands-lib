@@ -1,6 +1,6 @@
 # Square-root parameters and the original binary diagonal kernel
 
-This internal supporting unit preserves the original binary `μ₂` and the original binary spin diagonal while testing them after a change of base field. It does not construct split quaternionic coordinates or prove `SpinKernelGeneratorStatement`. All universes are arbitrary; no restriction on field characteristic or on test schemes is imposed.
+This internal supporting module preserves the original binary `μ₂` and the original binary spin diagonal while testing them after a change of base field. It does not construct split quaternionic coordinates or prove `SpinKernelGeneratorStatement`. All universes are arbitrary; no restriction on field characteristic or on test schemes is imposed.
 
 For a morphism `b : Spec L → Spec K` and every `L`-test scheme `U`, `squareRootCoordinates b U` identifies the points `z` of `Gm` with `z * z = 1` with the second roots of unity in `BinaryScheme.coefficients ((Over.map b).obj U)`. Both coefficient rings are the global sections of the same underlying scheme. The multiplicative global-sections equivalence for `Gm` carries the square equation to the square equation for units. Composing with the inverse of `BinaryKernel.rootsPointsEquiv` gives `binaryRootPointsEquiv b U`, an equivalence with the points of the original binary `μ₂` on the same test scheme viewed over `K`.
 

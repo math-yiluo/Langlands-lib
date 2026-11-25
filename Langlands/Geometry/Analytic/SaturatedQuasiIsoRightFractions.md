@@ -91,10 +91,9 @@ it is not a separate assumed cancellation or equalizer property.
 
 ## Remaining scope
 
-This unit supplies the right calculus of fractions for the actual saturated
+This module supplies the right calculus of fractions for the actual saturated
 strong-map category and its specified full quasi-isomorphisms. It does not
-yet give explicit representative or equality wrappers for the previously
-constructed localization, identify that localization with an independently
-defined analytic-space category, construct etale or equivariant sites, or
-specialize to Harris towers. Those remain obligations of the surrounding
-task.
+give explicit representative or equality wrappers for the previously
+constructed localization (`SaturatedLocalizedFractions` gives them), identify
+that localization with an independently defined analytic-space category,
+construct etale or equivariant sites, or specialize to Harris towers.

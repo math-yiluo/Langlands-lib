@@ -1,12 +1,10 @@
 # The spectral family `ψ_f` over the standard part of `Θ` on actual points
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalStandardSpectralFamily`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalThetaFixedFiniteness` (Library, this
-  author's Unit 31): `exists_finite_sigma_rationalFourierOrbitSection_ne_zero_of_statement`
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalThetaFixedFiniteness` (Library):
+  `exists_finite_sigma_rationalFourierOrbitSection_ne_zero_of_statement`
   (Remarque VIII.1.3 (ii) for the standard parabolics, given the published statement of Theorem
   VIII.1.2). Through its imports come `rationalLeviSplitCenter`,
   `rationalLeviSplitCenter_le_center` (`A_{M_I}(F)`), `rationalFourierOrbitSection`
@@ -18,8 +16,8 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   `UnitaryOrbitRepresentative` (the representatives of the twist orbit of `π`),
   `ProductInducedOrbitSections` (sections over that orbit). `SmoothDualClass.twist_one` comes from
   `Langlands.Representation.Category.Twist`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness` (Library,
-  this author's Unit 24): `rationalFourierOrbitSmoothSectionLinear` (`f ↦ ψ_f[O, P_I] ∈
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness` (Library):
+  `rationalFourierOrbitSmoothSectionLinear` (`f ↦ ψ_f[O, P_I] ∈
   C^∞(O, P_I)`, Proposition VII.1.3 without continuity) and
   `rationalFourierOrbitSmoothSectionLinear_val`. Through its imports comes
   `rationalInducedSmoothOrbitSections` (`C^∞(O, P_I)`).
@@ -38,7 +36,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Printed page numbers; the
-PDF page is the printed page minus 234. The author checked the quotations on the rendered PDF
+PDF page is the printed page minus 234. The quotations were checked on the rendered PDF
 pages 62, 71, 82, 86 and 87.
 
 - VI.3, printed p. 305: "Notons `Θ` l'ensemble des couples `(O, P = MU)` où `P` est un
@@ -74,7 +72,7 @@ Encoding choices (internal, not in the source):
 
 - `Θ` restricted to the standard parabolics is indexed by dependent pairs `⟨I, O⟩` of a finite set
   `I` of simple roots (the standard parabolic `P_I(F)`) and an orbit `O` of `Im X(M_I)` in
-  `E₂(M_I)`, as in Unit 31.
+  `E₂(M_I)`, as in `RationalThetaFixedFiniteness`.
 - A component `ψ[O, P_I]` is a section over the twist orbit of a chosen representative of `O`
   (`rationalOrbitRepresentative`, a `Quotient.out` choice). The Library's section spaces
   `ProductInducedOrbitSections ν π …` are indexed by a representative `π`. The choice does not
@@ -90,7 +88,8 @@ Encoding choices (internal, not in the source):
 
 ## Contents
 
-The setting of Units 19–31: `F` a nonarchimedean local field, `G` a connected reductive group
+The setting of the imported modules `RationalFourierOrbitSmoothness` and
+`RationalThetaFixedFiniteness`: `F` a nonarchimedean local field, `G` a connected reductive group
 scheme over `F` (`hG`) with `[IsAffineHom G.X.hom]`, `[LocallyOfFiniteType G.X.hom]`, `i` a maximal
 split torus (`hi`), `ν` a generic cocharacter (`hν`), `K` a compact open subgroup of `G(F)` with
 `(P_∅(F), K)` an Iwasawa pair (`hKc`, `hPK`). For a finite set `I` of simple roots, `M_I(F)` is the
@@ -151,7 +150,7 @@ measure on `M_I(F) ⧸ A_{M_I}(F)`.
   `rationalOrbitSmoothSectionsBaseEquiv_val`: its underlying section is
   `rationalOrbitSectionsBaseEquiv` of the underlying section.
 
-For the Fourier family, moreover (as in Unit 31): `ρ`, `hρ`, `hKρ` (the height and `C(G)`),
+For the Fourier family, moreover (as in `RationalThetaFixedFiniteness`): `ρ`, `hρ`, `hKρ` (the height and `C(G)`),
 `hM : ∀ I, …` (Iwasawa pairs for the `M_I(F)`), `[∀ I, (mu I).IsInvInvariant]`, a bi-invariant
 measure `muG` on `G(F)` with `hsw` (Lemma II.1.5), and `hTA : ∀ I π, … → ∀ A, IsRationalLeviTempered
 hKc ρ (hM I) A.val.obj` (every representative of the orbit of a discrete series `π` of `M_I(F)` is
@@ -171,7 +170,7 @@ tempered).
   zero iff `ψ_f[O, P_I]` built from `π'` is zero, so the support of the family does not depend on
   the chosen representatives.
 
-For linearity, moreover the hypotheses of Unit 24's `rationalFourierOrbitSmoothSectionLinear`,
+For linearity, moreover the hypotheses of `rationalFourierOrbitSmoothSectionLinear`,
 now for every `I`: `[muG.IsInvInvariant]`, `[SigmaFinite muG]`, `hμK : muG K = 1`; measures `μL I`
 on `M_I(F)` (left and right invariant, inverse-invariant, s-finite) with `hswM I` (Lemma II.1.5
 for `M_I`) and `hMK I : μL I (K ∩ M_I(F)) = 1`; Haar measures `νU I` on `U_I(F)` with
@@ -180,14 +179,14 @@ for `M_I`) and `hMK I : μL I (K ∩ M_I(F)) = 1`; Haar measures `νU I` on `U_I
 coordinates); `hint`: for every `I` and every `π` square integrable modulo `A_{M_I}(F)` (the same
 guard as `hTA`), every `f ∈ C(G)`, every representative `A` of the orbit of `π` and every
 `ψ ∈ L(A, P_I)`, the function `(g, k) ↦ conj(⟨ψ(k g, k)⟩) f(g)` is integrable on `G(F) × K`.
-Unit 24's `hint` concerns its one fixed discrete series `π`; here it is required only for the
+The `hint` of `RationalFourierOrbitSmoothness` concerns its one fixed discrete series `π`; here it is required only for the
 discrete series of the `M_I(F)`, and it is used at the chosen representatives. (Without the
 guard it would fail: for a nonunitary character `π` of a split torus, the integral diverges for
 some `f ∈ C(G)`.) The temperedness of the chosen representative itself is `hTA` at the trivial
 twist.
 
 - `rationalFourierThetaComponentLinear … I O`: the linear map `f ↦ ψ_f[O, P_I]` into
-  `C^∞(O, P_I)`, Unit 24's `rationalFourierOrbitSmoothSectionLinear` for the chosen
+  `C^∞(O, P_I)`, `rationalFourierOrbitSmoothSectionLinear` for the chosen
   representative; `rationalFourierThetaComponentLinear_val`: its value is the family's component.
 - `rationalFourierThetaFamilyLinear …`: `f ↦ rationalFourierThetaFamily … f` as a linear map
   `C(G) →ₗ[ℂ] RationalStandardThetaSections …`; `rationalFourierThetaFamilyLinear_apply` (`rfl`).
@@ -220,11 +219,12 @@ twist.
   of `c • ψ` lies in that of `ψ` (with `Pi.add_apply`, `Pi.zero_apply`, `Pi.smul_apply`). They are
   separate theorems because the same terms written inside the `Submodule` structure time out
   during elaboration.
-- `finite_support_rationalFourierThetaFamily`: Unit 31's
+- `finite_support_rationalFourierThetaFamily`:
   `exists_finite_sigma_rationalFourierOrbitSection_ne_zero_of_statement` gives a finite set `T'`
   containing `⟨I, O_π⟩` whenever `ψ_f[O_π, P_I] ≠ 0`; apply it to `π` the chosen representative
   and rewrite its orbit to `O` by `mk_discreteSeriesClass_rationalOrbitRepresentative`.
-- `rationalFourierThetaComponentLinear` and `_val`: Unit 24's definition and `_val` lemma with the
+- `rationalFourierThetaComponentLinear` and `_val`: the definition
+  `rationalFourierOrbitSmoothSectionLinear` and its `_val` lemma with the
   per-`I` hypotheses.
 - `rationalFourierThetaFamilyLinear`: additivity and homogeneity componentwise, by rewriting each
   component as the value of `rationalFourierThetaComponentLinear` and using `map_add`, `map_smul`,
@@ -242,13 +242,17 @@ twist.
   on them is not studied here.
 - Theorem VIII.1.2 is not proved: `rationalFourierThetaLinear` and
   `finite_support_rationalFourierThetaFamily` take its published statement `hVIII`, which is open.
-  The other analytic inputs are hypotheses as in Unit 24: `hsw`, `hswM` (Lemma II.1.5), `hE`
-  (Proposition II.4.5), `hTA` (Corollary III.1.2); their actual statements are published but
-  unproved. `hPKiw`, the measure normalizations, `hnσ` and `hint` are hypotheses as in Unit 24
+  The other analytic inputs are hypotheses as in `RationalFourierOrbitSmoothness`: `hsw`, `hswM`
+  (Lemma II.1.5), `hE` (Proposition II.4.5), `hTA` (Corollary III.1.2); their actual statements
+  are published and are not used here. The statements of Corollary III.1.2 and Lemma II.1.5 are
+  proved (`rationalSquareIntegrableRapidDecay`; `rationalXiSquareIntegrable_of_upperBound` with
+  `rationalXiUpperBound`); that of Proposition II.4.5 is unproved. `hPKiw`, the measure
+  normalizations, `hnσ` and `hint` are
+  hypotheses as in `RationalFourierOrbitSmoothness`
 (`hint` for the discrete series of each `M_I(F)`; given the coefficient bound of Corollary
 III.1.2, it follows from the published `integrable_rationalCoefficientPairingIntegrand`, which is
 not used here).
 - The continuity of `f ↦ ψ_f` into `C^∞(Θ)` is not stated (the continuity of each component is
-  Unit 32's `rationalFourierOrbitSectionCLM`). No topology on `C^∞(Θ)` is defined.
+  `rationalFourierOrbitSectionCLM` in `RationalFourierOrbitContinuity`). No topology on `C^∞(Θ)` is defined.
 - Not covered: the map `κ̃ : C^∞(Θ) → C(G)` and the space `C^∞(Θ)_inv` of VI.3, which need
   `f_ψ ∈ C(G)` (the rest of Proposition VI.3.1) and the constants `C(G|M)`, `γ(G|M)`.

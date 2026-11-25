@@ -1,8 +1,6 @@
 # Shahidi's local coefficients for `GL_{m+1} × GL_{n+1}` over `ℝ` and `ℂ`
 
-Author: Worker 35. Statement contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
-This is the fourth archimedean unit for Shahidi's Theorem 3.1 (1985). It
+This is an archimedean module for Shahidi's Theorem 3.1 (1985). It
 builds on `Langlands.Representation.Archimedean.SmoothVectors`,
 `GeneralLinear`, `Induction` and `StandardModule`. It states Shahidi's
 Theorem 3.1 (`F = ℝ`) and Theorem 3.13 (`F = ℂ`) for the maximal parabolic
@@ -560,7 +558,7 @@ These points explain the formalization. None is proved in Lean.
    first character of a block breaks it, so the characters of
    `StandardModule` matter here.
 
-## Relation to other Library units
+## Relation to other Library modules
 
 - `Induction`: `sourceSpace`, `exchange` and
   `SatisfiesLocalCoefficientRelation`. `GeneralLinear`:

@@ -1,7 +1,6 @@
 # Canonical Grothendieck maps for the actual normalized parabolic functors
 
-Implementation and documentation: Worker 585. Mathematical specification:
-Worker 320. This internal derived statement unit defines exactly three
+This internal derived statement module defines exactly three
 transparent propositions in `Langlands.Parabolic`. It constructs no map and
 proves neither clause.
 
@@ -156,20 +155,20 @@ universe argument order is `.{uV, uF}`; the groups themselves lie in
 representative, or comparison between groups at different carrier levels
 is used.
 
-## Internal derived provenance and later proof boundary
+## Internal derived provenance and proof boundary
 
 This is an internal derived interface for the published exact Grothendieck
 presentation. Its precise all-rank formulation, existential witnesses and
 universe choices are not attributed verbatim to literature. The referenced
-Library pairs supply the definitions and normalization; this unit adds no
+Library pairs supply the definitions and normalization; this module adds no
 literature theorem assertion. The broader project source boundary is recorded
 in `notes/henniart/aubert-duality-route.md`.
 
-The expected later proof uses
+The expected route of a proof uses
 `SmoothRep.FiniteLengthGrothendieckGroup.map Φ hl hx` and
 `map_ofRepresentation` from
 [`Smooth.FiniteLengthGrothendieckFunctor`](../Smooth/FiniteLengthGrothendieckFunctor.md).
-After actual finite-length preservation is proved, the separately published
+With actual finite-length preservation, the separately published
 `Parabolic.normalizedInductionExactness` and
 `Parabolic.normalizedJacquetExactness` are the intended exactness inputs.
 The generic construction then supplies the maps and generator equalities;
@@ -178,13 +177,15 @@ with proof irrelevance reconciling output witnesses. The universal-property
 theorem `existsUnique_lift_iff` is also available in the imported group module.
 This is an expected route, not a proof or evidence of either assertion.
 The generic conditional map alone does not prove the unconditional clauses.
+The proof of the combined declaration is
+`Langlands.Parabolic.normalizedParabolicGrothendieck`, in
+[`Parabolic.FiniteLengthGrothendieckProof`](FiniteLengthGrothendieckProof.md).
 
-Actual all-smooth finite-length preservation belongs to task
-`2a216dfa-5b20-4b4b-9ff8-50b41a0b28f7` (Worker 395). The positive-rank admissible
-product-induction and Jacquet finite-length units remain separately owned.
-This statement does not implement their proofs. The sole later exact proof
-successor for the combined declaration is to be coordinated with Worker 320
-after this statement is published.
+Actual all-smooth finite-length preservation is
+`Langlands.Parabolic.normalizedParabolicFiniteLength`, in
+`Parabolic.FiniteLengthFunctorProof`. The positive-rank admissible
+product-induction and Jacquet finite-length results are separate.
+This statement does not implement their proofs.
 
 No irreducible-basis theorem, alternating operator, involutivity, Aubert
 irreducibility, segment classification, or map construction is asserted or
@@ -216,27 +217,20 @@ All 31 existing Lean/Markdown pairs were checked byte for byte against that
 Library base and are unchanged. The inherited infrastructure proofs concern
 local-field normalization, smooth transfer and twisting. The closure contains
 no project classification or exhaustion module. Consequently none of the
-excluded conclusions or their proof successors and transitive proof
-dependencies supplies an input: analytic segment classification
-`aca8805b-054f-4d56-8045-12db7f623404`; special-head multisegment exhaustion
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`; ordered strong-head existence
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`; quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`; tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`;
-`SquareIntegrableLanglandsClassification` /
-`1cb45da2-7007-4351-a694-594fb148b8d1`; square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`; and regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`.
+excluded conclusions or their proofs and transitive proof
+dependencies supplies an input: analytic segment classification;
+special-head multisegment exhaustion; ordered strong-head existence;
+quotient coverage; tempered block uniqueness;
+`SquareIntegrableLanglandsClassification`; square-integrable exhaustion;
+and regular exhaustion.
 
 ## Development validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-complete statement module and inspected the exact combined declaration
-successfully, with zero errors and warnings (diagnostic
-`e43484f2-1d9b-4498-b31b-1c3306f34593`). Inspection reports kind `definition`,
+A check with Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`
+compiled the complete statement module and inspected the exact combined
+declaration successfully, with zero errors and warnings. Inspection reports kind `definition`,
 level parameters `["uF", "uV"]`, `statement_returns_prop: true`, and only
 `propext`, `Classical.choice` and `Quot.sound` in its assumptions.
 The entire formulas elaborate at these independent universes, including the
 induction output class at its saturated level. Compilation checks the
-well-formed propositions, not their truth. Independent semantic acceptance
-and actual Library publication are separate requirements.
+well-formed propositions, not their truth.

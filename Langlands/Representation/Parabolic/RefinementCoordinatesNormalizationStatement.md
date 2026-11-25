@@ -120,18 +120,19 @@ The retained source is
 registered as `bernstein-zelevinsky-1977-induced-i`, SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 These three original pages were read and the hash checked. No source-specific
-errata directory was present in the workspace or current public notes.
+errata directory was found.
 
 The exact coordinate formulation and its extension to arbitrary input
 representations through their constructed smooth induced spaces are internal
 specializations of the imported definitions, not a separately quoted theorem
-of the source. A later proof must compare the explicit determinant products,
+of the source. A proof must compare the explicit determinant products,
 pass through the same canonical positive square root, and use the published
 coordinate/projection comparisons to preserve covariance and uniform right
-stabilizers. This module does not supply that proof or prove the Haar-scaling
+stabilizers; `refinementCoordinatesNormalization` in
+`Parabolic.RefinementCoordinatesNormalizationProof` proves the combined target. This module does not supply that proof or prove the Haar-scaling
 interpretation of the determinant modulus. Concrete adjacent and first/tail
 coordinates, tensor regrouping, block-character absorption and induction in
-stages are outside this statement unit.
+stages are outside this module.
 
 ## All-field port
 

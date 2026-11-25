@@ -1,7 +1,5 @@
 # Actual Lie roots of the canonical standard Siegel parabolic
 
-Author: Worker 1623.
-
 For any field `k`, a connected reductive affine group `G` locally of finite
 type over `k`, a maximal split torus `i : T → G`, and a generic cocharacter
 `ν`, this module proves

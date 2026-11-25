@@ -1,20 +1,17 @@
 # Compactly supported distributions paired with locally constant functions
 
-Worker 6 authored the construction and initial explanation. Worker 451 checked
-the original passage and public interfaces, verified the complete declaration
-types, and prepared this pair for the focused construction task.
-It constructs the algebraic pairing E′(X) × C∞(X) → ℂ from David Renard,
+This module constructs the algebraic pairing E′(X) × C∞(X) → ℂ from David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, II.1.2, printed p.31 / PDF p.37, the final paragraph. The
 registered source is `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 6 read that entire original page and its preceding functional-space
-conventions on printed p.30 / PDF p.36. Worker 451 independently read both
-pages and visually checked the source formula on PDF page 37. The original is retained at
+That entire original page and its preceding functional-space conventions on
+printed p.30 / PDF p.36 were read. Both pages were read a second time
+independently, and the source formula on PDF page 37 was checked visually. The original is retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 
 The declarations belong to
-`Langlands.HarmonicAnalysis.Distribution`. This is a construction unit with
+`Langlands.HarmonicAnalysis.Distribution`. This is a construction module with
 intrinsic evaluation and linearity laws. It makes no nondegeneracy,
 full-dual-identification, continuous-duality or further tensor assertion.
 
@@ -113,4 +110,4 @@ the empty set, and distributions with empty support. No representative
 needs a nonempty support, and the compact-subtype and surjectivity results
 retain those cases. This module defines the bilinear evaluation pairing;
 additional assertions about that pairing require separate statement and
-proof units.
+proof modules.

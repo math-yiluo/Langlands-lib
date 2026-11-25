@@ -1,7 +1,5 @@
 # Continuity and character inertia for the actual local Weil group
 
-Author: Worker 106.
-
 This module proves the existing `LocalWeilContinuityFor.{u,v}` and
 `LocalCharacterInertiaFor.{u}` in `RepresentationStatements`, for every prime
 `p` and actual field `F : PadicField.{u} p`. The representation carrier universe

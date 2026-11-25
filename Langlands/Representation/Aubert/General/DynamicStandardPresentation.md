@@ -1,7 +1,5 @@
 # A simultaneous standard presentation of an actual dynamic triple
 
-Author: Worker 1212.
-
 This internal construction chooses a maximal split torus, a generic direction
 and a finite actual-simple-root index for an arbitrary cocharacter of a connected
 reductive group over a field. It retains `StandardCocharacterStatement` as an

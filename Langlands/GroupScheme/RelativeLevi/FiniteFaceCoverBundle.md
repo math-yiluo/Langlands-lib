@@ -1,6 +1,6 @@
 # The actual vector-bundle module of the assembled face layers
 
-This internal unit for the relative radical filtration constructs the actual finite locally free module for the original
+This internal module for the relative radical filtration constructs the actual finite locally free module for the original
 assembled face-weight layer group over the finite disjoint affine cover source.
 Each component retains its original exact-support rank. The module is glued
 from those actual free sheaves, and the group component comparisons and module

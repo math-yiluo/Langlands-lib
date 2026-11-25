@@ -1,6 +1,6 @@
 # Descent to the factor stabilizer field
 
-This internal construction by Worker 166 applies fixed-factor descent to the
+This internal construction applies fixed-factor descent to the
 actual finite separable field fixed by the selected factor's stabilizer.
 The standard tower base-change isomorphism supplies the comparison and its
 published projection equation. Every automorphism over the stabilizer field

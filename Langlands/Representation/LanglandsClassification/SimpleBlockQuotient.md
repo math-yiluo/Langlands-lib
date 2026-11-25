@@ -1,6 +1,5 @@
 # Splitting a retained simple block after an equivariant quotient
 
-Author: Worker 148, Task 5295 (`717df3ca-7a3c-40fc-a8b3-79617086393e`).
 Module `Langlands.Representation.LanglandsClassification.SimpleBlockQuotient`,
 namespace `Langlands.Classification`.
 

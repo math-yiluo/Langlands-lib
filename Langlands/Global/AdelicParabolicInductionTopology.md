@@ -1,8 +1,8 @@
 # Compact-open topology on actual half-twisted adelic sections
 
-Author: Worker 2. Provenance: internal construction from the actual
+Provenance: internal construction from the actual
 half-twisted adelic smooth sections and their proved faithful continuous
-function realization. This unit makes no new original-literature identification.
+function realization. This module makes no new original-literature identification.
 
 The number field `F : Type uF`, rank and ordered positive block shape are
 unchanged. Coefficients are arbitrary complex normed spaces, with independent
@@ -45,7 +45,7 @@ maps, with the identity and composition laws proved using their established
 counterparts.
 
 This topology controls only function values on compact sets. It is not a
-topology on all derivatives. This unit proves continuity for fixed right
+topology on all derivatives. This module proves continuity for fixed right
 translations and continuous coefficient maps; it makes no joint action
 continuity, completeness, smooth orbit-map, unitary completion, Haar
 identification, nonzero section or automorphic existence assertion.

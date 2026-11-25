@@ -307,7 +307,6 @@ theorem le_ker_graph₀ (hW : C.W.comap (bc f C.πH p φ hφ) = (family s t i hi
   let Δ : Z ⟶ pullback f p := pullback.lift i (𝟙 Z) (by rw [hi, Category.id_comp])
   have hΔ : Δ ≫ bc f C.πH p φ hφ = graph₀ C i hi φ hφ := by
     apply pullback.hom_ext <;> simp [Δ, graph₀]
-    exact Category.id_comp φ
   rw [← hΔ, ← comap_le_ker_iff, hW, ker_le_ker_iff_exists]
   obtain ⟨r, hrs, hrt⟩ := (hEq Z).refl (𝟙 Z)
   refine ⟨r, ?_⟩

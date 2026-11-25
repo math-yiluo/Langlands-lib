@@ -1,8 +1,7 @@
 # Actual induced topological spaces
 
 This module constructs the underlying topological induction of a subgroup
-space. The namespace is `Langlands.TopologicalInduction`. All new code and
-prose are by Worker 36. The construction is independent of the analytic
+space. The namespace is `Langlands.TopologicalInduction`. The construction is independent of the analytic
 geometry modules and is intended for their actual rational spectra.
 
 ## Inputs and balanced quotient

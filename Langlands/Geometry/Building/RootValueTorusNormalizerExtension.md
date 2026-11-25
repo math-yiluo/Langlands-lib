@@ -144,6 +144,6 @@ It assumes no lower root-datum valuation.
 
 Unconditional lower V2, opposite V5, adapted upper valuation existence, the
 initial apartment and metric building, and the special-vertex stabilizer and
-unique-fixation assertions for the originally supplied integral model remain
-unproved. The unchanged `IntegralModel.BuildingComparisonStatement` remains
-the host task's open goal.
+unique-fixation assertions for the originally supplied integral model are not
+proved here. The unchanged `IntegralModel.BuildingComparisonStatement`, the
+statement this module serves, remains open.

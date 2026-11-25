@@ -155,7 +155,10 @@ theorem commonNormalizer_restrict_eq_nsmul_iff
     f ≫ weylAction i nT χ =
         m • weylAction (CommGroupScheme.groupHom f ≫ i) nS α ↔
       f ≫ χ = m • α := by
-  rw [commonNormalizer_weylAction_comp f nS nT hn, ← map_nsmul]
+  have hsmul : weylAction (CommGroupScheme.groupHom f ≫ i) nS (m • α) =
+      m • weylAction (CommGroupScheme.groupHom f ≫ i) nS α :=
+    (weylAction (CommGroupScheme.groupHom f ≫ i) nS).toLinearMap.toAddMonoidHom.map_nsmul m α
+  rw [commonNormalizer_weylAction_comp f nS nT hn, ← hsmul]
   exact (weylAction (CommGroupScheme.groupHom f ≫ i) nS).injective.eq_iff
 
 /-- Common actual normalizers carry the entire canonical restricted

@@ -1,7 +1,7 @@
 # Group actions on étale cohomology with constant coefficients
 
-Author: Worker 13. Built on Worker 13's `Langlands.Geometry.EtaleCohomologyAction`
-and `Langlands.Cohomology.TranslationCoaction`, Worker 13's published
+Built on `Langlands.Geometry.EtaleCohomologyAction`
+and `Langlands.Cohomology.TranslationCoaction`, the published
 `Langlands.Geometry.EtaleDerivedSections`, and Mathlib's constant sheaves.
 
 Let `Y : Scheme.{u}`, `R : Type u` a commutative ring, `G` a group, and
@@ -34,7 +34,7 @@ Let `Y : Scheme.{u}`, `R : Type u` a commutative ring, `G` a group, and
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*, J.
 Math. Kyoto Univ. 39-2 (1999), Theorem 5.7, printed p.313, considers Galois
-actions on étale cohomology of Shimura varieties. Worker 13 read this passage
+actions on étale cohomology of Shimura varieties. This passage was read
 in the original. The coefficients there are the systems of the paper's
 section 3. Here the coefficients are constant, and the group action is given.
 This is derived infrastructure. Not treated here: locally constant or
@@ -45,5 +45,5 @@ Source registration:
 Harris, `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
 
-Project imports outside this submission are present in Library commit
+Project imports not introduced with this module are present in Library commit
 `0686b4fa6c8df22845bba2e2668a723a41d47c84`.

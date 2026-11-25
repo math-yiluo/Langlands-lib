@@ -1,6 +1,6 @@
 # L-factors of pairs through the Langlands classification
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 the L-factor results of Section 9 of Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin-Selberg convolutions*, Amer. J. Math. 105 (1983):
 
@@ -17,7 +17,8 @@ The factors are the rank-symmetric relation `IsPadicSymmetricLPolynomial` of
 the module `PadicPairFactors`. The Langlands data, standard modules and
 Langlands quotients are those of the published module
 `Classification/LanglandsData`. The module defines two relations, with their
-uniqueness lemmas, and five statements. None of the statements is proved.
+uniqueness lemmas, and five statements. None of the statements is proved in
+this module.
 
 ## Source
 
@@ -178,21 +179,27 @@ The statements quantify over every prime `p`, every `F : PadicField p`, every
   irreducible [H.J. II]". The Library's datum requires each block to be
   irreducible and tempered in the analytic sense of `IsTempered` (matrix
   coefficients in `L^(2+ε)` modulo the center). The two descriptions give the
-  same irreducible representations of `GL_n(F)`, but that comparison is not
-  proved in the Library.
+  same irreducible representations of `GL_n(F)`; the Library proves this
+  comparison as `temperedBlockExhaustion` and `squareIntegrableBlockInduction`
+  (modules `Classification/TemperedBlockExhaustionProof` and
+  `Classification/SquareIntegrableBlockInductionProof`).
 - **Factor of the standard modules.** JPSS observe that `ξ` and `η` are of
   Whittaker type ((2.3), and genericity of tempered representations). Their
   L-factor is therefore the one of Theorem 2.7. The statements do not assume
-  Whittaker type: the existence of `P` is part of each conclusion. Neither
-  (2.3) nor the genericity of tempered representations is proved in the
-  Library.
+  Whittaker type: the existence of `P` is part of each conclusion. The Library
+  proves (2.3) as `normalizedProductWhittakerType`
+  (`NormalizedProductWhittakerTypeProof`) and the genericity of tempered
+  representations as `Classification.temperedUnitarityAndGenericity`
+  (`Classification/TemperedUnitarityGenericityProof`).
 - **Genericity.** `IsGeneric ψ r π` is the published predicate: irreducible,
   admissible, and with a nonzero Whittaker functional for `standardCharacter
   ψ`. The symmetric L relation uses `ψ`-functionals for the representation of
   larger rank and `ψ⁻¹`-functionals for the other. Genericity for `ψ` and for
   `ψ⁻¹` are equivalent (conjugation by a diagonal matrix), so requiring
-  `IsGeneric ψ` of both is JPSS's "generic". This equivalence is not proved
-  in the Library.
+  `IsGeneric ψ` of both is JPSS's "generic". The Library proves the
+  implication from `ψ.scale (-1)` to `ψ` as `isGeneric_of_scale_neg_one`
+  (module `HighlyRamified/ShellDischarge`); applied to `ψ.scale (-1)` it gives
+  the converse.
 - **The definition for all pairs.** `IsLanglandsPairLPolynomial` quantifies
   over *every* pair of data with `π`, `σ` as quotients, not over a chosen
   one. JPSS's "uniquely representable" (the Langlands classification) makes
@@ -201,8 +208,7 @@ The statements quantify over every prime `p`, every `F : PadicField p`, every
   relation is invariant under equivalence
   (`IsPadicSymmetricLPolynomial.congr_equiv`). Hence JPSS's definition
   satisfies the relation. Conversely, by the proved uniqueness lemma the
-  relation determines `P`. The classification itself is not proved in the
-  Library.
+  relation determines `P`.
 - **Universes.** The tempered or square-integrable blocks of a datum have
   carriers in the fixed universe `uV` (resp. `uW`), and the standard modules
   and `π`, `σ` in `max uF uV` (resp. `max uF uW`), as in the Library's
@@ -222,7 +228,9 @@ The statements quantify over every prime `p`, every `F : PadicField p`, every
   - The product form gives biadditivity, since `π[λ] ⊞ π[λ'] = π[λ + λ']`.
 
   The product form is the formula of Henniart §2.8. The bijection
-  ([B-W], [A.S.] in JPSS) is not proved in the Library.
+  ([B-W], [A.S.] in JPSS) is proved in the Library as
+  `Classification.squareIntegrableLanglandsExhaustion` and
+  `Classification.squareIntegrableLanglandsClassification`.
   - JPSS's `π[λ]` is the unique irreducible quotient of the induced
     representation with `s_1 ≥ ⋯ ≥ s_p`. This is the Library's
     `SquareIntegrableLanglandsDatum`: the `antitone` exponents `α(τ_i)` are
@@ -241,7 +249,7 @@ The statements quantify over every prime `p`, every `F : PadicField p`, every
     `∏ L(s, π_i × σ_j)`.
 - **Only the L-factor.** JPSS define only `L(s, π × σ)` for nongeneric pairs.
   The `γ` and `ε` products of Henniart §2.8 are not stated here.
-- **Measures and field.** As in the other JPSS units, the statements take `ν`
+- **Measures and field.** As in the other JPSS modules, the statements take `ν`
   self-dual for `ψ` (`SelfDualHaar`); the relations accept any additive Haar
   measure. `F` is a p-adic field (`PadicField`) because the canonical
   topological data and the Langlands data are published only for p-adic

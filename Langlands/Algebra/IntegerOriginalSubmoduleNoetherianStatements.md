@@ -1,6 +1,6 @@
 # Noetherian criteria for the original nonunital action
 
-Worker 709 prepared this internal statement family in namespace
+This module gives an internal statement family in namespace
 `Langlands.Algebra.IntegerOriginalSubmoduleNoetherian`. Each declaration
 is a closed transparent `def` returning `Prop`. The file proves none of
 the comparisons.
@@ -70,7 +70,8 @@ component; the aggregate has only its two universe parameters.
 The provenance is internal derived content. Renard states none of these
 three equivalences in this form: they are internal adapters between
 Mathlib's module Noetherianity for the integer unitization and the
-concrete original-action subgroup poset. The intended later proof
+concrete original-action subgroup poset. The proof in
+`Langlands.Algebra.IntegerOriginalSubmoduleNoetherianProof`
 transfers Mathlib's `isNoetherian_iff` through the published actual
 order isomorphism and uses the standard well-founded-order
 maximal-element and increasing-sequence characterizations.
@@ -83,13 +84,13 @@ réductifs p-adiques*, French version dated 9 July 2026, registered as
 The conventions at printed pages 5–6 / PDF pages 11–12 permit rings
 and actions without unit laws. I.2.1, printed page 14 / PDF page 20,
 distinguishes additive module morphisms from complex-linear ones and
-uses complex unitization. Worker 709 read those original passages
-in the parent audit. The present integer construction is an internal
+uses complex unitization. Those original passages were read.
+The present integer construction is an internal
 choice that makes all additive subgroups automatically scalar stable;
 it is not a translation of the book's complex unitization.
 
 A.I.2–A.I.3, printed pages 248–249 / PDF pages 254–255, were reread
-and visually checked for this unit. They define ordered categorical
+and visually checked for this module. They define ordered categorical
 subobjects and Noetherian objects by a maximal-element condition,
 discuss chains and increasing sequences, and give the unital-module
 example. The present statements use the concrete original-action
@@ -101,16 +102,16 @@ repairs do not change this internal proper-inclusion formulation.
 The note `notes/renard/appendix-a-corrections.md` was also consulted;
 its three discrepancies concern other Appendix A passages. No dedicated
 project errata file for the 2026 source was found. Renard's cited
-bibliographic sources [25] and [37] have not been read for this unit
-and supply no proof evidence. When preparing this submission, Worker 1088
-verified the SHA256 of the retained file
+bibliographic sources [25] and [37] have not been read for this module
+and supply no proof evidence. In a second, independent reading, the
+SHA256 of the retained file
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`
-and independently reread the extracted text of PDF pages 11–12, 20–21
-and 254–255; that reread found no conflict with the descriptions above.
+was verified and the extracted text of PDF pages 11–12, 20–21
+and 254–255 was reread; that reread found no conflict with the descriptions above.
 
 The registered supplementary `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-was read at PDF pages 18–19 in the parent audit. It concerns an older
+was read at PDF pages 18–19. It concerns an older
 edition and supplies no author-issued correction for these internal
 targets.
 
@@ -119,7 +120,7 @@ poset condition. They make no comparison with Renard's categorical
 finite-type predicates, construct no category or categorical
 subobject equivalence, and select no convention for a possibly
 nonunital Noetherian algebra. They also assert no finite-generation
-comparison, localization result, full C.II proposition or whole-book
-completion. Those remain separate parent obligations. An exact-target
-proof successor must wait until this statement aggregate is
-independently accepted and public.
+comparison, localization result, full C.II proposition or a
+formalization of the whole book. The aggregate is proved as
+`integerOriginalSubmoduleNoetherian` in
+`Langlands.Algebra.IntegerOriginalSubmoduleNoetherianProof`.

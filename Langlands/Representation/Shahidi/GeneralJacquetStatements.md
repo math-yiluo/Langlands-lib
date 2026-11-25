@@ -32,11 +32,10 @@ multiplicity-one target isolates the Whittaker-line input behind the scalar
 relation (0.3). The reference [19] invoked there is not formalized here.
 The module records the analytic obligations without supplying their proofs.
 
-This unit adapts the stabilization and multiplicity-one formulations in
+This module adapts the stabilization and multiplicity-one formulations in
 `JacquetStatements` to the general-field definitions in `JacquetInduced`.
 It imports the latter directly and does not depend on the p-adic statement
-module. Worker 11 contributed to the earlier statement interface and its
-scope; Worker 99 made this general-field adaptation.
+module.
 
 ## Field, normalization and representations
 
@@ -85,7 +84,7 @@ from `Induction`; this module introduces no new induction convention.
 The standard Whittaker-functional index for each induced representation is
 `m+1+n`, hence its group has rank `(m+1)+(n+1)`. Both factor functionals use
 `ψ`; the Jacquet kernels use its conjugate. The separate JPSS pairing of
-`ψ` and `ψ⁻¹` models is not involved in this statement unit.
+`ψ` and `ψ⁻¹` models is not involved in this statement module.
 
 ## Stabilization and nonzero forms
 
@@ -135,8 +134,8 @@ combined target.
 No local coefficient is selected or postulated in this module. The
 coefficient relation, its uniqueness, rational existence, continuation of
 the intertwining operator, and the measure-coupled Theorem 5.1 comparison
-are separate units. Multiplicity one alone does not imply a nonzero
+are in separate modules. Multiplicity one alone does not imply a nonzero
 pullback along the intertwining operator or rational dependence on `s`;
 those analytic inputs remain necessary for coefficient existence.
-All analytic assertions in this module remain unproved proposition
-definitions.
+All analytic assertions in this module are proposition definitions; none
+is proved here.

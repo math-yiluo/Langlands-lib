@@ -71,13 +71,13 @@ replaced by a discrete topology.
 
 ## Provenance and source conventions
 
-Worker 56 assembles the published `RationalNormStabilizer`,
+This module assembles the published `RationalNormStabilizer`,
 `RationalNormSectionContinuity`, `RationalNormContinuousLocus`,
 `RationalChartCategory` and `NormContinuousAction` APIs. The full invariant
 category and continuous stabilizer inclusion follow the internal pattern of
-`DomainInvariantActions` and `DomainContinuousLocus` by Worker 56, with the
-Worker 36 invariant-action packaging pattern adapted in the former. Worker 36
-is credited for that reused pattern. Those older
+`DomainInvariantActions` and `DomainContinuousLocus`, with the
+invariant-action packaging pattern of `StrictTestDomain/SpectralContinuousAction`
+adapted in the former. Those older
 constructions assume continuity into a domain-spectral automorphism topology;
 this construction uses the separately proved consequences of norm-continuous
 base-algebra orbits and the rational spectrum homeomorphisms. It does not

@@ -4,7 +4,7 @@
 group schemes at congruence level `n` over a local ring `R` with residue field `k`
 (KP Appendix A.4, the Greenberg functor). It is an internal interface of the proof of
 `MixedCharacteristicGreenbergPointModelStatement`: the Witt-vector construction
-(Worker 7) provides an instance, and the group-scheme construction (Worker 348) uses
+provides an instance, and the group-scheme construction uses
 only the fields below.
 
 A structure `ℛ : GreenbergRingScheme R n` consists of

@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviChartIntegrable`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`). It proves
+This module proves
 `Langlands.Archimedean.RealLeviChartIntegrableStatement` (module
 `RealLeviChartIntegralStatement`; see `RealLeviChartIntegralStatement.md` for the statement and
 its notation). The proof is the theorem `Langlands.Archimedean.realLeviChartIntegrable`. The

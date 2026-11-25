@@ -1,7 +1,5 @@
 # Characterizations of trigonalizable groups (Milne 16.2): proof
 
-Author: Worker 158.
-
 `Langlands.GroupScheme.trigonalizableCharacterization` proves exactly the
 Library proposition `Langlands.GroupScheme.TrigonalizableCharacterizationStatement.{u}`
 (module [`CharacterizationStatement`](CharacterizationStatement.md)) at an

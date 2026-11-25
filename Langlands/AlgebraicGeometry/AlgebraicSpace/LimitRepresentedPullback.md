@@ -1,6 +1,6 @@
 # Eventual representations of actual pullbacks at affine limits
 
-This internal supporting unit combines scheme finiteness recovery, scheme
+This internal supporting module combines scheme finiteness recovery, scheme
 model descent, model uniqueness, and the universal property of actual
 pullbacks. It does not prove model uniqueness or the full eight-property
 limit-descent statement.
@@ -45,5 +45,5 @@ isomorphism is unnecessary.
 
 All results are internal derivations from the named imported results.
 Model uniqueness, the two finiteness conditions on the pullback, and the
-geometric inputs just listed remain explicit; this unit does not assert
+geometric inputs just listed remain explicit; this module does not assert
 them for every morphism of finitely presented spaces.

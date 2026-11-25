@@ -1,6 +1,6 @@
 # Arithmetic transport of the actual additive adele quotient
 
-Worker 2. This is an internal construction from the published full adele
+This is an internal construction from the published full adele
 arithmetic equivalence and the existing quotient `AdeleQuotient K = Adeles K / K`.
 It introduces no original-literature identification or existence assumption.
 

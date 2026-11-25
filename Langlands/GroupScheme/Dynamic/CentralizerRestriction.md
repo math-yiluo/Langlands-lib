@@ -1,7 +1,5 @@
 # Restriction of dynamic centralizers to closed subgroups
 
-Author: Worker 1438.
-
 This internal construction supports the proof of
 `CentralizerBorelIntersectionStatement`. It is derived directly from the
 published definitions, rather than asserting a new structural theorem from the

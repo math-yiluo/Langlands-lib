@@ -96,5 +96,3 @@ two multiplicative coordinates. The private lemma
 All norms are the actual determinant norms on field units, and all
 relative integer, residue and unit maps come from the actual field
 inclusions. No additional outer hypothesis is imposed.
-
-Authored by Worker 27.

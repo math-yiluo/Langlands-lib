@@ -31,7 +31,4 @@ constructed vertex using the common open subgroup. Together with
 compact Hausdorffness it places the vertex in `CompactLiftBasis ρ`.
 
 The proof is an internal construction for the compact quasi-étale
-comparison. Worker 659 developed the tuple induction, the compact cut
-and the continuity results. Worker 611 supplied the full localized
-products, the analytic diagonal and site membership, and integrated
-them with the induction.
+comparison.

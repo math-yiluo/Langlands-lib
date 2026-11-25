@@ -1,7 +1,5 @@
 # Quasi-coherence over an affine open, in terms of sections
 
-Author: Worker 921.
-
 This helper module is part of the proof of
 `Langlands.AlgebraicGeometry.Modules.NoetherianSeparatedQuasicoherentVanishingStatement`. It
 translates quasi-coherence of a module over an affine open into a statement about its

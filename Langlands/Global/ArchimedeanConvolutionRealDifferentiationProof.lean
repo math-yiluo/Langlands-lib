@@ -83,6 +83,7 @@ theorem extension_contDiffOn (k : Set (InfiniteAdelicGL K n)) (hk : IsCompact k)
     (f : C(InfiniteAdelicGL K n, ℂ)) (κ : SmoothCompactKernel K n) :
     ContDiffOn ℝ ∞ (extension K n μ k f κ)
       (range (Units.val : ArchimedeanGL K n → ArchimedeanMatrix K n)) := by
+  set_option synthInstance.maxSize 256 in
   exact (Analysis.compactLinearParameterIntegral
     (InfiniteAdelicGL K n) (ArchimedeanMatrix K n) (ArchimedeanMatrix K n) μ
     k hk _ Units.isOpenEmbedding_val.isOpen_range _
@@ -100,6 +101,7 @@ theorem extension_hasFDerivAt (k : Set (InfiniteAdelicGL K n)) (hk : IsCompact k
           (leftLinear K n y (archimedeanGLCoordinates K n g : ArchimedeanMatrix K n))).comp
           (leftLinear K n y)) ∂μ)
       (archimedeanGLCoordinates K n g : ArchimedeanMatrix K n) := by
+  set_option synthInstance.maxSize 256 in
   exact (Analysis.compactLinearParameterIntegral
     (InfiniteAdelicGL K n) (ArchimedeanMatrix K n) (ArchimedeanMatrix K n) μ
     k hk _ Units.isOpenEmbedding_val.isOpen_range _
@@ -115,6 +117,7 @@ theorem derivative_integrable (k : Set (InfiniteAdelicGL K n)) (hk : IsCompact k
       ((fderiv ℝ (coordinateExtension K n κ.val)
         (leftLinear K n y (archimedeanGLCoordinates K n g : ArchimedeanMatrix K n))).comp
         (leftLinear K n y))) (μ.restrict k) := by
+  set_option synthInstance.maxSize 256 in
   have hc := Analysis.CompactLinearParameterIntegral.continuousOn_partialDeriv
     (k := k)
     (s := range (Units.val : ArchimedeanGL K n → ArchimedeanMatrix K n))
@@ -144,6 +147,7 @@ theorem extension_eq_raw (k : Set (InfiniteAdelicGL K n))
 theorem raw_mem_smoothFunctions
     (f : C(InfiniteAdelicGL K n, ℂ)) (κ : SmoothCompactKernel K n) :
     rawConvolution K n μ f κ ∈ smoothFunctions K n := by
+  set_option synthInstance.maxSize 256 in
   intro g
   obtain ⟨k, hk, hlocal⟩ := exists_compact_support K n κ
     ((archimedeanGLCoordinates K n).symm g)
@@ -166,6 +170,7 @@ theorem coordinateExtension_eventuallyEq (F : SmoothFunctions K n)
       F.val x = H (archimedeanGLCoordinates K n x : ArchimedeanMatrix K n)) :
     coordinateExtension K n F =ᶠ[
       𝓝 (archimedeanGLCoordinates K n g : ArchimedeanMatrix K n)] H := by
+  set_option synthInstance.maxSize 256 in
   rw [← Units.isOpenEmbedding_val.map_nhds_eq (archimedeanGLCoordinates K n g)]
   change ∀ᶠ (a : ArchimedeanGL K n) in 𝓝 (archimedeanGLCoordinates K n g),
     coordinateExtension K n F (a : ArchimedeanMatrix K n) = H (a : ArchimedeanMatrix K n)

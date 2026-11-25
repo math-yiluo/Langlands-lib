@@ -22,7 +22,7 @@ The two families may live in different carrier universes.
 
 ## Reverse implication
 
-The reverse implication is Worker 1687's Library lemma
+The reverse implication is the Library lemma
 `Blocks.decompositionEquiv_of_matching` from
 `Langlands.WeilDeligne.BlockEquivalences`. It tensors each Weil-factor
 equivalence with the identity on the special block, takes the componentwise
@@ -96,7 +96,7 @@ All auxiliary declarations live in the namespace
    `mult d τ j = mult d' τ j` for every irreducible \(\tau\) in any carrier
    universe.
 
-7. **Matching counts.** Worker 1687's `Blocks.BlockDataMatch a b` (from
+7. **Matching counts.** `Blocks.BlockDataMatch a b` (from
    `Langlands.WeilDeligne.BlockMatching`) means equal lengths and an
    equivalence of Weil factors. `card_match_eq_mult` shows that the number of
    \(i\) with `BlockDataMatch (d i) b` is `mult d σ_b (m_b - 1)`, where
@@ -106,7 +106,7 @@ All auxiliary declarations live in the namespace
    shows that both families have equally many blocks matching any datum
    \(b\) with irreducible factor, in any carrier universe.
 
-8. **Conclusion.** `forward` applies Worker 1687's finite matching lemma
+8. **Conclusion.** `forward` applies the finite matching lemma
    `Blocks.matching_of_class_counts` from `Langlands.WeilDeligne.BlockMatching`.
    It needs these equal counts for every datum \(b\) of either family, so
    step 7 is applied with \(b = d_a\) and with \(b = d'_c\). The lemma

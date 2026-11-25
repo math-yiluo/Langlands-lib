@@ -209,7 +209,11 @@ theorem IsRootDatumValuation.galoisTransport (σ : K ≃ₐ[k] K)
       apply haa' t ht
       have h := congrArg
         (LinearEquiv.baseChange ℤ ℝ _ _ (characterLattice.galoisEquiv k K T σ)) heq
-      simp only [map_neg, map_smul, LinearEquiv.baseChange_tmul] at h
+      have hneg (x : Vstar T_K) :
+          LinearEquiv.baseChange ℤ ℝ _ _ (characterLattice.galoisEquiv k K T σ) (-x) =
+            -LinearEquiv.baseChange ℤ ℝ _ _ (characterLattice.galoisEquiv k K T σ) x :=
+        (LinearEquiv.baseChange ℤ ℝ _ _ (characterLattice.galoisEquiv k K T σ)).toLinearMap.map_neg x
+      simp only [hneg, LinearEquiv.map_smul, LinearEquiv.baseChange_tmul] at h
       change ((1 : ℝ) ⊗ₜ[ℤ] (charAct σ (charAct σ⁻¹ a')) : Vstar T_K) =
         -(t • (1 : ℝ) ⊗ₜ[ℤ] (charAct σ (charAct σ⁻¹ a))) at h
       simpa only [Representation.self_inv_apply] using h

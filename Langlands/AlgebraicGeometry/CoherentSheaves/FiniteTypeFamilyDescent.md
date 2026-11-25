@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.CoherentSheaves.FiniteTypeFamilyDescent`.
 
-Author: Worker 3694, for task `5b9ad399-34f2-4314-bb39-902f491aad01`.
-
 This internal result combines two published noetherian-approximation theorems:
 descent of finite presentation
 (`NoetherianApproximation.finitePresentationModuleSubalgebraDescent`) and descent

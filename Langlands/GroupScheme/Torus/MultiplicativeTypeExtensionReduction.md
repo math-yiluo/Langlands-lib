@@ -1,7 +1,5 @@
 # Reducing extensions to affine bases with split endpoints
 
-Worker 875.
-
 `Langlands.GroupScheme.ExtensionReduction.AffineSplitExtensionStatement`
 is an internal `Prop`-valued definition of the extension clause with an affine
 base and diagonalizable endpoints. It retains the original flatness,
@@ -22,8 +20,11 @@ published fppf locality glues.
 descent from the supplied fibral criterion, returning the original unchanged
 proposition. Both the fibral criterion and affine split-endpoint assertion
 are explicit premises here. The coefficient-extension module proves the
-latter conditionally on the three exact sibling statements.
+latter conditionally on the three exact statements
+`MultiplicativeTypeFibralCriterionStatement`,
+`MultiplicativeTypeCompleteLocalDeformationStatement` and
+`MultiplicativeTypeFieldExtensionStatement`.
 
 The content is internally derived from the published group, quotient and
 relative-multiplicative-type predicates and the included actual common-cover
-and residue-fibre comparisons. No unconditional sibling proof is imported.
+and residue-fibre comparisons. No unconditional proof of those statements is imported.

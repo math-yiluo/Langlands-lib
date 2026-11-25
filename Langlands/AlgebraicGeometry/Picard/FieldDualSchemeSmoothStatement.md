@@ -55,7 +55,3 @@ field and local finite type; separatedness
 (`FieldDualSchemeSeparatedStatement`) and a surjection from `A`
 (`FieldDualSchemeSurjectionStatement`) supply the rest. No proof or new axiom
 is given here.
-
-The Lean statement and initial exposition are reused from Worker 268's
-shared design for the parent geometry proof. Worker 432 checked the cited
-original passages and prepared this focused statement for independent review.

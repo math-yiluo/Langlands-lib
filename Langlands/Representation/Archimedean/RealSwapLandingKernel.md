@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealSwapLandingKernel`, names
 ## Role and provenance
 
 This module is an internal step in the proof of
-`Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (Task 7133). It supplies the
+`Langlands.Archimedean.RealCharacterInducedFiltrationStatement`. It supplies the
 analytic multipliers used to prove the hypothesis `SpecialLanding` of the module
 `RealSwapLandingAlgebra`. In that proof the multipliers come from integral operators
 `F ↦ ∫₀^π sin^r θ F(r_p(θ) g) dθ`. Such an operator multiplies the `k`-th Fourier mode along

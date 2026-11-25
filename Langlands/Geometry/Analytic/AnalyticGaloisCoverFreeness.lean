@@ -47,8 +47,8 @@ private theorem eq_one_of_graph_points_eq {γ : Γ} {x : localizedSpaceFunctor.o
 specified point, the deck element is the identity. -/
 theorem eq_one_of_comp_deck_eq {T : LocalizedCategory.{u, v, v} (K := K)}
     (f : T ⟶ Y) (x : localizedSpaceFunctor.obj T) {γ : Γ}
-    (h : f ≫ (c.deck γ).hom = f) : γ = 1 := by
-  have hone : (c.deck 1).hom = 𝟙 Y := by rw [map_one]; rfl
+    (h : f ≫ (c.deck γ).asIso.hom = f) : γ = 1 := by
+  have hone : (c.deck 1).asIso.hom = 𝟙 Y := by rw [map_one]; rfl
   have hgraph : f ≫ c.graph γ = f ≫ c.graph 1 := by
     apply c.isPullback.hom_ext
     · rw [Category.assoc, c.graph_fst, Category.assoc, c.graph_fst]
@@ -59,7 +59,7 @@ theorem eq_one_of_comp_deck_eq {T : LocalizedCategory.{u, v, v} (K := K)}
 
 /-- The deck group acts freely on full points with values in any normed extension. -/
 theorem eq_one_of_fieldPoint_fixed (γ : Γ) (q : (localizedFieldPointFunctor L).obj Y)
-    (h : (localizedFieldPointFunctor L).map (c.deck γ).hom q = q) : γ = 1 := by
+    (h : (localizedFieldPointFunctor L).map (c.deck γ).asIso.hom q = q) : γ = 1 := by
   let : IsUltrametricDist L := IsUltrametricDist.of_normedAlgebra K
   let M := ValuedField.CompleteAlgebraicClosure L
   let : NormedAlgebra K M :=
@@ -73,10 +73,10 @@ theorem eq_one_of_fieldPoint_fixed (γ : Γ) (q : (localizedFieldPointFunctor L)
   let η := localizedFieldPointValueChange.{u, v, uL} i (norm_algebraMap' M)
   let E := localizedFieldPointFunctor (K := K) M
   let r := η.app Y q
-  have hr : E.map (c.deck γ).hom r = r := by
-    have hn := congrArg (fun k => k q) (η.naturality (c.deck γ).hom)
+  have hr : E.map (c.deck γ).asIso.hom r = r := by
+    have hn := congrArg (fun k => k q) (η.naturality (c.deck γ).asIso.hom)
     simpa only [types_comp_apply, h] using hn.symm
-  have hone : (c.deck 1).hom = 𝟙 Y := by rw [map_one]; rfl
+  have hone : (c.deck 1).asIso.hom = 𝟙 Y := by rw [map_one]; rfl
   have hgraph : E.map (c.graph γ) r = E.map (c.graph 1) r := by
     apply Types.ext_of_isPullback
       (localizedEtaleFieldPointPullback (L := M) c.fst c.snd p p c.etale_map c.isPullback)
@@ -106,9 +106,9 @@ def AnalyticGaloisCoverFreenessStatement (K : Type u) [NormedField K]
     (c : AnalyticGaloisCover Γ p) (γ : Γ),
     (∀ (L : Type uL) [NormedField L] [NormedAlgebra K L]
       (q : (localizedFieldPointFunctor L).obj Y),
-      (localizedFieldPointFunctor L).map (c.deck γ).hom q = q → γ = 1) ∧
+      (localizedFieldPointFunctor L).map (c.deck γ).asIso.hom q = q → γ = 1) ∧
     (∀ {T : LocalizedCategory.{u, v, v} (K := K)} (f : T ⟶ Y)
-      (_ : localizedSpaceFunctor.obj T), f ≫ (c.deck γ).hom = f → γ = 1)
+      (_ : localizedSpaceFunctor.obj T), f ≫ (c.deck γ).asIso.hom = f → γ = 1)
 
 theorem analyticGaloisCoverFreeness : AnalyticGaloisCoverFreenessStatement.{u, v, z, uL} K := by
   intro Y X p Γ _ c γ

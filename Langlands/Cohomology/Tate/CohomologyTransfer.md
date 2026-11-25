@@ -1,7 +1,5 @@
 # Ordinary cohomological corestriction on the standard resolution
 
-Author: Worker 45.
-
 This pair constructs ordinary corestriction independently of the Tate
 operation. A homogeneous subgroup cochain is precomposed with the
 augmentation-preserving standard-resolution comparison and then sent

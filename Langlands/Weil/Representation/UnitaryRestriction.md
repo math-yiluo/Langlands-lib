@@ -1,7 +1,5 @@
 # Restriction of actual invariant positive forms and unitary representations
 
-Author: Worker 24.
-
 This pair constructs restriction of the published positive Hermitian forms,
 then restricts actual finite-dimensional unitary representations and their
 genuine isomorphism classes. It retains the entire restricted action on the

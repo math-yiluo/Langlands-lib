@@ -1,6 +1,6 @@
 # Renard VI.7.2, second Lemma, from cuspidal splittings and from VI.3.5
 
-Worker 4814, for Task 5419. This module assembles
+This module assembles
 `Langlands.CuspidalSupport.BernsteinCuspAdjunctionStatement` (Renard VI.7.2,
 second Lemma) for the actual standard family. Its only remaining input is Renard
 VI.3.5, which enters as the explicit hypothesis
@@ -28,13 +28,14 @@ PDF pp.188–189, and VI.3.5; source ID
   - Cuspidality of each standard Levi is split Serre
     (`BernsteinCuspLeftAdjoint.isSplitSerre_cusp`). So each inclusion has a left
     adjoint (`SplitReflector.exists_leftAdjoint`), which is clause 1.
-  - For a supplied family `sc` of such left adjoints, clause (i) is Worker 132's
-    `bernsteinCuspAdjunction_of_reflectors`.
+  - For a supplied family `sc` of such left adjoints, clause (i) is
+    `bernsteinCuspAdjunction_of_reflectors` (module `BernsteinCuspAdjunction`).
   - The assertions on `R` in clause (ii) are `bernsteinR_faithful` (applied to an
     adjunction from clause (i)), `bernsteinR_map_isShortExact` and
     `bernsteinR_obj_finite`.
-  - The assertions on `I` are Worker 132's `bernsteinInductionFunctor_faithful`
-    and `bernsteinInductionFunctor_map_isShortExact`.
+  - The assertions on `I` are `bernsteinInductionFunctor_faithful`
+    and `bernsteinInductionFunctor_map_isShortExact` (module
+    `BernsteinCuspFunctorProperties`).
   - Clause (iii) is `bernsteinR_unit_injective`, which holds for every adjunction
     `R ⊣ I`.
 - `hasSplitting_cusp_of_wholeDecomposition`: Renard VI.3.5, at any carrier

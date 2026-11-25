@@ -1,6 +1,6 @@
 # Finite vector-bundle series from positive root-height charts
 
-Worker 204, Task 7200. This internal derived unit assembles the finite
+This internal derived module assembles the finite
 series supplied by a `RootHeightChart` over an arbitrary commutative ring
 at arbitrary universe. Chart existence for a relative radical and descent
 of locally constructed filtrations are separate obligations.

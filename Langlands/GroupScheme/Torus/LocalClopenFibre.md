@@ -1,6 +1,6 @@
 # Clopen immersion from a fibre over a larger residue field
 
-Worker 872. This derived construction combines fpqc reflection over fields
+This derived construction combines fpqc reflection over fields
 with the published Noetherian local special-fibre immersion criterion.
 
 For a Noetherian local ring `R`, let `R → K` be any field-valued map whose

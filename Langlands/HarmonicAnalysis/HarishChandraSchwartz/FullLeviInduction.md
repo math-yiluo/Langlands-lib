@@ -1,11 +1,12 @@
 # Full-group normalized induction and coefficient transport
 
-This derived auxiliary unit supplies the representation part of the group-Levi
+This derived auxiliary module supplies the representation part of the group-Levi
 endpoint in the lower-inclusion argument of Waldspurger, *La formule de
 Plancherel pour les groupes p-adiques*, VIII.4.2, printed p.330 (PDF p.96).
 It uses the normalized induction conventions of I.3, printed p.243 (PDF p.9), and the tensor
 coefficient map of V.1. It does not prove a wave-packet estimate, identify
-Plancherel densities or orbit measures, or prove either closed Task 7440 target.
+Plancherel densities or orbit measures, or prove either closed VIII.4.2 target
+(`RationalCuspidalDiscreteCoefficientStatement`, `RationalCuspidalFixedCoefficientLiftingStatement`).
 
 For a locally compact nonarchimedean group, an actual semidirect decomposition
 with full parabolic and Levi, a trivial radical supplied with a proof of
@@ -37,6 +38,6 @@ published full-index identities for the standard parabolic, Levi, and radical.
 This rational-point specialization supplies the radical-closedness proof.
 It keeps independent field and representation-carrier universes. The
 coefficient comparison to a product-induced packet and the source orbit-measure
-normalization remain separate obligations.
+normalization are in `FullLeviProductCoefficients` and `FullLeviOrbitMeasure`.
 
 The ambient action is the `SmoothRep.pullback` along `fullLeviGroupEquiv`.

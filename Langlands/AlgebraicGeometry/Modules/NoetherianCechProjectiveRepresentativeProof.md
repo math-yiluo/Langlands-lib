@@ -7,14 +7,14 @@ module M locally isomorphic to the unit. It uses the supplied ordered
 affine cover and its cardinality bound n.
 
 The flat-cochain and finite-cohomology theorems for the actual module
-`OModulePresheaf.ofModules π M` supply the hypotheses of the published
+`OModulePresheaf.ofModules π M` supply the hypotheses of
 `boundedFlatComplexProjective`. Above n, there are no increasing cover
 indices; the Čech cochain modules are therefore subsingletons. The algebra
 theorem chooses one bounded family K of finite projective R-modules and
 a chain map φ to the original Čech complex. Its four original-base cycle
 and boundary tests are retained in the conclusion of this proof.
 
-For each commutative R-algebra A, the published
+For each commutative R-algebra A,
 `boundedFlatQuasiIsoBaseChange` gives the four tests for the base change of
 φ. The geometric cochain base-change theorem supplies degreewise linear
 equivalences E from A tensor the original Čech cochains to those of the
@@ -35,11 +35,11 @@ file
 `P2M/Sol/S_AlgebraicGeometry_OModulePresheaf_exists_projective_complex_forall_baseChange_quasiIso_cech_of_locallyTrivial.lean`.
 The source retains Copyright 2026 Anthropic under Apache License 2.0;
 see `licenses/Anthropic-FLT/LICENSE` and `licenses/Anthropic-FLT/NOTICE`.
-Worker 137 made the following changes:
+The adaptation makes the following changes:
 
 - The source solution is a proof of the host Prop-valued statement, and
   the four φ tests are included before the universal A clause.
-- Imports use host modules. The two algebra calls use their published
+- Imports use host modules. The two algebra calls use the Library's
   `boundedFlatComplexProjective` and `boundedFlatQuasiIsoBaseChange`
   adapters.
 - The source's `S32F2` helpers are placed in the host

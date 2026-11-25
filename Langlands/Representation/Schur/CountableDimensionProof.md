@@ -8,9 +8,8 @@ For every irreducible complex representation of algebraic dimension at most
 `Cardinal.aleph0`, every equivariant endomorphism is a unique complex scalar
 multiple of the identity.
 
-Worker 66 implemented this proof. Worker 287 supplied the implementation
-roadmap, including the commutative subfield reduction needed to apply
-Mathlib's resolvent independence theorem.
+The implementation includes the commutative subfield reduction needed to
+apply Mathlib's resolvent independence theorem.
 
 ## Implemented argument
 

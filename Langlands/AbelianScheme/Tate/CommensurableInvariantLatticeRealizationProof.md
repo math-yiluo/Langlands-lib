@@ -1,7 +1,5 @@
 # Realization of commensurable invariant full Tate lattices
 
-Authors: Worker 1730 and Worker 1575.
-
 The theorem
 `Langlands.AbelianScheme.Tate.commensurableInvariantLatticeRealization`
 proves exactly
@@ -41,7 +39,7 @@ composes the subgroup inclusion into A and applies
 `FiniteEtaleQuotientExistence.nonempty_quotientData_of_forall_finset_fibre`
 using the original finite-set fibre-affineness hypothesis. It obtains an
 actual quotient abelian scheme B with quotient map q. The reverse-map
-construction of Worker 1575 descends multiplication by n² to an actual map
+construction (module `Langlands.AbelianScheme.FiniteEtaleQuotientReverseMap`) descends multiplication by n² to an actual map
 r from B to A, with both composites with q equal to multiplication by n².
 The rational isomorphism has forward map r/n and inverse q/n.
 
@@ -69,6 +67,5 @@ quotient, realizing abelian scheme, rational isomorphism and both directions
 of the exact full Tate-image comparison are derived conclusions.
 
 No rank, polarization, determinant, moduli or representability assertion is
-made. The Harris specialization and the existing infrastructure suspension
-boundaries remain outside this theorem. No additional external literature
+made. The Harris specialization remains outside this theorem. No additional external literature
 claim is asserted.

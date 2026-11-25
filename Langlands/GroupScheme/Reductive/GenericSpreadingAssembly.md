@@ -1,6 +1,6 @@
 # Actual-fibre reductions for generic reductivity spreading
 
-This internal, derived unit connects the supplied fraction-field and field-valued pullbacks to the actual residue and geometric fibres. It uses `fieldPointFiberIso`, the published preservation and reflection of connected reductivity under arbitrary field extension, and group base-change composition. It does not prove geometric radical openness.
+This internal, derived module connects the supplied fraction-field and field-valued pullbacks to the actual residue and geometric fibres. It uses `fieldPointFiberIso`, the published preservation and reflection of connected reductivity under arbitrary field extension, and group base-change composition. It does not prove geometric radical openness.
 
 `residueReductiveLocus G` is the set of base points whose actual residue-field pullbacks of `G` satisfy `IsConnectedReductive`. The definition imposes no hypotheses on the base or the family and makes no openness assertion. The comparison lemmas identify membership in this set using the specified field-valued and geometric fibres.
 

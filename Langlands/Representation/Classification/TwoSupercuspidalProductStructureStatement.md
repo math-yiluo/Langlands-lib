@@ -1,6 +1,6 @@
 # The product of two supercuspidal representations
 
-Author: Worker 745. These proposition definitions state Zelevinsky (1980),
+These proposition definitions state Zelevinsky (1980),
 Proposition 1.11, for actual general linear groups over finite extensions of
 p-adic fields. They cover the irreducibility of `ρ × ρ'` in the non-adjacent
 case. In the adjacent case they cover length two, the unique proper
@@ -157,8 +157,8 @@ invariant subspace (an element of the lattice `Subrepresentation`), not up to
 isomorphism. It excludes both `⊥` (zero) and `⊤` (the whole space). By item 2,
 the `S` of item 3 is `ω`, and item 3 then says that `ω` and
 `ω' = (ρ × ρ') / ω` are irreducible. Ze80 states only the irreducibility of
-`ω'`; that of `ω` follows from length two and is included because the task
-requires both.
+`ω'`; that of `ω` follows from length two and is included so that both are
+stated.
 
 ### `TwoSupercuspidalAdjacentProductJacquet F T` (part (b), Jacquet modules)
 
@@ -177,8 +177,8 @@ of representations of the Levi `B.Levi F = GL_k(F) × GL_k(F)`:
 By the uniqueness in the composition clause, `S` is `ω` and `P / S` is `ω'`.
 The order is the source's: the submodule has Jacquet module `ρ ⊗ ρ'`, with `ρ`
 on the upper-left block, and the quotient has `ρ' ⊗ ρ`, with the factors
-exchanged. Ze80's "`=`" is read as isomorphism of representations, as the task
-requires; equality of classes or of Jordan–Hölder multisets would be weaker.
+exchanged. Ze80's "`=`" is read as isomorphism of representations;
+equality of classes or of Jordan–Hölder multisets would be weaker.
 
 Both equivalences are `Representation.Equiv`, a linear isomorphism of
 carriers that commutes with the two actions of the same group `B.Levi F`. No
@@ -210,10 +210,9 @@ Proposition 1.11 in full.
   subspaces, quotients and Jacquet modules have carriers in the same
   universe.
 
-The source has no universes. Both universes are arbitrary and independent, as
-the task requires.
+The source has no universes. Both universes are arbitrary and independent.
 
-## Source boundary and remaining proof obligations
+## Source boundary and proof obligations
 
 Ze80 proves Proposition 1.11 as follows (p.175):
 
@@ -237,7 +236,7 @@ Ze80 proves Proposition 1.11 as follows (p.175):
   unitary. This contradicts an unbounded matrix coefficient of `π_s` for large
   `|s|`.
 
-A citation, or this proposition definition, is not a proof. The later proof of
+A citation, or this proposition definition, is not a proof. A proof of
 `TwoSupercuspidalProductStructure` must discharge the adjacent reducibility
 step completely, either by completing Ze80's sketch or from another complete
 source. It must also prove the length-two, uniqueness and Jacquet conclusions
@@ -246,6 +245,9 @@ linked pairs or the segment results of Ze80 §§2–4, since those rest on §2,
 which starts from Proposition 1.11. The published reducibility statement
 `SupercuspidalProductReducibilityTheorem` covers only reducibility; it states
 neither the unique submodule, nor the exact length, nor the Jacquet modules.
+The proof `twoSupercuspidalProductStructure` is in
+`TwoSupercuspidalProductStructureProof`; the adjacent reducibility step is
+proved in `TwoSupercuspidalAdjacentReducibilityProof`.
 
 ## Original sources
 

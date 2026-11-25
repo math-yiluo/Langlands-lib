@@ -1,7 +1,7 @@
 # Absence of tori under field extension, from Milne 17.81
 
-Worker 1395 wrote this module. It reduces
-[`NoTorusBaseChangeStatement`](NoTorusBaseChangeStatement.md) (Worker 1379)
+This module reduces
+[`NoTorusBaseChangeStatement`](NoTorusBaseChangeStatement.md)
 to [`NoTorusUnipotentStatement`](NoTorusUnipotentStatement.md), the Lean
 form of Milne, *Algebraic Groups* (2017), Proposition 17.81. The other
 inputs are invariance of unipotence under field extension (Milne,

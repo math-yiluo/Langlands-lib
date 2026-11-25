@@ -33,8 +33,8 @@ theorem restrictedGlobalSpectrum_toAction (H : OpenSubgroup G) :
 theorem restrictedGlobalSpectrum_apply (H : OpenSubgroup G) (g : H)
     (x : BanachSpectrum P) (a : P) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom ((ρ.restrictedGlobalSpectrum H).obj.ρ g) x) a =
-        x ((ρ.toMonoidHom (g : G)).inv.toAlgHom a) := rfl
+      (ConcreteCategory.hom ((ρ.restrictedGlobalSpectrum H).obj.ρ g).asHom x) a =
+        x ((ρ.toMonoidHom (g : G)).asIso.inv.toAlgHom a) := rfl
 
 /-- Lift the existing actual bounded structural pullback to continuous actions. -/
 def invariantSpectrumToBase (H : OpenSubgroup G) (d : ρ.InvariantDomain H) :

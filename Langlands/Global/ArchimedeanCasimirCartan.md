@@ -1,6 +1,6 @@
 # The actual matrix trace Casimir in the complex enveloping center
 
-Authors: Worker 94 and Worker 88. Module:
+Module:
 `Langlands.Global.ArchimedeanCasimirCartan`. All declarations are in
 `Langlands.Global.ArchimedeanGL`.
 

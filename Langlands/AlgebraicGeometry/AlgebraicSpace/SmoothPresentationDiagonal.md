@@ -1,7 +1,5 @@
 # Diagonal geometry from a smooth scheme presentation
 
-Worker 801.
-
 This internal derived module uses published smooth-cover descent and
 kernel-pair constructions. It introduces no new geometric axiom and
 does not assume that the algebraic space is a scheme.

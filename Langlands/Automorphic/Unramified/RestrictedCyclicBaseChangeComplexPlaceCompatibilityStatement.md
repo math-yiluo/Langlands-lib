@@ -2,8 +2,8 @@
 
 `Langlands.Automorphic.Unramified.RestrictedCyclicBaseChangeComplexPlaceCompatibilityStatement`
 is a named unproved external input for the restricted B7 derivations. It states
-the complex-place parameter consequence of strong lifting in the setting
-authorized by point (b) of the operator's R2 ruling.
+the complex-place parameter consequence of strong lifting in the restricted
+setting below.
 
 ## Quantifiers and hypotheses
 
@@ -45,7 +45,8 @@ place and every supplied list.
 
 ## Aggregate parameters and completion coordinates
 
-Both sides use `IsobaricData.HasComplexPlaceParameter` from Task 7466. For
+Both sides use `IsobaricData.HasComplexPlaceParameter` from the module
+`Langlands.Automorphic.IsobaricComplexPlaceParameter`. For
 isobaric data `D` over a number field `K`, attachment of a list `ds` at a
 complex place of `K` gives an enumeration
 `σ : Fin b → PositiveRankCuspidalClass K` with `Finset.univ.val.map σ = D`
@@ -106,19 +107,20 @@ part of the unproved content.
 
 The registered operator plan `operator-external-inputs-plan-2026-11-16`
 (`external-inputs-plan.tex`, Sections 2.2 B7, 4.6 and 4.8) supplies the design
-for using strong lifting at split infinite places. Point (b) of the subsequent
-R2 ruling authorizes this complex-place formulation without the plan's
-regular-algebraicity condition. Task 7465 assumes a regular-algebraic source
+for using strong lifting at split infinite places. This complex-place
+formulation omits the plan's regular-algebraicity condition.
+`RestrictedCyclicBaseChangeCompatibilityStatement` assumes a regular-algebraic source
 and asks for finite-place compatibility with a chosen local base-change map.
 The complex-place comparison here is a separate external premise. The
-simple trace formula packages of Task 7340 leave the global separation of
-archimedean components needed for this premise open.
+simple trace formula with its twisted form and local cyclic base change of
+prime degree leave the global separation of archimedean components needed
+for this premise open.
 
 ## Conditional derivation of restricted B7
 
-Task 7340 owns the derivation of the literal clauses (1)r and (2)r of
-`RestrictedCyclicWeakBaseChangeComplexPlaceStatement` from this premise and
-the following comparisons.
+The literal clauses (1)r and (2)r of
+`RestrictedCyclicWeakBaseChangeComplexPlaceStatement` are to be derived from
+this premise and the following comparisons.
 
 - For (1)r, take `D` to be the singleton of the upstairs cuspidal class. Use
   `CuspidalOperatorRealization.isUnitarizable_of_hasUnitaryCentralCharacter`

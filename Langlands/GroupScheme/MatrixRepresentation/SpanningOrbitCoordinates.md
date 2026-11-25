@@ -1,7 +1,5 @@
 # A spanning representation with the same coordinate-line stabilizer
 
-Author: Worker 967.
-
 This internal module builds, from a finite matrix representation `ρ` of a smooth
 group scheme over an algebraically closed field `k` and a coordinate vector `e_j`,
 a second finite matrix representation `σ` with a coordinate vector `e_s` such

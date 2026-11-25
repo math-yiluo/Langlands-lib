@@ -40,8 +40,10 @@ both resulting actual presentations.
 
 The provenance is internal composition of the published pure Laurent radius
 extension, full Laurent field-domain construction, Gauss sections and
-finite-union rational-neighborhood descent. This unit constructs a common
+finite-union rational-neighborhood descent. This module constructs a common
 field with simultaneous radius witnesses and all required descent operations.
-It does not prove strict local Gerritzen–Grauert or the host finite rational
-cover statement. Arbitrary closed ideals, zero and nonreduced quotients, empty
+It does not prove strict local Gerritzen–Grauert or the finite rational cover
+statement `Domain.FiniteRationalCoverStatement`; these are proved as
+`StrictTestDomain.localRationalNeighborhood` and `Domain.finiteRationalCover`
+(in `DomainRationalCoverProof`). Arbitrary closed ideals, zero and nonreduced quotients, empty
 coordinate tuples and empty domain loci remain allowed.

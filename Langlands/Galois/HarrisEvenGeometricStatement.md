@@ -1,7 +1,5 @@
 # The even-real-degree branch of the cuspidal Harris reduction
 
-Author: Worker 773.
-
 `HarrisEvenGeometricPowerStatement` states the endpoint of the Clozel,
 Kottwitz and Hodge–Tate comparisons before multiplicity removal. It
 retains the CM composite, regular algebraicity, conjugate self-duality,

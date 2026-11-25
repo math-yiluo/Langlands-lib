@@ -47,7 +47,8 @@ theorem exists_etale_split_of_split_residueFibre
       IsSplitTorus ((baseChange q).obj G) := by
   let Gs := RelativeIdentityComponent.residueFiber G s
   obtain ⟨U, p, hp, b, hb, T, hT, i, hi, e, he⟩ :=
-    relativeSplitTorusLifting S G s Gs hs (𝟙 Gs) inferInstance
+    relativeSplitTorusLifting S G s Gs hs (𝟙 Gs)
+      (set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in inferInstance)
   let : Etale p := hp
   have : Smooth T.X.hom := hT.smooth
   have : Smooth ((baseChange p).obj G).X.hom :=
@@ -69,6 +70,7 @@ theorem exists_etale_split_of_split_residueFibre
     isIso_residueFibre_of_fieldPoint i b hib
   have his' : IsIso (((baseChange (U.fromSpecResidueField t)).map i).hom.hom.left) := by
     let := his
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   obtain ⟨W, htW, hiW⟩ := SmoothMonoLocalIso.isIsoNear_of_residueFiber i t his'
   have : IsIso (((baseChange W.ι).map i).hom.hom.left) := hiW

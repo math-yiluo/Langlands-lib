@@ -44,6 +44,6 @@ original value, and `rationalValue_mul` states the resulting rational cocycle
 law with the actual `rationalConjugate` action. `exists_rational_cocycle`
 packages these two properties.
 
-This unit does not construct a finite field, prove kernel triviality for an
+This module does not construct a finite field, prove kernel triviality for an
 arbitrary cocycle, recover an integral model, or establish any quotient,
 residue, Frobenius or chamber conclusion.

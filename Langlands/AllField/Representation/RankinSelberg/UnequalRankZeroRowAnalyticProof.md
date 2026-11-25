@@ -15,7 +15,6 @@ The module docstring of the port:
 Assemble full-torus expansions, normalized compact averages and finite-function
 Mellin analysis, then transport through quotient Iwasawa integration and the
 zero-row Dirac measure.
-The two Dirac reductions are reused from Worker 329's shared revision-3 draft.
 
 ## Imports from the port
 

@@ -36,7 +36,7 @@ variable {G : Type w} [Group G] (ρ : G →* (Aut Y)ᵐᵒᵖ)
 /-- The automorphism of `Y` attached to a group element. The action on the
 site is contravariant in the automorphism, so a homomorphism into the opposite
 of the automorphism group gives a left action on cohomology. -/
-abbrev aut (g : G) : Y ≅ Y := (ρ g).unop
+abbrev aut (g : G) : Y ≅ Y := (ρ g).unop.asIso
 
 theorem aut_mul (g h : G) : aut ρ (g * h) = aut ρ g ≪≫ aut ρ h := by
   simp only [aut, map_mul, MulOpposite.unop_mul]

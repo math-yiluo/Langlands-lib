@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Finite-family norms of ordered derivative tensors -/
 

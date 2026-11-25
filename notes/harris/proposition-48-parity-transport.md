@@ -1,8 +1,7 @@
 # Parity correction and determinant untwisting in Harris Proposition 4.8
 
-Task 7218 `8a1e00f3-5223-4c5a-9994-f8f08331ceda` decomposes
-four published targets. The parent induction in Task 6413
-`bca10e59-d4e2-40a4-be9b-5d70eaa1acd2` uses
+This note decomposes four statements of the Library. The reduction of
+Harris 1998, Proposition 4.8, to named inputs uses
 `Proposition48AuxiliaryParityNormalizationStatement` and
 `Proposition48AuxiliaryParityUntwistStatement`. The full
 `Proposition48ParityNormalizationStatement` and
@@ -22,9 +21,8 @@ quadratic subfield, and zero at those restricting to its conjugate.
 This gives a pure weight-one integral infinity type. Apply
 `Langlands.Global.cmHalfWeightCharacter` with the empty finite set.
 Its actual idele-class character `ν` is conjugate-inverse and has
-`IsAlgebraicAfterTwist m ν`. Task
-`a6de2478-e39e-494e-9787-4f2cf8dffd07` published the exact
-half-weight proof. Harris's p. 195 normalization fixes the required
+`IsAlgebraicAfterTwist m ν`. The Library proves the half-weight
+statement (`cmHalfWeightCharacter`). Harris's p. 195 normalization fixes the required
 parity. His half-integral twist remark on p. 191 concerns fields of
 definition. The conjugate-inverse character construction comes from
 Harris–Taylor, Proposition VII.2.7 (printed p. 238) and the proof of
@@ -65,11 +63,10 @@ class `c` and take `S = T.heckeDeterminantTwist ν⁻¹`. The
 multipliers cancel on every adelic group element. The inverse
 linear equivalence consequently sends `S` to `T` by multiplication
 by `ν(det g)`, giving `OperatorRealization.IsDeterminantMultiple`.
-The arbitrary-character operator and spectral constructions belong
-to Task `6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. The existing exact
-existence theorem `cuspidalDeterminantMultiple` belongs to Task
-`3769037c-895e-48df-bd60-2326fcd3195c` under the spectral program
-`34b81620-20d7-4059-9b08-6bedd1c1c029`. [Henniart 2000, §2.2, p. 444](https://doi.org/10.1007/s002229900033), [operator twist](../../Langlands/Automorphic/HeckeTwist/OperatorTwist.md), [spectral twist](../../Langlands/Automorphic/HeckeTwist/CuspidalSpectralTwist.md)
+The arbitrary-character operator and spectral constructions are in the
+operator-twist and spectral-twist modules linked here; the existence
+theorem `cuspidalDeterminantMultiple` is in
+`Langlands/Automorphic/CuspidalDeterminantMultipleProof.lean`. [Henniart 2000, §2.2, p. 444](https://doi.org/10.1007/s002229900033), [operator twist](../../Langlands/Automorphic/HeckeTwist/OperatorTwist.md), [spectral twist](../../Langlands/Automorphic/HeckeTwist/CuspidalSpectralTwist.md)
 
 - The actual twisted presentation transports the finite slice and
   local factors, with component equivalences at each finite place.
@@ -104,30 +101,30 @@ supercuspidal component. The full untwist projects the full raw
 and corrected data to the auxiliary data and gives the same
 conclusion. [Four reductions](../../Langlands/Global/Arithmetic/HarrisProposition48ParityReductionStatement.md)
 
-## Proof owners
+## Proof status
 
-Each row names the exact target and the owner of its proof. The
-conditional reductions use their listed premises as hypotheses. The
-four final proofs apply the reductions to the corresponding proved
-inputs. Task 7216 `22c6a336-836c-47dc-bc09-667768393b20` owns the
-auxiliary rank-one theorem used in `Proposition48AuxiliaryPreparationStatement`.
+Each row names the exact target and its status in the Library. The
+conditional reductions use their listed premises as hypotheses. The four
+final proofs are to apply the reductions to the corresponding proved
+inputs. `Proposition48AuxiliaryPreparationStatement` also uses the
+auxiliary rank-one theorem.
 
-| Lean proposition | Proof task | Task ID |
-| --- | --- | --- |
-| `Langlands.Global.Harris.NormTwistInfinityStatement` | Task 7976 | `0e02d45c-f040-4f5c-94d4-e30523e7791e` |
-| `Langlands.Global.Harris.CMNormConjugationStatement` | Task 7979 | `cf4011eb-a860-47ba-ba5c-9a22029821ba` |
-| `Langlands.Global.Harris.Proposition48PlaceNormTwistStatement` | Task 7980 | `f941d28c-0f0b-455b-b4f0-b4f188daaf78` |
-| `Langlands.Global.Harris.GeneralPositionAmbientTwistStatement` | Task 7984 | `399b0ff8-364f-43e0-86a2-2b6dc6b1e545` |
-| `Langlands.Automorphic.HeckeDeterminantTwistWeakInductionStatement` | Task 7987 | `24e7b7ec-1742-4785-a2ed-22f26c24654c` |
-| `Langlands.Automorphic.HeckeDeterminantTwistConjugateSelfDualStatement` | Task 7992 | `31a1744b-6943-42e8-9162-281e0ce7ca69` |
-| `Langlands.Automorphic.HeckeDeterminantTwistSupercuspidalStatement` | Task 7994 | `f1527661-b13e-485a-8540-dd83e0902996` |
-| `Langlands.Global.Harris.Proposition48AuxiliaryParityNormalizationReductionStatement` | Task 7998 | `6e0238d9-396c-4663-b69d-637cc3410a75` |
-| `Langlands.Global.Harris.Proposition48ParityNormalizationReductionStatement` | Task 8002 | `3b14cebe-07fc-439d-8fcd-dc1b5c2e2efc` |
-| `Langlands.Global.Harris.Proposition48AuxiliaryParityUntwistReductionStatement` | Task 7999 | `9809445d-8bfc-4b98-9a5d-d1ec1536ea3e` |
-| `Langlands.Global.Harris.Proposition48ParityUntwistReductionStatement` | Task 8004 | `eeea4949-8944-491b-82b2-5f1122cd694b` |
-| `Langlands.Global.Harris.Proposition48AuxiliaryParityNormalizationStatement` | Task 8008 | `43773cdb-ef60-41ae-af67-d0af2841ac5b` |
-| `Langlands.Global.Harris.Proposition48AuxiliaryParityUntwistStatement` | Task 8009 | `85c6a682-6a41-4de3-a549-d368a770d640` |
-| `Langlands.Global.Harris.Proposition48ParityNormalizationStatement` | Task 8010 | `e3d5a2b0-045c-4131-81bc-0b7f1607ed57` |
-| `Langlands.Global.Harris.Proposition48ParityUntwistStatement` | Task 8011 | `ad904027-ae18-4d99-9955-c40fc259bc62` |
-| `Langlands.Global.Harris.Proposition48ParityTransportStatement` | Task 8013 | `b7b4cc85-a4ba-4a8c-bcac-08cca3b0b4d1` |
-| `Langlands.Global.Harris.Proposition48AuxiliaryPreparationStatement` | Task 8012 | `fa892b08-e57f-4263-97de-8919119cb536` |
+| Lean proposition | Proof |
+| --- | --- |
+| `Langlands.Global.Harris.NormTwistInfinityStatement` | proved: `normTwistInfinity` |
+| `Langlands.Global.Harris.CMNormConjugationStatement` | proved: `cmNormConjugation` |
+| `Langlands.Global.Harris.Proposition48PlaceNormTwistStatement` | proved: `proposition48PlaceNormTwist` |
+| `Langlands.Global.Harris.GeneralPositionAmbientTwistStatement` | proved: `generalPositionAmbientTwist` |
+| `Langlands.Automorphic.HeckeDeterminantTwistWeakInductionStatement` | proved: `heckeDeterminantTwistWeakInduction` |
+| `Langlands.Automorphic.HeckeDeterminantTwistConjugateSelfDualStatement` | proved: `heckeDeterminantTwistConjugateSelfDual` |
+| `Langlands.Automorphic.HeckeDeterminantTwistSupercuspidalStatement` | proved: `heckeDeterminantTwistSupercuspidal` |
+| `Langlands.Global.Harris.Proposition48AuxiliaryParityNormalizationReductionStatement` | proved: `proposition48AuxiliaryParityNormalizationReduction` |
+| `Langlands.Global.Harris.Proposition48ParityNormalizationReductionStatement` | proved: `proposition48ParityNormalizationReduction` |
+| `Langlands.Global.Harris.Proposition48AuxiliaryParityUntwistReductionStatement` | proved: `proposition48AuxiliaryParityUntwistReduction` |
+| `Langlands.Global.Harris.Proposition48ParityUntwistReductionStatement` | proved: `proposition48ParityUntwistReduction` |
+| `Langlands.Global.Harris.Proposition48AuxiliaryParityNormalizationStatement` | no theorem; it follows from proved results: `proposition48AuxiliaryParityNormalizationReduction` with `normTwistInfinity`, `cmNormConjugation`, `proposition48PlaceNormTwist` and `generalPositionAmbientTwist` |
+| `Langlands.Global.Harris.Proposition48AuxiliaryParityUntwistStatement` | no theorem; it follows from proved results: `proposition48AuxiliaryParityUntwistReduction` with `heckeDeterminantTwistWeakInduction`, `heckeDeterminantTwistConjugateSelfDual` and `heckeDeterminantTwistSupercuspidal` |
+| `Langlands.Global.Harris.Proposition48ParityNormalizationStatement` | no theorem; it follows from proved results: `proposition48ParityNormalizationReduction` with the auxiliary normalization above and `proposition48PlaceNormTwist` |
+| `Langlands.Global.Harris.Proposition48ParityUntwistStatement` | no theorem; it follows from proved results: `proposition48ParityUntwistReduction` with the auxiliary untwist above |
+| `Langlands.Global.Harris.Proposition48ParityTransportStatement` | no theorem; it is the conjunction of the two statements above, which follow from proved results |
+| `Langlands.Global.Harris.Proposition48AuxiliaryPreparationStatement` | no theorem; it is the conjunction of `Proposition48AuxiliaryRankOneStatement` (proved: `proposition48AuxiliaryRankOne`) and the two auxiliary statements above, which follow from proved results |

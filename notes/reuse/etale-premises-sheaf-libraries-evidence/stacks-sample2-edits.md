@@ -1,6 +1,6 @@
 # Stacks sample 2: complete edits
 
-Unified diff of the 30 files that were edited, against AxiomMath/Stacks commit `c496df0d9beea9deaeabcea8492605f9a0a2313b`, to compile the 318-module closure in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). The final check is diagnostic `f2cbf418-6153-405c-b65a-6297e58be669`, with 0 errors and 0 warnings. The diff has 95 added and 48 removed lines. Its SHA-256 as a patch file (the text between the fences, ending with a newline) is `ed02bb1fcb633a18433a9dd1ab51a491cff5a2f5541bf9d5fc2f057f18235c47`. Paths are relative to the repository root. The per-file hashes are in [stacks-sample2-manifest.md](stacks-sample2-manifest.md).
+Unified diff of the 30 files that were edited, against AxiomMath/Stacks commit `c496df0d9beea9deaeabcea8492605f9a0a2313b`, to compile the 318-module closure with Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. The final check compiled it with 0 errors and 0 warnings. The diff has 95 added and 48 removed lines. Its SHA-256 as a patch file (the text between the fences, ending with a newline) is `ed02bb1fcb633a18433a9dd1ab51a491cff5a2f5541bf9d5fc2f057f18235c47`. Paths are relative to the repository root. The per-file hashes are in [stacks-sample2-manifest.md](stacks-sample2-manifest.md).
 
 Part of the [audit of the étale-cohomology premises](../etale-premises-sheaf-libraries-audit.md#72-focused-compiles-on-the-librarys-pin). These are unreviewed development records.
 

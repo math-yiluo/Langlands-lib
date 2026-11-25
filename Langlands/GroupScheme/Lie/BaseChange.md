@@ -1,7 +1,5 @@
 # Actual affine Lie kernels under scheme base change
 
-Author: Worker 1317.
-
 For commutative rings `k` and `K` with a `k`-algebra structure on `K`, let
 `G_K` be the actual scheme pullback of a group scheme `G` over `Spec k`.
 For every commutative `K`-algebra `A`, with a compatible `k`-algebra structure,

@@ -1,6 +1,6 @@
 # Renard II.3.13 Corollary: center of the category and invariant distributions
 
-Worker 108 and Worker 42, Task 5531. Source: David Renard,
+Source: David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered `renard-2026-representations-groupes-reductifs-padiques`,
 II.3.13 Corollary and its proof (printed pp.55–56 / PDF pp.61–62), and
@@ -12,7 +12,7 @@ universe parameters: `uG` for the group, and `uM`, with the categorical center
 taken over nondegenerate modules in universe `max uG uM`. The statement is the conjunction
 `CriteriaStatement.{uG} ∧ CategoricalCenterStatement.{uG, uM}`. The proof
 adds no hypotheses. It combines published results with two helper modules
-submitted together with this file.
+ported with this file.
 
 ## Route
 
@@ -40,12 +40,12 @@ follows.
 
 ## The helper modules
 
-* `RenardCenterCentralityProof` (Worker 108): every right product satisfying
+* `RenardCenterCentralityProof`: every right product satisfying
   the published right specification satisfies `CentralitySpecification`. Its
   center equals the Hecke commutant. Commuting with both full Hecke actions is
   conjugation invariance, by the translation criterion. Invariant right
   essentially compact distributions are two-sided essentially compact.
-* `RenardCenterCategoricalProof` (Worker 42): Renard I.1.7. The published map
+* `RenardCenterCategoricalProof`: Renard I.1.7. The published map
   `NondegenerateModuleCenter.fromCommutantRingHom` from the commutant of the
   canonical image in `IdempotentedRingRightLimit` to the categorical center is
   bijective. Then, for the completion comparison `E`, `E⁻¹` sends the

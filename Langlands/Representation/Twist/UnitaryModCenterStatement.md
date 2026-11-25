@@ -1,7 +1,5 @@
 # Unitary twists of analytic coefficients modulo the full center
 
-Author: Worker 429.
-
 `Langlands.UnitaryTwistModCenterStatement.{uG,uV}` is a closed proposition.
 For every topological group `G : Type uG`, every complex module `V : Type uV`,
 every representation `ρ` of `G` on `V`, and every character `χ : G →* ℂˣ`

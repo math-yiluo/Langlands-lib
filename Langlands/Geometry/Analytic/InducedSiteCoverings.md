@@ -1,7 +1,5 @@
 # Induction on equivariant quasi-étale sites preserves and reflects coverings
 
-Author: Worker 933.
-
 This module proves the covering half of Berkovich's Example 1.2.1(i) in the
 quasi-étale case. A family of morphisms of `Qét(X(H))` is a covering exactly
 when its image under the induction functor
@@ -10,7 +8,7 @@ when its image under the induction functor
 equivalence, is not proved here. The module is a helper for the proof of
 `InducedSpace.QuasiEtaleSiteEquivalenceStatement` (module
 `InducedSiteEquivalenceStatement`). It imports the helper module
-`InducedSpacePoints` (Worker 5254) for the action of induced morphisms on
+`InducedSpacePoints` for the action of induced morphisms on
 points. Namespace: `Langlands.Analytic.SaturatedAtlasPresentation`.
 
 ## Main result

@@ -1,7 +1,5 @@
 # Finite length under the actual normalized parabolic functors
 
-Author: Worker 395.
-
 `Langlands.Parabolic.normalizedParabolicFiniteLength.{uField,uCarrier} F T`
 proves exactly
 `Langlands.Parabolic.NormalizedParabolicFiniteLengthStatement.{uField,uCarrier} F T`.
@@ -112,20 +110,17 @@ is not needed.
 The combined transitive project import graph was audited at Library commit
 `a9fae2951e0ea3e71a3319caba67d2b93350b350`. It has 596 project modules,
 all with nonempty paired Markdown, and every imported pair agrees with that
-Library. The exact target pair and all its imports are unedited by this
-contribution. An older local baseline differs only in an already published
-`Group/GL/BlockModulus.md` documentation update; no imported Lean source was
-changed.
+Library.
 
-The audit read the eight excluded task objectives, inspected the mathematical
+The audit read the descriptions of the eight excluded results, inspected the mathematical
 routes above and scanned every transitive project Lean source, including
 imports, for their statement and proof names without case sensitivity. There
 are no matches for analytic segment classification, special-head multisegment
 exhaustion, ordered strong-head existence, ordered quotient coverage, tempered
 block uniqueness, square-integrable Langlands classification, square-integrable
-exhaustion, or regular exhaustion, including their named proof successors.
+exhaustion, or regular exhaustion, including the named modules that prove them.
 Neither those conclusions nor a theorem-valued replacement for finite-length
-preservation is used. The newly proved assembly and rank-zero steps use only
+preservation is used. The assembly and rank-zero steps proved here use only
 the actual definitions and the named module-length transport lemmas.
 
 ## Source correspondence and provenance
@@ -150,4 +145,4 @@ passages and pp.35 and 60 were read directly. The registered source is
 `78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a`,
 retained at
 `/home/taskhub/central-library/Casselman--p-adic groups lecture notes/Introduction to representations of p-adic groups/Casselman--Introduction to the theory of admissible representations of p-adic reductive groups--1995.pdf`.
-No source-specific errata note was present in the current public notes.
+No source-specific errata note was present in the public notes consulted.

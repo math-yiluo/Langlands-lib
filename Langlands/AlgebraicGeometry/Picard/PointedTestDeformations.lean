@@ -25,6 +25,7 @@ variable {S X : Scheme.{u}} (f : X ⟶ S) {T₀ : Over S}
 abbrev Deformations (T : Under T₀) :=
   PseudofunctorPointedDeformations.Deformations (relative f) (Core.mk M) T
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Every compatible arrow is an actual bundle isomorphism. -/
 instance deformationsGroupoid (T : Under T₀) : Groupoid (Deformations f M T) :=
   Groupoid.ofIsIso (fun h ↦ isIso_of_reflects_iso h

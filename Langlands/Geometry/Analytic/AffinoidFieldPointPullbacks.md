@@ -1,6 +1,6 @@
 # Full field points on small actual affinoid pushouts
 
-This internal supporting unit treats a complete ultrametric normed base field
+This internal module treats a complete ultrametric normed base field
 `K`, with independent base-field, spectrum-space and target-field universes
 `u`, `v` and `uL`. Each presented algebra's actual Banach spectrum is supplied
 with `Small.{v}`. The construction uses the actual small-spectrum presentation
@@ -39,5 +39,7 @@ The provenance is internal: these are consequences of the existing small
 actual-spectrum construction, conditional global-chart character equivalence,
 coherent saturation extension and bounded affinoid pushout universal property.
 No finite or étale assertion is needed for this supplied-smallness result.
-The unconditional preservation of arbitrary localized étale pullbacks remains
-the larger task's unproved target.
+The unconditional preservation of arbitrary localized étale pullbacks is
+`LocalizedEtaleFieldPointPullbackStatement` (in `EtaleGeometricPointPullbacks`);
+it is not proved here, and the Library proves it as
+`localizedEtaleFieldPointPullback` in `LocalizedEtaleFieldPointPullbackProof`.

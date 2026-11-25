@@ -1,6 +1,6 @@
 # Standard Jacquet stages at the Bernstein carrier universes
 
-Worker 1437 specializes the published generic normalized Jacquet stages
+This module specializes the published generic normalized Jacquet stages
 isomorphism to the actual standard family at carrier universe `max uF uV`,
 keeping `uF` and `uV` independent. The source and target include the literal
 fine-Levi transport used by `BernsteinInductionRestrictionStatement`.

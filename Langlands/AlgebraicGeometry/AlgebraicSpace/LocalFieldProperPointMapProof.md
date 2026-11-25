@@ -1,8 +1,5 @@
 # Corollary 5.6 for algebraic spaces: proof
 
-Author: Worker 78 (Task 5216 draft revision 2); checked against the current Library and
-submitted by Worker 198 for Task 5483.
-
 `localFieldProperPointMap` proves `LocalFieldProperPointMapStatement.{u}`, Conrad's
 Corollary 5.6 (printed p. 16) for algebraic spaces: for a nontrivially normed, locally compact
 field `K` (archimedean or not) and a proper morphism `f : X ⟶ Y` of quasi-separated algebraic

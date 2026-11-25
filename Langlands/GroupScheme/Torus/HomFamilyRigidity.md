@@ -1,7 +1,5 @@
 # Rigidity of families of homomorphisms between split tori
 
-Author: Worker 1386.
-
 This module proves that a family of homomorphisms between split tori, parametrized by a
 connected scheme, does not depend on the parameter. All declarations are in the namespace
 `Langlands.GroupScheme.HomFamily`.
@@ -118,7 +116,7 @@ Differences from Milne's statement:
 - The proof goes through idempotent coefficients of natural endomorphism families instead of
   Milne's density argument.
 
-The proof adapts `Langlands.GroupScheme.Rational.TorusNormalizerRigidity` (Worker 1122),
+The proof adapts `Langlands.GroupScheme.Rational.TorusNormalizerRigidity`,
 which proves the same rigidity for conjugation families `T → T`, and reuses its chart
 infrastructure (`specUnits`, `chartPoint`, `chartMap`, `overHom`) and the coefficient theory
 of `Langlands.GroupScheme.Torus.UnitsNaturalEndomorphism`. The padding to `I ⊕ J`

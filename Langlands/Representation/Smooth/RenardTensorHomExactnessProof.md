@@ -1,6 +1,6 @@
 # Exactness and preservation properties of smooth tensor and Hom
 
-Author: Worker 139. The theorem `tensorHomExactness` proves the exact published
+The theorem `tensorHomExactness` proves the exact published
 `TensorHomExactnessStatement` in `Langlands.Renard.Smooth`, with independent
 group and carrier universes and no additional hypotheses.
 
@@ -19,8 +19,9 @@ to a compact Hausdorff totally disconnected group. Every coefficient has
 compact support on a compact domain. The proof introduces the Borel measurable
 structure and Haar measure internally, then uses Mathlib's correspondence
 between representation semisimplicity and semisimplicity of its actual
-group-algebra module. This uses neither the pending proof of the separate
-Renard IV.1.1 statement nor an extra premise on the ambient group.
+group-algebra module. This uses neither the separate proof of the Renard IV.1.1
+statement (`compactGroupSmoothRepresentation`) nor an extra premise on the
+ambient group.
 
 Mathlib's semisimple-module extension and lifting properties give a linear
 retraction of an injective intertwiner and a linear section of a surjective

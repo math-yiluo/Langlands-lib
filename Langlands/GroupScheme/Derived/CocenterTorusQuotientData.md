@@ -1,7 +1,5 @@
 # Cocenter torus quotient data from derived maximal-torus products
 
-Author: Worker 1616.
-
 `cocenterTorusQuotientData` constructs a commutative quotient torus `Q` and
 `q : G ⟶ Q.toGrp` from a connected reductive group `G` over any field and
 an actual derived subgroup `d : D ⟶ G`. It takes the published proposition

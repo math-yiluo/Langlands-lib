@@ -1,9 +1,5 @@
 # Commutation of two unlinked segment socles
 
-Author: Worker 219. The exact interface and independence requirements were
-supplied by task `426911b4-6620-413f-8065-04b25287f3bd`, published in
-coordination with Workers 491 and 494.
-
 `Langlands.Classification.TwoSegmentSocleCommutation.{uF,uV} F T` is a
 Prop-valued definition, not a proof. It asks for an actual categorical
 isomorphism between the normalized induced products of two supplied segment
@@ -107,15 +103,18 @@ expresses equivalence as an actual categorical isomorphism, and it retains
 the particular blocks supplied in `d`. Theorem 1.9 alone gives no product
 isomorphism; the irreducibility of both orders is essential.
 
-The pages listed above were read for this contribution. No source-specific
-`notes/errata/zelevinsky-1980-induced-ii.md` was present in the supplied
+The pages listed above were read. No source-specific
+`notes/errata/zelevinsky-1980-induced-ii.md` was present in the
 public notes. The published guidance distinguishing segment heads from
 segment socles was respected.
 
-## Intended independent proof route
+## Independent proof route
 
-A future proof must construct an actual isomorphism for the supplied blocks.
-It is intended to combine three independently proved inputs:
+A proof must construct an actual isomorphism for the supplied blocks. The
+proof `twoSegmentSocleCommutation` in `TwoSegmentSocleCommutationProof` imports
+`UnlinkedSegmentSocleProductIrreducibleProof` and
+`TwoFactorProductConstituentCommutativityProof`. The route combines three
+independently proved inputs:
 
 1. Irreducibility of both orders. The two-segment case of the sufficient
    direction of Theorem 4.2, applied to `d` and to `d.permute σ`. The latter
@@ -125,17 +124,15 @@ It is intended to combine three independently proved inputs:
    hypothesis on the two-element multisegment follows from the premise and
    the published `Segment.IsLinked.symm` and `Segment.not_isLinked_self`.
    That statement uses a rank of the form `m + 1`; here the rank is positive
-   because the two segment degrees are positive. The
-   intended owner is the proof successor of
-   `Langlands.Classification.UnlinkedSegmentSocleProductIrreducible`
-   (statement task `16045335-62c9-4da7-b38f-88579104274b`). The full
+   because the two segment degrees are positive. This input is
+   `Langlands.Classification.UnlinkedSegmentSocleProductIrreducible`, proved
+   in `UnlinkedSegmentSocleProductIrreducibleProof`. The full
    criterion `Langlands.Classification.SegmentSocleProductIrreducibility`
-   (proof task `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`) would also suffice
-   but is not needed.
+   would also suffice but is not needed.
 2. Composition-factor commutativity for two irreducible factors, the
-   irreducible case of Theorem 1.9. The intended owner is
-   `Langlands.Classification.TwoFactorProductConstituentCommutativity`
-   (task `1b2016bd-4fd3-4ec6-a1b4-ec0788046ed9`), used at shape `d.shape`,
+   irreducible case of Theorem 1.9. This input is
+   `Langlands.Classification.TwoFactorProductConstituentCommutativity`,
+   proved in `TwoFactorProductConstituentCommutativityProof`, used at shape `d.shape`,
    family `d.blocks` and carrier parameter `max uF uV`. Its swapped side is
    literally `(d.permute σ).induced`. Each block is irreducible because the
    socle witness includes irreducibility.
@@ -150,7 +147,7 @@ None of these inputs is supplied by this proposition definition or its
 citations. In this route, irreducibility and commutativity apply directly to
 the supplied blocks, so no transport between socle representatives is
 needed. A different route, for example a nonzero standard intertwining
-operator, is acceptable once its construction and invertibility under these
+operator, would also do once its construction and invertibility under these
 hypotheses are proved.
 
 ## Dependency boundary and independence
@@ -163,33 +160,25 @@ permutation and imports `Classification.LanglandsData` and
 `TwoSegmentHeadCommutation`, the special-head two-factor interface.
 
 This two-factor result is an input to the full-product lifting
-`AdjacentUnlinkedSegmentSocleSwap` (task
-`e3634665-571b-4852-9f4c-bab8a1053434`, proof successor
-`cded83f3-df9c-4018-bc61-dc54f5c1f9ab`). It must not be derived by
-specializing that proposition or any of its proof successors. The future
+`AdjacentUnlinkedSegmentSocleSwap` (proved in
+`AdjacentUnlinkedSegmentSocleSwapProof`). It must not be derived by
+specializing that proposition or any of its proofs. A
 proof must also be independent, directly and transitively, of:
 
-- `OrderedMultisegmentSocleExistence` and task
-  `23189526-80b0-4828-a6d4-7ebec2cbeef5`;
-- independent socle exhaustion, task
-  `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`;
-- segment analytic classification, task
-  `aca8805b-054f-4d56-8045-12db7f623404`;
-- special-head multisegment exhaustion, task
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-- ordered special-head existence, task
-  `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-- quotient coverage, task `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-- tempered block uniqueness, task `52e97845-36bb-457d-b76f-70753334b88c`;
-- `SquareIntegrableLanglandsClassification` and task
-  `1cb45da2-7007-4351-a694-594fb148b8d1`;
-- square-integrable exhaustion, task
-  `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-- regular exhaustion, task `bf433f0a-921a-428c-b0c0-6475438125ac`.
+- `OrderedMultisegmentSocleExistence`;
+- independent socle exhaustion;
+- segment analytic classification;
+- special-head multisegment exhaustion;
+- ordered special-head existence;
+- quotient coverage;
+- tempered block uniqueness;
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion;
+- regular exhaustion.
 
-These exclusions cover mathematical conclusions, proof successors and
+These exclusions cover mathematical conclusions, their proofs and
 transitive proof dependencies. Shared lower results may be used only after
 their proof dependencies are checked, and the proof Markdown must record that
-audit. The future final theorem must have precisely this proposition as its
-target, without extra theorem-valued assumptions. A proposition definition,
-citation, conditional assembly or pending task is not a proved input.
+audit. The final theorem `twoSegmentSocleCommutation` has precisely this
+proposition as its target, without extra theorem-valued assumptions. A
+proposition definition, citation or conditional assembly is not a proved input.

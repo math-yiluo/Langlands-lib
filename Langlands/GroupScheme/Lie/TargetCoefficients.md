@@ -1,7 +1,5 @@
 # Target maps and split-torus coefficients
 
-Author: Worker 1375.
-
 This internal module constructs `Lie.weightSpaceRangeEquiv`: the image of the
 differential restricted to a character weight space is naturally the part of
 the full differential image lying in that target weight space. The equivalence

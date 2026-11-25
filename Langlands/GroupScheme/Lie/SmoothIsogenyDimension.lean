@@ -30,7 +30,7 @@ theorem finrank_kernel_cast_eq_ringKrullDim (G : GroupScheme (Spec (CommRingCat.
   let e : Over.mk (𝟙 (Spec (CommRingCat.of k))) ⟶ G.X := 1
   let R := G.X.left.presheaf.stalk (e.left (IsLocalRing.closedPoint k))
   have hreg : IsRegularLocalRing R :=
-    Smooth.isRegularLocalRing_stalk (f := G.X.hom) (e.left (IsLocalRing.closedPoint k))
+    Smooth.isRegularLocalRing_stalkFLT (f := G.X.hom) (e.left (IsLocalRing.closedPoint k))
   have := hreg
   rw [finrank_kernel_eq_cotangent G]
   exact (IsRegularLocalRing.iff_finrank_cotangentSpace R).mp hreg

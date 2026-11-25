@@ -1,7 +1,5 @@
 # Original Harris CM geometric torsors from the dominant criterion
 
-Author: Worker 57.
-
 This internal adapter constructs the original residual action together with
 a proof of the existing `Coefficients.IsFiniteGeometricTorsor` predicate.
 It derives both etaleness of original forgetting and invertibility of its
@@ -93,10 +91,12 @@ this observation is limited to that list.
 The represented category remains
 `ComponentwiseAdmissibleCMBaseCategory` over the original `Spec F`.
 Applicable existence, the full source-moduli comparison, source rigidity,
-the generic criterion and canonical-model geometry remain obligations.
+the generic criterion and canonical-model geometry are not proved here;
+source rigidity is `CMSmallLevelRigidityStatement`, proved as
+`cmSmallLevelRigidity`.
 The output is the existing geometric-torsor input for coefficient descent;
 it supplies no sheaf, local-system comparison or descent theorem.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

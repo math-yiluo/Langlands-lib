@@ -1,7 +1,5 @@
 # Dominant Weyl displacements as sums of simple roots
 
-Author: Worker 2.
-
 This internal helper module supplies the Weyl-group combinatorics used in the
 proof of Springer's overlap estimate (Springer, *Reduction theory over global
 fields*, 1994, Proposition 2.6; see the public errata note

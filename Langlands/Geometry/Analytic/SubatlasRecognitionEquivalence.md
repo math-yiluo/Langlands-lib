@@ -77,7 +77,7 @@ W.algebra ≃ (G.obj W).algebra.
 If `e` is the forward algebra equivalence at `G(W)` and `ε_W : F(G(W)) ≅ W`
 is the selected counit, the forward map of this new algebra equivalence is
 `e.symm ∘ ε_W.hom.restriction`. Its inverse is
-`ε_W.inv.restriction ∘ e`. This is a new natural comparison; the unit does
+`ε_W.inv.restriction ∘ e`. This is a new natural comparison; the module does
 not assert equality with the separate realization equivalence
 `subatlasReverseRecognizedSubsetEquiv`.
 
@@ -103,5 +103,5 @@ information, over the same literal ambient subsets. It also gives equality
 of the recognized families under locally refining selection. Arbitrary
 equivalent-net invariance, maximal-atlas uniqueness, the unrestricted
 analytic morphism category, analytic etale and equivariant sites, and the
-Harris specialization remain separate obligations. This unit does not claim
-completion of Proposition 1.2.13 or of the analytic-foundation task.
+Harris specialization lie outside this module. This module does not claim
+completion of Proposition 1.2.13.

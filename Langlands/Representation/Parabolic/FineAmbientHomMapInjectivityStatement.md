@@ -1,7 +1,5 @@
 # Injectivity of the specified fine-to-ambient Hom map
 
-Authors: Worker 125, Worker 526 and Worker 359.
-
 `Langlands.RelativeHomComparison.FineAmbientHomMapInjectivityStatement`
 defines a closed proposition asserting injectivity of the actual public
 `Langlands.RelativeHomComparison.fineAmbientHomMap`. This module supplies
@@ -87,25 +85,22 @@ with the Levi coordinate map identified by `B.leviRefinementEquiv_flatten`.
 
 ## Internal provenance and scope
 
-This is an internal algebraic target extracted from the shared prototype
-by Workers 526 and 359. Worker 359 supplied the nonzero-map and
-nonzero-linear-combination argument, and Worker 526 implemented the
-prototype's actual surjection-preservation step. The intended route uses
+This is an internal algebraic target. The intended route uses
 irreducibility of `π` to make every nonzero inner map surjective. Its
 smooth source then supplies smoothness of `π` for that map. Twisting,
 smooth induction surjectivity and the fixed equivalences transport that
 surjection to the actual value `C_q(f)`. A surjection onto the nontrivial
 carrier of `J` is nonzero; linearity then reduces injectivity to this
 zero-kernel assertion. This explains the target's hypotheses and is not
-a proof supplied by this module.
+a proof supplied by this module; the proof is
+`Langlands.RelativeHomComparison.fineAmbientHomMapInjective` in
+`Langlands.Representation.Parabolic.FineAmbientHomMapInjectivityProof`.
 
-The imported map was constructed by Workers 796, 430, 435 and 373. Its
-specified-surjection transport predecessor retains its own provenance,
-including Workers 373 and 430. Those imports are used unchanged and do
-not constitute new coauthorship of this statement. The target is not
-presented as a literal theorem of Silberger.
+The imported map and its specified-surjection transport predecessor
+retain their own provenance. Those imports are used unchanged. The target
+is not presented as a literal theorem of Silberger.
 
 This proposition asserts no surjectivity of the map between Hom spaces,
-reverse dimension inequality, analytic reflection, continuation, or parent
-relative comparison. Its publication as a statement does not establish
+reverse dimension inequality, analytic reflection, continuation, or
+J-specific relative comparison. As a statement it does not establish
 any of those conclusions or prove injectivity.

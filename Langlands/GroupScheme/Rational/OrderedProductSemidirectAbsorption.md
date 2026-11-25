@@ -53,4 +53,4 @@ premises. The provenance is internal: this is an assembly from the actual
 semidirect map, finite-product coordinates and the previously constructed
 semidirect insertion morphism. No semigroup realization, solvable decomposition,
 scalar descent or proof of `SemigroupOrderedProductStatement` is supplied by
-this unit.
+this module.

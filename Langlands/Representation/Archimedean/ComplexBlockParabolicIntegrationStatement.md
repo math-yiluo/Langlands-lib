@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockParabolicIntegrationStatement`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It states one proposition and proves nothing (two
 determinant lemmas used to build the matrices are proved). The proposition is the integration
 formula needed for the Langlands lemma along the maximal parabolic subgroup `P_{a,k}` (upper block
@@ -60,7 +60,7 @@ matrices, generalizing `ComplexLastRowIntegral`); (iv) in the chart `G = B [X, 1
 
 ## Use
 
-In Task 7063 the formula is applied to `F(y) = u(y a_t) h(y)` with `a_t = diag(1_a, t·1_k)` central
+In the proof of `ComplexStandardLanglandsQuotientStatement` the formula is applied to `F(y) = u(y a_t) h(y)` with `a_t = diag(1_a, t·1_k)` central
 in the Levi factor, `u` in a principal series and `h` in its dual, to compute the leading term of the
 `U(a+k)`-pairing along `a_t` (Langlands lemma along `P_{a,k}`). Since `a_t` commutes with
 `diag(κ₁, κ₂)` and `n̄(X) a_t = a_t n̄(t⁻¹X)`, the limit `t → ∞` gives the pairing of `u` restricted

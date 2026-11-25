@@ -1,6 +1,6 @@
 # Values on the unitary characters of rational functions regular there
 
-Worker 5. Module `Langlands.Representation.Plancherel.RationalUnitaryRegularValue`,
+Module `Langlands.Representation.Plancherel.RationalUnitaryRegularValue`,
 namespace `Langlands.Plancherel`.
 
 Waldspurger's density `μ` is a rational function on the unramified characters
@@ -190,10 +190,11 @@ Let `hreg : RationalFunctionUnitaryRegular (parameterScheme χ) … j_P⁻¹`.
 
 - `hreg`, the regularity of `j_P⁻¹` at every unitary character. In
   Waldspurger it follows from IV.3 (5) and (6). For the Library's `j_P` it is
-  part of the conclusion of the open target
+  part of the conclusion of the target
   `ConditionalDynamicOppositeUnitaryScalarStatement` (module
   `DynamicOppositeUnitaryScalarStatement`, `A` square-integrable modulo a
-  central subgroup), since a
+  central subgroup; proved as `conditionalDynamicOppositeUnitaryScalar` in
+  `DynamicOppositeUnitaryScalarProof`), since a
   nonnegative real value includes regularity.
 - Nonnegativity of `j_P⁻¹` at every unitary point, and so of the weight at
   every point.

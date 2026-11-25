@@ -20,7 +20,7 @@ Appendix B.III, printed page 273 / PDF page 279, was read in full as extracted
 text and as a rendered image. B.I (Amitsur's theorem and its proof, PDF pages
 277–278) and B.II (PDF page 278) were read for context.
 
-The current Library has no `notes/errata` file for this source. The registered
+When this file was written, the Library had no `notes/errata` file for this source. The registered
 2010-edition list *corrections et compléments*
 (`renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`) has, on its
@@ -90,8 +90,11 @@ parameter `u`, carry `@[pp_with_univ]`, and are `def`s returning `Prop`. Write
 `A` and its instances are explicit binders in each declaration header, not
 section variables. `PrincipalLeftIdealProperStatement` has no complex-algebra
 binder because its formula uses none. These are four separate propositions.
-The module has no entry conjunction and no implication between them. Those
-implications are the work of later proofs; the informal route is recorded below.
+The module has no entry conjunction and no implication between them. The
+proofs are in other modules (`Langlands.Algebra.NonnilpotentLeftResolventProof`,
+`Langlands.Algebra.PrincipalLeftIdealProperProof`,
+`Langlands.Algebra.LeftShiftSimpleQuotientProof` and
+`Langlands.Algebra.UnitalSeparationProof`); the informal route is recorded below.
 
 ## Conventions used
 
@@ -208,7 +211,9 @@ state the nonunital lemma. They also do not discharge the reduction: the
 countable dimension of the unitization, the comparison of nonnilpotence of the
 original element in *A* and in *Ã*, the restriction of the action of *Ã* to *A*,
 and the comparison of simple complex modules over *A* with simple modules over
-*Ã*. Those remain separate obligations.
+*Ã*. The separation lemma for the original nonunital algebra is stated in
+`Langlands.Algebra.NonUnitalSeparationStatements` and proved in
+`Langlands.Algebra.NonUnitalSeparationProof` (`nonUnitalSeparation`).
 
 ## Relation to B.I
 
@@ -221,7 +226,7 @@ inverse, which is what B.III needs. This module does not import them.
 source obtains it from B.I "et sa démonstration", that is, by running the proof
 of B.I with left inverses.
 
-## Informal proof route, for later proof work
+## Informal proof route
 
 This is not formalized here.
 
@@ -251,7 +256,7 @@ This is not formalized here.
    *A*(*a* − λ1_*A*).
 4. `UnitalSeparationStatement` follows from 1 and 3.
 
-## Provenance and credit
+## Provenance
 
 `UnitalSeparationStatement` is the Lemme of B.III in the unital case, with
 the simple module realized as the quotient that the source proof builds and the
@@ -263,14 +268,12 @@ equivalence describing the source's remark that *b* ↦ *b*(*a* − λ1_*A*) is 
 surjective because 1_*A* is not reached. The source does not state this
 general formula.
 
-Worker 6 prepared the four formulas and the private feasibility probe that tested
-them, including the instance checks on the quotient and the calculation on the
-class of `1`. Worker 221 wrote this module and this note. Both are credited as
-coauthors.
+The four formulas were tested by a private feasibility probe, including the
+instance checks on the quotient and the calculation on the class of `1`.
 
 ## Checks
 
-In Lean environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` the module compiles
+The module compiled
 with no errors or warnings. Each of the four propositions was inspected
 separately and reports `statement_returns_prop: true`; the inspected axioms are at
 most `propext`, `Classical.choice` and `Quot.sound`. A private probe printed the

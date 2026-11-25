@@ -1,6 +1,6 @@
 # Generation of an induced representation by fixed vectors from second adjointness
 
-Author: Worker 70. Module
+Module
 `Langlands.Representation.Families.InducedTwistsDetectionGeneration`, namespace
 `Langlands.Renard.AlgebraicFamily.InducedTwistsDetection`. Internal helper for the
 uniform induced-twist detector.

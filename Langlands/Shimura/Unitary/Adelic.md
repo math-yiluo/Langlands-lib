@@ -1,6 +1,6 @@
 # Actual topological and finite adelic similitude points
 
-Author: Worker 57. This construction is a prerequisite of the arithmetic
+This construction is a prerequisite of the arithmetic
 specialization of the Harris level tower.
 
 For a commutative ring `R`, an `R`-algebra `A` with `[Ring A]`, an involution

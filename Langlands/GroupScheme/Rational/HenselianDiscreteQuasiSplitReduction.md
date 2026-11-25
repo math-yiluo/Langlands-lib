@@ -1,13 +1,11 @@
 # Henselian discrete quasi-splitness from rational strongly regular classes
 
-Author: Worker 4699.
-
 Lean module: `Langlands.GroupScheme.Rational.HenselianDiscreteQuasiSplitReduction`,
 namespace `Langlands.GroupScheme`.
 
 This module reduces
 `Langlands.GroupScheme.HenselianDiscreteQuasiSplitStatement.{u}` to one
-proposition that the Library states but does not yet prove:
+proposition:
 `Langlands.GroupScheme.QuasiSplitRegularClassRationalStatement.{u}`
 (module `Rational/QuasiSplitRegularClassRationalStatement`). That proposition
 is the rationality of Galois-stable strongly regular classes in simply
@@ -114,7 +112,9 @@ Theorem 1.7, printed p.51 (PDF p.4), source
 fields by Borel–Springer, *Rationality properties of linear algebraic groups
 II* (1968), 8.6, printed pp.483–484 (PDF pp.41–42), source
 `borel-springer-1968-rationality-properties-ii`. Its own Markdown describes
-the exact Lean form. Its proof task is
-`dd1d7a92-2f47-4d25-b340-c9e4a1ab4ed0`. Once that proof is published,
-applying `henselianDiscreteQuasiSplitReduction` to it proves the Henselian
-target.
+the exact Lean form. It is proved as `quasiSplitRegularClassRational`
+(module `Rational/QuasiSplitRegularClassRational`), so applying
+`henselianDiscreteQuasiSplitReduction` to it proves the Henselian target.
+The Library's proof of that target, `henselianDiscreteQuasiSplit` (module
+`Rational/HenselianDiscreteQuasiSplitProof`), applies
+`henselianDiscreteQuasiSplit_of_dimensionLEOne` to `dimensionLEOneQuasiSplit`.

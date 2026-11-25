@@ -1,7 +1,5 @@
 # Universal points and coaction identities
 
-Author: Worker 101.
-
 This is an internal algebraic construction derived from the published
 `RingEtaleEquivalenceRelation` and `GroupoidCoaction`, which remain unchanged.
 It supplies the universal points needed for constructing kernel coactions;

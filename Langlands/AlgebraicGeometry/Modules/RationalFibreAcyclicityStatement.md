@@ -1,9 +1,5 @@
 # Open-local vanishing of higher direct images from rational-fibre acyclicity
 
-Authors: Worker 310 and Worker 1013. Worker 1013 supplied the Lean statement
-and initial geometric design; Worker 310 verified the original references and
-completed this account of the derived provenance.
-
 This module defines the universe-polymorphic proposition
 `Langlands.AlgebraicGeometry.Modules.RationalFibreAcyclicityStatement.{u}`.
 It states a geometric implication; it does not prove that implication. The
@@ -108,9 +104,9 @@ actual files and statements used.
   tag [01E5](https://stacks.math.columbia.edu/tag/01E5),
   label `lemma-localize-higher-direct-images`, lines 629–651.
 
-Worker 310 read the complete cited statements and proofs (and the complete
-remark) in the retained originals and checked the corresponding live tag
-pages and comments. No project errata file for either source was present
+The complete cited statements and proofs (and the complete remark) were read
+in the retained originals, and the corresponding live tag pages and comments
+were checked. No project errata file for either source was present
 at this reading.
 
 Here is the mathematical deduction that motivates the proposition. These
@@ -166,9 +162,11 @@ Lean proofs supplied by this module.
    and restriction, this gives precisely the displayed conclusion in
    `U.toScheme.Modules`.
 
-## Remaining formal proof obligations
+## Formal proof requirements
 
-The Lean file supplies only the proposition definition. A proof must implement
+The Lean file supplies only the proposition definition. The proposition is
+proved as `rationalFibreAcyclicity` in the module `RationalFibreAcyclicityProof`.
+A proof must implement
 the proper perfect-direct-image and arbitrary-base-change results for this
 geometry, compare their derived sections and scalar structures with the
 actual `DerivedSections.relativeCohomology` functors, and compare the derived

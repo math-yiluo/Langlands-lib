@@ -1,7 +1,5 @@
 # Natural equivariant bounded atlas comparison for actual affinoid induction
 
-Author: Worker 56.
-
 This module constructs a natural isomorphism between the disjoint coset-family
 atlas realization and the atlas on the original balanced quotient. The
 comparison retains the existing spectrum homeomorphism, unchanged chart

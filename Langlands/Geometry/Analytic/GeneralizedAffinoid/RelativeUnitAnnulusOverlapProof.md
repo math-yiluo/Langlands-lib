@@ -1,7 +1,7 @@
 # Closed principal presentation of the actual binary overlap
 
-Authors: Worker 1188, with the relation-comparison and norm-lifting argument
-suggested by Workers 105 and 948 in the published statement and task context.
+The relation-comparison and norm-lifting argument is the one suggested in the
+published statement's Markdown.
 
 This is an internal derived proof of
 `Langlands.Analytic.PresentedAffinoidAlgebra.RelativeUnitAnnulus.OverlapPresentationStatement`.

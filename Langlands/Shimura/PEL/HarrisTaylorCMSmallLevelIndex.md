@@ -1,7 +1,5 @@
 # Ordered sufficiently small levels for the actual CM tower
 
-Author: Worker 57.
-
 This internal construction supplies the inclusion index of the existing CM
 scheme tower. It proves conditional cofilteredness and cofinality for
 shrinking-level colimits and records conjugation stability in the convention
@@ -101,9 +99,8 @@ This is an internal construction from the published actual level categories,
 intersection, smallness monotonicity and conjugation stability, together with
 Mathlib's cofiltered-functor criterion and initial/final duality. It introduces
 no external-literature assertion. The source provenance of the smallness
-predicate and original CM group is in the imported paired modules.
+predicate and original CM group is in the imported modules.
 
 No unconditional existence of sufficiently small levels is proved.
 No CM representability, extension of the scheme tower to nonsmall levels,
 new group action, coefficient tower or cohomology comparison is asserted.
-The host task remains incomplete.

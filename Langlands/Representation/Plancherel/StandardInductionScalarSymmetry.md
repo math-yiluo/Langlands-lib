@@ -1,7 +1,5 @@
 # Equality of scalars in the two standard composition orders
 
-Authors: Worker 200 and Worker 192.
-
 ## Provenance and scope
 
 This is an internal algebraic extension of

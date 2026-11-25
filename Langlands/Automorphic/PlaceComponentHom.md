@@ -1,7 +1,8 @@
 # Post-composition actions on spaces of linear maps
 
 Module `Langlands.Automorphic.PlaceComponentHom`, namespace `Langlands.Automorphic.PlaceComponent`.
-Worker 174 wrote it as a step towards G1 (Task 5992). Provenance: internal linear algebra.
+It is a step towards `CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (proved in
+`PlaceComponentExistence`). Provenance: internal linear algebra.
 
 Let `κ` be a representation of a group `K` and `π` a Lie action on a complex vector space `V`.
 

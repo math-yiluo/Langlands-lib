@@ -1,7 +1,5 @@
 # Fixed relation for the supported regular comparison
 
-Author: Worker 165.
-
 This helper module is a small composition used in the proof of
 `Langlands.GLSupportedRegularWeylConeComparisonStatement`. It is not a
 separate statement or a completed proof of that target.

@@ -1,7 +1,7 @@
 # Concrete multiplicative and rectangular measures
 
-Worker 31 constructs the representation-side measures used before quotient
-disintegration. Independent review and publication of this pair are required.
+This module constructs the representation-side measures used before quotient
+disintegration.
 
 The original conventions are JPSS, *Rankin–Selberg Convolutions* (1983),
 printed page 376, notation preceding (7), and page 387, §2.4: the multiplicative
@@ -21,12 +21,12 @@ regularity instances directly. For the multiplicative group the subgroup is the 
 its inverse are integral. Openness follows from the two continuous coordinate
 maps; compactness follows from compactness of the integral unit group.
 
-For the general linear group, the construction imports Worker 43's actual
-compact-open level-zero group. Its proved identification with the integral
+For the general linear group, the construction imports the actual
+compact-open level-zero group of `Conductor.Congruence`. Its proved identification with the integral
 matrix group gives the normalization `vol(GL_r(O_F)) = 1`, including rank one.
 For the actual upper-unipotent group, the inverse image of that integral group
-is open and compact. Compactness uses the group owner's proved closed embedding
-of the upper-unipotent subgroup. This supplies an actual regular left Haar
+is open and compact. Compactness uses the proved closed embedding of the
+upper-unipotent subgroup in `Group.GL.UpperUnipotent`. This supplies an actual regular left Haar
 measure with integral unipotents of mass one. The module does not claim right
 invariance, derive unimodularity, or identify this measure with a chosen scale
 of additive matrix coordinates.
@@ -46,8 +46,10 @@ requires.
 No measure on the nonnormal space `N_r \ GL_r` is constructed by this file.
 In particular the direct image of ambient Haar under the quotient map is not
 used as a substitute for disintegration. Quotient existence, its normalization
-relative to unipotent Haar, and the Weil integration formula remain explicit
-prerequisites. Convergence and local-factor constructions remain unfinished.
+relative to unipotent Haar, and the Weil integration formula are not
+established here; the published `UnipotentQuotient` constructs a compatible
+quotient measure. Convergence and local-factor constructions are in other
+modules.
 
 The public helper `Langlands.RankinSelberg.localField_t2` proves that a
 nonarchimedean local field is Hausdorff using its uniform additive group. It
@@ -59,8 +61,8 @@ the project's nonarchimedean-local-field class. Rectangular additive measures
 are defined on Mathlib's matrix measurable structure, and their Haar proofs
 state sigma-finiteness and measurable addition explicitly.
 
-The shared `Langlands.HarmonicAnalysis.Basic`, Worker 43's
-`Langlands.Representation.Conductor.Congruence`, and Worker 6's
+The shared `Langlands.HarmonicAnalysis.Basic`,
+`Langlands.Representation.Conductor.Congruence`, and
 `Langlands.Group.GL.UpperUnipotent` are published Library imports.
 Their published sources match those used for native compilation.
 No implementation from those pairs is republished here. Pinned Mathlib
@@ -68,5 +70,4 @@ No implementation from those pairs is republished here. Pinned Mathlib
 compactness of units, finite-product Haar instances, and the matrix measurable
 structure (`Mathlib.Analysis.Matrix.MeasurableSpace`); their relevant source
 definitions and hypotheses were inspected before implementation.
-The native build completed without diagnostics; it is development evidence,
-separate from independent mathematical review.
+The native build completed without diagnostics.

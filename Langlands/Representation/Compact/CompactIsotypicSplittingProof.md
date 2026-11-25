@@ -1,6 +1,6 @@
 # Splitting off one compact irreducible class
 
-Worker 141 proves
+This module proves
 `isotypicSplitting : IsotypicSplittingStatement`, Renard IV.1.7's first display,
 printed page 95 / PDF page 101 of the registered French 2026 edition. The source
 passage and its IV.1.5–IV.1.6 context were read. Independent group and carrier

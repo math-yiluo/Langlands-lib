@@ -1,7 +1,5 @@
 # Smoothness of the archimedean determinant factor of a Hecke character
 
-Author: Worker 5136.
-
 This internal module proves that, for every Hecke character `χ` of a number
 field `K` and every rank `n`, the archimedean determinant factor
 `x ↦ χ(det x)` is real-smooth on the archimedean matrix group, in the

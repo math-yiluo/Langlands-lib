@@ -1,7 +1,5 @@
 # Rational maximal-torus conjugacy from quotient existence alone
 
-Worker 1333.
-
 This internal companion to `SolvableMaximalTorusStructuralAssembly` supplies
 the published theorem `unipotentSplitTorusDomination.{u}` to the existing
 retained-quotient and conjugacy constructions. The stable-vector and
@@ -61,6 +59,6 @@ an isomorphism of the source tori. Neither maximal-split-torus conjugacy
 family is used.
 
 The quotient-existence inputs remain hypotheses. This module does not
-prove either quotient statement or the unconditional host target. Its
+prove either quotient statement or the unconditional target. Its
 provenance is the explicit composition of the named published
 constructions and theorems; it asserts no additional external result.

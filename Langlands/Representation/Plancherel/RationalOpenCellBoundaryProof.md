@@ -1,7 +1,5 @@
 # The algebraic boundary of the actual rational dynamic open cell
 
-Author: Worker 135.
-
 The theorem `Langlands.Plancherel.rationalDynamicOpenCellBoundary` proves
 `RationalDynamicOpenCellBoundaryStatement.{u}` over every field in an
 arbitrary universe. It uses the actual smooth affine group scheme, dynamic
@@ -43,5 +41,6 @@ because the identity rational point is the cell value at `(1,1)`.
 Preimages commute with complements, giving exactly the target equality.
 
 This geometric result supplies no Haar nullness or conullness conclusion.
-The actual local-density, equivariance and measure arguments are separate
-obligations of the parent task.
+The actual local-density, equivariance and measure arguments are separate:
+`rationalDynamicOpenCellConull` in `RationalOpenCellConullProof` combines them
+with this boundary to prove `RationalDynamicOpenCellConullStatement`.

@@ -96,7 +96,7 @@ Haar measure because its modular character is trivial. Thus this
 reformulation needs no global unimodularity. Its multiplication is exactly
 the already published convolution; normalization cancels in the averaging
 identities. Proving those intrinsic algebra identities belongs to the separate corner
-construction task; they are not assumed as theorem fields here.
+construction; they are not assumed as theorem fields here.
 
 The same finite exceptional set can be chosen for fixed-space dimension and
 reference vectors by enlarging the finite set in the source. Same-universe
@@ -123,8 +123,7 @@ path relative to `Langlands/`, followed by its Lean and Markdown SHA256.
 | `Representation/RestrictedTensor/Smooth` | `6238ba286f6ab1512dcdacaf9d160632add27629b83690dacf5858f2374951c0` | `ca2ad7227b5c12dad39dece9f7f3fa87c65e76d85eeeadd436a96611d2d042c1` |
 | `Representation/Smooth/Definitions` | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` | `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569` |
 
-Compilation and declaration inspection use environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0 and Mathlib
+Compilation and declaration inspection use Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. The complete proposition compiles
 without diagnostics and returns `Prop`, with exactly the independent universe
 parameters `uI`, `uG`, `uV`. Its dependency assumptions are the standard
@@ -135,9 +134,11 @@ These are development checks, not a proof of the proposition.
 The source's uniqueness assertion is already the separate published
 `Langlands.RestrictedTensorFactorUniquenessStatement`, in
 `Representation/Smooth/Factorization/RestrictedTensorStatement`. Together
-with the current existence target it gives the full conclusion of Theorem 2.
+with this existence target it gives the full conclusion of Theorem 2.
 The present pair imports no theorem-statement group and assumes no theorem
-truth. Mathematical proofs of factorization and uniqueness remain separate.
+truth. The mathematical proofs of factorization and uniqueness are separate:
+`flathRestrictedProductExistence` in `RestrictedProductExistenceProof` and
+`restrictedTensorFactorUniqueness` in `RestrictedTensorUniquenessProof`.
 The archimedean `(g,K)` category of Theorem 3 and the Hilbert completion of
 Theorem 4 are distinct targets. In particular this statement does not supply
 archimedean automorphic local components, Satake data, or weak association.

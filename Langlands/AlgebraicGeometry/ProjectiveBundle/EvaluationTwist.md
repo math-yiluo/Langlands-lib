@@ -78,9 +78,10 @@ supply its premise. Consequently the local comparisons satisfy the full
 square equation, including frame change and both canonical pullback
 comparisons; their compatibility is proved from evaluation.
 
-This unit proves local comparisons and their transition compatibility.
+This module proves local comparisons and their transition compatibility.
 Generation remains an explicit hypothesis. It does not yet glue a global
 isomorphism for the pullback of `FrameBundle.twistOne`, prove frame-choice or
-tensor-line independence, establish a cubic embedding, or prove the host
-large-level representability statement. No affine, noetherian, abelian-scheme,
-universal-family or representability premise occurs in this construction.
+tensor-line independence, establish a cubic embedding, or prove the
+large-level representability statement `LargeLevelRepresentabilityStatement`.
+No affine, noetherian, abelian-scheme, universal-family or representability
+premise occurs in this construction.

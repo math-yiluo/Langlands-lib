@@ -1,7 +1,5 @@
 # Étale forms of split tori over an arbitrary base
 
-Author: Worker 1656.
-
 `Langlands.GroupScheme.RelativeTorus.IsTorus G` is an internal predicate
 on an actual group scheme over an arbitrary scheme `S` in universe `u`.
 It asks for a jointly surjective étale cover of `S`, indexed in universe

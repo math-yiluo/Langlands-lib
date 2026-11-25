@@ -1,6 +1,6 @@
 # Renard A.V: proof of the comparison of the two definitions of adjunction
 
-Worker 1172 proves the published closed proposition
+This module proves the published closed proposition
 `Langlands.Renard.HomAdjunctionComparison.HomAdjunctionComparisonStatements.{vA,uA,vB,uB}`,
 imported from `Langlands.CategoryTheory.Renard.HomAdjunctionComparisonStatements`.
 The final theorem is

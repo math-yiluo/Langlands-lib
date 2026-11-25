@@ -86,7 +86,7 @@ theorem normalizingAut_fixes_cocharacter
     ν ≫ (normalizingAut (T := commGroupScheme (Spec (CommRingCat.of k)) I) j (D.representative a)).hom = ν := by
   have hzero : ν ≫ a.val = 0 := by
     apply (gmEndEquiv k).injective
-    rw [map_zero]
+    rw [AddEquiv.map_zero]
     exact hν
   have hinv : ν ≫ (normalizingAut (T := commGroupScheme (Spec (CommRingCat.of k)) I) j (D.representative a)).inv = ν := by
     apply hom_ext_projections _ I

@@ -1,7 +1,5 @@
 # Open immersions onto the unit locus of a global function
 
-Author: Worker 919.
-
 Module `Langlands.GroupScheme.UnitLocusOpenImmersion`. This is an internal supporting
 unit with one theorem. It was written for the open cell of `SL₂ × C` in
 `Langlands.GroupScheme.Reductive.SpecialLinearTensorCell`. It is a standard fact of scheme

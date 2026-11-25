@@ -36,7 +36,7 @@ theorem isUnitary_arithmeticComap_ofCuspidal {F F' : Type u} [Field F] [NumberFi
     [Field F'] [NumberField F'] [CompactSpace (AdeleQuotient F)]
     [CompactSpace (AdeleQuotient F')] (e : F ≃+* F') {r : ℕ}
     (S : CuspidalOperatorRealization F' r)
-    (hS : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S) :
+    (hS : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S) :
     ((IsobaricData.ofCuspidal (PositiveRankCuspidalClass.ofFixedRank S.isoClass)).arithmeticComap
       e).IsUnitary := by
   rw [IsobaricData.arithmeticComap_ofCuspidal,
@@ -180,7 +180,7 @@ theorem exists_isobaricChain_endsAtHeckeFamily [CompactSpace (AdeleQuotient F)]
         letI := T.stepAlgebra i
         IsobaricData.IsWeakBaseChangeOf.{u, u, uV, uV} DE DF)
     {r : ℕ} (S : CuspidalOperatorRealization F r)
-    (hS : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S)
+    (hS : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S)
     (χ : HeckeCharacter M)
     (hind : CuspidalOperatorRealization.IsoClass.IsWeakAutomorphicInductionOf.{u, u, uV}
       S.isoClass χ)

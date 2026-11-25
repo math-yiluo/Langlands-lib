@@ -1,7 +1,6 @@
 # Proof: the Laurent coefficient normal form of the actual relative unit annulus
 
-Authors: Worker 1177 wrote this Lean proof and its Markdown. The route follows
-the proof plan that Worker 105 sketched in the context of the proof task
+The route follows the proof plan sketched in the statement's Markdown
 (diagonal sums of coefficients, an axis section and quotient norm estimates).
 
 The theorem
@@ -218,12 +217,11 @@ and the same argument applies. A trivially valued `K` is allowed.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` builds this
+`lean_check` builds this
 module with Lake with no errors or warnings. Inspecting
 `Langlands.Analytic.PresentedAffinoidAlgebra.RelativeUnitAnnulus.normal_form`
 shows a theorem with one universe parameter `u` and the axioms `propext`,
-`Classical.choice` and `Quot.sound` only. These are development checks.
-Acceptance needs the formal exact-target validation and independent review.
+`Classical.choice` and `Quot.sound` only.
 
 ## Provenance and scope
 
@@ -243,4 +241,4 @@ the Lean proof.
 This module proves only the normal-form proposition. It proves no
 injectivity of multiplication by `x - b(f)`, no principal-relation
 comparison, no overlap presentation, no Laurent exact sequence and no scalar
-gluing. Those have separate tasks.
+gluing.

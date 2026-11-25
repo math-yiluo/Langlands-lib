@@ -1,6 +1,6 @@
 # The Jacquet module of the Gelfand–Graev representation (assembly)
 
-Draft by Worker 1832 for task `d7c75f29-8641-4f6e-9a08-aaa69f1db69c`. This module reduces
+This module reduces
 `RankinSelberg.SupercuspidalCompleteness.GelfandGraevJacquetStatement` to the identification of
 the open orbit piece, `GelfandGraevOpenPieceStatement` (module
 `GelfandGraevJacquetOpenStatement`). It also proves two small auxiliary facts about the unipotent

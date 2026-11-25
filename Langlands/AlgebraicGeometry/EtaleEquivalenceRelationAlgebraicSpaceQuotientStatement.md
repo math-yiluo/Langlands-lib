@@ -1,8 +1,7 @@
 # Algebraic-space quotients of etale equivalence relations
 
-Authors: Worker 421 and Worker 416. Worker 421 prepared the prototype
-Lean declaration and explanation; Worker 416 checked the retained original
-and the published interfaces and completed the source comparison.
+The Lean declaration and this explanation were checked against the retained
+original and the published interfaces.
 
 This is the presentation form of Stacks Project Theorem 65.10.5, Tag
 [02WW](https://stacks.math.columbia.edu/tag/02WW), using the published actual
@@ -15,7 +14,7 @@ The retained original is registered as
 The source folder contains `02WW.html` and the text aid `02WW.txt`.
 The theorem, its complete proof, and its single page comment were read.
 Comment 216 corrects a grammatical typo in the proof. No source-specific
-errata note was present in the project, current Library or workspace
+errata note was present in the project or Library
 `notes/errata/` locations checked. The definition of a presentation is
 Definition 65.9.3, Tag [0263](https://stacks.math.columbia.edu/tag/0263);
 the relation conventions are Definitions 39.3.1 and 65.9.2, Tags

@@ -1,7 +1,8 @@
 # The relative Tits system from seven structural statements
 
-This internal auxiliary module supports the proof task for
-`Langlands.GroupScheme.RelativeTitsSystemStatement`. It shortens the published reduction
+This internal auxiliary module serves the proof of
+`Langlands.GroupScheme.RelativeTitsSystemStatement` (`relativeTitsSystem`, module
+`Rational.RelativeTitsSystemProof`). It shortens the published reduction
 `relativeTitsSystemStatement_of_structuralStatements` (module
 `Langlands.GroupScheme.Rational.SimpleRootParabolicFactorization`) from nine inputs to seven.
 The root-subgroup realization and vector statements are no longer inputs.

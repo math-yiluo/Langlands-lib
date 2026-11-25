@@ -1,7 +1,5 @@
 # Exactness of the sheafified Čech complex
 
-Author: Worker 958.
-
 Module `Langlands.AlgebraicGeometry.Modules.CechResolution.Exact`, namespace
 `Langlands.AlgebraicGeometry.Modules.CechResolution`. It proves that for every ordered affine
 cover `𝒰 : X.OrderedAffineCover` of a scheme `X : Scheme.{u}` and every `𝒪_X`-module `M`

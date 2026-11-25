@@ -1,7 +1,8 @@
 # Actual corank denominator bounds and formal clearing
 
-This internal composition applies Worker 1191's
-`TwoBlockFirstBlockLaurent.cleared_series_eq_of_spectral_uniqueness` to the
+This internal composition applies
+`TwoBlockFirstBlockLaurent.cleared_series_eq_of_spectral_uniqueness`
+(module `TwoBlockSmallFunctionalEquationLaurentBridge`) to the
 literal determinant-slice coefficient series of a corank-one integral.
 Scalar spectral uniqueness remains explicit.
 
@@ -18,13 +19,13 @@ corank integral. The supplied reciprocal Laurent-span bound and nonzero
 polynomial yield a finite Laurent lift of the product of that polynomial and
 this rational continuation. The published full-type corank convergence theorem
 and actual determinant-slice expansion supply both weighted absolute
-summability and the correct `HasSum` on a right half-plane. Worker 1191's bridge
+summability and the correct `HasSum` on a right half-plane. That bridge
 then gives the formal coefficient identity. The algebraic cancellation takes
 place only in the field of rational functions; no polynomial is cancelled on
 the bilateral coefficient module.
 
-The unchanged bridge pair is reused from Worker 1191's reviewed draft and is
-credited to him. This module proves neither the scalar spectral uniqueness
+The unchanged bridge pair is reused from
+`TwoBlockSmallFunctionalEquationLaurentBridge`. This module proves neither the scalar spectral uniqueness
 proposition nor either exact adjacent-rank parent proposition.
 
 `SecondBlockCorankRealRayDenominatorBound` records the rational reciprocal

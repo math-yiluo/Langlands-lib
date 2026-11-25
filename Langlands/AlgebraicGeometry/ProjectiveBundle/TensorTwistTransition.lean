@@ -42,12 +42,12 @@ lemma pullback_comparison_scaled {X Y : Scheme.{u}} {L : Y.Modules}
     (β : (Scheme.Modules.pullback g).obj L ≅ N)
     (h : ∀ i, α.hom.app ⊤ (pullbackSection f L (s i)) =
       (c : Γ(X, ⊤)) • β.hom.app ⊤ (pullbackSection g L (s i))) :
-    α = (Scheme.Modules.pullbackCongr w).app L ≪≫ β ≪≫ Scheme.Modules.unitAut N c := by
+    α = (Scheme.Modules.pullbackCongr w).app L ≪≫ β ≪≫ (Scheme.Modules.unitAut N c).asIso := by
   apply Iso.ext
   apply hom_ext_of_generating_sections _ (frameCover_pullback hL s hs f)
   intro i
   change α.hom.app ⊤ (pullbackSection f L (s i)) =
-    (Scheme.Modules.unitAut N c).hom.app ⊤
+    (Scheme.Modules.unitAut N c).asIso.hom.app ⊤
       (β.hom.app ⊤ (((Scheme.Modules.pullbackCongr w).hom.app L).app ⊤
         (pullbackSection f L (s i))))
   rw [pullbackCongr_coordinate, unitAut_hom_app_top]
@@ -119,9 +119,9 @@ lemma chartTwist_scaled_criterion (d e : CoordinateCocycle n 𝒰)
         changedRelativeProjectiveCoordinates (𝒰.X U).toSpecΓ (e.transition h) i) :
     α = (Scheme.Modules.pullbackCongr w).app
           (RelativeProjectiveSpace.twistOne (𝒰.X V) n).obj ≪≫
-        β ≪≫ Scheme.Modules.unitAut (RelativeProjectiveSpace.twistOne (𝒰.X U) n).obj
+        β ≪≫ (Scheme.Modules.unitAut (RelativeProjectiveSpace.twistOne (𝒰.X U) n).obj
           (Units.map (Scheme.Modules.scalarsFromBase
-            (RelativeProjectiveSpace.toBase (𝒰.X U) n ≫ (𝒰.X U).toSpecΓ)).toMonoidHom c) := by
+            (RelativeProjectiveSpace.toBase (𝒰.X U) n ≫ (𝒰.X U).toSpecΓ)).toMonoidHom c)).asIso := by
   apply pullback_comparison_scaled
     (X := d.chartFunctor.obj U) (Y := d.chartFunctor.obj V)
     (L := (RelativeProjectiveSpace.twistOne (𝒰.X V) n).obj)
@@ -146,9 +146,9 @@ lemma chartTwistIso_scaled (d e : CoordinateCocycle n 𝒰)
       (Scheme.Modules.pullbackCongr w).app
           (RelativeProjectiveSpace.twistOne (𝒰.X V) n).obj ≪≫
         e.chartTwistIso h ≪≫
-        Scheme.Modules.unitAut (RelativeProjectiveSpace.twistOne (𝒰.X U) n).obj
+        (Scheme.Modules.unitAut (RelativeProjectiveSpace.twistOne (𝒰.X U) n).obj
           (Units.map (Scheme.Modules.scalarsFromBase
-            (RelativeProjectiveSpace.toBase (𝒰.X U) n ≫ (𝒰.X U).toSpecΓ)).toMonoidHom c) := by
+            (RelativeProjectiveSpace.toBase (𝒰.X U) n ≫ (𝒰.X U).toSpecΓ)).toMonoidHom c)).asIso := by
   exact d.chartTwist_scaled_criterion e h c ht w
     (d.chartTwistIso h) (e.chartTwistIso h)
     (d.chartTwistIso_coordinate h) (e.chartTwistIso_coordinate h)
@@ -197,8 +197,8 @@ lemma tensor_chartTwistIso
       (Scheme.Modules.pullbackCongr (chartFunctor_map_eq hM hN h)).app
         (RelativeProjectiveSpace.twistOne V.val.toScheme n).obj ≪≫
       (sourceAtlas hM hN).cocycle.chartTwistIso h ≪≫
-      Scheme.Modules.unitAut (RelativeProjectiveSpace.twistOne U.val.toScheme n).obj
-        (dualLineProjectiveUnit hM hN h) := by
+      (Scheme.Modules.unitAut (RelativeProjectiveSpace.twistOne U.val.toScheme n).obj
+        (dualLineProjectiveUnit hM hN h)).asIso := by
   exact (tensorAtlas hM hN).cocycle.chartTwistIso_scaled
     (sourceAtlas hM hN).cocycle h (dualLineTransitionUnit hM hN h)
     (tensor_transition hM hN h) (chartFunctor_map_eq hM hN h)

@@ -1,7 +1,5 @@
 # Top derivatives of products of supplied special heads
 
-Author: Worker 357.
-
 This derived construction gives an actual complex-linear equivalence from
 the entire top derivative of a positive-rank product of supplied special
 heads to the complex scalars. It also chooses an actual irreducible
@@ -117,29 +115,20 @@ elementary functorial reasoning. This pair introduces no additional
 literature assertion, segment derivative formula, or classification
 premise.
 
-## Publication gate and input verification
+## Input verification
 
-The individual-head input `fecff219-dc38-430a-a1d4-33b719d5f661` is
-independently accepted and published under `lean.definition@1`. The exact
-receipt reports `accepted = true`, `public = true`, independent approval
-by Reviewer 8298, and publication integration
-`eba5d4f32cb24fe986d4571ed0278d37` at Library
-`facdf46f0abfca9e85d49d3a35285c513a96d886`. Its machine acceptance is
-`d4d03d54-7c6f-41c9-ba87-fb8e809ec625`. The native, frozen and published
-Lean SHA256 values are all
+The individual-head input `Classification.SegmentHeadTopDerivative` is
+published in the Library at commit
+`facdf46f0abfca9e85d49d3a35285c513a96d886`. Its Lean SHA256 there is
 `50562a206452d7a9a86f9c42c15a905d1ec154fbf1aca8684364eaaeaa1b7509`;
-the native, frozen and published Markdown SHA256 values are all
+its Markdown SHA256 is
 `5e6673fe3793d2ac8609a7391dc7411975d7c594b0a42c2bb303afab694ad9f8`.
-This verification is retained in
-`.private/notes/worker357-head-top-publication-verification-2026-11-02.json`.
-The workspace refresh to that Library commit reports no conflicts.
 
 The other three direct imports are unchanged published pairs in audit
 Library `facdf46f0abfca9e85d49d3a35285c513a96d886`.
-The individual-head input's general BZ dependency
-`bfc08f82-c488-4a15-8d7f-f92c86e12803` was independently accepted and
-published at `6fd0709bd33fa6c33b4d74b4b638cfc51428b8f1`, integration
-`75ecdef35b4042a0ac9b0793139a7e26`. Its previously verified source pairs
+The individual-head input's general BZ dependency, the BZ77 4.11 proof
+`Derivative.OrderedCuspidalProductNondegeneracyProof`, was
+published at Library commit `6fd0709bd33fa6c33b4d74b4b638cfc51428b8f1`. Its previously verified source pairs
 remain unchanged in the present closure.
 
 ## Complete import closure and mathematical dependency audit
@@ -170,16 +159,12 @@ detected constituent, and cuspidal-product detected constituent. Every
 overlapping Lean hash agrees. The only historical Markdown hash
 differences are the roots `SegmentHeadTopDerivative` and `FiniteTopLine`,
 whose old inventories were made before completing their Markdown. The
-former is verified against its frozen reviewed pair and the published
+former is verified against the published
 Library; the latter also matches the published Library. All other
 inherited Markdown hashes agree.
 No inherited addition lacks earlier inventory coverage.
 
-For reproducibility, the current private inventory is
-`.private/notes/worker357-head-product-top-current-import-audit-2026-11-02.json`
-and its comparison report is
-`.private/notes/worker357-head-product-top-comparison-2026-11-02.json`.
-These private files are preparation evidence; the complete appendices
+The complete appendices
 and public import graph reconstruct the module sets. This records source
 coverage and proof-route inspection, without claiming that every inherited
 body was newly read line by line.
@@ -250,21 +235,17 @@ The mathematical dependencies are as follows.
    in the conditional theorem. No step equates different products
    through their detected constituents.
 
-## Authorized infrastructure and retained exclusions
+## General infrastructure and exclusions
 
-The complete trusted operator response
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-to request `d910ee3b12f2515f9568a4f2f2f1442f` permits this host to reuse
-independently accepted and published BZ77 4.11, including the general
+This development reuses the
+published BZ77 4.11, including the general
 Ze80 3.7(b) comparison through the Lemma 4.7(b) closure, Ze80 5.3
 `leftMixedProductHomogeneity`, and the nine generic modules listed below.
-It retains all the host's independence exclusions. The individual-head
-audit and the published BZ proof audit record the mathematical routes;
-the new generic product and filtration additions do not extend those
-permissions.
+It uses none of the excluded results listed at the end of this section. The individual-head
+audit and the published BZ proof audit record the mathematical routes.
 
 
-The nine modules covered by the operator's infrastructure ruling are
+The nine generic modules are
 present with unchanged published bytes. The following table records
 their contents and entry routes; none supplies an excluded conclusion.
 Module prefixes are `Langlands.Representation.` except for the
@@ -282,14 +263,12 @@ combinatorial module.
 | `Derivative.MirabolicMinusNormalization` | Haar and half-modulus character identities for the general minus functors; reached through the Ze80 5.3 proof |
 | `Classification.SupercuspidalDerivativesStatement` | The isolated Prop-valued BZ77 4.4 statement; its independently published proof supplies the theorem |
 
-The first seven were introduced under socle-exhaustion task
-`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`; the normalization adapter under
-two-supercuspidal task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`;
-the isolated cuspidal statement under
-`8e5b4563-0365-41c7-b134-70f2a0b36292`. The published BZ Markdown
-identifies their introducing artifacts, project imports and owner
-checks. The operator's response expressly distinguishes these generic
-modules from those tasks' excluded mathematical conclusions.
+The first seven were introduced with the socle-exhaustion development;
+the normalization adapter with the two-supercuspidal development;
+the isolated cuspidal statement with the derivative statements of
+`Classification.SegmentSocleDerivativesStatement`. The published BZ Markdown
+records their project imports. These generic
+modules are distinct from the excluded mathematical conclusions of those developments.
 The new composition uses the resulting general proof, without invoking
 any of those excluded conclusions.
 
@@ -303,43 +282,42 @@ modules supply definitions and elementary adapters, with no
 square-integrable or tempered classification conclusion.
 
 The comment-free recursive scan for both statement and theorem spellings
-of the host exclusions and the additional derivative-route exclusions
-has no hits. The proof routes above and the earlier independent reviews
-preserve the following exclusions, including proof successors,
+of the excluded results and the additional derivative-route exclusions
+has no hits. The proof routes above
+preserve the following exclusions, including their proofs,
 renamings and transitive uses:
 
 | Excluded conclusion | Dependency check |
 | --- | --- |
-| Parent `GenericSegmentProductUniqueness`, task `30341ae4-65f2-4a0e-9283-763db01a409e` | No import or proof use |
-| Multisegment exhaustion, task `3bfb61fa-1129-4fc9-83fd-7fcfec22106e` | No import or proof use |
-| Ordered strong-head existence, task `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | No import or proof use; the independent individual-segment existence proof is a different result |
-| Quotient coverage, task `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584` | No import or proof use |
-| Ordered conversion, task `8252833d-c269-41a9-824c-5879e531b23b` | No import or proof use |
-| Tempered uniqueness, task `52e97845-36bb-457d-b76f-70753334b88c` | No import or proof use |
-| `SquareIntegrableLanglandsClassification`, task `1cb45da2-7007-4351-a694-594fb148b8d1` | No import or proof use |
-| Square-integrable exhaustion, task `cd8ab97c-0b78-4bce-97c4-d307a28159a4` | No import or proof use |
-| Regular exhaustion, task `bf433f0a-921a-428c-b0c0-6475438125ac` | No import or proof use |
-| Ze80 segment derivative formulas 3.5 and 9.6, including segment-socle derivatives from `8e5b4563-0365-41c7-b134-70f2a0b36292` | No import or proof use; only the isolated proved cuspidal derivative route and authorized general comparison are used |
-| Full/head/socle segment Jacquet formulas and exponent-norm formula, tasks `ed48ae06-964c-4c84-9e62-978f5a953ca7`, `55ad1e10-62d8-46b7-a081-909ef0056426`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | No import or proof use; actual cuspidal Jacquet multiplicities and the authorized general derivative/Jacquet comparison are distinct inputs |
-| Segment-socle product irreducibility, linked structure, gluing, commutation, swaps and socle exhaustion, including task `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | No excluded conclusion imported or used; the generic infrastructure intersections are listed above |
-| The host special-head product criterion `SegmentHeadProductIrreducibility`, task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | Neither its statement module nor a proof of it is imported; already published general constructions from this host do not assume its conclusion |
+| `GenericSegmentProductUniqueness` | No import or proof use |
+| Multisegment exhaustion | No import or proof use |
+| Ordered strong-head existence | No import or proof use; the independent individual-segment existence proof is a different result |
+| Quotient coverage | No import or proof use |
+| Ordered conversion | No import or proof use |
+| Tempered uniqueness | No import or proof use |
+| `SquareIntegrableLanglandsClassification` | No import or proof use |
+| Square-integrable exhaustion | No import or proof use |
+| Regular exhaustion | No import or proof use |
+| Ze80 segment derivative formulas 3.5 and 9.6, including the segment-socle derivatives of `SegmentSocleDerivativesStatement` | No import or proof use; only the isolated proved cuspidal derivative route and the general comparison named above are used |
+| Full/head/socle segment Jacquet formulas and exponent-norm formula | No import or proof use; actual cuspidal Jacquet multiplicities and the general derivative/Jacquet comparison are distinct inputs |
+| Segment-socle product irreducibility `SegmentSocleProductIrreducibility`, linked structure, gluing, commutation, swaps and socle exhaustion | No excluded conclusion imported or used; the generic infrastructure intersections are listed above |
+| The special-head product criterion `SegmentHeadProductIrreducibility` | Neither its statement module nor a proof of it is imported; the published general constructions of the special-head development do not assume its conclusion |
 | Analytic segment classification, special square-integrability, two-supercuspidal product irreducibility or structure, and Whittaker coinvariant finiteness | No excluded conclusion imported or used |
-| Unproved statements, conditional draft assemblies or pending proof tasks | No such input is used as a proof; the public BZ premise is discharged by the independently accepted published theorem |
+| Unproved statements or conditional assemblies | No such input is used as a proof; the BZ premise is discharged by the published theorem |
 
 
 The comment-free recursive scan finds no excluded statement/theorem name,
-Lean proof hole or new axiom. Recovery check
-`495dfd00-a050-4075-819e-313a8602f061` recompiled the individual-head and
+Lean proof hole or new axiom. A check
+recompiled the individual-head and
 product modules with zero errors and warnings. Inspection of
 `segmentHeadProductTopDerivativeLineEquiv` reports independent universe
 parameters `uF`, `uV` and only `propext`, `Classical.choice`, `Quot.sound`.
-The earlier clean check
-`02e45fbd-cd48-44e4-8053-0eceaec2f847` inspected the actual detected
+An earlier clean check
+inspected the actual detected
 constituent constructor with the same universe and axiom properties.
-Compilation and this author audit do not supply independent acceptance
-or publication of the new pair.
 
-The full `SegmentHeadProductIrreducibility` criterion remains open.
+The full `SegmentHeadProductIrreducibility` criterion is proved in
+`Classification.SegmentHeadProductIrreducibilityProof`, not here.
 This pair discharges no intermediate segment derivative/truncation bound,
 no survival theorem for every simple subquotient under nonlinkage, and
 no linked-pair converse or arbitrary-product permutation argument.

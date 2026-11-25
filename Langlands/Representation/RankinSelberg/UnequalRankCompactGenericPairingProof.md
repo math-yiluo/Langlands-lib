@@ -1,7 +1,5 @@
 # Proof of the unequal-rank compact generic pairing statement
 
-Author: Worker 896.
-
 Module `Langlands.Representation.RankinSelberg.UnequalRankCompactGenericPairingProof`.
 It proves the Library proposition
 `Langlands.RankinSelberg.UnequalRankCompactGenericPairingStatement.{uF,uW} F T n r`
@@ -30,8 +28,7 @@ The theorem is
 `Whittaker.multiplicityOne.{uF,uW}` of Whittaker multiplicity one. The carrier
 universe of multiplicity one is the universe `uW` of `η`.
 
-The proof chain is as follows. Each named declaration is in the Library or in
-this submission. Below, `forms(m, s)` is the covariance space
+The proof chain is as follows. Each named declaration is in the Library. Below, `forms(m, s)` is the covariance space
 `unequalRankMirabolicForms` of the compact mirabolic model of rank `m` and `η`
 at the exponent `s`.
 
@@ -58,7 +55,7 @@ at the exponent `s`.
      invariant forms to the inverse-standard Whittaker functionals of `η`.
    - Nonzero form (`exists_ne_zero_adjacent`):
      `Induction.CompactFunctionalPairing.exists_nonzero_form` (module
-     `Induction.CompactFunctionalPairing`, Worker 605) builds a nonzero
+     `Induction.CompactFunctionalPairing`) builds a nonzero
      invariant form from the supplied nonzero inverse-standard functional.
 
    Composing with `formsAdjacentEquiv`, and then with the equivalences of step 1,

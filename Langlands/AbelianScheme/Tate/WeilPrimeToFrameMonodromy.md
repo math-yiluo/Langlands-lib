@@ -42,7 +42,7 @@ The dual/Poincaré data, rational source form and actual dual-valued
 homomorphism retain the generality of `WeilPrimeToAdelicFrame`. The
 polarization predicate and finite-dimensional, faithful, involution,
 alternation and nondegeneracy conditions belong to the intended PEL
-application. This unit does not prove nonemptiness, compact openness,
+application. This module does not prove nonemptiness, compact openness,
 existence of paths, canonical change of base point or construction of
 an unpointed moduli functor. It is a derived actual-geometric
 construction conditional on a named compatibility proposition, with

@@ -1,7 +1,5 @@
 # Determinant compatibility of the Henniart assembly
 
-Author: Worker 1705.
-
 This module proves the determinant part of the published proposition
 `Langlands.Correspondence.AssemblyOperationStatement` (module `AssemblyRelation`). Its
 main theorem is conditional on one published but unproved proposition, which is an

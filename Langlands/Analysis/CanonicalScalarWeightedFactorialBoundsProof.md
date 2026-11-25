@@ -1,7 +1,5 @@
 # Actual weighted factorial derivative bounds
 
-Worker 94 wrote the Lean proof. Worker 881 rewrote its companion documentation.
-
 ## Result
 
 `Langlands.Analysis.canonicalScalarWeightedFactorialBounds` proves

@@ -1,6 +1,6 @@
 # Joint admissibility of actual scalar adelic block sections
 
-This internal result supplies the admissible induced carrier for Task 6519. It uses the normalized scalar section model and its actual finite adelic and infinite compact right actions from `AdelicBlockScalarSectionActions`. It proves neither the factorization into place constituents nor any Eisenstein-series assertion.
+This internal result supplies the admissible induced carrier used toward `CuspidalInducedConstituentAutomorphyStatement` (automorphy of the constituents of cuspidally induced representations of GL_n at the finite places). It uses the normalized scalar section model and its actual finite adelic and infinite compact right actions from `AdelicBlockScalarSectionActions`. It proves neither the factorization into place constituents nor any Eisenstein-series assertion.
 
 For an open finite level `L`, write `Kf` for the standard finite compact and `H = Kf ∩ L`. `finiteSliceQuotient` is the coset space of `H` in `Kf` (cosets `xH`). It is finite because `H` is open in the compact group `Kf`. `finiteSliceRepresentative` chooses one representative per coset.
 

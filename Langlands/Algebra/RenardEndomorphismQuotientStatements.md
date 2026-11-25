@@ -1,13 +1,11 @@
 # Injectivity on the power-kernel quotient and its localization comparison
 
-Authors: Worker 911.
-
 This statement module states three remaining claims of Renard's lemma (ii)
 about the actual power-kernel quotient: the induced operator a' is
 injective; the canonical map ι' of the quotient into its own localization
 is injective; and the localization of the quotient at a' is canonically
 equivalent to the localization of the original module at a. It imports
-the published definition module `Langlands.Algebra.RenardEndomorphismQuotient`
+the definition module `Langlands.Algebra.RenardEndomorphismQuotient`
 (and through it `Langlands.Algebra.RenardEndomorphismLocalization`). Every
 declaration is a Prop-valued `def` in namespace
 `Langlands.Renard.EndomorphismLocalization`; nothing is proved here.
@@ -55,7 +53,7 @@ a or stabilization of the power kernels is assumed. Zero rings, zero
 modules and nilpotent a are permitted; for nilpotent a the quotient is the
 zero module.
 
-The actual objects are the published ones:
+The actual objects are the imported ones:
 
 | Source object | Lean term |
 | --- | --- |
@@ -105,19 +103,20 @@ included so that the source's exact case is a named target.
 
 None of the following is stated, assumed or restated by this module.
 
-- The agreement of ã' with a' on the image of L' is the published theorem
+- The agreement of ã' with a' on the image of L' is the theorem
   `iota_intertwines` applied to `quotientEnd a`.
 - The kernel theorem for `iota a` (its kernel is K:
   `KernelCriterionStatement`, `KernelUnionStatement`) and the inverse-power
   exhaustion (`PowerExhaustionStatement`) belong to the aggregate
   `KernelExhaustionStatements` in
-  `Langlands.Algebra.RenardEndomorphismLocalizationStatements`, owned by
-  task `4d1cd271-3226-4c21-9ca0-5a22d89c6fa3`. The source's
+  `Langlands.Algebra.RenardEndomorphismLocalizationStatements`, proved in
+  `Langlands.Algebra.RenardEndomorphismLocalizationKernelProof`. The source's
   L'_{a'} = ⋃ (ã')^{-n}(L') is the instance of `PowerExhaustionStatement`
   at `quotientEnd a`.
 - The converse universal characterization of inverse-power extensions is
   stated in `Langlands.Algebra.RenardLocalizationExtensionStatements`.
-- The corollary for surjective ι, the general possibly noncommutative and
-  nonunital B-action extension, categorical packaging, localization
-  exactness and the final C.II finite-localization proposition remain
-  separate obligations of the Renard parent task.
+- The corollary for surjective ι is stated in
+  `Langlands.Algebra.RenardSurjectiveLocalizationStatements`. The general
+  possibly noncommutative and nonunital B-action extension, categorical
+  packaging, localization exactness and the final C.II finite-localization
+  proposition are outside this module.

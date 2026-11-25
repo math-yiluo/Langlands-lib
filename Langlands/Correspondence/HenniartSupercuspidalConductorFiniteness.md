@@ -1,6 +1,6 @@
 # Henniart candidate finiteness with the supercuspidal conductor premise
 
-Worker 619, Task 7045. Namespace
+Namespace
 `Langlands.Henniart.Extension.SupercuspidalConductor`, independent universes
 `uK uV`. This module proves two conditional lemmas and changes no existing
 declaration.

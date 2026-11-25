@@ -1,7 +1,5 @@
 # Assembling a supercuspidal pole from a square-integrable block
 
-Author: Worker 1779.
-
 This internal support module supplies conditional steps in the proof of
 `TemperedTwistSupercuspidalPoleStatement`. It does not prove that statement.
 The JPSS (8.1)(ii), (8.2) and (8.4) proposition targets remain explicit

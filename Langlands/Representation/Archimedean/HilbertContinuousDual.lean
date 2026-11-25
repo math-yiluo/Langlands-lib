@@ -61,9 +61,9 @@ def inverseTransposeContinuousDual : GLF →* (D →L[ℂ] D) :=
 /-- The continuous dual action stays jointly continuous under inverse transpose. -/
 theorem isContinuousRepresentation_inverseTransposeContinuousDual (hR : IsContinuousRepresentation R) :
     IsContinuousRepresentation (inverseTransposeContinuousDual F n R) :=
-  (isContinuousRepresentation_continuousDual R hR).comp
+  ((isContinuousRepresentation_continuousDual R hR).comp
     (((Langlands.GeneralLinear.continuous_inverseTranspose n F).comp continuous_fst).prodMk
-      continuous_snd)
+      continuous_snd) : _)
 
 variable [MeasurableSpace (Langlands.GeneralLinear n F)] [BorelSpace (Langlands.GeneralLinear n F)]
   (μ : Measure (Langlands.GeneralLinear n F)) [μ.IsHaarMeasure] [μ.Regular]

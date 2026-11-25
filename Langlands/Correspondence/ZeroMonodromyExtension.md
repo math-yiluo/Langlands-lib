@@ -1,7 +1,5 @@
 # Pointwise use of supercuspidal extension
 
-Author: Worker 422.
-
 This supporting helper module derives pointwise extension facts from the existing
 class-space definitions. It supplies the irreducible-Weil case of a possible
 assembly characterization induction. It does not prove assembly existence,

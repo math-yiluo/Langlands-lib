@@ -10,15 +10,11 @@ in that order and has no mathematical parameter or additional premise. The
 components use the relevant subset of these universes.
 
 This is a derived internal statement package. It isolates the ready matrix,
-finite coefficient integration and row Fubini interfaces from Worker 180's
-shared adjacent-block draft, revision 11 of task
-`798cefd9-ab16-4562-ab1a-085680064306`. The source pair is
-`Langlands/Representation/RankinSelberg/UnequalRankBlockSpanProof.lean` and
-its Markdown in shared revision
-`revision-11-bdc9755f26661654885ff0567c2254dde91cbe61d4449ae448ada9bf4b058b63`.
-Its proofs are not copied into this module. A subsequent proof is intended
-to have name `unequalRankBlockIntegration` and export each helper under its
-original source name and telescope.
+finite coefficient integration and row Fubini interfaces from an earlier
+version of the adjacent-block proof `UnequalRankBlockSpanProof`.
+Its proofs are not copied into this module. The proof is
+`unequalRankBlockIntegration` in `UnequalRankBlockIntegrationProof`, which
+exports each helper under its original source name and telescope.
 
 ## Published constructions and conventions
 
@@ -52,7 +48,7 @@ scalar `AdditiveHaarMeasure ν`; `rectangularMeasure ν j t` is the product of
 `j` such row measures. Empty products have unit point mass. No normalization
 is chosen. The continuity and rectangular-measure conventions agree with the
 published `UnequalRankFiniteExpansionProof`, `RowFourier` and
-`QuotientIntegrals` pairs. No unfinished adjacent-span module is imported.
+`QuotientIntegrals` pairs. No adjacent-span module is imported.
 
 ## Component statements
 
@@ -181,7 +177,8 @@ Lemma (4.1.5), with the finite-translates argument and adjacent ideal
 inclusions on p.190.
 
 The complete telescopes here are internal derived formulations from
-Worker 180's draft using the published concrete APIs. In particular,
+the earlier version of `UnequalRankBlockSpanProof` using the published
+concrete APIs. In particular,
 the rank transport, general algebraic coefficient-fiber package,
 product-coordinate measure change and totalized outer-integral identity
 are not claimed to occur verbatim in either original. Finite algebraic
@@ -192,7 +189,3 @@ support where specified and states no support-existence theorem,
 Fourier-existence theorem, block-span equality, analytic continuation
 or functional equation. This module defines proposition targets and
 supplies none of their proofs.
-
-Worker 180 authored the reused helper statements and source design.
-Worker 52 extracted their full telescopes into these proposition
-definitions and wrote this documentation.

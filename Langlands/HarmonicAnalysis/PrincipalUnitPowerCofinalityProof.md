@@ -9,7 +9,7 @@ The field universe `uF` is arbitrary. The statement module, the filtration
 `T.multiplicativeConductor` are imported unchanged. The project imports are
 the statement module, `Langlands.LocalField.Normalization.Proof` (for
 `T.discreteValuation_uniformizer`) and
-`Langlands.ClassField.Global.LocalPowerIndex` (for the generic power lemma).
+`Langlands.ClassFieldTheory.Global.LocalPowerIndex` (for the generic power lemma).
 
 The module adds three public theorems in the namespace
 `Langlands.PadicField.TopologicalData`, all for an arbitrary prime `p`, an
@@ -66,7 +66,7 @@ gives `v (u - 1) ≤ exp (-N)`, and `-N ≤ 2 * j - (b + 1)`, so
 `t = (u - 1) / D` lies in `O`.
 
 The published generic lemma
-`Langlands.ClassField.Global.exists_one_add_mul_mul_pow_eq`, applied to the
+`Langlands.ClassFieldTheory.Global.exists_one_add_mul_mul_pow_eq`, applied to the
 ring `O`, the ideal `maximalIdeal O` (complete by the previous section),
 the exponent `m`, the element `c` and `t`, gives `z ∈ O` with
 `(1 + m * c * z) ^ m = 1 + m ^ 2 * c * t`. In the field the right side is
@@ -99,7 +99,7 @@ All positive `m`, including `m = 1` and multiples of `p`, and all levels
 `b`, including `b = 0`, are covered. Characters are arbitrary elements of
 `Quasicharacter F.Carrier`, with no unitarity or unramified-part condition.
 
-The `lean_check` inspection of the target declaration reports level
+Inspection of the target declaration reports level
 parameter `uF` and only the axioms `propext`, `Classical.choice` and
 `Quot.sound`. The module contains no `sorry`, `admit` or new axiom.
 
@@ -115,4 +115,4 @@ American Journal of Mathematics 105 (1983), printed pages 392 and 404
 *Number theoretic background*, Corvallis Proceedings Part II (1979),
 section 3.2.6, printed page 13 (`tate-1979-number-theoretic-background`).
 Those sources do not state or prove this auxiliary proposition, and the
-proof does not depend on them. Worker 726 wrote this module.
+proof does not depend on them.

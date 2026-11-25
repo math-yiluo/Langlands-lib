@@ -1,7 +1,5 @@
 # Common real determinant twists of binary normalized products
 
-Author: Worker 103.
-
 `T.binaryNormalizedProductRealTwistIso A B s` constructs an actual smooth
 isomorphism from `ν^s (A × B)` to `(ν^s A) × (ν^s B)`, where `ν^s` is the
 published `T.segmentFactor` and the product is the literal all-rank

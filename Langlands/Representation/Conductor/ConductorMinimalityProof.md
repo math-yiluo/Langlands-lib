@@ -1,6 +1,6 @@
 # Proof of the conductor lower bound and scaled identity at the conductor level
 
-Author: Worker 5549. Module
+Module
 `Langlands.Representation.Conductor.ConductorMinimalityProof`. It contains one
 theorem,
 

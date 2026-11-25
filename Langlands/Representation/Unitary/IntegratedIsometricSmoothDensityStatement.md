@@ -1,6 +1,6 @@
 # Norm density of the original action's smooth vectors
 
-Worker 116 states
+The module states
 `Langlands.Analysis.IntegratedIsometricSmoothDensityStatement` with three
 independent universes for the real model, group and complex vector space.
 Let `G` be the original Hausdorff topological group with its real smooth
@@ -30,8 +30,8 @@ convergence of the actual `integratedIsometricAction` vectors to every
 original vector. Complexification of each original smooth real kernel
 and `IntegratedIsometricSmoothVectorsStatement` place those vectors in
 the original smooth-vector subspace. A limit of points of that subspace
-lies in its closure, giving density. These are proof obligations; this
-file defines the proposition only.
+lies in its closure, giving density. This route is not carried out
+here; this file defines the proposition only.
 
 The construction uses left Haar translation with the inverse-kernel
 convention and keeps the original representation, group, measure and
@@ -45,4 +45,4 @@ This target is about real-manifold smooth vectors of a Lie-group action.
 Finite adelic smooth vectors, their simultaneous compatibility with this
 smoothing, actual automorphic quotient realizations, compact-type
 finiteness, the Getz–Hahn tensor realization, admissibility, growth, decay,
-compactness and spectral decomposition remain separate obligations.
+compactness and spectral decomposition are not part of this target.

@@ -2,8 +2,9 @@
 
 This internal supporting construction combines the published
 `exists_nonzero_cuspidal_leviJacquet` theorem with the generic quotient and
-adjointness argument in `CuspidalQuotientEmbedding`. It continues Worker 379's
-minimal-Jacquet approach on the actual rational-point Levi, keeping the actual
+adjointness argument in `CuspidalQuotientEmbedding`. It continues the
+minimal-Jacquet approach of `RationalCuspidalEmbeddingProof` on the actual
+rational-point Levi, keeping the actual
 root labels and the literal subgroup quotients.
 
 `isUnimodularModulus_standardUnipotent_in_levi` proves unimodularity of each

@@ -1,7 +1,5 @@
 # Finite-level approximation on `L²([G])` and its a.e. cuspidal subspace: proof
 
-Authors: Worker 112 (proof drafts) and Worker 1788 (self-contained assembly).
-
 `Langlands.Global.RestrictionSplitCentre.quotientFullAEL2FiniteApproximation`
 proves the published `QuotientFullAEL2FiniteApproximationStatement` of
 `GroupSchemeRestrictionFullAEL2FiniteApproximationStatement`. Its type is
@@ -12,12 +10,14 @@ a.e. cuspidal subspace, `A n` and `B n` are the averages over `K n` on
 `L²([G])` and on `Sq`, and `P`, `Q` are the orthogonal and ambient
 projections.
 
-The module does not depend on an unpublished proof. It proves the ambient
-conclusions itself, in two `private` helpers. Their route is Worker 112's
-draft proof of the published `QuotientL2FiniteApproximationStatement`, which
+The module does not import a proof of the ambient statement. It proves the ambient
+conclusions itself, in two `private` helpers. Their route is a proof of the
+published `QuotientL2FiniteApproximationStatement` that
 repeats the published positive-torus proof
 `groupSchemeQuotientL2FiniteApproximation`. The helpers are private, so their
-names do not clash with a later public proof of that ambient statement. Only
+names do not clash with the public proof `quotientL2FiniteApproximation` of that
+ambient statement (module
+`Langlands.Automorphic.GroupSchemeRestrictionQuotientL2FiniteApproximationProof`). Only
 the closing theorem is exported.
 
 ## Norm bound for one average

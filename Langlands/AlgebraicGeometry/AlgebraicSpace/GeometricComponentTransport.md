@@ -2,7 +2,8 @@
 
 This is an internal supporting construction for the constructibility proof. It
 compares the actual point-topology connected-component sets, including all empty
-fibres, and derives transport of the exact component count in the host statement.
+fibres, and derives transport of the exact component count in
+`GeometricFibreComponentsConstructibleStatement`.
 It does not assert constructibility.
 
 ## Homeomorphisms and algebraically closed field extensions
@@ -41,7 +42,8 @@ needed.
 `geometricFibreEquiv` applies this factorization and
 `algClosedBaseChangeEquiv`, with K the algebraic closure of kappa(p). The two
 `baseChangePointsHomeomorph` comparisons give the endpoints as the represented
-products over S used in the host component-count definition. Its hypotheses
+products over S used in the component-count definition of
+`GeometricFibreComponentsConstructibleStatement`. Its hypotheses
 are the given locally finite-type quasi-compact etale surjective atlas and the
 specified algebraically closed point over p.
 
@@ -60,8 +62,9 @@ either base; the atlas finiteness assumptions remain explicit.
 `geometricFibreComponentCount_baseChange` specializes to arbitrary affine bases
 Spec A and Spec B and any morphism between them. It obtains the atlas from
 `FinitePresentationOverRing B X` and applies `ENat.card_congr` to the constructed
-equivalence. Consequently the exact host count at q after base change equals the
-original exact host count at g(q), for every q. Quasi-separatedness is not needed.
+equivalence. Consequently the exact count of
+`GeometricFibreComponentsConstructibleStatement` at q after base change equals the
+original exact count at g(q), for every q. Quasi-separatedness is not needed.
 
 The provenance is the explicit composition of the Library's point-topology,
 atlas-component and base-change constructions with Mathlib's residue-field and

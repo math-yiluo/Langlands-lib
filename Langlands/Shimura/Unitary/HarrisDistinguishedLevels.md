@@ -1,7 +1,5 @@
 # Harris's level `K_p` with a varying factor at the distinguished place
 
-Author: Worker 19.
-
 This module defines Harris's level (4.1),
 `K_p = C_v × ∏_{j>1} C^(j) × ℤ_pˣ`, of the unitary similitude group at a
 degree-one place of the imaginary quadratic field. The open compact subgroup

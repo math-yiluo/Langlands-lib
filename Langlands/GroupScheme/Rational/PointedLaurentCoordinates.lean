@@ -116,6 +116,7 @@ theorem exists_pointedLaurentPullback
     let : IsDominant f.left := hd
     dsimp only [q]
     change IsDominant (d.hom.hom.hom.left ≫ f.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hinj : Function.Injective σ := by
     let ψ := CommRingCat.ofHom σ.toRingHom

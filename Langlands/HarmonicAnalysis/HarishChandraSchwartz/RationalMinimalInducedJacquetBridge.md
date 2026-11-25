@@ -1,7 +1,5 @@
 # The represented model of the normalized Jacquet module of `I_{P₀}^G 1`
 
-Worker 778, Task 5325.
-
 The canonical represented standard parabolics for `∅` and `J` have point images
 equal to the corresponding standard parabolic, Levi, and radical subgroups.
 The actual point map of the represented Levi, followed by transport along this

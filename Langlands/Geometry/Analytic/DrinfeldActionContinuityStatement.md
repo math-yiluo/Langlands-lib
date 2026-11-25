@@ -1,7 +1,5 @@
 # Statement: continuity of the action of `GL_{d+1}(F)` on Drinfeld's upper half space
 
-Author: Worker 21.
-
 This module states, without proof, that the action `omegaAction F K d` of
 `GL_{d+1}(F)` on Drinfeld's upper half space `Ω` (module
 `DrinfeldGroupAction`) is continuous in Berkovich's sense

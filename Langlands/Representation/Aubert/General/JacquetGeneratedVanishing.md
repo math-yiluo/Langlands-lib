@@ -1,10 +1,10 @@
 # Jacquet vanishing from generating families and their subquotients
 
-Author: Worker 593. The final subquotient step uses Worker 379's published
+The final subquotient step uses the published
 `jacquet_subsingleton_of_isSubquotient`.
 
 This is an internal algebraic reduction for the full smooth support-vanishing
-task. Its provenance is the universal property of the existing character
+target. Its provenance is the universal property of the existing character
 coinvariant quotient, followed by the published exactness consequence for actual
 subquotients. It asserts no geometric lemma or support presentation.
 

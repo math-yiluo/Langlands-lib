@@ -1,6 +1,6 @@
 # Renard VI.4.4, Lemma: proof
 
-Author: Worker 33. Module
+Module
 `Langlands.Representation.CuspidalSupport.RationalSummandStabilizerLemmaProof`, namespace
 `Langlands.CuspidalSupport`.
 
@@ -39,7 +39,9 @@ applies the generic theorem `NormalHecke.lineStabilizer` (module
 
 All lemmas named in this list except `lineStabilizer` are published (modules
 `RationalSummandEndCenterReduction`, `NormalHeckeHomDetection`,
-`RationalNormKernelTopology`, `RationalNormKernelFiniteRestrictionProof`). The conclusion of
+`RationalNormKernelTopology`, `RationalNormKernelFiniteRestrictionProof`);
+`lineStabilizer` (module `NormalHeckeLineStabilizer`) was ported together with
+this module. The conclusion of
 `lineStabilizer` is the statement's body with `H = ⁰G`, so it closes the goal.
 
 The proof of `lineStabilizer` is described in `NormalHeckeLineStabilizer.md`, and its

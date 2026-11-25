@@ -1,7 +1,5 @@
 # Actual local topological dimension under etale morphisms
 
-Author: Worker 156.
-
 `EtaleLocalTopologicalDimensionStatement` states that every etale scheme
 morphism `f : X ⟶ Y` preserves `topologicalKrullDimAt` at every point of `X`.
 The theorem `etaleLocalTopologicalDimension` proves it for arbitrary scheme

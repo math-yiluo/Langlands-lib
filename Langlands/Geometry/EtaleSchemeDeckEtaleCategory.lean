@@ -109,20 +109,20 @@ def sectionsConsumer :
 /-- Each action is pullback along the original automorphism with its canonical
  inverse-image coefficient, rather than an independently chosen action. -/
 theorem derivedConsumer_obj_obj_ρ (A : EtaleDatum X G) (M : ModuleSheaf X R) (g : G) :
-    (((derivedConsumer R).obj A).obj M).ρ g =
+    ((((derivedConsumer R).obj A).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.sheafDerivedPullbackWithCoefficients (aut A.action g).hom R
         ((coefficientIso A.action A.projection A.over_base R g).hom.app M) :=
   derivedFunctor_obj_ρ A.action A.projection A.over_base R M g
 
 theorem cohomologyConsumer_obj_obj_ρ (n : ℕ) (A : EtaleDatum X G)
     (M : ModuleSheaf X R) (g : G) :
-    (((cohomologyConsumer R n).obj A).obj M).ρ g =
+    ((((cohomologyConsumer R n).obj A).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.cohomologyPullbackWithCoefficients (aut A.action g).hom R n
         ((coefficientIso A.action A.projection A.over_base R g).hom.app M) :=
   cohomologyFunctor_obj_ρ A.action A.projection A.over_base R n M g
 
 theorem sectionsConsumer_obj_obj_ρ (A : EtaleDatum X G) (M : ModuleSheaf X R) (g : G) :
-    (((sectionsConsumer R).obj A).obj M).ρ g =
+    ((((sectionsConsumer R).obj A).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.sectionsPullbackWithCoefficients (aut A.action g).hom R
         ((coefficientIso A.action A.projection A.over_base R g).hom.app M) :=
   sectionsFunctor_obj_ρ A.action A.projection A.over_base R M g
@@ -246,34 +246,34 @@ def restrictionSectionsConsumer :
 restriction composition followed by transport along its deck equation. -/
 theorem restrictionDerivedConsumer_obj_obj_ρ (A : EtaleDatum X G)
     (M : ModuleSheaf X R) (g : G) :
-    (((restrictionDerivedConsumer R).obj A).obj M).ρ g =
+    ((((restrictionDerivedConsumer R).obj A).obj M).ρ g).asHom =
       derivedSectionsMapWithCoefficients (aut A.action g).hom R
         ((restrictionComp A.projection (ModuleCat.{u} R) (aut A.action g).hom).hom.app M ≫
           (restrictionCongr R (A.over_base g)).hom.app M) := by
-  change ((deckDerivedSectionsFunctor R A.action A.projection A.over_base).obj M).ρ g = _
+  change (((deckDerivedSectionsFunctor R A.action A.projection A.over_base).obj M).ρ g).asHom = _
   rw [deckDerivedSectionsFunctor_obj_ρ, restrictionCoefficient_act]
   rfl
 
 theorem restrictionCohomologyConsumer_obj_obj_ρ (n : ℕ) (A : EtaleDatum X G)
     (M : ModuleSheaf X R) (g : G) :
-    (((restrictionCohomologyConsumer R n).obj A).obj M).ρ g =
+    ((((restrictionCohomologyConsumer R n).obj A).obj M).ρ g).asHom =
       cohomologyMapWithCoefficients (aut A.action g).hom R n
         ((restrictionComp A.projection (ModuleCat.{u} R) (aut A.action g).hom).hom.app M ≫
           (restrictionCongr R (A.over_base g)).hom.app M) := by
-  change (pullbackCohomologyAction R A.action
-    ((deckEquivariantFunctor R A.action A.projection A.over_base).obj M) n).ρ g = _
+  change ((pullbackCohomologyAction R A.action
+    ((deckEquivariantFunctor R A.action A.projection A.over_base).obj M) n).ρ g).asHom = _
   rw [pullbackCohomologyAction_ρ, restrictionCoefficient_act]
 
 theorem restrictionSectionsConsumer_obj_obj_ρ (A : EtaleDatum X G)
     (M : ModuleSheaf X R) (g : G) :
-    (((restrictionSectionsConsumer R).obj A).obj M).ρ g =
+    ((((restrictionSectionsConsumer R).obj A).obj M).ρ g).asHom =
       (EtalePullback.sectionsMap (aut A.action g).hom R).app
           ((restriction A.projection (ModuleCat.{u} R)).obj M) ≫
         (EtaleDerivedSections.sections A.space R).map
           ((restrictionComp A.projection (ModuleCat.{u} R) (aut A.action g).hom).hom.app M ≫
             (restrictionCongr R (A.over_base g)).hom.app M) := by
-  change ((pullbackSectionsFunctor R A.action).obj
-    ((deckEquivariantFunctor R A.action A.projection A.over_base).obj M)).ρ g = _
+  change (((pullbackSectionsFunctor R A.action).obj
+    ((deckEquivariantFunctor R A.action A.projection A.over_base).obj M)).ρ g).asHom = _
   rw [pullbackSectionsFunctor_obj_ρ, restrictionCoefficient_act]
   rfl
 

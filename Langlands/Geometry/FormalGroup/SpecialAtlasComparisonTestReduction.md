@@ -1,6 +1,6 @@
 # Actual test-comparison naturality for reduction and Nilp base change
 
-This internal unit specializes the actual coefficient-square test-comparison
+This module specializes the actual coefficient-square test-comparison
 equation to the canonical Nilp quotient naturality square. Its vertical maps
 are the existing actual full-order `reductionBaseChangeIso` maps. The equality
 of coefficient composites is the proved `Nilp.quotientO_natural` equation.

@@ -1,7 +1,5 @@
 # The actual character quotient by ambient unramified restriction
 
-Author: Worker 359.
-
 This internal algebraic prerequisite identifies the quotient of actual
 unramified parameters by ambient restrictions using the existing actual
 valuation-image map. Its provenance is the published restriction and

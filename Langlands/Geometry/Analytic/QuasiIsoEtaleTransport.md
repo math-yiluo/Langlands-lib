@@ -1,7 +1,5 @@
 # Actual recognized-pair transport for full quasi-isomorphisms
 
-Author: Worker 208.
-
 This derived internal helper extends `QuasiIsoFiniteEtale` from chosen
 saturation extensions to every strong quasi-isomorphism between constructed
 saturations. It also proves right cancellation for full quasi-isomorphisms.

@@ -1,11 +1,10 @@
 # Internal star-sheaf cokernel and section-universe targets
 
-Worker 1599 states these targets from Worker 709's internal size-scope design
-and specification. The actual diagram is the published construction by
-Worker 1301 with Worker 709 in [StarDiagram](StarDiagram.md). This pair defines
+The actual diagram is the published construction in
+[StarDiagram](StarDiagram.md). This pair defines
 three propositions and their named conjunction. It proves only the short
 canonical-zero compatibility laws described below; exact proofs of the three
-targets belong to a separate successor.
+targets are in [StarCokernelScopeProof](StarCokernelScopeProof.md).
 
 ## Provenance
 
@@ -125,7 +124,7 @@ The universe parameters are explicit: `u` and `v` remain independent in
 the first conjunct, and each negative conjunct specializes the space
 universe to `v+1` with section universe `v`. Universes are Lean declaration
 parameters, rather than term-level quantified values. The aggregate is
-the exact target supplied for a separate proof successor.
+proved by `cokernelScopeStatements` in [StarCokernelScopeProof](StarCokernelScopeProof.md).
 
 ## Relation to sufficient section universes
 

@@ -1,6 +1,6 @@
 # Finiteness of actual smooth infinite slices
 
-Author: Worker 94. Module: `Langlands.Automorphic.SliceFinitenessStatement`.
+Module: `Langlands.Automorphic.SliceFinitenessStatement`.
 The combined proposition is `Langlands.Automorphic.SliceFinitenessStatement`.
 It has the full parameters `K : Type u`, `[Field K]`, `[NumberField K]`,
 and `n : ℕ`, including rank zero. It is the conjunction of two statements
@@ -42,7 +42,7 @@ center condition, growth premise, or extra equivariance premise. Taking
 `U = standardInfiniteCompact K n` will give the group-finiteness premise
 needed by the separate compact-group-to-differential bridge.
 
-## Internal derivation and remaining proof
+## Internal derivation and proof
 
 These are internal consequences of the published algebraic interfaces,
 not reproductions of a theorem from the literature. The definitions used are
@@ -51,15 +51,16 @@ from `Automorphic.CenterFinite`, `Automorphic.FiniteVectors`,
 `Representation.FiniteVectors`. Their imported meanings are unchanged.
 No additional source theorem is invoked for these two implications.
 
-A proposed proof of the first part uses evaluation at `b` as a linear
+The proof of the first part uses evaluation at `b` as a linear
 intertwiner from the center family representation to the single-function
 center representation, then applies finite-vector preservation under an
 intertwiner. For the second part, the injective inclusion of smooth adelic
 functions into continuous adelic functions transfers the given orbit
 finiteness to the smooth carrier. The slice map then intertwines the
 restricted infinite-factor right actions by the adelic pair multiplication
-law, so its image has finite orbit. Constructing these intertwiners and
-proving the two implications are proof obligations. This Lean file only
+law, so its image has finite orbit. These intertwiners are constructed and
+the two implications proved in `SliceFinitenessProof` (theorem
+`sliceFiniteness`). This Lean file only
 defines the three propositions and checks the combined parameter telescope.
 
 The module proves no compact-group-to-differential implication, joint

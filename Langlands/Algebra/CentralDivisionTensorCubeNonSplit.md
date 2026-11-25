@@ -1,6 +1,6 @@
 # Actual tensor cubes of degree-six division algebras do not split
 
-This derived supporting unit proves
+This derived module, which supports `CentralDivisionTensorCubeProof`, proves
 `Langlands.CentralSimple.centralDivision_degree_six_tensorCube_not_split`:
 for every field `k` and actual finite-dimensional central division algebra
 `D/k` with `Module.finrank k D = 36`, the actual algebra
@@ -41,7 +41,7 @@ count and the reindexing; it does not use centrality.
 The published proposition
 `Langlands.CentralSimple.CentralDivisionDegreeSixTensorCubeNonSplitStatement`
 (positive matrix sizes only) is proved in `CentralDivisionTensorCubeProof` by
-applying the theorem of this unit, whose conclusion holds for every natural
-matrix size. This unit proves only the arithmetic statement. It neither
+applying the theorem of this module, whose conclusion holds for every natural
+matrix size. This module proves only the arithmetic statement. It neither
 constructs a Tits obstruction of an E6 or E7 group nor compares one with this
 tensor cube.

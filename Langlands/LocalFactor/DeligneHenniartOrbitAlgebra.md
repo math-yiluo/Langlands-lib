@@ -1,6 +1,6 @@
 # Finite-orbit algebra for the norm--trace comparison
 
-Worker 126 develops internal algebraic helpers for the direct proof of the
+This module develops internal algebraic helpers for the direct proof of the
 Deligne--Henniart top-layer norm--trace congruence. They are derived from
 Mathlib finite group actions, finite sums, and normal extension theory.
 No local-field estimate is asserted here.

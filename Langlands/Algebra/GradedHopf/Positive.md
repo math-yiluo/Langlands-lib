@@ -1,10 +1,8 @@
 # The positive part of a ℤ-graded augmented algebra
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. It builds on
+This module builds on
 `Langlands.Algebra.GradedHopf.Quotient` and `Langlands.Algebra.GradedHopf.LaurentCoaction`
-(same author) and applies the Library theorem
+and applies the Library theorem
 `Langlands.Algebra.GradedFormallySmooth.exists_homogeneous_aeval_bijective`
 (module `Langlands.CommutativeAlgebra.GradedFormallySmoothPolynomial`).
 

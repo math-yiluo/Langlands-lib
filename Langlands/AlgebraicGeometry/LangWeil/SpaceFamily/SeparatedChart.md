@@ -1,7 +1,8 @@
 # Symmetric tuple charts of a separated algebraic space
 
-Author: Worker 75. The construction of the charts `e_n` (`exists_chart`) is copied from Worker 80's
-draft proof of `UniformFieldPointChartsStatement` (Task 5417). A helper module of the proof of
+The construction of the charts `e_n` (`exists_chart`) is copied from the proof of
+`UniformFieldPointChartsStatement` (`exists_chart` in the module
+`Langlands.AlgebraicGeometry.AlgebraicSpace.UniformFieldPointChartsProof`). A helper module of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement`. Provenance:
 internal. The construction follows Stacks Project, Lemma 68.8.3 (Tag 0BBN), through the
 Library's tuple machinery for étale equivalence relations.

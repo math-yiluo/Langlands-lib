@@ -174,7 +174,7 @@ def CuspidalDeterminantMultipleStatement : Prop :=
 
 end Langlands.Automorphic
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open Langlands.Global
 
@@ -206,4 +206,4 @@ def HeckeDeterminantTwistStatement : Prop :=
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

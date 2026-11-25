@@ -9,8 +9,8 @@ Waldspurger, Lemma VI.2.2 (printed p. 298): for `ψ ∈ C^∞(O, P)` there is `C
 for `ψ ∈ C^∞(O, P)`, `f_ψ(g) = ∫_O µ(ω) (E^G_P ψ_ω)(g) dω`, for the measure on `O` such that
 `Im X(M) → O`, `χ ↦ ω ⊗ χ`, preserves measures locally.
 
-Here `C^∞(O, P)` is Worker 200's `productInducedSmoothOrbitSections` and `E^G_P ψ_ω` is
-Worker 200's `unitaryOrbitCoefficientMap` (at every class of the orbit) and
+Here `C^∞(O, P)` is `productInducedSmoothOrbitSections` and `E^G_P ψ_ω` is
+`unitaryOrbitCoefficientMap` (at every class of the orbit) and
 `unitaryOrbitRepresentativeCoefficientMap` (at every representative). The module proves the
 bound of Lemma VI.2.2 for both, from the uniform bound for smooth families in the compact picture
 (`norm_family_coefficientMap_le_xi`, `InducedCoefficientTwistXi`). It then defines the wave packet

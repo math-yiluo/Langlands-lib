@@ -1,6 +1,6 @@
 # Renard VI.8.1: actual universal tensor finiteness
 
-Worker 1759. Statement and necessary comparison construction from David Renard,
+Statement and necessary comparison construction from David Renard,
 *Représentations des groupes réductifs p-adiques*, 9 July 2026 version,
 VI.8.1, printed pp.187–189 / PDF pp.193–195. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -41,7 +41,9 @@ admissibility or projectivity is used in this construction. Its pure-tensor
 formula is `b ⊗ v ↦ b ⊗ v.val`.
 `UniversalTensorFixedComparison` asserts an actual B-linear equivalence
 `(B ⊗ E)^J ≃ₗ[B] B ⊗ E^J` whose inverse linear map is exactly this constructed
-inclusion. Existence of that equivalence remains a proposition to prove.
+inclusion. Existence of that equivalence is a proposition, not proved here;
+`universalTensorFixedComparison` in `RationalUniversalTensorFinitenessProof`
+proves it.
 
 The conjunction `UniversalTensorFiniteness` contains flatness and, for each
 compact open J, this precise comparison and finite projectivity. These are
@@ -61,5 +63,5 @@ the complete common norm kernel are already proved in
 `UnramifiedRationalNormalizedModels` using the closed actual Levi.
 
 No proof of tensor flatness, comparison bijectivity or fixed finite projectivity
-is supplied here. VI.8.2 is a separate statement unit, and VI.8.3, VI.8.5 and the
+is supplied here. VI.8.2 is a separate statement, and VI.8.3, VI.8.5 and the
 VI.9 uniform-compression argument remain outside this module.

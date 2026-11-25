@@ -1,7 +1,5 @@
 # Proof of the integral Brauer character-lattice equality
 
-Author: Worker 84, who wrote the proof and this explanation.
-
 This file proves the conjunct `IntegralBrauerCharacterLatticeStatement G` of the Library proposition
 `Langlands.FiniteRep.FiniteBrauerTheoryStatement` (module `Langlands.Representation.Finite.BrauerStatement`).
 The target is unchanged and keeps its hypotheses: `G` is a group in universe `uG` with a `Fintype` instance.
@@ -32,19 +30,20 @@ of characters of hyperelementary groups; see the Markdown of the ported modules.
   modules `Langlands.Representation.Finite.Virtual` (`MonomialDatum`, `inducedCharacter`,
   `inducedCharacterLattice`, `virtualCharacters`, `mem_virtualCharacters_iff`, `inducedCharacterLattice_le`,
   `oneDimensional`, `character_oneDimensional`) and `Langlands.Representation.Finite.Induction` (`induceRep`).
-- `Langlands.Representation.Finite.InducedCharacterProof` (Worker 84), for
+- `Langlands.Representation.Finite.InducedCharacterProof`, for
   `Langlands.FiniteRep.InducedCharacter.inducedCharacterFormula`, the proof of
   `FiniteInducedCharacterFormulaStatement`: the character of the actual induction `induceRep S V` at `g` is
   `(Nat.card S)⁻¹ * ∑ x : G, [x⁻¹ g x ∈ S] V.character (x⁻¹ g x)`.
-- `Langlands.AnthropicFLT.Theorems.Thm_BrauerInduction_exists_trace_eq_sum_zsmul_induced_linearCharacter`, the
-  port of the Anthropic FLT theorem `BrauerInduction.exists_trace_eq_sum_zsmul_induced_linearCharacter` (ported in
-  the same contribution; see that module's Markdown for source, licence and changes). For a finite group `K : Type`
-  and `ρ : K →* GL (Fin n) ℂ` it gives subgroups `H i`, unit characters `ψ i : H i →* ℂˣ` and integers `a i` with
+- `Langlands.Representation.Finite.BrauerTrace`, for
+  `Langlands.FiniteRep.BrauerTrace.exists_trace_eq_sum_zsmul_induced_linearCharacter`, Brauer's theorem in trace
+  form (the Library's port of the Anthropic FLT proof; see that module's Markdown for source, licence and changes).
+  For a finite group `K` in any universe and `ρ : K →* GL (Fin n) ℂ` it gives subgroups `H i`, unit characters
+  `ψ i : H i →* ℂˣ` and integers `a i` with
   `trace (ρ g) = ∑ i, (a i : ℂ) * ((Nat.card (H i))⁻¹ * ∑ y : K, [y⁻¹ g y ∈ H i] ψ i (y⁻¹ g y))`.
 
-The external theorem concerns a group in universe `0`, matrix representations, and a normalized conjugation sum.
-The target concerns groups in an arbitrary universe, `FDRep` representation classes, and characters of actual
-induced representations. This file bridges those three differences.
+That theorem concerns matrix representations and a normalized conjugation sum. The target concerns `FDRep`
+representation classes and characters of actual induced representations. This file bridges these two
+differences; both are stated for groups in an arbitrary universe.
 
 ## Matrix model
 
@@ -70,12 +69,12 @@ Let `e : G ≃* K` be an isomorphism of finite groups (independent universes).
 ## The lattice
 
 - `character_mem_inducedCharacterLattice V`: for every `V : FDRep ℂ G`, the character `V.character` lies in
-  `inducedCharacterLattice`. Mathlib's `Finite.exists_type_univ_nonempty_mulEquiv` gives a finite group `K : Type` and
-  `e : G ≃* K`. Apply the external theorem to `(matrixModel V.ρ).comp e.symm`, obtaining `H i`, `ψ i` and `a i`.
-  Evaluating at `e g` and using `matrixModel_trace` gives `V.character g` on the left. By
-  `inducedCharacter_pullbackDatum`, the `i`-th summand on the right is `a i • inducedCharacter (pullbackDatum e (H i) (ψ i)) g`.
-  Hence `V.character = ∑ i, a i • inducedCharacter (pullbackDatum e (H i) (ψ i))`, a finite `ℤ`-combination of
-  generators of the lattice.
+  `inducedCharacterLattice`. Apply Brauer's theorem in trace form to `matrixModel V.ρ`, obtaining `H i`, `ψ i` and
+  `a i`; `matrixModel_trace` gives `V.character g` on the left. By `inducedCharacter_pullbackDatum` for the identity
+  `MulEquiv.refl G`, the `i`-th summand on the right is
+  `a i • inducedCharacter (pullbackDatum (MulEquiv.refl G) (H i) (ψ i)) g`. Hence
+  `V.character = ∑ i, a i • inducedCharacter (pullbackDatum (MulEquiv.refl G) (H i) (ψ i))`, a finite
+  `ℤ`-combination of generators of the lattice.
 - `characterLattice`: the inclusion `inducedCharacterLattice ≤ virtualCharacters` is the Library's
   `inducedCharacterLattice_le`. Conversely, by `mem_virtualCharacters_iff`, a virtual character is
   `character a - character b` for representation classes `a`, `b`. Choosing representatives `V`, `W` of the classes

@@ -65,8 +65,9 @@ separate equivalences. Stability of both properties under actual base
 change then permits a common finite enlargement for the conjunction; that
 common-enlargement argument is a proof obligation, not a hypothesis.
 
-This unit states the three equivalences. It does not construct a model
+This module states the three equivalences. It does not construct a model
 for an arbitrary field morphism, choose a common dimension on target
 components, prove Lang–Weil or integral-point surjectivity, or assert
-adelic openness. Those consumers and the proof of this statement remain
-separate obligations.
+adelic openness. Those consumers remain separate obligations. The proof of
+this statement is `adelicSpreadEventualSmoothFiberGeometry` in
+`AdelicSpreadEventualSmoothFiberGeometryProof`.

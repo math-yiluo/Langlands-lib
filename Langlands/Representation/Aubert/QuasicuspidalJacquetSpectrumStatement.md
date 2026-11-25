@@ -1,7 +1,5 @@
 # Conditional quasicuspidal Jacquet spectrum comparison
 
-Author: Worker 320.
-
 `Langlands.Aubert.QuasicuspidalJacquetSpectrumStatement` is an internal
 conditional interface for a supplied actual signed Aubert image. The module
 defines a proposition and supplies no proof.

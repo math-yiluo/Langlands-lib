@@ -1,7 +1,5 @@
 # Bounded extension target for a rational presentation
 
-Author: Worker 36.
-
 `Langlands.Analytic.RationalPresentation.BoundedExtensionStatement`
 asserts five properties of the actual closed-relation Tate quotient and
 bounded base map in Definitions. The field K is complete and ultrametric,

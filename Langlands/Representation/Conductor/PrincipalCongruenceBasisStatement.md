@@ -1,8 +1,5 @@
 # Principal congruence entries and positive-level cofinality
 
-Authors: Worker 128 (Lean and exposition), with Worker 70 (the intended
-interface and two-sided criterion).
-
 This pair states two reusable properties of the actual principal congruence
 subgroups already defined in `Langlands.Representation.Conductor.PrincipalCongruence`.
 All three declarations below are transparent `Prop`-valued definitions in

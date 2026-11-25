@@ -51,12 +51,13 @@ private def completedPrecompEquiv (σ : Integers K ≃ₐ[𝒪[K]] Integers K)
 private def nilpDeligneCompletedAut (hπ : Irreducible π)
     (e : Aut (nilpSheafClassFunctor d π K (coefficientUniformizer_ne_zero hπ)))
     (σ : Integers K ≃ₐ[𝒪[K]] Integers K) : Aut (nilpDeligneCompletedFunctor (d := d) hπ) :=
-  NatIso.ofComponents (fun B => ((e.app B).toEquiv.prodCongr (completedPrecompEquiv σ B)).toIso)
+  Aut.of <| NatIso.ofComponents
+    (fun B => ((e.asIso.app B).toEquiv.prodCongr (completedPrecompEquiv σ B)).toIso)
     (fun f => by
       apply ConcreteCategory.hom_ext
       intro x
       apply Prod.ext
-      · exact ConcreteCategory.congr_hom (e.hom.naturality f) x.1
+      · exact ConcreteCategory.congr_hom (e.asIso.hom.naturality f) x.1
       · rfl)
 
 /-- Act on the Deligne class and by inverse precomposition on the actual base map. -/
@@ -67,6 +68,7 @@ def nilpDeligneCompletedAutHom (hπ : Irreducible π) :
   toFun x := nilpDeligneCompletedAut hπ x.1 x.2
   map_one' := by
     apply Aut.ext
+    apply Iso.ext
     apply NatTrans.ext
     funext B
     apply ConcreteCategory.hom_ext
@@ -77,6 +79,7 @@ def nilpDeligneCompletedAutHom (hπ : Irreducible π) :
       exact AlgHom.comp_id _
   map_mul' e f := by
     apply Aut.ext
+    apply Iso.ext
     apply NatTrans.ext
     funext B
     apply ConcreteCategory.hom_ext
@@ -112,12 +115,12 @@ variable (x : (nilpDeligneCompletedFunctor (d := reducedDegree K D) hπ).obj B)
 
 /-- The first component is the actual projective matrix action. -/
 theorem nilpDeligneCompletedDivisionAction_deligne :
-    ((nilpDeligneCompletedDivisionAction hπ g).hom.app B x).1 =
-      (nilpSheafProjectiveLeftHom hπ (Matrix.ProjGenLinGroup.mk g.1)).hom.app B x.1 := rfl
+    ((nilpDeligneCompletedDivisionAction hπ g).asIso.hom.app B x).1 =
+      (nilpSheafProjectiveLeftHom hπ (Matrix.ProjGenLinGroup.mk g.1)).asIso.hom.app B x.1 := rfl
 
 /-- The completed base coordinate precomposes with the negative order power of arithmetic Frobenius. -/
 theorem nilpDeligneCompletedDivisionAction_base :
-    ((nilpDeligneCompletedDivisionAction hπ g).hom.app B x).2 =
+    ((nilpDeligneCompletedDivisionAction hπ g).asIso.hom.app B x).2 =
       x.2.comp ((arithmeticFrobenius K ^ (-LocalDivision.DrinfeldAction.exponent K D g)).toAlgHom) := by
   change x.2.comp ((arithmeticFrobenius K ^ LocalDivision.DrinfeldAction.exponent K D g).symm.toAlgHom) = _
   rw [zpow_neg]

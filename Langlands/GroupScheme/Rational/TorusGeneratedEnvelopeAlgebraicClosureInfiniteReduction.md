@@ -1,6 +1,6 @@
 # Reduction of the infinite-field envelope compatibility
 
-Worker 1523. This module proves a conditional theorem. It does not prove any of
+This module proves a conditional theorem. It does not prove any of
 the three statements it assumes.
 
 ## Main theorem

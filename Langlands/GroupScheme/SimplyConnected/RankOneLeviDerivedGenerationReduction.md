@@ -1,7 +1,5 @@
 # Derived generation by rank-one Levi factors from a factor dichotomy
 
-Authors: Worker 180.
-
 This module, `Langlands.GroupScheme.SimplyConnected.RankOneLeviDerivedGenerationReduction`,
 contains one proposition definition and four theorems, all at arbitrary
 universe `u`:

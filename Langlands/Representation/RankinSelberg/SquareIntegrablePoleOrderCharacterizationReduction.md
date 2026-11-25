@@ -10,9 +10,11 @@ Then `π ≃ π'`. The Library states it as
 `N = n + 2`, test ranks `r + 1` for `r ≤ n`, and the L-factors given by
 `IsLanglandsPairLPolynomial`.
 
-This module derives that statement from the prerequisites that the Library
-states but does not yet prove. The main theorem is unconditional apart from
-these prerequisites. It does not prove the statement outright.
+This module derives that statement from prerequisites that the Library
+states as separate propositions. The main theorem is unconditional apart from
+these prerequisites. It does not prove the statement outright; the closed
+proof is `squareIntegrablePoleOrderCharacterization` (module
+`SquareIntegrablePoleOrderCharacterizationProof`).
 
 ## The prerequisites
 
@@ -32,9 +34,14 @@ conjunction of the following Library propositions:
 - `SupercuspidalEqualRankLFactorStatement.{uF, max uF uV, max uF uV}`: JPSS 1983,
   Proposition (8.1)(ii).
 
-None of the four is proved in Library commit 6f182f92.
+All four are proved in the Library: `squareIntegrableLanglandsExhaustion`
+and `squareIntegrableLanglandsClassification` (modules
+`Classification.SquareIntegrableLanglandsExhaustionProof` and
+`Classification.SquareIntegrableLanglandsClassificationProof`),
+`squareIntegrableDataLFactor`, `segmentHeadLFactor` and
+`supercuspidalEqualRankLFactor`.
 
-The accepted module `SquareIntegrableDataPoleOrder` also takes JPSS 1983,
+The module `SquareIntegrableDataPoleOrder` also takes JPSS 1983,
 Proposition (8.1)(i), and the Whittaker type of irreducible supercuspidal
 representations as hypotheses. Both are proved in the Library, and the main
 theorem here discharges them inside its proof. (8.1)(i) is
@@ -54,24 +61,24 @@ Derived. The proof follows Henniart's own route.
   part (a) and says that part (b) is proved in the same way.
 - Henniart 2002, §4.2, printed page 599 (PDF page 13): the pole order at
   `s = 0` is a count over the segments. On the representation side this is the
-  accepted module `SquareIntegrableDataPoleOrder`. It computes the pole order
+  module `SquareIntegrableDataPoleOrder`. It computes the pole order
   of `L(s, π × St(D))` as `poleLinkCount a D^∨`, where `a` is the multisegment
   of `π`. It uses JPSS 1983, Theorem (9.5), Henniart 2002, §2.6, and JPSS 1983,
   Proposition (8.1).
 - Henniart 2002, §§4.2-4.4, printed pages 599-600 (PDF pages 13-14): these link
-  counts determine the multisegment. This is the accepted Library theorem
+  counts determine the multisegment. This is the Library theorem
   `multisegment_eq_of_poleLinkCount_eq` of `PoleOrderSegmentCombinatorics`.
 - Henniart 2002, §2.8, printed page 596: the classification of irreducible
-  representations by essentially square-integrable data. The accepted module
-  `SegmentLabelledDatumComparison` (Worker 1702) turns equal multisegments into
+  representations by essentially square-integrable data. The module
+  `SegmentLabelledDatumComparison` turns equal multisegments into
   isomorphic representations.
 - The degree lemma and the realization of the test representation are
   internal helpers.
 
 ## Contents (namespace `RankinSelberg`)
 
-- `SquareIntegrablePoleOrderCharacterizationPrerequisites` (definition, the
-  selected declaration of the candidate): the conjunction above. Exhaustion and
+- `SquareIntegrablePoleOrderCharacterizationPrerequisites` (definition): the
+  conjunction above. Exhaustion and
   classification are combined for each `p` and `F`, in that order.
 - `degree_map_univ_of_isSegmentLabelling`: let `d` be an essentially
   square-integrable Langlands datum of `GL_n(F)` and `Δ` a segment labelling
@@ -128,11 +135,9 @@ supercuspidal and the pole-order hypothesis `htest`.
 
 ## Dependencies
 
-All imports except two are in Library commit 6f182f92. The two exceptions are
-accepted candidates that are not yet merged. The snapshot contains unchanged
-copies of both.
+All imports are Library modules. They include:
 
 - `Langlands/Representation/RankinSelberg/SquareIntegrableDataPoleOrder.lean`
-  and `.md`: candidate 74b8d9c2 (Worker 1710).
+  and `.md`;
 - `Langlands/Representation/RankinSelberg/SegmentLabelledDatumComparison.lean`
-  and `.md`: candidate a0bc4e01 (Worker 1702).
+  and `.md`.

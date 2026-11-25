@@ -1,5 +1,4 @@
 import Langlands.AllFieldBZ.LocalField.Definitions
-import Langlands.AllFieldBZ.LocalField.Definitions
 import Langlands.Group.GL.Padic
 
 /-!

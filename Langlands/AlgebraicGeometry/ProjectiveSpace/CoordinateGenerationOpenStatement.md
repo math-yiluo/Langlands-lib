@@ -40,7 +40,7 @@ The source is the registered original `stacks-projective-space-twists-morphisms-
 - Lemma 27.10.4 defines the open `W = W_d` where the twists `𝒪_X(dm)` are invertible and the multiplication maps are isomorphisms. It identifies `W_d` with the union of the opens `D₊(gh)`, where `g, h` are homogeneous and `deg g = deg h + d`. For `d = 1`, taking `g = X j` and `h = 1` gives every `D₊(X j)`. By the coordinate cover, `W_1` is the whole space.
 - Lemma 27.10.5 says the following. Let `d ≥ 1`, let `m ≥ 1` (the source's `n`) and let `f ∈ S_{md}` with image section `s` of `𝒪_W(md)`. Then `W_s = D₊(f) ∩ W`. With `d = 1`, `m = 1`, `f = X i` and `W` the whole space, this is `X_s = D₊(X i)` for `s = X i / 1`.
 
-The locus `X_s` in Lemma 27.10.5 is defined in the registered original `stacks-invertible-picard-ampleness-2026-10-21`, file `01CY.html` (Stacks Lemma 17.25.10, tag 01CY). For an invertible module `ℒ` on a locally ringed space and a section `s`, `X_s` is the set of points `x` where the image of `s` does not lie in `𝔪_x ℒ_x`. The lemma proves that `X_s` is open and that `s : 𝒪_{X_s} → ℒ|_{X_s}` is an isomorphism. Conversely, if `s : 𝒪_U → ℒ|_U` is an isomorphism on an open `U`, then each stalk `s_x` with `x ∈ U` is a basis of `ℒ_x`, so it is not in `𝔪_x ℒ_x`. So for an invertible module, `X_s` is the largest open on which `𝒪 → ℒ`, `1 ↦ s`, is an isomorphism. That is the Library's `trivializationOpen`. The published theorem `Langlands.SchemeModule.lineBundleResidueOpenComparison` in `Langlands.AlgebraicGeometry.Modules.SectionResidueComparison` formalizes this identification: `nonvanishingLocus L.obj s = trivializationOpen L.obj s` for every `L : LineBundle X`.
+The locus `X_s` in Lemma 27.10.5 is defined in the registered original `stacks-invertible-picard-ampleness-2026-10-21`, file `01CY.html` (Stacks Lemma 17.25.10, tag 01CY). For an invertible module `ℒ` on a locally ringed space and a section `s`, `X_s` is the set of points `x` where the image of `s` does not lie in `𝔪_x ℒ_x`. The lemma proves that `X_s` is open and that `s : 𝒪_{X_s} → ℒ|_{X_s}` is an isomorphism. Conversely, if `s : 𝒪_U → ℒ|_U` is an isomorphism on an open `U`, then each stalk `s_x` with `x ∈ U` is a basis of `ℒ_x`, so it is not in `𝔪_x ℒ_x`. So for an invertible module, `X_s` is the largest open on which `𝒪 → ℒ`, `1 ↦ s`, is an isomorphism. That is the Library's `trivializationOpen`. The theorem `Langlands.SchemeModule.lineBundleResidueOpenComparison` in `Langlands.AlgebraicGeometry.Modules.SectionResidueComparison` formalizes this identification: `nonvanishingLocus L.obj s = trivializationOpen L.obj s` for every `L : LineBundle X`.
 
 This proposition is therefore the source's `X_s = D₊(X i)` for `s = X i / 1`, stated for the Library's generation open rather than the residue nonvanishing locus. Using the residue comparison requires `twistOne R n` to be a line bundle. That fact is the second clause of the separate local-frame statement `ProjectiveSpaceTwistOneLocalFramesStatement`. The proposition stated here assumes neither the comparison nor local freeness. These are routes for the proof, not premises.
 
@@ -48,7 +48,7 @@ The retained comment threads were read. On Section 27.10, comment #8507 (fixed i
 
 ## Role and what is not claimed
 
-A later ampleness proof uses this proposition. Stacks Definition 28.27.1 (tag 01PS in `01PS.html` of the second original) and the Library's ampleness definition need the whole generation open of a section to be affine, not just some affine neighbourhood inside it. With this equality, the whole generation open of `X i / 1` is `D₊(X i)`. That open is affine by the published coordinate-cover proof, and these opens cover the space.
+The ampleness proof `projectiveSpaceTwistOneAmple` in `ProjectiveSpace.TwistOneAmpleProof` uses this proposition. Stacks Definition 28.27.1 (tag 01PS in `01PS.html` of the second original) and the Library's ampleness definition need the whole generation open of a section to be affine, not just some affine neighbourhood inside it. With this equality, the whole generation open of `X i / 1` is `D₊(X i)`. That open is affine by the coordinate-cover proof, and these opens cover the space.
 
 This module asserts none of the following:
 
@@ -59,13 +59,13 @@ This module asserts none of the following:
 - tensor comparisons `𝒪(1)^{⊗ m} ≅ 𝒪(m)`;
 - ampleness or projectivity.
 
-## Expected proof obligations
+## Proof
 
-A separate exact-target `lean.proof@1` task proves the whole proposition, with no added outer hypotheses. That proof should reuse existing owners rather than restate or duplicate them:
+`projectiveSpaceCoordinateGenerationOpen` in `ProjectiveSpace.CoordinateGenerationOpenProof` proves the whole proposition, with no added outer hypotheses. A proof should reuse the existing results rather than restate or duplicate them:
 
-- the published coordinate-cover proof `projectiveSpaceCoordinateCover`;
-- the proof successor of the local-frame statement `ProjectiveSpaceTwistOneLocalFramesStatement` (task `5b16e18e-acbd-4449-8966-975c52bbee25`), whose first clause gives trivialization of `X i / 1` on `D₊(X i)`;
-- the published general section-locus and residue infrastructure in `Langlands.AlgebraicGeometry.Modules.SectionLocusComparison` and `Langlands.AlgebraicGeometry.Modules.SectionResidueComparison`.
+- the coordinate-cover proof `projectiveSpaceCoordinateCover`;
+- the proof `projectiveSpaceTwistOneLocalFrames` (in `ProjectiveSpace.TwistOneLocalFramesProof`) of the local-frame statement `ProjectiveSpaceTwistOneLocalFramesStatement`, whose first clause gives trivialization of `X i / 1` on `D₊(X i)`;
+- the general section-locus and residue infrastructure in `Langlands.AlgebraicGeometry.Modules.SectionLocusComparison` and `Langlands.AlgebraicGeometry.Modules.SectionResidueComparison`.
 
 There are two natural routes. The direct route works as follows:
 

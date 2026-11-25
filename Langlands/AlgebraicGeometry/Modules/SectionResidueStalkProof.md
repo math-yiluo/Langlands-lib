@@ -46,8 +46,6 @@ proves the target.
 This is an internal derived proof of the Library's residue/stalk interface.
 It imports the unchanged `SectionResidueStatements`,
 `ResidueLocalChartProof`, and `UnitEndResidueStalkProof` modules by Lean
-name. The local chart and stalk cancellation argument adapts Worker 311's
-published `LineBundleFrameOpen`; Worker 149 assembled this proof, with
-Worker 311 credited for that argument. The imported actual residue-chart
-proof is by Worker 354. This module proves the pointwise residue/stalk
+name. The local chart and stalk cancellation argument adapts
+`LineBundleFrameOpen`. This module proves the pointwise residue/stalk
 criterion; the full open-locus equality is a separate statement.

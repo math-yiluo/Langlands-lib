@@ -7,8 +7,8 @@ covering, and the original group, compact and Iwasawa data. It assumes no upper
 Xi estimate.
 
 The proof first transfers the original simultaneous standard basis to the
-canonical Levi scheme using Worker 658 and Worker 734's unchanged inheritance
-modules. Its minimal-face basis contains a member inside the original
+canonical Levi scheme using the inheritance module
+`Langlands.BruhatTits.SpecialCompact.StandardLeviBasisInheritance` and its imports. Its minimal-face basis contains a member inside the original
 Iwasawa compact's Levi preimage, so the published intrinsic lower Xi estimate
 applies to a compatible component. Every ambient dominant cocharacter is
 dominant for the intrinsic Levi, since its simple roots are exactly the
@@ -24,6 +24,7 @@ and centrality of uniformizer points then give the lower estimate on every
 original chamber point.
 
 Combining it with the preceding full-minimal-Levi upper extension and the
-exact modulus factorization proves `HasRationalXiLeviComparison` from the
-separately owned `RationalXiUpperBoundStatement`. That substantive upper proof
-remains an explicit input and is not supplied here.
+exact modulus factorization proves `HasRationalXiLeviComparison` from
+`RationalXiUpperBoundStatement`. That substantive upper proof
+remains an explicit input and is not supplied here; it is `rationalXiUpperBound`
+(`RationalXiUpperBoundProof`).

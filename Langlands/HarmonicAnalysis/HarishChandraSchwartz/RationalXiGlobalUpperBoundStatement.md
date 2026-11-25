@@ -1,9 +1,10 @@
 # The global upper bound for the actual spherical function
 
-Worker 248, Task 5460. Module
+Module
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalXiGlobalUpperBoundStatement`
 states `RationalXiGlobalUpperBoundStatement.{u}` at arbitrary universe `u`. The
-global estimate itself is a proof target. The module proves its reformulation
+global estimate itself is not proved here; it is proved as `rationalXiGlobalUpperBound`
+in `RationalXiGlobalUpperBoundProof`. The module proves its reformulation
 in the `XiUpperBound` interface and its implication for `UnipotentXiBound`.
 
 Let `F` be a nonarchimedean local field, `G` a connected reductive affine group

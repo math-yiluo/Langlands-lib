@@ -1,7 +1,5 @@
 # Modular characters in continuous semidirect coordinates
 
-Author: Worker 53.
-
 This internal development compares Mathlib's modular character with the Haar
 modulus of inner conjugation and then computes it in the published continuous
 semidirect coordinates. It is supporting material for the exact rational

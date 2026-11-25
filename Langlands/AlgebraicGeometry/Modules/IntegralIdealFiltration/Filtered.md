@@ -1,6 +1,6 @@
 # Filtrations by integral ideal pushforwards and the ascending chain argument
 
-Author: Worker 716. This is an internal helper module for
+This is an internal helper module for
 `Langlands.AlgebraicGeometry.Modules.coherentIntegralIdealFiltration`. Its definitions are
 derived, not taken from a source: they restate the conclusion of the published
 `CoherentIntegralIdealFiltrationStatement` (Stacks Project, tag 01YF) recursively.

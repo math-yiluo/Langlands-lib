@@ -1,26 +1,26 @@
 # The comparison transformation from smooth Godement cohomology to derived compact sections
 
-Author: Worker 61. The module imports my
+The module imports
 `Langlands.Cohomology.AcyclicResolution.Comparison` (`comparisonNatTrans`,
 `comparisonNatTrans_app`, `comparison_zero`, `homologyZeroIso`, `cyclesZeroIso`,
-`toCyclesZero`, `comp_lift_id`, `comparisonNatIso`), Worker 3's
+`toCyclesZero`, `comp_lift_id`, `comparisonNatIso`),
 `Langlands.Cohomology.SmoothGodementComparison.Statement` (`comparisonMap`, and through it
-`CokernelResolutionStatement` and `CokernelComplex.augmentationMap`) and Worker 3's
+`CokernelResolutionStatement` and `CokernelComplex.augmentationMap`) and
 `Langlands.Cohomology.SmoothGodement.Statement`
-(`SmoothGodementCompactDerivedAcyclicStatement`). It also uses my published
+(`SmoothGodementCompactDerivedAcyclicStatement`). It also uses
 `Godement.smoothComplexFunctor`, `Godement.smoothZeroFunctor`,
 `Godement.smoothCoaugmentation`, `Godement.mono_smoothCoaugmentation_app`,
 `SmoothGodementCohomology.smoothGodementCompactCohomology` and
 `smoothGodementCompactCohomologyZeroIso`, together with
-`EquivariantGodementCohomology.cyclesIso`. From Worker 13 it uses
-`SmoothSheafCohomology.compactDerived` and `compactDerivedZeroIso`.
+`EquivariantGodementCohomology.cyclesIso`. From `Langlands.Cohomology.SmoothSheafCohomology`
+it uses `SmoothSheafCohomology.compactDerived` and `compactDerivedZeroIso`.
 
 Composition `f ≫ g` is `f` followed by `g`.
 
 ## Setting
 
 All declarations are in the namespace `Langlands.Cohomology.SmoothGodementComparison`, the
-namespace of Worker 3's `comparisonMap`. `R` is a commutative ring, `G` a topological group
+namespace of `comparisonMap`. `R` is a commutative ring, `G` a topological group
 and `X` a topological space, all in one universe `u`. `G` acts on `X` by `MulAction` with
 `ContinuousConstSMul G X`, and `HasStableNeighbourhoods G X` holds. These are the
 hypotheses of the published smooth Godement construction and of `compactDerived`.
@@ -62,7 +62,8 @@ here.
 - `comparisonTrans_app hK F I φ hφ q : (comparisonTrans hK q).app F =
   comparisonMap R G X I φ q`. This holds for every injective resolution `I` of `F` and every
   cochain map `φ` from the smooth Godement complex of `F` to `I.cocomplex` with
-  `augmentationMap T η F ≫ φ = I.ι`. The right side is Worker 3's definition, unchanged.
+  `augmentationMap T η F ≫ φ = I.ι`. The right side is the definition `comparisonMap` of
+  `SmoothGodementComparison.Statement`, unchanged.
   Hence the components do not depend on the choice of `I` or `φ`.
 - `homologyZeroIso_eq F` (with `[QuasiIso (augmentationMap T η F)]`): the generic
   identification `AcyclicResolution.homologyZeroIso Φ (augmentationMap T η F)` of degree-zero
@@ -77,7 +78,7 @@ here.
   compactDerived R G X q`, on a locally compact Hausdorff space, takes two hypotheses:
   `hcomp : AcyclicResolutionComparisonStatement.{u + 1, u, u + 1, u}` and
   `hacyc : SmoothGodement.SmoothGodementCompactDerivedAcyclicStatement R G X`. The first is
-  Worker 3's statement that acyclic resolutions compute right derived functors. The second
+  the statement that acyclic resolutions compute right derived functors. The second
   says that the terms of the smooth Godement complex are acyclic for `compactDerived`. The
   first is proved, at all universes and so at these, by the theorem
   `acyclicResolutionComparisonStatement` in
@@ -86,9 +87,9 @@ here.
   `AcyclicResolution.comparisonNatIso` for the smooth Godement resolution, and
   `comparisonIso_hom` (`simp`) says that its morphism is `comparisonTrans hK q`.
 
-## Relation to Worker 3's statements
+## Relation to the statements of `SmoothGodementComparison.Statement`
 
-Worker 3's `SmoothGodementComparison.Statement` states three propositions about
+`SmoothGodementComparison.Statement` states three propositions about
 `comparisonMap`: the degree-zero identity, invertibility on a locally compact Hausdorff
 space, and natural isomorphisms whose components are the comparison maps. None of them is
 proved here. The lemmas above reduce them to short arguments.
@@ -116,7 +117,7 @@ He records that "the construction is functorial in T", and states Lemma 2.2, an
 `RΓ_c`-acyclic resolution `0 → ℤ/ℓ^mℤ → F^0_m → F^1_m → ⋯`. On printed p.305 (PDF page 7)
 he concludes: "Thus Lemma 2.2 provides an isomorphism
 (2.3) `H^q_c(U(ẽ)_F̄, ℤ/ℓ^mℤ) ~→ Z^q_m/B^q_m = H^q(G^•_m(U(ẽ)_F̄))`". Both pages were
-rendered and read by Worker 61. The construction here is the ordinary-topology analogue
+read on the rendered scan. The construction here is the ordinary-topology analogue
 of the map behind (2.3): the smooth Godement complex replaces Berkovich's resolution,
 `compactDerived` replaces `H^q_c`, and arbitrary commutative coefficients replace
 `ℤ/ℓ^mℤ`. The map is constructed in the direction from Godement cohomology to derived

@@ -1,6 +1,6 @@
 # Badulescu property (P) for the Moeglin–Waldspurger recursion
 
-Worker 139 proves `Langlands.MoeglinWaldspurger.endingBound`, whose type is
+This module proves `Langlands.MoeglinWaldspurger.endingBound`, whose type is
 exactly the published proposition `Langlands.MoeglinWaldspurger.EndingBound`.
 For every finite multiset of nonempty closed integer intervals, if all input
 endings lie in `[b,b+k)`, every interval in its recursively computed `dual`

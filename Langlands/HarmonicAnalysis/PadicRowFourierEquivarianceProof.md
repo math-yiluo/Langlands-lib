@@ -1,7 +1,5 @@
 # P-adic row Fourier equivariance under general linear substitutions
 
-Author: Worker 234.
-
 The theorem
 `Langlands.HarmonicAnalysis.padicRowFourierEquivariance`
 proves exactly the published proposition

@@ -1,7 +1,5 @@
 # The locus where two fppf Picard classes agree, as a sieve on a scheme
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Picard.ClassEqualizerLocus`. It
 imports the Library modules
 `Langlands.AlgebraicGeometry.AlgebraicSpace.DiagonalEqualizer`

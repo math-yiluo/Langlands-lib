@@ -115,8 +115,8 @@ theorem representedCMNormalKernelComparison_connectedHom_injective
       composition unitCoherence associativity comparison symmetry stability square
       universality dualityNaturality polarizationStability compatibility h htor
       R U V hVU existence geometry hRigid (z.hom ≫ a)
-    have hs : a ≫ (quotientAction R U V hVU).ρ g =
-        a ≫ (quotientAction R U V hVU).ρ k := by
+    have hs : a ≫ ((quotientAction R U V hVU).ρ g).asHom =
+        a ≫ ((quotientAction R U V hVU).ρ k).asHom := by
       rw [← hab] at he
       simpa only [Category.assoc, representedCMNormalKernelComparison_ι_assoc,
         representedCMNormalGraph_snd] using

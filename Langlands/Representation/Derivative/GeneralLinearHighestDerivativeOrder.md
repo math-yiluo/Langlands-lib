@@ -1,6 +1,6 @@
 # Choosing a highest positive general-linear derivative order
 
-Worker 357. Internal construction from the published actual derivative functors,
+Internal construction from the published actual derivative functors,
 their positive-order detection theorem, and a bounded maximum in the natural
 numbers. No new original-source assertion is made.
 
@@ -25,7 +25,7 @@ The constructor uses `Classical.choice` through the greatest-order witness's
 of which proof of the same inequality is supplied. The output remains an actual
 derivative of `A`, indexed by the retained natural number.
 
-This unit does not construct a derivative constituent, quotient, support, or
+This module does not construct a derivative constituent, quotient, support, or
 comparison isomorphism. It does not prove either direction of the special-head
 product criterion. In particular no irreducibility assertion about the highest
 derivative is made. Although a finite-length consumer can later use general
@@ -70,40 +70,31 @@ The recursive audit at Library
 `e9121d2f8e2a84b24a5c3d710d82082ab261845c` finds 104 project modules including
 this new module, and 88 distinct direct external import roots. All 103 inherited
 Lean/Markdown pairs match that exact published Library byte for byte. No import
-or Markdown pair is missing. A scan against the host and inherited excluded
-task/declaration identifiers has no code hits. The closure has no proof holes,
+or Markdown pair is missing. A scan for the names of the results listed below
+as absent has no code hits. The closure has no proof holes,
 new axioms or prohibited command/tactic syntax. The mathematical route above,
-in addition to that scan, rules out reuse of a renamed excluded conclusion.
+in addition to that scan, rules out reuse of one of these conclusions under
+another name.
 
 Specifically absent are `GenericSegmentProductUniqueness`; multisegment and
 square-integrable or regular exhaustion; ordered head existence, quotient
 coverage and conversion; tempered uniqueness;
 `SquareIntegrableLanglandsClassification`; special-head product irreducibility
-in either direction; all excluded segment-socle existence, gluing,
+in either direction; all segment-socle existence, gluing,
 commutation and product criteria; segment full, head, or socle Jacquet
 formulas; segment exponent-norm formulas; analytic segment classification;
-Zelevinsky 1980 §§3.5 and 9.6, their proof successors, and any full derivative
-formula. No segment-socle portion of task
-`8e5b4563-0365-41c7-b134-70f2a0b36292` enters this closure. The full
-two-supercuspidal product structure is absent, and even the narrowly permitted
+Zelevinsky 1980 §§3.5 and 9.6, the modules proving them, and any full derivative
+formula. No segment-socle derivative result enters this closure. The full
+two-supercuspidal product structure is absent, and even the
 adjacent reducibility import is unnecessary here. The support proof's
 restricted `core_mid` and `core` steps are neither imported nor applied.
 
-This is consistent with the general derivative permission in the complete
-operator messages
-`/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md`
-and
-`/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md`.
-The narrower permissions and retained limits in
-`/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md`,
-`/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md`,
-`/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md`
-and
-`/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md`
-are preserved and are not needed as extra mathematical inputs here.
-All six trusted operator messages were read in full. Neither pending quotient
-nor pending shifted-support construction supplies an input to this unit.
-The exact full host criterion remains open.
+The module uses general derivative theory only. No support-proof
+intermediate is needed as an extra mathematical input here. Neither a
+quotient construction nor a shifted-support construction supplies an input to
+this module. The exact full special-head product criterion is proved separately
+in the Library, as `Langlands.Classification.segmentHeadProductIrreducibility`
+in `Classification.SegmentHeadProductIrreducibilityProof`.
 
 ## Full project import inventory
 

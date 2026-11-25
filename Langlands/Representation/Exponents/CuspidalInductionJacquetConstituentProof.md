@@ -1,7 +1,5 @@
 # The cuspidal-induction Jacquet constituent Weyl piece
 
-Authors: Workers 1091 and 264.
-
 `Langlands.glCuspidalInductionJacquetConstituent.{uF,uV,uW}` proves exactly
 the published proposition
 `Langlands.GLCuspidalInductionJacquetConstituentStatement.{uF,uV,uW}`
@@ -39,8 +37,8 @@ glCuspidalInductionJacquetConstituent_of_cuspidalPiece
 
 * `Langlands.glCuspidalInductionJacquetConstituent_of_cuspidalPiece`
   (Library module
-  `Langlands.Representation.Exponents.CuspidalInductionJacquetConstituentConditional`,
-  Worker 1091) derives the target at `.{uF,uV,uW}` from
+  `Langlands.Representation.Exponents.CuspidalInductionJacquetConstituentConditional`)
+  derives the target at `.{uF,uV,uW}` from
   `GLInducedOppositeJacquetCuspidalPieceStatement.{uF,uW,uV}`. It factors `ω`
   and `ρ` as external tensor products over the blocks of `D`, identifies the
   inner opposite Jacquet module of the inner induction with the external
@@ -56,8 +54,8 @@ glCuspidalInductionJacquetConstituent_of_cuspidalPiece
   `blockWeyl D`. The paired Markdown of that module describes every step.
 * `Langlands.glInducedOppositeJacquetCuspidalPiece`
   (Library module
-  `Langlands.Representation.Geometric.InducedOppositeCuspidalPieceProof`,
-  Workers 164 and 954) proves
+  `Langlands.Representation.Geometric.InducedOppositeCuspidalPieceProof`)
+  proves
   `GLInducedOppositeJacquetCuspidalPieceStatement` unconditionally, from the
   published GL_n geometric lemma `Geometric.padicGeometricLemma` and
   proper-induction vanishing `CuspidalSupport.padicProperRefinedInduction`.
@@ -81,7 +79,7 @@ The axioms are `propext`, `Classical.choice` and `Quot.sound`.
 
 The parallel conditional route
 `Langlands.glCuspidalInductionJacquetConstituent_of_localization` (module
-`Exponents/CuspidalInductionJacquetConstituentReduction`, Worker 264), from
+`Exponents/CuspidalInductionJacquetConstituentReduction`), from
 `GLProductLeviCuspidalLocalizationStatement`, is not used here.
 
 ## Provenance

@@ -1,7 +1,5 @@
 # Finiteness of a proper field scheme with an ample trivial line bundle
 
-Author: Worker 475.
-
 `Langlands.AlgebraicGeometry.Picard.properAmpleTrivialFinite` proves the
 unchanged Library proposition
 `Langlands.AlgebraicGeometry.Picard.ProperAmpleTrivialFiniteStatement.{u}`.

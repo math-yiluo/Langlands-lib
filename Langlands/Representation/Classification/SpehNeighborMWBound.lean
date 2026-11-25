@@ -42,7 +42,7 @@ theorem round_ending_le_first {a : Multisegment} {r : Round}
       exact Prod.Lex.monotone_fst _ _ hle
 
 /-- The emitted interval has one point per selected occurrence. -/
-theorem Round.emitted_length (r : Round) :
+theorem Round.emitted_length_eq_length_selectedList (r : Round) :
     r.emitted.length = r.selectedList.length := by
   simp only [Round.emitted, Interval.length, Round.selectedList, List.length_cons]
   omega
@@ -223,7 +223,7 @@ theorem dual_lengths_le_neighbor_rectangles (hP : EndingBound)
     intro I hI
     rw [dual_of_round hr] at hI
     rcases Multiset.mem_cons.mp hI with rfl | hI
-    · rw [Round.emitted_length]
+    · rw [Round.emitted_length_eq_length_selectedList]
       exact hlen
     · exact hP r.residual 0 l (by
         intro J hJ

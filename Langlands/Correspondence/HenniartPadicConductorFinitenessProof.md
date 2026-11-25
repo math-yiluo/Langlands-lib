@@ -1,6 +1,6 @@
 # Finiteness of Henniart's candidate sets with p-adic Bernstein–Zelevinsky finiteness
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartPadicConductorFinitenessProof`,
+Module `Langlands.Correspondence.HenniartPadicConductorFinitenessProof`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields) and `uV`
 (supercuspidal carriers), independent.
 

@@ -1,7 +1,5 @@
 # A finite family as an actual affine Weil restriction
 
-Worker 632.
-
 This internal construction realizes the finite disjoint-union step in the
 proof of Brian Conrad, *Reductive group schemes* (2014), Proposition 6.4.4
 and Remark 6.4.5, pp.232–233, registered as

@@ -1,7 +1,5 @@
 # Full V6 from root-coordinate equivariance
 
-Author: Worker 1045.
-
 This internal module reduces the centralizer compatibility V6 of a root
 function family to data on each actual root group: a coordinate, or a finite
 family of coordinates, with values in a finite extension `E / k`, and

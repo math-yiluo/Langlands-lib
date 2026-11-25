@@ -1,7 +1,5 @@
 # Translation spaces between actual torus embeddings
 
-Author: Worker 118.
-
 For an arbitrary field `k`, let `i : S.toGrp → G` and `j : S'.toGrp → H`
 be morphisms into affine group schemes. Supply actual isomorphisms `e : S ≅ S'`
 and `f : G ≅ H` with the commuting square
@@ -33,7 +31,7 @@ automorphism with `e.symm ≪≫ normalizingAut i n ≪≫ e`. Tensor induction
 then proves compatibility on `V S`; quotient induction proves compatibility
 of the original `translationAction` on the reduced translation spaces.
 
-This unit has internal provenance: it constructs the induced quotient of
+This module has internal provenance: it constructs the induced quotient of
 the published actual character, cocharacter, root and normalizer transport
 maps and proves its intrinsic identities. It introduces no external theorem
 or additional mathematical existence premise. It does not construct or compare

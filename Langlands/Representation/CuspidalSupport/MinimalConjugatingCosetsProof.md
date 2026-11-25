@@ -1,7 +1,5 @@
 # Minimal conjugating permutations and right block-Weyl cosets
 
-Author: Worker 165.
-
 This module proves the published
 `Langlands.CuspidalSupport.MinimalConjugatingCosetsTheorem` from
 `Langlands.Representation.CuspidalSupport.JacquetInductionStatement`.
@@ -12,8 +10,8 @@ exactly one `v : MinimalConjugatingPermutations B C` for which
 
 The proof imports `Langlands.Geometric.weylDoubleCoset_bijective` from
 `Langlands.Representation.Geometric.WeylMinimalRepresentativeProof`.
-This is Worker 243's published existence and bijectivity result, which uses
-Worker 175's published uniqueness proof. No chosen parametrization or
+This is the published existence and bijectivity result, which uses the
+published uniqueness proof `Geometric.WeylUniquenessProof`. No chosen parametrization or
 bijectivity hypothesis is an input to either theorem proved here.
 
 ## Implemented argument

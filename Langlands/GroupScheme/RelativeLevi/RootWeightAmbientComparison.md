@@ -1,6 +1,6 @@
 # Ambient root ranges and comparison of weighted filtration terms
 
-This derived unit compares actual root-weight filtration terms by their
+This derived module compares actual root-weight filtration terms by their
 ambient root-subgroup ranges on every scheme test. The base ring is arbitrary,
 and the tests need not be affine.
 

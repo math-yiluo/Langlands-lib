@@ -61,7 +61,7 @@ def quasiEtaleToTwisted :
 /-- The twisted endomorphism of `V` given by the action of `g` on `V`: its twist is `g`. -/
 def quasiEtaleGEndo (V : EquivariantQuasiEtaleSite X) (g : G) :
     (quasiEtaleToTwisted X).obj V ⟶ (quasiEtaleToTwisted X).obj V :=
-  homMk g (V.left.obj.ρ g) (V.hom.hom.comm g)
+  homMk g (V.left.obj.ρ g).asHom (V.hom.hom.comm g)
 
 @[simp]
 theorem quasiEtaleGEndo_twist (V : EquivariantQuasiEtaleSite X) (g : G) :
@@ -70,20 +70,20 @@ theorem quasiEtaleGEndo_twist (V : EquivariantQuasiEtaleSite X) (g : G) :
 
 @[simp]
 theorem quasiEtaleGEndo_left (V : EquivariantQuasiEtaleSite X) (g : G) :
-    Hom.left (quasiEtaleGEndo X V g) = V.left.obj.ρ g :=
+    Hom.left (quasiEtaleGEndo X V g) = (V.left.obj.ρ g).asHom :=
   rfl
 
 theorem quasiEtaleGEndo_mul (V : EquivariantQuasiEtaleSite X) (g g' : G) :
     quasiEtaleGEndo X V (g * g') = quasiEtaleGEndo X V g' ≫ quasiEtaleGEndo X V g :=
   hom_ext rfl (by
-    change V.left.obj.ρ (g * g') = V.left.obj.ρ g' ≫ V.left.obj.ρ g
+    change (V.left.obj.ρ (g * g')).asHom = (V.left.obj.ρ g').asHom ≫ (V.left.obj.ρ g).asHom
     rw [map_mul]
     rfl)
 
 theorem quasiEtaleGEndo_one (V : EquivariantQuasiEtaleSite X) :
     quasiEtaleGEndo X V 1 = 𝟙 _ :=
   hom_ext rfl (by
-    change V.left.obj.ρ 1 = 𝟙 _
+    change (V.left.obj.ρ 1).asHom = 𝟙 _
     rw [map_one]
     rfl)
 
@@ -91,7 +91,7 @@ theorem quasiEtaleGEndo_one (V : EquivariantQuasiEtaleSite X) :
 by the endomorphism given by `g⁻¹`, so that `g` acts on sections by restriction along it. -/
 def quasiEtaleNaturalAction : NaturalAction G (quasiEtaleToTwisted X) where
   act V :=
-    { toFun := fun g => MulOpposite.op (quasiEtaleGEndo X V g⁻¹)
+    { toFun := fun g => MulOpposite.op (End.of (quasiEtaleGEndo X V g⁻¹))
       map_one' := by
         rw [inv_one, quasiEtaleGEndo_one]
         rfl
@@ -106,7 +106,7 @@ def quasiEtaleNaturalAction : NaturalAction G (quasiEtaleToTwisted X) where
 
 @[simp]
 theorem quasiEtaleNaturalAction_act_apply (V : EquivariantQuasiEtaleSite X) (g : G) :
-    ((quasiEtaleNaturalAction X).act V g).unop = quasiEtaleGEndo X V g⁻¹ :=
+    ((quasiEtaleNaturalAction X).act V g).unop.asHom = quasiEtaleGEndo X V g⁻¹ :=
   rfl
 
 /-- The object `X(G)` of `Qét(X(G))`. -/
@@ -272,7 +272,7 @@ def etaleToTwisted : EquivariantEtaleSite X ⥤ TwistedOver (etale (K := K)) X.o
 /-- The twisted endomorphism of `V` given by the action of `g` on `V`: its twist is `g`. -/
 def etaleGEndo (V : EquivariantEtaleSite X) (g : G) :
     (etaleToTwisted X).obj V ⟶ (etaleToTwisted X).obj V :=
-  homMk g (V.left.obj.ρ g) (V.hom.hom.comm g)
+  homMk g (V.left.obj.ρ g).asHom (V.hom.hom.comm g)
 
 @[simp]
 theorem etaleGEndo_twist (V : EquivariantEtaleSite X) (g : G) :
@@ -281,19 +281,19 @@ theorem etaleGEndo_twist (V : EquivariantEtaleSite X) (g : G) :
 
 @[simp]
 theorem etaleGEndo_left (V : EquivariantEtaleSite X) (g : G) :
-    Hom.left (etaleGEndo X V g) = V.left.obj.ρ g :=
+    Hom.left (etaleGEndo X V g) = (V.left.obj.ρ g).asHom :=
   rfl
 
 theorem etaleGEndo_mul (V : EquivariantEtaleSite X) (g g' : G) :
     etaleGEndo X V (g * g') = etaleGEndo X V g' ≫ etaleGEndo X V g :=
   hom_ext rfl (by
-    change V.left.obj.ρ (g * g') = V.left.obj.ρ g' ≫ V.left.obj.ρ g
+    change (V.left.obj.ρ (g * g')).asHom = (V.left.obj.ρ g').asHom ≫ (V.left.obj.ρ g).asHom
     rw [map_mul]
     rfl)
 
 theorem etaleGEndo_one (V : EquivariantEtaleSite X) : etaleGEndo X V 1 = 𝟙 _ :=
   hom_ext rfl (by
-    change V.left.obj.ρ 1 = 𝟙 _
+    change (V.left.obj.ρ 1).asHom = 𝟙 _
     rw [map_one]
     rfl)
 
@@ -301,7 +301,7 @@ theorem etaleGEndo_one (V : EquivariantEtaleSite X) : etaleGEndo X V 1 = 𝟙 _ 
 endomorphism given by `g⁻¹`. -/
 def etaleNaturalAction : NaturalAction G (etaleToTwisted X) where
   act V :=
-    { toFun := fun g => MulOpposite.op (etaleGEndo X V g⁻¹)
+    { toFun := fun g => MulOpposite.op (End.of (etaleGEndo X V g⁻¹))
       map_one' := by
         rw [inv_one, etaleGEndo_one]
         rfl
@@ -316,7 +316,7 @@ def etaleNaturalAction : NaturalAction G (etaleToTwisted X) where
 
 @[simp]
 theorem etaleNaturalAction_act_apply (V : EquivariantEtaleSite X) (g : G) :
-    ((etaleNaturalAction X).act V g).unop = etaleGEndo X V g⁻¹ :=
+    ((etaleNaturalAction X).act V g).unop.asHom = etaleGEndo X V g⁻¹ :=
   rfl
 
 /-- The object `X(G)` of `Ét(X(G))`. -/

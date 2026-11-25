@@ -38,6 +38,6 @@ All ingredients are published Library theorems. The provenance is the internal
 composition of `Rational.TorusCentralizerRegularCocharacter`,
 `Absolute.RegularCocharacterBorelProof`, `Absolute.GeometricBorelDescent`,
 `Dynamic.RepresentedStructure`, `Torus.FiniteGaloisSplittingProof`, and
-`Torus.SplitReflection`. This unit assumes neither quasi-splitness nor a Borel
+`Torus.SplitReflection`. This module assumes neither quasi-splitness nor a Borel
 existence premise. It does not construct coherent rank-one coordinates or prove
 the algebraic rank-one coordinate existence statement.

@@ -1,7 +1,5 @@
 # Rational factorization from spectrum-image containment
 
-Proof author: Worker 36. Publication preparation: Worker 135.
-
 This module proves `RationalFactorization.FactorizationStatement` using the actual rational quotient of the presented strict affinoid algebra. The coefficient field is complete and ultrametric. The original denominator and finite numerator tuple generate the algebraic unit ideal. Test algebras are presented strict affinoids over the same field. Empty tuples, zero quotients, nilpotents and trivial scalar valuations remain allowed.
 
 The proof first shows that the denominator cannot vanish at a point of the rational locus: the inequalities would force all numerator values to vanish, so the point's proper kernel ideal would contain the unit ideal. Pulling back a target spectrum point gives nonvanishing of the image denominator. `isUnit_iff_forall_spectrum_ne_zero` then supplies an actual unit in the target algebra.

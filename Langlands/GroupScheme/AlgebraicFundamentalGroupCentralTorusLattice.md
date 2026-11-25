@@ -1,6 +1,6 @@
 # Exactness of induced maps on quotient lattices
 
-Author: Worker 149 (Task 6713). This is a helper module for the proof of
+This is a helper module for the proof of
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.CentralTorusFundamentalExactnessStatement`
 in `Langlands.GroupScheme.AlgebraicFundamentalGroupCentralTorusProof`. It contains
 the two pure linear-algebra steps of that proof. It imports only

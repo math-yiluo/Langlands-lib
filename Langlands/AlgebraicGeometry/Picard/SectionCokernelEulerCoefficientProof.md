@@ -20,5 +20,7 @@ Uniqueness of rational polynomials on natural arguments identifies `R` with
 `shiftDifference P n`. The existing natural-degree bound for `P` and the exact
 `shiftDifference_coeff` formula yield the claimed coefficient identity. The
 argument does not use ampleness or positivity and includes zero exponents and
-zero degree. It proves this internal supporting identity only. Worker 689
-specified the interface and its use in the integral positivity induction.
+zero degree. It proves this internal supporting identity only. The identity is
+used in the integral positivity induction, in
+`integral_lineBundleEulerPolynomial_coeff_pos` (module
+`Langlands.AlgebraicGeometry.Modules.IntegralAmpleEulerCoefficientProof`).

@@ -45,9 +45,11 @@ state the proposition's additional smoothness equivalences.
 A separate proof can translate the origin stalk to each closed point,
 using that closed points are `k`-rational, and then use the Jacobson
 property and affine maximal localizations to deduce global reducedness.
-This is a proposed proof route, not a result of this statement module.
+This is the route of the proof `algClosedFieldReducedOfOrigin` in
+`Langlands.GroupScheme.AlgClosedFieldReducedOfOriginProof`, not a result of
+this statement module.
 It is independent of Picard representability, tangent and cohomology
 comparisons, and existence of ample line bundles or finite stabilizers.
 
-Worker 453 prepared this interface for the generic propagation step of
+This interface serves the generic propagation step of
 the rigidified Picard reducedness argument.

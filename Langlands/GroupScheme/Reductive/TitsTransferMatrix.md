@@ -30,7 +30,7 @@ matrix argument here is this development's own.
 
 Conclusion: `titsObstructionValue d ν = [corCSAOf k E N A]`, where
 `A = toCSA Q (twistedFixed Q)` is the central simple `E`-algebra fixed by
-`Q` and `corCSAOf` is the published tensor descent (Task 7575).
+`Q` and `corCSAOf` is the published tensor descent.
 
 Proof.
 

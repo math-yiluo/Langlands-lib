@@ -1,7 +1,5 @@
 # Kirillov lifting into actual coefficient models
 
-Author: Worker 332.
-
 This module defines the propositions
 `Langlands.Whittaker.IsMirabolicTestFunction` and
 `Langlands.Whittaker.ModelKirillovTransferStatement`. The latter is an internal

@@ -64,4 +64,5 @@ normalized covariant coordinate or establish that `lam` occurs, its
 multiplicity, or unconditional fundamental-representation existence.
 
 Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+joint imports; the one for the affine structure morphism of the torus is private
+to the module instead. Their types, values, and local scopes are unchanged.

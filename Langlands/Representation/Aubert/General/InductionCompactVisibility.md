@@ -1,6 +1,6 @@
 # Compact visibility of normalized induction
 
-This internal supporting unit proves finite compact visibility for the actual
+This internal supporting module proves finite compact visibility for the actual
 normalized induction functor. The detecting compact open subgroups of the
 Levi are chosen before the inducing representation. No admissibility,
 finite generation, finite length, or finite dimensionality is required.
@@ -47,7 +47,7 @@ fixed vector has a nonzero coordinate in this product.
 
 ## Provenance and remaining obligations
 
-Worker 1751 derives this unit from the published actual parabolic functor,
+This module is derived from the published actual parabolic functor,
 its scalar character, the compact open neighborhood basis, and the
 compact-left-quotient evaluation API. It is an internal comparison, not
 a new assertion attributed to original literature.

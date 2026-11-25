@@ -1,6 +1,6 @@
 # Actual root-string endpoints and rational Weyl images
 
-This derived unit uses an affine group scheme over a field, a supplied split
+This module uses an affine group scheme over a field, a supplied split
 pinning, and a finite matrix representation. For an actual root `i`, an
 additive map equivariant by minus that root, and a natural number `m` equal to
 the pairing of the character `lam` with `coroot i`, `rootEndpointMap` restricts

@@ -136,6 +136,7 @@ theorem IsMaximalSplitTorus.isAnisotropic_quotient
         f ≫ splitTorus.proj (Spec (CommRingCat.of k)) I a) hs
     simpa [splitTorus.single_comp_proj] using h
   have h := congrArg (gmEndEquiv k) hid
+  rw [AddEquiv.map_zero] at h
   simp at h
 
 end Langlands.GroupScheme

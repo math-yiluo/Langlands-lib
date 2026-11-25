@@ -1,7 +1,5 @@
 # Compatible presentations of finite local models
 
-Author: Worker 60.
-
 These internal helpers are in
 `Langlands.ClassFieldTheory.Local.InertiaNormFieldModels` and are used by
 `InertiaNormActualModels` to construct the actual model of a finite tower.

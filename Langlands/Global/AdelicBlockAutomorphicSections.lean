@@ -147,7 +147,7 @@ theorem isCenterFiniteFunction
     rw [smoothSectionOnScheme_pair, ContinuousMulEquiv.apply_symm_apply]
   apply E.injective
   change E (plotSmoothCenterAction F GLG hsmooth hcalc z g) = E 0
-  rw [plotSmoothGeneralLinearEquiv_centerAction F n hsmooth hcalc z g, hg, map_zero]
+  rw [plotSmoothGeneralLinearEquiv_centerAction F n hsmooth hcalc z g, hg, LinearEquiv.map_zero]
   change envelopingAction F n (centerInclusion F n (e z))
     (smoothScalarSlice F B S (finiteHomeomorph F n b) f) = 0
   rw [← smoothScalarSlice_sectionEnvelopingAction]

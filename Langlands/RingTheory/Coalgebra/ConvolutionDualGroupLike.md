@@ -4,8 +4,8 @@ Module: `Langlands.RingTheory.Coalgebra.ConvolutionDualGroupLike`
 (namespace `Langlands.CoalgebraDescent`).
 
 This module contains helper lemmas for the proof of
-`Langlands.CoalgebraDescent.SeparablyClosedGroupLikeSpanningStatement` (task
-`d4ae678f-2afe-41e5-acf7-700af9077a9a`). It covers the finite-dimensional splitting
+`Langlands.CoalgebraDescent.SeparablyClosedGroupLikeSpanningStatement` (module
+`SeparablyClosedGroupLikeSpanningProof`). It covers the finite-dimensional splitting
 step only: once the convolution dual of a finite-dimensional coalgebra is known to be
 a product of copies of the base field (or commutative and formally unramified over a
 separably closed field), its group-like elements span the coalgebra. It defines

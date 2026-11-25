@@ -1,7 +1,5 @@
 # Relative vector-bundle additive groups and finite normal series
 
-Author: Worker 204.
-
 This module defines geometric predicates. It asserts neither existence of a
 filtration nor vanishing of torsors. All schemes and group schemes are actual
 objects of the Library, over an arbitrary `S : Scheme.{u}`. The definitions

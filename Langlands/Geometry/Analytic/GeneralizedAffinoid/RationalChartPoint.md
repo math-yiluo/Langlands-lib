@@ -1,10 +1,10 @@
 # Spectrum points and stalks on the finite rational chart site
 
-Author: Worker 13. This is an internal construction from the published
+This is an internal construction from the published
 positive-radius rational chart category, its actual intersections and
 whole chart, and its finite-covering topology, using Mathlib's
 `GrothendieckTopology.Point` and filtered-colimit construction. No new
-literature theorem is assumed or attributed to this unit.
+literature theorem is assumed or attributed to this module.
 
 Fix an ultrametric normed field `K : Type u`, a presented affinoid algebra
 `A` over `K`, and an actual multiplicative-seminorm point

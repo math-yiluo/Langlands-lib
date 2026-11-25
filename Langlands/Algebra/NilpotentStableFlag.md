@@ -1,7 +1,5 @@
 # Stable flags for nilpotent families of endomorphisms
 
-Author: Worker 1429 (statement proposed by Worker 1498).
-
 ## Statement
 
 `Langlands.Algebra.exists_stable_flag_of_isNilpotent` works over an arbitrary
@@ -26,8 +24,7 @@ that:
 ### Provenance
 
 This is an internal helper for the proof of
-`Langlands.GroupScheme.ReductiveCharZeroSemisimplicityStatement`; Worker 1498
-proposed the exact statement. It applies Engel's theorem for a Lie algebra of
+`Langlands.GroupScheme.ReductiveCharZeroSemisimplicityStatement`. It applies Engel's theorem for a Lie algebra of
 nilpotent endomorphisms (cf. Humphreys, *Introduction to Lie Algebras and
 Representation Theory*, §3.3). Stability of the flag under the normalizing set
 `S` is a direct computation, carried out below.

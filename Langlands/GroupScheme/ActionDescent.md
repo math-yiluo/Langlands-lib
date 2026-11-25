@@ -55,5 +55,5 @@ universe. The only geometric assumptions on `q` are quasi-compactness, flatness
 and surjectivity of its underlying scheme morphism. Smoothness of its kernel,
 affineness of the target groups, finite type, reductivity and a field base are
 not assumed. No quotient group scheme is constructed: `Q` and `q` are inputs.
-In particular, this unit does not prove the existence of a torus quotient by a
+In particular, this module does not prove the existence of a torus quotient by a
 character kernel or identify such a quotient with the multiplicative group.

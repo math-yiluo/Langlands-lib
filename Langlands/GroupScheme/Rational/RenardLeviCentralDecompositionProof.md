@@ -1,7 +1,5 @@
 # Compatible Levi central decompositions on the actual real torus spaces
 
-Author: Worker 568.
-
 The theorem `Langlands.GroupScheme.renardLeviCentralDecomposition.{u}` proves
 exactly the published proposition
 `Langlands.GroupScheme.RenardLeviCentralDecompositionStatement.{u}`.

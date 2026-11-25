@@ -1,14 +1,14 @@
 # Initial supports from actual dual-product derivatives
 
-Author: Worker 357.
-
 This internal construction gives initial truncations at the original factor
 labels and actual supercuspidal support multisets for the smooth dual of a
 derivative constituent. It combines the published actual product-duality and
 terminal-support constructions. The entry is
 `Langlands.Classification.segmentHeadProductDualInitialSupportDataOfSubquotient`.
-Its returned data and their support-union projection form this focused unit.
-The full product irreducibility criterion remains open.
+Its returned data and their support-union projection form this module.
+The full product irreducibility criterion is not proved here; the Library
+proves it as `segmentHeadProductIrreducibility` in
+`Classification.SegmentHeadProductIrreducibilityProof`.
 
 ## Parameters and precise scope
 
@@ -68,7 +68,7 @@ instance `w` of this structure and gives
 ```
 
 The structure's `support` field retains the actual multiset-support
-assertion while this projection expresses its underlying set. The unit
+assertion while this projection expresses its underlying set. The module
 provides no comparison between a derivative and a derivative of its dual,
 no derivative identification or irreducibility theorem, and no
 multiplicity formula or product irreducibility criterion.
@@ -76,8 +76,8 @@ multiplicity formula or product irreducibility criterion.
 ## Implemented construction and internal provenance
 
 This pair translates no new external assertion. Its provenance is internal
-and its source list is empty. Both direct imports are independently accepted
-and published constructions:
+and its source list is empty. Both direct imports are independently
+published constructions:
 
 | Import after `Langlands.Representation.Classification.` | Use |
 | --- | --- |
@@ -123,8 +123,9 @@ uniqueness or a multiplicity argument.
 At Library base `538f554630aa4cd24a084e698b1768d7143ba586`, the recursive
 inventory has 1252 project modules including this entry and 320 directly
 named external import roots. Every one of the 1251 inherited Lean/Markdown
-pairs is byte-identical to the current Library and matches both
-fingerprints in the prior terminal-support or product-duality audit. There
+pairs is byte-identical to the Library at that commit and matches both
+fingerprints in the terminal-support or product-duality audit (the Markdown
+of `SegmentHeadProductTerminalSupport` or `SegmentHeadProductContragredient`). There
 are no unmatched inherited modules, missing project imports, missing paired
 Markdown files, proof holes, new axioms or prohibited native syntax. The
 complete project-module and directly named external-root inventories are
@@ -142,18 +143,11 @@ general normalized-induction duality and tensor duality. Its separate
 closure contains no derivative or mirabolic module. Combining these
 unchanged closures adds only this elementary support transport.
 
-The trusted operator rulings
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md),
-[ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md),
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md),
-and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-were read in full. They permit the general derivative foundations and the
-final independently proved support-only theorem. The stronger `core_mid`,
-`core` and at-most-one-simple-factor consequences, and the permitted
-adjacent-reducibility input, remain restricted to the individual support
-proof's length-two base. This new consumer invokes none of them separately.
+The independence boundary of this module admits the general derivative
+foundations and the final independently proved support-only theorem. The
+stronger `core_mid`, `core` and at-most-one-simple-factor consequences, and
+the permitted adjacent-reducibility input, remain restricted to the individual
+support proof's length-two base. This consumer invokes none of them separately.
 
 The broad lexical scan's inherited hits are exactly those already classified
 in the terminal-support audit: the permitted support-only theorem and its
@@ -163,23 +157,23 @@ inside the adjacent-reducibility closure used in that restricted base.
 by this consumer. The proof-route audit supplements these name checks;
 imported Prop definitions are not proofs.
 
-The unit is independent of Ze80 3.5/9.6 formulas and their proof successors,
-excluded segment/head/socle/Jacquet formulas, parent
+The module is independent of Ze80 3.5/9.6 formulas and their proofs,
+excluded segment/head/socle/Jacquet formulas,
 `GenericSegmentProductUniqueness`, multisegment exhaustion, ordered
 strong-head existence, quotient coverage, ordered conversion, tempered
 uniqueness, square-integrable classification and exhaustion, regular
-exhaustion, and the full host criterion in either direction. The
-segment-socle part of task `8e5b4563` is excluded. No stronger restricted
-support-proof helper is used as a substitute for these results.
+exhaustion, and the full criterion `SegmentHeadProductIrreducibility` in
+either direction. The segment-socle part of the derivative statements of
+`Classification.SegmentSocleDerivativesStatement` is excluded. No stronger
+restricted support-proof helper is used as a substitute for these results.
 
 ## Validation
 
-Recovery compilation checked the draft and both published direct inputs
+Compilation checked this file and both published direct inputs
 with zero errors and warnings. The selected constructor's Lake-build
 inspection reports the independent level parameters `uF,uV` and only
-`propext`, `Classical.choice` and `Quot.sound`. This author compilation and
-dependency audit leave independent semantic review and publication to their
-required processes.
+`propext`, `Classical.choice` and `Quot.sound`. This compilation and
+dependency audit do not include a semantic review.
 
 ## Complete project import inventory
 

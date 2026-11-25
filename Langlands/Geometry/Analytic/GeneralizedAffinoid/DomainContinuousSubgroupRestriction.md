@@ -1,7 +1,5 @@
 # Subgroup compatibility of continuous represented-domain diagrams
 
-Author: Worker 56.
-
 Let `K : Type u` be a complete ultrametric normed field, `P` an actual
 finite positive-polyradius presented affinoid quotient, and `G : Type v`
 a topological group, with the two universes independent. Fix a
@@ -10,7 +8,7 @@ The continuity input is the existing represented-domain spectral test
 topology. Joint continuity of the spectrum and locus actions has already
 been derived in the imported local and global proofs.
 
-This unit proves that the continuous diagrams commute with subgroup
+This module proves that the continuous diagrams commute with subgroup
 restriction. The domain restriction functor retains every actual represented
 domain and bounded restriction map, and weakens its preservation witness
 from `H` to `J`. The group inclusion is the published

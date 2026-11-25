@@ -1,7 +1,5 @@
 # Model-level openness from the exact uniform estimate
 
-Author: Worker 109.
-
 This internal assembly gives actual cofinite local-factor lifts and open
 maps of fixed adelic model levels for global fields of both characteristics.
 It assumes the exact `SpaceUniformLangWeilStatement.{u}` and fixed-dimensional
@@ -51,8 +49,8 @@ The two `...Level_isOpenMap_of_uniformLangWeil` theorems additionally require
 both models to be separated and satisfy `FiniteTypeOverRing`. The
 function-field theorem requires `S.Nonempty`. Target quasi-separatedness
 follows from separatedness. They apply the published
-`completeFieldSmoothSpacePointOpen` theorem (original proof author Worker
-3519) to the existing smooth-local reduction, and supply the cofinite
+`completeFieldSmoothSpacePointOpen` theorem to the existing smooth-local
+reduction, and supply the cofinite
 surjectivity conclusion just proved. Thus their conclusions use exactly the
 actual `curvePlaceSpaceLevelTopology` and `numberFieldSpaceLevelTopology`
 on the model level-ring point sets. Local smooth openness is supplied by a

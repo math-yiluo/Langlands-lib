@@ -1,8 +1,5 @@
 # Conditional two-block normalized matrix functional equation
 
-Authors: Worker 33 (Lean statement) and Worker 264 (source reading, Markdown
-and independent compilation check).
-
 This module defines one proposition,
 `Langlands.GodementJacquet.TwoBlockMatrixFunctionalEquationInductionStatement.{uF,uV}`.
 It is a statement target, not a proof. It states the functional-equation part
@@ -37,7 +34,7 @@ same instances through the right uniform structure and
 `HarmonicAnalysis.rowFourierCutoff_nonarchimedean`. By proof irrelevance this
 gives the same proposition.
 
-The remaining quantifiers come in the order of the task contract.
+The remaining quantifiers come in the following order.
 
 1. `t : ℕ`, `m : Fin 2 → ℕ` and `h : ∑ i, (m i + 1) = t + 1`. The ambient
    group is `GL(t+1, F)`. The two blocks have actual ranks `m 0 + 1` and
@@ -51,8 +48,8 @@ The remaining quantifiers come in the order of the task contract.
    The premises `∀ i, IsSmooth (σ i)` and `∀ i, IsAdmissible (σ i)` follow
    immediately, in the canonical topology. The published `IsAdmissible` is
    `IsSmooth` together with finite generation of the invariants of every open
-   subgroup. So the smoothness premise adds no restriction; it is kept because
-   the contract lists it. No irreducibility and no Whittaker type is assumed.
+   subgroup. So the smoothness premise adds no restriction; it is kept
+   explicitly. No irreducibility and no Whittaker type is assumed.
 3. `ψ : UnitaryAdditiveCharacter F.Carrier` and
    `ν : AdditiveHaarMeasure F.Carrier` with the premise
    `HarmonicAnalysis.IsSelfDual ψ ν`. The structure `UnitaryAdditiveCharacter`
@@ -72,8 +69,7 @@ The remaining quantifiers come in the order of the task contract.
    `GodementJacquet.Padic.NormalizedMatrixFunctionalEquationData F ψ ν (σ i)
    (P i) (PDual i) (c i) (a i)` for each `i`.
 
-The Lean binders are named `σ`, `P`, `ψ`, `ν`, `ω`. The contract writes
-`sigma`, `Pi`, `psi`, `nu`, `omega`. The conclusion is exactly
+The Lean binders are named `σ`, `P`, `ψ`, `ν`, `ω`. The conclusion is exactly
 
 ```text
 GodementJacquet.Padic.NormalizedMatrixFunctionalEquationData F ψ ν
@@ -205,8 +201,8 @@ correspondence is as follows.
   (a consequence in the source), Proposition 3.5 (any number of blocks,
   printed pages 45–46), Corollary 3.6, and any existence of block data.
 
-The source proof, which a future proof must reproduce for the actual Lean
-objects, runs as follows. Printed page 38 (PDF 48, checked visually) takes
+The source proof, which `TwoBlockMatrixFunctionalEquationInductionProof` and the
+modules it uses carry out for the actual Lean objects, runs as follows. Printed page 38 (PDF 48, checked visually) takes
 `dm = dx dy du dv` with `dm`, `dx`, `dy` self-dual and `du`, `dv` dual, and
 proves Lemma 3.4.0: the Fourier transform of the partial integral
 `φ_Φ(x, y) = ∫ Φ((x u; 0 y)) du` is `φ_Φ̂`. Printed pages 39–41 (PDF 49–51;
@@ -259,12 +255,12 @@ In its irreducible setting the 1979 source identifies `π^ι` with the
 contragredient `π̃`. Here no such identification is made. The dual generator
 `PDual` is defined through `coefficientIota` of the coefficients of the same
 representation. For a reducible induced representation, a bridge between
-these functions and the source's coefficients of `π̃` is a future proof
+these functions and the source's coefficients of `π̃` is a separate proof
 obligation, not a definitional equality. In particular, inverse transpose
 carries the upper block parabolic to the lower one. Section 7 of the 1979
 paper treats `GL(3)`; it is used here only for these conventions.
 
-The task contract also names H. Jacquet, I. I. Piatetski-Shapiro and
+A further source is H. Jacquet, I. I. Piatetski-Shapiro and
 J. A. Shalika, *Rankin–Selberg Convolutions* (1983), registered as
 `jpss-1983-rankin-selberg`. Its Section 5, printed pages 420–423, applies
 Theorem 3.4 to Whittaker models and generic constituents. This statement makes
@@ -284,19 +280,20 @@ matrices for the induced representation, always as the product of copies of
 `ν` over the entries. No other Fourier transform or Haar measure is selected.
 Printed page 38 of Godement–Jacquet factors the self-dual matrix measure as
 `dm = dx dy du dv`. The premise `IsSelfDual ψ ν` keeps the self-duality
-hypothesis of the source for the future proof. No choice or rescaling of `ν`
+hypothesis of the source for the proof. No choice or rescaling of `ν`
 takes place.
 
 ## Relation to the sibling statement
 
-The sibling task `c5c9e4f6-1b39-4daa-97dc-b61b8645a760` states
-`Langlands.GodementJacquet.TwoBlockMatrixAnalyticInductionStatement`, whose
-conclusion is the first two parts of the induced package. Its future proof
-can supply the analytic part of this conclusion. This statement keeps those
+The sibling statement
+`Langlands.GodementJacquet.TwoBlockMatrixAnalyticInductionStatement` has as
+conclusion the first two parts of the induced package. Its proof
+`twoBlockMatrixAnalyticInduction` (module `TwoBlockMatrixAnalyticInductionProof`)
+supplies the analytic part of this conclusion. This statement keeps those
 parts in its conclusion because it uses the full published package, but adds
 no premise derived from the sibling. The sibling places the smoothness and
 admissibility premises after the central characters. Here they follow `σ`,
-as item 2 of the contract lists them. For a future proof this is only an
+as in item 2 above. For a proof this is only an
 argument permutation.
 
 ## Internal packaging
@@ -304,8 +301,7 @@ argument permutation.
 The statement is a derived formulation, not a verbatim transcription. It uses
 the published `AnalyticData` package for both the hypotheses and the
 conclusion, the product of proposed polynomials for the L-factors, and the
-product unit and summed exponent for the ε-factor. These choices follow the
-task contract. They keep every part of the predicate: the common convergence
+product unit and summed exponent for the ε-factor. These choices keep every part of the predicate: the common convergence
 bounds, the actual continuation witnesses, the normalized generators for both
 families, every full-matrix test, a Fourier witness chosen before the
 coefficients, Fourier-integrand integrability, and both denominator guards.

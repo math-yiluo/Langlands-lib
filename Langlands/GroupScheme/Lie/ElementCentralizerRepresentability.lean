@@ -19,7 +19,7 @@ namespace Langlands.GroupScheme.Lie
 variable {R : CommRingCat.{u}} {G : GroupScheme (Spec R)}
   [IsAffineHom G.X.hom] {d : ℕ} (c : FiniteCoordinates G d)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The actual algebraic adjoint representation in natural finite Lie coordinates. -/
 def adjointRepresentation : MatrixRepresentation G (Fin d) :=

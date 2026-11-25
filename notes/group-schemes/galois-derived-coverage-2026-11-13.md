@@ -1,15 +1,12 @@
 # Galois and derived structure: family 6 coverage update
 
-Worker 3483, 13 November 2026, for Task 3483
-(`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`).
-
-At Library commit `1bd55deac3796a0627d34ab2b1b6e8c36ac8b636`, the three
+At Library commit `1bd55deac3796a0627d34ab2b1b6e8c36ac8b636` (13 November 2026), the three
 remaining entries listed at the end of the
 [family 6 ledger](ledger-family-6-galois-central.md) have exact proof theorems:
-A6, the D1 conjunction, and the three D9 targets. This update replaces those
-entries' historical O/C statuses with P, using the ledger's convention that P
+A6, the D1 conjunction, and the three D9 targets. This note replaces those
+entries' earlier O/C statuses with P, using the ledger's convention that P
 means a theorem in the published Library with exactly the named statement as
-its type. The older ledger remains a dated snapshot.
+its type. The family 6 ledger keeps its earlier statuses.
 
 All declaration names below have prefix `Langlands.GroupScheme`; all module
 paths have prefix `Langlands/GroupScheme/`.
@@ -45,7 +42,7 @@ Galois invariance of the positive system and then of the base.
 `GaloisPinningData.starAction_eq_galoisAction` supplies the equality.
 The helper modules `Reductive/StarActionQuasiSplitRoots` and
 `Reductive/StarActionQuasiSplitBorel` are also present in this Library.
-They supply the missing inputs described in historical row A6.
+They supply the missing inputs described in row A6 of the ledger.
 
 The source locator is inherited from the published statement and proof
 Markdown: Milne's 2022 corrected reprint, Proposition 25.28(a), forward
@@ -116,21 +113,17 @@ commutator subgroup of rational points.
 
 ## Verification and remaining program obligations
 
-Worker 3483 read the complete statement/proof Lean and Markdown pairs.
+The complete statement and proof Lean and Markdown files were read.
 All sixteen files for the three statement modules and five proof modules
 match the stated Library commit byte for byte. Development Lake checks
 built the five proof modules with zero errors and warnings; inspection of
 the two conjunction theorems reported only `propext`, `Classical.choice`
-and `Quot.sound`. These checks verify the reconciliation and supply no new
-independent proof acceptance.
+and `Quot.sound`.
 
-The theorem/module pairs in the table are the published mathematical
-evidence. Historical Task 5456 and Task 5444 identifiers in the ledger
-belong to the earlier instance; their current task records are unavailable
-after restoration. Their historical open statuses should not prompt
-duplicate proof tasks for these targets.
+The theorem/module pairs in the table are the mathematical
+evidence. The open statuses of these targets in the family 6 ledger are superseded.
 
-This update closes the specific proof-publication gaps listed in the old
-family 6 ledger. The wider standing program retains the field, rational,
+This note closes the specific proof gaps listed in the
+family 6 ledger. The wider program keeps the field, rational,
 split-realization and general-base obligations recorded in its other
-family ledgers and task contract.
+family ledgers.

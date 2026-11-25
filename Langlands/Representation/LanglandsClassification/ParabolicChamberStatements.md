@@ -1,6 +1,6 @@
 # `Δ(P)`, `Δ̂(P)`, `Δ^∨(P)`, `β̌` and the chambers of Renard V.3.14–V.3.16
 
-Worker 4, for Task 1222. Module
+Module
 `Langlands.Representation.LanglandsClassification.ParabolicChamberStatements`,
 namespace `Langlands.GroupScheme`.
 
@@ -184,8 +184,7 @@ The negative versions `⁻[𝔞]^G_P` and `^G_P[𝔞]^-` of V.3.15 are the point
 negatives `-S` of these sets and get no separate names. The `𝔞`-chambers
 `^G_P[𝔞]^+` and their closures on `V A` are not redefined here. They are
 `chamber` and `closedChamber` in the module
-`Langlands.BruhatTits.Cartan.RenardLeviCones` (Worker 4's accepted candidate
-`089ffdc0`). This file does not import that module.
+`Langlands.BruhatTits.Cartan.RenardLeviCones`. This file does not import that module.
 
 ## Proved results
 

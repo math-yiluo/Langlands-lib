@@ -42,6 +42,4 @@ shift and spectral parameter, and both continuation denominator guards.
 This is an internal derivation from the cited Library declarations, with no new
 literature theorem asserted. It proves a conditional descent implication, not
 unconditional analytic existence or the host
-`GenericMatrixFunctionalEquationStatement`. Worker 364 implemented the proof;
-Worker 704 supplied the descent route and identified the existing normalization
-and Fourier APIs.
+`GenericMatrixFunctionalEquationStatement`.

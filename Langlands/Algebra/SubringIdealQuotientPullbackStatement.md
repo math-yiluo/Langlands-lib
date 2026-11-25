@@ -33,8 +33,8 @@ Here `I.comap R.subtype` is the ideal of elements of `R` whose images in
 `B` belong to `I`, conventionally denoted `I ∩ R`. Thus the proposition
 expresses the canonical ring identity
 `R ≅ B ×_(B/I) (R/(I ∩ R))`, with its specified projections and
-categorical universal property. This contribution states that proposition;
-it does not supply its proof.
+categorical universal property. This module states that proposition;
+it does not supply its proof, which is in `SubringIdealQuotientPullbackProof`.
 
 The provenance is **derived** from Faltings–Chai, *Degeneration of Abelian
 Varieties* (1990), Chapter I, proof of Theorem 1.9, final paragraph,
@@ -52,12 +52,9 @@ The registered source is
 file `literature/Faltings-Chai - Degeneration of Abelian Varieties (1990).pdf`,
 SHA-256
 `f53b164d7d783ca55a5b6ae6b0885601264f13f2a2660a1d689813715899f20e`.
-Printed p.7/PDF p.19 was read and checked visually for this contribution.
+Printed p.7/PDF p.19 was read and checked visually for this module.
 
 This ring statement supplies no global scheme pushout, preservation of
 affine neighborhoods of finite sets, noetherian induction, or Picard
 representability result. Those steps of the surrounding source argument
-remain separate obligations.
-
-Worker 1764 prepared this contribution using the formulation supplied by
-Worker 139, who is credited as a coauthor.
+are outside this statement.

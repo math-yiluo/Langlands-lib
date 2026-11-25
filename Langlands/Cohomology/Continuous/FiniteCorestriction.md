@@ -1,8 +1,9 @@
 # Finite-stage corestriction
 
-Author: Worker 22. The construction imports the published
+The construction imports the published
 `QuotientSubgroupCohomology` and `Tate.CohomologyTransfer` modules.
-Worker 45's ordinary-transfer construction is used as a dependency.
+The ordinary-transfer construction of `Tate.CohomologyTransfer` is used as a
+dependency.
 
 For a representation `A : Rep k G`, a normal subgroup `N`, and a subgroup
 `H` containing `N`, `quotientCorestriction A H N hNH q` is the composite
@@ -26,11 +27,12 @@ ring; topology on coefficients is unnecessary at this finite stage.
 
 The composite uses the actual cohomology maps: the first factor is
 induced by the explicit quotient and coefficient equivalences, and the
-second is the homology map of Worker 45's standard-resolution relative
-trace cochain map. Those two underlying constructions supply the
+second is the homology map of the standard-resolution relative
+trace cochain map `Tate.ordinaryCorestrictionCochainMap`. Those two underlying constructions supply the
 intrinsic certificates. This pair does not assert refinement
 compatibility, transitivity, coefficient naturality, or the index law.
-In particular it does not yet define continuous corestriction.
+In particular it does not define continuous corestriction, which is
+`continuousCorestriction` in `Langlands.Cohomology.Continuous.Corestriction`.
 
 Provenance is derived from Serre, *Local Fields*, Greenberg translation
 (1979), Chapter VII, Section 5, printed pages 115–116 / PDF pages
@@ -42,5 +44,5 @@ implementation infrastructure, not verbatim interfaces from Serre.
 Literature ID `serre-1979-local-fields`; source SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`;
 retained file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Mathlib
+Environment: Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

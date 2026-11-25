@@ -1,6 +1,6 @@
 # Actual representation scalar extension and coefficient integrality
 
-This derived unit supplies a scalar-extension step in the proof of
+This derived module supplies a scalar-extension step in the proof of
 Kaletha–Prasad, Lemma 2.2.11. Its primary construction,
 `Langlands.GroupScheme.MatrixRepresentation.baseChange`, sends an actual
 representation `ρ : G → GL_n` over `Spec R` and an actual scheme morphism
@@ -42,11 +42,11 @@ specialization uses `Fin N`, including `N = 0`. The coefficient results
 require compatibility of the valued extension explicitly. They do not
 require algebraicity, a topology, a local-field structure, reductivity,
 faithfulness, density, or semisimplicity. They assert neither boundedness
-of the extended image nor the host `ReductiveSpectralBoundednessStatement`.
+of the extended image nor `ReductiveSpectralBoundednessStatement`.
 
 The original proof passes to invariant subspaces over an algebraic closure
 and uses integrality of the original matrices on those scalar-extended
-points. This unit derives the actual representation and coefficient
+points. This module derives the actual representation and coefficient
 comparison needed for that passage from the published scheme-theoretic
 base change and matrix APIs; it is not a separate assertion quoted
 verbatim from the book.
@@ -58,7 +58,7 @@ PDF pp.103–104; registered source
 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`.
 The November 2024 corrections, Section 2.2, PDF p.24, impose Henselianity
 throughout the section and amend the extension-topology assertion of
-Lemma 2.2.5. This unit uses only functoriality and explicit valuative
+Lemma 2.2.5. This module uses only functoriality and explicit valuative
 compatibility, so it does not invoke that topology comparison or
 Henselianity. Registered corrections source
 `kaletha-prasad-2024-corrections`, SHA-256

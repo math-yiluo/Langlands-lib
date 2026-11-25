@@ -1,7 +1,5 @@
 # Existence of algebraic SU3 rank-one coordinates at multipliable roots: statement
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b).
-
 `Langlands.Geometry.Building.AlgebraicSU3RootCoordinatesExistenceStatement.{u}`
 is a proposition definition. This module does not prove it.
 
@@ -45,14 +43,14 @@ contains:
 `normalizerPoints i` asks that conjugation induce an automorphism of the
 split torus `S` as a scheme, not only of its rational points.
 
-## Relation to the target of Task 6836
+## Relation to `AlgebraicRankOneCoordinatesExistenceStatement`
 
 `AlgebraicRankOneCoordinatesExistenceStatement` asserts, for each indivisible
 `b`, an SL2 clause (when `2 • b` is not a relative root) and an SU3 clause
 (when `2 • b` is a relative root). This proposition is the SU3 clause
 verbatim, with the same binders, record, Weyl element and normalizer
 condition. Together with a proof of the SL2 clause, a proof of this proposition
-proves the target by `constructor`. Task 6836 splits the clause off so that
+proves the target by `constructor`. The clause is split off so that
 it can be proved independently.
 
 ## Source
@@ -80,7 +78,7 @@ Derived, and internal in its packaging. The source gives the reduction to
 view. This proposition keeps only the algebraic content, over an arbitrary
 field, with the supplied centralizer presentation `(Z, j, s)`. It packages the
 data as the Library's `AlgebraicSU3RootCoordinates` record and adds the Weyl
-normalization. Like the parent target, it does not claim that the source
+normalization. Like `AlgebraicRankOneCoordinatesExistenceStatement`, it does not claim that the source
 prints this exact proposition. The registered corrections
 `kaletha-prasad-2024-corrections` (PDF p. 33, adding AS 5) concern the
 building hypotheses of Chapter 7 and do not affect this valuation-free

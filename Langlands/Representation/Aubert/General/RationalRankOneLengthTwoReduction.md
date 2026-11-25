@@ -1,7 +1,5 @@
 # Rational rank-one length two from extraction or the whole cuspidal splitting
 
-Author: Worker 3915, Task 3915 (`c53e3363-ffa5-4f01-ae77-aca8e1f49117`).
-
 Module `Langlands.Representation.Aubert.General.RationalRankOneLengthTwoReduction`,
 namespace `Langlands.Aubert.General.RationalPointFamily`.
 
@@ -12,18 +10,16 @@ unproved proposition. It does **not** prove the target. Each theorem keeps
 its input as an explicit hypothesis:
 
 - `RationalCuspidalJacquetFactorExtractionStatement.{u, v}` (module
-  [RationalCuspidalJacquetFactorTarget](RationalCuspidalJacquetFactorTarget.md);
-  proof task `e6add7c5-44c5-45ea-afe9-7f48c98fb927`), or
+  [RationalCuspidalJacquetFactorTarget](RationalCuspidalJacquetFactorTarget.md)), or
 - `Langlands.CuspidalSupport.RationalWholeCuspidalCategoryDecompositionStatement`
   at universes `u` and `max (u + 1) v`, the whole-category cuspidal splitting of
   Renard VI.3.5 (module
-  [RationalWholeCuspidalDecompositionStatement](../../CuspidalSupport/RationalWholeCuspidalDecompositionStatement.md);
-  proof task `4bee987a-093b-4054-bd65-7360168351d2`).
+  [RationalWholeCuspidalDecompositionStatement](../../CuspidalSupport/RationalWholeCuspidalDecompositionStatement.md)).
 
-Neither proposition is proved in the Library at the time of writing.
+Neither proposition is proved in the Library.
 
 The coatom Jacquet-length budget, the other input of the length-two reduction,
-is now proved. So it is not a hypothesis here.
+is proved (`rationalMaximalCuspidalJacquetBudget`). So it is not a hypothesis here.
 
 ## Declarations
 
@@ -82,8 +78,7 @@ of the previous theorem through two published theorems:
 
 ## Transitive dependencies
 
-These are recorded as the task asks. The paired Markdown of each module gives
-the details.
+The paired Markdown of each module gives the details.
 
 - Geometric lemma: the budget uses `rationalMaximalSourceGeometricFiltration`.
   The extraction inputs use `exists_pointInducedJacquetGeometricFiltration`.

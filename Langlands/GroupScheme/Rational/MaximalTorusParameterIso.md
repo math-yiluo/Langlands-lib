@@ -1,7 +1,5 @@
 # Identification of actual maximal-torus parameter schemes
 
-Author: Worker 1630.
-
 For arbitrary universe `u`, field `k : Type u`, group scheme `G` over
 `Spec k` and morphism `j₀ : T₀.toGrp ⟶ G`, suppose that actual projections
 `q : G.X ⟶ Q` and `q' : G.X ⟶ Q'` both satisfy the published

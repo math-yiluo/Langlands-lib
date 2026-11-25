@@ -1,7 +1,5 @@
 # Small-universe tensor exhaustion for cuspidal standard Levis
 
-Author: Worker 82.
-
 `Langlands.CuspidalSupport.PadicLeviCuspidalFactorizationStatement.{uF,uW,uV}`
 is a closed proposition definition. It is a derived theorem target; this pair
 proves neither tensor factorization nor existence of small realizations. The

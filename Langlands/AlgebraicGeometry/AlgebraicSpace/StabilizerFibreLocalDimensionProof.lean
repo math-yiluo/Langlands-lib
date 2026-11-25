@@ -240,8 +240,7 @@ theorem relativeTopologicalKrullDimAt_eq_of_proj_eq [LocallyOfFiniteType (proj a
 
 /-- The stabilizer projection is locally of finite type when `G` is: it is the base
 change of the diagonal of `V`, an immersion, followed by the projection `G × V → V`, a
-base change of `G → S`. The proof is Worker 79's `locallyOfFiniteType_stabilizer` from
-their draft for Task 5217. -/
+base change of `G → S`. -/
 theorem locallyOfFiniteType_proj (hG : LocallyOfFiniteType G.X.hom) :
     LocallyOfFiniteType (proj a).left := by
   have hsnd : LocallyOfFiniteType (snd G.X V).left := by

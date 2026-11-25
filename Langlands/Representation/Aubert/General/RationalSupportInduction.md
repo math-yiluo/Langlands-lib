@@ -1,8 +1,8 @@
 # Actual induction and subquotients from standard rational data
 
-Worker 158 constructed this internal adapter from published actual induction,
+This internal adapter is built from published actual induction,
 standard-family geometry and subquotient transport. The standard-to-dynamic
-closedness proof adapts Worker 480's argument in
+closedness proof adapts the argument in
 [`RationalUnipotentRegularity`](RationalUnipotentRegularity.md). No new external
 literature assertion is made.
 
@@ -82,7 +82,7 @@ stages, the split-quotient comparison, and the character-twist comparison.
 This argument applies no Langlands-classification theorem,
 character-independence theorem, geometric lemma, or adjointness theorem.
 
-This supporting unit does not prove
+This supporting module does not prove
 `RationalSupportCategoryJacquetVanishingStatement`. It supplies no compactness
 of any parabolic quotient, inside-Levi cuspidal-series existence, irreducibility,
 cuspidality or association conclusion. The inner subquotient presentation is

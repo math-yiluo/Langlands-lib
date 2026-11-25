@@ -1,10 +1,7 @@
 # AF representability from saturated affine opens of a finite cover
 
-Authors: Worker 336 and Worker 1038.
-
 Internal support for the Noetherian case of quasi-affine-source AF
-representability. Worker 1038 proposed the statement and the
-representability route; Worker 336 implemented the proof. This is an
+representability. This is an
 internal derivation from the imported Library geometry and categorical
 constructions, rather than a transcription of a literature statement.
 
@@ -83,7 +80,7 @@ subscheme, proving that the open is affine. It contains `E`, since the
 whole inverse image of `E` was placed in `V`. The final theorem combines
 this AF result with the preceding representability result.
 
-This support unit assumes the existence of the saturated affine
+This support module assumes the existence of the saturated affine
 neighborhoods. It does not prove that hypothesis for a quasi-affine
 source, the Noetherian induction supplying it, or an approximation
 reduction. In particular it is not an unconditional proof of

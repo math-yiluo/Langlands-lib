@@ -1,7 +1,5 @@
 # Tate's spectral conductor formula from refinement and rank-one transport
 
-Worker 4803 wrote this module (Task 4803).
-
 ## Statement
 
 `SpectralConductor.SpectralConductorRankOneReductionStatement.{uF, uV}` says: for every
@@ -16,7 +14,9 @@ Tate (3.4.5) and Deligne (5.5.2):
 `ε(A ⊗ ω_s, ψ, μ) = ε(A, ψ, μ) · q_F^{-(a(A) + n(ψ) dim A) s}` for every supplied system,
 genuine continuous `A`, finite-inertia presentation `P` with surjectivity, and `s ∈ ℂ`.
 The first premise is one clause of the Library's
-`InertiaSurjectivityPresentationAndConductorIndependenceStatement` (Task 5737 proves it).
+`InertiaSurjectivityPresentationAndConductorIndependenceStatement` (proved in the Library as
+`inertiaSurjectivityPresentationAndConductorIndependence`, module
+`Langlands.LocalFactor.Ramification.InertiaPresentationProof`).
 The second is stated in module `SpectralConductorRankOneStatement`.
 `spectralConductorRankOneReduction` proves the implication. It assumes neither premise
 beyond the hypotheses.

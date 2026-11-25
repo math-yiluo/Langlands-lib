@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Injectivity of a base-changed linear map, tested on finite independent families -/
 

@@ -1,8 +1,9 @@
 # Invariant split-kernel character extension
 
-Worker 200 constructs the clause-1 elementary character extension for task
-`867199fa-9617-424f-8b81-cbf685f3759e` revision 2, using the interface agreed
-with Worker 118. The namespace is `Langlands.Induction.SplitKernelLocalization`.
+This module constructs the elementary character extension (clause 1) of the
+split-kernel localization assembled in `SplitKernelLocalizationData`, which
+imports it together with `SplitKernelSectionAction`. The namespace is
+`Langlands.Induction.SplitKernelLocalization`.
 
 ## Actual constructions and defining laws
 
@@ -44,7 +45,7 @@ The homomorphism multiplication field applies the cocycle formula, then
 `theta.map_mul`, then `hTheta (r g)⁻¹`. Its unit field uses `k(1)=1`.
 `characterExtension_apply` exposes the defining formula through the actual
 `kernelCoordinate`; `characterExtension_kernel` and
-`characterExtension_section` prove the requested restrictions to `theta`
+`characterExtension_section` prove the restrictions to `theta`
 and to the trivial character. `characterExtension_mul` exposes the actual
 homomorphism multiplication law. The character on any subgroup intersection
 may remain nontrivial.
@@ -72,7 +73,7 @@ No representation carriers occur in this module, so it imposes no relationship
 between the independent carrier universes in subsequent quotient constructions.
 It excludes no zero module or intertwiner. Clauses 2 and 3, the localized
 section actions and their natural quotient transports, belong to the separate
-entry construction; they are not claimed here.
+entry construction `SplitKernelLocalizationData`; they are not claimed here.
 
 ## Provenance and normalization
 
@@ -138,85 +139,56 @@ The extension requires none of their integration or quotient results.
 | Continuous coordinate | Continuity of multiplication and inverse in `G`, `hr`, `hs` | Mathlib continuity and induced subtype topology |
 | Actual smooth extension and its open kernel | Existing `SmoothCharacter` structure, `theta.isOpen_ker`, continuous coordinate | The preceding row and preimages of open sets |
 
-Every row is independent, directly and transitively, of the full inherited
-exclusion union. This is a proof audit as well as an import audit: the only
+Every row is independent, directly and transitively, of the full
+exclusion union below. This is a proof audit as well as an import audit: the only
 project type used in a proof field is the existing smooth-character structure;
-no consumer conclusion, conditional assembly, pending proof, proposition
+no consumer conclusion, conditional assembly, unproved proposition, proposition
 definition, or citation is used as a proved input. The following exhaustive
-grouping records the entire union, including successors and downstream
-consequences of every item. Each group is absent from every row above.
+grouping records the entire union, including the modules that prove each
+item and its downstream consequences. Each group is absent from every row above.
 
 - All-character and Whittaker finiteness:
-  `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`,
-  `62de5903-b616-4b5c-88eb-a066b77c5467`;
-  `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`,
-  `5ab445dc-d2b4-4072-80d1-6370870a4a26`;
-  `LeviCuspidalCoinvariantFinitenessStatement`,
-  `3ff5c8fb-397c-4345-bcb3-5d98a0993d18`; and the dependent mirabolic
-  finite-length route `5428fe2c-013c-482d-aa6e-7df43e7191aa`.
+  `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`;
+  `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`;
+  `LeviCuspidalCoinvariantFinitenessStatement`; and the dependent mirabolic
+  finite-length route.
 - Generic, head, and analytic classification:
-  `GenericSegmentProductUniqueness`,
-  `30341ae4-65f2-4a0e-9283-763db01a409e`;
-  `SegmentHeadProductIrreducibility`,
-  `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`;
-  analytic segment classification `aca8805b-054f-4d56-8045-12db7f623404`;
-  `SegmentSpecialEssentialSquareIntegrability`,
-  `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`;
-  `SquareIntegrableLanglandsClassification`,
-  `1cb45da2-7007-4351-a694-594fb148b8d1`; and tempered uniqueness
-  `52e97845-36bb-457d-b76f-70753334b88c`.
+  `GenericSegmentProductUniqueness`;
+  `SegmentHeadProductIrreducibility`;
+  analytic segment classification;
+  `SegmentSpecialEssentialSquareIntegrability`;
+  `SquareIntegrableLanglandsClassification`; and tempered uniqueness.
 - Existence, exhaustion, and coverage:
-  individual special-head/reverse-socle existence
-  `67279e36-f3c2-42e3-9302-11729784042e`;
-  individual segment-socle/reverse-head existence
-  `4ca79bbd-589e-476b-9f65-661e799984b5`;
-  multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-  ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-  quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-  ordered conversion `8252833d-c269-41a9-824c-5879e531b23b`;
-  square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-  regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`;
-  `OrderedMultisegmentSocleExistence`,
-  `23189526-80b0-4828-a6d4-7ebec2cbeef5`; and
-  `MultisegmentSocleExhaustion`,
-  `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`.
+  individual special-head/reverse-socle existence;
+  individual segment-socle/reverse-head existence;
+  multisegment exhaustion;
+  ordered strong-head existence;
+  quotient coverage;
+  ordered conversion;
+  square-integrable exhaustion;
+  regular exhaustion;
+  `OrderedMultisegmentSocleExistence`; and
+  `MultisegmentSocleExhaustion`.
 - Segment-socle products, commutation, and gluing:
-  `UnlinkedSegmentSocleProductIrreducible`,
-  `23e98d90-6055-4e35-91a9-b0f5d8a84961`;
-  `LinkedSegmentSocleReverseProductStructure`,
-  `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`;
-  `LinkedSegmentSoclePairReducible`,
-  `8fa9f68b-fa1b-431a-97f6-5b163964d1fc`;
+  `UnlinkedSegmentSocleProductIrreducible`;
+  `LinkedSegmentSocleReverseProductStructure`;
+  `LinkedSegmentSoclePairReducible`;
   `JuxtaposedSegmentSocleReverseProductStructure`,
-  `LinkedSegmentSocleReverseProductQuotientHom`,
-  `7ff2a1e9-89dc-439e-a861-a567b3db92bf`;
-  `SegmentSocleProductIrreducibility`,
-  `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`;
-  `AdjacentUnlinkedSegmentSocleSwap`,
-  `e3634665-571b-4852-9f4c-bab8a1053434`,
-  `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`;
-  `TwoSegmentSocleCommutation`,
-  `426911b4-6620-413f-8065-04b25287f3bd`,
-  `66e3b87c-647e-41e4-af18-df4d436765f0`;
-  `LinkedSegmentSocleGluing`,
-  `c84cd52c-3ff3-4024-be50-8b84dd480888`,
-  `6780b79c-9526-46aa-b8b4-00377d68b1ea`.
+  `LinkedSegmentSocleReverseProductQuotientHom`;
+  `SegmentSocleProductIrreducibility`;
+  `AdjacentUnlinkedSegmentSocleSwap`;
+  `TwoSegmentSocleCommutation`;
+  `LinkedSegmentSocleGluing`.
 - Two-supercuspidal products:
-  `TwoSupercuspidalNonadjacentProductIrreducible`,
-  `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`;
-  `TwoSupercuspidalProductStructure`,
-  `ab61f565-1427-4746-ba77-46097563e962`.
+  `TwoSupercuspidalNonadjacentProductIrreducible`;
+  `TwoSupercuspidalProductStructure`.
 - All segment derivative, segment-socle/head existence, and Jacquet formulas:
-  `SegmentFullJacquetFormula`,
-  `ed48ae06-964c-4c84-9e62-978f5a953ca7` and its exact proof successor;
-  `SegmentHeadJacquetFormula`,
-  `55ad1e10-62d8-46b7-a081-909ef0056426`;
-  `SegmentSocleJacquetFormula`,
-  `b95105c6-f8bb-4641-ae53-2f49d1e7f034`;
-  `SegmentSpecialJacquetExponentNormFormula`,
-  `92aea10f-62ac-4e0b-bd4a-9a80909797c5`; and clauses (b), (d), (e), (f)
-  of the six-statement parent of derivative task
-  `2e5183b1-01e9-44fb-b26c-f4521a25c7c7`.
+  `SegmentFullJacquetFormula` and its proof `segmentFullJacquetFormula`
+  (module `Classification.SegmentFullJacquetProof`);
+  `SegmentHeadJacquetFormula`;
+  `SegmentSocleJacquetFormula`;
+  `SegmentSpecialJacquetExponentNormFormula`; and clauses (b), (d), (e), (f)
+  of the six statements of `Classification.SegmentSocleDerivativesStatement`.
 - The additional source and general-input restrictions: no Ze80 §3.5 or §9.6
   segment derivative formula, §4.2 or §9.7 product irreducibility criterion,
   §9.3 analytic or square-integrability result, classification or exhaustion
@@ -227,15 +199,8 @@ consequences of every item. Each group is absent from every row above.
   assumption enters the construction. The group name `plusSubgroup` does
   not occur, and no plus-functor result is used.
 
-These restrictions continue to bind the eventual action entry and later
-comparisons; this lower pair does not weaken them or arrange successors.
-Worker 127's operator pause and all current operator suspensions are preserved.
-
 ## Validation boundary
 
-The module compiles in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0 and pinned Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
-The development check has zero errors and warnings. Compilation and the
-intrinsic construction proofs do not themselves establish independent
-semantic acceptance or Library publication.
+The module compiles with Lean 4.34.0 and pinned Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
+The development check has zero errors and warnings.

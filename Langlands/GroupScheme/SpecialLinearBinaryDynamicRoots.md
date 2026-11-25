@@ -37,7 +37,7 @@ These two properties are precisely the witness required for membership in
 `Dynamic.unipotent`. Applying the construction to each point in the actual
 root-map range proves the subgroup-functor inclusion.
 
-This unit proves the explicit split binary contraction. It does not construct
+This module proves the explicit split binary contraction. It does not construct
 split SL₂ presentations of arbitrary factors, prove the structural conjugacy
 or relative-root generation inputs for an ambient group, or prove the
 unrestricted local Kneser–Tits statement.

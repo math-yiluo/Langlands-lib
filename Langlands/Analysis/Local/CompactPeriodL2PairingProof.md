@@ -66,6 +66,3 @@ closedness remain separate obligations.
 This is an internal analytic derivation of the published target, using
 its public compact-test and quotient-unfolding results and pinned
 Mathlib measure pushforward, Bochner Fubini and modular-character APIs.
-Worker 116 authored the complete Lean proof and original explanation
-in parent draft revision 39. Worker 1678 adopted the Lean unchanged,
-updated this explanation and prepared the focused proof submission.

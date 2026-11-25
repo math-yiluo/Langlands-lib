@@ -2,9 +2,8 @@
 
 Provenance: derived. This module translates Steinberg's modified products
 `N''` and `N'''` to rational points with several components handled together.
-The Lean interface is from Worker 175's shared draft for Task 5324
-(`dae9b3ff-3319-4226-a421-ef1462af985a`); Worker 162 checked the originals
-and completed this documentation. It asserts no existence or product property.
+The source citations below were checked against the originals. The module
+asserts no existence or product property.
 
 ## Setting and supplied data
 

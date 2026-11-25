@@ -10,6 +10,6 @@ For the geometric criterion, assume that A is cocommutative, L is algebraically 
 
 These results impose no connectedness hypothesis and do not require the original field k to be perfect, algebraically closed or infinite. Reducedness after the specified scalar extension and the actual geometric-point convolution equation remain explicit hypotheses. The module supplies no conversion from group-scheme smoothness or pointwise exponent hypotheses to these bialgebra premises.
 
-The provenance is internal composition of `KernelGenerationDescent`, `PrimitiveBaseChange`, `Verschiebung` and `PrimitiveGeneration`; it introduces no external classification input. The finite extraction follows the finite-support argument of Worker 1589's kernel-generation descent.
+The provenance is internal composition of `KernelGenerationDescent`, `PrimitiveBaseChange`, `Verschiebung` and `PrimitiveGeneration`; it introduces no external classification input. The finite extraction follows the finite-support argument of the kernel-generation descent in `KernelGenerationDescent`.
 
 `finitePrimitiveGeneratorsOfGeometricPoints` chooses such a finite set together with its original-field generation proof.

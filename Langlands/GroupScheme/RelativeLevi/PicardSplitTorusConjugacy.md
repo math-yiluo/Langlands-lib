@@ -1,6 +1,6 @@
 # Global conjugacy of split maximal tori in a common Borel
 
-Worker 591. This derived construction implements the last descent step of
+This derived construction implements the last descent step of
 Conrad, *Reductive group schemes* (2014), Proposition 6.2.11(2), p.211.
 It uses the Library's actual relative torus, Borel, and all-test subgroup
 functors, with the hypothesis that every actual line bundle on the base

@@ -1,7 +1,5 @@
 # Generic closure closedness from the connected-fibre theorem
 
-Worker 671.
-
 This internal conditional construction uses the actual generic-image closure
 of `SmoothTargetGenericClosure`. The base is any Dedekind domain `R` with a
 chosen fraction field `K`, the source `M` is reductive, the target `G` is
@@ -32,7 +30,8 @@ The last theorem specializes this conditional result to matrix representations
 over discrete valuation rings and proves
 `ConnectedFibreLocusClosedStatement → ReductiveDvrMatrixMonomorphismStatement`.
 It retains the entire connected-fibre premise and does not prove either
-statement unconditionally or the host theorem for arbitrary separated targets.
+statement unconditionally or `ReductiveMonomorphismClosedImmersionStatement` for
+arbitrary separated targets.
 
 The provenance is internal composition of the named Library interfaces,
 group-scheme base change, and elementary topology of connected spaces.

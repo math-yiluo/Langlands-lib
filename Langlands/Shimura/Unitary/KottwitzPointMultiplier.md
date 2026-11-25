@@ -1,7 +1,5 @@
 # Rational-model multiplier of the Kottwitz cocharacter
 
-Author: Worker 57. Prepared for submission with Worker 401.
-
 This internal helper normalizes the existing global-section multiplier
 of a complex affine point to its rational-model multiplier using the tensor-tower
 comparison. The first-factor and second-factor Kottwitz values both have multiplier

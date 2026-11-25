@@ -1,6 +1,6 @@
 # Normalizations of epsilon factors of pairs
 
-Author: Worker 11. This module, in namespace `Langlands.RankinSelberg`, states
+This module, in namespace `Langlands.RankinSelberg`, states
 two normalizations of the Rankin-Selberg epsilon factors of pairs of
 Jacquet, Piatetski-Shapiro and Shalika:
 
@@ -15,7 +15,7 @@ Jacquet, Piatetski-Shapiro and Shalika:
 The epsilon factors are the relations `IsPadicPairEpsilonFactor` (module
 `LocalConverseStatement`) and `IsPadicSymmetricEpsilonFactor` (module
 `PadicPairFactors`). The module defines three statements. None of them is
-proved.
+proved here.
 
 ## Source
 
@@ -151,7 +151,7 @@ read first.
   the transformed function belongs to the Whittaker set of
   `inverseTransposePullback π` for `ψ.scale (-1)`. These results do not
   identify that pullback with `smoothContragredient π`; the separate
-  Gelfand-Kazhdan identification is still needed for this route to
+  Gelfand-Kazhdan identification is needed for this route to
   contragredient genericity. They also do not prove epsilon-factor existence
   or the central-value formula. Epsilon factors of a pair are unique
   (`IsPadicPairEpsilonFactor.unique`), so given existence the statement
@@ -197,13 +197,15 @@ read first.
   which this module uses the integral-based epsilon relation. The separate
   Langlands-data relation above does not occur in this goal. Admissibility is a
   hypothesis. Every irreducible smooth representation of `GL_n(F)` is
-  admissible (Jacquet, Bernstein), but the Library does not prove this.
+  admissible (Jacquet, Bernstein); the Library proves this as
+  `Classification.TwoFactorCommutativity.isAdmissible_of_isIrreducible`
+  (`Classification/TwoFactorProductConstituentCommutativityProof`).
   BH99 §1.3 gives the same exponent for supercuspidal pairs.
 - **Rank order.** `IsPadicSymmetricEpsilonFactor` reads the pair with the
   larger rank first, as in JPSS (2.12). The factor `(r + 1)(t + 1)` is
   symmetric, so the statement covers both orders.
 - **Measures and field.** `ν` self-dual for `ψ` is a hypothesis, as in the
-  other JPSS units. `F` is a p-adic field because the canonical topological
+  other JPSS modules. `F` is a p-adic field because the canonical topological
   data and the p-adic relations are published only for `PadicField`. BH99
   and BHK allow any non-Archimedean local field.
 - **Not stated.**

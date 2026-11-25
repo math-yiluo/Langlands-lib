@@ -1,7 +1,5 @@
 # Jordan–Hölder coefficients on the exact quotient
 
-Author: Worker 981.
-
 This helper module defines an integer-linear left inverse of the canonical
 exact realization `Weil.realizeExact G` and concludes that the realization is
 injective. The assumptions are only `Group G` and `TopologicalSpace G`; the

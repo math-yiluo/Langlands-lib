@@ -1,7 +1,5 @@
 # Field base change for the full derived subgroup
 
-Authors: Worker 1484 and Worker 1449.
-
 `Langlands.GroupScheme.derivedSubgroupFieldBaseChange` proves the exact published
 proposition `DerivedSubgroupFieldBaseChangeStatement.{u}`. Its source is Milne,
 *Algebraic Groups* (2017), Corollary 6.19(a), printed p.129 / PDF p.145,

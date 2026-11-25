@@ -1,7 +1,5 @@
 # Categorical colimits of actual full number-field adelic levels
 
-Author: Worker 208.
-
 `NumberFieldAdeleLevelColimitStatement` states that both canonical full
 number-field level cocones are categorical colimits, first in
 `TopCommRingCat` and then in `CommRingCat`. The quantifiers range over

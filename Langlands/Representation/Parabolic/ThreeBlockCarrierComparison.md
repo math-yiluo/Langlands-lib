@@ -1,7 +1,5 @@
 # Carrier comparison for the literal three-block bracketings
 
-Author: Worker 645.
-
 This module supplies internal concrete carrier adapters. It does not prove
 associativity. The three source carriers lie in independent universes. The
 three comparison carriers share a universe of the form `max uF uW`, so actual

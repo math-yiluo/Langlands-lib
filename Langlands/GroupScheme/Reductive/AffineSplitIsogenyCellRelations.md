@@ -1,6 +1,6 @@
 # Actual powered cell relations over local coefficient rings
 
-This internal supporting unit combines the actual powered Weyl and word
+This internal supporting module combines the actual powered Weyl and word
 laws with the arbitrary-target cell reductions. The coefficient ring is
 commutative and local. The source and target are affine, their coordinate
 tori are closed, and genuine normalized simple-root data are supplied

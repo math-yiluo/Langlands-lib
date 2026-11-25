@@ -1,8 +1,6 @@
 # Conditional cocompactness of derived points in the rational norm kernel
 
-Author: Worker 723.
-
-This is internal infrastructure for task `bbd4ee2c`. It derives the published target
+This is internal infrastructure. It derives the published target
 `CentralDerivedNormKernelCocompactnessStatement.{u}` from three other published
 propositions. All three remain explicit inputs of
 `centralDerivedNormKernelCocompactness_of_premises`. The module does **not** prove the
@@ -13,16 +11,17 @@ convention for such reductions, the final assembly is a proposition-valued `def`
 ## Inputs
 
 1. `ReductiveCentralTorusSurjectivityStatement.{u}`
-   (`Langlands.GroupScheme.Reductive.CentralTorusSurjectivityStatement`; proof task
-   `5c7bdf70`). For a connected reductive `M` and an actual derived-subgroup inclusion
+   (`Langlands.GroupScheme.Reductive.CentralTorusSurjectivityStatement`; proved as
+   `Langlands.GroupScheme.reductiveCentralTorusSurjectivity`). For a connected reductive `M` and an actual derived-subgroup inclusion
    `d : D ⟶ M`, it supplies a closed central torus `i : Z ⟶ M` such that the
    multiplication map `subgroupProductMap i d` is surjective on underlying schemes.
 2. `Plancherel.TorusNormKernelCompactnessStatement.{u}`
-   (`Langlands.Representation.Plancherel.TorusNormKernelCompactnessStatement`; proof
-   task `2c45b1e1`). For every affine, locally finite type torus `T` over a
+   (`Langlands.Representation.Plancherel.TorusNormKernelCompactnessStatement`; proved
+   as `Langlands.Plancherel.torusNormKernelCompactness`). For every affine, locally finite type torus `T` over a
    nonarchimedean local field, `rationalCommonNormKernel T` is compact.
 3. `SmoothRationalPointOpenMapStatement.{u}`
-   (`Langlands.AlgebraicGeometry.PointTopology.SmoothOpenMapStatement`, by Worker 1505).
+   (`Langlands.AlgebraicGeometry.PointTopology.SmoothOpenMapStatement`; proved as
+   `Langlands.AlgebraicGeometry.PointTopology.smoothRationalPointOpenMap`).
    A smooth morphism of affine schemes over the local field induces an open map
    between the canonical rational-point topologies.
 

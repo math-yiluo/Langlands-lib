@@ -41,12 +41,12 @@ end RealJacquet
 
 open ArchimedeanLocal
 
-local instance (t : ℕ) : MeasurableSpace (Langlands.GeneralLinear (t + 1) ℝ) := borel _
-local instance (t : ℕ) : BorelSpace (Langlands.GeneralLinear (t + 1) ℝ) := ⟨rfl⟩
-local instance (t : ℕ) : MeasurableSpace (GeneralLinear.upperUnipotent (t + 1) ℝ) := borel _
-local instance (t : ℕ) : BorelSpace (GeneralLinear.upperUnipotent (t + 1) ℝ) := ⟨rfl⟩
-local instance (t : ℕ) : MeasurableSpace (RankinSelberg.LeftUnipotentQuotient t ℝ) := borel _
-local instance (t : ℕ) : BorelSpace (RankinSelberg.LeftUnipotentQuotient t ℝ) := ⟨rfl⟩
+private local instance (t : ℕ) : MeasurableSpace (Langlands.GeneralLinear (t + 1) ℝ) := borel _
+private local instance (t : ℕ) : BorelSpace (Langlands.GeneralLinear (t + 1) ℝ) := ⟨rfl⟩
+private local instance (t : ℕ) : MeasurableSpace (GeneralLinear.upperUnipotent (t + 1) ℝ) := borel _
+private local instance (t : ℕ) : BorelSpace (GeneralLinear.upperUnipotent (t + 1) ℝ) := ⟨rfl⟩
+private local instance (t : ℕ) : MeasurableSpace (RankinSelberg.LeftUnipotentQuotient t ℝ) := borel _
+private local instance (t : ℕ) : BorelSpace (RankinSelberg.LeftUnipotentQuotient t ℝ) := ⟨rfl⟩
 
 namespace RealJacquet
 

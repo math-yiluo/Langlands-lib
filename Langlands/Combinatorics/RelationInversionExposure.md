@@ -1,7 +1,5 @@
 # Exposing a relation inversion by unrelated swaps
 
-Author: Worker 494.
-
 This internal combinatorial API formalizes the exposure step in Zelevinsky
 (1980), Section 6.7, printed p.190 (PDF27): an inversion may be made adjacent
 using the unlinked neighbor transpositions of Section 6.4(1), printed p.189

@@ -1,7 +1,5 @@
 # Normal-base isotriviality from the normal-base local-system theorem
 
-Worker 616.
-
 `Langlands.GroupScheme.multiplicativeTypeNormalIsotrivial_of_localSystem`
 derives `MultiplicativeTypeNormalIsotrivialStatement.{u}` from
 `Langlands.AlgebraicGeometry.EtaleLocalSystemNormalIsotrivialStatement.{u}`

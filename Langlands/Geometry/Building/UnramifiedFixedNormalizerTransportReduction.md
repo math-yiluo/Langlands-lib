@@ -1,7 +1,5 @@
 # Normalizer transport of Galois-fixed points from Levi transport
 
-Author: Worker 4356.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedNormalizerTransportReduction`.
 
 This module proves that the statement `UnramifiedFixedLeviTransportStatement` (module of

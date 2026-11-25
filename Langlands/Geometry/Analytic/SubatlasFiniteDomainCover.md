@@ -1,7 +1,5 @@
 # Actual finite full-domain refinements through a locally refining subatlas
 
-Author: Worker 36.
-
 The module constructs a finite selected-chart cover of every original
 affinoid chart and restricts it to every actual full affinoid domain in
 that chart. Each resulting quotient algebra is simultaneously a full

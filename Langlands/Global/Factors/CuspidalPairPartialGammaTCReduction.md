@@ -1,6 +1,6 @@
 # The totally complex completed equation of cuspidal pairs from the totally complex partial equation
 
-Module `Langlands.Global.Factors.CuspidalPairPartialGammaTCReduction`. Author: Worker 5210.
+Module `Langlands.Global.Factors.CuspidalPairPartialGammaTCReduction`.
 
 ## 1. Content and provenance
 
@@ -13,11 +13,10 @@ proposition other than the reduction statement. It contains:
     CuspidalPairCompletedEquationTCStatement.{u, uQ}
   ```
   Both sides are imported unchanged. The premise is the totally complex (TC) form of the
-  published (G') = `CuspidalPairPartialGammaEquationStatement.{u, uQ}`, defined by Worker 382
-  under Task 6190 in module
+  published (G') = `CuspidalPairPartialGammaEquationStatement.{u, uQ}`, defined in module
   [`CuspidalPairPartialGammaEquationTCStatement`](CuspidalPairPartialGammaEquationTCStatement.md).
   The conclusion is the TC form of the completed equation
-  `CuspidalPairCompletedEquationStatement`, defined by Task 0 in module
+  `CuspidalPairCompletedEquationStatement`, defined in module
   [`CuspidalPairFunctionalEquationTCStatement`](CuspidalPairFunctionalEquationTCStatement.md);
 * the theorem `cuspidalPairPartialGammaTCReduction`, which proves
   `CuspidalPairPartialGammaTCReductionStatement`;
@@ -36,14 +35,13 @@ number field. §1 of [`CuspidalPairPartialGammaReduction`](CuspidalPairPartialGa
 explains how (G') renders it. Restricting to TC fields is a specialization, not a change of
 content.
 
-**Why the TC form.** The restriction follows operator answer 81ed24709e7050068786116ca6613260
-(Option A, to request 9b5f630f11af591aae45e2157df43d94). The Library's route to the local
+**Why the TC form.** The Library's route to the local
 correspondence applies the global functional equation only over the CM base field produced by
 the globalization of Henniart (2000) §3 and over its finite extensions. These fields are all
-totally complex. Task 0 publishes TC forms of the statements on that route, including
-`CuspidalPairCompletedEquationTCStatement`. The Task 0 coordinator (Worker 0) asked that its
-proof be staged under Task 5721. This module reduces it to the TC form of (G'), whose only
-archimedean input is at complex places.
+totally complex. The Library states TC forms of the statements on that route, including
+`CuspidalPairCompletedEquationTCStatement` (`CuspidalPairFunctionalEquationTCStatement.md` §4).
+This module reduces it to the TC form of (G'), whose only archimedean input is at complex
+places.
 
 **What the TC restriction does.** By Mathlib's definition, `NumberField.IsTotallyComplex F`
 means that every infinite place of `F` is complex. So the subtype
@@ -66,9 +64,7 @@ cuspidalPairCompletedEquation_of_satakeBound_of_partialGamma :
 ```
 
 That chain is stated for all number fields at once, so it does not give the TC form from the TC
-premise. The proof here therefore repeats it one field at a time. The module is an intermediate
-result of Task 5721 in the sense of the "Intermediate results" section of that task's
-revision 2.
+premise. The proof here therefore repeats it one field at a time.
 
 ## 2. Statements
 
@@ -94,8 +90,8 @@ Its conclusion is that of (G'). There are a real `σ` and functions `Λ`, `Λd`,
   `v ∈ S`. Then, off a discrete set,
   `Λ(s) = (∏_(v ∈ S) G_v(q_v^(-s))) ε_∞(s) Λd(1 - s)`.
 
-`CuspidalPairCompletedEquationTCStatement.{u, uQ}` is imported unchanged from Task 0's module
-(see its Markdown). For the same data, together with every finite factor choice `c` unramified
+`CuspidalPairCompletedEquationTCStatement.{u, uQ}` is imported unchanged from
+`CuspidalPairFunctionalEquationTCStatement` (see its Markdown). For the same data, together with every finite factor choice `c` unramified
 outside `S`, it asserts `c.CompletedEquationHolds S L_∞ L∨_∞ ε_∞`.
 
 ## 3. The proof
@@ -126,21 +122,22 @@ target. In particular this includes the TC instance and a finite factor choice `
 None of these steps uses the TC instance. It is carried only so that `hG` can be applied at
 `F`.
 
-`lean_check` reports 0 errors and 0 warnings for the module. The theorem
+A compilation of the module reported 0 errors and 0 warnings. The theorem
 `cuspidalPairPartialGammaTCReduction` depends only on the axioms `propext`, `Classical.choice`
 and `Quot.sound`.
 
-## 4. Scope and remaining work
+## 4. Scope and the premise
 
 * This is a reduction. It does not prove `CuspidalPairCompletedEquationTCStatement`. Its one
-  premise, `CuspidalPairPartialGammaEquationTCStatement`, is open.
+  premise, `CuspidalPairPartialGammaEquationTCStatement`, is not proved in the Library.
 * By `cuspidalPairPartialGammaEquationTC_of_partialGamma`, a proof of the unrestricted (G')
-  (Task 6190) proves the TC premise. With this reduction it then proves the TC target. The
+  proves the TC premise. With this reduction it then proves the TC target. The
   unrestricted target also follows, by the published
   `cuspidalPairCompletedEquation_of_satakeBound_of_partialGamma`.
 * A proof of only the TC form of (G') needs the archimedean local functional equations at
-  complex places only. Task 6190 plans to derive it separately, from global Rankin–Selberg
-  statements with TC semilocal equations (see the premise's Markdown). With this reduction it
-  proves the TC target, but not the unrestricted target of Task 5721.
-* Task 5721's required result, the unconditional `lean.proof@1` theorem of the unrestricted
-  `CuspidalPairCompletedEquationStatement`, stays open.
+  complex places only. `CuspidalPairPartialGammaGlobalTCReduction` derives it from global
+  Rankin–Selberg statements with TC semilocal equations (see the premise's Markdown). With this
+  reduction such a proof gives the TC target, but not the unrestricted
+  `CuspidalPairCompletedEquationStatement`.
+* This module gives no unconditional proof of the unrestricted
+  `CuspidalPairCompletedEquationStatement`, and the Library does not prove it.

@@ -1,6 +1,6 @@
 # Split torus extensions from the one-dimensional unipotent classification
 
-Worker 1496. The module has one theorem,
+The module has one theorem,
 `Langlands.GroupScheme.solvableSplitExtension_of_oneDimensional`. It proves
 `PerfectFieldOneDimensionalUnipotentStatement.{u} → SolvableSplitExtensionStatement.{u}`.
 The classification of one-dimensional smooth connected unipotent groups over

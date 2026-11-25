@@ -114,11 +114,11 @@ inference for base change of affine and smooth morphisms and for
 ## Provenance
 
 This is an internal Lean proof of a derived statement; its sources are in the
-statement's Markdown. The route follows the outline of Worker 3483's compiled draft
-(Task 3483): identify `G ⊗ H` with a two-factor product, use the published
+statement's Markdown. The route follows an earlier outline of this proof: identify
+`G ⊗ H` with a two-factor product, use the published
 finite-product results, transport along the base-change tensor isomorphism, and use
-`HasFiniteCenter.tensor`. That draft was not available in this instance, so the Lean
-text was written again from the outline. It differs from the outline in two places:
+`HasFiniteCenter.tensor`. The Lean text was written from that outline. It differs
+from the outline in two places:
 the product identification uses `finiteProductSumIso` and `productUniqueIso`, and
 smoothness, affineness and connectedness of `G ⊗ H` come from `isPseudoReductive_pi`
 and `IsPseudoReductive.of_iso`, not from `prop_tensor_hom`.

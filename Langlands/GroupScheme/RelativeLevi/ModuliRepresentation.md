@@ -1,7 +1,5 @@
 # Representing relative Levi subgroup images
 
-Author: Worker 178.
-
 This module defines a representing correspondence for the actual relative Levi
 images and proves that a section supplies an actual Levi subgroup over the
 original base. It does not construct a representing scheme or assert that any

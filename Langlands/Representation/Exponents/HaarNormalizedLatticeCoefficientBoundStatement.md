@@ -1,6 +1,6 @@
 # Coefficient decay relative to actual inverse Haar modulus weights
 
-Author: Worker 19. This is a derived internal statement for the general
+This is a derived internal statement for the general
 rational strict Jacquet criterion.
 
 `Langlands.HaarNormalizedLatticeCoefficientBoundStatement` concerns a smooth

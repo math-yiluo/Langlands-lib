@@ -1,7 +1,5 @@
 # Parabolic intersections with a reductive factor of a central product
 
-Worker 715.
-
 This internal construction supplies the field-level parabolic intersection
 argument used in the derived-group correspondence. It is derived from the
 published central-isogeny power lift, bounded exponent of the actual kernel,

@@ -1,7 +1,5 @@
 # Prescribed scalar characters and compact quotient unitarity
 
-Author: Worker 1597.
-
 This is derived infrastructure for the proof of
 `NormalizedTemperedCentralCharacterStatement`. Its provenance is internal:
 it combines the published open-subgroup definition of smoothness and

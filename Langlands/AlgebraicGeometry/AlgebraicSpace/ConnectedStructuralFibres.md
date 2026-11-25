@@ -1,9 +1,10 @@
 # Structural connected fibres and geometric component counts
 
-This internal supporting unit connects the actual morphism predicate
+This internal supporting module connects the actual morphism predicate
 `HasGeometricallyConnectedFibres` to the actual component count used in the
-geometric-component constructibility statement. The full limit-descent theorem
-remains open.
+geometric-component constructibility statement. It does not prove the full
+limit-descent theorem `SpaceLimitPropertyDescentStatement`, which is proved in
+`SpaceLimitPropertyDescentProof`.
 
 `componentCount_eq_one_iff_connectedSpace` is a general topological fact with
 nonemptiness included: cardinality one of the connected-component quotient
@@ -38,5 +39,5 @@ morphism predicate.
 All constructions and proofs are derived from existing Library definitions,
 point homeomorphisms and component-transport theorems and Mathlib's terminal,
 connected-component and cardinality facts. No additional external assertion is
-introduced. The unit provides a criterion, not eventual vanishing of the bad
+introduced. The module provides a criterion, not eventual vanishing of the bad
 locus or the connected-fibre clause of `SpaceLimitPropertyDescentStatement`.

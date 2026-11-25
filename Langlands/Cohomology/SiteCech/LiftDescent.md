@@ -1,6 +1,6 @@
 # Descent of a local lift using degree-one Hom exactness
 
-Author: Worker 512. This internal construction is a categorical form of the
+This internal construction is a categorical form of the
 degree-one Cech obstruction argument. It uses actual morphisms in an abelian
 category and Mathlib's exact-complex lift and descent operations.
 

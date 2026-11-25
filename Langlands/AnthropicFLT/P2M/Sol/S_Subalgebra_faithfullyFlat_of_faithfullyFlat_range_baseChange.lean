@@ -5,7 +5,7 @@ Licensed under Apache License 2.0; see licenses/Anthropic-FLT/LICENSE, NOTICE,
 and ATTRIBUTION.md. Imports are prefixed; utility commands are replaced by
 standard Lean commands. See the paired Markdown for changes and provenance.
 -/
-import Mathlib
+import Langlands.MathlibBase
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
 set_option backward.isDefEq.respectTransparency.types false

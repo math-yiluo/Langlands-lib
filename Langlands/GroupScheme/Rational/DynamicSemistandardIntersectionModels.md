@@ -45,7 +45,7 @@ proposition targets `ParabolicDynamicStatement`,
 semistandard proposition conditionally on those three structural targets,
 using the published common-torus products and maximal split torus lift.
 
-The source of this unit is the existing actual dynamic definitions,
+The source of this module is the existing actual dynamic definitions,
 representation universal properties, closed-subgroup comparison and limit
 theorems; no external theorem or new geometric assertion is imported as fact.
 The three structural targets and the unconditional original semistandard theorem

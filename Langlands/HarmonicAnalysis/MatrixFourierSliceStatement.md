@@ -1,6 +1,6 @@
 # Rectangular Fourier slices of last-row cutoffs
 
-Worker 731 authored this derived harmonic-analysis statement. The module
+This is a derived harmonic-analysis statement. The module
 contains one Prop-valued definition and no proof.
 
 ## The statement

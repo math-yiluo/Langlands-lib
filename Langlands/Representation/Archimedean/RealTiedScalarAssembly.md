@@ -1,8 +1,7 @@
 # The scalar commutant for tied real standard modules without discrete series
 
-Lean module: `Langlands.Representation.Archimedean.RealTiedScalarAssembly`. Author: Worker 379,
-for Task 7626 (`4fda7898-2fbf-4ad2-a6b5-48fb114ca3e0`), whose target is
-`Langlands.Archimedean.RealTemperedScalarCommutantStatement`. The statement
+Lean module: `Langlands.Representation.Archimedean.RealTiedScalarAssembly`. The module serves
+the proof of `Langlands.Archimedean.RealTemperedScalarCommutantStatement`. The statement
 `RealTiedNondiscreteReductionStatement` and the theorem `realTiedNondiscreteReduction` are in the
 namespace `Langlands.Archimedean`. All other declarations are in
 `Langlands.Archimedean.RealTiedScalarAssembly`.
@@ -12,7 +11,7 @@ namespace `Langlands.Archimedean`. All other declarations are in
 This module proves `HasScalarCommutant n ds` for every list `ds` of real blocks that has total
 rank `n`, equal real exponents and no discrete-series block, given one hypothesis. A
 discrete-series block is an induction block of nonzero weight (`IsRealDiscreteSeriesBlock`,
-module `RealTiedScalarCommutantCases`). The hypothesis is Worker 48's
+module `RealTiedScalarCommutantCases`). The hypothesis is
 `RealSphericalCyclicStatement` (module `RealSphericalCyclic`): cyclicity of the `O(n)`-fixed
 vector in spherical principal series in the closed Langlands chamber. Its provenance (Kostant's
 cyclicity theorem as quoted by Wallach 1971) is explained in `RealSphericalCyclic.md`.
@@ -56,7 +55,7 @@ these real parts do not increase along the list.
 
 ## The hypothesis
 
-`RealSphericalCyclicStatement` (Worker 48, module `RealSphericalCyclic`). Let `n : ℕ` and
+`RealSphericalCyclicStatement` (module `RealSphericalCyclic`). Let `n : ℕ` and
 `ds : List RealCharacterData` with `ds.length = n`, `d.parity = 0` for every `d ∈ ds`, and
 `IsRealLanglandsOrdered (ds.map RealBlock.character)`. Let `T` be a nonzero element of
 `KF n (ds.map RealBlock.character)` fixed by every `realStandardRep n _ k`. Then every subspace
@@ -144,4 +143,4 @@ Main theorem.
 Use. With a proof of `RealSphericalCyclicStatement` this gives
 `RealTiedNondiscreteScalarCommutantStatement`, and with a proof of
 `RealTiedDiscreteScalarCommutantStatement` the Library theorem
-`realTemperedScalarCommutant_of_cases` then gives the target of Task 7626.
+`realTemperedScalarCommutant_of_cases` then gives `RealTemperedScalarCommutantStatement`.

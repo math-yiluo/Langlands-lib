@@ -1,7 +1,5 @@
 # Dimension shifting for ordered Čech cochains of Čech-acyclic modules
 
-Author: Worker 274.
-
 This module compares ordered Čech cochains of an `𝒪_P`-module `M` with those of its injective
 hull and of the cokernel, and derives two results by induction on the degree: refinement
 injectivity of Čech cohomology in every positive degree, and Čech vanishing from vanishing of

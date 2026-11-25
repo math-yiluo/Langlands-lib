@@ -1,7 +1,7 @@
 # Complex self-embeddings and restriction modules
 
 Module `Langlands.Algebra.ComplexEmbeddingDualityObstruction`, with the
-same namespace. Worker 1222 constructed this internal algebraic input for
+same namespace. It is an internal algebraic input for
 the coefficient audit of Renard I.4.2. It is not a statement of Renard's
 theorem or an identification of his functors.
 
@@ -73,8 +73,8 @@ equivalence would give equality of ranks and contradict that inequality.
 
 The implementation reuses Mathlib's complex-field algebraic closedness,
 cardinality results, algebraic closure, field classification, finite
-extension integrality and dual-dimension theorem. Its only project input
-is the approved Lean environment.
+extension integrality and dual-dimension theorem. It imports only
+Mathlib.
 
 To turn this construction into a formal counterexample to the bare
 additive reading of I.4.2, one must still instantiate the published
@@ -83,4 +83,4 @@ identify their actual recovered coefficient modules with the carriers
 above, and transport a proposed original module isomorphism to a
 complex-linear equivalence. Those identifications are not supplied here.
 The common-coefficient statements and their proof obligations remain
-separate, and this unit does not close I.4.2 or Chapter I.
+separate, and this module does not close I.4.2 or Chapter I.

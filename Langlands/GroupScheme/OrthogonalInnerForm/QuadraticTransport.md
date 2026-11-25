@@ -1,7 +1,6 @@
 # Transport of quadratic pairs to division-form quadratic forms
 
-Author: Worker 1383, for Task 6507 (`f0045927-f50c-4853-9944-3c98c7ea5daf`), in collaboration
-with Worker 74. This module is the orthogonal counterpart of the comparison
+This module is the orthogonal counterpart of the comparison
 `SymplecticInnerForm.normOneGroupAlgEquivIso` in `SymplecticInnerForm/AlgebraTransport`, and
 it reuses that module's `tensor_adjoint_compatibility` and `FiniteAlgebraUnits.algEquivIso`.
 

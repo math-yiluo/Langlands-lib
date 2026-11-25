@@ -1,6 +1,6 @@
 # Polynomial annihilation for the actual Cartan square sum
 
-Authors: Worker 94 and Worker 815. Module:
+Module:
 `Langlands.Global.ArchimedeanCartanPolynomialStatement`.
 
 `Langlands.Global.ArchimedeanGL.CartanSquareSumPolynomialAnnihilationStatement K n`
@@ -57,8 +57,9 @@ here.
 
 ## Scope
 
-This module defines only the proposition; no proof is bundled with it,
-and a separate exact-target proof task follows its publication. It
+This module defines only the proposition; no proof is bundled with it.
+The proof is `cartanSquareSumPolynomialAnnihilation` (module
+`Langlands.Global.ArchimedeanCartanPolynomialProof`). It
 makes no assertion about ellipticity of a polynomial differential
 operator, analytic regularity, analyticity of solutions, jets or jet
 uniqueness, compact admissibility, orbit density, reproducing kernels

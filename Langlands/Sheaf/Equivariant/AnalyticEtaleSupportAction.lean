@@ -77,7 +77,7 @@ theorem etaleUnderlyingSupport_actionRepresentation
     (g : G) (s : F.obj (op (base etale ρ))) :
     etaleUnderlyingSupport L h ((ι etale ρ).op ⋙ F)
         (actionRepresentation F (baseAction etale ρ) g s) =
-      localizedSpaceFunctor.map (ρ g).hom ''
+      localizedSpaceFunctor.map (ρ g).asIso.hom ''
         etaleUnderlyingSupport L h ((ι etale ρ).op ⋙ F) s := by
   have := etaleSite_locallySmall_points.{u, v, uL} X
   let := EtaleSite.pointAction L ρ
@@ -87,9 +87,9 @@ theorem etaleUnderlyingSupport_actionRepresentation
   constructor
   · rintro ⟨x, ⟨x', hx', rfl⟩, rfl⟩
     exact ⟨pointProjection L X x', ⟨x', hx', rfl⟩,
-      (pointProjection_map L (ρ g).hom x').symm⟩
+      (pointProjection_map L (ρ g).asIso.hom x').symm⟩
   · rintro ⟨y', ⟨x, hx, rfl⟩, rfl⟩
-    exact ⟨g • x, ⟨x, hx, rfl⟩, pointProjection_map L (ρ g).hom x⟩
+    exact ⟨g • x, ⟨x, hx, rfl⟩, pointProjection_map L (ρ g).asIso.hom x⟩
 
 /-- If a set contains the support and its translate and the germs agree
 there, the global section is fixed by the given group element. -/
@@ -99,7 +99,7 @@ theorem actionRepresentation_eq_of_etaleGlobalGermMap_eq_on
     (g : G) (s : F.obj.obj (op (base etale ρ)))
     (W : Set (localizedSpaceFunctor.obj X))
     (hs : etaleUnderlyingSupport L h ((ι etale ρ).op ⋙ F.obj) s ⊆ W)
-    (hW : ∀ y ∈ W, localizedSpaceFunctor.map (ρ g).hom y ∈ W)
+    (hW : ∀ y ∈ W, localizedSpaceFunctor.map (ρ g).asIso.hom y ∈ W)
     (hgerm : ∀ x, pointProjection L X x ∈ W →
       etaleGlobalGermMap L h
           ((TwistedOver.restriction ρ (etaleTopology X)

@@ -1,7 +1,5 @@
 # Binary normalized product exactness
 
-Author: Worker 321.
-
 `Langlands.Aubert.binaryProductExactness` proves exactly the published
 `Langlands.Aubert.BinaryProductExactnessStatement.{uF,uV} F T`. It quantifies
 an arbitrary prime `p`, `F : PadicField.{uF} p`, and the supplied

@@ -1,7 +1,5 @@
 # Norm comparison on represented Levi central torus points
 
-Author: Worker 1682.
-
 This internal development applies split-component lifts modulo
 the common norm kernel to full-center characters of represented Levis.
 It does not prove the full Casselman criterion.

@@ -1,6 +1,6 @@
 # Dynamic parabolics in actual neutral incident comparison images
 
-This internal derived unit combines the actual neutral centralizer and positive
+This internal derived module combines the actual neutral centralizer and positive
 dynamic image containments. It works at arbitrary universe `u` and retains full
 unipotent radical containment as an explicit premise for parabolic recognition.
 
@@ -53,7 +53,7 @@ parabolic recognition then applies using the preceding dynamic containment.
 
 The provenance is composition of the imported genericity, actual neutral image,
 connected-fibre, and radical-recognition interfaces. No global identification of
-neutral integral points with a supplied zero subgroup is assumed. This unit does
+neutral integral points with a supplied zero subgroup is assumed. This module does
 not establish full radical containment, congruence containment, exact reduction
 preimages, model existence, or the unconditional depth-zero opposite-factor
 statement.

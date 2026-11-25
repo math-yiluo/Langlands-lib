@@ -2,8 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.GKModuleDensity`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is field-independent. In Task 7063 it is applied to
+This module was written for the proof of
+`ComplexStandardLanglandsQuotientStatement`. It is field-independent. In that proof (modules
+`ComplexBlockDual`, `ComplexBlockSlice`) it is applied to
 the irreducible tempered complex standard modules (`ComplexTemperedStandardIrreducibleStatement`)
 to separate variables in the Langlands lemma along a block parabolic subgroup.
 

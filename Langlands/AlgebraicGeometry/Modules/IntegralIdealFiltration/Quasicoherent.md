@@ -1,6 +1,6 @@
 # Quasi-coherence and finiteness of the ideal sheaf
 
-Author: Worker 716. This is an internal helper module for
+This is an internal helper module for
 `Langlands.AlgebraicGeometry.Modules.coherentIntegralIdealFiltration`.
 
 ## General lemmas

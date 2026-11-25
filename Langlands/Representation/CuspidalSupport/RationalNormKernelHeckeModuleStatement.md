@@ -5,16 +5,13 @@ Namespace `Langlands.CuspidalSupport`. Universe parameters `uF, uV`.
 The module contains one **statement**, the `Prop`-valued definition
 `RationalNormKernelHeckeModuleStatement`; it proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.4.1–VI.4.2, printed pp.149–153 / PDF pp.155–159. The
+VI.4.1–VI.4.2, printed pp.149–153 / PDF pp.155–159, were read. The
 statement covers the paragraphs after the Proposition of VI.4.2, printed
 pp.152–153 / PDF pp.158–159:
 
@@ -110,9 +107,10 @@ and `α_φ(f_w)(g) = e(α_φ)(g)(w) = φ(g)(w)`. Item 4 follows from the same
 decomposition: `s` is determined by the `s(f_w)`, and the displayed formula
 defines a `G`-map with `s(f_w) = ψ(w)`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. It needs the published VI.4.2
+The proof is `rationalNormKernelHeckeModule` in
+`RationalNormKernelHeckeModuleProof`. It needs the published VI.4.2
 Proposition's objects, the decomposition (VI.4.2.2) of elements of the
 compact induction, and the normality of `⁰G` in `G(F)`.
 

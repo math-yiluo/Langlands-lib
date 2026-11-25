@@ -17,7 +17,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K]
   {A : PresentedAffinoidAlgebra K}
   {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* Aut A)
-  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
 
 /-- Actual weighted rational charts whose loci are preserved by the common
 open subgroup, with no extra condition on their bounded restriction maps. -/
@@ -63,7 +63,7 @@ def normInvariantLocusAction (H : OpenSubgroup G)
 theorem normInvariantLocusAction_apply_coe (H : OpenSubgroup G)
     (d : NormInvariantChart ρ hρ H) (g : H) (x : d.obj.locus) :
     ((show d.obj.locus from
-      ConcreteCategory.hom ((normInvariantLocusAction ρ hρ H d).obj.ρ g) x) :
+      ConcreteCategory.hom ((normInvariantLocusAction ρ hρ H d).obj.ρ g).asHom x) :
         BanachSpectrum A) = ρ g.val • x.val := rfl
 
 /-- All actual bounded restrictions give equivariant continuous locus
@@ -127,13 +127,14 @@ theorem normInvariantSectionAction_actionAut (H : OpenSubgroup G)
   apply MonoidHom.ext
   intro g
   apply Aut.ext
+  apply Iso.ext
   rfl
 
 @[simp]
 theorem normInvariantSectionAction_baseMap (H : OpenSubgroup G)
     (d : NormInvariantChart ρ hρ H) (g : H) (a : A) :
-    ((normInvariantSectionAction ρ hρ H d).obj.ρ g).toAlgHom (d.obj.baseMap a) =
-      d.obj.baseMap ((ρ g.val).hom.toAlgHom a) :=
+    ((normInvariantSectionAction ρ hρ H d).obj.ρ g).asHom.toAlgHom (d.obj.baseMap a) =
+      d.obj.baseMap ((ρ g.val).asIso.hom.toAlgHom a) :=
   normSectionAction_baseMap ρ hρ d.obj
     (normInvariantStabilizerInclusion ρ hρ H d g) a
 
@@ -141,8 +142,8 @@ theorem normInvariantSectionAction_baseMap (H : OpenSubgroup G)
 operators as equalities of full bounded algebra maps. -/
 theorem normInvariantSectionAction_restriction (H : OpenSubgroup G)
     {d e : NormInvariantChart ρ hρ H} (f : d ⟶ e) (g : H) :
-    f.hom.restriction.comp ((normInvariantSectionAction ρ hρ H e).obj.ρ g) =
-      ((normInvariantSectionAction ρ hρ H d).obj.ρ g).comp f.hom.restriction :=
+    f.hom.restriction.comp ((normInvariantSectionAction ρ hρ H e).obj.ρ g).asHom =
+      ((normInvariantSectionAction ρ hρ H d).obj.ρ g).asHom.comp f.hom.restriction :=
   (normSectionAction_restriction ρ hρ f.hom g.val
     (d.property g.property) (e.property g.property)).symm
 
@@ -194,10 +195,10 @@ theorem normInvariantSpectrumFunctor_obj_apply (H : OpenSubgroup G)
     (d : NormInvariantChart ρ hρ H) (g : H)
     (x : BanachSpectrum d.obj.algebra) (b : d.obj.algebra) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom (((normInvariantSpectrumFunctor ρ hρ H).obj d).obj.ρ g) x) b =
+      (ConcreteCategory.hom (((normInvariantSpectrumFunctor ρ hρ H).obj d).obj.ρ g).asHom x) b =
         x ((normSectionAction ρ hρ d.obj
-          (normInvariantStabilizerInclusion ρ hρ H d g)).inv.toAlgHom b) := by
-  change x (((normInvariantSectionAction ρ hρ H d).actionAut g).inv.toAlgHom b) = _
+          (normInvariantStabilizerInclusion ρ hρ H d g)).asIso.inv.toAlgHom b) := by
+  change x (((normInvariantSectionAction ρ hρ H d).actionAut g).asIso.inv.toAlgHom b) = _
   rw [normInvariantSectionAction_actionAut]
   rfl
 
@@ -227,7 +228,7 @@ def normInvariantSpectrumLocusIso (H : OpenSubgroup G) :
         intro x
         change d.obj.locusHomeomorph
           (BanachSpectrum.comap
-            ((normInvariantSectionAction ρ hρ H d).actionAut g).inv.toBoundedRingHom x) =
+            ((normInvariantSectionAction ρ hρ H d).actionAut g).asIso.inv.toBoundedRingHom x) =
             normLocusOperator ρ hρ d.obj
               (normInvariantStabilizerInclusion ρ hρ H d g) (d.obj.locusHomeomorph x)
         rw [normInvariantSectionAction_actionAut]

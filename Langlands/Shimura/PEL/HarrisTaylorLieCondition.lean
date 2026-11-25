@@ -124,7 +124,7 @@ variable {B}
 theorem centralLieTraceConditionAt_iso
     {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a))
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom)
     (eB : SheafOfModules.free (R := S.ringCatSheaf.over U) J ≅ B.Lie.over U)
     {J' : Type} [Fintype J']
     (eB' : SheafOfModules.free (R := S.ringCatSheaf.over U) J' ≅ B'.Lie.over U)
@@ -139,7 +139,7 @@ theorem centralLieTraceConditionAt_iso
 theorem centralLieTraceCondition_iso
     {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
     (e : Langlands.Rationalization.of B ≅ Langlands.Rationalization.of B')
-    (he : ∀ a : A, comp0 B B B' (i a) e.hom = comp0 B B' B' e.hom (i' a)) :
+    (he : ∀ a : A, comp0 B B B' (i a).asHom e.hom = comp0 B B' B' e.hom (i' a).asHom) :
     CentralLieTraceCondition L s B i n ↔ CentralLieTraceCondition L s B' i' n := by
   constructor
   · intro h U J _ eB' a V

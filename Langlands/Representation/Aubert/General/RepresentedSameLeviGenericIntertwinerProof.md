@@ -40,7 +40,7 @@ The proof uses the following helper modules, which are new with this proof:
 - `LanglandsClassification.SimpleCorootFaceExistence`: nonempty open coroot faces.
 - `Intertwining.CentralActionQuotientFiniteness` and
   `Intertwining.PieceActionQuotientFiniteness`: finite action quotients.
-- `Plancherel.UnramifiedMonomialSeparation`, by Worker 194: polynomial clearing in the
+- `Plancherel.UnramifiedMonomialSeparation`: polynomial clearing in the
   unramified coordinates.
 
 The published inputs are `representedGeometricLemma`, `pqRegularityPieceFiltration`,

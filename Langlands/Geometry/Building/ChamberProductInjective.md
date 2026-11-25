@@ -33,10 +33,11 @@ points. The identity between negation in the cocharacter lattice and reversal
 of the multiplicative parameter is the published
 `groupHom_neg_comp_eq_oppositeCocharacter`.
 
-This unit proves injectivity only. The exact ranges, equality of full and sharp
+This module proves injectivity only. The exact ranges, equality of full and sharp
 unipotent intersections, normalizer and central intersections, and ordered root
 block bijections in `ChamberIwahoriDecompositionStatement` remain separate
-obligations. No source factorization assertion is assumed in the construction.
+obligations; the Library proves that statement as
+`ParahoricBuildingData.chamberIwahoriDecomposition` in `ChamberIwahoriProof`. No source factorization assertion is assumed in the construction.
 Its provenance is the proof above using the existing Library definitions and
 proved opposite-cell and limit theorems; it makes no additional literature
 claim.

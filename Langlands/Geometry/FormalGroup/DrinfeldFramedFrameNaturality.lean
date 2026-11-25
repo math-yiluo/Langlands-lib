@@ -188,8 +188,9 @@ theorem frameAutomorphismNatIso_hom_app (a : ModuleLaw.OrderAction.Automorphism 
 /-- The actual integral frame automorphism group acts by natural automorphisms of the actual framed Nilp functor. -/
 def frameAutomorphismActionHom : ModuleLaw.OrderAction.Automorphism Φ.val.order →*
     CategoryTheory.Aut (comparisonClassFunctor (R := R) Φ) where
-  toFun := frameAutomorphismNatIso
+  toFun a := Aut.of (frameAutomorphismNatIso a)
   map_one' := by
+    apply Aut.ext
     apply CategoryTheory.Iso.ext
     apply NatTrans.ext
     funext A
@@ -197,6 +198,7 @@ def frameAutomorphismActionHom : ModuleLaw.OrderAction.Automorphism Φ.val.order
     intro q
     exact ComparisonClass.frameAct_one q
   map_mul' a b := by
+    apply Aut.ext
     apply CategoryTheory.Iso.ext
     apply NatTrans.ext
     funext A
@@ -208,7 +210,7 @@ def frameAutomorphismActionHom : ModuleLaw.OrderAction.Automorphism Φ.val.order
 @[simp]
 theorem frameAutomorphismActionHom_app (a : ModuleLaw.OrderAction.Automorphism Φ.val.order)
     (q : ComparisonClass Φ A) :
-    (frameAutomorphismActionHom (R := R) a).hom.app A q = ComparisonClass.frameAct a q := rfl
+    (frameAutomorphismActionHom (R := R) a).asIso.hom.app A q = ComparisonClass.frameAct a q := rfl
 
 end Langlands.FormalGroup.LocalDivision.DrinfeldFramedAtlas
 

@@ -28,16 +28,16 @@ and `a = realRank pre`.
 ## Provenance
 
 This is a step in the reduction `RealLinkedJacquetFunctionalReductionStatement`, which is
-internal to Task 7070. The functional `f ↦ ℓ'(f(diag(1, ·, 1)))` on a representation induced
+internal to the proof of `RealLinkedLanglandsQuotientNotLargeStatement`. The functional `f ↦ ℓ'(f(diag(1, ·, 1)))` on a representation induced
 in stages is the usual passage of Jacquet functionals through parabolic induction. The twist
 by `|det|^c` is the modulus character of the intermediate parabolic. The module makes no
 literature claim beyond the theorem above.
 
-The proof uses Worker 109's modules `RealInductionStagesAverage`, `RealInductionStagesSlice`,
+The proof uses the modules `RealInductionStagesAverage`, `RealInductionStagesSlice`,
 `RealInductionStagesFourier`, `RealInductionStagesInduce` and `RealInductionStagesDerivative`.
 From these it takes the `O(r)`-finite spaces `KFin r L`, the actions `kRep` and
 `lie r L X = realStandardLie r L (1 ⊗ X)`, the block embedding `ι = blockEmb h`, the slice
-`sliceK h ha hr κ`, and the derivative formulas for slices. It also uses the new modules
+`sliceK h ha hr κ`, and the derivative formulas for slices. It also uses the modules
 `RealBlockTestVector` and `RealSliceSurjective`.
 
 ## Declarations
@@ -51,7 +51,7 @@ All declarations except the main theorem are in the namespace
   `detPow_add`, `detPow_zero`, `detPow_ne_zero`, `detPow_mul_detPow_neg`, `detPow_mul`,
   `detPow_of_abs_det_eq_one`, `detPow_of_mem_unitaryCompact`, `detPow_of_mem_upperUnipotent`,
   `detPow_diagonalUnits` and `contMDiff_detPow` (smoothness).
-- `sliceFactor_eq_detPow`: Worker 109's slice factor is `detPow r (-sliceExponent n a r)`.
+- `sliceFactor_eq_detPow`: the slice factor `sliceFactor` of `RealInductionStagesSlice` is `detPow r (-sliceExponent n a r)`.
 - `contMDiff_mul_fun`: products of smooth functions on `GL_r(ℝ)` are smooth.
 - `detPowMul r s`: multiplication by `|det|^s`, as a linear map. `detPowMul_apply`.
 

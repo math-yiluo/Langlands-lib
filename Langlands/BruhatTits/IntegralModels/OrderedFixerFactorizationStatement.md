@@ -117,4 +117,4 @@ Consumer: the published
 hypothesis `hfac`. With `e = orderedIntegralIndex aneg apos` and the open
 chart from `UnramifiedOrderedIntegralOpenCellStatement`, a proof of this
 statement discharges that hypothesis in the proof of KP Proposition 8.4.15
-(Task 6203).
+(`UnramifiedModelKernelStatement`).

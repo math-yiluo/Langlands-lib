@@ -1,7 +1,6 @@
 # Concrete group data for the positive-rank mixed mirabolic orbit comparisons
 
-Author: Worker 1136 (Lean construction, this text, the import audit and the
-informal orientation check). Namespace:
+Namespace:
 `Langlands.GeneralLinear.Mirabolic.MixedOrbit`.
 
 This pair constructs the concrete group data used in the orbit analysis of
@@ -11,8 +10,8 @@ PDF p.32), for Proposition 4.13(b),(c). The subgroups come from cases (II) and
 (III) of §4.12, printed pp.456–458 (PDF pp.17–19). Source ID:
 `bernstein-zelevinsky-1977-induced-i`; SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-We read the text of p.471 and also inspected the page image. The task
-publisher reports a bounded search that found no BZ77-specific erratum. This
+We read the text of p.471 and also inspected the page image. A bounded
+search found no BZ77-specific erratum. This
 pair reports that search only and does not claim that no errata exist
 anywhere.
 
@@ -174,7 +173,7 @@ asserts no covering, disjointness, openness or closedness.
 The published `Geometric.cosetOrbit H Q w` is the range of `q ↦ H w⁻¹ q` in
 `H \ G`. So the cyclic family member `w = w₀` is the source's open-orbit
 point `P w₀⁻¹`, and `w = 1` is the closed-orbit point `P e`. This orientation
-is the one required by the task. We do not state or prove any orbit theorem.
+is the one required by `MirabolicMixedOrbitCoverageStatement`. We do not state or prove any orbit theorem.
 
 ## Stabilizers and coefficient maps
 
@@ -342,32 +341,44 @@ contains `sorry` or an axiom. The imported modules contain:
 - no supercuspidal, segment, socle, head, Jacquet or classification module;
 - no proposition statement of any excluded theorem.
 
-Condition by condition against the inherited exclusion union:
+Condition by condition:
 
 - **Plus functor, adjunction, BZ77 4.13(d), general Leibniz theorem.** None
   is imported. The construction laws use only matrix maps. `plusSubgroup`,
   `plusSuccessor`, `plusProjection` and `plusRadical` are published matrix
   infrastructure in `MirabolicProjection`. They carry no plus-functor
   conclusion.
-- **Whittaker finiteness.** `Langlands.Whittaker.*Statement` modules, tasks
-  5ab445dc, 3ff5c8fb, 62de5903 and the finite-length route of 5428fe2c are
-  not imported and not used. No `Whittaker` module is in the closure.
-- **Segment, socle and head results.** Tasks 23e98d90, a55c4267, 8fa9f68b,
-  7ff2a1e9, 2ae5cbe5, e3634665, cded83f3, 426911b4, 66e3b87c, c84cd52c,
-  6780b79c, 23189526, f3a69bc8, 67279e36 and 4ca79bbd are not imported and
-  not used. The same holds for `SegmentHeadProductIrreducibility` (8364e73f)
-  and the segment Jacquet formulas (ed48ae06, 55ad1e10, b95105c6, 92aea10f).
+- **Whittaker finiteness.** `Langlands.Whittaker.*Statement` modules,
+  `IrreducibleCoinvariantFinitenessStatement`,
+  `LeviCuspidalCoinvariantFinitenessStatement`,
+  `SupercuspidalCoinvariantFinitenessStatement` and the dependent finite-length
+  route are not imported and not used. No `Whittaker` module is in the closure.
+- **Segment, socle and head results.** `UnlinkedSegmentSocleProductIrreducible`,
+  `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`,
+  `JuxtaposedSegmentSocleReverseProductStructure`,
+  `LinkedSegmentSocleReverseProductQuotientHom`,
+  `SegmentSocleProductIrreducibility`, `AdjacentUnlinkedSegmentSocleSwap`,
+  `TwoSegmentSocleCommutation`, `LinkedSegmentSocleGluing`,
+  `OrderedMultisegmentSocleExistence`, socle exhaustion, and individual
+  special-head/reverse-socle and segment-socle/reverse-head existence are not
+  imported and not used. The same holds for `SegmentHeadProductIrreducibility`
+  and the segment Jacquet formulas (`SegmentFullJacquetFormula`,
+  `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`,
+  `SegmentSpecialJacquetExponentNormFormula`).
   No segment, socle or Jacquet module is in the closure.
-- **Classification and exhaustion.** Tasks aca8805b, 5eece9e8, 3bfb61fa,
-  ebea9a8a, 20e4e1c6, 8252833d, 52e97845, 30341ae4, 1cb45da2, cd8ab97c and
-  bf433f0a are not used, and no classification module is imported.
-- **Two-supercuspidal results.** Tasks 3c9849a4 and ab61f565,
+- **Classification and exhaustion.** Analytic segment classification,
+  `SegmentSpecialEssentialSquareIntegrability`, multisegment special-head
+  exhaustion, ordered strong-head existence, quotient coverage, ordered
+  conversion, tempered uniqueness, `GenericSegmentProductUniqueness`,
+  `SquareIntegrableLanglandsClassification`, square-integrable exhaustion and
+  regular exhaustion are not used, and no classification module is imported.
+- **Two-supercuspidal results.**
   `TwoSupercuspidalNonadjacentProductIrreducible` and
   `TwoSupercuspidalProductStructure` are not used.
 - **Ze80.** No Ze80 result (§3.5, §9.6, 4.2, 9.3, 9.7) is used.
 - **Derivatives.** No BZ77 derivative result is assumed.
-- **Pending work.** No pending task, proposition definition or citation is
-  used as a proved input. Worker 127 was not contacted.
+- **Unproved inputs.** No unproved proposition definition or citation is
+  used as a proved input.
 
 ## Implemented proofs
 
@@ -391,6 +402,3 @@ the `subgroupComap` value.
 The continuity and closedness proofs are described above. They compose
 published continuous maps and take preimages of the published closed
 subgroups. They use no representation theory.
-
-Compilation and staging do not establish acceptance. Publication requires
-independent semantic review.

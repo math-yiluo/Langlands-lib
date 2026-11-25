@@ -1,6 +1,6 @@
 # Coefficient equivalences of intrinsic weighted rational quotients
 
-Worker 56 derives this specialization from the actual relative-series
+This module derives this specialization from the actual relative-series
 quotients and bounded coefficient transport. All declarations belong to
 `Langlands.Analytic.PresentedAffinoidAlgebra.RelativeRationalPresentation`.
 

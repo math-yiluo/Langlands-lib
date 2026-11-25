@@ -1,8 +1,8 @@
 # Proof: a smooth closed subgroup with the full Lie algebra is everything
 
-Authors: Worker 1143 and Worker 1240. Worker 1143 wrote this module (the group-scheme half,
-the translation step and the final theorem); Worker 1240 wrote the commutative-algebra module
-[SubgroupEqualityAlgebra](SubgroupEqualityAlgebra.md) that it imports.
+This module holds the group-scheme half, the translation step and the final theorem; the
+commutative algebra is in the module [SubgroupEqualityAlgebra](SubgroupEqualityAlgebra.md) that
+it imports.
 
 `Langlands.GroupScheme.lieSubgroupEquality` proves the published proposition
 `Langlands.GroupScheme.LieSubgroupEqualityStatement.{u}`
@@ -25,15 +25,15 @@ is `j`. It has three steps.
    derivation at the identity, hence an element of the Lie algebra of `H`. By hypothesis that
    element comes from `K`, so `δ` factors through `φ` and vanishes on `ker φ`
    (`derivation_eq_zero_of_mem_ker`, this module). Since `A` is Noetherian and `B` is
-   formally smooth, Worker 1240's `exists_annihilator_of_derivations` then gives `f : A` with
+   formally smooth, `exists_annihilator_of_derivations` (`SubgroupEqualityAlgebra`) then gives `f : A` with
    `ε f = 1` and `f x = 0` for every `x ∈ ker φ`.
 2. **Translation.** Translating `f` by the universal point of `K` gives an element `g` of
    `A ⊗ B`. The kernel `ker φ ⊗ 1` annihilates `g`, and `φ ⊗ id` sends `g` to `1`. Expanding
-   `g` in a basis of `B` (Worker 1240's `productMap_mem_map_annihilator`) and using that `φ`
+   `g` in a basis of `B` (`productMap_mem_map_annihilator`, `SubgroupEqualityAlgebra`) and using that `φ`
    is surjective gives `e : A` with `φ e = 1` that annihilates `ker φ`.
 3. **Connectedness.** Then `1 - e ∈ ker φ` and `e (1 - e) = 0`, so `1 - e` is idempotent.
-   Since `Spec A` is connected and `ker φ` is proper, Worker 1240's
-   `eq_bot_of_mul_eq_zero_of_one_sub_mem` gives `ker φ = 0`.
+   Since `Spec A` is connected and `ker φ` is proper,
+   `eq_bot_of_mul_eq_zero_of_one_sub_mem` (`SubgroupEqualityAlgebra`) gives `ker φ = 0`.
 
 ## The lemmas of this module
 

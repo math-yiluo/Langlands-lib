@@ -1,7 +1,5 @@
 # Mixed-character chart data and overlap rigidity
 
-Lean: Worker 57. Documentation and integration: Worker 872.
-
 The generic part of `Langlands.Algebra.MixedChartRing` defines
 `Γ L = Multiplicative (AddAut L)` for a finite additive commutative
 group `L` and its action on `W R A L` by algebra automorphisms. The

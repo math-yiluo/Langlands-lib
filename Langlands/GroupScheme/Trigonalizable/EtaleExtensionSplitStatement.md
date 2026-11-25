@@ -1,6 +1,6 @@
 # Splitting over an étale diagonalizable quotient
 
-Author: Worker 60 (Task 7805). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.EtaleExtensionSplitStatement`.
 
 `Langlands.GroupScheme.EtaleDiagonalizableExtensionSplitStatement.{u}` is a
@@ -35,7 +35,7 @@ All ingredients are those of the published
 `TrigonalizableExtensionSplitStatement` (see
 [`ExtensionSplitStatement`](ExtensionSplitStatement.md), whose Markdown
 explains them), used without change. Only the hypotheses differ. Each is an
-explicit binder (operator ruling 8): perfectness of `k`; the two conditions
+explicit binder: perfectness of `k`; the two conditions
 on `Λ`, which replace the disjunction of cases of the target; and case (b)'s
 smoothness and connectedness of `U`. `ExpChar k p` is Mathlib's
 characteristic exponent: `p = 1` if `k` has characteristic zero, and `p` is
@@ -46,9 +46,9 @@ nothing; they are placed right after `[Field k]`, as in the Library's
 `DiagonalizableSmoothConnectedCriteriaStatement`. Smoothness is written `Smooth U.X.hom`
 and placed right after `IsClosedSubgroup i`, and the binders of `Λ` are
 `[AddCommGroup Λ] [AddGroup.FG Λ]`, as in the published target and in the
-corrected Milne 16.27 of Task 7806, so that the two statements state these
-hypotheses in the same form. This form was agreed with the executor of
-Task 7806, as the operator asked. `[AddGroup.FG Λ]` follows from `Finite Λ`; it is
+corrected Milne 16.27 (`TrigonalizableSectionConjugacySmoothStatement`, module
+[`SectionConjugacySmoothStatement`](SectionConjugacySmoothStatement.md)), so that
+the two statements state these hypotheses in the same form. `[AddGroup.FG Λ]` follows from `Finite Λ`; it is
 kept so that `D(Λ)` and the encoding of the extension are literally those of
 the target.
 

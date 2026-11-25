@@ -1,6 +1,6 @@
-import Langlands.ClassField.Global.FundamentalClassProof
-import Langlands.ClassField.Global.IdeleClassBaseImage
-import Langlands.ClassField.Global.RelativeWeilTransferReciprocityProof
+import Langlands.ClassFieldTheory.Global.FundamentalClassProof
+import Langlands.ClassFieldTheory.Global.IdeleClassBaseImage
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransferReciprocityProof
 import Langlands.ClassFieldTheory.Local.LocalRelativeClassFormationProof
 import Langlands.Global.AdelicFunctoriality.IdeleNormOpen
 import Langlands.Global.Arithmetic.CyclicNormKernelCharacterStatement
@@ -17,7 +17,7 @@ set_option autoImplicit false
 
 namespace Langlands.Global.HeckeCharacter
 
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local
 open Langlands.Global.AdelicFunctoriality
 open scoped BigOperators
 

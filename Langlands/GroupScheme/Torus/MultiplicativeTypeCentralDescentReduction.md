@@ -1,7 +1,5 @@
 # Descent of central homomorphisms from rigidity (SGA 3, IX, 5.4 from 5.3)
 
-Worker 754.
-
 This module proves
 
 ```lean

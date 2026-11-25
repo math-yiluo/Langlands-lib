@@ -9,7 +9,7 @@ Item 3 uses a product of coordinate measures `dx_i`, requires that product
 to be self-dual for the conjugate-character dot-product kernel, and fixes
 `dx_1 = dz`. It does not require the coordinate measures to be equal or
 individually self-dual. Item 5 permits a matrix-coordinate factorization and
-matches its first-column factors to the `dx_i`. The present unit supplies
+matches its first-column factors to the `dx_i`. The present module supplies
 the Fourier and product-measure interface needed to express those conditions;
 it does not impose the first-coordinate or first-column equalities.
 
@@ -63,7 +63,7 @@ of variables or any Haar-normalization theorem.
 
 The generality in the measure and the elementary product and integral laws
 are internal foundations, not analytic theorems attributed to Shahidi.
-This unit does not construct the other coupled measures, prove Fourier
+This module does not construct the other coupled measures, prove Fourier
 inversion, relate the row measure to the matrix measure, or implement the
 local coefficient or its comparison with the JPSS factor. In particular
 it makes no claim that the matrix measure is self-dual.

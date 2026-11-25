@@ -81,7 +81,8 @@ theorem mem_identityOpen_of_residue_eq_id [Smooth G.X.hom] [Smooth P.group.X.hom
     ⟨⟨F.map P.projection, by rw [← F.map_comp, P.retraction, F.map_id],
       by rw [← F.map_comp, P.factorization]; exact hψ⟩⟩
   exact SmoothMonoLocalIso.mem_unitEtaleOpen_of_residueFiber P.inclusion s
-    (inferInstanceAs (IsIso (F.map P.inclusion).hom.hom.left))
+    (set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+      inferInstanceAs (IsIso (F.map P.inclusion).hom.hom.left))
 
 /-- A trivial residue fibre lies in the zero open. -/
 theorem mem_zeroOpen_of_residue_eq_zero [Smooth P.group.X.hom]
@@ -108,7 +109,8 @@ theorem mem_zeroOpen_of_residue_eq_zero [Smooth P.group.X.hom]
           zero_comp, Functor.map_zero]
         exact hH.symm⟩⟩
   exact SmoothMonoLocalIso.mem_unitEtaleOpen_of_residueFiber j s
-    (inferInstanceAs (IsIso (F.map j).hom.hom.left))
+    (set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+      inferInstanceAs (IsIso (F.map j).hom.hom.left))
 
 /-- A residue-fibre dichotomy gives an actual open cover by the two loci. -/
 theorem identityOpen_sup_zeroOpen [Smooth G.X.hom] [Smooth P.group.X.hom]

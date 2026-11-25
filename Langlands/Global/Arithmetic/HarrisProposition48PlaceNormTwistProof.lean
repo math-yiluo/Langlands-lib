@@ -108,7 +108,7 @@ private theorem henselian_discreteValuation {p : ℕ} [Fact p.Prime] (A : PadicF
   let e := IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt A.Carrier
   have he : (ValuativeRel.valuation A.Carrier).IsEquiv T.discreteValuation :=
     (Valuation.isEquiv_map_self_of_strictMono (v := ValuativeRel.valuation A.Carrier)
-      e.toMonoidWithZeroHom e.strictMono).symm
+      _ e.strictMono.injective).symm
   change HenselianLocalRing T.discreteValuation.valuationSubring
   rw [← (Valuation.isEquiv_iff_valuationSubring _ _).mp he]
   change HenselianLocalRing 𝒪[A.Carrier]
@@ -245,7 +245,7 @@ theorem proposition48PlaceNormTwist : Proposition48PlaceNormTwistStatement.{uF} 
       (P.isoTilde (FiniteExtension.completionMap P.v' P.vTilde
         (FiniteExtension.completionMap P.v P.v' x)) : AlgebraicClosure Q.F.Carrier)
     have h := DFunLike.congr_fun
-      (ClassField.Global.CompletionTower.completionMap_comp P.v P.v' P.vTilde) x
+      (ClassFieldTheory.Global.CompletionTower.completionMap_comp P.v P.v' P.vTilde) x
     change FiniteExtension.completionMap P.v' P.vTilde
       (FiniteExtension.completionMap P.v P.v' x) = _ at h
     rw [h, hP.1]

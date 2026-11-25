@@ -1,6 +1,6 @@
 # Semisimple split groups have roots spanning a subgroup of finite index
 
-Worker 1391. This module proves the "only if" half of Milne Proposition 21.48
+This module proves the "only if" half of Milne Proposition 21.48
 for the Library's actual-scheme conventions. It also states the "if" half as
 an explicit proposition, `SplitSemisimpleOfFiniteRootIndexStatement`, and
 proves that this proposition implies the published
@@ -123,8 +123,8 @@ with the intersection of the root kernels. It uses only one consequence of
 Library's `rootAnnihilatorCentrality`). It then shows that a nonzero
 cocharacter cannot factor through a finite centre. The "if" half would need
 the inclusion of the centre in `T`, which comes from the centralizer of a
-maximal torus (the Library's `MaximalTorusCentralizerStatement`, which has
-no Library proof). That half is left as the explicit hypothesis above.
+maximal torus (the Library's `MaximalTorusCentralizerStatement`, proved by
+`maximalTorusCentralizer` in `Absolute.MaximalTorusCentralizerProof`). In this module that half is left as the explicit hypothesis above.
 
 The errata snapshot of 2026-11-02
 (`milne-2017-algebraic-groups-errata-2026-11-02`) has no entry for

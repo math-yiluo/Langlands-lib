@@ -111,7 +111,7 @@ that happens to be zero.
 The positive-rank product is source case (I) of 4.12, with upper block
 unipotent, normalized positive-half induction covariance and right
 translation. The minus functors retain the inverse-half determinant
-normalization of 1.8(b). The future proof route must also preserve the
+normalization of 1.8(b). A proof must also preserve the
 case (III) epsilon `ν(m₂)^(-1/2)` in the right mixed product. No residual
 character twist is inserted into a grade.
 
@@ -138,11 +138,13 @@ natural-number antidiagonals. The new helpers merely compose these existing
 constructions, enumerate feasible indices and unpack the filtration definition.
 No existing statement pair is changed.
 
-The general Leibniz assertion remains unproved. BZ77 printed p.458 derives
+This module does not prove the general Leibniz assertion; the theorem
+`generalLinearDerivativeLeibnizFiltration` in
+`GeneralLinearDerivativeLeibnizFiltrationProof` proves it. BZ77 printed p.458 derives
 4.14(a) from 4.13(b), 4.14(b) from (a) and 4.13(c), and 4.14(c) from (a),
-(b) and 4.13(a). An eventual proof must establish and audit these general
+(b) and 4.13(a). A proof must establish and audit these general
 restriction, minus, exactness, tensor and filtration-composition inputs
-independently. A statement definition, source citation or pending proof task
+independently. A statement definition or source citation
 does not establish any of them. In particular, no supercuspidal derivative
 formula, top finrank-one result, segment formula, segment existence,
 irreducibility criterion, classification or Whittaker-finiteness conclusion
@@ -232,15 +234,15 @@ This closure follows the actual Lean imports, including `Tensor.Finite` through
 construct the additive/Whittaker characters, functionals and models and prove
 elementary properties; they supply no Whittaker-finiteness conclusion. The
 closure has no segment, classification or cuspidal-support consumer module.
-A bounded scan of these project sources found no references to the explicitly
-excluded consumer conclusions in the task's inherited restrictions.
+A bounded scan of these project sources for the names of downstream consumer
+conclusions found no references.
 
 The mathematical dependencies of the new proofs are limited to finite-set
 membership and natural-number arithmetic for indexing, reflexivity for the two
 object lemmas, and unfolding the published gluing definition for the conditional
 filtration extractor. None proves the general Leibniz assertion or uses a
 supercuspidal derivative, segment, classification, product-irreducibility or
-Whittaker-finiteness conclusion. The eventual proof of the assertion must audit
-its own complete direct and transitive proof dependencies against every
-inherited exclusion; this construction/import audit does not replace that
-future proof audit.
+Whittaker-finiteness conclusion. The proof of the assertion, in
+`GeneralLinearDerivativeLeibnizFiltrationProof`, audits its own complete direct
+and transitive proof dependencies; this construction/import audit does not
+replace that audit.

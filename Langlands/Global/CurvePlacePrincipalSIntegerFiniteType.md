@@ -29,6 +29,6 @@ type over `k` for this ring. A finite field is a finite module, hence a finite
 type algebra, over the integers; transitivity gives the displayed instance.
 All coefficient elements remain in the original subring of `F`.
 
-This unit neither asserts finite type for every initial level nor constructs
+This module neither asserts finite type for every initial level nor constructs
 scheme models. Compatible smooth geometrically connected models, uniform
 Lang–Weil, point lifting and local and adelic openness remain separate results.

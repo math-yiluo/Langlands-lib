@@ -1,7 +1,5 @@
 # The actual Mumford family is geometrically Picard zero
 
-Author: Worker 912.
-
 `Langlands.AbelianScheme.mumfordBundlePicardZero` proves exactly the Library
 proposition `Langlands.AbelianScheme.MumfordBundlePicardZeroStatement.{u}`,
 for arbitrary universe `u`.

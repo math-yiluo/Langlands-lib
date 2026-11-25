@@ -1,7 +1,5 @@
 # Ordinary coefficient-stable chambers in every supplied special apartment
 
-Authors: Worker 198 and Worker 352.
-
 The theorem
 `Langlands.Geometry.Building.unramifiedSpecialApartmentChamber.{u}` proves
 exactly the published

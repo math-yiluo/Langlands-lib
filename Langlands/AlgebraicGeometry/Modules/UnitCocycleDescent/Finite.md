@@ -1,7 +1,5 @@
 # Common local frames for finite families of unit cocycles
 
-Author: Worker 1232.
-
 This internal construction extends the published local unit-cocycle section
 theorem to a finite family on one common open neighbourhood. For an affine,
 flat, surjective morphism `p : X → Y`, each coordinate is a natural,

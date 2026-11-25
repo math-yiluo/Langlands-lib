@@ -1,6 +1,6 @@
 # The actual maximal-parabolic open-cell height estimate
 
-This unit proves the actual-point form of Waldspurger, *La formule
+This module proves the actual-point form of Waldspurger, *La formule
 de Plancherel pour les groupes p-adiques (d'après Harish-Chandra)*,
 Lemma II.3.5, printed pp.257–259. The original is registered as
 `waldspurger-2003-plancherel`, DOI
@@ -60,7 +60,7 @@ compact choice or premise.
 
 The reversed simple roots are the negatives of the original ones.
 `simpleRoot_maximalFace_neg` identifies their maximal faces exactly,
-and the published `IsStandardCocharacter.neg` makes `-zeta`
+and `IsStandardCocharacter.neg` makes `-zeta`
 standard for the reversed face. Inversion carries the entire actual
 chamber to the reversed chamber. Simultaneous root negation and
 point inversion preserve the character order, as proved in
@@ -87,5 +87,5 @@ connected reductive groups, chamber walls and the original arbitrary
 closed matrix realization. A choice of simple root is impossible
 in relative rank zero, so this prerequisite is vacuous there; the
 separate rank-zero compactness result remains available for VIII.3.1.
-This unit proves II.3.5. It does not prove the tail cutoff, the
+This module proves II.3.5. It does not prove the tail cutoff, the
 constant-term estimates, or the final VIII.3.1 integral theorem.

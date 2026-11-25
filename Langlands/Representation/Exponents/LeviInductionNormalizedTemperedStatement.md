@@ -1,6 +1,6 @@
 # Parabolic induction preserves normalized-exponent temperedness
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviInductionNormalizedTemperedStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviInductionNormalizedTemperedStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviInductionNormalizedTemperedStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviInductionNormalizedTemperedStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.2.2, Lemma, printed p.227 / PDF p.233, with its proof on printed pp.227–228 / PDF pp.233–234. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The lemma says: let `P = MN` be a parabolic subgroup of `G` and `(σ, E)` a tempered representation of `M`; then `i_P^G(σ, E)` is tempered.
 

@@ -1,7 +1,5 @@
 # Connectedness of the centralizer intersection with a Borel
 
-Author: Worker 1479.
-
 This internal adapter derives connectedness from the published
 `dynamicConnected` proof and applies the published structural Borel equivalence.
 It uses the actual pullback intersection and its projections throughout.

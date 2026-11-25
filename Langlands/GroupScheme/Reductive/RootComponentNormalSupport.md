@@ -1,7 +1,5 @@
 # Normal root support is a union of Cartan components
 
-Worker 634.
-
 For the supplied integral RootComponentCoordinates of an affine pinned model,
 reflection in any root preserves every root's component. A predicate invariant
 under root reflections and constant across nonzero simple Cartan edges is

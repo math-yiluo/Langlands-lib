@@ -1,6 +1,6 @@
 # Convergence of the corank-one integrals against the spherical functions
 
-Authors: Worker 8 and Worker 5220. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.SphericalCorankOneConvergenceStatement` (universes `uF`,
 `uV`). It is a statement only: nothing in this module proves it. The theorem
 `Langlands.Conductor.sphericalCorankOneConvergence`, in the separate module

@@ -5,7 +5,7 @@ Lean module: `Langlands.Representation.Archimedean.RealInterlacedMirror`, namesp
 `Langlands.Archimedean.realInterlacedInducedInducedLinkedJacquetFunctional`.
 
 Last of the six modules `RealInterlacedJacquet`, `RealInterlacedColumns`, `RealInterlacedChain`,
-`RealInterlacedEngine`, `RealInterlacedProof` and `RealInterlacedMirror` (Task 7070). It imports
+`RealInterlacedEngine`, `RealInterlacedProof` and `RealInterlacedMirror`. It imports
 `RealInterlacedProof`. It proves the case `|m(d)| < |m(e)|` (`interlaced_CA`), then the
 statement itself, and then the statement II for two linked induction blocks
 (`Langlands.Archimedean.realInducedInducedLinkedJacquetFunctional`).
@@ -44,7 +44,7 @@ Write `p = |m(d)|`, `q = |m(e)|`. The position exponents are `(u₁, v₁, u₂,
 adjacent pair of positions with `a_p - a_{p+1} = 1 - k'`. On the standard module itself the only
 adjacent pair across the two blocks is `(v₁, u₂)`, with `v₁ - u₂ = -B ≤ 0`, which gives no
 binomial functional. So the proof moves exponents with Frobenius maps of explicit Jacquet
-functionals (Worker 5731's `frobMap`):
+functionals (`frobMap` of `RealCharacterCrossing`):
 
 1. a flat functional at one induction block (`μ = 1` or `sgn`), which keeps the exponents and
    fixes the parity of the final evaluation;
@@ -133,9 +133,9 @@ The module compiles with no errors or warnings.
 ## Provenance
 
 The statement and its justification from the literature are in
-`RealInterlacedLinkedJacquetStatement.md`. The proof here is internal to Task 7070 and does not
+`RealInterlacedLinkedJacquetStatement.md`. The proof here is internal and does not
 follow the literature route (intertwining operators and translation functors). It uses only
 explicit functionals: the Library's block Jacquet functionals and multipliers
-(`RealBlockJacquetFunctional`, `RealBlockMultiplier`), Worker 5731's crossing functionals and
+(`RealBlockJacquetFunctional`, `RealBlockMultiplier`), the crossing functionals and
 Frobenius maps (`RealCharacterCrossing`), and the flat multipliers and test vectors of
 `RealBlockFlatJacquet`.

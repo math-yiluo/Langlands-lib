@@ -27,5 +27,5 @@ Lemmas about the predicates `Datum.IsFrameEmbedding` and `Datum.Realizes` (modul
 
 ## Provenance
 
-Internal transport-of-structure lemmas for Task 7811's reduction
-(`FrameChartRepresentabilityReduction`).
+Internal transport-of-structure lemmas for the reduction of
+`FrameChartRepresentabilityStatement` (`FrameChartRepresentabilityReduction`).

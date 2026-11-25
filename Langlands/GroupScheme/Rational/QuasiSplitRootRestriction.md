@@ -1,6 +1,6 @@
 # Total root restriction for quasi-split groups
 
-This internal supporting unit compares actual adjoint roots of algebraic groups.
+This internal supporting module compares actual adjoint roots of algebraic groups.
 All fields and group schemes have the same arbitrary universe level. No
 restriction on the characteristic is imposed.
 
@@ -53,4 +53,4 @@ This is an internal derivation from published centralizer, Lie weight-space,
 root-restriction and base-change results; it is not a transcription of a
 literature statement. It does not assert injectivity of root restriction,
 splitting of `T` over `k`, or the local anisotropic affine-diagram theorem.
-Those remain further obligations of the host task.
+None of these is proved in this module.

@@ -1,10 +1,11 @@
 # Strict dominant displacement outside the actual Levi Weyl subgroup
 
-Author: Worker 135. This module constructs the subgroup of actual relative
+This module constructs the subgroup of actual relative
 Weyl elements preserving restriction of every full real character along a
 torus morphism. For a compatible parabolic presentation, it proves the strict
 dominant displacement bound after restriction to the actual Levi split
-component. This is an intermediate result for Task 5282; it does not prove
+component. This is an intermediate result for the `PP̄`-regularity of
+Langlands triplets (Renard VII.4.1, Lemma); it does not prove
 opposite regularity or identify the exponents of a twisted Jacquet module.
 
 ## Exact content
@@ -89,7 +90,7 @@ David Renard, *Representations des groupes reductifs p-adiques*, French version
 of 9 July 2026, literature ID
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 135 read VII.4.1's Lemma and proof, printed pp.241--242 / PDF
+The passage used is VII.4.1's Lemma and proof, printed pp.241--242 / PDF
 pp.247--248. The strict projected parameter displacement is equation
 (VII.4.1.2); its nonnegative precursor is (VII.4.1.3). This module gives a
 derived actual-object formulation. Applying its result to `w` inverse gives
@@ -97,11 +98,13 @@ the book's inverse-action convention. The implemented proof uses the
 length induction and cone functional above instead of the book's
 minimal-double-coset representative argument.
 
-For the host regularity theorem, one must still transport the actual
+For the regularity theorem of VII.4.1 (`langlandsTripletOppositeRegularity`,
+module `Representation.LanglandsClassification.LanglandsTripletRegularityProof`),
+the further steps are to transport the actual
 unramified twisting parameter through the Jacquet and conjugation functors,
 compare its full geometric-lemma piece with the Weyl expression, and connect
 nonidentity parabolic double cosets to quotient classes outside the Levi
 Weyl subgroup. The inducing-side exponent equality is already in
 `NormalizedTemperedTwistExponent`. The opposite identity-support equivalence
 and the general represented geometric-lemma and regularity-criterion inputs
-are separate proof obligations with their existing owners.
+are separate inputs, outside this module.

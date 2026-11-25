@@ -39,8 +39,9 @@ variable {K G}
 def ofAut (P : PresentedAffinoidAlgebra K) (ρ : G →* Aut P)
     (hρ : @Continuous G (Aut P) _ (DomainAutomorphism.domainSpectralTopology P) ρ) :
     DomainSpectralActionCategory K G :=
-  ⟨⟨P, (Aut.toEnd P).comp ρ⟩, hρ.congr fun _ => by
+  ⟨⟨P, (Aut.toEnd (X := P)).comp ρ⟩, hρ.congr fun _ => by
     apply Aut.ext
+    apply Iso.ext
     rfl⟩
 
 /-- The bounded inverses are supplied by the group action. -/
@@ -54,6 +55,7 @@ theorem actionAut_ofAut (P : PresentedAffinoidAlgebra K) (ρ : G →* Aut P)
   apply MonoidHom.ext
   intro g
   apply Aut.ext
+  apply Iso.ext
   rfl
 
 /-- Expose the object's continuity property using its actual automorphisms. -/
@@ -94,20 +96,20 @@ abbrev homMap {X Y : DomainSpectralActionCategory K G} (f : X ⟶ Y) :
 /-- Every equivariant bounded algebra map is an arrow of the full subcategory. -/
 def homMk {X Y : DomainSpectralActionCategory K G}
     (f : BoundedAlgHom K X.obj.V Y.obj.V)
-    (comm : ∀ g : G, X.obj.ρ g ≫ f = f ≫ Y.obj.ρ g) : X ⟶ Y :=
+    (comm : ∀ g : G, (X.obj.ρ g).asHom ≫ f = f ≫ (Y.obj.ρ g).asHom) : X ⟶ Y :=
   ObjectProperty.homMk ⟨f, comm⟩
 
 @[simp]
 theorem homMap_homMk {X Y : DomainSpectralActionCategory K G}
     (f : BoundedAlgHom K X.obj.V Y.obj.V)
-    (comm : ∀ g : G, X.obj.ρ g ≫ f = f ≫ Y.obj.ρ g) :
+    (comm : ∀ g : G, (X.obj.ρ g).asHom ≫ f = f ≫ (Y.obj.ρ g).asHom) :
     homMap (homMk f comm) = f :=
   rfl
 
 theorem homMap_apply_action {X Y : DomainSpectralActionCategory K G}
     (f : X ⟶ Y) (g : G) (a : X.obj.V) :
-    homMap f ((X.actionAut g).hom.toAlgHom a) =
-      (Y.actionAut g).hom.toAlgHom (homMap f a) :=
+    homMap f ((X.actionAut g).asIso.hom.toAlgHom a) =
+      (Y.actionAut g).asIso.hom.toAlgHom (homMap f a) :=
   congrArg (fun h : BoundedAlgHom K X.obj.V Y.obj.V => h a) (f.hom.comm g)
 
 @[ext]
@@ -144,6 +146,7 @@ def restrict (f : H →ₜ* G) :
     (inclusion ⋙ Action.res _ f.toMonoidHom)
     (fun X => ((X.continuous_actionAut).comp f.continuous).congr fun _ => by
       apply Aut.ext
+      apply Iso.ext
       rfl)
 
 @[simp]
@@ -154,7 +157,7 @@ theorem restrict_obj_algebra (f : H →ₜ* G) (X : DomainSpectralActionCategory
 @[simp]
 theorem restrict_obj_apply (f : H →ₜ* G) (X : DomainSpectralActionCategory K G)
     (h : H) (a : X.obj.V) :
-    (((restrict f).obj X).obj.ρ h).toAlgHom a = (X.obj.ρ (f h)).toAlgHom a :=
+    (((restrict f).obj X).obj.ρ h).asHom.toAlgHom a = (X.obj.ρ (f h)).asHom.toAlgHom a :=
   rfl
 
 @[simp]

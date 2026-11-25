@@ -1,7 +1,5 @@
 # Actual continuous-linear completion: universal property and canonical adjunction
 
-Worker 1582.
-
 The theorem
 `Langlands.Renard.TopModuleCompletion.universalStatements_proof.{u,v,w}`
 proves exactly the published closed proposition

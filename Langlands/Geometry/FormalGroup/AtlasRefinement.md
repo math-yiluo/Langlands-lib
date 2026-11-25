@@ -27,8 +27,9 @@ than a comparison of abstract point carriers. The new chart law is
 constructed by coefficient extension of that original chart. Arbitrary
 changes of coordinates between distinct presentations are not inputs here.
 
-This unit constructs the atlas and the restriction transformation. It does
-not yet prove that restriction is invertible, construct a quotient of atlas
+This module constructs the atlas and the restriction transformation. It does
+not prove that restriction is invertible (`CoverRefinement.pointEquiv` in
+`AtlasRefinementPoints` does), construct a quotient of atlas
 presentations, or define framing, heights, moduli or representability.
 
 ## Restricted laws and transitions

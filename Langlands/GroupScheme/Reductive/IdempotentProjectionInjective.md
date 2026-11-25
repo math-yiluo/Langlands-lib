@@ -1,7 +1,8 @@
 # Factor projections of a fibrewise nontrivial group determine the idempotent
 
 Namespace `Langlands.GroupScheme.IdempotentProjection`. This internal module is a helper for the
-uniqueness part of relative factor rigidity (Worker 632's R1 input). `B` is a commutative ring in
+uniqueness part of relative factor rigidity (used in
+`Reductive/RelativeAlmostSimpleNormalIdempotentProof`). `B` is a commutative ring in
 universe `u` and `G` is a group scheme over `Spec B`.
 
 ## The natural factor projection

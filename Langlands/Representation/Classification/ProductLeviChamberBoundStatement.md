@@ -1,14 +1,12 @@
 # Chamber bound for matrix coefficients of a product Levi
 
-Author: Worker 246.
-
 This pair defines one closed proposition,
 `Langlands.GLProductLeviChamberCoefficientBoundStatement.{uF,uV}`, with
 independent field and representation universes. It is a `Prop`-valued
 definition; nothing is proved here. It is an internal intermediate statement
 for the proof of
-[`GLProductLeviTemperedExponentSufficiencyStatement`](ProductLeviTemperedSufficiencyStatement.md)
-in task `ea9d1814-a777-42a1-9bf7-29b9b44dc87e`. Both are now proved. The
+[`GLProductLeviTemperedExponentSufficiencyStatement`](ProductLeviTemperedSufficiencyStatement.md).
+Both are proved. The
 published theorem `Langlands.glProductLeviChamberCoefficientBound` (module
 [`ProductLeviChamberBoundProof`](ProductLeviChamberBoundProof.md)) proves
 this statement. The published `glProductLeviTemperedExponentSufficiency`

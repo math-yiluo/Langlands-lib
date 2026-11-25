@@ -129,5 +129,3 @@ retained. Their Lean and Markdown pairs are unchanged by this bridge.
 Import `Langlands.Weil.Representation.ContinuityBridgeProof` to use the
 comparisons above; it imports the new statement and definitions and both
 existing presentations. No existing import path is replaced.
-
-Author: Worker 38.

@@ -1,8 +1,5 @@
 # Categorical colimit proof for actual finite-adelic level rings
 
-Authors: Worker 208 (proof); Worker 695 (source and interface audit,
-verification and submission preparation).
-
 `finiteAdeleLevelColimit` proves the exact proposition
 `FiniteAdeleLevelColimitStatement` in an arbitrary universe `u`.
 
@@ -43,7 +40,7 @@ remain available, and no nonempty-place premise is used. The proof uses
 the existing level subrings, induced topologies, transition inclusions
 and canonical cocone legs without changing their definitions.
 
-This proves only the named ring-level target. The parent retains all five
-sections, actual global fields of both characteristics, the all-place
+This proves only the named ring-level target. Outside its scope remain all
+five sections of Conrad's paper, actual global fields of both characteristics, the all-place
 convention and archimedean factors, nonaffine and algebraic-space point
 comparisons, model descent and all remaining assertions.

@@ -23,8 +23,8 @@ abbrev trivialRationalQuotientCoefficients :=
 private def liftAdditiveMap {A B : Type} [AddCommGroup A] [AddCommGroup B] (f : A →+ B) :
     ULift.{u} A →ₗ[IntegerScalars.{u}] ULift.{u} B where
   toFun x := ULift.up (f x.down)
-  map_add' x y := ULift.ext _ _ (map_add f x.down y.down)
-  map_smul' z x := ULift.ext _ _ (map_zsmul f z.down x.down)
+  map_add' x y := ULift.ext (map_add f x.down y.down)
+  map_smul' z x := ULift.ext (map_zsmul f z.down x.down)
 
 private def integerToRational : Langlands.Tate.integralTrivial G ⟶ trivialRationalCoefficients G :=
   Rep.ofHom ⟨liftAdditiveMap (Int.castAddHom ℚ), fun _ => rfl⟩
@@ -41,7 +41,7 @@ def rationalCoefficientSequence : ShortComplex (Rep.{u} IntegerScalars.{u} G) :=
     intro z
     apply ULift.ext
     change rationalClass (z.down : ℚ) = 0
-    exact (Langlands.ClassField.Global.FundamentalClass.rationalClass_eq_zero_iff _).2 ⟨z.down, rfl⟩)
+    exact (Langlands.ClassFieldTheory.Global.FundamentalClass.rationalClass_eq_zero_iff _).2 ⟨z.down, rfl⟩)
 
 @[simp]
 theorem rationalCoefficientSequence_f_down (z : IntegerScalars.{u}) :
@@ -63,14 +63,14 @@ theorem rationalCoefficientSequence_shortExact : (rationalCoefficientSequence G)
   · apply representationExact G
     intro q hq
     change (ULift.up (rationalClass q.down) : ULift.{u} RationalModIntegers) = 0 at hq
-    obtain ⟨z, hz⟩ := (Langlands.ClassField.Global.FundamentalClass.rationalClass_eq_zero_iff _).1 (congrArg ULift.down hq)
-    exact ⟨ULift.up z, ULift.ext _ _ hz⟩
+    obtain ⟨z, hz⟩ := (Langlands.ClassFieldTheory.Global.FundamentalClass.rationalClass_eq_zero_iff _).1 (congrArg ULift.down hq)
+    exact ⟨ULift.up z, ULift.ext hz⟩
   · intro z w h
     apply ULift.ext
     exact Int.cast_injective (congrArg ULift.down h)
   · intro q
     obtain ⟨a, ha⟩ := QuotientAddGroup.mk'_surjective (AddSubgroup.zmultiples (1 : ℚ)) q.down
-    exact ⟨ULift.up a, ULift.ext _ _ ha⟩
+    exact ⟨ULift.up a, ULift.ext ha⟩
 
 section Finite
 

@@ -47,6 +47,7 @@ theorem hasLiftingForAt_of_parameters {A : ArtinianTest k K}
   let N' : ArtinianTestDeformations.Deformations f M (ArtinianTest.dualNumbers k K) :=
     StructuredArrow.mk (D.hom ≫ d.hom)
   obtain ⟨q, ⟨e⟩⟩ := h N'
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   obtain ⟨x, hx⟩ :=
     PseudofunctorPointFiber.exists_identityPoint_of_pointedIso (relative f)
       (T₀ := ArtinianTest.residueBase k K) (Core.mk M)

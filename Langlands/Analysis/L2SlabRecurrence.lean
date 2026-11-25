@@ -119,13 +119,13 @@ private theorem apply_slab_split {a b c : ℝ} (hab : a ≤ b) (hbc : b ≤ c)
   have hi : (H.slab a c).indicator f = (H.slab a b).indicator f + (H.slab b c).indicator f := by
     rw [← hu, indicator_union_of_disjoint hd]
     rfl
-  have hm₁ := (memLp_indicator_iff_restrict (H.measurable_slab a b)).2 h₁
-  have hm₂ := (memLp_indicator_iff_restrict (H.measurable_slab b c)).2 h₂
-  refine ⟨(memLp_indicator_iff_restrict (H.measurable_slab a c)).1 (hi ▸ hm₁.add hm₂), ?_⟩
+  have hm₁ := (memLp_indicator_iff_restrict (H.measurable_slab a b).nullMeasurableSet).2 h₁
+  have hm₂ := (memLp_indicator_iff_restrict (H.measurable_slab b c).nullMeasurableSet).2 h₂
+  refine ⟨(memLp_indicator_iff_restrict (H.measurable_slab a c).nullMeasurableSet).1 (hi ▸ hm₁.add hm₂), ?_⟩
   have hnorm (l r : ℝ) : lpNorm ((H.slab l r).indicator f) 2 μ =
       lpNorm f 2 (μ.restrict (H.slab l r)) := by
     rw [← toReal_eLpNorm, ← toReal_eLpNorm, eLpNorm_indicator_eq_eLpNorm_restrict
-      (H.measurable_slab _ _)]
+      (H.measurable_slab _ _).nullMeasurableSet]
   rw [← hnorm a c, hi, ← hnorm a b, ← hnorm b c]
   exact lpNorm_add_le hm₁ (by norm_num)
 

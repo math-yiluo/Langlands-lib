@@ -1,11 +1,11 @@
 # The hyperext abutment filtration as a functor
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextAbutmentFiltration` (`filtration`, `graded`,
-`filtration_le_of_le`; Worker 61) and
+`filtration_le_of_le`) and
 `Langlands.Cohomology.HyperextAbutmentNaturality` (`filtrationPrecomp`,
 `filtrationPostcomp`, `gradedPrecomp`, `gradedPostcomp` and their identity,
-composition and commutation lemmas; Worker 61), and on Mathlib's t-structures,
+composition and commutation lemmas), and on Mathlib's t-structures,
 its category `AddCommGrpCat` of additive groups and its preadditive coyoneda
 functor.
 
@@ -88,8 +88,8 @@ group `K ⟶ B⟦n⟧` and `ψ` to postcomposition with `ψ⟦n⟧'`; it is the 
 
 The definitions and proofs are ours, assembled from Mathlib and the Library.
 Packaging the functorial maps of `HyperextAbutmentNaturality` as functors is a
-derived construction; the scope note of that module recorded that the maps
-were not yet packaged as Mathlib `Functor` objects. These functors let a
+derived construction; the scope note of that module records that the maps
+are not packaged there as Mathlib `Functor` objects. These functors let a
 presheaf of coefficient objects `B` (for instance, automorphic forms of
 varying level placed in degree `0` of a derived category) be composed with
 `filtrationFunctor` or `gradedFunctor`, giving the filtration steps and

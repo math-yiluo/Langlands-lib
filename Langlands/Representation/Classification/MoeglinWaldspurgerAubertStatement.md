@@ -1,6 +1,6 @@
 # Unproved actual Aubert correctness of the MW algorithm
 
-Workers 139 and 963. `AubertCorrectness F T` is an unproved Prop-valued target for the
+`AubertCorrectness F T` is an unproved Prop-valued target for the
 actual recursive integer-line output. For every actual cuspidal datum `ρ`,
 real offset `x`, integer multisegment `a` and common rank `n`, it quantifies
 actual smooth complex representations `π` and `πdual` of `GL_n(F)` which are
@@ -39,4 +39,6 @@ interface. This target does not itself prove support preservation or existence.
 `UniversalAubertCorrectness` quantifies over all primes, actual p-adic fields
 and topological data. The field universe `uF` and cuspidal-carrier universe
 `uV` are independent; the actual heads have the Library's carrier universe
-`max uF uV`. Neither correctness declaration has a proof in this contribution.
+`max uF uV`. Neither correctness declaration has a proof in this module;
+`UniversalAubertCorrectness` is proved as `universalAubertCorrectness` in
+`MoeglinWaldspurgerAubertCorrectnessProof`.

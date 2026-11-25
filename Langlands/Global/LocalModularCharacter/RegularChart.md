@@ -1,7 +1,5 @@
 # Regular charts at points of smooth affine schemes over complete fields
 
-Author: Worker 1402.
-
 This helper module is one step in the proof of
 `Langlands.Global.PlaceGroupPoints.LocalModularCharacterAdjointDeterminantStatement`. Let
 `F` be a field, `X` a smooth affine scheme over `Spec F`, and `K` a complete nontrivially
@@ -19,8 +17,8 @@ with charts given by the inverse function theorem applied to a presentation sati
 Jacobian criterion. In the implemented version, Mathlib supplies the inverse function theorem
 (`HasStrictFDerivAt.toOpenPartialHomeomorph`) and the local structure of smooth algebras
 (`Algebra.Smooth.exists_span_eq_top_isStandardSmooth`: a smooth algebra is covered by
-principal opens with submersive presentations). Worker 1045 fixed the exact form of the main
-statement for its use in the modular-character proof. The chart coordinates and the use of
+principal opens with submersive presentations). The exact form of the main statement is the
+one the modular-character proof uses. The chart coordinates and the use of
 dual numbers for derivations are choices of this implementation (see below).
 
 ## Declarations
@@ -83,7 +81,7 @@ Scheme level (`F : Type u`):
 - `exists_regularChart X hX p`: for `X` as above (also assumed locally of finite type), a
   complete nontrivially normed field `K : Type u` with `Algebra F K`, and a `K`-point `p` of
   `AffineCoordinateRing F X`, the same five conclusions as in `exists_regularChart_of_away`
-  with `O = AffineCoordinateRing F X`. This is the exact statement agreed with Worker 1045.
+  with `O = AffineCoordinateRing F X`. This is the exact statement that `IdentityChart` uses.
   The instance `LocallyOfFiniteType X.hom` is part of that statement but is not used in the
   proof.
 

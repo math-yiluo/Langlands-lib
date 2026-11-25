@@ -1,7 +1,5 @@
 # A closed subscheme of a smooth scheme with fibres of full dimension along a section
 
-Author: Worker 9.
-
 Helper module for the proof of
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (SGA 3, Exposé VI_B,
 Corollaire 4.4, reduced locally Noetherian base, connected fibres). Its main theorem,

@@ -62,11 +62,11 @@ tokens in Lean, so the Lean statement writes `ρ` for HL's `Π`, and `π` as in 
 ## Explanations
 
 - **σ-lifts.** `IsSigmaLift σ l π hπ ρ hρ A c` (module
-  `Langlands.BaseChange.TwistedCharacter`, Task 7432) is HL's σ-relèvement (II.2.7,
+  `Langlands.BaseChange.TwistedCharacter`) is HL's σ-relèvement (II.2.7,
   printed p. 67): `c ≠ 0`, and for all Haar measures on `GL_n(F)` and `GL_n(E)` and every
   pair `(φ, f)` of concordant test functions (`AreConcordant` of
-  `Langlands.BaseChange.OrbitalIntegral`, Task 7416), the twisted trace
-  `trace(ρ(φ) ∘ A)` equals `c` times the trace `trace(π(f))`. Task 7432's
+  `Langlands.BaseChange.OrbitalIntegral`), the twisted trace
+  `trace(ρ(φ) ∘ A)` equals `c` times the trace `trace(π(f))`. The
   `SigmaLiftCharacterIdentityStatement` (HL II.2.9, Proposition) states its equivalence with
   the Shintani identity `IsShintaniLift` of AC Definition 6.1.
 - **The constant, and every `A`.** HL show that `c = 1` when `A` is the Whittaker-normalized
@@ -83,19 +83,19 @@ tokens in Lean, so the Lean statement writes `ρ` for HL's `Π`, and `π` as in 
   `Langlands/JacquetLanglands/EssentiallySquareIntegrable.lean`: admissible, unitary central
   character, matrix coefficients square-integrable modulo the centre).
 - **σ-discrete series.** `IsSigmaDiscreteSeries σ n ρ` (module
-  `Langlands.BaseChange.PseudoCoefficient`, Task 7442) is AC's σ-discrete
+  `Langlands.BaseChange.PseudoCoefficient`) is AC's σ-discrete
   representation (Chapter 1, §2.3), which is HL's "série σ-discrète" (II.1.7, II.4.6):
   irreducible, admissible, tempered, σ-stable and not induced from a σ-stable representation
   of a proper standard Levi subgroup.
 - **Field.** HL's Theorem II.4.6 and its proof by the global method (II.6.1, printed p. 118)
   assume that `E` is a field, and so does this statement. In characteristic zero, AC prove
   Theorem 6.2 (§6.3) and HL refer to that proof (II.6.1). The degree `l` is not assumed prime.
-- **`CharZero F`.** As in Tasks 7416, 7432 and 7442: the Library's `IsRegularSemisimple` asks
+- **`CharZero F`.** As in the statements on orbital integrals, twisted characters and pseudo-coefficients: the Library's `IsRegularSemisimple` asks
   for a separable characteristic polynomial, while HL's regular elements have squarefree
   characteristic polynomial; the two agree in characteristic zero, where HL's results and
   AC's apply verbatim.
 - **Proof route.** The statement is proved by comparing the simple trace formula with its
   twisted form (HL II.6; AC §6.3). It uses twisted pseudo-coefficients of σ-discrete series
   (`IsTwistedPseudoCoefficient` of `Langlands.BaseChange.PseudoCoefficient`, whose existence is
-  stated as `TwistedPseudoCoefficientExistenceStatement`). A later proof task must not derive
+  stated as `TwistedPseudoCoefficientExistenceStatement`). A later proof must not derive
   this statement from a result that depends on it.

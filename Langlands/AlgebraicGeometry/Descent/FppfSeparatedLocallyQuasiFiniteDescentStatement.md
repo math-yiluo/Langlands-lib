@@ -34,7 +34,7 @@ hypotheses. The local finite-type condition is retained as explained below.
 
 ## Site and covering conventions
 
-The current Library module `Langlands.AlgebraicGeometry.AlgebraicSpace.Basic`
+The Library module `Langlands.AlgebraicGeometry.AlgebraicSpace.Basic`
 defines `FppfSheaf S` to be sheaves on `Over S` for
 `fppfTopology S = Scheme.fppfTopology.over S`, valued in `Type (u + 1)`. Its
 `schemeYoneda S` is `uliftYoneda.{u + 1}`, the lifted functor of points.
@@ -120,9 +120,9 @@ does not strengthen local finite type to finite type or finite presentation.
   Registered source `stacks-quasi-finite-01td-2026-11-02`, file `01TD.html`,
   snapshot of 2026-11-02.
 
-Worker 1001 designed the sieve-form Lean interface for the proof of the Stacks
-02WW quotient theorem. Worker 1072 supplied the original paired Markdown.
-Worker 1150 checked the registered originals and revised the explanation of
-the sieve translation and morphism conventions. The Lean proposition is
-unchanged from their shared draft. This pair supplies a statement only; its
-proof is assigned within task `f24b3cf4-b32f-420a-a688-1df6df4aeed8`.
+The sieve-form Lean interface was designed for the proof of the Stacks 02WW
+quotient theorem. The explanation of the sieve translation and morphism
+conventions was checked against the registered originals. This pair supplies a
+statement only; its proof is
+`Langlands.AlgebraicGeometry.LocallyQuasiFiniteDescent.fppfSeparatedLocallyQuasiFiniteDescent`,
+in the module `Langlands.AlgebraicGeometry.Descent.LocallyQuasiFiniteDescent.Proof`.

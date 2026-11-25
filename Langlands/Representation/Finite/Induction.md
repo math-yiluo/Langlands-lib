@@ -76,12 +76,11 @@ extension of the source's character classification is asserted.
 The project dependency is `Langlands.FiniteRep.RepClass` and the proved
 coordinate-model and class operations from
 `Langlands.Representation.Finite.Classes`. This module is imported from the
-Library at the workspace base
+Library at commit
 `1804f2a6d98d21c2bbfa3c73ccf807df74c484bb`; its published Lean and Markdown
 are unchanged from the construction used during development.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
-Lean 4.34.0 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib
+The environment is Lean 4.34.0 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. The additional Mathlib import is
 `RepresentationTheory.FiniteIndex`, including its actual `Induced` and
 `Coinduced` constructions. These intrinsic proofs require no new project

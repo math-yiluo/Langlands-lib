@@ -1,6 +1,6 @@
 # Actual geometric terms with full intersection Levis
 
-Worker 167. This is an internal deduction from the published actual subgroup
+This is an internal deduction from the published actual subgroup
 and normalized representation constructions. It uses no additional assertion
 from the literature.
 
@@ -61,7 +61,7 @@ endpoint isomorphism, and identifies the resulting three pullbacks with inverse
 conjugation by `n`. The last linear equivalence is the identity on the original
 carrier: both actions evaluate `A` at `n⁻¹ * x * n`.
 
-This unit identifies a single actual geometric term. It does not construct a
+This module identifies a single actual geometric term. It does not construct a
 normalized geometric filtration, prove a Jacquet equivalence for an induced
 representation, or prove `RationalRankOneSelfAssociationStatement`. Rational
 root-association and longest-representative specializations remain consumer

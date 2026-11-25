@@ -1,7 +1,5 @@
 # Haar normalization invariance of temperedness modulo the center
 
-Author: Worker 573.
-
 `Langlands.temperedModCenterHaarInvariant` proves the closed proposition
 `Langlands.TemperedModCenterHaarInvariantStatement` with independent group
 and representation-carrier universes. The helper

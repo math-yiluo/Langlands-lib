@@ -1,8 +1,7 @@
 # Affine charts through finite-type field points
 
 Module `Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.AffineChart`, namespace
-`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Author: Worker 5103 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`). Everything is proved in the file, with no
+`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Everything is proved in the file, with no
 hypotheses beyond those in the signatures. Internal construction; no literature
 statement is formalized.
 

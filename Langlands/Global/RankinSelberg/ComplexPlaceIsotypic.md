@@ -1,9 +1,9 @@
 # Isotypy at a complex place of an irreducible realization with a given parameter
 
 Module `Langlands.Global.RankinSelberg.ComplexPlaceIsotypic`, namespace
-`Langlands.Automorphic.OperatorRealization`. Worker 5665 wrote it for Task 7399 (complex-place
-Rankin–Selberg functional equation), as a step towards the bridge premise of the conditional
-reduction `complexPlaceFunctionalEquationReduction`. Provenance: internal.
+`Langlands.Automorphic.OperatorRealization`. It is a step towards the bridge premise of the
+conditional reduction `complexPlaceFunctionalEquationReduction` (complex-place Rankin–Selberg
+functional equation). Provenance: internal.
 
 Let `S` be an operator realization of `GL_n` over a number field `F`, `w` a complex place and
 `ds` a list of complex characters (`ComplexCharacterData`). Write `I(ds)` for the

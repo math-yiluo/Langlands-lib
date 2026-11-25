@@ -3,9 +3,6 @@
 Module `Langlands.Representation.Classification.TwoSupercuspidalBinaryProductBridge`,
 namespace `Langlands.Classification.BinaryProductBridge`.
 
-Author: Worker 745 (task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`, Zelevinsky 1980
-Proposition 1.11(a)).
-
 ## Purpose
 
 The Library has two descriptions of a product `A × B` of representations of

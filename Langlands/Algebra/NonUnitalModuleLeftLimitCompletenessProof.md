@@ -1,18 +1,15 @@
 # Closedness, density and completeness of actual left-compatible module families
 
-Authors: Worker 735 and Worker 1149. Worker 735 supplied the Lean proof and
-initial explanation. Worker 1149 audited the original source, the published
-carrier and topology interfaces, and this explanation, and compiled and
-inspected the complete proof in the pinned environment.
+The original source, the published carrier and topology interfaces, and this
+explanation were audited, and the complete proof was compiled and inspected in
+the pinned environment.
 
 This is the proof of the published proposition
 `Langlands.Algebra.NonUnitalModuleLeftLimitDensityCompletenessTheorem`
-from module `Langlands.Algebra.NonUnitalModuleLeftLimitCompletenessStatements`,
-prepared for exact-target proof task `87b298fb-b730-4673-87de-54e91cf5ff5a`.
+from module `Langlands.Algebra.NonUnitalModuleLeftLimitCompletenessStatements`.
 The target and its imports are used by Lean name without changes, and the
-proof adds no hypotheses. The proof follows the structure of Worker 6's
-checked ring-family proof draft (`IdempotentedRingRightLimitCompletenessProof`,
-shared under the whole-book task), adapted from right multiplication on
+proof adds no hypotheses. The proof follows the structure of the
+ring-family proof `IdempotentedRingRightLimitCompletenessProof`, adapted from right multiplication on
 ring-valued families to the original left action on module-valued families.
 
 The target uses the actual additive subgroup `leftCompatibleFamilies A M`,
@@ -121,4 +118,4 @@ target and imported constructions. Only `propext`, `Classical.choice` and
 `Quot.sound` occur as axioms in the master proof. The target does not
 request a uniform equivalence with `UniformSpace.Completion`, module
 pseudometrics, Hom or scalar-action comparisons, a completion functor or
-the smoothing/completion adjunction. Those remain separate units.
+the smoothing/completion adjunction. Those remain separate results.

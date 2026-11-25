@@ -1,12 +1,10 @@
 # External Library audit: Whittaker hypotheses and Rankin–Selberg status
 
-Worker 90, with verification contributions from Workers 113, 69, 331 and 332.
-This note records the twenty findings assigned by task
-`da2fed2d-b6d5-4c04-9463-e8cd13a0edea`, revision 2. The source reports are the
+This note records twenty findings of the external Library audits of
+2026-10-22 on Whittaker hypotheses and Rankin–Selberg status. The source reports are the
 registered `external-library-audits-2026-10-22`, ISSUES-1 and ISSUES-2. Their
 allegations were checked against complete Lean declarations, paired Markdown,
-original sources and authoritative review/publication records. Parent verification
-here is separate from the independent review of each corrective candidate.
+original sources and the record of the corrections that entered the Library.
 
 ## Snapshots and verdict convention
 
@@ -130,7 +128,7 @@ convergence assertion, which is still a proof obligation in the checked targets.
 Folland, second edition, pp.62–63, Proposition 2.50, Theorem 2.51 and (2.52),
 were read for quotient averaging, modular compatibility and normalization.
 Their source assertions are distinguished from the actual Lean constructions
-and their accepted receipts. Convergence, rational continuation, normalized
+and their proofs in the Library. Convergence, rational continuation, normalized
 factor existence and functional equations are not established by measure
 existence. In particular, the universal generator relation in
 `IsPadicPairLPolynomial` remains additional data.
@@ -260,97 +258,61 @@ not proofs: its conductor exponent target also includes rank one. The
 Godement–Jacquet/JPSS factor comparison and spherical/Hecke identification
 remain explicitly disclosed source-identification obligations.
 
-## Verified companion publications
+## Companion modules in the Library
 
-These records were checked in authoritative artifact records, independent
-reviews and publication receipts, then compared with the actual current paired
-files. A name, compilation success or neighboring prose was not used as proof
-of acceptance. The proof-policy entries include accepted Lake-build and
-exact-target checks. The table records review task IDs for unambiguous lookup.
+The table gives the Library commit where each companion module first
+appeared; the files were compared with the Library at C. A name,
+compilation success or neighboring prose was not used as evidence that a
+module is in the Library. The proofs among them were checked with Lake
+builds and against their exact targets.
 
-| Module / unit | Artifact | Policy | Accepted machine receipt | Independent approving review task | Publication commit |
-|---|---|---|---|---|---|
-| RS/GeneralLinearUnimodularity | `0a2f2e5a-3d04-4174-a4dd-6d9c2ed97cd3` | `lean.proof@1` | `6124cbc7-2c6d-48f3-baf4-a88a73862633` | `6845ba2f-d270-46f5-961e-f84d4a31e398` | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
-| RS/UnipotentUnimodularity | `e5699c5d-4972-4e3d-b956-8b69d79d36d6` | `lean.proof@1` | `06e14fcb-21aa-44e3-a4a0-52bfd1a05028` | `f4cf1613-64d7-406d-ab18-d099f4620b40` | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
-| RS/UnipotentQuotient | `eb738941-1de1-4153-bc1d-5bc7a0833dbd` | `lean.definition@1` | `0ddd80de-5108-4207-910b-98a519121b77` | `57d6426e-673e-469f-b46f-71da94069e4d` | `3afe6f3ba5efc4d00cccb18dba321ef341bbaf68` |
-| RS/QuotientHaarExistence | `7242bb53-8416-495f-ae65-a8b1ca741775` | `lean.proof@1` | `75a2e2f2-254e-4bdf-ac84-1f32121d27a6` | `126b1e95-48f6-4539-ac3a-751fe7adc8b7` | `4897b8b0eeea4fd4761194eb8fe4c2103d02aae4` |
-| Langlands/Representation/Parabolic/UnipotentFiniteContainment; RS/UnipotentUnimodularity (helper promotion) | `bf7f18d2-c1ab-499e-941f-91c304ecdbbf` | `lean.proof@1` | `b352de67-f94d-4c7b-a945-ee6f3d1801bf` | `78bed534-975c-4347-b2e9-06478a895e7d` | `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` |
-| W/CharacterChange | `ee91c9f2-b871-440f-8315-47b12b793e9d` | `lean.definition@1` | `2272e103-9d56-4c16-ad56-d8e9c9db1d32` | `bacddcc8-55ce-460b-80d9-f39d7e50d6c4` | `ef274d37c255e4b25a990dd377d10e2da436807d` |
-| Sm/SmallRealizationProof | `b9fc82a3-c94e-4f17-9c0f-69a17a8effbb` | `lean.proof@1` | `74e599f0-4d86-47ba-81d1-a7eb6e4471e7` | `7d7085b4-67f1-479b-8820-61bba74dea24` | `f9c1742752d97c488fc1a835070bf50b534f4427` |
-| Cdr/Essential | `4f62224f-5464-4d85-a5d8-f7fdf8e423c4` | `lean.definition@1` | `7be70723-4e51-4bee-8fe7-3db52292c70c` | `934112f8-8070-4240-88d1-b5c5291841d4` | `a175d25f6a5a9e22525012e3cae66e9f8dfacba9` |
-| RS/QuotientIntegrals; W/GeneralLinear | `db295cbc-b379-49de-99dd-64a4c5831f74` | `lean.definition@1` | `792638ab-4eb0-42f0-8b95-dacfdfe7e8ee` | `d1068f32-c647-41db-8070-32f74fe488b0` | `22b4f024e0d4218752e970d09329d1799f6d81d1` |
-| Cdr/SphericalTests | `236f4cab-fbda-4987-b35d-d6a6ad942933` | `lean.definition@1` | `c0dc0317-1a78-4b6e-a26a-79e8445b5d1a` | `2f4e5241-f565-4b36-af2f-e77dd966a933` | `4fbc1953d45ea9aa3fa4b80478542c845102a4e5` |
-| Cdr/EssentialStatement | `9905996f-a6cd-4591-9aa4-0e1c58407ca1` | `lean.statement@1` | `20fe09dd-0d8d-4b85-9b3b-9530f3060d43` | `76e1aa1b-0a75-4dd6-89b4-0b32e7b785c9` | `056b7c747e32f712be4ac7fd004fd0af4845c968` |
-| W/PrerequisiteInterfaces | `674a0ce6-5c53-4d57-add7-d3c8c64b97bb` | `lean.definition@1` | `a9834a41-14e0-4242-842c-1837206eaefb` | `21c73ddc-e606-48af-b456-65be5878db52` | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` |
+| Module | Publication commit |
+|---|---|
+| RS/GeneralLinearUnimodularity | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
+| RS/UnipotentUnimodularity | `7db0c477a21f8471b1e5cff5f20d8ecb3dd2285b` |
+| RS/UnipotentQuotient | `3afe6f3ba5efc4d00cccb18dba321ef341bbaf68` |
+| RS/QuotientHaarExistence | `4897b8b0eeea4fd4761194eb8fe4c2103d02aae4` |
+| Langlands/Representation/Parabolic/UnipotentFiniteContainment; RS/UnipotentUnimodularity (helper promotion) | `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` |
+| W/CharacterChange | `ef274d37c255e4b25a990dd377d10e2da436807d` |
+| Sm/SmallRealizationProof | `f9c1742752d97c488fc1a835070bf50b534f4427` |
+| Cdr/Essential | `a175d25f6a5a9e22525012e3cae66e9f8dfacba9` |
+| RS/QuotientIntegrals; W/GeneralLinear | `22b4f024e0d4218752e970d09329d1799f6d81d1` |
+| Cdr/SphericalTests | `4fbc1953d45ea9aa3fa4b80478542c845102a4e5` |
+| Cdr/EssentialStatement | `056b7c747e32f712be4ac7fd004fd0af4845c968` |
+| W/PrerequisiteInterfaces | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` |
 
-GeneralLinear is explicitly among the six integrated repository paths of
-`db295cbc-b379-49de-99dd-64a4c5831f74`; it is not merely an incidental snapshot
-dependency. Reviewer 150's report expressly checks its characters, functionals,
-coefficient model and conditional equivalence. The later
-`bf7f18d2-c1ab-499e-941f-91c304ecdbbf` publication, in its changes to
+GeneralLinear entered the Library explicitly as one of the six paths of one
+change (with RS/QuotientIntegrals in the table), not as an incidental
+dependency; its characters, functionals, coefficient model and conditional
+equivalence were checked then. The later helper promotion, in its changes to
 UnipotentUnimodularity, only promotes the shared `common_integer_denominator`
-helper and updates its prose; the main invariance proof is unchanged.
-That pair's reviewed public bytes match
-C. Migrated historical acceptance records for Congruence, Definitions,
-NewvectorStatement and PrerequisitesStatement were not located. Their current
-Library contents are verified here; no unavailable historical review is
-invented. The corrections have their own fresh review requirements.
+helper and updates its prose; the main invariance proof is unchanged, and the
+files match C. For Congruence, Definitions, NewvectorStatement and
+PrerequisitesStatement no record of their entry into the Library was found;
+their current Library contents are verified here.
 
-## Correction candidates and release evidence
+## Corrections and the commits where they entered the Library
 
-| Key | Findings | Candidate | Machine validation receipt | Independent review task and outcome | Publication |
-|---|---|---|---|---|---|
-| S | I002 | `2d8dd251-b92e-4e76-9a90-5b5a92f22b30` | `51aafc3c-3c5d-4ea5-a272-d7fc2759914a` | `0ea19339-4c2b-484a-b7cd-6ed7d19a58b3` (approve, no qualifications) | `2173e15e1a7e4f96682e6274d63c4f98ccce2c73`; integration `c6a3aeef6b9f4fb1858af69a99021c80` |
-| M | I007, I040, I046, I052, DOC-04 | `8c9fea15-98cd-47ce-924d-2dca5da99df5` | `35533707-3ed0-40ac-a5ec-98d2b8330bc2` | `4045fcc2-71cc-4002-ac78-46a5cd0c48a6` (approve, no qualifications) | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302`; integration `6b2eb2f4d72a47a9b08adb23a86233b4` |
-| F | I041–I045, I047–I049 | `d9bb7253-9608-478b-9ffe-853a14487d54` | `3111193c-311d-47e1-a365-4e50d6fb7b45` | `9b7a1148-9f39-45ba-a92b-97906d726a89` (approve, no qualifications) | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302`; integration `31322885d3174fd485911858bc46ff34` |
-| T | I004, I051 | `9a7d88ee-1113-4ce8-86b9-43512c74991c` | `5310c5d0-a8e6-4f83-8c42-3d2bb8038bf6` | `5ed78576-2137-4695-a070-7a3982b037c8` (approve, no qualifications) | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302`; integration `5e354dc93f2c46b69f7d78e796f3c506` |
-| C1 | I037, I039 | `a347bef5-d504-4d2e-9d60-ddadd24c4646` | `18b6d45e-b1ed-4950-958d-93566b9ca11a` | `1304ede0-181c-4b9e-9ed1-0eed03fc8985` (approve, no qualifications) | `886e27567a757917705b7adef45a2c2621bf4bf7`; integration `b8219fb3b4cc4987903adf81a9f55d1d` |
-| C2 | I038 | `deb217ea-788e-41f4-8eef-ea79aa488e5f` | `8c416b25-3f21-40d7-b930-543035acf798` | `0126681f-b389-4834-8169-953cd86db6fb` (approve, no qualifications) | `4ccd65d85917da26d0a67b9c48a37859533fffa9`; integration `b50b419465984dbe845404f513bcb82a` |
-| C3 | I061 | `bd81d0bb-3437-4b5b-a300-9180154a0c5e` | `40ef7261-869b-451d-bab9-26fd9a889e44` | `bad6e032-8e98-4d75-b5b3-2e47de87c3c2` (approve, no qualifications) | `451f42a052568843a4d727659c3d0a6c66d38ca6`; integration `4a1bf99cba2a4df396a22b86c9e70c06` |
+| Key | Findings | Publication |
+|---|---|---|
+| S | I002 | `2173e15e1a7e4f96682e6274d63c4f98ccce2c73` |
+| M | I007, I040, I046, I052, DOC-04 | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` |
+| F | I041–I045, I047–I049 | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` |
+| T | I004, I051 | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` |
+| C1 | I037, I039 | `886e27567a757917705b7adef45a2c2621bf4bf7` |
+| C2 | I038 | `4ccd65d85917da26d0a67b9c48a37859533fffa9` |
+| C3 | I061 | `451f42a052568843a4d727659c3d0a6c66d38ca6` |
 
-All corrected mathematical pairs use the applicable mathematical-artifact
-policy; no paired Markdown is submitted as a wiki note. The public note itself
-requires separate independent review and publication. Machine acceptance is
-not semantic acceptance. For S, the integrated Lake build report is
-`c6bebcd79a7346067a745238bd41a31696d9ecaa3181f5275ee75245a3d98814`.
-For M, F and T, the fresh integrated build report is
-`1eacca0dfb1f01964096b358388b2a72b29cbd1e95b49d56a2cd015a74de1025`;
-their independently approved frozen corrected Markdown matches publication
-`a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` and C exactly.
-For C1, the fresh integrated build report is
-`7c8040a688f82f2181e515b54d2dd78b67e5b38423305685e22d2174a8b7a192`;
-both corrected pairs match its publication
-`886e27567a757917705b7adef45a2c2621bf4bf7` and C.
-For C2, the fresh integrated build report is
-`af57d855ee4191b30dcca6fd2ca8ef23b75e4f0d2d386bed55d97459b6bd5402`;
-both files match its publication
-`4ccd65d85917da26d0a67b9c48a37859533fffa9` and C.
-For C3, the fresh integrated build report is
-`ea9c0753ebe3d8382c21582d8e2efb7ae912dc1f1ff955e4ebe65a576547fc5a`;
-both files match its publication
-`451f42a052568843a4d727659c3d0a6c66d38ca6` and C.
+Each correction was built with Lake when it entered the Library, and its
+corrected files match both that commit and C. A machine build is not a check
+of meaning.
 
-The first I061 candidate `4209a7f0-e625-4f9e-b825-57ea25f00552` passed
-machine validation `88e74943-de8e-46b4-863d-a5d447a55bae` but received
-**request changes** from Reviewer 1463 in review
-`3d136d13-fe97-4174-b0c3-3f403d67bb08`, receipt
-`d4d92620-0e7e-4ef5-9f0f-977836750bb4`. Its new outstanding-adapter claim
-missed the intervening PrerequisiteInterfaces publication. Parent verification
-confirmed that module's complete declarations, independent approval and exact
-published hashes. The rejected candidate is not counted as a correction or
-publication. Its explicit replacement C3 is
-`bd81d0bb-3437-4b5b-a300-9180154a0c5e`. Its complete frozen pair and metadata
-were rechecked against the accepted adapter module. Reviewer 1509 approved
-the replacement without qualifications in review
-`bad6e032-8e98-4d75-b5b3-2e47de87c3c2`, attempt
-`f970ad91-494a-4d9e-8c27-53577f4906f9`. Its independent acceptance and
-publication are now verified in the C3 release above.
+A first version of the I061 correction claimed an outstanding adapter,
+missing the PrerequisiteInterfaces module that had already entered the
+Library; it did not enter the Library. Its replacement C3 was checked
+against that adapter module and is the correction recorded above.
 
-Workers 113, 69, 331 and 332 supplied the focused verification and correction
-reports used here; Worker 90 checked their relevant declarations, sources,
-receipts and frozen changes. The underlying module authors are credited in the
-correction candidates (including Workers 11, 43 and 113 as applicable).
-PairEpsilonNormalizationStatement, owned by another audit group, is unchanged.
+PairEpsilonNormalizationStatement, covered by another audit note, is unchanged.
 No claim is made that the full LLC, JPSS analytic theory, newvector theorem or
 multiplicity-one theorem is complete.
 
@@ -373,7 +335,7 @@ Jacquet correction itself was read explicitly. Page numbers are printed pages.
 
 ## Checked file fingerprints
 
-Every hash below is SHA256. C identifies the exact current comparison snapshot above; B and S-base identify the two defective-prose snapshots. S-base is `aee7fdb7f6d4283cce4db9035fd9478c923d4926`. All fourteen owned Lean files are byte-identical between their checked baseline and C. For every published correction, both current files also match its frozen candidate.
+Every hash below is SHA256. C identifies the exact current comparison snapshot above; B and S-base identify the two defective-prose snapshots. S-base is `aee7fdb7f6d4283cce4db9035fd9478c923d4926`. All fourteen audited Lean files are byte-identical between their checked baseline and C. For every published correction, both current files also match its frozen candidate.
 
 ### Current correction locations
 
@@ -396,7 +358,7 @@ These are the changed Markdown lines in C, obtained by comparing complete files 
 | C2 | Cdr/NewvectorStatement.md | 42–54 |
 | C3 | W/PrerequisitesStatement.md | 4–5, 34–51, 103–107 |
 
-### Owned pairs in C
+### Audited pairs in C
 
 | Pair stem | Lean SHA256 | Markdown SHA256 |
 |---|---|---|
@@ -436,7 +398,7 @@ These are the changed Markdown lines in C, obtained by comparing complete files 
 
 ### Companion pairs in C
 
-The shared UnipotentUnimodularity pair is shown once at its current helper-promotion version. SphericalTests is already in the owned-pair table.
+The shared UnipotentUnimodularity pair is shown once at its current helper-promotion version. SphericalTests is already in the audited-pair table.
 
 | Pair stem | Lean SHA256 | Markdown SHA256 |
 |---|---|---|

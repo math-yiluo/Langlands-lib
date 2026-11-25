@@ -1,7 +1,7 @@
 # Normalized root-function pullback through an actual derived inclusion
 
-Authors: Worker 27 and Worker 1631. The construction uses Worker 1631's
-actual root-point transport and adapts the existing central-isogeny
+The construction uses the actual root-point transport of
+`Rational.DerivedRootTransport` and adapts the existing central-isogeny
 root-family comparison to a derived inclusion.
 
 Over a field `k : Type u`, let `d : D ⟶ G` be a supplied actual derived

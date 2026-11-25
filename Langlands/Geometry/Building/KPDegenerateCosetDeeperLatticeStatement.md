@@ -1,9 +1,7 @@
 # KP Proposition 13.6.7, first assertion: a degenerate coset lies in a deeper lattice
 
-Author: Worker 3557.
-
-This module belongs to the Kaletha–Prasad Bruhat–Tits program (task
-`f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`). It states the first assertion of
+This module belongs to the Library's Kaletha–Prasad Bruhat–Tits development.
+It states the first assertion of
 KP Proposition 13.6.7 for the Library's supplied Lie filtrations, in two
 versions. The first finds a point of the reduced building at which the
 degenerate coset lies in a deeper lattice. The second also makes that point
@@ -186,7 +184,7 @@ lattices on the building come from `lieFiltrationOnBuilding` under
 hypotheses, and the optimal version assumes a nonempty set of affine roots.
 The names `DegenerateLieCosetInDeeperLatticeStatement` and
 `DegenerateLieCosetInOptimalLatticeStatement` are internal. The module uses
-Worker 13's `LieFiltrationData`, `lieFiltrationReal`,
+`LieFiltrationData`, `lieFiltrationReal`,
 `lieFiltrationPlusReal` and `IsOptimalPoint` (modules `KPLieFiltration`,
 `KPLieFiltrationDual` and `KPOptimalPoints`), and `lieFiltrationOnBuilding`
 and `IsDegenerateLieCoset` (modules `KPLieFiltrationOnBuilding` and

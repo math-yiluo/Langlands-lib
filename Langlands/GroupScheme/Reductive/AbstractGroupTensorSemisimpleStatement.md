@@ -88,7 +88,10 @@ not in its statement. The errata snapshot of 2026-11-04 for the 2022 reprint
 p. 478 only the entry on the proof of 22.42. None changes the statements of
 4.15 or 22.45.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The statement is proved as `charZeroAbstractGroupTensorSemisimple`
+(`GroupScheme/Reductive/AbstractGroupTensorSemisimpleProof`).
 
 Milne's proof, printed p. 478 (PDF p. 494): "We may replace G with its Zariski
 closure G′ in GL_V × GL_W – as G is dense in G′ (as a scheme 1.9), the two
@@ -104,8 +107,9 @@ is stable under `G′` if and only if it is stable under `S`, because its
 stabilizer is a closed subgroup and `S` is dense. So `V` and `W` are
 semisimple as `G′`-representations, Corollary 22.44 makes `V ⊗ W` semisimple
 as a `G′`-representation, and hence as a representation of `G`. A Lean
-statement of 22.44 for matrix representations, the second conjunct of
+statement of 22.44 for matrix representations is the second conjunct of
 `CharZeroSemisimpleRepresentationIdentityComponentStatement`
 (`GroupScheme/Reductive/SemisimpleRepresentationIdentityComponentStatement`),
-is submitted separately; after choosing bases of `V` and `W`, the tensor
+proved in `GroupScheme/Reductive/SemisimpleRepresentationIdentityComponentProof`;
+after choosing bases of `V` and `W`, the tensor
 product representation there is the Kronecker product `ρ.tensor σ`.

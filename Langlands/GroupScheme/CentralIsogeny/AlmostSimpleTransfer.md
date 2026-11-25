@@ -1,7 +1,8 @@
 # Almost simplicity reflected through central isogenies
 
 This is derived internal group-scheme infrastructure for the spin-cover proof
-in Task 5397, authored by Worker 97. Its provenance is the composition of the
+for quaternionic quadratic forms of Witt index one over nonarchimedean local
+fields. Its provenance is the composition of the
 published interfaces named below; it makes no additional source translation or
 classification claim.
 
@@ -58,6 +59,6 @@ takes values in the closed subgroup represented by `j`. Its epimorphic range
 forces that closed subgroup to be all of `D`. This proves the required normal
 subgroup dichotomy.
 
-This unit establishes the general transfer needed for spin covers. It does not
+This module establishes the general transfer needed for spin covers. It does not
 assert smoothness, almost simplicity or a split-rank computation for any
 particular quaternionic isometry group.

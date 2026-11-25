@@ -1,7 +1,5 @@
 # Canonical original-chart domains through nested recognition
 
-Author: Worker 36.
-
 This module constructs canonical full domains for contained original
 charts inside a recognized chart of the saturated recognition atlas.
 Every domain retains the unchanged original chart algebra. Its structural
@@ -24,7 +22,7 @@ the actual original-domain maps in recognized presentations and the
 actual local-domain comparison maps after saturation. Full naturality
 is proved from their algebraic structural equations. The result does not
 infer equality of bounded maps from agreement on spectrum points, and
-does not yet prove idempotence of recognition.
+does not prove idempotence of recognition.
 
 Fix an arbitrary indexed affinoid atlas `a`, put
 `B = a.recognitionAtlas`, and take an original index `s : a.Index`.
@@ -127,10 +125,10 @@ There is no ambient Hausdorff, nonzero-algebra, reducedness or
 nonempty-cover premise. All domains and inclusions are the actual
 constructed full representations.
 
-This unit supplies canonical full original-chart domains and their
+This module supplies canonical full original-chart domains and their
 complete restriction naturality through the nested atlases. Finite
 overlap construction, completed-tensor specialness for the flattened
 cover, recognition idempotence, equivalent-net invariance and maximal
-atlas uniqueness remain later obligations. The general
+atlas uniqueness are not treated here. The general
 special-intersection lemma and closed-ideal effectiveness are not
 assumed.

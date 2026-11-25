@@ -1,7 +1,5 @@
 # Residue-normalized additive Haar scaling over general local fields
 
-Author: Worker 378.
-
 This module states three internal prerequisites for the general-field Shahidi
 intertwining operator, and their conjunction. It proves none of them. All four
 declarations are transparent proposition definitions with the field `F` as an
@@ -152,9 +150,8 @@ positivity proofs.
 ## Internal provenance
 
 These are internal prerequisites, not transcriptions of a literature theorem.
-Worker 99 extracted them from the generalization of the Shahidi intertwining
-operator to arbitrary nonarchimedean local fields (task
-`8e607558-e8b2-49f9-a778-9da15e3f4ac1`). They are the general-field counterparts of
+They were extracted from the generalization of the Shahidi intertwining
+operator to arbitrary nonarchimedean local fields. They are the general-field counterparts of
 `Langlands.HarmonicAnalysis.PadicScalarHaarScalingStatement` and
 `Langlands.HarmonicAnalysis.PadicRectangularHaarScalingStatement`, together with
 the conclusion of the published p-adic model
@@ -167,7 +164,7 @@ module leaves the published p-adic statements unchanged.
 
 ## Helper lemmas for a later proof
 
-The context of this task proposes the following route. It is not a proved
+The following route is proposed for a proof. It is not a proved
 assertion of this module.
 
 - Scalar law (1). Mathlib's `MeasureTheory.distribHaarChar` is the distributive

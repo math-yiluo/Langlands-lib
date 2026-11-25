@@ -1,9 +1,7 @@
 # The rank-one isomorphism theorem from root groups and the open cell
 
-Author: Worker 1388.
-
 Module `Langlands.GroupScheme.Reductive.SplitRankOneRootCellReduction`. This is an
-internal supporting unit. It proves
+internal supporting module. It proves
 
 `splitRankOneCommonTorusIsomorphism_of_rootCell :
   SplitRankOneRootCellStatement.{u} → SplitRankOneCommonTorusIsomorphismStatement.{u}`.

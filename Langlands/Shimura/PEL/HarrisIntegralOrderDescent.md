@@ -1,7 +1,5 @@
 # Actual Harris order actions from normalized full Tate images
 
-Author: Worker 344.
-
 This internal construction recovers an integral action of the original
 `harrisHodgePELIntegralOrder` on the actual abelian scheme of a positive
 polarized Harris object. The input is its original normalized frame, or

@@ -33,7 +33,7 @@ The provenance is internal specialization of CrossTorus transport to the
 explicit integer-valued interface and composition with the established general
 affine geometry lemmas. The V6 argument has the same reindexing proof as the
 local-field transport, with the existing explicit integer centralizer translation.
-This unit constructs no metric, original integral model, integral-image comparison,
+This module constructs no metric, original integral model, integral-image comparison,
 unique fixed point or unconditional building comparison. It adds no literature
 assertion and does not equip the maximal-unramified field with a local-field
 instance.

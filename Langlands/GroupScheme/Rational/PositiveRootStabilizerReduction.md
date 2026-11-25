@@ -11,7 +11,7 @@ from those four assertions to triviality of the positive-root stabilizer for
 every connected reductive group over an arbitrary field, every maximal split
 torus, and every generic cocharacter. The theorem
 `positiveRootStabilizerReduction` proves this implication by applying
-`hasTrivialPositiveRootStabilizer_of_structural_statements`. This contribution
+`hasTrivialPositiveRootStabilizer_of_structural_statements`. This module
 records the conditional statement and its supporting deductions.
 
 For any group scheme over a base scheme, equality between a dynamic parabolic

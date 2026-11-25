@@ -1,7 +1,5 @@
 # Fixed completion families and cofinal fixed components
 
-Author: Worker 1775.
-
 Module `Langlands.Representation.Smooth.CompactCompletionFixed`.
 The main namespace is `Langlands.CompactCompletion`. This is a derived
 supporting construction for the completion argument in Renard VI.9.7; it does

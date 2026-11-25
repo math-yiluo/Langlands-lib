@@ -77,7 +77,7 @@ variable {U V W : RationalTransport K P}
 
 /-- The twisted structural map has spectrum image in the target rational locus. -/
 theorem twistedBaseMap_hasImageIn (f : U ⟶ V) :
-    HasImageIn K (U.data.baseMap.comp f.label.inv) V.data.locus := by
+    HasImageIn K (U.data.baseMap.comp f.label.asIso.inv) V.data.locus := by
   intro x
   exact f.mapsTo _ (U.data.baseMap_hasImageIn x)
 
@@ -85,21 +85,21 @@ theorem twistedBaseMap_hasImageIn (f : U ⟶ V) :
 over the inverse algebra automorphism. -/
 theorem existsUnique_restriction (f : U ⟶ V) :
     ∃! φ : BoundedAlgHom K V.data.algebra U.data.algebra,
-      φ.comp V.data.baseMap = U.data.baseMap.comp f.label.inv :=
+      φ.comp V.data.baseMap = U.data.baseMap.comp f.label.asIso.inv :=
   (rationalRepresentation K P V.data).2.2 U.data.algebra
-    (U.data.baseMap.comp f.label.inv) f.twistedBaseMap_hasImageIn
+    (U.data.baseMap.comp f.label.asIso.inv) f.twistedBaseMap_hasImageIn
 
 /-- Pull an actual quotient section back along a labelled rational-domain map. -/
 def restriction (f : U ⟶ V) : BoundedAlgHom K V.data.algebra U.data.algebra :=
   f.existsUnique_restriction.choose
 
 @[simp] theorem restriction_comp_baseMap (f : U ⟶ V) :
-    f.restriction.comp V.data.baseMap = U.data.baseMap.comp f.label.inv :=
+    f.restriction.comp V.data.baseMap = U.data.baseMap.comp f.label.asIso.inv :=
   f.existsUnique_restriction.choose_spec.1
 
 theorem restriction_unique (f : U ⟶ V)
     {φ : BoundedAlgHom K V.data.algebra U.data.algebra}
-    (hφ : φ.comp V.data.baseMap = U.data.baseMap.comp f.label.inv) :
+    (hφ : φ.comp V.data.baseMap = U.data.baseMap.comp f.label.asIso.inv) :
     φ = f.restriction :=
   f.existsUnique_restriction.choose_spec.2 φ hφ
 
@@ -114,11 +114,11 @@ theorem restriction_unique (f : U ⟶ V)
   apply ((f ≫ g).restriction_unique ?_).symm
   calc
     (f.restriction.comp g.restriction).comp W.data.baseMap =
-        f.restriction.comp (V.data.baseMap.comp g.label.inv) := by
+        f.restriction.comp (V.data.baseMap.comp g.label.asIso.inv) := by
           rw [BoundedAlgHom.comp_assoc, g.restriction_comp_baseMap]
-    _ = (U.data.baseMap.comp f.label.inv).comp g.label.inv := by
+    _ = (U.data.baseMap.comp f.label.asIso.inv).comp g.label.asIso.inv := by
           rw [← BoundedAlgHom.comp_assoc, f.restriction_comp_baseMap]
-    _ = U.data.baseMap.comp (f ≫ g).label.inv := rfl
+    _ = U.data.baseMap.comp (f ≫ g).label.asIso.inv := rfl
 
 /-- On the actual quotient spectra, the restriction lies over the labelled
 point action on the base spectrum. -/
@@ -141,9 +141,9 @@ end Hom
 /-- The inverse translation arrow pulls sections forward by the published
 bounded comparison map. -/
 @[simp] theorem translationIso_inv_restriction (g : Aut P) (U : RationalTransport K P) :
-    (translationIso g U).inv.restriction = U.data.comparison g.hom := by
+    (translationIso g U).inv.restriction = U.data.comparison g.asIso.hom := by
   apply ((translationIso g U).inv.restriction_unique ?_).symm
-  exact U.data.comparison_comp_baseMap g.hom
+  exact U.data.comparison_comp_baseMap g.asIso.hom
 
 /-- The rational transport category is realized by actual affinoid spectra and
 the contravariant bounded maps of their constructed algebras. -/

@@ -1,7 +1,5 @@
 # Rational isogenies of actual geometric Weil-compatible level towers
 
-Author: Worker 142.
-
 Harris–Taylor, *The Geometry and Cohomology of Some Simple Shimura
 Varieties* (2001), printed p.18 / PDF p.26, defines an isogeny of abelian
 schemes as an invertible element of rationalized Hom, and defines the
@@ -191,10 +189,10 @@ fixed-level equivalences, whose identities are proved by descending the
 actual compatible-frame identities. No extra identity, composite or
 inverse pairing equation is supplied as a hypothesis.
 
-This unit compares specified actual rational isogenies over one base
+This module compares specified actual rational isogenies over one base
 and one geometric point. It asserts no rank, chosen basis, existence
 of compatible frames, positivity, polarization or nondegeneracy.
 Canonical changes of geometric point and pointed base change are
 provided by separate modules; their mixed compatibility with isogeny
-transport is not a new assertion of this unit. The PEL moduli functor
+transport is not a new assertion of this module. The PEL moduli functor
 remains outside this construction.

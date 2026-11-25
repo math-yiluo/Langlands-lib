@@ -1,7 +1,7 @@
 # The left Whittaker law of the real Godement leading family at every exponent
 
 Fix `t`, the lower group `G = GL_{t+1}(ℝ)`, the upper group `H = GL_{t+2}(ℝ)` and its upper
-unipotent subgroup `N`. Let `w` be the long Weyl element of `H`. Worker 771's Library function
+unipotent subgroup `N`. Let `w` be the long Weyl element of `H`. The Library function
 `godementLeadingFamily D a Φ W p g z` is the Godement column value
 `godementColumnValue D a Φ W (charData p z) (w g)` of a Schwartz test `Φ` on real
 `(t+1) × (t+2)` matrices, a lower coefficient `W` and the leading character `charData p z`.

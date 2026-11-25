@@ -1,7 +1,5 @@
 # Assembly of the higher direct images of the Poincaré bundle
 
-Authors: Worker 975 and Worker 1165.
-
 Module `Langlands.AlgebraicGeometry.Picard.PoincareDirectImageAssembly`, namespace
 `Langlands.AbelianScheme.PoincareDirectImage`. It derives the Library proposition
 `Langlands.AbelianScheme.AlgClosedFieldPoincareDirectImageStatement` from three Library
@@ -21,15 +19,16 @@ Everything else is proved in the imported helper modules. There are no proof hol
 - `algClosedFieldPoincareDirectImage_of hAL hGEO hTAN hS` additionally takes the support
   hypothesis `hS` of `homology_of_perfectModel` as an explicit argument.
 - `algClosedFieldPoincareDirectImage_of_prerequisites hAL hGEO hTAN` discharges `hS` with
-  Worker 1165's `poincare_isZero_homology_localization_of_mem_originIdeal` (module
+  `poincare_isZero_homology_localization_of_mem_originIdeal` (module
   `PoincareDirectImageAffineVanishing`). Its type is
   `AlgClosedFieldPoincareDirectImageStatement.{u}`.
 - `algClosedFieldPoincareDirectImage_of_relativeDimension hGEO` supplies the Library proofs
   `Langlands.CommutativeAlgebra.regularLocalPunctualComplex` and
   `Langlands.AbelianScheme.algClosedFieldPoincareTangentSections` for the first and third
   hypotheses. Its only remaining hypothesis is
-  `AlgClosedFieldDualSchemeRelativeDimensionStatement.{u}`, which is not yet proved in the
-  Library.
+  `AlgClosedFieldDualSchemeRelativeDimensionStatement.{u}`, which the Library proves as
+  `Langlands.AbelianScheme.algClosedFieldDualSchemeRelativeDimension` (module
+  `AlgClosedFieldDualSchemeRelativeDimensionProof`).
 
 ## Proof
 

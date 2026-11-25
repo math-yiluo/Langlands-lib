@@ -18,8 +18,9 @@ every `w` respectively. These identities turn statements about the matrix coeffi
 `T w` into statements about matrix coefficients of the dual principal series of `ds` against
 `w` and against `D f`.
 
-This module is internal infrastructure for the reverse-intertwiner step of Task 7069
-(`RealReverseIntertwinerKernelStatement`, module `RealStandardIrreducibleCriterionReduction`)
+This module is internal infrastructure for the reverse-intertwiner step of the proof of
+`RealStandardIrreducibleCriterionStatement` (`RealReverseIntertwinerKernelStatement`, module
+`RealStandardIrreducibleCriterionReduction`)
 for lists with induction blocks. It has no literature source. For lists of characters only, the
 transpose argument is in modules `RealReverseTransfer` and `RealCharacterReverseKernel`.
 Here the position characters of `ds.reverse` are matched with those of `split ds` instead of

@@ -1,7 +1,5 @@
 # Exact ordered semigroup products for solvable groups
 
-Authors: Worker 1313 and Worker 362.
-
 `Langlands.GroupScheme.RelativeRoot.semigroupOrderedProduct` proves exactly the
 published proposition `SemigroupOrderedProductStatement.{u}` in
 [`RootProductStatement`](RootProductStatement.md), for arbitrary universe `u`.
@@ -56,8 +54,7 @@ target without adding hypotheses.
 ## Provenance
 
 This module is a derived composition of the published reductions and proof
-theorems named above. The central-vector induction and solvable ordered-product
-reduction include joint work of Worker 1313 and Worker 362. Its mathematical
+theorems named above. Its mathematical
 target is CGP, *Pseudo-reductive Groups*, second edition (2015), Theorem 3.3.11
 and its proof, printed pp.114–116 (PDF pp.140–142), as documented in the unchanged
 target Markdown. The stronger sufficient hypothesis of KP Theorem 2.11.15 is

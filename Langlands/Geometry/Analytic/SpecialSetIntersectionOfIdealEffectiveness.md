@@ -1,10 +1,12 @@
 # Full special-set intersections from ideal effectiveness
 
-Worker 1685 assembles the full special-set intersection construction from
-the finite product-cover recognition and Worker 1582's actual closed quotient
-and bounded local comparisons. This is internal derived infrastructure.
+This module assembles the full special-set intersection construction from
+the finite product-cover recognition and the actual closed quotient
+and bounded local comparisons of `SpecialCoverIntersectionQuotient`. This is
+internal derived infrastructure.
 It explicitly assumes `Domain.FiniteCover.IdealEffectivenessStatement`;
-it does not prove that proposition or the unconditional host target.
+it does not prove that proposition or the unconditional
+`SpecialSetIntersectionStatement`.
 
 `SubordinateProductIntersection.finiteIntersectionData` retains the constructed
 quotient of the unchanged affinoid coproduct by the explicit contracted ideal
@@ -38,5 +40,7 @@ the positive two-sided quotient-seminorm comparison.
 The coefficient, ambient-space and original-index universes remain independent.
 Only the special subset's topology is assumed Hausdorff by specialness.
 Arbitrary positive radii, trivial valuations, zero and nonreduced algebras, empty
-domains and finite covers are retained. The separate ideal-effectiveness proof
-is still required before the unconditional special-set theorem can be proved.
+domains and finite covers are retained. The unconditional special-set theorem
+also needs the separate ideal-effectiveness proof: `SpecialSetIntersectionProof`
+applies `idealEffectiveness` (`GeneralizedAffinoid/FiniteDomainIdealDescentProof`)
+to the implication above and proves `specialSetIntersection`.

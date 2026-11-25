@@ -1,7 +1,5 @@
 # Piece factorizations with explicit coroot torus factors
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.PieceCorootFactorization`.
 
 The published module `Geometry.Building.QuasiSplitMultipliableFactorization` factorizes points

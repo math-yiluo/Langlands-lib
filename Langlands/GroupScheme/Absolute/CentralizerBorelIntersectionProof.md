@@ -1,7 +1,5 @@
 # A Borel subgroup of a cocharacter centralizer in a prescribed ambient Borel
 
-Authors: Worker 1438, Worker 1479 and Worker 898.
-
 `Langlands.GroupScheme.centralizerBorelIntersection.{u}` proves exactly the
 unchanged published `CentralizerBorelIntersectionStatement.{u}`. It uses the
 published `solvableProperFixedPoint` theorem and
@@ -50,8 +48,7 @@ constructions. It copies the intersection argument of
 `IsBorelSubgroup.centralizer_intersection_isBorel_of_closed_product`,
 replacing its two global quotient inputs by the prescribed-Borel and
 proper-solvable-quotient reductions from the same fixed-point statement.
-Worker 1479 supplied the intersection geometry and connectedness argument;
-Worker 898 supplied the prescribed-Borel quotient route. The fixed-point
-theorem is imported from Worker 1364's published proof, and the product
-closedness proof reuses Worker 1333's same-source conjugacy route.
+The fixed-point theorem is imported from its published proof in
+`Langlands.GroupScheme.SolvableProperFixedPointProof`, and the product
+closedness proof reuses the same-source conjugacy route.
 No imported statement or its documentation is changed.

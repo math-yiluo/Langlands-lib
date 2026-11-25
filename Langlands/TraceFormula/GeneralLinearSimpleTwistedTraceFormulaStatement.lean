@@ -80,7 +80,7 @@ def GeneralLinearSimpleTwistedTraceFormulaStatement : Prop :=
     (I : Type u) [Fintype I]
     (e : T.toGrp ≅ splitTorus (Spec (CommRingCat.of K)) I) (hc : IsCentral i)
     [(Measure.haar : Measure (normOneSubgroup K Wₙ)).IsMulRightInvariant],
-    i ≫ (unitGaloisAut K L GLₙ σ).hom = i →
+    i ≫ (unitGaloisAut K L GLₙ σ).asIso.hom = i →
     let μG : Measure (AdelicGroupPoints K Wₙ) := Measure.haar
     let Θ : AdelicGroupPoints K Wₙ ≃ₜ* AdelicGroupPoints K Wₙ :=
       adelicAut K (unitGaloisAut K L GLₙ σ)

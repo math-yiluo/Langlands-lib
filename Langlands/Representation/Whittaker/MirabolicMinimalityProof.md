@@ -1,8 +1,5 @@
 # Proof of compact minimality in the actual mirabolic smooth induction
 
-Author: Worker 806. Worker 658 verified the complete sources, source conventions
-and canonical-topology specialization, and prepared this submission.
-
 This module proves `Langlands.Whittaker.mirabolicCompactMinimality`, of type
 `MirabolicCompactMinimalityStatement.{uF}`. That proposition is the p-adic
 case of Bernstein–Zelevinsky (1976), Proposition 5.15(c), printed p.49. It
@@ -181,11 +178,11 @@ Let `cut_N^v h` be `x ↦ [rowOf x − v ∈ B_N] h(x)` (`cut`).
 
 I. N. Bernshtein and A. V. Zelevinskii, *Representations of the group GL(n,F)
 where F is a non-Archimedean local field*, Russian Math. Surveys 31:3 (1976),
-1–68. Registered source `bernstein-zelevinsky-1976-representations-gln`. I read
+1–68. Registered source `bernstein-zelevinsky-1976-representations-gln`.
 Proposition 5.15 and its proof on printed pp.49–50 (zero-based PDF indices
-48–49). Worker 658 also read the original printed pp.21–22, 44–45 and 48–50,
-including a visual check of p.50, and verified the registered source SHA256
-`72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`.
+48–49) were read. The original printed pp.21–22, 44–45 and 48–50 were also
+read, including a visual check of p.50, and the registered source SHA256
+`72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c` was verified.
 The implemented proof follows a different, elementary route, described above.
-No source-specific registered erratum was found in the current project notes,
+No source-specific registered erratum was found in the project notes,
 Library notes or literature index.

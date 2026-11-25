@@ -1,7 +1,5 @@
 # Local norm groups are neighborhoods of one
 
-Author: Worker 269.
-
 This module, in namespace `Langlands.Global.AdelicFunctoriality`, proves that the image of the
 actual local norm on unit groups contains a neighborhood of `1`. This holds at every finite
 and every infinite place of an arbitrary extension of number fields `L/K`. No Galois, cyclic
@@ -74,10 +72,10 @@ Mathlib's instance, and characteristic zero again comes from the injective `alge
 Derived. Artin and Tate, *Class Field Theory* (2009), Chapter V, Section 4, proof of
 Theorem 2 (printed p.17, PDF p.26), uses this local fact: an idele "so close to 1 at all
 p ∈ S" is a local norm at those places. The appended errata (PDF p.202) do not change this
-passage. The book does not prove the fact at that point. The proof here is the elementary one
-described in the task context of 6baf00a9: an inverse function theorem for `n`-th powers, plus
+passage. The book does not prove the fact at that point. The proof here is the elementary one:
+an inverse function theorem for `n`-th powers, plus
 the local norm of a base scalar being its local-degree power. It does not use local class
 field theory. `RangeMemNhdsOne`, the generic power lemma and the openness corollaries are
-internal packaging. The two neighborhood statements are in the exact shape Worker 226
-requested for the local adjustment step of the almost-everywhere-split norm theorem (task
-275d5e34).
+internal packaging. The two neighborhood statements are in the exact shape used by
+the local adjustment step of the almost-everywhere-split norm theorem
+(`AlmostEverywhereSplitNormProof`).

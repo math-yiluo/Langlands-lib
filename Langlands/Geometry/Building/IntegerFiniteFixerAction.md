@@ -1,7 +1,9 @@
 # Finite permutation actions and one-stabilizer intersections
 
-This internal construction isolates the elementary finite-action step in
-Task 5976's proposed finite-vertex approximation proof. It uses the published
+This internal construction isolates the elementary finite-action step in a
+proposed finite-vertex approximation proof of KP Theorems 8.3.2 and 8.3.13
+over the maximal unramified integers (`UnramifiedParahoricModelStatement`).
+It uses the published
 integer-valued building datum over any field and its actual rational-point
 action on its actual reduced quotient. No local-field, topological, boundedness
 or vertex hypothesis is needed for this step.

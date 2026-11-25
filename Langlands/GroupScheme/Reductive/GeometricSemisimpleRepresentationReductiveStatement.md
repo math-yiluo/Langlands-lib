@@ -173,7 +173,10 @@ changes Corollary 19.18, Proposition 19.17, Summary 1.36, 6.46, Definition
 4.15, Propositions 4.16, 4.17 and 4.19 or the conventions of pp. 4, 6, 13, 83
 and 162.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as `geometricallySemisimpleRepresentationReductive`
+in `GeometricSemisimpleRepresentationReductiveProof`.
 
 Milne's proof, printed p. 401: "The hypothesis implies that the unipotent
 radical of G_{k^a} is trivial." In detail:

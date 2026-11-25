@@ -1,7 +1,7 @@
 # Degrees of `n • λ + f^∨ λ f` from the Euler-characteristic square formula
 
 Lean module: `Langlands.AlgebraicGeometry.Picard.MumfordRosatiEulerDegreeAssembly`, namespace
-`Langlands.AbelianScheme.MumfordPicardClass`. Author: Worker 195.
+`Langlands.AbelianScheme.MumfordPicardClass`.
 
 This module proves the content of the statement
 `Langlands.AbelianScheme.Rosati.MumfordEulerDegreeStatement` for explicit data, as the theorem

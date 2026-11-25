@@ -1,7 +1,5 @@
 # Anisotropic centralizers and their full rational norm kernels
 
-Authors: Worker 1676.
-
 This module derives the anisotropic case of the rank-one centralizer-generation
 input from published compactness and split-rank results. It does not use
 Kneser–Tits, an assumed root-group generation theorem, or simple connectedness.

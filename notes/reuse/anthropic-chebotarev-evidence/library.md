@@ -1,6 +1,6 @@
 # Library and Mathlib interfaces
 
-The checked workspace base is Library `b5df466b356db508f072a2481307ed641ffa76a7`. All nine host files below match that immutable publication byte for byte. Searches for the exact root and both target names in the workspace Langlands tree and pinned Mathlib found the statement definitions, conjunction reference and conditional nonsplit consumers; no same-named realization proof was found. A name-based search does not exclude differently named results.
+The checked workspace base is Library `b5df466b356db508f072a2481307ed641ffa76a7`. All nine Library files below match that immutable publication byte for byte. Searches for the exact root and both target names in the workspace Langlands tree and pinned Mathlib found the statement definitions, conjunction reference and conditional nonsplit consumers; no same-named realization proof was found. A name-based search does not exclude differently named results.
 
 ```json
 {

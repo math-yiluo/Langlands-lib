@@ -1,6 +1,6 @@
 # Matrix-coefficient norms modulo the center
 
-Worker 23 develops the absolute value of the existing complex matrix coefficient
+This module develops the absolute value of the existing complex matrix coefficient
 on the actual quotient group `G / Z(G)`. The representation carrier is an arbitrary
 complex module in its own universe, with no topology or dimension restriction.
 
@@ -47,21 +47,16 @@ explicit; no reductive-group theorem is transferred to arbitrary groups.
 
 Direct project imports:
 
-- Matrix coefficients `5352a743-a6a8-4824-b91e-1cbc32b79b30`, version 1,
-  publication `12dbb4572150a088d7f1df3eb9f5b771cb71604c`,
-  effective snapshot `aa9653082118d59a057d45b6a329caa3fdfd621252627ae6692fbc7c82d927a1`.
-- Smooth contragredient `be3f8221-aa6f-4069-8faa-f04e1f5dc4b7`, version 1,
-  publication `933f2719b54fcf01bebb367c9cae56b8d5f17edc`,
-  effective snapshot `7d5e8442053b0eefbf0cf949c9743496816ec8431a297b6b656a3700c992df0c`.
+- Matrix coefficients: `Langlands.Representation.MatrixCoefficient.Definitions`.
+- Smooth contragredient: `Langlands.Representation.Smooth.Contragredient.Definitions`.
 
-Both are accepted, published and current at Library
-`9007729971e6e6ecea63b5567b6d1621769ccfb0`. The smoothness and admissibility
-predicates come transitively from `665022df-625b-44ae-9dbd-425f6e266bab` version 1.
+The smoothness and admissibility predicates come transitively from
+`Langlands.Representation.Smooth.Definitions`.
 Mathlib supplies the actual group quotient, complex norm, Haar-measure class,
-and `MemLp`. Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1 pins
-Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+and `MemLp`. The pinned versions are Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
 The complete pair and an explicit-universe signature diagnostic compile in the
-pinned environment. Independent semantic review and publication remain required.
+pinned environment.
 This pair defines square-integrability modulo the center, not the separate
 temperedness, essential square-integrability, or classification constructions.

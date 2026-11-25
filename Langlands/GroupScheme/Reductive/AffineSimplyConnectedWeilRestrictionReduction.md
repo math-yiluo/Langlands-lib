@@ -1,7 +1,5 @@
 # The exact affine simply connected Weil target from pair descent and rigidity
 
-Worker 634, Worker 47 and Worker 632.
-
 The defined reduction proves the unchanged
 AffineSimplyConnectedWeilRestrictionStatement in every universe, assuming two
 explicit shared structural statements: AffineWeilPairEtaleDescentStatement and
@@ -15,7 +13,7 @@ finite-family Weil construction and the supplied pair descent then give the
 actual presentation on the original affine base, including the empty-base case.
 Simple connectedness is recovered from the actual local tensor-base comparisons.
 
-For uniqueness, Worker 47's imported reduction recovers the finite étale algebra
+For uniqueness, the imported reduction of `WeilFactorUniquenessReduction` recovers the finite étale algebra
 and the factor group from any supplied isomorphism of the two Weil restrictions,
 using the assumed normal-idempotent factor rigidity. Its resulting clause is
 exactly the target's second conjunct. Both parts retain the target's original

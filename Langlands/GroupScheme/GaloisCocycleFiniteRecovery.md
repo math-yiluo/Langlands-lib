@@ -54,4 +54,5 @@ value. It uses precisely the supplied finite-subextension triviality premise.
 This module supplies a finite field and finite cocycle values for further
 integral-model descent. It does not construct a smooth stabilizer model, descend
 an integral semilinear family, construct a reductive residue quotient, or prove
-the host task's chamber-quotient statement.
+the chamber-quotient statement `UnramifiedTwistedChamberQuotientStatement` that
+it serves.

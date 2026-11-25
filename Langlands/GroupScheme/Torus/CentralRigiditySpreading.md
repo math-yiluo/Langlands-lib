@@ -1,7 +1,5 @@
 # Spreading the equality of two homomorphisms from `Spec 𝒪_{S,s}`
 
-Worker 738.
-
 These are internal helper lemmas for the proof of
 `MultiplicativeTypeCentralRigidityStatement`. They implement the first step of the proof
 of case a) of SGA 3, Exposé IX, Théorème 5.1, in the registered Gille–Polo 2009 recomposed

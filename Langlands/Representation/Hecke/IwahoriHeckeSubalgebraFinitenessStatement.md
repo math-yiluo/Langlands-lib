@@ -6,10 +6,9 @@ The module contains one **statement**, the `Prop`-valued definition
 `IwahoriHeckeSubalgebraFinitenessStatement`; it proves nothing and constructs
 nothing.
 
-Worker 4 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. It complements Worker 1222's published
-`IwahoriHeckeDecompositionStatement`, whose Markdown keeps the subalgebra form
-of the finiteness Lemma as an outstanding source obligation ("Not stated").
+It complements the published
+`IwahoriHeckeDecompositionStatement`, whose Markdown leaves the subalgebra form
+of the finiteness Lemma out of that statement ("Not stated").
 
 ## Source and provenance
 
@@ -17,7 +16,8 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 4 read V.5.2–V.5.3, printed pp.123–125 / PDF pp.129–131. On printed
+The passages read for this statement are V.5.2–V.5.3, printed pp.123–125 /
+PDF pp.129–131. On printed
 p.124 / PDF p.130:
 
 > Notons `M` la sous-algèbre de `H(G, K)` engendrée par les éléments `a_{zf}`
@@ -100,10 +100,11 @@ satisfying (P), with `A = Algebra.adjoin ℂ (a '' (j '' Cplus))` (Renard's
   `t₂⁻¹ (K ∩ N̄_∅) t₂` and `t₁ (K ∩ M_∅) t₁⁻¹` for the non-lattice factors
   `f ∈ F₀`, such a product need not be a single `a_t`, and the argument
   below does not bound `M`. The hypotheses on `K` control these conjugates
-  only for elements of `C_A`. Whether the Lemma holds without (P) is not known
-  to the author. The unconditional form
-  therefore remains a documented gap of the whole-book task. It is not
-  asserted here, and it is not claimed to be false.
+  only for elements of `C_A`. The unconditional form
+  is therefore not asserted here, and it is not claimed to be false here.
+  The Markdown of `RenardIwahoriHeckeSubalgebraFinitenessStatement`, which
+  states it without (P) for Renard's chamber-compatible transversals, gives
+  a counterexample on paper.
 - **When (P) is automatic.** If `G` is split, `Λ(Z) = Λ(S)`, so `F₀` is a
   single element `c₀ u₀` with `c₀ ∈ C_∅` and `u₀ ∈ ⁰Z`, so `j(u₀) ∈ K₀`
   (see step 2 below). Then every
@@ -167,9 +168,11 @@ Write `K_N = K ∩ N_∅`, `K_M = K ∩ M_∅`, `K_N̄ = K ∩ N̄_∅`.
 
 ## Remaining obligations
 
-- The proof of this statement is a separate proof obligation.
-- The unconditional Lemma (without (P)) remains an outstanding gap of the
-  whole-book task, recorded in the Chapter V ledger.
+- The proof of this statement is `iwahoriHeckeSubalgebraFiniteness`, in the
+  separate module `IwahoriHeckeSubalgebraFinitenessProof`.
+- The unconditional Lemma (without (P)) is recorded in the Chapter V ledger
+  as gap 4; it is stated as `RenardIwahoriHeckeSubalgebraFinitenessStatement`,
+  whose Markdown explains that it is false in general.
 
 ## Imports
 

@@ -72,8 +72,7 @@ equality. Restriction of the ambient isomorphism gives the multiplicative
 equivalence; associativity gives the refinement law. The existing inner
 isomorphism formulas give both conjugation directions.
 
-This is internal derived content in the cross-torus interface identified by
-Worker 118. Its structural inputs remain the supplied acting-group and ambient
+This is internal derived content in the cross-torus interface. Its structural inputs remain the supplied acting-group and ambient
 isomorphisms and their exact square. It does not prove centralizer
 representability, smoothness or reductivity, torus existence or conjugacy,
 root-subgroup realization, or a building or valuation comparison.

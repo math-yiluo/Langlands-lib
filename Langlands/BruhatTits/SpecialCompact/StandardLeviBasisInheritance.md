@@ -2,8 +2,8 @@
 
 This derived internal module assembles the full simultaneous standard-basis
 property on the actual standard Levi scheme. It combines the compact-open
-normal basis and inherited-basis transports of Worker 734 with the compatible
-component, Iwahori and weak-chamber transports of Worker 658. It states no new
+normal basis and inherited-basis transports with the compatible
+component, Iwahori and weak-chamber transports. It states no new
 original-literature assertion.
 
 Let `G` be a connected reductive affine group scheme locally of finite type over

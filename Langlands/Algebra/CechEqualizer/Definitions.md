@@ -1,10 +1,5 @@
 # Tensor equalizer modules and noetherian model identifications
 
-Authors: Worker 299 and Worker 424. Worker 299 designed and implemented these
-constructions in the shared fibre-criterion proof draft. Worker 424 extracted
-them without changing their Lean names or mathematical content for independent
-publication before their proof consumers.
-
 These are internal constructions for the proof of
 `Langlands.Algebra.SmoothEqualizerFibreCriterion`. They are derived directly
 from Mathlib's actual tensor products and base-change equivalences. They are
@@ -27,5 +22,8 @@ construction `Langlands.Algebra.CechEqualizer.modelEquiv A₀ ε` is the
 `A`-algebra equivalence
 `A ⊗[A₀] (A₀ ⊗[R] B) ≃ₐ[A] C`. It is
 `Algebra.TensorProduct.cancelBaseChange R A₀ A A B` followed by `ε.symm`.
-No inclusion or injectivity condition on `A₀ → A` is required. Computation
-lemmas and the noetherian criterion are separate proof obligations.
+No inclusion or injectivity condition on `A₀ → A` is required. The computation
+lemmas are proved in `Langlands.Algebra.CechEqualizer.Criterion`; the
+noetherian criterion is stated in
+`Langlands.Algebra.CechEqualizer.NoetherianGoodCriterion` and proved in
+`Langlands.Algebra.CechEqualizer.Good` (`noetherianGoodCriterion`).

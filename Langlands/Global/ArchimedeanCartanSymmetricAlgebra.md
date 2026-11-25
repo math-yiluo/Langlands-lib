@@ -1,7 +1,5 @@
 # Cartan symmetric algebras and compact conjugation
 
-Author: Worker 94.
-
 This internal prerequisite extends the published matrix Cartan decomposition
 and actual adjoint conjugation using Mathlib scalar extension and the universal
 property of its symmetric algebra. Its provenance is this construction from

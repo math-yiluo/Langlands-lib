@@ -1,30 +1,28 @@
 # Finiteness and Galois smoothness of geometric CM torsion cohomology
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
-This module states two propositions about Worker 57's étale cohomology of
-the geometric CM levels with torsion coefficients. Fix a small CM level `U`,
+This module states two propositions about the étale cohomology of
+the geometric CM levels with torsion coefficients constructed in
+`Langlands.Shimura.PEL.HarrisTaylorCMGeometricCohomology`. Fix a small CM level `U`,
 write `F̄ = AlgebraicClosure F` and `X̄_U = X_U ×_{Spec F} Spec F̄`, and let
-`B_r` be the `r`-th stage of Worker 57's original stable-lattice torsion
-coefficient system pulled back to `X̄_U`.
+`B_r` be the `r`-th stage of the original stable-lattice torsion
+coefficient system `cmHarrisCoefficientSystem` pulled back to `X̄_U`.
 
 - `HarrisCMCohomologyFiniteStatement`: every cohomology module
   `H^d(X̄_U, B_r)` is finite.
 - `HarrisCMGaloisCohomologySmoothStatement`: the action of
-  `F̄ ≃ₐ[F] F̄` on every `H^d(X̄_U, B_r)` that Worker 57 constructs is
+  `F̄ ≃ₐ[F] F̄` on every `H^d(X̄_U, B_r)` constructed in
+  `Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology` is
   smooth for the Krull topology: every class is fixed by an open subgroup.
-- `HarrisCMCohomologyStatements`: the conjunction of the two, the single
-  declaration named in the submission.
+- `HarrisCMCohomologyStatements`: the conjunction of the two.
 
-Worker 57's Markdown for the Galois action says that it "does not prove
+The page of `HarrisTaylorCMGeometricGaloisCohomology` says that it "does not prove
 continuity for the profinite Galois topology". The second proposition states
 that continuity, in its form for a discrete module. Nothing is proved here.
 
 ## Objects
 
-All arithmetic types live in `Type` (universe zero), as in Worker 57's
-modules. The binders are copied from
+All arithmetic types live in `Type` (universe zero), as in the imported
+`Langlands.Shimura.PEL` modules. The binders are copied from
 `Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology`. They are:
 
 - number fields `E` (totally real) and `F` (totally complex CM, quadratic
@@ -48,12 +46,12 @@ modules. The binders are copied from
 
 ### Proof status of the premises
 
-The Lean definitions keep every premise as an explicit hypothesis, as Worker
-57's modules do. That a premise is a parameter does not mean that it is
+The Lean definitions keep every premise as an explicit hypothesis, as the
+imported `Langlands.Shimura.PEL` modules do. That a premise is a parameter does not mean that it is
 unproved. In Library commit `9b0747799373d61d5b3c3e8fdf95710b5d862db4`,
 thirteen of the premise types have published proofs, so a user can pass these
-theorems as the corresponding arguments. Check `d9bd054e` (see the checks
-below) confirms that each theorem, at universe zero, has the premise type.
+theorems as the corresponding arguments. The eighth of the checks
+below confirms that each theorem, at universe zero, has the premise type.
 
 | Premise | Type | Library theorem | Module |
 | --- | --- | --- | --- |
@@ -94,12 +92,20 @@ is the premise type.
   says that it "is not inferred from sufficiently small level", and every
   Library module that uses it takes it as a hypothesis.
 
+In the Library as it is now, `square`, `existence` and `geometry` are proved as
+well: `Langlands.AbelianScheme.mumfordBundlePicardZero` (module
+`Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroProof`),
+`Langlands.AbelianScheme.relativeDualSchemeExistence` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`) and
+`Langlands.AbelianScheme.relativeDualSchemeGeometry` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`).
+
 Since `q` is unproved, both propositions are statements about the objects
 that any witness `q` produces. A proof must work for every such witness.
 
 ### Notation
 
-Write, as in Worker 57's Markdown:
+Write, as in the page of `HarrisTaylorCMGeometricGaloisCohomology`:
 
 - `X_U = (cmSchemeTower ... q).obj U`, the scheme chosen from `q`. The
   witness `q U` provides a smooth structure morphism `X_U ⟶ Spec F` and an
@@ -123,7 +129,7 @@ Write, as in Worker 57's Markdown:
   Kan extension followed by sheafification, left adjoint to the direct image.
 - `H_d = EtaleDerivedSections.cohomology X̄_U R d`, the `d`-th right derived
   functor of global sections on `Sheaf (Scheme.smallEtaleTopology X̄_U)
-  (ModuleCat.{0} R)`, computed with injective resolutions (Worker 13).
+  (ModuleCat.{0} R)`, computed with injective resolutions.
 - `cmHarrisGeometricCoefficientCohomologySystem ... d = S̄ ⋙ H_d`, a
   functor `ℕᵒᵖ ⥤ ModuleCat.{0} R`. Its value at `r` is `H_d(B_r)`.
 
@@ -135,7 +141,7 @@ The Galois action:
   `pullback.lift` of the first projection and of the second projection
   followed by `cmGeometricGaloisBaseMap σ = Spec.map σ`. So it is the
   identity on the factor `X_U` and `Spec σ` on the factor `Spec F̄`.
-  Worker 57 proves `g_σ ≫ π = π` (`cmGeometricGaloisMap_app_projection`)
+  The Library proves `g_σ ≫ π = π` (`cmGeometricGaloisMap_app_projection`)
   and `g_(σ * τ) = g_σ ≫ g_τ` (`cmGeometricGaloisMap_mul`).
 - `Ψ_σ = cmHarrisGeometricCoefficientGaloisIso ... σ`. By
   `cmHarrisGeometricCoefficientGaloisIso_hom_app` and the definition of
@@ -144,13 +150,13 @@ The Galois action:
   (inverseImageCongr R (g_σ ≫ π = π)).hom.app A_r`. This is the canonical
   isomorphism `g_σ^* (π^* A_r) ≅ (g_σ ≫ π)^* A_r = π^* A_r`.
 - `cmHarrisGeometricGaloisCohomologyAction ... d : ℕᵒᵖ ⥤ Action (ModuleCat R) G`
-  is Worker 57's action. Its object at `r` has underlying module
+  is the action of `HarrisTaylorCMGeometricGaloisCohomology`. Its object at `r` has underlying module
   `H_d(B_r)`, and `cmHarrisGeometricGaloisCohomologyAction_obj_ρ` identifies
   the operator of `σ` with
   `cohomologyPullbackWithCoefficients g_σ R d (Ψ_σ.hom.app r)`. By definition
   this is `(cohomologyPullback g_σ R d).app B_r ≫ H_d.map (Ψ_σ.hom.app r)`:
   pullback along `g_σ` into `H_d(g_σ^* B_r)`, followed by the canonical
-  coefficient isomorphism back to `H_d(B_r)`. Worker 57 records the law
+  coefficient isomorphism back to `H_d(B_r)`. The page of that module records the law
   `ρ (σ * τ) = ρ τ ≫ ρ σ`, so this is a left action.
 - `Rep.ActionToRep R G` is Mathlib's functor from `Action (ModuleCat R) G` to
   `Rep R G`. Its `.ρ` is the representation `G →* (H_d(B_r) →ₗ[R] H_d(B_r))`
@@ -327,11 +333,11 @@ Varieties* (2001), III.2, printed p.97, say of the cohomology `H^i(X, L_ξ)`
 defined on p.96: "Thus `H^i(X, L_ξ)` becomes an admissible
 `G(A^∞)`-module, in fact an admissible/continuous
 `G(A^∞) × Gal(F^ac/F)`-module." The quotation is from the text layer, where
-the slash is rendered as "j". Worker 57's construction follows Harris–Taylor
+the slash is rendered as "j". The Library's construction of these objects follows Harris–Taylor
 III.1-III.2.
 
 Both statements are analogues for the Library's objects. Harris's `S_K(N)`
-and sheaves `F_m` are not the Library's `X̄_U` and `B_r`. Worker 57's levels
+and sheaves `F_m` are not the Library's `X̄_U` and `B_r`. The Library's levels
 are the Harris–Taylor CM PEL levels, conditional on the premises above. The
 statements are at one fixed level `U` and one fixed coefficient stage `r`,
 before any limit over levels or coefficients. Neither source states them as
@@ -340,7 +346,7 @@ separate results.
 | Lean | Source |
 | --- | --- |
 | `Finite (H_d(B_r))` | Harris 1999, proof of Proposition 4.10, p.312 (finiteness of the abutment of (4.9)); truth from SGA 4 XIV Corollaire 1.2 |
-| `X̄_U = X_U ×_{Spec F} Spec F̄`, `B_r = π^* A_r` | Harris–Taylor III.2, pp.94-96, as constructed by Worker 57 |
+| `X̄_U = X_U ×_{Spec F} Spec F̄`, `B_r = π^* A_r` | Harris–Taylor III.2, pp.94-96, as constructed in `Langlands.Shimura.PEL` |
 | `Langlands.IsSmooth` for the Krull topology on `F̄ ≃ₐ[F] F̄` | Harris–Taylor p.97 ("continuous"); Harris 1999 §5, p.313 (λ-adic representations); truth from SGA 4 VII Corollaire 5.8 |
 | `∀ degree r` | Every degree and every coefficient stage |
 
@@ -354,9 +360,9 @@ The statements do not cover:
 - any topology on the cohomology modules other than the discrete one;
 - local-global compatibility, Harris 1999 Theorem 5.7 itself, or the
   spectral sequence (4.9);
-- a proof of any premise. The open premises `square`, `q`, `existence`,
-  `geometry` and `hRigid` stay open, and the proved ones are not
-  instantiated here.
+- a proof of any premise. The premises `q` and `hRigid` are not proved in
+  the Library; the others are proved there (see "Proof status of the
+  premises") but are not instantiated here.
 
 ## Registered sources
 
@@ -398,36 +404,35 @@ The statements do not cover:
 
 Direct project imports, byte-identical in Library commits
 `6f182f920309bbe9e9e43bd7181d7e25d5c02acd` and
-`9b0747799373d61d5b3c3e8fdf95710b5d862db4` and in the workspace:
+`9b0747799373d61d5b3c3e8fdf95710b5d862db4`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Shimura.PEL.HarrisTaylorCMGeometricCohomology` | Worker 57 | `9bda75d25c33eee453fa43c68881e124d706aea5ca9c3f0f90358d703d9ad824` | `a3ed52de2897e8989a71b2a01edb087310e622ae6dae6d6004c100dc09dea97b` |
-| `Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology` | Worker 57 | `e7f01f64e60e606662cb0adeebb1c8c49573b552311129ee4ff8c5bbb3213f27` | `66fae2ad97f30b2658051f14135ae87e7e339b1455f95fcda9ff597be7ec9cde` |
-| `Langlands.Representation.Smooth.Definitions` | Library | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` | `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Shimura.PEL.HarrisTaylorCMGeometricCohomology` | `9bda75d25c33eee453fa43c68881e124d706aea5ca9c3f0f90358d703d9ad824` | `a3ed52de2897e8989a71b2a01edb087310e622ae6dae6d6004c100dc09dea97b` |
+| `Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology` | `e7f01f64e60e606662cb0adeebb1c8c49573b552311129ee4ff8c5bbb3213f27` | `66fae2ad97f30b2658051f14135ae87e7e339b1455f95fcda9ff597be7ec9cde` |
+| `Langlands.Representation.Smooth.Definitions` | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` | `4b7364038949eb59db10c95354f290fcba77110c1ed33a227a2b6c92f4afd569` |
 
 The module also imports Mathlib's `Mathlib.FieldTheory.KrullTopology`.
-Through the imports it uses Worker 13's `EtaleDerivedSections` and
-`EtaleDerivedGlobalPullback`, and the Library's `EtaleInverseImage` and
+Through the imports it uses the Library's `EtaleDerivedSections`,
+`EtaleDerivedGlobalPullback`, `EtaleInverseImage` and
 `EtaleGeometricCoefficientPullback`. The truth arguments also cite
 `HarrisTaylorCMGeometricProjective` and `EtaleInverseImageCoherence`, which
 are not imported.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Checks, all with no errors or warnings. The first five ran before the
+Checks, in order, all with no errors or warnings. The first five ran before the
 conjunction `HarrisCMCohomologyStatements` was added. The file then held
 only the two component definitions, unchanged since.
 
-- `dc8bfcaa-0382-411f-823a-560cf1427e12` built the file from a draft
-  directory against Library `7c489c8a` and inspected
+- The first built the file against Library `7c489c8a` and inspected
   `HarrisCMGaloisCohomologySmoothStatement`: a `Prop`-valued definition
   depending only on `propext`, `Classical.choice` and `Quot.sound`.
-- `9f71a614-b496-4cc9-adb1-1d0cd5f1d56d` inspected
+- The second inspected
   `HarrisCMCohomologyFiniteStatement` in the same way, with the same three
   axioms.
-- `67067043-19d3-476e-9760-19b41cc653a2` compiled a test file against the
+- The third compiled a test file against the
   same Lean file, and its output was read. It printed both definitions with
   universes: the finiteness statement has no universe parameters and no
   derived-category binders, and the smoothness statement has the universe
@@ -438,30 +443,26 @@ only the two component definitions, unchanged since.
   `v`, some open subgroup `V` has
   `cohomologyPullbackWithCoefficients g_σ R degree (Ψ_σ.hom.app r) v = v`
   for all `σ ∈ V`.
-- `7b24577e-75f0-419a-8949-83d441083466` rebuilt the draft against Library
+- The fourth rebuilt the file against Library
   `6f182f92`.
-- `cee79411-4fb7-492c-8401-e7a5c69bdb76` built the file with Lake from the
-  workspace, against Library `6f182f92`, and inspected
+- The fifth built the file with Lake against Library `6f182f92`, and inspected
   `HarrisCMGaloisCohomologySmoothStatement`: a `Prop`-valued definition with
   universe parameters `wS` and `wR`, depending only on `propext`,
   `Classical.choice` and `Quot.sound`.
-- `abdad739-6c23-4917-a2a1-f051eee81e43` built the final file from a draft
-  directory against Library `6f182f92` and inspected
+- The sixth built the final file against Library `6f182f92` and inspected
   `HarrisCMCohomologyStatements`: a `Prop`-valued definition with universe
   parameters `wS` and `wR`, depending only on `propext`, `Classical.choice`
   and `Quot.sound`.
-- `624913c1-f278-47c6-b685-e08ef189bc99` built the final file with Lake from
-  the workspace, against Library `6f182f92`, and inspected
+- The seventh built the final file with Lake against Library `6f182f92`, and inspected
   `HarrisCMCohomologyStatements` with the same result.
-- `d9bd054e-2711-4cac-adb5-b7f136bb54ec` compiled a test file against this
+- The eighth compiled a test file against this
   Lean file and Library `9b074779`. For each of the thirteen proved premises
   in the table above, an `example` with the premise type at universe zero is
   closed by the cited theorem. `#print axioms` shows that each theorem
   depends only on `propext`, `Classical.choice` and `Quot.sound`.
-- `3a562bdb-db99-42ce-a3d9-6467a158c4fc` built the file with Lake from the
-  workspace, against Library `9b074779`, and inspected
+- The ninth built the file with Lake against Library `9b074779`, and inspected
   `HarrisCMCohomologyStatements`: a `Prop`-valued definition with universe
   parameters `wS` and `wR`, depending only on `propext`, `Classical.choice`
-  and `Quot.sound`. The Lean file is unchanged since `abdad739`.
+  and `Quot.sound`. The Lean file is unchanged since the sixth check.
 
 This establishes well-formed statements. It does not prove them.

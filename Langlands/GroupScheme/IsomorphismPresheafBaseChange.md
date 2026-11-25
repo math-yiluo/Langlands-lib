@@ -1,7 +1,5 @@
 # Pulling back a representation of the full Isom presheaf
 
-Worker 220.
-
 This internal adapter combines the published `LocalGroupIso.presheaf`,
 `GroupIsomorphismScheme.baseChange`, and the conversions between presheaf
 representations and `GroupIsomorphismScheme`. It imposes no restriction
@@ -23,4 +21,4 @@ naturality at the identity.
 
 Every test is an arbitrary relative scheme in universe `u`. This
 construction transports a supplied representation; geometric existence
-of a representative remains a separate proof obligation.
+of a representative is not proved here.

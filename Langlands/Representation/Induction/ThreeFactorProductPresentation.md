@@ -1,6 +1,6 @@
 # Actual three-factor product presentations
 
-This internal unit proves that the binary normalized product of a supplied
+This internal module proves that the binary normalized product of a supplied
 quotient of \(A\times B\) with \(C\) is an actual quotient of the literal
 three-block normalized induction of \(A,B,C\). All three ranks are positive
 and may differ. Its total rank is `(a+b)+c`; its source shape is

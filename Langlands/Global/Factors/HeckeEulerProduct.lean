@@ -74,8 +74,7 @@ theorem norm_uniformizerUnit (v : FinitePlace K) :
     rw [← AdelicFunctoriality.FiniteExtension.topologicalData_discreteValuation v]
     simpa using LocalFactor.PadicAbelian.uniformizerUnit_zpow_value (topologicalData v) 1
   rw [FinitePlace.norm_def, hv, WithZeroMulInt.toNNReal_neg_apply _ WithZero.exp_ne_zero]
-  have h1 : (WithZero.unzero (WithZero.exp_ne_zero (a := (-1 : ℤ)))).toAdd = -1 := rfl
-  rw [h1]
+  rw [WithZero.log_exp]
   simp
 
 end Local

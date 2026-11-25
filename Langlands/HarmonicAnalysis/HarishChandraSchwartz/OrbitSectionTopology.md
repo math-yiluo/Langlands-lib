@@ -4,7 +4,7 @@ Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitSectionTopol
 torus helpers are in namespace `Langlands.HarmonicAnalysis.TorusFourier`, the rest in
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.Representation.Plancherel.ProductInducedOrbitCompactAction` (Worker 200): the
+- `Langlands.Representation.Plancherel.ProductInducedOrbitCompactAction`: the
   action `productInducedOrbitRepresentation` of `G × G` on orbit sections, the compact
   restriction `productInducedSmoothOrbitCompactRestriction` (written `R` below) with
   `productInducedSmoothOrbitCompactRestriction_injective`,
@@ -18,10 +18,10 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   `mem_finiteSmoothFamilies_linearMap`, the subalgebra `smoothFiniteTorusFunctions`, and the
   smoothness predicate `IsSmoothFiniteTorusFunction f` (`f ∘ finiteTorusExp` is `C^∞` on
   `J → ℝ`, with `finiteTorusExp θ = (e^{iθ_j})_j`);
-- `Langlands.HarmonicAnalysis.TorusFourierDecay` (Worker 249): the angle derivative
+- `Langlands.HarmonicAnalysis.TorusFourierDecay`: the angle derivative
   `torusPartialDeriv j f z = d/dθ f(z · e^{iθ}_j)` at `θ = 0`, `hasDerivAt_torusTranslate` and
   `isSmoothFiniteTorusFunction_torusPartialDeriv`;
-- `Langlands.HarmonicAnalysis.TorusFourierSynthesis` (Worker 249): the iterated derivative
+- `Langlands.HarmonicAnalysis.TorusFourierSynthesis`: the iterated derivative
   `torusPartialDerivList l = ∂_{j₁} ∘ ⋯ ∘ ∂_{jₖ}` along a list `l = [j₁, …, jₖ]`;
 - from Mathlib: `SeminormFamily.moduleFilterBasis`, `WithSeminorms` with
   `WithSeminorms.continuous_of_continuous_comp`, `norm_withSeminorms`,

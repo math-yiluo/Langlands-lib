@@ -1,7 +1,5 @@
 # Lying over for finite bounded maps of Banach algebras
 
-Author: Worker 1010.
-
 Fix a nontrivially normed field K with ultrametric absolute value, and complete
 normed commutative K-algebras A and B.
 

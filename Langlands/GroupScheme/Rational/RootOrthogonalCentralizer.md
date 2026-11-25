@@ -1,7 +1,5 @@
 # Centralizers of cocharacters orthogonal to one root
 
-Authors: Worker 4896.
-
 This internal supporting module is used by the proof of
 `Langlands.GroupScheme.RankOneLeviFactorExistenceStatement`
 (module `Langlands.GroupScheme.SimplyConnected.RankOneLeviFactorExistenceProof`).

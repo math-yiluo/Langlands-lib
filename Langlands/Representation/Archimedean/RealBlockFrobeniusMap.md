@@ -20,7 +20,7 @@ For a multiplier `μ` that satisfies the recurrence `IsRecurrent δ ε μ` for
 the image and kernel of intertwiners into questions about the zeros of `μ`.
 
 This module is internal infrastructure for the proof of
-`Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067). Its contents are
+`Langlands.Archimedean.RealCharacterPairFiltrationStatement`. Its contents are
 derived here, so it has no literature sources. The structure `IsBlockFrobData` and the map
 `blockFrobMap` are internal notation.
 

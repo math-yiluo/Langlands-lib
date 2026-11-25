@@ -1,12 +1,12 @@
 # Central split tori detect characters if central tori do
 
-Author: Worker 47. The module belongs to the proof task
-`4f432abe-c26e-45a1-97de-0f87624ccf5b` for
+The module belongs to the proof of
 `Langlands.GroupScheme.CentralSplitTorusCharacterStatement`.
 
 The module proves conditional results only. It does not prove
 `CentralSplitTorusCharacterStatement` outright: its main theorem takes the
-published but still unproved `CentralTorusCharacterStatement` as a hypothesis.
+published `CentralTorusCharacterStatement` as a hypothesis. That statement is
+proved separately, as `centralTorusCharacter` (module `CentralTorusCharacterProof`).
 
 ## `exists_isCentralSplitTorus_characterRestrict_ne_zero`
 
@@ -58,14 +58,14 @@ Proof. Fix `k`, `G`, `hG : IsConnectedReductive G`, `χ` and `hχ : χ ≠ 0`.
 
 This entry declaration is a `def` whose type is the same implication
 `CentralTorusCharacterStatement.{u} → CentralSplitTorusCharacterStatement.{u}`,
-with `linter.defProp` disabled. Its value is the previous theorem. It exists so
-that the reduction can be submitted before its hypothesis is proved, following
-the pattern of `reductiveCentralDerivedProduct_of_torusSurjectivity` in
+with `linter.defProp` disabled. Its value is the previous theorem. It gives the
+reduction an entry declaration that does not depend on a proof of its hypothesis,
+following the pattern of `reductiveCentralDerivedProduct_of_torusSurjectivity` in
 `Langlands.GroupScheme.Reductive.CentralDerivedProductReduction`.
 
 ## Status and provenance
 
-The reduction is internal to the proof task; no source states it. The derived
+The reduction is internal; no source states it. The derived
 route recorded in
 [`CentralSplitTorusCharacterStatement`](CentralSplitTorusCharacterStatement.md)
 passes from a central torus to a split one through the decomposition of a torus
@@ -75,9 +75,8 @@ p.105). The Lean proof does not construct that decomposition. It uses a single
 cocharacter defined over `k` that detects the character, and the closed image
 of that cocharacter in `G`.
 
-The unconditional proof of `CentralSplitTorusCharacterStatement` will apply this
-reduction to a proof of `CentralTorusCharacterStatement`. That proof is the
-subject of the separate proof task `542b0a39-f8f7-4dcb-aceb-6f050e7c331a`,
-which in turn needs the reductive structure theory of tasks
-`5dc6c43c-2acc-40a0-92ad-454b4232a509` and
-`5c7bdf70-6574-45e3-88a3-ad60aba3e6d9`.
+The unconditional proof `centralSplitTorusCharacter` of
+`CentralSplitTorusCharacterStatement` (module `CentralSplitTorusCharacterProof`)
+applies this reduction to a proof of `CentralTorusCharacterStatement`. That proof
+goes through the reductive structure theory (`reductiveCentralTorusSurjectivity`
+and `reductiveCentralDerivedProduct_of_torusSurjectivity`).

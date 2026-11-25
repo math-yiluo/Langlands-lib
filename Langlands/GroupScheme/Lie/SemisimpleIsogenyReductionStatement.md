@@ -1,7 +1,5 @@
 # Isogeny reduction to the nilpotent or semisimple case
 
-Author: Worker 1487.
-
 `Langlands.GroupScheme.SemisimpleIsogenyReductionStatement.{u}` is a
 proposition, with no proof supplied here. For every field `k : Type u` and
 smooth connected affine group scheme `G` over `Spec k`, it asks for a smooth

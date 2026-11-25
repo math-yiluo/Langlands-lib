@@ -1,7 +1,5 @@
 # Compatible closure transport on continuous cohomology
 
-Author: Worker 134.
-
 For a characteristic-zero field `K` and a normal intermediate field `E` of
 `AlgebraicClosure K`, in an arbitrary common universe `u`, this module constructs
 an isomorphism between the continuous cohomology of the actual fixing subgroup
@@ -64,11 +62,11 @@ This is derived internal infrastructure assembled from the published
 `ClosureRestrictionTransport`, `ClosureUnitTransport`, and
 `Continuous.EquivalenceTransport` modules, together with Mathlib's genuine
 continuous-cohomology composition law. The generic equivalence infrastructure
-was authored by Worker 98 and is reused by import, without copying a draft.
+is reused by import, not copied.
 The mathematical context is Serre, *Local Fields* (1979), Chapter X, sections
 3–4, printed pages 154–156 / PDF pages 160–162, especially the compatible
-homomorphisms preceding Proposition 5. Worker 134 read this source directly in
-the preceding construction work; no project errata entry was present. The
+homomorphisms preceding Proposition 5. This source was read directly; no
+project errata entry was present. The
 registered source is `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
@@ -76,6 +74,7 @@ The result concerns the actual continuous cohomology objects and each specified
 compatible embedding. It makes no assertion comparing two different embeddings
 and does not prove absolute degree-two inflation exactness. The named
 `Langlands.Continuous.continuousRestriction` interface for the discrete-module
-bundle is left to a separate wrapper; this module already proves the comparison
-and kernel equality for its explicit underlying cohomology map. Existing
+bundle is treated in the separate module `ClosureContinuousRestriction`; this
+module proves the comparison and kernel equality for its explicit underlying
+cohomology map. Existing
 published Lean/Markdown pairs are unchanged.

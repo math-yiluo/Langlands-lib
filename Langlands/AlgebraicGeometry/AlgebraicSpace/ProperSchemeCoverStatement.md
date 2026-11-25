@@ -33,11 +33,12 @@ and its structural morphism is locally finitely presented. Since the original
 space is proper over S, the source scheme is proper over S by composition.
 This route uses separatedness descent, but does not assume properness descent.
 The formal proof, including the approximation, compatibility and actual cover
-construction, remains an obligation of the prerequisite proof task.
+construction, is in `ProperSchemeCoverProof` (`properSchemeCover`).
 
 This statement contains no limit diagram and asserts no property of a stage
 model. Its consumer is the forward universal-closedness portion of
 `SpaceLimitPropertyDescentStatement`: descend the actual proper scheme cover
 and its morphism to an incoming stage, detect surjectivity there, and use the
 proper source to establish universal closedness. Those consumer steps and the
-full eight-property theorem remain with the host task.
+full eight-property theorem are not part of this statement;
+`SpaceLimitPropertyDescentProof` proves that theorem.

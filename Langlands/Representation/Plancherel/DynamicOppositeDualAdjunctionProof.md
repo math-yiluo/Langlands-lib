@@ -1,6 +1,6 @@
 # Proof of the duality adjunction of the opposite standard integrals
 
-Worker 5, Task 6641. This module proves the published target
+This module proves the published target
 `Langlands.Plancherel.ConditionalDynamicOppositeDualAdjunctionStatement`
 (module `DynamicOppositeContragredientScalar`):
 
@@ -68,7 +68,7 @@ The module proves or cites the inputs that the generic theorem leaves as
 hypotheses:
 
 - `M(F)` is unimodular: `DynamicOppositeHermitianAdjunctionProof.levi_modularCharacter_eq_one`
-  (Task 6449; from `RationalPointFamily.rationalReductiveUnimodularity` for
+  (from `RationalPointFamily.rationalReductiveUnimodularity` for
   the connected reductive centralizer scheme, transported to the literal
   Levi). Then `isMulRightInvariant_of_modularCharacter_eq_one` makes `μM`
   right invariant.
@@ -123,8 +123,8 @@ exchanged. Let `f` be the extension of `φ` to the induction of `A` along `P` at
    `δ_U δ_Ū = 1` and `parameterTransport_mul_inv`. The contragredient pairing
    is `M(F)`-invariant.
 4. **The integration formula.** The two double integrals agree by
-   `LeviInvariantIwasawaExchange.integral_exchange` with `V = Ū` (proved in
-   Task 6449). It applies the Iwasawa formula `∫_G F = ∫_K ∫_M ∫_W F(m w k)`
+   `LeviInvariantIwasawaExchange.integral_exchange` with `V = Ū`. It
+   applies the Iwasawa formula `∫_G F = ∫_K ∫_M ∫_W F(m w k)`
    for `W = U` and `W = Ū` (`lintegral_eq_iwasawa`, a form of Waldspurger
    I.1 (2)) to the cutoff functions `1_{U K} Θ` and `1_{Ū K} Θ`. By the
    splitting, `m w k ∈ W K ↔ m ∈ K`, so `∫_G 1_{W K} Θ = ∫_K ∫_W Θ(w k)`. The
@@ -195,9 +195,9 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques
 (d'après Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI
 10.1017/S1474748003000082, registered `waldspurger-2003-plancherel`: IV.1 (11)
 (printed p.283), and I.1 (2) (printed p.240) for the Iwasawa formula.
-Waldspurger states (11) without proof. The route implemented here follows the
-context of Task 6641: pointwise integrals of `Θ = f'(f)`, `M`-invariance, and
-exchange of the two Iwasawa integrals with cutoffs.
+Waldspurger states (11) without proof. The route implemented here is:
+pointwise integrals of `Θ = f'(f)`, `M`-invariance, and exchange of the two
+Iwasawa integrals with cutoffs.
 
 ## Axioms
 

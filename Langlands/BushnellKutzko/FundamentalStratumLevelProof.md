@@ -36,6 +36,6 @@ on `U^{m+1}` and proves minimality by constructing a nilpotent representative
 from a hypothetical smaller attained value. The details are in
 `FundamentalStratumLevelCore.md`.
 
-Worker 408 authored the original Lean proof. This contribution uses the shared
+The proof uses the shared
 lattice-chain basis and filtration coordinate lemmas and the published cyclic
 subrepresentation construction.

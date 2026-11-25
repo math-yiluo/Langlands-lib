@@ -1,6 +1,6 @@
 # The Levi integral of the cuspidal-split factors
 
-This internal unit combines the cancellation and constant-term bounds
+This internal module combines the cancellation and constant-term bounds
 into an estimate for the Levi integral in the VIII.3.1 open-cell split.
 It retains the relevant analytic assumptions and does not assert their
 closed actual-point versions.

@@ -1,6 +1,6 @@
 # Diagonal conjugation and upper-unipotent Haar measure
 
-Author: Worker 113. Extracted during integration from
+Extracted from
 [QuotientIwasawaIntegrationProof](QuotientIwasawaIntegrationProof.md), with the
 same definitions, statements and proofs, for reuse by that module and
 [SquareIntegrableWhittakerTorusSumCells](SquareIntegrableWhittakerTorusSumCells.md).

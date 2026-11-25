@@ -2,7 +2,7 @@
 
 Module `Langlands.Global.ImaginaryAxisLocalDivision` (namespace
 `Langlands.Global.ImaginaryAxis`) proves the abstract core of Lapid's
-Proposition 6 (Task 5613). It has no automorphic input.
+Proposition 6 (`EisensteinImaginaryAxisHolomorphyStatement`). It has no automorphic input.
 
 ## Helpers
 
@@ -30,8 +30,8 @@ Proposition 6 (Task 5613). It has no automorphic input.
   `∫ c'(x) k(x, y.out) d(c · vol)` is in `L²(μ)` with
   `‖·‖² ≤ C ∫ |c'|²`;
 - a radius `ρ` with `s₀ + i x ∈ W` for `|x| < ρ`;
-- `hdiv`: the division lemma in the form proved by Worker 757 for products
-  of real root forms (module `RealHyperplaneDivision`, Task 5613). It gives
+- `hdiv`: the division lemma in the form proved for products
+  of real root forms (module `RealHyperplaneDivision`). It gives
   an open `W' ∋ s₀`, `W' ⊆ W`, depending only on these data. Let
   `H_V → H_∞` be a locally uniform limit on `W` of holomorphic functions
   along a nontrivial filter, and suppose `H_V / Q` has eventually bounded
@@ -46,7 +46,7 @@ Proof. Take `W'` from `hdiv` and fix `g₀`. Apply `hdiv` along the filter
 `shrinkingNhds g₀` to the averages
 `H_V(s) = μ(N)⁻¹ ∫_N h(s, y.out) dμ(y)`, `N = mk '' V`.
 
-- Holomorphy of `H_V`: Worker 757's
+- Holomorphy of `H_V`:
   `Langlands.Analysis.SeveralComplex.differentiableOn_integral_of_bounded`,
   applied to `1_N · h(s, ·.out)` for the finite measure `μ|_N`. The bound on
   compact sets comes from continuity of `h` on `K × closure V` and

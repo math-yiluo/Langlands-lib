@@ -24,16 +24,17 @@ def schematicTateOrderAction (ρ : O →+* End G) (T : (Over (Spec R))ᵒᵖ) :
     O →+* AddMonoid.End (((schematicTatePointFunctor R p).obj G).obj T) := by
   let F := schematicTatePointFunctor R p ⋙ (evaluation _ _).obj T
   let e : End G →+* AddMonoid.End (F.obj G) :=
-    { toFun f := (F.map f).hom
+    { toFun f := (F.map f.asHom).hom
       map_one' := congrArg AddCommGrpCat.Hom.hom (F.map_id G)
-      map_mul' f g := congrArg AddCommGrpCat.Hom.hom (F.map_comp g f)
+      map_mul' f g := congrArg AddCommGrpCat.Hom.hom (F.map_comp g.asHom f.asHom)
       map_zero' := congrArg AddCommGrpCat.Hom.hom (F.map_zero G G)
-      map_add' f g := congrArg AddCommGrpCat.Hom.hom (F.map_add (f := f) (g := g)) }
+      map_add' f g := congrArg AddCommGrpCat.Hom.hom (F.map_add (f := f.asHom) (g := g.asHom)) }
   exact e.comp ρ
 
 @[simp] theorem schematicTateOrderAction_apply (ρ : O →+* End G) (T : (Over (Spec R))ᵒᵖ) (a : O)
     (x : ((schematicTatePointFunctor R p).obj G).obj T) :
-    schematicTateOrderAction ρ T a x = ((schematicTatePointFunctor R p).map (ρ a)).app T x := rfl
+    schematicTateOrderAction ρ T a x =
+      ((schematicTatePointFunctor R p).map (ρ a).asHom).app T x := rfl
 
 /-- The test-section group is a left module over the acting ring. -/
 @[instance_reducible] def schematicTatePointModule (ρ : O →+* End G) (T : (Over (Spec R))ᵒᵖ) :
@@ -51,7 +52,7 @@ def schematicTateModulePresheaf (ρ : O →+* End G) :
     exact ModuleCat.ofHom
       { (((schematicTatePointFunctor R p).obj G).map b).hom with
         map_smul' a x := (ConcreteCategory.congr_hom
-          (((schematicTatePointFunctor R p).map (ρ a)).naturality b) x).symm }
+          (((schematicTatePointFunctor R p).map (ρ a).asHom).naturality b) x).symm }
   map_id T := by
     apply (forget₂ (ModuleCat.{u} O) AddCommGrpCat.{u}).map_injective
     apply AddCommGrpCat.hom_ext
@@ -88,12 +89,12 @@ theorem schematicTateOrderAction_projection (ρ : O →+* End G) (T : Over (Spec
     (x : ((schematicTatePointFunctor R p).obj G).obj (op T)) (n : ℕ) :
     (G.schematicTatePointProjection n).app (op T) (schematicTateOrderAction ρ (op T) a x) =
       Additive.ofMul (((G.schematicTatePointProjection n).app (op T) x).toMul ≫
-        (CommGroupScheme.groupHom ((ρ a).app n)).hom.hom) :=
-  schematicTatePointProjection_map (ρ a) T x n
+        (CommGroupScheme.groupHom ((ρ a).asHom.app n)).hom.hom) :=
+  schematicTatePointProjection_map (ρ a).asHom T x n
 
 /-- A morphism intertwining the two order actions induces a linear map of Tate presheaves. -/
 def schematicTateModulePresheafMap (ρ : O →+* End G) (σ : O →+* End H) (f : G ⟶ H)
-    (hf : ∀ a, ρ a ≫ f = f ≫ σ a) :
+    (hf : ∀ a, (ρ a).asHom ≫ f = f ≫ (σ a).asHom) :
     schematicTateModulePresheaf ρ ⟶ schematicTateModulePresheaf σ where
   app T := by
     letI := schematicTatePointModule ρ T

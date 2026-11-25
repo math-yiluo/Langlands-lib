@@ -1,7 +1,5 @@
 # Weight spaces of a cocharacter of `O(q)` on `D^n`
 
-Author: Worker 73.
-
 Module `Langlands.GroupScheme.Quaternionic.CocharacterWeightSpace`, namespace
 `Langlands.GroupScheme.Quaternionic.FirstKindInvolution`. This module contains two
 definitions and no theorem. It supports the statements

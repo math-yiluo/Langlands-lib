@@ -1,6 +1,6 @@
 # Open-subgroup invariants of actual rational quotient sections
 
-Worker 36 constructed this derived interface over the published
+This module constructs this derived interface over the published
 `OpenSubgroupTransport` category and its actual rational quotient algebras.
 
 The hypotheses are a complete ultrametric normed field `K`, a presented strict

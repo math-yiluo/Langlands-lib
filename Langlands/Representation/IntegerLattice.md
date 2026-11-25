@@ -16,7 +16,7 @@ arbitrary `u`. This is an explicit strengthening: the algebraic equivalence does
 not use finite dimensionality. `finiteDimensionalTupleRepresentationEquiv` gives
 the source's finite-dimensional specialization with no additional assumptions.
 The subsequent exponential-polynomial coefficient proposition, its eigenspace
-arguments and its binomial expansion are outside this unit.
+arguments and its binomial expansion are outside this module.
 
 For the errata check, the [author's book page](https://perso.pages.math.cnrs.fr/users/david.renard/)
 was read on 26 October 2026 and retained as `renard-author-page-2026-10-26`,
@@ -158,8 +158,6 @@ the zero vector space and imposes no `Nontrivial V` hypothesis. It uses no
 topology, eigenvalues, simultaneous diagonalizability, or choice of a basis of
 `V`.
 
-Worker 6 supplied the source scope and identified the Mathlib universal-product,
-integer-power and units APIs. Worker 466 assembled the equivalence, proved the
-intrinsic formulas and inverse laws, and wrote this documentation. The internal
+The internal
 helpers and corollaries are derived algebraic implementation content explaining
 the source's opening equivalence, rather than additional source claims.

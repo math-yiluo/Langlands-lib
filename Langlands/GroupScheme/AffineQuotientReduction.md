@@ -1,7 +1,6 @@
 # Reduction of the affine quotient theorem to exact-kernel representations
 
-Worker 239, task `1cda9f1e` (affineness of a represented fpqc quotient of an
-affine algebraic group). This module states one proposition,
+This module states one proposition,
 `Langlands.GroupScheme.AffineQuotient.SmoothNormalKernelInput.{u}`, and proves
 that it implies the target statement
 `Langlands.GroupScheme.AffineGroupSchemeQuotientStatement.{u}`. It does not
@@ -30,7 +29,7 @@ affine algebraic group is the kernel of a representation. The statement here
 is that lemma with the extra hypothesis that `G` is smooth. Milne's algebraic
 groups are group schemes of finite type over the field; an algebraic subgroup
 is a closed subgroup scheme, and normality is normality of `N(R)` in `G(R)`
-for every `k`-algebra `R`. The Lean wording follows Worker 706's statement
+for every `k`-algebra `R`. The Lean wording follows the statement
 `Langlands.GroupScheme.MatrixRepresentation.NormalKernelStatement` (Milne,
 Corollary 5.19, same page) word for word, except that the field is
 algebraically closed and `G` is smooth. The input is chosen this way because
@@ -133,9 +132,11 @@ surjectivity. It also does not use quasi-compactness of `Q`'s structure map.
 
 ## Use
 
-Worker 706 proves `SmoothNormalKernelInput.{u}` separately. The final proof of
-the task applies `affineGroupSchemeQuotient_of_smoothNormalKernel` to that
-proof.
+`SmoothNormalKernelInput.{u}` is proved separately, by
+`AffineQuotient.smoothNormalKernel` in
+`Langlands.GroupScheme.MatrixRepresentation.SmoothNormalKernel`. The final
+proof `affineGroupSchemeQuotient` in `Langlands.GroupScheme.AffineQuotientProof`
+applies `affineGroupSchemeQuotient_of_smoothNormalKernel` to that proof.
 
 The final theorem depends only on the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`.

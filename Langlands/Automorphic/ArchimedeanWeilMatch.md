@@ -1,8 +1,7 @@
 # Archimedean components of Weil representations and archimedean matching
 
-Worker 8 authored this definition unit for task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. The declarations lie in the namespaces
-`Langlands.ClassField.Global.RelativeWeilGroup` and `Langlands.ClassField.Global.WeilMapSystem`.
+The declarations lie in the namespaces
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup` and `Langlands.ClassFieldTheory.Global.WeilMapSystem`.
 The module defines four things:
 
 - the archimedean components of representations of the relative Weil group `W_{E/F}` and of
@@ -106,5 +105,4 @@ Under `[CompactSpace (AdeleQuotient F)]`, for `π : PositiveRankCuspidalClass F`
 ## Scope
 
 The module does not prove existence of archimedean parameters, independence of block order,
-or any statement that associated representations match at the archimedean places. These are
-theorem obligations for the statement owners.
+or any statement that associated representations match at the archimedean places.

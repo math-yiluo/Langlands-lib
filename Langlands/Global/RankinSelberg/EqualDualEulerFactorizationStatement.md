@@ -122,7 +122,7 @@ no hypothesis.
 * Cogdell states the factorization on the dual side only implicitly ("entirely
   analogous", p.220). This statement makes it explicit for the equal-rank case. The
   consumer is the proof of the partial functional equation
-  `Langlands.Global.CuspidalPairPartialGammaEquationStatement` (Task 6190).
+  `Langlands.Global.CuspidalPairPartialGammaEquationStatement`.
 * Cogdell obtains the unramified dual local integral from Theorem 3.3 applied to the
   contragredient pair. The statement asserts only the global identity, so a proof may
   use that route or the local functional equation.

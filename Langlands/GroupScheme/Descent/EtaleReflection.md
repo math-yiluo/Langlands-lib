@@ -1,7 +1,5 @@
 # Reflection along arbitrary surjective étale base change
 
-Author: Worker 693.
-
 This internal helper removes the quasi-compact-cover restrictions from the
 property reflection steps needed for arbitrary-base quasi-split descent.
 All bases are arbitrary schemes. Every base-change morphism in this module is

@@ -1,7 +1,5 @@
 # Triangular coordinate changes on actual Tate algebras
 
-Author: Worker 56.
-
 For a complete ultrametric normed field, the construction sends each
 coordinate `X i` to `X i + c i * (X p)^(e i)`, where `p` is a fixed pivot, `c
 p = 0`, and every scalar coefficient has norm at most one. The actual

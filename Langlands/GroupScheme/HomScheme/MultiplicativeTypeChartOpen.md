@@ -3,9 +3,8 @@
 Module `Langlands.GroupScheme.HomScheme.MultiplicativeTypeChartOpen`, namespace
 `Langlands.GroupScheme.HomScheme.MultiplicativeTypeChart`.
 
-Author: Worker 57.
-
-This is an internal module for the chart construction of Task 6946. It proves that every
+This is an internal module for the chart construction in the proof of
+`MultiplicativeTypeEtaleLiftStatement`. It proves that every
 window datum `dw` (`MixedChartExistence.WindowDatum`) has a chart `j G dw.toDatum` satisfying
 `MultiplicativeTypeSubgroupModuli.IsOpenChartOnAffines`. The main condition is openness: for
 a closed multiplicative-type subgroup `i` over an affine test `T`, the locus of `T` where `i`
@@ -19,7 +18,7 @@ is an evaluation of the chart is open. The module follows the Library module
 
 The general lemmas of `TorusChartOpen` (`evaluate_eq_of_comp_fpqc`, `injective_all_of_affine`,
 `exists_evaluate_of_openCover`) do not mention tori and are reused from the Library. The
-étale descent step `exists_good_open_of_etale` is replaced by Worker 872's flat version
+étale descent step `exists_good_open_of_etale` is replaced by the flat version
 `FppfParameterDescent.exists_good_open_of_flat`.
 
 ## The splitting hypothesis
@@ -33,9 +32,10 @@ generated commutative groups `Λ k` and Hopf points `f k : A → C k ⊗ R[Λ k]
 linear extensions. Finally, the evaluation of `i` at `b k` is the range of the homomorphism
 `(diagPointEquiv G (C k)).symm (f k)` from `D(Λ k)`.
 
-This is verbatim the conclusion of Worker 872's theorem `HomScheme.exists_fppf_diagPoints`
-(module `HomScheme.MultiplicativeTypeSubgroupSplitting`). The final proof discharges `hP3`
-with that theorem.
+This is verbatim the conclusion of the theorem `HomScheme.exists_fppf_diagPoints`
+(module `HomScheme.MultiplicativeTypeSubgroupSplitting`). The proof
+`MultiplicativeTypeSubgroupModuli.finiteTypeChartCover` in `Torus.MultiplicativeTypeEtaleLiftProof`
+discharges `hP3` with that theorem.
 
 ## Ring-level lemmas (section `Generic`, arbitrary coordinate algebra `A`)
 

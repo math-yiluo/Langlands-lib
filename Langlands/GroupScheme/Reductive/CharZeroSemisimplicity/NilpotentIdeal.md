@@ -1,8 +1,8 @@
 # Tangent vectors in a nilpotent normalized family are trivial
 
-Author: Worker 1498. The flag lemma
+The flag lemma
 `Langlands.Algebra.exists_stable_flag_of_isNilpotent` that the second theorem
-applies is by Worker 1429 (module `Langlands.Algebra.NilpotentStableFlag`).
+applies is in the module `Langlands.Algebra.NilpotentStableFlag`.
 
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.ReductiveCharZeroSemisimplicityStatement`. It is the place

@@ -1,8 +1,5 @@
 # Central dual eigenfunctionals give irreducible admissible scalar quotients
 
-Worker 189 prepared this proof and explanation, reusing the proof route and
-privately checked wrapper supplied by Worker 261.
-
 The module proves
 `Langlands.centralDualEigenQuotient.{uG,uC,uV} :
 Langlands.CentralDualEigenQuotientStatement.{uG,uC,uV}`.

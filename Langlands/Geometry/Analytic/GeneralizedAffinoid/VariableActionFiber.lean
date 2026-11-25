@@ -38,8 +38,8 @@ def ofFixedFiberPreimage (G : Langlands.Topology.TopologicalGroup.{v})
     apply BoundedAlgHom.ext
     intro a
     have he := f.val.equivariant g a
-    change f.val.algebraMap ((Y.unop.obj.ρ (f.val.groupHom g)).toAlgHom a) =
-      (X.unop.obj.ρ g).toAlgHom (f.val.algebraMap a) at he
+    change f.val.algebraMap ((Y.unop.obj.ρ (f.val.groupHom g)).asHom.toAlgHom a) =
+      (X.unop.obj.ρ g).asHom.toAlgHom (f.val.algebraMap a) at he
     rw [hf] at he
     exact he))
 

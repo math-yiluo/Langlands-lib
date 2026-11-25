@@ -1,6 +1,6 @@
 # Quasicuspidality from finite filtrations
 
-Author: Worker 168. This is an internal algebraic prerequisite for the associated
+This is an internal algebraic prerequisite for the associated
 Jacquet filtration theorem. It uses the existing actual representation
 filtrations and coinvariant quotient, without modifying those definitions.
 

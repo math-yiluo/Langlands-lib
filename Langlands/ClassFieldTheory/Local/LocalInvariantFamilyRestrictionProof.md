@@ -1,7 +1,5 @@
 # Restriction law of the local invariant family
 
-Author: Worker 272.
-
 This module proves the published proposition
 `Langlands.ClassFieldTheory.Local.LocalInvariantFamilyRestrictionStatement`
 (module `Langlands.ClassFieldTheory.Local.LocalInvariantFamilyLawsStatement`).

@@ -4,7 +4,8 @@ This internal construction defines the conjugate of an actual standard Levi
 by an actual relative Weyl element. Its supporting theorems reduce the exact
 general `StandardLeviConjugationStatement` either to the existence clause of
 `StandardCocharacterStatement` or to `RelativeRootSystemStatement`. The
-unconditional general statement remains unproved. All structural premises
+unconditional general statement is not proved here; `standardLeviConjugation`
+(module `Rational.StandardLeviConjugationProof`) proves it. All structural premises
 of these reductions are explicit.
 
 `standardLeviWeylConjugate i ν J w` is a subgroup functor on every test
@@ -56,7 +57,7 @@ has type `RelativeRootSystemStatement.{u} →
 StandardLeviConjugationStatement.{u}`. For the given connected reductive
 group and maximal split torus, its premise supplies the actual
 `HasRelativeRootSystem i` realization. The published `RootFiniteness`
-module deduces finiteness of the simple roots. Worker 185's
+module deduces finiteness of the simple roots.
 `HasRelativeRootSystem.exists_standardCocharacter` in
 `RelativeRootStandardCocharacter` supplies a standard cocharacter for
 every valid subset using splitness and the generic cocharacter.
@@ -68,11 +69,10 @@ The full actual root-system realization remains an explicit premise; this
 reduction does not construct it from connected reductivity.
 
 The provenance is internal specialization and assembly of the named
-published transport, finiteness and lift-independence lemmas and Worker
-185's published interpolation and conditional root-system adapter.
-These dependencies are imported by Lean name. The all-face finiteness
-route and the underlying lift-independence and annihilator comparisons
-were developed in collaboration with Worker 1220. This module supplies
+published transport, finiteness and lift-independence lemmas and the
+published lattice interpolation of `IndependentStandardCocharacter` and
+conditional root-system adapter `RelativeRootStandardCocharacter`.
+These dependencies are imported by Lean name. This module supplies
 conditional reductions and an unconditional quotient-indexed conjugate
 construction; it supplies no unconditional actual root-system realization
 or simple-root independence theorem.

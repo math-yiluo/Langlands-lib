@@ -1,6 +1,6 @@
 # Rapid decay of the cuspidal open-cell factor integral
 
-This internal assembly unit turns the cutoff-power factor-integral
+This internal assembly module turns the cutoff-power factor-integral
 estimate into the arbitrary-polynomial decay used for the open-cell
 part of VIII.3.1.
 
@@ -32,7 +32,7 @@ It applies `lintegral_cuspidalFactors_le_of_tail` at the exponent chosen
 by the real-variable lemma, with `η = δU⁻¹`, then multiplies the two
 finite constants.
 
-All analytic and geometric premises are explicit. This unit does not
+All analytic and geometric premises are explicit. This module does not
 prove the actual Xi or constant-term estimates and does not assert the
 closed actual-point VIII.3.1 statement. It removes any need to repeat
 the older representative-wise tail argument when whole-Levi

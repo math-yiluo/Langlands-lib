@@ -1,9 +1,10 @@
 # Complex Weil–Deligne parameters and their rank-indexed classes
 
-Worker 17 adds the topological conditions to the algebraic pair category
+This module adds the topological conditions to the algebraic pair category
 of `WeilDeligne.Basic`. The group, inertia subgroup, norm character and
-integer degree map are supplied explicitly. The later local-field assembly
-will instantiate them from the actual Weil pullback.
+integer degree map are supplied explicitly. The local-field module
+`Langlands.Weil.Local.Parameters` instantiates them from the actual Weil
+pullback of `Langlands.Weil.Local.Assembly`.
 
 `IsParameter I A` means that the underlying complex representation has
 open inertia kernel, exactly through the separately defined
@@ -45,15 +46,14 @@ or continuity equivalence.
 - Literature ID: `tate-1979-number-theoretic-background`.
 - Source SHA-256: `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 - Mathlib commit: `5ed2965256430c3649e86755f9576b54eca72435`.
-- `WeilDeligne.Basic` is included in this same contribution.
-- The external project definition dependency is the accepted
-  finite-representation foundation `9bc9ac90-547a-485c-a632-039a3e1214a7`
-  version 1, published and current at
-  `843c574c920aa9926ab56adf662c74b3cd4ed0e1`, integration
-  `6dea9fb977784cfa93d8d9b241e063f3`. Its `Basic` and `Predicates` pairs
-  retain their exact reviewed source hashes.
+- `WeilDeligne.Basic` is ported together with this module.
+- The external project definition dependency is the
+  finite-representation foundation under `Langlands.Weil.Representation`,
+  published at Library commit
+  `843c574c920aa9926ab56adf662c74b3cd4ed0e1`. Its `Basic` and `Predicates` pairs
+  retain their exact source hashes.
 
-This pair compiles in the pinned environment and remains development pending independent review.
+This pair compiles in the pinned environment.
 
 Additional source alignment: Henniart, *Une caracterisation de la
 correspondance de Langlands locale pour GL(n)* (2002), §1.1, printed

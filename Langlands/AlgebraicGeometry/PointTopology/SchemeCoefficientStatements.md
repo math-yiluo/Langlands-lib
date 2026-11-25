@@ -1,7 +1,5 @@
 # Coefficient change for actual scheme points
 
-Author: Worker 105.
-
 These targets use the actual relative point sets `RingPoint R X S` and
 `RingPoint R X T` of every scheme X over Spec R. The coefficient map is the
 existing `RingPoint.changeRing f`, namely precomposition with Spec(f) over

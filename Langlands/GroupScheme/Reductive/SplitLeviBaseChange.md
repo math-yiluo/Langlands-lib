@@ -1,8 +1,6 @@
 # Base change of Levi comparison data to an intermediate field
 
-Author: Worker 5662.
-
-This module proves clause 4 of Task 7605: the comparison of Tits obstructions after a scalar
+This module proves the comparison of Tits obstructions after a scalar
 extension `E/k`, for the base change of the original centralizer and its actual derived
 subgroup. Let `k ⊆ E ⊆ K` be a tower of fields with `K/E` Galois. After base change, the
 original maximal split torus `S_E` may cease to be maximal, and the derived subgroup
@@ -10,7 +8,7 @@ original maximal split torus `S_E` may cease to be maximal, and the derived subg
 (`GaloisPinningData.LeviComparison`, module `Reductive/SplitLeviComparison`) along the base
 change, and neither property is needed. It then applies the general comparison of module
 `Reductive/SplitLeviTitsComparison` over `E`. The transport of Galois pinning data, tori and
-characters along `k ⊆ E ⊆ K` is Worker 132's module `Reductive/GaloisPinningBaseChange`
+characters along `k ⊆ E ⊆ K` is the module `Reductive/GaloisPinningBaseChange`
 (`GaloisPinningData.baseChange d E`, `weightTransport`, `characterTowerEquiv`,
 `torusTowerIso`). Tits uses this comparison over vertex fields (Tits, *Représentations
 linéaires irréductibles d'un groupe réductif sur un corps quelconque*, J. reine angew.
@@ -23,7 +21,7 @@ Math. 247 (1971), §5.5 and Proposition 5.1).
   cocharacter. Its square is the base change of the square of `s`.
 - `SplitTorusDatum.baseChange_restriction`: the restriction to `S_E` of the transport of a
   character `x` of `T_K` is the base change of the restriction of `x` to `S`. The proof uses
-  Worker 132's naturality `characterTowerEquiv_comp` and the published tower compatibility
+  the naturality `characterTowerEquiv_comp` of that module and the published tower compatibility
   `StarActionFiniteStage.towerCharacterOf_baseChange` of character base change.
 - `SplitTorusDatum.baseChange_restriction_root_eq_zero_iff`: hence a root restricts to zero
   on `S_E` exactly when it restricts to zero on `S`, since character base change is
@@ -32,8 +30,8 @@ Math. 247 (1971), §5.5 and Proposition 5.1).
 ## Levi comparison data
 
 - `baseChange_vertexStar`: for `σ ∈ Gal(K/E)`, the star action of the base change on simple
-  vertices is the star action of `σ` viewed in `Gal(K/k)`. This is Worker 132's
-  `baseChangeRootDatumEquiv_comp_starAction`, read on root indices.
+  vertices is the star action of `σ` viewed in `Gal(K/k)`. This is
+  `baseChangeRootDatumEquiv_comp_starAction` (`Reductive/GaloisPinningBaseChange`), read on root indices.
 - `mem_baseChange_support`: base change keeps the simple vertices
   (`baseChange_base_support`).
 - `LeviComparison.baseChangeVertexEquiv` and `baseChangeVertexEquiv_val`: the vertex
@@ -69,7 +67,7 @@ Math. 247 (1971), §5.5 and Proposition 5.1).
   an intermediate field, so the theorem applies to it directly. For every weight `λ` of the base change `G_E` fixed by the full star action
   of `Gal(K/E)`, the actual Tits obstruction of `G_E` at `λ` equals the actual Tits
   obstruction of the base change `H_E` of the kernel at the restriction of `λ`. The
-  instance that `K/E` is Galois is found automatically. By Worker 132's
+  instance that `K/E` is Galois is found automatically. By
   `forall_fixingSubgroup_starAction_iff`, these weights are exactly the transports of the
   original weights fixed by `E.fixingSubgroup`.
 - `AnisotropicKernelIndex.baseChange_starFixedRestriction_val`: for a transported weight

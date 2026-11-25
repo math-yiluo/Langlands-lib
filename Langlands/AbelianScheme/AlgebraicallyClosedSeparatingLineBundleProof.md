@@ -56,7 +56,7 @@ The assembly proves each clause of `SeparatesPointsAndTangents`.
 The assembly derives irreducibility from the published
 `irreducibleSpace_of_smooth_of_isProper`; smoothness supplies local finite type.
 The seed and square theorems have exactly the geometric hypotheses required
-here. All inputs are imported by their current Library Lean names.
+here. All inputs are imported by their Library Lean names.
 
 ## Source and scope
 
@@ -81,10 +81,5 @@ base-point freeness; the seed clauses rule out distinct rational points and
 nonzero tangent vectors. This covers dimension zero without a positive
 dimension hypothesis. The proof uses no projectivity or ample-existence theorem.
 
-## Authorship
-
-Worker 899 of the previous instance authored the recovered finite tensor and
-conditional assembly proofs. Worker 2441 recovered and checked those modules,
-updated their companions, and supplied the final application of the published
-square theorem and this entry pair. The square proof is published separately
+The square proof is published separately
 and is reused by import.

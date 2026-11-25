@@ -1,6 +1,5 @@
 # L-factors of pairs: supercuspidal, square-integrable and tempered representations
 
-Author: Worker 11. Documentation corrections: Worker 331.
 This module, in namespace `Langlands.RankinSelberg`, states
 the L-factor computations of Section 8 of Jacquet, Piatetski-Shapiro and
 Shalika, *Rankin-Selberg convolutions*, Amer. J. Math. 105 (1983):
@@ -11,7 +10,10 @@ The induced representations are the published normalized block inductions
 `PadicField.canonicalNormalizedProductInduced` of `Induction/BlockFactors`,
 with the block shapes `succBlockShape` of `MultiplicativityStatement`. The
 module defines `IsIrreducibleComponent`, `centeredSegmentBlocks` and six
-statements, none of them proved.
+statements, none of them proved here. The five component statements are
+proved in other modules, by `supercuspidalUnequalRankLFactor`,
+`supercuspidalEqualRankLFactor`, `squareIntegrableLFactor`,
+`squareIntegrablePoleFree` and `temperedLFactor`.
 
 ## Source
 
@@ -149,8 +151,9 @@ An L-witness `P` has constant term `1`, and `L(s) = 1/P(q^{-s})`.
   models (`ψ` for the representation of larger rank, `ψ̄` for the other,
   as in JPSS). They do not contain a separate existential clause for nonzero
   functionals: they require `1/P` to generate that zeta span. The genericity
-  results cited by JPSS (Gelfand-Kazhdan, [H.J. II]) remain separate proof
-  obligations; the quotient-measure theorem below does not supply them.
+  results cited by JPSS (Gelfand-Kazhdan, [H.J. II]) are separate results, not
+  part of these statements; the quotient-measure theorem below does not supply
+  them.
 - **Components.** JPSS define `σ(π_1, …, π_m)` as the unique
   quasi-square-integrable component of `ξ`, quoting Bernstein-Zelevinsky for
   existence and uniqueness. The statement assumes that `π` is an irreducible
@@ -200,7 +203,7 @@ An L-witness `P` has constant term `1`, and `L(s) = 1/P(q^{-s})`.
   compatible quotient measure. The general existence of these generators
   from JPSS Theorem 2.7, the nonzero Whittaker functionals needed for the
   analytic argument, and the supercuspidal, square-integrable and tempered
-  formulas remain proof obligations. Each relation has at most one solution
+  formulas are not proved in this module. Each relation has at most one solution
   (`IsPadicPairLPolynomial.unique`, `IsPadicSymmetricLPolynomial.unique`);
   uniqueness alone does not establish factor existence.
 - **Measures and field.** The additive measure `ν.val` is self-dual; the
@@ -222,7 +225,6 @@ separate module.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
-or warnings. `TemperedLFactorFormulasStatement` was inspected: it returns
+The module compiles with no errors or warnings. `TemperedLFactorFormulasStatement` was inspected: it returns
 `Prop`, has universe parameters `uF uV uW uV₂ uW₂`, and uses only `propext`,
 `Classical.choice` and `Quot.sound`. There is no `sorry` and no new axiom.

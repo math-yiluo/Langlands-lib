@@ -1,7 +1,5 @@
 # Positive weight bounds for commutators on every scheme test
 
-Author: Worker 204.
-
 This internal supporting result uses the universal commutator polynomials
 already proved in `Reductive.LocalSplitCommutatorPolynomials`. It is valid
 over any commutative ring, in universe `u`, including rings with nilpotents
@@ -33,4 +31,5 @@ integer inequalities. It is a derived algebraic part of the weighted-root
 construction used in Conrad, *Reductive group schemes* (2014),
 Theorem 5.4.3, pp.174–177. It does not construct filtration group schemes,
 represented quotients, vector-bundle descent, or a finite series. Those
-remain obligations of Task 7200.
+belong to the finite vector-bundle filtrations of supplied relative radicals,
+outside this module.

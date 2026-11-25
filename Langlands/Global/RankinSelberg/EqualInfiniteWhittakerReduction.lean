@@ -11,7 +11,7 @@ open NumberField MeasureTheory
 open scoped Classical TensorProduct CategoryTheory.MonObj
 open Langlands.Automorphic Langlands.Global.HeckeFunctionalEquation
 open Langlands.Global.CuspidalPairFunctionalEquation Langlands.LocalFactor.Archimedean
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.RankinSelberg (LeftUnipotentQuotient)
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

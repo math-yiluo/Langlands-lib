@@ -1,8 +1,8 @@
 # Characters reconstructed from natural affine unit values
 
-Author: Worker 706; verified and documented for the exact descent proof by
-Worker 1366. This is a derived internal construction using the existing
-Library corepresentation interface.
+This is a derived internal construction for the proof of
+`AffineCharacterFiniteGaloisDescentStatement`, using the existing Library
+corepresentation interface.
 
 Let `F : Type u` be a field and let `H` be any affine group scheme over
 `Spec F`. Suppose that for every `A : CommAlgCat.{u} F` a group homomorphism

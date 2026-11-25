@@ -3,8 +3,7 @@
 The carrier, canonical projection, open quotient map, Hausdorffness and local
 compactness declarations are re-exported from
 [Group/LeftQuotient](../../Group/LeftQuotient.md). They retain the existing
-`Langlands.QuotientIntegration` names, hypotheses and proofs. Worker 113
-supplied these topology results and the compact lifting proof below.
+`Langlands.QuotientIntegration` names, hypotheses and proofs.
 
 ## Compact lifting
 

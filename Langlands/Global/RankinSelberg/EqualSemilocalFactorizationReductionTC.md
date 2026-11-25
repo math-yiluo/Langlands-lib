@@ -1,6 +1,6 @@
 # Totally complex reduction of the equal-rank factorization premise
 
-Module `Langlands.Global.RankinSelberg.EqualSemilocalFactorizationReductionTC`. Author: Worker 5014.
+Module `Langlands.Global.RankinSelberg.EqualSemilocalFactorizationReductionTC`.
 
 ## 1. Content and status
 
@@ -26,9 +26,10 @@ namespace `Langlands.Global.RankinSelbergGlobal`:
   need in order to elaborate, as in the module `EqualSemilocalReductionTC`.
 
 The theorem is a **conditional reduction**. It does not prove (P-TC): its three premises are
-open statements, stated in the Library by Task 7136 and proved nowhere in the Library. It is
-an intermediate result of Task 7124 in the sense of the "Intermediate results" section of
-that task's revision 1.
+statements of the archimedean theory collected in `ArchimedeanSemilocalTheoryStatement`.
+Two of them are proved nowhere in the Library; the third, `ArchimedeanCentralSignStatement`,
+is proved by `archimedeanCentralSign` (module `ArchimedeanCentralSignProof`). It is an
+intermediate result towards (P-TC).
 
 It is the totally complex companion of `equalSemilocalFactorizationReduction` (module
 [`EqualSemilocalFactorizationReduction`](EqualSemilocalFactorizationReduction.md)), which
@@ -79,10 +80,10 @@ complex field `F` of the conclusion. They are equal-rank components of the conju
 component.
 
 **Provenance.** The statement is internal: an implication between published Library
-statements, written for Task 7124 as the totally complex form of
+statements, written as the totally complex form of
 `EqualSemilocalFactorizationReductionStatement`, with the real-place premise dropped. Its
 argument follows the sketch "Derivation of `EqualSemilocalFactorizationStatement`" in the
-Markdown of `ArchimedeanSemilocalTheoryStatement` (Task 7136), which follows Cogdell 2004,
+Markdown of `ArchimedeanSemilocalTheoryStatement`, which follows Cogdell 2004,
 proof of Theorem 4.1, pp.219–220. The source citations of the three premises are in their own
 Markdown.
 
@@ -142,4 +143,6 @@ The three retained premises are `ComplexEqualFunctionalEquationStatement`,
 needs the archimedean Rankin–Selberg theory of Jacquet and Shalika at the complex places in the
 Library's normalizations, the factorization of global Whittaker functions and of the partial
 integrals into local ones, and the global triviality of the central character at `−1`; see the
-Markdown of the three statement modules of Task 7136.
+Markdown of the three statement modules `ArchimedeanFunctionalEquationStatement`,
+`ArchimedeanFactorizationStatement` and `ArchimedeanCentralSignStatement`. The last premise is
+proved in the Library (`archimedeanCentralSign`, module `ArchimedeanCentralSignProof`).

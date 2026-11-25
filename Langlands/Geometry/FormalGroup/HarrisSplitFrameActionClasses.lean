@@ -36,6 +36,7 @@ local notation "α" => pDivisibleAction Φ hp he
 local notation "Point" => SplitPDivisibleAffinePoint (W := W) (π := π) Φ hp he T
 local notation "Similitudes" => SplitFrameSimilitudes α
 
+attribute [local irreducible] CategoryTheory.Preadditive.instSemiringEnd in
 /-- The full special-fibre rigidifier obeys the inverse-precomposition formula. -/
 theorem actFrame_rigidifier (g : SplitFrameSimilitudes (Φ.pDivisibleAction hp he))
     (X : SplitPDivisibleAffinePoint (W := W) (π := π) Φ hp he T) (hExact : FiniteCartierDualExactnessStatement.{v}) :
@@ -53,7 +54,7 @@ theorem actFrame_rigidifier (g : SplitFrameSimilitudes (Φ.pDivisibleAction hp h
 
 private def orderAutOfRigidifier {R : CommRingCat.{v}} {A : Type u} [Ring A]
     {G : PDivisibleGroup R p} {a : A →+* End G} (q : OrderQuasiIsogeny a a) : orderAut a :=
-  ⟨q.val, q.commutes⟩
+  ⟨Aut.of q.val, q.commutes⟩
 
 private def frameAutOnSpecialFibre (g : Similitudes) (hExact : FiniteCartierDualExactnessStatement.{v}) :=
   orderAutOfRigidifier (inverseFrameOnSpecialFibre T hExact g).symm
@@ -71,6 +72,7 @@ private theorem act_orderAutOfRigidifier {R S : Type v} [CommRing R] [CommRing S
     PolarizedFramedTower.act (orderAutOfRigidifier q.symm) X =
       withRigidifier X (q.trans X.rigidifier) := rfl
 
+attribute [local irreducible] CategoryTheory.Preadditive.instSemiringEnd in
 private theorem framedTower_actFrame (g : Similitudes) (X : Point)
     (hExact : FiniteCartierDualExactnessStatement.{v}) :
     (actFrame g X).framedTower hExact =
@@ -97,6 +99,7 @@ private def isoAfterFrameAction {R S : Type v} [CommRing R] [CommRing S] [Algebr
     PolarizedFramedTower.Iso X' Y' :=
   hx.symm ▸ hy.symm ▸ i.act g
 
+attribute [local irreducible] CategoryTheory.Preadditive.instSemiringEnd in
 /-- The same actual target isometry identifies the framed points after inverse precomposition. -/
 def actFrameIso (g : Similitudes) {X Y : Point} {hExact : FiniteCartierDualExactnessStatement.{v}}
     (i : PolarizedFramedTower.Iso (X.framedTower hExact) (Y.framedTower hExact)) :
@@ -105,6 +108,7 @@ def actFrameIso (g : Similitudes) {X Y : Point} {hExact : FiniteCartierDualExact
     i (framedTower_actFrame g X hExact) (framedTower_actFrame g Y hExact)
   exact h
 
+attribute [local irreducible] CategoryTheory.Preadditive.instSemiringEnd in
 /-- The actual frame similitudes act on the strict polarized isomorphism classes. -/
 @[instance_reducible]
 def frameAction (hExact : FiniteCartierDualExactnessStatement.{v}) :

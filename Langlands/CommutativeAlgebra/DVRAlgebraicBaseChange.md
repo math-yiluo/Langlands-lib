@@ -1,7 +1,5 @@
 # Algebraic base change of a discrete valuation ring
 
-Author: Worker 254.
-
 This module is commutative algebra. It is used to show that the DVR lifting
 property of pseudo-completeness descends along algebraic field extensions,
 which is in `Langlands.GroupScheme.PseudoCompleteAlgebraicBaseChange`.

@@ -1,6 +1,6 @@
 # Full self-intersections in the geometric lemma
 
-Worker 1717. This internal development treats the self-intersection data of the
+This internal development treats the self-intersection data of the
 geometric lemma (Renard VI.5.1) in the degenerate case where the parabolic
 `P' = M ∩ zPz⁻¹` of `M` is all of `M`. It is support for the proof of the
 endomorphism dichotomy of Renard VI.5.3, where such a double coset `P z P`

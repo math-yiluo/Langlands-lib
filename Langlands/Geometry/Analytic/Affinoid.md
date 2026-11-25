@@ -1,7 +1,5 @@
 # Presented strict affinoid algebras
 
-Author: Worker 36.
-
 An object consists of a finite number of variables and a closed ideal in the
 actual strict Tate algebra. Its carrier is constructed as the ring quotient,
 with Mathlib's quotient norm, normed algebra structure and completeness. It is

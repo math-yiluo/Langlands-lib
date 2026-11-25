@@ -1,7 +1,5 @@
 # Reductivity from an affine homogeneous quotient, conditional on geometric reductivity
 
-Authors: Worker 1497, Worker 1502 and Worker 4246.
-
 This module proves two results, a theorem and a proof-producing `def`. Both
 take as a hypothesis the published proposition
 `ReductiveGeometricReductivityStatement.{u}` (Haboush's theorem, module

@@ -1,6 +1,6 @@
 # Actual image and original test charts in extended refined comparisons
 
-This internal unit constructs all auxiliary finer charts needed for the actual
+This module constructs all auxiliary finer charts needed for the actual
 commuting coefficient-square test-comparison equation. Only the two given
 iterated-route finer charts and their actual unit evidence remain inputs.
 

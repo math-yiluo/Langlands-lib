@@ -13,7 +13,7 @@ Anthropic FLT Lean source at commit `6e837e75355538c7f80bab5b956861e86c4eacc2`, 
 That theorem works for an arbitrary directed system of rings `G` with direct limit `R`
 (FLT's predicate `IsDirectLimit`), a stage `i`, and a quasi-compact, quasi-separated
 `fX : X ⟶ Spec (G i)`. Given two modules `𝓛₁`, `𝓛₂` on `X` that satisfy FLT's
-`Scheme.Modules.IsInvertible`, if their pullbacks along the chosen
+`Scheme.Modules.IsInvertibleFLT`, if their pullbacks along the chosen
 `pullback.fst fX (Spec.map (g i))` to `Spec R` are isomorphic, then so are their pullbacks along
 `pullback.fst fX (Spec.map (φ i j hij))` for some `j ≥ i`. The bridge does three things. It
 specialises the system to finitely generated subalgebras, converts the Library's
@@ -44,7 +44,7 @@ the chosen base change `pullback f₀ ι₀` of `X₀` to `Spec i`. Its second p
 Apply `exists_fg_nonempty_iso_pullback` at `i` to `pullback.snd f₀ ι₀` and to the modules
 `(pullback (pullback.fst f₀ ι₀)).obj M` and `(pullback (pullback.fst f₀ ι₀)).obj N`. These are
 FLT-invertible by `isInvertible_of_isLocallyFreeRankOne` and
-`Scheme.Modules.IsInvertible.pullback`.
+`Scheme.Modules.IsInvertible.pullbackFLT`.
 
 1. **Hypothesis of the FLT theorem (`h₀`).** By `nonempty_iso_pullback_pullback_iff`, its
    hypothesis asks for an isomorphism of the pullbacks of `M` and `N` along the composite

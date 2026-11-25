@@ -1,7 +1,5 @@
 # Uniform block-scalar contraction
 
-Author: Worker 70.
-
 This module states three scalar-geometric claims about the actual general
 linear group. Every new declaration is a transparent `def` returning `Prop`.
 The module proves none of these claims. All names below belong to

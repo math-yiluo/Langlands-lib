@@ -54,7 +54,7 @@ These are standard facts: the fixed field of the Galois group of a finite
 Galois extension is the base field, and the sequence `F → L → L ⊗[F] L` is
 exact for a faithfully flat algebra. The Lean proofs apply Mathlib's versions
 of both facts coefficientwise. The statements are derived internal helpers,
-not quoted from a source. They were written for Worker 1001's torus cocharacter
-detection, which descends a cocharacter datum from an extension field to the
+not quoted from a source. They were written for the torus cocharacter
+detection (module `Langlands.GroupScheme.Torus.CocharacterDetection`), which descends a cocharacter datum from an extension field to the
 base field. That application is in a separate module; this module states only
 the coefficient facts above.

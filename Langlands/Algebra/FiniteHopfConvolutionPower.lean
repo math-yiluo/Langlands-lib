@@ -2,7 +2,7 @@ import Mathlib.RingTheory.HopfAlgebra.Convolution
 import Mathlib.RingTheory.Bialgebra.TensorProduct
 import Mathlib.LinearAlgebra.Determinant
 import Mathlib.RingTheory.Norm.Basic
-import Langlands.TauCeti.Algebra.Coalgebra.Convolution
+import Langlands.RingTheory.Coalgebra.TensorConvolution
 
 /-! # Points of a finite commutative cocommutative Hopf algebra are killed by its rank -/
 
@@ -168,7 +168,7 @@ lemma shearAlgHom_comp_shearInvAlgHom :
         toConv (Algebra.TensorProduct.includeRight : H →ₐ[k] H ⊗[k] H)) = _
     rw [map_mul, postcomp_inv, postcomp_toConv, postcomp_toConv, shearAlgHom,
       Algebra.TensorProduct.lift_comp_includeLeft, Algebra.TensorProduct.lift_comp_includeRight',
-      TauCeti.Bialgebra.comulPoint_eq_include_mul]
+      Langlands.Bialgebra.comulPoint_eq_include_mul]
     exact inv_mul_cancel_left (G := WithConv (H →ₐ[k] H ⊗[k] H)) _ _
 
 omit [IsCocomm k H] in
@@ -182,7 +182,7 @@ lemma shearInvAlgHom_comp_shearAlgHom :
     rw [shearAlgHom, Algebra.TensorProduct.lift_comp_includeRight']
     apply WithConv.toConv_injective
     change postcomp (shearInvAlgHom k H) (toConv (Bialgebra.comulAlgHom k H)) = _
-    rw [TauCeti.Bialgebra.comulPoint_eq_include_mul, map_mul, postcomp_toConv, postcomp_toConv,
+    rw [Langlands.Bialgebra.comulPoint_eq_include_mul, map_mul, postcomp_toConv, postcomp_toConv,
       shearInvAlgHom, Algebra.TensorProduct.lift_comp_includeLeft,
       Algebra.TensorProduct.lift_comp_includeRight', WithConv.toConv_ofConv]
     exact mul_inv_cancel_left (G := WithConv (H →ₐ[k] H ⊗[k] H)) _ _

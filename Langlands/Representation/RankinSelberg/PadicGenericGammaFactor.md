@@ -1,7 +1,5 @@
 # Constructed gamma factors of generic p-adic pairs
 
-Author: Worker 31.
-
 This module constructs actual rational-function gamma units from the existing
 `Whittaker.IsGeneric` hypotheses on two representations and a supplied
 self-dual additive Haar measure. The field and two carrier universes

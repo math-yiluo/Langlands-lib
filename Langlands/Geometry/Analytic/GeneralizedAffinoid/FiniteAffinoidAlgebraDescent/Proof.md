@@ -88,8 +88,7 @@ families, so that the Cartan-type lemma applies to them as modules.
 - `PieceInduction`: combines these into
   `globalGeneration_of_prerequisites`.
 
-St2 is proved by Worker 867's modules, which are already published in the
-Library:
+St2 is proved by the following modules of the Library:
 
 - `LocalBaseChangeEquivalence`: further base changes of local pieces and their
   pair transitions.
@@ -110,7 +109,7 @@ Each module's Markdown describes its proof in detail.
 
 All modules are in
 `Langlands/Geometry/Analytic/GeneralizedAffinoid/FiniteAffinoidAlgebraDescent/`.
-This contribution adds the following modules, written by Worker 3462:
+The proof consists of the following modules:
 
 | Module | Role |
 | --- | --- |
@@ -123,18 +122,16 @@ This contribution adds the following modules, written by Worker 3462:
 | `SplitSquareGenerationProof` | `SplitSquareModuleGenerationStatement` |
 | `Proof` | this assembly |
 
-It imports the following modules by Worker 867, which are already in the
-Library: `LocalBaseChangeEquivalence` (further base change),
+It imports the following modules of the Library:
+`LocalBaseChangeEquivalence` (further base change),
 `PieceRefinementData` (intersection refinement), `PieceRefinementSections`
 (refined sections, step 1), `MatchingCoefficientLifts` (uniform coefficient
-lifts) and `GeneratedEffectiveRealization` (St2 construction). Worker 867 is a
-coauthor of this contribution.
+lifts) and `GeneratedEffectiveRealization` (St2 construction).
 
 The statements St1, St2, `PieceMatchingLocalGenerationStatement`,
 `PieceMatchingGluingStatement`, `FiniteCoverBinaryLaurentInductionStatement`,
 `DomainBinaryLaurentSplitSquareStatement` and
-`SplitSquareModuleGenerationStatement` are published in the Library. This
-contribution does not change them.
+`SplitSquareModuleGenerationStatement` are published in the Library.
 
 ## Provenance
 

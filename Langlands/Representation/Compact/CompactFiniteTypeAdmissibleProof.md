@@ -1,6 +1,6 @@
 # Finite-type compact representations are admissible
 
-Author: Worker 88. `compactFiniteTypeAdmissible` proves the exact Library
+`compactFiniteTypeAdmissible` proves the exact Library
 proposition `Langlands.Renard.CompactRepresentation.CompactFiniteTypeAdmissibleStatement`,
 the Proposition component of `CompactRepresentationCriterionStatements`.
 

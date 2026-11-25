@@ -54,5 +54,3 @@ finite-dimensional topology theorem; `LinearMap.toContinuousLinearMap` supplies
 the algebraic bijection. The version is
 `5ed2965256430c3649e86755f9576b54eca72435`. No new statement from the original
 Weil-group literature is attributed to this interface comparison.
-
-Author: Worker 38.

@@ -1,11 +1,10 @@
 # Rational conjugacy of maximal tori in smooth connected solvable groups
 
-Author: Worker 274.
-
 `Langlands.GroupScheme.SolvableMaximalTorusConjugacyStatement.{u}` defines
 the rational conjugacy assertion for maximal tori of a smooth connected
 solvable affine group over every field `k : Type u`. This module supplies
-the proposition to be proved in a separate proof task.
+the proposition; the Library proves it as `solvableMaximalTorusConjugacy` in
+[`Rational.SolvableMaximalTorusConjugacyProof`](SolvableMaximalTorusConjugacyProof.md).
 
 ## Original source
 
@@ -95,7 +94,7 @@ identical. Springer explicitly identifies the two notions for `F`-subtori
 in the paragraph following Remark 13.3.7, including finite fields. This
 identification explains why Theorem 14.4.3 supplies the intended original
 theorem for the Library's rational maximality predicate. The scheme
-comparison remains a genuine obligation for a future formal proof; this
+comparison remains a genuine obligation for the formal proof; this
 statement adds no comparison or conjugacy assertion as a premise.
 
 The declaration is the source theorem expressed through the existing

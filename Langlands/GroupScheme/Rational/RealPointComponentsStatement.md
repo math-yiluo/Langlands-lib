@@ -121,8 +121,11 @@ and `SL_2(ℝ)` is connected. Simple connectivity is needed in part 1:
 `PGL_2` is semisimple and `PGL_2(ℝ)` has two components, as the sign of the
 determinant is well defined modulo squares.
 
-Relation to the Library. The Library has no statement of Theorem 25.54 or
-Corollary 25.55. Related declarations:
+Relation to the Library. The Library proves this statement as
+`realPointComponents` (module `Rational.RealPointComponentsProof`), and
+proves part 2 also on its own, as
+`finite_connectedComponents_of_isConnectedReductive` (module
+`Rational.RealPointComponentsFinite`). Related declarations:
 
 - `realSmoothAffineLieGroup` (in
   [`GroupScheme.SmoothAffinePointLieGroup`](../SmoothAffinePointLieGroup.md))
@@ -158,7 +161,7 @@ concerns terminology in Section g (it reads: I sometimes write "cohomology
 group" for "cohomology set"). This does not affect Theorem 25.54 or
 Corollary 25.55.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
 
 Milne gives no self-contained proof of either part.
 

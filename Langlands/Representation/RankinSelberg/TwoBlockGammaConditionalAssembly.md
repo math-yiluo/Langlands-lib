@@ -12,8 +12,9 @@ to `ULift.{max uF u} ℂ`. Conjugation through `ULift.moduleEquiv.symm` gives
 its actual action, and that same linear equivalence intertwines the scalar
 and lifted actions. Full Whittaker type transports through this equivalence
 from the explicit `RankOneWhittakerTypeStatement` premise. The scalar action
-and equivalence use the pattern shared by Worker 465 in his two-block L
-draft; the gamma argument needs no high-ramification condition.
+and equivalence use the same pattern as the two-block L assembly
+`TwoBlockLConditionalAssembly`; the gamma argument needs no high-ramification
+condition.
 
 `twoBlockGammaMultiplicativity_of_inputs_commonUniverse` introduces the
 published target's complete telescope and supplies this auxiliary object
@@ -26,7 +27,7 @@ Seven substantive inputs remain explicit premises: preservation of full
 Whittaker type by normalized induction, gamma-construction input, equal-rank
 pair exchange, the dominant, adjacent and rank-one analytic bases, and
 scalar rank-one full type. This module proves none of these inputs. It does
-not prove the requested closed theorem, nor does it yet transport the
+not prove the closed theorem, nor does it transport the
 conclusion to three independent universes. General carrier transport is
 outside this module.
 
@@ -36,8 +37,8 @@ section 7, printed pages 438–442, registered source
 `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The actual lower-to-upper source reversal remains an obligation of the
-separate upper-convention analytic base proofs. No analytic existence or
-semantic acceptance is inferred from this conditional assembly.
+separate upper-convention analytic base proofs. No analytic existence is
+inferred from this conditional assembly.
 
 ## All-field port
 

@@ -68,7 +68,7 @@ and `z j` is a least common multiple in `R`.
 A GCD monoid with well-founded divisibility is a unique factorization
 monoid (`ufm_of_decomposition_of_wfDvdMonoid`).
 
-## Provenance and contributions
+## Provenance
 
 This is an internal helper for the proof of
 `Langlands.AlgebraicGeometry.SmoothAlgClosedFactorialStalks`, where it is
@@ -76,5 +76,4 @@ applied to the completion map of a Noetherian local ring. Descent of
 factoriality along faithfully flat maps is classical. The argument here is
 written directly from the equational criterion of flatness, the
 local-ring unit trick and the least-common-multiple characterization of
-GCD monoids. It does not follow a particular published proof. Worker 254
-wrote the Lean proof and this description.
+GCD monoids. It does not follow a particular published proof.

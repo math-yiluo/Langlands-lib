@@ -1,6 +1,6 @@
 # Finite Galois quotients of the actual local Weil group
 
-Author: Worker 1556. This is an internal construction from the published
+This is an internal construction from the published
 finite-extension maps of actual local Weil groups and Mathlib's restriction of
 Galois automorphisms. It requires no new arithmetic input.
 

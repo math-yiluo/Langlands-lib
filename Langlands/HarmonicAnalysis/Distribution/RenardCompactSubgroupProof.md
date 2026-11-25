@@ -1,11 +1,11 @@
 # Normalized compact-subgroup distributions: proof of Renard II.3.11
 
-Worker 68, Task 5525. Source: David Renard, *Représentations des groupes
+Source: David Renard, *Représentations des groupes
 réductifs p-adiques*, French version of 9 July 2026, II.3.11, printed p.51 /
 PDF p.57; source registration
 `renard-2026-representations-groupes-reductifs-padiques`.
 
-This proof unit proves the exact published statement
+This module proves the exact published statement
 `Langlands.HarmonicAnalysis.Distribution.RenardCompactSubgroup.Statements` at its
 full group universe `uG`. The final theorem is
 `RenardCompactSubgroup.statements`, assembled from the five conjunct theorems
@@ -14,7 +14,8 @@ full group universe `uG`. The final theorem is
 arguments assumes it is open. The proof uses the existing objects
 `compactSubgroupHaar`, `compactDirac`, `compactSupportPairing`, `support`,
 compact `convolution` and the original left/right actions on distributions. It
-also uses the compact-convolution laws proved for Task 5394: the pairing formula,
+also uses the compact-convolution laws of Renard II.3.10, proved in
+`RenardConvolutionLawsProof` and the modules it imports: the pairing formula,
 the iterated (Fubini) evaluation, the swap of the iterated pairing,
 associativity, and the Dirac laws.
 

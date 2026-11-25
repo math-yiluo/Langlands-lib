@@ -1,6 +1,6 @@
 # The exponent-transfer step of Renard VII.1.3 from the geometric lemma
 
-Author: Worker 1714. This is an internal conditional reduction for the proof of Renard
+This is an internal conditional reduction for the proof of Renard
 VII.1.3.
 
 `MaximalLeviSupercuspidalExponentTransferReductionStatement` is the implication
@@ -27,7 +27,7 @@ used unchanged.
 
 The implication is internal: it has no separate counterpart in the literature. It is
 the step of Renard's proof of VII.1.3 that passes from the parabolics `P` and `P'` to all
-parabolics, recorded as a statement so that it can be reviewed on its own.
+parabolics, recorded as a statement on its own.
 
 ## Source
 

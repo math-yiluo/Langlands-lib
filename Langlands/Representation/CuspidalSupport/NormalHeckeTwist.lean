@@ -218,17 +218,17 @@ variable {ι : Type*} [AddCommGroup ι] {p : G → ι}
 theorem twistHomEquiv_comp (hp : IsDegree H p) {a : ι} {α : End (inducedRep H ρ)}
     (hα : α ∈ component H ρ hH p a) {g₀ : G} (hg₀ : p g₀ = a)
     (φ : inducedRep H ρ ⟶ B.twist ω hω) :
-    twistHomEquiv ρ hH ω hω hωH B (α ≫ φ) =
-      ((ω g₀ : ℂ)⁻¹) • (α ≫ twistHomEquiv ρ hH ω hω hωH B φ) := by
+    twistHomEquiv ρ hH ω hω hωH B (α.asHom ≫ φ) =
+      ((ω g₀ : ℂ)⁻¹) • (α.asHom ≫ twistHomEquiv ρ hH ω hω hωH B φ) := by
   refine induced_hom_ext hH fun w => ?_
   have hF : ∀ x, x * g₀⁻¹ ∉ H → eval H ρ.representation
-      (SmoothRep.hom α (unitFunction H hH ρ.representation ρ.isSmooth w)).1 x = 0 := by
+      (SmoothRep.hom α.asHom (unitFunction H hH ρ.representation ρ.isSmooth w)).1 x = 0 := by
     intro x hx
     refine congrArg (fun T : Module.End ℂ ρ => T w) (hα x fun hpx => hx ?_)
     rw [← hp.eq_zero_iff, hp.map_mul, hp.map_inv, hpx, hg₀, add_neg_cancel]
   rw [hom_twistHomEquiv_unitFunction]
-  change SmoothRep.hom φ (SmoothRep.hom α _) = (ω g₀ : ℂ)⁻¹ •
-    SmoothRep.hom (twistHomEquiv ρ hH ω hω hωH B φ) (SmoothRep.hom α _)
+  change SmoothRep.hom φ (SmoothRep.hom α.asHom _) = (ω g₀ : ℂ)⁻¹ •
+    SmoothRep.hom (twistHomEquiv ρ hH ω hω hωH B φ) (SmoothRep.hom α.asHom _)
   rw [hom_twistHomEquiv_of_support hH hωH φ _ hF, smul_smul,
     inv_mul_cancel₀ (Units.ne_zero _), one_smul]
 

@@ -1,6 +1,6 @@
 # Proof: Renard III.3.2, smooth global sections
 
-Worker 140 wrote this proof for Task 5597. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.HomogeneousSmoothGlobalProof.smoothGlobalAlphaBeta :
 HomogeneousSectionStatements.SmoothGlobalAlphaBetaStatement`. It proves that published
 statement from `Langlands/Sheaf/Renard/HomogeneousSectionStatements.lean`, and the

@@ -1,10 +1,10 @@
 # Coinduction of sheaves to equivariant sheaves
 
-Author: Worker 61. Built on the published transport category
+Built on the published transport category
 `Langlands.Sheaf.Equivariant.ActionOpens`, the transport site and sheaf
 equivalence `Langlands.Sheaf.Equivariant.Site`, and the forgetful functor
-`toSheaf` of `Langlands.Sheaf.Equivariant.Topological`. It imports Worker
-13's `Langlands.Sheaf.Equivariant.Induction`, the left adjoint of `toSheaf`,
+`toSheaf` of `Langlands.Sheaf.Equivariant.Topological`. It imports
+`Langlands.Sheaf.Equivariant.Induction`, the left adjoint of `toSheaf`,
 and is the dual construction.
 
 Let a group `G` act on a topological space `X` by continuous translations,
@@ -87,8 +87,8 @@ Proposition 1.5.1, printed p.10, describes `ν_* ν^* F` restricted to an open
 subgroup `N` through the coset decomposition `G = ∐ g_j N` and the
 translated points `g_j⁻¹ x_i`. So pushing forward from points to the
 equivariant site introduces a product over group translates. Coinduction is
-this group factor on the ordinary-topological transport site. Worker 61 read
-these passages in the original.
+this group factor on the ordinary-topological transport site. These passages
+were read in the original.
 
 The setting is the ordinary-topological transport site of an abstract group
 action, not Berkovich's analytic étale site. The module makes no smoothness

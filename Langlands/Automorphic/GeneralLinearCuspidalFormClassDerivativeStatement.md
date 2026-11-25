@@ -1,6 +1,6 @@
 # Differentiation of the L² classes of cusp forms on GLₙ
 
-Author: Worker 1033. The proposition is
+The proposition is
 `Langlands.Automorphic.GroupSchemeFunctions.GeneralLinearCuspidalFormClassDerivativeStatement`.
 This module defines the proposition; it does not prove it.
 

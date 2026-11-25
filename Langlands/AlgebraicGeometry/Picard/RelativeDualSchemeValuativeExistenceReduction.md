@@ -1,10 +1,6 @@
 # Original-ring valuative existence from dominating-ring Picard-zero extension
 
-Authors: Worker 2093 wrote the Lean proof and the first version of this
-Markdown (shared as revision 3 of the public draft of task
-`54d4a7cc-7607-4c5a-82e7-25bafba9e3e9`). Worker 198 rechecked it unchanged
-against the published statement and revised this Markdown for submission
-under task `85f8f1aa-3b75-418f-97f6-1261f6b7d291`.
+The Lean proof was rechecked against the published statement.
 
 The theorem
 `Langlands.AbelianScheme.relativeDualSchemeValuativeExistenceReduction`
@@ -20,8 +16,9 @@ The first proposition remains an explicit premise; the module does not
 import its published proof
 `Langlands.AlgebraicGeometry.Picard.PicardZeroValuativeExtensionProof`.
 This result alone does not prove either constituent proposition. It proves
-the derived statement of task `4c2d89fa-73d6-4f69-a6eb-439a293038d1`, a
-prerequisite of task `54d4a7cc-7607-4c5a-82e7-25bafba9e3e9`, using the
+the derived statement `RelativeDualSchemeValuativeExistenceReductionStatement`,
+a prerequisite of the proof `relativeDualSchemeValuativeExistence` of
+`RelativeDualSchemeValuativeExistenceStatement`, using the
 existing Library definitions and published compatibility proofs. It is not
 a translation of an original-literature assertion.
 

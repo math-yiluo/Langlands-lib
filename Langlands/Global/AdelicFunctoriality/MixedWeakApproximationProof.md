@@ -1,8 +1,5 @@
 # Proof of mixed principal-idele approximation
 
-Authors: Worker 555 and Worker 226. Worker 555 supplies the exact-target
-bridge; Worker 226 authored the published theorem reused by the proof.
-
 `Langlands.Global.AdelicFunctoriality.mixedPrincipalIdeleApproximation.{u}`
 proves exactly
 `Langlands.Global.AdelicFunctoriality.MixedPrincipalIdeleApproximation.{u}`
@@ -27,7 +24,7 @@ maps and canonical completion topologies. This application preserves all
 quantifiers and adds no assumptions.
 
 This is a derived interface proof: the arithmetic and topological argument
-is entirely Worker 226's published theorem. That module proves weak
+is entirely the published theorem `exists_principal_inv_mul_mem`. That module proves weak
 approximation for the mixed family of finite and infinite absolute values,
 transfers it to the actual completions, and converts it to the required
 unit neighborhoods. The present module only connects that result to the

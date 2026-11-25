@@ -9,11 +9,11 @@ coordinates. All proofs are complete. The combinatorial lemmas about these
 functions are stated in `Langlands.LinearAlgebra.ArthurCombinatoricsStatement`
 (see its Markdown).
 
-This is the first part of item 1 ("parabolic combinatorics") of the L3
-truncation block, Task 5536, carried out by the parent program. The contract
-of Task 5536 allows an abstract layer over a root pairing with a base,
-provided its specialization to the actual relative root system is
-constructed. The specialization is not part of this module (see Scope).
+This is the first part ("parabolic combinatorics") of the construction of
+Arthur's parabolic combinatorics, `(G, M)`-families and truncation for
+reductive groups over number fields. The abstract layer over a root pairing
+with a base is meant to be specialized to the actual relative root system.
+The specialization is not part of this module (see Scope).
 
 ## Sources
 
@@ -154,7 +154,7 @@ Mathlib base `b : P.Base`. That is a real restriction.
 - So a non-reduced root system of type `BC` has no Mathlib base. Already
   `BC_1`, with roots `±a, ±2a`, has none: choosing `a` leaves the coroot
   `a^∨/2` of `2a` outside the integral span of `a^∨`, and choosing `2a`
-  leaves `a` outside the span of `2a`. (Reviewer 2215 observed this.)
+  leaves `a` outside the span of `2a`.
 
 The relative root system of a connected reductive group can be of type `BC`.
 For such a group the module does not apply to the full relative root system.
@@ -165,7 +165,7 @@ roots, with their coroots. Arthur's constructions use only `Δ_0` and the
 coroots `α^∨`, `α ∈ Δ_0`. So the intended specialization goes through that
 reduced subsystem. Constructing it, with its Mathlib base, and comparing its
 roots, coroots, weights and parabolic indexing with the full relative root
-system remains an obligation. It is not done here.
+system is not done here.
 
 ## Scope
 
@@ -179,8 +179,7 @@ needs the following, none of which is done here:
   for it (see above), compared with
   `HasRelativeRootSystem.simpleRelativeRootBasis`;
 - base change to `ℝ`;
-- the identification of `𝔞_P` with `RealCharacterDual F P` (Task 5536,
-  item 1).
+- the identification of `𝔞_P` with `RealCharacterDual F P`.
 
-It also leaves out `(G, M)`-families and truncation (items 2 and 3 of
-Task 5536).
+It also leaves out `(G, M)`-families (`Langlands.LinearAlgebra.GMFamilies`)
+and truncation.

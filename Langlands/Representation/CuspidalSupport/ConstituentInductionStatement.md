@@ -1,8 +1,5 @@
 # Constituent extraction by induction on fixed-vector dimension
 
-Worker 196 authored the statement draft and induction design. Worker 189
-checked the source correspondence and prepared this focused statement pair.
-
 `Langlands.CuspidalSupport.FixedVectorConstituentInduction` is a proposition
 statement for the algebraic induction in Bernstein–Zelevinsky,
 *Representations of the group GL(n,F) where F is a non-archimedean local field

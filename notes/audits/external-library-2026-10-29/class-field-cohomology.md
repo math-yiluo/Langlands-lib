@@ -1,15 +1,13 @@
 # External Library audit 2026-10-29: class field theory, cohomology and global arithmetic
 
-Worker 1056, with the verification reports and corrections of Worker 1061.
 This note records the verdicts for the 19 findings P3-004–P3-011, P3-020–P3-022,
-P3-050–P3-056 and P3-058 assigned by task
-`1b73f1f7-c0da-4aa1-82d0-0365caf45751`, revision 2. The source report is the
+P3-050–P3-056 and P3-058 of the external Library audit of 2026-10-29. The source report is the
 registered `external-library-audit-2026-10-29-3987c3d`, file
 `FINAL_AUDIT_3987c3d.md` (rows 67–74, 88–90, 135–141 and 143). Its allegations
 were treated as unverified. They were checked against complete Lean
 declarations, section variables, universes, paired Markdown, the original
-source where one is cited, and the authoritative candidate, review and
-publication records.
+source where one is cited, and the record of the corrections that entered
+the Library.
 
 ## Snapshots and verdict convention
 
@@ -29,7 +27,7 @@ abbreviate `Langlands/ClassField`, `Langlands/ClassFieldTheory`,
 `Langlands/Cohomology`, `Langlands/Sheaf` and `Langlands/Global/Arithmetic`.
 Line numbers refer to A unless C is named.
 
-The 21 owned file pairs (see the fingerprints below) were followed through
+The 21 audited file pairs (see the fingerprints below) were followed through
 the Library history. `b58bd42aee6a565b689f0f0c008506e23b1b6560` leaves them
 byte-identical to A. The corrections changed them in
 `bc8de2287e5c24972c55277b2aa9611523dfc5dc` (keys H, Q, C1, C2, G),
@@ -38,48 +36,34 @@ byte-identical to A. The corrections changed them in
 `cde31751c7864199419ad8fae8b7f3474639ba24` (T2, A2) and
 `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` (S, V, W, K). The intermediate
 heads `047f3489`, `c8ae014c`, `f35c1c21` and `9330fa8d` leave them
-byte-identical to `6a6c913c`. The publication receipts give `9330fa8d` as the
-previous head of `cde31751`, and `cde31751` as the previous head of `3c5f9241`.
-Among the owned pairs, these two commits change only the files of the six keys
+byte-identical to `6a6c913c`. In the Library's history, `9330fa8d` is the
+previous head of `cde31751`, and `cde31751` the previous head of `3c5f9241`.
+Among the audited pairs, these two commits change only the files of the six keys
 published in them. So no other publication repaired or reintroduced any finding. The comparison
 snapshot is Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` (C below). At
-C all 19 findings are repaired, and every owned pair is byte-identical to the
+C all 19 findings are repaired, and every audited pair is byte-identical to the
 files of each published candidate that contains it. The later head
 `d1abfe1f26a6fdf1d986073e68c049e12c3f6ea5` only adds another audit note and
-changes `wiki/README.md`, so every Lean file and every owned pair there is
+changes `wiki/README.md`, so every Lean file and every audited pair there is
 byte-identical to C.
 
-### Corrections inside this task (revision 2)
+### Corrections
 
-The corrections were made inside this task. Revision 1 of the task asked that
-corrections spanning independent reviewable units first be split into focused
-child tasks. Revision 2 replaced only that sentence (operator decision
-`faf0e51e963f5679b2a0265c153b78df`, relayed by Worker 0). Under revision 2
-the executors may make corrections inside this task, as focused candidates
-that are each validated, independently reviewed and published. A child task
-is required only for a change of a Lean statement or proof target, or for an
-edit outside the assigned pairs. Neither occurred, so no child task was
-created.
-
-The 11 corrections published before the revision change keep their actual
-receipts, which bind them to task revision 1. The other six candidates had been
-approved in review under revision 1 but were not yet published when the
-revision changed. The revision change superseded them and invalidated their
-reviews. Each was resubmitted against revision 2 as one replacement candidate,
-with the same files as the superseded candidate, reviewed again and published.
-Both the superseded and the replacement receipts are listed in the release
-table.
+Each correction is a focused change; none changes a Lean statement or proof
+target, and none edits a file outside the pairs concerned. For six of the
+corrections an earlier, identical version did not enter the Library; the
+version that did is listed in the correction table.
 
 ### Lean evidence
 
-The Lean environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). The statements,
+The Lean environment is Lean 4.34.0 with Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. The statements,
 hypotheses and universes of the proved declarations cited in this note were
 read from their complete declarations in the Library source, at the lines
-given in the ledger. Private `lean_check` probes, which are not Library files,
+given in the ledger. `lean_check` probes, which are not Library files,
 added the following machine checks.
 
-- Diagnostic `1bf9ea6d-fc53-4ad2-8539-2cdf6198f5be` ran before C. It printed
+- A first diagnostic ran before C. It printed
   the axiom dependencies of 22 proved declarations and reported only
   `propext`, `Classical.choice` and `Quot.sound` for each:
   `finiteQuotientComparisonIsIso`, `restrictionComparisonLaws`,
@@ -97,7 +81,7 @@ added the following machine checks.
   declarations: `finiteQuotientComparisonIsIso`,
   `generalLinearSigmaCompactSpace` and the P3-006 exports
   `exists_pow_eq_one_add_sq_mul` and `infiniteUnitPowers_two_finiteIndex`.
-- Diagnostic `9fd5107b-8bf5-4ab0-9636-8317c3a4a7a1` ran at C with
+- A second diagnostic ran at C with
   `pp.universes true` and reported no errors or warnings. For each of the same
   22 declarations and the two P3-006 exports, it printed the type (`#check`)
   and the axiom dependencies (`#print axioms`). Every axiom list is again
@@ -108,12 +92,12 @@ added the following machine checks.
   AcyclicResolutionComparisonStatement.{u_1, u_2, u_3, u_4}`. The types of
   `smoothGodementZeroCSoft`, `generalLinearSigmaCompactSpace` and the two
   P3-006 exports are printed with their full binder lists.
-- Diagnostic `575fe032-3d5f-47c9-8b16-25022fe839af` (for P3-004) imports only
+- A diagnostic for P3-004 imports only
   Mathlib. It proves `FiniteDimensional F E` for `F E : Type` under
   `[Field F] [Field E] [NumberField E] [Algebra F E]`, with no errors and three
   style warnings. The Library variables (CF/Global/ArchimedeanLocalHerbrand.lean:95)
   have `F E : Type u`; the argument does not depend on the universe.
-- Diagnostic `f6ea4eed-10dc-4399-9ca6-9ef75777ebe9` (for P3-053) reported no
+- A diagnostic for P3-053 reported no
   errors or warnings. It elaborates `acyclicResolutionComparisonStatement` at
   `AcyclicResolutionComparisonStatement.{u + 1, u, u + 1, u}` (the hypothesis
   of `comparisonIso`, Coh/SmoothGodementComparison/Transformation.lean:128 at C) and
@@ -124,8 +108,8 @@ added the following machine checks.
 An axiom list shows only that a declaration is proved without `sorryAx` or an
 added axiom. A printed type that is only a statement name does not show what
 the statement says. The content, hypotheses and scope of each cited statement
-come from reading its Lean source. Worker 1061 checked their corrected
-modules by compilation only. Their counterexamples were checked by hand, not in Lean.
+come from reading its Lean source. The corrected modules of some findings
+were checked by compilation only. Their counterexamples were checked by hand, not in Lean.
 
 ## Per-finding ledger
 
@@ -151,12 +135,12 @@ Each verdict is for A. The correction keys refer to the release table below.
 | P3-022 (a): σ-compactness | Holds | The docstring of `glSupercuspidalRestriction_of_compactModCenter` (Coh/SupercuspidalRestriction/Statement.lean:116–119) says that total disconnectedness and σ-compactness of `GL_n(F)` "are not proved in the Library". `PadicField.TopologicalData.generalLinearSigmaCompactSpace` (Langlands/Group/GL/CountabilityProof.lean:13) proves `SigmaCompactSpace` for `T.generalLinearTopology n`, the canonical topology. | Docstring (Lean:118–122 at C) and Markdown (md:83–97, 248–253 at C) cite it. The instance arguments are kept. |
 | P3-022 (b): total disconnectedness | Holds; proofs are private | The only proofs are two `private` theorems `generalLinearTotallyDisconnected` (Langlands/Representation/CuspidalSupport/LeviAdmissibleFactorizationProof.lean:29, Langlands/Representation/Tensor/FactorMatchingProof.lean:324), which other modules cannot use. No public theorem exists at A or C. md:81–83 ("Instance search finds neither") is accurate for instance search. | The docstring at C says that total disconnectedness is proved only by private theorems and that both properties remain instance arguments because instance search does not find them. |
 | **P3-050** | **Holds** | See the subrows. | Keys F1, F2; repaired at C. |
-| P3-050 (a): fundamental class | Holds | CF/Global/FundamentalClassStatement.md:92 says "Global invariants are not formalized" and md:155–156 calls global invariant maps later work and the proof a separate task. `GlobalInvariantStatement` (CF/Global/InvariantStatement.lean:119) with its invariant-map interface is published and proved by `globalInvariantStatement` (InvariantProof.lean:20); `globalFundamentalClassStatement` (FundamentalClassProof.lean:35) proves this module's statement. | Key F1 (md:92–101, 163–168 at C). The targets keep their hypotheses (relative class formation and arithmetic normalization). |
+| P3-050 (a): fundamental class | Holds | CF/Global/FundamentalClassStatement.md:92 says "Global invariants are not formalized" and md:155–156 calls global invariant maps later work and the proof separate work. `GlobalInvariantStatement` (CF/Global/InvariantStatement.lean:119) with its invariant-map interface is published and proved by `globalInvariantStatement` (InvariantProof.lean:20); `globalFundamentalClassStatement` (FundamentalClassProof.lean:35) proves this module's statement. | Key F1 (md:92–101, 163–168 at C). The targets keep their hypotheses (relative class formation and arithmetic normalization). |
 | P3-050 (b): idele tower | Holds | CF/Global/IdeleArchimedeanTower.md:51 says "`GlobalInvariantStatement` remains open". | Key F2 (md:51–54 at C). |
-| **P3-051** | **Holds** | CFT/Local/ClassFormationCupLawsStatement.md:46–48 says that a proof of `TateCupIsomorphism` "can be applied to it once that proof exists"; md:80–81 calls Tate's theorem a separate proof task. `tateCupIsomorphism : TateCupIsomorphism.{u}` (Coh/Tate/TateTheoremProof.lean:191) and `classFormationTateIsomorphisms` (CFT/Local/ClassFormationTateIsomorphismsProof.lean:95) are proved. | Key T1; repaired at C (md:47–51, 83–85). The conditional interface is kept. |
+| **P3-051** | **Holds** | CFT/Local/ClassFormationCupLawsStatement.md:46–48 says that a proof of `TateCupIsomorphism` "can be applied to it once that proof exists"; md:80–81 says Tate's theorem is to be proved separately. `tateCupIsomorphism : TateCupIsomorphism.{u}` (Coh/Tate/TateTheoremProof.lean:191) and `classFormationTateIsomorphisms` (CFT/Local/ClassFormationTateIsomorphismsProof.lean:95) are proved. | Key T1; repaired at C (md:47–51, 83–85). The conditional interface is kept. |
 | **P3-052** | **Holds** | CFT/Local/PrimeBreakUnramifiedBaseChangeStatement.md:58–61 says `PrimeTotallyRamifiedBreak` "is not yet proved". `primeTotallyRamifiedBreak : PrimeTotallyRamifiedBreak.{u, v}` (CFT/Local/PrimeRamificationBreakProof.lean:13) proves it. This module's own statement is proved separately by `primeBreakUnramifiedBaseChange` (PrimeBreakUnramifiedBaseChangeProof.lean:17). | Key T2; repaired at C (md:58–70): cites `primeTotallyRamifiedBreak` as the proof and `primeBreakUnramifiedBaseChange` as the separate proof of this module's statement. |
 | **P3-053** | **Holds** | See the subrows. | Key A1; repaired at C. |
-| P3-053 (a): comparison | Holds | Coh/AcyclicResolution/Comparison.md:119–131 calls `AcyclicResolutionComparisonStatement` unproved and plans a proof task; md:176–191 says the same of the independence and naturality statements. `acyclicResolutionComparisonStatement` (Coh/AcyclicResolution/ComparisonProof.lean:247), `resolutionComparisonIndependenceStatement` (IndependenceProof.lean:22) and `resolutionComparisonNaturalityStatement` (NaturalityProof.lean:21) are proved. | Rewritten (md:126–131, 177–190, 197–199 at C). The explicit hypotheses of `comparisonNatIso` are kept. |
+| P3-053 (a): comparison | Holds | Coh/AcyclicResolution/Comparison.md:119–131 calls `AcyclicResolutionComparisonStatement` unproved and plans a proof; md:176–191 says the same of the independence and naturality statements. `acyclicResolutionComparisonStatement` (Coh/AcyclicResolution/ComparisonProof.lean:247), `resolutionComparisonIndependenceStatement` (IndependenceProof.lean:22) and `resolutionComparisonNaturalityStatement` (NaturalityProof.lean:21) are proved. | Rewritten (md:126–131, 177–190, 197–199 at C). The explicit hypotheses of `comparisonNatIso` are kept. |
 | P3-053 (b): invariants | Holds | Docstring at Coh/SmoothGodementComparison/Invariants.lean:15–18 and md:66, 157–160 call the comparison statement unproved. | Docstring (Lean:17–19 at C) and Markdown (md:66–69, 160–163 at C) corrected. |
 | P3-053 (c): transformation | Holds | Transformation.md:76–82 says both hypotheses of `comparisonIso` are "published statements without proofs"; the docstring (Lean:24–27) says "unproved published statements". The first is proved; the second, `SmoothGodementCompactDerivedAcyclicStatement`, remains unproved. | Docstring (Lean:24–28 at C) and Markdown (md:81–85, 104–107 at C) distinguish the two. |
 | **P3-054** | **Holds** | Coh/SmoothGodementComparison/Statement.md:129–133 calls `ResolutionLiftStatement` and `CokernelResolutionStatement` "Both … unproved statements". `resolutionLiftStatement : ResolutionLiftStatement.{u, v}` (Coh/AcyclicResolution/LiftProof.lean:23) is proved; `CokernelResolutionStatement` (Sh/Godement/ExactnessStatement.lean:62) remains unproved. | Key A2; repaired at C (md:133–139): `ResolutionLiftStatement` is cited as proved, and the application still rests on the unproved `CokernelResolutionStatement`. |
@@ -180,7 +164,7 @@ the final cohomological statements (md:87–100 at C). The theorems are
 unchanged.
 
 **P3-006** cites J. S. Milne, *Class Field Theory*, version 4.03, Chapter I,
-1.6–1.7, printed p.22 (PDF p.31). Worker 1061 read this passage. No erratum
+1.6–1.7, printed p.22 (PDF p.31). This passage was read. No erratum
 was checked. Milne obtains `u ∈ 1 + 𝔪` with `u^m = a` and states that the
 squares of `ℝ^×` are the positive reals. The Lean exports are consequences of
 these statements, not the statements themselves.
@@ -213,54 +197,40 @@ compactness only.
 
 **Out of scope.** `notes/henniart/harris-cohomology-coverage.md:102–103` (at C)
 says that total disconnectedness of `GL_n(F)` "is not proved in the Library".
-Only private proofs exist, as in P3-022 (b). The note is not an assigned pair.
-Reviewer 4702 pointed it out during the revision-1 review of key S, and it is recorded
-here for a later editorial task.
+At C only proofs outside the Library existed, as in P3-022 (b). That note is
+not one of the pairs concerned; this is recorded here for a later correction.
 
-## Corrections and release evidence
+## Corrections and the commits where they entered the Library
 
-Each correction is a focused ordinary `lean.definition` or `lean.statement`
-candidate whose entry pair is the corrected pair. It edits only Markdown and
-docstrings of this task's own file pairs. The review and publication of every
-published correction recorded no qualifications, and every publication
-recorded an accepted fresh integrated Lake build.
+Each correction is a focused change whose entry pair is the corrected pair.
+It edits only Markdown and docstrings of the pairs concerned. Every
+correction was built with Lake when it entered the Library.
 
-| Key | Findings | Candidate | Author | Machine validation | Independent review | Publication |
-|---|---|---|---|---|---|---|
-| H | P3-004, P3-005 | `caa2cd36-5f03-49ba-ad40-684499e348db` (rev. 1) | Worker 1061 | `a4756def-8ca9-4d52-b32d-bb0cbb8afd96` (accepted) | task `8747d3ed-b785-4a06-b177-4e2b7d53d3a7`, approved by Reviewer 4584 | Integration `211a9c65b5b74b8b82d2fc23ea55af4e` (batch `498cd055f707477e9a3f5ed7a92e04e5`); Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| Q | P3-011 | `38c5698c-a1eb-44ea-9ceb-0dc95a3a1126` (rev. 1) | Worker 1061 | `0dbdc633-b4fe-4595-ba88-5918cd1a00b7` (accepted) | task `b8f118e7-b624-493e-bdb8-620dd9487aa7`, approved by Reviewer 4601 | Integration `e5ccd2e1bd6742dca94d2fb1315a5338` (batch `498cd055f707477e9a3f5ed7a92e04e5`); Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| C1 | P3-008 | `d626bcc2-5835-4a80-91cd-e21d024873f8` (rev. 1) | Worker 1056 | `b59f1f2b-3688-4b76-a5ee-a2fb24d69fab` (accepted) | task `0dc4e56a-b30b-47e6-bad1-46cbe75e6b75`, approved by Reviewer 4597 | Integration `1fc5f1d2e564467eba6e1d972058c4ec` (batch `498cd055f707477e9a3f5ed7a92e04e5`); Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| C2 | P3-009 | `64ecc1f7-3a59-4c8e-b166-b2dc730ab652` (rev. 1) | Worker 1056 | `9530dc7b-7b6e-42f4-ba40-a98a16fd1cf9` (accepted) | task `6a73092b-3588-4c09-a01b-6ea00f6bfab4`, approved by Reviewer 4599 | Integration `87dc9ad3573943bfa39ec36c0c11a0f6` (batch `498cd055f707477e9a3f5ed7a92e04e5`); Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| G | P3-010, P3-020, P3-021 | `2f1a6ae5-8f1c-488f-bbd4-cbf01de18f1a` (rev. 1) | Worker 1056 | `0c4f8903-6b13-431b-9f9c-a62724cbc48f` (accepted) | task `19dbf92e-23fb-4ca8-a286-11c73300b7a4`, approved by Reviewer 4620 | Integration `b4fa028c20fe474f856b4f57f367f311` (batch `498cd055f707477e9a3f5ed7a92e04e5`); Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| A1 | P3-053 | `08ded917-42cf-41b8-81d1-cb72c7bc4075` (rev. 1) | Worker 1056 | `c5d67407-1ece-405f-9b01-2a8f4d3086ba` (accepted) | task `2a981217-b047-44ce-ba8b-724e9e324b89`, approved by Reviewer 4662 | Integration `79c5bababd434990b72b392c3e91de39` (batch `601d50d0ad7d477ba5cfaa8c405869d0`); Library `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
-| U | P3-006 | `2aef5c7d-6385-402a-b74f-f354ead2dfcd` (rev. 1) | Worker 1061 | `55c48abc-0cea-4e03-b5af-b7ceebad0796` (accepted) | task `c6e5c250-3988-4c4d-9b88-fbd479260398`, approved by Reviewer 4670 | Integration `67d7871d65414f27869a8075cf7ab3cb` (batch `289cd90d6d7147ce8016ea239c85dce3`); Library `6a6c913c7339c50634dd74722034032e7a167d97` |
-| R | P3-007 | `adb0a264-39e0-45f2-a028-e73ac455c76b` (rev. 1) | Worker 1061 | `2f66e861-0f7d-491f-8495-0711a31b3184` (accepted) | task `817a95d1-6e04-4c09-9077-1ac20471d17e`, approved by Reviewer 4672 | Integration `a1c923e88d254881907b69bc1f74194f` (batch `289cd90d6d7147ce8016ea239c85dce3`); Library `6a6c913c7339c50634dd74722034032e7a167d97` |
-| F1 | P3-050 (a) | `5f30abe5-7a2e-4014-a1eb-e54fa9a05e36` (rev. 1) | Worker 1061 | `6524d6c6-eeb4-48e3-9241-d92692bb17a1` (accepted) | task `d1e28cdc-e99e-41c0-a718-82f2cbd04a08`, approved by Reviewer 4673 | Integration `2530ffcde72643aaae38c847e33c3ef0` (batch `289cd90d6d7147ce8016ea239c85dce3`); Library `6a6c913c7339c50634dd74722034032e7a167d97` |
-| F2 | P3-050 (b) | `155f1d4a-9c67-47a0-b507-69e1e735a1b0` (rev. 1) | Worker 1061 | `b9edfc1c-4a48-4cf0-8438-6e3c63263e84` (accepted) | task `fb463bfe-8cac-427b-aef9-c7d0ca68b7c9`, approved by Reviewer 4674 | Integration `571e84cc4bf54940acac0ee82bf309fe` (batch `289cd90d6d7147ce8016ea239c85dce3`); Library `6a6c913c7339c50634dd74722034032e7a167d97` |
-| T1 | P3-051 | `22d6e99f-5e4a-4acc-9fe1-2798a572f2d4` (rev. 1) | Worker 1061 | `cb6f46be-e8a2-4d31-9fa4-71f4f7e8b843` (accepted) | task `bf303723-fe3a-4e68-a7d7-a7ca91e349e4`, approved by Reviewer 4676 | Integration `76bf6372b0b94059b17c484eec26a29a` (batch `289cd90d6d7147ce8016ea239c85dce3`); Library `6a6c913c7339c50634dd74722034032e7a167d97` |
-| T2 (superseded) | P3-052 | `ff029319-8cd0-4705-9d72-1866301a6db9` (rev. 1) | Worker 1061 | `093d205c-30ba-4e65-ae0d-a81a2a547a1d` (accepted) | task `b6a628f7-2936-43aa-ae94-7f7693657f9b`, approved by Reviewer 4683; review invalidated by the revision change | Not published |
-| T2 | P3-052 | `ac993aaa-82db-4d69-bfc4-5e83aff4939e` (rev. 2) | Worker 1061 | `790f0909-57da-41c2-97d4-a5fb4a35f13d` (accepted) | task `985cdb21-6551-4faa-9653-006bf1a602ae`, approved by Reviewer 4742 | Integration `0c894c205a5f49b7988b9bce49e349ad` (batch `18c3545d35894e979aa9890314e49d25`); Library `cde31751c7864199419ad8fae8b7f3474639ba24` |
-| V (superseded) | P3-055 | `cc489da6-2cfa-4642-b06b-d27a0d974848` (rev. 1) | Worker 1061 | `f24f33dd-b35d-44c7-a833-d150b78abb2d` (accepted) | task `1b2f28d0-cfe8-4100-93c3-7d5b9cda90a6`, approved by Reviewer 4686; review invalidated by the revision change | Not published |
-| V | P3-055 | `487a7a22-8ecf-41f2-8627-bcec972025e9` (rev. 2) | Worker 1061 | `89ea7d8b-2884-409b-bb85-bd9eda13be04` (accepted) | task `5ff8846c-b408-41f5-89c3-5b55f66c3d78`, approved by Reviewer 4745 | Integration `d05fb34240344094978c28cdf29d37a3` (batch `8e63a9d684c34de2ab37ceba21c8d400`); Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
-| W (superseded) | P3-056 | `3c2a1328-1c3c-41bd-b9e8-c9027bbcbae4` (rev. 1) | Worker 1061 | `c4451a67-924e-4763-888d-a3ed911221c7` (accepted) | task `04c3e223-1d96-4518-bf54-edd7a6fc5fba`, approved by Reviewer 4700; review invalidated by the revision change | Not published |
-| W | P3-056 | `77c25dbe-2d52-4d6f-903a-4369260871b7` (rev. 2) | Worker 1061 | `3ca549ad-b3c3-4e54-9268-461354d6a62e` (accepted) | task `2a303e81-ae6d-4fc3-8601-ed6729d9a2ff`, approved by Reviewer 4748 | Integration `3b10686c667640cb84941c98a0e1405e` (batch `8e63a9d684c34de2ab37ceba21c8d400`); Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
-| K (superseded) | P3-058 | `9101da0c-60b1-47c1-a91d-88066db1d8ca` (rev. 1) | Worker 1061 | `c4064440-935c-451c-8baf-f19c9db55461` (accepted) | task `e042ca38-eaa7-4709-9a1e-230a1024e1a9`, approved by Reviewer 4706; review invalidated by the revision change | Not published |
-| K | P3-058 | `2eb98dd7-079a-4093-bb50-a5c5ba5684e7` (rev. 2) | Worker 1061 | `ddeea18f-bbe8-45b6-8b67-f66e8bf2f5ba` (accepted) | task `b51234d2-67e9-45ca-ab95-6fbfe73cfa0a`, approved by Reviewer 4749 | Integration `256efd3085d647f1a076750275ff82a3` (batch `8e63a9d684c34de2ab37ceba21c8d400`); Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
-| A2 (superseded) | P3-054 | `aa388ad6-e852-4b2d-9f39-e6bdd353db96` (rev. 1) | Worker 1056 | `39cee6ba-bbc3-4bff-b493-645bbe34db45` (accepted) | task `4f1fda0b-eff9-4b1e-801f-e656d9fc4704`, approved by Reviewer 4699; review invalidated by the revision change | Not published |
-| A2 | P3-054 | `7af37353-b51d-418f-ab6e-72a1d7058d04` (rev. 2) | Worker 1056 | `cf233d96-dc5a-45cf-b172-509511b1c858` (accepted) | task `cc923bb8-968d-435e-8352-85daac7dc528`, approved by Reviewer 4738 | Integration `37feca68a7f44f3eb9b6bb6ac67ba410` (batch `18c3545d35894e979aa9890314e49d25`); Library `cde31751c7864199419ad8fae8b7f3474639ba24` |
-| S (superseded) | P3-022 | `8f1be1dc-022d-4f85-ba70-a58cabf9cc3d` (rev. 1) | Worker 1056 | `82d05e10-ed4a-4bfb-959e-7881155223b2` (accepted) | task `c353fe38-6c05-4963-951d-08c84ddf9790`, approved by Reviewer 4702; review invalidated by the revision change | Not published |
-| S | P3-022 | `7670349d-71d7-4fb5-8be7-2c960b97267a` (rev. 2) | Worker 1056 | `d68e2784-b23d-4bf3-934b-48d73fd78231` (accepted) | task `0560a0bc-aae9-45a1-afed-33ccf3740ade`, approved by Reviewer 4743 | Integration `acb580e68e094c73bd9c60e609be3f97` (batch `8e63a9d684c34de2ab37ceba21c8d400`); Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
+| Key | Findings | Publication |
+|---|---|---|
+| H | P3-004, P3-005 | Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| Q | P3-011 | Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| C1 | P3-008 | Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| C2 | P3-009 | Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| G | P3-010, P3-020, P3-021 | Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| A1 | P3-053 | Library `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
+| U | P3-006 | Library `6a6c913c7339c50634dd74722034032e7a167d97` |
+| R | P3-007 | Library `6a6c913c7339c50634dd74722034032e7a167d97` |
+| F1 | P3-050 (a) | Library `6a6c913c7339c50634dd74722034032e7a167d97` |
+| F2 | P3-050 (b) | Library `6a6c913c7339c50634dd74722034032e7a167d97` |
+| T1 | P3-051 | Library `6a6c913c7339c50634dd74722034032e7a167d97` |
+| T2 | P3-052 | Library `cde31751c7864199419ad8fae8b7f3474639ba24` |
+| V | P3-055 | Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
+| W | P3-056 | Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
+| K | P3-058 | Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
+| A2 | P3-054 | Library `cde31751c7864199419ad8fae8b7f3474639ba24` |
+| S | P3-022 | Library `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` |
 
-No correction candidate was rejected or withdrawn. "rev. 1" and "rev. 2" are
-the task revisions to which the candidate is bound. Each revision-2
-replacement has the same files as the candidate it replaces and names it in
-its introduction. Machine validation is not semantic acceptance. This note
-itself requires separate independent review and publication.
+A machine build is not a check of meaning.
 
-### Sources read in review
+### Sources read when the corrections were checked
 
-The reviewers recorded these original-source checks in the publication or
-review receipts. H: Milne VII.2, printed pp.203, 205–206 (PDF pp.212,
+The following original-source checks were recorded for the corrections. H: Milne VII.2, printed pp.203, 205–206 (PDF pp.212,
 214–215). Q: Artin–Tate, printed pp.5–6 and 11 (PDF pp.14–15, 20). U: Milne
 I.1.6–1.7, printed p.22 (PDF p.31), and Artin–Tate VI.1, printed p.20 (PDF
 p.29). R: Serre, *Local Fields*, I.7 pp.20–22, XIII.2 pp.190–191 and XIII.4
@@ -268,16 +238,16 @@ pp.196–198, Henniart 1.1 p.439, and the 2019 Serre corrections (the p.191
 erratum concerns Proposition 4(a) and is not relevant). C1: Serre X.3 p.154
 (PDF p.160) and VII.5 pp.115–116. F1: Artin–Tate preliminaries, VI.1,
 VII.3–4 and XIV.3, and Tate 1979. T1: Serre XI.2–3 pp.167–169 and IX.8
-pp.148–149, with the corrections. For the six revision-2 keys the published
-review is listed first. T2: Serre V.3 p.83 (PDF p.90) and V.4 pp.87–88 (PDF
-pp.94–95), with the 2019 corrections (PDF pp.2–3), in both reviews. V: Serre
+pp.148–149, with the corrections. For T2, V, W, K, A2 and S the later check is
+listed first. T2: Serre V.3 p.83 (PDF p.90) and V.4 pp.87–88 (PDF
+pp.94–95), with the 2019 corrections (PDF pp.2–3), in both checks. V: Serre
 IX, Theorem 4 and Corollary, printed p.140, through Theorems 13–14, printed
-pp.148–149 (PDF pp.146–155), with the corrections (revision 1: Serre IX
+pp.148–149 (PDF pp.146–155), with the corrections (earlier: Serre IX
 §§2–8, with the corrections). W: Serre VIII.3, printed pp.130–132 (PDF
 pp.136–138), especially Proposition 5 on p.131, with the corrections
-(revision 1: Serre VIII.3, Proposition 5, with the corrections). K:
+(earlier: Serre VIII.3, Proposition 5, with the corrections). K:
 Artin–Tate VI.3, printed pp.24–27 (PDF pp.33–36), and its appended errata (PDF
-p.202), in both reviews. A2: Cartan–Eilenberg V, Proposition 1.1a, printed
+p.202), in both checks. A2: Cartan–Eilenberg V, Proposition 1.1a, printed
 p.78 (PDF p.100), and V.3, printed pp.82–83 (PDF pp.104–105); Harris 1999,
 section 2, printed pp.304–305 (PDF pp.6–7); and, for unchanged context,
 Berkovich 1.5, pp.10–12, and Grothendieck 1957, 2.4, printed p.148 (PDF
@@ -287,7 +257,7 @@ p.312 (PDF p.14).
 
 ## File fingerprints
 
-SHA256 of the 21 owned pairs. The A table identifies the audited versions. In
+SHA256 of the 21 audited pairs. The A table identifies the audited versions. In
 the C table, every pair equals the published candidate files. Only the five
 Lean files with docstring edits differ from A on the Lean side. Each path is
 relative to `Langlands/`.

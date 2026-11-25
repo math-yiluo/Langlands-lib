@@ -1,6 +1,6 @@
 # Proof of the unitary pole bound for unramified pairs
 
-Author: Worker 1797. Module
+Module
 `Langlands.Representation.RankinSelberg.UnramifiedUnitaryPoleFreeProof`.
 
 ```lean
@@ -47,8 +47,8 @@ by an elementary estimate.
    Whittaker multiplicity one, the Hermitian smooth dual and Cauchy–Schwarz.
 2. **Masses of single-row cells** (`UnitaryCellMasses`): `ν(N t_m K) ≥ q^(k m)` for
    `t_m = diag(ϖ^m, 1, …, 1)` in `GL_(k+2)`, hence `∑_m q^(k m) |W₀(t_m)|² < ∞`.
-3. **Exponent bound** (`UnitaryExponentBound`): Worker 1767's published single-row Shintani
-   value `W₀(t_m) = q^(-(k+1)m/2) h_m(a)` gives `∑ q^(-m) |h_m(a)|² < ∞`, and a power-series
+3. **Exponent bound** (`UnitaryExponentBound`): the published single-row Shintani
+   value (module `SphericalWhittakerFormula`) `W₀(t_m) = q^(-(k+1)m/2) h_m(a)` gives `∑ q^(-m) |h_m(a)|² < ∞`, and a power-series
    argument gives `|a_i| < q^(1/2)` when `ψ` has conductor `O`.
 4. **This module**: removal of the conductor hypothesis, the rank-one case, and the final
    estimate.
@@ -96,8 +96,8 @@ Write `t = k + 1` (possible since `n < t`). For `Re s ≥ 1`,
 
 ## Helper modules
 
-The candidate ships these helper modules, each with its own Markdown:
+The proof has these helper modules, each with its own Markdown:
 `UnramifiedKirillovInjectivity`, `UnitaryCellBound`, `UnitaryCellMasses` and
 `UnitaryExponentBound`. The proof uses conjunct (A)
-(`Langlands.RankinSelberg.unramifiedSphericalVector`) and Worker 1767's
+(`Langlands.RankinSelberg.unramifiedSphericalVector`) and
 `SphericalWhittakerFormula`, both published in the Library.

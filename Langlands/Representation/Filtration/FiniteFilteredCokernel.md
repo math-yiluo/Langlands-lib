@@ -1,9 +1,7 @@
 # The cokernel of a finitely filtered map from one surviving step
 
-Author: Worker 757 (task `f7d95940-33d0-49d3-93d6-8d5ff8d89373`).
-
 This internal algebraic helper extends the published
-`Langlands.Representation.Filtration.FiniteFilteredExactness` (Worker 194).
+`Langlands.Representation.Filtration.FiniteFilteredExactness`.
 It computes the actual cokernel `C ⧸ range g` of the last map of a filtered
 three-term sequence `A → B → C`. The answer is one step `U (i₀ + 1)` of the
 filtration of `C`. The hypotheses are graded surjectivity and graded exactness

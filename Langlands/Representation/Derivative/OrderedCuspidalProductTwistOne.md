@@ -1,9 +1,5 @@
 # A cuspidal datum is not fixed by the twist by `ν`
 
-Author: Worker 1168 (proof). Worker 818, first executor of proof task
-`451717b1-3d17-41d3-81e7-29b78f0b6112`, moved it into this module and fixed its
-interface.
-
 This is an internal helper of the proof of Bernstein–Zelevinsky 1977, Theorem
 4.11 (sufficient direction), in module
 `Langlands.Representation.Derivative.OrderedCuspidalProductNondegeneracyProof`.
@@ -16,10 +12,9 @@ a block `ρ_j = ν ρ_{i₀}` there, and this module excludes `j = i0`. Here
 The Library already proves the same fact, as
 `Langlands.Classification.RepeatedCuspidalSupport.twist_one_ne_self`, by way of
 `Langlands.Classification.cuspidalIntegralTwistFreeness`
-(`Classification.CuspidalIntegralTwistFreenessProof`). The earliest published
-artifact of that proof module, `a7545313`, belongs to task
-`67279e36-f3c2-42e3-9302-11729784042e`, which the contract of task `451717b1`
-excludes. This module gives an independent proof and imports neither module.
+(`Classification.CuspidalIntegralTwistFreenessProof`). That proof module
+belongs to the individual special-head/reverse-socle existence route, which
+the proof of Theorem 4.11 excludes. This module gives an independent proof and imports neither module.
 
 ## Exact scope
 
@@ -80,10 +75,9 @@ Direct imports:
 - `Langlands.Representation.Classification.SupercuspidalSupport` (cuspidal data,
   supercuspidal classes and their twists);
 - `Langlands.Representation.Smooth.Schur.Proof` (admissible Schur lemma with
-  central character, proof `b97b88e5`, task `7418b301`);
-- `Langlands.LocalField.Uniformizer` (the uniformizer as a field unit: an
-  integrator extraction from `LocalFactor.Abelian.Padic`, constructions of
-  Worker 33 and Worker 20);
+  central character);
+- `Langlands.LocalField.Uniformizer` (the uniformizer as a field unit,
+  extracted from `LocalFactor.Abelian.Padic`);
 - `Langlands.LocalField.Normalization.Proof` (`normalizedAbs_uniformizer`,
   `residueCardinality_gt_one`);
 - `Langlands.Group.GL.NormalizedCharacter` (`determinantNorm_scalar`,
@@ -94,10 +88,6 @@ The recursive project import closure of this module has 61 `Langlands` modules.
 All except two lie in the import closure of the published Lemma 4.7(b) proof
 module `Langlands.Representation.Classification.CuspidalProductMirabolicSupportShiftProof`,
 which the head-shift step already imports: this module itself and
-`Langlands.LocalField.Uniformizer`. Their audit against the exclusions of task
-`451717b1` is part of that task's final proof Markdown.
-
-The proof was written by Worker 1168 as a scratch module and sent to Worker 818
-in peer message `84dff951a4b050be9a3da1a574b76b42`. Worker 818 changed only the
-module name, the namespace placement of `open`, and the docstrings, and dropped
-the scratch bridge declarations that the consumer does not use.
+`Langlands.LocalField.Uniformizer`. Their audit against the exclusions of the
+proof of Theorem 4.11 is part of the page of
+`OrderedCuspidalProductNondegeneracyProof`.

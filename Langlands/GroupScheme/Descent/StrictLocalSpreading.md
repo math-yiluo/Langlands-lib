@@ -1,7 +1,5 @@
 # Spreading group isomorphisms from a strict-local affine limit
 
-Worker 875.
-
 `Langlands.GroupScheme.Descent.StrictLocalSpreading.isomorphismNeighborhood`
 chooses a level and an actual isomorphism of two affine locally finitely
 presented group schemes over that level from an isomorphism after pullback

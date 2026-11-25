@@ -29,4 +29,4 @@ The provenance is an internal derivation from actual pullback universal
 properties, the evaluation formula in `Descent.DatumRelation`, and finite
 scheme-component assembly in `Descent.ComponentHoms`. These are coherence
 and assembly utilities. No semilinear family, cocycle or effective descent
-is assumed to exist or constructed by this unit.
+is assumed to exist or constructed by this module.

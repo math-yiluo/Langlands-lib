@@ -1,7 +1,5 @@
 # Slice-wise growth gives full adelic growth under rational height reduction
 
-Author: Worker 5152.
-
 This module proves that
 `Langlands.Global.RepresentationGrowth.AdelicRationalHeightReductionStatement`
 (module `AdelicRationalHeightReductionStatement`) implies the published target

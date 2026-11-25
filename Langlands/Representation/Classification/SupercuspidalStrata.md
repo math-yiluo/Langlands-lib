@@ -1,6 +1,6 @@
 # Actual supercuspidal strata
 
-Worker 30 restricts the class-invariant predicates to Worker 23's genuine
+This module restricts the class-invariant predicates to the genuine
 `GeneralLinear.SupercuspidalClass` through its actual injective map into
 `SmoothDualClass`. The underlying objects are irreducible admissible smooth
 complex representations whose actual Jacquet coinvariants vanish for every
@@ -31,7 +31,7 @@ Source IDs and retained hashes are
 and `jpss-1981-conductor`,
 `986b06d6c16221fd55f04480604a1b17bf11004a704ab16b78acdd131ae6d49d`.
 The relevant original passages are recorded in the companion construction
-documentation and the task's source audit.
+documentation.
 
 No finiteness, supercuspidal genericity, finite-level existence or equality
 with an epsilon exponent is a field or assumption of these constructions.
@@ -52,8 +52,7 @@ The imports `Langlands.Representation.Classification.Supercuspidal` and
 - `Category.ClassInvariants`:
   `4f65d38d130993b4310a63e60060651c60bf8178ab60000c37e0e237f7991a82`.
 
-The complete constructions were read and their published sources agree
-with the workspace. Their authors retain their authorship; these imports
-are not republished as part of this module. A character on the field's
+The complete constructions were read. These imports are not part of this
+module. A character on the field's
 unit group must be related explicitly to the character on the actual
 center used here. No such identification is silently imposed.

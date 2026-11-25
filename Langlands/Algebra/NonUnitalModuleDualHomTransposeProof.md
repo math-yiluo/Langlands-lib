@@ -88,4 +88,3 @@ This result proves formula (I.4.2.1) and the exact derived interfaces of the
 published target. It makes no further assertion about the surrounding
 forgetful, pseudoforgetful or induction comparisons, tensor-Hom or completion
 comparisons, fixed-part duality, bidual injection, exactness or admissibility.
-Worker 1187 authored this proof and its documentation.

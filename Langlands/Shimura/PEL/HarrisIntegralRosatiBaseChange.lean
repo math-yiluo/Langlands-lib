@@ -68,11 +68,11 @@ local notation "basisO" => D.harrisHodgePELIntegralBasis C
 
 private theorem integralRosatiEquation_baseChange
     {f g : CategoryTheory.End B} {lam : B ⟶ DB}
-    (h : f ≫ lam = lam ≫ dualInt g) :
-    (baseChange b).map f ≫ pullLam lam =
-      pullLam lam ≫ dualInt' ((baseChange b).map g) := by
-  change (baseChange b).map f ≫ ((baseChange b).map lam ≫ (beta).hom) =
-    ((baseChange b).map lam ≫ (beta).hom) ≫ dualInt' ((baseChange b).map g)
+    (h : f.asHom ≫ lam = lam ≫ dualInt g.asHom) :
+    (baseChange b).map f.asHom ≫ pullLam lam =
+      pullLam lam ≫ dualInt' ((baseChange b).map g.asHom) := by
+  change (baseChange b).map f.asHom ≫ ((baseChange b).map lam ≫ (beta).hom) =
+    ((baseChange b).map lam ≫ (beta).hom) ≫ dualInt' ((baseChange b).map g.asHom)
   rw [← Category.assoc, ← Functor.map_comp, h, Functor.map_comp, Category.assoc]
   rw [dualAbelianBaseChangeNaturality preservation stability composition unitCoherence
     associativity comparison symmetry universality compatibility S S' b B B
@@ -118,9 +118,9 @@ theorem IntegralRosatiTupleEquations.baseChange
   have hk := integralRosatiEquation_baseChange preservation composition unitCoherence
     associativity comparison symmetry stability universality compatibility b B
     hB MB evaluationB geometryB hB' MB' evaluationB' geometryB' (h k)
-  change (baseChangeEnd b B) (r.val k) ≫ pullLam lam =
+  change ((baseChangeEnd b B) (r.val k)).asHom ≫ pullLam lam =
     pullLam lam ≫ dualInt' ((baseChangeEnd b B)
-      (∑ j, (basisO).repr (D.harrisHodgePELIntegralInvolution C (basisO k)) j • r.val j))
+      (∑ j, (basisO).repr (D.harrisHodgePELIntegralInvolution C (basisO k)) j • r.val j)).asHom
     at hk
   simpa only [map_sum, map_zsmul, baseChangeEnd_apply,
     integralActionSolutionsBaseChange_apply] using hk

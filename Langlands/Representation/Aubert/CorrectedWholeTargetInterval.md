@@ -1,8 +1,6 @@
 # Actual support activity and the whole-target interval
 
-Author: Worker 194.
-
-This internal bridge connects the actual corrected singleton support quotient
+This bridge connects the actual corrected singleton support quotient
 to the whole-target Boolean interval. It uses the existing inversion-length
 minimality criterion, the whole-target Weyl intersection characterization, and
 the actual inactive and proper-target vanishing results. It introduces no new
@@ -39,6 +37,6 @@ canonical zero-module equivalence records the same conclusion linearly.
 All group actions, normalized functors, support images, and quotient maps are
 those of the existing actual construction. The representation carrier is
 saturated as required by the block bound; the field and representation
-universes remain independent. No positive rank assumption is used. This unit
+universes remain independent. No positive rank assumption is used. This module
 does not itself assemble the signed diagram or assert exactness at its
 surviving terminal homology.

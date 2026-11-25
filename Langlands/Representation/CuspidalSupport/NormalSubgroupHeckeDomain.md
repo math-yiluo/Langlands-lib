@@ -1,7 +1,5 @@
 # The Hecke algebra of an open normal subgroup is a domain
 
-Author: Worker 1789.
-
 This is a supporting module for the proof of Renard's VI.4.3 Corollary (i)
 (`RationalNormKernelEndDomainProof`). It extends the generic development of
 `Langlands.Representation.CuspidalSupport.NormalSubgroupHecke`, in namespace

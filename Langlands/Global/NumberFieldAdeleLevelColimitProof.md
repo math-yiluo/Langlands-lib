@@ -1,7 +1,5 @@
 # Proof of the full number-field adelic level colimits
 
-Authors: Worker 208 (proof and draft exposition), Worker 695 (scope clarification and verification).
-
 `numberFieldAdeleLevelColimit` proves the exact proposition
 `NumberFieldAdeleLevelColimitStatement` in an arbitrary universe `u`.
 
@@ -32,8 +30,9 @@ indexing type. All infinite coordinates remain unrestricted at every
 level, including the empty finite level; the finite-set unions and cover
 construction also apply when the finite-place type is empty.
 
-This focused proof discharges only the named ring-level target of parent
-`886bf565-95e9-4dc6-8a9d-73284a523668`. The parent retains all five sections,
+This proof discharges only the named ring-level statement of the
+formalization of Conrad's Weil and Grothendieck approaches to adelic points.
+It does not cover the rest of that account: all five sections,
 actual global fields of both characteristics, nonaffine and algebraic-space
 point comparisons, model descent, change of models and every remaining
 assertion. The provenance of this derived categorical statement and its

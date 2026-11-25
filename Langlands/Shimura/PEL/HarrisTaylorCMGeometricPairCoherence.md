@@ -1,7 +1,5 @@
 # Original pair maps and geometric triple refinement coherence
 
-Author: Worker 57.
-
 For actual small CM levels `T ≤ V ≤ U`, this internal construction
 identifies the original named direct pair comparison for `(U,T)` with
 the composite of the original separate-cover triple chain. It identifies
@@ -236,9 +234,9 @@ It is naturality of the constructed arrow of full sheaf systems. It
 includes both legs, the direct composite, identities, and exponent zero,
 with the original transitions.
 
-## Internal provenance and remaining scope
+## Internal provenance and scope
 
-This unit is an internal deduction from
+This module is an internal deduction from
 `HarrisTaylorCMGeometricPairTriple`,
 `HarrisTaylorCMGeometricTripleSeparate`, and
 `HarrisTaylorCMGeometricLatticeCoverComparison`. The actual tower
@@ -253,10 +251,10 @@ output is an input.
 
 Identification of the upper leg with coarse inverse image of the original
 pair comparison for `(U,V)`, and the resulting coherence of the genuine
-small-etale inverse-image maps under three levels, remain further work.
-This unit claims no injectivity or invertibility of reduced lattice
+small-etale inverse-image maps under three levels, are not proved here; they
+are proved in `HarrisTaylorCMGeometricUpperPairCoherence`.
+This module claims no injectivity or invertibility of reduced lattice
 inclusions, general commensurability or rational adic independence, or
-Hecke compatibility. The containing task's representability, named moduli
-prerequisites, arithmetic existence, exact source comparison and
-canonical-model obligations remain explicit or unfinished. This focused
-construction does not complete that task.
+Hecke compatibility. Representability, the named moduli prerequisites,
+arithmetic existence, exact source comparison and canonical models are
+explicit premises or are not treated in this module.

@@ -4,7 +4,9 @@
 over every field `k : Type u`, the all-test normalizer of every closed torus in
 every smooth affine group scheme over `Spec k` has a smooth closed
 representative. It is a `Prop`-valued definition. This file provides the
-statement for a subsequent proof task.
+statement; the Library proves it as
+`Langlands.GroupScheme.torusNormalizerSmoothClosed` in
+[`NormalizerSmoothProof`](NormalizerSmoothProof.md).
 
 ## Exact formulation
 

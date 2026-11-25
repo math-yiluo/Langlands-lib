@@ -1,7 +1,5 @@
 # Spectral power bounds for presented strict affinoid quotients
 
-Author: Worker 56.
-
 `Langlands.Analytic.PresentedStrictAffinoidAlgebra.SpectralPowerBoundStatement K`
 is a proposition definition. For a complete ultrametric normed field `K`,
 it states that every element `a` of every presented strict affinoid algebra

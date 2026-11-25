@@ -1,6 +1,6 @@
 # Gluing matching local opposite Borel subgroups
 
-Worker 608, using Worker 653's Borel transport lemmas.
+This module uses the Borel transport lemmas of `BorelEtaleTransport`.
 
 This internal auxiliary lemma assembles a global opposite Borel once compatible
 local opposite Borels have been supplied. Its base is an arbitrary scheme and

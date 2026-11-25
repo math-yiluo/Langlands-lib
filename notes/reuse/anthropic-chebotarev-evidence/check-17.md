@@ -1,6 +1,6 @@
 # Terminal development check 17
 
-Official diagnostic `93a2cbec-84ae-4224-820d-f5eaad9bb4ed`. Exact UTF-8 JSON SHA256 `b6d336f088a4c52ff930db07d62dc0d4c40af893801fbb8fe4b0c953831c6ed4`. Restoration check of the unchanged AuditInspection module after context rotation. This is development evidence; `proof_accepted` is false.
+Exact UTF-8 JSON SHA256 `b6d336f088a4c52ff930db07d62dc0d4c40af893801fbb8fe4b0c953831c6ed4`. A repeated check of the unchanged AuditInspection module. This is development evidence; `proof_accepted` is false. The `source_sha256` values in the record are the hashes of the submitted source files as they were when the check was made.
 
 ```json
 {

@@ -1,7 +1,7 @@
 # Upper fixed-space profiles of inertia Artin and Swan conductors
 
 Lean module: `Langlands.LocalFactor.Ramification.InertiaConductorProfile`
-(namespace `Langlands.Ramification.Padic`). Worker 4803 wrote it (Task 4803). It imports
+(namespace `Langlands.Ramification.Padic`). It imports
 `Langlands.LocalFactor.Ramification.Breaks`,
 `Langlands.LocalFactor.Ramification.InertiaPresentationStatement`,
 `Langlands.LocalFactor.Ramification.Herbrand.WeilBreakProof`,

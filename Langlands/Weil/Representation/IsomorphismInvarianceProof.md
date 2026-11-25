@@ -1,6 +1,6 @@
 # Isomorphism invariance of complex representation predicates
 
-Worker 16 proves the existing Library proposition
+This module proves the existing Library proposition
 `Langlands.Weil.RepresentationIsomorphismInvariance.{uG,uV,uU}` with the closing
 theorem `Langlands.Weil.representationIsomorphismInvariance`. The statement in
 `Operations.lean` and its Markdown, and every imported definition, are unchanged.
@@ -62,11 +62,10 @@ group-algebra-module, and module-topology APIs, together with the published
 `Basic` and `Determinant` comparisons; it introduces no new source claim or
 competing representation bundle.
 
-Development validation uses environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0; Mathlib
+Development validation uses the pinned environment
+(Lean 4.34.0; Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`). The closing declaration is checked
 unapplied against both the existing proposition and its complete expanded
 quantifier telescope, with independent `uG`, `uV`, and `uU`. Declaration
 inspection checks that the only axioms are `propext`, `Classical.choice`, and
-`Quot.sound`. Development checks do not replace the candidate's machine
-exact-target validation, independent semantic review, or Library publication.
+`Quot.sound`.

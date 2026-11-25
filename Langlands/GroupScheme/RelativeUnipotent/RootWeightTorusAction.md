@@ -26,7 +26,8 @@ identity specifies its exact root characters.
 All identities and stability statements hold on every scheme test, including
 nonreduced tests. This is normalization by the supplied torus. Normalization by
 the entire parabolic, intrinsic cyclic-cutoff identification, and compatibility
-when changing maximal tori remain separate obligations in Task 7200.
+when changing maximal tori remain separate steps of the finite vector-bundle
+filtrations of supplied relative radicals.
 
 The ambient ordered-product identity reuses
 `LocalSplitCell.orderedProduct_chart_comp` from `SplitWeightDynamicComparison`.

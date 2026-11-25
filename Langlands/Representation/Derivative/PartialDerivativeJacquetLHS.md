@@ -16,9 +16,10 @@ all `k j : ℕ` and every smooth representation `A` of `GL_(k+j+1)`, it gives
 The universes of the field and representation carrier remain independent. The
 carrier is the original `Type uV`, with no finite-length, admissibility,
 irreducibility, dimension or genericity assumption. The actual functors and
-quotient maps are unchanged. This unit supplies a linear equivalence and both
-representative formulas. It does not yet package `GL_k` equivariance or
-naturality, or prove the final positive two-block comparison. The auxiliary
+quotient maps are unchanged. This module supplies a linear equivalence and both
+representative formulas. It does not package `GL_k` equivariance or
+naturality, or prove the final positive two-block comparison; those are in
+`PartialDerivativeJacquetComparisonProof`. The auxiliary
 induction is stated at all natural `k,j`; this is no claim about a two-block
 shape with a zero block or the separate top-derivative comparison.
 
@@ -37,15 +38,15 @@ printed p.445 / PDF p.6, motivates successive localization; §§3.5 and 4.3,
 printed pp.452 and 454 / PDF pp.13 and 15, motivate the successive minus
 construction. The registered identifier is `bernstein-zelevinsky-1977-induced-i`,
 SHA256 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-Those original passages, including the inverse-half sign, were checked in this
-task's source audit; no applicable registered erratum changes these conventions.
+Those original passages, including the inverse-half sign, were checked in a
+source audit; no applicable registered erratum changes these conventions.
 
 The proof itself is an internal specialization of the already published
 `LocalizationTower` and `LocalizationTransport`, using the already published
 actual recursive matrices and characters from `PartialLocalizationCharacter`.
-The one-step transport organization adapts Worker 1004's `TopLocalizationStep`
-construction to the partial group. That development is credited as authorship;
-this module does not import it or rely on its acceptance. Every proof dependency
+The one-step transport organization adapts the `TopLocalizationStep`
+construction (module `Derivative.TopLocalizationStep`) to the partial group;
+this module does not import it. Every proof dependency
 here is published. No source assertion of transitivity or comparison is used as
 an assumption, and no Haar modulus is identified by this module.
 
@@ -62,7 +63,8 @@ mirabolic range as `M`, and `partialLeviSubgroup k (j+1)` as `W`. The published
 matrix identity `partialUpper_eq_radical_sup` identifies `U ⊔ W` with the larger
 mirabolic partial group. The final acting subgroup in this intermediate tower is
 bottom: only the underlying linear equivalence is extracted. Final general-linear
-equivariance remains a separate obligation and is not inferred from this choice.
+equivariance is proved separately, in `PartialDerivativeJacquetComparisonProof`,
+and is not inferred from this choice.
 
 The first character is the actual supplied `T.mirabolicTheta ψ (k+j)`.
 `character_recursiveRadical_succ` proves that the combined character restricts to
@@ -135,14 +137,14 @@ consumer theorem dependency. There is no dependency on the older
 throughout; the canonical-field imports provide definitions rather than a choice
 of canonical field or topology for the theorem.
 
-The full host-task exclusion set applies to this construction and all its
+The full exclusion set of the comparison proof applies to this construction and all its
 helpers. No plus, adjunction, duality, pairing, derivative filtration, segment,
 classification, socle, product-structure, or Whittaker-finiteness conclusion is
 used. The explicit exclusion obligations are retained here:
 
-Preserve direct and transitive independence from `SegmentHeadProductIrreducibility` itself and task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`; `GenericSegmentProductUniqueness` and task `30341ae4-65f2-4a0e-9283-763db01a409e`; multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`; ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`; quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`; ordered conversion `8252833d-c269-41a9-824c-5879e531b23b`; tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c`; `SquareIntegrableLanglandsClassification` and task `1cb45da2-7007-4351-a694-594fb148b8d1`; square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`; regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`; socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`; analytic segment classification `aca8805b-054f-4d56-8045-12db7f623404`; and forward special-segment essential square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`. Exclude their conclusions and transitive prerequisite/proof-successor routes. Audit shared lower helpers and the actual transitive project import closure before reuse.
+Preserve direct and transitive independence from `SegmentHeadProductIrreducibility` itself; `GenericSegmentProductUniqueness`; multisegment exhaustion; ordered strong-head existence; quotient coverage; ordered conversion; tempered uniqueness; `SquareIntegrableLanglandsClassification`; square-integrable exhaustion; regular exhaustion; socle exhaustion; analytic segment classification; and forward special-segment essential square-integrability. Exclude their conclusions and transitive prerequisite/proof-successor routes. Audit shared lower helpers and the actual transitive project import closure before reuse.
 
-As shared infrastructure for the socle route, also exclude `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` and tasks `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc`; `SegmentSocleProductIrreducibility` (`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`); juxtaposed structure and quotient-Hom task `7ff2a1e9-89dc-439e-a861-a567b3db92bf`; adjacent socle commutation (`e3634665-571b-4852-9f4c-bab8a1053434`, `cded83f3-df9c-4018-bc61-dc54f5c1f9ab`); two-segment socle commutation (`426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0`); linked socle gluing (`c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea`); and ordered multisegment socle existence (`23189526-80b0-4828-a6d4-7ebec2cbeef5`). Carry the full exclusion set to all lower splits. Audit actual direct and transitive project imports and shared helper provenance. No plus, adjunction, duality, derivative filtration, pairing, segment or classification theorem is required by this comparison statement. The actual partial and ordinary derivative constructions are required; their definitions are not comparison proofs.
+As shared infrastructure for the socle route, also exclude `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`; `SegmentSocleProductIrreducibility`; juxtaposed structure and quotient-Hom; adjacent socle commutation; two-segment socle commutation; linked socle gluing; and ordered multisegment socle existence. Audit actual direct and transitive project imports and shared helper provenance. No plus, adjunction, duality, derivative filtration, pairing, segment or classification theorem is required by this comparison statement. The actual partial and ordinary derivative constructions are required; their definitions are not comparison proofs.
 
 The complete dependency modules are:
 

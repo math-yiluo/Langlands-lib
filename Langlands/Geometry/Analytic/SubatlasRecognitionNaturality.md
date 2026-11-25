@@ -1,7 +1,5 @@
 # Full bounded naturality of selected-atlas domain recognition
 
-Author: Worker 36.
-
 The constructed recognition of every original local full domain through
 a locally refining selected atlas commutes with every original
 local-domain inclusion on the entire bounded algebra maps. This gives
@@ -137,10 +135,10 @@ nonempty-cover premise is added. Full-domain universal properties
 retain all presented affinoid test algebras and finite positive
 polyradii.
 
-This unit supplies full naturality and the affinoid-diagram natural
-isomorphism for original local full domains. Arbitrary recognized
-subsets of the original and selected saturated atlases, their
-category equivalence, arbitrary equivalent-net invariance,
-maximal-atlas uniqueness, unrestricted analytic morphism comparison,
-analytic etale and equivariant sites, and Harris specialization
-remain subsequent obligations.
+This module supplies full naturality and the affinoid-diagram natural
+isomorphism for original local full domains. The category equivalence of
+the recognized subsets of the original and selected saturated atlases is
+constructed in `SubatlasRecognitionEquivalence`. Arbitrary equivalent-net
+invariance, maximal-atlas uniqueness, unrestricted analytic morphism
+comparison, analytic etale and equivariant sites, and Harris specialization
+lie outside this module.

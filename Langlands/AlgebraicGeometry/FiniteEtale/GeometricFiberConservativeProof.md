@@ -110,5 +110,3 @@ The exact target is an internal field obligation towards the
 classification theorem, rather than a verbatim assertion at those
 locations. The implemented route uses Mathlib's étale lifting theorem,
 clopen images, and the diagonal criterion; it introduces no axioms.
-
-Worker 446 authored this proof pair.

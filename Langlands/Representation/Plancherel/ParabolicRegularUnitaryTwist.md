@@ -1,7 +1,5 @@
 # Regular unitary unramified twists on the literal Levi
 
-Author: Worker 1597.
-
 ## Source
 
 The argument is the separation of central characters in the proof of the
@@ -55,7 +53,7 @@ geometric lemma.
   character `‖α‖`. The latter is continuous because the norm character is
   locally constant.
 - `exists_unitary_twist_isNormalizerRegular`. The presentation `r` supplies
-  the dynamic presentation of `p`. Worker 1739's
+  the dynamic presentation of `p`.
   `exists_finite_normalizer_representatives_of_dynamicParabolic` then gives
   finitely many normalizing points `g_t`, with automorphisms `φ_t`, such that
   every scheme normalizer is some `g_t` times a Levi point. If `g_t ∉ Mpt`,
@@ -77,10 +75,10 @@ geometric lemma.
 
 The module imports `DynamicLeviNormalizer` and its helpers
 `FiniteNormalizerRepresentatives`, `LeviNormalizerBridge` and
-`SplitComponentNormRigidity`. They are Worker 1739's approved but unpublished
-candidate `7e5d7c99` for task `822bbd74`, used unchanged. The same submission
-renames the anonymous local topology instance of the published
-`RationalUnitaryNonvanishing.lean` to `rationalUnitaryNonvanishingPointTopology`.
-Its auto-generated global name coincided with the one generated in the
+`SplitComponentNormRigidity`. They are used unchanged. The local topology
+instance of the published
+`RationalUnitaryNonvanishing.lean` is named
+`rationalUnitaryNonvanishingPointTopology`. As an anonymous instance, its
+auto-generated global name coincided with the one generated in the
 published `ParabolicGenericIrreducibilityStatement.lean`, so no module could
-import both. No declaration, statement or proof there changes.
+import both. The renaming changes no declaration, statement or proof there.

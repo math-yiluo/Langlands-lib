@@ -24,7 +24,7 @@ on `K_M` (`RealLeviPairing.theta_congr`), this module proves:
 * `reverseKernel`: under the hypotheses of `RealLeviLimitStatement` on `ds` and irreducibility
   of every class standard module, every intertwiner from `X` to the standard module of
   `ds.reverse` vanishes on every proper `(𝔤, K)`-submodule of `X`. The nonvanishing of the limit
-  pairing it needs is Worker 5220's `realLeviWitness` (Library module `RealLeviWitness`).
+  pairing it needs is `realLeviWitness` (Library module `RealLeviWitness`).
 -/
 
 noncomputable section

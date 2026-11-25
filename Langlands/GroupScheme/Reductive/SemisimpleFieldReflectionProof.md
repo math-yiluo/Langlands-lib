@@ -1,7 +1,5 @@
 # Reflection of semisimplicity under arbitrary field extension
 
-Author: Worker 1429.
-
 This module proves `Langlands.GroupScheme.SemisimpleFieldReflectionStatement`
 in arbitrary universe `u`: the theorem `semisimpleFieldReflectionStatement`
 has exactly the type `SemisimpleFieldReflectionStatement.{u}`. That statement

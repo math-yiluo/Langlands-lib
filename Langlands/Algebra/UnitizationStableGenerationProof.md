@@ -53,5 +53,4 @@ The finite-generation property here retains the scalar contribution even
 when the original action is zero. There is no field, finite-dimension,
 countability, nontriviality, unit or commutativity assumption on `A`.
 
-Worker 709 wrote this proof. Worker 877 checked it against the published
-statement and submitted it.
+This proof was checked against the published statement.

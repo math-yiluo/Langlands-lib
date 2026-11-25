@@ -1,9 +1,9 @@
 # Cartan obstructions and full-star fixation in the anisotropic kernel
 
-This internal unit proves two elementary consequences of
+This internal module proves two elementary consequences of
 `HasInnerTypeAComponent` and transports them through an actual
 `KernelComparison`. Its final local consequences have the explicit premise
-`LocalAnisotropicCartanComponentsStatement.{u}`. This unit does not prove that
+`LocalAnisotropicCartanComponentsStatement.{u}`. This module does not prove that
 premise.
 
 `HasInnerTypeAComponent.not_three_neighbors` says that a vertex cannot have

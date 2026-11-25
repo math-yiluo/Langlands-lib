@@ -1,7 +1,5 @@
 # From pointwise to global unitary regularity of the weighted c-family (Waldspurger V.2.3)
 
-Author: Worker 986, task `f27f47c6-b5d0-4d3d-888a-4b73f31c1d94` (Task 7826, revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeakExpansionLocalRegularity`.
 Namespaces: `Langlands.Plancherel.UnramifiedOperatorFamily` (generic part) and
 `Langlands.HarishChandraSchwartz.WeakExpansion` (the weighted c-family).
@@ -27,7 +25,7 @@ This module proves that the pointwise statement implies the target:
   or prove `WeightedWeakExpansionStatement`, `WeightedCDecompositionBorelStatement` or
   `WeightedPacketIdentityStatement`.
 
-### Binder correction (Task 7826, operator ruling 8)
+### Binder correction
 
 The first version of this module stated `WeightedCLocalRegularityStatement` and the reduction
 `WeightedCRegularityReductionStatement` (proved by `weightedCRegularityReduction`) toward the
@@ -46,8 +44,7 @@ bodies are those of the old definitions, with `WeightedCRegularityBorelStatement
 construction or conclusion. `WeightedCLocalRegularityStatement` (unproved) and
 `WeightedCRegularityReductionStatement` with its proof `weightedCRegularityReduction` are kept for
 the record; **do not use `WeightedCLocalRegularityStatement` or `WeightedCRegularityReductionStatement`
-as a target or a premise**. Elaborated-signature probe (development check
-`a72af090-aac5-4699-85e1-90d08a5795ed`): `WeightedCLocalRegularityBorelStatement`,
+as a target or a premise**. Elaborated-signature probe: `WeightedCLocalRegularityBorelStatement`,
 `WeightedCRegularityBorelReductionStatement` and `weightedCRegularityBorelReduction` each have
 exactly one `BorelSpace` binder, the two old definitions none. The overlapping-instance linter is
 switched off for the three new declarations only, because it also counts the omitted section

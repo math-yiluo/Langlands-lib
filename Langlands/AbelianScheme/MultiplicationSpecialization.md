@@ -1,7 +1,5 @@
 # Integer multiplication on bundled abelian schemes
 
-Author: Worker 124.
-
 This module specializes the published group-scheme multiplication construction
 to the published `Langlands.AbelianScheme` bundle. It imports `Basic` and
 `MultiplicationIsogenyStatement` by module name.

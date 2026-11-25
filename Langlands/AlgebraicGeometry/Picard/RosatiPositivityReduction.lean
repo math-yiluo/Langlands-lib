@@ -46,7 +46,8 @@ integral endomorphisms. This predicate is a geometric obligation, not a proof
 of that obligation. -/
 def IntegralDiagonalPositive : Prop :=
   ∀ f : A ⟶ A, f ≠ 0 →
-    0 < traceForm P W hadd lam (homToHom0 f) (homToHom0 f)
+    0 < traceForm P W hadd lam (CategoryTheory.End.of (homToHom0 f))
+      (CategoryTheory.End.of (homToHom0 f))
 
 /-- Separate rational scalars in the two arguments of the fixed form. -/
 theorem traceForm_smul_smul (q r : ℚ) (a b : End0 A) :
@@ -60,14 +61,15 @@ theorem traceForm_pos_of_integral
     (hpos : IntegralDiagonalPositive A P W hadd lam)
     (a : End0 A) (ha : a ≠ 0) :
     0 < traceForm P W hadd lam a a := by
-  obtain ⟨n, hn, f, hf⟩ := Rationalization.exists_integral_multiple a
+  obtain ⟨n, hn, f, hf⟩ := Rationalization.exists_integral_multiple a.asHom
   have hnq : (n : ℚ) ≠ 0 := Int.cast_ne_zero.mpr hn
-  have hf' : homToHom0 f = (n : ℚ) • a := by
-    change Rationalization.ofHom f = (n : ℚ) • a
+  have hf' : (CategoryTheory.End.of (homToHom0 f) : End0 A) = (n : ℚ) • a := by
+    apply CategoryTheory.End.ext
+    change Rationalization.ofHom f = (n : ℚ) • a.asHom
     simpa only [Int.cast_smul_eq_zsmul] using hf
   have hf0 : f ≠ 0 := by
     intro heq
-    have hz : (n : ℚ) • a = 0 := by rw [← hf', heq, map_zero]
+    have hz : (n : ℚ) • a = 0 := by rw [← hf', heq, map_zero] <;> rfl
     exact ha ((smul_eq_zero.mp hz).resolve_left hnq)
   have h := hpos f hf0
   rw [hf', traceForm_smul_smul] at h

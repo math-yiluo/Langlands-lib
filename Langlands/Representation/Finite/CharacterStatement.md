@@ -1,6 +1,6 @@
 # Finite complex character theory for Henniart
 
-Worker 30 authored this proposition family. It states the finite-dimensional
+This proposition family states the finite-dimensional
 complex character theory used before Henniart's integral virtual-lattice
 argument. The closing proposition is
 `Langlands.FiniteCharacterTheoryStatement`; this file does not prove it.
@@ -42,7 +42,7 @@ orthogonality are not structure fields or assumed instances.
 
 `FiniteCharacterTheoryStatement` conjoins these components, applying the
 one-carrier components to both `V` and `W`. This groups one coherent
-finite-character theorem family into a single reviewable target.
+finite-character theorem family into a single target.
 
 The pairing used in Lean is
 
@@ -93,13 +93,12 @@ Springer, 1977.
   were also inspected as page images to verify the empty-family case,
   pairing orientation, orthogonality, and character-isomorphism conclusion.
 
-The only formal dependency is the prepared environment artifact
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1: Lean 4.34.0 and Mathlib
+The only formal dependency is Lean 4.34.0 and Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The direct imports are `Mathlib.Analysis.Complex.Basic`,
 `Mathlib.RepresentationTheory.Character`, and
 `Mathlib.RepresentationTheory.Semisimple`. There are no imported project
-statements, unaccepted construction modules, or project axioms.
+statements, construction modules, or project axioms.
 
 Pinned Mathlib already proves several ingredients. In particular,
 `Representation.card_inv_mul_sum_char_mul_char_eq_finrank` and
@@ -108,27 +107,29 @@ orthogonality formulas under their stated general field hypotheses;
 `Representation.char_one`, `char_conj`, `char_dual`, and `char_iso`
 provide the indicated character identities. Its separate
 `RepresentationTheory.Maschke` module proves the complement property.
-These are existing Mathlib results, not proofs supplied by this statement
-contribution. A subsequent proof of the closing project target must
-actually discharge every conjunct.
+These are existing Mathlib results, not proofs supplied by this statement.
+A proof of the closing project target must actually discharge every
+conjunct; `Langlands.FiniteCharacter.finiteCharacterTheory` in
+`Langlands.Representation.Finite.CharacterTheoryProof` does so.
 
 ## Boundary with the remaining Henniart construction
 
-This pair covers the finite-character foundations. It does not yet state
+This pair covers the finite-character foundations. It does not state
 Brauer's integral induction theorem on the concrete representation
 Grothendieck group, identify that group with a lattice on irreducible
-classes, or construct an automorphic virtual map. The finite-group
-construction owner supplies the representation classes and induction;
-the virtual-lattice owner supplies the integral lattice and its actual
-local instantiations. The later target lattice is free on supercuspidal
+classes, or construct an automorphic virtual map. The representation
+classes and induction are supplied by the finite-group construction
+modules `Finite.Classes` and `Finite.Induction`; the integral lattice by
+`Langlands.VirtualRepresentation.Integral`, and its actual local
+instantiations by separate constructions. The later target lattice is free on supercuspidal
 classes across positive ranks.
 
 The norm-one assertion here concerns a genuine finite-group
 representation. Henniart's separate assertion for an **integral virtual
 vector** first yields a signed basis vector; a positive-degree hypothesis
-is then needed to select the positive sign. That later assertion remains
-a separate obligation, as do the finite-witness and numerical
-surjectivity theorems. None is assumed by this proposition family.
+is then needed to select the positive sign. That later assertion is a
+separate result, as are the finite-witness and numerical surjectivity
+theorems. None is assumed by this proposition family.
 
 For this boundary, the original is Henniart, *Une preuve simple des
 conjectures de Langlands pour GL(n) sur un corps p-adique* (2000),
@@ -142,4 +143,4 @@ elaborated proposition definitions were printed and inspected: each
 retains the explicit `Fintype G` and finite-dimensional coefficient-module
 hypotheses, and the two-carrier statements retain three independent
 universes. This confirms the stated formal scope; it is not a proof of
-the propositions or independent semantic acceptance.
+the propositions.

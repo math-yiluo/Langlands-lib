@@ -82,8 +82,7 @@ division-order action of a supplied special atlas. They introduce no
 additional data or hypotheses and do not infer a height certificate
 from specialness.
 
-This unit concerns full compatible-family points of the constructed
+This module concerns full compatible-family points of the constructed
 image-cover atlas. Independence of preimage choices, iterated coefficient
 coherence, refinement descent, presentation independence, a framing
-object, moduli, representability and level structures remain separate
-obligations.
+object, moduli, representability and level structures remain separate.

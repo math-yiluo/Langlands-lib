@@ -1,7 +1,5 @@
 # Compact open orbit restriction for a compatible quotient measure
 
-Author: Worker 88.
-
 `Langlands.QuotientIntegration.CompactOpenOrbitMeasureStatement` is a
 proposition defining an internal measure-theoretic prerequisite. This module
 states it; it does not prove it or construct a compatible quotient measure.
@@ -45,7 +43,8 @@ the actual mass of `κ`. Consequently the total-mass specialization is
 conjunct of the Lean declaration. When `μG K = 1`, the same formula directly
 specializes to the normalization used in quotient Iwasawa integration.
 
-The proposed proof, left to the proof successor, tests `IsCompatible` with
+The proposed proof (the statement is proved as `compactOpenOrbitMeasure` in
+`Langlands.Analysis.Local.QuotientCompactOpenOrbitProof`) tests `IsCompatible` with
 the pullback of a compactly supported continuous quotient test multiplied
 by the indicator of `g K`. The set `g K` is compact and open, so this
 product is again an admissible compact continuous test. On `Cg` its fiber

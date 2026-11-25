@@ -1,7 +1,5 @@
 # Constructed inverse-transpose L-factors of generic p-adic pairs
 
-Author: Worker 31.
-
 This module constructs the normalized polynomial and rational-function L-unit
 of the actual `inverseTransposePullback` pair, with character `ψ.scale (-1)`
 and the same supplied additive Haar measure `ν`. Its assumptions are genericity

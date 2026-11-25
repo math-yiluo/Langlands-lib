@@ -39,9 +39,8 @@ groups, projection maps or ellipticity predicates are introduced here.
 
 This is derived content specialized to `GL_n`; the cited sources do not print this
 exact Lean formulation with a finite set of rational matrix representatives.
-Worker 4918 supplied the initial shared draft. The statement retains its name
-and Lean form for the identity-twist application to the abstract simple twisted
-trace formula.
+The statement's name and Lean form are chosen for the identity-twist application
+to the abstract simple twisted trace formula.
 
 - Getz–Hahn, *An Introduction to Automorphic Representations* (2024), registered
   `getz-hahn-2024-automorphic-representations`, Lemma 17.7.11, printed pp. 461–462:
@@ -66,8 +65,10 @@ trace formula.
   sufficient local hypotheses for that formula. Here the conclusion concerns
   conjugacy in the full rational matrix group, without quotienting by its centre.
 
-The specialization is justified by the following mathematical route for a future
-proof; none of its steps is proved in this module. The characteristic polynomial
+The specialization is justified by the following mathematical route for a
+proof; none of its steps is proved in this module. The proof is
+`Langlands.TraceFormula.generalLinearEllipticClassFiniteness`, in the separate module
+`Langlands.TraceFormula.GeneralLinearEllipticClassFinitenessProof`. The characteristic polynomial
 is continuous in its coefficients and invariant under conjugation. Its coefficient
 vectors on `Ω` therefore form a compact subset of `𝔸_K^n`. The rational vectors
 `K^n` form a closed discrete subset, so only finitely many such vectors occur.

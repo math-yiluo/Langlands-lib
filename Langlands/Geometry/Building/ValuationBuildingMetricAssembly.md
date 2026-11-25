@@ -102,5 +102,3 @@ Proposition 4.2.18, printed pp.168–175 / PDF pp.199–206, and
 Proposition 1.5.24 for the retractions, printed p.63 / PDF p.94. These are read with the
 corrections of 1 November 2024, Section 4.2, PDF pp.28–29, which add
 Axiom 4.1.6 to the standing assumptions and G-invariance to Proposition 4.2.1.
-
-Author: Worker 1221.

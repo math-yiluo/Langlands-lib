@@ -1,6 +1,6 @@
 # Induced exact-K0 Weyl conjugacy from admissibility and generic isomorphism
 
-Author: Worker 60. This internal reduction keeps the independent universes
+This internal reduction keeps the independent universes
 `u` and `v`. Its conclusion is the unchanged, unapplied published
 `RationalInducedK0WeylConjugacyStatement.{u,v}`.
 

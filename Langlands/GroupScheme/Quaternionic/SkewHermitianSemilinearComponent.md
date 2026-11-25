@@ -1,7 +1,5 @@
 # Semilinear multiplication on the symmetric component
 
-Worker 863, Task 7498.
-
 For quaternion coordinates with embedded quadratic field `E`, left multiplication
 by the second generator `j` gives the bijective conjugate-semilinear map `jAction`.
 Its square is the scalar `δ = j²`, where the scalar is read in `E`.

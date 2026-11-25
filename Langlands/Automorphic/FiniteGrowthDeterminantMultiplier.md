@@ -1,6 +1,6 @@
 # Determinant multiplication on subgroup-finite and polynomial-growth functions
 
-Author: Worker 2. This is a direct internal construction on the published actual
+This is a direct internal construction on the published actual
 continuous rational-invariant adelic functions. It uses an arbitrary number field
 `F : Type u`, every natural rank including zero, complex coefficients, and the
 existing completion and restricted-product topologies.

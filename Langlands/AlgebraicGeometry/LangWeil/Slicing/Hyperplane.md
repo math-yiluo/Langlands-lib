@@ -1,7 +1,5 @@
 # Hyperplane sections of an algebra with chosen generators
 
-Author: Worker 5132.
-
 This helper module defines the hyperplane sections used in the hyperplane-slicing step
 `FamilyLangWeilSlicingStatement`, and records how they behave under base change.
 

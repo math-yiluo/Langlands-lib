@@ -1,7 +1,5 @@
 # Split root data from rank-one reducedness
 
-Worker 847.
-
 This is a derived internal construction. Its inputs and mathematical content
 come from the published Library modules `SplitRootReflectionReduction`,
 `RootReducednessReduction`, `SplitWeylRationality` and
@@ -23,8 +21,11 @@ the actual root set, and rational normalizer representatives of its
 reflections. The hypothesis concerns the actual adjoint roots of every
 connected reductive group with split maximal torus whose roots are pairwise
 linearly dependent over the integers. It asserts that two such roots agree
-up to sign. That hypothesis remains to be proved independently before this
-conditional construction can establish an unconditional root-datum result.
+up to sign. That hypothesis is proved independently from the rank-one central
+cover (`rankOneRootReducedness_of_centralCover rankOneCentralCover`), and
+`rootDatumExistenceIndependent` in `Reductive.RootDatumExistenceIndependent`
+applies this conditional construction to it to give an unconditional
+root-datum result.
 
 ## Full root kernel in the rank-one centralizer
 
@@ -89,10 +90,10 @@ The new proof terms use the explicit `hrank`; they do not use the existing
 `rootDatumExistence`, or the positive-root uniqueness construction. Some
 imported modules also contain those declarations. Their presence in an
 import is separate from their use as dependencies of these new terms.
-A private declaration audit followed types and opaque values of the final
+A declaration audit outside the Library followed types and opaque values of the final
 conditional theorem through 22,555 project declarations. It found no dependency
 on the named excluded statements, the existing contaminated proofs, or the
 projective-Borel and root-vector-line structural modules checked in that audit.
-Independent semantic review must also check the permitted helper route. This module is a
+This module is a
 conditional reduction and does not prove the independent rank-one
-hypothesis or the entire task by itself.
+hypothesis by itself.

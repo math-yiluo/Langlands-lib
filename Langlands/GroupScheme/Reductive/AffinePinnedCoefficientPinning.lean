@@ -16,7 +16,7 @@ set_option maxHeartbeats 800000
 
 namespace Langlands.GroupScheme.AffinePinnedModel
 
-local instance (M : AffinePinnedModel.{u}) (A : Type u)
+private local instance (M : AffinePinnedModel.{u}) (A : Type u)
     [CommRing A] [Algebra M.ring A] :
     IsAffineHom (M.groupOver (algebraBaseMap M.ring A)).X.hom :=
   inferInstanceAs (IsAffineHom (pullback.snd M.group.X.hom (algebraBaseMap M.ring A)))

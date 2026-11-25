@@ -1,9 +1,5 @@
 # The totally complex archimedean bridge for cuspidal complex-place parameters
 
-Author: Worker 818. Statement contribution to Task 7463
-(`665f4f54-6ef1-4d47-afd2-b5c1114af734`), revision 1, a statement child of Task 7343
-(`d6ca8ef3-60ca-4650-a436-8b5a00655394`).
-
 **Scope.** The module `Langlands.Automorphic.CuspidalComplexParameterBridgeStatement`
 defines three propositions in the namespace `Langlands.Automorphic` and proves nothing.
 Each has the single universe parameter `uF`, the universe of the number field.
@@ -15,18 +11,18 @@ Each has the single universe parameter `uF`, the universe of the number field.
 | `CuspidalComplexParameterBridgeTCStatement` | the existing parameter existence statement and the two statements above |
 
 The principal declaration is `Langlands.Automorphic.CuspidalComplexParameterBridgeTCStatement`.
-It is the named premise that the operator authorized beside the literal B7 statement, in the
-trusted message `89b70579f7465ae3994e304e80cf284b`: (i) a cuspidal class has parameters at
+It is a named premise beside the literal B7 statement: (i) a cuspidal class has parameters at
 each complex place, and these determine its infinitesimal character; (ii) that character is
 regular algebraic exactly when the parameters are characters `z^a z̄^b` with Clozel's
-integrality and regularity. Its proof belongs to archimedean representation work. Nothing in
+integrality and regularity. Nothing in
 this module, in the numerical examples quoted below, or in the Library's scalar-action theorem
-for complex standard modules proves it.
+for complex standard modules proves it. It is proved as `cuspidalComplexParameterBridgeTC` in
+the module `Langlands.Automorphic.CuspidalComplexParameterBridgeProof`.
 
 ## 1. Vocabulary
 
-Everything is published Library vocabulary. The supporting definitions of Task 7455
-(`0e2c3642-43ca-4d22-bd25-b95650fabbc0`) are in `Langlands.Automorphic.ComplexPlaceParameterWeights`.
+Everything is published Library vocabulary. The supporting definitions are in
+`Langlands.Automorphic.ComplexPlaceParameterWeights`.
 
 - `Langlands.LocalFactor.Archimedean.ComplexCharacterData` (`ArchimedeanAttachment`): an actual
   continuous character of `ℂ^×` with signed integer weight `m` and complex exponent `t`, certified
@@ -43,7 +39,7 @@ Everything is published Library vocabulary. The supporting definitions of Task 7
   `IsRegularAlgebraicCharacter F n χ` says that `χ` is the central character of a highest-weight
   vector whose weight `μ` is integral and antitone (dominant for the upper triangular Borel) at
   every embedding index. These highest weights are *unshifted*.
-- From Task 7455: `ComplexCharacterData.zExponent d = t + m/2` and
+- From `ComplexPlaceParameterWeights`: `ComplexCharacterData.zExponent d = t + m/2` and
   `ComplexCharacterData.zBarExponent d = t − m/2`; `ComplexPlaceParameter.rho n i = (n−1)/2 − i`
   (indices from `0`); `ComplexPlaceParameter.MatchesHighestWeight n ds μz μz̄` (`ds` has length
   `n`, its `z`-exponents are a permutation of `μz + rho n`, and, by an independent permutation,
@@ -102,18 +98,20 @@ cuspidal consumer applies it with `n = r+1`.
 The first conjunct is the published statement of
 `Langlands.Global.Factors.CuspidalPairFunctionalEquationTCStatement`, imported unchanged: every
 actual cuspidal realization over a totally complex field has a complex-place parameter at every
-complex place (its real-place clause is vacuous). Its proof belongs to Task
-`a2cfc970-9e20-4d56-b053-8f91a2e0b5cc`. This module states no second existence assertion.
+complex place (its real-place clause is vacuous). It is proved as
+`Langlands.Global.cuspidalArchimedeanParameterExistenceTC` (module
+`Langlands.Global.Factors.CuspidalArchimedeanParameterExistenceTCProof`). This module states no
+second existence assertion.
 
-The exact-stabilizer CM and TC branches of Harris's Proposition 4.8 (Task 7343) use the aggregate
+The exact-stabilizer CM and TC branches of Harris's Proposition 4.8 use the aggregate
 as their single named premise, instantiated at `.{0}`. Mathlib's `NumberField.IsCMField` carries
 the instance `IsCMField.to_isTotallyComplex`, so the aggregate applies to CM fields and no separate
 CM bridge is needed.
 
 ## 3. Use: the regular algebraic type of a cuspidal class
 
-This section explains how the aggregate is used. It is not a theorem of the Library, and the
-aggregate itself is unproved. Assume `CuspidalComplexParameterBridgeTCStatement.{uF}`, and let `F`
+This section explains how the aggregate is used. It is not a theorem of the Library; the
+aggregate itself is proved as `cuspidalComplexParameterBridgeTC`. Assume `CuspidalComplexParameterBridgeTCStatement.{uF}`, and let `F`
 be totally complex with `[CompactSpace (AdeleQuotient F)]`, `S : CuspidalOperatorRealization F r`,
 and `ds` a full family with `∀ v, HasComplexPlaceParameter S.realization v (ds v)`. (Such a family
 exists by the first conjunct, by choosing a parameter at each place.) Then
@@ -137,11 +135,12 @@ scalar-action clause is needed in the bridge.
 
 ## 4. Normalization
 
-The target is fixed against the current `ArchimedeanGL.IsRegularAlgebraicCharacter`, whose highest
+The target is fixed against the Library's `ArchimedeanGL.IsRegularAlgebraicCharacter`, whose highest
 weights are unshifted, integral and antitone, and against the orientation of
 `ArchimedeanGL.embeddingComponent`: `embeddingComponent_inr_false` says that `.inr (v, false)` reads
 the coordinate `z` at `v`, and `embeddingComponent_inr_true` says that `.inr (v, true)` reads its
-complex conjugate `z̄`. Task 7455 compiles the examples below in Lean; this module repeats their
+complex conjugate `z̄`. The module `Langlands.Automorphic.ComplexPlaceParameterWeightsExamples`
+compiles the examples below in Lean; this module repeats their
 calculations and does not duplicate the Lean examples.
 
 **Polar coordinates.** For `z = r e^{iθ}`, the character of `d = (m, t)` is
@@ -180,7 +179,7 @@ and `−1` at `.inr (v,true)`, and it is Clozel regular algebraic (`(n−1)/2 = 
   lists are Clozel regular algebraic. Exchanging the two embedding indices would give a different
   matching, so the example fixes which index carries `z`.
 
-**The Lean examples.** These calculations are compiled in Task 7455's module
+**The Lean examples.** These calculations are compiled in the module
 `Langlands.Automorphic.ComplexPlaceParameterWeightsExamples`, which this module imports and does not
 duplicate. Every block there is the published actual character
 `Langlands.Archimedean.characterOfParams m t` (weight `m`, exponent `t`). The declarations, all in the
@@ -231,19 +230,19 @@ Vol. I (1990). Printed and PDF pages differ by eleven.
 
 Clozel's integrality and regularity motivate the parameter condition; his shift and Weyl group
 motivate the matching relation. The aggregate and the matching formulation are an internal
-interface implementing the operator's explicit request for a named bridge. They do not claim
+interface, a named bridge. They do not claim
 that Clozel states these Lean predicates. The formal normalization is that of the published
-`Langlands/Automorphic/RegularAlgebraic.{lean,md}` and of Task 7455's definitions.
+`Langlands/Automorphic/RegularAlgebraic.{lean,md}` and of the definitions in
+`ComplexPlaceParameterWeights`.
 
 ## 7. Relation to other Library work
 
 - `Langlands.Representation.Archimedean.ComplexPrincipalSeriesInfinitesimalCharacter` proves that
   the actual local enveloping center acts by scalars on a complex standard module. It does not
   identify these scalars with the exponent and highest-weight formula above, and it does not
-  relate the local center to `ArchimedeanGL.EnvelopingCenter`. That comparison remains an
-  obligation of a proof of the bridge.
-- Task 7435 (`6bc88750-e530-4fde-bca8-eecd80d4dc2e`,
-  `Langlands.Automorphic.Unramified.ComplexPlaceParameterTransport`) supplies the literal B7
+  relate the local center to `ArchimedeanGL.EnvelopingCenter`. That comparison is part of a
+  proof of the bridge.
+- The module `Langlands.Automorphic.Unramified.ComplexPlaceParameterTransport` supplies the literal B7
   transport vocabulary. The bridge asserts neither weak base change compatibility nor
   weak induction.
 - The original Harris statements and the cohomological A2 fallback are unchanged.

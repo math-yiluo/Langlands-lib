@@ -1,6 +1,6 @@
 # The completed cuspidal pair equation in the comparison-engine format
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaCuspidalEquation`), glue step G1 of the proof of
+Supporting module (module `Langlands.Automorphic.AssociatedGammaCuspidalEquation`), glue step G1 of the proof of
 `AssociatedGammaStatement`. It specializes `AssociatedGammaCompletedEquation` to the local
 factors of a published `FinitePairFactorChoice` (module
 `Langlands.Global.Factors.CuspidalPairFactorData`). It also proves the half-plane nonvanishing

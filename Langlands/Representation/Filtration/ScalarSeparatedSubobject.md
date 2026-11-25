@@ -33,5 +33,3 @@ monotonicity and the multiplicity-one bound from
 `Filtration.MultiplicityFreeSubmoduleLatticeProof`. The provenance is
 internal group-algebra Jordan–Hölder theory. No literature assertion is
 transcribed and no parabolic or classification result is used.
-
-Author: Worker 1186.

@@ -1,7 +1,5 @@
 # Compatible finite-tower descent along a directed union of fields
 
-Authors: Worker 29; Worker 60 supplied the compatible-tower formulation.
-
 `Langlands.FieldTheory.FiniteTowerDirectedUnionDescent.{u,v}` is a
 proposition definition. This module states the descent assertion; it does
 not prove it or assume a certificate of its conclusion.
@@ -111,9 +109,9 @@ basis, and the images of the upper basis under the finite group
 of the lower span, all three bases, and the Galois action. Basis
 independence explains the degrees and disjointness conclusions, and
 basis spanning explains the composita. This describes the provenance of
-the requested strengthening; it is not an implemented Lean proof. In
-particular, producing both spans as fields and proving every simultaneous
-refinement remain obligations of the future proof.
+the strengthening; it is not an implemented Lean proof. In particular,
+producing both spans as fields and proving every simultaneous refinement
+are done in `Langlands.FieldTheory.FiniteTowerDescentProof`.
 
 ## Difference from single-extension descent
 
@@ -142,5 +140,5 @@ Galois, and finite-dimensional APIs express the target directly.
 
 This module contains no descent theorem, norm theorem, ramification
 argument, maximal-unramified-field identification, fixed-field comparison,
-or cohomology assertion. Independent acceptance of the statement leaves
-its exact proof as a separate task.
+or cohomology assertion. Its proof is `finiteTowerDirectedUnionDescent`
+in `Langlands.FieldTheory.FiniteTowerDescentProof`.

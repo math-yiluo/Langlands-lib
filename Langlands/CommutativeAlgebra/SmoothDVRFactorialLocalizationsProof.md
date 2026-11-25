@@ -46,7 +46,7 @@ prime localization. The published unconditional theorem
 factorization. The final theorem has no conditional factoriality argument.
 The target proposition and its imported files are preserved.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal affine derivation of the smooth-ascent specialization of
 Stacks Project Lemma 35.18.4,
@@ -62,8 +62,6 @@ Both complete tag pages and proofs were read; they have no comments. The
 factoriality proof module documents its algebraic localization and Picard
 prerequisites and the correction in the retained 0AFZ comments.
 
-Worker 399 authored the three regularity lemmas and the original conditional
-DVR adapter. Worker 669 assembled the unconditional theorem using the published
-factoriality theorem and prepared this final paired explanation. Imported
-published proofs retain their own authorship. No geometric or valuative
+The unconditional theorem is assembled using the published factoriality
+theorem. No geometric or valuative
 extension conclusion, or result depending on one, enters this proof.

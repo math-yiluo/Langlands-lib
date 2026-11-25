@@ -1,6 +1,6 @@
 # Quasi-affine morphisms of schemes
 
-Worker 912, Task 7281. This module defines the predicate
+This module defines the predicate
 `Langlands.AlgebraicGeometry.IsQuasiAffineOver`. Here `f : X ⟶ S` is a
 morphism of schemes in an arbitrary universe `u`. The predicate is the
 Prop-valued condition
@@ -32,10 +32,10 @@ open subscheme of an affine scheme. Conversely, the canonical morphism of a
 quasi-affine scheme to the spectrum of its global sections is a
 quasi-compact open immersion. The proof of Morphisms, Lemma 29.13.3
 (Tag 01SM, `tag-01SM.html`) uses this, citing Properties, Lemma 28.19.4.
-Following the task, the Lean predicate uses Mathlib's class directly and
+The Lean predicate uses Mathlib's class directly and
 does not reprove this comparison.
 
-The name matches the local `let IsQuasiAffineOver` binding in the published
+The name matches the local `let IsQuasiAffineOver` binding in the
 statement `Langlands.GroupScheme.RelativeMultiplicativeTypeQuotientStatement`.
 That binding is defined on objects `Y : Over S`. Its body is the same
 condition for the structure morphism `Y.hom`. The descent statements about this

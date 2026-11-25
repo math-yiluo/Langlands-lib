@@ -1,6 +1,6 @@
 # Finite central Cartan covers on the rational norm kernel
 
-This internal supporting unit supplies the compact envelope needed after a
+This module, of internal provenance, supplies the compact envelope needed after a
 uniform coefficient argument bounds the positive Cartan exponents. It proves
 no existence of Cartan charts and no coefficient vanishing bound.
 

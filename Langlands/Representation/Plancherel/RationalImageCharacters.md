@@ -1,7 +1,5 @@
 # Characters of the actual rational-character valuation image
 
-Author: Worker 200.
-
 This is a derived construction toward Waldspurger, *La formule de Plancherel
 pour les groupes p-adiques (d'après Harish-Chandra)*, I.1, printed pp.239–240
 (PDF pp.5–6), source `waldspurger-2003-plancherel`, SHA256

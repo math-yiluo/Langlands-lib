@@ -83,7 +83,7 @@ documented in [ClosedRootSubsetStatements](ClosedRootSubsetStatements.md):
 
 The Lean route is the elementary root-sign consequence of the published
 dominant chamber theorem, whose proof maximizes evaluation on the sum of the
-positive roots. Closedness is retained unchanged on both sides. This unit
+positive roots. Closedness is retained unchanged on both sides. This module
 asserts no root-subgroup existence or intersection theorem and proves none of
 the other components of `ClosedRootSubsetStatements`.
 

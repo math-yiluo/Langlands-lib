@@ -105,8 +105,9 @@ theorem harrisTaylorCMRationalLieDeterminantCondition_centralTrace
   have htrace :
       lieRationalSectionTrace p B (D.harrisRationalOrderAction C B i) e c V =
         lieRationalSectionTrace p B (HarrisTaylor.centralAction B i) e (m • a) V := by
-    change localSectionTrace e ((lieMap0 p (i (c : A))).over U) V =
-      localSectionTrace e ((lieMap0 p (i (algebraMap F A (m • a)))).over U) V
+    change localSectionTrace e (CategoryTheory.End.of ((lieMap0 p (i (c : A)).asHom).over U)) V =
+      localSectionTrace e
+        (CategoryTheory.End.of ((lieMap0 p (i (algebraMap F A (m • a))).asHom).over U)) V
     rw [hc]
   rw [htrace, HarrisTaylor.lieTraceSection_zsmul] at hcoef
   have hscale :

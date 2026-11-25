@@ -1,7 +1,5 @@
 # Eigen-covectors of the negative Borel subgroup
 
-Author: Worker 900.
-
 This module proves that every nonzero finite representation of a group with a
 split pinning has a nonzero covector on which the negative Borel subgroup acts
 through the character coordinate of a torus character. It is the Lean form of the

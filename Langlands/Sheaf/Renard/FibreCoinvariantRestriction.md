@@ -2,7 +2,7 @@
 
 Helper module for the proof of Renard III.3.1, Proposition
 (`Langlands.Sheaf.Renard.CoinvariantStatements.FibreCoinvariantStatement`).
-Worker 136 wrote it for Task 5593. All declarations have prefix
+All declarations have prefix
 `Langlands.Sheaf.Renard.FibreCoinvariantRestriction`.
 
 ## Setting

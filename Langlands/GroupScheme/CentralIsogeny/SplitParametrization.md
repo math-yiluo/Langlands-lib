@@ -1,7 +1,5 @@
 # Closed split-torus lifts from split-torus parametrizations
 
-Author: Worker 1437.
-
 This internal helper is a consequence of the published dominant split-torus
 image construction and descent of containment through a schematically dominant
 map. It is intended for the split maximal-torus lift proof. It does not construct

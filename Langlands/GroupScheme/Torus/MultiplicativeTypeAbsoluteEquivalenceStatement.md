@@ -61,4 +61,4 @@ restricted to groups split by one specified finite Galois extension.
 The proposition here does not assume that finite-level equivalence, finite
 splitting or finite factorization: those are possible proof inputs that must
 be independently supplied. Exactness of the character correspondence is a
-separate assertion, and no equivalence proof is included in this unit.
+separate assertion, and no equivalence proof is included in this module.

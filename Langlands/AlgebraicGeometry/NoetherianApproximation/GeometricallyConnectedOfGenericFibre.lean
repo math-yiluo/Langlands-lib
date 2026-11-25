@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AlgebraicGeometry.FieldSmoothProperConnectedGlobalFunctionsProof
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_geometricallyConnected_of_isProper_of_flat_of_bijective_appTop_pullback_snd
 

@@ -1,6 +1,6 @@
 # Degree filtration on the actual archimedean enveloping algebra
 
-Author: Worker 94. This is an internal specialization of
+This is an internal specialization of
 `Langlands.Algebra.UniversalEnvelopingFiltration` to the published actual
 complexified archimedean matrix Lie algebra. It applies to `K : Type u`
 with a field structure and every `n : ℕ`; finite-dimensionality of the

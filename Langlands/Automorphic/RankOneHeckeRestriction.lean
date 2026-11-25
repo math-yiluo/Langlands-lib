@@ -2,9 +2,9 @@ import Langlands.Automorphic.RankOneHeckeConjugateSelfDual
 import Langlands.Automorphic.WeakAutomorphicInduction
 import Langlands.Automorphic.Unramified.WeakInduction
 import Langlands.Global.Arithmetic.HarrisSetup
-import Langlands.ClassField.Global.CohomologyMaps
-import Langlands.ClassField.Global.IdeleClassPlaceProduct
-import Langlands.ClassField.Global.RelativeWeilUnramifiedTwist
+import Langlands.ClassFieldTheory.Global.CohomologyMaps
+import Langlands.ClassFieldTheory.Global.IdeleClassPlaceProduct
+import Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTwist
 import Langlands.Global.AdelicFunctoriality.IdeleNormLift
 import Langlands.Global.AdelicFunctoriality.CompletedRamification
 import Langlands.Global.Factors.HeckeFiniteRamification
@@ -120,7 +120,7 @@ theorem restriction_finiteUniformizerValue (h : Module.finrank K L = 1) (ξ : He
   have hϖ : Valued.v (ϖ : p.adicCompletion K) = WithZero.exp (-1 : ℤ) := by
     have h1 := LocalFactor.PadicAbelian.uniformizerUnit_zpow_value
       (CompletionPadic.padicField p).canonicalTopologicalData 1
-    rw [zpow_one, Langlands.ClassField.Global.RelativeWeilGroup.discreteValuation_padicField p]
+    rw [zpow_one, Langlands.ClassFieldTheory.Global.RelativeWeilGroup.discreteValuation_padicField p]
       at h1
     exact h1
   change (restriction (K := K) ξ).finiteComponent p ϖ = _
@@ -231,7 +231,7 @@ theorem restriction_ideleClassComplexConj [IsCMField K] [IsCMField L] {ξ : Heck
   intro x
   change ξ (ideleClassInclusion (ideleClassEquiv (IsCMField.complexConj K).toRingEquiv x)) =
     (ξ (ideleClassInclusion x))⁻¹
-  rw [Langlands.ClassField.Global.ideleClassInclusion_ideleClassEquiv _
+  rw [Langlands.ClassFieldTheory.Global.ideleClassInclusion_ideleClassEquiv _
     (IsCMField.complexConj L).toRingEquiv (fun a => complexConj_algebraMap a)]
   exact hξ _
 

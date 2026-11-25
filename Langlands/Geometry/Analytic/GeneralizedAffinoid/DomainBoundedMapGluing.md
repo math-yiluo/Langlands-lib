@@ -89,4 +89,4 @@ the local bounded maps. It does not replace that condition by an unconstructed
 pairwise full-domain intersection. General full intersections, unrestricted
 analytic atlas restrictions, analytic etale and quasi-etale sites, equivariant
 sites, distinguished domains, and Harris tower constructions remain outside this
-focused unit.
+module.

@@ -31,8 +31,6 @@ uniqueness of the local lifts.
 
 # Detecting represented subgroup containment on an étale cover
 
-Worker 608.
-
 This internal lemma supports the intersection step in the opposite Borel proof.
 For any subgroup functor and any monomorphic group scheme inclusion, containment
 in its image is equivalent to containment after base change to every member of

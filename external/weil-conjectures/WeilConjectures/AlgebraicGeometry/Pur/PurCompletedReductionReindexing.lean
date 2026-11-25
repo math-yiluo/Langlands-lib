@@ -1,0 +1,66 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+module
+
+public import WeilConjectures.AlgebraicGeometry.Completed.CompletedCompactSupportExchange
+public import WeilConjectures.AlgebraicGeometry.Integral.IntegralUniformCoefficient
+public import WeilConjectures.AlgebraicGeometry.Strict.Tower.StrictTowerOperationsSupplement
+public import WeilConjectures.AlgebraicGeometry.AdicCoefficientDatum.CompletedDirectImageLimits
+public import WeilConjectures.AlgebraicGeometry.Iso.IsoSectionwiseInverseImage
+public import WeilConjectures.AlgebraicGeometry.ProEtale.Constant.ProEtaleConstantRingOperations
+public import WeilConjectures.CategoryTheory.RingedStrictTowerHomotopyLimitIndependentCoefficients
+public import WeilConjectures.CategoryTheory.Ringed.RingedStrictTowerHomotopyLimitOfUniverses
+public import WeilConjectures.Algebra.Homology.SmoothPurity.KFlatSupplement
+public import Mathlib.Algebra.Homology.DerivedCategory.ShortExact
+public import WeilConjectures.Algebra.Homology.KInjectiveProductsTermwise
+public import Mathlib.Algebra.Homology.HomologicalComplexLimits
+public import Mathlib.Algebra.Homology.DerivedCategory.Basic
+public import Mathlib.Algebra.Homology.HomotopyCategory.KInjective
+public import Mathlib.Algebra.Homology.DerivedCategory.KInjective
+public import WeilConjectures.Algebra.Homology.HomotopyCategory.Products
+public import WeilConjectures.Mathlib.CategoryTheory.Limits.Shapes.Products
+public import WeilConjectures.Algebra.Homology.TowerEvaluationKInjective
+public import WeilConjectures.CategoryTheory.GrothendieckAbelian.KInjectiveResolutionInjective
+public import Mathlib.Algebra.Category.ModuleCat.Sheaf.PushforwardContinuous
+public import Mathlib.CategoryTheory.Sites.Equivalence
+public import WeilConjectures.Mathlib.Algebra.Category.ModuleCat.Sheaf.Abelian
+public import WeilConjectures.CategoryTheory.GrothendieckAbelian.KInjectiveResolution
+public import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.FunctorCategory
+public import Mathlib.CategoryTheory.Adjunction.Evaluation
+public import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.Triangulated
+public import Mathlib.CategoryTheory.Localization.DerivabilityStructure.Derives
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+public import WeilConjectures.AlgebraicGeometry.ProEtale.ProEtaleAmbientRingedExchange
+public import WeilConjectures.CategoryTheory.DerivedCategory.RightDerivedFunctor.ShortExactPullback
+public import WeilConjectures.AlgebraicGeometry.Pur.PurCompletedReindexingData
+import WeilConjectures.AlgebraicGeometry.Pur.PurCompletedModuleReindexing
+import WeilConjectures.AlgebraicGeometry.Pur.PurReindexingLimitNormalization
+import WeilConjectures.AlgebraicGeometry.Pur.PurReindexingOrdinaryMate
+import WeilConjectures.AlgebraicGeometry.Pur.PurReindexingDerivedMates
+import all WeilConjectures.AlgebraicGeometry.AdicCoefficientDatum.CompletedDirectImageLimits
+import WeilConjectures.Mathlib.Algebra.Homology.DerivedCategory.ExactFunctor
+
+/-! # Completed reduction reindexing under scheme isomorphisms
+
+The concrete definitions are re-exported from PurCompletedReindexingData.
+-/
+@[expose] public noncomputable section
+set_option autoImplicit false
+set_option synthInstance.maxSize 2048
+set_option linter.privateModule false
+set_option linter.unusedTactic false
+set_option linter.unreachableTactic false
+universe t
+open CategoryTheory CategoryTheory.Limits Opposite
+namespace AlgebraicGeometry.Scheme
+attribute [local irreducible] completedAdicChangeData completedReductionCoefficient
+attribute [local irreducible] proEtaleRingModulePullback proEtaleRingModuleDirectImage
+attribute [local irreducible] Functor.mapDerivedCategory Functor.rightDerivedFunctor
+attribute [local irreducible] CochainComplex.IsKFlatIndependentCoefficients
+attribute [local irreducible] HasDerivedCategory.standard
+attribute [local instance 2000] reductionModulesHasDerivedCategory reductionTowerHasDerivedCategory
+
+end AlgebraicGeometry.Scheme

@@ -52,7 +52,8 @@ theorem hasEulerPolynomialAt_ofContinuous_iff {P : L[X]} :
         FrobeniusPolynomial.frobeniusEulerPolynomial v M = P := by
   rw [GaloisRepresentation.hasEulerPolynomialAt_iff]
   exact and_congr (forall_congr' fun _ =>
-    ⟨fun h => ModuleCat.hom_ext h, fun h => congrArg ModuleCat.Hom.hom h⟩) Iff.rfl
+    ⟨fun h => End.ext (ModuleCat.hom_ext h),
+      fun h => congrArg ModuleCat.Hom.hom (congrArg End.asHom h)⟩) Iff.rfl
 
 end General
 
@@ -68,18 +69,20 @@ def baseChangeAction :
     Action (ModuleCat.{max uL uV} L) (Field.absoluteGaloisGroup K) where
   V := ModuleCat.of L (L ⊗[O] V.V)
   ρ :=
-    { toFun := fun g => ModuleCat.ofHom ((V.ρ g).hom.baseChange L)
+    { toFun := fun g => End.of (ModuleCat.ofHom ((V.ρ g).asHom.hom.baseChange L))
       map_one' := by
+        apply End.ext
         apply ModuleCat.hom_ext
         rw [map_one]
         exact LinearMap.baseChange_id
       map_mul' := fun g h => by
+        apply End.ext
         apply ModuleCat.hom_ext
         rw [map_mul]
         exact LinearMap.baseChange_comp _ _ }
 
 theorem baseChangeAction_ρ_hom (g : Field.absoluteGaloisGroup K) :
-    ((baseChangeAction (L := L) V).ρ g).hom = (V.ρ g).hom.baseChange L :=
+    ((baseChangeAction (L := L) V).ρ g).asHom.hom = (V.ρ g).asHom.hom.baseChange L :=
   rfl
 
 instance [Module.Finite O V.V] : Module.Finite L (baseChangeAction (L := L) V).V :=
@@ -92,7 +95,7 @@ instance [Module.Free O V.V] : Module.Free L (baseChangeAction (L := L) V).V :=
 `x`, are continuous with values in `L`. -/
 def IsLatticeContinuous [TopologicalSpace L] : Prop :=
   ∀ (f : V.V →ₗ[O] O) (x : V.V),
-    Continuous fun g : Field.absoluteGaloisGroup K => algebraMap O L (f ((V.ρ g).hom x))
+    Continuous fun g : Field.absoluteGaloisGroup K => algebraMap O L (f ((V.ρ g).asHom.hom x))
 
 section Places
 
@@ -105,9 +108,10 @@ theorem isUnramifiedAlong_baseChange
     (hu : IsUnramifiedAlong (ModuleCat.{uV} O) v V ι) :
     IsUnramifiedAlong (ModuleCat.{max uL uV} L) v (baseChangeAction (L := L) V) ι := by
   intro i
+  apply End.ext
   apply ModuleCat.hom_ext
-  change ((V.ρ (localRestriction v ι i.val)).hom).baseChange L = LinearMap.id
-  rw [show V.ρ (localRestriction v ι i.val) = 𝟙 V.V from hu i]
+  change ((V.ρ (localRestriction v ι i.val)).asHom.hom).baseChange L = LinearMap.id
+  rw [show (V.ρ (localRestriction v ι i.val)).asHom = 𝟙 V.V from congrArg End.asHom (hu i)]
   exact LinearMap.baseChange_id
 
 variable [Module.Free O V.V] [Module.Finite O V.V]
@@ -122,9 +126,9 @@ theorem frobeniusEulerPolynomial_baseChange :
   rw [FrobeniusPolynomial.frobeniusEulerPolynomial_eq_along ι,
     FrobeniusPolynomial.frobeniusEulerPolynomial_eq_along ι]
   change (((V.ρ (localRestriction v ι
-      (Langlands.GaloisRepresentation.geometricFrobeniusLift v))).hom).baseChange L).charpoly.reverse =
+      (Langlands.GaloisRepresentation.geometricFrobeniusLift v))).asHom.hom).baseChange L).charpoly.reverse =
     ((V.ρ (localRestriction v ι
-      (Langlands.GaloisRepresentation.geometricFrobeniusLift v))).hom).charpoly.reverse.map
+      (Langlands.GaloisRepresentation.geometricFrobeniusLift v))).asHom.hom).charpoly.reverse.map
         (algebraMap O L)
   rw [LinearMap.charpoly_baseChange, Polynomial.reverse, Polynomial.reverse,
     (LinearMap.charpoly_monic _).natDegree_map, Polynomial.reflect_map]
@@ -158,16 +162,16 @@ theorem isContinuous_baseChange (hV : IsLatticeContinuous (L := L) V) :
   let e := LinearMap.toMatrix bL bL
   have hsymm : Continuous e.symm := IsModuleTopology.continuous_of_linearMap e.symm.toLinearMap
   have hentries : Continuous fun g : Field.absoluteGaloisGroup K =>
-      e ((baseChangeAction (L := L) V).ρ g).hom := by
+      e ((baseChangeAction (L := L) V).ρ g).asHom.hom := by
     refine continuous_pi fun i => continuous_pi fun j => ?_
     have heq : (fun g : Field.absoluteGaloisGroup K =>
-        e ((baseChangeAction (L := L) V).ρ g).hom i j) =
-        fun g => algebraMap O L (b.coord i ((V.ρ g).hom (b j))) := by
+        e ((baseChangeAction (L := L) V).ρ g).asHom.hom i j) =
+        fun g => algebraMap O L (b.coord i ((V.ρ g).asHom.hom (b j))) := by
       funext g
       change LinearMap.toMatrix (Algebra.TensorProduct.basis L b)
           (Algebra.TensorProduct.basis L b)
-          ((V.ρ g).hom.baseChange L : L ⊗[O] V.V →ₗ[L] L ⊗[O] V.V) i j =
-        algebraMap O L (b.repr ((V.ρ g).hom (b j)) i)
+          ((V.ρ g).asHom.hom.baseChange L : L ⊗[O] V.V →ₗ[L] L ⊗[O] V.V) i j =
+        algebraMap O L (b.repr ((V.ρ g).asHom.hom (b j)) i)
       rw [LinearMap.toMatrix_apply, Algebra.TensorProduct.basis_apply, LinearMap.baseChange_tmul,
         Algebra.TensorProduct.basis_repr_tmul]
       simp
@@ -177,7 +181,7 @@ theorem isContinuous_baseChange (hV : IsLatticeContinuous (L := L) V) :
     (baseChangeAction (L := L) V).ρ)
   have hfun : ⇑((ModuleCat.endRingEquiv (baseChangeAction (L := L) V).V).toMonoidHom.comp
       (baseChangeAction (L := L) V).ρ) =
-      e.symm ∘ fun g => e ((baseChangeAction (L := L) V).ρ g).hom := by
+      e.symm ∘ fun g => e ((baseChangeAction (L := L) V).ρ g).asHom.hom := by
     funext g
     simp only [Function.comp_apply, LinearEquiv.symm_apply_apply]
     rfl

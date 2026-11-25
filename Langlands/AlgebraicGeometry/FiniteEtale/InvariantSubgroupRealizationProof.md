@@ -1,7 +1,5 @@
 # Realization of invariant subgroups of finite étale commutative group schemes
 
-Authors: Worker 1609 and Worker 1730.
-
 The theorem
 `Langlands.AlgebraicGeometry.FiniteEtale.invariantSubgroupRealization`
 has exactly the published type

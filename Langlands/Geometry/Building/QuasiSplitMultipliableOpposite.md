@@ -1,16 +1,15 @@
 # The opposite-pair axiom at multipliable roots from piece symmetries
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.QuasiSplitMultipliableOpposite`.
 
-This internal unit belongs to task 8ffe0456 and follows the units
+This module is part of the construction of actual quasi-split apartments over henselian
+integer-valued fields and follows the modules
 `QuasiSplitMultipliablePieces` and `QuasiSplitMultipliableFactorization`. Over a field where
 the torus `T` is split, it proves axiom V 5 for the torus restriction `ψ` of a point `xa` of a
 normalizer-stable apartment class, at a multipliable character `a` of a split subtorus `S`.
 It assumes a family of *piece symmetries* that preserve the values of `xa` and act
 transitively on the roots over each multiple of `a`. Galois automorphisms of a splitting field
-supply this family in the final unit, `QuasiSplitIntegerApartmentExistenceProof`.
+supply this family in the module `QuasiSplitIntegerApartmentExistenceProof`.
 
 ## Setting and notation
 
@@ -177,17 +176,17 @@ The main theorem is the type R2 case of axiom V 5 in Kaletha–Prasad, *Bruhat�
 New Approach* (2023), Proposition 6.1.19 (printed pp. 206–207, PDF pp. 237–238). The
 valuation there is that of Construction 6.1.17 (printed pp. 205–206, PDF pp. 236–237), and
 the type R2 classification is in §2.6(c) (printed p. 96, PDF p. 127). Kaletha–Prasad reduce
-to the rank-one group `SU₃` and its explicit valuation (§2.7, §3.2). This unit instead uses
+to the rank-one group `SU₃` and its explicit valuation (§2.7, §3.2). This module instead uses
 an internal route through the split group. It combines piece coordinates, commutation of
 different pieces, separation in opposite dynamic unipotent subgroups, the exact commutator
-values of the preceding units, and the symmetries of a Galois-fixed point. All statements
-are internal. Their proofs compose published Library results, Mathlib, and the units
+values of `QuasiSplitMultipliablePieces` and `QuasiSplitMultipliableFactorization`, and the symmetries of a Galois-fixed point. All statements
+are internal. Their proofs compose published Library results, Mathlib, and the modules
 `QuasiSplitApartmentOpposite`, `QuasiSplitMultipliablePieces` and
-`QuasiSplitMultipliableFactorization` of this task.
+`QuasiSplitMultipliableFactorization`.
 
 ## Scope
 
-The symmetry and transitivity hypotheses are explicit premises of the main theorem. This unit
-does not construct them; the final unit derives them from Galois theory for a finite Galois
+The symmetry and transitivity hypotheses are explicit premises of the main theorem. This module
+does not construct them; `QuasiSplitIntegerApartmentExistenceProof` derives them from Galois theory for a finite Galois
 splitting field. The degenerate case of `piece_factorization` is handled uniformly through
 `piece_factorization_uniform` rather than excluded.

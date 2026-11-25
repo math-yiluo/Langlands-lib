@@ -1,7 +1,5 @@
 # Absence of degenerate mirabolic submodules over local fields
 
-Author: Worker 5165.
-
 `Langlands.Whittaker.LocalFieldMirabolicNondegeneracyStatement.{uF,uV}`
 states the admissible generic case of Bernstein–Zelevinsky (1977), Theorem
 4.9, using the actual full upper-unipotent character quotient. This file

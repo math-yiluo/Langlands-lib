@@ -1,8 +1,8 @@
 # Reductions for character-localized upper-unipotent coinvariants
 
-Author: Worker 784. This module is an internal prerequisite of the exact proof task
-`62de5903-b616-4b5c-88eb-a066b77c5467`, which proves
-`Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`. It proves two
+This module is an internal prerequisite of the proof of
+`Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`
+(`SupercuspidalCoinvariantFinitenessProof`). It proves two
 reductions for the published quotient `Jacquet.Localization.Coinvariants ρ U η` of
 [`Jacquet/Localization`](../Jacquet/Localization.md). That quotient divides `V` by the span of
 `ρ(u)v - (η u : R) • v` for `u ∈ U`, the positive-character convention of

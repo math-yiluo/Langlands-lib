@@ -1,6 +1,6 @@
 # Maximal abelian reduction of finite Galois norm images
 
-This derived supporting unit works in an arbitrary common field universe. It defines `maximalAbelianNormSubfield K M` as the fixed field of the commutator subgroup of the actual Galois group. For a finite Galois extension this field is abelian over the base: Mathlib identifies its automorphism group with the abelianization.
+This module works in an arbitrary common field universe. It defines `maximalAbelianNormSubfield K M` as the fixed field of the commutator subgroup of the actual Galois group. For a finite Galois extension this field is abelian over the base: Mathlib identifies its automorphism group with the abelianization.
 
 For a p-adic base field, the actual determinant-norm image from this subfield equals the norm image from the whole finite Galois extension. Norm transitivity gives containment. The finite norm equivalence from `NormExistenceFiniteSupport` identifies the whole extension's norm index with the cardinality of the Galois abelianization. The same cardinality is the degree of the commutator fixed field, and the abelian norm index is that degree. Strict decrease of finite subgroup index under strict enlargement then proves equality.
 

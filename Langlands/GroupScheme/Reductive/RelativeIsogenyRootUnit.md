@@ -1,6 +1,6 @@
 # Unit coefficients of finite actual root restrictions
 
-This internal derived unit proves that finiteness makes the coefficient in
+This internal derived module proves that finiteness makes the coefficient in
 `RelativeIsogenyRootPower` a unit. The base is an arbitrary local commutative
 ring `R`, including nonreduced rings. The source and target group schemes are
 affine, with supplied finite coordinate tori and reduced full fibrewise root
@@ -65,4 +65,4 @@ Tests need not be affine or reduced.
 All constructions are derived from the imported root-restriction, natural
 power, additive base-change and finite-homomorphism APIs. Existence of the
 supplied root-datum isogeny, opposite-root comparison and assembly of the full
-torus-conjugacy rigidity theorem remain separate obligations.
+torus-conjugacy rigidity theorem are not part of this module.

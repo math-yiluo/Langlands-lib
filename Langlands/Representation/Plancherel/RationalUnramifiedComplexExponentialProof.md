@@ -1,7 +1,5 @@
 # The unramified complex exponential is a local biholomorphism
 
-Author: Worker 306.
-
 `Langlands.Plancherel.rationalUnramifiedComplexExponential` proves
 `Langlands.Plancherel.RationalUnramifiedComplexExponentialStatement.{u}`. The theorem uses any
 integer basis \(b\) of the valuation image \(\Lambda(G)\), with the complex-analytic structure

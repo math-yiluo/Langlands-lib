@@ -1,8 +1,8 @@
 # Proof of the actual abelian epsilon Brauer-kernel compatibility
 
-Author: Worker 5093. Lean module `Langlands.LocalFactor.NonabelianBrauerKernelProof`, namespace
-`Langlands.LocalFactor.NonabelianBrauer`. This is the exact proof for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`.
+Lean module `Langlands.LocalFactor.NonabelianBrauerKernelProof`, namespace
+`Langlands.LocalFactor.NonabelianBrauer`. This is the exact proof of
+`KernelCompatibilityStatement`.
 
 ## Target
 
@@ -19,10 +19,10 @@ is added and no quantifier is restricted. The target pair and the pairs it impor
 
 ## The proof term
 
-`kernelCompatibilityStatement_of_localTransferReciprocity.{uF, uV}` (unit
+`kernelCompatibilityStatement_of_localTransferReciprocity.{uF, uV}` (module
 `BrauerKernel.GlobalAssembly`) applied to the published theorem
-`Langlands.ClassField.Global.RelativeWeilGroup.localTransferReciprocity.{0}`
-(module `Langlands.ClassField.Global.LocalRelativeWeilTransferProof`), which proves
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.localTransferReciprocity.{0}`
+(module `Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof`), which proves
 `LocalTransferReciprocityStatement.{0}`. The number fields of the global argument live in
 `Type`, which is why universe `0` occurs; it is internal to the proof and does not restrict `F`.
 The theorem uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
@@ -33,26 +33,26 @@ The proof follows Deligne's global argument (P. Deligne, *Les constantes des éq
 fonctionnelles des fonctions L*, 1973, Lemma 4.7 and the proof of Lemma 4.12 with §§4.13–4.16),
 adapted to the continuous common-closure presentation of the target. The implemented steps are:
 
-1. **Reduction to the bottom field** (published unit `BrauerKernel.BottomReduction`,
+1. **Reduction to the bottom field** (published module `BrauerKernel.BottomReduction`,
    `evaluationMap_eq_zero_of_bottom`): a relation over an intermediate field `E` is a relation
    over the bottom field `baseExtension F`, with the trace-pulled additive character.
-2. **Additive-character independence** (published unit `BrauerKernel.Determinant`,
+2. **Additive-character independence** (published module `BrauerKernel.Determinant`,
    `evaluationMap_additiveCharacter_independent`): over the bottom field, the evaluation of a
    kernel element does not depend on the additive character, so one may use the base character
    coming from the global argument.
-3. **Galois types** (published units `BrauerKernel.GaloisType`, `TypeChoice`, `TypeSplit`,
+3. **Galois types** (published modules `BrauerKernel.GaloisType`, `TypeChoice`, `TypeSplit`,
    `nonempty_galoisTypeDecomposition`): a kernel element yields a finite Galois extension `K/F`
    with group `G = Gal(K/F)`; each generator character is an unramified twist `‖·‖^t` of a
    character of finite order of a subgroup of `G`, and the relation splits into one identity in
    the representation ring of `G` for each unramified type.
-4. **Global realization** (published `Global.totallyRealGaloisRealization`; units
+4. **Global realization** (published `Global.totallyRealGaloisRealization`; modules
    `RealizationPlace`, `RealizationField`): `K/F` is the completion `K'_w/k_v` of a totally real
    Galois extension of number fields with a single place `w` above `v`.
-5. **Global characters and relation** (published unit `BrauerKernel.GlobalRelation`, unit
+5. **Global characters and relation** (published module `BrauerKernel.GlobalRelation`, module
    `GlobalCharacters`, published `BrauerKernel.GlobalDimension`): the local relation lifts to a
    relation among induced Hecke characters of the relative Weil group `W_{K'/k}`, for every
    twist by a Hecke character `α` of `k`, and the types are balanced.
-6. **Global functional equation and auxiliary twist** (units `GlobalCore`, `BrauerArch`,
+6. **Global functional equation and auxiliary twist** (modules `GlobalCore`, `BrauerArch`,
    `ArchimedeanCount`, `ArchimedeanTrivial`, `ArchimedeanTrace`, `ArchimedeanData`,
    `GlobalEpsilonIdentity`, `LocalRelation`, `GlobalLocalRelation`, `LocalEuler`, `PlaceEuler`,
    `PlaceRamification`, `PlaceNorm`, `PlaceEpsilon`, `StandaloneEpsilon`, with the published
@@ -63,26 +63,26 @@ adapted to the continuous common-closure presentation of the target. The impleme
    Hecke character `α` that is trivial at `v` and highly ramified at the finitely many bad places,
    every local epsilon product away from `v` is `1`. Hence the epsilon product at `v` is `1`
    (`exists_twist_placeEpsilonRatioProduct_eq_one`).
-7. **The distinguished place** (units `ConjugateTransport`, `GeneratorTransport`,
+7. **The distinguished place** (modules `ConjugateTransport`, `GeneratorTransport`,
    `RealizationCharacter`, `RealizationEpsilon`, `LocalMapTransport`, `GlobalAtV`): at `v` the
    epsilon product is the product of the generator values of the presentation. This uses a local
    relative Weil map `W_{k_v} → W_{K'/k}` (published `localRelativeWeilMapExistence`) and its
    transfer compatibility with local reciprocity (`LocalTransferReciprocityStatement`, the
    hypothesis `hN3`, discharged here by `localTransferReciprocity`).
-8. **Assembly** (unit `GlobalAssembly`): steps 3–7 give `evaluationMap_eq_zero_bottom`; with
+8. **Assembly** (module `GlobalAssembly`): steps 3–7 give `evaluationMap_eq_zero_bottom`; with
    step 1 this gives `kernelCompatibilityStatement_of_localTransferReciprocity`.
 
 ## Published theorems used as inputs
 
 `LocalClassField.commonClosureReciprocityExistence`, `LocalClassField.commonClosureGeometricProof`,
 `LocalClassField.extensionWeilTransferReciprocity`,
-`ClassField.Global.localRelativeWeilMapExistence`,
-`ClassField.Global.RelativeWeilGroup.localTransferReciprocity`,
+`ClassFieldTheory.Global.localRelativeWeilMapExistence`,
+`ClassFieldTheory.Global.RelativeWeilGroup.localTransferReciprocity`,
 `ClassFieldTheory.Local.localAbsoluteCorestrictionCompatibleClassFormation`,
-`ClassField.Global.globalFundamentalClassStatement`, `Global.totallyRealGaloisRealization`, the
+`ClassFieldTheory.Global.globalFundamentalClassStatement`, `Global.totallyRealGaloisRealization`, the
 published proof `Global.heckeGlobalFunctionalEquation_proof` of the Hecke functional equation,
 used through `FunctionalEquationComparison.RelativeWeilEngine.hasGlobalEquation_brauerProduct`,
-and the published `BrauerKernel` units named above. None of
+and the published `BrauerKernel` modules named above. None of
 them assumes a nonabelian local-constant system or an arithmetic compatibility premise; the only
 premise of the target, normalization of `e`, is used where the target supplies it.
 

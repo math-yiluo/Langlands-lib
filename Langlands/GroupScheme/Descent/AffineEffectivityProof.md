@@ -1,7 +1,5 @@
 # Proof of finite-Galois effective descent for affine group schemes
 
-Author: Worker 1534.
-
 This module proves the published proposition
 `Langlands.GroupScheme.AffineGroupSchemeFiniteGaloisDescentStatement.{u}` from
 `Langlands.GroupScheme.Descent.AffineEffectivityStatement`, in arbitrary

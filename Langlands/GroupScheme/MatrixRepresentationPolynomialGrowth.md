@@ -1,6 +1,7 @@
 # Polynomial growth of actual regular functions
 
-This internal, derived unit supplies a quantitative version of the published
+This auxiliary module, derived from existing Library results, supplies a
+quantitative version of the published
 coordinate argument in `Rational/MatrixEntryBoundedness`. It works with the
 actual global regular functions, actual rational-point algebra evaluations and
 the existing residue-normalized rational matrix norm. The affine group scheme

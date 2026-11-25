@@ -2,14 +2,16 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockNonvanishing`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module was written for the proof
+of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`); the
+Library's proof of that statement goes through `realLeviLanglandsQuotient` and does not import
+this module. It
 shows that the block Jacquet functional `RealBlockFunctional.jac` of the module
-`RealBlockFunctional` is not identically zero on the `O(n)`-finite principal series. In the
-planned assembly of Task 6749, this and `RealBlockFunctional.jac_eq_zero_of_proper` show that the
+`RealBlockFunctional` is not identically zero on the `O(n)`-finite principal series. Together
+with `RealBlockFunctional.jac_eq_zero_of_proper`, this shows that the
 sum of all proper `(𝔤, K)`-submodules is proper; this module does not carry out that assembly. It generalizes the published `JacquetNonvanishing` (one row at
-a time, strictly decreasing exponents). The module is the real analogue of Worker 140's draft
-`ComplexBlockNonvanishing` (Task 7063) and follows its structure.
+a time, strictly decreasing exponents). The module is the real analogue of
+`ComplexBlockNonvanishing` and follows its structure.
 
 Notation: `GL_N(ℝ)` is `Langlands.GeneralLinear N ℝ` and `O(N)` is `unitaryCompact ℝ N`, with the
 Haar probability measure `RealPrincipalSeriesDuality.haarK N`. `IsSignedPower χ e` (module
@@ -26,8 +28,8 @@ Unprefixed names below are in the namespace `Langlands.Archimedean.RealBlockNonv
 
 ## The statement
 
-`RealBlockNonvanishingStatement` assumes `RealBlockChartIntegrableStatement`, which is only stated,
-not yet proved, in the Library (proof Task 7165). Under that assumption it says: let `ks` be a
+`RealBlockNonvanishingStatement` assumes `RealBlockChartIntegrableStatement`, which the Library
+proves as `realBlockChartIntegrable` (`RealBlockChartIntegralProof`). Under that assumption it says: let `ks` be a
 block decomposition, `n = dim ks`, and `χ` characters with `χ_l(x) = χ_l(sgn x) |x|^{e_l}`,
 `χ_l(1) = 1` and `χ_l(−1) = (−1)^{p_l}` (`p : ℕ → ℕ`), such that `BlockOrdered ks e`. Then some
 `O(n)`-finite function `f` of `principalSeries ℝ n χ` has `jac ks e p f ≠ 0`.

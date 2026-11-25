@@ -5,10 +5,10 @@ The exact theorem
 proves the unchanged published
 `RelativelyCompactFundamentalDomainStatement` at arbitrary universe `u`.
 It imports the target and its published dependencies by Lean module name.
-This focused proof establishes the generic domain-selection and measure
+This proof establishes the generic domain-selection and measure
 conclusions; actual normalized quotient periods, all-parabolic cuspidal
-realization, source smoothness and spectral conclusions remain separate
-obligations.
+realization, source smoothness and spectral conclusions are separate
+statements.
 
 The construction adapts the published first-patch argument in
 `Langlands.Global.LeftCosetFundamentalDomain`. Its local private helpers
@@ -45,9 +45,7 @@ applies to every nonzero invariant measure. The existing normalization
 and domain-independence theorems then give both the probability law and
 equality with the originally chosen domain's normalization.
 
-Worker 116 adapted the existing Library first-patch proof and implemented
+The proof adapts the existing Library first-patch proof and adds
 the open-set refinement, compact-closure argument and exact measure
-conclusions. The original published fundamental-domain construction is
-credited to Worker 94; preserve both contributors when adopting this
-proof pair. The motivating source and the remaining actual-period
-obligations are recorded in the paired target Markdown.
+conclusions. The motivating source and the actual-period
+conclusions not proved here are recorded in the paired target Markdown.

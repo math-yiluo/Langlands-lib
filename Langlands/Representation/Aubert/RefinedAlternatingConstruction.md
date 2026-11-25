@@ -1,7 +1,5 @@
 # Conditional alternating sums inside an actual product Levi
 
-Author: Worker 320.
-
 This is an internal construction from the published actual refinement functors,
 the published preservation proposition, and the universal property of the exact
 finite-length smooth Grothendieck group. Every K0 map and alternating operator
@@ -119,12 +117,10 @@ unchanged.
 
 ## Development checks and independence
 
-Development compilation `5b088082-928b-4dac-b324-42c933bfeebe` returned zero
-errors and zero warnings. Inspection `af245c3f-86ac-4e49-a606-edaebea1c379` of
+Development compilation returned zero errors and zero warnings. Inspection of
 `Langlands.Aubert.alternatingOperatorOnLeviOf` reports a definition with
 independent universe parameters `[uF, uV]`, using only `propext`,
-`Classical.choice` and `Quot.sound`. These are development results, not
-independent semantic acceptance.
+`Classical.choice` and `Quot.sound`.
 
 A recursive audit of the actual project import lines finds 38 modules,
 including this module, with no missing project imports. They comprise the
@@ -133,6 +129,5 @@ coinvariants, actual refinement-functor definitions, the refinement
 preservation proposition, finite block enumeration, and the generic exact K0
 construction. There is no classification or analytic representation-theory
 proof in that closure. A search of those sources for the excluded parent and
-downstream classification declarations returns no matches. The private audit
-is `.private/notes/refined-alternating-import-audit.json`. The separate
+downstream classification declarations returns no matches. The separate
 refinement-preservation proof is not an imported or proved input.

@@ -3,24 +3,24 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedCoefficientTwistXi`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `InducedCoefficientXi` (Worker 249): `inducedIntegrandKernel`, `inducedIntegrandKernel_mul`;
+- `InducedCoefficientXi`: `inducedIntegrandKernel`, `inducedIntegrandKernel_mul`;
   through it `InducedCoefficientBound` (`compactIntegral`,
   `LeviData.norm_compactIntegral_le_xi`), `SphericalLevi`/`Spherical` (`xi`, `LeviData`,
   `IsIwasawaPair`, `iwasawaFactor`, `exists_iwasawaFactor`, `leviComponent`),
-  `LeviWeightIntegrability` (`leviXiWeight`), and Worker 200's
+  `LeviWeightIntegrability` (`leviXiWeight`), and
   `CompactProductInducedCoefficients` (`CompactInduction.integrand`,
   `CompactInduction.coefficientMap`, `CompactInduction.coefficientMap_integral`),
   `CompactProductCoefficientBounds` (`CompactInduction.compactValue`,
   `CompactInduction.integrand_factorization`, `coefficientTensorMap_bound_finite`) and
   `CompactCoefficientHaarComparison` (`CompactInduction.measure_eq_normalizedHaar`);
-- `Langlands.Representation.Plancherel.ProductCompactPicture` (Worker 200):
+- `Langlands.Representation.Plancherel.ProductCompactPicture`:
   `ProductInducedCompactPicture`, `productInducedCompactEquiv`, `productInducedCompactEquiv_eval`,
   `productCompactTwistTensorEquiv`, `productCompactTwistTensorEquiv_tmul`; through it
   `UnramifiedCharacters` (`unramifiedCharacters`, `unramifiedCharacter_isOpen_ker`) and
   `CoefficientTensors` (`coefficientTensorMap`, `coefficientTensorMap_tmul`);
 - `Langlands.Representation.Category.Twist`: `SmoothRep.twist`,
   `SmoothRep.isAdmissible_twist_iff`;
-- `Langlands.Representation.Plancherel.SmoothTensorFamilies` (Worker 200):
+- `Langlands.Representation.Plancherel.SmoothTensorFamilies`:
   `smoothFiniteTorusFunctions`, `finiteSmoothFamilies`, `mem_finiteSmoothFamilies_iff`; through it
   `IsSmoothFiniteTorusFunction.continuous`.
 
@@ -47,7 +47,7 @@ sous-espaces de dimension finie. D'après le Corollaire III.1.2, il existe donc 
 Lemme II.1.6."
 
 VI.1, printed p. 296 (PDF p. 62): `L_K(ω, P) = I_{K∩P, K∩P}^{K×K}(E ⊗ Ě)`, and "Pour tout
-`χ ∈ Im X(M)`, `L(ω ⊗ χ, P)` s'identifie à `L_K(ω, P)` par restriction à `K`." Worker 200's
+`χ ∈ Im X(M)`, `L(ω ⊗ χ, P)` s'identifie à `L_K(ω, P)` par restriction à `K`."
 `ProductInducedCompactPicture h K A` is this compact space and `productInducedCompactEquiv` this
 identification, for the product-induced coefficient space `L(ω ⊗ χ, P)` of the twist.
 
@@ -62,14 +62,14 @@ coefficient of `A` at `m_P(q)` of one of the finitely many values of `F₀` on `
 constant, and Lemma II.1.6 (through `LeviData.norm_compactIntegral_le_xi`) finishes.
 
 It then proves the bound for the smooth families of VI.1 read in the compact picture: by
-`mem_finiteSmoothFamilies_iff` (Worker 200's `SmoothTensorFamilies`), a family in
+`mem_finiteSmoothFamilies_iff` (`SmoothTensorFamilies`), a family in
 `finiteSmoothFamilies J (ProductInducedCompactPicture h K A)` is `z ↦ ∑ᵢ fᵢ(z) vᵢ` with finitely
 many smooth `fᵢ` on the compact torus `(S¹)^J`, which are bounded; by linearity the coefficient of
 the twisted section is `∑ᵢ fᵢ(e χ)` times coefficients of the fixed sections `vᵢ`, each bounded
 by the first part. This is Waldspurger's "on se ramène facilement" for families given in this
 form. The identification of a `ψ ∈ C^∞(O, P)` with such a family over every point of `O` (the
-stabilizer invariance and the choice of representatives) is Worker 200's construction of VI.1
-and is not repeated here.
+stabilizer invariance and the choice of representatives) is the construction of VI.1 in
+`ProductInducedSmoothFamilies` and `ProductInducedOrbitSections` and is not repeated here.
 
 ## Scope and hypotheses
 
@@ -176,7 +176,7 @@ second countable, Hausdorff, with its Borel structure; `h`, `hU`, `A`, `K`, `hK`
 
 - `norm_coefficientMap_le_xi` (`InducedCoefficientXi`) is the bound for one representation;
   this module makes the constant uniform over the unitary unramified twists, by reading all of
-  them in Worker 200's fixed compact picture.
+  them in the fixed compact picture `ProductInducedCompactPicture`.
 - `productInducedCompactEquiv` (`ProductCompactPicture`) is the identification of VI.1 by
   restriction to `K`; `finiteSmoothFamilies` and `mem_finiteSmoothFamilies_iff`
   (`SmoothTensorFamilies`) describe the smooth families in the compact picture, and

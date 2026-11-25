@@ -38,11 +38,11 @@ module imports `Langlands.AbelianScheme.Basic`,
 `Langlands.AlgebraicGeometry.Picard.Ample`,
 `Langlands.AlgebraicGeometry.Picard.PointTangentSeparation`,
 `Langlands.AlgebraicGeometry.Picard.TensorRankOneProof` and
-`Mathlib.FieldTheory.IsAlgClosed.Basic`. In the approved environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` the definition compiles with no
+`Mathlib.FieldTheory.IsAlgClosed.Basic`. In the Lean environment in which it
+was checked the definition compiles with no
 errors or warnings, its type is `Prop`, it has the single universe
 parameter `u`, and it depends only on `propext`, `Classical.choice` and
-`Quot.sound` (diagnostic `847f6649-9f8e-4a49-ba24-4bb6243b2ed2`).
+`Quot.sound`.
 
 ## Library objects used
 
@@ -189,11 +189,13 @@ scanned first edition is the registered text; later editions were not
 compared. This records the locations checked; it does not assert that no
 errata exist.
 
-## Proof obligations for the later exact proof
+## Proof obligations
 
-After independent acceptance and publication, a separate exact-target proof
-must have this entire named proposition as its type, with no extra outer
-hypotheses. Mumford's argument uses, none of it proved here:
+A proof must have this entire named proposition as its type, with no extra
+outer hypotheses; the Library's proof is
+`Langlands.AbelianScheme.algClosedFieldAmpleCubeSeparation`, in the module
+`Langlands.AbelianScheme.AlgClosedFieldAmpleCubeSeparationProof`.
+Mumford's argument uses, none of it proved here:
 
 1. `dim H⁰(X, L) = χ(L) > 0` for ample `L` (§16), to choose an effective `D`
    with `L ≅ 𝒪_X(D)`, and the reduction to `D` without multiple components.
@@ -221,13 +223,12 @@ hypotheses. Mumford's argument uses, none of it proved here:
    (§12, Theorem 1, Part (B)); the same dimension count gives the
    contradiction.
 
-A later exact proof must therefore supply, for the published interfaces,
+A proof must therefore supply, for the published interfaces,
 the positivity of `H⁰` of ample bundles, quotients of abelian varieties by
 finite étale subgroups and by infinitesimal subgroup schemes with the
 corresponding descent of divisors and multiplicativity of `χ`, or another
-unconditional route. Substantial missing inputs need separate definitions,
-statements and unconditional proofs in dependency order; conditional
-assembly is not a proof of this proposition.
+unconditional route. A conditional assembly is not a proof of this
+proposition.
 
 ## Scope
 
@@ -237,15 +238,15 @@ bundle. No polarization, finite-level datum, projectivity, dual, `H⁰`
 positivity, separating divisor or chosen basis is added as a premise.
 Separation is stated for the complete linear system `Γ(A, L³)`.
 
-## Role and authorship
+## Role
 
-This is a focused prerequisite of Task 7747
-(`5e7c789a-8444-4b3e-a58a-fe10bd3c7b99`), which proves the published
+This is a focused prerequisite of the published
 `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFieldEmbeddingStatement`
-over an arbitrary field. That task applies the present statement to the
+over an arbitrary field, which
+`Langlands.AbelianScheme.PolarizedFiniteLevel.cubicFieldEmbedding_of_cubeSeparation`
+(module `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFieldEmbeddingReduction`)
+derives from the present statement. That reduction applies the present statement to the
 canonical bundle `a.canonicalBundle` of a datum base-changed to an
 algebraic closure, whose ampleness is the first component of the published
 theorem `Langlands.AbelianScheme.PolarizedFiniteLevel.canonicalCubicBundleAmple`,
-and descends the resulting closed immersion. The parent is not used to justify this statement.
-
-Worker 5655 implemented the Lean declaration and this Markdown.
+and descends the resulting closed immersion. `CubicFieldEmbeddingStatement` is not used to justify this statement.

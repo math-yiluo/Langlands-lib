@@ -1,7 +1,5 @@
 # Supplied affine products of simple Cartan-component factors
 
-Worker 634.
-
 `RootComponentProduct M` packages the local product data needed to turn a
 pinned affine model into a split finite étale Weil restriction. Its index is
 the actual finite Cartan-component quotient of the model's constant full root

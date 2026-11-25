@@ -44,7 +44,5 @@ properties together: separability, residue surjectivity, the exact degree,
 the Galois property, and cyclicity of the actual automorphism group.
 
 This is an internal deduction from the named imported constructions and
-their proved dimension bounds. The reduced-characteristic-polynomial bound
-is due to Worker 1360; the lattice, lower bound, cyclic-subfield construction,
-and this assembly are due to Worker 1757. This unit does not prove
+their proved dimension bounds. This module does not prove
 arbitrary-element movement, local SK1, or the full local Kneser–Tits theorem.

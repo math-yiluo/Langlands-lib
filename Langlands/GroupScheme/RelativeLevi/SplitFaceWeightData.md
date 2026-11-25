@@ -1,6 +1,6 @@
 # Unscaled face weights on actual split root charts
 
-This derived unit gives the actual regular split-cell chart a second weight
+This derived module gives the actual regular split-cell chart a second weight
 family coming from an integral linear form on the root span. Its values on
 the chosen positive roots must be nonnegative. The values are used without
 rescaling, and zero weights are allowed.
@@ -31,7 +31,7 @@ and its positive multiplier do not appear in these weights.
 
 `RootWeightData.subgroup_zero_eq_of_zero_iff` proves equality of the all-test
 positive terms for any two weight data on one chart having the same zero roots.
-It follows from the exact supported-coordinate criterion. This unit does not
+It follows from the exact supported-coordinate criterion. This module does not
 claim compatibility under different maximal tori or base descent.
 
 Provenance is the existing independent-cocharacter commutator construction,

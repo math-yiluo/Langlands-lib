@@ -59,9 +59,8 @@ fact that the rigidification of a line bundle along a section with a
 retraction can be changed by any unit of the base, by multiplying with the
 pullback of that unit.
 
-The Lean construction and elementary verification lemmas were drafted by
-Worker 270 for the shared field-additivity proof. Worker 417 extracted the
-pair, checked it against its published imports and clarified this description.
+The module was checked against its published imports.
 This module supplies only these categorical constructions; the geometric
-theorem of the square and additivity of the actual dual maps remain separate
-obligations.
+theorem of the square and additivity of the actual dual maps are not proved
+here (additivity over a field is `fieldDualSchemeMapAdditivity`, module
+`FieldDualSchemeMapAdditivityProof`).

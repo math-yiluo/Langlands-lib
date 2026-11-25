@@ -45,7 +45,7 @@ def localFamily (X : NormContinuousSpace K H) : AffinoidFamily.{u, v} K :=
 def localActionMap (X : NormContinuousSpace K H) (h : H) :
     localFamily H X ⟶ localFamily H X where
   indexMap := id
-  pullback _ := (X.unop.actionAut h).inv
+  pullback _ := (X.unop.actionAut h).asIso.inv
 
 @[simp]
 theorem localActionMap_one (X : NormContinuousSpace K H) :
@@ -54,7 +54,7 @@ theorem localActionMap_one (X : NormContinuousSpace K H) :
     (f := localActionMap H X 1) (g := 𝟙 (localFamily H X)) rfl
   apply heq_of_eq
   funext i
-  change (X.unop.actionAut 1).inv = BoundedAlgHom.id K X.unop.obj.V
+  change (X.unop.actionAut 1).asIso.inv = BoundedAlgHom.id K X.unop.obj.V
   rw [map_one]
   rfl
 
@@ -65,8 +65,8 @@ theorem localActionMap_mul (X : NormContinuousSpace K H) (h k : H) :
     (g := localActionMap H X k ≫ localActionMap H X h) rfl
   apply heq_of_eq
   funext i
-  change (X.unop.actionAut (h * k)).inv =
-    ((X.unop.actionAut k).inv).comp (X.unop.actionAut h).inv
+  change (X.unop.actionAut (h * k)).asIso.inv =
+    ((X.unop.actionAut k).asIso.inv).comp (X.unop.actionAut h).asIso.inv
   rw [map_mul]
   rfl
 
@@ -74,9 +74,9 @@ theorem localActionMap_mul (X : NormContinuousSpace K H) (h k : H) :
 def localAction (X : NormContinuousSpace K H) : Action (AffinoidFamily.{u, v} K) H where
   V := localFamily H X
   ρ :=
-    { toFun := localActionMap H X
-      map_one' := localActionMap_one H X
-      map_mul' := localActionMap_mul H X }
+    { toFun := fun h => End.of (localActionMap H X h)
+      map_one' := congrArg End.of (localActionMap_one H X)
+      map_mul' := fun h k => congrArg End.of (localActionMap_mul H X h k) }
 
 /-- Original bounded maps on the one-component families. -/
 def localFamilyMap {X Y : NormContinuousSpace K H} (f : X ⟶ Y) :
@@ -114,7 +114,7 @@ def localFunctor : NormContinuousSpace K H ⥤ Action (AffinoidFamily.{u, v} K) 
 def unitFamilyMap (X : NormContinuousSpace K H) :
     localFamily H X ⟶ family H X.unop where
   indexMap _ := identityCoset H
-  pullback _ := (X.unop.actionAut (identityRepresentative H)).hom
+  pullback _ := (X.unop.actionAut (identityRepresentative H)).asIso.hom
 
 theorem unitFamilyMap_equivariant (X : NormContinuousSpace K H) (h : H) :
     localActionMap H X h ≫ unitFamilyMap H X =
@@ -131,9 +131,10 @@ theorem unitFamilyMap_equivariant (X : NormContinuousSpace K H) (h : H) :
       (correction H (h : G) (identityCoset H))⁻¹ := by
     rw [correction_identityCoset]
     simp [mul_inv_rev, mul_assoc]
-  change ((X.unop.actionAut h⁻¹ * X.unop.actionAut (identityRepresentative H)).hom).toAlgHom a =
+  change ((X.unop.actionAut h⁻¹ *
+      X.unop.actionAut (identityRepresentative H)).asIso.hom).toAlgHom a =
     ((X.unop.actionAut (identityRepresentative H) *
-      X.unop.actionAut (correction H (h : G) (identityCoset H))⁻¹).hom).toAlgHom a
+      X.unop.actionAut (correction H (h : G) (identityCoset H))⁻¹).asIso.hom).toAlgHom a
   rw [← map_mul, ← map_mul, he]
 
 theorem unitFamilyMap_naturality {X Y : NormContinuousSpace K H} (f : X ⟶ Y) :
@@ -159,12 +160,12 @@ theorem unitFamilyMap_spectrumMap (X : NormContinuousSpace K H)
     (unitFamilyMap H X).spectrumMap ⟨PUnit.unit, x⟩ =
       ⟨identityCoset H, (identityRepresentative H)⁻¹ • x⟩ := by
   have he : BanachSpectrum.comap
-      (X.unop.actionAut (identityRepresentative H)).hom.toBoundedRingHom x =
+      (X.unop.actionAut (identityRepresentative H)).asIso.hom.toBoundedRingHom x =
       (identityRepresentative H)⁻¹ • x := by
     change BanachSpectrum.comap
-        (X.unop.actionAut (identityRepresentative H)).hom.toBoundedRingHom x =
+        (X.unop.actionAut (identityRepresentative H)).asIso.hom.toBoundedRingHom x =
       BanachSpectrum.comap
-        (X.unop.actionAut (identityRepresentative H)⁻¹).inv.toBoundedRingHom x
+        (X.unop.actionAut (identityRepresentative H)⁻¹).asIso.inv.toBoundedRingHom x
     rw [map_inv]
     rfl
   exact congrArg (fun y : LocalSpectrum H X.unop =>
@@ -229,7 +230,7 @@ theorem unitAtlasMap_indexMap (X : NormContinuousSpace K H)
 theorem unitAtlasMap_pullback (X : NormContinuousSpace K H)
     (i : (localFamily H X).atlas.Index) :
     (unitAtlasMap H hH X).pullback i =
-      (X.unop.actionAut (identityRepresentative H)).hom :=
+      (X.unop.actionAut (identityRepresentative H)).asIso.hom :=
   BoundedAlgHom.ext fun _ => rfl
 
 /-- The continuous base map is exactly the balanced-quotient unit x mapped to [1,x]. -/

@@ -1,7 +1,5 @@
 # Integral reflection of rational abelian-scheme isomorphisms
 
-Authors: Worker 1584 and Worker 410.
-
 This proof targets the published proposition
 `Langlands.AbelianScheme.Tate.ConnectedIntegralLatticeReflectionStatement`.
 It is an internal consequence of the existing actual group schemes, Tate

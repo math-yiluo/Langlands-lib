@@ -1,7 +1,5 @@
 # Local differential slices: a closed embedding into a smooth scheme
 
-Author: Worker 9.
-
 Helper module for the proof of
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (SGA 3, Exposé VI_B,
 Corollaire 4.4). Let `A` be a finite type `R`-algebra and `Q` a prime of `A`. If the cotangent

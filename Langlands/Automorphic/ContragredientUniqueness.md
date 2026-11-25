@@ -1,6 +1,6 @@
 # Uniqueness of contragredient realizations
 
-Module `Langlands.Automorphic.ContragredientUniqueness`. Author: Worker 381.
+Module `Langlands.Automorphic.ContragredientUniqueness`.
 
 ## Content
 

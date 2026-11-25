@@ -137,13 +137,13 @@ variable {A} {B : AbelianScheme S}
 /-- Intertwining of actual rational actions is preserved by actual pullback. -/
 theorem rationalBaseChange_intertwines (iB : D →ₐ[ℚ] End0 B)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (i d) e.hom =
-      Rationalization.comp A B B e.hom (iB d)) (d : D) :
+    (he : ∀ d, Rationalization.comp A A B (i d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom) (d : D) :
     Rationalization.comp _ _ _
-        (((AbelianScheme.rationalBaseChangeEnd b A).comp i) d)
+        (((AbelianScheme.rationalBaseChangeEnd b A).comp i) d).asHom
         (AbelianScheme.rationalBaseChangeIso b e).hom =
       Rationalization.comp _ _ _ (AbelianScheme.rationalBaseChangeIso b e).hom
-        (((AbelianScheme.rationalBaseChangeEnd b B).comp iB) d) := by
+        (((AbelianScheme.rationalBaseChangeEnd b B).comp iB) d).asHom := by
   simp only [AlgHom.comp_apply, AbelianScheme.rationalBaseChangeEnd_apply,
     AbelianScheme.rationalBaseChangeIso_hom]
   have hh := congrArg (AbelianScheme.rationalBaseChangeHom b (A := A) (B := B)) (he d)
@@ -152,8 +152,8 @@ theorem rationalBaseChange_intertwines (iB : D →ₐ[ℚ] End0 B)
 /-- The actual isogeny square on full frames. -/
 theorem adelicFrameBaseChange_isogeny (iB : D →ₐ[ℚ] End0 B)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (i d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (i d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (eta : AdelicFrame ((AbelianScheme.baseChange b).obj A) h
       ((AbelianScheme.rationalBaseChangeEnd b A).comp i) V s) :
     adelicFrameBaseChange b B h iB V s
@@ -291,8 +291,8 @@ variable {A} {B : AbelianScheme S}
 /-- The actual isogeny square on prime-to-modulus frames. -/
 theorem primeToAdelicFrameBaseChange_isogeny (iB : D →ₐ[ℚ] End0 B)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (i d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (i d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (eta : PrimeToAdelicFrame ((AbelianScheme.baseChange b).obj A) m hAway
       ((AbelianScheme.rationalBaseChangeEnd b A).comp i) V s) :
     primeToAdelicFrameBaseChange b B m hAway iB V s

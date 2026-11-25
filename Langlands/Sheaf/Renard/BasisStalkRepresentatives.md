@@ -74,6 +74,4 @@ the supplied point. Zero section groups are allowed throughout.
 
 The target statement and its imports are unchanged. Germ separation,
 canonical maps, sheafification descent and adjunction, support, and the
-basis/all-open comparison remain separate units.
-
-Worker 595 authored this proof and its explanation.
+basis/all-open comparison are not treated here.

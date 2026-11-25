@@ -1,10 +1,8 @@
 # Exactness and compact acyclicity of the smooth Godement construction
 
-Author: Worker 3.
-
 This module defines four propositions and their conjunction
 `Langlands.Cohomology.SmoothGodement.SmoothGodementStatements`. They concern
-Worker 61's published smooth equivariant Godement construction
+the smooth equivariant Godement construction
 (`Langlands.Sheaf.Equivariant.Godement.Smooth`). The setting is a topological
 group acting on a topological space, and smooth equivariant sheaves of modules
 on it. The first two propositions say that the degree-zero smooth Godement
@@ -26,12 +24,12 @@ All propositions quantify over a commutative ring `R`, a group `G` and a
 topological space `X`, all in one universe `u`. `G` is a topological group
 (`IsTopologicalGroup`). It acts on `X` by `MulAction`, and each element acts
 continuously (`ContinuousConstSMul`), hence by a homeomorphism. The hypothesis
-`Langlands.Sheaf.Equivariant.HasStableNeighbourhoods G X`, from Worker 13's
+`Langlands.Sheaf.Equivariant.HasStableNeighbourhoods G X`, from
 `Langlands.Sheaf.Equivariant.SmoothPart`, says that every open neighbourhood
 of every point contains an open neighbourhood of that point that is
-stabilized by some open subgroup. Worker 13 publishes instances for discrete
+stabilized by some open subgroup. That module provides instances for discrete
 `G`, and for nonarchimedean `G` acting continuously (`NonarchimedeanGroup G`,
-`ContinuousSMul G X`). Worker 61's construction and Worker 13's abelian
+`ContinuousSMul G X`). The smooth Godement construction and the abelian
 structure on smooth sheaves need exactly these hypotheses, and the two
 exactness propositions assume nothing more. The two acyclicity propositions
 and the conjunction also assume that `X` is Hausdorff (`T2Space`) and locally
@@ -39,7 +37,7 @@ compact (`LocallyCompactSpace`), which the truth argument uses.
 
 The objects are the published ones:
 
-- `Langlands.Sheaf.Equivariant.SmoothTopologicalSheaf R G X` is Worker 13's
+- `Langlands.Sheaf.Equivariant.SmoothTopologicalSheaf R G X` is the
   full subcategory of smooth sheaves (`IsSmoothSheaf`) inside the equivariant
   sheaves of `R`-modules `TopologicalSheaf G X (ModuleCat R)`. A sheaf is
   smooth when, for every open `U`, every section `s` over `U` and every point
@@ -47,13 +45,13 @@ The objects are the published ones:
   with `H • V ⊆ V` such that every element of `H` fixes the restriction of `s`
   to `V`. Call such a section locally fixed at `x`.
   `Langlands.Sheaf.Equivariant.smoothInclusion R G X` is the inclusion.
-  Worker 13's `Langlands.Sheaf.Equivariant.SmoothAbelian` makes the
+  `Langlands.Sheaf.Equivariant.SmoothAbelian` makes the
   subcategory abelian, with the kernels and cokernels of the ambient category,
   and proves that it has enough injectives.
 - `Godement.smoothForget R G X` is `smoothInclusion` followed by `toSheaf`,
   which forgets the action. It lands in ordinary sheaves of `R`-modules on
-  `X`. `Godement.smoothCoinduction R G X` is Worker 61's coinduction followed
-  by Worker 13's smooth part `smoothCoreflector`, and
+  `X`. `Godement.smoothCoinduction R G X` is the coinduction followed
+  by the smooth part `smoothCoreflector`, and
   `smoothCoinductionAdjunction` proves `smoothForget ⊣ smoothCoinduction`.
 - `Godement.smoothZeroFunctor R G X` is the composite
   `smoothForget ⋙ Z ⋙ smoothCoinduction`, an endofunctor of smooth sheaves.
@@ -61,31 +59,31 @@ The objects are the published ones:
   `Sheaf.Godement.zeroFunctor (Cohomology.Flasque.spacePoints (TopCat.of X)) (ModuleCat R)`,
   the product over all points of `X` of the skyscraper sheaves of the stalks.
   `Godement.smoothCoaugmentation R G X : 𝟭 ⟶ smoothZeroFunctor R G X` is
-  Worker 61's coaugmentation, monic at every object
+  the coaugmentation, monic at every object
   (`mono_smoothCoaugmentation_app`).
 - `Langlands.Cohomology.CokernelComplex.residual T η n` and
   `CokernelComplex.term T η n` are the published residual and term functors
   of the cokernel construction for a coaugmented endofunctor `η : 𝟭 ⟶ T`:
   `residual 0` is the identity, `residual (n + 1)` is the cokernel of `η`
   whiskered by `residual n`, and `term n = residual n ⋙ T`.
-  `Godement.smoothComplex R G X F` is Worker 61's smooth Godement complex of a
+  `Godement.smoothComplex R G X F` is the smooth Godement complex of a
   smooth sheaf `F`, the published cokernel complex for
   `T = smoothZeroFunctor R G X` and `η = smoothCoaugmentation R G X`. Its
   degree-`m` object is, by definition,
   `(smoothZeroFunctor R G X).obj ((residual _ _ m).obj F)`.
 - `Langlands.Cohomology.EquivariantGodementCohomology.compactCohomology R G X q`
-  is Worker 13's `q`-th cohomology of the compactly supported global sections
-  of Worker 61's equivariant Godement complex
+  is the `q`-th cohomology of the compactly supported global sections
+  of the equivariant Godement complex
   (`Langlands.Sheaf.Equivariant.Godement.complexFunctor`), as an object of
   Mathlib's `Rep R G`. It is applied to equivariant sheaves, so the third
   proposition applies it to `smoothInclusion` of the terms. The equivariant
   Godement complex is a different construction from the smooth one: no
-  smooth part is taken. Worker 61's published `underlyingComplexIso`, in
+  smooth part is taken. `underlyingComplexIso`, in
   `Langlands.Sheaf.Equivariant.Godement.Underlying`, shows that after
   forgetting the action it is the ordinary Godement complex over the points
   of `X`. This module does not import that comparison.
-- `Langlands.Cohomology.SmoothSheafCohomology.compactDerived R G X q` is Worker
-  13's `q`-th right derived functor, Mathlib's `Functor.rightDerived`, of
+- `Langlands.Cohomology.SmoothSheafCohomology.compactDerived R G X q` is the
+  `q`-th right derived functor, Mathlib's `Functor.rightDerived`, of
   `smoothSheafCompactSections R G X`. That functor sends a smooth sheaf to its
   compactly supported global sections, as an object of the published abelian
   category `Langlands.SmoothRep R G` of smooth representations. The support of
@@ -108,8 +106,9 @@ Remarks on what is asserted:
 - Exactness of an additive functor between abelian categories is expressed by
   preservation of finite limits and finite colimits, as in the published
   `Langlands.Sheaf.Godement.ModuleZeroFunctorExactnessStatement`.
-- No conjunct of the first proposition is supplied by instances. Worker 61
-  publishes additivity of `smoothForget` and `smoothCoinduction`, but not of
+- No conjunct of the first proposition is supplied by instances.
+  `Langlands.Sheaf.Equivariant.Godement.Smooth` gives additivity of
+  `smoothForget` and `smoothCoinduction`, but not of
   `Z` or of the composite, and no exactness. The print check below confirms
   that instance search finds none of `Additive`, `PreservesFiniteLimits` and
   `PreservesFiniteColimits` for `smoothZeroFunctor R G X`.
@@ -131,8 +130,8 @@ the source correspondence), on the ordinary open-set site. Fix a smooth sheaf
 `D(M) = smoothZeroFunctor M`.
 
 Step 0: sections of `D(M)`. The sections of `Z(N)` over an open `U` are the
-families `(e_y)_{y ∈ U}` with `e_y ∈ N_y`. Worker 61's `Coinduction.md`
-records that the sections of the coinduction of an ordinary sheaf `P` over
+families `(e_y)_{y ∈ U}` with `e_y ∈ N_y`. The page `Coinduction.md` of
+`Langlands.Sheaf.Equivariant.Coinduction` records that the sections of the coinduction of an ordinary sheaf `P` over
 `U` are the product of the sections of `P` over the translates `g⁻¹ • U`,
 `g ∈ G`; that description is not constructed in Lean. It comes from the right
 Kan extension: the comma category over `U` splits into one component for each
@@ -145,7 +144,7 @@ sections over `U` to sections over `h • U` by moving the entry at `(g, y)` to
 arrows, `h` is replaced by `h⁻¹`. The argument below uses only that `h` acts
 on the index `g` by multiplication, hence freely, and does not change
 entries.) Grouping the entries by the point `x = g • y`, the action moves the
-entries at `x` to the point `h • x`. Worker 13's `smoothCoreflector` keeps the
+entries at `x` to the point `h • x`. `smoothCoreflector` keeps the
 sections that are locally fixed at every point. So the sections of `D(M)`
 over `U` are the families of entries over `U` that are locally fixed at every
 point of `U`.
@@ -162,8 +161,8 @@ fixed at every point of `V`, with witnesses `V` and `H`, so it is a section of
 
 Step 1: the first proposition.
 
-- Additivity. `smoothForget` and `smoothCoinduction` are additive (Worker 61's
-  instances). `Z` is a product of composites of stalk functors and skyscraper
+- Additivity. `smoothForget` and `smoothCoinduction` are additive (instances
+  in `Langlands.Sheaf.Equivariant.Godement.Smooth`). `Z` is a product of composites of stalk functors and skyscraper
   functors, which are additive. So the composite is additive.
 - Finite limits. `smoothInclusion` preserves kernels, which are those of the
   ambient category, and finite biproducts, since it is additive. `toSheaf`
@@ -174,9 +173,9 @@ Step 1: the first proposition.
   products preserve limits. So `Z` preserves finite limits.
   `smoothCoinduction` is a right adjoint. Hence `D` preserves finite limits.
 - Epimorphisms. Let `f : M ⟶ M'` be an epimorphism of smooth sheaves.
-  `smoothInclusion` preserves epimorphisms (Worker 13's
-  `smoothInclusion_preservesEpimorphisms`), and `toSheaf` is a left adjoint
-  (Worker 61's `coinductionAdjunction`). So `smoothForget f` is an
+  `smoothInclusion` preserves epimorphisms
+  (`smoothInclusion_preservesEpimorphisms`), and `toSheaf` is a left adjoint
+  (`coinductionAdjunction`). So `smoothForget f` is an
   epimorphism of sheaves of modules, and every stalk map
   `f_y : N_y ⟶ N'_y` is surjective. Let `s` be a section of `D(M')` over `U`
   and `x ∈ U`. Since `s` is locally fixed at `x`, there are an open `V` with
@@ -275,7 +274,7 @@ Step 4: the third proposition. The degree-`m` term of the smooth Godement
 complex of `F` is `D` of the smooth sheaf `(residual _ _ m).obj F`. By step 3
 its underlying sheaf of abelian groups is `c`-soft. By Proposition 3.3.2 and
 its Corollary, its compactly supported cohomology vanishes in positive
-degrees. By p.160 and Worker 61's `underlyingComplexIso`, the module
+degrees. By p.160 and `underlyingComplexIso`, the module
 underlying `compactCohomology R G X p` of an equivariant sheaf is the
 compactly supported cohomology `H^p_c(X, -)` of its underlying sheaf. A
 representation with zero underlying module is a zero object of `Rep R G`.
@@ -286,7 +285,7 @@ smooth sheaves, which has enough injectives, the functor
 underlying sheaf of abelian groups is `c`-soft. Smooth representations form
 a full subcategory of `Rep R G` closed under subrepresentations and
 quotients, so exactness in `SmoothRep R G` can be checked on underlying
-modules. Through Worker 13's `smoothSheafCompactSectionsToRepIso`, the module
+modules. Through `smoothSheafCompactSectionsToRepIso`, the module
 underlying the compact sections of a smooth sheaf is `Γ_c` of its underlying
 sheaf.
 
@@ -304,8 +303,8 @@ sheaf.
 The lemma gives `R^p F(A) = 0` for `p > 0` and `A ∈ M`. Its proof computes
 `R^p F` with injective resolutions, as Mathlib's `Functor.rightDerived` does.
 Every term of the smooth Godement complex is in `M` by step 3, so
-`compactDerived R G X (q + 1)` vanishes on it. This step does not use Worker
-3's comparison candidate `Langlands.Cohomology.SmoothCompactComparison`,
+`compactDerived R G X (q + 1)` vanishes on it. This step does not use the
+comparison statements of `Langlands.Cohomology.SmoothCompactComparison.Statement`,
 which this module does not import.
 
 ## Provenance
@@ -336,7 +335,8 @@ Harris cites ([B4]) differs from the registered one.
 The four propositions transcribe these claims to the ordinary open-set site
 of a topological space:
 
-- Worker 61's `Smooth.md` explains why `smoothZeroFunctor` is the
+- The page `Smooth.md` of `Langlands.Sheaf.Equivariant.Godement.Smooth`
+  explains why `smoothZeroFunctor` is the
   counterpart of `ν_*ν^*`: points of `X` replace geometric points, and the
   right adjoint of forgetting replaces `ν_*`. Smooth sheaves are modelled
   directly on `X`, so Berkovich's `b^*` is implicit. Harris's `F(T)`
@@ -353,8 +353,7 @@ of a topological space:
 - `SmoothGodementCompactDerivedAcyclicStatement` is the acyclicity of the
   terms for the derived functors of compact sections in the smooth category.
   Berkovich's proof of Corollary 1.5.2 uses it implicitly ("the general case
-  follows from Proposition 1.5.1"). It is derived here; Worker 61 suggested
-  stating it.
+  follows from Proposition 1.5.1"). It is derived here.
 - `HasStableNeighbourhoods` stands in for the Key Lemma of Berkovich §1.4,
   which supplies neighbourhoods stabilized by open subgroups on analytic
   spaces. The coefficients are an arbitrary commutative ring, not
@@ -371,7 +370,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces*, unfinished
   `C^{m+1}(F) = C⁰(Coker d^{m-1})`. "By loc. cit., 4.2.3, one has: (i)
   `C^m(F)` is a flabby sheaf; (ii) the functor `F ↦ C^m(F)` is exact; (iii)
   the fibre of the complex `C^•(F)` at a point `x ∈ X` is a canonically split
-  resolution of `F_x`." Worker 61's `smoothComplex` is the counterpart of
+  resolution of `F_x`." `smoothComplex` is the counterpart of
   `C^•(F)`; the published cokernel complex has the same recursion.
 - Proposition 1.5.1, p.10, with its proof on pp.10-11: "For any
   `F ∈ X(G)~_ét` and `m ≥ 0`, `b^*(C^m(F))` is a soft sheaf on `X_ét`." The
@@ -398,7 +397,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces*, unfinished
 
 - Fact 4 of Harris, on `ℓ`-divisible systems, and his Lemma 2.2, which
   iterates the construction for `ℤ/ℓ^m ℤ`, are not stated.
-- Acyclicity for Worker 13's invariant derived functors
+- Acyclicity for the invariant derived functors
   (`invariantCompactDerived`) is not stated; no consulted source states it.
 - Berkovich's properties (i), flabbiness, and (iii), split fibres, are not
   stated.
@@ -448,33 +447,31 @@ The direct project imports are byte-identical in Library commits
 `01a58491bc71539f1ecd3d5f0eec6ab8eae20fed` and
 `e3c2fa98be720f63c6981efbbdf15cd223329e76`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Sheaf.Equivariant.Godement.Smooth` | Worker 61 | `c87bbf5eef53c9d4b6e1b2c9d30f834d14533f3e963b489a2fa96ccd7c1e37cc` | `a8303728c0bb25e91640fc14d1e29ca1301612d40414147d938f477710e26dda` |
-| `Langlands.Cohomology.SmoothSheafCohomology` | Worker 13 | `f1365e1fcf6064dbbc6bacd8491c16ce24fe3a76215dc606adc263032be3c7d1` | `8e14762c1b9488273aae24c89c1f7bfce0f5f3001cc7b09cd250edd79206d02d` |
-| `Langlands.Cohomology.EquivariantGodementCohomology` | Worker 13 | `d8e9978c4ff9fe11a14d39f62f186f9de896125332b12d55f086d451fa5035b2` | `7d4af4966241481da61efb6fbf53fb0bb9e52b89c8805af6eb1d47576a38d1ae` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Sheaf.Equivariant.Godement.Smooth` | `c87bbf5eef53c9d4b6e1b2c9d30f834d14533f3e963b489a2fa96ccd7c1e37cc` | `a8303728c0bb25e91640fc14d1e29ca1301612d40414147d938f477710e26dda` |
+| `Langlands.Cohomology.SmoothSheafCohomology` | `f1365e1fcf6064dbbc6bacd8491c16ce24fe3a76215dc606adc263032be3c7d1` | `8e14762c1b9488273aae24c89c1f7bfce0f5f3001cc7b09cd250edd79206d02d` |
+| `Langlands.Cohomology.EquivariantGodementCohomology` | `d8e9978c4ff9fe11a14d39f62f186f9de896125332b12d55f086d451fa5035b2` | `7d4af4966241481da61efb6fbf53fb0bb9e52b89c8805af6eb1d47576a38d1ae` |
 
 From the first the module uses `smoothZeroFunctor`, `smoothCoaugmentation`
 and `smoothComplex`, and through it the published
 `Langlands.Cohomology.CokernelComplex.term` (Lean SHA-256
 `0f034f1d42a5f8d3c72f47635ad6bea750b94e1cf8c20f5b54e2d0514dac2f11`). From the
 second it uses `compactDerived`, and from the third `compactCohomology`.
-Through these imports it also uses Worker 13's `SmoothTopologicalSheaf`,
+Through these imports it also uses `SmoothTopologicalSheaf`,
 `smoothInclusion`, `HasStableNeighbourhoods` and the abelian structure of
 `Langlands.Sheaf.Equivariant.SmoothAbelian`.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Checks `f04f0584-e6b8-4bf1-b563-5ee39d34c9b9` (from a draft directory) and
-`9a21091f-8ae1-4209-be5a-6b9644ee9a97` (from the workspace, against Library
-`e3c2fa98`) built this module with Lake against the published imports, with
-no errors or warnings. The Lean file is unchanged since the first check. Each
+Two checks built this module with Lake against its imports, the second
+against Library `e3c2fa98`, with no errors or warnings. The Lean file is
+unchanged since the first check. Each
 inspected `SmoothGodementStatements` as a `Prop`-valued definition with the
 single universe parameter `u`, depending only on `propext`,
-`Classical.choice` and `Quot.sound`. Check
-`79dd20f2-5636-4ead-a8ae-6ac0d61b2355` compiled a test file against the
-module, with no errors or warnings, and its output was read. It printed the
+`Classical.choice` and `Quot.sound`. A further check compiled a test file
+against the module, with no errors or warnings, and its output was read. It printed the
 five definitions with universes shown, the axioms of the conjunction, and the
 types of `smoothZeroFunctor`, `smoothCoaugmentation`, `smoothComplex`,
 `CokernelComplex.term`, `compactDerived` and `compactCohomology`. The prints

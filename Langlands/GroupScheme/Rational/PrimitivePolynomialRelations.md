@@ -62,7 +62,7 @@ Taylor expansion. Its provenance is the internal argument described here;
 it is a separate finite-variable extension of the relation principle
 already used for two elements in `Unipotent.OneDimensional.Relation`.
 
-This unit supplies the polynomial-relation step for later coordinate
+This module supplies the polynomial-relation step for later coordinate
 arguments. It does not itself supply primitive algebra generators,
 prove independence of a specified family, or construct a vector-group
 isomorphism or a split series.

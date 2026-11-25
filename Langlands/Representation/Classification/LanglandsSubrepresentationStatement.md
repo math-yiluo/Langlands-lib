@@ -1,8 +1,7 @@
 # Langlands heads in reversed standard modules
 
 Module `Langlands.Representation.Classification.LanglandsSubrepresentationStatement`,
-namespace `Langlands.Classification`. Worker 353 prepared this statement from Worker 5735's
-Task 5735 revision-4 draft; the proposition is unchanged. This module contains a
+namespace `Langlands.Classification`. This module contains a
 Prop-valued definition, `LanglandsSubrepresentationRealization`, and no proof of it.
 
 ## Exact statement and conventions

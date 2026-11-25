@@ -1,6 +1,6 @@
 # Barycenters in complete NPC geodesic spaces
 
-This proof unit establishes `Langlands.Geometry.Metric.KP.BarycenterStatement`
+This module establishes `Langlands.Geometry.Metric.KP.BarycenterStatement`
 from `KPFixedPointStatement`, with arbitrary carrier universe and exactly its
 published hypotheses. The theorem is `Langlands.Geometry.Metric.KP.barycenter`.
 

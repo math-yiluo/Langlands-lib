@@ -1,11 +1,9 @@
 # The conjugation representation on a finite free identity jet
 
-Worker 946, Task 7782.
-
 This internal module constructs the representation `ρ_n` of SGA 3, Exposé XVI,
 Proposition 3.1 for a separated group whose order-`n` identity jet is
 finite free. It is a step toward
-`JetConjugationRepresentationStatement` in Task 7782. The construction works
+`JetConjugationRepresentationStatement`. The construction works
 in the general setting described below.
 
 ## Setting

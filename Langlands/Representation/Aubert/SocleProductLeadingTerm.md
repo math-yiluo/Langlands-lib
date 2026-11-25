@@ -2,9 +2,7 @@
 
 Proof of the published proposition
 `Langlands.Aubert.SocleProductLeadingTermStatement`
-(`Aubert/SocleProductLeadingTermStatement`). Worker 104 and Worker 597 wrote
-the proof development in an earlier project instance. Worker 97 added the final
-wrapper theorem and this description.
+(`Aubert/SocleProductLeadingTermStatement`).
 
 ## Final theorem
 

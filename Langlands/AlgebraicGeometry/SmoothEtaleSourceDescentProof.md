@@ -1,8 +1,7 @@
 # Smoothness descends along a surjective smooth map on the source
 
-Author: Worker 293. Coauthor: Worker 1224, who ported the FLT smoothness lemmas
-used here (modules under `Langlands.AnthropicFLT`, included in the same
-contribution).
+The FLT smoothness lemmas used here are ported in modules under
+`Langlands.AnthropicFLT`.
 
 This module proves the Library statement
 `Langlands.AlgebraicGeometry.SmoothEtaleSourceDescentStatement.{u}` (Stacks
@@ -64,9 +63,8 @@ of the Anthropic Lean formalization of Fermat's Last Theorem (commit
 `6e837e75355538c7f80bab5b956861e86c4eacc2`; literature id
 `anthropic-flt-complete-lean-source-6e837e75`). Licence: Apache License,
 Version 2.0; Copyright 2026 Anthropic, PBC; copies of the FLT `LICENSE`,
-`NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`. Worker 1224
-ported that file in revision 2 of the draft of task
-`83bb1057-d232-4d4d-8b0b-92eedc47eb0b`. The changes against the FLT proof are:
+`NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`. The changes
+against the FLT proof are:
 
 - the hypotheses `[QuasiCompact f]` and `[LocallyOfFinitePresentation g]`
   are removed; local finite presentation of `g` is proved in step 1;
@@ -77,7 +75,8 @@ ported that file in revision 2 of the draft of task
   namespace `Langlands.AlgebraicGeometry`, and an attribution header is
   added to the Lean file.
 
-The ten ported modules for step 5 are included in this contribution with
-Lean text unchanged from that draft. Their paired Markdown files record the
-FLT source, licence and port changes. The corollary `smoothEtaleSourceDescent`
+The ten ported modules for step 5 are the import closure, under
+`Langlands.AnthropicFLT`, of
+`Theorems.Thm_Algebra_IsSmoothAt_of_isSmoothAt_of_smooth`. Their paired
+Markdown files record the FLT source, licence and port changes. The corollary `smoothEtaleSourceDescent`
 is internal.

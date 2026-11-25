@@ -1,7 +1,5 @@
 # Products of commuting rank-one relation data
 
-Author: Worker 4348.
-
 Module `Langlands.Algebra.RankOneRelationProducts`, namespace
 `Langlands.Algebra.RankOneRelation`. Pure group theory over a field `k` and a group `H`,
 extending `Algebra.RankOneRelationIdentities`.

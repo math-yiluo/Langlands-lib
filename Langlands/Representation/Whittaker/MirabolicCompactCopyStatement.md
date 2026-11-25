@@ -1,8 +1,5 @@
 # Nonzero compact standard maps into actual mirabolic subrepresentations
 
-Author: Worker 237. Worker 658 supplied the precise target specification
-and source route.
-
 `Langlands.Whittaker.MirabolicNonzeroCompactMapStatement.{uF}` is a
 proposition target for the existential compact-copy input in the proof of
 Bernstein–Zelevinsky (1976), Proposition 5.15(c), printed pp.49–50,
@@ -129,23 +126,29 @@ The source proof then uses Proposition 5.15(b) — every `P`-homomorphism
 canonical compact image, are not part of this target.
 
 This paragraph and the previous one explain the source's argument. No Lean
-proof of the target is implemented or claimed here; a future proof may
-follow a different route, and must prove any normalization bridge it uses
-between the unnormalized induction here and BZ76's functors `Φ±`.
+proof of the target is implemented or claimed here. The proof,
+`Langlands.Whittaker.mirabolicNonzeroCompactMap` in
+`Langlands.Representation.Whittaker.MirabolicCompactCopyProof`, follows a
+different route: it deduces the target from the compact-minimality theorem
+and uses no derivatives, so no normalization bridge between the
+unnormalized induction here and BZ76's functors `Φ±` is needed.
 
 ## Relation to the parent target
 
 The parent `Langlands.Whittaker.MirabolicCompactMinimalityStatement`, in
 `Langlands.Representation.Whittaker.MirabolicMinimalityStatement`, states
 that every nonzero `W` contains the canonical compact image
-`Whittaker.mirabolicCompactSubrepresentation ψ n`. Its intended assembly
+`Whittaker.mirabolicCompactSubrepresentation ψ n`. One assembly of it
 composes a nonzero map given by the present target with the inclusion of
 `W` into `mirabolicSmoothInduced ψ n`; scalar uniqueness (BZ76 5.15(b))
 identifies the nonzero composite with a nonzero multiple of
 `mirabolicCompactInclusion ψ n`, whose image is the canonical compact
 image, and this image then lies in `W`. The present module separates only
 the existence input; it neither states nor uses scalar uniqueness or the
-final containment.
+final containment. The Library's proof of the parent,
+`mirabolicCompactMinimality` in `MirabolicMinimalityProof`, is instead a
+direct induction on rank that does not use the present target, and
+`MirabolicCompactCopyProof` deduces the present target from it.
 
 ## Why the arbitrary subrepresentation scope is essential
 
@@ -210,13 +213,11 @@ and inclusion laws are elementary implementation definitions and proofs;
 they do not establish this assertion. This module constructs no
 derivative, Fourier, sheaf or Frobenius-reciprocity machinery and makes no
 claim that those prerequisites or this proposition have been proved. The
-normalized derivative constructions coordinated in task `8364e73f`, the
-finite-length restriction and mirabolic functional/pairing rigidity work
-coordinated in task `2644a4fd`, and the coefficient-image, adapter and
-Kirillov work in task `22a72323` remain separate. The existing
+normalized derivative constructions, the finite-length restriction and
+mirabolic functional/pairing rigidity, and the coefficient-image, adapter
+and Kirillov results are separate. The existing
 `MirabolicFunctionalMultiplicityStatement` has irreducibility hypotheses
-and a different conclusion. All existing Library Lean/Markdown pairs are
-preserved.
+and a different conclusion.
 
 ## Source and imports
 
@@ -232,7 +233,7 @@ preserved.
   §§5.11–5.14 (pp.46–48) and §5.15 with its proposition and proof
   (pp.48–50). Printed pp.48, 49
   and 50 were checked visually. The retained source hash was verified.
-  No registered erratum for this source was found in the current
+  No registered erratum for this source was found in the
   project/Library notes or literature index.
 
 The two imports are

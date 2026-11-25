@@ -19,7 +19,7 @@ Source: the original module `Langlands.Representation.RankinSelberg.TwoBlockDomi
 - `Langlands.AllField.RankinSelberg.DominantRankTransport.StrictFirstBlockFactorCertificate` (def): Retained complete first-block witnesses at a strictly dominant test rank.
 - `Langlands.AllField.RankinSelberg.DominantRankTransport.StrictFirstBlockCoefficientLaw` (def): One retained epsilon monomial and normalized polynomial pair work for
   all complementary rows, sections and actual large-model coefficients.
-- `Langlands.AllField.RankinSelberg.DominantRankTransport.exists_strictFirstBlockBound_forOrdinaryFunctional` (theorem): The independently owned closed first-block result supplies a common bound
+- `Langlands.AllField.RankinSelberg.DominantRankTransport.exists_strictFirstBlockBound_forOrdinaryFunctional` (theorem): The closed first-block statement `TwoBlockDominantFirstBlockLaurentIdentityStatement` supplies a common bound
   for any functional realizing the same actual ordinary Jacquet integral.
 - `Langlands.AllField.RankinSelberg.DominantRankTransport.exists_strictFirstBlockCoefficientLaw` (theorem): A common bound supplies a nonzero ordinary functional and its strict
-  first-block law, conditional on the independently owned analytic theorem.
+  first-block law, conditional on the analytic statement `TwoBlockDominantFirstBlockLaurentIdentityStatement`.

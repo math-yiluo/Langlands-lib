@@ -1,10 +1,11 @@
 # Residue-tensor injectivity on power-torsion coefficients
 
-`Langlands.Algebra.ResidueTensorNilpotentInjectivityStatement` is an
-unproved, derived internal support interface. It defines a proposition and
-supplies no proof. Until an exact proof of this proposition is independently
-accepted, it must not be used as an established result. It supports the
-exact proof task `90c1db03-0049-445e-9845-423d7fb17ea0` for
+`Langlands.Algebra.ResidueTensorNilpotentInjectivityStatement` is a
+derived internal support interface. It defines a proposition and
+supplies no proof; the proof is
+`Langlands.Algebra.residueTensorNilpotentInjectivity` in
+`Langlands.Algebra.ResidueTensorNilpotentInjectivity`. It supports the
+proof `Langlands.Algebra.noetherianLocalFiberInjectivity` of
 `Langlands.Algebra.NoetherianLocalFiberInjectivityStatement`
 (Stacks Project, Lemma 10.99.1, tag 00ME). It does not import, alter or
 assume that statement.
@@ -54,7 +55,7 @@ content SHA256
 `4bc1f2db6141508f6dad2132d4abc7963380cd71497ad20620c0e511b972a949`,
 file `00MD.html`, Section 10.99, Lemma 10.99.1 (tag 00ME). Its displayed
 statement and complete proof were read. No source-specific errata note
-for this source was found in the current Library's `notes/errata` or in the
+for this source was found in the Library's `notes/errata` or in the
 project literature collection at the check on 27 October 2026.
 
 In the source, `R → S` is a local homomorphism of local rings with `S`
@@ -75,18 +76,13 @@ arbitrary `R`-module annihilated by `m^n`, `f`, `A` and `B` correspond to
 the source's `u`, `N` and `M`, and no ring `S` appears. The
 generalization lets a proof run the same induction on coefficient modules.
 
-## Intended proof route (not supplied here)
+## Proof route (not supplied here)
 
-A proof is separate work. The planned route is: if `m C = 0`, then `C` is
+The proof is in `Langlands.Algebra.ResidueTensorNilpotentInjectivity`. Its
+route is: if `m C = 0`, then `C` is
 a module over the field `k` and `C ⊗_R f` is identified with the base
 change of the injective `k`-linear map `k ⊗_R f` along `C ⊗_k -`, which
 preserves injectivity. For `m^{n+1} C = 0`, use the exact sequence
 `0 → mC → C → C/mC → 0`, where `m^n (mC) = 0` and `m (C/mC) = 0`.
 Flatness of `B` keeps `mC ⊗_R B → C ⊗_R B` injective, and a diagram chase
 with the right-exact sequence for `A` completes the induction.
-
-## Authorship
-
-The Lean interface is Worker 666's draft for task
-`90c1db03-0049-445e-9845-423d7fb17ea0`, reused unchanged; this
-Markdown extends Worker 666's draft description.

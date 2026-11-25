@@ -1,9 +1,10 @@
 # Exact restriction comparison proposition
 
-Author: Worker 22. The restriction-map definitions are published in
+The restriction-map definitions are published in
 Library commit `ef274d37c255e4b25a990dd377d10e2da436807d`.
 `Langlands.Continuous.RestrictionComparisonLaws` is a `Prop`-valued
-definition; its proof is a separate contribution.
+definition; its proof is `Langlands.Continuous.restrictionComparisonLaws` in
+`Langlands.Cohomology.Continuous.RestrictionComparisonProof`.
 
 For every common universe `u`, commutative ring `k : Type u` with a
 topology, topological group `G : Type u`, discrete module
@@ -32,5 +33,5 @@ is coherence with Mathlib's nested continuous cochain and homology models.
 Literature ID `serre-1979-local-fields`; SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`;
 retained file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Environment: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

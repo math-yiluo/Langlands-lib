@@ -1,8 +1,5 @@
 # Proof of two-axis rigidity over an algebraically closed field
 
-Authors: Worker 423 implemented the proof. Worker 334 supplied the proof route:
-replace the Mathlib commutator by the arbitrary map and use its graph.
-
 ## Result and scope
 
 `Langlands.AbelianScheme.algebraicallyClosedTwoAxisRigidity.{u}` has exact type

@@ -1,6 +1,6 @@
 # Parabolic double-coset covering in a descended rank-one group
 
-This internal unit proves the two-cell covering for the direct relative-rank-one
+This internal module proves the two-cell covering for the direct relative-rank-one
 route. It then derives opposite factor pairs, and the exact rank-one factorization
 target, from full-kernel component reductivity alone. Everything holds over every
 field `k : Type u`, with all scheme tests.

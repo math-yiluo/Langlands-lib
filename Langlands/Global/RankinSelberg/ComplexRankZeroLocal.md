@@ -2,11 +2,11 @@
 
 Helper module for the rank-one (`r = 0`) case of the complex equal-rank local premise
 `Langlands.Global.RankinSelbergGlobal.ComplexLocalEqualFunctionalEquationStatement`.
-Authored by Worker 822; it is the complex analogue of Worker 823's
+It is the complex analogue of
 `Langlands.Global.RankinSelberg.RealRankZeroLocal`. Every declaration is proved. The main
 theorem `complexEqual_rankZero` assumes the Library proposition
-`Langlands.LocalFactor.ComplexArchimedeanTateStatement` (complex Tate theory, not yet proved
-in the Library) as a hypothesis `hTate`. Nothing else is assumed and no axioms are added.
+`Langlands.LocalFactor.ComplexArchimedeanTateStatement` (complex Tate theory, which the Library
+proves in `Langlands.LocalFactor.Archimedean.ComplexTateProof`) as a hypothesis `hTate`. Nothing else is assumed and no axioms are added.
 
 All declarations are in the namespace
 `Langlands.Global.RankinSelbergGlobal.ComplexRankZero`. The module imports
@@ -182,5 +182,5 @@ functional equation at a complex place (Tate's thesis; Cassels–Fröhlich 1967,
 The Library states it as `ComplexArchimedeanTateStatement`. It is the case `n = 1` of
 Jacquet, *Archimedean Rankin–Selberg integrals* (2009), Theorem 2.1. The reduction of the
 `GL₁(ℂ) × GL₁(ℂ)` integrals to Tate integrals of the line restriction of `Φ` and of its
-Fourier transform is internal to this project. It follows Worker 823's real version
+Fourier transform is internal to this project. It follows the real version
 `RealRankZeroLocal`.

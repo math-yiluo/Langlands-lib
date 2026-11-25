@@ -32,10 +32,13 @@ splitness or positive-dimension restriction is used.
 
 This is a derived internal construction and reduction, using the published
 actual tangent-centralizer and semisimplicity definitions and the polynomial
-helper included in this unit. It does not construct the polynomial or prove
+helper ported with this module. It does not construct the polynomial or prove
 the centralizing semisimple replacement hypothesis from a geometric
-semisimple element. Those obligations, and therefore the complete spanning
-statement and Cartan-generation theorem, remain open.
+semisimple element. Those obligations are not discharged here, and this module
+proves neither the complete spanning statement nor the Cartan-generation
+theorem; the Library proves them as `Lie.semisimpleCentralizerSpanning`
+(`SemisimpleCentralizerSpanningProof`) and `cartanGenerationStatement`
+(`Cartan.GenerationProof`).
 
 The local instances have explicit module-specific names to avoid generated-name
 collisions when these developments are imported together. Their types, bodies

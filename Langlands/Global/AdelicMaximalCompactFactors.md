@@ -26,9 +26,8 @@ Mœglin–Waldspurger, *Spectral decomposition and Eisenstein series*, I.1.1
 (printed p. 1), fix a maximal compact subgroup `K = ∏_v K_v` of `G(𝔸)` with
 each `K_v` maximal compact in `G(k_v)`. This module proves only the coarser
 infinite/finite splitting, and proves it for an arbitrary maximal compact `K`
-rather than assuming it. Worker 3657
-requested it: they need `K_∞` maximal compact in `G(𝔸_{F,∞})` for the
-archimedean side of the Eisenstein-series and growth constructions.
+rather than assuming it. It supplies `K_∞` maximal compact in
+`G(𝔸_{F,∞})` for the archimedean side of the Eisenstein-series and growth constructions.
 
 ## Declarations
 

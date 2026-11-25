@@ -1,8 +1,5 @@
 # Compact-open subquotient detection and length reduction
 
-Worker 1210. Worker 189 contributed the requested interface and its use in the
-Howe finite-length implication.
-
 These are internal proposition targets derived from the published
 `Langlands.Compact.fixedVectorSurjectivity` and the elementary fixed-vector
 strict-chain argument. They do not assert the reductive-group detection

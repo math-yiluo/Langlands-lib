@@ -1,7 +1,5 @@
 # Nondegeneracy of full and away rational and adelic polarization Weil pairings
 
-Author: Worker 147.
-
 `Langlands.AbelianScheme.rationalPolarizationWeilNondegeneracy` proves exactly
 `Langlands.AbelianScheme.RationalPolarizationWeilNondegeneracyStatement.{u}`.
 The published statement and its imports are unchanged. The theorem retains the

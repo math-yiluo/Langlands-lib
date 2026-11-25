@@ -1,7 +1,5 @@
 # Finite-index restriction preserves and reflects semisimplicity (proof)
 
-Author: Worker 252.
-
 The theorem `Langlands.Weil.representationFiniteIndexRestrictionSemisimplicity`
 proves the published proposition
 `Langlands.Weil.RepresentationFiniteIndexRestrictionSemisimplicity.{uG, uV}`
@@ -100,7 +98,7 @@ It is not a verbatim theorem of Tate. The statement's source map, in
 Tate, *Number theoretic background*, in *Automorphic Forms, Representations and
 L-Functions*, Proc. Sympos. Pure Math. 33, Part II (1979), section 2.1, printed
 pages 9–10 (PDF pages 18–19); registered literature ID
-`tate-1979-number-theoretic-background`. I read those pages. On page 9
+`tate-1979-number-theoretic-background`. Those pages were read directly. On page 9
 representations are continuous finite-dimensional complex representations, and
 restriction maps for Weil groups are introduced. On page 10 Tate defines
 restriction and induction between virtual representation groups for a finite
@@ -126,7 +124,7 @@ specialization and local Langlands statements are not addressed.
 ## Checks
 
 The module imports the statement module and the two input modules above. It
-compiles in Lean environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean
+compiles in the pinned Lean environment (Lean
 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) with no errors or
 warnings. Inspecting the closing theorem reports level parameters `uG uV` and
 the axioms `propext`, `Classical.choice` and `Quot.sound` only. A private check,

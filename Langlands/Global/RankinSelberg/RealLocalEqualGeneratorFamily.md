@@ -4,8 +4,8 @@ Fix `t`, the lower group `G = GL_{t+1}(ℝ)` and the upper group `H = GL_{t+2}(�
 family is `L(z) = (g ↦ godementLeadingFamily D a Φ U p g z)`. Here `Φ` is a Schwartz test on real
 `(t+1) × (t+2)` matrices supported in a compact set `S` of full-row-rank matrices, and `U` is a
 lower coefficient in the uniform real Whittaker model with character `-a`. These are the column
-generators of Worker 771's `compactReflectedColumnGenerators`. This module is the real
-counterpart of the published complex module `ComplexLocalEqualGeneratorFamily`.
+generators of `compactReflectedColumnGenerators`. This module is the real
+counterpart of the complex module `ComplexLocalEqualGeneratorFamily`.
 
 ## Statements
 
@@ -46,7 +46,7 @@ contained in the regular functions.
 
 For holomorphy, view `z` as a point of `Fin 1 → ℂ`. The Library theorem
 `realGodementSpectralGrowth`, applied to the constant lower family `U` and the exponent `z 0`,
-gives locally uniform derivative growth of the generator family. Worker 1050's
+gives locally uniform derivative growth of the generator family.
 `exists_uniform_derivativeGrowth` makes the growth uniform on the closed ball of radius `R`, and
 `hasUniformGauge_of_derivativeGrowth` turns it into a uniform gauge on `ball(0, R) × ℂ`. The
 coefficient `V` is a constant family with a gauge (`RealWhittakerGauge.exists_gauge_bound`).
@@ -68,5 +68,5 @@ pp. 53–58. There the equal-rank integrals of Godement sections depend holomorp
 leading exponent on a common half-plane, which is needed to propagate the dominant-chamber
 identity to all exponents. The statement proves holomorphy of convergent integrals only. It
 proves no continuation, functional equation or `RealLocalUniformPositiveEqualContinuationStatement`.
-`HasLeftCharacter`, `HasUniformGauge` and the uniform growth lemmas are from Worker 1050's
-accepted module `RealUnequalFamilyGauge`, which accompanies this candidate unchanged.
+`HasLeftCharacter`, `HasUniformGauge` and the uniform growth lemmas are from the
+module `RealUnequalFamilyGauge`.

@@ -1,7 +1,5 @@
 # Constituent transfer through complementary invariant subspaces
 
-Authors: Worker 166 (helper proofs) and Worker 67 (closing theorem and packaging).
-
 This module proves the published proposition
 `Langlands.CuspidalSupport.ComplementConstituentTransferTheorem.{uR, uG, uV}`
 from `Langlands.Representation.CuspidalSupport.ConstituentComplementStatement`.
@@ -58,9 +56,7 @@ The second is surjective by composition of the quotient map, the
 isomorphism inverse, and `q`. This clause does not assume irreducibility.
 
 Finally, `complementConstituentTransfer` applies the conjunction constructor
-and supplies these two helper lemmas directly. The helper implementations
-and names are preserved from Worker 166's shared constituent draft,
-revision 13 of task `fe734e49-26a6-457a-89e8-3b8e66d5cd39`.
+and supplies these two helper lemmas directly.
 
 ## Provenance and scope
 
@@ -78,8 +74,7 @@ Levi constituent theorem.
 
 ## Development check
 
-The pair compiled without errors or warnings in the pinned Lean service
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection of the closing
+The pair compiled without errors or warnings in the pinned Lean
+environment. Inspection of the closing
 theorem reports the three independent level parameters `uR`, `uG`, and `uV`,
-and only `propext`, `Classical.choice`, and `Quot.sound`. Development
-compilation is separate from exact-target validation and independent review.
+and only `propext`, `Classical.choice`, and `Quot.sound`.

@@ -1,6 +1,6 @@
 # Balanced-quotient induction on jointly point-continuous atlas actions
 
-Author: Worker 56. Namespace: `Langlands.Analytic.AtlasInducedAction`.
+Namespace: `Langlands.Analytic.AtlasInducedAction`.
 
 Let `K : Type u` be a complete normed ultrametric field, `G : Type z`
 a topological group, and `H` an open subgroup. Source and target categories

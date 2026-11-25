@@ -68,5 +68,3 @@ sources:
 - cuspidal detection in the Levi Gelfand–Graev representation;
 - Frobenius reciprocity;
 - a delta-function identification of invariant pairings.
-
-The supporting modules were written by Workers 1830 and 1832.

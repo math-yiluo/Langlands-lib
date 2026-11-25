@@ -1,7 +1,5 @@
 # Rank zero of actual refined cuspidal induction
 
-Author: Worker 717.
-
 This module proves the conclusion of the published proposition
 `Langlands.CuspidalSupport.RefinedCuspidalInductionFiniteLengthStatement`
 from [`RefinedCuspidalInductionLengthStatement`](RefinedCuspidalInductionLengthStatement.md)

@@ -34,7 +34,7 @@ def invariantLocusLocallyConstantAction : ContAction TopCat.{max u w} H := by
 theorem invariantLocusLocallyConstantAction_apply (g : H)
     (f : DiscreteLocallyConstant d.obj.locus A) (x : d.obj.locus) :
     (DiscreteLocallyConstant.toLocallyConstant
-      (ConcreteCategory.hom ((ρ.invariantLocusLocallyConstantAction H d A).obj.ρ g) f)) x =
+      (ConcreteCategory.hom ((ρ.invariantLocusLocallyConstantAction H d A).obj.ρ g).asHom f)) x =
       f (ρ.invariantLocusOperator H d g⁻¹ x) := rfl
 
 /-- The original representing spectrum, including all structural fibers, gives
@@ -55,7 +55,7 @@ theorem invariantSpectrumLocallyConstantAction_apply (g : H)
     (f : DiscreteLocallyConstant (BanachSpectrum d.obj.algebra) A)
     (x : BanachSpectrum d.obj.algebra) :
     (DiscreteLocallyConstant.toLocallyConstant
-      (ConcreteCategory.hom ((ρ.invariantSpectrumLocallyConstantAction H d A).obj.ρ g) f)) x =
+      (ConcreteCategory.hom ((ρ.invariantSpectrumLocallyConstantAction H d A).obj.ρ g).asHom f)) x =
       f ((ρ.invariantSectionAction H d g⁻¹) • x) := rfl
 
 /-- The original structural quotient induces an equivariant continuous pullback

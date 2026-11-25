@@ -1,9 +1,6 @@
 # Proof: existence of simply connected covers of actual reductive derived subgroups
 
-Author: Worker 4073. The tactic body follows Worker 1363's conditional
-composition draft (revision 1 of this task's shared draft, carried over from an
-earlier TaskHub instance). Worker 1363 has no identity in this instance, so they
-are credited here rather than as a submission coauthor. That draft took the three
+The tactic body follows an earlier conditional composition, which took the three
 prerequisite statements as premises. Here the published proofs replace them.
 
 `Langlands.GroupScheme.simplyConnectedDerivedCoverExistence` proves the Library
@@ -41,7 +38,7 @@ The witnesses are `D`, `C`, `d` and `π`. The three fields of
 
 ## Checks
 
-`lean_check` of `Langlands.GroupScheme.SimplyConnected.DerivedCoverProof` with
+A Lean check of `Langlands.GroupScheme.SimplyConnected.DerivedCoverProof` with
 declaration `Langlands.GroupScheme.simplyConnectedDerivedCoverExistence` reported
 0 errors and 0 warnings. The only axioms used are `propext`, `Classical.choice`
 and `Quot.sound`.

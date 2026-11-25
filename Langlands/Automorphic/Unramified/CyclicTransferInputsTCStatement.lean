@@ -40,7 +40,7 @@ def CyclicRegularInductionTCStatement : Prop :=
     (σ : E ≃ₐ[F] E), (∀ τ : E ≃ₐ[F] E, τ ∈ Subgroup.zpowers σ) →
     ∀ η : HeckeCharacter F, η.HasNormKernel E →
     ∀ (m : ℕ) (T : CuspidalOperatorRealization E m),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       (∀ i : ℕ, 0 < i → i < Module.finrank F E → ¬ T.isoClass.IsGaloisStable (σ ^ i)) →
       ∃ (r : ℕ) (c : IsoClass F r),
         r + 1 = (m + 1) * Module.finrank F E ∧
@@ -62,7 +62,7 @@ def CyclicRegularOrbitLiftTCStatement : Prop :=
     (σ : E ≃ₐ[F] E), (∀ τ : E ≃ₐ[F] E, τ ∈ Subgroup.zpowers σ) →
     ∀ η : HeckeCharacter F, η.HasNormKernel E →
     ∀ (m : ℕ) (T : CuspidalOperatorRealization E m),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       (∀ i : ℕ, 0 < i → i < Module.finrank F E → ¬ T.isoClass.IsGaloisStable (σ ^ i)) →
       ∃ (r : ℕ) (c : IsoClass F r),
         r + 1 = (m + 1) * Module.finrank F E ∧
@@ -87,7 +87,7 @@ def CyclicStableDescentTCStatement : Prop :=
     (σ : E ≃ₐ[F] E), (∀ τ : E ≃ₐ[F] E, τ ∈ Subgroup.zpowers σ) →
     ∀ η : HeckeCharacter F, η.HasNormKernel E →
     ∀ (r : ℕ) (T : CuspidalOperatorRealization E r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       T.isoClass.IsGaloisStable σ →
       ∃ c : IsoClass F r,
         IsoClass.IsWeakBaseChangeOf.{uF, uE, uV, uW} T.isoClass c ∧
@@ -115,7 +115,7 @@ def CyclicWeakInductionSupercuspidalTCStatement : Prop :=
     ∀ (r m : ℕ) (S : CuspidalOperatorRealization F r)
       (T : CuspidalOperatorRealization E m)
       (P : CuspidalSpectralPresentation.{uE, uW} T),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T →
       (P.localComponent w.1).IsSupercuspidal →
       (∀ i : ℕ, 0 < i → i < Module.finrank F E →
         ∃ (U : CuspidalOperatorRealization E m)

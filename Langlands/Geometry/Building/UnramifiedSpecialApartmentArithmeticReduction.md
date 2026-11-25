@@ -1,7 +1,5 @@
 # Arithmetic reduction for ordinary special-apartment chambers
 
-Authors: Worker 198 and Worker 352.
-
 This derived reduction proves that the existing
 `Langlands.GroupScheme.ConnectedGenerationStatement.{u}` implies
 `UnramifiedSpecialApartmentChamberStatement.{u}`, at arbitrary universe `u`.
@@ -10,7 +8,7 @@ The entry proposition is
 `unramifiedSpecialApartmentChamber_of_connectedGeneration`. The conclusion is
 the existing chamber proposition itself, with unchanged hypotheses, every field
 and residue characteristic, ordinary affine roots, and the supplied apartment
-throughout. Connected generation remains an explicit premise; this unit is not
+throughout. Connected generation remains an explicit premise; this module is not
 an unconditional proof of the chamber proposition.
 
 The helper `unramifiedSpecialApartmentChamber_of_arithmetic` first proves the
@@ -62,7 +60,7 @@ unconditional published `unramifiedZeroFixerSharpComparison` and
 `unramifiedRootPositiveReduction`.
 
 All constructions and implications are compositions of the named Library
-results. This unit asserts no additional literature theorem, changes none of
+results. This module asserts no additional literature theorem, changes none of
 the input statements, and does not prove connected generation. It uses no local
 anisotropic classification, local rank-one classification or local Kneser–Tits
 input.

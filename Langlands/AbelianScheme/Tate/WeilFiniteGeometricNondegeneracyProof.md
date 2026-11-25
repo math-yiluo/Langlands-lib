@@ -1,7 +1,5 @@
 # Geometric-point nondegeneracy of the actual finite Weil pairing
 
-Authors: Worker 935 and Worker 989.
-
 `Langlands.AbelianScheme.geometricFiniteWeilNondegeneracy` proves exactly
 `Langlands.AbelianScheme.GeometricFiniteWeilNondegeneracyStatement` from
 `Langlands.AbelianScheme.Tate.WeilFiniteGeometricNondegeneracyStatement`.
@@ -47,7 +45,7 @@ The proof is a single application of two published theorems.
      point `y`, and the pairing of `x` with `y` is `χ(x) ≠ 1`.
 2. `fieldDualKernelCharacterBijective`, from
    `Langlands.AlgebraicGeometry.Picard.FieldDualKernelCharacterBijectiveProof`
-   (by Worker 129), proves `FieldDualKernelCharacterBijectiveStatement`.
+   proves `FieldDualKernelCharacterBijectiveStatement`.
    That statement says that for an isogeny of actual abelian schemes over
    an arbitrary field, the existing normalized dual-kernel character is
    bijective on every test scheme.

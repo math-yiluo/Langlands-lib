@@ -1,8 +1,5 @@
 # The pole order at `s = 1` of `L(s, π₀ × (π₁ ⊞ ⋯ ⊞ π_k))`
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module states one proposition, uses two auxiliary
 definitions, and proves nothing:
 
@@ -23,12 +20,11 @@ All vocabulary for the pair L-functions is reused from the Library module
 archimedean factor is the one of that statement. Nothing from it is rebuilt.
 
 **Why it is here.** The program ledger
-`notes/automorphic/global-program-coverage.md` (section "13 November 2026
-carry-over") lists GH Lemma 11.8.1 as an L4 target of this program with no
-public statement. The ledger records its hypotheses: each `π_i` is cuspidal
-and trivial on the split centre of its own group.
+`notes/automorphic/global-program-coverage.md` lists GH Lemma 11.8.1 as an
+L4 target with no public statement. The ledger records its hypotheses: each
+`π_i` is cuspidal and trivial on the split centre of its own group.
 
-**Proof target.** A later proof task should prove the Library statement
+**Proof target.** The proof target is the Library statement
 `Langlands.Global.CuspidalIsobaricPoleOrderStatement`. Its universe
 parameters are `u` (the number field) and `uQ` (the factor universe of the
 spectral presentations).
@@ -180,13 +176,13 @@ completed Rankin–Selberg L-functions of GH (11.23) and Thm 11.7.1.
   other points of `Re s = 1`, and the analytic properties of the product beyond
   its pole order at `1`.
 
-## 6. Proof routes (for the proof task)
+## 6. Proof routes
 
 GH's "applying Theorem 11.7.1" does not suffice alone. The order of the pole of
 the product is `-min(Σ_i ord_1 Λ i, 0)`. Thm 11.7.1 gives `ord_1 Λ i = -1` when
 `π_i ≅ π₀^∨` and `ord_1 Λ i ≥ 0` otherwise. A zero of some other `Λ i` at `1`
 would lower the pole order. So the proof also needs `Λ(1, π₀ × π_i) ≠ 0` when
-`π_i ≇ π₀^∨`. One route through public Library statements, none of them proved:
+`π_i ≇ π₀^∨`. One route through public Library statements:
 
 1. `CuspidalPairPoleStatement` for each pair `(T₀, T i)` gives
    `-1 ≤ ord_1 Λ i`, with `ord_1 Λ i < 0` exactly when
@@ -194,8 +190,9 @@ would lower the pole order. So the proof also needs `Λ(1, π₀ × π_i) ≠ 0`
 2. `IsContragredientOf T₀ (T i)` and `IsContragredientOf (T i) T₀` are
    equivalent for admissible irreducible realizations: the contragredient of the
    contragredient of an admissible representation is the representation itself.
-   The Library has no such lemma for `OperatorRealization`, so it would have to
-   be proved.
+   For actual cuspidal realizations of the same rank the Library proves this as
+   `CuspidalOperatorRealization.isContragredientOf_symm`
+   (`Langlands/Automorphic/ContragredientSymmetry.lean`).
 3. `ord_1 Λ i ≤ 0`. Write `Λ i` as `L∞,i · ∏_(v ∈ S) L_v · L^S` with `S` a finite
    set of finite places containing the exceptional sets. `L∞,i` is a product of
    reciprocals of Gamma-type denominators and has no zeros. Each `L_v = 1 / P_v`
@@ -208,5 +205,8 @@ would lower the pole order. So the proof also needs `Λ(1, π₀ × π_i) ≠ 0`
    Hence `ord_1 ∏_i Λ i = -(contragredientMultiplicity T₀ T)`, which implies
    `HasPoleOrder`.
 
-The proof task may choose another established route, and it must record the
-route it uses.
+`Langlands.Global.cuspidalIsobaricPoleOrderReduction` (module
+`Langlands.Global.Factors.CuspidalIsobaricPoleOrderReduction`) follows this
+route, with `CuspidalPairPoleStatement` and
+`CuspidalPairBoundaryNonvanishingStatement` as premises; neither premise is
+proved in the Library.

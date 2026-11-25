@@ -127,6 +127,8 @@ theorem unramifiedFixedOpposite_core
   have hp : RelativeRoot.IsOppositeFactorPair iS a g (g', g'') := ⟨hg', hg'', hm⟩
   have ha0 : a ≠ 0 := ha.1
   have hma : weylAction iS m a = -a := hp.weylAction_eq_neg iS hS ha0 hg hg1
+  have : AddMonoidHomClass (characterLattice S ≃ₗ[ℤ] characterLattice S) _ _ :=
+    SemilinearMapClass.instAddMonoidHomClass _
   have hminv : weylAction iS m⁻¹ a = -a := by
     have h1 : weylAction iS m⁻¹ (-a) = a := by
       rw [← hma, map_inv]

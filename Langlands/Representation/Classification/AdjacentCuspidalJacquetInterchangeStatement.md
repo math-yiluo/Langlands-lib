@@ -1,7 +1,7 @@
 # Adjacent cuspidal Jacquet interchange under an irreducible commuting pair
 
-Author: Worker 949. Worker 320 split the target, its source leads and its
-independence requirements from the analytic segment-classification task.
+The statement, its source leads and its independence requirements were split
+off from the analytic segment classification.
 
 `Langlands.Classification.AdjacentCuspidalJacquetInterchange.{uF,uV} F T` is a
 Prop-valued definition. It states that an actual subquotient occurrence of a
@@ -20,7 +20,7 @@ universe `uV` are independent. Put `v = max uF uV`. The definition installs
 2. `π : SmoothRep.{0,uF,v} ℂ (GeneralLinear n F.Carrier)` is an actual smooth
    complex representation. The premises are `π.IsIrreducible`,
    `π.IsAdmissible` and `π.HasFiniteLength`. Admissibility is an explicit
-   input. Finite length is stated as the objective requires. It is
+   input. Finite length is stated explicitly. It is
    mathematically implied by irreducibility, but the statement does not rely
    on that.
 3. `A : ∀ i, SupercuspidalRep.{uF,v} (F := F.Carrier) (n := B.size i)` is a
@@ -167,8 +167,8 @@ This statement differs from those sources in the following ways.
   supercuspidals in arbitrary order, with repetitions. In the source they are
   the cuspidal `λ_ℓ`.
 - **Actual subquotients.** Hypothesis and conclusion use the actual
-  subquotient relation, not the source's semisimplified `≥`. The proof
-  successor must produce an actual subquotient occurrence. Equality of
+  subquotient relation, not the source's semisimplified `≥`. A proof
+  must produce an actual subquotient occurrence. Equality of
   virtual classes or of cuspidal contents is not enough.
 - **One transposition.** Only the forward direction of Lemma 5.4(1) is
   claimed, for one adjacent transposition. General shuffles, the converse
@@ -177,8 +177,8 @@ This statement differs from those sources in the following ways.
 
 The generalization is still the mechanism of the source proof, run under the
 explicit pair premises. The two cited implications and the transitivity of
-Jacquet modules under fusing blocks are proof obligations of the successor.
-They are not premises here.
+Jacquet modules under fusing blocks are obligations of a proof of the
+statement. They are not premises here.
 
 ## Intended proof route and independence
 
@@ -193,18 +193,18 @@ it would refine again in the swapped order. The published
 `CuspidalSupport.JacquetSubquotientProof`), which carries actual subquotients
 through normalized Jacquet functors, may serve there after audit.
 
-The proof must be directly and transitively independent of the parent
-`aca8805b-054f-4d56-8045-12db7f623404`. The same holds for multisegment
-exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered strong-head
-existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`, the square-integrable Langlands
-classification `1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable
-exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4` and regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`. It covers their conclusions and
-their proof successors. It must not use the full disjoint-support
+The proof must be directly and transitively independent of the analytic
+segment classification `SegmentEssentialSquareIntegrableClassification`. The
+same holds for multisegment exhaustion `MultisegmentHeadExhaustion`, ordered
+strong-head existence `OrderedMultisegmentHeadExistence`, quotient coverage
+`OrderedMultisegmentQuotientExhaustion`, tempered block uniqueness
+`TemperedBlockUniqueness`, the square-integrable Langlands classification
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion
+`SquareIntegrableLanglandsExhaustion` and regular exhaustion
+`GLRegularLanglandsExhaustionStatement`. It covers their conclusions and
+their proofs. It must not use the full disjoint-support
 classification of the source as a shortcut. Independently proved lower
 geometric-lemma, finite-length, tensor, Jacquet exactness and transitivity,
 and cuspidal-support results may be reused after audit. A proposition
-definition, literature citation, draft or pending task supplies no proved
+definition, literature citation or draft supplies no proved
 input.

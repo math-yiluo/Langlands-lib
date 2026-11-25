@@ -125,7 +125,6 @@ private theorem chart_neighborhood
   have heA : eA ≫ j = A.ι ≫ eT := by
     apply pullback.hom_ext
     · simp [eA, eT, j]
-      exact Category.id_comp _
     · change (eA ≫ j) ≫ p = (A.ι ≫ eT) ≫ p
       rw [Category.assoc, hj, ← Category.assoc, Category.assoc A.ι]
       change (eA ≫ pullback.snd a q) ≫ V.ι = A.ι ≫ eT ≫ pullback.snd b f

@@ -1,7 +1,5 @@
 # Original pair coefficients restricted to the actual triple CM kernels
 
-Author: Worker 57.
-
 This internal construction identifies the original direct and lower pair
 coefficient diagrams after restriction to the actual triple common-kernel
 quotients. The comparisons are identities on the complete underlying coefficient

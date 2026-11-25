@@ -1,7 +1,5 @@
 # Proof of Springer's Siegel-set overlap estimate for split groups
 
-Author: Worker 2.
-
 This module proves the published statement
 `Langlands.Global.AdelicSiegelFactors.SplitSiegelOverlapStatement` (module
 `Langlands.Global.AdelicSplitSiegelOverlap`). The theorem is

@@ -1,6 +1,6 @@
 # Dynamic parabolics under canonical descent transport
 
-Worker 1270. This is an internal consequence of the published constructions in
+This is an internal consequence of the published constructions in
 `CocharacterTransport`, `Dynamic.BaseChange`, and `Dynamic.Functoriality`.
 It supplies an all-test-scheme comparison needed for cocharacter descent in the
 parabolic classification. Its proofs use those constructions directly, with no

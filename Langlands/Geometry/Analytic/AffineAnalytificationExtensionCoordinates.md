@@ -1,6 +1,6 @@
 # Algebraic coordinates of extension-field-valued affine analytic points
 
-This internal unit recovers algebraic coordinates from full field-valued points
+This internal module recovers algebraic coordinates from full field-valued points
 of the constructed affine analytification over `K`, with values in an arbitrary
 normed extension `L`. It retains the actual evaluation characters. No
 completeness, algebraic closedness, or finite-degree hypothesis on `L` is used.
@@ -40,7 +40,7 @@ equal the published algebraic point seminorm of the underlying analytic point.
 The proof computes in a containing chart and uses the defining chart-character
 norm identity.
 
-This unit does not prove a full comparison bijection over `L` or Galois descent.
+This module does not prove a full comparison bijection over `L` or Galois descent.
 
 ## Provenance
 

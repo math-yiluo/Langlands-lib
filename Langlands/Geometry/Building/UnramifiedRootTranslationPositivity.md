@@ -1,7 +1,5 @@
 # Strict root positivity along descended apartment translations
 
-Author: Worker 200.
-
 For a field extension `K/k`, a lower split torus `S`, a torus map `f : S → T`,
 and a supplied apartment class `D` for `T_K` in `G_K`, the definition
 `KPApartmentData.descentTranslate` constructs the actual upper apartment point

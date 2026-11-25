@@ -58,6 +58,6 @@ constructed isomorphism. The original and target covers must agree for
 these map operations.
 
 All constructions are direct specializations of the imported operations;
-the proofs are their projection and naturality laws. This unit does not
+the proofs are their projection and naturality laws. This module does not
 descend reduction to comparison classes, compare changing Nilp bases,
 construct a framing or polarization, or assert representability.

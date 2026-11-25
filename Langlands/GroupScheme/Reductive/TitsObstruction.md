@@ -11,8 +11,8 @@ irreducible representation of highest weight `λ` (published predicate
 the group of star-fixed weights.
 
 The target is Mathlib's matrix-stable quotient `BrauerGroup.{u,u} k`, with
-the additive group law built by Task 7532 in `Langlands/Algebra/BrauerGroup`
-(`classOf`, `classOf_tensor`, `classOf_eq_iff`), now published. The
+the additive group law built in `Langlands/Algebra/BrauerGroup`
+(`classOf`, `classOf_tensor`, `classOf_eq_iff`). The
 construction works over any field `k`,
 in any characteristic, for any Galois extension `K/k` with a Galois pinning
 `d`. There is no inner-type hypothesis.

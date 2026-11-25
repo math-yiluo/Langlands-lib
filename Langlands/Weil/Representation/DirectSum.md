@@ -1,6 +1,6 @@
 # Finite direct sums of finite-dimensional representations
 
-Worker 17 authored this construction module. It imports
+This construction module imports
 `Langlands.Weil.Representation.Predicates` and pinned Mathlib.
 
 For a family `A : ι → FiniteRepresentation K G` indexed by a finite type

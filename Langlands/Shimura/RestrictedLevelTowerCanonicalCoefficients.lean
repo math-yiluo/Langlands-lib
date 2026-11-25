@@ -379,7 +379,7 @@ theorem smoothCanonicalPullback_of_eq_comp (χ φ ψ : T ⟶ T) [∀ K, Etale (�
   subst e
   exact (smoothCanonicalPullback_comp R p φ hφ hT hT hT ψ hψ hχ n).symm
 
-variable {Γ : Type v} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+variable {Γ : Type v} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 /-- A group acting on the tower by automorphisms over the base acts on the colimit
 cohomology with pulled-back coefficients by morphisms of smooth representations: `γ` acts
@@ -387,20 +387,21 @@ by pullback along the automorphism of `γ`. -/
 def automorphismAction (n : ℕ) (M : ModuleSheaf X R) : Action (SmoothRep.{u, u, u} R G) Γ where
   V := (smoothCanonicalCohomologyFunctor R p hT n).obj M
   ρ :=
-    { toFun γ := (smoothCanonicalPullback R p (ρ γ).unop.hom (hρ γ) hT hT n).app M
+    { toFun γ := End.of ((smoothCanonicalPullback R p (ρ γ).unop.asIso.hom (hρ γ) hT hT n).app M)
       map_one' := by
         rw [smoothCanonicalPullback_of_eq_id R p hT _ _
           (by rw [map_one, MulOpposite.unop_one]; rfl)]
         rfl
       map_mul' γ δ := by
-        rw [End.mul_def, smoothCanonicalPullback_of_eq_comp R p hT (ρ (γ * δ)).unop.hom
-          (ρ δ).unop.hom (ρ γ).unop.hom (hρ _) (hρ _) (hρ _)
+        apply End.ext
+        rw [End.mul_def, smoothCanonicalPullback_of_eq_comp R p hT (ρ (γ * δ)).unop.asIso.hom
+          (ρ δ).unop.asIso.hom (ρ γ).unop.asIso.hom (hρ _) (hρ _) (hρ _)
           (by rw [map_mul, MulOpposite.unop_mul, Aut.Aut_mul_def, Iso.trans_hom])]
         rfl }
 
 theorem automorphismAction_ρ (n : ℕ) (M : ModuleSheaf X R) (γ : Γ) :
-    (automorphismAction R p hT ρ hρ n M).ρ γ =
-      (smoothCanonicalPullback R p (ρ γ).unop.hom (hρ γ) hT hT n).app M := rfl
+    ((automorphismAction R p hT ρ hρ n M).ρ γ).asHom =
+      (smoothCanonicalPullback R p (ρ γ).unop.asIso.hom (hρ γ) hT hT n).app M := rfl
 
 /-- The action is natural in the base sheaf. -/
 def automorphismActionFunctor (n : ℕ) :
@@ -408,7 +409,7 @@ def automorphismActionFunctor (n : ℕ) :
   obj M := automorphismAction R p hT ρ hρ n M
   map α :=
     { hom := (smoothCanonicalCohomologyFunctor R p hT n).map α
-      comm γ := ((smoothCanonicalPullback R p (ρ γ).unop.hom (hρ γ) hT hT n).naturality α).symm }
+      comm γ := ((smoothCanonicalPullback R p (ρ γ).unop.asIso.hom (hρ γ) hT hT n).naturality α).symm }
   map_id M := Action.Hom.ext ((smoothCanonicalCohomologyFunctor R p hT n).map_id M)
   map_comp α β := Action.Hom.ext ((smoothCanonicalCohomologyFunctor R p hT n).map_comp α β)
 
@@ -482,8 +483,15 @@ def smoothCanonicalCohomologyRestrictIso (q : ℕ) :
   NatIso.ofComponents
     (fun M => smoothColimitCohomologyRestrictIso (LevelTowerCohomology.canonicalCoefficients R p₀ M)
       (LevelTowerCohomology.isLevelTrivialCoefficients_canonical R hT₀ M) q)
-    (fun α => (smoothColimitCohomologyFunctorRestrictIso P R T₀ q).hom.naturality
-      ((LevelTowerCohomology.levelTrivialCanonicalCoefficientsFunctor R p₀ hT₀).map α))
+    (fun α => by
+      apply ObjectProperty.hom_ext
+      change (Rep.ActionToRep R G).map _ ≫ (Rep.ActionToRep R G).map _ =
+        (Rep.ActionToRep R G).map _ ≫ (Rep.ActionToRep R G).map _
+      rw [← CategoryTheory.Functor.map_comp, ← CategoryTheory.Functor.map_comp]
+      congr 1
+      exact Action.Hom.ext (RestrictedLevelColimit.map_colimitRestrictIso_hom
+        (CoefficientDiagram.cohomologyMap
+          ((LevelTowerCohomology.canonicalCoefficientsFunctor R p₀).map α) q)))
 
 /-- The comparison sends the image of a class of level `K` to its image in the colimit over
 all levels. -/
@@ -530,10 +538,10 @@ theorem smoothCanonicalPullback_restrictIso (n : ℕ) :
 end Morphism
 
 variable {Γ : Type v} [Group Γ]
-variable (ρ₀ : Γ →* (Aut T₀)ᵐᵒᵖ) (hρ₀ : ∀ γ, (ρ₀ γ).unop.hom ≫ p₀ = p₀)
+variable (ρ₀ : Γ →* (Aut T₀)ᵐᵒᵖ) (hρ₀ : ∀ γ, (ρ₀ γ).unop.asIso.hom ≫ p₀ = p₀)
 variable (ρ : Γ →* (Aut (P.ι ⋙ T₀))ᵐᵒᵖ)
-  (hρ : ∀ γ, (ρ γ).unop.hom ≫ restrictProjection P p₀ = restrictProjection P p₀)
-  (hρρ₀ : ∀ γ, (ρ γ).unop.hom = Functor.whiskerLeft P.ι (ρ₀ γ).unop.hom)
+  (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ restrictProjection P p₀ = restrictProjection P p₀)
+  (hρρ₀ : ∀ γ, (ρ γ).unop.asIso.hom = Functor.whiskerLeft P.ι (ρ₀ γ).unop.asIso.hom)
 
 /-- If a group acts on a tower over all levels by automorphisms over the base, and on its
 restriction to the levels satisfying `P` by the restricted automorphisms, the comparison is
@@ -545,13 +553,14 @@ def automorphismActionRestrictIso (n : ℕ) :
   NatIso.ofComponents
     (fun M => Action.mkIso ((smoothCanonicalCohomologyRestrictIso R p₀ hT₀ n).app M)
       (fun γ => by
-        change (smoothCanonicalPullback R (restrictProjection P p₀) (ρ γ).unop.hom (hρ γ)
+        change (smoothCanonicalPullback R (restrictProjection P p₀) (ρ γ).unop.asIso.hom (hρ γ)
             (restrict_selfArrow hT₀) (restrict_selfArrow hT₀) n).app M ≫ _ = _
         rw [smoothCanonicalPullback_congr R (restrictProjection P p₀) (restrict_selfArrow hT₀)
-          (restrict_selfArrow hT₀) (ρ γ).unop.hom (Functor.whiskerLeft P.ι (ρ₀ γ).unop.hom)
+          (restrict_selfArrow hT₀) (ρ γ).unop.asIso.hom
+          (Functor.whiskerLeft P.ι (ρ₀ γ).unop.asIso.hom)
           (hρ γ) (restrictProjection_comp _ (hρ₀ γ)) (hρρ₀ γ) n]
         exact NatTrans.congr_app
-          (smoothCanonicalPullback_restrictIso R p₀ hT₀ (ρ₀ γ).unop.hom (hρ₀ γ) hT₀ n) M))
+          (smoothCanonicalPullback_restrictIso R p₀ hT₀ (ρ₀ γ).unop.asIso.hom (hρ₀ γ) hT₀ n) M))
     (fun α => Action.Hom.ext ((smoothCanonicalCohomologyRestrictIso R p₀ hT₀ n).hom.naturality α))
 
 @[simp] theorem automorphismActionRestrictIso_hom_app_hom (n : ℕ) (M : ModuleSheaf X R) :

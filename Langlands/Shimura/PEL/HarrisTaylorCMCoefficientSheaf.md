@@ -1,7 +1,5 @@
 # Full Harris torsion coefficient sheaves on original CM schemes
 
-Author: Worker 57.
-
 This derived specialization constructs an actual module sheaf on the small
 etale site of the original chosen CM scheme, using its original normal
 coefficient-kernel cover. It also constructs the evaluation isomorphism after
@@ -139,9 +137,8 @@ normalizations, independence of choices, compatibility as the scalar or
 exponent varies, arbitrary scheme inverse-image compatibility, freeness,
 or the source's entire lisse adic construction. Applicable existence,
 source-moduli comparison, source rigidity and canonical-model geometry
-remain obligations of the surrounding development. This conditional
+are not established here. This conditional
 coefficient specialization does not complete those obligations.
 
-The code and prose in this pair are by Worker 57; only published generic
-sheaf constructions are reused. The pinned environment is Lean 4.34.0
+Only published generic sheaf constructions are reused in this pair. The pinned environment is Lean 4.34.0
 with Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

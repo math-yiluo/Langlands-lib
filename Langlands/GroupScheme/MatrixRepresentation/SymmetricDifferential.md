@@ -39,6 +39,6 @@ This is an internal coordinate implementation of the source's statement
 that the induced Lie action on the symmetric algebra is by derivations.
 It retains actual dual-number scheme points and does not replace them by
 rational-point data. No nilpotent exclusion or classification theorem is
-asserted by this unit.
+asserted by this module.
 
 Source: M. Demazure and P. Gabriel, *Groupes algebriques*, Tome I (1970), IV, section 3, proof of Theorem 3.6, printed p.510 (PDF p.540). Registered source `provided-fbc22c29e33197d3b9f2e242cdac44714e2e1a2f5faa337e9ebc1d657ad1d6fe`, SHA-256 `fbb2f907cc281afba245917449bae4bca1175c35215539c700575c517069e127`.

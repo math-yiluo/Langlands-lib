@@ -28,6 +28,6 @@ it is an occurring character; they do not filter to nonzero roots.
 
 The provenance is internal, combining the published differential pullback,
 Lie tensor scalar extension, split-torus weight decomposition and character
-lattice pullback. This unit does not identify arbitrary subgroup tangent images
+lattice pullback. This module does not identify arbitrary subgroup tangent images
 or semigroup subgroups after field extension, and does not establish the full
 ordered semigroup product theorem.

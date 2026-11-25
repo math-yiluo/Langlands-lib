@@ -1,6 +1,6 @@
 # Cofinal Steinberg powers and canonical big-cell assembly
 
-Worker 1369's internal assembly combines the proved finite dimensionality of the
+This internal assembly combines the proved finite dimensionality of the
 entire canonical covariant space with explicit highest-weight existence and
 per-height irreducibility inputs. It constructs complete big-cell data for a
 supplied split pinning and full integral coroot span. It does not prove
@@ -31,8 +31,10 @@ It installs the finite-dimensionality result proved by same-height Frobenius
 restriction and applies `Module.finBasis`. It makes no irreducibility
 assumption and imposes no positive-height condition.
 
-`CanonicalRhoSteinbergHeightIrreducibility` is an unproved `Prop`-valued
-interface for the remaining representation-theoretic input. For each positive
+`CanonicalRhoSteinbergHeightIrreducibility` is a `Prop`-valued
+interface for the remaining representation-theoretic input, not proved in this
+module (`canonicalRhoSteinbergHeightIrreducibility` in
+`CanonicalRhoHeightIrreducibility` proves it). For each positive
 height `r`, each supplied actual highest-weight matrix representation at
 `(q ^ r - 1) • rho` implies rational irreducibility of the actual right regular
 representation on the entire space `V`, in every finite `Fin m` basis.
@@ -58,4 +60,6 @@ The provenance is an internal derivation from the imported Library
 constructions, proved Frobenius detection and elementary natural-number
 arithmetic. No external assertion is introduced. Split-pinning existence,
 integral coroot generation, highest-weight existence and per-height whole-space
-irreducibility remain explicit obligations for the exact host proposition.
+irreducibility are explicit inputs, on this route, to the exact
+`SteinbergBigCellStatement`, which the Library proves by `steinbergBigCell`
+(`SteinbergBigCellProof`).

@@ -1,7 +1,5 @@
 # Integral fundamental weights over full star orbits
 
-Author: Worker 177.
-
 This is an internal construction from the actual integral fundamental-weight
 basis and the full absolute star action of a simply connected group. It works
 over every field and in every characteristic. Its input is actual

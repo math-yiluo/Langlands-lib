@@ -1,7 +1,5 @@
 # Zariski-generic separation of geometric-lemma pieces
 
-Author: Worker 5120.
-
 This internal supporting module produces the polynomial genericity condition for the
 exclusion statement. For an irreducible admissible `ρ` of an actual rational Levi `M(k)` and a
 nonidentity double coset `P z P`, there is a nonzero polynomial `f` in the canonical

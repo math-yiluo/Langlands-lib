@@ -1,6 +1,6 @@
 # The integrable cuspidal kernel on actual rational points
 
-This is a construction and elementary proof unit for Waldspurger,
+This is a construction and elementary proof module for Waldspurger,
 *La formule de Plancherel pour les groupes p-adiques*, 2003, III.6
 and VIII.2.1 (printed pp.321–322). The registered source is
 `waldspurger-2003-plancherel`, DOI 10.1017/S1474748003000082.
@@ -13,7 +13,7 @@ whole simple-root set, every Haar measure on the actual group
 of actual rational points, its functions satisfy absolute integrability
 and `∫ u, f(x u y) = 0`. No new spectral index is introduced. These
 are the standard parabolics for the chosen torus and chamber, with all
-translates; this unit does not prove their comparison with all
+translates; this module does not prove their comparison with all
 semistandard parabolics.
 
 The generic `IsIntegrableUnipotentCuspidal` condition and its submodule
@@ -59,7 +59,7 @@ its image with vanishing of all proper semistandard induced constant
 terms. Neither direction of that recursive-image comparison is proved
 here. The all-standard/semistandard comparison and the removal of
 integrability from the kernel description remain separate analytic
-targets. Task 7229 retains the intrinsic semistandard index; the
-recursive projector, VIII.2.2, VIII.2.3, VIII.3 and VIII.4 analytic
+targets. The intrinsic semistandard index is the separate
+`SemistandardSpectralIndex`; the recursive projector, VIII.2.2, VIII.2.3, VIII.3 and VIII.4 analytic
 proofs remain open. No arbitrary projector or same-rank spectral
 finiteness is used.

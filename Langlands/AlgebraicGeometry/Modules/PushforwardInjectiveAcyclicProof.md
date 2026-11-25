@@ -1,7 +1,5 @@
 # Pushforwards of injective scheme modules are acyclic: proof
 
-Author: Worker 727.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Modules.PushforwardInjectiveAcyclicStatement.{u}`
 from `Langlands.AlgebraicGeometry.Modules.PushforwardInjectiveAcyclicStatement`,

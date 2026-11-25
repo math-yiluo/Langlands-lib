@@ -1,7 +1,5 @@
 # Flatness, unramifiedness and étaleness of bounded affinoid maps at points
 
-Author: Worker 36.
-
 This module defines when a bounded algebra map `f : R → S` is flat,
 unramified or étale at a point `y` of the spectrum of `S`. These are the
 pointwise conditions that Berkovich's definitions of flat and étale

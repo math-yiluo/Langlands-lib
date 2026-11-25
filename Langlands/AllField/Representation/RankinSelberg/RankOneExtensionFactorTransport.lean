@@ -37,6 +37,7 @@ include hχ hσ
 
 variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Certified polynomials for the actual pair transport with the same measure. -/
 theorem rankOneExtensionSymmetricLPolynomial_iff
     (ψ : UnitaryAdditiveCharacter F)

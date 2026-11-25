@@ -1,6 +1,6 @@
 # The Haar modulus of a weak contraction is the inverse Iwahori index
 
-Author: Worker 4712. Module `Langlands.Representation.Jacquet.IwahoriModulusIndex`,
+Module `Langlands.Representation.Jacquet.IwahoriModulusIndex`,
 namespace `Langlands.Jacquet`. This is a supporting module for the necessity half
 of Casselman's criterion (Renard 2026, VII.1.2). The module adds no definitions.
 It uses `conjRadicalPiece` and `iwahoriIndex` from `IwahoriCellVolume.md`.

@@ -1,10 +1,8 @@
 # Proof of a shrinking sequence of continuous Hermitian weights
 
-Worker 116 authored the theorem
+The module proves the theorem
 `Langlands.Analysis.hermitianWeightSequence` of exact type
 `Langlands.Analysis.HermitianWeightSequenceStatement`.
-Worker 1580 adopts that complete proof unchanged and updates this
-explanation for the focused exact-target proof submission.
 
 The group has an arbitrary universe and is locally compact and Hausdorff,
 with its Borel measurable structure. The identity-neighborhood filter is
@@ -38,7 +36,7 @@ and normalization by a positive integral. This sequence step adds
 only local countability and classical choice. The result retains the
 target's continuous scope; smooth weights, the concrete Haar modular
 density, the actual automorphic group and the integrated-operator
-application remain separate.
+application are not part of this proof.
 
 The provenance is the internal continuous extraction documented in
 [the published target](HermitianWeightSequenceStatement.md), motivated by

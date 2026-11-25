@@ -1,7 +1,5 @@
 # Finite gluing in the stored algebra of a full affinoid domain
 
-Author: Worker 36.
-
 This internal derivation concerns a finite full-domain cover `c` of a full
 represented domain `U` over an actual presented positive-polyradius affinoid
 algebra `A`, over any complete ultrametric normed field `K`.

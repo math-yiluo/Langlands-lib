@@ -1,7 +1,5 @@
 # The finite group of rationally represented scheme components
 
-Author: Worker 1107.
-
 This is an internal derived construction from the published
 `IdentityComponentRationalQuotient`, its transport and base-change modules, and
 `IdentityComponentGaloisComparison`. The group structure is transported through

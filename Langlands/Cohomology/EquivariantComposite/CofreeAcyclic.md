@@ -1,7 +1,5 @@
 # Acyclicity of smooth cofree representations
 
-Author: Worker 141.
-
 This internal helper for the compact composite proof uses the exact cofree
 functor of `Cofree` and the published `smoothInvariantsFunctor`; the local
 `invariants` name is an abbreviation for that functor. Its invariant vectors are exactly the constant functions,

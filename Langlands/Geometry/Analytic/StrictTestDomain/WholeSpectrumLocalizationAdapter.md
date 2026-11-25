@@ -39,8 +39,7 @@ rational quotients of presented strict bases under the scalar norm bound. It
 does not assert higher Cech exactness, admissibility, arbitrary radii or relative
 rational-target gluing.
 
-Worker 146 authored this adapter. Worker 228 authored the imported localization
-proof, which is used by its published Lean name. The literature provenance of
+The imported localization proof is used by its published Lean name. The literature provenance of
 that comparison is documented in
 [`TrivialScalarRationalLocalizationProof.md`](TrivialScalarRationalLocalizationProof.md);
 the subsequent gluing argument here uses ordinary algebraic localization.

@@ -1,6 +1,6 @@
 # Actual finite frames from the classified Grassmannian quotient
 
-This internal unit removes the separate fixed-rank frame-cover premise from
+This internal module removes the separate fixed-rank frame-cover premise from
 the actual determinant ampleness criterion for an affine Grassmannian
 classification.
 
@@ -40,5 +40,5 @@ constant-rank frame cover is an input.
 The provenance is internal: the existing actual affine-point quotient
 comparison gives the basis test, the specified sections give actual free
 frames, and the existing actual determinant criterion gives ampleness.
-This unit does not construct the classified quotient comparison or prove
+This module does not construct the classified quotient comparison or prove
 that a particular parabolic jet module satisfies it.

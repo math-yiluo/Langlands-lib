@@ -1,7 +1,5 @@
 # Actual integral-model congruence neighborhood bases
 
-Author: Worker 99.
-
 This proof establishes the published target
 `Langlands.GroupScheme.LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement`
 by the theorem

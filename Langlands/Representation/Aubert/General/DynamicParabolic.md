@@ -1,11 +1,8 @@
 # Dynamic parabolic subgroups as semidirect decompositions
 
-Implementation and documentation: Worker 23 (task
-`593ef603-6672-4424-976c-14e11e920d9c`).
-
 This module connects the generic adapters of
 [`Aubert.General.Parabolic`](Parabolic.md) to the published dynamic subgroups
-of the algebraic-groups program. It adds no structure of its own.
+of `GroupScheme.Dynamic`. It adds no structure of its own.
 
 ## The decomposition
 
@@ -34,14 +31,13 @@ subgroup of the group of points `T ⟶ G.X`.
 
 The rational points are the case `S = Spec F` and `T = Over.mk (𝟙 (Spec F))`,
 the identity test object. This is the convention `G(k) := Over.mk (𝟙 _) ⟶ G.X`
-of the algebraic-groups program, so `dynamic_isSemidirectDecomposition χ
+of the Library's group-scheme modules, so `dynamic_isSemidirectDecomposition χ
 (Over.mk (𝟙 _))` is `P(χ)(F) = Z(χ)(F) ⋉ U(χ)(F)`.
 
 This module fixes no topology on `G(F)`. To apply the functors of
-`Aubert.General.Parabolic`, a consumer binds the point topology of the Conrad
-point-topology task `886bf565`. That is `PointTopology.rationalPointTopology`
-on the identity-test carrier, from candidate `5ea5f6f1`, which is not public at
-Library `0ebc0efd`. The consumer then supplies
+`Aubert.General.Parabolic`, a consumer binds the Conrad point topology
+`PointTopology.rationalPointTopology` on the identity-test carrier
+(`AlgebraicGeometry/PointTopology/RationalPoints`). The consumer then supplies
 `[LocallyCompactSpace]` and `[NonarchimedeanGroup]` for it, together with
 closedness of `U(χ)(F)`. For a nonarchimedean local field these properties are
 external structural inputs (Renard V.2.1; Conrad, Proposition 2.1), and nothing

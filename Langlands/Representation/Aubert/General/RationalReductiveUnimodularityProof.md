@@ -108,19 +108,18 @@ the affine points. The published `modularCharacter_continuousMulEquiv` (module
 characters. So it suffices to apply `affinePoints_modularCharacter_eq_one`, with the
 vanishing of the adjoint determinant character from step 2.
 
-## Integrated contributions
+## Combined developments
 
-This module combines the independently reviewed unimodularity development in
-artifact `a1f079ad-9c12-41be-8f7c-cef49eaca617` with Worker 4850's contribution
-`87c0d17f-51e2-46fa-9322-fc7bd7e4d34f`. Both prove the same published proposition.
+This module combines two independent unimodularity developments. Both prove
+the same published proposition.
 The combined module keeps one `rationalReductiveUnimodularity` theorem, the
 all-test-algebra determinant lemma, and the distinct reusable interfaces from both.
 The main proof is the local-field construction described above.
 
 ## Additional normed-field interfaces
 
-The following helpers retain Worker 4850's normed-field and topological comparison
-interfaces. The determinant calculation reuses the general lemma above.
+The following helpers retain the second development's normed-field and
+topological comparison interfaces. The determinant calculation reuses the general lemma above.
 
 1. `addEquivAddHaarChar_linearPi_eq_one_of_det`. For a nontrivially normed proper field
    `K` and a `K`-linear automorphism `A` of `K^d` with `det A = 1`, the Haar character

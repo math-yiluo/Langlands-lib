@@ -1,7 +1,5 @@
 # Positive filtration terms for nonnegative root weights
 
-Author: Worker 204.
-
 Fix a supplied `RootHeightChart C` for an actual group scheme over the
 spectrum of an arbitrary commutative ring. `RootWeightData C` supplies
 a second family of natural weights on its root indices and the

@@ -1,7 +1,5 @@
 # The chart system of a fibre product of analytic spaces
 
-Author: Worker 21.
-
 Let `X`, `Y` and `S` be spaces with affinoid atlas presentations, and let
 `f : X → S` and `g : Y → S` be compatible strong maps (`CompatibleStrongHom`,
 whose bounded pullbacks are coherent). This module builds the gluing data of

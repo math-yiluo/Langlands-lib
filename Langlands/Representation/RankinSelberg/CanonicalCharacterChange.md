@@ -1,7 +1,5 @@
 # Canonical character change for actual p-adic zeta modules
 
-Author: Worker 43.
-
 This internal construction instantiates the existing equal- and unequal-rank
 character-change interfaces with the actual normalized unipotent quotient
 measure. In unequal rank it uses the actual rectangular product of a supplied

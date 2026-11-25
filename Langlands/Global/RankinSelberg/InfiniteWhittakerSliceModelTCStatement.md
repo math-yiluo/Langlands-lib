@@ -45,5 +45,5 @@ functionals. The comparison of slices on the actual Lean spectral presentation, 
 identity normalization, and the fieldwise and totally complex formulations are derived
 Library interfaces, not separate source theorems. The statement does not supply or prove
 the comparison, construct place tests, or assert any integral factorization or functional
-equation. In particular the unrestricted comparison and its proof work in Task 7397
+equation. In particular the unrestricted comparison and `ArchimedeanFactorizationStatement`
 remain unchanged.

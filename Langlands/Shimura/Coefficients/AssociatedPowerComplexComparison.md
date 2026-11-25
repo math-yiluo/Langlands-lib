@@ -1,7 +1,5 @@
 # Comparing sheaf-power and associated coefficient-power complexes
 
-Author: Worker 13.
-
 This module constructs the canonical comparison from the sheaf-power quotient
 complexes of an associated complex to the associated coefficient-power quotient
 complexes. It proves naturality in the complete power system and coefficient

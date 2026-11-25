@@ -1,7 +1,5 @@
 # The normalized additive valuation on an algebraic local-field extension
 
-Author: Worker 1676.
-
 This is a derived internal specialization of the published spectral valuation
 `Langlands.LocalGalois.spectralValuation`, the compatible norm
 `localNormedField`, the normalized integer order `FML.ord`, and the logarithmic

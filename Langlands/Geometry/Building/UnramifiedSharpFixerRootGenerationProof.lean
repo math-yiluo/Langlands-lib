@@ -15,8 +15,8 @@ Proposition 6.3.13 over `K`. It specializes the published quasi-split result
 follows from the published conditional reduction
 `unramifiedSharpFixerRootGeneration_of_derivativeRoots`.
 
-The public theorem for `UnramifiedAffineRootDerivativesStatement` belongs to Task 6720
-(module `UnramifiedAffineRootDerivativesProof`), so the auxiliary theorem here is private.
+The public theorem for `UnramifiedAffineRootDerivativesStatement` is in the module
+`UnramifiedAffineRootDerivativesProof`, so the auxiliary theorem here is private.
 -/
 
 noncomputable section
@@ -33,7 +33,8 @@ building datum `C` of an affine `K`-group, the derivatives of the affine roots `
 the relative roots `Φ`, multipliable roots and their doubles included. The valuation of `K` is
 surjective onto `ℤ` and its valuation ring is henselian. The group is connected reductive, hence
 quasi-split over `K`. So the quasi-split result applies to the apartment, centralizer and V 6
-datum carried by `C`. Private: the public theorem is owned by Task 6720. -/
+datum carried by `C`. Private: the public theorem is in `UnramifiedAffineRootDerivativesProof`.
+-/
 private theorem derivativeRoots_affineRoots_eq_range_rootForm :
     UnramifiedAffineRootDerivativesStatement.{u} := by
   intro F _ _ _ _ H _ C

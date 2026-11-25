@@ -92,29 +92,30 @@ per-datum dual witness (`DualWitness`) and check the Library's `IsPolarization`,
 `HasDegreeSquare` and `FullLevel` conditions.
 
 The statement is formulated relative to an arbitrary locally noetherian `S` with a family,
-so that it does not depend on a particular presentation of the Hilbert scheme. Task 7811
-applies it to the Hilbert scheme of `P^m` over `ℤ` (published
+so that it does not depend on a particular presentation of the Hilbert scheme. The reduction
+of `FrameChartRepresentabilityStatement` applies it to the Hilbert scheme of `P^m` over `ℤ` (published
 `HilbertSchemeUniversalFamilyStatement` and its proof) followed by successive relative
 projective spaces carrying the ambient points. That parameter scheme is larger than
 Mumford's `H_0`, which is why steps 1, 2, 4 and 5 above appear.
 
 ## Use
 
-This is the geometric input of Task 7811's reduction of
+This is the geometric input of the reduction of
 `FrameChartRepresentabilityStatement` (`frameChartRepresentability_of_frameHilbertLocus`,
 module `FrameChartRepresentabilityReduction`). Its other inputs are
 `CubicBundlePolarizationDeterminationStatement` (a datum is determined by its embedded image
 and torsion sections), `FrameLocusBaseChangeStatement`, `FrameLocusIsoInvarianceStatement`,
 `FrameEmbeddingUniquenessStatement` and `FrameEmbeddingExistenceStatement`. The last supplies
-a frame-normalized embedding of every datum with frame locus `⊤`; its expected proof uses the
-complete cubic embedding input over fields, `CubicFieldEmbeddingStatement` (Lefschetz), its
-relative step `Datum.cubicProjectiveEmbedding_of_fieldEmbedding` (module
+a frame-normalized embedding of every datum with frame locus `⊤`; its proof from the
+complete cubic embedding input over fields, `CubicFieldEmbeddingStatement` (Lefschetz), is
+`frameEmbeddingExistence_of_cubicFieldEmbedding` (module `FrameEmbeddingReduction`); the
+relative step of that input is `Datum.cubicProjectiveEmbedding_of_fieldEmbedding` (module
 `CubicEmbeddingReduction`: the cubic evaluation into the projective bundle of `π_* L³` is a
 closed immersion). The frame then trivializes this projective bundle `P(π_* L³)`. On the
 frame locus, the evaluations at the first `m + 1` frame sections identify `π_* L³` with the
 sum of their `m + 1` evaluation lines. The remaining frame conditions identify each of
 these lines with the evaluation line `Λ` at the last frame section. So `π_* L³ ≅ Λ^{m+1}`,
 which gives `P(π_* L³) ≅ P^m_S`. The frame thus trivializes the projective bundle, not
-`π_* L³` itself. In the expected construction the coordinates are the corresponding
+`π_* L³` itself. In that construction the coordinates are the corresponding
 sections of `L³ ⊗ π^*Λ^{-1}`, so the base line bundle `N` in `ψ^*𝒪(1) ≅ L³ ⊗ π^* N`
 (`Datum.IsFrameEmbedding.cubic`) is `Λ^{-1}`.

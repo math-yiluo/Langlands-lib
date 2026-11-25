@@ -98,9 +98,11 @@ canonical-representative, affine-point, polynomial-action and image-descent
 constructions; no new literature theorem is asserted. Existence of compatible
 pinnings and root maps, availability of the required orthogonal invariant
 blocks, the split immersion and quotient calculations, exceptional even-type-A
-substitutes and rational lifting remain separate obligations. This unit neither
-proves the parent quasi-split quotient statement nor asserts a global rational
+substitutes and rational lifting remain separate obligations. This module neither
+proves the quasi-split quotient statement `QuasiSplitSteinbergQuotientStatement`
+that it serves, which the Library proves as `quasiSplitSteinbergQuotient`
+(`Rational.QuasiSplitSteinbergQuotient`), nor asserts a global rational
 section in exceptional even type A.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here carry module-specific names to permit joint
+imports. The names change none of their types, values, or local scopes.

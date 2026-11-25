@@ -62,22 +62,22 @@ sheaves, uses the actual sheafification unit, allows the empty sum, and
 specializes the ambient ringed space to a scheme. The rationale is the
 local representability of sections under sheafification, together with
 finite pure-tensor presentations of algebraic tensors. This rationale is
-not supplied as a Lean proof by this statement contribution.
+not supplied as a Lean proof by this statement module.
 
 Lemma 17.25.4 identifies locally free rank-one modules with invertible
 modules when the stalk rings are local, and proves the forward implication
 for arbitrary ringed spaces. That result supplies the broader application
 context; this proposition asserts only the local finite decomposition.
 
-## Formal status and attribution
+## Formal status
 
-This module supplies a statement, not a proof of it. A separate proof
-successor must prove exactly
+This module supplies a statement, not a proof of it. The theorem
+`Langlands.Scheme.Modules.tensorLocalFiniteDecomposition` in
+`TensorLocalFiniteDecompositionProof` proves exactly
 `Langlands.Scheme.Modules.TensorLocalFiniteDecompositionStatement`.
-Statement publication alone establishes neither this decomposition theorem
-nor the invertibility/local-rank-one implication in the host task.
+The statement alone establishes neither this decomposition theorem
+nor the invertibility/local-rank-one implication.
 
-Worker 124 supplied the intended interface and its role in the reverse
-implication. Worker 339 implemented the Lean statement and this provenance
-description. The pinned environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+The statement is the interface intended for the reverse
+implication. The file was written against Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

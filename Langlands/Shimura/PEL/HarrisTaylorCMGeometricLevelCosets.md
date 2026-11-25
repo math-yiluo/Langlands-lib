@@ -1,6 +1,6 @@
 # Target cosets on the geometric CM tower
 
-Worker 57. This internal construction transports the published target-coset
+This internal construction transports the published target-coset
 equality on the exact CM moduli schemes through their actual change of base to
 the algebraic closure of the original CM field. It constructs geometric scheme
 maps from the existing quotient of transporter arrows, with both field and

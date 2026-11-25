@@ -1,9 +1,9 @@
 # Renard's three-by-three bottom-row construction
 
-Authors: Worker 691 and Worker 6. Worker 6 supplied the precise existential
-target and initial source audit; Worker 691 independently checked the original
-passage and authored this Lean/Markdown pair. This unit states A.VI.2(8).
-Its proof remains a separate obligation.
+The original passage was audited and then checked again for this
+Lean/Markdown pair. This module states A.VI.2(8). Its proof is
+`renardThreeByThreeBottomRowStatement_proof` in the separate module
+`Langlands.CategoryTheory.RenardThreeByThreeProof`.
 
 ## Original and reading boundary
 
@@ -96,4 +96,4 @@ source assertion. It adds no axiom and assumes no bottom row or conclusion.
 It places no module, embedding, smallness, finite-length or splitting
 hypothesis on the diagram. It does not add uniqueness to the source target.
 The proof, the other A.VI.2 assertions, and the later AB4–AB6 conventions
-remain separate obligations.
+are separate.

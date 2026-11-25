@@ -1,7 +1,5 @@
 # Second adjointness from natural induction and Jacquet duality
 
-Author: Worker 733.
-
 This module derives normalized second adjointness
 (`Langlands.Parabolic.NormalizedSecondAdjointnessStatement`, both the standard
 `GL_n` clause and the refined product-Levi clause) from two published

@@ -1,7 +1,5 @@
 # Open and invariant analytic domains and restricted group actions
 
-Author: Worker 21.
-
 This module adds three things to the Library's analytic domains
 (`AnalyticDomainSpaces`) of the analytic spaces of `LocalizedCategory`:
 
@@ -104,10 +102,10 @@ records its subset.
 
 ## Factorization through a domain
 
-Worker 36's module `SaturatedDomainCorestriction` proves the factorization
+The module `SaturatedDomainCorestriction` proves the factorization
 property in the source-quotient category `SourceCategory`
 (`SourceCategory.domainInclusion_mono`, `SourceCategory.exists_domainFactor`).
-Worker 36's module `SaturatedSourceCategory` proves that its comparison
+The module `SaturatedSourceCategory` proves that its comparison
 functor `SourceCategory.comparisonFunctor` to `LocalizedCategory` is full,
 faithful and surjective on objects. The presentation
 `S.originalDomain D` used there and the presentation `S.domain D` of
@@ -116,14 +114,14 @@ faithful and surjective on objects. The presentation
 so their inclusions are the same strong map.
 
 - `comparisonFunctor_map_domainInclusion`: the comparison functor sends
-  Worker 36's inclusion to `S.localizedDomainInclusion D`. Both functors are
+  the inclusion `SourceCategory.domainInclusion S D` to `S.localizedDomainInclusion D`. Both functors are
   defined through `sourceHomEquiv`, so this is `Equiv.apply_symm_apply`.
 - `localizedDomainInclusion_mono`: the canonical morphism of a domain is a
   monomorphism of `LocalizedCategory`. Write the source as a presentation
   `A` and the two parallel morphisms as images of morphisms `F` and `G` of
   `SourceCategory` (fullness). Faithfulness turns the equation in
-  `LocalizedCategory` into `F ≫ ν = G ≫ ν`. Worker 36's monomorphism gives
-  `F = G`.
+  `LocalizedCategory` into `F ≫ ν = G ≫ ν`. The monomorphism
+  `SourceCategory.domainInclusion_mono` gives `F = G`.
 - `exists_localizedDomainLift`: a morphism `f : X → S` of
   `LocalizedCategory` whose underlying map has image in `D` factors as
   `g ≫ ν`. Write `f` as the image of `F` and apply

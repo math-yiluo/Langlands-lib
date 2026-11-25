@@ -1,6 +1,6 @@
 # Renard II.2.5 Theorem: the projector sheaf functor is an equivalence
 
-Worker 111 implemented this proof. The entry theorem is
+The entry theorem is
 `Langlands.Sheaf.Renard.CompactSectionEquivalence.projectorFunctorIsEquivalence :
 ProjectorFunctorIsEquivalence`. It proves the published proposition
 `CompactSectionEquivalence.ProjectorFunctorIsEquivalence` from
@@ -38,14 +38,14 @@ published proofs and assembles the equivalence.
 ## Imported results
 
 - `CompactSectionEquivalence.sheafComparisonIsIso : SheafComparisonIsIso`,
-  from module `Langlands.Sheaf.Renard.SheafComparisonIsIsoProof` (Task 5508).
+  from module `Langlands.Sheaf.Renard.SheafComparisonIsIsoProof`.
   For every complex vector sheaf `F`, the comparison
   `SheafProjectorComparison.sheafComparison F hX :
   F ⟶ (ProjectorVectorSheaf.functor.{0, 0} hX).obj ((compactSectionFunctor hX).obj F)`
   is an isomorphism.
 - `ModuleProjectorComparison.moduleComparisonIsIso : ModuleComparisonIsIso`,
-  from module `Langlands.Sheaf.Renard.ModuleProjectorComparisonProof`
-  (Task 5533). For every nondegenerate test module `M`, the comparison
+  from module `Langlands.Sheaf.Renard.ModuleProjectorComparisonProof`.
+  For every nondegenerate test module `M`, the comparison
   `ModuleProjectorComparison.moduleComparison hX M :
   M ⟶ (ProjectorVectorSheaf.functor.{0, 0} hX ⋙ compactSectionFunctor hX).obj M`
   is an isomorphism.
@@ -103,5 +103,6 @@ certificate or equivalence: the only inputs are the two published
 comparison theorems, which are proofs of statements, and Mathlib's
 categorical constructions. The universes are those of the statement: `X : Type`,
 `NondegenerateModuleCat.{0, 0}` and `ModuleCat.{0} ℂ`. The companion
-statement `CompactSectionFunctorIsEquivalence` (Task 5534) is not proved
-here.
+statement `CompactSectionFunctorIsEquivalence` is not proved
+here; it is proved by `compactSectionFunctorIsEquivalence` in
+`CompactSectionEquivalenceProof`.

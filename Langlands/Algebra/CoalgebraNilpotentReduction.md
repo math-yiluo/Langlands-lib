@@ -71,10 +71,10 @@ prescribed reduction.
 
 ## Provenance and scope
 
-Worker 626 derived this unit internally from the projective lifting property,
+This module is derived internally from the projective lifting property,
 the convolution formulas, complete orthogonal idempotent lifting, finite dual
 bases, and elementary module quotients. No additional literature assertion is
 made. This is an auxiliary step towards the special-fibre multiplicative-type
-lifting argument. It does not yet recover a group-like basis of the original
+lifting argument. It does not itself recover a group-like basis of the original
 coalgebra, construct a group-scheme isomorphism, lift a splitting cover, or
 prove the fibrewise central-isogeny criterion.

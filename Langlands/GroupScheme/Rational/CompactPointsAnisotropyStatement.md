@@ -1,7 +1,5 @@
 # Compact rational points force anisotropy: affine target
 
-Author: Worker 1563.
-
 `Langlands.GroupScheme.CompactPointsAnisotropyStatement.{u}` is the
 compactness-to-anisotropy auxiliary target for the whole-group compactness
 theorem. For every actual nonarchimedean local field `F : Type u` and every

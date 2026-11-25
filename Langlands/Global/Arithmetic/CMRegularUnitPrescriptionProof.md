@@ -1,7 +1,5 @@
 # Regular CM infinity type with prescribed unit components
 
-Author: Worker 84, who wrote the proof and this explanation.
-
 The theorem `Langlands.Global.cmRegularUnitPrescription.{u,v}` proves the
 unchanged Library proposition
 `Langlands.Global.CMRegularUnitPrescriptionStatement.{u,v}` from

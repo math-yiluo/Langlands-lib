@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafEulerChar
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafTensor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafConstructions
@@ -57,29 +57,29 @@ variable {k : Type u} [Field k] {V : Scheme.{u}} (π : V ⟶ Spec (.of k)) (K : 
 
 include hL in
 theorem locTriv_tensorPow (n : ℕ) : ∀ x : V, ∃ (U : V.Opens), x ∈ U ∧
-    Nonempty ((Scheme.Modules.pullback U.ι).obj (L.tensorPow n) ≅ SheafOfModules.unit U.toScheme.ringCatSheaf) := by
-  suffices h : Scheme.Modules.IsInvertible (L.tensorPow n) from h.1
+    Nonempty ((Scheme.Modules.pullback U.ι).obj (L.tensorPowFLT n) ≅ SheafOfModules.unit U.toScheme.ringCatSheaf) := by
+  suffices h : Scheme.Modules.IsInvertibleFLT (L.tensorPowFLT n) from h.1
   induction n with
   | zero => exact Scheme.Modules.isInvertible_unit V
-  | succ n ih => exact ih.tensor_monoidalV2 ⟨hL⟩
+  | succ n ih => exact AlgebraicGeometry.Scheme.Modules.IsInvertible.tensor_monoidalV2 ih ⟨hL⟩
 
 include hL in
 theorem coh_twist (G : OModulePresheaf π) (hc : G.IsCoherent) (hq : G.IsQuasicoherent) (n : ℕ) :
-    (G.twist (L.tensorPow n)).IsCoherent ∧ (G.twist (L.tensorPow n)).IsQuasicoherent :=
-  ⟨(G.isQuasicoherent_isCoherent_supportedIn_tensor (ofModules π (L.tensorPow n))).2.1 hc
+    (G.twist (L.tensorPowFLT n)).IsCoherent ∧ (G.twist (L.tensorPowFLT n)).IsQuasicoherent :=
+  ⟨(G.isQuasicoherent_isCoherent_supportedIn_tensor (ofModules π (L.tensorPowFLT n))).2.1 hc
       (isCoherent_ofModules_of_locallyTrivial π _ (locTriv_tensorPow L hL n)),
-    (G.isQuasicoherent_isCoherent_supportedIn_tensor (ofModules π (L.tensorPow n))).1 hq
+    (G.isQuasicoherent_isCoherent_supportedIn_tensor (ofModules π (L.tensorPowFLT n))).1 hq
       (isQuasicoherent_ofModules_of_locallyTrivial π _ (locTriv_tensorPow L hL n))⟩
 
 include hL in
 theorem cechFinite_twist [IsProper π] (G : OModulePresheaf π) (hc : G.IsCoherent) (hq : G.IsQuasicoherent) (n : ℕ) :
-    (G.twist (L.tensorPow n)).CechFinite K :=
-  (G.twist (L.tensorPow n)).cechFinite_of_isProper (coh_twist π L hL G hc hq n).1 (coh_twist π L hL G hc hq n).2 K
+    (G.twist (L.tensorPowFLT n)).CechFinite K :=
+  (G.twist (L.tensorPowFLT n)).cechFinite_of_isProper (coh_twist π L hL G hc hq n).1 (coh_twist π L hL G hc hq n).2 K
 
 include hL in
-theorem flat_sections (n : ℕ) (U : V.affineOpens) : Module.Flat Γ(V, U.1) ((ofModules π (L.tensorPow n)).obj U.1) := by
-  haveI := Scheme.Modules.projective_sections_of_locallyTrivial (L.tensorPow n) (locTriv_tensorPow L hL n) U
-  show Module.Flat Γ(V, U.1) Γ(L.tensorPow n, U.1)
+theorem flat_sections (n : ℕ) (U : V.affineOpens) : Module.Flat Γ(V, U.1) ((ofModules π (L.tensorPowFLT n)).obj U.1) := by
+  haveI := Scheme.Modules.projective_sections_of_locallyTrivial (L.tensorPowFLT n) (locTriv_tensorPow L hL n) U
+  show Module.Flat Γ(V, U.1) Γ(L.tensorPowFLT n, U.1)
   exact Module.Flat.of_projective
 
 include hL in
@@ -87,9 +87,9 @@ include hL in
 theorem eulerChar_twist_add [IsProper π] {G₁ G₂ G₃ : OModulePresheaf π} (S : AffSES G₁ G₂ G₃)
     (h₁c : G₁.IsCoherent) (h₁q : G₁.IsQuasicoherent) (h₂c : G₂.IsCoherent) (h₂q : G₂.IsQuasicoherent)
     (h₃c : G₃.IsCoherent) (h₃q : G₃.IsQuasicoherent) (n : ℕ) :
-    (G₂.twist (L.tensorPow n)).eulerChar K =
-      (G₁.twist (L.tensorPow n)).eulerChar K + (G₃.twist (L.tensorPow n)).eulerChar K := by
-  obtain ⟨S', -⟩ := exists_affSES_tensor_of_flat S (ofModules π (L.tensorPow n)) (flat_sections π L hL n)
+    (G₂.twist (L.tensorPowFLT n)).eulerChar K =
+      (G₁.twist (L.tensorPowFLT n)).eulerChar K + (G₃.twist (L.tensorPowFLT n)).eulerChar K := by
+  obtain ⟨S', -⟩ := exists_affSES_tensor_of_flat S (ofModules π (L.tensorPowFLT n)) (flat_sections π L hL n)
   exact eulerChar_eq_add_of_affSES S' K (cechFinite_twist π K L hL G₁ h₁c h₁q n)
     (cechFinite_twist π K L hL G₂ h₂c h₂q n) (cechFinite_twist π K L hL G₃ h₃c h₃q n)
 
@@ -279,7 +279,7 @@ end Setup
 section Theta
 
 variable {k : Type u} [Field k] {V : Scheme.{u}} (π : V ⟶ Spec (.of k)) (Z₀ : Closeds V)
-variable (L : V.Modules) (hLi : Scheme.Modules.IsInvertible L)
+variable (L : V.Modules) (hLi : Scheme.Modules.IsInvertibleFLT L)
 
 attribute [local instance] algVZ
 
@@ -296,19 +296,19 @@ theorem map_eta {U U' : V.Opens} (h : U ≤ U') (s : Γ(L, U')) :
     ((Scheme.Modules.pullbackPushforwardAdjunction (ι Z₀)).unit.app L).val (homOfLE h).op s).symm
 
 noncomputable def tau (n : ℕ) (U : V.affineOpens) :
-    Γ(L.tensorPow n, U.1) ⊗[Γ(V, U.1)] Γ(L, U.1) ≃ₗ[Γ(V, U.1)] Γ(L.tensorPow (n + 1), U.1) :=
-  LinearEquiv.ofBijective (TensorProduct.lift (Scheme.Modules.tensorSectionsBilin (L.tensorPow n) L U.1))
+    Γ(L.tensorPowFLT n, U.1) ⊗[Γ(V, U.1)] Γ(L, U.1) ≃ₗ[Γ(V, U.1)] Γ(L.tensorPowFLT (n + 1), U.1) :=
+  LinearEquiv.ofBijective (TensorProduct.lift (Scheme.Modules.tensorSectionsBilin (L.tensorPowFLT n) L U.1))
     (Scheme.Modules.IsInvertible.bijective_lift_tensorSectionsBilin_monoidalV2
-      (show Scheme.Modules.IsInvertible (L.tensorPow n) from ⟨locTriv_tensorPow L hLi.1 n⟩) hLi U)
+      (show Scheme.Modules.IsInvertibleFLT (L.tensorPowFLT n) from ⟨locTriv_tensorPow L hLi.1 n⟩) hLi U)
 
-theorem tau_tmul (n : ℕ) (U : V.affineOpens) (y : Γ(L.tensorPow n, U.1)) (s : Γ(L, U.1)) :
+theorem tau_tmul (n : ℕ) (U : V.affineOpens) (y : Γ(L.tensorPowFLT n, U.1)) (s : Γ(L, U.1)) :
     tau L hLi n U (y ⊗ₜ s) = Scheme.Modules.tensorSections y s := by
-  show TensorProduct.lift (Scheme.Modules.tensorSectionsBilin (L.tensorPow n) L U.1) (y ⊗ₜ s) = _
+  show TensorProduct.lift (Scheme.Modules.tensorSectionsBilin (L.tensorPowFLT n) L U.1) (y ⊗ₜ s) = _
   rw [TensorProduct.lift.tmul, Scheme.Modules.tensorSectionsBilin_apply]
 
-theorem map_tau_tmul (n : ℕ) {U U' : V.affineOpens} (h : U.1 ≤ U'.1) (y : Γ(L.tensorPow n, U'.1)) (s : Γ(L, U'.1)) :
-    (L.tensorPow (n + 1)).presheaf.map (homOfLE h).op (tau L hLi n U' (y ⊗ₜ s)) =
-      tau L hLi n U ((L.tensorPow n).presheaf.map (homOfLE h).op y ⊗ₜ L.presheaf.map (homOfLE h).op s) := by
+theorem map_tau_tmul (n : ℕ) {U U' : V.affineOpens} (h : U.1 ≤ U'.1) (y : Γ(L.tensorPowFLT n, U'.1)) (s : Γ(L, U'.1)) :
+    (L.tensorPowFLT (n + 1)).presheaf.map (homOfLE h).op (tau L hLi n U' (y ⊗ₜ s)) =
+      tau L hLi n U ((L.tensorPowFLT n).presheaf.map (homOfLE h).op y ⊗ₜ L.presheaf.map (homOfLE h).op s) := by
   rw [tau_tmul, tau_tmul]
   exact Scheme.Modules.map_tensorSections (homOfLE h) y s
 
@@ -318,8 +318,8 @@ variable (I J : (ZZ Z₀).IdealSheafData)
     Γ(ZZ Z₀, ι Z₀ ⁻¹ᵁ U.1) ⊗[Γ(V, U.1)] Γ(L, U.1) ≃ₗ[Γ(ZZ Z₀, ι Z₀ ⁻¹ᵁ U.1)] Γ(M Z₀ L, ι Z₀ ⁻¹ᵁ U.1))
 
 noncomputable def twistIso (n : ℕ) (U : V.affineOpens) :
-    ↥(I.ideal (W Z₀ U)) ⊗[Γ(V, U.1)] Γ(L.tensorPow (n + 1), U.1) ≃ₗ[Γ(V, U.1)]
-      ↥(J.ideal (W Z₀ U)) ⊗[Γ(V, U.1)] Γ(L.tensorPow n, U.1) :=
+    ↥(I.ideal (W Z₀ U)) ⊗[Γ(V, U.1)] Γ(L.tensorPowFLT (n + 1), U.1) ≃ₗ[Γ(V, U.1)]
+      ↥(J.ideal (W Z₀ U)) ⊗[Γ(V, U.1)] Γ(L.tensorPowFLT n, U.1) :=
   (TensorProduct.congr (LinearEquiv.refl _ _) (tau L hLi n U).symm).trans <|
   (TensorProduct.congr (LinearEquiv.refl _ _) (TensorProduct.comm _ _ _)).trans <|
   (TensorProduct.assoc Γ(V, U.1) _ _ _).symm.trans <|
@@ -329,7 +329,7 @@ noncomputable def twistIso (n : ℕ) (U : V.affineOpens) :
       (TensorProduct.AlgebraTensorModule.congr (LinearEquiv.refl _ _) (β U))).trans (e (W Z₀ U))).restrictScalars Γ(V, U.1))
     (LinearEquiv.refl _ _)
 
-theorem twistIso_tmul (n : ℕ) (U : V.affineOpens) (a : ↥(I.ideal (W Z₀ U))) (y : Γ(L.tensorPow n, U.1)) (s : Γ(L, U.1)) :
+theorem twistIso_tmul (n : ℕ) (U : V.affineOpens) (a : ↥(I.ideal (W Z₀ U))) (y : Γ(L.tensorPowFLT n, U.1)) (s : Γ(L, U.1)) :
     twistIso Z₀ L hLi I J e β n U (a ⊗ₜ tau L hLi n U (y ⊗ₜ s)) = e (W Z₀ U) (a ⊗ₜ β U (1 ⊗ₜ s)) ⊗ₜ y := by
   simp only [twistIso, LinearEquiv.trans_apply, TensorProduct.congr_tmul, LinearEquiv.refl_apply,
     LinearEquiv.symm_apply_apply, TensorProduct.comm_tmul, TensorProduct.assoc_symm_tmul,
@@ -337,17 +337,17 @@ theorem twistIso_tmul (n : ℕ) (U : V.affineOpens) (a : ↥(I.ideal (W Z₀ U))
     TensorProduct.AlgebraTensorModule.congr_tmul]
 
 noncomputable def Theta (n : ℕ) (U : V.affineOpens) :
-    ((KI π Z₀ I).twist (L.tensorPow (n + 1))).obj U.1 ≃ₗ[Γ(V, U.1)] ((KI π Z₀ J).twist (L.tensorPow n)).obj U.1 :=
-  (TensorProduct.congr (kappa π Z₀ I U) (LinearEquiv.refl Γ(V, U.1) Γ(L.tensorPow (n + 1), U.1))).trans <|
+    ((KI π Z₀ I).twist (L.tensorPowFLT (n + 1))).obj U.1 ≃ₗ[Γ(V, U.1)] ((KI π Z₀ J).twist (L.tensorPowFLT n)).obj U.1 :=
+  (TensorProduct.congr (kappa π Z₀ I U) (LinearEquiv.refl Γ(V, U.1) Γ(L.tensorPowFLT (n + 1), U.1))).trans <|
   (twistIso Z₀ L hLi I J e β n U).trans
-  (TensorProduct.congr (kappa π Z₀ J U) (LinearEquiv.refl Γ(V, U.1) Γ(L.tensorPow n, U.1))).symm
+  (TensorProduct.congr (kappa π Z₀ J U) (LinearEquiv.refl Γ(V, U.1) Γ(L.tensorPowFLT n, U.1))).symm
 
-theorem Theta_tmul (n : ℕ) (U : V.affineOpens) (x : (KI π Z₀ I).obj U.1) (y : Γ(L.tensorPow n, U.1)) (s : Γ(L, U.1)) :
+theorem Theta_tmul (n : ℕ) (U : V.affineOpens) (x : (KI π Z₀ I).obj U.1) (y : Γ(L.tensorPowFLT n, U.1)) (s : Γ(L, U.1)) :
     Theta π Z₀ L hLi I J e β n U
-        ((x ⊗ₜ[Γ(V, U.1)] tau L hLi n U (y ⊗ₜ s) : (KI π Z₀ I).obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPow (n + 1), U.1))) =
+        ((x ⊗ₜ[Γ(V, U.1)] tau L hLi n U (y ⊗ₜ s) : (KI π Z₀ I).obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPowFLT (n + 1), U.1))) =
       (((kappa π Z₀ J U).symm (e (W Z₀ U) (kappa π Z₀ I U x ⊗ₜ β U (1 ⊗ₜ s)))) ⊗ₜ[Γ(V, U.1)] y :
-        (KI π Z₀ J).obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPow n, U.1)) := by
-  show (TensorProduct.congr (kappa π Z₀ J U) (LinearEquiv.refl Γ(V, U.1) Γ(L.tensorPow n, U.1))).symm
+        (KI π Z₀ J).obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPowFLT n, U.1)) := by
+  show (TensorProduct.congr (kappa π Z₀ J U) (LinearEquiv.refl Γ(V, U.1) Γ(L.tensorPowFLT n, U.1))).symm
       (twistIso Z₀ L hLi I J e β n U (TensorProduct.congr (kappa π Z₀ I U) (LinearEquiv.refl _ _)
         (x ⊗ₜ[Γ(V, U.1)] tau L hLi n U (y ⊗ₜ s)))) = _
   rw [TensorProduct.congr_tmul, LinearEquiv.refl_apply, twistIso_tmul, TensorProduct.congr_symm_tmul,
@@ -359,7 +359,7 @@ noncomputable def ThetaHom (n : ℕ)
         e O' (⟨(ZZ Z₀).presheaf.map (homOfLE h).op a, I.ideal_le_comap_ideal h a.2⟩ ⊗ₜ
           (M Z₀ L).presheaf.map (homOfLE h).op m))
     (hβ : ∀ (U : V.affineOpens) (s : Γ(L, U.1)), β U (1 ⊗ₜ s) = eta Z₀ L U.1 s) :
-    AffHom ((KI π Z₀ I).twist (L.tensorPow (n + 1))) ((KI π Z₀ J).twist (L.tensorPow n)) where
+    AffHom ((KI π Z₀ I).twist (L.tensorPowFLT (n + 1))) ((KI π Z₀ J).twist (L.tensorPowFLT n)) where
   app U :=
     { toFun := Theta π Z₀ L hLi I J e β n U
       map_add' := fun a b => map_add _ a b
@@ -368,20 +368,20 @@ noncomputable def ThetaHom (n : ℕ)
   app_smul U a t := map_smul (Theta π Z₀ L hLi I J e β n U) a t
   naturality {U U'} h := by
     refine LinearMap.ext fun t => ?_
-    show Theta π Z₀ L hLi I J e β n U (((KI π Z₀ I).twist (L.tensorPow (n + 1))).res h t) =
-      ((KI π Z₀ J).twist (L.tensorPow n)).res h (Theta π Z₀ L hLi I J e β n U' t)
+    show Theta π Z₀ L hLi I J e β n U (((KI π Z₀ I).twist (L.tensorPowFLT (n + 1))).res h t) =
+      ((KI π Z₀ J).twist (L.tensorPowFLT n)).res h (Theta π Z₀ L hLi I J e β n U' t)
 
-    set Φ : (KI π Z₀ I).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPow (n + 1), U'.1) → ((KI π Z₀ J).twist (L.tensorPow n)).obj U.1 :=
-      fun t => Theta π Z₀ L hLi I J e β n U (((KI π Z₀ I).twist (L.tensorPow (n + 1))).res h t) with hΦ
-    set Ψ : (KI π Z₀ I).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPow (n + 1), U'.1) → ((KI π Z₀ J).twist (L.tensorPow n)).obj U.1 :=
-      fun t => ((KI π Z₀ J).twist (L.tensorPow n)).res h (Theta π Z₀ L hLi I J e β n U' t) with hΨ
+    set Φ : (KI π Z₀ I).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPowFLT (n + 1), U'.1) → ((KI π Z₀ J).twist (L.tensorPowFLT n)).obj U.1 :=
+      fun t => Theta π Z₀ L hLi I J e β n U (((KI π Z₀ I).twist (L.tensorPowFLT (n + 1))).res h t) with hΦ
+    set Ψ : (KI π Z₀ I).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPowFLT (n + 1), U'.1) → ((KI π Z₀ J).twist (L.tensorPowFLT n)).obj U.1 :=
+      fun t => ((KI π Z₀ J).twist (L.tensorPowFLT n)).res h (Theta π Z₀ L hLi I J e β n U' t) with hΨ
     have hΦ0 : Φ 0 = 0 := by
-      show Theta π Z₀ L hLi I J e β n U (((KI π Z₀ I).twist (L.tensorPow (n + 1))).res h
-        (0 : ((KI π Z₀ I).twist (L.tensorPow (n + 1))).obj U'.1)) = 0
+      show Theta π Z₀ L hLi I J e β n U (((KI π Z₀ I).twist (L.tensorPowFLT (n + 1))).res h
+        (0 : ((KI π Z₀ I).twist (L.tensorPowFLT (n + 1))).obj U'.1)) = 0
       rw [map_zero, map_zero]
     have hΨ0 : Ψ 0 = 0 := by
-      show ((KI π Z₀ J).twist (L.tensorPow n)).res h (Theta π Z₀ L hLi I J e β n U'
-        (0 : ((KI π Z₀ I).twist (L.tensorPow (n + 1))).obj U'.1)) = 0
+      show ((KI π Z₀ J).twist (L.tensorPowFLT n)).res h (Theta π Z₀ L hLi I J e β n U'
+        (0 : ((KI π Z₀ I).twist (L.tensorPowFLT (n + 1))).obj U'.1)) = 0
       rw [map_zero, map_zero]
     have hΦa : ∀ a b, Φ (a + b) = Φ a + Φ b := fun a b => by
       simp only [hΦ]
@@ -389,7 +389,7 @@ noncomputable def ThetaHom (n : ℕ)
     have hΨa : ∀ a b, Ψ (a + b) = Ψ a + Ψ b := fun a b => by
       simp only [hΨ]
       erw [LinearEquiv.map_add, LinearMap.map_add]
-    suffices H : ∀ t' : (KI π Z₀ I).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPow (n + 1), U'.1), Φ t' = Ψ t' from H t
+    suffices H : ∀ t' : (KI π Z₀ I).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPowFLT (n + 1), U'.1), Φ t' = Ψ t' from H t
     intro t'
     induction t' using TensorProduct.induction_on with
     | zero => rw [hΦ0, hΨ0]
@@ -404,20 +404,20 @@ noncomputable def ThetaHom (n : ℕ)
 
         rw [Theta_tmul]
 
-        have eL : ((KI π Z₀ I).twist (L.tensorPow (n + 1))).res h
+        have eL : ((KI π Z₀ I).twist (L.tensorPowFLT (n + 1))).res h
               ((x ⊗ₜ[Γ(V, U'.1)] tau L hLi n U' (y ⊗ₜ s) :
-                (KI π Z₀ I).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPow (n + 1), U'.1))) =
+                (KI π Z₀ I).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPowFLT (n + 1), U'.1))) =
             (((KI π Z₀ I).res h x) ⊗ₜ[Γ(V, U.1)]
-              (L.tensorPow (n + 1)).presheaf.map (homOfLE h).op (tau L hLi n U' (y ⊗ₜ s)) :
-                (KI π Z₀ I).obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPow (n + 1), U.1)) := rfl
+              (L.tensorPowFLT (n + 1)).presheaf.map (homOfLE h).op (tau L hLi n U' (y ⊗ₜ s)) :
+                (KI π Z₀ I).obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPowFLT (n + 1), U.1)) := rfl
         rw [eL, map_tau_tmul, Theta_tmul]
 
-        have eR : ((KI π Z₀ J).twist (L.tensorPow n)).res h
+        have eR : ((KI π Z₀ J).twist (L.tensorPowFLT n)).res h
               ((((kappa π Z₀ J U').symm (e (W Z₀ U') (kappa π Z₀ I U' x ⊗ₜ β U' (1 ⊗ₜ s)))) ⊗ₜ[Γ(V, U'.1)] y :
-                (KI π Z₀ J).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPow n, U'.1))) =
+                (KI π Z₀ J).obj U'.1 ⊗[Γ(V, U'.1)] Γ(L.tensorPowFLT n, U'.1))) =
             (((KI π Z₀ J).res h ((kappa π Z₀ J U').symm (e (W Z₀ U') (kappa π Z₀ I U' x ⊗ₜ β U' (1 ⊗ₜ s))))) ⊗ₜ[Γ(V, U.1)]
-              (L.tensorPow n).presheaf.map (homOfLE h).op y :
-                (KI π Z₀ J).obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPow n, U.1)) := rfl
+              (L.tensorPowFLT n).presheaf.map (homOfLE h).op y :
+                (KI π Z₀ J).obj U.1 ⊗[Γ(V, U.1)] Γ(L.tensorPowFLT n, U.1)) := rfl
         rw [eR]
         congr 1
         refine Subtype.ext ?_
@@ -456,11 +456,11 @@ theorem main :
       G₁.IsCoherent ∧ G₁.IsQuasicoherent ∧ G₁.SupportedIn Y₁ ∧
       G₂.IsCoherent ∧ G₂.IsQuasicoherent ∧ G₂.SupportedIn Y₂ ∧
       ∀ n : ℕ,
-        ((OZ π Z₀).twist (L.tensorPow (n + 1))).eulerChar K - ((OZ π Z₀).twist (L.tensorPow n)).eulerChar K =
-        (G₁.twist (L.tensorPow (n + 1))).eulerChar K - (G₂.twist (L.tensorPow n)).eulerChar K := by
+        ((OZ π Z₀).twist (L.tensorPowFLT (n + 1))).eulerChar K - ((OZ π Z₀).twist (L.tensorPowFLT n)).eulerChar K =
+        (G₁.twist (L.tensorPowFLT (n + 1))).eulerChar K - (G₂.twist (L.tensorPowFLT n)).eulerChar K := by
   haveI : IsIntegral (ZZ Z₀) := hint
-  have hLi : Scheme.Modules.IsInvertible L := ⟨hL⟩
-  have hM : Scheme.Modules.IsInvertible (M Z₀ L) := hLi.pullback (ι Z₀)
+  have hLi : Scheme.Modules.IsInvertibleFLT L := ⟨hL⟩
+  have hM : Scheme.Modules.IsInvertibleFLT (M Z₀ L) := AlgebraicGeometry.Scheme.Modules.IsInvertible.pullbackFLT (hL := hLi) (ι Z₀)
 
   obtain ⟨φ, hφ⟩ := Scheme.Modules.IsInvertible.exists_functionField_presentation (M Z₀ L) hM
   obtain ⟨I, J, e, -, hIJ, -, henat⟩ :=
@@ -504,8 +504,8 @@ theorem solution
       G₂.IsCoherent ∧ G₂.IsQuasicoherent ∧ G₂.SupportedIn Y₂ ∧
       ∀ n : ℕ,
         ((OModulePresheaf.pushforwardUnit π (Scheme.IdealSheafData.vanishingIdeal Z₀).subschemeι).twist
-              (L.tensorPow (n + 1))).eulerChar K -
+              (L.tensorPowFLT (n + 1))).eulerChar K -
           ((OModulePresheaf.pushforwardUnit π (Scheme.IdealSheafData.vanishingIdeal Z₀).subschemeι).twist
-              (L.tensorPow n)).eulerChar K =
-        (G₁.twist (L.tensorPow (n + 1))).eulerChar K - (G₂.twist (L.tensorPow n)).eulerChar K :=
+              (L.tensorPowFLT n)).eulerChar K =
+        (G₁.twist (L.tensorPowFLT (n + 1))).eulerChar K - (G₂.twist (L.tensorPowFLT n)).eulerChar K :=
   P2mTwistStep.main π K L hL Z₀ hZ₀ hint

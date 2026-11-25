@@ -1,9 +1,7 @@
 # Graded targets for the corrected support filtration
 
-Implementation and documentation: Worker 379 (task
-`0a1bd7fb-66c2-4dcc-a3c8-6619f6fa10b4`, the complex-and-targets unit of the
-general Aubert program `46df6a68-5db4-4428-8044-05151d6ce1f6`). The complex, its
-terms and transition maps are Worker 194's; the filtration is
+The complex, its terms and transition maps are those of `General.Complex` and its
+standard-subset form `General.StandardComplex`; the filtration is
 `CorrectedFiltration.step`.
 
 This module states, as two proposition targets, the representation-theoretic
@@ -72,7 +70,7 @@ that
 2. the kernel of `β_s` is exactly the step `i`: `β_s x = 0 ↔ x ∈ step i`;
 3. for surviving `s ⊆ t`, that is `J' = S \ t ⊆ J`, and every `x` in the step
    `i + 1` of `r_I(E_J)`, `β_t (r_I(φ^J_{J'}) x) = β_s x`. Here `r_I(φ^J_{J'})`
-   is the actual Jacquet functor applied to Worker 194's transition
+   is the actual Jacquet functor applied to the complex's transition
    `transition … E hst`, and `transition_mem_step` shows that it preserves the
    step `i + 1`.
 
@@ -80,7 +78,7 @@ By (1) and (2), `β_s` induces an isomorphism from the graded piece
 `Ẽ^{θ_{i+1}'}_{J,I} / Ẽ^{θ_i'}_{J,I}` onto `Ad(w⁻¹)(r_{L_K}(E))`. By (3), under
 these isomorphisms every graded transition between surviving indices is the
 identity. The differential is the signed sum of the transitions with the exterior
-signs of Worker 194's complex. So on the surviving indices it is the identity
+signs of the complex. So on the surviving indices it is the identity
 of `Ad(w⁻¹)(r_{L_K}(E))` multiplied by those signs.
 
 Source: erratum, p. 4689, the isomorphism `f ↦ (l ↦ ∫_{U_I ∩ w⁻¹P_Jw \ U_I}
@@ -127,7 +125,7 @@ survives (erratum, p. 4690). The terminal homology is retained throughout.
   local field, with `T` the maximal split torus, `cs` the Coxeter system of the
   relative Weyl group, and the standard families. The Bruhat decomposition and
   the identification of `cs` with the relative root system are structural
-  requirements of the program's ledger (A01–A02).
+  requirements on these data.
 * The cited proofs use the geometric lemma (Bernstein–Zelevinsky, Casselman
   6.2.1 and 6.3.3 as cited by the erratum) and transitivity of Jacquet functors,
   not a classification.

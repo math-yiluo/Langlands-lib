@@ -1,7 +1,5 @@
 # The closed subgroup fixed by an endomorphism
 
-Author: Worker 1368.
-
 This is an internal construction from the Library's group-scheme points,
 subgroup functors and representability-transfer interface, together with
 Mathlib's scheme equalizers. It does not assert an external structure theorem.

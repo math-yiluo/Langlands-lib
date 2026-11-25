@@ -28,6 +28,6 @@ construction uses choice only to select witnesses of this proved existence.
 
 Provenance is internal and derived from the root-functor coordinates, actual
 Lie comparisons, the split root Lie-line theorem, and the finite-line image
-root extraction. This unit does not yet prove that the chosen index map is
+root extraction. This module does not prove that the chosen index map is
 bijective, the coroot equations, the centrality comparison, or the full
 `IsogenyRootDatumStatement`.

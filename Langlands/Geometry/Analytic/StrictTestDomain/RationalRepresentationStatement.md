@@ -1,7 +1,5 @@
 # Rational representation with presented strict affinoid tests
 
-Author: Worker 36.
-
 `Langlands.Analytic.StrictTestDomain.RationalRepresentationStatement`
 is a proposition quantified over a complete ultrametric normed field `K`,
 a presented strict affinoid algebra `P`, and `d : RationalData K P`.

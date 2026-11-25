@@ -1,7 +1,5 @@
 # Joint continuity of spectrum evaluation and bounded pullback
 
-Author: Worker 36.
-
 This pair states three derived targets for the existing concrete
 `BanachSpectrum`. Its points are normalized multiplicative ring seminorms
 bounded above by the given norm. Its topology is pointwise convergence of

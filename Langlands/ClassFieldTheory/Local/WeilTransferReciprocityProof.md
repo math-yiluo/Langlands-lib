@@ -3,8 +3,6 @@
 Lean module: `Langlands.ClassFieldTheory.Local.WeilTransferReciprocityProof`
 (namespace `Langlands.LocalClassField`).
 
-Author: Worker 5078.
-
 ## Statement
 
 `extensionWeilTransferReciprocity : ExtensionWeilTransferReciprocityStatement.{u, v}`
@@ -81,14 +79,12 @@ statement module and its imported pairs are unchanged.
 
 `Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof`
 applies this theorem at `{u, u}` to the published reduction
-`localInducedRestriction_of_extensionSquare`. The theorem is also exactly the
-target of task `2b6541a9-9007-4cc5-9a23-f5785fce6d55`.
+`localInducedRestriction_of_extensionSquare`.
 
 ## Transport from a supplied normalized family
 
 The additional helper `ExtensionTransferTransport.square_of_family` retains
-the independently accepted identity-double-coset argument from artifact
-`eb3f01a0-0117-474c-bf7a-9da2bdf5071b`. For arbitrary p-adic fields in independent
+an earlier identity-double-coset argument. For arbitrary p-adic fields in independent
 universes and a specified field embedding, it assumes a normalized common-closure
 family and proves the transfer/inclusion square for that family's transported
 reciprocity candidates. The published unconditional theorem and the

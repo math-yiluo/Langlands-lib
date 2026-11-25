@@ -1,6 +1,6 @@
 # Fibre predicates under isomorphisms of morphisms
 
-This internal comparison unit uses the point homeomorphism
+This internal comparison module uses the point homeomorphism
 `Points.isoHomeomorph` from `PointTopologyIso`. Its forward map is the point
 map of the presheaf isomorphism and its inverse is the inverse point map,
 for the existing intrinsic point topologies.
@@ -24,5 +24,5 @@ closedness by transporting its closed point map along this homeomorphism.
 
 These are derived comparisons using the imported definitions and categorical
 pullbacks. No literature input, change of base scheme or limit-descent claim
-is used in this unit. The point-homeomorphism construction itself is reused
+is used in this module. The point-homeomorphism construction itself is reused
 from the separate `PointTopologyIso` module.

@@ -1,8 +1,8 @@
 # Reduction sequences for equivariant derived sections of ℓ-divisible systems
 
-Author: Worker 61. Built on the published modules
-`Langlands.Cohomology.DivisibleSystem.DerivedReductionSequence` (Worker 61:
-`derivedPowSMulNatTrans`, `derivedReductionNatTrans`,
+Built on the published modules
+`Langlands.Cohomology.DivisibleSystem.DerivedReductionSequence`
+(`derivedPowSMulNatTrans`, `derivedReductionNatTrans`,
 `derivedReductionδNatTrans`, `map_powSMulMap_comp_map_projection`,
 `map_projection_comp_derivedReductionδ`,
 `derivedReductionδ_comp_map_powSMulMap`, `powSMulShortComplex_shortExact`,
@@ -14,37 +14,37 @@ Author: Worker 61. Built on the published modules
 `limMap_derivedReductionδNatTrans`, and in the namespace
 `Langlands.Cohomology` `levelShiftLimitIso`, `constLimitIso` and
 `limit_exact_of_finite`),
-`Langlands.Cohomology.EquivariantDerivedSections` (Worker 13:
-`EquivariantDerivedSections.compactDerived` and
+`Langlands.Cohomology.EquivariantDerivedSections`
+(`EquivariantDerivedSections.compactDerived` and
 `EquivariantDerivedSections.globalDerived`, with the left exactness of
 `CompactSections.functor` and `sectionRepresentation`),
-`Langlands.Cohomology.SmoothSheafCohomology` (Worker 13:
-`SmoothSheafCohomology.compactDerived`,
+`Langlands.Cohomology.SmoothSheafCohomology`
+(`SmoothSheafCohomology.compactDerived`,
 `SmoothSheafCohomology.invariantCompactSections`,
 `SmoothSheafCohomology.invariantCompactDerived`),
-`Langlands.Cohomology.LeftExactHomology` (Worker 61:
-`LeftExactHomology.derivedNatTrans` and the instance
+`Langlands.Cohomology.LeftExactHomology`
+(`LeftExactHomology.derivedNatTrans` and the instance
 `LeftExactHomology.isIso_derivedNatTrans`) and
 `Langlands.Representation.Category.ExactInclusion` (the instances
 `toRep_preservesFiniteLimits` and `toRep_preservesFiniteColimits` for the
 inclusion `Langlands.SmoothRep.toRep` of smooth representations into all
 representations). Through their imports it uses the published
-`DivisibleSystem` (`Langlands.Cohomology.DivisibleSystem`, Worker 61: `tower`,
+`DivisibleSystem` (`Langlands.Cohomology.DivisibleSystem`: `tower`,
 `obj`, `powSMul`, `comp_powSMul`, and the abbreviation
 `SmoothSheafDivisibleSystem R G X ℓ` for `DivisibleSystem` in
 `SmoothTopologicalSheaf R G X`), `shortComplex_exact_of_evaluation`
-(`Langlands.Cohomology.DivisibleSystem.Colimit`, Worker 61),
+(`Langlands.Cohomology.DivisibleSystem.Colimit`),
 `cokernelKernelShortComplex_shortExact`
-(`Langlands.Cohomology.DivisibleSystem.ReductionSequence`, Worker 61), the
+(`Langlands.Cohomology.DivisibleSystem.ReductionSequence`), the
 exactness lemmas `DerivedPlus.rightDerived_exact₁`, `rightDerived_exact₂`,
-`rightDerived_exact₃` (`Langlands.Cohomology.RightDerivedSequence`, Worker
-61), Worker 13's `TopologicalSheaf`, `CompactSections.functor`
+`rightDerived_exact₃` (`Langlands.Cohomology.RightDerivedSequence`),
+`TopologicalSheaf`, `CompactSections.functor`
 (`Langlands.Sheaf.Equivariant.CompactSupport`), `sectionRepresentation`
 (`Langlands.Sheaf.Equivariant.FunctionSheaf`), `SmoothTopologicalSheaf`
 (`Langlands.Sheaf.Equivariant.SmoothAbelian`), `smoothSheafCompactSections`
 (`Langlands.Sheaf.Equivariant.SmoothSheafCompactSections`) and
 `Langlands.SmoothRep` (`Langlands.Representation.Category.Abelian`), and
-Worker 3's unproved statement `MittagLefflerShortExactLimitStatement`
+the unproved statement `MittagLefflerShortExactLimitStatement`
 (`Langlands.Cohomology.InverseLimit.Statement`), which appears only as a
 hypothesis.
 
@@ -119,10 +119,10 @@ of `k`-linear representations of `G`.
 
 `R : Type u` is a commutative ring, `G : Type u` a group acting on the
 topological space `X : Type u` by continuous translations, and `T` an
-`ℓ`-divisible system in Worker 13's abelian category
+`ℓ`-divisible system in the abelian category
 `TopologicalSheaf G X (ModuleCat R)` of equivariant module sheaves.
 `H^q_c = EquivariantDerivedSections.compactDerived R G X q` and
-`H^q = EquivariantDerivedSections.globalDerived R G X q` are Worker 13's right
+`H^q = EquivariantDerivedSections.globalDerived R G X q` are the right
 derived functors of the compact and global section representations, with
 values in `Rep R G`.
 
@@ -143,9 +143,9 @@ values in `Rep R G`.
 
 Now `G : Type u` is a topological group (`IsTopologicalGroup`) acting on `X`
 with `HasStableNeighbourhoods G X`, and `T : SmoothSheafDivisibleSystem R G X ℓ`
-is an `ℓ`-divisible system in Worker 13's abelian category
-`SmoothTopologicalSheaf R G X` of smooth equivariant module sheaves. Worker
-13's `SmoothSheafCohomology.compactDerived R G X q` is the `q`-th right
+is an `ℓ`-divisible system in the abelian category
+`SmoothTopologicalSheaf R G X` of smooth equivariant module sheaves.
+`SmoothSheafCohomology.compactDerived R G X q` is the `q`-th right
 derived functor of `smoothSheafCompactSections R G X`, with values in the
 category `SmoothRep R G` of smooth representations.
 
@@ -180,7 +180,7 @@ category `SmoothRep R G` of smooth representations.
   short exact. Proof: `derivedAdicReductionSequence_shortExact_rep`, with the
   finiteness transported along `compactDerivedToRepIso`.
 - `smoothInvariantCompactReductionSequence R G X T r q`:
-  `derivedAdicReductionSequence` for Worker 13's invariant compact sections
+  `derivedAdicReductionSequence` for the invariant compact sections
   `SmoothSheafCohomology.invariantCompactSections R G X`, a short complex of
   `R`-modules built from `SmoothSheafCohomology.invariantCompactDerived`; its
   `_X₁`, `_X₂`, `_X₃` lemmas (by definition) and
@@ -199,7 +199,7 @@ Milne, *Étale Cohomology* (1980), Chapter V, §1, as quoted in the published
 `H^r(X, F) = lim H^r(X, F_n)` (printed p.164, one-based PDF page 178).
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §2 (Worker 61 read the text layer):
+J. Math. Kyoto Univ. 39-2 (1999), §2 (read in the text layer):
 
 - printed p.304 (one-based PDF page 6), (2.1), as quoted in the published
   `DivisibleSystem`: "By an ℓ-divisible system of S(ẽ)-modules over U(ẽ) we
@@ -224,7 +224,7 @@ action kept: `smoothCompactReductionSequence` is the case closest to Harris's
 compactly supported cohomology. Harris's derived functors are those of
 `Γ_c` on étale sheaves on the analytic space `U(ẽ)` computed with
 Berkovich's resolution; here they are Mathlib's right derived functors on
-Worker 13's categories of equivariant sheaves on a topological space, and
+the Library's categories of equivariant sheaves on a topological space, and
 the system `T` is arbitrary. The proof follows Milne's (see the published
 `DerivedReductionSequence`); exactness of inverse limits of finite
 representations is reduced to the module case. Milne's and Harris's
@@ -237,7 +237,7 @@ framework. The statements and proofs are ours; the module is derived.
 
 Harris's construction of the system (Lemmas 2.2, 2.2 bis), his finiteness
 facts and Lemma 2.8 are not formalized, and nothing is said about étale
-sheaves on analytic spaces. The short exactness assumes Worker 3's
+sheaves on analytic spaces. The short exactness assumes
 `MittagLefflerShortExactLimitStatement` (`hML`) and the finiteness of the
 level cohomology (`hfin`). No topology or continuity on the limits,
 `ℚ_ℓ`-coefficients, finite generation over `ℤ_ℓ`, or naturality in `T` is

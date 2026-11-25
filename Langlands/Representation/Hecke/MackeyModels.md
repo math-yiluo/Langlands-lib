@@ -4,7 +4,7 @@ Source: Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026, III.2.11, printed pp.82–83 / PDF pp.88–89,
 using the tensor and smooth Hom of III.1.15.
 
-This unit gives categorical packaging of the original published constructions.
+This module gives categorical packaging of the original published constructions.
 `algebraicTensorBifunctor` uses `Representation.tprod` and the tensor product
 of intertwiners. `algebraicHomBifunctor` uses `Representation.linHom` with
 its actual conjugation action. Its first variable is contravariant and its
@@ -46,4 +46,4 @@ The core tensor/Hom bifunctors themselves work at every carrier universe.
 
 Existence of the Mackey natural isomorphisms, and the additional
 pseudo-forgetful/forgetful hypothesis in the tensor assertion, belong to
-the separate statement unit.
+the separate statement module `MackeyStatements`.

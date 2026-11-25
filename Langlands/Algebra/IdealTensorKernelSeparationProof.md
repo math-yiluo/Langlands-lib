@@ -92,8 +92,8 @@ It is in registered source `anthropic-flt-complete-lean-source-6e837e75`,
 content SHA256
 `a2baece9c13f309f914ac09f2d8342a17d363c8ad27e587b84337ff943ed2e1a`, revision
 `6e837e75355538c7f80bab5b956861e86c4eacc2`; that source is Copyright 2026
-Anthropic, PBC, under Apache-2.0. No code was extracted from it. Worker 735
-wrote this proof independently, and its Lean text differs from the source.
+Anthropic, PBC, under Apache-2.0. No code was extracted from it. This proof
+was written independently, and its Lean text differs from the source.
 The source proves finiteness by an explicit span induction over product
 generators. This module instead pushes a finite free presentation forward
 along `piScalarRight`. It also replaces the source's element induction for the

@@ -1,7 +1,5 @@
 # Perfectness of an invariant pairing with one admissible side
 
-Author: Worker 166.
-
 `Langlands.smoothInvariantPairingDuality` proves the published proposition
 `Langlands.SmoothInvariantPairingDualityStatement` with independent universes
 `uG`, `uV`, and `uW`. This is an internal derivation from the Library's smooth

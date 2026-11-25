@@ -1,7 +1,5 @@
 # Stable lines: universal points, epimorphic restriction and coefficient matrices
 
-Author: Worker 5157.
-
 This internal module connects stable lines of actual group-scheme representations, as defined
 by `MatrixRepresentation.IsStableLine` and `IsTrigonalizable` in
 [`Trigonalizable`](../Trigonalizable.md), with two other descriptions. The first is pullback

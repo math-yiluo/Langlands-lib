@@ -52,6 +52,9 @@ equivalences. The established comparison of canonical pullback with the
 ordered cochain map identifies the creating class; the homology identity and
 linearity of the comparison equivalence then give the formula.
 
-This contribution proves the right-axis identity in all degrees. The left-axis
-identity, the full creation-contraction relation, and the host degree-two
-exterior/coproduct comparison remain separate proof obligations.
+This module proves the right-axis identity in all degrees. The left-axis
+identity is `slantByH1Dual_creation_pull_left` in `AllSeqLeftAxisSlant`. The
+full creation-contraction relation and the degree-two exterior/coproduct
+comparison `FieldH2ExteriorCoproductComparisonStatement` are not proved here;
+the Library proves that comparison in
+`Langlands.AbelianScheme.FieldH2ExteriorCoproductComparisonProof`.

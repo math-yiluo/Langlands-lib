@@ -1,6 +1,6 @@
 # Split Borel conjugacy: reduction to a connected ambient group
 
-Worker 755. Internal proof helpers for the proof of
+Internal proof helpers for the proof of
 `Langlands.GroupScheme.SplitSolvableBorelConjugacyStatement`
 ([`SplitSolvableBorelConjugacyStatement`](SplitSolvableBorelConjugacyStatement.md)), Milne,
 *Algebraic Groups* (2017), Theorem 17.105(a),(b), pp.384–385. The module adds no definitions

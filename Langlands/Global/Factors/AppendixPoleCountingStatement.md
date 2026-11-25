@@ -68,5 +68,4 @@ restriction. The functional-equation comparison that supplies that
 equality must retain its highly ramified stability, existence, and
 global boundary nonvanishing inputs. In particular, Shahidi (1981),
 Theorem 5.2 is not proved or replaced by the local base-factor
-conditions here; its discharge belongs to the parent program
-`34b81620-20d7-4059-9b08-6bedd1c1c029` and its common library track.
+conditions here; its discharge lies outside this module.

@@ -63,17 +63,17 @@ def rationalEndAction (A : AbelianScheme S) :
     (Rationalization.liftEnd (rationalFunctor T p) A).toRingHom
   commutes' q := by
     change (Rationalization.liftEnd (rationalFunctor T p) A
-      (algebraMap ℚ (Rationalization.End A) q)).hom = _
+      (algebraMap ℚ (Rationalization.End A) q)).asHom.hom = _
     rw [AlgHom.commutes]
     rfl
 
 @[simp] theorem rationalEndAction_apply (A : AbelianScheme S)
     (f : Rationalization.End A) :
-    rationalEndAction T p A f = rationalHomMap T p f := rfl
+    rationalEndAction T p A f = rationalHomMap T p f.asHom := rfl
 
 end Langlands.AbelianScheme.Tate.PrimeAdic
 
-local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
+private local instance (p : Nat.Primes) : Fact p.val.Prime := ⟨p.property⟩
 
 namespace Langlands.GroupScheme.Tate.PrimeComparison
 
@@ -134,11 +134,11 @@ actual prime Tate operator. -/
 theorem rationalHomMap_eq_id_of_extraction_fixed (A : AbelianScheme S)
     (f : Rationalization.End A)
     (hf : ∀ y : RationalFull A T,
-      rationalFullToPrime A T p (rationalHomMap T (fun _ => True) f y) =
+      rationalFullToPrime A T p (rationalHomMap T (fun _ => True) f.asHom y) =
         rationalFullToPrime A T p y) :
-    PrimeAdic.rationalHomMap T p f = LinearMap.id := by
+    PrimeAdic.rationalHomMap T p f.asHom = LinearMap.id := by
   ext x
   obtain ⟨y, rfl⟩ := rationalFullToPrime_surjective T p A x
-  exact (rationalFullToPrime_homMap T p f y).symm.trans (hf y)
+  exact (rationalFullToPrime_homMap T p f.asHom y).symm.trans (hf y)
 
 end Langlands.AbelianScheme.Tate.PrimeComparison

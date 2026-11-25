@@ -1,7 +1,5 @@
 # Nonzero maps out of and into the Jacquet module of a segment constituent
 
-Author: Worker 964.
-
 Module `Langlands.Representation.Classification.SegmentFullJacquetAdjunction`,
 namespace `Langlands.SegmentFullJacquet`. This is an internal helper for the proof
 of `Langlands.Classification.SegmentFullJacquetFormula`. Throughout,

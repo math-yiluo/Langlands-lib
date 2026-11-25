@@ -277,22 +277,26 @@ def coefficientHeckeActIntertwining (K : CompactOpenLevel (coefficientDomain e D
 homomorphism to its endomorphisms as a representation of `H`. -/
 def coefficientFormsHeckeAlgebraHom (K : CompactOpenLevel (coefficientDomain e D)) :
     LevelHeckeAlgebra R K.subgroup →+* End ((coefficientFormsPresheaf R e ι ρ).obj (op K)) where
-  toFun a := Rep.ofHom (coefficientHeckeActIntertwining R e ι ρ K a)
+  toFun a := End.of (Rep.ofHom (coefficientHeckeActIntertwining R e ι ρ K a))
   map_one' := by
+    apply End.ext
     refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
     exact congrArg (coefficientAwayFixedEquiv R e ι ρ K.subgroup)
       (one_smul (LevelHeckeAlgebra R K.subgroup)
         ((coefficientAwayFixedEquiv R e ι ρ K.subgroup).symm f))
   map_mul' a b := by
+    apply End.ext
     refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
     exact congrArg (coefficientAwayFixedEquiv R e ι ρ K.subgroup)
       (mul_smul a b ((coefficientAwayFixedEquiv R e ι ρ K.subgroup).symm f))
   map_zero' := by
+    apply End.ext
     refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
     exact congrArg (coefficientAwayFixedEquiv R e ι ρ K.subgroup)
       (zero_smul (LevelHeckeAlgebra R K.subgroup)
         ((coefficientAwayFixedEquiv R e ι ρ K.subgroup).symm f))
   map_add' a b := by
+    apply End.ext
     refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
     exact congrArg (coefficientAwayFixedEquiv R e ι ρ K.subgroup)
       (add_smul a b ((coefficientAwayFixedEquiv R e ι ρ K.subgroup).symm f))
@@ -300,7 +304,7 @@ def coefficientFormsHeckeAlgebraHom (K : CompactOpenLevel (coefficientDomain e D
 /-- The element `[K g K]` of the Hecke algebra acts by the double-coset operator. -/
 lemma coefficientFormsHeckeAlgebraHom_doubleCoset (K : CompactOpenLevel (coefficientDomain e D))
     (g : coefficientDomain e D) :
-    coefficientFormsHeckeAlgebraHom R e ι ρ K (doubleCoset K g) =
+    (coefficientFormsHeckeAlgebraHom R e ι ρ K (doubleCoset K g)).asHom =
       coefficientHeckeHom R e ι ρ K K g := by
   refine Rep.hom_ext (Representation.IntertwiningMap.ext (LinearMap.ext fun f => ?_))
   exact congrArg (coefficientAwayFixedEquiv R e ι ρ K.subgroup)
@@ -345,10 +349,10 @@ def coefficientSmoothHeckeAlgebraHom (K : CompactOpenLevel (coefficientDomain e 
 /-- The element `[K g K]` of the Hecke algebra acts by the double-coset operator. -/
 lemma coefficientSmoothHeckeAlgebraHom_doubleCoset (K : CompactOpenLevel (coefficientDomain e D))
     (g : coefficientDomain e D) :
-    coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g) =
+    (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)).asHom =
       coefficientSmoothHeckeHom R e ι ρ K K g := by
   change (SmoothRep.smoothPartFunctor.{uR, uH, max uG t} R H).map
-    (coefficientFormsHeckeAlgebraHom R e ι ρ K (doubleCoset K g)) = _
+    (coefficientFormsHeckeAlgebraHom R e ι ρ K (doubleCoset K g)).asHom = _
   rw [coefficientFormsHeckeAlgebraHom_doubleCoset]
   rfl
 
@@ -389,10 +393,10 @@ def coefficientExtHeckeAlgebraHom (W : SmoothRep.{u, u, u} R H) (i : ℕ)
 /-- The element `[K g K]` of the Hecke algebra acts on `Ext^i` by the double-coset operator. -/
 lemma coefficientExtHeckeAlgebraHom_doubleCoset (W : SmoothRep.{u, u, u} R H) (i : ℕ)
     (K : CompactOpenLevel (coefficientDomain e D)) (g : coefficientDomain e D) :
-    coefficientExtHeckeAlgebraHom R e ι ρ W i K (doubleCoset K g) =
+    (coefficientExtHeckeAlgebraHom R e ι ρ W i K (doubleCoset K g)).asHom =
       coefficientExtHecke R e ι ρ W i K K g := by
   change (SmoothExt.ext R H W i).map
-    (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)) = _
+    (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)).asHom = _
   rw [coefficientSmoothHeckeAlgebraHom_doubleCoset]
   rfl
 
@@ -440,11 +444,11 @@ operator. -/
 lemma coefficientAbutmentHeckeAlgebraHom_doubleCoset
     (X : DerivedCategory (SmoothRep.{u, u, u} R H)) (n : ℤ)
     (K : CompactOpenLevel (coefficientDomain e D)) (g : coefficientDomain e D) :
-    coefficientAbutmentHeckeAlgebraHom R e ι ρ X n K (doubleCoset K g) =
+    (coefficientAbutmentHeckeAlgebraHom R e ι ρ X n K (doubleCoset K g)).asHom =
       coefficientAbutmentHecke R e ι ρ X n K K g := by
   change (singleFunctor (SmoothRep.{u, u, u} R H) 0 ⋙ shiftFunctor _ n ⋙
     preadditiveCoyoneda.obj (op X)).map
-      (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)) = _
+      (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)).asHom = _
   rw [coefficientSmoothHeckeAlgebraHom_doubleCoset]
   rfl
 
@@ -496,11 +500,11 @@ double-coset operator. -/
 lemma coefficientFiltrationHeckeAlgebraHom_doubleCoset
     (X : DerivedCategory (SmoothRep.{u, u, u} R H)) (n p : ℤ)
     (K : CompactOpenLevel (coefficientDomain e D)) (g : coefficientDomain e D) :
-    coefficientFiltrationHeckeAlgebraHom R e ι ρ X n p K (doubleCoset K g) =
+    (coefficientFiltrationHeckeAlgebraHom R e ι ρ X n p K (doubleCoset K g)).asHom =
       coefficientFiltrationHecke R e ι ρ X n p K K g := by
   change (singleFunctor (SmoothRep.{u, u, u} R H) 0 ⋙
     HyperextAbutment.filtrationFunctor TStructure.t X n p).map
-      (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)) = _
+      (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)).asHom = _
   rw [coefficientSmoothHeckeAlgebraHom_doubleCoset]
   rfl
 
@@ -551,11 +555,11 @@ double-coset operator. -/
 lemma coefficientGradedHeckeAlgebraHom_doubleCoset
     (X : DerivedCategory (SmoothRep.{u, u, u} R H)) (n p : ℤ)
     (K : CompactOpenLevel (coefficientDomain e D)) (g : coefficientDomain e D) :
-    coefficientGradedHeckeAlgebraHom R e ι ρ X n p K (doubleCoset K g) =
+    (coefficientGradedHeckeAlgebraHom R e ι ρ X n p K (doubleCoset K g)).asHom =
       coefficientGradedHecke R e ι ρ X n p K K g := by
   change (singleFunctor (SmoothRep.{u, u, u} R H) 0 ⋙
     HyperextAbutment.gradedFunctor TStructure.t X n p).map
-      (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)) = _
+      (coefficientSmoothHeckeAlgebraHom R e ι ρ K (doubleCoset K g)).asHom = _
   rw [coefficientSmoothHeckeAlgebraHom_doubleCoset]
   rfl
 
@@ -608,7 +612,7 @@ def dividingCoefficientSmoothHeckeAlgebraHom
 lemma dividingCoefficientSmoothHeckeAlgebraHom_doubleCoset
     (K : CompactOpenLevel (dividingCoefficientDomain σ ℓ Kℓ p hp))
     (g : dividingCoefficientDomain σ ℓ Kℓ p hp) :
-    dividingCoefficientSmoothHeckeAlgebraHom σ ℓ Kℓ 𝓛 p hp K (doubleCoset K g) =
+    (dividingCoefficientSmoothHeckeAlgebraHom σ ℓ Kℓ 𝓛 p hp K (doubleCoset K g)).asHom =
       dividingCoefficientSmoothHecke σ ℓ Kℓ 𝓛 p hp K K g :=
   coefficientSmoothHeckeAlgebraHom_doubleCoset R _ _ _ K g
 
@@ -646,7 +650,7 @@ lemma dividingCoefficientExtHeckeAlgebraHom_doubleCoset
     (W : SmoothRep.{u, u, u} R (σ.DividingPoints p)) (i : ℕ)
     (K : CompactOpenLevel (dividingCoefficientDomain σ ℓ Kℓ p hp))
     (g : dividingCoefficientDomain σ ℓ Kℓ p hp) :
-    dividingCoefficientExtHeckeAlgebraHom σ ℓ Kℓ 𝓛 p hp W i K (doubleCoset K g) =
+    (dividingCoefficientExtHeckeAlgebraHom σ ℓ Kℓ 𝓛 p hp W i K (doubleCoset K g)).asHom =
       dividingCoefficientExtHecke σ ℓ Kℓ 𝓛 p hp W i K K g :=
   coefficientExtHeckeAlgebraHom_doubleCoset R _ _ _ W i K g
 

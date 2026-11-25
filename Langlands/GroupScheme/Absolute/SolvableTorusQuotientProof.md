@@ -1,7 +1,5 @@
 # The split-torus quotient of a smooth connected solvable group
 
-Authors: Worker 1500 and Worker 1492.
-
 `solvableTorusQuotient` proves exactly the published proposition
 `Langlands.GroupScheme.SolvableTorusQuotientStatement.{u}` at arbitrary universe `u`.
 The statement pair and everything it imports are unchanged.

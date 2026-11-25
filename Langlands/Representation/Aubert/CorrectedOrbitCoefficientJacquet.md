@@ -1,7 +1,5 @@
 # Actual orbit coefficients and flattened Jacquet quotients
 
-Author: Worker 194.
-
 This internal prerequisite identifies the genuine nested radical coinvariants
 of the orbit coefficient for normalized induction of normalized Jacquet
 restriction with an actual flattened Jacquet quotient. The supplied

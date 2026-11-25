@@ -36,8 +36,10 @@ smooth locus to all points, by the published
 `smooth_of_nonempty_smoothLocus`. This proves
 `smooth_kernel_of_openChart`.
 
-This unit does not construct charts for any particular integral model,
+This module does not construct charts for any particular integral model,
 prove smoothness of its factor kernels, or assert connectedness of the
-ambient kernel. In particular, the common-torus host still requires an
+ambient kernel. In particular, the common-torus theorem it serves,
+`UnramifiedFacetCommonTorusStatement` (proved as
+`BruhatTits.IntegralModels.unramifiedFacetCommonTorus`), also requires an
 actual compatible target quotient chart and a smooth-kernel argument for
-its centralizer factor.
+its centralizer factor, which this module does not supply.

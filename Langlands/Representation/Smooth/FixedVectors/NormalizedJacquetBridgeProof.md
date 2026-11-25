@@ -1,6 +1,6 @@
 # Fixed-vector detection for the actual normalized Jacquet functor
 
-Worker 189. This derived proof implements
+This derived proof implements
 `Langlands.NormalizedJacquetFixedVectorBridgeStatement` with independent group
 and carrier universes. It uses the actual Haar-normalized functor throughout.
 

@@ -1,6 +1,6 @@
 # Reduction of reductive monomorphisms to noetherian bases
 
-Worker 700. This proves the conditional
+This proves the conditional
 `ReductiveMonomorphismNoetherianReductionStatement`. Homomorphism descent,
 scheme monicity descent and direct-limit reductivity remain explicit premises.
 

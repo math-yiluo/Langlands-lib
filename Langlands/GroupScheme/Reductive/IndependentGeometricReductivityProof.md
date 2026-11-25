@@ -1,11 +1,9 @@
 # Haboush's theorem through the rank-one central cover
 
-Task 7298. Workers 169 and 589.
-
 ## Statement
 
 `Langlands.GroupScheme.IndependentHaboush.reductiveGeometricReductivity` proves the published
-proposition `Langlands.GroupScheme.ReductiveGeometricReductivityStatement.{u}`, unchanged, for
+proposition `Langlands.GroupScheme.ReductiveGeometricReductivityStatement.{u}` for
 every universe `u`. It adds no hypothesis. The proposition is Haboush's theorem (Mumford–Fogarty–
 Kirwan, *Geometric Invariant Theory*, Appendix to Chapter 1, Theorem A.1.0, a) ⇒ b)). Let `k` be an
 algebraically closed field of any characteristic and `G` a pseudo-reductive (over `k`: connected
@@ -21,7 +19,7 @@ The module also proves two intermediate implications:
   `RankOneCentralCoverStatement.{u} → ReductiveGeometricReductivityStatement.{u}`.
 
 The final theorem applies the second implication to `rankOneCentralCover`, the published proof of
-`RankOneCentralCoverStatement` (Task 7586). That proposition says the following. Let `G` be a
+`RankOneCentralCoverStatement` (module `Reductive/RankOneCentralCoverProof`). That proposition says the following. Let `G` be a
 connected reductive group over an algebraically closed field, with a split maximal torus `T`.
 Suppose `G` has a root and its roots are pairwise linearly dependent. Then there are a split
 torus `C`, a central isogeny `f : SL₂ × C ⟶ G` and an isogeny `t : D × C ⟶ T`, where the
@@ -32,23 +30,25 @@ one-dimensional split torus `D` maps to `SL₂` as the diagonal torus `z ↦ dia
 
 All steps take place at the same universe `u`. Each step is a published Library theorem, except
 the theorems of this module and of its two helper modules `IndependentHaboushReduction` and
-`SimplyConnected/SplitCoverOfRootDatum`, which are part of this contribution.
+`SimplyConnected/SplitCoverOfRootDatum`, which were ported together with this module.
 
-1. **Root datum.** `rankOneRootReducedness_of_centralCover` (Task 7458) turns the cover into
+1. **Root datum.** `rankOneRootReducedness_of_centralCover`
+   (`Reductive/RankOneRootReducednessFromCentralCover`) turns the cover into
    rank-one root reducedness over every field. `rootDatumExistence_of_rankOneReducedness`
    then gives `RootDatumExistenceStatement.{u}`.
-2. **Root cells.** `splitRankOneRootCell_of_centralCover` (Task 7509) gives
+2. **Root cells.** `splitRankOneRootCell_of_centralCover`
+   (`Reductive/IndependentRootCellReduction`) gives
    `SplitRankOneRootCellStatement.{u}`.
 3. **Root lines** (`splitRootLieLine_of_centralCover`, this module).
-   `splitRootLieLine_of_rankOne` (Task 7510) takes the published
+   `splitRootLieLine_of_rankOne` (`Reductive/RootLieLineRankOneReduction`) takes the published
    `dynamicCentralizerReductive` and reduces the statement to groups whose roots are pairwise
    dependent. For such a group, the root datum `P` of step 1 has root set equal to the set of
    roots, so a root `χ` is `P.root r` for some index `r`. The support-line statement
    `splitRankOneRootSupportLines_of_algClosed (algClosedRankOneRootSupportLines_of_centralCover
    hcover)` then gives a `k`-linear isomorphism from `k` to the weight space of `χ` (its second
    component).
-4. **Coroot span.** `splitSimplyConnectedCorootSpan_of_corootSpanLineInputs` (Task 7564)
-   proves the coroot-span statement from the root datum, the root cells and the root lines.
+4. **Coroot span.** `splitSimplyConnectedCorootSpan_of_corootSpanLineInputs`
+   (`SimplyConnected/SplitCorootSpanLineReduction`) proves the coroot-span statement from the root datum, the root cells and the root lines.
 5. **Opposite factor pairs.** `algClosedOppositeFactorPairs_of_structuralStatements` uses the
    same three inputs.
 6. **Steinberg big cell.** The five inputs form an `IndependentSteinbergInputs` record.
@@ -63,12 +63,13 @@ the theorems of this module and of its two helper modules `IndependentHaboushRed
 
 ## Independence from the excluded inputs
 
-Task 7298 excludes `ParabolicDynamicStatement`, `RegularCocharacterBorelStatement`,
+The excluded inputs are `ParabolicDynamicStatement`, `RegularCocharacterBorelStatement`,
 `RankOneSolvableObstructionStatement`, `RankOneBorelDynamicStatement` and
-`RankOnePositiveRootUniquenessStatement`. It also excludes their proofs (`parabolicDynamic`,
+`RankOnePositiveRootUniquenessStatement`, their proofs (`parabolicDynamic`,
 `regularCocharacterBorel`, `rankOneSolvableObstruction`, `rankOneBorelDynamic`,
 `rankOnePositiveRootUniqueness`), the regular-cocharacter/Borel route, results proved from
-these, and the current `reductiveGeometricReductivity`.
+these, and the Library's other proof `reductiveGeometricReductivity` (module
+`Reductive/GeometricReductivityProof`).
 
 The dependency check computed the type-and-value closure of
 `IndependentHaboush.reductiveGeometricReductivity` in the Lean environment of this module.
@@ -86,7 +87,8 @@ excluded constants. It also contains none of the following:
 - the properness of parabolic quotients and the linear-quotient-affine and dynamic-quotient
   statements: `parabolicSubgroupQuotientProper`, `ReductiveLinearQuotientAffineStatement`,
   `DynamicQuotientProperStatement`;
-- the projective-Borel root-tangent chain that Task 7510 excludes:
+- the projective-Borel root-tangent chain, which the root-line proof
+  `splitRootLieLine_of_rankOne` avoids:
   `rankOne_rootTangent_le_one_of_projectiveBorelInputs`, `prescribedBorelProjectiveCurveData`,
   `rootLieLine_of_dynamicCentralizerReductive`, `weightKernelTrivial_of_orthogonal`,
   `splitCommonTorusLeviGluing`.
@@ -105,8 +107,8 @@ The closure reaches four general Library curve lemmas, all through
 `SchemeAction.unipotent_dimension_le_one_of_dominant_orbit` and
 `SchemeAction.range_eq_bot_of_unipotent_kernel`. They are applied to the ordinary flag variety
 `G/B`, with `dim G/B ≤ 1` obtained from Białynicki-Birula limits, the fixed points and
-Hartogs/purity. The operator ruled this use admissible (answer 782343fd to request 7865ee03):
-the lemmas lie upstream of the excluded route and their hypotheses name no excluded statement.
+Hartogs/purity. This use does not make the proof depend on the excluded inputs: the lemmas
+lie upstream of the excluded route and their hypotheses name no excluded statement.
 The consumers of these lemmas on the excluded route are not reached:
 `positive_roots_eq_of_rankOne_curve_quotient`, `signedCurveUnipotentDataOfPseudoReductive` and
 `prescribedBorelProjectiveCurveData`. The Markdown of `RankOneCentralCoverProof` records the
@@ -114,22 +116,22 @@ same check for the cover proof.
 
 The closure also shares general Library modules with the closures of the excluded proofs: scheme
 theory, group schemes, ordinary Borel and flag geometry, and tangent spaces. None of these shared
-constants has an excluded constant in its own closure. The publisher's clarification of the
-contract allows ordinary Borel geometry whose closures are clean, and the operator's dependence
-test (ruling a79c8542, answer 782343fd) does not count shared upstream lemmas as dependence.
+constants has an excluded constant in its own closure. Ordinary Borel geometry whose closures
+are clean is allowed, and shared upstream lemmas of this kind do not count as dependence.
 
-The check ran as a private compiler diagnostic on the submitted sources over Library commit
-`f050c0b1` (`407f2777-5dc3-4e8d-bb14-dacbadc88cc1`, 18 November 2026). It uses the method of the public note
-`notes/group-schemes/haboush-independence-audit.md` (Method section), with the watch lists
-above. A compiler diagnostic is not review evidence; the closure can be recomputed in this
-module's environment.
+The check ran on the sources over Library commit `f050c0b1` (18 November 2026). It uses the
+method of the note `notes/group-schemes/haboush-independence-audit.md` (Method section), with
+the watch lists above. The closure can be recomputed in this module's environment.
 
 ## Provenance
 
-This is an internal composition of published Library results, from the following tasks:
-the cover (Task 7586), reducedness from the cover (Task 7458), root cells from the cover (Task 7509),
-root lines from rank one (Task 7510), coroot span from root lines (Task 7564), the Steinberg inputs
-(Task 7459) and the opposite-factor-pair reduction
+This is an internal composition of published Library results:
+the cover (`rankOneCentralCover`), reducedness from the cover
+(`rankOneRootReducedness_of_centralCover`), root cells from the cover
+(`splitRankOneRootCell_of_centralCover`), root lines from rank one (`splitRootLieLine_of_rankOne`),
+coroot span from root lines (`splitSimplyConnectedCorootSpan_of_corootSpanLineInputs`), the
+Steinberg inputs (`IndependentSteinbergInputs`, `Reductive/SteinbergBigCellIndependentInputs`) and
+the opposite-factor-pair reduction
 `algClosedOppositeFactorPairs_of_structuralStatements`. The mathematical route follows the classical structure
 theory. A rank-one group is a central quotient of `SL₂ × C`, and this gives the root datum, the
 root groups and the big cell. Haboush's proof of geometric reductivity then uses the Steinberg

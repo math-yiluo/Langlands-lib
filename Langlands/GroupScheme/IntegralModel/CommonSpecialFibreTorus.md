@@ -71,9 +71,11 @@ maximality; the second supplies the source-isomorphism transport of maximal
 splitness. The basic integral-point naturality is in
 `Langlands.GroupScheme.IntegralModel`.
 
-This unit constructs the common torus from actual model and bounded-point
+This module constructs the common torus from actual model and bounded-point
 data. It does not construct the models, their morphism or the source unit
 bound. It neither lifts an arbitrary prescribed residue torus to `R` nor
 establishes the facet-to-parabolic correspondence, a special apartment or
-the prescribed-building-point conclusion. In particular,
-`UnramifiedFixedPointSplitTorusStatement` remains open.
+the prescribed-building-point conclusion. In particular, it does not prove
+`UnramifiedFixedPointSplitTorusStatement`; that statement is proved separately, as
+`unramifiedFixedPointSplitTorus` in
+`Langlands.Geometry.Building.UnramifiedFixedPointSplitTorusProof`.

@@ -33,7 +33,7 @@ def AlgebraicHeckeFinitePartStatement : Prop :=
       ∃ (hnum : NumberField L),
         letI : NumberField L := hnum
         ∃ (ι : L →+* ℂ) (emb : (K →+* ℂ) → (K →+* L))
-          (φ : FiniteIdeles K →* Lˣ) (S : Finset (FinitePlace K)),
+          (φ : FiniteIdeles K →* Lˣ) (S : Finset (Global.FinitePlace K)),
           (∀ σ, ι.comp (emb σ) = σ) ∧ IsHeckeFinitePart χ ι φ ∧
           ∀ v, v ∉ S ↔ χ.IsUnramifiedAt v
 

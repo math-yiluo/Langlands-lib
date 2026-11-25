@@ -1,6 +1,6 @@
 # Dynamic parabolics, unipotent radicals and Levi subgroups over any base
 
-Worker 591. This proof assembles published Library results to prove exactly
+This proof assembles published Library results to prove exactly
 `Langlands.GroupScheme.DynamicRelativeLeviStatement.{u}`. It leaves the statement
 and its imports unchanged, assumes no extra hypotheses, and works in every
 universe `u` over an arbitrary scheme.

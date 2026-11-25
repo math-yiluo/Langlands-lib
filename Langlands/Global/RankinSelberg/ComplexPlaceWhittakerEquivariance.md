@@ -1,9 +1,9 @@
 # Equivariance of archimedean restrictions of global Whittaker functions at a complex place
 
 Module `Langlands.Global.RankinSelberg.ComplexPlaceWhittakerEquivariance`, namespace
-`Langlands.Global.RankinSelbergGlobal`. Worker 5665 wrote it for Task 7399 (complex-place
-Rankin–Selberg functional equation), as a step towards the bridge premise of the conditional
-reduction `complexPlaceFunctionalEquationReduction`. Provenance: internal. Everything here is
+`Langlands.Global.RankinSelbergGlobal`. It is a step towards the bridge premise of the
+conditional reduction `complexPlaceFunctionalEquationReduction` (complex-place Rankin–Selberg
+functional equation). Provenance: internal. Everything here is
 proved; nothing is assumed.
 
 Let `F` be a number field, `w` a complex place, and `ι_w : GL_n(ℂ) → GL_n(𝔸_F)` the

@@ -76,14 +76,14 @@ def rationalLattice (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π))) :
 /-- The actual total Pi operator after extension of scalars, before sheafification. -/
 def rationalPiPresheaf (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π))) :
     End ((rationalPresheafFunctor F X).obj (latticeScalarSheaf d π X M)) :=
-  (rationalPresheafFunctor F X).map (latticePi d π X M)
+  End.of ((rationalPresheafFunctor F X).map (latticePi d π X M))
 
 set_option backward.isDefEq.respectTransparency false in
 /-- On pure tensors, every positive iterate is the corresponding integral Pi power. -/
 theorem rationalPiPresheaf_pow_tmul
     (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π))) (U : (Opens X)ᵒᵖ)
     (n : ℕ) (a : F) (m : (latticeScalarSheaf d π X M).obj.obj U) :
-    ((rationalPiPresheaf F X d π M ^ n).app U)
+    ((rationalPiPresheaf F X d π M ^ n).asHom.app U)
       (a ⊗ₜ[O, algebraMap O F] m) =
         a ⊗ₜ[O, algebraMap O F] ((((latticePi d π X M).hom.app U).hom ^ n) m) := by
   induction n with
@@ -92,7 +92,7 @@ theorem rationalPiPresheaf_pow_tmul
     rw [pow_succ']
     change (ModuleCat.extendScalars (algebraMap O F)).map
       ((latticePi d π X M).hom.app U)
-        (((rationalPiPresheaf F X d π M ^ n).app U)
+        (((rationalPiPresheaf F X d π M ^ n).asHom.app U)
           (a ⊗ₜ[O, algebraMap O F] m)) = _
     rw [ih, ModuleCat.ExtendScalars.map_tmul, pow_succ']
     rfl
@@ -104,6 +104,7 @@ theorem rationalPiPresheaf_relation
     rationalPiPresheaf F X d π M ^ d =
       algebraMap F (End ((rationalPresheafFunctor F X).obj
         (latticeScalarSheaf d π X M))) (algebraMap O F π) := by
+  apply End.ext
   apply NatTrans.ext
   funext U
   apply ModuleCat.ExtendScalars.hom_ext
@@ -130,17 +131,17 @@ theorem rationalPiPresheaf_isUnit
 /-- The actual invertible total rational Pi operator, as an automorphism of sheaves. -/
 def rationalPiAut (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π)))
     (hπ : algebraMap O F π ≠ 0) : Aut (rationalLattice F X d π M) :=
-  (presheafToSheaf (Opens.grothendieckTopology X) (ModuleCat.{u} F)).mapIso
+  Aut.of ((presheafToSheaf (Opens.grothendieckTopology X) (ModuleCat.{u} F)).mapIso
     ((Aut.unitsEndEquivAut _)
-      (rationalPiPresheaf_isUnit F X d π M hπ).unit)
+      (rationalPiPresheaf_isUnit F X d π M hπ).unit).asIso)
 
 /-- The automorphism's forward map is the rationalization of the integral operator. -/
 theorem rationalPiAut_hom (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π)))
     (hπ : algebraMap O F π ≠ 0) :
-    (rationalPiAut F X d π M hπ).hom =
+    (rationalPiAut F X d π M hπ).asIso.hom =
       (rationalSheafFunctor F X).map (latticePi d π X M) := by
   change (presheafToSheaf (Opens.grothendieckTopology X) (ModuleCat.{u} F)).map
-    (rationalPiPresheaf_isUnit F X d π M hπ).unit.val = _
+    (rationalPiPresheaf_isUnit F X d π M hπ).unit.val.asHom = _
   rw [IsUnit.unit_spec]
   rfl
 

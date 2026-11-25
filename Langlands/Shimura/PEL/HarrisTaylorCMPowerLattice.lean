@@ -105,7 +105,7 @@ def EvenIntegralPowerWitness :
   intro q e
   let := finiteAdeleModule X.actionObj.abelianScheme (Over.mk s) (fun _ => True) h
   let : Module Rf Rat := Module.compHom _ (Rf).subtype
-  let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+  let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
   exact ∃ (eta : Frame) (m : ℕ), 0 < m ∧ q ^ (2 * m) = 1 ∧
     ∀ w : Rat,
       rationalEndAction X.actionObj.abelianScheme (Over.mk s) (fun _ => True)
@@ -148,7 +148,7 @@ theorem evenIntegralPowerWitness_of_levelIso_fixed (U : HarrisLevel D) :
   refine ⟨eta, m, hm, by rw [pow_mul, hq2, one_pow], ?_⟩
   let := scalarExtensionAlgebraModule A A Af
   let f := rationalEndAction X.actionObj.abelianScheme (Over.mk s) (fun _ => True)
-    (RationalAlgebraAction.hom0 e.hom)
+    (CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom))
   have hconj (x : Vf) : f (eta.1 x) = eta.1 (g.val.1 x) :=
     congrArg (fun xi : Frame => xi.1 x) hframe
   have hpow (k : ℕ) (x : Vf) :

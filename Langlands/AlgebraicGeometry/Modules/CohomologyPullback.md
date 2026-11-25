@@ -7,8 +7,7 @@ at commit `a04446e57ec1fbc252a871afcec7752fb2807b14`. The registered source is
 Its internal comparison infrastructure is the actual acyclic-term derived-unit
 theorem `Langlands.Cohomology.acyclicTermsDerivedUnitStatement`, together with
 the existing comparison between bounded-below and classical right derived
-functors in `DerivedPlus`. The elementary section comparisons and the general
-acyclic-term comparison were developed in coordination with Worker 595.
+functors in `DerivedPlus`.
 
 For a morphism `h : Y ⟶ X` over `Spec R` and an actual module `M` on `X`,
 put `N = h^* M` and let `I` be Mathlib's chosen injective resolution of `N`.
@@ -53,4 +52,5 @@ The underlying `DerivedSections` definitions and their import closure are
 unchanged. The elementary section map and split coefficient isomorphism
 come from `CohomologyPullbackSections`. This construction asserts no identity,
 composition, coefficient naturality, degree-zero compatibility or
-split-retraction law; those are separate later statements and proofs.
+split-retraction law; those are the separate statements of
+`CohomologyPullbackLawsStatement`, proved in `CohomologyPullbackLawsProof`.

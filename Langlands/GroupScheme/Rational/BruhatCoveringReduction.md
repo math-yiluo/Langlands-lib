@@ -1,7 +1,5 @@
 # Common maximal split tori and rational Bruhat covering
 
-Author: Worker 1262.
-
 This internal reduction constructs actual scheme normalizer witnesses from
 conjugacies of torus embeddings. It does not prove the geometric structural
 statements on minimal parabolics.

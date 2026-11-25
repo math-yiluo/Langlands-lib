@@ -16,7 +16,7 @@ Theorem: `Langlands.AlgebraicGeometry.Picard.properLineBundleHomRepresentability
 
 The theorem is the application of the published reduction
 `LineHom.properLineBundleHomRepresentability_of_noetherianModel`
-(module `Picard/LineHom/Reduction`, by Worker 633) to
+(module `Picard/LineHom/Reduction`) to
 `LineHom.noetherianModel` (module `Picard/LineHom/NoetherianModelProof`), which
 proves `LineHom.NoetherianModelStatement`: over a Noetherian affine base, the
 Hom presheaf of two locally free sheaves of rank one on a proper flat scheme is,

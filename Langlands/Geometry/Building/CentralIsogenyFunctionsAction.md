@@ -56,6 +56,6 @@ target normalization proof.
 
 The provenance is the derivation just described from actual torus and root
 actions, rather than a separate assertion from the literature. The supplied tori,
-embeddings, square and isogeny remain inputs. This unit does not construct a full
+embeddings, square and isogeny remain inputs. This module does not construct a full
 root-datum valuation, an apartment equivalence, source apartment axioms or a proof
 of the final normalizer-image theorem.

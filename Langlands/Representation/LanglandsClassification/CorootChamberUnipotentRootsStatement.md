@@ -5,16 +5,13 @@ Namespace `Langlands.GroupScheme`. Universe parameter `u`.
 The module contains one **statement**, the `Prop`-valued definition
 `CorootChamberUnipotentRootsStatement`; it proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read V.3.13–V.3.17, printed pp.112–114 / PDF pp.118–120.
+V.3.13–V.3.17, printed pp.112–114 / PDF pp.118–120, were read.
 V.3.17 is on printed p.114 / PDF p.120:
 
 > **Lemme.** Soit `P = MN` un sous-groupe parabolique standard de `G` et soit
@@ -64,7 +61,7 @@ All objects are published; this file constructs nothing.
   `standardUnipotent i ν J` (intersection of the dynamic unipotent subgroups
   of the standard cocharacters of `J`).
 - The chamber is the published `restrictedCorootChamber i ν J (𝟙 T) D`
-  (Worker 6, module `LanglandsTriplet`) with `A = T` and `f` the identity:
+  (module `LanglandsTriplet`) with `A = T` and `f` the identity:
   the elements `x ∈ 𝔞*_∅ = Vstar T` with `⟨x, α̌⟩ = 0` for `α ∈ J` and
   `⟨x, α̌⟩ > 0` for the simple roots `α ∉ J`. This is the set displayed in
   Renard's proof, except that it is not intersected with `(𝔞^G_∅)^*`.
@@ -122,9 +119,10 @@ positive roots supported in `J`. The Lie algebra of
 `N = standardUnipotent i ν J` is the sum of the root spaces of the positive
 roots with some `n_α > 0`, `α ∉ J`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. It needs the root-system structure of
+The proof is `corootChamberUnipotentRoots`, in the separate module
+`Langlands.Representation.LanglandsClassification.CorootChamberUnipotentRoots`. It needs the root-system structure of
 the relative roots of a connected reductive group (published
 `HasRelativeRootSystem` and related modules), the description of the
 coroots by `D`, and the root-space description of the Lie algebra of the

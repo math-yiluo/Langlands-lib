@@ -1,7 +1,5 @@
 # Reduction of fpqc-local isomorphism to the affine split Isomorphism Theorem
 
-Worker 584.
-
 `ReductiveFpqcLocalIsomorphismReductionStatement.{u}` is the proposition
 
 ```text

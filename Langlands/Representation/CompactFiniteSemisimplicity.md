@@ -1,6 +1,6 @@
 # Complete reducibility of finite continuous compact representations
 
-Worker 94 supplies an internal prerequisite for the compact-type reproduction argument. The group may be any compact topological group of arbitrary universe with a compatible Borel space. Its representation acts jointly continuously on the usual finite-dimensional complex space `Fin d → ℂ`. A probability left-invariant measure is supplied explicitly.
+This module supplies an internal prerequisite for the compact-type reproduction argument. The group may be any compact topological group of arbitrary universe with a compatible Borel space. Its representation acts jointly continuously on the usual finite-dimensional complex space `Fin d → ℂ`. A probability left-invariant measure is supplied explicitly.
 
 `exists_equivariant_projection` starts with an algebraic projection onto an invariant subspace and averages its conjugates using the published `CompactSchur.averageIntertwiner`. Each conjugate takes values in the same invariant subspace. That subspace is finite-dimensional and therefore closed; the convex integral theorem places its average there. Every conjugate fixes the subspace pointwise, so normalization of the measure makes the average fix it too. This uses no irreducibility or invariant inner product.
 

@@ -1,7 +1,7 @@
 # The concrete highest left derivative relation on a cuspidal line
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerDerivativeData`, namespace
-`Langlands.MoeglinWaldspurger.Derivation`. Written by Worker 5735 for Task 5735.
+`Langlands.MoeglinWaldspurger.Derivation`.
 
 Fix a cuspidal datum `ρ` and a real `x`.
 

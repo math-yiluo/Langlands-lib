@@ -1,7 +1,5 @@
 # Lifting generic torus conjugators along homomorphisms
 
-Author: Worker 1420.
-
 This internal, derived module transports the predicate
 `HasGenericTorusConjugator` of `MaximalTorusGenericConjugator` from a target
 group to a source group along a homomorphism. It also records the central

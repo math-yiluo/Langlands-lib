@@ -1,7 +1,5 @@
 # The dual comparison of essential vectors from the spherical functional equation
 
-Author: Worker 5008.
-
 This module proves the analytic input of the published reduction
 `Langlands.Conductor.dualComparison_of_unit_spherical_integrals`: the proportionality of
 two families of corank-one integrals against unitary spherical Whittaker functions. It
@@ -10,9 +8,13 @@ derives that input from the published statement
 `Langlands.Whittaker.MirabolicRestrictionInjectivityStatement`, it then gives the published
 `Langlands.Conductor.EssentialDualComparisonStatement`.
 
-Both of these statements are hypotheses here and neither is proved yet. The final theorem
+Both of these statements are hypotheses here. The final theorem
 is an implication between published statements. It is not an unconditional proof of the
-dual comparison. Everything holds over an arbitrary nonarchimedean local field, in any
+dual comparison. Both statements are proved elsewhere in the Library
+(`Langlands.Conductor.sphericalCorankOneFunctionalEquation` in
+`SphericalCorankOneFunctionalEquationProof`, `Langlands.Whittaker.mirabolicRestrictionInjectivity`
+in `MirabolicRestrictionInjectivityProof`), and `Langlands.Conductor.essentialDualComparison`
+in `EssentialDualComparisonProof` proves the dual comparison. Everything holds over an arbitrary nonarchimedean local field, in any
 characteristic. The field and vector-space universes are independent.
 
 ## Mathematical source
@@ -131,7 +133,8 @@ From them it proves `EssentialDualComparisonStatement`. It applies the reduction
 These are internal lemmas. They implement the cited step of JPSS 1981 (5.3) from the
 functional equation JPSS 1981 (4.2)(3), which the published statement
 `SphericalCorankOneFunctionalEquationStatement` formalizes for unitary parameters. They
-also use the published reduction of Worker 106. The only new definition is the explicit
+also use the published reduction `dualComparison_of_unit_spherical_integrals`
+(`EssentialDualComparisonReduction`). The only new definition is the explicit
 constant `essentialDualConstant`. They assume no
 functional equation or injectivity as an established result: both enter only as explicit
 hypotheses of the final theorem.

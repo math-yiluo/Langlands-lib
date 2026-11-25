@@ -62,23 +62,22 @@ simple quotient and deduces `a ∈ I` using `a * 1 = a`. The Lean proof rules
 out `a ∈ I` directly, so the separating vector is explicitly the class of
 `1` rather than an unspecified vector.
 
-Worker 1210 read B.III PDF279 as text and a rendered page, A.VI.3 PDF269–270
+B.III PDF279 was read as text and as a rendered page, A.VI.3 PDF269–270
 as text, and the older-edition errata PDF18–19. The registered older errata
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, PDF19,
 remove the old right-zero-divisor claim while retaining the absence of a
 left inverse. Both source hashes were verified, and the 2026 text already
-incorporates the correction. No separate Renard errata note was present in
-the current Library.
+incorporates the correction. No separate Renard errata note was found when
+the sources were checked.
 
-Worker 1210 wrote the proof and explanation. The published statement and
-its matching informal proof outline are due to Worker 221 and Worker 6.
 The nonnilpotent resolvent assertion and the final unital separation
-statement are separate proof units. The source's reduction from a
-nonunital algebra remains a separate obligation.
+statement are proved in separate modules. The source's reduction from a
+nonunital algebra is not part of this module; the quotient step for the
+unitization of a nonunital algebra is
+`Langlands.Renard.nonUnitalLeftShiftSimpleQuotient` in
+`Langlands.Algebra.NonUnitalLeftShiftSimpleQuotientProof`.
 
-Development check `76532d82-786d-442d-ac20-847459a8cc9b` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the module with zero errors
+A development check compiled the module with zero errors
 and warnings. Inspection reports the sole universe parameter `u` and the
-standard axioms `propext`, `Classical.choice` and `Quot.sound`. This check
-is distinct from independent semantic acceptance and publication.
+standard axioms `propext`, `Classical.choice` and `Quot.sound`.

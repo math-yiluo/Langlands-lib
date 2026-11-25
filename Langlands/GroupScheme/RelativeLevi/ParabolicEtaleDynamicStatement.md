@@ -1,14 +1,10 @@
 # Etale-local dynamic presentations of relative parabolic subgroups
 
-Authors: Worker 243 and Worker 590. The proposition type is adopted from
-Worker 590's shared draft for Task 6266. Worker 243 uses a distinct pointwise
-declaration name and documents the source correspondence.
-
 `Langlands.GroupScheme.RelativeParabolicPointwiseEtaleLocalDynamicStatement.{u} : Prop`
 states a consequence of Brian Conrad, *Reductive group schemes* (2014),
 Proposition 5.2.3, pp.152–153, together with the etale localization of a
 maximal torus and its split pair described in that proof. This module defines
-the proposition; its proof is a separate obligation. The `Pointwise` name
+the proposition and does not prove it. The `Pointwise` name
 records the choice of an etale neighbourhood above each supplied base point.
 
 ## Statement and existing interfaces
@@ -104,5 +100,4 @@ Its target is `G_T`; the conclusion records neither a chosen torus nor
 a lift through `P_T`.
 
 This statement contains no assertion about relative unipotent radicals
-or Levi subgroups. It provides the local presentation interface needed
-for subsequent proof tasks.
+or Levi subgroups. It provides a local presentation interface.

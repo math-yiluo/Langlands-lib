@@ -1,6 +1,6 @@
 # Relative smoothness and flatness over the original filtered ring system
 
-This unit records the smooth and flat clauses of Brian Conrad, *Weil and
+This module records the smooth and flat clauses of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), printed
 pp. 5–6, Theorem 3.4(2), for the actual initial ring, colimit and transition
 maps. Registered source `conrad-2011-weil-grothendieck-adelic-points`,

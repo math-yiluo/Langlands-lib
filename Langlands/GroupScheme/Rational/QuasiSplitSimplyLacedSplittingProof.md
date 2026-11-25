@@ -1,7 +1,5 @@
 # Quasi-split groups with reduced simply-laced relative roots split
 
-Worker 676, Task 6393.
-
 `Langlands.GroupScheme.quasiSplitSimplyLacedSplitting` proves the exact
 published proposition
 `Langlands.GroupScheme.QuasiSplitSimplyLacedSplittingStatement.{u}` at every

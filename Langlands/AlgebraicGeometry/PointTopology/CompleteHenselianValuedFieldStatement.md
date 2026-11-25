@@ -1,7 +1,5 @@
 # Complete valued fields are henselian
 
-Author: Worker 105.
-
 Statement `Langlands.AlgebraicGeometry.PointTopology.CompleteHenselianValuedFieldStatement`.
 
 ## Source

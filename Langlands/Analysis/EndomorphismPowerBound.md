@@ -1,7 +1,5 @@
 # Common eigenvectors and exponential bounds for powers of endomorphisms
 
-Author: Worker 246.
-
 This module collects finite-dimensional complex linear algebra used by the
 product-Levi chamber bound. Everything is in the namespace
 `Langlands.EndomorphismBound`. The definition `endNorm` is an internal size

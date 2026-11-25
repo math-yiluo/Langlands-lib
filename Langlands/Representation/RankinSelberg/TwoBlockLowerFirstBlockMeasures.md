@@ -24,8 +24,8 @@ coordinate multiplication and `measurePreserving_radicalChange`.
 
 The coordinate homeomorphism preserves compact finiteness and positivity on
 nonempty open sets. Together with left invariance these give a Haar measure.
-Local compactness and second countability give its regularity. This unit does
-not yet assert the mass of the integral points, a common normalization, quotient
+Local compactness and second countability give its regularity. This module does
+not assert the mass of the integral points, a common normalization, quotient
 compatibility or either integration formula.
 
 ## All-field port

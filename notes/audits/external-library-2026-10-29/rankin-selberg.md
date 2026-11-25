@@ -1,29 +1,19 @@
 # External Library audit 2026-10-29: Rankin–Selberg character contracts and proof availability
 
-Worker 1062, with verification and all correction candidates by Worker 1067.
-This note records verdicts for the eight findings assigned by task
-`9a10bf49-7f07-480d-bad3-fcdf4c541d49`, revision 2
-(contract `c0c70a57b2032b7d6a5e248e77fb5fd9ca78c60ae7ab5d2c2c7fd4ff027487f5`):
-P3-015 and P3-092 to P3-098. Revision 2 changed only the correction-workflow
-sentence of revision 1, by operator decision: executors may correct the
-owned pairs inside the task, and a child task is needed only for a change to
-a Lean statement or proof target, or to a file outside the owned pairs. The
-corrections were made inside this task under revision 2, which covers both
-the corrections published earlier and the remaining ones; no child task was
-created. The source is the operator-supplied report registered as
+This note records verdicts for eight findings of the external Library audit
+of 2026-10-29: P3-015 and P3-092 to P3-098. The source is the report registered as
 `external-library-audit-2026-10-29-3987c3d` (file `FINAL_AUDIT_3987c3d.md`,
 SHA256 `d9a25f35dc2d7bef0351ba0891db168b0c3cc797a281d0a9944e930fe43d5eeb`;
 the entries are on its lines 78 and 192–198). Each allegation was checked
 against the complete Lean declarations, their universe and instance
-parameters, the paired Markdown, and the TaskHub validation, review and
-publication records. The parent verification recorded here is separate from
-the independent review of each correction candidate.
+parameters, the paired Markdown, and the record of the corrections that
+entered the Library.
 
 ## Snapshots and verdict convention
 
 - **A** is the audited Library commit
-  `3987c3d7445531c2c7f784464a3fd47061ba0865`. It was the Library head when
-  the task was prepared and when the findings were first verified.
+  `3987c3d7445531c2c7f784464a3fd47061ba0865`, at which the findings were
+  first verified.
 - **C** is the latest comparison in this edition: Library
   `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf`, where corrections N and M
   were published. The later head
@@ -33,13 +23,13 @@ the independent review of each correction candidate.
 - The intermediate heads are `bc8de2287e5c24972c55277b2aa9611523dfc5dc`
   (correction Q, below), `64f062d4c57e9cc6f8151bc80364bc55c16272c5`
   (correction U) and `c8ae014c2d620066bb3bf73f1183de72515b8c6c` (the base
-  of N and M). All ten owned pairs are byte-identical between `64f062d4…`
+  of N and M). All ten audited pairs are byte-identical between `64f062d4…`
   and `c8ae014c…`.
 
 All eight findings **hold at A**. Each one concerns paired Markdown that
 describes a bundled hypothesis, or an already published proof, inaccurately.
 No Lean statement, definition, proof or universe was changed, and none had to
-be. Every owned Lean file is byte-identical between A and C (hashes below).
+be. Every audited Lean file is byte-identical between A and C (hashes below).
 A **holds** verdict describes A. It does not claim that the corrected
 sentences are still defective in C.
 
@@ -102,7 +92,7 @@ The correction keys refer to the release table below.
   `IsLanglandsPairLPolynomial` (RS/PairLFactorCharacterizationStatement.lean:52, 81–82),
   whose transport is `RankinSelberg.IsLanglandsPairLPolynomial.congr_equiv`,
   with the same universes. This is not one of the assigned findings. It lies
-  in an owned file and is corrected in the same candidate M, which cites
+  in an audited file and is corrected in the same correction M, which cites
   `IsLanglandsPairLPolynomial.congr_equiv` and states its fixed universes.
 - **P3-096–P3-098.** Each suggested citation matches the full target type.
   None of these proofs adds a hypothesis to its statement, and none changes a
@@ -115,33 +105,31 @@ PadicPairFactors and the JPSS p391–392 locators in QuotientIwasawaIntegration.
 
 ## Proof availability evidence
 
-Every row below is published under policy `lean.proof@1`. The validator ran
-the checks `lake-build`, `exact-target`, `unchanged-statement` and
-`frozen-inputs` and returned `accepted`. The independent review approved with
-no qualifications.
+Every row below is a proof in the Library. Each was checked with a Lake
+build, against its exact target, with its statement and inputs unchanged.
 
-| Declaration(s) | Target statement | Artifact | Validator receipt | Review task | Publication commit |
-|---|---|---|---|---|---|
-| `generalLinearHaarSymmetries` | `GeneralLinearHaarSymmetriesStatement` | `b0680b80-8b72-4e80-867d-86a55f8d2cb7` | `2fd85e3f-cc75-4318-8a1a-2cad17792a98` | `3a1b6c60-3e83-47b4-9171-82d3967e4174` | `62ea36c5cce8fa88e0b551b153b0fdc3087190e0` |
-| `reciprocalLaurentSpanClearing`, `normalizedReciprocalLaurentSpanDivisibility` (in `laurentPolynomialDivisibility`) | `LaurentPolynomialDivisibilityStatement` | `11da9795-97e1-4f47-a175-f4bba2e0ba49` | `1bbe27b9-4a34-451b-9321-4a0a15b430fe` | `6c65956d-9a14-407b-ba49-bab07a2f39e5` | `53f16d09ea1bc89e5790448306e9c4cfb84e87cf` |
-| `glOppositeProductReversal` | `GLOppositeProductReversalStatement` | `2bdd098e-0fc3-43bc-b05b-9b143be83bc2` | `49e17151-fe65-475d-901f-1a439d173d63` | `4f026866-0a8b-4155-a66a-8d524d335564` | `675c5ea015298ba25d423f84a080d595f50bf797` |
-| `isPadicPairLPolynomial_swap_equalRank`, `equalRankFactorSwap` | `EqualRankFactorSwapStatement` | `70e11a12-5c7e-4fe0-a6e2-a57bd2de2407` | `37b52f62-c2e5-4563-907a-689effce9bcd` | `61b73e4a-2da9-447b-93d0-46c984d6f08c` | `7bb1a2e56d449732b59f554074fbc0278f42d7a3` |
-| `padicIrreducibleSmoothSmallRealization` | `PadicIrreducibleSmoothSmallRealizationStatement` | `b9fc82a3-c94e-4f17-9c0f-69a17a8effbb` | `74e599f0-4d86-47ba-81d1-a7eb6e4471e7` | `7d7085b4-67f1-479b-8820-61bba74dea24` | `f9c1742752d97c488fc1a835070bf50b534f4427` |
-| `quotientIwasawaIntegration` | `QuotientIwasawaIntegrationStatement` | `d43652d8-4403-4852-bb9e-0337adbf9ea9` | `2a9198ec-10b2-4df5-8dfc-529f8d8865c2` | `d0778259-02ac-4efa-9f1d-4e723f01d640` | `910a6df80701415e9aa68c646393c66ac9bc7512` |
-| `rootCoordinateChange` | `RootCoordinateChangeStatement` | `86cb094f-1e39-47a4-bc66-d0f0e20c8a2f` | `57a09006-1453-49c8-9a88-99dc791b97de` | `196c789c-a6d8-4070-888b-e30532865cf7` | `a66ac48fdc88dd72538b60ed5c37db84dfa7558b` |
-| `glBlockModulusHaar` | `GLBlockModulusHaarStatement` | `3008bd3f-5a63-44c7-aa33-d84249d03f88` | `24df8e39-0158-4e89-bcf3-1efcd9430cac` | `b6e08084-dcab-4689-9b40-0560610a2ffd` | `9488f8128fc175e4f17b08d2a86eac54056fa753` |
-| `unipotentCharacterChangeModulus` | `UnipotentCharacterChangeModulusStatement` | `fa5b5189-0b18-404c-8e22-4bc52948bf64` | `fab3bbcb-1e5c-430e-8254-ded0e8efd57e` | `6f2927cd-5733-4a7b-8c27-ba8871755854` | `9ff0d4f8edaf10dd32d87468c3045da6ec3ee5c6` |
-| `characterChangeCompatibleMeasure` | `CharacterChangeCompatibleMeasureStatement` | `326f360a-2ce9-424d-919a-83b440943fde` | `5895c503-fa33-4d97-838b-fbe71bf2347d` | `43290c82-1e6b-43d6-b0a8-af28ab41e84f` | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` |
+| Declaration(s) | Target statement | Publication commit |
+|---|---|---|
+| `generalLinearHaarSymmetries` | `GeneralLinearHaarSymmetriesStatement` | `62ea36c5cce8fa88e0b551b153b0fdc3087190e0` |
+| `reciprocalLaurentSpanClearing`, `normalizedReciprocalLaurentSpanDivisibility` (in `laurentPolynomialDivisibility`) | `LaurentPolynomialDivisibilityStatement` | `53f16d09ea1bc89e5790448306e9c4cfb84e87cf` |
+| `glOppositeProductReversal` | `GLOppositeProductReversalStatement` | `675c5ea015298ba25d423f84a080d595f50bf797` |
+| `isPadicPairLPolynomial_swap_equalRank`, `equalRankFactorSwap` | `EqualRankFactorSwapStatement` | `7bb1a2e56d449732b59f554074fbc0278f42d7a3` |
+| `padicIrreducibleSmoothSmallRealization` | `PadicIrreducibleSmoothSmallRealizationStatement` | `f9c1742752d97c488fc1a835070bf50b534f4427` |
+| `quotientIwasawaIntegration` | `QuotientIwasawaIntegrationStatement` | `910a6df80701415e9aa68c646393c66ac9bc7512` |
+| `rootCoordinateChange` | `RootCoordinateChangeStatement` | `a66ac48fdc88dd72538b60ed5c37db84dfa7558b` |
+| `glBlockModulusHaar` | `GLBlockModulusHaarStatement` | `9488f8128fc175e4f17b08d2a86eac54056fa753` |
+| `unipotentCharacterChangeModulus` | `UnipotentCharacterChangeModulusStatement` | `9ff0d4f8edaf10dd32d87468c3045da6ec3ee5c6` |
+| `characterChangeCompatibleMeasure` | `CharacterChangeCompatibleMeasureStatement` | `a6c8885e0e4bfcf4ee6d5a4b9a84a6d195085302` |
 
-In C, eight of these Lean files are byte-identical to their published
-bundles. The other two, `QuotientIwasawaIntegrationProof.lean` and
-`Langlands/Group/GL/BlockModulusHaarProof.lean`, differ from their bundles
-only because the Integrator later extracted helpers. Their public theorem
+In C, eight of these Lean files are byte-identical to the versions that
+first entered the Library. The other two, `QuotientIwasawaIntegrationProof.lean`
+and `Langlands/Group/GL/BlockModulusHaarProof.lean`, differ only because helpers
+were later extracted from them. Their public theorem
 headers are unchanged, and both files are byte-identical between A and C.
 
-As an additional development check, Worker 1062 ran `lean_check` in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with declaration
-inspection, on every declaration in the table. Each check compiled its module
+As an additional development check, `lean_check` was run in the Library's
+Lean environment, with declaration inspection, on every declaration in the
+table. Each check compiled its module
 with no errors or warnings, and the only axioms reported were `propext`,
 `Classical.choice` and `Quot.sound`. The eleven declarations of the first
 nine rows were checked on a workspace at A (sources fingerprint
@@ -151,71 +139,58 @@ nine rows were checked on a workspace at A (sources fingerprint
 `2841232f7286c86eb233e442670fc8d0314214f6d1e8057b486500feca632ef8`); its file
 `RS/CharacterChangeMeasure.lean` is byte-identical between A and C.
 
-| Declaration | Universe parameters | Diagnostic |
-|---|---|---|
-| `Langlands.RankinSelberg.generalLinearHaarSymmetries` | `uF` | `2c90bd5f-1d38-4d0e-8015-162d65b807e6` |
-| `Langlands.RankinSelberg.reciprocalLaurentSpanClearing` | none | `32828d13-dcb2-4285-8a5b-41e9b50aa319` |
-| `Langlands.RankinSelberg.normalizedReciprocalLaurentSpanDivisibility` | none | `ab893b2c-cb4f-44f2-9b0c-18056b312b60` |
-| `Langlands.glOppositeProductReversal` | `uF uV` | `ab3b8a22-d367-44a2-ae0a-5c73b4bf1e52` |
-| `Langlands.RankinSelberg.isPadicPairLPolynomial_swap_equalRank` | `uF uV uW` | `b4643640-d974-4310-ac8b-fa52bd23998c` |
-| `Langlands.RankinSelberg.equalRankFactorSwap` | `uF uV uW` | `b5e116e6-4dc4-41fb-95fd-faa7887502fe` |
-| `Langlands.padicIrreducibleSmoothSmallRealization` | `uF uW uV` | `e005dee1-28ac-4dd9-8c99-b7ab32bfc1e8` |
-| `Langlands.RankinSelberg.quotientIwasawaIntegration` | `uF` | `87e93753-d715-457a-b28f-edb639ff68c7` |
-| `Langlands.RankinSelberg.rootCoordinateChange` | `uF` | `a44b3315-4342-4043-a9ed-969088d9bad5` |
-| `Langlands.glBlockModulusHaar` | `uF` | `e360aaa2-34ef-4c37-a45e-683e224a3a1d` |
-| `Langlands.RankinSelberg.unipotentCharacterChangeModulus` | `uF` | `70ef2692-362c-45d5-ab92-12c373aa70ee` |
-| `Langlands.RankinSelberg.characterChangeCompatibleMeasure` | `uF` | `4a5c1e4e-7715-48ed-b24a-e8dad5e1018f` |
+| Declaration | Universe parameters |
+|---|---|
+| `Langlands.RankinSelberg.generalLinearHaarSymmetries` | `uF` |
+| `Langlands.RankinSelberg.reciprocalLaurentSpanClearing` | none |
+| `Langlands.RankinSelberg.normalizedReciprocalLaurentSpanDivisibility` | none |
+| `Langlands.glOppositeProductReversal` | `uF uV` |
+| `Langlands.RankinSelberg.isPadicPairLPolynomial_swap_equalRank` | `uF uV uW` |
+| `Langlands.RankinSelberg.equalRankFactorSwap` | `uF uV uW` |
+| `Langlands.padicIrreducibleSmoothSmallRealization` | `uF uW uV` |
+| `Langlands.RankinSelberg.quotientIwasawaIntegration` | `uF` |
+| `Langlands.RankinSelberg.rootCoordinateChange` | `uF` |
+| `Langlands.glBlockModulusHaar` | `uF` |
+| `Langlands.RankinSelberg.unipotentCharacterChangeModulus` | `uF` |
+| `Langlands.RankinSelberg.characterChangeCompatibleMeasure` | `uF` |
 
 These are private diagnostics: they add no acceptance and are not a
 full-Library kernel build.
 
 ## Correction releases
 
-Every correction is a Markdown-only change, submitted as an ordinary
-`lean.statement@1` candidate whose entry is the owned statement pair, with
-the Lean bytes unchanged. Paired Markdown was not submitted through the wiki
-workflow. Each receipt below keeps its actual binding: Q and U were
-validated, reviewed and published while the task was at revision 1, and they
-are not resubmitted. N₁ and M₁ were approved under revision 1, but the
-revision superseded them before publication. N and M are their unchanged
-replacements, validated and reviewed against revision 2.
+Every correction is a Markdown-only change to a statement pair and its
+companions, with the Lean bytes unchanged. Earlier versions N₁ and M₁ of
+corrections N and M did not enter the Library; N and M are their unchanged
+replacements.
 
-| Key | Findings | Candidate | Machine validation receipt | Independent review task and outcome | Publication |
-|---|---|---|---|---|---|
-| Q | P3-096, P3-097 | `979a51b2-cb61-46ee-bd0c-f428bf6114f4` | `576f9b67-ed3f-482e-a2d9-d9362dfec7f6` (accepted) | `36e4a901-05ca-4849-b099-1d84c9b69ddb` (approve, no qualifications) | `bc8de2287e5c24972c55277b2aa9611523dfc5dc`; integration `1055cf9dc61443be80e3cbc6bbdb9989`, previous head `b58bd42aee6a565b689f0f0c008506e23b1b6560` |
-| U | P3-092, P3-098 | `721f4977-cfd5-48a3-aee2-aa499fc42d1f` | `d2274e84-488c-4e44-81c4-90f8d569ffcd` (accepted) | `1e8fc0d6-0e5b-4f1b-937c-931447b0c603` (approve, no qualifications) | `64f062d4c57e9cc6f8151bc80364bc55c16272c5`; integration `090cd72ca0bb4dfe9ee59c171fc33fcd`, previous head `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| N₁ | P3-015 | `5de5f2bd-c4be-464a-8b75-d5f04ef4e6aa` | `e0e0cbaf-a0d4-4507-a09c-d4b0799c424e` (accepted) | `12c129b6-fd86-4155-a441-2d410f2ac2fc` (approve, no qualifications) | Not published: superseded by task revision 2 |
-| N | P3-015 | `89b40bd6-e0ca-4338-8b8a-cf5f6ccb3662` | `5127a99f-4452-4e49-af51-5180ecb849be` (accepted) | `0983f36f-f76e-41d3-bf98-ec6aab8675d3` (approve, no qualifications) | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf`; integration `a4fb5ab563e94d29a56100fbf43913d6`, previous head `cde31751c7864199419ad8fae8b7f3474639ba24` |
-| M₁ | P3-093, P3-094, P3-095, the :113 citation and two related precisions (Scope) | `1171a7aa-4414-412a-81b7-ce9143555b5f` | `bd5ece61-977f-4c10-b259-c4ac5e2cee37` (accepted) | `046c116b-8aaa-4406-b87b-211073eac1f9` (approve, no qualifications) | Not published: superseded by task revision 2 |
-| M | As M₁ | `71910e9f-03c8-46e0-a97d-7a1e3ea8807e` | `487273a9-80ed-4edc-8401-cb6c2b462752` (accepted) | `3bcb79e3-05e9-4533-bb6f-ecf9463d6aed` (approve, no qualifications) | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf`; integration `72019c1b850f42bf9413816541cf1f43`, previous head `cde31751c7864199419ad8fae8b7f3474639ba24` |
+| Key | Findings | Publication |
+|---|---|---|
+| Q | P3-096, P3-097 | `bc8de2287e5c24972c55277b2aa9611523dfc5dc` (previous head `b58bd42aee6a565b689f0f0c008506e23b1b6560`) |
+| U | P3-092, P3-098 | `64f062d4c57e9cc6f8151bc80364bc55c16272c5` (previous head `bc8de2287e5c24972c55277b2aa9611523dfc5dc`) |
+| N | P3-015 | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` (previous head `cde31751c7864199419ad8fae8b7f3474639ba24`) |
+| M | P3-093, P3-094, P3-095, the :113 citation and two related precisions (Scope) | `3c5f92411ab2bcef7d4e5ae82c66a7ae30ea3fdf` (previous head `cde31751c7864199419ad8fae8b7f3474639ba24`) |
 
 Q's entry pair is `QuotientIwasawaIntegrationStatement`, and it also changes
 `RS/RootCoordinateStatement.md`. U's entry pair is
 `UnipotentCharacterChangeModulusStatement`, and it also changes
-`RS/HaarSymmetriesStatement.md`. U's frozen snapshot also contains Q's two
-already-published Markdown files, byte-identical to Q. N's entry pair is
+`RS/HaarSymmetriesStatement.md`. N's entry pair is
 `TwoBlockJacquetConvergenceStatement`, and it also changes
 `RS/GeneralPairGamma.md` and `RS/LanglandsFactors.md`. M's entry pair is
 `MultiplicativityStatement`, and it also changes `RS/PadicPairFactors.md` and
-`RS/PairLFactorCharacterizationStatement.md`. N₁ had base `bc8de22…` and M₁
-had base `64f062d4…`. N and M both have base `c8ae014c…` and the contract
-hash of revision 2. They were frozen from one workspace snapshot
-(`c7874dfa206e81c3b647663282ff7216f45a9fea23cfca314a3a357f9a680869`) that
-contains all six changed Markdown files, but each candidate's repository
-paths are only its own four files. Those four files are byte-identical to
-the corresponding files of N₁ for N, and of M₁ for M. Each candidate record
-states this and names the superseded candidate. Worker 1062 compared the
-full A-to-C diff of all ten changed Markdown files with these candidates:
-each changed file in C matches its frozen candidate hash, and each
-correction reads as summarized in the ledger.
+`RS/PairLFactorCharacterizationStatement.md`. N and M both have base
+`c8ae014c…`; each changes only its own four files. The full A-to-C diff of
+all ten changed Markdown files was compared with these corrections: each
+changed file in C matches its corrected version, and each correction reads as
+summarized in the ledger.
 
 ## Scope
 
 These corrections change documentation only. They do not prove analytic
 multiplicativity, Whittaker heredity, the existence of any local factor,
 cross-universe transport of the Langlands pair L relation, convergence of the
-JPSS integrals, or any ambient-group Iwasawa formula. Worker 1067 checked two
-further claims outside the assigned findings, at
+JPSS integrals, or any ambient-group Iwasawa formula. Two further claims were
+checked outside the assigned findings, at
 RS/MultiplicativityStatement.md:161–165 (universes) and
 RS/PadicPairFactors.md:31–32 (dependence on `ψ`).
 
@@ -232,7 +207,7 @@ RS/PadicPairFactors.md:31–32 (dependence on `ψ`).
   (RS/CanonicalPairLFactor.lean:100, present at A) proves that the published
   `IsPairLPolynomial` at `unipotentQuotientHaar` and a fixed additive Haar
   measure holds for `ψ` if and only if it holds for `ψ.scale a`, `a ∈ F^×`,
-  with the same polynomial. Candidate M cites it and says that the module
+  with the same polynomial. Correction M cites it and says that the module
   states no `ψ`-independence for its own relations. For the same reason, M
   rewords RS/PairLFactorCharacterizationStatement.md:146–147 (A), which said
   that the L relation "does not otherwise depend on `ψ`". The Lean relation
@@ -244,9 +219,9 @@ RS/PadicPairFactors.md:31–32 (dependence on `ψ`).
 
 All hashes are SHA256.
 
-### Owned pairs
+### Audited pairs
 
-All ten owned Lean files are byte-identical between A and C.
+All ten audited Lean files are byte-identical between A and C.
 
 | Pair stem | Lean in A and C | Markdown in A | Markdown in C |
 |---|---|---|---|

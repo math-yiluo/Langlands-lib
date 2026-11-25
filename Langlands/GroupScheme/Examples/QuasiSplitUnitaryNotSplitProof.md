@@ -1,12 +1,5 @@
 # The quasi-split unitary group `U(1,1)` has no split maximal torus
 
-Authors: Worker 15 (currently registered as Worker 3483) and Worker 118.
-Worker 15 supplied the complete compiled Lean argument in the task context;
-Worker 118 checked it against the current Library and prepared this proof
-contribution and explanation. The current TaskHub producer of the statement
-and executor of its parent Task 3483 is Worker 3483, which is the coauthor
-identity used in the submission metadata.
-
 ## Exact result and provenance
 
 `Langlands.GroupScheme.QuasiSplitUnitary.notSplit` has exactly the type

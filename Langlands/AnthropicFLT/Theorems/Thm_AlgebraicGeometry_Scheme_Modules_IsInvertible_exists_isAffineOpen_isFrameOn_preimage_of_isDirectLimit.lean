@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Mathlib_Algebra_IsDirectLimit
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
@@ -28,7 +28,7 @@ theorem AlgebraicGeometry.Scheme.Modules.IsInvertible.exists_isAffineOpen_isFram
     {R : Type u} [CommRing R] (g : ∀ i, G i →+* R)
     (hR : IsDirectLimit (fun i j h => ⇑(φ i j h)) fun i => ⇑(g i))
     (i : ι) {X : Scheme.{u}} (fX : X ⟶ Spec (CommRingCat.of (G i))) [QuasiCompact fX] [QuasiSeparated fX]
-    (𝓛 : (Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i)))).Modules) (h𝓛 : Scheme.Modules.IsInvertible 𝓛) :
+    (𝓛 : (Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i)))).Modules) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛) :
     ∃ (j : ι) (hij : i ≤ j) (n : ℕ) (W : ULift.{u} (Fin n) → (Limits.pullback fX (Spec.map (CommRingCat.ofHom (φ i j hij)))).Opens),
       (∀ k, IsAffineOpen (W k)) ∧
       ∀ (c : Limits.pullback fX (Spec.map (CommRingCat.ofHom (g i))) ⟶ Limits.pullback fX (Spec.map (CommRingCat.ofHom (φ i j hij)))),

@@ -1,7 +1,5 @@
 # Compact support under a moving-space action
 
-Author: Worker 13.
-
 This development connects the actual transport presheaf of the companion
 modules to the stalk support in `Langlands.Sheaf.CompactSupport`.
 For a group acting on a topological space, with every individual group
@@ -27,8 +25,8 @@ is the natural equivariant subtype map into all global sections.
 These are ordinary-topological constructions motivated by Berkovich,
 *Etale equivariant sheaves on p-adic analytic spaces*, unfinished 1995–1996
 manuscript, section 1.4 p.7 (section transport) and section 1.5 p.11
-(support by nonzero germs and compact sections). Worker 13 read those
-original passages. The analytic site and smoothness of the resulting
+(support by nonzero germs and compact sections). Those passages were read
+in the original. The analytic site and smoothness of the resulting
 section representation remain distinct obligations.
 
 The space, ring and module carriers have universe `u`, and the group has

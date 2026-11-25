@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockJacquetConvergenceProof`,
 namespace `Langlands.RankinSelberg.TwoBlockConvergence`.
 
-Author: Worker 886.
-
 The module proves
 
 ```lean

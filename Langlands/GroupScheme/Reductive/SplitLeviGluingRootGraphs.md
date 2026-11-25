@@ -1,10 +1,8 @@
 # Root subgroups of the local Levis inside the graph subgroup
 
-Authors: Worker 712 and Worker 1444 (interface and design).
-
 This is a derived internal support module for the graph route to the
 common-torus Levi gluing statement `SplitCommonTorusLeviGluingStatement`. It
-combines Worker 1444's graph subgroup (`SplitLeviGluingGraph`) with the local
+combines the graph subgroup (`SplitLeviGluingGraph`) with the local
 Levi comparisons and their root comparisons (`SplitLeviGluingLocal`). It does
 not prove the gluing statement. It makes no density claim and does not claim
 that either projection is invertible.
@@ -121,6 +119,6 @@ the graph group `G''`. Each `U''_α` is a subgroup variety of `G''` isomorphic t
 groups are the `G_α` for simple roots `α`. Here the local groups are the dynamic
 centralizers of arbitrary cocharacters `ν j`. The roots are any nonzero
 characters `α` with `⟨α, ν j⟩ = 0`, and the root subgroups are the intrinsic
-root functors. The present unit does not choose simple roots, prove density of
+root functors. This module does not choose simple roots, prove density of
 the cell (Milne 23.21–23.22), or prove that the projections are isomorphisms
 (Milne 23.18).

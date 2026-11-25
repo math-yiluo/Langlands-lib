@@ -1,6 +1,6 @@
 # Signed composition and cosets of actual witnesses
 
-Worker 1813 authored this internal algebraic companion to
+This module is an internal algebraic companion to
 `DeligneHenniartWitnessAlgebra`. It retains the published signed actual Weil
 lattice, supplied assignment, reciprocity family, additive character, Haar
 measures, exact tensor and determinant. Its only additional hypothesis on the

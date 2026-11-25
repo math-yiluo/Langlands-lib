@@ -1,6 +1,6 @@
 import Langlands.Global.Arithmetic.CMCharacterStatement
 import Langlands.Global.HeckeCharacterTransport
-import Langlands.ClassField.Global.IntegralIdeleCoefficients
+import Langlands.ClassFieldTheory.Global.IntegralIdeleCoefficients
 
 /-!
 # Antisymmetrization of Hecke characters on CM fields
@@ -20,7 +20,7 @@ namespace Langlands.Global
 namespace CMUnramifiedInfinity
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
-open Langlands.ClassField.Global Langlands.Global.AdelicFunctoriality
+open Langlands.ClassFieldTheory.Global Langlands.Global.AdelicFunctoriality
 
 variable {K : Type u} [Field K] [NumberField K]
 

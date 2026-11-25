@@ -9,7 +9,8 @@ local field `F`, a supplied maximal split-torus apartment with its original
 Galois stability, actual centralizer and full omega compatibility. The
 extended affine group is assumed connected reductive, and geometric
 connectedness of the original group is required for model descent. In the
-host fixed-point problem the original connected reductivity supplies this
+fixed-point problem `UnramifiedFixedPointSplitTorusStatement`, which this
+module serves, the original connected reductivity supplies this
 geometric connectedness. Let `E` be an original maximal Galois facet, meaning
 a full facet meeting the coefficient-fixed locus and maximal among such
 facets under original building incidence.
@@ -50,8 +51,9 @@ The published no-proper-parabolic split-torus result gives centrality and
 containment in every maximal torus. All these conclusions concern the same
 constructed downstairs quotient.
 
-The transitive proof route uses the separately staged generic root-fixer
-and torus-adapter import repairs and no prohibited building-descent
-statement. This module does not yet lift residue tori or prove fixation of
-the prescribed building point by units of a maximal `F`-split torus; those
-remain the next steps of the host theorem.
+The transitive proof route uses the generic root-fixer and torus-adapter
+results and no building-descent statement. This module does not lift
+residue tori or prove fixation of the prescribed building point by units of
+a maximal `F`-split torus; those are further steps towards
+`UnramifiedFixedPointSplitTorusStatement`, which the Library proves as
+`unramifiedFixedPointSplitTorus` in `UnramifiedFixedPointSplitTorusProof`.

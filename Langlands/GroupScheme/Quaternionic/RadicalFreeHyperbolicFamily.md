@@ -1,7 +1,5 @@
 # Hyperbolic families for forms with zero quadratic radical
 
-Author: Worker 644.
-
 This internal extension of `QuadraticHyperbolicFamily` replaces the invertibility
 of the polar matrix by `IsRadicalFreeQuadratic`. It retains the quotient-valued
 quadratic-form convention over every field and division algebra with an

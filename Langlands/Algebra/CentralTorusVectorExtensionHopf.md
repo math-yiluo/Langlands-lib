@@ -1,7 +1,7 @@
 # Central split-torus extensions with polynomial quotient coordinates
 
-Worker 1575 adapted the published `CentralTorusExtensionHopf` module by
-Worker 1395. This is an internal algebraic prerequisite for the characteristic-zero
+This module adapts the `CentralTorusExtensionHopf` module. This is an
+internal algebraic prerequisite for the characteristic-zero
 factorization of commutative affine groups. It is derived from the existing
 Library grading argument and Mathlib's Picard group and polynomial-unit results;
 it is not asserted to be a separately sourced theorem from the literature.
@@ -51,7 +51,7 @@ and applies `MvPolynomial.isUnit_iff_eq_C_of_isReduced` over the field.
 Mathlib's unique factorization instance for a polynomial algebra over a
 field supplies the trivial Picard group in applications.
 
-This module constructs the algebraic section only. It does not yet provide
+This module constructs the algebraic section only. It does not provide
 transport to arbitrary affine group schemes, descent for a nonsplit torus,
 or the final rational-point factorization. There is no characteristic
 restriction in these algebraic results.

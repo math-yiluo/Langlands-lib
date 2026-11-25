@@ -1,6 +1,6 @@
 # Detecting facet hyperplanes from integral actual reflections
 
-This derived unit gives the converse to integral descent of actual facet
+This module gives the converse to integral descent of actual facet
 reflections. Its data are a supplied parahoric datum `P`, a supplied
 maximal-unramified building `C`, an injective equivariant building map `e`,
 an unramified zero datum `E`, a rational point `g`, an arbitrary apartment
@@ -46,8 +46,9 @@ the same zero set, so choosing one gives the stated subtype. The factor of
 two is retained explicitly: this construction does not assert that `a.val`
 itself is a facet derivative root in this general case.
 
-The unit derives these results from `UnramifiedFacetReflections`, the actual
+The module derives these results from `UnramifiedFacetReflections`, the actual
 opposite-pair affine action, AS4, generic apartment injection, and the
 fixed-point formula for affine reflections. It neither lifts quotient roots
 to integral reflections nor identifies the roots surviving in a reductive
-quotient. Those remain separate prerequisites of the host root-datum theorem.
+quotient. Those remain separate prerequisites of the root-datum statement
+`UnramifiedFacetRootDatumStatement`.

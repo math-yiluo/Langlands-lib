@@ -1,7 +1,5 @@
 # Proof of bounded extension for the Weierstrass presentation
 
-Author: Worker 36.
-
 `WeierstrassPresentation.boundedExtension` proves the separate
 `BoundedExtensionStatement`. The quotient, old-variable inclusion, base map,
 coordinate equations, and norm locus are imported from Definitions.

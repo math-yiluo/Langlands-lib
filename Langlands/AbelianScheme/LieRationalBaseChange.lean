@@ -75,19 +75,20 @@ def baseChangeRationalOrderAction (B : AbelianScheme S) {O : Type v} [Ring O]
 @[simp]
 theorem baseChangeRationalOrderAction_apply (B : AbelianScheme S)
     {O : Type v} [Ring O] (α : O →+* End0 B) (a : O) :
-    baseChangeRationalOrderAction b B α a = rationalBaseChangeHom b (α a) := rfl
+    baseChangeRationalOrderAction b B α a =
+      CategoryTheory.End.of (rationalBaseChangeHom b (α a).asHom) := rfl
 
 include naturality
 
 /-- The actual rational action intertwines the same canonical Lie comparison. -/
 theorem lieRationalOrderAction_baseChange_of_naturality (B : AbelianScheme S)
     {O : Type v} [Ring O] (α : O →+* End0 B) (a : O) :
-    (Scheme.Modules.pullback b).map (lieRationalOrderAction p B α a) ≫
+    (Scheme.Modules.pullback b).map (lieRationalOrderAction p B α a).asHom ≫
         (lieBaseChangeIso b B).hom =
       (lieBaseChangeIso b B).hom ≫
-        lieRationalOrderAction (b ≫ p) ((baseChange b).obj B)
-          (baseChangeRationalOrderAction b B α) a :=
-  lieMap0_baseChange_of_naturality p b naturality (α a)
+        (lieRationalOrderAction (b ≫ p) ((baseChange b).obj B)
+          (baseChangeRationalOrderAction b B α) a).asHom :=
+  lieMap0_baseChange_of_naturality p b naturality (α a).asHom
 
 omit naturality
 

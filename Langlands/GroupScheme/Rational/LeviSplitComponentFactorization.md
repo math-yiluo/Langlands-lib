@@ -1,7 +1,5 @@
 # Split components of dynamic Levi subgroups
 
-Author: Worker 228.
-
 This module proves the split-component part of the target `LeviSplitComponentStatement`, which
 is the second conjunct. It combines the factorization results of
 [`SplitTorusFactorization`](SplitTorusFactorization.md), the torus factorizations of

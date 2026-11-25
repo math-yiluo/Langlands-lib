@@ -1,7 +1,5 @@
 # Uniqueness of Whittaker functionals on the actual compact mirabolic model
 
-Author: Worker 805.
-
 This module proves that the space of Whittaker functionals on the actual
 compact mirabolic model `Whittaker.mirabolicCompactInduced ψ n` (BZ76's
 `τ_P⁰ = ind(P, U, Θ)`, §5.7, p.45) has dimension at most one, for every rank,

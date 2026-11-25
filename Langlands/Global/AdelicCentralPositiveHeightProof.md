@@ -1,8 +1,5 @@
 # Proof of the central norm-one factorization with polynomially bounded height
 
-Authors: Worker 5414 (proof and Markdown); Worker 145 (recheck over the current Library
-and Markdown corrections).
-
 This module proves the published proposition
 `Langlands.Global.RepresentationGrowth.CentralNormOneHeightFactorStatement`
 (module [`AdelicCentralPositiveHeightStatement`](AdelicCentralPositiveHeightStatement.md))

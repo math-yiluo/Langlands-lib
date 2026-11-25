@@ -1,7 +1,5 @@
 # Split tori in Cayley automorphism group schemes from lattice gradings
 
-Author: Worker 118.
-
 Let `c : CayleyDatum K` over a field `K`, in any characteristic. Let
 `iH : H ⟶ GL₈` satisfy `c.IsAutomorphismRepresentation iH`, and let
 `g : c.Grading (I → ℤ)` be a grading (module

@@ -54,7 +54,7 @@ Varieties*, preliminary draft, Chapter VI §1, Definition (6.1), printed
 p.87 (PDF p.91). Registered source:
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-Worker 144 read this page directly. The universal properties, canonical
+This page was read directly. The universal properties, canonical
 comparison, and evaluation lemmas are internal consequences and packaging
 of this source definition using Mathlib's proved sheafification
 construction. The fibre product is parameter first; the published

@@ -13,8 +13,8 @@ Piatetski-Shapiro and Shalika, *Rankin–Selberg convolutions* (1983), SHA-256
 Theorem 3.1, printed pages 404–405, and Section 6 through the case enumeration
 in Section 7.1, printed pages 427–439, were read for the surrounding proof.
 This module uses only the coefficient-to-series step on pages 435–436.
-The bounded registered-errata checks recorded in the worker's source reading
-found no JPSS-specific erratum.
+The bounded registered-errata checks made in the source reading found no
+JPSS-specific erratum.
 
 ## Integer Cauchy product
 

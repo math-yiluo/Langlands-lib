@@ -230,9 +230,11 @@ theorem cmNormalTransportDatum_sheafMap_congr {V U : SmallCMLevel D} (b : V ⟶ 
     (M' : Action (ModuleCat Rcoeff) (SmallCMResidualGroup D V V'))
     (c₁ c₂ : M.V ⟶ M'.V)
     (hc₁ : ∀ v : V.obj.subgroup,
-      M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v)) ≫ c₁ = c₁ ≫ M'.ρ (QuotientGroup.mk v))
+      (M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v))).asHom ≫ c₁ =
+        c₁ ≫ (M'.ρ (QuotientGroup.mk v)).asHom)
     (hc₂ : ∀ v : V.obj.subgroup,
-      M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v)) ≫ c₂ = c₂ ≫ M'.ρ (QuotientGroup.mk v))
+      (M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v))).asHom ≫ c₂ =
+        c₂ ≫ (M'.ρ (QuotientGroup.mk v)).asHom)
     (e : c₁ = c₂) (hY' : IsFiniteGeometricTorsor ((schemes).obj V) (normalTorsor V V' hV').val) :
     (transportDatum b φ hφ U' hU' V' hV' T hT hTV' hTU' M M' c₁ hc₁).sheafMap hY' =
       (transportDatum b φ hφ U' hU' V' hV' T hT hTV' hTU' M M' c₂ hc₂).sheafMap hY' := by
@@ -257,9 +259,11 @@ theorem cmNormalTransportDatum_sheafMap_nsmul {V U : SmallCMLevel D} (b : V ⟶ 
     (M' : Action (ModuleCat Rcoeff) (SmallCMResidualGroup D V V'))
     (c₁ c₂ : M.V ⟶ M'.V)
     (hc₁ : ∀ v : V.obj.subgroup,
-      M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v)) ≫ c₁ = c₁ ≫ M'.ρ (QuotientGroup.mk v))
+      (M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v))).asHom ≫ c₁ =
+        c₁ ≫ (M'.ρ (QuotientGroup.mk v)).asHom)
     (hc₂ : ∀ v : V.obj.subgroup,
-      M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v)) ≫ c₂ = c₂ ≫ M'.ρ (QuotientGroup.mk v))
+      (M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v))).asHom ≫ c₂ =
+        c₂ ≫ (M'.ρ (QuotientGroup.mk v)).asHom)
     (m : ℕ) (e : c₁ = m • c₂)
     (hY' : IsFiniteGeometricTorsor ((schemes).obj V) (normalTorsor V V' hV').val) :
     (transportDatum b φ hφ U' hU' V' hV' T hT hTV' hTU' M M' c₁ hc₁).sheafMap hY' =
@@ -355,7 +359,8 @@ theorem cmNormalTransportDatum_toTarget_left {V U : SmallCMLevel D} (b : V ⟶ U
     (M' : Action (ModuleCat Rcoeff) (SmallCMResidualGroup D V V'))
     (c : M.V ⟶ M'.V)
     (hc : ∀ v : V.obj.subgroup,
-      M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v)) ≫ c = c ≫ M'.ρ (QuotientGroup.mk v)) :
+      (M.ρ (QuotientGroup.mk (smallCMTransporterConj D b v))).asHom ≫ c =
+        c ≫ (M'.ρ (QuotientGroup.mk v)).asHom) :
     (transportDatum b φ hφ U' hU' V' hV' T hT hTV' hTU' M M' c hc).toTarget.left =
       (schemes).map (smallCMInclusion D hTV') :=
   rfl
@@ -382,12 +387,14 @@ theorem cmNormalTransportDatum_sheafMap_eq_of_mul {U : SmallCMLevel D} (b₁ b�
     (M' : Action (ModuleCat Rcoeff) (SmallCMResidualGroup D U V'))
     (c₁ c₂ : M.V ⟶ M'.V)
     (hc₁ : ∀ v : U.obj.subgroup,
-      M.ρ (QuotientGroup.mk (smallCMTransporterConj D b₁ v)) ≫ c₁ = c₁ ≫ M'.ρ (QuotientGroup.mk v))
+      (M.ρ (QuotientGroup.mk (smallCMTransporterConj D b₁ v))).asHom ≫ c₁ =
+        c₁ ≫ (M'.ρ (QuotientGroup.mk v)).asHom)
     (hc₂ : ∀ v : U.obj.subgroup,
-      M.ρ (QuotientGroup.mk (smallCMTransporterConj D b₂ v)) ≫ c₂ = c₂ ≫ M'.ρ (QuotientGroup.mk v))
+      (M.ρ (QuotientGroup.mk (smallCMTransporterConj D b₂ v))).asHom ≫ c₂ =
+        c₂ ≫ (M'.ρ (QuotientGroup.mk v)).asHom)
     (w : U.obj.subgroup)
     (hw : b₂.hom.element = b₁.hom.element * (w : D.rationalInvolution.FiniteAdelicPointsᵐᵒᵖ))
-    (hc : c₂ = M.ρ (QuotientGroup.mk w) ≫ c₁)
+    (hc : c₂ = (M.ρ (QuotientGroup.mk w)).asHom ≫ c₁)
     (hY' : IsFiniteGeometricTorsor ((schemes).obj U) (normalTorsor U V' hV').val) :
     (transportDatum b₂ φ hφ₂ U' hU' V' hV' T hT hTV' hTU'₂ M M' c₂ hc₂).sheafMap hY' =
       (transportDatum b₁ φ hφ₁ U' hU' V' hV' T hT hTV' hTU'₁ M M' c₁ hc₁).sheafMap hY' := by
@@ -404,8 +411,8 @@ theorem cmNormalTransportDatum_sheafMap_eq_of_mul {U : SmallCMLevel D} (b₁ b�
       ((cmNormalTransportToSource D C preservation composition unitCoherence associativity
         comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor q existence geometry hRigid b₁ φ hφ₁ U' hU' T
-        hT hTU'₁) ≫ ((etaleTorsorPullbackFunctor φ (SmallCMResidualGroup D U U')).obj
-          (normalTorsor U U' hU').val).ρ (QuotientGroup.mk w⁻¹)).left ≫ pullback.fst _ _
+        hT hTU'₁) ≫ (((etaleTorsorPullbackFunctor φ (SmallCMResidualGroup D U U')).obj
+          (normalTorsor U U' hU').val).ρ (QuotientGroup.mk w⁻¹)).asHom).left ≫ pullback.fst _ _
     rw [MorphismProperty.Comma.comp_left, Category.assoc, etaleTorsorPullbackFunctor_ρ_fst,
       cmNormalTransportToSource_fst, cmNormalTransportToSource_fst_assoc]
     change (schemes).map (smallCMTransporterRestrict D b₂ T U' hTU'₂) =
@@ -422,7 +429,7 @@ theorem cmNormalTransportDatum_sheafMap_eq_of_mul {U : SmallCMLevel D} (b₁ b�
   · rw [Category.id_comp]
     apply MorphismProperty.Over.Hom.ext
     rw [cmNormalTransportDatum_toTarget_left, cmNormalTransportDatum_toTarget_left]
-  · change c₂ = M.ρ (QuotientGroup.mk w⁻¹)⁻¹ ≫ c₁
+  · change c₂ = (M.ρ (QuotientGroup.mk w⁻¹)⁻¹).asHom ≫ c₁
     rw [← QuotientGroup.mk_inv, inv_inv]
     exact hc
 
@@ -460,13 +467,13 @@ theorem cmHarrisTransportSheafMap_eq_of_mem (Y : CMScaledLevel D ρ p) (f : Y �
     (cmScaledTransportLevel D p ρ f k' k) (cmScaledTransportLevel_le D p ρ f k' k)
     (cmScaledTransportLevel_le_coeff D p ρ f k' k) (cmScaledTransportLevel_conj D p ρ f k' k) hT₁
   have hc : cmHarrisTorsionTransport D ρ p f hk =
-      ((coefficients Y.level).action (op k)).ρ (QuotientGroup.mk ⟨_, hf⟩) ≫
+      (((coefficients Y.level).action (op k)).ρ (QuotientGroup.mk ⟨_, hf⟩)).asHom ≫
         cmHarrisTorsionTransport D ρ p (𝟙 Y) hk := by
     ext x
     obtain ⟨a, rfl⟩ := Submodule.Quotient.mk_surjective _ x
     change (cmHarrisTorsionTransport D ρ p f hk).hom (Submodule.Quotient.mk a) =
       (cmHarrisTorsionTransport D ρ p (𝟙 Y) hk).hom
-        (((coefficients Y.level).ρ (op k) (QuotientGroup.mk ⟨_, hf⟩)).hom
+        (((coefficients Y.level).ρ (op k) (QuotientGroup.mk ⟨_, hf⟩)).asHom.hom
           (Submodule.Quotient.mk a))
     rw [cmHarrisCoefficientDiagram_action_mk, cmHarrisTorsionTransport_mk,
       cmHarrisTorsionTransport_mk, cmHarrisLatticeTransport_id]

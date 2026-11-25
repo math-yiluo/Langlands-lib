@@ -1,7 +1,5 @@
 # Reducing the class equalizer immersion to Noetherian affine bases
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Picard.ClassEqualizerReduction`. It
 imports the Library modules
 `Langlands.AlgebraicGeometry.Picard.ClassEqualizerLocus` (`CutsOut`,

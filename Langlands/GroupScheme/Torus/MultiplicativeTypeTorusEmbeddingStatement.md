@@ -1,7 +1,5 @@
 # Statement: groups of multiplicative type embed in tori
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeTorusEmbeddingStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:
@@ -66,8 +64,8 @@ cover. This is explanation only.
 - **S-torus.** Conrad's Definition 3.1.1 (p.81): "An S-torus is an S-group T → S of
   multiplicative type with smooth connected fibers", and on the same page: "By Proposition
   B.3.4, any S-torus becomes a power of G_m étale-locally on S". The proposition uses the
-  Library's étale form `RelativeTorus.IsTorus`, as do the other published relative torus
-  statements. The rank may vary between members of the splitting cover, as it may for an
+  Library's étale form `RelativeTorus.IsTorus`, as do the other relative torus statements of
+  the Library. The rank may vary between members of the splitting cover, as it may for an
   `S`-torus over a disconnected base.
 - **Closed S-subgroup.** "H is a closed S-subgroup of T" means that there is a homomorphism
   `i : H ⟶ T` of group schemes over `S` whose underlying morphism of schemes is a closed

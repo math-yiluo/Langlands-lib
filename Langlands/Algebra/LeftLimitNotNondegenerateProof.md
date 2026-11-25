@@ -1,6 +1,6 @@
 # A nondegenerate module with a degenerate completion
 
-Worker 258. This module proves the published
+This module proves the published
 `Langlands.Algebra.LeftLimitNotNondegenerateStatement`.
 The source assertion is Renard, *Représentations des groupes réductifs p-adiques*
 (9 July 2026), I.1.4, printed page 10 / PDF page 16: the completion need not be

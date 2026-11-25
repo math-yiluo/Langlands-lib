@@ -1,6 +1,7 @@
 # Rational sections under an isomorphism of base schemes
 
-This internal prerequisite for Task 5428 compares the Library's two actual
+This internal prerequisite for Kaletha–Prasad Axiom 4.1.17 (compatibility with
+isomorphisms) compares the Library's two actual
 section-extension maps. It follows from the pullback universal property and the
 existing point functor, without an additional group-scheme hypothesis.
 

@@ -246,7 +246,7 @@ theorem rightPsiCoefficientEquiv_psiMinus (T : F.TopologicalData) {m r : ℕ} (h
       (Mirabolic.psiMinusCharacter T r (rightPsiFirstBlock hr hm l.val (rightPsiLevi_mem hr hm l)) :
           ℂ) •
         (Jacquet.Localization.mk A.representation (radical r F.Carrier) 1
-          (A.representation (levi (rightPsiFirstBlock hr hm l.val (rightPsiLevi_mem hr hm l))) w) ⊗ₜ
+          (A.representation (levi (rightPsiFirstBlock hr hm l.val (rightPsiLevi_mem hr hm l))) w) ⊗ₜ[ℂ]
             B.representation (rightPsiSecondBlock hr hm l.val (rightPsiLevi_mem hr hm l)) b) := by
   let _ := T.topology
   exact (TensorProduct.map_tmul _ _ (Mirabolic.psiMinusQuotient T r A w) b).trans

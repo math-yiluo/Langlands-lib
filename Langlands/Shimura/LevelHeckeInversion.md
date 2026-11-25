@@ -1,6 +1,6 @@
 # Inversion of the counting-measure level Hecke algebra
 
-Author: Worker 146. Internal construction for transferring left to right
+Internal construction for transferring left to right
 Noetherianity in Renard VI.10.6(iv).
 
 The construction permutes the double-coset basis by inversion. Its value at

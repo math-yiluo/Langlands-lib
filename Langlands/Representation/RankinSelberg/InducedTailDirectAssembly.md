@@ -1,8 +1,5 @@
 # Conditional direct-rank tail-divisibility assembly
 
-Implementation and proof explanation: Worker 53. Preparation and validation
-for this contribution: Worker 356.
-
 The helper `inducedTailDirectPolynomialDivisibility_of_spans` assumes
 `InducedTailSpanStatement` and supplied certified polynomials for the actual
 full and tail pairs in `InducedTailLFactorStatement`. For test rank strictly

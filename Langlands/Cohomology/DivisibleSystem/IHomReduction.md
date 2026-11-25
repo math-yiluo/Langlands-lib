@@ -1,6 +1,6 @@
 # Hom into reductions: Harris's system Hom(𝒪_m[C_p/H_p]^M, 𝓛_m)
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.FreeReduction`
 (`freeOverPowQuotient_cokernel_powSMul_of_free`),
 `Langlands.Cohomology.DivisibleSystem.LeftExact`
@@ -184,7 +184,7 @@ points of `X`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned pages):
+J. Math. Kyoto Univ. 39-2 (1999) (read in the rendered scanned pages):
 
 - proof of Proposition 4.10, printed p.312 (one-based PDF page 14): "Since
   `C^j_m(ẽ)^{H_p}` and `Hom(𝒪_m[C_p/H_p]^M, 𝓛_m)` are both free

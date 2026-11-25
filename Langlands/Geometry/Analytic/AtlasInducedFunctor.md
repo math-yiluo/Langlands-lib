@@ -1,6 +1,6 @@
 # Functorial full bounded induction of arbitrary atlas actions
 
-Author: Worker 56. Namespace: `Langlands.Analytic.AtlasInducedAction`.
+Namespace: `Langlands.Analytic.AtlasInducedAction`.
 
 This internal construction extends `AtlasInducedAction.copiesAction` to a
 functor on actual categorical subgroup actions on supplied affinoid atlas

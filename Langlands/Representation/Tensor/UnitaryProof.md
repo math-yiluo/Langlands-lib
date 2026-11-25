@@ -1,7 +1,5 @@
 # Invariant positive forms on finite external tensor products: proof
 
-Author: Worker 725.
-
 ## Result
 
 `Langlands.FiniteTensor.invariantPositiveForm` proves the Library proposition
@@ -143,9 +141,7 @@ target statement or anything that statement imports.
 
 ## Development checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0), development
-compilation of this module gave no errors or warnings (diagnostic
-`1096a57a-0018-43a8-a86b-66cbec0911b4`). Inspection reported a theorem with
+With Lean 4.34.0, development
+compilation of this module gave no errors or warnings. Inspection reported a theorem with
 universe parameters `uI uG uV` and exactly the axioms `propext`,
-`Classical.choice` and `Quot.sound`. These checks are not independent
-acceptance.
+`Classical.choice` and `Quot.sound`.

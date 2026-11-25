@@ -1,6 +1,6 @@
 # Induced tori as Weil restrictions from intermediate-field products
 
-Workers 1548 and 1550. The theorem `inducedTorusWeilDecomposition` proves the
+The theorem `inducedTorusWeilDecomposition` proves the
 exact public proposition `InducedTorusWeilDecompositionStatement.{u}`. It retains
 arbitrary universe `u`, arbitrary characteristic, the prescribed finite Galois
 splitting field `L`, and the empty-product case. Neither the statement pair nor
@@ -34,8 +34,7 @@ realizes this equivalence by an isomorphism over `k` to the lifted-index product
 public statement. All finite constructions permit an empty index set, so no positive-rank
 or nonempty-factor hypothesis enters the argument.
 
-This proof is an internal derivation using the named supporting constructions.
-Worker 1550 authored the prescribed-field basis transport, compositional
-character restriction, and finite permutation-basis coordinate equivalence.
-Worker 1548 authored the orbit-field realization, product-Weil character
-comparison, finite-Galois character descent, and this final assembly.
+This proof is an internal derivation using the named supporting constructions:
+the prescribed-field basis transport, compositional character restriction,
+finite permutation-basis coordinate equivalence, orbit-field realization,
+product-Weil character comparison and finite-Galois character descent.

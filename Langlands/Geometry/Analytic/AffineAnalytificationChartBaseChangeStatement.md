@@ -34,6 +34,6 @@ compatibility in the last paragraph of the proof of Proposition 5.11(3)
 in *Weil and Grothendieck approaches to adelic points* (2011), p. 19,
 registered as `conrad-2011-weil-grothendieck-adelic-points`. Neither source
 formulates this particular assertion about the two Library quotient
-presentations. This unit states the fixed-radius comparison; gluing it
+presentations. This module states the fixed-radius comparison; gluing it
 across cofinal radius exhaustions and comparing the localized
 analytifications remain separate steps.

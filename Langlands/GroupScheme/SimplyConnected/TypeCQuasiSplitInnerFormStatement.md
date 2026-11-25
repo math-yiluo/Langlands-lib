@@ -1,7 +1,6 @@
 # Simply connected groups of type `C_n` are inner forms of `Sp_{2n}`: statement
 
-Author: Worker 31, for Task 5986 (`8494af77-9d10-4c2f-b1cd-60dc371fb195`). The module
-contains one `Prop`-valued definition and no proof.
+The module contains one `Prop`-valued definition and no proof.
 
 ## Statement
 
@@ -38,7 +37,7 @@ the adjoint group whose inner action measures the discrepancy of the local isomo
 statement asks for no further condition on these data.
 
 The hypotheses are those of the published `TypeCDivisionFormStatement` except that the
-absolute almost simplicity assumption is omitted; the intended proof does not use it, since
+absolute almost simplicity assumption is omitted; the proof does not use it, since
 the Cartan matrix of type `C_n` already describes a connected Dynkin diagram.
 
 ## Intended proof (not part of the statement)
@@ -56,10 +55,11 @@ with its adjoint group.
 
 ## Role
 
-This is one of four prerequisites in the planned proof of
-`TypeCDivisionFormStatement` (Task 5986). The others are
+This is one of four prerequisites in the proof of
+`TypeCDivisionFormStatement` (`typeCDivisionForm`, module `TypeCDivisionFormProof`). The others are
 `SymplecticInnerFormAntihermitianStatement`, `AntihermitianSymplecticSplitRankStatement`
-and `TypeCDistinguishedVerticesStatement`; a reduction of the target to these four compiles.
+and `TypeCDistinguishedVerticesStatement`; the reduction of the target to these four is
+`typeCDivisionForm_of_inputs` (module `TypeCDivisionFormReduction`).
 
 ## Source and provenance
 

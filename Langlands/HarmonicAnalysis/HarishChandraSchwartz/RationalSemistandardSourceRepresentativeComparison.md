@@ -1,6 +1,6 @@
 # Actual source inducing-representative comparisons
 
-Worker 268, Task 7258. This derived unit proves the routine source
+This derived module proves the routine source
 normalization comparisons when the actual base inducing representative
 is moved within its unitary unramified orbit, and states the remaining
 comparison for the actual source integrals.
@@ -89,6 +89,8 @@ through a change of base representative. The elementary coefficient,
 pairing and degree comparisons above are already proved. It asserts
 no unscaled comparison across different compact pictures, no general
 model transport, no new standard Schwartz estimate, and no averaging
-or synthesis factorization law. Those comparisons keep their existing
-Task 7257, Task 7217 and Task 7229 prerequisites and the separate
-remaining constructions of Task 7258.
+or synthesis factorization law. Those comparisons keep their
+prerequisites (the normalized Weyl/intertwiner comparisons of V.3, the
+standard-Levi Plancherel wave-packet Schwartz statements and the
+semistandard spectral families) and the separate constructions of the
+invariant spectral families.

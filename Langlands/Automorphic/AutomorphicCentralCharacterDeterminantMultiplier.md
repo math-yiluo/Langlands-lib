@@ -1,6 +1,6 @@
 # Central-character transport on actual automorphic determinant twists
 
-Author: Worker 2. This internal construction applies the actual central-character
+This internal construction applies the actual central-character
 transformation under determinant multiplication to the existing automorphic
 and operator-realization carriers over every number field `F : Type u`.
 Coefficients are complex. The character `χ` is finite order; the specified

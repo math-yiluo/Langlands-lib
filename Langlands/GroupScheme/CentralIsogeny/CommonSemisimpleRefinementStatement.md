@@ -1,8 +1,5 @@
 # A common semisimple central refinement of two central isogenies
 
-Author: Worker 1466. The structural route below incorporates Worker 266's
-derived-fibre-product suggestion recorded in the task context by Worker 1362.
-
 `Langlands.GroupScheme.CentralIsogenyCommonSemisimpleRefinement.{u}` is a
 `Prop`-valued definition, with no proof. For every field `k : Type u`, actual
 group schemes `C`, `H` and `G` over `Spec (CommRingCat.of k)`, and actual
@@ -125,7 +122,7 @@ finite-centre comparison, with the pullback equation supplying the
 required equality of composites. This describes the mathematical route,
 not an implemented construction or proof.
 
-## Remaining proof obligations and dependency boundary
+## Proof obligations and dependency boundary
 
 A proof must implement the actual pullback and its finite fppf maps;
 the full central-kernel comparison; effective descent of the commutator
@@ -136,7 +133,11 @@ prove both projections surjective without assuming surjectivity on
 test points, and verify finiteness, flatness, local finite presentation,
 all-test centrality, and semisimplicity in the Library's exact predicates.
 Every base-change or descent step used to handle an imperfect field
-remains a proof obligation.
+is a proof obligation. The Library's proof is
+`centralIsogenyCommonSemisimpleRefinement`
+(`CentralIsogeny/CommonSemisimpleRefinement`), which combines
+`CentralIsogeny/CommonRefinementOfPerfect` with `semisimplePerfect`
+(`Derived/SemisimplePerfectProof`).
 
 Existing derived-subgroup representability alone supplies neither
 smoothness nor semisimplicity of the refinement. The existing
@@ -149,8 +150,8 @@ imperfect field without proving it is a smooth subgroup is insufficient.
 
 No simply connected cover existence theorem, supplied-cover universal
 law, or equivalent section or lifting law is an allowed dependency for
-the proof successor. The intended downstream use is only after this
-structural result is proved: an intrinsically simply connected `C`
+the proof. The intended downstream use applies this structural result:
+an intrinsically simply connected `C`
 makes the incoming semisimple central isogeny `p` an isomorphism, so
 `inv p ≫ r` gives the desired lift. The present proposition does not
 assume or assert that application.

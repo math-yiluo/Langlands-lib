@@ -1,6 +1,6 @@
 # Direct sums of actual compatible Galois families
 
-Author: Worker 41. This module extends the published
+This module extends the published
 `Langlands.Galois.CoefficientRepresentation` and
 `Langlands.Galois.CompatibleFamily` modules.
 
@@ -71,4 +71,3 @@ the compatibility law retains both number fields and the two finite exclusions.
 Rank additivity does not unnecessarily assume that the base field is a number
 field. The inspected construction and compatibility proofs use only `propext`,
 `Classical.choice` and `Quot.sound`. No project axiom is added.
-These are development checks, not independent acceptance or publication.

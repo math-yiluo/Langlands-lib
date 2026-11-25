@@ -60,11 +60,10 @@ This file adds no new mathematics. It combines published Library theorems that p
 hypothesis of the published reduction. The axioms used are `propext`, `Classical.choice` and
 `Quot.sound`.
 
-The objective of Task 6202 lists three prerequisites of the source route. The provenance notes in
+The source route to this result has three prerequisites. The provenance notes in
 `RealGenericParameterReduction.md` and `RealGenericLargeReduction.md` describe that route. The
-proof here proves the exact target without passing through two of them. Under the operator's
-standing ruling 4 on listed prerequisites, these two are recorded as outside both the result
-and its argument:
+proof here proves the exact target without passing through two of them. These two are outside
+both the result and its argument:
 
 - **Algebraic to continuous genericity.** The proof does not show that the nonzero algebraic
   Whittaker functional of `IsRealGenericGKModule n π` gives a continuous Whittaker functional,
@@ -82,7 +81,7 @@ and its argument:
   `realStandardLie n ds`. `StandardModule.md` gives the comparison with classical induction only
   as informal explanation. No comparison theorem is used.
 
-The proof does pass through the remaining listed prerequisite, Vogan's irreducibility theorem,
+The proof does pass through the remaining prerequisite, Vogan's irreducibility theorem,
 in the form of item 3. That form is the Library's model with "large" read as maximally faithful
 (Vogan 1978, Definition 6.1 and Theorem 6.2, step (a) ⇒ (f)). In addition, the proof neither
 proves nor uses existence or uniqueness of Langlands data for an arbitrary target module (see

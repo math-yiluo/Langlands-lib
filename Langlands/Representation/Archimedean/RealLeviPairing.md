@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviPairing`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It is
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It is
 the first of three modules (`RealLeviPairing`, `RealLeviBump`, `RealLeviNonvanishing`) for the
 nonvanishing step of the single-shot Langlands-quotient argument. The entry statement of the
 three modules is `RealLeviNonvanishingStatement` (see `RealLeviNonvanishing.md`). This module
@@ -14,7 +14,7 @@ namespace `Langlands.Archimedean.RealLeviPairing`.
 
 ## Notation
 
-From the earlier modules of this task:
+From earlier modules:
 
 * `RealLeviChartIntegralStatement` (namespace `RealLeviChart`): for block sizes
   `sz : Fin c → ℕ` and `N = ∑_i sz_i`, `cls sz p` is the block of the position `p`, `Coord sz`

@@ -51,9 +51,12 @@ remain in the direct fixed level.
 
 The provenance is the existing actual pointed Weil-frame base-change
 comparison, its monodromy equation and the direct/successive restriction
-isomorphism. This unit proves a pointwise equivalence with image invariants. It
+isomorphism. This module proves a pointwise equivalence with image invariants. It
 does not identify them with equivariant functions on a cover fibre, prove
 naturality of such a comparison, extend the orbit-cover representation to the
 full test category or construct the normalized CM moduli scheme. Output
 admissibility, smoothness, projectivity and
-`DivisionCMRepresentabilityStatement` remain open.
+`DivisionCMRepresentabilityStatement` are not proved here; the Library proves
+`DivisionCMRepresentabilityStatement` only under further premises, for example
+in `divisionCMRepresentabilityStatement_of_geometric` in
+`Langlands.Shimura.PEL.HarrisTaylorCMDivisionAssembly`.

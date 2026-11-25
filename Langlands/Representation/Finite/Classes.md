@@ -82,7 +82,7 @@ theorems to those hypotheses.
 ## Dependencies and scope
 
 There are no project mathematical imports. The environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, and Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
@@ -92,5 +92,4 @@ The imported Mathlib modules are `RepresentationTheory.Character`,
 The construction does not assert cancellation, a representation-ring
 identification, character faithfulness, or semisimplicity. Finite-index
 induction, group completion, and the integral induced-character submodule are
-subsequent construction groups within the assigned task. Independent semantic
-review and current Library integration are required for acceptance.
+constructed in `Finite.Induction` and `Finite.Virtual`.

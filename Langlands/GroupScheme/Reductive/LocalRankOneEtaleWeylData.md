@@ -74,6 +74,8 @@ closed centralizer inclusion; involutivity follows from the explicit ring
 reflection. Neither result imposes reducedness, noetherianity, Henselianity,
 or a characteristic restriction.
 
-This contribution constructs the normalizing section and proves its square
-property. Unit cell coordinates, `RingRootCell.WeylData`, normalization descent,
-and the unchanged full local Isomorphism Theorem remain to be proved.
+This module constructs the normalizing section and proves its square
+property. It does not construct unit cell coordinates, `RingRootCell.WeylData`
+or normalization descent, or prove the unchanged full local Isomorphism Theorem,
+which the Library proves as `localSplitIsomorphismTheorem` in
+`LocalSplitIsomorphismTheoremProof`.

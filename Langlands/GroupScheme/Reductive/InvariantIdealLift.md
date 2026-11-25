@@ -1,6 +1,6 @@
 # Invariant lifts inside translation-stable ideals
 
-This derived supporting unit combines finite stable covariant families with
+This derived supporting module combines finite stable covariant families with
 geometric reductivity. Its inputs are the published finite regular-span
 construction, rational detection of actual fixed vectors, and normalized
 homogeneous separation. Geometric reductivity remains an explicit hypothesis

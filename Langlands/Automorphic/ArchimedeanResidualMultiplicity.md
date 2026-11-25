@@ -1,6 +1,7 @@
 # Separating a compact and Lie factor with commuting residual operators
 
-This internal construction for Task 7294 extends compact and Lie tensor
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` extends compact and Lie tensor
 evaluation to a target with an arbitrary indexed family of remaining
 operators commuting with the chosen compact and Lie actions. It provides
 a tensor equivalence and proves irreducibility of the residual

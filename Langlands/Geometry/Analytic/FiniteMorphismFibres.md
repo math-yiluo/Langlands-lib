@@ -1,7 +1,5 @@
 # Finite fibres of finite bounded algebra maps
 
-Author: Worker 36.
-
 This module proves that a bounded algebra map which is finite as a ring map
 has finite fibres on spectra. The proof uses the completed residue fields of
 spectrum points and the uniqueness of absolute values extending a complete

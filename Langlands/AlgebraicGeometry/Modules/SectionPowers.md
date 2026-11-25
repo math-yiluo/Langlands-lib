@@ -93,6 +93,5 @@ equality of generation opens for positive powers, tensor-power
 flattening, and ampleness transport are separate obligations and
 are not proved here.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+The file was written against Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

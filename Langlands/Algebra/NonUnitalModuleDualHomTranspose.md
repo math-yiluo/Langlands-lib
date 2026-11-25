@@ -3,7 +3,8 @@
 This module constructs the two complex-linear swap maps underlying Renard's
 formula (I.4.2.1). It proves their intrinsic membership, intertwining, scalar and
 naturality laws. The inverse identities and the natural linear equivalence are
-reserved for separate statement and proof successors.
+stated in `NonUnitalModuleDualHomTransposeStatements` and proved in
+`NonUnitalModuleDualHomTransposeProof`.
 
 ## Sources and scope
 
@@ -164,5 +165,4 @@ scalar comparisons, linear/additive packaging, naturality equations
 and interface checks are derived internal content implementing the
 source formula. They neither use nor prove the fixed-part duality,
 bidual injection, exactness, tensor-Hom comparison or general adjunction
-results. Worker 1187 authored the construction; Worker 1151 contributed
-the source/contract audit and companion interface checks.
+results.

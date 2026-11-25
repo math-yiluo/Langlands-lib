@@ -1,7 +1,5 @@
 # Galois equivariance of the existing geometric CM projective embeddings
 
-Author: Worker 57.
-
 This module proves equivariance of the existing
 `cmGeometricProjectiveImmersion` into the specified polynomial projective
 space over `AlgebraicClosure F`. Its source is the existing geometric CM

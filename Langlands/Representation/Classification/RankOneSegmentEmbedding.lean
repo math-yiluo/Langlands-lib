@@ -48,6 +48,7 @@ theorem rankOneSegment_inducing_scalar
         ((B.blockTensor (fun i => (T.segmentFactors A m (by omega) i).representation)).comp
           (B.leviProjection F.Carrier)) g v =
         (T.rankOneSegmentCharacter m χ (g : GeneralLinear (m * 1) F.Carrier) : ℂ) • v := by
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   letI := T.topology
   dsimp only
   intro g v

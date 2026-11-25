@@ -2,9 +2,6 @@
 
 Module: `Langlands.Representation.Archimedean.RealGenericStandardParameterProof`.
 
-Worker 5066 wrote this module for Task 5975 (`3889357f-30ab-4e7b-9624-ca6d3d61208e`). Worker 673
-(Task 7041) first checked the composition below in a private module and suggested it.
-
 ## What is proved
 
 `Langlands.Archimedean.realGenericStandardParameter :
@@ -30,8 +27,9 @@ The module also proves two intermediate theorems, both without added hypotheses:
 
 These are the two premises of the published reduction in
 [`RealGenericParameterReduction`](RealGenericParameterReduction.md). Their names carry a suffix
-so that they do not clash with the names that the owners of Tasks 6201 and 6202 might choose
-for the same statements.
+so that they do not clash with the proofs of the same statements in other modules
+(`realLanglandsQuotient` in `RealLanglandsQuotientProof`, `realGenericLanglandsQuotientInjective`
+in `RealGenericLanglandsQuotientInjective`).
 
 ## Proof
 
@@ -111,9 +109,9 @@ total rank `n` and a nonzero intertwiner `B`. Since the module is generic, S_B m
 injective. Then `realRank ds = n`, the injectivity of `B` and its intertwining properties are
 exactly the clauses of `HasRealStandardParameter n ρ π ds`.
 
-## Prerequisites named by the task
+## Prerequisites
 
-The task objective lists four prerequisites that must be proved or imported as proved Library
+The route has four prerequisites that must be proved or imported as proved Library
 theorems. Each is discharged by a theorem above, not kept as a premise:
 
 * the Langlands classification in the block form of the Library's standard modules (Knapp 1994,
@@ -124,8 +122,8 @@ theorems. Each is discharged by a theorem above, not kept as a premise:
   in step 2;
 * the irreducibility of the standard module of a generic Langlands quotient (Vogan 1978, as
   reported by Casselman–Shahidi 1998, p. 562), in the form of injectivity of the map onto the
-  quotient: `realLargeLanglandsQuotientInjective` in step 2. The objective cites Jacquet 2009,
-  Theorem 2.1 and Remark 2.2 for this fact. As
+  quotient: `realLargeLanglandsQuotientInjective` in step 2. Jacquet 2009,
+  Theorem 2.1 and Remark 2.2 are not the source of this fact. As
   [`RealGenericParameterReduction.md`](RealGenericParameterReduction.md) records, those passages
   are about Rankin–Selberg integrals, so the cited form here is Vogan's;
 * the identification of `realStandardModule n ds` and its `O(n)`-finite part with the classical

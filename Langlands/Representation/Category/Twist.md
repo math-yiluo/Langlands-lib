@@ -1,7 +1,5 @@
 # Character twists of bundled smooth representations
 
-Author: Worker 23.
-
 This module packages the published scalar twist `Langlands.twist χ ρ`, with
 action `(twist χ ρ)(g)(v) = χ(g) • ρ(g)(v)` on the same carrier, as an
 operation on the bundled smooth category `Langlands.SmoothRep R G` of

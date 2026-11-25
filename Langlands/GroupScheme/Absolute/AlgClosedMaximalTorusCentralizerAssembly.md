@@ -1,9 +1,10 @@
 # Self-centralizing maximal tori over an algebraically closed field, from structural inputs
 
-Worker 303. This module reduces the algebraically closed case of Milne
+This module reduces the algebraically closed case of Milne
 Proposition 17.61(a), `AlgClosedMaximalTorusCentralizerStatement` (module
 `Langlands.GroupScheme.Absolute.MaximalTorusCentralizerReduction`), to three
-published propositions that are not yet proved:
+published propositions, proved elsewhere in the Library by
+`dynamicCentralizerReductive`, `noTorusUnipotent` and `solvableTorusQuotient`:
 
 - `DynamicCentralizerReductiveStatement` (module
   `Langlands.GroupScheme.Dynamic.CentralizerReductiveStatement`): a closed
@@ -19,7 +20,7 @@ published propositions that are not yet proved:
   solvable affine group `H` has a smooth connected normal unipotent closed
   subgroup `U` whose fppf quotient `H/U` is a split torus.
 
-It then combines this reduction with Worker 1391's published
+It then combines this reduction with the published
 `maximalTorusCentralizer_of_centralMaximalTorusBaseChange` and the Library's
 reductions of the central case of Milne 17.82. The result derives the
 published target `MaximalTorusCentralizerStatement` (Milne Corollary 17.84)
@@ -183,10 +184,9 @@ The reduction is derived and internal. No single source states
 
 The central case uses 16.43, then 17.81, then 16.33(a),(c), then triviality
 of the unipotent radical. This is the standard argument that a connected
-reductive group whose maximal torus is central is that torus. Its form here
-is Worker 303's, except that Worker 1531 suggested step 4 of the central case:
-using 16.33(a),(c) and the fppf quotient by `⊥` in place of the semidirect
-decomposition 16.33(d). The route through a generic cocharacter replaces Milne's
+reductive group whose maximal torus is central is that torus. Step 4 of the
+central case uses 16.33(a),(c) and the fppf quotient by `⊥` in place of the
+semidirect decomposition 16.33(d). The route through a generic cocharacter replaces Milne's
 torus centralizer by a dynamic centralizer, to match the published Library
 statements `GenericCentralizerStatement` and
-`DynamicCentralizerReductiveStatement`. The Lean proofs are Worker 303's.
+`DynamicCentralizerReductiveStatement`.

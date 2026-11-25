@@ -1,7 +1,5 @@
 # Center orbits as images of an annihilating center quotient
 
-Author: Worker 94.
-
 This internal linear-algebra construction uses the published actual
 archimedean enveloping center, its complex-linear orbit map and its action
 on genuine smooth functions. The number-field universe and natural rank

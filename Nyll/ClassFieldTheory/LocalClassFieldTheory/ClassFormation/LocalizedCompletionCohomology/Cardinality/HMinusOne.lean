@@ -1,0 +1,125 @@
+/-
+Copyright (c) 2026 Naganori Yamaguchi (https://github.com/n-yamaguchi-0729). All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Naganori Yamaguchi (assisted by OpenAI Codex)
+-/
+
+module
+
+public import Nyll.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalizedCompletionCohomology.Cardinality.H0
+public import Nyll.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalizedCompletionCohomology.Algebra
+public import Nyll.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalBlocks.Induced
+public import Nyll.ValuedFieldTheory.Ramification.HilbertRamification.AlgebraicLocalization
+public import Nyll.ValuedFieldTheory.Valuation.Completion.FiniteLocalization
+public import Nyll.GaloisCohomology.Cyclic.Herbrand.HerbrandLowDegree.Core
+public import Nyll.GaloisCohomology.Cyclic.Herbrand.Induced
+public import Nyll.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalizedCompletionCohomology.Generator
+public import Nyll.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalizedCompletionCohomology.HerbrandEquiv
+public import Nyll.ClassFieldTheory.LocalClassFieldTheory.Finite.LocalReciprocity.FiniteExtensionClassFieldAxiom
+public import Nyll.ClassFieldTheory.LocalClassFieldTheory.ClassFormation.LocalizedCompletionCohomology.Finite
+public import Nyll.ValuedFieldTheory.Ramification.HilbertRamification.DecompositionFieldLocalization
+public import Nyll.ValuedFieldTheory.Valuation.AbsoluteValue.Completion
+
+/-!
+# Degree-minus-one localized Herbrand cardinality
+-/
+
+
+
+@[expose] public section
+
+open AlgebraicNumberTheory.Valuations
+open HilbertRamification
+open LocalClassFieldTheory
+open LocalFieldTheory
+open CyclicCohomology
+open CyclicCohomology.ProfiniteCohomology.Herbrand
+open scoped TensorProduct
+
+noncomputable section
+
+namespace LocalClassFieldTheory
+
+section LocalTateComparison
+
+variable {k ell : Type}
+    [Field k] [Field ell] [Algebra k ell]
+    [FiniteDimensional k ell] [IsGalois k ell]
+
+theorem localHerbrandHMinusOne_card_eq_one
+    (vK : AbsoluteValue k ℝ) (hvK : vK.IsNontrivial)
+    (w : AbsoluteValueExtension vK ell)
+    (σ : ell ≃ₐ[k] ell)
+    (hgen : ∀ τ : ell ≃ₐ[k] ell,
+      τ ∈ Subgroup.zpowers σ)
+    [ValuativeRel vK.Completion]
+    [IsNonarchimedeanLocalField vK.Completion] :
+    let hK : Algebra k w.1.Completion :=
+      AbsoluteValue.extensionCompletionAlgebra
+        (K := k) w.1
+    let _ : SMul k w.1.Completion := hK.toSMul
+    let _ : Algebra vK.Completion w.1.Completion :=
+      AbsoluteValue.completionAlgebra vK w.1 w.2
+    let _ : Algebra k (LocalizedCompletion vK w) :=
+      localizedCompletionGlobalAlgebra vK w
+    let _ : IsScalarTower k vK.Completion (LocalizedCompletion vK w) :=
+      localizedCompletionIsScalarTower vK w
+    let _ : FiniteDimensional vK.Completion
+        (LocalizedCompletion vK w) :=
+      localizedCompletionModuleFinite vK hvK w
+    let _ : IsGalois vK.Completion
+        (LocalizedCompletion vK w) :=
+      HilbertRamification.algebraicLocalization_isGalois vK w
+    let _ : Fintype (absoluteValueDecompositionGroup k w.1) :=
+      Fintype.ofFinite _
+    let _ : MulDistribMulAction (absoluteValueDecompositionGroup k w.1)
+        (LocalizedCompletion vK w)ˣ :=
+      decompositionGroupLocalUnitsAction vK hvK w
+    let _ : Finite
+        (HerbrandHMinusOne
+          (absoluteValueDecompositionGroup k w.1)
+          (LocalizedCompletion vK w)ˣ
+          (subgroupGeneratorOfGenerator
+            (absoluteValueDecompositionGroup k w.1)
+            σ hgen)) :=
+      localHerbrandHMinusOneFinite
+        vK hvK w σ hgen
+    Nat.card
+        (HerbrandHMinusOne
+          (absoluteValueDecompositionGroup k w.1)
+          (LocalizedCompletion vK w)ˣ
+          (subgroupGeneratorOfGenerator
+            (absoluteValueDecompositionGroup k w.1)
+            σ hgen)) = 1 := by
+  intro hK hSMulK hCompletion hGlobal hTower hFinite hGalois hFintype hAction hFiniteHMinusOne
+  let g :=
+    localizedCompletionGaloisGenerator
+      vK hvK w σ hgen
+  let hg :=
+    localizedCompletionGaloisGenerator_generates
+      vK hvK w σ hgen
+  let hcard :=
+    finiteExtensionUnits_tate_card_of_generator
+      vK.Completion (LocalizedCompletion vK w)
+      g hg
+  calc
+    Nat.card
+        (HerbrandHMinusOne
+          (absoluteValueDecompositionGroup k w.1)
+          (LocalizedCompletion vK w)ˣ
+          (subgroupGeneratorOfGenerator
+            (absoluteValueDecompositionGroup k w.1)
+            σ hgen)) =
+      Nat.card
+        (tateCohomology
+          (Rep.ofAlgebraAutOnUnits vK.Completion
+            (LocalizedCompletion vK w)) (-1)) :=
+      Nat.card_congr
+        (localHerbrandHMinusOneEquivUnitsTateHminusOne
+          vK hvK w σ hgen)
+    _ = 1 := hcard.cardHminusOne
+
+
+end LocalTateComparison
+
+end LocalClassFieldTheory

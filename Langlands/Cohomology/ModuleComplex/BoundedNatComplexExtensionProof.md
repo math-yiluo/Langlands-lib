@@ -14,6 +14,6 @@ The same two cases give finite projectivity of each integer-degree term.
 Zero modules are finite and projective. In a nonnegative degree, the proof
 transports both properties along the canonical module isomorphism.
 
-This is an internal proof by Worker 137 using Mathlib's existing extension
+This is an internal proof using Mathlib's existing extension
 construction and the Library's definition of `IsStrictlyPerfect`. It adds
 no geometric hypothesis or derived-sections comparison.

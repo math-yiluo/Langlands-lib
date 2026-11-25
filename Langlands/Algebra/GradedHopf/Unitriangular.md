@@ -1,8 +1,6 @@
 # Factors of a unitriangular factorization
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. Provenance: internal.
+Provenance: internal.
 This is an elementary matrix fact: in an LU factorization the entries of the factors are
 polynomial expressions in the entries of the product. It is used in
 `Langlands.Algebra.GradedHopf.BigCell` to prove that the big-cell map is surjective.

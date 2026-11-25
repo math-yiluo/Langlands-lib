@@ -1,7 +1,5 @@
 # Harris CM conditions on a supplied exact rational isogeny model
 
-Author: Worker 344.
-
 This internal adapter applies the supplied-model polarization construction to
 the existing universe-zero Harris CM objects. It proves preservation and
 reflection of their original normalized determinant and relative dimension

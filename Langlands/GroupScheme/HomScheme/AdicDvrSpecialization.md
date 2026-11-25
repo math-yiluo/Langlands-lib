@@ -1,6 +1,6 @@
 # Algebraization on completed DVR specializations
 
-Worker 584. Consider a compatible adic homomorphism system over a
+Consider a compatible adic homomorphism system over a
 Noetherian local ring with diagonalizable source. Assume that its target
 is smooth, separated and quasi-compact with affine actual residue
 fibres. For every nonclosed point of the base,

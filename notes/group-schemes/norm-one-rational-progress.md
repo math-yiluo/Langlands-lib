@@ -1,10 +1,7 @@
 # Norm-one tori: rational lattices and split rank zero
 
-Author: Worker 1107, 4 November 2026.
-
-This focused source-to-declaration ledger records two independently accepted,
-published proofs in the algebraic group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`, revision 2. It supplements the
+This focused source-to-declaration ledger, dated 4 November 2026, records two
+proofs in the Library in the algebraic group-scheme program. It supplements the
 [field-torus and rational-center ledger](field-tori-central-progress.md)
 in thematic families 2, 5 and 6. All eight families and the concrete
 Deligne, GL and unitary milestones retain their outstanding obligations.
@@ -64,8 +61,7 @@ Thus the coefficient field is auxiliary to the implementation, rather
 than an exported input. The proof uses fixedness and injectivity; it
 does not need every invariant morphism to descend. Its provenance is
 this internal composition of published constructions and results.
-Workers 1107 and 1337 authored the proof unit, using Worker 1107's
-shared draft.
+
 
 ## Split rank zero through actual closed subtori
 
@@ -101,8 +97,7 @@ an image-torus construction for arbitrary cocharacters.
 The norm-one proof supplies the helper's premise by the same
 algebraic-closure, fixedness and injectivity argument used above. It
 imports those published dependencies directly and does not depend on
-the separate rational-lattice proof. Worker 1107 supplied the proof
-draft and Worker 1563 prepared its submission.
+the separate rational-lattice proof.
 
 ## Source correspondence and convention difference
 
@@ -124,31 +119,19 @@ The cited statement Markdown retains the exact source audit and the
 internal derivation. The implemented proofs above discharge that
 derivation for the actual norm-one group.
 
-## Independent acceptance and publication
+## Checks and first appearance in the Library
 
-Worker 1107 checked the independent reports, original machine receipts,
-publication records and current file hashes. Each proof has an accepted
-`lean.proof@1` receipt for Lake build, exact target, unchanged statement
-and frozen inputs.
+Each proof was checked for Lake build, exact target, unchanged statement
+and unchanged inputs, and its current file hashes were checked.
 
-| Proof | Candidate | Machine receipt | Independent review | Publication commit |
-| --- | --- | --- | --- | --- |
-| `WeilGm.normOneRationalLattices` | `e32d27b0-067e-42d9-8f48-bc3a1cb8c239` | `a6553112-d77e-4b13-9b9f-5fc7703ee687` | `e6ca02be-2360-4087-b3b1-785f279bca00`, Reviewer 12893 | `146a43c03e57296c496825ab3176b07715c492b7` |
-| `WeilGm.normOneAnisotropy` | `47f4ae37-9a68-4ac5-b846-0ff752ec58f7` | `96f12faa-7d06-41a7-9c37-d298fb3328e5` | `e59a42d8-1aeb-4904-b812-189dcff07506`, Reviewer 12976 | `442ff746325df5b6d721fee75d430a65c33d09f0` |
+| Proof | First appeared at Library commit |
+| --- | --- |
+| `WeilGm.normOneRationalLattices` | `146a43c03e57296c496825ab3176b07715c492b7` |
+| `WeilGm.normOneAnisotropy` | `442ff746325df5b6d721fee75d430a65c33d09f0` |
 
-The integrations are respectively `164b65581b924e738c68341deefe169f`
-and `eb58070dc640494f9ade91c762dd32b8`. Their fresh integrated builds
-establish source compilation; the original exact-target receipts and
-independent reviews establish the separate proof-acceptance evidence.
-The proof tasks are respectively
-`446953a2-cfcc-4f09-9138-5d3543cee92c` and
-`d7f1369f-1373-4528-86ba-f1d228d6d834`.
 
-The corresponding accepted published statement candidates are
-`a4a66378-95fe-4f4c-a298-16f809f470e5` and
-`44b2faab-0f89-498e-8d2e-a7765a0e2f9d`. Their current pairs match the
-accepted bytes. The rational proof pair and all four anisotropy
-proof/helper files likewise match their frozen bundles. A recovery
+The statement files of both proofs, the rational proof files and all four anisotropy
+proof and helper files match the versions that first entered the Library. A
 compilation of the three proof/helper modules completed with zero
 errors and warnings.
 

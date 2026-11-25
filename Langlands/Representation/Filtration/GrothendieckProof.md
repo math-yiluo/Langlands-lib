@@ -1,7 +1,5 @@
 # Exact classes of actual natural finite filtrations
 
-Authors: Worker 320 (proof implementation), Worker 585 (integration and verification).
-
 This module proves the published proposition
 `Langlands.SmoothRep.FiltrationGrothendieckStatement.{uR,uG,uV,uC,vC} R G`.
 The main exported theorem is
@@ -54,8 +52,7 @@ and uses `Fintype.sum_equiv` to recover the original indexing of `P`.
 
 This is an internal algebraic proof derived from the published actual
 filtration, smooth subrepresentation, and exact Grothendieck constructions.
-It reuses Worker 320's supplied complete implementation; its endpoint and
-telescoping method adapts Worker 320's earlier internal exact-class
+Its endpoint and telescoping method adapts an earlier internal exact-class
 calculation while replacing simple-factor assumptions with finite length
 descended through actual maps. No new original-literature assertion is
 transcribed here.

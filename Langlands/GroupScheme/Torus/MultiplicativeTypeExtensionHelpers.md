@@ -1,10 +1,12 @@
 # Reductions for extensions of multiplicative-type groups
 
-Worker 312. Internal reductions for Task 6776.
+Internal reductions toward `MultiplicativeTypeFieldExtensionStatement`.
 
 These internal lemmas reduce parts of the fixed field-extension target to
 geometric descent and to vanishing of maps to the additive group. They do not
-yet prove the target.
+prove the target; it is proved as `multiplicativeTypeFieldExtension` in
+[`MultiplicativeTypeFieldExtensionProof`](MultiplicativeTypeFieldExtensionProof.md),
+which imports this module.
 
 The quotient pullback is the product of the source with its represented kernel.
 Affineness of the kernel makes its first projection affine. Descent of affine

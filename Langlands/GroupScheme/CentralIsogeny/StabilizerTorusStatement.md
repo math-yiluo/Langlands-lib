@@ -1,7 +1,5 @@
 # Statement: stabilizers of torus-centralized points under central isogenies
 
-Author: Worker 1534.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.CentralIsogenyStabilizerTorusStatement.{u}`, a
 `Prop`-valued `def` with one universe parameter `u`. It is a prerequisite of the

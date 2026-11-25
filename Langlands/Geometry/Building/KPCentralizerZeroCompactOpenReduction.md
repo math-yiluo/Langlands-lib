@@ -1,6 +1,6 @@
 # Compact openness of the actual centralizer-zero subgroup from openness
 
-This internal derived unit reduces the exact target
+This module reduces the exact target
 `CentralizerZeroCompactOpenStatement` to openness of the actual supplied
 centralizer-zero subgroup and three whole structural statements. It uses only
 named Library interfaces and elementary topological-group facts. It does not
@@ -35,7 +35,13 @@ topology and instances agree with those of the exact target.
 
 The openness half of the conclusion is the assumed openness.
 
-The three whole-statement inputs and openness of `P.centralizerZero` remain
-proof obligations. This unit proves none of them, so it does not prove
-`CentralizerZeroCompactOpenStatement` unconditionally. Both local-field
+The Library proves the three whole-statement inputs and openness of
+`P.centralizerZero` elsewhere (`Langlands.BruhatTits.Cartan.actualCentralizerStructure`,
+`Langlands.GroupScheme.centralQuotientReductive`,
+`Langlands.GroupScheme.anisotropicCompactness_proof`, and
+`ParahoricBuildingData.isOpen_centralizerZero` in `KPZeroOpenness`, from two
+further statements). This module proves none of them, so it does not prove
+`CentralizerZeroCompactOpenStatement` unconditionally;
+`ParahoricBuildingData.centralizerZeroCompactOpen` (module
+`KPCentralizerZeroCompactOpenProof`) combines them with this reduction. Both local-field
 characteristics and split rank zero are retained.

@@ -1,7 +1,5 @@
 # Proof: the automorphism group of a pinned split reductive field group
 
-Worker 175.
-
 `Langlands.GroupScheme.pinnedAutomorphismGroup` proves exactly
 [`PinnedAutomorphismGroupStatement.{u}`](PinnedAutomorphismGroupStatement.md)
 for an arbitrary universe `u`. This is Conrad, *Reductive group schemes* (2014),

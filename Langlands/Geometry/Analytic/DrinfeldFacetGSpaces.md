@@ -1,7 +1,5 @@
 # Harris's domains `U(f)` as `H`-spaces, given continuity of the action
 
-Author: Worker 21.
-
 This module makes Drinfeld's upper half space `Ω` a `GL_{d+1}(F)`-space, and
 Harris's domain `U(f)` an `H`-space for every subgroup `H` of the stabilizer
 `S(f)`, in the sense of Berkovich: Hausdorff analytic spaces with a continuous

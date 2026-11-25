@@ -23,7 +23,10 @@ affineness, perfectness, finiteness of constants, or nonempty-`S` premise is use
 
 `adelicLevelIndexEnlarge` sends a finite set `T` to `S` union `T` and is monotone.
 It supplies an elementary enlargement for the subsequent cover argument.
-This unit constructs the cocone and point comparison. Its algebra-colimit
+This module constructs the cocone and point comparison. Its algebra-colimit
 universal property, point bijectivity, generic-fiber identification, independence
 of the model, and topological properties beyond the defining final topology
-remain separate obligations.
+are not part of this module. The first two are proved in
+`AdelicFixedModelAlgebraColimitProof` (`adelicFixedModelAlgebraColimit`) and,
+for locally finitely presented models, `AdelicFixedModelPointComparisonProof`
+(`adelicFixedModelPointComparison`).

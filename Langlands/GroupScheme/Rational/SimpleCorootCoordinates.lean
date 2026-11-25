@@ -81,7 +81,7 @@ private def pointWeightValues (x : rationalPoints p.torus.toGrp) :
   toFun χ := Additive.ofMul
     (rationalCharacterEval ((rationalCharacters.equivCharacterLattice p.torus).symm χ) x)
   map_zero' := by
-    simp [rationalCharacterEval_zero]
+    simp only [AddEquiv.map_zero, rationalCharacterEval_zero, ofMul_one]
   map_add' χ ψ := by
     simp only [map_add, rationalCharacterEval_add]
     rfl

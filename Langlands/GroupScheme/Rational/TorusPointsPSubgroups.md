@@ -1,6 +1,6 @@
 # Rational points of tori in prime characteristic
 
-Worker 302 supplies an internal construction and its elementary
+This module supplies an internal construction and its elementary
 consequences, at arbitrary universe `u`. Let `k` be a field and let `G` be
 an affine group scheme over `k` satisfying the existing torus predicate.
 

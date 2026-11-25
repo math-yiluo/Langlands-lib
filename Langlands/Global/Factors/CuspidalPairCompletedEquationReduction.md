@@ -29,10 +29,8 @@ proves it from a bound on the Satake parameters. It contains:
   (Section 4).
 
 The theorem is a reduction: it does not prove the target. The two premises are separate
-open statements (Section 5). It is an intermediate result of Task 5721 in the sense of the
-"Intermediate results" section of that task's revision 2: it isolates the absolute
-convergence of the Euler products, one of the task's listed prerequisites, and leaves the
-unconditional proof of the target open.
+statements (Section 5); the second is not proved in the Library. It isolates the absolute convergence of the Euler products, one of
+the prerequisites of the target, and leaves the unconditional proof of the target open.
 
 **Sources.** The argument is the classical one:
 
@@ -171,17 +169,19 @@ applies `completedEquationHolds_of_continuationHolds` to
 `CuspidalPairContinuationStatement` at the same data. The archimedean `let`-definitions of
 the two statements are elaborated identically, so they agree definitionally.
 
-## 5. Scope and remaining work
+## 5. Scope and the premises
 
 * The half-plane obtained is not the optimal `Re s > 1` of Getz–Hahn p.309; the target only
   asks for some right half-plane.
-* `CuspidalSatakeBoundStatement` remains to be proved. A route: twist by `|det|^a` to a
+* `CuspidalSatakeBoundStatement` follows from `Langlands.Global.cuspidalSatakeBoundReduction`
+  (module `Langlands.Global.Factors.CuspidalSatakeBoundReduction`) applied to
+  `Automorphic.OperatorRealization.irreducibleCentralCharacter`. A route: twist by `|det|^a` to a
   unitary central character (`Automorphic.cuspidalDeterminantMultiple`), use local
   unitarity of the components (`Automorphic.cuspidalUnitaryLocalUnitarity`), and bound the
   Satake parameters of a unitary unramified irreducible representation, by Jacquet–Shalika
   (2.5) (which also needs genericity of the local components) or by the trivial bound from
   the boundedness of spherical matrix coefficients.
-* `CuspidalPairContinuationStatement` carries the remaining obligations of section 8 of
+* `CuspidalPairContinuationStatement` carries the obligations of section 8 of
   `CuspidalPairFunctionalEquationStatement.md`: the global Rankin–Selberg theory, the
   comparison of the finite integral factors with the classification factors, the
   archimedean local theory and independence of the parameter lists, the norm shift and the

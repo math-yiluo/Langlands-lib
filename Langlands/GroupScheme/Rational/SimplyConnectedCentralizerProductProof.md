@@ -1,7 +1,5 @@
 # Proof: `G(k) = G(k)^♮ · Z_G(S)(k)` (KP Fact 2.6.22, minimal Levi case)
 
-Author: Worker 4674.
-
 This module proves the published statement
 `Langlands.GroupScheme.SimplyConnectedCentralizerProductStatement` of
 [`SimplyConnectedCentralizerProductStatement`](SimplyConnectedCentralizerProductStatement.md)

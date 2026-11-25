@@ -1,10 +1,10 @@
 # Global assembly of Steinberg big-cell data from explicit inputs
 
-Worker 1369's internal assembly reduces the unchanged
+This internal assembly reduces the unchanged
 `SteinbergBigCellStatement.{u}` to four explicit global inputs. It constructs
 the actual data for the original group and unpacks them into the exact
 existential conclusion. It does not prove any of the four inputs and does
-not prove the unconditional host statement.
+not prove the unconditional statement `SteinbergBigCellStatement`.
 
 `SplitSteinbergHeightIrreducibilityStatement` is a `Prop`-valued interface.
 Over every algebraically closed field `k : Type u`, it quantifies over an
@@ -29,8 +29,8 @@ place of the full space nor asserts highest-weight existence.
   the full highest-weight package at every integral dominant character.
 - The preceding per-height irreducibility interface.
 
-These are premises of the construction, with no implicit claim that their
-statement publications supply proofs.
+These are premises of the construction, with no implicit claim that the
+modules stating them supply proofs.
 
 `steinbergBigCellDataOfInputs` takes this structure, an algebraically closed
 field in arbitrary universe `u`, a prime characteristic `q`, an actual
@@ -68,7 +68,9 @@ specified covariant coordinate spaces. No target or imported statement is
 changed.
 
 The provenance is an internal derivation from the imported Library
-constructions and proofs. The four inputs record precisely the remaining
-structural and representation-theoretic obligations of this route. An
-unconditional theorem of the exact host type still requires published
-proofs of those inputs.
+constructions and proofs. The four inputs record precisely the
+structural and representation-theoretic inputs of this route. An
+unconditional theorem of the exact type `SteinbergBigCellStatement` requires
+proofs of those inputs; `steinbergBigCell` (module
+`Reductive.SteinbergBigCellProof`) supplies them and reaches this assembly
+through `steinbergBigCell_of_structuralInputs`.

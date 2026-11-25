@@ -21,7 +21,8 @@ factor of at least the original positive depth. The published weak and
 strict affine-root membership criteria put them back in the required
 original subgroups.
 
-Worker 1612's actual centralizer-zero normalization theorems show that the
+The actual centralizer-zero normalization theorems of
+`CentralizerZeroRootConjugation` show that the
 mapped centralizer zero normalizes both factors. The internal generic
 three-factor subgroup criterion then identifies the carrier of their
 supremum with the literal strict-negative, centralizer-zero, weak-positive

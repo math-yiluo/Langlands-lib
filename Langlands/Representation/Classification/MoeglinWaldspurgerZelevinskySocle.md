@@ -1,7 +1,6 @@
 # Adding a segment with the greatest ending to a Zelevinsky label
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerZelevinskySocle`. Written by
-Worker 5735 for Task 5735.
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerZelevinskySocle`.
 
 Helpers: `exists_segmentSocle_of_mem` (a segment of a datum of socles has a socle),
 `exists_segmentSocle_of_eq`, `segment_eq_mk`; `labelClass_cons` (an irreducible

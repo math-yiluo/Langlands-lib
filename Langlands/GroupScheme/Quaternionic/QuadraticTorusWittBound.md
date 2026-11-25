@@ -1,7 +1,5 @@
 # Split tori in the quaternionic isometry group are bounded by the Witt index
 
-Author: Worker 350.
-
 Module `Langlands.GroupScheme.Quaternionic.QuadraticTorusWittBound`.
 
 ## Setting

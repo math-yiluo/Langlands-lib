@@ -1,7 +1,5 @@
 # Cocharacters over the base field from a point of infinite order
 
-Author: Worker 1387.
-
 This internal module, in the namespace
 `Langlands.GroupScheme.CentralSurjectionImage`, works over a field `k : Type u`
 with a commutative group scheme `Z` over `Spec k`.

@@ -19,11 +19,12 @@ The ambient objects are an arbitrary field `k : Type u`, actual group schemes
 - `C` is a chamber, `F` is a face of `C`, `x ∈ C`, and
   `FacetChamberPositiveSystem F C ν` holds.
 
-These are existing parts of the host apartment and geometric hypotheses. The
+These are existing parts of the apartment and geometric hypotheses of
+`ChamberIwahoriDecompositionStatement`. The
 transport requires no additional genericity premise: its coordinate families
 already consist of roots with strictly positive or negative pairing. The final
 theorem takes the chamber conclusion as its input; the proof of that conclusion
-remains a separate obligation.
+is separate (the Library completes it in `ChamberIwahoriProof`).
 
 ## Sources and provenance
 
@@ -44,7 +45,8 @@ SHA256 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`.
 The mandatory November 1, 2024 corrections, PDF33–34, were also read:
 `kaletha-prasad-2024-corrections`,
 SHA256 `23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed`.
-The host statement retains the corrected AS5 hypotheses. This transport does
+`ChamberIwahoriDecompositionStatement` retains the corrected AS5 hypotheses.
+This transport does
 not prove those hypotheses or use the added arbitrary mixed-root ordering at
 positive central depth.
 
@@ -81,4 +83,6 @@ targets.
 
 The result proves only the chamber-to-facet implication. It supplies neither
 the chamber conclusion itself nor a full Iwahori factorization with `Z(k)^0`;
-the host task retains those obligations and its unchanged hypotheses.
+those belong, with its unchanged hypotheses, to
+`ChamberIwahoriDecompositionStatement`, which the Library proves as
+`ParahoricBuildingData.chamberIwahoriDecomposition` in `ChamberIwahoriProof`.

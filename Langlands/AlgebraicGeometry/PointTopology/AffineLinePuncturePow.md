@@ -1,7 +1,5 @@
 # The `n`th-power morphism of the punctured affine line
 
-Author: Worker 105.
-
 This module defines the actual morphism `t ↦ t ^ n` of the punctured affine line
 `G_m = Spec R[t, t⁻¹]` over `Spec R`. It also proves that, on points with values
 in a topological ring `S`, this morphism is the `n`th-power map of units. It

@@ -1,6 +1,6 @@
 # Fixed-vector detection from a finite compact restriction
 
-Worker 189. This internal proposition isolates the fixed-vector detection
+This internal proposition isolates the fixed-vector detection
 argument needed for the supercuspidal proposition in Renard VI.6.3,
 printed pages 178–179 / PDF184–185.
 
@@ -47,4 +47,4 @@ listed inputs are supplied.
 The proposition does not establish this finite compact-restriction input
 for actual reductive rational points, identify `N` with the source's
 `⁰G`, prove the source's assertion for every supercuspidal subquotient, or
-prove Howe's finite-length conclusion. Those remain separate obligations.
+prove Howe's finite-length conclusion. Those are not part of this proposition.

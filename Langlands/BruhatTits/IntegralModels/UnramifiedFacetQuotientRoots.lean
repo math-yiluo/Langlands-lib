@@ -81,6 +81,8 @@ theorem affineRootGroup_subset_strict_mul_double_of_quotient_comparison
   rw [hcompare] at hxred
   have h2a0 : 2 • a.val ≠ 0 :=
     P.isMaximalSplitTorus.1.1.nsmul_ne_zero a.property.1 (by decide)
+  have : AddMonoidHomClass (characterLattice P.S ≃+ characterLattice T.specialFibre) _ _ :=
+    AddEquivClass.instAddMonoidHomClass _
   obtain ⟨y, hyroot, hyred⟩ :=
     T.exists_integral_root_quotient_lift_of_perfectResidue hT.1 Q hQ
       (2 • a.val) h2a0 (Q.reductiveReduction x)
@@ -165,6 +167,8 @@ theorem quotient_root_of_mem_facetDerivativeRoots
     P.isMaximalSplitTorus.isSplitSubtorus.1
     (relativeRootSystem F G P.isConnectedReductive P.S P.i P.isMaximalSplitTorus)
     haroot
+  have : AddMonoidHomClass (characterLattice P.S ≃+ characterLattice T.specialFibre) _ _ :=
+    AddEquivClass.instAddMonoidHomClass _
   exact hnot (affineRootGroup_subset_strict_mul_double_of_quotient_comparison
     P C e hinj he E g Fa D hD hA hR hopp T hT Q hQ hlin hzero hne
     (by simpa only [map_nsmul] using hcompare) hdouble)

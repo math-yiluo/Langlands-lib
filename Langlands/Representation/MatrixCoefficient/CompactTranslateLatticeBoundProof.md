@@ -1,7 +1,5 @@
 # Uniform product bounds over compact translates
 
-Author: Worker 19.
-
 `compactTranslateLatticeBound` proves the complete
 `CompactTranslateLatticeBoundStatement` with independent group, carrier and
 finite coordinate universes.

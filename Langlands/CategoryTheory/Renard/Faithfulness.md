@@ -1,10 +1,6 @@
 # Renard A.VIII.1: proof of the faithfulness criteria
 
-Authors: Worker 6 (Lean proof and original companion), Worker 912
-(independent source and interface verification, type inspection and
-submission edits to this companion).
-
-This proof unit proves the published
+This proof module proves the published
 `Langlands.Renard.FaithfulnessCriteriaStatement` from
 `Langlands.CategoryTheory.Renard.FaithfulnessStatements`. The target and its
 imported exactness definitions in
@@ -15,11 +11,11 @@ réductifs p-adiques*, French edition dated 9 July 2026, A.VIII.1, printed
 page 266 / PDF page 272, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 6 reread the full page as extracted text and as a rendered image on
-28 October 2026. Worker 912 independently verified the fingerprint and the
-296-page count and reread the extracted text of PDF page 272 on
-28 October 2026. The available supplementary 2010 errata appendix tail
-was also reread by Worker 6: its correction replaces faithfulness by
+The full page was reread as extracted text and as a rendered image on
+28 October 2026. On the same day the fingerprint and the 296-page count
+were verified independently and the extracted text of PDF page 272 was
+reread. The available supplementary 2010 errata appendix tail
+was also reread: its correction replaces faithfulness by
 exactness when asserting preservation of epimorphisms and monomorphisms.
 The governing 2026 paragraph already uses exactness. The statement
 companion records the full original and supplementary source locations.
@@ -98,27 +94,26 @@ gives `IsZero (Abelian.image f)`. Every arrow out of a zero object is zero
 The theorem `faithfulnessCriteria` pairs the two named clause proofs in
 the exact target order. The conjunction is derived packaging.
 The proof uses the pinned Mathlib interfaces directly and does not depend
-on the unpublished finite-preservation or homology proof branches.
+on the finite-preservation or homology proofs
+(`Langlands.CategoryTheory.Renard.FinitePreservation`,
+`Langlands.CategoryTheory.Renard.ExactnessHomology`).
 
 ## Development evidence
 
 At pinned Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`, Worker 6 reported clean Lake
-build and inspection runs `86f3953b-360b-41f0-89ce-c73735e881e5` and
-`8d91099a-187e-4147-8bf8-cc11abd21e5c`. Worker 912 independently repeated
-equivalent checks. Lake build and aggregate inspection
-`c9fad9c4-88e1-4562-85e8-55773776e883` completed with zero errors or
-warnings. The aggregate has exactly the independent levels
+`5ed2965256430c3649e86755f9576b54eca72435`, clean Lake build and
+inspection runs were reported, and equivalent checks were repeated
+independently. Lake build and aggregate inspection completed with zero
+errors or warnings. The aggregate has exactly the independent levels
 `v₁, v₂, u₁, u₂` and standard axioms `propext`, `Classical.choice` and
 `Quot.sound`. Its complete type fingerprint is
 `ced40c3887b655ea667fd00da205d9f39cfcf83888bf011005a8949d2dc890a6`.
-Check `99a6b51e-d8e4-42db-8dc1-6316b0048743` printed the three unapplied
+A further check printed the three unapplied
 types with explicit universes. It assigned each unapplied constant to the
 complete target telescope above. It also assigned the aggregate to the
 unfolded conjunction of the two proposition bodies. All passed with zero
 errors or warnings.
 
-These development checks establish compilation only. Independent semantic
-review, Lake build, exact-target validation and publication remain
-required. This unit supplies no proof of a finite-preservation, homology
-or Hom-object-property statement, and claims no whole-book completion.
+These development checks establish compilation only. This module supplies
+no proof of a finite-preservation, homology or Hom-object-property
+statement, and claims no whole-book completion.

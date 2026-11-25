@@ -1,9 +1,9 @@
 # Mackey's formula for induction along open embeddings
 
-Worker 1828 derives this auxiliary unit for proof task
-`cfea3159-7908-43b1-a677-75834c3859bd`. It restates the Mackey formula of
+This auxiliary module is derived for the proof of the local restriction formula
+`LocalInducedRestrictionStatement`. It restates the Mackey formula of
 `Langlands.VirtualRepresentation.ExactMackey` in the shape of condition 2 of
-`Langlands.ClassField.Global.RelativeWeilGroup.LocalInducedRestriction`, using the
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.LocalInducedRestriction`, using the
 published `ExactGrothendieckGroup.continuousInduceAlong` of
 `Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionStatement`.
 That definition is restriction along the inverse of an open embedding onto its
@@ -56,7 +56,7 @@ this theorem with:
 The finite-index instances are the published `range_restrictionInclusion_finiteIndex`
 and `completionWeilMap_range_finiteIndex`. The local maps `ιu`, the elements `x u`
 and the hypotheses `hι`, `hS`, `hcover` and `hdisj` come from the arithmetic of
-places above `z`, which is not part of this unit.
+places above `z`, which is not part of this module.
 
 ## Public theorems used
 

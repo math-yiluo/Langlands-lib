@@ -39,7 +39,7 @@ values in modules. This module extends it to targets with a group action:
 
 The proof of the general statement is that of the published
 `derivedAdicReductionSequence_shortExact`, with the exactness of limits as a hypothesis. For
-representations it comes from Worker 3's `MittagLefflerShortExactLimitStatement`, an explicit
+representations it comes from `MittagLefflerShortExactLimitStatement`, an explicit
 hypothesis not proved here, applied to the underlying modules. The finiteness of the derived
 sections in each level is an explicit hypothesis: Harris's Fact 1 bis is not formalized, nor is
 his construction of the system or Lemma 2.8. The statements and proofs are ours.
@@ -59,7 +59,7 @@ variable {k : Type u'} [CommRing k] {G : Type u''} [Monoid G]
 
 /-- The representation version of the published `limit_exact_of_finite`: for an exact sequence
 `X₁ ⟶ X₂ ⟶ X₃` of inverse systems of representations whose first terms are finite, the limit
-sequence is exact, given Worker 3's `MittagLefflerShortExactLimitStatement`. The forgetful functor
+sequence is exact, given `MittagLefflerShortExactLimitStatement`. The forgetful functor
 to modules preserves limits and reflects exactness. -/
 lemma limit_exact_of_finite_rep (hML : MittagLefflerShortExactLimitStatement.{u', v'} k)
     {S : ShortComplex (ℕᵒᵖ ⥤ Rep.{v'} k G)} (hS : S.Exact)
@@ -174,7 +174,7 @@ variable (F : C ⥤ Rep.{v'} k G) [F.Additive] {ℓ : ℕ} (T : DivisibleSystem 
 /-- Milne, Ch. V, Lemma 1.11, for right derived functors with values in representations: if
 every `R^q F(T m)` is finite, then `derivedAdicReductionSequence F r q`,
 `0 ⟶ (lim_m R^q F(T m)) / ℓ ^ r ⟶ R^q F(T r) ⟶ (lim_m R^(q+1) F(T m))[ℓ ^ r] ⟶ 0`,
-is short exact, given Worker 3's `MittagLefflerShortExactLimitStatement`. -/
+is short exact, given `MittagLefflerShortExactLimitStatement`. -/
 theorem derivedAdicReductionSequence_shortExact_rep
     (hML : MittagLefflerShortExactLimitStatement.{u'', v'} k) (r q : ℕ)
     (hfin : ∀ m, Finite ((F.rightDerived q).obj (T.obj m))) :
@@ -222,7 +222,7 @@ lemma equivariantCompactReductionSequence_X₃ (r q : ℕ) :
   rfl
 
 /-- `equivariantCompactReductionSequence` is short exact if every `H^q_c(T m)` is finite, given
-Worker 3's `MittagLefflerShortExactLimitStatement`. -/
+`MittagLefflerShortExactLimitStatement`. -/
 theorem equivariantCompactReductionSequence_shortExact
     (hML : MittagLefflerShortExactLimitStatement.{u, u} R) (r q : ℕ)
     (hfin : ∀ m, Finite ((EquivariantDerivedSections.compactDerived R G X q).obj (T.obj m))) :
@@ -257,7 +257,7 @@ lemma equivariantGlobalReductionSequence_X₃ (r q : ℕ) :
   rfl
 
 /-- `equivariantGlobalReductionSequence` is short exact if every `H^q(T m)` is finite, given
-Worker 3's `MittagLefflerShortExactLimitStatement`. -/
+`MittagLefflerShortExactLimitStatement`. -/
 theorem equivariantGlobalReductionSequence_shortExact
     (hML : MittagLefflerShortExactLimitStatement.{u, u} R) (r q : ℕ)
     (hfin : ∀ m, Finite ((EquivariantDerivedSections.globalDerived R G X q).obj (T.obj m))) :
@@ -329,7 +329,7 @@ def smoothCompactReductionSequenceX₃Iso (r q : ℕ) :
 
 /-- `smoothCompactReductionSequence` is short exact if every published
 `SmoothSheafCohomology.compactDerived` of `T m` is finite (Harris's Fact 1 bis in his case, not
-formalized here), given Worker 3's `MittagLefflerShortExactLimitStatement`. -/
+formalized here), given `MittagLefflerShortExactLimitStatement`. -/
 theorem smoothCompactReductionSequence_shortExact
     (hML : MittagLefflerShortExactLimitStatement.{u, u} R) (r q : ℕ)
     (hfin : ∀ m, Finite ((SmoothSheafCohomology.compactDerived R G X q).obj (T.obj m))) :
@@ -381,7 +381,7 @@ lemma smoothInvariantCompactReductionSequence_X₃ (r q : ℕ) :
   rfl
 
 /-- `smoothInvariantCompactReductionSequence` is short exact if every `H^q(T m)` is finite, given
-Worker 3's `MittagLefflerShortExactLimitStatement`. -/
+`MittagLefflerShortExactLimitStatement`. -/
 theorem smoothInvariantCompactReductionSequence_shortExact
     (hML : MittagLefflerShortExactLimitStatement.{u, u} R) (r q : ℕ)
     (hfin : ∀ m, Finite ((SmoothSheafCohomology.invariantCompactDerived R G X q).obj

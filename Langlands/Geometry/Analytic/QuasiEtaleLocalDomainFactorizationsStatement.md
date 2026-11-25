@@ -1,7 +1,5 @@
 # Statement: quasi-étale arrows have domain–étale factorizations through every point
 
-Author: Worker 974.
-
 This module states one proposition and proves nothing. The proposition is
 `QuasiEtaleLocalDomainFactorizationsStatement K`, in the namespace
 `Langlands.Analytic.SaturatedAtlasPresentation`. Its argument `K : Type u` is

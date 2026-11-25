@@ -40,10 +40,11 @@ to Henniart as a theorem from that passage.
 ## Exact dependencies
 
 There are no project definition dependencies. The environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1, Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The main imported interfaces are `NonarchimedeanGroup`,
 `NonarchimedeanGroup.is_nonarchimedean`, the topology on `Units`, and
 `Subgroup.isOpen_of_openSubgroup`.
 
-This proposition definition is a target, not an accepted proof.
+This proposition definition is a target, not a proof. The proof is
+`Langlands.continuousComplexCharacterOpenKernel`, in
+`Langlands.Representation.Twist.ContinuousCharacterProof`.

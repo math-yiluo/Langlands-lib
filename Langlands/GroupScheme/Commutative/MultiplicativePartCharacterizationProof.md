@@ -1,7 +1,5 @@
 # Proof: the multiplicative part of a commutative algebraic group
 
-Author: Worker 894.
-
 `Langlands.GroupScheme.commutativeMultiplicativePartCharacterization` proves exactly
 `Langlands.GroupScheme.CommutativeMultiplicativePartCharacterizationStatement.{u}`, imported
 unchanged from

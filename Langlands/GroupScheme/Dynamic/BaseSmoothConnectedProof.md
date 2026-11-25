@@ -1,8 +1,5 @@
 # Dynamic subgroups over any base scheme are smooth with connected fibres: proof
 
-Worker 285, using the recovered proof and documentation of Worker 3483.
-The Lean proof is unchanged from that draft.
-
 `Langlands.GroupScheme.dynamicBaseSmoothConnected.{u}` proves the proposition
 `Langlands.GroupScheme.DynamicBaseSmoothConnectedStatement.{u}` (module
 `Langlands.GroupScheme.Dynamic.BaseSmoothConnectedStatement`). The theorem's type is

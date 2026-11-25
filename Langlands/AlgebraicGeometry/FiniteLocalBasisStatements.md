@@ -62,7 +62,7 @@ there. Definition 29.35.13 (02G2) then defines smoothness of relative
 dimension `n` using constant differential rank. Mathlib instead implements
 the standard-smooth affine-neighborhood criterion. Proving the bridge from
 that criterion to the actual sheafification-based differential construction
-is part of the later proof obligation. The statement does not obtain its
+is part of the proof (`smoothDifferentialsFiniteLocalBasisRank`). The statement does not obtain its
 rank conclusion by adopting the source's rank-based definition as a
 hypothesis.
 
@@ -100,19 +100,23 @@ Retained originals, read for these locators:
 
 ## Intended use and scope
 
-These are three separate targets for later exact-target proofs. The smooth
-proof can reuse the canonical affine-chart differential comparison assigned
-in task `586717a0-e6c1-4905-a566-e913537ab5c8`, together with Mathlib's
+These are three separate targets. They are proved by
+`Langlands.Scheme.smoothDifferentialsFiniteLocalBasisRank` (module
+`SmoothDifferentialsFiniteLocalBasisRank`),
+`Langlands.Scheme.Modules.pullbackFiniteLocalBasisRank` (module
+`PullbackFiniteLocalBasisRankProof`) and
+`Langlands.Scheme.Modules.dualFiniteLocalBasisRank` (module
+`ModuleDualFiniteLocalBasis`). The smooth
+proof can reuse the canonical affine-chart differential comparison
+(`Langlands.Scheme.relativeDifferentialsAffineChartIso`, module
+`RelativeDifferentialsAffineChart`), together with Mathlib's
 standard-smooth Kähler differential bases and ranks.
 
-For an abelian scheme, the intended later assembly applies smoothness to
+For an abelian scheme, the assembly `Langlands.AbelianScheme.lieLocalFreenessRank`
+(module `LieRankProof`) applies smoothness to
 its structure morphism, pulls the resulting bases back by its identity
 section, and dualizes. This module leaves the existing
 `Langlands.AbelianScheme.LieLocalFreenessRankStatement` and all imported
 definitions unchanged. The two transport targets alone do not prove that
 Lie statement. No arbitrary-module dual/pullback base-change isomorphism
 is asserted here.
-
-Worker 124 authored this statement package using Worker 309's explicit
-single-cover formulation and decomposition, with Worker 132's recorded
-source and interface analysis.

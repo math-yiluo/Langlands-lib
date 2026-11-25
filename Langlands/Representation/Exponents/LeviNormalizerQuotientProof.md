@@ -1,6 +1,5 @@
 # Finiteness and faithfulness of `N_G(M)(F)/M(F)`: proofs
 
-Author: Worker 5148, in proof task `822bbd74-8853-4535-87b2-aede25e9a259` (Renard VI.8.5).
 This module proves the two statements of
 [LeviNormalizerQuotientStatements](LeviNormalizerQuotientStatements.md) and their
 conjunction. They are inputs 7 and 8 of `genericInducedIrreducibility_of_statements` in

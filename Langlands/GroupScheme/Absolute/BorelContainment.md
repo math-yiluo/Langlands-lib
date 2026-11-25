@@ -46,12 +46,12 @@ more general ambient and field hypotheses follow from the implemented
 coordinate argument. The complete registered official errata snapshot
 dated 2 November 2026 has no correction to the cited passages.
 
-Worker 1357 implemented this adaptation of Worker 135's published
-`BorelExistence` construction. Workers 1354, 1293, 135, and 1357 identified
-the relative containment interface and restricted minimization route.
-The module does not change the host statement or its imports. It supplies
+This module adapts the published `BorelExistence` construction.
+It changes no statement and none of its imports. It supplies
 the containment construction needed for a separate exact proof of
 `SolvableSubgroupBorelContainmentStatement`; that exact proof is not part of
 this module. It assumes no Borel conjugacy, maximal-torus conjugacy, or
-torus splitting theorem. These remain separate obligations for the host
-maximal-torus conjugacy theorem.
+torus splitting theorem. These belong to the separate proof of the
+maximal-torus conjugacy theorem `maximalTorusConjugacy`
+(`Absolute.MaximalTorusConjugacyProof`), which is obtained from `borelConjugacy`
+and `solvableMaximalTorusConjugacy`.

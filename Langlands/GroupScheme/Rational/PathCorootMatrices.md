@@ -40,4 +40,4 @@ conclusion is exactly the character/cocharacter pairing formula needed here.
 
 ## Provenance
 
-This is internal derived infrastructure, written for Task 5373: the proof of the split even-path cross-section (Steinberg 1965, *Regular elements of semi-simple algebraic groups*, Sections 9.15-9.19). It records the standard facts that a torus acts on a weight space by the weight and that a coroot point `r^∨(t)` acts on the weight `w` by `t ^ ⟨w, r^∨⟩`, specialized to the normalized path basis. It makes no direct literature claim. Every statement is exactly as written in the Lean file.
+This is internal derived infrastructure for the proof of the split even-path cross-section (Steinberg 1965, *Regular elements of semi-simple algebraic groups*, Sections 9.15-9.19). It records the standard facts that a torus acts on a weight space by the weight and that a coroot point `r^∨(t)` acts on the weight `w` by `t ^ ⟨w, r^∨⟩`, specialized to the normalized path basis. It makes no direct literature claim. Every statement is exactly as written in the Lean file.

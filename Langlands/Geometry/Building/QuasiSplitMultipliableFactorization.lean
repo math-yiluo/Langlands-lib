@@ -58,6 +58,8 @@ theorem gauss_decomposition (hT : IsSplitTorus T.toGrp)
         f * X = X' * τ * f') ∨
       (∃ B ∈ rootGroupPoints j α, ∃ ν : normalizerPoints j,
         f * X = B * ν ∧ weylAction j ν α = -α) := by
+  have : AddMonoidHomClass (characterLattice T ≃ₗ[ℤ] characterLattice T) _ _ :=
+    SemilinearMapClass.instAddMonoidHomClass _
   by_cases hf1 : f = 1
   · left
     exact ⟨X, hX, 1, 1, Subgroup.one_mem _, by simp [hf1]⟩
@@ -158,6 +160,8 @@ theorem piece_factorization {Xq Xm Xp : rationalPoints G}
         ∃ c ∈ rootGroupPoints j (-P.root lq),
         Xq * Xm * Xp = (pr.1⁻¹ * (pr.1 * Xq * pr.1⁻¹ * Xq⁻¹) * e) * (ν : rationalPoints G) *
           (c * pr.2⁻¹) ∧ weylAction j ν (P.root lp) = P.root lq) := by
+  have : AddMonoidHomClass (characterLattice T ≃ₗ[ℤ] characterLattice T) _ _ :=
+    SemilinearMapClass.instAddMonoidHomClass _
   obtain ⟨hwp, hwq⟩ := piece_weylAction_m j hT hjc hP hline hp hq hpq hm hXm hXm1 hpr
   set mu : normalizerPoints j := ⟨pr.1 * Xm * pr.2, hpr.2.2⟩ with hμ
   have hmuv : (mu : rationalPoints G) = pr.1 * Xm * pr.2 := rfl

@@ -1,7 +1,5 @@
 # Finite detecting-family Jacquet length criterion: proof
 
-Author: Worker 325.
-
 `Langlands.CuspidalSupport.jacquetDetectingFamilyLength.{uF,uV}` proves the
 published proposition
 `Langlands.CuspidalSupport.JacquetDetectingFamilyLengthTheorem.{uF,uV}`

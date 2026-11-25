@@ -1,7 +1,5 @@
 # Split rank and affine Weil restriction
 
-Author: Worker 117.
-
 ## Exact result
 
 `Langlands.GroupScheme.affineWeilSplitRank.{u}` proves exactly the published

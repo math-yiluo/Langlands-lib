@@ -1,8 +1,8 @@
 # Level maps and Hecke operators on equivariant functions
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.EquivariantForms` (Worker 61: `forms`,
-`levelQuotientAction`) and Worker 57's published `Langlands.Shimura.Levels`
+Built on the published
+`Langlands.Shimura.EquivariantForms` (`forms`,
+`levelQuotientAction`) and the published `Langlands.Shimura.Levels`
 (`CompactOpenLevel`, its category of transporter arrows, `heckeLevel`,
 `heckeRight`), and on Mathlib's subgroup quotients, indices and sums.
 
@@ -87,7 +87,8 @@ Elements of subgroups are coerced to `G` silently below. For `hle : K' ≤ K`,
 continuity of the multiplication), `ρ : Representation R G V` is a
 representation of all of `G` with `V : Type t`, and a compact open level
 `K : CompactOpenLevel G` carries the representation `ρ` restricted to
-`K.subgroup`. An arrow `a : K ⟶ L` of Worker 57's category of levels is a
+`K.subgroup`. An arrow `a : K ⟶ L` of the category of levels of
+`Langlands.Shimura.Levels` is a
 group element `a.element` with `a.element⁻¹ * k * a.element ∈ L` for all
 `k ∈ K` (`a.respects`); identities are `1` and the composite of `a` and `b`
 has element `a.element * b.element`.
@@ -110,7 +111,7 @@ has element `a.element * b.element`.
 ## Hecke operators
 
 `G` is a topological group with `IsTopologicalGroup G`. For compact open
-levels `K`, `L` and `g : G`, Worker 57's `CompactOpenLevel.heckeLevel K L g`
+levels `K`, `L` and `g : G`, the published `CompactOpenLevel.heckeLevel K L g`
 is the compact open level `K ∩ g L g⁻¹`, and
 `CompactOpenLevel.heckeRight K L g` is its arrow to `L` with element `g`.
 
@@ -191,8 +192,8 @@ How the module relates to this passage (an explanation, not formalized):
   `Langlands.Shimura.Levels`, whose `heckeLeft` is the inclusion arrow
   along which the trace is taken.
 
-Worker 13 (first executor of task 23471a9e) reported no overlap with this
-module.
+This module does not overlap the geometric and equivariant cohomology
+framework behind Harris.
 
 ## Scope
 

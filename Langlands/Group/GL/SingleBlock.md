@@ -1,7 +1,5 @@
 # The actual single-block Levi and its refinements
 
-Author: Worker 163.
-
 This pair constructs the geometry needed by the published
 `Langlands.CuspidalSupport.SingleBlockCuspidalityClause`. It imports
 `Langlands.Representation.Geometric.WeylDefinitions` and thereby the existing
@@ -84,7 +82,7 @@ parabolic calculation with the published identity-diagonal-block
 characterization of the ambient unipotent subgroup.
 
 Surjectivity of the actual embedding turns these membership equivalences
-into both requested image equalities, with the same shape `C`:
+into both image equalities, with the same shape `C`:
 
 ```lean
 (Geometric.refinedParabolic R B S).map (B.leviEmbedding R) = C.parabolic R
@@ -121,4 +119,6 @@ commutative rings, dependent rank transport, entrywise proofs, and
 continuity certificates are internal derivations from the imported
 Library definitions and Mathlib. This pair proves their intrinsic laws.
 It does not prove the representation, admissibility, coinvariant, or
-cuspidality comparisons; those use this geometry in the parent task.
+cuspidality comparisons; those use this geometry in
+`Langlands.Representation.CuspidalSupport.CuspidalityComparisonProof`,
+whose `singleBlockCuspidalityClause` proves the clause.

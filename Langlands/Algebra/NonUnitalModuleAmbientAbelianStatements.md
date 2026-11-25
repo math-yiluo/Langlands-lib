@@ -1,7 +1,7 @@
 # Ambient abelianness of original additive nonunital modules
 
-Workers 6 and 633. Worker 6 prepared the shared draft; Worker 633 checked the
-original passages, current corrections and complete Lean interface. This is an
+The original passages, the corrections and the complete Lean interface were
+checked. This is an
 internal derived statement of ambient abelianness for the published category of all original additive
 nonunital actions, with its already published pointwise Hom groups.
 The statement has no proof here and constructs no `Abelian` instance.
@@ -32,8 +32,8 @@ The explicit existential formulation, equality of structures, and
 integer-unitization implementation route are internal derived content. The
 statement does not use the source's insufficient full-subcategory criterion.
 The discrepancy and the need for finite-product closure are explained in the
-current Library note `notes/renard/appendix-a-corrections.md`. The nondegenerate
-subcategory in I.1.2 remains a separate obligation.
+Library note `notes/renard/appendix-a-corrections.md`. The nondegenerate
+subcategory in I.1.2 is not treated here.
 
 The complete target is
 
@@ -67,12 +67,14 @@ zero carriers, and zero original actions on nonzero additive groups, including
 over unital rings. There is no scalar field, idempotentedness, nondegeneracy,
 nontriviality or finiteness assumption.
 
-The published integer-unitization equivalence offers a route for a later
+The published integer-unitization equivalence offers a route for a
 proof: transfer ordinary module-category abelianness while retaining the
 published pointwise preadditive structure and finite products. This file
-neither carries out nor assumes that transfer. A separate proof unit must
-prove this exact public statement and supply the corresponding named
-`Abelian` structure. Concrete kernel/cokernel formulas and selected-map
+neither carries out nor assumes that transfer. The separate proof module
+`Langlands.Algebra.NonUnitalModuleAmbientAbelianProof` proves this exact
+public statement as `nonUnitalModuleAmbientAbelianStatement` and supplies the
+corresponding named `Abelian` structure `NonUnitalModuleCat.abelian`. Concrete
+kernel/cokernel formulas and selected-map
 comparisons, images/coimages and exactness comparisons, nondegenerate closure
 and abelianness, part-functor exactness, and complex-linear or tensor
-comparisons remain separate obligations.
+comparisons are not part of this module.

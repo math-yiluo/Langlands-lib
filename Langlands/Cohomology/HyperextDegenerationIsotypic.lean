@@ -303,14 +303,15 @@ def homRepresentation {X Y : C} (ρ : Γ →* Aut X) (σ : Γ →* Aut Y) :
     { toFun := homAction ρ σ γ
       map_add' := map_add (homAction ρ σ γ)
       map_smul' := fun r f => by
-        change (ρ γ).inv ≫ (r • f) ≫ (σ γ).hom = r • ((ρ γ).inv ≫ f ≫ (σ γ).hom)
+        change (ρ γ).asIso.inv ≫ (r • f) ≫ (σ γ).asIso.hom =
+          r • ((ρ γ).asIso.inv ≫ f ≫ (σ γ).asIso.hom)
         rw [Linear.smul_comp, Linear.comp_smul] }
   map_one' := LinearMap.ext fun f => DFunLike.congr_fun (map_one (homAction ρ σ)) f
   map_mul' γ δ := LinearMap.ext fun f => DFunLike.congr_fun (map_mul (homAction ρ σ) γ δ) f
 
 /-- `γ` sends `f` to `(ρ γ).inv ≫ f ≫ (σ γ).hom`. -/
 lemma homRepresentation_apply {X Y : C} (ρ : Γ →* Aut X) (σ : Γ →* Aut Y) (γ : Γ)
-    (f : X ⟶ Y) : homRepresentation R ρ σ γ f = (ρ γ).inv ≫ f ≫ (σ γ).hom :=
+    (f : X ⟶ Y) : homRepresentation R ρ σ γ f = (ρ γ).asIso.inv ≫ f ≫ (σ γ).asIso.hom :=
   rfl
 
 end HomRepresentation

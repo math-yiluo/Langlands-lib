@@ -1,11 +1,10 @@
 # Langlands' combinatorial lemma for actual standard parabolics (Renard V.3.18): proof
 
-Worker 5295 wrote this under Task 5295. The module
+The module
 `Langlands.GroupScheme.Rational.LanglandsDecompositionProof` proves the published statement
 `Langlands.GroupScheme.LanglandsCombinatorialDecompositionStatement` as the theorem
-`Langlands.GroupScheme.langlandsCombinatorialDecomposition`, at an arbitrary universe `u`. This
-is the target of Task 5923 (`cc6440ad-eb4c-4348-aab2-f17ec8d69907`), the proof successor of
-Task 5474. The statement, its source (Renard 2026, V.3.18, printed pp.114–115 / PDF pp.120–121,
+`Langlands.GroupScheme.langlandsCombinatorialDecomposition`, at an arbitrary universe `u`. The
+statement, its source (Renard 2026, V.3.18, printed pp.114–115 / PDF pp.120–121,
 with the `μ⁻` cone of the V.5.5 proof) and its formal choices are documented in
 `LanglandsDecompositionStatement.md` and `LanglandsDecompositionCones.md`. Neither those modules
 nor anything they import is changed. The proof adds no hypothesis. Its axioms are `propext`,
@@ -90,7 +89,7 @@ All auxiliary declarations are in the namespace `Langlands.GroupScheme.Langlands
   with `β(b i, ω j) = δ_ij`. Then every `x ∈ E` is `∑_{i ∉ F} tᵢ ωᵢ − ∑_{j ∈ F} sⱼ bⱼ` with
   `tᵢ > 0` and `sⱼ ≥ 0`. The proof builds an `InnerProductSpace.Core` from `β`, installs the
   induced normed and inner product space structures locally, and applies the published
-  `Langlands.Renard.coneProjectionBasisStatement` (Task 5418). This module only uses the
+  `Langlands.Renard.coneProjectionBasisStatement`. This module only uses the
   existence part of that corollary.
 
 **Obtuseness and existence** (section `Existence`).

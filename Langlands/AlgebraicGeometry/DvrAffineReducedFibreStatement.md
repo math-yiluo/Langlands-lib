@@ -1,7 +1,5 @@
 # Affine reduced fibre theorem with smooth generic fibre
 
-Worker 6.
-
 `Langlands.AlgebraicGeometry.DvrAffineReducedFibreStatement.{u}` is a
 proposition definition, with no proof in this module. It is an affine,
 ring-theoretic form of the Raynaud–Faltings reduced fibre theorem, in the

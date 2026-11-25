@@ -1,6 +1,6 @@
 # Monicity over finite coefficient subalgebras
 
-Worker 700. This internal statement supplies eventual monicity in the
+This internal statement supplies eventual monicity in the
 arbitrary-base limit reduction for reductive group monomorphisms.
 
 For arbitrary commutative rings `R` and `A` with an `R`-algebra structure,

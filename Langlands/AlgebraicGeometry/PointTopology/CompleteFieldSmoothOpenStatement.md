@@ -1,7 +1,5 @@
 # Smooth maps on points over complete nontrivially normed fields
 
-Author: Worker 208.
-
 `CompleteFieldSmoothPointOpenStatement.{u}` states the local openness assertion
 used in Conrad's proof of Theorem 4.5. For every complete nontrivially normed
 field `K`, every two schemes locally of finite type over `Spec K`, and every
@@ -52,6 +50,6 @@ different scopes. On affine schemes the published
 `rationalPointTopology_eq_rationalSchemeTopology` identify the topologies, and
 `rationalPointEquiv` identifies the actual point conventions naturally.
 
-This is a statement unit. It supplies the full local assertion needed in the
+This is a statement module. It supplies the full local assertion needed in the
 adelic theorem; it supplies neither its proof nor the additional almost-all
 integral-point surjectivity needed for adelic openness.

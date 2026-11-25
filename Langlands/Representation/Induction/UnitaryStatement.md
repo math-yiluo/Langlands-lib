@@ -1,7 +1,5 @@
 # Unitarizability of normalized parabolic induction
 
-Author: Worker 388.
-
 This module states preservation of an invariant positive definite Hermitian
 form by the actual normalized upper parabolic induction construction. It
 contains three closed `Prop`-valued definitions. It supplies targets for a

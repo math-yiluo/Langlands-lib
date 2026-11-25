@@ -1,13 +1,11 @@
 # Geometric fibre cohomology dimensions of proper flat families
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.GeometricFibreSectionsDim` (namespace
 `Langlands.AlgebraicGeometry.Modules.GeometricFibreSectionsDim`) is an internal helper for the proof
 of `ProjectiveRelativeDivisorFibreHilbertStatement`. It proves two theorems.
 
 Common setting: `B` is a noetherian ring, `g : Y ⟶ Spec B` is proper and flat, `F` is an
-invertible module on `Y` (FLT `Scheme.Modules.IsInvertible`), and `sk : B →+* k` is a ring map
+invertible module on `Y` (FLT `Scheme.Modules.IsInvertibleFLT`), and `sk : B →+* k` is a ring map
 to a field `k`. The point `t` is the image in `Spec B` of the closed point of `Spec k`. The
 geometric fibre `Y_k` is Mathlib's chosen pullback of `g` along `Spec k ⟶ Spec B`.
 

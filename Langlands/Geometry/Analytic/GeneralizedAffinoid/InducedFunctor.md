@@ -1,7 +1,5 @@
 # Functorial induction of actual affinoid actions
 
-Author: Worker 56.
-
 This module constructs induction on equivariant bounded maps between actual
 positive-polyradius affinoid inputs. It packages the induced families as a
 functor, constructs the maps on their actual balanced spectrum quotients,
@@ -181,7 +179,7 @@ sheaves on p-adic analytic spaces* (1995–1996), Construction 1.1.2,
 printed/PDF page 2. It constructs induction for an open subgroup by
 copies of the subgroup space indexed by `G/H`, with action determined
 by `g*g_i = g_j*h`, and states the analytic extension universal property.
-The original page was read directly for this contribution.
+The original page was read directly for this module.
 
 Registered source:
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`;
@@ -205,9 +203,9 @@ name. No output atlas or universal extension in an analytic category is
 assumed.
 
 This module constructs functorial bounded maps of the induced atlases
-and equivariance of the family and spectrum maps. It does not yet
-package a full-group action in the chosen-atlas morphism category or
-identify norm-orbit continuity with Berkovich's analytic automorphism
+and equivariance of the family and spectrum maps. It does not
+package a full-group action in the chosen-atlas morphism category (that
+is `atlasAction` in `InducedEquivariantAtlas`) or identify norm-orbit continuity with Berkovich's analytic automorphism
 topology. Induction for arbitrary overlapping atlases, the analytic
 adjunction, etale and quasi-etale sites, and the Harris specialization
 remain separate obligations.

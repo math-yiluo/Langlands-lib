@@ -1,6 +1,6 @@
 # Murre's condition (F8) for the two-axis class presheaf
 
-Worker 387 wrote this module for Task 6297. It proves the published proposition
+This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.NoetherianTwoAxisClassGenericNonLiftingStatement` by the
 theorem
 
@@ -140,7 +140,7 @@ applies `classPresheaf_genericNonLifting` to each noetherian `R` and abelian sch
 ## Dependencies and scope
 
 The proof uses only `propext`, `Classical.choice` and `Quot.sound`. Besides published Library
-modules, the import closure contains two new supporting modules of this candidate:
+modules, the import closure contains two supporting modules written for this proof:
 
 - `Langlands.Cohomology.ModuleComplex.ObstructionInjectivitySpread`: `InjVanishes`,
   `InjVanishesRed`, `exists_injVanishes_spread` and the change of base ring lemmas (`red`,
@@ -149,7 +149,10 @@ modules, the import closure contains two new supporting modules of this candidat
   and `exists_classLift_of_cocycle`, built on the published openness-of-versality obstruction
   theory and the published (F4′) module `TwoAxisClassArtinianLiftingProof`.
 
-None of the representability statements excluded by the task, or their proofs, are imported.
+Of the representability statements, only Murre's criterion
+`UnramifiedFunctor.MurreCriterionStatement` is imported, through the module that defines the
+conditions, and no proof of it; `NoetherianTwoAxisClassRepresentabilityStatement` and its
+proofs are not imported.
 
 ## Source
 

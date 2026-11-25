@@ -1,7 +1,5 @@
 # Reversed-Levi Jacquet compatibility of the actual Aubert operator
 
-Author: Worker 320.
-
 `Langlands.Aubert.JacquetCompatibilityStatement.{uF,uV} F T` is a
 proposition definition asserting, for every natural rank `n` and every actual
 ordered positive block shape `B` of that rank,
@@ -103,11 +101,12 @@ identified with the group of an ambient general linear group.
 
 Every natural `n` is included. At zero the block shape is empty, the permutation
 is unique, and both signs are `1`; proving the identity for the actual trivial
-group functors remains an obligation. There is no positive-rank,
+group functors is left to the proof, `jacquetCompatibility` in
+`JacquetCompatibilityProof`. There is no positive-rank,
 admissibility, irreducibility, cuspidality, central-character, preservation or
 other theorem-valued premise.
 
-## Remaining proof and independence
+## Proof and independence
 
 The source proof expands the actual geometric Jacquet-induction formula,
 uses restriction transitivity, cancels the fixed-permutation coefficients,
@@ -123,9 +122,9 @@ and `Group.GL.ReverseBlocks`.
 All existing definition and statement pairs remain unchanged. The upstream
 independence restrictions in
 [`notes/henniart/aubert-duality-route.md`](../../../notes/henniart/aubert-duality-route.md)
-remain: a future proof must avoid the analytic segment classification,
+remain: a proof must avoid the analytic segment classification,
 multisegment exhaustion, ordered strong-head existence, quotient coverage,
 tempered block uniqueness, square-integrable Langlands classification or
-exhaustion, regular exhaustion, and their proof successors and transitive
-proof inputs. Formal identities do not resolve the separate corrected
+exhaustion, regular exhaustion, and the modules that prove them and their
+transitive proof inputs. Formal identities do not resolve the separate corrected
 irreducibility-complex obligations.

@@ -1,7 +1,5 @@
 # Simultaneous rational-point conjugator for a Hodge stabilizer
 
-Author: Worker 57. Prepared for submission with Worker 401.
-
 This internal construction develops the sufficiency direction up to equality of the
 families of complex points. It identifies the actual Kottwitz matrices with
 inverse/trivial diagonal matrices on an embedding support and recovers the
@@ -20,7 +18,7 @@ The multiplier calculation uses the accompanying `KottwitzPointMultiplier`
 helper. Equality of scheme morphisms is a separate step supplied in
 `CocharacterReflexProof`.
 
-The matrix-innerness proof of Worker 277, the chart/rank comparison, and the
+The matrix-innerness proof (`Langlands.Algebra.MatrixAlgEquivInnerProof`), the chart/rank comparison, and the
 actual point-splitting construction are independently published Library
 dependencies, imported by Lean module name. This file derives its support,
 diagonal, cardinality, coefficient-cancellation and conjugator results from

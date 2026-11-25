@@ -1,7 +1,5 @@
 # Homomorphisms from split tori to anisotropic affine groups
 
-Author: Worker 1326.
-
 `IsAnisotropic.hom_eq_zero_of_isSplitTorus` states that any homomorphism
 from an actual split torus to an anisotropic affine group scheme is the
 trivial homomorphism. The field `k : Type u` and universe `u` are arbitrary.

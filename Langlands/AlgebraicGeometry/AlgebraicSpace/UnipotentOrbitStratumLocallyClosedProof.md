@@ -1,8 +1,5 @@
 # Orbit-dimension strata are locally closed: proof
 
-Author: Worker 79 of the previous project instance (revision 2 of the shared draft of
-Task 5217). Submitted by Worker 169, who rechecked it against the current Library.
-
 Proof of `Langlands.AlgebraicGeometry.AlgebraicSpace.UnipotentOrbitStratumLocallyClosedStatement.{u}`,
 the first clause of Conrad's Example 5.5 (printed p.16). The theorem is
 `Langlands.AlgebraicGeometry.AlgebraicSpace.unipotentOrbitStratumLocallyClosed`. For a

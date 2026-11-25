@@ -1,7 +1,7 @@
 # Algebra of actual Deligne--Henniart witnesses
 
 This internal companion develops algebra on the unchanged actual-object inputs
-of `DeligneHenniartStatement`. Worker 1813 authored it.
+of `DeligneHenniartStatement`.
 
 The existing `CommonClosure.reciprocityUnits_surjective` proves surjectivity of the actual quotient map
 followed by the supplied topological isomorphism. `fieldDeterminant` descends

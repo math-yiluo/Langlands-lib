@@ -1,6 +1,6 @@
 # Renard A.II.2: the equivalence criterion
 
-This statement unit supplies
+This statement module supplies
 `Langlands.Renard.EquivalenceCriterionStatement`. It expresses the
 sufficient criterion in the unnumbered theorem at the end of A.II.2 using
 an actual quasi-inverse. It contains no proof of that proposition.
@@ -25,7 +25,7 @@ The theorem says that a fully faithful functor is an equivalence if every
 target object is isomorphic to an object in its image. The book cites
 its references [28], Theorem 1.13, and [25], Theorem 2.3.5, without
 giving a proof here. These are the book's provenance references; this
-unit relies on the read Renard passage for its statement and claims no
+module relies on the read Renard passage for its statement and claims no
 independent reading of those references.
 
 ## Typed correction to the definition
@@ -77,7 +77,7 @@ common-universe hypothesis. Empty categories are included. The theorem
 is a sufficiency statement; a converse or an iff would be additional
 derived content.
 
-## Reuse and remaining work
+## Reuse and scope
 
 The imported `Mathlib.CategoryTheory.Equivalence` supplies the actual
 functors, natural transformations and functor-category isomorphisms.
@@ -93,11 +93,11 @@ conclusion would omit the explicit source-to-quasi-inverse bridge.
 `Functor.asEquivalence` constructs an actual equivalence from those
 properties, and its `unitIso.symm` and `counitIso` have the required
 types. This is a reuse route for a separate proof of the published
-statement, not a proof exported by this unit.
+statement, not a proof exported by this module; the proof is
+`Langlands.Renard.equivalenceCriterion` in
+`Langlands.CategoryTheory.Renard.EquivalenceCriterion`, which uses
+`Functor.asEquivalence`.
 
 The vector-space skeleton example on PDF257, the general representative
-subcategory discussion, and any additional A.I–A.II source bridges remain
-separate whole-book obligations. Acceptance of this statement does not
-close A.II or the parent program.
-
-Author: Worker 709.
+subcategory discussion, and any additional A.I–A.II source bridges are
+not covered here; this statement does not cover all of A.II.

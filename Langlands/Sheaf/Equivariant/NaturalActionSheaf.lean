@@ -84,15 +84,15 @@ instance invariantPresheafι_mono (F : Tᵒᵖ ⥤ ModuleCat.{w} R) (V : Eᵒᵖ
 /-- The action of `k` on the sections over the objects `Φ V`, as an endomorphism of the
 presheaf `Φ.op ⋙ F`. -/
 def sectionsEndo (F : Tᵒᵖ ⥤ ModuleCat.{w} R) (k : K) : Φ.op ⋙ F ⟶ Φ.op ⋙ F where
-  app V := F.map (a.act V.unop k).unop.op
+  app V := F.map (a.act V.unop k).unop.asHom.op
   naturality V W f := by
-    change F.map (Φ.map f.unop).op ≫ F.map (a.act W.unop k).unop.op =
-      F.map (a.act V.unop k).unop.op ≫ F.map (Φ.map f.unop).op
+    change F.map (Φ.map f.unop).op ≫ F.map (a.act W.unop k).unop.asHom.op =
+      F.map (a.act V.unop k).unop.asHom.op ≫ F.map (Φ.map f.unop).op
     rw [← F.map_comp, ← F.map_comp, ← op_comp, ← op_comp, a.comm]
 
 @[simp]
 theorem sectionsEndo_app (F : Tᵒᵖ ⥤ ModuleCat.{w} R) (k : K) (V : Eᵒᵖ) :
-    (a.sectionsEndo R F k).app V = F.map (a.act V.unop k).unop.op :=
+    (a.sectionsEndo R F k).app V = F.map (a.act V.unop k).unop.asHom.op :=
   rfl
 
 /-- If `Φ.op ⋙ F` is a sheaf, then the presheaf `V ↦ F(Φ V)^K` of invariant sections is a

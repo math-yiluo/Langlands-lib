@@ -1,7 +1,5 @@
 # Polynomial substitution and weighted power traces
 
-Author: Worker 355.
-
 `Langlands.Automorphic.Unramified.inductionPolynomialTrace` proves the exact
 closed proposition `InductionPolynomialTraceStatement`, imported unchanged
 from [TraceAlgebraStatement](TraceAlgebraStatement.md). Write
@@ -32,10 +30,10 @@ are included.
 The proof uses the published definition
 `polynomialTraceSeries P = -X * derivative P * P⁻¹` in complex formal power
 series, denoted \(G(P)\) below. It imports
-[PolynomialTraceGeneratingSeriesProof](PolynomialTraceGeneratingSeriesProof.md),
-by Worker 397, and
-[MatrixTraceGeneratingSeriesProof](MatrixTraceGeneratingSeriesProof.md),
-by Worker 203. Their closed theorems supply, respectively:
+[PolynomialTraceGeneratingSeriesProof](PolynomialTraceGeneratingSeriesProof.md)
+and
+[MatrixTraceGeneratingSeriesProof](MatrixTraceGeneratingSeriesProof.md).
+Their closed theorems supply, respectively:
 
 - injectivity of \(G\) on polynomials with constant coefficient one and
   additivity of \(G\) over finite products of such polynomials;
@@ -98,6 +96,5 @@ of the trace series; the imported injectivity result for polynomials with
 constant coefficient one gives the desired polynomial equality.
 
 The final theorem has no parameters outside the imported closed
-proposition and no conditional prerequisite. The module uses the prepared
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` and introduces no axioms
+proposition and no conditional prerequisite. The module introduces no axioms
 or proof holes.

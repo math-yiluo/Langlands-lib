@@ -1,7 +1,5 @@
 # Statement: compact real-form existence for complex semisimple groups
 
-Author: Worker 263.
-
 `Langlands.GroupScheme.RealCompactFormExistenceStatement : Prop` asserts
 that every semisimple group scheme `G` over ℂ is isomorphic over ℂ to the
 base change of a semisimple group scheme `H` over ℝ whose full real point

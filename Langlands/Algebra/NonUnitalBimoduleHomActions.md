@@ -1,9 +1,9 @@
 # Residual original actions on actual Hom spaces
 
-Author: Worker 702. This is the core action and regular-comparison definition
-unit of task `4cc99517-b08b-4532-a78f-5075d458f4ab`, below the Renard
-whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`. Naturality and
-categorical packaging are separate work within the same task.
+This is the core action and regular-comparison definition module for the
+residual actions on Hom spaces, a prerequisite for a formalization of the
+whole of Renard's 2026 book. Naturality and categorical packaging are in
+`Langlands.Algebra.NonUnitalBimoduleHomNaturality`.
 
 ## Sources and scope
 
@@ -17,7 +17,7 @@ tensor-Hom conventions and states naturality. I.2.3, printed
 pp.16–18/PDF22–24, explicitly uses the source-precomposition action on
 `Hom_B(B,N)` on printed p.17/PDF23. The earlier regular-source formula
 `(a • φ)(b) = φ(b*a)` is in I.1.4–I.1.5, printed p.10/PDF16. These
-pages were read for this unit.
+pages were read for this module.
 
 The supplementary registered source `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -172,13 +172,12 @@ are zero. Thus a unital scalar ring imposes no unit law on these actions.
 An integer regular-source example evaluates `fromRegular (a • φ)` at
 `b` for the identity additive map `φ`, obtaining `b*a`.
 
-## Remaining work
+## Limits
 
-This unit does not assert I.2.2's tensor-Hom isomorphisms or complete
+This module does not assert I.2.2's tensor-Hom isomorphisms or complete
 I.2.3. The actual one-sided and bimodule natural maps, their laws and the
-fixed-variable additive Hom functors are separate work within the current
-task. Taking a nondegenerate part, comparison with recovered coefficient
+fixed-variable additive Hom functors are in
+`Langlands.Algebra.NonUnitalBimoduleHomNaturality`. Taking a nondegenerate part, comparison with recovered coefficient
 scalars or unitization, (I.2.2.1)–(I.2.2.7), adjunctions, exactness, tensor
-associativity and the actual `F`, pseudo-`F`, `I` and `P` functors remain
-separate definition or proposition/proof units. The tensor-action,
-corner and annihilator-quotient tasks retain their existing scope.
+associativity and the actual `F`, pseudo-`F`, `I` and `P` functors are not
+part of this module.

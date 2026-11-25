@@ -1,7 +1,5 @@
 # Closed loci of liftings and of equalities over a field
 
-Author: Worker 1412.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.AutomorphicAction.AffineFiniteTypeCocycleModelStatement`
 (see [AffineFiniteTypeCocycleModelProof](../GroupScheme/AutomorphicAction/AffineFiniteTypeCocycleModelProof.md)).

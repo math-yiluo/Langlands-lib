@@ -1,7 +1,5 @@
 # The Weyl element of the rank-one open-cell relation
 
-Author: Worker 4348.
-
 Module `Langlands.Algebra.RankOneRelationWeyl`, namespace
 `Langlands.Algebra.RankOneRelation.Data`.
 

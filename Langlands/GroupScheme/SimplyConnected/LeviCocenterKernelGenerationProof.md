@@ -1,7 +1,5 @@
 # Proof of kernel generation for the cocenter of the minimal Levi subgroup
 
-Authors: Worker 187.
-
 The module `Langlands.GroupScheme.SimplyConnected.LeviCocenterKernelGenerationProof`
 proves
 

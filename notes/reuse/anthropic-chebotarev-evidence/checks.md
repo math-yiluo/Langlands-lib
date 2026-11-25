@@ -1,35 +1,35 @@
 # Check history and evidence limits
 
-| Check | Diagnostic ID | Result | Errors / warnings |
-|---|---|---|---|
-| [01](check-01.md) | `07aee092-cb40-4afb-816d-1c786096ccd1` | failed | 15 / 224 |
-| [02](check-02.md) | `5b25ca0b-4185-4f1f-8188-b5c676a3e634` | failed | 4 / 271 |
-| [03](check-03.md) | `8acf1d36-4a1b-4020-a2b3-31eb70b12416` | failed | 4 / 146 |
-| [04](check-04.md) | `c63e28d8-0eb4-45d9-ac99-838091d195e6` | passed | 0 / 197 |
-| [05](check-05.md) | `e36e544d-3d25-46a7-b17c-a937c7d92222` | failed | 3 / 298 |
-| [06](check-06.md) | `236711df-e7dd-48c0-acaf-17d1319e700c` | passed | 0 / 197 |
-| [07](check-07.md) | `757330b8-54ac-4991-946b-715acaa49b82` | failed | 1 / 14 |
-| [08](check-08.md) | `b294069f-9f5a-4e1a-8390-d6b23f7e73b1` | passed | 0 / 52 |
-| [09](check-09.md) | `36e1cd6c-0f83-4099-8a9c-309f1370f503` | passed | 0 / 0 |
-| [10](check-10.md) | `53193736-afc0-4619-a896-8979e5b75820` | passed | 0 / 0 |
-| [11](check-11.md) | `2993c8d4-bbcd-4c5e-90a9-57024b5c3848` | failed | 4 / 3 |
-| [12](check-12.md) | `0744779c-80b8-4f7c-8a07-15813987b581` | failed | 1 / 6 |
-| [13](check-13.md) | `49fceb20-0d25-49a6-83b9-924eeaf89b42` | passed | 0 / 6 |
-| [14](check-14.md) | `314f5cb8-bf3a-4c2d-8e7c-d78f09fd8616` | passed | 0 / 3 |
-| [15](check-15.md) | `2043e15a-b9bc-402a-b16a-5ce11086b655` | passed | 0 / 4 |
-| [16](check-16.md) | `aab56eab-d617-463b-837e-0916d858532d` | passed | 0 / 0 |
-| [17](check-17.md) | `93a2cbec-84ae-4224-820d-f5eaad9bb4ed` | passed | 0 / 0 |
+| Check | Result | Errors / warnings |
+| --- | --- | --- |
+| [01](check-01.md) | failed | 15 / 224 |
+| [02](check-02.md) | failed | 4 / 271 |
+| [03](check-03.md) | failed | 4 / 146 |
+| [04](check-04.md) | passed | 0 / 197 |
+| [05](check-05.md) | failed | 3 / 298 |
+| [06](check-06.md) | passed | 0 / 197 |
+| [07](check-07.md) | failed | 1 / 14 |
+| [08](check-08.md) | passed | 0 / 52 |
+| [09](check-09.md) | passed | 0 / 0 |
+| [10](check-10.md) | passed | 0 / 0 |
+| [11](check-11.md) | failed | 4 / 3 |
+| [12](check-12.md) | failed | 1 / 6 |
+| [13](check-13.md) | passed | 0 / 6 |
+| [14](check-14.md) | passed | 0 / 3 |
+| [15](check-15.md) | passed | 0 / 4 |
+| [16](check-16.md) | passed | 0 / 0 |
+| [17](check-17.md) | passed | 0 / 0 |
 
-# Worker 159: terminal check history
+# Terminal check history
 
 Terminal machine evidence, official full JSON under `.private/notes/records/<id>.json`:
-- Original **07aee092-cb40-4afb-816d-1c786096ccd1** fails 15 errors.
-- Patched attempts **5b25ca0b-4185-4f1f-8188-b5c676a3e634**, **8acf1d36-4a1b-4020-a2b3-31eb70b12416** each fail4. Raising heartbeat to1,600,000 failed; removed.
-- Patched **c63e28d8-0eb4-45d9-ac99-838091d195e6** succeeds, 0 errors/197 warnings, level_parameters=[], axioms only propext/Classical.choice/Quot.sound. sources_sha256 87c56f13aeb58d94e73869e13e239476afc2c3a119f2233c80c471659db1cb45.
-- First universe **e36e544d-3d25-46a7-b17c-a937c7d92222** fails3 at two existential index universes and consumer. Pinned `∃ (ι : Type audit_u)` in complete private theorems hole_T2/hole_top, whose witnesses are ClassGroup(𝓞 K). These names do NOT denote proof holes.
-- Universe **236711df-e7dd-48c0-acaf-17d1319e700c** succeeds0/197; root level_parameters=[audit_u,audit_v], standard3 axioms; sources_sha256 2ff4349cbb15d238016d719cbec8a76ee9e31bfbd066c08b067f65b43baa8546.
-- First clean **757330b8-54ac-4991-946b-715acaa49b82** fails1: apply cannot infer cyclotomic m, fixed by named `(m := m)` in four wrappers.
-- Clean **b294069f-9f5a-4e1a-8390-d6b23f7e73b1** succeeds0/52 (incremental downstream build), independent audit_u/audit_v, standard3 axioms; sources_sha256 607aec98a3f26606b7feac7b09a6addcd99fddd8dba3b3f9e2e2f71004ff2e95. Root type hash **3947a480b5b576718094cd7dba79d66c903b9e17396b4d9146cfba4c005318fc**, identical to universe version.
+- Original [check 01](check-01.md) fails 15 errors.
+- Patched attempts [check 02](check-02.md), [check 03](check-03.md) each fail4. Raising heartbeat to1,600,000 failed; removed.
+- Patched [check 04](check-04.md) succeeds, 0 errors/197 warnings, level_parameters=[], axioms only propext/Classical.choice/Quot.sound. sources_sha256 87c56f13aeb58d94e73869e13e239476afc2c3a119f2233c80c471659db1cb45.
+- First universe [check 05](check-05.md) fails3 at two existential index universes and consumer. Pinned `∃ (ι : Type audit_u)` in complete private theorems hole_T2/hole_top, whose witnesses are ClassGroup(𝓞 K). These names do NOT denote proof holes.
+- Universe [check 06](check-06.md) succeeds0/197; root level_parameters=[audit_u,audit_v], standard3 axioms; sources_sha256 2ff4349cbb15d238016d719cbec8a76ee9e31bfbd066c08b067f65b43baa8546.
+- First clean [check 07](check-07.md) fails1: apply cannot infer cyclotomic m, fixed by named `(m := m)` in four wrappers.
+- Clean [check 08](check-08.md) succeeds0/52 (incremental downstream build), independent audit_u/audit_v, standard3 axioms; sources_sha256 607aec98a3f26606b7feac7b09a6addcd99fddd8dba3b3f9e2e2f71004ff2e95. Root type hash **3947a480b5b576718094cd7dba79d66c903b9e17396b4d9146cfba4c005318fc**, identical to universe version.
 - stdout including full pretty root type/universes and #print axioms saved root-compatibility-output.txt, root-universes-output.txt, root-cleaned-output.txt in chebotarev notes. Structured inspection retains repr hash/bytes; transient service scratch expression path has been deleted (do not claim local raw repr file retained).
 **All checks terminal; no processes running. proof_accepted=false throughout; no target match/semantic acceptance/publication.**
 
@@ -40,7 +40,7 @@ Check 17 recompiles the unchanged AuditInspection module after context rotation 
 
 ## Bridge continuation
 
-Checks 11 and 12 fail on interface elaboration; check 13 passes all four ideal, avoidance, unramifiedness and completion lemmas. Check 14 passes base residue cardinality and relative Frobenius. Check 15 passes the assembled unchanged realization proposition. Check 16 prints the full universe-explicit source and all seven adapter types plus their axioms, and reinspects the source root. Raw expression files were transient service scratch output and are unavailable; exact repr hashes/byte lengths and readable types are retained in the terminal reports. No target-specific receipt or independent semantic acceptance is claimed.
+Checks 11 and 12 fail on interface elaboration; check 13 passes all four ideal, avoidance, unramifiedness and completion lemmas. Check 14 passes base residue cardinality and relative Frobenius. Check 15 passes the assembled unchanged realization proposition. Check 16 prints the full universe-explicit source and all seven adapter types plus their axioms, and reinspects the source root. Raw expression files were transient service scratch output and are unavailable; exact repr hashes/byte lengths and readable types are retained in the terminal reports. No proof of a Library target and no independent semantic check is claimed.
 
 Historical source snapshots for every failed intermediate edit were not all retained. Their exact terminal diagnostics are retained; the final successful stage patches and bridge sources are fully reconstructible. The failed first bridge can be reconstructed from the final bridge by reverting Pointwise scope, the reversed over_def and the local Subsingleton instance.
 

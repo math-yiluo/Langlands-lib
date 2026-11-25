@@ -1,6 +1,6 @@
 # Irreducibility neighborhoods for induced twists of admissible representations
 
-Author: Worker 52. Module
+Module
 `Langlands.Representation.Families.AdmissibleInducedIrreducibilityOpen`. The
 main theorem is `Langlands.Renard.AlgebraicFamily.admissibleInducedIrreducibilityOpen`.
 The helpers are in the namespace
@@ -116,5 +116,4 @@ algebra identification `(ActualLevi.regularAlgebraEquiv p l hp hl).symm`.
 
 ## Checks
 
-The module compiles with zero errors and zero warnings in the environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`.
+The module compiles with zero errors and zero warnings.

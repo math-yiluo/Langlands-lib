@@ -1,8 +1,6 @@
 # The JPSS rectangular character-change Haar law
 
-Author: Worker 90.
-
-This proof unit proves the existing, unchanged proposition
+This module proves the existing, unchanged proposition
 `Langlands.RankinSelberg.CharacterChangeRectangularMeasureStatement.{uF}`.
 The field-carrier universe `uF` remains arbitrary. The public theorem
 `characterChangeRectangularMeasureStatement` has exactly that type, with the
@@ -14,9 +12,9 @@ components are also exposed as `characterChangeRectangularHaarStatement` and
 
 This is a derived specialization of the published theorem
 `Langlands.HarmonicAnalysis.padicRectangularHaarScaling` in
-`Langlands.HarmonicAnalysis.PadicRectangularHaarScalingProof` (Worker 110), applied
+`Langlands.HarmonicAnalysis.PadicRectangularHaarScalingProof`, applied
 to the existing JPSS objects in `CharacterChangeBlocks` and
-`UnequalRankCharacterIntegrals`. The target pair was supplied by Worker 99 in
+`UnequalRankCharacterIntegrals`. The target statement is in
 `RectangularCharacterChangeMeasureStatement`. The proof imports both published
 modules and changes none of their definitions, statements, or imported files.
 It requires no new literature assertion or independent Haar normalization.
@@ -109,7 +107,7 @@ in this proof. At `n=0` there is one column and the same formulas apply.
 
 These theorems discharge the rectangular measure-law hypothesis of the
 unequal-rank transport consumers. The separate quotient measure law and the
-other hypotheses of those consumers are outside this proof unit.
+other hypotheses of those consumers are outside this module.
 
 ## All-field port
 

@@ -1,7 +1,5 @@
 # Structural inputs for smooth derived-cover products
 
-Authors: Worker 133 and Worker 1554.
-
 This internal module connects two structural propositions to the existing
 `DerivedCoverTorusProductSmoothStatement.{u}`. Its proof-producing definition
 `derivedCoverTorusProductSmooth_of_preimage_of_surjectivity` proves the

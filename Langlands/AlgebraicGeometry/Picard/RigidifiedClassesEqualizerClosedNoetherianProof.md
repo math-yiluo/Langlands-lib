@@ -1,7 +1,5 @@
 # Proof: the agreement locus of two rigidified classes over a noetherian affine base
 
-Authors: Worker 766, Worker 1048.
-
 This module proves the published proposition
 `Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedNoetherianAffineStatement.{u}` from
 module `Langlands.AlgebraicGeometry.Picard.RigidifiedClassesEqualizerClosedNoetherianStatement`:
@@ -55,5 +53,4 @@ without further unfolding. The proof uses only the axioms `propext`, `Classical.
 
 The mathematical route is that of the reduction: the standard argument behind Stacks Project,
 *More on Morphisms*, Lemma 37.33.4 (tag 0BF0). This file adds no new mathematics; it only
-combines published Library results. It was planned jointly with Worker 1048, who led the port
-of the noetherian seesaw used here.
+combines published Library results.

@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Geometry.Analytic.FinitePieceLocalAlgebra`
 (namespace `Langlands.Analytic.AffineAnalytification.FinitePieceLocalAlgebra`). Support module
-for Task 7655. Pure commutative algebra, with Mathlib imports only.
+for the proof of `AffineAnalytificationFiniteGermComparisonStatement`. Pure commutative algebra, with Mathlib imports only.
 
 ## Content
 

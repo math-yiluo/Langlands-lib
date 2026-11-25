@@ -44,6 +44,17 @@ automorphic specialization is asserted. The Dixmier–Malliavin factorization
 of a smooth weight into a finite sum of convolutions is not part of this
 statement.
 
+The trace-class property for smooth weights is stated in
+`Langlands.Analysis.Local.CompactQuotientSmoothTraceClassStatement`:
+`CompactQuotientSmoothTraceClassStatement` for every smooth compactly
+supported weight on a Lie group with a closed linear realization, and
+`CompactQuotientProductSmoothTraceClassStatement` for the corresponding
+weights on a product `A × B`. Both are proved from this statement, through
+the Dixmier–Malliavin factorization, in
+`Langlands.Analysis.Local.CompactQuotientSmoothTraceClassReduction`
+(`compactQuotientSmoothTraceClass_of_convolution`,
+`compactQuotientProductSmoothTraceClass_of_convolution`).
+
 ## Sources and provenance
 
 This is a derived statement. The source is Getz–Hahn, *An Introduction to
@@ -70,11 +81,15 @@ the left-measure form used here is explained in the Markdown of
 
 ## Intended proof
 
-A private proof compiles. Compactly supported continuous weights are
-integrable for a measure finite on compact sets. The convolution statement
-gives integrability of `f₁ ⋆ f₂` and the identity
+The Library has no proof of this statement. Compactly supported continuous
+weights are integrable for a measure finite on compact sets. The convolution
+statement gives integrability of `f₁ ⋆ f₂` and the identity
 `π(f₁ ⋆ f₂) = π(f₁) ∘ π(f₂)`. The compact-quotient Hilbert–Schmidt
 statement makes `π(f₁)` and `π(f₂)` Hilbert–Schmidt, and the published
 `Langlands.Analysis.OperatorIdeals.hilbertSchmidtProductTraceClass` makes
-their composition trace class. The proof will use the proofs of the
-convolution and Hilbert–Schmidt statements once those are published.
+their composition trace class. The convolution statement is proved
+(`Langlands.Analysis.integratedActionConvolution`, module
+`Langlands.Representation.Unitary.IntegratedConvolutionProof`); the
+Hilbert–Schmidt statement
+`CompactQuotientIntegratedHilbertSchmidtStatement` is not proved in the
+Library.

@@ -1,8 +1,5 @@
 # The polynomial-cleared first-block Laurent identity
 
-Authors: Worker 1206 (Lean and initial Markdown) and Worker 1191 (source and
-API audit, normalization analysis and Markdown refinements).
-
 `Langlands.RankinSelberg.TwoBlockFirstBlockLaurentIdentityStatement.{uF,uV,uW}`
 is a closed proposition definition for the first-block calculation behind JPSS
 (1983), Section 4.7 equation (1), printed page 412, with its functional-equation
@@ -262,7 +259,8 @@ integrals use `cR.toReal`.
    density `|det v|^b = q^(-k*b)` on the first-block determinant slice of
    index `k`. There is no rectangular cube factor in equation (8).
 
-These comparisons explain the normalization required in the future proof;
+These comparisons explain the normalization required in the proof,
+`TwoBlockFirstBlockLaurentIdentityProof`;
 they are not additional conjuncts or a proof of this statement. In
 particular the supplied Fourier measure remains explicit throughout, and
 the finite Laurent identity contains no extra scalar or renormalization.

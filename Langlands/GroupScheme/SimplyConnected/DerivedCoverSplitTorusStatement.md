@@ -1,7 +1,5 @@
 # Maximal split tori through the simply connected cover of a derived subgroup
 
-Author: Worker 1384.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.SimplyConnectedDerivedCoverSplitTorusStatement`. The
 Lean file only defines the proposition. It contains no proof of it, and it
@@ -102,7 +100,7 @@ Items 4–6 are the conclusion of
 [`SimplyConnected.SplitTorusStatement`](SplitTorusStatement.md) for the cover
 `π : C → D` and the maximal split torus `j`. That statement is not imported,
 so this module states the composite structure self-containedly. For `f`,
-Worker 1392's `SplitTorusIsogenyCocharacterStatement` in
+`SplitTorusIsogenyCocharacterStatement` in
 [`Rational.SplitTorusIsogenyCocharacter`](../Rational/SplitTorusIsogenyCocharacter.md)
 states integral injectivity with finite cokernel and rational and real
 bijectivity. Its proved lemmas

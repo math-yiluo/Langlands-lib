@@ -1,6 +1,6 @@
 # Compact support of diagonal test restrictions on determinant slices
 
-Worker 113 derives compact support on a fixed determinant slice for the norm
+This module derives compact support on a fixed determinant slice for the norm
 of a smooth Whittaker coefficient restricted from a strictly larger general
 linear group through the actual diagonal inclusion. The proof uses the
 Section 4.5 common compact support argument, not later analytic consequences.

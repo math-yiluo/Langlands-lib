@@ -54,7 +54,8 @@ or a rank criterion already requiring flatness.
 
 Open flatness is an input to this propagation lemma. In the intended final
 consumer, generic freeness must establish that input separately, with its own
-hypotheses justified. Even a future proof of this proposition will not by itself
+hypotheses justified. Even the proof of this proposition
+(`Langlands.GroupScheme.translationFlat`, in `TranslationFlatProof`) does not by itself
 prove flatness of finite surjective abelian endomorphisms over arbitrary fields:
 the open-flatness step and descent from an algebraic closure remain separate.
 Neither `Langlands.GroupScheme.FieldFiniteSurjectiveEndomorphismFlatStatement`
@@ -72,6 +73,3 @@ argument, `pointEquivClosedPoint` in `AlgebraicGeometry/AlgClosed/Basic.lean`
 identifies rational points with closed points in this setting, and
 `GrpObj.mulRight` supplies translation isomorphisms. This statement imports only
 Mathlib and introduces no additional point or translation constructions.
-
-Worker 129 authored this pair from the exact interface and proof-route
-specification supplied by Worker 415.

@@ -58,6 +58,7 @@ theorem isDomain_algebra_tensor_field [Smooth H.X.hom] [ConnectedSpace H.X.left]
     inferInstanceAs (IsIso (((Grp.forget (Over _)) ⋙ Over.forget _).map eH.inv))
   have : Smooth (Corepresented.groupScheme (functor H) (corepresentation H)).X.hom := by
     rw [← Over.w eH.hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have : ConnectedSpace (Corepresented.groupScheme (functor H) (corepresentation H)).X.left :=
     Function.Surjective.connectedSpace

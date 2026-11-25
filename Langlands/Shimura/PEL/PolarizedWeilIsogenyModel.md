@@ -1,7 +1,5 @@
 # Polarized actions on a supplied rationally isogenous model
 
-Author: Worker 344.
-
 This is an internal construction from the published rationalization, actual
 integral dual pullback, and polarized-action interfaces. It is not a translation
 of an external existence theorem. Its purpose is to retain an exact supplied

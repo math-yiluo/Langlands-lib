@@ -26,7 +26,7 @@ the fixed kernel by the full scalar line. The singleton basis and the generic
 diagonal Euler-polynomial formula then give `1 - C (χ g) * X` at every `g : G`.
 
 These are internal linear-algebra consequences of the published character,
-tensor, kernel and Euler-polynomial constructions. This unit does not assert
+tensor, kernel and Euler-polynomial constructions. This module does not assert
 reciprocity existence, the comparison with a field-character conductor, a
 class-level arithmetic L-factor formula, a JPSS or epsilon comparison, or the
 closed correspondence theorem.

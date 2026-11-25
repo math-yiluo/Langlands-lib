@@ -1,6 +1,6 @@
 # Renard II.2.3: intrinsic module-sheaf gluing and all opens
 
-This unit is derived from the actual module-sheaf category in
+This module is derived from the actual module-sheaf category in
 `Langlands.Sheaf.Renard.RingedBasisModules`, the published intrinsic
 `SheafCondition.family` in `BasisSheaf`, and the published `allOpenBasis`
 and `allOpen` in `GermSectionSheaf`. Its original context is David Renard,
@@ -9,7 +9,7 @@ and `allOpen` in `GermSectionSheaf`. Its original context is David Renard,
 the category is used in II.2.5, printed pp.38–39 / PDF pp.44–45.
 The registered source is `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The core unit records the source and older-edition corrections audit.
+The core module `RingedBasisModules` records the source and older-edition corrections audit.
 
 `BasisModuleSheaf.unique_gluing` applies `SheafCondition.family` to the
 original additive presheaf and its stored sheaf proof. Its compatibility
@@ -50,9 +50,9 @@ countability, dimension or nonemptiness assumption is used. Empty covers,
 empty opens and empty spaces are included. The all-open category is an
 instantiation of the supplied basis construction.
 
-Worker 633 implemented this unit, reusing the published basis framework
-and the core interface designed with Worker 6's source audit. The
-module-structure adapter is a separate unit by Worker 1203. Locally
+This module reuses the published basis framework
+and the core interface of `RingedBasisModules`. The
+module-structure adapter is the separate module `RingedBasisModuleAdapter`. Locally
 constant scalar constructions and actions, scalar restriction,
-basis-change equivalences and all II.2.5 equivalences remain separate
-successors.
+basis-change equivalences and all II.2.5 equivalences are not constructed
+here.

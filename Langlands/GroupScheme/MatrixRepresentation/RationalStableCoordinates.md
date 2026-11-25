@@ -1,7 +1,8 @@
 # Invariant matrix coordinates detected on rational points
 
-This module combines the accepted coordinate constructions of Worker 1228 and
-the rational-matrix coordinate contribution. It reuses `rationalMatrix` from
+This module combines coordinate constructions for actual matrix representations
+(it imports `NormalFixedRepresentation` and `InvariantCoordinates`) with
+rational-matrix coordinates. It reuses `rationalMatrix` from
 `MatrixRepresentationRationalPoints`, which evaluates the actual representation
 on a base point and transports global sections through `Γ(Spec k) ≅ k`.
 
@@ -25,7 +26,7 @@ it with the zero morphism; naturality then gives vanishing on every test.
 `isStableCoordinates_of_rationalMatrix` expresses the same criterion using
 matrices over the ground field. It transports the rational-point equation
 through the canonical global-sections isomorphism and applies the defect
-criterion. The shared theorem occurs once in the combined module.
+criterion.
 
 These are internal derivations from the actual representation, coefficient
 space, and rational-point extensionality interfaces. No smoothness or

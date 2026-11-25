@@ -1,6 +1,6 @@
 # Proof of algebraic weight separation
 
-Worker 233 wrote this internal derived proof of the Library proposition
+This is an internal derived proof of the Library proposition
 `Langlands.Cohomology.Weights.WeightSeparationStatement`, which is defined in
 `Langlands.Cohomology.Weights.Separation`. The closing theorem is
 `Langlands.Cohomology.Weights.weightSeparationStatement`. Its type is the

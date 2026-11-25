@@ -1,7 +1,5 @@
 # Renard II.2.1: corrected descent into an actual target sheaf
 
-Worker 595, with Worker 6's source correction and universe design.
-
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.2.1, printed pp.35–37 /
 PDF pp.41–43. The registered source is
@@ -185,9 +183,9 @@ the published isomorphism, rather than an equality of universe categories.
 
 ## Scope
 
-This definition unit constructs the maps and proves the intrinsic laws listed
+This module constructs the maps and proves the intrinsic laws listed
 above. Section-gluing uniqueness is used and exposed. Universal uniqueness
 among arbitrary morphism factorizations, a Hom equivalence, an adjunction,
-sheaf-unit invertibility, and basis/all-open equivalences are separate
-successor obligations. No topology on the disjoint union of stalks or
+sheaf-unit invertibility, and basis/all-open equivalences are not
+treated here. No topology on the disjoint union of stalks or
 comparison with Mathlib's all-open sheaf category is asserted here.

@@ -1,7 +1,7 @@
 # Minimal representatives of standard Weyl double cosets (Renard V.4.6, Lemma): proof
 
 Module `Langlands.GroupScheme.Rational.StandardWeylMinimalRepresentativesProof`.
-Universe parameter `u`. Author: Worker 165.
+Universe parameter `u`.
 
 The main theorem `Langlands.GroupScheme.standardWeylMinimalRepresentatives` has exactly
 the type `Langlands.GroupScheme.StandardWeylMinimalRepresentativesStatement.{u}`, the
@@ -148,7 +148,7 @@ through the realization field.
 
 ## Checks
 
-`lean_check` with a full Lake build of this module succeeds. The axioms of
+A full Lake build of this module succeeds. The axioms of
 `standardWeylMinimalRepresentatives` are only `propext`, `Classical.choice` and
 `Quot.sound`. The module contains no `sorry`, no new axioms and no new `Prop`-valued
 statement definitions. Its helper declarations are theorems used by the main proof.

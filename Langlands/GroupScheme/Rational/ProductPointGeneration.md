@@ -1,7 +1,5 @@
 # Rational points of a commutative target generated through a finite product
 
-Author: Worker 1757.
-
 This module is an internal helper about rational points of group schemes.
 A commutative group scheme `Q` may receive a finite family of homomorphisms
 `φ i : Q i ⟶ Q`. If the induced map from the product `∏ Q i` to `Q` is

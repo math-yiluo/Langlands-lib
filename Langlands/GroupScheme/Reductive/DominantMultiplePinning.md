@@ -1,6 +1,6 @@
 # Realized characters from top weight lines for a split pinning
 
-Worker 1161. This module is internal and derived. It specializes the top-weight
+This module is internal and derived. It specializes the top-weight
 coefficient of `DominantMultipleCoefficients` to an actual group `G` over a field
 with a supplied `p : SplitPinning G`, written `T = p.torus`,
 `incl = p.inclusion` and `P = p.rootDatum`. The data `nu`, `i`, `tH`, `j` below

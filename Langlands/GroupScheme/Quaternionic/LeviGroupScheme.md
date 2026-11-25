@@ -66,7 +66,7 @@ Module `Langlands.GroupScheme.Quaternionic.LeviGroupScheme`, namespace
 
 ## Provenance
 
-Internal (Task 5398). `leviHom h` is the hyperbolic scaling morphism `a ↦ ℓ(a)`:
+Internal, for the proof of `LocalSpinKneserTitsStatement`. `leviHom h` is the hyperbolic scaling morphism `a ↦ ℓ(a)`:
 `e ↦ a e`, `f ↦ σ(a)⁻¹ f`, extended by the identity on the orthogonal complement `{e, f}^⊥`.
 "Levi morphism" is the name used here for this explicitly defined morphism. The module
 constructs it and its point comparisons only. It does not identify its image with an entire

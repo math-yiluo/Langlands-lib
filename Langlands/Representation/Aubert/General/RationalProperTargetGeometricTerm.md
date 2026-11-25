@@ -1,8 +1,8 @@
 # Actual standard induction and exclusion for rational geometric targets
 
-Worker 321 authored this internal supporting construction for actual rational
-cuspidal Jacquet-factor extraction; Worker 1553 contributed the coordinated
-standard-exclusion interface and proof route. It supplies an actual induction comparison
+This is an internal supporting construction for actual rational
+cuspidal Jacquet-factor extraction, with its standard-exclusion interface and
+proof route. It supplies an actual induction comparison
 and transports an explicit proper-induction exclusion hypothesis. It proves
 neither that hypothesis nor the full extraction proposition.
 
@@ -64,6 +64,9 @@ local compactness, nonarchimedean and closedness assumptions. Universes `u`
 and `v` are independent and carriers have universe `max (u + 1) v`. There is
 no restriction on characteristic, relative rank or nonemptiness of simple roots.
 The structural source identities and proper-standard induction exclusion
-remain explicit inputs. The former have a separate root-comparison proof; the
-latter, and the actual normalized geometric filtration, are still obligations
-of the full extraction task.
+remain explicit inputs. The former have a separate root-comparison proof. The
+latter is an input of the full extraction proposition; the Library derives it
+from the whole-category splitting, which it does not prove
+(`RationalLeviInductionExclusionFromWhole`). The actual normalized geometric
+filtration is `exists_pointInducedJacquetGeometricFiltration` in
+`RationalInducedJacquetGeometricFiltration`.

@@ -1,7 +1,5 @@
 # Matrix coefficients against a covector as an embedding into a regular representation
 
-Author: Worker 900.
-
 For a representation `ρ` of an affine group `G` over a field and a covector `ξ`, the
 matrix coefficients `v ↦ matrixCoefficient G ρ ξ v` (module
 `Reductive.EigenMatrixCoefficient`) are coordinates of `G`. This module shows that,

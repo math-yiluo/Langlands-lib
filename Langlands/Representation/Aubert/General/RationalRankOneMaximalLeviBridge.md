@@ -1,14 +1,14 @@
 # Rational rank-one self-association from Renard VII.1.3
 
-Author: Worker 3916 (formerly Worker 63). Module
+Module
 `Langlands.Representation.Aubert.General.RationalRankOneMaximalLeviBridge`.
 
-This supporting unit proves that the published Renard VII.1.3 statement
+This supporting module proves that the published Renard VII.1.3 statement
 `RepresentedParabolic.MaximalLeviSupercuspidalReducibilityStatement` implies the
 published target `RationalPointFamily.RationalRankOneSelfAssociationStatement`.
 It introduces one `Prop`-valued definition, the implication
 `RationalRankOneSelfAssociationFromMaximalLeviStatement.{u, v}`, and proves it in
-the same module. The unit proves neither VII.1.3 nor the target. The target
+the same module. The module proves neither VII.1.3 nor the target. The target
 follows as soon as VII.1.3 is proved at universes `u, max (u + 1) v`.
 
 The other structural inputs of the proof are published theorems. They include
@@ -30,7 +30,7 @@ The target's conclusion `associatedSubset actual J = J`, for
 `MaximalLeviSupercuspidalReducibilityStatement` formalizes VII.1.3 for arbitrary
 actual maximal parabolics. Its conclusion supplies `g ∉ M(F)` and `φ : M ≅ M`
 with `φ.hom ≫ l ≫ p = l ≫ p ≫ (G.innerIso g).hom`, so `g` normalizes `M`. It
-also supplies the twist `ψ`. This unit uses only `g` and `φ`.
+also supplies the twist `ψ`. This module uses only `g` and `φ`.
 
 ## The statement
 

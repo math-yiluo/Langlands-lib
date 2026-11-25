@@ -1,9 +1,10 @@
 # Terminal cokernels and the associated-Levi Jacquet comparison
 
-Full-smooth proposition targets by Worker 194. The elementary conversion of
-a conjugate subgroup equality to a membership equivalence follows Worker
-165's proof in the separate finite-length Jacquet target. The actual
-subgroup functors and support predicate are due to Workers 23 and 379.
+Full-smooth proposition targets. The elementary conversion of
+a conjugate subgroup equality to a membership equivalence follows the
+proof in the separate finite-length Jacquet target (module `JacquetTarget`).
+The actual subgroup functors and support predicate come from the adapter
+modules (`Parabolic`, `AlternatingOperator`) and `SupportCategory`.
 
 ## Source and scope
 

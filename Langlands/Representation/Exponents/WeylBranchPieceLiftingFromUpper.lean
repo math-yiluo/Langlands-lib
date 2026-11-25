@@ -45,10 +45,12 @@ theorem wholeOppositePiece_isSubquotient_of_upper
   let y := reversedPieceMinimalRepresentative B S hmin hx
   have hp := WeylBranchPieces.IsGluedFrom.isSubquotient_piece hglued' A (e.symm y)
   rw [e.apply_symm_apply] at hp
-  have hp' := hp.comp (leviReverseEquiv (R := F.Carrier) C).toMonoidHom
+  have hp0 := IsSubquotient.of_equiv_right hp (Representation.equivOfIso ((CategoryTheory.eqToIso
+    (show piece y = geometricPieceFunctor.{uF, uV} T B C.reverse (reversedPiecePermutation B S C x)
+      (P y) (Q y) (hP y).2.1 (hQ y).2.1 from rfl)).app A))
+  have hp' := hp0.comp (leviReverseEquiv (R := F.Carrier) C).toMonoidHom
   let ePiece := chosenRefinementReversedWholeLeviGeometricPieceEquiv T B S C x hx
     (P y) (Q y) (hP y).2.1 (hQ y).2.1 A
-  dsimp only [piece, y, reversedPieceMinimalRepresentative] at hp'
   have hp'' : IsSubquotient
       (((jacquetInductionFunctor T B C.reverse).obj A).ρ.comp
         (leviReverseEquiv (R := F.Carrier) C).toMonoidHom)

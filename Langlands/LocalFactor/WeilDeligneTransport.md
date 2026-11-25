@@ -2,7 +2,7 @@
 
 `Langlands.LocalFactor.WeilDeligne.Transport` constructs the comparison of
 the existing Weil–Deligne factor objects under an explicit group equivalence
-`e : H ≃* G`. Worker 40 authored this derived construction.
+`e : H ≃* G`.
 
 For a field `K`, a group character `ν : G →* Kˣ`, a pair
 `A : WeilDeligneRepresentation K G ν`, and a normal subgroup `I` of `G`,
@@ -84,7 +84,7 @@ fixed monodromy kernel, Euler reciprocal, conductor correction and negative
 determinant on the invariant quotient. Source ID:
 `tate-1979-number-theoretic-background`; retained PDF SHA-256:
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
-Those pages were read directly for this unit.
+Those pages were read directly for this module.
 
 The new transport constructions are derived algebraic identities of the existing
 objects in `Langlands.WeilDeligne.Restriction` and
@@ -94,15 +94,14 @@ field and group; it does not impose the characteristic-zero and open-inertia
 conditions of Tate's arithmetic setting, since these reindexing identities do
 not use them.
 
-The group equivalence is essential: this unit makes no invariance claim for
+The group equivalence is essential: this module makes no invariance claim for
 restriction to an arbitrary proper subgroup. It does not construct an arithmetic
 Weil-group comparison, identify inertia for a field embedding, establish a norm
 comparison, or identify residue cardinalities. An arithmetic application must
 supply those identifications; geometric Frobenius must satisfy the project's
 normalization `ν(Φ) = q⁻¹`. The spectral statements use the same `q` on both sides.
 
-This unit does not transport ordinary epsilon systems, additive characters or
+This module does not transport ordinary epsilon systems, additive characters or
 Haar measures, and it proves no system existence or local functional equation.
 The quotient correction is only one component of the full epsilon factor.
-It is a prerequisite for a later arithmetic attachment and does not complete
-the broad local-factor task.
+It is a prerequisite for a later arithmetic attachment.

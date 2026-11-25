@@ -3,7 +3,9 @@
 Module `Langlands.GroupScheme.Rational.SimpleRootFiberPinning`, namespaces
 `Langlands.GroupScheme.RelativeRoot` and `Langlands.GroupScheme.SimpleRootFiber`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SL2 half.
+Part of the SL2 half of the algebraic rank-one coordinates of
+`AlgebraicRankOneCoordinatesExistenceStatement`, assembled in
+`Geometry.Building.AlgebraicSL2RootCoordinatesConstruction`.
 
 ## Purpose
 

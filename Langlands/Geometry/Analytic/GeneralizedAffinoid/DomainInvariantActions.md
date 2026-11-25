@@ -1,7 +1,5 @@
 # Equivariant diagrams of invariant represented domains
 
-Authors: Worker 56 and Worker 36.
-
 ## Setting and full bounded-map compatibility
 
 Let `K : Type u` be a complete ultrametric normed field, let
@@ -87,7 +85,7 @@ topological diagram with the previously published
 This is internal construction from the actual domain category, the
 constructed section actions, the spectrum functor and Mathlib's action
 interfaces. It adapts the invariant-domain packaging and inverse-action
-proof pattern of Worker 36's published
+proof pattern of
 `StrictTestDomain/SpectralContinuousAction`. Here the domains are arbitrary
 supplied full representations by positive-polyradius quotients.
 The geometric action diagram is constructed first, then the existing
@@ -95,9 +93,9 @@ spectrum functor realizes it.
 
 No nontrivial valuation, reducedness, nonzero quotient, nonempty spectrum
 or nonempty domain is assumed. The target of the spectrum diagram is
-`Action TopCat H`, so this unit asserts continuity for each fixed group
+`Action TopCat H`, so this module asserts continuity for each fixed group
 element and each restriction map. It supplies no proof of joint continuity
 in the group and spectrum variables or continuity of section actions into
 another domain spectral topology. Such conclusions require further
 analysis and domain comparison. General analytic spaces, arbitrary compact
-domains, étale sites and cohomology also remain outside this focused unit.
+domains, étale sites and cohomology also remain outside this module.

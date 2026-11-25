@@ -1,8 +1,6 @@
 # Exact trace images at the supplied prime ramification break
 
-Authors: Worker 512 implemented this proof assembly and its English companion.
-Worker 521 implemented the accompanying `RelativeIdealPowers` helper; Worker
-512 supplied its host interface and proof route.
+The accompanying helper is in `Langlands.LocalField.RelativeIdealPowers`.
 
 The theorem `Langlands.LocalClassField.primeRamifiedTraceIdeals.{u,v}` proves
 exactly the published proposition
@@ -43,7 +41,7 @@ and `relativeIntegerFieldAlgebra`, together with
 of the supplied field embedding; no replacement field algebra is chosen.
 The DVR and fraction-field instances come from the canonical data.
 
-The published theorem `NYLL.relativeIntegerStructure` supplies actual integral
+The published theorem `UniverseZero.relativeIntegerStructure` supplies actual integral
 closure of the extension integer ring over the base integer ring and module
 finiteness for these same relative scalars. Finite dimensionality and
 separability of the field extension are supplied by the target's instances.
@@ -86,12 +84,11 @@ integral trace comparison then identifies its field trace with the supplied
 
 This module is a derived specialization of published arithmetic results,
 imported by their Lean names. It adds no arithmetic premise to the closed
-target. Worker 384 authored the imported
-`Langlands.ClassFieldTheory.Local.PrimeRamifiedDifferentProof`; Worker 107
-authored `Langlands.LocalField.DVRTraceIdealsProof`. The NYLL relative integer
+target. It imports
+`Langlands.ClassFieldTheory.Local.PrimeRamifiedDifferentProof` and
+`Langlands.LocalField.DVRTraceIdealsProof`. The NYLL relative integer
 structure is also imported from its published proof module. Their code is
-reused through imports. The new host and helper contributions are attributed
-above.
+reused through imports.
 
 The original source is Jean-Pierre Serre, *Local Fields*, translated by
 Marvin Jay Greenberg, Graduate Texts in Mathematics 67, Springer, 1979,
@@ -115,5 +112,3 @@ The target Lean/Markdown pair and its full import closure are preserved.
 The assembly does not use downstream graded norms, bounded norms or norm
 reduction. The imported residue-surjectivity support reaches the general
 determinant proof of norm order; it supplies no downstream norm assertion.
-Development compilation does not replace independent semantic review and
-Library publication.

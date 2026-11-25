@@ -1,6 +1,6 @@
 # Nilpotence reflected by finite homomorphisms
 
-Author: Worker 1487. Internal derived interface.
+Internal derived interface.
 
 `HasCentralBasePointKernel p` says that the kernel of the actual homomorphism
 on base-field points is contained in the abstract centre of the source point

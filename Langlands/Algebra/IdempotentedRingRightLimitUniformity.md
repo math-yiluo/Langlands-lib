@@ -1,7 +1,5 @@
 # The coordinate uniformity on actual right-compatible families
 
-Authors: Worker 6 and Worker 1126.
-
 ## Source
 
 The governing original is David Renard, *Représentations des groupes

@@ -2,7 +2,7 @@ import Langlands.Weil.Representation.RestrictionDual
 import Langlands.Global.Factors.RelativeWeilAssemblyGlobal
 import Langlands.Global.Factors.RelativeWeilLocalEulerBridge
 import Langlands.Global.Factors.RelativeWeilFunctionalEquationStatement
-import Langlands.ClassField.Global.LocalRelativeWeilTransferStatement
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferStatement
 import Langlands.ClassFieldTheory.Local.CommonClosureGeometricStatement
 import Langlands.Correspondence.RankOneArithmeticEpsilonData
 import Langlands.Correspondence.RankOneEpsilonFieldTransport
@@ -99,7 +99,7 @@ theorem lFactor_inv_quasicharacterAt {p : ℕ} [Fact p.Prime] (h : residuePrime 
 
 end Langlands.Global.CompletionPadic
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open NumberField
 open scoped NumberField
@@ -850,4 +850,4 @@ theorem localFactors_eq_heckeFactors
 
 end Factors
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

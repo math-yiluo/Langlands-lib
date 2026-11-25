@@ -1,7 +1,7 @@
 # Ordinary eigenvectors for generalized normalized Jacquet exponents
 
-Author: Worker 508. The telescope and extraction route are adapted from
-Worker 322's coefficient-extraction statement and Worker 314's task specification.
+The telescope and extraction route are adapted from the coefficient-extraction
+statement `Langlands.GLJacquetExponentCoefficientExtractionStatement`.
 
 `Langlands.GLJacquetExponentEigenvectorStatement.{uF,uV}` is a transparent,
 closed Prop-valued definition. It isolates the pure-vector step in the
@@ -78,7 +78,9 @@ contained an `errata` directory when checked.
 The present proposition is a derived representation-vector formulation of
 the pure-character step behind this argument. Waldspurger I.2 concerns
 function spaces; it does not state this Lean proposition verbatim.
-The derivation requires the following separate proof.
+The derivation requires the following separate proof, given by
+`glJacquetExponentEigenvector` in
+`Langlands.Representation.Exponents.JacquetEigenvectorProof`.
 
 Start with a nonzero generalized-character witness `v` and its uniform
 power `k`. Admissibility of the normalized Jacquet representation includes
@@ -90,7 +92,7 @@ admissibility makes this fixed space finite-dimensional.
 The span of that orbit is a nonzero finite-dimensional split-centre
 invariant subspace. The split-centre operators commute, so every orbit
 vector, and hence its span, satisfies the same generalized-character
-equations with power `k`. A future proof must extract a common eigenvector
+equations with power `k`. The proof must extract a common eigenvector
 from this subspace. If its eigencharacter is `λ`, then the generalized
 equations give `(λ(a) - χ(a))^k w = 0` for every `a`. The witness forces
 `k > 0`, and `w ≠ 0` over `ℂ` forces `λ(a) = χ(a)` for every `a`.
@@ -103,7 +105,7 @@ in `Langlands.Representation.Parabolic.NormalizedJacquetAdmissibilityProof`
 proves admissibility for the inverse-half twist of
 `Parabolic.leviCoinvariants`. Applying it to the action in this statement
 requires checking the actual comparison with `T.normalizedJacquet B ρ`;
-the future proof must not assume those presentations are definitionally
+the proof must not assume those presentations are definitionally
 equal. The existing `B.jacquetModuleEquiv` and
 `Parabolic.jacquetModuleEquiv_leviCoinvariants` provide comparison data.
 This module does not implement that comparison or the finite-dimensional

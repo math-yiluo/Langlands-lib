@@ -1,6 +1,6 @@
 # Additive Hom vanishing for multiplicative-type extensions
 
-Worker 312. Internal reductions for Task 6776.
+Internal reductions toward `MultiplicativeTypeFieldExtensionStatement`.
 
 A multiplicative-type group is diagonalizable after some field extension. Base
 change of the one-dimensional vector group is canonically the vector group

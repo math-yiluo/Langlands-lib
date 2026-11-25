@@ -9,10 +9,10 @@ The original three pages were read directly. The main II.2.5 construction
 and its original-module and compact-section stalk descriptions on printed
 pp.38–42 / PDF pp.44–48 were also consulted.
 
-Task 5297 (`20ef22af-8ead-4619-880a-cdf4fb65ba49`) constructs the III.3
-interfaces and states the main assertions. Construction laws below are
+The III.3 interfaces are constructed, and the main assertions stated, in
+`Langlands/Sheaf/Renard/`. Construction laws below are
 proved as part of their definitions; a closed proposition target is an
-unproved assertion, even after its statement is reviewed and published.
+unproved assertion, even after its statement is in the Library.
 No main III.3 theorem proof is claimed by this note.
 
 ## Conventions, hypotheses and reused objects
@@ -58,8 +58,7 @@ actual invariant-fibre inverse images specialize the group to `Type` as
 required by the current interfaces. These are explicit size constraints,
 not claims of resizing or finite-dimensionality.
 
-The prerequisite Task 5338
-(`54fcba03-87f9-4b3a-ab99-618d2c683d74`) supplies the published
+The prerequisite modules of `Langlands/Sheaf/Renard/` supply the published
 `CompactSectionTestModule`, `ProjectorVectorSheaf`,
 `ProjectorVectorSheafSections`, `SheafProjectorComparison`,
 `ModuleProjectorComparison` and compact-section/stalk proposition targets.
@@ -85,9 +84,9 @@ compact-support and compact-germ modules are under `Langlands.Sheaf`.
 | Nondegenerate test module with compatible linear group action | `CompatibleTestActions.testRepresentation`, `CompatibleTestActions.CompatibleTestAction` and its existing morphisms | Construction on the original pointwise tests and nondegenerate modules, with literal covariance. |
 | Forward compact-section correspondence | `CompactSectionActions.functor`, `CompactSectionActions.forgetIso` | Actual published ordinary compact-section module and original group operators; covariance proved on original germs. |
 | Reconstruction of the action on the original inverse vector sheaf | `ProjectorActionSheaf.functor`, `ProjectorActionSheaf.forgetIso` | Actual published projector-family sheaf. At a labelled `g` arrow, a component at `W` reads the original family at `g W` and applies `M.action g⁻¹`. |
-| The two correspondences identify the categories | `EquivariantModuleStatements.AlgebraicStatement` | Unproved closed target: an actual equivalence with forward functor exactly the compact-section functor and inverse exactly the reconstructed projector-action-sheaf functor. |
+| The two correspondences identify the categories | `EquivariantModuleStatements.AlgebraicStatement` | Closed target, proved in the Library (`EquivariantModuleProof`): an actual equivalence with forward functor exactly the compact-section functor and inverse exactly the reconstructed projector-action-sheaf functor. |
 | Smooth action | `SA.IsSmoothAction`, `CompactSectionActions.smoothProperty` | Smoothness on the entire original compact-section/module representation. |
-| Restriction of the correspondence to smooth actions | `CompactSectionActions.smoothFunctor`, `SmoothProjectorActionSheaf.smoothFunctor`, `EquivariantModuleStatements.SmoothStatement` | Both functors are constructed. The category equivalence is an unproved target. Reconstruction smoothness is obtained from original-vector local representatives and original stabilizers, not an assumed module comparison. |
+| Restriction of the correspondence to smooth actions | `CompactSectionActions.smoothFunctor`, `SmoothProjectorActionSheaf.smoothFunctor`, `EquivariantModuleStatements.SmoothStatement` | Both functors are constructed. The category equivalence is a target, proved in the Library (`EquivariantModuleProof`). Reconstruction smoothness is obtained from original-vector local representatives and original stabilizers, not an assumed module comparison. |
 | Invariant distributions | `SA.Distribution`, `SA.IsInvariantDistribution`, `SA.invariantDistributions` | Existing compact-section algebraic dual and literal invariance on every original translated section. |
 
 `ProjectorActionSheaf` does not rebuild II.2.5. Its ordinary underlying
@@ -107,12 +106,12 @@ smoothness of all original compact sections.
 | The span of group-action differences is stable under target tests | `CoinvariantTestModule.multiplier_preserves_ker`, `CoinvariantTestModule.quotientMultiplier`, `CoinvariantTestModule.quotientMultiplier_mk` | Intrinsic laws for the literal existing `Representation.Coinvariants` kernel and quotient. |
 | The target-test quotient module is nondegenerate and natural | `CoinvariantTestModule.object`, `CoinvariantTestModule.functor`, `CoinvariantTestModule.quotient` | Construction on the original coinvariant quotient and original induced maps. |
 | The sheaf `F′` corresponding to that module | `CoinvariantSheaf.functor`, `CoinvariantSheaf.functor_obj` | Actual `ProjectorVectorSheaf.functor` on that original nondegenerate target-test module. |
-| `F_c(X)_G ≅ F′_c(Y)` as target-test modules | `CoinvariantSheaf.compactComparison`, `CoinvariantStatements.CompactComparisonStatement` | The particular natural comparison is constructed from the published original-module comparison. Its invertibility is an unproved target. |
+| `F_c(X)_G ≅ F′_c(Y)` as target-test modules | `CoinvariantSheaf.compactComparison`, `CoinvariantStatements.CompactComparisonStatement` | The particular natural comparison is constructed from the published original-module comparison. Its invertibility is a target, proved in the Library (`CoinvariantCompactComparisonProof`). |
 | Natural quotient from original compact sections to `F′_c(Y)` | `CoinvariantSheaf.quotient`, `CoinvariantSheaf.compactQuotient`, `CoinvariantSheaf.compactQuotient_action` | Literal quotient followed by that comparison; all original group-action differences map to zero. |
 | Actual invariant fibre `Z=q⁻¹{y}` is closed | `InvariantFibres.Fibre`, `InvariantFibres.fibreAction`, `InvariantFibres.fibreContinuousSMul`, `InvariantFibres.fibre_closed`, `InvariantFibres.fibre_isLocallyProfinite` | Literal subtype with the original subspace topology and inherited action. Hausdorffness and compact-open basis are retained, including empty fibres. |
 | Restriction of the sheaf and compact fibre representation | `InvariantFibres.restriction`, `InvariantFibres.restrictionToSheafIso`, `InvariantFibres.compactSections`, `InvariantFibres.coinvariants` | Actual equivariant inverse image, its ordinary comparison, all original compact sections and original representation coinvariants. |
-| Proposition: `F′_y ≅ F_c(q⁻¹{y})_G`, naturally | `CoinvariantStatements.FibreCoinvariantStatement` | Unproved closed target: a natural isomorphism in the original action sheaf between the original neighbourhood-colimit stalk of `F′` and the actual compact-fibre coinvariant functor. No substitute stalk or supplied isomorphism. |
-| Corollary: no invariant fibre distributions implies no invariant ambient distributions | `CoinvariantStatements.NoInvariantDistributionsStatement` | Unproved closed target on the full original algebraic duals, with no smoothness assumption. |
+| Proposition: `F′_y ≅ F_c(q⁻¹{y})_G`, naturally | `CoinvariantStatements.FibreCoinvariantStatement` | Closed target, proved in the Library (`FibreCoinvariantProof`): a natural isomorphism in the original action sheaf between the original neighbourhood-colimit stalk of `F′` and the actual compact-fibre coinvariant functor. No substitute stalk or supplied isomorphism. |
+| Corollary: no invariant fibre distributions implies no invariant ambient distributions | `CoinvariantStatements.NoInvariantDistributionsStatement` | Closed target on the full original algebraic duals, with no smoothness assumption; proved in the Library (`NoInvariantDistributionsProof`). |
 
 The Proposition's proof uses these additional assertions: compact
 restriction to the closed fibre is surjective; its kernel is the span of
@@ -140,12 +139,12 @@ reduction or a claim that the source Corollary is false.
 | Source assertion | Exact formal objects or target | Status and meaning |
 | --- | --- | --- |
 | Category for a fixed continuous base action and equivariant sheaf maps | `SA.SmoothActionSheaf`, `SA.smoothActionInclusion` | Existing action sheaves, with the full compact-section smoothness property. |
-| The singleton category is the smooth representation category | `SA.SingletonSheaves.functor`, `SA.SingletonSheaves.unit`, `SA.SingletonSheaves.counit`, `SingletonEquivalence.Statement` | Actual coefficient sheaf, original local-section unit and literal coefficient-evaluation counit are constructed. Their invertibility, both triangle laws and equivalence of these exact functors are an unproved target. |
+| The singleton category is the smooth representation category | `SA.SingletonSheaves.functor`, `SA.SingletonSheaves.unit`, `SA.SingletonSheaves.counit`, `SingletonEquivalence.Statement` | Actual coefficient sheaf, original local-section unit and literal coefficient-evaluation counit are constructed. Their invertibility, both triangle laws and equivalence of these exact functors are a target, proved in the Library (`SingletonEquivalenceProof`). |
 | Compact-section functor to smooth representations | `SA.gammaC`, `SA.gammaCToRepIso`, `SA.gammaC_representation`, `SA.gammaC_map` | All original compact sections and original induced maps; smoothness proof does not change the carrier. |
 | Restriction to a closed subgroup and invariant locally closed subspace | `SA.subgroupRestriction`, `SA.subgroupSpaceRestriction`, `SA.smoothSubgroupRestriction`, `SA.smoothSubgroupSpaceRestriction` | Actual subgroup action and transport-site inverse image; smoothness on the whole compact-section representation is proved for the actual inverse image. The construction permits continuous equivariant maps, hence includes the source's locally closed inclusions. |
 | Ordinary sheaf restriction convention | `SA.InverseImageComparison.toSheafIso`, `SA.InverseImageStalks.stalkIso` | The actual transport Kan/sheafification inverse image is compared with ordinary inverse image, and the actual unit induces the original-stalk isomorphism. |
 | Singleton restriction is the smooth stabilizer representation on the original stalk | `SA.smoothFixedStalkFunctor`, `SA.PointRestrictionComparison.smoothIso` | Whole original stalk is smooth via the compact-germ surjection; the natural comparison identifies it with actual singleton restriction followed by compact sections. |
-| Transitive space `X ≅ G/H` for `G` countable at infinity | `Langlands.Topology.RenardOrbitQuotient.TransitiveQuotientHomeomorphismStatement` | Existing unproved standard-quotient target with the actual stabilizer and canonical representative formula, retaining `SigmaCompactSpace G`. No duplicate standard target is introduced. |
+| Transitive space `X ≅ G/H` for `G` countable at infinity | `Langlands.Topology.RenardOrbitQuotient.TransitiveQuotientHomeomorphismStatement` | Standard-quotient target with the actual stabilizer and canonical representative formula, retaining `SigmaCompactSpace G`; proved in the Library (`transitiveQuotientHomeomorphism`, `Langlands/Topology/RenardOrbitQuotientProof.lean`). No duplicate standard target is introduced. |
 | Convention change to inverse-right `H\G` | `Langlands.Induction.quotientInversion`, `HS.homogeneousAction`, `HS.smul_quotientMap`, `HomogeneousOrbitMap.map`, `HomogeneousOrbitMap.map_factor`, `HomogeneousOrbitMap.map_equivariant` | Original inversion homeomorphism and action `g₀ • Hg=H(g g₀⁻¹)`. The canonical inverse-right orbit map is `Hg ↦ g⁻¹ • x`, factoring through the standard stabilizer map. |
 | Original quotient topology, stabilizer and point restriction | `HS.quotient_isLocallyProfinite`, `HS.origin`, `HS.subgroup_fixes_origin`, `HS.pointRestriction` | The actual closed-subgroup quotient retains Hausdorffness and a compact-open basis, and point restriction is the original smooth identity-coset stalk. |
 
@@ -162,20 +161,20 @@ continuous map, without assuming a homeomorphism.
 | --- | --- | --- |
 | Compact induction is a nondegenerate pointwise `D(H\G)`-module | `CompactInductionTestModule.multiplier`, `testModule`, `testModule_nondegenerate`, `canonicalAction`, `compatibleObject`, `functor` | Original `CompactFunctions`, original pointwise multipliers, original right translations and original induced maps. A vector's own compact-clopen projected support gives its characteristic fixer. Canonical complex scalars agree with the original ones. |
 | Induction sheaf `F^τ` and functor `I_H^G` | `InductionSheaf.compatibleInduction`, `InductionSheaf.functor`, `InductionSheaf.toActionIso`, `InductionSheaf.underlyingSheafIso` | Original compact-induced compatible module followed by actual smooth projector-action-sheaf reconstruction. The ordinary sheaf is exactly the published projector sheaf. |
-| The induction sheaf's identity-coset fibre is the original H-representation | `HomogeneousEquivalence.OriginStalkStatement` | Unproved natural original-representation identification with actual original-stalk point restriction. No particular evaluation-on-representatives formula is claimed by this target. |
-| For arbitrary smooth action sheaf, compact sections equal compact induction from the identity-coset stalk | `HS.alphaCompact`, `HS.alphaCompact_apply`, `HomogeneousSectionStatements.CompactAlphaBetaStatement` | The literal forward alpha is constructed. The target requires a natural equivariant inverse beta, both inverse laws and the exact original-stalk beta formula. |
-| The smooth part of all global sections equals smooth induction | `HS.alphaSmoothGlobal`, `HS.alphaSmoothGlobal_apply`, `HomogeneousSectionStatements.SmoothGlobalAlphaBetaStatement` | Actual `smoothPart` and original induced functions; the analogous exact inverse and naturality are required as conclusions. |
+| The induction sheaf's identity-coset fibre is the original H-representation | `HomogeneousEquivalence.OriginStalkStatement` | Natural original-representation identification with actual original-stalk point restriction, proved in the Library (`HomogeneousOriginStalkProof`). No particular evaluation-on-representatives formula is claimed by this target. |
+| For arbitrary smooth action sheaf, compact sections equal compact induction from the identity-coset stalk | `HS.alphaCompact`, `HS.alphaCompact_apply`, `HomogeneousSectionStatements.CompactAlphaBetaStatement` | The literal forward alpha is constructed. The target requires a natural equivariant inverse beta, both inverse laws and the exact original-stalk beta formula; it is proved in the Library (`HomogeneousCompactSectionProof`). |
+| The smooth part of all global sections equals smooth induction | `HS.alphaSmoothGlobal`, `HS.alphaSmoothGlobal_apply`, `HomogeneousSectionStatements.SmoothGlobalAlphaBetaStatement` | Actual `smoothPart` and original induced functions; the analogous exact inverse and naturality are required as conclusions; the target is proved in the Library (`HomogeneousSmoothGlobalProof`). |
 | Displayed alpha formula | `HS.alphaFunction`, `HS.alphaGlobal`, `HS.alphaCompact`, `HS.alphaSmoothGlobal` | Literally `alpha(s)(g)=germ_o(g • s)` on the original section and original stalk. |
 | Displayed beta formula | The two `HomogeneousSectionStatements` beta targets | Output beta maps must return actual original sections with `germ_(g • o)(beta(f))=gamma_g(f(g⁻¹))`, where `g • o=H g⁻¹`. `gamma_g` is the original labelled stalk transport. Descent, local representability, support and both inverse laws are conclusions, not supplied certificates. |
 | Naturality | `HS.alphaFunction_naturality`, `HS.alphaCompact_naturality`, `HS.alphaSmoothGlobal_naturality`, and the two beta targets | Forward naturality is proved on the original sheaf/stalk/induced maps. The inverse families must satisfy the actual corresponding commutative equations. |
-| Theorem: induction and point restriction are mutually inverse category equivalences | `HomogeneousEquivalence.Statement` | Unproved closed target: an actual category equivalence with forward functor exactly `InductionSheaf.functor` and inverse exactly `HS.pointRestriction`, including objects and morphisms. |
+| Theorem: induction and point restriction are mutually inverse category equivalences | `HomogeneousEquivalence.Statement` | Closed target, proved in the Library (`HomogeneousEquivalenceProof`): an actual category equivalence with forward functor exactly `InductionSheaf.functor` and inverse exactly `HS.pointRestriction`, including objects and morphisms. |
 
 For the inverse-right convention, the beta right-hand side is precisely
 `Godement.stalkPull` with label `g⁻¹`, from the original stalk at `o` to
 the original stalk at `g • o`; the point equation is
 `g⁻¹ • (g • o)=o`. The explicit beta data are theorem conclusions of the
 closed targets, not separately assumed inverse constructions. Their
-proof tasks must construct these actual sections. The alpha constructions
+proofs must construct these actual sections. The alpha constructions
 already include covariance, the original uniform stabilizers and exact
 projected-support comparison.
 
@@ -192,23 +191,23 @@ mathematical assertion.
 
 ## Publication and proof boundary
 
-Construction modules and closed statement modules are separate reviewed
-units. The selected aggregate statement entries retain their individual
-full target names for focused proof tasks. Compilation, semantic approval
-of a statement and its publication do not prove that statement. The main
-remaining proofs are the actual equivariant module equivalences, canonical
-coinvariant compact comparison, natural fibre Proposition, distribution
-Corollary, singleton equivalence, literal compact and smooth-global
-alpha–beta comparisons, and the homogeneous category equivalence.
-The standard transitive quotient and II.2.5 prerequisite statements remain
-with their existing owners.
+Construction modules and closed statement modules are separate modules.
+The selected aggregate statement entries retain their individual full
+target names, so that each can be proved separately. That a statement
+compiles and is in the Library does not prove it. The main proofs, of the
+actual equivariant module equivalences, canonical coinvariant compact
+comparison, natural fibre Proposition, distribution Corollary, singleton
+equivalence, literal compact and smooth-global alpha–beta comparisons, and
+the homogeneous category equivalence, are in the Library, in
+`Langlands/Sheaf/Renard/`: `EquivariantModuleProof` (both equivalences),
+`CoinvariantCompactComparisonProof`, `FibreCoinvariantProof`,
+`NoInvariantDistributionsProof`, `SingletonEquivalenceProof`,
+`HomogeneousCompactSectionProof`, `HomogeneousSmoothGlobalProof` and
+`HomogeneousEquivalenceProof`. The standard transitive quotient and II.2.5
+prerequisite statements are outside this note.
 
 The main closed target modules are `EquivariantModuleStatements`,
 `CoinvariantStatements`, `HomogeneousSectionStatements`,
 `SingletonEquivalenceStatement` and `HomogeneousEquivalenceStatement`. They
-are submitted as separate mathematical statement units, with exact
-proposition inspections. Their independent acceptance and Library
-publication are tracked by Task 5297 separately from this note; this
-source map does not establish any of the target propositions. Focused
-proof successors may be published only after their exact targets are in
-the Library.
+are separate statement modules of the Library, in `Langlands/Sheaf/Renard/`.
+This source map does not establish any of the target propositions.

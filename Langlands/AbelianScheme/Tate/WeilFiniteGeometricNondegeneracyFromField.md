@@ -15,10 +15,11 @@ The theorem does not prove either hypothesis.
 
 `finiteEtaleCharacterSeparation` proves the separation proposition from
 `Cartier.exists_characterEvaluation_ne_one_of_isAlgClosed` (module
-`Langlands.GroupScheme.Cartier.AlgClosedCharacterSeparation`, by Worker 970).
+`Langlands.GroupScheme.Cartier.AlgClosedCharacterSeparation`).
 `geometricFiniteWeilNondegeneracy_of_fieldDualKernelCharacterBijective` therefore derives
 `GeometricFiniteWeilNondegeneracyStatement` from `FieldDualKernelCharacterBijectiveStatement`
-alone. That field statement is the open target of task ece22f73 and is not proved here.
+alone. That field statement is not proved here; `fieldDualKernelCharacterBijective` in
+`Langlands.AlgebraicGeometry.Picard.FieldDualKernelCharacterBijectiveProof` proves it.
 
 ## Proof
 
@@ -55,5 +56,5 @@ Edixhoven, van der Geer and Moonen, Chapter XI, Definition (11.11), define the f
 pairing through the Cartier duality of Chapter VII, Theorem (7.5), and note that it is perfect.
 Over an algebraically closed field, with `n` invertible, the `n`-torsion group schemes are
 finite étale. Perfectness then gives trivial kernels on rational points. The field
-bijectivity input is exactly the published statement of task ece22f73. This module derives
+bijectivity input is exactly `FieldDualKernelCharacterBijectiveStatement`. This module derives
 the geometric-point consequence for the Library's constructions.

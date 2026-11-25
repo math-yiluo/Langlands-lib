@@ -1,6 +1,6 @@
 # The corrected-orbit Levi comparison determines the actual centralizers
 
-This internal deduction by Worker 561 supplies the passage from the
+This internal deduction supplies the passage from the
 whole rational-point Levi comparison in the corrected-orbit modulus target
 to an equality on every test scheme.
 

@@ -53,21 +53,22 @@ nonvanishingLocus L.obj s = (trivializationOpen L.obj s : Set X).
 ```
 
 Thus the Library's whole maximal trivialization open represents precisely the
-source locus. This comparison is an available theorem to import in the proof
-successor; it is not an extra premise of this statement.
+source locus. This comparison is an available theorem for a proof to import;
+it is not an extra premise of this statement.
 
 ## Separate proof obligation
 
 This module defines a proposition and proves no affineness result. The source
 reduces to an invertible module `N` on an affine scheme `Spec R`, forms
 `B = Sym_R(N)/(s - 1)`, and identifies `Spec B` with the entire nonvanishing
-open. A proof successor must establish this geometry or give another complete
+open. A proof must establish this geometry or give another complete
 argument for the actual Library locus. Affine neighborhoods alone do not give
 the asserted conclusion, and arbitrary intersections of affine opens need not
 be affine on an arbitrary scheme.
 
-The successor must prove this entire named proposition without outer
-hypotheses, in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`).
+A proof must establish this entire named proposition without outer
+hypotheses; the theorem `affineGenerationLocusIntersection` in
+`AffineGenerationLocusIntersectionProof` does so. The file was written against
+Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 This focused statement is independent of the tensor-power, rank-one, pullback,
-and ampleness-transport obligations owned by other tasks.
+and ampleness-transport results.

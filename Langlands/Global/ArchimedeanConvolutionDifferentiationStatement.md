@@ -57,12 +57,15 @@ The already published `convolution_integrable` establishes integrability of the
 undifferentiated integrand. This statement does not separately assert
 integrability of each differentiated integrand. Compact-support preservation
 by the enveloping action is the separate
-`EnvelopingSupportStatement` obligation; once proved, it supplies that
+`EnvelopingSupportStatement`, proved as `envelopingSupport` in
+`ArchimedeanEnvelopingSupportProof`; it supplies that
 integrability by the same continuous compact-support argument.
-Proving the present target still requires local uniform compact support and
-differentiation under the integral, including arbitrary orders.
+Proving the present target also requires local uniform compact support and
+differentiation under the integral, including arbitrary orders; the proof is
+`compactKernelConvolutionDifferentiation` in
+`ArchimedeanConvolutionDifferentiationProof`.
 
-This unit supplies no reproducing-kernel theorem, derivative compact-open
+This module supplies no reproducing-kernel theorem, derivative compact-open
 topology, approximation theorem, or automorphic polynomial-growth proof.
 Those remain independent obligations. The example in the Lean file checks the
 complete parameter shape of the proposition and proves none of its content.
@@ -80,4 +83,4 @@ growth; the explicit measure-generic formulation here is internal, not a
 verbatim assertion from that source. Its applicability without Haar invariance
 comes from the intended local parameter-integral argument, not from importing
 the source's stronger reproduction conclusion as a hypothesis. The source was
-read in the parent source audit; no applicable project erratum was found.
+read; no applicable project erratum was found.

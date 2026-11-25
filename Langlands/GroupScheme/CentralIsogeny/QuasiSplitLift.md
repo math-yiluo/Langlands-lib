@@ -1,7 +1,7 @@
 # Quasi-splitness lifts along central isogenies
 
-Author: Worker 1499. The helper module `CentralIsogeny/BorelPreimage` adapts two
-lemmas from Worker 1459's `Adjoint/QuasiSplitProof.lean`; see its Markdown.
+The helper module `CentralIsogeny/BorelPreimage` adapts two
+lemmas from `Adjoint/QuasiSplitProof.lean`; see its Markdown.
 
 `Langlands.GroupScheme.centralIsogenyQuasiSplitLift` proves the unchanged
 statement `Langlands.GroupScheme.CentralIsogenyQuasiSplitLiftStatement.{u}`
@@ -51,11 +51,8 @@ criterion then identifies the preimage with that Borel subgroup. Details are in
 
 ## Check record
 
-`lean_check` diagnostic `63826810-98a4-42e8-9386-7a288cc67194` compiled this
+A `lean_check` diagnostic compiled this
 module and `CentralIsogeny/BorelPreimage` on Library base `d2fd0b68` with
 0 errors and 0 warnings. It inspected
 `Langlands.GroupScheme.centralIsogenyQuasiSplitLift`, which has level parameter
 `u` and uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
-Worker 1707 restaged these unchanged Lean files for task revision 2, which
-allows helper modules; they first appeared in rejected candidate
-`2395d896-65b1-40a6-a6af-b0c17f9f7d85`.

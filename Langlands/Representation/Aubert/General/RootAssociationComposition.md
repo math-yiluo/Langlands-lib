@@ -1,6 +1,6 @@
 # Inverses and products of actual root-association representatives
 
-Worker 78. These internal deductions extend the published elementary laws in
+These internal deductions extend the published elementary laws in
 [`RootAssociationLaws`](RootAssociationLaws.md). Their purpose is to retain the
 actual normalizer element when composing associations in support arguments.
 They follow directly from the existing definitions and make no claim to prove

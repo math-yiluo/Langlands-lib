@@ -1,7 +1,5 @@
 # Ordered special-segment quotient coverage
 
-Author: Worker 195.
-
 `Langlands.Classification.OrderedMultisegmentQuotientExhaustion` is an internal
 proof-decomposition target for the published `MultisegmentHeadExhaustion`
 statement. It is a proposition-valued definition; this file supplies no

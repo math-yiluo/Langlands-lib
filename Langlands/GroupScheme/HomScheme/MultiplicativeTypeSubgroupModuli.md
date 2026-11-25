@@ -1,7 +1,5 @@
 # Actual families of closed subgroups of multiplicative type
 
-Author: Worker 872.
-
 `MultiplicativeTypeSubgroupModuli.IsAdmissible F` means that the actual
 subgroup functor `F` is represented by an actual homomorphism `j : K ⟶ G`
 which is a closed immersion and whose source satisfies

@@ -1,8 +1,8 @@
 # Compact smooth-dual coefficients and irreducible smooth classes
 
-Worker 202 constructs the compact-coefficient condition and the genuine
+This module constructs the compact-coefficient condition and the genuine
 isomorphism classes needed as definition prerequisites for
-Bernstein–Zelevinsky (1976), §§2.43 and 4.14. This unit proves only intrinsic
+Bernstein–Zelevinsky (1976), §§2.43 and 4.14. This module proves only intrinsic
 transport and quotient laws. It proves no projector, decomposition,
 admissibility, or finiteness theorem.
 
@@ -103,7 +103,7 @@ stratum are internal constructions of the source's objects, not additional
 literature theorems. In §4.14 the group is specifically `G°` for a product of
 general linear groups and the subgroup is a congruence subgroup; the source
 expresses the fixed-level condition by a nonzero averaging operator. The
-present unit constructs the fixed-space condition for any subgroup. It neither
+present module constructs the fixed-space condition for any subgroup. It neither
 constructs that averaging operator nor proves the comparison or §4.14's
 finiteness conclusion. Similarly, §2.43's natural projectors require later
 work under the source's extra hypotheses. No representation-theoretic theorem

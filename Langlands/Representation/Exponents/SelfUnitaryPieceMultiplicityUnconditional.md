@@ -1,15 +1,13 @@
 # Multiplicity of self-intersection unitary pieces without the VII.2.4 criterion
 
-Author: Worker 52. Worker 4788's draft for the
-`TemperedSquareIntegrableUnitaryPart` task suggested deriving the forward
-direction from Casselman necessity. Module
+Module
 `Langlands.Representation.Exponents.SelfUnitaryPieceMultiplicityUnconditional`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Internal support for
 the proof of `ConditionalParabolicGenericIrreducibilityStatement`.
 
 ## Purpose and provenance
 
-The Library module `SelfUnitaryPieceMultiplicity` (Worker 1597) bounds the
+The Library module `SelfUnitaryPieceMultiplicity` bounds the
 self-intersection pieces of the geometric lemma for a tempered irreducible
 inducing representation that is square integrable modulo the center. Its
 results take the whole Renard VII.2.4 criterion
@@ -82,5 +80,4 @@ content.
 
 ## Checks
 
-The module compiles with zero errors and zero warnings in the environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`.
+The module compiles with zero errors and zero warnings.

@@ -1,7 +1,5 @@
 # Proof: the endpoints of standard parabolics
 
-Author: Worker 293.
-
 `Langlands.GroupScheme.standardParabolicEndpoints : StandardParabolicEndpointsStatement.{u}`
 proves the published statement `StandardParabolicEndpointsStatement` of
 `Langlands.GroupScheme.Rational.StandardParabolicEndpointsStatement` at an arbitrary universe

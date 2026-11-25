@@ -1,8 +1,8 @@
 # Equivariance of the comparison maps for étale and quasi-étale `G`-sheaves
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedRepComparison` (this candidate):
+- `Langlands.Sheaf.Equivariant.TwistedRepComparison` (ported together with this module):
   `exactGlobalComparison_app_representation`, `exactGlobalComparison_app_apply` and their
   compactly supported analogues. For an exact functor `incl` into module sheaves on a twisted
   site, they factor the comparison maps through a morphism of representations.
@@ -25,8 +25,7 @@ Author: Worker 26. Builds on the following modules:
   `quasiEtaleCompactComparison L ρ h R q` (which is `compactComparison`), with the
   sheafification and injectivity facts for the quasi-étale sites.
 - `Langlands.Sheaf.Equivariant.AnalyticEtaleRepCohomology` and
-  `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleRepCohomology` (published candidate
-  `9abc9653`): the canonical actions `etaleRestrictionCohomologyAction`,
+  `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleRepCohomology`: the canonical actions `etaleRestrictionCohomologyAction`,
   `etaleRestrictionCompactCohomologyAction`, `quasiEtaleRestrictionCohomologyAction` and
   `quasiEtaleRestrictionCompactCohomologyAction` of `G` on `H^q(X, b^*F)` and
   `H^q_c(X, b^*F)`, with the intertwining lemmas `*_apply` for their `ForgetIso`s.

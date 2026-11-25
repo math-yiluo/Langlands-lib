@@ -1,7 +1,5 @@
 # Sections of the bi-Čech complex and their local exactness
 
-Author: Worker 1147.
-
 Lean module: `Langlands.AlgebraicGeometry.Modules.BiCech.Sections`.
 It is a helper for the proof of
 `Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethStatement`.

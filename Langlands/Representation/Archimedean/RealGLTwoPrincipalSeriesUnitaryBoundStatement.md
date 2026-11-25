@@ -1,7 +1,5 @@
 # A necessary exponent bound for unitarity of a real rank-two principal series
 
-Worker 848.
-
 `RealGLTwoPrincipalSeriesUnitaryBoundStatement` concerns the full normalized
 standard module induced from two characters of `GL₁(ℝ)`. The hypothesis is
 infinitesimal unitarity on its `O(2)`-finite vectors. If the two complex

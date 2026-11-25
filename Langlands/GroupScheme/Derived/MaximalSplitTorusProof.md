@@ -1,7 +1,5 @@
 # Maximal split tori of a derived subgroup inside an ambient maximal split torus
 
-Author: Worker 4283.
-
 The theorem `Langlands.GroupScheme.derivedMaximalSplitTorus` proves the
 published proposition `DerivedMaximalSplitTorusStatement.{u}` from
 [`Derived.MaximalSplitTorusStatement`](MaximalSplitTorusStatement.md). Its
@@ -82,8 +80,7 @@ statement as a premise: the conjugacy input is the published proof
 
 This module is an internal composition of published Library theorems. It
 adds no new mathematical assertion and no new source citation. The proof
-route goes through rational conjugacy of maximal split tori, as in the
-context of proof task `45bba50f-b29d-49c2-b923-64037208e2e1`. It is not the
+route goes through rational conjugacy of maximal split tori. It is not the
 route of Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition
 (2015), Theorem C.2.15, Step 1 (printed p.604), which uses Remark C.2.12(2)
 and maximal tori. The source provenance of the target is in the statement's

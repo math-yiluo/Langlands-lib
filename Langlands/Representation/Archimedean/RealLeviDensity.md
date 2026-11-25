@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviDensity`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 states and proves `Langlands.Archimedean.RealLeviDensityStatement` (proof `realLeviDensity`). It
 is the last of three modules (`RealLeviSlices`, `RealLeviProducts`, `RealLeviDensity`) for the
 density step of the single-shot Langlands-quotient argument.
@@ -25,7 +25,7 @@ As in `RealLeviSlices.md` and `RealLeviProducts.md`. For `dss : Fin c → List R
 with all exponents increased by `s_i = start_i - (N - sz_i)/2`. `blockDiagGL (sz dss) κ` is
 `diag(κ_0, …, κ_{c-1})`.
 
-From the earlier modules of this task:
+From earlier modules:
 
 * `RealInducedStandardBound`: `slots ds N` is the list, in increasing order of `p`, of the slots
   of the induction blocks of `ds`. There is one slot at every position `p` where an induction

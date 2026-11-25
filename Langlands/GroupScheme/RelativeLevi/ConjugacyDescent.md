@@ -1,8 +1,9 @@
 # Relative Levi conjugacy from etale-local radical conjugators
 
-Worker 593, using Worker 639's arbitrary-test uniqueness lemmas.
+This module uses the arbitrary-test uniqueness lemmas of
+`ConjugatorUniquenessBaseChange`.
 
-This internal derived unit connects the conjugator predicate, the conjugated
+This internal derived module connects the conjugator predicate, the conjugated
 range over a test scheme, algebraic uniqueness, and etale descent.
 `EtaleLocallyRadicalConjugate l l' r T` means that an etale cover of the
 actual scheme underlying `T` has radical points which conjugate the two

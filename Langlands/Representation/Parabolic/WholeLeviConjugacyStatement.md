@@ -1,14 +1,14 @@
 # Weyl conjugacy invariance of finite-length normalized induction
 
-Author: Worker 757.
-
 This pair defines one proposition,
 `Langlands.Parabolic.WholeLeviInductionConjugacy.{uF, uV, uW}`. It is a derived,
 `GL_n`-specific, finite-length form of the Weyl conjugacy invariance of
 normalized parabolic induction: conjugate inducing data on conjugate standard
 Levi subgroups induce to representations with the same composition factors,
 counted with multiplicity. The declaration is a `Prop`-valued `def`. This
-contribution does not prove it. Its proof is a separate task, and no
+module does not prove it. Its proof is
+`Langlands.Parabolic.wholeLeviInductionConjugacy`, in the separate module
+`Parabolic.WholeLeviConjugacyProof`, and no
 Grothendieck-group (`K0`) comparison theorem is supplied here.
 
 ## Exact statement
@@ -113,7 +113,8 @@ All definitions are the published ones, used unchanged.
   actual finite composition series of both inductions, so it includes their
   finite length. Finite-length preservation by normalized induction is the
   published statement `Langlands.Parabolic.NormalizedParabolicFiniteLengthStatement`,
-  whose proof is task 2a216dfa-5b20-4b4b-9ff8-50b41a0b28f7; it is neither
+  whose proof is `normalizedParabolicFiniteLength` in
+  `Parabolic.FiniteLengthFunctorProof`; it is neither
   assumed nor supplied here.
 - The universes `uF`, `uV`, `uW` are independent. The proposition is closed
   over `p`, `F` and `T`, so a proof gives the result for every prime, every
@@ -132,9 +133,9 @@ D. Ban and C. Jantzen, *The Langlands quotient theorem for finite central
 extensions of p-adic groups II: intertwining operators and duality*, Glasnik
 Mat. 51(71) (2016), 153–163. Registered source ID
 `ban-jantzen-2016-duality`; PDF SHA-256
-`7885375b64f6146a16d2b7807447bb913e411bf73735877aca2d62f80dd4dac4`, verified by
-Worker 757 on 2026-10-31. Worker 757 read printed pp.154, 158 and 163
-(one-based PDF pages 2, 6 and 11).
+`7885375b64f6146a16d2b7807447bb913e411bf73735877aca2d62f80dd4dac4`, verified
+on 2026-10-31. Printed pp.154, 158 and 163
+(one-based PDF pages 2, 6 and 11) were read.
 
 - §2, printed p.154: `G̃` is a finite central extension of the `F`-points of a
   connected reductive group over a nonarchimedean local field `F` of any
@@ -169,7 +170,7 @@ Langlands classification, and the geometric lemma of [6] (or [7, Theorem
 D. Kazhdan, *Trace Paley-Wiener theorem for reductive p-adic groups*, J. Analyse
 Math. 47 (1986), 180–192. Because that route uses the Langlands
 classification, it cannot serve the intended upstream `GL` classification
-route; the later proof of this proposition must replace it by an independent
+route; the proof of this proposition replaces it by an independent
 argument (see Independence below). This statement relies only on the
 mathematical content of the identity, not on its printed proof.
 
@@ -178,9 +179,9 @@ mathematical content of the identity, not on its printed proof.
 A. V. Zelevinsky, *Induced representations of reductive p-adic groups II. On
 irreducible representations of GL(n)*, Ann. Sci. ENS (4) 13 (1980), 165–210.
 Registered source ID `zelevinsky-1980-induced-ii`; PDF SHA-256
-`663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`, verified by
-Worker 757 on 2026-10-31. Worker 757 read printed pp.172–174 (one-based PDF
-pages 9–11).
+`663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac`, verified
+on 2026-10-31. Printed pp.172–174 (one-based PDF
+pages 9–11) were read.
 
 - §1.7, printed pp.172–173: `ℛ(G_n)` is the Grothendieck group of
   finite-length representations; "Using tensor products one can identify
@@ -246,19 +247,18 @@ this statement.
 
 ## Independence
 
-This proposition is a lower prerequisite of analytic segment classification
-task aca8805b-054f-4d56-8045-12db7f623404. Its proof must not use, directly or
-through proof successors or transitive proof dependencies, the conclusions of:
+This proposition is a lower prerequisite of analytic segment classification.
+Its proof must not use, directly or
+through their proofs or transitive proof dependencies, the conclusions of:
 
-- analytic segment classification aca8805b-054f-4d56-8045-12db7f623404;
-- special-head multisegment exhaustion 3bfb61fa-1129-4fc9-83fd-7fcfec22106e;
-- ordered strong-head existence ebea9a8a-9b21-4208-aa31-98c2dea1f8a3;
-- quotient coverage 20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584;
-- tempered block uniqueness 52e97845-36bb-457d-b76f-70753334b88c;
-- `SquareIntegrableLanglandsClassification`,
-  1cb45da2-7007-4351-a694-594fb148b8d1;
-- square-integrable exhaustion cd8ab97c-0b78-4bce-97c4-d307a28159a4;
-- regular exhaustion bf433f0a-921a-428c-b0c0-6475438125ac.
+- analytic segment classification;
+- special-head multisegment exhaustion;
+- ordered strong-head existence;
+- quotient coverage;
+- tempered block uniqueness;
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion;
+- regular exhaustion.
 
 Shared lower results may be reused after an independence check. The proof must
 replace the classification-dependent source route of Ban–Jantzen

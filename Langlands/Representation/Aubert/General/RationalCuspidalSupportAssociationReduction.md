@@ -1,7 +1,5 @@
 # Actual rational support association reduced to cuspidal factor extraction
 
-Authors: Worker 55.
-
 `rationalCuspidalSupportAssociation_of_cuspidalJacquetFactorExtraction` proves
 the implication from the exact named
 `RationalCuspidalJacquetFactorExtractionStatement.{u, v}` to the exact named

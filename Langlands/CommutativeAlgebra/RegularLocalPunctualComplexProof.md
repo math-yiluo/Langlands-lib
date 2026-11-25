@@ -1,11 +1,5 @@
 # The punctual perfect complex lemma over a regular local ring
 
-Authors: Worker 1015, Worker 975, and Worker 413.
-Worker 975 supplied the finite-length acyclicity proof and reversed-dual homotopy
-construction. Worker 413 supplied the first-differential generation and dual
-cokernel constructions. Worker 1015 supplied the other supporting constructions
-and the final assembly.
-
 The theorem
 `Langlands.CommutativeAlgebra.regularLocalPunctualComplex` proves exactly
 `Langlands.CommutativeAlgebra.RegularLocalPunctualComplexStatement.{u}`.

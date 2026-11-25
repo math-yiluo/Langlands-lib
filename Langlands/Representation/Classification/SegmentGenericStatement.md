@@ -1,7 +1,5 @@
 # Segment products and generic multisegments
 
-Author: Worker 118.
-
 This module states Zelevinsky's segment-product irreducibility and generic
 classification results as proposition definitions. It proves none of the
 classification assertions. All representations, segment classes, induction
@@ -14,7 +12,7 @@ Let `F : PadicField p` be an actual finite extension of the p-adic field, with
 `Fact p.Prime`, and let `T : F.TopologicalData` be any compatible topological
 realization. Coefficients are the actual complex numbers. The group is
 `GeneralLinear (n + 1) F.Carrier`, for arbitrary natural `n`: every positive
-finite rank, including rank one, is covered. Rank zero is outside this unit
+finite rank, including rank one, is covered. Rank zero is outside this module
 because the published standard Whittaker character uses positive rank.
 There is no finite-dimensionality assumption on the representation carrier.
 
@@ -27,7 +25,7 @@ the increasing product, Ze80's `⟨Δ⟩` in §3.1. `HasSegmentHeads` uses its u
 irreducible quotient object, Ze80's special representation `⟨Δ⟩^t` in §9.1.
 Both are relations on supplied representations, not constructors with assumed
 existence. The imported `SegmentConstituentStatement` already states their
-existence and uniqueness; this unit does not restate or assume those results.
+existence and uniqueness; this module does not restate or assume those results.
 
 Every product datum includes an actual finite segment family, the degree sum
 equal to the ambient rank, and actual smooth block representations. Product
@@ -88,7 +86,8 @@ this direction as well as the uniqueness of the unordered multiset.
 `a.IsZelevinskySocle π` means that some precedence-ordered enumeration of `a`,
 with actual segment socles as blocks, has `π` as its unique irreducible socle.
 Existence, enumeration independence and the full bijective classification for
-this relation belong to the separate multisegment installment. Here the
+this relation are stated separately, in
+`Classification.MultisegmentClassificationStatement`. Here the
 criterion applies to any representation satisfying the existing relation.
 Length one is deliberately not replaced by nonlinkage: singleton segments can
 be linked, while a single segment of length greater than one is an unlinked
@@ -123,16 +122,28 @@ At authoring, the imported files are in Library commit
   `HarmonicAnalysis.Basic` and `Group.GL.UpperUnipotent`, supplies actual allowed
   additive characters, the actual matrix subgroup, functionals and genericity.
 
-The Lean dependency graph imports no draft or future multisegment statement.
-Mathematical proofs remain obligations: the product criteria, nondegeneracy,
+The Lean dependency graph imports no multisegment classification statement
+(`Classification.MultisegmentClassificationStatement` is not in it).
+This module proves none of the following: the product criteria, nondegeneracy,
 exhaustion, unordered uniqueness, the `Z(a)` criterion, admissibility, and the
 comparison between derivatives and Whittaker functionals. The latter uses
 character localization, transitivity and linear duality as described above.
+In the Library, `segmentSocleProductIrreducibility`,
+`segmentHeadProductIrreducibility`, `genericSegmentProductExhaustion`,
+`genericSegmentProductUniqueness` and `zelevinskySocleGenericity` prove the
+clauses of the same names, in the modules
+`Classification.SegmentSocleProductIrreducibilityProof`,
+`Classification.SegmentHeadProductIrreducibilityProof`,
+`Classification.GenericSegmentProductExhaustionProof`,
+`Classification.GenericSegmentProductUniquenessProof` and
+`Classification.ZelevinskySocleGenericityProof`; no module proves
+`SegmentHeadProductNondegeneracy`, `SegmentHeadProductGenericity` or the
+conjunctions.
 The full multisegment theorem and segment-constituent statements are also
-statement-level inputs until proved. No use is made of Ze80's duality conjecture
+statement-level inputs. No use is made of Ze80's duality conjecture
 in §9.17, the omitted square-integrability converse in §9.3, or a stand-in
 classification predicate. Whittaker uniqueness and JPSS theory remain outside
-this unit.
+this module.
 
 ## Retained originals and reading extent
 
@@ -155,4 +166,4 @@ this unit.
   `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
 
 No separate errata note for either source was present in the supplied public
-notes. This is a statement contribution, not a new proof of the cited results.
+notes. This module states the cited results; it is not a new proof of them.

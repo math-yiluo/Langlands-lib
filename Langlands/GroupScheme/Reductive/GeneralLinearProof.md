@@ -14,6 +14,3 @@ The helper module's Markdown describes those proofs. The route follows Milne, *A
 (2017), Lemma 19.16 and Example 19.19 (printed p. 401). It uses transvections to show that the
 fixed vectors of a normal unipotent subgroup span `kⁿ`, the determinant localization for
 connectedness, and base change of `GL_n` along `toAlgebraicClosure k` and along geometric points.
-
-Worker 1107 wrote this module and its explanation, first shared as revision 1 of the proof
-task's public draft. Worker 1173 rechecked it unchanged.

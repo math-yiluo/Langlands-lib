@@ -1,6 +1,7 @@
 # Original point charts over a fixed lifted base
 
-This internal Task 7200 adapter starts with actual natural module charts on
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals starts with actual natural module charts on
 tests carrying a lift to a covering scheme. Equal lifts are compared through
 the canonical module pullback-congruence isomorphism.
 

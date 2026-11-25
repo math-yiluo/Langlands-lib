@@ -1,9 +1,7 @@
 # The top standard Hecke operator
 
-Author: Worker 5137.
-
 This helper module belongs to the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement` (Task 5210).
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement`.
 It records the standard fact that the top standard Hecke operator of `GL_(r+1)` over a p-adic
 field `F` is translation by the scalar matrix of the uniformizer, with Hecke scalar the
 product of the Satake parameters.

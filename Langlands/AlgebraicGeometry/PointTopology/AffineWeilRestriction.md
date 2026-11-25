@@ -1,6 +1,6 @@
 # The affine Weil-restriction point homeomorphism
 
-Worker 105 implements the point comparison of Brian Conrad, *Weil and
+This module implements the point comparison of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), Example 2.4,
 printed page 3. The continuous-function proof below is a derived reformulation
 of the source's finite projective coordinate argument.
@@ -58,7 +58,7 @@ come from the existing affine evaluation construction, independently of Weil
 restriction. No chosen presentation of `X` is an input. On finitely presented
 coordinate algebras the imported `finitePresentationAlgEquiv` and its
 universal-point and all-test-algebra compatibility theorems compare this
-representing algebra with the published TauCeti Weil restriction.
+representing algebra with the finite-presentation Weil restriction.
 
 ## Implemented proof
 
@@ -91,8 +91,13 @@ versions.
 The proof needs no compactness hypothesis on `Y`. The source's separate
 assertion that `A` inherits its topology from an injective finite locally free
 extension additionally uses faithfulness; that assertion is covered by the
-separate finite-algebra splitting result. This contribution proves the affine
+separate finite-algebra splitting result. This module proves the affine
 point comparison without using that assertion. Explicit Weil-restriction
 functoriality and preservation of closed immersions, and extension of the
-representing equivalence from affine test schemes to all test schemes, remain
-separate parent-task obligations. It makes no whole-paper completion claim.
+representing equivalence from affine test schemes to all test schemes, are
+outside this module: `affineWeilRestrictionMap` in `AffineWeilRestrictionMaps`
+gives the maps, `weilRestrictionClosedImmersionProperties_proof` in
+`WeilRestrictionClosedImmersionProof` proves closed-immersion preservation, and
+`weilRestrictionRepresentabilityProperties` in
+`WeilRestrictionRepresentabilityProof` proves representability on all test
+schemes. It makes no whole-paper completion claim.

@@ -1,7 +1,5 @@
 # Target base change limits for action descent
 
-Author: Worker 706.
-
 This internal helper uses the over-category pullback functor and Mathlib's
 proved finite-presentation factorization theorem. Its intended application is
 the action descent step in Stacks Project Proposition 70.8.1, Tag 07SU,

@@ -53,6 +53,6 @@ assumption on the extension is added. The coroot-span hypothesis is
 explicit. There is no restriction on the Dynkin type or the choice of
 vertex. Applying the lattice to a full subgroup kernel still requires
 a separate comparison identifying that kernel with its character
-annihilator. This unit makes no field-point test or reducedness
+annihilator. This module makes no field-point test or reducedness
 assumption and makes no claim that lattice stability alone has already
 proved full subgroup invariance.

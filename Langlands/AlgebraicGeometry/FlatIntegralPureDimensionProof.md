@@ -2,8 +2,7 @@
 
 This is an internal proof of the exact proposition
 `Langlands.AlgebraicGeometry.SchemeFiberGeometry.FlatIntegralPureRingDimensionInvariance`.
-The target and its import closure are unchanged. Worker 105 developed the
-Lean proof; Worker 1341 prepared this contribution from the shared draft.
+The target and its import closure are unchanged.
 The result is an internal algebraic prerequisite for the field-extension
 argument described in the statement's Markdown, rather than a separate
 assertion from the motivating literature.
@@ -33,6 +32,8 @@ including zero rings. Flatness, integrality and `FaithfulSMul R S` are the
 only assumptions on the algebra extension. No Noetherian, finite-type or
 field hypothesis is introduced.
 
-Arbitrary-field-extension invariance and filtered-fibre descent remain
-separate obligations of parent task
-`886bf565-95e9-4dc6-8a9d-73284a523668`, revision 1.
+Arbitrary-field-extension invariance and filtered-fibre descent are not
+part of this proof. The former, for finite-type algebras, is
+`finiteTypeFieldExtensionPureRingDimensionInvariance` in `FiniteTypePureDimensionProof`;
+the latter is `SchemeLimitModel.finitePresentationInitialRingFiberGeometryDescent` in
+`SchemeFilteredFiberGeometryProof`.

@@ -16,7 +16,7 @@ integral is replaced by a counting sum over the left cosets of a compact open su
 replacement and the nonvanishing argument below are derived for this project, with
 the scalar positivity input taken from
 `Langlands.Cohomology.SupercuspidalExtCharZero.Positivity`. Averaging over compact open
-subgroups is Worker 1643's `Langlands.Compact.CharZero.averageMap` from
+subgroups is `Langlands.Compact.CharZero.averageMap` from
 `Langlands.Representation.Compact.CharZeroAverage`.
 
 ## Fixed vectors
@@ -40,7 +40,8 @@ Here `G` is a Hausdorff, locally compact, totally disconnected topological group
 - `apply_averageMap_of_invariant`: let `K` be a compact open subgroup and `φ : V → M` a
   linear map with `φ (ρ g v) = φ v` for `g ∈ K`. Then `φ` takes the same value on
   `averageMap ρ hρ K hK v` and on `v`. This follows from `orbitMean_map` and
-  `orbitMean_id` of Worker 1643's module, with `M` carrying the trivial action. This
+  `orbitMean_id` of `Langlands.Representation.Compact.CharZeroAverage`, with `M` carrying
+  the trivial action. This
   lemma and the next two need `CharZero k`.
 - `exists_dual_apply_ne_zero`: for a nonzero vector `w` of a smooth representation there
   are a compact open subgroup `K` fixing `w` and a `K`-fixed functional `ℓ` with

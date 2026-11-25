@@ -34,7 +34,7 @@ theorem continuousInduceAlong_ofRepresentationWithProof (φ : H →ₜ* G)
 
 end Langlands.VirtualRepresentation.ExactGrothendieckGroup
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open scoped NumberField
 open Langlands.Global Langlands.Automorphic Langlands.VirtualRepresentation
@@ -135,4 +135,4 @@ def continuousInducedReciprocityRepresentation (ξ : HeckeCharacter E') :
   ⟨inducedReciprocityRepresentation.{u, uV} c F E' L h ξ,
     inducedReciprocityRepresentation_isContinuous c F E' L h ξ⟩
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

@@ -1,7 +1,5 @@
 # Integral points of one affine étale chart have closed image
 
-Author: Worker 80.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianChartIntegralPointsClosedStatement` is an
 intermediate statement for the closedness part of Corollary 5.7 of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), printed pp.16–17. The module

@@ -110,7 +110,7 @@ theorem power_eq_map_conjugateNormFamily [IsGalois K L] {n : ℕ}
       w.1.asIdeal.inertiaDeg (𝓞 K) * q.asIdeal.inertiaDeg (𝓞 M) =
         u.asIdeal.inertiaDeg (𝓞 K) := by
     have : q.asIdeal.LiesOver v.asIdeal := Ideal.LiesOver.trans q.asIdeal w.1.asIdeal v.asIdeal
-    obtain ⟨τ, hτ⟩ := Langlands.ClassField.Global.exists_finitePlaceEquiv_eq v u q
+    obtain ⟨τ, hτ⟩ := Langlands.ClassFieldTheory.Global.exists_finitePlaceEquiv_eq v u q
     rw [← Ideal.inertiaDeg_tower (R := 𝓞 K) w.1.asIdeal q.asIdeal, ← hτ,
       inertiaDeg_finitePlaceEquiv_algEquiv]
   have hfpos (w : FinitePlacesAbove M v) : 0 < w.1.asIdeal.inertiaDeg (𝓞 K) :=
@@ -121,7 +121,7 @@ theorem power_eq_map_conjugateNormFamily [IsGalois K L] {n : ℕ}
     exact Dvd.intro _ (hNtower w q.1 q.2)
   -- The places `(ρ i)⁻¹ u` and the places `w i` of `M` below them.
   have hlies (i : ι) : (finitePlaceEquiv (ρ i)⁻¹.toRingEquiv u).asIdeal.LiesOver v.asIdeal :=
-    Langlands.ClassField.Global.liesOver_finitePlaceEquiv v u (ρ i)⁻¹
+    Langlands.ClassFieldTheory.Global.liesOver_finitePlaceEquiv v u (ρ i)⁻¹
   let wi (i : ι) : FinitePlacesAbove M v :=
     ⟨(finitePlaceEquiv (ρ i)⁻¹.toRingEquiv u).under (𝓞 M), by
       have := hlies i

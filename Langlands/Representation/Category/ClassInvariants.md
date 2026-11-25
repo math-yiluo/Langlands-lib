@@ -1,6 +1,6 @@
 # Conditions on actual smooth isomorphism classes
 
-Worker 30 constructs two predicates on the published quotient
+This module constructs two predicates on the published quotient
 `Langlands.SmoothDualClass`: prescribed scalar action of a character of the
 actual center, and existence of a nonzero vector fixed by a specified
 subgroup. `ofRep` is the ordinary quotient constructor. No representative is

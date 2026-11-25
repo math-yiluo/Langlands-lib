@@ -1,7 +1,5 @@
 # GL tensor refinement with exact rank transports
 
-Author: Worker 175.
-
 This module constructs `Langlands.FiniteTensor.glRefinementEquiv`,
 an actual representation equivalence between the original external tensor
 pulled to the refined Levi and the nested tensor of the original factors after

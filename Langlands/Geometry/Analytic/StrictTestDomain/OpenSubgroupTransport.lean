@@ -177,7 +177,7 @@ def restriction (f : X ⟶ Y) :
 @[simp]
 theorem restriction_comp_baseMap (f : X ⟶ Y) :
     f.restriction.comp Y.domain.obj.baseMap =
-      X.domain.obj.baseMap.comp (ρ.toMonoidHom f.label).inv :=
+      X.domain.obj.baseMap.comp (ρ.toMonoidHom f.label).asIso.inv :=
   (toRationalTransport.map f).restriction_comp_baseMap
 
 @[simp]
@@ -207,9 +207,9 @@ homomorphism of open subgroups. -/
 theorem sectionAction_restriction (f : X ⟶ Y) (k : X.subgroup) :
     f.restriction.comp
         (ρ.sectionAction Y.domain.obj
-          (ρ.invariantStabilizerInclusion Y.subgroup Y.domain (f.groupHom k))).hom =
+          (ρ.invariantStabilizerInclusion Y.subgroup Y.domain (f.groupHom k))).asIso.hom =
       (ρ.sectionAction X.domain.obj
-        (ρ.invariantStabilizerInclusion X.subgroup X.domain k)).hom.comp
+        (ρ.invariantStabilizerInclusion X.subgroup X.domain k)).asIso.hom.comp
           f.restriction := by
   apply Y.domain.obj.hom_ext
   conv_lhs =>
@@ -222,7 +222,7 @@ theorem sectionAction_restriction (f : X ⟶ Y) (k : X.subgroup) :
         ρ.toMonoidHom (f.groupHom k : G) =
       ρ.toMonoidHom (k : G) * (ρ.toMonoidHom f.label)⁻¹ := by
     simp [map_mul, map_inv, mul_assoc]
-  exact congrArg (fun a : Aut P => X.domain.obj.baseMap.comp a.hom) hlabel
+  exact congrArg (fun a : Aut P => X.domain.obj.baseMap.comp a.asIso.hom) hlabel
 
 /-- The actual continuous spectrum map is equivariant for conjugation of
 operator subgroups. -/
@@ -286,7 +286,7 @@ theorem subgroupRestriction_restriction {U V : OpenSubgroup G} (h : V ≤ U)
     (subgroupRestriction h d).restriction = BoundedAlgHom.id K d.obj.algebra := by
   apply d.obj.hom_ext
   calc
-    _ = d.obj.baseMap.comp (ρ.toMonoidHom 1).inv :=
+    _ = d.obj.baseMap.comp (ρ.toMonoidHom 1).asIso.inv :=
       (subgroupRestriction h d).restriction_comp_baseMap
     _ = _ := by rw [map_one]; rfl
 

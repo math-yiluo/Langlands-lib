@@ -77,7 +77,9 @@ is geometrically connected: it has the rational point given by the identity. The
 standard facts are not proved in Proposition 1.1.9 itself, and this module proves
 none of them.
 
-For the later proof (not part of this unit): the source proof, printed p. 9
+For the proof (not part of this module; the Library proves the statement as
+`pseudoReductiveSeparableExtension` in `PseudoReductiveSeparableExtensionProof`):
+the source proof, printed p. 9
 (PDF p. 35), first handles Galois extensions `k'/k` by Galois descent of
 `R_{u,k'}(G_{k'})` to a smooth connected unipotent normal `k`-subgroup of `G`.
 For a separable algebraic `K/k`, a smooth connected unipotent normal

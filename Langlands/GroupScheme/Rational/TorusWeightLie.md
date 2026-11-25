@@ -95,8 +95,8 @@ family `t` is realized as the unit coordinates of the point
 ## Provenance
 
 This is an internal supporting module for the explicit coordinate-algebra proof of
-`CyclicWeightFiltrationStatement`. The target statements (L0)–(L2) were agreed with the task's
-first executor (Worker 1224), whose assembly applies them. The mathematical setting is
+`CyclicWeightFiltrationStatement`. The target statements (L0)–(L2) are in the form in which the
+assembly in `Rational.CyclicWeightQuotientAssembly` applies them. The mathematical setting is
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, 2nd ed., Lemma 3.3.8 and its proof (printed
 pp. 111–112), where the Lie algebra of the subgroup attached to a set of weights is identified
 through the grading of the coordinate algebra. The results here translate between the tangent

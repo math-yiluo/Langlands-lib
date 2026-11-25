@@ -1,11 +1,8 @@
 # Proof of the completed submodule inclusion and the ranges of Renard I.1.5.3
 
-Author: Worker 1125 (Lean proof and this explanation).
-
 This module proves the published closed proposition
 `Langlands.Algebra.NonUnitalModuleCompletionSubmoduleTheorem.{uA,uM}` from
-`Langlands.Algebra.NonUnitalModuleCompletionSubmoduleStatements`, for
-exact-target proof task `6468e0c5-0007-44c1-b87b-96f1d4c19ab4`. The final theorem
+`Langlands.Algebra.NonUnitalModuleCompletionSubmoduleStatements`. The final theorem
 is `Langlands.Algebra.nonUnitalModuleCompletionSubmoduleTheorem_proof`. It is
 stated at arbitrary independent universes `uA` and `uM` and has exactly the type
 `NonUnitalModuleCompletionSubmoduleTheorem.{uA, uM}`. The statement module and

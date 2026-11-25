@@ -275,7 +275,7 @@ example :
 
 end ZeroCoefficientRing
 
-/-! Additional supplied-structure checks contributed by Worker 1207. -/
+/-! Additional supplied-structure checks. -/
 
 /-- Exact unchanged target, with no additional parameters. -/
 example : RegularCoefficientComparisons.{uk, uA, uB} :=

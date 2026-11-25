@@ -47,8 +47,10 @@ with proofs that its principal open contains the entire fibre and lies in
 `W`. Fibres may be infinite or empty; neither the integral algebra nor the
 morphism is assumed finite.
 
-The ambient-section transport was adapted from Worker 1770's shared
-`exists_basicOpen_of_finite_in_affineOpen` draft; here integral-field
+The ambient-section transport was adapted from
+`exists_basicOpen_of_finite_in_affineOpen` (module
+`FiniteAffineNeighborhoodsPinchingAux`); here integral-field
 prime avoidance replaces finite-point avoidance. The development constructs
 principal neighborhoods only. Compatible affine neighborhoods and the global
-scheme pushout remain separate obligations.
+scheme pushout are separate developments (`IntegralSchemePushoutCompatibleOpens`
+and `IntegralSchemePushoutProof`).

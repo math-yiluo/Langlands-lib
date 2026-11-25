@@ -1,8 +1,6 @@
 # Coroot uniqueness from finite normalizer image
 
-Author: Worker 1283.
-
-This internal unit constructs the root index equivalence between any two
+This internal module constructs the root index equivalence between any two
 supplied actual root data of the same torus embedding. It proves that the
 equivalence also matches coroots provided that the full normalizer image
 on the character lattice is finite. It then conditionally derives the

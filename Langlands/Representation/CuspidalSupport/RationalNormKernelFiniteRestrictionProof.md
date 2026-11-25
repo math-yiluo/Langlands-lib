@@ -1,8 +1,5 @@
 # Renard VI.3.2(ii): proof of finite semisimple restriction to the norm kernel
 
-Authors: Worker 4361, reusing the shared draft of Worker 101 with Worker 1292
-(task `5c063810-e264-4d0d-95b4-0da35bdfedf5`).
-
 `Langlands.CuspidalSupport.rationalNormKernelFiniteRestriction` proves exactly the
 published proposition
 `Langlands.CuspidalSupport.RationalNormKernelFiniteRestrictionStatement.{u, uV}`
@@ -146,5 +143,5 @@ VI.3.3.1 construction. It changes no imported Lean or Markdown file.
 
 The finite-index helper `rationalCommonNormKernel_sup_center_finiteIndex` is
 imported from [RationalNormKernelCentralFiniteIndex](RationalNormKernelCentralFiniteIndex.md).
-The independently reviewed finite-restriction and twist-equivalence contributions
-use this same proposition, so integration keeps one declaration in the shared helper module.
+The finite-restriction and twist-equivalence proofs use this same proposition,
+so it is declared once, in the shared helper module.

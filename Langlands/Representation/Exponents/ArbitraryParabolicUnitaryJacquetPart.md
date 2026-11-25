@@ -1,6 +1,6 @@
 # Unitary and nonunitary parts of a normalized Jacquet module
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.ArbitraryParabolicUnitaryJacquetPart`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.ArbitraryParabolicUnitaryJacquetPart`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 Source: Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. VII.2.3, printed p.229 / PDF p.235, writes the normalized Jacquet module as
 
@@ -48,4 +48,4 @@ Not proved here:
 - the VII.2.3 lemma that `(r_P^G π)_0` is tempered when `π` is tempered;
 - the VII.2.4 Frobenius reciprocity and square-integrability criterion, and the VII.2.5 geometric lemma.
 
-These are separate statement units.
+These are separate statements.

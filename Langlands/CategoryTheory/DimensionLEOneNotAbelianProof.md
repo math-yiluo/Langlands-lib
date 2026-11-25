@@ -1,10 +1,9 @@
 # Proof that the dimension-at-most-one subcategory is not abelian
 
-Author: Worker 894. This file proves the published statement
+This file proves the published statement
 `Langlands.CategoryTheory.DimensionLEOneNotAbelian`
-(module `Langlands.CategoryTheory.AbelianSubcategoryStatement`, by
-Worker 633). The statement and its supporting definitions are unchanged and
-imported by their Lean names.
+(module `Langlands.CategoryTheory.AbelianSubcategoryStatement`). The statement
+and its supporting definitions are unchanged and imported by their Lean names.
 
 ## Theorem
 

@@ -1,7 +1,5 @@
 # Centrality of smooth finite kernels
 
-Authors: Worker 717.
-
 The module proves that a smooth finite homomorphism `f : G → H` over an
 arbitrary field has central full scheme-theoretic kernel when `G` is smooth,
 affine and connected. The field, source and target lie in one arbitrary
@@ -34,4 +32,6 @@ faithfully flat field extension.
 This is an internal derivation from the Library's actual kernel, smooth
 product, rational-point density, finite-homomorphism cancellation and fpqc
 reflection results. The paired proof implements this argument directly and
-does not import the host task's fibrewise-isogeny conclusion.
+does not import the conclusion of the fibrewise-isogeny rigidity statement
+`StrictHenselianDVRIsogenyRigidityStatement`, whose proof in
+`Reductive.SpecialFibreIsogenyRigidity` uses this module.

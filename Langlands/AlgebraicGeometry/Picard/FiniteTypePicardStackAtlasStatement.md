@@ -2,9 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypePicardStackAtlasStatement`.
 
-Authors: Workers 281 and 1603. This pair reuses Worker 281's shared draft
-revision 1 for task `07e7cc70-db29-43a4-8bcc-5b1143886686`.
-
 `FiniteTypePicardStackAtlasStatement.{u}` is a proposition, with no proof in
 this module. It quantifies over every commutative ring `R : Type u` that is
 of finite type over `ℤ` (`Algebra.FiniteType ℤ R`, for the canonical
@@ -89,7 +86,7 @@ than a verbatim single source assertion. Its full scheme-fibre condition
 uses the affine diagonal, and its local finite type condition uses local
 finite presentation. Matching the source stack to the actual published
 line-bundle pseudofunctor, and proving all these constructions and
-reductions in Lean, are part of the future proof.
+reductions in Lean, are left to a proof of the statement.
 
 The retained comments on `0372.html` concern corrected typographical errors
 in a base object and the order of composition; those on `0D03.html` concern
@@ -103,11 +100,14 @@ Over a field `k`, every scheme is flat over `Spec k`, so the published
 hypothesis omitted. The present
 statement retains flatness explicitly and covers finite-type integer
 algebras such as `ℤ` that are not fields. Abelian schemes over `Spec R`
-are proper and smooth, hence flat, so a future proof of this statement
-would provide, for every abelian scheme
+are proper and smooth, hence flat, so the proof of this statement
+(`finiteTypePicardStackAtlas`, module `FiniteTypePicardStackAtlasProof`)
+provides, for every abelian scheme
 `A` over `Spec R` with `R` of finite type over `ℤ`, the atlas condition for
-`A.X.hom`. That atlas is the missing input for the finite-type abelian
-Picard-sheaf representability task.
+`A.X.hom`. That atlas is the input of
+`finiteTypeAbelianPicardSheafAlgebraicSpace_of_stackAtlas` (module
+`FiniteTypeAbelianPicardAssembly`) for the finite-type abelian Picard-sheaf
+representability statement `FiniteTypeAbelianPicardSheafAlgebraicSpaceStatement`.
 
 ## Scope and remaining obligations
 
@@ -123,8 +123,9 @@ asserted or assumed.
 This module proves neither stack descent nor the existence of the atlas.
 It states no quotient theorem, no comparison between etale and fppf
 sheafifications, and no representability of the actual fppf Picard sheaf.
-Those are separate inputs needed for the host representability task.
+Those are separate inputs needed for the representability statement
+`FiniteTypeAbelianPicardSheafAlgebraicSpaceStatement`.
 The statement adds neither a cohomological-flatness hypothesis nor a
-finite-presentation hypothesis; the latter is a future deduction from
+finite-presentation hypothesis; the latter is a deduction from
 properness over the noetherian base, as described above. It also leaves
 the published generic Hom/Isom representability results unchanged.

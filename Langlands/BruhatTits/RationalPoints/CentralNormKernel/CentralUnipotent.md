@@ -1,7 +1,5 @@
 # Finiteness of central unipotent rational points
 
-Author: Worker 1532.
-
 Namespace: `Langlands.BruhatTits.RationalPoints.CentralNormKernel`. Internal helper for the
 proof of `CentralNormKernelCompactnessStatement`.
 

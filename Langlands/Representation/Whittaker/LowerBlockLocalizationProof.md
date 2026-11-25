@@ -1,7 +1,5 @@
 # Proof of the JPSS arbitrarily small lower-block Whittaker localization
 
-Author: Worker 234.
-
 The theorem `Langlands.Whittaker.lowerBlockWhittakerLocalization` proves
 exactly the published proposition
 `Langlands.Whittaker.LowerBlockWhittakerLocalizationStatement.{uF,uV}` from

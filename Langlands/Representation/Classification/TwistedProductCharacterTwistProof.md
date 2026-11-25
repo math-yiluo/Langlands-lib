@@ -1,7 +1,5 @@
 # Common determinant-character twists of normalized block products
 
-Author: Worker 6.
-
 `Langlands.Classification.twistedProductCharacterTwist` proves the exact published
 `Langlands.Classification.TwistedProductCharacterTwistClause.{uF,uV} F T`.
 The field and block-carrier universes remain independent, and the induced carrier

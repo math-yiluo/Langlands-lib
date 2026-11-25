@@ -1,6 +1,6 @@
 # Compact action on actual coherent smooth orbit sections
 
-Worker 200. This derived construction uses the actual normalized product-induced
+This derived construction uses the actual normalized product-induced
 fibers and the coherent finite scalar-smooth section space from Waldspurger VI.1
 (printed pp.295–296, PDF pp.61–62). The original proof of Proposition VI.4.1 (printed p.306,
 PDF p.72) uses the induced product-group action and a common open stabilizer.

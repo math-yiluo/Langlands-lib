@@ -1,7 +1,5 @@
 # The self-stabilizer of a tensor with distinct cuspidal factors
 
-Author: Worker 495.
-
 The theorem
 `Langlands.CuspidalSupport.glDistinctCuspidalTensorStabilizer.{uF,uV} F T`
 proves exactly the published proposition

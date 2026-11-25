@@ -1,9 +1,7 @@
 # The tied discrete-series scalar commutant: separated and coincident exponents
 
 Lean module: `Langlands.Representation.Archimedean.RealTiedDiscreteScalarCommutantCases`,
-namespace `Langlands.Archimedean`. Author: Worker 380, for Task 6749
-(`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`). The split was agreed with Worker 379, who owns
-Task 7626 (`4fda7898-2fbf-4ad2-a6b5-48fb114ca3e0`). That task's target
+namespace `Langlands.Archimedean`.
 `RealTemperedScalarCommutantStatement` reduces to `RealTiedDiscreteScalarCommutantStatement`
 (Library module `RealTiedScalarCommutantCases`) and a statement for lists without a
 discrete-series block.
@@ -12,7 +10,7 @@ discrete-series block.
 
 `RealTiedDiscreteScalarCommutantStatement` asks for a scalar simultaneous commutant on the real
 standard module of every list of real blocks that has total rank `n`, equal real exponents and
-at least one discrete-series block. This module splits it into two open statements:
+at least one discrete-series block. This module splits it into two statements:
 
 * `RealTiedDiscreteSeparatedScalarCommutantStatement`, for lists in which every block with the
   same complex exponent as a discrete-series block is an induction block of the same absolute
@@ -23,7 +21,9 @@ The theorem `realTiedDiscreteScalarCommutant_of_cases` shows that the two statem
 imply `RealTiedDiscreteScalarCommutantStatement`. The split is internal to this formalization
 and has no literature source. It follows the planned proof (see "Status"): the first statement
 is the range of a lowest-`O(n)`-type argument, and the second contains the configurations where
-that argument is known to fail. Neither statement is proved here.
+that argument is known to fail. Neither statement is proved here; they are proved as
+`realTiedDiscreteSeparatedScalarCommutant` (module `RealDiscreteSeparatedProof`) and
+`realTiedDiscreteCoincidentScalarCommutant` (module `RealDiscreteCoincidentProof`).
 
 ## Notation
 
@@ -88,9 +88,8 @@ holds, apply `ha`; otherwise apply `hb`. This case split on
 
 ## Status and the known obstruction
 
-Both statements are open. Nothing in this section is formalized. It records the planning
-analysis behind the split (Worker 380, with Worker 379), so that tasks for the two statements
-can cite it.
+Both statements are proved in the modules named above. Nothing in this section is formalized.
+It records the planning analysis behind the split.
 
 **Planned route for the separated case.** Write an induction block of weight `m ≠ 0` and exponent
 `t` as `D ⊗ |det|^t`. It is a quotient of the principal series `Ind(x, y)` and a subrepresentation
@@ -101,7 +100,7 @@ has two steps.
    built from the block quotient maps and swaps of adjacent unlinked characters. Take a vector
    `Φ(v · T'')`. Here `v` is a product of minors of bottom row sets, and `T''` is the
    `O(n)`-fixed vector of a spherical principal series. That spherical vector is assumed cyclic
-   (the statement `RealSphericalCyclicStatement` of Task 7626).
+   (the statement `RealSphericalCyclicStatement`, module `RealSphericalCyclic`).
 2. Scalar step. The vector generates a single `O(n)`-type of multiplicity one, the lowest
    `O(n)`-type. Every simultaneous endomorphism then acts on it by a scalar, and cyclicity
    finishes.
@@ -186,9 +185,10 @@ Known or expected to be hard:
 stabilizer of the inducing character does not contribute a symmetry there. A Bruhat-type
 dimension bound, `dim Hom(Ind(ps*), Ind(ps)) ≤ #{w : w·ps* = ps}`, would then bound the
 commutant directly. A translation functor inside a Weyl chamber would also work: `D_6 ⊗ D_2` at
-`t = 0` is a regular integral translate of `D_6 ⊗ D_4`, which is not a bad pair. Worker 379
-proposed a third option, a connection argument. Suppose every `O(n)`-type in the span of the
+`t = 0` is a regular integral translate of `D_6 ⊗ D_4`, which is not a bad pair. A third
+option is a connection argument. Suppose every `O(n)`-type in the span of the
 generating vector has multiplicity one. Then an endomorphism acts on each type by a scalar.
 Adjacent types are joined by a nonzero `𝔭`-matrix coefficient, which forces the scalars to be
-equal. This needs explicit matrix coefficients. As of this module the Library has none of these
-tools: no Bruhat filtration bound, no translation functors, and no `O(n)` branching rules.
+equal. This needs explicit matrix coefficients. When this module was written the Library had
+none of these tools: no Bruhat filtration bound, no translation functors, and no `O(n)`
+branching rules.

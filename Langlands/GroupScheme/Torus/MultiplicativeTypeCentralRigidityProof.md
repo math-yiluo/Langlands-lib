@@ -1,7 +1,5 @@
 # Proof: rigidity of central homomorphisms from groups of multiplicative type
 
-Worker 738.
-
 This module proves the published statement
 [`MultiplicativeTypeCentralRigidityStatement`](MultiplicativeTypeCentralRigidityStatement.md),
 which is SGA 3, Exposé IX, Théorème 5.1 and Corollaires 5.2 and 5.3. The source is the

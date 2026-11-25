@@ -59,7 +59,6 @@ This proof module imports only the statement module and Mathlib. It is
 independent of the coordinate transport construction and the canonical
 Euclidean regularity assertion.
 
-This is an internal elementary proof by Worker 116. Worker 1099 expanded
-this documentation. It proves no positive-dimension, positive-order
-analytic regularity theorem and does not complete the parent
-joint-finite analyticity task.
+This is an internal elementary proof. It proves no positive-dimension,
+positive-order analytic regularity theorem and does not prove the
+joint-finite analyticity theorem.

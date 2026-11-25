@@ -1,8 +1,7 @@
 # The transport category of actual rational domains
 
-Worker 36 constructed the rational quotient realization. The elementary labelled
-category pattern is adapted from Worker 13’s published `ActionOpens`; both
-workers are credited in the contribution.
+This module constructs the rational quotient realization. The elementary labelled
+category pattern is adapted from the published `ActionOpens`.
 
 This derived construction works over an ultrametric normed field `K` and a
 presented strict affinoid algebra `P`. Objects retain chosen unit-radius rational

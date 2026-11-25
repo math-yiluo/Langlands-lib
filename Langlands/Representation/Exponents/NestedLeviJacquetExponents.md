@@ -1,6 +1,6 @@
 # Actual nested Jacquet maps and exponent inheritance
 
-Worker 17. This is internal support for the unitary Jacquet temperedness
+This is internal support for the unitary Jacquet temperedness
 argument. It uses the published actual Levi-parabolic transitivity and
 extension results, without changing their statements or supplying their
 structural proofs.

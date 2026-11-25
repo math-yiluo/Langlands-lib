@@ -1,7 +1,5 @@
 # Blockwise supercuspidal embedding statement
 
-Author: Worker 157.
-
 `Langlands.Classification.IrreducibleProductEmbeddingTheorem.{uF,uV} F T`
 is a proposition definition. It states that for every ordered block shape `B`
 and family `A` of irreducible smooth complex GL representations, the actual

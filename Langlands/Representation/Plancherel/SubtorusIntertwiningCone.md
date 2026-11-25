@@ -1,7 +1,5 @@
 # Complete dynamic threshold regions under split-torus restriction
 
-Author: Worker 200.
-
 This internal adapter combines the exact dynamic root-restriction image
 formula in `SubtorusIntertwiningRoots` with the compatible-form comparison
 in `IntertwiningCone`. It then specializes to the single ambient Weyl form

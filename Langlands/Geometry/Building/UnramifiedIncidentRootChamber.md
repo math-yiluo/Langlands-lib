@@ -1,6 +1,6 @@
 # A same-apartment chamber from incident root restrictions
 
-This derived internal unit connects nonzero composites of actual torus
+This module connects nonzero composites of actual torus
 morphisms with the coefficient-fixed direction and regular-facet criteria
 in `UnramifiedSplitTorusFixedDirections` and
 `UnramifiedSpecialApartmentRegularDirectionReduction`. It uses their
@@ -47,7 +47,7 @@ coefficient automorphism. `incidentRootChamberPoint` chooses such a point
 as a subtype retaining regularity and this full-facet invariance.
 The only choice is from that proved existential in the supplied D'.
 
-The unit is uniform in its universe and imposes no field or residue
+The module is uniform in its universe and imposes no field or residue
 characteristic restriction. It applies in particular to the maximal
 unramified extension in the special-apartment chamber problem. It does
 not establish the incident-root nonvanishing premise, existence of

@@ -23,8 +23,8 @@ the span of the vectors `ℓ(E_pq) v`, `p < q`, `v ∈ V`, is not all of `V`.
 
 ## Role and provenance
 
-This is an internal, algebraic reformulation used for Task 7065 (Casselman's nonvanishing
-`V ≠ 𝔫V` for irreducible admissible `(𝔤𝔩_n(ℂ), U(n))`-modules, Wallach 1979, 4.14(1)). For such
+This is an internal, algebraic reformulation used for Casselman's nonvanishing
+`V ≠ 𝔫V` for irreducible admissible `(𝔤𝔩_n(ℂ), U(n))`-modules (Wallach 1979, 4.14(1)). For such
 a module `(ρ, π)`, take `ℓ(Y) = π(Y, 0)` and `r(Y) = π(0, Y)` under the Library identification
 `ℂ ⊗_ℝ 𝔤𝔩_n(ℂ) ≅ 𝔤𝔩_n(ℂ) × 𝔤𝔩_n(ℂ)`, `z ⊗ X ↦ (zX, z X̄)`. For skew-Hermitian `Y` one has
 `X̄ = -Xᵀ`, so `κ(Y) = π(1 ⊗ Y)` is the differentiated `U(n)`-action, extended complex
@@ -42,9 +42,10 @@ representations of semisimple Lie algebras*, Compositio Math. 41 (1980), Theorem
 proof 5.10): `X ⊗_U M⁻(λ) = V / (ℓ(𝔫) V + Σ_p (ℓ(E_pp) - λ_p) V) ≠ 0`. Bernstein and Gelfand do
 not state this specific formulation; it is ours.
 
-## Planned use
+## Use
 
-Two reductions are planned in Task 7065: `ComplexJacquetBimoduleStatement` implies
-`ComplexJacquetOneSidedStatement` (the `(𝔤, K)`-module bridge described above), and
-`BernsteinGelfandInputsStatement` (module `LowerVerma`) implies `ComplexJacquetBimoduleStatement`
-(the argument of Bernstein–Gelfand 5.10 with `X = V`). Neither is part of this module.
+Two reductions involve this statement: `ComplexJacquetBimoduleStatement` implies
+`ComplexJacquetOneSidedStatement` (the `(𝔤, K)`-module bridge described above, module
+`ComplexJacquetBimoduleBridge`), and `BernsteinGelfandInputsStatement` (module `LowerVerma`) implies
+`ComplexJacquetBimoduleStatement` (the argument of Bernstein–Gelfand 5.10 with `X = V`, module
+`ComplexJacquetBimoduleReduction`). Neither is part of this module.

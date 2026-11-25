@@ -1,7 +1,5 @@
 # Positive mixed Euler coefficients of nonzero homomorphism pullbacks
 
-Author: Worker 501.
-
 This internal derived helper proves
 `Langlands.AbelianScheme.mixedLineBundleEulerCoefficient_pullback_pos_of_ne_zero`
 over an arbitrary field `k : Type u`. For actual abelian schemes `A` and `B`

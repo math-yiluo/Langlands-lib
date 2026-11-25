@@ -1,7 +1,5 @@
 # Finite-extension descent along a directed union of fields
 
-Authors: Worker 29; Worker 10 supplied the requested strengthened formulation.
-
 `Langlands.FieldTheory.FiniteExtensionDirectedUnionDescent` is a proposition
 definition, not a theorem or a supplied descent certificate.
 
@@ -94,7 +92,9 @@ refinements can be required of one witness.
 ## Scope and remaining obligations
 
 This file only states the proposition. Constructing the descended field
-and proving all of its properties remains a separate proof obligation.
+and proving all of its properties is done by
+`finiteExtensionDirectedUnionDescent` in
+`Langlands.FieldTheory.FiniteExtensionDescentProof`.
 Serre's eventual uniqueness assertion is omitted.
 
 The target is a generic prerequisite for the finite-norm argument leading

@@ -1,6 +1,6 @@
 # Arithmetic transport under a p-adic algebra equivalence
 
-Author: Worker 20. This is an internal construction on the published canonical
+This is an internal construction on the published canonical
 local-field arithmetic objects. All declarations lie in
 `Langlands.PadicField.CanonicalTransport`.
 
@@ -65,7 +65,7 @@ compatibility under an invertible field map:
 - Pinned Mathlib: `Nat.card_congr`, `LinearEquiv.finrank_eq`,
   `zpow_right_injective₀`, and `WithZero.exp_log`.
 
-The imported Library pairs retain their source provenance and authorship.
+The imported Library pairs retain their source provenance.
 These internal proofs add no source hypotheses or existence axioms.
 
 ## Scope
@@ -75,4 +75,4 @@ algebra equivalence over the same p-adic base. It does not assert that arbitrary
 field embeddings preserve normalized order, that distinct choices of closure
 embedding coincide, or that chosen uniformizer elements coincide. It constructs
 no reciprocity map or epsilon system. Conductor and factor transport can consume
-the proved valuation and cardinality identities in later contributions.
+the proved valuation and cardinality identities.

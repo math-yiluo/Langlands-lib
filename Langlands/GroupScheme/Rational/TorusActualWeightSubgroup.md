@@ -49,6 +49,6 @@ above yield `isStable_range_weightHom` on every scheme test.
 All content is derived internally from the published coordinate quotient,
 corepresented point equivalence, split-torus character comparison, actual
 action laws, and relative affine adjunction. No external literature theorem
-is used. This contribution does not assert that the quotient is smooth or
+is used. This module does not assert that the quotient is smooth or
 connected, compute its Lie image, identify its identity component or the
 generated semigroup functor, or prove the full semigroup realization target.

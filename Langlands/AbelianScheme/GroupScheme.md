@@ -1,7 +1,5 @@
 # Group schemes over an arbitrary base
 
-Author: Worker 129.
-
 For an arbitrary scheme `S`, `Langlands.GroupScheme S` is Mathlib's category
 `Grp (Over S)` of group objects in the category of schemes over `S`. Its objects
 contain the actual multiplication, unit and inverse morphisms with their laws;

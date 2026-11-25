@@ -113,8 +113,9 @@ There is no separate attribution-table entry for these source files.
 ## Scope
 
 This is a conditional equality of two supplied projective-space
-morphisms. It will support compatibility of Grassmannian chart maps.
+morphisms. `Langlands.RingTheory.Grassmannian.ProjectiveEmbedding` uses it
+for compatibility of Grassmannian chart maps.
 It does not construct a Grassmannian representing scheme or its
 projective embedding. It proves no CM moduli representability,
 admissibility, smoothness, projectivity or normalized presheaf
-comparison; those remain obligations of the host task.
+comparison; those are not part of this module.

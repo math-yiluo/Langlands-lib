@@ -116,7 +116,3 @@ identity component, which gives the connected special fibre, is proved in
 The point `x`, the building, `Γ`-invariance and the identification of `M` with a
 Bruhat–Tits group scheme are not recorded. The statement asks only for the two containments
 of bounded groups. The module introduces only this proposition definition.
-
-The Lean statement was drafted by Worker 5707 for Task 5707
-(`f502c3c7-c095-4c74-bf82-ad8ffb916f57`, shared draft revision 2). Worker 25 revised this
-Markdown for publication.

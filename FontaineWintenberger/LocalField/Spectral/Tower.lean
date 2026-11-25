@@ -1,0 +1,107 @@
+/-
+Copyright (c) 2026 Yijun Yuan. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Yijun Yuan
+-/
+module
+
+public import FontaineWintenberger.LocalField.Basic
+public import FontaineWintenberger.LocalField.Spectral.Uniqueness
+public import Mathlib.Analysis.Normed.Algebra.Basic
+public import Mathlib.Analysis.Normed.Module.FiniteDimension
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+/-!
+# Normed fields and intermediate towers
+
+Normed algebra maps preserve the field norm, so the norm valuations
+are compatible. An intermediate field keeps the ambient norm and uniformity;
+finite-dimensional completeness and the chosen-extension integer theorems
+therefore apply directly to its unit ball.
+
+## Main results
+
+* `completeSpace_of_finiteDimensional`: Finite intermediate fields are complete for their inherited
+  uniformity.
+* `normedAlgebra_unitBall_isDiscreteValuationRing`: DVR structure for the norm unit ball of a chosen
+  normed field extension.
+* `normedAlgebra_unitBall_henselianLocalRing`: Henselianity for that norm unit ball.
+* `normedAlgebra_unitBall_exists_generator`: The norm unit ball is generated over the base unit
+  ball.
+* `normedAlgebra_isCompleteDiscreteValuedField`: A finite separable normed extension of a complete
+  discretely valued field is again one.
+
+## References
+
+* Serre, *Local Fields*, Chapters I–II (discrete valuation rings, completions, unramified and
+  totally ramified extensions).
+-/
+
+@[expose] public section
+
+namespace NormedField
+
+variable (K L : Type*) [NormedField K] [NormedField L] [NormedAlgebra K L]
+    [IsUltrametricDist K] [IsUltrametricDist L]
+
+/-- A normed field algebra is an extension of the norm valuations. -/
+instance valuation_hasExtension :
+    (valuation (K := K)).HasExtension (valuation (K := L)) where
+  val_isEquiv_comap := by
+    intro x y
+    simp only [Valuation.comap_apply, valuation_apply, nnnorm_algebraMap, nnnorm_one, mul_one]
+
+end NormedField
+
+namespace IntermediateField
+
+variable {K L : Type*} [NontriviallyNormedField K] [NormedField L] [NormedAlgebra K L]
+
+/-- The ambient field is a normed algebra over an intermediate field with its inherited norm. -/
+instance normedAlgebraAmbient (F : IntermediateField K L) : NormedAlgebra F L where
+  norm_smul_le r x := by
+    change ‖(r : L) * x‖ ≤ ‖(r : L)‖ * ‖x‖
+    exact (norm_mul (r : L) x).le
+
+/-- Finite intermediate fields are complete for their inherited uniformity. -/
+theorem completeSpace_of_finiteDimensional [CompleteSpace K] [FiniteDimensional K L]
+    (F : IntermediateField K L) : CompleteSpace F := FiniteDimensional.complete K F
+
+end IntermediateField
+
+namespace FontaineWintenberger
+
+variable (K : Type*) [NontriviallyNormedField K] [IsCompleteDiscreteValuedField K]
+variable (L : Type*) [NormedField L] [IsUltrametricDist L] [NormedAlgebra K L]
+    [FiniteDimensional K L] [Algebra.IsSeparable K L]
+
+include K in
+/-- DVR structure for the norm unit ball of a chosen normed field extension. -/
+theorem normedAlgebra_unitBall_isDiscreteValuationRing :
+    IsDiscreteValuationRing 𝒪[L] :=
+  extensionValuationSubring_isDiscreteValuationRing K L (NormedField.valuation (K := L))
+
+include K in
+/-- Henselianity for that norm unit ball. -/
+theorem normedAlgebra_unitBall_henselianLocalRing :
+    HenselianLocalRing 𝒪[L] :=
+  extensionValuationSubring_henselianLocalRing K L (NormedField.valuation (K := L))
+
+/-- The norm unit ball is generated over the base unit ball. -/
+theorem normedAlgebra_unitBall_exists_generator [PerfectField 𝓀[K]] :
+    ∃ x : 𝒪[L],
+      Algebra.adjoin 𝒪[K] {x} = ⊤ :=
+  extensionValuationSubring_exists_generator K L (NormedField.valuation (K := L))
+
+/-- A finite separable normed extension of a complete discretely valued field is again one. -/
+theorem normedAlgebra_isCompleteDiscreteValuedField (K L : Type*) [NontriviallyNormedField K]
+    [IsCompleteDiscreteValuedField K] [NontriviallyNormedField L] [IsUltrametricDist L]
+    [NormedAlgebra K L] [FiniteDimensional K L] [Algebra.IsSeparable K L] :
+    IsCompleteDiscreteValuedField L :=
+  have : CompleteSpace L := FiniteDimensional.complete K L
+  have := normedAlgebra_unitBall_isDiscreteValuationRing K L
+  {}
+
+end FontaineWintenberger

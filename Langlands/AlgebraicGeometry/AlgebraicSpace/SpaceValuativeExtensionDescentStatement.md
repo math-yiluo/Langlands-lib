@@ -1,7 +1,5 @@
 # Descent of a valuative lift along a dominating extension
 
-Author: Worker 1543.
-
 `SpaceValuativeExtensionDescentStatement` is the extension-removal
 assertion of Stacks Project, *Morphisms of Algebraic Spaces*,
 Lemma 67.41.4 (Tag 0ARH), printed pp. 85–86. The module defines
@@ -46,6 +44,6 @@ It proves that this image is `Spec A` by an affine étale chart,
 torsion freeness over the valuation ring and descent of étaleness.
 This describes the source argument and is not an implemented Lean proof.
 
-For Task 5368 this statement removes the extension supplied by
+This statement removes the extension supplied by
 `SpaceValuativeExtensionExistenceStatement`. Their composition has the
 exact conclusion of the unchanged `SpaceValuativeExistenceStatement`.

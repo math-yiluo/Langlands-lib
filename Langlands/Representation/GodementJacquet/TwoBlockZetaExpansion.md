@@ -1,14 +1,13 @@
 # Finite product expansion of two-block induced matrix zeta integrals
 
 Module `Langlands.Representation.GodementJacquet.TwoBlockZetaExpansion`.
-Author: Worker 1112.
 
 This module proves the forward half of Godement–Jacquet, *Zeta Functions of Simple
 Algebras* (1972), Theorem 3.4 (printed 38–41) for two blocks over a canonical
 p-adic field: the shifted matrix zeta integral of an actual bi-smooth coefficient of
 `F.canonicalNormalizedProductInduced (succBlockShape m h) σ` is a finite sum of
 products of block matrix zeta integrals. The implemented route uses the compact
-coefficient formula of `CompactProductCoefficients` (Worker 704) instead of the
+coefficient formula of `CompactProductCoefficients` instead of the
 source's integration over `P \ G`.
 
 Notation: `t + 1 = (m 0 + 1) + (m 1 + 1)`, `n₀ = m 0 + 1`, `n₁ = m 1 + 1`,
@@ -89,7 +88,7 @@ the bi-smooth coefficient `biSmoothCoefficient π ℓ v` of
 `π = F.canonicalNormalizedProductInduced (succBlockShape m h) σ` has the same
 conclusion, with block coefficients that are actual elements of
 `biSmoothMatrixCoefficients (σ i)`, under the hypothesis that all block bi-smooth
-coefficients converge at the block shifts. Proof: Worker 704's
+coefficients converge at the block shifts. Proof:
 `exists_compactProductCoefficientFormula` gives `K`, the factorization `G = P K`, a
 Haar probability `μK` on `K` and an equivalence `E` with
 `biSmoothCoefficient π ℓ v g = ∫ k, ⟨E ℓ (k), v (k g)⟩ dμK`;
@@ -110,7 +109,7 @@ coefficient has an actual shifted rational value `R` lying in
 `R₀ i, R₁ i`, take `R = ∑ i, C(w i) R₀ i R₁ i`; the continuation follows from
 `HasRationalContinuation.mul`, `hasRationalContinuation_const_mul`,
 `continuation_sum` and agreement on a right half-plane. These are the first two
-components of Worker 704's `TwoBlockMatrixGeneratorInputs`.
+components of `TwoBlockMatrixGeneratorInputs`.
 
 ## Scope
 

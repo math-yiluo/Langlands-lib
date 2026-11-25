@@ -40,4 +40,5 @@ single chart of the old atlas.
 This is internal atlas infrastructure derived from the existing recognition,
 subatlas, full-domain and strong-map APIs. It transcribes no external theorem.
 It does not construct a global pullback or prove etale base change. Transport
-of etaleness and localization comparisons is separate work in the host task.
+of etaleness and localization comparisons is separate work, not done in this
+module.

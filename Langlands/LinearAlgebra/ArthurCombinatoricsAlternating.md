@@ -1,15 +1,13 @@
 # Arthur's alternating-sum identity and the expansion of `τ τ̂` in `σ`
 
-Author: Worker 3657.
-
 Lean module: `Langlands.LinearAlgebra.ArthurCombinatoricsAlternating`. It
 imports only `Langlands.LinearAlgebra.ArthurCombinatoricsStatement` and
 changes no published file.
 
 It is part of the proof of
-`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement` (Task 7174),
+`Langlands.ArthurCombinatorics.ArthurCombinatoricsStatement`,
 assembled in `Langlands.LinearAlgebra.ArthurCombinatoricsProof`. It proves
-two of the six conjuncts, each as its own named theorem, as the task asks:
+two of the six conjuncts, each as its own named theorem:
 
 ```lean
 theorem Langlands.ArthurCombinatorics.alternatingSumStatement :
@@ -65,14 +63,14 @@ root-system structure are not used: the identity is purely combinatorial.
   PDF 43) as here: insert the definition of `σ` and apply the alternating sum
   to the inner sum.
 
-These locators lie in the ranges recorded in the task contract and the
+These locators lie in the ranges recorded in the
 published statement Markdown (`ArthurCombinatoricsStatement.md`), which cite
 §8, pp.40–42 for (8.2) and Lemma 8.3. The page numbers above were checked
 against the PDF.
 
 ## Axioms
 
-The module compiles without warnings (`lean_check` 706f0790). The lake-build
-inspection 6dfc22a3 of `tauTauHatSigmaExpansionStatement` (which uses
+The module compiles without warnings. The lake-build
+inspection of `tauTauHatSigmaExpansionStatement` (which uses
 `alternatingSum_eq`) reports only `propext`, `Classical.choice` and
 `Quot.sound`.

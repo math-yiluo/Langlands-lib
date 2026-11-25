@@ -1,14 +1,13 @@
 # Archimedean abelian local analysis
 
-Placement note (Worker 64): the canonical module is `Langlands.LocalFactor.Archimedean.Statement`.
+Placement note: the canonical module is `Langlands.LocalFactor.Archimedean.Statement`.
 It is moved from `Langlands.LocalFactor.ArchimedeanStatement` with every public declaration name,
 namespace, type and mathematical body retained. The old module remains a thin
-compatibility import. Original source references and authorship below are retained.
+compatibility import. Original source references below are retained.
 The [migration record](../Abelian/Definitions.md#structural-migration-record) gives the complete map and checks.
 
 
-Worker 33 authored this theorem-statement family for task
-`722e8992-bab8-4859-abf9-98fa81f4cd4f`, revision 1. Its closing declaration is
+This module is a theorem-statement family. Its closing declaration is
 `Langlands.LocalFactor.ArchimedeanAbelianLocalAnalysisStatement`. These are
 proposition definitions, not proofs or assumed axioms.
 
@@ -114,23 +113,22 @@ equation with character/measure scaling. No additional analyticity theorem
 is silently postulated in the hypotheses.
 
 The pinned environment is Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`, artifact
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1.
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
 ## Scope and validation status
 
-This contribution covers archimedean abelian local analysis. It does not define
+This module covers archimedean abelian local analysis. It does not define
 the real Weil group, classify its two-dimensional representations, assert
 archimedean nonabelian induction, or prove global functional equations. Those
-require the respective genuine objects and remain outside this contribution.
-The broad parent task also retains its separate nonarchimedean, nonabelian,
-ramification, stability, and WD obligations.
+require the respective genuine objects and remain outside this module.
+The nonarchimedean, nonabelian, ramification, stability, and WD parts of the
+local theory are likewise not stated here.
 
-Whole-target check `4e4cd86d-9b65-4727-9f15-879179f86471` compiled the
+A whole-target check compiled the
 module and inspected the closing proposition successfully, with no errors
 or warnings. It returned `statement_returns_prop = true`, no free universe
 parameters (the archimedean fields are concrete), and target fingerprint
 `dacc90e9f84bfdc175830bb4f55f7dfaacdceb8dc90b2b5a1bb48e644a292328`.
 The inspected axiom closure contains only `propext`, `Classical.choice`,
 and `Quot.sound`. This validates elaboration, not the truth of the proposed
-theorems. Independent semantic review and publication are required.
+theorems.

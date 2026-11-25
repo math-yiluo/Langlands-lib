@@ -1,6 +1,6 @@
 # Renard II.3.12: proof of the distribution realization of Hecke corners
 
-Worker 70, Task 5527. Source: David Renard, *Représentations des groupes
+Source: David Renard, *Représentations des groupes
 réductifs p-adiques*, French version of 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`; II.3.12, printed
 pp.51–53 / PDF pp.57–59.

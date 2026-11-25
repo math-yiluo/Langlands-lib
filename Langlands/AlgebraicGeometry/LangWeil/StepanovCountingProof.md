@@ -1,7 +1,5 @@
 # The finite counting step in Schmidt's method
 
-Author: Worker 96.
-
 `stepanovCounting` proves `StepanovCountingStatement` in universe `u`.
 It treats an arbitrary finite-field fibre-count function `r : F → ℕ` and
 uses exactly the auxiliary-polynomial premise in that proposition.

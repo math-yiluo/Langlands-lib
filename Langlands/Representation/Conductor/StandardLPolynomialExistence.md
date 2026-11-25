@@ -1,6 +1,5 @@
 # The standard L-polynomial of a generic representation over every local field
 
-Author: Worker 5220; Worker 8 removed two lemmas that the Library now provides.
 Internal helper module for the proof of
 `Langlands.Conductor.SphericalCorankOneConvergenceStatement`; it introduces no
 statement.

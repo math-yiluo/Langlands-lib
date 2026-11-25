@@ -1,8 +1,8 @@
 # Proof of Renard C.I convexity and the finite-sum power comparison
 
-Worker 1200's theorem
+The theorem
 `Langlands.Renard.commutativeDimensionPowerAssembly` proves exactly the closed
-published proposition
+proposition
 `Langlands.Renard.CommutativeDimensionPowerAssemblyStatement` from
 `Langlands.Algebra.RenardCommutativeDimensionPowerAssemblyStatement`.
 It has no carrier or universe parameters and introduces no extra hypotheses.
@@ -17,7 +17,7 @@ registered original is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 1200 reread PDF281–282 and visually checked PDF281 for this proof.
+PDF281–282 were reread and PDF281 visually checked for this proof.
 The supplementary registered source
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -42,13 +42,13 @@ and, for every `n : ℕ` and every `x : Fin n → ℝ` satisfying
 (∑ i, Real.rpow (x i) r) ≤ Real.rpow (∑ i, x i) r.
 ```
 
-The proof first rewrites the exponent with the published theorem
+The proof first rewrites the exponent with the theorem
 `Langlands.Renard.renardExponent_eq_dimensionExponent` from
 `Langlands.Algebra.RenardCommutativeEndomorphismDimensionProof`.
 This identifies it with
 `Langlands.CommutingDimension.dimensionExponent l = 2 - 2 / (2 : ℝ)^l`.
 A case split on `l` rules out zero using `1 ≤ l`. At `l = k + 1`, the
-published theorem
+theorem
 `Langlands.CommutingDimension.dimensionExponent_succ_ge_one k` from
 `Langlands.Algebra.CommutingDimensionNumerics` supplies the lower bound.
 This rewrite proves the lower bound for the exact source exponent; it
@@ -57,7 +57,7 @@ does not change the target proposition.
 Mathlib's `convexOn_rpow` from
 `Mathlib.Analysis.Convex.SpecificFunctions.Basic` then supplies the actual
 `ConvexOn ℝ (Set.Ici 0)` assertion from this lower bound. Finally, the
-published theorem `Langlands.CommutingDimension.sum_rpow_le` from
+theorem `Langlands.CommutingDimension.sum_rpow_le` from
 `Langlands.Algebra.CommutingDimensionPrimary` is applied to `Finset.univ`,
 the given `x`, the same exponent, and their nonnegativity and exponent
 bounds. Its real-power notation is identified with `Real.rpow` by
@@ -90,7 +90,7 @@ This is the displayed source inequality with its sides reversed.
 The proof here is numerical and does not construct the blocks or prove
 their dimension sum, restriction comparisons, nilpotent reduction,
 algebra-dimension estimate, recurrence or other C.I assertions. Those
-retain their separate tasks and owners.
+are separate results.
 
 Every positive generator count is retained. At `l = 1`, `r = 1`, so the
 power function is the identity and the finite-sum comparison is an
@@ -101,15 +101,9 @@ positive-entry assumption.
 
 At `l = 0`, the source exponent is zero. Two entries equal to one would
 make the unrestricted finite-sum assertion read `2 ≤ 1`. The target
-therefore requires `1 ≤ l`; the zero-generator scalar-algebra case remains
-in the separate base-case work.
+therefore requires `1 ≤ l`; the zero-generator scalar-algebra case is
+a separate base case.
 
-## Credit
+## Reuse
 
-Worker 1200 wrote this proof adapter and its explanation. Worker 746
-authored the imported exponent identity. Worker 307 authored the imported
-`dimensionExponent` lower bound and `sum_rpow_le` proof in the
-`CommutingDimension` modules. Worker 709 authored the shared statement
-draft, which Worker 1200 prepared for its earlier publication. These
-published results are reused by Lean name; no unpublished proof draft is
-used here.
+The imported results are reused by Lean name.

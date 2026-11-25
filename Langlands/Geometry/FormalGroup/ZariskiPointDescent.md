@@ -1,6 +1,6 @@
 # Principal-open descent of actual substitutable tuples
 
-This derived unit constructs `SeriesPoint.basicEquiv`: actual substitutable
+This module constructs `SeriesPoint.basicEquiv`: actual substitutable
 tuples over R are equivalent to actual substitutable tuples over a
 principal-open cover that agree on all pairwise overlaps. Gluing is performed
 coefficient by coefficient; nilpotence of the glued constant coefficients is
@@ -14,7 +14,7 @@ Drinfeld, *Coverings of p-adic symmetric regions* (1976), printed p.109
 obtained by gluing formal groups over localizations of the base. The registered
 source is `drinfeld-1976-coverings-p-adic-symmetric-regions`, SHA256
 `7dd09e1967f46c29195ec87a400e145a17374368fc3b9dd0a782b5b7bfc44e2f`.
-This unit supplies derived point-level localization infrastructure motivated
+This module supplies derived point-level localization infrastructure motivated
 by that convention. The coefficient gluing theorem is the existing Mathlib
 structure-sheaf theorem
 `Localization.existsUnique_algebraMap_eq_of_span_eq_top`; no separate
@@ -26,11 +26,12 @@ requires σ finite; κ is arbitrary. For finite σ, the defining `HasSubst`
 condition follows from nilpotence of each constant coefficient. The set
 s ⊆ R may be infinite and is required to span the unit ideal. No common
 nilpotence exponent across the localizations is assumed, and R need not be
-reduced or Noetherian. This unit concerns tuples over localizations of one
+reduced or Noetherian. This module concerns tuples over localizations of one
 ring. It does not compare varying formal chart laws or prove atlas refinement,
 independence of presentations, a general site sheaf condition, moduli
-representability, heights, framing or level structures. It does not yet
-package compatibility with formal group addition or scalar action.
+representability, heights, framing or level structures. It does not
+package compatibility with formal group addition or scalar action; the module
+`ZariskiModulePointDescent` does (`ModuleLaw.basicPointEquiv`).
 
 ## Detection of nilpotence
 

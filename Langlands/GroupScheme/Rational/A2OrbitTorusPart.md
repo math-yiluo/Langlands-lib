@@ -1,7 +1,5 @@
 # Torus parts of rational opposite products over a splitting field
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.A2OrbitTorusPart`.
 
 ## Results

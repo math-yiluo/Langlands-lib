@@ -1,7 +1,5 @@
 # The Swan conductor and the normalized level in rank at least two
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Setting
 
 `K` is a `p`-adic field with its canonical topology, valuation and measurable structure (local
@@ -11,7 +9,7 @@ representations of `GL_{n+1}(K)`; `toSmoothDualClass` forgets supercuspidality, 
 `firstFixedLevel` is the least `m` such that the class has a nonzero vector fixed by the
 Library's level subgroup `K_1(𝔭^m)` (value in `WithTop ℕ`, `⊤` if there is none). This first
 fixed level is the conductor `Henniart.Numerical.conductor` of the target statement T2.
-`IsNormalizedLevel K N a x` (Library, Task 7419) says that `x` is the least element of the set of
+`IsNormalizedLevel K N a x` (Library module `NormalizedLevel`) says that `x` is the least element of the set of
 values `m / e(𝓛)` with `𝓛` a lattice chain in `K^N` of period `e(𝓛)` and `a` having a nonzero
 vector fixed by `U^{m+1}(𝔄(𝓛))` (Bushnell 1987, (3.3)).
 

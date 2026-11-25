@@ -69,7 +69,7 @@ If `x` is a special point, every `w ∈ W` has a representative in
 `N(F) ∩ P_x`. This lemma and its three helpers are imported from
 [the shared special-point Weyl module](../SpecialCompact/WeylRepresentatives.md),
 extracted without changing their statements or proofs from the published
-`Langlands.BruhatTits.Iwasawa.AvailableProof` (author of that unit: Worker 102).
+`Langlands.BruhatTits.Iwasawa.AvailableProof`.
 The proof combines KP Lemma 1.3.42 and Axiom 4.1.6. For each simple root, a
 vanishing affine root at `x` gives a reflection representative from the
 published rank-one factorization (`rootRankOneFactorization`,

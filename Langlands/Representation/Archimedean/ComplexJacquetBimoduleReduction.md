@@ -43,6 +43,6 @@ outline: if `ℓ(𝔫)V = V`, every `e ⊗ gen` comes from the kernel of `p : E 
 
 ## Use
 
-Together with the planned bridge `ComplexJacquetBimoduleStatement → ComplexJacquetOneSidedStatement`
-and the Library's `complexJacquetModuleFinite_of_oneSided`, this reduces Task 7065's target
-`ComplexJacquetModuleFiniteStatement` to the six Bernstein–Gelfand inputs.
+Together with the bridge `ComplexJacquetBimoduleStatement → ComplexJacquetOneSidedStatement`
+(module `ComplexJacquetBimoduleBridge`) and the Library's `complexJacquetModuleFinite_of_oneSided`,
+this reduces `ComplexJacquetModuleFiniteStatement` to the six Bernstein–Gelfand inputs.

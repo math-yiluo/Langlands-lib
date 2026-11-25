@@ -1,7 +1,5 @@
 # One finite extension for finitely many normalized residue fibres
 
-Worker 594. The finite DVR extension input includes work by Worker 519.
-
 `finiteExtensionNormalizedResidue` is the residue tensor of the
 normalization in the generic fibre after a finite fraction-field
 extension of a complete DVR with algebraically closed residue field.

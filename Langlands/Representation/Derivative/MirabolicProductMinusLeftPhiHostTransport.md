@@ -1,16 +1,14 @@
-# Actual left-Phi host rank transports
-
-Author: Worker 499.
+# Actual left-Phi rank transports for the compatibility statement
 
 This module constructs `leftPhiHostInductionIso` in
 `Langlands.Derivative.MirabolicProductMinus`: the actual higher left mixed
 product, followed by its published equality rank transport, is naturally
 isomorphic to compact induction of its full smooth inducing coefficient in
 ambient mixed-orbit coordinates. It also identifies the exact lower expected
-host functor with explicit inverse-rank pullback of the lower mixed product,
+functor of the statement with explicit inverse-rank pullback of the lower mixed product,
 and records the full representation and morphism formulas. These are internal
-adapters toward BZ77 §4.13(b); the localized-product comparison and the host
-LeftPhi compatibility remain separate obligations.
+adapters toward BZ77 §4.13(b); the localized-product comparison and
+`LeftPhiCompatibility` are proved in other modules.
 
 ## Source and provenance
 
@@ -28,21 +26,21 @@ induction comparisons. Sections 3.1–3.2, printed pp.450–451 (PDF pages
 printed pp.456–457 (PDF pages 17–18), defines the left mixed product;
 §4.13(b), printed p.458 (PDF page 19), states its natural compatibility.
 Section 7.2, printed p.471 (PDF page 32), describes the two left orbit
-representatives. These passages and relevant page images were read during
-this task. The bounded supplied-source and public-note errata search found
+representatives. These passages and relevant page images were read for
+this construction. The bounded supplied-source and public-note errata search found
 no applicable BZ77 entry; no global absence is asserted.
 
 The rank adapters, high coefficient functor and compact-induction natural
 isomorphism are internal derived constructions. BZ77 does not literally
 state the equality-cast interfaces used by this Library. Equality elimination
-identifies a host rank cast with pullback by the inverse matrix rank map.
+identifies a rank cast of the statement with pullback by the inverse matrix rank map.
 The high coefficient is the existing covariance-normalized mixed-product
 coefficient pulled back along the actual inducing homomorphism. The published
 `Induction.compactInducedTransport` supplies transport of the entire compact
 function carrier. No new generic induction transport is constructed. The
 published source coefficient definitions identify the lower expected
-representation and its maps by reflexivity. No pending comparison or peer
-draft supplies a proof body.
+representation and its maps by reflexivity. No unproved comparison
+supplies a proof body.
 
 ## Parameters and conventions
 
@@ -59,9 +57,9 @@ P_(r+1), for the supplied bundled continuous nontrivial unitary additive
 character. There is no P_0.
 
 The algebraic high transport, its evaluation formula, and its naturality
-use independent coefficient universes `uV,uW,uV',uW'`. The smooth host
-functors use the exact single input-carrier universe `uV` of the published
-host target; compact induction raises the output carrier universe to
+use independent coefficient universes `uV,uW,uV',uW'`. The smooth
+functors of the statement use the exact single input-carrier universe `uV`
+of the published statement; compact induction raises the output carrier universe to
 `max uF uV`. No universe saturation, finite-dimensional model, irreducible
 input, admissibility hypothesis, selected vector or scalar omission is
 introduced. The functor's coefficient is on the entire tensor product.
@@ -150,7 +148,7 @@ T.leftMixedProductFunctor (k+1) (r+1) ⋙ mirabolicRankCast T (totalRank_eq k r)
       compactInductionFunctor (leftInducing k r F.Carrier).
 ```
 
-## Exact lower expected host formulas
+## Exact lower expected formulas of the statement
 
 `leftPhiExpectedPullback` applies the actual source `phiMinus T ψ r` in
 the second factor, the actual lower normalized left mixed product, and
@@ -189,9 +187,12 @@ The full project closure contains 98 imported modules, excluding this
 entry. All 196 imported Lean/Markdown files are nonempty, byte-identical
 to the published Library, and verified against its manifest at commit
 `31d47a6f0dabd6dff6c65e1b78f4821ddedc9bc8`. Every imported pair is
-published. The host proposition module supplies definitions only; its
-comparison conclusions are not assumed. No pending stages, ambient
-normalization or compact source-comparison unit is imported.
+published. The statement module `MirabolicProductMinusCompatibilityStatement`
+supplies definitions only; its comparison conclusions are not assumed. The
+stages comparison `MirabolicProductMinusLeftPhiStagesComparison`, the ambient
+normalization `MirabolicProductMinusLeftPhiInductionNormalization` and the
+compact source comparison `MirabolicProductMinusLeftPhiCompactComparison` are
+not imported.
 
 The direct mathematical inputs are actual equality and matrix rank casts,
 the actual mixed-product subgroup and its covariance-normalized coefficient,
@@ -207,7 +208,7 @@ its comparison conclusions is needed for the high transport proof.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host conclusions | The unchanged host statement module supplies definitions and exact type targets only. No host comparison or boundary conclusion supplies an input. This unit proves high compact-induction and lower rank adapters. |
+| Six conclusions of the statement | The unchanged statement module supplies definitions and exact type targets only. No comparison or boundary conclusion of the statement supplies an input. This module proves high compact-induction and lower rank adapters. |
 | Plus functors, adjunction and §4.13(d) | None supplies an input. The plus subgroup, projection and successor are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -217,26 +218,25 @@ its comparison conclusions is needed for the high transport proof.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. |
 | Generality and normalization | All `k,r`, arbitrary supplied `T`, positive GL input rank and entire carriers are retained. The high smooth coefficient requires both original inputs smooth. The high algebraic transport and its naturality do not. Both higher covariance and the actual lower source-Phi normalization are retained. |
-| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions, source formulas, drafts, pending constructions and consumer tasks provide no unproved comparison premise. |
-| Separate owners and controls | This host adapter unit does not duplicate the separate restriction-sequence or exactness work. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions and source formulas provide no unproved comparison premise. |
+| Separate results | This adapter module does not duplicate the separate restriction-sequence or exactness results. |
 | Actual compact induction | Both complete covariant uniformly smooth compact-supported carriers are retained. Support transport and its inverse are proved in the published generic theorem. |
 | Actual subgroup and rank map | The high subgroup membership equivalence is definitional for every ambient element. Both equality casts are compared with actual continuous inverse matrix-rank pullback, and the same maps occur in the full representation and morphism formulas. |
 
 
 A scan of this module and its complete project closure finds no Lean-code
-occurrence of the host's 38 excluded task identifiers or 24 named consumer
-declarations, and no proof holes, new axioms or unsafe evaluation commands.
-Excluded names in explanatory Markdown are audit prose. Development
-compilation is separate from independent semantic acceptance and publication.
+occurrence of 24 excluded consumer declarations, and no proof holes, new
+axioms or unsafe evaluation commands. Excluded names in explanatory
+Markdown are audit prose.
 
 ## Complete project import closure
 
 Every direct and transitive project import, excluding this entry, is
-listed below. The authorized environment supplies unchanged Lean and
+listed below. The environment supplies unchanged Lean and
 Mathlib, pinned respectively to commits
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and
 `5ed2965256430c3649e86755f9576b54eca72435`.

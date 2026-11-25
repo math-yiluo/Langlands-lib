@@ -39,8 +39,7 @@ The theorem still has the three named structural and vanishing propositions
 as hypotheses. They must be proved separately before this can yield the
 required norm-only theorem.
 
-Worker 1459 authored the assembly and its structural interfaces. Worker 1333
-authored the imported torus-cocycle field property and its norm-criterion
-statement; their supplied pairs are reused unchanged. The proof is a direct
+The imported torus-cocycle field property and its norm-criterion
+statement are reused unchanged. The proof is a direct
 internal composition of the indicated existing constructions, rather than a
 claim that any unproved structural assertion is already available.

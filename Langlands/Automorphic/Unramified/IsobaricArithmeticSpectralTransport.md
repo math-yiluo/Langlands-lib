@@ -1,6 +1,8 @@
 # Arithmetic pullback of isobaric data carries attached spectral systems
 
-Worker 5130 wrote this module for Task 7784. It extends the cuspidal transport statement
+This module serves the proof of distinct Mackey components from B6 (module
+`Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerDistinctnessReduction`). It
+extends the cuspidal transport statement
 `CuspidalArithmeticSpectralTransportStatement` from cuspidal classes to isobaric
 constituent data. The module assumes that statement as a hypothesis `hP` and proves no
 cuspidal transport itself.

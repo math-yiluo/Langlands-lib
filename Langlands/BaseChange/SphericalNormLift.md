@@ -30,4 +30,4 @@ integral matrix takes the same unit into the integral matrix algebra. Its
 value in the field matrix algebra is the conjugate of the first evaluation.
 This follows by comparing the two maps on the coefficients and adjoined root.
 Consequently the lift is integral in every conjugate where its norm is integral.
-The construction is derived for the unit fundamental lemma in Task 7810.
+The construction is derived for the unit fundamental lemma `UnitFundamentalLemmaStatement`.

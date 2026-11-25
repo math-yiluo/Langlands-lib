@@ -1,8 +1,7 @@
 # Commuting original nonunital bimodules and their additive category
 
-Author: Worker 1174. This is the focused definition unit for task
-`1490cf73-f76f-469c-b407-e7bcae6db5ca`. It is a prerequisite of the
-whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
+This is a focused definition module. It is a prerequisite for a
+formalization of the whole of Renard's 2026 book.
 
 ## Source and provenance
 
@@ -21,7 +20,7 @@ structures "et le fait que les actions à gauche et à droite commutent". It
 then assumes separately that `B` is a *nondegenerate* `A−B`- or
 `B−A`-bimodule. It also observes that this can fail when the bimodule
 structure comes from a ring morphism. PDF21–24 were read in full for this
-unit.
+module.
 
 The source works with `ℂ`-algebras. This module works over arbitrary
 nonunital rings, with the additive actions of the published
@@ -218,11 +217,11 @@ idempotented-ring hypothesis is used anywhere.
 
 ## Limits
 
-This unit does not formalize I.2.2, I.2.3 or the whole book. Out of scope:
+This module does not formalize I.2.2, I.2.3 or the whole book. Out of scope:
 tensor products and Hom modules of bimodules and their actions or functors;
 original/unitized tensor comparisons; the source's forgetful functor
 `F^B_A`, the pseudo-forgetful functor, and the induction functors `I^B_A`
 and `P^B_A`; adjunctions; exactness; nondegenerate-part comparisons; and
-scalar-hom bimodule comparisons. These remain separate successors. No
+scalar-hom bimodule comparisons. These are not part of this module. No
 `ℂ`-linear structure, no scalar restriction along a ring morphism, and no
 endomorphism-ring instance is introduced.

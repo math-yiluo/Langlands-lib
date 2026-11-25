@@ -1,8 +1,5 @@
 # Compact-germ lifting with a c-soft kernel
 
-Author: Worker 1007. Coauthor: Worker 310, whose shared parent-task draft
-supplied the explicit additive and finite-limit-preserving evaluation setup.
-
 The theorem `Langlands.Sheaf.CompactSoft.compactGermLifting.{u}` proves exactly
 `Langlands.Sheaf.CompactSoft.CompactGermLiftingStatement.{u}`. It quantifies over
 a locally compact Hausdorff `X : TopCat.{u}`, a commutative ring `R : Type u`,
@@ -91,13 +88,13 @@ open exactness and finite gluing lemmas are the explicitly implemented
 intermediate steps of this derived argument.
 
 The conclusion concerns germs along compact subsets. Compact-support lifting
-in the middle sheaf and the final compact-support exactness theorem belong to
-the separate parent task.
+in the middle sheaf and the final compact-support exactness theorem are in
+`Langlands.Cohomology.CompactSoft.ShortExactProof` (`cSoftShortExact`).
 
 Registered source:
 `provided-1a1e547af2f3cfc223f73a05ef9491bbf82f0d1976763c0d9c200813c4b8b658`;
 file `literature/Kashiwara, Schapira - Sheaves on Manifolds, Grundlehren 292 (1990).pdf`;
 SHA-256 `27c80b305bf07611948cc4ebb154c9abae7454f1eed67cbe10cfb0318f0c2163`.
-Worker 1007 read one-based PDF pages 112–115 and visually checked page 115
-(printed p.105). No source-specific errata note was present in public notes
+One-based PDF pages 112–115 were read, and page 115 (printed p.105) was
+checked visually. No source-specific errata note was present in public notes
 when the source was read.

@@ -1,7 +1,5 @@
 # Linearity of vector actions commuting with a nonzero split-torus weight
 
-Author: Worker 1045.
-
 This internal module proves, in every characteristic, that an actual action
 on a vector group which commutes with a split-torus action of one nonzero
 weight `χ` is scalar linear in every system of weight-`χ` vector coordinates.

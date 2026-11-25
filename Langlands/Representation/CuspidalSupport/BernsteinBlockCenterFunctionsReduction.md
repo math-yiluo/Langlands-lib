@@ -1,6 +1,6 @@
 # Conditional reduction of Renard VI.10.4, Theorem, first sentence
 
-Worker 98. This is a conditional reduction for statement 1 of Task 5545. The source is Renard,
+This is a conditional reduction for the first statement of Renard VI.10.4, Theorem and Remarks 1–2. The source is Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026 (`renard-2026-representations-groupes-reductifs-padiques`,
 SHA-256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`),
@@ -10,7 +10,7 @@ PDF pp.217–218).
 The module proves the closed proposition
 `BernsteinBlockCenterFunctionsReductionStatement`. It says that the published
 `BernsteinBlockCenterFunctionsStatement` (module
-`BernsteinCenterFunctionsStatements`) follows from four published or staged
+`BernsteinCenterFunctionsStatements`) follows from four
 propositions:
 
 1. **P1** `BernsteinBlockHomEquivalenceStatement` (Renard VI.10.2, Theorem,
@@ -160,7 +160,5 @@ binders and applies it.
 ## Scope
 
 The four inputs P1, P2, P4 and P5 are hypotheses, and none of them is proved
-here. No published statement is modified. The module needs two accepted
-modules that are not yet in the Library: `BernsteinBlockCenterFunctionsLevi`
-and `BernsteinBlockCenterFunctionsInvariantCenter`. Their pairs are listed in
-`repository_paths`.
+here. The module imports `BernsteinBlockCenterFunctionsLevi`
+and `BernsteinBlockCenterFunctionsInvariantCenter`.

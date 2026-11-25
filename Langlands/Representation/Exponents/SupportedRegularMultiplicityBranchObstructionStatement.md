@@ -1,10 +1,5 @@
 # A responsible Weyl branch for strict relative multiplicity excess
 
-Author: Worker 253. The statement boundary was designed by Worker 359.
-Worker 429, the intended consumer, confirmed its adequacy for the
-supported regular multiplicity argument. Changes to the coordinate
-material and boundary are coordinated with Worker 359 and Worker 429.
-
 `Langlands.GLSupportedRegularMultiplicityBranchObstructionStatement` is a
 Prop-valued statement definition in
 `Langlands.Representation.Exponents.SupportedRegularMultiplicityBranchObstructionStatement`.
@@ -129,7 +124,7 @@ means that the set of failing `u` is contained in a null set; measurability
 of the occurrence set is not asserted. The import supplies only the
 measure-space instance on `ℝ`; it adds no hypothesis.
 
-The accepted definitions of
+The definitions of
 [`ComplexTwistFamilies`](ComplexTwistFamilies.md) are imported without
 modification. They construct the actual twists, induced families,
 transports and occurrence predicates, and prove no branch selection or
@@ -187,9 +182,9 @@ Its registered source ID is
 SHA256 is
 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
 The nested support data are on printed p.99, and Lemma 5.6 and its proof
-are on printed p.101 (PDF page 7). Worker 253 inspected the p.101 page
-image, which is needed because text extraction loses the imaginary unit
-and the subscripts. The published
+are on printed p.101 (PDF page 7). The p.101 page image was inspected,
+which is needed because text extraction loses the imaginary unit and the
+subscripts. The published
 [continuation-parameter note](../../../notes/jacquet/silberger-continuation-parameters.md)
 and [Lemma 5.3 scope audit](../../../notes/jacquet/silberger-lemma53-scope.md)
 are source-reading notes, not author errata or Lean theorems.
@@ -260,9 +255,11 @@ without a further argument. This distinguishes the present boundary from
 the all-parameter p.102 sentence used by the published
 [`GLTemperedReflectionBranchObstructionStatement`](TemperedReflectionBranchObstructionStatement.md).
 
-## Remaining proof obligations and scope
+## Proof obligations and scope
 
-The unproved content isolated here is the implication from the supported
+The content isolated here, proved in
+[`SupportedRegularMultiplicityBranchObstructionProof`](SupportedRegularMultiplicityBranchObstructionProof.md),
+is the implication from the supported
 inputs and the strict multiplicity excess to one branch with all three
 properties. A proof must derive the responsible branch from the actual
 composition factors and geometric filtration of the ambient Jacquet module,
@@ -294,7 +291,4 @@ The later multiplicity and head assembly must separately supply finite
 composition series, positivity and the inner-to-ambient inequality in order
 to reduce a failure of equality to this premise. The conclusion supplies no
 occurrence in a prescribed irreducible quotient, no Jordan–Hölder equality,
-no Hom-dimension comparison, and no head theorem. Existing statement
-interfaces and their dependencies are unchanged. A proof successor must
-target this exact declaration after its independent acceptance and
-Library publication.
+no Hom-dimension comparison, and no head theorem.

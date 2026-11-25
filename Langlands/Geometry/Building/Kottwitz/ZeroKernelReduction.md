@@ -1,8 +1,7 @@
 # Reduction of the rational Kottwitz kernel to the unramified kernel
 
-This is internal proof infrastructure for Task 6367, following
-Kaletha–Prasad, *Bruhat–Tits theory: a new approach* (2023), Proposition 11.5.4,
-printed page 431, PDF page 462. It is not an unconditional proof of that proposition.
+This is internal proof infrastructure for Kaletha–Prasad, *Bruhat–Tits theory: a new
+approach* (2023), Proposition 11.5.4 on the zero subgroup, printed page 431, PDF page 462. It is not an unconditional proof of that proposition.
 
 `UnramifiedZeroKernelStatement` says that every existing unramified zero-subgroup
 datum defines the kernel of the constructed coefficient-point Kottwitz map.

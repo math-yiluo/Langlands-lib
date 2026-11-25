@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Polynomial tools for adding variables mapping to regular parameters -/
 
@@ -12,8 +12,7 @@ section Monomial
 
 variable {σ R : Type*} [CommSemiring R]
 
-/-- Monomial ideals not involving `X i` are saturated with respect to `X i`
-(adapted from Worker 6's draft `ArtinianBottom`). -/
+/-- Monomial ideals not involving `X i` are saturated with respect to `X i`. -/
 theorem mem_span_monomial_of_X_mul {S : Set (σ →₀ ℕ)} {i : σ} (hS : ∀ m ∈ S, m i = 0)
     {p : MvPolynomial σ R} (h : X i * p ∈ Ideal.span ((fun m => monomial m (1 : R)) '' S)) :
     p ∈ Ideal.span ((fun m => monomial m (1 : R)) '' S) := by
@@ -33,8 +32,7 @@ theorem mem_span_monomial_of_X_mul {S : Set (σ →₀ ℕ)} {i : σ} (hS : ∀ 
 
 end Monomial
 
-/-- The variables of a polynomial ring over any commutative ring form a weakly regular sequence
-(adapted from Worker 6's draft `ArtinianBottom`). -/
+/-- The variables of a polynomial ring over any commutative ring form a weakly regular sequence. -/
 theorem isWeaklyRegular_X (A : Type*) [CommRing A] (d : ℕ) :
     RingTheory.Sequence.IsWeaklyRegular (MvPolynomial (Fin d) A)
       (List.ofFn fun i => (X i : MvPolynomial (Fin d) A)) := by

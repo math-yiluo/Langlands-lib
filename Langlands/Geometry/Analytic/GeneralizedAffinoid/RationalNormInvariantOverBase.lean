@@ -19,7 +19,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K]
   {A : PresentedAffinoidAlgebra K}
   {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* Aut A)
-  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
 
 local instance instIsTopologicalGroupOpenSubgroup_rationalNormInvariantOverBase
     (H : OpenSubgroup G) : IsTopologicalGroup H :=
@@ -39,6 +39,7 @@ theorem normRestrictedBaseAction_actionAut (H : OpenSubgroup G) :
   apply MonoidHom.ext
   intro g
   apply Aut.ext
+  apply Iso.ext
   rfl
 
 /-- Joint continuity on the unchanged ambient spectrum is derived from its
@@ -50,9 +51,9 @@ def normRestrictedBaseSpectrum (H : OpenSubgroup G) : ContAction TopCat.{u} H :=
 theorem normRestrictedBaseSpectrum_apply (H : OpenSubgroup G) (g : H)
     (x : BanachSpectrum A) (a : A) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom ((normRestrictedBaseSpectrum ρ hρ H).obj.ρ g) x) a =
-        x ((ρ g.val).inv.toAlgHom a) := by
-  change x (((normRestrictedBaseAction ρ hρ H).actionAut g).inv.toAlgHom a) = _
+      (ConcreteCategory.hom ((normRestrictedBaseSpectrum ρ hρ H).obj.ρ g).asHom x) a =
+        x ((ρ g.val).asIso.inv.toAlgHom a) := by
+  change x (((normRestrictedBaseAction ρ hρ H).actionAut g).asIso.inv.toAlgHom a) = _
   rw [normRestrictedBaseAction_actionAut]
   rfl
 
@@ -66,10 +67,10 @@ def normInvariantLocusToBase (H : OpenSubgroup G) (d : NormInvariantChart ρ hρ
       comm := fun g => by
         apply TopCat.ext
         intro x
-        change BanachSpectrum.comap (ρ g.val).inv.toBoundedRingHom
+        change BanachSpectrum.comap (ρ g.val).asIso.inv.toBoundedRingHom
             (show d.obj.locus from x).val =
           BanachSpectrum.comap
-            ((normRestrictedBaseAction ρ hρ H).actionAut g).inv.toBoundedRingHom
+            ((normRestrictedBaseAction ρ hρ H).actionAut g).asIso.inv.toBoundedRingHom
               (show d.obj.locus from x).val
         rw [normRestrictedBaseAction_actionAut]
         rfl }

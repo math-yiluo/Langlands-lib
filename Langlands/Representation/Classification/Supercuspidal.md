@@ -1,7 +1,5 @@
 # Actual supercuspidality and fixed-universe classes
 
-Author: Worker 23. Independently reviewed construction contribution.
-
 For an actual complex representation of `GeneralLinear n F`,
 `GeneralLinear.IsSupercuspidal` requires admissibility and vanishing of the
 actual Jacquet coinvariant quotient for every proper ordered block parabolic
@@ -21,7 +19,7 @@ characterizations require separate theorems.
 The generic field/topology parameters only enlarge the domain on which this
 actual algebraic vanishing and admissibility condition can be written. No
 classification result over that larger domain is asserted. The canonical
-specialization uses the accepted `PadicField.canonicalTopologicalData` and
+specialization uses the published `PadicField.canonicalTopologicalData` and
 requires positive rank. There is no topology, dimension or completeness
 assumption on representation carriers.
 
@@ -77,6 +75,6 @@ published in Library commit `459d17160ca3aef5c5b4e8ba056125e56d9479a0`.
 All twelve imported project Lean/Markdown pairs match that Library exactly.
 The new file and its explicit-universe interface checks compile in Lean 4.34.0,
 using Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Compilation is separate from independent source correspondence review.
-It does not yet construct preservation under character twists or the smooth
-contragredient; those remain explicit intrinsic/structural obligations.
+This module does not construct preservation under character twists or the
+smooth contragredient; those are proved in `Classification.SupercuspidalTwist`
+and `Classification.SupercuspidalContragredientProof`.

@@ -134,7 +134,7 @@ instance cmHarrisGeometricAssociatedCoefficientInclusion_mono (k : ℕ) :
 /-- The direct quotient sheaf satisfies the unchanged diagonal invariance law. -/
 @[reassoc] theorem cmHarrisGeometricAssociatedCoefficientInclusion_invariant (k : ℕ)
     (g : SmallCMResidualGroup D U (cmHarrisCoefficientLevel D ρ p U m hm k)) :
-    (quotientInclusion k) ≫ (diagonal J (torsor k).val (quotientConstantAction k)).ρ g =
+    (quotientInclusion k) ≫ ((diagonal J (torsor k).val (quotientConstantAction k)).ρ g).asHom =
       (quotientInclusion k) :=
   inclusion_invariant J (torsor k).val (quotientConstantAction k) g
 

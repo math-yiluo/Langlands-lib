@@ -82,7 +82,7 @@ argument beyond specialization is the final use of the preimage identity.
 No new external source assertion is made.
 
 Opposite-pair existence and local reflection-arrangement geometry remain
-explicit premises. Full simply connected normalizer generation is still a
-separate obligation: no theorem here places every normalizer element in
+explicit premises. Full simply connected normalizer generation is not proved
+here: no theorem here places every normalizer element in
 the joined subgroup. No AS5 or full apartment-axiom package is used, and
-this unit does not prove `SimplyConnectedFacetFixingStatement`.
+this module does not prove `SimplyConnectedFacetFixingStatement`.

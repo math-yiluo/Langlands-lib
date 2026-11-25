@@ -1,7 +1,5 @@
 # Actual adjoint-stable realization of a connected reductive group: proof
 
-Authors: Worker 1359 and Worker 1655.
-
 The theorem
 `Langlands.GroupScheme.SelfAdjointRealization.connectedReductiveSelfAdjointRealizationStatement`
 proves exactly the published proposition
@@ -61,15 +59,13 @@ reductive `G` over `Spec S`. Then:
    module `Langlands.GroupScheme.MatrixRepresentationPolynomialImage`).
 2. The semisimplicity bridge
    `PolynomialSemisimplicity.isSemisimpleRepresentation_rightTranslation`
-   (module `Langlands.GroupScheme.Reductive.PolynomialSemisimplicity`, accepted
-   candidate `f017fafd`, not yet in the Library) shows that
+   (module `Langlands.GroupScheme.Reductive.PolynomialSemisimplicity`) shows that
    right translation by `H` on polynomial functions is semisimple. Its hypothesis
    `IsPseudoReductive G` comes from `IsConnectedReductive.isPseudoReductive`.
    The resulting representation is, by definition, the representation
    `ClosedOrbit.subgroupRep H`, and Lean accepts it as that instance.
 3. The closed-orbit theorem `ClosedOrbit.exists_conj_star_mem` (module
-   `Langlands.Group.ClosedOrbit`, Worker 1571's accepted candidate `c5594572`,
-   not yet in the Library) gives `x : GL n S` such that
+   `Langlands.Group.ClosedOrbit`) gives `x : GL n S` such that
    `x⁻¹ * star g * x ∈ H` whenever `x⁻¹ * g * x ∈ H`.
 4. `FormSelfAdjointMean.isFormSelfAdjoint_star_mul_self` turns this into
    self-adjointness of `H` for the form `star x * x`, and
@@ -144,9 +140,9 @@ Everything else is private.
 ## Provenance
 
 The helpers `isAlgClosed_of_ringEquiv` and `liftRCLike`, and the shape of
-`map_mem_range_iff` and of the `ULift ℂ` case split, are adapted from Worker
-1655's staged Levi-Iwasawa modules (candidates `b9f52fdc` and `47761347`). This
-is why Worker 1655 is listed as a coauthor.
+`map_mem_range_iff` and of the `ULift ℂ` case split, are adapted from the
+Levi-Iwasawa modules (`Dynamic.RCLikeLeviIwasawa` has `isAlgClosed_of_ringEquiv`
+and the `ULift ℂ` structure `complexLiftRCLike`).
 
 The overall route is internal. It is a Kempf–Ness/closed-orbit argument
 followed by a geometric-mean descent from `ℂ` to `ℝ`. It does not formalize a

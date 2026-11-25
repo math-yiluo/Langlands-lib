@@ -1,7 +1,5 @@
 # Actual data for a supplied binary special-head product
 
-Author: Worker 357.
-
 This derived construction packages two supplied actual special heads as
 `SegmentProductDatum`, preserving the blocks, their order, their cuspidal
 multiplicities, and an actual equivalence with their binary normalized product.
@@ -98,8 +96,8 @@ This is derived finite data assembly from published definitions and adapters,
 with no new assertion taken from literature. The existing `SegmentProductDatum`,
 `HasSegmentHeads`, `IsSegmentHead`, `cuspidalContent`, and positive binary
 normalized product supply all conventions. The two published adapter bodies
-used here were inspected. A current-Library declaration search found no
-existing `SegmentBinaryHeadDatum` or `segmentBinaryHeadDatum`.
+used here were inspected. A declaration search of the Library found no
+other `SegmentBinaryHeadDatum` or `segmentBinaryHeadDatum`.
 
 The related `SegmentProductDatum.inducedEquivOfShape` is reused rather
 than repeated. It starts with an existing datum and compares ordered shapes;
@@ -109,11 +107,12 @@ reused. Its result is object equality for a supplied binary factor family;
 the present constructor assembles that family and the required head and
 content data. These existing interfaces are not replaced.
 
-The full `SegmentHeadProductIrreducibility` criterion remains a separate
-obligation. This constructor establishes no irreducibility of the binary
+The full `SegmentHeadProductIrreducibility` criterion is a separate result
+(`segmentHeadProductIrreducibility`, in `SegmentHeadProductIrreducibilityProof`).
+This constructor establishes no irreducibility of the binary
 product, no linked-pair contradiction, no original/replacement comparison,
-and no assertion about a derivative. It is an actual-data prerequisite under
-the host task, rather than a proof of either direction of the final criterion.
+and no assertion about a derivative. It is an actual-data prerequisite for
+that criterion, rather than a proof of either direction of the final criterion.
 
 ## Independence audit
 
@@ -142,35 +141,24 @@ derivative assertion or exactness theorem. Imported parabolic regrouping and
 adjacent segment-replacement modules are also unused by its proof body.
 Their presence supplies no additional hypothesis to this constructor.
 
-The trusted operator decisions read in full for this host are correspondence
-files `bd71b9185aab5d6eafffb7891bd3a3ca.md`,
-`0edda6122ce65ed7ac51603c37473920.md`,
-`30144f6f9b59540b88b6d4c1517892d9.md`,
-`ed80148e21e7523abfc048f455e98eb0.md`,
-`2b33898bdd0a5ff1b9031be5155a06f0.md`, and
-`ca18fd5005bf5e12a3f7cade18dca865.md`.
-They retain the host's independence exclusions while permitting the specified
-proved general foundations and final support-only bound. The present unit
-needs none of the derivative, reducibility, or support-bound permissions.
+The independence conditions are those of the `SegmentHeadProductIrreducibility`
+proof. They keep its exclusions while permitting specified proved general
+foundations and a final support-only bound. This constructor needs none of the
+derivative, reducibility, or support-bound results so permitted.
 
-Its closure excludes Ze80 3.5/9.6 and their proof successors; the excluded
+Its closure excludes Ze80 3.5/9.6 and the results proved from them; the excluded
 segment/head/socle/full-Jacquet and classification conclusions; the
-segment-socle component of task `8e5b4563-0365-41c7-b134-70f2a0b36292`;
+segment-socle derivative statements of `SegmentSocleDerivativesStatement`;
 `SegmentHeadSupportStep`, `SegmentHeadJacquetReduction`,
 `TwoSupercuspidalProductStructureProof`, and `UniverseLiftPadic`.
-It imports no pending `SegmentHeadProductComparison` or
+It imports neither `SegmentHeadProductComparison` nor
 `SegmentHeadReplacementDatum`.
-It also excludes the parent generic-product uniqueness and all other
-independence tasks listed by the host:
-`30341ae4-65f2-4a0e-9283-763db01a409e`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`8252833d-c269-41a9-824c-5879e531b23b`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, and
-`bf433f0a-921a-428c-b0c0-6475438125ac`.
+It also excludes the parent generic segment-product uniqueness
+(`GenericSegmentProductUniqueness`) and the other results the criterion is
+kept independent of: multisegment exhaustion, ordered strong-head existence,
+quotient coverage, ordered conversion, tempered uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion, and
+regular exhaustion.
 Imported classification statement modules supply only their existing predicates
 and data; none is used as a proved classification input.
 

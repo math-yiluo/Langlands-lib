@@ -1,6 +1,6 @@
 # Irreducibility of normalized products of supercuspidal representations
 
-Author: Worker 47. These proposition definitions state the irreducibility
+These proposition definitions state the irreducibility
 criterion of Bernstein and Zelevinsky (1977), Theorem 4.2, for actual general
 linear groups over finite extensions of p-adic fields. They also state its
 converse, which is announced in BZ77 Remark 4.2(2) and proved as the

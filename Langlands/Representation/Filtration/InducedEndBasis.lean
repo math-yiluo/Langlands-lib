@@ -28,17 +28,18 @@ variable {C : Type uC} [Category.{vC} C] [Preadditive C] {D : Type uD} [Category
 `op a • f = Φ.map a ≫ f`. -/
 @[instance_reducible]
 def endPrecompModule (X : C) (Z : D) : Module (End X)ᵐᵒᵖ (Φ.obj X ⟶ Z) where
-  smul a f := Φ.map a.unop ≫ f
+  smul a f := Φ.map a.unop.asHom ≫ f
   one_smul f := by
     change Φ.map (𝟙 X) ≫ f = f
     rw [Φ.map_id, Category.id_comp]
   mul_smul a b f := by
-    change Φ.map (b.unop * a.unop) ≫ f = Φ.map a.unop ≫ Φ.map b.unop ≫ f
-    rw [End.mul_def, Φ.map_comp, Category.assoc]
+    change Φ.map (b.unop * a.unop).asHom ≫ f = Φ.map a.unop.asHom ≫ Φ.map b.unop.asHom ≫ f
+    rw [End.mul_asHom, Φ.map_comp, Category.assoc]
   smul_zero _ := comp_zero
   smul_add _ _ _ := Preadditive.comp_add _ _ _ _ _ _
   add_smul a b f := by
-    change Φ.map (a.unop + b.unop) ≫ f = Φ.map a.unop ≫ f + Φ.map b.unop ≫ f
+    change Φ.map (a.unop.asHom + b.unop.asHom) ≫ f =
+      Φ.map a.unop.asHom ≫ f + Φ.map b.unop.asHom ≫ f
     rw [Φ.map_add, Preadditive.add_comp]
   zero_smul f := by
     change Φ.map (0 : X ⟶ X) ≫ f = 0
@@ -46,7 +47,7 @@ def endPrecompModule (X : C) (Z : D) : Module (End X)ᵐᵒᵖ (Φ.obj X ⟶ Z) 
 
 theorem endPrecompModule_smul (X : C) (Z : D) (a : (End X)ᵐᵒᵖ) (f : Φ.obj X ⟶ Z) :
     letI := endPrecompModule Φ X Z
-    a • f = Φ.map a.unop ≫ f :=
+    a • f = Φ.map a.unop.asHom ≫ f :=
   rfl
 
 end Precomp
@@ -88,7 +89,7 @@ def inducedEndLinearEquiv (X : C) :
   letI := endPrecompModule Ind X (Ind.obj X)
   letI := precompModule (Ind ⋙ Res ⋙ T) X (T.obj X)
   { inducedEndEquiv adj T X with
-    map_smul' := fun a x => inducedEndEquiv_map_comp adj T X a.unop x }
+    map_smul' := fun a x => inducedEndEquiv_map_comp adj T X a.unop.asHom x }
 
 variable {n : ℕ} (s : RepFunctorFiltration (Ind ⋙ Res ⋙ T) n) (X : C)
   (hsec : ∀ k : Fin n, ∃ σ : (s.graded k).obj X ⟶ (s.step k.succ).representation X,
@@ -123,14 +124,15 @@ theorem existsUnique_inducedEnd_expansion (x : Ind.obj X ⟶ Ind.obj X) :
       x = ∑ j : S, Ind.map (a j) ≫ inducedEndBasis adj T s X hsec θ S hθ hzero j := by
   let _ := endPrecompModule Ind X (Ind.obj X)
   let b := inducedEndBasis adj T s X hsec θ S hθ hzero
-  have hsum : ∀ c : S → (End X)ᵐᵒᵖ, b.equivFun.symm c = ∑ j : S, Ind.map (c j).unop ≫ b j :=
+  have hsum : ∀ c : S → (End X)ᵐᵒᵖ,
+      b.equivFun.symm c = ∑ j : S, Ind.map (c j).unop.asHom ≫ b j :=
     fun c => b.equivFun_symm_apply c
-  refine ⟨fun j => (b.equivFun x j).unop, ?_, fun a ha => ?_⟩
-  · change x = ∑ j : S, Ind.map (MulOpposite.op (b.equivFun x j).unop).unop ≫ b j
+  refine ⟨fun j => (b.equivFun x j).unop.asHom, ?_, fun a ha => ?_⟩
+  · change x = ∑ j : S, Ind.map (MulOpposite.op (b.equivFun x j).unop).unop.asHom ≫ b j
     simp only [MulOpposite.op_unop]
     rw [← hsum, LinearEquiv.symm_apply_apply]
   · funext j
-    have h : b.equivFun.symm (fun j => MulOpposite.op (a j)) = x := by
+    have h : b.equivFun.symm (fun j => MulOpposite.op (End.of (a j))) = x := by
       rw [hsum]
       exact ha.symm
     rw [← h, LinearEquiv.apply_symm_apply]

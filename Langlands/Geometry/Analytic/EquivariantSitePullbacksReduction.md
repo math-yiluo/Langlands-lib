@@ -1,7 +1,5 @@
 # Equivariant fibre products from localized analytic pullbacks
 
-Author: Worker 1006.
-
 This module constructs the diagonal action on a supplied analytic pullback
 and reduces the pullback existence statements for `Qét(X(G))` and `Ét(X(G))`
 to nonequivariant analytic facts. The namespace is

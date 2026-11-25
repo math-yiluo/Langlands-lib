@@ -1,7 +1,5 @@
 # Central restriction and actual unramified twist stabilizers
 
-Author: Worker 200.
-
 This is a derived construction toward J.-L. Waldspurger, *La formule de
 Plancherel pour les groupes p-adiques (d'après Harish-Chandra)* (2003),
 source ID `waldspurger-2003-plancherel`, SHA-256

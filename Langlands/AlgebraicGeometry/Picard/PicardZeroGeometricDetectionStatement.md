@@ -37,10 +37,7 @@ concerns the separate ground-base-change construction `familyBaseChange`.
 
 ## Provenance and proof obligation
 
-This is an internal compatibility target for the existing definitions,
-prepared from Worker 390's unaccepted design. Worker 390 is a coauthor of
-the statement. The design's previous compilation is not mathematical
-acceptance or a proof.
+This is an internal compatibility target for the existing definitions.
 
 The source motivating the existing definitions is Edixhoven, van der Geer
 and Moonen, *Abelian Varieties*, preliminary draft, registered as
@@ -67,5 +64,6 @@ invariant-bundle isomorphisms through the group-scheme comparison. Those
 comparisons are proof obligations, not hypotheses or definitional
 equalities asserted by this module.
 
-The module defines the proposition without proving it. Its proof belongs
-to a separate task after independent statement acceptance and publication.
+The module defines the proposition without proving it. The Library proves
+it as `Langlands.AbelianScheme.picardZeroGeometricDetection` (module
+`PicardZeroGeometricDetectionProof`).

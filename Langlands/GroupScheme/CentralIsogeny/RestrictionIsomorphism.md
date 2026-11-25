@@ -1,11 +1,9 @@
 # Detecting an isomorphism on a self-centralizing restriction
 
-Author: Worker 1375.
-
-This internal unit constructs an actual ambient isomorphism from an
+This module constructs an actual ambient isomorphism from an
 invertible restriction of a central isogeny to a self-centralizing
 commutative subgroup. The self-centralizer equality is an explicit input.
-The unit does not establish that equality for maximal tori of reductive
+The module does not establish that equality for maximal tori of reductive
 groups.
 
 The first four results hold over every base scheme `S : Scheme u`.
@@ -51,7 +49,8 @@ construction above.
 
 These are direct deductions from existing kernel, subgroup, centralizer,
 isogeny and maximality definitions and Mathlib's flat-monomorphism result.
-The geometric self-centralizer input is the outstanding
-`MaximalTorusCentralizerStatement` when applying the result to the host
-reductive-group task. This unit does not prove that proposition, the
+The geometric self-centralizer input is
+`MaximalTorusCentralizerStatement` when applying the result to connected
+reductive groups; the Library proves it as `maximalTorusCentralizer` in
+`Absolute.MaximalTorusCentralizerProof`. This module does not prove that proposition, the
 root-bijection or coroot laws, or surjectivity of the torus restriction.

@@ -1,7 +1,5 @@
 # Canonical Jacquet lift transport through continuous group equivalences
 
-Author: Worker 127.
-
 This module states internal naturality assertions for the published compact
 averages and canonical-lift constructions. All five declarations are
 Prop-valued definitions in `Langlands.Jacquet`; none proves an assertion.

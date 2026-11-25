@@ -1,10 +1,10 @@
 # Renard II.2.4–II.2.5: scalar and original-action projector constructions
 
-Worker 6, 2 November 2026. This source-to-declaration update records five
-verified published construction units: the locally constant scalar presheaf
+This source-to-declaration update, dated 2 November 2026, records five
+published construction modules: the locally constant scalar presheaf
 and sheaf, the smooth multiplier action on an original nondegenerate test
 module, and the original-action projector presheaf and its intrinsic sheaf
-gluing. It also verifies the separately published exact statement and proof
+gluing. It also records the separately published exact statement and proof
 of smooth-action uniqueness. The later categorical comparisons retain their
 separate obligations.
 
@@ -72,76 +72,59 @@ union characteristic is the target characteristic. This gives all original
 restriction equations. The same finite-union recurrence proves uniqueness.
 Its empty finite-union case is zero, so no nonemptiness restriction is added.
 
-## Verified independent publication
+## In the Library
 
-All five construction candidates below have `accepted = true`, `public = true`,
-unqualified independent approval, and published integrations at
-`11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`. Their ten frozen Lean/Markdown
-hashes match the current workspace files. Exact candidate bindings, review
-verdicts, machine receipts and publication records were checked for this
-update, together with the complete five implementation pairs.
+All five construction modules below first appeared in the Library at
+`11dedf3c6982c420e1eee5dc7a82ee37ad2dcc0e`. Their ten Lean/Markdown files
+matched the Library when checked for this update, together with the complete
+five implementation pairs.
 
-| Unit, all under `lean.definition@1` | Candidate | Machine receipt | Independent review task and reviewer | Published integration |
-| --- | --- | --- | --- | --- |
-| Scalar presheaf | `8fb5e02f-1f13-46f2-acb4-ccad34c0cd35` | `27187e8d-f3d5-46c7-bb7e-64b6894070bd` | `fa2e0b8e-dda1-410a-9fe5-d43baedb8ad2`, Reviewer 8703 | `fa44f18e6681477988686e80eea136dd` |
-| Scalar intrinsic sheaf | `0c2d3ffc-4193-4ec1-8a64-8943ca9cadec` | `d644526d-254b-4a69-8505-295f2b689e57` | `40cb67c1-2a23-470e-9a23-70b5b673a2fb`, Reviewer 8710 | `65219e1c74664a77b35222b7f6b490b1` |
-| Original-action smooth multipliers | `d6bb0507-6adc-41b0-a448-3b8fbb047d6b` | `a35f5672-2f3a-4c81-882b-3ed811c55ceb` | `1deea236-264f-4063-b190-6a211223088e`, Reviewer 8658 | `1e3a530c56364bf7a8e44903c0b66e21` |
-| Original-action projector presheaf | `08bf517c-2b99-4231-8fd3-599fd20aeefb` | `f1c1d0a6-406e-44e1-82fa-991945d757d7` | `7f4a6158-0abc-46a4-b945-8de9f3218c06`, Reviewer 8681 | `e38a8d3b8b4b4bce87692c3b3c6d8f1c` |
-| Intrinsic projector sheaf | `0575e8e5-fa91-49b4-8c10-5b48b273bf7c` | `7a07aa02-7892-4b3d-be8c-042bcc98f348` | `e9c2fe72-a283-4558-a215-c020e58bab44`, Reviewer 8698 | `9ca1bb3a07f447e7b9dce2cffaf7b024` |
+| Construction module |
+| --- |
+| Scalar presheaf |
+| Scalar intrinsic sheaf |
+| Original-action smooth multipliers |
+| Original-action projector presheaf |
+| Intrinsic projector sheaf |
 
-These are construction-policy publications, with Lake-build and
-declaration-kind validation. Their intrinsic restriction, module and gluing
-laws are implemented in the linked pairs. They do not supply exact-target
-proof receipts for separate categorical-equivalence statements.
+These are construction modules, checked by a Lake build and declaration-kind
+validation. Their intrinsic restriction, module and gluing
+laws are implemented in the linked pairs. They do not prove the separate
+categorical-equivalence statements.
 
-The separate uniqueness statement
-`5aa5cac4-fd4a-4ef9-b191-938c3274712e` is accepted under
-`lean.statement@1` and public at
-`a86e094aea00c92c9ca2ddee7f651cd64c00981d`, integration
-`5c515789b96247129422737ea9be5dff`. Its machine receipt is
-`9f632025-50f0-4921-bdc5-ef56aaf3803d`; independent review task
-`55620ac1-8c16-453b-880a-548ec03f406d` was approved without qualifications
-by Reviewer 9055.
+The separate uniqueness statement first appeared in the Library at
+`a86e094aea00c92c9ca2ddee7f651cd64c00981d`.
 
-Its exact proof `563a4ca5-8505-4127-b366-00a926798985`, authored by
-Worker 345 in task `a31092b3-15b3-478e-8129-397f88f2fde0`, is accepted
-under `lean.proof@1` and public at
-`7a2e42fd31831029d34cafb155ffad911920df25`, integration
-`c9428790f2634c54a66f2264a867dc4c`. Machine receipt
-`0fed2578-e7c5-47c5-b9a2-59da343d569f` accepts Lake build, exact target,
-unchanged statement and frozen inputs. Independent review task
-`a549c79b-57f8-4a26-8e4f-a11cbdd06423` was approved without
-qualifications by Reviewer 9166.
+Its exact proof first appeared in the Library at
+`7a2e42fd31831029d34cafb155ffad911920df25`. It was checked by a Lake build
+against the exact target, with the statement and its inputs unchanged.
 
-Both exact records, the complete integrated reviews and the published
-statement/proof pairs were read. Their four frozen file hashes match the
-current Library and workspace. Recovery build
-`c6e45bf7-30f3-402d-b035-3dea6ef6ef64` compiled the proof with zero
-errors or warnings; declaration inspection
-`d639969a-fed6-4c20-b6e2-db14f6e69bf3` confirms the statement returns
-`Prop` with independent `uX` and `uM`. These recovery checks are private
-development evidence; independent acceptance and publication come from
-the records above.
+The published statement/proof pairs were read; their four files matched the
+Library when checked. A separate build compiled the proof with zero
+errors or warnings; a declaration inspection confirms the statement returns
+`Prop` with independent `uX` and `uM`.
 
-## Remaining assertions and ownership
+## Remaining assertions
 
 The actual scalar action on an arbitrary original vector sheaf, its compatible
 restriction laws, constants and the empty-domain injectivity exception,
 module-sheaf categories and their equivalence with vector sheaves are outside
-the publications audited here. The construction audit assigned these separate
-units to scalar task `f514a7ea-36cc-41dd-b4c5-0ba6ebeed450`; this focused
-uniqueness update does not audit its later publications.
-The original-action multiplier construction task
-`fb4db626-f4c6-48e8-9e45-fadbaeedec64` supplies the action audited here;
-the source uniqueness is now proved by the separate publication above.
+the modules audited here, and this update does not audit the later ones;
+[compact-section-equivalence-progress](compact-section-equivalence-progress.md)
+maps the scalar action `VectorSheafScalars` of `Langlands/Sheaf/Renard/`.
+The original-action multiplier construction supplies the action audited here;
+the source uniqueness is proved by the separate statement and proof above.
 Restriction/extension categorical equivalence retains its separate scope.
 
-Projector task `9773f76d-58c8-4ad7-a35d-1b8610d4a2cf` covers the subsequent
-additive-functor and nondegenerate-functor obligations. The full theorem
+The subsequent additive-functor and nondegenerate-functor obligations are
+separate from these constructions. The full theorem
 identifying compact sections with original modules, both natural inverse
 comparisons, the resulting sheaf/module equivalence, and the original-module
 stalk quotient on printed p.40 / PDF46 are not established by the five
-constructions and uniqueness proof audited here. The original-value-universe
+constructions and uniqueness proof audited here; the compact-section
+equivalences and both comparison isomorphisms are proved in
+`Langlands/Sheaf/Renard/` (see
+[compact-section-equivalence-progress](compact-section-equivalence-progress.md)). The original-value-universe
 basis/all-open equivalence is also a separate obligation.
 The earlier [germ-sheaf progress note](germ-sheaf-progress.md)
 records a different family of constructions and its dated proof boundaries.

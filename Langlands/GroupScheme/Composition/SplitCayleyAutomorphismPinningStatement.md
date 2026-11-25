@@ -1,7 +1,5 @@
 # The split Cayley automorphism group is pinned split of type `G₂`
 
-Author: Worker 161.
-
 `Langlands.GroupScheme.SplitCayleyAutomorphismPinningStatement` is a
 proposition. This module only states it. It is proved as
 `Langlands.GroupScheme.splitCayleyAutomorphismPinning` in

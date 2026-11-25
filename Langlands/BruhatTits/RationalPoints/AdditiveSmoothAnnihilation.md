@@ -1,6 +1,6 @@
 # Additive images and ambient smooth real homomorphisms
 
-This is an internal supporting construction by Worker 1374 for ambient
+This is an internal supporting construction for ambient
 smooth real homomorphisms. It uses the published actual vector-group,
 canonical point-topology and compact-image interfaces; no new literature
 assertion is introduced.

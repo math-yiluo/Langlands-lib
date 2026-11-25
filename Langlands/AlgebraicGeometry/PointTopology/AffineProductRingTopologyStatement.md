@@ -1,7 +1,5 @@
 # Affine points over a product of value rings
 
-Author: Worker 208.
-
 This is a derived generalization of the affine homeomorphism assertion in
 Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Theorem 3.6, formula (3.6.1), printed page 6, and the
@@ -46,7 +44,8 @@ two product topologies. The present target states the corresponding
 evaluation-topology assertion independently of that arithmetic
 specialization.
 
-This unit supplies a statement for a subsequent proof. Instantiating the
+This module supplies the statement; the theorem `affineProductRingTopology`
+in `AffineProductRingTopologyProof` proves it. Instantiating the
 actual global-field local and adelic rings, comparing the base-changed
 local point spaces in (3.6.1), and proving the nonaffine and change-of-`S`
 topology assertions remain separate obligations.

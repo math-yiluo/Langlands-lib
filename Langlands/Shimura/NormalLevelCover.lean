@@ -41,12 +41,13 @@ variable [TopologicalSpace X] [TopologicalSpace G] [IsTopologicalGroup G]
 def normalLevelAction : Action TopCat.{max v w} U where
   V := TopCat.of (LevelSpace (X := X) ι (sublevelSubgroup U N))
   ρ :=
-    { toFun g := TopCat.ofHom
+    { toFun g := End.of (TopCat.ofHom
         ⟨translate (g : G)⁻¹
             (by intro k hk; simpa using normalLevel_conjugation U N g k hk),
           continuous_translate (g : G)⁻¹
-            (by intro k hk; simpa using normalLevel_conjugation U N g k hk)⟩
+            (by intro k hk; simpa using normalLevel_conjugation U N g k hk)⟩)
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro q
         induction q using Quotient.inductionOn with
@@ -54,6 +55,7 @@ def normalLevelAction : Action TopCat.{max v w} U where
           change mk _ (x.1, x.2 * ((1 : U) : G)⁻¹) = mk _ x
           simp
       map_mul' g h := by
+        apply End.ext
         apply TopCat.ext
         intro q
         induction q using Quotient.inductionOn with
@@ -70,6 +72,7 @@ def normalLevelAction : Action TopCat.{max v w} U where
 /-- Every element of the finer normal level acts trivially on its quotient space. -/
 theorem normalLevelAction_kernel : N ≤ (normalLevelAction (X := X) ι U N).ρ.ker := by
   intro n hn
+  apply End.ext
   apply TopCat.ext
   intro q
   induction q using Quotient.inductionOn with

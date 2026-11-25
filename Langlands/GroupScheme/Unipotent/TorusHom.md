@@ -1,6 +1,6 @@
 # Homomorphisms from tori to unipotent group schemes are trivial
 
-Worker 1395 wrote this module. It proves Milne, *Algebraic Groups* (2017), Corollary 14.18(b) for
+This module proves Milne, *Algebraic Groups* (2017), Corollary 14.18(b) for
 tori: over a field there are no nontrivial homomorphisms from a torus to a unipotent group. Here
 the target only needs to be affine, and any homomorphism is allowed (no closed-subgroup
 hypothesis).

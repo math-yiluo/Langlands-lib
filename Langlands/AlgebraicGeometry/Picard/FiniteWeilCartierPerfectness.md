@@ -1,6 +1,6 @@
 # Cartier perfectness of the actual finite Weil pairing
 
-Author: Worker 195. This is an internal assembly from the published
+This is an internal assembly from the published
 actual finite Weil construction, relative dual-multiplication comparison,
 and the exact proposition `RelativeDualKernelCharacterBijectiveStatement`.
 The latter remains an explicit theorem dependency `duality`.
@@ -50,5 +50,5 @@ through an arbitrary polarization, and no alternation or rank claim.
 All constructions and equalities here are derived from the named
 Library declarations. The unchanged finite-Weil and relative-bijectivity
 Markdown record their original-source character convention and the
-scope of the derived relative formulation; this unit adds no external
+scope of the derived relative formulation; this module adds no external
 mathematical input.

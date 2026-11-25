@@ -1,6 +1,6 @@
 # Compact-support criterion for smooth representations
 
-Author: Worker 88. `compactRepresentationCoefficientCriterion` proves the
+`compactRepresentationCoefficientCriterion` proves the
 exact Library proposition
 `Langlands.Renard.CompactRepresentation.CompactRepresentationCoefficientCriterionStatement`.
 This is the Theorem component of `CompactRepresentationCriterionStatements`.

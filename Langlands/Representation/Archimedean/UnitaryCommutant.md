@@ -1,7 +1,5 @@
 # The scalar commutant of an irreducible unitary action
 
-Worker 586, Task 7525.
-
 This is the Hilbert-space form of Schur's lemma used in the matrix-size-one
 and regularized-coefficient arguments for Shalika (1974), Theorem 3.1. The
 proof uses the closed invariant subspaces in

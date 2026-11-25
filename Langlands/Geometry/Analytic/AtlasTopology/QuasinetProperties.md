@@ -1,7 +1,5 @@
 # Quasinet topology arguments
 
-Author: Worker 36.
-
 These auxiliary lemmas support the exact Library target
 `Langlands.Analytic.AtlasTopology.QuasinetTopologyStatement`.
 

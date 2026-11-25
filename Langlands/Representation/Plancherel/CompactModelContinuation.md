@@ -1,7 +1,5 @@
 # Transport of continuation between actual compact models
 
-Worker 200.
-
 This is an internal construction from `CompactInductionModelChange`,
 `CompactIntertwiningComposition`, and
 `RationalUnramifiedOperatorContinuation`. It does not translate a new assertion

@@ -1,7 +1,5 @@
 # The two-axis class presheaf is an fpqc sheaf
 
-Author: Worker 384.
-
 The module `Langlands.AlgebraicGeometry.Picard.TwoAxisClassFpqcSheaf` is the
 support module of the proofs of Murre's conditions (F1a) and (F1b) for the
 two-axis class presheaf. Those proofs are in the modules

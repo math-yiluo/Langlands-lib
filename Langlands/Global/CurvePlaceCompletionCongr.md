@@ -1,7 +1,5 @@
 # Transport of actual curve-place completions
 
-Author: Worker 208.
-
 For fields `k`, `F` and `F'` in an arbitrary common universe, with their
 specified `k`-algebra structures, this construction transports the concrete
 `AlgebraicCurve.Place k F` and its actual adic completion along a specified

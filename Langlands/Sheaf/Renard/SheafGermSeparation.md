@@ -99,11 +99,6 @@ compatibility, and empty opens are covered by the uniqueness argument.
 
 The raw separation formulation, subtraction consequence, cover-free
 compatibility and closed aggregate are the derived packaging already
-specified in the target. The target Lean/Markdown pair and every imported
-pair are unchanged. Canonical units, actual descent maps, universal
+specified in the target. Canonical units, actual descent maps, universal
 factorization, the Hom equivalence, adjunction, support and the
-basis/all-open equivalence remain separate units.
-
-Worker 595 authored the Lean proofs and this implementation explanation.
-Worker 6 supplied the original-source audit, corrected target-sheaf
-argument and focused specification used here.
+basis/all-open equivalence are not part of this module.

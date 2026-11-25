@@ -1,8 +1,6 @@
 # Arbitrary-radius spectral power bounds for affinoid quotients
 
-Author: Worker 972. The proposition follows the specification of task
-`25104e1c-ffef-49c9-be46-13567af06496`, published by Worker 56, and has the
-same shape as Worker 56's published strict statement
+The proposition has the same shape as the published strict statement
 `Langlands.Analytic.PresentedStrictAffinoidAlgebra.SpectralPowerBoundStatement`.
 
 ## The proposition
@@ -107,9 +105,10 @@ The Lean proposition differs from Fact 2.1.4(i) in these ways:
   presentation. The proposition uses the chosen finite presentation and its
   exact quotient norm.
 
-The proposition is expected to follow from the source as follows. These steps
-are obligations of the later proof task. None of them is a hypothesis of this
-statement.
+The proposition is expected to follow from the source as follows. None of
+these steps is a hypothesis of this statement. The Library's proof,
+`spectralPowerBound` in `GeneralizedAffinoid.SpectralPowerBoundProof`, takes
+another route: a reduction to the strict theorem.
 
 1. Identify the supremum of the point values with the spectral radius, so
    that the pointwise hypothesis gives `ρ(a) ≤ r` for the actual quotient
@@ -120,8 +119,7 @@ statement.
    enlarged so that it also bounds `‖1‖`.
 3. Apply the general affinoid estimate of Fact 2.1.4(i) for arbitrary
    positive presentation radii. For non-nilpotent `a` it gives
-   `‖aⁿ‖ ≤ C ρ(a)ⁿ ≤ C rⁿ` for `n ≥ 1`, since `0 ≤ ρ(a) ≤ r`. The current
-   Library contains no proof of this estimate for these presentations.
+   `‖aⁿ‖ ≤ C ρ(a)ⁿ ≤ C rⁿ` for `n ≥ 1`, since `0 ≤ ρ(a) ≤ r`.
 
 ## The reverse implication
 
@@ -129,10 +127,9 @@ statement.
 `Langlands.Geometry.Analytic.WeightedPowerBounds`, proves the easy reverse
 implication for every normed commutative ring: if
 `HasRadiusBoundedPowers r a` holds and `0 < r`, then `x a ≤ r` for every
-point `x` of the Banach spectrum. Once the present proposition is proved, the
-two conditions are therefore equivalent for these quotients. This
-contribution proves neither the proposition nor that equivalence. The only
-proved direction is the published reverse implication.
+point `x` of the Banach spectrum. The present proposition is proved by
+`spectralPowerBound`, so the two conditions are equivalent for these
+quotients. This module proves neither the proposition nor that equivalence.
 
 ## Scope
 
@@ -148,7 +145,7 @@ a norm bound on `a`, a spectral-radius formula, or a choice of power-bound
 constant. It does not replace `P` by a strict quotient, and it has no
 spectral-radius comparison or finiteness certificate as a premise. Full
 analytic-domain factorization, structure sheaves, atlases, equivariant sites
-and the Harris tower are obligations of the parent task, not of this
+and the Harris tower are not part of this
 statement.
 
 ## Imports

@@ -59,7 +59,8 @@ in GIT, Chapter 6.
 
 This is a derived target, because the Library uses a different explicit
 fibre predicate and a larger test category than the source convention.
-Both comparisons remain proof obligations.
+Both comparisons are obligations of a proof, not of this file; the Library's
+proof is `relativeDualSchemeExistence` in `RelativeDualSchemeExistenceProof`.
 
 For the fibre predicate, the Library requires translation invariance
 after passage to every algebraically closed field-valued point of `T`.
@@ -91,7 +92,7 @@ equality of class sets on geometric fibres alone is insufficient.
 This must include nonreduced affine tests. The same local argument must
 prove uniqueness of the global parameter map.
 
-These are requirements on a future proof, not results proved by this
+These are requirements on a proof, not results proved by this
 file. Retaining quasi-separatedness of `S` avoids asserting the source
 theorem outside its base convention even though the resulting
 universal property is required on all test schemes.
@@ -103,7 +104,8 @@ The geometry of the chosen parameter scheme, its constructed group
 law, dual homomorphisms, polarizations and base-change compatibility
 are handled by separate declarations. It introduces no new axiom
 and supplies no arbitrary representability data as a replacement for
-the geometric predicate. A separate proof task must establish the
-exact proposition after publication. The conditional field
-specialization does not complete or restart the existing field-existence
-proof task.
+the geometric predicate. The theorem `relativeDualSchemeExistence` in
+the module `RelativeDualSchemeExistenceProof` establishes the exact
+proposition. The conditional field specialization does not by itself
+prove `FieldDualSchemeExistenceStatement`; the theorem
+`fieldDualSchemeExistence` in `FieldDualSchemeExistenceProof` proves it.

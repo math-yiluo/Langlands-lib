@@ -6,9 +6,9 @@ import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFu
 /-! # Shared lemmas for the line bundle descent bridges
 
 The ported FLT descent theorems for line bundles are stated for an arbitrary directed system of
-rings with a direct limit, and for the FLT notion `Scheme.Modules.IsInvertible`. This module
+rings with a direct limit, and for the FLT notion `Scheme.Modules.IsInvertibleFLT`. This module
 supplies the system of finitely generated `A₀`-subalgebras of an `A₀`-algebra `A`, the comparison
-between `IsInvertible` and the Library's `IsLocallyFreeRankOne`, and the formal lemmas on
+between `IsInvertibleFLT` and the Library's `IsLocallyFreeRankOne`, and the formal lemmas on
 pullbacks of modules that the bridges use.
 -/
 
@@ -22,7 +22,7 @@ open Langlands.AlgebraicGeometry.Picard
 
 /-- A module that is invertible in the sense of the FLT port is locally free of rank one. -/
 theorem isLocallyFreeRankOne_of_isInvertible {X : Scheme.{u}} {M : X.Modules}
-    (hM : Scheme.Modules.IsInvertible M) : IsLocallyFreeRankOne M := fun x => by
+    (hM : Scheme.Modules.IsInvertibleFLT M) : IsLocallyFreeRankOne M := fun x => by
   obtain ⟨U, hx, ⟨e⟩⟩ := hM.exists_trivialization x
   exact ⟨U, hx, ⟨(Scheme.Modules.restrictFunctorIsoPullback U.ι).app M ≪≫ e⟩⟩
 

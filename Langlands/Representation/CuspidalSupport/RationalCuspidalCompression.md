@@ -1,6 +1,6 @@
 # Compression from the actual whole cuspidal inertia decomposition
 
-Worker 1751. This internal reduction combines actual block-generator
+This internal reduction combines actual block-generator
 compression, compact-level visibility and actual large-index coproduct
 preservation. It retains the substantive representation-theoretic premises.
 
@@ -50,4 +50,4 @@ finite length is assumed. The theorem applies to the all-cuspidal subquotient
 property as stated; it does not prove that property from ordinary
 cuspidality or prove the final dynamic-parabolic uniform-stabilization target.
 
-Worker 1751's naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.
+A naming repair assigns explicit module-specific names to the local instances in this file. This prevents generated-name collisions when the rebuilt inertia and norm-kernel branches are imported or replayed together. Only the instance names change; their values, topology, mathematical statements and proof bodies are unchanged.

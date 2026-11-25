@@ -1,7 +1,5 @@
 # Exact base change computed with arbitrary right resolutions: proof
 
-Author: Worker 1245 (Lean proof and this text).
-
 Module `Langlands.Cohomology.ExactBaseChange.ResolutionProof` proves the published
 proposition
 

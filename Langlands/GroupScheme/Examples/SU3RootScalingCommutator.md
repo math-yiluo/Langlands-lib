@@ -4,7 +4,7 @@ This module defines
 `Langlands.GroupScheme.SU3Root.Parameters.scalingCommutatorCentral`
 and proves its factorization and filtration bounds. It is an internal
 coordinate construction used by the positive-depth torus-root calculation
-of Task 6194. It does not construct coordinates for a reductive group or
+of `KPLocalTorusRootCommutatorStatement`. It does not construct coordinates for a reductive group or
 identify their depths with a supplied apartment.
 
 ## Definition and conventions

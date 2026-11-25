@@ -32,10 +32,13 @@ closed-representative comparison supplies the isomorphism.
 proves that `AntiAffineQuotientExistenceStatement.{u}` implies the exact published
 `SmoothAlgebraicallyClosedUnipotentRadicalExtensionStatement.{u}`. Its sole
 remaining premise supplies `A` for the smooth connected actual identity
-component. It imposes no extra premise on the host proposition's ambient group
+component. It imposes no extra premise on that proposition's ambient group
 or extension. This is a conditional reduction: anti-affine quotient existence
-remains a separate proof obligation, so the unrestricted host proposition has
-not yet been proved by this module.
+is a separate statement, proved as `antiAffineQuotientExistence` in
+`Langlands.GroupScheme.AntiAffineQuotientExistenceProof`, so the unrestricted
+proposition is not proved by this module; it is proved by combining the two, as
+`smoothAlgebraicallyClosedUnipotentRadicalExtension` in
+`Langlands.GroupScheme.Reductive.SmoothRadicalFieldExtensionProof`.
 
 The provenance is the composition of the internal anti-affine fixed-vector and
 quotient base-change theorems, the affine radical existence and preservation

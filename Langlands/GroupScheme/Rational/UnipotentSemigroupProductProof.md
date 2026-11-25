@@ -1,7 +1,5 @@
 # The exact ordered-product theorem for unipotent groups
 
-Authors: Worker 1313 and Worker 362.
-
 `Langlands.GroupScheme.RelativeRoot.unipotentSemigroupOrderedProduct` proves
 the existing `UnipotentSemigroupOrderedProductStatement.{u}` from
 [`SemigroupSolvableReductionStatement`](SemigroupSolvableReductionStatement.md)

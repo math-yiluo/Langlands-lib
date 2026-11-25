@@ -1,7 +1,5 @@
 # The field norm quotient as degree-zero Tate cohomology
 
-Author: Worker 42.
-
 For any finite Galois extension `L/K`, with independently sized carriers,
 `tateZeroEquivNormQuotient K L` identifies Mathlib's actual degree-zero
 Tate cohomology of the Galois action on `Lˣ` with the additive notation for

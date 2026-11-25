@@ -1,6 +1,6 @@
 # Finite scalar extensions of a CM algebra with involution
 
-Worker 1728. This is a derived construction prerequisite for Clozel 1991,
+This is a derived construction prerequisite for Clozel 1991,
 Section 2, printed pp.101–106, especially Proposition 2.3 and its proof.
 It uses the existing actual CM algebra and involution without changing their meanings.
 

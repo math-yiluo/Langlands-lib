@@ -1,6 +1,6 @@
 # Central normalization of the rational wave-packet calculation
 
-This unit supplies the central-mass comparison needed for Waldspurger VII.2.1
+This module supplies the central-mass comparison needed for Waldspurger VII.2.1
 in the case `M = G`. It is an elementary consequence of published compactness
 and norm-kernel results. Its module is
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWavePacketCentralNormalization`;
@@ -45,7 +45,7 @@ printed p. 318 (PDF p. 84). The published
 The first two lemmas and the mass adapter are derived constructions. The
 Fourier theorem is a conditional adapter: its analytic assumptions are
 listed next. The two named proposition definitions have proofs in this
-unit under exactly their displayed hypotheses. They are not targets for
+module under exactly their displayed hypotheses. They are not targets for
 the still unproved general-Levi computations.
 
 ## Exact Fourier hypotheses
@@ -124,7 +124,7 @@ supplies more than is needed here.
 The measure-level adapter needs only a measure on `A`, since equality of
 subsets already proves equality of their measures. In applications the
 published packet theorems retain their Haar and quotient-compatibility
-assumptions. This unit does not construct a special maximal compact
+assumptions. This module does not construct a special maximal compact
 subgroup or a normalized Haar measure, and does not prove the general-Levi
 formula of VII.2.1. All Schwartz membership, regularity, integrability,
 quotient compatibility and tempered-coefficient assumptions above remain

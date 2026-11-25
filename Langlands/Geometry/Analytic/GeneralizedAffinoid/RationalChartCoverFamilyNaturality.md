@@ -1,7 +1,5 @@
 # Refinement naturality of continuous families under rational localization
 
-Author: Worker 56.
-
 This module proves that extension and restriction of continuous families
 inside an actual rational chart commute with chosen-index finite full-domain
 refinements. It constructs both natural isomorphisms of compatible-family

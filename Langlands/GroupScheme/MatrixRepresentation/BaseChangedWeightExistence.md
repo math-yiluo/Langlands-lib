@@ -1,7 +1,7 @@
 # Every geometric character occurs in an original finite representation
 
-Worker 537. Internal prerequisite for Task 7149, the orbit classification of
-representations of a group of multiplicative type. Worker 666's unchanged
+Internal prerequisite for the orbit classification of
+representations of a group of multiplicative type.
 `ScalarExtensionCoordinates` supplies the comparison of scalar-extended actual
 point matrices.
 
@@ -36,5 +36,5 @@ This is a derived coordinate route to the occurrence part of Milne,
 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
 It uses the existing finite coefficient-span theorem in place of explicitly
 descending a finite orbit representation. It proves occurrence in a finite
-representation, without yet proving that representation irreducible or
+representation, without proving that representation irreducible or
 identifying its full set of weights.

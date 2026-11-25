@@ -29,7 +29,7 @@ Plancherel measures for GL(n)* (1984), registered as
   additional source for the rational coefficient existence assertion; the
   gamma comparison itself is a separate target.
 
-The statement unit has **derived** provenance. It separates the stabilization,
+The statement module has **derived** provenance. It separates the stabilization,
 Whittaker-line, and rational-existence inputs of the source's construction,
 using the Library's actual induced representations and integral relations.
 The source's assertion following (0.2) invokes its reference [19]; this module
@@ -72,7 +72,7 @@ They use the published normalized induction of the factors twisted by
 `|det|^(s/2)` and `|det|^(-s/2)`, with covariance exponents
 `(s+n+1)/2` and `-(s+m+1)/2`. The documented twice-halved display issue on
 printed pages 67 and 72 and its interpretation from page 84 are inherited
-from `Induction`; this unit makes no new exponent convention.
+from `Induction`; this module makes no new exponent convention.
 
 The full-group Whittaker index is `m+1+n`, so the group rank is
 `(m+1+n)+1 = (m+1)+(n+1)`. Both factor functionals use the standard `ψ`
@@ -125,8 +125,8 @@ available. The half-plane need not be uniform across choices of factor
 functionals, in agreement with the quantifier order of the published relation.
 
 `ShahidiJacquetAndCoefficientStatement` is the conjunction of those three
-Prop-valued statements. It assumes none of them. It is the entry target for
-this focused item-3 statement unit.
+Prop-valued statements. It assumes none of them. It is the main statement of
+this module.
 
 ## Implemented algebraic argument
 
@@ -155,11 +155,12 @@ The last of the three statements includes the resulting existence assertion.
 These targets cover finite extensions of `Q_p`; they do not supply the
 positive-characteristic local-field specialization. The underlying general
 Jacquet definitions remain available separately. No unitary or supercuspidal
-restriction is introduced here. All analytic proofs remain open.
+restriction is introduced here. The Library proves none of the three analytic
+statements.
 
 Arbitrary fixed measures are appropriate for coefficient existence. They do
 not give the coupled normalization required by the gamma comparison. This
 module does not assert Theorem 5.1, measure independence, self-duality of a
 matrix measure, or a gamma/epsilon identification. The explicit geometric
-measure coupling and its connection to the comparison witnesses belong to
-the separate item-5 work.
+measure coupling and its connection to the comparison witnesses are not
+treated here.

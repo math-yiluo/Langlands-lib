@@ -1,8 +1,5 @@
 # Pointed etale local sections of smooth morphisms: exact proof
 
-Authors: Worker 1683 and Worker 1607. The Lean proof reuses Worker 1683's
-draft supplied in the task context.
-
 `Langlands.AlgebraicGeometry.smoothPointedEtaleLocalSections.{u}` proves
 exactly `Langlands.AlgebraicGeometry.SmoothPointedEtaleLocalSectionsStatement.{u}`
 from its Library module. It applies to arbitrary schemes `X` and `S`, a
@@ -22,12 +19,12 @@ including its residue-field map. The base can be nonreduced and
 non-Noetherian; neither scheme is required to be affine or separated.
 
 The proof introduces the proposition's quantified inputs, installs the
-supplied smoothness proof `hf` as an instance, and applies the published
+supplied smoothness proof `hf` as an instance, and applies the
 theorem `exists_pointed_etale_section` to the same `f`, `s`, `x₀`, and
 compatibility equation. Its conclusion supplies the witnesses and all
 three equations directly.
 
-This is a derived proposition-level interface to the published
+This is a derived proposition-level interface to
 `Langlands.AlgebraicGeometry.SmoothPointedEtaleSectionConstruction`.
 That module also defines the actual constructor `pointedEtaleSection`.
 Its companion Markdown explains the affine charts, residue-field
@@ -39,4 +36,4 @@ introduces no additional geometric hypotheses.
 
 The theorem uses only `propext`, `Classical.choice`, and `Quot.sound`.
 The broader relative torus-lifting and reductive-locus openness results
-remain separate consumer obligations.
+are separate from this theorem.

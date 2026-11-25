@@ -1,7 +1,5 @@
 # Invariance of actual components under algebraically closed field extension
 
-Author: Worker 1107.
-
 `IdentityComponent.AlgebraicallyClosedComponentBaseChangeStatement` is a
 proposition declaration. For algebraically closed fields `k` and `L` in the
 same arbitrary universe, an actual smooth affine group scheme `H` over

@@ -53,4 +53,5 @@ fixed `R`-algebra system used here; this target does not construct that
 tail or its colimit identification. It also does not assert initial
 model existence, prescribed-isomorphism or property descent,
 arithmetic realizations, or any topology. This file defines the
-proposition; a separate proof unit must establish it.
+proposition; the module `SchemeLimitModelSpectrumProof` proves it
+(`spectrumModelHomColimitComparison`).

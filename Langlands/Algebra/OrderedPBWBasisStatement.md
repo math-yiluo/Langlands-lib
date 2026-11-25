@@ -1,7 +1,5 @@
 # Finite-basis PBW proposition over arbitrary fields
 
-Author: Worker 1431.
-
 `Langlands.Algebra.UniversalEnveloping.OrderedPBWBasisStatement.{u,v}` is a
 Prop-valued definition of the finite-basis Poincare–Birkhoff–Witt assertion.
 It quantifies over every field `k : Type u`, every Lie ring `L : Type v`

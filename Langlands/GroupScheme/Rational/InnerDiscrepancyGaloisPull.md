@@ -1,6 +1,6 @@
 # Inner equivalence of Galois pullbacks from all-test inner discrepancy
 
-Worker 838. Internal support for `InnerFormStarActionStatement`, derived from the
+Internal support for `InnerFormStarActionStatement`, derived from the
 published equivalence between natural local group isomorphisms and actual
 isomorphisms over a cover, and from the all-refinement inner-discrepancy
 interface. This is the forward counterpart of the published finite-Galois

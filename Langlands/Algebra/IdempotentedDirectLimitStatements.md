@@ -6,14 +6,13 @@ The module contains three **statements**, the `Prop`-valued definitions
 `IdempotentedRingDirectLimitStatement`, `NondegenerateModuleDirectLimitStatement` and
 `LeftLimitNotNondegenerateStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published
+The published
 [IdempotentedRing](IdempotentedRing.md) proves the set equality `A = ⋃ eAe` and says that
 the direct-limit statement "requires a separate diagram and universal property and is not
-claimed here". [NonUnitalModule](NonUnitalModule.md) lists "categorical colimit universal
-properties, cofinal or relatively directed idempotent systems" among the deferred
-obligations. [NonUnitalModuleLeftLimit](NonUnitalModuleLeftLimit.md) says that "the
-subsequent action need not be nondegenerate" and leaves this as an obligation. This unit
+claimed here". [NonUnitalModule](NonUnitalModule.md) does not claim "categorical colimit
+universal properties, cofinal or relatively directed idempotent systems".
+[NonUnitalModuleLeftLimit](NonUnitalModuleLeftLimit.md) says that "the
+subsequent action need not be nondegenerate" and does not prove it. This module
 states these assertions.
 
 ## Source and provenance
@@ -22,7 +21,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read I.1.2, printed p.7 / PDF p.13, and I.1.4, printed p.10 / PDF p.16:
+The statements follow I.1.2, printed p.7 / PDF p.13, and I.1.4, printed p.10 / PDF p.16:
 
 > On peut reformuler la définition ci-dessus en disant qu'un anneau à idempotents est un
 > anneau `A` tel que : `A = lim_{e ∈ ℐ} eAe = ⋃_{e ∈ ℐ} eAe`. La limite inductive étant
@@ -121,9 +120,12 @@ not nondegenerate.
    compatible families are exactly the sequences in `∏_ℕ ℂ`. The constant family `1` is
    fixed by no `1_S`, since `1_S · 1 = 1_S ≠ 1`.
 
-## Remaining obligations
+## Proofs
 
-The proofs are a separate obligation.
+The proofs are in separate modules: `idempotentedRingDirectLimitStatement` in
+`Langlands.Algebra.IdempotentedRingDirectLimitProof`, `nondegenerateModuleDirectLimitStatement`
+in `Langlands.Algebra.NondegenerateModuleDirectLimitProof` and
+`leftLimitNotNondegenerateStatement` in `Langlands.Algebra.LeftLimitNotNondegenerateProof`.
 
 ## Imports
 

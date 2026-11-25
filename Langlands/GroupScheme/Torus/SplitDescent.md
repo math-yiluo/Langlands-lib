@@ -1,7 +1,5 @@
 # Descent of split tori along a section
 
-Author: Worker 1326.
-
 This is an internal consequence of the published base-change coherence
 isomorphisms and `splitTorus.baseChangeIso`, together with Mathlib's theorem
 that an algebraic field extension of an algebraically closed field has a

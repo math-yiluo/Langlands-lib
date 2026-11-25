@@ -1,11 +1,5 @@
 # Totally complex forms of the cyclic transfer inputs of Harris's Proposition 4.8
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `d9c91a7e0fcb5cabbc936380004a4ae7` (option b1) to request
-`99dd5c974ab65af5a036022f960632d5`. It extends the convention of the operator's
-answer `81ed24709e7050068786116ca6613260` (Option A) to Harris's inputs 11–14.
-
 **Scope.** The module
 `Langlands.Automorphic.Unramified.CyclicTransferInputsTCStatement` defines four
 propositions in the namespace `Langlands.Automorphic.Unramified` and proves
@@ -24,7 +18,7 @@ totally complex automatically (§2).
 
 The input numbers are those of the conjuncts of
 `Langlands.Global.Harris.Proposition48ReductionStatement`. The principal
-declaration of the unit is
+declaration of the module is
 `Langlands.Automorphic.Unramified.CyclicRegularInductionTCStatement`.
 
 ## 1. The statements
@@ -79,8 +73,8 @@ or across `ℂ/ℝ` is needed.
 ## 3. Relation to the originals
 
 Each original implies its totally complex form at the same universe levels: apply
-it to the same fields and forget the new instance. A private development check of
-Worker 0 compiled the four implications, each as `fun h F E _ _ _ => h F E`. The
+it to the same fields and forget the new instance. A development check outside
+the module compiled the four implications, each as `fun h F E _ _ _ => h F E`. The
 converses are not claimed. The statements make no claim about extensions whose
 base field has a real place.
 
@@ -97,10 +91,7 @@ The totally complex reduction
 `Langlands.Global.Arithmetic.HarrisProposition48ReductionTCStatement`) takes these
 forms, at universes `{0, 0, uV, uV}`, as its inputs 11–14.
 
-The unrestricted statements stay the targets of their tasks (Task 6699 for inputs
-11–13 and Task 6413 for input 14) as infrastructure. Following the operator's
-answers, their owners are asked to stage proofs of these forms as supporting
-candidates under those tasks.
+The unrestricted statements remain in the Library as infrastructure.
 
 ## 5. Sources and provenance
 

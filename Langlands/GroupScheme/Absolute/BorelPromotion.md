@@ -1,7 +1,5 @@
 # Promotion of Borels from closed overgroups
 
-Worker 1358.
-
 This module gives an internal reduction needed when a fixed split torus lies
 in a parabolic subgroup. It uses the published definition of Borel subgroup,
 its proved isomorphism transports, and rational conjugacy with an isomorphism
@@ -38,8 +36,8 @@ invariance then transfers ambient Borel structure. The argument works over
 any field; it neither asserts nor uses a rational conjugacy theorem over an
 arbitrary field.
 
-The result isolates a consumer obligation for geometric fixed-torus Borel
-construction. To use it for a geometric parabolic, one must still provide the
+The result isolates one step of the geometric fixed-torus Borel
+construction. To use it for a geometric parabolic, one must also provide the
 actual conjugacy hypothesis over the field under consideration and any
 connectedness hypotheses needed by a theorem proving that conjugacy. No
 unproved classification proposition is used as a proof.

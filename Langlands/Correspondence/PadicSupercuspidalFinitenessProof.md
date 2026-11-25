@@ -1,6 +1,6 @@
 # Bernstein–Zelevinsky finiteness of supercuspidal classes over p-adic fields
 
-Author: Worker 4803. Module `Langlands.Correspondence.PadicSupercuspidalFinitenessProof`,
+Module `Langlands.Correspondence.PadicSupercuspidalFinitenessProof`,
 namespace `Langlands.Henniart.CompactOpenFiniteness`. Universes: `uK` (p-adic fields)
 and `uV` (supercuspidal carriers), independent; the generic lemmas also use `uG`
 (groups) and `uW` (a second carrier).
@@ -22,7 +22,7 @@ It is proved, with no hypotheses, by `padicSupercuspidalCompactOpenFiniteness`.
 
 Comparison with the Library statement
 `Henniart.SupercuspidalCompactOpenFinitenessStatement.{uF, uV}` (module
-`SupercuspidalFinitenessStatement`, the target of Task 5585): the conclusion is the
+`SupercuspidalFinitenessStatement`): the conclusion is the
 same, but that statement quantifies over every nonarchimedean local field `F` with
 arbitrary instances, including fields of positive characteristic. This one covers
 only p-adic fields with their canonical structure, the case used by Henniart's route

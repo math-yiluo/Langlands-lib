@@ -74,7 +74,7 @@ constructions and Mathlib's module pullback pseudofunctor. It imports
 is translated from original literature here. The target and all its
 imported Lean/Markdown pairs are unchanged.
 
-Worker 310 authored this proof and explanation, using the published
+This proof uses the published
 generic section-composition proof pattern from `LieFunctor`.
-The separate Lie base-change existence, Lie naturality, and determinant
-transport obligations remain separate tasks.
+The Lie base-change existence, Lie naturality, and determinant
+transport obligations are not part of this module.

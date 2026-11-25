@@ -119,10 +119,10 @@ compact inclusions imported by that chain. The Mathlib inputs are
 are proved as described above. No new correspondence with original literature is
 asserted.
 
-This unit constructs actions and their maps on the actual tensor carrier. It
+This module constructs actions and their maps on the actual tensor carrier. It
 does not attach general scheme coefficients, construct their differential,
 identify analytic differentiation of a compact coefficient representation,
 construct a relative differential or cohomology, or establish automorphic
-occurrence. Those remain separate obligations under the parent task. The supplied
+occurrence. Those are outside the scope of this module. The supplied
 coefficient Lie action and the explicit covariance hypothesis must be instantiated
 by such later constructions when needed.

@@ -1,7 +1,5 @@
 # Nilpotent centrality for multiplicative-type sources and arbitrary targets
 
-Worker 30.
-
 This internal module proves the affine-base case of SGA 3, IX, Corollaire 3.9, with no
 condition on the target group. It asserts nothing attributed to external literature. The
 route is the one SGA 3 uses for Corollaire 3.9: apply the rigidity of actions of

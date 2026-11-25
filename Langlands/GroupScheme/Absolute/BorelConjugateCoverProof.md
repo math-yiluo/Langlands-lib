@@ -1,7 +1,5 @@
 # Proof that the conjugates of a Borel subgroup cover the group
 
-Author: Worker 5678.
-
 The module proves
 
 ```

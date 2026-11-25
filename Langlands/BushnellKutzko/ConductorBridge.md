@@ -1,7 +1,5 @@
 # The functional-equation exponent is the conductor
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Setting
 
 `K` is a `p`-adic field with its canonical topology, valuation and measurable structure (local

@@ -117,5 +117,4 @@ middle equality of EVM (12). EVM formulas (8)–(10) relate the same Euler chara
 `deg φ_H`. They use the higher direct images along the second projection `p₂`, which are
 supported on the finite group `K(H)`. For degenerate bundles EVM (p.133) uses
 `χ(m^* L ⊗ p₂^* L^{-1})`, which is the `p₂` form. This module proves only the product side
-and uses no unproved Library statement. The helper module `KunnethEulerProduct` was written
-by Worker 998.
+and uses no unproved Library statement.

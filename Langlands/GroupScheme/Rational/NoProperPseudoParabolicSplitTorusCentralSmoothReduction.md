@@ -1,7 +1,8 @@
 # Split tori are central modulo the radical: the smooth connected product route
 
-Worker 1413 implemented this internal reduction for the task proving
-`NoProperPseudoParabolicSolvableEnvelopeStatement`. It is a variant of the
+This internal reduction serves the proof of
+`NoProperPseudoParabolicSolvableEnvelopeStatement` in
+`NoProperPseudoParabolicSolvableEnvelopeProof`. It is a variant of the
 published `NoProperPseudoParabolicSplitTorusCentralReduction`, following the
 same proof of Conrad–Gabber–Prasad, *Pseudo-reductive groups* (2nd edition,
 2015), Lemma 2.2.3, printed pp. 62–63, in the form used in the first branch of

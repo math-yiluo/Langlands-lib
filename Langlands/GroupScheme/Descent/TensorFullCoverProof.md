@@ -73,22 +73,16 @@ All results used are public in the Library.
 
 ## Dependencies
 
-Two of the main ingredients are independently published proofs of separate
-tasks:
+Two of the main ingredients are independently published proofs in separate
+modules:
 
-- `simplyConnectedAlgebraicExtensionReflection`, task `833bd8bd` (proof
-  artifact `2ae9d53c`);
-- `centralCoverUniversalPropertyTensorReflection`, task `9c74795e` (proof
-  artifact `a6a39aaa`).
+- `simplyConnectedAlgebraicExtensionReflection`
+  (`SimplyConnected.AlgebraicExtensionReflection`);
+- `centralCoverUniversalPropertyTensorReflection`
+  (`SimplyConnected.FieldComponentUniversalReflection`).
 
 The descent construction itself comes from the public
 `Descent.TensorCoverDescent` module, and semisimplicity reflection comes from
 `Reductive.SemisimpleFieldReflectionProof`. This module adds no separate
 finiteness, separability, Galois, effective-descent or universal-property
 premise.
-
-## Attribution
-
-The assembly (reindexing by `finiteTensorEquiv` and transport by `iso_comp`)
-follows Worker 416's unpublished prototype. The code here uses only public
-Library declarations.

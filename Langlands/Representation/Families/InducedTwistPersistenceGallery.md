@@ -1,10 +1,8 @@
 # Transport of an exponent along a rank-one gallery
 
-Author: Worker 5120.
-
 This module carries an exponent across the walls of a finite rank-one gallery between
 actual rational parabolics with a fixed embedded Levi. The galleries are those of the
-published `Langlands.GroupScheme.ParabolicGallery` (Worker 153 and Worker 5120). All
+published `Langlands.GroupScheme.ParabolicGallery`. All
 declarations are in `Langlands.InducedTwistPersistence`.
 
 ## Point images
@@ -55,7 +53,9 @@ multiplying the wall polynomials.
 
 This is the gallery step of the derived second-adjointness route to Konno 2003,
 Theorem 4.2. Second adjointness enters only as the hypothesis `hadj`. It is the published
-proof target `LeviSecondAdjointnessStatement`, not a theorem. The gallery is a hypothesis
-of the last theorem. Its existence is the published proof target
-`RationalParabolicGalleryAvoidingStatement`, used in
+statement `LeviSecondAdjointnessStatement`, which the Library proves only from further
+structural statements (`LeviSecondAdjointnessStructure`). The gallery is a hypothesis
+of the last theorem. Its existence is the published statement
+`RationalParabolicGalleryAvoidingStatement`, proved as `rationalParabolicGalleryAvoiding`
+(`GroupScheme/Rational/ParabolicGalleryAvoidingProof`) and used in
 `InducedTwistQuotientPersistenceReduction`.

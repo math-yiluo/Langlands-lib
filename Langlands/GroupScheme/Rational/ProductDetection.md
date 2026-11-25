@@ -27,10 +27,8 @@ map is an epimorphism. The same-base annihilation lemma from
 If a nonzero character were also zero on `i`, the preceding cancellation would
 make the character zero. Thus its restriction along `i` is nonzero.
 
-This unit does not construct a central torus or an actual derived subgroup,
+This module does not construct a central torus or an actual derived subgroup,
 and does not prove the epimorphism premise. In the reductive application those
-remain structural proof obligations. It does not assert
+are separate structural proof steps. It does not assert
 `CentralTorusCharacterStatement` or `CentralSplitTorusCharacterStatement`.
 No perfectness, characteristic, splitness or field hypothesis is imposed.
-
-Authorship: Worker 1306.

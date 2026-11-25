@@ -1,6 +1,6 @@
 # Derivative quotients from maps into normalized induction
 
-Author: Worker 357. This is an internal construction from published general
+This is an internal construction from published general
 representation-theoretic maps. It has no external source claim. Its purpose is
 to retain the actual quotient intertwiner that follows by evaluating a nonzero
 map into normalized induction, then taking partial derivatives.
@@ -111,45 +111,38 @@ At Library base `071b82c1a715daffe0334ad25311484eaba312b0`, the transitive closu
 contains 102 project modules including this new root, and 89 distinct directly
 named external imports. There are no missing modules or missing paired
 Markdown files. Every inherited Lean/Markdown pair agrees byte for byte with
-the supplied Library. All inherited modules are covered by the earlier
-shifted-support dependency audit. Comparing those fingerprints finds only the
+the supplied Library. All inherited modules are covered by the dependency
+audit of the shifted-support construction. Comparing those fingerprints finds only the
 published addition `BlockShape.coordinateBlock` in `Group.GL.Blocks`: it is
 literally the first projection of `B.indexEquiv.symm x`, and is not a mathematical
-input to this construction. The current native inventory and source/proof
-inspection found no exclusion-name matches, proof holes or prohibited execution
-syntax. The complete current module inventories are below; inventory alone is
+input to this construction. The native inventory and source/proof
+inspection found no matches with the names of the results below, no proof holes and no prohibited execution
+syntax. The complete module inventories are below; inventory alone is
 not used as evidence of a mathematical proof.
 
 In particular the closure has no classification module, no individual-segment
 construction, no segment/head/socle Jacquet or derivative formula, no segment
 product criterion in either direction, and no multisegment or analytic
 classification input. It does not use `SegmentHeadJacquetReduction`,
-`SegmentSocleJacquetReduction`, Ze80 3.5/9.6 or their proof successors, the
-segment-socle part of task `8e5b4563-0365-41c7-b134-70f2a0b36292`, or any of the
-host's excluded parent uniqueness, exhaustion, ordered existence, coverage,
+`SegmentSocleJacquetReduction`, Ze80 3.5/9.6 or the modules proving them, the
+segment-socle derivative results, or any of the
+uniqueness, exhaustion, ordered existence, coverage,
 conversion, tempered or square-integrable classification conclusions. It
 contains no `core_mid`, restricted length-two segment derivative argument,
 `TwoSupercuspidalProductStructureProof`, or two-supercuspidal product proof.
-The proof uses neither the pending unlinked-head-product construction nor any
-other pending mathematical result.
+The proof does not use the unlinked-head-product construction.
 
-The use of the published general positive two-block comparison is within the
-operator decisions `bd71b9185aab5d6eafffb7891bd3a3ca` and
-`0edda6122ce65ed7ac51603c37473920`, which permit independently proved general
-derivative theory and the general Ze80 3.7(b) comparison while retaining the
-host exclusions. The subsequent support-only rulings
-`30144f6f9b59540b88b6d4c1517892d9`, `ed80148e21e7523abfc048f455e98eb0`,
-`2b33898bdd0a5ff1b9031be5155a06f0` and `ca18fd5005bf5e12a3f7cade18dca865`
-remain respected: this adapter uses none of the restricted support-proof
+The published general positive two-block comparison used here is the
+general Ze80 3.7(b) comparison, part of the general derivative theory proved
+independently of the results above. This adapter uses none of the restricted support-proof
 intermediates or reducibility imports at all.
 
-This focused contribution adds only this pair. It leaves the full
-`SegmentHeadProductIrreducibility` equivalence, including the linked converse,
-as an outstanding host obligation. It neither proves nonvanishing for a
+This module adds only this Lean/Markdown pair. It does not prove the full
+`SegmentHeadProductIrreducibility` equivalence, including the linked converse;
+the Library proves that separately, as
+`Langlands.Classification.segmentHeadProductIrreducibility`. It neither proves nonvanishing for a
 particular segment derivative nor assumes that a special head embeds into any
 particular two-factor induction.
-
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
 
 ## Full project closure
 

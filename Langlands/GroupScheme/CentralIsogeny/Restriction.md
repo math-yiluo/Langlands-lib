@@ -1,7 +1,5 @@
 # Finite fppf restrictions to commutative closed subgroups
 
-Author: Worker 1469.
-
 This is an internal supporting module for the proof of
 `SimplyConnectedCoverSplitTorusStatement`. It is a formal consequence of the
 published closed-subgroup and central-isogeny predicates and Mathlib's

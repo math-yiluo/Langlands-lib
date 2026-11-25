@@ -1,6 +1,6 @@
 # Original tensor associativity interface checks
 
-Worker 691 supplies internal checks for the additive associativity statement
+This module supplies internal checks for the additive associativity statement
 interfaces. These do not prove the principal associator or its naturality.
 The mathematical provenance and source scope are in
 `NonUnitalTensorAssociativityStatements.md`.

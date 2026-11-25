@@ -1,14 +1,15 @@
 # Actual center targets for the same represented standard Levi
 
-Author: Worker 450, with source-route guidance from Worker 101. The imported
-`CenterSplitComponent` definitions were constructed by Worker 101.
+The `CenterSplitComponent` definitions are imported.
 
-This module specializes WST-CEN-01 to the existing all-test subgroup functor
+This module specializes the compactness statement
+`CenterSplitComponentCompactnessStatement` (module
+`Rational.CenterSplitComponentCompactnessStatement`) to the existing all-test subgroup functor
 `standardLevi i ν J` and its rational-point subgroup `standardLeviPoints i ν J`.
 It adds two separately named, unproved Prop targets:
 `StandardLeviCenterCompactnessStatement` and
 `StandardLeviRationalCenterComparisonStatement`. `StandardLeviCenterStatements`
-is their conjunction. These are statements to be proved in successor work.
+is their conjunction. The Library does not prove them.
 
 Both closed targets quantify over every nonarchimedean local field `F`, an
 actual connected reductive ambient group `G`, a maximal split torus `i`, a
@@ -18,7 +19,7 @@ roots. They then require an actual connected reductive `M`, a closed inclusion
 identifies the image with the same standard Levi on every test scheme; it is
 stronger than agreement only on rational points. No different reductive group
 is substituted. The existence of this representation and reductivity of a
-constructed representative remain with the algebraic owners. The targets
+constructed representative are not proved here. The targets
 impose no characteristic-zero, perfect-field, split, quasi-split, or
 smooth-center hypothesis, so their local-field scope includes mixed and equal
 characteristic.
@@ -110,5 +111,5 @@ The authors' *Corrections and additions*, 1 November 2024 version,
 PDF pp. 24–25, amend the initial §2.2 hypotheses, Lemma 2.2.5, valuation
 signs and the torus Iwahori/maximal-bounded distinction. No corrected
 valuation formula or identification of those two subgroups is used here.
-The literature passages explain the intended route; this contribution
-constructs the explicit maps and states the remaining targets.
+The literature passages explain the intended route; this module
+constructs the explicit maps and states the two target statements.

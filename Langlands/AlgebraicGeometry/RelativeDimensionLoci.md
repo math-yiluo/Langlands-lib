@@ -1,6 +1,6 @@
 # Relative dimension sublevels and the quasi-finite locus
 
-Worker 105 constructs the actual source sets where local dimension in the
+This module constructs the actual source sets where local dimension in the
 residue-field scheme fibre is at most a natural number. The dimension is
 `relativeTopologicalKrullDimAt`, independently constructed from the minimum
 dimension of actual open neighbourhoods. The sets increase with the bound.

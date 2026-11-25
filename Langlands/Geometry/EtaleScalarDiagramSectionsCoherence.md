@@ -110,7 +110,7 @@ vertex equations. No additional compatibility hypothesis is assumed.
 
 ## Scope
 
-This unit treats ordinary global-section action diagrams and scalar
+This module treats ordinary global-section action diagrams and scalar
 identity/composition compatibility. It does not construct a positive-degree
 derived scalar comparison, preservation of injectives, tensor extension,
 ideal reduction, inverse limits, smoothness, analytic sites, compact

@@ -1,7 +1,5 @@
 # Place-level glue for the local modular-character formula
 
-Author: Worker 1402.
-
 This helper module supplies two small facts used in the proof of
 `Langlands.Global.PlaceGroupPoints.LocalModularCharacterAdjointDeterminantStatement`.
 

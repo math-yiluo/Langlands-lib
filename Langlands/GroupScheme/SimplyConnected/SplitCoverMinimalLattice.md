@@ -1,6 +1,6 @@
 # Simply connected central covers from a minimal coweight lattice
 
-Worker 1238. This module is a derived, conditional assembly step toward
+This module is a derived, conditional assembly step toward
 `SplitSimplyConnectedCoverExistenceStatement` (module
 `Langlands.GroupScheme.SimplyConnected.SplitCoverExistenceStatement`). It proves
 that statement from three published propositions, which enter as hypotheses:

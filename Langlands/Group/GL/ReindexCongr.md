@@ -1,6 +1,6 @@
 # Reflexive finite-rank reindexing
 
-Author: Worker 719. Extracted during integration from
+Extracted from
 `Langlands.Representation.RankinSelberg.EqualRankRankOneExtensionSpanComparisonProof`.
 
 The existing simp theorem `Langlands.RankinSelberg.reindex_finCongr_self` states that

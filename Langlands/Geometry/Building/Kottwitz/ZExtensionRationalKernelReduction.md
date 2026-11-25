@@ -83,14 +83,15 @@ this module was written.
 - (Inj) is the injectivity in the proof of Proposition 11.5.3: "The torsion-freeness of
   X∗(Z)I implies, as was argued in the proof of Lemma 2.5.20, that in fact the first map
   in this sequence is injective." Here it is taken only for z-extensions over local
-  fields, with `K = UnramifiedClosure F` and `E = SeparableClosure F`. Task 6873
-  (`401b328f-0c83-44b6-baa1-a2e506f20a5f`) is to publish the general statement
-  `InducedCentralTorusInertiaInjectivityStatement` with a z-extension corollary that
-  implies (Inj).
+  fields, with `K = UnramifiedClosure F` and `E = SeparableClosure F`. The general
+  statement `InducedCentralTorusInertiaInjectivityStatement` (module
+  `Kottwitz.CentralTorusInertiaInjectivityStatement`), proved as
+  `inducedCentralTorusInertiaInjectivity`, has a z-extension corollary that implies (Inj).
 - (Cor) is KP Corollary 11.1.9, printed p.425 / PDF p.456: "If T is an induced torus then
   κ : T(k) → X∗(T)Γ_I is surjective", with the Library's local field `F` in place of KP's
-  base field. Task 6874 (`48d3f97d-97c6-41af-b55e-c5b103bdecab`) is to publish it as
-  `InducedTorusKottwitzRationalSurjectivityStatement`.
+  base field. The Library states it as `InducedTorusKottwitzRationalSurjectivityStatement`
+  and proves it as `inducedTorusKottwitzRationalSurjectivity` (module
+  `Kottwitz.InducedTorusRationalSurjectivityProof`).
 - `ZExtensionPointSurjectivityStatement` (module
   `GroupScheme.Torus.InducedQuotientPointSurjectivityStatement`) at `k = K = F`:
   `H(F) → G(F)` is surjective.
@@ -163,7 +164,7 @@ It then applies `map_kernel_eq_of_image_lift` with `rationalPoints.map p`, `κ'_
      - `κ'_H(h') = a`. Apply `rationalKottwitz_map_of_inputs` for `f = i`, then use
        `κ'_Z(x) = b` and `π₁(i)(b) = a`.
 
-The module compiles in the pinned environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`. Its
+The module compiles. Its
 theorems use only the standard axioms `propext`, `Classical.choice` and `Quot.sound`. It
 sets `backward.isDefEq.respectTransparency false` and raises `maxHeartbeats` to 800000,
 as the neighbouring Kottwitz modules do.

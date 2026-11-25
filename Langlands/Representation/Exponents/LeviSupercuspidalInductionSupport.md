@@ -1,9 +1,8 @@
 # Supercuspidal splittings and proper represented induction
 
-Worker 1281 implements this derived support for Renard VI.5.2. Worker 1750
-preserves the Lean formulation and revalidates it for the focused splitting
-statement task. The coproduct argument adapts the published
-`no_cuspidal_subquotient_of_splitting` of Workers 1553 and 321 to the exact
+This module is derived support for Renard VI.5.2. The coproduct argument adapts
+the published `no_cuspidal_subquotient_of_splitting` (module
+`Aubert.General.CuspidalInductionExclusion`) to the exact
 represented-parabolic supercuspidality test.
 
 `IsSupercuspidal A` abbreviates precisely the all-proper-actual-parabolics
@@ -61,5 +60,5 @@ is Renard, *Représentations des groupes réductifs p-adiques*, French version
 and VI.5.2 Lemma (printed p.173 / PDF p.179), registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The proof uses the current Library Frobenius theorem and elementary coproduct
+The proof uses the Library Frobenius theorem and elementary coproduct
 and quotient algebra; it does not assume the source's decomposition theorem.

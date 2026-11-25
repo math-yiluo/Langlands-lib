@@ -1,8 +1,6 @@
 # Actual opposite-to-upper reversal for refined Jacquet exponents
 
-Author: Worker 158, adapting the published reversal constructions of Worker 23.
-
-This internal adapter uses the block reversal constructions of Worker 23's
+This internal adapter uses the block reversal constructions of the
 published `ProductLeviDualOppositeAdapter`. It uses the other orientation of
 the proved radical conjugation formula to start from the original opposite
 quotient. It introduces no analytic criterion.
@@ -59,6 +57,6 @@ factors enter any coordinate.
 All content here is an internal algebraic and topological adapter derived
 from published quotient translation, reversal, normalization, and finite
 pairing identities. It neither assumes nor proves square-integrability
-necessity. The intended consumer combines an independently proved upper
-cone criterion with this transport. No classification or support theorem
+necessity. `RefinedOppositeSquareIntegrableConeProof` combines
+an independently proved upper cone criterion with this transport. No classification or support theorem
 is used in the implemented proofs.

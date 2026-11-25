@@ -1,7 +1,5 @@
 # Invariance of the normalized valuation under compatible automorphisms
 
-Author: Worker 5163.
-
 Notation: `F` is a nonarchimedean local field, `K = UnramifiedClosure F` is the
 maximal unramified extension of `F` in `SeparableClosure F`, and `L` is an
 intermediate field of `SeparableClosure F / K`. `intermediateValuation F L` is

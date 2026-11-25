@@ -1,7 +1,5 @@
 # Bounded extension into actual affinoid-family actions
 
-Author: Worker 56.
-
 This module constructs the extension of a bounded subgroup-equivariant map
 from a genuine affinoid action into an actual group action on affinoid
 families. Restriction along the existing normalized identity-coset unit and

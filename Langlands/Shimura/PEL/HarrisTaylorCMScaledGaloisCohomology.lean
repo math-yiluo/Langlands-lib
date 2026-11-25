@@ -48,8 +48,8 @@ def baseChangeActionFunctor :
     { hom := ModuleCat.ofHom (f.hom.hom.baseChange L)
       comm := fun g => by
         apply ModuleCat.hom_ext
-        change (f.hom.hom.baseChange L).comp ((V.ρ g).hom.baseChange L) =
-          ((V'.ρ g).hom.baseChange L).comp (f.hom.hom.baseChange L)
+        change (f.hom.hom.baseChange L).comp ((V.ρ g).asHom.hom.baseChange L) =
+          ((V'.ρ g).asHom.hom.baseChange L).comp (f.hom.hom.baseChange L)
         rw [← LinearMap.baseChange_comp, ← LinearMap.baseChange_comp]
         exact congrArg (fun t => LinearMap.baseChange L t)
           (congrArg ModuleCat.Hom.hom (f.comm g)) }

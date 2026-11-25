@@ -1,6 +1,6 @@
 # Proof of finite-type surjectivity descent
 
-Worker 105 proves `FiniteTypeSurjectivityDescent` with
+The module proves `FiniteTypeSurjectivityDescent` with
 `finiteTypeSurjectivityDescent`, uniformly in universe `u`.
 The source and derived scope are explained in the paired statement.
 

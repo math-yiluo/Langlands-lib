@@ -1,7 +1,5 @@
 # Uniform-degree growth of unipotent lattice coefficients
 
-Author: Worker 836, Task 5326.
-
 `Langlands.unipotentLatticeCoefficientBound.{u}` proves the derived statement
 `Langlands.UnipotentLatticeCoefficientBoundStatement.{u}` with no additional
 hypotheses. The exponent is exactly `d*r`, independent of the vector and

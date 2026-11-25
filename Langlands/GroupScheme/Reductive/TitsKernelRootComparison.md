@@ -1,7 +1,5 @@
 # Roots of the derived subgroup of a split-torus centralizer
 
-Author: Worker 146 (Task 5619).
-
 This module proves one theorem, `Langlands.GroupScheme.exists_derivedCentralizerRootEquiv`.
 It is used over the separable closure in
 [`TitsKernelIndexData`](TitsKernelIndexData.md). Its provenance is internal: it

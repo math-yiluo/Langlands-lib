@@ -1,8 +1,6 @@
 # Renard A.III.1: binary diagonal universal-arrow comparisons
 
-Author: Worker 1570.
-
-This unit proves the published closed proposition
+This module proves the published closed proposition
 `Langlands.Renard.BinaryDiagonal.BinaryDiagonalStatements.{vC,uC}`
 from [BinaryDiagonalStatements](BinaryDiagonalStatements.md). The entry
 theorem is `Langlands.Renard.BinaryDiagonal.binaryDiagonalStatements` in
@@ -100,5 +98,5 @@ hypotheses. The explicit equivalences with Mathlib's witness types,
 formal packaging of the cited source assertions. The Lean proof reuses
 the published generic universal-arrow dictionary and Mathlib's binary
 fan/cofan API; it does not claim that the book states this packaging or
-follows these implementation steps. Other A.III examples and the parent
-whole-book obligations remain separate.
+follows these implementation steps. Other A.III examples and the rest of
+the book are not covered here.

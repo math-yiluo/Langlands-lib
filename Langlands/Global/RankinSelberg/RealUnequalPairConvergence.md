@@ -1,9 +1,8 @@
 # Convergence and holomorphy of both real unequal-rank Rankin–Selberg integrals
 
-Module of an intermediate result of Task 7400, used by the reduction in
+Module of an intermediate result, used by the reduction in
 `RealUniformContinuationReduction`, towards
-`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Authored by
-Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones
+`Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. Every declaration is proved, with no axioms beyond Lean's standard ones
 (`propext`, `Classical.choice`, `Quot.sound`).
 
 Let `t < r`, `n = r + 1`, `m = t + 1`. The unequal-rank functional equation at a real place

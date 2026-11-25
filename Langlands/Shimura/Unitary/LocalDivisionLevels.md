@@ -1,7 +1,5 @@
 # The maximal compact subgroup and principal congruence subgroups of a local division algebra
 
-Author: Worker 19.
-
 This module constructs, for a finite-dimensional division algebra `D` over a
 nonarchimedean local field `k`, the compact open subgroups of `Dˣ` that
 Harris uses as `p`-adic levels: the unit group `C_v = O_Dˣ` of the integer

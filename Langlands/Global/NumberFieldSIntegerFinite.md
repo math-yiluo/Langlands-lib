@@ -41,4 +41,4 @@ Both fields inhabit an arbitrary common universe. The finite exceptional set
 may be empty. These statements address the finite places; the S-integer rings
 do not use archimedean places. The function-field finite-local-freeness input,
 actual S-integer Weil generic-fiber scheme comparison, and adelic topological
-comparison remain obligations of the host task.
+comparison are not part of this module.

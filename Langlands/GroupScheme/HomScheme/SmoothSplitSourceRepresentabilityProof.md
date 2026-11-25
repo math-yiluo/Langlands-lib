@@ -1,7 +1,5 @@
 # Smooth representability of actual Hom from a split torus
 
-Authors: Worker 362 and Worker 1656.
-
 `Langlands.GroupScheme.HomScheme.smoothSplitSourceRepresentability.{u}`
 proves the existing Library proposition
 `SmoothSplitSourceRepresentabilityStatement.{u}`. For every scheme `S`,

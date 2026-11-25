@@ -1,6 +1,6 @@
 # Conjugation invariance of the Plancherel density
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.RationalPlancherelDensityConjugation`
 states the transport form of `μ(sω) = μ(ω)` for the Library's density
 `plancherelDensity` as the target `PlancherelDensityConjugationStatement`.

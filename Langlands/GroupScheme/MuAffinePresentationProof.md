@@ -1,8 +1,7 @@
 # Affine quotient presentation of the roots-of-unity kernel
 
-Author: Worker 690. Worker 407 proposed the comparison on all test schemes.
 The spectrum-map compatibility and the pattern for the relative universal
-property come from Worker 487's published `MultiplicativeLaurent` module.
+property come from the module `Langlands.GroupScheme.MultiplicativeLaurent`.
 
 `Langlands.GroupScheme.muAffinePresentation.{u}` proves the unchanged Library
 proposition `Langlands.GroupScheme.MuAffinePresentationStatement.{u}`:
@@ -60,8 +59,8 @@ sections of each test scheme.
 theorem packages this isomorphism in `Nonempty`.
 
 The test schemes in this argument are arbitrary. No affine-point density
-claim or restriction to affine test objects is used. The proof preserves
-the accepted statement pair and its imports. It does not assert compatibility
+claim or restriction to affine test objects is used. The proof leaves the
+statement and its imports unchanged. It does not assert compatibility
 with group laws, finiteness, flatness, étaleness, or a monodromy comparison.
 
 ## Sources and provenance
@@ -80,7 +79,7 @@ provenance for the global-units functor and its roots-of-unity subgroup.
 The implemented argument uses the Library's existing kernel construction
 and a direct quotient universal property, followed by Yoneda.
 
-The retained sources read for this contribution are:
+The retained sources read for this module are:
 
 - `stacks-mu-finite-etale-2026-10-23`, in
   `literature/Stacks Project - Roots of unity and the Kummer finite etale calculation (2026-10-23)/`.

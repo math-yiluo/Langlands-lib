@@ -1,6 +1,6 @@
 # Split-component chamber comparison
 
-Worker 706, Task 6451. Module
+Module
 `Langlands.Representation.LanglandsClassification.ParabolicSplitComponentChamberProof`,
 namespace `Langlands.GroupScheme`.
 

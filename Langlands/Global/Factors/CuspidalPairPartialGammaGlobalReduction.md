@@ -1,6 +1,6 @@
 # Reduction of the partial gamma equation of cuspidal pairs to the global Rankin–Selberg theory
 
-Module `Langlands.Global.Factors.CuspidalPairPartialGammaGlobalReduction`. Author: Worker 382.
+Module `Langlands.Global.Factors.CuspidalPairPartialGammaGlobalReduction`.
 
 ## 1. Content and provenance
 
@@ -18,10 +18,8 @@ finite places of `S`. This module contains:
   and two auxiliary Prop-valued definitions, `UnequalPackageStatement` and
   `EqualPackageStatement` (Section 3). The module proves both of them from the premises.
 
-The theorem is a reduction. It does not prove (G'), and its ten premises are open statements of
-the Library. It is an intermediate result of Task 6190 in the sense of the "Intermediate
-results" section of that task's revision 1. The task's required result, an unconditional proof
-of (G'), stays open.
+The theorem is a reduction. It does not prove (G'). Section 5 says which of its ten premises
+the Library proves.
 
 **Source.** J. W. Cogdell, *Analytic theory of L-functions for GL_n* (2004)
 (`cogdell-2004-analytic-theory-gln`; PDF page = printed page + 3), proof of Theorem 4.1,
@@ -43,8 +41,8 @@ kept and the signs `ω'_v(-1)^(n-1)` cancelled, is explained in §1 of
 
 **Provenance (internal).** The split into ten premises is ours. The premises are the Library's
 formal versions of these three identities, one set for `t < r` and one for `t = r`. Seven of
-them were published by Task 6653, which defined the global Rankin–Selberg integrals. The other
-three were published by the present task:
+them are stated with the definition of the global Rankin–Selberg integrals. The other three
+are ported together with this module:
 
 * `EqualDualEulerFactorizationStatement` is the Euler factorization of the dual integral for
   `t = r`, the companion of `UnequalDualEulerFactorizationStatement`.
@@ -234,7 +232,14 @@ are `infiniteL · I / A` and `dualInfiniteL · J / B`.
 
 ## 5. The retained premises
 
-All ten premises are open in the Library. The proof uses no other hypothesis. The task's
-required result, the unconditional proof of (G'), needs proofs of all ten. Proof tasks for the
-seven premises of Task 6653 were published from that task. Proof tasks for the three premises
-of Task 6190 are published from this task.
+The proof uses no hypothesis other than the ten premises. An unconditional proof of (G') by
+this route needs proofs of all ten. The Library proves the eight premises other than the two
+semi-local equations: `UnequalAnalyticStatement` and `EqualAnalyticStatement`
+(`unequalAnalyticStatement_proof`, `equalAnalyticStatement_proof`), `UnequalUnfoldingStatement`
+and `EqualUnfoldingStatement` (`unequalUnfoldingStatement_proof`,
+`equalUnfoldingStatement_proof`), `UnequalEulerFactorizationStatement` and
+`EqualEulerFactorizationStatement` (`unequalEulerFactorization`, `equalEulerFactorization`),
+and `UnequalDualEulerFactorizationStatement` and `EqualDualEulerFactorizationStatement`
+(`unequalDualEulerFactorization`, `equalDualEulerFactorization`), each in the module
+`Langlands.Global.RankinSelberg.<name>Proof` of its statement. `UnequalSemilocalEquationStatement`
+is derived from a further premise in `Langlands.Global.RankinSelberg.UnequalSemilocalEquationReduction`.

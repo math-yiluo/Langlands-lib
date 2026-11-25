@@ -1,6 +1,6 @@
 # Concrete finite unitary models
 
-Worker 1728. Derived local-model construction for Clozel 1991, Section 2,
+Derived local-model construction for Clozel 1991, Section 2,
 printed pp.101–106, especially Lemma 2.2 and Proposition 2.3. It specializes
 standard Hermitian matrix algebra to the actual completed quadratic center.
 

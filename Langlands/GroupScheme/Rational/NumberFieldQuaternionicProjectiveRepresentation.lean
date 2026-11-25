@@ -116,7 +116,7 @@ theorem exists_nonzero_vector_on_pureLine (hB : B.toBilin.SeparatingLeft)
       change ¬ (q.baseChange (Global.FiniteCompletion E w)).Anisotropic
       exact localComparison (K := Global.FiniteCompletion F v) (R := Global.FiniteCompletion E w) f t ht
   obtain ⟨x, hx, hzero⟩ := (QuadraticMap.not_anisotropic_iff_exists q).mp
-    (Langlands.numberFieldQuadraticIsotropy_of_cyclicNorm ClassField.Global.cyclicHasseNorm E V q hq hplaces)
+    (Langlands.numberFieldQuadraticIsotropy_of_cyclicNorm ClassFieldTheory.Global.cyclicHasseNorm E V q hq hplaces)
   exact ⟨x, hx, (Q.symmetricComponent_self_eq_zero_iff B hbar two_ne_zero x).mp hzero⟩
 
 end Langlands.GroupScheme.KneserThree.QuatData

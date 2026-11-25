@@ -1,8 +1,5 @@
 # Smoothness of the derived-cover and maximal-torus multiplication map
 
-Author: Worker 133. Worker 1637 supplied the consumer motivation and proposed
-geometric route in the task specification.
-
 `Langlands.GroupScheme.DerivedCoverTorusProductSmoothStatement` is a
 `Prop`-valued definition. This module states a smoothness assertion and
 contains no proof of it.
@@ -77,7 +74,7 @@ The right action
 
 preserves the product map. The expected torsor identification makes
 `C ×ₖ T → H` an `S`-torsor and yields smoothness from smoothness of `S`.
-These structural and torsor assertions remain proof obligations. They may
+These structural and torsor assertions are not proved in this module. They may
 be established after extension to an algebraic closure and then descended;
 algebraic closure is not a hypothesis of the statement.
 
@@ -111,5 +108,5 @@ asserted here. In characteristic `p`, the central cover `SL_p → PGL_p`
 has a nonsmooth kernel, so one cannot replace the product-map target by a
 smoothness assumption on the cover alone.
 
-An exact-target proof is required separately after publication of this
-statement.
+The statement is proved, as `Langlands.GroupScheme.derivedCoverTorusProductSmooth`,
+in [`DerivedCoverTorusProductSmoothProof`](DerivedCoverTorusProductSmoothProof.md).

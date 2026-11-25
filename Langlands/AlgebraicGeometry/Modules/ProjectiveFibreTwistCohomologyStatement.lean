@@ -30,9 +30,9 @@ def ProjectiveFibreTwistCohomologyStatement : Prop :=
   ∀ (A : Type u) [CommRing A] [IsNoetherianRing A] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules) (N : ℕ)
     (𝔓 : 𝓛X.ProjPresentation f N),
-    IsProper f → Flat f → Scheme.Modules.IsInvertible 𝓛X → IsClosedImmersion 𝔓.toProj →
+    IsProper f → Flat f → Scheme.Modules.IsInvertibleFLT 𝓛X → IsClosedImmersion 𝔓.toProj →
     ∀ (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of A))
-      (F : (pullback f s).Modules), Scheme.Modules.IsInvertible F →
+      (F : (pullback f s).Modules), Scheme.Modules.IsInvertibleFLT F →
       (∀ t : T, ∃ V : T.Opens, t ∈ V ∧ ∃ n₀ : ℕ, ∀ t' ∈ V, ∀ n p : ℕ, n₀ ≤ n → 0 < p →
         IsZero (fibreCohomology (pullback.snd f s) t'
           (twist ((Scheme.Modules.pullback (pullback.fst f s)).obj 𝓛X) F n) p)) ∧

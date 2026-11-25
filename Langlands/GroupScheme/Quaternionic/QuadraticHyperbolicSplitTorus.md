@@ -1,7 +1,5 @@
 # A split torus of dimension the Witt index in the connected isometry group
 
-Author: Worker 350.
-
 Module `Langlands.GroupScheme.Quaternionic.QuadraticHyperbolicSplitTorus`.
 
 ## Setting

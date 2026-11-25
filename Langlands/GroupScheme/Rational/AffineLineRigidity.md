@@ -1,7 +1,5 @@
 # Affine-line rigidity and split-unipotent source homomorphisms
 
-Author: Worker 1478.
-
 This construction works over every field `k : Type u`. The Prop-valued
 condition `HasConstantAffineLineMaps G` means that every actual morphism
 over `Spec k` from the affine line to `G.X` factors through the terminal

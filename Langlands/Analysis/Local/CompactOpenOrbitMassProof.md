@@ -1,7 +1,5 @@
 # Compact open quotient orbit averaging and mass: proof
 
-Author: Worker 235.
-
 `Langlands.QuotientIntegration.compactOpenOrbitMass` proves exactly the
 published `Langlands.QuotientIntegration.CompactOpenOrbitMassStatement` from
 `Langlands.Analysis.Local.CompactOpenOrbitMassStatement`. Its complete type

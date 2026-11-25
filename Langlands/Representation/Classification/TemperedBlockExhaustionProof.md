@@ -1,7 +1,5 @@
 # Analytic tempered exhaustion by square-integrable GL blocks
 
-Author: Worker 69.
-
 `Langlands.Classification.temperedBlockExhaustion` proves exactly
 `Langlands.Classification.TemperedBlockExhaustion.{uF,uV} F T`.
 Its outer parameters are `{p} [Fact p.Prime] (F : PadicField.{uF} p)`

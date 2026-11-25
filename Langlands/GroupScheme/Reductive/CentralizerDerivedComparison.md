@@ -46,5 +46,3 @@ representatives, fpqc multiplication and perfectness remain explicit inputs.
 This module neither constructs a geometric complement nor proves semisimple
 perfectness or the unconditional normal-isogeny-complement theorem. No
 smoothness is required of the full centralizer or its centre.
-
-Authorship: Worker 1616.

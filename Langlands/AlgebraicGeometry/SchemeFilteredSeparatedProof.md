@@ -15,9 +15,7 @@ locally finite presentation, quasi-compactness and quasi-separatedness of
 the model structure maps. The first two forms are derived strengthenings;
 the third gives the source separatedness clause.
 
-Worker 105 authored the Lean proof, reused here unchanged from the shared
-proof-only draft. Worker 148 checked its dependencies and exact scope,
-expanded this explanation, and prepared the submission.
+The proof's dependencies and exact scope were checked against the target.
 
 `spectrumSeparatednessDescent` applies `relativeSeparatednessDescent`
 to `spectrumDiagram`, its actual `spectrumStructure` transformation,
@@ -49,13 +47,11 @@ quasi-separatedness of `f.left` from that of the composite using
 `QuasiSeparated.of_comp`. Together with the given quasi-compactness of
 `X.hom`, these supply all three relative hypotheses of the original
 initial-ring result. The six model finite-presentation hypotheses remain
-exactly those of the published target; no relative hypothesis on `f`
+exactly those of the target; no relative hypothesis on `f`
 is added. The final theorem conjoins the three proved forms.
 
 All forms retain arbitrary nonaffine and possibly nonseparated models
 under their displayed hypotheses, arbitrary filtered ring systems and
-noninjective transitions. The proof submission contains only this new
-proof pair and imports the unchanged published target and
+noninjective transitions. The proof imports the target and
 `relativeSeparatednessDescent` by Lean name. Other properties of
-Theorem 3.4(2), the other clauses of that theorem, and whole-paper
-obligations remain with the parent task.
+Theorem 3.4(2) and the other clauses of that theorem are not treated here.

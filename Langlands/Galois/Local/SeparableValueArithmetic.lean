@@ -67,12 +67,10 @@ theorem fixedFieldIntegersIsDVR_of_valuesFromBase (h : FixedFieldValuesFromBase 
   let e := (fixedFieldValueGroupEquiv F h).trans
     (ValueGroupWithZero.orderMonoidIso (fixedFieldValued F).v)
   let e' := (Units.mapEquiv e.toMulEquiv).trans WithZero.unitsWithZeroEquiv
-  let : IsCyclic (MonoidWithZeroHom.valueGroup
-      (MonoidWithZeroHom.ofClass (fixedFieldValued F).v)) := e'.isCyclic.mp inferInstance
+  let : IsCyclic (fixedFieldValued F).v.valueGroup := e'.isCyclic.mp inferInstance
   let : Nontrivial (ValueGroupWithZero F)ˣ :=
     ValuativeRel.isNontrivial_iff_nontrivial_units.mp inferInstance
-  let : Nontrivial (MonoidWithZeroHom.valueGroup
-      (MonoidWithZeroHom.ofClass (fixedFieldValued F).v)) :=
+  let : Nontrivial (fixedFieldValued F).v.valueGroup :=
     e'.symm.surjective.nontrivial
   exact Valuation.valuationSubring_isDiscreteValuationRing (fixedFieldValued F).v
 

@@ -1,7 +1,7 @@
 # Smooth quotients of the actual semigroup subgroup functors
 
-Worker 1345 assembles this proof using the functoriality construction and route
-shared with Worker 1372.
+This proof uses the same functoriality construction as
+`RelativeRoot.semigroupFunctoriality` (module `Rational.SemigroupFunctorialityProof`).
 
 `Langlands.GroupScheme.RelativeRoot.semigroupSmoothQuotient` proves exactly
 `SemigroupSmoothQuotientStatement.{u}` at every universe `u`. For a smooth
@@ -41,5 +41,5 @@ All three proposition premises of the reduction are discharged by proved
 theorems. The final theorem has no additional proposition premise. The
 original map's surjectivity hypothesis is preserved by the exact statement,
 although the reduction only needs its smoothness. This proves the smooth
-quotient component; the full comparison task also requires its functoriality
-and three-alternative intersection components.
+quotient component; the full `SemigroupComparisonStatement` also requires its
+functoriality and three-alternative intersection components.

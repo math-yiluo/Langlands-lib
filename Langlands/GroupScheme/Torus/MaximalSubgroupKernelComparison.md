@@ -1,7 +1,5 @@
 # Compatible maximal subgroup tori and full restricted kernels
 
-Author: Worker 1293.
-
 This is a derived consumer construction for the actual torus and cocharacter
 comparisons in the Levi cocenter root-model task. It applies more generally
 to any closed subgroup `d : D → M`; it does not require `d` to be a derived

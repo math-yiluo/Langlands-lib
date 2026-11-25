@@ -1,7 +1,5 @@
 # Zero padding of Jacobi–Trudi weights
 
-Author: Worker 1767.
-
 This internal helper appends zero coordinates to an integral weight. The
 Jacobi–Trudi determinant in a supplied finite alphabet has zero lower-left
 block after this padding, while its lower-right block is the zero-weight

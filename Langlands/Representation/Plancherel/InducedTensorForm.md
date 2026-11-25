@@ -21,10 +21,10 @@ two inducing forms gives independence under a specified positive rescaling.
 The form here includes both actual induced factors. It has no inverse
 formal-degree factor and uses the literal Bruhat measure choice in the existing
 `compactQuotientNormalizedInductionForm`. It does not identify that choice with
-the task's fixed compact Haar normalization. The source's normalized form,
+the fixed compact Haar normalization. The source's normalized form,
 its identification with other coefficient-tensor models, and independence
 between arbitrary invariant positive forms are therefore not claimed here.
-No assertion about Lemma V.2.2 or the Plancherel formula follows from this unit.
+No assertion about Lemma V.2.2 or the Plancherel formula follows from this module.
 
 ## Setting and hypotheses
 
@@ -157,7 +157,7 @@ The closedness and compactness hypotheses and the full modular identity remain
 visible geometric inputs here; the general rational parabolic realizations
 must still be supplied. The fixed compact Haar normalization, source inverse
 formal-degree factor, induction-duality and product-induction comparisons,
-representative and arbitrary-form independence, smooth spectral-family forms,
-Lemma V.2.2 and all seven whole-task completion conditions remain separate
-obligations. This unit supplies the actual integral-form scaling and actual
+representative and arbitrary-form independence, smooth spectral-family forms
+and Lemma V.2.2 remain separate
+obligations. This module supplies the actual integral-form scaling and actual
 two-induced-factor tensor construction needed for that later assembly.

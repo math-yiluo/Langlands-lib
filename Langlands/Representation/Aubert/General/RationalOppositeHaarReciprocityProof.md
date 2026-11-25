@@ -1,7 +1,5 @@
 # Proof of reciprocal actual Haar characters on opposite rational-point radicals
 
-Author: Worker 4204.
-
 Module `Langlands.Representation.Aubert.General.RationalOppositeHaarReciprocityProof`,
 namespace `Langlands.Aubert.General.RationalPointFamily`.
 

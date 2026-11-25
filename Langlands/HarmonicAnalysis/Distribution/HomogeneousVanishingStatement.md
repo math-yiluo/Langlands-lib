@@ -98,9 +98,8 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.Distribution.homogeneousAntiInvariantVanishing.{uG, uX}`
 in `Langlands.HarmonicAnalysis.Distribution.HomogeneousVanishingProof`. Its
 type is exactly `HomogeneousAntiInvariantVanishingStatement.{uG, uX}`, with
-the same independent universes and no added hypothesis. The proof is artifact
-`0dcd54e0-fdea-4fd5-a15c-904ca2bb3ec0` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `914d13e3395c5a4417f36ffd7646c45c721a4b3e`.
+the same independent universes and no added hypothesis. The proof passed the
+Lake build and exact-target checks and was published at Library commit
+`914d13e3395c5a4417f36ffd7646c45c721a4b3e`.
 It proves only the vanishing stated here. It does not identify invariant
 distributions with measures or prove Example 6.12 of Bernstein–Zelevinsky.

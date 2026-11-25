@@ -137,19 +137,19 @@ end Hom
 /-- Cartier duality reverses the endomorphism ring of a p-divisible group. -/
 def dualEnd (G : PDivisibleGroup R p) (hExact : FiniteCartierDualExactnessStatement.{u}) :
     (End G)ᵐᵒᵖ →+* End (G.dual hExact) where
-  toFun f := Hom.dual f.unop hExact
-  map_one' := Hom.dual_id G hExact
-  map_zero' := Hom.dual_zero hExact
-  map_add' f g := Hom.dual_add f.unop g.unop hExact
-  map_mul' f g := Hom.dual_comp f.unop g.unop hExact
+  toFun f := CategoryTheory.End.of (Hom.dual f.unop.asHom hExact)
+  map_one' := congrArg CategoryTheory.End.of (Hom.dual_id G hExact)
+  map_zero' := congrArg CategoryTheory.End.of (Hom.dual_zero hExact)
+  map_add' f g := congrArg CategoryTheory.End.of (Hom.dual_add f.unop.asHom g.unop.asHom hExact)
+  map_mul' f g := congrArg CategoryTheory.End.of (Hom.dual_comp f.unop.asHom g.unop.asHom hExact)
 
 /-- A pair of endomorphisms acts componentwise on the actual product tower. -/
 def prodEnd (G H : PDivisibleGroup R p) : End G × End H →+* End (G.prod H) where
-  toFun f := Hom.prodMap f.1 f.2
-  map_one' := Hom.prodMap_id G H
-  map_zero' := Hom.prodMap_zero
-  map_add' f g := Hom.prodMap_add f.1 g.1 f.2 g.2
-  map_mul' f g := Hom.prodMap_comp g.1 g.2 f.1 f.2
+  toFun f := CategoryTheory.End.of (Hom.prodMap f.1.asHom f.2.asHom)
+  map_one' := congrArg CategoryTheory.End.of (Hom.prodMap_id G H)
+  map_zero' := congrArg CategoryTheory.End.of Hom.prodMap_zero
+  map_add' f g := congrArg CategoryTheory.End.of (Hom.prodMap_add f.1.asHom g.1.asHom f.2.asHom g.2.asHom)
+  map_mul' f g := congrArg CategoryTheory.End.of (Hom.prodMap_comp g.1.asHom g.2.asHom f.1.asHom f.2.asHom)
 
 /-- The ordinary order acts on the primal tower and its opposite acts by duality on
 the dual tower. -/
@@ -162,8 +162,9 @@ def splitOrderAction {O : Type w} [Ring O] {G : PDivisibleGroup R p} (action : O
 attached to the opposite component. -/
 theorem splitOrderAction_app {O : Type w} [Ring O] {G : PDivisibleGroup R p} (action : O →+* End G)
     (hExact : FiniteCartierDualExactnessStatement.{u}) (a : Oᵐᵒᵖ × O) (n : ℕ) :
-    Hom.app (splitOrderAction action hExact a) n =
-      productWithDualMap (Hom.app (action a.2) n) (schemeDualMap (Hom.app (action a.1.unop) n)) := rfl
+    Hom.app (splitOrderAction action hExact a).asHom n =
+      productWithDualMap (Hom.app (action a.2).asHom n)
+        (schemeDualMap (Hom.app (action a.1.unop).asHom n)) := rfl
 
 /-- Evaluation of the finite-level Cartier character of a polarized point. -/
 def PrincipalPolarization.evaluate {G : PDivisibleGroup R p} (polarization : PrincipalPolarization G)
@@ -187,12 +188,14 @@ theorem splitOrderAction_adjoint {O : Type w} [Ring O] {G : PDivisibleGroup R p}
     (x y : T ⟶ ((G.splitWithDual hExact).inclusions.obj n).X) :
     let s := splitOrderAction action hExact
     let b : Oᵐᵒᵖ × O := (MulOpposite.op a.2, a.1.unop)
-    (G.splitPrincipalPolarization hExact).evaluate n T (x ≫ (Hom.app (s a) n).toMul.hom.hom) y =
-      (G.splitPrincipalPolarization hExact).evaluate n T x (y ≫ (Hom.app (s b) n).toMul.hom.hom) := by
+    (G.splitPrincipalPolarization hExact).evaluate n T
+        (x ≫ (Hom.app (s a).asHom n).toMul.hom.hom) y =
+      (G.splitPrincipalPolarization hExact).evaluate n T x
+        (y ≫ (Hom.app (s b).asHom n).toMul.hom.hom) := by
   dsimp only
   rw [splitPrincipalPolarization_evaluate, splitPrincipalPolarization_evaluate,
     splitOrderAction_app, splitOrderAction_app]
   exact productWithDualPairing_adjoint (G := G.inclusions.obj n) (H := G.inclusions.obj n)
-    (Hom.app (action a.2) n) (Hom.app (action a.1.unop) n) T x y
+    (Hom.app (action a.2).asHom n) (Hom.app (action a.1.unop).asHom n) T x y
 
 end Langlands.PDivisibleGroup

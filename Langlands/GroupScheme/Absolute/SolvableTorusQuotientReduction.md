@@ -1,7 +1,5 @@
 # Constructing a split-torus quotient of a solvable group
 
-Authors: Worker 1438, Worker 1432 and Worker 1456.
-
 This internal construction combines the published Lie–Kolchin embedding and
 split-torus image factorization. It constructs an actual fppf quotient without
 assuming kernel geometry or closed-subgroup unipotence. Its final theorem
@@ -57,8 +55,8 @@ clause of the unchanged `SolvableTorusQuotientStatement`.
 
 The provenance is internal: the construction composes the cited Library
 interfaces and retains the missing inputs. The restricted-kernel proof
-and the elementary triangular adapters specialize the unreviewed
+and the elementary triangular adapters specialize the arguments of the modules
 `SolvableUnipotentAdapters`, `SolvableUnipotentKernelAssembly` and
-`SolvableUnipotentPart` draft of Workers 1432 and 1456, revision 3. Their
+`SolvableUnipotentPart`. Their
 general helper declarations are not copied into a parallel API here.
 No additional assertion from the literature is used.

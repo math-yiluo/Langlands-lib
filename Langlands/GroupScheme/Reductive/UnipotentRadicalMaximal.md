@@ -1,6 +1,6 @@
 # Finite-height maximal normal unipotent subgroups
 
-This derived unit defines `UnipotentRadicalExistence.IsCandidate` as the five
+This derived module defines `UnipotentRadicalExistence.IsCandidate` as the five
 conditions in the published `IsUnipotentRadical` preceding greatestness: a closed
 immersion, smooth connected source, fixed-vector unipotence, and normal range on
 every relative scheme test. It changes none of the published predicates.
@@ -15,8 +15,9 @@ connected, and has identity range on all tests; the latter is normal.
 
 The height, rigidity, and final greatestness lemmas assume that the ambient group
 scheme `G` is affine and locally of finite type over the field, expressed by
-`IsAffineHom G.X.hom` and `LocallyOfFiniteType G.X.hom`. The host existence target
-supplies the latter condition through its smoothness hypothesis.
+`IsAffineHom G.X.hom` and `LocallyOfFiniteType G.X.hom`. The existence target that
+this module serves, `UnipotentRadicalExistenceStatement`, supplies the latter
+condition through its smoothness hypothesis.
 Under these ambient hypotheses, the implemented maximality argument reuses the published
 `BorelExistence.coordinateKernel` and its finite prime-height and rigidity
 lemmas. Coordinate-kernel heights of candidates are finite.
@@ -35,6 +36,6 @@ discharging that structural hypothesis.
 
 The mathematical route is Milne, *Algebraic Groups* (2017), Proposition 6.42
 (printed p.134), with finite prime-kernel height replacing greatest dimension.
-Corollary 14.8 (printed p.282) applies that proposition to unipotence. This unit
+Corollary 14.8 (printed p.282) applies that proposition to unipotence. This module
 implements the order-theoretic part of that argument; the product closure in
 Lemma 6.41 and Corollary 14.7 remains a separate obligation.

@@ -1,6 +1,6 @@
 # Support subquotients of `r_Q^G ∘ i_P^G` for represented parabolics (Renard VII.3.2)
 
-Author: Worker 6. Module `Langlands.Representation.Intertwining.PQSupportGradedStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. The module contains one **statement**: the closed `Prop`-valued definition `PQSupportGradedStatement` (universe parameters `u, v`). It proves nothing.
+Module `Langlands.Representation.Intertwining.PQSupportGradedStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. The module contains one **statement**: the closed `Prop`-valued definition `PQSupportGradedStatement` (universe parameters `u, v`). It proves nothing.
 
 ## Original source
 
@@ -10,7 +10,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French versio
 - VII.3.1, the Bruhat order and the total order `⪯` refining it, printed pp.232–233 / PDF pp.238–239;
 - VI.5.1, the geometric lemma, from printed p.161 / PDF p.167.
 
-Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 6 read PDF pages 238–239.
+Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF pages 238–239 were read.
 
 `P` and `Q` are two parabolic subgroups of `G` with the same Levi factor `M`, and `⪯` is a total order on the double cosets that refines the Bruhat order `w̄ ≤ w̄'` (`P w̄ Q ⊂ closure (P w̄' Q)`). For a smooth representation `(ρ, W)` of `M`, Renard defines four subspaces of `i_P^G(W)`: `F̃^{⪯w̄}_{PQ}(W)` and `F̃^{≺w̄}_{PQ}(W)`, the functions whose support does not meet `⋃_{w̄' ⪯ w̄} P w̄' Q`, respectively `⋃_{w̄' ≺ w̄} P w̄' Q`; `F̃^{<w̄}_{PQ}(W)`, those with `Supp(f) ∩ closure (P w̄ Q) ⊂ P w̄ Q`; and `F̃^{≤w̄}_{PQ}(W)`, those with `Supp(f) ∩ closure (P w̄ Q) = ∅`. Their images in `r_Q^G i_P^G(W)` are `F^{⪯w̄}_{PQ}`, `F^{≺w̄}_{PQ}`, `F^{<w̄}_{PQ}`, `F^{≤w̄}_{PQ}`. Renard then states:
 

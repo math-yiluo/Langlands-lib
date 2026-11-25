@@ -1,6 +1,6 @@
 # A normalized form for a symmetric rational root pairing
 
-Worker 227. For a rational root pairing `P` whose roots and coroots span
+For a rational root pairing `P` whose roots and coroots span
 their ambient spaces, suppose that the full root-coroot pairing is
 symmetric: `P.pairing i j = P.pairing j i` for every pair of indices.
 The definition `Langlands.LinearAlgebra.SymmetricRootPairingForm.form`

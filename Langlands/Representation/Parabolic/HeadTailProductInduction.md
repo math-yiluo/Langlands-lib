@@ -1,7 +1,5 @@
 # Normalized product induction of the first factor and ordered tail
 
-Author: Worker 111.
-
 This internal construction specializes the published unconditional
 `Langlands.Parabolic.orderedProductRegrouping` to the exact first/tail coordinates
 in `Langlands.Group.GL.HeadTailBlocks`. Let `B` be an ordered shape of total rank

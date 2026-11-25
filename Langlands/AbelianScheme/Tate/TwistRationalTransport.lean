@@ -89,7 +89,7 @@ theorem rationalTransport_symm (γ : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- For loops this is exactly the published rational geometric root action. -/
 theorem rationalTransport_aut (g : FundamentalGroup s hs) :
-    rationalTransport P (hμfin := hμfin) (hμet := hμet) g =
+    rationalTransport P (hμfin := hμfin) (hμet := hμet) g.asIso =
       rationalMonodromy s hs P (hμfin := hμfin) (hμet := hμet) g := by
   apply LinearEquiv.ext
   intro x
@@ -122,7 +122,7 @@ theorem rationalTransport_monodromy (γ : fiberFunctor s hs ≅ fiberFunctor t h
 theorem rationalTransport_change_path (γ δ : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Divisibility.Rational Ω P) :
     rationalTransport P (hμfin := hμfin) (hμet := hμet) δ x =
-      rationalMonodromy t ht P (hμfin := hμfin) (hμet := hμet) (γ.symm ≪≫ δ)
+      rationalMonodromy t ht P (hμfin := hμfin) (hμet := hμet) (Aut.of (γ.symm ≪≫ δ))
         (rationalTransport P (hμfin := hμfin) (hμet := hμet) γ x) := by
   rw [← rationalTransport_aut, ← rationalTransport_trans]
   simp

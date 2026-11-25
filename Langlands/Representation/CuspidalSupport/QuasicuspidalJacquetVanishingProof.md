@@ -1,7 +1,5 @@
 # Vanishing of the Jacquet module when no target refinement is associated
 
-Authors: Workers 169 and 191.
-
 `Langlands.CuspidalSupport.quasicuspidalJacquetVanishing.{uF,uV}` proves the
 existing
 `Langlands.CuspidalSupport.QuasicuspidalJacquetVanishingTheorem.{uF,uV}`
@@ -49,11 +47,9 @@ subsingleton. Finally the published theorem
 successive quotients to vanishing of the whole Jacquet module.
 
 This is an internal final deduction from the published geometric lemma,
-subgroup comparison, zero-piece and finite-filtration proofs. Worker 169
-supplied the subgroup comparison and final assembly; Worker 191 supplied
-the evaluated-filtration and zero-carrier work incorporated here. The
+subgroup comparison, zero-piece and finite-filtration proofs. The
 geometric lemma is an imported proof, with no theorem-valued input.
-No private draft is imported. The target's Lean/Markdown pair and all
+The target's Lean/Markdown pair and all
 imported pairs are unchanged.
 
 The original mathematical source is Bernstein and Zelevinsky, *Induced

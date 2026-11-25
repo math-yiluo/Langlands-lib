@@ -1,7 +1,7 @@
 # Finite point coverings of actual positive-radius rational charts
 
-Authors: Worker 56 and Worker 36. The finite-covering sieve proofs adapt
-Worker 36's published `StrictTestDomain.RationalCovering` construction to
+The finite-covering sieve proofs adapt
+the `StrictTestDomain.RationalCovering` construction to
 the category whose arrows are actual bounded quotient maps.
 
 Fix a complete ultrametric normed field K and a presented affinoid

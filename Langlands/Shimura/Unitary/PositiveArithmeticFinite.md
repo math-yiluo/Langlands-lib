@@ -1,7 +1,5 @@
 # Finiteness of rational points in compact levels of a definite group
 
-Author: Worker 19.
-
 Let `σ` be an involution of a finite-dimensional `ℚ`-algebra `A` whose real
 scalar extension `σ ⊗ ℝ` is positive. This module proves that the rational
 similitudes whose diagonal image lies in a compact subgroup of the finite
@@ -10,7 +8,7 @@ adelic points form a finite set. In particular the arithmetic subgroup
 has finite order.
 
 This is the arithmetic input assumed by the predicate `RationalFiniteOrder`
-of the module `HarrisLevelFreeSmall` (a separate candidate). This module
+of the module `HarrisLevelFreeSmall` (a separate module). This module
 does not refer to that predicate; it states the finite-order property
 directly.
 
@@ -34,7 +32,7 @@ subgroup".
 Harris does not state the finiteness of `GJ(ℚ) ∩ g K g⁻¹`; it is a
 standard consequence of definiteness. Definiteness enters here through the
 positivity of `σ ⊗ ℝ`, the published `AlgebraInvolution.IsPositive` of
-Worker 57 (`Langlands.Shimura.Unitary.Positivity`): Milne's condition
+`Langlands.Shimura.Unitary.Positivity`: Milne's condition
 `Tr_{C/ℝ}(c* c) > 0` for nonzero `c` (Milne, *Introduction to Shimura
 varieties*, Proposition 8.10(c) and Definition 8.11).
 
@@ -142,7 +140,7 @@ varieties*, Proposition 8.10(c) and Definition 8.11).
 
 The setting is Harris (1999), Sections 1 and 3, printed pp. 301 and 306,
 read in the original (rendered pages). The positivity predicate is the
-published one of Worker 57, following Milne's Proposition 8.10(c). The
+published one of `Positivity`, following Milne's Proposition 8.10(c). The
 finiteness of rational points in compact subgroups is a standard fact about
 definite groups that Harris uses without statement; the statements in this
 module and their proofs (bounded denominators by compactness, coordinate

@@ -1,10 +1,9 @@
 # Statement: kernels of torus maps through which every root factors are central
 
-Authors: Worker 1428 and Worker 1416.
-
-This module states one unproved proposition, the `Prop`-valued `def`
+This module states one proposition, the `Prop`-valued `def`
 `Langlands.GroupScheme.SplitTorusKernelCentralityStatement` with one universe
-parameter `u`. Nothing is proved here, and no other declaration is
+parameter `u`; `splitTorusKernelCentrality` in
+`Rational/SplitTorusKernelCentralityProof` proves it. Nothing is proved here, and no other declaration is
 introduced.
 
 The module imports `Langlands.GroupScheme.Rational.Characters`,
@@ -121,9 +120,10 @@ The official Milne errata snapshot of 2026-11-02
 ## Use
 
 This statement is meant to supply the centrality of the kernel `N = Ker(t)`
-in a proof of the planned statement `SplitCentralTorusQuotientStatement`
-(statement task `2ea05a8b-453e-49c8-8d20-9b2ad61ac047`; not yet in the
-Library when this module was written), where `G` is connected reductive, `i`
+in a proof of `SplitCentralTorusQuotientStatement`
+(module `Reductive.CentralTorusQuotientStatement`; proved as
+`splitCentralTorusQuotient` in `Reductive.CentralTorusQuotientProof`, which
+imports `Rational.SplitTorusKernelCentralityProof`), where `G` is connected reductive, `i`
 is a split maximal torus and `t` is an isogeny of split tori. Centrality
 gives normality of `N`, so the published `NormalSubgroupQuotientStatement`
 (`GroupScheme/NormalSubgroupQuotientStatement.lean`) applies.

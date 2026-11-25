@@ -78,8 +78,9 @@ All representation, row, eigen-row, finiteness and dimension hypotheses are
 supplied inputs. This module does not construct a highest-weight module or a
 lowest eigen-row, prove a whole-space upper dimension bound, or assert that
 the generic inputs exist for every simply connected group. Those remain
-separate obligations in `SteinbergBigCellStatement`; the host proposition is
-not proved here.
+separate obligations in `SteinbergBigCellStatement`; that proposition is
+not proved here (it is proved as `steinbergBigCell` in
+`Reductive.SteinbergBigCellProof`).
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here have module-specific names to permit joint
+imports. The names change no type, value, or local scope.

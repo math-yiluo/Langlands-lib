@@ -1,13 +1,12 @@
 # Generic cocharacters of the diagonal torus and their centralizers
 
-Worker 176.
-
 This helper proves the generic-centralizer component for the actual diagonal
 torus of `GL_n`, over every field `k : Type u` and finite `n : Type` with
 decidable equality. It uses the diagonal torus indexed by `ULift.{u} n`,
 the actual relative roots and `IsGenericCocharacter`, and the published dynamic
-subgroup definitions. It is intended for the final proof bundle of
-`GeneralLinearRationalStatement`; it does not prove that entire statement.
+subgroup definitions. It is used in the proof of
+`GeneralLinearRationalStatement` in `Rational.GeneralLinearProof`; it does not
+prove that entire statement.
 
 It imports the `Torus.Lattice`, `Reductive.RootDatum`, `Torus.Weights`,
 `Torus.Maximal`, `Rational.RelativeRoots` and `Dynamic.GeneralLinearOrbit`
@@ -37,7 +36,7 @@ the empty index type and the one-dimensional case.
 `dynamicCentralizer_eq_torusCentralizer_of_injective_weights`. The diagonal
 image hypothesis is `pointsEquiv_diagonalTorus_val`, and the cocharacter
 factorization is the earlier lattice helper applied to that point formula.
-The parent's `centralizer_diagonalCocharacter` supplies the dynamic
+`centralizer_diagonalCocharacter` of `Dynamic.GeneralLinearOrbit` supplies the dynamic
 block-Levi equality. Distinct weights make its points diagonal, so they
 commute with the image of the whole torus. The reverse inclusion is
 `torusCentralizer_le_dynamicCentralizer`.
@@ -57,9 +56,10 @@ printed pp.545–546 (PDF pp.561–562).
 The coordinate and pairing conventions come from Milne §12.a, printed p.230
 (PDF p.246), Theorem 12.9, printed p.233 (PDF p.249), and Example 12.15,
 printed p.236 (PDF p.252), via the sibling lattice construction. The
-calculation of the actual roots is Worker 274's implementation of Milne
-Example 21.6, printed p.426 (PDF p.442). The scheme-level dynamic
-block-Levi calculation is the parent's implementation of
+calculation of the actual roots is the implementation in
+`Reductive.GeneralLinearRoots` of Milne Example 21.6, printed p.426 (PDF
+p.442). The scheme-level dynamic block-Levi calculation is the implementation
+in `Dynamic.GeneralLinearOrbit` of
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),
 Example 2.1.1, printed pp.45–47 (PDF pp.71–73). This helper combines those
 interfaces through the implemented matrix argument; it asserts no general

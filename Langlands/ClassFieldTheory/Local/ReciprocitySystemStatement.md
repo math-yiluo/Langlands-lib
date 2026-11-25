@@ -1,8 +1,7 @@
 # Actual local reciprocity systems in a common algebraic closure
 
-Worker 10 authors the theorem-statement specialization. Worker 21 contributed
-the uniqueness argument described below and authored the separately published
-interface. These are proposition definitions, not proofs of local class field
+This module is the theorem-statement specialization of the separately published
+interface `ReciprocitySystem`. These are proposition definitions, not proofs of local class field
 theory. No reciprocity family or desired isomorphism is an input to the
 existence target.
 
@@ -85,7 +84,7 @@ nonarchimedean Weil group as the integer-Frobenius subgroup and specifies
 geometric reciprocity. Section 1.4.6, printed page 7 / PDF16, identifies
 the norm and explains its restriction to each extension Weil subgroup.
 Our isomorphisms are in the inverse direction to Tate's `r_E`.
-Worker 10 read those original pages, including the surrounding existence
+Those original pages were read, including the surrounding existence
 and uniqueness discussion on printed pages 5-7 / PDF14-16.
 
 Jean-Pierre Serre, *Local Fields*, GTM 67 (1979), XI.3-5, printed pages
@@ -95,7 +94,7 @@ completion by norm subgroups. XIII.4, printed pages 196-198 / PDF201-203,
 specializes to local fields and gives the unramified normalization.
 XIV.6, printed pages 218-219 / PDF223-224, identifies norm subgroups with
 open finite-index subgroups and proves that their intersection is trivial.
-Worker 10 read these original passages. Serre's arithmetic normalization
+These original passages were read. Serre's arithmetic normalization
 is inverted here; kernels and compatibility diagrams are preserved.
 
 Existence is the local Weil form of these results applied simultaneously
@@ -107,8 +106,8 @@ noncompact Weil group itself is the profinite Galois group.
 Uniqueness of the exact displayed relation is a derived formulation; the
 following argument explains its strength without inserting a finite
 norm-kernel certificate into the target. It is not implemented in Lean.
-Worker 21 supplied this argument, and Worker 10 checked its mathematical
-steps against the definitions and the cited reciprocity properties.
+Its mathematical steps were checked against the definitions and the cited
+reciprocity properties.
 
 Fix a component at `E` and write `g_E` for its induced Galois homomorphism.
 For an abelian finite extension `M/E` in the same closure, the kernel of
@@ -159,11 +158,13 @@ No source-specific errata file was present at preparation.
 The only direct imports are the published `ReciprocitySystem` and actual
 `Weil.Local.Assembly`. The former supplies every family, group, map,
 normalization relation and canonical extension realization used here.
-The latter supplies the actual geometric residue degree. No shared draft
-or unproved substitute for the residue construction is imported.
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+The latter supplies the actual geometric residue degree. No
+unproved substitute for the residue construction is imported.
+The environment is Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 Development compilation and exact inspection of
 `CommonClosureReciprocityTheorems` succeeded with zero errors or warnings
-and confirmed that it returns `Prop`. Independent semantic review,
-publication, and a later proof task remain separate requirements.
+and confirmed that it returns `Prop`. The two statements are proved
+separately: existence as `commonClosureReciprocityExistence` in
+`CommonClosureExistenceProof`, uniqueness as
+`commonClosureReciprocityUniqueness` in `ReciprocitySystemUniquenessProof`.

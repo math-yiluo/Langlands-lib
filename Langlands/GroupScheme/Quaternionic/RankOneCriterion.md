@@ -1,7 +1,5 @@
 # Rank one from a Witt upper bound and a nontrivial cocharacter
 
-Author: Worker 118.
-
 Let `K` be an infinite field and `D` a finite-dimensional division
 `K`-algebra with a first-kind involution. For a form matrix of Witt
 index at most one, every affine group with a monomorphism into its actual

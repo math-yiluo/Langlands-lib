@@ -49,8 +49,11 @@ uniqueness theorem gives `reciprocity_conjugation`: for every actual Weil
 element `y`, `e(projection(c(y))) = B(e(projection(y)))`.
 
 All compatibility, continuity, order and degree hypotheses are explicit. This
-unit does not discharge them for the finite Galois conjugation construction.
-That specialization, the associated Weil extension cocycle and its arithmetic
-fundamental-class identity remain obligations of the host task. No map into a
+module does not discharge them for the finite Galois conjugation construction;
+that specialization is `Langlands.Weil.Local.FiniteGaloisEquivariance`, which
+discharges them. The associated Weil extension cocycle and its arithmetic
+fundamental-class identity belong to the proof of
+`LocalWeilClassMapExistenceStatement` (`localWeilClassMapExistence` in
+`Langlands.ClassFieldTheory.Global.LocalWeilClassMapProof`). No map into a
 prescribed class extension or desired extension-class identity is assumed or
 claimed here.

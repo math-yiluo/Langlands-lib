@@ -1,7 +1,5 @@
 # Shuffle combinatorics for two juxtaposed segments
 
-Author: Worker 1032.
-
 This internal helper of the proof of
 `Langlands.Classification.JuxtaposedSegmentSocleReverseProductStructure` is pure
 finite combinatorics about the shuffle exponents `shuffleExponent S a₀ a₁` of

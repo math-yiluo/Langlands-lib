@@ -21,7 +21,7 @@ theorem IsDiscreteSection.freeMk {F : Tᵒᵖ ⥤ Type w} {U : T} {H : OpenSubgr
     IsDiscreteSection (F ⋙ ModuleCat.free R) a (ModuleCat.freeMk s) := by
   obtain ⟨N, hNH, hN⟩ := hs
   refine ⟨N, hNH, fun h hh => ?_⟩
-  change (ModuleCat.free R).map (F.map (a h).unop.op) (ModuleCat.freeMk s) =
+  change (ModuleCat.free R).map (F.map (a h).unop.asHom.op) (ModuleCat.freeMk s) =
     ModuleCat.freeMk s
   rw [ModuleCat.free_map_apply, hN h hh]
 

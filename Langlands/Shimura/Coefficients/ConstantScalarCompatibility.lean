@@ -128,7 +128,7 @@ def moduleExtensionActionUnit :
         (ModuleCat.restrictScalars.{u} φ).mapAction G where
   app M :=
     { hom := (ModuleCat.extendRestrictScalarsAdj.{u, u, u} φ).unit.app M.V
-      comm g := (ModuleCat.extendRestrictScalarsAdj.{u, u, u} φ).unit.naturality (M.ρ g) }
+      comm g := (ModuleCat.extendRestrictScalarsAdj.{u, u, u} φ).unit.naturality (M.ρ g).asHom }
   naturality {M N} f := by
     apply Action.hom_injective
     exact (ModuleCat.extendRestrictScalarsAdj.{u, u, u} φ).unit.naturality f.hom

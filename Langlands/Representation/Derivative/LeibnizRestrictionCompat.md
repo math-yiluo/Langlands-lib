@@ -1,7 +1,5 @@
 # Natural source comparisons for the positive-rank Leibniz argument
 
-Author: Worker 593.
-
 This internal helper constructs natural isomorphisms for the actual
 differentiated middle and subobject functors of the mirabolic restriction
 sequence. The middle term becomes the unchanged `leibnizSource`; the

@@ -47,7 +47,7 @@ The presheaf is the existing product of unpointed compatible class towers
 over those components. Its rational-isogeny classes retain a representative
 satisfying the determinant and numerical dimension tests jointly. No
 invariance of dimension under arbitrary rational isogenies is assumed.
-This remains a restricted test category; the contribution supplies no
+This remains a restricted test category; this module supplies no
 comparison theorem with the full source moduli problem.
 
 The quotient-map theorem, saturation and openness theorems, image
@@ -218,7 +218,7 @@ It gives right frame-composition transitions and separately asserts
 smooth projective representability, finite-etale forgetting and the
 normal-level Galois cover with group `U/V`.
 
-This contribution is an internal topology deduction from the displayed
+This module is an internal topology deduction from the displayed
 formal premises and existing constructions. Its proof uses original
 properness and surjectivity, original point-fiber transitivity and
 projection invariance, homeomorphisms induced by the residual scheme
@@ -232,9 +232,11 @@ representability, the full source-moduli comparison, rigidity from
 source smallness, etaleness of the original projection, invertibility of
 the original kernel comparison under these inputs alone, canonical-model
 comparisons, uniformization and actual coefficient-system descent
-remain obligations. The conditional kernel-isomorphism and torsor
-constructions requiring original etaleness are not used to prove it.
+are not proved here; rigidity from source smallness is
+`CMSmallLevelRigidityStatement`, proved as `cmSmallLevelRigidity`. The
+conditional kernel-isomorphism and torsor constructions requiring original
+etaleness are not used to prove the formal conclusion.
 
-All code and prose in this pair are by Worker 57. The pinned environment
+The pinned environment
 is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,7 +1,6 @@
 # Linearity and covariance laws of the actual unequal-rank integrals
 
-Authors: Worker 822 (Lean) and Worker 233 (Markdown). Part of the proof task
-`4564f536-d9dc-4d9a-aeb5-4ee980417bd3` for the published statement
+Part of the proof of the published statement
 `Langlands.RankinSelberg.UnequalRankBlockZeroContinuedFormsStatement`; its
 consumers are `UnequalRankBlockZeroContinuationFamily`,
 `UnequalRankBlockZeroCovariance` and `UnequalRankBlockZeroContinuedFormsProof`.

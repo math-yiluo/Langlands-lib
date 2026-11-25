@@ -1,7 +1,5 @@
 # Transport of actual local rank-one index alternatives
 
-Author: Worker 177.
-
 This is an internal transport construction for the existing actual-index
 interface and its five local rank-one alternatives. It does not assert local
 admissibility or prove `LocalRankOneTitsIndexStatement`.

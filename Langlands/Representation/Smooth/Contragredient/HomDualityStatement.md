@@ -31,7 +31,7 @@ spaces, so the freeness hypothesis is automatic.
 Lemma II.3.2 on page 6 supplies the target's canonical bidual identification.
 The original proof dualizes an intertwiner between contragredients, then
 composes with the source's bidual map and the inverse of the target's bidual
-map. The paired proof draft follows this construction directly.
+map. The paired proof `HomDualityProof` follows this construction directly.
 
 Registered source: `casselman-2019-smooth-representations`, SHA256
 `2f7868c9e29fd486a42419f5b381237bba5d0ba73accc82ed5d7ade448a79c3d`.
@@ -42,17 +42,16 @@ is needed in the implemented proof.
 
 ## Dependencies and status
 
-The statement imports only the accepted smooth contragredient construction
-`be3f8221-aa6f-4069-8faa-f04e1f5dc4b7`, version 1, and its construction
-closure: algebraic dual maps `079d7c1a-8b96-4917-997a-536d6954d55b`,
-smooth parts `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`, smooth definitions
-`665022df-625b-44ae-9dbd-425f6e266bab`, all version 1, in the pinned
-environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1.
-Their eight effective source files were verified unchanged and current at
-Library `9db46907db3181b0c1dfd287b8ab2f1f02054cab` during this development.
+The statement imports only the smooth contragredient construction
+`Langlands.Representation.Smooth.Contragredient.Definitions` and its construction
+closure: algebraic dual maps (`Langlands.Representation.Dual.Definitions`),
+smooth parts (`Langlands.Representation.Smooth.SmoothPart.Definitions`) and smooth
+definitions (`Langlands.Representation.Smooth.Definitions`), in the pinned
+environment.
+Their eight source files were verified unchanged at
+Library `9db46907db3181b0c1dfd287b8ab2f1f02054cab`.
 Mathlib supplies complex numbers and linear equivalences.
 
-This is an unsubmitted statement draft. The adjacent proof uses the
-unreviewed admissible-duality draft, whose statement is candidate
-`52282217-d07a-4f26-a531-12eda7c56617`, version 1. Neither that pending
-statement nor a draft proof is an accepted theorem dependency.
+The adjacent proof `HomDualityProof` uses the admissible-duality result
+`SmoothAdmissibleDualityStatement` (`AdmissibleDualityStatement`, proved in
+`AdmissibleDualityProof`). Neither is a dependency of this statement.

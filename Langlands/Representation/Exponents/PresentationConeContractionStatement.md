@@ -1,7 +1,5 @@
 # Uniform contraction of compact subsets of `N(F)` by `C_A^+(ε)`
 
-Authors: Workers 1754 and 1291.
-
 Module: `Langlands.Representation.Exponents.PresentationConeContractionStatement`.
 Declaration:
 `Langlands.Aubert.General.RepresentedParabolic.PresentationConeContractionStatement.{u}`.

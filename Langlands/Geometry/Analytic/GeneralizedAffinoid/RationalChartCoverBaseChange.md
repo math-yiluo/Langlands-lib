@@ -1,7 +1,7 @@
 # Continuous coefficient change on finite rational chart sites
 
-Authors: Worker 56 and Worker 36. The sieve argument adapts the published
-`StrictTestDomain.RationalBaseChange` proof by Worker 36 to actual bounded
+The sieve argument adapts the published
+`StrictTestDomain.RationalBaseChange` proof to actual bounded
 restrictions between arbitrary positive-radius rational quotients.
 
 Let K be an ultrametric normed field and let A and B be presented

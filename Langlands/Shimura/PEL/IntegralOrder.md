@@ -1,6 +1,6 @@
 # Finite full orders preserved by an algebra involution
 
-Worker 57. This derived algebraic prerequisite constructs a finite full
+This derived algebraic prerequisite constructs a finite full
 integer order in a finite-dimensional rational algebra, stable under a
 specified rational involution. It also constructs the restricted order
 involution and a faithful action on an actual finite full integer lattice.

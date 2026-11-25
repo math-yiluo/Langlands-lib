@@ -1,8 +1,6 @@
 # The actual simple-root step in the Bruhat word argument
 
-Author: Worker 1325.
-
-This internal supporting unit specializes the generic word argument to the
+This internal supporting module specializes the generic word argument to the
 actual rational root groups of the Library. It does not prove
 `RootGeneratedCentralizerRankOneStatement`. The field and universe remain
 arbitrary, and no reduced-root-system assumption is used. Throughout, `k`

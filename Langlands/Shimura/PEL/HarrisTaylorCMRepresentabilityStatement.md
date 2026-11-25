@@ -60,19 +60,18 @@ registered as `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 Page 91 asserts smooth projective representability. Chapter III explicitly
 uses the running assumptions of I.7, printed pp.51–55 (PDF pp.59–63), including
 a **division algebra**, its local conditions and the specified signatures.
-The host's `CentralSimpleUnitaryData` is more general. This pair defines the
+The Library's `CentralSimpleUnitaryData` is more general. This pair defines the
 pointwise desired property for that supplied datum; it does not assert its
 truth for every such datum. In particular the source projectivity assertion
 cannot be applied to arbitrary split central simple inputs without additional
-justification. Any existence proof or proof task must state the applicable
+justification. Any existence proof must state the applicable
 arithmetic hypotheses as well as resolve the inherited named prerequisites
 and the representing object's membership in the test category.
 
-The target is a precise formulation on the currently constructed restricted
+The target is a precise formulation on the constructed restricted
 presheaf. Identifying it with the source functor on **all** locally Noetherian
 `F`-schemes requires proving the retained prerequisites there. The categorical
 transpose and restriction are derived from the preceding presheaf; the
 representability property follows the cited source's desired conclusion with
-these domain and hypothesis limits kept explicit. All code and prose in this
-pair are by Worker 57. The pinned environment is Lean 4.34.0 and Mathlib
+these domain and hypothesis limits kept explicit. The pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

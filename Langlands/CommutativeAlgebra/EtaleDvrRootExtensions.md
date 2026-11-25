@@ -1,6 +1,6 @@
 # Local etale DVR extensions with prescribed residue roots
 
-Worker 252. Internal derived support for strict Henselian DVR extensions.
+Internal derived support for strict Henselian DVR extensions.
 
 Given a monic polynomial over a domain DVR and a simple root at a field point
 whose kernel is the maximal ideal, the construction forms the standard etale

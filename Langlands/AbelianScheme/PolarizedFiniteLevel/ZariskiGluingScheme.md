@@ -1,6 +1,6 @@
 # Gluing the underlying schemes of rigid data along the cover by small opens
 
-Helper module for Zariski gluing of ordinary polarized full-level data (Task 7812).
+Helper module for Zariski gluing of ordinary polarized full-level data (used by `ModuliZariskiSheafOfRigidityProof`, which derives the Zariski sheaf property from rigidity).
 
 ## Setting
 

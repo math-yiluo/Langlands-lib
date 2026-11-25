@@ -1,7 +1,5 @@
 # Proof: the Isomorphism Theorem in semisimple rank at most one, common torus
 
-Authors: Worker 239 and Worker 1388.
-
 Module `Langlands.GroupScheme.Reductive.SplitRankOneIsomorphismProof`. It proves the
 published statement
 
@@ -19,30 +17,30 @@ The proof is one line,
 reduction of `SplitRankOneRootCellReduction` to the root-cell theorem of
 `SplitRankOneRootCellProof`. The modules of the proof are:
 
-- `Reductive.SplitRankOneRootCellStatement` (Worker 1388): the statement
+- `Reductive.SplitRankOneRootCellStatement`: the statement
   `SplitRankOneRootCellStatement` (root groups `xp`, `xm`, the open cell, the cell
   criterion `1 + XY` a unit, and the rank-one relation).
-- `Reductive.SplitRankOneRootCellReduction` (Worker 1388):
+- `Reductive.SplitRankOneRootCellReduction`:
   `splitRankOneCommonTorusIsomorphism_of_rootCell`. If `J₁` is empty, the rank-zero
   case `exists_iso_of_roots_eq_empty` of `Reductive.SplitRankZeroIsomorphism`
-  (Worker 239) applies. Otherwise the root cells of the two groups for the same root and
+  applies. Otherwise the root cells of the two groups for the same root and
   coroot have the same multiplication of cell points, and the gluing criterion of
-  `OpenCellGluing` (Worker 1388) gives the isomorphism.
-- `Reductive.RankOneCellData` (Worker 239): the root groups as dynamic unipotent subgroups,
+  `OpenCellGluing` gives the isomorphism.
+- `Reductive.RankOneCellData`: the root groups as dynamic unipotent subgroups,
   isomorphic to `𝔾ₐ`, and the open cell (`rankOne_exists_rootCell`), from the Library
   theorems `dynamicCentralizerReductive`, `rankOnePositiveRootUniqueness` and
   `splitRootLieLine`.
-- `Reductive.RankOneRootCellRelation` and `Reductive.RankOneRootCellWeyl` (Worker 239):
+- `Reductive.RankOneRootCellRelation` and `Reductive.RankOneRootCellWeyl`:
   the rank-one relation and the cell criterion over algebraically closed points, through
   the Weyl point `n` normalizing `T`, for `xm` rescaled by a unit `β` of `k`.
-- `Reductive.SplitRankOneRootCellUniversal` (Worker 1388): descent of the relation and the
+- `Reductive.SplitRankOneRootCellUniversal`: descent of the relation and the
   cell criterion from algebraically closed points to all test schemes.
-- `Reductive.SplitRankOneRootCellProof` (Worker 239): `splitRankOneRootCell`, which
+- `Reductive.SplitRankOneRootCellProof`: `splitRankOneRootCell`, which
   assembles the last four modules.
 
 `SplitRankOneRootCellStatement`, `SplitRankOneRootCellReduction`, `OpenCellGluing` and
-`SplitRankZeroIsomorphism` are published in the Library; the other modules are part of
-this candidate. Each has its own
+`SplitRankZeroIsomorphism` are published in the Library; the other modules were ported
+together with this module. Each has its own
 Markdown with the details.
 
 ## Provenance

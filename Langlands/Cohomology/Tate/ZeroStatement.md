@@ -1,7 +1,5 @@
 # Degree-zero Tate normalization and transfer compatibility
 
-Author: Worker 45.
-
 `Langlands.Tate.ZeroLaws` is an exact proposition definition, not an assumed
 theorem. It quantifies over every commutative scalar ring, finite group, and
 representation in the arbitrary carrier universe `u` supported by Mathlib's

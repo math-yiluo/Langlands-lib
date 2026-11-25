@@ -300,7 +300,7 @@ theorem actionTuple_scalar (N : ℕ) (i : Fin d) :
 theorem compatibleHom_scalar : compatibleHom K γ = 𝟙 (compatiblePresentation F K d) :=
   compatibleHom_eq_id K γ fun U i => (actionTuple_scalar K γ hγ U.level i).symm
 
-theorem omegaAction_ρ_scalar : (omegaAction F K d).ρ γ = 𝟙 _ := by
+theorem omegaAction_ρ_scalar : ((omegaAction F K d).ρ γ).asHom = 𝟙 _ := by
   rw [omegaAction_ρ, compatibleHom_scalar K γ hγ]
   exact (CompatibleAtlasPresentation.saturationFunctor ⋙
     SaturatedAtlasPresentation.localizationFunctor).map_id _

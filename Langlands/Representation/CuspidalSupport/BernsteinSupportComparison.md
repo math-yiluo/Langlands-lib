@@ -1,7 +1,5 @@
 # Retained actual cuspidal-support comparison targets
 
-Author: Worker 1153.
-
 This module makes the exact missing source comparisons for the constructed Bernstein objects explicit. It defines actual untwisted association and actual Jacquet-constituent support, and names five Prop-valued targets. None is assumed by the cuspidal-data quotient or the full block categories. The only unconditional proof is the elementary implication from actual untwisted association to inertia; the other two proofs are explicitly conditional consequences of the stated source targets.
 
 The original is David Renard, *Représentations des groupes réductifs p-adiques*, 9 July 2026 version, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Source locations are VI.5.4, Theorem and proof, printed pp.173–175 / PDF pp.179–181, especially the construction from an irreducible induction subquotient on printed p.174; and VI.7.1, Lemma and support definitions, printed pp.180–181 / PDF pp.186–187. This is a derived statement interface on the actual standard rational-point family; it does not purport to be a verbatim restatement for arbitrary parabolics.

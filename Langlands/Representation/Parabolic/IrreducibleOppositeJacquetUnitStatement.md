@@ -1,7 +1,5 @@
 # Irreducible opposite-Jacquet unit embeddings: statement
 
-Author: Worker 166.
-
 `Langlands.Parabolic.IrreducibleOppositeJacquetUnitStatement.{uF,uV}` is
 the conjunction of two existence propositions. The field universe `uF` and
 the inducing-carrier universe `uV` are independent. Both clauses quantify over

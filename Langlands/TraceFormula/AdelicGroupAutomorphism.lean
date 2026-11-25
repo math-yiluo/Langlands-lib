@@ -96,19 +96,19 @@ theorem map_id_apply (x : AdelicGroupPoints F G) : map F G G (𝟙 G) x = x := b
 
 /-- The continuous automorphism of `G(𝔸_F)` induced by an automorphism of `G` over `F`. -/
 def adelicAut (e : Aut G) : AdelicGroupPoints F G ≃ₜ* AdelicGroupPoints F G where
-  toFun := map F G G e.hom
-  invFun := map F G G e.inv
-  left_inv x := by rw [map_comp_apply, e.hom_inv_id, map_id_apply]
-  right_inv x := by rw [map_comp_apply, e.inv_hom_id, map_id_apply]
-  map_mul' := map_mul (map F G G e.hom)
-  continuous_toFun := (map F G G e.hom).continuous
-  continuous_invFun := (map F G G e.inv).continuous
+  toFun := map F G G e.asIso.hom
+  invFun := map F G G e.asIso.inv
+  left_inv x := by rw [map_comp_apply, e.asIso.hom_inv_id, map_id_apply]
+  right_inv x := by rw [map_comp_apply, e.asIso.inv_hom_id, map_id_apply]
+  map_mul' := map_mul (map F G G e.asIso.hom)
+  continuous_toFun := (map F G G e.asIso.hom).continuous
+  continuous_invFun := (map F G G e.asIso.inv).continuous
 
 @[simp] theorem adelicAut_apply (e : Aut G) (x : AdelicGroupPoints F G) :
-    adelicAut F e x = map F G G e.hom x := rfl
+    adelicAut F e x = map F G G e.asIso.hom x := rfl
 
 @[simp] theorem adelicAut_symm_apply (e : Aut G) (x : AdelicGroupPoints F G) :
-    (adelicAut F e).symm x = map F G G e.inv x := rfl
+    (adelicAut F e).symm x = map F G G e.asIso.inv x := rfl
 
 /-- In `Aut G`, `e * e'` applies `e'` first; so does the induced adelic map. -/
 theorem adelicAut_mul_apply (e e' : Aut G) (x : AdelicGroupPoints F G) :
@@ -129,11 +129,11 @@ theorem adelicAut_mem_normOneSubgroup_iff (e : Aut G) (x : AdelicGroupPoints F G
     adelicAut F e x ∈ normOneSubgroup F G ↔ x ∈ normOneSubgroup F G := by
   constructor
   · intro hx
-    have h := map_normOneSubgroup_le F G G e.inv ⟨adelicAut F e x, hx, rfl⟩
+    have h := map_normOneSubgroup_le F G G e.asIso.inv ⟨adelicAut F e x, hx, rfl⟩
     change (adelicAut F e).symm (adelicAut F e x) ∈ normOneSubgroup F G at h
     rwa [ContinuousMulEquiv.symm_apply_apply] at h
   · intro hx
-    exact map_normOneSubgroup_le F G G e.hom ⟨x, hx, rfl⟩
+    exact map_normOneSubgroup_le F G G e.asIso.hom ⟨x, hx, rfl⟩
 
 theorem adelicAut_isOfFinOrder_iterate (e : Aut G) (he : IsOfFinOrder e) :
     ∃ m : ℕ, m ≠ 0 ∧ ∀ x, (adelicAut F e)^[m] x = x := by
@@ -147,16 +147,16 @@ def normOneAut (e : Aut G) : normOneSubgroup F G ≃ₜ* normOneSubgroup F G :=
     (adelicAut_mem_normOneSubgroup_iff F e)
 
 @[simp] theorem normOneAut_val (e : Aut G) (x : normOneSubgroup F G) :
-    (normOneAut F e x : AdelicGroupPoints F G) = map F G G e.hom x := rfl
+    (normOneAut F e x : AdelicGroupPoints F G) = map F G G e.asIso.hom x := rfl
 
 @[simp] theorem normOneAut_symm_val (e : Aut G) (x : normOneSubgroup F G) :
-    ((normOneAut F e).symm x : AdelicGroupPoints F G) = map F G G e.inv x := rfl
+    ((normOneAut F e).symm x : AdelicGroupPoints F G) = map F G G e.asIso.inv x := rfl
 
 theorem normOneAut_eq_mapNormOne (e : Aut G) (x : normOneSubgroup F G) :
-    normOneAut F e x = mapNormOne F G G e.hom x := rfl
+    normOneAut F e x = mapNormOne F G G e.asIso.hom x := rfl
 
 theorem normOneAut_symm_eq_mapNormOne (e : Aut G) (x : normOneSubgroup F G) :
-    (normOneAut F e).symm x = mapNormOne F G G e.inv x := rfl
+    (normOneAut F e).symm x = mapNormOne F G G e.asIso.inv x := rfl
 
 theorem normOneAut_pow_apply (e : Aut G) (k : ℕ) (x : normOneSubgroup F G) :
     normOneAut F (e ^ k) x = (normOneAut F e)^[k] x := by
@@ -174,12 +174,12 @@ theorem normOneAut_mem_rationalNormOneSubgroup_iff (e : Aut G) (x : normOneSubgr
     normOneAut F e x ∈ rationalNormOneSubgroup F G ↔ x ∈ rationalNormOneSubgroup F G := by
   constructor
   · rintro ⟨y, hy⟩
-    refine ⟨G.affinePointsTarget e.inv (CommAlgCat.of F F) y, ?_⟩
+    refine ⟨G.affinePointsTarget e.asIso.inv (CommAlgCat.of F F) y, ?_⟩
     rw [← mapNormOne_rationalNormOne, hy, ← normOneAut_symm_eq_mapNormOne,
       ContinuousMulEquiv.symm_apply_apply]
   · rintro ⟨y, rfl⟩
-    exact ⟨G.affinePointsTarget e.hom (CommAlgCat.of F F) y,
-      (mapNormOne_rationalNormOne F G G e.hom y).symm⟩
+    exact ⟨G.affinePointsTarget e.asIso.hom (CommAlgCat.of F F) y,
+      (mapNormOne_rationalNormOne F G G e.asIso.hom y).symm⟩
 
 /-- The homeomorphism of `G(F) \ G(𝔸_F)^1` induced by `e`: `G(F) x ↦ G(F) e(x)`. -/
 def rationalQuotientAut (e : Aut G) :
@@ -305,21 +305,21 @@ theorem unitGaloisAction_one : AffineWeil.unitGaloisAction K L H 1 = 𝟙 _ := b
 
 /-- The Galois automorphism of `Res_{L/K} H_L` attached to `σ ∈ Aut(L/K)`. -/
 def unitGaloisAut (σ : L ≃ₐ[K] L) : Aut (weilGroup K L H) where
-  hom := AffineWeil.unitGaloisAction K L H σ
-  inv := AffineWeil.unitGaloisAction K L H σ⁻¹
-  hom_inv_id := by rw [← unitGaloisAction_mul, inv_mul_cancel, unitGaloisAction_one]
-  inv_hom_id := by rw [← unitGaloisAction_mul, mul_inv_cancel, unitGaloisAction_one]
+  asIso.hom := AffineWeil.unitGaloisAction K L H σ
+  asIso.inv := AffineWeil.unitGaloisAction K L H σ⁻¹
+  asIso.hom_inv_id := by rw [← unitGaloisAction_mul, inv_mul_cancel, unitGaloisAction_one]
+  asIso.inv_hom_id := by rw [← unitGaloisAction_mul, mul_inv_cancel, unitGaloisAction_one]
 
 @[simp] theorem unitGaloisAut_hom (σ : L ≃ₐ[K] L) :
-    (unitGaloisAut K L H σ).hom = AffineWeil.unitGaloisAction K L H σ := rfl
+    (unitGaloisAut K L H σ).asIso.hom = AffineWeil.unitGaloisAction K L H σ := rfl
 
 /-- `σ ↦ unitGaloisAut σ` is a group homomorphism `Aut(L/K) →* Aut(Res_{L/K} H_L)`. -/
 def unitGaloisAutHom : (L ≃ₐ[K] L) →* Aut (weilGroup K L H) where
   toFun := unitGaloisAut K L H
-  map_one' := Iso.ext (unitGaloisAction_one K L H)
-  map_mul' σ τ := Iso.ext (by
+  map_one' := Aut.ext (Iso.ext (unitGaloisAction_one K L H))
+  map_mul' σ τ := Aut.ext (Iso.ext (by
     rw [Aut.Aut_mul_def]
-    exact unitGaloisAction_mul K L H σ τ)
+    exact unitGaloisAction_mul K L H σ τ))
 
 @[simp] theorem unitGaloisAutHom_apply (σ : L ≃ₐ[K] L) :
     unitGaloisAutHom K L H σ = unitGaloisAut K L H σ := rfl

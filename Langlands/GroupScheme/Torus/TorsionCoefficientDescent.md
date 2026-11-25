@@ -1,6 +1,6 @@
 # Coefficient descent from split-torus torsion
 
-Worker 584. On a finite free character lattice, the map called
+On a finite free character lattice, the map called
 `torsionCoefficientMap` is reduction of exponents modulo `n` times the
 lattice. It is the restriction on the group algebra for the split torus
 and its `n`-torsion.

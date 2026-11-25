@@ -1,7 +1,5 @@
 # Finite Haar measure of abstract Siegel-type sets
 
-Author: Worker 1179.
-
 This module is a helper for task 40747bb3, which proves
 `Langlands.Global.AdelicGroupPoints.NormOneRationalQuotientFiniteVolumeStatement`. It contains
 no adelic or algebraic-group content. It proves an abstract measure bound for sets of the shape

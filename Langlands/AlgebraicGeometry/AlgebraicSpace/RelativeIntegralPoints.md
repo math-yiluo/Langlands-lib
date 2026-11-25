@@ -1,7 +1,5 @@
 # Integral points of algebraic spaces over a general base
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claims on adelic levels
 (`Langlands.Global.AdelicSpaceLevelTopologyStatement`). The published Corollary 5.7 statements
 (`HenselianIntegralPointsStatement`) concern algebraic spaces over the valuation ring `O`

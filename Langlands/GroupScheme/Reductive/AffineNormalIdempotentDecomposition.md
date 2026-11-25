@@ -1,7 +1,5 @@
 # Ring idempotents from the actual clopen group decomposition
 
-Worker 632.
-
 `NormalIdempotentDecomposition.toRingDecomposition` turns the clopen
 identity part of an actual group-scheme endomorphism over `Spec R` into an
 idempotent element of `R`. After every ring map sending this element to
@@ -19,6 +17,6 @@ equalities.
 
 This is an internal consequence of the actual clopen decomposition and the
 published correspondence between ring idempotents and clopen subsets of
-the prime spectrum. It does not yet assert uniqueness from arbitrary
+the prime spectrum. It does not assert uniqueness from arbitrary
 point-functor projection formulas or perform the restricted-point-functor
 translation in the relative normal-idempotent statement.

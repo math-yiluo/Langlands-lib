@@ -82,6 +82,9 @@ theorem smooth_orbitWeilGroup (i : D.Index) :
   let e := D.orbitWeilBaseChangeIso i
   let : Smooth (D.subproduct (D.galoisFactorOrbit i)).X.hom :=
     D.smooth_subproduct (D.galoisFactorOrbit i)
+  have : IsIso e.hom.hom.hom.left := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    infer_instance
   have hsm : Smooth ((GroupScheme.baseChange (algebraBaseMap k L)).obj W).X.hom := by
     rw [← e.hom.hom.hom.w]
     infer_instance
@@ -96,6 +99,9 @@ theorem connectedSpace_orbitWeilGroup (i : D.Index) :
   let e := D.orbitWeilBaseChangeIso i
   let : ConnectedSpace (D.subproduct (D.galoisFactorOrbit i)).X.left :=
     D.connectedSpace_subproduct (D.galoisFactorOrbit i)
+  have : IsIso e.hom.hom.hom.left := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    infer_instance
   have hc : ConnectedSpace ((GroupScheme.baseChange (algebraBaseMap k L)).obj W).X.left :=
     e.hom.hom.hom.left.homeomorph.connectedSpace_iff.mpr inferInstance
   exact connectedSpace_of_baseChange (algebraBaseMap k L) W hc

@@ -1,7 +1,6 @@
 # Proof of actual-localization stability and the canonical stable image
 
-Author: Worker 977, for proof task `c9d7a084-4b9f-4094-a4d9-88126e384078`.
-This module proves the published statement module
+This module proves the statement module
 `Langlands.Algebra.RenardLocalizationStabilityStatements`, which it imports
 by name and leaves unchanged. The exported theorem
 
@@ -31,14 +30,14 @@ The registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The statement Markdown records the provenance of the targets. The proof
 below does not follow Renard's integrality argument in End_B(L_a). The
-Noetherian part uses the published quotient-Hopfian Noetherian core. The
+Noetherian part uses the quotient-Hopfian Noetherian core. The
 stable-image part is a direct Fitting argument without finiteness.
 
 ## Imports
 
 - `Langlands.Algebra.RenardLocalizationStabilityStatements`: the target,
   and through it the actual localization construction.
-- `Langlands.LinearAlgebra.NoetherianLocalizationCoreProof`: the published
+- `Langlands.LinearAlgebra.NoetherianLocalizationCoreProof`: the
   internal Noetherian core. The proof uses `localization_core` and
   `intertwines_pow` from namespace
   `Langlands.LinearAlgebra.NoetherianLocalizationCore`.
@@ -151,16 +150,16 @@ two conjuncts, and `stablePowerImageAt_of_stable` gives
 ### Aggregate
 
 `actualLocalizationStabilityStatements` is the anonymous-constructor
-triple of the three closed theorems, in the order of the published
+triple of the three closed theorems, in the order of the statement's
 conjunction.
 
 ## Scope
 
 This module proves only the internal ordinary-unital-module aggregate. The
 full possibly nonunital C.II proposition for complex algebras and their
-modules remains a separate parent obligation. So do its compatible
+modules is outside this module. So are its compatible
 B-linear or action lift, the finite-generation and Noetherian comparison
 bridges, the power-kernel-union quotient and its comparison, and the
-separate kernel and exhaustion statement task
-`27b06f5a-9788-4307-b9d1-950763a472ec`. The published statement pair and
+kernel and exhaustion statements, proved separately in
+`RenardEndomorphismLocalizationKernelProof`. The statement pair and
 every module it imports are unchanged.

@@ -1,7 +1,5 @@
 # Concrete disjoint affinoid atlases
 
-Author: Worker 36.
-
 The module constructs an affinoid atlas on the actual topological disjoint
 union of the spectra of a family of finite positive-polyradius quotient
 algebras. Every chart restriction and its domain factorization are constructed
@@ -157,5 +155,5 @@ Its chart containments are component equalities. It does not establish
 the full domain universal property for a proper rational subdomain.
 It also does not construct general atlas refinements, gluing, the
 strong-morphism category or its localization, a structure sheaf,
-étale or equivariant sites, or Harris's local tower. Those remain
-separate construction obligations of the host task.
+étale or equivariant sites, or Harris's local tower. Those lie
+outside this module.

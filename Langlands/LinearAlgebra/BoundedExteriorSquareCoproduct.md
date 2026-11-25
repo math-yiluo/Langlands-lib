@@ -1,7 +1,5 @@
 # Exterior-square comparison from bounded creation and contraction
 
-Author: Worker 327.
-
 This derived internal construction combines the generation theorem in
 `Langlands.LinearAlgebra.BoundedCreationContraction` with the comparison
 construction in `Langlands.LinearAlgebra.ExteriorSquareCoproduct`.

@@ -8,8 +8,9 @@ maps agree because the composite group map is restriction of
 automorphisms and the composite coefficient map is inclusion of
 the actual units.
 
-In degree two this restriction coincides with Task 7583's
-canonical restriction. The naturality of the actual Brauer
+In degree two this restriction coincides with the
+canonical restriction `separableRestriction` of the actual Brauer
+comparison (`Langlands.Algebra.BrauerComparison.Naturality`). The naturality of the actual Brauer
 comparison identifies the two maps on all classes. Thus absolute
 unit corestriction after the canonical restriction multiplies by
 \([L:K]\), by the open-subgroup index computation.

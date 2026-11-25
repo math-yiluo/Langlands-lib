@@ -1,7 +1,5 @@
 # Proof of the signed type-A Solomon coefficient identity
 
-Author: Worker 379.
-
 `Langlands.Geometric.typeASolomonCoefficientStatement` proves exactly
 `Langlands.Geometric.TypeASolomonCoefficientStatement`: for every natural rank
 `n` and all `B K : BlockShape n` with `blockWeyl K ≤ blockWeyl B`,

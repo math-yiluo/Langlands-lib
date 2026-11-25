@@ -19,7 +19,7 @@ A `Chart ev M` consists of the following data.
 Fix a chart `C`.
 
 - `C.coef hV r s` is the coefficient of `(ev r).app V s` in the generator
-  `q r` restricted to `V`. It is the published `frameCoeff`; `coefLinear`
+  `q r` restricted to `V`. It is `frameCoeff`; `coefLinear`
   records that it is linear, and `coef_restrict` that it commutes with
   restriction.
 - `C.e k` is the section of `E` over `W` whose joint evaluation at the frame
@@ -72,9 +72,9 @@ property is `coord_change`.
 ## Provenance
 
 This is an internal construction, not taken from a literature source. It
-implements steps 2-4 of the intended proof recorded in the Markdown of the
-published `TorsionBracketMapStatement` and in the context of Task 8069. The `n`-th powers of the maximal
+implements steps 2-4 of the intended proof recorded in the Markdown of
+`TorsionBracketMapStatement`. The `n`-th powers of the maximal
 minors of the joint evaluations, multiplied by gauges of trivialized `n`-th
 powers of the targets, are local homogeneous coordinates whose transitions are
-`n`-th powers of determinants of frame changes. They are glued with the
-published `CoordinateAtlasGluing`. No determinant line bundle is constructed.
+`n`-th powers of determinants of frame changes. They are glued with
+`CoordinateAtlasGluing`. No determinant line bundle is constructed.

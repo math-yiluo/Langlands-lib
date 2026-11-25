@@ -1,7 +1,5 @@
 # Primitivity of degree-one Čech cocycles for a multiplication with two-sided unit
 
-Author: Worker 274.
-
 This module proves that degree-one Čech cocycles of the structure sheaf are primitive for a
 multiplication `m : X ×_R X ⟶ X` with a two-sided unit over a field `R`: `m^* z` and
 `p₁^* z + p₂^* z` differ by a Čech coboundary on a common refinement. It is a helper for the

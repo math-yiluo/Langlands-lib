@@ -1,7 +1,5 @@
 # Universal finite-character Hopf points and twists
 
-Lean: Worker 57. Documentation and integration: Worker 872.
-
 For a finitely presented commutative Hopf algebra `A` over a
 commutative ring `R` and a finite additive commutative group `L`,
 `Langlands.Algebra.MixedChartAlgebra.W R A L` is the published

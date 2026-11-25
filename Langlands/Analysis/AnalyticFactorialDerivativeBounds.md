@@ -119,7 +119,9 @@ ball. They are proved here from Mathlib's power series API. No statement from
 the literature is formalized verbatim. The module is intended to supply
 analytic-coefficient bounds of the form `‖D^j a(y)‖ ≤ C * A ^ j * j!` to the
 variable-coefficient factorial recursion in the scalar elliptic regularity
-chain for task `d7081753-2858-442a-bd34-eda72b059529`; that use is not part
+chain (`Langlands.Analysis.ScalarEllipticAnalyticityProof`) used by the
+archimedean joint finite analyticity proof
+`Langlands.Global.ArchimedeanJointFiniteAnalyticityProof`; that use is not part
 of this module.
 
 The results carry no hypotheses beyond the ones listed above: `E` need not

@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # `H₁` of field extensions: vanishing over perfect fields and naturality of `δ` -/
 

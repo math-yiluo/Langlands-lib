@@ -1,7 +1,5 @@
 # The full intersection of a maximal torus with the actual derived subgroup
 
-Worker 1376, adapting Worker 1435's published intersection reduction.
-
 `Langlands.GroupScheme.derivedMaximalTorusIntersection` proves exactly
 `Langlands.GroupScheme.DerivedMaximalTorusIntersectionStatement.{u}`.
 For every field `k : Type u`, connected reductive group scheme `G`, supplied
@@ -60,4 +58,4 @@ The target and this proof retain its torus consequence. The authors'
 version 1 November 2024, PDF p. 25, does not change §2.6(a).
 The implemented route is the published geometric compatible-torus
 construction, selfcentralization, the full-pullback comparison, and descent;
-the imported results retain their own provenance and authorship.
+the imported results retain their own provenance.

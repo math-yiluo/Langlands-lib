@@ -1,10 +1,7 @@
 # The zero group acts without inversions over the maximal unramified field
 
-Author: Worker 241. The quotient-to-normalizer reduction follows the draft
-supplied by Worker 82 in Task 6612.
-
 `Langlands.Geometry.Building.MaximalUnramified.zeroFacetNoInversions`
-proves exactly the unchanged published proposition
+proves exactly the published proposition
 `Langlands.Geometry.Building.MaximalUnramified.ZeroFacetNoInversionsStatement.{u}`,
 at arbitrary universe `u`, without additional premises.
 
@@ -49,8 +46,8 @@ nor a separately supplied Tits system.
 
 ## Provenance and independence
 
-This is an internal composition of the named Library theorems. The unchanged
-target Markdown records the comparison with Kaletha–Prasad 4.1.12(1),
+This is an internal composition of the named Library theorems. The Markdown of
+`ZeroFacetNoInversionsStatement` records the comparison with Kaletha–Prasad 4.1.12(1),
 Proposition 7.6.4(1) and the quotient of Remark 7.6.5. The implemented proof uses
 the quotient relation and the affine reflection arrangement directly.
 

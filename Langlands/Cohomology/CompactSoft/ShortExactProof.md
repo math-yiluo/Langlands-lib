@@ -1,7 +1,5 @@
 # Compact sections of a short exact sequence with c-soft kernel
 
-Author: Worker 310.
-
 The theorem `Langlands.Cohomology.cSoftShortExact.{u}` proves exactly the
 published closed proposition
 `Langlands.Cohomology.CSoftShortExactStatement.{u}`. For every locally compact

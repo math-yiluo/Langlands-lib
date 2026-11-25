@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedTemperedCoefficients`,
 namespace `Langlands.HarishChandraSchwartz`. It imports `InducedFourierTransform` (which brings in
 `InducedCoefficientXi`, `InducedCoefficientBound`, `SphericalLevi`, `LeviWeightIntegrability`,
-`SchwartzAction` and Worker 200's `CompactProductInducedCoefficients`,
+`SchwartzAction` and `CompactProductInducedCoefficients`,
 `CompactProductCoefficientBounds` and `CompactCoefficientHaarComparison`) and `ConstantTermBound`
 (for `SigmaProductBound`).
 
@@ -52,7 +52,7 @@ Lemma III.2.3.
 
 ## Scope: data and explicit hypotheses
 
-The group and induction data are those of `InducedCoefficientXi` and of Worker 200's
+The group and induction data are those of `InducedCoefficientXi` and of
 `CompactProductInducedCoefficients`: a locally compact nonarchimedean group `G`, subgroups `P`,
 `M`, `U` with `h : IsSemidirectDecomposition P M U` (`P = M ⋉ U`, `m_P = h.projection`),
 `hU : IsClosed (U : Set G)`, a smooth complex representation `A : SmoothRep ℂ M` (Waldspurger's
@@ -171,9 +171,9 @@ finite set `S` (with `max 1 B` and `max 0 D`).
 
 `norm_inducedIntegrandKernel_le_rpow`: apply `exists_coefficientTensorMap_le_rpow` with
 `ξ = Ξ^M` (nonnegative, an integral of the nonnegative `iwasawaWeight`) to the finite set of
-compact values `CompactInduction.compactValue h hU A K F` (finite by Worker 200's
+compact values `CompactInduction.compactValue h hU A K F` (finite by
 `compactValue_range_finite`), giving `C₀`, `R`. For `x ∈ G`, `exists_iwasawaFactor` writes
-`x = q k₁` with `q = iwasawaFactor x`; Worker 200's `CompactInduction.integrand_factorization`
+`x = q k₁` with `q = iwasawaFactor x`; `CompactInduction.integrand_factorization`
 writes `Φ(k, x)` as `δ_P^{1/2}(q)` (`closedHalfCharacter`) times the coefficient of a compact
 value at `m_P(q)`, and `closedHalfCharacter_eq_comp_projection` (using `hδ`) identifies the
 absolute value of the first factor with `δ_P(m_P(q))^{1/2}`. With `c' = max c 0` from `hlevi`,
@@ -215,7 +215,7 @@ give `|ℓ(I_P^G A(g) v)| ≤ C Ξ(g) (1 + σ(g))^R`.
 - `InducedFourierTransform.hasTemperedCoefficients_normalizedInduction` derives tempered
   coefficients of `I_P^G A` from `hcoeff`; `hasTemperedCoefficients_normalizedInduction_of_tempered`
   derives them from temperedness of `A`, as in Lemma III.2.3.
-- Worker 200's `coefficientTensorMap_bound` and `coefficientTensorMap_bound_finite`
+- `coefficientTensorMap_bound` and `coefficientTensorMap_bound_finite`
   (`CompactProductCoefficientBounds`) are the bounded analogues of
   `exists_coefficientTensorMap_le_rpow_of_tensor` and `exists_coefficientTensorMap_le_rpow`.
 - Defining modules of the cited Library declarations: `LeviData`, `leviComponent`,

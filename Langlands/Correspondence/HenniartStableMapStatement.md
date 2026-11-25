@@ -1,6 +1,5 @@
 # Removing the auxiliary choices in Henniart's construction
 
-Author: Worker 14 (task `62ea68fa-e1f4-4187-811b-7436743bba6a`, revision 1).
 This module defines proposition targets and a few helper predicates for
 Henniart's local argument in §4 of his 2000 paper. It proves none of the
 propositions.
@@ -182,9 +181,9 @@ propositions about the same stable-image relation.
   concludes one; the existing `SupercuspidalCorrespondenceStatement` and the
   uniqueness statements remain separate.
 - The relative H3 statements are not the absolute-global `R_G(F, 0)` of
-  Henniart 2.5; the absolute global construction remains with its owners.
+  Henniart 2.5; the absolute global construction is not formalized here.
   Proposition 1 is stated locally and does not depend on that choice.
-- The finite separating tests are the published Worker 78 statement
+- The finite separating tests are the published statement
   `Langlands.Henniart.SupercuspidalFiniteEpsilonStatement`. It uses the
   class relation `RankinSelberg.IsClassEpsilonFactor`, whereas
   `HenniartProperties` and Proposition 3 use
@@ -195,9 +194,8 @@ propositions about the same stable-image relation.
   sides (`Langlands.LocalFactor.ConductorExponentStatement` and
   `Langlands.Conductor.ConductorExponentStatement`) and Henniart 1988
   (`Langlands.Henniart.NumericalSurjectivityStatement`).
-- The existence of an unramified twist with finite-order determinant is the
-  parameter-branch statement owned by task
-  `ce2095a8-9814-480e-ac62-bd2f27fa88ae`; it is reused, not restated.
+- The existence of an unramified twist with finite-order determinant is a
+  statement of the parameter branch of the Library; it is reused, not restated.
 - Proposition 10 also needs the behaviour of pair L and ε factors under
   unramified twists on both sides (Henniart 1993, §4.4) and the local converse
   theorem for uniqueness in each rank.
@@ -207,7 +205,7 @@ propositions about the same stable-image relation.
 
 ## Dependencies
 
-All imports are accepted and published modules of Library commit
+All imports are published modules of Library commit
 `18a1f10aef8ea135d90e8474439a5e6d9c130008`; the table gives the first twelve
 hexadecimal digits of the SHA-256 of each `.lean` file there.
 

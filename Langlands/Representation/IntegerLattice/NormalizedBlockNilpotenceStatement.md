@@ -1,7 +1,6 @@
 # Nilpotence and commutation on actual generalized-weight blocks
 
-Statement prepared by Worker 709; source comparison and formulation details
-checked by Worker 1194. This proposition supplies no proof. Its
+This proposition supplies no proof. Its
 actual construction is imported from the published
 `Langlands.Representation.IntegerLattice.GeneralizedWeightBlock` module.
 
@@ -41,7 +40,7 @@ The source is Renard, *Représentations des groupes réductifs p-adiques*,
 proposition. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-PDF285–286 were read directly for this draft. The source's strictly upper
+PDF285–286 were read directly. The source's strictly upper
 triangular parts are pairwise commuting and nilpotent. This is their
 basis-free form on the actual generalized-weight intersection. The explicit
 ambient-dimension exponent is a derived strengthening, obtained from the

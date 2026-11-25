@@ -1,10 +1,9 @@
 # Central characters of cuspidal realizations from the top Satake coefficient
 
-Author: Worker 5137.
-
 This module provides the automorphic half of the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement` (Task 5210).
-The other half, from Worker 5151, constructs the Hecke character `δ` of `det S` and checks
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement`.
+The other half, in the modules `Langlands.Automorphic.AssociatedCentralCharacter.DeterminantDescent`
+and `Langlands.Automorphic.AssociatedCentralCharacter.GoodPlaces`, constructs the Hecke character `δ` of `det S` and checks
 the hypothesis below at almost every place. The result is the standard fact that the central
 character of an irreducible automorphic representation is determined by its unramified
 local components: at an unramified place `v`, the central character is `δ_v` exactly when

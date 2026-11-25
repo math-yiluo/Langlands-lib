@@ -1,7 +1,5 @@
 # Scheme atlas transport along a presheaf isomorphism
 
-Author: Worker 509.
-
 This internal module derives transport lemmas from the published
 `AlgebraicSpace.Basic` and `AlgebraicSpace.RelativeHelpers` interfaces and
 Mathlib's relatively representable morphism properties. It introduces no

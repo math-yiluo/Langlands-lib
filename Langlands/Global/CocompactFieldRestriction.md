@@ -1,6 +1,8 @@
 # Matching character restrictions to a cocompact field
 
-This internal auxiliary module implements Claim 2 of Worker 1843's plan. The
+This internal auxiliary module implements the restriction-matching step
+(`adelicPairing_restrictionMatching`) of the proof of
+`AdelicAdditiveDualityStatement` in `AdelicAdditiveDualityProof`. The
 field has the discrete topology, and the target is a commutative topological
 ring. The quotient of the ring's additive group by the field image is assumed
 compact and Hausdorff. The continuous additive character is nontrivial and is

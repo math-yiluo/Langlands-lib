@@ -1,6 +1,6 @@
 # Continuous equivariant locally constant descent on finite spectrum covers
 
-Worker 56 constructs the continuous action on all compatible locally
+This module constructs the continuous action on all compatible locally
 constant families on a finite cover's original representing spectra, and
 an equivariant restriction/gluing isomorphism with functions on the actual
 target locus. The inputs are a presented affinoid algebra over a complete
@@ -62,4 +62,4 @@ polyradii, arbitrary closed ideals, nilpotents, trivial valuations,
 empty loci, empty covers and empty coefficient sets are retained.
 The construction concerns local constant-coefficient function data;
 arbitrary equivariant sheaf descent, analytic etale site comparison
-and the Harris tower remain separate obligations.
+and the Harris tower lie outside this module.

@@ -1,6 +1,6 @@
 # Reciprocal polynomial multipliers on integral generic parity classes
 
-This internal algebraic construction extends the explicit tail polynomial
+This algebraic construction extends the explicit tail polynomial
 to the complementary, generic integral parity class. Let `ℓ>0`,
 `ε∈{0,1}` and `Even(ℓ-ε)`, and write `Pℓ` for the polynomial of
 `RealTailMultiplierPolynomial`. For every integer `j` in the parity class
@@ -39,5 +39,5 @@ by `Pℓ(ε)`. Off-parity input coefficients vanish by the Frobenius data.
 `RealIntegralGenericPolynomialStatement` packages the nonzero normalization,
 the recurrence and symmetry of the reciprocal, and the exact normalized
 generic-multiplier formula. `realIntegralGenericPolynomial` proves it.
-This unit proves no braid identity, identification of a chosen interlaced
+This module proves no braid identity, identification of a chosen interlaced
 equivalence with a particular crossing word, or filtration kernel containment.

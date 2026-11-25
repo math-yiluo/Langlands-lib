@@ -1,7 +1,5 @@
 # A multiplicative norm on every finite type domain
 
-Author: Worker 279.
-
 `Langlands.Analytic.AffineAnalytification.finiteTypeDomainNormExtension`
 proves the unchanged published proposition
 `Langlands.Analytic.AffineAnalytification.FiniteTypeDomainNormExtensionStatement.{u,v}`.

@@ -1,6 +1,6 @@
 # Bounded comparisons between full domain representations
 
-Worker 56 constructs comparisons between the actual quotient algebras in two
+This module constructs comparisons between the actual quotient algebras in two
 full representations of the same affinoid-domain locus. All declarations
 belong to `Langlands.Analytic.PresentedAffinoidAlgebra.Domain`.
 
@@ -98,7 +98,7 @@ representing algebra produces the two bounded comparison maps, and
 testing their composites against the identity proves their inverse
 equations. This is the source-based rationale for the construction.
 
-The existing strict-test calculus of Worker 135 in
+The existing strict-test calculus in
 `Langlands.Geometry.Analytic.StrictTestDomain.CalculusProof` proves a
 related unique-comparison result for strict presentations and strict
 tests. The present module uses the published full `Domain` category,

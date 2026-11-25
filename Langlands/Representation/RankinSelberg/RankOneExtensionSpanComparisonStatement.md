@@ -1,7 +1,5 @@
 # Strict rank-one extension Laurent-span comparison
 
-Author: Worker 719.
-
 This module defines the closed proposition
 `Langlands.RankinSelberg.RankOneExtensionSpanComparisonStatement.{uF,uV,uW}`.
 It states the integral comparison at the core of JPSS Lemma (5.5), in that
@@ -106,8 +104,7 @@ would not make these equations true (for `r = t + 1` the right-hand sides
 are `r + 1`), so natural-number subtraction does not silently extend the
 range. The equal-rank endpoint `r + 1 = t + 2` (JPSS `R = t₁ + 1`), where
 the induced side would need an equal-rank integral with a Schwartz variable,
-is excluded; it belongs to Worker 465's separate task
-`211d2363-4999-41ed-af96-2c277a4505a7`.
+is excluded from this statement.
 
 ## Lower induction and carriers
 
@@ -207,13 +204,14 @@ of JPSS:
   nonzero complex scalar. **No exact equality of individual integrals is
   asserted here**; only the span inclusion is.
 
-## Remaining obligations and dependencies
+## Proof and dependencies
 
-The proof must construct the compact section and the functional `λ` on the
-actual induced carrier, choose supports, establish the scalar cutoff by
-Fourier smearing, prove absolute convergence on a common half-plane and the
-integral identity with the actual measures, and transfer it to rational
-continuations. Concrete data definitions are split into separate tasks.
+The proof, `rankOneExtensionSpanComparison` in
+`RankOneExtensionSpanComparisonProof`, must construct the compact section and
+the functional `λ` on the actual induced carrier, choose supports, establish
+the scalar cutoff by Fourier smearing, prove absolute convergence on a common
+half-plane and the integral identity with the actual measures, and transfer it
+to rational continuations. Concrete data definitions are in separate modules.
 
 The dependency direction is Lemma (5.5) → Section 7 → Section 9.3. The
 module imports only `Langlands.Representation.RankinSelberg.RankOneExtensionTransport`;
@@ -225,7 +223,7 @@ imports are unchanged.
 
 ## Development validation
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled
+A Lean check compiled
 the module with no errors or warnings. Declaration inspection reported
 `statement_returns_prop: true`, universe parameters `uF, uV, uW`, and only
 the standard axioms `propext`, `Classical.choice`, `Quot.sound`. These checks

@@ -23,13 +23,11 @@ through `ENNReal.ofReal`; the constants need no separate sign hypotheses.
 The conclusion is `AnalyticAt ℝ F x₀`. This is a statement, not a proof.
 It asserts no bound for solutions of a differential equation.
 
-Worker 116 formulated this internal assembly interface from the ordered-word
-conventions of Workers 94 and 815. The premise is written explicitly using
-Mathlib alone, so it can be published independently of the pending cutoff,
-Sobolev and factorial-derivative proof units. Its weighted supremum is exactly
+This internal assembly interface follows the ordered-word conventions of the
+cutoff estimates (`LocalEllipticCutoffEstimate`) and of the local Sobolev
+estimate (`LocalSobolevPointwise`). The premise is written explicitly using
+Mathlib alone, so the statement does not depend on the cutoff,
+Sobolev and factorial-derivative proof modules. Its weighted supremum is exactly
 `ballWeightedSeminorm (derivWordNorm k F) x₀ R k` when those separately defined
 conventions are unfolded. No PDE or elliptic regularity theorem is imported
 or assumed implicitly.
-
-Worker 459 prepared this proposition pair for independent statement review
-and publication, retaining Worker 116's Lean formula unchanged.

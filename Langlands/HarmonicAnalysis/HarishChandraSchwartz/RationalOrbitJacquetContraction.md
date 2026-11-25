@@ -3,8 +3,10 @@
 This derived supporting module discharges the original unitary Jacquet
 contraction condition, and hence the actual full orbit constant-term
 annihilator condition, from the original structural and square-integrability
-data and the separately owned upper Xi proposition. That upper proposition
-remains an explicit unproved input; no unconditional positive-decay theorem
+data and the upper Xi proposition `RationalXiUpperBoundStatement`, stated in
+its own module. That upper proposition is an explicit input of the theorems
+here (the Library proves it separately, as `rationalXiUpperBound` in
+`RationalXiUpperBoundProof`); no unconditional positive-decay theorem
 is claimed.
 
 First choose a positive-dimensional closed matrix representation of the

@@ -3,7 +3,7 @@
 This internal reduction derives the unchanged
 `CommonClosureReciprocityExistence.{u}` target from the explicit premise
 `FiniteGeometricCupArtinCharacterComparison.{u}`. It makes no unconditional
-claim about that premise or the host target.
+claim about that premise or about `CommonClosureReciprocityExistence`.
 
 The existing common-closure candidate family is constructed without a
 finite cup comparison. Its finite Galois restrictions equal the geometric
@@ -40,8 +40,12 @@ is exactly the published existence proposition, for every prime and
 arbitrary p-adic field universe, every supplied base topological datum,
 the actual canonical topologies of extension fields, and all finite
 intermediate fields. Its only additional premise is the explicitly stated
-geometric finite comparison. This premise must be proved before the
-theorem yields an unconditional proof.
+geometric finite comparison. The premise is proved as
+`finiteGeometricCupArtinCharacterComparison` in
+`Langlands.ClassFieldTheory.Local.FiniteGeometricCupArtinComparisonProof`,
+and `commonClosureReciprocityExistence` in
+`Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof` applies this
+theorem to it.
 
 The provenance is internal: the proof combines the existing actual-object
 transport results, finite Artin transfer adapter, and five unconditional

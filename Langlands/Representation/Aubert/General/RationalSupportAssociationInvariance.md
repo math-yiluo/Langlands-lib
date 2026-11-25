@@ -1,7 +1,5 @@
 # Association invariance of the actual support category
 
-Author: Worker 12.
-
 `Langlands.Aubert.General.RationalPointFamily.rationalSupportCategoryAssociationInvariance`
 proves the whole, unapplied Library proposition
 `RationalSupportCategoryAssociationInvarianceStatement.{u, v}` from
@@ -100,7 +98,7 @@ Namespaces in the first column are part of the declaration names.
 
 | Declarations | Role and scope actually used |
 | --- | --- |
-| `Langlands.Aubert.General.RationalPointFamily.rootAssociation_inv`, `rootAssociation_mul` | Published actual inverse and composite normalizer representatives, reused from Worker 78's `RootAssociationComposition`. |
+| `Langlands.Aubert.General.RationalPointFamily.rootAssociation_inv`, `rootAssociation_mul` | Published actual inverse and composite normalizer representatives, reused from `RootAssociationComposition`. |
 | `Langlands.Aubert.General.RationalPointFamily.exists_associated_nested_subset`, `rootAssociation_levi_membership`, `rootAssociation_nested_unipotent_membership` | Newly proved proper nested-face transport and actual subgroup membership comparisons for the same representative. See [RationalSupportAssociationStructure](RationalSupportAssociationStructure.md). |
 | `Langlands.GroupScheme.Dynamic.orbit_add_zsmul_of_mem_centralizer`, `Langlands.GroupScheme.IsStandardCocharacter.exists_add_zsmul_of_nested`, `Langlands.GroupScheme.mem_standardUnipotent_conj_of_mem_standardLevi` | Newly proved all-test-scheme cocharacter and radical transport lemmas. See [NestedStandardTransport](../../../GroupScheme/Rational/NestedStandardTransport.md). |
 | `Langlands.GroupScheme.standardLeviConjugationStatement_of_standardCocharacterStatement`; `Langlands.Aubert.General.RationalPointFamily.levi_map_conj_of_character_image` | Deduce nested Levi conjugation from the existing `hStandard`, then convert it to membership. No new Levi-conjugation premise is introduced. |

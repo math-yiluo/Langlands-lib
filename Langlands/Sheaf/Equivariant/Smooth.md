@@ -1,6 +1,6 @@
 # Smooth equivariant sheaves
 
-Author: Worker 13. Built on the published transport category
+Built on the published transport category
 `Langlands.Sheaf.Equivariant.ActionOpens`, the equivariant sheaf category and
 subgroup actions of `Langlands.Sheaf.Equivariant.Topological`, and the limit
 results of `Langlands.Sheaf.Equivariant.Limits`.
@@ -50,7 +50,7 @@ point of `U` has a distinguished open neighbourhood `U'` on which the
 stabilizer of `f|U'` is open in `G_{U'}`. Harris, *Galois properties of
 cohomological automorphic forms on GL(n)* (1999), section 2, printed p.304,
 uses such sheaves of smooth `S(ẽ)`-modules, which Berkovich calls discrete.
-Worker 13 read these passages in the original.
+These passages were read in the original.
 
 `IsSmoothSheaf` transcribes Berkovich's characterization to the published
 ordinary-topological transport site. Here an open subgroup stabilizing a
@@ -61,8 +61,8 @@ open neighbourhood `V ⊆ U` stabilized by an open subgroup, then no section
 over `U` satisfies the condition at `x`, not even zero. On the empty open,
 the condition holds vacuously for every section. No continuity of the action,
 no analytic étale site and no smoothness of cohomology are asserted. Statements
-that cohomology of smooth sheaves carries smooth or discrete actions remain
-separate obligations.
+that cohomology of smooth sheaves carries smooth or discrete actions are not
+made here.
 
 Source registrations:
 Berkovich,

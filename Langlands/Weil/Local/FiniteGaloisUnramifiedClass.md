@@ -1,7 +1,5 @@
 # The Weil class of a finite unramified extension without a transfer hypothesis
 
-Author: Worker 5095, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`.
-
 For a finite unramified Galois extension `E/F` of `p`-adic fields, this module shows
 that the actual Weil pushout class `finiteGaloisClass F E f hGal e he`
 (`Langlands.Weil.Local.FiniteGaloisPushout`) is the explicit cyclic class of a base
@@ -9,10 +7,10 @@ unit of order one. Under an arithmetically normalized invariant family it is the
 the fundamental class.
 
 The Library already proves this as `finiteGaloisClass_eq_cyclicClass` and
-`finiteGaloisClass_isFundamental_of_unramified` (Worker 1839,
-`Langlands.Weil.Local.FiniteGaloisUnramified`). Those versions assume the unproved
-transfer square `ExtensionWeilTransferReciprocityStatement` and a reciprocity
-candidate for `F`. They use these only to identify the base unit with `e_F(Φ)`. The
+`finiteGaloisClass_isFundamental_of_unramified`
+(`Langlands.Weil.Local.FiniteGaloisUnramified`). Those versions assume the
+transfer square `ExtensionWeilTransferReciprocityStatement` (proved in the Library as
+`extensionWeilTransferReciprocity`) and a reciprocity candidate for `F`. They use these only to identify the base unit with `e_F(Φ)`. The
 versions here assume neither: the unit is shown to lie in `F` and to have order one
 directly, and the normalization only needs some unit of order one.
 

@@ -1,7 +1,5 @@
 # Quotient tests for strictly represented subsets
 
-Author: Worker 1010.
-
 Fix a normed field K with ultrametric absolute value and a presented strict
 affinoid algebra A, the quotient of the strict Tate algebra
 `StrictTateAlgebra (Fin A.arity) K` by the closed ideal `A.ideal`.

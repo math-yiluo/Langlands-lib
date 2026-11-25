@@ -1,7 +1,5 @@
 # Smoothness of the actual rational unitary group scheme
 
-Author: Worker 57.
-
 `RationalUnitaryGroupSchemeSmooth D` states that the structure morphism of
 `D.rationalUnitaryGroupScheme` is smooth whenever Harris signature charts for
 `D` are supplied. This is the existing rational unitary group scheme, constructed

@@ -1,7 +1,5 @@
 # Split Borel local conjugacy from structure and normalizer lifting
 
-Worker 670.
-
 This derived construction combines the two local Borel-conjugacy reductions.
 Its final theorem has precisely the conditional type
 
@@ -9,7 +7,9 @@ Its final theorem has precisely the conditional type
  SplitNormalizerGeometricLocalLiftingStatement.{u} →
  SplitBorelZariskiLocalConjugacyStatement.{u}`.
 
-Both premises remain unproved inputs. This module does not give an
+Both premises are explicit inputs here; they are proved elsewhere, as
+`splitBorelVectorSeries` and `splitNormalizerGeometricLocalLifting`, and the
+two are combined in `SplitBorelConjugacyProof`. This module does not give an
 unconditional proof of the target.
 
 For an arbitrary commutative ring `R`, a reductive `G` over `Spec R` and a
@@ -54,4 +54,5 @@ explicit structural predicate, factors actual points, applies the published
 vector-series containment reduction and conditional normalizer-conjugacy
 theorem, and chooses witnesses. It adds no original-source assertion.
 Constructing the split Borel structure and proving geometric normalizer
-lifting from the split data remain the two substantive prerequisites.
+lifting from the split data are the two substantive prerequisites, supplied
+by those two theorems.

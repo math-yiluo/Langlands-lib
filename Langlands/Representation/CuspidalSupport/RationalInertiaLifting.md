@@ -1,6 +1,6 @@
 # Epimorphisms and projective lifting in the actual inertia block
 
-Worker 1740 constructs categorical lifts inside the actual full subcategory
+This module constructs categorical lifts inside the actual full subcategory
 `RationalInertiaBlock G π`. This is an internal consequence of the published
 all-irreducible-subquotients definition and its closure under actual
 subquotients. It is a categorical helper for the small-progenerator theorem,

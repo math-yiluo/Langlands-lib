@@ -1,7 +1,5 @@
 # One Hermitian approximation on `L²([G])` and its a.e. cuspidal subspace
 
-Author: Worker 112.
-
 `Langlands.Global.RestrictionSplitCentre.QuotientFullAEL2HermitianApproximationStatement`
 asks for one sequence of weights on `G(A_F)` whose integrated actions
 approximate the identity both on `L²([G])` and on its published

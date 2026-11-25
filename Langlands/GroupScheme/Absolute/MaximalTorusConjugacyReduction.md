@@ -1,7 +1,5 @@
 # Reduction of maximal-torus conjugacy to Borel subgroups
 
-Workers 1357 and 1354.
-
 This module supplies derived internal infrastructure for the existing
 `MaximalTorusConjugacyStatement`. Its conclusions are conditional on the
 structural inputs stated in their hypotheses. It proves none of those inputs.
@@ -58,9 +56,11 @@ derived from the published subgroup-conjugacy and maximality definitions
 and transport lemmas. The registered 2017 errata have no correction to
 these passages.
 
-This contribution does not complete the host task. Borel conjugacy, the
-stated containment property, and solvable-group conjugacy remain proof
-obligations. In particular, assuming these propositions is not a proof of
+This module does not prove `MaximalTorusConjugacyStatement` unconditionally;
+the Library's proof is `maximalTorusConjugacy` (module
+`Absolute.MaximalTorusConjugacyProof`). Borel conjugacy, the stated
+containment property, and solvable-group conjugacy are proof obligations
+outside this module. In particular, assuming these propositions is not a proof of
 the unconditional target, and no parabolic maximal-torus result is used
 to discharge them.
 

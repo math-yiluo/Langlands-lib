@@ -1,7 +1,5 @@
 # Automorphisms of the split Cayley algebra preserve its norm
 
-Author: Worker 161.
-
 This module shows that, over a field, every unit-fixing linear automorphism
 of the Zorn product preserves the Zorn norm. In particular this holds for
 every automorphism matrix of `CayleyDatum.split K` with coefficients in a

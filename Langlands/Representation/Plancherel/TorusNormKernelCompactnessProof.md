@@ -1,7 +1,5 @@
 # Proof: the rational norm kernel of a local-field torus is compact
 
-Author: Worker 1505.
-
 `Langlands.Plancherel.torusNormKernelCompactness` proves the published
 proposition `Langlands.Plancherel.TorusNormKernelCompactnessStatement.{u}` of
 [TorusNormKernelCompactnessStatement](TorusNormKernelCompactnessStatement.md),

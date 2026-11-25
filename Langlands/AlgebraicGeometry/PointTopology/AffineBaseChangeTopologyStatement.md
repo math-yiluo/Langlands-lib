@@ -1,7 +1,5 @@
 # Topology comparison under actual affine base change
 
-Author: Worker 208.
-
 `AffineBaseChangeTopologyStatement` states that, for every compatible
 commutative algebra tower `C → D → A`, every topological ring `A`, and every
 actual affine scheme `X` over `Spec C`, the existing function

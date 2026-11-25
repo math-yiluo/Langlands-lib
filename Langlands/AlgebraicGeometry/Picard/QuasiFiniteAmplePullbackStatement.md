@@ -65,11 +65,13 @@ is ample, then `f^*M` is ample.
 
 ## Use
 
-Task 7748 (`LargeLevelQuasiProjectivityStatement`) needs an ample line bundle on
+Proving `LargeLevelQuasiProjectivityStatement` needs an ample line bundle on
 a fine moduli scheme `X` of polarized abelian schemes with full level structure
-(`LargeLevelAmpleStatement`). The planned route maps `X` to a scheme with an
-ample line bundle by a quasi-finite separated morphism and pulls the bundle
-back. This statement is that last step.
+(`LargeLevelAmpleStatement`). The route of
+`largeLevelAmple_of_quasiFiniteProjective` (module
+`Langlands.AbelianScheme.PolarizedFiniteLevel.LargeLevelAmpleQuasiFiniteReduction`)
+maps `X` to a scheme with an ample line bundle by a quasi-finite separated
+morphism and pulls the bundle back. This statement is that last step.
 
 ## Relation to other Library results
 

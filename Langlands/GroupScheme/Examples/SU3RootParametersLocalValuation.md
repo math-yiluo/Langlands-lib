@@ -1,6 +1,6 @@
 # Actual quadratic local-field valuation and central root coordinates
 
-Worker 1676 derives these statements internally from the actual extension valuation in `Langlands.LocalField.FiniteGaloisExtensionValuation` and the published quadratic conjugation and rational coordinate group in `SU3RootParametersQuadratic` and `SU3RootParametersRational`. The base field and extension have independent universes. There is no characteristic restriction.
+These statements are derived internally from the actual extension valuation in `Langlands.LocalField.FiniteGaloisExtensionValuation` and the published quadratic conjugation and rational coordinate group in `SU3RootParametersQuadratic` and `SU3RootParametersRational`. The base field and extension have independent universes. There is no characteristic restriction.
 
 `exists_ne_zero_traceZero` needs only an actual separable quadratic field extension. Its nonidentity conjugation moves some element `x`. The nonzero difference `x - conjugation x` belongs to the trace-zero additive subgroup because applying conjugation exchanges the two terms. This works also in characteristic two and uses no division by two.
 

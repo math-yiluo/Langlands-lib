@@ -1,7 +1,5 @@
 # The largest central lattice torus
 
-Author: Worker 1178.
-
 This internal module proves `exists_universal`: if `F'` is corepresented by an
 algebra of finite type over a field `k`, there are a finite type `J` and a
 central natural homomorphism

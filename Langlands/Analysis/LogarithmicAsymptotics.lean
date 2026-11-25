@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Logarithms of meromorphic functions near a point of the line `Re s = 1`

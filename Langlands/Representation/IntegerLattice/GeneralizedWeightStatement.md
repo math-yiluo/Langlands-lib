@@ -1,7 +1,5 @@
 # Simultaneous generalized weights of commuting invertible tuples
 
-Author: Worker 277.
-
 `Langlands.CommutingTupleGeneralizedWeightDecompositionStatement.{u}` is a
 closed Prop-valued definition in
 `Langlands.Representation.IntegerLattice.GeneralizedWeightStatement`. It
@@ -126,14 +124,15 @@ characters, that is, it does not assert that `W(c) ≠ ⊥` exactly when the
 `u_i` have a common eigenvector with eigenvalues `c i`. It also does not
 state the formula `A_j(e_k) = z^{(j)}_k (Id + N^{(j)}_k)`, the
 commutation or nilpotence of the `N^{(j)}_k`, their multivariable product
-factorization, or the binomial expansion. Those remain separate
-obligations of the whole-book program. The exponential-polynomial
+factorization, or the binomial expansion. Those are not part of this
+file. The exponential-polynomial
 coefficient statement of the same section is
 `Langlands.CommutingTupleMatrixCoefficientExponentialPolynomialStatement`
 in `Langlands.Representation.MatrixCoefficient.CommutingTupleStatement`,
 and it does not depend on this file.
 
-A proof is not part of this unit. Mathlib's
+A proof is not part of this module; the Library's proof is
+`commutingTupleGeneralizedWeightDecomposition` in `GeneralizedWeightProof`. Mathlib's
 `Mathlib.LinearAlgebra.Eigenspace.Pi` contains the independence and
 spanning theorems for commuting families with labels in the scalar field.
 A proof would need to pass from complex labels to unit labels, and to
@@ -145,7 +144,7 @@ The supplementary source `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 is retained at
 `/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`.
-Its appendix corrections on PDF18–19 were reread for this unit. The only
+Its appendix corrections on PDF18–19 were reread for this module. The only
 entry for this passage (2010 p.322, l.-4) places parentheses around the
 whole factor `z_k (Id + N_k)` before its integer power. It concerns the
 later product formula, which the governing 2026 display already

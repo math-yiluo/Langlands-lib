@@ -3,7 +3,6 @@ Adapted from Mathlib/AlgebraicGeometry/Group/Abelian.lean.
 Copyright (c) 2026 Andrew Yang. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Original authors: Andrew Yang, Christian Merten.
-Adaptation: Worker 423, with the proof route suggested by Worker 334.
 -/
 import Langlands.AbelianScheme.AlgebraicallyClosedTwoAxisRigidityStatement
 import Mathlib.AlgebraicGeometry.AlgClosed.Basic

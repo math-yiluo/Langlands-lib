@@ -1,8 +1,8 @@
 # Renard II.3.12: uniform density range and discrete exceptions
 
-This unit states five closed propositions and their conjunction, without proofs,
+This module states five closed propositions and their conjunction, without proofs,
 in `Langlands.HarmonicAnalysis.Distribution.RenardUniformDensity`.
-Every space, map, action and product is already published: the actual scalar
+Every space, map, action and product already exists in the Library: the actual scalar
 tests, full algebraic dual, compact-support and uniform-invariance spaces,
 `testDensity`, compact distribution convolution and Haar `HeckeAlgebra μ`.
 
@@ -18,7 +18,7 @@ PDF p.53, for its modular function realization.
 `UniformRangeStatement` is the Lemma's actual density isomorphism: injectivity
 of `testDensity μ`, equality of its range with uniformly left-invariant compact
 distributions, and equality of that space with its right- and both-invariant
-versions. The uniform sets are the published literal unions over compact open
+versions. The uniform sets are the existing literal unions over compact open
 subgroups. Thus a linear equivalence with the range follows, without assuming
 an abstract function/distribution correspondence in place of the source map.
 
@@ -50,8 +50,8 @@ relative to the same left Haar measure follows from II.3.7 Proposition (ii).
 This explicit derived bridge retains the modular factor for nonunimodular
 groups. Existing `Hecke.AntiPullback` statements under measure-preserving or
 unimodular assumptions do not replace it. The distribution anti-multiplication
-law and the normalized compact-open idempotent identities remain separate
-obligations.
+law and the normalized compact-open idempotent identities are separate
+statements, in `RenardHeckeStatements` and `RenardCompactSubgroupStatements`.
 
 All five targets retain arbitrary Hausdorff locally compact totally disconnected
 groups and any Borel left Haar measure. They assume no second countability,

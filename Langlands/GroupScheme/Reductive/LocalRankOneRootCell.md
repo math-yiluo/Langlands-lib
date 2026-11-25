@@ -1,8 +1,6 @@
 # Rank-one root cells from local root support and root-space lines
 
-Authors: Worker 777 and Worker 785 (interface coordination).
-
-This internal supporting unit constructs root-cell parametrizations from explicit local
+This internal supporting module constructs root-cell parametrizations from explicit local
 structural data over an arbitrary field. It does not prove the existence of that structural
 data, and does not prove `SplitRankOneRootCellStatement` without further input.
 
@@ -70,12 +68,12 @@ This is an internal conditional construction derived from the clean affine-coord
 dynamic-centralizer, dynamic-cell and explicit Weyl-relation helpers described above.
 The coordinate part adapts the implemented construction in `RankOneCellData`; it replaces
 its global structural inputs with the displayed local hypotheses. No proof of those
-hypotheses is asserted or copied here. The geometric existence theorem in the original
-task remains open. The target's literature context is documented in
-`SplitRankOneRootCellStatement.md`; this unit makes no additional source translation.
+hypotheses is asserted or copied here. This module does not prove the geometric existence
+theorem for those hypotheses. The target's literature context is documented in
+`SplitRankOneRootCellStatement.md`; this module makes no additional source translation.
 
 The development audit traversed constants used in both types and values, including opaque
-values, recursively. Terminal check `e1b0a36c-8aa8-4b3c-9cc0-fbf9285549c2` reported:
+values, recursively. It reported:
 
 | Declaration | Constants reached | Forbidden declarations reached |
 | --- | ---: | ---: |
@@ -95,10 +93,10 @@ and `splitRankOneRootCell`, `splitRootLieLine`, `prescribedBorelProjectiveCurveD
 
 The module imports published helper declarations from files that also contain excluded
 results. Import reachability is broader than type-and-value reachability. The imported
-excluded proof declarations are not invoked. Semantic independence still requires
-independent review of the mathematical route. The development scanner remains private
-and is not part of this submission.
+excluded proof declarations are not invoked. This audit does not by itself establish
+semantic independence of the mathematical route. The development scanner is not part of
+the Library.
 
-Compilation and exact inspection of the entry definition succeeded in terminal check
-`5852d49e-ed49-498f-a989-e0df8b3a9ae8`, with zero errors or warnings. The only reported
+Compilation and exact inspection of the entry definition succeeded, with zero errors or
+warnings. The only reported
 axioms were `propext`, `Classical.choice`, and `Quot.sound`.

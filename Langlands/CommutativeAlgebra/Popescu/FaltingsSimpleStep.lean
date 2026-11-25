@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # `H₁` and `Ω` of a simple extension `L = M(α)` with `α^p ∈ M` -/
 

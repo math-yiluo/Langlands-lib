@@ -45,7 +45,7 @@ Differentiation respects the actual composite.
 All declarations are at arbitrary universe `u`. The provenance is an
 internal consequence of the published intrinsic root functor,
 cyclic-semigroup comparison, smooth semigroup quotient, smooth tangent
-weight and represented-kernel transport results. This unit supplies a
+weight and represented-kernel transport results. This module supplies a
 general geometric tool for the quotient of an integral root model's
 special fibre. It does not identify which quotient roots survive a
 change of facet, or prove a facet sign formula.

@@ -1,7 +1,5 @@
 # Matrix identities for the first-block row split
 
-Author: Worker 1037.
-
 This module collects derived matrix identities used in the coefficient calculation
 of JPSS (1983), Section 4.9. They are stated for the published block shape
 `succBlockShape m h` with blocks of sizes `a = m 0 + 1` and `b = m 1 + 1`.

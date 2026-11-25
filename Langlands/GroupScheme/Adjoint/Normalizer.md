@@ -23,7 +23,7 @@ cancelling the monomorphism.
 This construction and its intrinsic identities are derived entirely from
 the published `IsAdjointSplitTorusImage`, `IsNormalizingPoint`, `factorHom`,
 and `mem_range_of_comp_mem_range` interfaces. No independent literature
-assertion is formalized in this unit. It is internal infrastructure for the
+assertion is formalized in this module. It is internal infrastructure for the
 KP program's comparison of real cocharacter actions. It does not construct
 a building, an apartment map, or full cross-torus A2, and does not assert
 surjectivity on normalizer rational points.

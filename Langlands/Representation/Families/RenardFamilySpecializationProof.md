@@ -1,6 +1,6 @@
 # Renard VI.8.1: admissibility of specialization
 
-Worker 1761 proves the unchanged `SpecializationAdmissibilityStatement`
+This module proves the unchanged `SpecializationAdmissibilityStatement`
 at independent universes `uB`, `uG`, `uV`. The source is Renard,
 *Représentations des groupes réductifs p-adiques*, 9 July 2026,
 VI.8.1 specialization Lemma, printed p.189 / PDF p.195.

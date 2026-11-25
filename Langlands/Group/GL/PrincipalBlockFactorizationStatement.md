@@ -1,7 +1,5 @@
 # Positive principal congruence block factorization
 
-Authors: Worker 96, with the target formulation supplied by Worker 70.
-
 ## Exact statement and API
 
 The module `Langlands.Group.GL.PrincipalBlockFactorizationStatement` imports
@@ -21,7 +19,7 @@ Unfolding the definition universally quantifies, in this order, over:
 
 The conclusion is exactly
 `Function.Bijective (B.iwahoriProduct k (Langlands.Conductor.principalLevelSubgroup k n a))`.
-Thus a future proof `h` of this proposition specializes as `h k n B a ha`,
+Thus a proof `h` of this proposition specializes as `h k n B a ha`,
 with the supplied instances inferred. The proposition uses every such field,
 including both possible field characteristics; it does not choose a new
 valuation or topology.
@@ -89,8 +87,9 @@ same principal subgroup. Uniqueness can then be established from the
 triangular shapes and their identity diagonal blocks.
 
 This paragraph describes the intended algebraic argument only. This
-module supplies a proposition to be proved in a separate proof task; it
-contains no proof of bijectivity. Lean compilation and declaration
-inspection establish that the statement is well formed, not that it
-holds. Weak-chamber entry preservation and cofinality of principal
-subgroups belong to separate consumer arguments.
+module supplies a proposition; it contains no proof of bijectivity. The proof
+is `principalBlockFactorization` in
+`Langlands.Group.GL.PrincipalBlockFactorizationProof`. Lean compilation and
+declaration inspection of this module establish that the statement is well
+formed, not that it holds. Weak-chamber entry preservation and cofinality of
+principal subgroups belong to the separate arguments that use this statement.

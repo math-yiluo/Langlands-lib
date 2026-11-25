@@ -1,10 +1,5 @@
 # Totally complex forms of the relative pole comparisons, isometry factors and composite map
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `81ed24709e7050068786116ca6613260` (Option A) to request
-`9b5f630f11af591aae45e2157df43d94`.
-
 **Scope.** The module `Langlands.Global.Factors.PoleComparisonTCStatement` defines
 three propositions in the namespace `Langlands.Global.PoleComparison` and proves
 nothing. Each is a published proposition with one more instance argument,
@@ -18,7 +13,7 @@ copied verbatim.
 | `RelativeIsometryFactorTCStatement` | `uF uW uP uE` | `RelativeIsometryFactorStatement` | `Langlands.Global.Factors.RelativeIsometryFactorStatement` |
 | `HenniartCompositeMapTCStatement` | `uF uK uW uP uE` | `HenniartCompositeMapStatement` | `Langlands.Global.Factors.HenniartCompositeMapStatement` |
 
-The principal declaration of the unit is
+The principal declaration of the module is
 `Langlands.Global.PoleComparison.HenniartCompositeMapTCStatement`.
 
 ## 1. The statements
@@ -66,8 +61,8 @@ need these inputs only over totally complex base fields, for instance in the for
 ## 3. Relation to the originals
 
 Each original implies its totally complex form at the same universe levels: apply the
-original to the same `F` and `E` and forget the new instance. A private development
-check of Worker 0 compiled the three implications, each as
+original to the same `F` and `E` and forget the new instance. A development
+check compiled the three implications, each as
 `fun h F E _ _ _ _ _ _ _ _ => h F E`. The converse is not claimed. The statements make
 no claim about base fields with a real place.
 
@@ -81,9 +76,7 @@ extension. These fields are totally complex (Mathlib
 `NumberField.IsCMField.isTotallyComplex`). The totally complex form of that reduction
 is `Langlands.Henniart.CandidateExistenceTCReductionStatement`, whose fourth and fifth
 hypotheses are the first and third propositions of this module. The unrestricted
-statements stay the targets of their tasks (Tasks 6017, 5191 and 5231) as
-infrastructure; the operator asked their owners to stage the totally complex forms as
-supporting proof candidates.
+statements remain in the Library as infrastructure.
 
 ## 5. Sources and provenance
 

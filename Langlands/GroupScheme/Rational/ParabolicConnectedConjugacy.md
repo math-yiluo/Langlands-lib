@@ -41,15 +41,16 @@ the unchanged published `MinimalParabolicSplitTorusConjugacyStatement.{u}`.
 It uses only the parabolic part of minimality. Finite fields, imperfect
 fields and arbitrary characteristic are included throughout.
 
-This unit proves connectedness, but its conjugacy conclusions still depend
-on the unproved smooth-group conjugacy statement. It does not prove the
-unconditional minimal-parabolic split-torus conjugacy target. The new
+This module proves connectedness, but its conjugacy conclusions still depend
+on the smooth-group conjugacy statement as a premise; that statement is proved
+in `SmoothMaximalSplitTorusConjugacyProof`. It does not prove the
+unconditional minimal-parabolic split-torus conjugacy target, which
+`MinimalParabolicSplitTorusConjugacyProof` proves. The new
 connectedness proof uses no parabolic-dynamic comparison, rational Bruhat
 covering, relative Weyl group or Tits-system result.
 
 The provenance is an internal composition of published proofs and the
-published definition of parabolicity. Worker 1226 proposed the geometric
-Borel route. The original Borel-connectedness theorem and its implemented
+published definition of parabolicity. The original Borel-connectedness theorem and its implemented
 identity-component argument are documented in
 [BorelContainingSubgroupConnected](../Absolute/BorelContainingSubgroupConnected.md),
 which proves the connectedness clause of Milne, *Algebraic Groups* (2017),

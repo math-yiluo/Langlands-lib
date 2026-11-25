@@ -1,7 +1,5 @@
 # AF representability from a finite surjection with Noetherian quasi-affine source
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.NoetherianSchemeQuasiAffineSourceAFStatement`,
 namespace `Langlands.AlgebraicGeometry.AlgebraicSpace`. It imports the published
 `FiniteSurjectiveQuasiAffineSourceAFStatement` for the existing predicates, and Mathlib's

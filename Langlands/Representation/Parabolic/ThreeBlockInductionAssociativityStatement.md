@@ -1,7 +1,5 @@
 # Heterogeneous three-block associativity for normalized upper induction
 
-Author: Worker 328.
-
 `Langlands.Parabolic.ThreeBlockInductionAssociativityStatement` is a closed
 Prop-valued definition. It states an actual representation equivalence between
 `rho0 star (rho1 star rho2)` and `(rho0 star rho1) star rho2`, after an explicit
@@ -110,8 +108,10 @@ or its Fin rank casts. Those are explicit internal presentation choices.
 The published `RefinementCoordinates` and
 `RefinementInductionTransitivityProof` modules supply parts of the general
 coordinate/refined-parabolic layer. They do not by themselves prove this
-literal heterogeneous specialization. Its later proof must also supply the
-appropriate tensor and carrier comparisons; none is assumed here.
+literal heterogeneous specialization. A proof must also supply the
+appropriate tensor and carrier comparisons; none is assumed here. The proof is
+`Langlands.Parabolic.threeBlockInductionAssociativity`, in
+`Parabolic.ThreeBlockInductionAssociativityProof`.
 
 ## Scope and status
 
@@ -122,9 +122,9 @@ is arbitrary positive `C`; no rank-zero extension is made. The statement
 assumes no modulus identity, tensor comparison, induction transitivity, or
 conclusion-shaped input. It has no local-factor or analytic conclusion.
 
-Development check `9f78fc87-6518-47d4-8683-e5abcd034462` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the declaration with zero
+A development check with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` compiled the declaration with zero
 errors and warnings. Inspection reports `statement_returns_prop = true`,
 level parameters `uF`, `uV0`, `uV1`, `uV2`, and only `propext`,
 `Classical.choice`, and `Quot.sound`. This is statement validation, not a
-proof of associativity or independent semantic acceptance.
+proof of associativity.

@@ -202,7 +202,7 @@ lemma localDualEvaluation_hom_ext [Fintype I]
     exact hi
   rw [← localBasis_expansion e W' x]
   simp only [map_sum, map_smul]
-  exact Finset.sum_congr rfl (fun i _ => congrArg (fun z => _ • z) (hb i))
+  exact Finset.sum_congr rfl (fun i _ => by congr 1; exact hb i)
 
 /-- The inverse coordinate map, obtained by evaluating all basis vectors. -/
 def dualLocalFreeInv [Fintype I]

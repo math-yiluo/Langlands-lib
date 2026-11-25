@@ -1,6 +1,6 @@
 # Recognizing Borel subgroups by the absence of opposite weights
 
-Worker 647. This internal helper for the Borel-locus proof is derived from
+This internal helper for the Borel-locus proof is derived from
 published Library theorems, with no additional literature assertion.
 
 For affine group schemes over a ring, a monomorphic inclusion reflects every

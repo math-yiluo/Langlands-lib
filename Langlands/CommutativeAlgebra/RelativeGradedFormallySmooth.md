@@ -1,6 +1,6 @@
 # Relative square-zero lifting for graded algebras
 
-Worker 708. This is an internal extension of the published diagonal averaging
+This is an internal extension of the published diagonal averaging
 construction in `GradedFormallySmooth`. No external source theorem is
 asserted. All declarations lie in
 `Langlands.CommutativeAlgebra.RelativeGradedFormallySmooth`.
@@ -67,7 +67,8 @@ projections, apply the corresponding lifting lemma, and factor the lift
 through the quotient. Quotient induction gives its algebra compatibility
 and the required commutative diagram.
 
-This unit supplies relative algebraic infrastructure for Task 6453. It does
+This module supplies relative algebraic infrastructure for the properness of
+dynamic parabolic quotients. It does
 not prove the closedness of a parabolic orbit, affineness of a reductive
 homogeneous space, or `DynamicQuotientProperStatement`. Its proof uses only
 commutative-algebra lifting and the published diagonal averaging helpers,

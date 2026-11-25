@@ -5,8 +5,8 @@ For arbitrary schemes `X'`, `X`, `T`, and `S`, with maps `g : X' ⟶ X`,
 `w : g ≫ f = f' ≫ b`, `Langlands.Scheme.relativeDifferentialsSquareMap g b w`
 is the canonical morphism
 `(Scheme.Modules.pullback g).obj (relativeDifferentials f) ⟶ relativeDifferentials f'`.
-All sheaves, universal derivations and functors are the actual published
-constructions. Their universal property is proved in the imported
+All sheaves, universal derivations and functors are the actual Library and
+Mathlib constructions. Their universal property is proved in the imported
 `RelativeDifferentialsUniversal` module, not assumed as an input.
 
 `RelativeDerivation.forgetBase b d` converts an `f'`-relative derivation
@@ -17,7 +17,7 @@ vanishing property of `d` therefore proves the new base vanishing.
 `forgetBase_app` gives the unchanged local formula and
 `forgetBase_postcomp` proves compatibility with postcomposition.
 
-Apply `forgetBase` to the universal derivation for `f'`, then the published
+Apply `forgetBase` to the universal derivation for `f'`, then
 `precompOver g w` to obtain an `f`-relative derivation into the actual
 pushforward of the target differential sheaf. Its universal descent is
 `relativeDifferentialsSquarePushforwardMap g b w`. The inverse of the
@@ -33,10 +33,10 @@ uniqueness for the universal derivation. `_unique_of_app` proves the same
 uniqueness directly from the local-section formula by extensionality of
 derivations.
 
-`relativeDifferentialsSquareMap_id_base` proves agreement with the published
+`relativeDifferentialsSquareMap_id_base` proves agreement with the
 fixed-base `relativeDifferentialsMap` when the base map is the identity.
 Its proof applies local uniqueness to the fixed-base map and uses its
-published local-section formula.
+local-section formula.
 
 `relativeDifferentialsBaseChangeMap f b` specializes the square map to
 Mathlib's categorical scheme pullback, with `g = Limits.pullback.fst f b`
@@ -56,7 +56,7 @@ The forget-base helper is the explicit base-vanishing step in that lemma's
 construction of an `S`-derivation. Its postcomposition lemma is a derived
 local-map identity. Lemma 29.33.10 (tag 01V0) motivates the base-change
 specialization; its isomorphism assertion is a separate theorem outside
-this unit. The structure of the descent/adjunction API adapts Worker 136's
+this file. The structure of the descent/adjunction API adapts the
 fixed-base `RelativeDifferentialsMaps` module, with the forget-base step
 and explicit local uniqueness added here.
 

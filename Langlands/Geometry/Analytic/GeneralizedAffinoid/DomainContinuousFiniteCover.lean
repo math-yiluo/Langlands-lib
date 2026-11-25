@@ -37,7 +37,7 @@ theorem finiteCoverSpectrumAction_isContinuous :
     (ρ.finiteCoverSpectrumAction H d c).IsContinuous := by
   apply (Action.isContinuous_def _).mpr
   exact continuous_fiberwise_sigma
-    (fun i p => ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ p.1) p.2)
+    (fun i p => ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ p.1).asHom p.2)
     (fun i => (Action.isContinuous_def
       (ρ.finiteCoverComponentAction H d c i)).mp
         (ρ.invariantSpectrumAction_isContinuous
@@ -54,9 +54,9 @@ theorem finiteCoverSpectrum_toAction :
 @[simp]
 theorem finiteCoverSpectrum_mk (g : ρ.finiteFamilyOpenSubgroup H c.obj)
     (i : Fin c.size) (x : BanachSpectrum (c.obj i).algebra) :
-    ConcreteCategory.hom ((ρ.finiteCoverSpectrum H d c).obj.ρ g) ⟨i, x⟩ =
+    ConcreteCategory.hom ((ρ.finiteCoverSpectrum H d c).obj.ρ g).asHom ⟨i, x⟩ =
       Sigma.mk i
-        (ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ g) x) := rfl
+        (ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ g).asHom x) := rfl
 
 /-- The original bounded component map into the target locus is now a morphism
 of jointly continuous actions. -/

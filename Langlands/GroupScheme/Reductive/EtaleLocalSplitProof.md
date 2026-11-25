@@ -1,7 +1,5 @@
 # Reductive group schemes split étale-locally on the base
 
-Worker 587, with the root-line contribution of Worker 634.
-
 `Langlands.GroupScheme.etaleLocalSplitReductive` proves exactly the published
 `Langlands.GroupScheme.EtaleLocalSplitReductiveStatement.{u}` for every universe
 `u`. It adds no hypotheses and leaves the target and its imports unchanged.

@@ -1,7 +1,7 @@
 /-
 Copyright (c) 2026 Jiedong Jiang. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
-Authors: Jiedong Jiang, Worker 250
+Authors: Jiedong Jiang
 
 The dense algebraic-closedness proof below is adapted from Mathlib's
 Analysis/Normed/Field/Dense.lean, replacing its characteristic-zero input

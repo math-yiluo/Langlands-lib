@@ -1,6 +1,6 @@
 # Equivariant compactly supported sections on a twisted site
 
-Author: Worker 26. Combines `Langlands.Sheaf.Equivariant.TwistedOver` (the
+Combines `Langlands.Sheaf.Equivariant.TwistedOver` (the
 twisted category over `X`, translations, relabelling, the base object and its
 `G`-action), `Langlands.Sheaf.PointSupport` (supports via germs at points and
 compactly supported sections), `Langlands.Sheaf.Equivariant.LocalActionCohomology`
@@ -112,7 +112,7 @@ Assume `[IsTranslationInvariant J]`, so that `twistedTopology ρ J` is defined.
 
 ## Provenance and scope
 
-Derived infrastructure. Sources, read in the original by Worker 26:
+Derived infrastructure. Sources, read in the original:
 
 - Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
   1995–1996 manuscript), §1.5, printed p.11 = PDF p.11: the support
@@ -142,7 +142,8 @@ sheaves for a chosen local action system. No comparison with Berkovich's
 derived functors on `X(G)_ét`, no Godement computation and no analytic
 instance (sites, points, `PointEquivariance`, Key Lemma actions) is
 constructed or assumed here. The noncompact-group caveat for the composite
-spectral sequence (recorded by Worker 16) does not concern these definitions.
+spectral sequence (recorded in `Langlands.Cohomology.EquivariantComposite.Statement`) does not
+concern these definitions.
 
 Universes: `C : Type u` with `Category.{v} C`, `G : Type uG`, `I : Type uI`,
 fibers, ring and modules in universe `w`, smooth representations in

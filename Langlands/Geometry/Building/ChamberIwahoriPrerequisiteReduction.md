@@ -1,6 +1,6 @@
 # The chamber Iwahori decompositions from their algebraic prerequisites
 
-This derived, internal unit assembles published and staged results into a
+This module assembles published results into a
 reduction of the chamber Iwahori target
 `ParahoricBuildingData.ChamberIwahoriDecompositionStatement` to three named
 statements:
@@ -12,7 +12,12 @@ statements:
 - `P.CentralizerParahoricIntersectionStatement`, Kaletha–Prasad Lemma 7.4.3
   (`Z(F) ∩ G(F)^0_Ω = Z(F)^0`).
 
-It proves none of the three. Each is the target of a separate proof task.
+It proves none of the three. The Library proves each of them elsewhere:
+`RelativeRoot.dynamicRootOrderedProduct`
+(`GroupScheme/Rational/DynamicRootOrderedProductProof`),
+`rootRankOneFactorization` (`GroupScheme/Rational/RootRankOneFactorizationProof`)
+and `ParahoricBuildingData.centralizerParahoricIntersection`
+(`CentralizerParahoricProof`).
 
 ## Statement
 

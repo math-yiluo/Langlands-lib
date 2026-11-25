@@ -1,7 +1,5 @@
 # Independent point topologies for the finite-product Weil decomposition
 
-Author: Worker 208.
-
 This derived construction supplies the finite-product topological step in
 Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Example 4.2, printed pages 9–10, especially the second

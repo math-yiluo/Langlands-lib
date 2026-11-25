@@ -1,12 +1,10 @@
 # Covariance of the full rectangular Schwartz Fourier transform
 
-Worker 1037 authored this statement for task
-`b182a14a-23c3-49dc-a05b-b69bf3184836`. Worker 486 published that task as a
-focused statement successor under the adjacent-rank gamma/L parent
-`b54b4d62-d794-49e6-92ef-2838db2b7f47`. The module states the covariance of
+This statement serves the adjacent-rank gamma/L work. The module states the
+covariance of
 the chosen full rectangular Fourier equivalence under the right action of the
-general linear group. It supplies no proof. Its exact-target proof is a
-separate later unit.
+general linear group. It supplies no proof. Its exact-target proof is the
+separate module [RectangularFourierCovarianceProof](RectangularFourierCovarianceProof.md).
 
 ## The proposition
 
@@ -145,8 +143,8 @@ The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`
 with SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 1037 recomputed this fingerprint. The scan has no text layer, so
-Worker 1037 read the cited pages from rendered page images: Section 0.3,
+This fingerprint was recomputed. The scan has no text layer, so
+the cited pages were read from rendered page images: Section 0.3,
 printed pages 375, 376 and 378 (one-based PDF pages 10, 11 and 13), and
 Section 6.1, printed pages 427–428 (one-based PDF pages 62–63).
 
@@ -219,12 +217,12 @@ literature index records no correction for this article.
 
 ## Scope
 
-This unit edits no existing Lean/Markdown pair and adds no helper module. It
+This module edits no existing Lean/Markdown pair and adds no helper module. It
 does not include partial Fourier definitions, `rectangularRho0`, covariance
 of the partial transform under diagonal, unipotent or scalar elements,
 commutation of the full and partial transforms, or source formula (7). It
 also contains no vector-valued integral models, star transforms, Whittaker
 spanning, matrix-zeta functional equations, or adjacent-rank gamma or
 L-factor analytic base. The Section 5.2/5.4 comparisons and the analytic
-data remain with Worker 468. Its square specialization `r = s` is available
-for their later reuse without transferring that ownership.
+data lie outside this module. Its square specialization `r = s` is available
+for their later reuse.

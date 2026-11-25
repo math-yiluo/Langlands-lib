@@ -1,7 +1,5 @@
 # Compact-open finiteness of supercuspidal classes over every local field
 
-Authors: Worker 254 and Worker 261.
-
 Module: `Langlands.Correspondence.SupercuspidalCompactOpenFinitenessProof`.
 The final declaration is
 `Langlands.Henniart.supercuspidalCompactOpenFiniteness.{uF, uV}`.

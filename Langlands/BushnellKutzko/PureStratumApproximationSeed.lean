@@ -14,7 +14,7 @@ namespace Langlands.BushnellKutzko.PureApproximation
 universe uF uV
 
 /-- BK93 (2.3.11), printed p. 60, as a premise: the top stratum of a pure stratum is nonsplit
-fundamental. This is the content of statement (2) of Task 8149. -/
+fundamental. -/
 def TopNonsplitPremise : Prop :=
   ∀ (F : Type uF) [Field F] [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F]
     (V : Type uV) [AddCommGroup V] [Module F V] [FiniteDimensional F V]
@@ -22,8 +22,7 @@ def TopNonsplitPremise : Prop :=
       (⟨S.chain, S.n, S.n - 1, S.b, by omega, S.valuation_ge⟩ : Stratum 𝒪[F] F V).IsNonsplit
 
 /-- BK93 (2.3.4), printed p. 58, as a premise: a nonsplit fundamental stratum is contained in
-a simple top stratum on a finer chain with the same normalized level. This is the content of
-statement (1) of Task 8149. -/
+a simple top stratum on a finer chain with the same normalized level. -/
 def NonsplitRefinementPremise : Prop :=
   ∀ (F : Type uF) [Field F] [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F]
     (V : Type uV) [AddCommGroup V] [Module F V] [FiniteDimensional F V]

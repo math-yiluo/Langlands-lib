@@ -70,7 +70,7 @@ The construction is derived from the published modules
 `UnramifiedNeutralModelDescent`, and `UnramifiedSmoothDescentProof`. No external
 source is claimed for this categorical and arithmetic specialization. The
 residue maps are actual supplied morphisms from the recovered downstairs
-neutral special fibre. This unit does not construct a reductive quotient, an
+neutral special fibre. This module does not construct a reductive quotient, an
 identification of an upstairs quotient with a downstairs quotient, a
-facet-parabolic correspondence, a residue torus or its lift, or the host
-fixed-point split torus. These remain separate geometric steps.
+facet-parabolic correspondence, a residue torus or its lift, or the
+fixed-point split torus of `UnramifiedFixedPointSplitTorusStatement`. These remain separate geometric steps.

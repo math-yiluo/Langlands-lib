@@ -47,14 +47,13 @@ definitions. Their provenance is the definitions of `cotangentMap`,
 `cotangentBaseChangePullbackIso`, together with the canonical
 relative-differentials maps and module-pullback coherence used by those
 definitions. No new assertion is attributed to original literature here.
-The missing proof must establish compatibility of those actual comparison
+The proof must establish compatibility of those actual comparison
 maps with the differential of `f`; naturality is not supplied as construction
-data or as a premise.
+data or as a premise. The proof is `Langlands.cotangentBaseChangeNaturalityStatements`,
+in the module `Langlands.AbelianScheme.CotangentBaseChangeNaturalityProof`.
 
 The group-scheme statement imposes no smoothness, commutativity, flatness,
 finite-presentation or other extra geometric condition. The abelian
 specialization uses the existing abelian-scheme bundle and imposes no extra
 condition on either base scheme or on `b`. Invertibility is not required
 to formulate either cotangent square.
-
-Worker 208 authored these statements and their explanation.

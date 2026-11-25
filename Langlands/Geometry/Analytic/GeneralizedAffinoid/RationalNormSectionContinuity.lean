@@ -80,7 +80,7 @@ theorem continuousAt_map_coordinates (d : RationalChart K A)
 
 variable {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   (ρ : G →* Aut A)
-  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+  (hρ : ∀ a : A, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
 
 /-- The actual bounded section action becomes a norm-continuous action from
 the base orbits, with its full original quotient algebra and operator maps. -/
@@ -92,10 +92,10 @@ def normContinuousSectionAction (d : RationalChart K A) :
   apply normContinuousActionOfCoordinates d.algebra (normSectionAction ρ hρ d)
   intro i
   apply d.continuousAt_map_coordinates
-    (fun g : H => (normSectionAction ρ hρ d g).hom)
+    (fun g : H => (normSectionAction ρ hρ d g).asIso.hom)
   intro a
   have hc : Continuous (fun g : H =>
-      (normSectionAction ρ hρ d g).hom.toAlgHom (d.baseMap a)) := by
+      (normSectionAction ρ hρ d g).asIso.hom.toAlgHom (d.baseMap a)) := by
     simp_rw [normSectionAction_baseMap]
     exact d.baseMap.continuous.comp ((hρ a).comp continuous_subtype_val)
   exact hc.continuousAt
@@ -114,18 +114,18 @@ theorem normContinuousSectionAction_actionAut (d : RationalChart K A) :
 open stabilizer topology. -/
 theorem continuous_normSectionAction (d : RationalChart K A) (b : d.algebra) :
     Continuous (fun g : normOpenStabilizer ρ hρ d =>
-      (normSectionAction ρ hρ d g).hom.toAlgHom b) :=
+      (normSectionAction ρ hρ d g).asIso.hom.toAlgHom b) :=
   (normContinuousSectionAction ρ hρ d).property b
 
 /-- Positive displacement tolerances are met in quotient norm near identity. -/
 theorem eventually_normSectionAction_sub_lt (d : RationalChart K A)
     (b : d.algebra) (r : ℝ) (hr : 0 < r) :
     ∀ᶠ g in 𝓝 (1 : normOpenStabilizer ρ hρ d),
-      ‖(normSectionAction ρ hρ d g).hom.toAlgHom b - b‖ < r := by
+      ‖(normSectionAction ρ hρ d g).asIso.hom.toAlgHom b - b‖ < r := by
   have hc : Continuous (fun g : normOpenStabilizer ρ hρ d =>
-      ‖(normSectionAction ρ hρ d g).hom.toAlgHom b - b‖) :=
+      ‖(normSectionAction ρ hρ d g).asIso.hom.toAlgHom b - b‖) :=
     ((continuous_normSectionAction ρ hρ d b).sub continuous_const).norm
-  have hz : ‖(normSectionAction ρ hρ d 1).hom.toAlgHom b - b‖ < r := by
+  have hz : ‖(normSectionAction ρ hρ d 1).asIso.hom.toAlgHom b - b‖ < r := by
     rw [map_one]
     change ‖b - b‖ < r
     simpa only [sub_self, norm_zero] using hr
@@ -166,7 +166,7 @@ theorem mem_normSpectralOpenSubgroup (d : RationalChart K A)
     g ∈ normSpectralOpenSubgroup ρ hρ d b r hr ↔
       ∃ hg : g ∈ normOpenStabilizer ρ hρ d,
         ∀ x : BanachSpectrum d.algebra,
-          x ((normSectionAction ρ hρ d ⟨g, hg⟩).hom.toAlgHom b - b) ≤ r := by
+          x ((normSectionAction ρ hρ d ⟨g, hg⟩).asIso.hom.toAlgHom b - b) ≤ r := by
   exact DomainAutomorphism.mem_domainSpectralSubgroup d.toDomain b r hr.le (ρ g)
 
 /-- Finite positive local tests give a common original-group open subgroup
@@ -183,7 +183,7 @@ theorem mem_finiteNormSpectralOpenSubgroup {ι : Type t} [Finite ι]
     g ∈ finiteNormSpectralOpenSubgroup ρ hρ d b r hr U ↔
       g ∈ U ∧ ∀ i, ∃ hi : g ∈ normOpenStabilizer ρ hρ (d i),
         ∀ x : BanachSpectrum (d i).algebra,
-          x ((normSectionAction ρ hρ (d i) ⟨g, hi⟩).hom.toAlgHom (b i) - b i) ≤ r i := by
+          x ((normSectionAction ρ hρ (d i) ⟨g, hi⟩).asIso.hom.toAlgHom (b i) - b i) ≤ r i := by
   change (g ∈ U ∧ g ∈
     (⨅ i, (normSpectralOpenSubgroup ρ hρ (d i) (b i) (r i) (hr i)).toSubgroup)) ↔ _
   simp only [Subgroup.mem_iInf, OpenSubgroup.mem_toSubgroup, mem_normSpectralOpenSubgroup]

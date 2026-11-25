@@ -2,7 +2,7 @@
 
 This internal construction combines the smooth Galois representations on
 colimit étale cohomology over finite Galois towers (`EtaleGaloisTower`) with
-Worker 61's inverse limit topology on limits of discrete representations
+the inverse limit topology on limits of discrete representations
 (`Cohomology.DivisibleSystem.ContinuousLimit`). For an inverse system of
 coefficient sheaves on a scheme `X` over a field `K` (for instance the
 reductions modulo `ℓ^m` of an `ℓ`-adic coefficient system), it forms the

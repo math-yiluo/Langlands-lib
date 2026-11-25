@@ -1,7 +1,5 @@
 # Depth-zero opposite factors from actual root models
 
-Author: Worker 200.
-
 Lean module:
 `Langlands.Geometry.Building.UnramifiedFixedDepthZeroOppositeModelReduction`.
 

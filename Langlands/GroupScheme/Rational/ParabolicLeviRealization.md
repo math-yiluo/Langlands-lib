@@ -1,7 +1,5 @@
 # One cocharacter realizing a rational parabolic and a rational Levi
 
-Authors: Worker 1491 and Worker 1294.
-
 This module shows that a rational parabolic `j : P → G` of a connected reductive
 group `G` over a field `k`, together with a rational Levi `l : L → P` of it, is
 the dynamic parabolic and dynamic centralizer of one cocharacter. It is
@@ -14,11 +12,9 @@ conditional on two published statements, which appear as explicit hypotheses:
   unipotent radical (`IsGeometricUnipotentRadical`).
 
 Nothing else is assumed. The torus-lift step uses the proved theorem
-`Dynamic.exists_unipotent_conj_of_mul_inv_mem` (Worker 1515), and the remaining
+`Dynamic.exists_unipotent_conj_of_mul_inv_mem`, and the remaining
 steps use the lemmas of `Rational.DynamicLeviConjugacyReduction`.
 The two structural statements are assumptions, not proved by this module.
-Worker 1491 supplied the simultaneous-realization proof and its supporting
-transport lemmas; Worker 1294 added the chosen cocharacter and its specification.
 
 ## Mathematical source and provenance
 

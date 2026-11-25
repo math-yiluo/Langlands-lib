@@ -1,6 +1,6 @@
 # Integral characteristic polynomials of actual subquotients
 
-This derived unit implements the inheritance of spectral integrality under
+This derived module implements the inheritance of spectral integrality under
 actual representation subquotients, a step in the composition-factor argument
 of Kaletha–Prasad, Lemma 2.2.11 (printed pp.72–73, PDF pp.103–104). Its primary
 construction is `Langlands.GroupScheme.MatrixRepresentation.integralCharpolyOfSubquotient`.
@@ -19,7 +19,7 @@ proves the corresponding integral-coefficient predicate directly.
 The field universe is arbitrary. Matrix dimensions may be zero, and the field
 may have any characteristic or valuation rank, including a trivial valuation.
 There are no reductivity, faithfulness, density, topology, local-field or
-semisimplicity assumptions in this unit. `IsSubquotientOf` supplies an actual
+semisimplicity assumptions in this module. `IsSubquotientOf` supplies an actual
 intermediate representation, an injective constant matrix into `ρ`, and a
 surjective constant matrix onto `σ`; its intertwining laws quantify over every
 affine algebra test. No additional rational-point intertwining assumption is
@@ -61,12 +61,14 @@ The implemented proof has the following steps.
    with all three certificates.
 
 The source argument passes to irreducible composition factors over an
-algebraic closure and uses their eigenvalues. This unit isolates and proves
+algebraic closure and uses their eigenvalues. This module isolates and proves
 the inheritance step without requiring irreducibility or a valuation on the
 closure; the coefficient formulation is the one in the published spectral
 prerequisites. It does not assert existence of composition factors, finiteness
-of their common kernel, rational-point density, matrix boundedness, or the
-host `ReductiveSpectralBoundednessStatement`.
+of their common kernel, rational-point density, matrix boundedness, or
+`ReductiveSpectralBoundednessStatement`, the statement this module serves, which
+the Library proves as `reductiveSpectralBoundedness`
+(`Rational.ReductiveSpectralBoundednessProof`).
 
 Sources: Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), Lemma
 2.2.11 and its proof, printed pp.72–73 / PDF pp.103–104; registered source

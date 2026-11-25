@@ -1,7 +1,7 @@
 # Primitive elements, group-like spans and scalar extension
 
 Module `Langlands.RingTheory.Coalgebra.PrimitiveGroupLike`, namespace
-`Langlands.CoetaleHopf`. Author: Worker 894.
+`Langlands.CoetaleHopf`.
 
 This is an internal helper module for the proof of
 `Langlands.GroupScheme.MultiplicativeTypeCharacterizationStatement` (Milne, *Algebraic

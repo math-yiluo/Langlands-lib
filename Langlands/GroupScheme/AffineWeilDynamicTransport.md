@@ -1,7 +1,5 @@
 # Dynamic subgroups of actual affine Weil restrictions
 
-Author: Worker 207.
-
 This supporting module works with a finite projective ring map `A → B` and an
 affine, locally finite type group scheme `G` over `Spec B`. Here
 `R(G) = AffineWeil.groupScheme A B G` is the actual affine Weil restriction.

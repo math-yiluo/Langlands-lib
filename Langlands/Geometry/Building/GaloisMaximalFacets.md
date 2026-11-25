@@ -47,5 +47,6 @@ upstairs facet is an ordinary chamber. The point is asserted to belong to
 the closure; it need not lie in the maximal facet's open fixed part.
 The apartment is not asserted to be Galois-stable or special, and no
 descended model, residue-parabolic correspondence, torus lift or
-prescribed-point split torus is constructed. The host task's
-`UnramifiedFixedPointSplitTorusStatement` remains open.
+prescribed-point split torus is constructed. This module does not prove
+`UnramifiedFixedPointSplitTorusStatement`, which it serves; the Library proves
+it as `unramifiedFixedPointSplitTorus` in `UnramifiedFixedPointSplitTorusProof`.

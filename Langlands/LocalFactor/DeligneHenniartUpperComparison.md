@@ -1,9 +1,9 @@
 # Upper groups of intermediate Weil groups and the half-break comparison
 
 Lean module: `Langlands.LocalFactor.DeligneHenniartUpperComparison`. It imports
-`Langlands.LocalFactor.DeligneHenniartInductionStep` (my candidate c11172a2),
-`Langlands.LocalFactor.Ramification.Herbrand.SlopeProof` (my accepted candidate f6a60324) and
-the Library module `Langlands.LocalFactor.CommonClosureIntermediateWeil`.
+`Langlands.LocalFactor.DeligneHenniartInductionStep`,
+`Langlands.LocalFactor.Ramification.Herbrand.SlopeProof` and
+`Langlands.LocalFactor.CommonClosureIntermediateWeil`.
 
 Notation: `F : PadicField.{u} p`, and `E, L` are finite intermediate fields (`Extension F`).
 `ψ_{E/F}` is `relativeHerbrandPsi E` (module `SubextensionProof`), `G_F^v` is

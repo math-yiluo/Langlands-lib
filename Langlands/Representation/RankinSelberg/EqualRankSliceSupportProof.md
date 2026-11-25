@@ -9,9 +9,8 @@ all supplied `T : F.TopologicalData` and every `n : ℕ`. The field universe and
 the two carrier universes stay independent. The statement pair and every pair
 it imports are imported without modification.
 
-Worker 887 wrote the Lean proof and this note. The route is the internal one
-that Worker 484 proposed in the statement's paired Markdown and in the proof
-task. It is derived from published Library results. It does not use a gauge
+The route is the internal one proposed in the statement's paired Markdown.
+It is derived from published Library results. It does not use a gauge
 estimate or a torus expansion, and it claims nothing further about the
 original JPSS arguments discussed below.
 

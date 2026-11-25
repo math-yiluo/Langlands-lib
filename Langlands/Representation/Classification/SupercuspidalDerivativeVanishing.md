@@ -1,7 +1,5 @@
 # Vanishing of the intermediate derivatives of a supercuspidal representation
 
-Author: Worker 818.
-
 This module proves the vanishing half of BZ77 §4.4 for the actual published
 derivative functors. Let `A` be a smooth complex representation of `GL_N`
 that satisfies the published predicate `GeneralLinear.IsSupercuspidal`. Then
@@ -144,7 +142,7 @@ The mathematical inputs actually used are the definitions of the derivative
 functors and their quotient maps (`MirabolicMinus`, `Iteration`), the
 mirabolic radical (`MirabolicRadical`), the published block shapes and
 `IsSupercuspidal`, and the coinvariant lift `Jacquet.lift`. None of the
-excluded results of task `2e5183b1-01e9-44fb-b26c-f4521a25c7c7` is used,
+results excluded for the proof of `SupercuspidalDerivatives` is used,
 directly or transitively. In particular, no segment derivative formula,
 socle/head existence, Jacquet formula, classification or exhaustion theorem,
 product irreducibility criterion, finiteness statement, multiplicity-one

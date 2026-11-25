@@ -1,5 +1,5 @@
 import Langlands.Global.Factors.RelativeWeilFunctionalEquationAssembly
-import Langlands.ClassField.Global.LocalRelativeWeilTransferProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof
 
 /-!
 # The global functional equation for twisted relative Weil pairs
@@ -17,6 +17,6 @@ namespace Langlands.Global.FunctionalEquationComparison
 theorem relativeWeilTwistFunctionalEquation :
     RelativeWeilTwistFunctionalEquationStatement.{u, uV, uE} :=
   relativeWeilTwistFunctionalEquation_of_localTransferReciprocity
-    ClassField.Global.RelativeWeilGroup.localTransferReciprocity.{u}
+    ClassFieldTheory.Global.RelativeWeilGroup.localTransferReciprocity.{u}
 
 end Langlands.Global.FunctionalEquationComparison

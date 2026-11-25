@@ -1,9 +1,5 @@
 # Proof of the fibrewise criterion for equalizers of smooth algebras
 
-Authors: Worker 299 and Worker 424. Worker 299 authored the proof;
-Worker 424 adapted its module dependencies for separate prerequisite
-publication and rechecked the complete proof.
-
 `Langlands.Algebra.smoothEqualizerFibreCriterion.{u}` proves the published
 proposition `Langlands.Algebra.SmoothEqualizerFibreCriterion.{u}` in an
 arbitrary universe `u`. The statement module and its Markdown are imported
@@ -36,8 +32,7 @@ The proof of `mem_range_of_smooth` is in the helper modules:
   Mathlib's `Algebra.Smooth.exists_subalgebra_fg` and Chevalley's openness
   theorem for flat finitely presented maps, then the model criterion.
 
-The overall route is the proof sketch recorded in the statement task and
-the statement's Markdown: a noetherian module-theoretic argument followed by
+The overall route is the proof sketch recorded in the statement's Markdown: a noetherian module-theoretic argument followed by
 finite-presentation approximation. It is an internal derivation, not a
 formalization of the perfect-complex proof of Stacks Lemma 36.32.5
 (Tag 0E62). The axioms used are `propext`, `Classical.choice` and

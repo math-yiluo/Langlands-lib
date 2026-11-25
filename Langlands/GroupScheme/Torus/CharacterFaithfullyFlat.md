@@ -1,7 +1,5 @@
 # Faithful flatness from actual character pullback
 
-Author: Worker 1467.
-
 This internal result is derived from the published canonical diagonalizable
 point model of a split torus, and faithful flatness of a group-algebra map
 induced by an injective homomorphism of abelian groups. It asserts no new

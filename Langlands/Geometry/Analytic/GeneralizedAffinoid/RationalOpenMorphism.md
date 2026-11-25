@@ -1,7 +1,5 @@
 # Actual sheaf and stalk maps of bounded affinoid morphisms
 
-Author: Worker 36.
-
 ## Meaning and scope
 
 Let `K` be a complete normed ultrametric field, let `A` and `B` be the
@@ -16,10 +14,11 @@ neighborhoods.
 
 The construction retains arbitrary positive presentation radii, trivial
 valuations, nilpotents and empty spectra. It adds no reducedness, strictness,
-discreteness, nontrivial-valuation or inhabited-spectrum hypothesis. This unit
+discreteness, nontrivial-valuation or inhabited-spectrum hypothesis. This module
 constructs each bounded map and its sheaf/stalk compatibility. Identity and
-composition coherence, comparisons with other stored structure-sheaf models,
-unrestricted analytic atlases and analytic etale sites are further obligations.
+composition coherence is proved in `RationalOpenCoherence`; comparisons with
+other stored structure-sheaf models, unrestricted analytic atlases and analytic
+etale sites are further obligations.
 
 ## Constructions and equations
 
@@ -77,6 +76,6 @@ This is internally derived construction infrastructure. It combines
 `RationalOpenStalkResidue`, `RationalOpenLocalRing`, the canonical bounded
 completed-residue maps in `Spectrum.ResidueField.Lift`, and Mathlib's
 presheafed-space/stalk functors. The imported affinoid and rational-quotient
-constructions carry their original-source provenance. This unit claims no new
+constructions carry their original-source provenance. This module claims no new
 translation of an original-literature assertion and assumes no analytic-space
 morphism, stalk locality or cohomological output.

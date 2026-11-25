@@ -1,7 +1,5 @@
 # Proof: the simply connected positive-characteristic conjugation map
 
-Author: Worker 4587.
-
 This module proves the published proposition
 `Langlands.GroupScheme.SimplyConnectedPositiveCharConjugationMapStatement`
 ([`PositiveCharConjugationMapStatement`](PositiveCharConjugationMapStatement.md))

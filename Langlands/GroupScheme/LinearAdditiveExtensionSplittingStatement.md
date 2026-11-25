@@ -1,7 +1,5 @@
 # Splitting of extensions of diagonalizable groups by linear closed additive subgroups
 
-Worker 1421.
-
 `Langlands.GroupScheme.LinearAdditiveExtensionSplittingStatement.{u}`
 is a proposition definition. It records, without proof, the case of
 Milne's Theorem 15.34(d) used for triangular diagonal splitting.
@@ -97,7 +95,7 @@ The pieces correspond as follows.
   does not require `E` to be affine. Here, though, `E` is an extension of
   the affine group `D` by the affine group `U`, so `q` is a torsor under
   an affine group and `E` is affine. The binder `IsAffineHom E.X.hom` is
-  the form the objective specifies; this note explains why it loses
+  the form the statement uses; this note explains why it loses
   nothing, and the Lean proves nothing about it.
 - *Multiplicative type.* Over an algebraically closed field, a group of
   multiplicative type is diagonalizable. Being of finite type, it is
@@ -117,7 +115,7 @@ and 15.30 and that the proofs in Section 15h have been rewritten. The
 registered source entry says that the 2022 reprint contains the rewritten
 Section 15h. The 2022 PDF still prints statements numbered 15.29 and 15.30
 (printed pp.317–318). This module uses neither of them. It states Theorem
-15.34(d) as printed in 2022, as the objective requires, and records no
+15.34(d) as printed in 2022 and records no
 proof route. The latest author errata page for the 2022 reprint, read on
 2026-11-03, has no entry for Theorem 15.34.
 
@@ -130,10 +128,14 @@ The errata snapshot for the 2017 edition is registered as
 ## Use
 
 This statement is a prerequisite for the triangular diagonal splitting
-statement (task `4fe37606-9ed8-4910-a71b-9e0e8ae0a63f`) and its consumer
-(task `d1fee1c3-e435-49e7-a1d4-8b431470d790`). There, as in Milne's
+statement `TriangularDiagonalSplittingStatement`, proved by
+`triangularDiagonalSplitting` in
+`Langlands.GroupScheme.Absolute.TriangularDiagonalSplittingAssembly`, and for
+the statement whose proof uses that one,
+`TriangularDiagonalKernelGeometryStatement`. There, as in Milne's
 Theorems 16.21 and 16.26(a), triangular splitting proceeds by induction
 on a finite normal series. At the last step the quotient extension is
 pulled back along a section built earlier, and this statement provides
 the section of that pulled-back extension. The module contains no proof
-of the proposition.
+of the proposition; `linearAdditiveExtensionSplitting` in
+`Langlands.GroupScheme.LinearAdditiveExtensionSplittingProof` proves it.

@@ -23,7 +23,6 @@ for the glued point family of `SpaceAnalytificationExistenceConstruction`, under
      `affPullback`).
   4. Finish with the algebra map from `C` given by the presheaf pullback property of `Spec C`.
 - `pointFamily_isPullback`: commutativity follows from naturality and `changeRing f x =
-  changeRing g y`. The pullback property follows from Worker 790's
-  `isPullback_of_etale_local_lifts` (module `EtaleHomGluing`, included unchanged from Worker
-  790's staged candidate 65de3fb4-ac93-410d-a5bc-a5a0bf2c8857), with `sheaf`, `jointly_mono`
+  changeRing g y`. The pullback property follows from
+  `isPullback_of_etale_local_lifts` (module `EtaleHomGluing`), with `sheaf`, `jointly_mono`
   and `exists_local_lift`.

@@ -1,9 +1,7 @@
 # Nilpotent elements and degenerate cosets (KP Definition 13.6.5)
 
-Author: Worker 3557.
-
-This module belongs to the Kaletha–Prasad Bruhat–Tits program (task
-`f33d727f-04b8-4fd2-9e9f-2f5c4eb2a703`). It formalizes KP Definition 13.6.5:
+This module belongs to the Library's Kaletha–Prasad Bruhat–Tits development.
+It formalizes KP Definition 13.6.5:
 nilpotent elements of `𝔤` and of `𝔤*` in the sense of 1-parameter subgroups,
 and degenerate cosets. These notions are the input of KP Propositions 13.6.7
 and 13.7.4. The module has six definitions and no theorems.

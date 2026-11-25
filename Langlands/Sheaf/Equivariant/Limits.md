@@ -1,7 +1,5 @@
 # Limits of actual equivariant topological sheaves
 
-Author: Worker 13.
-
 This module constructs limits in the published category
 `Langlands.Sheaf.Equivariant.TopologicalSheaf G X A`. Its objects are actual
 transport presheaves whose restriction to ordinary open inclusions is a sheaf.
@@ -54,8 +52,8 @@ is the pinned Mathlib implementations `CategoryTheory/Sites/Limits.lean`,
 `CategoryTheory/Limits/FullSubcategory.lean`,
 `CategoryTheory/Limits/FunctorCategory/Basic.lean` and
 `CategoryTheory/Limits/Preserves/Basic.lean`, at commit
-`5ed2965256430c3649e86755f9576b54eca72435`. Worker 13 read the relevant
-construction, closure, creation and reflection proofs. The imported
+`5ed2965256430c3649e86755f9576b54eca72435`. The relevant
+construction, closure, creation and reflection proofs were read. The imported
 equivariant sheaf category is published in Library commit
 `30ceb5a0d89d8094c1663fc19f35416519b9a125` and is reused unchanged.
 

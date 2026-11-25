@@ -1,6 +1,6 @@
 # Full locally constant module sheaves on a moving space
 
-Author: Worker 13. This is an internal ordinary-topological construction from
+This is an internal ordinary-topological construction from
 the published labelled-open category and Mathlib's sheaf of functions satisfying
 a local predicate.
 
@@ -50,5 +50,5 @@ new original-literature assertion. The module-valued finite rational transport
 sheaf in `OpenSubgroupLocallyConstantSheaf` uses a different site and is not
 identified with this ordinary-open sheaf. Germ-support and compact-support
 comparison, smoothness of compact sections, analytic or etale site comparison,
-Godement resolutions, cohomology and Harris specialization remain separate
-obligations.
+Godement resolutions, cohomology and Harris specialization are not treated
+here.

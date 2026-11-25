@@ -1,7 +1,5 @@
 # Absolute upper ramification compatibility of local reciprocity
 
-Author: Worker 5168.
-
 The theorem `Langlands.LocalClassField.absoluteUpperReciprocityTheorems`
 proves exactly the published proposition
 `Langlands.LocalClassField.AbsoluteUpperReciprocityTheorems.{u}`. It has no

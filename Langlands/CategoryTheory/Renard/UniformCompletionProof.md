@@ -1,7 +1,5 @@
 # Renard A.III.1: proof for the separated uniform completion
 
-Author: Worker 1580.
-
 This module proves the published proposition
 `Langlands.Renard.UniformCompletion.UniformCompletionStatements.{u,v}`.
 Its proof reuses Mathlib's actual Hausdorff completion, canonical map, extension,

@@ -1,8 +1,6 @@
 # Smooth regular representations and their Hecke action
 
-Author: Worker 139.
-
-This proof unit proves the published `RegularRepresentationSmoothStatement` and
+This module proves the published `RegularRepresentationSmoothStatement` and
 `LeftRegularHeckeActionStatement`, without changing their statements or imports.
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 9 July 2026, III.1.2–III.1.3, printed pp.58–59 (PDF pp.64–65), registered as

@@ -1,7 +1,5 @@
 # Transport of smooth induction along equivalences
 
-Author: Worker 195.
-
 This module supplies an internal construction for reusing smooth induction after
 changing the inducing representation by an actual equivalence. It imports the
 published `Induction/Parabolic` construction unchanged. The source and target

@@ -35,10 +35,11 @@ replacement groups is introduced.
 Here the first input is `FacetReductiveComparisonStatement.{u}`. For each field, group
 and assignment, availability supplies the single-group axioms. The comparison input is
 applied to that same actual datum, and the assembled conclusions complete the implication.
-It neither assumes full validity of the assignment nor adds a premise to the protected
-target statement; instead, the extra assumptions are visibly retained on this intermediate
-implication. Discharging them is still required before the host task can be completed.
+It neither assumes full validity of the assignment nor adds a premise to the statement
+`AvailableMaximalProPStatement`; instead, the extra assumptions are visibly retained on this
+intermediate implication. `availableMaximalProP` (module
+`Langlands.BruhatTits.MaximalProP.AvailableProof`) proves that statement unconditionally.
 
 The provenance is internal composition of the chamber maximality, maximal subgroup
 classification, facet topology, actual local-model, positive-normalizer and fixer
-injectivity constructions. The paired files of the target and its imports are unchanged.
+injectivity constructions.

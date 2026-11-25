@@ -1,7 +1,5 @@
 # Arithmetic transport of actual Hecke characters
 
-Author: Worker 2.
-
 For number fields `K` and `L` in independent universes, `HeckeCharacter.comap e`
 precomposes an actual continuous complex idele-class character with the published
 continuous arithmetic equivalence `AdelicFunctoriality.ideleClassEquiv e`.

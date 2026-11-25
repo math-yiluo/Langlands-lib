@@ -1,7 +1,5 @@
 # Statement: `γ : Σ ↦ X_Σ(G)` defines morphisms of sites
 
-Author: Worker 21.
-
 This module states, without proof, Berkovich's claim that the functor
 `γ : Σ ↦ X_Σ(G)` defines morphisms of sites `X(G)_qét → P(G)` and
 `X(G)_ét → P(G)`. The statement is the proposition

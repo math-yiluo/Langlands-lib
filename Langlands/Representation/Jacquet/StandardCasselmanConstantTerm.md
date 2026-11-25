@@ -1,7 +1,5 @@
 # The constant term for actual standard parabolic subgroups (Waldspurger, Proposition I.6.2)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.Representation.Jacquet.StandardCasselmanConstantTerm`, namespace
 `Langlands.BruhatTits.SpecialCompact` (one generic lemma in `Langlands.Jacquet`).
 
@@ -22,7 +20,7 @@ Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S147474
 (literature id `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
 numbers; the PDF page is the printed page minus 234. The quotations below are those of the
-published `DynamicCasselmanConstantTerm.md`, checked by the author on the rendered PDF pages 5,
+published `DynamicCasselmanConstantTerm.md`, checked on the rendered PDF pages 5,
 6, 9, 11, 15 and 16.
 
 - I.1, printed p. 238: "Soit `G` un groupe linéaire algébrique réductif et connexe". Printed
@@ -139,7 +137,7 @@ in the Lean statements.
 - `IsStandardConstantTerm.eq_of_isRightFinite`: for such `y`, two constant terms of the same `f`
   that are finite under right translation by `⟨y⟩` (the Library's `IsRightFinite`) are equal.
 - `HasStandardConstantTerm hA f` (definition): `f` has a constant term that is right finite for
-  the image of `A(F)`. **`standardConstantTerm hA f`** (definition, the recorded declaration): that
+  the image of `A(F)`. **`standardConstantTerm hA f`** (definition, the entry declaration): that
   constant term when one exists, `0` otherwise; `HasStandardConstantTerm.isRightFinite`,
   `HasStandardConstantTerm.isStandardConstantTerm`.
 - `isRightFinite_comp_mul_right'`, `isRightFinite_comp_mul_left'`: right finiteness for a central

@@ -1,7 +1,5 @@
 # Topological colimit of the actual spectrum charts
 
-Author: Worker 36.
-
 This derived construction starts with a supplied `IndexedAffinoidAtlas` over a
 complete ultrametric normed field. It uses the actual affinoid spectra, bounded
 restriction maps, embedded chart ranges and the atlas's net property. The field,

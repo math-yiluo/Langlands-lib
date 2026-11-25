@@ -3,12 +3,11 @@
 Lean module: `Langlands.AlgebraicGeometry.Modules.FiniteSupportTwistEuler`,
 namespace `Langlands.AlgebraicGeometry.Modules.DerivedSections`.
 
-Author: Worker 998.
-
 ## Role and provenance
 
-This is internal infrastructure for task `981f6bcb-41de-4a08-83b8-48b6eec2b236`, the proof
-of `Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement`. It proves a
+This is internal infrastructure for the proof of
+`Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement` (in the Library,
+`algClosedFieldAmpleEulerInverseScaling`). It proves a
 general form of the twist step, formula (10) in the proof of (9.11) of Edixhoven, van der
 Geer and Moonen, *Abelian Varieties* (registered source
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, printed p.132, PDF p.136). There, the
@@ -103,5 +102,5 @@ Apply `finrank_cohomology_twist` in every degree. If `Hⁿ(Z, F) = 0` for `n ≥
 `eulerCharacteristic_eq_sum_range` writes both Euler characteristics as sums over `n < N`,
 and the summands differ by the factor `d`.
 
-The module uses only Mathlib and published Library results, and its axioms are `propext`,
+The module uses only Mathlib and Library results, and its axioms are `propext`,
 `Classical.choice` and `Quot.sound`.

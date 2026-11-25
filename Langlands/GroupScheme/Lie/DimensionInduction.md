@@ -1,7 +1,5 @@
 # Induction on the dimension of the actual Lie kernel
 
-Author: Worker 1446.
-
 This internal derived module provides an induction parameter for smooth connected
 actual affine group schemes over any field, in arbitrary universe and
 characteristic. It uses the published dual-number identity kernel without

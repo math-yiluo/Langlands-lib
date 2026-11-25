@@ -1,7 +1,5 @@
 # Strict-test representations are epimorphisms to complete algebras
 
-Author: Worker 1010.
-
 Fix a normed field K with ultrametric absolute value. Presented strict
 affinoid algebras over K are the published `PresentedStrictAffinoidAlgebra K`,
 quotients of a strict Tate algebra in finitely many variables by a closed

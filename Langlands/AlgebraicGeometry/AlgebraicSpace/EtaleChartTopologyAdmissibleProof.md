@@ -1,7 +1,5 @@
 # Proof of Conrad's Proposition 5.4 (corrected to locally separated spaces)
 
-Author: Worker 105.
-
 This module proves `EtaleChartTopologyAdmissibleStatement`: Proposition 5.4 of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed
 pp.14–15 (source

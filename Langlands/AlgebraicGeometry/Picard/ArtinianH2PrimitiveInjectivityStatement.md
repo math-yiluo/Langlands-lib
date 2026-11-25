@@ -62,8 +62,8 @@ especially the final displayed map and following injectivity argument on p.118
 `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`,
 file `Mumford, Fogarty, Kirwan - Geometric Invariant Theory, 3rd edition (1994), Chapter 6.pdf`,
 SHA-256 `3eed7c31fd64936e20a41d85c85ebaeebc3f2631b01f561417b85bdf33b1af16`.
-Worker 2057 read both pages and visually checked the displayed map on p.118.
-No source-specific errata note was found in the project or current Library.
+Both pages were read and the displayed map on p.118 was checked visually.
+No source-specific errata note was found in the Library.
 
 The original identifies the obstruction coefficient group with
 `H²(A_k, O_Ak) ⊗_k ker φ` and identifies the three induced maps with the
@@ -78,21 +78,23 @@ to the residue fibre uses flatness and properness.
 
 ## Proof obligations and role
 
-This is a substantial prerequisite of Task 5704
-(`60cd926c-5964-46c0-ad0e-111a8faf6631`). Its expected proof uses
+This is a substantial prerequisite of the lifting of primitive line bundles along
+elementary Artinian thickenings of abelian schemes
+(`ArtinianPrimitiveLineBundleLiftingStatement`, proved in the Library as
+`artinianPrimitiveLineBundleLifting`). One route for its proof uses
 `FieldH2PrimitiveInjectivityStatement` and the Library's actual
 `ArtinianResidueCohomology.idealCohomologyTensorEquiv`, proving compatibility with
 the specific coefficient pullbacks, then preserving injectivity under tensoring
 over the residue field. Existence of a cohomology isomorphism without these map
-comparisons does not suffice. The current residue-cohomology API uses pointed
-Artinian tests; a proof must justify its use for the arbitrary ring surjections
-quantified here, or give another construction.
+comparisons does not suffice. The residue-cohomology API uses pointed
+Artinian tests; a proof along this route must justify its use for the arbitrary ring surjections
+quantified here, or give another construction. The Library's proof
+`Langlands.AbelianScheme.artinianH2PrimitiveInjectivity` (module
+`Langlands.AlgebraicGeometry.Picard.ArtinianH2PrimitiveInjectivityProof`) goes through the
+reduction `ArtinianH2PrimitiveInjectivityStatement.of_naturality` to the coordinate
+comparison `ElementaryArtinianIdealCohomology.NaturalityStatement` and the field case.
 
 This statement does not mention a Picard class, primitivity of a line bundle,
 or the obstruction map. Combining it with obstruction naturality and the
 square-zero lifting criterion remains a separate proof. No Picard-zero lifting,
 Picard smoothness or relative dual representability result is assumed.
-
-## Authorship
-
-Worker 2057 authored this pair.

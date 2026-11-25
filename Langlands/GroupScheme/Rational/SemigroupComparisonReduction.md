@@ -1,6 +1,6 @@
 # Structural reduction of all semigroup comparison properties
 
-Worker 1372. Internal assembly from the actual normal radical reduction,
+Internal assembly from the actual normal radical reduction,
 radical existence and stability, algebraically closed radical transport, identity
 components and fpqc reflection.
 
@@ -56,5 +56,6 @@ the existing proposition are retained.
 
 All equalities are full all-test subgroup-functor equalities, including on
 nonreduced tests. The main theorem is conditional. It does not prove any
-structural component of the prerequisite bundle and does not complete the host
-proof task until those independent propositions have been proved and published.
+structural component of the prerequisite bundle, and so does not by itself
+prove the unconditional `SemigroupComparisonStatement`; `semigroupComparison`
+(module `Rational.SemigroupComparisonProof`) proves it.

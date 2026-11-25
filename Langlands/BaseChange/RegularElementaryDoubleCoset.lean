@@ -113,7 +113,7 @@ private theorem valuation_algEquiv (x : E.Carrier) : v (τ x) = v x := by
   by_cases hx : x = 0
   · simp [hx]
   rw [discreteValuation_eq_exp_neg_ord D ((map_ne_zero τ).mpr hx),
-    discreteValuation_eq_exp_neg_ord D hx, LocalClassField.NYLL.ord_eq_of_algEquiv τ D D]
+    discreteValuation_eq_exp_neg_ord D hx, LocalClassField.UniverseZero.ord_eq_of_algEquiv τ D D]
 
 theorem entrywiseAut_mem_principalLevel_iff (π : E.Carrierˣ) (hπ : IsUniformizingElement v π)
     (a : ℕ) (g : L) : τG g ∈ J a ↔ g ∈ J a := by

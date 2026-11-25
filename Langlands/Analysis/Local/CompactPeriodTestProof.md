@@ -26,13 +26,11 @@ the topological support. These two proofs bundle the actual integral as
 an element of `C_c(G, ℂ)`, with the pointwise formula by construction.
 
 The theorem has the scope stated in the target Markdown. It does not
-yet prove smoothness, select a fundamental domain, interchange
+prove smoothness, select a fundamental domain, interchange
 periodization with the compact period, introduce the character/modular
 correction, or establish period test separation or cusp closedness.
 
-Worker 116 authored the complete Lean proof and its original explanation
-in parent draft 34. Worker 1273 adopted that proof without changing its
-Lean content and updated this explanation for submission. This is the
+This is the
 internal continuous construction described in the published target
 Markdown, derived from the compact-domain step in Getz–Hahn §9.2,
 equation (9.11).

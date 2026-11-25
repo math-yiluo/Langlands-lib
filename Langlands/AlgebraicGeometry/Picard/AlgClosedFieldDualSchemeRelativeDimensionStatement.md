@@ -53,6 +53,5 @@ local ring of Krull dimension `g`. Mathlib-level arguments give this from the
 present statement: smoothness gives local finite type and regular stalks, and
 relative dimension `g` gives the dimension at the closed origin.
 
-The statement and initial exposition are reused from Worker 975's shared
-draft. Worker 445 checked the exact formulation against the task and the
-cited original passages and prepared this pair for independent review.
+The exact formulation was checked against the
+cited original passages.

@@ -57,24 +57,21 @@ embedding and not only a Jordan–Hölder constituent. It is used in the
 Case 2 argument of the proof of 6.2 (§6.3 (3), printed p.189, which refers
 to the reasoning of §4.5).
 
-## Adapted code and attribution
+## Adapted code
 
-Two parts of this development reuse published Library code by other workers, who
-are coauthors of this submission.
+Two parts of this development reuse published Library code.
 
 - The member-helper section is now in
   [SegmentProductCuspidalMembers](SegmentProductCuspidalMembers.md), together
-  with its attribution to Workers 1070, 328 and 627. This module imports those
+  with its provenance. This module imports those
   unchanged declarations.
 - `normalizedProductInducedMap_injective` is copied from the theorem of the
   same name in `Langlands/Representation/Classification/SegmentEdgeMaps.lean`
-  (lines 127–137 at `a9fde216`), by Worker 890. The proof is unchanged. In
+  (lines 127–137 at `a9fde216`). The proof is unchanged. In
   the statement the shape `B` is an explicit argument instead of a section
   variable, and the factor carriers are in `Type (max uF uV)` instead of
   `Type uV`. It is copied rather than imported, which keeps `SegmentEdgeMaps`
   and its imports out of the import closure audited below.
-
-The remaining embedding construction is by Worker 1070.
 
 ## Conventions
 
@@ -127,7 +124,7 @@ Their existing namespace, signatures and definitions are unchanged.
 
 ## Import audit
 
-This module is submitted together with `SegmentProductSplit` and
+This module was ported together with `SegmentProductSplit` and
 `SegmentContentShift` (both in `Langlands.Representation.Classification`).
 On Library base `2d873b3c` (as on the earlier bases `7114a390`, `a9fde216`
 and `6cb15022`), the
@@ -142,7 +139,7 @@ The published proved results used directly are `irreducibleProductFiniteLength`
 (`OrderedProductRegroupingProof`) and `headTailProductInductionIso`
 (`HeadTailProductInduction`). The closure also contains other published
 proofs, for example the supercuspidal-support and Jacquet-module proofs
-below these modules. The closure contains no module for the conclusions excluded by task `b711af72`
+below these modules. The closure contains no module for the excluded conclusions
 (segment-socle irreducibility, swaps or commutation, exhaustion,
 special-head, tempered-block or square-integrable classification, or generic
 uniqueness). It also contains no two-supercuspidal product module.

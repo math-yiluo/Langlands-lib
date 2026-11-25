@@ -381,10 +381,10 @@ theorem cmHarrisTorsionTransport_comm {X Y : CMScaledLevel D ρ p} (f : X ⟶ Y)
     (h : k' ≤ k) (v : X.level.obj.subgroup) (u : Y.level.obj.subgroup)
     (hu : (u : D.rationalInvolution.FiniteAdelicPointsᵐᵒᵖ) =
       ((CMScaledLevel.Hom.hom f).hom.element)⁻¹ * v * (CMScaledLevel.Hom.hom f).hom.element) :
-    ((cmHarrisTorsionSystem D ρ p Y.level (harrisCoefficientPrime p)).obj (op k)).ρ u ≫
+    (((cmHarrisTorsionSystem D ρ p Y.level (harrisCoefficientPrime p)).obj (op k)).ρ u).asHom ≫
         cmHarrisTorsionTransport D ρ p f h =
       cmHarrisTorsionTransport D ρ p f h ≫
-        ((cmHarrisTorsionSystem D ρ p X.level (harrisCoefficientPrime p)).obj (op k')).ρ v := by
+        (((cmHarrisTorsionSystem D ρ p X.level (harrisCoefficientPrime p)).obj (op k')).ρ v).asHom := by
   ext x
   obtain ⟨a, rfl⟩ := Submodule.Quotient.mk_surjective _ x
   have hel : (CompactOpenLevel.inverseOppositeEquiv Y.level.obj u :
@@ -398,7 +398,7 @@ theorem cmHarrisTorsionTransport_comm {X Y : CMScaledLevel D ρ p} (f : X ⟶ Y)
   have key := cmHarrisLatticeTransport_harrisAdelic D ρ p f
     (CompactOpenLevel.inverseOppositeEquiv X.level.obj v) a
     (((harrisLatticeAction ρ p (CompactOpenLevel.inverseOpposite Y.level.obj)).ρ
-      (CompactOpenLevel.inverseOppositeEquiv Y.level.obj u)).hom a)
+      (CompactOpenLevel.inverseOppositeEquiv Y.level.obj u)).asHom.hom a)
     ((harrisLatticeAction_apply ρ p _ (CompactOpenLevel.inverseOppositeEquiv Y.level.obj u)
       a).trans (by rw [hel]))
   exact congrArg Submodule.Quotient.mk (Subtype.ext key)

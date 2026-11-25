@@ -72,7 +72,7 @@ theorem lieMap0Linear_apply {A B : AbelianScheme S} (f : Hom0 A B) :
 
 @[simp]
 theorem lieMap0_end (A : AbelianScheme S) (f : End0 A) :
-    lieMap0 p f = lieEnd0Action p A f := rfl
+    lieMap0 p f.asHom = (lieEnd0Action p A f).asHom := rfl
 
 /-- Restriction along the integral inclusion recovers the actual Lie functor. -/
 def rationalLieInclusionIso : rationalization S ⋙ rationalLieFunctor p ≅ lieFunctor S := by
@@ -120,22 +120,22 @@ def lieRationalOrderAction (A : AbelianScheme S) {O : Type v} [Ring O]
 @[simp]
 theorem lieRationalOrderAction_apply (A : AbelianScheme S) {O : Type v} [Ring O]
     (α : O →+* End0 A) (a : O) :
-    lieRationalOrderAction p A α a = lieMap0 p (α a) := rfl
+    lieRationalOrderAction p A α a = CategoryTheory.End.of (lieMap0 p (α a).asHom) := rfl
 
 /-- The rational Lie action specializes to the integral differential action. -/
 theorem lieRationalOrderAction_integral (A : AbelianScheme S) {O : Type v} [Ring O]
     (α : O →+* CategoryTheory.End A) :
     lieRationalOrderAction p A ((endToEnd0 A).comp α) =
       (lieEndAction A).comp α := by
-  ext a
+  ext a : 1
   exact lieEnd0Action_ofEnd p A (α a)
 
 /-- Rational intertwining implies intertwining by the actual Lie differential. -/
 theorem lieMap0_intertwines {A B : AbelianScheme S} {O : Type v} [Ring O]
     (α : O →+* End0 A) (β : O →+* End0 B) (f : Hom0 A B)
-    (hf : ∀ a, comp0 A A B (α a) f = comp0 A B B f (β a)) (a : O) :
-    lieRationalOrderAction p A α a ≫ lieMap0 p f =
-      lieMap0 p f ≫ lieRationalOrderAction p B β a := by
+    (hf : ∀ a, comp0 A A B (α a).asHom f = comp0 A B B f (β a).asHom) (a : O) :
+    (lieRationalOrderAction p A α a).asHom ≫ lieMap0 p f =
+      lieMap0 p f ≫ (lieRationalOrderAction p B β a).asHom := by
   have h := congrArg (lieMap0 p) (hf a)
   simpa only [lieMap0_comp, lieRationalOrderAction_apply] using h
 

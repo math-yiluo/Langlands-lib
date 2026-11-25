@@ -1,6 +1,6 @@
 # The Silberger side of the head comparison
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiSilbergerSide`,
+Module `Langlands.Representation.Classification.A6iiSilbergerSide`,
 namespace `Langlands.Classification.A6ii`. Internal helper for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`).
 

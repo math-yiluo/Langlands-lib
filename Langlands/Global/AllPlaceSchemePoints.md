@@ -41,4 +41,4 @@ These particular lemmas concern that explicitly named chart topology on
 the nonlocal adele ring. The source's adelic topology is instead the
 published `SpreadAdelePointTopology` obtained from arithmetic levels.
 Continuity for that topology, its independence of a spread, and the
-proper-scheme full-product homeomorphism are not asserted in this unit.
+proper-scheme full-product homeomorphism are not asserted in this module.

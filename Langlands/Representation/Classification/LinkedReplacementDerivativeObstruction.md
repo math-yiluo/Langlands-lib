@@ -1,7 +1,5 @@
 # A terminal witness with replacement derivative nonoccurrence
 
-Author: Worker 357.
-
 This internal construction returns an actual terminal segment for a preceding
 linked pair, its cut and endpoint data, together with a universal derivative
 nonoccurrence property for supplied special-head products of its
@@ -41,7 +39,7 @@ Subquotient relations are written constituent first. `Q` need not be
 irreducible. No additional finiteness, nonlinkage, distinctness, chosen block
 representative, or multiplicity premise is added. The exact list retains the
 order `U` then a present intersection; when `I=none` it has just one factor.
-This unit makes no claim about other lists or arbitrary additional factors.
+This file makes no claim about other lists or arbitrary additional factors.
 Taking `Q=d.induced` gives the whole-replacement instance by the published
 reflexive subquotient relation.
 
@@ -57,7 +55,7 @@ This is a derived internal assembly with an empty source list, rather than a
 new transcription of a literature theorem. The unchanged terminal-witness
 pair explains its interval geometry and its context in Zelevinsky 1980,
 section 9.9, printed page 201. The original linked-pair side is the intended
-occurrence side; this unit establishes nonoccurrence on the replacement side.
+occurrence side; this file establishes nonoccurrence on the replacement side.
 It supplies no occurrence on the original side and no product isomorphism.
 
 The implementation uses exactly these three direct published imports.
@@ -101,7 +99,7 @@ published paired explanation records that route.
 
 The native recursive audit against published Library
 `50c05a5877c13ea23a52ea298c0ec2bd6fdb0817` contains 1256 project modules,
-including this entry, and 321 distinct directly named external frontier
+including this one, and 321 distinct directly named external frontier
 imports. Every one of the 1255 inherited Lean/Markdown pairs is byte-identical
 to that Library. All pairs are nonempty and every project import is present.
 The complete project inventory and external frontier follow. This does not
@@ -111,8 +109,8 @@ Of the inherited pairs, 1246 match both fingerprints in the earlier complete
 terminal-product-support audit, six further pairs match the terminal-witness
 closure audit, and two further pairs match the independently published
 unlinked-head-product closure audit. The remaining pair is the actual
-terminal-witness entry itself: both hashes match its independently accepted
-and published frozen pair. Thus every inherited fingerprint is reconciled;
+terminal-witness module itself: both hashes match its published pair.
+Thus every inherited fingerprint is reconciled;
 there is no changed or unmatched inherited source.
 
 The comment/string-stripped name scan, followed by route inspection, has no
@@ -124,43 +122,37 @@ Broader `TwoSupercuspidalProductStructureStatement` imports are proposition
 interfaces; the actual structure proof is absent. Imported Prop definitions
 are not used as proved results.
 
-The six trusted operator rulings were read in full:
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md),
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md),
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md),
-[ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md),
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md),
-and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md).
-They retain the host's exclusions and permit the independently proved
-support-only theorem. This constructor invokes only its final product-support
-projection; it invokes no `core_mid`, `core`, at-most-one-simple-factor
-consequence, `SegmentHeadSupportStep` helper or
-`SegmentHeadJacquetReduction` theorem as an input. The permitted support-proof
-intermediates remain confined to that proof's length-two base. Their presence
+This constructor invokes only the final product-support projection of the
+independently proved support-only theorem; it invokes no `core_mid`, `core`,
+at-most-one-simple-factor consequence, `SegmentHeadSupportStep` helper or
+`SegmentHeadJacquetReduction` theorem as an input. The support-proof
+intermediates are confined to that proof's length-two base. Their presence
 inside its unchanged transitive import closure does not make them additional
 inputs to this construction.
 
-The route uses no Ze80 3.5/9.6 segment derivative formula or proof successor,
-no segment-socle derivative input or segment-socle part of task `8e5b4563`,
+The route uses no Ze80 3.5/9.6 segment derivative formula or file proving one,
+no segment-socle derivative input or segment-socle part of
+`SegmentSocleDerivativesStatement`,
 no full segment/head/socle/Jacquet formula, and no downstream classification
-conclusion. It is independent of the full host criterion in either direction,
+conclusion. It is independent of the full product criterion
+`SegmentHeadProductIrreducibility` in either direction,
 parent generic-segment product uniqueness, multisegment exhaustion, ordered
 strong-head existence, quotient coverage, ordered conversion, tempered
 uniqueness, square-integrable classification and exhaustion, and regular
-exhaustion. No pending candidate is consumed. There are no proof holes, new
+exhaustion. There are no proof holes, new
 axioms or prohibited execution constructs in the scanned project code.
 
-## Validation and remaining host obligations
+## Validation and what is not proved here
 
-The draft and ordinary entries compiled through the approved Lean service
-with zero errors and zero warnings. The ordinary selected-constructor Lake
-inspection reports independent level parameters `uF,uV`, definition kind with
+Compilation reports zero errors and zero warnings. Lake inspection of the
+selected constructor reports independent level parameters `uF,uV`, definition kind with
 an actual-data result, and only `propext`, `Classical.choice` and `Quot.sound`.
-Compilation and the author's audit do not establish
-independent semantic acceptance. The full host product criterion remains
-unproved: original-pair occurrence, comparison with the replacement, linked
-reducibility and arbitrary-family reduction require additional work. This
-unit is only the actual witness with replacement nonoccurrence.
+Original-pair occurrence, comparison with the replacement, linked
+reducibility and arbitrary-family reduction are not proved here; the full
+product criterion `SegmentHeadProductIrreducibility` is proved as
+`segmentHeadProductIrreducibility` in `SegmentHeadProductIrreducibilityProof`,
+which imports this file. This
+file is only the actual witness with replacement nonoccurrence.
 
 ## Complete project import inventory
 

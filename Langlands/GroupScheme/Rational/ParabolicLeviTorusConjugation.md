@@ -1,7 +1,5 @@
 # Conjugating a supplied maximal split torus into a rational Levi
 
-Author: Worker 1340.
-
 This internal derived module applies to a connected reductive group `G` over
 an arbitrary field, an actual parabolic `p : P → G`, a supplied rational Levi
 `l : L → P`, and an ambient maximal split torus `i : T → G` contained in `P`

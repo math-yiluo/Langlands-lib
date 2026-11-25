@@ -1,7 +1,5 @@
 # Coefficients of homomorphisms from lattice tori, and central homomorphisms
 
-Author: Worker 1178.
-
 This internal module proves the key coefficient identity behind images of
 homomorphisms from lattice tori, and reformulates centrality of natural
 homomorphisms by a single universal identity.

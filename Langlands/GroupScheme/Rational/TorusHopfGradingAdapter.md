@@ -26,11 +26,10 @@ properties. Connectedness is not a premise. The explicit affineness
 hypotheses match the interface used by the split-unipotence consumer.
 
 This is an internal composition of the coordinate grading, compatible
-coordinate comparison, and grading transport constructions. Worker 1324
-assembled this adapter and the coarsening/transport bridge; Worker 1285
-constructed the coordinate comparison, with Worker 1324 contributing its
-identification route. The unchanged supporting torus-unipotence helpers retain
-Workers 1388 and 1398 authorship. No new assertion is attributed to external
-literature. This contribution supplies the actual Hopf grading prerequisite;
-the split-unipotence and complete semigroup-realization conclusions remain
-consumer obligations.
+coordinate comparison, and grading transport constructions. The coordinate
+comparison is in `Rational.HopfCoordinateComparison`, and the coarsening and
+transport bridge in `Rational.TorusGradedHopf`. The supporting torus-unipotence
+helpers are used unchanged. No new assertion is attributed to external
+literature. This module supplies the actual Hopf grading prerequisite;
+the split-unipotence and complete semigroup-realization conclusions lie outside
+this module.

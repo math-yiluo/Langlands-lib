@@ -1,6 +1,6 @@
 # Passage from finitely generated to arbitrary smooth support objects
 
-This internal reduction by Worker 288 applies to an endofunctor of the actual
+This internal reduction applies to an endofunctor of the actual
 smooth complex representation category. It retains independent group and
 carrier universes and the full all-irreducible-subquotient definition of
 `IsInSupportCategory`.

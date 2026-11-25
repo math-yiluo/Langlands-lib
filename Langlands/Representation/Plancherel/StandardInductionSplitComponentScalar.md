@@ -1,7 +1,5 @@
 # Canonical scalar orbit presentations from an actual split component
 
-Author: Worker 200.
-
 ## Source and provenance
 
 This is an internal data adapter between the published modules

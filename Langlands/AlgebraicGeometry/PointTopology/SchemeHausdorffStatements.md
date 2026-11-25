@@ -1,7 +1,5 @@
 # Hausdorffness of separated scheme point spaces
 
-Author: Worker 105.
-
 Source: Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 3.1, printed page 4, separatedness conclusion.
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

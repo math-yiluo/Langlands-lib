@@ -1,7 +1,5 @@
 # Full strong maps under original-domain localization
 
-Author: Worker 36.
-
 This derived construction fixes actual indexed affinoid atlas presentations
 `A` and `B` over a complete ultrametric normed field. For an original-chart
 domain `S` of `A` and an original-chart domain `U` of the constructed atlas
@@ -20,7 +18,7 @@ and Definition 1.3.1, printed p.23 / PDF p.20 (contained-chart atlas of a
 domain and canonical inclusion). The registered source is
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These pages were reread for this unit. The construction is derived for the
+These pages were reread for this module. The construction is derived for the
 published fixed-original-chart domains. It is not a separately numbered
 assertion about all domains of a saturated analytic atlas.
 
@@ -75,7 +73,7 @@ The target atlas `B` is arbitrary, with no directedness, greatest chart or
 reducedness hypothesis. The coefficient, point and chart-index universes
 remain independent. Empty domains are allowed. No equality of bounded
 algebra maps is inferred from their induced point maps.
-This unit constructs transport and a natural isomorphism of presheaves;
+This module constructs transport and a natural isomorphism of presheaves;
 arbitrary-cover sheaf descent, general strong composition, atlas extension,
-structure sheaves, etale and equivariant sites and the Harris tower remain
-separate obligations.
+structure sheaves, etale and equivariant sites and the Harris tower lie
+outside it.

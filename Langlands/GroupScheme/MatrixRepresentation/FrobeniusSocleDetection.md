@@ -1,6 +1,7 @@
 # Socle detection in the actual Frobenius distribution algebra
 
-This derived unit combines actual augmentation nilpotence and the perfect
+This module, derived rather than taken from a source, combines actual
+augmentation nilpotence and the perfect
 convolution pairing. The augmentation socle consists of all distributions killed
 on the left by the augmentation ideal. Subtracting the scalar augmentation from
 any distribution shows that a socle element is a left convolution integral.

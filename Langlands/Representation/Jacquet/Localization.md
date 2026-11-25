@@ -8,7 +8,7 @@ ring, group, and representation carriers have independent universes `uR`,
 finite-dimensionality, admissibility, irreducibility, or finite-length
 hypothesis is used.
 
-All declarations are in `Langlands.Jacquet.Localization`. Author: Worker 118.
+All declarations are in `Langlands.Jacquet.Localization`.
 
 ## Actual quotient and universal property
 
@@ -77,8 +77,8 @@ used: taking a quotient preserves `Type uV`.
 ## Smoothness and the trivial-character comparison
 
 For `[TopologicalSpace G]`, the subgroups have their induced topologies.
-`isSmooth_action` first applies the accepted smooth restriction theorem along
-the continuous subtype inclusion `M → G`, then the accepted smoothness
+`isSmooth_action` first applies the smooth restriction theorem along
+the continuous subtype inclusion `M → G`, then the smoothness
 descent theorem for the surjective intertwiner `quotientMap`. It proves
 smoothness from `IsSmooth ρ`; smoothness of the output is not an extra input.
 Continuity of multiplication, closedness of either subgroup, and local
@@ -97,8 +97,8 @@ from the localized action at `θ = 1` to the existing
 `Langlands.Jacquet.action ρ U M hMU`. It sends the class of `v` to the class
 of the same `v`, as stated in `trivialEquiv_mk`. `trivialEquiv_natural` proves
 that these equivalences commute with every actual ambient intertwiner and
-the accepted untwisted induced map `Langlands.Jacquet.map`.
-The accepted untwisted quotient layer is imported unchanged.
+the untwisted induced map `Langlands.Jacquet.map`.
+The untwisted quotient layer is imported unchanged.
 
 ## Original source, specialization, and scope
 
@@ -133,8 +133,8 @@ substituted for the general normalizing-subgroup hypothesis.
 
 The source's normalized representation multiplies this descended action by
 the inverse half of the Haar conjugation modulus. That further twist is
-outside this unit. Changing `θ` here changes the relation submodule itself;
-the separately accepted `Langlands.Jacquet.characterTwistedAction` in
+outside this module. Changing `θ` here changes the relation submodule itself;
+the separately defined `Langlands.Jacquet.characterTwistedAction` in
 `SmoothTwist` instead scales an already formed untwisted quotient action.
 This module makes no assertion of exactness, adjunction, transitivity, or
 the geometric lemma, and does not encode those assertions as input fields.
@@ -146,6 +146,6 @@ The existing `Jacquet.Coinvariants`, `Jacquet.SmoothTwist`, and
 results, and bundled smooth category. Mathlib supplies `Submodule.span`,
 `mkQ`, `liftQ`, `linearMap_qext`, `quotEquivOfEq`,
 `Representation.quotient`, and the intertwiner and `Rep` interfaces. All
-new construction obligations are proved in this module. The approved
-environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+new construction obligations are proved in this module. The
+environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

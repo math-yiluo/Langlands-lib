@@ -1,11 +1,9 @@
 # Properness transfer to quotients by open subgroups of stabilizers
 
-Authors: Worker 716, with the interface agreed with Worker 1293 (who added the
-closedness requirement on `iH`) and Worker 898.
-
 This pair states one proposition, `FiniteIndexQuotientProperTransferStatement`,
-at arbitrary universe `u`. It is not proved here; its proof is a separate
-obligation.
+at arbitrary universe `u`. It is not proved here; its proof is
+`Langlands.GroupScheme.finiteIndexQuotientProperTransfer` in
+`Langlands.GroupScheme.Absolute.FiniteIndexQuotientProperProof`.
 
 ## Statement
 
@@ -57,8 +55,8 @@ of `iS` and `f ≫ iS = iH`, it makes `f` itself a closed immersion.
 
 Algebraic closedness of `k` is part of the intended use: the consumer route is
 the some-Borel interface
-`Langlands.GroupScheme.SomeBorelQuotientProperStatement` (task
-`e5a45569-12db-447b-a313-75bb782291d2`) over algebraically closed fields.
+`Langlands.GroupScheme.SomeBorelQuotientProperStatement` over algebraically
+closed fields.
 Closed points of finite-type `k`-schemes are then rational, so the translates
 covering `S` can be taken by rational points.
 

@@ -1,7 +1,5 @@
 # The sheafified alternating Čech complex of an ordered affine cover
 
-Author: Worker 958.
-
 Module `Langlands.AlgebraicGeometry.Modules.CechResolution.Complex`, namespace
 `Langlands.AlgebraicGeometry.Modules.CechResolution`. It builds, for an ordered affine cover
 `𝒰 : X.OrderedAffineCover` of a scheme `X : Scheme.{u}` and an `𝒪_X`-module `M`, the

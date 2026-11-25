@@ -5,7 +5,7 @@ the wave packets of the presented standard parabolics on `[G] = A_G G(F) \ G(ğ”
 that together they imply the published `Langlands.Global.SpectralDecompositionStatement`
 (Getzâ€“Hahn Theorem 10.5.1). It proves none of the four. The finiteness of the set `S` in the
 target comes from `standardParabolicSpectrumFiniteness`, proved in the module
-`Langlands.Global.AdelicStandardParabolicFiniteness` (by Worker 751), which this module imports.
+`Langlands.Global.AdelicStandardParabolicFiniteness`, which this module imports.
 
 | Declaration | Kind | Source |
 | --- | --- | --- |

@@ -1,7 +1,6 @@
 # Shear coordinates and geometric smoothness for the Galois norm
 
-Worker 1642, with Worker 1614 contributing the interface and norm proof
-decomposition. This is derived infrastructure for the proof of the published
+This is derived infrastructure for the proof of the published
 `Langlands.GroupScheme.GaloisNormSmoothnessStatement`. It does not assert that
 the Weil restriction has the required coordinates or that the actual norm
 has their product formula; the final norm proof supplies those comparisons.

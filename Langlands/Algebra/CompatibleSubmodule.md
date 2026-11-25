@@ -1,14 +1,11 @@
 # Stable subspaces, restricted actions and quotient actions of a compatible action
 
-Author: Worker 277 read the cited passages, designed and implemented this module
-and wrote this note. The task contract (task
-`225c0c50-f2f1-4da9-9cbd-b70bd64c5b33`, published by Worker 6) fixes the text of
-the stability predicate `∀ a m, m ∈ S → ρ a m ∈ S` and the quotient formula
-`ρQuot a (S.mkQ m) = S.mkQ (ρ a m)`. No draft or probe of another worker was
-reused. The module imports, and reuses by Lean name, the compatible-action bridge
-`Langlands.Algebra.CompatibleNonUnitalAction` (task
-`1af21cd4-c861-487b-b092-17818900b758`; Worker 751, with Worker 709) and the
-published `Langlands.Algebra.NonUnitalModule`.
+This module's interface fixes the text of the stability predicate
+`∀ a m, m ∈ S → ρ a m ∈ S` and the quotient formula
+`ρQuot a (S.mkQ m) = S.mkQ (ρ a m)`. No other draft or probe was reused. The
+module imports, and reuses by Lean name, the compatible-action bridge
+`Langlands.Algebra.CompatibleNonUnitalAction` and the published
+`Langlands.Algebra.NonUnitalModule`.
 
 The module `Langlands/Algebra/CompatibleSubmodule.lean` works with an actual
 compatible action `ρ : A →ₙₐ[k] Module.End k M` of a possibly noncommutative and
@@ -38,8 +35,8 @@ p-adiques*, French version dated **9 July 2026**, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, file
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`
-(checked by Worker 277). Printed page = PDF page − 6. Worker 277 read these
-passages in the PDF:
+(checked). Printed page = PDF page − 6. These passages were read in the
+PDF:
 
 - Notation and conventions, printed pp. 5–6 / PDF pp. 11–12: "Les anneaux ne sont
   pas supposés unitaires, sauf mention explicite du contraire. [...] Si 𝐴 est un
@@ -65,7 +62,7 @@ passages in the PDF:
 Author errata: registered `renard-2010-corrections-complements`, file
 `/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`
-(checked). Worker 277 read PDF pp. 18–19. The entry for the 2010 edition's p. 314
+(checked). PDF pp. 18–19 were read. The entry for the 2010 edition's p. 314
 (PDF pp. 18–19) reads "dans le théorème, il faut supposer que M est en outre un
 ℂ-espace vectoriel, car A n'a pas d'unité. On le précise d'ailleurs dans les
 hypothèses, et l'on remarque pour la démonstration que l'on peut se ramener au
@@ -139,7 +136,7 @@ are
 ∀ (a : A) (m : M), m ∈ S → ρ a m ∈ S
 ```
 
-exactly the predicate of the task. The inspected type is
+exactly the predicate fixed above. The inspected type is
 `{k : Type u} → {A : Type v} → {M : Type w} → [CommRing k] → [NonUnitalRing A] →
 [Module k A] → [AddCommGroup M] → [Module k M] → (A →ₙₐ[k] Module.End k M) →
 Submodule k M → Prop`, and the inspected body is `∀ (a : A), ∀ m ∈ S, (ρ a) m ∈ S`.
@@ -270,7 +267,7 @@ of a quotient agree if they agree after `mkQ`), reducing each to the law of `ρ`
 Laws:
 
 - `quotientAction_apply_mkQ`: `S.quotientAction a (S.mkQ m) = S.mkQ (ρ a m)`, the
-  task's equation (`rfl`);
+  quotient formula fixed above (`rfl`);
 - `quotientAction_apply_mk` (simp): the same for `Submodule.Quotient.mk`;
 - `quotientAction_eq_mapQ`, `quotientAction_comp_mkQ`
   (`S.quotientAction a ∘ₗ S.mkQ = S.mkQ ∘ₗ ρ a`, by `Submodule.mapQ_mkQ`);

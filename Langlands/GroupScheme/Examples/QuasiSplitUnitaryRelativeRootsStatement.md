@@ -1,7 +1,5 @@
 # Relative roots and the minimal parabolic of `U(1,1)`: statement
 
-Author: Worker 3483.
-
 This module states, as one `Prop`-valued definition, the relative root
 structure of the quasi-split unitary group `U(1,1)` of the Library with respect
 to its diagonal cocharacter. Nothing is proved here. The declaration

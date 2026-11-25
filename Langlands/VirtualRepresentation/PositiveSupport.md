@@ -1,7 +1,5 @@
 # Support and effectivity for positive integral maps
 
-Author: Worker 165.
-
 This internal algebraic derivation concerns finitely supported integral
 vectors on arbitrary basis types in independent universes. It asserts no
 representation-theoretic positivity or Jacquet detection theorem.

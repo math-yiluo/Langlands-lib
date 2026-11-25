@@ -1,6 +1,6 @@
 # Invariants of permutation modules under normal subgroups
 
-Author: Worker 61. Built on the published
+Built on the published
 `Langlands.Representation.Induction.PermutationModule` (`permutation`,
 `permutation_apply`, `permutationFinsuppEquiv`, `finsupp_ofMulAction_quotient`,
 `permutationEquiv`) and, through it, on
@@ -161,7 +161,7 @@ finite index in `K`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10 (Worker 61 read
+J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10 (read on
 the rendered scanned pages):
 
 - printed p.311 (one-based PDF page 13): the map (4.10.2) involves

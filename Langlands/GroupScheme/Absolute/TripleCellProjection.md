@@ -1,7 +1,5 @@
 # Faithfully flat projections and comparison from dynamic-factor lifts
 
-Author: Worker 1444.
-
 This derived support module works with actual group schemes over `Spec k`,
 where `k : Type u` is any field and the universe `u` is arbitrary. The field
 may be imperfect and have positive characteristic. Let `G` be smooth,

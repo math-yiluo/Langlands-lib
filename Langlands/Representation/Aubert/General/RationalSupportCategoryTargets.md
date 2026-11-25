@@ -1,6 +1,6 @@
 # Support-theory targets on the actual rational-point smooth category
 
-Author: Worker 379. The nine propositions in
+The nine propositions in
 `Langlands.Aubert.General.RationalPointFamily` restate the generic targets of
 `SupportCategoryStatements` for the actual group of rational points of a
 connected reductive group and its actual standard subgroup families. They are
@@ -88,7 +88,8 @@ functors and the actual normalized induction.
 This is a derived specialization: the mathematical content is that of the
 cited Renard and erratum statements. The derivation pins the generic
 parameters to the actual families and named structural inputs above. The
-structural inputs, closedness premises and topological premises remain
-intermediate obligations, to be discharged or matched to the parent's
-external structural ledger. No representation-theoretic statement is moved
-into them.
+structural inputs, closedness premises and topological premises are
+intermediate inputs of these statements, to be discharged or matched to the
+Library's Chapter V structural ledger
+(`notes/renard/chapter-v-structural-inputs.md`). No representation-theoretic
+statement is moved into them.

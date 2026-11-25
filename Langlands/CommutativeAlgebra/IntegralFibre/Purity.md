@@ -52,6 +52,6 @@ is coprimary in the above sense, and `N` embeds into the finite product of the `
 
 ## Provenance
 
-This is an internal lemma for the 05FT proof, written by Worker 281. It is a variant of the
+This is an internal lemma for the 05FT proof. It is a variant of the
 statement that associated primes of `M ⊗ S` lie over associated primes of `M` for flat
 `R → S`; compare Stacks Tag 05C2.

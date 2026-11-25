@@ -1,6 +1,6 @@
 # Necessity and the exact corner-equivalence criterion
 
-Worker 133. This module proves the published
+This module proves the published
 `NonUnitalModuleCornerSimpleStatements.CornerEquivalenceCriterionStatement`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -8,7 +8,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 `renard-2026-representations-groupes-reductifs-padiques`, I.3.2,
 printed p.22 / PDF p.28, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 133 read printed pp.19–22.
+Printed pp.19–22 were read.
 
 Assume first that the corner functor on the generated category is an
 equivalence. For a generated object, its annihilator quotient is again

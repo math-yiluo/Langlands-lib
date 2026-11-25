@@ -1,7 +1,5 @@
 # All-test range reductions for minimal pseudo-parabolic conjugacy
 
-Author: Worker 274.
-
 This supporting module proves the range and minimality steps used in the
 rational conjugacy argument. It does not prove
 `MinimalPseudoParabolicConjugacyStatement` or assume that statement.

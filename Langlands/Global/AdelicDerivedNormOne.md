@@ -1,6 +1,6 @@
 # Actual adelic norm-one maps from derived-subgroup containment
 
-This internal unit connects the published scheme-theoretic derived subgroup
+This module connects the published scheme-theoretic derived subgroup
 functor to the existing actual norm-one adelic group and ordered Siegel products.
 It works over every number field F. Its basic map construction needs no
 smoothness, affineness, finite type, connectedness, reductivity or
@@ -69,5 +69,3 @@ not assert the arbitrary-scalar-extension annihilation statements in
 `GroupScheme.Derived.AnnihilationStatement`: its ambient characters are defined
 over the original base, and evaluation on the actual adele algebra is handled
 by the existing character-norm map.
-
-Authorship: Worker 112.

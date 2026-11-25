@@ -1,8 +1,5 @@
 # Smoothness of the actual finite-Galois torus norm
 
-Worker 1614, with Worker 1642 contributing the shear, smooth projection,
-finite-product smoothness and field-base-change descent infrastructure.
-
 `Langlands.GroupScheme.GaloisNormSmoothnessProof.galoisNormSmoothness.{u}`
 proves the published
 `Langlands.GroupScheme.GaloisNormSmoothnessStatement.{u}` exactly.

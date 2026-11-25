@@ -65,7 +65,10 @@ theorem exists_cocharacter_of_finite_rootSupport_negators
     ∑ w : H, relativeWeylCocharacterAction j w.val ν
   have hζfixed (w : H) : relativeWeylCocharacterAction j w.val ζ = ζ := by
     dsimp only [ζ]
-    rw [map_sum]
+    have hmap := map_sum (relativeWeylCocharacterAction j w.val).toLinearMap
+      (fun z : H => relativeWeylCocharacterAction j z.val ν) Finset.univ
+    rw [LinearEquiv.coe_coe] at hmap
+    rw [hmap]
     simp_rw [← LinearEquiv.mul_apply, ← map_mul]
     exact Fintype.sum_equiv (Equiv.mulLeft w) _ _ (fun _ => rfl)
   have hnegative (α : characterLattice T) (hα : α ∈ roots j) (hαS : α ∉ S) :

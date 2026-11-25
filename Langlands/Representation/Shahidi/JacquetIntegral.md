@@ -20,12 +20,13 @@ The elementary integrand identities need only a field and topology for the
 unitary additive character.
 
 The source originally uses the tensor of the two actual Whittaker functionals
-on the actual induced carrier. This unit separates the scalar integral
+on the actual induced carrier. This module separates the scalar integral
 construction from that specialization: ℓ is an arbitrary actual linear
 functional and f is an actual group function. It neither substitutes an
 arbitrary predicate for an induced representation nor claims to construct
 that representation. Restricting these formulas to the induced carriers and
-supplying the tensor Whittaker functional remain a subsequent construction.
+supplying the tensor Whittaker functional are a separate construction, in
+`JacquetInduced`.
 
 `jacquetIntegrand` is the complex-linear map sending f to the function
 

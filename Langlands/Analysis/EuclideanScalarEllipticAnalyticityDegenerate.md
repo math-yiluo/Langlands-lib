@@ -41,6 +41,3 @@ Morrey–Nirenberg route (1957, §5), described in
 `ScalarEllipticAnalyticityProof.md`, concerns only positive dimension and
 positive order. This case split is internal and is not taken from the
 literature.
-
-Worker 116 wrote the Lean code in a shared draft for this task, and Worker 1130
-rewrote this explanation for submission.

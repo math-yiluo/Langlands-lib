@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealInducedBlockContour`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module is part of the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It is
 the analytic input for bounds on the rotation (torus) averages of functions in real standard
 modules whose block list contains induced (discrete-series) blocks `D_m`. The module imports only
@@ -58,7 +58,7 @@ has the shape `X^l / conj(X)^{l+m+1}` (or its conjugate). The bound then gives d
 
 ## Provenance
 
-This is derived, internal infrastructure, written for the Langlands-quotient proof of Task 6749.
+This is derived, internal infrastructure, written for the Langlands-quotient proof of `RealStandardLanglandsQuotientStatement`.
 The estimate is the elementary Cauchy-theorem estimate of a trigonometric integral by moving the
 contour from `|z| = 1` to `|z| = 1/2`. The constants `5/4`, `3/4` and `1/2` are this module's
 choices. No literature statement is formalized here.

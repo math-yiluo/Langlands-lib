@@ -1,7 +1,6 @@
 # The category of compatible algebra actions and the localized structured arrow
 
-Worker 709, for the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`,
-revision 3. This unit contains definitions and construction lemmas only. All
+This module contains definitions and construction lemmas only. All
 declarations are in `Langlands.Renard.AlgebraActionLocalization`. It packages
 the published B-linear localization as an actual structured arrow in an actual
 category. It does not assert that this arrow is universal.
@@ -14,8 +13,8 @@ p-adiques*, French version dated **9 July 2026**. Registered source:
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`;
 SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, verified
-for this unit. Printed body page = PDF page minus 6. Worker 709 reread these
-passages for this unit:
+for this module. Printed body page = PDF page minus 6. These passages were
+reread for this module:
 
 - A.III.1, printed p. 251 / PDF p. 257: a solution `(X, i)` of the right
   universal problem posed by a functor F and an object Y is an object X with a
@@ -32,7 +31,7 @@ passages for this unit:
 - The conventions on printed p. 6 / PDF p. 12. Rings are not assumed unital
   unless stated. Modules over a unital ring are not assumed unital.
 
-This unit constructs the categorical data of that final sentence. The pairs
+This module constructs the categorical data of that final sentence. The pairs
 are B-modules with B-module endomorphisms. The morphisms are B-module maps
 intertwining the endomorphisms. The functor is the inclusion of the pairs whose
 endomorphism is invertible, and `ι` is the canonical arrow. The final sentence
@@ -52,7 +51,7 @@ The following choices are **derived formalization content**, not formulas
 quoted from the book. The general commutative ring k, the categorical
 packaging and the universe raising are internal. They follow the published
 k-linear pattern `Langlands.Renard.EndomorphismLocalization.ChosenComparison`
-(`RenardEndomorphismLocalizationSource.lean`, Worker 1581) without reusing
+(`RenardEndomorphismLocalizationSource.lean`) without reusing
 its code.
 
 **B-modules.** As in the published
@@ -101,7 +100,7 @@ endomorphism. A morphism `A ⟶ A'` is a morphism `f : A.a ⟶ A'.a` with
 the ring `Module.End k A.a`. Invertibility as a k-linear map is equivalent to
 invertibility among B-module endomorphisms. A k-linear inverse of a B-linear
 map is automatically B-linear, as recorded in
-`RenardAlgebraLocalizationUniversalStatements.md`. This unit uses only the
+`RenardAlgebraLocalizationUniversalStatements.md`. This module uses only the
 k-linear condition. `InvertibleActionEndomorphismCat k B` is the full
 subcategory of this property, `invertibleActionInclusion k B` its inclusion
 `ObjectProperty.ι`, and `invertibleActionInclusionFullyFaithful k B` the
@@ -172,8 +171,9 @@ endomorphism. The zero ring, zero modules, zero actions and zero or nilpotent
 endomorphisms are allowed. No universal property, factorization or uniqueness
 is asserted here. Initiality of `canonicalStructuredArrow`, the factorization
 for every invertible target and the field specialization are separate
-successor statements. A proof can build on the published raw B-linear
-universal property `UniversalPropertyStatements`
+statements, in `RenardAlgebraActionLocalizationInitialityStatements`, proved in
+`RenardAlgebraActionLocalizationInitialityProof`. That proof builds on the
+published raw B-linear universal property `UniversalPropertyStatements`
 (`RenardAlgebraLocalizationUniversalStatements.lean` and its published proof).
 
 The module imports the published `Langlands.Algebra.RenardAlgebraActionLocalization`
@@ -181,7 +181,7 @@ and four Mathlib modules: `Algebra.Module.ULift`,
 `CategoryTheory.Comma.StructuredArrow.Basic`,
 `CategoryTheory.Endofunctor.Algebra` and
 `CategoryTheory.ObjectProperty.FullSubcategory`. It reuses published
-declarations by Lean name and adds no axioms. In environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` it compiled with no errors or warnings.
+declarations by Lean name and adds no axioms. In the Lean environment used
+for checking, it compiled with no errors or warnings.
 An inspection of `canonicalStructuredArrow` reported level parameters u, v,
 w, x and only `propext`, `Classical.choice` and `Quot.sound`.

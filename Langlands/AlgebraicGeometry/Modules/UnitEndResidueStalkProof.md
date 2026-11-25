@@ -23,7 +23,7 @@ restricted module morphism is an isomorphism. The published
 
 This is an internal scalar step toward `LineBundleResidueStalkCriterion`; it does
 not assert the comparison with the actual pullback section for an arbitrary line
-bundle. The local multiplication and restriction arguments adapt Worker 311's
-published `LineBundleFrameOpen` proof. Its openness theorem and the published
+bundle. The local multiplication and restriction arguments adapt the
+`LineBundleFrameOpen` proof. Its openness theorem and the published
 `SectionLocusComparison` are imported without modification. No additional
 mathematical hypotheses or axioms are introduced.

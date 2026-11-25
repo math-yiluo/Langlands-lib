@@ -14,7 +14,7 @@ namespace Langlands.GaloisRepresentation
 
 open Langlands.Automorphic Langlands.Automorphic.Unramified Langlands.Global
 open Langlands.Global.AdelicFunctoriality Langlands.Global.AdelicFunctoriality.FiniteExtension
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- The weak automorphic lift to a quadratic CM extension at a split
 square-integrable place is a conjugate self-dual regular algebraic cusp class. -/

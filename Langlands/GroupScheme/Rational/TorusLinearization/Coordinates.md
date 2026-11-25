@@ -1,6 +1,6 @@
 # Linearizing coordinates from a stable space of additive polynomials
 
-Helper module for the proof of `TorusVectorActionLinearizationStatement` (task 3be1ce22).
+Helper module for the proof of `TorusVectorActionLinearizationStatement`.
 Internal machinery only. Everything is in namespace
 `Langlands.GroupScheme.TorusLinearization`. Throughout, `k` is a field and
 `k[X] := MvPolynomial (Fin n) k`.
@@ -81,11 +81,11 @@ so it already contains all powers of elements of `W`.
 
 ## Provenance
 
-Worker 1416 specified the interface (hypotheses and conclusion) as the last step of
-their characteristic-`p` linearization argument. This module carries out only that
-final linear-algebra step. The space `W` is built elsewhere (Worker 1416's
-`Generation` module). The proof follows Worker 1416's outline, with the
-simplification in step (3).
+The interface (hypotheses and conclusion) is the last step of the characteristic-`p`
+linearization argument. This module carries out only that
+final linear-algebra step. The space `W` is built elsewhere (the
+`Generation` module, `TorusLinearization/Generation.lean`). The proof follows the outline
+of that argument, with the simplification in step (3).
 
 The idea is related to Conrad–Gabber–Prasad, *Pseudo-reductive groups* (2nd ed.),
 Proposition B.4.1 and Proposition B.4.2 (pp. 575–577), which feed into Theorem B.4.3.

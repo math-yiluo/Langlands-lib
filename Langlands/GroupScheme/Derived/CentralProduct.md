@@ -34,6 +34,6 @@ This is internal support derived from the Library's unchanged
 intersection definition, full functoriality, fpqc effective epimorphism
 and representative comparison lemmas. It constructs no factorization
 of a particular reductive group and proves no semisimple perfectness
-or normal-complement theorem. Those remain separate obligations.
-
-Authorship: Worker 1616.
+or normal-complement theorem. Those are proved elsewhere:
+`semisimplePerfect` (module `Derived.SemisimplePerfectProof`) and
+`semisimpleNormalComplement` (module `Reductive.SemisimpleNormalComplementProof`).

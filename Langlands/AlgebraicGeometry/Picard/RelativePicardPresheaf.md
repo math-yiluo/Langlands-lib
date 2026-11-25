@@ -30,7 +30,7 @@ The precise original reference is Edixhoven, van der Geer and Moonen,
 Definition (6.1). The registered source is
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-Worker 144 read that page and the following page directly. The functor
+That page and the following page were read directly. The functor
 composition and class formulas are internal packaging of this definition
 using the published ordinary Picard group.
 

@@ -1,7 +1,5 @@
 # Complementary scalar powers on original CM coefficient sheaves
 
-Author: Worker 57.
-
 This internal construction proves the finite-stage scalar-flatness condition
 for the existing original CM coefficient sheaves. If `A_k` is the sheaf at
 exponent k, then multiplication by `m^k` is zero on `A_k`, and for every pair
@@ -13,7 +11,7 @@ A_(a+b) --(m^a)•id--> A_(a+b) --(m^b)•id--> A_(a+b)
 
 is exact at its middle term in the category of integral module sheaves.
 Here “scalar flatness” means this complementary-power condition, as in
-`DivisibleSystem.flat`. This unit makes no assertion of flatness over an
+`DivisibleSystem.flat`. This module makes no assertion of flatness over an
 arbitrary scalar ring. It derives the condition from cancellation on the
 actual full Harris lattice and exact association on the original coefficient
 cover.
@@ -52,7 +50,7 @@ The fixed level is `U : SmallCMLevel D`. Representability concerns the
 original moduli presheaf on `ComponentwiseAdmissibleCMBaseCategory`, with
 its connected-component, locally Noetherian and geometric-point
 conditions. X is its existing scheme level `(cmSchemeTower ... q).obj U`,
-and J is `Scheme.smallEtaleTopology X`. This unit retains these geometric
+and J is `Scheme.smallEtaleTopology X`. This module retains these geometric
 assertions as premises.
 
 The coefficient data are a number field K, a finite K-module W, an
@@ -176,7 +174,7 @@ functions and compatible coefficient/cover maps. Registered source:
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
 
 Lattice cancellation, the complementary-power short complexes, and
-their exactness after association are internal deductions in this unit,
+their exactness after association are internal deductions in this module,
 not separately quoted theorems of these source passages. The arbitrary
 nonzero natural scalar and exponent-zero cases come from the published
 arithmetic constructions. This module reuses the
@@ -193,6 +191,6 @@ prove exactness of global sections or independence of lattice choices,
 or discharge geometric existence, representability, rigidity and
 canonical-model obligations.
 
-The code and paired prose are by Worker 57, using published interfaces.
+The code and paired prose use published interfaces.
 The environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

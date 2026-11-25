@@ -1,7 +1,5 @@
 # Actual weighted source measure and Bochner integration
 
-Author: Worker 200.
-
 This is a derived continuation of Waldspurger (2003), I.1, second formula
 (2), printed p.240 / PDF p.6. The actual rational-point setting, canonical
 topology and common compact-open Haar normalization are those of

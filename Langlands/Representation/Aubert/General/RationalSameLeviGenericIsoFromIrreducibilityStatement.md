@@ -1,7 +1,5 @@
 # Same-Levi generic isomorphism from generic irreducibility
 
-Author: Worker 5266.
-
 This module states one proposition,
 `Langlands.Aubert.General.RationalPointFamily.RationalSameLeviGenericInductionIsoFromIrreducibilityStatement.{u, v}`.
 It supplies no proof.
@@ -47,8 +45,9 @@ to the conclusion.
 
 ## Provenance
 
-The statement is derived and internal to this project. It is the intermediate
-conditional result named in Task 5266, revision 2. It records the reduction
+The statement is derived and internal to this project. It is an intermediate
+conditional result toward `RationalSameLeviGenericInductionIsoStatement`. It
+records the reduction
 of the generic isomorphism target to generic irreducibility. The route behind
 it is the classical one recorded in the conclusion's own Markdown, through
 Waldspurger IV.1 and IV.3: irreducibility of both inductions together with a
@@ -60,11 +59,12 @@ The Library already contains the nonzero-intertwiner half:
 It provides a generic nonzero morphism from `i_{P_J}(σ ⊗ χ)` to
 `i_{g P_I g⁻¹}(σ ⊗ χ)`. It is therefore not a premise here.
 
-The premise is a published proof target that is not yet proved. Its proof is
-owned by Task 5364. The Library reduces it, in
+The premise is a published statement that the Library does not prove. The
+Library reduces it, in
 `Langlands.Representation.Aubert.General.RationalSameLeviGenericIrreducibilityReduction`,
-to Renard VI.8.4 (Task 5147) and to the existence of an irreducible induced
-unramified twist (Konno, Theorem 4.2).
+to Renard VI.8.4 (`InducedIrreducibilityOpenStatement`) and to the existence
+of an irreducible induced unramified twist (Konno, Theorem 4.2).
 
-This is a proof target, not a theorem. Proving it does not prove the
+This is a proposition, not a theorem; `RationalSameLeviGenericIsoFromIrreducibilityProof`
+proves it. Proving it does not prove the
 generic isomorphism target. That target still needs a proof of the premise.

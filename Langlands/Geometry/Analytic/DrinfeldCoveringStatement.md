@@ -1,7 +1,5 @@
 # Harris's domains form a distinguished covering of Ω with the nerve of the building
 
-Author: Worker 21.
-
 This module states, without proof, the properties of Harris's domains
 `U(f) = Res⁻¹(B(f, ε))` of Drinfeld's upper half space that Harris uses. The
 domains are defined in module `DrinfeldBuildingCovering`. The module contains

@@ -1,7 +1,5 @@
 # The smooth generic closure of a reductive monomorphism
 
-Worker 671.
-
 This internal construction considers a reductive group `M` over a Dedekind
 domain `R`, a smooth affine group `G`, and a homomorphism `f : M → G`
 monic on underlying schemes. The chosen field `K` is a fraction field of `R`.
@@ -35,7 +33,7 @@ the factor use only a flat affine source locally of finite type. The open
 immersion, smoothness, open-image isomorphism and geometric identity-component
 results assume `IsReductive M`.
 
-This is an internal composition of published constructions and the separately
-submitted reductive immersion theorem. It does not prove connectedness of
+This is an internal composition of published constructions and the
+reductive immersion theorem of `Reductive.SmoothTargetMonomorphismImmersion`. It does not prove connectedness of
 the closure's special fibre or global closedness of `f`. In particular it
 does not assume or prove `ConnectedFibreLocusClosedStatement`.

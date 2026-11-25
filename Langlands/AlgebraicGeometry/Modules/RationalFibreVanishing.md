@@ -2,9 +2,9 @@
 
 Module `Langlands.AlgebraicGeometry.Modules.RationalFibreVanishing`, namespace
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`. `cohomology`, `relativeCohomology` and
-`higherDirectImage` are the published sheaf cohomology `Hⁿ(X, M)` (a `Γ(X, ⊤)`-module), its
+`higherDirectImage` are the Library's sheaf cohomology `Hⁿ(X, M)` (a `Γ(X, ⊤)`-module), its
 `R`-module version for a morphism `X ⟶ Spec R`, and the higher direct images `Rⁿ f_*`.
-`idealQuotientHom m : R ⟶ CommRingCat.of (R ⧸ m)` is the published quotient map from
+`idealQuotientHom m : R ⟶ CommRingCat.of (R ⧸ m)` is the quotient map from
 `PerfectFibreVanishing`.
 
 ## Definition
@@ -103,7 +103,7 @@ Suppose `y` is `T ≅ Spec (Γ(Y, V) ⧸ m) ⟶ Spec Γ(Y, V) ⟶ Y`, and `Hⁿ`
 to the actual fibre product `pullback f y` vanishes (as a module over any `R`). Then `Hⁿ`
 vanishes, as a `Γ(Y, V) ⧸ m`-module, for the following fibre: the fibre of
 `affineRestrict f hV` over `Spec (Γ(Y, V) ⧸ m)`, with the pullback of `M|_{f⁻¹ V}` along its
-first projection. This fibre is the shape required by the published
+first projection. This fibre is the shape required by
 `isZero_relativeCohomology_of_universalPerfectSections`. Taking `T = Spec K` and `y = x ≫ U.ι`
 from `exists_rationalPoint_of_le`, the hypothesis is vanishing on the fibre over a rational
 point, regarded as a `K`-module through `pullback.snd f (x ≫ U.ι)`. The change of coefficient
@@ -125,14 +125,13 @@ theorem isZero_pullback_higherDirectImage_of_rationalFibres
     IsZero ((Scheme.Modules.pullback U.ι).obj ((higherDirectImage f n).obj Q.obj))
 ```
 
-This takes the published proposition `UniversalPerfectSectionsStatement` as a hypothesis
+This takes the proposition `UniversalPerfectSectionsStatement` as a hypothesis
 `hups`; it does not prove it. Given `hups`, let `K` be algebraically closed, `Y` locally of
 finite type over `K`, `f : X ⟶ Y` smooth and proper, `Q` a line bundle on `X` and `U` an open
 of `Y`. Suppose that for every `K`-rational point `x` of `U` and every `n`, `Hⁿ` of the pullback
 of `Q` to the fibre `X ×_Y Spec K` over `x` vanishes. Then every higher direct image
 `Rⁿ f_* Q` restricts to zero on `U`. The hypotheses and the conclusion are those of the
-proposition `RationalFibreAcyclicityStatement` drafted for task
-`3bbaeb61-b856-4adf-9f01-4b03a336b13c`, there with `LocallyOfFiniteType g`, `Smooth f` and
+proposition `RationalFibreAcyclicityStatement`, there with `LocallyOfFiniteType g`, `Smooth f` and
 `IsProper f` as explicit arguments.
 
 ## Provenance
@@ -153,21 +152,21 @@ field is finite) and `IsAlgClosed.ringHom_bijective_of_isIntegral`. `exists_rati
 only factors the point through an open immersion.
 
 The main theorem is a derived consequence. Over each affine open `V ⊆ U`, it combines the
-published local-to-global detection `isZero_pullback_higherDirectImage_of_affineOpens`, whose
+local-to-global detection `isZero_pullback_higherDirectImage_of_affineOpens`, whose
 Markdown cites Stacks, Cohomology of Sheaves, Lemma `lemma-describe-higher-direct-images` (tag
-01E4), with the published `isZero_relativeCohomology_of_universalPerfectSections`, a derived
+01E4), with `isZero_relativeCohomology_of_universalPerfectSections`, a derived
 consequence of Stacks tags 068V and 0B91. The combination is internal.
 
 ## Proof
 
-- `isZero_cohomology_iff_relativeCohomology`: the published
+- `isZero_cohomology_iff_relativeCohomology`: the Library's
   `relativeCohomologyRestrictScalarsIso` identifies the relative `R`-module cohomology with
   the restriction of scalars of the absolute `Γ(X, ⊤)`-module `Hⁿ(X, M)` along
   `structureRingHom f : R ⟶ Γ(X, ⊤)`. Restriction of scalars does not change the underlying
   additive group, and a module is zero exactly when it is a subsingleton.
   `isZero_relativeCohomology_iff` applies this twice.
 - `isZero_relativeCohomology_pullback_of_iso`: change the base of `s₂` to `E.hom ≫ s₁` by base
-  independence. Then the published `relativeCohomologyPullbackIso E s₁` and
+  independence. Then `relativeCohomologyPullbackIso E s₁` and
   `Scheme.Modules.pullbackComp E.hom a` identify the module with the cohomology of the
   pullback along `a`.
 - `isZero_relativeCohomology_of_isPullback`: `P₂` with `a₂` and `b₂ ≫ e.hom` is a pullback of
@@ -215,8 +214,9 @@ and `Quot.sound`.
 
 ## Intended use
 
-Once `UniversalPerfectSectionsStatement` (proof task `5056e5fc-5861-489e-adae-be84a23164c5`)
-is proved, the main theorem proves `RationalFibreAcyclicityStatement`
-(task `3bbaeb61-b856-4adf-9f01-4b03a336b13c`), which feeds the proof of
+With `UniversalPerfectSectionsStatement` proved (`universalPerfectSections`, module
+`UniversalPerfectSectionsProof`), the main theorem proves `RationalFibreAcyclicityStatement`
+(`rationalFibreAcyclicity`, module `RationalFibreAcyclicityProof`), which feeds the proof of
 `Langlands.AbelianScheme.AlgClosedFieldSquareFirstProjectionAcyclicityStatement`
-(task `651d1a6b-549e-4d79-ae47-19627b02f30d`).
+(`algClosedFieldSquareFirstProjectionAcyclicity`, module
+`Langlands.AlgebraicGeometry.Picard.SquareFirstProjectionAcyclicityProof`).

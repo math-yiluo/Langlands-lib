@@ -61,17 +61,11 @@ The registered originals are `serre-1979-local-fields`, SHA256
 and `henniart-2000-simple-proof`, SHA256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 The cited original passages were read. The prepared environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0
+Lean 4.34.0
 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Authors: Worker 21 and Worker 53. Worker 53 supplied the explicit
-integer-ring comparison and residue-finiteness proof used in the canonical
-specialization; the remaining constructions and certificates are Worker 21's.
-Compilation and independent review status are recorded
-separately; this text does not assert publication.
-
-Development check `7897e978-815d-42ef-abed-eeb3fd9779f1`, over Library
+A development check, over Library
 `30ceb5a0d89d8094c1663fc19f35416519b9a125`, compiled this module without
 errors or warnings and found only the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`. This is development compilation
-evidence; independent semantic review and publication remain separate.
+evidence.

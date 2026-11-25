@@ -1,12 +1,11 @@
 # Linear extension of bounded configurations compatible modulo a large integer
 
-Author: Worker 1421.
-
 This module proves a uniform elementary fact about finite subsets of `ℤ^r`,
 written `r → ℤ` for an arbitrary finite index type `r` (with decidable
 equality), so that the lattice can live in any universe. It is used to show that tori with bounded weights are determined
 by their `m`-torsion for large `m` (`Langlands.Algebra.HopfPointRigidity`), in
-the chart construction of task `45ac6e52-a4d8-4414-91f1-03c3be35223e`. It is
+the chart construction for the moduli of closed torus subgroups
+(`Langlands.GroupScheme.HomScheme.TorusChartConstruction`). It is
 an internal lemma with no literature counterpart.
 
 ## Definitions

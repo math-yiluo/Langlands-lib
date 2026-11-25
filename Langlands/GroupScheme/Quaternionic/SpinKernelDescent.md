@@ -103,13 +103,17 @@ and it does not construct the lifts.
 
 For a spin cover `π : S ⟶ O(q)` and a hyperbolic pair, `Λ` is meant to be the Levi morphism
 `a ↦ ℓ(a)`, and `mu`, `psi` lifts of `Λ` on the scalars and on `SL₁(D)`. `hcent` follows from
-the centrality of the kernel of a central isogeny. Proving `KernelGenerator` for spin covers,
-constructing the lifts, and identifying `Λ` on rational points with the Levi matrices of
-`HyperbolicLevi` are separate tasks.
+the centrality of the kernel of a central isogeny. `KernelGenerator` for spin covers is
+`SpinKernelGeneratorStatement` (proved as `SpinKernel.spinKernelGenerator`, module
+`SpinKernelGeneratorProof`). The lifts are `BinarySpinLift.scalar` and `BinarySpinLift.normOne`
+(module `BinaryQuaternionSpinLift`); `SpinLeviLift` shows that they lift the Levi morphism
+(`IsLeviLift`), assuming `DegreeTwoNormOneSimplyConnectedStatement`. Finally,
+`isometryRationalMatrix_leviHom` (module `LeviGroupScheme`) identifies `Λ` on rational points
+with the Levi matrices of `HyperbolicLevi`.
 
 ## Provenance
 
-Internal (Task 5398). The descent argument is the standard computation of the connecting map
+Internal, for the proof of `LocalSpinKneserTitsStatement`. The descent argument is the standard computation of the connecting map
 `O(q)(K) → H¹(K, μ₂) = K^×/K^{×2}` on the Levi element `ℓ(a)`, where the class is `Nrd(a)`.
 Here it is written out with the explicit flat cover `K → K[t]/(t² - c)` and the equalizer of
 `R ⇉ R ⊗ R`, so that it also covers characteristic two.

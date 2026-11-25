@@ -1,7 +1,5 @@
 # Berkovich's ordinary equivariant cohomology spectral sequences
 
-Author: Worker 16.
-
 ## Source and scope
 
 Vladimir Berkovich, *Étale equivariant sheaves on p-adic analytic spaces*

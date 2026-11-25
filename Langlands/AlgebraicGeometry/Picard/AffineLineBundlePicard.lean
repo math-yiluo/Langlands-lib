@@ -21,7 +21,7 @@ namespace Langlands.AlgebraicGeometry.Picard
 variable {X : Scheme.{u}}
 
 private theorem portedIsInvertible (L : LineBundle X) :
-    Scheme.Modules.IsInvertible L.obj :=
+    Scheme.Modules.IsInvertibleFLT L.obj :=
   ⟨fun x => by
     obtain ⟨U, hx, ⟨e⟩⟩ := L.property x
     exact ⟨U, hx, ⟨((Scheme.Modules.restrictFunctorIsoPullback U.ι).app L.obj).symm ≪≫ e⟩⟩⟩
@@ -41,7 +41,7 @@ theorem invertible_sections_of_lineBundle (L : LineBundle X) [IsAffine X] :
       Γ(Scheme.Modules.tensor L.obj N.obj, ⊤) :=
     LinearEquiv.ofBijective
       (TensorProduct.lift (Scheme.Modules.tensorSectionsBilin L.obj N.obj ⊤))
-      ((portedIsInvertible L).bijective_lift_tensorSectionsBilin_monoidalV2
+      (Scheme.Modules.IsInvertible.bijective_lift_tensorSectionsBilin_monoidalV2 (portedIsInvertible L)
         (portedIsInvertible N) ⟨⊤, isAffineOpen_top X⟩)
   let e : Scheme.Modules.tensor L.obj N.obj ≅
       SheafOfModules.unit X.ringCatSheaf :=

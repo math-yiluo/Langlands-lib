@@ -1,7 +1,5 @@
 # Finiteness of full-dual opposite Jacquet exponents
 
-Author: Worker 189.
-
 `Langlands.glDualJacquetFiniteness` proves exactly the published proposition
 `Langlands.GLDualJacquetFinitenessStatement.{uF,uV}`. The finite p-adic field
 universe `uF` and source carrier universe `uV` remain independent. For each
@@ -90,10 +88,9 @@ This is a derived internal proof of the existing statement, using the
 published generic algebraic spectrum theorem and the published representation
 theoretic finite-generation and admissibility results. The implementation
 follows the finite operator algebra route rather than assuming finite
-dimensionality of the carrier or a supplied spectral decomposition. Worker 23
-proved the imported generic spectrum and opposite finite-generation theorems;
-their implementations are reused by import, without copying their code.
+dimensionality of the carrier or a supplied spectral decomposition. The
+imported generic spectrum and opposite finite-generation theorems are reused
+by import, without copying their code.
 
 No coefficient realization, scalar quotient extraction, analytic temperedness,
-weakly critical support or downstream classification theorem is used. The
-target statement pair and all its imported pairs are unchanged.
+weakly critical support or downstream classification theorem is used.

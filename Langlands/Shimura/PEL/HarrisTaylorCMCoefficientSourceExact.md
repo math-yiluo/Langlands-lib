@@ -1,7 +1,5 @@
 # Exact original CM coefficient sequences on common source covers
 
-Author: Worker 57.
-
 This derived construction models the entire original CM coefficient
 reduction sequence on every common finer original cover. It includes
 the independently descended kernel, its actual inclusion, and the
@@ -299,13 +297,13 @@ passages. The nonzero natural scalar and exponent zero come from the
 imported arithmetic construction. The proof imports generic torsor
 descent and slice comparisons by Lean name.
 
-This unit retains the exact geometric premises above. It proves no
+This module retains the exact geometric premises above. It proves no
 applicable representability or canonical-model existence, dual existence,
 coarse rigidity, ideal-power kernel formula, exactness of global sections,
 lattice independence or unbounded adic-limit assertion. Its restriction
 functors concern actual over-sites; comparison with another scheme's
-small-etale site is outside this unit.
+small-etale site is outside this module.
 
-The code and prose are by Worker 57 using published generic interfaces.
+The code uses published generic interfaces.
 The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

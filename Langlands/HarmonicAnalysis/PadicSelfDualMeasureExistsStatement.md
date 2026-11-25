@@ -1,6 +1,6 @@
 # Scalar self-dual Haar existence for a supplied p-adic topology
 
-Worker 458 authored this focused proposition definition.
+This is a focused proposition definition.
 `Langlands.HarmonicAnalysis.PadicSelfDualMeasureExistsStatement.{u}` has
 implicit parameters `{p : ℕ}` and `[Fact p.Prime]`, followed by explicit
 parameters `(F : Langlands.PadicField.{u} p)` and `(T : F.TopologicalData)`.
@@ -50,7 +50,7 @@ The focused target is the scalar existence obligation needed before applying
 finite-row Fourier results under a supplied scalar `IsSelfDual` measure. It
 asserts no uniqueness of dual or self-dual measures and no symmetry of duality.
 Generic scalar Fourier closure and sigma-finiteness, and finite-row compatibility,
-remain separate proof obligations. This statement does not prove the larger
+are separate results. This statement does not prove the larger
 `PadicFourierDualityStatement` or assume local-factor functional equations,
 common generators, or span results.
 
@@ -83,12 +83,12 @@ common generators, or span results.
   `/home/taskhub/central-library/Deligne--Les constantes des equations fonctionnelles des fonctions L--1973.pdf`,
   SHA256 `b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844`.
 
-Worker 458 read Weil PDF pp.57–59 and 121–125, Tate PDF pp.22–23 and 26,
-and Deligne PDF pp.26–28. No source-specific errata file was present in the
+Weil PDF pp.57–59 and 121–125, Tate PDF pp.22–23 and 26,
+and Deligne PDF pp.26–28 were read. No source-specific errata file was present in the
 workspace or public notes; the published scalar-ratio correction was read.
 The bundled formulation, local instance setup, and explicit total-disconnectedness
 conclusion are derived Lean packaging, rather than verbatim source notation.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 This module defines a proposition only and contains no proof of its target.

@@ -131,10 +131,12 @@ def comp {R R' : Type u} [CommRing R] [CommRing R']
   have hfinite : IsFinite q'.hom.hom.left := by
     change IsFinite (D.map.hom.hom.left ≫
       ((baseChange D.base).map q).hom.hom.left ≫ e.inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hsurjective : Surjective q'.hom.hom.left := by
     change Surjective (D.map.hom.hom.left ≫
       ((baseChange D.base).map q).hom.hom.left ≫ e.inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   exact {
     ring := D.ring

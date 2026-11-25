@@ -1,13 +1,11 @@
 # Homogeneity of left mixed products
 
-Authors: Worker 1070 (Lean statement and draft Markdown) and Worker 1129
-(independent source and Library check, revised Markdown, import closure audit
-at Library commit `a9fde2164dfeae002c8c27324c18bdcd395f447d`).
-
 This module states one proposition and proves nothing. It records
 Zelevinsky's proposition that the left mixed product of an arbitrary
 representation of `GL_k` with a homogeneous representation of a mirabolic
-group is again homogeneous. It is an unproved assertion.
+group is again homogeneous. The proof is
+`Langlands.Derivative.leftMixedProductHomogeneity` in
+`LeftMixedProductHomogeneityProof`.
 
 ## The declaration
 
@@ -131,14 +129,15 @@ Printed page = one-based PDF page + 439.
 
 The Library already states BZ77 §4.14(a) for the same functor as
 `Langlands.Derivative.LeftMixedProductDerivative`
-(`Langlands.Representation.Derivative.MixedProductDerivativeStatement`,
-task `f9454f68-5916-40af-9970-3425330b4a97`). At Library commit `a9fde216`
-that statement has no published proof, and this module does not import it.
+(`Langlands.Representation.Derivative.MixedProductDerivativeStatement`).
+That statement is proved by `Langlands.Derivative.leftMixedProductDerivative`
+in `LeftMixedProductDerivativeProof`, and this module does not import it.
 
-Worker 1070 compared text extraction of Ze80 pp. 187–188 with the page images
-for the statement and proof of §5.3. Worker 1129 independently read the text
-extraction of Ze80 pp. 170 and 187–188 and BZ77 pp. 444, 451 and 456–458,
-and checked rendered page images of Ze80 pp. 187–188 and BZ77 p. 451 for the
+The text extraction of Ze80 pp. 187–188 was compared with the page images
+for the statement and proof of §5.3. The text
+extraction of Ze80 pp. 170 and 187–188 and BZ77 pp. 444, 451 and 456–458 was
+read independently, and rendered page images of Ze80 pp. 187–188 and BZ77 p. 451
+were checked for the
 hats and arrows quoted below. At Library commit `a9fde216` there is no
 `notes/errata/` tree, and the project literature collection has no errata
 file for either source. This reports that bounded search only.
@@ -179,17 +178,21 @@ compact-induction functor `Φ⁺`, at every step below. Write `l` for the level
   `(Φ̂⁺)^(l-1) ∘ Ψ⁺((ρ × τ)^(l))`, and §5.1, (3) ⇒ (1), concludes.
 
 None of these inputs is asserted, assumed or imported by this module; each
-is an obligation of the proof task. The Library's published
+is left to the proof. The Library's published
 `Langlands.Derivative.Mirabolic.phiPlus`
 (`Langlands.Representation.Derivative.MirabolicPlusNormalization`, not
 imported here) is the normalized compact-induction functor `Φ⁺`. At Library
-commit `a9fde216` there is no mirabolic `Φ̂⁺`. There is only the generic
+commit `a9fde216` there was no mirabolic `Φ̂⁺`, only the generic
 smooth induction `Langlands.Induction.smoothInductionFunctor`
 (`Langlands.Representation.Induction.Definitions`). A proof that follows the
 source route must therefore construct `Φ̂⁺` with the source normalization.
 It must also prove the right adjunction `Φ⁻ ⊣ Φ̂⁺` for the published `Φ⁻`,
 that `Φ̂⁺` preserves embeddings, and the two product comparisons above.
-Otherwise it must use a different, fully proved route.
+Otherwise it must use a different, fully proved route. The proof in
+`LeftMixedProductHomogeneityProof` uses the `Φ̂⁺` of
+`Derivative.MirabolicSmoothPhiPlus` and its adjunction
+(`MirabolicSmoothPhiPlusAdjunction`), and avoids the `Ψ⁺` comparison (see
+that page).
 
 ## Normalization
 
@@ -236,51 +239,41 @@ remark explains the convention and is not proved in this module.
 
 ## Scope and dependencies
 
-The proposition supplies no proof. Statement publication proves no analytic
-assertion. Whatever a proof route needs from the following list is an
-obligation of the proof task, not a hidden hypothesis of this proposition:
+The proposition supplies no proof. Whatever a proof route needs from the following list is an
+obligation of the proof, not a hidden hypothesis of this proposition:
 BZ77 §3.2 (exactness, and the adjunctions `Ψ⁻ ⊣ Ψ⁺` and `Φ⁻ ⊣ Φ̂⁺` for a
 constructed smooth-induction `Φ̂⁺`), §4.14(a), Ze80 §5.1, the embedding
 `ρ × Φ̂⁺(σ) ↪ Φ̂⁺(ρ × σ)`, the `Ψ⁺` comparison, and any comparison of `χ_L`
 with a Haar modulus.
 
-This statement is a lower input to the Ze80 §6.2 homogeneity proof task
-`b711af72-fdf9-4b32-a450-937911426822`, itself a lower input to ordered-socle
-existence task `23189526-80b0-4828-a6d4-7ebec2cbeef5`. It uses no
-conclusion, proof successor or transitive proof dependency of that task, of
-socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`, of analytic segment
-classification `aca8805b-054f-4d56-8045-12db7f623404`, of segment-socle
-product irreducibility `23e98d90-6055-4e35-91a9-b0f5d8a84961`, of the final
-segment-socle irreducibility criterion
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`, of `AdjacentUnlinkedSegmentSocleSwap`
-or `TwoSegmentSocleCommutation`, of the special-head product criterion
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`, special-head exhaustion
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered special-head existence
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`SquareIntegrableLanglandsClassification` /
-`1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`, `GenericSegmentProductUniqueness` /
-`30341ae4-65f2-4a0e-9283-763db01a409e`, ordered special-segment conversion
-`8252833d-c269-41a9-824c-5879e531b23b`, or forward special-segment essential
-square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`. It uses no
+This statement is a lower input to the Ze80 §6.2 homogeneity proof,
+itself a lower input to ordered-socle
+existence. It uses no
+conclusion, proof or transitive proof dependency of ordered-socle
+existence, of socle exhaustion, of analytic segment
+classification, of segment-socle
+product irreducibility, of the final
+segment-socle irreducibility criterion, of `AdjacentUnlinkedSegmentSocleSwap`
+or `TwoSegmentSocleCommutation`, of the special-head product criterion,
+special-head exhaustion, ordered special-head existence, quotient coverage,
+tempered block uniqueness,
+`SquareIntegrableLanglandsClassification`, square-integrable exhaustion,
+regular exhaustion, `GenericSegmentProductUniqueness`, ordered special-segment
+conversion, or forward special-segment essential
+square-integrability. It uses no
 segment, cuspidal or supercuspidal derivative formula (Ze80 §3.5 or §9.6),
-no segment Jacquet formula and no Whittaker-finiteness result. Later proof
-tasks and lower splits must preserve this exclusion set, the shared upstream
-restrictions of GL Leibniz task `3238f371-e9a2-42ce-8b5d-9c4d3400ff55`
-revision 2 (as carried by task `f9454f68`), and the further exclusions
-recorded in their contracts.
+no segment Jacquet formula and no Whittaker-finiteness result. A proof
+must also avoid these results and the results listed for
+the all-rank GL Leibniz route; the audit of results not used in
+`LeftMixedProductHomogeneityProof.md` checks this for the Library's proof.
 
 ### Import closure audit
 
 The complete transitive project import closure was traversed in Library
-commit `a9fde2164dfeae002c8c27324c18bdcd395f447d`, the base of this
-contribution. It has the 73 project modules listed below. Every one has a
+commit `a9fde2164dfeae002c8c27324c18bdcd395f447d`. It has the 73 project
+modules listed below. Every one has a
 nonempty Markdown pair, and every pair is byte-identical between that
-Library tree, the earlier Library commit `6cb15022` and the submitting
-workspace. The derivative branch contains
+Library tree and the earlier Library commit `6cb15022`. The derivative branch contains
 group and functor constructions, quotient carriers, rank transports, the
 finite-maximum level and the invariant-subspace homogeneity definition, with
 elementary laws about them. The mixed-product branch adds the block
@@ -291,7 +284,7 @@ normalized product and the external tensor product.
 homomorphism to `ℝ≥0ˣ` is one on every compact subgroup. The closure contains no
 socle, segment, classification, commutation, exhaustion, coverage,
 derivative-filtration, derivative-detection, derivative-exactness or
-Whittaker-finiteness result, and no module of any excluded task above. The
+Whittaker-finiteness result, and no module of any result above. The
 `Proof` modules in the closure prove p-adic arithmetic normalization
 interfaces, matrix-coefficient laws, smooth-part laws, smoothness and
 admissibility transfer, and character-twist laws; none concerns derivatives,
@@ -375,13 +368,11 @@ Langlands.Topology.Nonarchimedean.Subgroup
 
 ### Development checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, on a
-workspace equal to Library commit `a9fde216` plus this pair (diagnostic
-`de799c01-9509-426a-b0fe-1e26243a77bb`), compiled the module with no errors
+A Lean check on a
+workspace equal to Library commit `a9fde216` plus this pair compiled the module with no errors
 or warnings. The same Lean file had compiled the same way at Library commits
-`6cb15022` (diagnostic `a5bd3ae8-fec6-4840-acce-e68e37627518`) and
-`ddf3850e` (diagnostic `f3419807-e97c-4820-b218-634e8f15acb7`). Inspection of the declaration reported
-`statement_returns_prop: true`, level parameters `uF, uV`, and only the
+`6cb15022` and
+`ddf3850e`. Inspection of the declaration reported
+that it is a proposition, level parameters `uF, uV`, and only the
 standard axioms `propext`, `Classical.choice` and `Quot.sound`. These checks
-establish elaboration and proposition kind only; they are not semantic
-acceptance.
+establish elaboration and proposition kind only.

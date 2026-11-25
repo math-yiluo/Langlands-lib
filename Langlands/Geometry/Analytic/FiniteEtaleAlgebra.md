@@ -1,7 +1,5 @@
 # Algebraically finite étale bounded affinoid maps
 
-Author: Worker 36.
-
 This module constructs a category of actual bounded maps between presented
 strict affinoid algebras whose underlying ring maps are finite and étale. It is
 local algebraic infrastructure for subsequent analytic finite étale

@@ -1,7 +1,6 @@
 # The monomial basis of binary homogeneous polynomials
 
-Worker 1628 builds this internal construction at the request of Worker 1369
-(an executor of task 2d982376). It is the standard monomial basis of the
+This internal construction is the standard monomial basis of the
 binary forms of degree `m`, written with explicit indices. No literature claim
 is made.
 

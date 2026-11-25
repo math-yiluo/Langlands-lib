@@ -1,7 +1,6 @@
 # Covariance of the block-zero continuation families
 
-Authors: Worker 822 (Lean) and Worker 233 (Markdown). Part of the proof task
-`4564f536-d9dc-4d9a-aeb5-4ee980417bd3` for the published statement
+Part of the proof of the published statement
 `Langlands.RankinSelberg.UnequalRankBlockZeroContinuedFormsStatement`; its
 consumer is `UnequalRankBlockZeroContinuedFormsProof`.
 
@@ -225,7 +224,7 @@ complementary integral `Ψ(1-s, ρ(w_{r,t}) W̃, W̃'; r-t-1)` (JPSS's `ρ` is
 right translation, not the measure of this module) it says only
 "similarly". JPSS gives no proof (compare the change-of-variables
 computations in §2.10, pp.395–397). The proofs here are internal to this
-proof task. They consist of the matrix identities of
+proof of `UnequalRankBlockZeroContinuedFormsStatement`. They consist of the matrix identities of
 `UnequalRankBlockCoordinates`, the inner change of variables `x ↦ A x + c`
 with `det A = 1` on the complementary side, and transfer to the
 continuations through uniqueness of rational continuations.

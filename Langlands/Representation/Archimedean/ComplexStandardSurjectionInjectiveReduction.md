@@ -1,7 +1,7 @@
 # Reduction of `ComplexStandardSurjectionInjectiveStatement` (V2)
 
-Worker 86 wrote this module for task `66a0707a-ea74-4cb9-8555-76b129898fd5` (Task 6759). That
-task's target is the Library's `Langlands.Archimedean.ComplexStandardSurjectionInjectiveStatement`
+This module was written for the proof of the Library's
+`Langlands.Archimedean.ComplexStandardSurjectionInjectiveStatement`
 (V2, module `Langlands.Representation.Archimedean.ComplexGenericStandardInjectiveReduction`).
 V2 says: let `V` be an irreducible admissible `(𝔤𝔩_n(ℂ), U(n))`-module that has the
 standard-module parameter of some list `ds'` of complex characters, that is, an *injective*
@@ -165,7 +165,7 @@ Provenance: internal. The principal series has nonzero `K`-finite vectors: restr
 identifies it with the functions on `U(n)` that transform on the left under the diagonal
 unitary group by a character, and such `K`-finite functions exist. This elementary fact is
 needed because irreducibility in the Library (`IsIrreducibleGKModule`) includes nontriviality.
-Its proof is part of Task 6759.
+It is proved as `complexStandardNontrivial` (module `ComplexStandardNontrivialProof`).
 
 ## Statement R: `ComplexStandardSurjectionInjectiveReductionStatement` (universe `uV`)
 
@@ -217,10 +217,12 @@ Assume LU, PI and NZ, and take the hypotheses of V2 for `n`, `V`, `ρ`, `π`, `d
 ## Scope
 
 This module is an intermediate reduction, not a proof of V2: none of LU, PI or NZ is proved
-here, and the theorem keeps all three as premises. LU and PI are the targets of separate proof
-tasks (Task 7055, `fbfc1fa1-a863-4424-800e-92f30996a1be`, and Task 7056,
-`3557f2a0-29b4-4eae-8ade-9c5ff445b7b5`); NZ is proved within Task 6759, whose final result
-must be a theorem whose type is exactly V2.
+here, and the theorem keeps all three as premises. The Library proves LU as
+`complexLanglandsQuotientUnique` (module `ComplexLanglandsQuotientUniqueProof`), PI as
+`complexStandardPermutation` (module `ComplexStandardPermutationProof`) and NZ as
+`complexStandardNontrivial` (module `ComplexStandardNontrivialProof`);
+`complexStandardSurjectionInjective` (module `ComplexStandardSurjectionInjectiveProof`) combines
+them into V2.
 
 Like V2, LU and PI are stated for the Library's algebraic `(𝔤, K)`-modules and its
 `complexStandardModule`, and their truth relies on identifying `X(ds)` with the Harish-Chandra

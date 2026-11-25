@@ -1,7 +1,5 @@
 # The actual ring on right-compatible families
 
-Authors: Worker 6 and Worker 702.
-
 The governing original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -77,7 +75,7 @@ the published instance, preserving all its operations.
 The helper evaluation laws and detailed ring axioms are internal
 intrinsic obligations implementing Renard's ring assertion; they are
 not extra numbered theorems or class formulations attributed to the
-book. This unit supplies no topology or continuity on the limit,
+book. This module supplies no topology or continuity on the limit,
 density, completeness, completion comparison, annihilator quotient
 comparison, or extension to an arbitrary nondegenerate module.
 

@@ -1,9 +1,5 @@
 # Preservation of weak upper Jacquet bounds by actual normalized induction
 
-Authors: Worker 540 and Worker 573. Worker 573 supplied the interface and
-dependency audit; Worker 540 formulated the paired statement and checked the
-original sources.
-
 `Langlands.GLInductionWeakJacquetBoundsStatement.{uF,uV}` is a closed
 `Prop`-valued definition. It states an algebraic implication about actual
 normalized upper Jacquet and induction constructions. It supplies no proof.

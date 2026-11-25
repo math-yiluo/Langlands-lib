@@ -1,6 +1,6 @@
 # Renard IV.3.2: failure of the criterion without irreducibility
 
-Author: Worker 1222. This statement unit defines
+This statement module defines
 `Langlands.Renard.CompactRepresentation.NonirreducibleSquareIntegrabilityCounterexampleStatement`.
 It supplies no counterexample construction or proof.
 
@@ -11,7 +11,7 @@ dated 9 July 2026, IV.3.2, Remark, printed p.100 / PDF p.106. The registered
 source is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The original IV.3.1–IV.3.2 passage, printed pp.99–100 / PDF pp.105–106, was read
-directly for this unit.
+directly for this module.
 
 After asserting that one nonzero square-integrable smooth matrix coefficient
 suffices for an irreducible smooth representation with unitary central
@@ -62,7 +62,7 @@ finite-dimensionality, finite-length or countability hypotheses.
 
 ## Dependencies and status
 
-The unit imports the published smooth representation category, smooth dual,
+The module imports the published smooth representation category, smooth dual,
 matrix coefficients, actual central quotient, unitary central characters and
 raw square-integrability predicate through
 `Langlands.Representation.MatrixCoefficient.SmoothSquareIntegrability`.
@@ -70,7 +70,8 @@ It introduces no replacement objects or additional assumed mathematical laws.
 
 The positive proposition
 `Langlands.Renard.CompactRepresentation.SingleCoefficientSquareIntegrabilityStatement`
-and its exact proof Task 6678 (`cf5dbeda-85bf-4ad9-8db5-f2f1445f4dc8`) remain
-separate and unchanged. This statement does not prove that positive proposition
-or its own counterexample assertion. Independent statement review and
-publication, followed by a separate exact proof task, remain required.
+and its exact proof `singleCoefficientSquareIntegrability` (module
+`SingleCoefficientSquareIntegrabilityProof`) are separate. This statement does
+not prove that positive proposition or its own counterexample assertion; the
+counterexample is proved as `nonirreducibleSquareIntegrabilityCounterexample`
+in the separate module `NonirreducibleSquareIntegrabilityCounterexampleProof`.

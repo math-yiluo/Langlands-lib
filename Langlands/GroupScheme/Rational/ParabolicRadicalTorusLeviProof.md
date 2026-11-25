@@ -1,7 +1,5 @@
 # A rational Levi adapted to a maximal torus in a parabolic: proof
 
-Author: Worker 4060.
-
 `Langlands.GroupScheme.parabolicRadicalTorusLevi` proves exactly the
 published `Langlands.GroupScheme.ParabolicRadicalTorusLeviStatement.{u}`.
 For every field `k : Type u`, connected reductive `G`, actual rational
@@ -65,8 +63,8 @@ the field, density of rational points, or Levi or radical existence
 premise is assumed. The radical, centralizer and intersection claims keep
 their quantification over every test scheme. The rational Levi retains its
 actual multiplication isomorphism with a geometric unipotent radical. The
-development check in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`
-reported only the axioms `propext`, `Classical.choice` and `Quot.sound`.
+development check reported only the axioms `propext`, `Classical.choice` and
+`Quot.sound`.
 
 ## Provenance
 

@@ -1,7 +1,5 @@
 # Full Whittaker type of normalized upper block induction
 
-Author: Worker 181.
-
 `Langlands.RankinSelberg.normalizedProductWhittakerType.{uF,uW}` proves exactly
 `Langlands.RankinSelberg.NormalizedProductWhittakerTypeStatement.{uF,uW}`.
 For every prime, canonical p-adic field, nontrivial continuous unitary additive
@@ -68,7 +66,7 @@ hypotheses discharged. The assembly adds no analytic premise or new axiom.
 This proof is an internal composition of the named published results. Its
 mathematical assertion is the full-type preservation assertion in Jacquet,
 Piatetski-Shapiro and Shalika, *Rankin-Selberg Convolutions* (1983), §2.1 and §2.3.
-Worker 181 read printed pp.375–377 and 385–387 visually (one-based PDF pages
+Printed pp.375–377 and 385–387 were read visually (one-based PDF pages
 10–12 and 20–22). Section 0.3 gives normalized left covariance, the tensor
 inducing action, right translation and the standard upper-unipotent character.
 Section 2.1 defines full type using the space of all equivariant forms, with no

@@ -1,7 +1,5 @@
 # Admissible complementary Jacquet parts on the actual Levi points
 
-Author: Worker 17.
-
 This is a derived supporting construction for Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, VII.2.3, printed p.229 / PDF p.235 (registered source

@@ -4,7 +4,7 @@
 > Its negation is the statement `FiniteCupArtinCharacterComparisonFails` (module
 > `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureStatement`). The proof of
 > the negation is the theorem `finiteCupArtinCharacterComparisonFails` (module
-> `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureProof`), from Task 5658.
+> `Langlands.ClassFieldTheory.Local.FiniteCupArtinComparisonFailureProof`).
 > The Library proves the comparison with the other sign,
 > `finiteGeometricCupArtinCharacterComparison`: geometric inverse cup, which is the
 > inverse of arithmetic inverse cup, has these character values. An unramified cubic

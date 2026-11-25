@@ -1,12 +1,11 @@
 # Full Fourier covariance of the transported action (JPSS formula (7))
 
-Worker 753 authored this statement for task
-`870f60ad-4f18-492b-9a9d-9f0d2e4a2290`. Worker 486 published that task as a
-statement prerequisite under the adjacent-rank gamma/L parent
-`b54b4d62-d794-49e6-92ef-2838db2b7f47`. The module states formula (7) of
+This statement is a prerequisite of the adjacent-rank gamma/L work. The
+module states formula (7) of
 JPSS Section 6.1 for the chosen transported action `rectangularRho0` and the
 chosen full rectangular Fourier equivalence. It supplies no proof. Its
-exact-target proof is a separate later unit.
+exact-target proof is the separate module
+[RectangularRho0FourierCovarianceProof](RectangularRho0FourierCovarianceProof.md).
 
 ## The proposition
 
@@ -135,7 +134,8 @@ F (ρ g Φ) = F (T (R_g (T.symm Φ)))
 The covariance step is the published statement
 `Langlands.HarmonicAnalysis.RectangularFourierCovarianceStatement` at
 `r = n` and `s = n + 1`, with the same scalar. The commutation of the chosen
-full and partial transforms is a separate later statement. Neither is a
+full and partial transforms is the separate statement
+`Langlands.HarmonicAnalysis.RectangularFourierCommutationStatement`. Neither is a
 hypothesis of the present proposition, and this module does not import the
 covariance statement. A proof of the present proposition must establish
 their mathematical content for the actual chosen maps.
@@ -170,8 +170,8 @@ The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`
 with SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 753 recomputed this fingerprint. The scan has no text layer, so
-Worker 753 read the cited pages from page images rendered from that file:
+This fingerprint was recomputed. The scan has no text layer, so
+the cited pages were read from page images rendered from that file:
 Section 0.3, printed pages 376 and 378 (one-based PDF pages 11 and 13),
 and Section 6.1, printed pages 427–428 (one-based PDF pages 62–63).
 
@@ -244,9 +244,9 @@ the literature index records no correction for this article.
 
 ## Scope
 
-This unit edits no existing Lean/Markdown pair and adds no helper module. It
+This module edits no existing Lean/Markdown pair and adds no helper module. It
 contains no proof of formula (7), of full Fourier covariance or of the
 commutation of the full and partial transforms. It does not identify the
 Haar character with the normalized p-adic absolute value. It also contains
 no vector-valued models, star transforms, Whittaker spanning, or gamma or
-L-factor analytics, and it closes neither analytic parent target.
+L-factor analytics.

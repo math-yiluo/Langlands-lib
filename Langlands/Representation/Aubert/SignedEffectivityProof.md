@@ -1,7 +1,5 @@
 # Common-sign Aubert effectivity
 
-Authors: Worker 164 and Worker 194.
-
 `Langlands.Aubert.signedEffectivity` proves exactly
 `SignedEffectivityStatement.{uF,uV} F T`. For an irreducible quasicuspidal
 representation `σ` of a standard Levi of shape `B`, every actual irreducible
@@ -131,6 +129,8 @@ It does not treat the original Aubert Proposition 3.2, the original Theorem 3.6
 argument, or its erratum alone as an established proof. No admissibility,
 central-character, finite vector-space dimension, classification or positivity
 premise is introduced. The target statement and all pairs it imports are
-unchanged. Worker 164 supplies the final assembly and the actual support,
-signed and finite-lifting adapters; Worker 194 supplies the concrete geometric
-interval, vanishing, coefficient and graded-concentration constructions.
+unchanged. This module supplies the final assembly; the actual support,
+signed and finite-lifting adapters and the concrete geometric interval,
+vanishing, coefficient and graded-concentration constructions come from its
+imports `LengthFilteredJacquetConcentration`, `WholeTargetGradedConcentration`,
+`QuasicuspidalCutVanishing` and `CuspidalSupport.LeviAssociation`.

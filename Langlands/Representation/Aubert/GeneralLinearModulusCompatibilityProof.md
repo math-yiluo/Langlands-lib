@@ -1,7 +1,5 @@
 # Full Haar-to-block modulus compatibility for p-adic GL parabolics
 
-Author: Worker 106.
-
 `Langlands.Parabolic.generalLinearModulusCompatibility` proves the published
 proposition `Langlands.Parabolic.GeneralLinearModulusCompatibility.{uF}`.
 Its parameters are exactly a prime `p`, `F : PadicField.{uF} p`, supplied

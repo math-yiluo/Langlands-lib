@@ -93,14 +93,14 @@ theorem primeEndomorphismTrace_involution (p : ℕ) [Fact p.Prime]
       apply hE.2 y
       intro x
       exact e.map_eq_zero_iff.mp (hy x)
-  have hadj : ∀ x y, B (Tate.PrimeAdic.rationalHomMap T p a x) y =
-      B x (Tate.PrimeAdic.rationalHomMap T p (involution P W hadd lam a) y) := by
+  have hadj : ∀ x y, B (Tate.PrimeAdic.rationalHomMap T p a.asHom x) y =
+      B x (Tate.PrimeAdic.rationalHomMap T p (involution P W hadd lam a).asHom y) := by
     intro x y
     exact congrArg e (primeWeil_involution P W hadd relativeFiniteWeilTransition T p
       lam a x y)
   exact (trace_eq_of_nondegenerate_adjoint B hB _ _ hadj).symm
 
-local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+private local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
 
 /-- The fixed rational geometric trace is invariant under the actual Rosati operation. -/
 theorem geometricEndomorphismTrace_involution [CharZero k] :

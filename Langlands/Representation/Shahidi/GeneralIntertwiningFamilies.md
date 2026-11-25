@@ -1,7 +1,8 @@
 # General-field families for Shahidi's intertwining integral
 
 This module defines flat families in the actual general-field induction and
-the scalar integrals that will be used to state rational continuation. It
+the scalar integrals used to state rational continuation (in
+`GeneralIntertwiningStatements`). It
 proves their reading through the actual intertwining operator on its
 existing convergence domain. No convergence or continuation theorem is
 assumed or proved.
@@ -24,8 +25,8 @@ compact-picture interpretation: a flat family has parameter-independent
 restriction to the integral maximal compact subgroup. This is a **derived**
 interpretation, not a verbatim source definition.
 
-Worker 99 adapted Worker 11's published p-adic family definitions and scalar
-operator-reading lemma. The new definitions use the existing general
+This module adapts the published p-adic family definitions and scalar
+operator-reading lemma of `IntertwiningStatements`. The new definitions use the existing general
 `SourceSpace`, `sourceEval`, `TargetSpace`, `targetEval` and
 `intertwiningInduced`. The p-adic declarations are unchanged. The normalized
 induction and its documented printed exponent issue are inherited from

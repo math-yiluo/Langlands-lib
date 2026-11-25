@@ -118,9 +118,7 @@ The operator's plan, registered as
 `operator-external-inputs-plan-2026-11-16`, Section 4.6, Interface and
 final recommendation (`external-inputs-plan.tex`, lines 726--773),
 requires restricted Arthur--Clozel III.5.1 alongside B5--B7 as a
-separate premise for E3. The full operator correspondence
-`a3700c4527de52e1911dd7b35fb523fd` explicitly
-authorizes that statement. The common chosen witness is the project's
+separate premise for E3. The common chosen witness is the project's
 formulation of the compatibility between E2 and E3.
 
 James Arthur and Laurent Clozel, *Simple Algebras, Base Change, and the
@@ -140,12 +138,13 @@ following parts of the interface.
   representations. The discussion after I.6.8, printed pp.59--60 /
   PDF pp.73--74, extends it using Langlands classification.
 
-The operator's restriction specializes the base to a regular-algebraic
+The restriction specializes the base to a regular-algebraic
 cuspidal class over a CM field with supercuspidal components at two
 distinct conjugate places. Arthur--Clozel's local lifting supplies the
 mathematical model for the chosen map. The Lean statement requires both
 the published W1--W4 weak laws and the global compatibility property
 for that map.
 
-This module defines the proposition. Its proof belongs to the E3 program,
-Task 7453 (`010fb780-e545-44b3-b923-936ad3f52066`).
+This module defines the proposition. Its proof belongs to the E3 program:
+compatibility of Henniart's candidate with weak cyclic base change of prime
+degree.

@@ -5,7 +5,9 @@ Module: `Langlands.Global.RankinSelberg.RealStandardPairingPremises` (namespace
 
 This module states two local statements about the real standard modules of `GL_n(ℝ)`: D
 (duality) and U (factor invariance). **Neither is proved in this module**; both are `Prop`-valued
-definitions recorded as open statements, so that separate proof tasks can name them. Together,
+definitions, so that separate proofs can name them. The Library proves D as
+`realStandardDualPairing` (module `RealStandardDualPairingProof`) and U as
+`realStandardIntertwinerPairL` (module `RealStandardIntertwinerPairLProof`). Together,
 D and U imply the local pairing premise of the real-place contragredient pair-factor statement
 (see "Use" below). The module imports only Library modules.
 
@@ -54,10 +56,9 @@ Only the real directions `1 ⊗ X` are required; since both Lie actions are `ℂ
 
 The first two clauses are written out in the same form and order as the predicate
 `IsRealStandardInvariantPairing n ds (ds.map dualBlock) Q` of the module
-`Langlands.Global.RankinSelberg.RealPlaceContragredientPremises` in Worker 5459's staged
-candidate `88d7f809-a202-4ad2-bc1b-b3572a4edd7f` (Task 7644), so they are definitionally that
-predicate. That module is not in the Library; the clauses are written out here so that this
-module depends only on the Library.
+`Langlands.Global.RankinSelberg.RealPlaceContragredientPremises`, so they are definitionally that
+predicate. The clauses are written out here, and this module does not import
+`RealPlaceContragredientPremises`.
 
 Only the second module is required to be separated by `Q`. With `I(ds)` irreducible, the left
 kernel `{f | ∀ h, Q f h = 0}` of a nonzero invariant form is automatically zero (it is stable
@@ -162,11 +163,11 @@ isomorphism classes of the two Weil-group representations. This gives both equal
 
 ## Use
 
-Worker 27's draft module `Langlands.Global.RankinSelberg.RealStandardPairingReduction` (Task
-7644 shared draft, revision 1; not in the Library and not part of this module) proves that D
-and U imply `RealStandardPairingPairLStatement`, the local premise in Worker 5459's staged
-reduction of the real-place contragredient pair-factor statement
-`RealPlaceContragredientPairLStatement`. In that proof, D identifies `I(ds.map dualBlock)` with
+The module `Langlands.Global.RankinSelberg.RealStandardPairingReduction` (not part of this
+module) proves that D and U imply `RealStandardPairingPairLStatement`, the local premise
+(module `RealPlaceContragredientPremises`) in the reduction of the real-place contragredient
+pair-factor statement `RealPlaceContragredientPairLStatement` (module
+`RealPlaceContragredientReduction`). In that proof, D identifies `I(ds.map dualBlock)` with
 the `O(n)`-finite dual of an irreducible `I(ds)`, and U is applied to the resulting nonzero
 intertwiner from the module of the contragredient's parameter.
 
@@ -179,10 +180,10 @@ Library.
 
 ## Provenance and status
 
-Both statements are internal and derived: Worker 27 split the local pairing premise
+Both statements are internal and derived: they split the local pairing premise
 `RealStandardPairingPairLStatement` into a duality statement and a classification statement,
-stated with the Library's actual modules. They rest on the literature below and are recorded as
-open statements; neither is proved in this module.
+stated with the Library's actual modules. They rest on the literature below; neither is proved
+in this module.
 
 - A. W. Knapp, *Local Langlands correspondence: the archimedean case*, in: Motives, Proc.
   Sympos. Pure Math. 55, Part 2 (1994), 393–410 (project source `knapp-1994-archimedean-llc`;

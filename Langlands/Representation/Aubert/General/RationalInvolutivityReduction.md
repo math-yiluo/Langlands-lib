@@ -1,7 +1,5 @@
 # Involutivity on the actual rational-point family from its named inputs
 
-Author: Worker 1180, task `2f01b264-fb0e-4029-901c-009044feaa97`.
-
 This module specializes the general reduction of `InvolutivityReduction` to
 the actual standard family `parabolic i ν`, `levi i ν`, `unipotent i ν` of
 `RationalPoint k G.X` with its canonical point topology. It proves the

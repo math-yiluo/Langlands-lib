@@ -1,7 +1,5 @@
 # Polynomial norm minimality on actual adelic Siegel products
 
-Author: Worker 5152.
-
 `Langlands.Global.AdelicSiegelFactors.SiegelNormMinimalityStatement` is a target
 proposition for proof. This module states it and proves nothing about it. It is
 property (vii) of Mœglin–Waldspurger I.2.2 for the Library's Siegel products and

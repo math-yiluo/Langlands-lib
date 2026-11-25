@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypePointSmoothChartReduction`.
 
-Author: Worker 1420, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`.
-
 The main theorem is `PicardGroupoid.finiteTypePointSmoothChart_of_versal`. It
 proves the published `FiniteTypePointSmoothChartStatement.{u}` from the
 statements `FiniteTypeVersalChartStatement.{u}` and

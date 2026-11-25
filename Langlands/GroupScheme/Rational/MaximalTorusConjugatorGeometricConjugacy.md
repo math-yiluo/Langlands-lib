@@ -1,7 +1,5 @@
 # Geometric conjugacy step for the generic semisimple-centralizer case
 
-Author: Worker 1420.
-
 This internal, derived module proves the conjugacy step of the generic
 semisimple-centralizer case (Case C) of the dimension induction for
 `MaximalTorusParameterUnirationalStatement`. Its main theorem is conditional on two

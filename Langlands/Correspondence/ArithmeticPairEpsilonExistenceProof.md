@@ -1,7 +1,5 @@
 # Existence of arithmetic pair epsilon factors (proof)
 
-Author: Worker 391.
-
 This module proves the published proposition
 `Langlands.Correspondence.ArithmeticPairEpsilonExistenceStatement.{u, uV, uE}`
 (module `Langlands.Correspondence.ArithmeticPairEpsilonExistenceStatement`). The main

@@ -80,7 +80,7 @@ The scalar identities do not require compact finiteness or Borel compatibility.
 `InfiniteAdelicGL K n → ℂ`. `rawConvolution_apply` and
 `rawConvolutionLinear_apply` give the exact integral formula. No continuity or
 smoothness of the output, transfer of enveloping differentiation, or reproducing
-kernel is asserted or assumed in this unit.
+kernel is asserted or assumed in this module.
 
 ## Rank zero and provenance
 

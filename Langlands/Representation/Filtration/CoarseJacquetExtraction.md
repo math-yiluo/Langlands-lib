@@ -1,7 +1,5 @@
 # Actual coarse Jacquet extraction and return through refinement
 
-Author: Worker 19.
-
 This internal construction specializes exact smooth image filtrations to every
 supplied refinement `S` of an arbitrary coarse positive block shape `B`. It uses
 the actual normalized upper Jacquet functors and their published transitivity
@@ -116,13 +114,13 @@ modules are `ConstituentRelations`, `FiniteLengthStatement`,
 actual definitions, twist transport, duality and elementary presentation
 laws; their presence does not provide a classification conclusion. The
 proof routes described above contain none of the eight excluded
-classification conclusions, their proof successors, general ordered
+classification conclusions, the modules that prove them, general ordered
 quotient coverage or full multisegment classification. In particular this
 adapter uses no global support decomposition, local length-three
 irreducibility, or coarse-constituent uniqueness assertion.
 
 Declaration inspection of
 `exists_irreducible_coarseJacquet_subquotient` retains independent `uF,uV`
-and reports only `propext`, `Classical.choice`, and `Quot.sound`. This unit
+and reports only `propext`, `Classical.choice`, and `Quot.sound`. This module
 provides ambient extraction and return for a supplied arbitrary refinement;
 it does not establish either repeated-factor transfer.

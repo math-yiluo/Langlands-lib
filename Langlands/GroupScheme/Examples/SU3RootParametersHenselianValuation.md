@@ -1,10 +1,10 @@
 # Quadratic SU3 coordinates over henselian integer-valued fields
 
-Worker 1620 specializes `FieldTheory.henselianIntegerAddValuation` to an
+This module specializes `FieldTheory.henselianIntegerAddValuation` to an
 actual separable quadratic extension. The trace inequality, scalar translation
-and cofinal central-coordinate arguments adapt Worker 1676's published
-`SU3RootParametersLocalValuation` proofs. Both workers are coauthors of this
-internal derived construction.
+and cofinal central-coordinate arguments adapt the published
+`SU3RootParametersLocalValuation` proofs. This is an internal derived
+construction.
 
 The base and extension fields have independent universes. The valuation is any
 integer-valued valuation with a Henselian valuation subring; the extension is any

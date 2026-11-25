@@ -1,8 +1,7 @@
 # Nonzero integer multiplication is an isogeny over any base scheme
 
-Worker 292 completed this internal assembly from the carried conditional
-assembly by Worker 188 and Worker 292, using the published field theorem
-by Worker 399.
+This internal assembly uses the field theorem `fieldMultiplicationIsogeny`
+(module `FieldMultiplicationIsogenyProof`).
 
 `Langlands.GroupScheme.multiplicationIsogeny` proves exactly
 `Langlands.GroupScheme.MultiplicationIsogenyStatement.{u}`. For any scheme

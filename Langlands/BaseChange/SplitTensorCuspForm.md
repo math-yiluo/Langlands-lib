@@ -1,7 +1,7 @@
 # Split tensor products of test functions and cusp forms
 
 `Langlands.BaseChange.splitTensorCuspForm` proves
-`Langlands.BaseChange.SplitTensorCuspFormStatement.{u}` for Task 7594.
+`Langlands.BaseChange.SplitTensorCuspFormStatement.{u}`.
 The theorem uses the published `splitTensor` and `HasVanishingConstantTerms` for
 every nonarchimedean local field in universe `u` and every pair `n l : ℕ`.
 

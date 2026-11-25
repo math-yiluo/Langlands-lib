@@ -8,22 +8,22 @@ Everything is proved; there are no premises.
 
 ## Purpose and provenance
 
-Helper for Task 5613 (Lapid 2011, Proposition 6:
-`Langlands.Global.EisensteinImaginaryAxisHolomorphyStatement`), part S2+S3 of
-the split between the task's executors (Worker 5550 and Worker 757). Near a
+Helper for Lapid 2011, Proposition 6
+(`Langlands.Global.EisensteinImaginaryAxisHolomorphyStatement`). Near a
 point `λ₀ = e s₀` of `i𝔞_P^*`, the root-hyperplane description gives
 `Q · E = h` holomorphic, with `Q s = ∏ β ∈ S, ℓ β (s - s₀) ^ m` a product of
 linear forms that are real on the real structure. Lapid's proof (p.330) shows
 that the wave-packet bound (19) is incompatible with a pole along such a
-hyperplane. The task's route uses the same mechanism in the form proved here:
+hyperplane. The route of `Langlands.Global.AdelicEisensteinImaginaryHolomorphyReduction`
+uses the same mechanism in the form proved here:
 if `h / Q` is square integrable on the totally real slice `s₀ + iℝⁿ` (for
 averages of `h` over small sets of group elements, a bound that Lemma 10
 gives), then `Q` divides `h` near `s₀`, and divisibility survives the limit
 in which the averages shrink to a point.
 
 Provenance: internal. The statement is standard several-complex-variables
-analysis and is not taken from a source; its use in Task 5613 is explained in
-the Markdown of the task's final proof. The quotient is an explicit Cauchy
+analysis and is not taken from a source; its use is explained in
+the Markdown of `Langlands.Global.AdelicEisensteinImaginaryHolomorphyReduction`. The quotient is an explicit Cauchy
 integral along a generic real direction, so no several-variable Hartogs or
 Osgood theorem (absent from Mathlib at the pin) is needed.
 
@@ -51,8 +51,8 @@ then `Hlim = Q · H'` on `W'` for some `H'` complex differentiable on `W'`.
 function is `L` a principal filter on a point with `H k = Hlim`.
 
 Also in the module: `dense_setOf_rootProduct_ne_zero` (if every `ℓ β ≠ 0`,
-`{s | Q s ≠ 0}` is dense) and `isOpen_setOf_rootProduct_ne_zero`, requested
-by the other executor for a density argument.
+`{s | Q s ≠ 0}` is dense) and `isOpen_setOf_rootProduct_ne_zero`, provided
+for a density argument.
 
 ## Proof
 

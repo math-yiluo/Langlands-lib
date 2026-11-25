@@ -174,4 +174,81 @@ theorem cyclicProductGLCoordinates_isNorm_iff (d : ℕ) (hσ : σ ^ ((m + 1) * d
     refine ⟨x, (cyclicProductGLCoordinates_normAssociated_iff c hc hc' hshift hwrap d hσ x γ).mpr ?_⟩
     simpa [x, List.ofFn_succ] using hy
 
+section Measures
+
+open MeasureTheory
+
+/-- Regular non-norms are the same for `(σ, (m + 1) d)` and `(τ, d)`, so the vanishing of orbital
+integrals off the norms is the same condition. -/
+theorem vanishesOffNorms_cyclicProduct_iff {F : Type u} [Field F] [ValuativeRel F]
+    [TopologicalSpace F] [IsNonarchimedeanLocalField F] {E : Type v} [CommRing E] [Algebra F E]
+    [TopologicalSpace E] {L : Type w} [Field L] [Algebra F L] [TopologicalSpace L] {m d n : ℕ}
+    {σ : E ≃ₐ[F] E} {τ : L ≃ₐ[F] L} (c : E ≃ₐ[F] (Fin (m + 1) → L)) (hc : Continuous c)
+    (hc' : Continuous c.symm) (hshift : ∀ (x : E) (i : Fin m), c (σ x) i.castSucc = c x i.succ)
+    (hwrap : ∀ x : E, c (σ x) (Fin.last m) = τ (c x 0))
+    [MeasurableSpace (GeneralLinear n F)] [BorelSpace (GeneralLinear n F)]
+    (hσ : σ ^ ((m + 1) * d) = 1)
+    (μF : Measure (GeneralLinear n F)) (f : GeneralLinear n F → ℂ) :
+    VanishesOffNorms σ ((m + 1) * d) μF f ↔ VanishesOffNorms τ d μF f := by
+  have hiff (γ : GeneralLinear n F) : IsNorm σ ((m + 1) * d) γ ↔ IsNorm τ d γ :=
+    cyclicProductGLCoordinates_isNorm_iff c hc hc' hshift hwrap d hσ γ
+  constructor
+  · intro h γ hreg hnot
+    exact h γ hreg (fun hn => hnot ((hiff γ).mp hn))
+  · intro h γ hreg hnot
+    exact h γ hreg (fun hn => hnot ((hiff γ).mpr hn))
+
+/-- **Associated measures through the coordinates.** If `μδ` on `G^σ_δ` and `μγ` on `G_γ` are
+associated for `(σ, (m + 1) d)`, then every measure `μZ` on `G^τ_β`, `β = (List.ofFn (κ δ)).prod`,
+whose image in `GL_n(L)` is the image of `μδ` under `z ↦ κ(z)₀`, is associated with `μγ` for
+`(τ, d)` (through `κ(x)₀` when `μδ` is associated through `x`). -/
+theorem IsAssociatedMeasure.cyclicProduct {F : Type u} [Field F] [ValuativeRel F]
+    [TopologicalSpace F] [IsNonarchimedeanLocalField F] {E : Type v} [CommRing E] [Algebra F E]
+    [TopologicalSpace E] [IsTopologicalRing E] [IsModuleTopology F E] {L : Type w} [Field L]
+    [Algebra F L] [TopologicalSpace L] [IsTopologicalRing L] {m d n : ℕ} {σ : E ≃ₐ[F] E}
+    {τ : L ≃ₐ[F] L} (c : E ≃ₐ[F] (Fin (m + 1) → L)) (hc : Continuous c) (hc' : Continuous c.symm)
+    (hshift : ∀ (x : E) (i : Fin m), c (σ x) i.castSucc = c x i.succ)
+    (hwrap : ∀ x : E, c (σ x) (Fin.last m) = τ (c x 0))
+    [MeasurableSpace (GeneralLinear n F)] [BorelSpace (GeneralLinear n F)]
+    [MeasurableSpace (GeneralLinear n E)] [BorelSpace (GeneralLinear n E)]
+    [MeasurableSpace (GeneralLinear n L)] [BorelSpace (GeneralLinear n L)]
+    {δ : GeneralLinear n E} {γ : GeneralLinear n F}
+    {μδ : Measure (sigmaCentralizer σ n δ)} {μγ : Measure (glCentralizer γ)}
+    {μZ : Measure (sigmaCentralizer τ n
+      (List.ofFn (cyclicProductGLCoordinates (n := n) c hc hc' δ)).prod)}
+    (hZ : Measure.map Subtype.val μZ =
+      Measure.map (fun z : sigmaCentralizer σ n δ => cyclicProductGLCoordinates c hc hc' z.val 0) μδ)
+    (h : IsAssociatedMeasure σ ((m + 1) * d) δ γ μδ μγ) :
+    IsAssociatedMeasure τ d (List.ofFn (cyclicProductGLCoordinates (n := n) c hc hc' δ)).prod γ
+      μZ μγ := by
+  set κc := cyclicProductGLCoordinates (n := n) c hc hc' with hκc
+  obtain ⟨a, ha, hm⟩ := h
+  let b := κc a 0
+  refine ⟨b, ?_, ?_⟩
+  · have h := congrArg (fun z : GeneralLinear n E => κc z 0) ha
+    change κc (a⁻¹ * cyclicNorm σ ((m + 1) * d) δ * a) 0 = κc (baseChange F E n γ) 0 at h
+    rw [map_mul, map_mul, map_inv, Pi.mul_apply, Pi.mul_apply, Pi.inv_apply, hκc,
+      cyclicProductGLCoordinates_norm_zero c hc hc' hshift hwrap,
+      cyclicProductGLCoordinates_baseChange c hc hc' γ 0] at h
+    exact h
+  · have hproj : Measurable (fun z : GeneralLinear n E => κc z 0) :=
+      ((continuous_apply 0).comp κc.continuous).measurable
+    have hbase : Continuous (baseChange F E n) :=
+      (IsModuleTopology.continuous_of_linearMap (Algebra.linearMap F E)).generalLinearGroup_map
+    have hbase' : Measurable (fun t : glCentralizer γ => baseChange F E n t.val) :=
+      (hbase.comp continuous_subtype_val).measurable
+    have hconjL : Measurable (fun g : GeneralLinear n L => b⁻¹ * g * b) := by fun_prop
+    have hmap := congrArg (Measure.map (fun z : GeneralLinear n E => κc z 0)) hm
+    rw [Measure.map_map hproj (by fun_prop), Measure.map_map hproj hbase'] at hmap
+    have hcomp : (fun z : sigmaCentralizer τ n (List.ofFn (κc δ)).prod => b⁻¹ * z.val * b) =
+        (fun g : GeneralLinear n L => b⁻¹ * g * b) ∘ Subtype.val := rfl
+    have hprojC : Measurable (fun z : sigmaCentralizer σ n δ => κc z.val 0) :=
+      hproj.comp measurable_subtype_coe
+    rw [hcomp, ← Measure.map_map hconjL measurable_subtype_coe, hZ,
+      Measure.map_map hconjL hprojC]
+    simpa only [Function.comp_def, b, map_mul, map_inv, Pi.mul_apply, Pi.inv_apply, hκc,
+      cyclicProductGLCoordinates_baseChange] using hmap
+
+end Measures
+
 end Langlands.BaseChange

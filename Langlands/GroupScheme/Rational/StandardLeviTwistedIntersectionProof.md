@@ -1,6 +1,6 @@
 # Twisted intersections of actual standard Levi subgroup functors: proof
 
-Authors: Worker 1373 and Worker 1452, whose joint published assembly supplies
+The published assembly `StandardLeviTwistedIntersectionAssembly` supplies
 the centralizer and root-criterion argument used here.
 
 `Langlands.GroupScheme.standardLeviTwistedIntersection` has exactly type

@@ -1,6 +1,6 @@
 # Reduction of actual adelic Haar unimodularity
 
-This internal unit assembles the existing analytic, subgroup, and
+This module assembles the existing analytic, subgroup, and
 algebraic reductions for the exact
 `AdelicGroupPoints.AdelicHaarUnimodularityStatement`.
 Every universal assertion retains the same arbitrary universe `u`.

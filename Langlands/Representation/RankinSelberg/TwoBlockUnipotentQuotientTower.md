@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockUnipotentQuotientTower`,
 namespace `Langlands.RankinSelberg.TwoBlockUnipotentQuotientIntegration`.
 
-Author: Worker 235.
-
 This helper module supports the proof of
 `Langlands.RankinSelberg.TwoBlockUnipotentQuotientIntegrationStatement`
 (JPSS 1983, Section 4.6, printed pages 411-412). Write `G = GL_(t+1)(F)`,

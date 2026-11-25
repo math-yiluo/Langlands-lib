@@ -1,7 +1,5 @@
 # Positive principal congruence block factorization
 
-Author: Worker 204.
-
 The theorem `Langlands.GeneralLinear.BlockShape.principalBlockFactorization.{u}`
 in the module `Langlands.Group.GL.PrincipalBlockFactorizationProof` proves
 exactly the published proposition

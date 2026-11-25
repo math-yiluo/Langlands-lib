@@ -1,7 +1,7 @@
 import Langlands.CommutativeAlgebra.Popescu.RegularLocalParametersStatement
 import Langlands.CommutativeAlgebra.Popescu.RegularSequencePowersStatement
 import Langlands.CommutativeAlgebra.Popescu.CharPTools
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Regularity of powers of regular parameters (for Stacks Lemma 16.11.4, 07FJ) -/
 

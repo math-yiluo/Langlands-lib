@@ -1,7 +1,5 @@
 # Spectrum identification target for a rational presentation
 
-Author: Worker 36.
-
 `Langlands.Analytic.RationalPresentation.SpectrumIdentificationStatement`
 concerns the actual rational quotient and base map constructed in
 `RationalPresentation.Definitions`. The coefficient field K is complete

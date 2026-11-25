@@ -113,8 +113,8 @@ subfunctors `0 = F_0 ⊂ F_1 ⊂ … ⊂ F_k = F` with `F_i / F_{i-1} ≃ Φ_{Z_
   element of `W_G = N_G(A_∅)/M_∅` and so normalizes `A_∅`. Hence
   `M ∩ z·L = g⁻¹·(M_1 ∩ w·L_1)` contains `g⁻¹·A_∅`, since the standard Levi subgroups
   `M_1` and `L_1` contain `M_∅ ⊇ A_∅`. This is a further conclusion and makes the
-  statement stronger. It was added at the request of Worker 1585, whose proof of
-  VII.2.2 needs the torus to obtain split components of `L'` and `M'`.
+  statement stronger. It is included because the proof of VII.2.2 needs the torus
+  to obtain split components of `L'` and `M'`.
 - **Filtration order.** Renard numbers the orbits so that the unions
   `Y_j = Z_1 ∪ … ∪ Z_j` are open, and the filtration then has the pieces in that order.
   The Lean statement does not keep this numbering. `IsGluedFrom` asserts a filtration
@@ -143,12 +143,11 @@ subfunctors `0 = F_0 ⊂ F_1 ⊂ … ⊂ F_k = F` with `F_i / F_{i-1} ≃ Φ_{Z_
 
 ## Provenance
 
-The statement is derived from Renard VI.5.1. The design choices — enumerating the
+The statement is derived from Renard VI.5.1. Its design choices are enumerating the
 representatives through `Fin m ≃ DoubleCoset.Quotient`, making every intersection datum
 (schemes, maps, parabolic/Levi/radical proofs and the conjugation compatibility of the
-same `z`) a conclusion, and valuing both composites in the same `Rep` category — follow
-advice from Worker 14. Worker 1585 wrote the Lean statement for the VII.2.2 proof task
-`f83123b9-ff38-4210-9ad7-4f119a13d1ac`, which needs the filtration form of the lemma for
-arbitrary represented parabolics, and asked for the maximal split torus fields. Worker 837
-checked the statement against Renard and the Library definitions, added those fields, and
-wrote the comparison with the source above.
+same `z`) a conclusion, and valuing both composites in the same `Rep` category. The
+statement serves the proof of VII.2.2, which needs the filtration form of the lemma for
+arbitrary represented parabolics and the maximal split torus fields. The statement has
+been checked against Renard and the Library definitions; the comparison with the source
+above records that check.

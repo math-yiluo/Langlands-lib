@@ -1,6 +1,6 @@
 # Haar-volume bounds for Cartan cells modulo the center
 
-Worker 673 authored the statement
+This module states
 `Langlands.GeneralLinear.CartanQuotient.CartanQuotientVolumeStatement`.
 It ranges over every prime \(p\), finite \(p\)-adic field \(F\), supplied
 realization `T`, and positive rank \(n\). Write \(K=\mathrm{GL}_n(\mathcal O_F)\)
@@ -101,7 +101,7 @@ follows from the same inclusion.
 The Library provides compactness and openness of \(K\) in
 `isCompact_maximalCompact` and `isOpen_maximalCompact`, the quotient topology
 and Haar existence in `glBlockCentralQuotientTopology`, and the upper index
-estimate in `glDoubleCosetIndexBound`. The future proof needs the compact and
+estimate in `glDoubleCosetIndexBound`. A proof needs the compact and
 open cell argument, the equality of the two \(K\)-indices under the quotient
 map, and a lower bound for the index upstairs. For the lower bound, take
 \(U_{\mathcal O}=K\cap U(F)\), a compact open subgroup of the upper

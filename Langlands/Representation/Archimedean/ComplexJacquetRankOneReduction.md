@@ -123,7 +123,7 @@ Fix `n`, the module `(V, ρ, π)`, the functional `ℓ` with weight `(a, b)`, an
 ## Use
 
 Combined with a proof of `ComplexGLTwoJacquetOrderingStatement`, `complexJacquetRankOneReduction`
-proves `ComplexJacquetRankOneStatement` (Task 7066).
+proves `ComplexJacquetRankOneStatement`.
 
 ## References
 

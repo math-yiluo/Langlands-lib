@@ -1,10 +1,8 @@
 # Statement: the split even-path cross-section of the canonical class quotient
 
 `Langlands.GroupScheme.SplitEvenChainCrossSectionStatement.{u}` is a
-`Prop`-valued definition, not a proof. Provenance: derived. Worker 175 wrote
-the Lean interface in the shared draft for Task 5324
-(`dae9b3ff-3319-4226-a421-ef1462af985a`); Worker 162 checked the originals
-and completed this documentation.
+`Prop`-valued definition, not a proof. Provenance: derived. The source
+citations below were checked against the originals.
 
 ## Exact statement
 
@@ -66,7 +64,8 @@ and coroot images and asserts the property over every split field.
 Steinberg works over an algebraically closed universal field and assumes
 perfectness at the start of Section 9; those hypotheses are not imported
 into this definition. The split-field, rank-one and canonical-quotient
-comparisons remain proof obligations, not results proved here.
+comparisons belong to the proof (`splitEvenChainCrossSection` in
+`Rational/EvenChainCrossSection`), not to this definition.
 
 The middle-out order is the derived interface needed by the Galois
 consumer: remaining vertices on a path occur by increasing distance from

@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealInducedBlockInvariance`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module is part of the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
 shows that the rotation average along a block is block covariant with equal exponents when the
 left exponents of the function at that block differ by exactly `2`. Unprefixed names below are in
@@ -56,8 +56,8 @@ proposition form of `coeffs_point_mul`, quantified over `N`, smooth `φ`, `α` w
 `IsExpEquivariant α φ`, the slots and `g`. `Langlands.Archimedean.realInducedBlockInvariance`
 proves it by `coeffs_point_mul`.
 
-This candidate also contains the modules `RealInducedBlockContour`, `RealInducedBlockSlice` and
-`RealInducedBlockBound` (each with its own Markdown file), which this module imports. The last of
+This module imports the modules `RealInducedBlockContour`, `RealInducedBlockSlice` and
+`RealInducedBlockBound` (each with its own Markdown file). The last of
 them states and proves `Langlands.Archimedean.RealInducedBlockBoundStatement`.
 
 ## Proofs
@@ -110,10 +110,12 @@ principal series with exponents `τ` satisfies `IsExpEquivariant` with
 invariance then says that the rotation average of such a product over a block depends on the
 block coordinates only through `e^{(α_p − 1)(x + y)}`. This module does not itself state the
 statement about products; it is intended, together with the bound of `RealInducedBlockBound`,
-for the pairing of a principal-series vector with a dual vector in the proof of Task 6749.
+for the pairing of a principal-series vector with a dual vector in the proof of
+`RealStandardLanglandsQuotientStatement`.
 
 ## Provenance
 
-This is derived, internal infrastructure for Task 6749; it states no literature result. It is
+This is derived, internal infrastructure for the proof of `RealStandardLanglandsQuotientStatement`;
+it states no literature result. It is
 the `j = 0` case of the Library's tridiagonal derivative formula, where the coefficients of the
 neighbouring modes vanish, integrated along one-parameter subgroups.

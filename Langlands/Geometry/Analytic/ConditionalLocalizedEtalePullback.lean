@@ -77,7 +77,7 @@ theorem localizedEtalePullback_of_targetLocality_and_finitePieces
 
 /-- An actual limiting cone with the existing localized etale second leg,
 under the explicit two general analytic criteria. This is conditional data,
-not the unconditional proof required by Task 7349. -/
+not an unconditional proof. -/
 def conditionalLocalizedEtalePullback
     (hlocal : FiniteOverTargetLocalityStatement.{u, v, v} K)
     (hupgrade : FinitePiecesEtaleAllPiecesStatement.{u, v, v} K)

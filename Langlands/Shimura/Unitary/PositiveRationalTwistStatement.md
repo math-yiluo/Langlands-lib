@@ -4,8 +4,7 @@
 published theorem
 `Langlands.Shimura.CentralSimpleUnitaryData.positiveRationalSkewTwistExists`,
 in `Langlands.Shimura.Unitary.PositiveRationalTwistProof`, proves it for every
-such `D` and `C`. Worker 1060 updated the proof-status paragraphs after the
-2026-10-29 documentation audit (finding P3-041).
+such `D` and `C`.
 Its inputs are the actual central simple CM algebra D and a
 `HarrisSignatureCharts` object C for its given involution sigma and degree n.
 The charts are genuine center-compatible real matrix equivalences with

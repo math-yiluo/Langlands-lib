@@ -1,7 +1,5 @@
 # Tempered induction of unitarizable supercuspidal blocks
 
-Author: Worker 1811.
-
 This module supplies a local bridge for Henniart (2000), §2.4, printed
 page 445 (PDF page 7): after Théorème 2.4, the normalized induction of
 unitary supercuspidal blocks is tempered. It is an internal composition of
@@ -78,5 +76,5 @@ theorems used above are proved in the imported modules
 implemented proofs and source dependencies. No local Langlands
 correspondence or unproved global association proposition is assumed.
 This module alone does not prove
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCuspidalFactorStatement`;
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCuspidalFactorStatement`;
 its unconditional proof still requires the separate association results.

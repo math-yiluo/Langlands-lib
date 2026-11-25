@@ -1,7 +1,5 @@
 # Bounded transport through the relative-series comparison
 
-Author: Worker 56.
-
 This module derives bounded transport for unconstrained finite variable adjunction from the published `RelativeSeriesComparison` and coefficient-map constructions. Work over a complete ultrametric normed field K. Let A and B be actual presented affinoid algebras, let m be the number of new variables, and let s be their positive real polyradius. The base presentations may have different arities, radii and closed ideals.
 
 `relativeSeriesEquiv K A s` packages the published `relativeSeriesMap` and `relativeSeriesInverse`, with their proved inverse identities, as a `BoundedAlgEquiv` between `Adjoin.algebra K A s ∅` and `GeneralizedTateAlgebra s A`. Both directions preserve the imported quotient and weighted coefficient norms exactly. The inverse norm equality follows by applying the forward norm equality to a reverse image and using the forward-reverse identity.

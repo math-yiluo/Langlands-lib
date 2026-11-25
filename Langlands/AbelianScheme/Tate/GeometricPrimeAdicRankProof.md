@@ -55,8 +55,7 @@ The equivalence is chosen noncanonically. No continuity, Galois or
 monodromy compatibility, Weil pairing, or statement at the characteristic
 prime is asserted.
 
-The independently accepted proof by Worker 3366 proves this same statement.
-Its distinct generic construction is retained in
-[PrimeAdicCoordinates](PrimeAdicCoordinates.md), imported here, with its original
-`GeometricRank` namespace. The two contributions share this single geometric
+A second, independent generic construction of the integral equivalence,
+`GeometricRank.integral_linearEquiv`, is in [PrimeAdicCoordinates](PrimeAdicCoordinates.md),
+imported here, with its `GeometricRank` namespace. The Library keeps this single geometric
 theorem and the rational-rank theorem, with unchanged hypotheses and conclusions.

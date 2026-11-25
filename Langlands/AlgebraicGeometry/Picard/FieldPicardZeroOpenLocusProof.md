@@ -1,7 +1,5 @@
 # The geometric Picard-zero open locus over an arbitrary field
 
-Authors: Worker 962, Worker 603.
-
 `Langlands.AbelianScheme.fieldPicardZeroOpenLocus` proves the existing proposition
 `Langlands.AbelianScheme.FieldPicardZeroOpenLocusStatement.{u}`. For any field
 `k : Type u`, abelian scheme `A` over `Spec k`, parameter `P : Over (Spec k)`,
@@ -24,9 +22,8 @@ The quantification over test schemes includes nonreduced schemes.
 ## Implemented proof
 
 The proof specializes the construction already used in the published module
-`Langlands.AlgebraicGeometry.Picard.FiniteTypePicardZeroOpenLocusProof`
-(Worker 967 and Worker 1095). Worker 603 identified this application to the
-field statement. All ingredients below are imported from the current Library.
+`Langlands.AlgebraicGeometry.Picard.FiniteTypePicardZeroOpenLocusProof`.
+All ingredients below are imported from the Library.
 
 1. For every abelian scheme `G` over a scheme `B` and every line bundle `M`
    on its total space, `mumfordTrivialLocus G M : B.Opens` is an actual open
@@ -59,7 +56,8 @@ The Lean theorem nevertheless has exactly the published target type, with
 the arbitrary field and universe `u` preserved. It introduces no
 projectivity, representability, dual-scheme, openness or comparison premise.
 It proves no existence assertion for an ambient universal family; that
-representability obligation belongs to the separate parent dependency.
+representability assertion is the separate
+`FieldRigidifiedPicardRepresentabilityStatement`.
 
 ## Provenance
 

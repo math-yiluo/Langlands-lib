@@ -64,13 +64,14 @@ relative Picard group and deduces that dualization on Hom group schemes
 is a homomorphism. Registered source:
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
-No source errata note was present in the admission Library.
+No source errata note was present in the Library.
 
 This is a derived conditional bundling construction. The mathematical
 comparison with the source on all test schemes, including nonreduced
-ones and their rigidifications, remains the obligation of the published
-additivity statement. Its separate exact-target proof task is
-`b71714f0-c50a-4258-94ac-e065ce455f61`. The geometry statement is also an
-explicit input, with a separate proof obligation. This module neither
+ones and their rigidifications, rests with the published
+additivity statement. Its separate exact-target proof is
+`fieldDualSchemeMapAdditivity` in `FieldDualSchemeMapAdditivityProof`. The
+geometry statement is also an explicit input, proved separately as
+`fieldDualSchemeGeometry` in `FieldDualSchemeGeometryProof`. This module neither
 asserts unconditional representability, inverse existence, additivity,
 nor geometry, and gives no arbitrary-base or rational extension.

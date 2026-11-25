@@ -1,6 +1,6 @@
 # Canonical Galois compatibility of the actual conjugate-factor product
 
-Worker 166. This is internal supporting content for the simply connected
+This is internal supporting content for the simply connected
 almost-simple Weil-restriction structure theorem. It derives explicit
 coherence identities from the published actual product, factor-inclusion and
 pullback-comparison constructions. It makes no new source assertion.
@@ -23,7 +23,7 @@ the projection at `σ ∘ τ` after transport is the pullback of the original
 projection at `τ`, followed by `coordinateIso H σ τ`.
 `map_inclusion_galoisIso` proves the corresponding equality on each original
 factor insertion. These are identities of actual group-scheme homomorphisms.
-The unit does not bundle or assert a separate cocycle-law theorem.
+The module does not bundle or assert a separate cocycle-law theorem.
 
 The finite-product helpers apply to noncommutative groups. On every test
 scheme, `piPointsEquiv_piFactorInclusionHom` identifies an insertion with
@@ -77,7 +77,7 @@ constructed embedding-product transport formula. The transport on the
 right is defined from `H`, the actual embeddings and canonical pullback
 comparisons; its definition does not use `q` or the product presentation.
 
-This unit proves the canonical compatibility of the actual conjugate-factor
+This module proves the canonical compatibility of the actual conjugate-factor
 product. It does not construct the embedding-product splitting of
 `AffineWeil.groupScheme`, prove that almost-simple groups over a separably
 closed field are absolutely almost-simple, or prove

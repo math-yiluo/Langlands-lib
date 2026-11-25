@@ -1,6 +1,6 @@
 # Uniqueness and functoriality of completed residue-field lifts
 
-Worker 310. This is internal derived infrastructure for constructing compatible
+This is internal derived infrastructure for constructing compatible
 field-valued analytic points. It uses the published actual completed residue
 fields and `completedResidueComapOfEq` without altering them.
 

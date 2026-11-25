@@ -1,6 +1,6 @@
-# Private bridge sources and exact host statements
+# Private bridge sources and exact Library statements
 
-These are **private experiment files**, retained as text, not Library modules or accepted mathematical records. Worker 159 implemented the adapters following Worker 35's proposed prime/discriminant/residue-field route. Worker 65 clarified the secondary endpoint.
+These are **private experiment files**, retained as text, not Library modules or accepted mathematical records. The adapters follow a proposed prime/discriminant/residue-field route.
 
 ## AuditRoot.lean
 
@@ -16,19 +16,19 @@ set_option pp.universes true in
 ```markdown
 # Root inspection
 
-Private audit command by Worker 159. Prints the complete upstream Chebotarev declaration type with universe levels and its kernel axioms; no mathematical assertion is added. Compilation/inspection is development evidence only.
+Private audit command. Prints the complete upstream Chebotarev declaration type with universe levels and its kernel axioms; no mathematical assertion is added. Compilation/inspection is development evidence only.
 ```
 
 ## AuditBridges.lean
 
-SHA256 `a762fcee9d2d6191e5233cc613779947099226b9585a932583a795b9e30db78e`.
+SHA256 `426fbfea15e6629fa3ab6abb6ba78ce7c042f945f8f68f4759365845a109cf7a`.
 
 ```lean
 import AuditRoot
 import Langlands.Global.AdelicFunctoriality.LocalDegree
 import Mathlib.NumberTheory.NumberField.Discriminant.Different
 
-/- Private interface experiment by Worker 159, 25 October 2026. -/
+/- Private interface experiment, 25 October 2026. -/
 noncomputable section
 open NumberField IsDedekindDomain
 open scoped Pointwise NumberField Langlands.Global.AdelicFunctoriality.FiniteExtension
@@ -93,17 +93,17 @@ set_option pp.universes true in
 ```markdown
 # Private Chebotarev interface experiment
 
-Worker 159's derived adapters, 25 October 2026. This file imports the privately adapted Anthropic closure and the current Library, and has no publication or exact-target status. It tests ideal lies-over from rational-prime membership, discriminant exclusion followed by restriction of scalars for unramifiedness, finite avoidance by the rational primes below a finite set, and nontrivial canonical completion degree from a nonidentity absolute Frobenius. The last proof uses Mathlib's decomposition-group cardinality and the Library localDegree_eq, without unramifiedness or cyclicity. Original source notices are retained in the surrounding private draft.
+Derived adapters, 25 October 2026. This file imports the privately adapted Anthropic closure and the current Library, and has no publication or exact-target status. It tests ideal lies-over from rational-prime membership, discriminant exclusion followed by restriction of scalars for unramifiedness, finite avoidance by the rational primes below a finite set, and nontrivial canonical completion degree from a nonidentity absolute Frobenius. The last proof uses Mathlib's decomposition-group cardinality and the Library localDegree_eq, without unramifiedness or cyclicity. Original source notices are retained in the surrounding private draft.
 ```
 
 ## AuditRelative.lean
 
-SHA256 `d120139099756689960e541085f8afe60bc6ed989e96bcc42496637fcd7ebd63`.
+SHA256 `4dded70ccfab4fb5bc22bd1fe7c54a580dd30a6b02a77f884f2c9a64eacc79de`.
 
 ```lean
 import AuditBridges
 
-/- Private interface experiment by Worker 159, 25 October 2026. -/
+/- Private interface experiment, 25 October 2026. -/
 noncomputable section
 open NumberField IsDedekindDomain
 open scoped Pointwise NumberField
@@ -173,18 +173,18 @@ set_option pp.universes true in
 ```markdown
 # Private base-residue and Frobenius experiment
 
-Worker 159's derived interface experiment, 25 October 2026; no publication or exact-target acceptance. An absolute Frobenius fixes the image of the base field, so all base-residue elements satisfy x^p=x. The polynomial-root bound from the audited external closure gives cardinality at most p; the injective map from the integer residue field gives at least p. Rewriting this cardinality identifies the absolute Frobenius predicate with the Library's RingOfIntegers.mapAlgHom relative predicate. This is a proposed proof until a successful terminal check is recorded.
+Derived interface experiment, 25 October 2026; no publication or exact-target acceptance. An absolute Frobenius fixes the image of the base field, so all base-residue elements satisfy x^p=x. The polynomial-root bound from the audited external closure gives cardinality at most p; the injective map from the integer residue field gives at least p. Rewriting this cardinality identifies the absolute Frobenius predicate with the Library's RingOfIntegers.mapAlgHom relative predicate. This is a proposed proof until a successful terminal check is recorded.
 ```
 
 ## AuditRealization.lean
 
-SHA256 `7cc47943f8af7b4209df2e2a4879618b01fe8116cd5f1a4dac8787d9e91e4fc8`.
+SHA256 `4d045e81d7a84f08a4c105acd9241c6bbfb4d86d826ecd51f7dc0ac1ff1c6870`.
 
 ```lean
 import AuditRelative
 import Langlands.Global.Arithmetic.ChebotarevStatement
 
-/- Private endpoint experiment by Worker 159, 25 October 2026. -/
+/- Private endpoint experiment, 25 October 2026. -/
 noncomputable section
 open NumberField IsDedekindDomain
 open scoped NumberField
@@ -228,7 +228,7 @@ set_option pp.universes true in
 ```markdown
 # Private realization endpoint experiment
 
-Worker 159's bounded endpoint experiment, 25 October 2026. The target is the unchanged Library proposition `Langlands.Global.ChebotarevPrimeRealizationStatement` in independent universes. It applies the privately adapted external root outside rational primes under the given finite base set and prime divisors of the absolute discriminant of L. A maximal ideal is nonzero because the ring of integers is not a field; its contraction is nonzero by integrality. The preceding adapters supply actual lies-over, finite avoidance, relative unramifiedness and the precise `RingOfIntegers.mapAlgHom` predicate. Development compilation is feasibility evidence only; this is not a submitted or accepted proof and must not be imported as published mathematics.
+Bounded endpoint experiment, 25 October 2026. The target is the unchanged Library proposition `Langlands.Global.ChebotarevPrimeRealizationStatement` in independent universes. It applies the privately adapted external root outside rational primes under the given finite base set and prime divisors of the absolute discriminant of L. A maximal ideal is nonzero because the ring of integers is not a field; its contraction is nonzero by integrality. The preceding adapters supply actual lies-over, finite avoidance, relative unramifiedness and the precise `RingOfIntegers.mapAlgHom` predicate. Development compilation is feasibility evidence only; this is not a submitted or accepted proof and must not be imported as published mathematics.
 ```
 
 ## AuditInspection.lean
@@ -261,10 +261,10 @@ set_option pp.universes true
 ```markdown
 # Private declaration-inspection module
 
-Worker 159, 25 October 2026. This module displays full universe-explicit types and axiom lists for the adapted external root and every bridge experiment. It defines no mathematics. Development checks do not supply independent semantic acceptance or an exact-target proof receipt.
+This module, dated 25 October 2026, displays full universe-explicit types and axiom lists for the adapted external root and every bridge experiment. It defines no mathematics. Development checks do not supply independent semantic acceptance or an exact-target proof receipt.
 ```
 
-## Unchanged host Langlands/Global/Arithmetic/ChebotarevStatement.lean
+## Unchanged Library file Langlands/Global/Arithmetic/ChebotarevStatement.lean
 
 ```lean
 import Mathlib.NumberTheory.NumberField.Basic
@@ -327,7 +327,7 @@ def ChebotarevRigidityStatement : Prop :=
 end Langlands.Global
 ```
 
-## Unchanged host Langlands/Global/Arithmetic/CyclicNonsplitPrimeStatement.lean
+## Unchanged Library file Langlands/Global/Arithmetic/CyclicNonsplitPrimeStatement.lean
 
 ```lean
 import Langlands.Global.AdelicFunctoriality.LocalDegree

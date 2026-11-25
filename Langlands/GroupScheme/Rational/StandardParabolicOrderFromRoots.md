@@ -77,6 +77,5 @@ premises when applying it to the final target.
 
 Provenance: derived from the published standard-subgroup definitions, the
 positive-root induction and closure API, and elementary set and subgroup order.
-Worker 163 supplied the nested-face closure argument; Worker 1259 implemented
-that corollary and the subgroup-order reduction. This file imports the
+This file imports the
 positive-root results rather than reproving their induction.

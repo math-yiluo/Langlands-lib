@@ -6,13 +6,13 @@ Module `Langlands.HarmonicAnalysis.PointwiseTestStalkKernelStatement`. Namespace
 The module contains one **statement**, the `Prop`-valued definition
 `NondegenerateStalkKernelStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published progress note
+This statement belongs to the formalization of Renard's book. The
+published progress note
 [compact-section-equivalence-progress](../../notes/renard/compact-section-equivalence-progress.md)
 records that "the original-module stalk description `M_x = M/M(x)` of p.41 has no Lean
 statement". The Library has the sheaf-side description of the fibre,
 `CompactSectionStalks.StalkQuotientComparison`:
-`F_x = F_c(X)/⟨f · φ, f(x) = 0⟩` (Task 5507).
+`F_x = F_c(X)/⟨f · φ, f(x) = 0⟩`.
 
 ## Source and provenance
 
@@ -20,7 +20,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read II.2.5, printed pp.40–41 / PDF pp.46–47:
+II.2.5, printed pp.40–41 / PDF pp.46–47, reads:
 
 > Soit `M` un `𝒟(X)`-module non dégénéré et soit `ℳ` le faisceau de `𝒞^∞_X`-modules
 > correspondant par le théorème. La fibre `ℳ_x` en tout point `x ∈ X` est la limite inductive des
@@ -82,9 +82,10 @@ every generator `f · m'` with `f(x) = 0` is killed by `χ_U` for a compact open
 `f` vanishes. The elements killed by some such `χ_U` form an additive subgroup, using
 `χ_{U∩U'} = χ_U χ_{U'}`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation.
+The proof is the separate module
+[PointwiseTestStalkKernelProof](PointwiseTestStalkKernelProof.md).
 
 ## Imports
 

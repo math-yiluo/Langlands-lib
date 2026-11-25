@@ -1,7 +1,5 @@
 # Finite and finite étale morphisms through full-recognition pair systems
 
-Author: Worker 36.
-
 This module defines Berkovich's finite morphisms, finiteness at a point, and
 quasifinite morphisms. It also defines a finite étale variant. All of these are
 stated for strong maps of local-domain enlargements, through their pair systems

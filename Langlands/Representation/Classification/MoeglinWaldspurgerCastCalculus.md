@@ -1,7 +1,7 @@
 # Isomorphisms and embeddings up to rank transport
 
-Module `Langlands.Representation.Classification.MoeglinWaldspurgerCastCalculus`. Written by
-Worker 5735 for Task 5735 (internal infrastructure).
+Module `Langlands.Representation.Classification.MoeglinWaldspurgerCastCalculus`. Internal
+infrastructure of the Aubert correctness proof of the Moeglin–Waldspurger recursion.
 
 * `CastIso T X Y` (for `X` on `GL_r`, `Y` on `GL_s`): there is `h : r = s` with
   `T.castRank h X ≅ Y`. `Embeds T X Y`: there is `h : r = s` with `T.castRank h X` a

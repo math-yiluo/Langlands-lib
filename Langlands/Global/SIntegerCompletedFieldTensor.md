@@ -14,7 +14,7 @@ The pure tensor a tensor b is sent to a tensor the generic-fiber image of
 congruence maps.
 
 `NumberFieldSIntegerFieldTensor.tensorEquiv` composes this construction with
-the published original completed-field tensor decomposition. It identifies
+the existing original completed-field tensor decomposition. It identifies
 the actual upper full-preimage S-integer coefficients tensored with any
 original lower finite-place completion with the product of all original
 upper completions above it. `NumberFieldSIntegerInfiniteTensor.tensorEquiv`
@@ -46,5 +46,5 @@ finite, the lower field has its original function-field presentation, it is
 finite over the specified parameter subfield, and the original upper extension
 is finite with compatible constant-field structures. The chart denominator
 is nonzero. No desired tensor comparison is assumed. Scheme point topology,
-integral-to-field point compatibility and the adelic Weil homeomorphism remain
-obligations of the host task.
+integral-to-field point compatibility and the adelic Weil homeomorphism are
+not part of this module.

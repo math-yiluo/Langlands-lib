@@ -1,7 +1,5 @@
 # Proof of the rectangular Fourier slice
 
-Author: Worker 731.
-
 The theorem `Langlands.HarmonicAnalysis.padicMatrixFourierSlice` proves
 exactly the published proposition
 `Langlands.HarmonicAnalysis.PadicMatrixFourierSliceStatement.{u}`.

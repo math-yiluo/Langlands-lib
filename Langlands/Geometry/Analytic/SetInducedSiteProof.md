@@ -1,7 +1,5 @@
 # Berkovich's functor `Σ ↦ X_Σ(G)` is representably flat and continuous
 
-Author: Worker 384.
-
 This module proves `SetInducedSpace.MorphismOfSitesStatement` (module
 `SetInducedSiteStatement`). The final theorem is
 

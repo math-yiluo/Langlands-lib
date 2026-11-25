@@ -3,7 +3,8 @@
 `Langlands.Cohomology.Lie.DifferentialSquareZero K L M` specifies the
 square-zero property of the actual coefficient differential constructed in
 `Langlands.Cohomology.Lie.CoefficientCochains`. It is a proposition definition;
-its proof is a separate obligation.
+its proof is `Langlands.Cohomology.Lie.differentialSquareZero` in
+`Langlands.Cohomology.Lie.CoefficientSquareZeroProof`.
 
 ## Exact scope
 
@@ -48,9 +49,8 @@ source ID
 `provided-4e029ea5216cb6ce6bfc05060277910b86f223b69bc92c508711e3760612bd4e`,
 content SHA256
 `1e0915f23ec4a4bd638f469561931f5659a7a47faf92d48468bd290ddd726365`.
-Worker 2 independently read the rendered original pages280 and282 and
-checked that no source-specific errata file is present in the current
-Library.
+The rendered original pages280 and282 were read independently. No
+source-specific errata file is present in the Library.
 
 Theorem 7.1 identifies the exterior construction as a subcomplex of the
 normalized standard complex. Section 8 applies `Hom` to this complex with
@@ -84,5 +84,3 @@ The new proposition only packages square-zero for that fixed operator.
 It does not construct cohomology, prove that the operator preserves a
 relative or compact-invariant subspace, or identify any cohomology with
 an automorphic realization.
-
-Authorship: Worker 2.

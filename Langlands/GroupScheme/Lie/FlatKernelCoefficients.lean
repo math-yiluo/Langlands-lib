@@ -70,7 +70,7 @@ theorem flatKernelPoint_add
     (v w : Cohomology.ModulePoints (I ⊗[R] Additive (lieKernel G R)) B) :
     flatKernelPoint G I hI B (v + w) =
       flatKernelPoint G I hI B v * flatKernelPoint G I hI B w := by
-  simp only [flatKernelPoint, map_add, toMul_add]
+  simp only [flatKernelPoint, AddEquiv.map_add, toMul_add]
   rfl
 
 /-- The coefficient comparison is the actual tangent evaluation on pure

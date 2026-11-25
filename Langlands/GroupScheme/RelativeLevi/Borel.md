@@ -1,7 +1,5 @@
 # Borel subgroups and quasi-split reductive group schemes over a base scheme
 
-Author: Worker 75.
-
 This module supplies two predicates for group schemes over an arbitrary base scheme
 `S`. They are the relative counterparts of the existing ground-field predicates
 `IsGeometricBorelSubgroup` and `IsQuasiSplit`

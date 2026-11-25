@@ -19,7 +19,7 @@ theorem componentProjection_injective_of_isAlgClosed
   let : GeometricallyIrreducible (specMap φ) :=
     GeometricallyIrreducible.of_irreducibleSpace_of_isAlgClosed (specMap φ)
   let : GeometricallyConnected (specMap φ) :=
-    GeometricallyIrreducible.geometricallyConnected (specMap φ)
+    GeometricallyIrreducible.geometricallyConnectedFLT (specMap φ)
   exact ((pullback.fst H.X.hom (specMap φ)).connectedComponentsHomeomorph
     (pullback.fst H.X.hom (specMap φ)).isOpenMap).injective
 

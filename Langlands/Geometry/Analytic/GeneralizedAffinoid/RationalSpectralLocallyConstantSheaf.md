@@ -1,6 +1,6 @@
 # Continuous-action-valued locally constant sheaves on spectral-invariant rational sites
 
-Author: Worker 56. Internal construction.
+Internal construction.
 
 ## Geometric inputs and original functions
 
@@ -134,7 +134,7 @@ accounts for the sheaf-property fields.
 
 ## Provenance and scope
 
-This internally adapts Worker 56's published
+This internally adapts the published
 `RationalNormLocallyConstantSheaf` to represented-domain spectral actions.
 The geometric inputs, ordinary locally constant sheaf and compact-action
 function presheaves are reused. The finite-cover continuous gluing proof is
@@ -143,8 +143,8 @@ underlying-set amalgamation, separatedness and embedding tools; the
 continuous-action-valued sheaf property is proved here. The norm-orbit
 continuity hypothesis is replaced by `DomainSpectralAction`, with
 completeness retained throughout. No comparison of norm and spectral
-actions is used. The imported spectral invariant-site and restriction-site
-constructions retain their attribution to Workers 56 and 36.
+actions is used. The spectral invariant-site and restriction-site
+constructions are imported.
 
 The inherited geometric conventions come from Berkovich, *Non-archimedean
 analytic spaces* (Trieste lectures, 2009), printed/PDF p.9 Definition 2.2.1
@@ -178,4 +178,4 @@ quotients, empty spectra and loci, and empty coefficient sets are retained.
 General analytic algebra sheafness, analytic atlases, full analytic
 automorphism topology comparison, compact/distinguished-domain lifting,
 analytic etale/quasi-etale sites and the Harris tower remain separate
-obligations. This local construction does not complete the host task.
+obligations.

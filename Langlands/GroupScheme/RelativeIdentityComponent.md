@@ -72,7 +72,7 @@ fields and test schemes. There are no smoothness, affineness, finite
 presentation, separation, connectedness, or field assumptions on the base
 or the supplied group schemes.
 
-This unit supplies the membership and representation predicates and their
+This module supplies the membership and representation predicates and their
 restriction law. It does not construct a relative identity-component subgroup
 or a subgroup functor, or prove existence, normality, openness of the union,
 arbitrary-base-change compatibility, connectedness of fibres, closedness,

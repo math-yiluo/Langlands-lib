@@ -1,0 +1,57 @@
+/-
+Copyright (c) 2026 Bin Wu. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bin Wu
+-/
+module
+
+public import WeilConjectures.AlgebraicGeometry.DiagonalCoefficients.Coefficient.DiagonalCoefficientDiagrams
+public import WeilConjectures.AlgebraicGeometry.DiagonalCoefficients.Coefficient.DiagonalCoefficientPullback
+import all WeilConjectures.AlgebraicGeometry.RationalP1.First.RationalP1FirstScalarTrace
+import all WeilConjectures.AlgebraicGeometry.DiagonalCoefficients.Quotient.DiagonalQuotientTracePullback
+import all WeilConjectures.AlgebraicGeometry.DiagonalCoefficients.Quotient.DiagonalQuotientClassPullback
+import WeilConjectures.AlgebraicGeometry.DiagonalCoefficients.Coefficient.DiagonalCoefficientSourcePullback
+import WeilConjectures.SixFunctors.ProEtale.ModuleObject.ChangeOfCoefficientsMate
+import WeilConjectures.SixFunctors.ProEtale.ModuleObject.Colimit.IntegralFlat
+import WeilConjectures.AlgebraicGeometry.DiagonalCoefficients.Scalar.DiagonalScalarClosedSourceExchange
+import WeilConjectures.AlgebraicGeometry.DiagonalCoefficients.Supported.DiagonalSupportedPullbackScalarNormalization
+
+/-! # A step of diagonal scalar pullback propagation -/
+
+@[expose] public noncomputable section
+set_option autoImplicit false
+set_option Elab.async false
+set_option genSizeOf false
+set_option genInjectivity false
+set_option synthInstance.maxSize 4096
+universe u
+open CategoryTheory CategoryTheory.Limits Opposite
+open scoped CategoryTheory.Obj CategoryTheory.Functor
+open scoped AlgebraicGeometry.ProEtale.CondensedRing.CachedModInstances CategoryTheory.MonObj
+namespace AlgebraicGeometry.ProEtale.DiagonalCoefficients
+
+attribute [local instance] _root_.instEssentiallySmallProfinite_weilConjectures
+attribute [local instance 20000] ProEtale.sheafBraidedCategory ProEtale.sheafMonoidalCategory
+set_option backward.defeqAttrib.useBackward true
+attribute [local implicit_reducible] ProEtale.sheafMonoidalCategory
+  ProEtale.sheafBraidedCategory ProEtale.sheafSymmetricCategory
+  GrothendieckTopology.monoidalCategory_sheaf_of_essentiallySmall
+  GrothendieckTopology.braidedCategory_sheaf_of_essentiallySmall
+  GrothendieckTopology.symmetricCategory_sheaf_of_essentiallySmall
+  Sheaf.symmetricCategory Sheaf.braidedCategory
+  Localization.Monoidal.instSymmetricCategoryLocalizedMonoidal SymmetricCategory.ofCurried
+
+attribute [local irreducible] Functor.leftDerivedFunctor Functor.rightDerivedFunctor
+  Functor.mapDerivedCategory CondensedRing.upperStar CondensedRing.lowerStar
+  upperStarFromPoint upperStarFromPointComp monoidal_upperStarFromPoint
+  monoidal_pointUpperStar oplaxMonoidal_pointUpperStar
+  CondensedRing.upperStarLowerStarAdjunction
+  ProEtale.upperStar ProEtale.lowerStar ProEtale.upperStarLowerStarAdjunction
+  ProEtale.upperStarComp
+
+attribute [local irreducible] derivedUpper derivedLower derivedScalars
+  singlePullback
+attribute [local semireducible] ProEtale.upperStar
+attribute [local irreducible] RationalP1.adicComparison
+
+end AlgebraicGeometry.ProEtale.DiagonalCoefficients

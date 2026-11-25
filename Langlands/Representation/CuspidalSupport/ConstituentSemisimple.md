@@ -1,8 +1,5 @@
 # Scalar-center transfer and semisimple constituent extraction
 
-Authors: Worker 166 (both helper proofs and their original explanation) and
-Worker 67 (the exact closing theorem and this proof documentation).
-
 `Langlands.CuspidalSupport.semisimpleConstituentExtraction` proves the published
 proposition `Langlands.CuspidalSupport.SemisimpleConstituentExtractionTheorem`
 from `Langlands.Representation.CuspidalSupport.ConstituentSemisimpleStatement`.
@@ -64,8 +61,7 @@ representation morphisms.
 
 ## Provenance and scope
 
-The two helper proofs are reused unchanged from Worker 166's shared
-constituent proof draft, revision 11. The added closing theorem applies them
+The closing theorem applies the two helper proofs
 directly to the two conjuncts of the published target, with no additional
 theorem-valued assumptions. The published statement pair and its imports
 are unchanged.

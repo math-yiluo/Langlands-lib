@@ -71,21 +71,21 @@ theorem sheafMap_eq_of_twist {X Z : Scheme.{u}} {f : Z ⟶ X} [Etale f] {G H : T
     {M : Action (ModuleCat.{u} R) G} {M' : Action (ModuleCat.{u} R) H}
     (t₁ t₂ : EtaleTransportDatum (R := R) f Y Y' M M') (hY' : IsFiniteGeometricTorsor Z Y')
     (w : t₁.cover.V ⟶ t₂.cover.V) (g : G)
-    (hs : w ≫ t₂.toSource = t₁.toSource ≫ ((etaleTorsorPullbackFunctor f G).obj Y).ρ g)
-    (ht : w ≫ t₂.toTarget = t₁.toTarget) (hc : t₂.coefficient = M.ρ g⁻¹ ≫ t₁.coefficient) :
+    (hs : w ≫ t₂.toSource = t₁.toSource ≫ (((etaleTorsorPullbackFunctor f G).obj Y).ρ g).asHom)
+    (ht : w ≫ t₂.toTarget = t₁.toTarget) (hc : t₂.coefficient = (M.ρ g⁻¹).asHom ≫ t₁.coefficient) :
     t₂.sheafMap hY' = t₁.sheafMap hY' := by
   apply t₁.hom_ext hY'
   have hinv : etaleAssociatedInclusion Z ((etaleTorsorPullbackFunctor f G).obj Y) M ≫
-      coverPullback (Scheme.smallEtaleTopology Z) (((etaleTorsorPullbackFunctor f G).obj Y).ρ g)
+      coverPullback (Scheme.smallEtaleTopology Z) (((etaleTorsorPullbackFunctor f G).obj Y).ρ g).asHom
         ((constant Z).obj M.V) ≫
       (productSheaf (Scheme.smallEtaleTopology Z) ((etaleTorsorPullbackFunctor f G).obj Y).V).map
-        ((constant Z).map (M.ρ g⁻¹)) =
+        ((constant Z).map (M.ρ g⁻¹).asHom) =
       etaleAssociatedInclusion Z ((etaleTorsorPullbackFunctor f G).obj Y) M := by
     have h := inclusion_invariant (Scheme.smallEtaleTopology Z)
       ((etaleTorsorPullbackFunctor f G).obj Y)
       (((constantSheaf (Scheme.smallEtaleTopology Z) (ModuleCat.{u} R)).mapAction G).obj M) g⁻¹
     change inclusion _ _ _ ≫
-      deckMap _ (((etaleTorsorPullbackFunctor f G).obj Y).ρ g⁻¹⁻¹) _ ≫ _ = _ at h
+      deckMap _ (((etaleTorsorPullbackFunctor f G).obj Y).ρ g⁻¹⁻¹).asHom _ ≫ _ = _ at h
     rw [inv_inv] at h
     exact h
   rw [t₁.sheafMap_inclusion, ← ht, coverPullback_comp, t₂.sheafMap_inclusion_assoc,

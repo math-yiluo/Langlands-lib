@@ -55,7 +55,7 @@ theorem reducedKernelPoint_add
     (z w : Cohomology.ModulePoints (R := CommRingCat.of (R ⧸ I)) (reducedKernelModule G I) (reducedTestAlgebra I B)) :
     reducedKernelPoint G I hI B (z + w) =
       reducedKernelPoint G I hI B z * reducedKernelPoint G I hI B w := by
-  simp only [reducedKernelPoint, map_add, flatKernelPoint_add]
+  simp only [reducedKernelPoint, LinearEquiv.map_add, flatKernelPoint_add]
 
 /-- A pure quotient-base tensor reconstructs the corresponding actual tangent
 point in the extended base ideal. -/

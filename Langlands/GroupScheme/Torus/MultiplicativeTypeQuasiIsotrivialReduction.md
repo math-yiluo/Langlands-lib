@@ -1,13 +1,12 @@
 # Quasi-isotriviality: reducing to the étale-local assertion
 
-Author: Worker 743 (Task 6941, `cb433511-4d2d-4361-b34b-2a0eff7b495e`).
-
 This helper module serves the proof of
 `Langlands.GroupScheme.MultiplicativeTypeQuasiIsotrivialStatement` (Conrad, *Reductive group
 schemes* (2014), Proposition B.3.4, pp.290–292). It proves no part of that proposition outright.
 It shows that the whole statement follows from its first assertion, and that the first
 assertion follows from a pointwise form. Both results are implications: the pointwise
-étale-local splitting is an explicit hypothesis, to be supplied by a separate module.
+étale-local splitting is an explicit hypothesis, supplied by the separate module
+`MultiplicativeTypePointwiseSplitting`.
 
 Throughout, `IsDiagonalizable` and `IsMultiplicativeType` are the Library predicates of
 `Langlands.GroupScheme.Torus.RelativeMultiplicativeType`. An étale cover is a
@@ -48,7 +47,7 @@ on spectra.
 **Henselian assertion.** Choose a member `𝒰.f i` of the cover whose image contains the
 closed point `x` of `Spec A`, and a point `y` over `x`. Choose an affine open
 `Spec C ⟶ 𝒰.X i` containing `y`, using `Scheme.affineOpenCover`. The composite
-`f : Spec C ⟶ Spec A` is étale and its image contains `x`. The published
+`f : Spec C ⟶ Spec A` is étale and its image contains `x`. The Library's
 `Langlands.CommutativeAlgebra.henselianFiniteEtaleRefinement` gives a local finite étale
 `A`-algebra `R'` and `g : Spec R' ⟶ Spec C` with `g ≫ f = Spec.algebraMap A R'`. Take
 `p = Spec.algebraMap A R'`:

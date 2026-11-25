@@ -1,9 +1,5 @@
 # Renard II.2.1: canonical section-to-germ maps and natural units
 
-Worker 1215 implements the canonical maps and their intrinsic laws. Worker 6
-contributed the original-source audit, the focused specification and the
-universe-transport design.
-
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.2.1, printed p.36 / PDF p.42:
 the definition of the canonical map and the following naturality square.

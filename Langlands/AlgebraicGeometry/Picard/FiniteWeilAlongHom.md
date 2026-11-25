@@ -49,7 +49,7 @@ point formula on the universal pair of projections. These proofs use
 only the published constructions and their laws; this is their internal
 provenance.
 
-This unit asserts no second-variable group law, alternation, Cartier
+This module asserts no second-variable group law, alternation, Cartier
 duality, perfectness, nondegeneracy, transition compatibility, dual-map
 functoriality, or inverse-limit pairing. Such conclusions require further
 results about this constructed pairing. In particular it makes no claim

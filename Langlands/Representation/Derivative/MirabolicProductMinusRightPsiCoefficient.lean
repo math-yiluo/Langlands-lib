@@ -339,6 +339,7 @@ theorem linearEquiv_smul_chain {X Y : Type*} [AddCommGroup X] [Module ℂ X] [Ad
     e x = c • y := by
   rw [h₁, LinearEquiv.map_smul, h₂, h₃, smul_smul, smul_smul, hs]
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- `Ψ⁻τ(A) ⊗ ρ(D)` on the image of `w ⊗ v`. -/
 theorem rightPsiCoefficientEquiv_psiMinus (T : F.TopologicalData) {m r : ℕ} (hr : 0 < r)
     (hm : 0 < m)

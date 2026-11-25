@@ -5,7 +5,7 @@ import Mathlib.Tactic.FieldSimp
 /-!
 # FML normalized valuation and filtration definitions
 
-Adapted by Worker 20 from Fukuhiro Ueda, epsilon_FML, commit
+Adapted from Fukuhiro Ueda, epsilon_FML, commit
 0b4159be50e1bd45ddff1de4280399576a3e2024 (Apache-2.0).
 Modifications: targeted imports, project namespace, explicit universe, exposed
 normalizing valuation, and only the constructors and their supporting laws.
@@ -26,9 +26,9 @@ noncomputable def normalizedMultiplicativeValuation
     (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
     [IsNonarchimedeanLocalField F] : Valuation F ℤᵐ⁰ :=
   (ValuativeRel.valuation F).map
-    (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F).toMulEquiv.toMonoidWithZeroHom
+    ⟨(IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F).toMulEquiv.toMonoidWithZeroHom,
     (fun _ _ h ↦ (map_le_map_iff
-      (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F)).2 h)
+      (IsNonarchimedeanLocalField.valueGroupWithZeroIsoInt F)).2 h)⟩
 
 /-- Negative logarithm on the nonzero part of `ℤᵐ⁰`, with zero sent to infinity. -/
 private def multiplicativeToAdditiveOrder (a : ℤᵐ⁰) : WithTop ℤ :=

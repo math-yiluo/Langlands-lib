@@ -9,7 +9,7 @@ zero. The section inclusion is continuous for every topology on `R`.
 This is a focused internal algebra helper for the BZ77 4.13(b,c) proof. It
 establishes no concrete lower-rank section identification, orbit enumeration,
 character matching, localization, induction comparison or derivative theorem.
-Those are separate obligations of the host task.
+Those are separate results.
 
 ## Provenance and conventions
 
@@ -24,7 +24,7 @@ those actual subgroups and descending permutation matrices, with the cycle
 first and the identity second. This module proves new internal matrix and
 subgroup identities about that data; it does not assume the source's orbit or
 representation comparison conclusions. The original diagrams and cycle
-formulas were visually checked during the host development. A bounded project
+formulas were visually checked. A bounded project
 and literature search found no BZ77-specific erratum; this is not a global
 absence assertion.
 
@@ -79,7 +79,7 @@ generic lemma. Clearing invariance of each transported inducing subgroup
 follows from its actual rank transport and the two mixed-subgroup laws above.
 No boundary case introduces a fictitious `P_0` or a representation hypothesis.
 
-## Proof-dependency and inherited restriction audit
+## Proof-dependency and restriction audit
 
 There is one direct import:
 `Langlands.Group.GL.MirabolicMixedOrbitData`. Its concrete algebra is
@@ -101,17 +101,17 @@ matrix proofs. The local-field and topology modules are incidental:
 the new declarations quantify a commutative ring, and the sole continuity
 lemma allows every topology on it without choosing a field topology.
 
-The following rows cover every host restriction directly and transitively;
-all references to excluded results include their mathematical conclusions,
-parent tasks, proof successors and downstream consequences.
+The following rows cover every restriction directly and transitively;
+all references to excluded results include their mathematical conclusions
+and downstream consequences.
 
-| Host condition or excluded family | Audit of the implemented proof and its complete closure |
+| Condition or excluded family | Audit of the implemented proof and its complete closure |
 | --- | --- |
 | Actual coefficients, ranks and both representatives | The inclusions use the actual section, stabilizers and stages, with the proved `totalRank_eq` transport. Both concrete clearing hypotheses are discharged for every representative. The cycle orientation and order remain unchanged. |
-| Arbitrary inputs, universes and topology | The algebra holds over any `R : Type u` with `[CommRing R]`, for all `k,r`. The continuity lemma permits every topology. It assumes no representation, admissibility, irreducibility, finite dimension, finite length, genericity or unit vector. It therefore imposes no restriction on the host's independent `uF,uV`, supplied `T`, zero objects, repeated factors or full GL₀ output carrier. |
+| Arbitrary inputs, universes and topology | The algebra holds over any `R : Type u` with `[CommRing R]`, for all `k,r`. The continuity lemma permits every topology. It assumes no representation, admissibility, irreducibility, finite dimension, finite length, genericity or unit vector. It therefore imposes no restriction on the independent `uF,uV`, supplied `T`, zero objects, repeated factors or full GL₀ output carrier of the comparisons that use it. |
 | Plus functors and adjunction | No plus functor or adjunction module or theorem is imported or used. `plusSubgroup` is permitted matrix-group infrastructure in the orbit data. |
 | BZ77 4.13(d) and general Leibniz | No submodule-detection theorem, general Leibniz proof or derivative filtration supplies an input. `Filtration.Definitions` supplies only definitions. |
-| Orbit and representation comparisons | No coverage, disjointness, openness, character identity, normalization, Haar scaling, induction comparison or exactness assertion is assumed. This helper proves none of the six host compatibilities by itself. |
+| Orbit and representation comparisons | No coverage, disjointness, openness, character identity, normalization, Haar scaling, induction comparison or exactness assertion is assumed. This helper proves none of the six compatibilities of the comparisons that use it by itself. |
 | Segment derivative and Jacquet formulas | No segment derivative formula, Ze80 §3.5 or §9.6, `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula` or `SegmentSpecialJacquetExponentNormFormula` is imported or used. |
 | Individual segment existence | No individual special-head/reverse-socle or segment-socle/reverse-head existence supplies an input. |
 | Linked and unlinked socle consumers | `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`, `JuxtaposedSegmentSocleReverseProductStructure` and `LinkedSegmentSocleReverseProductQuotientHom` supply no input. |
@@ -119,24 +119,22 @@ parent tasks, proof successors and downstream consequences.
 | Special-head criterion and generic uniqueness | No `SegmentHeadProductIrreducibility` or `GenericSegmentProductUniqueness` conclusion is used. |
 | Ordered existence and multisegment exhaustion | No `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`, ordered strong-head existence, special-head multisegment exhaustion, quotient coverage or ordered conversion supplies an input. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, `SegmentSpecialEssentialSquareIntegrability`, tempered uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure` or its full-product assembly supplies an input. No parent six-statement conclusion (b),(d),(e),(f) supplies an input. |
+| Two-supercuspidal consumers | Neither `TwoSupercuspidalNonadjacentProductIrreducible` nor `TwoSupercuspidalProductStructure` or its full-product assembly supplies an input. |
 | Supercuspidal and single-block finiteness | No `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, all-character single-block conclusion or arbitrary-character finiteness theorem is imported or used. |
 | Other Whittaker finiteness exclusions | `IrreducibleCoinvariantFinitenessStatement`, `LeviCuspidalCoinvariantFinitenessStatement` and the prohibited mirabolic finite-length route through that finiteness are absent from the proof dependencies and the complete import closure. |
-| Published-input requirement | The only project root is the published concrete orbit-data module. Imported proposition definitions, citations and pending proofs are not used as proofs. No consumer conclusion supplies an upstream premise. |
-| Separate owners and run controls | These matrix calculations do not duplicate restriction-sequence or exactness owners. Worker 127's operator pause, Worker 8's suspension and Worker 114's hold supply no input or waived obligation. |
+| Published-input requirement | The only project root is the published concrete orbit-data module. Imported proposition definitions, citations and unproved statements are not used as proofs. No conclusion of a later result supplies an upstream premise. |
+| Separate results | These matrix calculations do not duplicate the restriction-sequence or exactness results. |
 
 An import traversal against the audited Library base
 `4bec44eec4c7f23def3d25d5c43f4f2a034af469` found exactly the 21 project
 imports below. Every imported Lean/Markdown pair was byte-compared with
-that Library and its manifest; all pairs agree. Searches for all 38 task
-identifiers in the host's inherited exclusion union and the 24 named
-consumer declarations found no occurrence in Lean code. The imported orbit
-data's Markdown mentions three excluded consumer names solely in its own
+that Library and its manifest; all pairs agree. Searches for the 24 named
+excluded declarations found no occurrence in Lean code. The imported orbit
+data's Markdown mentions excluded names solely in its own
 independence explanation. Such prose is not a mathematical dependency.
 The source scan also found no proof holes, new axioms or unsafe evaluation
-commands. Development inspection of `rightStabilizer_le_stages`
+commands. Inspection of `rightStabilizer_le_stages`
 reported only the standard `propext`, `Classical.choice` and `Quot.sound`.
-These development checks are not independent acceptance or publication.
 
 ## Complete project import closure
 

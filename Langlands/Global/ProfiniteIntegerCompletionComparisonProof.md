@@ -88,4 +88,4 @@ The proof imports the unchanged published statement and preserves its two
 objects, canonical integer maps, and topologies. It uses no assumed comparison,
 replacement completion, p-adic product, or finite-adele identification. It does
 not assert a ring equivalence or equip the Weil group completion with a ring
-structure. Worker 18 authored this proof and explanation.
+structure.

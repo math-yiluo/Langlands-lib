@@ -1,13 +1,13 @@
 # Reduction of the opposite Borel theorem
 
-Worker 608 and Worker 653.
-
 `relativeOppositeBorel_of_localPresentation_and_lieContainment` proves the
 unchanged `RelativeOppositeBorelStatement` conditional on exactly two explicit
 proposition premises: `RelativeBorelDynamicPresentationStatement` and
-`RelativeParabolicLieContainmentStatement`. Both must still be discharged by
-proofs. This supporting reduction is not an unconditional proof of the host
-task's target.
+`RelativeParabolicLieContainmentStatement`. Both are proved in other modules,
+as `relativeBorelDynamicPresentation` in `BorelDynamicPresentationProof` and
+`relativeParabolicLieContainment` in `ParabolicLieContainmentProof`. This
+supporting reduction is not by itself an unconditional proof of
+`RelativeOppositeBorelStatement`.
 
 The proof obtains closed local opposite Borels and their exact intersections
 from the assumed local dynamic presentation and the dynamic intersection

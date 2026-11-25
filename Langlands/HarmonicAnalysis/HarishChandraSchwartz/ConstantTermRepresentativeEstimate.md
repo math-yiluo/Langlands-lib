@@ -1,6 +1,6 @@
 # The scalar constant-term estimate on representatives
 
-Worker 248, Task 5460. `ConstantTermRepresentativeEstimateStatement.{u}`
+`ConstantTermRepresentativeEstimateStatement.{u}`
 is a Prop-valued statement at arbitrary universe `u`, proved by
 `constantTermRepresentativeEstimate`. It isolates the scalar-integral
 argument used internally in the published `constantTermEstimate_of_bounds`,

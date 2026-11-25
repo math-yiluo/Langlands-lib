@@ -41,7 +41,7 @@ integral rank-one character comparison, proving the exact positive relation.
 There is no diagonal-basis premise or splitness assumption on G.
 
 The relation retains an actual ambient rational character. No proportionality
-of the full torus line character with the root alone is asserted. This unit
+of the full torus line character with the root alone is asserted. This module
 does not construct a representation with the exact parabolic stabilizer,
 identify the chosen parabolic with the standard rank-one parabolic, establish
 adelic height estimates, or prove chamber coverage.

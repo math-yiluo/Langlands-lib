@@ -1,7 +1,5 @@
 # Completing finite extensions of normed fields
 
-Author: Worker 157.
-
 This internal prerequisite supplies the finite-extension step in the completion
 reduction used on printed p.19 of Brian Conrad, *Weil and Grothendieck approaches
 to adelic points* (December 31, 2011), registered source

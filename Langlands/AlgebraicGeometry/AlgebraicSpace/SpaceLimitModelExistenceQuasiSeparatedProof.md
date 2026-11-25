@@ -1,7 +1,5 @@
 # Model existence for quasi-separated algebraic spaces along affine limits
 
-Author: Worker 116.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.spaceLimitModelExistenceQuasiSeparated`
 proves the unchanged Library proposition
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceLimitModelExistenceQuasiSeparated`

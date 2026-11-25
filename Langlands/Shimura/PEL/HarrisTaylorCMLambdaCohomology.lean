@@ -123,15 +123,15 @@ theorem cmHarrisLambdaCohomology_V :
 on the torsion limit. -/
 theorem cmHarrisLambdaCohomology_ρ_hom (g : Field.absoluteGaloisGroup F) :
     letI := harrisCoefficientComponentAlgebra K p l
-    ((lambdaCoh).ρ g).hom = ((ellAdic).ρ g).hom.baseChange (FiniteCompletion K l.1) :=
+    ((lambdaCoh).ρ g).asHom.hom = ((ellAdic).ρ g).asHom.hom.baseChange (FiniteCompletion K l.1) :=
   rfl
 
 /-- On pure tensors, a Galois element acts on the torsion-limit factor. -/
 theorem cmHarrisLambdaCohomology_ρ_tmul (g : Field.absoluteGaloisGroup F)
     (a : FiniteCompletion K l.1) (x : (ellAdic).V) :
     letI := harrisCoefficientComponentAlgebra K p l
-    ((lambdaCoh).ρ g).hom (a ⊗ₜ[HarrisCoefficientIntegers K p] x) =
-      a ⊗ₜ[HarrisCoefficientIntegers K p] ((ellAdic).ρ g).hom x :=
+    ((lambdaCoh).ρ g).asHom.hom (a ⊗ₜ[HarrisCoefficientIntegers K p] x) =
+      a ⊗ₜ[HarrisCoefficientIntegers K p] ((ellAdic).ρ g).asHom.hom x :=
   rfl
 
 /-! ## Finiteness, continuity and unramifiedness as propositions -/

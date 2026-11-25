@@ -12,7 +12,7 @@ where `J(x,1)` is the identity matrix with last row `(x, 1)` (`chartGL`) and `ι
 strictly dominant signed powers and `h` is `O(m+1)`-finite. Then the integral converges and
 `T h` is an `O(m)`-finite function of the principal series of `GL_m(ℝ)` for the shifted
 characters `χ_l |·|^{-1/2}`. This is the integral over `N̄_P` in "induction in stages" through
-the maximal parabolic subgroup `P_{m,1}`. It is used in Task 6749 for the Langlands quotient.
+the maximal parabolic subgroup `P_{m,1}`. It is used for the Langlands quotient.
 
 Declarations without a prefix are in the namespace `Langlands.Archimedean.PartialJacquet`.
 `MaximalParabolicIntegration`, `ParabolicChartBound` and `PrincipalSeriesExtension` are the

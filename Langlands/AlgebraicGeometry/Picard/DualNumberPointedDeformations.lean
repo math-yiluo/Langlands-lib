@@ -34,17 +34,18 @@ instance pointedDeformationsGroupoid : Groupoid (PointedDeformations f M) :=
 with the kernel of actual zero-section pullback. -/
 def pointedAutKernelEquiv (A : PointedDeformations f M) :
     Aut A ≃* InfinitesimalAut f A.right.of where
-  toFun a := ⟨a.hom.right.iso, by
-    have h : (PicardGroupoid.pullback (closedPoint f)).map a.hom.right = 𝟙 _ :=
+  toFun a := ⟨Aut.of a.asIso.hom.right.iso, by
+    have h : (PicardGroupoid.pullback (closedPoint f)).map a.asIso.hom.right = 𝟙 _ :=
       (cancel_epi A.hom).mp (by simp)
-    exact congrArg CoreHom.iso h⟩
-  invFun b := StructuredArrow.isoMk (Core.isoMk b.val) (by
+    exact Aut.ext (congrArg CoreHom.iso h)⟩
+  invFun b := Aut.of (StructuredArrow.isoMk (Core.isoMk b.val.asIso) (by
     have h : (PicardGroupoid.pullback (closedPoint f)).map
-        (Core.isoMk b.val).hom = 𝟙 _ := by
+        (Core.isoMk b.val.asIso).hom = 𝟙 _ := by
       apply CoreHom.ext
-      exact b.property
-    rw [h, Category.comp_id])
+      exact congrArg Aut.asIso (MonoidHom.mem_ker.mp b.property)
+    rw [h, Category.comp_id]))
   left_inv a := by
+    apply Aut.ext
     apply Iso.ext
     apply StructuredArrow.hom_ext
     apply CoreHom.ext
@@ -54,7 +55,7 @@ def pointedAutKernelEquiv (A : PointedDeformations f M) :
 
 /-- The kernel comparison keeps the underlying actual bundle automorphism. -/
 lemma pointedAutKernelEquiv_val (A : PointedDeformations f M) (a : Aut A) :
-    (pointedAutKernelEquiv f M A a).val = a.hom.right.iso :=
+    (pointedAutKernelEquiv f M A a).val.asIso = a.asIso.hom.right.iso :=
   rfl
 
 /-- Every pointed automorphism is uniquely scalar multiplication by `1 + ε a`. -/
@@ -65,8 +66,8 @@ def pointedAutGlobalFunctionsEquiv (A : PointedDeformations f M) :
 /-- The inverse coefficient comparison is the actual scalar automorphism. -/
 lemma pointedAutGlobalFunctionsEquiv_symm_val (A : PointedDeformations f M)
     (a : Γ(X, ⊤)) :
-    ((pointedAutGlobalFunctionsEquiv f M A).symm (Multiplicative.ofAdd a)).hom.right.iso =
-      LineBundle.unitAutEquiv A.right.of (topUnitsEquiv f (coefficientUnit f ⊤ a)) :=
+    ((pointedAutGlobalFunctionsEquiv f M A).symm (Multiplicative.ofAdd a)).asIso.hom.right.iso =
+      (LineBundle.unitAutEquiv A.right.of (topUnitsEquiv f (coefficientUnit f ⊤ a))).asIso :=
   rfl
 
 /-- The actual pointed automorphism group, in additive notation, is derived H⁰. -/
@@ -82,12 +83,13 @@ lemma pointedDeformations_iso_of_underlying_iso {A B : PointedDeformations f M}
     (e : A.right.of ≅ B.right.of) : Nonempty (A ≅ B) := by
   let F := LineBundle.pullback (closedPoint f)
   let δ : Aut (F.obj B.right.of) :=
-    (F.mapIso e).symm ≪≫ A.hom.iso.symm ≪≫ B.hom.iso
+    Aut.of ((F.mapIso e).symm ≪≫ A.hom.iso.symm ≪≫ B.hom.iso)
   obtain ⟨b, hb⟩ := automorphismReduction_surjective f B.right.of δ
-  change F.mapIso b = δ at hb
-  refine ⟨StructuredArrow.isoMk (Core.isoMk (e ≪≫ b)) ?_⟩
+  replace hb := congrArg Aut.asIso hb
+  change F.mapIso b.asIso = δ.asIso at hb
+  refine ⟨StructuredArrow.isoMk (Core.isoMk (e ≪≫ b.asIso)) ?_⟩
   apply CoreHom.ext
-  change A.hom.iso ≪≫ F.mapIso (e ≪≫ b) = B.hom.iso
+  change A.hom.iso ≪≫ F.mapIso (e ≪≫ b.asIso) = B.hom.iso
   rw [CategoryTheory.Functor.mapIso_trans, hb]
   simp [δ]
 

@@ -22,7 +22,7 @@ theorem continuousLinearMap_product_factors
       ∀ x, L x = M (fun i => x i.val) := by
   classical
   let p := SeminormFamily.sigma
-    (fun i : ι => fun _ : Fin 1 => (normSeminorm ℝ (F i)).comp (LinearMap.proj i))
+    (fun i : ι => fun _ : Unit => (normSeminorm ℝ (F i)).comp (LinearMap.proj i))
   have hp : WithSeminorms p :=
     withSeminorms_pi (fun i => norm_withSeminorms ℝ (F i))
   obtain ⟨t, C, _, hC⟩ := Seminorm.bound_of_continuous hp

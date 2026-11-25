@@ -1,13 +1,10 @@
 # Reductions of canonical corrected Theorem 3.6, the associated-Levi comparison and the Sharp class formula
 
 Module `Langlands.Representation.Aubert.General.CanonicalRationalComplexReductionStatements`.
-Authors: Worker 29, with Worker 3640, who chose this block (block (iii)) for
-the general Aubert program (Task 3640) and fixed its three input sets.
 
 The module declares three Prop-valued definitions in
 `Langlands.Aubert.General.RationalPointFamily`, each with universe parameters
-`u` and `v`. The review entry is
-`CanonicalRationalCorrectedTheorem36ReductionStatement`. Each definition is an
+`u` and `v`. Each definition is an
 implication between whole published propositions. None is proved here. None
 proves its conclusion or discharges an input, and none adds a premise to its
 conclusion: each conclusion is the unchanged canonical target of
@@ -108,7 +105,8 @@ quantified over the same actual setting:
 No proposition restricts to split, quasisplit or characteristic-zero groups,
 or to `GL`. The fixed-Levi comparison is not here: its rational target is
 already proved (`rationalFixedLeviComparison`), so its canonical form needs
-only the bridge of Task 6425.
+only the bridge `canonicalRationalFixedLeviComparison_of_rational`
+(`CanonicalRationalComplexTargetBridgesProof`).
 
 ## Provenance and intended proofs
 
@@ -117,10 +115,14 @@ literature. Their mathematical content is that of the cited sources through
 the published targets, whose own Markdown records the source correspondence.
 Aubert's Proposition 3.2 is not used.
 
-Each implication has been checked in Lean, against the current Library and
-the pending drafts named below, with standard axioms only. The proofs belong
-to separate `lean.proof@1` successor tasks. Statement review does not
-establish them. The checked routes are as follows.
+Each implication is proved in Lean in its own module:
+`canonicalRationalCorrectedTheorem36Reduction`
+(`CanonicalRationalCorrectedTheorem36ReductionProof`),
+`canonicalRationalAssociatedLeviComparisonReduction`
+(`CanonicalRationalAssociatedLeviComparisonReductionProof`) and
+`canonicalRationalSharpClassFormulaReduction`
+(`CanonicalRationalSharpClassFormulaReductionProof`). The routes are as
+follows.
 
 - From *Whole*, the published theorems
   `rationalCuspidalExtractionInputs_of_wholeStatement` and
@@ -134,35 +136,37 @@ establish them. The checked routes are as follows.
   gives induction-Jacquet stability of the support category. So extraction
   is derived from the splitting and is not an added input.
 - Exactness detection follows from extraction by the two reductions of the
-  block (ii) statement module `RationalDetectionFiniteLengthReductionStatements`
-  (zero detection from extraction, then exactness from zero detection). That
-  module is candidate `69993db0-c020-4fc3-b0eb-b213a9eea777`, accepted in
-  review and not yet in the Library. Its proofs go to their own successor
-  tasks.
+  statement module `RationalDetectionFiniteLengthReductionStatements`
+  (zero detection from extraction, then exactness from zero detection). They
+  are proved as `rationalSupportCategoryZeroDetectionReduction`
+  (`RationalSupportCategoryZeroDetectionProof`) and
+  `rationalSupportCategoryExactnessDetectionReduction`
+  (`RationalSupportCategoryExactnessReduction`).
 - Theorem 3.6. The published `rationalCorrectedTheorem36_of_inputs` takes the
   rational Bruhat decomposition (`rationalBruhat`), GradedVanishing, the
   graded transition (`rationalCorrectedGradedTransitionStatement`, proved),
   induction-Jacquet stability and exactness detection. It gives the rational
-  target, and `canonicalRationalCorrectedTheorem36_of_rational` (Task 6425,
-  `d7477c1e-06c2-43ec-9035-3eb6b594058b`, shared draft) gives the canonical
+  target, and `canonicalRationalCorrectedTheorem36_of_rational`
+  (`CanonicalRationalComplexTargetBridgesProof`) gives the canonical
   form.
 - Associated-Levi comparison. The published
   `rationalAssociatedLeviComparisonStatement_of_published` takes the rational
   Bruhat decomposition, dynamic quotient compactness, surviving support, the
   orbit radical and modulus statements (all proved), GradedVanishing and the
   graded transition. `canonicalRationalAssociatedLeviComparison_of_rational`
-  (Task 6425) gives the canonical form.
-- Class formula. The reduction `rationalSharpClassFormulaReduction` of
-  `RationalSharpClassFormulaReductionStatement` (Task 6483,
-  `18c36a7c-1b08-4443-b90a-38a4f0b9532a`, shared draft) takes GradedVanishing,
+  (`CanonicalRationalComplexTargetBridgesProof`) gives the canonical form.
+- Class formula. The reduction `rationalSharpClassFormulaReduction`
+  (`RationalSharpClassFormulaInputs`) of
+  `RationalSharpClassFormulaReductionStatement` takes GradedVanishing,
   induction-Jacquet stability, exactness detection and support-category
   Jacquet vanishing. The published
   `rationalSupportCategoryJacquetVanishing_of_dynamicCompact_and_association`
   derives Jacquet vanishing from quotient compactness
   (`dynamicParabolicQuotientCompact`) and support association.
-  `canonicalRationalSharpClassFormula_of_rational` (Task 6425) gives the
-  canonical form.
+  `canonicalRationalSharpClassFormula_of_rational`
+  (`CanonicalRationalComplexTargetBridgesProof`) gives the canonical form.
 
-So the Theorem 3.6 and class-formula proofs depend on Task 6425 and the block
-(ii) reductions, the class-formula proof also on Task 6483, and the
-associated-Levi proof on Task 6425 only.
+So the Theorem 3.6 and class-formula routes use the canonical bridges and the
+two detection reductions, the class-formula route also
+`rationalSharpClassFormulaReduction`, and the associated-Levi route the
+canonical bridge only.

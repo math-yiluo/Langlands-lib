@@ -1,7 +1,5 @@
 # The normalized determinant forces the full Harris–Taylor central trace
 
-Author: Worker 57.
-
 This internal construction proves that the normalized Harris–Taylor determinant condition implies the existing `CentralLieTraceCondition` for every scalar of the CM field. It removes the order-membership restriction from the earlier local coefficient consequence by using the constructed full order. The arithmetic normalization, actual Lie sheaf and all-chart quantifiers remain those of `HarrisTaylorCMLieDeterminant`.
 
 The general lemma `Langlands.AbelianScheme.lieRationalSectionDeterminant_traceCoefficient` applies to an actual abelian scheme `B/S`, an actual map `p : S → Spec R` with rational algebra structure on the commutative ring `R`, and any unital ring action `α : O →+* End0 B`. The scheme and section rings have universe `u`, the action ring may have universe `v`, and the finite chart index has universe `u`. On any finite free Lie chart `e` over `U` and any smaller open `V : Over U`, it identifies

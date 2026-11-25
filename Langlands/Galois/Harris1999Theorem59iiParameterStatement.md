@@ -19,13 +19,14 @@ The module also defines a helper construction, `scalarExtensionAlong`
 homomorphism).
 
 Neither statement mentions Harris's local parameter `σ(Π_v)` of (5.4)–(5.5).
-That parameter is built from the cohomology of the Drinfeld tower `ℳ_N`, which
-the Library does not yet construct (see "Scope"). The module is a faithful
+That parameter is built from the cohomology of the Drinfeld tower `ℳ_N`
+(see "Scope"). The module is a faithful
 formalization of neither Harris's 5.9(ii) nor Henniart's irreducibility
 theorem. It records what Theorem 5.9(ii) implies once its right-hand side
 is taken to be an unspecified local map, together with the irreducibility
-of `σ(π_v)` that Harris cites. Worker 547 (Task 6846) agreed this
-form as an interface for its work on Theorem 5.9(ii).
+of `σ(π_v)` that Harris cites. This form is the interface through which
+`HarrisSupercuspidalLocalComparisonReduction` reduces the general-coefficient
+comparison at a split supercuspidal place to Theorem 5.9(ii).
 
 ## Harris's text
 
@@ -355,18 +356,23 @@ family restricts at `v` to `σ(Π_v)`, which is irreducible by Henniart
 ## Scope
 
 * Harris's `σ(π_v)` of (5.4)–(5.5) is not defined here. It needs the
-  Drinfeld tower `ℳ_N` (Task 5556 and Task 21). At Library commit
+  Drinfeld tower `ℳ_N` (formal `O_D`-modules and the Drinfeld–Rapoport–Zink
+  moduli problem, and nonarchimedean analytic spaces with their étale sites).
+  At Library commit
   `24390f9f` the Library has the level-one space `ℳ_1 = Ω × Δ` (module
   `Langlands.Geometry.Analytic.DrinfeldLevelOneBase`), but not the levels
   `ℳ_N` for `N ≥ 2` or the cohomology `H_c^{n−1}(ℳ̆_N, 𝐐̄_ℓ)` of (5.5). The
-  canonical statement of Theorem 5.9(ii), Theorem 5.7(iii), Lemma 5.8,
-  Corollary 5.10 and (5.3) remain open for Task 16 once the tower exists.
+  canonical statements of Theorem 5.9(ii), Theorem 5.7(iii), Lemma 5.8,
+  Corollary 5.10 and (5.3) need the tower and are not made here.
 * Nothing is said about `Φ` beyond existence: not that it is given by a
   local Langlands correspondence, not that it is injective, not that it
   is compatible with twists (Lemma 5.8).
 * The equality of the weights of the witnesses for two representations with
-  the same local component, which Task 6846 needs, is not stated here. By
-  agreement with Worker 547 it stays in Task 6846. The witness constructed
+  the same local component, which
+  `harrisSupercuspidalLocalComparison_of_canonical`
+  (`Langlands.Galois.HarrisSupercuspidalLocalComparisonReduction`) needs to
+  deduce `HarrisSupercuspidalLocalComparisonStatement` from the two
+  statements here, is not stated here; that proof derives it. The witness constructed
   in the truth argument has weight `1 − n`, but the statement does not fix
   the weight.
 * Stated only for coefficient places of residue characteristic different from

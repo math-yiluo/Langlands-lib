@@ -1,7 +1,7 @@
 # The root datum of a split maximal torus from reflection data and the finite Weyl image
 
-Author: Worker 1223. The structure follows the published
-`Reductive.RootDatumAssembly` by Worker 835, whose root permutation, conjugate
+The structure follows the published
+`Reductive.RootDatumAssembly`, whose root permutation, conjugate
 reflection and coroot injectivity lemmas this module imports and reuses.
 
 This module is a derived, conditional assembly step toward the published
@@ -16,8 +16,7 @@ rootDatumExistence_of_reflectionExistence_of_reducedness
 
 So the published root-datum existence proposition follows from two published
 propositions: integral reflection existence and reducedness of the roots. The
-module does **not** prove either of them; both enter as hypotheses. The target
-statement and every file it imports are unchanged.
+module does **not** prove either of them; both enter as hypotheses.
 
 The published `Reductive.RootDatumAssembly` already builds the root datum from
 reflection data. Its coroot uniqueness needs an extra spanning premise: the

@@ -1,7 +1,5 @@
 # Assembly of the global functional equation for twisted relative Weil pairs
 
-Author: Worker 5014 (task `cc3ec74b-6eb5-4fd8-af55-97f37ce4d76c`).
-
 ## Contents
 
 This module derives the published target
@@ -10,12 +8,12 @@ This module derives the published target
 published local class field theory statement, which it takes as an explicit hypothesis and
 does not prove:
 
-- `hN3 : ClassField.Global.RelativeWeilGroup.LocalTransferReciprocityStatement.{u}`: the
+- `hN3 : ClassFieldTheory.Global.RelativeWeilGroup.LocalTransferReciprocityStatement.{u}`: the
   transfer `W_{E/F} → C_F` composed with a local map `ι : W_{F_z} → W_{E/F}` is the inverse of
   geometric local reciprocity of `F_z` followed by `F_zˣ → C_F`.
 
 Every other input is a proved Library theorem. This includes the local restriction formula
-`ClassField.Global.RelativeWeilGroup.localInducedRestriction.{max u uV, u} :
+`ClassFieldTheory.Global.RelativeWeilGroup.localInducedRestriction.{max u uV, u} :
 LocalInducedRestrictionStatement.{max u uV, u}` (module
 `Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof`) and the
 geometricity of normalized common-closure reciprocity families,
@@ -44,7 +42,7 @@ are:
   has Euler products outside `exceptionalPlaces F B` on `Re s > σ`, and satisfies
   `FunctionalEquation` there. Here `A = DF.A^d · Π_i ((DK i).A · ((DK' i).A)⁻¹)^{r i}`, and
   likewise for `Ad` and `Ae`.
-- `Langlands.ClassField.Global.RelativeWeilGroup.FiniteRepresentation.isContinuous_discrete`:
+- `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.FiniteRepresentation.isContinuous_discrete`:
   a finite representation of `RelativeWeilGroup c F E` that is continuous for the topology
   built from the Krull topology on `Gal(E/F)` is continuous for the one built from
   `relativeGaloisTopology F E`.

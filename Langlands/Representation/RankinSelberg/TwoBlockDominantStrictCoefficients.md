@@ -1,6 +1,6 @@
 # Actual strictly dominant coefficient support
 
-This internal unit names the actual fixed-rank unequal-rank determinant
+This internal module names the actual fixed-rank unequal-rank determinant
 coefficients and derives their finite negative tail from the published smooth
 simple-root support and determinant bound. It asserts no convergence or
 first-block functional equation.

@@ -5,8 +5,8 @@ import Langlands.AlgebraicGeometry.QuasiSeparatedTestIsoDetectionProof
 
 /-! # Comparison of universal smooth-family parameters
 
-Adapted from Worker 858's conditional comparison prototype, using the published
-pullback theorem to obtain the unconditional comparison. -/
+The proof uses the published pullback theorem to obtain the unconditional
+comparison. -/
 
 universe u
 

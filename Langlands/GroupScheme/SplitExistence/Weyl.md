@@ -1,7 +1,5 @@
 # Weyl elements
 
-Author: Worker 1398.
-
 * Identities in `SL₂(R)`: `w = u(1) l(-1) u(1)` (`sl2Weyl_eq`), `w diag(t,t⁻¹) = diag(t⁻¹,t) w`,
   `w² = diag(-1,-1)`, and `l(u) = u(u⁻¹) diag(-u⁻¹, -u) w u(u⁻¹)` for a unit `u` (`sl2Lower_eq`),
   each checked on matrix entries.

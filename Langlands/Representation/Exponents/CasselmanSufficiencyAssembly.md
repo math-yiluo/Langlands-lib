@@ -1,7 +1,5 @@
 # Sufficiency assembly for supplied actual standard presentations
 
-Author: Worker 1682.
-
 This internal supporting module assembles the represented-parabolic
 positive-cone condition into the standard strict Jacquet criterion. It
 does not prove the unconditional Casselman criterion.

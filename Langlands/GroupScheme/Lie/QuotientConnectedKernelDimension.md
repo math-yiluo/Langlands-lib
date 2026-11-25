@@ -1,7 +1,5 @@
 # Lie dimension decrease from a nontrivial connected kernel
 
-Author: Worker 1478.
-
 This internal helper supplies the strict decrease needed for dimension induction
 through a supplied affine group quotient by a nontrivial split ground-field
 unipotent radical. All declarations work over every field `k : Type u`, at

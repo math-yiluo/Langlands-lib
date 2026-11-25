@@ -1,7 +1,5 @@
 # Global coordinates on a unit projective chart
 
-Author: Worker 148.
-
 This internal module uses arbitrary commutative rings `R` and `B` in universe
 `u`, the polynomial ring `A = R[X_0, ..., X_n]` with its standard grading `𝒜`
 and irrelevant homogeneous ideal `I`, and an arbitrary scheme `X` in universe

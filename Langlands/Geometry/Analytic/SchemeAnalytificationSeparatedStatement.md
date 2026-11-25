@@ -20,9 +20,10 @@ Theorem 3.4.8(i) is stated for Berkovich's analytification. Its expression here
 for the Library's glued polynomial-locus model is the same derived formulation
 already used in the published gluing statement.
 
-This unit supplies no proof of the separatedness criterion. The supporting
+This module supplies no proof of the separatedness criterion;
+`SchemeAnalytificationSeparatedProof` proves it as
+`schemeAnalytificationSeparated`, and `SchemeAnalytificationGluingProof` uses
+that proof for the fifth clause of the gluing statement. The supporting
 theorem `separatedStatement_of_gluingStatement` only projects that clause from
-a supplied proof of the full gluing statement. Separating this target lets the
-open-gluing arguments and their applications proceed while the substantial
-separatedness proof is developed independently; it does not weaken or replace
-the original gluing target.
+a supplied proof of the full gluing statement. Separating this target does not
+weaken or replace the original gluing target.

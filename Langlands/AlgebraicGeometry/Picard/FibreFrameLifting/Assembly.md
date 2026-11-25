@@ -1,7 +1,5 @@
 # Fibre frame lifting from restriction-compatible models and the algebraic spreading
 
-Author: Worker 1119.
-
 This module proves
 
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLifting.fibreFrameLifting_of_models

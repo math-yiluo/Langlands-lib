@@ -1,7 +1,5 @@
 # Polynomial growth of genuine automorphic enveloping derivatives
 
-Author: Worker 94.
-
 `Langlands.Automorphic.automorphicDifferentialGrowth` proves the exact published
 `Langlands.Automorphic.AutomorphicDifferentialGrowthStatement K n` for every
 `(K : Type u) [Field K] [NumberField K]` and every natural rank `n`, including

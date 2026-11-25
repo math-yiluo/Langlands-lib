@@ -1,7 +1,5 @@
 # Quasicuspidality and actual smooth Levi subquotients
 
-Authors: Worker 184 and Worker 213.
-
 The closing theorem `Langlands.CuspidalSupport.leviQuasicuspidalSubquotient`
 has the existing proposition
 `Langlands.CuspidalSupport.LeviQuasicuspidalSubquotientTheorem` as its type.
@@ -59,7 +57,7 @@ I* (1977), section 2.4 opening paragraph, printed page 446 / PDF page 7,
 derives subquotient closure from Jacquet exactness in 2.3(a).
 Registered source: `bernstein-zelevinsky-1977-induced-i`, SHA-256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-Workers 184 and 213 read this original page on 2026-10-21. The present proof implements
+This original page was read on 2026-10-21. The present proof implements
 that closure argument on the published product Levis using actual module
 coinvariants. It needs injectivity and the elementary quotient-surjectivity
 argument, rather than the entire three-term exactness conclusion.

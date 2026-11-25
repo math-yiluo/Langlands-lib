@@ -24,15 +24,17 @@ def spectrumAction (d : Domain K P) :
     Action TopCat.{u} (ρ.locusOpenSubgroup d) where
   V := TopCat.of (BanachSpectrum d.algebra)
   ρ :=
-    { toFun := fun g => TopCat.ofHom
-        (BanachSpectrum.comapContinuous (ρ.sectionAction d g).inv.toBoundedRingHom)
+    { toFun := fun g => End.of (TopCat.ofHom
+        (BanachSpectrum.comapContinuous (ρ.sectionAction d g).asIso.inv.toBoundedRingHom))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         change (ρ.sectionAction d 1) • x = x
         simp
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro x
         change (ρ.sectionAction d (g * h)) • x =
@@ -49,8 +51,8 @@ def spectrum (d : Domain K P) :
 theorem spectrum_apply (d : Domain K P) (g : ρ.locusOpenSubgroup d)
     (x : BanachSpectrum d.algebra) (b : d.algebra) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom ((ρ.spectrum d).obj.ρ g) x) b =
-        x ((ρ.sectionAction d g).inv.toAlgHom b) :=
+      (ConcreteCategory.hom ((ρ.spectrum d).obj.ρ g).asHom x) b =
+        x ((ρ.sectionAction d g).asIso.inv.toAlgHom b) :=
   rfl
 
 /-- The existing actual spectrum diagram satisfies joint continuity after
@@ -94,8 +96,8 @@ theorem invariantSpectrumFunctor_obj_apply (H : OpenSubgroup G)
     (d : ρ.InvariantDomain H) (g : H) (x : BanachSpectrum d.obj.algebra)
     (b : d.obj.algebra) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom (((ρ.invariantSpectrumFunctor H).obj d).obj.ρ g) x) b =
-        x ((ρ.invariantSectionAction H d g).inv.toAlgHom b) :=
+      (ConcreteCategory.hom (((ρ.invariantSpectrumFunctor H).obj d).obj.ρ g).asHom x) b =
+        x ((ρ.invariantSectionAction H d g).asIso.inv.toAlgHom b) :=
   rfl
 
 @[simp]

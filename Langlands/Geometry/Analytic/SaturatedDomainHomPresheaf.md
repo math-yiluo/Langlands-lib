@@ -5,7 +5,8 @@ the constructed source-quotient category and restricts its representable
 presheaves to that domain category. It proves separatedness for every sieve in
 the quasinet topology, including sieves on a proper domain. Separatedness means
 that a matching family has at most one glue. Existence for arbitrary matching
-quotient families remains open.
+quotient families is proved in `QuotientDomainHomSheaf`
+(`domainHomPresheaf_isSheaf`).
 
 The source motivation is Berkovich, *Étale cohomology for non-Archimedean
 analytic spaces* (1993), Definition 1.3.1 (printed p.23 / PDF p.20),
@@ -14,7 +15,7 @@ Proposition 1.3.2 (printed p.24 / PDF p.21), and the G-topology paragraph
 `berkovich-1993-etale-cohomology`, SHA-256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
 Those passages motivate actual subspace domains, morphism descent, and quasinet
-coverings. This unit gives the uniqueness part of descent for the existing
+coverings. This module gives the uniqueness part of descent for the existing
 original-chart model, without claiming full identification with all analytic
 spaces or domains.
 
@@ -57,5 +58,6 @@ independent. Empty domains and empty covers are governed by the actual
 quasinet condition; no nonemptiness hypothesis is added. The proof compares
 complete quotient arrows through proved domain factorization and monicity,
 and never infers bounded algebra maps from their spectrum-point values.
-Arbitrary quotient matching gluing, full analytic identification, and the
-étale and equivariant site constructions remain separate obligations.
+Arbitrary quotient matching gluing is proved in `QuotientDomainHomSheaf`; full
+analytic identification and the étale and equivariant site constructions lie
+outside this module.

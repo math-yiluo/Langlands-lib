@@ -1,6 +1,6 @@
 # Tensors that are covariant in each factor
 
-Worker 1628 derives this internal result from flatness of modules over a field.
+This internal result is derived from flatness of modules over a field.
 It is a Künneth-type criterion. A tensor in `A ⊗ A` that is left covariant in
 each tensor factor separately multiplies into the product of the two
 left-covariant coordinate subspaces. It is the step that turns a two-variable
@@ -53,7 +53,8 @@ spaces over `k`. For a linear map `r : A → C` and `χ ∈ C`, the existing
   `(r ⊗ id) ∘ Δ - (a ↦ χ ⊗ a)` and `(s ⊗ id) ∘ Δ - (a ↦ ψ ⊗ a)`. The two
   hypotheses say that both kill `F`. Hence `F` comes from
   `leftCovariantSubspace r χ ⊗ leftCovariantSubspace s ψ`. Multiplication of
-  that tensor product into `A` is Worker 1330's `coordinateProduct`, whose
+  that tensor product into `A` is `coordinateProduct` (module
+  `CovariantProducts`), whose
   image is the product submodule (`range_coordinateProduct`).
 
 ## Scope

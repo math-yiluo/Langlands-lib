@@ -1,6 +1,6 @@
 # Clauses 4, 6 and 7 of the groups `G(K)_{x,r}` at depth zero and at every depth
 
-Helper module for Task 6191 (`LocalMoyPrasadGroupPropertiesStatement`). It proves the
+Helper module for the proof of `LocalMoyPrasadGroupPropertiesStatement`. It proves the
 depth-zero cases of clause 4 (`LocalMoyPrasadRootIntersection`), clause 6
 (`LocalMoyPrasadLeviIntersection`) and clause 7 (`LocalMoyPrasadCentralizerIntersection`)
 from two depth-zero intersection facts, which are taken as explicit hypotheses. It then
@@ -33,7 +33,7 @@ and every generic integral cocharacter `μ`,
 
 `G(K)_{x,r} = U_{Φ⁺(-μ),x,r} · j(Z(K)_r) · U_{Φ⁺(μ),x,r}` (as sets).
 
-This is exactly the conclusion of the statement of Task 6542.
+This is exactly the conclusion of `LocalMoyPrasadPositiveProductStatement`.
 
 ## Small lemmas
 
@@ -87,4 +87,5 @@ depth-zero theorem above. The case `r > 0` is the positive-depth theorem from `h
 This module keeps the product cover and depth-zero facts as explicit hypotheses.
 The final composition in `KPLocalMoyPrasadGroupPropertiesProof`, through
 `KPLocalMoyPrasadGroupPropertiesReduction`, supplies them using the published
-`localMoyPrasadPositiveProduct` and `localMoyPrasadDepthZero` theorems and S1.
+`localMoyPrasadPositiveProduct` and `localMoyPrasadDepthZero` theorems and
+`QuasiSplitLocalTorusFiltrationStatement` (proved as `quasiSplitLocalTorusFiltration`).

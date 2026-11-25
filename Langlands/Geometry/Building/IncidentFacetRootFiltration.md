@@ -1,6 +1,6 @@
 # Positive root filtrations of incident facets
 
-This internal unit derives filtration comparisons for two actual apartment
+This module derives filtration comparisons for two actual apartment
 facets `F`, `C` with `F` a face of `C`. The upper facet need not be a chamber.
 The universe of the underlying field is arbitrary.
 
@@ -56,6 +56,6 @@ cocharacter.
 
 The provenance is derived from the imported facet-constancy,
 facet-closure, filtration-shift, generic-cocharacter and bounded-fixer
-theorems. This unit concerns apartment root groups. It does not construct
+theorems. This module concerns apartment root groups. It does not construct
 integral root models, identify residue-root subgroups, or prove
 parabolicity of a special-fibre image.

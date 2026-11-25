@@ -43,8 +43,8 @@ the torus represents its pointwise range. The represented-subgroup
 `kernelTorusFactorOfUnipotentKernels_comp` proves that its composite with
 the torus inclusion is exactly `kernelι q`.
 
-This derived unit proves containment of the entire kernel in the source torus.
-It does not yet prove that this kernel is central, discharge the two unipotent
+This derived module proves containment of the entire kernel in the source torus.
+It does not prove that this kernel is central, discharge the two unipotent
 kernel assumptions from root factors, or prove the full root-datum comparison.
 Its provenance is the published dynamic functoriality, limit and opposite-cell
 interfaces together with the preceding kernel open-cell factorization.

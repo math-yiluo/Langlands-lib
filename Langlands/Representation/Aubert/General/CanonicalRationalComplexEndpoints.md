@@ -1,6 +1,6 @@
 # The full-support endpoint of the actual smooth Aubert complex
 
-Internal construction by Worker 3640, specializing the published
+Internal construction, specializing the published
 `Complex.terminalIsoOfDegreeEqZero`, `Complex.terminalProjection_zero_injective`
 and `Complex.initialTerminalMap_bijective` from
 `RationalFixedLeviComparisonProof`. The construction concerns the same actual

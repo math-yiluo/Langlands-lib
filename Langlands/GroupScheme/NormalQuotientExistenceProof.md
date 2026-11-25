@@ -1,7 +1,5 @@
 # Existence of unrestricted affine normal quotients
 
-Author: Worker 1228.
-
 `Langlands.GroupScheme.normalSubgroupQuotientExistence.{u}` proves exactly
 `Langlands.GroupScheme.NormalSubgroupQuotientExistenceStatement.{u}`. For every
 field `k : Type u`, every affine locally finite-type group scheme `G` over

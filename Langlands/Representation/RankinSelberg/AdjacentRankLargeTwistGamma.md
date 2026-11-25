@@ -37,7 +37,8 @@ order. The scalar character is transported to the lifted character by the actual
 
 No unrestricted or finite-block JPSS multiplicativity theorem is used. This
 result proves the large-twist assertion only; it does not assert continuation
-to zero, the arbitrary upper-family closed base, or completion of its parent task.
+to zero, the arbitrary upper-family closed base, or the full result that this
+step serves.
 
 ## All-field port
 

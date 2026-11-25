@@ -1,6 +1,6 @@
 # Renard II.3.13: centrality, Hecke commutation and conjugation invariance
 
-Worker 108, Task 5531. Source: Renard, *Représentations des groupes
+Source: Renard, *Représentations des groupes
 réductifs p-adiques*, French version of 9 July 2026, II.3.13 Corollary and
 the first paragraph of its proof, printed p.55 / PDF p.61; source
 registration `renard-2026-representations-groupes-reductifs-padiques`.

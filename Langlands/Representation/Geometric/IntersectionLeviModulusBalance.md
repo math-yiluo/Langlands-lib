@@ -1,7 +1,5 @@
 # Block-normalization balance of the moduli on the intersection Levi
 
-Author: Worker 23.
-
 This module proves a scalar identity among explicit positive moduli for p-adic
 `GL_n`. Fix block shapes `B`, `C`, a minimal representative `w` of a double coset
 `W_C \ W / W_B`, and refinements `S` of `B` and `R` of `C`. The refinements must
@@ -29,8 +27,7 @@ target outer and source inner positive half moduli, divided by the target
 inner positive half modulus. All coordinates are the actual subgroup
 inclusions, exact refinement relabelings and intersection-Levi conjugation.
 The half-modulus identity below computes its intrinsic value as the target
-correction-subgroup Haar character. This definition is by Worker 76; the
-balance proofs are by Worker 23.
+correction-subgroup Haar character.
 
 `Langlands.Geometric.intersectionLeviModulusBalance` states the following. Let
 `x : B.Levi`, `y : C.Levi`, `s : refinedLevi B S` and `r : refinedLevi C R` be
@@ -127,7 +124,7 @@ in all nine order cases of `(f a, f b)` and `(g a, g b)`.
 
 ## Provenance and scope
 
-This identity and its proof are an internal derivation. Worker 76 requested it as a
+This identity and its proof are an internal derivation. It is a
 supporting lemma for the parabolic-orbit Jacquet comparison. It is the bookkeeping
 behind the normalization: the normalized Jacquet functor and normalized induction
 along the orbit agree with the composite of the refined normalized functors up to
@@ -142,8 +139,8 @@ implementation follows the same strategy for `GL_n`: it reduces to diagonal
 matrices and compares explicit root products. It proves the full balance among
 the five moduli rather than the triviality of a single character. The Haar
 modulus formula and the diagonal character determination are imported, proved
-Library results. I read section 6.4 (PDF pp.29–30) and the statement of 2.12
-(PDF p.9) when preparing this module.
+Library results. Section 6.4 (PDF pp.29–30) and the statement of 2.12
+(PDF p.9) were read when preparing this module.
 
 Original file:
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.

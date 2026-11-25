@@ -1,10 +1,10 @@
 # Root groups, open cell and the rank-one relation
 
-Author: Worker 1388.
-
 Module `Langlands.GroupScheme.Reductive.SplitRankOneRootCellStatement`, declaration
 `Langlands.GroupScheme.SplitRankOneRootCellStatement` (a `Prop`, universe `u`). The
-module states the proposition and proves nothing. Its proof is open.
+module states the proposition and proves nothing. It is proved by
+`splitRankOneRootCell` in `Reductive.SplitRankOneRootCellProof` and by
+`splitRankOneRootCellIndependent` in `Reductive.SplitRankOneRootCellIndependentProof`.
 
 ## The statement
 
@@ -94,5 +94,4 @@ Three points of the translation need comment.
 ## Use
 
 `Reductive.SplitRankOneRootCellReduction` proves that this proposition implies
-`SplitRankOneCommonTorusIsomorphismStatement`. The proposition and its reduction were
-written for task `de20c777-ce5f-4764-be9b-a09f5e0aca68`.
+`SplitRankOneCommonTorusIsomorphismStatement`.

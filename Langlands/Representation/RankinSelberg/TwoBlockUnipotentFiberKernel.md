@@ -1,6 +1,6 @@
 # Actual two-block radical fiber kernel
 
-Author: Worker 113. This is internal derived infrastructure for the unchanged
+This is internal derived infrastructure for the unchanged
 normalized two-block quotient integration statement.
 
 The affine change `unipotentShift` preserves the supplied rectangular additive

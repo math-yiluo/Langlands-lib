@@ -1,6 +1,6 @@
 # Total projectors from finite fixed-level strata
 
-Worker 173 supplies a total equivariant endomorphism from finite fixed-level
+This module supplies a total equivariant endomorphism from finite fixed-level
 strata and a supplied family of compact-isotypic component maps. The component
 maps, their projector properties, and the finiteness of the fixed-level strata
 are explicit inputs. This is internal infrastructure derived from published

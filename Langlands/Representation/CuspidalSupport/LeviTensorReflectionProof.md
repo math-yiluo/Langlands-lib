@@ -1,7 +1,5 @@
 # Supercuspidality reflected by the actual Levi tensor
 
-Author: Worker 158.
-
 `padicLeviTensorSupercuspidalReflection.{uF,uW}` proves exactly the published
 `PadicLeviTensorSupercuspidalReflectionStatement.{uF,uW}`. The supplied field
 topology is installed, and the field and factor-carrier universes remain

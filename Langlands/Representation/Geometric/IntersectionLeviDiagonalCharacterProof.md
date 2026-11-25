@@ -1,7 +1,5 @@
 # Character determination on the actual intersection Levi
 
-Author: Worker 632.
-
 `Langlands.Geometric.intersectionLeviDiagonalCharacterTheorem` proves exactly
 `Langlands.Geometric.IntersectionLeviDiagonalCharacterStatement.{uF}` from the
 published statement module. It applies to every characteristic-zero field

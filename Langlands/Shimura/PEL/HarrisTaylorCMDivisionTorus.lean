@@ -39,12 +39,13 @@ private theorem neronGenericEnd_bijective
   let : IsSeparated N.X.hom := hN.separated
   constructor
   · intro f g hfg
+    apply End.ext
     apply Additive.toMul.injective
     apply Grp.hom_ext
     exact genericFibre_map_injective K (congrArg
-      (fun t : End ((generic).obj N) => (CommGroupScheme.groupHom t).hom.hom) hfg)
+      (fun t : End ((generic).obj N) => (CommGroupScheme.groupHom t.asHom).hom.hom) hfg)
   · intro ψ
-    let v := (CommGroupScheme.groupHom ψ).hom.hom
+    let v := (CommGroupScheme.groupHom ψ.asHom).hom.hom
     let v' : NeronModelInfra.SchemeHomOver
         (pullback.snd N.X.hom j) (pullback.snd N.X.hom j) :=
       ⟨v.left, Over.w v⟩
@@ -72,7 +73,8 @@ private theorem neronGenericEnd_bijective
       isMonHom_of_map (Over.pullback j) φ'
         (fun _ _ hf => genericFibre_map_injective K hf)
         (fun _ _ hf => genericFibre_map_injective K hf)
-    refine ⟨Additive.ofMul (Grp.homMk φ'), ?_⟩
+    refine ⟨End.of (Additive.ofMul (Grp.homMk φ')), ?_⟩
+    apply End.ext
     apply Additive.toMul.injective
     apply Grp.hom_ext
     exact hmap
@@ -83,21 +85,23 @@ private def neronGenericEnd0Equiv
     (hN : NeronModelInfra.NeronModelPropertyBundle V K N.X.hom) :
     Rationalization.End N ≃ₐ[ℚ] Rationalization.End ((generic).obj N) := by
   let F := generic
-  let e : End N ≃ₗ[ℤ] End (F.obj N) :=
-    LinearEquiv.ofBijective (F.mapLinearMap ℤ) (neronGenericEnd_bijective K N hN)
-  let eQ : Rationalization.End N ≃ₗ[ℚ] Rationalization.End (F.obj N) :=
+  let e : (N ⟶ N) ≃ₗ[ℤ] (F.obj N ⟶ F.obj N) :=
+    LinearEquiv.ofBijective (F.mapLinearMap ℤ) (End.homEquiv.bijective.comp
+      ((neronGenericEnd_bijective K N hN).comp End.homEquiv.symm.bijective))
+  let eQ : Rationalization.Hom N N ≃ₗ[ℚ] Rationalization.Hom (F.obj N) (F.obj N) :=
     e.baseChange ℤ ℚ _ _
   let f : Rationalization.End N →ₐ[ℚ] Rationalization.End (F.obj N) :=
     Rationalization.liftEnd (F ⋙ Rationalization.inclusion) N
   refine AlgEquiv.ofBijective f ?_
-  have hf : (f : Rationalization.End N → Rationalization.End (F.obj N)) = eQ := by
+  have hf : (Rationalization.liftHom (F ⋙ Rationalization.inclusion) :
+      Rationalization.Hom N N → Rationalization.Hom (F.obj N) (F.obj N)) = eQ := by
     funext x
     induction x using TensorProduct.inductionOn with
     | tmul q g =>
       change q • ((1 : ℚ) ⊗ₜ[ℤ] F.map g) = q ⊗ₜ[ℤ] F.map g
       simp [TensorProduct.smul_tmul']
     | add x y hx hy => rw [map_add, map_add, hx, hy]
-  exact hf ▸ eQ.bijective
+  exact End.homEquiv.symm.bijective.comp ((hf ▸ eQ.bijective).comp End.homEquiv.bijective)
 
 private def forgetAbelianScheme (S : Scheme) : AbelianScheme S ⥤ CommGroupScheme S where
   obj B := B.toCommGroupScheme
@@ -110,17 +114,22 @@ private instance forgetAbelianScheme_additive (S : Scheme) :
 /-- Transport of endomorphisms along an actual isomorphism. -/
 private def endConj {C : Type*} [Category C] [Preadditive C] [Linear ℚ C]
     {X Y : C} (e : X ≅ Y) : End X →ₐ[ℚ] End Y where
-  toFun f := e.inv ≫ f ≫ e.hom
-  map_zero' := by simp
-  map_one' := by simp
+  toFun f := End.of (e.inv ≫ f.asHom ≫ e.hom)
+  map_zero' := by apply End.ext; simp
+  map_one' := by apply End.ext; simp
   map_add' f g := by
-    change e.inv ≫ ((f + g) ≫ e.hom) = (e.inv ≫ f ≫ e.hom) + (e.inv ≫ g ≫ e.hom)
+    apply End.ext
+    change e.inv ≫ ((f.asHom + g.asHom) ≫ e.hom) =
+      (e.inv ≫ f.asHom ≫ e.hom) + (e.inv ≫ g.asHom ≫ e.hom)
     rw [Preadditive.add_comp, Preadditive.comp_add]
   map_mul' f g := by
-    change e.inv ≫ (g ≫ f) ≫ e.hom = (e.inv ≫ g ≫ e.hom) ≫ e.inv ≫ f ≫ e.hom
+    apply End.ext
+    change e.inv ≫ (g.asHom ≫ f.asHom) ≫ e.hom =
+      (e.inv ≫ g.asHom ≫ e.hom) ≫ e.inv ≫ f.asHom ≫ e.hom
     simp [Category.assoc]
   commutes' q := by
     simp only [Algebra.algebraMap_eq_smul_one]
+    apply End.ext
     change e.inv ≫ (q • 𝟙 X) ≫ e.hom = q • 𝟙 Y
     rw [Linear.smul_comp, Linear.comp_smul, Category.id_comp, e.inv_hom_id]
 

@@ -1,6 +1,6 @@
 # Renard's compact-support description of `F̃^{<1̄}_{PQ}`: proof
 
-Author: Worker 48. Module
+Module
 `Langlands.Representation.Intertwining.PQBoundaryVanishingCompactSupportProof`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u, v`.
 

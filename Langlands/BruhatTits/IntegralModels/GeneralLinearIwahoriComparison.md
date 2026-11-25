@@ -38,8 +38,7 @@ block shape of the Library's `Langlands.GeneralLinear.BlockShape` API.
 
 The module is derived. Its statements are standard facts about `GL_N` over a
 discrete valuation ring with finite residue field, obtained here from
-published Library results and Mathlib. The task objective (Task 3557) asks for
-proved regression examples in its "Regression examples" section; this unit
+published Library results and Mathlib. As a proved regression example, this module
 compares the hyperspecial pair `K^+ ⊆ K` with the standard Iwahori pair
 `I^+ ⊆ I`. For `N ≥ 2` the standard chamber is not a hyperspecial vertex, and
 the KP comparison targets below concern a parahoric that is not hyperspecial;

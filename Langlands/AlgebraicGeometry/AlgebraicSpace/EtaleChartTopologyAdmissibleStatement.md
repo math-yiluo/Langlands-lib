@@ -1,7 +1,5 @@
 # The étale-chart topology is the topology of Conrad's Proposition 5.4
 
-Author: Worker 105.
-
 `EtaleChartTopologyAdmissibleStatement` states the claim made in the existence proof
 of Proposition 5.4 of Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), printed p.15. The claim is that the strongest topology

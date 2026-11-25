@@ -28,5 +28,6 @@ exists or has smooth kernel.
 The provenance is internal: the construction uses the published actual kernel
 pullback, the published binary multiplication morphism, elementary cartesian
 monoidal identities, and stability of open immersions under base change.
-It supplies one geometric ingredient for the kernel-saturation argument of
-Task 6404 and does not prove the host depth-zero opposite-factor statement.
+It supplies one geometric ingredient for the kernel-saturation argument
+towards the depth-zero opposite-factor statement
+`UnramifiedFixedDepthZeroOppositeStatement` and does not prove that statement.

@@ -20,9 +20,8 @@ The module is derived. Its statements are standard facts about `G_m` over a
 discrete valuation ring. Here they are obtained by applying published Library
 results to the canonical model `G_{m,𝒪[F]}`.
 
-The task objective (Task 3557, section "Regression examples") asks for proved
-examples for split tori, including a small-residue-characteristic case where
-the theory supports it.
+The module is a proved regression example for split tori, including the
+small-residue case `q = 2`.
 
 The comparison values come from Kaletha–Prasad, *Bruhat–Tits Theory: A New
 Approach* (2023). The registered original is

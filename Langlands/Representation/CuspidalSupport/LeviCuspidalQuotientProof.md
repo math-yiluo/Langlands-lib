@@ -1,7 +1,5 @@
 # Upper cuspidal quotients of irreducible admissible product-Levi representations
 
-Author: Worker 196.
-
 `Langlands.CuspidalSupport.leviCuspidalQuotientTheorem` proves exactly
 `Langlands.CuspidalSupport.LeviCuspidalQuotientStatement.{uF,uV}` from
 [`LeviCuspidalQuotientStatement`](LeviCuspidalQuotientStatement.md).

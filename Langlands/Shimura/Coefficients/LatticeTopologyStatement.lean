@@ -28,7 +28,7 @@ def CongruenceKernelTopologyStatement : Prop :=
     [SeparatelyContinuousMul G] [CompactSpace G]
     (M : Action (ModuleCat.{w} R) G) [Module.Finite R M.V]
     [TopologicalSpace M.V] [IsTopologicalAddGroup M.V],
-    (∀ x : M.V, Continuous (fun g : G => (M.ρ g).hom x)) →
+    (∀ x : M.V, Continuous (fun g : G => (M.ρ g).asHom.hom x)) →
     ∀ (I : Ideal R) (n : ℕ), IsOpen ((I ^ n • ⊤ : Submodule R M.V) : Set M.V) →
       IsOpen (congruenceKernel I M n : Set G) ∧ Finite (G ⧸ congruenceKernel I M n)
 

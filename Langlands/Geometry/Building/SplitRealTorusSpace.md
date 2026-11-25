@@ -1,7 +1,5 @@
 # Split-torus real coordinates
 
-Author: Worker 185.
-
 Let `k : Type u` be an arbitrary field and `I : Type u` an arbitrary finite type. For the actual commutative split torus `𝕋 = splitTorus.commGroupScheme (Spec k) I`, the namespace `Langlands.GroupScheme.RealTorusSpace` defines real linear equivalences
 
 `splitCocharacterCoordinates k I : V 𝕋 ≃ₗ[ℝ] (I → ℝ)`
@@ -26,4 +24,4 @@ The type `I` may be empty. The two coordinate equivalences still have the actual
 
 This is an internal scalar-extension construction implementing the vector-space notation of Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (Cambridge, 2023), Chapter 6 introduction and §6.1.6–8, PDF pages 226–234 (printed 195–203), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`. The authors' corrections of 1 November 2024, registered as `kaletha-prasad-2024-corrections`, SHA-256 `23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed`, PDF page 32, correct the signs in the proof of Lemma 6.1.12(1). This coordinate construction makes no assertion about that lemma's affine translations or valuations.
 
-The spaces remain prospective translation spaces. There is no choice of an apartment origin, valued-field or Henselian hypothesis, apartment, equipollence class, root-group valuation, affine Weyl group, Iwahori–Weyl group or building construction. The separate derived/adjoint and central directions of reduced and enlarged buildings are outside this unit, which closes no bundle or release gate.
+The spaces remain prospective translation spaces. There is no choice of an apartment origin, valued-field or Henselian hypothesis, apartment, equipollence class, root-group valuation, affine Weyl group, Iwahori–Weyl group or building construction. The separate derived/adjoint and central directions of reduced and enlarged buildings are outside this module.

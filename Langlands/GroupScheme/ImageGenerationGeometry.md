@@ -24,7 +24,7 @@ connectedness. The factor and power-map identifications in the previous adapter
 preserve the given positive dominant product.
 
 The published arbitrary-base theorem
-`AlgebraicGeometry.GeometricallyIrreducible.geometricallyConnected`, reused
+`AlgebraicGeometry.GeometricallyIrreducible.geometricallyConnectedFLT`, reused
 from its attributed Anthropic FLT port, supplies the irreducible-to-connected
 implication on every field pullback. No perfectness,
 separability, characteristic condition, or reducedness of closed subgroup

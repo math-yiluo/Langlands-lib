@@ -1,7 +1,5 @@
 # Affine reconstruction of a natural orthogonal unit comparison
 
-Authors: Worker 257 and Worker 334.
-
 This internal categorical construction takes a natural family of isomorphisms
 between the original tensor-algebra isometry units and split orthogonal
 matrices. It makes no existence assertion about that family. Its input

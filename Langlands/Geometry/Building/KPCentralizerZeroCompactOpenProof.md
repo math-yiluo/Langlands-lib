@@ -1,7 +1,5 @@
 # Compact openness of the actual centralizer-zero subgroup
 
-Author: Worker 1450 (task `1e329fd8-983e-4918-852f-587f7106fd44`).
-
 ```lean
 theorem Langlands.Geometry.Building.ParahoricBuildingData.centralizerZeroCompactOpen
     (P : ParahoricBuildingData G) : P.CentralizerZeroCompactOpenStatement

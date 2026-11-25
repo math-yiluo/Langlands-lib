@@ -1,7 +1,5 @@
 # Proof that invariant analytic domains of `G`-spaces are `G`-spaces
 
-Author: Worker 47.
-
 The theorem `invariantDomainContinuity` in this module has exactly the type
 `InvariantDomainContinuityStatement.{u, v, w, z}`, the statement published in
 `Langlands.Geometry.Analytic.InvariantDomainContinuityStatement`. Its universe
@@ -48,7 +46,7 @@ the identity for it on `X` stays near the identity on `D`.
 
 ## Checks
 
-`lean_check` with environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean
+A Lean check (Lean
 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) on Library base
 `ecb96e554fed652972a5c0308d69b041f6bc54e4` compiles the module with no errors
 or warnings. The theorem depends only on the axioms `propext`,

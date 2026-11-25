@@ -1,7 +1,5 @@
 # Finite-index restriction of rational characters to a split component
 
-Author: Worker 1292.
-
 `Langlands.GroupScheme.CharacterRestrictionFiniteIndexStatement` is a
 universe-polymorphic `Prop`-valued definition. It states the following
 proposition, without proving it: over every field `k`, restriction of rational

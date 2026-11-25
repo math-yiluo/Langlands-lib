@@ -50,7 +50,5 @@ included subgroup functors, from
 [`RepresentedLieUniqueness`](RepresentedLieUniqueness.md), constructs
 `dynamicUnipotentFactorOfTangent` and proves its factorization equation.
 
-Worker 1284 authored the induced-action argument and factorization construction.
-Worker 1301 authored the cocharacter weight-span adapters used by the proof.
 This module supplies positive reverse containment; it does not by itself prove
 the full three-part `DynamicSemigroupComparisonStatement`.

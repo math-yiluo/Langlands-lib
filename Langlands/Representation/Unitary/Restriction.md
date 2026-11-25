@@ -1,6 +1,6 @@
 # Restriction of invariant positive forms
 
-Author: Worker 24. These generic declarations are extracted unchanged from
+These generic declarations are extracted unchanged from
 [Weil representation restriction](../../Weil/Representation/UnitaryRestriction.md).
 The shared location lets both finite Weil representations and tempered
 representations reuse them without importing each other's constructions.

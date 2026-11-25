@@ -1,6 +1,6 @@
 # Maximal selection among actual normalized Jacquet exponents
 
-Worker 148. This internal construction uses the published theorem
+This internal construction uses the published theorem
 `arbitraryParabolicExponent` (Renard VII.1.1) to provide the finite, nonempty
 actual exponent family needed for the maximal-norm choice in VII.4.2(iii).
 It does not prove Langlands exhaustion.
@@ -48,7 +48,7 @@ PDF pp.226–227, and VII.4.2(iii), printed pp.243–244 / PDF pp.249–250,
 registered as `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This unit assumes the finite family of parabolics, their split components,
+This module assumes the finite family of parabolics, their split components,
 admissibility, and the map called `positive`. It constructs none of the full
 real-character lifts, central complement, positive-part decompositions, cone
 comparisons, or Langlands triplet. Admissibility is retained explicitly, even

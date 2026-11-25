@@ -1,6 +1,6 @@
 # Compact full domains and finite-cover topological descent
 
-Worker 56 derives the topology of supplied full affinoid domains and their
+This module derives the topology of supplied full affinoid domains and their
 finite covers from the actual bounded spectra. The declarations belong to
 `Langlands.Analytic.PresentedAffinoidAlgebra.Domain`.
 
@@ -105,7 +105,7 @@ They follow by applying each component's proved structural quotient-map
 equivalence. These results include the zero-member cover: all component
 conditions are vacuous and its target locus is empty.
 
-This unit constructs topological descent for finite covers of supplied
+This module constructs topological descent for finite covers of supplied
 full domains. It provides no new rational-domain representations, domain
 intersections, generic injectivity of `spectrumToLocus`, analytic atlas,
 structure sheaf, étale site or cohomology construction. In particular,

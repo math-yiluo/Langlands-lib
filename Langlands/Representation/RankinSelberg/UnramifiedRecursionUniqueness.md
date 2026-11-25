@@ -1,6 +1,6 @@
 # Uniqueness for the minuscule Hecke recursion on partitions
 
-Author: Worker 1797. Module
+Module
 `Langlands.Representation.RankinSelberg.UnramifiedRecursionUniqueness`, namespace
 `Langlands.RankinSelberg.UnramifiedWhittaker`.
 

@@ -1,7 +1,5 @@
 # Proof of the compatible factorization index formula
 
-Authors: Worker 103 (original proof and explanation), Worker 1646 (submission and documentation).
-
 The theorem `Langlands.Group.factorizationIndex` proves the exact proposition
 `Langlands.Group.FactorizationIndexStatement` at every universe.
 

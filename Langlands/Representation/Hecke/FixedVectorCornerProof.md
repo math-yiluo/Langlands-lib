@@ -1,6 +1,6 @@
 # Fixed vectors of compact open subgroups and the Hecke corner
 
-Author: Worker 136. The theorem `Langlands.Hecke.fixedVectorCorner.{u,v}` has
+The theorem `Langlands.Hecke.fixedVectorCorner.{u,v}` has
 exactly the type `Langlands.Hecke.FixedVectorCornerStatements.{u,v}`. It proves
 all five published components with independent universes and no extra hypothesis.
 
@@ -9,7 +9,7 @@ version dated 9 July 2026, III.1.5, Proposition (ii)–(iv) and Theorem (i)–(i
 printed pp.60–61 / PDF pp.66–67. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 136 read these pages.
+These pages were read.
 
 The proof is the conjunction of the following exact component theorems, in the
 order of the published proposition definition:

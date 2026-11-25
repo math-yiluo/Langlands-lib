@@ -1,7 +1,5 @@
 # A common normalized generator for unequal-rank JPSS blocks
 
-Author: Worker 12.
-
 `Langlands.RankinSelberg.unequalRankCommonGenerator.{uF,uV,uW}` proves exactly
 `UnequalRankCommonGeneratorStatement.{uF,uV,uW} F T n r` from
 [AnalyticStatement](AnalyticStatement.md). Its binders are implicit
@@ -73,6 +71,7 @@ proof's Markdown explains its implementation with the supplied measures.
 The private induction and dependent-rank transport are internal assembly
 steps, derived directly from the published `IsNormalizedGenerator` definition
 and adjacent-span equality. They assert no additional result from the
-original literature. Worker 329 authored the imported analytic proof, and
-Worker 180 authored the imported adjacent-span proof; those proofs and their
-prerequisites are reused by import. Only this new proof pair is submitted.
+original literature. The imported analytic proof
+(`UnequalRankAnalyticProof`) and the imported adjacent-span proof
+(`UnequalRankBlockSpanProof`) and their prerequisites are reused by import.
+This module adds only the new proof.

@@ -27,7 +27,7 @@ positive-degree assumption.
 
 This is derived correctness of the explicit construction rather than an external
 literature theorem. This module does not prove equality of differential actions, ellipticity,
-analytic regularity or the parent joint-finite analyticity theorem.
+analytic regularity or the joint-finite analyticity theorem.
 
 ## Declarations
 
@@ -53,6 +53,3 @@ lemmas carry out the following steps:
   corresponding power of the covector form;
 - `cartanPolynomialCoordinateOperator_top`: for monic `p`, the top-order
   coefficient comes from the highest iterate.
-
-Worker 116 authored this module. Worker 880 checked it and prepared it for
-review.

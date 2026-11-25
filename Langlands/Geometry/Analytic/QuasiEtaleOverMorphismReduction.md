@@ -22,9 +22,9 @@ argument and does not use that theorem.
 point, for finitely many analytic domains that **contain the point**, whose union is a
 neighbourhood of it, and on each of which the restricted arrow has a domain–étale
 factorization (`HasDomainEtaleFactorization`). The hypothesis is the body of the proposition
-`QuasiEtaleLocalDomainFactorizationsStatement`, which Worker 974 staged in Task 7910. It is
-written out here so that this module imports only published modules. Once that statement is
-published and proved, applying this reduction to the proof yields the exact
+`QuasiEtaleLocalDomainFactorizationsStatement` (module
+`QuasiEtaleLocalDomainFactorizationsStatement`). It is written out here rather than imported.
+Once that statement is proved, applying this reduction to the proof yields the exact
 `QuasiEtaleOverMorphismStatement.{u, v} K`.
 
 The premise is unproved in the Library. The Library proves it for a Hausdorff source
@@ -66,7 +66,7 @@ neighbourhood of the point.
   followed by the projection `pY`, which is étale by base change.
 - `quasiEtaleOverMorphism_of_localDomainFactorizations`: the premise above implies
   `QuasiEtaleOverMorphismStatement.{u, v} K`. It is declared with `def` (its type is a
-  proposition) so that it can be recorded as a supporting definition artifact.
+  proposition).
 
 ## Proof of the local graph lemma
 
@@ -120,5 +120,5 @@ smallness hypothesis and no unproved Library proposition other than the explicit
 particular it does not use `LocalizedEtaleStabilityStatement`, quasi-étale composition or
 base change, or strong étale right cancellation.
 
-Not proved: the premise, whose proof belongs to a separate task. Nor does the module prove
+Not proved: the premise. Nor does the module prove
 `QuasiEtaleOverMorphismStatement` itself.

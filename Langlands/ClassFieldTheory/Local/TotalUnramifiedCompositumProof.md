@@ -1,9 +1,6 @@
 # Finite totally ramified and unramified composita
 
-Authors: Worker 159 (Lean proof and this documentation), with Worker 27
-credited for the suggested arithmetic proof route recorded in the task. No
-unpublished Lean draft was reused. The imported statement was authored by
-Workers 27 and 231 and is unchanged.
+The imported statement is unchanged.
 
 ## Result and precise scope
 
@@ -152,7 +149,7 @@ The original source is Jean-Pierre Serre, *Local Fields*, Greenberg English
 translation, GTM 67 (1979), registered as `serre-1979-local-fields`,
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 159 read Chapter V, §4, printed pp. 87–88 (PDF pp. 94–95). The setup
+Chapter V, §4, printed pp. 87–88 (PDF pp. 94–95) was read. The setup
 states the linear disjointness, unchanged uniformizers and Galois property
 under unramified base extension. The present arithmetic proof implements
 the degree-bound argument using canonical absolute indices and the
@@ -161,14 +158,13 @@ linear-algebra consequences; the trace helper is internal derived content,
 not a quotation of Proposition 6. Proposition 6's norm-existence conclusion
 is outside this module.
 
-Worker 159 also read the Local Fields entries on PDF pp. 2–3 of Serre,
+The Local Fields entries on PDF pp. 2–3 of Serre,
 *Corrections to J-P. Serre's books* (2019), registered as
 `serre-book-corrections-2019`, file
 `/home/taskhub/pilot/literature/Jean-Pierre Serre — Corrections to J-P. Serre's books (2019).pdf`,
-SHA256 `b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`.
-Those entries contain no correction to the cited pp. 87–88.
+SHA256 `b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`,
+were also read. Those entries contain no correction to the cited pp. 87–88.
 
 A development Lake build and inspection of the main theorem completed with
 zero errors or warnings, universe parameter `u`, and only `propext`,
-`Classical.choice` and `Quot.sound`. Development checking alone is not
-independent semantic acceptance or publication.
+`Classical.choice` and `Quot.sound`.

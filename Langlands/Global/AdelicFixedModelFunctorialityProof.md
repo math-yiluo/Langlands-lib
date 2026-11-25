@@ -50,5 +50,5 @@ postcomposition with the isomorphism and its inverse; the categorical
 inverse identities give the equivalence laws, and the proved continuity
 theorem supplies continuity in both directions.
 
-This unit does not assert independence of arbitrary spreads, initial-set
+This module does not assert independence of arbitrary spreads, initial-set
 independence or identification with generic-fiber points.

@@ -77,7 +77,7 @@ invariant differential forms.
 - `RegularFamily`: families of points whose regular-function values lie in a subalgebra, such
   as functions that are strictly differentiable at a point. These are points of `G` over that
   subalgebra, so the class is stable under products and inverses.
-- `RegularChart` (Worker 1402): a chart of the algebra-point space near a point, from a standard
+- `RegularChart`: a chart of the algebra-point space near a point, from a standard
   smooth presentation and the inverse function theorem.
 - `ChartLie`: identifies the derivative of conjugation in such a chart with the adjoint action
   on the Lie kernel. In particular the two determinants agree.
@@ -85,6 +85,6 @@ invariant differential forms.
   the derivative properties used by `ChartEstimates`.
 - `AdjointBound`: the bound `Δ(g) ≤ c` whenever every linear automorphism with determinant
   `det Ad(g)` scales Haar measure by `c`, in the ultrametric and the real case.
-- `HaarScaleNorm` (Worker 1402): Haar scaling of linear automorphisms of `F_i^d` is the
+- `HaarScaleNorm`: Haar scaling of linear automorphisms of `F_i^d` is the
   normalized absolute value of the determinant.
-- `PlaceGlue` (Worker 1402): the place-level glue used above.
+- `PlaceGlue`: the place-level glue used above.

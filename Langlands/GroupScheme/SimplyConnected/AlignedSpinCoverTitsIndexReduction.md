@@ -1,10 +1,8 @@
 # Index comparisons for an aligned spin cover from the weight statements
 
-Authors: Worker 146.
-
 This internal helper module proves `Langlands.GroupScheme.AlignedSpinCoverTitsIndexStatement`
-(Task 6282) from three prerequisite statements. It follows the assembly route recorded by
-Worker 73 in the context of Task 6282, with one change in step 4, described below. No
+from three prerequisite statements. It follows a planned assembly route, with one change in
+step 4, described below. No
 outside source is cited beyond those behind the three prerequisites.
 
 ## Main result

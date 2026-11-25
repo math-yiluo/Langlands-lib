@@ -13,7 +13,7 @@ dynamic parabolic and unipotent subgroups and finite natural Lie coordinate
 systems are explicit inputs. Both ambient and unipotent structure morphisms
 are affine. For the algebraic determinant character, the parabolic scheme
 is affine as well. No splitness, reductivity, smoothness, positive dimension
-or characteristic hypothesis is imposed in this unit.
+or characteristic hypothesis is imposed in this module.
 
 `lieInclusionCoordinates` writes the actual differential of the unipotent
 inclusion in the two coordinate systems. `adjointExteriorVector` wedges

@@ -1,6 +1,6 @@
 # Reversed upper filtrations in the composed opposite Jacquet quotient
 
-Worker 514 constructs an internal adapter for actual object filtrations. For
+This module constructs an internal adapter for actual object filtrations. For
 an arbitrary representation `A` of `GL_n(F)`, a block shape `B`, a refinement
 `S`, and a supplied finite filtration of the normalized upper Jacquet module
 of `A` along `B.reverse`, it constructs a filtration of the actual
@@ -36,7 +36,7 @@ reversal, object-filtration transport, opposite image-filtration and opposite
 transitivity constructions. It introduces no new source-derived
 representation-theoretic assertion.
 
-For the supported excess-multiplicity task, a later specialization can take
+For the supported excess-multiplicity argument, a later specialization can take
 `A` to an actual normalized outer induction and the input to its geometric
 support-image filtration. This module does not construct that geometric
 filtration, identify its geometric pieces or its coarse Weyl contribution,

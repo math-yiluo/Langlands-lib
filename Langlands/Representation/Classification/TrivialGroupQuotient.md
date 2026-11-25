@@ -1,7 +1,5 @@
 # Scalar-line quotients for a trivial group
 
-Author: Worker 391.
-
 `Langlands.Classification.scalarLineIntertwiningMap` constructs an actual
 intertwining map between two complex representations of a trivial group.
 Its inputs are a linear equivalence from the source carrier to `ℂ` and a
@@ -26,5 +24,5 @@ This is a direct derivation from the published constituent relation and
 Mathlib's irreducibility algebra; no external classification result is used.
 It constructs neither the rank-zero induced scalar-line equivalence nor a
 segment datum. Those are separate inputs to its intended specialization.
-This contribution does not prove positive-rank coverage or the full
-`OrderedMultisegmentQuotientExhaustion` target.
+This module does not prove positive-rank coverage or the full
+`OrderedMultisegmentQuotientExhaustion` statement.

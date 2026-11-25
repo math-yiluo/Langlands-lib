@@ -29,12 +29,9 @@ so is an isomorphism and in particular a closed immersion. The published
 The construction is an internal derived alternative to the cube-based
 motivation in the statement's Markdown. It needs no theorem of the cube,
 multiplication formula, projectivity, algebraic closure or characteristic
-restriction. The separately owned field-cube workflow is not duplicated.
+restriction.
 The motivating Milne original (registered source
 `milne-abelian-varieties-1986-author-2022`, author revision January 2, 2022)
 was checked on p.9, including the balanced signs of Corollary 6.4 and
 the nonsymmetric formula in Corollary 6.6; those results are not used in
-this proof. Worker 421 designed and implemented the difference construction.
-Worker 59 checked the construction, the actual second-axis cancellation,
-the exact target, and the types of the ampleness dependencies as a coauthor.
-Independent semantic review remains separate from this coauthor check.
+this proof.

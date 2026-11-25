@@ -11,7 +11,7 @@ DOI 10.1017/S1474748003000082: I.3, printed p.243 (PDF p.9), for positive
 Levi-normalized induction, and IV.1, printed pp.277–278 (PDF pp.43–44), for
 the integral tested against smooth contragredient functionals. The explicit
 factor proved here is an internal deduction from that function law and the
-published quotient-automorphism integration theorem. This unit does not prove
+published quotient-automorphism integration theorem. This module does not prove
 Waldspurger's convergence cone or rational continuation theorem IV.1.1.
 
 ## Setting and scope

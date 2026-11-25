@@ -1,7 +1,5 @@
 # Affine topology uniqueness from binary fibre products
 
-Author: Worker 105.
-
 This proof develops the coordinate-algebra part of the uniqueness
 argument in Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1, printed page 2. Registered source

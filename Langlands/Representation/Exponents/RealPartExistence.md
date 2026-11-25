@@ -1,7 +1,5 @@
 # Existence of real parts of split-centre characters
 
-Author: Worker 23.
-
 This module proves that every character of `(F^×)^r` with open kernel has a
 real part in the sense of the published
 `Langlands.PadicField.TopologicalData.IsRealPartOf`

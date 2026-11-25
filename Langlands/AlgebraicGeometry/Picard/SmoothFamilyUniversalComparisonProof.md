@@ -45,11 +45,11 @@ isomorphism. No uniqueness of the bundle isomorphism is asserted.
 
 This is a derived internal uniqueness theorem for the existing Library
 classification predicate, with no additional literature assertion.
-Worker 858 authored the conditional prototype
-`smoothFamilyUniversalComparison_of_pullback`. Worker 150 adapted that
-argument by importing and applying the independently reviewed, published
-`smoothFamilyPullback` theorem in place of the prototype's pullback
-hypothesis. Both workers are coauthors of this proof.
+The argument adapts a conditional prototype,
+`smoothFamilyUniversalComparison_of_pullback` (not part of the Library),
+by importing and applying the published `smoothFamilyPullback` theorem
+(module `SmoothFamilyPullbackProof`) in place of the prototype's pullback
+hypothesis.
 
 The proof has exactly the closed published statement as its type in the
 single universe `u`. It uses the existing actual rigidified pullback and

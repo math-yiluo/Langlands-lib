@@ -1,7 +1,6 @@
 # Renard V.5.3: the generated subalgebra `M` need not be a finitely generated `A`-module
 
-Worker 956, 18 November 2026. Worker 4 (Task 1222) independently checked every step on
-paper.
+This note is dated 18 November 2026. Every step was checked a second time, independently, on paper.
 
 **Status: an unformalized paper argument.** No Lean term is constructed.
 
@@ -224,8 +223,8 @@ vanishes at `x₁fz`. But `a_{x₁fz}(x₁fz) = vol(K x₁fz K)⁻¹ > 0`, and `
   combinatorial finiteness argument on the next page invokes V.3.24
   (`C_∅^+ / C_{A_G} ≅ ℕ^d`), which is false in general, for example for split `SL₃` (see the
   target's "Status of the assertion"). The finiteness of this left `A`-span for all data, the
-  module form, is item 5 of the published `IwahoriHeckeDecompositionStatement`. Worker 127
-  proved it in Task 5575 (`iwahoriHeckeDecomposition`) without V.3.24. Neither argument
+  module form, is item 5 of the published `IwahoriHeckeDecompositionStatement`. The Library
+  proves it (`iwahoriHeckeDecomposition`) without V.3.24. Neither argument
   shows that this span is closed under multiplication, and in the example it is not. The
   products `a_{zf} a_{z'}`
   have the transversal element on the left. Absorbing `e_K` as in the source computation
@@ -252,7 +251,9 @@ vanishes at `x₁fz`. But `a_{x₁fz}(x₁fz) = vol(K x₁fz K)⁻¹ > 0`, and `
 - **Unaffected: the (P)-conditional statement.** The published
   [`IwahoriHeckeSubalgebraFinitenessStatement`](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessStatement.md)
   assumes (P), and (P) fails for this `K` because `f` does not contract `K ∩ N_∅`. So this
-  example does not bear on it. Its proof is Task 7679.
+  example does not bear on it. The Library proves it, as
+  `iwahoriHeckeSubalgebraFiniteness`
+  (`Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessProof.lean`).
 - **Unaffected: the module form.** The published module-form statement
   [`IwahoriHeckeDecompositionStatement`](../../Langlands/Representation/Hecke/IwahoriHeckeDecompositionStatement.md)
   and its proof `iwahoriHeckeDecomposition` are not affected.

@@ -1,7 +1,5 @@
 # Open charts of the functor of closed torus subgroups
 
-Author: Worker 1421.
-
 This module defines the chart interface used to build the smooth moduli
 scheme of `TorusSubgroupModuli.SmoothTorusSubgroupRepresentabilityStatement`.
 It defines two predicates, `IsOpenChart` and `CoversFieldPoints`, in namespace

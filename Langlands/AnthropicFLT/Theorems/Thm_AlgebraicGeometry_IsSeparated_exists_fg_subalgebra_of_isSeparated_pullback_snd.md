@@ -1,12 +1,12 @@
 # `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_IsSeparated_exists_fg_subalgebra_of_isSeparated_pullback_snd`
 
-Ported module of the proof submitted by task `8b63dc1d-84d3-43fa-a1d5-9657a89c8df1` (descent of separatedness to finitely generated subalgebras). Statement module (FLT `Theorems/`).
+Ported module of the proof of the descent of separatedness to finitely generated subalgebras. Statement module (FLT `Theorems/`).
 
 ## Source and licence
 
 Port of `Theorems/Thm_AlgebraicGeometry_IsSeparated_exists_fg_subalgebra_of_isSeparated_pullback_snd.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -25,8 +25,9 @@ States descent of separatedness: for commutative rings `A₀ → A` in `Type u`,
 quasi-separated morphism `f : X ⟶ Spec A₀` whose base change `pullback.snd f (Spec A ⟶ Spec A₀)` is
 separated, and a finite `s ⊆ A`, there is a finitely generated `A₀`-subalgebra `T ⊇ s` of `A` such that the
 base change of `f` to `Spec T` is separated. This is the statement of
-`Langlands.AlgebraicGeometry.NoetherianApproximation.IsSeparatedSubalgebraDescentStatement`, the target of
-task `8b63dc1d-84d3-43fa-a1d5-9657a89c8df1`. The proof term applies the companion solution theorem.
+`Langlands.AlgebraicGeometry.NoetherianApproximation.IsSeparatedSubalgebraDescentStatement`, which the
+Library proves from this theorem as
+`Langlands.AlgebraicGeometry.NoetherianApproximation.isSeparatedSubalgebraDescent`. The proof term applies the companion solution theorem.
 
 ## Declarations
 
@@ -36,5 +37,5 @@ Names, namespaces and statements are the FLT ones. Solution modules put their au
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_IsSeparated_exists_fg_subalgebra_of_isSeparated_pullback_snd` (ported by the same task).
+Ported FLT modules imported: `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_IsSeparated_exists_fg_subalgebra_of_isSeparated_pullback_snd` (ported with this file).
 All modules also import `Mathlib`.

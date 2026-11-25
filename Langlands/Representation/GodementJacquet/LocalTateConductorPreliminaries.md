@@ -1,6 +1,6 @@
 # Natural rank-one conductors and scalar Fourier witnesses
 
-Worker 1691 derives two preliminary clauses of the scalar Tate target over an
+This module derives two preliminary clauses of the scalar Tate target over an
 arbitrary nonarchimedean local field. These are internal consequences of existing
 published proofs, with no new original-source assertion or analytic premise.
 
@@ -29,6 +29,6 @@ Mellin continuation or functional equation.
 
 The proof dependencies and their mathematical provenance are explained in the
 unchanged `Conductor/RankOne.md`, `Twist/ContinuousCharacterProof.md` and
-`HarmonicAnalysis/ScalarFourierClosureProof.md`. These preliminaries do not yet
+`HarmonicAnalysis/ScalarFourierClosureProof.md`. These preliminaries do not
 prove the scalar Mellin analytic data, explicit Laurent generators, or the
 exact-exponent functional equation of `LocalTateConductorStatement`.

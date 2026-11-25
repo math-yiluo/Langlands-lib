@@ -1,7 +1,5 @@
 # Quasi-affineness from an ample trivial line bundle
 
-Author: Worker 665.
-
 `Langlands.AlgebraicGeometry.Picard.AmpleTrivialQuasiAffineStatement.{u}`
 is the proposition
 
@@ -51,13 +49,15 @@ sheaf isomorphism. The retained theorem, proof, and section comments were
 read, and the live lemma was checked on 2026-10-26. The section comments
 confirm that Stacks includes quasi-compactness in quasi-affineness, matching
 Mathlib and the compactness already supplied by `L.IsAmple`. No source-specific
-errata file was present in the workspace, current Library, or project
-`notes/errata/` locations when checked.
+errata file was present in the Library's
+`notes/errata/` when checked.
 
-## Remaining proof obligations and reuse
+## Proof obligations and reuse
 
-This module defines the statement and supplies no proof of it. An elementary
-prospective route is to use the given isomorphism, the published tensor
+This module defines the statement and supplies no proof of it. The Library's
+proof is `ampleTrivialQuasiAffine` (module
+`Langlands.AlgebraicGeometry.Picard.AmpleTrivialQuasiAffineProof`). An elementary
+route is to use the given isomorphism, the published tensor
 bifunctor, and its unitors to construct an isomorphism from each actual
 `tensorPow L.obj n` to the structure sheaf. Transport a global section
 through that isomorphism to a global function. One must then prove that
@@ -65,25 +65,22 @@ its whole maximal trivialization open equals the basic open of that
 function. Together with compactness and the affine generation opens from
 ampleness, this would give the hypotheses of Mathlib's
 `AlgebraicGeometry.Scheme.IsQuasiAffine.of_forall_exists_mem_basicOpen`.
-The source uses a Proj argument; the prospective route does not assert
-that any of its missing comparisons have already been proved.
+The source uses a Proj argument; this route does not assert that any of its missing
+comparisons have been proved.
 
 The actual isomorphisms of the powers to the structure sheaf allow this
 route to avoid general preservation of local rank one under tensor powers.
 The published residue comparison
 `Langlands.SchemeModule.lineBundleSectionResidueComparison` in
 `Modules.SectionResidueComparison`, the existing tensor and pullback-tensor
-work, and the monoidal work must be reused where needed. General tensor
-rank-one work belongs to Worker 5, task
-`242ed18d-863f-4b79-ab60-8cc71858988f`. Shared sheaf-isomorphism transport
-of ampleness belongs to the positive-power workflow, Worker 410, task
-`27374751-21ee-4c18-9874-c45f17b5eeb8`; coordinate with that owner if using
-that route. Before substantial proof implementation, inspect the current
-Library and owners and split any substantial missing geometric comparison
-into a focused prerequisite.
+work, and the monoidal work must be reused where needed. General preservation of
+local rank one under tensor powers is the Library's `tensorPow_isLocallyFreeRankOne`.
+Sheaf-isomorphism transport
+of ampleness is the Library's `ampleIso` (module `Picard.AmpleIsoProof`).
 
-The proof successor must prove this entire named proposition without added
-hypotheses, in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). The proper-scheme finiteness
-criterion consumed by Worker 475 is a separate downstream target.
+A proof must prove this entire named proposition without added
+hypotheses, in
+Lean 4.34.0 with Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. The proper-scheme finiteness
+criterion `ProperAmpleTrivialFiniteStatement` is a separate downstream target; its
+proof `properAmpleTrivialFinite` uses `ampleTrivialQuasiAffine`.

@@ -80,14 +80,16 @@ def diagonal (F : Action (Sheaf J (ModuleCat.{u} R)) G) :
     Action (Sheaf J (ModuleCat.{u} R)) G where
   V := (productSheaf J Y.V).obj F.V
   ρ :=
-    { toFun g := deckMap J (Y.ρ g⁻¹) F.V ≫ (productSheaf J Y.V).map (F.ρ g)
-      map_one' := by simp
+    { toFun g := End.of (deckMap J (Y.ρ g⁻¹).asHom F.V ≫
+        (productSheaf J Y.V).map (F.ρ g).asHom)
+      map_one' := by ext; simp
       map_mul' g h := by
-        change deckMap J (Y.ρ (g * h)⁻¹) F.V ≫
-            (productSheaf J Y.V).map (F.ρ (g * h)) =
-          (deckMap J (Y.ρ h⁻¹) F.V ≫ (productSheaf J Y.V).map (F.ρ h)) ≫
-            (deckMap J (Y.ρ g⁻¹) F.V ≫ (productSheaf J Y.V).map (F.ρ g))
-        simp only [mul_inv_rev, map_mul, End.mul_def]
+        apply End.ext
+        change deckMap J (Y.ρ (g * h)⁻¹).asHom F.V ≫
+            (productSheaf J Y.V).map (F.ρ (g * h)).asHom =
+          (deckMap J (Y.ρ h⁻¹).asHom F.V ≫ (productSheaf J Y.V).map (F.ρ h).asHom) ≫
+            (deckMap J (Y.ρ g⁻¹).asHom F.V ≫ (productSheaf J Y.V).map (F.ρ g).asHom)
+        simp only [mul_inv_rev, map_mul, End.mul_asHom]
         rw [deckMap_comp, Functor.map_comp]
         simp only [Category.assoc]
         rw [deckMap_natural_assoc] }
@@ -100,8 +102,8 @@ def diagonalFunctor :
   map f :=
     { hom := (productSheaf J Y.V).map f.hom
       comm g := by
-        change (deckMap J (Y.ρ g⁻¹) _ ≫ (productSheaf J Y.V).map _) ≫ _ =
-          _ ≫ (deckMap J (Y.ρ g⁻¹) _ ≫ (productSheaf J Y.V).map _)
+        change (deckMap J (Y.ρ g⁻¹).asHom _ ≫ (productSheaf J Y.V).map _) ≫ _ =
+          _ ≫ (deckMap J (Y.ρ g⁻¹).asHom _ ≫ (productSheaf J Y.V).map _)
         rw [Category.assoc, ← Functor.map_comp, f.comm,
           Functor.map_comp, ← Category.assoc, deckMap_natural, Category.assoc] }
   map_id F := by
@@ -135,7 +137,7 @@ def inclusion (F : Action (Sheaf J (ModuleCat.{u} R)) G) :
 
 @[reassoc] theorem inclusion_invariant (F : Action (Sheaf J (ModuleCat.{u} R)) G)
     (g : G) :
-    inclusion J Y F ≫ (diagonal J Y F).ρ g = inclusion J Y F :=
+    inclusion J Y F ≫ ((diagonal J Y F).ρ g).asHom = inclusion J Y F :=
   limit.w ((invariantDiagram J Y).obj F) g
 
 @[reassoc] theorem inclusion_natural
@@ -148,19 +150,19 @@ def inclusion (F : Action (Sheaf J (ModuleCat.{u} R)) G) :
 def lift {F : Action (Sheaf J (ModuleCat.{u} R)) G}
     {T : Sheaf J (ModuleCat.{u} R)}
     (f : T ⟶ (productSheaf J Y.V).obj F.V)
-    (hf : ∀ g : G, f ≫ (diagonal J Y F).ρ g = f) :
+    (hf : ∀ g : G, f ≫ ((diagonal J Y F).ρ g).asHom = f) :
     T ⟶ associated J Y F :=
   limit.lift ((invariantDiagram J Y).obj F)
     { pt := T
       π := { app := fun _ => f
              naturality := fun _ _ g => by
-               change (𝟙 T) ≫ f = f ≫ (diagonal J Y F).ρ g
+               change (𝟙 T) ≫ f = f ≫ ((diagonal J Y F).ρ g).asHom
                rw [Category.id_comp, hf] } }
 
 @[reassoc (attr := simp)] theorem lift_inclusion
     {F : Action (Sheaf J (ModuleCat.{u} R)) G} {T : Sheaf J (ModuleCat.{u} R)}
     (f : T ⟶ (productSheaf J Y.V).obj F.V)
-    (hf : ∀ g : G, f ≫ (diagonal J Y F).ρ g = f) :
+    (hf : ∀ g : G, f ≫ ((diagonal J Y F).ρ g).asHom = f) :
     lift J Y f hf ≫ inclusion J Y F = f :=
   limit.lift_π _ _
 

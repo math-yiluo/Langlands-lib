@@ -19,7 +19,9 @@ proposition isolates the comparison on constituent data as the Library's
 Euler constituent recovery premise.
 The registered source is `arthur-clozel-1989-base-change` with SHA256
 `c2e47ee562810367ebcacd3f1c242eda40b9e78b271668e36d99ce31001f9a19`.
-Worker 686 adapted the argument from Worker 326's Lean draft for Task 7860.
+The argument serves prime cyclic unitary isobaric base change over totally
+complex fields (module
+`Langlands.Automorphic.Unramified.CyclicPrimeIsobaricBaseChangeTCAssembly`).
 
 `IsobaricData.IsWeakBaseChangeOf.unique_of_eulerConstituentRecoveryTC`
 uses `IsobaricData.HasSpectralSystem.sameEulerPolynomials` to compare the

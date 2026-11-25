@@ -49,4 +49,4 @@ degree-one twists, canonical module pullback coherence, common-refinement
 comparisons and open-cover line-bundle gluing. It introduces no external-source
 assertion. It does not prove frame-choice independence, tensor-line invariance,
 a relative cubic embedding or ordinary moduli representability; those are
-remaining parts of the host task.
+not part of this module.

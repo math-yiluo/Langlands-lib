@@ -1,7 +1,5 @@
 # The extensions by zero generate the principal series
 
-Author: Worker 392.
-
 This helper module of the proof of
 `Langlands.Conductor.OrderedUnramifiedSphericalCyclicityStatement` (see
 [`OrderedUnramifiedSphericalCyclicity`](../OrderedUnramifiedSphericalCyclicity.md))

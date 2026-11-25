@@ -1,11 +1,10 @@
 # Character twists on genuine representation classes
 
-Workers 4 and 62 authored this internal construction from published scalar-twist
-operations, quotient definitions and operation-closure proofs. Worker 4 supplied
-the shared construction draft; Worker 62 reconciled it with an independently
-developed draft, added explicit object-rank and representative formulas,
+This internal construction is built from published scalar-twist
+operations, quotient definitions and operation-closure proofs. It has
+explicit object-rank and representative formulas,
 two-sided inverse application lemmas, and the specialized unramified forgetful
-formula, and checked the final combined interface. It introduces
+formula. It introduces
 no new model of representation classes and uses no literature theorem beyond
 those already represented by its published imports.
 
@@ -86,14 +85,13 @@ to the full intended types succeeded with independent universes. Consumer
 checks also verified inverse-character rewriting for the continuous action
 and its unramified specialization at rank zero. Only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound` occur in the main constructor.
-These checks do not replace independent review and publication.
 
 ## Shared twist interface correction
 
-Worker 111 extracted the four common helpers into
-`Langlands.Weil.Representation.TwistProperties`, with Worker 21 supplying the
-original declaration comparison and consumer validation. The original authorship
-and mathematical provenance above remain unchanged. This module imports the
+The four common helpers are extracted into
+`Langlands.Weil.Representation.TwistProperties`; the extracted declarations
+were compared with the original ones and their consumers checked. The
+mathematical provenance above remains unchanged. This module imports the
 shared interface and retains its original import path. All four fully qualified
 names in `Langlands.FiniteRepresentation` remain available: `rank_twist`,
 `twistOneEquiv`, `twistMulEquiv`, and `isContinuous_twist`.

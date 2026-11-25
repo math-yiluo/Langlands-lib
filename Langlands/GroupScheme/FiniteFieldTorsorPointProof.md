@@ -1,7 +1,5 @@
 # Rational points of torsors over finite fields: proof
 
-Authors: Worker 1387 and Worker 1406.
-
 The theorem `Langlands.GroupScheme.finiteFieldTorsorPointStatement.{u}` has type
 exactly `Langlands.GroupScheme.FiniteFieldTorsorPointStatement.{u}`, imported
 unchanged from [`FiniteFieldTorsorPointStatement`](FiniteFieldTorsorPointStatement.md).
@@ -18,27 +16,27 @@ For every finite field `k : Type u`, every
 
 The helper modules live in `Langlands.GroupScheme.FiniteFieldTorsorPoint`.
 
-- [`FiniteFieldTorsorPoint/LangAlgebra`](FiniteFieldTorsorPoint/LangAlgebra.md)
-  (Worker 1387): commutative algebra. Finiteness of an algebra from power
+- [`FiniteFieldTorsorPoint/LangAlgebra`](FiniteFieldTorsorPoint/LangAlgebra.md):
+  commutative algebra. Finiteness of an algebra from power
   relations among its generators, injectivity of an endomorphism of a finitely
   generated domain over which the domain is integral (by Krull dimension), and
   lifting maps to an algebraically closed field along integral extensions.
-- [`FiniteFieldTorsorPoint/LangCorepresented`](FiniteFieldTorsorPoint/LangCorepresented.md)
-  (Worker 1387): Lang's theorem `exists_lang_eq` for a group functor on
+- [`FiniteFieldTorsorPoint/LangCorepresented`](FiniteFieldTorsorPoint/LangCorepresented.md):
+  Lang's theorem `exists_lang_eq` for a group functor on
   `k`-algebras corepresented by a finitely generated domain. Every point `y`
   over an algebraically closed field is `x⁻¹ * F.map (frob k _) x`.
-- [`FiniteFieldTorsorPoint/LangGroupScheme`](FiniteFieldTorsorPoint/LangGroupScheme.md)
-  (Worker 1387): `exists_eq_inv_mul_frobenius`, Lang's theorem for a smooth
+- [`FiniteFieldTorsorPoint/LangGroupScheme`](FiniteFieldTorsorPoint/LangGroupScheme.md):
+  `exists_eq_inv_mul_frobenius`, Lang's theorem for a smooth
   connected affine `H` over a finite field `k`, stated for the points
   `ringTest k K ⟶ H.X` over an algebraically closed field `K` with the group law
   of Mathlib's `Hom.group`: every `a` equals
   `g⁻¹ * (ringTestMap k (FiniteField.frobeniusAlgHom k K) ≫ g)` for some `g`.
-- [`FiniteFieldTorsorPoint/PointDescent`](FiniteFieldTorsorPoint/PointDescent.md)
-  (Worker 1406): a Frobenius-fixed point over a field extension gives a
+- [`FiniteFieldTorsorPoint/PointDescent`](FiniteFieldTorsorPoint/PointDescent.md):
+  a Frobenius-fixed point over a field extension gives a
   `k`-point, and a nonempty scheme locally of finite type over `k` has a point
   over every algebraically closed extension.
-- [`FiniteFieldTorsorPoint/TorsorAction`](FiniteFieldTorsorPoint/TorsorAction.md)
-  (Worker 1406): `torsor_point_of_lang`. For `H` locally of finite type and `X`
+- [`FiniteFieldTorsorPoint/TorsorAction`](FiniteFieldTorsorPoint/TorsorAction.md):
+  `torsor_point_of_lang`. For `H` locally of finite type and `X`
   as in the statement, Lang's surjectivity for the points of `H` over
   `AlgebraicClosure k` (premise `hLang`) gives `Nonempty (RingPoint k X k)`.
 

@@ -56,16 +56,19 @@ Consumers can keep using `tensorObj`, `tensorMap`, and `tensorPow` from
 
 ## Provenance and scope
 
-Worker 59 authored this internal categorical construction. It specializes
+This is an internal categorical construction. It specializes
 the pinned Mathlib modules `CategoryTheory.Localization.Monoidal.Basic`
 and `CategoryTheory.Localization.Monoidal.Braided`, using the published
 `Tensor` construction and unconditional `TensorLocalizationProof` theorem.
 Their paired explanations record the underlying sheaf-theoretic provenance;
 this module does not claim a new translation of a literature theorem.
 
-This unit constructs the symmetric monoidal category and strong braided
+This module constructs the symmetric monoidal category and strong braided
 sheafification. Compatibility of the explicit tensor unitors and swap with
 the localized structure is not asserted here. Pullback tensor-comparison
 invertibility, pullback associativity, unit and symmetry compatibility,
 and strong symmetric monoidal pullback with identity/composition
-compatibility remain separate obligations of the parent task.
+compatibility are proved in other modules: `PullbackTensorProof`,
+`PullbackTensorAssociativityProofs`, `PullbackTensorUnitProofs`,
+`PullbackTensorCompatibilityProofs`, `PullbackMonoidal` and
+`PullbackMonoidalProofs`.

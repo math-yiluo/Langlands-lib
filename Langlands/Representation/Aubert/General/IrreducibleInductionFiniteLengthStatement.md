@@ -1,10 +1,9 @@
 # Finite length of the actual dynamic normalized induction of irreducibles
 
-Author: Worker 757, for task `1d3f1a06-ca7b-4438-ba38-885d5f70eda9`.
 This module declares one proposition definition and no theorem, and it does
-not prove the proposition. The parent Renard program
-(`f5d1f399-a1f8-4ab5-a981-90b92abd4857`) plans a separate exact proof task for
-this declaration.
+not prove the proposition.
+`DynamicIrreducibleInductionFiniteLengthReduction` reduces it to the
+finite-length part of Renard, Théorème VI.5.4.
 
 ## Source
 
@@ -88,7 +87,7 @@ Hausdorffness of `G(F)`, or unimodularity of `U(χ)(F)`.
 
 ## The functor
 
-`normalizedInductionFunctor h hU` (`Aubert/General/Parabolic`, Worker 23) is
+`normalizedInductionFunctor h hU` (`Aubert/General/Parabolic`) is
 applied to the published decomposition
 `dynamic_isSemidirectDecomposition χ (Over.mk (𝟙 _))`, which is
 `P(χ)(F) = Z(χ)(F) ⋉ U(χ)(F)` (`Aubert/General/DynamicParabolic`). The functor
@@ -173,11 +172,11 @@ shows that the Library twist is the Levi half modulus composed with the
 projection. Unimodularity follows from
 `Jacquet.Localization.IsLimitOfCompactSubgroups U` by
 `isUnimodularModulus_of_isLimitOfCompactSubgroups`. For `U(χ)(F)` this is
-Renard V.5.2(iii), but at this module's Library base neither
-`IsLimitOfCompactSubgroups` nor `IsUnimodularModulus` is proved for
-`U(χ)(F)`. So the identification of the actual functor with Renard's
-`i^G_P` remains an unproved comparison. This statement neither assumes nor
-discharges it. The statement is about the actual Library functor, and a proof
+Renard V.5.2(iii). In the Library, unimodularity of `U(χ)(F)` is
+`dynamicUnipotent_isUnimodular` (`Aubert/General/DynamicInductionNormalization`),
+derived from `BruhatTits.dynamicUnipotent_isLimitOfCompactSubgroups`. The
+identification of the actual functor with Renard's `i^G_P` is a separate
+comparison. This statement neither assumes nor discharges it. The statement is about the actual Library functor, and a proof
 must prove it for that functor. Proving unimodularity of `U(χ)(F)` is one
 possible step, but it is not a premise.
 
@@ -190,10 +189,10 @@ For connected reductive `G`, the parabolic `F`-subgroups are exactly the
 `P_G(χ)` (Conrad–Gabber–Prasad, Proposition 2.2.9). Renard V.3.1 (printed
 p. 110) obtains the Levi factors of `P` as the centralizers `M = Z(G, A)` of
 the split components `A` of `P`. Matching every source pair `(P, M)` with some
-`(P(χ), Z(χ))`, and `N` with `U(χ)`, is a structural comparison. The Library
-does not yet prove it. Nor does it prove that the subspace topology on
-`Z(χ)(F)` is the point topology of the Levi as a reductive group. Both belong to
-the algebraic-groups programs, and this statement claims neither. The Markdown
+`(P(χ), Z(χ))`, and `N` with `U(χ)`, is a structural comparison. So is the
+identification of the subspace topology on `Z(χ)(F)` with the point topology of
+the Levi; for the centralizer scheme it is `dynamicCentralizerPointHomeomorph`
+(`Aubert/General/DynamicLeviTopology`). This statement claims neither. The Markdown
 of [`PrerequisiteStatements`](PrerequisiteStatements.md) describes the same
 scope for the whole finite-length target.
 
@@ -218,8 +217,7 @@ proof by another route must still prove exactly this statement.
 
 - The whole target `DynamicInductionFiniteLengthStatement`
   (`PreservesFiniteLength` of the same functor, same binders) is not revised
-  or duplicated here. Its exact proof task `174d2de0-fa21-41b4-b091-f1b86481790b`
-  (Worker 717) keeps its ownership.
+  or duplicated here.
 - The conclusion here has exactly the shape of the hypothesis `hirr` of
   `Langlands.SmoothRep.preservesFiniteLength_of_irreducibles`
   (`Smooth/FiniteLengthInduction`) for this functor. Together with
@@ -227,7 +225,7 @@ proof by another route must still prove exactly this statement.
   (`Aubert/General/DynamicInductionExactnessStatement`), it gives the whole
   target by
   `SmoothRep.preservesFiniteLength_of_irreducibles _ (hx F G hG χ hU) (hirr F G hG χ hU)`
-  after the same instance prelude. The author checked this composition
+  after the same instance prelude. This composition was checked
   privately; it is not part of this module.
 - The opening paragraph of Renard VI.6.2 states the extension from
   irreducibles to all finite-length representations. That extension is the

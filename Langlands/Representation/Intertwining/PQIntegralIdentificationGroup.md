@@ -1,6 +1,6 @@
 # The integral over `V = N̄ ∩ U` on an abstract parabolic
 
-Author: Worker 48. Module `Langlands.Representation.Intertwining.PQIntegralIdentificationGroup`,
+Module `Langlands.Representation.Intertwining.PQIntegralIdentificationGroup`,
 namespace `Langlands.Aubert.General.IntegralIdentification`.
 
 This helper module proves the group-level ingredients of Renard VII.3.4 (first paragraph of the

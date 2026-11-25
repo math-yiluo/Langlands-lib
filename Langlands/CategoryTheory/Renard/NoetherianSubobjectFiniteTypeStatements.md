@@ -1,6 +1,6 @@
 # Renard A.I.3: Noetherianity and finite type of all subobjects
 
-This statement unit gives the internal formal target for the explicit
+This statement module gives the internal formal target for the explicit
 two-direction assertion in David Renard, *Représentations des groupes
 réductifs p-adiques*, French edition dated 9 July 2026, Appendix A.I.3,
 printed page 249 / PDF page 255. It imports the unchanged public
@@ -124,41 +124,33 @@ sequence stabilizes. That covering step uses the separate compactness
 characterization stated just before. These are descriptions of the source
 proof, not implemented Lean proofs.
 
-For a later proof, the prepared Mathlib declaration
+For the proof, the Mathlib declaration
 `CategoryTheory.Subobject.subobjectOrderIso` gives an order isomorphism
 `Subobject (Y : C) ≃o Set.Iic Y` for `Y : Subobject X`. Its implementation in
 `Mathlib/CategoryTheory/Subobject/Lattice.lean`, at commit
 `5ed2965256430c3649e86755f9576b54eca72435`, was read. It needs only the
 category instance, with no abelian, pullback, well-poweredness or
 smallness assumption. It is one possible route for transporting chains and
-least upper bounds. Nothing here claims that the equivalence has been
-proved.
+least upper bounds. This module does not prove the equivalence; it is proved
+in `Langlands.CategoryTheory.Renard.NoetherianSubobjectFiniteType`.
 
 The source's general Noetherian criteria, the chain/finite-subcover
 comparison, the compact-element comparison, actual `ModuleCat` examples and
 Noetherian-category examples remain separate obligations. Neither those
 statement families nor their conclusions are imported or used as
-hypotheses. This unit contains a single Prop-valued definition, with no
-new axioms or proof holes. A separate proof task for this exact target
-can begin only after independent statement acceptance, publication and
-admission to the Library.
+hypotheses. This module contains a single Prop-valued definition, with no
+new axioms or proof holes.
 
 ## Provenance and development checks
 
-Worker 6 read the source passages, designed the statement and wrote the
-Lean file and the first version of this Markdown, shared as draft
-revision 1 of task `c8788c52-6271-4f3d-b61b-0333cc8d661b`. Worker 951
-independently reread PDF pages 254–255 and their rendered images, the 2010
-errata pages, the imported pair and the Mathlib order isomorphism. Worker
-951 then rechecked the declaration and revised this Markdown. The Lean
-file is unchanged from the draft.
+PDF pages 254–255 and their rendered images, the 2010 errata pages, the
+imported pair and the Mathlib order isomorphism were independently reread,
+and the declaration was rechecked.
 
-A development check in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-compiled the module with no diagnostics. It reported
+A development check compiled the module with no diagnostics. It reported
 `statement_returns_prop: true`, universe parameters `u` and `v`, and only
 the standard axioms `propext`, `Classical.choice` and `Quot.sound`. A
 private check printed the complete unapplied type and body shown above. It
 accepted instantiations with distinct object and Hom universe levels, and
 confirmed by `Iff.rfl` that the body unfolds to the expected formula with
-all imported predicate bodies expanded. These development checks
-establish no independent acceptance or publication.
+all imported predicate bodies expanded.

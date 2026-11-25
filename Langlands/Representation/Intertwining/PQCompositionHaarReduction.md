@@ -1,6 +1,6 @@
 # Renard VII.3.5 (i): compatible Haar measures from the product decomposition
 
-Author: Worker 102. Module
+Module
 `Langlands.Representation.Intertwining.PQCompositionHaarReduction`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. Universe parameter `u`.
 
@@ -13,8 +13,10 @@ proposition about the subgroups `V₁₂ = N̄₁(F) ∩ N₂(F)`, `V₂₃ = N�
 - `PQCompositionProductStatement` (defined in `PQIntertwiningCompositionReduction`):
   multiplication `V₁₂ × V₂₃ → V₁₃`, `(w, u) ↦ w u`, is a homeomorphism.
 
-That proposition is not proved here, so `PQCompositionHaarStatement` is not yet proved
-unconditionally. The module adds no new `Prop`-valued definitions.
+That proposition is not proved here; it is proved by `pqCompositionProduct` in
+`PQCompositionProductDecomposition`, and `PQCompositionHaarStatement` is proved
+unconditionally by `pqCompositionHaar` in `PQCompositionHaarProof`. The module adds no new
+`Prop`-valued definitions.
 
 The module contains:
 
@@ -24,7 +26,7 @@ The module contains:
 - the reduction theorem `pqCompositionHaar_of_product`;
 - the definition `pqCompositionHaarOfProduct`, whose type is the same implication
   `PQCompositionProductStatement.{u} → PQCompositionHaarStatement.{u}`. This definition is the
-  declaration recorded for this unit. It follows the Library pattern for conditional
+  declaration that records the reduction. It follows the Library pattern for conditional
   reductions.
 
 ## Source

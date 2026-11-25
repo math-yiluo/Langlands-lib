@@ -1,9 +1,5 @@
 # Finite-length preservation by the general-linear derivatives
 
-Authors: Worker 749 (this module and the helper module
-`DerivativeEquivTransport`) and Worker 237 (the helper module
-`ProductDerivativesFiniteLength`).
-
 ## Target
 
 The theorem `Langlands.Derivative.generalLinearDerivativeFiniteLength` has
@@ -49,7 +45,7 @@ Namespace `Langlands.Derivative`. Every representation is a complex
    the product. A submodule of a finite-length module has finite length.
 3. The derivative of a normalized product of supercuspidal representations
    has finite length. This is the theorem `productDerivativesFiniteLength` of
-   the helper module `ProductDerivativesFiniteLength` by Worker 237. Its
+   the helper module `ProductDerivativesFiniteLength`. Its
    Markdown describes its proof.
 4. Steps 1 to 3 combine to give the statement.
 
@@ -183,8 +179,7 @@ product case at the same order `k`.
 The hypothesis `hP` is exactly the type of
 `Langlands.Derivative.productDerivativesFiniteLength T ψ B hn σ hσ k hk` from
 the helper module
-`Langlands.Representation.Derivative.ProductDerivativesFiniteLength` by
-Worker 237, for every `ψ`, `B`, `hn`, `σ`, `hσ`, `k` and `hk`. That module's
+`Langlands.Representation.Derivative.ProductDerivativesFiniteLength`, for every `ψ`, `B`, `hn`, `σ`, `hσ`, `k` and `hk`. That module's
 paired Markdown describes its proof and the published theorems it uses.
 
 ## Step 4: assembly
@@ -225,7 +220,7 @@ universe `max uF uV` occurs only inside Step 2. There it is the output
 carrier universe of the supercuspidal embedding, the carrier universe of the
 universe lift `A'`, and the carrier universe of `hP`. Step 2 and the
 `DerivativeEquivTransport` helper return to `A` at carrier universe `uV`. The
-`lean_check` inspections of `generalLinearDerivativeFiniteLength` and of
+declaration inspections of `generalLinearDerivativeFiniteLength` and of
 `generalLinearDerivativeFiniteLength_of_products` report exactly the universe
 parameters `uF` and `uV`.
 
@@ -320,11 +315,11 @@ Direct imports of this module:
 - `Langlands.Representation.Filtration.RepresentationLength`.
 
 The transitive project import closure was computed from the import lines at
-the workspace base, Library commit
+Library commit
 `fcac121256163a8da6dd01a9483e1104a9b92aba`. It has 859 `Langlands` modules,
 counting this module:
 
-- the three new modules of this candidate: this module,
+- the three modules ported together: this module,
   `Derivative.DerivativeEquivTransport` and
   `Derivative.ProductDerivativesFiniteLength`;
 - 856 published Library modules. These are the 855 Library modules in the
@@ -337,17 +332,16 @@ counting this module:
   audit) and at `fcac1212`.
 
 The Lean sources of all 859 modules were searched for the excluded
-conclusions and task IDs listed below, and for the segment-socle modules of
-task `8e5b4563-0365-41c7-b134-70f2a0b36292`. The search found the following:
+conclusions listed below, and for the segment-socle modules of
+the derivative statements. The search found the following:
 
 - No Lean source names an excluded conclusion: `GenericSegmentProductUniqueness`,
   `SquareIntegrableLanglandsClassification`, `SegmentFullJacquetFormula`,
   `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`,
   `SegmentSpecialJacquetExponentNormFormula`, a special-head criterion, a
   strong-head, quotient-coverage, exhaustion or tempered-uniqueness
-  conclusion. No Lean source names an excluded task ID, including `8364e73f`
-  and `8e5b4563`.
-- The segment-socle part of task `8e5b4563` is not in the closure. That part
+  conclusion.
+- The segment-socle part of the derivative statements is not in the closure. That part
   is `SegmentSocleDerivativesStatement`, `HighestDerivativeSupportShiftProof`,
   the `SegmentSocleProduct…` modules and `SingletonSegmentSocle`. Its
   cuspidal-derivative part enters only through the separate published modules
@@ -382,38 +376,26 @@ task `8e5b4563-0365-41c7-b134-70f2a0b36292`. The search found the following:
   `Group.GL.UpperBruhatFiltration`. Neither uses a theorem of Zelevinsky 1980.
 
 Neither this module nor its import closure uses the special-head product
-criterion of task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`,
-`GenericSegmentProductUniqueness` (`30341ae4-65f2-4a0e-9283-763db01a409e`),
-`SquareIntegrableLanglandsClassification`
-(`1cb45da2-7007-4351-a694-594fb148b8d1`), `SegmentFullJacquetFormula`
-(`ed48ae06-964c-4c84-9e62-978f5a953ca7`) or its proof successor,
-`SegmentHeadJacquetFormula` (`55ad1e10-62d8-46b7-a081-909ef0056426`),
-`SegmentSocleJacquetFormula` (`b95105c6-f8bb-4641-ae53-2f49d1e7f034`) or
-`SegmentSpecialJacquetExponentNormFormula`
-(`92aea10f-62ac-4e0b-bd4a-9a80909797c5`). It uses no result of the excluded
-tasks on multisegment exhaustion (`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`),
-ordered strong-head existence (`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`),
-quotient coverage (`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), ordered
-conversion (`8252833d-c269-41a9-824c-5879e531b23b`), tempered uniqueness
-(`52e97845-36bb-457d-b76f-70753334b88c`), square-integrable exhaustion
-(`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), regular exhaustion
-(`bf433f0a-921a-428c-b0c0-6475438125ac`), socle exhaustion
-(`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`), analytic segment classification
-(`aca8805b-054f-4d56-8045-12db7f623404`), forward special-segment essential
-square-integrability (`5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`),
-segment-socle product irreducibility
-(`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`), unlinked and linked socle
-structure (`23e98d90-6055-4e35-91a9-b0f5d8a84961`,
-`a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`,
-`8fa9f68b-fa1b-431a-97f6-5b163964d1fc`,
-`7ff2a1e9-89dc-439e-a861-a567b3db92bf`), adjacent and two-segment socle
-commutation (`e3634665-571b-4852-9f4c-bab8a1053434`,
-`cded83f3-df9c-4018-bc61-dc54f5c1f9ab`,
-`426911b4-6620-413f-8065-04b25287f3bd`,
-`66e3b87c-647e-41e4-af18-df4d436765f0`), linked socle gluing
-(`c84cd52c-3ff3-4024-be50-8b84dd480888`,
-`6780b79c-9526-46aa-b8b4-00377d68b1ea`) or ordered multisegment socle
-existence (`23189526-80b0-4828-a6d4-7ebec2cbeef5`). It uses no theorem of
+criterion `SegmentHeadProductIrreducibility`,
+`GenericSegmentProductUniqueness`,
+`SquareIntegrableLanglandsClassification`, `SegmentFullJacquetFormula`
+or its proof,
+`SegmentHeadJacquetFormula`,
+`SegmentSocleJacquetFormula` or
+`SegmentSpecialJacquetExponentNormFormula`. It uses no excluded result
+on multisegment exhaustion,
+ordered strong-head existence,
+quotient coverage, ordered
+conversion, tempered uniqueness,
+square-integrable exhaustion,
+regular exhaustion, socle exhaustion,
+analytic segment classification,
+forward special-segment essential square-integrability,
+segment-socle product irreducibility,
+unlinked and linked socle structure,
+adjacent and two-segment socle commutation,
+linked socle gluing or ordered multisegment socle
+existence. It uses no theorem of
 Zelevinsky 1980, in particular none of its segment derivative formulas
-(sections 3.5 and 9.6). It uses nothing from the segment-socle part of task
-`8e5b4563-0365-41c7-b134-70f2a0b36292`.
+(sections 3.5 and 9.6). It uses nothing from the segment-socle part of the
+derivative statements.

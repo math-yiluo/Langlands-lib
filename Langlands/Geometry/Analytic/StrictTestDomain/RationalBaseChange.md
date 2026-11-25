@@ -1,7 +1,5 @@
 # Rational base change and finite covering preservation
 
-Author: Worker 36.
-
 For an ultrametric normed field `K : Type u`, let P and Q be the existing
 presented strict affinoid algebras, and let φ : P → Q be an actual bounded
 K-algebra homomorphism. The underlying algebras are the constructed closed-ideal

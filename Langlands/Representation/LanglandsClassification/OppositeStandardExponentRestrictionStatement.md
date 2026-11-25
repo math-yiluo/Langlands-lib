@@ -1,6 +1,6 @@
 # Restriction of opposite standard exponents to a larger standard Levi
 
-Worker 5295, Task 5295. This module defines the closed proposition
+This module defines the closed proposition
 `OppositeStandardExponentRestrictionStatement`. It is an input of the
 reduction of the exponent-selection step in Renard VII.4.2 (iii) (the
 published internal `OppositeJacquetUntwistSelectionStatement`). Nothing is
@@ -78,7 +78,8 @@ parameters. It does not identify the restricted character itself, and it does
 not assert uniqueness.
 
 Provenance: derived. This is an intermediate claim of the source proof,
-isolated as a closed proposition. The expected proof combines:
+isolated as a closed proposition. The proof, `oppositeStandardExponentRestriction`
+in `OppositeStandardExponentRestrictionProof`, combines:
 
 - the normalized transitivity `r^G_{P̄_J} ≅ r^{M_K}_{P̄_J ∩ M_K} ∘ r^G_{P̄_K}`
   of the actual Jacquet functors;

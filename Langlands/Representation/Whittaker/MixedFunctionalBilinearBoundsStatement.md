@@ -15,8 +15,9 @@ representations live on different groups.
 
 The module defines five Prop-valued `def` statements in namespace
 `Langlands.MixedBilinear` and proves none of them. The conjunction
-`FunctionalFactorAssemblyStatement` is the exact target intended for one
-separate proof contribution.
+`FunctionalFactorAssemblyStatement` is proved separately, as
+`Langlands.MixedBilinear.functionalFactorAssembly` in
+`Langlands.Representation.Whittaker.MixedFunctionalBilinearBoundsProof`.
 
 ## Imported constructions
 
@@ -235,4 +236,4 @@ graded-sum bounds this assembly relies on are separate targets of
 `Langlands.Representation.Filtration.MixedBilinearBoundsStatement`; the
 concrete unequal-rank test adapter, the source irreducible-pair rigidity
 lemma that would supply pair control, and the full unequal-rank uniqueness
-theorem all remain separate work.
+theorem all lie outside this module.

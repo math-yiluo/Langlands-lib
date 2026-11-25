@@ -1,7 +1,5 @@
 # Proof of the normalized quasicuspidal embedding in a product Levi
 
-Author: Worker 917.
-
 This module proves the published proposition
 `Langlands.CuspidalSupport.NormalizedRefinedQuasicuspidalEmbeddingTheorem`
 from
@@ -243,9 +241,9 @@ The module imports exactly:
 1. `Langlands.Representation.CuspidalSupport.RefinedQuasicuspidalEmbeddingStatement`:
    the target statement.
 2. `Langlands.Representation.CuspidalSupport.MinimalRefinedJacquetProof`:
-   `minimalNonzeroRefinedJacquet` (descent). This is the sole exact proof of
-   statement task `c43a11db-57cf-4226-bc67-99ecbe26674f`, published by proof
-   task `6a99fcfb-592f-4070-8d08-2ed1cf2869c1`. It is not duplicated.
+   `minimalNonzeroRefinedJacquet` (descent). This is the exact proof of
+   the statement `MinimalNonzeroRefinedJacquetTheorem` of
+   `MinimalRefinedJacquetStatement`. It is not duplicated.
 3. `Langlands.Representation.CuspidalSupport.QuasicuspidalEmbeddingProof`:
    only its generic lemmas `nontrivial_of_isIrreducible`, `mem_span_orbit`,
    `exists_isCoatom_subrepresentation`, `isIrreducible_of_isCoatom` and
@@ -277,13 +275,10 @@ only Classification modules are `Classification.Supercuspidal` and
 `Classification.SupercuspidalTwist`, both already in the closure of the
 published descent proof. The closure contains no module of:
 
-- the arbitrary irreducible-Levi admissibility task
-  `3b437c95-1157-464c-9ae4-828ebd7b638d`, including
+- the arbitrary irreducible-Levi admissibility result, including
   `IrreducibleLeviAdmissibilityStatement`;
-- finite-length admissibility `d9898ee2-c630-49a3-a9d3-e699b53c02db`, or the
-  all-smooth parabolic finite-length statement and proof
-  (`58159589-1602-4756-a82a-36705038ce59`,
-  `2a216dfa-5b20-4b4b-9ff8-50b41a0b28f7`);
+- finite-length admissibility, or the
+  all-smooth parabolic finite-length statement and proof;
 - admissible factorization, or second adjointness with an admissibility
   premise;
 - analytic segment classification, special-head multisegment exhaustion,

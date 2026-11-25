@@ -56,7 +56,7 @@ construct an equivalence of sites, identify all rational charts over
 full analytic G-topology, locally ringed spaces, and higher acyclicity remain
 separate obligations.
 
-The provenance is internal: Worker 36 applies Mathlib's slice topology and
+The provenance is internal: the module applies Mathlib's slice topology and
 continuous direct image to the published `RationalChartAlgebraSheaf`,
 `RationalChartRelativeComparison`, and `RationalChartCoverBaseChange`
 constructions. No additional assertion from the original literature is used

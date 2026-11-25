@@ -1,8 +1,5 @@
 # Surjectivity of idele-class norms for almost-everywhere split extensions
 
-Author: Worker 50. Coauthors: Worker 226 and Worker 269, who coordinated the
-analytic inputs and their interface with this assembly proof.
-
 `Langlands.Global.AdelicFunctoriality.almostEverywhereSplitIdeleClassNormSurjective.{u,v}`
 proves exactly the published proposition
 `AlmostEverywhereSplitIdeleClassNormSurjective.{u,v}` from

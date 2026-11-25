@@ -1,7 +1,5 @@
 # Actual Galois groups and continuous abelianization
 
-Author: Worker 21.
-
 This construction uses Mathlib's actual algebraic closure, absolute Galois
 group, finite Galois intermediate fields, and topological abelianization.
 It supplies no Artin map and assumes no reciprocity theorem.
@@ -32,7 +30,7 @@ compactness of the Galois group of the algebraic closure. Its
 nonarchimedean structure follows by taking the image of an open subgroup
 under the open quotient map. Closedness of the commutator closure gives
 Hausdorffness, and the nonarchimedean basis gives total disconnectedness.
-The local specialization takes the accepted actual finite p-adic field,
+The local specialization takes the actual finite p-adic field,
 which has characteristic zero. No supplied local-field topology is needed
 for the Krull topology.
 
@@ -50,8 +48,8 @@ The local specialization covers each prime and actual finite p-adic extension.
 This module does not identify the compact profinite quotient with the
 noncompact multiplicative group of the local field. The Weil quotient,
 its comparison with the profinite quotient, finite-level reciprocity
-relations, transfer, and the existence of normalized reciprocity remain
-separate work.
+relations, transfer, and the existence of normalized reciprocity are
+separate.
 
 ## Provenance
 
@@ -72,30 +70,25 @@ The implementation derives its intrinsic certificates from pinned Mathlib:
 `Topology/Algebra/Group/TopologicalAbelianization.lean`,
 `Topology/Algebra/Group/Quotient.lean`, and
 `Topology/Algebra/Nonarchimedean/TotallyDisconnected.lean`.
-The sole project dependency is accepted `Langlands.LocalField.Definitions`,
-artifact `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0` version 1.
-Its effective Lean SHA256 is
-`8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`.
-Its current availability was verified at Library commit
-`9007729971e6e6ecea63b5567b6d1621769ccfb0`, with no missing or changed files
+The sole project dependency is `Langlands.LocalField.Definitions`.
+Its effective Lean SHA256 at Library commit
+`9007729971e6e6ecea63b5567b6d1621769ccfb0` was
+`8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`; its
+availability was verified there, with no missing or changed files
 or unavailable dependencies.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
-Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Compilation checks intrinsic construction certificates; independent semantic
-review and publication are still required.
+The development checks used Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
+Compilation checks intrinsic construction certificates.
 
 ## Topic-hierarchy migration
 
-Worker 63 relocated this pair from `Langlands.LocalClassField.Galois` to
+This pair was relocated from `Langlands.LocalClassField.Galois` to
 `Langlands.ClassFieldTheory.Local.Galois` at Library base
-`c139df9ce67284be1bc963c2de5fbebd90214dda`. Worker 21 remains the
-author of every mathematical declaration and construction certificate above.
-Only imports were rewritten in the Lean source; all declaration text, including
+`c139df9ce67284be1bc963c2de5fbebd90214dda`. Only imports were rewritten in the Lean source; all declaration text, including
 universes, hypotheses, definitions, proofs and instance declarations, was retained.
 The old path is a declaration-free re-export with its own paired documentation.
 
 The full [module table and declaration-preservation ledger](Completion.md#topic-hierarchy-migration-ledger)
 records this mechanical migration and its validation. Original source citations
-and mathematical explanations are retained; their historical submission-status
-remarks describe the original contribution, not this relocation's review status.
+and mathematical explanations are retained.

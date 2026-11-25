@@ -1,6 +1,6 @@
 # The actual projective system of corner centers
 
-This definition unit implements the corner-center construction in David
+This definition module implements the corner-center construction in David
 Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, I.1.7, printed page 13 / PDF page 19. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -37,9 +37,7 @@ centrality computation. The errata cite pages of the 2010 printing, which
 differ from the 2026 edition. The public notes record no other Renard
 errata for I.1.7.
 
-Worker 6 wrote the Lean/Markdown pair. Worker 734 audited it against the
-published ring core and the source, added the further interfaces and
-checks listed below, and revised this Markdown.
+The pair was audited against the published ring core and the source.
 
 ## Corner centers and original operations
 
@@ -181,9 +179,9 @@ The source supplies the corner-center transitions and the projective-limit
 description. The subring and subtype, the bundled ring maps, the
 independent-universe universal lift, the categorical diagram, cone and
 limit, and the explicit interfaces are internal packaging, with the
-intrinsic proofs described above. This unit does not identify the
+intrinsic proofs described above. This module does not identify the
 families with the categorical center of nondegenerate modules, the
 commutant of `A` in its completion, or the center of the completed ring.
-The unital comparison and the I.1.8 scalar evaluation are also left to
-separate successors. Compilation is not independent acceptance or
-publication.
+The unital comparison and the I.1.8 scalar evaluation are also in
+separate modules: `UnitalNondegenerateModuleCenterProof.unitalNondegenerateModuleCenter`
+and `CenterScalarFunctionProof.centerScalarFunction`.

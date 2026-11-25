@@ -24,7 +24,7 @@ GL(n)*, §5 on printed p. 313, considers `λ`-adic representations of
 `Gal(F̄/F)`. Theorem 5.7 concerns those on the cohomology
 `H^{n-1}(S_K(N), W)` of the Shimura variety with Harris's coefficient
 systems, and formula (5.6) gives their local factors. This module
-produces, from the `m`-power torsion limit of Worker 57's version of this
+produces, from the `m`-power torsion limit of the Library's version of this
 cohomology at a fixed level, objects of the published `l`-adic
 representations `LambdaAdic`, the objects that
 `Langlands.GaloisRepresentation.CompatibleFamily` assembles into collections
@@ -60,12 +60,11 @@ abbreviates `D C ... q U ρ p m hm existence geometry hRigid`. Write
   of `CoefficientIntegers l.1 = l.1.adicCompletionIntegers K` over
   `l : FinitePlacesAbove K p`. From the published `Langlands.Global`:
   `FiniteCompletion K l.1`, the completion of `K` at `l`.
-- From `Langlands.Shimura.PEL.HarrisTaylorCMAdicGaloisCohomology`
-  (candidate `d74b579d-a959-4356-9ab5-6ce21cbcbfbc`, staged):
+- From `Langlands.Shimura.PEL.HarrisTaylorCMAdicGaloisCohomology`:
   `cmHarrisAdicCohomology`, `cmHarrisAdicCohomology_isUnramifiedAt` and
   `cmHarrisAdicFrobeniusEulerPolynomial`.
-- From `Langlands.Shimura.LatticeGaloisRepresentation`, submitted together
-  with this module: `IsLatticeContinuous`, `latticeObjects`,
+- From `Langlands.Shimura.LatticeGaloisRepresentation` (ported together
+  with this module): `IsLatticeContinuous`, `latticeObjects`,
   `latticeObjects_rank` and `hasEulerPolynomialAt_latticeObjects`.
 - From the published `Langlands.GaloisRepresentation`: `LambdaAdic F K lam`,
   which is `Objects F (FiniteCompletion K lam)`, and `HasEulerPolynomialAt`.

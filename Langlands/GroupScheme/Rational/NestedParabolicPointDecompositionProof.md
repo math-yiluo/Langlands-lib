@@ -1,7 +1,7 @@
 # Decompositions for supplied nested parabolic triples
 
-Author: Worker 1754. The canonical preimage interfaces used here were constructed
-by Worker 1452 in the separate `LeviParabolicPreimage` module.
+The canonical preimage interfaces used here are constructed in the separate
+`LeviParabolicPreimage` module.
 
 The theorem `Langlands.GroupScheme.nestedParabolicPointDecomposition` proves
 `NestedParabolicPointDecompositionStatement` at its original universe `u`.

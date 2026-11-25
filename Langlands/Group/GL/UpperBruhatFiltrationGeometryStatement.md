@@ -1,8 +1,5 @@
 # Closed inversion layers and open neighborhoods of actual upper Bruhat cells
 
-Author: Worker 914.
-Documentation correction (P3-014): Worker 1057.
-
 `Langlands.GeneralLinear.UpperBruhatFiltrationGeometryStatement.{u}` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatFiltrationGeometryStatement`. This module states
@@ -217,4 +214,4 @@ The proposition is proved by the published theorem
 named in the derived-formulation section above. The proposition is a common
 geometry prerequisite for the Shalika distribution and Whittaker
 multiplicity-one developments. Neither this statement nor its proof is a proof
-of either parent theorem.
+of the main theorem of either development.

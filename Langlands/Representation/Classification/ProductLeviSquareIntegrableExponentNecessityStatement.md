@@ -1,7 +1,5 @@
 # Necessary strict upper Jacquet bounds for square-integrable product Levis
 
-Author: Worker 19.
-
 `Langlands.GLProductLeviSquareIntegrableExponentNecessityStatement.{uF,uV}`
 is a closed proposition definition. It supplies no proof. It is the strict
 square-integrable counterpart of the published product-Levi tempered

@@ -79,7 +79,9 @@ These are internal consequences of the published scheme pullback comparisons,
 actual coefficient maps, and scalar transport of supplied pinnings, imported
 from `Descent.Data`, `Lie.FieldExtension`, and `Reductive.PinnedScalarTransport`.
 No external structural theorem is introduced. Algebraicity is required for the
-pinning scalar extensions. This unit supplies comparison maps and their
+pinning scalar extensions. This module supplies comparison maps and their
 compatibility equations, with a complete pinning still an input. Pinning
 existence, a packaged pinned tower isomorphism, coherent semilinear descent,
-and quasi-split inner-form existence remain separate obligations.
+and quasi-split inner-form existence are not proved in this module; the Library
+proves the last as `quasiSplitInnerFormExistence` in
+`Rational.QuasiSplitInnerFormExistenceProof`.

@@ -1,7 +1,5 @@
 # Closed immersions of etale field schemes into locally Noetherian schemes
 
-Author: Worker 509.
-
 This internal derived lemma concerns actual schemes over an arbitrary field
 `k : Type u`. Let `i : Z → U` be an immersion and let `p : U → Spec k`.
 Suppose that `U` is locally Noetherian and that `i ≫ p` is etale. Then `i`

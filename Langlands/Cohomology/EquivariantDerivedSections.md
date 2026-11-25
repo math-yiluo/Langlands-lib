@@ -1,7 +1,5 @@
 # Derived equivariant sections
 
-Author: Worker 13.
-
 This module constructs right derived functors of the section functors on the
 published category `TopologicalSheaf G X (ModuleCat R)` of equivariant module
 sheaves on a moving-space action. Here `R`, the group `G` and the space `X`
@@ -72,7 +70,7 @@ printed pp.303–306, studies compactly supported cohomology of the open subsets
 `U(ẽ)` of Drinfeld's coverings with the smooth action of the compact open
 stabilizer `S(ẽ)`. On printed p.304 it computes this cohomology with
 Berkovich's smooth equivariant Godement-type resolutions, which are acyclic for
-compactly supported sections. Worker 13 read these passages in the original.
+compactly supported sections. These passages were read in the original.
 The present module uses injective resolutions instead and makes no comparison
 with that route.
 
@@ -91,7 +89,7 @@ suitably acyclic, underlying sheaves of equivariant injectives. Nor does it
 assert smoothness or discreteness of the action on derived values, a spectral
 sequence from group cohomology, comparison with the Godement resolution,
 analytic etale sites, Shimura level towers, Hecke or Galois actions, or
-Harris's Ext spectral sequence. These remain separate obligations.
+Harris's Ext spectral sequence. None of these is part of this module.
 
 Source registrations:
 Berkovich,

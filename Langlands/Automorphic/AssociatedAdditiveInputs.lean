@@ -72,7 +72,7 @@ def standardFiniteAdditiveComponent (v : FinitePlace K) :
       nontrivial := finiteAdditiveRestriction_standardGlobalAdditiveCharacter_ne_one K v }
 
 theorem isCanonicalFiniteAdditiveComponent_standardFiniteAdditiveComponent (v : FinitePlace K) :
-    ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent
+    ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent
       (standardGlobalAdditiveCharacter K) v (standardFiniteAdditiveComponent K v) := by
   intro x
   rfl
@@ -101,7 +101,7 @@ theorem exists_associatedAdditiveInputs :
       (∀ x : K, ψ (diagonal K x) = 1) ∧
       ∃ ψf : ∀ v : FinitePlace K,
           Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v),
-        (∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v (ψf v)) ∧
+        (∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v (ψf v)) ∧
         ∃ ν : ∀ v, Correspondence.LocalAdditiveHaarMeasure (CompletionPadic.padicField v),
           ∀ v, Correspondence.IsSelfDualMeasure (CompletionPadic.padicField v) (ψf v) (ν v) := by
   refine ⟨standardGlobalAdditiveCharacter K, standardGlobalAdditiveCharacter_diagonal K,

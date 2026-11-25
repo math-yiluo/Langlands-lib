@@ -1,7 +1,5 @@
 # Conditional assembly of fpqc descent and multiplicative-type extensions
 
-Worker 875.
-
 `Langlands.GroupScheme.ExtensionReduction.extensionDiagonalizingCover`
 constructs an actual fppf covering family and a proof that each pullback of
 the extension group is diagonalizable. Its group and base hypotheses are
@@ -16,7 +14,7 @@ takes these three exact published statement types as explicit proof premises:
 - `MultiplicativeTypeCompleteLocalDeformationStatement`;
 - `MultiplicativeTypeFieldExtensionStatement`.
 
-They are not proved here and no unpublished sibling proof is imported. The
+They are not proved here and no proof of them is imported. The
 local character-classification premise appearing in intermediate theorems
 is discharged by the published `CompleteLocalDeformation.restrictMap_bijective`
 from `LocalDiagonalizableHom`.
@@ -50,7 +48,7 @@ then give the arbitrary-base extension clause.
 `fpqcExtension_of_fibral_deformation_field` returns the full original target
 with the three statement premises and local character premise explicit.
 `fpqcExtension_of_threeStatements` supplies the published character
-classification, leaving exactly the three sibling statements. The definition
+classification, leaving exactly the three statement premises. The definition
 `extensionDiagonalizingCover` chooses the actual fppf cover from the resulting
 extension clause; its `PLift` component carries the diagonalizability proofs.
 
@@ -58,6 +56,5 @@ The proof route is internal: exact finite coefficient models, finite Galois
 residue splitting realized at an etale point, ordinary localization and
 completion, and spreading an actual fppf diagonalizing piece. It uses no
 strict-henselization existence premise. This is a conditional construction
-and a reduction of the host target to the three exact sibling proofs. It is
-not an unconditional proof of that target and does not satisfy the host
-completion condition by itself.
+and a reduction of `MultiplicativeTypeFpqcExtensionStatement` to the three
+exact statements above. It is not an unconditional proof of that statement.

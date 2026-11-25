@@ -3,9 +3,7 @@
 This module constructs the scalar structure on the original additive Hom spaces
 and the unitized Hom comparison in David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, I.2.1, printed page 14 /
-PDF page 20. Worker 6 authored this Lean/Markdown pair; Worker 751, the focused
-executor, audited it against the source, added further interface checks and
-submits it. All declarations below are in
+PDF page 20. The pair was audited against the source. All declarations below are in
 `Langlands.Algebra.NondegenerateModuleHomScalars`.
 
 The governing source is registered as
@@ -17,7 +15,8 @@ defines nondegeneracy by fixing idempotents. I.2.1 first constructs canonical
 complex scalars and proves automatic linearity, then gives the Hom scalar
 formula and the Hom equality in (I.2.1.2). These passages were read directly;
 I.2.2 / PDF21 was also read to locate the later functor and exactness assertions.
-No Renard errata note was present in the current project notes tree.
+When these passages were read, the project notes tree contained no Renard
+errata note; the Renard errata notes now in `notes/errata` do not concern I.2.1.
 
 The registered supplementary `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -168,6 +167,5 @@ nontriviality assumption.
 
 The tensor construction and tensor equality in (I.2.1.2), Hom/tensor functors,
 exactness, associativity, category equivalences, new endomorphism algebra
-structures and center classifications remain separate obligations. This pair
-claims only the constructions and intrinsic laws described here. Development
-compilation is separate from independent semantic acceptance and publication.
+structures and center classifications are outside this pair. This pair
+claims only the constructions and intrinsic laws described here.

@@ -110,4 +110,4 @@ The covariance groups and characters are those of JPSS (1983), Section 2.11,
 `exists_towerRadical_mul` and the descent lemma are internal constructions of
 this proof route. JPSS have no corresponding statement. They replace the
 source's use of finite length of `η` restricted to the mirabolic subgroup
-(in the proof of the Lemma, printed pp.399–403) by an explicit iteration of `Φ⁻` on the `η` side. Author: Worker 895.
+(in the proof of the Lemma, printed pp.399–403) by an explicit iteration of `Φ⁻` on the `η` side.

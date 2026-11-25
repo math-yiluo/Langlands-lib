@@ -29,7 +29,7 @@ variable {k : Type u} [Field k]
 /-- Every Weyl translate differs from the identity by an actual derived-valued map. -/
 theorem relativeWeylTorusAction_sub_id_eval_mem_derived
     (w : relativeWeylGroup i) (U : Over (Spec (CommRingCat.of k))) (x : U ⟶ T.X) :
-    (x ≫ (CommGroupScheme.groupHom ((relativeWeylTorusAction i w).hom - 𝟙 T)).hom.hom) ≫
+    (x ≫ (CommGroupScheme.groupHom ((relativeWeylTorusAction i w).asIso.hom - 𝟙 T)).hom.hom) ≫
       i.hom.hom ∈ (derivedSubgroup G).carrier U := by
   obtain ⟨n, rfl⟩ := QuotientGroup.mk_surjective w
   change (x ≫ (CommGroupScheme.groupHom (torusCommutatorEnd i n)).hom.hom) ≫
@@ -41,7 +41,7 @@ variable [Fintype (relativeWeylGroup i)]
 
 /-- The integral complement of the norm, as a sum of actual endomorphisms. -/
 def relativeWeylTorusComplement : T ⟶ T :=
-  ∑ w : relativeWeylGroup i, (𝟙 T - (relativeWeylTorusAction i w).hom)
+  ∑ w : relativeWeylGroup i, (𝟙 T - (relativeWeylTorusAction i w).asIso.hom)
 
 /-- Complement and norm sum to the nonzero group-order multiple of the identity. -/
 theorem relativeWeylTorusComplement_add_norm :
@@ -61,13 +61,13 @@ theorem relativeWeylTorusComplement_eval_mem_derived
   apply Subgroup.prod_mem
   intro w _
   have hw := relativeWeylTorusAction_sub_id_eval_mem_derived i w U x
-  change x ≫ (CommGroupScheme.groupHom ((relativeWeylTorusAction i w).hom - 𝟙 T)).hom.hom ∈
+  change x ≫ (CommGroupScheme.groupHom ((relativeWeylTorusAction i w).asIso.hom - 𝟙 T)).hom.hom ∈
     ((derivedSubgroup G).comap i).carrier U at hw
-  rw [← neg_sub ((relativeWeylTorusAction i w).hom) (𝟙 T)]
+  rw [← neg_sub ((relativeWeylTorusAction i w).asIso.hom) (𝟙 T)]
   have hneg := congrArg Additive.toMul
-    ((evalPoint x).map_neg ((relativeWeylTorusAction i w).hom - 𝟙 T))
-  change x ≫ (CommGroupScheme.groupHom (-((relativeWeylTorusAction i w).hom - 𝟙 T))).hom.hom =
-    (x ≫ (CommGroupScheme.groupHom ((relativeWeylTorusAction i w).hom - 𝟙 T)).hom.hom)⁻¹ at hneg
+    ((evalPoint x).map_neg ((relativeWeylTorusAction i w).asIso.hom - 𝟙 T))
+  change x ≫ (CommGroupScheme.groupHom (-((relativeWeylTorusAction i w).asIso.hom - 𝟙 T))).hom.hom =
+    (x ≫ (CommGroupScheme.groupHom ((relativeWeylTorusAction i w).asIso.hom - 𝟙 T)).hom.hom)⁻¹ at hneg
   rw [hneg]
   exact Subgroup.inv_mem _ hw
 

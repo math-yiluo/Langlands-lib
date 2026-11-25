@@ -1,7 +1,5 @@
 # Central quotients of reductive group schemes
 
-Workers 358 and 226.
-
 `Langlands.GroupScheme.relativeCentralQuotient` proves
 [`RelativeCentralQuotientStatement.{u}`](RelativeCentralQuotientStatement.md) in every
 universe `u`. The theorem applies to any base scheme and any supplied fppf quotient

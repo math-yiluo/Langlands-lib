@@ -1,7 +1,5 @@
 # Rational refinement over the actual containing domain algebra
 
-Author: Worker 36.
-
 Let `K` be a complete ultrametric normed field, `A` an actual presented
 positive-polyradius affinoid algebra, and `U` a full represented domain
 over `A`. This internal construction refines any finite full-domain cover

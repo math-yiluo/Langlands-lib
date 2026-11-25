@@ -53,7 +53,7 @@ end GaloisPointComparison
 
 variable [IsAffineHom G.X.hom] [IsAffineHom U.X.hom]
 
-local instance {H : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom] :
+private local instance {H : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom] :
     IsAffineHom ((GroupScheme.baseChange b).obj H).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd H.X.hom b)
   infer_instance
@@ -92,7 +92,7 @@ local notation "G_K" => CategoryTheory.Functor.obj (GroupScheme.baseChange b) G
 local notation "i_K" => CategoryTheory.Functor.map (GroupScheme.baseChange b) i
 local notation "a_K" => characterLattice.baseChange b S a
 
-local instance {H : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom] :
+private local instance {H : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom H.X.hom] :
     IsAffineHom ((GroupScheme.baseChange b).obj H).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd H.X.hom b)
   infer_instance
@@ -109,10 +109,10 @@ def rootWeightSpaceFieldExtend :
     weightSpace_baseChange_mem G i a X.property⟩
   map_zero' := by
     apply Subtype.ext
-    simp only [ZeroMemClass.coe_zero, TensorProduct.tmul_zero, map_zero]
+    simp only [ZeroMemClass.coe_zero, TensorProduct.tmul_zero, LinearEquiv.map_zero]
   map_add' X Y := by
     apply Subtype.ext
-    simp only [AddMemClass.coe_add, TensorProduct.tmul_add, map_add]
+    simp only [AddMemClass.coe_add, TensorProduct.tmul_add, LinearEquiv.map_add]
 
 @[simp]
 theorem rootWeightSpaceFieldExtend_val (X : weightSpace i a) :

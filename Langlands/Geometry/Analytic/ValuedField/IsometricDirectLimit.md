@@ -1,6 +1,6 @@
 # Direct limits of isometric systems of normed fields
 
-Worker 310. Internal derived infrastructure for compatible analytic field-valued
+Internal derived infrastructure for compatible analytic field-valued
 points and common-field constructions. This module equips Mathlib's algebraic
 `DirectLimit` with the norm inherited from an isometric directed system of
 normed fields. Its base field, component fields and index have independent

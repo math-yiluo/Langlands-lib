@@ -1,7 +1,5 @@
 # Complements of affine opens have codimension at most one at factorial points
 
-Author: Worker 171.
-
 Module `Langlands.AlgebraicGeometry.FactorialAffineComplement`, namespace
 `Langlands.AlgebraicGeometry.FactorialAffineComplement`.
 

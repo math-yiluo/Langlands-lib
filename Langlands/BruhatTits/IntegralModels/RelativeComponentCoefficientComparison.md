@@ -1,7 +1,8 @@
 # Actual coefficient comparisons for supplied neutral models
 
-This internal derived unit constructs coefficient comparisons of the actual
+This module gives a derived construction of coefficient comparisons of the actual
 neutral integral models from supplied comparisons of the actual full models.
+
 The integral base is an arbitrary domain with specified fraction field. No
 characteristic assumption is made, and the universe is arbitrary.
 

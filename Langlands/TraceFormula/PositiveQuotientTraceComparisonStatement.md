@@ -131,19 +131,19 @@ class".
 ### The representation `π`
 
 The three conditions on `π` are those that the abstract simple trace formula of this program
-puts on its representation. In the shared draft of that statement (Task 7420,
-`Langlands.TraceFormula.AbstractSimpleTwistedTraceFormulaStatement`, draft revision 2), they
+puts on its representation. In that statement
+(`Langlands.TraceFormula.AbstractSimpleTwistedTraceFormulaStatement`), they
 read: `π : G →* (Lp ℂ 2 ν →L[ℂ] Lp ℂ 2 ν)`, `hπnorm`, `hπmeas` for the Haar measure on `G`,
 and almost everywhere right translation on `LeftQuotient Γ`. Take `G = G(𝔸_F)¹`,
 `Γ = G(F)` and `ν = ν¹`. Then the hypotheses here are literally of that form, because
 `NormOneRationalQuotient F G` unfolds to `LeftQuotient (rationalNormOneSubgroup F G)`. So a
 proof can apply the abstract formula to `π(fOne)` and transfer the result to `R(f)` with this
-statement. This module does not import that draft.
+statement. This module does not import that statement.
 
 The statement quantifies over `π`; it does not construct one. The almost-everywhere condition
 fixes each `π g φ` as an element of `L²(ν¹)`, so any two such `π` are equal.
 
-## Why it is true (for the reviewer; not part of the Lean)
+## Why it is true (not part of the Lean)
 
 The reason is that integrating over `A⁺` turns `R(f)` into a unitarily equivalent operator on
 the norm-one quotient. The Lean statement records only the two consequences above; it does not
@@ -222,14 +222,15 @@ normalizations, not those of the source.
 The present statement uses compactly supported continuous `f`, not smooth `f`. It involves no
 cuspidal-image, ellipticity or semisimplicity hypothesis and no orbital integrals.
 
-## Relation to other tasks
+## Relation to other statements
 
-- Task 7340 is the parent task (simple trace formula, twisted form, and local cyclic base
-  change for `GL_n`).
-- Task 7585 (`Langlands.TraceFormula.GeneralLinearSimpleTraceFormulaStatement`, shared draft)
+- The statement belongs to the development of the simple trace formula, its twisted form, and
+  local cyclic base change for `GL_n`.
+- `Langlands.TraceFormula.GeneralLinearSimpleTraceFormulaStatement`
   states the simple trace formula for `GL_n` in terms of the Library's `R(f)` and this `fOne`.
   Its conclusion includes that `R(f)` is trace class, and it expresses the trace of `R(f)` by
-  orbital integrals of `fOne`. A proof can use the abstract formula (Task 7420) for `π(fOne)`
+  orbital integrals of `fOne`. A proof can use the abstract formula
+  (`AbstractSimpleTwistedTraceFormulaStatement`) for `π(fOne)`
   and transfer the trace class property and the trace with this statement. The trace equality
   is only needed once `R(f)` is known to be trace class.
 - This module imports neither.

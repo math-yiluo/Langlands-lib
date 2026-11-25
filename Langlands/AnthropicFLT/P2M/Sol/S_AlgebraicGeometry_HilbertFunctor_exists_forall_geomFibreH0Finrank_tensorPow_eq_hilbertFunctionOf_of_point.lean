@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands; universe levels are generalized. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_HilbertFunctor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_PolarisedAbelianScheme
@@ -204,7 +204,7 @@ theorem H0AB.exists_forall_geomFibreH0Finrank_eq_finrank_piece
                 den := ⟨MvPolynomial.X i ^ d, (MvPolynomial.mem_homogeneousSubmodule d _).mpr
                   (MvPolynomial.isHomogeneous_X_pow i d)⟩
                 den_mem := ⟨d, rfl⟩ })) = 0))
-    (𝓛 : Z.Modules) (h𝓛 : Scheme.Modules.IsInvertible 𝓛)
+    (𝓛 : Z.Modules) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛)
     (𝔓 : Scheme.Modules.ProjPresentation 𝓛 (ι ≫ ProjSpace.π k n) n) (h𝔓 : 𝔓.toProj = ι) :
     ∃ d₀ : ℕ, ∀ d : ℕ, d₀ ≤ d →
       Scheme.Modules.geomFibreH0Finrank (ι ≫ ProjSpace.π k n)
@@ -213,34 +213,34 @@ theorem H0AB.exists_forall_geomFibreH0Finrank_eq_finrank_piece
   classical
   haveI := hι
 
-  have hrec : ∀ d : ℕ, (Nat.rec (motive := fun _ => Z.Modules) (𝟙_ Z.Modules) (fun _ M => M ⊗ 𝓛) d) = 𝓛.tensorPow d := by
+  have hrec : ∀ d : ℕ, (Nat.rec (motive := fun _ => Z.Modules) (𝟙_ Z.Modules) (fun _ M => M ⊗ 𝓛) d) = 𝓛.tensorPowFLT d := by
     intro d
     induction d with
     | zero => rfl
     | succ d ih =>
-        show (Nat.rec (motive := fun _ => Z.Modules) (𝟙_ Z.Modules) (fun _ M => M ⊗ 𝓛) d) ⊗ 𝓛 = 𝓛.tensorPow d ⊗ 𝓛
+        show (Nat.rec (motive := fun _ => Z.Modules) (𝟙_ Z.Modules) (fun _ M => M ⊗ 𝓛) d) ⊗ 𝓛 = 𝓛.tensorPowFLT d ⊗ 𝓛
         rw [ih]
   obtain ⟨d₂, hd₂⟩ :=
     AlgebraicGeometry.ProjSpace.exists_forall_H0_twist_exists_isHomogeneous_forall_val_eq_of_isClosedImmersion ι
   refine ⟨max m d₂, fun d hd => ?_⟩
   have hdm : m ≤ d := (le_max_left _ _).trans hd
   have hdd : d₂ ≤ d := (le_max_right _ _).trans hd
-  letI := Scheme.TwoAffineOpenCover.moduleSectionsOfHom (ι ≫ ProjSpace.π k n) (𝓛.tensorPow d) ⊤
-  rw [hrec d, Scheme.Modules.geomFibreH0Finrank_id_eq_finrank_sections k (ι ≫ ProjSpace.π k n) (𝓛.tensorPow d)
-    (h𝓛.tensorPow_monoidalV2 d)]
+  letI := Scheme.TwoAffineOpenCover.moduleSectionsOfHom (ι ≫ ProjSpace.π k n) (𝓛.tensorPowFLT d) ⊤
+  rw [hrec d, Scheme.Modules.geomFibreH0Finrank_id_eq_finrank_sections k (ι ≫ ProjSpace.π k n) (𝓛.tensorPowFLT d)
+    (AlgebraicGeometry.Scheme.Modules.IsInvertible.tensorPow_monoidalV2 h𝓛 d)]
 
   obtain ⟨e1⟩ := AlgebraicGeometry.OModulePresheaf.nonempty_sections_top_equiv_H0_ofModules (ι ≫ ProjSpace.π k n)
-    (𝓛.tensorPow d) (ProjSpace.stdCoverPullback ι)
+    (𝓛.tensorPowFLT d) (ProjSpace.stdCoverPullback ι)
   rw [e1.finrank_eq]
 
   have key : ∀ (φ : Z ⟶ Proj (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) k)) [IsAffineHom φ], 𝔓.toProj = φ →
-      Nonempty (↥((OModulePresheaf.ofModules (ι ≫ ProjSpace.π k n) (𝓛.tensorPow d)).H0 (ProjSpace.stdCoverPullback φ)) ≃ₗ[k]
+      Nonempty (↥((OModulePresheaf.ofModules (ι ≫ ProjSpace.π k n) (𝓛.tensorPowFLT d)).H0 (ProjSpace.stdCoverPullback φ)) ≃ₗ[k]
         ↥((ProjSpace.twist (ι ≫ ProjSpace.π k n) φ d).H0 (ProjSpace.stdCoverPullback φ))) := by
     intro φ _ hφ
     subst hφ
     obtain ⟨e, -, hnat, hbij⟩ :=
       Scheme.Modules.ProjPresentation.exists_linearMap_sections_tensorPow_twistObj_monoidalV2 𝔓 d
-    refine H0AB.nonempty_H0_equiv_of_natFamily (F := OModulePresheaf.ofModules _ (𝓛.tensorPow d))
+    refine H0AB.nonempty_H0_equiv_of_natFamily (F := OModulePresheaf.ofModules _ (𝓛.tensorPowFLT d))
       (G := ProjSpace.twist _ 𝔓.toProj d)
       { app := fun U => (e U).toAddMonoidHom
         smul := fun U r x => ?_
@@ -300,7 +300,7 @@ theorem solution
                   (MvPolynomial.isHomogeneous_X_pow i d)⟩
                 den_mem := ⟨d, rfl⟩ })) = 0))
 
-    (𝓛 : Z.Modules) (h𝓛 : Scheme.Modules.IsInvertible 𝓛)
+    (𝓛 : Z.Modules) (h𝓛 : Scheme.Modules.IsInvertibleFLT 𝓛)
     (𝔓 : Scheme.Modules.ProjPresentation 𝓛 (ι ≫ ProjSpace.π k n) n) (h𝔓 : 𝔓.toProj = ι) :
     ∃ d₀ : ℕ, ∀ d : ℕ, d₀ ≤ d →
       Scheme.Modules.geomFibreH0Finrank (ι ≫ ProjSpace.π k n)

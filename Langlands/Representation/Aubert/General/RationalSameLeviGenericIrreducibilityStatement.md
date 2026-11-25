@@ -1,7 +1,5 @@
 # Generic irreducibility of two inductions sharing a standard Levi
 
-Author: Worker 121.
-
 This module states
 `Langlands.Aubert.General.RationalPointFamily.RationalSameLeviGenericInductionIrreducibilityStatement`.
 It provides no proof.

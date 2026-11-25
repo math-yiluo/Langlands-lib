@@ -20,7 +20,7 @@ open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents localCla
   residueCardinality FinitePairFactorChoice)
 open LocalFactor.Archimedean
 open CuspidalPairPoles
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- The body of `CuspidalPairPoleStatement` for one number field `F`. -/
 def CuspidalPairPoleAt (F : Type u) [Field F] [NumberField F]

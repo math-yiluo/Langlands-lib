@@ -137,7 +137,8 @@ theorem classOf_corCSA_baseChange (B : CSA.{u, u} K) :
   rw [hsplit, classOf_piCSA, natCard_algHom_canonicalClosure]
 
 /-- **Corestriction after restriction**: `Cor_{L/K} (Res_{L/K} x) = [L : K] • x` on the actual
-Brauer group, where restriction is Task 7532's actual scalar-extension homomorphism. -/
+Brauer group, where restriction is the actual scalar-extension homomorphism
+`scalarExtension`. -/
 theorem corHom_scalarExtension (x : BrauerGroup.{u, u} K) :
     corHom K L (scalarExtension L x) = finrank K L • x := by
   induction x using Quotient.inductionOn with

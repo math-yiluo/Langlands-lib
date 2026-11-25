@@ -1,7 +1,5 @@
 # All-degree Tate cup normalization, naturality, boundary signs and subgroup laws
 
-Author: Worker 45.
-
 `Langlands.Tate.CupLaws` concerns the constructed product in all integer
 bidegrees over a commutative ring. Its six clauses state:
 

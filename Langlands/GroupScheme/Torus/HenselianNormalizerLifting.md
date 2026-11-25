@@ -101,7 +101,7 @@ residue values. It is defined by classical choice from
 `exists_henselian_normalizer`, without any additional existence hypothesis.
 The choice is not asserted to be canonical or unique.
 
-This unit starts with a normalizing residue point. It does not construct a
+This module starts with a normalizing residue point. It does not construct a
 normalizer lift through a reductive quotient, a Weyl reflection representative,
 or a root-factor decomposition. Those residue geometry and radical comparison
 steps, and the final depth-zero opposite-factor statement, remain separate

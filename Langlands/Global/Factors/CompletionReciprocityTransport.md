@@ -10,9 +10,11 @@ Henniart (2000), §3.8, obtains the properties of the composite map at a p-adic 
 character clauses quantify over geometric reciprocity candidates, so a geometric
 candidate of `K` has to be matched with a geometric candidate of `F_v` along the
 isomorphism `f : K ≅ F_v`. This module proves that matching. It is internal
-infrastructure for the proof tasks of
+infrastructure for the proofs of
 `Langlands.Global.PoleComparison.HenniartCompositeOperationStatement` and
-`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement`. The source has no
+`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement`
+(`henniartCompositeOperation` in `HenniartCompositeOperationProof` and
+`henniartCompositeFactor` in `HenniartCompositeFactorProof`). The source has no
 separate statement of it; the content is the naturality of local reciprocity under
 field isomorphisms.
 
@@ -26,7 +28,7 @@ a commutative group `A`, a homomorphism `ϕ : H →* A` and `g : G`,
 `MonoidHom.transfer ϕ g = ϕ ⟨g, hH g⟩`.
 
 *Proof.* The quotient `G ⧸ H` is a subsingleton, so the constant section `q ↦ 1` is
-a section of `G → G ⧸ H`. The published section formula
+a section of `G → G ⧸ H`. The existing section formula
 `Langlands.GroupTheory.Transfer.transfer_eq_prod_section` writes the transfer as a
 product over `G ⧸ H` of `ϕ ⟨1⁻¹ * g * 1, _⟩`. Mathlib's `Fintype.prod_subsingleton`
 reduces the product to its single factor, and `1⁻¹ * g * 1 = g`.
@@ -42,14 +44,14 @@ every `w` in the local Weil group of `E`
 
 `(reciprocityUnits F eF (extensionWeilEquiv F E g w) : F) = g⁻¹ (reciprocityUnits E eE w : E)`.
 
-Here `extensionWeilEquiv F E g : W_E ≃ₜ* W_F` is the published Weil-group
+Here `extensionWeilEquiv F E g : W_E ≃ₜ* W_F` is the existing Weil-group
 isomorphism of `g`, whose forward map is `extensionWeilMap F E g`.
 
 *Proof.*
 
-1. The published theorem `Langlands.LocalClassField.geometricWeilReciprocityExistenceUniqueness`
+1. The theorem `Langlands.LocalClassField.geometricWeilReciprocityExistenceUniqueness`
    gives a geometric candidate `eF` of `F` for its canonical topology.
-2. The published transfer/inclusion square
+2. The transfer/inclusion square
    `Langlands.LocalClassField.extensionWeilTransferReciprocity` for the embedding
    `g`, the candidates `eF` and `eE`, evaluated at `y = extensionWeilMap F E g w`,
    says: the transfer from `W_F` to the range of `extensionWeilMap F E g` of

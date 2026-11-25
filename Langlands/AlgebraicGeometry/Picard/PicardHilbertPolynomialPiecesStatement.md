@@ -1,9 +1,6 @@
 # Open pieces of invertible modules on a projective flat family, by Hilbert polynomials and vanishing of higher cohomology
 
-Authors: Worker 5705.
-
-Worker 5705 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705), after reading
+The Lean file and this description were written after reading
 pp.27–31 of Kleiman's survey (Theorem 4.8, its proof and Lemma 4.9). The
 proposition isolates the open decomposition of the Picard functor used in that
 proof: the subfunctors `P^φ` (fixed Hilbert polynomial of `L⁻¹`) and
@@ -30,13 +27,13 @@ module `𝓛X : X.Modules`, and assumes
 - `f` is proper (Mathlib's `IsProper`), flat (`Flat`) and geometrically
   integral (`GeometricallyIntegral`: for every field `K` and every
   `Spec K ⟶ S` the fibre product `X ×_S Spec K` is integral);
-- `Scheme.Modules.IsInvertible 𝓛X` and
+- `Scheme.Modules.IsInvertibleFLT 𝓛X` and
   `Scheme.Modules.ClosedImmersionBySections 𝓛X f` (FLT-port definitions:
   `𝓛X` is invertible, and finitely many of its global sections define a
   closed immersion of `X` into a finite projective space over `A`). These are
   exactly the hypotheses on `(f, 𝓛X)` of the divisor-scheme statement
   `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorHilbertPiecesStatement`
-  (a companion statement of Task 5705, staged by Worker 22); `𝓛X` plays the
+  (a companion statement, in the Library); `𝓛X` plays the
   role of Kleiman's `O_X(1)`.
 
 ### Notation
@@ -72,7 +69,7 @@ function `U` assigning to every scheme `T : Scheme.{u}`, every
 `s : T ⟶ S`, every module `L` on `X_T`, every `c : κ` and every `m : ℕ` an
 open subset `U T s L c m : T.Opens`, with the following five properties.
 In all of them `T` (and `T'`) are locally noetherian (Mathlib's
-`IsLocallyNoetherian`) and `L` is invertible (`Scheme.Modules.IsInvertible`);
+`IsLocallyNoetherian`) and `L` is invertible (`Scheme.Modules.IsInvertibleFLT`);
 nothing is asserted about other `T` or `L`.
 
 1. **Invariance under twists from the base.** If `L, L'` on `X_T` and `N` on
@@ -180,12 +177,13 @@ correction of Kleiman's argument, not a statement found in the source.
 - The pieces are given by opens of each locally noetherian base rather than
   as subfunctors of the Picard sheaf; together with properties 1 and 2 they
   define open subfunctors of the Picard sheaf on locally noetherian tests
-  (by Kleiman's p.28 argument). The intended consumer is the assembly of
-  Kleiman's Theorem 4.8(2) in Task 5705, together with the companion
-  statements of that task on the divisor scheme (property 5 is phrased for
+  (by Kleiman's p.28 argument). The consumer is the assembly of
+  Kleiman's Theorem 4.8(2) (`noetherianIntegralFibrePicardSheafAFScheme`, module
+  `NoetherianIntegralFibrePicardSheafAFSchemeProof`), together with the companion
+  statements on the divisor scheme (property 5 is phrased for
   it) and on linear systems, `ProperFlatIntegralLinearSystemStatement`
   (property 4 uses its fibre-cohomology form). These are
-  descriptions of intended use only; this module imports neither.
+  descriptions of that use only; this module imports neither.
 - `κ`, `θ` and `U` are existential: the proposition fixes no particular
   formula for the pieces, only the five properties.
 - Twists are by `m : ℕ` only; this suffices because the pieces increase with

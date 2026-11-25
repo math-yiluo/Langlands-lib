@@ -13,7 +13,7 @@ base-change compatibility for four data attached to special formal modules.
 Registered source: `drinfeld-1976-coverings-p-adic-symmetric-regions`,
 SHA256 `7dd09e1967f46c29195ec87a400e145a17374368fc3b9dd0a782b5b7bfc44e2f`.
 
-The declarations here are derived infrastructure on the published four-data
+The declarations here are derived infrastructure on the four-data
 point model. They use the actual comparisons of `DeligneShiftBaseChange`, the
 arithmetic action of `DeligneShiftReframe`, its DVR specialization in
 `DeligneValuedReframe`, the scalar quotient in `DeligneProjectiveAction`, and the
@@ -35,7 +35,7 @@ discrete valuation domain, F is its fraction field, and pi is irreducible.
 These hypotheses construct the required nonzero scalar and the normalized
 determinant correction. The correcting shift is minus the coefficient order
 of det(g); new degree i is old degree i+k. Frame precomposition follows the
-published right-action convention.
+right-action convention.
 
 The Nilp declarations use the existing category of O-algebras in which pi
 has nilpotent image, its actual contravariant affine scheme map, and the
@@ -59,7 +59,7 @@ arithmetically proved admissibility conditions.
 
 `pullback_normalizedReframe` specializes the corrected-pair equation along
 `normalizedReframeHom`. `pullback_projectiveReframe` uses induction on
-Mathlib's actual PGL quotient. For each matrix representative, the published
+Mathlib's actual PGL quotient. For each matrix representative, the
 representative formula reduces its square to the normalized GL square.
 No new choice of quotient representative or scalar-triviality assumption is
 introduced.
@@ -83,17 +83,19 @@ component comes from the inverse corrected pair. The proved square supplies
 naturality; `NatIso.ofComponents` derives inverse naturality.
 
 `nilpSheafNormalizedReframeAut` specializes this construction to the canonical
-determinant-corrected pair. `nilpSheafProjectiveReframeAut` uses the published
+determinant-corrected pair. `nilpSheafProjectiveReframeAut` uses
 `projectiveReframeEquiv` for each actual projective element and the projective
 Nilp square. The three `*_hom_app` equations identify their forward components
 with exactly the existing corrected, normalized, and projective operations.
 
 ## Scope
 
-This unit constructs natural automorphisms element by element. Packaging their
+This module constructs natural automorphisms element by element. Packaging their
 right-action product laws as homomorphisms to opposite natural automorphism
-groups is a separate step. The imported point model and admissibility
+groups is done separately, in `DeligneNilpAction`. The imported point model and admissibility
 predicate are retained. In particular, the independent comparison of its
-determinant condition with an equality of exterior-power subsheaves remains
-open. This unit asserts no representing or universal object, formal-module
-comparison, representability theorem, or level-covering theorem.
+determinant condition with an equality of exterior-power subsheaves is outside
+this module; `DeligneDeterminantSubsheaf` proves it
+(`determinantSubsheavesNormalized_iff`). This module asserts no representing or
+universal object, formal-module comparison, representability theorem, or
+level-covering theorem.

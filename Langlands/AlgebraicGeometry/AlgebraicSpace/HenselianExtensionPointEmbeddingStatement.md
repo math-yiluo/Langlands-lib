@@ -1,7 +1,5 @@
 # Rational points over an extension of henselian valued fields
 
-Author: Worker 105.
-
 `HenselianExtensionPointEmbeddingStatement` states part (3) of Proposition 5.11 of
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 printed p.18. The registered source is `conrad-2011-weil-grothendieck-adelic-points`,

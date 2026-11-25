@@ -7,8 +7,8 @@ group. The chart calculation works for any ideal `J`. Nilpotence is used
 when passing to a cover of the original base.
 
 Pointwise étale splitting supplies a neighbourhood and a point lying over the
-given point. The refinement `exists_standardEtale_chart`, implemented by
-Worker 312, takes an affine open around that point. The affine étale morphism
+given point. The refinement `exists_standardEtale_chart` takes an affine
+open around that point. The affine étale morphism
 corresponds to an étale algebra, and Mathlib's standard étale localization
 theorem gives a principal open containing the point. Diagonalizability
 persists on the refinement by base change.

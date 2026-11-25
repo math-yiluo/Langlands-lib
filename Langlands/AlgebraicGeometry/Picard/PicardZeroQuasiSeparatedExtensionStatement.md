@@ -42,8 +42,8 @@ hypothesis on `P`, and no assumed `HasDualScheme A`.
 ## Derived provenance
 
 This is the local-to-global interface described in
-`RelativeDualSchemeExistenceStatement.md`, isolated by Worker 402 for the
-relative existence workflow. It concerns extension of a supplied universal
+`RelativeDualSchemeExistenceStatement.md`, isolated as a step of the
+relative existence of the dual scheme. It concerns extension of a supplied universal
 family; it does not construct that family or compare the Library's
 geometric predicate with algebraic equivalence.
 
@@ -81,7 +81,7 @@ to abelian schemes requires a proved applicable global-functions result.
 The source uses `A ×_S T`; the published relative-family definitions
 already account for the swap to `T ×_S A`.
 
-## Remaining proof obligations
+## Proof obligations
 
 A proof must start with an arbitrary test scheme `T` and an actual
 representative of a class in `PicardZeroClasses A T`. Restriction to an
@@ -106,9 +106,7 @@ global-functions input, rather than adding it as a final hypothesis.
 Finally, restriction to the same cover must prove uniqueness of the global
 parameter map. All steps must include nonreduced affine tests.
 
-These are obligations of the exact-target proof successor. No gluing,
-sheaf comparison, existence or global-functions theorem is proved by this
-statement. The parent relative existence target and its imported closure
-are preserved, and the ordinary Picard, field existence, openness,
-relative geometry, ordinary/rigidified comparison and global-functions
-workflows retain their separate ownership and existing pause controls.
+These are obligations of a proof of the statement; the Library proves it as
+`Langlands.AbelianScheme.picardZeroQuasiSeparatedExtension` (module
+`PicardZeroQuasiSeparatedExtensionProof`). No gluing, sheaf comparison,
+existence or global-functions theorem is proved by this statement.

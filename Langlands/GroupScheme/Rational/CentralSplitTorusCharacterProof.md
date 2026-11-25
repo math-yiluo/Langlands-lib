@@ -1,8 +1,5 @@
 # Central split tori detect nonzero rational characters (proof)
 
-Authors: Worker 3873 (earlier named Worker 47) and Worker 4251. Proof for task
-`4f432abe-c26e-45a1-97de-0f87624ccf5b`.
-
 The module proves
 `Langlands.GroupScheme.centralSplitTorusCharacter :
 CentralSplitTorusCharacterStatement.{u}`, the published proposition of
@@ -29,8 +26,7 @@ statement module and its imports are used unchanged.
 - `Langlands.GroupScheme.centralSplitTorusCharacter_of_centralTorusCharacter :
   CentralTorusCharacterStatement.{u} → CentralSplitTorusCharacterStatement.{u}`,
   module `Langlands.GroupScheme.Rational.CentralSplitTorusCharacterReduction`.
-  The shared reduction is integrated once from the independently accepted
-  contributions. Its own Markdown describes its proof. It uses the
+  Its own Markdown describes its proof. It uses the
   published `CocharacterDetection.exists_gm_characterRestrict_ne_zero_of_isTorus`
   (module `Langlands.GroupScheme.Torus.CocharacterDetection`) and
   `IsSplitTorus.exists_factor_isSplitSubtorus` (module
@@ -64,18 +60,17 @@ split subtorus of `G` on which `χ` is nonzero.
 
 The proof assumes no split component, factorization through one, or injectivity
 of character restriction. Step 3 is a proof of `CentralTorusCharacterStatement`,
-but it stays inside this theorem. That target belongs to the separate proof task
-`542b0a39-f8f7-4dcb-aceb-6f050e7c331a`, so it is not exported here. Steps 1–3
-follow the conditional assembly
-`centralTorusCharacter_of_centralDerivedProduct` in that task's shared draft,
-written by Worker 1338 of the previous instance. Worker 3894 pointed out that
-`reductiveCentralTorusSurjectivity` is published, which makes the chain
+but it stays inside this theorem; that statement is exported separately as
+`centralTorusCharacter` in [CentralTorusCharacterProof](CentralTorusCharacterProof.md).
+Steps 1–3 follow the conditional assembly
+`centralTorusCharacter_of_centralDerivedProduct` (module
+`Rational.CharacterRestrictionReduction`). Since
+`reductiveCentralTorusSurjectivity` is published, the chain is
 unconditional.
 
 ## Provenance
 
-The theorem is the published statement. The proof route is internal to this
-task. It goes through the central torus and derived subgroup structure
+The theorem is the published statement. The proof route is internal. It goes through the central torus and derived subgroup structure
 (Milne, *Algebraic Groups* (2017), Propositions 21.60 and 21.61, as recorded in
 the published statement Markdown of `ReductiveCentralDerivedProductStatement`),
 then through a detecting cocharacter and its closed image. It does not use the
@@ -83,10 +78,9 @@ split/anisotropic decomposition of the central torus.
 
 ## Consolidated declarations
 
-Worker 4251's independently accepted helper proved the same two propositions.
-Its central-torus conclusion is available as `centralTorusCharacter` in
-[CentralTorusCharacterProof](CentralTorusCharacterProof.md), and its central
-split-torus conclusion is the `centralSplitTorusCharacter` theorem here. The
+The central-torus statement is available as `centralTorusCharacter` in
+[CentralTorusCharacterProof](CentralTorusCharacterProof.md), and the central
+split-torus statement is the `centralSplitTorusCharacter` theorem here. The
 adelic positive-decomposition proof uses this canonical split-torus theorem.
 Both statements retain their complete arbitrary-field and arbitrary-universe
 scope.

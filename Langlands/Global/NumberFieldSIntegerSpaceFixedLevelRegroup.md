@@ -7,7 +7,7 @@ upper-place indexing and original point topologies.
 Let `L/K` be an extension of number fields, let `S` be a finite set of
 finite places of `K`, and let `T` be an enlarged support containing `S`.
 The upper initial support is the full preimage of `S`, and `upperLevel`
-is the full preimage of `T` viewed above it. `indexEquiv` is the published
+is the full preimage of `T` viewed above it. `indexEquiv` is the existing
 bijection from pairs consisting of a lower `T`-coordinate and an upper
 place above it to the actual upper-level coordinates.
 
@@ -41,9 +41,9 @@ with its inverse. Together with the preceding stage and product component
 formulas, this retains the original local tensor counit maps and original
 level projections.
 
-The provenance is internal composition of the published actual-place
+The provenance is internal composition of the existing actual-place
 reindexing, original fixed-model Weil stage comparisons, and space stage
 coordinate homeomorphisms. Representability and separated finite-type
-geometry of the original Weil model remain explicit inputs. This unit does
+geometry of the original Weil model remain explicit inputs. This module does
 not prove compatibility with the full adelic tensor map, the final topology
 comparison, or independence of arbitrary models.

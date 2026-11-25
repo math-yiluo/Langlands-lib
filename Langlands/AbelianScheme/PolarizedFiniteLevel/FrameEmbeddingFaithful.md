@@ -36,5 +36,5 @@ GIT §7.2, printed p.131 (PDF p.144), registered source
 `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`: "the whole
 structure ... is determined only by (a) the embedding, (b) the 2g + 1 sections", with
 Mumford's identity section and level sections replaced by all torsion sections. Part of
-Task 7811's reduction (`FrameChartRepresentabilityReduction`). What is not proved here: the
+the reduction of `FrameChartRepresentabilityStatement` (`FrameChartRepresentabilityReduction`). What is not proved here: the
 polarization statement itself, which is a named hypothesis.

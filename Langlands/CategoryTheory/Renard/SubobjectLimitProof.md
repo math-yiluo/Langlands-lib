@@ -1,11 +1,8 @@
 # Renard A.IV: subobject intersections and unions as limits and colimits (proof)
 
-Author: Worker 840.
-
 This pair proves the unchanged published proposition
 `Langlands.Renard.SubobjectLimit.SubobjectLimitStatements` from
-[`SubobjectLimitStatements`](SubobjectLimitStatements.md), whose statement
-author is Worker 709.
+[`SubobjectLimitStatements`](SubobjectLimitStatements.md).
 
 Module: `Langlands.CategoryTheory.Renard.SubobjectLimitProof`.
 Namespace: `Langlands.Renard.SubobjectLimit`.
@@ -123,6 +120,5 @@ union. Its colimits are colimits in `Subobject X`, not colimits of
 underlying representatives in `C`. The general cone bridge, indexed
 subobject image sums and the A.VI.2 existence result, conditional
 abelian-category completeness, elementary shapes, ordered systems,
-concrete abelian-group examples and filtered colimits are separate units
-with their own owners. This proof does not complete A.IV, Appendix A or
-the whole-book program.
+concrete abelian-group examples and filtered colimits are separate units.
+This proof does not complete A.IV or Appendix A.

@@ -58,8 +58,9 @@ def leviInductionEndEmbedding (p : P ⟶ G) (l : M ⟶ P) (r : U ⟶ P)
   letI := leviPointTopology l hl
   letI := leviInductionFunctor_faithful.{u, v} p l r hp hr hl hmul
   intro σ
-  exact ⟨fun a => (leviInductionFunctor p l r hp hr hl hmul).map a,
-    (leviInductionFunctor p l r hp hr hl hmul).map_injective⟩
+  exact ⟨fun a => End.of ((leviInductionFunctor p l r hp hr hl hmul).map a.asHom),
+    fun a b h => End.ext ((leviInductionFunctor p l r hp hr hl hmul).map_injective
+      (congrArg End.asHom h))⟩
 
 @[simp]
 theorem leviInductionEndEmbedding_apply (p : P ⟶ G) (l : M ⟶ P) (r : U ⟶ P)
@@ -67,8 +68,8 @@ theorem leviInductionEndEmbedding_apply (p : P ⟶ G) (l : M ⟶ P) (r : U ⟶ P
     (hl : IsRationalLeviSubgroup l) (hmul : IsIso (subgroupMultiplication l r)) :
     letI := leviPointTopology l hl
     ∀ (σ : SmoothRep.{0, u, v} ℂ (rationalPoints M)) (a : End σ),
-      leviInductionEndEmbedding p l r hp hr hl hmul σ a =
-        (leviInductionFunctor p l r hp hr hl hmul).map a := by
+      (leviInductionEndEmbedding p l r hp hr hl hmul σ a).asHom =
+        (leviInductionFunctor p l r hp hr hl hmul).map a.asHom := by
   intros
   rfl
 

@@ -1,16 +1,16 @@
 # The actual conjugate as a presented cuspidal contragredient
 
-Worker 837. Internal comparison helpers for Task 6821.
+Internal comparison helpers for the proof of `CuspidalSelfPairContinuationStatement`.
 
 For a cuspidal realization with unitary central character, the Library provides a
 positive invariant unitary form and joint admissibility. The latter follows from
-the proved adelic `GL_n` Siegel finiteness theorem. The published criterion
+the proved adelic `GL_n` Siegel finiteness theorem. The Library criterion
 `OperatorRealization.isContragredientOf_of_unitaryForm` applies to the actual
 antilinear conjugation map, which commutes with the finite, compact and real Lie
 actions. Thus the pointwise-conjugate realization is a full-operator
 contragredient of the original.
 
-The published `cuspidalDualPresentationExistence` supplies a spectral presentation
+The Library's `cuspidalDualPresentationExistence` supplies a spectral presentation
 of this specified conjugate realization, in the same factor universe as a
 supplied presentation of the original. Both universe parameters are retained.
 `PresentedConjugateContragredientStatement` records these two consequences, and

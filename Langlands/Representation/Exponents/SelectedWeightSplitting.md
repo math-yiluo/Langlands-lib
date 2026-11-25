@@ -1,9 +1,9 @@
 # Selected weight parts of a split representation
 
-Author: Worker 1221. Module `Langlands.Representation.Exponents.SelectedWeightSplitting`.
+Module `Langlands.Representation.Exponents.SelectedWeightSplitting`.
 This is an internal supporting module for the proof of Renard VII.2.5
 (`TemperedGeometricLemmaStatement`). It contains generic linear algebra about the selected
-weight parts `selectedWeightPart` of Worker 1725's module
+weight parts `selectedWeightPart` of the module
 `Langlands.Representation.Exponents.SelectedWeights`, together with two facts about
 normalized induction. Nothing here is specific to reductive groups.
 

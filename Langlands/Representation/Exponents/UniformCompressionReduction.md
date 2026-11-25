@@ -1,11 +1,11 @@
 # Exact qualitative reduction for dynamic-parabolic compression
 
-Worker 1751. This internal reduction compares the existing Library proposition
-`UniformCompressionStabilizationStatement.{u,v}` with the new qualitative
+This internal reduction compares the Library proposition
+`UniformCompressionStabilizationStatement.{u,v}` with the qualitative
 `PointwiseCompressionStabilizationStatement.{u,v}`. It proves their equivalence
 and establishes neither proposition unconditionally.
 
-The new statement repeats exactly the original geometric context: a connected
+The qualitative statement repeats exactly the geometric context of the uniform one: a connected
 reductive group scheme over a nonarchimedean local field, actual rational-point
 topology, local compactness and the nonarchimedean group condition, the dynamic
 parabolic of a cocharacter, a compact open subgroup, and a group element central

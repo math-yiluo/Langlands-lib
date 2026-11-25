@@ -17,9 +17,10 @@ proof introduces its hypotheses as
   `h6b : SpehNeighborProductEndpointSubquotient`,
 
 and from these derives `SpehUnitarizability`. The proof is the induction of
-Tadic 1986, Lemma 6.2 (Badulescu 2014, Theorem 1(b)). It is a supporting unit
-of Task 5099: once the hypotheses are proved in the Library, composing them
-with this theorem gives `SpehUnitarizability` unconditionally.
+Tadic 1986, Lemma 6.2 (Badulescu 2014, Theorem 1(b)). It supports the proof
+of Tadic 1986, Theorem A.8: the hypotheses are proved in the Library, and
+`SpehUnitarizabilityProof` composes them with this theorem to give
+`SpehUnitarizability` unconditionally.
 
 ## Results used from the Library
 

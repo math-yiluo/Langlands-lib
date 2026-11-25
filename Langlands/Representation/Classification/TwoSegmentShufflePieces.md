@@ -1,8 +1,6 @@
 # Surviving geometric pieces for two segment socles
 
-Author: Worker 1142.
-
-This internal supporting unit computes the surviving geometric pieces of the
+This internal supporting module computes the surviving geometric pieces of the
 uniform Jacquet module of a product of segment subrepresentations on one cuspidal
 line. These are the pieces of step 3 in the route for
 `Langlands.Classification.TwoSegmentSocleShuffleJacquet` (Zelevinsky 1980, 1.6 with
@@ -12,7 +10,7 @@ line. These are the pieces of step 3 in the route for
 h31 : SegmentSubrepresentationFullJacquet.{uF, uV} F T.
 ```
 
-This unit proves neither 3.1 nor the shuffle Jacquet formula. It contains no
+This module proves neither 3.1 nor the shuffle Jacquet formula. It contains no
 geometric-lemma filtration, no vanishing assertion and no counting. All
 declarations are in `Langlands.Classification.TwoSegmentShuffle`. They are
 stated for `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData)`
@@ -131,7 +129,7 @@ repeated or linked.
 
 ## Provenance and dependency audit
 
-The provenance is internal. The unit is coordinate and representation algebra
+The provenance is internal. The module is coordinate and representation algebra
 over the published inputs below, conditional on Zelevinsky 1980, 3.1 (printed
 pp. 180–181), which enters only as the hypothesis `h31`. The surviving-piece
 identification follows the description of the geometric lemma in Zelevinsky
@@ -139,12 +137,12 @@ identification follows the description of the geometric lemma in Zelevinsky
 
 | Input | Origin and role | Independence |
 | --- | --- | --- |
-| `SegmentSubrepresentationFullJacquet` | Statement module `Classification.SegmentFullJacquetStatement` (statement task ed48ae06-964c-4c84-9e62-978f5a953ca7). Only the proposition, as hypothesis `h31`. | A `Prop` definition. Its proof task b331611c-526d-4925-87fe-ea67ed6e6fed is the intended input of the parent task. |
-| `JuxtaposedShuffle.nonempty_cast_iso` | Supporting unit `Classification.JuxtaposedRefinementTools`, published under task 0c90f7e4-78fa-43fd-8736-238bb3e8617d. Twist composition and supercuspidal-class transport. | It imports only `Segments`, `Parabolic.OrderedProductRegroupingProof` and `CuspidalSupport.MinimalJacquetProof`. It is not the exact proof of `JuxtaposedSegmentSocleReverseProductStructure` and assumes none of its conclusions. |
-| `refinementTargetIndex`, `source_size_eq_of_dvd`, `conjugatesLevi_flatten_uniform`, `refinementShuffle`, `shuffleExponent_refinementTargetIndex_zero/one`, `uniformRefinementTensorEquiv` | Worker 167's finite supporting units `UniformRefinementCoordinates`, `UniformRefinementCombinatorics`, `UniformRefinementShuffleRealization`, `UniformRefinementLeviTransport`, `TwoSourceShuffleLabels` and `UniformTargetBlockLabels`, published under task 0c90f7e4. Coordinates, labels, conjugacy and the tensor transport. | Finite coordinate and tensor algebra from explicit intersection, divisibility and minimality hypotheses. No Jacquet formula is assumed. They import the target statement module only for the definition of `shuffleExponent`. |
-| `wholeLeviGeometricPieceEquiv` | `Geometric.WholeLeviPieceTransport` (task 66ee5306-1968-41ce-90ce-88486e2a8c3f). The piece is a transported refined Jacquet module. | Unwinds the definition of `geometricPieceFunctor` and needs no cuspidality or vanishing premise. It imports `SegmentEdgeJacquetReduction`, a supporting unit of the intended input task b331611c, which assumes no excluded result. |
+| `SegmentSubrepresentationFullJacquet` | Statement module `Classification.SegmentFullJacquetStatement`. Only the proposition, as hypothesis `h31`. | A `Prop` definition. It is proved in `Classification.SegmentFullJacquetProof` (first component of `segmentFullJacquetFormula`), which `TwoSegmentSocleShuffleJacquetProof` uses to discharge `h31`. |
+| `JuxtaposedShuffle.nonempty_cast_iso` | Supporting module `Classification.JuxtaposedRefinementTools`. Twist composition and supercuspidal-class transport. | It imports only `Segments`, `Parabolic.OrderedProductRegroupingProof` and `CuspidalSupport.MinimalJacquetProof`. It is not the exact proof of `JuxtaposedSegmentSocleReverseProductStructure` and assumes none of its conclusions. |
+| `refinementTargetIndex`, `source_size_eq_of_dvd`, `conjugatesLevi_flatten_uniform`, `refinementShuffle`, `shuffleExponent_refinementTargetIndex_zero/one`, `uniformRefinementTensorEquiv` | The finite supporting modules `UniformRefinementCoordinates`, `UniformRefinementCombinatorics`, `UniformRefinementShuffleRealization`, `UniformRefinementLeviTransport`, `TwoSourceShuffleLabels` and `UniformTargetBlockLabels`. Coordinates, labels, conjugacy and the tensor transport. | Finite coordinate and tensor algebra from explicit intersection, divisibility and minimality hypotheses. No Jacquet formula is assumed. They import the target statement module only for the definition of `shuffleExponent`. |
+| `wholeLeviGeometricPieceEquiv` | `Geometric.WholeLeviPieceTransport`. The piece is a transported refined Jacquet module. | Unwinds the definition of `geometricPieceFunctor` and needs no cuspidality or vanishing premise. It imports `SegmentEdgeJacquetReduction`, a supporting module of the proof of `SegmentSubrepresentationFullJacquet`, which assumes none of the results listed below. |
 | `RefinedJacquetTensor.jacquetEquiv`, `FiniteTensorFiltration.externalCongr/compCongr`, `flattenedLeviEquiv`, `flattenedLeviProductEquiv`, `refinedLeviEquiv` | `Parabolic.RefinedJacquetTensor`, `Tensor.ProductFiltration`, `Geometric.FlattenedLevi`. | Coinvariant and tensor algebra and product reindexing. |
-| `CuspidalSupport.transportEquiv` | `CuspidalSupport.LeviAssociation` (task 53969569-6b54-45b3-a1f8-89f1fe96a1f8). Transport of an equivalence along a Levi conjugation. | Uses the same linear equivalence. The association theorems of the module are not used. |
+| `CuspidalSupport.transportEquiv` | `CuspidalSupport.LeviAssociation`. Transport of an equivalence along a Levi conjugation. | Uses the same linear equivalence. The association theorems of the module are not used. |
 | `IsSegmentSocle.isSegmentSubrepresentation`, `segmentFactor` | `Classification.Segments`. | Definitions and a direct consequence of them. |
 
 The recursive project import closure has 181 modules. Its `Classification`
@@ -162,13 +160,15 @@ proposition, not a proof), `TwoSourceShuffleLabels`,
 intersections), `Induction`, `Parabolic`, `Smooth`, `Twist` and
 `LocalField.Normalization` results.
 
-The closure contains no statement or proof of any exclusion of the parent task.
+The closure contains no statement or proof of any of the later results that the
+proof of `TwoSegmentSocleShuffleJacquet` does not use.
 That covers the reverse-product structure theorems (juxtaposed, linked and the
 quotient-Hom), linked pair reducibility, `SegmentSocleProductIrreducibility`,
 `AdjacentUnlinkedSegmentSocleSwap`, `TwoSegmentSocleCommutation`,
 `LinkedSegmentSocleGluing`, `OrderedMultisegmentSocleExistence`, the exhaustion
 and coverage results, tempered block uniqueness,
 `SquareIntegrableLanglandsClassification`, `SegmentHeadProductIrreducibility`
-and derivatives. The units published under task 0c90f7e4 are its finite
-supporting infrastructure, not its exact proof. Since they do not import this
-unit, there is no circularity.
+and derivatives. `JuxtaposedRefinementTools` and the finite modules listed above
+are finite supporting infrastructure of
+`JuxtaposedSegmentSocleReverseProductStructure`, not its exact proof. Since they
+do not import this module, there is no circularity.

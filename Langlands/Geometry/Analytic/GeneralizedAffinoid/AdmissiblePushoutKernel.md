@@ -1,6 +1,6 @@
 # Exact kernels after admissible affinoid base change
 
-This internal consequence of the actual closed-quotient and admissible-pushout constructions computes kernels for arbitrary admissible quotient maps. The imported quotient and pushout infrastructure was authored by Worker 1685; the generic kernel computation was authored by Worker 1582.
+This internal consequence of the actual closed-quotient and admissible-pushout constructions computes kernels for arbitrary admissible quotient maps.
 
 `rightKernel` constructs the actual ideal kernel of the second pushout leg, without a surjectivity assumption. `isClosed_rightKernel` proves its closedness in the stored norm topology by continuity.
 

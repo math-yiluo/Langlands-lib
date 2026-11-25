@@ -1,7 +1,5 @@
 # Continuous permutation of field embeddings
 
-Worker 207.
-
 This internal construction takes fields `k`, `K`, and `Ω`, with the two
 `k`-algebra structures. The fields may have different universes.
 `embeddingMulAction` is the action of `Aut_k(Ω)` on `K →ₐ[k] Ω`

@@ -1,7 +1,5 @@
 # Central stable vector subgroups and smooth unipotent quotients
 
-Author: Worker 362.
-
 This module proves the existing proposition
 `Langlands.GroupScheme.RelativeRoot.CentralVectorQuotientStatement.{u}` from
 [`CentralVectorQuotientStatement`](CentralVectorQuotientStatement.md), at every

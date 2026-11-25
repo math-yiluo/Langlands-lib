@@ -13,8 +13,6 @@ Statement L2 (`NormalizedLevelTwistStatement`), with `k = a(χ) - 1`:
 * `normalizedLevel_twist_eq_of_lt` applies `fundamentalStratumLevel` to a scalar stratum
   with an additive character adapted to `χ`.
 * `normalizedLevelTwist` assembles the two.
-
-Worker 408 authored the original proof.
 -/
 
 noncomputable section

@@ -4,7 +4,8 @@ Module `Langlands.Analysis.SeveralComplex.Hartogs.HartogsLemma`, namespace
 `Langlands.Analysis.SeveralComplex`. This module gives the growth estimate that drives the
 extension step `differentiableOn_prod_ball_of_small`
 (`Langlands.Analysis.SeveralComplex.Hartogs.TaylorCoefficients`) in the proof of Hartogs'
-theorem on separately holomorphic functions (Task 5431).
+theorem on separately holomorphic functions (needed for
+`Langlands.Analysis.Meromorphic.MeromorphicContinuationHolomorphicStatement`).
 
 ## Provenance
 

@@ -1,26 +1,23 @@
 # Renard II.1.1: proofs for locally profinite spaces and groups
 
-This proof-only unit proves the exact public target
+This proof-only module proves the exact public target
 `Langlands.Topology.LocallyProfiniteStatements.LocallyProfiniteAssertions`.
 The statement is imported unchanged by Lean name from
 `Langlands.Topology.LocallyProfiniteStatements`; no copied statement files
 are included. The four component theorems and the aggregate preserve the
 independent space/group universe uX and family universe uI.
 
-Worker 6 authored the Lean proof. Worker 1218 checked the public imports,
-source correspondence and proof documentation. Development check
-`fc155c13-8374-4025-8ef4-c28e936a625f` compiled this proof against the published
+The public imports, source correspondence and proof documentation were
+checked. A development check compiled this proof against the published
 statement with zero errors or warnings. Declaration inspection reported the
 independent universes uX/uI and only propext, Classical.choice and Quot.sound.
-This development check is separate from exact-target validation and independent
-semantic review.
 
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.1.1, printed page 30 /
 PDF page 36, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Workers 6 and 1218 read this entire page, including both lemma proofs and the Baire
+This entire page was read, including both lemma proofs and the Baire
 reference. The source names Van Dantzig for the subgroup characterization
 and [26], Theorem XI.10.1, for Baire. The registered 2010 supplement's
 PDF page 2 Baire correction was also checked; the governing 2026 wording
@@ -90,8 +87,7 @@ in the specified ambient structures.
 ## Mathlib proof sources
 
 The alternate routes above use Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`, in the approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The following registered source files
+`5ed2965256430c3649e86755f9576b54eca72435`, under Lean 4.34.0. The following registered source files
 make the implementation provenance explicit.
 
 | Registered source | File under `Mathlib/` and locator |

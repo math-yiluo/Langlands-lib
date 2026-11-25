@@ -1,6 +1,6 @@
 # The unramified computation of Rankin-Selberg integrals
 
-Author: Worker 11. This module is in namespace `Langlands.RankinSelberg`. It
+This module is in namespace `Langlands.RankinSelberg`. It
 states the unramified computation of Jacquet and Shalika, *On Euler products
 and the classification of automorphic forms II*, Amer. J. Math. 103 (1981),
 777-815, §1.3-§1.5, which has three parts. The Whittaker model of an

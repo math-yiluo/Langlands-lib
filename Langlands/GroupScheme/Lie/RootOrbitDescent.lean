@@ -108,7 +108,7 @@ local notation "j_L" => CategoryTheory.Functor.map (GroupScheme.baseChange b) j
 local notation "T_L" => CategoryTheory.Functor.obj (CommGroupScheme.baseChange b) T
 local notation "G_L" => CategoryTheory.Functor.obj (GroupScheme.baseChange b) G
 
-local instance : IsAffineHom (G_L).X.hom := by
+private local instance : IsAffineHom (G_L).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom b)
   infer_instance
 

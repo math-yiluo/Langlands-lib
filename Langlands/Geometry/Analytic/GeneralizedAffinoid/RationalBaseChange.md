@@ -1,7 +1,5 @@
 # Bounded coefficient base change of weighted rational quotients
 
-Author: Worker 56.
-
 This module constructs the bounded pushout for an arbitrary bounded change of
 coefficient algebra with matched rational presentation classes. Under source
 unit-ideal generation, it also constructs the topological pullback of the

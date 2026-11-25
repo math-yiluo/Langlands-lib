@@ -1,6 +1,6 @@
 # Disjoint sums of actual atlas nets
 
-Author: Worker 56. Internal construction from the existing net and embedding
+Internal construction from the existing net and embedding
 APIs. Work in the actual topological sigma space of a family of spaces, with
 independent component and index universes. The component families may have
 overlapping members and may contain empty members.

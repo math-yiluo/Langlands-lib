@@ -1,9 +1,9 @@
 # Restricted standard decompositions inside rational-point Levis
 
-Worker 165 supplies this internal adapter to the existing actual standard
+This file is an internal adapter to the existing actual standard
 subgroup family. Its only structural assertion is the explicitly supplied
 `GroupScheme.StandardLeviIntersectionStatement`; this file does not prove that
-assertion or change its status in the general reductive-group program.
+assertion.
 
 `IsSemidirectDecomposition.subgroupOf` is a group-theoretic transfer. If
 `P = M ⋉ U` in a group `H` and `P ≤ L`, the same three subgroups, read inside
@@ -51,10 +51,10 @@ Weyl conjugation, unipotent product formula or representation-theoretic
 identity is proved. In particular the second conjunct of the shared
 intersection statement is unused. No characteristic, splitness of `G`,
 quasisplitness, positive-rank or nonempty-root assumption is imposed.
-The shared structural premise remains an obligation; this adapter does not
-classify it as an allowed final external input.
+The shared structural premise is a hypothesis here; the Library proves it as
+`standardLeviIntersection` in `GroupScheme/Rational/StandardLeviIntersectionProof`.
 
-The provenance is internal. The contribution follows by evaluation of the
+The provenance is internal. The file's results follow by evaluation of the
 existing shared statement and elementary subgroup restriction, with the
 existing projection and complement characterizations. The source and
 derived-formulation discussion for the structural assertion remains in

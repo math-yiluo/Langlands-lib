@@ -1,7 +1,5 @@
 # Proof of Levi sharp transport from membership in an unramified apartment
 
-Author: Worker 118.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedLeviSharpApartmentTransportProof`.
 
 The theorem `Langlands.Geometry.Building.unramifiedLeviSharpApartmentTransport` proves

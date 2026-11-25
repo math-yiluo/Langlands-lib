@@ -37,7 +37,7 @@ specialized to the measure `unitaryHaar n`. The pieces are as follows.
   `U(n)`-invariant and equal to `1` on `U(n)`, and it transforms under the upper triangular Borel
   subgroup by `∏ |χᵢ(aᵢ)|²`. On `U(n)` the integrand `f h` is `|h|²`. By the Iwasawa
   decomposition, `h` does not vanish identically on `U(n)`, so `Q(f, h) > 0`.
-- **`𝔤`-invariance** (`ComplexDuality.LieInvariance`, contributed by Worker 28). Let `Φ` be
+- **`𝔤`-invariance** (`ComplexDuality.LieInvariance`). Let `Φ` be
   the product of the extensions of `f` and `h` to all matrices. It is smooth on the invertible
   matrices, invariant on the left under the upper unipotent group, and it transforms on the left
   under the diagonal torus by `∏ᵢ |aᵢ|^{2(n-1-2i)}` (the modulus character of the Borel

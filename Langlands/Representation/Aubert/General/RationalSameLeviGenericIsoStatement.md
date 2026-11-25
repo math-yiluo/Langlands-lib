@@ -1,6 +1,6 @@
 # Generic isomorphism of inductions from parabolics sharing a standard Levi
 
-Author: Worker 60. This module states one proposition,
+This module states one proposition,
 `RationalSameLeviGenericInductionIsoStatement`. It supplies no proof.
 
 ## Statement
@@ -59,9 +59,9 @@ irreducible `σ`, generic irreducibility of the induced representations
 isomorphisms off a proper Zariski-closed subset. The public
 [Waldspurger source map](../../../../notes/plancherel/waldspurger-source-map.md)
 records this theory: rows IV.1, Thm IV.1.1 and IV.3, and Sauvageot's
-generic-irreducibility citation at IV.3, p.285. Worker 60 did not reread
-those printed passages for this statement, and has not checked their
-characteristic hypotheses. The formulation here is derived, not quoted. It
+generic-irreducibility citation at IV.3, p.285. Those printed passages were
+not reread for this statement, and their characteristic hypotheses were not
+checked. The formulation here is derived, not quoted. It
 keeps the full scope of the target `RationalInducedK0WeylConjugacyStatement`,
 whose positive-characteristic case presupposes the corresponding theory.
 

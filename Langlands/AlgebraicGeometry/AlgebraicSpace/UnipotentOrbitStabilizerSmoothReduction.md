@@ -1,7 +1,5 @@
 # Smooth stabilizers of unipotent actions, from SGA 3 VI_B 4.4 and Milne 14.15
 
-Author: Worker 4246.
-
 This module proves that the published
 `Langlands.AlgebraicGeometry.AlgebraicSpace.UnipotentOrbitStabilizerSmoothStatement.{u}`
 follows from two published statements:

@@ -48,8 +48,9 @@ Finally, `nonnegative_generator_le_dynamicParabolic` and
 `zero_generator_le_dynamicCentralizer` convert the intrinsic support bound of
 each admissible semigroup generator to its tangent bound using the published
 split-torus support theorem, and apply the containment results. These are the
-reverse-inclusion ingredients for the host's three-part comparison. This unit
-does not yet assert the lower inclusions or the full comparison.
+reverse-inclusion ingredients for the three-part comparison
+`DynamicSemigroupComparisonStatement` (proved in `Rational.DynamicSemigroupProof`).
+This module does not assert the lower inclusions or the full comparison.
 
 The provenance is internal: the constructions combine the published represented
 action, closed equivariant reflection, actual Dynamic smoothness and Lie image,

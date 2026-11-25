@@ -25,22 +25,23 @@ theorem finiteOrder_of_integral_conjugate_power {S : Scheme} {A B : AbelianSchem
     (r : Rationalization.of B ≅ Rationalization.of A)
     (a : Aut (Rationalization.of A)) (k : ℕ) (hk : 0 < k)
     (g : Aut B)
-    (hg : Rationalization.ofHom g.hom = r.hom ≫ (a ^ k).hom ≫ r.inv)
+    (hg : Rationalization.ofHom g.asIso.hom = r.hom ≫ (a ^ k).asIso.hom ≫ r.inv)
     (hfin : IsOfFinOrder g) :
-    let f : End0 A := a.hom
+    let f : End0 A := CategoryTheory.End.of a.asIso.hom
     IsOfFinOrder f := by
-  let f : End0 A := a.hom
+  let f : End0 A := CategoryTheory.End.of a.asIso.hom
   change IsOfFinOrder f
   let φ : Aut B →* End0 B :=
-    ((rationalization S).mapEnd B).comp (Aut.toEnd B)
+    ((rationalization S).mapEnd B).comp (Aut.toEnd (X := B))
   have hfinR : IsOfFinOrder (φ g) := by
     obtain ⟨d, hd, hgd⟩ := hfin.exists_pow_eq_one
     refine isOfFinOrder_iff_pow_eq_one.mpr ⟨d, hd, ?_⟩
     rw [← map_pow, hgd, map_one]
-  have hpow : (a ^ k).hom = f ^ k :=
-    map_pow (Aut.toEnd _) a k
+  have hpow : (a ^ k).asIso.hom = (f ^ k).asHom :=
+    congrArg CategoryTheory.End.asHom (map_pow Aut.toEnd a k)
   have hc : φ g = r.symm.conj (f ^ k) := by
-    change Rationalization.ofHom g.hom = r.hom ≫ _ ≫ r.inv
+    apply CategoryTheory.End.ext
+    change Rationalization.ofHom g.asIso.hom = r.hom ≫ (f ^ k).asHom ≫ r.inv
     rw [← hpow]
     exact hg
   have hfinPow : IsOfFinOrder (f ^ k) := by
@@ -102,19 +103,19 @@ def PolarizedIntegralPowerModelWitness :
   let := auxiliaryStarRing D C
   intro q e
   let u : Aut (Rationalization.of X.actionObj.abelianScheme) :=
-    RationalAlgebraAction.underlyingIso e
+    Aut.of (RationalAlgebraAction.underlyingIso e)
   exact ∃ (eta : Frame) (m : ℕ), 0 < m ∧ q ^ (2 * m) = 1 ∧
     ∃ (B : AbelianScheme (Spec (CommRingCat.of Ω)))
       (r : Rationalization.of B ≅ Rationalization.of X.actionObj.abelianScheme)
       (g : Aut B) (W : DualWitness B) (lam : B ⟶ W.dual P),
       W.IsPolarization P lam ∧
-      g.hom ≫ lam ≫ W.map P W g.hom = lam ∧
+      g.asIso.hom ≫ lam ≫ W.map P W g.asIso.hom = lam ∧
       (∀ w : Rat, w ∈ lattice eta ↔
         ∃ x : GroupScheme.Tate.Full B.toGrp (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))),
           rationalHomMap (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) (fun _ => True) r.hom
             (GroupScheme.Tate.toRational B.toGrp (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) (fun _ => True) x) = w) ∧
-      Rationalization.ofHom g.hom = r.hom ≫ (u ^ (2 * m)).hom ≫ r.inv ∧
-      Rationalization.ofHom g.inv = r.hom ≫ (u ^ (2 * m)).inv ≫ r.inv
+      Rationalization.ofHom g.asIso.hom = r.hom ≫ (u ^ (2 * m)).asIso.hom ≫ r.inv ∧
+      Rationalization.ofHom g.asIso.inv = r.hom ≫ (u ^ (2 * m)).asIso.inv ≫ r.inv
 
 variable
   [hμfin : ∀ k : Index (fun _ => True), IsFinite (mu (Spec (CommRingCat.of Ω)) k.val).X.hom]
@@ -158,8 +159,8 @@ theorem polarizedIntegralPowerModelWitness_of_levelIso_fixed (U : HarrisLevel D)
     (p := 𝟙 (Spec (CommRingCat.of Ω)))
   have hpres := PolarizedWeilLevel.integralPolarizedPowerModel
     P additivity hu X B r W (𝟙 (Spec (CommRingCat.of Ω)))
-    q e he (2 * m) hq g hg
-  refine ⟨eta, m, hm, hq, B, r, g, W, Y.polarization, hpres.1, ?_, hr, hg, hgi⟩
+    q (Aut.of e) he (2 * m) hq g hg
+  refine ⟨eta, m, hm, hq, B, r, Aut.of g, W, Y.polarization, hpres.1, ?_, hr, hg, hgi⟩
   exact hpres.2
 
 omit [IsScalarTower ℚ F A] [IsAlgClosed Ω] [CharZero Ω] hμfin hμet in
@@ -168,17 +169,17 @@ its finite-order consequence transfers to the original rational self-isogeny. -/
 theorem finiteOrder_of_polarizedIntegralPowerModelWitness
     (hfinite : ∀ (B : AbelianScheme (Spec (CommRingCat.of Ω)))
       (W : DualWitness B) (lam : B ⟶ W.dual P), W.IsPolarization P lam →
-        ∀ g : Aut B, g.hom ≫ lam ≫ W.map P W g.hom = lam → IsOfFinOrder g) :
+        ∀ g : Aut B, g.asIso.hom ≫ lam ≫ W.map P W g.asIso.hom = lam → IsOfFinOrder g) :
     letI := auxiliaryStarRing D C
     ∀ (q : ℚˣ) (e : X.actionObj ≅ X.actionObj),
       PolarizedIntegralPowerModelWitness D C P compatibility h Ω X q e →
-        (let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
+        (let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
          IsOfFinOrder f) := by
   let := auxiliaryStarRing D C
   intro q e hw
   obtain ⟨eta, m, hm, hq, B, r, g, W, lam, hpol, hpres, hr, hg, hgi⟩ := hw
   exact finiteOrder_of_integral_conjugate_power r
-    (RationalAlgebraAction.underlyingIso e) (2 * m) (Nat.mul_pos (by decide) hm)
+    (Aut.of (RationalAlgebraAction.underlyingIso e)) (2 * m) (Nat.mul_pos (by decide) hm)
     g hg (hfinite B W lam hpol g hpres)
 
 end Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel

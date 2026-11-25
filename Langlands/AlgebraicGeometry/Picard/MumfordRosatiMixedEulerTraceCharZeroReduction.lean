@@ -44,6 +44,8 @@ theorem trace_rationalMap_mem_range
           Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) 2 (n • 𝟙 A + α) := by
       rw [← rationalEndAction_homToHom0 A 2 (n • 𝟙 A + α), map_add homToHom0,
         map_nsmul homToHom0, homToHom0_id,
+        show (CategoryTheory.End.of (n • id0 A + homToHom0 α) : End0 A) =
+          n • CategoryTheory.End.of (id0 A) + CategoryTheory.End.of (homToHom0 α) from rfl,
         map_add (Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) 2 A),
         map_nsmul (Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) 2 A),
         rationalEndAction_homToHom0, Algebra.algebraMap_eq_smul_one, Nat.cast_smul_eq_nsmul]
@@ -66,10 +68,10 @@ theorem primeEndomorphismTrace_mem_range
     (hS1 : IsogenyDegreeTateDeterminantCharZeroStatement.{u})
     [IsAlgClosed k] [CharZero k] (g : ℕ) (hA : A.HasRelativeDimension g) (a : End0 A) :
     primeEndomorphismTrace A 2 a ∈ Set.range (algebraMap ℚ ℚ_[2]) := by
-  obtain ⟨N, hN, α, hα⟩ := Rationalization.exists_integral_multiple a
+  obtain ⟨N, hN, α, hα⟩ := Rationalization.exists_integral_multiple a.asHom
   obtain ⟨q, hq⟩ := trace_rationalMap_mem_range A hS1 g hA α
-  have hα' : homToHom0 α = N • a := hα
-  have htr : primeEndomorphismTrace A 2 (homToHom0 α) =
+  have hα' : (CategoryTheory.End.of (homToHom0 α) : End0 A) = N • a := CategoryTheory.End.ext hα
+  have htr : primeEndomorphismTrace A 2 (CategoryTheory.End.of (homToHom0 α)) =
       (N : ℚ_[2]) * primeEndomorphismTrace A 2 a := by
     rw [hα', map_zsmul, zsmul_eq_mul]
   rw [primeEndomorphismTrace_eq, rationalEndAction_homToHom0, ← hq] at htr
@@ -131,7 +133,8 @@ theorem key_identity (hS1 : IsogenyDegreeTateDeterminantCharZeroStatement.{u})
       algebraMap ℚ ℚ_[2] ((coherentEulerPolynomial A.X.hom
         ((LineBundle.pullback (hom f)).obj L).obj (hasFiniteAffineSections_lineBundle _)
           L g).coeff g) *
-        primeEndomorphismTrace A 2 (involution P W hadd lam (homToHom0 f) * endToEnd0 A f) := by
+        primeEndomorphismTrace A 2 (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+          endToEnd0 A (CategoryTheory.End.of f)) := by
   obtain ⟨hfin, hrank⟩ := rational_two_finrank A g hA
   obtain ⟨N, μ, hNpos, hμ, hμiso⟩ := exists_integral_inverse P W lam
   have hn₀ := hS2 P k A W lam L B evaluationB M evaluation hL hpres f
@@ -150,7 +153,8 @@ theorem key_identity (hS1 : IsogenyDegreeTateDeterminantCharZeroStatement.{u})
         (hasFiniteAffineSections_lineBundle _) L g).map (algebraMap ℚ ℚ_[2])) ^ 2 =
       C ((N : ℚ_[2]) ^ (2 * g)) * LinearMap.charpoly
         (-Tate.PrimeAdic.rationalEndAction (Over.mk (𝟙 _)) 2 A
-          (involution P W hadd lam (homToHom0 f) * endToEnd0 A f)) := by
+          (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+            endToEnd0 A (CategoryTheory.End.of f))) := by
     apply Polynomial.eq_of_infinite_eval_eq
     apply Set.infinite_of_injective_forall_mem
       (f := fun m : ℕ => ((n₀ + m : ℕ) : ℚ_[2]))
@@ -211,10 +215,11 @@ theorem mumfordMixedEulerTraceCharZeroReduction :
   obtain ⟨-, htopf, hmixf⟩ := euler_facts A.X.hom g hA L ((LineBundle.pullback (hom f)).obj L)
   obtain ⟨-, htop1, hmix1⟩ :=
     euler_facts A.X.hom g hA L ((LineBundle.pullback (hom (𝟙 A))).obj L)
-  have hβ1 : involution P W hadd lam (homToHom0 (𝟙 A)) * endToEnd0 A (𝟙 A) = 1 := by
-    rw [show endToEnd0 A (𝟙 A) = 1 from map_one (endToEnd0 A), mul_one, homToHom0_id,
-      involution_apply]
-    have hd : W.dual0 P hadd (id0 A) = id0 (W.dual P) :=
+  have hβ1 : involution P W hadd lam (CategoryTheory.End.of (homToHom0 (𝟙 A))) *
+      endToEnd0 A (CategoryTheory.End.of (𝟙 A)) = 1 := by
+    rw [show endToEnd0 A (CategoryTheory.End.of (𝟙 A)) = 1 from map_one (endToEnd0 A), mul_one,
+      homToHom0_id, involution_apply]
+    have hd : (W.dual0 P hadd (CategoryTheory.End.of (id0 A))).asHom = id0 (W.dual P) :=
       dualHom0_id _ _ _ _ _ _ _ _ _ _ _ hadd
     rw [hd, comp0_id0, polarization_comp_inverse]
     rfl
@@ -238,9 +243,11 @@ theorem mumfordMixedEulerTraceCharZeroReduction :
     linarith
   rw [traceForm_apply, geometricEndomorphismTrace_mul_comm A, hmixf, hp, sub_zero]
   have htr := algebraMap_geometricEndomorphismTrace A hS1 g hA
-    (involution P W hadd lam (homToHom0 f) * endToEnd0 A f)
+    (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+      endToEnd0 A (CategoryTheory.End.of f))
   have key : algebraMap ℚ ℚ_[2] (geometricEndomorphismTrace A
-      (involution P W hadd lam (homToHom0 f) * endToEnd0 A f) *
+      (involution P W hadd lam (CategoryTheory.End.of (homToHom0 f)) *
+        endToEnd0 A (CategoryTheory.End.of f)) *
         (lineBundleEulerPolynomial A.X.hom L g).coeff g) =
       algebraMap ℚ ℚ_[2] (2 * (coherentEulerPolynomial A.X.hom
         ((LineBundle.pullback (hom f)).obj L).obj (hasFiniteAffineSections_lineBundle _)

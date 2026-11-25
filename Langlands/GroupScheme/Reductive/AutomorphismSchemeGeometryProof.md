@@ -1,7 +1,7 @@
 # Full relative reductive automorphism-scheme geometry
 
-Worker 592. The proof composes the complete local classification and global
-descent constructions developed with Workers 859, 594, 216, 182 and 812.
+The proof composes the complete local classification and global
+descent constructions.
 
 `Langlands.GroupScheme.reductiveAutomorphismSchemeGeometry.{u}` proves
 exactly the unchanged Library proposition

@@ -1,6 +1,6 @@
 # Irreducible representations inside an isotypic representation
 
-Proof by Worker 3657. This module works with Mathlib's representations of a
+This module works with Mathlib's representations of a
 monoid `G` on complex vector spaces in independent universes. A representation
 `σ` on `Q` is called `ρA`-isotypic when the supremum of the ranges of the
 intertwining maps from `ρA` to `σ` is `⊤` as a submodule of `Q`.

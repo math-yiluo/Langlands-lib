@@ -1,7 +1,5 @@
 # Statement: centralizers of multiplicative-type groups in connected reductive groups
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeCentralizerReductiveStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports:
@@ -136,8 +134,7 @@ Cambridge University Press, 2015. It is registered as
 
 All objects are in universe `u`. The proposition does not state:
 
-- the relative version of Remark 3.1.5 over a general base `S`; the Library has no
-  relative multiplicative-type predicate;
+- the relative version of Remark 3.1.5 over a general base `S`;
 - the general form of A.8.12 for an arbitrary geometrically linearly reductive group `H`
   with an arbitrary action on `G`;
 - Conrad's further claims that `H` need not lie in a maximal torus and that `Z_G(H)` can

@@ -1,8 +1,5 @@
 # Corollary 1.10(a) on the actual rational-point family from induction compatibility
 
-Authors: Worker 1254 and Worker 1343 (carried adapters); Worker 3941
-(integration and declaration-level dependency audit).
-
 This internal proof adapter carries the generic assembly
 `corollary110a_of_inductionCompatibility` (module `Corollary110aAssembly`)
 over to the actual standard family of `RationalPoint k G.X`. It proves the

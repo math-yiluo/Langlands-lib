@@ -1,7 +1,5 @@
 # Coefficient charts that fix an apartment point
 
-Author: Worker 47 (Task 6502).
-
 This module extends the published coefficient-chart layer `KPApartmentCoefficientChart`. Let
 `A : D.CoefficientChart θ s` be a coefficient chart of a KP apartment datum
 `D : KPApartmentData i ω`. It has a correcting element `c`, a character relabelling `β`, an
@@ -48,4 +46,4 @@ The statements:
 This is internal infrastructure. It is the chart-level form of the standard fact that a
 semilinear automorphism of the coefficients fixes the apartment of a torus pointwise when it
 acts on that torus "as on the coefficients" and fixes a nontrivial element of every root group.
-It is used for the finite orbits of the Galois action on the unramified building (Task 6502).
+It is used for the finite orbits of the Galois action on the unramified building.

@@ -1,8 +1,7 @@
 # Proof: continuation of unitarizability along a connected parameter set
 
-Author: Worker 1023. Submitted by Worker 246 for the proof task
-`7071b052-61cb-4718-babc-684a3e41c288`. Worker 246 re-checked the Lean
-file and the import audit below at Library commit `90334e87`.
+The Lean file and the import audit below were re-checked at Library commit
+`90334e87`.
 
 This module proves
 
@@ -32,7 +31,7 @@ The statement is a derived formulation of the soft step in the proof of
 Zelevinsky 1980, Proposition 1.11, printed p.175 (PDF p.12) (literature
 `zelevinsky-1980-induced-ii`): "One can derive from these facts that all
 `B_s` are positive hence all `π_s` are unitary." Zelevinsky gives no further
-detail. The Lean proof is a complete argument by its author. It follows the route
+detail. The Lean proof gives a complete argument. It follows the route
 recorded in the statement's Markdown, with three changes:
 
 1. The projection onto fixed vectors is the Library's normalized Hecke
@@ -215,11 +214,11 @@ ambiguity between different subgroups `L`.
 
 ## Independence audit
 
-Imports at submission: the statement module
+Imports of the first version of the proof: the statement module
 `Langlands.Representation.Unitary.UnitarizabilityContinuationStatement`,
 `Langlands.Representation.Hecke.ActionProjection`, and Mathlib.
 
-The transitive closure of these imports at submission had 18 `Langlands`
+The transitive closure of these imports had 18 `Langlands`
 modules including the statement module. The same 18 modules were found at
 commits `a3027c81` and `90334e87`:
 
@@ -233,7 +232,7 @@ commits `a3027c81` and `90334e87`:
 - `Representation.Smooth.Definitions`, `Representation.Smooth.FixedVectors.Definitions`;
 - `Representation.Unitary.Basic`, `Representation.Unitary.UnitarizabilityContinuationStatement`.
 
-I searched all 18 modules. None declares or mentions any of the following:
+All 18 modules were searched. None declares or mentions any of the following:
 
 - `SegmentSpecialEssentialSquareIntegrability`
 - `SquareIntegrableLanglandsClassification`
@@ -249,27 +248,26 @@ I searched all 18 modules. None declares or mentions any of the following:
 None of them contains `Segment`, `Jacquet`, `Supercuspidal`,
 `Classification`, `StrongHead`, `QuotientCoverage`, `OrderedConversion`,
 `TemperedUniqueness`, `SquareIntegrab`, `Derivative` or `Exhaustion`. So no
-module in the closure belongs to any task on the contract's independence
-list:
+module in the closure belongs to any of the results this proof is kept
+independent of:
 
-- special-head/reverse-socle existence (`67279e36`) and
-  segment-socle/reverse-head existence (`4ca79bbd`);
-- analytic segment classification (`aca8805b`) and forward special
-  square-integrability (`5eece9e8`);
-- multisegment special-head exhaustion (`3bfb61fa`), ordered strong-head
-  existence (`ebea9a8a`), quotient coverage (`20e4e1c6`) and ordered
-  conversion (`8252833d`);
-- tempered uniqueness (`52e97845`), the square-integrable Langlands
-  classification (`1cb45da2`), square-integrable exhaustion (`cd8ab97c`) and
-  regular exhaustion (`bf433f0a`);
-- special-head product irreducibility (`8364e73f`) and adjacent socle
-  commutation (`e3634665`);
-- generic segment product uniqueness (`30341ae4`), ordered multisegment socle
-  existence (`23189526`), multisegment socle exhaustion (`f3a69bc8`) and
-  segment-socle product irreducibility (`2ae5cbe5`);
-- the segment Jacquet formulas (`ed48ae06` and its proof successor,
-  `55ad1e10`, `b95105c6`, `92aea10f`);
-- adjacent reducibility (task `0988a3e0-a086-474d-b2d2-7e53902b43cb`).
+- special-head/reverse-socle existence and
+  segment-socle/reverse-head existence;
+- analytic segment classification and forward special
+  square-integrability;
+- multisegment special-head exhaustion, ordered strong-head
+  existence, quotient coverage and ordered
+  conversion;
+- tempered uniqueness, the square-integrable Langlands
+  classification, square-integrable exhaustion and
+  regular exhaustion;
+- special-head product irreducibility and adjacent socle
+  commutation;
+- generic segment product uniqueness, ordered multisegment socle
+  existence, multisegment socle exhaustion and
+  segment-socle product irreducibility;
+- the segment Jacquet formulas and their proofs;
+- adjacent reducibility.
 
 Mathematical dependencies are general:
 
@@ -281,12 +279,14 @@ Mathematical dependencies are general:
 The proof uses no derivative formula (Ze80 §3.5, §9.6, BZ77), no segment
 product irreducibility criterion (Ze80 4.2, 9.7), no analytic or
 square-integrability result (Ze80 9.3), and no classification or exhaustion
-theorem. It does not use the adjacent reducibility task or its target. That
-task is downstream: it uses this theorem.
+theorem. It does not use the adjacent reducibility result. That result is
+downstream: its proof, in
+`Langlands.Representation.Classification.TwoSupercuspidalAdjacentReducibilityProof`,
+uses this theorem.
 
-Integration reuses the existing stable-submodule dichotomy from
-`Langlands.Representation.Hecke.CornerDetermination` and removes the duplicate
-helper. The integrated import closure has 21 `Langlands` dependencies (excluding
+The file uses the existing stable-submodule dichotomy from
+`Langlands.Representation.Hecke.CornerDetermination` instead of a duplicate
+helper. With that import the closure has 21 `Langlands` dependencies (excluding
 this proof module): the 18 listed above and `Representation.Hecke.Corner`,
 `Representation.Hecke.CornerAction`, and `Representation.Hecke.CornerDetermination`.
 The three additional modules contain none of the excluded declarations or topic

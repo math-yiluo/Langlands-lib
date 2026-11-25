@@ -1,6 +1,6 @@
 # Actual ambient root data for inner unitary Jacquet exponents
 
-Worker 17. This internal construction combines the actual nested-parabolic
+This internal construction combines the actual nested-parabolic
 geometry with the normalized Jacquet exponent comparisons for Renard VII.2.3.
 It retains the original outer parabolic and Levi, the inner parabolic and
 common Levi, both matching geometric radicals, and both split components.
@@ -29,7 +29,10 @@ original rational outer Levi.
 
 This proves the exponent-membership part of the inner temperedness condition
 for every supplied presentation. It does not construct an inner compatible
-presentation or prove its required minimality field. That nonemptiness
-condition and the complete first and third Renard targets remain obligations.
+presentation or prove its required minimality field. It proves neither that
+nonemptiness condition nor the complete statements
+`UnitaryJacquetPartTemperedStatement` (proved in
+`UnitaryJacquetPartTemperedProof`) and
+`TemperedSquareIntegrableUnitaryPartStatement`.
 The construction and proof are derived from the imported Library results;
 no further external assertion is used.

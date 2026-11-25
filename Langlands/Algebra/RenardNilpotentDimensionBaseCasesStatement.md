@@ -1,6 +1,6 @@
 # Renard C.I: base cases for the actual nilpotent dimension maximum
 
-Worker 1200 reuses Worker 709's statement draft to define the proposition
+This module defines the proposition
 `Langlands.Renard.NilpotentDimensionBaseCasesStatement.{u}` for the
 base cases of David Renard's *Représentations des groupes réductifs
 p-adiques*, French edition dated 9 July 2026, Appendix C.I, printed
@@ -9,7 +9,7 @@ pp.275–276 / one-based PDF281–282. The registered original is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Both workers read these pages and visually checked the formulas.
+Two readers read these pages and visually checked the formulas.
 
 The proof on printed p.275 opens with the one-generator dimension bound,
 which Renard attributes to Cayley–Hamilton. On printed p.276 its induction
@@ -44,7 +44,7 @@ nilpotentGeneratedPhi 1 k ≤ k
 nilpotentGeneratedPhi 0 k = if k = 0 then 0 else 1.
 ```
 
-Here `nilpotentGeneratedPhi l k` is exactly the published maximum on
+Here `nilpotentGeneratedPhi l k` is exactly the imported maximum on
 `Fin k → ℂ`. The maxima concern actual endomorphism tuples whose entries
 commute and are nilpotent, and the complex finrank of their actual unital
 `Algebra.adjoin ℂ (Set.range a)`. Scalar endomorphisms and the identity belong
@@ -54,7 +54,7 @@ universe are unrestricted. No nontriviality, positive-dimension or positive
 count assumption is imposed; the last formula handles the empty tuple on
 every carrier, including the zero space, where the identity is zero.
 
-The maximum and its published laws
+The maximum and its laws
 `nilpotentGeneratedMaxDimension_isGreatest` and
 `nilpotentGeneratedMaxDimension_attained` are imported unchanged. No base-case
 formula, linear-equivalence transport law, sharp dimension estimate or
@@ -70,8 +70,9 @@ exponents in the older 2010 proof, printed pp.317–318. The present source
 comparison uses the governing 2026 edition; the supplementary entries do not
 change either of the base assertions above.
 
-This module defines a proposition. A proof of this exact proposition is a
-separate obligation after independent statement acceptance and publication.
+This module defines a proposition. A proof of this exact proposition is
+separate: `nilpotentDimensionBaseCases` in
+`RenardNilpotentDimensionBaseCasesProof`.
 Carrier transport, monotonicity, the actual ideal-power filtration, complement
 generation, restriction injection, the algebra splitting, floor recurrence,
-final estimate and completion of C.I remain separate obligations.
+final estimate and completion of C.I are outside this module.

@@ -83,7 +83,7 @@ mathematical reasons:
 - for `R_f` one may alternatively use flatness of localization.
 
 These facts justify the specialization, but none is proved here. They
-are proof obligations for whoever proves this statement. The definition
+are obligations of any proof of this statement. The definition
 of `baseChange` is only the ordinary functor `ModuleCat.extendScalars`
 applied to complexes. It does not by itself establish preservation of
 quasi-isomorphisms or independence of the chosen representative.
@@ -126,7 +126,3 @@ does not state or prove any of the following:
 - geometric cohomology and base change;
 - local two-axis triviality;
 - relative cube detection.
-
-These remain separate tasks.
-
-Draft design by Worker 606; adapted and submitted by Worker 975.

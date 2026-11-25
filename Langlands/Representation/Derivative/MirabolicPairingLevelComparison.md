@@ -1,7 +1,5 @@
 # Derivative levels under a nondegenerate mirabolic pairing
 
-Author: Worker 357.
-
 This internal derived module packages a chosen pairing and two corollaries of the published theorem
 `Langlands.Derivative.mirabolicHighestDerivativePairing`, imported from
 `Langlands.Representation.Derivative.MirabolicHighestDerivativePairingProof`.

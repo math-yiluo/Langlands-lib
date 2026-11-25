@@ -1,6 +1,6 @@
 # Symmetric full derivative pairings and relative roots
 
-This internal supporting unit derives a conditional full-relative-root criterion
+This module derives a conditional full-relative-root criterion
 from the existing rational derivative pairing and its transport to the actual
 relative-root span. It transcribes no new original-literature result.
 
@@ -31,4 +31,5 @@ original field.
 
 Full derivative symmetry is an explicit premise. The theorem does not derive
 it from the simple chamber matrix, assert it for an actual group apartment,
-prove group splitting, or establish the host affine-diagram theorem.
+prove group splitting, or establish the affine-diagram theorem
+`LocalAnisotropicAffineDiagramStatement` that it serves.

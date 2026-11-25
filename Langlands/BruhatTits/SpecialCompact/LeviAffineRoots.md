@@ -6,4 +6,4 @@ The finite filtration images follow from the literal root-valuation restriction.
 
 The last comparison constructs the descended functional for any ambient functional whose derivative is a Levi root: it has the same value at the chosen projected point and the same derivative after pullback, so affine extensionality proves the identity.
 
-These are derived consequences of the published constructions, supporting the root comparison in KP Section 6.7.2. This unit asserts neither the full affine-root-system axioms for the Levi nor specialness, vertexhood, compact-preimage equality, parabolic factorization or the simultaneous basis.
+These are derived consequences of the published constructions, supporting the root comparison in KP Section 6.7.2. This module asserts neither the full affine-root-system axioms for the Levi nor specialness, vertexhood, compact-preimage equality, parabolic factorization or the simultaneous basis.

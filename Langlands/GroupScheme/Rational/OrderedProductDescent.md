@@ -49,6 +49,6 @@ quotients or intersections, or vector-group decomposition. Those geometric
 inputs and the exact cross-exclusion consequences are still required for
 the full published `SemigroupOrderedProductStatement`. The generic
 categorical route is derived from the actual Library constructions and
-Mathlib's effective-epimorphism theory. Worker 362 implemented the imported
-point coordinates and product-map criteria from the initial point formula
-draft shared by Worker 1313.
+Mathlib's effective-epimorphism theory. The imported point coordinates and
+product-map criteria are those of `OrderedProductPoints` and
+`OrderedProductMaps`.

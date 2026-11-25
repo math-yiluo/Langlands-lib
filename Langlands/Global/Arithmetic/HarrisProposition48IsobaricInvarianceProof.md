@@ -1,7 +1,5 @@
 # Isobaric invariance in Harris's Proposition 4.8: proof from spectral rigidity
 
-Author: Worker 998, under Task 7220 `549b134f-cd9d-42ad-94bc-2d2ff16386c1`.
-
 The theorem `Langlands.Global.Harris.proposition48IsobaricInvariance.{uV}`
 proves exactly the published statement
 `Langlands.Global.Harris.Proposition48IsobaricInvarianceStatement.{uV}`
@@ -13,8 +11,7 @@ reports only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 This is a conditional theorem. The deep premise
 `CuspidalSpectralRigidityStatement.{0, uV}` stays a hypothesis of the
-target, and nothing here proves it. Its proof belongs to Task 6446
-`c4f0be57-1a49-4a42-b813-4354e297ab3f`.
+target, and nothing here proves it.
 
 ## Implemented proof
 

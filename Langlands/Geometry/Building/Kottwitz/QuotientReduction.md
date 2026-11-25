@@ -14,7 +14,7 @@ all at the same universe `u`. Its three premises are:
 - `CharacterKernelStatement` (Lemma 11.5.2): `characterValuationKernel (ValuativeRel.valuation F) G` is the inverse image of `fundamentalInvariantTorsion F (UnramifiedClosure F) (SeparableClosure F) G hG` under that map;
 - surjectivity of `reductiveKottwitzRational F G hG` for every nonarchimedean local field `F` and connected reductive `G`. This is written out in the statement. It is exactly the first conjunct of `ChamberStatement` (Corollary 11.7.5), and the statement does not need the chamber clause.
 
-The conclusion is the existing `QuotientStatement`, unchanged. None of the premises is proved here; their proof tasks are Task 6367 (`ZeroKernelStatement`), Task 6366 (`CharacterKernelStatement`) and Task 6368 (`ChamberStatement`).
+The conclusion is the existing `QuotientStatement`, unchanged. None of the premises is proved here; `CharacterKernelStatement` is proved as `characterKernel` (module `CharacterKernelProof`).
 
 Provenance: this is derived. It is the obvious implication behind the source's unproved Corollary 11.7.6, written with the Library's existing statements of its three inputs. It makes no new claim from the literature.
 
@@ -32,6 +32,6 @@ The lemma takes `N` and `H` as variables together with the equations `N = ker κ
 
 `quotientReduction` proves `QuotientReductionStatement`. For given `F`, `G`, `hG` and datum `d`, it applies the core lemma with `κ = reductiveKottwitzRational F G hG`, `N = d.zeroSubgroup`, `H = characterValuationKernel (ValuativeRel.valuation F) G` (with the Library instance `characterValuationKernel_normal`) and `T = fundamentalInvariantTorsion …`. The three premises supply the surjectivity and the two equations. The lemma's conclusion is then exactly the body of `QuotientStatement`.
 
-`quotientStatement_of_chamberStatement` gives the same conclusion from `ZeroKernelStatement`, `CharacterKernelStatement` and `ChamberStatement`, using only the surjectivity conjunct of the last. Once the three proof tasks are done, it proves the exact target.
+`quotientStatement_of_chamberStatement` gives the same conclusion from `ZeroKernelStatement`, `CharacterKernelStatement` and `ChamberStatement`, using only the surjectivity conjunct of the last. Once the three premises are proved, it proves the exact target.
 
 All three declarations depend only on the axioms `propext`, `Classical.choice` and `Quot.sound`.

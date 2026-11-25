@@ -42,7 +42,8 @@ at this `F`. The same empty-real-place argument supplies the real local clauses.
 central-sign input is available as `archimedeanCentralSign` in
 [`ArchimedeanCentralSignProof`](ArchimedeanCentralSignProof.md), so it is not a third
 premise of the new target. This is a refinement of the Library's assumption, not a new
-form of the local equation or a change to any unrestricted target (including Task 7124).
+form of the local equation or a change to any unrestricted target (including
+`EqualSemilocalFactorizationStatement`).
 
 This module states the implication only. It does not establish either premise, the
 implication itself, or a functional equation. Once the implication is proved, the

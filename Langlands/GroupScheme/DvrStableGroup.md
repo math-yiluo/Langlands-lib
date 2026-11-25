@@ -1,7 +1,5 @@
 # The group scheme on a stable normal model
 
-Worker 336.
-
 `Langlands.GroupScheme.DvrStableGroup.group G M` constructs an actual group
 scheme on the source of a supplied `DvrStableNormalization.Model G.X`,
 where `G` is a group scheme over a DVR `R`. Its underlying scheme over

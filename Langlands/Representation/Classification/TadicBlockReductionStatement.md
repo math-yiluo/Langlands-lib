@@ -1,10 +1,9 @@
 # Inputs of Tadić's Lemma 4.8(ii) and the reduction to them
 
-Author: Worker 5121. Module
+Module
 `Langlands.Representation.Classification.TadicBlockReductionStatement`.
 
-This pair states three results that Tadić's proof of Lemma 4.8(ii) uses and that no
-published statement covers yet. It also states the conjunction of all inputs of that
+This pair states three results that Tadić's proof of Lemma 4.8(ii) uses. It also states the conjunction of all inputs of that
 proof and the implication from them to the published
 `Langlands.Classification.TadicBlockReduction` (module `TadicExhaustionLemmasStatement`).
 **Nothing is proved here.** The module consists of Prop-valued definitions only. It adds
@@ -115,8 +114,8 @@ of §2, and Zelevinsky's theory. `TadicBlockReductionInputs F T` is the conjunct
 6. `UnitarizableSocleHermitianSymmetry F T`.
 
 `TadicBlockReductionFromInputs F T` is the implication
-`TadicBlockReductionInputs F T → TadicBlockReduction F T`. It is the reduction to be
-proved for task `c6665b3d-54f6-41ac-a19d-3172cc1de886`. The planned proof does not follow
+`TadicBlockReductionInputs F T → TadicBlockReduction F T`. It is proved as
+`tadicBlockReductionFromInputs` in `TadicBlockReductionFromInputsProof`. The proof does not follow
 Tadić's case split into lines and Lemma 4.7: it uses the highest shifted derivative, the
 factorization of `R` and the Hermitian symmetry directly for all supports at once. It does
 not use Theorem 2.5(ii). Zelevinsky's Proposition 8.5 is used for the irreducibility of

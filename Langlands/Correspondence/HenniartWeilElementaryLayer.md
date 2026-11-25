@@ -5,8 +5,12 @@ note `operator-numerical-llc-route-2026-11-16`. The layer is unit 3 of the
 note's §7.1, in the truncated form that the base case of Option II needs (the
 operator's amendment of 17 November 2026 calls it "the truncated elementary
 layer"). The module contains two definitions and six Prop-valued statements in
-namespace `Langlands.Henniart`. It proves nothing; separate proof tasks prove
-the six statements under their fixed names.
+namespace `Langlands.Henniart`. It proves nothing. Statements 1, 2 and 4 are
+proved under their fixed names in `HenniartWeilUnramifiedDescentCountProof`,
+`HenniartWeilRankOneCountProof` and `HenniartWeilConductorCountStepProof`.
+The Library does not prove statements 3, 5 and 6; statement 3 is reduced to
+`WeilTameAveragingStatement` (stated in `HenniartWeilTameAveraging`) by
+`weilTameReductionFromAveraging` in `HenniartWeilTameReductionFromAveragingProof`.
 
 ## Notation
 
@@ -136,8 +140,8 @@ results are stated for all \(j\). The truncated form, with \(j<p^{r'}e_L\) and
 
 Check against Koch (1984), §8. The note's remark after `prop:LDcount` (lines
 849–850) says the truncation was checked only against the structure of the
-argument. The task asked for a check against Koch, §8, which was done for this
-candidate. Koch proves Satz 4 by comparing, at one fixed \(j\), the count
+argument. The statement was checked against Koch, §8. Koch proves
+Satz 4 by comparing, at one fixed \(j\), the count
 \(B_{j,n}\) over \(K\) (where \(B_{j,n}=n\,C_K(n,j)\), Henniart 1988, §2.4) with
 the counts \(B_{j,p^r}\) over the tamely and totally ramified extensions \(L\)
 of degree \(m\), using the same \(j\) (Lemmas 5–8 and equations (25)–(28)).
@@ -148,7 +152,7 @@ the same on both sides. The argument uses its hypothesis only at the same
 \(j\), at \(r'=r\) and for degree exactly \(m\). Since \(e_L=m\,e_K\),
 \(j<p^rm\,e_K\) holds exactly when \(j<p^re_L\). So the argument proves the
 truncated form. The statement assumes the hypothesis for all \(r'\le r\) and
-all degrees dividing \(m\), as the task specifies. This is more than the
+all degrees dividing \(m\). This is more than the
 argument uses, and the induction in the proof of statement 5 supplies all of
 it.
 
@@ -217,7 +221,7 @@ outside that range are covered by statement 1(a) and by the convention
 Provenance. Route note Proposition `prop:LDcount` and its proof (lines
 832–857). This is the route note's own proposition, proved in the note from
 (LD), and not a numbered result of a source. Its proof combines statement 1,
-the truncated uniqueness of the polar-part task
+the truncated uniqueness of polar parts
 (`PolarPartTruncatedUniquenessStatement`) and statement 5. Every field met in
 the proof is an unramified extension of \(K\), which has the same \(e\).
 
@@ -228,9 +232,8 @@ All line numbers refer to `numerical-LLC-route.tex` in the route note's folder
 lines 662–743; Proposition `prop:LDcount` and its proof, with the closing
 remark, are lines 832–857.
 
-## Deferred units
+## Not stated here
 
 The route note's truncation lemma `lem:trunc`, Theorem `thm:reduction` (the
 wild core statement \(\mathrm W(r,j)\)) and Corollary `cor:kummer` are not
-stated here; the Option II assembly does not use them. They are reported to the
-operator as deferred.
+stated here; the Option II assembly does not use them.

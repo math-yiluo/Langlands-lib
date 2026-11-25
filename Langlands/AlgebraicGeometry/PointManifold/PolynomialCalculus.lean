@@ -55,7 +55,7 @@ theorem contDiff_polynomial_eval (p : MvPolynomial ι k) (n : WithTop ℕ∞) :
   induction p using MvPolynomial.induction_on with
   | C c => simpa using (contDiff_const : ContDiff k n (fun _ : ι → k => c))
   | add p q hp hq => simpa using! hp.add hq
-  | mul_X p i hp => simpa using hp.mul (contDiff_apply k k i)
+  | mul_X p i hp => simpa using hp.mul (contDiff_apply k (fun _ => k) i)
 
 /-- Analytic and formal derivatives of multivariate polynomial evaluation agree. -/
 theorem hasFDerivAt_polynomial_eval (p : MvPolynomial ι k) (x : ι → k) :

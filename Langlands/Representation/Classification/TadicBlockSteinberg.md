@@ -1,6 +1,6 @@
 # Unitarity of `⟨a(n,1)^ρ⟩`
 
-Author: Worker 5121. Module `Langlands.Representation.Classification.TadicBlockSteinberg`,
+Module `Langlands.Representation.Classification.TadicBlockSteinberg`,
 namespace `Langlands.Classification.TadicBlockSteinberg`. Helper module of the proof of
 `Langlands.Classification.TadicBlockReductionFromInputs`.
 

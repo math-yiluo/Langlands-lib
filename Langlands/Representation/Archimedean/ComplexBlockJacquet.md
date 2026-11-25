@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockJacquet`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
+This module is infrastructure for the proof of
 `ComplexStandardLanglandsQuotientStatement`. It generalizes the published `ComplexPartialJacquet`
 (`P_{m,1}`, strictly decreasing exponents) to the maximal parabolic subgroup `P_{a,k+1}` whose last
 block of size `k+1` carries exponents with equal real parts. The function `h'` defined here is the
@@ -31,8 +31,8 @@ Haar probability measure `ComplexDuality.unitaryHaar N`. `n̄(X) = [[1, 0], [X, 
 
 ## The statement
 
-`ComplexBlockJacquetStatement` assumes `ComplexBlockChartIntegrableStatement`, which is only
-stated, not yet proved, in the Library. Under that assumption it says the following.
+`ComplexBlockJacquetStatement` assumes `ComplexBlockChartIntegrableStatement`, which the Library
+proves as `complexBlockChartIntegrable`. Under that assumption it says the following.
 
 Let `χ` be phase-power characters with exponents `e` satisfying the three conditions of
 `IsBlockDominant e a k`, given as separate hypotheses. For every `U(a+k+1)`-finite function `h` of

@@ -1,6 +1,5 @@
 # Continuous corestriction finite-stage compatibility and naturality
 
-Authors: Worker 22 (proof draft), Worker 98 (verification and submission).
 This proof establishes exactly
 `ContinuousCorestrictionCompatibility` from `CorestrictionLawsStatement`.
 It imports the published continuous corestriction, finite-stage certificate,

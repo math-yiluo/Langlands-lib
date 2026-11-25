@@ -1,10 +1,9 @@
 # Gluing of the forward product of two linked segment socles
 
-Author: Worker 238. The interface was agreed with Worker 494, who needs it as
-the two-factor input of the full-product reduction
-`LinkedSegmentSocleEmbeddingReduction` (task
-`0f459af5-e039-4eee-a8bd-9d8d2f508936`) inside independent socle exhaustion
-(task `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`).
+The proposition is the two-factor input of the full-product reduction
+`LinkedSegmentSocleEmbeddingReduction` (its proof,
+`LinkedSegmentSocleEmbeddingReductionProof`, applies `linkedSegmentSocleGluing`),
+a step of independent socle exhaustion.
 
 `Langlands.Classification.LinkedSegmentSocleGluing.{uF,uV} F T` is a
 Prop-valued definition, not a proof. For two segments whose first precedes the
@@ -132,40 +131,37 @@ The original pages listed above and the published
 errata note for `zelevinsky-1980-induced-ii` was present in the supplied
 public notes.
 
-## Proof obligation and independence
+## Proof requirements and independence
 
-A future proof must construct the actual filtration and maps for the supplied
+A proof must construct the actual filtration and maps for the supplied
 blocks. A Grothendieck-group identity alone does not supply the filtration:
 an actual two-step filtration of the forward product, an isomorphism of one
 layer with the chosen union/intersection product and an embedding of the other
 layer into the reverse product are all required. Segment socle existence for
 `Δ∪` and `Δ∩`, Proposition 4.6 for the reverse product, constituent
 commutativity (Theorem 1.9, whose source proof uses the Gelfand–Kazhdan
-involution) and a length-two layer-matching argument are separate obligations,
-not supplied by this proposition definition or its citations.
+involution) and a length-two layer-matching argument are separate inputs,
+not supplied by this proposition definition or its citations. The Library's
+proof is `linkedSegmentSocleGluing` in `LinkedSegmentSocleGluingProof`.
 
 The statement imports only the published `SegmentProductPermutation`,
 `SegmentReplacementInversions` and `Filtration.ObjectDefinitions` pairs, all
-unchanged. Its future proof must preserve direct and transitive independence
+unchanged. Its proof must preserve direct and transitive independence
 from:
 
-- independent socle exhaustion, task `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`,
-  and the linked full-product reduction, task
-  `0f459af5-e039-4eee-a8bd-9d8d2f508936`, which consume this statement;
-- segment analytic classification, task
-  `aca8805b-054f-4d56-8045-12db7f623404`;
-- multisegment special-head exhaustion, task
-  `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`;
-- ordered special-head existence, task `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`;
-- quotient coverage, task `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`;
-- tempered block uniqueness, task `52e97845-36bb-457d-b76f-70753334b88c`;
-- `SquareIntegrableLanglandsClassification` and task
-  `1cb45da2-7007-4351-a694-594fb148b8d1`;
-- square-integrable exhaustion, task `cd8ab97c-0b78-4bce-97c4-d307a28159a4`;
-- regular exhaustion, task `bf433f0a-921a-428c-b0c0-6475438125ac`.
+- independent socle exhaustion and the linked full-product reduction, which
+  consume this statement;
+- segment analytic classification;
+- multisegment special-head exhaustion;
+- ordered special-head existence;
+- quotient coverage;
+- tempered block uniqueness;
+- `SquareIntegrableLanglandsClassification`;
+- square-integrable exhaustion;
+- regular exhaustion.
 
-The exclusions cover mathematical conclusions, proof successors and transitive
+The exclusions cover mathematical conclusions, the files proving them and transitive
 proof dependencies. Shared lower results require an independence audit before
-reuse. The future exact proof must have precisely this proposition as its
-target, without extra theorem-valued assumptions. Statements, citations,
-drafts and pending tasks are not proof evidence.
+reuse. The exact proof must have precisely this proposition as its
+target, without extra theorem-valued assumptions. Statements and citations
+are not proof evidence.

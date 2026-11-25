@@ -10,4 +10,4 @@ Positive heights imply `subgroup 1` is the full group. The commutator sum bound 
 
 The provenance is internal: the implementation combines the general ordered collection theorem, the all-test root-factor functor from `LocalSplitHeightSubgroup`, and the previously constructed supported-coordinate representability transfer. No root-datum or reductivity theorem is assumed implicitly. Applications must supply the actual chart and its commutator bound.
 
-This unit constructs the subgroup terms and their geometry. It does not yet construct the successive quotient morphisms, descend coordinate data, or prove the general relative-radical filtration statement.
+This module constructs the subgroup terms and their geometry. It does not construct the successive quotient morphisms, descend coordinate data, or prove the general relative-radical filtration statement.

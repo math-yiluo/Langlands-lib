@@ -17,7 +17,7 @@ of modules over the structure presheaf of `X`, with module carriers in universe
 
 Let `J = Opens.grothendieckTopology X`, the site of open subsets of `X` with
 its usual open-cover topology. This is the actual root-namespace spelling
-in the pinned Mathlib environment of the topology described in the task.
+in the pinned Mathlib environment of that topology.
 Define the morphism property on `C` by
 
 ```lean
@@ -48,8 +48,9 @@ That lemma identifies the sheafification of the tensor of two module
 presheaves with the tensor of their sheafifications. Its natural compatibility
 with morphisms explains the prerequisite: after sheafification a local
 equivalence is an isomorphism, and tensoring that isomorphism gives an
-isomorphism. This describes the mathematical provenance; a separate proof
-must establish the Lean proposition.
+isomorphism. This describes the mathematical provenance; a separate proof,
+`tensorLocalEquivalencesIsMonoidal` in `TensorLocalizationProof`,
+establishes the Lean proposition.
 
 The registered source is `stacks-module-tensor-products-2026-10-21`,
 *Stacks Project - Tensor products of sheaves of modules (HTML snapshot
@@ -73,7 +74,7 @@ The implementation interfaces in Mathlib commit
   `LocalizedMonoidal`.
 - `CategoryTheory/Localization/Monoidal/Braided.lean` transports the symmetric
   structure to that localization. Constructing this structure and relating it
-  to the chosen category of scheme-module sheaves are later tasks.
+  to the chosen category of scheme-module sheaves are done in `TensorMonoidal`.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. This file does not
+The file was written against Lean 4.34.0 and the Mathlib commit above. This file does not
 construct the sheafified tensor bifunctor or prove monoidal pullback.

@@ -1,8 +1,7 @@
 # Irreducible Jacquet detection from a cuspidal Jacquet factor
 
-Authors: Worker 658, with the assembly and common-factor routes of Workers 78
-and 55. This is an internal conditional reduction for task
-`b7887025-20b3-4c11-9fad-0e70bdf59da6`. It does not prove the full rational
+This is an internal conditional reduction for irreducible Jacquet detection
+in the actual general reductive support category. It does not prove the full rational
 irreducible Jacquet detection proposition: its factor-extraction input must
 still be supplied by a proved theorem.
 
@@ -39,7 +38,7 @@ The factor `τ` need not realize `π` as a subquotient of its induction.
 In particular, this reduction needs no cuspidal induction realization
 for the chosen nonzero Jacquet module. It also needs no separate
 cuspidal-support association theorem. These statements are conditional
-for arbitrary subgroup families: the pair does not assert that any of
+for arbitrary subgroup families: the module does not assert that any of
 the four inputs holds for such families.
 
 ## Implemented argument
@@ -76,9 +75,9 @@ value. The companion theorem unpacks this value to the generic target.
 
 ## Provenance and dependencies
 
-This is internal witness manipulation, adapting Workers 658 and 78's published
+This is internal witness manipulation, adapting the published
 `IrreducibleJacquetDetectionReduction` to the cuspidal-factor extraction
-interface. It imports that interface and the unchanged rational support
+interface. It imports that interface and the rational support
 targets by Lean name. It uses actual smooth representations and actual
 normalized induction and Jacquet functors throughout.
 
@@ -93,5 +92,5 @@ not introduce a classification hypothesis.
 No classification, character-independence, geometric-lemma, adjointness
 or Jacquet-exactness theorem is invoked in this conditional proof.
 The extraction and factor-existence inputs carry their own substantive
-mathematical obligations; this pair neither proves them nor audits
+mathematical obligations; this module neither proves them nor audits
 the proof dependencies of future theorems discharging them.

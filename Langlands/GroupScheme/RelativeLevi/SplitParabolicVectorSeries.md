@@ -1,6 +1,6 @@
 # Vector-bundle series for arbitrary split contracting groups
 
-This derived unit assumes a reductive group over the spectrum of an arbitrary
+This derived module assumes a reductive group over the spectrum of an arbitrary
 commutative ring, a fibrewise maximal coordinate split torus, a finite fibrewise
 root datum and actual additive-group parametrizations for all its roots.
 The coordinate cocharacter is arbitrary: zero root weights are allowed.
@@ -27,7 +27,7 @@ commutative base rings; it imposes no noetherian or connectedness assumption.
 
 Provenance is the existing adapted-chart construction, actual split big cell,
 all-test positive-weight comparison and root-weight-series transport.
-This unit supplies the split contracting-group case. It does not identify
+This module supplies the split contracting-group case. It does not identify
 arbitrary supplied relative radicals or prove compatibility and descent of
 the resulting filtration between different split charts.
 

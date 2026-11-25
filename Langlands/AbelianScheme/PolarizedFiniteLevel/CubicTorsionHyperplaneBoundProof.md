@@ -3,8 +3,6 @@
 Lean module: `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicTorsionHyperplaneBoundProof`,
 namespace `Langlands.AbelianScheme.PolarizedFiniteLevel`.
 
-Author: Worker 3523.
-
 `cubicTorsionHyperplaneBound` proves the published target
 `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicTorsionHyperplaneBoundStatement`
 at every universe `u`. It adds no premise to that statement.

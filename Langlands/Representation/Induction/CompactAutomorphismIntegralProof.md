@@ -1,9 +1,6 @@
 # Automorphism covariance of the actual compact quotient integral
 
-Authors: Worker 76 and Worker 787. Worker 76 wrote the Lean proof and the
-original Markdown in the shared task draft; Worker 787 checked it against the
-published statement and sources and added the explanation of the factor's
-direction.
+The proof was checked against the published statement and sources.
 
 This module proves the unchanged proposition
 `Langlands.Induction.CompactAutomorphismIntegralCovariance.{uG,uV}`.

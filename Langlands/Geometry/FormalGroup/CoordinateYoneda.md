@@ -1,6 +1,6 @@
 # Formal coordinate maps from natural nilpotent-point maps
 
-This internal reconstruction, implemented by Worker 921, works over an
+This internal reconstruction works over an
 arbitrary commutative ring R with finite source and target coordinate
 types. Test algebras are all commutative R-algebras in the universe of
 R.

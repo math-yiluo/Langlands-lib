@@ -2,7 +2,7 @@
 
 `ClosedSectionComparisonStatement` specifies the normalized comparison of
 Waldspurger V.3 and VI.3 on the intrinsic semistandard orbit sections of
-Task 7229. `HasIntrinsicSourceNormalization` fixes the special-point compact
+`RationalSemistandardOrbitSections`. `HasIntrinsicSourceNormalization` fixes the special-point compact
 in the compatible apartment of the very maximal split torus indexing the
 semistandard parabolics. All original standard integrals, the compact
 probability and the section levels use this compact. The inducing discrete

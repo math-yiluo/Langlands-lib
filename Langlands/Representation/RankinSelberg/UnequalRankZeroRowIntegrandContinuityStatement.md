@@ -70,15 +70,16 @@ absolute value and coefficient-model vectors, is internal and derived from
 published Library definitions. It should not be read as a verbatim statement from
 JPSS.
 
-The interface matches the continuity helper in Worker 331's private zero-row
-analytic draft for task `d76b5b0f-33ec-486d-881e-b4c1e3494d40`. It is the
+The interface matches the continuity helper of the zero-row analytic assembly
+`UnequalRankZeroRowAnalyticProof`, which imports the proof of this statement. It is the
 unequal-rank zero-row companion of the published equal-rank proposition
 `Langlands.RankinSelberg.EqualRankIntegrandContinuousStatement`.
 
 ## Why the proposition is expected to hold
 
-This module states the proposition only; it contains no proof. The intended
-derived argument is a continuity adapter.
+This module states the proposition only; it contains no proof. The proof,
+`unequalRankZeroRowIntegrandContinuous` in
+`UnequalRankZeroRowIntegrandContinuityProof`, is a derived continuity adapter.
 
 1. A coefficient-model vector is a matrix coefficient `g ↦ ℓ(π(g)v)` of a
    smooth vector, so it is locally constant on the general linear group and in
@@ -113,6 +114,6 @@ NNReal.continuous_coe.comp T.continuous_normalizedAbsHom.
 Applying the proposition to this absolute value gives continuity of
 `unequalRankIntegrand ψ (normalizedAbsoluteValue T) 0 k f.val f'.val s 0` for
 every smooth `π` and `σ`, functionals, coefficient-model vectors and `s`. This is
-the exact arbitrary-`T` form needed by Worker 331's zero-row analytic assembly
-and by Worker 394's quotient measurability argument. The specialization does not
+the exact arbitrary-`T` form needed by the zero-row analytic assembly
+and by the quotient measurability argument of `WhittakerTypeHighlyRamifiedProof`. The specialization does not
 restrict `T` to a canonical choice.

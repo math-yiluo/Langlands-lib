@@ -1,7 +1,5 @@
 # A connected group variety without tori is unipotent: statement
 
-Worker 1395.
-
 `NoTorusUnipotentStatement.{u}` concerns a field `k : Type u` and a group
 scheme `Q` over `Spec (CommRingCat.of k)` such that `Q.X.hom` is smooth and
 affine and the underlying scheme `Q.X.left` is a connected topological space.

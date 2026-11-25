@@ -1,6 +1,6 @@
 # Naturality of the exact orbit-cover level range
 
-This internal unit proves compatibility of the exact range equivalence with
+This internal module proves compatibility of the exact range equivalence with
 the original Harris level arrows. It retains the actual universe-zero number
 fields, central simple unitary algebra, Harris signature charts, abelian
 family, supplied dual witness and dual-valued map, and full integral-order
@@ -67,12 +67,12 @@ unfolding the range map, the source equivalence's other inverse law proves
 the equality in the target subtype.
 
 The full source-point stabilizer condition is retained throughout. This
-unit neither equates that stabilizer with the image of the source
+module neither equates that stabilizer with the image of the source
 fundamental group nor removes the condition from the exact range. It gives
 level-arrow compatibility for the direct raw comparison on selected
 finite-etale covers; the comparison on the full admissible test category,
 normalized rational-isogeny comparison, construction and admissibility of
 the representing PEL scheme, smoothness and division-case projectivity
-remain open. The unit is an internal deduction from the existing actual
+are not proved here. The module is an internal deduction from the existing actual
 restriction, tower, cover and range constructions, and introduces no new
 original-literature assertion.

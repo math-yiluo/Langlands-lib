@@ -1,7 +1,5 @@
 # Étale maps are closed on locally bounded sets of rational points
 
-Author: Worker 105.
-
 This module translates the algebraic clustering theorem of `AffineEtaleBoundedCluster` into
 a statement about rational points of affine schemes. It serves the total disconnectedness
 part of Proposition 5.4 of Brian Conrad, *Weil and Grothendieck approaches to adelic

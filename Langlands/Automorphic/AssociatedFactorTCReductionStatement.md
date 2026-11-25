@@ -1,30 +1,29 @@
 # Reductions between the totally complex forms of the cuspidal-pair and associated-factor statements
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `81ed24709e7050068786116ca6613260` (Option A) to request
-`9b5f630f11af591aae45e2157df43d94`.
-
 **Scope.** The module `Langlands.Automorphic.AssociatedFactorTCReductionStatement`
 defines three propositions and proves nothing. Each is an implication between totally
 complex forms stated in `Langlands.Global.Factors.CuspidalPairFunctionalEquationTCStatement`
 and `Langlands.Automorphic.AssociatedFactorTCStatement`. Each is the totally complex
 form of one link of the Library's route from the global functional equations to
-Henniart's Corollaire 2.4. The three links are separate proof targets.
+Henniart's Corollaire 2.4. The three links are proved in separate modules:
+`cuspidalPairFunctionalEquationReductionTC`
+(`Langlands.Global.Factors.CuspidalPairFunctionalEquationReductionTCProof`),
+`associatedGammaReductionTC` (`Langlands.Automorphic.AssociatedGammaTCReductionProof`) and
+`associatedCuspidalFactorReductionTC` (`Langlands.Automorphic.AssociatedCuspidalFactorReductionTC`).
 
 | New proposition | Universes | Implication |
 |---|---|---|
 | `Langlands.Global.CuspidalPairFunctionalEquationReductionTCStatement` | `u uQ` | local data, A1TC, A2TC ⟹ A3TC |
-| `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedGammaReductionTCStatement` | `u uV uP uQ uE` | A3TC at `{u, u}` ⟹ B1TC |
-| `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCuspidalFactorReductionTCStatement` | `u uV uP uQ uE` | B3TC, B2TC ⟹ B4TC |
+| `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedGammaReductionTCStatement` | `u uV uP uQ uE` | A3TC at `{u, u}` ⟹ B1TC |
+| `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCuspidalFactorReductionTCStatement` | `u uV uP uQ uE` | B3TC, B2TC ⟹ B4TC |
 
 Here A1TC–A3TC are `CuspidalArchimedeanParameterExistenceTCStatement`,
 `CuspidalPairCompletedEquationTCStatement` and
 `CuspidalPairGlobalFunctionalEquationTCStatement`, and B1TC–B4TC are
 `AssociatedGammaTCStatement`, `AssociatedTemperedFactorTCStatement`,
 `AssociatedSupercuspidalInductionTCStatement` and `AssociatedCuspidalFactorTCStatement`
-(see the paired Markdown of those two modules). The principal declaration of the unit
-is `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedGammaReductionTCStatement`.
+(see the paired Markdown of those two modules). The principal declaration of the module
+is `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedGammaReductionTCStatement`.
 
 ## 1. The three implications
 
@@ -71,8 +70,8 @@ applies to the totally complex forms.
 
 - Link 1: the published `cuspidalPairFunctionalEquationReduction` combines, at one
   field `F`, the local data, the parameters of the four realizations and the completed
-  equation for the finite set given by the local data. A private development check of
-  Worker 0 compiled the same proof term for the totally complex form.
+  equation for the finite set given by the local data. A private development check
+  compiled the same proof term for the totally complex form.
 - Link 2: `associatedGamma_of_inputs` applies the functional equation at the base
   field `F` of the conclusion, to pairs built from Hecke twists over `F`. Its proof
   passes through published auxiliary results that take the unrestricted functional
@@ -86,10 +85,10 @@ applies to the totally complex forms.
   components from the published
   `Classification.isTempered_of_equiv_unitarizableSupercuspidalProduct`, restricts
   unitarity along the local map with `localComponent_isUnitary`, and applies
-  Corollaire 2.3 at the same data. A private development check of Worker 0 compiled
+  Corollaire 2.3 at the same data. A private development check compiled
   the same proof for the totally complex form, with the instance introduced.
 
-These checks are not part of this unit, which proves nothing.
+These checks are not part of this module, which proves nothing.
 
 ## 3. Relation to the published links
 

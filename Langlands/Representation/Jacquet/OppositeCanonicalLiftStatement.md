@@ -1,7 +1,5 @@
 # Core opposite-radical canonical Jacquet lift statements
 
-Author: Worker 253.
-
 This module states the opposite-radical mirror of the two core assertions in
 `Langlands.Representation.Jacquet.CanonicalLiftStatement`. It uses only the
 published constructions in `CanonicalLiftDefinitions`, `BlockIwahoriDefinitions`

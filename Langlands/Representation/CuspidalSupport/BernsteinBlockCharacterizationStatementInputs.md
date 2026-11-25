@@ -1,23 +1,23 @@
 # Renard VI.7.2 Proposition from five named statements
 
-Worker 76. Supporting reduction for proof task
-`2a804ec7-6b5f-4bbe-93ab-39527f9b50a9` (Renard VI.7.2 Proposition,
-`Langlands.CuspidalSupport.BernsteinBlockCharacterizationStatement`). This
+Supporting reduction for Renard VI.7.2 Proposition
+(`Langlands.CuspidalSupport.BernsteinBlockCharacterizationStatement`). This
 module proves the characterization of a Bernstein block **conditionally** on
-five published propositions. None of them is proved yet, and none is proved here:
+five published propositions. The Library proves none of them unconditionally,
+and none is proved here:
 
-| hypothesis | published proposition | source | proof task |
-|---|---|---|---|
-| `hSplit` | `RationalCuspidalInertiaDecompositionStatement.{uF, max uF uV}` | VI.3.3.1 | `5c59bed4-0f33-47e1-aaa6-1d1145b8b25f` |
-| `hwhole` | `RationalWholeCuspidalCategoryDecompositionStatement.{uF, max uF uV}` | VI.3.5 | `4bee987a-093b-4054-bd65-7360168351d2` |
-| `hind` | `RepresentedParabolic.LeviInductionNoSupercuspidalSubquotientStatement.{uF, max uF uV}` | VI.5.2 | `fc21c11d-1a31-468d-a90e-fdda36098677` |
-| `hJF` | `BernsteinBlockJacquetFaithfulStatement.{uF, uV}` | VI.10.3 | `2174cd68-b110-4f86-b992-28712c29d35f` |
-| `hProg` | `RationalSummandSmallProgeneratorStatement.{uF, max uF uV}` | VI.4.1 | `ca5fea74-6ce4-457c-9947-4427cbfdbdd8` |
+| hypothesis | published proposition | source |
+|---|---|---|
+| `hSplit` | `RationalCuspidalInertiaDecompositionStatement.{uF, max uF uV}` | VI.3.3.1 |
+| `hwhole` | `RationalWholeCuspidalCategoryDecompositionStatement.{uF, max uF uV}` | VI.3.5 |
+| `hind` | `RepresentedParabolic.LeviInductionNoSupercuspidalSubquotientStatement.{uF, max uF uV}` | VI.5.2 |
+| `hJF` | `BernsteinBlockJacquetFaithfulStatement.{uF, uV}` | VI.10.3 |
+| `hProg` | `RationalSummandSmallProgeneratorStatement.{uF, max uF uV}` | VI.4.1 |
 
 The first two names and the last three are in namespace
 `Langlands.CuspidalSupport`; `RepresentedParabolic` is
-`Langlands.Aubert.General.RepresentedParabolic`. When all five have published
-proofs, applying `bernsteinBlockCharacterization_of_statements` to them gives an
+`Langlands.Aubert.General.RepresentedParabolic`. Applied to proofs of all
+five, `bernsteinBlockCharacterization_of_statements` gives an
 unconditional theorem whose type is exactly the target.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French

@@ -1,7 +1,5 @@
 # Analytic inverse-transpose transport
 
-Author: Worker 17.
-
 This module states two internal analytic transport obligations for actual
 p-adic general linear groups. Its declarations are `Prop`-valued definitions;
 the module proves neither equivalence.

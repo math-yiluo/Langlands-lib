@@ -1,7 +1,7 @@
 # Smoothness and growth of actual real-place Whittaker restrictions
 
 This internal module specializes the place-independent Whittaker regularity proof of
-Worker 5665 to a real place. It proves `RealPlaceWhittakerSmoothGrowthStatement`,
+`ArchimedeanWhittakerRegularity` to a real place. It proves `RealPlaceWhittakerSmoothGrowthStatement`,
 `RealPlaceWhittakerAnalyticStatement`, and `RealPlaceWhittakerModelStatement` without
 additional premises, and states and proves a conditional reduction of the full real-place
 functional equation to its two local analytic packages and its actual contragredient

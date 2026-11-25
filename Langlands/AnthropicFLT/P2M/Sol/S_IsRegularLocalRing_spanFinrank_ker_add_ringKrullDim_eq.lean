@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_IsRegularLocalRing_isDomain
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
@@ -379,7 +379,7 @@ theorem main {A B : Type*} [CommRing A] [CommRing B] [IsRegularLocalRing A] [IsR
   have hdimJ : ringKrullDim (A ⧸ J) = b := (ringKrullDim_eq_natCast_iff b).mpr hhJ
   haveI : IsRegularLocalRing (A ⧸ J) :=
     IsRegularLocalRing.of_spanFinrank_maximalIdeal_le _ (by rw [hμJ, hdimJ])
-  haveI : IsDomain (A ⧸ J) := IsRegularLocalRing.isDomain _
+  haveI : IsDomain (A ⧸ J) := IsRegularLocalRing.isDomainFLT _
 
   let gbar : A ⧸ J →+* B := Ideal.Quotient.lift J f (fun y hy => hJI hy)
   have hgbar_mk : ∀ y : A, gbar (Ideal.Quotient.mk J y) = f y := fun y => Ideal.Quotient.lift_mk _ _ _

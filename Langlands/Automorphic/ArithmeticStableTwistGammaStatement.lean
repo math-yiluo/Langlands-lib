@@ -15,7 +15,7 @@ Théorème 4.6). Proposition definition only.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uE
 
@@ -67,4 +67,4 @@ def ArithmeticStableTwistGammaStatement : Prop :=
               (WeilDeligneRepresentation.twistClass (Correspondence.weilCharacter K e χ) X)
               Y G
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

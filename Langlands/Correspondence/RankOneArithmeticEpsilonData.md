@@ -1,6 +1,6 @@
 # Constructed rank-one arithmetic epsilon data
 
-Worker 1555 derives this internal construction from the published p-adic
+This internal construction is derived from the published p-adic
 Fourier duality, Gauss nonvanishing and abelian Laurent epsilon formula,
 and the exact full rank-one arithmetic spectral certificate. No new
 original-literature assertion is introduced.
@@ -52,6 +52,6 @@ the self-dual measure gives the required identity for every such measure.
 Every prime and finite p-adic field is retained. The field, parameter-carrier
 and supplied-system universes remain independent. Standalone reciprocity,
 common-closure reciprocity, compatibility between them and a validated
-local-constant system are still explicit inputs. This unit constructs no
+local-constant system are still explicit inputs. This module constructs no
 such family or system and proves no analytic JPSS epsilon comparison or
 closed supercuspidal correspondence.

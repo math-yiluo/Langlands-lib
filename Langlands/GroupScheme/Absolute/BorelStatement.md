@@ -1,13 +1,12 @@
 # Borel subgroups, maximal tori and parabolic subgroups over a field: statements
 
-Worker 1234.
-
 This module states or imports the main structure theorems about the notions defined in
 `Langlands.GroupScheme.Absolute.Borel`: Borel subgroups, parabolic subgroups,
 Borel pairs and regular cocharacters. It states theorems only. Each statement is a
 `Prop`-valued definition, and none of them is proved here. Statements 1–6 are
-general theorems of the literature. Statement 7 is the `GL_N` case, which this
-task proves separately.
+general theorems of the literature. Statement 7 is the `GL_N` case, which
+`Langlands.GroupScheme.generalLinearBorel` (module
+`Langlands.GroupScheme.Absolute.GeneralLinearBorelProof`) proves separately.
 
 Throughout, `k : Type u` is a field and `S = Spec (CommRingCat.of k)`. Group
 schemes are `Langlands.GroupScheme S`. For a group scheme `G`, write `G(k)` for
@@ -93,7 +92,7 @@ under `i`, the subgroup `(SubgroupFunctor.range i).carrier (Over.mk (𝟙 S))`.
 Then `Subgroup.normalizer H = H` in the group `G(k)`.
 
 Source: Milne, Theorem 17.48: `B = N_G(B)`. **Derived**: this is the `k`-point
-form of the theorem, as the contract asks. Milne's statement is an equality of
+form of the theorem. Milne's statement is an equality of
 algebraic subgroups. Over an algebraically closed field, `N_G(B)(k)` consists of
 the `g ∈ G(k)` with `gBg⁻¹ = B`. A smooth closed subgroup is determined by its
 `k`-points, so `N_G(B)(k)` is the normalizer of `B(k)` in `G(k)`. Milne's

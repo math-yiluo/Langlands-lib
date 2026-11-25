@@ -1,6 +1,6 @@
 # Trivial actual actions and their semigroup subgroups
 
-This internal unit constructs `AutomorphicAction.trivial` over any base scheme
+This internal module constructs `AutomorphicAction.trivial` over any base scheme
 and universe. Its action morphism is the second projection. The product
 identities prove its action laws and its evaluation on every test scheme.
 An actual action fixing every point on every test equals this construction:

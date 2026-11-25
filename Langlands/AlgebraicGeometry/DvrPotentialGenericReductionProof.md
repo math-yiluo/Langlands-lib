@@ -2,9 +2,6 @@
 
 Lean module: `Langlands.AlgebraicGeometry.DvrPotentialGenericReductionProof`.
 
-Worker 7, with Worker 4699 (helper modules `DvrDominatingFiniteExtension` and
-`QuasiCompactAffineEtaleCover`).
-
 ## Result
 
 `theorem Langlands.AlgebraicGeometry.dvrPotentialGenericReduction :
@@ -47,7 +44,7 @@ From `Langlands.AlgebraicGeometry.PotentialGeometricReduction` (namespace of the
 - `exists_good_affine K A`: for a finite-type algebra `A` over a field `K` there is a
   finite extension `L` with the base change of `Spec A ⟶ Spec K` to `Spec L` good.
 
-From Worker 4699's helper modules:
+From the helper modules `QuasiCompactAffineEtaleCover` and `DvrDominatingFiniteExtension`:
 
 - `QuasiCompactAffineEtaleCover.exists_spec_cover Y`: for a quasi-compact scheme `Y` there are
   a ring `R` and `p : Spec R ⟶ Y` that is surjective, flat, geometrically reduced, locally of

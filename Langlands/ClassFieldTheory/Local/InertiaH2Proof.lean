@@ -18,7 +18,6 @@ namespace Langlands.ClassFieldTheory.Local
 
 universe u
 
--- The finite-stage helper below is reused from Worker 10's private draft.
 private theorem absoluteH2_of_finiteRelativeH2 (K : Type u) [Field K] [CharZero K]
     (hfinite : ∀ (E : IntermediateField K (AlgebraicClosure K))
       [FiniteDimensional K E] [IsGalois K E],

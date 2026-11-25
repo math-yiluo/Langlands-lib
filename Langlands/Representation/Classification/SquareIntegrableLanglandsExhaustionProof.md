@@ -1,9 +1,5 @@
 # Exhaustion by square-integrable Langlands heads
 
-Authors: Worker 597 (closing proof and documentation) and Worker 595
-(identification of the independent tempered quotient coverage and regular
-head route).
-
 `Langlands.Classification.squareIntegrableLanglandsExhaustion` proves exactly
 `Langlands.Classification.SquareIntegrableLanglandsExhaustion.{uF,uV} F T`
 from the unchanged
@@ -94,7 +90,7 @@ classes to irreducible smooth classes, using weakly decreasing unitary
 exponents. Its exhaustion assertion is the source of the named target.
 Sections 2.5–2.6, printed pp.594–595 (PDF pp.8–9), specify normalized upper
 block induction and the special quotient of the increasing cuspidal segment
-product. These passages were read in full for this contribution. They agree
+product. These passages were read in full for this proof. They agree
 with the unchanged constructions here: right translation, positive
 half-modulus covariance, `ν = |det|_F` and `|ϖ|_F = q^(-1)`.
 

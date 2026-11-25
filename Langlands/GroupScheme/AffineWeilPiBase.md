@@ -1,7 +1,5 @@
 # Weil restriction from a finite product of copies of the base ring
 
-Worker 632.
-
 For an arbitrary commutative ring `A`, a finite type `I`, and an affine group
 scheme `H` locally of finite type over `Spec(A^I)`, this internal construction
 identifies the actual affine Weil restriction of `H` with the categorical

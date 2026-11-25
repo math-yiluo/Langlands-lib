@@ -173,8 +173,8 @@ reports only `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance
 
-Steps 1–7 come from this task's carried-over shared draft (revision 1,
-`RationalCuspidalSeriesExistenceReduction`). There they formed a conditional
-reduction to `DynamicParabolicQuotientCompactStatement`. This module renames
-it and adds the final application to the published
+Steps 1–7 form a conditional reduction to
+`DynamicParabolicQuotientCompactStatement`. This module states that reduction
+as `rationalCuspidalSeriesExistence_of_dynamicParabolicQuotientCompact` and
+adds the final application to the published
 `dynamicParabolicQuotientCompact`, which makes the result unconditional.

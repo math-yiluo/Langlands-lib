@@ -1,7 +1,5 @@
 # Complete reducibility for Jordan-closed linear Lie algebras
 
-Author: Worker 1429.
-
 This module is in the namespace `Langlands.Algebra`. Here `k` is an
 algebraically closed field of characteristic zero. The algebra `h` is a Lie
 subalgebra of `Module.End k V` for a finite-dimensional `k`-vector space `V`,

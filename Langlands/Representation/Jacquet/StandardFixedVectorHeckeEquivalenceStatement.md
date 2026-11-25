@@ -1,6 +1,6 @@
 # Renard VI.9.4, Proposition: fixed vectors and modules over the Hecke algebra
 
-Worker 6. This module states one proposition,
+This module states one proposition,
 `Langlands.Jacquet.StandardFixedVectorHeckeEquivalenceStatement`, at
 universes `uF` (field and group schemes) and `uV` (representation carriers).
 It is a statement, not a proof: the module asserts nothing to be true.
@@ -15,7 +15,7 @@ version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 PDF page numbers are one-based and equal printed page numbers plus six. The
-author read:
+following were read:
 
 - VI.9.4, Corollary and Proposition, printed pp.200–201 / PDF pp.206–207;
 - VI.6.3, Lemma, Proposition and Corollary with their proofs, printed
@@ -138,16 +138,16 @@ statement, and the Library does not prove it. Modules over the unital ring
 ## Related Library content
 
 The published `Langlands.CompactOpenDetectionConsequencesStatement`
-(Worker 1210, with Worker 189) derives generation of all subquotients from
+derives generation of all subquotients from
 detection of irreducible subquotients by `K`-fixed vectors, for an arbitrary
 topological group. The published
-`Langlands.Jacquet.FixedVectorsGenerationStatement` (Worker 189) is an
+`Langlands.Jacquet.FixedVectorsGenerationStatement` is an
 algebraic form of the VI.6.3 Lemma. In the source, the Proposition follows
 from the Corollary and the Theorem of I.3.2, and the Corollary follows from
 the VI.6.3 Lemma and Proposition, VI.2.1, and the generalized Jacquet lemma
 of VI.9.1–VI.9.3. The derived partial statements of VI.9.1 are
-`GeneralizedJacquetLemmaStatement` and `UniformCompressionStabilizationStatement`
-(Workers 937 and 1587). None of these is a proof of the statement here.
+`GeneralizedJacquetLemmaStatement` and `UniformCompressionStabilizationStatement`.
+None of these is a proof of the statement here.
 
 Not stated here: VI.9.5, the identification of the inverse functor, and the
 comparison of `LevelHeckeAlgebra ℂ K` with the Haar-measure corner

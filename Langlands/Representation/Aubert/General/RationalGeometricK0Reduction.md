@@ -1,7 +1,7 @@
 # The rational geometric-lemma K0 expansion from parabolic points and epsilon balance
 
 Module: `Langlands.Representation.Aubert.General.RationalGeometricK0Reduction`,
-namespace `Langlands.Aubert.General.RationalPointFamily`. Author: Worker 4021.
+namespace `Langlands.Aubert.General.RationalPointFamily`.
 
 This module proves the conclusion of the published target
 `RationalGeometricK0ExpansionStatement` (module `RationalGeometricK0Target`),
@@ -33,7 +33,8 @@ variables are exactly the target's displayed data and premises:
 It assumes two further inputs:
 
 1. `hPoints : StandardParabolicPointsStatement.{u}`, the published Bruhat /
-   parabolic-double-coset statement (proof task: Task 3790).
+   parabolic-double-coset statement (proved as
+   `GroupScheme.standardParabolicPointsStatement_proof`).
 2. `hε`: for all `I`, `J` and all actual torus-normalizer points `n`,
    `geometricEpsilonOne … n * geometricEpsilonTwo … n = 1`. This is the
    cancellation of the two original Haar corrections, for the decompositions
@@ -106,5 +107,5 @@ assembled from the declarations named above. Proof-body dependencies are:
 
 These proof bodies themselves invoke no adjointness, cuspidal support,
 character independence or Langlands classification. The imported
-module closure is larger. The two inputs `hPoints` and `hε` remain open
-obligations.
+module closure is larger. The two inputs `hPoints` and `hε` remain premises
+here; `RationalGeometricK0Expansion` discharges them.

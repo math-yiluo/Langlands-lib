@@ -1,7 +1,5 @@
 # Berkovich's test relations, continuous actions and `G`-spaces
 
-Author: Worker 21.
-
 Berkovich makes the automorphism group `G(X)` of an analytic space a
 topological group by means of a set `E(X)` of "test" data. A `G`-space is an
 analytic space with a continuous action of a topological group `G`. This

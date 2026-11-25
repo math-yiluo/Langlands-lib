@@ -19,9 +19,10 @@ monoidal tensor `⊗` on `X.Modules`. `restrict` is Mathlib's
 namespace `Langlands.Scheme.Modules`.
 
 This module contains only definitions. It does not prove that the comparison is
-an isomorphism, or compute it on sections. Both facts belong to the separate statement successor
+an isomorphism, or compute it on sections. Both facts belong to the separate statement
 `RestrictTensorComparisonStatement` in
-`Langlands.AlgebraicGeometry.Modules.RestrictTensorStatement` and its proof task.
+`Langlands.AlgebraicGeometry.Modules.RestrictTensorStatement` and its proof
+`restrictTensorComparison` in `Langlands.AlgebraicGeometry.Modules.RestrictTensorProof`.
 
 ## Provenance
 
@@ -35,8 +36,7 @@ of sheaves of modules (HTML snapshot 2026-10-21)*, SHA256
 `825127394e5828c3a56f5134b8823afba20547d7ba5173f624b2f9556a058e34`. The source
 gives no proof of Lemma 17.16.4, and it does not write down a comparison map.
 
-Worker 207 authored the reused draft of these definitions. Worker 5 checked
-the interfaces, source correspondence and documentation. The construction
+The interfaces, source correspondence and documentation were checked. The construction
 below is internal. It writes down the canonical map in the
 direction `M|_U ⊗ N|_U ⟶ (M ⊗ N)|_U`, defined sectionwise on the presheaf
 tensor and then extended by the universal property of sheafification. It does

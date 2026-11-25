@@ -3,9 +3,9 @@
 This module fixes the interface between the equal-rank and unequal-rank parts of the real
 normalized-growth induction. Both parts use the predicate
 `RealJacquet.HasRealPairNormalizedGrowth` from `RealLocalNormalizedGrowth`. The definitions
-mirror the published complex `ComplexJacquet.ComplexLocalEqualGrowthAtRank` (module
+mirror the complex `ComplexJacquet.ComplexLocalEqualGrowthAtRank` (module
 `ComplexLocalEqualGrowthStep`). They also mirror the complex unequal predicate
-`ComplexLocalUnequalGrowthAtRanks` in Worker 273's staged unequal-rank proof.
+`ComplexLocalUnequalGrowthAtRanks` of the unequal-rank proof (module `ComplexUnequalGrowthInduction`).
 
 ## Definitions
 

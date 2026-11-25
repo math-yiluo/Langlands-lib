@@ -54,11 +54,15 @@ uniform clearing to produce the displayed intrinsic bound.
 
 This pair neither proves the closed first-block analytic statement nor
 supplies a final closed dominant-rank gamma or L theorem. Finite numerators
-remain an explicit input here. The preceding strict-law unit separately
-constructs those numerators above a common opposite-twist bound, conditional
-on that independently owned first-block statement. A common-bound wrapper,
+remain an explicit input here. `exists_strictTwoBlockFiniteNumerators` in
+`TwoBlockDominantStrictFiniteNumerators` separately constructs those numerators
+above a common opposite-twist bound, conditional on the first-block statement
+`TwoBlockDominantFirstBlockLaurentIdentityStatement`, which
+`TwoBlockDominantFirstBlockLaurentIdentityProof` proves. A common-bound wrapper,
 identification of the retained block witnesses with full symmetric factors,
-continuation to zero and upper induction transport remain later assembly.
+continuation to zero and upper induction transport are later steps, in
+`TwoBlockDominantStrictFactors`, `TwoBlockDominantStrictGammaContinuation`,
+`TwoBlockDominantStrictLContinuation` and `TwoBlockDominantRankProof`.
 
 ## All-field port
 

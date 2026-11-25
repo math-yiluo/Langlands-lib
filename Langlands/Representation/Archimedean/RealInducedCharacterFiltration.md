@@ -16,19 +16,19 @@ module of `[induced d, character c]` on `GL₃(ℝ)` has a filtration as in
 `[c, d]`, or of a list with a permutation of the exponent support and a strictly larger sum of
 squared weights.
 
-The theorem assumes the two landing statements of Worker 763 (module
-`RealSwapLandingStatement`, Task 7133). These are
+The theorem assumes the two landing statements of module
+`RealSwapLandingStatement`. These are
 `hL : RealSwapLandingInducedFirstStatement` and `hL' : RealSwapLandingCharacterFirstStatement`.
 They are not proved in this module, so this module alone does **not** prove the target
 statement. The module `RealInducedCharacterFiltrationProof` discharges both hypotheses
 (by `RealSwapLandingIntegral.inducedFirst` and
 `RealSwapLandingMirror.characterFirst_of_inducedFirst`) and proves the target. Apart from these
 two hypotheses, the proof uses no assumption beyond Lean's standard axioms. All other inputs
-are proved theorems: in the Library, in Worker 763's modules `RealSwapFLanding` and
+are proved theorems: in the Library, in the modules `RealSwapFLanding` and
 `RealBlockTransposition`, or in the modules listed below.
 
-This is an internal development for Task 7134. It follows the case plan of Worker 763's
-mirror task 7133 (`RealCharacterInducedFiltrationStatement`). No literature statement is
+This is an internal development for `RealInducedCharacterFiltrationStatement`. It follows the
+case plan of the mirror statement `RealCharacterInducedFiltrationStatement`. No literature statement is
 formalized.
 
 Notation. `d` has weight `m`, `ℓ = |m|` and exponent `t`. `c` has parity `ε` and exponent

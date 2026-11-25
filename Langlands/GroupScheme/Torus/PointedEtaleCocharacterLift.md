@@ -1,7 +1,5 @@
 # Pointed étale lifting of actual cocharacters
 
-Worker 598.
-
 `HomScheme.pointedEtaleCocharacterLift` constructs a lift of any prescribed
 residue-field cocharacter of a smooth affine group over an arbitrary scheme.
 The returned `PointedEtaleCocharacterLiftData` records an étale neighbourhood,
@@ -17,7 +15,7 @@ residue map.
 `cocharacterOfRelativeHom` normalizes a relative Hom family with source
 `G_m` by precomposing with the inverse multiplicative base-change isomorphism.
 `cocharacterOfRelativeHom_recovers` proves that exact relative Hom evaluation
-is exact recovery of this normalized cocharacter. Its proof uses the published
+is exact recovery of this normalized cocharacter. Its proof uses the
 evaluation comparison and multiplicative pullback tower coherence, then cancels
 the source isomorphisms.
 

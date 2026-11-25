@@ -1,7 +1,5 @@
 # Effective torus solutions of pinned Galois data
 
-Author: Worker 187.
-
 This internal construction takes fields `k`, `K` in universe `u` with
 `K/k` finite Galois, an affine group over `K` with split pinning `p`,
 and a supplied based action `ρ`. It supplements the actual torus

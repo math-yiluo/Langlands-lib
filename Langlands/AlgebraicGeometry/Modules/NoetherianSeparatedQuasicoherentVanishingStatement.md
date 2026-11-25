@@ -1,8 +1,5 @@
 # Vanishing of quasi-coherent cohomology above the dimension
 
-Authors: Worker 921 (original Lean and Markdown draft) and Worker 595
-(source and interface verification, revised explanation).
-
 `Langlands.AlgebraicGeometry.Modules.NoetherianSeparatedQuasicoherentVanishingStatement.{u}`
 is the following proposition definition, with arbitrary universe `u`:
 
@@ -81,10 +78,10 @@ the structure sheaf.
 
 The Library's scalar conventions give this same group an `R`-module
 structure. In detail, `DerivedSections.globalSections X` is evaluation at
-the top open, with values in modules over `Γ(X, ⊤)`. The published natural
+the top open, with values in modules over `Γ(X, ⊤)`. The Library's natural
 isomorphism `DerivedSections.relativeGlobalSectionsIso f` identifies
 `relativeGlobalSections f` with these sections after restricting scalars
-along `DerivedSections.structureRingHom f : R ⟶ Γ(X, ⊤)`. The published
+along `DerivedSections.structureRingHom f : R ⟶ Γ(X, ⊤)`. The Library's
 `DerivedSections.relativeCohomologyRestrictScalarsIso f n` gives the same
 identification on right-derived functors. Restriction of scalars leaves
 underlying abelian groups unchanged. Equivalently, forgetting module
@@ -98,13 +95,13 @@ vanishing argument or the abelian-sheaf comparison.
 The Lean proposition is narrower than Tag 02UZ: it concerns quasi-coherent
 modules on separated noetherian schemes. Tag 02UZ requires neither
 quasi-coherence nor separatedness and applies to arbitrary abelian sheaves.
-These restrictions are part of the requested target.
+These restrictions are part of the proposition as stated.
 
 ## Formal dependencies
 
 The imports are `Mathlib.AlgebraicGeometry.Morphisms.Separated`,
 `Mathlib.AlgebraicGeometry.Noetherian`, `Mathlib.Topology.KrullDimension`,
-and the published Library module
+and the Library module
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`.
-The Mathlib pin is `5ed2965256430c3649e86755f9576b54eca72435`, with
-Lean 4.34.0. All existing imported Lean and Markdown files are unchanged.
+The file was written for Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`,
+with Lean 4.34.0.

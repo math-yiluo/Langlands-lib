@@ -38,8 +38,8 @@ do not assert that the unipotent radical of a proper parabolic is normal in
 the full reductive group. In parabolic applications one first works in the
 appropriate normalizing subgroup and later restricts the descended action
 to the Levi subgroup. Matching the actual parabolic tower and its modulus
-characters remains a separate geometric and normalized-transitivity
-obligation. This pair does not complete that obligation.
+characters is a separate geometric and normalized-transitivity step.
+This pair does not carry out that step.
 
 ## Original sources and derived formulation
 
@@ -91,41 +91,29 @@ The quotient, group action and intrinsic laws are the existing Mathlib
 `toCoinvariants_mk`, and `toCoinvariantsMkQ`, from
 `Mathlib/RepresentationTheory/Coinvariants.lean`. Their actual definitions
 were inspected, including the normality instances and stability argument.
-No second coinvariant construction is introduced. Worker 34's more general
-normalizer-action construction remains with its owner and is not an import
-of this pair.
+No second coinvariant construction is introduced. The more general
+normalizer-action construction of `Langlands.Representation.Jacquet.Coinvariants`
+is not an import of this pair.
 
 The sole project mathematical dependency is the scalar-twist definition
-artifact `c83db975-8b79-4fbb-9901-2db836910a0a`, version 1,
-`Langlands.Representation.Twist.Definitions`.
-Its accepted effective pair was fetched and read, and the local hashes match:
+module `Langlands.Representation.Twist.Definitions`.
+Its Lean file and Markdown page were read; their hashes at that reading were:
 
 - Lean SHA256:
   `9e193a22784cba92e727402aac5117056433e796e37e1c76f8710e2ddd11d8cf`.
 - Markdown SHA256:
   `94e8c64945411e253a2c91a8e1bf52090d6df15a43362b2032717064c6ac49bc`.
-- Published snapshot:
-  `11f65c09eaca65703cc7480a0a24fba9e919c016f870d3bb1c8240947c904330`.
-- Publication commit:
-  `3d5d019e3d023c64c9a71be49c55e1d2e47b5f41`.
 
-The fresh availability check reports it accepted, published and current at
-Library commit `5bc58c2525e0499012801c80f17b6a9c04d57263`, with no missing,
-changed or unavailable dependencies. It has no project mathematical
-prerequisites. The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`,
-version 1: Lean 4.34.0 and Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`.
+It has no project mathematical prerequisites. The checks used Lean 4.34.0
+and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
-The complete pair passed the registered incremental Lake build and exact
-declaration inspection, diagnostic `9bccb5b4-9bae-452e-8095-3400803f1b54`,
-with zero errors and warnings and `statement_returns_prop = true`.
-The combined target fingerprint is
-`7384e4249cf375bd7abf9cd860c8c43fca66b767a067bd87ed9d5be0e677b584`.
+The complete pair passed an incremental Lake build and exact
+declaration inspection, with zero errors and warnings and
+`statement_returns_prop = true`.
 The full elaborated bodies of all three component propositions and the
 conjunction were also inspected with explicit universes. The components are
 named for reuse within this single coherent pair, with no assumed theorem
 fields or predicate parameters.
 
-These are development checks. Independent semantic acceptance and current
-Library publication remain separate requirements. The theorem proofs remain
-separate obligations.
+This pair proves none of the three laws. The tower clause is proved by
+`coinvariantTower` in `Langlands.Representation.Jacquet.CoinvariantTowerProof`.

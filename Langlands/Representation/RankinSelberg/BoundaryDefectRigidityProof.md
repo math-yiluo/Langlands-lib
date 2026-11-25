@@ -1,6 +1,6 @@
 # Proof of boundary cancellation and reflected defect rigidity
 
-Worker 952 proves `Langlands.RankinSelberg.boundaryDefectRigidity` with exactly
+This module proves `Langlands.RankinSelberg.boundaryDefectRigidity` with exactly
 the closed type `Langlands.RankinSelberg.BoundaryDefectRigidityStatement`,
 defined in
 [the statement module](BoundaryDefectRigidityStatement.md).

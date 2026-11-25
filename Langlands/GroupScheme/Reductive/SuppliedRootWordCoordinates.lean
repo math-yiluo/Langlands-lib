@@ -85,7 +85,9 @@ theorem reflectionWordLoweringMaps_represents_of_fullSimpleMaps
     refine List.Forall₂.cons ?_ ih
     have h := VectorGroup.isRepresentedBy_conjugateMap p.inclusion
       (-p.rootDatum.root i) (xm i) (hxm i) (p.reflectionWordPoint_normalizes s l)
-    rw [p.characterAut_reflectionWordTorusAut s l, map_neg] at h
+    have hneg (e : characterLattice p.torus ≃ₗ[ℤ] characterLattice p.torus)
+        (x : characterLattice p.torus) : e (-x) = -e x := e.toLinearMap.map_neg x
+    rw [p.characterAut_reflectionWordTorusAut s l, hneg] at h
     convert h using 1
     exact congrArg (fun a => RelativeRoot.subgroup p.inclusion (-a))
       (RootPairing.Equiv.root_indexEquiv_eq_smul

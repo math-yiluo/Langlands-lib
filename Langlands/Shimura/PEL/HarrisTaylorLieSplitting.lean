@@ -69,26 +69,26 @@ theorem lieEigenIso_inv :
 
 /-- The projection is equivariant for the full actual rational algebra action. -/
 theorem lieEigenProjection_intertwines (conjugate : Bool) (a : A) :
-    lieRationalOrderAction s B i.toRingHom a ≫ lieEigenProjection L s B i conjugate =
-      lieEigenProjection L s B i conjugate ≫ lieEigensheafAction L s B i conjugate a := by
+    (lieRationalOrderAction s B i.toRingHom a).asHom ≫ lieEigenProjection L s B i conjugate =
+      lieEigenProjection L s B i conjugate ≫ (lieEigensheafAction L s B i conjugate a).asHom := by
   let : Algebra K Γ(S, ⊤) := (secHom s ⊤).hom.toAlgebra
   let : Algebra ℚ Γ(S, ⊤) := Algebra.compHom Γ(S, ⊤) (algebraMap ℚ K)
   let : IsScalarTower ℚ K Γ(S, ⊤) :=
     IsScalarTower.of_algebraMap_eq (fun _ => rfl)
   cases conjugate
   · exact sheafEigenProjection_naturality L K (imaginaryLieAction L s B i)
-      (imaginaryLieAction L s B i) (lieRationalOrderAction s B i.toRingHom a)
+      (imaginaryLieAction L s B i) (lieRationalOrderAction s B i.toRingHom a).asHom
       (fun r => imaginaryLieAction_commutes L s B i r a) false
   · exact sheafEigenProjection_naturality L K (imaginaryLieAction L s B i)
-      (imaginaryLieAction L s B i) (lieRationalOrderAction s B i.toRingHom a)
+      (imaginaryLieAction L s B i) (lieRationalOrderAction s B i.toRingHom a).asHom
       (fun r => imaginaryLieAction_commutes L s B i r a) true
 
 /-- The product splitting intertwines the full algebra action with its two restrictions. -/
 theorem lieEigenIso_intertwines (a : A) :
-    lieRationalOrderAction s B i.toRingHom a ≫ (lieEigenIso L s B i).hom =
+    (lieRationalOrderAction s B i.toRingHom a).asHom ≫ (lieEigenIso L s B i).hom =
       (lieEigenIso L s B i).hom ≫
-        prod.map (lieEigensheafAction L s B i false a)
-          (lieEigensheafAction L s B i true a) := by
+        prod.map (lieEigensheafAction L s B i false a).asHom
+          (lieEigensheafAction L s B i true a).asHom := by
   apply prod.hom_ext
   · simpa only [lieEigenIso_hom, Category.assoc, prod.lift_fst,
       prod.map_fst, prod.lift_fst_assoc] using
@@ -99,7 +99,7 @@ theorem lieEigenIso_intertwines (a : A) :
 
 variable {B} {B' : AbelianScheme S} (i' : A →ₐ[ℚ] End0 B')
   (f : Hom0 B B')
-  (hf : ∀ a : A, comp0 B B B' (i a) f = comp0 B B' B' f (i' a))
+  (hf : ∀ a : A, comp0 B B B' (i a).asHom f = comp0 B B' B' f (i' a).asHom)
 
 /-- The projections commute with actual equivariant rational differentials. -/
 theorem lieEigenProjection_naturality (conjugate : Bool) :

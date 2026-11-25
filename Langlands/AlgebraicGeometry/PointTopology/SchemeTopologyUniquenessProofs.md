@@ -1,6 +1,6 @@
 # Uniqueness from affine characterization and actual open chart coverage
 
-Authors: Worker 105 (proof), Worker 1103 (check and submission). This unit
+This module
 proves `Langlands.AlgebraicGeometry.PointTopology.SchemePointTopologyUniquenessProperty`
 through `schemePointTopologyUniqueness_proof`, with exactly the target's full
 parameter order and hypotheses. It uses the actual relative scheme-point
@@ -35,7 +35,7 @@ clause is retained for the final step.
 
 ## Main proof
 
-The main proof applies the published four-axiom uniqueness theorem
+The main proof applies the four-axiom uniqueness theorem
 `affineSchemeTopology_eq_evaluation` to the restricted assignment. This gives
 equality with the evaluation topology on every finite-type affine scheme over
 `Spec R`. For a locally finite type `X` and an affine open `U`, the actual open
@@ -64,5 +64,7 @@ actual points by affine charts. The extension to an arbitrary base `R` and a
 value algebra `S` is explained by the relative-point proof above. The
 registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-This unit supplies uniqueness only; the existence of an assignment satisfying
-the axioms and the other assertions of the paper are separate obligations.
+This module supplies uniqueness only; the existence of an assignment satisfying
+the axioms is `schemePointTopologyExistence_proof` in
+`SchemeTopologyExistenceProofs`, and the other assertions of the paper are
+separate.

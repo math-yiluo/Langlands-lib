@@ -1,12 +1,12 @@
 # Closed-immersion proof on actual scheme point spaces
 
-Author: Worker 105. This proof is a relative and arbitrary-scheme extension of
+This proof is a relative and arbitrary-scheme extension of
 the closed-immersion clause of Brian Conrad, *Weil and Grothendieck approaches
 to adelic points* (December 31, 2011), Proposition 3.1, printed page 4.
 The registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 
-This unit implements `schemeClosedPointProperties_proof` for the exact target
+This module implements `schemeClosedPointProperties_proof` for the exact target
 `Langlands.AlgebraicGeometry.PointTopology.SchemePointClosedImmersionProperties`.
 It uses the actual `RingPoint` carriers and explicitly named final topologies.
 Localness, continuous multiplication and `IsOpenUnits` are the common
@@ -55,6 +55,6 @@ range closed. Together with the embedding result this gives a closed embedding.
 separately Hausdorff closed-embedding result into exactly the target. Its
 explicit full binders preserve the target's quantifier order.
 
-The unit imports the published affine mapping and open-chart proofs by their
+The module imports the affine mapping and open-chart proofs by their
 Lean module names. The exact target covers actual scheme points under the
 stated value-ring assumptions; other source assertions remain separate.

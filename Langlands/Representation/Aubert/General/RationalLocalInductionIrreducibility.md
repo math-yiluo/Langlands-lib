@@ -64,7 +64,7 @@ No self-normalization or self-association premise is introduced. The
 filtration, simple-Jacquet, detection, scalar-comparison, compact-coefficient
 and structural hypotheses above are not proved by this assembly; supplying
 them in the non-self-associated rank-one situation remains necessary for
-the host task. The proof route reuses the imported constructions and
+`RationalRankOneSelfAssociationStatement`. The proof route reuses the imported constructions and
 theorems, with no new original-literature assertion.
 
 The 5 local instances have module-specific names to prevent generated-name

@@ -1,6 +1,6 @@
 # Descent of a compatible actual Weil-product comparison
 
-Worker 166. This is internal supporting content for the simply connected
+This is internal supporting content for the simply connected
 almost-simple Weil-restriction theorem. It combines the published actual
 stabilizer-field factor, the independently constructed canonical transport
 of its embedding product, arbitrary-Galois isomorphism descent, and the
@@ -60,9 +60,11 @@ simple connectedness, absolute almost-simplicity and isomorphism witness
 in the structural conclusion, for these supplied `D`, `i`, `p` and `hp`.
 It uses the actual stabilizer field and factor without replacing them.
 
-This unit does not construct `p` or prove its compatibility `hp`, and it
+This module does not construct `p` or prove its compatibility `hp`, and it
 does not assert the unconditional
-`SimplyConnectedAlmostSimpleWeilRestrictionStatement`. Those remain
-obligations of the host proof. All results here are internal compositions
+`SimplyConnectedAlmostSimpleWeilRestrictionStatement`. Those lie outside
+this module; the statement is proved as
+`simplyConnectedAlmostSimpleWeilRestriction` in
+`AlmostSimpleWeilRestrictionProof`, which imports this module. All results here are internal compositions
 of published constructions and proofs; no new literature assertion or
 unproved structural premise is introduced.

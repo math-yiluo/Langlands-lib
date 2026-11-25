@@ -1,6 +1,6 @@
 # Nilpotent commuting endomorphisms
 
-Worker 307 implements the nilpotent part of the proof of
+This module implements the nilpotent part of the proof of
 Bernstein–Zelevinsky (1976), Lemma 4.10, §4.12, printed pp.39–40,
 registered source `bernstein-zelevinsky-1976-representations-gln`.
 The general case of commuting endomorphisms is not asserted here.

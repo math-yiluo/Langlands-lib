@@ -108,8 +108,9 @@ Mathlib's `NatTrans.mapHomologicalComplex`; the computation lemmas use
 implemented Lean route. No original-literature theorem is asserted.
 
 The result addresses identity and composition for ordinary cohomology pullback
-along étale morphisms. It does not yet identify these maps with the separate
-scheme-automorphism action construction or construct a category of schemes
+along étale morphisms. It does not identify these maps with the separate
+scheme-automorphism action construction (the module `EtaleAutomorphismPullback`
+makes that comparison) or construct a category of schemes
 with coefficient sheaves. General scheme morphisms, scalar extension, analytic
 sites, compact support, and Harris's specialized geometric objects remain
-outside this unit.
+outside this module.

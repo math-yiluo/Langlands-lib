@@ -1,6 +1,6 @@
 # Inertia surjectivity, finite presentations and conductor independence
 
-Worker 60 authors this statement unit. Its declarations are `Prop`-valued
+This is a statement module. Its declarations are `Prop`-valued
 definitions in `Langlands.Ramification.Padic`. They state mathematical
 obligations and do not prove them. All maps, presentations, pullbacks and
 conductor expressions come from
@@ -72,7 +72,7 @@ even without a separate continuity hypothesis.
    conductor values. The two carrier universes remain independent. Together
    with existence and universal surjectivity, this is the compatibility
    needed to define conductors on continuous representation isomorphism
-   classes; this unit does not construct the quotient functions.
+   classes; this module does not construct the quotient functions.
 
 `InertiaSurjectivityPresentationAndConductorIndependenceStatement` is the
 fully quantified conjunction of all nine clauses. It universally quantifies
@@ -112,7 +112,7 @@ No source-specific errata notes were present in the consulted Library.
   numbering, quotient compatibility (Proposition 14), and the inverse-limit
   formulation for infinite Galois extensions. These give the ramification
   context and route to conductor refinement, but no such compatibility
-  proposition is an assumption in this unit.
+  proposition is an assumption in this module.
 - In the same source, Chapter VI, section 2, printed pages 99–102 (PDF pages
   106–109), gives the Artin character and conductor. Proposition 2 and
   Corollary 1' on pages 100–101 express the Artin conductor as the weighted
@@ -151,17 +151,16 @@ supplied surjectivity. The remaining conductor-sum comparison is the
 arithmetic assertion being stated. The equivalence variant uses invariance
 of fixed-space dimensions under invertible intertwiners and the same
 common-field comparison. These observations explain provenance and a
-possible proof route; they are not proofs supplied by this statement unit.
+possible proof route; they are not proofs supplied by this statement module.
 
 ## Boundary with other statements
 
-This unit concerns actions of finite **inertia** groups obtained from
+This module concerns actions of finite **inertia** groups obtained from
 continuous Weil actions. It does not require the full Weil action to factor
 through a finite Galois group.
 `FiniteGaloisConductorInflationAndIndependenceStatement` concerns full finite
 Galois representations and is a distinct target; it is not restated here.
-The Herbrand and absolute ramification arithmetic statement units likewise
+The Herbrand and absolute ramification arithmetic statement modules likewise
 remain separate. No elementary construction proofs from
 `InertiaPresentation` are repeated, and no proof of any new clause is
-claimed. Independent semantic review and Library publication are separate
-from compiling these proposition definitions.
+claimed.

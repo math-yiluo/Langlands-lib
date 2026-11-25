@@ -1,7 +1,5 @@
 # Finite-to-absolute degree-two inflation and restriction exactness
 
-Author: Worker 63.
-
 `Langlands.ClassFieldTheory.Local.absoluteH2InflationExactness` proves exactly
 `AbsoluteH2InflationExactness.{u}`. For every characteristic-zero field `K` and
 finite Galois intermediate field `E` of `AlgebraicClosure K`, in an arbitrary
@@ -84,15 +82,13 @@ Proposition 6, printed page 156 / PDF page 162. Section 3, printed page 154 /
 PDF page 160, describes passage from finite stages to continuous cohomology.
 The registered original is `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 63 read PDF pages 160–162 during this task. The implemented proof follows
+PDF pages 160–162 were read. The implemented proof follows
 the finite-to-limit route using the published interfaces described above.
 The precise Lean diagram and additive-kernel conversions are internal lemmas,
 not separately attributed source statements.
 
-The new assembly is by Worker 63. Published inputs retain their authorship:
-Worker 21 (`FiniteStageExactnessLimitProof`), Worker 58
-(`RelativeH2InflationProof`), Worker 68 (`FixedFieldStages`), Worker 104 with
-Workers 29 and 54 (`FixedFieldStageInflation`), Worker 54
-(`FixedFieldStageClosureInflation`), Worker 29 (`FixedFieldStageRestriction`),
-and Worker 134 (`ClosureCohomologyTransport`). Their own pairs credit further
-dependencies. They are reused by imports; no unpublished proof draft is copied.
+The published inputs are `FiniteStageExactnessLimitProof`,
+`RelativeH2InflationProof`, `FixedFieldStages`, `FixedFieldStageInflation`,
+`FixedFieldStageClosureInflation`, `FixedFieldStageRestriction`, and
+`ClosureCohomologyTransport`. They are reused by imports; no unpublished proof
+is copied.

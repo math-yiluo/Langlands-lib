@@ -75,8 +75,8 @@ prescribed generic group, retaining `s.iso` as its integral group isomorphism.
 ## Remaining obligations
 
 The actual datum, its affine solution, its normalized components, and the
-generic semilinear laws remain supplied inputs. This unit does not construct
+generic semilinear laws remain supplied inputs. This module does not construct
 the integral semilinear maps or a coherent datum from stable integral points.
 Those inputs must still be derived to prove KP Fact 2.10.16 without added
-hypotheses. This contribution is a prerequisite, not a proof of
+hypotheses. This module is a prerequisite, not a proof of
 `UnramifiedSmoothModelDescentStatement`.

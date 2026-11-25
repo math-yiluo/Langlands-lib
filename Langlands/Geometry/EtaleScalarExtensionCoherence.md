@@ -108,7 +108,7 @@ The proof does not assume that tensor presheaves are already sheaves.
 
 ## Scope
 
-This unit concerns ordinary sheaves on one fixed scheme and coefficient-ring
+This module concerns ordinary sheaves on one fixed scheme and coefficient-ring
 identity/composition. Geometric pullback compatibility and equivariance,
 varying-scheme diagrams, ideal reduction, inverse systems, derived scalar
 comparisons, compact supports, smoothness and Harris specialization remain

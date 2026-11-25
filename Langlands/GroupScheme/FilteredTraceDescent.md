@@ -1,11 +1,9 @@
 # Descent of filtration jumps through semilinear coordinates
 
-Authors: Worker 47.
-
 ## Purpose and provenance
 
 This module is pure group theory and is internal to the proof of
-`Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement` (Task 6754). It specializes
+`Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement`. It specializes
 the published module `Langlands.GroupScheme.TraceCocycleDescent` (norm and trace arguments for
 a Galois group acting through a finite quotient) to the situation of a root group with a
 filtration. The two parts are:

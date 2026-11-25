@@ -1,7 +1,5 @@
 # Positive coordinates on the norm-one part of a minimal parabolic
 
-Author: Worker 83.
-
 This module states a structural prerequisite for the chamber form of adelic
 Siegel reduction. It does not prove the coordinate statement or the chamber
 reduction theorem. The three theorems at the end are conditional consequences

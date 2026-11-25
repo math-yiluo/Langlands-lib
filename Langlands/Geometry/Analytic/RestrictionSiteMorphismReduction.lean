@@ -70,17 +70,17 @@ theorem forget_map_injective {A B : GSpace.{u, v, v} K Γ} :
 
 /-- A `Γ`-morphism with a prescribed underlying morphism of analytic spaces. -/
 def homOfForget {A B : GSpace.{u, v, v} K Γ} (φ : forget.obj A ⟶ forget.obj B)
-    (hφ : ∀ g : Γ, A.obj.ρ g ≫ φ = φ ≫ B.obj.ρ g) : A ⟶ B :=
+    (hφ : ∀ g : Γ, (A.obj.ρ g).asHom ≫ φ = φ ≫ (B.obj.ρ g).asHom) : A ⟶ B :=
   ObjectProperty.homMk ⟨φ, hφ⟩
 
 @[simp]
 theorem forget_map_homOfForget {A B : GSpace.{u, v, v} K Γ} (φ : forget.obj A ⟶ forget.obj B)
-    (hφ : ∀ g : Γ, A.obj.ρ g ≫ φ = φ ≫ B.obj.ρ g) : forget.map (homOfForget φ hφ) = φ :=
+    (hφ : ∀ g : Γ, (A.obj.ρ g).asHom ≫ φ = φ ≫ (B.obj.ρ g).asHom) : forget.map (homOfForget φ hφ) = φ :=
   rfl
 
 /-- The underlying morphism of a `Γ`-morphism commutes with the actions. -/
 theorem forget_map_comm {A B : GSpace.{u, v, v} K Γ} (φ : A ⟶ B) (g : Γ) :
-    A.obj.ρ g ≫ forget.map φ = forget.map φ ≫ B.obj.ρ g :=
+    (A.obj.ρ g).asHom ≫ forget.map φ = forget.map φ ≫ (B.obj.ρ g).asHom :=
   φ.hom.comm g
 
 variable {P : MorphismProperty (GSpace.{u, v, v} K Γ)} {Y : GSpace.{u, v, v} K Γ}
@@ -100,7 +100,7 @@ def isLimitPullbackConeOfForget {W U₁ U₂ U₃ : P.Over ⊤ Y}
       rw [← forget.map_comp, ← forget.map_comp, ← MorphismProperty.Comma.comp_left,
         ← MorphismProperty.Comma.comp_left, s.condition]
     let l := h.lift _ _ hs
-    have hl : ∀ g : Γ, s.pt.left.obj.ρ g ≫ l = l ≫ W.left.obj.ρ g := by
+    have hl : ∀ g : Γ, (s.pt.left.obj.ρ g).asHom ≫ l = l ≫ (W.left.obj.ρ g).asHom := by
       intro g
       apply h.hom_ext
       · simp only [Category.assoc, l, h.lift_fst]

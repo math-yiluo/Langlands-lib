@@ -1,6 +1,6 @@
 # Relative tori over strictly Henselian local rings are split
 
-Worker 224. This is an internal derivation from published Library results. It is a helper for the
+This is an internal derivation from published Library results. It is a helper for the
 proof of `Langlands.Geometry.Building.SpecialTorusExistenceStatement` (Kaletha–Prasad,
 Proposition 9.3.4), where it shows that a torus over the integers of the maximal unramified
 extension is split. The fact itself is standard (SGA 3, Exp. X), but no literature statement is

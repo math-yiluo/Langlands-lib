@@ -103,7 +103,7 @@ cocharacter lattice is perfect. -/
 theorem isAddTorsionFree_of_rootDatum
     (P : RootDatum J (characterLattice T) (cocharacterLattice T)) :
     IsAddTorsionFree (characterLattice T) := by
-  refine ⟨fun n hn x y hxy => ?_⟩
+  refine ⟨fun n hn x y _ hxy => ?_⟩
   apply (LinearMap.IsPerfPair.bijective_left P.toLinearMap).injective
   apply LinearMap.ext
   intro c
@@ -121,6 +121,8 @@ theorem pairing_relations_of_not_linearIndependent {j l : J}
       P.pairing j l • P.root l = (2 : ℤ) • P.root j ∧
         P.pairing l j * P.pairing j l = 4 := by
   have := isAddTorsionFree_of_rootDatum P
+  have : HasUniqueDiv (characterLattice T) :=
+    ⟨fun _ hn a b hab => eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   have h₁ := P.pairing_smul_root_eq_of_not_linearIndependent h
   have h' : ¬ LinearIndependent ℤ ![P.root l, P.root j] := by
     rwa [LinearIndependent.pair_symm_iff]
@@ -162,6 +164,8 @@ theorem eq_or_eq_two_smul_of_simple_of_not_linearIndependent (hP : IsRootDatumOf
     (hχν : 0 < latticePairing T χ ν) (hdep : ¬ LinearIndependent ℤ ![a, χ]) :
     χ = a ∨ χ = 2 • a := by
   have := isAddTorsionFree_of_rootDatum P
+  have : HasUniqueDiv (characterLattice T) :=
+    ⟨fun _ hn a b hab => eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   obtain ⟨j, rfl⟩ := exists_root_eq hP ha.1.1
   obtain ⟨l, rfl⟩ := exists_root_eq hP hχ
   obtain ⟨h₁, -, h₃⟩ := pairing_relations_of_not_linearIndependent P hdep
@@ -208,6 +212,8 @@ theorem disjoint_cyclicTail (hP : IsRootDatumOf i P) (ζ : cocharacterLattice T)
     Disjoint (RelativeRoot.cyclicTail a 1 : Set (characterLattice T))
       (RelativeRoot.cyclicTail b 1 : Set (characterLattice T)) := by
   have := isAddTorsionFree_of_rootDatum P
+  have : HasUniqueDiv (characterLattice T) :=
+    ⟨fun _ hn a b hab => eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   rw [Set.disjoint_left]
   rintro χ ⟨n, -, hn, rfl⟩ ⟨m, -, -, hmb⟩
   obtain ⟨j, rfl⟩ := exists_root_eq hP ha.1.1
@@ -364,7 +370,8 @@ theorem subgroup_two_nsmul_le [Smooth G.X.hom] [IsAddTorsionFree (characterLatti
     (hT : IsSplitTorus T.toGrp) (i : T.toGrp ⟶ G) {a : characterLattice T} (ha : a ≠ 0) :
     RelativeRoot.subgroup i (2 • a) ≤ RelativeRoot.subgroup i a := by
   have h2 : 2 • a ≠ 0 := fun h =>
-    ha (nsmul_right_injective two_ne_zero (h.trans (nsmul_zero 2).symm))
+    ha (eq_of_nsmul_eq_nsmul_of_addCommute two_ne_zero (AddCommute.all a 0)
+      (h.trans (nsmul_zero 2).symm))
   rw [← RelativeRoot.weightFiltration_one_eq_subgroup hT i a ha,
     ← RelativeRoot.weightFiltration_one_eq_subgroup hT i (2 • a) h2]
   apply RelativeRoot.semigroupSubgroup_mono

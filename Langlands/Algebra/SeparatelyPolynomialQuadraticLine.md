@@ -1,7 +1,7 @@
 # Separately polynomial functions on `ℕ³` along quadratic lines
 
 Lean module: `Langlands.Algebra.SeparatelyPolynomialQuadraticLine`, namespace
-`Langlands.Algebra.SeparatelyPolynomial`. Author: Worker 195.
+`Langlands.Algebra.SeparatelyPolynomial`.
 
 This module is pure algebra over `ℚ`. It is a helper for the Euler-coefficient degree on
 endomorphisms of abelian varieties (module

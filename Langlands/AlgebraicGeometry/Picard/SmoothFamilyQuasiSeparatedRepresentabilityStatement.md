@@ -104,7 +104,7 @@ sheaf, along with a section and the stated compactness and separation
 conditions on the structure morphism. Those assumptions must be proved for
 any use of that argument here. Corollary (7.22), printed p.106/PDF p.110,
 relates field Picard-zero to the kernel of the line-bundle homomorphism.
-It motivates a separately owned comparison with translation invariance;
+It motivates a separate comparison with translation invariance;
 that comparison is neither imported nor asserted by this module.
 
 ## Derived interface and remaining proof obligations
@@ -139,8 +139,6 @@ remain unchanged: that parent uses geometric translation invariance and
 classifies every test scheme, including non-quasi-separated tests. The present
 statement handles only existence for smooth-family classes on quasi-separated
 tests. Comparison with the parent predicate and extension to all tests remain
-separate tasks. Existing owners and operator pauses for ordinary Picard,
+separate tasks. This statement does not treat ordinary Picard, the
 ordinary/rigidified comparison, global functions, field existence, openness,
-relative geometry and all-test extension must be respected; their required
-constructions must be reused after authorized independent acceptance and
-publication.
+relative geometry or the all-test extension.

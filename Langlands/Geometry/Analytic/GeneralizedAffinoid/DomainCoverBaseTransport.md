@@ -1,6 +1,6 @@
 # Finite full-domain covers under bounded base equivalences
 
-Worker 56 transports a supplied finite cover by actual full affinoid domains
+This module transports a supplied finite cover by actual full affinoid domains
 along a bounded equivalence of the base algebras. This internal construction
 uses the published `DomainBaseTransport` and `DomainTopology` modules.
 
@@ -39,4 +39,4 @@ published domain transport, rather than separately named source theorems.
 The construction allows zero cover size, empty loci, trivial valuation and
 zero quotient algebras. It is transport along a bounded base equivalence;
 arbitrary analytic base change, intersections, analytic sheaves, atlases,
-and sites remain separate construction obligations.
+and sites lie outside this module.

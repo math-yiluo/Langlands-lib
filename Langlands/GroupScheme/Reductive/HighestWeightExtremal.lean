@@ -278,7 +278,7 @@ theorem exists_negativeRho_extremalRepresentation
     exact neg_lt_neg h
   · intro V t
     rw [hdual, Matrix.diagonal_apply_eq]
-    simp only [χ, ha, ← map_neg]
+    simp only [χ, ha, ← AddEquiv.map_neg]
 
 /-- Actual representation data with the three canonical negative-rho laws.
 This type makes no assertion that such a representation exists. -/

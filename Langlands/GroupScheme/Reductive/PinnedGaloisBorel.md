@@ -63,7 +63,9 @@ The provenance is internal: the construction combines the imported actual
 pinned semilinear maps, finite-component assembly, monic closed-subgroup
 cocycle argument, and effective group-and-Borel descent. It assumes the
 finite Galois extension, complete pinning, and based action; their
-unconditional construction remains necessary for the host theorem.
+unconditional construction is needed for the statement this module serves,
+`QuasiSplitInnerFormExistenceStatement` (proved as
+`quasiSplitInnerFormExistence` in `Rational.QuasiSplitInnerFormExistenceProof`).
 It does not construct a full-centre adjoint quotient or the inner local
 comparison and discrepancy cocycle required by
 `QuasiSplitInnerFormExistenceStatement`.

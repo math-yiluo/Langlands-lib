@@ -3,11 +3,9 @@
 The exact theorem
 `Langlands.QuotientIntegration.normalizedCompactPeriodL2` proves
 `NormalizedCompactPeriodL2Statement` with every published hypothesis.
-This focused proof reuses the published relatively compact Borel-domain,
+This proof reuses the published relatively compact Borel-domain,
 compact continuous test-separation and modular compact-domain L² pairing
-proofs by Lean name. Worker 1678 adopted Worker 116's complete proof from
-the parent task's revision 40 draft without changing the Lean source;
-Worker 116 is retained as coauthor.
+proofs by Lean name.
 
 For the actual inverse right measure `μ.inv` of a left Haar
 measure, the pushforward under left multiplication by `a` is
@@ -67,5 +65,5 @@ period-vanishing set.
 This proof implements the concrete period, its convergence and
 its tested integral identities. The actual all-parabolic positive
 adelic specialization and the source smooth test-space
-comparison remain outside this target. Worker 116 implemented
-the proof, importing the earlier focused analytic results by name.
+comparison remain outside this target. The proof imports the
+analytic results it reuses by name.

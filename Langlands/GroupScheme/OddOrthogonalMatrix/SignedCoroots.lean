@@ -32,11 +32,15 @@ def signedCocharacter (l : Type) [Fintype l] [DecidableEq l] (K : Type u) [Field
 @[simp] theorem characterCoord_signedCharacter (a : l ⊕ l) :
     GeneralLinear.characterCoordEquiv l K (signedCharacter l K a) =
       SymplecticMatrix.weightCoord l a := by
+  have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (characterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   cases a <;> simp [signedCharacter, Pi.single_neg]
 
 @[simp] theorem cocharacterCoord_signedCocharacter (a : l ⊕ l) :
     GeneralLinear.cocharacterCoordEquiv l K (signedCocharacter l K a) =
       SymplecticMatrix.weightCoord l a := by
+  have : AddMonoidHomClass (cocharacterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (cocharacterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   cases a <;> simp [signedCocharacter, Pi.single_neg]
 
 variable {J : Type u} {P : RootDatum J
@@ -50,6 +54,8 @@ include hP
 theorem coroot_of_basisCharacter_add {r : J} {a b : l} (hab : a ≠ b)
     (hr : P.root r = basisCharacter l K a + basisCharacter l K b) :
     P.coroot r = basisCocharacter l K a + basisCocharacter l K b := by
+  have : AddMonoidHomClass (cocharacterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (cocharacterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   have hshort : basisCharacter l K b ∈ Set.range P.root := by
     rw [hP.2.1, roots_identityTorus]
     exact basisCharacter_mem_roots b
@@ -122,6 +128,8 @@ theorem root_coroot_coordinates (r : J) :
     ∃ a b : l ⊕ l, OrthogonalMatrix.index a ≠ OrthogonalMatrix.index b ∧
       P.root r = signedCharacter l K a - signedCharacter l K b ∧
       P.coroot r = signedCocharacter l K a - signedCocharacter l K b := by
+  have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (characterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   have hr : P.root r ∈ roots (diagonalTorus l K) := by
     rw [← roots_identityTorus, ← hP.2.1]
     exact Set.mem_range_self r

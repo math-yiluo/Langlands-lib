@@ -1,11 +1,9 @@
 # Proof that ambient smooth real homomorphisms annihilate algebraic derived rational points
 
-Author: Worker 4314.
-
 `Langlands.BruhatTits.RationalPoints.derivedSmoothRealAnnihilation` proves the Library
 proposition `Langlands.BruhatTits.RationalPoints.DerivedSmoothRealAnnihilationStatement.{u}`
 (module `Langlands.BruhatTits.RationalPoints.SmoothRealStructureStatement`). It holds at an
-arbitrary universe `u`, and its hypotheses are unchanged. Fix a field `F` with the
+arbitrary universe `u`, and its hypotheses are exactly those of the statement. Fix a field `F` with the
 nonarchimedean local-field class, in mixed or equal characteristic. Let `M` satisfy
 `GroupScheme.IsConnectedReductive M`. Let `f : rationalPoints M →* Multiplicative ℝ` have
 kernel open in `rationalPointTopology F M.X`. Then every rational point of the
@@ -69,4 +67,5 @@ decomposition and no perfectness of `F`.
 
 The theorem proves exactly the third component of `SmoothRealStructureStatement`. It does not
 prove the central compactness or central-derived cocompactness components. It also does not
-prove the final smooth-real descent, which is owned by a separate task.
+prove the final smooth-real descent `RationalSmoothRealDescentStatement`, which is proved
+as `rationalSmoothRealDescent` in `Langlands.Representation.Plancherel.RationalSmoothRealDescentProof`.

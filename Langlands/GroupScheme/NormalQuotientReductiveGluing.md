@@ -1,6 +1,6 @@
 # Reductivity of descended normal quotients
 
-This internal derived unit proves
+This auxiliary module, derived from existing Library results, proves
 `Langlands.GroupScheme.ReductiveNormalQuotientEtaleGluingStatement` in every
 universe. Let `G` be smooth and affine over an arbitrary scheme `S`, and let
 `i : N → G` be monomorphic on the underlying schemes over `S`. Assume that
@@ -61,8 +61,9 @@ common-kernel comparison, smooth represented-kernel quotients, descent of
 smoothness, and preservation and reflection of connected reductivity under
 field extension. It introduces no external-source assertion.
 
-This unit does not construct local dynamic presentations or identify the
+This module does not construct local dynamic presentations or identify the
 unipotent radical of a relative parabolic with its contracting subgroup.
 It does not prove annihilation or the universal property in the original
-relative parabolic reductive quotient target. These remain separate
-obligations.
+relative parabolic reductive quotient target. These are not part of this
+module; that target, `RelativeParabolicReductiveQuotientStatement`, is proved
+as `relativeParabolicReductiveQuotient` in `RelativeLevi.ReductiveQuotientProof`.

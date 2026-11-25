@@ -1,6 +1,6 @@
 # Coherence of ordered Lie-word reductions
 
-Author: Worker 1687. This internal proof uses the concrete reductions from
+This internal proof uses the concrete reductions from
 `OrderedPBWReduction`, with no external diamond lemma or PBW hypothesis.
 
 `RespectsBelow b w f` expresses that a linear endomorphism `f` of the free word

@@ -1,6 +1,6 @@
 # Complex unitary Euler-polynomial normalization
 
-Author: Worker 41. The module supplies the polynomial operation used in Harris's weak association.
+The module supplies the polynomial operation used in Harris's weak association.
 It makes no assertion that a normalized polynomial family is realized by a
 lambda-adic representation.
 
@@ -80,5 +80,3 @@ mathematical statements. No such statement is an assumption of a record here.
 | `eulerFromRoots_map_div`, `unitaryEulerFromEigenvalues_eq_weight_substitution` | Substitution under uniform eigenvalue scaling and its pure-weight specialization |
 
 The module compiled natively in the pinned environment with zero diagnostics.
-Development compilation and declaration inspection do not establish independent
-semantic acceptance or publication.

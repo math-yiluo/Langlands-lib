@@ -1,8 +1,6 @@
 # Unipotent subgroups with proper homogeneous quotients
 
-Author: Worker 1487.
-
-This internal supporting unit proves
+This internal supporting module proves
 `UnipotentProperHomogeneousQuotientStatement.{u}`. Let `k : Type u` be
 algebraically closed and let `G` be an affine locally finite type group
 scheme with connected reduced underlying scheme. Let `i : H ⟶ G` be a
@@ -27,7 +25,7 @@ vector scheme.
 
 Connectedness of `G` passes to `Q` by surjectivity, and reducedness descends
 along the faithfully flat map. The identity of `G` supplies a rational
-point of `Q`. The published affine-valued constancy theorem for proper
+point of `Q`. The affine-valued constancy theorem for proper
 connected reduced schemes over algebraically closed fields makes the
 descended map constant at that point. Consequently all points of `G` on
 every scheme test have the same vector-orbit image. The exact vector-orbit
@@ -46,5 +44,6 @@ connected affine-valued constancy, and represented-subgroup uniqueness.
 It replaces the usual quasi-affine quotient argument by this direct
 affine vector map argument and asserts no unproved quotient existence.
 In particular the proper quotient and all its stated properties remain
-explicit hypotheses. It does not prove the arbitrary-field parent
-`NoTorusUnipotentStatement`.
+explicit hypotheses. It does not itself prove `NoTorusUnipotentStatement`, the arbitrary-field
+statement it serves; that statement is proved by `noTorusUnipotent` in
+`Torus/NoTorusUnipotent`.

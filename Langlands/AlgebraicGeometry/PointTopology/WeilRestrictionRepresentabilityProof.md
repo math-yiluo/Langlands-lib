@@ -6,7 +6,6 @@ universal property implicit in Conrad's Example 2.4, printed page 3 of *Weil
 and Grothendieck approaches to adelic points* (December 31, 2011). The
 registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-The proof was written by Worker 105.
 
 The rings `A` and `B` are arbitrary commutative rings with an `A`-algebra
 structure on `B`, finite and projective as an `A`-module. The scheme `X` over
@@ -39,5 +38,5 @@ open-cover extensionality proves the global equality
 
 The proof uses the algebraic construction's finite projective coefficient
 algebra generality, including nonfaithful algebras, with no assertion about a
-coefficient embedding. The topology and the remaining whole-paper claims
-are separate obligations.
+coefficient embedding. The topology and the remaining claims of the paper
+are not part of this proof.

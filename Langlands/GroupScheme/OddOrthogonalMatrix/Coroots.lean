@@ -60,6 +60,8 @@ theorem basisCharacter_add_mem_roots {a b : l} (hab : a ≠ b) :
 /-- A difference of two distinct coordinate characters is an actual long root. -/
 theorem basisCharacter_sub_mem_roots {a b : l} (hab : a ≠ b) :
     basisCharacter l K a - basisCharacter l K b ∈ roots (diagonalTorus l K) := by
+  have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (characterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   apply (mem_roots_iff _).mpr
   exact Or.inr ⟨Sum.inl a, Sum.inl b, hab, by simp⟩
 
@@ -103,6 +105,10 @@ theorem reflection_mem_roots (r : J) {χ : characterLattice 𝔗}
 /-- A positive short root has twice the corresponding coordinate cocharacter. -/
 theorem coroot_of_basisCharacter {r : J} {a : l} (hr : P.root r = basisCharacter l K a) :
     P.coroot r = 2 • basisCocharacter l K a := by
+  have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (characterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
+  have : AddMonoidHomClass (cocharacterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (cocharacterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   let ν := GeneralLinear.cocharacterCoordEquiv l K (P.coroot r)
   have ha : ν a = 2 := by
     have h := P.pairing_same r
@@ -137,6 +143,10 @@ theorem coroot_of_basisCharacter {r : J} {a : l} (hr : P.root r = basisCharacter
 theorem coroot_of_basisCharacter_sub {r : J} {a b : l} (hab : a ≠ b)
     (hr : P.root r = basisCharacter l K a - basisCharacter l K b) :
     P.coroot r = basisCocharacter l K a - basisCocharacter l K b := by
+  have : AddMonoidHomClass (characterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (characterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
+  have : AddMonoidHomClass (cocharacterLattice 𝔗 ≃ₗ[ℤ] (l → ℤ)) (cocharacterLattice 𝔗) (l → ℤ) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   let ν := GeneralLinear.cocharacterCoordEquiv l K (P.coroot r)
   have htwo : ν a - ν b = 2 := by
     have h := P.pairing_same r

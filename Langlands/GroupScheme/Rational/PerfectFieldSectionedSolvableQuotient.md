@@ -1,7 +1,5 @@
 # Actual split geometric radicals and sectioned solvable torus quotients
 
-Worker 1556.
-
 `SplitGeometricUnipotentRadical` stores an actual group scheme, its inclusion,
 the existing ground-field and algebraic-closure radical predicates, and a finite
 represented split series. `perfectFieldSplitGeometricUnipotentRadical`

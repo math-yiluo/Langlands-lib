@@ -1,7 +1,7 @@
 # Galois descent of cocharacter data
 
 Module `Langlands.GroupScheme.Torus.CocharacterGaloisDescent`, namespace
-`Langlands.GroupScheme.CocharacterDatum`. It imports Worker 1001's
+`Langlands.GroupScheme.CocharacterDatum`. It imports
 `Langlands.GroupScheme.Torus.CocharacterDatum` and
 `Langlands.GroupScheme.Torus.CocharacterCoefficientDescent`.
 
@@ -60,8 +60,9 @@ that the character `χ` takes the value `X^m` on it.
 
 This is the norm argument of Galois descent: a product over all Galois
 conjugates is Galois invariant, and Galois-invariant coordinates are rational.
-The statement and route were specified by Worker 1001 for torus cocharacter
-detection (task 6d0882ee), and the Lean code uses their `CocharacterDatum` API.
+The statement and route serve torus cocharacter detection (module
+`Langlands.GroupScheme.Torus.CocharacterDetection`), and the Lean code uses the
+`CocharacterDatum` API.
 It is a derived internal step, not quoted from a source. Torus cocharacter
 detection uses it to bring a cocharacter defined over a Galois splitting field
 down to the base field. The weight is multiplied by the positive integer

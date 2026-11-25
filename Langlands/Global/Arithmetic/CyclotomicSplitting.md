@@ -11,7 +11,7 @@ extension `K / F` inside a cyclotomic extension of `F` such that
 
 The field is `K = F(ξ)` with `ξ = ζ - ζ⁻¹` for a primitive `ℓ ^ (k + 3)`-th root of
 unity `ζ`, for `k` large. It is built in the same universe as `F`, as
-`Langlands.ClassField.Global.CyclicCyclotomicReciprocity` requires of its fields.
+`Langlands.ClassFieldTheory.Global.CyclicCyclotomicReciprocity` requires of its fields.
 
 All declarations are in the namespace `Langlands.Global.CyclotomicSplitting`.
 Throughout, `n = ℓ ^ (k + 3)`. Writing the exponent as `k + 3` makes `n` at least `8`

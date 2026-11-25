@@ -1,7 +1,5 @@
 # Rank-one Levi presentations and the reduction to split rank one
 
-Authors: Worker 1757.
-
 This module states, as the proposition definition
 `Langlands.GroupScheme.RankOneLeviPresentationStatement.{u}` with arbitrary
 universe `u`, the structure of the centralizer of a maximal split torus that

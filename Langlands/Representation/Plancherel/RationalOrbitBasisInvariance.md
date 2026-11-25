@@ -1,7 +1,5 @@
 # Basis independence of scalar smooth orbit functions
 
-Author: Worker 200.
-
 This internal construction proves that the existing scalar smoothness
 predicate on the actual discrete-series twist orbit is independent of the
 finite integer basis chosen for the actual rational-character valuation

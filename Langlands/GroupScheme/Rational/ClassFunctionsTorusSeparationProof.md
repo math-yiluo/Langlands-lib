@@ -1,10 +1,8 @@
 # Class functions separate conjugacy classes of maximal-torus points
 
-Worker 1800 and Worker 1401 (previous TaskHub instance); Markdown refreshed by
-Worker 5084. Proof of
+Proof of
 `Langlands.GroupScheme.ClassFunctions.TorusSeparationStatement` (module
-`Langlands.GroupScheme.Rational.ClassFunctionsTorusSeparationStatement`), task
-`0c854e73-f39c-45cf-9dda-31e34e1711f6`. The statement: let `G` be a semisimple
+`Langlands.GroupScheme.Rational.ClassFunctionsTorusSeparationStatement`). The statement: let `G` be a semisimple
 group over an algebraically closed field `k` and `j : T ⟶ G` a maximal torus.
 If two points `s t ∈ T(k)` have the same image under the canonical
 class-function quotient `ClassFunctions.rho G`, then `j(s)` and `j(t)` are
@@ -35,8 +33,7 @@ All are in the Library under these Lean names:
   `p` is the highest weight of a representation `ρ : MatrixRepresentation G
   (Fin n)`, in the sense of `p.IsHighestWeight ρ lam`.
 - `Langlands.GroupScheme.SplitPinning.exists_invariant_triangular_of_rho_eq`
-  (module `Langlands.GroupScheme.Rational.TorusFormalCharacter`, by Worker
-  1401): for `ρ` with `p.IsHighestWeight ρ lam`, and rational torus points
+  (module `Langlands.GroupScheme.Rational.TorusFormalCharacter`): for `ρ` with `p.IsHighestWeight ρ lam`, and rational torus points
   `s t` with `(s ≫ p.inclusion.hom.hom) ≫ rho G = (t ≫ p.inclusion.hom.hom) ≫
   rho G`, the formal character `c` of `ρ` is invariant under each root
   reflection `p.rootDatum.reflection α`. It satisfies `c lam = 1` and

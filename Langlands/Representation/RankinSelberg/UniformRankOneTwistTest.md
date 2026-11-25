@@ -1,8 +1,8 @@
 # The twisted principal test of Jacquet–Shalika §2.5 and its Fourier support
 
-Author: Worker 1807. Worker 1836 specified the exact statement of
-`twistedEpsilonWeight` and `coefficientIota_eq_of_fourierIntegral_ne_zero`,
-for use in their epsilon module.
+The exact statements of `twistedEpsilonWeight` and
+`coefficientIota_eq_of_fourierIntegral_ne_zero` are those used by the epsilon
+module [UniformRankOneTwistEpsilon](UniformRankOneTwistEpsilon.md).
 
 This internal helper module serves the proof of
 `Langlands.RankinSelberg.UniformRankOneTwistStatement`. It builds the
@@ -161,5 +161,4 @@ analogous step evaluates `f(ι g)` on the support. The Lean hypothesis on `f`
 The weight `twistedEpsilonWeight`, with `g₀₀` in place of JS85's `c`, plays the
 role of their `ω⁻¹(c) χ⁻¹(c^r)` factor.
 
-Integration uses module-specific names for local instances. Their types, values,
-and local instance scopes are unchanged.
+The local instances have module-specific names.

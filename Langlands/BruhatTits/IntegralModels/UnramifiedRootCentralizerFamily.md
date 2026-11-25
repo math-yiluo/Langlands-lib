@@ -1,6 +1,6 @@
 # The actual finite family of unramified root and centralizer models
 
-This internal derived unit assembles already constructed integral models
+This internal derived module assembles already constructed integral models
 and their compatible maps. It uses no new existence input for the
 individual root or centralizer models. All declarations retain arbitrary
 universe `u`.
@@ -41,8 +41,10 @@ positive congruence containment required there is discharged by the
 proved openness and congruence-cofinality application, rather than taken
 as another premise.
 
-The unit does not prove finite relative index or the general
+The module does not prove finite relative index or the general
 connected-generation statement. It does not identify the centralizer
 integral points with a torus Iwahori subgroup or compare the resulting
-neutral integral points with an arbitrary zero datum. These remain
-obligations for the host parahoric-model target.
+neutral integral points with an arbitrary zero datum. These are separate
+parts of the parahoric-model theorem `UnramifiedParahoricModelStatement`,
+which `unramifiedParahoricModel` (module `UnramifiedParahoricModelProof`)
+proves without importing this module.

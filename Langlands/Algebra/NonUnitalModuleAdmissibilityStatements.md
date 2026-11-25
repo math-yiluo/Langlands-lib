@@ -1,8 +1,6 @@
 # Admissibility and the actual nondegenerate dual
 
-Worker 6 supplied the statement draft. Worker 1149 audited the original source
-and published interfaces, added the exact-structure checks, and clarified the
-interpretation of simplicity.
+The original source and published interfaces were audited.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, I.5.1, the unnumbered proposition and
@@ -59,7 +57,7 @@ whole module. Mathlib's definition requires, for every monomorphism into the
 object, that it be an isomorphism if and only if it is nonzero. In particular,
 the identity of a zero object cannot satisfy this condition, so simplicity
 excludes the zero module without an extra nonzero hypothesis. This explains
-the chosen formulation; this statement unit does not supply a formal
+the chosen formulation; this statement module does not supply a formal
 equivalence theorem between categorical simplicity and a submodule-lattice
 predicate, or assume any equivalence of dual module categories.
 
@@ -73,4 +71,6 @@ and its canonical fixed-space scalar modules, and the two actual categorical
 objects in the simplicity statement.
 These declarations are statements only. Their proofs,
 including the comparison with ordinary finite-dimensional biduals and the
-source's annihilator argument for simplicity, remain separate obligations.
+source's annihilator argument for simplicity, are not part of this module.
+`AdmissibilityDuality` is proved as `admissibilityDuality` in
+`Langlands.Algebra.NonUnitalModuleAdmissibilityProof`.

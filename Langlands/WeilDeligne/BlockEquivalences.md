@@ -1,6 +1,6 @@
 # Block equivalences with independent carrier universes
 
-Worker 1687 supplies internal constructions for the reverse direction of
+This module supplies internal constructions for the reverse direction of
 `Blocks.DecompositionUniqueness`. They extend the existing Library constructions
 to two independent carrier universes without adding hypotheses.
 

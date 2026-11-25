@@ -1,6 +1,6 @@
 # Unitary and square-integrable representations: statements
 
-Author: Worker 6. Module `Langlands.Representation.Compact.UnitarySquareIntegrableStatements`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.Compact.UnitarySquareIntegrableStatements`, namespace `Langlands.Renard.CompactRepresentation`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, IV.2.2, Corollary (i) (printed p.98 / PDF p.104), and IV.3.2–IV.3.3 (printed pp.99–102 / PDF pp.105–108). The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
@@ -15,7 +15,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 
 ## The Lean statements
 
-The module is a statement unit: nothing is proved. Throughout, `G : Type u` is a t.d. group: `[Group G] [TopologicalSpace G] [IsTopologicalGroup G] [LocallyCompactSpace G] [T2Space G] [TotallyDisconnectedSpace G]`. Smooth representations are the published `SmoothRep.{0, u, v} ℂ G`. In the IV.3 statements, `G ⧸ Subgroup.center G` carries a Borel structure and a Haar measure `μ` that is also right invariant, which is how the published `IsSquareIntegrableModCenter` statements express Renard's unimodular `dg*`. Renard's `Ṽ` is the published `SmoothDual`, the smooth vectors of the algebraic dual.
+The module contains statements only: nothing is proved. Throughout, `G : Type u` is a t.d. group: `[Group G] [TopologicalSpace G] [IsTopologicalGroup G] [LocallyCompactSpace G] [T2Space G] [TotallyDisconnectedSpace G]`. Smooth representations are the published `SmoothRep.{0, u, v} ℂ G`. In the IV.3 statements, `G ⧸ Subgroup.center G` carries a Borel structure and a Haar measure `μ` that is also right invariant, which is how the published `IsSquareIntegrableModCenter` statements express Renard's unimodular `dg*`. Renard's `Ṽ` is the published `SmoothDual`, the smooth vectors of the algebraic dual.
 
 1. `UnitaryAdmissibleEndomorphismStatement` (IV.2.2 Cor (i)): with `[FirstCountableTopology G]`, for `π` with `π.IsAdmissible` and `IsUnitarizable π.representation`, `Module.finrank ℂ (π.representation.IntertwiningMap π.representation) = 1 ↔ π.IsIrreducible`. `Module.finrank` is `0` on infinite-dimensional spaces, so the left side says the endomorphism space is exactly one-dimensional.
 2. `EssentiallySquareIntegrableAdmissibleStatement` (IV.3.2 Prop): for irreducible `π`, a character `ω : G →* ℂˣ` with open kernel (a smooth character) and the twist `π.twist ω hω` (the published `SmoothRep.twist`), if there is a `UnitaryCentralCharacter` `c` of the twist with `MemLp (c.coefficientNorm ℓ x) 2 μ` for every smooth functional `ℓ` and vector `x`, then `π.IsAdmissible`. This is "essentially square-integrable" with admissibility not assumed. The published `IsSquareIntegrableModCenter` builds admissibility into its definition, so it cannot be used here.
@@ -31,6 +31,6 @@ The module is a statement unit: nothing is proved. Throughout, `G : Type u` is a
 
 ## Remarks
 
-- The Corollary's last sentence (irreducible compact representations) is not stated; the companion IV.1.3 Lemma statement (candidate `a59f332c-60db-44f2-9991-a34ed1e0de20`) gives compactness of the centre in that case.
+- The Corollary's last sentence (irreducible compact representations) is not stated; the companion IV.1.3 Lemma statement (`CompactRepresentationCompactCenterStatement`, module `CompactRepresentationCriterionStatements`) gives compactness of the centre in that case.
 - The IV.3.2 Remark (one nonzero square-integrable coefficient suffices for irreducible `π`), the space `L²(G, χ, dg*)₀` of IV.3.1 (published as `MatrixCoefficient.CentralL2`), and the IV.2.2 Proposition and Corollary (ii) (published as `AdmissibleUnitarySemisimplicityStatement`) are not restated here.
-- The proofs are not formalized here.
+- The proofs are not formalized here; they are assembled by `unitarySquareIntegrable` in `UnitarySquareIntegrableProof`.

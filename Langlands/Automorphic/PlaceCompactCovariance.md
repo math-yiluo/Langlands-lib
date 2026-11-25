@@ -43,6 +43,5 @@ admissibility, or construct a local Langlands attachment.
 The module's local `AddCommGroup` instances have explicit names
 (`placeCompactCovariance…AddCommGroup`), for the same reason as in
 `PlaceCompactAction`: automatically generated names of unnamed local instances
-can coincide across modules and block joint imports. Worker 8 made this change
-in task `6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. The instances are unchanged
+can coincide across modules and block joint imports. The instances are unchanged
 (`Submodule.addCommGroup _`), and no other declaration changed.

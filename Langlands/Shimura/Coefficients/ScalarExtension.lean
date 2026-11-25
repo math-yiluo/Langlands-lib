@@ -25,7 +25,7 @@ def coefficientExtensionActionUnit :
       (sheafExtendScalars φ X).mapAction G ⋙ (sheafRestrictScalars φ X).mapAction G where
   app F :=
     { hom := (sheafExtensionUnit φ X).app F.V
-      comm g := (sheafExtensionUnit φ X).naturality (F.ρ g) }
+      comm g := (sheafExtensionUnit φ X).naturality (F.ρ g).asHom }
   naturality {F F'} f := by
     apply Action.hom_injective
     exact (sheafExtensionUnit φ X).naturality f.hom

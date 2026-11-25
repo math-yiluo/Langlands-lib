@@ -26,8 +26,7 @@ literature statement is formalized here. Every declaration is unconditional: no
 Whittaker hypothesis, no torus expansion and no Mellin statement is involved.
 
 The declarations were split out unchanged, with the same names and namespace,
-from the helper module `WhittakerMatrixConvergence` of the shared draft of task
-`3225020b-dd52-4c21-8106-c073e41f30be`. That module imports this one and uses
+from the helper module `WhittakerMatrixConvergence`. That module imports this one and uses
 these declarations for the convergence of full-matrix Whittaker integrals.
 
 ## Declarations

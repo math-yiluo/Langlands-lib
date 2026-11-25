@@ -4,7 +4,7 @@ Ported from `Definitions/Def_AlgebraicGeometry_RelativePicardFunctor.lean` of th
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
@@ -23,7 +23,7 @@ noncomputable section
 
 namespace AlgebraicGeometry
 
-structure Scheme.Modules.IsInvertible {X : Scheme.{u}} (M : X.Modules) : Prop where
+structure Scheme.Modules.IsInvertibleFLT {X : Scheme.{u}} (M : X.Modules) : Prop where
   exists_trivialization : ∀ x : X, ∃ (U : X.Opens), x ∈ U ∧
     Nonempty ((Scheme.Modules.pullback U.ι).obj M ≅ SheafOfModules.unit U.toScheme.ringCatSheaf)
 
@@ -38,12 +38,12 @@ def Scheme.Modules.pullbackUnitIso {X Y : Scheme.{u}} (f : X ⟶ Y) :
   exact @asIso _ _ _ _ _ h
 
 theorem Scheme.Modules.isInvertible_unit (X : Scheme.{u}) :
-    Scheme.Modules.IsInvertible (SheafOfModules.unit X.ringCatSheaf) :=
+    Scheme.Modules.IsInvertibleFLT (SheafOfModules.unit X.ringCatSheaf) :=
   ⟨fun _ => ⟨⊤, trivial, ⟨Scheme.Modules.pullbackUnitIso _⟩⟩⟩
 
-theorem Scheme.Modules.IsInvertible.pullback {X Y : Scheme.{u}} (f : X ⟶ Y) {L : Y.Modules}
-    (hL : Scheme.Modules.IsInvertible L) :
-    Scheme.Modules.IsInvertible ((Scheme.Modules.pullback f).obj L) := by
+theorem Scheme.Modules.IsInvertible.pullbackFLT {X Y : Scheme.{u}} (f : X ⟶ Y) {L : Y.Modules}
+    (hL : Scheme.Modules.IsInvertibleFLT L) :
+    Scheme.Modules.IsInvertibleFLT ((Scheme.Modules.pullback f).obj L) := by
   refine ⟨fun x => ?_⟩
   obtain ⟨U, hyU, ⟨eU⟩⟩ := hL.1 (f.base x)
   refine ⟨f ⁻¹ᵁ U, hyU, ⟨?_⟩⟩
@@ -105,7 +105,7 @@ structure RigidifiedLineBundle {C : Scheme.{u}} (c : C ⟶ Spec (CommRingCat.of 
     {T : Scheme.{u}} (t : T ⟶ Spec (CommRingCat.of R)) : Type (u + 1) where
 
   L : (pullback c t).Modules
-  isInvertible : Scheme.Modules.IsInvertible L
+  isInvertible : Scheme.Modules.IsInvertibleFLT L
   rigidified : Nonempty ((Scheme.Modules.pullback (rigSection c t ε)).obj L ≅
     SheafOfModules.unit T.ringCatSheaf)
 
@@ -126,7 +126,7 @@ def pullbackAlong {T T' : Scheme.{u}} {t : T ⟶ Spec (CommRingCat.of R)}
     {t' : T' ⟶ Spec (CommRingCat.of R)} (M : RigidifiedLineBundle c ε t)
     (ψ : SchemeHomOver t' t) : RigidifiedLineBundle c ε t' where
   L := (Scheme.Modules.pullback (baseChangeSnd c ψ)).obj M.L
-  isInvertible := M.isInvertible.pullback _
+  isInvertible := AlgebraicGeometry.Scheme.Modules.IsInvertible.pullbackFLT (hL := M.isInvertible) _
   rigidified := ⟨(Scheme.Modules.pullbackComp _ _).app M.L ≪≫
     (Scheme.Modules.pullbackCongr (rigSection_baseChangeSnd c ε ψ)).app M.L ≪≫
     ((Scheme.Modules.pullbackComp _ _).app M.L).symm ≪≫

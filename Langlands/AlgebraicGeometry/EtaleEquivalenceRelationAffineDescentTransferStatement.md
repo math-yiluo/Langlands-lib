@@ -1,9 +1,7 @@
 # Transfer of finite-surjective affine descent to algebraic spaces
 
-Authors: Worker 239, Worker 148 and Worker 266. Worker 239 supplied the shared
-Lean and Markdown draft; Worker 148 checked the sources and clarified the
-quantifiers and provenance; Worker 266 supplied the precise source for choosing
-an affine étale chart.
+The sources, the quantifiers and the provenance were checked, including the
+source for choosing an affine étale chart.
 
 This module states that the presentation form of Stacks Project
 [Lemma 70.15.1, Tag 07VS](https://stacks.math.columbia.edu/tag/07VS) implies
@@ -54,7 +52,7 @@ or either algebraic space appears in the formula.
 
 ## Provenance
 
-This is a derived internal reduction statement for the planned presentation
+This is a derived internal reduction statement for the presentation
 route to Stacks Lemma 70.15.1,
 `FiniteSurjectiveAffineDescentStatement`. It is not stated in this form in the
 literature. It records the passage between algebraic spaces and their
@@ -78,7 +76,7 @@ presentations, which Stacks uses implicitly. The sources are:
   `6a433fc04ce2561e2cd3cf5f19526887b8fe5ba9b2db5201025e80104df2e6b1`),
   `07VP.html` ([Lemma 69.17.3](https://stacks.math.columbia.edu/tag/07VP)):
   the Noetherian case used at the end of the proof of 07VS, providing context
-  for the planned route. Also `03E2.html`, Section 66.5
+  for the presentation route. Also `03E2.html`, Section 66.5
   ([Definition 66.5.1](https://stacks.math.columbia.edu/tag/03E3)):
   a quasi-compact algebraic space has an étale surjection from a
   quasi-compact scheme. Neither source adds a hypothesis to the formula.
@@ -86,8 +84,8 @@ presentations, which Stacks uses implicitly. The sources are:
 The cited originals and their retained comments were read. Comment #1792
 on Section 70.15 concerns Proposition 70.15.2; comment #216 on Theorem
 65.10.5 corrects a typo. The other cited tag pages have no comments.
-No source-specific errata note was present in the checked workspace,
-project or Library errata locations.
+No source-specific errata note was present in the checked project or
+Library errata locations.
 
 The intended argument, which this module does not formalize, runs as
 follows. The first paragraph of the proof of 07VS deduces that `Y` is
@@ -102,14 +100,18 @@ relations is cartesian with finite surjective component `U' → U`. Since `X`
 is affine, the presentation of `X` has an affine quotient. The hypothesis then
 gives an affine quotient `M` of the presentation of `Y`, and fppf descent
 along `U → M` (Lemma 39.20.3) identifies the quotient with `M`. The structure
-map to `S` must also descend to give representation over `S`. The future
-proof must implement these comparisons with the Library's actual sheaves,
-morphisms and representability predicates.
+map to `S` must also descend to give representation over `S`. The proof,
+`etaleEquivalenceRelationAffineDescentTransfer` in
+`EtaleEquivalenceRelationAffineDescentTransferProof`, works with the Library's
+actual sheaves, morphisms and representability predicates; its Markdown
+describes where it departs from this sketch.
 
 ## Scope and role
 
-This is the transfer step `T` of the planned presentation route. Together
+This is the transfer step `T` of the presentation route. Together
 with `EtaleEquivalenceRelationNoetherianApproximationStatement` and a proof of
 `NoetherianEtaleEquivalenceRelationAffineDescentStatement`, it gives the
-published Lemma 70.15.1 statement. The proof is a separate unit.
+published Lemma 70.15.1 statement (`finiteSurjectiveAffineDescent` in
+`AlgebraicSpace.FiniteSurjectiveAffineDescentProof`). The proof of this statement
+is in the separate module `EtaleEquivalenceRelationAffineDescentTransferProof`.
 All imported Library Lean/Markdown pairs remain unchanged.

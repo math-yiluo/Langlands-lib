@@ -1,7 +1,5 @@
 # Induction on the Lie dimension for generic torus conjugators
 
-Author: Worker 1420.
-
 This internal, derived module reduces the generic conjugator statement
 `MaximalTorusGenericConjugatorStatement` of `MaximalTorusGenericConjugator`,
 and with it the target `MaximalTorusParameterUnirationalStatement`, to one

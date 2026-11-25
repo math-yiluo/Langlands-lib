@@ -1,7 +1,5 @@
 # Relative Serre vanishing for coherent presheaves (FLT Čech form)
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.RelativeSerreVanishingFLT` (namespace
 `Langlands.AlgebraicGeometry.Modules.CechBridge`) proves one helper theorem:
 

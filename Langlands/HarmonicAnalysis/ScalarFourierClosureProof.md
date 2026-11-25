@@ -105,7 +105,7 @@ target's quantified data and self-duality hypothesis. It applies
 `compactOpenAnnihilator F ψ μ hself` to the closure helper for the second.
 Neither conclusion is added as a premise of the final theorem.
 
-Worker 86 authored this internal derivation from the existing
+This is an internal derivation from the existing
 [`Basic`](Basic.md) interfaces, published Hecke invariance and characteristic
 functions, the two published prerequisite proofs, and Mathlib topology and
 integration. The inherited Fourier convention is the plus-sign kernel

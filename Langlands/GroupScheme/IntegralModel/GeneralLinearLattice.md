@@ -32,7 +32,8 @@ field hypotheses stated there.
 ## Scope of the Lean statement
 
 `GeneralLinearLatticeIntegralModelStatement.{u}` is a derived elementary
-subresult of that paragraph. It is an unproved existence target. Its
+subresult of that paragraph. It is an existence target, proved as
+`generalLinearLatticeIntegralModel` in `GeneralLinearLatticeProof`. Its
 inputs are the following:
 
 - a discrete valuation ring `R : Type u`, with `IsDomain R` and
@@ -112,11 +113,11 @@ This module proves nothing about the integral points of the standard
 model. In particular it does not prove that they are the stabilizer of
 the coordinate lattice.
 
-## The remaining existence obligation
+## The existence proof
 
-The arbitrary-lattice statement is not proved here; it is the target of a
-separate proof task. The intended proof is the elementary construction
-behind `GL(L)`:
+The arbitrary-lattice statement is not proved here; it is proved as
+`generalLinearLatticeIntegralModel` in `GeneralLinearLatticeProof`. That proof
+is the elementary construction behind `GL(L)`:
 
 1. A full lattice over a discrete valuation ring is free of rank `n`
    (Mathlib's `Submodule.IsLattice.free` and
@@ -131,8 +132,10 @@ behind `GL(L)`:
    theorem `GeneralLinear.pointsEquiv_comp_baseChangeIso_hom` describes
    the base-change isomorphism on points.
 
-Steps 3 and 4, including the exact integral-point comparison, remain
-proof obligations. Independence of the chosen basis is not needed for
+Steps 3 and 4, including the exact integral-point comparison, are carried
+out there by `conjugatedStandardIntegralModel`,
+`mem_conjugatedStandardIntegralModel_integralPoints_iff` and
+`stabilizesLattice_iff`. Independence of the chosen basis is not needed for
 this existence statement.
 
 In the source argument, this statement supplies the ambient model. The

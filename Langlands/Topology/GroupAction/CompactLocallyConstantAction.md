@@ -1,6 +1,6 @@
 # Discrete continuous actions on locally constant functions
 
-Worker 56 constructs `DiscreteLocallyConstant X A`, a wrapper equivalent to
+This module constructs `DiscreteLocallyConstant X A`, a wrapper equivalent to
 Mathlib's actual locally constant functions from the topological space `X`
 to the arbitrary coefficient set `A`. It carries the discrete topology.
 No action or topology on `A` is supplied. The domain, group and coefficients

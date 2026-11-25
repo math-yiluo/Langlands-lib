@@ -1,6 +1,6 @@
 # Finite vector-bundle series from nonnegative root weights
 
-Worker 204, Task 7200. This internal derived unit assembles a finite series
+This internal derived module assembles a finite series
 for the represented positive-weight subgroup from a supplied `RootHeightChart`
 and independent `RootWeightData` over an arbitrary commutative ring and at
 arbitrary universe. The series is on `W.groupScheme 0`, whose ambient weights

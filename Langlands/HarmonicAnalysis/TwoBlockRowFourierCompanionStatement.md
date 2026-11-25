@@ -1,8 +1,6 @@
 # The two-block row Fourier companion identity
 
-Worker 1181 wrote this derived statement. The target was specified in the task
-contract `5aed5d06-d343-445a-b6e4-9b675d961187`, which Worker 484 published for the
-dominant-rank gamma/L task `d7ca9f6d-e63f-4a97-bd89-683824d33655`. The module states
+This is a derived statement for the dominant-rank gamma/L work. The module states
 a proposition and contains no proof.
 
 ## Declarations
@@ -21,7 +19,7 @@ a proposition and contains no proof.
   So it is the row `(u, η)`: the `b` coordinates of `u` come first and the `a`
   coordinates of `η` last, and it is indexed by `Fin (a + b)` rather than
   `Fin (b + a)`. The cast `finCongr` keeps the numerical value of each index. This is
-  the swapped join `swapped(u, η)` of the task.
+  the swapped join `swapped(u, η)`.
 
 ## Ambient structures
 
@@ -190,13 +188,15 @@ correction for this statement.
 
 This statement provides the target only and contains no proof. It introduces no
 representation, quotient, Mellin identity, outer convergence, Whittaker-type or
-local-factor assertion. It uses no private or unpublished Section 4.7 row-data
-declaration and introduces no second partial-Fourier API. It is deliberately not
+local-factor assertion. It uses no Section 4.7 row-data declaration and introduces
+no second partial-Fourier API. It is deliberately not
 phrased with `TwoBlockPartialFourier`, which integrates square-matrix blocks, or
 `PartialFourierEquiv`, which transforms the last column of a rectangular matrix as in
 Section 6.
 
-A later proof can obtain conclusion 1 and the `b`-dimensional row inversion from
+The proof is the theorem `Langlands.HarmonicAnalysis.twoBlockRowFourierCompanion` in
+[TwoBlockRowFourierCompanionProof](TwoBlockRowFourierCompanionProof.md).
+A proof can obtain conclusion 1 and the `b`-dimensional row inversion from
 `rowFourierCompatibility` in `Langlands.HarmonicAnalysis.RowFourierCompatibilityProof`.
 For the full-row change of variables it can use the published row equivariance
 statement `PadicRowFourierEquivarianceStatement` together with `rowTranslate`. For the

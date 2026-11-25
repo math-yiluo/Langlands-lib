@@ -1,7 +1,5 @@
 # Potential geometric reducedness of the reduced generic fibre
 
-Worker 572.
-
 `Langlands.AlgebraicGeometry.DvrPotentialGenericReductionStatement.{u}`
 is a proposition definition, with no proof in this module. It concerns an
 actual flat finite-type scheme over any DVR `R : Type u`. Finite type is
@@ -43,7 +41,7 @@ reducedness, without any normalization, group law, or smooth model.
 
 Corollary A.4, p.29, uses this preliminary step before constructing the
 smooth generic reduction of a group scheme. That group construction
-and the extension of its operations are separate obligations.
+and the extension of its operations are not part of this statement.
 
 Registered source:
 `prasad-yu-2006-quasi-reductive-author-preprint`, SHA-256

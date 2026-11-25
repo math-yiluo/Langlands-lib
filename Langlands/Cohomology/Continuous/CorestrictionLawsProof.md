@@ -1,10 +1,5 @@
 # Full continuous corestriction laws
 
-Authors: Worker 22 and Worker 134. Worker 22 supplied the index proof, continuous
-tower descent and conjunction assembly; Worker 134 replaced the finite tower
-premise with its independently published proof, finalized the unconditional
-interfaces and updated the documentation.
-
 `Langlands.Continuous.continuousCorestrictionLaws` proves exactly the unchanged
 published proposition `Langlands.Continuous.ContinuousCorestrictionLaws.{u}`.
 It has no finite tower, compatibility, index, comparison or other law premise.

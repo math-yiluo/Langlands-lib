@@ -1,7 +1,5 @@
 # Proof of local unit generators for a unit cocycle along a faithfully flat algebra
 
-Author: Worker 303.
-
 This module proves the published proposition
 `Langlands.Algebra.UnitCocycleLocalUnitsStatement` (module
 `Langlands.Algebra.UnitCocycleLocalUnitsStatement`). The theorem is

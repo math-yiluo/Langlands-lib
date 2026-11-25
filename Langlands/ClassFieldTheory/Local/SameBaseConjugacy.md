@@ -1,6 +1,6 @@
 # Same-base conjugacy as inflation along a degree-one tower
 
-This pair is authored by Worker 272. It proves that, over a fixed base field,
+This pair proves that, over a fixed base field,
 the actual conjugacy transport of relative cohomology along an algebra
 equivalence is the actual inflation map for the algebra structure that the
 equivalence induces. That structure is the reusable definition
@@ -170,9 +170,9 @@ Pinned Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`:
 
 Published Library interface:
 `CompatibleFieldEquivalences`, `galoisConjugacy`, `unitsConjugacy` and
-`relativeConjugacy` (`Langlands.ClassFieldTheory.Local.Conjugacy`, Worker
-49). `relativeCohomology`, `inflationCoefficients` and `relativeInflation`
-(`Langlands.ClassFieldTheory.Local.Cohomology`, Worker 42).
+`relativeConjugacy` (`Langlands.ClassFieldTheory.Local.Conjugacy`).
+`relativeCohomology`, `inflationCoefficients` and `relativeInflation`
+(`Langlands.ClassFieldTheory.Local.Cohomology`).
 `InvariantFamily` (`Langlands.ClassFieldTheory.Local.Invariants`) and
 `InvariantFamily.InflationCompatibility`
 (`Langlands.ClassFieldTheory.Local.ClassFormation`).

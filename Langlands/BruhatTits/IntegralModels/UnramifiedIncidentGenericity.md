@@ -36,4 +36,4 @@ scheme tests.
 The provenance is derived from the imported actual-root comparison, lattice
 pairing identity, incident-facet cocharacter theorem and generic-centralizer
 theorem. These results do not prove radical containment, geometric
-parabolicity, reduction preimages or the host statement.
+parabolicity, reduction preimages or `UnramifiedFacetParabolicImageStatement`.

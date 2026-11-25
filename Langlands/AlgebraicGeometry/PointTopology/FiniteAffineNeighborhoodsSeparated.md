@@ -1,7 +1,5 @@
 # Separatedness from finite-set affine neighborhoods
 
-Author: Worker 1203.
-
 This internal support unit derives separatedness of an actual scheme from the
 published `HasFiniteAffineNeighborhoods` predicate, which requires an affine
 open neighborhood of every finite set of underlying points. No compactness,

@@ -1,8 +1,5 @@
 # Local components of automorphic representations of `GL_n` at every place
 
-Author: Worker 3657. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1.
-
 **Scope.** This module
 `Langlands.Automorphic.OperatorSubquotientLocalComponentStatement` makes five
 definitions, proves one membership lemma about the first, and states three
@@ -69,7 +66,7 @@ Library vocabulary used:
 - Mathlib's `Representation.IntertwiningMap` and
   `Representation.IsIrreducible`.
 
-**Why it is here.** This task builds the `GL_n` part (L4) of the global
+**Why it is here.** This module belongs to the `GL_n` part (L4) of the global
 automorphic library. Getz–Hahn Theorem 6.3.7 (Flath's theorem) attaches to
 an automorphic representation a local representation at every place, and
 says the factors are unique. Every local-global statement about automorphic
@@ -80,8 +77,10 @@ only at the finite places (§6). This module states that they exist at every
 place for every irreducible operator subquotient, without a supplied
 presentation.
 
-**Proof targets.** Later proof tasks should prove the three Library
-statements. `LocalComponentExistenceStatement` and
+**Proofs.** The three statements are proved as `localComponentExistence`
+(`LocalComponentExistenceProof.lean`), `localComponentEmbedding`
+(`LocalComponentEmbeddingProof.lean`) and `localComponentDetermination`
+(`LocalComponentDeterminationProof.lean`). `LocalComponentExistenceStatement` and
 `LocalComponentDeterminationStatement` have the universe parameter `u` of
 the number field. `LocalComponentEmbeddingStatement` has `u` and the
 universe `uW` of the local carrier.
@@ -326,9 +325,11 @@ The match:
   cover non-cuspidal automorphic representations, operator subquotients or
   infinite places.
 - **`IrreducibleSubquotientAdmissibilityStatement`**
-  (`AutomorphicAdmissibilityStatement.lean`, stated, unproved) says that
-  every irreducible operator subquotient is jointly admissible. Once it is
-  proved, the joint admissibility hypotheses here can be discharged. They are
+  (`AutomorphicAdmissibilityStatement.lean`, proved as
+  `irreducibleSubquotientAdmissibility` in
+  `IrreducibleSubquotientAdmissibilityProof.lean`) says that
+  every irreducible operator subquotient is jointly admissible. With it, the
+  joint admissibility hypotheses here can be discharged. They are
   kept so that these statements can be proved from Flath's theorem alone,
   without Harish-Chandra finiteness.
 - **Restriction of equivalences.** The Library already transfers an
@@ -345,7 +346,7 @@ The match:
   `Langlands/Representation/RestrictedTensor/` and
   `Langlands/Representation/Smooth/Factorization/`.
 
-## 7. Proof routes (for the proof tasks; not part of the statements)
+## 7. Proof routes (not part of the statements)
 
 1. **Existence.** Getz–Hahn's route: split `Q` as `π_∞ ⊗ π^∞` (Lemma
    6.3.6), factor `π^∞` by Flath's theorem for the restricted product
@@ -406,6 +407,5 @@ belong to this formalization:
   satisfying the Library's `IsRealGKModule` or `IsComplexGKModule`,
   `IsIrreducibleGKModule` and `IsAdmissibleGKModule`.
 
-The Lean file was checked with `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096`, with no errors and no warnings. The
+The Lean file was checked with Lean, with no errors and no warnings. The
 three statements are `def`s returning `Prop`.

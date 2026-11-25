@@ -168,11 +168,11 @@ import. The Mathlib inputs are `TensorProduct.LieModule.lieRingModule`,
 results of `Mathlib.LinearAlgebra.TensorProduct.RightExactness`. No
 identification with an external source or normalization convention is asserted.
 
-This unit constructs Lie actions and maps on the actual quotient tensor carrier.
+This module constructs Lie actions and maps on the actual quotient tensor carrier.
 It provides no coefficient group action derived from the Lie action, no
 differentiation of `τ` and no relative differential, cycles, boundaries or
 cohomology. It also constructs no `(g, K)`-module structure and selects no
 irreducible archimedean factors. It proves no admissibility, nonvanishing, local
-Langlands attachments or automorphic existence. These remain separate obligations
-under the parent task. The coefficient Lie action and the covariance hypothesis
+Langlands attachments or automorphic existence. These remain separate obligations.
+The coefficient Lie action and the covariance hypothesis
 must be instantiated by such later constructions when needed.

@@ -1,6 +1,6 @@
 # Universal subtori from bounded-torsion quotients
 
-Worker 584. These are internal derived lemmas for the largest-subtorus
+These are internal derived lemmas for the largest-subtorus
 construction.
 
 The full pointwise kernel range commutes with every base change, by the

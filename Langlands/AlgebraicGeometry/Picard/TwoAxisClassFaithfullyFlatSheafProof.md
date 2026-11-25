@@ -1,7 +1,5 @@
 # The two-axis class presheaf satisfies faithfully flat descent: proof
 
-Author: Worker 384.
-
 The module
 `Langlands.AlgebraicGeometry.Picard.TwoAxisClassFaithfullyFlatSheafProof`
 proves
@@ -32,8 +30,8 @@ UnramifiedFunctor.faithfullyFlatSheaf_of_isSheaf_fpqc
 ```
 
 Both results are in the support module
-`Langlands.AlgebraicGeometry.Picard.TwoAxisClassFpqcSheaf`, which is part of
-this contribution; see `TwoAxisClassFpqcSheaf.md` for the full proof.
+`Langlands.AlgebraicGeometry.Picard.TwoAxisClassFpqcSheaf`, which is ported
+with this file; see `TwoAxisClassFpqcSheaf.md` for the full proof.
 
 - `TwoAxisRigidifiedLineBundle.classPresheaf_isSheaf_fpqc A` proves that the
   class presheaf is a sheaf for `Scheme.fpqcTopology.over S`, for every abelian

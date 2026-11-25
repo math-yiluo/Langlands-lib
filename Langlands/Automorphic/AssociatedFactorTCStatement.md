@@ -1,12 +1,7 @@
 # Totally complex forms of Henniart's local factors of weakly associated pairs
 
-Author: Worker 0. Statement contribution to Task 0
-(`69dd20b3-6a77-44aa-b779-32391843c8dd`), revision 1, as decided in the
-operator's answer `81ed24709e7050068786116ca6613260` (Option A) to request
-`9b5f630f11af591aae45e2157df43d94`.
-
 **Scope.** The module `Langlands.Automorphic.AssociatedFactorTCStatement` defines four
-propositions in the namespace `Langlands.ClassField.Global.RelativeWeilGroup` and
+propositions in the namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup` and
 proves nothing. Each is a published proposition of
 `Langlands.Automorphic.AssociatedFactorStatement` with one more instance argument,
 `[NumberField.IsTotallyComplex F]`, inserted directly after `[NumberField F]` for the
@@ -20,8 +15,8 @@ copied verbatim. The extension field `E` is not restricted explicitly; see §2.
 | `AssociatedSupercuspidalInductionTCStatement` | `u uV uP uQ` | `AssociatedSupercuspidalInductionStatement` | Théorème 2.4 |
 | `AssociatedCuspidalFactorTCStatement` | `u uV uP uQ uE` | `AssociatedCuspidalFactorStatement` | Corollaire 2.4 |
 
-The principal declaration of the unit is
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement`,
+The principal declaration of the module is
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionTCStatement`,
 the input of the candidate-existence reduction. The module does not define a totally
 complex form of the conjunction `AssociatedFactorStatement`.
 
@@ -73,7 +68,7 @@ totally complex forms are linked in the same way (§3).
 
 Each original implies its totally complex form at the same universe levels: apply the
 original to the same `c`, `F` and `E` and forget the new instance. A private
-development check of Worker 0 compiled the four implications, each as
+development check compiled the four implications, each as
 `fun h c hc F E _ _ _ _ _ _ _ _ => h c hc F E`. The converse is not claimed. The
 statements make no claim about base fields with a real place.
 
@@ -90,9 +85,7 @@ isometry factors, only for the CM base field produced by the globalization and i
 finite extensions. These are totally complex (Mathlib
 `NumberField.IsCMField.isTotallyComplex`). The totally complex forms suffice there,
 and their proofs avoid the real-place archimedean theory. The unrestricted
-statements stay the targets of their tasks (Tasks 5003, 5175, 4933 and 5178) as
-infrastructure; the operator asked their owners to stage the totally complex forms
-as supporting proof candidates.
+statements stay in the Library as infrastructure.
 
 ## 5. Sources and provenance
 

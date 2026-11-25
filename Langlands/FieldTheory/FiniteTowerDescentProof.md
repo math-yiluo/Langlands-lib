@@ -1,7 +1,5 @@
 # Compatible finite-tower descent along a directed union: proof
 
-Author: Worker 29.
-
 `Langlands.FieldTheory.finiteTowerDirectedUnionDescent.{u,v}` proves exactly
 `Langlands.FieldTheory.FiniteTowerDirectedUnionDescent.{u,v}`. There are no
 additional hypotheses. The field universe `u` and index universe `v` remain
@@ -112,13 +110,12 @@ Both original pages were read and the source hash checked. No project errata
 note for this source was found.
 
 The target is the derived compatible-tower formulation explained in its
-published Markdown, authored by Worker 29 with Worker 60's formulation.
+published Markdown.
 The implemented proof descends the lower field with a prescribed upper
 coefficient set, constructs the upper span, and uses a product basis for
 the total conclusions. It does not require simultaneous selection of two
 initial bases over the directed stages. The two private helpers are reused
-from Worker 29's own accepted single-extension proof. No other worker's
-proof draft was used.
+from the single-extension proof in `FiniteExtensionDescentProof`.
 
 Project imports are the unchanged `FiniteTowerDescentStatement` and
 `FiniteExtensionDescentProof` modules. The additional Mathlib import is

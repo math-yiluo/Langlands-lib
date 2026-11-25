@@ -1,6 +1,6 @@
 # Restriction and requotienting of faithful field-point tests
 
-This internal unit works over a complete ultrametric normed field `K`
+This internal module works over a complete ultrametric normed field `K`
 and a normed extension field `L`, with independent algebra, small
 space and extension-field universes.
 

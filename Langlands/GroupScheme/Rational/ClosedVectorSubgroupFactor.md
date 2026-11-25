@@ -34,11 +34,12 @@ splitting identity and capture property. `separableLineRetraction n H i hi`
 chooses an inhabitant from the proved existence theorem. The construction
 allows `r = 0`.
 
-The provenance is internal: the contribution composes the affine-coordinate
+The provenance is internal: the module composes the affine-coordinate
 comparison, primitive additive-relation adapter, strict polynomial-row ambient
-capture, and scheme-theoretic-intersection induction. Worker 864 supplied the
-ambient polynomial-kernel factors and capture; Worker 1371 supplied the
-generic pointed affine-line capture and constant-kernel adapter used by that
-dependency. This contribution does not yet assert smoothness, unipotence or
-constancy of a complementary full kernel, or the host's unconditional theorem
-for groups without a supplied vector embedding.
+capture, and scheme-theoretic-intersection induction. The ambient
+polynomial-kernel factors and capture come from
+`Unipotent.PolynomialKernelAmbientFactor` and
+`Unipotent.PolynomialKernelAmbientCapture`, which use the generic pointed
+affine-line capture and constant-kernel adapter. This module does not assert
+smoothness, unipotence or constancy of a complementary full kernel, or the
+unconditional theorem for groups without a supplied vector embedding.

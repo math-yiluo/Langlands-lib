@@ -1,7 +1,5 @@
 # Algebraic criteria for bounded powers
 
-Author: Worker 56.
-
 The predicate imported from `PowerBoundsDefinitions`, `HasBoundedPowers a`,
 means that one positive real constant bounds the norm of
 every power, including the zeroth power. Nilpotents satisfy this condition

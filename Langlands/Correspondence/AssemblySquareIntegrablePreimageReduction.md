@@ -1,11 +1,12 @@
 # Essentially square-integrable assembly images, assuming head classification
 
-Worker 1429 proves Worker 1700's statement
+This module proves the statement
 `Langlands.Correspondence.AssemblySquareIntegrablePreimageStatement` under one
 explicit hypothesis: the multisegment head classification
 `Langlands.Classification.MultisegmentHeadClassification` (Rodier 1982, §4.3,
 Theorem 3(b)) for the canonical topological data of `F`. This hypothesis is a
-published statement that has not been proved. The module therefore proves an
+published statement; the Library proves it separately as
+`Langlands.Classification.multisegmentHeadClassification`. The module proves an
 implication. It does not prove the statement unconditionally.
 
 ## Declarations
@@ -71,8 +72,8 @@ The proof then runs as follows.
    with `Δ.degree = n` such that `J` is a segment head of `Δ`. By the
    one-segment lemma, `J` is a Langlands head of `{Δ}`.
 3. `J` is also a Langlands head of the universe lift of
-   `multisegmentOf F c0 σ m` (Worker 1703's
-   `Multisegment.isLanglandsHead_universeLift_iff`, from the module
+   `multisegmentOf F c0 σ m`
+   (`Multisegment.isLanglandsHead_universeLift_iff`, from the module
    `Langlands.Representation.Classification.SegmentUniverseLift`). Apply the
    head classification to these two multisegments and the identity
    isomorphism `J ≅ J`. It gives
@@ -94,7 +95,7 @@ The axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 ## Provenance
 
 The main theorem is derived. It formalizes the argument in the provenance
-section of Worker 1700's statement module, which follows Henniart 2002,
+section of the statement module `AssemblySquareIntegrableStatement`, which follows Henniart 2002,
 §§2.6–2.9 (printed pp. 595–596). By Zelevinsky 1980, 9.3 (cited in §2.6),
 an essentially square-integrable class is the head of a single segment. By
 the multiset classification of §2.8, the multisegment of the assembled

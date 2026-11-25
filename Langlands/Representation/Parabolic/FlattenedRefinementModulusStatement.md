@@ -105,8 +105,9 @@ extensionality of monoid homomorphisms gives the displayed equality. The
 Library module `Parabolic.FlattenedRefinementModulusCalculation` contains a
 theorem, `Langlands.PadicField.TopologicalData.composedLeviModulus_flattened`,
 whose conclusion is this equality for fixed parameters, proved along this
-route. This statement module neither imports nor uses it. Proving the
-closed proposition is left to a separate proof task.
+route. This statement module neither imports nor uses it. The closed
+proposition is proved in the separate module `FlattenedRefinementModulusProof`,
+as `Langlands.Parabolic.flattenedRefinementModulus`, from that theorem.
 
 The published `Langlands.Parabolic.RefinementCoordinatesModulusTheorem` is a
 related statement. It compares `T.composedLeviModulus D S` with

@@ -49,6 +49,6 @@ so the relations among the lifts hold in `S₀`. The kernel of `σ₀` is genera
 
 ## Provenance
 
-This is internal to the 05FT proof, written by Worker 281. It uses Mathlib's presentation API and
+This is internal to the 05FT proof. It uses Mathlib's presentation API and
 the Library flatness-approximation lemma
 `Module.Flat.exists_fg_subalgebra_flat_tensorProduct` (Langlands/AnthropicFLT).

@@ -2,9 +2,7 @@
 
 Supporting lemmas for BK93 §1.1 and `RadicalFiltrationStatement`, derived
 from `SplittingBasis` and the published `LatticeChain` definitions.
-Worker 408 supplied the elementary endomorphism and entry-filtration
-proofs. Worker 628 generalized the entry-filtration proofs to arbitrary
-vector spaces.
+The entry-filtration proofs hold for arbitrary vector spaces.
 
 `elementaryEnd β k l t` sends a vector to its \(l\)-th coordinate times
 `t β_k`. The scalar `entry β x k l` is the \(k\)-th coordinate of

@@ -2,8 +2,8 @@
 
 `Langlands.Scheme.Modules.OpenCoverIsoGluingStatement.{u}` states unique
 gluing of compatible actual module isomorphisms over any scheme open cover.
-The theorem `openCoverIsoGluing_of_homGluing` derives this proposition from the
-published `OpenCoverHomGluingStatement.{u}` as an explicit premise. This module
+The theorem `openCoverIsoGluing_of_homGluing` derives this proposition from
+`OpenCoverHomGluingStatement.{u}` as an explicit premise. This module
 does not prove that premise or the host's unconditional Picard-zero theorem.
 
 Let `X : Scheme.{u}`, let `𝒰 : X.OpenCover.{u}` have maps `uᵢ : Uᵢ → X`,
@@ -38,8 +38,9 @@ by extensionality for isomorphisms, proves uniqueness.
 This is an internal categorical corollary of the existing actual
 module-morphism gluing interface, derived by functorial preservation of
 isomorphisms and uniqueness. It is not a separately quoted literature result.
-Worker 124 requested this focused corollary for the locally trivial
-descent-uniqueness argument; the morphism-gluing proof remains separate work.
+This focused corollary serves the locally trivial descent-uniqueness
+argument; the morphism-gluing proposition is proved separately, as
+`OpenCoverHomGluing.openCoverHomGluing` (module `OpenCoverHomGluing`).
 This module fixes the two global modules before prescribing local maps and
 does not construct descent of module objects, rigidifications or Picard
 classes.

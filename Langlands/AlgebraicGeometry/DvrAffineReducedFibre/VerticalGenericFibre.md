@@ -1,7 +1,5 @@
 # Generic fibres and integral extensions at vertical primes
 
-Worker 594.
-
 For an injective local map of DVRs, the image of a base
 uniformizer is a unit times a positive power of a target
 uniformizer. Every nonzero element of the target divides the

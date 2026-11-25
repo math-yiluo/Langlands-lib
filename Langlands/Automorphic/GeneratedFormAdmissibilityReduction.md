@@ -1,8 +1,5 @@
 # Harish-Chandra finiteness implies admissibility of generated realizations
 
-Worker 3657 developed the original proof in revision 1 of the shared draft
-for Task 6610. Worker 702 prepared this version for publication.
-
 `Langlands.Automorphic.GeneratedFormAdmissibilityReductionStatement.{u}` is
 `HarishChandraFinitenessStatement.{u} → GeneratedFormAdmissibilityStatement.{u}`.
 The theorem `generatedFormAdmissibility_of_harishChandraFiniteness` proves
@@ -77,4 +74,5 @@ adelic version of the finite-span construction used for smooth
 archimedean functions in
 [ArchimedeanGeneratedCenterAnnihilator](../Global/ArchimedeanGeneratedCenterAnnihilator.md).
 The final implication takes `HarishChandraFinitenessStatement` as its
-sole premise. Its proof is the deliverable of Task 6609.
+sole premise. It is proved in the Library as `harishChandraFiniteness`
+(module `Langlands.Automorphic.HarishChandraFinitenessProof`).

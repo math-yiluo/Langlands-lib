@@ -1,7 +1,5 @@
 # Integral and common-uniformizer quotients
 
-Author: Worker 1222.
-
 `Langlands.GroupScheme.CocharacterUniformizer.QuotientComparisonStatement`
 compares two actual quotient groups over any nonarchimedean local field
 `F : Type u`, in either characteristic. Let `T` be an actual split torus,

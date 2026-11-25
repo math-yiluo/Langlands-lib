@@ -236,7 +236,7 @@ theorem exists_coverPointRing (φ : Γ(coverScheme D, coverHom D ⁻¹ᵁ U.1) �
   · exact pointRing_eq _ _ _ rfl
 
 theorem coverPointRing_map (g : G) (x : Fiber s (D.obj (SingleObj.star G))) :
-    coverPointRing D s U hs ((pointFunctor s).map (D.map (SingleObj.toEnd G g)) x) =
+    coverPointRing D s U hs ((pointFunctor s).map (D.map (SingleObj.toEnd G g).asHom) x) =
       sectionAction D U.1 g ≫ coverPointRing D s U hs x := by
   apply pointRing_eq
   rw [Spec.map_comp, Category.assoc, ← fromSpec_coverMap, ← Category.assoc,
@@ -321,7 +321,7 @@ they lie in one group orbit. -/
 theorem gluedCocone_orbit (x y : Fiber s (D.obj (SingleObj.star G))) :
     (pointFunctor s).map ((gluedCocone D).ι.app (SingleObj.star G)) x =
         (pointFunctor s).map ((gluedCocone D).ι.app (SingleObj.star G)) y ↔
-      ∃ g : G, y = (pointFunctor s).map (D.map (SingleObj.toEnd G g)) x := by
+      ∃ g : G, y = (pointFunctor s).map (D.map (SingleObj.toEnd G g).asHom) x := by
   let _ : Algebra Γ(S, U.1) Ω := (baseRing s U hs).hom.toAlgebra
   have : IsNoetherianRing Γ(S, U.1) := IsLocallyNoetherian.component_noetherian ⟨U.1, U.2⟩
   have := sectionRing_finite D U

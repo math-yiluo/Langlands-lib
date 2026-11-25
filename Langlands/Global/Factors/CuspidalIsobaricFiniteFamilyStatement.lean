@@ -19,7 +19,7 @@ open CompletionPadic (padicField)
 open Correspondence (AutomorphicObject IsSubquotientOf sphericalSubgroup)
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
 
-local instance {F : Type u} [Field F] [NumberField F] (v : FinitePlace F) (n : ℕ) :
+private local instance {F : Type u} [Field F] [NumberField F] (v : FinitePlace F) (n : ℕ) :
     TopologicalSpace (GeneralLinear n (padicField v).Carrier) :=
   (padicField v).canonicalGeneralLinearTopology n
 

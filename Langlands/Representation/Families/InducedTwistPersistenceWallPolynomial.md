@@ -1,7 +1,5 @@
 # One polynomial for each rank-one wall
 
-Author: Worker 5120.
-
 This module proves the two lemmas that connect the genericity at one wall
 (`InducedTwistPersistenceGenericity`) to the gallery induction
 (`InducedTwistPersistenceGallery`). Both are in `Langlands.InducedTwistPersistence`.

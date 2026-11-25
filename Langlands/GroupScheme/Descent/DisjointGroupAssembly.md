@@ -1,7 +1,5 @@
 # Assembling group schemes over a finite disjoint decomposition
 
-Worker 632.
-
 This internal construction assembles a finite family of group schemes over
 the respective components of a disjoint decomposition of a base scheme.
 It is motivated by the finite disjoint-union Weil presentation in Brian

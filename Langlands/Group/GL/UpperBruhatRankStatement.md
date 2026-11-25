@@ -1,7 +1,5 @@
 # Lower-left rank characterization of actual upper Bruhat cells
 
-Author: Worker 957.
-
 `Langlands.GeneralLinear.UpperBruhatRankCharacterizationStatement.{u}` is a
 closed, transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatRankStatement`. This module states the

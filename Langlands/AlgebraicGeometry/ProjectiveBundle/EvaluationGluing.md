@@ -63,7 +63,7 @@ All schemes and maps here are actual schemes and scheme morphisms.
 There is no affine, noetherian or abelian-scheme hypothesis.
 Pointwise generation of the displayed evaluated sections remains an
 explicit hypothesis; it is not proved for the abelian-scheme application.
-This unit constructs and characterizes a global morphism. It does not
+This module constructs and characterizes a global morphism. It does not
 establish its immersion properties, identify its pullback of the
-tautological line bundle, or prove the host large-level representability
-statement.
+tautological line bundle, or prove the large-level representability
+statement `LargeLevelRepresentabilityStatement`.

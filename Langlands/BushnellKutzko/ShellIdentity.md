@@ -1,7 +1,5 @@
 # The shell identity from a monomial functional equation
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Setting
 
 `K` is a `p`-adic field (`PadicField p`) with its canonical topology, valuation and local-field

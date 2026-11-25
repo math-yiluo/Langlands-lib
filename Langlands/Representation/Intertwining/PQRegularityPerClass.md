@@ -1,6 +1,6 @@
 # `PQ`-regularity, one strict predecessor at a time
 
-Author: Worker 102. Module `Langlands.Representation.Intertwining.PQRegularityPerClass`,
+Module `Langlands.Representation.Intertwining.PQRegularityPerClass`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u` (the field)
 and `v` (the representation).
 

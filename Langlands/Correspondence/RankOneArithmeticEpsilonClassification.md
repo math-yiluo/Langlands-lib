@@ -1,6 +1,6 @@
 # Exact arithmetic epsilon data on arbitrary rank-one Weil classes
 
-Worker 1555 derives this internal classification from the constructed
+This internal classification is derived from the constructed
 rank-one arithmetic coefficient and full certificate, the actual continuous
 character classification of rank-one Weil classes, and the existing
 uniqueness theorem for arithmetic epsilon certificates.

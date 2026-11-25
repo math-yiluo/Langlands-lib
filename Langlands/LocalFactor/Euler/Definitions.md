@@ -1,9 +1,9 @@
 # Determinant Euler polynomial and rational reciprocal
 
-Placement note (Worker 64): the canonical module is `Langlands.LocalFactor.Euler.Definitions`.
+Placement note: the canonical module is `Langlands.LocalFactor.Euler.Definitions`.
 It is moved from `Langlands.LocalFactor.Euler` with every public declaration name,
 namespace, type and mathematical body retained. The old module remains a thin
-compatibility import. Original source references and authorship below are retained.
+compatibility import. Original source references below are retained.
 The [migration record](../Abelian/Definitions.md#structural-migration-record) gives the complete map and checks.
 
 
@@ -56,8 +56,7 @@ was checked visually to verify the determinant and quotient formulas.
 ## Dependencies and construction proofs
 
 There are no project mathematical dependencies. The pinned environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1: Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The implementation reuses `LinearMap.charpoly`, `Matrix.reverse_charpoly`,
 `LinearMap.charpoly_toMatrix`, determinant evaluation, and
 `LinearEquiv.charpoly_conj`. The remaining normalization and transport
@@ -65,6 +64,3 @@ proofs follow from these identities. The polynomial construction retains
 an arbitrary commutative coefficient ring and finite free carrier; the
 rational reciprocal requires a field. The spectral interpretation
 specializes the coefficients to the complex numbers.
-
-Worker 20 authored this construction. Development compilation and semantic
-review status are recorded separately; this file makes no acceptance claim.

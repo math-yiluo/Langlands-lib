@@ -1,15 +1,13 @@
 # Tensoring a finitely presented module with an arbitrary product: statement
 
-Author: Worker 376.
-
-`RestrictedProduct.TensorPiComparison` is a proposition target. It is not a
+`Langlands.LinearAlgebra.RestrictedProduct.TensorPiComparison` is a proposition target. It is not a
 theorem, and nothing in this module assumes it. The module states the target
 and proves nothing.
 
 ## The target
 
 ```
-def RestrictedProduct.TensorPiComparison.{uR, uM, uι, uN} : Prop :=
+def Langlands.LinearAlgebra.RestrictedProduct.TensorPiComparison.{uR, uM, uι, uN} : Prop :=
   ∀ (R : Type uR) (M : Type uM) [CommRing R] [AddCommGroup M] [Module R M]
     [Module.FinitePresentation R M] {ι : Type uι} (N : ι → Type uN)
     [∀ i, AddCommGroup (N i)] [∀ i, Module R (N i)],
@@ -62,8 +60,10 @@ underlying map of the equivalence `TensorProduct.piRight`
 (`Mathlib/LinearAlgebra/TensorProduct/Pi.lean`, lines 90–101). Mathlib's
 docstring for that file notes that `piRightHom` is not an isomorphism in
 general. At the project's Mathlib pin, a text search finds no theorem on the
-bijectivity of `piRightHom` for finitely presented modules. Searches of the
-Library and of TaskHub found no existing owner of this target.
+bijectivity of `piRightHom` for finitely presented modules. A search of the
+Library found no other statement of this target. The Library proves it as
+`Langlands.LinearAlgebra.RestrictedProduct.tensorPiComparison_proof` in
+`Langlands.LinearAlgebra.RestrictedProduct.TensorPiProof`.
 
 ## Source and how the target relates to it
 
@@ -115,25 +115,26 @@ There, `piRightHomBil` is the bilinear map at lines 46–52, `piRightHom` is its
 lift at lines 54–57, and `piRightHom_tmul` is the formula at lines 59–62. The
 target uses these declarations directly and copies none of them.
 
-## Scope and later phases
+## Scope and later use
 
-This is a statement task. The module contains no proof of the target, no
+This is a statement module. The module contains no proof of the target, no
 equivalence and none of the auxiliary source declarations:
 `Module.FinitePresentation.exists_fin_exact`, `directSumPiEquivPiSum`, the
 finite free equivalence `tensorPiEquivPiTensor` and its helpers, the
 five-lemma argument, `tensorPiEquivPiTensor'`, and the two `_apply` lemmas.
 The analogue of `tensorPiEquivPiTensor'`, for example
 `LinearEquiv.ofBijective (TensorProduct.piRightHom R R M N) h`, can be
-packaged only after an exact proof of this target has been independently
-accepted and published. That packaging belongs to a later phase of parent
-task `2ff17b0a-7a93-4668-a2e6-b740e4205e6d`. In the source, that equivalence
+packaged from an exact proof `h` of this target. In the source, that equivalence
 is used in `lTensorPrincipalEquiv`
 (`FLT/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean`, lines
 130–131), where the coordinates are submodules `N' i`, and its formula is
 used at lines 167 and 215 of the same file.
 
-The target is placed in the namespace `RestrictedProduct` because it serves
-the parent's restricted-product tensor equivalence. It does not mention
+The target was placed in the namespace `RestrictedProduct` because it serves; since 22 November 2026 it
+is in `Langlands.LinearAlgebra.RestrictedProduct`, being the Library's own (see “Names and place”). It
+serves
+the restricted-product tensor equivalence of
+`Langlands.LinearAlgebra.RestrictedProduct.TensorEquiv`. It does not mention
 restricted products. It does not import
 `Langlands.LinearAlgebra.RestrictedProduct.Tensor`, and it is independent of
 the maps defined there. Its only imports are
@@ -143,14 +144,13 @@ makes no topological or norm claim.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean
-4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) built the module
-with no errors or warnings (diagnostic `dbf38c8e-482f-484b-981d-e82b62c2f9a6`).
-Its inspection of `RestrictedProduct.TensorPiComparison` reports kind
+A check with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` built the module
+with no errors or warnings.
+Its inspection of `Langlands.LinearAlgebra.RestrictedProduct.TensorPiComparison` reports kind
 `definition`, level parameters `uR`, `uM`, `uι`, `uN`,
 `statement_returns_prop: true`, and axioms `propext`, `Classical.choice` and
-`Quot.sound`. A private probe module (diagnostic
-`ffcf0f96-2991-4dd1-ac14-ac0be47d0b32`) printed the elaborated body with
+`Quot.sound`. A private probe module printed the elaborated body with
 `pp.explicit`. It also checked that `TensorPiComparison.{0, 1, 2, 3}`, applied
 to `R M N`, has type `IsTensorProduct (TensorProduct.piRightHomBil R R M N)`,
 and that the target applies at `ℤ`, `ℤ` and the constant family `fun _ : ℕ ↦ ℤ`.
@@ -159,7 +159,7 @@ The module has no `sorry`, `admit` or new axiom.
 ## Provenance and modification notice
 
 The Lean file keeps the source's Apache-2.0 header, with its copyright line
-and author. It adds a notice of Worker 376's modifications. The source
+and author. It adds a notice of the modifications made in Langlands-lib. The source
 declaration packages a bijectivity proof as an equivalence. This module
 instead states that bijectivity as a `Prop`-valued definition, built from
 Mathlib's `piRightHom` and the source hypotheses at lines 182–184. The
@@ -172,3 +172,12 @@ used. The upstream root Apache-2.0 `LICENSE` is retained at
 The source snapshot has no `NOTICE` file. The public audit
 [finite-adele base change](../../../notes/reuse/finite-adele-base-change-audit.md),
 sections 2–6 and Appendix B, describes the surrounding source closure.
+
+## Names and place (22 November 2026)
+
+The Library's own declarations of this directory, which the Imperial project does not declare, moved on
+that day from the root name space `RestrictedProduct` to `Langlands.LinearAlgebra.RestrictedProduct`
+(each name gets the prefix `Langlands.LinearAlgebra.`; for instance
+`RestrictedProduct.TensorPiComparison` is now `Langlands.LinearAlgebra.RestrictedProduct.TensorPiComparison`).
+Statements and proofs change only in these names; the module uses no declaration of the Imperial
+project.

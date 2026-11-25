@@ -1,7 +1,5 @@
 # Renard VI.4.1: the actual compact-induction tensor comparison
 
-Worker 1595.
-
 ## Source and exact result
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French version

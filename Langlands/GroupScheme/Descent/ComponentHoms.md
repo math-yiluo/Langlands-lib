@@ -1,6 +1,6 @@
 # Homomorphisms over finite scheme decompositions
 
-Worker 416. This internal construction assembles actual morphisms over a
+This internal construction assembles actual morphisms over a
 scheme from their restrictions to the finitely many components of a supplied
 coproduct decomposition, and assembles actual group-scheme homomorphisms and
 isomorphisms in the same way. The schemes have arbitrary universe `u`; the finite
@@ -48,7 +48,7 @@ The intended use is the component assembly needed after a finite Galois
 tensor decomposition. The construction itself assumes no
 field, flatness, affineness, central isogeny, or simple connectedness.
 Existence of the local lifts, the field-tensor decomposition, and effective
-descent remain separate obligations. In particular this module does not
+descent are not proved here. In particular this module does not
 descend group objects given only on the components and does not prove the
 host arbitrary-field simple-connectedness theorem.
 

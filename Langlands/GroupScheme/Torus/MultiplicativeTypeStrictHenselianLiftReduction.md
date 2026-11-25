@@ -1,8 +1,8 @@
 # Strictly Henselian lifting from complete-local deformation
 
-Worker 872, using Worker 517's split-residue Noetherian coefficient models.
-This derived reduction keeps the unchanged complete-local deformation
-statement as an explicit mathematical input.
+This derived reduction uses the split-residue Noetherian coefficient models
+of `Descent.SplitResidueNoetherianModel`. It keeps the complete-local
+deformation statement as an explicit mathematical input.
 
 `exists_clopen_over_henselian` takes a flat affine finitely presented group
 `D` over a Noetherian local ring `P` with split special fibre, and assumes
@@ -23,19 +23,20 @@ evaluation and the exact coefficient reduction make the special fibre an
 isomorphism. No Noetherianity is imposed on `A`.
 
 `multiplicativeTypeStrictHenselianLift_of_completeLocalDeformation` proves
-the exact unchanged `MultiplicativeTypeStrictHenselianLiftStatement` from
+the exact `MultiplicativeTypeStrictHenselianLiftStatement` from
 that one explicit deformation proposition. A prescribed special-fibre
 isomorphism first makes the original special fibre diagonalizable.
 `Descent.SplitResidueNoetherianModel.nonempty_model` supplies a Noetherian
 local coefficient model mapping locally into `A`, with diagonalizable
 special fibre and etale approximation. The preceding construction gives
 a clopen lift over `A` from some diagonalizable source. The actual model
-isomorphism transports its target to `H`. Finally published local Hom
+isomorphism transports its target to `H`. Finally the Library's local Hom
 comparison, packaged in `PrescribedDiagonalizableLift`, reparametrizes its
 source to the prescribed `D_A(M)` and recovers `e.hom` exactly.
 
 The implemented route only uses the special-fibre diagonalization; the
-all-geometric-fibres multiplicative-type hypothesis of the unchanged target
-is therefore unused. It retains arbitrary universe, non-Noetherian bases,
-nonsmooth targets and torsion in characters. The deformation proposition
-remains an argument, not an axiom or an asserted proof of the exact target.
+all-geometric-fibres multiplicative-type hypothesis of
+`MultiplicativeTypeStrictHenselianLiftStatement` is therefore unused. It
+retains arbitrary universe, non-Noetherian bases, nonsmooth targets and
+torsion in characters. The deformation proposition remains an argument, not
+an axiom or an asserted proof of the exact statement.

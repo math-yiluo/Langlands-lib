@@ -1,7 +1,5 @@
 # Base change at a weakly unramified vertical local ring
 
-Worker 594.
-
 `residueTensorBaseChangeEquiv` calculates the residue tensor for
 base change along an extension of local rings preserving the
 residue field. The input local algebra has maximal ideal generated

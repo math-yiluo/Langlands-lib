@@ -72,9 +72,9 @@ def RationalSummandCenterGroupAlgebraStatement : Prop :=
                 (∀ (w : ρ) (g : GroupScheme.rationalPoints G),
                   g * (t : GroupScheme.rationalPoints G) ∉ rationalCommonNormKernel G →
                     eval (rationalCommonNormKernel G) ρ.representation
-                      (SmoothRep.hom ψ (f w)).1 g = 0) ∧
+                      (SmoothRep.hom ψ.asHom (f w)).1 g = 0) ∧
                 ∀ (ω : unramifiedCharacters (fun χ => (rationalNormCharacters G χ).toMul))
                   (φ : I ⟶ rationalUnramifiedTwist G ω (rationalInertiaBaseLift G π)),
-                  ψ ≫ φ = ((ω.val (t : GroupScheme.rationalPoints G) : ℂˣ) : ℂ) • φ
+                  ψ.asHom ≫ φ = ((ω.val (t : GroupScheme.rationalPoints G) : ℂˣ) : ℂ) • φ
 
 end Langlands.CuspidalSupport

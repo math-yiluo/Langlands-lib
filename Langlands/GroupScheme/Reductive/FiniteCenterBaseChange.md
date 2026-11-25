@@ -1,9 +1,9 @@
 # Finite scheme-theoretic centres under arbitrary base change
 
-Authors: Workers 1294, 1401 and 1490. The arbitrary-base
-centre-representative argument adapts Worker 1401's centre base-change
-proof. Worker 1490 contributed the interface and the separation of this
-helper from the final semisimplicity theorem.
+The arbitrary-base centre-representative argument adapts the centre
+base-change proof of `CenterBaseChangeProof`. This helper and its
+`FiniteCenter` interface are kept separate from the final semisimplicity
+theorem.
 
 ## Meaning
 
@@ -58,11 +58,14 @@ base-change identity, and Mathlib's finite-morphism pullback instance.
 it changes no existing mathematical predicate and asserts no centre existence
 theorem. No new external source assertion is introduced.
 The implementation imports the published
-`Langlands.GroupScheme.Reductive.CenterBaseChangeProof`, adapts Worker
-1401's centre-representative argument to an arbitrary base map, and packages
-Worker 1294's finite-centre witness transport using the interface agreed
-with Worker 1490.
+`Langlands.GroupScheme.Reductive.CenterBaseChangeProof`, adapts its
+centre-representative argument to an arbitrary base map, and packages
+the finite-centre witness transport in the `FiniteCenter` interface.
 
-This unit supplies the finite-centre part of semisimplicity ascent.
-Connected-reductivity ascent and semisimplicity reflection remain separate
-proof obligations.
+This module supplies the finite-centre part of semisimplicity ascent, which
+`isSemisimpleFieldExtension` (module
+`SimplyConnected.SemisimpleFieldExtensionProof`) proves.
+Connected-reductivity ascent and semisimplicity reflection are the separate
+results `connectedReductiveFieldExtensionStatement` (module
+`Reductive.FieldExtensionProof`) and `IsSemisimple.of_fieldExtension` (module
+`Reductive.SemisimpleFieldReflectionProof`).

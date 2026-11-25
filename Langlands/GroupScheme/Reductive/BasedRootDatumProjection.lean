@@ -53,7 +53,7 @@ theorem exists_basedRootDatum_correction (δ : p.rootDatum.Aut) :
   obtain ⟨w, hpos, -⟩ :=
     Langlands.LinearAlgebra.RootDatumBasedCorrection.exists_positive_correction
       p.rootDatum 0 p.positiveCocharacter hf
-      (fun i hi => False.elim (hi (map_zero _))) δ (map_zero _)
+      (fun i hi => False.elim (hi (map_zero _))) δ (LinearEquiv.map_zero _)
   refine ⟨⟨w.val, Langlands.LinearAlgebra.RootDatumWeylChambers.reflectionSubgroup_le
     p.rootDatum _ w.property⟩, fun i => ?_⟩
   apply (p.base.mem_support_equiv_iff_of_isPos p.rootDatum

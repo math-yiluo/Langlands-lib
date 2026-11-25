@@ -81,6 +81,6 @@ their underlying O-linear functions. Consequently the three underlying formal
 comparison theorems prove these equations directly, including every
 coefficient-extension chart test and both family compatibility conditions.
 
-This unit extends supplied comparison witnesses. Varying-base moduli classes,
+This module extends supplied comparison witnesses. Varying-base moduli classes,
 height certificates, framing and representability remain separate. Distinct
 comparison witnesses are not asserted to induce the same family equivalence.

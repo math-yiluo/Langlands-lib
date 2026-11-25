@@ -30,8 +30,7 @@ the statements*). The conjunction of the other eight is
 [RenardClosedRootSubsetStatements](RenardClosedRootSubsetStatements.md); the whole-book
 formalization uses it for V.4.2.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`, with
-the agreement of Worker 1222. The Chapter V item ledger (`notes/renard/item-ledger-v.md`, V.4.2
+The Chapter V item ledger (`notes/renard/item-ledger-v.md`, V.4.2
 rows) records the status of these statements.
 
 This Markdown was corrected after publication. The first version said that all nine
@@ -44,8 +43,8 @@ that sentence does not hold for `ClosedRootSubsetGroupIntersectionStatement`.
 
 The main source is David Renard, *Représentations des groupes réductifs p-adiques*, French
 edition dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`.
-Worker 4 read V.3.12 (printed p.112 / PDF p.118) and the opening of V.4 together with V.4.2
-(printed p.118 / PDF p.124). V.4.2 reads:
+The passages read for this file are V.3.12 (printed p.112 / PDF p.118) and the opening of V.4
+together with V.4.2 (printed p.118 / PDF p.124). V.4.2 reads:
 
 > Soit `T` une partie de `Σ_∅`. On dit que `T` est fermée si `(T + T) ∩ Σ_∅ ⊂ T`. On dit que `T`
 > est convexe si `T` est l'intersection de `Σ_∅` avec un cône convexe fermé de `𝔞^*`. Une partie
@@ -82,7 +81,7 @@ property. V.3.12 fixes `Σ'_∅ = Σ'(A_∅)`, the set of all roots of `A_∅`, 
 determined by the minimal parabolic `P_∅`.
 
 [7] is A. Borel and J. Tits, *Groupes réductifs*, Publ. Math. IHÉS 27 (1965), registered as
-`borel-tits-1965-groupes-reductifs`. Worker 4 read §3.8 (printed pp.76–77 / PDF pp.23–24),
+`borel-tits-1965-groupes-reductifs`. The passages read are §3.8 (printed pp.76–77 / PDF pp.23–24),
 §§3.21–3.23 (printed pp.83–84 / PDF pp.30–31) and §§5.12–5.18 (printed pp.99–101 /
 PDF pp.46–48). Proposition 3.22 reads (printed p.83 / PDF p.30, checked on the rendered page):
 
@@ -114,8 +113,8 @@ finite and the cone spanned by a finite set is closed, this is the same as Renar
 proofs of 3.22 b) and c) reduce to an algebraically closed field, and the groups there are
 varieties, that is reduced.
 
-Worker 4 also read §5 of the 1972 *Compléments* (`borel-tits-1972-complements-groupes-reductifs`,
-printed pp.274–275 / PDF pp.23–24), which corrects the 1965 article. (5.1) replaces the second
+§5 of the 1972 *Compléments* (`borel-tits-1972-complements-groupes-reductifs`,
+printed pp.274–275 / PDF pp.23–24), which corrects the 1965 article, was also read. (5.1) replaces the second
 equality (2) of 3.8 by an inclusion. It concerns intermediate tori, which are not used here. (5.2)
 extends 5.7 to arbitrary subsets, for use in the proof of 5.8, without changing 5.8. (5.5)
 corrects misprints, among them `Φ(S, G)` for `Φ(S, T)` in 3.8 (p.76), and updates the references
@@ -302,7 +301,7 @@ determination of `Θ` by the triple is the last conjunct of `StandardParabolicRo
 - **[7] 3.22 b) is false, even in `Φ(S, G)`.** This was found after publication. The published
   note
   [Borel–Tits 3.22(b): a split D4 obstruction](../../../notes/errata/borel-tits-1965-closed-root-intersection.md)
-  (Worker 248, with checks by Workers 292 and 785) gives a paper counterexample. Take
+  (with two independent checks) gives a paper counterexample. Take
   `G = SO₈` over `ℂ`, split, with its diagonal maximal torus `T` and reduced root system
   `{±εᵢ ± εⱼ}` of type `D₄`. Put `S = {±ε₁ ± ε₂, ±ε₃ ± ε₄}` and `X = {±ε₁ ± ε₃, ±ε₂ ± ε₄}`.
   Both are closed and symmetric, of type `A₁⁴`. They are disjoint, so `S ∩ X = ∅` is convex
@@ -312,7 +311,7 @@ determination of `Θ` by the triple is the last conjunct of `StandardParabolicRo
   this contradicts `ClosedRootSubsetGroupIntersectionStatement`. The note also checks that the
   Library's `RelativeRoot.subgroup` and `torusCentralizer` give the standard root groups and
   `T` here, and it locates the error in the printed proof of 3.22 b) (printed p.84 / PDF p.31).
-  Worker 4 checked the argument. It is a paper argument; no Lean proof of the negation is
+  The argument was checked again for this file. It is a paper argument; no Lean proof of the negation is
   published. Renard's (i) assumes that both sets are convex, so it is not affected.
 - **The reduced reading of (i) is true.** If `S = Σ_∅ ∩ C` with `C` a closed convex cone, then
   `Φ ∩ C = S ∪ (2S ∩ Φ)`, and `G(S)` is Borel–Tits' `G_{Φ∩C}`, because `U_γ` contains `U_{2γ}`.
@@ -321,8 +320,8 @@ determination of `Θ` by the triple is the last conjunct of `StandardParabolicRo
   is false. An argument that uses both convexity hypotheses is sketched in *Why the statements
   are true*. (i) is stated separately as `ConvexRootSubsetGroupIntersectionStatement`.
 - **Intersections.** The groups of [7] are reduced. Scheme-theoretic intersections of smooth
-  subgroups need not be reduced, so equality is asserted on reduced test schemes only. Worker 1222
-  asked to keep this distinction from scheme-theoretic intersection.
+  subgroups need not be reduced, so equality is asserted on reduced test schemes only. This
+  distinction from scheme-theoretic intersection is deliberate.
 
 ## Formalization choices
 
@@ -405,23 +404,22 @@ coroots), positive system `Σ^+(ν)` and basis `Δ_∅`.
 
 ## Status of the statements
 
-Checked at Library commit `89bac3684c44d30f371d4959c363e25649af5e8d`. Each theorem below has
-exactly the type of its statement at universe `u`. Each was independently accepted and
-published from its own proof task.
+Each theorem below has exactly the type of its statement at universe `u`. Each is proved in its
+own module.
 
-| Statement | Theorem | Proof module | Proof task |
-| --- | --- | --- | --- |
-| `ConvexRootSubsetHullStatement` | `convexRootSubsetHull` | [ConvexRootSubsetHullProof](ConvexRootSubsetHullProof.md) | Task 6508 |
-| `UnipotentRootSubsetCocharacterStatement` | `unipotentRootSubsetCocharacter` | [UnipotentRootSubsetCocharacterProof](UnipotentRootSubsetCocharacterProof.md) | Task 6509 |
-| `SymmetricRootSubsetWeylStatement` | `symmetricRootSubsetWeyl` | [SymmetricRootSubsetWeylProof](SymmetricRootSubsetWeylProof.md) | Task 6510 |
-| `StandardParabolicRootTripleStatement` | `standardParabolicRootTriple` | [StandardParabolicRootTripleProof](StandardParabolicRootTripleProof.md) | Task 6511 |
-| `RootSubsetGroupExistenceStatement` | `rootSubsetGroupExistence` | [RootSubsetGroupExistenceProof](RootSubsetGroupExistenceProof.md) | Task 6512 |
-| `StandardParabolicRootSubsetGroupStatement` | `standardParabolicRootSubsetGroup` | [StandardParabolicRootSubsetGroupProof](StandardParabolicRootSubsetGroupProof.md) | Task 6513 |
-| `ConvexRootSubsetGroupIntersectionStatement` | `convexRootSubsetGroupIntersection` | [ConvexRootSubsetGroupIntersectionProof](ConvexRootSubsetGroupIntersectionProof.md) | Task 6515 |
-| `UnipotentRootSubsetGroupIntersectionStatement` | `unipotentRootSubsetGroupIntersection` | [UnipotentRootSubsetGroupIntersectionProof](UnipotentRootSubsetGroupIntersectionProof.md) | Task 6516 |
+| Statement | Theorem | Proof module |
+| --- | --- | --- |
+| `ConvexRootSubsetHullStatement` | `convexRootSubsetHull` | [ConvexRootSubsetHullProof](ConvexRootSubsetHullProof.md) |
+| `UnipotentRootSubsetCocharacterStatement` | `unipotentRootSubsetCocharacter` | [UnipotentRootSubsetCocharacterProof](UnipotentRootSubsetCocharacterProof.md) |
+| `SymmetricRootSubsetWeylStatement` | `symmetricRootSubsetWeyl` | [SymmetricRootSubsetWeylProof](SymmetricRootSubsetWeylProof.md) |
+| `StandardParabolicRootTripleStatement` | `standardParabolicRootTriple` | [StandardParabolicRootTripleProof](StandardParabolicRootTripleProof.md) |
+| `RootSubsetGroupExistenceStatement` | `rootSubsetGroupExistence` | [RootSubsetGroupExistenceProof](RootSubsetGroupExistenceProof.md) |
+| `StandardParabolicRootSubsetGroupStatement` | `standardParabolicRootSubsetGroup` | [StandardParabolicRootSubsetGroupProof](StandardParabolicRootSubsetGroupProof.md) |
+| `ConvexRootSubsetGroupIntersectionStatement` | `convexRootSubsetGroupIntersection` | [ConvexRootSubsetGroupIntersectionProof](ConvexRootSubsetGroupIntersectionProof.md) |
+| `UnipotentRootSubsetGroupIntersectionStatement` | `unipotentRootSubsetGroupIntersection` | [UnipotentRootSubsetGroupIntersectionProof](UnipotentRootSubsetGroupIntersectionProof.md) |
 
-`ClosedRootSubsetGroupIntersectionStatement` is false (*Source issues*). Its proof task, Task
-6514, was retired by the operator for this reason. The Library also proves the implication
+`ClosedRootSubsetGroupIntersectionStatement` is false (*Source issues*). For this reason the
+Library has no proof module for it. The Library also proves the implication
 `ConvexRootSubsetGroupIntersectionReductionStatement`, from
 `ClosedRootSubsetGroupIntersectionStatement` to `ConvexRootSubsetGroupIntersectionStatement`, as
 `convexRootSubsetGroupIntersection_of_closed` in
@@ -433,8 +431,9 @@ hypothesis is false. The convex statement is proved directly by
 
 None for the eight true statements. `ClosedRootSubsetGroupIntersectionStatement` and the
 conjunction `ClosedRootSubsetStatements` are false and cannot be proved; no Lean proof of their
-negations is published. The proof of the conjunction of the eight true statements,
-`RenardClosedRootSubsetStatements`, is a separate obligation, owned by Task 7357.
+negations is published. The conjunction of the eight true statements,
+`RenardClosedRootSubsetStatements`, is proved separately as `renardClosedRootSubsets` in
+[RenardClosedRootSubsetProof](RenardClosedRootSubsetProof.md).
 
 ## Imports
 

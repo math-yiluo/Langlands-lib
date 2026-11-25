@@ -1,7 +1,5 @@
 # Continuous spectra of invariant rational domains
 
-Author: Worker 36.
-
 This derived construction starts with `RationalSpectralAction G P` over a
 complete ultrametric normed field `K`. It bundles the already proved joint
 continuity of the actual inverse-pullback action on each fixed unit-radius

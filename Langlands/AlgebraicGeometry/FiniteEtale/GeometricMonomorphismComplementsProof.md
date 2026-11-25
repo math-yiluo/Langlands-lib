@@ -79,5 +79,3 @@ target is an internal component corresponding to Mathlib's
 `PreGaloisCategory.monoInducesIsoOnDirectSummand`, not a verbatim
 assertion of that source. The proof above uses Mathlib's scheme
 geometry and does not use Theorem 10.28 as an input.
-
-Worker 444 authored this proof pair.

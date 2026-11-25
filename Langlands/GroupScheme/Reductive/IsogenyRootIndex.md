@@ -1,6 +1,6 @@
 # The actual root-index bijection of a split reductive isogeny
 
-This internal derived unit proves that the source-to-target root-index map
+This internal derived module proves that the source-to-target root-index map
 chosen from finite actual source-root images is bijective for an isogeny
 between connected reductive groups over an arbitrary field, with a commuting
 map of specified split maximal tori and supplied actual root data.
@@ -30,5 +30,5 @@ give bijectivity.
 Provenance is derived from the published actual Lie weight decomposition,
 maximal-torus centralizer theorem, split root Lie-line theorem, smooth-isogeny
 dimension theorem, torus-restriction isogeny construction, and actual source-root
-factor construction. This unit does not prove the coroot equations or the
+factor construction. This module does not prove the coroot equations or the
 centrality and isomorphism comparisons of `IsogenyRootDatumStatement`.

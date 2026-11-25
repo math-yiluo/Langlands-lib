@@ -1,7 +1,5 @@
 # Generation by normal almost-simple subgroups
 
-Author: Worker 1454.
-
 `SemisimpleAlmostSimpleGenerationStatement.{u}` is the following proposition
 for actual group schemes over any algebraically closed field `k : Type u`,
 without a restriction on its characteristic. If `G` is semisimple and

@@ -1,7 +1,5 @@
 # Numerical pointed Harris polarized class pullback
 
-Author: Worker 57.
-
 This internal construction restricts the actual pointed pullback of Harris
 polarized determinant classes to the numerical representative image in
 `HarrisNumericalWeilTower`. Both the reflex-field structure map `s` and the

@@ -1,7 +1,5 @@
 # Structural properties of algebraic spaces through scheme atlases
 
-Author: Worker 1603.
-
 This module defines three structural properties of an actual
 `X : Langlands.AlgebraicGeometry.AlgebraicSpace S` over every
 `S : Scheme.{u}` by existence of an actual surjective etale scheme atlas.

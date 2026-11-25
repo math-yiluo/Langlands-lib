@@ -1,4 +1,4 @@
-import Langlands.TauCeti.RingTheory.WeilRestriction.Basic
+import Langlands.RingTheory.WeilRestriction.PresentedAlgebra
 
 noncomputable section
 
@@ -38,25 +38,25 @@ end WeilRestrictionFiniteType
 
 /-- The actual finite-type affine Weil-restriction algebra along a finite projective algebra. -/
 def WeilRestrictionFiniteType : Type _ :=
-  TauCeti.Algebra.WeilRestriction.OfPresentation A B
+  Langlands.Algebra.WeilRestriction.OfPresentation A B
     (WeilRestrictionFiniteType.generators B C).presentationOfKernel
 deriving CommRing, Algebra A
 
 namespace WeilRestrictionFiniteType
 
 instance : FiniteType A (WeilRestrictionFiniteType A B C) :=
-  inferInstanceAs (FiniteType A (TauCeti.Algebra.WeilRestriction.OfPresentation A B
+  inferInstanceAs (FiniteType A (Langlands.Algebra.WeilRestriction.OfPresentation A B
     (generators B C).presentationOfKernel))
 
 /-- The universal tensor-valued point of the finite-type construction. -/
 def universalPoint : C →ₐ[B] B ⊗[A] WeilRestrictionFiniteType A B C :=
-  TauCeti.Algebra.WeilRestriction.OfPresentation.universalPoint A B _
+  Langlands.Algebra.WeilRestriction.OfPresentation.universalPoint A B _
 
 variable (T : Type*) [CommRing T] [Algebra A T]
 
 /-- The representing bijection for actual tensor-valued points. -/
 def homEquiv : (WeilRestrictionFiniteType A B C →ₐ[A] T) ≃ (C →ₐ[B] B ⊗[A] T) :=
-  TauCeti.Algebra.WeilRestriction.OfPresentation.homEquiv A B _ T
+  Langlands.Algebra.WeilRestriction.OfPresentation.homEquiv A B _ T
 
 variable {A B C T}
 
@@ -83,21 +83,21 @@ variable (A B C)
 
 /-- Agreement with the published finite-presentation Weil restriction on its full domain. -/
 def finitePresentationAlgEquiv [FinitePresentation B C] :
-    WeilRestrictionFiniteType A B C ≃ₐ[A] TauCeti.Algebra.WeilRestriction A B C :=
+    WeilRestrictionFiniteType A B C ≃ₐ[A] Langlands.Algebra.WeilRestriction A B C :=
   AlgEquiv.ofAlgHom
-    ((homEquiv A B C _).symm (TauCeti.Algebra.WeilRestriction.universalPoint A B C))
-    ((TauCeti.Algebra.WeilRestriction.homEquiv A B C _).symm (universalPoint A B C))
-    (TauCeti.Algebra.WeilRestriction.hom_ext <| by
+    ((homEquiv A B C _).symm (Langlands.Algebra.WeilRestriction.universalPoint A B C))
+    ((Langlands.Algebra.WeilRestriction.homEquiv A B C _).symm (universalPoint A B C))
+    (Langlands.Algebra.WeilRestriction.hom_ext <| by
       simp [Algebra.TensorProduct.map_id_comp, AlgHom.comp_assoc, ← homEquiv_apply,
-        ← TauCeti.Algebra.WeilRestriction.homEquiv_apply])
+        ← Langlands.Algebra.WeilRestriction.homEquiv_apply])
     (hom_ext <| by
       simp [Algebra.TensorProduct.map_id_comp, AlgHom.comp_assoc, ← homEquiv_apply,
-        ← TauCeti.Algebra.WeilRestriction.homEquiv_apply])
+        ← Langlands.Algebra.WeilRestriction.homEquiv_apply])
 
 /-- The comparison carries the finite-type universal point to the existing universal point. -/
 theorem finitePresentationAlgEquiv_universalPoint [FinitePresentation B C] :
     (Algebra.TensorProduct.lTensor B (finitePresentationAlgEquiv A B C).toAlgHom).comp
-        (universalPoint A B C) = TauCeti.Algebra.WeilRestriction.universalPoint A B C := by
+        (universalPoint A B C) = Langlands.Algebra.WeilRestriction.universalPoint A B C := by
   change homEquiv A B C _ ((homEquiv A B C _).symm _) = _
   exact Equiv.apply_symm_apply _ _
 
@@ -105,9 +105,9 @@ variable {A B C}
 
 /-- The algebra comparison identifies the two actual point bijections for every test algebra. -/
 theorem homEquiv_comp_finitePresentationAlgEquiv [FinitePresentation B C]
-    (g : TauCeti.Algebra.WeilRestriction A B C →ₐ[A] T) :
+    (g : Langlands.Algebra.WeilRestriction A B C →ₐ[A] T) :
     homEquiv A B C T (g.comp (finitePresentationAlgEquiv A B C).toAlgHom) =
-      TauCeti.Algebra.WeilRestriction.homEquiv A B C T g := by
+      Langlands.Algebra.WeilRestriction.homEquiv A B C T g := by
   rw [homEquiv_comp]
   change (Algebra.TensorProduct.lTensor B g).comp
       (homEquiv A B C _ ((homEquiv A B C _).symm _)) = _

@@ -3,7 +3,7 @@
 Module `Langlands.Representation.CuspidalSupport.RationalInertiaOrbitTorusProof`.
 Namespace `Langlands.CuspidalSupport`.
 
-Worker 5102. The theorem `rationalInertiaOrbitTorus` proves the exact published
+The theorem `rationalInertiaOrbitTorus` proves the exact published
 proposition `Langlands.CuspidalSupport.RationalInertiaOrbitTorusStatement`,
 with the universes `uF` and `uV` of the statement. The statement's Lean and
 Markdown files and everything they import are unchanged, and no hypothesis is

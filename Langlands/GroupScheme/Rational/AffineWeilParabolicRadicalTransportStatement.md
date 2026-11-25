@@ -1,7 +1,5 @@
 # Parabolic and radical diagrams under finite separable Weil restriction
 
-Author: Worker 111.
-
 `Langlands.GroupScheme.AffineWeilParabolicRadicalTransportStatement.{u}` is a
 closed `Prop`-valued definition. It states a geometric prerequisite for the
 elementary-subgroup comparison. It does not prove that prerequisite.
@@ -41,8 +39,8 @@ perfectness, infinitude, local-field, topological or characteristic hypothesis.
 
 The source is Borel–Tits, *Groupes réductifs* (1965), registered
 `borel-tits-1965-groupes-reductifs`, 6.17–6.19 and 6.21(i), printed
-pp.111–112 / PDF pp.58–59. Worker 111 read the extracted text and rendered
-original pages. Section 6.17 fixes a finite separable extension and identifies
+pp.111–112 / PDF pp.58–59; the extracted text and the rendered original pages
+were read. Section 6.17 fixes a finite separable extension and identifies
 the restriction over a separable closure with the product of the conjugate
 groups. Section 6.19 gives the bijection of rational parabolic subgroups.
 For the radicals, that splitting identifies a restricted parabolic with the
@@ -60,12 +58,13 @@ subgroup assertions. No bijection of chosen representatives is claimed.
 
 CGP, *Pseudo-reductive groups*, second edition (2015), Appendix A.5,
 equation (A.5.1), printed p.504 / PDF p.530, describes the adjunction.
-Worker 111 also read Proposition A.5.15(1)–(2) and its proof, printed
-pp.520–523 / PDF pp.546–549. That proposition concerns centralizers and
+Proposition A.5.15(1)–(2) and its proof, printed pp.520–523 / PDF
+pp.546–549, were also read. That proposition concerns centralizers and
 tori; it is not the source of this parabolic correspondence.
 
 The separate module `Rational.AffineWeilParabolicElementaryReduction` proves
 that this geometric statement implies the published
 `AffineWeilParabolicElementarySubgroupStatement` by comparing its generator
-sets and then taking subgroup closures. The geometric statement itself
-remains a proof obligation.
+sets and then taking subgroup closures. The geometric statement itself is
+proved as `affineWeilParabolicRadicalTransport` (module
+`Rational.AffineWeilParabolicRadicalTransportProof`).

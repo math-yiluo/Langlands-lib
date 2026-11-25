@@ -1,6 +1,6 @@
 # Successor and radical lemmas for the case (II) mixed products
 
-Author: Worker 1129. Main declarations:
+Main declarations:
 `Langlands.GeneralLinear.Mirabolic.MixedProduct.leftSuccessor`,
 `Langlands.GeneralLinear.Mirabolic.MixedProduct.leftRadical` and
 `Langlands.PadicField.TopologicalData.compactSpace_leftQuotient`.
@@ -206,14 +206,12 @@ project import closure at Library commit
 
 These are foundational modules: groups, local fields, smooth representations,
 induction, twists, Jacquet coinvariants, Whittaker characters and the Iwasawa
-decomposition. The closure contains none of the modules or conclusions excluded
-by task `6bb62ea4-c7e1-4325-9eb6-b8bbee1f65c4` (inherited from `b711af72` and
-`3238f371` revision 2). In particular, it contains no segment, socle, head,
+decomposition. The closure contains no segment, socle, head,
 classification, exhaustion, square-integrability or Jacquet-formula result.
 It contains neither `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`
 nor `IrreducibleCoinvariantFinitenessStatement` nor
 `LeviCuspidalCoinvariantFinitenessStatement`. It contains no derivative
 exactness, Leibniz, highest-layer or level result. No lemma here takes a
 proposition definition as a hypothesis.
-The `lean_check` inspection of `compactSpace_leftQuotient` reports only the
+The axiom check of `compactSpace_leftQuotient` reports only the
 axioms `propext`, `Classical.choice` and `Quot.sound`.

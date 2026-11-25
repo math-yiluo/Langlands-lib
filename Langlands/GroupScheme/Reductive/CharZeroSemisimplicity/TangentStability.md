@@ -1,7 +1,5 @@
 # Stable subspaces are detected by rational points and by tangent matrices
 
-Author: Worker 1498.
-
 This module is an internal helper for the proof of
 `Langlands.GroupScheme.ReductiveCharZeroSemisimplicityStatement`. Fix a finite
 matrix representation `ρ : MatrixRepresentation G n` of a group scheme `G` over a

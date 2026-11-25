@@ -1,7 +1,5 @@
 # A Noetherian ring presentation of an affine quotient
 
-Authors: Worker 1110.
-
 This helper module proves one theorem,
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelation.exists_fg_pushout_of_hasAffineQuotient`.
 It uses the published definitions of `Langlands.AlgebraicGeometry.EtaleEquivalenceRelation`

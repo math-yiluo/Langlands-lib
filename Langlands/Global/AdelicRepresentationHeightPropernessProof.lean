@@ -149,8 +149,8 @@ theorem absNorm_le_norm_of_one_lt (v : FinitePlace F) {x : FiniteCompletion F v}
     norm_cast
     conv_lhs => rw [← zpow_one (v.asIdeal.absNorm : NNReal)]
     apply zpow_le_zpow_right₀ (NumberField.HeightOneSpectrum.one_lt_absNorm_nnreal v).le
-    simpa [← Int.sub_one_lt_iff, sub_self, ← toAdd_one, Multiplicative.toAdd_lt,
-      WithZero.lt_unzero_iff] using Valued.toNormedField.one_lt_norm_iff.1 h
+    simpa [← Int.sub_one_lt_iff, ← WithZero.log_one] using
+      WithZero.lt_log_of_exp_lt (Valued.toNormedField.one_lt_norm_iff.1 h)
   simpa using key
 
 /-- Only finitely many finite places have absolute norm at most a fixed real bound. -/

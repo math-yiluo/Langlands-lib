@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: graded independence from formal smoothness
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. It replaces the
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. It replaces the
 regularity of the closure `Y` of the reduced integral points by the formal smoothness of its
 coordinate ring. It uses Mathlib's `Algebra.FormallySmooth.liftOfSurjective` and
 `MvPolynomial.funext`.

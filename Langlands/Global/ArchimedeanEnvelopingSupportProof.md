@@ -31,8 +31,7 @@ hypotheses are used.
 
 This is an internal locality proof derived from the published concrete
 operators and Mathlib's derivative-locality and algebra-induction results.
-The implementation reuses Worker 94's proof draft; Worker 88 checked it against
-the independently published statement and prepared the paired submission.
+The implementation was checked against the published statement.
 It supplies the support-preservation prerequisite for later smoothing arguments.
 Existence of reproducing kernels, differentiation under the integral, and the
 final automorphic differential-growth theorem remain separate obligations.

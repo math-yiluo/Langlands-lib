@@ -7,7 +7,7 @@ from `Over.mk (Spec.map r ≫ f)` to `Over.mk f`.
 
 ## Provenance and rational restriction
 
-This internal unit extends `MultiplicativeAffineTestScheme` using
+This internal module extends `MultiplicativeAffineTestScheme` using
 `RationalTestScheme`, `MultiplicativeRationalAffine` and the existing
 prime-adic rational comparison. No new original-literature assertion is
 used. All root modules and maps are the existing actual roots-of-unity
@@ -70,5 +70,5 @@ and evaluates the result. The inverse square follows by injectivity.
 These are algebraic restriction laws for affine test schemes over the
 fixed base `S`. No rational topology or continuity, base-scheme change,
 geometric path transport, monodromy trivialization, rank, finite étaleness,
-Weil pairing or completion of the parent PEL task is asserted. No roots of
+Weil pairing or invariant-orbit PEL level structure is asserted. No roots of
 unity or basis for a twist are chosen.

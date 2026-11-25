@@ -1,7 +1,5 @@
 # Statements: weight decomposition, root data of split reductive groups, and `GL_n`
 
-Worker 274.
-
 This module states five propositions as `Prop`-valued definitions. All of them are
 over an arbitrary field `k : Type u` with base `Spec (CommRingCat.of k)`, and all
 use the definitions of the modules `Langlands.GroupScheme.Torus.Lattice`,

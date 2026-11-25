@@ -94,15 +94,14 @@ With the new scope open, typeclass inference then supplies the tower through
 `IsScalarTower.toAlgHom K L A_L` constructs an `A_K`-algebra map
 `A_K ⊗[K] L →ₐ[A_K] A_L`. Its pure-tensor value is definitionally
 `finiteAdeleInclusion x * algebraMap L A_L l`. This explains the precise
-coherence interface furnished for the subsequent base-change unit; this module
+coherence interface furnished for the base-change module `FiniteAdeleTensorMap`; this module
 does not itself define that tensor map or assert its bijectivity.
 
-Private Lean usage checks compiled the independent-universe interface, absence
+Lean usage checks compiled the independent-universe interface, absence
 of the new action outside its scope, local coefficient restriction, inference
 of the new tower, formation of this tensor map, and its pure-tensor formula.
 The inspected declarations `instAlgebra`, `smul_apply`, `instIsScalarTower`, and
 `inclusionAlgHom` use only `propext`, `Classical.choice`, and `Quot.sound`.
-Development checks are not independent semantic acceptance.
 
 ## Provenance and modification notice
 
@@ -124,15 +123,15 @@ author header are retained in the Lean file. The upstream root Apache-2.0
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 The source snapshot contains no `NOTICE` file.
 
-Worker 50's modifications are: use the Library's `finiteAdeleInclusion` instead
+The modifications in Langlands-lib are: use the Library's `finiteAdeleInclusion` instead
 of Imperial's `mapRingHom`; put the instance in a dedicated Library scope with
 an explicit name; preserve independent universes; express coordinate coherence
 as lemmas over the existing Library completion algebra; and derive diagonal
 and coefficient scalar-tower compatibility from the published Library lemma.
 The scalar-tower and bundled `K`-algebra-map declarations are derived additions,
 not copied external theorems. Their implemented proofs are described above.
-The broad FLT-specific `ComapFiberwiseSMul` class is unnecessary for this unit.
-None of the audit's compatibility patches (a)–(d) is needed by this focused
+The broad FLT-specific `ComapFiberwiseSMul` class is unnecessary for this module.
+None of the audit's compatibility patches (a)–(d) is needed by this
 construction; no external import closure or Anthropic code is used.
 
 The public audit [finite-adele base change, sections 2.6 and 6](../../../../notes/reuse/finite-adele-base-change-audit.md)

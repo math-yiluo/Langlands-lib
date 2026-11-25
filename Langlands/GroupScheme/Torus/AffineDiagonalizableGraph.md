@@ -34,9 +34,10 @@ applies `strong_of_graph_surjective` to the grading identities already
 proved for the translation coaction, obtaining finite degree m/-m
 partitions of unity for every m.
 
-These are internal derived comparisons for Task 7326, following the
-algebraic quotient route of SGA 3, Exposé VIII, §§4–5, especially
+These are internal derived comparisons for the construction of affine
+quotients by central multiplicative-type subgroups over arbitrary bases,
+following the algebraic quotient route of SGA 3, Exposé VIII, §§4–5, especially
 Theorem 5.1. No finite generation, torsion freeness, smoothness, reducedness,
 normality, or field assumption is used. This module closes the passage
-from closed subgroup geometry to strong grading; it does not yet
+from closed subgroup geometry to strong grading; it does not
 construct the scheme quotient or the group structure on it.

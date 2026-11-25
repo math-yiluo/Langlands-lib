@@ -1,7 +1,5 @@
 # Annihilation of actual derived points in a split torus
 
-Author: Worker 1374.
-
 This internal construction works over an arbitrary field `k : Type u`.
 For a commutative group scheme `T`, an actual homomorphism `i : T.toGrp ⟶ G`,
 an ambient homomorphism `f : rationalPoints G →* Multiplicative ℝ`, and a

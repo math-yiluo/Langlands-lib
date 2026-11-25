@@ -1,7 +1,5 @@
 # Upper triangular Bruhat factorization over a field
 
-Authors: Worker 96 and Worker 6 (statement interface and consumer design).
-
 `Langlands.GeneralLinear.FieldUpperBruhatFactorizationTheorem.{u}` is a
 closed, transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatStatement`. This module states the proposition;
@@ -46,13 +44,16 @@ separate inclusion of upper triangular matrices in the ordered upper block
 parabolics, and passes to the parabolic double-coset quotient. If the present
 factorization supplies `w`, the consumer uses the inverse permutation `w⁻¹`,
 since `permutation n K (w⁻¹)` inverted equals `permutation n K w`. The inclusion
-and quotient deduction are separate proof obligations; this module proves
-neither. It also asserts no uniqueness or Weyl-class reflection.
+and quotient deduction are not proved in this module; they are carried out by
+`padicBruhatMatrixExistence` in
+`Langlands.Representation.Geometric.BruhatMatrixExistenceProof`. This module
+also asserts no uniqueness or Weyl-class reflection.
 
 This formulation comes from the project's proof decomposition and the
 consumer's existing permutation convention. It is not claimed to be a
 verbatim statement from Bernstein and Zelevinsky (1977), nor to follow merely
 by extending their p-adic hypotheses to arbitrary fields. Original-source
 provenance for the existing p-adic target remains in its published paired
-Markdown. This internal prerequisite has no external source claim and still
-requires a separate proof of factorization existence.
+Markdown. This internal prerequisite has no external source claim. Factorization
+existence is proved separately, by `fieldUpperBruhatFactorizationTheorem` in
+`Langlands.Group.GL.UpperBruhatProof`.

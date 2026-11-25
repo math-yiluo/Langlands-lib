@@ -38,8 +38,8 @@ local class field theory, a consequence of the reciprocity isomorphism
 `Fˣ / N_{E/F}(Eˣ) ≅ Gal(E/F)`. The Library proves it as
 `Langlands.ClassFieldTheory.Local.normSubgroup_index_eq_finrank` when both
 fields lie in one universe. The proof here moves the extension to the
-universe-zero models `NYLL.universeZeroModel F` and `NYLL.universeZeroModel E`.
-`NYLL.universeZeroNormRange_map` says that the units map of the model
+universe-zero models `UniverseZero.universeZeroModel F` and `UniverseZero.universeZeroModel E`.
+`UniverseZero.universeZeroNormRange_map` says that the units map of the model
 equivalence carries the model norm subgroup onto the actual norm subgroup, and
 `Subgroup.index_map_equiv` says that a group isomorphism preserves indices.
-`NYLL.universeZeroAlgebra_finrank` says that the model degree equals `[E : F]`.
+`UniverseZero.universeZeroAlgebra_finrank` says that the model degree equals `[E : F]`.

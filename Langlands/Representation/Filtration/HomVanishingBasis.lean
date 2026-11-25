@@ -29,17 +29,18 @@ variable {R : Type uR} {G : Type uG} [CommRing R] [Monoid G] {C : Type uC} [Cate
 `op a • f = F.map a ≫ f`. -/
 @[instance_reducible]
 def precompModule (X : C) (Y : Rep.{uV} R G) : Module (End X)ᵐᵒᵖ (F.obj X ⟶ Y) where
-  smul a f := F.map a.unop ≫ f
+  smul a f := F.map a.unop.asHom ≫ f
   one_smul f := by
     change F.map (𝟙 X) ≫ f = f
     rw [F.map_id, Category.id_comp]
   mul_smul a b f := by
-    change F.map (b.unop * a.unop) ≫ f = F.map a.unop ≫ F.map b.unop ≫ f
-    rw [End.mul_def, F.map_comp, Category.assoc]
+    change F.map (b.unop * a.unop).asHom ≫ f = F.map a.unop.asHom ≫ F.map b.unop.asHom ≫ f
+    rw [End.mul_asHom, F.map_comp, Category.assoc]
   smul_zero _ := comp_zero
   smul_add _ _ _ := Preadditive.comp_add _ _ _ _ _ _
   add_smul a b f := by
-    change F.map (a.unop + b.unop) ≫ f = F.map a.unop ≫ f + F.map b.unop ≫ f
+    change F.map (a.unop.asHom + b.unop.asHom) ≫ f =
+      F.map a.unop.asHom ≫ f + F.map b.unop.asHom ≫ f
     rw [F.map_add, Preadditive.add_comp]
   zero_smul f := by
     change F.map (0 : X ⟶ X) ≫ f = 0
@@ -47,7 +48,7 @@ def precompModule (X : C) (Y : Rep.{uV} R G) : Module (End X)ᵐᵒᵖ (F.obj X 
 
 theorem precompModule_smul (X : C) (Y : Rep.{uV} R G) (a : (End X)ᵐᵒᵖ) (f : F.obj X ⟶ Y) :
     letI := precompModule F X Y
-    a • f = F.map a.unop ≫ f :=
+    a • f = F.map a.unop.asHom ≫ f :=
   rfl
 
 variable {F} {n : ℕ}
@@ -61,7 +62,7 @@ def homVanishingSubmodule (s : RepFunctorFiltration F n) (X : C) (Y : Rep.{uV} R
   { carrier := s.homVanishing X Y i
     add_mem' := fun hf hg => add_mem hf hg
     zero_mem' := zero_mem _
-    smul_mem' := fun a _ hf => s.map_comp_mem_homVanishing a.unop hf }
+    smul_mem' := fun a _ hf => s.map_comp_mem_homVanishing a.unop.asHom hf }
 
 theorem mem_homVanishingSubmodule (s : RepFunctorFiltration F n) (X : C) (Y : Rep.{uV} R G)
     (i : Fin (n + 1)) (f : F.obj X ⟶ Y) :
@@ -106,17 +107,19 @@ theorem existsUnique_sub_smul_gradedLift_mem (j : Fin n) (hj : j ∈ S) (x : F.o
   -- the descent of `x - a • v`
   have key : ∀ a : (End X)ᵐᵒᵖ,
       x - a • s.gradedLift X Y hsec θ j ∈ s.homVanishing X Y j.succ ↔
-        (s.graded j).map a.unop ≫ θ j = s.gradedDescent X Y j x hx := by
+        (s.graded j).map a.unop.asHom ≫ θ j = s.gradedDescent X Y j x hx := by
     intro a
-    have hmem : F.map a.unop ≫ s.gradedLift X Y hsec θ j ∈ s.homVanishing X Y j.castSucc :=
-      s.map_comp_mem_homVanishing a.unop hv
+    have hmem : F.map a.unop.asHom ≫ s.gradedLift X Y hsec θ j ∈
+        s.homVanishing X Y j.castSucc :=
+      s.map_comp_mem_homVanishing a.unop.asHom hv
     rw [precompModule_smul, ← s.gradedDescent_eq_zero_iff X Y j _ (sub_mem hx hmem),
-      s.gradedDescent_sub X Y j _ _ hx hmem, s.gradedDescent_map_comp a.unop j _ hv, hdesc,
+      s.gradedDescent_sub X Y j _ _ hx hmem, s.gradedDescent_map_comp a.unop.asHom j _ hv, hdesc,
       sub_eq_zero, eq_comm]
   obtain ⟨a₀, ha₀⟩ := (hθ j hj).2 (s.gradedDescent X Y j x hx)
-  refine ⟨MulOpposite.op a₀, (key _).mpr ha₀, fun b hb => ?_⟩
+  refine ⟨MulOpposite.op (End.of a₀), (key _).mpr ha₀, fun b hb => ?_⟩
   have hb' := (key b).mp hb
   apply MulOpposite.unop_injective
+  apply End.ext
   exact (hθ j hj).1 (hb'.trans ha₀.symm)
 
 omit [Preadditive C] [F.Additive] in
@@ -161,14 +164,15 @@ theorem existsUnique_precomp_expansion (f : F.obj X ⟶ Y) :
       f = ∑ j : S, F.map (a j) ≫ s.homVanishingBasis X Y hsec θ S hθ hzero j := by
   let _ := precompModule F X Y
   let b := s.homVanishingBasis X Y hsec θ S hθ hzero
-  have hsum : ∀ c : S → (End X)ᵐᵒᵖ, b.equivFun.symm c = ∑ j : S, F.map (c j).unop ≫ b j :=
+  have hsum : ∀ c : S → (End X)ᵐᵒᵖ,
+      b.equivFun.symm c = ∑ j : S, F.map (c j).unop.asHom ≫ b j :=
     fun c => b.equivFun_symm_apply c
-  refine ⟨fun j => (b.equivFun f j).unop, ?_, fun a ha => ?_⟩
-  · change f = ∑ j : S, F.map (MulOpposite.op (b.equivFun f j).unop).unop ≫ b j
+  refine ⟨fun j => (b.equivFun f j).unop.asHom, ?_, fun a ha => ?_⟩
+  · change f = ∑ j : S, F.map (MulOpposite.op (b.equivFun f j).unop).unop.asHom ≫ b j
     simp only [MulOpposite.op_unop]
     rw [← hsum, LinearEquiv.symm_apply_apply]
   · funext j
-    have h : b.equivFun.symm (fun j => MulOpposite.op (a j)) = f := by
+    have h : b.equivFun.symm (fun j => MulOpposite.op (End.of (a j))) = f := by
       rw [hsum]
       exact ha.symm
     rw [← h, LinearEquiv.apply_symm_apply]

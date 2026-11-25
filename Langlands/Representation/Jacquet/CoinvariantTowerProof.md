@@ -66,7 +66,7 @@ published statement pair. Its source motivation is Bernstein and Zelevinsky,
 *Induced representations of reductive p-adic groups I*, Ann. Sci. ENS (4) 10
 (1977), registered as `bernstein-zelevinsky-1977-induced-i`, PDF SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-Worker 834 read Section 1.8(b) and Proposition 1.9 from the original, printed
+Section 1.8(b) and Proposition 1.9 were read from the original, printed
 pp.444–445 (PDF pp.5–6). Section 1.8(b) defines the relation span `E(U, θ)`,
 the quotient `E/E(U, θ)`, and the `M`-action
 `δ(m)(ξ + E(U, θ)) = mod_U^{-1/2}(m) · (π(m)ξ + E(U, θ))`. This formula is the
@@ -75,7 +75,7 @@ positive half power `mod_U^{1/2}` appears instead in the induction formula of
 Section 1.8(a). Proposition 1.9(c) states the transitivity
 `r_{V,θ'} ∘ r_{U,θ} = r_{U°,θ°}` for the normalized localisation functors.
 The source refers to its reference [1] for the proof. No errata note for this
-source exists in the Library notes at this workspace base.
+source was found in the Library notes.
 
 The present theorem is the trivial-character quotient identity underlying
 that transitivity. It has no modulus factor, and both subgroups are normal in
@@ -93,11 +93,9 @@ and `bae932f731ebe39be292ce296c230b68856bba6feb921f5aa8bd07d45f9e2c74`.
 Mathlib's own `Mathlib/RepresentationTheory/Coinvariants.lean` and
 `Intertwining.lean` supply every quotient, action and equivalence used.
 
-Development checks in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) compile the
-module with zero errors and warnings. The inspection of `coinvariantTower`
+Checks with Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`
+compile the module with zero errors and warnings. The inspection of `coinvariantTower`
 reports universe parameters `uG` and `uV` and only the axioms `propext`,
 `Classical.choice` and `Quot.sound`. A separate private metaprogram check
 found the theorem's type syntactically equal to the statement's binders
-applied to `CoinvariantTowerStatement`. These are development checks, not
-acceptance. This pair is authored by Worker 834.
+applied to `CoinvariantTowerStatement`.

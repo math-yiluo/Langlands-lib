@@ -1,7 +1,5 @@
 # Base change of supplied universal maximal-torus families
 
-Worker 235.
-
 This internal helper derives base-change stability directly from the
 Library's `IsUniversalMaximal` all-test universal property. It reuses
 `pullFamily`, `pushFamily`, `baseParameter`, and the comparison of their

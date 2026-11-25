@@ -165,8 +165,7 @@ theorem nonempty_geometricPiece_refinedEquiv
         (O.targetFactors (A ⟨0, Nat.zero_lt_two⟩) π₁ π₂)) :=
     ProductLeviCuspidalJacquetAssembly.normalizedRefinedInducedCongr T O.C O.R
       (eQ.trans (O.inducingEquiv (A ⟨0, Nat.zero_lt_two⟩) π₁ π₂).symm)
-  change Nonempty ((T.normalizedRefinedInduced O.C O.R Q'.representation).Equiv _)
-  exact ⟨e₁⟩
+  exact ⟨(e₁ : _)⟩
 
 set_option maxHeartbeats 1000000 in
 /-- The identity geometric piece of `A₀ ⊗ A₁`, given the two-block Jacquet module

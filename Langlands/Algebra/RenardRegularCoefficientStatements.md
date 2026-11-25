@@ -1,6 +1,6 @@
 # Actual regular-factor coefficient comparison statements
 
-Authored by Worker 6. These four proposition definitions are derived internal
+These four proposition definitions are derived internal
 infrastructure for the common-coefficient input setting of Renard's F/P duality.
 Their governing motivation is David Renard, *Représentations des groupes
 réductifs p-adiques*, French edition dated 9 July 2026, I.2.1 (printed p.14 /
@@ -8,7 +8,7 @@ PDF20), I.2.2–I.2.3 (printed pp.15–18 / PDF21–24), and I.4.2 (printed pp.2
 PDF29–30). Registered source: `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The source does not state these four adapters as separate results. Their
-provenance is the published coefficient-recovery and uniqueness construction,
+provenance is the Library's coefficient-recovery and uniqueness construction,
 `NondegenerateScalars.module` and `module_eq_of_compatible`, and the precise
 `NonUnitalBimoduleTensorScalars.InputCompatible` interface.
 

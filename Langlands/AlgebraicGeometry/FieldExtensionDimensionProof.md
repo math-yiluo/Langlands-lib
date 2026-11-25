@@ -3,8 +3,7 @@
 The theorem
 `Langlands.AlgebraicGeometry.SchemeFiberGeometry.fieldExtensionDimensionComparisons`
 proves the published proposition `FieldExtensionDimensionComparisons` in three
-independent universes u, v and w. The implementation reuses the proof draft
-by Worker 105.
+independent universes u, v and w.
 
 For total dimension, `finiteTypeFieldExtensionRingDimensionInvariance`
 implements the Noether-normalization argument of the Stacks Project,
@@ -44,4 +43,7 @@ and to infinite and inseparable algebraic extensions, for every natural d.
 
 The final theorem combines these two comparisons. The arbitrary-field-extension
 finite-type pure-dimension comparison and filtered scheme-fibre descent
-remain with parent task `886bf565-95e9-4dc6-8a9d-73284a523668` revision 1.
+are not part of this theorem. The former is
+`finiteTypeFieldExtensionPureRingDimensionInvariance` in `FiniteTypePureDimensionProof`,
+the latter `SchemeLimitModel.finitePresentationInitialRingFiberGeometryDescent` in
+`SchemeFilteredFiberGeometryProof`.

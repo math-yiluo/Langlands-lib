@@ -1,7 +1,5 @@
 # Actual valuation apartments under cross-torus isomorphisms
 
-Author: Worker 118.
-
 Over an arbitrary field, let `e : S ≅ S'` and `f : G ≅ H` be actual
 commutative-group and ambient group-scheme isomorphisms whose square with the
 inclusions `i` and `j` commutes. Assume both underlying inclusions are

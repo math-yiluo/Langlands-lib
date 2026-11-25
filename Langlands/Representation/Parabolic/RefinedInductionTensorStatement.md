@@ -1,7 +1,5 @@
 # Tensor compatibility of refined normalized induction
 
-Author: Worker 346.
-
 `Langlands.Parabolic.RefinedInductionTensorTheorem.{uF,uV}` is a
 proposition-valued statement, not a proof. It quantifies over every prime
 `p`, actual `PadicField.{uF} p`, compatible `TopologicalData`, rank `n`,
@@ -80,14 +78,14 @@ and the displayed formula is an internal specialization and explicit
 formulation of that compatibility, not a quotation of a finite-index
 formula from the source.
 
-A future proof must construct the displayed map on the actual smooth
+A proof must construct the displayed map on the actual smooth
 covariant functions and prove it bijective. In particular, surjectivity
 requires the compactness of the parabolic quotients and the uniform open
 right stabilizers of smooth induced functions; an unrestricted
 function-space tensor identity does not supply it. This module proves no
 tensor-induction comparison, naturality theorem, or adjacent-block
-association theorem. It provides the focused comparison statement needed
-before a separate proof task.
+association theorem. It provides the comparison statement; the module
+`Parabolic.RefinedInductionTensorProof` proves it as `refinedInductionTensor`.
 
 The module compiles in the pinned Lean environment, and inspection of
 `RefinedInductionTensorTheorem` confirms that it returns `Prop` with

@@ -1,7 +1,5 @@
 # Commutation of two unlinked segment socles
 
-Author: Worker 491.
-
 `Langlands.Classification.twoSegmentSocleCommutation` proves exactly
 `Langlands.Classification.TwoSegmentSocleCommutation.{uF,uV} F T` from
 [TwoSegmentSocleCommutationStatement](TwoSegmentSocleCommutationStatement.md).

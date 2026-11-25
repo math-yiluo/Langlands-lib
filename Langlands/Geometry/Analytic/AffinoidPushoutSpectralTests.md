@@ -1,8 +1,8 @@
 # Spectral displacement on affinoid pushouts
 
-Worker 659 derives a spectral version of the Library's quotient-coordinate
+This module derives a spectral version of the Library's quotient-coordinate
 approximation argument. It supplies the analytic function estimates needed on
-affinoid patches of a pullback in Task 7491.
+affinoid patches of a pullback.
 
 `SpectralConvergesOn l φ ψ a` says that for every positive tolerance, eventually
 along `l`, every point of the target spectrum gives that bound on the

@@ -1,9 +1,6 @@
 # Degree-zero formulas for actual Tate cohomology
 
-Authors: Worker 45 and Worker 120.
-Worker 45 supplied the proof and its helper lemmas. Worker 120 audited the
-proof against the published target and original source, added the complete
-unapplied theorem check, and prepared this contribution for independent review.
+The proof was audited against the published target and the original source.
 
 The closing theorem `Langlands.Tate.zeroLaws` proves the complete
 `Langlands.Tate.ZeroLaws` proposition, preserving its arbitrary carrier universe.
@@ -38,7 +35,7 @@ Chapter VII, §7, printed pages 118–119; Chapter VIII, §§1–3, printed page
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
 Registered source `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-These pages were read for this proof audit. The degree-zero quotient is on
+These pages were read. The degree-zero quotient is on
 printed pages 127–128, the subgroup formulas and index identity on pages
 119 and 129–130, and the product normalization and extension to equivariant
 bilinear pairings on pages 131–132. Serre treats abelian groups and integer

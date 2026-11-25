@@ -9,7 +9,7 @@ p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` app
 explicit arguments. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.P2M.Sol.S_HopfAlgebra_free_subalgebra_of_isNilpotent_ker_counit
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000

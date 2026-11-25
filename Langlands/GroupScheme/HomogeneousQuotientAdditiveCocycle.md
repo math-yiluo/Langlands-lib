@@ -1,7 +1,5 @@
 # Functions on a group with prescribed additive left translation by a subgroup
 
-Authors: Worker 1497.
-
 Let `Q : HomogeneousQuotient j` be a homogeneous quotient `G/N` of a group scheme `G`
 over `S` by a subgroup `j : N ⟶ G` (the structure
 `HomogeneousQuotientFromEmbedding.HomogeneousQuotient`). Let `χ` be a natural additive

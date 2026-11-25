@@ -1,6 +1,6 @@
 # ℓ-divisible systems of resolutions
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem` (ℓ-divisible systems, Harris 1999,
 (2.1)), `Langlands.Cohomology.CokernelComplex` (iterated-cokernel complexes of
 a coaugmented endofunctor) and `Langlands.Sheaf.Equivariant.Godement.Smooth`
@@ -93,8 +93,9 @@ of the level complexes with `T m`.
 lie in one universe, `G` is a topological group acting on `X` by continuous
 translations, and `HasStableNeighbourhoods G X` holds.
 `T : SmoothSheafDivisibleSystem R G X ℓ`. The exactness of the degree-zero
-smooth Godement functor is not proved in the Library. It is Worker 3's
-proposition `SmoothGodementZeroExactStatement R G X`, and both declarations
+smooth Godement functor is not proved in the Library. It is the
+proposition `SmoothGodementZeroExactStatement R G X`
+(`Langlands.Cohomology.SmoothGodement.Statement`), and both declarations
 below take a proof `h` of it as an explicit argument.
 
 - `smoothGodementResolutionSystem h T` is `resolutionSystem` for
@@ -108,8 +109,8 @@ below take a proof `h` of it as an explicit argument.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.304–305. Worker 61
-read the pages in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.304–305. The pages
+were read in the scanned original.
 
 1. Systems of complexes. Lemma 2.2 states only that each `{F_m^q}` is an
    `ℓ`-divisible system. On p.305 Harris forms the truncations

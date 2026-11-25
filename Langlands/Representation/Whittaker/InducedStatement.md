@@ -1,6 +1,6 @@
 # Whittaker type of representations induced from block parabolics
 
-Author: Worker 11. This file defines two proposition targets and their
+This file defines two proposition targets and their
 conjunction. None of them is a proof, and none is assumed anywhere.
 
 Both targets concern a p-adic field `F` with its canonical local-field

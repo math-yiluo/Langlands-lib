@@ -1,13 +1,12 @@
 # The distinguished place of a global realization
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. Deligne's global argument
 (1973, proof of Lemma 4.12) realizes a finite Galois extension `K / F` of p-adic fields as the
 completion at a place `w` over `v` of a Galois extension `K' / k` of number fields. The published
 realization statement `Langlands.Global.TotallyRealGaloisRealizationStatement` supplies `v`, `w`,
 a ring isomorphism `φ : k_v ≃ F` and its continuity, but it does not say that `v` lies over the
-prime `p` of `F`, and `φ` is not stated to be `ℚ_p`-linear. This unit derives both facts. They are
+prime `p` of `F`, and `φ` is not stated to be `ℚ_p`-linear. This module derives both facts. They are
 elementary and have no separate literature source.
 
 Everything is in `Langlands.LocalFactor.NonabelianBrauer`. The canonical p-adic package of a finite

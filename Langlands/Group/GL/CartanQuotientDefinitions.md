@@ -1,7 +1,5 @@
 # Concrete Cartan cells modulo the center
 
-Author: Worker 292.
-
 This pair constructs the integer chamber, actual diagonal matrices, subsets of
 the actual central quotient, and radial weights used by later analytic
 statements. Its namespace is `Langlands.GeneralLinear.CartanQuotient`.

@@ -43,4 +43,6 @@ schemes. There are no smoothness, connectedness or reducedness assumptions.
 This is an internal derivation from the explicit matrix filtration, its
 represented full inverse images and the existing block projection formula.
 It constructs no quotient schemes, descends no conjugation action and proves
-no splitting section; those remain obligations of the parent task.
+no splitting section; those are not part of this module. The triangular
+diagonal splitting is proved as `triangularDiagonalSplitting` in
+`Absolute.TriangularDiagonalSplittingAssembly`, which builds on this module.

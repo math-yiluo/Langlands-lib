@@ -1,7 +1,5 @@
 # Derived source changes of scalar-restricted exact geometric CM diagrams
 
-Author: Worker 57.
-
 This internal construction changes the source of the actual scalar-restricted
 quotient coefficient diagram in every integer degree of its unbounded derived
 category. Its forward and inverse maps recover the specific ordinary source
@@ -47,7 +45,7 @@ A_i = cmHarrisGeometricAssociatedCoefficientSourceSystem ... i.
 
 R is the fixed full product of integral coefficient rings at the places of K
 above p. B_i consists of the directly associated quotient-ring sheaves
-restricted to R, with the published transported coefficient transitions. A_i
+restricted to R, with the transported coefficient transitions. A_i
 is the integral associated source diagram. The coefficient diagram M retains
 its original quotient modules, residual group actions and reductions. Y is the
 actual geometric full-kernel CM cover diagram, with the proved finite geometric
@@ -55,7 +53,7 @@ torsor property under the retained premises. An object of `Under i` is an
 outgoing arrow, so the diagram reaches exponents at most `i.unop`, including
 zero.
 
-The new content is a categorical deduction from the published ordinary source
+The new content is a categorical deduction from the ordinary source
 changes in
 [HarrisTaylorCMGeometricSourceChange](HarrisTaylorCMGeometricSourceChange.md),
 the exact-derived constructions in
@@ -63,7 +61,7 @@ the exact-derived constructions in
 and the linked fixed-source scalar construction. The imported generic
 [ExactDerivedSquare](../../Cohomology/ExactDerivedSquare.md) supplies the
 single-degree recovery of a square of exact functors. No new claim is
-attributed directly to external literature, and no unpublished draft is used.
+attributed directly to external literature.
 
 ## Construction and recovery
 
@@ -76,7 +74,7 @@ Q = cmHarrisGeometricCoefficientSourceReindex ... f : S_k ⥤ S_kl.
 ```
 
 P restricts along the actual geometric cover map `Y.obj.map f`. Q reindexes
-outgoing arrows by `Under.map f`. Both are the published exact functors. Their
+outgoing arrows by `Under.map f`. Both are the existing exact functors. Their
 actual derived functors are written DP and DQ. The module permits independent
 `HasDerivedCategory` universes wC for the equivariant coefficient category,
 wL for S_l, wK for S_k, and wM for S_kl.
@@ -90,7 +88,7 @@ comparisons are
 σQ : s_k ⋙ DQ ≅ Q ⋙ s_kl.
 ```
 
-Let `v_f : P.obj B_l ≅ Q.obj B_k` be the specific published ordinary restricted
+Let `v_f : P.obj B_l ≅ Q.obj B_k` be the specific ordinary restricted
 source-change isomorphism. The new definition
 `cmHarrisGeometricAssociatedRestrictedCoefficientSourceDerivedChangeIso ... f d`
 constructs
@@ -115,7 +113,7 @@ reassociates. Both supply reassociated variants.
 
 Let M_d be the whole coefficient diagram M placed in degree d. Write e_id for
 the fixed-source derived scalar comparison from `s_i.obj B_i` to the existing
-exact-derived associated object at M_d. Let a_fd and t_fd be the published
+exact-derived associated object at M_d. Let a_fd and t_fd be the
 associated and constant derived source-change isomorphisms evaluated at M_d.
 The theorem
 `cmHarrisGeometricAssociatedRestrictedCoefficientSourceDerivedIso_sourceChange`
@@ -132,12 +130,12 @@ inverse, and applies the ordinary scalar source-change square inside s_kl.
 A second private helper specializes this calculation to arbitrary exact
 functors, using `exactDerivedSquareIso_hom_app_single` for the associated
 source change. The CM theorem specializes that result to the actual associated
-source functors and the particular published ordinary scalar square. Thus the
+source functors and the particular ordinary scalar square. Thus the
 output comparison is constructed rather than supplied as an extra premise.
 
 Write u_id for the fixed-source derived restricted invariant evaluation to the
 existing constant derived object. By its construction, u_id is e_id followed
-by the published associated invariant evaluation. The theorem
+by the associated invariant evaluation. The theorem
 `cmHarrisGeometricAssociatedRestrictedCoefficientSourceDerivedTrivialization_sourceChange`
 proves
 
@@ -146,7 +144,7 @@ DP.map u_ld.hom ≫ t_fd.hom = v_fd.hom ≫ DQ.map u_kd.hom.
 ```
 
 Its proof expands this composite evaluation and composes the proved scalar
-square with the published derived associated-evaluation square at M_d. A
+square with the derived associated-evaluation square at M_d. A
 private categorical helper establishes that composition using functoriality
 and associativity. Both public square theorems supply reassociated variants.
 
@@ -158,4 +156,4 @@ and use the actual cover maps. They do not provide an arbitrary-coefficient
 derived scalar-restriction functor for varying quotient rings. General scheme
 inverse-image comparisons, exact representability, canonical-model
 identification, adic completion and discharge of the retained geometric
-premises remain further obligations. The host task remains incomplete.
+premises are not treated in this module.

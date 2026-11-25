@@ -1,6 +1,6 @@
 # Root-valued evaluation of the intrinsic character on actual torsion points
 
-This internal unit composes the actual dual-kernel character with the
+This internal module composes the actual dual-kernel character with the
 relative integer-multiplication kernel comparison and Cartier evaluation.
 Its output is an actual `μ_n`-valued function on the two torsion-point
 sets, with a proved homomorphism law in the primal variable. Naturality
@@ -51,7 +51,7 @@ evaluation and torsion-kernel universal-property lemmas.
 
 The orientation is `e_n(x,y) = beta(y)(x)`: the dual character uses the
 published transported-action divided by trivial-action convention.
-This unit makes no inversion or replacement by an arbitrary character.
+This module makes no inversion or replacement by an arbitrary character.
 `finiteWeilValue_one_left`, `finiteWeilValue_mul_left` and
 `finiteWeilValue_inv_left` specialize Cartier's corresponding laws.
 `finiteWeilValueHom` packages the resulting homomorphism
@@ -65,7 +65,7 @@ intrinsic beta construction of VII §§7.4–7.5, printed pp.99–100 /
 PDF pp.103–104. Those passages treat abelian varieties over a field;
 they are not used here to assert an unproved relative duality theorem.
 
-This unit accepts no arbitrary pairing, character or duality isomorphism.
+This module accepts no arbitrary pairing, character or duality isomorphism.
 It requires no isogeny, finiteness, characteristic or invertibility
 hypothesis for the displayed function and its first-variable laws;
 `n = 0` is also allowed as a kernel construction. For positive `n` it

@@ -26,7 +26,8 @@ dimension. On the empty base it makes no rank uniqueness claim.
 
 `LieLocalFreenessRankStatement A` is the conjunction of the finite local
 freeness target and the rank target for every natural number `g`. It is
-the combined target for a later proof task. All three declarations are
+the combined target, proved as `lieLocalFreenessRank` in
+`Langlands.AbelianScheme.LieRankProof`. All three declarations are
 proposition definitions; this module proves none of them.
 
 ## Derivation from the sources
@@ -37,8 +38,10 @@ locally free and that its rank at a point equals the dimension of the fibre
 there. Definition 29.35.13 (tag 02G2) gives the constant relative-dimension
 convention. Mathlib's standard-smooth affine-neighborhood condition is its
 algebraic presentation of that convention. The formal bridge from this
-condition to the constructed differential sheaf is part of the later proof
-obligation, not a theorem supplied here.
+condition to the constructed differential sheaf is
+`Langlands.Scheme.smoothDifferentialsFiniteLocalBasisRank` (module
+`Langlands.AlgebraicGeometry.SmoothDifferentialsFiniteLocalBasisRank`), used by
+the proof in `LieRankProof`; it is not a theorem supplied here.
 
 The accepted abelian-scheme bundle supplies smoothness. Pulling a local
 finite basis of the relative differential sheaf back along the identity
@@ -65,5 +68,5 @@ Registered source locations:
   `01CM.html`, opening internal-Hom definition.
 
 Functoriality, endomorphism actions and a base-change comparison are outside
-these rank targets. This statement unit neither supplies an assumed tangent
+these rank targets. This module neither supplies an assumed tangent
 module nor replaces the existing concrete Lie construction.

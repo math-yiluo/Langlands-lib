@@ -45,6 +45,8 @@ The empty simple system is allowed. No step assumes that the relative root
 system is reduced.
 
 Provenance: these elementary sum and subtraction arguments were derived for the
-standard-parabolic order proof task from the imported Library definitions.
+proof of `StandardParabolicOrderStatement`, which the Library proves as
+`standardParabolicOrder` (`Rational.StandardParabolicOrderProof`), from the
+imported Library definitions.
 Their source is the definitions and submodule laws rather than a new external
 structural result.

@@ -1,6 +1,6 @@
 # Reduction of the equal-rank dual Euler factorization to the direct one
 
-Module `Langlands.Global.RankinSelberg.EqualDualEulerFactorizationReduction`. Author: Worker 5548.
+Module `Langlands.Global.RankinSelberg.EqualDualEulerFactorizationReduction`.
 
 ## 1. Content and provenance
 
@@ -23,10 +23,9 @@ contains, in the namespace `Langlands.Global.RankinSelbergGlobal`:
 * the inverse `inverseCharacter ψ` of a unitary additive character and five lemmas about it
   (Section 4).
 
-The theorem is a reduction. It does not prove (D), and its four premises are open
-statements. It is an intermediate result of Task 7052 in the sense of the "Intermediate
-results" section of that task's revision 1. The task's required result, an unconditional
-proof of (D), stays open.
+The theorem is a reduction. It does not prove (D); the state of its four premises is given
+in Section 6. The Library proves (D) as `equalDualEulerFactorization` (module
+`EqualDualEulerFactorizationProof`).
 
 **Source of the reduction.** J. W. Cogdell, *Analytic theory of L-functions for GL_n*, in
 Bernstein–Gelbart (eds.), *An Introduction to the Langlands Program* (2004), registered as
@@ -42,7 +41,7 @@ to `ψ⁻¹`, `Td`, `Td'`, `Pd`, `Pd'` and `Φ̂`.
 
 **Provenance (internal).** The decomposition into premises is ours. (E) and
 `SchwartzBruhatStatement` are published Library statements. The two new premises isolate
-the two facts the observation above needs and the Library does not contain: that `W̃_x` is
+the two facts the observation above needs: that `W̃_x` is
 the Whittaker function of a vector of `Td` (Cogdell pp.201–202, 206–207), and that `Φ̂`
 inherits the condition `IsStandardOutside` from `Φ` (Tate's local computation, used by
 Cogdell p.211 when he factors `Φ̂ = ⊗ Φ̂_v`).
@@ -209,12 +208,16 @@ The proof uses no other hypothesis. `lean_check` reports only the axioms `propex
 
 ## 6. The retained premises
 
-All four premises are open:
+The four premises in the Library:
 
-* `EqualEulerFactorizationStatement.{u, uQ}`: published, unproved; its proof task is
-  Task 7024.
-* `SchwartzBruhatStatement.{u}`: published, unproved; its proof task is Task 7018.
-* `ContragredientDualWhittakerStatement.{u}` and `FourierStandardOutsideStatement.{u}`: new
-  here. Their proof tasks are to be published after this module is.
+* `EqualEulerFactorizationStatement.{u, uQ}`: published; proved by `equalEulerFactorization`
+  (module `EqualEulerFactorizationProof`).
+* `SchwartzBruhatStatement.{u}`: published; proved by
+  `SchwartzBruhatProof.schwartzBruhatStatement_proof` (module `SchwartzBruhatProof`).
+* `FourierStandardOutsideStatement.{u}`: new here; proved by `fourierStandardOutside` (module
+  `FourierStandardOutsideProof`).
+* `ContragredientDualWhittakerStatement.{u}`: new here; `contragredientDualWhittakerReduction`
+  (module `ContragredientDualWhittakerReduction`) reduces it to two premises that the Library
+  proves, but no theorem states it unconditionally.
 
-The task's required result, the unconditional proof of (D), needs proofs of all four.
+An unconditional proof of (D) through this reduction needs proofs of all four.

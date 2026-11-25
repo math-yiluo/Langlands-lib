@@ -94,10 +94,12 @@ additive abelian group `Λ` with decidable equality. Each assumes `hε` as above
 ## Provenance
 
 This is an internal supporting lemma. It is part of the explicit Hopf-algebra route of the
-proof task for `Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement`. There
+proof of `Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement`
+(`cyclicWeightFiltration` in `CyclicWeightFiltrationProof`), and is applied in
+`TorusWeightTangent`. There
 `C` is the coordinate ring of a closed subgroup with its torus grading, `ε` is the counit, and
 the hypothesis `hD` comes from the vanishing of Lie algebra weight spaces. The statement
-shape, with `IsRigidInDegree` unfolded, was fixed with the task's first executor. No
+shape, with `IsRigidInDegree` unfolded, is the one used there. No
 literature source is cited. The argument is standard commutative algebra (graded
 derivations, Artin–Rees and Nakayama). The Lean proof above is self-contained modulo
 Mathlib.

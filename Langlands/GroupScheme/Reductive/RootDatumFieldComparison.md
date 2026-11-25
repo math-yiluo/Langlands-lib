@@ -1,6 +1,6 @@
 # Comparing full root data over arbitrary fields
 
-This derived internal unit uses the Library's actual split-torus lattice
+This derived internal module uses the Library's actual split-torus lattice
 transport and its geometric root-data comparison. It supports the
 generic-fibre comparison in the strict-Henselian isomorphism problem.
 
@@ -26,7 +26,7 @@ original full root data.
 
 The base rings have arbitrary universe `u`; the transport construction
 allows root indices in a separate universe `v`. The comparison theorem has
-root indices in `u`, matching the published geometric inputs. This unit
+root indices in `u`, matching the published geometric inputs. This module
 neither constructs an integral split root datum nor proves integral
 classification. It also makes no extension claim for a chosen generic
 isomorphism.

@@ -1,7 +1,5 @@
 # Conjugation on matrix and inverse-matrix coordinates
 
-Author: Worker 631.
-
 This internal construction bundles the published coordinate-conjugation formulas
 from `GeneralLinearAffineCoordinates` into an actual homomorphism of group schemes.
 It is derived from that module and the Library's natural-point construction

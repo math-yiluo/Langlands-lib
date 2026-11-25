@@ -29,4 +29,4 @@ hypothesis for abelian schemes.
 
 The provenance is internal: all claims follow from integer arithmetic,
 functoriality of isomorphisms, and the imported published constructions. There
-is no additional literature theorem or geometric assertion in this unit.
+is no additional literature theorem or geometric assertion in this module.

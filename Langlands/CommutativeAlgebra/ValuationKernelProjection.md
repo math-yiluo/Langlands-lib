@@ -52,4 +52,5 @@ This is an internal algebraic derivation from the actual splitting
 and the imported valuation freeness and Mathlib homogeneous-space
 results. It does not assert that the full polynomial kernel is
 finitely generated, establish polynomial coherence, or prove the
-host task's line-bundle extension statement.
+line-bundle extension statement that it serves,
+`Langlands.AbelianScheme.ValuationRingTwoAxisExtensionStatement`.

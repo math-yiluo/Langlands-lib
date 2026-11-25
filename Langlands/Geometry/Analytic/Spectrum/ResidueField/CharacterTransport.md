@@ -1,6 +1,6 @@
 # Transporting prescribed characters through completed residue fields
 
-This internal unit combines the actual canonical completed residue maps with
+This internal module combines the actual canonical completed residue maps with
 their uniqueness and finite-extension properties. Its ground field `K`, source
 and target normed commutative algebras `A` and `B`, and target normed field `L`
 have independent universes. `K` is ultrametric. Neither nontrivial norms nor
@@ -50,6 +50,6 @@ applies. There is no uniqueness claim for this finite-map case.
 All assertions are internal deductions from the Library's completed residue
 quotient, fraction field, completion, canonical lifts, and norm identities,
 together with the finite completed-residue theorem and extensionality lemmas.
-No further assertion from the literature is used. The unit supplies transport
+No further assertion from the literature is used. The module supplies transport
 interfaces for constructing compatible chart characters, and does not itself
 prove the geometric-point axioms of the analytic étale site.

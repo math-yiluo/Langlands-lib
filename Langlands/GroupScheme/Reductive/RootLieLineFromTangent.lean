@@ -51,7 +51,8 @@ def rootLieLineOfTangentBound
     (hdim : Module.finrank k
       (RelativeRoot.tangentSubmodule (RelativeRoot.subgroup i χ)) ≤ 1) :
     k ≃ₗ[k] weightSpace i χ :=
-  Classical.choice (Module.nonempty_linearEquiv_of_finrank_eq_one
+  Classical.choice (haveI : Module.Free k (weightSpace i χ) := Module.Free.of_divisionRing k _
+    Module.nonempty_linearEquiv_of_finrank_eq_one
     (finrank_weightSpace_eq_one_of_rootTangent_le_one hT i χ hχ hdim))
 
 end Tangent

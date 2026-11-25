@@ -1,8 +1,8 @@
 # Full reductive Isom schemes from three explicit geometric inputs
 
-Worker 812, using Worker 182's supplied action transport. This is an internal
-assembly from the actual fpqc generic-isomorphism cover, coproduct gluing of
-local isomorphisms, and the full single-cover Isom scheme descent construction.
+This is an internal assembly from the actual fpqc generic-isomorphism cover,
+coproduct gluing of local isomorphisms, and the full single-cover Isom scheme
+descent construction, using the action transport of `OuterIsomorphismTransport`.
 It cites no new literature theorem.
 
 `reductiveIsomorphismSchemeOfSingleIsomorphism` assumes the full
@@ -36,11 +36,12 @@ base, so the preceding single-cover construction applies.
 
 The output is a `GroupIsomorphismScheme G H`, containing the actual universal
 natural `LocalGroupIso` and bijective classification on every relative scheme
-test. The final theorem derives the unchanged
+test. The final theorem derives
 `GenericIsomorphismSchemeExistenceStatement` from those same three inputs.
 It does not assume that the representing scheme extends the specified
 generic isomorphism as a distinguished integral point.
 
 All three geometric statements remain explicit hypotheses and are not proved
-by this module. Their independent proofs and publication are still required
-before the host target can be claimed unconditionally.
+by this module. The Library proves them, and `genericIsomorphismSchemeExistence`
+(`Reductive/GenericIsomorphismSchemeExistenceProof`) applies the final theorem
+of this module to those proofs.

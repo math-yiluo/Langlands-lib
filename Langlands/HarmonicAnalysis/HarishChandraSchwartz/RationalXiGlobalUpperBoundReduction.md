@@ -1,6 +1,6 @@
 # From the actual chamber bound to the global Xi estimate
 
-Worker 788, Task 7622. The theorem
+The theorem
 `Langlands.HarishChandraSchwartz.rationalXiGlobalUpperBound_of_chamber_of_comparison`
 proves the implication
 
@@ -34,8 +34,10 @@ exact global conclusion with exponent `d` and positive constant
 `max M 1 * Cw * (1 + B')^d`.
 
 The target and its hypotheses are unchanged. The separate modulus comparison
-is an outstanding prerequisite; the chamber estimate is the independent
-representation-theoretic program of Task 5326. The proof reuses the published
+is proved as `rationalCartanIwasawaWeightComparison` (module
+`RationalCartanIwasawaWeightComparisonProof`) and the chamber estimate as
+`rationalXiUpperBound` (module `RationalXiUpperBoundProof`); `rationalXiGlobalUpperBound`
+(module `RationalXiGlobalUpperBoundProof`) applies this theorem to them. The proof reuses the published
 `exists_mem_rationalCartanCell`, `exists_rationalXi_le_of_mem_rationalCartanCell`
 and `exists_rationalHeight_uniformizerPowers_le` results rather than repeating
 their arguments. The route is the Cartan/modulus argument explained in

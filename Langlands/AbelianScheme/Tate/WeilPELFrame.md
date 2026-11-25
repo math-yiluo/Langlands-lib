@@ -1,6 +1,6 @@
 # Source coordinates on actual Weil-compatible PEL frames
 
-Worker 142. This derived construction specializes the published source-similitude
+This derived construction specializes the published source-similitude
 and form-isomorphism machinery to the actual full and prime-to-modulus Weil
 frames of `WeilFrame`. A chosen actual compatible frame gives an equivalence
 between the existing source-similitude group and the whole compatible frame
@@ -52,9 +52,9 @@ The full-adele version and the equivalence based at a frame are internal derived
 specializations of the same algebraic argument. The Lean proof follows the
 published `FormIso` lemmas and normalization result described above.
 
-This unit gives source coordinates conditional on a given actual frame.
+This module gives source coordinates conditional on a given actual frame.
 It does not prove nonemptiness, assert that every dual-valued homomorphism is
 a polarization, establish geometric nondegeneracy of its target pairing, or
 prove an involution identity for the target action. Those geometric and PEL
-compatibilities remain separate obligations. No topology, compact open level,
+compatibilities are separate obligations. No topology, compact open level,
 monodromy or transport assertion is introduced here.

@@ -1,6 +1,5 @@
 # Actual extraction of two supplied special-head occurrences
 
-Author: Worker 357.
 Provenance: derived construction from published Library interfaces.
 
 `Langlands.Classification.segmentHeadProductPairReduction` extracts any two
@@ -120,10 +119,11 @@ No representation is resized or replaced during this rank transport.
 
 This is an internal assembly of proved Library constructions and finite label,
 rank and invariant-subspace arguments. It translates no new assertion from an
-external source. Its purpose is a reduction step for the host special-head
-criterion; the host theorem and both of its directions remain separate proof
-obligations. This unit proves neither nonlinkage of the selected segments nor
-the host criterion. In particular, it does not infer irreducibility merely from
+external source. Its purpose is a reduction step for the special-head product
+criterion `SegmentHeadProductIrreducibility`; that criterion and both of its
+directions are proved in `Classification.SegmentHeadProductIrreducibilityProof`,
+not here. This module proves neither nonlinkage of the selected segments nor
+the criterion. In particular, it does not infer irreducibility merely from
 nondegeneracy, constituent equality or equality in a Grothendieck group.
 
 The six direct imports and the actual used bodies are as follows.
@@ -171,43 +171,36 @@ modules `Langlands.Group.GL.Mirabolic` and
 `Group.GL.Mirabolic`. These provide elementary matrix-subgroup and binary-block
 infrastructure, including the binary block shape used in the reversal
 statement; they do not introduce derivative or mirabolic-representation theory.
-The closure has no host criterion or generic segment-product uniqueness
-statement, no multisegment exhaustion, ordered
+The closure has no special-head product criterion or generic segment-product
+uniqueness statement, no multisegment exhaustion, ordered
 strong-head existence or conversion, quotient coverage, tempered uniqueness,
 square-integrable classification or exhaustion, or regular exhaustion proof.
 It has no segment derivative, head/socle Jacquet formula or full Jacquet formula
-input and no segment-socle part of task `8e5b4563-0365-41c7-b134-70f2a0b36292`.
+input and no segment-socle part of the derivative statements of
+`Classification.SegmentSocleDerivativesStatement`.
 
-The host's trusted operator decisions are recorded in correspondence files
-`bd71b9185aab5d6eafffb7891bd3a3ca.md`,
-`0edda6122ce65ed7ac51603c37473920.md`,
-`30144f6f9b59540b88b6d4c1517892d9.md`,
-`ed80148e21e7523abfc048f455e98eb0.md`,
-`2b33898bdd0a5ff1b9031be5155a06f0.md`, and
-`ca18fd5005bf5e12a3f7cade18dca865.md`, all under
-`/home/taskhub/pilot/correspondence/`. They were read in full. This unit does not
-use their derivative, support-bound, restricted intermediate-step or adjacent
-reducibility permissions. All host exclusions remain in force. Neither the
-replacement datum nor binary adapter nor any pending contribution is imported.
+This module does not use derivative, support-bound, restricted
+intermediate-step or adjacent reducibility inputs. Neither the
+replacement datum nor binary adapter is imported.
 All inherited mathematics is reused by published Lean name.
 
 ## Reproducible import inventory
 
-The recursive inventory is against published Library `ee0c0dd6da0a631f199c2bc0aa6040eece98f41d`.
+The recursive inventory is against Library commit `ee0c0dd6da0a631f199c2bc0aa6040eece98f41d`.
 It contains 732 project modules including this new root and
 262 distinct external frontier imports. All
 731 inherited Lean/Markdown pairs agree byte for byte with
 that Library; there are no missing imports or missing Markdown pairs.
 A scan of code with nested comments and string literals removed finds no proof
 holes, new axioms, prohibited executable syntax or occurrence of the audited
-excluded declaration/task names. The used-body audit above supplies the semantic
+excluded declaration names. The used-body audit above supplies the semantic
 route; the name scan is an additional check, not a substitute for it.
-No inherited file is modified by this contribution. Library-wide exact-name
+No inherited file is modified by this module. Library-wide exact-name
 search found no existing copy of these extraction constructors.
 
 The project modules are listed in full below. External imports are listed as
 they occur at the project boundary; their Mathlib and Lean dependencies are
-supplied by the pinned approved environment.
+supplied by the pinned environment.
 
 ### Project modules
 

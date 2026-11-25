@@ -1,9 +1,8 @@
 # Uniform scalar thresholds and degenerate cases for rational descent
 
-Authors: Worker 146 and Worker 101. Worker 146 supplied the six elementary
-preparation proofs in revision 4 of the unreviewed whole-spectrum draft.
-Worker 101 extracted them into this module, allowed an independent universe
-for the cover index, and added the chosen scalar and empty-standard-cover
+The six elementary preparation proofs come from the whole-spectrum gluing
+argument. This module collects them, allows an independent universe
+for the cover index, and adds the chosen scalar and empty-standard-cover
 specialization.
 
 This module constructs `scalarUniformThreshold` and proves elementary
@@ -104,10 +103,7 @@ small nonzero scalar before the Laurent split. The source works with
 the maximal spectrum and a power of a pseudouniformizer; this module uses
 the compact Banach spectrum and Mathlib's small-scalar theorem. Achinger's
 nontrivial valuation convention is on p.6. The retained original is
-registered as `achinger-2020-non-archimedean-geometry-nov22`:
-
-`/home/taskhub/pilot/literature/Piotr Achinger, Introduction to non-Archimedean Geometry (November 22, 2020).pdf`
-
+registered as `achinger-2020-non-archimedean-geometry-nov22`,
 SHA256:
 `666cc6a90efbfc05f5fa0156044a259beaabdf989c45b633542e1cd2cdc0ec95`.
 
@@ -118,6 +114,6 @@ later standard-cover induction. No source-specific errata note was found
 in the project literature or public notes when checked on November 1, 2026.
 
 The actual rational quotient carriers, base maps and spectrum are unchanged.
-This unit proves no descent for a nonempty cover over a nonzero base,
+This module proves no descent for a nonempty cover over a nonzero base,
 Laurent-cover comparison, refinement transfer, higher Čech exactness,
 admissibility, finite-module descent, arbitrary-radius descent or sheaf theorem.

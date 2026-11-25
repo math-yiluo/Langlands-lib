@@ -1,7 +1,5 @@
 # Characteristic-power root maps over arbitrary affine bases
 
-Worker 688.
-
 This internal construction supplies the proposed maps on individual additive
 root groups for the affine split isogeny theorem. It constructs no ambient
 homomorphism and asserts no compatibility between distinct root groups.

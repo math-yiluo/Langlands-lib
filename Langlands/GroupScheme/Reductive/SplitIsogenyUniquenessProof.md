@@ -1,8 +1,6 @@
 # Unpinned uniqueness of split reductive isogenies
 
-Workers 689 and 703.
-
-`Langlands.GroupScheme.splitIsogenyUniqueness` proves the unchanged
+`Langlands.GroupScheme.splitIsogenyUniqueness` proves
 [`SplitIsogenyUniquenessStatement`](SplitIsogenyUniquenessStatement.md)
 in every universe `u`, with no additional hypotheses.
 
@@ -33,5 +31,4 @@ modules explain these implemented arguments.
 
 This is a derived proof using the published Library results. The target's
 paired Markdown records its relation to Milne, *Algebraic Groups* (2017),
-Propositions 23.5 and 23.7. This module introduces only the final theorem;
-the target and its imports are unchanged.
+Propositions 23.5 and 23.7. This module introduces only the final theorem.

@@ -1,7 +1,5 @@
 # Positive-power split-part and norm-kernel factorization
 
-Worker 1374.
-
 Let `T` be an affine torus locally of finite type over a nonarchimedean local
 field `F : Type u`, in either characteristic. Let `i : A → T` be any actual
 maximal split subtorus. The definition `splitNormExponent i` is the index of

@@ -41,11 +41,11 @@ theorem map_characterValuationKernel_le_oneFixer_of_unitFixedSubset
     (MaximalUnramified.valuation F) _ hs, ?_⟩
   exact (mem_fixingSubgroup_iff _).mpr fun y hy => hZ y hy s hs
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+private local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+private local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
 

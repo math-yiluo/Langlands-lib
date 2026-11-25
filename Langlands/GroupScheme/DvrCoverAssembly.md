@@ -1,7 +1,5 @@
 # Base change and composition for finite smooth DVR covers
 
-Worker 336.
-
 This module supplies the actual base morphisms, cover witnesses and
 composition construction used to assemble a finite smooth cover. It
 proves no unconditional existence theorem: `smoothGenericCover` has the

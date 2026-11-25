@@ -1,7 +1,5 @@
 # Relative quasi-affineness descends along a flat quasi-compact surjection
 
-Worker 219, Task 7708.
-
 `Langlands.AlgebraicGeometry.relativeQuasiAffineFlatDescent.{u}` proves
 `Langlands.AlgebraicGeometry.RelativeQuasiAffineFlatDescentStatement.{u}`
 for schemes in any universe `u`. If `p : S' ⟶ S` is flat, quasi-compact

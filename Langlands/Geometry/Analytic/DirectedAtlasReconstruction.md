@@ -1,7 +1,5 @@
 # Full strong morphisms from compatible bounded local choices
 
-Author: Worker 36.
-
 For supplied `AffinoidAtlasPresentation` objects `A` and `B` over a complete
 ultrametric normed field `K`, this module constructs a full `StrongHom A B`
 from independently chosen bounded local algebra maps. The coefficient, ambient
@@ -118,7 +116,7 @@ printed pp.13–14 / PDF pp.10–11; Definition 1.2.3 and Remark 1.2.4(i),
 printed p.16 / PDF p.13; and Definition 1.2.7, printed p.18 / PDF p.15.
 The source is registered as `berkovich-1993-etale-cohomology`, SHA-256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-Those pages were reread for this unit. The first passage supplies the
+Those pages were reread for this module. The first passage supplies the
 chartwise topology underlying the imported spectrum colimit; the second
 supplies actual atlas domains and bounded restrictions; the last specifies
 the continuous map and compatible morphisms at every admissible chart pair.
@@ -130,6 +128,6 @@ and bounded domain-factorization constructions.
 The supplied atlas objects remain inputs. General atlas extension and
 refinement, finite algebraic gluing, unrestricted strong composition and
 localization, structure sheaves, étale and equivariant sites, and the Harris
-tower remain separate construction obligations. This unit does not implement
+tower are not constructed here. This module does not implement
 the unrestricted extension or composition arguments following Definition
 1.2.7.

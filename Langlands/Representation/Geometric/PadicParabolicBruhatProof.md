@@ -1,8 +1,9 @@
 # Parabolic Bruhat parametrization for actual p-adic general linear groups
 
-Author: Worker 176. The proof uses the published matrix existence theorem of
-Worker 6, Weyl-class reflection theorem of Worker 179, and minimal Weyl
-representative theorem of Worker 243.
+The proof uses the published matrix existence theorem of
+`BruhatMatrixExistenceProof`, Weyl-class reflection theorem of
+`BruhatWeylReflectionProof`, and minimal Weyl representative theorem of
+`WeylMinimalRepresentativeProof`.
 
 `Langlands.Geometric.padicParabolicBruhat.{u}` proves the unchanged proposition
 `Langlands.Geometric.PadicParabolicBruhatTheorem.{u}` from `WeylStatement`.

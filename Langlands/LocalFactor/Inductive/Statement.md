@@ -1,7 +1,6 @@
 # Inductive functions of Weil representations: statements
 
-Worker 33 wrote these proposition definitions for task `e534647a` (row 10 of the
-local-factor coverage map). The closing proposition is
+This module contains proposition definitions. The closing proposition is
 `Langlands.LocalFactor.Inductive.InductiveFunctionsStatement`, the conjunction of
 the eight statements below. These are statements only: no proof is claimed and
 nothing is assumed as an axiom.
@@ -88,12 +87,12 @@ second follows from the first together with `q_{E'} = q_E^f`. Deligne's proof
 identifies `(Ind V)^{I_E}` with an induced representation of `V^{I_{E'}}` from an
 index-`f` subgroup of the unramified quotient. It then uses his Lemma 3.9,
 `det(1 - F_n t) = det(1 - F t^n)` for the cyclic block operator. That lemma is
-already stated in the Library as `EulerCyclicBlockStatement` (row 3).
+already stated in the Library as `EulerCyclicBlockStatement`.
 
 ### `TraceCharacterTowerStatement`
 
 Tate (3.4.1) uses, for each finite extension `E` of `F`, the additive character
-`ψ ∘ Tr_{E/F}` of `E`. Worker 20's `traceCharacter` constructs this character for
+`ψ ∘ Tr_{E/F}` of `E`. The Library's `traceCharacter` constructs this character for
 the actual trace (`Langlands.HarmonicAnalysis.CharacterTransport`). The statement
 asserts that these characters are coherent in towers. For p-adic fields `E`, `E'`,
 `E''` with embeddings `g : E → E'` and `h : E' → E''`, and a nontrivial continuous
@@ -208,7 +207,7 @@ Tate's two notions by the single correction term.
   `Langlands.LocalFactor.NonabelianSystem` contains degree-zero induction as part
   of its system property. It uses the Library's common-closure model of
   extensions, not the embedding model of this module. The arbitrary-degree
-  correction for such systems is a separate submission,
+  correction for such systems is a separate module,
   `Langlands.LocalFactor.Inductive.SystemStatement`. This module neither imports
   it nor depends on it.
 
@@ -245,19 +244,18 @@ Tate's two notions by the single correction term.
 
 ## Dependencies and status
 
-Imports: `Langlands.LocalFactor.Inductive.Definitions` (companion, Worker 33,
+Imports: `Langlands.LocalFactor.Inductive.Definitions` (companion,
 published in the Library),
-`Langlands.HarmonicAnalysis.CharacterTransport` (Worker 20, trace characters),
-`Langlands.LocalFactor.Euler.Definitions` (Worker 20, the Euler polynomial
+`Langlands.HarmonicAnalysis.CharacterTransport` (trace characters),
+`Langlands.LocalFactor.Euler.Definitions` (the Euler polynomial
 `det(1 - X A)`), `Langlands.ClassFieldTheory.Local.Transfer` (Library, the
 continuous transfer on topological abelianizations),
 `Langlands.Weil.Representation.Determinant` and
 `Langlands.Weil.Representation.Invariants` (Library), and Mathlib's
 `Mathlib.GroupTheory.Transfer`.
 
-A full development check in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(Lean 4.34.0, Mathlib `5ed29652`) compiled both modules with no errors or
+A full development check (Lean 4.34.0, Mathlib `5ed29652`) compiled both modules with no errors or
 warnings. Inspection of `InductiveFunctionsStatement` reports a definition
 returning `Prop`, with universe parameters `u v uK uG uV` and only the axioms
 `propext`, `Classical.choice` and `Quot.sound`. Compilation does not establish
-the truth of these statements. Independent semantic review is required.
+the truth of these statements.

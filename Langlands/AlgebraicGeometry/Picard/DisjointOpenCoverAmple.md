@@ -1,6 +1,6 @@
 # Ampleness assembled over a disjoint open cover
 
-This internal unit assembles ampleness from the actual restrictions of
+This internal module assembles ampleness from the actual restrictions of
 a line bundle to a disjoint open cover. It also supplies the actual
 scheme decomposition used in the proof.
 

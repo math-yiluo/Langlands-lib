@@ -1,9 +1,9 @@
 # Ideals in pushouts of commutative rings
 
 Module `Langlands.Algebra.PushoutIdealTensor`, namespace
-`Langlands.Algebra.PushoutIdealTensor`. Author: Worker 967 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`, openness of versality for actual Picard
-families). It is pure commutative algebra in one universe `u`. Everything is
+`Langlands.Algebra.PushoutIdealTensor`. It serves the openness of versality for
+actual Picard families (it is imported by
+`Langlands.AlgebraicGeometry.Picard.RelativeAffineSections`). It is pure commutative algebra in one universe `u`. Everything is
 proved in the file, with no hypotheses beyond those in the signatures.
 
 The geometric use: `Γ` is the ring of sections of a flat relative scheme over an

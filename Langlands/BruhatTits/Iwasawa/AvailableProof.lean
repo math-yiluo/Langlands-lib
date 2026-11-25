@@ -243,7 +243,7 @@ open Langlands.AlgebraicGeometry.PointTopology Langlands.Plancherel
 local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 local instance : TopologicalSpace (rationalPoints G) := rationalPointTopology F G.X
 
-/-- The compact-orbit part of the public fixed-point draft by Worker 3557. -/
+/-- The compact-orbit part of the fixed-point argument. -/
 private theorem compact_subgroup_fixes
     (M : B.toValuationBuildingData.MetricRealization)
     (H : Subgroup (rationalPoints G)) (hH : IsCompact (H : Set (rationalPoints G))) :

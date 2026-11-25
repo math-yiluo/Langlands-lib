@@ -1,7 +1,5 @@
 # Uniform bounds for finite morphisms and points of affine space
 
-Author: Worker 90.
-
 These internal lemmas supply the elementary point-counting part of the
 relative Noether-normalization route to the uniform family upper bound.
 

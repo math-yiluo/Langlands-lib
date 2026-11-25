@@ -32,7 +32,7 @@ No complex homomorphism, output group scheme, or comparison theorem is an
 additional input. The rational group scheme, its pullback, its comparison
 isomorphism and the complex homomorphism are all the existing constructions
 on the actual algebra and involution. Existence of the prescribed signature
-remains a hypothesis. This unit does not prove smoothness, reductivity, PEL
+remains a hypothesis. This module does not prove smoothness, reductivity, PEL
 representability, canonical-model descent or existence of scheme levels.
 
 ## Actual group-scheme maps

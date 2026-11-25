@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands; universe levels are generalized. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_HilbertFunctor
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_IdealSheafData_ideal_comap_of_le
@@ -30,7 +30,7 @@ attribute [local instance] MvPolynomial.gradedAlgebra
 noncomputable section
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Opens.topIso_inv Scheme.IdealSheafData.equivOfIsAffine Proj.pullbackAwayιIso_hom_SpecMap_awayMap_right Proj.opensRange_awayι Scheme.IdealSheafData.comap_comp Scheme.Hom Scheme.Hom.appLE_comp_appLE Proj.pullbackAwayιIso_hom_SpecMap_awayMap_left Proj.basicOpenIsoSpec IsAffine Spec Scheme.Hom.id_appTop Spec.map Scheme.ΓSpecIso_inv_naturality Scheme Proj.awayι Scheme.IdealSheafData.equivOfIsAffine_apply Scheme.Hom.comp_appTop Proj Proj.pullbackAwayιIso isAffineOpen_top Scheme.IdealSheafData.equivOfIsAffine_symm_apply Proj.isAffineOpen_basicOpen Proj.basicOpen Proj.basicOpenIsoAway_hom Scheme.Opens Scheme.IdealSheafData.ofIdealTop Proj.awayToSection Proj.basicOpenToSpec_app_top Proj.basicOpenIsoSpec_hom Scheme.Opens.ι_preimage_self Scheme.Opens.ι_appLE Scheme.IdealSheafData Scheme.ΓSpecIso Scheme.Hom.appLE_eq_app ProjSpace.X_mem_one ProjSpace.affineOpenCover Scheme.IdealSheafData.ideal_comap_of_le Scheme.IdealSheafData.exists_comap_eq_of_openCover Scheme.IdealSheafData.comap_ofIdealTop)
+export _root_.AlgebraicGeometry (Scheme.Opens.topIso_inv Scheme.IdealSheafData.equivOfIsAffine Proj.pullbackAwayιIso_hom_SpecMap_awayMap_right Proj.opensRange_awayι Scheme.IdealSheafData.comap_comp Scheme.Hom Scheme.Hom.appLE_comp_appLE Proj.pullbackAwayιIso_hom_SpecMap_awayMap_left Proj.basicOpenIsoSpec IsAffine Spec Scheme.Hom.id_appTop Spec.map Scheme.ΓSpecIso_inv_naturality Scheme Proj.awayι Scheme.IdealSheafData.equivOfIsAffine_apply Scheme.Hom.comp_appTop Proj Proj.pullbackAwayιIso isAffineOpen_top Scheme.IdealSheafData.equivOfIsAffine_symm_apply Proj.isAffineOpen_basicOpen Proj.basicOpen Proj.basicOpenIsoAway_hom Scheme.Opens Scheme.IdealSheafData.ofIdealTop Proj.awayToSection Proj.basicOpenToSpec_app_top Proj.basicOpenIsoSpec_hom Scheme.Opens.ι_preimage_self Scheme.Opens.ι_appLE Scheme.IdealSheafData Scheme.ΓSpecIso Scheme.Hom.appLE_eq_app ProjSpace.X_mem_one ProjSpace.affineOpenCover Scheme.IdealSheafData.ideal_comap_of_le Scheme.IdealSheafData.exists_comap_eq_of_openCover Scheme.IdealSheafData.comap_ofIdealTopFLT)
 namespace ProjSpace
 export _root_.AlgebraicGeometry.ProjSpace (X_mem_one affineOpenCover map)
 namespace K0
@@ -102,7 +102,7 @@ def chartSheaf (f : S) (hf : f ∈ 𝒜 1) : (Spec (.of (Away 𝒜 f))).IdealShe
 theorem chartSheaf_comap_specMap (f g x : S) (hf : f ∈ 𝒜 1) (hg : g ∈ 𝒜 1) (hx : x = f * g) (hx' : x = g * f) :
     (chartSheaf n A I f hf).comap (Spec.map (CommRingCat.ofHom (awayMap 𝒜 hg hx))) =
       (chartSheaf n A I g hg).comap (Spec.map (CommRingCat.ofHom (awayMap 𝒜 hf hx'))) := by
-  rw [chartSheaf, chartSheaf, Scheme.IdealSheafData.comap_ofIdealTop, Scheme.IdealSheafData.comap_ofIdealTop,
+  rw [chartSheaf, chartSheaf, Scheme.IdealSheafData.comap_ofIdealTopFLT, Scheme.IdealSheafData.comap_ofIdealTopFLT,
     Ideal.map_map, Ideal.map_map]
   have nat : ∀ {R T : CommRingCat.{uz}} (φ : R ⟶ T),
       (Spec.map φ).appTop.hom.comp (Scheme.ΓSpecIso R).inv.hom = (Scheme.ΓSpecIso T).inv.hom.comp φ.hom := by
@@ -119,7 +119,7 @@ end
 noncomputable section
 
 namespace AlgebraicGeometry
-export _root_.AlgebraicGeometry (Scheme.Opens.topIso_inv Scheme.IdealSheafData.equivOfIsAffine Proj.pullbackAwayιIso_hom_SpecMap_awayMap_right Proj.opensRange_awayι Scheme.IdealSheafData.comap_comp Scheme.Hom Scheme.Hom.appLE_comp_appLE Proj.pullbackAwayιIso_hom_SpecMap_awayMap_left Proj.basicOpenIsoSpec IsAffine Spec Scheme.Hom.id_appTop Spec.map Scheme.ΓSpecIso_inv_naturality Scheme Proj.awayι Scheme.IdealSheafData.equivOfIsAffine_apply Scheme.Hom.comp_appTop Proj Proj.pullbackAwayιIso isAffineOpen_top Scheme.IdealSheafData.equivOfIsAffine_symm_apply Proj.isAffineOpen_basicOpen Proj.basicOpen Proj.basicOpenIsoAway_hom Scheme.Opens Scheme.IdealSheafData.ofIdealTop Proj.awayToSection Proj.basicOpenToSpec_app_top Proj.basicOpenIsoSpec_hom Scheme.Opens.ι_preimage_self Scheme.Opens.ι_appLE Scheme.IdealSheafData Scheme.ΓSpecIso Scheme.Hom.appLE_eq_app ProjSpace.X_mem_one ProjSpace.affineOpenCover Scheme.IdealSheafData.ideal_comap_of_le Scheme.IdealSheafData.exists_comap_eq_of_openCover Scheme.IdealSheafData.comap_ofIdealTop)
+export _root_.AlgebraicGeometry (Scheme.Opens.topIso_inv Scheme.IdealSheafData.equivOfIsAffine Proj.pullbackAwayιIso_hom_SpecMap_awayMap_right Proj.opensRange_awayι Scheme.IdealSheafData.comap_comp Scheme.Hom Scheme.Hom.appLE_comp_appLE Proj.pullbackAwayιIso_hom_SpecMap_awayMap_left Proj.basicOpenIsoSpec IsAffine Spec Scheme.Hom.id_appTop Spec.map Scheme.ΓSpecIso_inv_naturality Scheme Proj.awayι Scheme.IdealSheafData.equivOfIsAffine_apply Scheme.Hom.comp_appTop Proj Proj.pullbackAwayιIso isAffineOpen_top Scheme.IdealSheafData.equivOfIsAffine_symm_apply Proj.isAffineOpen_basicOpen Proj.basicOpen Proj.basicOpenIsoAway_hom Scheme.Opens Scheme.IdealSheafData.ofIdealTop Proj.awayToSection Proj.basicOpenToSpec_app_top Proj.basicOpenIsoSpec_hom Scheme.Opens.ι_preimage_self Scheme.Opens.ι_appLE Scheme.IdealSheafData Scheme.ΓSpecIso Scheme.Hom.appLE_eq_app ProjSpace.X_mem_one ProjSpace.affineOpenCover Scheme.IdealSheafData.ideal_comap_of_le Scheme.IdealSheafData.exists_comap_eq_of_openCover Scheme.IdealSheafData.comap_ofIdealTopFLT)
 namespace ProjSpace
 export _root_.AlgebraicGeometry.ProjSpace (X_mem_one affineOpenCover map)
 namespace K0

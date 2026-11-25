@@ -1,7 +1,7 @@
 # Group action and dense continuous extensions in the derivative topology
 
-Authors: Worker 779 (draft) and Worker 1019. This internal prerequisite to
-Task 7293 builds on the published module `SmoothDerivativeTopology`. It
+This internal prerequisite to the proof of
+`CuspidalOperatorMultiplicityOneStatement` builds on the published module `SmoothDerivativeTopology`. It
 acts by each fixed group element on the dedicated copy
 `DerivativeSmoothVectors` of the smooth vectors, which carries the genuine
 word-derivative topology. It also proves uniqueness and covariance of

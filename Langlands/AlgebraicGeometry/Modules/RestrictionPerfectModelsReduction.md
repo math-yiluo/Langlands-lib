@@ -29,7 +29,7 @@ such that `a` is an isomorphism, and for every `T : CommRingCat.{u}`,
 `DerivedSections.perfectModelBaseChange hp L hK a : Q.obj (K ⊗ T) ⟶ RΓ_T(X', p^* L.obj)`
 is an isomorphism.
 
-`perfectModelBaseChange hp L hK a` is the published construction in
+`perfectModelBaseChange hp L hK a` is the construction in
 `Langlands.AlgebraicGeometry.Modules.PerfectModelRestriction`: the `T`-linear
 adjunct, under the perfect-source scalar-extension equivalence
 `ModuleComplex.perfectScalarDerivedTargetHomEquiv`, of
@@ -46,7 +46,7 @@ morphism `x : Q.obj K ⟶ Q.obj K'` equals `Q.map ψ` for some chain map
 `ψ : K ⟶ K'`.
 
 Proof: `K` is K-projective (`ModuleComplex.isKProjective_of_isStrictlyPerfect`).
-The published bijection `kProjectiveDerivedHomEquiv K K'` from homotopy classes
+The bijection `kProjectiveDerivedHomEquiv K K'` from homotopy classes
 of maps to derived morphisms gives a homotopy class `y` with image `x`. The
 quotient functor to the homotopy category is full, so `y` is the class of an
 actual chain map `ψ`. The simp lemma `kProjectiveDerivedHomEquiv_quotient_map`
@@ -70,33 +70,32 @@ Proof. Fix `R, X, f, L` and take `K, hK, a` from `H`.
    the derived morphism `a ≫ derivedRestrictionMap g f L.obj ≫ e⁻¹` is `Q.map ψ`
    for a chain map `ψ : K ⟶ K'`. Hence
    `Q.map ψ ≫ a' = a ≫ derivedRestrictionMap g f L.obj`.
-   Here `derivedRestrictionMap` is the published derived restriction map along
+   Here `derivedRestrictionMap` is the Library's derived restriction map along
    a closed immersion: the image of the adjunction unit `M ⟶ g_* g^* M`,
    followed by the inverse of the derived pushforward comparison.
 4. The isomorphisms `β` of the statement are
    `asIso (perfectModelRestrictionBaseChange hp hq L hK' a')` for squares
    `hp : IsPullback p f' f (Spec.map φ)` and `hq : IsPullback q g' g p`. This
-   published map is the base change of `a'` along the pasted square
+   map is the base change of `a'` along the pasted square
    `hq.paste_vert hp`, followed by the canonical isomorphisms
    `RΓ_T(Y', q^* g^* L) ≅ RΓ_T(Y', g'^* p^* L) ≅ RΓ_T(X', g'_* g'^* p^* L)`.
-   By the published `isIso_perfectModelRestrictionBaseChange_iff` it is an
+   By `isIso_perfectModelRestrictionBaseChange_iff` it is an
    isomorphism, because the base change of `a'` along the pasted square is one
    by universality of `a'`.
-5. The commuting square of the statement is exactly the published theorem
+5. The commuting square of the statement is exactly the theorem
    `perfectModelBaseChange_restriction hp hq L hK hK' ψ a a' h`, applied to the
    identity `h` from step 3.
 
 ## Provenance
 
-Internal. The definition and the reduction were written for the proof task
-`e969f1c2-7aa6-4731-abaa-2f7455f32265`
-(`Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement`). They package
+Internal. The definition and the reduction were written for the proof of
+`Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement`. They package
 the "map `E → Eᵢ` in `D(𝒪_S)` whose formation commutes with change of base"
 used in the proofs of Stacks Project Lemmas 0BF1 and 0BF2
 (`more-morphisms.tex`, commit `a04446e57ec1fbc252a871afcec7752fb2807b14`,
 lines 9453–9619), as recorded in `RestrictionPerfectModelsStatement.md`. That
 source is context only: the Lean argument here is the categorical one above,
-built from the published constructions `perfectModelBaseChange`,
+built from the Library's constructions `perfectModelBaseChange`,
 `perfectModelRestrictionBaseChange`, `isIso_perfectModelRestrictionBaseChange_iff`,
 `perfectModelBaseChange_restriction`, `derivedRestrictionMap` and
 `kProjectiveDerivedHomEquiv`.

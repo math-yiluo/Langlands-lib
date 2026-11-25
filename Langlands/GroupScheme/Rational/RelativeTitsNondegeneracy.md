@@ -1,6 +1,6 @@
 # Relative Tits nondegeneracy from actual nontrivial simple-root points
 
-This internal supporting unit isolates the remaining rational-point existence
+This internal supporting module isolates the remaining rational-point existence
 input in the Tits nondegeneracy axiom. `RelativeSimpleRootPointData i ν` consists
 of an actual nonidentity rational point in each actual simple-root subgroup
 functor. The structure is input data; its existence is not asserted.
@@ -23,5 +23,7 @@ Thus the actual point data proves the full `conj_not_le` field for every simple
 reflection and every normalizer representative. The argument assumes no
 genericity, Bruhat decomposition, Coxeter system, rank-one normalizer
 factorization, or full standard-parabolic point theorem. The split torus and
-actual nontrivial root points remain explicit inputs. Their needed existence,
-and the full `RelativeTitsSystemStatement`, remain separate proof obligations.
+actual nontrivial root points remain explicit inputs. Their needed existence
+is supplied separately, by `RelativeSimpleRootPointData.ofActual` (module
+`RelativeTitsCoreAssembly`), and the full `RelativeTitsSystemStatement` is
+proved as `relativeTitsSystem` (module `Rational.RelativeTitsSystemProof`).

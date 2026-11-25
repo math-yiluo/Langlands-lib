@@ -6,14 +6,13 @@ The module contains two **statements**, the `Prop`-valued definitions
 `CompactDistributionActionStatement` and `LeftRegularCompactDistributionStatement`. It proves
 nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. III.1.3 makes every smooth representation a module
+III.1.3 makes every smooth representation a module
 over the algebra `ℰ′(G)` of compactly supported distributions, and only then restricts it to
 the Hecke algebra `H(G)`. The Library has the restricted action (`Hecke.heckeAction`, the
 III.1.3 Remark and the III.1.4 Theorem) and the algebra `ℰ′(G)` itself
 (`Distribution.compactlySupported` with `convolution` and `compactDirac`, II.3.10;
-[Convolution](../../HarmonicAnalysis/Distribution/Convolution.md)). No published declaration
-lets `ℰ′(G)` act on a representation. The published `LeftRegularHeckeActionStatement` gives
+[Convolution](../../HarmonicAnalysis/Distribution/Convolution.md)). The action of `ℰ′(G)` on a
+representation is constructed in `CompactDistributionActionProof`. The published `LeftRegularHeckeActionStatement` gives
 the III.1.3 Example for `T ∈ H(G)` only.
 
 ## Source and provenance
@@ -22,7 +21,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.1.3, printed p.59 / PDF p.65:
+III.1.3, printed p.59 / PDF p.65, was read:
 
 > Etant donnée une représentation lisse `(π, V)` de `G`, et un élément `T` de `ℰ′(G)`, on
 > définit sur `V` l'opérateur `π(T)` de la façon suivante. Soit `φ_v : G → V`,
@@ -85,9 +84,11 @@ and `v`, and satisfies clause 1. For clause 2, `T₁ ∗ T₂` pairs with `φ_v`
 is the case where `T` is a point mass. For the Example take `ℓ` to be evaluation at `x`:
 `ℓ(l(g) f) = f(g⁻¹ x)`, so `(l(T) f)(x) = ⟨T, g ↦ f(g⁻¹ x)⟩ = (T ∗ f)(x)`.
 
-## Remaining obligations
+## Proofs
 
-The proofs are a separate obligation.
+The proofs are in separate modules: `Langlands.compactDistributionAction` in
+`CompactDistributionActionProof` and `Langlands.leftRegularCompactDistribution` in
+`LeftRegularCompactDistributionProof`.
 
 ## Imports
 

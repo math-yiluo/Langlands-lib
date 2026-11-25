@@ -1,6 +1,7 @@
 # Maximal residue tori through coefficient extensions of models
 
-This is an internal derived construction for Task 6009. It combines the
+This is an internal derived construction for the existence of a maximal
+split torus whose K-units fix a prescribed Galois-fixed building point. It combines the
 actual coefficient pullback of integral models with the common residue-torus
 construction and geometric maximal-torus transport. It does not claim the
 prescribed-point building theorem.
@@ -66,4 +67,7 @@ map. These constructions provide the internal provenance of this result.
 The retained model, connectedness and boundedness hypotheses must still be
 constructed in the building application. This construction neither lifts a
 prescribed residue torus to the valuation ring nor supplies the segment or
-special-apartment geometry. Task 5514 retains the integral lifting step.
+special-apartment geometry. The integral lifting step belongs to the existence
+of special tori over the maximal unramified extension
+(`SpecialTorusExistenceStatement`, KP Proposition 9.3.4), proved as
+`specialTorusExistence` in `Geometry/Building/SpecialTorusExistenceProof`.

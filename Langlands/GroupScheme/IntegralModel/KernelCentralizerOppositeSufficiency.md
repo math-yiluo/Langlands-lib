@@ -43,5 +43,5 @@ theorem now applies with the original section and prescribed pair.
 The provenance is internal composition of the imported constructions. No
 component quotient, action, centralizer data or integral root lift is assumed
 as an additional premise. The hypotheses about the ambient model, quotient,
-torus and positive cocharacter remain explicit; this unit does not construct
-the fixed-point integral model or prove the full host statement.
+torus and positive cocharacter remain explicit; this module does not construct
+the fixed-point integral model or prove the full statement it serves.

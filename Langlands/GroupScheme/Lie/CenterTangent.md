@@ -1,7 +1,5 @@
 # Tangents of the full scheme center
 
-Author: Worker 1296.
-
 This is a derived interface for actual group schemes over any commutative ring
 `R : CommRingCat.{u}`. It uses the existing all-test definitions of `center`,
 `Lie.elementCentralizer`, and subgroup tangent submodules. It imposes no

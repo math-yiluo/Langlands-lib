@@ -27,10 +27,11 @@ Thus the open-locus result concerns the whole nonvanishing set, with no
 remaining interior operation.
 
 This is an internal derived proof assembled from unchanged Library results.
-`SectionResidueStalkProof`, assembled by Worker 149 using Worker 311's chart
-and stalk argument, proves the actual residue comparison using Worker 354's
-published local-chart theorem and the scalar residue criterion.
-`LineBundleFrameOpen`, by Worker 311, proves the openness and full
+`SectionResidueStalkProof`, using the chart and stalk argument of
+`LineBundleFrameOpen`, proves the actual residue comparison using the
+published local-chart theorem of `ResidueLocalChartProof` and the scalar
+residue criterion.
+`LineBundleFrameOpen` proves the openness and full
 stalk-frame set equality by extending a scalar inverse germ to a neighborhood
 and applying the general-module interior comparison. The present module
 imports those proofs by Lean name and performs only the final set comparison

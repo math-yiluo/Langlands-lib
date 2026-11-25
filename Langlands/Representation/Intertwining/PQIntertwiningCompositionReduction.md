@@ -1,14 +1,16 @@
 # Renard VII.3.5 (i): reduction of the composition formula to geometric inputs
 
-Author: Worker 48. Module
+Module
 `Langlands.Representation.Intertwining.PQIntertwiningCompositionReduction`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `u, v`.
 
 This is a conditional reduction. It proves the published
 `PQIntertwiningCompositionStatement` (module
 `Langlands.Representation.Intertwining.PQIntegralIntertwiningStatements`, unchanged) from four
-propositions defined here. These four are not proved in this module, so the published statement
-is still not proved unconditionally.
+propositions defined here. These four are not proved in this module; they are proved in
+`PQBoundaryVanishingCompactSupportProof`, `PQCompositionProductDecomposition`,
+`PQCompositionHaarProof` and `PQCompositionLeviIntersection`, and the published statement is
+proved unconditionally by `pqIntertwiningComposition` in `PQIntertwiningCompositionProof`.
 
 The module contains:
 
@@ -21,7 +23,7 @@ The module contains:
 - an abstract computation, `eval_one_comp_eq_of_integral_formulas`;
 - the reduction theorem `pqIntertwiningComposition_of_reductions`, and the definition
   `pqIntertwiningCompositionOfReductions`, which has the same implication as its type. This
-  definition is the declaration recorded for this unit.
+  definition records the reduction as a declaration.
 
 ## Source
 

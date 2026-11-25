@@ -1,7 +1,6 @@
 # Native coefficient representations and their actual complex Jacquet quotients
 
-Worker 1755, with interface and reuse guidance from Worker 1751. Internal
-scalar restriction and actual quotient comparisons for the coefficient-family
+Internal scalar restriction and actual quotient comparisons for the coefficient-family
 stability argument in Renard 2026 VI.9.2, printed p.199 / PDF p.205.
 Registered source `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256
@@ -63,4 +62,4 @@ kernel and range square equalities.
 The two native coefficient-finiteness assertions remain hypotheses of
 this corollary. They must be proved for the actual universal-family models
 before applying it. No representation-uniform exponent or unconditional
-instance of the host uniform stabilization theorem is supplied.
+instance of the uniform stabilization theorem is supplied.

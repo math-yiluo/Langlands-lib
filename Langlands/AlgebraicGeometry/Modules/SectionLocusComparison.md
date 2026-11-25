@@ -1,7 +1,5 @@
 # Stalk and maximality comparisons for the section trivialization locus
 
-Author: Worker 223.
-
 The closing theorem `Langlands.SchemeModule.sectionLocusComparison` proves
 exactly the published proposition `SectionLocusComparison.{u}` of
 `Langlands.AlgebraicGeometry.Modules.SectionLocusStatements`. It holds for

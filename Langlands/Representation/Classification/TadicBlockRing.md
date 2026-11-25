@@ -1,6 +1,6 @@
 # The Grothendieck ring `R` for Tadić's Lemma 4.8(ii)
 
-Author: Worker 5121. Module `Langlands.Representation.Classification.TadicBlockRing`,
+Module `Langlands.Representation.Classification.TadicBlockRing`,
 namespace `Langlands.Classification.TadicBlockRing`. Helper module of the proof of
 `Langlands.Classification.TadicBlockReductionFromInputs`; it adds no axiom and no
 hypothesis-free claim beyond the theorems listed.

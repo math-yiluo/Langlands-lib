@@ -1,6 +1,6 @@
 # Relative reductive quotients from pointwise dynamic presentations
 
-This internal derived unit proves
+This internal derived module proves
 `Langlands.GroupScheme.RelativeParabolicReductiveQuotientLocalDynamicStatement`
 in every universe. It retains an arbitrary base scheme `S`, a reductive
 group scheme `G`, a relative parabolic `i : P → G`, and a supplied relative
@@ -44,10 +44,11 @@ This is an internal composition of dynamic radical identification,
 étale transport of relative radicals, dynamic reductive quotients and
 reductive normal quotient gluing. It introduces no new assertion from an
 external source. The radical comparison and transport constructions are
-reused unchanged from Workers 590 and 637.
+reused unchanged from `DynamicRadicalIdentification` and
+`UnipotentRadicalDescent`.
 
 Both the dynamic relative Levi theorem and pointwise dynamic
-presentations remain explicit inputs of this unit. The final assembly in
+presentations remain explicit inputs of this module. The final assembly in
 `ReductiveQuotientProof` discharges these inputs with published theorems
 and combines this quotient construction with radical annihilation to prove
 the universal property in `RelativeParabolicReductiveQuotientStatement`.

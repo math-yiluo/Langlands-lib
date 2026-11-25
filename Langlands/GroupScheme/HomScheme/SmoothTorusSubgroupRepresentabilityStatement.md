@@ -1,7 +1,5 @@
 # Smooth moduli of actual closed torus subgroups
 
-Author: Worker 1656.
-
 `TorusSubgroupModuli.SmoothTorusSubgroupRepresentabilityStatement.{u}`
 is an existence proposition for every actual smooth affine group scheme
 `G/S`, where `S : Scheme.{u}` is arbitrary. It asks for an actual scheme

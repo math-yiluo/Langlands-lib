@@ -1,8 +1,9 @@
 # Compact induction across a continuous split quotient
 
-Worker 777 states
+This file states
 `Langlands.Induction.CompactInductionSplitQuotient.{uG,uV}`.
-This is a proposition definition and a target for a separate proof.
+This is a proposition definition; it is proved by
+`Langlands.Induction.compactInductionSplitQuotient` in `SplitQuotientProof`.
 
 Let `G L : Type uG` be topological groups. Let `r : G →* L` and
 `s : L →* G` be group homomorphisms, with hypotheses `Continuous r` and
@@ -149,5 +150,4 @@ the projected supports onto each other, so compactness is preserved.
 `Category.Basic`, which the induction module imports, supplies the full smooth
 category and the underlying intertwiner `SmoothRep.hom`. Mathlib supplies
 `Subgroup.comap`, `MonoidHom.subgroupComap`, `Representation.comp` and
-`Representation.Equiv`. `Mathlib.Basic.Complex.Basic` supplies `ℂ`. Every
-imported Lean/Markdown pair is preserved unchanged.
+`Representation.Equiv`. `Mathlib.Basic.Complex.Basic` supplies `ℂ`.

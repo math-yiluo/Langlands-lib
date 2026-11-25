@@ -1,0 +1,9 @@
+# Units as the points of a Weil restriction
+
+For a finite projective commutative `A`-algebra `B`, the Weil restriction of the Laurent polynomial algebra over `B` represents the multiplicative group functor sending `T` to `(B ⊗[A] T)ˣ`. The equivalence `Langlands.Algebra.WeilRestriction.multiplicativeGroupPoints` identifies the convolution group of points of `WeilRestriction A B B[T;T⁻¹]` over `T` with the unit group of `B ⊗[A] T`.
+
+It is the composite of two multiplicative equivalences. The first is `pointsMulEquiv`, which classifies a point of the Weil restriction as a point of `B[T;T⁻¹]` with values in `B ⊗[A] T`. The second sends a point `f` of `B[T;T⁻¹]` with values in a commutative `B`-algebra `S` to the unit `f (T 1)` of `S`, whose inverse is `f (T (-1))`. Its inverse sends a unit `u` to the algebra map that takes `T n` to `uⁿ`; this map comes from the universal property of the group algebra of `ℤ`, Mathlib's `AddMonoidAlgebra.lift`. A map out of `B[T;T⁻¹]` is determined by its value at `T 1`, because a monoid map out of `ℤ` is determined by its value at `1`; this gives the two inverse laws. The second equivalence is multiplicative because `T 1` is group-like: its comultiplication is `T 1 ⊗ T 1`, so the convolution of two points takes the product of their values at `T 1`.
+
+The `simp` lemma `multiplicativeGroupPoints_apply` records that the unit attached to a point is the value at `T 1` of the point it classifies.
+
+Postcomposing a point with `h : T →ₐ[A] T'` applies the induced map `B ⊗[A] T → B ⊗[A] T'` to units (`multiplicativeGroupPoints_naturality`). This follows from the naturality of `pointsMulEquiv` and from the fact that the value at `T 1` commutes with postcomposition. [Multiplication on represented points](PointMultiplication.md), [smoothness](Smooth.md) and [smoothness of Laurent polynomials](../../Algebra/Polynomial/Laurent/Smooth.md)

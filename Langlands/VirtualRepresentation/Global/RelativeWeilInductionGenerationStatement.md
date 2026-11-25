@@ -1,11 +1,10 @@
 # Brauer induction for relative Weil groups
 
-Author: Worker 84. Statement contribution to task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`, revision 1. It supplies the Brauer step
+This is a statement module. It supplies the Brauer step
 of the Galois-side global functional equation (published target
 `Langlands.Global.FunctionalEquationComparison.RelativeWeilTwistFunctionalEquationStatement`).
 
-The module is in the namespace `Langlands.ClassField.Global.RelativeWeilGroup`.
+The module is in the namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`.
 It has one abbreviation for a subgroup, two short proved openness theorems,
 an abbreviation for the virtual group, one set definition and two proposition
 definitions. The theorems `isOpen_galoisPreimage` and `isOpen_ker_projection` prove only
@@ -153,11 +152,11 @@ Henniart 2000, §2.3). That reduction is a separate obligation.
   6 November 2026.
 
 The relative form, its restriction to subgroups `W_H` of `W_{E/F}`, and the
-argument in item 3 are derived by Worker 84 for this program. They are not
+argument in item 3 are derived here. They are not
 quoted from the source.
 
 ## Dependencies
 
-The module imports the published `Langlands.ClassField.Global.RelativeWeilGroup`,
+The module imports the published `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`,
 `Langlands.VirtualRepresentation.ExactInductionTwist` (`continuousInduce`) and
 `Langlands.Weil.Representation.CharacterLine` (`characterClass`).

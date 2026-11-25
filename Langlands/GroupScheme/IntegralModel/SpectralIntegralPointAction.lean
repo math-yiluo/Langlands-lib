@@ -144,6 +144,7 @@ private theorem genericAffineFromSuppliedModel : IsAffine G.X.left := by
     change IsAffine
       (CategoryTheory.Limits.pullback M.group.X.hom (Spec.algebraMap ↥𝒪[F] F))
     infer_instance
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   exact IsAffine.of_isIso M.genericIso.inv.hom.hom.left
 
 /-- Extend an original integral-image point to an actual fixed integral-image point. -/

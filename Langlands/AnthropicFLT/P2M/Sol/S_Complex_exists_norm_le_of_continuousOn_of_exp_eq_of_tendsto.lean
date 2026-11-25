@@ -22,7 +22,7 @@ None of the audited compatibility, universe or cleanup edits touches this module
 Declaration names and namespaces are unchanged. The mathematical hypotheses and conclusions of the
 source are retained.
 -/
-import Mathlib
+import Langlands.MathlibBase
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
 set_option backward.isDefEq.respectTransparency.types false

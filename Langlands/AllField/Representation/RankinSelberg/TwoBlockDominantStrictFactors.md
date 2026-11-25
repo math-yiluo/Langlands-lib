@@ -23,7 +23,7 @@ The module docstring of the port:
 
 - `Langlands.AllField.RankinSelberg.DominantRankTransport.exists_strictTwoBlockRationalComparison` (theorem): Above one real bound, a nonzero ordinary Jacquet functional supplies the
   actual rational comparison uniformly in all compatible quotient measures.
-  The independently owned analytic first-block statement is an explicit premise.
+  The analytic first-block statement `TwoBlockDominantFirstBlockLaurentIdentityStatement` is an explicit premise.
 - `Langlands.AllField.RankinSelberg.DominantRankTransport.StrictFirstBlockSymmetricFactors` (def): The full symmetric certificates attached to the retained first-block
   monomial and polynomial pair.
 - `Langlands.AllField.RankinSelberg.DominantRankTransport.StrictFirstBlockFactorCertificate.symmetricFactors` (theorem): No generator or epsilon data are replaced when a retained first-block
@@ -34,4 +34,4 @@ The module docstring of the port:
   the intrinsic bound to a certified whole-pair L polynomial.
 - `Langlands.AllField.RankinSelberg.DominantRankTransport.exists_strictTwoBlockSymmetricLBound` (theorem): Complete symmetric L certificates satisfy the required bound for all
   sufficiently large real opposite twists of arbitrary Whittaker-type blocks.
-  The independently owned first-block theorem remains an explicit premise.
+  The first-block statement `TwoBlockDominantFirstBlockLaurentIdentityStatement` remains an explicit premise.

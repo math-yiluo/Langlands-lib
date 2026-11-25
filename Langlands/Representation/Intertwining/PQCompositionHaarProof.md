@@ -1,6 +1,6 @@
 # Renard VII.3.5 (i): existence of compatible Haar measures
 
-Author: Worker 102. Module `Langlands.Representation.Intertwining.PQCompositionHaarProof`,
+Module `Langlands.Representation.Intertwining.PQCompositionHaarProof`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameter `u`.
 
 ## Statement proved

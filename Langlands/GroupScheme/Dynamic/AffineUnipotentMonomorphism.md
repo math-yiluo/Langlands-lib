@@ -48,6 +48,6 @@ representation and monicity data.
 
 All results are universe polymorphic and hold over arbitrary `R`.
 There are no smoothness, flatness, finite-type or finite-presentation
-assumptions. This unit supplies the relative unipotent step toward
+assumptions. This module supplies the relative unipotent step toward
 reductive monomorphism closedness; the cell, torus and remaining global
 arguments are separate obligations.

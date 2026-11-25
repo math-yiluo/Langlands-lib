@@ -1,6 +1,6 @@
 # Functoriality of the actual adjoint determinant
 
-`DynamicAdjointDeterminantFunctorialityStatement` is an unproved proposition
+`DynamicAdjointDeterminantFunctorialityStatement` is a proposition
 target over every commutative base ring. It uses the actual represented
 dynamic parabolic and unipotent subgroup, the affineness inputs of the
 conditional construction, and natural finite coordinates on the actual
@@ -28,8 +28,9 @@ changing the acted-on group.
 This is derived internal packaging of the actual differential naturality,
 the determinant naturality proved using natural finite coordinates, and
 functoriality of composition with the algebraic determinant morphism.
-It introduces an exact target for a focused proof successor and does
-not claim a proof of the whole proposition.
+It introduces an exact target for a proof and does not claim a proof of
+the whole proposition. The theorem `dynamicAdjointDeterminantFunctoriality`
+in `Dynamic.AdjointDeterminantFunctorialityProof` proves it.
 
 For source context, Conrad–Gabber–Prasad, second edition (2015), §2.1,
 printed p.52 (PDF p.78), gives natural tangent base change; §A.7,

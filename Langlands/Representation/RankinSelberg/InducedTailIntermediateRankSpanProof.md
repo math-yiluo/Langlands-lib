@@ -1,7 +1,6 @@
 # Intermediate-test-rank induced tail Laurent-span inclusion
 
-Worker 318 assembles the closed proof using the intermediate-tail construction
-by Workers 318 and 829.
+This module assembles the closed proof from the intermediate-tail construction.
 
 `Langlands.RankinSelberg.inducedTailIntermediateRankSpan.{uF,uV₁,uV₂,uW}`
 proves exactly the existing
@@ -77,12 +76,11 @@ comparison motivated by Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin-Selberg Convolutions* (1983), §§9.1–9.3, printed pp.452–457, especially
 pp.456–457. The full-type input uses the published normalized upper induction
 proof and its whole-functional-space transport. This wrapper adds no new
-source assertion or axiom. Worker 829 authored the integral, zero-row and
-Laurent-span adapters used by the assembly; Worker 318 authored the assembly
-and this closed wrapper.
+source assertion or axiom.
 
 Registered original: `jpss-1983-rankin-selberg`, SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`, retained at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.
-The source passages and bounded errata search were recorded in the earlier
-component development and the target's paired Markdown.
+The source passages are recorded in the pages of the component modules and in
+the statement's page, `InducedTailSpanStatement`, which also records the
+bounded errata search.

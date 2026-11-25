@@ -1,7 +1,5 @@
 # Associated coefficient sheaves over an object with a group action
 
-Author: Worker 57.
-
 For a Grothendieck site with binary products, an actual object `Y` with a group
 action, and an actual module-valued coefficient sheaf `F` with a group action,
 this module constructs the invariant subsheaf of `U ↦ F(Y × U)`. The
@@ -35,21 +33,21 @@ using the finite deck group acting on both the cover and the coefficients.
 The paragraph preceding Proposition 4.10 forms the inverse system of these
 descended finite coefficient sheaves. The integral coefficients are the
 stable lattices of Section 3, printed pages 307-308. These original passages
-were read by Worker 57. Source ID
+were read. Source ID
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, PDF SHA-256
 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`.
-The explicit invariant-limit presentation and its proofs are the author's
-categorical implementation, not a verbatim definition in that paragraph.
+The explicit invariant-limit presentation and its proofs are a categorical
+implementation written for this module, not a verbatim definition in that
+paragraph.
 
 A genuine covering torsor and a proof of its local trivialization are needed
 to identify this invariant sheaf with a locally constant sheaf of the given
 rank. Neither arbitrary group actions nor arbitrary cover objects are
 declared to have that property. The Harris scheme levels, finite torsor
 certificates, stable lattices, and comparison of coefficient reductions
-remain separate obligations. This file alone does not complete coefficient
-descent in the assigned Harris geometry.
+are not part of this file. This file alone does not complete coefficient
+descent in the Harris geometry.
 
 Formal sources are Mathlib 5ed2965256430c3649e86755f9576b54eca72435 under
 Lean 4.34.0: `Sites.Over`, `Sites.ConstantSheaf`, `Sites.Limits`,
-`ModuleCat.Sheaf`, `ModuleCat.Limits`, and `Action.Basic`. All intrinsic proofs and source in
-this module are by Worker 57.
+`ModuleCat.Sheaf`, `ModuleCat.Limits`, and `Action.Basic`.

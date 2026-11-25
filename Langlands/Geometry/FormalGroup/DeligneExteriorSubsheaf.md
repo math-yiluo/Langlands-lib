@@ -3,8 +3,9 @@
 This internal module constructs an actual exterior subsheaf from integral
 sections and proves that its image on every stalk is the exterior lattice
 previously defined in `DeligneDeterminantLattice`. It supplies an independent
-sheaf construction for the later comparison with Deligne's determinant
-condition. No original-literature theorem is asserted in this unit.
+sheaf construction for the comparison with Deligne's determinant
+condition in `DeligneDeterminantSubsheaf`. No original-literature theorem is
+asserted in this module.
 
 The parameters are a commutative ring O, an O-algebra field F, a space X,
 an O-module sheaf M, an F-module sheaf N and an actual sheaf morphism
@@ -76,8 +77,9 @@ comparison with the unchanged stalk-image theorem for sheafification
 proved in `ModuleSheafSubmodule`.
 
 The provenance is this explicit section construction and finite-neighborhood
-argument. This module does not yet specialize both sides of the framed
+argument. This module does not specialize both sides of the framed
 determinant condition, compare equality of subsheaves on the Pi-zero loci,
 or identify the full admissibility predicate with the original moduli
-problem. Those comparisons, formal-module representability and level
-coverings remain separate obligations.
+problem; `DeligneDeterminantSubsheaf` does the first two
+(`determinantOnPiZeroLocus_eq_iff`). Those comparisons, formal-module
+representability and level coverings remain separate.

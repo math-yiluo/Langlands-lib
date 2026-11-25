@@ -93,8 +93,9 @@ The existing `AlgebraInvolution.similitudes` construction uses units in an
 algebra with an involution. The present group instead uses B-linear
 automorphisms of a bilinear space. Identifying them in the Harris specialization
 requires constructing the relevant adjoint involution and proving the
-identification; no such identification is assumed or proved here. This unit
-also does not construct scalar extension to finite adeles, its topology,
-compact open subgroups, actual Weil pairings or Tate twists, or geometric
-monodromy. Those remain obligations of the parent task. In particular this is
-an algebraic prerequisite, not the completed geometric PEL level construction.
+identification; no such identification is assumed or proved here. This module
+also does not construct scalar extension to finite adeles, its topology, compact
+open subgroups, actual Weil pairings or Tate twists, or geometric monodromy.
+Those remain obligations of the geometric PEL level construction. In particular
+this is an algebraic prerequisite, not the completed geometric PEL level
+construction.

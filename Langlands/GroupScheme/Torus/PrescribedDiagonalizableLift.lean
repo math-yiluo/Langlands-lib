@@ -42,8 +42,10 @@ theorem reparametrize_clopen_lift
   · change (baseChange sp).map (t ≫ j₁) = _
     rw [Functor.map_comp, ht, Category.assoc, IsIso.inv_hom_id, Category.comp_id]
   · change IsOpenImmersion (t.hom.hom.left ≫ j₁.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   · change IsClosedImmersion (t.hom.hom.left ≫ j₁.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
 
 end Langlands.GroupScheme.PrescribedDiagonalizableLift

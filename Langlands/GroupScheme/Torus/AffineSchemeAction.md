@@ -30,5 +30,4 @@ properties, or a Lie-image comparison. Milne, *Algebraic Groups* (2017),
 Theorem 13.1 and Corollary 13.10, printed pp.254–257 / PDF pp.270–273, provide
 context for fixed-locus smoothness. The retained official corrections to the
 proofs of 13.4 and 13.5 concern the local-ring route, whereas the imported
-algebraic theorem uses a square-zero lifting proof. Worker 1131's contribution
-to that reused algebraic argument is credited in the submission.
+algebraic theorem uses a square-zero lifting proof.

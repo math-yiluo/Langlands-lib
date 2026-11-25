@@ -1,8 +1,7 @@
 # Finite weighted variable adjunction with added equations
 
-Worker 56 constructed this module. Its base-map descent and old-coordinate
-argument adapt Worker 36's published `WeierstrassPresentation/Definitions`.
-Worker 36 is a coauthor of this adaptation.
+The base-map descent and old-coordinate argument of this module
+adapt `WeierstrassPresentation/Definitions`.
 
 ## Construction and assumptions
 
@@ -111,7 +110,7 @@ by the implemented quotient arguments. Their validity without completeness
 is an extension established by those arguments, not a claim attributed to
 the complete-field source.
 
-The adaptation from Worker 36 replaces strict evaluation-based variable
+The adaptation of `WeierstrassPresentation/Definitions` replaces strict evaluation-based variable
 inclusion by the coefficientwise weighted inclusion and accepts an arbitrary
 closed-ideal presentation and arbitrary enlarged-series equations. It reuses
 the published `GeneralizedAffinoid.Relations`,
@@ -119,5 +118,5 @@ the published `GeneralizedAffinoid.Relations`,
 
 Comparison with a relative series algebra over `A`, independence from the
 chosen presentation, localization universal properties and representation of
-analytic domains remain separate obligations. This module supplies the
-concrete adjunction quotient and its intrinsic maps for those later steps.
+analytic domains are not part of this module. It supplies the
+concrete adjunction quotient and its intrinsic maps for those steps.

@@ -1,8 +1,5 @@
 # Sharp support retention from induction–Jacquet stability
 
-Implementation and documentation: Worker 219 (task
-`d441ca88-a2fa-4174-93e0-97d1b9fca9ba`).
-
 This module reduces the support-retention target for the actual terminal
 cokernel `E#` to the stability of `Alg({I})` under the actual normalized
 composites `i_K r_K`. It defines the coordinate projections of the homogeneous

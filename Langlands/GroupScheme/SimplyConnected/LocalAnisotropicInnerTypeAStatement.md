@@ -1,13 +1,11 @@
 # Anisotropic absolutely almost-simple local groups have inner type A
 
-Author: Worker 160.
-
 This module states two local arithmetic facts behind Bruhat–Tits (1967),
 Proposition 6. They are written on the published actual Tits-index data
 `TitsIndexData G`. The module supplies no proof. These statements are
 prerequisites of the published target
-`Langlands.GroupScheme.LocalAnisotropicSimplyConnectedClassificationStatement`
-(Task 5636). That target also needs the identification
+`Langlands.GroupScheme.LocalAnisotropicSimplyConnectedClassificationStatement`.
+That target also needs the identification
 `Langlands.GroupScheme.InnerTypeANormOneStatement` of inner type `A_n`
 with a reduced-norm-one group, which these statements do not contain.
 

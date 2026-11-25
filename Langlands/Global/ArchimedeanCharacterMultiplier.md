@@ -1,7 +1,5 @@
 # Multiplication by a smooth character and the archimedean enveloping action
 
-Author: Worker 5136.
-
 This internal module describes how multiplication by a smooth character of the
 archimedean matrix group interacts with the Library's enveloping-algebra action
 on smooth functions (`ArchimedeanGL.envelopingAction`). The Library's

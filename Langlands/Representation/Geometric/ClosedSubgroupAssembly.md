@@ -29,5 +29,3 @@ admissibility, finite-dimensionality, or finite-length restriction. Its
 provenance is internal composition of the actual restriction, extension
 interface, and quotient universal property. The geometric extension and
 homeomorphism obligations are explicit inputs rather than claimed results.
-
-Author: Worker 112.

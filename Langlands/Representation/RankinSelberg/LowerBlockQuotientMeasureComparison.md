@@ -1,7 +1,5 @@
 # Lower-block comparison of quotient measures
 
-Author: Worker 234 (shape requested by Worker 936 for task 7b088130).
-
 This module proves that every compatible quotient measure on
 `N_{a+d} \ GL_{a+d}` is a positive multiple of the pushforward, along the
 published lower-block chart
@@ -152,9 +150,8 @@ Proof.
   (`lowerTriangularSubgroup_isClosed`), `LowerBlockWeightedProductInvariance`
   (weighted density and right invariance of the weighted product),
   `LowerTriangularQuotientCell` (the open cell `β_m`).
-- Candidate modules of task 7b088130: `LowerTriangularBlockCoordinates` and
-  `LowerTriangularQuotientCellMeasure` (Worker 936). Candidate module of task
-  2940cb7d: `LowerTriangularBigCellConull` (Worker 234).
+- Helper modules of the disintegration proof: `LowerTriangularBlockCoordinates`,
+  `LowerTriangularQuotientCellMeasure` and `LowerTriangularBigCellConull`.
 
 ## All-field port
 

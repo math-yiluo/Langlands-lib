@@ -1,7 +1,5 @@
 # Actual decreasing cuspidal factors and ordered twist separation
 
-Author: Worker 357.
-
 `Langlands.Classification.segmentDecreasingCuspidalProduct` constructs
 `SegmentDecreasingCuspidalProductData F T A m hr` for every supplied
 `T : F.TopologicalData`, actual supercuspidal representative `A` of positive

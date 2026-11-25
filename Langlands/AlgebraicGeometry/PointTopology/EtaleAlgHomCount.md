@@ -1,7 +1,5 @@
 # Field-valued points of an étale algebra are uniformly bounded in number
 
-Author: Worker 105.
-
 Internal infrastructure for the proof of the quasi-compactness assertion of Conrad's
 Corollary 5.7 (`HenselianIntegralPointsCompactStatement`). This standard fact of commutative
 algebra is stated here in the form the proof needs. It is not taken from a specific statement

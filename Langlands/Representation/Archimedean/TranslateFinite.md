@@ -4,7 +4,7 @@ Lean module: `Langlands.Representation.Archimedean.TranslateFinite`.
 
 This module provides closure properties of finite-dimensional spans of right translates, for
 functions on a group `G`. It applies them to show that polynomial functions of the matrix entries
-on `O(n)` are `O(n)`-finite (`finiteDimensional_span_eval`). Task 6749 uses this to produce
+on `O(n)` are `O(n)`-finite (`finiteDimensional_span_eval`). This is used to produce
 `O(n)`-finite vectors (annihilators, sign vectors) through the extension lemma of
 `PrincipalSeriesExtension`.
 

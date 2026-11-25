@@ -1,7 +1,5 @@
 # Nonzero sections of large twists on nonempty fibres
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProjectiveFibreTwistSections` (namespace
 `Langlands.AlgebraicGeometry.Modules.FibreTwist`) proves clause 2 of
 `ProjectiveFibreTwistCohomologyStatement`.

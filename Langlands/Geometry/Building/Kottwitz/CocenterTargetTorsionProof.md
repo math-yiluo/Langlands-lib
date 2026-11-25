@@ -1,7 +1,5 @@
 # Torsion kernel of the cocenter inertia map: proof
 
-Authors: Worker 5310, Worker 5168.
-
 This module proves `CocenterTargetTorsionStatement` with no hypotheses, as the
 theorem `cocenterTargetTorsion_proof : CocenterTargetTorsionStatement.{u}`.
 This is the torsion-kernel input from the proof of Kaletha–Prasad, *Bruhat–Tits
@@ -88,6 +86,4 @@ The proof uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 The lemmas are internal. They follow the cited argument: the surjection with
 finite kernel `X_*(T)/X_*(T_sc) → X_*(T)/X_*(T_der) = X_*(G_ab)` stays a
 surjection with finite kernel on inertia coinvariants. The theorem proves only
-the torsion consequence for the kernel, which is what the statement asks. The
-assembly was first written by Worker 5168 as a test against the staged modules
-and is used here with new documentation.
+the torsion consequence for the kernel, which is what the statement asks.

@@ -1,13 +1,10 @@
 # Reduction to one maximal split torus with a torus centralizer
 
-Authors: Worker 1479 and Worker 1438.
-
-This internal supporting unit isolates the remaining geometric existence input
+This internal supporting module isolates the remaining geometric existence input
 for the published `QuasiSplitMaximalTorusCentralizerStatement.{u}`. Its provenance
-is the task's arbitrary-field target and the existing maximal split torus
+is that arbitrary-field target and the existing maximal split torus
 conjugacy, all-test centralizer transport, and maximal torus comparison interfaces.
-It asserts no new structural existence theorem. Worker 1438 proposed the
-existence formulation and reduction route; Worker 1479 implemented the unit.
+It asserts no new structural existence theorem.
 
 `QuasiSplitTorusCentralizerExistenceStatement.{u}` is a proposition definition.
 For every field `k : Type u` and every `IsQuasiSplit G`, it asks for some
@@ -44,8 +41,10 @@ The published `torusCentralizer_of_iso_square` transports representation to
 `IsMaximalTorus.isRepresentedBy_torusCentralizer_of_isTorus` applies to the
 original supplied maximal torus inclusion `i : T → G`, its original map
 `f : A → T`, and the equation `f ≫ i = a`. It proves that this actual `i`
-represents the entire centralizer of `a`, as required by the protected target.
+represents the entire centralizer of `a`, as required by the target.
 
 Both structural premises remain visible. This supporting statement and
 conditional reduction leave the target and all its imports unchanged and
-do not prove the task's unconditional theorem or constitute task completion.
+do not prove the unconditional theorem. The Library proves it as
+`quasiSplitMaximalTorusCentralizer` (module
+`Rational.QuasiSplitMaximalTorusCentralizerProof`), by this reduction.

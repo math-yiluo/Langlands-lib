@@ -46,7 +46,7 @@ The actual torsor assertions additionally use
 `RelativeDualSchemeExistenceStatement`, `RelativeDualSchemeGeometryStatement`,
 and `CMGeometricCoarseRigidity … V.obj`. Statements involving the original
 finite torsors also use `CMGeometricCoarseRigidity … U.obj`. The implemented
-construction uses the published dominant-unramified-etale theorem rather than
+construction uses the dominant-unramified-etale theorem rather than
 an additional transition-etaleness premise.
 
 ## The actual intersection tower and its actions
@@ -75,13 +75,13 @@ inclusion maps for every arrow of `ℕᵒᵖ`. Its residual action is
 the action is exactly the geometric tower map of
 `smallCMNormalInverseArrow D V T_k … g`. This preserves the inherited
 inverse-right transporter convention; it is not a new choice of a deck action.
-Quotient induction and the published inverse-arrow inclusion equality prove
+Quotient induction and the inverse-arrow inclusion equality prove
 equivariance of the exponent maps.
 
 `cmHarrisGeometricCoarseSchemeProjection` is the natural projection to the
 constant scheme `X_V`. Its invariance under every residual action is proved
 using the existing geometric normal projection theorem.
-`cmHarrisGeometricCoarseTorsor` applies the published normal geometric torsor
+`cmHarrisGeometricCoarseTorsor` applies the normal geometric torsor
 construction at each actual `T_k`. It therefore derives the finite geometric
 torsor property of `Sbar(T_k) → X_V` from the stated hypotheses.
 
@@ -169,12 +169,12 @@ The first supplies the actual intersections, their inclusions, normality, and
 residual embeddings. The geometric modules supply the same represented
 geometric scheme functor, original inverse-right actions, and derived torsor
 criteria. Scheme functoriality, equality of actual transporter elements, the
-fiber product's universal property and the published arbitrary-base-change
+fiber product's universal property and the arbitrary-base-change
 theorem prove all new fields. No external-source assertion is added here.
 
-This unit constructs geometric cover comparisons for the fixed original
-lattice. It does not yet construct an associated-sheaf comparison from these
-covers, compare a separately chosen lattice at `V`, or prove independence of
-all coarse levels. Representability, small-level existence and the remaining
-exact global Harris arithmetic and canonical-model obligations are still part
-of the containing task's unfinished scope.
+This module constructs geometric cover comparisons for the fixed original
+lattice. It does not construct an associated-sheaf comparison from these
+covers (that comparison is in `HarrisTaylorCMGeometricCoarseAssociatedSystem`),
+compare a separately chosen lattice at `V`, or prove independence of all coarse
+levels. Representability, small-level existence and the exact global Harris
+arithmetic and canonical-model assertions are not treated in this module.

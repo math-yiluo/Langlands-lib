@@ -1,7 +1,5 @@
 # Refined opposite exponents through arbitrary Jacquet subquotients
 
-Author: Worker 514.
-
 The theorem
 `Langlands.glOppositeJacquetSubquotientExponentInheritance.{uField,uSource,uSubquotient}`
 proves exactly the published proposition

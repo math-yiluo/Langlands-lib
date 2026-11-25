@@ -1,7 +1,8 @@
 # Actual contragredients and finite-index induction
 
-Worker 1763 constructs the dual-induction comparison needed for task
-`e945d920-df9f-446c-9528-b488a3bee609`.
+This module constructs the dual-induction comparison used in
+`Langlands.VirtualRepresentation.ExactInductionDual`, which shows that exact
+duality commutes with finite-index induction.
 
 For a finite-dimensional representation of a finite-index subgroup,
 `induceDualPairing` pairs its induced algebraic dual with its induced original

@@ -1,7 +1,5 @@
 # Exact coefficients for generalized normalized Jacquet exponents
 
-Author: Worker 1680.
-
 This internal supporting derivation connects the actual normalized Jacquet
 quotient to ordinary compact-compression eigen-coefficients. It uses the
 published localization, character twist, generalized character and compact

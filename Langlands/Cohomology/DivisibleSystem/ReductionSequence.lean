@@ -38,7 +38,7 @@ Milne's tensor-product argument:
   `inverseLimitHomologyComparison` in degrees `i` and `j` are isomorphisms;
   `inverseLimitReductionSequence_shortExact_of_finite` and
   `inverseLimitReductionSequence_shortExact_rep`: for `ℤ`-graded complexes of modules or of
-  representations with finite cohomology, given Worker 3's
+  representations with finite cohomology, given
   `FiniteCohomologyInverseLimitStatement` (used as a hypothesis).
 
 Not formalized: finite generation of `H^r(X, F)` over `ℤ_l`, and étale sheaves. Milne's

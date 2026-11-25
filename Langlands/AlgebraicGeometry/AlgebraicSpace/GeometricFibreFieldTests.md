@@ -44,6 +44,6 @@ fibre over `K`.
 The provenance is internal: these are actual pullback constructions and
 composite proofs from scheme-Yoneda relative surjectivity, point-map
 continuity and surjectivity, and the algebraic closure of a field. No
-external theorem or additional descent premise is assumed. This unit is
-infrastructure for the remaining connected-fibre clause; it does not prove
+external theorem or additional descent premise is assumed. This module is
+infrastructure for the connected-fibre clause; it does not prove
 eventual limit descent or complete `SpaceLimitPropertyDescentStatement`.

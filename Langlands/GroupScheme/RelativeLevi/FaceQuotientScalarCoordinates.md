@@ -1,6 +1,7 @@
 # Original scalars in actual component quotient coordinates
 
-This internal Task 7200 adapter constructs the actual linear equivalence that
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals constructs the actual linear equivalence that
 normalizes one original lifted quotient module chart to its original finite
 free component module sections. It uses only the prescribed canonical module
 composition comparison and the actual module piece isomorphism. The earlier

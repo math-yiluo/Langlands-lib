@@ -1,7 +1,5 @@
 # Scalar restriction of associated coefficient sheaves
 
-Author: Worker 13.
-
 This module constructs the scalar restriction comparison for the actual
 associated invariant sheaf. It uses an arbitrary Grothendieck site with binary
 products, a genuine cover object with group action, a homomorphism of

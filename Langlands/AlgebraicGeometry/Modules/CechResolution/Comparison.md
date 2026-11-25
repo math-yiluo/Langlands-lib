@@ -1,7 +1,5 @@
 # Čech cochains compute actual derived `R`-module sections
 
-Author: Worker 958.
-
 Module `Langlands.AlgebraicGeometry.Modules.CechResolution.Comparison`, namespace
 `Langlands.AlgebraicGeometry.Modules.CechResolution`. It defines the `ℕ`-indexed complex of
 `R`-modules formed by the alternating Čech cochains of the Anthropic FLT port and proves that,

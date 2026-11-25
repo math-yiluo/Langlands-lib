@@ -1,7 +1,7 @@
 # Ordered parabolic orbits indexed by minimal representatives
 
 Module: `Langlands.Representation.Aubert.General.RationalGeometricOrbitOrdering`,
-namespace `Langlands.Aubert.General.RationalPointFamily`. Author: Worker 4021.
+namespace `Langlands.Aubert.General.RationalPointFamily`.
 
 This module works with the actual standard rational-point families. It shows
 that the inverses of the lifts of the minimal representatives of
@@ -11,7 +11,8 @@ these lifts.
 
 Every result here assumes the published proposition
 `StandardParabolicPointsStatement` as an explicit premise `hPoints`, which this
-module does not prove. Its proof is a separate task (Task 3790). The other
+module does not prove. Its proof is
+`GroupScheme.standardParabolicPointsStatement_proof`, in its own module. The other
 premises are:
 
 - connected reductivity, the maximal split torus and the generic cocharacter;

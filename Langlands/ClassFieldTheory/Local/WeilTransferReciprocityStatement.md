@@ -1,8 +1,5 @@
 # Local Weil transfer and field inclusion
 
-Authors: Worker 1828 (the supplied Lean formula) and Worker 1691 (this
-statement pair and original-source comparison).
-
 `Langlands.LocalClassField.ExtensionWeilTransferReciprocityStatement.{u,v}`
 is a proposition definition stating the transfer/inclusion square for geometric
 local Weil reciprocity. This module supplies a statement target. It does not
@@ -114,13 +111,14 @@ local Weil groups and their already constructed injective, finite-index
 extension map. It does not assume that profinite theorem, a comparison
 isomorphism, or the existence of normalized candidates. Comparing the
 Weil and Galois transfers through their actual projection maps is one
-possible route for a later proof; no such comparison is proved here.
+possible route for a proof; no such comparison is proved here.
 Likewise, the common-closure `TransferRelation` in
 [ReciprocitySystem](ReciprocitySystem.md) describes the same mathematical
 compatibility for fixing subgroups in a common closure, rather than
 supplying a proof for these separately packaged Weil groups.
 
-The Lean formula was supplied by Worker 1828. Its translation to these
+The translation of the Lean formula to these
 actual field embeddings and inverse reciprocity coordinates is documented
-above; it is not a verbatim formula in Serre's notation. A later proof can
-target the proposition defined here without strengthening its premises.
+above; it is not a verbatim formula in Serre's notation. The proposition
+defined here is proved, without strengthening its premises, as
+`extensionWeilTransferReciprocity` in `WeilTransferReciprocityProof`.

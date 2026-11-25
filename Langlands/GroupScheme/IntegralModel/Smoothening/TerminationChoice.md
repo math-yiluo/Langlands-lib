@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: adapted generators of the augmentation ideal
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. It chooses the
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. It chooses the
 generators used in the defect count of `TerminationCore`. The argument is internal to this project.
 
 Namespace: `Langlands.GroupScheme.IntegralModel.Smoothening.Termination`.

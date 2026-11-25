@@ -1,6 +1,6 @@
 # Inductions of a supercuspidal representation along parabolics with the same Levi
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviSupercuspidalInductionSameLeviStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviSupercuspidalInductionSameLeviStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.LeviSupercuspidalInductionSameLeviStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviSupercuspidalInductionSameLeviStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.5.4, Corollary, printed p.175 / PDF p.181, with its proof on the same page. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation, the Corollary says: let `(ρ, W)` be an irreducible supercuspidal representation of a Levi subgroup `M` of `G`.
 
@@ -28,7 +28,7 @@ Here `i_P^G ρ = (leviInductionFunctor p l r hp hr hl hmul).obj ρ` and `i_Q^G �
 ## Interfaces
 
 - `leviInductionFunctor` is the published normalized parabolic induction. For `Q`, the representation `ρ` of `M(F)` carries the canonical topology `leviPointTopology l hl`, which depends only on `M`, so the same `ρ` is induced along `P` and along `Q`.
-- `HaveSameJordanHolderFactors` is Worker 14's published predicate of `Filtration.ObjectDefinitions`: composition series of the same length whose graded quotients are isomorphic after a permutation. It is applied to the underlying representations.
+- `HaveSameJordanHolderFactors` is the published predicate of `Filtration.ObjectDefinitions`: composition series of the same length whose graded quotients are isomorphic after a permutation. It is applied to the underlying representations.
 - `SmoothRep.IsSubquotient`, `SmoothRep.IsIrreducible` and `SmoothRep.hom` are the published smooth-representation interfaces.
 - Supercuspidality is as in the published `MaximalLeviSupercuspidalReducibilityStatement`, following Renard's definition (VI.2.1, printed p.137 / PDF p.143).
 
@@ -41,8 +41,8 @@ Here `i_P^G ρ = (leviInductionFunctor p l r hp hr hl hmul).obj ρ` and `i_Q^G �
 
 ## Remaining obligations
 
-The proof is a separate obligation. The source derives points 1 and 2 from the Theorem of VI.5.4, applied with `ρ' = ρ` and the trivially associated cuspidal data. Its represented form, without the numerical bounds, is `LeviSupercuspidalInductionAssociationStatement`. Point 3 uses Corollary VI.2.1 and the Theorem. Corollary VI.2.1 is published, with its proof, as `Langlands.Aubert.General.RationalPointFamily.RationalCuspidalEmbeddingStatement` for standard parabolics of the identity-test rational-point group. A represented form of it is not stated.
+The proof is a separate obligation. The source derives points 1 and 2 from the Theorem of VI.5.4, applied with `ρ' = ρ` and the trivially associated cuspidal data. Its represented form, without the numerical bounds, is `LeviSupercuspidalInductionAssociationStatement`. Point 3 uses Corollary VI.2.1 and the Theorem. Corollary VI.2.1 is published, with its proof, as `Langlands.Aubert.General.RationalPointFamily.RationalCuspidalEmbeddingStatement` for standard parabolics of the identity-test rational-point group. Its represented form is `LeviCuspidalEmbeddingStatement`, proved as `leviCuspidalEmbedding`.
 
 ## Provenance
 
-This is a derived statement of the Corollary of VI.5.4 for the represented-parabolic interface. The functors are the published `leviInductionFunctor` and `jacquetFunctor`, and Jordan–Hölder equivalence is Worker 14's published object-filtration predicate.
+This is a derived statement of the Corollary of VI.5.4 for the represented-parabolic interface. The functors are the published `leviInductionFunctor` and `jacquetFunctor`, and Jordan–Hölder equivalence is the published object-filtration predicate of `Filtration.ObjectDefinitions`.

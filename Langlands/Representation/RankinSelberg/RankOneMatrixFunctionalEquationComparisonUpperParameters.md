@@ -1,7 +1,5 @@
 # Upper-entry and first-column parameters for the upper affine slice
 
-Author: Worker 623.
-
 This internally derived helper gives exact product parameters for the upper
 first-column affine slice. The field has a second countable topological-ring
 structure and its Borel measurable space; the supplied scalar additive Haar

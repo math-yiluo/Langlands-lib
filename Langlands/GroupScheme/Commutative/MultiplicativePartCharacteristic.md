@@ -1,6 +1,6 @@
 # Homomorphisms from multiplicative-type to unipotent groups after base change
 
-This internal derived unit completes Milne 2017, Theorem 16.13(a). It adds the
+This module completes Milne 2017, Theorem 16.13(a). It adds the
 characteristic clause to the existence result of
 `Commutative/MultiplicativePartExistence`.
 

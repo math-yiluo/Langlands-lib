@@ -1,7 +1,5 @@
 # The reductive simple-factor decomposition from the semisimple one
 
-Worker 160 (Task 6633).
-
 This module proves that Conrad's decomposition theorem for semisimple groups
 (Theorem 5.1.19) implies its reductive version (Exercise 5.5.2), both over a field.
 It does not prove either statement. It adds no axioms. The theorem uses only `propext`,
@@ -179,5 +177,7 @@ and the helpers in this module.
 ## Scope
 
 This module does not prove `SimpleFactorDecompositionStatement` or
-`ReductiveSimpleFactorDecompositionStatement`. Once the first is proved, applying
-`reductiveSimpleFactorDecomposition_reduction` to it proves the second.
+`ReductiveSimpleFactorDecompositionStatement`. The first is proved as
+`simpleFactorDecomposition` (`Reductive.SimpleFactorDecompositionProof`); applying
+`reductiveSimpleFactorDecomposition_reduction` to it proves the second, as
+`reductiveSimpleFactorDecomposition` (`Reductive.ReductiveSimpleFactorDecompositionProof`).

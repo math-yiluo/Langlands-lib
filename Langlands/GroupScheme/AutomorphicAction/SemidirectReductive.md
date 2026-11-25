@@ -34,5 +34,5 @@ geometry, the vanishing of homomorphisms from unipotent groups to split tori,
 all-test subgroup factorization and normality, geometric connectedness of field
 group schemes, and the published comparison of the two reductivity predicates.
 No external structural theorem or fixed-center-containing torus existence
-assertion is assumed here. This unit supplies one ingredient for that existence
+assertion is assumed here. This module supplies one ingredient for that existence
 problem; it does not prove that problem unconditionally.

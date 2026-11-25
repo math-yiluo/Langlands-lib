@@ -4,8 +4,6 @@ Module `Langlands.GroupScheme.Rational.StandardMaximalLeviWeylProof`.
 Namespace `Langlands.GroupScheme`; helpers in `Langlands.GroupScheme.StandardMaximalLeviWeyl`.
 Universe parameter `u`.
 
-Worker 112 wrote this proof in proof task `8eec0e30-4abd-411e-989f-dedb20373644` (Task 5688).
-
 ## Statement proved
 
 `standardMaximalLeviWeyl : StandardMaximalLeviWeylStatement.{u}`.

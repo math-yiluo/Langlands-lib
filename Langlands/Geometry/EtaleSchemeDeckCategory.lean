@@ -220,20 +220,20 @@ def sectionsConsumer : Datum X G ⥤ (ModuleSheaf X R ⥤ Action (ModuleCat.{u} 
 /-- Each action is pullback along the original automorphism with its canonical
  inverse-image coefficient, rather than an independently chosen action. -/
 theorem derivedConsumer_obj_obj_ρ (A : Datum X G) (M : ModuleSheaf X R) (g : G) :
-    (((derivedConsumer R).obj A).obj M).ρ g =
+    ((((derivedConsumer R).obj A).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.sheafDerivedPullbackWithCoefficients (aut A.action g).hom R
         ((coefficientIso A.action A.projection A.over_base R g).hom.app M) :=
   derivedFunctor_obj_ρ A.action A.projection A.over_base R M g
 
 theorem cohomologyConsumer_obj_obj_ρ (n : ℕ) (A : Datum X G)
     (M : ModuleSheaf X R) (g : G) :
-    (((cohomologyConsumer R n).obj A).obj M).ρ g =
+    ((((cohomologyConsumer R n).obj A).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.cohomologyPullbackWithCoefficients (aut A.action g).hom R n
         ((coefficientIso A.action A.projection A.over_base R g).hom.app M) :=
   cohomologyFunctor_obj_ρ A.action A.projection A.over_base R n M g
 
 theorem sectionsConsumer_obj_obj_ρ (A : Datum X G) (M : ModuleSheaf X R) (g : G) :
-    (((sectionsConsumer R).obj A).obj M).ρ g =
+    ((((sectionsConsumer R).obj A).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.sectionsPullbackWithCoefficients (aut A.action g).hom R
         ((coefficientIso A.action A.projection A.over_base R g).hom.app M) :=
   sectionsFunctor_obj_ρ A.action A.projection A.over_base R M g

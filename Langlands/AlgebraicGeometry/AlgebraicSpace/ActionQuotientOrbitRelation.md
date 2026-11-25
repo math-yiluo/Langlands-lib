@@ -1,7 +1,5 @@
 # Points identified by an fppf action quotient are locally in one orbit
 
-Author: Worker 193.
-
 This helper module serves `ActionQuotientFinitenessProof`. Let `G` be a group scheme over a
 scheme `S`, acting by `b : SchemeAction G Z` on a scheme `Z` over `S`. Let
 `π : h_Z ⟶ Q` be an fppf sheaf quotient of the action (`IsFppfActionQuotient b π`). The

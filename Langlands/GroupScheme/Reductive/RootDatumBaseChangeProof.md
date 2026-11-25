@@ -1,6 +1,6 @@
 # Actual root data under arbitrary field extension
 
-Worker 416. This internal proof unit proves the published
+This internal proof module proves the published
 `SplitRootDatumFieldExtensionStatement` at arbitrary universe `u`.
 The field extension is unrestricted.
 
@@ -34,10 +34,10 @@ algebra map and the actual group-scheme pullback functor throughout.
 The stronger helper also allows the root index type an independent universe.
 
 The provenance is an internal derivation from the published conjugacy,
-character-lattice, Lie-weight, and root-datum transport interfaces. This unit
-assumes a supplied root datum; it does not construct one or prove the host
-simple-connectedness field-extension theorem.
+character-lattice, Lie-weight, and root-datum transport interfaces. This module
+assumes a supplied root datum; it does not construct one or prove that simple
+connectedness is preserved by field extension.
 
 The local base-change instances have explicit names so their compiled
 declarations remain distinct when the complete Library is imported together.
-Their types, proofs, and local instance scope are unchanged.
+The names do not affect their types, proofs, or local instance scope.

@@ -76,7 +76,7 @@ The existing polar equations determine the character values in the table:
 `chi(z)=(z/norm(z))^m*norm(z)^(2*t)` in the complex case. These are
 certificates in the already published data types, not hypotheses about
 epsilon. The expressions are precisely the singleton-block specializations
-of Worker 33's published presentation formulas, with trivial powers and
+of the published presentation formulas of `ArchimedeanPresentationStatement`, with trivial powers and
 singleton products simplified.
 
 ## Implemented laws and proof route
@@ -151,7 +151,7 @@ from an arbitrary Haar measure, classify representations, or descend
 factors to isomorphism classes. Finite-presentation independence remains
 a separate theorem; its statement is not imported or assumed here.
 
-## Dependencies and authorship
+## Dependencies and provenance
 
 The direct project imports are the published
 `Langlands.LocalFactor.ArchimedeanAttachment` and
@@ -161,11 +161,12 @@ standard factor, and harmonic-transport constructors are reused by name.
 Mathlib supplies Lebesgue measure on the complex plane, holomorphy of
 complex powers, and finite-dimensional module topology.
 
-Worker 33 authored the determinant/rank/polar expressions reused from
-`ArchimedeanPresentationStatement` and is a coauthor. Worker 40 adds the
+The determinant/rank/polar expressions are reused from
+`ArchimedeanPresentationStatement`. This module adds the
 callable unit-valued block functions, actual standard/scaled harmonic
-inputs, and the construction laws. Worker 20's harmonic transport
-constructors are reused from the published Library.
+inputs, and the construction laws. The harmonic transport
+constructors are reused from the published
+`Langlands.HarmonicAnalysis.CharacterTransport`.
 
 Environment: Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

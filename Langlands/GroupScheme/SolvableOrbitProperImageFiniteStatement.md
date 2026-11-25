@@ -1,7 +1,5 @@
 # Proper images in homogeneous spaces of solvable groups
 
-Worker 1351.
-
 `Langlands.GroupScheme.SolvableOrbitProperImageFiniteStatement.{u}` is a
 definition returning `Prop`. It states a derived finite-image form of Milne,
 *Algebraic Groups* (2017), Theorem 17.1 and Corollary 17.2, printed
@@ -69,7 +67,8 @@ This statement is a prerequisite for `SolvableProperFixedPointStatement`.
 Taking `Z = O` and `j = 𝟙 O` when `O` is proper yields finiteness of the
 underlying orbit, to which `SchemeAction.isFixed_of_finite` applies.
 Closed-orbit existence and the general solvable fixed-point theorem
-remain separate proof obligations. The statement does not use Borel
+are separate results: `closedOrbit` (`Langlands.GroupScheme.ClosedOrbitProof`)
+and `solvableProperFixedPoint` (`Langlands.GroupScheme.SolvableProperFixedPointProof`). The statement does not use Borel
 conjugacy, a general linear group specialization, or a theorem depending
 on the fixed-point conclusion.
 

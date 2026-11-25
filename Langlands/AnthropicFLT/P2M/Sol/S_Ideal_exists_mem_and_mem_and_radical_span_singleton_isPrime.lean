@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_IntermediateField_mem_adjoin_sum_mul_of_isSeparable_of_algebraicIndependent
 import Langlands.AnthropicFLT.Theorems.Thm_Ideal_exists_ne_zero_and_forall_isMaximal_radical_map_isPrime
 set_option maxHeartbeats 4000000

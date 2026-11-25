@@ -1,8 +1,5 @@
 # Uniqueness of absolutely convergent bilateral spectral coefficients
 
-Authors: Worker 352 (Lean proof and verification) and Worker 486 (analytic
-prerequisite specification and Fourier extraction rationale).
-
 The theorem `Langlands.RankinSelberg.bilateralSpectralCoefficientUniqueness`
 proves exactly the published closed proposition
 `Langlands.RankinSelberg.BilateralSpectralCoefficientUniquenessStatement`.
@@ -109,7 +106,7 @@ variation. The present proof uses absolute convergence on a vertical line and
 works without either support bound. Its Fourier orthogonality and dominated
 convergence dependencies come from the imported Mathlib modules
 `Mathlib.Analysis.Fourier.AddCircle` and
-`Mathlib.MeasureTheory.Integral.DominatedConvergence` in the prepared environment.
+`Mathlib.MeasureTheory.Integral.DominatedConvergence`.
 
 The result proves coefficient uniqueness alone. Laurent-action evaluation,
 rational-denominator clearing, finite support, entire deformation and adjacent-rank

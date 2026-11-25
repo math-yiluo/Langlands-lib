@@ -1,6 +1,6 @@
 # Reflectors onto split properties of smooth representations
 
-Worker 4814. This is a supporting unit for Task 5419, which proves Renard VI.7.2,
+This is a supporting module for Renard VI.7.2,
 second Lemma (`Langlands.CuspidalSupport.BernsteinCuspAdjunctionStatement`). It
 supplies the cuspidal-part functor `W ↦ W_sc` and its exactness, in an abstract
 form. It does not prove the target statement, and it does not prove that the

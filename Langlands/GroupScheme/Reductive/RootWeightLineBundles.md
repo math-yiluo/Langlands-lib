@@ -59,8 +59,9 @@ Assume `hPic : ∀ L : LineBundle S, Nonempty (L ≅ LineBundle.trivial S)`.
 
 ## Provenance
 
-This module is the construction required by the task (a prerequisite of the parent task, not a
-proof of the parent isomorphism statement). The root-weight sheaves, their affine comparisons and
+This module is a construction used by the proof of `ReductiveSplitTorusBorelIsomorphismStatement`
+in `Langlands.GroupScheme.Reductive.SplitTorusBorelIsomorphismProof`; it is not itself a proof of
+that isomorphism statement. The root-weight sheaves, their affine comparisons and
 coherence are built from the actual group and torus. No weight-sheaf decomposition, root line
 bundle, cocycle or compatible frame is taken as a hypothesis. The only Picard input is the
-parent's exact hypothesis that line bundles on `S` are trivial.
+exact hypothesis of that statement that line bundles on `S` are trivial.

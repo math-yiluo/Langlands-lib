@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_AlgebraicGeometry_Scheme_Modules_exists_twoTermComplex
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_TwoChartCechSectionsOf
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_CoherentBaseChange
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_exists_twoTermComplex_sectionsEquiv_forall_baseChange

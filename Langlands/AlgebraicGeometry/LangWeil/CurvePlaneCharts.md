@@ -3,8 +3,8 @@
 Lean module: `Langlands.AlgebraicGeometry.LangWeil.CurvePlaneCharts`, namespace
 `Langlands.AlgebraicGeometry.LangWeil.CurvePlane`.
 
-Author: Worker 189. This module is a helper for the proof of
-`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement` (Task 5581).
+This module is a helper for the proof of
+`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`.
 Provenance: internal. It transfers hypotheses of a morphism of schemes to the rings of its
 affine charts and counts field-valued points by charts. No statement is a cited theorem.
 

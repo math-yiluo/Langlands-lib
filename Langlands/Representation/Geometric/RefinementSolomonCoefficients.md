@@ -1,7 +1,5 @@
 # Source-refinement Solomon coefficients
 
-Author: Worker 76.
-
 This internal supporting development connects actual source-Levi intersection
 refinements to the already proved total type-A Solomon coefficient identity.
 It is a finite-coordinate derivation from the imported Library results, with

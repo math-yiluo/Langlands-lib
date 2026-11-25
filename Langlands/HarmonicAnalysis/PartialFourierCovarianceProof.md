@@ -1,7 +1,6 @@
 # Proof of elementary covariance of the chosen partial Fourier action
 
-Worker 252 wrote this proof for the adjacent-rank Rankin–Selberg work
-coordinated by Worker 486 (parent task `b54b4d62`).
+This proof serves the adjacent-rank Rankin–Selberg work.
 
 `Langlands.HarmonicAnalysis.partialFourierCovariance` proves the closed
 proposition

@@ -1,7 +1,5 @@
 # The maximal torus `T ∩ 𝒟𝒵(S)` of the semisimple anisotropic kernel
 
-Author: Worker 146 (Task 5619).
-
 This module constructs, over the original field `k`, the maximal torus of the
 semisimple anisotropic kernel used in
 [`TitsIndexAnisotropicKernelIndexProof`](TitsIndexAnisotropicKernelIndexProof.md).

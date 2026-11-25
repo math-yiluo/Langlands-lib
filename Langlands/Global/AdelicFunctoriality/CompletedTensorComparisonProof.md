@@ -55,9 +55,10 @@ infinite local-degree sum. The final module imports the published statement
 and all definitions unchanged and introduces no additional hypotheses or
 axioms.
 
-This is an internal assembly of published results. Worker 52 wrote the
-assembly; the finite reduction incorporates Worker 50's original reduction
-and Worker 52's global prime-index and ramification-sum arguments. The
+This is an internal assembly of published results. The finite reduction
+`FiniteComparisonReduction` combines the reduction through
+`finiteTensorMap_bijective_of_degree_lower_bound` with the global
+prime-index and ramification-sum arguments. The
 separately published local arithmetic proof is reused by its Lean name.
 
 The original mathematical source is Andre Weil, *Basic Number Theory*,

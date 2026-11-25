@@ -1,7 +1,5 @@
 # The infinite adelic action on `L²([G])`
 
-Author: Worker 112.
-
 The published module `GroupSchemeRestrictionQuotientL2` constructs the right
 regular representation `rationalQuotientL2RightAction` on `L²` of the
 restriction split-centre quotient `RestrictionSplitCentre.Quotient F G S j`.
@@ -115,8 +113,8 @@ formulated here.
 
 This is an internal restriction of the published bounded action on
 `L²([G])` along the published inclusion of the infinite adelic points. It
-follows the published positive-torus `GroupSchemeQuotientL2InfiniteAction` of
-Worker 116. The proofs use the published `AdelicGroupPoints.factors_commute`,
+follows the published positive-torus `GroupSchemeQuotientL2InfiniteAction`.
+The proofs use the published `AdelicGroupPoints.factors_commute`,
 `rationalQuotientL2OrbitMap`, `quotientL2Equiv_rightAction` and
 `compactIsometricAverage_intertwiner`, and Mathlib's
 `Continuous.stronglyMeasurable`. No external theorem is asserted.

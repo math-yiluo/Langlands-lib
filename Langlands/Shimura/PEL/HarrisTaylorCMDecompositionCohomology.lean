@@ -125,7 +125,7 @@ def cmSmallLevelDecompositionChangeIso (d : ℕ)
         associativity comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor q existence geometry hRigid criterion R w d
         j k).hom.app M).hom =
-      ((galoisCohomologyFunctor d).obj M).ρ (DecompositionGroupAction.localClosureChange w j k) :=
+      (((galoisCohomologyFunctor d).obj M).ρ (DecompositionGroupAction.localClosureChange w j k)).asHom :=
   rfl
 
 /-- The local Galois action commutes with the action of `GG(A_f)ᵐᵒᵖ`. -/
@@ -133,12 +133,12 @@ theorem cmSmallLevelDecompositionCohomology_commutes (d : ℕ)
     (j : ClosureEmbedding (NumberField.FinitePlace.embedding (K := F) w))
     (M : ModuleSheaf base R) (g : LocalGroup w) (x : G)
     (y : ((decompositionFunctor d j).obj M).V) :
-    SmoothRep.hom (((decompositionFunctor d j).obj M).ρ g)
+    SmoothRep.hom (((decompositionFunctor d j).obj M).ρ g).asHom
         (((decompositionFunctor d j).obj M).V.obj.ρ x y) =
       ((decompositionFunctor d j).obj M).V.obj.ρ x
-        (SmoothRep.hom (((decompositionFunctor d j).obj M).ρ g) y) :=
+        (SmoothRep.hom (((decompositionFunctor d j).obj M).ρ g).asHom y) :=
   Representation.IntertwiningMap.isIntertwining _ _
-    (SmoothRep.hom (((decompositionFunctor d j).obj M).ρ g)) x y
+    (SmoothRep.hom (((decompositionFunctor d j).obj M).ρ g).asHom) x y
 
 end SmallLevel
 
@@ -197,8 +197,8 @@ def cmPrimeToDecompositionChangeIso (d : ℕ)
         associativity comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor q existence geometry hRigid criterion R
         m hm K₀ w d j k).hom.app M).hom =
-      ((primeToGaloisCohomologyFunctor d).obj M).ρ
-        (DecompositionGroupAction.localClosureChange w j k) :=
+      (((primeToGaloisCohomologyFunctor d).obj M).ρ
+        (DecompositionGroupAction.localClosureChange w j k)).asHom :=
   rfl
 
 /-- The local Galois action commutes with the action of `GG(A_f^{(m)})ᵐᵒᵖ`. -/
@@ -207,12 +207,12 @@ theorem cmPrimeToDecompositionCohomology_commutes (d : ℕ)
     (M : ModuleSheaf base R) (g : LocalGroup w)
     (x : (D.rationalInvolution.PrimeToPoints m)ᵐᵒᵖ)
     (y : ((primeToDecompositionFunctor d j).obj M).V) :
-    SmoothRep.hom (((primeToDecompositionFunctor d j).obj M).ρ g)
+    SmoothRep.hom (((primeToDecompositionFunctor d j).obj M).ρ g).asHom
         (((primeToDecompositionFunctor d j).obj M).V.obj.ρ x y) =
       ((primeToDecompositionFunctor d j).obj M).V.obj.ρ x
-        (SmoothRep.hom (((primeToDecompositionFunctor d j).obj M).ρ g) y) :=
+        (SmoothRep.hom (((primeToDecompositionFunctor d j).obj M).ρ g).asHom y) :=
   Representation.IntertwiningMap.isIntertwining _ _
-    (SmoothRep.hom (((primeToDecompositionFunctor d j).obj M).ρ g)) x y
+    (SmoothRep.hom (((primeToDecompositionFunctor d j).obj M).ρ g).asHom) x y
 
 /-- The comparison from the prime-to-`m` cohomology to the shrinking-level cohomology of the
 actual CM tower commutes with the local Galois action. -/
@@ -227,11 +227,11 @@ theorem cmPrimeToDecompositionCohomologyComparison_apply (d : ℕ)
           unitCoherence associativity comparison symmetry stability square universality
           dualityNaturality polarizationStability compatibility h htor q existence geometry
           hRigid criterion R M) d).hom.hom
-        ((((primeToDecompositionFunctor d j).obj M).ρ g).hom.hom x) =
+        ((((primeToDecompositionFunctor d j).obj M).ρ g).asHom.hom.hom x) =
       (((cmSmallLevelDecompositionCohomologyFunctor D C preservation composition unitCoherence
           associativity comparison symmetry stability square universality dualityNaturality
           polarizationStability compatibility h htor q existence geometry hRigid criterion R w
-          d j).obj M).ρ g).hom.hom
+          d j).obj M).ρ g).asHom.hom.hom
         ((cmPrimeToCohomologyComparison D C preservation composition unitCoherence
           associativity comparison symmetry stability square universality dualityNaturality
           polarizationStability compatibility h htor q m hm K₀ existence geometry hRigid
@@ -288,8 +288,8 @@ theorem cmPrimeToDecompositionHeckeModule_ρ_smul (d : ℕ)
     (M : ModuleSheaf base R) (g : LocalGroup w)
     (a : LevelHecke.LevelHeckeAlgebra R K'.subgroup)
     (x : ((primeToDecompositionHeckeModuleFunctor d j).obj M).V) :
-    (((primeToDecompositionHeckeModuleFunctor d j).obj M).ρ g).hom (a • x) =
-      a • (((primeToDecompositionHeckeModuleFunctor d j).obj M).ρ g).hom x :=
+    (((primeToDecompositionHeckeModuleFunctor d j).obj M).ρ g).asHom.hom (a • x) =
+      a • (((primeToDecompositionHeckeModuleFunctor d j).obj M).ρ g).asHom.hom x :=
   map_smul _ a x
 
 /-- The endomorphism of the Hecke module of `K'`-fixed vectors by which the chosen geometric
@@ -319,7 +319,7 @@ theorem cmPrimeToHeckeFrobenius_eq_of_lift (d : ℕ) (M : ModuleSheaf base R)
     (hM : DecompositionGroupAction.IsUnramifiedAlong _ w
       ((primeToGaloisHeckeModuleFunctor d).obj M) j)
     {g : LocalGroup w} (hg : IsGeometricFrobeniusLift w g) :
-    ((primeToDecompositionHeckeModuleFunctor d j).obj M).ρ g = heckeFrobenius d M j :=
+    ((primeToDecompositionHeckeModuleFunctor d j).obj M).ρ g = End.of (heckeFrobenius d M j) :=
   DecompositionGroupAction.geometricFrobenius_eq_of_lift hM hg
 
 /-- Natural transformations of sheaves on `Spec F` intertwine the Frobenius endomorphisms. -/
@@ -333,10 +333,10 @@ theorem cmPrimeToHeckeFrobenius_naturality (d : ℕ) {M N : ModuleSheaf base R} 
 element of `Gal(F̄/F)` relating them. -/
 theorem cmPrimeToHeckeFrobenius_conj (d : ℕ) (M : ModuleSheaf base R)
     (j k : ClosureEmbedding (NumberField.FinitePlace.embedding (K := F) w)) :
-    heckeFrobenius d M k ≫ ((primeToGaloisHeckeModuleFunctor d).obj M).ρ
-        (DecompositionGroupAction.localClosureChange w j k) =
-      ((primeToGaloisHeckeModuleFunctor d).obj M).ρ
-        (DecompositionGroupAction.localClosureChange w j k) ≫ heckeFrobenius d M j :=
+    heckeFrobenius d M k ≫ (((primeToGaloisHeckeModuleFunctor d).obj M).ρ
+        (DecompositionGroupAction.localClosureChange w j k)).asHom =
+      (((primeToGaloisHeckeModuleFunctor d).obj M).ρ
+        (DecompositionGroupAction.localClosureChange w j k)).asHom ≫ heckeFrobenius d M j :=
   DecompositionGroupAction.geometricFrobenius_conj _ j k
 
 end PrimeTo

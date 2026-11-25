@@ -1,7 +1,5 @@
 # Intrinsic and ambient restrictions on contained ordinary opens
 
-Author: Worker 36.
-
 This internal construction compares actual restrictions over ordinary opens
 contained in a full affinoid domain. Its parameters are a complete ultrametric
 normed field `K`, an actual presented affinoid algebra `A` over `K`, and

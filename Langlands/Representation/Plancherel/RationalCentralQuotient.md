@@ -1,7 +1,5 @@
 # Actual central quotients and the rational-character valuation image
 
-Author: Worker 200.
-
 This derived construction implements the quotient step in Renard,
 *Représentations des groupes réductifs p-adiques*, 9 July 2026 edition,
 V.2.6, printed p.108 (PDF p.114), source ID
@@ -9,7 +7,7 @@ V.2.6, printed p.108 (PDF p.114), source ID
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The proposition deduces finiteness of \(G/({}^0G A_G)\) from the preceding
 lemma's finite-index assertion about the valuation image of the split center.
-The present unit constructs the quotient comparison and proves this implication.
+The present module constructs the quotient comparison and proves this implication.
 It retains finite index as an explicit premise; it does not prove the preceding
 lemma for general reductive groups.
 
@@ -100,7 +98,7 @@ the constructed equivalence transfers finiteness to the actual source quotient.
 This proves the quotient step of Renard's proposition with that premise visible.
 
 The actual split-component existence and finite-index valuation-image theorem
-remain with the structural owners. In particular, finite generation of the
+are not proved here. In particular, finite generation of the
 character group or finite cokernel of character restriction alone is not
 silently substituted for this premise. No central compactness, abstract-center
 comparison, topological quotient equivalence, Haar identity, stabilizer

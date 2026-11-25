@@ -1,6 +1,6 @@
 # Normalized inverse kernels on finite-dimensional manifold groups
 
-Worker 116 states
+This module states
 `Langlands.Analysis.SmoothNormalizedInverseKernelStatement`.
 The model space and group have two independent universes.
 

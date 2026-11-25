@@ -49,7 +49,7 @@ unipotent right-invariance conditions retained. Full Whittaker type is
 assumed for both original representations. Zero functionals and
 coefficients are allowed, as is actual rank one. The two row tests are
 arbitrary Schwartz–Bruhat functions. The parameter `q` is an arbitrary
-nonzero complex unit, as in the imported algebraic theorem; this unit
+nonzero complex unit, as in the imported algebraic theorem; this module
 asserts no residue-cardinality identification.
 
 The provenance is internal composition of the named published results.

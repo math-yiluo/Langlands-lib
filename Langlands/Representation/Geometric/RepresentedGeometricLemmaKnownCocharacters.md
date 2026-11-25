@@ -2,7 +2,7 @@
 
 This internal construction preserves the original source and target parabolic, rational Levi and geometric radical maps. It constructs an actual `GeometricLemmaIntersectionDatum` from a torus-adapted representative when one cocharacter already realizes each original triple. It also constructs the simultaneous `DynamicRealization` in any such datum's fixed common torus. The construction does not require the universal `ParabolicDynamicStatement`. It assumes, rather than proves, the displayed representative and common maximal split torus; no finiteness or compactness conclusion is included.
 
-The field and all group schemes use the arbitrary universe `u`. A topology on the field is retained because the actual intersection-datum interface includes a rational-point homeomorphism. There are no local-field, locally compact, characteristic or split-ambient-group restrictions in this unit. The ambient group is affine. The given triples have their original parabolicity, rational-Levi, geometric-radical and multiplication witnesses.
+The field and all group schemes use the arbitrary universe `u`. A topology on the field is retained because the actual intersection-datum interface includes a rational-point homeomorphism. There are no local-field, locally compact, characteristic or split-ambient-group restrictions in this module. The ambient group is affine. The given triples have their original parabolicity, rational-Levi, geometric-radical and multiplication witnesses.
 
 ## Actual intersection datum
 
@@ -20,6 +20,6 @@ The published `targetCommonTorusHom_comp` identifies the target ambient torus wi
 
 ## Provenance and boundary
 
-The provenance is internal composition of `RepresentedGeometricLemmaCommonTorus`, `RepresentedGeometricLemmaCommonCocharacterConstruction`, and the published range and dynamic-subgroup functoriality equalities. The generic `geometricLemmaIntersectionDatumOfTorusFactors` obtains original cocharacters by assuming the universal parabolic-dynamic statement. This unit instead uses original cocharacters already supplied by a consumer, which is useful when the source is a compatible root presentation and the output is a cocharacter. It does not prove the universal parabolic-dynamic assertion or remove that assertion from the existing generic theorem.
+The provenance is internal composition of `RepresentedGeometricLemmaCommonTorus`, `RepresentedGeometricLemmaCommonCocharacterConstruction`, and the published range and dynamic-subgroup functoriality equalities. The generic `geometricLemmaIntersectionDatumOfTorusFactors` obtains original cocharacters by assuming the universal parabolic-dynamic statement. This module instead uses original cocharacters already supplied by a consumer, which is useful when the source is a compatible root presentation and the output is a cocharacter. It does not prove the universal parabolic-dynamic assertion or remove that assertion from the existing generic theorem.
 
 There is no coefficient representation, admissibility assumption, finite-filtration conclusion or fixed-module finiteness assertion in these constructions. Existence of finite torus-adapted representatives, an ordering with open initial unions, and compactness of original target-intersection parabolic quotients are separate obligations for the native Jacquet consumer.

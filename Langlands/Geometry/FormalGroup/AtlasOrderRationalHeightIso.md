@@ -1,6 +1,6 @@
 # Full-order atlas isomorphism transport of actual local rational heights
 
-This internal unit transports actual full-order rational atlas maps and their
+This module transports actual full-order rational atlas maps and their
 local kernel-rank heights by specified source and target formal isomorphisms.
 It derives from the existing rational composition calculus, actual chart
 isomorphisms and `RationalHeightIso`; no new literature assertion is made.
@@ -36,5 +36,5 @@ acting ring `D` over `O`, finite coordinate types and actual atlas order actions
 with the specified cover equalities. `R`, `F` and tests share universe `v`;
 `O` and `D` may be in separate universes. The quasi-isogeny construction also
 retains the existing domain and fraction-field hypotheses on `O` and `F`.
-Covers need not be finite. Framed varying-base extension and its source-frame
-comparison remain further constructions.
+Covers need not be finite. Framed varying-base extension is constructed in
+`DrinfeldFramedBaseChange`; its source-frame comparison remains separate.

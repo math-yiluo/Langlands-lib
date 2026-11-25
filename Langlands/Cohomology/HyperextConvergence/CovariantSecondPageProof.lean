@@ -15,8 +15,8 @@ opposite `tOp` of the standard t-structure, of `op K` and `op A₀`,
 * the abutment `op K ⟶ (op A₀)⟦n⟧` is `ShiftedHom A₀ K n` (`abutmentAddEquiv`).
 
 The main step is an isomorphism `coheartPieceIso K q` from the object `coheartPiece K q` of
-`D(C)` underlying `heartPiece tOp (op K) q` to `H^q(K)` placed in degree `q`. It dualizes Worker
-61's `heartPieceIso` (module `Langlands.Cohomology.HyperextSecondPage`): the generic truncation
+`D(C)` underlying `heartPiece tOp (op K) q` to `H^q(K)` placed in degree `q`. It dualizes
+`heartPieceIso` (module `Langlands.Cohomology.HyperextSecondPage`): the generic truncation
 triangles `upperTriangle` and `heartTriangle` of that module, for `tOp` on `D(C)ᵒᵖ`, are turned
 into distinguished triangles of `D(C)` by Mathlib's `unop_distinguished` (`coupperTriangle`,
 `coheartTriangle`); their long exact cohomology sequences show that the maps

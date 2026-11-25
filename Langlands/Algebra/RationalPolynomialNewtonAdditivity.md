@@ -20,7 +20,8 @@ addition, subtraction, and finite-sum identities of this homomorphism.
 They concern the constructed truncations themselves, including truncations
 which do not reconstruct their input sequences.
 
-The same contribution includes `Modules/CoherentEulerPolynomialAdditivity`,
-which applies these numerical identities to actual coherent Euler sequences.
+`Langlands.AlgebraicGeometry.Modules.CoherentEulerPolynomialAdditivity`, ported
+together with this module,
+applies these numerical identities to actual coherent Euler sequences.
 These identities support coherent-filtration arguments; they assert no
 positive leading coefficient.

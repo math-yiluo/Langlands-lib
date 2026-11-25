@@ -96,8 +96,8 @@ equivalence and the identity with
 ## Use
 
 This is the analytic comparison needed by the equal-rank endpoint
-`Langlands.RankinSelberg.EqualRankRankOneExtensionLDivisibilityStatement`
-(task `82ed7f4d-388e-471f-8c3c-0f52ae4c1b28`). It replaces the strict-rank
+`Langlands.RankinSelberg.EqualRankRankOneExtensionLDivisibilityStatement`.
+It replaces the strict-rank
 JPSS Lemma 5.5 argument, which does not apply when the test and induced ranks
 coincide.
 

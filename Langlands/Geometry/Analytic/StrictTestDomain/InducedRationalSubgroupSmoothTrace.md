@@ -157,10 +157,10 @@ those existing constructions; the full-coset sum and numerical degree are
 proved by the explicit reindexing and cardinality substitution above. No
 external Harris or Berkovich theorem is claimed.
 
-This unit treats subgroup change with the rational presentation fixed and
+This module treats subgroup change with the rational presentation fixed and
 ordinary-open degree-zero smooth coefficient sheaves. It retains the
 original target local stable-neighbourhood premise. General rational-domain
 coverings, analytic and etale realization, Godement and higher derived
 traces, geometric compact-support comparison, arithmetic Hecke
-identification, Shimura specialization and Harris compatibility remain
-obligations of the broader task.
+identification, Shimura specialization and Harris compatibility are not
+treated in this module.

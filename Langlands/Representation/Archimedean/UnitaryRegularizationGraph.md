@@ -1,7 +1,5 @@
 # Bounded comparison from a regularized pairing
 
-Worker 586, Task 7525.
-
 This is a Hilbert-space step for the implication from Shalika's pairing
 symmetry (1974, equation (3.3), printed pp. 184–185) to comparison of
 regularized vectors. Here the two regularization maps are linear maps from a

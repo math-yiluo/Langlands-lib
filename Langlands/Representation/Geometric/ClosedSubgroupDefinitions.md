@@ -109,5 +109,3 @@ Both are published Library imports. The filtration pair retains
 its independently reviewed source bytes. Mathlib's group homomorphisms,
 subgroup comaps, restriction functor and full-subcategory functors are reused.
 No theorem truth is an input field.
-
-Author: Worker 14.

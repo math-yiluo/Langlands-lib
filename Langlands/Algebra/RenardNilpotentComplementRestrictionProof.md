@@ -1,8 +1,8 @@
 # Renard C.I: restriction to a complement and the dimension bound
 
-Worker 308 proves
+This module proves
 `Langlands.Renard.nilpotentComplementRestriction.{u}` with exactly the closed
-published proposition
+proposition
 `Langlands.Renard.NilpotentComplementRestrictionStatement.{u}` as its type.
 The statement and its imported constructions are used unchanged.
 
@@ -14,7 +14,7 @@ The registered original is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 308 read PDF281–282 and visually checked PDF281. The supplementary
+PDF281–282 were read and PDF281 visually checked. The supplementary
 2010-edition corrections, registered as `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 were read on PDF18–19. Their C.I entries concern older numerical inequalities
@@ -43,7 +43,7 @@ invariant, and the codomain remains `V`.
 
 First, `NilpotentFiltration.generatedAlgebra_isMulCommutative` derives
 commutativity of the actual algebra from tuple commutation. The proof
-imports Worker 88's published
+imports
 `Langlands.Renard.nilpotentComplementGeneration` from
 `Langlands.Algebra.RenardNilpotentComplementGenerationProof` and uses
 its second conjunct, `Submodule.span R (W : Set V) = ⊤`, with the
@@ -67,7 +67,7 @@ and `Submodule.restrictScalars_top` gives the required full complex span.
 Commutativity in `R` is also passed to commutation of the underlying
 original endomorphisms by applying `Subtype.val` to `mul_comm`.
 
-The final two steps specialize Worker 307's published helpers from
+The final two steps specialize helpers from
 `Langlands.Algebra.CommutingDimensionHelpers`.
 `Langlands.CommutingDimension.restriction_injective` proves injectivity:
 an element killing `W` kills every `r(w)` by commutativity, hence kills
@@ -81,7 +81,7 @@ The dimension of this linear-map space is
 `Module.finrank ℂ W * Module.finrank ℂ V`, so it yields the second
 conjunct with the target's factor order. Both `R`, as a subspace of
 the endomorphism space, and `W`, as a subspace of `V`, are
-finite-dimensional. The proof imports these named published helpers
+finite-dimensional. The proof imports these named helpers
 without copying their proofs.
 
 All carrier universes, natural tuple lengths, zero spaces, empty tuples,
@@ -94,4 +94,4 @@ This pair proves only the stated restriction injection and complement
 dimension bound. Maximum attainment, the sharp filtration endpoint,
 complement generation, algebra splitting, restriction to `V_1`,
 monotonicity, floor recurrence, numerical base cases, carrier transport
-and other source obligations retain their separate owners.
+and other source assertions are separate results.

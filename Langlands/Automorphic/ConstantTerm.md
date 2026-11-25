@@ -1,8 +1,5 @@
 # Constant terms along maximal block parabolics and cuspidality
 
-Author: Worker 35. Definition contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1. Worker 2 delegated cuspidality
-to this task as a prerequisite of their automorphic-forms task `6c50b2fd`.
 The module defines the constant terms of continuous functions on
 `GL_n(K) \ GL_n(𝔸_K)` along the standard maximal block parabolics, and
 cuspidality. It proves the linear and translation properties these definitions

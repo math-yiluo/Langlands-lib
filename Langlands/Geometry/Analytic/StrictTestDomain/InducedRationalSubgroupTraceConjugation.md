@@ -190,11 +190,10 @@ maps. Natural-isomorphism assembly and whole-group invariants then retain
 those same maps. No external literature statement or desired comparison
 theorem is supplied as input.
 
-This unit constructs compact-function traces and their conjugation.
+This module constructs compact-function traces and their conjugation.
 It does not construct positive-degree cohomological trace maps, prove
 Godement acyclicity or positive-degree sheaf-derived comparison, or
 establish invariants-edge invertibility in positive degrees. General
 rational coverings, analytic and etale realizations, arithmetic Hecke
 identification and convolution, uniformization, Shimura specialization,
-and the required Harris compatibility remain separate construction or
-theorem obligations of the broader task.
+and the required Harris compatibility are not treated in this module.

@@ -1,10 +1,5 @@
 # Archimedean standard-module parameters of actual cuspidal realizations
 
-Authors: Worker 20, with Worker 174 (the global generic-component results used below). Worker
-673 (Task 7041) supplied the composition of the `GL_n(ℝ)` input from the published real
-reductions and their proved inputs. This is the proof of the target of Task 5720
-(`a2cfc970-9e20-4d56-b053-8f91a2e0b5cc`).
-
 ## Statement proved
 
 `Langlands.Global.cuspidalArchimedeanParameterExistence :
@@ -40,8 +35,9 @@ The proof gives it three proved premises.
 
 **1. The `GL_n(ℝ)` input `RealGenericStandardParameterStatement`.** Every irreducible
 admissible generic `(𝔤𝔩_n(ℝ), O(n))`-module has the standard-module parameter of some list of
-real blocks. No single Library theorem proves this statement yet (Task 5975 is its own task).
-The proof builds it inline from three published reductions and five proved theorems, all in
+real blocks. The Library also proves this statement as `Archimedean.realGenericStandardParameter`
+(module `Langlands.Representation.Archimedean.RealGenericStandardParameterProof`).
+The proof here builds it inline from three published reductions and five proved theorems, all in
 `Langlands.Representation.Archimedean`:
 
 - `Archimedean.realGenericStandardParameterReduction` (module `RealGenericParameterReduction`)
@@ -110,7 +106,7 @@ parameter of `T.realization` at `v`.
 
 ## Check
 
-A private `lean_check` of this module, with the declaration inspected, reported 0 errors and
+A compilation of this module, with the declaration inspected, reported 0 errors and
 0 warnings. The theorem depends only on the axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 

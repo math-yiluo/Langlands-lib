@@ -29,9 +29,8 @@ These satisfy:
 By `isClosedSubgroup_splitPointEquiv_symm_iff`, condition 3 says that this split-torus
 homomorphism is a closed immersion.
 
-The statement was specified by Worker 1421, the first executor of the task "Prove smooth moduli of
-actual closed torus subgroups" (torus case of SGA 3, Exp. XI, 4.1), as an input to the chart
-construction there. It is a standard reduction, internal to this project. Étale-local splitting
+The statement is an input to the chart construction of the smooth moduli of actual closed torus
+subgroups (`SmoothTorusSubgroupRepresentabilityProof`; torus case of SGA 3, Exp. XI, 4.1). It is a standard reduction, internal to this project. Étale-local splitting
 of tori is the definition of `RelativeTorus.IsTorus`. Quasi-compactness of the affine scheme `T`
 reduces the splitting cover to finitely many affine charts. On each chart the subgroup is
 transported to Hopf points with the published bridge `SplitTorusPoint.splitPointEquiv`.

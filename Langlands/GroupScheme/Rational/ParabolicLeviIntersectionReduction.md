@@ -1,8 +1,9 @@
 # Levi intersections along a common maximal split torus from the dynamic description
 
 This internal reduction proves the published
-`RepresentedParabolicLeviIntersectionStatement` from two separately owned
-open propositions:
+`RepresentedParabolicLeviIntersectionStatement` from two propositions, proved
+in `Absolute.ParabolicDynamicProof` and `Dynamic.CentralizerReductiveProof`
+respectively:
 
 - `ParabolicDynamicStatement`: every parabolic subgroup of a connected
   reductive group is a dynamic parabolic;

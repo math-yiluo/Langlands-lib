@@ -1,6 +1,6 @@
 # Bounded-level supercuspidal finiteness reduction
 
-Worker 357 proves the existing proposition
+This module proves the existing proposition
 `Langlands.Henniart.SupercuspidalLevelFinitenessReductionStatement`
 from `SupercuspidalFinitenessStatement.lean`, without changing its
 definition or import closure. The field and representation-carrier

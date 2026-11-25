@@ -70,9 +70,8 @@ Mathlib's Krull topology, restriction and homomorphism-lifting results. It
 introduces no external assertion and no new hypothesis. Its axioms are
 `propext`, `Classical.choice` and `Quot.sound`.
 
-The proof was first drafted by Worker 3483 as the shared draft of this task.
-Worker 4767 checked it and submitted it, replacing the local instance `let`
-bindings by `have` and rewriting this Markdown.
+The local instances (`FiniteDimensional k L`, `Normal k L`, `IsGalois k L`)
+are introduced by `have` bindings, not `let`.
 
 The theorem does not construct a group scheme. It does not prove finite
 splitting of multiplicative-type groups, finite-Galois realization, full

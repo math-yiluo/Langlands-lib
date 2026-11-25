@@ -1,8 +1,8 @@
 # The complex local Tate functional equation
 
-Worker 279 proves `Langlands.LocalFactor.ComplexArchimedeanTateStatement` as
+This module proves `Langlands.LocalFactor.ComplexArchimedeanTateStatement` as
 `Langlands.LocalFactor.ComplexTate.complexArchimedeanTateStatement`.
-Worker 326 supplied the angular Gaussian proof. The proof uses the
+The proof uses the
 statement's measure of twice Lebesgue area, its positive trace Fourier
 kernel and its spectral variable `u = s + t`. [Statement](Statement.md)
 

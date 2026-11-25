@@ -1,7 +1,7 @@
 # Normalized rational profinite-integer and finite-adele comparison
 
 `Langlands.Global.RationalProfiniteIntegerAdeleComparison : Prop` is an
-internal comparison statement between already published constructions. It has
+internal comparison statement between existing Library constructions. It has
 no parameters or assumptions. It asserts the existence of two compatible maps:
 
 - A ring equivalence `e₀` from `ProfiniteIntegerRing` to the actual subring
@@ -14,7 +14,9 @@ no parameters or assumptions. It asserts the existence of two compatible maps:
 
 The Lean file defines this proposition only. It does not prove it, choose an
 equivalence, install a finite-adelic scalar action, or assume the statement in
-a data structure. A separate proof task must establish the comparison.
+a data structure. The comparison is proved as
+`rationalProfiniteIntegerAdeleComparison` in
+`Langlands.Global.RationalProfiniteIntegerComparisonProof`.
 
 ## Exact objects and topology
 
@@ -28,7 +30,7 @@ rationals, imported through `Langlands.Global.Adelic`. Its index set is
 `HeightOneSpectrum (NumberField.RingOfIntegers ℚ)`, and its factors are the
 actual adic completions. It is a restricted product relative to the actual
 valuation subrings, with its existing restricted-product topology.
-`integralFiniteAdeles ℚ` is the published subring of families integral at every
+`integralFiniteAdeles ℚ` is the existing subring of families integral at every
 finite place, with the inherited subspace topology. Both continuity clauses
 refer to these exact topologies. No alternative product indexed by natural
 primes is silently substituted; any proof using that model must establish the
@@ -45,7 +47,7 @@ uniqueness of `e₀`.
 
 ## Provenance and scope
 
-This is an internal comparison obligation needed to use the published scalar
+This is an internal comparison obligation needed to use the existing scalar
 residue ring with Harris–Taylor's rational Tate space. Harris–Taylor,
 *The Geometry and Cohomology of Some Simple Shimura Varieties* (2001), Chapter I,
 printed p.18 (PDF p.26), defines the rational Tate space as `TA ⊗_ℤ ℚ`.

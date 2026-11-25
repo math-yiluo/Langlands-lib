@@ -1071,7 +1071,7 @@ source group take only finitely many values. -/
 theorem finite_range_label {W : Scheme.{u}} [CompactSpace W] {M N : AddCommGrpCat.{v}}
     [AddGroup.FG M] (φ : constant W M ⟶ constant W N) : (Set.range (label φ)).Finite := by
   classical
-  obtain ⟨G, hG⟩ := AddGroup.FG.out (H := M)
+  obtain ⟨G, hG⟩ := AddGroup.exists_of_isAddFG M
   let ψ : W → (G → N) := fun w g => label φ w g
   have hψ : IsLocallyConstant ψ := by
     rw [IsLocallyConstant.iff_exists_open]

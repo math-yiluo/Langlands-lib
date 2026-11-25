@@ -1,6 +1,6 @@
 # Characteristic-zero commutative unipotent vector classification
 
-Worker 1485. This internally assembled proof targets the unchanged proposition
+This internally assembled proof targets the unchanged proposition
 `Langlands.GroupScheme.RelativeRoot.CommutativeUnipotentVectorCharZeroStatement`
 at arbitrary universe `u`. Its hypotheses and conclusion are exactly those of
 the published `CommutativeVectorClassificationStatement` module.

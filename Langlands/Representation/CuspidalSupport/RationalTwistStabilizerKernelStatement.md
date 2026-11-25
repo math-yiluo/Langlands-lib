@@ -1,6 +1,6 @@
 # Renard VI.4.4: the group `T` of an irreducible representation and the Remark after it
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.CuspidalSupport.RationalTwistStabilizerKernelStatement`, namespace
 `Langlands.CuspidalSupport`. The module contains one **statement**, the closed `Prop`-valued
 definition `RationalTwistStabilizerKernelStatement` (universe parameters `uF, uV`). It proves
@@ -10,7 +10,7 @@ nothing.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
-`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 1222 read VI.4.4,
+`7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. VI.4.4 was read:
 the preliminary paragraphs on complex tori and on `T` and the Remark that follows them, printed
 pp.156–157 / PDF pp.162–163.
 
@@ -139,9 +139,10 @@ T = ⨅ (ω : X) (_ : Nonempty (rationalUnramifiedTwist G ω A ≅ A)), ω.val.t
 - The general facts on complex tori and finite subgroups (`X^*(U/J) = L`) are recalled by the
   source as background and are used here only in the special case of `X(G)` and `X(G)(π)`.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. Items 1 and 4 (forward direction) and item 5 follow from the
+The proof is separate: `rationalTwistStabilizerKernel` in
+`RationalTwistStabilizerKernelProof`. Items 1 and 4 (forward direction) and item 5 follow from the
 definition of `T` and the fact that unramified characters are trivial on `⁰G`. Item 2 needs
 Schur's lemma for irreducible smooth representations of `G(F)`. Item 3 follows from item 1 and
 the finiteness of `X(G)(π)` (the published V.2.7 Lemma) once each `ker ω` with `ω ∈ X(G)(π)`

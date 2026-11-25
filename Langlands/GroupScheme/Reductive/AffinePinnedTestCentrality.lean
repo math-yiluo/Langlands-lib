@@ -19,7 +19,7 @@ namespace Langlands.GroupScheme.AffinePinnedModel
 variable (M : AffinePinnedModel.{u}) (A : Type u) [CommRing A] [Algebra M.ring A]
 
 local instance : Smooth M.group.X.hom := M.reductive.smooth
-local instance : IsAffineHom (M.groupOver (algebraBaseMap M.ring A)).X.hom :=
+private local instance : IsAffineHom (M.groupOver (algebraBaseMap M.ring A)).X.hom :=
   inferInstanceAs (IsAffineHom (pullback.snd M.group.X.hom (algebraBaseMap M.ring A)))
 
 /-- The actual chosen vector in the scalar-extended model projects to the

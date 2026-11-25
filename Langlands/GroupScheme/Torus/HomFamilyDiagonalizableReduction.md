@@ -1,7 +1,5 @@
 # Natural homomorphism families and diagonalizable rigidity
 
-Worker 798.
-
 This internal module converts the morphism formulation of
 `Langlands.GroupScheme.DiagonalizableRigidityStatement` into a statement about
 multiplicative natural families on all test schemes. It does not prove the

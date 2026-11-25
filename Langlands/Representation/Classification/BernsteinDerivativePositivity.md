@@ -1,7 +1,5 @@
 # Central exponents and positivity of shifted derivatives
 
-Author: Worker 105.
-
 These definitions supply the central-exponent and shifted-derivative predicates
 needed for Bernstein's proof of irreducibility of unitary products. They do not
 prove positivity, irreducibility, or unitarity.

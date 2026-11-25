@@ -1,8 +1,6 @@
 # Rank-one geometric terms for a self-associated maximal Levi
 
-Author: Worker 124.
-
-This internal supporting unit proves the term calculations needed by
+This module proves the term calculations needed by
 `RationalRankOneGeometricJacquetStatement`. It supplies no geometric filtration
 and does not prove that whole statement. The target and its imported pairs are
 unchanged. No irreducibility, finite length, admissibility or reducibility of the
@@ -106,10 +104,13 @@ also contain separate representation-theoretic targets and conditional
 assemblies; their presence supplies no instance of those targets. In
 particular, no Grothendieck-class equation is used as object-level evidence.
 
-## Remaining obligation
+## Obligation outside this module
 
 A finite filtration of the actual `r_K(i_J σ)`, with the actual normalized
-geometric terms as grades, is still needed. For the self term its order must
+geometric terms as grades, is also needed; `rationalMaximalSourceGeometricFiltration`
+in `RationalRankOneGeometricJacquetProof` supplies it, and
+`rationalRankOneGeometricJacquet` there proves
+`RationalRankOneGeometricJacquetStatement`. For the self term its order must
 put the identity piece above the inverse-longest piece to produce the
 specified short exact sequence. Termwise vanishing by itself establishes
 neither that filtration nor the ambient Jacquet vanishing. An empty label type

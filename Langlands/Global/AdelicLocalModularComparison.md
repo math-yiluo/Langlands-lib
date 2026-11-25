@@ -1,6 +1,6 @@
 # Local restriction and assembly of actual adelic modular characters
 
-This internal unit compares the existing actual adelic group with its actual
+This module compares the existing actual adelic group with its actual
 local factors over a number field in arbitrary universe `u`. The topology,
 group laws, and normalized character norms are the existing Library ones.
 
@@ -46,6 +46,10 @@ existing adelic statement.
 The provenance is internal: the proofs derive from actual local gluing,
 closed-normal modular restriction, continuous multiplicative equivalence
 transport, normalized local character norms, modular continuity, and
-finite-truncation convergence. This unit proves the local-to-adelic
+finite-truncation convergence. This module proves the local-to-adelic
 implication. The local analytic adjoint-determinant comparison and
-reductive determinant triviality remain separate proof obligations.
+reductive determinant triviality are separate results, proved as
+`localModularCharacterAdjointDeterminant` in
+`LocalModularCharacterAdjointDeterminantProof` and as
+`Langlands.GroupScheme.Lie.connectedReductiveAdjointDeterminant` in
+`AdjointDeterminantReductiveProof`.

@@ -41,6 +41,8 @@ published four-part properness predicate.
 The provenance is internal: these are composite proofs from the actual
 fibre homeomorphism and common-atlas construction, the definitions of the
 morphism predicates, and the existing scheme-base-change results. No
-external mathematical assertion is assumed. This unit establishes
+external mathematical assertion is assumed. This module establishes
 preservation under base change, not eventual descent from a limit; the
-remaining clauses of `SpaceLimitPropertyDescentStatement` remain open.
+remaining clauses of `SpaceLimitPropertyDescentStatement` are not proved here.
+The Library proves that statement as `spaceLimitPropertyDescent` in
+`SpaceLimitPropertyDescentProof`.

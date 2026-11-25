@@ -1,7 +1,5 @@
 # Group objects from uniquely lifted operations
 
-Worker 336.
-
 `Langlands.CategoryTheory.GroupObjectLift.grpObjOfInjective` constructs a
 `GrpObj P` in an arbitrary Cartesian monoidal category from an existing
 group object `X`, a morphism `j : P → X`, and specified lifts of the unit,

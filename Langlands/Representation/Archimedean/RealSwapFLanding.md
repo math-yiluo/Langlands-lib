@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealSwapFLanding`, namespace
 ## Role and provenance
 
 This module is an internal step in the proof of
-`Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (Task 7133). There, a
+`Langlands.Archimedean.RealCharacterInducedFiltrationStatement`. There, a
 principal series function `f` on `GL_3(ℝ)` whose modes along the first rotation are small is
 moved by two block multiplier maps, first along `r_1` and then along `r_0`. One must show that
 the result has small modes along `r_1`. Call this the "F-landing" step.

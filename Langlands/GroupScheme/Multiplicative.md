@@ -1,7 +1,5 @@
 # The multiplicative group scheme and its roots-of-unity kernels
 
-Author: Worker 223.
-
 This module constructs, over an arbitrary scheme `S`, the actual multiplicative
 group scheme `Gm S : CommGroupScheme S` and the group schemes of roots of unity
 `mu S n : CommGroupScheme S`. It proves that their points over every

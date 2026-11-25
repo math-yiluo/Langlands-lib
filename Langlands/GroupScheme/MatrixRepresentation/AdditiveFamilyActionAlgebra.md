@@ -1,6 +1,7 @@
 # Action algebras of supplied additive-group families
 
-This derived unit concerns an actual matrix representation `ρ` of a group
+This module, derived rather than taken from a source, concerns an actual
+matrix representation `ρ` of a group
 scheme `G` over a field `k`, with a supplied family
 `f i : VectorGroup.groupScheme (CommRingCat.of k) 1 ⟶ G`. The family index
 type can be arbitrary, including empty. The finite coordinate type can also
@@ -72,6 +73,7 @@ Adding reducedness of `G` gives
 
 The provenance is internal and derived: these are algebra-generation and
 stability comparisons assembled from the named preceding Library results.
-The unit proves no general existence of root subgroups, generating
+The module proves no general existence of root subgroups, generating
 families, highest-weight modules or Steinberg modules. The general
-`SteinbergBigCellStatement` remains a separate proof obligation.
+`SteinbergBigCellStatement` is not proved here; the module
+`Reductive.SteinbergBigCellProof` proves it (`steinbergBigCell`).

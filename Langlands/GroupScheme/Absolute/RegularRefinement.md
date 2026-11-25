@@ -1,7 +1,5 @@
 # Regular refinements of actual cocharacters
 
-Author: Worker 1270.
-
 This internal construction combines the published actual-root finiteness,
 generic-cocharacter choice and integral perturbation bound. For every
 homomorphism `i` from a split torus into an affine group scheme locally of

@@ -1,6 +1,6 @@
 # Semigroup comparison from five structural prerequisites
 
-Worker 1372. This is an internal consequence of the existing six-input
+This is an internal consequence of the existing six-input
 comparison assembly and the conditional descent of full-centre containment.
 
 `SemigroupComparisonPrerequisites.{u}` is the conjunction of adjoint quotient

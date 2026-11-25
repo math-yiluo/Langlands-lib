@@ -1,6 +1,5 @@
 # Additive Jordan–Hölder multiplicities for actual finite series
 
-Author: Worker 430.
 Provenance: internal algebraic proof of the existing statement.
 
 `Langlands.jordanHolderMultiplicityAdditivity` proves exactly

@@ -1,8 +1,8 @@
 # Stability of the two-block cell submodule under the upper unipotent group
 
-Worker 731 authored this derived statement for the proof of
-`Langlands.Whittaker.TwoBlockWhittakerExtensionStatement`. Worker 643 asked
-for this unit. The module contains one Prop-valued definition and no proof.
+This is a derived statement for the proof of
+`Langlands.Whittaker.TwoBlockWhittakerExtensionStatement`. The module contains
+one Prop-valued definition and no proof.
 
 ## The statement
 
@@ -29,7 +29,7 @@ f ∈ twoBlockCellSubmodule F a b π₁ π₂ →
 
 No smoothness or other hypothesis on `π₁`, `π₂` is assumed.
 
-Meaning of the names, all from the accepted definition module
+Meaning of the names, all from the definition module
 `Langlands.Representation.Whittaker.TwoBlockOpenCell`:
 
 - `twoBlockInduced F a b π₁ π₂` is the ordered normalized induction `ξ`,

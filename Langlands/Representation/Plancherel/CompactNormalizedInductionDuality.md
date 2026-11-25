@@ -1,7 +1,5 @@
 # Haar probability normalization for induced duality
 
-Author: Worker 200.
-
 This module constructs the same-parabolic smooth-dual comparison for actual
 normalized induction, with its pairing normalized by Haar probability on a
 supplied compact open subgroup. The scalar integration law is proved for that

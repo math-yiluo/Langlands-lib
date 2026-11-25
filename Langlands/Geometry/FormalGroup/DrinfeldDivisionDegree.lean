@@ -1,7 +1,7 @@
 import Langlands.Geometry.FormalGroup.DrinfeldActionExponent
 import Langlands.Geometry.FormalGroup.DivisionOrderRationalTwist
 import Langlands.Geometry.FormalGroup.FieldDegreeUnits
-import Langlands.NYLL.ValuedFieldTheory.LocalField.NonarchimedeanLocalField.IdealQuotients.U014.Proofs
+import Nyll.ValuedFieldTheory.LocalField.NonarchimedeanLocalField.IdealQuotients
 
 /-! # The degree of the rational division action on a formal module -/
 
@@ -21,7 +21,7 @@ variable {K : Type u} [Field K] [ValuativeRel K] [TopologicalSpace K]
 /-- A field unit given by an irreducible integer-ring element has normalized order one. -/
 theorem fieldOrderUnits_uniformizer (hπ : Irreducible π) (t : Kˣ)
     (ht : (t : K) = algebraMap 𝒪[K] K π) : (Plancherel.fieldOrderUnits K t).toAdd = 1 := by
-  have h := Langlands.NYLL.LocalFieldTheory.valueGroupWithZeroIsoInt_of_integerRing_irreducible
+  have h := LocalFieldTheory.valueGroupWithZeroIsoInt_of_integerRing_irreducible
     K π hπ
   change FML.normalizedMultiplicativeValuation K (algebraMap 𝒪[K] K π) =
     WithZero.exp (-1 : ℤ) at h

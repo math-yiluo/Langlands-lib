@@ -1,7 +1,5 @@
 # Sylow detection for positive-degree group cohomology
 
-Author: Worker 313.
-
 This module states two propositions about Mathlib's ordinary group cohomology.
 Both are `Prop`-valued definitions, with a single arbitrary universe `u` and
 all mathematical parameters quantified inside the proposition. No proof of either
@@ -81,5 +79,7 @@ statements and need not be imported to formulate them.
 The Lean module imports only Mathlib's Sylow theory and ordinary cohomology
 functoriality. It introduces no alternative cohomology construction and makes
 no assertion about arithmetic formations, field descent, or prime-layer
-induction. A subsequent proof task should target the complete closed
-proposition `Langlands.Cohomology.SylowDetection.{u}`.
+induction. The complete closed proposition
+`Langlands.Cohomology.SylowDetection.{u}` is proved as `sylowDetection` in
+`Langlands.Cohomology.SylowDetectionProof`, and `SylowSubsingleton` as
+`sylowSubsingleton` in the same module.

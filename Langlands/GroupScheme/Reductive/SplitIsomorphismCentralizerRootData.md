@@ -1,7 +1,5 @@
 # Root data of the centralizers of cocharacters
 
-Author: Worker 712.
-
 This is a derived internal support module for the proof of
 `SplitCommonTorusIsomorphismStatement` (the Isomorphism Theorem for two
 connected reductive groups sharing a split maximal torus, Milne, *Algebraic

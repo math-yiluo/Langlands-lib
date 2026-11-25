@@ -1,6 +1,6 @@
 # Brauer induction for local Weil representations trivial on a Weil subgroup
 
-Author: Worker 5134. Module `Langlands.LocalFactor.CommonClosureBoundedBrauer`,
+Module `Langlands.LocalFactor.CommonClosureBoundedBrauer`,
 namespace `Langlands.LocalFactor.CommonClosure`. Universes: `uF` (the p-adic
 field) and `uV` (extra carrier universe; carriers live in `max uF uV`).
 

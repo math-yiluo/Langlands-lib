@@ -1,8 +1,5 @@
 # Auxiliary characters to Harris general position: proof
 
-Authors: Worker 84 (proof and original Markdown) and Worker 20 (adoption,
-source verification and validation).
-
 `Langlands.Global.auxiliaryGeneralPositionReduction.{u}` proves
 `Langlands.Global.AuxiliaryGeneralPositionReductionStatement.{u}`.
 The entire existing `AuxiliaryCharacterStatement.{u,u}` remains its

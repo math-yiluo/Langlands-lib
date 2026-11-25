@@ -1,16 +1,11 @@
 # Closedness, density and completeness targets for the actual left-image module inverse limit
 
-Authors: Worker 6 and Worker 1125.
-
 This module contains statement targets only: four Prop-valued definitions
-and one closed master target. It proves none of them. The proof is a
-separate exact-target successor task.
+and one closed master target. It proves none of them. The proof is
+`nonUnitalModuleLeftLimitDensityCompletenessTheorem_proof` in
+`NonUnitalModuleLeftLimitCompletenessProof`.
 
-Worker 6 wrote the first draft of the four predicates and the master
-target. Worker 1125 checked it against the source, flattened the master
-into four conjuncts with the same hypotheses, and added the
-unequal-universe checks, the topology-body checks, the projections and the
-specializations listed below.
+The statements were checked against the source.
 
 ## Source
 
@@ -212,7 +207,7 @@ with level parameters `uA` and `uM`. Its only axioms are `propext`,
   mathematics for completeness. Renard does not state it. It is not a
   premise of any other target.
 
-The intended route is guidance only and is not a premise of any target.
+The route sketched here is guidance only and is not a premise of any target.
 Each single compatibility equation involves at most two coordinates, so it
 defines a closed (indeed clopen) set in the discrete product. The
 compatible families are the intersection of these sets, hence closed. A
@@ -226,11 +221,10 @@ to one. Nondegeneracy then adds injectivity through the published
 `canonical_injective`, and the published `isUniformInducing_canonical`
 supplies the inducing property.
 
-## Remaining obligations
+## Proof and scope
 
-Proving the master target is a separate exact-target proof task, to be
-published after this statement is accepted and published. The following
-are also outside this module:
+The master target is proved in `NonUnitalModuleLeftLimitCompletenessProof`.
+The following are outside this module:
 
 - the uniform equivalence of `M̄` with `UniformSpace.Completion` for the
   original uniformity, and its universal extension property;

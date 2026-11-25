@@ -23,15 +23,17 @@ def spectrumAction (d : RationalData K P) :
     Action TopCat.{u} (ρ.locusOpenSubgroup d) where
   V := TopCat.of (BanachSpectrum d.algebra)
   ρ :=
-    { toFun := fun g => TopCat.ofHom
-        (BanachSpectrum.comapContinuous (ρ.sectionAction d g).inv.toBoundedRingHom)
+    { toFun := fun g => End.of (TopCat.ofHom
+        (BanachSpectrum.comapContinuous (ρ.sectionAction d g).asIso.inv.toBoundedRingHom))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro x
         change (ρ.sectionAction d 1) • x = x
         simp
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro x
         change (ρ.sectionAction d (g * h)) • x =
@@ -48,14 +50,14 @@ def spectrum (d : RationalData K P) :
 theorem spectrum_apply (d : RationalData K P) (g : ρ.locusOpenSubgroup d)
     (x : BanachSpectrum d.algebra) (b : d.algebra) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom ((ρ.spectrum d).obj.ρ g) x) b =
-        x ((ρ.sectionAction d g).inv.toAlgHom b) :=
+      (ConcreteCategory.hom ((ρ.spectrum d).obj.ρ g).asHom x) b =
+        x ((ρ.sectionAction d g).asIso.inv.toAlgHom b) :=
   rfl
 
 @[simp]
 theorem sectionAction_comp_baseMap (d : RationalData K P) (g : ρ.locusOpenSubgroup d) :
-    (ρ.sectionAction d g).hom.comp d.baseMap =
-      d.baseMap.comp (ρ.toMonoidHom (g : G)).hom := by
+    (ρ.sectionAction d g).asIso.hom.comp d.baseMap =
+      d.baseMap.comp (ρ.toMonoidHom (g : G)).asIso.hom := by
   apply BoundedAlgHom.ext
   exact ρ.sectionAction_baseMap d g
 
@@ -77,8 +79,8 @@ theorem spectrumMap_smul (d : RationalData K P) (g : ρ.locusOpenSubgroup d)
 section automorphisms, even for different chosen presentations. -/
 theorem sectionAction_restriction {d e : RationalData K P} (h : d ⟶ e)
     (g : G) (hd : g ∈ ρ.locusOpenSubgroup d) (he : g ∈ ρ.locusOpenSubgroup e) :
-    h.restriction.comp (ρ.sectionAction e ⟨g, he⟩).hom =
-      (ρ.sectionAction d ⟨g, hd⟩).hom.comp h.restriction := by
+    h.restriction.comp (ρ.sectionAction e ⟨g, he⟩).asIso.hom =
+      (ρ.sectionAction d ⟨g, hd⟩).asIso.hom.comp h.restriction := by
   apply e.hom_ext
   rw [BoundedAlgHom.comp_assoc, sectionAction_comp_baseMap,
     ← BoundedAlgHom.comp_assoc, h.restriction_comp_baseMap,
@@ -97,8 +99,8 @@ theorem spectrum_restriction_equivariant {d e : RationalData K P} (h : d ⟶ e)
   intro a
   have ht := ρ.sectionAction_restriction h g⁻¹
     ((ρ.locusOpenSubgroup d).inv_mem hd) ((ρ.locusOpenSubgroup e).inv_mem he)
-  change h.restriction.comp (ρ.sectionAction e (⟨g, he⟩⁻¹)).hom =
-    (ρ.sectionAction d (⟨g, hd⟩⁻¹)).hom.comp h.restriction at ht
+  change h.restriction.comp (ρ.sectionAction e (⟨g, he⟩⁻¹)).asIso.hom =
+    (ρ.sectionAction d (⟨g, hd⟩⁻¹)).asIso.hom.comp h.restriction at ht
   rw [map_inv, map_inv] at ht
   exact congrArg (fun f : BoundedAlgHom K e.algebra d.algebra => x (f a)) ht.symm
 

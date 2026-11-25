@@ -1,7 +1,5 @@
 # Affine-open data from normal common neighbourhoods
 
-Author: Worker 219.
-
 `FibreDenseAffineOpen p` is the type of actual opens `U : X.Opens`
 together with `IsAffineOpen U` and the proof that every `x : X` has a
 generization `y ∈ U` with `p y = p x`. Its `opens`, `isAffineOpen` and
@@ -19,7 +17,7 @@ constructor.
 
 The constructor uses `fibreGenericPoints p` as its finite set. The DVR
 base has finitely many points, and the morphism is locally of finite
-type and quasi-compact, so this set is finite. The published smooth-DVR
+type and quasi-compact, so this set is finite. The smooth-DVR
 stalk theorem supplies integrally closed domain stalks, and
 `SmoothDvrFibreGenericPoints.ringKrullDim_stalk_le_one` supplies the
 dimension bound at every selected point. Thus all hypotheses of the
@@ -34,6 +32,7 @@ assumption occurs.
 This is derived supporting development for the argument after
 Bosch–Lütkebohmert–Raynaud, *Néron Models*, §6.4 Lemma 4, printed p.155
 (PDF p.162; registered source
-`bosch-lutkebohmert-raynaud-1990-neron-models`). Task 7561 owns the
-substantial missing general affine-neighbourhood construction. The
-unconditional final DVR constructor remains an obligation of Task 7523.
+`bosch-lutkebohmert-raynaud-1990-neron-models`). The general
+affine-neighbourhood construction is `normalCodimensionOneAffineNeighbourhood`
+in `NormalCodimensionOneAffineNeighbourhood`. The unconditional final DVR
+constructor is `smoothDvrFibreDenseAffineOpen` in `SmoothDvrFibreDenseAffineOpen`.

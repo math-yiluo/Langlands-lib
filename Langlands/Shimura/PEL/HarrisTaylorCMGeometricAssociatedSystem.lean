@@ -148,7 +148,7 @@ local notation "constantAction" k =>
 /-- Sections satisfy the diagonal coefficient and inverse-right deck invariance. -/
 @[reassoc] theorem cmHarrisGeometricAssociatedCoefficientSystemInclusion_invariant
     (k : ℕᵒᵖ) (g : (groups).obj k) :
-    (inc) k ≫ (diagonal Jbar ((covers).action k) (constantAction k)).ρ g = (inc) k :=
+    (inc) k ≫ ((diagonal Jbar ((covers).action k) (constantAction k)).ρ g).asHom = (inc) k :=
   inclusion_invariant Jbar ((covers).action k) (constantAction k) g
 
 /-- Original coefficient reduction commutes with pullback along the exact

@@ -10,16 +10,13 @@ nothing:
 - `SupercuspidalUniformCoefficientSupportStatement` (VI.2.4, Proposition);
 - `UniformAdmissibilityStatements`, their conjunction.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.2.2–VI.2.4, printed pp.140–142 / PDF pp.146–148:
+VI.2.2–VI.2.4, printed pp.140–142 / PDF pp.146–148, were read:
 
 > **Théorème.** Soit `K` un sous-groupe compact ouvert de `G`. Il existe une
 > constante positive `c = c(G, K)` telle que pour toute représentation lisse
@@ -33,7 +30,7 @@ Worker 1222 read VI.2.2–VI.2.4, printed pp.140–142 / PDF pp.146–148:
 > représentation supercuspidale irréductible `(ρ, W)` de `G`, pour tout `v ∈ W^K`,
 > le support de `g ↦ ρ(a_{g,K}) · v` soit inclus dans `Ω`. (VI.2.4, printed p.141)
 
-The Library uses these results as inputs, but before this unit no declaration
+The Library uses these results as inputs, but before this module no declaration
 stated them. `UniformFixedLevelBounds` and `FixedLevelSandwich` are internal
 supporting constructions for the dimension argument. The published
 `RationalNormKernelUniformSupportStatement` is a derived norm-kernel form used in
@@ -115,7 +112,10 @@ The statements here do not depend on that identification.
 
 ## Remaining obligations
 
-The proofs are separate obligations.
+The proofs are separate. The Library has conditional reductions only:
+`UniformAdmissibilityAssemblyReduction`,
+`RationalPointsUniformAdmissibilityReduction` and
+`SupercuspidalUniformSupportReduction`.
 
 ## Imports
 

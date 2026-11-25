@@ -146,6 +146,8 @@ def weightSpaceGaloisFixedEquiv (hS : IsSplitTorus S.toGrp) :
       apply Subtype.ext
       change (e x).val = z.val
       exact congrArg (fun w : baseChangeFixedLie k L G => w.val) (e.apply_symm_apply z)
+  have : AddHomClass (weightSpace i a →+ baseChangeFixedWeightSpace k L i a)
+      (weightSpace i a) (baseChangeFixedWeightSpace k L i a) := ⟨AddMonoidHom.map_add⟩
   exact AddEquiv.ofBijective f hf
 
 @[simp]

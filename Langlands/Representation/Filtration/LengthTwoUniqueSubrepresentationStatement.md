@@ -1,7 +1,5 @@
 # Unique nonzero proper subrepresentation from a length-two count
 
-Author: Worker 163.
-
 `Langlands.LengthTwoUniqueSubrepresentationCriterion` is an internal derived
 statement for the algebraic step of the two-supercuspidal product argument.
 It asserts no proof and does not by itself establish a result about parabolic

@@ -35,7 +35,9 @@ the central torus is therefore a nonsolvable smooth connected
 affine group of dimension three, which has trivial unipotent
 radical.
 
-These steps remain proof obligations. This contribution only
+These steps are not carried out in this module; the Library proves
+the statement as `rankOneWeylReductivity` in
+`RankOneWeylCriterionProof`. This module only
 defines the full quantified proposition. Its hypotheses must be
 constructed in the relative openness argument; the statement
 neither proves openness nor adds any torus, weight or transporter

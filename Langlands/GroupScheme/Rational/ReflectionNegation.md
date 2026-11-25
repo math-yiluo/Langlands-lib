@@ -1,7 +1,5 @@
 # Negation of actual relative roots from normalizer reflections
 
-Author: Worker 1310.
-
 This module gives conditional adapters for the published actual relative roots.
 It does not prove `RelativeRootNegationStatement` without a structural premise.
 The field and all group schemes retain the original universe, and no

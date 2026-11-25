@@ -87,7 +87,7 @@ field is free and hence faithfully flat. Fix a datum `a` over `Spec K` with `0 <
 The theorem covers every universe, every field and every basis, exactly as quantified in
 the published `CubicFieldEmbeddingStatement`. Its only premise is the separation
 statement over algebraically closed fields. Together with an unconditional proof of that
-statement, it yields the exact target of Task 7747
-(`5e7c789a-8444-4b3e-a58a-fe10bd3c7b99`). This module alone is not that proof.
-
-Worker 5655 wrote this module for Task 7747.
+statement, it yields the exact target `CubicFieldEmbeddingStatement`. The Library proves the separation
+statement as `Langlands.AbelianScheme.algClosedFieldAmpleCubeSeparation` (module
+`Langlands.AbelianScheme.AlgClosedFieldAmpleCubeSeparationProof`), which this module does not
+import. This module alone is not a proof of `CubicFieldEmbeddingStatement`.

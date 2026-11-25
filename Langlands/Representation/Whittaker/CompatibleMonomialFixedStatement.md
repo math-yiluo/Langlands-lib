@@ -1,7 +1,5 @@
 # Compatible monomial representatives are fixed by Weyl-conjugated transpose
 
-Author: Worker 826.
-
 `Langlands.Whittaker.CompatibleMonomialFixedStatement.{uF}` is a Prop-valued
 statement. It is the monomial specialization of property (1.5) of
 Shalika (1974), printed p.174, to canonical p-adic fields and the standard
@@ -81,7 +79,7 @@ Mathematics (2) **100** (1974), 171–193. It is registered as
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`.
 Property (1.5) is on printed p.174 = one-based PDF page 5 = zero-based PDF
 index 4. The conventions used there begin on printed p.173 (one-based PDF
-page 4, zero-based index 3). Worker 826 read both pages visually. No
+page 4, zero-based index 3). Both pages were read visually. No
 source-specific errata note was found in the published notes.
 
 At the start of Section 1 (printed p.173), Shalika takes a field `k`,

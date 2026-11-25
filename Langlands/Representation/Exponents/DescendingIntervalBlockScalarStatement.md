@@ -2,9 +2,9 @@
 
 This module states the proposition
 `Langlands.DescendingIntervalBlockScalarFormula.{uF,uV} F T`. It is a
-statement only: the pair defines a `Prop` and proves nothing. Publishing it
-makes the assertion available as an exact proof target. A separate proof
-must be checked and reviewed before anyone may use the formula as a theorem.
+statement only: the pair defines a `Prop` and proves nothing. The proof is
+`Langlands.descendingIntervalBlockScalarFormula` in
+`DescendingIntervalBlockScalarProof`.
 
 ## Provenance
 
@@ -14,8 +14,7 @@ calculation for segment Jacquet modules of arbitrary block shape. There, an
 ordered block tensor carries a descending run of determinant exponents
 `m-1, m-2, …, 0`. The run is cut into consecutive intervals, and block `i`
 gets the interval of length `k i`. This module isolates the scalar action of
-the split centre on such a tensor and its norm. The statement is drafted from
-Worker 561's unreviewed draft for this task.
+the split centre on such a tensor and its norm.
 
 ## Data and hypotheses
 

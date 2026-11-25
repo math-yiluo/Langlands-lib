@@ -1,8 +1,5 @@
 # Corestriction agrees with ordinary group homology
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 This module compares the constructed all-degree subgroup
 corestriction with Mathlib's actual ordinary homology pushforward. The
 comparison equality is first proved at degree minus one on norm-kernel

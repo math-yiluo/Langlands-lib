@@ -42,7 +42,7 @@ translation has the same effect as the identity on base-derived units;
 `kernelTranslationUnit_mul`:
 `ν_α(a,k*l) = ν_α(a,k) * ν_α(a,l)`.
 
-This is a complete progressive scalar unit, internally derived from
+This module gives the complete scalar construction, internally derived from
 `EqualCompositePullback`, `StructureUnitScalars`, `KernelTranslationFamily`
 and `RelativeGlobalUnits`. Its motivating original is Edixhoven–van der
 Geer–Moonen, *Abelian Varieties*, preliminary build 2012-02-08,
@@ -51,6 +51,6 @@ left action by a comparison from ordinary pullback to translated pullback,
 extracts its scalar relative to the trivial action, and uses universal
 constant functions to turn the cocycle into a homomorphism. This file gives
 that forward scalar construction without quotient, freeness, finiteness or
-faithful flatness hypotheses. It does not yet package a scheme character,
+faithful flatness hypotheses. It does not package a scheme character,
 prove independence of the trivialization, or assert effective descent,
 representability, perfectness or Cartier duality.

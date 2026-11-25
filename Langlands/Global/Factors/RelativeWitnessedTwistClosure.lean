@@ -9,7 +9,7 @@ universe uF uW uP
 namespace Langlands.Global.PoleComparison
 
 open Langlands.VirtualRepresentation Langlands.VirtualRepresentation.RelativeGlobal
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global Langlands.Automorphic
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global Langlands.Automorphic
 
 variable (F E : Type uF) [Field F] [NumberField F] [Field E] [NumberField E]
   [Algebra F E] [IsGalois F E] [CompactSpace (AdeleQuotient F)]

@@ -1,6 +1,6 @@
 # Split solvability of a split torus acting on a split unipotent group
 
-This internal derived unit gives the split solvability half of the subgroup
+This internal derived module gives the split solvability half of the subgroup
 `S ⋉ R_us,k(P)` used in the proof of CGP Theorem C.2.5. It contains two
 results over an arbitrary field `k` in an arbitrary universe `u`.
 
@@ -55,7 +55,7 @@ Provenance: the proof of CGP Theorem C.2.5 (Borel–Tits, printed p. 595)
 asserts that the smooth connected solvable `k`-subgroup `S ⋉ R_us,k(P)` is
 `k`-split. This is the standard fact that an extension of a split torus by a
 split unipotent group is split solvable.
-This unit proves only the special case of an actual semidirect product.
+This module proves only the special case of an actual semidirect product.
 It makes no claim about the comparison of this product with any subgroup of a
 pseudo-parabolic subgroup, and does not prove
 `PseudoParabolicSplitSolvableEnvelopeStatement`.

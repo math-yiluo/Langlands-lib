@@ -1,7 +1,7 @@
 # Group-valued cocycles on covers, and sections of torsors
 
-Worker 1515's internal prerequisite for the split-unipotent torsor theorem
-(task 21d6e245-dcea-4c7a-af4a-c532ea0dd295). It is the nonabelian Čech
+An internal prerequisite for the split-unipotent torsor theorem
+(`Langlands.GroupScheme.SplitUnipotentAffineTorsorProof`). It is the nonabelian Čech
 formalism of torsors and descent, written so that no fibre products appear.
 The content is derived; it does not follow a particular cited text.
 

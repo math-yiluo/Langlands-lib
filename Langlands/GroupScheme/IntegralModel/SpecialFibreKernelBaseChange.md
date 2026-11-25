@@ -31,7 +31,8 @@ is closed, the target being separated. The published
 
 These declarations are derived from published pullback, kernel and
 field-extension reflection results. They make no additional literature claim.
-For Task 6317 they supply a comparison needed to descend geometric kernel
-properties. The actual geometric kernel hypothesis over the extended
-coefficients, parabolicity and the reduction-preimage theorem remain separate
-obligations.
+For the parabolic special-fibre images and reduction preimages of descended
+unramified facet models (KP 4.1.22(2),(4)) they supply a comparison needed to
+descend geometric kernel properties. The actual geometric kernel hypothesis
+over the extended coefficients, parabolicity and the reduction-preimage
+theorem are not proved here.

@@ -1,7 +1,5 @@
 # Ring properties of actual strict Tate algebras
 
-Author: Worker 56.
-
 `StrictTateAlgebra.tateRingProperties` proves
 `TateRingPropertiesStatement K` from the constructed Noetherianity and
 factoriality theorems and their integral-closure consequence.

@@ -1,8 +1,8 @@
 # Internal Noetherian core for endomorphism localization
 
 This module specifies three internal propositions and their conjunction. It
-contains no proofs of those propositions. Worker 709 derived this auxiliary
-interface while preparing the finite-localization proposition in David
+contains no proofs of those propositions. This auxiliary interface is
+derived for the finite-localization proposition in David
 Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, Appendix C.II, printed page 279 / PDF page 285.
 The propositions are implementation prerequisites, not a translation of
@@ -13,10 +13,10 @@ The motivating registered source is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 read and visually inspected the motivating PDF page. Worker 735
-rechecked the fingerprint, the text of PDF285 and the localization passage
-A.III.1, example 5 with its lemma and corollary, printed pages 252–253 /
-PDF pages 258–259. The governing edition already incorporates the adjacent
+The motivating PDF page was read and visually inspected. The fingerprint,
+the text of PDF285 and the localization passage A.III.1, example 5 with its
+lemma and corollary, printed pages 252–253 / PDF pages 258–259, were
+rechecked. The governing edition already incorporates the adjacent
 quotient-index correction from the supplementary older author errata. That
 correction does not affect these internal targets.
 
@@ -83,8 +83,9 @@ argument; they are not substituted for the source's coefficient and action
 conventions. There is no assertion here that arbitrary maps satisfying
 the premises have been constructed from a localization.
 
-A prospective proof can use a different route from Renard's
-inverse-polynomial argument. If an automorphism preserves `P`, it induces
+The proof (`noetherianLocalizationCore` in
+`Langlands.LinearAlgebra.NoetherianLocalizationCoreProof`) uses a different
+route from Renard's inverse-polynomial argument. If an automorphism preserves `P`, it induces
 a surjective endomorphism on the actual Noetherian quotient by `P`.
 Mathlib's Hopfian theorem makes this quotient map injective, forcing
 inverse preservation. Applying this fact to `range f` gives surjectivity
@@ -92,11 +93,11 @@ from exhaustion. Noetherian stabilization of the source power kernels
 then bounds the locally nilpotent kernel. The resulting equality with
 `ker f`, together with surjectivity and the inverse target iterate, gives
 the two equalities for the positive source power. This paragraph describes
-a proposed proof route, not a proof supplied by this statement module.
+that proof route, not a proof supplied by this statement module.
 
 ## Intended instantiation
 
-The planned application, which this module does not carry out, takes
+The application, which this module does not carry out, takes
 `M = L`, `N = L_a`, `f = ι` and `e` the linear automorphism of `L_a` with
 forward map `ã` and inverse `ã⁻¹`. The premises would come from the actual
 localization as follows.
@@ -125,13 +126,16 @@ endomorphisms of `B`-modules. The statement supplies one such `n`. It does
 not cover every stable power, and it states neither `L = K ⊕ I` nor the
 identification of `(L_a, ã)` with `(I, a|_I)`.
 
-## Separate obligations
+## Not covered by this module
 
-The parent program still owes the actual vector-endomorphism localization
-at powers of `X`, the canonical map and target automorphism, and proofs of
-their intertwining, exhaustion, kernel-union and quotient-identification
-properties. Its extension to compatible actions of a possibly nonunital
-complex algebra also remains separate.
+The actual vector-endomorphism localization at powers of `X`, the canonical
+map and target automorphism, and proofs of their intertwining, exhaustion,
+kernel-union and quotient-identification properties are not part of this
+module. The localization is constructed in
+`Langlands.Algebra.RenardEndomorphismLocalization`, and
+`Langlands.Algebra.RenardLocalizationStabilityProof` applies this core to it.
+The extension to compatible actions of a possibly nonunital complex algebra
+is also separate.
 
 In particular, ordinary unital modules do not by themselves implement
 the book's nonunital algebra and action conventions. Comparisons of
@@ -141,5 +145,5 @@ core to the full final proposition. The source's converse localization
 assertions and endomorphism-module finiteness assertion are also separate.
 So are the conclusions for every positive stable power, the decomposition
 `L = K ⊕ I` and the identification of `(L_a, ã)` with `(I, a|_I)`.
-Neither compilation of this file nor a future proof of its targets
-discharges those obligations or the whole-book program.
+Neither compilation of this file nor the proof of its targets proves
+those assertions or the full final proposition.

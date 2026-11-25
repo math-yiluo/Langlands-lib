@@ -3,8 +3,9 @@
 Lean module: `Langlands.Algebra.EssFinitePresentationPrimeLocalizationStatement`.
 Declaration: `Langlands.Algebra.EssFinitePresentationPrimeLocalizationStatement.{u, v} : Prop`.
 
-This file states a proposition. It does not prove it. The proof is a separate
-task.
+This file states a proposition. It does not prove it. The proof is
+`essFinitePresentationPrimeLocalization` in the module
+`EssFinitePresentationPrimeLocalizationProof`.
 
 ## Statement in words
 
@@ -82,7 +83,7 @@ finite presentation over $R$. The first sentence of its proof is:
 This proposition is the step "by assumption we may choose" in this sentence,
 made into a standalone statement. Stacks does not prove it separately. The rest
 of the proof of 00QV (generators of $I$, writing $R$ as a colimit, the system
-$S_\lambda$) is not part of this unit. The same file `00QL.html` contains
+$S_\lambda$) is not part of this file. The same file `00QL.html` contains
 Remark 10.127.12 (tag 00QW), which comes right after the lemma. That remark
 shows that the system has to be chosen with care. The prime-localization form
 here is what the construction in the proof of 00QV starts from.

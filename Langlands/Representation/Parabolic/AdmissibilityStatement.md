@@ -1,7 +1,6 @@
 # Admissibility for actual block parabolics
 
-Author: Worker 8. This proposition pair contributes to the broad group-side
-task. It imports the published concrete `Langlands.Group.GL.Blocks`
+This proposition pair imports the published concrete `Langlands.Group.GL.Blocks`
 construction. The assertions are statements with separate proof obligations.
 
 ## The four assertions
@@ -102,16 +101,18 @@ The full eight-page text was read; original pp.2 and 7 were also visually inspec
 The concrete upper-block convention is described and sourced in `Blocks.md`
 to BZ77 Sections 2.1-2.2, printed p.446.
 
-## Dependencies and remaining obligations
+## Dependencies and scope
 
 The published imports are `Langlands.Group.GL.Blocks`, `Langlands.Group.GL.Padic`,
 `Langlands.Representation.Induction.Definitions`, their smoothness and
 local-field prerequisites, and the pinned Mathlib coinvariant construction.
-The block definitions and proofs are by their geometry owners and are not
-resubmitted as Worker 8's work. No definition code was copied into this
+The block definitions and proofs stay in their geometry modules and are
+imported, not restated. No definition code was copied into this
 statement pair.
 
 The actual normalized functor constructions, full-modulus identification,
 normalized transitivity, canonical opposite-parabolic pairing and duality,
-and proofs of all four assertions remain separate obligations. No statement
-here claims irreducibility of induction or completes the broad task.
+and proofs of the four assertions are not part of this pair. The second
+clause is proved as `leviInflationAdmissibility` in
+`Langlands.Representation.Parabolic.LeviInflationAdmissibilityProof`. No statement
+here claims irreducibility of induction.

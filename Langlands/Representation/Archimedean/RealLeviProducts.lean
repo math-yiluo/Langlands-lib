@@ -7,7 +7,8 @@ On the compact Levi subgroup `∏_j O(sz_j)` every element of the global dual sp
 sum of products of elements of the class dual spaces (`exists_isProdForm`). Iterated block Fourier
 coefficients along slots inside the blocks act factor by factor (`coeffs_globalSlots`), and the
 free algebra of one class acts on the factors of that class (`isProdForm_lift`). Internal
-infrastructure for Task 6749; see `RealLeviProducts.md`.
+infrastructure for the proof of `RealStandardLanglandsQuotientStatement`; see
+`RealLeviProducts.md`.
 -/
 
 noncomputable section

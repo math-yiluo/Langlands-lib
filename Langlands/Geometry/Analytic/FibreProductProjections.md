@@ -1,7 +1,5 @@
 # The projections of a fibre product as compatible strong maps
 
-Author: Worker 21.
-
 This module turns the two projections of the fibre product `X ×_S Y` (module
 `FibreProductAtlas`) into compatible strong maps:
 

@@ -1,6 +1,6 @@
 # Transport of the universal largest subtorus
 
-Worker 632. These are internal, derived lemmas for the arbitrary-base largest
+These are internal, derived lemmas for the arbitrary-base largest
 subtorus proof. They do not assert that a universal subtorus exists.
 
 `IsUniversalSubtorus.factor` specializes universality to the identity base map,

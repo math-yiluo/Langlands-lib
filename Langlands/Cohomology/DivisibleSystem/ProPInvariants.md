@@ -1,8 +1,8 @@
 # Pro-`p` invariants of `ℓ`-divisible systems
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.TotalComparison`
+Built on `Langlands.Cohomology.DivisibleSystem.TotalComparison`
 and, through it, on the InvariantTotal, Invariants and Sections modules and the
-earlier modules of the series. It also uses Worker 3's
+earlier modules of the series. It also uses
 `Langlands.Cohomology.ProPInvariants.Statement` (the proposition
 `ProPInvariantsExactStatement`), the Library's `isSmooth_comp`
 (`Langlands.Representation.Smooth.Transfer.PullbackProof`) and the Library's
@@ -20,9 +20,9 @@ and TotalComparison modules keep that hypothesis (as `hK`, or as `hterm`,
 `hres` for the truncated smooth Godement systems).
 
 This module derives these hypotheses for a normal pro-`p` subgroup `H` and
-coefficients in which `p` is invertible, from Worker 3's proposition
+coefficients in which `p` is invertible, from the proposition
 `ProPInvariantsExactStatement`. That proposition is taken as a hypothesis
-`hP`; it is not proved, here or (as of this module) anywhere in the Library.
+`hP`; it is not proved, here or anywhere else in the Library.
 
 ## Pro-`p` subgroups and epimorphisms on invariants
 
@@ -114,7 +114,7 @@ Now `H` also has finite index, `N : ℕ`, and the representations are in
 
 `R`, `G`, `X`, `h`, `T : SmoothSheafDivisibleSystem R G X ℓ` and `D : ℕ` are
 those of the Sections module's `smoothGodementTruncatedCompactSectionsSystem`
-(all types in one universe `u`; `h` is a proof of Worker 3's unproved
+(all types in one universe `u`; `h` is a proof of the unproved
 proposition `SmoothGodementZeroExactStatement R G X`), `G` is a topological
 group, `hP : ProPInvariantsExactStatement.{u, u, u}`, and `H`, `hH`, `hR` are
 as above. The hypotheses `hterm` and `hres` are those of
@@ -147,10 +147,10 @@ holds for pro-`p` subgroups.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305; Worker 61 read
-the page in the scanned original. Serre, *Galois Cohomology* (Springer 1997,
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.305; the page was read
+in the scanned original. Serre, *Galois Cohomology* (Springer 1997,
 corrected second printing 2002), Chapter I, §1.1 (p.3), §1.3 (pp.5–6) and §1.4
-(p.6); Worker 61 read them in the embedded text layer.
+(p.6); these were read in the embedded text layer.
 
 1. Pro-`p` subgroups. Serre §1.4 (p.6) calls a profinite group a
    pro-`p`-group "if it is a projective limit of `p`-groups, or, which amounts
@@ -164,9 +164,9 @@ corrected second printing 2002), Chapter I, §1.1 (p.3), §1.3 (pp.5–6) and §
    compactness includes the Hausdorff property and Mathlib's `CompactSpace`
    does not; for a topological group total disconnectedness already makes
    points closed and hence the group Hausdorff, a standard fact that this
-   module does not use. The fields agree with the hypotheses of Worker 3's
+   module does not use. The fields agree with the hypotheses of
    `ProPInvariantsExactStatement`, so that `hP` applies to `H` with no
-   conversion; Worker 3 confirmed this use of the statement.
+   conversion.
 2. The exactness of invariants. Harris's "`H⁰(H, •)` is exact on `ℓ`-primary
    torsion modules", for `p` prime to `ℓ`, is replaced by
    `ProPInvariantsExactStatement` for smooth representations over a ring `R`

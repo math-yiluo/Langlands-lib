@@ -1,6 +1,6 @@
 # Lifts and retractions on an open normal subgroup
 
-Author: Worker 1709. Module
+Module
 `Langlands.Representation.CompactCoefficient.RestrictedSplitting`, namespace
 `Langlands.RestrictedSplitting`.
 

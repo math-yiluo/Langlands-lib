@@ -1,6 +1,6 @@
 # The actual one-sided open-cell height estimate
 
-This unit proves steps (2) and (3) of Waldspurger, *La formule de
+This module proves steps (2) and (3) of Waldspurger, *La formule de
 Plancherel pour les groupes p-adiques (d'après Harish-Chandra)*,
 Lemma II.3.5, printed pp.257–259. The registered original is
 `waldspurger-2003-plancherel`, DOI
@@ -71,7 +71,7 @@ one. The minimal Iwasawa decomposition gives `g = k*p` with
 `p ∈ P_0(F) <= P_J(F)`, in the order needed by the generic lemma.
 
 `dense_oppositeUnipotent_mul_parabolic` proves the remaining actual
-density input. The published actual dynamic open-cell conullness
+density input. The actual dynamic open-cell conullness
 proof applies to a chosen Haar measure on `G(F)`; positivity on
 nonempty open sets makes the cell dense. Inversion transports this
 density from the `P * Ubar` cell to the `Ubar * P` product. The

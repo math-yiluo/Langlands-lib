@@ -1,7 +1,5 @@
 # Noetherian models of reductive quasi-finite flat surjections
 
-Worker 525.
-
 The theorem `Langlands.GroupScheme.reductiveQuasiFiniteNoetherianModel` proves
 the unchanged published proposition
 `Langlands.GroupScheme.ReductiveQuasiFiniteNoetherianModelStatement` in every
@@ -12,7 +10,7 @@ surjective homomorphism `f`, it constructs the exact
 
 The initial coefficient ring is the integers lifted to the universe of `A`.
 The ring equivalence with the integers makes this ring noetherian. The finite
-coefficient construction `exists_quasiFiniteSmoothAffineHomModel`, now applied
+coefficient construction `exists_quasiFiniteSmoothAffineHomModel`, applied
 to the published proof `homGeneral`, gives a finitely generated coefficient
 subalgebra, two smooth affine group models, and a locally quasi-finite flat
 surjective model homomorphism. Its two group-scheme isomorphisms and recovery

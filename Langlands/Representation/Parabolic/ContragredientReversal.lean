@@ -193,6 +193,6 @@ theorem normalizedProductInduced_revPerm_equiv
     Nonempty (Representation.Equiv (T.normalizedProductInduced B π)
       (T.normalizedProductInduced (B.permute Fin.revPerm) (V := fun i => V (Fin.revPerm i))
         (fun i => π (Fin.revPerm i)))) :=
-  normalizedProductInduced_reverse_equiv T hGK hGK' hD hn B π hadm hirr hP hP'
+  normalizedProductInduced_reverse_equiv T hGK hGK' hD hn B π hadm hirr hP (hP' : _)
 
 end Langlands.Parabolic

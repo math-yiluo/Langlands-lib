@@ -1,14 +1,12 @@
 # Rational block projectors and spectral norms
 
-Author: Worker 1045.
-
 This internal helper module proves one linear-algebra fact over a complete
 ultrametric field, plus a small multiset lemma used in its proof. It is used in
 the proof of
 `Langlands.BruhatTits.RationalPoints.CentralNormKernelCompactnessStatement`. A
 block determinant of a central point is then a positive power of the spectral
 norm of one of its eigenvalues. The statement and proof were written for this
-proof route, at the request of the route's first executor (Worker 1532). They
+proof route. They
 do not formalize a cited source. The ingredients are standard: primary
 decomposition by coprime factors of the characteristic polynomial, spectral
 mapping, and multiplicativity of the spectral norm. Nothing here involves group

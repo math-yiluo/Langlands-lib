@@ -1,8 +1,7 @@
 # Relative class-formation and continuous invariant predicates
 
-This pair is authored by Worker 49, with invariant/comparison interface
-design by Worker 42. It applies the actual multiplicative
-formation and fundamental-class predicates to Worker 42's data-only
+This pair applies the actual multiplicative
+formation and fundamental-class predicates to the data-only
 `InvariantFamily`. It defines mathematical properties; it neither supplies
 those properties as an input to a local existence theorem nor proves
 local class field theory.
@@ -102,7 +101,7 @@ is already defined in `Corestriction` and is not duplicated here.
 The prime is arbitrary. Single-extension and conjugacy predicates retain
 independent arbitrary universes for base and extension carriers.
 Inflation and restriction tower predicates use one arbitrary universe,
-as required by the current actual cochain-map interface.
+as required by the actual cochain-map interface.
 `FundamentalClassCorestriction` retains three independent field universes;
 `FundamentalCorestriction` retains an arbitrary base universe and an
 independent top-field universe, as supported by the actual transfer.
@@ -134,7 +133,8 @@ isomorphism, degree formula for restriction, and finite relative image.
 The closure-stage diagram is the expression of their compatibility
 through the actual maps of the two Lean cochain models.
 Chapter XIII, §4, Theorem 1, printed pages 195--196 (PDF pages 200--201), asserts
-the local realization; it must be a conclusion of the eventual target.
+the local realization; it must be a conclusion of the target statements
+described below.
 The positive invariant and arithmetic/geometric convention are recorded
 in the paired `FundamentalClasses.md`.
 
@@ -150,11 +150,14 @@ properties as conclusions, over an arbitrary common carrier universe.
 The compatible target additionally requires the continuous absolute
 properties and finite-stage comparison, all-integer Tate cup bijectivity,
 and positive Tate inflation compatibility for that same family.
-These are proposition definitions; their local realization remains unproved.
+These are proposition definitions. `localRelativeClassFormation`
+(module `LocalRelativeClassFormationProof`) proves the relative one, and
+`localAbsoluteCorestrictionCompatibleClassFormation` (module
+`ClassFormationAbsoluteCorestrictionProof`) proves a local realization on one
+family whose conclusion contains every clause of both.
 The separately published
 [ClassFormationTransferStatement](ClassFormationTransferStatement.md)
 defines `LocalTransferCompatibleClassFormationStatement`, adding all-integer
 Tate restriction/corestriction cup compatibility. That strengthening is
 also a target, not a proof. Absolute continuous corestriction is not a
-clause of these targets. This focused definition group does not claim
-completion of the umbrella task.
+clause of these targets.

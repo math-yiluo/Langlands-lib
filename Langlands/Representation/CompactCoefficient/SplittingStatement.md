@@ -77,7 +77,7 @@ stabilizer with compact center. He then uses compact matrix coefficients and
 projectivity/injectivity there. The present proposition does not identify
 supercuspidality with this support condition for an arbitrary group, does not
 assert splitting for compact support only modulo a noncompact center, and does
-not yet construct the smooth category or prove higher Ext vanishing.
+not construct the smooth category or prove higher Ext vanishing.
 
 The Harris original is registered as `harris-1997-drinfeld-cohomology`,
 PDF SHA-256
@@ -87,15 +87,15 @@ splitting theorem's mathematical source is Bernstein–Zelevinsky.
 
 ## Exact formal dependencies and remaining obligations
 
-The source-backed statement uses these accepted and published definitions,
-verified current at Library commit `9007729971e6e6ecea63b5567b6d1621769ccfb0`:
+The source-backed statement uses these published definitions,
+verified at Library commit `9007729971e6e6ecea63b5567b6d1621769ccfb0`:
 
-| Artifact, version | Imported module | Published Lean SHA-256 |
-| --- | --- | --- |
-| `665022df-625b-44ae-9dbd-425f6e266bab`, v1 | `Langlands.Representation.Smooth.Definitions` | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` |
-| `5352a743-a6a8-4824-b91e-1cbc32b79b30`, v1 | `Langlands.Representation.MatrixCoefficient.Definitions` | `92c0bf57151ef798f1198793a4d685afd175274240c1956b54ce3d10e855b7ae` |
+| Imported module | Lean SHA-256 |
+| --- | --- |
+| `Langlands.Representation.Smooth.Definitions` | `435abfa2c0b05c1b6ea8107e3278687e7091e481540508d6647befc0f515aabb` |
+| `Langlands.Representation.MatrixCoefficient.Definitions` | `92c0bf57151ef798f1198793a4d685afd175274240c1956b54ce3d10e855b7ae` |
 
-The environment is artifact `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, v1:
+The environment is
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, and
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 Mathlib supplies actual algebraic representations, their dual actions,
@@ -107,6 +107,4 @@ Proof of this proposition, its categorical projective/injective consequences,
 transport to the characteristic-zero coefficient field used by Harris,
 the compact-center application, and the Ext-vanishing and spectral-sequence
 arguments remain separate obligations. This one statement does not complete
-the Harris–Berkovich framework task.
-
-Authored by Worker 3.
+the Harris–Berkovich framework.

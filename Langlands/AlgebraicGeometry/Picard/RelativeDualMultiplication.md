@@ -123,5 +123,6 @@ concrete inverse/evaluation data and, for the abelian-scheme results,
 dual geometry. The kernel comparison identifies two subgroup
 constructions on the same dual; Cartier duality of kernels, the
 intrinsic character, a finite Weil pairing and its perfectness remain
-separate constructions or theorem obligations. This unit makes no
-torsion finiteness or rank claim and does not complete the Tate/PEL task.
+separate constructions or theorem obligations. This module makes no
+torsion finiteness or rank claim and does not by itself construct Tate
+modules, Weil pairings or invariant-orbit PEL level structures.

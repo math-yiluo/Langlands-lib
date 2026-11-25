@@ -84,23 +84,23 @@ def baseChangeSplitIso : (F).obj (G.splitWithDual hExact) ≅ ((F).obj G).splitW
 
 /-- Pullback sends an actual integral endomorphism ring to the new one. -/
 def baseChangeEnd : End G →+* End ((F).obj G) where
-  toFun f := (F).map f
-  map_one' := (F).map_id G
-  map_mul' f g := (F).map_comp g f
-  map_zero' := ((F).mapAddHom (X := G) (Y := G)).map_zero
-  map_add' f g := (F).map_add (f := f) (g := g)
+  toFun f := End.of ((F).map f.asHom)
+  map_one' := congrArg End.of ((F).map_id G)
+  map_mul' f g := congrArg End.of ((F).map_comp g.asHom f.asHom)
+  map_zero' := congrArg End.of ((F).mapAddHom (X := G) (Y := G)).map_zero
+  map_add' f g := congrArg End.of ((F).map_add (f := f.asHom) (g := g.asHom))
 
 /-- The pullback comparison respects the full split order action. -/
 theorem baseChangeSplitIso_order {A : Type v} [Ring A] (action : A →+* End G) (a : Aᵐᵒᵖ × A) :
-    (F).map (splitOrderAction action hExact a) ≫ (baseChangeSplitIso (S := S) G hExact).hom =
+    (F).map (splitOrderAction action hExact a).asHom ≫ (baseChangeSplitIso (S := S) G hExact).hom =
       (baseChangeSplitIso (S := S) G hExact).hom ≫
-        splitOrderAction ((baseChangeEnd (S := S) G).comp action) hExact a := by
+        (splitOrderAction ((baseChangeEnd (S := S) G).comp action) hExact a).asHom := by
   let x := action a.2
   let y := action a.1.unop
   let e := (baseChangeDualIso (S := S) G hExact).hom
   let t := (baseChangeProdIso (S := S) G (G.dual hExact)).hom
-  change (F).map (Hom.prodMap x (y.dual hExact)) ≫ (t ≫ Hom.prodMap (𝟙 ((F).obj G)) e) =
-    (t ≫ Hom.prodMap (𝟙 ((F).obj G)) e) ≫ Hom.prodMap ((F).map x) (((F).map y).dual hExact)
+  change (F).map (Hom.prodMap x.asHom (y.asHom.dual hExact)) ≫ (t ≫ Hom.prodMap (𝟙 ((F).obj G)) e) =
+    (t ≫ Hom.prodMap (𝟙 ((F).obj G)) e) ≫ Hom.prodMap ((F).map x.asHom) (((F).map y.asHom).dual hExact)
   rw [← Category.assoc, baseChangeProdIso_naturality, Category.assoc, Category.assoc,
     ← Hom.prodMap_comp, ← Hom.prodMap_comp, Category.comp_id, Category.id_comp,
     baseChangeDualIso_naturality]

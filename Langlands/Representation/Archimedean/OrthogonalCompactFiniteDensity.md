@@ -1,6 +1,6 @@
 # Norm density of finite orbit spans for the orthogonal group
 
-Worker 1028, Task 7767. This internal development proves compact-finite density in the original norm of a jointly continuous complex Banach representation of the matrix group `O(n)`. It uses polynomial tests from [OrthogonalGroupAveraging](OrthogonalGroupAveraging.md) and finite translation spans from [TranslateFinite](TranslateFinite.md), not a supplied irreducible compact-type decomposition.
+This internal development proves compact-finite density in the original norm of a jointly continuous complex Banach representation of the matrix group `O(n)`. It uses polynomial tests from [OrthogonalGroupAveraging](OrthogonalGroupAveraging.md) and finite translation spans from [TranslateFinite](TranslateFinite.md), not a supplied irreducible compact-type decomposition.
 
 For a continuous bounded-operator representation `R` of a compact topological group `K`, a finite Borel measure `ν`, and a fixed vector `v`, `compactWeightedOrbitWeightMap` is the complex-linear map `w ↦ ∫ w(k) R(k)v dν(k)` on continuous weights. With `ν` left invariant, the translate by `k` of an averaged vector is the average against the left translate `x ↦ w(k⁻¹x)`, by substitution. The span of these continuous weights injects into the corresponding span of functions. Thus `isFiniteVector_compactAverage_of_finiteWeight` bounds the orbit span of the average by the linear image of that finite-dimensional weight span.
 

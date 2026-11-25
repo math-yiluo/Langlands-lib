@@ -1,6 +1,6 @@
 # Simultaneous cuspidal presentations inside a standard Levi
 
-Worker 1437 derives a same-datum cuspidal presentation for an irreducible
+This module derives a same-datum cuspidal presentation for an irreducible
 smooth representation of the literal standard Levi `M_J(F)`. The universes
 `uF` and `uV` are independent; every representation carrier remains in
 `max uF uV`. No support comparison, uniqueness, decomposition, or

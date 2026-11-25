@@ -1,6 +1,6 @@
 # Total complexes of ℓ-divisible systems of double complexes
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem` (the
+Built on `Langlands.Cohomology.DivisibleSystem` (the
 `ℓ`-divisible systems `DivisibleSystem C ℓ`, their images `T.map F` under
 additive functors preserving finite limits and finite colimits, and
 `mapFunctor`), on `Langlands.Cohomology.DivisibleSystem.StandardResolution`
@@ -157,8 +157,8 @@ Mathlib's `Rep.{max w u v} k Γ` as in the StandardResolution module.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Worker 61
-read (2.5) and the following paragraph on p.306 in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. (2.5) and
+the following paragraph on p.306 were read in the scanned original.
 
 1. The simple complex. Harris's `C_m^{•,H}` is the simple complex of the
    double complex `K_m^{-•,•,H}` of the resolutions (2.5) of the complexes

@@ -1,7 +1,7 @@
 # Finite coefficient models of tensor units
 
-Author: Worker 706; verified and documented for the exact descent proof by
-Worker 1366. These are derived internal algebraic tools, with no claim to
+These are derived internal algebraic tools for the proof of
+`AffineCharacterFiniteGaloisDescentStatement`, with no claim to
 reproduce a particular external source.
 
 Let `k K : Type u` be fields with `Algebra k K` and `IsGalois k K`, and let

@@ -1,6 +1,6 @@
 # A unitary coordinate on the primitive rank-one valuation kernel
 
-This derived unit works over a nonarchimedean local field with an affine
+This module, whose provenance is derived, works over a nonarchimedean local field with an affine
 parameter group scheme locally of finite type. Its supplied integral product
 chart has a first block indexed by `Fin 1`. In the chart adapted to an
 ambient valuation map, this first block is the rank-one kernel.

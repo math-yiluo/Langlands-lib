@@ -1,7 +1,5 @@
 # Exactness of the general-linear derivatives
 
-Author: Worker 749.
-
 This module states that every published Bernstein–Zelevinsky derivative
 `generalLinearDerivative T ψ N k hk` of
 `Langlands.Representation.Derivative.Iteration` preserves short exact

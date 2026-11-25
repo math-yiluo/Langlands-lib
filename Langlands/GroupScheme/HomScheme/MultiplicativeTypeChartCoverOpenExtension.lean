@@ -44,6 +44,7 @@ theorem pushFamily_isOpen (f : S' ⟶ S) [IsOpenImmersion f] {U : Over S'}
     change IsClosedImmersion ((familyHom (S := S) (G := G) (M := T) (T := Over.mk (t ≫ f))
       (K := L) i ιW).hom.hom.left ≫
         (Descent.pullbackComparison f t (t ≫ f) rfl G).inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hpush : pushFamily (S := S) (S' := S') (G := G) (U := Over.mk t)
       (K := (baseChange ιW.left).obj L) f i₀ = familyHom i ιW := by
@@ -139,6 +140,7 @@ theorem exists_evaluate_pushFamily (f : S' ⟶ S) {I : Type u} {U : I → Over S
     let : IsClosedImmersion i.hom.hom.left := hi
     change IsClosedImmersion (i.hom.hom.left ≫
       (Descent.pullbackComparison f x' (x' ≫ f) rfl G).inv.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   obtain ⟨k, a', ha'⟩ := hc F x' L i' hi' hL
   refine ⟨k, (Over.map f).map a', ?_⟩

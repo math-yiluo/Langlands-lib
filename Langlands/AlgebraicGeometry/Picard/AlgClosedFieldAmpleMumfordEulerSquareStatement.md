@@ -58,7 +58,7 @@ higher cohomology, the value of `dim H^0`, the dimension of `A`, a
 polarization, a degree value or any numerical data. `h` only says that the
 cohomology is finite-dimensional and bounded. It is quantified explicitly
 because `eulerCharacteristic` takes it as an argument. The finite and flat
-premises are permitted by the task. They make `Scheme.Hom.finrank` the rank
+premises make `Scheme.Hom.finrank` the rank
 of a locally free sheaf.
 
 ## Complete checked type
@@ -96,8 +96,7 @@ inside `namespace Langlands.AbelianScheme`, with
 `Mathlib.AlgebraicGeometry.Morphisms.FlatRank` and
 `Mathlib.FieldTheory.IsAlgClosed.Basic`.
 
-In the approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, on
-Library commit `dad4d948`, the module compiles with no errors or warnings.
+On Library commit `dad4d948`, the module compiles with no errors or warnings.
 `#check` reports type `Prop`. `#print axioms` reports only `propext`,
 `Classical.choice` and `Quot.sound`. With `pp.fieldNotation false`,
 `pp.proofs true` and `pp.funBinderTypes true`, `#print` reports:
@@ -189,11 +188,13 @@ certificate, axiom, tensor product, inverse or choice of its own.
   rigidified Mumford family `mumfordBundle A preservation L M evaluation`
   of a rigidified bundle `L` with inverse `M` satisfies
   `IsPicardZeroFamily`: every geometric fibre is invariant under every
-  translation. This is the theorem-of-the-square input. The Library has
-  only the conditional theorem
+  translation. This is the theorem-of-the-square input. It is proved in the
+  Library as `Langlands.AbelianScheme.mumfordBundlePicardZero`
+  (`Langlands/AlgebraicGeometry/Picard/MumfordBundlePicardZeroProof.lean`), by the
+  conditional theorem
   `Langlands.AbelianScheme.MumfordPicardZero.mumfordBundlePicardZero_of_cube`,
   which derives it from `Langlands.GroupScheme.FieldCubePullbackStatement`
-  and `FieldLineBundleTrivialityStatement`. It has no unconditional proof.
+  and `FieldLineBundleTrivialityStatement`.
 - `A : AbelianScheme S` is a commutative group scheme over `S` whose
   structure morphism `A.X.hom` is smooth, proper and geometrically
   connected. Here `S = Spec K`.
@@ -330,7 +331,7 @@ explain why the Lean conclusion is the source formula.
    premises here. In the sources they are conclusions: GIT 6.13 (iii) calls
    `Λ(L)` "the finite flat morphism defined by L", and Milne (PDF p.17 with
    Proposition 8.1 (d)) shows `φ_L` is an isogeny for ample `L`. So the Lean
-   statement is weaker than the sources, as the objective permits. It asserts the
+   statement is weaker than the sources. It asserts the
    degree formula only for maps that are finite and flat. Under these premises
    `Scheme.Hom.finrank` is the native degree (see the next section).
 3. **Projectivity.** GIT 6.13 needs a projective abelian scheme. The Library
@@ -363,15 +364,18 @@ explain why the Lean conclusion is the source formula.
    `(f ≫ e.hom).finrank z = f.finrank (e.inv z)` for finite flat `f`.
 5. **Prerequisite statements.** `preservation : pullbackTensorComparisonIsIsoStatement`
    is proved in the Library as `pullbackTensorComparisonIsIso`.
-   `square : MumfordBundlePicardZeroStatement` is not proved at Library `dad4d948`.
+   `square : MumfordBundlePicardZeroStatement` is proved in the Library as
+   `mumfordBundlePicardZero`
+   (`Langlands/AlgebraicGeometry/Picard/MumfordBundlePicardZeroProof.lean`).
    `mumfordBundlePicardZero_of_cube`
    (`Langlands/AlgebraicGeometry/Picard/MumfordBundlePicardZeroReduction.lean`)
    reduces it to the field cube statement plus field line-bundle triviality.
    `fieldCubePullbackOfIsomorphism`
    (`Langlands/AbelianScheme/FieldCubePullbackAssembly.lean`)
    reduces the field cube statement to `FieldCubeIsomorphismStatement`, which is
-   still open. So `square` is a genuine premise. The objective allows it to be
-   quantified. Both prerequisites, and `hA`, are propositions, so by proof
+   proved in the Library as `Langlands.AlgebraicGeometry.Picard.fieldCubeIsomorphism`
+   (`Langlands/AlgebraicGeometry/Picard/FieldCubeIsomorphismProof.lean`). The
+   statement keeps `square` as a quantified premise. Both prerequisites, and `hA`, are propositions, so by proof
    irrelevance the map and `dualScheme A hA` do not depend on which proofs are
    supplied.
 6. **Cohomology.** Milne's `χ(L)` uses `dim_k H^i(A, L)`. The Library's
@@ -384,7 +388,8 @@ explain why the Lean conclusion is the source formula.
    proposition, so the value of `eulerCharacteristic` does not depend on the proof.
    It is quantified, not replaced by numerical data. The published
    `smoothProperLineBundleEulerPolynomial` gives finiteness for every tensor power
-   `tensorPow L.obj n`, which is how the parent task supplies `h`. This statement
+   `tensorPow L.obj n`, which is how the proof of `CubicFibreCohomologyStatement`
+   supplies `h`. This statement
    makes no claim about a comparison between `relativeCohomology` and
    abelian-sheaf cohomology.
 
@@ -432,10 +437,9 @@ never empty. `LineBundle.exists_tensorObj_iso_structureSheaf`
 (`Langlands/AlgebraicGeometry/Picard/LineBundleDualEvaluation.lean`) says that every line bundle has a tensor
 inverse, namely its dual. Applying it to `(LineBundle.pullback (unitSection A)).obj L`
 gives `B` and `evaluationB`. Applying it to the underlying line bundle of the
-normalized `N` gives `M` and `evaluation`. Worker 943 checked this two-step argument
-in Lean against this declaration's module, over any base `S` (private check,
-`lean_check` diagnostic `d59202b4-0d25-4e53-92b5-5029ed0f89fe`, 0 errors). The
-check is not part of the submission.
+normalized `N` gives `M` and `evaluation`. This two-step argument was checked
+in Lean against this declaration's module, over any base `S` (0 errors). The
+check is not part of the Library.
 
 **Mathematical argument for independence (not formalized).** Let
 `(B, evaluationB, M, evaluation)` and `(B', evaluationB', M', evaluation')` be two
@@ -457,11 +461,13 @@ So, granted the premises, all choices give the same morphism `A.X ⟶ dualScheme
 For a fixed `K`, `A` and `hA`, quantifying over the choices is equivalent to stating
 the formula for any single choice.
 
-## Proof obligations for the later exact proof
+## Proof obligations for the exact proof
 
-After independent acceptance and publication, a separate exact-target proof
+A separate exact-target proof
 must have this entire named proposition as its type, with no extra outer
-hypotheses. A conditional assembly that takes further propositions as
+hypotheses. `Langlands.AbelianScheme.algClosedFieldAmpleMumfordEulerSquare`
+(`Langlands/AlgebraicGeometry/Picard/AlgClosedFieldAmpleMumfordEulerSquareProof.lean`)
+is such a proof. A conditional assembly that takes further propositions as
 premises is not such a proof.
 
 Milne proves Theorem 13.3 (a) by citing Mumford, *Abelian Varieties*,
@@ -535,7 +541,7 @@ field in every characteristic. Algebraic closedness is the only condition on
 `A.X.left ≅ Spec K`, every line bundle is trivial and ample with `χ = 1`,
 and the Mumford map is an isomorphism onto the dual, of rank `1`. It adds no projectivity, symmetry,
 polarization, separability, dimension or degree premise. The only
-hypotheses beyond the task's quantified prerequisites are ampleness, the
+hypotheses beyond the quantified prerequisites `preservation` and `square` are ampleness, the
 finite-cohomology proof `h`, and the finite and flat premises on the Mumford
 map.
 
@@ -545,20 +551,15 @@ vanishes, or any value of `χ(L)`. It does not compare Mumford maps for
 different normalization data. It does not prove that `dualScheme A hA` is
 isomorphic to a source dual abelian variety.
 
-## Role and authorship
+## Role
 
-This statement is a prerequisite of task
-`baec6a6d-fe08-417e-95fd-fb8e2291cb1d`, owned by Worker 689 and Worker 100.
-That task proves
+This statement is a prerequisite of the proof
+`Langlands.AbelianScheme.PolarizedFiniteLevel.cubicFibreCohomology`
+(`Langlands/AbelianScheme/PolarizedFiniteLevel/CubicFibreCohomologyProof.lean`) of
 `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFibreCohomologyStatement`.
-Its parent obtains `h` from `smoothProperLineBundleEulerPolynomial`. Its
-owners keep ampleness of the cubic bundle, the identities `φ_L = 2λ` and
+That proof obtains `h` from `smoothProperLineBundleEulerPolynomial`. Ampleness
+of the cubic bundle, the identities `φ_L = 2λ` and
 `φ_{L^3} = 6λ`, the native degree computation, finite cohomology, higher
-vanishing, and the final assembly. This statement does not prove the
-Euler-square formula. A separate proof task is to be published for it after
-acceptance.
-
-Worker 1029 wrote the Lean statement and the sections on the statement,
-checked type, Library objects, proof obligations, scope and role. Worker 943
-wrote the sections on source specialization, hypotheses and mismatches, the
-native degree convention and normalization independence.
+vanishing, and the final assembly are parts of that proof. This statement does not prove the
+Euler-square formula. Its proof is the separate module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldAmpleMumfordEulerSquareProof`.

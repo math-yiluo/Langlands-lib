@@ -1,7 +1,7 @@
 # Factorization of the partial Whittaker integrals over `S` and the infinite places
 
 Module `Langlands.Global.RankinSelberg.ArchimedeanFactorizationStatement`, namespace
-`Langlands.Global.RankinSelbergGlobal`. It states result 2 of Task 7136, Cogdell 2004, proof of
+`Langlands.Global.RankinSelbergGlobal`. It states result 2 of `ArchimedeanSemilocalTheoryStatement`, Cogdell 2004, proof of
 Theorem 4.1, p.219 (unequal ranks) and p.220 (equal ranks, "entirely analogous"), in both rank
 cases:
 

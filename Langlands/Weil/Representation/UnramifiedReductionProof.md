@@ -107,6 +107,7 @@ literature ID `tate-1979-number-theoretic-background`, SHA-256
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 The original reading covers Henniart PDF 5-7 and Tate PDF 18-19.
 
-Worker 32 developed the group, topology and reduction assembly; Worker 66
-developed the companion Schur and determinant helpers. The continuity,
+This module holds the group, topology and reduction assembly; the companion
+module `Langlands.Weil.Representation.UnramifiedDeterminant` holds the Schur
+and determinant helpers. The continuity,
 polynomial-root and twist results are imported from the Library.

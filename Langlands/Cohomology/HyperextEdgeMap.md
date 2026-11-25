@@ -1,6 +1,6 @@
 # The edge map of the hyperext spectral sequence on a K-projective complex
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextHomComplex` (`homObjComplex`, `sign`,
 `cochainAddEquiv`, `homComplexSingleIso`, `cohomologyClassAddEquiv`,
 `homObjHomologyAddEquiv`) and
@@ -159,10 +159,10 @@ Proofs.
 ## Provenance and interpretation
 
 The statements and proofs are ours, assembled from Mathlib and the Library.
-The edge map is the one of `HyperextDegenerationStatement` (Worker 3),
+The edge map is the one of `HyperextDegenerationStatement`,
 whose Markdown relates it to the degeneration steps in Harris 1997 ((10) to
 (11), p.96) and Harris 1999 ((4.10.1) to (5.2), p.312). For this module
-Worker 61 re-read the following passage of Harris 1999 in the PDF:
+the following passage of Harris 1999 was re-read in the PDF:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
   J. Math. Kyoto Univ. 39-2 (1999), 299-318 (source
@@ -191,7 +191,9 @@ the Scope section of `Langlands.Cohomology.HyperextHomComplex`.
 
 ## Scope
 
-- `HyperextDegenerationStatement` is not proved. Only objects `Q.obj P`
+- `HyperextDegenerationStatement` is not proved here (its proof is
+  `hyperextDegenerationStatement_proof` in
+  `Langlands.Cohomology.HyperextDegeneration.Proof`). Only objects `Q.obj P`
   with `P` K-projective are treated (`homologyπ_comp_edgeMap_map` holds for
   any `P`, but only for morphisms of the form `ShiftedHom.map φ Q`).
 - No `Ext` hypothesis appears, and bijectivity of `restriction P W n` is

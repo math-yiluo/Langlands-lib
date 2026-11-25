@@ -1,6 +1,6 @@
 # Silberger's count for explicit segment data
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiSilberger`,
+Module `Langlands.Representation.Classification.A6iiSilberger`,
 namespace `Langlands.Classification.A6ii`. Internal helper for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`). It applies the published
 `glRelativeRegularComparison`, the GL_n form of Silberger 1978, Lemma 5.6 (statement

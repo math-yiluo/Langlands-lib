@@ -30,9 +30,9 @@ def invariantCoverSpectrumAction (c : Domain.FiniteCover d.obj)
 theorem invariantCoverSpectrumAction_mk (c : Domain.FiniteCover d.obj)
     (hc : ∀ i, H ≤ ρ.locusOpenSubgroup (c.obj i))
     (g : H) (i : Fin c.size) (x : BanachSpectrum (c.obj i).algebra) :
-    ConcreteCategory.hom ((ρ.invariantCoverSpectrumAction H d c hc).ρ g) ⟨i, x⟩ =
+    ConcreteCategory.hom ((ρ.invariantCoverSpectrumAction H d c hc).ρ g).asHom ⟨i, x⟩ =
       Sigma.mk i (ConcreteCategory.hom
-        (((ρ.invariantSpectrumActionFunctor H).obj ⟨c.obj i, hc i⟩).ρ g) x) :=
+        (((ρ.invariantSpectrumActionFunctor H).obj ⟨c.obj i, hc i⟩).ρ g).asHom x) :=
   rfl
 
 /-- The original finite spectrum quotient at the prescribed preserving subgroup. -/
@@ -71,11 +71,11 @@ def invariantCoverSpectrumMap (r : Domain.FiniteCover.Refinement b c) :
     rintro ⟨j, x⟩
     change (Sigma.mk (r.index j)
         ((r.map j).spectrumMap (ConcreteCategory.hom
-          (((ρ.invariantSpectrumActionFunctor H).obj ⟨b.obj j, hb j⟩).ρ g) x)) :
+          (((ρ.invariantSpectrumActionFunctor H).obj ⟨b.obj j, hb j⟩).ρ g).asHom x)) :
         Σ i : Fin c.size, BanachSpectrum (c.obj i).algebra) =
       Sigma.mk (r.index j) (ConcreteCategory.hom
         (((ρ.invariantSpectrumActionFunctor H).obj
-          ⟨c.obj (r.index j), hc (r.index j)⟩).ρ g) ((r.map j).spectrumMap x))
+          ⟨c.obj (r.index j), hc (r.index j)⟩).ρ g).asHom ((r.map j).spectrumMap x))
     exact congrArg (Sigma.mk (β := fun i : Fin c.size =>
         BanachSpectrum (c.obj i).algebra) (r.index j))
       (ConcreteCategory.congr_hom

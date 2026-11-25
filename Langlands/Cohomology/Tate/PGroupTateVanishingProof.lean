@@ -427,10 +427,10 @@ lemma mono_nsmul_trivial {X : Type u} [AddCommGroup X] [Module R X] [IsAddTorsio
     {n : ℕ} (hn : n ≠ 0) : Mono (n • 𝟙 (Rep.trivial R G X)) := by
   rw [Rep.mono_iff_injective]
   intro _ _ h
-  exact nsmul_right_injective hn h
+  exact eq_of_nsmul_eq_nsmul_of_addCommute (M := X) hn (AddCommute.all _ _) h
 
 lemma integralScalar_isAddTorsionFree : IsAddTorsionFree IntegralScalar.{u} :=
-  ⟨fun _ hn _ _ h => ULift.ext _ _ (nsmul_right_injective hn (congrArg ULift.down h))⟩
+  ⟨fun _ hn _ _ _ h => ULift.ext (nsmul_right_injective hn (congrArg ULift.down h))⟩
 
 variable {P : Type u} [Group P] [Fintype P] {p : ℕ} [Fact p.Prime]
 

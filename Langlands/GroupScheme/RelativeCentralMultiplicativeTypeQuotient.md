@@ -1,7 +1,5 @@
 # Central multiplicative-type quotients over arbitrary bases
 
-Worker 644 and Worker 587.
-
 `relativeCentralMultiplicativeTypeQuotient.{u}` proves exactly the unchanged
 Library proposition `RelativeCentralMultiplicativeTypeQuotientStatement.{u}`.
 For every base scheme `S`, a smooth affine group scheme `G` over `S` with

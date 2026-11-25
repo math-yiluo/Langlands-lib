@@ -18,7 +18,7 @@ algebra-recovery construction.
 
 The intended convention is therefore the original algebra for the
 standard column matrices and its actual opposite for the transposed
-dual algebra. This unit does not introduce Brauer quotient operations
+dual algebra. This module does not introduce Brauer quotient operations
 or assert the general Tits-obstruction comparison. It gives the actual
 algebra equivalences and the inverse-transpose conjugator equation
 needed for that comparison.

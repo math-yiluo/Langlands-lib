@@ -22,7 +22,7 @@ The shared lemma `baseScalar_naturality` first establishes this statement for
 an arbitrary commutative square of schemes over spectra, using the naturality
 of `Γ(Spec R) ≅ R`. It then applies the actual quotient projection square.
 The cohomology-coordinate module also reuses this lemma for the residue
-immersion; making the lemma public changes none of its hypotheses or proof.
+immersion; the lemma is public.
 
 `FibreSections f C U` abbreviates `K ⊗_C Γ(X_C,U)`, using the specified
 augmentation of the test `C`. `quotientFibreRingHom` is the tensor ring map
@@ -71,8 +71,11 @@ sections. Naming the value maps avoids reducing the transported ideal map
 inside tensor induction. `affineKernelEquiv_quotient_tmul` also records the
 pure-tensor equality directly.
 
-This unit proves the affine tensor compatibility for the actual quotient.
+This module proves the affine tensor compatibility for the actual quotient.
 Compatibility after identifying fibre tensor rings with actual sections on
 `X_K`, global cohomology tensor naturality, obstruction-class naturality,
-the complete local hull, algebraization, and the requested smooth Picard atlas
-remain separate obligations.
+the complete local hull, algebraization, and the smooth Picard atlas
+are not part of this module. Modules built on it treat several of them:
+`ArtinianKernelQuotientTensorNaturality` (tensor naturality),
+`ArtinianKernelQuotientObstruction` (obstruction naturality),
+`FieldMinimalPicardHull` (the hull) and `FieldPicardStackAtlasProof` and `FiniteTypePicardStackAtlasProof` (the atlas).

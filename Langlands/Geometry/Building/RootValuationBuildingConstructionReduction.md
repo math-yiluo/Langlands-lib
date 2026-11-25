@@ -1,6 +1,6 @@
 # The actual quotient and its five axiom families, from four structural statements
 
-This derived unit reduces the published target
+This module reduces the published target
 `RootValuationBuildingConstructionStatement` to four Prop-valued statements, all at
 the same universe `u`:
 
@@ -27,7 +27,7 @@ def RootValuationBuildingConstructionReductionStatement : Prop :=
 ```
 
 The theorem `rootValuationBuildingConstructionReduction` proves it. The four
-antecedents are explicit; this unit proves none of them and does not prove the
+antecedents are explicit; this module proves none of them and does not prove the
 target outright. The target is unchanged: its field, group and connected-reductivity
 hypotheses are introduced exactly as stated, and the conclusion is the target's own
 seven predicates on the constructed `P`, a realization `R` and a splitting `T`.

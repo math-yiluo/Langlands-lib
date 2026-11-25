@@ -91,8 +91,8 @@ statement.
 ### Restriction compared with the source
 
 The source holds over every field. Here the field is required to be
-algebraically closed, because the intended consumer, the Euler-square task
-`fc8e4732-8e1b-497e-adb1-c27ee538f442` for
+algebraically closed, because the intended consumer, the Euler-square proof
+`algClosedFieldAmpleMumfordEulerSquare` of
 `AlgClosedFieldAmpleMumfordEulerSquareStatement`, only needs that case. The
 statement asserts nothing over other fields.
 
@@ -104,12 +104,16 @@ of an abelian variety is trivial, because the tangent bundle is trivial.
 Duality then gives `Hⁱ(A, N⁻¹) ≅ H^{g-i}(A, N)^∨` for every `i`, so
 `χ(N⁻¹) = (-1)^g χ(N)`. Another route is the Riemann–Roch argument of the
 source: show that `m ↦ χ(L^m)` equals `m ↦ m^g χ(L)` on all integers `m`, and
-take `m = -1`. The current Library's proved theorem
+take `m = -1`. The Library's proved theorem
 `Langlands.AlgebraicGeometry.Picard.smoothProperLineBundleEulerPolynomial`
 (of `SmoothProperLineBundleEulerPolynomialStatement`) gives polynomiality of
 `χ(L^n)` only for natural `n`, so this route would also need the
-negative-exponent case. Neither Serre duality nor negative-exponent
-polynomiality is in the current Library.
+negative-exponent case. Serre duality is not in the Library. Negative-exponent
+polynomiality is proved in the module
+`Langlands.AlgebraicGeometry.Picard.InverseLineBundleEulerPolynomial`, which the
+Library's proof `Langlands.AbelianScheme.algClosedFieldEulerInverseSymmetry`
+(module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldEulerInverseSymmetryProof`)
+of this statement uses.
 
 ## Role
 

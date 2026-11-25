@@ -125,7 +125,11 @@ theorem oppositionRepresentative_neg_rho :
         (-IntegralWeylVector.rho P b hspan) = IntegralWeylVector.rho P b hspan := by
   change weylAction j (hP.oppositionRepresentative b hspan)
     (-IntegralWeylVector.rho P b hspan) = _
-  rw [map_neg, hP.oppositionRepresentative_rho b hspan, neg_neg]
+  have hneg : weylAction j (hP.oppositionRepresentative b hspan)
+      (-IntegralWeylVector.rho P b hspan) =
+      -weylAction j (hP.oppositionRepresentative b hspan) (IntegralWeylVector.rho P b hspan) :=
+    (weylAction j (hP.oppositionRepresentative b hspan)).toLinearMap.map_neg _
+  rw [hneg, hP.oppositionRepresentative_rho b hspan, neg_neg]
 
 omit [Mono j.hom.hom.left] [P.IsReduced] in
 /-- The polarized rho is generic for the original torus embedding. -/

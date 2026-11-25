@@ -114,6 +114,4 @@ the same central-character argument, which the Library helper
 linkage relation is that of Bernstein and Zelevinsky 1977, §4.2, Theorem. The other
 declarations are internal helpers for the proof of Jacquet and Shalika 1985, Lemma
 (3.2): finite combinatorics of linked pairs and the published twist-stability lemmas
-for smooth, irreducible and supercuspidal representations. Worker 1810, who writes the
-induction, assigned this step to Worker 228. Worker 228
-wrote the module.
+for smooth, irreducible and supercuspidal representations.

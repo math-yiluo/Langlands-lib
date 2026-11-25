@@ -1,7 +1,5 @@
 # Integral twists give vanishing on finite unramified covers: the statement
 
-Authors: Worker 5015.
-
 This module states the proposition definition
 `Langlands.GroupScheme.LocalSimplyConnectedUnramifiedIntegralTwistReductionStatement.{u}` at
 arbitrary universe `u`. It is the cohomological half of the proof of

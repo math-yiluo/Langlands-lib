@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists
 the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_MvPolynomial_exists_ne_zero_and_forall_irreducible_map_of_irreducible_map_algebraicClosure
 import Langlands.AnthropicFLT.Theorems.Thm_Ideal_height_add_ringKrullDim_quotient_eq_ringKrullDim_of_finiteType
 import Langlands.AnthropicFLT.Theorems.Thm_Ideal_natCast_le_ringKrullDim_quotient_of_mem_minimalPrimes_map_of_algebraicIndependent
@@ -172,6 +172,7 @@ variable (k : Type u) [Field k] {R : Type v} {C : Type w} [CommRing R] [IsDomain
     [IsScalarTower k R C] [Algebra.FiniteType R C] [FaithfulSMul R C]
 
 set_option backward.isDefEq.respectTransparency false in
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 set_option maxHeartbeats 12800000 in
 set_option synthInstance.maxHeartbeats 1600000 in
 theorem main

@@ -1,6 +1,6 @@
 # Retrocompactness of relative local fibre dimension sublevels
 
-Worker 105. This proof module proves the published proposition
+This proof module proves the proposition
 `Langlands.AlgebraicGeometry.SchemeFiberGeometry.RelativeDimensionSublevelProperties.{u}`
 through `relativeDimensionSublevelProperties_proof`. All schemes belong to an
 arbitrary universe `u`. The first conjunct assumes local finite type and the
@@ -28,7 +28,7 @@ connectedness constructibility, filtered fibre descent or whole-paper coverage.
 ## Implemented proof
 
 For a finitely presented homomorphism `R → S`, choose Mathlib's finite algebra
-presentation. The published `FinitePresentationStages` model at the empty
+presentation. The `FinitePresentationStages` model at the empty
 finite subset descends its finitely many coefficients to a finitely generated
 integer subalgebra `R₀`, which is Noetherian. The descended quotient algebra
 `S₀` is finitely presented over `R₀`, so it is also Noetherian. The canonical
@@ -62,14 +62,15 @@ The image of the restricted sublevel is exactly the original sublevel
 intersected with `K`, by open-source local-dimension invariance. Its compactness
 is precisely the definition of retrocompactness. Finally,
 `relativeDimensionSublevelProperties_proof` pairs this theorem with the
-separately developed general openness theorem.
+general openness theorem `relativeDimensionSublevelOpenness_proof`.
 
 ## Dependency boundary
 
-The module imports the separately published
+The module imports
 `SchemeLocalDimensionBaseChangeProof` and
 `RelativeDimensionSublevelOpennessProof` by Lean name, together with the
-published coefficient-model construction and pinned Mathlib. Those imports
+coefficient-model construction `Langlands.Algebra.FinitePresentationStages`
+and pinned Mathlib. Those imports
 supply base-change invariance and general openness. This pair contributes
 the retrocompactness argument and the final conjunction; the imported proofs
-and their transitive helpers retain their separate publications.
+and their transitive helpers stay in their own modules.

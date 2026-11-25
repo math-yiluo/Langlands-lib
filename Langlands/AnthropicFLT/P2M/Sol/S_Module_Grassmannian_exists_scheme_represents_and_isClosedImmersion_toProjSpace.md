@@ -1,12 +1,12 @@
 # `Langlands.AnthropicFLT.P2M.Sol.S_Module_Grassmannian_exists_scheme_represents_and_isClosedImmersion_toProjSpace`
 
-Ported for task `6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism functor of a projective abelian scheme). Proof module (FLT `P2M/Sol/`).
+Ported for the proof of projective representability of the relative endomorphism functor of a projective abelian scheme, `Langlands.AbelianScheme.relativeEndomorphismRepresentability`, which depends on this module through its imports. Proof module (FLT `P2M/Sol/`).
 
 ## Source and licence
 
 Port of `P2M/Sol/S_Module_Grassmannian_exists_scheme_represents_and_isClosedImmersion_toProjSpace.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -17,7 +17,7 @@ FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 - An attribution header comment is added at the top of the file.
 - The import of the FLT utility module `P2M.Util` (custom tactics and commands) is dropped.
 - Universe generalization. The FLT development works in universe 0 (`Type`, `Scheme.{0}`). For this project the ported files of the Hom-scheme construction are generalized to an arbitrary universe `uz`, so that the construction applies to abelian schemes over rings in any universe. Mechanical part in this file: a line `universe uz` is added (line 17 here); in 4 lines the replacements `Type` (universe 0) → `Type uz` (4 places), `Scheme.{0}` → `Scheme.{uz}` (1 place) are made, and these lines are otherwise unchanged. Consequently the statements become universe-polymorphic; for `uz = 0` (and universe 0 for `Type*` binders) they are the FLT ones.
-- The FLT imports `Theorems.Thm_Module_Grassmannian_exists_scheme_represents_and_isAffineOpen_chart_cover` and `Theorems.Thm_Module_Grassmannian_exists_isClosedImmersion_toProjSpace_of_represents` are replaced by the published Library modules `Langlands.RingTheory.Grassmannian.Representability` and `Langlands.RingTheory.Grassmannian.ProjectiveEmbedding`, which already declare these two theorems with the FLT statements (Worker 344's adaptations; generalized to universe `u` in this contribution). This avoids redeclaring their names.
+- The FLT imports `Theorems.Thm_Module_Grassmannian_exists_scheme_represents_and_isAffineOpen_chart_cover` and `Theorems.Thm_Module_Grassmannian_exists_isClosedImmersion_toProjSpace_of_represents` are replaced by the Library modules `Langlands.RingTheory.Grassmannian.Representability` and `Langlands.RingTheory.Grassmannian.ProjectiveEmbedding`, which already declare these two theorems with the FLT statements (adaptations of the FLT files; generalized to universe `u` together with this port). This avoids redeclaring their names.
 - No other change: apart from the edits listed above, the declarations, statements and proofs are the FLT text.
 
 ## Content
@@ -38,4 +38,4 @@ Names and namespaces are the FLT ones; statements are the FLT ones up to the cha
 ## Dependencies
 
 Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpace` (Library).
-Other imports: `Mathlib`, `Langlands.RingTheory.Grassmannian.Representability` and `Langlands.RingTheory.Grassmannian.ProjectiveEmbedding` (Library modules, generalized to universe `u` in this contribution).
+Other imports: `Mathlib`, `Langlands.RingTheory.Grassmannian.Representability` and `Langlands.RingTheory.Grassmannian.ProjectiveEmbedding` (Library modules, generalized to universe `u` together with this port).

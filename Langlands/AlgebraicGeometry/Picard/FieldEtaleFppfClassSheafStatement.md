@@ -48,13 +48,12 @@ point sets would not supply this conclusion.
 This proposition records the missing fppf descent hypothesis of the published
 internal module `Picard.EtaleFppfSheafComparison` in the proper-field case.
 It is an internal target, rather than a direct translation of an external
-representability theorem. Worker 509 identified the missing comparison in the
-Picard-stack route; Worker 144 supplied this statement and the formal
-invertibility criterion.
+representability theorem. The missing comparison arises in the
+Picard-stack route.
 
 The criterion uses only the published comparison isomorphism and invariance
 of the sheaf property under presheaf isomorphisms. The field proposition is
-defined here and remains to be proved. This module proves no proper-field
-descent, Picard algebraicity, or scheme representability. The intended
-prerequisite proof must establish the field proposition without using either
-of the latter conclusions as an input.
+defined here and proved separately, as `fieldEtaleFppfClassSheaf` in
+`FieldEtaleFppfClassSheafProof`. This module proves no proper-field
+descent, Picard algebraicity, or scheme representability. The proof of the
+field proposition uses neither of the latter conclusions as an input.

@@ -1,7 +1,5 @@
 # Ordered composition of nested block refinements
 
-Author: Worker 434.
-
 This module constructs an actual composite refinement and proves exact ordered
 flatten associativity. All declarations belong to
 `Langlands.GeneralLinear.BlockShape`. The inputs are arbitrary

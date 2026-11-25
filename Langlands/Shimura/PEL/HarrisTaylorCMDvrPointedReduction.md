@@ -1,6 +1,6 @@
 # Pointed class restriction on spectra of noetherian domains
 
-Worker 800. This module applies the Library's connected-component and
+This module applies the Library's connected-component and
 geometric-point evaluation isomorphisms to the actual tests used by
 `CMLevelDiscreteValuativeExistenceStatement`. All declarations are in
 `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`.

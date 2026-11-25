@@ -3,7 +3,7 @@
 This module contains one proposition and no proofs:
 `Langlands.Aubert.General.RationalPointFamily.GL.RationalAlternatingOperatorComparisonStatement`,
 with universe parameters `u` (the p-adic field) and `v` (an extra
-representation-carrier universe). It states the Family 5 comparison between
+representation-carrier universe). It states the comparison between
 two published versions of Aubert's unadjusted alternating operator for `GL_N`
 over a p-adic field. One version is built from the rational points of the
 group scheme `GL_N`. The other is the existing operator on invertible matrices.
@@ -89,8 +89,8 @@ matrix block subgroups (`GeneralLinearRationalIndexing`).
 
 ## Provenance
 
-The provenance is derived. Aubert does not state this proposition. It is the
-Family 5 comparison obligation of Task 3640: the general rational-point
+The provenance is derived. Aubert does not state this proposition. It says
+that the general rational-point
 construction specialized to `GL_N` agrees with the existing GL
 construction. It compares only the two published Lean operators, under the
 canonical published group isomorphism. It adds no source assertion beyond
@@ -98,5 +98,5 @@ Définition 1.5 cited above. The statement is unconditional apart from the
 quantified data: no structural premise remains as a hypothesis, because part
 2 asserts that the premises are satisfiable.
 
-This module states the equality and proves nothing. A complete proof is the
-target of a separate `lean.proof@1` task.
+This module states the equality and proves nothing. The proof is
+`rationalAlternatingOperatorComparison` in `GeneralLinearRationalComparisonProof`.

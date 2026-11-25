@@ -1,6 +1,6 @@
 # Open descent for the semisimple identity-component locus
 
-Worker 801. This is an internal derived construction from the actual semisimple
+This is an internal derived construction from the actual semisimple
 locus and its arbitrary-base-change preimage equality in `FibreLocusComparisons`.
 For a smooth affine group scheme over any base, the structure records an actual
 open containing the given point and contained in that locus. If a good open is

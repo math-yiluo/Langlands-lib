@@ -45,11 +45,9 @@ closed. Locality of both rings, Noetherianity of `B`, and finiteness of `B` as
 an `A`-module through `f` remain explicit hypotheses. No supplied
 surjectivity, residue-field, or closed-immersion certificate is used.
 
-The formulation and initial checked draft are due to Worker 487; Worker 362
-reused that draft and expanded this explanation for publication. This is an
-internal supporting statement for the local closed-immersion lane of parent
-task `246ddac8-b03d-4618-8bf3-1e1908ee0ad9`, rather than a transcription of an
-external theorem. Its suggested derivation applies Nakayama over `B` to its
+This is an internal supporting statement for the local closed-immersion
+criterion `Langlands.AlgebraicGeometry.ProperRationalImmersionLocalClosedImmersionStatement`,
+rather than a transcription of an external theorem. Its suggested derivation applies Nakayama over `B` to its
 maximal ideal, then over `A` to the finite module `B` and the image of `f`.
 That derivation is not implemented in this statement module. The module makes
 no assertion about scheme morphisms and does not assume a scheme immersion

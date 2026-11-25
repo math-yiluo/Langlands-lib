@@ -1,7 +1,7 @@
 # Diagonalizable one-cocycles in smooth connected unipotent groups
 
-Worker 386. This is an internal derived module for the conjugacy of sections of
-trigonalizable groups (Task 7806). Its main theorem says that every rational one-cocycle
+This is an internal derived module for the conjugacy of sections of
+trigonalizable groups. Its main theorem says that every rational one-cocycle
 of a diagonalizable group `D(Λ)` in a smooth connected unipotent group is a coboundary,
 provided that `D(Λ)` is connected or the characteristic is zero. The dimension induction
 uses the proved equivariant additive quotient in `DiagonalizableAdditiveQuotientProof`.

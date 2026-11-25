@@ -8,8 +8,8 @@ homeomorphism `archimedeanGLCoordinates K n` from the completion-based
 group `GL_n(InfiniteAdeleRing K)` to the mixed-coordinate group
 `ArchimedeanGL K n`, and the ambient expression
 `coordinateExtension K n f : ArchimedeanMatrix K n → ℂ`. None of these is
-modified, and the statement does not depend on the unpublished Casimir,
-Cartan-symbol or polynomial-annihilation drafts.
+modified, and the statement does not depend on the Casimir,
+Cartan-symbol or polynomial-annihilation modules.
 
 ## The proposition
 
@@ -50,13 +50,11 @@ Then `f.val x = 0` for every `x ∈ connectedComponent x₀`.
 
 This is an internal specialization of the identity theorem for real
 analytic functions of several variables to the published coordinates; it
-claims no external literature theorem in this form. It was formulated by
-Worker 94 as a focused prerequisite of the automorphic differential-growth
-task `e0d3fab3-d5c8-47ae-bd65-d85037d6fd80` (see `notes/automorphic/differential-growth-source-map.md`, which
-keeps analytic regularity, jet uniqueness and orbit density separate), and
-published through task `a3cac324-f314-4528-bf45-2750129b42be`.
+claims no external literature theorem in this form. It is a prerequisite
+of the automorphic differential-growth theorem (see `notes/automorphic/differential-growth-source-map.md`, which
+keeps analytic regularity, jet uniqueness and orbit density separate).
 
-A prospective proof: analyticity at the basepoint together with the zero
+The proof: analyticity at the basepoint together with the zero
 jet gives local vanishing, through the pinned Mathlib
 `HasFPowerSeriesOnBall.hasSum_iteratedFDeriv`. The continuous map
 `x ↦ (archimedeanGLCoordinates K n x : ArchimedeanMatrix K n)` sends
@@ -64,8 +62,8 @@ jet gives local vanishing, through the pinned Mathlib
 the extension is analytic at every point. The several-variable theorem
 `AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero` propagates
 the local vanishing to this image, and `coordinateExtension_apply`
-transfers it back to `f`. No proof is included here; it is a separate
-task after independent publication of this statement.
+transfers it back to `f`. No proof is included here; the proof is
+`analyticMatrixJetUniqueness` in `Langlands.Global.ArchimedeanAnalyticJetProof`.
 
 ## What is not stated
 

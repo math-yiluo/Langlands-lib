@@ -1,7 +1,5 @@
 # Exact source changes for diagrams on slice sites
 
-Author: Worker 13.
-
 This internal categorical prerequisite proves additivity and finite-limit and
 finite-colimit preservation for the actual functors in
 [SourceSlice](SourceSlice.md). It constructs no new geometric comparison.

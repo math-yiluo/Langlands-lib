@@ -1,13 +1,12 @@
 # The finite induced-cuspidal embedding from the whole-category splitting
 
-Worker 4957. This module reduces the finite induced-cuspidal embedding of
+This module reduces the finite induced-cuspidal embedding of
 Renard VI.7.2,
 `Langlands.Aubert.General.RationalPointFamily.RationalCuspidalInducedEmbeddingStatement.{u,v}`,
-to one published proposition that is not yet proved: the first decomposition
-of Renard VI.3.5,
+to one published proposition that the Library states but does not prove: the
+first decomposition of Renard VI.3.5,
 `Langlands.CuspidalSupport.RationalWholeCuspidalCategoryDecompositionStatement.{u,v}`.
-It therefore does not prove the embedding statement. It is an internal step of
-proof task `198824c2-4e2f-40c1-94a0-07fa748bede9`. No source states this
+It therefore does not prove the embedding statement. No source states this
 implication as a separate result.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -53,8 +52,7 @@ proves the splitting of the actual normalized Jacquet module
 1. The represented standard Levi `Standard.leviScheme i ν (rootSet i ν I)` is
    connected reductive by the published
    `standardLeviScheme_isConnectedReductive`. Its centralizer premise is
-   discharged by the published unconditional `dynamicCentralizerReductive`
-   (Workers 1325 and 1326).
+   discharged by the published unconditional `dynamicCentralizerReductive`.
 2. The intrinsic maximal split torus of that Levi has a relative root system
    by the published `HasRelativeRootSystem.of_standardLeviTorusFactor`. It is
    applied to the ambient `hRoots`, `hStandard`, `hG`, `hi`, `ν`, `hν`, the
@@ -62,15 +60,17 @@ proves the splitting of the actual normalized Jacquet module
    step 1, the Levi morphism `Standard.leviHom` and its published
    representation and closedness facts `Standard.isRepresentedBy_leviHom` and
    `Standard.isClosedSubgroup_leviHom`.
-3. Worker 1570's published `hasLeviCuspidalRemainderSplitting_of_wholeStatement`
+3. The published `hasLeviCuspidalRemainderSplitting_of_wholeStatement`
+   (`RationalLeviSplittingFromWhole`)
    takes the whole-category statement, the ambient data, `hU`, the closedness
    `hM I` of the literal Levi and the root system of step 2. It gives
    `HasLeviCuspidalRemainderSplitting` for every smooth representation of the
    literal Levi subgroup with carrier in `Type v`. It is applied to the
    Jacquet module above, whose carrier is again in `Type v`.
 
-The second theorem applies Worker 1570's published
-`rationalCuspidalInducedEmbedding_of_leviJacquetSplittings` to the first.
+The second theorem applies the published
+`rationalCuspidalInducedEmbedding_of_leviJacquetSplittings`
+(`RationalFiniteCuspidalEmbeddingReduction`) to the first.
 
 ## How the embedding is built
 
@@ -90,7 +90,7 @@ splittings as follows. Here it is
   actual `SmoothRep.directSum`. Unimodularity and compact-limit regularity of
   the standard unipotent radicals come from the published rational regularity
   theorems.
-- Let `K` be the kernel of this map. If `K` were nonzero, Worker 1784's
+- Let `K` be the kernel of this map. If `K` were nonzero, the
   published `exists_nontrivial_isLeviCuspidal_jacquet_arbitraryCarrier` would
   give an index `I` whose Jacquet module of `K` is nonzero and cuspidal. That
   module maps injectively into the Jacquet module of the source, and the
@@ -104,8 +104,7 @@ faithfulness of `I` or `R` is used.
 
 ## Scope
 
-The only hypothesis is the VI.3.5 whole-category statement. Its proof is task
-`4bee987a-093b-4054-bd65-7360168351d2`. No admissibility, finite length, finite
+The only hypothesis is the VI.3.5 whole-category statement. No admissibility, finite length, finite
 generation, cuspidal decomposition of the source or faithful I/R unit is added
 to the embedding statement. Once VI.3.5 is proved, the embedding statement is
 the direct application `rationalCuspidalInducedEmbedding_of_wholeStatement hwhole`.

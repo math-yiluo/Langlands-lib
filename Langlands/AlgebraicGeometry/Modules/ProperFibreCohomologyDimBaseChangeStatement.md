@@ -1,7 +1,5 @@
 # Invariance of fibre cohomology dimensions under base change
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProperFibreCohomologyDimBaseChangeStatement`
 defines the proposition `ProperFibreCohomologyDimBaseChangeStatement`. It uses the fibre notation
 of `ProperFlatFibreCohomologySemicontinuityStatement` (same namespace): for `g : Y ⟶ T` and a
@@ -10,7 +8,7 @@ and `F_t` is the pullback of `F`. The cohomology is the Library's `relativeCohom
 
 ## The statement
 
-Let `g : Y ⟶ T` be proper and `F` an invertible module on `Y` (FLT `Scheme.Modules.IsInvertible`).
+Let `g : Y ⟶ T` be proper and `F` an invertible module on `Y` (FLT `Scheme.Modules.IsInvertibleFLT`).
 Let `h : T' ⟶ T`, `g' : Y' ⟶ T'` and `h' : Y' ⟶ Y` form a cartesian square
 (`IsPullback h' g' g h`, i.e. `Y' = Y ×_T T'`), and let `F'` be the pullback of `F` along `h'`.
 Then for every point `t'` of `T'` and every `p`:
@@ -38,4 +36,5 @@ extension. The convention `finrank = 0` for infinite-dimensional spaces does not
 base change preserves infinite dimension too.
 
 The statement is a prerequisite of a proof of the Library's `PicardHilbertPolynomialPiecesStatement`
-(Task 6028). It shows that pieces defined by fibre cohomology are compatible with base change.
+(proved as `Picard.picardHilbertPolynomialPieces` in
+`Langlands.AlgebraicGeometry.Picard.PicardHilbertPolynomialPiecesProof`). It shows that pieces defined by fibre cohomology are compatible with base change.

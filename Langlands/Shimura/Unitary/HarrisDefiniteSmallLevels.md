@@ -1,7 +1,5 @@
 # Sufficiently small levels for Harris's definite group
 
-Author: Worker 19.
-
 Harris (1999) takes the away level `K^{ℓ,p}` "sufficiently small so that
 (4.5)" holds. This module names that condition, `HarrisSufficientlySmall`,
 and proves that it can be achieved below every compact open level for the
@@ -20,7 +18,7 @@ sufficiently small so that (4.5) `K_ℓ × C_p` acts without fixed points on
 
 Harris (1999), Section 1, printed p. 301 (PDF p. 3): among the hypotheses
 following (1.1), "`J_∞ = ∏_{σ ∈ Σ_E} U(n)`", expressed algebraically by
-Worker 57's published `HasDefiniteSignature`.
+the published `HasDefiniteSignature`.
 
 ## Setting
 
@@ -83,14 +81,11 @@ Source IDs and SHA-256 fingerprints:
 Formal dependencies:
 
 - `Langlands.Shimura.Unitary.HarrisSmallLevels`
-  (`exists_harrisDividingLevelFree`), from candidate
-  `b5ac1f92-254f-4424-a40e-6b67a1e352b7`, which depends on candidates
-  `7c0a7e9b-59ea-41f0-bed4-cd80fcd887f6`,
-  `86a1bf69-cdc3-42a2-80dd-390814d5926d` and
-  `c19177f9-ea37-49e0-9b3f-81e8966cb1f4`;
+  (`exists_harrisDividingLevelFree`), which depends on
+  `HarrisLevelFreePositive`, `HarrisLevelFreeSmall`,
+  `PositiveArithmeticFinite` and `TorsionFreeLevels`;
 - `Langlands.Shimura.Unitary.DefinitePositivity`
-  (`SecondKindInvolution.isPositive_of_hasDefiniteSignature`), from
-  candidate `851f3621-484e-497e-9d1c-57aaf72048f9`;
+  (`SecondKindInvolution.isPositive_of_hasDefiniteSignature`);
 - the published `Langlands.Shimura.Unitary.HarrisDividingLevelFree`
   (`DividingLevelFree`, `HarrisDividingLevelFree`, `splitLevel_mono`),
   `HarrisPairPoints` (`ellPlace`, `primePlace`), `Signature`

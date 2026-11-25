@@ -73,7 +73,10 @@ standard type of `ρ`, inverse-standard type of `τ`, and both original and
 dual `PairAnalyticInput` propositions. No bespoke replacement predicate or
 factor constructor is introduced.
 
-The following obligations remain for a proof of the closed statement.
+A proof of the closed statement has the following obligations. The proof
+`Langlands.RankinSelberg.whittakerTypeGammaConstructionInput` in
+`Langlands.Representation.RankinSelberg.WhittakerTypeGammaConstructionInputProof`
+discharges them.
 
 1. **Original character transport.** Both premises use `standardCharacter ψ`.
    The second representation in the ordered branch must have
@@ -144,30 +147,30 @@ The following obligations remain for a proof of the closed statement.
    that extra transport. A proof route invoking a dual functional equation
    must discharge it.
 
-## Existing ownership and scope
+## Substantive proofs and scope
 
-The substantive proof owners are the existing tasks:
+The substantive statements are proved in their own modules of
+`Langlands.Representation.RankinSelberg`:
 
-| Published statement | Existing proof task |
+| Published statement | Proof |
 | --- | --- |
-| `EqualRankAnalyticStatement` | `5998b0b2-e367-4e85-8d4d-47e3b9b4a222` |
-| `UnequalRankAnalyticStatement` | `b01bbdd0-5321-41f4-908e-2048e837da34` |
-| `UnequalRankCommonGeneratorStatement` | `13326f3a-e77f-4ed1-a44a-b6407f6b7c0a` |
-| `EqualRankFunctionalEquationStatement` | `fc96b553-9980-45e3-90d0-641e62ad7a5e` |
-| `UnequalRankFunctionalEquationStatement` | `9a87301f-3d9f-4d04-af2a-840798b82af5` |
+| `EqualRankAnalyticStatement` | `equalRankAnalytic` (`EqualRankAnalyticProof`) |
+| `UnequalRankAnalyticStatement` | `unequalRankAnalytic` (`UnequalRankAnalyticProof`) |
+| `UnequalRankCommonGeneratorStatement` | `unequalRankCommonGenerator` (`UnequalRankCommonGeneratorProof`) |
+| `EqualRankFunctionalEquationStatement` | `equalRankFunctionalEquation` (`EqualRankFunctionalEquationProof`) |
+| `UnequalRankFunctionalEquationStatement` | `unequalRankFunctionalEquation` (`UnequalRankFunctionalEquationProof`) |
 
-These task assignments are not proof evidence. Worker 11 owns the source
-statement interfaces; Worker 31 owns the existing factor-construction
-interfaces. Worker 40 will arrange the separate proof successor of this
-closed proposition, including the two character-transport obligations as
-needed, without duplicating those five substantive proof tasks.
+The proof of this closed proposition, in
+`WhittakerTypeGammaConstructionInputProof`, discharges the two
+character-transport obligations and uses those results without duplicating
+them: four of them directly, and `unequalRankCommonGenerator` through
+`unequalRankFunctionalEquation`.
 
-Worker 46's symmetric L-polynomial existence statement task
-`7a757d52-b76b-4a3f-98d8-b258d348bb8b` and Worker 40's consumer
-`0153deb3-0833-4025-b869-95be58117eb7` retain their scopes. The separate
+The symmetric L-polynomial existence statement
+`SymmetricLPolynomialExistenceStatement` is a separate proposition. The separate
 conditional `SymmetricGammaExpressionStatement` and
-`EqualRankFactorSwapStatement` are not asserted here. Once this proposition
-is proved, the existing `padicSymmetricGammaFactorOfWhittakerType` can consume
+`EqualRankFactorSwapStatement` are not asserted here. With this proposition
+proved, the existing `padicSymmetricGammaFactorOfWhittakerType` can consume
 its conclusion; this module neither constructs that factor anew nor proves
 its expression, symmetry, or any analytic theorem.
 

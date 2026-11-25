@@ -1,6 +1,6 @@
 # Induction along conjugate embeddings
 
-Author: Worker 5134. Module `Langlands.VirtualRepresentation.ExactInductionConjugation`.
+Module `Langlands.VirtualRepresentation.ExactInductionConjugation`.
 It is a helper for the proof of `HenniartGlobalizationStatement` (Henniart 2000,
 §3.4). There the induced representation `Ind_{W_{E'_u}}^{W_{F_v}}` coming from a global
 induced representation must be compared with a generator induced from the Weil group of

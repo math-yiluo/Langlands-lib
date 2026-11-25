@@ -1,7 +1,5 @@
 # The Hasse–Weil bound for absolutely irreducible plane curves (Schmidt)
 
-Author: Worker 69.
-
 This module states W. M. Schmidt's elementary form of the Riemann hypothesis for plane curves
 over finite fields. It is the arithmetic input of the Library's Lang–Weil route to Conrad's
 Lemma 4.6. The module contains no proof.
@@ -61,5 +59,4 @@ this bound, by passing from a geometrically irreducible curve to a birational pl
 
 ## Status
 
-Open. A proof is to be supplied through its own focused proof task, following Schmidt's paper or
-any other elementary route.
+Proved, as `planeCurveHasseWeil` in `PlaneCurveHasseWeilProof`.

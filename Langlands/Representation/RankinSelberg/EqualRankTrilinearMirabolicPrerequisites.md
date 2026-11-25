@@ -1,6 +1,6 @@
 # Equal-rank assembly after GL finite length
 
-Worker 353 authored this internal specialization of the published
+This module is an internal specialization of the published
 `EqualRankTrilinearPrerequisites` adapter. It applies the published theorem
 `Langlands.glAdmissibleFiniteLength` in each representation-carrier universe,
 then uses the existing assembly. The field universe and the two carrier

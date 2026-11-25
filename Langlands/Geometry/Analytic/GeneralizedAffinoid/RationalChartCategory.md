@@ -1,6 +1,6 @@
 # Actual bounded restrictions between positive-radius rational charts
 
-Author: Worker 56. This module is an internal categorical construction from the
+This module is an internal categorical construction from the
 published weighted rational quotients, bounded extension theorem, and spectrum
 identification. Its namespace is
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart`.

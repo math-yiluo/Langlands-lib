@@ -1,6 +1,6 @@
 # Diagonalizing an upper triangular cocharacter by an upper triangular matrix
 
-This internal unit refines the published diagonalization of cocharacters of `GL_n`
+This internal module refines the published diagonalization of cocharacters of `GL_n`
 (`Dynamic.GeneralLinearCocharacterDiagonal`). Here the cocharacter is upper triangular, and the
 conjugating matrix is required to be upper triangular too. Upper triangular means lying in
 `blockParabolicSubgroup` or `blockParabolic` for the weights `i ↦ -(i.val : ℤ)` on `Fin N`.
@@ -46,7 +46,7 @@ group-scheme morphisms, so it holds on every test scheme.
 
 ## Provenance
 
-Internal. The argument reuses the coefficient-column method of the published unit
-`Dynamic.GeneralLinearCocharacterDiagonal`, authored by Worker 74, and replaces its basis
+Internal. The argument reuses the coefficient-column method of the published module
+`Dynamic.GeneralLinearCocharacterDiagonal` and replaces its basis
 selection by an explicit choice of one coefficient column per index. No perfectness,
 characteristic or algebraic-closure hypothesis is used.

@@ -57,7 +57,7 @@ bundle and this proof into an element of that subtype.
 This is derived infrastructure combining the relative rigidified classes of
 Edixhoven, van der Geer and Moonen, *Abelian Varieties*, Chapter VI §1,
 paragraph (6.2), printed p.88 (PDF p.92), with the geometric-fibre criterion
-chosen by item 3 of the parent task. The latter is motivated by the point
+`IsGeometricallyPicardZero` chosen in `GeometricPicardZero`. The latter is motivated by the point
 formula for `φ_L` on printed p.95 (PDF p.99) and the identity-component/kernel
 criterion in Corollary (7.22), printed p.106 (PDF p.110). The registered
 source is `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
@@ -70,8 +70,9 @@ Picard sheaf are not needed to form these categories and subsets. Neither
 comparison is asserted. The field identity-component criterion motivates the
 chosen predicate; it is not proved or used as an imported formal theorem.
 
-Preservation of this condition under relative pullback remains a separate
-statement and proof obligation. In particular, this module does not yet turn
+Preservation of this condition under relative pullback is a separate
+statement, `PicardZeroPullbackStatement`, proved by `picardZeroPullback` in
+`PicardZeroPullbackProof`. In particular, this module does not turn
 the subsets into a subfunctor, supply a tensor-product group law, or establish
 representability or a dual abelian scheme. The quotient construction itself
 requires no proof of the separate rigidified pullback coherence proposition.

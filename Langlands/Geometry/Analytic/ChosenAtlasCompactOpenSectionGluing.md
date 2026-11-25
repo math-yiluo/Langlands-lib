@@ -2,7 +2,7 @@
 
 ## Provenance and hypotheses
 
-This is an internal construction by Worker 56. It uses the actual
+This is an internal construction. It uses the actual
 continuous discrete section action of
 `ChosenAtlasCompactOpenSectionAction`, the whole arbitrary-sieve glue of
 `ChosenAtlasLocallyConstantGluingAction`, and the actual coefficient
@@ -43,8 +43,8 @@ whole-pair coefficient laws; the group topology is unchanged.
 ## Constructed common open stabilizers
 
 `compactOpenSectionOpenStabilizer` packages the entire stabilizer of a
-compact-open section pair as an open subgroup, using the predecessor's
-proved ambient openness. For a finite family of complete pairs `s i`
+compact-open section pair as an open subgroup, using the ambient openness
+proved in `ChosenAtlasCompactOpenSectionAction`. For a finite family of complete pairs `s i`
 and a prescribed open subgroup `U`, `finiteSectionOpenStabilizer`
 constructs
 
@@ -103,8 +103,8 @@ target `S`.
 
 To prove equality of the functions, take any target point and choose a
 selected local member containing it. Its pair fixedness places the group
-element in that member's full setwise stabilizer. The predecessor's
-fixed-domain action comparison extracts equality of the complete
+element in that member's full setwise stabilizer. The fixed-domain action
+comparison of `ChosenAtlasCompactOpenSectionAction` extracts equality of the complete
 locally constant function with its inverse precomposition. The original
 sheaf glue recovers the selected local function at both the point and
 its inverse translate. These two recovery equations and local fixedness

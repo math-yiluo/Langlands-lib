@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.TorusMonomialDerivative`, namespace
 `Langlands.HarmonicAnalysis.TorusFourier`. It imports:
 
-- `Langlands.HarmonicAnalysis.TorusFourierDecay` (Worker 249): the angular derivative
+- `Langlands.HarmonicAnalysis.TorusFourierDecay`: the angular derivative
   `torusPartialDeriv`, `torusPartialDeriv_finiteTorusExp`,
   `isSmoothFiniteTorusFunction_torusPartialDeriv` and the bound `exists_norm_le_of_isSmooth`;
   through its imports `IsSmoothFiniteTorusFunction`, `finiteTorusExp`, `finiteTorusExp_add` and
@@ -86,7 +86,7 @@ need only `[Fintype K]`; `finiteTorusMonomialLift_add_single` needs only `[Finty
 
 ## Relation to the Library
 
-- `TorusFourierAveraging.norm_integral_mul_le_rpow` (Worker 249) takes a continuous
+- `TorusFourierAveraging.norm_integral_mul_le_rpow` takes a continuous
   `ι : (J → Circle) → T` and assumes bounds on the derivatives of `z ↦ φ(ι(z) χ)`, uniform in
   `χ`. With `T = J → Circle` (the torus `Im X(M)` in coordinates) and
   `ι = finiteTorusMonomial a`, `exists_bound_comp_monomial_mul` and

@@ -1,7 +1,5 @@
 # Linear dual-number differentials of general linear scheme representations
 
-Author: Worker 2.
-
 This module constructs an algebraic first-order differential for every actual
 group-scheme morphism from a general linear group scheme to another general
 linear group scheme. The construction uses its action on actual dual-number

@@ -1,8 +1,7 @@
 # Sections of the two-block cell with prescribed restriction
 
-Worker 731 authored this derived statement for the proof of
-`Langlands.Whittaker.TwoBlockWhittakerExtensionStatement`. Worker 643 asked
-for this unit and agreed to its exact form. The module contains one
+This is a derived statement for the proof of
+`Langlands.Whittaker.TwoBlockWhittakerExtensionStatement`. The module contains one
 Prop-valued definition and no proof.
 
 ## The statement
@@ -32,7 +31,7 @@ f ∈ twoBlockCellSubmodule F a b π₁ π₂ ∧
   ∀ x, twoBlockRestriction F a b π₁ π₂ f x = Ψ x • v.
 ```
 
-Meaning of the names, all from the accepted definition module
+Meaning of the names, all from the definition module
 `Langlands.Representation.Whittaker.TwoBlockOpenCell`:
 
 - `TwoBlockInducedCarrier F a b π₁ π₂` is the actual carrier of the ordered

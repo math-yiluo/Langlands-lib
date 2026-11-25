@@ -1,6 +1,6 @@
 # Naturality of normalized specialization
 
-Worker 1585. This is a derived construction from the actual tensor,
+This is a derived construction from the actual tensor,
 full smooth induction, relation quotient, and specialization modules.
 Waldspurger 2003 I.5, printed p.245, and IV.1, printed p.277
 (`waldspurger-2003-plancherel`), supply the motivating B-coefficient and

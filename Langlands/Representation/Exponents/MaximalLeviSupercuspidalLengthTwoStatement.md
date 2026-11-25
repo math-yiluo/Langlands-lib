@@ -46,6 +46,3 @@ The older 2010 errata, PDF p.13, corrects the earlier length wording to
 “less than or equal to” and fixes the adjunction paragraph's `P′, M′` indices.
 The 2026 passage uses the corrected non-strict bound and indices. No
 source-specific project errata note was present in the checked notes paths.
-
-Worker 1658 authored the statements and reduction. Worker 1714 contributed
-to the endpoint-interface design for their common unitarizable-constituent task.

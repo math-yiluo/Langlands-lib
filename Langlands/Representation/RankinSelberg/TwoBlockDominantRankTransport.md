@@ -1,7 +1,5 @@
 # Dominant-rank induction and certificate transport
 
-Author: Worker 484.
-
 This internal helper transports certificates for the dominant-rank gamma and
 L proof. It proves no analytic factor comparison or closed dominant-rank target.
 

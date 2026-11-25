@@ -1,9 +1,9 @@
 # Actual matrix witnesses for the matched adjacent-rank products
 
-Worker 486. This derived construction supplies both actual shifted matrix
+This derived construction supplies both actual shifted matrix
 continuations needed by the matched original and literal dual finite-product
 formulas. The ambient whole-function separated-model realization remains an
-explicit premise. Both exact adjacent-rank parent propositions remain open.
+explicit premise. This module proves neither exact adjacent-rank parent proposition.
 
 The implementation twists the original full Whittaker-type representation by
 the continuous determinant character, carries the supplied coefficient to its
@@ -32,7 +32,7 @@ inputs, and independent field and three carrier universes are preserved.
 
 This is internal composition of published analytic and coefficient-transport
 results, not an additional literal source theorem. The model rationality theorem
-discharges the previous matrix-witness premises unconditionally. No matrix
+discharges the matrix-witness premises unconditionally. No matrix
 functional equation, normalized-generator divisibility, model-image existence,
 large-twist extension or final gamma/L certificate is asserted here. No later
 multiplicativity result is used.

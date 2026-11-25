@@ -6,8 +6,8 @@ underlying points. It supports clause (3) of
 `AffineAnalytificationRationalPointsStatement`. The base field is normed,
 ultrametric and complete; the space and chart-index universes are independent.
 
-The implementation adapts the rationality construction in Worker 669's shared
-Task 7084 draft revision 1. A character to the base field is determined by its
+The implementation adapts a rationality construction written for the proof of
+`AffineAnalytificationRationalPointsStatement`. A character to the base field is determined by its
 absolute value, by subtracting the scalar equal to its value. Therefore a
 base-field-valued point is determined by its underlying point.
 

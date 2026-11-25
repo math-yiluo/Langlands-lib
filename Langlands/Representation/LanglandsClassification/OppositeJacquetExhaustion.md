@@ -1,6 +1,6 @@
 # The final quotient step for opposite Jacquet untwists
 
-Worker 148. This internal assembly step uses an actual opposite standard
+This internal assembly step uses an actual opposite standard
 Jacquet exponent and its `UnitaryUntwist` record. The standard parabolic,
 Levi, and split component are those of the original standard family.
 The closed `LeviSecondAdjointnessStatement` is an explicit input.

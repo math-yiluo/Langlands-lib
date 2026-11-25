@@ -57,8 +57,8 @@ theorem finiteCompletion_finrank_dvd [NumberField F] [NumberField E] [IsGalois F
   let : FiniteDimensional (v.adicCompletion F) (w.adicCompletion E) := FiniteExtension.local_finite v w
   let : IsGalois (v.adicCompletion F) (w.adicCompletion E) := isGalois_adicCompletion v w
   rw [← IsGalois.card_aut_eq_finrank, ← IsGalois.card_aut_eq_finrank]
-  let f := ClassField.Global.FundamentalClass.decompositionHom v w
-  rw [Nat.card_congr (MonoidHom.ofInjective (ClassField.Global.decompositionHom_injective v w)).toEquiv]
+  let f := ClassFieldTheory.Global.FundamentalClass.decompositionHom v w
+  rw [Nat.card_congr (MonoidHom.ofInjective (ClassFieldTheory.Global.decompositionHom_injective v w)).toEquiv]
   exact Subgroup.card_subgroup_dvd_card f.range
 
 /-- Norms modulo powers over a quadratic number-field extension descend from the actual

@@ -3,7 +3,7 @@
 Module `Langlands.Shimura.Unitary.KottwitzLiftIndependence`, namespace
 `Langlands.Shimura.KottwitzDual`.
 
-This module adds to item 3 of Task 5424. Kottwitz's polynomial `P(π_p, E_v)`
+Kottwitz's polynomial `P(π_p, E_v)`
 (module `KottwitzPolynomial`) is defined through a point `t̂` of the dual torus
 `T̂` that lifts the unitarily normalized character `χ = ξ δ_B^{-1/2}` of a
 principal-series parameter `ξ`. This lift is not unique. The module proves,
@@ -16,7 +16,7 @@ Frobenius action on embeddings (stated below), that:
 So, for a fixed `√p`, the relation `IsKottwitzPolynomialOver` gives exactly
 one polynomial for each parameter `ξ`.
 
-It imports Worker 8's `KottwitzDualTorus`, which describes how the Frobenius
+It imports `KottwitzDualTorus`, which describes how the Frobenius
 automorphism `σ = dualAction G` acts on `T̂` (`torusTwist`) and on cocharacters
 (`cocharPullback`).
 
@@ -25,9 +25,9 @@ automorphism `σ = dualAction G` acts on `T̂` (`torusTwist`) and on cocharacter
 Write `X = ℤ × (S → Fin n → ℤ)` for the cocharacter lattice of the diagonal
 torus `T` in embedding coordinates, so that `T̂(Ω) = Ωˣ × (S → Fin n → Ωˣ)`.
 `cocharPairing t a ∈ Ωˣ` is the pairing `⟨t, a⟩`. Let `G` be the
-Frobenius permutation `frobeniusCMPerm hΦ θ`. Worker 8's identity
+Frobenius permutation `frobeniusCMPerm hΦ θ`. The identity
 `cocharPairing (torusTwist G t) a = cocharPairing t (cocharPullback n G a)`
-says that `σ` on `T̂` is dual to `cocharPullback n G` on `X`.
+of `KottwitzDualTorus` says that `σ` on `T̂` is dual to `cocharPullback n G` on `X`.
 
 Borel (1979, §9.5) describes unramified characters of an unramified torus as
 `Hom(X_*(T)^Γ, ℂˣ)`, and unramified parameters as `t ⋊ Fr` up to
@@ -82,7 +82,7 @@ conjugacy class of `t ⋊ Fr` is determined by the character it induces on
 `FrobeniusInvariantsRational E K n p θ hΦ` (a `Prop`) says: every `a ∈ X`
 fixed by `cocharPullback n (frobeniusCMPerm hΦ θ)` equals
 `embeddingCochar θ Φ m` for some `ℚ_p`-rational cocharacter
-`m ∈ localCocharacters` (Worker 8's lattice of pairs `(m, m_c)` indexed by the
+`m ∈ localCocharacters` (the lattice of `KottwitzPrincipalSeries` of pairs `(m, m_c)` indexed by the
 places `w | p` of `K`, with `m_w(k) + m_{w̄}(rev k) = m_c`).
 
 Mathematically, this is the statement `X_*(T)^Γ = X_*(T)^{Fr}` together with
@@ -95,8 +95,11 @@ the identification of Frobenius orbits of embeddings with places of `K`:
 
 Since `G` and `G⁻¹` have the same fixed points, the direction of the
 Frobenius permutation does not matter. This module does not prove the
-hypothesis. Worker 8's planned module `KottwitzFrobeniusPlaces` (fiber
-property of `harrisPlace`) is intended to discharge it.
+hypothesis. The module `KottwitzFrobeniusPlaces` derives it from the fiber
+property of `harrisPlace`
+(`frobeniusInvariantsRational_of_frobeniusOrbitsArePlaces`), and
+`KottwitzFrobeniusOrbits` proves it when `K` is unramified at `p`
+(`frobeniusInvariantsRational_of_isUnramifiedAt`).
 
 The second hypothesis, `Function.Injective (embeddingCochar θ Φ)`, holds
 mathematically because every place `w | p` is `harrisPlace p θ i` for some
@@ -140,7 +143,7 @@ uses existence of a lift.
 
 - The hypotheses `FrobeniusInvariantsRational` and injectivity of
   `embeddingCochar` are assumed, not proved.
-- Invariance of `P` under Worker 8's Weyl equivalence of parameters. With
+- Invariance of `P` under the Weyl equivalence of parameters of `KottwitzPrincipalSeries`. With
   this, `P` would depend only on the Weyl orbit of `ξ`; it needs `σ`-fixed
   Weyl representatives in `Ĝ`.
 - Existence of a parameter for a spherical `π` and its uniqueness up to the

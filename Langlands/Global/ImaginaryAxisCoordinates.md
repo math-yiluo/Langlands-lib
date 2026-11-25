@@ -5,7 +5,7 @@ Module `Langlands.Global.ImaginaryAxisCoordinates` (namespace
 `X^*(P) ⊗ ℝ` and `X^*(P) ⊗ ℂ` in which the imaginary parameters
 `i𝔞_P^*` form the slice `x ↦ i x` of `ℂⁿ`. It also computes the real part
 and the root forms in these coordinates. It is a helper for the proof of
-Lapid's Proposition 6 (Task 5613).
+Lapid's Proposition 6 (`EisensteinImaginaryAxisHolomorphyStatement`).
 
 ## Generic part
 

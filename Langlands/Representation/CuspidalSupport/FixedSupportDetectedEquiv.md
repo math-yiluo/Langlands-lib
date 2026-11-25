@@ -1,8 +1,6 @@
 # Actual equivalences between detected constituents with fixed support
 
-Author: Worker 357.
-
-This internal constructor composes published constituent equivalences and
+This constructor composes published constituent equivalences and
 published factor matching under cuspidal association. It returns an actual
 representation equivalence for two positive-rank objects with the same
 supercuspidal support and nonzero full top derivatives. It introduces no
@@ -128,16 +126,15 @@ The four direct project imports are
 `Data.Fintype.EquivFin` and `Algebra.BigOperators.Ring.Finset`.
 All inherited Lean/Markdown pairs match published Library
 `83a867912d2befca2ebf3e208f7d8fc29ae19ec5` byte for byte.
-There is no pending or draft input in this construction.
 
-The author read the four primary project pairs and the displayed definitions
+The four primary project pairs and the displayed definitions
 of association, transport, external tensors, support, and the detected
-constituent API. The association branch proves the general forward
+constituent API were read. The association branch proves the general forward
 factor-matching implication by adjacent Levi block swaps and Jordan–Hölder
 comparison. The tensor branch proves actual Weyl transport by dependent tensor
 reindexing and tensor irreducibility/cuspidality from factor properties.
 These branches introduce no derivative or segment formula.
-The detected-constituent branch uses the previously audited general exact
+The detected-constituent branch uses the general exact
 functor argument, scalar top derivative of a fixed cuspidal product, proved
 cuspidal-only top nonvanishing, general derivative exactness and Leibniz
 comparison, Whittaker multiplicity one, and finite length of products of
@@ -146,37 +143,29 @@ published ones. This is a used-body audit together with recursive import,
 byte-equality and code scans, not a claim to have reread every inherited file.
 
 The recursive closure inventory below has 944 project modules, including
-this new module, and 289 external frontier imports. There are no missing
+this module, and 289 external frontier imports. There are no missing
 project modules or missing/empty paired Markdown files. All 943 inherited
 pairs equal the named Library. Searches on Lean with comments and string
 literals removed found no prohibited execution syntax, proof holes, new
-axioms, or the host's scanned excluded declaration names and task identifiers.
+axioms, or the names of the excluded results listed in the next paragraph.
 The only `Classification` modules in this closure are individual
 supercuspidal, generic support/constituent and general finite-length/product
 embedding infrastructure and their statement definitions. No individual-head
-construction is needed by this new adapter.
+construction is needed by this adapter.
 
-The audited closure contains none of the parent generic segment-product
+The audited closure contains none of the generic segment-product
 uniqueness, multisegment exhaustion, ordered strong-head existence, quotient
 coverage, ordered conversion, tempered uniqueness, square-integrable
 classification/exhaustion or regular exhaustion conclusions. It contains no
-Ze80 3.5/9.6 segment derivative formula or proof successor, full segment
+Ze80 3.5/9.6 segment derivative formula or any proof of it, full segment
 Jacquet formula, segment-socle derivative argument or restricted support-proof
 intermediate. In particular it does not import `SegmentHeadSupportStep`,
 `SegmentHeadJacquetReduction`, `TwoSupercuspidalProductStructureProof`, or
 use `core_mid`.
 
-The host's complete trusted operator rulings
-`bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920`,
-`30144f6f9b59540b88b6d4c1517892d9`,
-`ed80148e21e7523abfc048f455e98eb0`,
-`2b33898bdd0a5ff1b9031be5155a06f0`, and
-`ca18fd5005bf5e12a3f7cade18dca865` were read in full.
-The first two permit the proved general derivative foundations while
-preserving the host's independence exclusions. This construction needs no
+This construction needs no
 support-only bound, no restricted length-two intermediate, and no restricted
-adjacent-supercuspidal reducibility exception from the later rulings.
+adjacent-supercuspidal reducibility result.
 
 ## Scope and development evidence
 
@@ -185,15 +174,12 @@ published generic interfaces. It is not a proposition declaration for an
 unproved uniqueness assertion. It does not prove nontriviality of any
 additional top derivative, irreducibility of a product, existence of special
 heads, a truncated-head identification, or a segment derivative formula.
-It neither proves nor completes either direction of the host
-`SegmentHeadProductIrreducibility` criterion. Its own publication requires
-independent semantic review and integration.
+It neither proves nor completes either direction of the
+`SegmentHeadProductIrreducibility` criterion.
 
 Development compilation and exact declaration inspection completed with no
 errors or warnings. Inspection reports a definition with precisely universe
 parameters `uF`, `uV` and only `propext`, `Classical.choice`, and `Quot.sound`.
-Development checks and this author audit do not establish independent
-mathematical acceptance.
 
 ## Complete recursive project import inventory
 

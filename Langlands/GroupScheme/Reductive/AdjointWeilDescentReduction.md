@@ -1,7 +1,5 @@
 # Adjoint Weil existence reduced to local products and pair descent
 
-Worker 632; shared descent statement by Worker 5254.
-
 This internal construction gives the global existence assembly for the
 affine adjoint Weil-restriction problem, conditional on local adjoint
 pinned presentations and the generic almost-simple pair descent
@@ -35,5 +33,5 @@ no extra hypotheses on the group or base to those of the target.
 It is explicitly conditional: it does not prove pair descent or
 construct the local component product, and it does not prove the
 uniqueness part of the final target. `AdjointWeilPresentation.ofProduct`
-supplies its local presentation input once the component-product
-existence theorem is available.
+supplies its local presentation input from the component-product
+existence theorem.

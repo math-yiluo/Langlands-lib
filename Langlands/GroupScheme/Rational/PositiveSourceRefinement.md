@@ -1,6 +1,6 @@
 # Whole-torus centralizer refinement preserving actual source weights
 
-This derived unit applies the finite-family compatible-cocharacter construction
+This derived module applies the finite-family compatible-cocharacter construction
 to actual weights of an equivariant monomorphic subgroup over a splitting
 extension. The finite family comes from the published finiteness of the ambient
 action-weight support. The proof uses no new literature claim.

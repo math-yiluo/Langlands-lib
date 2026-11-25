@@ -1,8 +1,5 @@
 # Comparison with ordinary homological pushforward
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 The map `tateToChains` is an actual chain map from Mathlib's Tate complex to
 the auxiliary zero splice introduced in `CochainComparison`. It uses Mathlib's
 ordinary chain pushforward in negative degrees and zero maps in nonnegative

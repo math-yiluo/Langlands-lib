@@ -1,7 +1,5 @@
 # A whole irreducible quotient from a nonzero image
 
-Authors: Worker 320 (original draft), Worker 514 (import reduction and verification).
-
 This internal algebraic lemma is derived from the Noetherian part of finite
 group-algebra length. For a nonzero morphism from a finite-length smooth
 representation `A` to `B`, its actual image has finite length and is nonzero.

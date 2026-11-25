@@ -1,6 +1,6 @@
 # Actual archimedean adjoint automorphisms
 
-Author: Worker 16. Namespace: `Langlands.Global.ArchimedeanGL`.
+Namespace: `Langlands.Global.ArchimedeanGL`.
 
 The module constructs the actual adjoint automorphisms on the published real
 matrix Lie algebra, its complexification, its universal enveloping algebra,
@@ -82,7 +82,7 @@ inclusion. In particular, the center equivalence and its inverse permit
 reindexing arbitrary central elements. No positive-rank hypothesis occurs.
 
 Differential covariance, central covariance on function spaces, and preservation
-of automorphic forms remain separate statement and proof tasks. This unit
+of automorphic forms are not treated here. This module
 constructs only the automorphisms and their elementary algebraic laws.
 
 ## Original source and derived provenance
@@ -92,8 +92,8 @@ Corvallis Part I (1979), section 1.5(1), printed p.190 (one-based PDF185), state
 preservation of the automorphic conditions under compact right translates.
 Sections 4.2(c) and 4.3, printed p.195 (PDF190), use a finite-codimension ideal
 of the enveloping center in the adelic definition and its archimedean slices.
-Worker 16 read both original pages. No source-specific errata note was found
-in the current Library's public notes.
+Both original pages were read. No source-specific errata note was found
+in the Library's public notes.
 
 Registered original: `borel-jacquet-1979-automorphic`, SHA256
 `3b9fe0145da81d870ef8967be83635cd440a2581fe043e64e63324e22dec4db5`.

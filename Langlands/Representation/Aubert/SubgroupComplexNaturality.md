@@ -1,7 +1,7 @@
 # Naturality of the actual subgroup complex and its terminal projection
 
 This internal construction extends `SubgroupComplex` to maps induced by
-ambient intertwiners. Author: Worker 194.
+ambient intertwiners.
 
 The generic declarations in `Langlands.Aubert.CutComplex.Diagram`
 apply a family of linear coefficient maps on the total product
@@ -34,7 +34,7 @@ Its equivariance is checked on quotient representatives.
 canonical terminal projections. All source and target representation
 carrier universes remain independent.
 
-This unit supplies maps and the actual chain and projection squares.
+This module supplies maps and the actual chain and projection squares.
 It makes no assertion of exactness, finite-length preservation,
 cuspidal support, or irreducibility. The subgroup family still requires
 its separate realization by the shared standard-parabolic framework

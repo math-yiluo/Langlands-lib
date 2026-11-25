@@ -48,5 +48,5 @@ pulls it back using the two descent inputs to obtain the exact rational
 `zeroKernel_of_torus_zExtension`, additionally assumes
 `ReductiveKottwitzDescentStatement` and `UnramifiedZeroDescentStatement`.
 All six inputs remain explicit, so it is a conditional implication and
-does not establish the unconditional target of Task 6367. No compatibility
+does not establish the unconditional rational `ZeroKernelStatement`. No compatibility
 between maps chosen over different fields of definition is needed.

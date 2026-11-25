@@ -89,4 +89,4 @@ printed pp. 655–656). The Lean route differs from the book.
 
 No further literature assertion is used.
 
-Drafted by Worker 5707 for Task 5707 (`f502c3c7-c095-4c74-bf82-ad8ffb916f57`, shared draft revision 2). The source is registered as `kaletha-prasad-2023-bruhat-tits-new-approach`.
+The source is registered as `kaletha-prasad-2023-bruhat-tits-new-approach`.

@@ -45,6 +45,8 @@ explicit `complexHom.{u+1}` specialization in the declaration.
 The provenance is internal: these are consequences of the imported
 adjunctions and localization constructions, not a transcription of an
 external theorem. No geometric restriction is imposed on `f`. Exactness
-is used only for abelian-sheaf inverse image. This unit does not yet prove
+is used only for abelian-sheaf inverse image. This module does not prove
 compatibility with `complexComparison`, identify the derived comparison
-with `relativeHAddEquiv`, or prove the assigned arbitrary pullback theorem.
+with `relativeHAddEquiv`, or prove the arbitrary pullback theorem
+`RelativeAbelianSheafCohomologyPullbackStatement`; the Library proves that
+statement in `RelativeAbelianSheafCohomologyPullbackProof`.

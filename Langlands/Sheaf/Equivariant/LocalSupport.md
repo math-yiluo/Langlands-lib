@@ -1,6 +1,6 @@
 # Equivariant compact sections from local vanishing
 
-Author: Worker 13. This internal construction extends the published
+This internal construction extends the published
 moving-space section action to the actual compact-section submodule defined
 by local vanishing. It preserves independent universes for the space, group,
 commutative coefficient ring and module carriers.
@@ -47,4 +47,4 @@ argument as the earlier universe-restricted `CompactSections` construction,
 now applied directly to local restrictions. There is no new original-literature
 assertion. Locally constant section comparison, automatic smoothness,
 analytic or etale site comparison, derived functors and Harris specialization
-remain separate obligations.
+are not treated here.

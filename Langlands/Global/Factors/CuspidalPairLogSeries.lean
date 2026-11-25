@@ -17,7 +17,7 @@ open NumberField
 open Automorphic (CuspidalOperatorRealization CuspidalSpectralPresentation OperatorRealization)
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents residueCardinality)
 open CuspidalPairAbsoluteConvergence CuspidalPairPoles
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- The pair logarithmic asymptotic of Jacquet–Shalika II, Theorem 4.1, in one
 field. The imaginary shift records the unitary phase removed by the split-centre

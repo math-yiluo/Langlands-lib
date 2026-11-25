@@ -23,7 +23,7 @@ points, giving the required equality on the direct pullbacks.
 
 No affineness, connectedness or nonemptiness is assumed for `W`, and `A` need
 not be local or nonzero. The sufficient condition explicitly requires the
-torus section and its inverse character values; this unit does not construct
+torus section and its inverse character values; this module does not construct
 them or assert comparison existence. The content is internal coefficient and
 pullback coherence, derived from the supplied pinning vectors, Lie-kernel
 naturality, weight-space equations and actual inner-automorphism formulas.

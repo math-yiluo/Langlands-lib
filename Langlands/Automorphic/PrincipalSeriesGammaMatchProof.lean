@@ -6,7 +6,7 @@ import Langlands.Correspondence.TriangularArithmeticGamma
 
 noncomputable section
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uE
 
@@ -38,4 +38,4 @@ theorem principalSeriesPairGammaMatchStatement :
           Equiv.prod_comp σ fun i => tateRationalGamma K ψ ν (μ i * μ' j)
   rwa [hre] at hG
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

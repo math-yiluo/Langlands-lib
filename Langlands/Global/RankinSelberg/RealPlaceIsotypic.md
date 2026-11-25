@@ -1,9 +1,9 @@
 # Spanning by real-place standard-module maps
 
 This internal helper for the real-place Rankin–Selberg model bridge is in namespace
-`Langlands.Automorphic.OperatorRealization`. Worker 771 adapts Worker 5665's
-complex-place isotypy proof and uses Worker 3657's real standard-module
-nontriviality proof. It is an algebraic result about the existing operator
+`Langlands.Automorphic.OperatorRealization`. It adapts the
+complex-place isotypy proof (`ComplexPlaceIsotypic`) and uses the real standard-module
+nontriviality proof (`RealStandardNontrivialProof`). It is an algebraic result about the existing operator
 realizations and real standard modules.
 
 For an operator realization `S` of `GL_n` over a number field, a real place `w`,

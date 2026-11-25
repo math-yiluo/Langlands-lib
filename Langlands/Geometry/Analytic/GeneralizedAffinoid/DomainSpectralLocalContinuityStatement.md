@@ -1,7 +1,5 @@
 # Local spectral continuity for represented affinoid domains
 
-Authors: Worker 56 and Worker 36.
-
 `DomainSpectralLocalContinuityStatement.{u,v}` is a proposition definition.
 It states three conclusions about the already constructed local section
 action. This pair supplies no proof.
@@ -55,7 +53,7 @@ forward section evaluation, while the third uses the inverse bounded
 section operator.
 
 This is an internal consequence target for the constructed represented
-domain topology. It adapts Worker 36's published
+domain topology. It adapts
 `StrictTestDomain/SpectralLocalContinuityStatement` to arbitrary full
 represented domains on positive-polyradius affinoids. The existing
 `DomainAutomorphism`, `DomainSpectralTests`, `DomainSpectralTopology` and

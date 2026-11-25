@@ -1,7 +1,5 @@
 # Global sections of the bi-Čech complex are the tensor total complex
 
-Author: Worker 1147.
-
 Lean module: `Langlands.AlgebraicGeometry.Modules.BiCech.SectionsIso`.
 It is a helper for the proof of
 `Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethStatement`.
@@ -28,7 +26,8 @@ carry frames of `L` and `M`.
 - `totCech πX πY 𝒰 𝒱 L M` is the total complex
   `HomologicalComplex.mapBifunctor (cechCochainComplex πX 𝒰 L) (cechCochainComplex πY 𝒱 M)
   (curriedTensor (ModuleCat R)) (ComplexShape.up ℕ)`. It uses the tensor signs
-  `Langlands.Cohomology.ModuleComplex.tensorSignsUpNat` (Worker 1137), with
+  `Langlands.Cohomology.ModuleComplex.tensorSignsUpNat` (module
+  `Langlands.Cohomology.ModuleComplex.TensorSignsUpNat`), with
   `ε₁ = 1` and `ε₂(p, q) = (-1)^p`.
 - `sectionsBicech p₁ p₂ πP 𝒰 𝒱 L M` is `relativeGlobalSections πP` applied termwise to
   `bicechComplex (prodBiCover p₁ p₂ 𝒰 𝒱) (p₁^* L ⊗ p₂^* M)`.

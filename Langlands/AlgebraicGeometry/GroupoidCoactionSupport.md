@@ -10,4 +10,4 @@ The annihilator criterion for module support shows that this semilinear involuti
 
 The source ring map is flat because it is étale. The flat scalar extension support formula therefore identifies tensor support with the source inverse image of the original module support. Arrow reversal exchanges the source map with the target map, yielding `support_preimage_eq`.
 
-The result uses the actual coaction counit and cocycle laws and the relation's actual symmetry and closed-relation uniqueness. It is a derived implementation by Worker 101 using the published definitions and the pinned Mathlib support APIs. It asserts neither a finite subcoaction nor a nonzero invariant theorem.
+The result uses the actual coaction counit and cocycle laws and the relation's actual symmetry and closed-relation uniqueness. It is a derived implementation using the published definitions and the pinned Mathlib support APIs. It asserts neither a finite subcoaction nor a nonzero invariant theorem.

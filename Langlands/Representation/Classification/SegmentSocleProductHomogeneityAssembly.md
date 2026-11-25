@@ -18,10 +18,10 @@ The module has one definition and two theorems.
   `segmentSocleProductHomogeneity_of`.
 
 These are conditional results: neither is the unconditional proof
-`segmentSocleProductHomogeneity` required by task
-`b711af72-fdf9-4b32-a450-937911426822`. That proof will apply
-`segmentSocleProductHomogeneity_of` once every hypothesis has a published
-proof.
+`segmentSocleProductHomogeneity`. That proof, in
+`SegmentSocleProductHomogeneityProof`, applies
+`segmentSocleProductHomogeneity_of` to published proofs of every
+hypothesis.
 
 The target says: for every unitary additive character `ψ`, every `N`, and
 every segment-product datum `d` of rank `N + 1` with segment socles
@@ -49,9 +49,7 @@ None of these is proved here. All are published Library propositions.
 | `hC` | `CuspidalProductMirabolicSupportShift.{uF, uV} F T` | `Classification.CuspidalProductMirabolicSupportShiftStatement` | BZ77 4.7(b), as used in Ze80 4.4–4.5 |
 
 All module names are under `Langlands.Representation`. The statements of
-`hH` (task `49d8eea3-1f52-4505-bfce-d76bf8ed5b8a`, published at Library
-commit `368b3cec`) and `hC` (task `d54cc845-00d9-44be-bff2-c7a8bf032d31`,
-published at `7114a390`) were published after the modules
+`hH` and `hC` were published after the modules
 `SegmentSocleProductHomogeneityInduction` and `SegmentSocleProductCaseTwo`
 were written. Those modules take the bodies of these propositions at a
 fixed `ψ` as inline hypotheses. This theorem passes the instances `hH ψ` and
@@ -63,8 +61,8 @@ two conjuncts are used, so only these two are assumed.
 
 BZ77 4.13(a) is not a hypothesis. The theorem uses the published proof
 `Langlands.Derivative.mirabolicProductRestriction F T`, at universes
-`uF, max uF uV`, from module `Derivative.MirabolicProductRestriction`
-(Worker 1163). It proves `MirabolicProductRestrictionStatement`, the premise
+`uF, max uF uV`, from module `Derivative.MirabolicProductRestriction`.
+It proves `MirabolicProductRestrictionStatement`, the premise
 `hR` of `homogeneous_of_caseTwo`.
 
 ## Proof
@@ -96,8 +94,7 @@ derived material: it records the lower results that the Lean proof of those
 modules uses. The definition is Lean packaging with no counterpart in the
 literature. The Ze80 3.5 statement `SegmentSocleDerivatives` and
 the highest-derivative statement `SegmentSocleProductHighestDerivative` are
-used only as hypotheses; the task objective names Ze80 3.5 as an input of
-6.3.
+used only as hypotheses; Ze80 6.3 uses Ze80 3.5 as an input.
 
 ## Conventions
 
@@ -118,19 +115,20 @@ published modules `Derivative.MirabolicProductMinusCompatibilityStatement`,
 `Derivative.MirabolicProductRestriction`.
 
 `SegmentSocleProductCaseTwo` and `SegmentSocleProductHomogeneityInduction`
-are published (candidate `b006f56e-c499-4ae3-945e-a842aa52ef74`). They use
+are published. They use
 the published Classification helper modules
 `SegmentProductCuspidalEmbedding`, `SegmentProductSplit` and
-`SegmentContentShift` (candidate `5440c02b-fc2d-4abe-bbe8-6cd061c6a683`). The
+`SegmentContentShift`. The
 import audit in `SegmentSocleProductHomogeneityInduction.md` covers those
 five modules. It also covers the five published Derivative helpers
 (`LevelCalculus`, `ProductVanishing`, `RestrictionBridge`, `RightMixedLevel`,
 `RestrictedProductLevel`).
 
 On Library commit `5e4a58e8`, the transitive project import closure of this
-module has 601 modules. Only this module is not in the Library. The other
-600 are published, and the workspace copies of their Lean and Markdown files
-are byte-identical to that commit. The closure of the two `b006f56e` modules
+module has 601 modules. The other
+600 are published, and the copies of their Lean and Markdown files checked here
+are byte-identical to that commit. The closure of the two modules
+`SegmentSocleProductCaseTwo` and `SegmentSocleProductHomogeneityInduction`
 has 585 modules. This module adds 16: itself and the following 15 published
 modules.
 
@@ -150,8 +148,8 @@ modules. Its only Classification modules are `Classification.Supercuspidal`,
 `SupercuspidalContragredientAux` and `SupercuspidalContragredientStatement`.
 It contains no segment, socle or multisegment module.
 
-So the closure contains no proof module for the conclusions excluded by task
-`b711af72`: ordered-socle existence, socle exhaustion, analytic segment
+So the closure contains no proof module for the conclusions excluded for
+this proof: ordered-socle existence, socle exhaustion, analytic segment
 classification, segment-socle product irreducibility, the final segment-socle
 irreducibility criterion, `AdjacentUnlinkedSegmentSocleSwap`,
 `TwoSegmentSocleCommutation`, the special-head criterion, special-head

@@ -3,7 +3,6 @@
 This derived module transfers the proved associativity of geometric Picard-zero
 tensor classes to the actual multiplication morphism on a chosen dual parameter
 scheme. It also packages multiplication on every set of points as a semigroup.
-Worker 144 supplies the construction and proofs.
 
 ## Provenance and hypotheses
 

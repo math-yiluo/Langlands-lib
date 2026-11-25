@@ -1,6 +1,6 @@
 # The size of nonzero summands in an actual smooth coproduct
 
-Worker 1751. This is internal universe infrastructure for actual smooth
+This is internal universe infrastructure for actual smooth
 coproducts. Its index universe is independent of its representation carrier
 universe.
 

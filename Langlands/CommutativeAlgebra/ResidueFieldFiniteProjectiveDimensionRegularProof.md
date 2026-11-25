@@ -22,10 +22,9 @@ The natural witness in the finiteness hypothesis is unrestricted.
 
 The two bound theorems are imported by Lean name from
 `Langlands.CommutativeAlgebra.ResidueFieldProjectiveDimensionLowerBoundProof`
-(Worker 1211) and
-`Langlands.CommutativeAlgebra.ResidueFieldProjectiveDimensionUpperBoundProof`
-(Worker 1116). This assembly uses their independently published results and
-Mathlib's regularity criterion. Its imports do not use the project's forward
+and
+`Langlands.CommutativeAlgebra.ResidueFieldProjectiveDimensionUpperBoundProof`.
+This assembly uses those two results and Mathlib's regularity criterion. Its imports do not use the project's forward
 finite-module theorem, localization regularity, or the downstream factoriality
 and valuative-extension conclusions.
 

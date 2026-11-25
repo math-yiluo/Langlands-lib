@@ -49,8 +49,7 @@ than Renard's root/Cartan calculation and adjunction argument.
 All original local compactness, nonarchimedean group, closedness,
 compatible-pair and all-test structural premises are retained. There is
 no additional transitivity, modulus, adjunction, finite-length or
-representation-category premise. The published target and its imports
-are unchanged.
+representation-category premise.
 
-Worker 194 assembled the dynamic and Jacquet comparisons. Worker 691
-constructed the normalized induction stages comparison used here.
+The normalized induction stages comparison used here is `NestedInduction.iso`
+of `General.NestedInductionStages`.

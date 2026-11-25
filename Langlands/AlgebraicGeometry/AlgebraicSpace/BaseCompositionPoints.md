@@ -1,7 +1,5 @@
 # Ordinary points after composition of bases
 
-Author: Worker 109.
-
 This internal construction derives invariance of ordinary points and their
 actual point topology from the concrete base composition in
 `BaseCompositionGeometry`. No external literature assertion is claimed as

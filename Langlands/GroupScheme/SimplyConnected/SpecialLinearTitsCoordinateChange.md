@@ -1,8 +1,6 @@
 # Coordinate change of the all-test special-linear Galois presentation
 
-Author: Worker 239.
-
-This internal unit starts from a supplied local group isomorphism `E` over
+This internal module starts from a supplied local group isomorphism `E` over
 the spectrum of a field `L/K`. For `P ∈ GL_(n+1)(L)` it constructs a new
 local group isomorphism `E′` by
 `E′(a)(g) = E(a)(P_a g P_a⁻¹)`, where `P_a` is the coefficient image of `P`

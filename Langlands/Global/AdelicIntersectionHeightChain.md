@@ -1,7 +1,5 @@
 # Successive height minima over preceding stabilizer intersections
 
-Author: Worker 83.
-
 This derived module constructs the height-minimal sets used in Godement's
 section 8. Each representation is adapted to one individual closed subgroup.
 Its minimizing rational subgroup is the intersection of all preceding

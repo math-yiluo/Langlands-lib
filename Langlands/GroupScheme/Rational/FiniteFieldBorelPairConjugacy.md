@@ -1,10 +1,9 @@
 # Rational conjugacy of geometric Borels over finite fields
 
-Worker 308, with the point and transport helpers of Worker 881.
-
 This internal proof module supplies rational conjugacy of geometric Borel
 subgroup ranges for the proof of the unchanged
-`Langlands.GroupScheme.FiniteFieldBorelPairStatement`.
+`Langlands.GroupScheme.FiniteFieldBorelPairStatement`. Its point and transport
+helpers come from `Langlands.GroupScheme.Rational.FiniteFieldBorelConjugacy`.
 
 `exists_eq_inv_mul_rationalConjugate` expresses the published Lang equation
 using the coefficient-conjugation action on the actual algebraic-closure

@@ -1,6 +1,6 @@
 # Splitting of trigonalizable groups (Milne 16.26), proof
 
-Author: Worker 60 (Task 7805). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.ExtensionSplitProof`.
 
 `Langlands.GroupScheme.trigonalizableExtensionSplit` proves the unchanged
@@ -50,7 +50,7 @@ and it combines two published theorems.
     compatibly with the section already chosen (`RelativeSolvable`, from
     [`PrimeToPart`](PrimeToPart.md)).
 - `Langlands.GroupScheme.etaleDiagonalizableExtensionSplit`, from
-  [`EtaleExtensionSplitProof`](EtaleExtensionSplitProof.md) (Task 7944),
+  [`EtaleExtensionSplitProof`](EtaleExtensionSplitProof.md),
   proves that premise
   ([`EtaleDiagonalizableExtensionSplitStatement`](EtaleExtensionSplitStatement.md),
   SGA 3 XVII, Lemme 5.2.3 i) c), for a finite étale `D(Λ)` and a smooth

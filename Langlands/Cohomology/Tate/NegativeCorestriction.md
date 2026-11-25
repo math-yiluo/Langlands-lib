@@ -1,8 +1,5 @@
 # Negative-degree corestriction and norm-kernel representatives
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 This module proves the degree-minus-one representative formula for
 the constructed subgroup corestriction. A vector with zero subgroup norm also
 has zero full norm, by the proved factorization of the full norm through the

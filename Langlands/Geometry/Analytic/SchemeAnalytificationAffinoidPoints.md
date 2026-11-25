@@ -1,7 +1,7 @@
 # Scheme morphisms from spectra of affinoid algebras into a scheme
 
 Let `X` be a scheme over `Spec K` via `f`. An affine open `U` of `X` has the
-coordinate ring `CoordinateRing (structureMap f U) = Γ(U, ⊤)`. This unit turns a
+coordinate ring `CoordinateRing (structureMap f U) = Γ(U, ⊤)`. This module turns a
 `K`-algebra map `α : Γ(U, ⊤) →ₐ[K] R` into the scheme morphism
 
 `schemePoint U α : Spec R ⟶ X`, defined as `Spec.map α` followed by
@@ -79,7 +79,7 @@ property used in step (1) of the proof of Theorem 3.4.1 of
 Berkovich, *Spectral Theory and Analytic Geometry over Non-Archimedean Fields*
 (1990), printed p.64/PDF p.78 (registered source
 `provided-a03a0182668f6b92b01deacac09a9992b3edf55e23a0a2194554384ae44bd8d4`, SHA256
-`9b543e7ffae8ec6febf154a60c4d11a288f7ecc3795c66f004ba3200a6824e79`). This unit
+`9b543e7ffae8ec6febf154a60c4d11a288f7ecc3795c66f004ba3200a6824e79`). This module
 records such morphisms algebraically, as scheme morphisms `Spec R → X`. It
 replaces the seminorm description of `X^an` by these morphisms and by rational
 neighbourhoods. The compatibility of charts

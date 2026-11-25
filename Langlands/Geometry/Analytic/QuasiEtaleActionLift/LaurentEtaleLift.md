@@ -1,7 +1,5 @@
 # Nearby finite étale lifts over a Laurent neighborhood
 
-Author: Worker 786.
-
 `BoundedAlgHom.HasSpectralLiftsOver` packages the local bounded-algebra
 lifting property used in the proof of Berkovich's *Vanishing cycles for
 formal schemes* (1994), §7, Key Lemma 7.2. It is an internal formulation

@@ -155,7 +155,7 @@ theorem exists_prescribed_modelVectors
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1))
-    (hψv : ∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (hψv : ∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ℓ : ∀ v : S, ComponentFunctionals P v.1 (ψv v))
     (hℓ : ∀ v, (ℓ v).val ≠ 0)
     (f : ∀ v : S, (Whittaker.coefficientModel (P.localComponent v).representation (ℓ v)).toSubmodule) :
@@ -217,7 +217,7 @@ def PrescribedModelVectorAssemblyStatement : Prop :=
     (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F))
     (_hψF : ∀ x : F, ψ (algebraMap F (Adeles F) x) = 1)
     (ψv : ∀ v : S, Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v.1))
-    (_hψv : ∀ v, ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
+    (_hψv : ∀ v, ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v.1 (ψv v))
     (ℓ : ∀ v : S, ComponentFunctionals P v.1 (ψv v))
     (_hℓ : ∀ v, (ℓ v).val ≠ 0)
     (f : ∀ v : S, (Whittaker.coefficientModel (P.localComponent v).representation (ℓ v)).toSubmodule),

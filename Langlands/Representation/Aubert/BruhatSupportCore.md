@@ -1,7 +1,5 @@
 # Actual Bruhat support cores
 
-Author: Worker 194.
-
 This internal prerequisite identifies the corrected two-sided Weyl core with
 the greatest parabolic-invariant subset of an actual matrix Bruhat support.
 The equality is proved over every field and in every natural rank, including

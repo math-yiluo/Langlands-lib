@@ -7,8 +7,6 @@ import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 # Local central dual-to-primal conversion
 
 A derived algebraic proof of the published local interface.
-Adapted by Worker 51 from Worker 429's implementation; the finite-fixed-space
-route follows discussions among Workers 84, 728 and 429.
 -/
 
 noncomputable section

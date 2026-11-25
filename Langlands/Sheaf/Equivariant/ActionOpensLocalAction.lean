@@ -30,7 +30,7 @@ variable {G : Type uG} [Group G] {X : Type uX} [TopologicalSpace X] [MulAction G
 inverse-label arrows. -/
 def invariantAction (H : Subgroup G) (U : ActionOpens G X)
     (hU : ∀ h : H, ∀ x ∈ U.openSet, (h : G) • x ∈ U.openSet) : H →* (End U)ᵐᵒᵖ where
-  toFun h := MulOpposite.op (invariantArrow H U hU h)
+  toFun h := MulOpposite.op (End.of (invariantArrow H U hU h))
   map_one' := by
     rw [invariantArrow_one]
     rfl
@@ -41,13 +41,13 @@ def invariantAction (H : Subgroup G) (U : ActionOpens G X)
 @[simp]
 theorem invariantAction_apply (H : Subgroup G) (U : ActionOpens G X)
     (hU : ∀ h : H, ∀ x ∈ U.openSet, (h : G) • x ∈ U.openSet) (h : H) :
-    (invariantAction H U hU h).unop = invariantArrow H U hU h := rfl
+    (invariantAction H U hU h).unop.asHom = invariantArrow H U hU h := rfl
 
 variable (G X) in
 /-- The admissible local actions on transport opens: every element of the open
 subgroup acts through an arrow labelled by its inverse. -/
 def localActionSystem [TopologicalSpace G] : LocalActionSystem (ActionOpens G X) G where
-  IsAdmissible _ _ a := ∀ h, (a h).unop.label = (h : G)⁻¹
+  IsAdmissible _ _ a := ∀ h, (a h).unop.asHom.label = (h : G)⁻¹
 
 variable [TopologicalSpace G]
 
@@ -61,7 +61,7 @@ theorem stable_of_isAdmissible {U : ActionOpens G X} {H : OpenSubgroup G}
     {a : (H : Subgroup G) →* (End U)ᵐᵒᵖ} (ha : (localActionSystem G X).IsAdmissible U H a) :
     ∀ h : (H : Subgroup G), ∀ x ∈ U.openSet, (h : G) • x ∈ U.openSet := by
   intro h x hx
-  have hmaps := (a h⁻¹).unop.mapsTo x hx
+  have hmaps := (a h⁻¹).unop.asHom.mapsTo x hx
   rwa [ha, Subgroup.coe_inv, inv_inv] at hmaps
 
 /-- Admissible actions are exactly the invariant-arrow actions on stable opens. -/
@@ -75,6 +75,7 @@ theorem isAdmissible_iff {U : ActionOpens G X} {H : OpenSubgroup G}
     refine ⟨stable_of_isAdmissible ha, ?_⟩
     ext h
     apply MulOpposite.unop_injective
+    apply End.ext
     apply Hom.ext
     exact ha h
   · rintro ⟨hU, rfl⟩
@@ -140,7 +141,7 @@ theorem isSmoothSheaf_of_isLocallyDiscrete [ContinuousMul G]
     have hkk : (kk : G) ∈ K := (hK' g).1 g.2
     have harrow : ActionOpens.invariantArrow (K' : Subgroup G) V' hV' g ≫
           ActionOpens.inclusionHom hVU =
-        (ActionOpens.translationIso f.label V).inv ≫ (a kk).unop ≫ f := by
+        (ActionOpens.translationIso f.label V).inv ≫ (a kk).unop.asHom ≫ f := by
       apply ActionOpens.Hom.ext
       rw [ActionOpens.comp_label, ActionOpens.comp_label, ActionOpens.comp_label, ha kk]
       change (1 : G) * (g : G)⁻¹ = f.label * (f.label⁻¹ * g * f.label)⁻¹ * f.label⁻¹

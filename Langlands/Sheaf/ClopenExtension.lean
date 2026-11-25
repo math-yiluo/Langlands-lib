@@ -96,10 +96,10 @@ theorem extend_injective (U : Opens X) (hU : IsClosed (U : Set X)) :
 /-- The additive endomorphism that retains a section only on a clopen open. -/
 def projector (U : Opens X) (hU : IsClosed (U : Set X)) :
     End (F.presheaf.obj (op ⊤)) :=
-  restrict F U ≫ extend F U hU
+  End.of (restrict F U ≫ extend F U hU)
 
 @[simp] theorem projector_idempotent (U : Opens X) (hU : IsClosed (U : Set X)) :
-    projector F U hU ≫ projector F U hU = projector F U hU := by
+    (projector F U hU).asHom ≫ (projector F U hU).asHom = (projector F U hU).asHom := by
   dsimp only [projector]
   rw [Category.assoc, ← Category.assoc (extend F U hU), extend_restrict, Category.id_comp]
 

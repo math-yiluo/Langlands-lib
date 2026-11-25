@@ -1,7 +1,5 @@
 # Multiplication by any Hecke character on the stable automorphic operator core
 
-Author: Worker 5136.
-
 This internal module restricts multiplication by `χ ∘ det` to the Library's
 stable automorphic operator core `automorphicOperatorCore F n`, for an arbitrary
 Hecke character `χ`. The core consists of the finite-smooth functions all of

@@ -1,6 +1,6 @@
 # Bilateral formal Laurent series and coefficientwise integration
 
-This unit formalizes the definitions of Jacquet, Piatetski-Shapiro and
+This module formalizes the definitions of Jacquet, Piatetski-Shapiro and
 Shalika, *Rankin-Selberg convolutions*, Amer. J. Math. 105 (1983),
 Section (4.1), printed page 406. The registered source is
 `jpss-1983-rankin-selberg`, SHA-256
@@ -113,8 +113,10 @@ need not be defined.
   have support bounded on both sides. Their support set is the finite set
   `P.coeff.support`.
 
-These predicates serve later units, which will work with series supported on
-one side. No support-bound extraction is proved here.
+These predicates are used by other modules that work with series supported on
+one side, such as `Representation/RankinSelberg/EqualRankSliceSupportStatement`
+and `Representation/RankinSelberg/TwoBlockDominantJacquetSeries`. No
+support-bound extraction is proved here.
 
 ### Laws for coefficientwise integration
 
@@ -143,7 +145,7 @@ one side. No support-bound extraction is proved here.
 
 ## Scope
 
-This unit makes the definitions of (4.1) concrete and proves the small API
+This module makes the definitions of (4.1) concrete and proves the small API
 above. It proves no support-bound extraction, rational-function evaluation,
 analytic continuation, determinant-slice expansion, Fourier identity or
 Whittaker integral construction. The formal series attached to the

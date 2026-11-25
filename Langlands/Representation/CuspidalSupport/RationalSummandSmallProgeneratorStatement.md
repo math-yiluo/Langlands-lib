@@ -1,6 +1,6 @@
 # Renard VI.4.1, Proposition: the single-summand small progenerator
 
-Worker 6. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the opening paragraphs of VI.4.1 and the Proposition with its proof, on printed p.149 / PDF p.155. The small-progenerator conventions are those of A.VIII.2, printed pp.266–267 / PDF pp.272–273. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the opening paragraphs of VI.4.1 and the Proposition with its proof, on printed p.149 / PDF p.155. The small-progenerator conventions are those of A.VIII.2, printed pp.266–267 / PDF pp.272–273. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
 
 ## Source content
 
@@ -11,19 +11,19 @@ Renard fixes an irreducible supercuspidal representation (π,V) of G. By Proposi
 - finite type, using the functions f_{i,w} of (VI.4.1.2);
 - smallness, from finite type.
 
-The Library already states the analogous property for the alternative progenerator Π₁ = ind_{⁰G}^G(Res π) of the following Remark: `RationalUniversalSmallProgeneratorStatement` by Worker 1758. The present unit states the Proposition itself, for the single summand.
+The Library already states the analogous property for the alternative progenerator Π₁ = ind_{⁰G}^G(Res π) of the following Remark: `RationalUniversalSmallProgeneratorStatement`. The present module states the Proposition itself, for the single summand.
 
 ## Lean content
 
 Write H = G(F), with its canonical rational-point topology. Write H⁰ = `Plancherel.rationalCommonNormKernel G` for the common kernel of the norms of all rational characters. This is Renard's ⁰G, and it carries the subspace topology.
 
-- `IsRationalInertiaSmallProgenerator G π X` takes an arbitrary actual smooth representation X of H. The carrier universe of X is `max uF uV`. The predicate is the conjunction in `IsRationalNormKernelSmallProgenerator` (Worker 1758), with Π₁ replaced by X. It first asserts membership of X in the existing full category `RationalInertiaBlock G (rationalInertiaBaseLift G π)`: every irreducible actual subquotient of X is isomorphic to an actual unramified twist of the lifted π. Let P be the resulting object of that block. The predicate then asserts four conditions:
+- `IsRationalInertiaSmallProgenerator G π X` takes an arbitrary actual smooth representation X of H. The carrier universe of X is `max uF uV`. The predicate is the conjunction in `IsRationalNormKernelSmallProgenerator`, with Π₁ replaced by X. It first asserts membership of X in the existing full category `RationalInertiaBlock G (rationalInertiaBaseLift G π)`: every irreducible actual subquotient of X is isomorphic to an actual unramified twist of the lifted π. Let P be the resulting object of that block. The predicate then asserts four conditions:
   1. Lifting along epimorphisms. For every epimorphism q : Y → Z of the block and every f : P → Z, there is g : P → Y with g ≫ q = f. This is projectivity.
   2. The published integer-module Hom functor `Langlands.CategoryTheory.Renard.preadditiveCoyonedaInt P` is faithful. This is the generator condition of A.VIII.2.
   3. The block has coproducts indexed by every type in `Type (max uF uV)`.
   4. That Hom functor preserves all such coproducts. This is A.VIII.2 smallness: Hom(P,•) preserves direct sums.
 
-  `isRationalNormKernelSmallProgenerator_iff` records, by `Iff.rfl`, that Worker 1758's predicate is this predicate at Π₁ = `rationalNormKernelCompactInduction G π`. So both progenerator statements use the same conditions.
+  `isRationalNormKernelSmallProgenerator_iff` records, by `Iff.rfl`, that `IsRationalNormKernelSmallProgenerator` is this predicate at Π₁ = `rationalNormKernelCompactInduction G π`. So both progenerator statements use the same conditions.
 - `rationalNormKernelSummandInduction G ρ` is Renard's Π for an actual smooth representation ρ of H⁰ with carrier in `Type uV`. It is literally the published `Induction.compactInductionFunctor (rationalCommonNormKernel G)` applied to `SmoothRep.toRep.obj ρ`. Its carrier is the type of functions f : H → W with f(hx) = ρ(h)f(x) for h ∈ H⁰. These functions are invariant under right translation by an open subgroup and have compact support modulo H⁰. Since H⁰ is open, the latter means support in finitely many cosets H⁰g. The action is right translation. The construction has no modulus factor. This matches Renard's ind_{⁰G}^G: H⁰ is open in G and unimodular, as Renard notes in the proof.
 - `RationalSummandSmallProgeneratorStatement` covers every arbitrary connected reductive G over every nonarchimedean local field F. Its premises are the same as those of `RationalUniversalSmallProgeneratorStatement`:
   - a maximal split torus inclusion i and a generic cocharacter ν;
@@ -48,5 +48,5 @@ There is no splitness, characteristic-zero, admissibility, compactness or finite
 
 This module defines Prop-valued targets and a construction. It also proves the definitional `Iff.rfl` comparison with the Π₁ predicate. It does not prove block membership, projectivity, generation, coproduct existence or smallness. The Theorem of VI.4.1, that F_Π = Hom_G(Π,•) is an equivalence onto right modules over End_G(Π), is the separate statement `RationalSummandHomEquivalenceStatement`.
 
-Integration gives the local instances used here module-specific names to permit
+The local instances used here have module-specific names to permit
 joint imports. Their types, values, and local scopes are unchanged.

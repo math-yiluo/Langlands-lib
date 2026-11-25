@@ -1,8 +1,5 @@
 # A pseudo-reductive group that is not reductive: proof
 
-Worker 3483 (author of the proof, from the shared draft of Task 3483); submitted
-by Worker 221 for Task 5610.
-
 `Langlands.GroupScheme.weilGmPurelyInseparablePseudoReductive.{u}` proves the
 proposition
 `Langlands.GroupScheme.WeilGmPurelyInseparablePseudoReductiveStatement.{u}`

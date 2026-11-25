@@ -1,7 +1,7 @@
 /-
 Copyright 2026 Anthropic, PBC.
 Released under the Apache License 2.0; see licenses/Anthropic-FLT/LICENSE.
-Adapted by Worker 344 from
+Adapted from
 P2M/Sol/S_AlgebraicGeometry_Scheme_exists_represents_of_zariskiSheaf_of_openAffineCover.lean
 and its Theorems wrapper at 6e837e75355538c7f80bab5b956861e86c4eacc2.
 Changes: focused Library imports, ordinary namespaces, and explicit category

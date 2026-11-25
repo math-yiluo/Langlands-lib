@@ -1,6 +1,6 @@
 # Geometry of positive power maps on rank-one cells
 
-This derived supporting unit proves that a positive coordinate power map on the
+This derived supporting module proves that a positive coordinate power map on the
 additive line over any field is finite and surjective as a morphism of schemes.
 It does not require the exponent to be a characteristic power.
 
@@ -40,5 +40,5 @@ integrality, spectrum and base-change APIs. The polynomial integrality
 assertion allows any commutative coefficient ring and any type of variables
 in independent universes; the finite assertion requires finitely many variables.
 The group-scheme assertions allow every universe and every field.
-These results do not yet establish isogeny geometry for the glued rank-one
+These results do not establish isogeny geometry for the glued rank-one
 homomorphism or the general split reductive isogeny theorem.

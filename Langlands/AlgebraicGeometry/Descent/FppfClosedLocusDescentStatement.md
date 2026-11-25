@@ -1,7 +1,5 @@
 # fppf descent of closed loci
 
-Author: Worker 766.
-
 This module states that a closed subscheme defined fppf-locally descends. It is
 phrased for sieves on a scheme `Y`. If a sieve is closed for the fppf topology, and
 an fppf covering of `Y` cuts it out by closed immersions, then a single closed
@@ -146,19 +144,22 @@ There is no finiteness, separatedness, noetherian or quasi-compactness
 hypothesis on `Y`, on the covering or on the closed immersions. Mathlib's fppf
 covering families need not be finite or quasi-compact, as in Stacks
 Definition 34.7.1. Any reduction to finite or quasi-compact coverings is an
-obligation of the later proof, not a hypothesis of the statement.
+obligation of the proof (`fppfClosedLocusDescent` in
+`FppfClosedLocusDescentProof`), not a hypothesis of the statement.
 
 ## Status and scope
 
-Development check: `lean_check` diagnostic
-`e4d7523c-bd2a-4d53-9050-431ae3051f86` compiled the module with 0 errors and
+Development check: a `lean_check` diagnostic compiled the module with 0 errors and
 0 warnings. Inspection reports a Prop-valued definition with level parameter `u`
 and only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-This unit states the proposition only. Its proof is a separate later task. The
-unit adds no definitions and proves no descent result. It is a prerequisite of
-the diagonal branch of task `d084a453-a0a4-46cc-9e40-0dda706d073a`, which proves
-that the actual fppf Picard sheaf of a proper scheme over a field has a
-closed-immersion diagonal. That branch applies the proposition to the loci where
+This module states the proposition only. Its proof is
+`Langlands.AlgebraicGeometry.fppfClosedLocusDescent` in the separate module
+`FppfClosedLocusDescentProof`. The module adds no definitions and proves no
+descent result. It is a prerequisite of the diagonal step in the proof of
+algebraic-space representability of the actual fppf Picard sheaf of proper
+schemes over fields: the proof that the actual fppf Picard sheaf of a proper
+scheme over a field has a closed-immersion diagonal. That step applies the
+proposition to the loci where
 two sections of the Picard sheaf agree. These loci are fppf-closed because the
 Picard sheaf is an fppf sheaf.

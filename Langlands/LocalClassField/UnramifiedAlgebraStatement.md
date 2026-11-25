@@ -1,7 +1,7 @@
 # Finite-level norms in an unramified finite free local algebra
 
 This file states two finite-level arithmetic assertions and their complete
-bundle. All three declarations are `Prop`-valued definitions; this contribution
+bundle. All three declarations are `Prop`-valued definitions; this file
 does not formalize their proofs.
 
 ## Objects and hypotheses
@@ -61,7 +61,9 @@ The individual declarations define properties for any local commutative
 `R`-algebra `S`; they do not claim those properties always hold.
 `Statement` universally quantifies the full structural hypotheses above and
 asserts their conjunction under the mapped-maximal-ideal equality. This is the
-single complete target for a subsequent exact proof.
+single complete target of the exact proof
+`Langlands.LocalClassField.UnramifiedAlgebra.proof` in
+`Langlands.LocalClassField.UnramifiedAlgebraProof`.
 
 Every natural level is included. At \(n=0\), \(m_R^0=R\) and \(m_S^0=S\), so
 the input congruences are vacuous and preservation is automatic.
@@ -71,7 +73,7 @@ No assertion of full unit-norm surjectivity is included.
 
 ## Source and mathematical justification
 
-The original source read for this contribution is Jean-Pierre Serre,
+The original source read for this file is Jean-Pierre Serre,
 *Local Fields*, Marvin Jay Greenberg translation, GTM 67, Springer (1979),
 Chapter V, §2, Propositions 1–3, the following remarks, and the non-Galois
 exercise, printed pp.81–82 (PDF pp.88–89).
@@ -123,7 +125,7 @@ associated Lean file contains only proposition definitions; none of these
 proof steps is claimed to have been implemented there. Full norm
 surjectivity requires a separate lifting theorem with topological hypotheses.
 
-## Pinned Mathlib audit and later proof interface
+## Pinned Mathlib audit and proof interface
 
 The following sources were inspected in Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`, with Lean 4.34.0:
@@ -147,8 +149,9 @@ The following sources were inspected in Mathlib commit
   `RingTheory/LocalRing/ResidueField/Defs.lean` defines the actual residue
   fields.
 
-The analogous norm-under-quotient comparison still needs to be supplied in
-the later proof, for example by the same quotient-basis multiplication
+The analogous norm-under-quotient comparison is supplied in the proof module
+`Langlands.LocalClassField.UnramifiedAlgebraProof` (its private lemma
+`norm_quotient_mk`), by the same quotient-basis multiplication
 matrices and determinant compatibility with ring homomorphisms. The audit
 identifies ingredients and does not assert that Mathlib already proves this
 bundle. Later arithmetic applications must also establish the finite free

@@ -1,6 +1,6 @@
 import Langlands.Cohomology.DivisibleSystem.IHomReduction
 import Langlands.Cohomology.DivisibleSystem.InverseLimit
-import Langlands.NYLL.ValuedFieldTheory.Valuation.DiscreteValuationField.HenselianFinite.CompletenessProofs
+import Nyll.ValuedFieldTheory.Valuation.DiscreteValuationField.HenselianFinite
 
 /-!
 # The inverse limit of the reductions `L / ℓ ^ m L`
@@ -191,7 +191,7 @@ variable {R : Type u} [CommRing R] [IsNoetherianRing R] (ℓ : ℕ)
 over `R` is `ℓ`-adically complete. -/
 theorem isAdicComplete_of_finite (L : Rep.{w} R G) [Module.Finite R L] :
     IsAdicComplete (Ideal.span {(ℓ : R)}) L :=
-  NYLL.ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite.{u, w} R L _
+  ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite.{u, w} (R := R) (M := L) _
 
 end Finite
 

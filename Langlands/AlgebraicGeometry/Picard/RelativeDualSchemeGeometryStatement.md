@@ -88,13 +88,14 @@ mathematical derivation, not an implemented proof.
 
 ## Boundary
 
-This unit does not establish universal-family existence. It keeps the
+This module does not establish universal-family existence. It keeps the
 actual representability proof `hA` as a hypothesis and extracts no
 arbitrary replacement scheme from geometric properties. The group
 operations are already constructed separately from the Poincare family
 in `DualGroupScheme`; this target supplies only the three remaining
 geometric properties of that same underlying scheme. Tensor coherence,
 ordinary inverse bundles, addition of dual maps, polarizations, and the
-extension to a non-quasi-separated base are separate obligations. A
-separate proof task must prove the exact relative proposition after
-publication. No new axiom is introduced.
+extension to a non-quasi-separated base are separate obligations. The
+theorem `relativeDualSchemeGeometry` in the module
+`RelativeDualSchemeGeometryProof` proves the exact relative proposition.
+No new axiom is introduced.

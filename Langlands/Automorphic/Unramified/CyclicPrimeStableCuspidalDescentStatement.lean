@@ -15,7 +15,7 @@ set_option autoImplicit false
 namespace Langlands.Automorphic.Unramified
 
 open Langlands.Global Langlands.Automorphic.CuspidalOperatorRealization
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- A unitary cusp stable under the generator of a prime cyclic extension has an
 actual unitary cuspidal weak descent of the same rank. -/

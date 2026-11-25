@@ -1,26 +1,23 @@
 # Proposition VII.1.3 on actual points: `ψ_f[O, P] ∈ C^∞(O, P)`
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitFourierPairing` (this
-  author's Unit 23, candidate `ac6c83a8-92f6-4033-b9c5-d54a8c574786`, staged). It provides:
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitFourierPairing`. It
+  provides:
   - `rationalFourierOrbitSection` (`ψ_f[O, P]`);
   - formula (1), `pairing_rationalInducedOrbitWavePacket_eq_integral_productPairing`.
 
   Through its imports come:
-  - Unit 20: `rationalInducedOrbitWavePacket`, `rationalInducedSmoothOrbitSections`,
-    `leviRationalUnitaryCoordinates` with `_hasLaurent`, and
+  - `RationalInducedOrbitWavePacket`: `rationalInducedOrbitWavePacket`,
+    `rationalInducedSmoothOrbitSections`, `leviRationalUnitaryCoordinates` with `_hasLaurent`, and
     `isConnectedReductive_leviScheme_rootSet`;
-  - Unit 22: `compactOpenCofinal_standardLevi`;
-  - the published units: `rationalL2Weights`, `rationalXi_inv`, `rationalHeight_inv`,
+  - `RationalInducedFourierTransform`: `compactOpenCofinal_standardLevi`;
+  - earlier modules of the Library: `rationalL2Weights`, `rationalXi_inv`, `rationalHeight_inv`,
     `rationalTranslationWeights`, `rationalHasTemperedCoefficients_normalizedInduction`,
     `IsRationalLeviTempered`, `rationalLeviXi`, `compactSpace_subgroupOf_standardLevi`,
     `standardUnipotentModulus`, `isUnimodularModulus_standardUnipotentPoints`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviScheme` (Unit 18, published). It
-  provides:
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviScheme`. It provides:
   - `rationalXi_leviScheme` (`Ξ` of the Levi scheme is `Ξ^{M_J}`) and `leviSchemePointsEquiv`;
   - `leviScheme_isAffineHom` and `leviScheme_locallyOfFiniteType`;
   - `isGenericCocharacter_leviTorusHom`;
@@ -28,11 +25,11 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
     `isIwasawaPair_leviSchemeCompact`.
 
   Through its imports come:
-  - Unit 16: `rationalConstantTermData`, `rationalIsConjModulus`,
+  - `RationalConstantTerm`: `rationalConstantTermData`, `rationalIsConjModulus`,
     `standardLeviMinimalModulusOf_eq_one`, `rationalLeviXi_pos`;
   - the Library's `standardLevi_isConnectedReductive` and
     `Standard.isMaximalSplitTorus_leviTorusHom`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitLaurentSmoothness` (Worker 249).
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitLaurentSmoothness`.
   It provides `fourierOrbitLaurentSmoothSectionLinear`. Through its imports come:
   - `laurentExponent` with `laurentExponent_eq_of_forall`;
   - `xi_uniformTranslationBound`, `heightTranslationBound_of_le_add`;
@@ -45,8 +42,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on the
-text of PDF pages 82 and 85.
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the text
+of PDF pages 82 and 85.
 
 - Proposition VII.1.3, printed p. 316: "Pour tout `f ∈ C(G)`, la fonction `ψ_f[O, P]` appartient
   à `C^∞(O, P)`. L'application `C(G) → C^∞(O, P)`, `f ↦ ψ_f[O, P]` est continue."
@@ -62,7 +59,7 @@ coordinates of `Im X(M)`.
 
 ## Setting
 
-The setting of Units 22 and 23:
+The setting of `RationalInducedFourierTransform` and `RationalInducedOrbitFourierPairing`:
 - `G`, `i`, `ν`, `I`, `P = P_I(F)`;
 - `K` with `hKc` and `hPK`;
 - `ρ` with `hρ` and `hKρ`;
@@ -121,7 +118,8 @@ The setting of Units 22 and 23:
 - **`rationalFourierOrbitSmoothSectionLinear …`** (definition, the recorded declaration). This is
   the ℂ-linear map `C(G) → C^∞(O, P)`, `f ↦ ψ_f[O, P]`: the Library's
   `fourierOrbitLaurentSmoothSectionLinear` with the following inputs:
-  - the data of Units 20, 22 and 23;
+  - the data of `RationalInducedOrbitWavePacket`, `RationalInducedFourierTransform` and
+    `RationalInducedOrbitFourierPairing`;
   - `L2Weights` on `M_I` from `rationalLeviXi_pos` and `hswM`;
   - `rationalLeviXi_inv` and `rationalHeight_inv`;
   - the constant-term data `rationalConstantTermData` and `rationalIsConjModulus`, with `hE`;
@@ -130,31 +128,34 @@ The setting of Units 22 and 23:
   - the growth bound of the Laurent exponent, obtained from `hnσ` through
     `laurentExponent_leviRationalUnitaryCoordinates`.
 - **`rationalFourierOrbitSmoothSectionLinear_val f`**: the underlying section is
-  `rationalFourierOrbitSection f` (Unit 23). So `ψ_f[O, P] ∈ C^∞(O, P)`, the first assertion of
+  `rationalFourierOrbitSection f` (`RationalInducedOrbitFourierPairing`). So `ψ_f[O, P] ∈ C^∞(O, P)`, the first assertion of
   Proposition VII.1.3.
 - **`pairing_rationalInducedOrbitWavePacket_eq_integral_fourier hwm hwb hcoeff q f`**: formula (1)
   of the proof of Proposition VII.2.2, `(f_ψ, f)_G = ∫_O conj(w(ω)) (ψ_ω, f̂(ω, P)) dω`. It is
-  Unit 23's theorem with `r = rationalFourierOrbitSmoothSectionLinear … f`, whose hypothesis
-  `r = ψ_f[O, P]` is now `rationalFourierOrbitSmoothSectionLinear_val`. The weight and
-  coefficient assumptions on `w`, `ρX` and `hcoeff` are those of Unit 23.
+  `pairing_rationalInducedOrbitWavePacket_eq_integral_productPairing` with
+  `r = rationalFourierOrbitSmoothSectionLinear … f`, whose hypothesis `r = ψ_f[O, P]` is now
+  `rationalFourierOrbitSmoothSectionLinear_val`. The weight and coefficient assumptions on `w`,
+  `ρX` and `hcoeff` are those of `RationalInducedOrbitFourierPairing`.
 
 ## Proofs
 
 - The definition passes the inputs above to `fourierOrbitLaurentSmoothSectionLinear`, with the
-  `(G := rationalPoints G)` and `(M := standardLeviPoints …)` instantiation used since Unit 19.
+  `(G := rationalPoints G)` and `(M := standardLeviPoints …)` instantiation used since `RationalInducedCoefficients`.
 - `Nonempty (CompactOpenSubgroup M_I(F))` comes from `K ∩ M_I(F)`.
 - `SquareIntegrableWeight` (exponent in `ℕ`) is converted to the `square` field of `L2Weights`
   (exponent in `ℝ`).
 - `_val` holds by unfolding both definitions and `rfl`.
-- The pairing corollary is a direct application of Unit 23's theorem.
+- The pairing corollary is a direct application of
+  `pairing_rationalInducedOrbitWavePacket_eq_integral_productPairing`.
 
 ## Scope and hypotheses
 
 - Only standard parabolics `P_I ⊇ P₀` are covered.
 - The continuity of `f ↦ ψ_f[O, P]` (second assertion of Proposition VII.1.3) is not stated.
 - Hypotheses, as listed in the setting:
-  - analytic inputs whose actual statements are published but unproved: `hsw` and `hswM`
-    (Lemma II.1.5 for `G` and `M_I`), `hE` (Proposition II.4.5), and `hTA` and `hTπ`
+  - analytic inputs whose actual statements are published: `hsw` and `hswM`
+    (Lemma II.1.5 for `G` and `M_I`), `hE` (Proposition II.4.5, not proved in the Library), and
+    `hTA` and `hTπ`
     (Corollary III.1.2);
   - the structural fact `hPKiw` (ledger row S5);
   - measure normalizations `hμK`, `hMK`, `hUK`;

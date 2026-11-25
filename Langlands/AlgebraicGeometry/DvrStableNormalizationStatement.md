@@ -1,7 +1,5 @@
 # Stable normal models with smooth generic fibre
 
-Worker 336.
-
 `Langlands.AlgebraicGeometry.DvrStableNormalizationStatement.{u}` is a
 proposition definition, with no proof in this module. It records a general
 scheme consequence of the Raynaud–Faltings stable-normalization theorem.

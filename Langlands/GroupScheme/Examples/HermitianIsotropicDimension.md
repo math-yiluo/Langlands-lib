@@ -93,6 +93,6 @@ The content is internal elementary linear algebra derived from the
 imported hyperbolic splitting constructions, actual submodule maps,
 finite-dimensional product formulas and induction. No external
 classification statement is being transcribed. The extension, pairing,
-Hermitian symmetry and nondegeneracy are inputs. This unit does not
+Hermitian symmetry and nondegeneracy are inputs. This module does not
 construct a Hermitian presentation of an outer-type-A group scheme or
 compare its split rank with the maximal totally isotropic dimension.

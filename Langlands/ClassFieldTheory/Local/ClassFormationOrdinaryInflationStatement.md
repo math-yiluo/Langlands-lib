@@ -1,8 +1,5 @@
 # Simultaneous local realization with ordinary cup inflation
 
-Author: Worker 49, with invariant and ordinary-inflation interface design
-by Worker 42.
-
 `LocalOrdinaryInflationCompatibleClassFormationStatement` asserts, for
 every prime `p`, the existence of one raw `InvariantFamily.{u,u} p`
 satisfying the clauses of
@@ -72,7 +69,7 @@ predicate specified above.
 The positive invariant and left-cup conventions are unchanged. With
 the existing degree-minus-two abelianization and norm-quotient
 identifications, the inverse Tate cup isomorphism gives arithmetic
-reciprocity. The host's geometric convention further inverts its
+reciprocity. The Library's geometric convention further inverts its
 output, as documented in `TateAbelianization.md`. The new ordinary
 formula performs neither inversion.
 
@@ -108,8 +105,8 @@ The explicit local cup and comparison are internal specializations of
 published constructions, not additional claims of the original text.
 
 Absolute continuous corestriction and its simultaneous invariant
-compatibility remain separate work, as does a general direct-limit
-comparison. This target asserts neither those missing clauses nor
-completion of the umbrella task. The source's local existence claims
-are proposition conclusions here; subsequent proof work must be bound
-to this exact published declaration.
+compatibility are added in
+`LocalAbsoluteCorestrictionCompatibleClassFormationStatement`
+(`ClassFormationAbsoluteCorestrictionStatement`); a general direct-limit
+comparison is separate. This target asserts neither. The source's local
+existence claims are proposition conclusions here.

@@ -1,7 +1,7 @@
 # The dual-side Euler characteristic of a finite flat Mumford map
 
-Authors: Worker 943 wrote the Lean file and the initial explanation; Worker 1089 checked
-them against the Library, Mathlib and the source and revised the explanation.
+The Lean file and the explanation were checked against the Library, Mathlib and the
+source.
 
 Module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerStatement`,
 namespace `Langlands.AbelianScheme`, with `open CategoryTheory AlgebraicGeometry`,
@@ -135,12 +135,15 @@ In the Lean interface:
 
 ## Role
 
-Statement task `2590f5a1-e1c2-4ec1-ade7-377e97a3e12f`; its proof is a separate later task.
-The proposition is an intermediate interface for the proof task
-`fc8e4732-8e1b-497e-adb1-c27ee538f442` of the published
-`Langlands.AbelianScheme.AlgClosedFieldAmpleMumfordEulerSquareStatement`. The planned
-assembly there, which is not part of the Library, combines it with the shear and Künneth
+Its proof is the separate module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerProof`
+(`Langlands.AbelianScheme.algClosedFieldMumfordDualEuler`).
+The proposition is an intermediate interface for the proof of the published
+`Langlands.AbelianScheme.AlgClosedFieldAmpleMumfordEulerSquareStatement`. The
+assembly there, `algClosedFieldAmpleMumfordEulerSquare_of_dual_of_symmetry` (module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldAmpleMumfordEulerSquareProof`), combines it
+with the shear and Künneth
 computation `χ(Q) = χ(N) · χ(M)` (from the source's formula (11)) and with the
-symmetry `χ(M) = (-1)^g χ(N)` stated in task `bf395772-bc6c-4f1c-8359-80a9ad561005`
-(`Langlands.AbelianScheme.AlgClosedFieldEulerInverseSymmetryStatement`, not yet in the
-Library), giving `χ(L)² = deg_y f`.
+symmetry `χ(M) = (-1)^g χ(N)`
+(`Langlands.AbelianScheme.AlgClosedFieldEulerInverseSymmetryStatement`, proved in the
+Library as `algClosedFieldEulerInverseSymmetry`), giving `χ(L)² = deg_y f`.

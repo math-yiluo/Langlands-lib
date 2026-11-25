@@ -1,6 +1,6 @@
 # Source axioms and uniqueness on actual nonaffine scheme points
 
-This unit states the uniqueness assertion in Brian Conrad, *Weil and
+This module states the uniqueness assertion in Brian Conrad, *Weil and
 Grothendieck approaches to adelic points*, December 31, 2011, Proposition 3.1,
 printed page 4. The source is registered as
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256
@@ -59,7 +59,7 @@ with the named final topology on the same carrier.
 
 This is a uniqueness statement. It does not assert that the canonical
 assignment satisfies every axiom; existence, including nonaffine fiber-product
-compatibility, remains a separate obligation. It does not assume that existence
-or the desired chart compatibility as a field of the family. The remaining
-Hausdorffness, compactness, arithmetic and algebraic-space assertions of the
-paper are outside this unit.
+compatibility, is proved separately in `SchemeTopologyExistenceProofs`. It
+does not assume that existence or the desired chart compatibility as a field
+of the family. The remaining Hausdorffness, compactness, arithmetic and
+algebraic-space assertions of the paper are outside this module.

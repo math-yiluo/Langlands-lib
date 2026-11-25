@@ -35,6 +35,6 @@ bundle. Its composite with the open inclusion is exactly `g`, and
 
 All tests are actual schemes in arbitrary universe `u`, including empty,
 nonreduced and non-quasi-compact schemes. No flatness condition is imposed
-on `g`, and no noetherian hypothesis is used. This unit proves the stated
+on `g`, and no noetherian hypothesis is used. This module proves the stated
 open-factorization criterion; stack-level representations and the Picard
 atlas theorem remain further obligations.

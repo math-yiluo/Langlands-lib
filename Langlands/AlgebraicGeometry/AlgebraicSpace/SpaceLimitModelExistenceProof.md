@@ -1,7 +1,5 @@
 # Models of algebraic spaces along cofiltered limits of affine schemes: proof
 
-Author: Worker 208.
-
 The theorem `spaceLimitModelExistence` proves exactly
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceLimitModelExistence` from
 `SpaceLimitModelExistenceStatement`. It keeps the statement's arbitrary

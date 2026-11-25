@@ -1,6 +1,6 @@
 # Supplied common-closure systems on standalone inputs
 
-Worker 40 authored this derived attachment in the namespace
+This module is a derived attachment in the namespace
 `Langlands.LocalFactor.CommonClosureSystemTransport`. It evaluates one
 component of an explicitly supplied common-closure local-constant system on
 actual standalone harmonic and Weil inputs. It also constructs the conditional
@@ -173,7 +173,7 @@ The conventions are inherited from Tate, *Number theoretic background*
 §4.1.6, printed page 21 / PDF page 30. The former distinguishes
 Deligne's measure-dependent constant from Langlands' half-twisted
 self-dual convention. The latter gives the determinant correction on
-`V^I/(ker N)^I`. These original pages were read directly for this unit.
+`V^I/(ker N)^I`. These original pages were read directly for this module.
 Registered source: `tate-1979-number-theoretic-background`; exact PDF
 SHA-256:
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
@@ -199,5 +199,4 @@ coordinate and invertible quotient operator allow the correction at
 every complex `s`. No L-factor is evaluated as an everywhere finite
 function; the separately published rational L-factors and their
 regular-domain evaluations remain the appropriate interfaces for
-Euler denominators. Functional equations and completion of the broad
-host definition task are not claims of this unit.
+Euler denominators. Functional equations are not claims of this module.

@@ -81,6 +81,7 @@ theorem isClosedSubgroup_fibreRootMap : IsClosedSubgroup (fibreRootMap i mu nu K
     isClosedSubgroup_jZK i mu K
   change IsClosedImmersion (fibreRootMap i mu nu K Φ).hom.hom.left
   dsimp only [fibreRootMap, Grp.comp_hom_hom, Over.comp_left]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 include hΦ in

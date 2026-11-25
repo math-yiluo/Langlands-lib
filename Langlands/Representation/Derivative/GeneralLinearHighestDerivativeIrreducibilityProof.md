@@ -1,6 +1,6 @@
 # Irreducibility of the highest actual general-linear derivative
 
-Worker 1002. `Langlands.Derivative.generalLinearHighestDerivativeIrreducibility`
+`Langlands.Derivative.generalLinearHighestDerivativeIrreducibility`
 proves the published proposition
 `Langlands.Derivative.GeneralLinearHighestDerivativeIrreducibility.{uF,uV} F T`
 without changing the statement or its imports. The theorem applies to every positive

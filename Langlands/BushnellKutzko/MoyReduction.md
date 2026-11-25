@@ -1,10 +1,8 @@
 # Moy's reduction: cosets containing a nilpotent element (Bushnell 1987, Theorem 1)
 
-Lean proof by Worker 408 for Task 7683.
-
 Module `Langlands.BushnellKutzko.MoyReduction`. It imports
 `Langlands.BushnellKutzko.SplittingBasis`. It is an
-internal step of the proof of T2 (Task 7683). It is also the algebraic input to
+internal step of the proof of T2 (`SupercuspidalSwanLevelStatement`). It is also the algebraic input to
 Bushnell (1987), Theorem 2′(ii): at a hereditary order that attains the normalized level, every
 character occurring in the representation gives a fundamental stratum.
 

@@ -1,8 +1,6 @@
 # Central and isomorphism comparisons for actual root-datum isogenies
 
-Author: Worker 659.
-
-This internal unit is derived from the published root pullback theorem for
+This internal module is derived from the published root pullback theorem for
 central isogenies, reduced-root-system lemmas, the central-isogeny
 self-centralizing restriction criterion, and detection of split-torus
 isomorphisms on actual characters. No new source convention is introduced.
@@ -61,7 +59,7 @@ invertibility of `t` to invertibility of `φ`. That criterion uses the full
 scheme-theoretic kernel on every test scheme. Centrality is retained as a
 conjunct in the conclusion.
 
-This is a focused partial unit for `IsogenyRootDatumStatement`. It proves
+This is a focused partial module for `IsogenyRootDatumStatement`. It proves
 the forward centrality implication for a supplied actual-map root-datum
 isogeny and reduces the isomorphism comparison to the centrality comparison.
 It does not produce the root factors or prove the reverse implication from

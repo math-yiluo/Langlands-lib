@@ -1,10 +1,7 @@
 # Relative Hom comparison from whole-induction isolation
 
-Authors: Worker 526, with the central-block design of Worker 430, scalar
-and source-twist guidance of Worker 359, literal shape transport of Worker
-435 and Hom transport of Workers 845, 526 and 435. The namespace is
-`Langlands.RelativeCosocleHomIsolationReduction`. Imported public results
-retain their documented provenance.
+The namespace is
+`Langlands.RelativeCosocleHomIsolationReduction`.
 
 `fineTwistHomEquiv` constructs a complex linear equivalence between the
 fine Hom into the refined opposite Jacquet module of the coarse input
@@ -25,8 +22,8 @@ strict-order hypothesis.
 `temperedInductionFiniteGeneration` proves this family. Character twisting
 preserves irreducibility and admissibility. The twisted Levi module is
 simple, hence Noetherian and Artinian and therefore of finite length.
-The public `Classification.normalizedInductionFiniteLength`, due to
-Worker 325, gives finite length of its actual normalized induction.
+The public `Classification.normalizedInductionFiniteLength`
+gives finite length of its actual normalized induction.
 Its Noetherian consequence gives finite generation over the ambient
 group algebra. An explicit definitional conversion identifies this
 module with the bundled induced carrier. Temperedness is used here for

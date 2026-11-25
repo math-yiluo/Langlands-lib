@@ -1,6 +1,6 @@
 # Nesting of the chosen opposite standard parabolics
 
-Worker 5295. This module sets up an internal construction for the proof of
+This module sets up an internal construction for the proof of
 Renard VII.4.2 (iii). It relates the opposite parabolics of two nested
 standard parabolics. Throughout, `G` is a connected reductive group over a
 field `k`, `i : T → G` is a maximal split torus, and `ν` is a generic

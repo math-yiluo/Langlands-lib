@@ -1,7 +1,5 @@
 # Rectangular Fourier integrals of affine lattice boxes
 
-Author: Worker 623.
-
 This internally derived helper constructs the actual Schwartz–Bruhat
 characteristic test of an entrywise affine lattice box over any supplied
 topological data of a p-adic field. Every entry has its own integer level and

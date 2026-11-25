@@ -1,7 +1,5 @@
 # Galois actions on original geometric CM torsion cohomology
 
-Author: Worker 57.
-
 This module equips the original geometric CM coefficient inverse system with
 Galois actions on derived global sections, ordinary cohomology and actual
 global sections. Every reduction is an equivariant morphism. The underlying
@@ -303,7 +301,7 @@ finite coefficient stage and their equivariant reduction systems.
 It does not prove continuity for the profinite Galois topology,
 construct level or adic limits, or construct Hecke coefficient maps.
 Representability, dual existence and geometry, coarse rigidity and
-every other named premise above remain assumptions. Those proofs
-and the other obligations of the host geometric task remain open.
-The new Lean and English prose are by Worker 57, using Lean 4.34.0
+every other named premise above remain assumptions. This module
+supplies neither those proofs nor the other obligations of the
+geometric construction. The pinned environment is Lean 4.34.0
 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

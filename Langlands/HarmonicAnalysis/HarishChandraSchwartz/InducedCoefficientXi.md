@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedCoefficientXi`,
 namespace `Langlands.HarishChandraSchwartz`. It imports `InducedCoefficientBound` (for
-`compactIntegral` and `LeviData.norm_compactIntegral_le_xi`), Worker 200's
+`compactIntegral` and `LeviData.norm_compactIntegral_le_xi`),
 `Langlands.Representation.Plancherel.CompactProductCoefficientBounds` (for
 `CompactInduction.integrand_bound_levi`), which imports `CompactProductInducedCoefficients` (for
 `CompactInduction.integrand`, `CompactInduction.coefficientMap`,
@@ -35,15 +35,16 @@ appliquer le Lemme II.1.6".
 
 This module proves the displayed coefficient bound for one inducing representation (the
 coefficient of `I_P^G(A)` for a single smooth representation `A` of `M`, for instance
-`A = ω ⊗ χ` with `χ` fixed). It combines Worker 200's representation of the actual induced
-coefficient as a `K`-integral and their integrand bound from a coefficient bound on `M` with the
+`A = ω ⊗ χ` with `χ` fixed). It combines the representation of the actual induced
+coefficient as a `K`-integral and the integrand bound from a coefficient bound on `M`
+(`CompactProductInducedCoefficients`, `CompactProductCoefficientBounds`) with the
 analytic core `LeviData.norm_compactIntegral_le_xi` (Lemma II.1.6 applied to the integrand
 bound). The uniformity in `χ ∈ Im X(M)` and `ω ∈ O`, and the reduction from `E_P^G ψ_ω` to
 these coefficients, are not formalized.
 
 ## Scope: data and explicit hypotheses
 
-The group and induction data are those of Worker 200's `CompactProductInducedCoefficients`:
+The group and induction data are those of `CompactProductInducedCoefficients`:
 a locally compact nonarchimedean group `G` (`[Group G] [TopologicalSpace G]
 [LocallyCompactSpace G] [NonarchimedeanGroup G]`), subgroups `P`, `M`, `U` with
 `h : IsSemidirectDecomposition P M U` (`P = M ⋉ U`, `m_P = h.projection`),
@@ -102,7 +103,7 @@ Hypotheses of `norm_coefficientMap_le_xi` (each is an explicit argument or insta
 
 ## Proof notes
 
-`norm_inducedIntegrandKernel_le`: Worker 200's `CompactInduction.integrand_bound_levi`
+`norm_inducedIntegrandKernel_le`: `CompactInduction.integrand_bound_levi`
 (applied with `ξ = Ξ^M`, nonnegative since it is an integral of the nonnegative
 `iwasawaWeight`) gives `C` with
 `‖integrand(g)(F)(k)‖ ≤ δ_P(m_P(q))^{1/2} C Ξ^M(m_P(q))` whenever `k g = q k₁` with `q ∈ P`,
@@ -121,7 +122,7 @@ bounds it by `C Ξ(g)`.
 
 - `InducedCoefficientBound` (`LeviData.norm_compactIntegral_le_xi`) is the analytic step used
   here.
-- Worker 200's `CompactProductInducedCoefficients` and `CompactProductCoefficientBounds` supply
+- `CompactProductInducedCoefficients` and `CompactProductCoefficientBounds` supply
   the `K`-integral representation and the integrand bound, and `CompactCoefficientHaarComparison`
   identifies `CompactInduction.measure K hK` with `normalizedHaar (K : Subgroup G)`; this module
   only connects their conclusions.

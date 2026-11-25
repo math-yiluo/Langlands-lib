@@ -52,9 +52,9 @@ point-image equality into the existing `RootFiltrationModelData`.
 `rootFiltrationModelMap` supplies its actual compatible ambient integral
 map, namely the closed map `rootModelMap`.
 
-The provenance is internal. The new `GenericRootFixerIntersection` helper
-and its paired Markdown are included for review and integration together
-with this unit. The primary construction composes that helper with published
+The provenance is internal. The helper module `GenericRootFixerIntersection`
+(`Langlands.Geometry.Building.GenericRootFixerIntersection`) and its page were
+added together with this module. The primary construction composes that helper with published
 split-character base change, all-test root transport and integral root
 representability. It supplies the root-model part of
 the parahoric construction once the explicit ambient model and compatible

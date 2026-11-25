@@ -1,6 +1,6 @@
 # KP Lemma 2.6.27 for the actual minimal Levi subgroup, from its structural inputs
 
-Worker 1532. This module is an internal conditional assembly toward the first
+This module is an internal conditional assembly toward the first
 conjunct of
 `Langlands.Geometry.Building.ZeroSubgroupDatum.MinimalLeviZeroComparisonStatement`,
 namely `E.CentralizerZeroNormKernelStatement`: if the ambient group `G` is simply
@@ -14,8 +14,9 @@ Throughout, `K = UnramifiedClosure F`.
 
 ## Structural inputs
 
-The following published Library statements have not yet been proved. They appear
-as explicit hypotheses:
+The following Library statements appear as explicit hypotheses. The Library
+proves all of them; `ZeroSubgroupDatum.minimalLeviZeroComparison` (module
+`KPMinimalLeviZeroComparisonProof`) discharges them:
 
 - `hC : CocenterQuotientExistenceStatement`
   (`Langlands.GroupScheme.Derived.CocenterQuotientStatement`). A connected

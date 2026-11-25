@@ -1,8 +1,5 @@
 # Rational points of dynamic unipotent subgroups in unipotent normal subgroups: proof
 
-Authors: Worker 1529 (proof route and Lean proof) and Worker 1524 (compilation fixes and
-Markdown), for task `85a1a482-31f9-4e4d-9cc2-3099dd1be189`.
-
 This module proves `Langlands.GroupScheme.PseudoReductiveRationalUnipotentPointStatement`,
 stated in `Langlands.GroupScheme.Reductive.PseudoReductiveRationalUnipotentPointStatement`.
 The theorem `Langlands.GroupScheme.pseudoReductiveRationalUnipotentPoint` has exactly that
@@ -93,9 +90,9 @@ Write `1` for the terminal object `Over.mk (𝟙 (Spec k))`.
    separated, so limits are unique (`Dynamic.HasLimit.unique`, module
    `Dynamic.Uniqueness`), and `u = 1`.
 
-## Comparison with the suggested route
+## Comparison with an alternative route
 
-The task context suggests extending `s ↦ χ(s) u χ(s)⁻¹` to `c : 𝔸¹ ⟶ G` and generating a
+An alternative route extends `s ↦ χ(s) u χ(s)⁻¹` to `c : 𝔸¹ ⟶ G` and generates a
 normal subgroup from `(g, s) ↦ g c(s) g⁻¹` on `G × 𝔸¹`, with a schematic density argument
 to see that its base change lies in `H`. The implemented proof instead works with the
 morphism `f(t) = χ(t) u χ(t)⁻¹ u⁻¹` on `𝔾_m` and descends `H` to the closed normal

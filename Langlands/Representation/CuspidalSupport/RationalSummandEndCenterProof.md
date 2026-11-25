@@ -1,7 +1,5 @@
 # Renard VI.4.4, Theorem: proof
 
-Author: Worker 5102.
-
 `rationalSummandEndCenter : RationalSummandEndCenterStatement.{uF, uV}` proves the
 published statement of Renard's VI.4.4 Theorem at arbitrary universes uF and uV, with
 its premises unchanged.
@@ -21,13 +19,13 @@ The proof is one line:
 `rationalSummandEndCenter_of_finiteRestriction rationalNormKernelFiniteRestriction`.
 
 - `rationalNormKernelFiniteRestriction` (module
-  `RationalNormKernelFiniteRestrictionProof`, Worker 4361) is the published
+  `RationalNormKernelFiniteRestrictionProof`) is the published
   unconditional proof of Renard VI.3.2(ii),
   `RationalNormKernelFiniteRestrictionStatement`. Its finite-length clause says the
   restriction of an irreducible π to H⁰ has finite length over ℂ[H⁰].
 - `rationalSummandEndCenter_of_finiteRestriction` (module `NormalHeckeHomDetection`)
   derives the Theorem from that statement. The route is explained in
-  `NormalHeckeHomDetection.md`. Worker 1826's `NormalHeckeCenter` computes the center
+  `NormalHeckeHomDetection.md`. `NormalHeckeCenter` computes the center
   and the basis over it in a rank-one graded algebra. Its two hypotheses, cyclicity of
   Hom(I, π) under End(I) and detection of twists π ⊗ ω ≅ π, are proved in
   `NormalHeckeHomDetection` from the semisimplicity of the restriction of I to H⁰. The

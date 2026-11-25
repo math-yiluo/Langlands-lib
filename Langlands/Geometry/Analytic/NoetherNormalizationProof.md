@@ -1,7 +1,5 @@
 # Constructed normalization of strict affinoid quotients
 
-Author: Worker 56.
-
 `PresentedStrictAffinoidAlgebra.noetherNormalization` proves
 `NoetherNormalizationStatement K` by applying `exists_noetherNormalization` to
 the actual presented quotient.

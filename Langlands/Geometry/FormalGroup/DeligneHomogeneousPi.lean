@@ -18,12 +18,12 @@ variable {O : Type u} [CommRing O] {d : ℕ} [NeZero d] {π : O}
 
 /-- Actual multiplication by a coefficient on an O-module sheaf. -/
 def moduleSheafScalar (a : O) (M : X.Sheaf (ModuleCat.{u} O)) : End M where
-  hom := a • 𝟙 M.obj
+  asHom.hom := a • 𝟙 M.obj
 
 /-- Every actual module-sheaf map commutes with coefficient multiplication. -/
 theorem moduleSheafScalar_naturality (a : O) {M N : X.Sheaf (ModuleCat.{u} O)}
     (f : M ⟶ N) :
-    moduleSheafScalar a M ≫ f = f ≫ moduleSheafScalar a N := by
+    (moduleSheafScalar a M).asHom ≫ f = f ≫ (moduleSheafScalar a N).asHom := by
   apply Sheaf.hom_ext
   apply NatTrans.ext
   funext U
@@ -35,14 +35,14 @@ omit [NeZero d] in
 theorem latticePi_sheaf_pow_apply
     (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π)))
     (U : (Opens X)ᵒᵖ) (n : ℕ) (x : M.obj.obj U) :
-    ((End.of (latticePi d π X M) ^ n).hom.app U) x =
+    ((End.of (latticePi d π X M) ^ n).asHom.hom.app U) x =
       (((latticePi d π X M).hom.app U).hom ^ n) x := by
   induction n with
   | zero => rfl
   | succ n ih =>
     rw [pow_succ']
     change (latticePi d π X M).hom.app U
-      (((End.of (latticePi d π X M) ^ n).hom.app U) x) = _
+      (((End.of (latticePi d π X M) ^ n).asHom.hom.app U) x) = _
     rw [ih, pow_succ']
     rfl
 
@@ -52,6 +52,7 @@ theorem latticePi_sheaf_relation
     (M : X.Sheaf (ModuleCat.{u} (PiAlgebra d π))) :
     End.of (latticePi d π X M) ^ d =
       moduleSheafScalar π (latticeScalarSheaf d π X M) := by
+  apply End.ext
   apply Sheaf.hom_ext
   apply NatTrans.ext
   funext U
@@ -81,7 +82,7 @@ omit [NeZero d] in
 @[reassoc]
 theorem piIterate_inclusion (i : ZMod d) (n : ℕ) :
     M.piIterate i n ≫ M.inclusion (i + (n : ZMod d)) =
-      M.inclusion i ≫ End.of (latticePi d π X M.sheaf) ^ n := by
+      M.inclusion i ≫ (End.of (latticePi d π X M.sheaf) ^ n).asHom := by
   induction n with
   | zero => simp [piIterate, M.homogeneousTransport_inclusion]
   | succ n ih =>
@@ -94,12 +95,13 @@ theorem piIterate_inclusion (i : ZMod d) (n : ℕ) :
 
 /-- The homogeneous d-fold iterate closes to an endomorphism in its original degree. -/
 def piCycle (i : ZMod d) : End (M.component i) :=
-  M.piIterate i d ≫ eqToHom (congrArg M.component (by simp))
+  End.of (M.piIterate i d ≫ eqToHom (congrArg M.component (by simp)))
 
 omit [NeZero d] in
 /-- A complete homogeneous cycle is the actual scalar pi on that component. -/
 theorem piCycle_eq_scalar (i : ZMod d) :
     M.piCycle i = moduleSheafScalar π (M.component i) := by
+  apply End.ext
   apply (cancel_mono (M.inclusion i)).mp
   dsimp only [piCycle]
   rw [Category.assoc,
@@ -126,29 +128,33 @@ def piReturn (i : ZMod d) : M.component (i + 1) ⟶ M.component i :=
 @[reassoc]
 theorem piReturn_inclusion (i : ZMod d) :
     M.piReturn i ≫ M.inclusion i =
-      M.inclusion (i + 1) ≫ End.of (latticePi d π X M.sheaf) ^ (d - 1) := by
+      M.inclusion (i + 1) ≫ (End.of (latticePi d π X M.sheaf) ^ (d - 1)).asHom := by
   dsimp only [piReturn]
   rw [Category.assoc, M.homogeneousTransport_inclusion (piReturn_degree i),
     M.piIterate_inclusion]
 
 /-- Forward Pi followed by the complementary path is scalar pi. -/
 theorem pi_comp_return (i : ZMod d) :
-    M.pi i ≫ M.piReturn i = moduleSheafScalar π (M.component i) := by
+    M.pi i ≫ M.piReturn i = (moduleSheafScalar π (M.component i)).asHom := by
   apply (cancel_mono (M.inclusion i)).mp
   rw [Category.assoc, M.piReturn_inclusion, ← Category.assoc, M.pi_inclusion,
     Category.assoc]
   have hd : d - 1 + 1 = d := Nat.sub_add_cancel (Nat.one_le_iff_ne_zero.mpr (NeZero.ne d))
-  rw [← End.mul_def, ← pow_succ, hd, latticePi_sheaf_relation]
+  change M.inclusion i ≫ (End.of (latticePi d π X M.sheaf) ^ (d - 1) *
+    End.of (latticePi d π X M.sheaf)).asHom = _
+  rw [← pow_succ, hd, latticePi_sheaf_relation]
   exact (moduleSheafScalar_naturality π (M.inclusion i)).symm
 
 /-- The complementary path followed by forward Pi is scalar pi in the next degree. -/
 theorem return_comp_pi (i : ZMod d) :
-    M.piReturn i ≫ M.pi i = moduleSheafScalar π (M.component (i + 1)) := by
+    M.piReturn i ≫ M.pi i = (moduleSheafScalar π (M.component (i + 1))).asHom := by
   apply (cancel_mono (M.inclusion (i + 1))).mp
   rw [Category.assoc, M.pi_inclusion, ← Category.assoc, M.piReturn_inclusion,
     Category.assoc]
   have hd : d - 1 + 1 = d := Nat.sub_add_cancel (Nat.one_le_iff_ne_zero.mpr (NeZero.ne d))
-  rw [← End.mul_def, ← pow_succ', hd, latticePi_sheaf_relation]
+  change M.inclusion (i + 1) ≫ (End.of (latticePi d π X M.sheaf) *
+    End.of (latticePi d π X M.sheaf) ^ (d - 1)).asHom = _
+  rw [← pow_succ', hd, latticePi_sheaf_relation]
   exact (moduleSheafScalar_naturality π (M.inclusion (i + 1))).symm
 
 end LatticePiSheaf
@@ -160,8 +166,8 @@ variable (F : Type u) [Field F] [Algebra O F]
 /-- Rational scalar extension sends actual integral multiplication to the image scalar. -/
 theorem rationalPresheaf_map_moduleSheafScalar
     (a : O) (M : X.Sheaf (ModuleCat.{u} O)) :
-    (rationalPresheafFunctor F X).map (moduleSheafScalar a M) =
-      algebraMap F (End ((rationalPresheafFunctor F X).obj M)) (algebraMap O F a) := by
+    (rationalPresheafFunctor F X).map (moduleSheafScalar a M).asHom =
+      (algebraMap F (End ((rationalPresheafFunctor F X).obj M)) (algebraMap O F a)).asHom := by
   apply NatTrans.ext
   funext U
   apply ModuleCat.ExtendScalars.hom_ext
@@ -184,12 +190,14 @@ def rationalPiPresheafIso (i : ZMod d) :
   hom_inv_id := by
     rw [Linear.comp_smul, ← Functor.map_comp, M.pi_comp_return,
       rationalPresheaf_map_moduleSheafScalar]
-    rw [Algebra.algebraMap_eq_smul_one (R := F), smul_smul, inv_mul_cancel₀ hπ, one_smul]
+    rw [Algebra.algebraMap_eq_smul_one (R := F), End.smul_asHom, smul_smul, inv_mul_cancel₀ hπ,
+      one_smul]
     rfl
   inv_hom_id := by
     rw [Linear.smul_comp, ← Functor.map_comp, M.return_comp_pi,
       rationalPresheaf_map_moduleSheafScalar]
-    rw [Algebra.algebraMap_eq_smul_one (R := F), smul_smul, inv_mul_cancel₀ hπ, one_smul]
+    rw [Algebra.algebraMap_eq_smul_one (R := F), End.smul_asHom, smul_smul, inv_mul_cancel₀ hπ,
+      one_smul]
     rfl
 
 /-- Actual sheafification gives the rational isomorphism from degree i to degree i+1. -/

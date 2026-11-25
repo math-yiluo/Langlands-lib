@@ -2,8 +2,6 @@
 
 Module `Langlands.Geometry.Building.UnramifiedFixedResidueRootModelProof`.
 
-Author: Worker 99.
-
 `Langlands.Geometry.Building.unramifiedFixedResidueRootModel` proves the
 published statement
 `Langlands.Geometry.Building.UnramifiedFixedResidueRootModelStatement.{u}`,
@@ -152,9 +150,8 @@ registered as `kaletha-prasad-2023-bruhat-tits-new-approach`:
 - The proof of Proposition 9.4.28 gives base change to the maximal unramified
   extension and restriction of roots, which yield clause 6.
 
-The forbidden statements of the host task were checked against the constant
-dependency closure of the theorem. `UnramifiedSpecialPointDescentStatement`,
+The constant dependency closure of the theorem was checked:
+`UnramifiedSpecialPointDescentStatement`,
 the building-descent statements, `UnramifiedRootSpecializationStatement` and
 `UnramifiedRootJumpDescentStatement` occur in none of its Langlands constants,
-so no result consuming them is used. The published target statement pair and
-its imports are unchanged.
+so no result consuming them is used.

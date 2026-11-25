@@ -47,7 +47,7 @@ spectrum point; `finiteCoverQuotientDesc_fac` gives the categorical
 factorization; `finiteCoverQuotientDesc_unique` proves uniqueness by
 surjectivity. The colimit proof packages this same descent.
 
-The provenance is internal. This unit derives an explicit categorical
+The provenance is internal. This module derives an explicit categorical
 universal property from the existing genuine affinoid algebras, represented
 domains, finite covers and continuous spectrum actions; the reusable
 topological helper proves its own relation, kernel-pair and coequalizer

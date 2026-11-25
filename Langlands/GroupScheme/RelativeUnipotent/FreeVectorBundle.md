@@ -1,7 +1,5 @@
 # Free vector groups as finite free additive bundles
 
-Author: Worker 590, in collaboration with Worker 204 on Task 7200.
-
 ## Construction and scope
 
 This internal derived construction compares the polynomial vector group over
@@ -64,10 +62,10 @@ naturality equation, using exactly the same finite locally free sheaf.
 
 ## Provenance and retained obligations
 
-This unit is derived from the Library's actual free module-sheaf pullback
+This module is derived from the Library's actual free module-sheaf pullback
 and basis APIs, the exact relative-section comparison, and the polynomial
 vector group's all-test coordinates. It formalizes the direct
 finite-free construction rather than an additional claim from an external
-source. It supplies a building block for Task 7200; constructing and
-descending the radical filtration and proving its termination remain
+source. It supplies a building block for the finite vector-bundle
+filtrations of supplied relative radicals; constructing and descending the radical filtration and proving its termination remain
 separate obligations.

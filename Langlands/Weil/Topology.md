@@ -1,7 +1,8 @@
 # The topology determined by open inertia
 
-`Langlands.Weil.TopologyProperties` is a proposition definition for a future
-proof. For every topological group `Γ` and continuous homomorphism
+`Langlands.Weil.TopologyProperties` is a proposition definition; the companion
+[TopologyProof](TopologyProof.md) proves it as `Langlands.Weil.topologyProperties`.
+For every topological group `Γ` and continuous homomorphism
 `φ : Γ → ProfiniteIntegers`, it asserts that:
 
 1. The existing product-subtype topology on `Pullback φ` makes it a
@@ -31,7 +32,7 @@ the topology on inertia determines the topology on every coset and on their
 union. Openness of the degree kernel follows from discreteness of the
 integer coordinate. The topology on its image under inertia inclusion is
 the original one because the embedding is `g ↦ (g,0)`.
-This is a mathematical explanation of the proposed target; no proof of this
+This is a mathematical explanation of the target; no proof of this
 target is implemented in this statement module.
 
 ## Original source and scope
@@ -57,15 +58,13 @@ with the subgroup topology inherited from the original Galois group.
 
 ## Dependencies and validation
 
-The only project definition dependency is the exact version of
-`Langlands.Weil.Pullback` in the submission manifest. The algebraic
+The only project definition dependency is
+`Langlands.Weil.Pullback`. The algebraic
 image/kernel statement is a separate target and is not used as a proved
 dependency in this definition of a proposition. No project theorem is imported.
 
-Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, Lean 4.34.0 at
+Environment: Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
-The manifest records the checked proposition fingerprint. Compilation verifies
-the statement's elaboration, not its truth. Independent statement acceptance
-and publication must precede submission of a proof at an exact target version.
+Compilation verifies the statement's elaboration, not its truth.

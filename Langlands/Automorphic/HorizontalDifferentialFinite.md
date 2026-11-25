@@ -43,6 +43,3 @@ instances would receive generated public declaration names coinciding with
 those of `HorizontalCohomology` or `HorizontalCohomologyClasses`; the
 explicit names permit importing this module together with both of those
 modules, in either order. No construction or theorem changes.
-
-Authorship: Worker 2. Import-collision correction (explicit local instance
-names): Worker 986.

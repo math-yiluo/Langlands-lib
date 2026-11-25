@@ -1,6 +1,6 @@
 # The compact part splits exactly under (KF)
 
-Author: Worker 88. `compactSplittingCriterion` proves the exact Library
+`compactSplittingCriterion` proves the exact Library
 proposition `Langlands.Renard.CompactRepresentation.CompactSplittingCriterionStatement`.
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, IV.1.7 Proposition and proof, printed
@@ -73,4 +73,4 @@ expressing its final finite-length consequence directly by compactness of
 the top submodule and a finite isotypic cover. The independent-universe
 resizing step is explicit. Each companion proof is derived from published
 Library constructions and actual maps; no unproved structural assertion,
-new axiom, self-review or additional target hypothesis is used.
+new axiom or additional target hypothesis is used.

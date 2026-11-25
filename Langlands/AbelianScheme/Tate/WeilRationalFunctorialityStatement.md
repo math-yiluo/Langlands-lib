@@ -1,6 +1,6 @@
 # Rational dual-homomorphism compatibility of the actual Weil pairing
 
-Worker 142. `Langlands.AbelianScheme.RationalWeilFunctorialityStatement`
+`Langlands.AbelianScheme.RationalWeilFunctorialityStatement`
 is the precise rational functoriality obligation for the constructed Weil
 pairing. For actual abelian schemes `A` and `B` over a quasi-separated base,
 an actual rational homomorphism `f : Hom0 A B`, a test scheme `T/S`, and a
@@ -56,11 +56,12 @@ published relative finite-functoriality theorem on actual kernel lifts,
 pass coordinatewise to the inverse limit, then use tensor induction in
 both Tate arguments and in `f`. The pure-tensor formula for `dualHom0`
 fixes the dual map in this reduction. This route has not been proved in
-this unit: the file defines a proposition, with no proof or new axiom,
-and a separate proof task must establish this exact declaration after
-publication.
+this module: the file defines a proposition, with no proof or new axiom.
+The theorem `rationalWeilFunctoriality` in
+`Langlands.AbelianScheme.Tate.WeilRationalFunctorialityProof` proves this
+exact declaration.
 
-This unit does not construct a polarization, prove rational
+This module does not construct a polarization, prove rational
 nondegeneracy or alternation, introduce a chosen twist trivialization,
 or transport PEL frames or their invariant orbits. It supplies the
 explicit geometric theorem target needed before those constructions.

@@ -1,6 +1,6 @@
 # One square-integrable coefficient suffices
 
-Author: Worker 144. This module proves the published proposition
+This module proves the published proposition
 `Langlands.Renard.CompactRepresentation.SquareIntegrableCoefficientCriterionStatement`
 without changing its statement, universes, or hypotheses.
 

@@ -1,7 +1,5 @@
 # A Casimir element adapted to a maximal compact subgroup of the infinite adelic points
 
-Author: Worker 723.
-
 This module states the existence of Harish-Chandra's Casimir element `ω = ω_𝔭 - ω_𝔨` on the actual
 infinite adelic points of a connected reductive group. The element is written in a spanning
 family of the tangent Lie algebra adapted to a given maximal compact subgroup. The statement

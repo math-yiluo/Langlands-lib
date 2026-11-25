@@ -1,7 +1,5 @@
 # Bijectivity of the assembly, reduced to the multisegment classification
 
-Author: Worker 1704.
-
 ## Scope and provenance
 
 This module reduces `Langlands.Correspondence.AssemblyBijectiveStatement`

@@ -1,6 +1,6 @@
 # Smallness of the actual full-restriction compact induction
 
-Worker 1594. This internal application combines the actual open-subgroup
+This internal application combines the actual open-subgroup
 compact-induction finite-generation theorem, actual finite-generation Hom
 coproduct theorem, and actual rational inertia block closure under direct
 sums. It supports the smallness component of
@@ -39,6 +39,6 @@ proof.
 The provenance is internal specialization of the three imported constructions.
 Finite composition length of the full restriction and block membership are
 explicit inputs here. Neither input is claimed as a theorem of this module;
-they must be discharged separately when proving the unconditional parent
-target. Irreducibility, cuspidality, projectivity, faithful Hom and the other
+they must be discharged separately for the unconditional
+`RationalUniversalSmallProgeneratorStatement`. Irreducibility, cuspidality, projectivity, faithful Hom and the other
 parts of that target are not established here.

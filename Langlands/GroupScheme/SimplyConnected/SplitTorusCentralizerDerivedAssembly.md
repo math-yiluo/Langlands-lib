@@ -1,7 +1,5 @@
 # Conditional assembly for derived split-torus centralizers
 
-Author: Worker 1366.
-
 This module assembles the exact public statement
 `SplitTorusCentralizerDerivedSimplyConnectedStatement.{u}` from six explicit
 structural hypotheses. It is a conditional theorem, not an unconditional

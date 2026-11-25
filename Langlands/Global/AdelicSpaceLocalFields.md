@@ -1,7 +1,5 @@
 # The local fields of the adelic level rings
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claims on adelic levels
 (`Langlands.Global.AdelicSpaceLevelTopologyStatement`). The étale-chart topology results of
 Proposition 5.4 (`t2Space_etaleChartTopology`, `locallyCompactSpace_etaleChartTopology`) and

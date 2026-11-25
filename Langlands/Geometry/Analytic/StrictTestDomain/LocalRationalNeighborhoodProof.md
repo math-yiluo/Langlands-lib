@@ -1,7 +1,5 @@
 # Local rational neighbourhoods of strictly represented subsets: proof
 
-Author: Worker 1010.
-
 `Langlands.Analytic.StrictTestDomain.localRationalNeighborhood` proves the
 published proposition `StrictTestDomain.LocalRationalNeighborhoodStatement` at
 universe `u`. Fix a complete ultrametric field K with an element of norm greater

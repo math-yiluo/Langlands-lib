@@ -27,7 +27,7 @@ variable (G : GroupScheme (Spec (CommRingCat.of F)))
   [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
 variable {κ : Type v} [Fintype κ]
 
-local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
+private local instance : TopologicalSpace (GroupScheme.rationalPoints G) :=
   rationalPointTopology F G.X
 
 /-- In the coordinates of `b`, evaluation at the basis `b'` is a Laurent monomial in each
@@ -51,7 +51,7 @@ private theorem contDiffOn_rationalUnramifiedBasisTransition
     intro i
     apply contDiffAt_prod
     intro j _
-    have hproj : ContDiffAt ℂ ω (fun w : κ → ℂ => w j) z := contDiffAt_apply ℂ ℂ j z
+    have hproj : ContDiffAt ℂ ω (fun w : κ → ℂ => w j) z := contDiffAt_apply ℂ (fun _ => ℂ) j z
     cases b.repr (b' i) j with
     | ofNat n => simpa only [Int.ofNat_eq_natCast, zpow_natCast] using hproj.pow n
     | negSucc n =>

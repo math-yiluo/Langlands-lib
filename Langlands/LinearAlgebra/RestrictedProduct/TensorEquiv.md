@@ -11,16 +11,17 @@ m ⊗ x  ↦  (i ↦ m ⊗ x i).
 Here `M` is a finitely presented flat `R`-module. There is an `R`-linear
 version `lTensorEquiv` and an `M`-linear version `lTensorEquivLeft`. Each
 has a `simp` lemma giving its value on a pure tensor. All four declarations
-are in the namespace `RestrictedProduct`.
+are in the root namespace `RestrictedProduct`: they are the Imperial project's declarations of these
+names (see “Names and place” below).
 
 The module imports only `Langlands.LinearAlgebra.RestrictedProduct.TensorProof`.
 That module provides the theorem
-`RestrictedProduct.tensorRestrictedProductComparison_proof`. Through its own
+`Langlands.LinearAlgebra.RestrictedProduct.tensorRestrictedProductComparison_proof`. Through its own
 imports it also provides the canonical maps `lTensor` and `lTensorLeft`, the
 image submodules `rangeLTensor` and `rangeLTensorLeft`, and the formulas
-`lTensor_tmul` and `lTensorLeft_tmul`, all from
-`Langlands.LinearAlgebra.RestrictedProduct.Tensor`. None of these modules is
-edited. This module defines no helper declaration.
+`lTensor_tmul` and `lTensorLeft_tmul`, all declared in the Mathlib stand-in module
+`Langlands.Mathlib.DedekindDomain.FiniteAdeleRing.TensorRestrictedProduct` and imported through
+`Langlands.LinearAlgebra.RestrictedProduct.Tensor`. This module defines no helper declaration.
 
 ## Universes and arbitrary data
 
@@ -28,7 +29,7 @@ The module declares `universe uR uM uι uN`, with `R : Type uR`,
 `M : Type uM`, `ι : Type uι` and `N : ι → Type uN`. These four universes are
 independent, and every declaration has the universe parameters
 `.{uR, uM, uι, uN}` in this order. This is the order of the universe
-parameters of the target `RestrictedProduct.TensorRestrictedProductComparison`
+parameters of the target `Langlands.LinearAlgebra.RestrictedProduct.TensorRestrictedProductComparison`
 and of its proof.
 
 In every declaration the index type `ι`, the family of submodules
@@ -176,11 +177,11 @@ transparency option is needed.
   of the two equivalences, obtained noncomputably through
   `LinearEquiv.ofBijective`.
 - No inverse laws. The published Prop
-  `RestrictedProduct.TensorEquivInverseLaws` in
+  `Langlands.LinearAlgebra.RestrictedProduct.TensorEquivInverseLaws` in
   `Langlands.LinearAlgebra.RestrictedProduct.TensorEquivStatement` states
   both inverse identities between each canonical forward map and the `.symm`
   of the corresponding equivalence. The published theorem
-  `RestrictedProduct.tensorEquivInverseLaws_proof` in
+  `Langlands.LinearAlgebra.RestrictedProduct.tensorEquivInverseLaws_proof` in
   `Langlands.LinearAlgebra.RestrictedProduct.TensorEquivProof` proves it.
 - The source declarations `coe_lTensorLeft_eq_lTensor`,
   `tmulEquivRangeLTensor`, `lTensorPrincipalEquiv`,
@@ -193,8 +194,8 @@ transparency option is needed.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean
-4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) built the module
+A check with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` built the module
 with no errors or warnings. The full unapplied types of all four declarations
 were inspected with universes shown, and the signatures above follow them. All
 four declarations depend only on `propext`, `Classical.choice` and
@@ -222,12 +223,11 @@ file. The upstream root Apache-2.0 `LICENSE` is retained at
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 The source snapshot contains no `NOTICE` file and no errata file.
 
-Worker 217 made this adaptation. Worker 98's task specification chose the
-construction from `LinearEquiv.ofBijective` and the published proof. Worker
-217's modifications are:
+The adaptation constructs the equivalences from `LinearEquiv.ofBijective`
+and the published proof. Its modifications are:
 
 - the bijectivity proofs are taken from the second and third clauses of the
-  published `RestrictedProduct.tensorRestrictedProductComparison_proof`.
+  published `Langlands.LinearAlgebra.RestrictedProduct.tensorRestrictedProductComparison_proof`.
   The source uses its own `lTensor_bijective` (lines 170–225), a direct-limit
   argument over principal filters, and `lTensorLeft_bijective` (lines
   227–232);
@@ -250,3 +250,19 @@ compatibility patches (a)–(d) applies to these lines, and no Anthropic
 derivative code is used. The public audit
 [finite-adele base change](../../../notes/reuse/finite-adele-base-change-audit.md),
 sections 2–6 and Appendix B, describes the surrounding source closure.
+
+## Names and place (22 November 2026)
+
+The four declarations `lTensorEquiv`, `lTensorEquiv_tmul`, `lTensorEquivLeft` and `lTensorEquivLeft_tmul`
+have the names and statements that the Imperial College London FLT project gives them (commit
+`019805815d7da565ed1e9f427b6fbd0cbc9d00d3`, `FLT/DedekindDomain/FiniteAdeleRing/TensorRestrictedProduct.lean`,
+lines 234-257); they keep them, as names expected in
+Mathlib, and are to be deleted when the Library's Mathlib has these declarations. Unlike the other
+declarations of the Imperial project, they are not moved to a file under `Langlands/Mathlib/`: they
+take their bijectivity from the Library's own theorem
+`Langlands.LinearAlgebra.RestrictedProduct.tensorRestrictedProductComparison_proof`, which is proved from
+the `TensorRestrictedProduct` module under `Langlands/Mathlib/`, so that file cannot hold them without an import cycle;
+Imperial's own proof (`lTensor_bijective`, by direct limits over principal filters, with
+`lTensorPrincipalEquiv`, `tmulEquivRangeLTensor`, `TensorPi` and `IsDirectLimit`) is not used by the Library
+and is not taken. The only edit to the Lean file is the name of that theorem, which moved from
+`RestrictedProduct` to `Langlands.LinearAlgebra.RestrictedProduct`, and this note in its header.

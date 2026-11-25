@@ -1,6 +1,8 @@
 # Normal finite-type two-axis extension from class representability
 
-Worker 198 wrote this internal reduction for Task 5678.
+This is an internal reduction for the proof of
+`NormalFiniteTypeTwoAxisExtensionProperty` (module
+`NormalModelTwoAxisExtensionProof`).
 
 `Langlands.AbelianScheme.normalFiniteTypeTwoAxisExtensionProperty_of_twoAxisClassRepresentability`
 has type

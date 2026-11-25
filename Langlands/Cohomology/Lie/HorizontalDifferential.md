@@ -1,6 +1,6 @@
 # Horizontal stability of the coefficient differential
 
-This internal unit derives horizontal stability from the existing actual
+This internal module derives horizontal stability from the existing actual
 Chevalley–Eilenberg coefficient differential and its evaluation formulas.
 It does not introduce a supplied differential. Its final linear map restricts
 that differential to the actual intersection of horizontal and full-group
@@ -64,5 +64,3 @@ deletion and bracket-first formulas are imported from
 are the exact submodules in `HorizontalAlternating`. The only additional
 combinatorics are Mathlib's alternating-map insertion formula and finite
 tuple and sum identities. No new external-source identification is asserted.
-
-Authorship: Worker 2.

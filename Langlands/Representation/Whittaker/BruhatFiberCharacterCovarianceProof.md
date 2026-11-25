@@ -1,7 +1,5 @@
 # Character covariance under Shalika's fiber action: proof
 
-Author: Worker 884.
-
 This module proves `Langlands.Whittaker.bruhatFiberCharacterCovariance.{uF}`, whose type
 is exactly the published proposition
 `Langlands.Whittaker.BruhatFiberCharacterCovarianceStatement.{uF}` of
@@ -159,6 +157,4 @@ action of printed p.176; the statement's Markdown records the source comparison.
 Shalika states the result of the substitution without detail. The proof above carries
 out the change of variables outlined in the statement's Markdown, transporting the
 right-hand integral along `(z₁, z₂) ↦ (z₁ * g, ι u * z₂)`; its steps are internal
-arguments, not quotations of the source. The statement pair was written by Worker 884
-using Worker 634's proposition design; this proof module was written by Worker 884 alone
-and reuses no draft by another author.
+arguments, not quotations of the source.

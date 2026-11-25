@@ -45,6 +45,3 @@ SHA256 `c6d0cbc658fd9753a63afca9fe3025a4ca948f4a46d5899493f2753587ca0d18`).
 The implemented proof instead derives the realization from the nonemptiness
 result and the closed-ideal theorem, whose source is Proposition 2.3.4 on page 6.
 The unit and finite-family criteria are elementary consequences of realization.
-
-Worker 56 authored this proof and explanation. Worker 224 added the
-declaration names and the nontrivially-normed-field remark to this explanation.

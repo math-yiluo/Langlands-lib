@@ -1,7 +1,5 @@
 # Integer valuation of character evaluations
 
-Author: Worker 200.
-
 Renard, *Représentations des groupes réductifs p-adiques*, 9 July 2026 edition,
 V.2.3, printed p.105 (PDF p.111), defines `H_G` by applying the normalized
 integer valuation to rational-character evaluations. He defines `Λ(G)` as its
@@ -67,7 +65,7 @@ kernel equality; their representative formulas are checked directly. These
 are intrinsic laws of the constructed maps, rather than a proof of the
 remaining reductive lattice assertions in the source.
 
-This contribution implements the generic valuation composite and its exact
+This module implements the generic valuation composite and its exact
 algebraic quotient. It does not supply the actual rational-character group,
 its point evaluation, or the normalized valuation and absolute value of an
 arbitrary nonarchimedean local field. It does not assert that the image is

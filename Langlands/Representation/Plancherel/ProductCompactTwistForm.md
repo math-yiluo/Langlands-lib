@@ -53,9 +53,9 @@ equivalence with its proved inner-product identity as a subtype.
 Its underlying linear equivalence is unchanged.
 
 No full product-Levi equivariance of the untwisting map is claimed.
-This unit precedes integration and uses no Haar measure or formal
+This module precedes integration and uses no Haar measure or formal
 degree. Comparison of the actual induced source with its fixed compact
 form, inverse-degree normalization and the spectral family form remain
 further consumers. No structural realization on all reductive rational
-points, wave-packet assertion, Plancherel isometry or completion of a
-whole-task condition follows from these constructions.
+points, wave-packet assertion or Plancherel isometry follows from these
+constructions.

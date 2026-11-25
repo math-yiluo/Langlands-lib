@@ -1,7 +1,5 @@
 # Highly ramified L-vanishing against a character of `GL_1`, every local field
 
-Author: Worker 394.
-
 Module `Langlands.AllField.Representation.RankinSelberg.WhittakerTypeHighlyRamifiedRankOneStatement`.
 It states one proposition and proves nothing:
 `Langlands.AllField.RankinSelberg.WhittakerTypeHighlyRamifiedRankOneLVanishingStatement.{uF,uV,uW}`.

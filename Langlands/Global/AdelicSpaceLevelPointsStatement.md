@@ -1,7 +1,5 @@
 # Adelic-level points of separated finite type algebraic spaces
 
-Author: Worker 105.
-
 `AdelicSpaceLevelPointsStatement` states Proposition 5.2 of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed
 p.13, for global fields of both characteristics. The registered source is

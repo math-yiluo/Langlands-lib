@@ -60,7 +60,7 @@ abbrev coverScheme : Scheme.{u} := (D.obj (SingleObj.star G)).obj.left
 
 /-- The contravariant ring map of global sections induced by `g`. -/
 def coverAction (g : G) : Γ(coverScheme D, ⊤) ⟶ Γ(coverScheme D, ⊤) :=
-  (D.map (SingleObj.toEnd G g)).hom.left.appTop
+  (D.map (SingleObj.toEnd G g).asHom).hom.left.appTop
 
 theorem coverAction_one : coverAction D 1 = 𝟙 _ := by
   simp [coverAction]
@@ -187,7 +187,7 @@ theorem quotientMap_cancel {Y : Scheme.{u}} [IsAffine Y] {a b : quotientScheme D
 
 /-- The equivariance of a cover morphism, read off on the quotient map. -/
 theorem coverMap_comp_quotientMap (g : G) :
-    (D.map (SingleObj.toEnd G g)).hom.left ≫ quotientMap D = quotientMap D := by
+    (D.map (SingleObj.toEnd G g).asHom).hom.left ≫ quotientMap D = quotientMap D := by
   have h := quotientRingInclusion_comp_coverAction D g
   rw [coverAction] at h
   rw [quotientMap, ← Category.assoc, ← Scheme.isoSpec_hom_naturality, Category.assoc,
@@ -200,7 +200,7 @@ def toCoverRing {T : CommRingCat.{u}} (φ : T ⟶ Γ(coverScheme D, ⊤)) : T �
 variable {D} in
 /-- Global sections of a `G`-invariant map land in the invariant subring. -/
 def descRingHom {Z : Scheme.{u}} (ψ : coverScheme D ⟶ Z)
-    (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g)).hom.left ≫ ψ = ψ) :
+    (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g).asHom).hom.left ≫ ψ = ψ) :
     Γ(Z, ⊤) ⟶ CommRingCat.of (quotientRing D) :=
   CommRingCat.ofHom (RingHom.codRestrict (toCoverRing D ψ.appTop) (quotientRing D) fun z =>
     (mem_quotientRing_iff D _).mpr fun g => by
@@ -210,7 +210,7 @@ def descRingHom {Z : Scheme.{u}} (ψ : coverScheme D ⟶ Z)
 
 omit [IsAffine S] in
 theorem descRingHom_comp_quotientRingInclusion {Z : Scheme.{u}} (ψ : coverScheme D ⟶ Z)
-    (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g)).hom.left ≫ ψ = ψ) :
+    (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g).asHom).hom.left ≫ ψ = ψ) :
     descRingHom ψ hψ ≫ quotientRingInclusion D = ψ.appTop := by
   ext z
   rfl
@@ -218,18 +218,18 @@ theorem descRingHom_comp_quotientRingInclusion {Z : Scheme.{u}} (ψ : coverSchem
 variable {D} in
 /-- The factorization of a `G`-invariant map to an affine scheme through the quotient. -/
 def descMap {Z : Scheme.{u}} [IsAffine Z] (ψ : coverScheme D ⟶ Z)
-    (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g)).hom.left ≫ ψ = ψ) : quotientScheme D ⟶ Z :=
+    (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g).asHom).hom.left ≫ ψ = ψ) : quotientScheme D ⟶ Z :=
   Spec.map (descRingHom ψ hψ) ≫ Z.isoSpec.inv
 
 theorem quotientMap_comp_descMap {Z : Scheme.{u}} [IsAffine Z] (ψ : coverScheme D ⟶ Z)
-    (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g)).hom.left ≫ ψ = ψ) :
+    (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g).asHom).hom.left ≫ ψ = ψ) :
     quotientMap D ≫ descMap ψ hψ = ψ := by
   rw [quotientMap, descMap, Category.assoc, ← Category.assoc (Spec.map _), ← Spec.map_comp,
     descRingHom_comp_quotientRingInclusion, Scheme.isoSpec_hom_naturality_assoc, Iso.hom_inv_id,
     Category.comp_id]
 
 theorem descMap_comp_structure {Z : Scheme.{u}} [IsAffine Z] {f : Z ⟶ S}
-    (ψ : coverScheme D ⟶ Z) (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g)).hom.left ≫ ψ = ψ)
+    (ψ : coverScheme D ⟶ Z) (hψ : ∀ g : G, (D.map (SingleObj.toEnd G g).asHom).hom.left ≫ ψ = ψ)
     (h : ψ ≫ f = (D.obj (SingleObj.star G)).obj.hom) :
     descMap ψ hψ ≫ f = quotientStructure D := by
   apply quotientMap_cancel D
@@ -238,9 +238,9 @@ theorem descMap_comp_structure {Z : Scheme.{u}} [IsAffine Z] {f : Z ⟶ S}
 omit [IsAffine S] in
 /-- The leg of a cocone over `D` is invariant under the group. -/
 theorem cocone_leg_invariant (s : Cocone D) (g : G) :
-    (D.map (SingleObj.toEnd G g)).hom.left ≫ (s.ι.app (SingleObj.star G)).hom.left =
+    (D.map (SingleObj.toEnd G g).asHom).hom.left ≫ (s.ι.app (SingleObj.star G)).hom.left =
       (s.ι.app (SingleObj.star G)).hom.left :=
-  congrArg (fun f => f.hom.left) (s.w (SingleObj.toEnd G g))
+  congrArg (fun f => f.hom.left) (s.w (SingleObj.toEnd G g).asHom)
 
 section FiniteEtale
 
@@ -337,7 +337,7 @@ theorem appTop_comp_fiberRingHom (x : Fiber s (D.obj (SingleObj.star G))) :
 
 omit [IsLocallyNoetherian S] [Finite G] in
 theorem fiberRingHom_map (g : G) (x : Fiber s (D.obj (SingleObj.star G))) :
-    fiberRingHom D s ((pointFunctor s).map (D.map (SingleObj.toEnd G g)) x) =
+    fiberRingHom D s ((pointFunctor s).map (D.map (SingleObj.toEnd G g).asHom) x) =
       coverAction D g ≫ fiberRingHom D s x := by
   rw [pointFunctor_map, fiberRingHom, fiberRingHom, Over.comp_left, affinePointEquiv_comp]
   rfl
@@ -413,7 +413,7 @@ in one group orbit. -/
 theorem quotientCocone_orbit (x y : Fiber s (D.obj (SingleObj.star G))) :
     (pointFunctor s).map ((quotientCocone D).ι.app (SingleObj.star G)) x =
         (pointFunctor s).map ((quotientCocone D).ι.app (SingleObj.star G)) y ↔
-      ∃ g : G, y = (pointFunctor s).map (D.map (SingleObj.toEnd G g)) x := by
+      ∃ g : G, y = (pointFunctor s).map (D.map (SingleObj.toEnd G g).asHom) x := by
   let _ : Algebra Γ(S, ⊤) Ω := (affinePointEquiv S (.of Ω) s).hom.toAlgebra
   obtain ⟨-, horbit⟩ := invariantAlgebraGeometricPoints Γ(S, ⊤) (coverRing D) G Ω
   let F : Fiber s (D.obj (SingleObj.star G)) → (coverRing D →ₐ[Γ(S, ⊤)] Ω) := fun z =>

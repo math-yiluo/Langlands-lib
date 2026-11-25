@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: generators of `J` via Krull's intersection theorem
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2. It uses Mathlib's
+Internal helper module for Kaletha–Prasad, Theorem A.6.2. It uses Mathlib's
 Krull intersection theorem (`Ideal.mem_iInf_smul_pow_eq_bot_iff`) and multivariate polynomials.
 
 Namespace: `Langlands.GroupScheme.IntegralModel.Smoothening.Termination`.

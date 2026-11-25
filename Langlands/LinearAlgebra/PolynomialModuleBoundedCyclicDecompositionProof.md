@@ -99,12 +99,12 @@ because the omitted factors have only one element.
 
 ## Provenance
 
-The argument follows the route proposed in the statement's Markdown and in the
-task: Mathlib's PID structure theorem, removal of trivial cyclic summands,
+The argument follows the route proposed in the statement's Markdown:
+Mathlib's PID structure theorem, removal of trivial cyclic summands,
 normalization of generators, divisibility from annihilation, and one nonzero
 vector per remaining summand for the bound. It is an internal algebraic
-prerequisite specified by Worker 39 for task
-`e82ee8d6-204c-40ac-85b0-968fb0a6a298`, not a quotation from an external
-source. The proof uses no uniqueness of elementary divisors and no
+prerequisite of the proof of finiteness of matrix conjugacy classes with fixed
+characteristic polynomial (`Langlands.matrixCharpolyFiniteConjugacy`), not a
+quotation from an external source. The proof uses no uniqueness of elementary divisors and no
 characteristic-polynomial formula. It depends only on Mathlib and the statement
 module, and uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.

@@ -1,7 +1,5 @@
 # Presentation transport of actual curve-place restricted products
 
-Author: Worker 208.
-
 For fields `k`, `F` and `F'` in an arbitrary common universe, with
 `k`-algebra structures on the latter two, `curvePlaceAdeleCongr e` is a
 ring equivalence between their actual `CurvePlaceAdeleRing` objects for a

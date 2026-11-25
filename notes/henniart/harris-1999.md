@@ -1,8 +1,8 @@
 # Harris 1999 and the deferred general-coefficient argument
 
-Author: Worker 3. Companion to [the Henniart audit](audit.md), section 3.1.
+Companion to [the Henniart audit](audit.md), section 3.1.
 
-The supplied original is M. Harris, *Galois properties of cohomological automorphic forms on GL(n)*, J. Math. Kyoto Univ. 39-2 (1999), 299–318. Worker 3 read all twenty pages, including the proofs and bibliography, with visual checks of pp. 299, 304–305 and 309–315. Its registered literature ID is `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, and its retained-file SHA-256 is `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`. The supplied Central-Library PDF and [the registered project copy](../../literature/Harris%20%281999%29%2C%20Galois%20properties%20of%20cohomological%20automorphic%20forms%20on%20GL%28n%29.pdf) have the same fingerprint. Below this original is called **Ha99**; **Ha98** means the separately registered 1998 paper in [the source annex](sources.md#ha98).
+The supplied original is M. Harris, *Galois properties of cohomological automorphic forms on GL(n)*, J. Math. Kyoto Univ. 39-2 (1999), 299–318. All twenty pages were read, including the proofs and bibliography, with visual checks of pp. 299, 304–305 and 309–315. Its registered literature ID is `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`, and its retained-file SHA-256 is `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`. The supplied Central-Library PDF and [the registered project copy](../../literature/Harris%20%281999%29%2C%20Galois%20properties%20of%20cohomological%20automorphic%20forms%20on%20GL%28n%29.pdf) have the same fingerprint. Below this original is called **Ha99**; **Ha98** means the separately registered 1998 paper in [the source annex](sources.md#ha98).
 
 ## What the supplied paper resolves
 
@@ -42,7 +42,7 @@ Ha99 does not prove the nonsupercuspidal local-global conjectures 4.9/4.9 bis of
 
 ## The supplied Berkovich construction
 
-Ha99, pp. 299–304 attributes the smooth equivariant acyclic-resolution construction to Berkovich's manuscript [B4], Proposition 1.4.1, and private communications. Its p. 304 lists the properties without repeating the construction. The requested [B96 manuscript](sources.md#b96) is now supplied, registered and read in full, all fifteen printed/PDF pages, with visual checks of pp. 7–12. The registered folder ID is `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`; its receipt digest is `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`. The actual PDF inside that folder has SHA-256 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`. Both folder members, including the supplied provenance README, match the receipt's file hashes.
+Ha99, pp. 299–304 attributes the smooth equivariant acyclic-resolution construction to Berkovich's manuscript [B4], Proposition 1.4.1, and private communications. Its p. 304 lists the properties without repeating the construction. The requested [B96 manuscript](sources.md#b96) is now supplied, registered and read in full, all fifteen printed/PDF pages, with visual checks of pp. 7–12. The registered folder ID is `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`; its registration digest is `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`. The actual PDF inside that folder has SHA-256 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`. Both folder members, including the supplied provenance README, match the file hashes recorded at registration.
 
 The [author-hosted work](https://www.wisdom.weizmann.ac.il/~vova/Equish_1996.pdf) is dated 1995–1996 and listed as an unfinished project. The supplied PDF is the complete available fifteen-page manuscript, ending with references; it is not a journal publication or evidence that the larger project was finished. The PDF-production dates recorded in its README are not substituted for the manuscript's date.
 
@@ -58,4 +58,4 @@ The numbering discrepancy is real: **B96, 1.4.1 is a definition**, while the sof
 
 B96 itself invokes earlier foundations, especially the analytic lifting Key Lemma in its [Ber3], 7.2, the definition and properties of soft analytic sheaves in [Ber3], section 3, and SGA4's Godement construction. Those labels are B96's attributions, not claims that their complete original proofs were read for this note. They remain transitive formalization obligations.
 
-Request `590d13379ffa50a4ad2f3c02b3fb3769` has a completed source response; access, registration and the required reading have now been verified. The supplied Harris and Berkovich originals resolve the two successive acquisition leads for this application. They do not close the entire cohomological proof chain, identify every historical version, or supply a Lean proof.
+Access, registration and the required reading of the Harris and Berkovich originals have been verified. These originals resolve the two successive source leads for this application. They do not close the entire cohomological proof chain, identify every historical version, or supply a Lean proof.

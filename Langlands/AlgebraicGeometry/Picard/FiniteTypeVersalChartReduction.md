@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypeVersalChartReduction`.
 
-Author: Worker 5005, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`.
-
 This module proves two implications between published statements and
 packages the second as a definition. All declarations are in the namespace
 `Langlands.AlgebraicGeometry.Picard.PicardGroupoid`, and all schemes are in

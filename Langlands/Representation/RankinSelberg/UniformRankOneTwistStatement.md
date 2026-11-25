@@ -1,7 +1,5 @@
 # Rank-one factors after highly ramified twists, uniformly in the level
 
-Authors: Worker 1721 and Worker 1813.
-
 `Langlands.RankinSelberg.UniformRankOneTwistStatement.{uF,uV}` states a
 level-uniform consequence of Jacquet and Shalika, *A Lemma on Highly Ramified
 ε-Factors*, Math. Ann. 271 (1985), 319–332 (JS85), Proposition (2.2).
@@ -114,7 +112,8 @@ group give this observation. The block ranks are at most `N`; taking a
 maximum of their depth bounds gives a bound depending only on `N,m`.
 At level zero one can use `K_1` throughout.
 This explains the derived uniform formulation; these arguments and their
-JPSS comparison remain proof obligations for a subsequent proof task.
+JPSS comparison are not carried out in this module.
+`uniformRankOneTwist` in `UniformRankOneTwistProof` proves the proposition.
 
 Finally, a representation with `K_m`-invariants has central character of
 conductor at most `m`: scalar matrices from the corresponding unit

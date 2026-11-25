@@ -1,7 +1,6 @@
 # Proof of the Euler-degree formula for `n • λ + f^∨ λ f`
 
-Lean module: `Langlands.AlgebraicGeometry.Picard.MumfordRosatiEulerDegreeProof`. Author:
-Worker 195.
+Lean module: `Langlands.AlgebraicGeometry.Picard.MumfordRosatiEulerDegreeProof`.
 
 `Langlands.AbelianScheme.Rosati.mumfordEulerDegree : MumfordEulerDegreeStatement.{u}` proves
 the Library statement `Langlands.AbelianScheme.Rosati.MumfordEulerDegreeStatement` in its

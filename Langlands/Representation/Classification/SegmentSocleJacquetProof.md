@@ -1,7 +1,5 @@
 # Proof of the two-block Jacquet formula for segment socles
 
-Author: Worker 756.
-
 This module proves the published proposition
 `Langlands.Classification.SegmentSocleJacquetFormula` from
 [`SegmentSocleJacquetStatement`](SegmentSocleJacquetStatement.md), which states

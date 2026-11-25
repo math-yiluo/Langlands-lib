@@ -1,11 +1,11 @@
 # The degeneration isomorphism of the hyperext spectral sequence
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextDegeneration.Statement`
-(`HyperextDegenerationStatement`, `HyperextDegeneration.edgeMap`; Worker 3),
-`Langlands.Cohomology.HyperextAbutmentFiltration` (`edgeMapAddMonoidHom`;
-Worker 61), `Langlands.Cohomology.ExtProjectiveResolution`
-(`subsingleton_ext_homology_of_projective`; Worker 61) and
+(`HyperextDegenerationStatement`, `HyperextDegeneration.edgeMap`),
+`Langlands.Cohomology.HyperextAbutmentFiltration` (`edgeMapAddMonoidHom`),
+`Langlands.Cohomology.ExtProjectiveResolution`
+(`subsingleton_ext_homology_of_projective`) and
 `Langlands.Cohomology.SmoothHyperextSecondPage`, which imports
 `Langlands.Cohomology.ExtRightDerived` (`smoothExtAddEquiv`) and
 `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`). It also uses Mathlib's
@@ -15,7 +15,7 @@ Let `C` be an abelian category. For an object `K` of its derived category and
 an object `W` of `C`, write `W₀` for `W` placed in degree `0` and `H^i` for
 the cohomology functor in degree `i`. The edge map
 `HyperextDegeneration.edgeMap K W n : Hom(K, W₀⟦n⟧) → Hom(H^{-n} K, W)`
-sends a morphism to the morphism it induces on `H^{-n}`. Worker 3's
+sends a morphism to the morphism it induces on `H^{-n}`. The
 proposition `HyperextDegenerationStatement.{w, w'} C` asserts the following.
 If the cohomology of `K` vanishes above some `b`, and
 `Abelian.Ext.{w'} (H^k K) W i` is trivial for every `k : ℤ` and every
@@ -70,12 +70,14 @@ Proofs.
 ## Provenance and interpretation
 
 The definitions are ours, assembled from Mathlib and the Library.
-`HyperextDegenerationStatement` is Worker 3's abstract form of the
-degeneration step of Harris. Its proof is the subject of a separate proof
-task. The surjectivity and injectivity inputs are Worker 61's candidates
-0ecae5fc and c91ec78b; this module does not depend on them.
+`HyperextDegenerationStatement` is an abstract form of the
+degeneration step of Harris. Its proof is `hyperextDegenerationStatement_proof`
+in `Langlands.Cohomology.HyperextDegeneration.Proof`. The surjectivity and
+injectivity inputs are `edgeMap_surjective_of_ext`
+(`Langlands.Cohomology.HyperextEdgeMapSurjective`) and `edgeMap_injective_of_ext`
+(`Langlands.Cohomology.HyperextGradedVanishing`); this module does not depend on them.
 
-For this module Worker 61 read the following passages of Harris 1999:
+For this module the following passages of Harris 1999 were read:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
   J. Math. Kyoto Univ. 39-2 (1999), 299-318 (source
@@ -114,7 +116,7 @@ smooth Ext groups from every `H^k K` into the one chosen module `W`. This
 module therefore does not claim that `hW` holds for `W = 𝒜_ℓ(GJ, ρ, H)`, nor
 that any vanishing comes before the isotypic selections.
 
-Specializing to (5.2) leaves separate obligations, none formalized here:
+Specializing to (5.2) needs further steps, none formalized here:
 
 - choosing the coefficient module and isotypic restrictions for which a
   vanishing hypothesis is actually established;

@@ -167,10 +167,11 @@ The official 00MJ and 00MK pages were checked again on 27 October 2026. Their
 statements and proofs were unchanged, and each had zero comments. No
 Stacks-specific errata note is present in the project or Library notes.
 
-Worker 844 wrote this proof independently. It uses only Mathlib, in the
-pinned environment, and the published statement module. The task context
-mentions the external lead `anthropic-flt-complete-lean-source-6e837e75`
+This proof was written independently. It uses only Mathlib, in the
+pinned environment, and the published statement module. The external lead
+`anthropic-flt-complete-lean-source-6e837e75`
 (file `P2M/Sol/S_Module_flat_of_comap_maximalIdeal_rTensor_injective.lean`)
-and the documentary audit `notes/reuse/anthropic-local-flatness-audit.md`.
+and the documentary audit `notes/reuse/anthropic-local-flatness-audit.md`
+concern the local flatness criterion of 00MK.
 No code from either was used or adapted, nothing from them is imported, and
 the free-cover kernel-transport route described there is not used.

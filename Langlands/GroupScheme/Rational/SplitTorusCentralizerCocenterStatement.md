@@ -1,7 +1,5 @@
 # Cocenters of split-torus centralizers in simply connected groups are induced
 
-Authors: Worker 1532 and Worker 1390.
-
 `Langlands.GroupScheme.SplitTorusCentralizerCocenterInducedStatement.{u}`
 is a proposition definition, not a theorem. It states that for the
 centralizer `M = Z_G(A)` of a split subtorus `A` of a simply connected
@@ -32,9 +30,11 @@ hypothesis. `G` is not assumed quasi-split. No root datum, parabolic
 subgroup, maximal torus or description of the character lattice of `D'`
 is supplied.
 
-The imports are the five modules named by the task, together with
+The imports are the five modules `SimplyConnected.Basic`,
+`Rational.SplitTorus`, `Rational.TorusCentralizer`,
+`Rational.RootSubgroupStructureStatement` and `Derived.Basic`, together with
 `Langlands.GroupScheme.Torus.Induced`. That module publishes
-`IsInducedTorus` (task `81a25228-bad4-49ef-a956-811fbd795327`).
+`IsInducedTorus`.
 
 ## Exact objects
 
@@ -133,7 +133,9 @@ not a numbered result of KP. It differs from KP's step in three ways.
 ### Why it should hold without quasi-splitness (provenance only)
 
 This argument is standard reductive-group theory over `k^sep`. It is not
-proved in this module or anywhere in the Library.
+proved in this module; `splitTorusCentralizerCocenterInduced` (module
+`Rational.SplitTorusCentralizerCocenterProof`) proves the proposition along
+this route.
 
 Because `A` is `k`-split, choose a cocharacter `λ` of `A` that pairs
 nontrivially with every root of `A` in `G`. Then `M = Z_G(A) = Z_G(λ)` is
@@ -179,9 +181,9 @@ along this route has to establish the following.
   (`Langlands/GroupScheme/SimplyConnected/SplitNecessityAssembly.lean`)
   derives it from the three structural inputs bundled in
   `SplitSimplyConnectedCorootSpanInputsStatement`. That is a conditional
-  reduction, not an unconditional proof. A proof along this route must also
-  supply whatever of those inputs is still unproved, the simple
-  connectivity of `G_E` (`IsSimplyConnectedFieldExtensionStatement`), a
+  reduction; the unconditional theorem is `splitSimplyConnectedCorootSpan`
+  (module `Langlands.GroupScheme.SimplyConnected.SplitNecessity`). A proof
+  along this route must also supply the simple connectivity of `G_E` (`IsSimplyConnectedFieldExtensionStatement`), a
   finite reduced root datum of the actual torus `T_E ⟶ G_E`, and the
   passage from "the coroots span `X_*(T_E)`" to "the simple coroots for `B`
   form a basis". The converse criterion is
@@ -209,9 +211,13 @@ excluded because `IsSplitSubtorus` fails for `T`.
 
 ## Uses
 
-The proof task `8e4f0468-a0e2-46ee-9608-49cde642ba9d` (KP Lemma 2.6.27
-and Corollary 2.6.28) is meant to apply this proposition over `K` to
-`Z_K = Z_{G_K}(S_K)`. The cocenter there comes from the cocenter-existence
-statement of task `11882097-d293-4f3d-b80d-c3c09ea66017`, and KP
-Lemma 2.5.18 is then applied to `D'`. A proof of the proposition is a
-separate `lean.proof@1` obligation.
+For KP Lemma 2.6.27 and Corollary 2.6.28 this proposition is applied over
+`K` to `Z_K = Z_{G_K}(S_K)`: the reductions in
+`Geometry.Building.KPMinimalLeviZeroNormKernelReduction` and
+`Geometry.Building.KPCoverImageReduction` take it as a hypothesis, and
+`minimalLeviZeroComparison` (module
+`Geometry.Building.KPMinimalLeviZeroComparisonProof`) supplies it from
+published proofs. The cocenter there comes from the
+cocenter-existence statement, and KP Lemma 2.5.18 is then applied to `D'`.
+The proposition is proved as `splitTorusCentralizerCocenterInduced` in
+`Rational.SplitTorusCentralizerCocenterProof`.

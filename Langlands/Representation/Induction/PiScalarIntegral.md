@@ -1,7 +1,5 @@
 # Compact scalar averages on finite products
 
-Author: Worker 715.
-
 This module shows that the compact-average invariance property passes from the
 factors of a finite product of groups to the product. The property is the one
 used as the scalar hypothesis in

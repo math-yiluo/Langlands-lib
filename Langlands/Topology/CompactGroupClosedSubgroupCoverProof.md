@@ -31,22 +31,24 @@ commutativity, or metrizability assumption is used.
 
 ## Internal provenance and scope
 
-Worker 454 specified the generic interface for the JPS coordinate-unit
-invariance application. Worker 625 supplied the Baire argument leading
-to an open subgroup. Worker 101 implemented the proof, completing that
-argument by the directed open-cover form of compactness. This final step
+The generic interface was specified for the JPS coordinate-unit
+invariance application. The proof follows the Baire argument leading
+to an open subgroup and completes that argument by the directed
+open-cover form of compactness. This final step
 absorbs the finite-subcover and maximum-index argument directly, without
 choosing coset representatives.
 
 This is an internal generic lemma, not a theorem explicitly stated by
-JPS or other original literature. The parent application remains
-responsible for constructing its actual closed subgroups, proving their
-monotonicity and pointwise cover, and applying this theorem to obtain
-coordinate-unit invariance.
+JPS or other original literature. The JPS application
+(`Langlands.Whittaker.jpsCoordinateUnitInvariance`, module
+`Langlands.Representation.Whittaker.JPSCoordinateUnitInvarianceProof`)
+constructs its actual closed subgroups, proves their monotonicity and
+pointwise cover, and applies this theorem to obtain coordinate-unit
+invariance.
 
 ## Dependencies
 
 The proof uses the published statement and Mathlib's open-subgroup,
 Baire, and locally compact Baire-space APIs. The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and Mathlib commit
+Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,7 +1,5 @@
 # Carried Harris lattices under rational isogeny
 
-Author: Worker 344.
-
 This internal construction restricts the actual rational Tate isomorphism to
 the submodules carried by an original Harris level and its original polarized
 rational-isogeny transport. It proves that normalization of the transported
@@ -38,7 +36,7 @@ abelian-scheme isomorphism intertwines the original algebra actions. A unit
 `q : ℚˣ` and `he : PolarizedWeilLevel.Multiple ... X Y q e` supply the
 original geometric rational dual-pullback multiplier condition. This is
 the condition used by the existing Weil-frame and fixed-level transports.
-Rational Weil functoriality is supplied by its published proof
+Rational Weil functoriality is supplied by its proof
 `rationalWeilFunctoriality`.
 
 ## Frame images and original fixed levels
@@ -74,8 +72,9 @@ level subgroup must satisfy
 `harrisIntegralLevelLattice_isogeny` proves the same membership equivalence
 for `harrisIntegralLevelLattice X K hK x` and the submodule of
 `levelIso ... e he x`. The proof takes a representative `eta` of the
-original orbit. The published frame transport commutes with the original
-opposite-group right action, whose value is source precomposition. Thus
+original orbit. The frame transport commutes with the original
+opposite-group right action (`Tate.weilAdelicFrameIsogeny_right`), whose value
+is source precomposition. Thus
 its image represents the transported orbit. The representative-evaluation
 formula for the carried submodule reduces the result to the frame theorem.
 The proof uses the fixed level's underlying orbit; it assumes no fixed
@@ -108,7 +107,8 @@ The conclusion uses the actual full rationalization map with all positive
 indices; it neither substitutes an away Tate group nor picks an auxiliary
 integral image.
 
-The proof first uses the published criterion that normalization is equality
+The proof first uses the criterion `harrisIntegralLevelCondition_iff_lattice`
+that normalization is equality
 of the transported level's carried submodule and the full integral
 rationalization image. The level membership equivalence transfers this
 equality through `r`. Its inverse identities identify image witnesses with
@@ -117,20 +117,20 @@ reduces equality of subsets of the target rational Tate space to those
 same witness equivalences. No injectivity of integral rationalization is
 needed.
 
-## Provenance and remaining obligations
+## Provenance and what is not proved here
 
 The provenance is internal. The construction derives restriction and image
-identities from the published original frame transport, original fixed-level
+identities from the original frame transport, original fixed-level
 transport, carried-submodule definitions and full integral-image
 normalization criterion. It introduces no new external-source assertion and
 does not modify those inputs.
 
-All objects and the rational polarized isomorphism are supplied. This unit
+All objects and the rational polarized isomorphism are supplied. This module
 does not construct an isogenous abelian scheme, integral algebra action,
 polarization, determinant-condition model or normalized representative.
 It gives a criterion to apply after exact lattice realization and compatible
 geometric structures have been established. Those existence results, integral
 reflection, the complete natural normalized moduli comparison, a representing
-scheme, its admissibility, smoothness and division-case projectivity remain
-separate obligations. The host's `DivisionCMRepresentabilityStatement`
-remains open.
+scheme, its admissibility, smoothness and division-case projectivity are not
+proved in this module. The Library does not prove
+`DivisionCMRepresentabilityStatement`.

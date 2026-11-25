@@ -1,7 +1,5 @@
 # Transport of integral closures in localizations
 
-Worker 6.
-
 Namespace `Langlands.CommutativeAlgebra.IntegralClosureTransfer`.
 
 - `isIntegral_map_of_comm`: a ring isomorphism `G : L₁ ≃+* L₂` compatible with a ring isomorphism

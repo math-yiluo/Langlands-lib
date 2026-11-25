@@ -1,7 +1,5 @@
 # Base-changed isomorphisms from local isomorphisms over a cover
 
-Author: Worker 5375.
-
 This internal module reuses the base-change isomorphism of
 [`LocalGroupIsoBaseChangeRecovery`](../LocalGroupIsoBaseChangeRecovery.md).
 When the local isomorphism is invariant under the Galois group, it descends
@@ -64,5 +62,6 @@ over a Galois cover and compatible with the Galois action. The module only conne
 published `LocalGroupIso`, `LocalGroupIso.toBaseChangeIso`, `descentBaseChangeIso` and
 `Descent.GaloisHom.iso` interfaces. It does not need the pairwise independence
 hypothesis of the published `LocalGroupIso.descend`: invariance under the translations by
-`coverMap` is enough. It supplies the descent step of Task 6209
+`coverMap` is enough. It supplies the descent step for the all-test Hermitian
+matrix presentation of outer type `A_n` groups
 (`OuterTypeAHermitianPresentationStatement`).

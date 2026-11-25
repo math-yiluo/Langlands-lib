@@ -1,6 +1,6 @@
 # Source restrictions over fixed target dimensions
 
-Author: Worker 109. This is derived supporting geometry for the adelic
+This is derived supporting geometry for the adelic
 openness proof, building on the actual target point opens in
 `SmoothDimensionOpenSubspaces` and the all-chart dimension law in
 `SmoothRelativePointDimension`.
@@ -29,6 +29,7 @@ finish the proof, including an empty source without a special case.
 Applying this result proves fixed smooth relative dimension on every
 locally Noetherian source chart of a stratum restriction.
 
-Finite-presentation compact atlases for the restrictions, connected-fibre
-and other model properties, uniform Lang-Weil and adelic assembly remain
-subsequent obligations.
+Finite-presentation compact atlases for the restrictions
+(`SmoothDimensionFinitePresentation`), connected-fibre and other model
+properties, uniform Lang-Weil (`SpaceUniformLangWeilStatement`) and adelic
+assembly are not part of this module.

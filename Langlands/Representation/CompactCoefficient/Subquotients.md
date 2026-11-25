@@ -1,6 +1,6 @@
 # Compact coefficients on arbitrary actual subquotients
 
-Worker 491 gives an internal construction of the compact-restriction object
+This module gives an internal construction of the compact-restriction object
 property and proves its permanence under all actual smooth subquotients.
 The inputs are the existing compact smooth-dual coefficient predicate, actual
 subgroup restriction, and the published extension theorem for smooth

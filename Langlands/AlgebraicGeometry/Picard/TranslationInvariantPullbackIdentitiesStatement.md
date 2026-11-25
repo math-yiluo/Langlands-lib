@@ -5,7 +5,8 @@ is a `Prop`-valued definition concerning actual line bundles on abelian schemes 
 algebraically closed fields. It states the multiplication and inversion identities from
 Edixhoven, van der Geer and Moonen, *Abelian Varieties*, Lemma (7.16), printed p.104 /
 PDF p.108, in the form used in the proof of Lemma (7.19), printed p.105 / PDF p.109.
-The module states a target for a later proof and adds no axiom.
+The module states a target, proved as `algClosedFieldTranslationInvariantPullbackIdentities`
+in `TranslationInvariantPullbackIdentitiesProof`, and adds no axiom.
 
 ## Complete checked Lean declaration
 
@@ -41,7 +42,7 @@ def AlgClosedFieldTranslationInvariantPullbackIdentitiesStatement : Prop :=
 end Langlands.AbelianScheme
 ```
 
-The approved Lean service checked this declaration with zero errors and warnings and
+The Lean service checked this declaration with zero errors and warnings and
 reported `statement_returns_prop: true`, with the sole universe parameter `u`. Its
 checked type is
 
@@ -149,9 +150,9 @@ in `TranslationInvariantCohomologyVanishingStatement.md`. On 2026-10-30 no sourc
 errata file was found under the checked project, Library or workspace `notes/errata`
 locations; this records those local checks only.
 
-## Obligations for a later exact proof
+## Obligations for the exact proof
 
-The proposition above is not proved in this module. A later proof must prove this
+The proposition above is not proved in this module. An exact proof must prove this
 entire named proposition in every universe, with no additional outer hypotheses.
 The rational-point hypothesis must be globalized; a cube identity by itself does not
 supply this step.
@@ -167,7 +168,7 @@ integrality, a noetherian parameter and the stated affine-base-change global-fun
 condition. In the abelian-scheme setting, the existing
 `Langlands.AbelianScheme.smoothGeometricIntegrality` and
 `Langlands.AlgebraicGeometry.smoothProperConnectedGlobalFunctions` provide relevant
-geometric inputs. A future application must instantiate the precise seesaw hypotheses
+geometric inputs. An application must instantiate the precise seesaw hypotheses
 and transport the categorical product to its scheme-pullback presentation.
 
 Every closed point of the parameter is a `K`-point, so the fibre comparisons put all
@@ -179,8 +180,8 @@ and glue compatible normalized isomorphisms. The published
 `RigidifiedClassesZariskiSeparatedProof` is a possible gluing interface. One must still
 verify the normalization, compatibility and descent comparisons and then forget the
 normalization. These are proof obligations, not extra assumptions or results supplied
-by this statement. Reuse the existing seesaw and equalizer interfaces rather than
-creating a duplicate seesaw target.
+by this statement. The Library proof uses the existing seesaw and equalizer
+interfaces through `rigidifiedClassesEqualizerClosed`.
 
 For inversion, pull the multiplication isomorphism back along the categorical map
 `j := Limits.prod.lift (𝟙 A.X) ((𝟙 A.X : A.X ⟶ A.X)⁻¹) : A.X ⟶ P`.
@@ -195,13 +196,14 @@ and tensor-inverse manipulations. The unconditional Library theorem
 `Langlands.Scheme.Modules.pullbackTensorComparisonIsIso` can discharge tensor
 preservation internally; it is not a premise of the proposition.
 
-The field cube target, any unpublished draft, the all-degree cohomology vanishing
+The field cube target, the all-degree cohomology vanishing
 statement, the parent translation-difference lifting statement, and downstream
-Picard/dual existence are not proof inputs established here. The host retains its
-cohomology assembly, and its separate pullback-on-cohomology work is independent of
-this statement task.
+Picard/dual existence are not proof inputs established here. The cohomology assembly
+belongs to the proof of the all-degree vanishing statement, and its
+pullback-on-cohomology input `CohomologyPullbackSplitRetractionProof` is independent of
+this statement.
 
-## Scope and authorship
+## Scope
 
 The field universe is arbitrary. The statement covers every characteristic and
 includes dimension zero, the trivial line bundle and all other ordinarily
@@ -209,11 +211,7 @@ translation-invariant line bundles. There is no positivity or nontriviality prem
 No tensor-preservation, cube, seesaw, Picard-zero, rigidification, inverse choice,
 compatibility, global-detection or representability premise occurs.
 
-Worker 59 authored this pair. Workers 306 and 100 supplied the focused specification
-and source/ownership context; Worker 306 also authored the source-interpretation text
-in the cohomology statement consulted here. Their specification and source audit
-informed the provenance and later-proof discussion. This is a focused statement
-prerequisite of their cohomology proof task `a45129b4-368e-4cd9-813b-e2e884897b35`;
-that target is not used to justify these identities. Existing operator pauses and
-separate task ownership remain in force. Separate exact-target proof work follows
-publication of this statement.
+This is a focused statement prerequisite of the proof of
+`AlgClosedFieldTranslationInvariantCohomologyVanishingStatement` (module
+`TranslationInvariantCohomologyVanishingProof`); that target is not used to justify
+these identities.

@@ -23,5 +23,8 @@ Every algebraic tensor belongs to the image of a tensor product of
 finite-dimensional subspaces, obtained by collecting its finitely many
 pure tensor factors. This gives injectivity of product evaluation when
 each coefficient map is injective, including for infinite-dimensional
-coefficient spaces. The construction will be used to identify the
-cuspidal Levi coefficients with actual tensors in Task 6823.
+coefficient spaces. The construction is used to identify the
+cuspidal Levi coefficients with actual tensors in the proof of
+`CuspidalSupportExistenceStatement` (every automorphic representation of
+GL_n is a constituent of a cuspidally induced representation at the finite
+places), in `Langlands.Global.Factors.CuspidalSupportExistenceProof`.

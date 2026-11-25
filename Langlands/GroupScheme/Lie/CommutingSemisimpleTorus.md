@@ -1,7 +1,5 @@
 # Commuting semisimple Lie elements in the Lie algebra of one maximal torus
 
-Worker 1296.
-
 This helper module proves three tangent-transport lemmas and one main lemma.
 The field `k : Type u` is arbitrary, with any universe and characteristic. It
 need not be algebraically closed. All groups are actual group schemes over

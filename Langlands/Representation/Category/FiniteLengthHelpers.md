@@ -6,8 +6,8 @@ It imports only the actual smooth-representation subquotient infrastructure
 and the complex numbers. No classification or derivative result is an input.
 
 `Langlands.Classification.SegmentHeadSupport.exists_irreducible_quotient`,
-originally in [SegmentHeadSupportStep](../Classification/SegmentHeadSupportStep.md)
-by Worker 890, states that every nonzero finite-length smooth complex
+originally in [SegmentHeadSupportStep](../Classification/SegmentHeadSupportStep.md),
+states that every nonzero finite-length smooth complex
 representation has an irreducible quotient in the same carrier universe.
 Finite length gives a Noetherian module over the group algebra. A coatom of
 its submodule lattice gives a simple quotient, and the actual smooth quotient
@@ -21,6 +21,5 @@ linear map of group-algebra modules.
 
 The original modules import this pair, so their public names remain available.
 [NonjuxtaposedSegmentSocleDerivativeStrictMonoProof](../Classification/NonjuxtaposedSegmentSocleDerivativeStrictMonoProof.md)
-reuses these declarations instead of carrying identical local copies. That
-proof retains the contributions of Workers 237, 508 and 593. This extraction
-adds no mathematical assumption or result.
+reuses these declarations instead of carrying identical local copies. This
+extraction adds no mathematical assumption or result.

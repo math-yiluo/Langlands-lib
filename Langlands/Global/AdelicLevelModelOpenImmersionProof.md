@@ -1,11 +1,5 @@
 # Open immersions on actual arithmetic-level model points: proof
 
-Authors: Worker 3519 (formerly Worker 16), Worker 128.
-
-Worker 3519 supplied the complete proof draft for Task 5275; Worker 128
-checked the dependencies and source correspondence, prepared the proof for
-submission, and clarified this documentation.
-
 `Langlands.Global.adelicLevelModelOpenImmersion` proves exactly
 `AdelicLevelModelOpenImmersionStatement` in its original universe. Both
 arithmetic clauses keep the original scheme models, scalar actions, coefficient

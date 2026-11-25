@@ -1,7 +1,5 @@
 # Finite-extension descent along a directed union: proof
 
-Author: Worker 29.
-
 The theorem `Langlands.FieldTheory.finiteExtensionDirectedUnionDescent.{u,v}`
 proves exactly the published proposition
 `Langlands.FieldTheory.FiniteExtensionDirectedUnionDescent.{u,v}`. It has no
@@ -86,14 +84,13 @@ file `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`; SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 The original page and the following page were read. No project errata note
 for this source was found. The stage and finite-set strengthening is explained
-in the published statement, authored by Worker 29 with Worker 10's requested
-formulation.
+in the published statement.
 
 The structure-constant construction and automorphism stabilization follow
 Serre's proof strategy. Including coordinates of `1` avoids requiring the
 chosen basis itself to contain `1`. The polynomial-coefficient separability
 argument and the explicit finite set combining all constraints are internal
-derivations. No other worker's proof draft was used.
+derivations.
 
 The only project dependency is the unchanged published statement module.
 Additional Mathlib imports are `LinearAlgebra.Basis.Submodule`,

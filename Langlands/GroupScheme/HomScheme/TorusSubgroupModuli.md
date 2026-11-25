@@ -1,7 +1,5 @@
 # Actual universal families of closed torus subgroups
 
-Author: Worker 1656.
-
 This internal interface expresses torus-subgroup moduli using actual group
 schemes over an arbitrary scheme in universe `u`. Its ingredients are the
 published subgroup-functor and arbitrary-base pullback constructions and

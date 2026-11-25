@@ -1,7 +1,5 @@
 # Norm-continuous actions of member stabilizers on the chart algebras of `V_N`
 
-Author: Worker 383.
-
 This internal supporting module is part of the proof of
 `OmegaActionContinuityStatement` (module `DrinfeldActionContinuityProof`). For
 each member `V` of the exhaustion `V_0 ⊆ V_1 ⊆ ⋯` of Drinfeld's upper half space

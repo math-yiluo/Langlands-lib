@@ -1,7 +1,5 @@
 # Gluing corner-adjoint forms on fixed vectors
 
-Authors: Worker 4713. The hypothesis interface was requested by Worker 5667.
-
 This module states
 `Langlands.CornerFormGluingStatement.{uG, uV}`
 in `Langlands/Representation/Unitary/CornerFormGluingStatement.lean`.
@@ -124,8 +122,7 @@ from admissibility.
 
 ## Validation
 
-`lean_check` diagnostic `26ee08c4-52f0-44db-877e-5024c7ecb8f1` compiled this
+A compilation check compiled this
 module without errors or warnings. It reported a proposition-valued definition
 with level parameters `uG` and `uV`. The only axioms were `propext`,
-`Classical.choice` and `Quot.sound`. This check provides neither a proof nor
-semantic acceptance.
+`Classical.choice` and `Quot.sound`. This check provides no proof.

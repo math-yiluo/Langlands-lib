@@ -1,6 +1,6 @@
 # Linked parametrizations of entire intrinsic root subgroups
 
-This derived unit retains both monicity and the literal linked rank-one
+This derived module retains both monicity and the literal linked rank-one
 relation in the root-map construction for a supplied split root datum. It
 first proves that monicity of a triple multiplication implies monicity of
 its left and right factors, by inserting identity points in the other factors

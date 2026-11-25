@@ -1,6 +1,6 @@
 # Exponential bounds for Whittaker coefficients on the dominant torus
 
-Author: Worker 5220. Internal helper module for the proof of
+Internal helper module for the proof of
 `Langlands.Conductor.SphericalCorankOneConvergenceStatement`; it introduces no
 statement.
 

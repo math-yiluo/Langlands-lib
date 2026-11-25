@@ -1,7 +1,5 @@
 # Torus weights on modules over the operator algebra of a split group
 
-Author: Worker 902.
-
 This module is internal infrastructure for the proof of Milne's character theorem
 (Theorem 22.38) in
 [`Rational.SplitRepresentationCharacterReduction`](SplitRepresentationCharacterReduction.md).

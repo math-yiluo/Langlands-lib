@@ -1,6 +1,6 @@
 # The corank-one functional equation against spherical Whittaker functions, all parameters
 
-Author: Worker 5077. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.SphericalLaurentFunctionalEquationStatement` (universes
 `uF`, `uV`). It is a statement only: nothing here proves it.
 
@@ -56,8 +56,8 @@ irrelevant.
 ## Relation to the published unitary statement
 
 The published `Langlands.Conductor.SphericalCorankOneFunctionalEquationStatement`
-([`SphericalCorankOneFunctionalEquationStatement`](SphericalCorankOneFunctionalEquationStatement.md),
-proof task `685d39c3-c280-41e2-bdd5-6012dd1d2339`) states the same identity of
+([`SphericalCorankOneFunctionalEquationStatement`](SphericalCorankOneFunctionalEquationStatement.md))
+states the same identity of
 JPSS 1981, (4.2)(3), with different hypotheses and conclusions. It takes both
 L-polynomials, of `π` and of its inverse-transpose pullback, as hypotheses,
 restricts to unitary parameters `|x_i| = 1`, and gives arbitrary rational
@@ -137,8 +137,7 @@ correspondingly `W_x(-g) = W_x(g)` because `-1 ∈ GL_(n+1)(O)`. Hence `ζ = 1`.
 
 ## Use
 
-The reduction module `ConductorMinimalityReduction`, a separate candidate of
-Task 5549, derives the published `ConductorMinimalityStatement` from this
+The reduction module `ConductorMinimalityReduction` derives the published `ConductorMinimalityStatement` from this
 statement and `Langlands.Whittaker.MirabolicRestrictionInjectivityStatement`,
 following JPSS 1981, printed pages 213–214.
 

@@ -1,7 +1,5 @@
 # Quadratic forms descended from orthogonal matrix cocycles
 
-Worker 863.
-
 This internal construction descends a symmetric nondegenerate Gram matrix twisted
 by an orthogonal matrix cocycle over a finite Galois field extension `L/k`.
 It uses the published matrix Hilbert 90 theorem in `GaloisVectorDescent`.
@@ -34,6 +32,7 @@ so `B` is invertible as well.
 Provenance is internal: the construction combines the published
 `Langlands.LinearAlgebra.GaloisVectorDescent.exists_matrix_coboundary'` with
 Mathlib's finite-Galois fixed-field theorem and matrix identities. The equations
-record all data needed for the later comparison between orthogonal cocycles and
-quadratic forms. This module does not yet construct such a cocycle from a
+record all data needed for the comparison between orthogonal cocycles and
+quadratic forms in `OrthogonalCocycleComparison`. This module does not construct
+such a cocycle from a
 group-scheme cocycle or compare its localizations.

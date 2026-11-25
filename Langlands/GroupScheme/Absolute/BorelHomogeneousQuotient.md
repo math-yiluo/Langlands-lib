@@ -1,6 +1,6 @@
 # Actual homogeneous quotients by a prescribed Borel
 
-Internal supporting construction by Worker 1438, derived from the published
+Internal supporting construction, derived from the published
 Borel base-change and smooth-subgroup quotient APIs.
 
 Over an algebraically closed field in arbitrary universe,

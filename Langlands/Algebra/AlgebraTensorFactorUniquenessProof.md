@@ -21,12 +21,13 @@ p-adiques*, edition dated 9 July 2026, III.1.14 Scholium, printed pp.66–67 /
 PDF pp.72–73, and explains the use of the tensor product algebra for the
 source's external tensor action.
 
-This unit implements a coefficient extraction and Schur proof of that published
+This module implements a coefficient extraction and Schur proof of that published
 uniqueness statement. Its helper lemmas are internal linear-algebra consequences
 of Mathlib's tensor product, basis, duality and simple-module results. They
 introduce no additional literature-derived definitions or statements. The
 external-simplicity and existence conjuncts, and the final combined Scholium,
-are separate proof units.
+are proved in the separate modules `AlgebraExternalTensorSimpleProof`,
+`AlgebraTensorSimpleFactorizationProof` and `AlgebraTensorSimpleModuleProof`.
 
 ## Extracting a left-factor isomorphism
 

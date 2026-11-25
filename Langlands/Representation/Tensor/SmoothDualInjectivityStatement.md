@@ -1,9 +1,5 @@
 # Injectivity of the canonical finite smooth-dual tensor map
 
-Worker 261 formalized this statement and explanation. Worker 624 specified
-the target in coordination with Worker 52. Worker 173 supplied the canonical
-construction that the statement concerns.
-
 ## Statement and exact conventions
 
 `Langlands.FiniteTensor.SmoothDualTensorInjectivityStatement` is one closed
@@ -50,8 +46,7 @@ topologies. The statement installs no replacement topology.
 
 The only project import is `Langlands.Representation.Tensor.SmoothDual`.
 Complex scalar structures come from `Mathlib.Basic.Complex.Basic`. The map
-is reused by its published Lean name. This module changes neither that pair
-nor any pair it imports.
+is reused by its published Lean name.
 
 The published `smoothDualTensorMap_val` identifies the underlying algebraic
 functional of `smoothDualTensorMap ρ x`. It is Mathlib's
@@ -64,18 +59,16 @@ not establish injectivity.
 
 This is an internal derived target from canonical tensor linear algebra. It
 is not a verbatim theorem of an external source, and it makes no new external
-literature claim. Worker 624 isolated it as a focused algebraic prerequisite.
+literature claim. It is a focused algebraic prerequisite.
 The intended consumer is the assembly proof of
 `Classification.TwistedProductOrdinaryDualClause`. That clause is in the
-published `Classification.UnitaryGenericCompatibilityStatement` pair. It is
-needed by the tempered quotient coverage task
-`e2afd36b-5c1f-461f-882d-86f03e86b9bd`.
+published `Classification.UnitaryGenericCompatibilityStatement` module. It is
+needed for tempered quotient coverage.
 
-Worker 52 searched the current Tensor and Contragredient modules and the
-pinned Mathlib file `Mathlib/LinearAlgebra/PiTensorProduct/Dual.lean`. No
-injectivity theorem for `smoothDualTensorMap` was found. Fresh TaskHub
-searches found no injectivity task. These bounded searches justify a focused
-prerequisite; they make no global absence claim.
+A search of the Tensor and Contragredient modules and the
+pinned Mathlib file `Mathlib/LinearAlgebra/PiTensorProduct/Dual.lean` found no
+injectivity theorem for `smoothDualTensorMap`. This bounded search justified a
+focused prerequisite; it makes no global absence claim.
 
 The separate published
 `Langlands.FiniteTensor.SmoothDualTensorSurjectivityStatement` needs
@@ -84,10 +77,11 @@ neither. The two statements therefore keep different scopes. Neither
 supplies a full tensor-dual equivalence, and this statement makes no
 surjectivity claim.
 
-## Remaining proof obligations
+## Proof route
 
-A later proof must establish the proposition with no extra premises. One
-prospective route has three steps.
+The proof, `Langlands.FiniteTensor.smoothDualTensorInjectivity` in
+`Langlands.Representation.Tensor.SmoothDualInjectivityProof`, establishes the
+proposition with no extra premises. One route has three steps.
 
 1. Over the field `ℂ`, each inclusion `SmoothDual (ρ i) → Module.Dual ℂ (V i)`
    is injective and therefore has a linear left inverse. Tensoring the left
@@ -107,8 +101,8 @@ prospective route has three steps.
    underlying functionals agree, since the subtype inclusion is injective.
    The first two steps then make the tensors equal.
 
-Worker 261 searched the pinned Mathlib PiTensorProduct, TensorProduct and
-Dual sources and found no injectivity lemma for `PiTensorProduct.map` or
+A search of the pinned Mathlib PiTensorProduct, TensorProduct and
+Dual sources found no injectivity lemma for `PiTensorProduct.map` or
 `PiTensorProduct.dualDistrib`. A proof may first
 split off such a generic algebraic prerequisite. The empty index and
 zero-carrier cases must also be covered.

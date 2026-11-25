@@ -1,6 +1,6 @@
 # Finite-index induction of Weil–Deligne pairs
 
-Worker 17 authored this construction. The subgroup is an actual finite-index
+In this construction the subgroup is an actual finite-index
 subgroup `S ≤ G`; the source pair uses the restriction of the ambient norm
 character. The carrier is the actual equivariant-function model used by
 `FiniteRepresentation.induce`.

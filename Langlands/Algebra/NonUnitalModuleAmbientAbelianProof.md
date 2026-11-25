@@ -1,7 +1,7 @@
 # Ambient abelianness of original additive nonunital modules
 
-Workers 6 and 633. Worker 6 prepared the shared proof draft; Worker 633 checked
-the transfer implementation and complete construction interfaces. This pair proves the published closed proposition
+The transfer implementation and complete construction interfaces were
+checked. This pair proves the published closed proposition
 `Langlands.Algebra.NonUnitalModuleAmbientAbelianStatement.{uA,uM}` and supplies
 the named instance `Langlands.Algebra.NonUnitalModuleCat.abelian.{uA,uM} A`.
 
@@ -45,7 +45,7 @@ p-adiques*, French version dated 9 July 2026, registered as
 The original conventions at printed pages 5–6 / PDF pages 11–12,
 I.1.2 at printed page 7 / PDF page 13, A.VI.1 at printed page 261 /
 PDF page 267, and A.VI.2 property 6 at printed page 262 / PDF page 268
-were read directly when preparing the published statement and shared draft. The conventions allow nonunital rings and actions without a
+were read directly. The conventions allow nonunital rings and actions without a
 unit law. A.VI.1 motivates the ambient module category, while property 6
 describes additive Hom groups and distributive composition.
 
@@ -55,7 +55,7 @@ in the public statement. The implemented proof follows the published
 equivalence and pinned Mathlib transfer constructor, rather than a source
 proof of the ambient assertion. The statement's source audit distinguishes
 the corrected 2026 edition from the separate registered 2010 errata and
-records its author-page checks. The current Library note
+records its author-page checks. The Library note
 `notes/renard/appendix-a-corrections.md` explains why the source's
 full-subcategory assertion lacks a finite-product hypothesis.
 That assertion is not used here: the original category's finite products
@@ -66,4 +66,4 @@ preadditive data. It does not supply concrete selected kernel/cokernel
 formulas, their comparison maps, images/coimages or algebraic exactness
 comparisons, nondegenerate-subcategory closure or abelianness, part-functor
 exactness, an equivalence with the source's AB axioms, or complex-linear
-and tensor comparisons. Those remain separate obligations.
+and tensor comparisons. Those are not part of this module.

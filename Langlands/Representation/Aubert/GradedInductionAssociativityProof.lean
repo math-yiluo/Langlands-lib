@@ -128,7 +128,7 @@ theorem nonempty_unit_equiv_of_isIrreducible :
   have hinj : Function.Injective q := by
     intro c c' hcc
     change c.down • v = c'.down • v at hcc
-    exact ULift.ext _ _ (smul_left_injective ℂ hv hcc)
+    exact ULift.ext (smul_left_injective ℂ hv hcc)
   have hsurj : Function.Surjective q := by
     refine (Representation.IsIrreducible.surjective_or_eq_zero q).resolve_right ?_
     intro h0

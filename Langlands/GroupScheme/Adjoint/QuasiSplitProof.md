@@ -37,7 +37,7 @@ identity. Connectedness of `J` therefore makes this open and closed range
 all of `J`. This argument uses the topological range of the reduced
 inclusion and does not require that inclusion to be smooth.
 
-`AdjointQuotientBorelImage.isBorelSubgroup_image` now starts with a Borel
+`AdjointQuotientBorelImage.isBorelSubgroup_image` starts with a Borel
 `i : B → G` and a supplied smooth connected closed image `j : I → A`,
 with a surjective homomorphism `p : B → I` locally of finite type and
 `i ≫ q = p ≫ j`. The rational-point lift through `p` proves solvability
@@ -67,6 +67,5 @@ the required geometric Borel in `A`.
 
 This is the supplied-adjoint-quotient prerequisite only. It does not
 construct an adjoint quotient or a quasi-split inner form and does not
-prove the host finite-extension norm-criterion theorem. Worker 1459
-implemented the proof; Worker 1472 identified and formulated the
-prerequisite used by the inner-form construction.
+prove the host finite-extension norm-criterion theorem. The statement it
+proves is the prerequisite used by the inner-form construction.

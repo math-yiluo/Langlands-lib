@@ -16,7 +16,8 @@ variable {C : Type u} [Category.{v} C] [Preadditive C] (P : C)
 
 /-- Evaluation at an object takes values in the center of its endomorphism ring. -/
 def generatorCenterEvaluation : CatCenter C →+* Subring.center (End P) where
-  toFun z := ⟨z.app P, Subring.mem_center_iff.mpr fun f => (CatCenter.naturality z f).symm⟩
+  toFun z := ⟨End.of (z.app P), Subring.mem_center_iff.mpr fun f =>
+    End.ext (CatCenter.naturality z f.asHom).symm⟩
   map_one' := rfl
   map_mul' _ _ := rfl
   map_zero' := rfl
@@ -26,7 +27,7 @@ def generatorCenterEvaluation : CatCenter C →+* Subring.center (End P) where
 theorem generatorCenterEvaluation_injective [(preadditiveCoyonedaObj P).Faithful] :
     Function.Injective (generatorCenterEvaluation P) := by
   intro z w h
-  have hP : z.app P = w.app P := congrArg Subtype.val h
+  have hP : z.app P = w.app P := congrArg (fun e => e.val.asHom) h
   apply CatCenter.ext
   intro X
   apply (preadditiveCoyonedaObj P).map_injective
@@ -39,12 +40,12 @@ theorem generatorCenterEvaluation_injective [(preadditiveCoyonedaObj P).Faithful
 private def centralHomAction (c : Subring.center (End P)) (X : C) :
     (preadditiveCoyonedaObj P).obj X ⟶ (preadditiveCoyonedaObj P).obj X :=
   ModuleCat.ofHom
-    { toFun := fun f => c.val ≫ f
+    { toFun := fun f => c.val.asHom ≫ f
       map_add' := fun f g => by simp only [Preadditive.comp_add]
       map_smul' := fun a f => by
-        change c.val ≫ (a.unop ≫ f) = a.unop ≫ (c.val ≫ f)
+        change c.val.asHom ≫ (a.unop.asHom ≫ f) = a.unop.asHom ≫ (c.val.asHom ≫ f)
         rw [← Category.assoc, ← Category.assoc]
-        exact congrArg (fun k => k ≫ f) (Subring.mem_center_iff.mp c.property a.unop) }
+        exact congrArg (fun k => k.asHom ≫ f) (Subring.mem_center_iff.mp c.property a.unop) }
 
 private def centralHomLift [(preadditiveCoyonedaObj P).Full]
     (c : Subring.center (End P)) (X : C) : X ⟶ X :=
@@ -52,7 +53,7 @@ private def centralHomLift [(preadditiveCoyonedaObj P).Full]
 
 private theorem centralHomLift_comp [(preadditiveCoyonedaObj P).Full]
     (c : Subring.center (End P)) (X : C) (f : P ⟶ X) :
-    f ≫ centralHomLift P c X = c.val ≫ f := by
+    f ≫ centralHomLift P c X = c.val.asHom ≫ f := by
   exact congrArg (fun k => k.hom f)
     ((preadditiveCoyonedaObj P).map_preimage (centralHomAction P c X))
 
@@ -61,7 +62,7 @@ theorem generatorCenterEvaluation_surjective
     [(preadditiveCoyonedaObj P).Full] [(preadditiveCoyonedaObj P).Faithful] :
     Function.Surjective (generatorCenterEvaluation P) := by
   intro c
-  let z : CatCenter C :=
+  let z : CatCenter C := End.of
     { app := centralHomLift P c
       naturality := fun X Y f => by
         apply (preadditiveCoyonedaObj P).map_injective
@@ -73,14 +74,15 @@ theorem generatorCenterEvaluation_surjective
         calc
           g' ≫ (f ≫ centralHomLift P c Y) =
               (g' ≫ f) ≫ centralHomLift P c Y := (Category.assoc _ _ _).symm
-          _ = c.val ≫ (g' ≫ f) := centralHomLift_comp P c Y (g' ≫ f)
-          _ = (c.val ≫ g') ≫ f := (Category.assoc _ _ _).symm
+          _ = c.val.asHom ≫ (g' ≫ f) := centralHomLift_comp P c Y (g' ≫ f)
+          _ = (c.val.asHom ≫ g') ≫ f := (Category.assoc _ _ _).symm
           _ = (g' ≫ centralHomLift P c X) ≫ f :=
             congrArg (fun k => k ≫ f) (centralHomLift_comp P c X g').symm
           _ = g' ≫ (centralHomLift P c X ≫ f) := Category.assoc _ _ _ }
   refine ⟨z, ?_⟩
   apply Subtype.ext
-  change centralHomLift P c P = c.val
+  apply End.ext
+  change centralHomLift P c P = c.val.asHom
   simpa using centralHomLift_comp P c P (𝟙 P)
 
 /-- Evaluation identifies the categorical center with the endomorphism-ring center
@@ -94,6 +96,6 @@ def generatorCenterEquiv
 @[simp]
 theorem generatorCenterEquiv_apply
     [(preadditiveCoyonedaObj P).Full] [(preadditiveCoyonedaObj P).Faithful]
-    (z : CatCenter C) : (generatorCenterEquiv P z).val = z.app P := rfl
+    (z : CatCenter C) : (generatorCenterEquiv P z).val = End.of (z.app P) := rfl
 
 end Langlands.Renard

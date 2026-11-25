@@ -1,7 +1,5 @@
 # Rank-one absolutely almost-simple simply connected groups over local fields
 
-Author: Worker 5198.
-
 ## Statement
 
 `Langlands.GroupScheme.LocalRankOneClassificationStatement.{u}` says the
@@ -42,7 +40,7 @@ of group schemes over `Spec K`, to one of these families:
      `σ.IsSpinCover q π`.
 
 Only this forward direction is stated. That each listed group satisfies the
-hypotheses is not stated here. For family (iii), Task 5197 states it as
+hypotheses is not stated here. For family (iii), it is stated as
 `Quaternionic.LocalSymplecticRankOneStatement` and
 `Quaternionic.LocalSpinRankOneStatement`, whose hypotheses on `D`, `σ`, `m`,
 `H` and `q` are exactly those of the (iii) disjunct. There
@@ -210,7 +208,7 @@ exposé "p-adic" means any local field with finite residue field.
   statement quantifies over all `H`. This is the model and anisotropy
   predicate consumed by
   `HermitianRoot.SchemeModel.parabolicElementarySubgroup_eq_top_of_model_iso`.
-- **Family (iii).** The groups are those of Task 5197, module
+- **Family (iii).** The groups are those of the module
   `Langlands.GroupScheme.Quaternionic.GroupSchemes`, with the forms of
   `Langlands.GroupScheme.Quaternionic.Forms`. A form on `D^m` is given by a
   Gram matrix in `M_m(D)`; `m` is PR85's "rank", the `D`-dimension of the
@@ -228,8 +226,8 @@ exposé "p-adic" means any local field with finite residue field.
     Gram matrix `Q + ᵗQ^σ` is invertible, and `σ.quadraticWittIndex q` is the
     largest `D`-dimension of a totally singular subspace. These include the
     characteristic-2 forms that PR85 and Tits use.
-  - Spin groups are characterized rather than constructed, as agreed with
-    the owner of Task 5197. `σ.IsSpinCover q π` says that `G` is simply
+  - Spin groups are characterized rather than constructed.
+    `σ.IsSpinCover q π` says that `G` is simply
     connected, that the isometry group `σ.isometryGroup q = O(q)` is smooth,
     and that `π` is a central isogeny onto the identity component `O(q)⁰`
     followed by the inclusion `O(q)⁰ ⟶ O(q)`. So the spin disjunct says that
@@ -250,7 +248,8 @@ exposé "p-adic" means any local field with finite residue field.
 ## Provenance
 
 The statement is PR85 §2's list, with each group replaced by the Library
-construction designated for its family by this task's contract: the published
+construction for its family: the published
 `CentralSimpleUnits.BinaryRoot.groupScheme` for (i), the published
-`HermitianRoot.SchemeModel.groupScheme` for (ii), and Task 5197's
-quaternionic symplectic groups and spin-cover predicate for (iii).
+`HermitianRoot.SchemeModel.groupScheme` for (ii), and the
+quaternionic symplectic groups and spin-cover predicate of
+`Quaternionic.GroupSchemes` for (iii).

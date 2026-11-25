@@ -1,6 +1,6 @@
 import Langlands.Global.Arithmetic.CMHalfWeightInfinity
 import Langlands.Global.Arithmetic.CMInfinityExtension
-import Langlands.ClassField.Global.CyclicReciprocityParts
+import Langlands.ClassFieldTheory.Global.CyclicReciprocityParts
 
 /-! # Real norm signs for the normalized CM infinity character -/
 
@@ -39,12 +39,12 @@ private theorem prod_coordinates_real_diagonal (a : (maximalRealSubfield K)ˣ) :
   apply Units.ext
   rw [Units.coe_prod]
   simp only [CMUnramifiedInfinity.coordinate_diagonal_units, Units.coe_map]
-  have hp := Langlands.ClassField.Global.CyclicReciprocity.algebraMap_norm_eq_prod
+  have hp := Langlands.ClassFieldTheory.Global.CyclicReciprocity.algebraMap_norm_eq_prod
     (a : maximalRealSubfield K)
   have hreal (v : InfinitePlace (maximalRealSubfield K)) :
-      (Langlands.ClassField.Global.CyclicReciprocity.placeFactor v a : ℂ) =
+      (Langlands.ClassFieldTheory.Global.CyclicReciprocity.placeFactor v a : ℂ) =
         v.embedding a := by
-    simp only [Langlands.ClassField.Global.CyclicReciprocity.placeFactor,
+    simp only [Langlands.ClassFieldTheory.Global.CyclicReciprocity.placeFactor,
       IsTotallyReal.isReal, ↓reduceIte]
     exact (Complex.conj_eq_iff_re.mp
       (congrArg (fun f : maximalRealSubfield K →+* ℂ => f a)

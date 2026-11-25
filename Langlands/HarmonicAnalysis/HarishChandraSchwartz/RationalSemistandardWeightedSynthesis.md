@@ -1,12 +1,14 @@
 # Actual finite-support weighted semistandard synthesis
 
-Worker 268. This construction and statement unit supports Task 7258 unit 3.
+This construction and statement module belongs to the weighted synthesis of
+Waldspurger's invariant spectral families.
 Its principal target is
 `Langlands.HarishChandraSchwartz.RationalSemistandard.GlobalSynthesis.SchwartzSynthesisStatement`.
 It constructs the actual weighted raw synthesis, proves its linear and finite-
 support formulas, states its remaining Schwartz and continuity properties,
 and gives a conditional lift of that same raw map. Invariant restriction
-and VI.3.2 factorization still require the separate invariant/projector unit.
+and VI.3.2 factorization require the separate invariant subspace and projector
+construction.
 
 The original source is J.-L. Waldspurger (2003), *La formule de Plancherel
 pour les groupes p-adiques*, registered as `waldspurger-2003-plancherel`,
@@ -52,8 +54,8 @@ inputs already required by the actual conditional density. Its fields are:
 
 There is no coefficient, packet, Schwartz, form, invariant-stability or
 averaging property among its fields. The generic irreducibility input does
-not assume irreducibility of every tempered parabolic induction. All scalar
-inputs retain their existing owners. `OrbitPacketData.packetLinear` calls the
+not assume irreducibility of every tempered parabolic induction. The scalar
+inputs are not proved here. `OrbitPacketData.packetLinear` calls the
 previously constructed and proved `SourcePacket.rawWavePacketLinear` with
 these exact fields. It selects no output map or analytic witness.
 
@@ -75,9 +77,10 @@ parabolic's actual cocharacter presentation and displayed common compact
 ```
 
 All constants and cardinalities are the actual source constructions.
-Their positivity theorem, from the preceding source-constants unit, uses
-published source Haar/finite-product proofs and the exact separately owned
-`SemistandardSpectralFiberFinitenessStatement`. It does not take an arbitrary
+Their positivity theorem, from the source-constants module
+`RationalSemistandardSourceConstants`, uses published source Haar/finite-product
+proofs and the exact `SemistandardSpectralFiberFinitenessStatement` (proved as
+`semistandardSpectralFiberFiniteness`). It does not take an arbitrary
 positive scalar or supplied natural cardinalities.
 
 `FiniteSupportSections.totalLinear` is a generic algebraic utility in this
@@ -104,9 +107,9 @@ in `RationalSemistandardWavePacket`.
 for that component's actual norm characters, model coordinates, subgroup
 decomposition and compact data. `componentToSmooth` is the published
 identity-on-sections linear map. No new topology is declared. The separate
-comparison with the source finite-dimensional tensor-product topology stays
-with the existing `OrbitSectionFiniteProductTopologyStatement` program and
-its topology owners.
+comparison with the source finite-dimensional tensor-product topology is
+the statement `OrbitSectionFiniteProductTopologyStatement`
+(`OrbitSectionFiniteProductTopology`).
 
 The analytic targets explicitly retain actual maximal splitness, a generic
 positive system, the existing
@@ -115,7 +118,7 @@ and equality of every coefficient compact and every scalar compact with
 that same source compact. These are concrete normalization compatibilities,
 not assumptions of Schwartz membership or continuity. The raw sum is defined
 without them. General comparisons with other compact pictures, models and
-representatives are still additional obligations; this unit makes no
+representatives are additional obligations; this module makes no
 unconditional choice-independence claim.
 
 `SchwartzMembershipStatement` concludes that the exact already constructed
@@ -126,8 +129,9 @@ It assumes no global closure, Schwartz-valued map or estimate.
 has a continuous complex-linear lift from its existing orbit-section topology
 to the existing `RationalSchwartzSpace`, with exactly the same integral
 values at every group point. It assumes no such lift or continuity property.
-The source estimates for standard Levis remain owned by Task 7217; the new
-semistandard transport of their conclusions is an outstanding property.
+The source estimates for standard Levis are the standard-Levi statements of
+`StandardLeviPlancherelWavePacketSchwartz`; the semistandard transport of their
+conclusions is not proved here.
 
 `schwartzMembership_of_componentContinuity` proves the routine global
 assembly. For each contributing component, use the target's exact evaluation
@@ -146,15 +150,18 @@ construction.
 
 ## Dependency boundaries
 
-Task 7229 retains full indexing, actual fibers, smooth compact/model comparison
-and geometric coverage/finiteness. Task 7257 retains the particular all-unitary
-normalized comparisons; those are still needed for invariant restriction and
-factorization. Task 7217 retains standard actual-source VI.3.1 estimates and
-continuous synthesis. The scalar, density, source-topology and Task 4534
-controls are unchanged. The common-Levi source-constant independence target
+Full indexing, actual fibers, smooth compact/model comparison and geometric
+coverage/finiteness belong to the semistandard spectral families
+(`RationalSemistandardSpectralFamily`, `RationalSemistandardOrbitSections`).
+The particular all-unitary normalized comparisons belong to the normalized
+Weyl/intertwiner comparisons of V.3; they are needed for invariant restriction
+and factorization. Standard actual-source VI.3.1 estimates and continuous
+synthesis belong to `StandardLeviPlancherelWavePacketSchwartz`. The scalar,
+density and source-topology inputs and the conditional finite-length standard
+intertwining theorem are not changed here. The common-Levi source-constant independence target
 is not asserted as proved here.
 
-The present unit does not complete invariant kappa, VI.3.2 factorization,
+The present module does not complete invariant kappa, VI.3.2 factorization,
 source formal-degree transport, complete representative/model comparisons,
 the global Hermitian form or association formulas. It proves no VII.2.5
 isometry or VIII Fourier-family finiteness, surjectivity or inversion.

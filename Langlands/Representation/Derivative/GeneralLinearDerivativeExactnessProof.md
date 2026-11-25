@@ -1,7 +1,5 @@
 # Exactness of the general-linear derivatives: proof
 
-Author: Worker 237.
-
 This module proves the published proposition
 `Langlands.Derivative.GeneralLinearDerivativeExactnessStatement.{uF, uV} F T`
 of `Langlands.Representation.Derivative.GeneralLinearDerivativeExactnessStatement`,
@@ -28,9 +26,7 @@ in `Mirabolic.MapsShortExactIntertwiners`.
 Exactness of the two determinant-normalized minus functors comes from the published
 theorem `Langlands.Derivative.Mirabolic.minusExactness` of
 `Langlands.Representation.Derivative.MirabolicMinusExactnessProof`. That theorem
-proves `Mirabolic.MinusExactnessStatement.{uF, uV} F T`. It is the independently
-accepted and published proof of task `b65bc667-6951-4bd5-82af-10fb7046df7f`
-revision 1. This module applies the theorem to the same `F` and `T`, and uses only
+proves `Mirabolic.MinusExactnessStatement.{uF, uV} F T`. This module applies the theorem to the same `F` and `T`, and uses only
 two of its clauses:
 
 - clause 3 (`.2.2.1`): every normalized `Mirabolic.psiMinus T n` is exact;
@@ -114,8 +110,8 @@ were read:
 - §4.3, printed p.454 (PDF page 15). For `π ∈ Alg G_n`, `π^(0) = π` and
   `π^(k) = (π|_(P_n))^(k)` for `k = 1, …, n`.
 
-No applicable errata entry was found in the central-library literature index
-(`/home/taskhub/pilot/literature/_central-library-pointers.md`), the public notes or
+No applicable errata entry was found in the central-library literature index,
+the public notes or
 the published `Iteration`, `MirabolicMinus`, `MirabolicMinusExactnessStatement` and
 `GeneralLinearDerivativeExactnessStatement` pairs.
 
@@ -154,7 +150,7 @@ the published proof module
 The original 70 dependencies remain byte-identical to Library commit
 `9a8ca758097242bde4147f33304f43fceef22fa4`. They are the union of the statement's
 closure (54 modules including the statement) and the minus-exactness proof's
-closure (68 modules including that proof), which share 52 modules. Integration
+closure (68 modules including that proof), which share 52 modules. The proof
 adds only `ShortExactFunctorLaws`, for 71 dependencies excluding this module.
 That helper imports only the already present minus-exactness statement and
 retains the existing identity/composition lemmas with independent group universes.
@@ -172,7 +168,7 @@ module. No Lean source in the closure mentions
 `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` or
 `SegmentSocleProductIrreducibility`. No result of the excluded exhaustion,
 existence, coverage, conversion, uniqueness, socle-commutation, gluing or
-segment-classification tasks is used.
+segment-classification results is used.
 
 The published `Langlands.Representation.Derivative.LevelCalculus` contains
 analogous conditional exactness lemmas that take `MinusExactnessStatement` as a
@@ -184,16 +180,15 @@ derivative detection or the segment-socle route.
 
 ## Development validation
 
-The module was compiled with `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` over Library base `9a8ca758`, with no errors
+The module was compiled over Library base `9a8ca758`, with no errors
 or warnings. Declaration inspection of `generalLinearDerivativeExactness` reports
 kind `theorem`, level parameters `uF, uV`, and only the axioms `propext`,
-`Classical.choice` and `Quot.sound`. A private check printed its type as
+`Classical.choice` and `Quot.sound`. A check printed its type as
 `∀ {p : ℕ} [inst : Fact (Nat.Prime p)] (F : PadicField p) (T : F.TopologicalData),
 GeneralLinearDerivativeExactnessStatement F T`. It also confirmed that the
 universe-explicit term `generalLinearDerivativeExactness.{uF, uV} F T` has type
 `GeneralLinearDerivativeExactnessStatement.{uF, uV} F T`. No `sorry`, `admit` or new
-axiom is used. These checks are separate from independent review and publication.
+axiom is used.
 
-This module proves no parent irreducibility criterion, derivative filtration,
+This module proves no irreducibility criterion, derivative filtration,
 Leibniz rule or other consumer statement.

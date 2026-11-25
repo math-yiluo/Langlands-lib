@@ -1,7 +1,9 @@
 # Actual root-weight lines from triviality of scheme line bundles
 
 This internal construction supplies the affine root-line freeness step
-needed for Task 6490. Its Picard hypothesis is precisely triviality of
+needed for the isomorphism and `G(S)`-conjugacy of reductive groups with
+split maximal tori and Borel subgroups over a connected base with trivial
+Picard group. Its Picard hypothesis is precisely triviality of
 all actual `LineBundle (Spec R)` objects, as in the published parent
 statement. No module Picard hypothesis is substituted for it.
 

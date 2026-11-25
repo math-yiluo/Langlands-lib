@@ -1,7 +1,7 @@
 import Langlands.Global.Factors.RelativeWeilAssemblyCharacters
 import Langlands.Global.HeckeNormPower
 import Langlands.Global.IdeleNormAbsoluteValue
-import Langlands.ClassField.Global.LocalRelativeWeilMap
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMap
 
 /-! # Norms of completions and of norm powers -/
 
@@ -26,7 +26,7 @@ theorem localUnitNorm_eq_units_map_norm (z : HeightOneSpectrum (𝓞 k))
     FiniteExtension.localUnitNorm z u x =
       Units.map (@Algebra.norm (padicField z).Carrier (towerPadicField z u).Carrier _ _
         (Weil.Local.extensionAlgebra (padicField z) (towerPadicField z u)
-          (ClassField.Global.RelativeWeilGroup.completionPadicAlgHom z u))) x :=
+          (ClassFieldTheory.Global.RelativeWeilGroup.completionPadicAlgHom z u))) x :=
   rfl
 
 /-- `‖·‖^t ∘ N_{M/k} = ‖·‖^t`: the idelic norm preserves the normalized absolute value. -/

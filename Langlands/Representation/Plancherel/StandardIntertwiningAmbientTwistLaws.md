@@ -1,7 +1,5 @@
 # Ambient character transport of target-valued standard intertwiners
 
-Author: Worker 359.
-
 This internal transport module continues
 `StandardIntertwiningAmbientTwist`. Its provenance is that module's
 character-multiplication equivalence and exact weak-integral domain laws,

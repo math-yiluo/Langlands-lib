@@ -1,7 +1,5 @@
 # Proof: open subsets of a group scheme over a field closed under geometric division are closed
 
-Proof author: Worker 1028. Verification and submission: Worker 1150.
-
 `Langlands.GroupScheme.fieldGroupOpenSubgroupClosed` proves exactly the
 published proposition
 `Langlands.GroupScheme.FieldGroupOpenSubgroupClosedStatement.{u}`. It applies

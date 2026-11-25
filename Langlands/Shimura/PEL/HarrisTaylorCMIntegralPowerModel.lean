@@ -96,7 +96,7 @@ def IntegralPowerModelWitness :
   let := auxiliaryStarRing D C
   intro q e
   let u : Aut (Rationalization.of X.actionObj.abelianScheme) :=
-    RationalAlgebraAction.underlyingIso e
+    Aut.of (RationalAlgebraAction.underlyingIso e)
   exact ∃ (eta : Frame) (m : ℕ), 0 < m ∧ q ^ (2 * m) = 1 ∧
     ∃ (B : AbelianScheme (Spec (CommRingCat.of Ω)))
       (r : Rationalization.of B ≅ Rationalization.of X.actionObj.abelianScheme)
@@ -106,9 +106,9 @@ def IntegralPowerModelWitness :
           rationalHomMap (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) (fun _ => True) r.hom
             (GroupScheme.Tate.toRational B.toGrp (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) (fun _ => True) x) = w) ∧
       Rationalization.ofHom g.hom = r.hom ≫
-        (u ^ (2 * m)).hom ≫ r.inv ∧
+        (u ^ (2 * m)).asIso.hom ≫ r.inv ∧
       Rationalization.ofHom g.inv = r.hom ≫
-        (u ^ (2 * m)).inv ≫ r.inv
+        (u ^ (2 * m)).asIso.inv ≫ r.inv
 
 variable
   [hμfin : ∀ k : Index (fun _ => True), IsFinite (mu (Spec (CommRingCat.of Ω)) k.val).X.hom]
@@ -143,21 +143,21 @@ theorem integralPowerModelWitness_of_levelIso_fixed (U : HarrisLevel D) :
   obtain ⟨B, r, hr⟩ := harrisCMFrameLattice_realized
     D C P compatibility h Ω hs htor hu X eta
   let u : Aut (Rationalization.of X.actionObj.abelianScheme) :=
-    RationalAlgebraAction.underlyingIso e
-  let f : End0 X.actionObj.abelianScheme := RationalAlgebraAction.hom0 e.hom
-  have hpow : (u ^ (2 * m)).hom = f ^ (2 * m) :=
-    map_pow (Aut.toEnd _) _ _
+    Aut.of (RationalAlgebraAction.underlyingIso e)
+  let f : End0 X.actionObj.abelianScheme := CategoryTheory.End.of (RationalAlgebraAction.hom0 e.hom)
+  have hpow : (u ^ (2 * m)).asIso.hom = (f ^ (2 * m)).asHom :=
+    congrArg CategoryTheory.End.asHom (map_pow Aut.toEnd u (2 * m))
   let := finiteAdeleModule X.actionObj.abelianScheme (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) (fun _ => True) h
   let : Module Rf Rat := Module.compHom _ (Rf).subtype
   have hstable' : ∀ w : Rat, rationalHomMap (Over.mk (𝟙 (Spec (CommRingCat.of Ω)))) (fun _ => True)
-      (u ^ (2 * m)).hom w ∈ lattice eta ↔
+      (u ^ (2 * m)).asIso.hom w ∈ lattice eta ↔
       w ∈ lattice eta := by
     intro w
     rw [hpow]
     exact hstable w
   obtain ⟨g, hg, hgi⟩ := realizedLatticeStabilizer htor (Spec (CommRingCat.of Ω)) hu Ω (𝟙 (Spec (CommRingCat.of Ω)))
     X.actionObj.abelianScheme B r (lattice eta).toAddSubgroup hr
-    (u ^ (2 * m)) hstable'
+    (u ^ (2 * m)).asIso hstable'
   exact ⟨eta, m, hm, hq, B, r, g, hr, hg, hgi⟩
 
 end Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel

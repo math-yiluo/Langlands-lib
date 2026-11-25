@@ -1,7 +1,8 @@
 # GL adapters for the independent tempered quotient argument
 
-This module is internal algebraic assembly for Worker 624's unfinished
-proof of `Langlands.Classification.TemperedLanglandsQuotientCoverage`. It does
+This module is internal algebraic assembly for the
+proof of `Langlands.Classification.TemperedLanglandsQuotientCoverage`
+(`temperedLanglandsQuotientCoverage`, through `TemperedQuotientAssembly`). It does
 not assert coverage, analytic preservation under duality, or induction duality.
 Its provenance is the composition of published constructions and the generic
 adapter in the paired `TemperedQuotientAux` module.
@@ -47,4 +48,5 @@ reversal theorem.
 The conclusion still involves a dual of induction. It supplies no
 identification with a tempered standard module. The independent selection,
 block temperedness, analytic dual preservation and product-duality obligations
-remain open. No new literature claim is made.
+are not discharged here; `TemperedQuotientAssembly` and
+`TemperedLanglandsQuotientCoverageProof` discharge them. No new literature claim is made.

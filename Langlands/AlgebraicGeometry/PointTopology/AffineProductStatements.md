@@ -1,7 +1,5 @@
 # Affine product topology and canonical projection statements
 
-Author: Worker 105.
-
 Source: Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1 and its proof, printed page 2.
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA256

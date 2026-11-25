@@ -1,6 +1,6 @@
 # Renard VI.8.3: Jacquet modules of families preserve finite generation
 
-Author: Worker 5188. Module
+Module
 `Langlands.Representation.Families.RenardFamilyJacquetFiniteTypeProof`,
 namespace `Langlands.Renard.AlgebraicFamily`.
 

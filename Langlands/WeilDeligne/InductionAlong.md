@@ -1,6 +1,6 @@
 # Induction along an injective homomorphism
 
-Worker 17 authored this construction module. It imports
+This construction module imports
 `Langlands.WeilDeligne.ParameterInduction` and
 `Langlands.WeilDeligne.ParameterRestriction`.
 

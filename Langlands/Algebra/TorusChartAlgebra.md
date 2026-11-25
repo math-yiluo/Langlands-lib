@@ -1,19 +1,18 @@
 # The universal Hopf point of `μ_m^r` and its twisting action
 
-Author: Worker 1421.
-
 This module fixes the algebraic data of the finite-level parameter scheme used
-in the chart construction of task `45ac6e52-a4d8-4414-91f1-03c3be35223e`.
+in the torus chart construction
+(`Langlands.GroupScheme.HomScheme.TorusChartConstruction`).
 `R` and `A` are commutative rings in universe `u`, with `A` a finitely
 presented `R`-Hopf algebra (the coordinate ring of the ambient group), `r` a
 finite index type and `m > 0`. It is an internal module.
 
-- `W R A r m`: Worker 950's `FiniteBialgebraHom.HomAlgebra R A R[(ℤ/m)^r]`,
-  which represents homomorphisms `μ_m^r → Spec A`.
+- `W R A r m`: `FiniteBialgebraHom.HomAlgebra R A R[(ℤ/m)^r]` (module
+  `Langlands.Algebra.FiniteBialgebraHom`), which represents homomorphisms `μ_m^r → Spec A`.
 - `univ R A r m : A →ₐ[R] W[(ℤ/m)^r]`: the universal Hopf point, transported to
   group-algebra form by `HopfPointBridge.toGroupAlgebra`. `isHopfPoint_univ`.
-- `univ_point`: the Hopf point classified by `g : W → C` under Worker 950's
-  `homEquiv` is `mapAlgHom g ∘ univ`.
+- `univ_point`: the Hopf point classified by `g : W → C` under
+  `FiniteBialgebraHom.homEquiv` is `mapAlgHom g ∘ univ`.
 - `mapAlgHom_twistHom_comp_univ`: twisting the representing algebra by
   `HopfPointTwist.twistHom γ` twists the universal point by `mapDomain γ`.
 - `pointOf g := mapAlgHom g ∘ univ`, for any `C`-point `g` of `W`

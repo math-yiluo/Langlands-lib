@@ -1,8 +1,5 @@
 # Proof of the unital Remark of Renard I.1.7
 
-Author: Worker 142 (Lean proof and Markdown), under Task 5709
-(`56b7aa00-3ccf-44fb-9c6d-7f84b98504bd`).
-
 This module proves the published statement
 `Langlands.Algebra.UnitalNondegenerateModuleCenterStatement` from
 `Langlands.Algebra.NondegenerateModuleCenterStatements`. It changes nothing in the statement
@@ -29,7 +26,7 @@ David Renard, *Représentations des groupes réductifs p-adiques*, French editio
 printed p.13 / PDF p.19: "Lorsque `A` est unitaire, le centre `ℨ(A)` s'identifie au centre
 de l'anneau `A`, résultat bien connu." The source gives no proof. The proof below is the
 standard one: `z ↦ (m ↦ z • m)` and `θ ↦ θ_A(1)`. It is the route sketched in the statement
-Markdown and the task context.
+Markdown.
 
 ## Notation
 

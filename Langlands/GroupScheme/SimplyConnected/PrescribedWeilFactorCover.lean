@@ -142,7 +142,8 @@ def componentFactor (hj : IsClosedSubgroup j) (d : TitsIndexData C) (a : d.Verte
   cartan_eq := hcartan
   stabilizer_lift := hstabilizer
   star_lift := hstar
-  anisotropic := F.anisotropic_of_isFinite hj (𝟙 C)
+  anisotropic := set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    F.anisotropic_of_isFinite hj (𝟙 C)
 
 end SimplyConnectedWeilFactor
 end Langlands.GroupScheme

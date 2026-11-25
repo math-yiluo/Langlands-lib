@@ -20,7 +20,7 @@ schemes `G` and `T` over a field, a homomorphism `i : T ⟶ G`,
 `IsSplitTorus T`, `IsClosedSubgroup i`, and the two ambient assumptions
 `Smooth G.X.hom` and `IsAffineHom G.X.hom`. It proves
 `(SubgroupFunctor.range i).normalizer.HasSmoothClosedRepresentative`.
-This helper is adapted from the normalizer half of Worker 950's published
+This helper is adapted from the normalizer half of
 `torusNormalizerRepresentable` in
 `Langlands.GroupScheme.Rational.TorusNormalizerProof`. That argument only
 uses smoothness and affineness of the ambient group.
@@ -85,12 +85,12 @@ on all scheme tests, including nonaffine tests.
 
 ## Imported inputs and provenance
 
-The target is imported from
+The statement is imported from
 `Langlands.GroupScheme.Torus.NormalizerSmoothStatement`.
 `NormalizerRepresentability` supplies the coordinate ideals, closed
 representatives and affine-to-all-tests comparisons.
 `Torus.NormalizerLifting` supplies the diagonalizable embedding and
-normalizer lifting theorem, using the published grouplike and twisted
+normalizer lifting theorem, using the Library's grouplike and twisted
 transporter lifting infrastructure.
 `SubgroupFunctor.NormalizerBaseChange` supplies normalizer base change;
 its imports supply range and representative base change and uniqueness
@@ -106,8 +106,9 @@ In the retained `Expo11.pdf`, one-based PDF pages 26–27, printed
 pages 110–111, original pages 167–168, the surrounding hypotheses fix a
 smooth affine group, and the corollary asserts closed smooth
 representability of the normalizer of a multiplicative-type subgroup.
-A closed field torus is a special case. The retained source folder is
-`/home/taskhub/pilot/literature/Grothendieck - SGA 3 Exposes XI, XII and XIV (Gille-Polo provisional recomposition, December 2008)`.
+A closed field torus is a special case. The source folder in the literature
+library is
+`Grothendieck - SGA 3 Exposes XI, XII and XIV (Gille-Polo provisional recomposition, December 2008)`.
 
 Milne, *Algebraic Groups* (2017), Corollary 13.10, printed p.257,
 one-based PDF p.273, independently gives smoothness of such normalizers.
@@ -115,10 +116,11 @@ The registered source is `milne-2017-algebraic-groups`, content SHA256
 `899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
 The retained official errata snapshot
 `milne-2017-algebraic-groups-errata-2026-11-02` contains no correction to
-this corollary. The target's paired Markdown explains its full source
+this corollary. The statement's Markdown explains its full source
 correspondence. The implemented proof uses direct normalizer lifting
 and descent; Milne instead deduces normalizer smoothness from centralizer
 smoothness through equality of identity components.
 
-Worker 1630 wrote the generalization and descent argument; Worker 950's
-published split normalizer proof supplies the adapted helper body.
+The split normalizer proof of `Langlands.GroupScheme.Rational.TorusNormalizerProof`
+supplies the adapted helper body; the generalization and the descent argument are
+new in this module.

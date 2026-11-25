@@ -1,7 +1,5 @@
 # Concrete matrix data for partial character localization
 
-Author: Worker 321.
-
 This module supplies internal matrix data for the positive two-block comparison
 of Zelevinsky (1980), Proposition 3.7(b). It constructs the actual subgroup
 `[[I_k,A],[0,u_m]]`, proves both of its radical/Levi generation identities,
@@ -74,8 +72,9 @@ mirabolicPartialUpper k m F =
 This is `partialUpper_eq_radical_sup`, an equality of actual subgroups inside
 the mirabolic group, not an assumed decomposition. The supremum is subgroup
 generation; the proof supplies a radical factor followed by a Levi factor.
-This module does not yet identify the character with each recursive Phi/Psi
-character; those restrictions are separate from this generation identity.
+This module does not identify the character with each recursive Phi/Psi
+character; those restrictions, proved in `PartialLocalizationCharacter`, are
+separate from this generation identity.
 
 ## Positive parabolic decomposition and character
 
@@ -141,7 +140,7 @@ retained at
 The localization convention there is inverse half modulus. The present
 module constructs no normalized action or modulus identity and does not
 invoke the transitivity conclusion. The source passages and rendered
-normalization formulas were read in the parent proof task; no applicable
+normalization formulas were read; no applicable
 source-specific erratum was found in the supplied notes or literature index.
 
 These matrix lemmas are internal derived constructions, not separate
@@ -174,8 +173,11 @@ pairing, cuspidal derivative vanishing, Whittaker-finiteness proof, tensor
 comparison, derivative filtration, plus/adjunction or derivative duality
 result. In particular it does not import
 `Whittaker.TopDerivativeCoinvariantComparison` or
-`Classification.SupercuspidalDerivatives`. The complete exclusions of parent
-task revision 2 and the stronger shared tower exclusions are preserved.
+`Classification.SupercuspidalDerivatives`. The complete exclusions of the
+comparison proof `partialDerivativeJacquetComparison`
+(`PartialDerivativeJacquetComparisonProof`, which uses this module through
+`PartialLocalizationCharacter` and `PartialDerivativeJacquetRHSComparison`)
+and the stronger shared tower exclusions are preserved.
 MirabolicProjection also contains elementary maps for a plus-induction
 subgroup; the proofs here use only its projection and actual matrix
 factorization, not any plus representation or adjunction theorem.

@@ -1,6 +1,6 @@
 # Affine-chart final topology on actual scheme points
 
-This unit constructs a named topology on actual relative scheme points using all
+This module constructs a named topology on actual relative scheme points using all
 actual affine open charts and their existing affine evaluation topologies. It
 also constructs the open-subscheme point equivalence, proves the local-ring
 coverage criterion, and proves agreement with the existing affine topology.
@@ -14,7 +14,7 @@ Proposition 3.1 and its proof, printed page 4. The registered source is
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The paper observes that over a local value ring every point factors through
 some member of any open cover, then glues the affine point topologies under
-additional open-unit and inversion hypotheses. This unit constructs the final
+additional open-unit and inversion hypotheses. This module constructs the final
 topology and the coverage step explicitly on the existing scheme-point carrier.
 
 The relative base ring `R` and value ring `S` are commutative rings in a common
@@ -54,7 +54,7 @@ All declarations lie in `Langlands.AlgebraicGeometry.PointTopology`.
 `schemePointTopology R X S` is the supremum of the topologies coinduced by
 `openPointMap` from each affine open, whose source carries the existing affine
 scheme-point topology from `AffineSchemeMaps`. It is a named topology; this
-unit installs no competing global instance on scheme points.
+module installs no competing global instance on scheme points.
 `schemePointTopology_isOpen_iff` proves that a subset is open precisely when
 its inverse image in every affine chart is open.
 `schemePointTopology_continuous_chart` proves continuity of each chart map.
@@ -72,7 +72,9 @@ carrier and agrees exactly with the earlier topology when it applies.
 
 The further open-chart and gluing comparisons, functoriality, uniqueness,
 fiber-product compatibility, and nonaffine Hausdorff/local-compactness results
-of Proposition 3.1 remain separate obligations. In particular this unit does
+of Proposition 3.1 are proved in the separate modules `SchemeOpenPointProofs`,
+`SchemeTopologyUniquenessProofs`, `SchemePullbackProofs`, `SchemeHausdorffProofs`
+and `SchemeLocalCompactnessProofs`. In particular this module does
 not assume those properties in a structure or claim them from the definition
 alone. The source's local-ring, open-unit and continuous-inversion hypotheses
 remain necessary at the corresponding later steps.

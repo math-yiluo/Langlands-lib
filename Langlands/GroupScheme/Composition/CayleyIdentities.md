@@ -1,7 +1,5 @@
 # Linearized composition identities of a Cayley datum
 
-Author: Worker 118.
-
 This module derives standard identities of an eight-dimensional unital
 composition algebra from the published `CayleyDatum K` interface
 (module `Langlands.GroupScheme.Composition.CayleyDatum`): a bilinear

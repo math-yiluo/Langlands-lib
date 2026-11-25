@@ -52,7 +52,7 @@ into the existing `IsIsogeny f` definition. Every field, characteristic and
 universe is retained. There are no additional theorem arguments or hypotheses
 on projectivity, dimension, the image, the kernel's reducedness, or flatness.
 
-## Provenance and contributions
+## Provenance
 
 This is the endomorphism specialization of Proposition 8.1, (c) implies (d),
 on printed/PDF p.12 of J. S. Milne, *Abelian Varieties*, the 1986 article in
@@ -73,6 +73,5 @@ Milne's dimension and coherent-sheaf argument. In particular, the flatness step
 uses generic flatness, translations and descent; Milne's printed Theorem 4.2
 already assumes flatness and is not used to establish it.
 
-Worker 139 wrote this assembly and companion. The imported quasi-finiteness
-proof is by Worker 419, surjectivity by Worker 414, and flatness by Worker 415.
-Their companions record their implementations and further contributions.
+The companions of the imported quasi-finiteness, surjectivity and flatness
+proofs record their implementations.

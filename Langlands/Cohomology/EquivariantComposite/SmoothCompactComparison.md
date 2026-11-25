@@ -1,7 +1,5 @@
 # Compact sections and the smooth coreflector
 
-Author: Worker 141.
-
 This is an internal comparison supporting the compact composite proof. For an
 arbitrary commutative ring and a topological group acting by continuous maps on
 a space with stable neighbourhoods, compact sections of the smooth subsheaf are

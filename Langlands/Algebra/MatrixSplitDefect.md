@@ -1,6 +1,6 @@
 # Actual split presentations trivialize scalar descent defects
 
-This internal unit first proves that a scalar twist of an honest lift has the
+This module first proves that a scalar twist of an honest lift has the
 coboundary of that scalar one-cochain as its defect. An actual matrix untwisting
 a semilinear matrix action makes its chosen inner lifts scalar twists of the
 honest lift `Q σ(Q)⁻¹`, so the actual scalar defect is an actual coboundary.

@@ -1,7 +1,5 @@
 # Reductive and connected fibre loci over a direct limit of rings
 
-Worker 606.
-
 `directedSystemBaseChange` constructs the actual base changes of a group over
 one ring in a directed system to all later rings. The accompanying theorems
 apply the published geometric loci to this family and its base change to a

@@ -1,9 +1,7 @@
 # Points of a similitude group over products of coefficient rings
 
-Author: Worker 13.
-
 This internal construction concerns the named similitude point groups
-`σ.Points S` of the published `Langlands.Shimura.Unitary.Adelic` (Worker 57).
+`σ.Points S` of the published `Langlands.Shimura.Unitary.Adelic`.
 Here `σ : AlgebraInvolution R A` is an involution of an `R`-algebra `A` with
 `[Ring A]` over a commutative ring `R`, and `S` is a commutative `R`-algebra.
 The module proves that these groups are functorial in the coefficient ring,
@@ -176,7 +174,7 @@ The construction is internal. It is derived from Mathlib's
 uses the published `Langlands.Shimura.Unitary.Involution`
 (`baseChange`, `changeCoefficients` and its lemmas),
 `Langlands.Shimura.Unitary.Similitude` (`similitudes`, `mem_similitudes_iff`),
-`Langlands.Shimura.Unitary.Adelic` (Worker 57: `Points`, `pointsMap`,
+`Langlands.Shimura.Unitary.Adelic` (`Points`, `pointsMap`,
 `continuous_changeCoefficients`, `continuous_pointsMap`, `diagonalPoints`,
 `Points.multiplier`, `FiniteAdelicPoints`, `finiteAdelicDiagonal`,
 `finiteEvaluation`, `finiteLocalMap`) and
@@ -190,7 +188,7 @@ Annals of Mathematics Studies 151, Princeton, 2001
 (`harris-taylor-2001-geometry-cohomology-simple-shimura`), Chapter I, printed
 p.20 (PDF p.28): "If S is a finite set of places of L we decompose
 A_L = A_L^S × L_S where A_L^S denotes the adeles away from S and where
-L_S = Π_{x ∈ S} L_x". Worker 13 read this page through text extraction of the
+L_S = Π_{x ∈ S} L_x". This page was read through text extraction of the
 registered PDF. That passage states the ring decomposition only; the
 corresponding splitting of the points of a group is the standard consequence,
 proved here for the similitude point groups.

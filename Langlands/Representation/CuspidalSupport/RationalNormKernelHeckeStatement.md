@@ -1,6 +1,6 @@
 # Renard VI.4.2: the convolution algebra H(G,ρ) and the endomorphisms of ind_{⁰G}^G ρ
 
-Worker 6. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the definition of f_w in (VI.4.1.2), printed p.149 / PDF p.155; the definition (VI.4.2.1) of H(G,ρ), its convolution product and unit, printed p.151 / PDF p.157; and the Proposition of VI.4.2 with its proof, including (VI.4.2.2)–(VI.4.2.4), printed p.152 / PDF p.158. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the definition of f_w in (VI.4.1.2), printed p.149 / PDF p.155; the definition (VI.4.2.1) of H(G,ρ), its convolution product and unit, printed p.151 / PDF p.157; and the Proposition of VI.4.2 with its proof, including (VI.4.2.2)–(VI.4.2.4), printed p.152 / PDF p.158. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
 
 ## Source content
 

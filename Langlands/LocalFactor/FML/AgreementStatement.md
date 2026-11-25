@@ -107,7 +107,7 @@ Neither construction chooses a new conductor.
 
 ## Provenance and modifications
 
-Worker 40 formulated these derived comparison targets between published
+These are derived comparison targets between published
 definitions. They are new Library integration statements, not theorems quoted
 from the upstream repository. The FML definitions were adapted from Fukuhiro
 Ueda, *epsilon_FML*, commit

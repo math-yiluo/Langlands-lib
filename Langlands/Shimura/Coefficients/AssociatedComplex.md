@@ -1,7 +1,5 @@
 # Additive associated sheaves and actual associated complexes
 
-Author: Worker 13.
-
 This module proves additivity of the existing associated-sheaf constructions
 and uses it to construct ordinary complexes of associated small-etale sheaves.
 The input includes the coefficient complex itself; no associated complex,

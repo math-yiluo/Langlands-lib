@@ -47,8 +47,8 @@ Provenance. Derived, internal infrastructure. It is a special case of the classi
 closure of a `(𝔤, K)`-submodule of an admissible representation is `G`-invariant, because
 `K`-finite vectors are analytic (Harish-Chandra). No source is cited for this exact form. The proof here is
 self-contained: it does not use Harish-Chandra's analytic-vector theorem. It uses the explicit
-Gram-determinant formula of `PrincipalSeriesGramFormula` instead. It is a sub-step of the planned
-proof of the Langlands-quotient statement `RealStandardLanglandsQuotientStatement` (Task 6749).
+Gram-determinant formula of `PrincipalSeriesGramFormula` instead. It is a sub-step of the
+proof of the Langlands-quotient statement `RealStandardLanglandsQuotientStatement`.
 
 ## Definitions
 

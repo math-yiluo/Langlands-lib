@@ -21,8 +21,8 @@ follows the published `WeilGm.rationalUnitsEquiv_integralPointMap`
 (`Langlands.GroupScheme.Torus.WeilRestrictionIntegralModel`), which does the
 same computation for commutative algebras and Weil restrictions of `G_m`.
 
-The module contributes to the task objective's comparison of a hyperspecial
-with a non-hyperspecial parahoric (Task 3557). The published
+The module contributes to the comparison of a hyperspecial
+with a non-hyperspecial parahoric. The published
 `Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriComparison` compares
 the groups `I ⊆ GL_N(𝒪[F])`. This module adds a group scheme over `𝒪[F]` whose
 integral points are `I`, in the Library's `IntegralModel` and
@@ -132,7 +132,7 @@ Let `F` be a nonarchimedean local field and `N : ℕ`.
   `c = ϖ b₀ ≠ 0`, where `b₀` clears the denominators of the entries
   (`IsLocalization.exist_integer_multiples_of_finite`) and `ϖ` is an
   irreducible element (`IsDiscreteValuationRing.exists_irreducible`).
-- `iwahoriModel F N` (definition, the declared definition of this unit): the
+- `iwahoriModel F N` (definition, the declared definition of this module): the
   `IntegralModel 𝒪[F] F` of `GL_N` given by `orderModel` for the Iwahori order.
   `iwahoriModel_isSmooth`: it is smooth.
 - `inv_mem_iwahoriOrder`: if `v : GL_N(𝒪[F])` lies in the Iwahori order, so does

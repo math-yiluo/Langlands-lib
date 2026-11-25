@@ -28,7 +28,7 @@ open Langlands.Global Langlands.Global.CompletionPadic Langlands.Global.AdelicFu
 open Langlands.Global.HeckeFunctionalEquation
 open Langlands.Global.FunctionalEquationComparison
 open Langlands.Global.FunctionalEquationComparison.RelativeWeilEngine
-open ClassField.Global ClassField.Global.RelativeWeilGroup VirtualRepresentation
+open ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup VirtualRepresentation
 open scoped NumberField
 
 section Helpers

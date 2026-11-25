@@ -1,9 +1,9 @@
 # Irreducible admissible stable subspaces by minimal multiplicity
 
 Module `Langlands.Automorphic.PlaceComponentMinimal`, namespace
-`Langlands.Automorphic.PlaceComponent`. Worker 174 wrote it as a step towards
-`Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (G1, Task 5992,
-`8a7f44bc-c7bc-4ceb-96aa-6eff19b38f97`). Provenance: internal linear algebra about the Library
+`Langlands.Automorphic.PlaceComponent`. It is a step towards
+`Langlands.Automorphic.CuspidalArchimedeanIrreducibleAdmissibleComponentStatement` (proved in
+`PlaceComponentExistence`). Provenance: internal linear algebra about the Library
 predicates `IsStable`, `IsIrreducible`, `intertwiners` and `IsAdmissible` of
 `Langlands.Automorphic.CuspidalArchimedeanPlaceComponent`.
 

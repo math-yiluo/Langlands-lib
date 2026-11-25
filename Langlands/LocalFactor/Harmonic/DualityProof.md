@@ -1,7 +1,5 @@
 # Dual Haar measures and scalar Fourier inversion
 
-Author: Worker 135.
-
 The theorem `Langlands.LocalFactors.padicFourierDuality.{u}` proves the
 unchanged published proposition
 `Langlands.LocalFactors.PadicFourierDualityStatement.{u}` from
@@ -172,10 +170,9 @@ self-dual measure. It does not introduce a new local-factor theorem or
 assert the other components of `PadicHarmonicAnalysisStatement`.
 The target pair and all existing imported pairs are unchanged.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 Development compilation and a Lake build with declaration inspection
 succeeded with no errors or warnings. Inspection reports the single
 universe parameter `u` and only `propext`, `Classical.choice`, and
-`Quot.sound`. Exact-target validation, independent semantic acceptance,
-and Library publication remain separate submission requirements.
+`Quot.sound`.

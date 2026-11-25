@@ -1,7 +1,5 @@
 # A finite-dimensional cyclicity lemma for the cell matrix
 
-Author: Worker 392.
-
 This helper module of the proof of
 `Langlands.Conductor.OrderedUnramifiedSphericalCyclicityStatement` (see
 [`OrderedUnramifiedSphericalCyclicity`](../OrderedUnramifiedSphericalCyclicity.md))

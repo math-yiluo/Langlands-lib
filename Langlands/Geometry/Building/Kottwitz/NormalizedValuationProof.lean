@@ -72,9 +72,9 @@ theorem normalizedIntermediateValuation_existsUnique :
   have : w.IsNontrivial := normIntegerValuation_nontrivial F L
   have : w.IsRankOneDiscrete := inferInstance
   let e := Valuation.IsRankOneDiscrete.valueGroup₀_equiv_withZeroMulInt w
-  let v := w.restrict.map e.toMonoidWithZeroHom e.strictMono.monotone
+  let v := w.restrict.map ⟨e.toMonoidWithZeroHom, e.strictMono.monotone⟩
   have hv : v.IsEquiv (intermediateValuation F L) :=
-    (Valuation.isEquiv_map_self_of_strictMono _ e.strictMono).trans
+    (Valuation.isEquiv_map_self_of_strictMono _ e.strictMono.injective).trans
       (w.isEquiv_restrict.symm.trans (normIntegerValuation_isEquiv F L))
   have hs : Function.Surjective v :=
     e.surjective.comp (MonoidWithZeroHom.ValueGroup₀.restrict₀_surjective _)

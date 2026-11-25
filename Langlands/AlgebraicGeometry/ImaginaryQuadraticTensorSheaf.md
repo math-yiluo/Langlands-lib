@@ -45,7 +45,7 @@ tensor module on every open; no further sheafification changes its sections.
 `tensorFactorSheafIso` lifts the constructed presheaf isomorphism to an
 isomorphism in `S.Modules`.
 
-This unit supplies a generic tensor-factor/eigensheaf comparison. It does not
+This module supplies a generic tensor-factor/eigensheaf comparison. It does not
 assert local freeness, a prescribed rank, compatibility of additional totally
 real actions, or commutation with pullback along an arbitrary scheme morphism.
 Specializing it to the differentiated Harris algebra action is a separate step.

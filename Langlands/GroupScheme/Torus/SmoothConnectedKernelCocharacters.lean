@@ -57,6 +57,8 @@ theorem free_of_smooth_connected (k : Type u) [Field k]
       (IsScalarTower.toAlgHom (CommRingCat.of k) A F).toLinearMap
       (LinearMap.ker_eq_bot.mpr hinj)
   have : IsAddTorsionFree Λ := CharacterLattice.isAddTorsionFree w hw
+  have : HasUniqueDiv Λ := ⟨fun _ hn a b hab ↦
+    IsAddTorsionFree.eq_of_nsmul_eq_nsmul_of_addCommute hn (AddCommute.all a b) hab⟩
   infer_instance
 
 /-- A split-torus homomorphism with smooth connected full kernel has a free

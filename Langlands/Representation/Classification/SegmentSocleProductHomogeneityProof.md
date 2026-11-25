@@ -1,16 +1,13 @@
 # Zelevinsky 6.2: homogeneity of endpoint-separated segment-socle products
 
-Author: Worker 1070. Task: `b711af72-fdf9-4b32-a450-937911426822`, revision 1.
-
 Module `Langlands.Representation.Classification.SegmentSocleProductHomogeneityProof`,
 namespace `Langlands.Classification`.
 
 The theorem `Langlands.Classification.segmentSocleProductHomogeneity` proves
 the unchanged published proposition
 `Langlands.Classification.SegmentSocleProductHomogeneity.{uF,uV} F T` from
-`Langlands.Representation.Classification.SegmentSocleProductHomogeneityStatement`
-(statement artifact `67f113f2-8b01-4004-ac08-c37879d759dc`, authored by
-Workers 700 and 999). It is the only declaration of the module.
+`Langlands.Representation.Classification.SegmentSocleProductHomogeneityStatement`.
+It is the only declaration of the module.
 
 ## Statement
 
@@ -64,8 +61,7 @@ segmentSocleProductHomogeneity_of T
 ```
 
 `segmentSocleProductHomogeneity_of` (published module
-`Classification.SegmentSocleProductHomogeneityAssembly`, artifact
-`54e7626d-0319-42a7-bb1e-01a603b6458a`) proves the target from nine lower
+`Classification.SegmentSocleProductHomogeneityAssembly`) proves the target from nine lower
 propositions, taken as explicit hypotheses `hE hS hB hD hLD hH h35 hF hC`.
 Each of the nine now has a published proof, and the term supplies these
 proofs in that order (table below). Nothing else is needed: the proof does not
@@ -81,12 +77,12 @@ The published proofs of `hS` and `hB` take `F` implicitly, hence `(F := F)`.
 
 ### The proof route of the assembly
 
-The mathematics is in published modules of this task, which formalize Ze80
+The mathematics is in the published modules below, which formalize Ze80
 §6.3, the argument of BZ77 4.15 adapted to segments. Their Markdown files give
 the details.
 
 - `Classification.SegmentSocleProductHomogeneityInduction`
-  (`homogeneous_of_caseTwo`, artifact `b006f56e-c499-4ae3-945e-a842aa52ef74`):
+  (`homogeneous_of_caseTwo`):
   induction on the number of segments. With one segment, Ze80 3.5 (`h35`)
   shows that the only nonzero derivative of positive order of `⟨Δ⟩` is the one
   of order `Δ.rank`, which gives homogeneity. In the step,
@@ -105,8 +101,8 @@ the details.
   mirabolic group has both an injective intertwiner into the whole
   restriction `π|P` (`restrictedProduct`, not `σ`) and an injective
   intertwiner into `τ`.
-- `Classification.SegmentSocleProductCaseTwo` (`caseTwoExclusion`, same
-  artifact): Case 2 cannot occur, that is, `CaseTwoExclusion` holds whenever
+- `Classification.SegmentSocleProductCaseTwo` (`caseTwoExclusion`): Case 2
+  cannot occur, that is, `CaseTwoExclusion` holds whenever
   `π°|P` is homogeneous. Let `W ≠ 0` inject into `π|P` and into `τ`, and let
   `λ°` be the level of the homogeneous `π°|P`. By Ze80 5.3 (`hH`), `τ` is
   homogeneous of level `λ°`, so `W` has level `λ°`. By the exactness of `Φ⁻`
@@ -127,31 +123,30 @@ the details.
 
 ## Published proof inputs
 
-Every input is an independently accepted, published proof. Module names are
-under `Langlands.Representation`. "Commit" is the Library commit of the first
-publication; all are unchanged in the base `41034879` used here.
+Every input is a published proof. Module names are
+under `Langlands.Representation`. All are unchanged in the base `41034879`
+used here.
 
-| Hypothesis | Theorem (module) | Source | Artifact / task / commit / integration |
-| --- | --- | --- | --- |
-| target | `Classification.SegmentSocleProductHomogeneity` (`Classification.SegmentSocleProductHomogeneityStatement`) | Ze80 6.2 | statement `67f113f2-8b01-4004-ac08-c37879d759dc` / `819a0526` / `64f062d4` / `5f4fd3ec`, Reviewer 4644 |
-| assembly | `Classification.segmentSocleProductHomogeneity_of` (`Classification.SegmentSocleProductHomogeneityAssembly`) | Ze80 6.3 | `54e7626d-0319-42a7-bb1e-01a603b6458a` / `b711af72` / `8bffffb6` / `a51e493f` |
-| `hE` | `Derivative.Mirabolic.minusExactness` (`Derivative.MirabolicMinusExactnessProof`) | exactness of `Ψ⁻`, `Φ⁻` (BZ77 3.2) | `d307cd07-7e0f-4e38-a3d5-94b78bb3a7d6` / `b65bc667` / `9a8ca758` / `d20a668c` |
-| `hS` | `Derivative.MirabolicProductMinus.rightPhiShortExact` (`Derivative.MirabolicProductMinusRightPhi`) | BZ77 4.13(c) | `5449db58-f9bb-4e02-a2a2-96b83f3984ba` / `6cd54f76` / `00315d47` / `9e1415c1` |
-| `hB` | `Derivative.MirabolicProductMinus.rightPhiBoundary` (`Derivative.MirabolicProductMinusRightBoundary`) | BZ77 4.13(c), `P_1` boundary | `58a3c341-c399-4caa-ba3c-d78fc5619b90` / `6cd54f76` / `b22e1857` / `59d5e1e9` |
-| `hD` | `Derivative.rightMixedProductPhiMinusDetection` (`Derivative.RightMixedProductPhiMinusDetectionProof`) | BZ77 4.13(d) | `a07ed51f-f4b9-447c-9da8-cecaed53a506` / `f8acf579` / `9a8ca758` / `d12107eb` |
-| `hLD` | `Derivative.leftMixedProductDerivative` (`Derivative.LeftMixedProductDerivativeProof`) | BZ77 4.14(a) | `e99bbe1b-06fe-42ad-b8ec-d1c4e02c9929` / `7e19f753` / `b4b4160d` / `553698f2` |
-| `hH` | `Derivative.leftMixedProductHomogeneity` (`Derivative.LeftMixedProductHomogeneityProof`) | Ze80 5.3 | `e183909c-e3a3-4843-b1b4-dd3700a47c37` / `6bb62ea4` (r2) / `da0312e3` / `baae4a1f` |
-| `h35` | `Classification.segmentSocleDerivatives` (`Classification.SegmentSocleDerivativesProof`) | Ze80 3.5 | `ac220f41-e7d4-4c9f-951f-0ff12e51412f` / `209027ca` / `e530d1eb` / `b202a6bd` |
-| `hF` | `Classification.segmentSocleProductHighestDerivative` (`Classification.SegmentSocleProductHighestDerivativeProof`) | highest derivative of a segment-socle product (Ze80 3.5, BZ77 4.6) | `cf12542e-ed32-4ef1-b46d-48e47a342d5e` / `4e152d19` / `286dd3b7` / `6c5cb54e` |
-| `hC` | `Classification.cuspidalProductMirabolicSupportShift` (`Classification.CuspidalProductMirabolicSupportShiftProof`) | BZ77 4.7(b), as used in Ze80 4.4–4.5 | `4b8c7a7c-baaf-4fb3-bb60-213389f02470` / `0b3bf4c1` / `9a8ca758` / `19323125` |
+| Hypothesis | Theorem (module) | Source |
+| --- | --- | --- |
+| target | `Classification.SegmentSocleProductHomogeneity` (`Classification.SegmentSocleProductHomogeneityStatement`) | Ze80 6.2 |
+| assembly | `Classification.segmentSocleProductHomogeneity_of` (`Classification.SegmentSocleProductHomogeneityAssembly`) | Ze80 6.3 |
+| `hE` | `Derivative.Mirabolic.minusExactness` (`Derivative.MirabolicMinusExactnessProof`) | exactness of `Ψ⁻`, `Φ⁻` (BZ77 3.2) |
+| `hS` | `Derivative.MirabolicProductMinus.rightPhiShortExact` (`Derivative.MirabolicProductMinusRightPhi`) | BZ77 4.13(c) |
+| `hB` | `Derivative.MirabolicProductMinus.rightPhiBoundary` (`Derivative.MirabolicProductMinusRightBoundary`) | BZ77 4.13(c), `P_1` boundary |
+| `hD` | `Derivative.rightMixedProductPhiMinusDetection` (`Derivative.RightMixedProductPhiMinusDetectionProof`) | BZ77 4.13(d) |
+| `hLD` | `Derivative.leftMixedProductDerivative` (`Derivative.LeftMixedProductDerivativeProof`) | BZ77 4.14(a) |
+| `hH` | `Derivative.leftMixedProductHomogeneity` (`Derivative.LeftMixedProductHomogeneityProof`) | Ze80 5.3 |
+| `h35` | `Classification.segmentSocleDerivatives` (`Classification.SegmentSocleDerivativesProof`) | Ze80 3.5 |
+| `hF` | `Classification.segmentSocleProductHighestDerivative` (`Classification.SegmentSocleProductHighestDerivativeProof`) | highest derivative of a segment-socle product (Ze80 3.5, BZ77 4.6) |
+| `hC` | `Classification.cuspidalProductMirabolicSupportShift` (`Classification.CuspidalProductMirabolicSupportShiftProof`) | BZ77 4.7(b), as used in Ze80 4.4–4.5 |
 
 BZ77 4.13(a) is not a hypothesis of the assembly. The assembly uses the
 published proof `Derivative.mirabolicProductRestriction` (module
-`Derivative.MirabolicProductRestriction`, task `a1d00661`).
+`Derivative.MirabolicProductRestriction`).
 
-The proof of `hE` belongs to task `b65bc667-6951-4bd5-82af-10fb7046df7f`,
-which is under user controls. It is imported only after its publication and is
-used unchanged. This task did not prove, replace or bypass it.
+The proof of `hE` (`Derivative.MirabolicMinusExactnessProof`) is imported as
+published and used unchanged. This module does not prove, replace or bypass it.
 
 ## Normalization and sources
 
@@ -159,8 +154,7 @@ The derivative, the mirabolic functors and the normalized products are the
 published ones, with their determinant normalization at exponent `-1/2`. This
 module and the assembly make no comparison between that normalization and a
 Haar modulus. Such comparisons occur only inside published inputs. They rest on
-the independently published `Group.GL.MirabolicModulusProof` (artifact
-`f25fdd6c-d842-40be-b220-92bda8715865`, task `f947a735`), as recorded in the
+the published `Group.GL.MirabolicModulusProof`, as recorded in the
 Markdown of `hF` and `h35`. No new normalization assertion is assumed.
 
 Registered originals (read at the cited pages):
@@ -207,8 +201,8 @@ only for definitions or by unused neighbouring declarations. It was run against
 Library commit `4103487976e26033768519d7c8e53adf6d10c898`.
 
 - The transitive project import closure has 1,227 modules: this module and
-  1,226 published modules. The workspace copies of all 1,226 Lean and Markdown
-  files are byte-identical to that commit. Every closure module has a nonempty
+  1,226 published modules. The copies of all 1,226 Lean and Markdown
+  files checked here are byte-identical to that commit. Every closure module has a nonempty
   paired Markdown file.
 - The closure has 316 external import roots, all from Lean core and Mathlib.
 - The closure is the union of the closures of the direct imports and this
@@ -245,8 +239,8 @@ Closure modules by top-level namespace (relative to `Langlands`; total 1,227):
 | `Combinatorics` | 1 | `Representation.Dual` | 1 |
 | `Representation.OrbitSpan` | 1 | `Representation.SubrepresentationLattice` | 1 |
 
-Twenty-two closure modules have no artifact manifest of their own. One is this
-module. Eighteen are the relocated infrastructure modules listed in the
+Twenty-two closure modules were not published as a statement, proof or
+definition of their own. One is this module. Eighteen are the relocated infrastructure modules listed in the
 Markdown of `h35` (`Group.GL.{BlockScalarCenter, OneBlockShape, RankReindex,
 ReindexCongr, Transvection}`, `HarmonicAnalysis.{FiniteProductMeasureScaling,
 PadicLatticeTopology}`, `Representation.Compact.OrbitMeanTranslation`,
@@ -256,11 +250,11 @@ PadicLatticeTopology}`, `Representation.Compact.OrbitMeanTranslation`,
 `Representation.Parabolic.{InducedMapSurjectivity, OppositeJacquetMap}`,
 `Representation.Smooth.Transfer.GroupEquivalence`,
 `Representation.Tensor.OneFactor`, `Topology.CompactNormCharacter`). The other
-three were also relocated by the Integrator without changing declarations:
+three were also relocated in the Library without changing declarations:
 `Group.LeftQuotient` (generic left cosets, from `Induction.Definitions` and the
 quotient-measure modules), `Algebra.MultisetOfFn` (one multiset identity) and
 `Classification.SegmentProductCuspidalMembers` (ordered cuspidal members of a
-segment product). The last two come from this task's published
+segment product). The last two come from the published
 `SegmentProductCuspidalEmbedding`.
 
 ### Modules beyond the closure of `hF`
@@ -271,36 +265,36 @@ The complete difference is the following 25 modules. All except this module are
 published; names are relative to `Langlands.Representation` unless they begin
 with `Langlands.`.
 
-| Module | Content | Origin (artifact / task) |
-| --- | --- | --- |
-| `Langlands.Algebra.MultisetOfFn` | multiset of `List.ofFn` as a sum of singletons | relocated from `5440c02b` |
-| `Classification.IrreducibleProductFiniteLengthProof` | finite length of products of irreducibles | `41a8585c` / `0717fd42` |
-| `Classification.SegmentContentShift` | cuspidal content of a segment and its shift; `not_map_twist_le` | `5440c02b` (this task) |
-| `Classification.SegmentCuspidalContent` | definition of the cuspidal content of a multisegment | `09d34c08` (definition) |
-| `Classification.SegmentProductCuspidalEmbedding` | embedding of a segment-socle product into a cuspidal product | `5440c02b` (this task) |
-| `Classification.SegmentProductCuspidalMembers` | ordered cuspidal members of a segment product | relocated from `5440c02b` |
-| `Classification.SegmentSocleProductCaseTwo` | Case 2 of Ze80 6.3 | `b006f56e` (this task) |
-| `Classification.SegmentSocleProductHomogeneityAssembly` | the conditional assembly | `54e7626d` (this task) |
-| `Classification.SegmentSocleProductHomogeneityInduction` | the induction on the number of segments | `b006f56e` (this task) |
-| `Classification.SegmentSocleProductHomogeneityProof` | this module | this candidate |
-| `Classification.SegmentSocleProductHomogeneityStatement` | the target | `67f113f2` / `819a0526` |
-| `Derivative.LeftMixedProductHomogeneityProof` | Ze80 5.3 | `e183909c` / `6bb62ea4` |
-| `Derivative.LeftMixedProductHomogeneityStatement` | Ze80 5.3 statement | `1e101502` (statement) |
-| `Derivative.LeftMixedProductPhiHatIterate` | left mixed product and iterated `Φ̂⁺` | `ac76e357` (definition) |
-| `Derivative.MirabolicDerivativeUnitInjective` | injectivity of the derivative unit | `bab82164` (definition) |
-| `Derivative.MirabolicMinusNormalization` | normalization of `Ψ⁻` | `149ed2a1` (definition) |
-| `Derivative.MirabolicPlusNormalization` | normalization of `Φ⁺` | `cc091205` (definition) |
-| `Derivative.MirabolicSmoothPhiPlus` | smooth induction `Φ̂⁺` (BZ77 1.8) | `2546568e` (definition) |
-| `Derivative.MirabolicSmoothPhiPlusAdjunction` | `Φ⁻ ⊣ Φ̂⁺` | `567eec05` (definition) |
-| `Derivative.MirabolicSmoothPhiPlusIterate` | iterated adjunction | `2a7f2b35` (definition) |
-| `Derivative.MirabolicSmoothPhiPlusProduct` | left `Φ̂⁺` embedding of products | `ea098c88` (definition) |
-| `Derivative.RestrictedProductLevel` | Case 1 and the case split | `6ded142e` (this task) |
-| `Derivative.RestrictionBridge` | GL restriction and mirabolic levels | `6ded142e` (this task) |
-| `Derivative.RightMixedLevel` | levels of right mixed products | `6ded142e` (this task) |
-| `Derivative.RightMixedProductPhiMinusDetectionProof` | BZ77 4.13(d) | `a07ed51f` / `f8acf579` |
+| Module | Content |
+| --- | --- |
+| `Langlands.Algebra.MultisetOfFn` | multiset of `List.ofFn` as a sum of singletons |
+| `Classification.IrreducibleProductFiniteLengthProof` | finite length of products of irreducibles |
+| `Classification.SegmentContentShift` | cuspidal content of a segment and its shift; `not_map_twist_le` |
+| `Classification.SegmentCuspidalContent` | definition of the cuspidal content of a multisegment |
+| `Classification.SegmentProductCuspidalEmbedding` | embedding of a segment-socle product into a cuspidal product |
+| `Classification.SegmentProductCuspidalMembers` | ordered cuspidal members of a segment product |
+| `Classification.SegmentSocleProductCaseTwo` | Case 2 of Ze80 6.3 |
+| `Classification.SegmentSocleProductHomogeneityAssembly` | the conditional assembly |
+| `Classification.SegmentSocleProductHomogeneityInduction` | the induction on the number of segments |
+| `Classification.SegmentSocleProductHomogeneityProof` | this module |
+| `Classification.SegmentSocleProductHomogeneityStatement` | the target |
+| `Derivative.LeftMixedProductHomogeneityProof` | Ze80 5.3 |
+| `Derivative.LeftMixedProductHomogeneityStatement` | Ze80 5.3 statement |
+| `Derivative.LeftMixedProductPhiHatIterate` | left mixed product and iterated `Φ̂⁺` |
+| `Derivative.MirabolicDerivativeUnitInjective` | injectivity of the derivative unit |
+| `Derivative.MirabolicMinusNormalization` | normalization of `Ψ⁻` |
+| `Derivative.MirabolicPlusNormalization` | normalization of `Φ⁺` |
+| `Derivative.MirabolicSmoothPhiPlus` | smooth induction `Φ̂⁺` (BZ77 1.8) |
+| `Derivative.MirabolicSmoothPhiPlusAdjunction` | `Φ⁻ ⊣ Φ̂⁺` |
+| `Derivative.MirabolicSmoothPhiPlusIterate` | iterated adjunction |
+| `Derivative.MirabolicSmoothPhiPlusProduct` | left `Φ̂⁺` embedding of products |
+| `Derivative.RestrictedProductLevel` | Case 1 and the case split |
+| `Derivative.RestrictionBridge` | GL restriction and mirabolic levels |
+| `Derivative.RightMixedLevel` | levels of right mixed products |
+| `Derivative.RightMixedProductPhiMinusDetectionProof` | BZ77 4.13(d) |
 
 These are mixed-product and mirabolic infrastructure, the Ze80 5.3 and BZ77
-4.13(d) proofs, this task's published helper and assembly modules, and one
+4.13(d) proofs, the published helper and assembly modules of this proof, and one
 general finite-length theorem. None proves a classification, exhaustion,
 irreducibility criterion or linked-pair result. Removing also the closures of
 `h35`, `hF` and the assembly leaves only this module and the `hH`/`hD` modules
@@ -311,81 +305,80 @@ and `RightMixedProductPhiMinusDetectionProof`.
 
 ## Independence audit
 
-### Owners of closure modules
+### Excluded results with modules in the closure
 
-For every published artifact whose entry module or listed repository path lies
-in the closure, its owning task was compared with the 18 exclusions of this
-task, the related tasks `e3634665`, `cded83f3` (`AdjacentUnlinkedSegmentSocleSwap`),
-`426911b4`, `66e3b87c` (`TwoSegmentSocleCommutation`), the linked-pair tasks
-`a55c4267`, `8fa9f68b`, `7ff2a1e9` (with successors `0c90f7e4`, `ba6ec030`),
-`c84cd52c`, `6780b79c`, the later units `f81d9b36`, `60b25b28`, `6c126713`, and
-the nonadjacent-consumer exclusions listed below. Proof artifacts give 246
-owning tasks. Among the 18 exclusions of this task, the only owner is
-`8252833d`: its module `Classification.SegmentProductPermutation` (definition
-artifact `0095a4c4`, also an auxiliary file of its proof artifact `b61f2ca8`) is
-in the statement chain of `h35`/`hF`, and no declaration of it is used (below).
-No linked-pair, swap, commutation or later-unit task owns a closure module.
-The remaining owner hits are nonadjacent-consumer exclusions, treated in the
-next subsection.
+For every published proof with a module in the closure (its main module or
+a listed file), the result it proves was compared with the 18 exclusions of
+this proof, with
+`AdjacentUnlinkedSegmentSocleSwap` and `TwoSegmentSocleCommutation`, with the
+linked-pair results (`LinkedSegmentSocleReverseProductStructure`,
+`LinkedSegmentSoclePairReducible`, `JuxtaposedSegmentSocleReverseProductStructure`
+and `LinkedSegmentSocleReverseProductQuotientHom` with their proofs,
+`LinkedSegmentSocleGluing`), with the later statements (c), (d), (e) of
+`SegmentSocleDerivativesStatement`, and with the nonadjacent-consumer
+exclusions listed below. Among the 18 exclusions of this proof, the only one
+hit is ordered special-segment conversion: its module
+`Classification.SegmentProductPermutation` (a definition module, also an
+auxiliary file of the proof of that result) is in the statement chain of
+`h35`/`hF`, and no declaration of it is used (below). No proof of a
+linked-pair, swap, commutation or later statement has a module in the
+closure. The remaining hits are nonadjacent-consumer exclusions, treated in
+the next subsection.
 
-Definition artifacts record no owning task. Those published under excluded
-tasks are the generic modules of the following table, as already audited in the
-Markdown of `h35` and `hF`. Declaration counts are from the declaration audit
-below.
+Definition modules are not tied to a proof in this comparison. The generic
+definition modules that belong to excluded results are those of the
+following table, as already audited in the Markdown of `h35` and `hF`.
+Declaration counts are from the declaration audit below.
 
-| Module (under `Langlands.Representation`, except `Combinatorics`) | Artifact / publishing task | How reached | Declarations used |
+| Module (under `Langlands.Representation`, except `Combinatorics`) | Belongs to | How reached | Declarations used |
 | --- | --- | --- | --- |
-| `Classification.TrivialGroupQuotient` | `1e56ed7e` / `20e4e1c6` | statement chain of `h35`/`hF` | 0 |
-| `Classification.SegmentProductPermutation` | `0095a4c4` / `8252833d` | statement chain of `h35`/`hF` | 0 |
-| `Classification.OrderedMultisegmentHeadReduction` | `6529dc85` / `ebea9a8a` | statement chain of `h35`/`hF` | 0 |
-| `Classification.SegmentSocleProductData` | `29cea4fd` / `f3a69bc8` | statement chain of `h35`/`hF` | 0 |
-| `Classification.SingletonSegmentSocle` | `8aac8ad9` / `f3a69bc8` | statement chain of `h35`/`hF` | 19: rank casts `castRank`, `castRankEquiv`, `isIrreducible_castRank`, `normalizedProductRankCastIso`, and `singletonSegmentInducedEquiv` (with their auxiliary proofs) |
-| `Combinatorics.RelationInversions` | `9e971abc` / `f3a69bc8` | inside `h35` | 6: `relationInversions`, `relationPairCount` and equation lemmas |
-| `Filtration.ObjectTransport` | `68054cb0` / `f3a69bc8` | inside the assembly, `hH`, `h35`, `hF` | 13: `ObjectRepFiltration.comp`, `compGradedEquiv`, `equivTransportGradedEquiv` |
-| `Tensor.FiniteFiltration` | `1529e866` / `f3a69bc8` | inside the assembly, `hH`, `hF` | 4: `FiniteTensor.slotEquiv`, auxiliary proofs of `FiniteTensor.congrEquiv` |
-| `Filtration.SingletonIso` | `3ee88231` / `8364e73f` | inside `hF` | 7: `RepFunctorFiltration.lengthOneGradedIso` |
-| `Induction.EmptyProductUnit` | `273c225f` / `8364e73f` | inside `hF` | 14: empty-product evaluation and unit isomorphisms |
-| `Classification.CuspidalProductDerivativeQuotientSupport` | `bf38b454` / `f81d9b36` | inside `h35`, `hF`, `hC` | 57: quotient form of BZ77 4.7(a) inside the BZ77 4.7(b) proof |
-| `Classification.RegularLanglandsHeadReduction` | `1c0aecf1` (definition) | inside `h35` | 1: generic `RegularHeadExistence.nontrivial_normalizedProductInduction` |
+| `Classification.TrivialGroupQuotient` | quotient coverage | statement chain of `h35`/`hF` | 0 |
+| `Classification.SegmentProductPermutation` | ordered special-segment conversion | statement chain of `h35`/`hF` | 0 |
+| `Classification.OrderedMultisegmentHeadReduction` | ordered special-head existence | statement chain of `h35`/`hF` | 0 |
+| `Classification.SegmentSocleProductData` | socle exhaustion | statement chain of `h35`/`hF` | 0 |
+| `Classification.SingletonSegmentSocle` | socle exhaustion | statement chain of `h35`/`hF` | 19: rank casts `castRank`, `castRankEquiv`, `isIrreducible_castRank`, `normalizedProductRankCastIso`, and `singletonSegmentInducedEquiv` (with their auxiliary proofs) |
+| `Combinatorics.RelationInversions` | socle exhaustion | inside `h35` | 6: `relationInversions`, `relationPairCount` and equation lemmas |
+| `Filtration.ObjectTransport` | socle exhaustion | inside the assembly, `hH`, `h35`, `hF` | 13: `ObjectRepFiltration.comp`, `compGradedEquiv`, `equivTransportGradedEquiv` |
+| `Tensor.FiniteFiltration` | socle exhaustion | inside the assembly, `hH`, `hF` | 4: `FiniteTensor.slotEquiv`, auxiliary proofs of `FiniteTensor.congrEquiv` |
+| `Filtration.SingletonIso` | special-head product criterion | inside `hF` | 7: `RepFunctorFiltration.lengthOneGradedIso` |
+| `Induction.EmptyProductUnit` | special-head product criterion | inside `hF` | 14: empty-product evaluation and unit isomorphisms |
+| `Classification.CuspidalProductDerivativeQuotientSupport` | support-shift theorem (c) | inside `h35`, `hF`, `hC` | 57: quotient form of BZ77 4.7(a) inside the BZ77 4.7(b) proof |
+| `Classification.RegularLanglandsHeadReduction` | regular exhaustion (definition module) | inside `h35` | 1: generic `RegularHeadExistence.nontrivial_normalizedProductInduction` |
 
 The statement chain of `h35`/`hF` also reaches the statement module
-`Classification.MultisegmentClassificationStatement` (`0baefc8e`). It names
+`Classification.MultisegmentClassificationStatement`. It names
 `OrderedMultisegmentSocleExistence` and `SquareIntegrableLanglandsClassification`
 only as proposition definitions; no declaration of it is used. The statement
 modules `OrderedSegmentSquareIntegrableConversionStatement`,
 `RegularLanglandsStatement` and `TemperedBlockStatement` are in the closure,
-and none of their declarations is used either. The operator responses
-`2b34e4035a5b5dafad7ad84d5a8c0dd8` and `10df3136f50c5901b1061d52c6b92e07`,
-recorded in the Markdown of `h35` and `hF`, distinguish such generic
-infrastructure from the excluded conclusions and allow the BZ77 4.7(b) closure.
+and none of their declarations is used either. As recorded in the Markdown of
+`h35` and `hF`, such generic infrastructure is distinguished from the excluded
+conclusions, and the BZ77 4.7(b) closure is used.
 
 ### Detection and the nonadjacent-consumer restrictions
 
-The task context carries the restrictions of the general detection unit and its
-nonadjacent-product consumer (task `3c9849a4`), including the operator
-conditions in correspondence `bd71b9185aab5d6eafffb7891bd3a3ca`. They bind
-detection, its prerequisites and that consumer, and "do not prohibit the
-separately specified Ze80 5.4/6.2 arguments in their respective consumers".
-The objective of this task names Ze80 3.5 as an input of 6.3.
+The general detection result and its nonadjacent-product consumer
+(`Classification.TwoSupercuspidalNonadjacentIrreducibilityProof`) come with
+restrictions on what may be used. They bind detection, its prerequisites and
+that consumer, and do not prohibit the separately specified Ze80 5.4/6.2
+arguments in their respective consumers. Ze80 6.3 uses Ze80 3.5 as an input.
 
-- The general detection unit is `Derivative.MirabolicDerivativeDetectionProof`
-  (`mirabolicDerivativeDetection`, artifact `3ace613e`, task `ed056880`). It is
+- The general detection result is `Derivative.MirabolicDerivativeDetectionProof`
+  (`mirabolicDerivativeDetection`). It is
   used, through the assembly, `h35`, `hC`, `hD`, `hF` and `hH`. Its closure
   has 78 modules: no segment, socle or Jacquet-formula module, and no module
-  owned by an excluded task. So the detection restrictions hold.
-- The nonadjacent-product proof (`98cc1114`, task `3c9849a4`) has a closure of
+  that belongs to an excluded result. So the detection restrictions hold.
+- The nonadjacent-product proof has a closure of
   657 modules. Its only segment module is `Classification.Segments`; its only
-  module owned by a nonadjacent-consumer exclusion is the generic
+  module that belongs to a nonadjacent-consumer exclusion is the generic
   `Classification.CuspidalIntegralTwistFreenessProof`.
-- The modules of tasks named in the nonadjacent-consumer list enter this closure
+- The modules of results named in the nonadjacent-consumer list enter this closure
   only through `h35` (Ze80 3.5) and `hF`, which imports `h35`:
-  the proofs of `segmentSocleJacquetFormula` (`dbcb1209`, task `b95105c6`,
-  with `SegmentSocleJacquetReduction`), `segmentFullJacquetFormula`
-  (`f2c2886a`, task `b331611c`), `segmentZelevinskyConstituentExistence`
-  (`7172c4a6`, task `4ca79bbd`), the two-supercuspidal structure
-  (`f10f67f3` and `cc7183bf`, task `ab61f565`), the nonadjacent irreducibility
-  (`98cc1114`, task `3c9849a4`, with `TwoSupercuspidalDerivativeBridge` and
-  `NonadjacentAssembly`), and the task `67279e36` modules
+  the proofs of `segmentSocleJacquetFormula` (with
+  `SegmentSocleJacquetReduction`), `segmentFullJacquetFormula`,
+  `segmentZelevinskyConstituentExistence`, the two-supercuspidal structure,
+  the nonadjacent irreducibility (with `TwoSupercuspidalDerivativeBridge` and
+  `NonadjacentAssembly`), and the modules
   `CommonImageMultiplicityOneProof`, `CuspidalJacquetFunctorExactnessProof`,
   `MultiplicityOneConstituentProof`, `SegmentInductionAdmissibilityProof`,
   `SegmentJacquetMultiplicityProof`, `SegmentTensorReversalProof`,
@@ -394,21 +387,22 @@ The objective of this task names Ze80 3.5 as an input of 6.3.
   `Filtration.SimpleMapMultiplicityDetectionProof`. The Markdown of `h35`
   audits these inputs.
 - One exception: `Classification.CuspidalIntegralTwistFreenessProof`
-  (`a7545313`, task `67279e36`) is also used directly, by this task's
+  (published together with the modules just listed) is also used directly, by
   `SegmentSocleProductCaseTwo`. Its theorem `cuspidalIntegralTwistFreeness`
   says only that `ρ ν^k ≅ ρ` forces `k = 0` for a supercuspidal `ρ`
   (central-character argument). It contains no special-head or reverse-socle
   existence result.
-- No module of `ed48ae06`, `55ad1e10`, `92aea10f`, `aca8805b` or `5eece9e8` is
-  in the closure.
+- No module of the analytic segment classification, of the forward
+  special-segment essential square-integrability, or of three further results
+  of the nonadjacent-consumer list is in the closure.
 
 ### Declaration audit
 
-A development check (`run_cmd` in a private draft importing this module, not
-part of the candidate) collected every constant reachable from
+A development check (`run_cmd` in a separate file importing this module, not
+part of the Library) collected every constant reachable from
 `Langlands.Classification.segmentSocleProductHomogeneity` through
 `getUsedConstantsAsSet`, transitively through the values and types of all
-constants. Results (check `a0332091-51e8-4c91-8a56-bd0438b248ad`):
+constants. Results:
 
 - 92,910 constants are reachable; 14,904 of them are in 1,027 `Langlands`
   modules.
@@ -450,49 +444,46 @@ constants. Results (check `a0332091-51e8-4c91-8a56-bd0438b248ad`):
   `segmentSocleJacquetFormula`, `segmentFullJacquetFormula`,
   `segmentZelevinskyConstituentExistence`, `twoSupercuspidalProductStructure`,
   `twoSupercuspidalNonadjacentProductIrreducible` and
-  `cuspidalIntegralTwistFreeness` (and the generic lemmas of the `67279e36`
-  modules), all inside `h35` except the last, as stated above.
+  `cuspidalIntegralTwistFreeness` (and the generic lemmas of the
+  multiplicity-one modules listed above), all inside `h35` except the last, as
+  stated above.
 
 ### Exclusion table
 
-| Exclusion of this task (conclusion, proof successors, transitive dependencies) | Result |
+| Exclusion of this proof (conclusion, its proofs, transitive dependencies) | Result |
 | --- | --- |
-| Ordered-socle existence `23189526` (`OrderedMultisegmentSocleExistence`) | No proof dependency; the name occurs only as a proposition definition in `MultisegmentClassificationStatement`, and no declaration of it is used. This task is a lower input of `23189526`; no module of the closure consumes the target. |
-| Socle exhaustion `f3a69bc8` | Only the generic definition modules in the table above. |
-| Analytic segment classification `aca8805b` | Absent. |
-| Segment-socle product irreducibility `23e98d90` | Absent. |
-| Final segment-socle irreducibility criterion `2ae5cbe5` | Absent. |
-| `AdjacentUnlinkedSegmentSocleSwap` (tasks `e3634665`, `cded83f3`) | Absent. |
-| `TwoSegmentSocleCommutation` (tasks `426911b4`, `66e3b87c`) | Absent. |
-| Special-head product criterion `8364e73f` | Only the generic `SingletonIso` and `EmptyProductUnit` (inside `hF`). |
-| Special-head exhaustion `3bfb61fa` | Absent. |
-| Ordered special-head existence `ebea9a8a` | Only the definition module `OrderedMultisegmentHeadReduction` (statement chain of `h35`/`hF`, no declaration used). |
-| Quotient coverage `20e4e1c6` | Only the definition module `TrivialGroupQuotient` (statement chain, no declaration used). |
-| Tempered block uniqueness `52e97845` | Absent; the statement module `TemperedBlockStatement` is present with no declaration used. |
-| `SquareIntegrableLanglandsClassification` / `1cb45da2` | Absent, except the proposition-definition name in `MultisegmentClassificationStatement`. |
-| Square-integrable exhaustion `cd8ab97c` | Absent. |
-| Regular exhaustion `bf433f0a` | Absent; from `RegularLanglandsHeadReduction` only the generic nontriviality lemma above. |
-| `GenericSegmentProductUniqueness` / `30341ae4` | Absent. |
-| Ordered special-segment conversion `8252833d` | Only the definition module `SegmentProductPermutation` (statement chain, no declaration used); the statement module `OrderedSegmentSquareIntegrableConversionStatement` is present with no declaration used. |
-| Forward special-segment essential square-integrability `5eece9e8` | Absent. |
+| Ordered-socle existence (`OrderedMultisegmentSocleExistence`) | No proof dependency; the name occurs only as a proposition definition in `MultisegmentClassificationStatement`, and no declaration of it is used. This proof is a lower input of ordered-socle existence; no module of the closure consumes the target. |
+| Socle exhaustion | Only the generic definition modules in the table above. |
+| Analytic segment classification | Absent. |
+| Segment-socle product irreducibility | Absent. |
+| Final segment-socle irreducibility criterion | Absent. |
+| `AdjacentUnlinkedSegmentSocleSwap` | Absent. |
+| `TwoSegmentSocleCommutation` | Absent. |
+| Special-head product criterion | Only the generic `SingletonIso` and `EmptyProductUnit` (inside `hF`). |
+| Special-head exhaustion | Absent. |
+| Ordered special-head existence | Only the definition module `OrderedMultisegmentHeadReduction` (statement chain of `h35`/`hF`, no declaration used). |
+| Quotient coverage | Only the definition module `TrivialGroupQuotient` (statement chain, no declaration used). |
+| Tempered block uniqueness | Absent; the statement module `TemperedBlockStatement` is present with no declaration used. |
+| `SquareIntegrableLanglandsClassification` | Absent, except the proposition-definition name in `MultisegmentClassificationStatement`. |
+| Square-integrable exhaustion | Absent. |
+| Regular exhaustion | Absent; from `RegularLanglandsHeadReduction` only the generic nontriviality lemma above. |
+| `GenericSegmentProductUniqueness` | Absent. |
+| Ordered special-segment conversion | Only the definition module `SegmentProductPermutation` (statement chain, no declaration used); the statement module `OrderedSegmentSquareIntegrableConversionStatement` is present with no declaration used. |
+| Forward special-segment essential square-integrability | Absent. |
 | Ze80 6.1(a) and later, linked-pair results, final product criteria, classification | Absent: no linked-pair, gluing, reverse-product or classification theorem is reachable. |
 
-This audit checks mathematical dependencies. Publication of a generic module
-under an excluded task is not treated as use of that task's conclusion, and a
+This audit checks mathematical dependencies. A generic module that belongs to
+an excluded result is not treated as use of that result's conclusion, and a
 statement definition or citation is not treated as a proof.
 
 ## Validation
 
 The Lean source has SHA256
 `84e9e12d67f1356a20d90bda6fc3188fc60ee91d534bd4be819eef919246a29c`.
-`lean_check` in approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(check `73d56957-c9d5-4731-9c76-9ec2980fbdcc`, on the workspace at Library
+`lean_check` (at Library
 commit `41034879`) built the module with zero errors and zero warnings. Inspection of
 `Langlands.Classification.segmentSocleProductHomogeneity` reports universe
 parameters `uF`, `uV` and only the axioms `propext`, `Classical.choice` and
-`Quot.sound`. The file contains no `sorry`, `admit` or new axiom. Compilation
-is not semantic acceptance; publication requires independent review and the
-exact-target check.
+`Quot.sound`. The file contains no `sorry`, `admit` or new axiom.
 
-No code was reused from drafts or from other workers; the module only applies
-published theorems by name.
+The module only applies published theorems by name.

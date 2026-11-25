@@ -32,7 +32,7 @@ The proof is a single application of the reduction
 `SphericalLaurentFunctionalEquationReduction`) to two theorems proved in the Library:
 
 1. `sphericalCorankOneFunctionalEquation : SphericalCorankOneFunctionalEquationStatement`
-   (module `SphericalCorankOneFunctionalEquationProof`, Task 5680). This is the
+   (module `SphericalCorankOneFunctionalEquationProof`). This is the
    functional equation for unitary Satake parameters, `‖x_i‖ = 1`.
 2. `sphericalCorankOneLaurent : SphericalCorankOneLaurentStatement` (module
    `SphericalCorankOneLaurentProof`). It gives the standard L-polynomial, convergence on a

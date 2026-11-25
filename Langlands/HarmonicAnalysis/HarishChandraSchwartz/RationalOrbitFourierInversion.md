@@ -4,12 +4,12 @@ Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitFour
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalSplitCenterFourierInversion`
-  (submitted with this module): `rationalSplitCenterInversionIntegrand`,
+  (ported together with this module): `rationalSplitCenterInversionIntegrand`,
   `integral_rationalSplitCenterInversionIntegrand_eq_zero`,
   `integral_rationalSplitCenterInversionIntegrand`, and through its imports
   `rationalValuationCoordinates`, `rationalUnitaryUnramifiedCharacter_apply` and
   `continuous_torusCharacter`;
-- the published `Representation.Plancherel.RationalOrbitIntegration` (Worker 200): the orbit
+- the published `Representation.Plancherel.RationalOrbitIntegration`: the orbit
   integral `rationalDiscreteSeriesOrbitIntegral` and
   `rationalDiscreteSeriesOrbitIntegral_eq_characterIntegral` (the integral over the orbit is
   `|S|⁻¹` times the integral of the pulled-back function over `Im X(G)`), and through its

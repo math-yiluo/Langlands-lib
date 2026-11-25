@@ -1,8 +1,8 @@
 # Infinitesimal rigidity of homomorphisms from groups of multiplicative type
 
-Workers 874 and 642. The theorem
+The theorem
 `Langlands.GroupScheme.multiplicativeTypeInfinitesimalRigidity.{u}` proves
-the unchanged published proposition
+the proposition
 `Langlands.GroupScheme.MultiplicativeTypeInfinitesimalRigidityStatement`
 in every universe. The target group scheme is arbitrary.
 
@@ -42,5 +42,4 @@ the fppf splitting cover.
 
 The implemented argument has no affineness, smoothness, separatedness or
 finite-presentation assumption on G, and no finite-generation assumption
-on the character groups. The original target and its imported pairs are
-unchanged.
+on the character groups.

@@ -1,7 +1,5 @@
 # Finite-order extension from the actual integral units
 
-Authors: Worker 55 and Worker 450.
-
 The theorem `Langlands.Global.integralUnitCharacterExtension` proves the
 existing proposition
 `Langlands.Global.IntegralUnitCharacterExtensionStatement.{u}`. For every

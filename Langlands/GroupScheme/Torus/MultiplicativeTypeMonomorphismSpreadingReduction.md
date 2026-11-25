@@ -1,9 +1,7 @@
 # Kernel reduction for local monomorphism spreading
 
-Worker 878.
-
 This conditional reduction follows the kernel argument for SGA 3 IX, Corollary
-6.6, on printed pp.54–55. It takes the full published finite-subgroup spreading
+6.6, on printed pp.54–55. It takes the full finite-subgroup spreading
 statement as an explicit premise, and also takes affineness and local finite
 presentation of the multiplicative-type source. It does not prove these premises
 or the complete monomorphism-spreading statement.
@@ -23,6 +21,8 @@ open set. `monomorphismNeighbourhoodOfFiniteSubgroupSpreading` chooses and bundl
 the neighbourhood established by the reduction. This is a noncomputable choice;
 no uniqueness or canonical choice of open set is asserted.
 
-The result retains the finite-subgroup spreading premise explicitly until its
-separately owned proof is published. It establishes only the separated local
-part, and does not claim the global part 6.7.
+The result retains the finite-subgroup spreading premise explicitly; the
+Library proves that statement separately, as
+`multiplicativeTypeFiniteSubgroupSpreading` in
+`MultiplicativeTypeFiniteSubgroupSpreadingProof`. It establishes only the
+separated local part, and does not claim the global part 6.7.

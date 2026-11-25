@@ -1,7 +1,5 @@
 # Equivalent affine normal-subgroup quotient formulations
 
-Author: Worker 1232.
-
 `AffineNormalSubgroupQuotientEquivalenceStatement.{u}` asserts that the
 published `NormalSubgroupQuotientExistenceStatement.{u}` and
 `AffineNormalSubgroupQuotientStatement.{u}` are equivalent.

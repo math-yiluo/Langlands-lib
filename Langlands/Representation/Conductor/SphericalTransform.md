@@ -1,6 +1,6 @@
 # The Laurent-valued corank-one integrand
 
-This internal construction supplies the Laurent-valued integrand on the actual
+This module supplies the Laurent-valued integrand on the actual
 left upper-unipotent quotient used by the corrected essential-vector argument.
 It combines the existing polynomial-valued spherical formula, its homogeneity,
 and the published scalar corank-one integrand. It does not assert an essential
@@ -50,7 +50,7 @@ similarly degree-restricted actual scalar integrand.
 
 The provenance is internal: these are descent and submodule adapters for the
 published concrete definitions and their proved identities. No principal-series
-realization is assumed. This unit does not construct the coefficient integral,
+realization is assumed. This module does not construct the coefficient integral,
 prove integrability or compact support on degree strata, or identify the degree
 with a normalized determinant norm. Those analytic and representation-theoretic
-steps remain separate.
+steps are separate.

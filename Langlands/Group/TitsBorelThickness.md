@@ -1,6 +1,6 @@
 # Three Borel conjugates below a strict overgroup
 
-This internal unit fixes an arbitrary Tits system `(B,N,π,S)` in a group
+This module fixes an arbitrary Tits system `(B,N,π,S)` in a group
 `G`, with independent universes for `G` and its Weyl group. It uses the
 existing `IsTitsSystem` axioms and proved Bruhat and parabolic results.
 No finiteness, saturation, root system, or building realization is assumed.

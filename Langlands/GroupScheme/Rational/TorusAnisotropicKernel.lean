@@ -103,7 +103,7 @@ theorem cocharacter_eq_zero_of_comp_eq_zero
     obtain ⟨ψ, hψ⟩ := hmem
     rw [← hψ]
     change gmEndEquiv E (νE ≫ bc.map q ≫ ψ) = 0
-    rw [← Category.assoc, hνE, Limits.zero_comp, map_zero]
+    rw [← Category.assoc, hνE, Limits.zero_comp, AddEquiv.map_zero]
   have horbit : CocharacterAveraging.galoisOrbitSum k E T νE =
       Fintype.card (E ≃ₐ[k] E) • νE := by
     simp only [CocharacterAveraging.galoisOrbitSum, CocharacterAveraging.orbitSum,

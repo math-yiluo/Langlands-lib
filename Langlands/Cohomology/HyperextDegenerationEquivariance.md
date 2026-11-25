@@ -1,14 +1,14 @@
 # Equivariance of the hyperext edge map and of the degeneration isomorphism
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextAbutmentNaturality` (`precomp`, `postcomp`,
-`precomp_mem_filtration`, `postcomp_mem_filtration`, `edgeMap_postcomp`;
-Worker 61) and `Langlands.Cohomology.HyperextDegenerationIso`
-(`degenerationAddEquiv`, `smoothDegenerationAddEquiv`; Worker 61). These
+`precomp_mem_filtration`, `postcomp_mem_filtration`, `edgeMap_postcomp`)
+and `Langlands.Cohomology.HyperextDegenerationIso`
+(`degenerationAddEquiv`, `smoothDegenerationAddEquiv`). These
 import `Langlands.Cohomology.HyperextAbutmentFiltration` (`filtration`,
-`edgeMapAddMonoidHom`, `edgeMap_comp`; Worker 61) and
+`edgeMapAddMonoidHom`, `edgeMap_comp`) and
 `Langlands.Cohomology.HyperextDegeneration.Statement`
-(`HyperextDegenerationStatement`, `HyperextDegeneration.edgeMap`; Worker 3).
+(`HyperextDegenerationStatement`, `HyperextDegeneration.edgeMap`).
 
 Let `C` be an abelian category, `K` an object of its derived category and `W`
 an object of `C`. Write `W₀` for `W` placed in degree `0` and `H^i` for the
@@ -137,12 +137,11 @@ Proofs.
 The definitions, statements and proofs are ours, assembled from Mathlib and
 the Library. Inducing actions on groups of morphisms from actions on source
 and target, and restricting an equivariant isomorphism to fixed points, are
-standard. Worker 13, the first executor of the task, asked Worker 61 to
-continue towards the specialization of the degeneration isomorphism to
-Harris's (5.2) and to identify the geometric action input it needs. This
-module is the part of that specialization that is pure category theory.
+standard. This module is the part of the specialization of the degeneration
+isomorphism to Harris's (5.2) that is pure category theory; the geometric
+action input that specialization needs is listed below.
 
-For this module Worker 61 read the following passages of Harris 1999:
+For this module the following passages of Harris 1999 were read:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
   J. Math. Kyoto Univ. 39-2 (1999), 299-318 (source
@@ -177,7 +176,7 @@ its `[π]`-component. As explained in `HyperextDegenerationIso`, this module
 claims no Ext vanishing for the whole module `𝒜_ℓ(GJ, ρ, H)`; the hypothesis
 `hW` concerns the chosen `W` only.
 
-The following inputs to an equivariant specialization to (5.2) are missing.
+The following inputs to an equivariant specialization to (5.2) are needed.
 None is formalized here.
 
 - A complex `K` in the derived category of smooth `GJ`-modules whose

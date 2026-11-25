@@ -1,7 +1,7 @@
 # Actual inverse images under a supplied Levi retraction
 
-Worker 1452. This is internal scheme-theoretic preparation for
-`LeviParabolicExtensionStatement`; it does not yet prove parabolicity or the
+This is internal scheme-theoretic preparation for
+`LeviParabolicExtensionStatement`; it does not prove parabolicity or the
 geometric radical assertions of that target.
 
 Over any base scheme, start with actual maps `l : M → P`, `r : U → P`,

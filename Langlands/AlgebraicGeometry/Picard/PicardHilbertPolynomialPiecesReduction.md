@@ -1,7 +1,5 @@
 # Proof of the reduction of the Hilbert-polynomial pieces to cohomology and base change
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Picard.PicardHilbertPolynomialPiecesReduction` proves
 
 ```lean
@@ -24,7 +22,7 @@ So `PicardHilbertPolynomialPiecesStatement` follows from four hypotheses on fibr
 - DH, `ProjectiveRelativeDivisorFibreHilbertStatement`.
 
 Auxiliary declarations live in the namespace
-`Langlands.AlgebraicGeometry.Picard.HilbertPolynomialPieces`. Tensor products, duals `L.dual` and
+`Langlands.AlgebraicGeometry.Picard.HilbertPolynomialPieces`. Tensor products, duals `L.dualFLT` and
 invertibility are those of the FLT port. The fibre notation (`fibreModule`, `fibreCohomology`,
 `fibreCohomologyDim`, `fibreEulerCharacteristic`, `twist`) is that of the hypotheses' modules.
 
@@ -47,7 +45,7 @@ presentation `𝔓` of dimension `N` whose morphism to `ℙᴺ_A` is a closed im
 
 Clause 1 uses an inverse of `L` instead of a chosen dual, so no compatibility of duals with
 pullback is needed. Inverses are unique up to isomorphism (`inverseUniqueIso`), and an inverse
-exists: `L.dual`, by the FLT theorem `IsInvertible.dual_monoidalV2`.
+exists: `L.dualFLT`, by the FLT theorem `IsInvertible.dual_monoidalV2`.
 
 ## General lemmas
 
@@ -89,7 +87,7 @@ exists: `L.dual`, by the FLT theorem `IsInvertible.dual_monoidalV2`.
 1. Twist invariance (`pieceSet_subset_of_iso`, `pieceSet_eq_of_iso`). If `L ≅ L' ⊗ g^*N`,
    then `L(n)` and `L'(n)` have isomorphic fibres, and `M ⊗ g^*N` is an inverse of `L'` with the
    same fibre Euler characteristics as `M`. So `pieceSet L ⊆ pieceSet L'`. The reverse inclusion
-   uses `L' ≅ L ⊗ g^*(N.dual)`.
+   uses `L' ≅ L ⊗ g^*(N.dualFLT)`.
 2. Base change (`pieceSet_baseChange`). The square formed by `pullback.map`, the two second
    projections and `h` is cartesian (`isPullback_baseChange`, by `IsPullback.of_right`), and
    `𝓛` pulls back to the twisting sheaf of `T'` (`twistSheafBaseChangeIso`). FE then gives equal
@@ -97,12 +95,12 @@ exists: `L.dual`, by the FLT theorem `IsInvertible.dual_monoidalV2`.
    that the Euler characteristics agree (`fibreEulerCharacteristic_twist_baseChange`) and so do
    the vanishing conditions (`isZero_fibreCohomology_twist_baseChange`, finiteness from SC).
    Inverses pull back to inverses, and conversely every inverse on `X_{T'}` is isomorphic to the
-   pullback of `L.dual`. So `pieceSet T' = h⁻¹(pieceSet T)`. Both sets are open, so the
+   pullback of `L.dualFLT`. So `pieceSet T' = h⁻¹(pieceSet T)`. Both sets are open, so the
    interiors agree.
 3. Shape. Monotonicity in `m` is immediate, since clause 3 asks for all `n ≥ m`
    (`pieceSet_mono`). Disjointness (`pieceSet_disjoint`): two inverses are isomorphic, so a
    common point determines `φ` and `ψ` at every natural number. Covering
-   (`exists_mem_pieceSet`): take `φ`, `ψ` from PT for `L.dual` and `𝒪`. Take `m` from the
+   (`exists_mem_pieceSet`): take `φ`, `ψ` from PT for `L.dualFLT` and `𝒪`. Take `m` from the
    uniform vanishing of PT and its section clause. The latter applies because the fibre
    `(pullback.snd f s).fiber t` is integral, hence nonempty (Mathlib instances for geometrically
    integral morphisms).

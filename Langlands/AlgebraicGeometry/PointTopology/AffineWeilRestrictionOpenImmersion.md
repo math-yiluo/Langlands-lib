@@ -31,7 +31,7 @@ open-subscheme inclusion equals the existing coordinate morphism
 `affineWeilRestrictionMap_isOpenImmersion` proves that this existing morphism
 is itself an actual open immersion.
 
-This unit supplies the compatibility needed to glue affine pieces. It does not
+This module supplies the compatibility needed to glue affine pieces. It does not
 construct the Weil restriction of a general nonaffine scheme or prove
 quasi-projectivity preservation or a local or adelic topology comparison.
 Those remain separate obligations.

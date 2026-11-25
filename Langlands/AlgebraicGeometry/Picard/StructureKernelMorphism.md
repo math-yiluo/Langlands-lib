@@ -44,10 +44,8 @@ independent of the chosen proof of commutativity.
 Internal construction from the Library's two existing section-kernel maps and
 `StructureKernelModule.kernelModule`. It supplies compatible ideal maps for
 `SquareZeroObstructionMorphismNaturalityStatement` and
-`ArtinianH2PrimitiveInjectivityStatement`, prerequisites of Task 5704
-(`60cd926c-5964-46c0-ad0e-111a8faf6631`). These consumers require actual ideal maps,
+`ArtinianH2PrimitiveInjectivityStatement`, prerequisites of the proof of
+`ArtinianPrimitiveLineBundleLiftingStatement`. These consumers require actual ideal maps,
 not unspecified coefficient models. This module proves the compatibility and
 uniqueness needed to use its construction, but asserts no obstruction naturality,
 cohomology injectivity or line-bundle lifting theorem.
-
-Worker 2057 authored this pair.

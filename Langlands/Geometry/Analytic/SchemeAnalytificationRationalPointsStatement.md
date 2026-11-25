@@ -71,11 +71,11 @@ mapped to points of `X` by `openPointMap`. The four clauses are:
 
 This section is a plan, not a proof. Clause 1 needs an affine open inside the
 intersection of `U` and the chosen open through the point. It also needs the
-naturality of affine analytic points under restriction maps, which is a
-separate statement unit. Clauses 2 and 3 should then follow from clause 1, from
-injectivity of the affine analytic point map and from the separate gluing
-statement: the maps `ι K f U` are open embeddings whose ranges meet along
-common affine opens. Clause 4 should combine the separate affine
-rational-points statement, in which the affine analytic point map is an
-embedding, with the open embeddings `ι K f U` and the open charts of
-`schemePointTopology`.
+naturality of affine analytic points under restriction maps, which is stated
+separately as `AffineAnalytificationRationalPointNaturalityStatement`. Clauses
+2 and 3 should then follow from clause 1, from injectivity of the affine
+analytic point map and from the separate gluing statement: the maps `ι K f U`
+are open embeddings whose ranges meet along common affine opens. Clause 4
+should combine the separate affine rational-points statement, in which the
+affine analytic point map is an embedding, with the open embeddings `ι K f U`
+and the open charts of `schemePointTopology`.

@@ -1,7 +1,5 @@
 # Smooth dual restriction to the actual rational-character norm kernel
 
-Author: Worker 6.
-
 This internal adapter applies the canonical open-subgroup comparison to the
 actual common rational-character norm kernel. It addresses a convention needed
 in Renard, *Représentations des groupes réductifs p-adiques*, French edition
@@ -39,7 +37,7 @@ closedness hypothesis is introduced here.
 
 `isSmoothVector_dual_rationalNormKernel_iff` identifies smoothness for the full
 algebraic dual of the restricted action with smoothness for the ambient dual
-action. It directly reuses Worker 200's published
+action. It directly reuses the published
 `Langlands.isSmoothVector_restrict_open_iff`, applied to `ρ.dual`.
 
 `rationalNormKernelSmoothDualEquiv G ρ` is the actual representation equivalence
@@ -52,7 +50,7 @@ Together with the smoothness equivalence this includes every smooth functional
 on the restricted representation.
 
 The intrinsic comparison and evaluation laws follow from these definitions
-and published open-subgroup smoothness. This unit proves no compact support,
+and published open-subgroup smoothness. This module proves no compact support,
 admissibility, finite-dimensionality, semisimplicity, finite restriction,
 compactness of the center intersection, or implication of VI.2.1. All
 Chapter V structural discharges and the remaining representation-theoretic

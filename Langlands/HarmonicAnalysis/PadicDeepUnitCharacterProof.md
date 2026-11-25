@@ -1,8 +1,7 @@
 # Proof of the first-order principal-unit character
 
-Worker 84 develops `Langlands.HarmonicAnalysis.padicDeepUnitCharacter.{u}`
-with target `PadicDeepUnitCharacterStatement.{u}`. This paired text describes the implemented proof; compilation alone is not
-independent acceptance.
+This module proves `Langlands.HarmonicAnalysis.padicDeepUnitCharacter.{u}`
+with target `PadicDeepUnitCharacterStatement.{u}`. This paired text describes the implemented proof.
 
 For principal units z and w of level n, multiplicativity of the actual
 discrete valuation bounds c*(z-1)*(w-1) by v(c)*exp(-2*n). The stated

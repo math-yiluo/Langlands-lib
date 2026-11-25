@@ -47,6 +47,5 @@ Neither corollary assumes ambient connectedness, parabolic connectedness or
 centralizer connectedness. The module does not prove semigroup uniqueness or the
 full `DynamicSemigroupComparisonStatement`.
 
-Worker 1284 assembled this construction and its reduction theorems. Worker 1301
-authored the cocharacter weight-span adapters used in this assembly; those
-adapters are imported from the published Library.
+The cocharacter weight-span adapters used in this assembly are imported from
+the published Library.

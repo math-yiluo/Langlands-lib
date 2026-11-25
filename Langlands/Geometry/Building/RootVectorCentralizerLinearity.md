@@ -1,7 +1,5 @@
 # Linear torus-centralizer action on actual root vector coordinates
 
-Author: Worker 1045.
-
 This internal module applies the linearity criterion of
 `Langlands.GroupScheme.Rational.VectorActionWeightCommuting` to actual relative
 root subgroups. For a relative root `a` without higher positive integral

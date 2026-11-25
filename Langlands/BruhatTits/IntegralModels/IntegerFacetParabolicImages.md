@@ -12,7 +12,7 @@ incidence direction. It asserts no existence theorem. Its
 schematic-image inclusion into a supplied neutral-special-fibre quotient.
 `HasFacetParabolicOrderBijection` exposes the same bijection and opposite
 inclusion assertion as the local-field `FacetModelData` interface. The
-bijection remains a hypothesis, rather than a theorem of this unit.
+bijection remains a hypothesis, rather than a theorem of this module.
 
 Generic rigidity makes the neutral special-fibre self-comparison the identity,
 without an additional coherence axiom. If the supplied quotient is an actual

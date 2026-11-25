@@ -1,7 +1,5 @@
 # Rank bounds for a supercuspidal seed in a selected centered segment
 
-Author: Worker 1743.
-
 This internal module supplies the rank argument needed by
 `TemperedTwistSupercuspidalPoleStatement`. It does not prove pole existence.
 The content is derived from finite sums of positive block ranks,

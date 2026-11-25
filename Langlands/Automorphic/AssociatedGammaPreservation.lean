@@ -14,7 +14,7 @@ set_option autoImplicit false
 
 universe u uQ uV uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.FunctionalEquationComparison
 open Langlands.Global.CuspidalPairFunctionalEquation
@@ -69,4 +69,4 @@ theorem finiteGammaPreservation_families
     rw [A.localFactors_inr_of_finiteComponent_eq arch h]
     exact meromorphicEq_refl _
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

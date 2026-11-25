@@ -1,8 +1,8 @@
 # Renard VI.9.4 Corollary with the Iwahori hypothesis, from the special-vertex inputs
 
-Worker 432. The two normalized-Jacquet bridge lemmas are renamed copies of Worker 5145's
+The two normalized-Jacquet bridge lemmas are renamed copies of
 `nonzero_fixed_of_nonzero_lift` and `rationalLeviJacquetFixedVectorDetection_of_nonzero_lift`
-(unpublished draft `StandardWeakJacquetDetection`, task e8bd5ada).
+from a module `StandardWeakJacquetDetection` that is not in the Library.
 
 **This module is a conditional reduction. It does not prove
 `Jacquet.StandardIwahoriFixedVectorSubquotientGenerationStatement`.** Its main theorem
@@ -10,14 +10,14 @@ proves that statement, unchanged, from one retained premise:
 `CuspidalSupport.RationalSpecialVertexCompactInputsStatement.{uF}`. Through published
 reductions that premise follows from the joint special-compact basis existence, from
 `BruhatTitsAvailabilityStatement`, and from the Kaletha-Prasad
-`Geometry.Building.GroupAxiomsExistenceStatement`. All three are unproved at this
-Library base. The relative root system (`GroupScheme.relativeRootSystem`) and the
+`Geometry.Building.GroupAxiomsExistenceStatement`. All three are unproved in the
+Library. The relative root system (`GroupScheme.relativeRootSystem`) and the
 norm-kernel finite restriction (`CuspidalSupport.rationalNormKernelFiniteRestriction`)
 are used as the published theorems, not as premises. Unlike the published
 `Jacquet.standardFixedVectorSubquotientGeneration_of_prerequisites`, this module does
 not assume `GeneralizedJacquetLemmaStatement`.
 
-The record entry is the proposition-valued definition
+The entry declaration is the proposition-valued definition
 `Jacquet.standardIwahoriFixedVectorSubquotientGenerationOfSpecialVertexInputs`, whose
 type is this proved implication (see the last section).
 
@@ -95,8 +95,8 @@ Let `N`, `M` be closed subgroups with `M` normalizing `N`, let `K` be compact op
 let `D` be a smooth representation. Assume every nonzero `K ∩ M`-fixed vector of the
 unnormalized Jacquet module forces a nonzero `K`-fixed vector of `D`. Then a nonzero
 `K ∩ M`-fixed vector of the normalized Jacquet module also forces one. The published
-`normalizedFixedVectorsEquiv` identifies the two fixed spaces. (Worker 5145's
-`nonzero_fixed_of_nonzero_lift`, renamed.)
+`normalizedFixedVectorsEquiv` identifies the two fixed spaces. (A renamed copy of
+`nonzero_fixed_of_nonzero_lift`.)
 
 ### `rationalLeviJacquetNonzeroFixedVector_of_lift`
 
@@ -111,8 +111,8 @@ generation by fixed vectors and subquotients. Transitivity places the irreducibl
 `E` as a subquotient of `J(A)`. The Levi rational-point homeomorphism transports
 everything to `L(F)`. `rationalNormKernelFixedVectorDetection` gives a nonzero
 `K ∩ M`-fixed vector of `E`, hence of the normalized Jacquet module of `D` by
-`nonzero_fixed_subquotient`. The previous lemma ends the proof. (Worker 5145's
-`rationalLeviJacquetFixedVectorDetection_of_nonzero_lift`, renamed.)
+`nonzero_fixed_subquotient`. The previous lemma ends the proof. (A renamed copy of
+`rationalLeviJacquetFixedVectorDetection_of_nonzero_lift`.)
 
 ### `Jacquet.standardIwahoriSubquotient_nonzero_fixed_of_specialVertexInputs`
 
@@ -160,12 +160,12 @@ above into generation of every subquotient by its `K`-fixed vectors.
 
 Each of these has the unchanged target as conclusion and remains conditional.
 
-### `Jacquet.standardIwahoriFixedVectorSubquotientGenerationOfSpecialVertexInputs` (record entry)
+### `Jacquet.standardIwahoriFixedVectorSubquotientGenerationOfSpecialVertexInputs` (entry declaration)
 
 A `def` whose type is the proposition
 `CuspidalSupport.RationalSpecialVertexCompactInputsStatement.{uF} →
 Jacquet.StandardIwahoriFixedVectorSubquotientGenerationStatement.{uF, uV}`. Its value is
 the theorem `Jacquet.standardIwahoriFixedVectorSubquotientGeneration_of_specialVertexInputs`.
-It exists only so that the record's entry declaration is a definition, and it adds no
+It exists only so that the module's entry declaration is a definition, and it adds no
 new mathematical notion. `set_option linter.defProp false in` silences the linter that
 asks for `theorem` in place of a proposition-valued `def`.

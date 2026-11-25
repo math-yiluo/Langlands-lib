@@ -1,6 +1,6 @@
 # The algebraic norm of an affine commutative group scheme
 
-Worker 1435. This is derived internal infrastructure. It combines the existing
+This is derived internal infrastructure. It combines the existing
 actual affine Weil restriction, actual scheme-pullback comparison, tensor Galois
 point norm, and affine corepresentation. No external theorem is assumed.
 

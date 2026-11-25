@@ -4,16 +4,13 @@ Module `Langlands.Algebra.NonUnitalModuleCornerInductionComplexScalarsStatement`
 Namespace `Langlands.Algebra.NonUnitalModuleCornerInduction`.
 Entry proposition `ComplexScalarsStatement`.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read I.3.2 on printed pp.19–20 / PDF pp.25–26. The assertion
+I.3.2 on printed pp.19–20 / PDF pp.25–26 was read for this statement. The assertion
 stated here is the remark right after the Lemma (I.3.2.1), printed p.20 /
 PDF p.26:
 
@@ -87,8 +84,9 @@ determines the complex structure. The element `s` is unique because
 
 ## Scope and dependencies
 
-This file states the remark and proves nothing. A proof belongs to a separate
-`lean.proof@1` task targeting `ComplexScalarsStatement`.
+This file states the remark and proves nothing. The proof is the theorem
+`complexScalarsStatement : ComplexScalarsStatement` in
+`NonUnitalModuleCornerInductionComplexScalarsProof`.
 
 The other assertions of I.3.2 are published: the Lemma (I.3.2.1) in
 `NonUnitalModuleCornerInductionStatements`, the Proposition and Theorem in
@@ -96,7 +94,6 @@ The other assertions of I.3.2 are published: the Lemma (I.3.2.1) in
 there.
 
 The file imports only `Langlands.Algebra.NonUnitalModuleCornerInduction`
-(environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`). It uses `tensorAddCommGroup e Z`
+(Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`). It uses `tensorAddCommGroup e Z`
 as an explicit `letI` and does not install the right corner action as a local
 instance; `tmul` already selects it.

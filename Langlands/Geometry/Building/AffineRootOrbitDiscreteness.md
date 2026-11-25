@@ -32,5 +32,3 @@ orbits on the apartment. This group contains the image of the whole normalizer
 (by the field `range_le_extendedAffineWeylGroup` of the Library's apartment
 axioms, AS 5, and `AffineRootSystem.extendedAffineWeylGroup_le_rootStabilizer`).
 The formulation is derived, and no building is involved.
-
-Author: Worker 1221.

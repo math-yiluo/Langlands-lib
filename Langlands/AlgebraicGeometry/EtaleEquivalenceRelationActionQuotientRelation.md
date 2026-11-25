@@ -4,9 +4,9 @@ Module `Langlands.AlgebraicGeometry.EtaleEquivalenceRelationActionQuotientRelati
 the Library modules `EtaleEquivalenceRelationSchemeQuotientMap` and
 `EtaleEquivalenceRelationActionMorphism`.
 
-This module is the second generic bridge module ("Module B") for the first-level step of
-absolute Noetherian approximation (FL task 8d02331e, Workers 706 and 416). Through that step it
-serves this task (Tag 07VS). The FL task has an étale equivalence relation `H` presenting an
+This module is the second generic bridge module for the first-level step of
+absolute Noetherian approximation. Through that step it serves the proof of Tag 07VS. The
+first-level step has an étale equivalence relation `H` presenting an
 algebraic space `X = H.U / H`. It also has a scheme `P` with an étale map `π : P ⟶ H.U` and an
 action of `H` on `P`, so that the quotient `O = P / H` is a scheme étale over `X`. This module
 constructs the étale equivalence relation `O ×_X O` on `O` as the quotient
@@ -161,7 +161,7 @@ Finiteness properties, under the hypotheses named:
 Provenance: derived. In the proof of Stacks, Limits of Algebraic Spaces, Proposition 70.8.1
 (Tag 07SU), `W_i` is a scheme étale over an algebraic space `U_i`, and the proof uses the
 étale equivalence relation `W_i ×_{U_i} W_i` on `W_i` with its two étale projections. In the
-FL task `U_i` is presented by an étale equivalence relation `H` and `W_i` is the quotient
+first-level step `U_i` is presented by an étale equivalence relation `H` and `W_i` is the quotient
 `O = P / H` of an action of `H` on `P = W_i ×_{U_i} H.U`. Then
 `O ×_X O ×_X H.U = P ×_{H.U} P`, so `O ×_X O` is the quotient `(P ×_{H.U} P) / H` of the
 diagonal action. `quotientRelation` constructs this relation directly from scheme quotients,
@@ -173,4 +173,4 @@ relation axioms follow the description of `T`-points of quotients in Lemma 39.20
 `exists_of_exists_local`. The finiteness lemmas give the hypotheses on `R_i` used in the proof
 of 07SU (quasi-compactness of `W_i ×_{U_i} W_i`, finite type over `ℤ`). The packaging
 (`pairAction`, the selected `quotientRelation` with explicit quotients `Q` and `Q₂`) is internal
-and follows the interface agreed with the FL task.
+and follows the interface used in the first-level step.

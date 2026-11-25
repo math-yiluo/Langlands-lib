@@ -1,7 +1,5 @@
 # Flatness at a maximal ideal from bijective truncated comparison maps
 
-Author: Worker 387 (Task 7655).
-
 This helper module is pure commutative algebra. It supplies the local flatness
 criterion used for the chart-flatness proof
 `Langlands.Analytic.AffineAnalytification.affineAnalytificationChartFlat`

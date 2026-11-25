@@ -1,7 +1,5 @@
 # Closed compact-orbit containment of the actual weighted average
 
-Author: Worker 94.
-
 This internal proof development uses compact restrictions of genuine
 derivative coordinates. Each restricted continuous-function space is
 a Banach space, and finite products of these spaces are Banach spaces.

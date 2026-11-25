@@ -1,7 +1,5 @@
 # Embedding coordinates for the Weil-restricted multiplicative group
 
-Worker 207.
-
 This internal adapter takes commutative rings `k`, `K`, and `Ω` in the
 same universe, with `k`-algebra structures on `K` and `Ω`, and an explicit
 proof `h` that `embeddingEvaluation k K Ω` is bijective. The definition

@@ -1,6 +1,6 @@
 # Actual cuspidal Jacquet detection and orthogonality
 
-Worker 137 derives this internal construction and its consequences from the published
+This module derives its internal construction and consequences from the published
 `RationalMinimalJacquetArbitraryCarrier` minimum-cardinality argument,
 irreducible-subquotient existence, exact Jacquet restriction and canonical
 standard-Levi transport. It preserves independent field and representation
@@ -50,8 +50,8 @@ or support-uniqueness premise.
 
 This construction does not prove cuspidal induction support, the
 induction/Jacquet support comparison, a fixed-Levi embedding or geometric
-exclusion for induced inertia-block objects. The unconditional Bernstein
-block characterization remains open. In particular, these orthogonality
+exclusion for induced inertia-block objects. The Library has no unconditional
+proof of the Bernstein block characterization. In particular, these orthogonality
 results concern condition-(iii) classes; identifying them with the original
 Bernstein blocks still requires the missing characterization inputs.
 

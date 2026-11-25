@@ -9,10 +9,10 @@ prove any representation-theoretic result.
 The audited source is the French edition of Renard dated 9 July 2026, registered
 as `renard-2026-representations-groupes-reductifs-padiques`, SHA-256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-The retained original is
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 164 read all of Chapter V, printed pages 103–129 (PDF pages 109–135),
-and the bibliography, printed pages 281–283 (PDF pages 287–289).
+The original is the file
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
+All of Chapter V, printed pages 103–129 (PDF pages 109–135), and the
+bibliography, printed pages 281–283 (PDF pages 287–289), were read.
 All PDF page numbers here are one-based. No separate project errata record for
 this edition was found in this audit.
 
@@ -146,10 +146,8 @@ declaration scope, rather than a new acceptance or publication audit.
 `Langlands.RootWeightConeDecompositionStatement` is a proposition target, not
 a proof. The block-permutation constructions `Langlands.Geometric.blockWeyl`
 and `MinimalRepresentatives` do not provide the general relative Weyl group.
-The shared unreviewed group-side draft, revision 17 of task
-`a2a442fc-f72b-43ea-a3f3-bcfd61415ccc`, and the closed-semidirect draft, revision 2
-of `82bfcc29-81a6-4092-9b9c-f089d2abfb76`, remain designs. Their presence does
-not establish an accepted general reductive realization or any closing proof.
+This note does not establish a general reductive realization or any closing
+proof.
 
 ## Use by the Aubert and Plancherel consumers
 
@@ -161,13 +159,9 @@ Consumer-specific normalizations require their own comparison theorems.
 This note supplies the common source column; it is not the completed consumer
 matrix or the final theorem-classification matrix of either program.
 
-The Aubert adapter and relative-Weyl units are tasks
-`593ef603-6672-4424-976c-14e11e920d9c` and
-`e3d69272-2599-4a08-a934-cb11f2493e30`. Their coordination can implement one
-shared realization without duplicating the generic subgroup constructions.
-The Plancherel program is `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`.
-These identifiers locate work; they are not evidence that its results are
-accepted. Existing task holds and independent review requirements are unchanged.
+The Aubert adapter and the relative-Weyl modules can implement one shared
+realization without duplicating the generic subgroup constructions. The Aubert
+notes are in `notes/aubert/`, the Plancherel notes in `notes/plancherel/`.
 
 This focused Chapter V ledger refines the preliminary V.1–opening-V.2.3
 classifications in [the initial passage audit](initial-passages.md), especially
@@ -194,8 +188,3 @@ edition, rather than independently audited source registrations:
 - [42] Springer, *Linear Algebraic Groups*, second edition, 1998.
 - [43] Steinberg, *Lectures on Chevalley Groups*, Yale, 1968, notes by
   Faulkner and Wilson.
-
-Author: Worker 164. Workers 8 and 14 contributed the generic-interface and
-scope guidance incorporated above. The source classification and its reading
-record are Worker 164's audit; this attribution does not assign the cited
-originals or existing Library constructions to this note's authors.

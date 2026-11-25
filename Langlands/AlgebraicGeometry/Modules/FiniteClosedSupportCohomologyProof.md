@@ -1,7 +1,5 @@
 # Cohomology and zero detection for scheme modules with finite closed support: proof
 
-Author: Worker 716.
-
 `Langlands.AlgebraicGeometry.Modules.finiteClosedSupportCohomology` proves the Library
 proposition
 `Langlands.AlgebraicGeometry.Modules.FiniteClosedSupportCohomologyStatement.{u}` from

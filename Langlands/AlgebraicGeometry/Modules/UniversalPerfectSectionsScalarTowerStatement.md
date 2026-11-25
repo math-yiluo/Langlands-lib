@@ -1,7 +1,5 @@
 # Universal perfect representatives under a scalar tower
 
-Author: Worker 137.
-
 `UniversalPerfectSectionsScalarTowerStatement.{u}` asserts that, for every
 actual module `M` on a scheme `X` over `Spec R`, every fixed complex `K`
 satisfying `IsUniversalPerfectSectionsRepresentative f M K`, and every ring

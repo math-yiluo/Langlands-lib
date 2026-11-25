@@ -27,7 +27,7 @@ and together with the upper bound of `ConductorUpperBound`, `e a = N k - e N ord
 (`period_mul_eq_of_stratum`). With `ψ` of conductor `𝔬_K` and `t = ϖ⁻¹`, this is
 `a = N (1 + k/e)`.
 
-This is piece LB of the analytic part of the proof of T2 (Task 7683).
+This is the lower bound of the analytic part of the proof of T2 (applied in `ConductorFormula`).
 -/
 
 noncomputable section
@@ -184,7 +184,7 @@ theorem exists_list_of_stratum
         map_mul, Module.End.mul_apply]
       rwa [smoothContragredient_inv_apply] at hf
 
-/-- **The lower bound for the exponent** (piece LB). Under the hypotheses of
+/-- **The lower bound for the exponent**. Under the hypotheses of
 `exists_list_of_stratum`, assume moreover that no power `β^i` of `β = t⁻¹ b'` lies in
 `𝔓^{1-ik}(𝓛)`, and that `h ↦ ℓ(σ(h) w)` vanishes outside the scalar saturation of a compact
 set `C ⊆ GL_{n+1}(K)`. Then `N k - e N ord(t) ≤ e a`, where `N = n + 1` and `e` is the period
@@ -259,9 +259,9 @@ theorem le_period_mul_of_stratum
       push_cast
       ring
 
-/-- **The exponent of the functional equation** (pieces UB and LB). Under the hypotheses of
-`le_period_mul_of_stratum`, `e a = N k - e N ord(t)`, where `N = n + 1` and `e` is the period
-of `𝓛`. -/
+/-- **The exponent of the functional equation** (the upper and lower bounds). Under the
+hypotheses of `le_period_mul_of_stratum`, `e a = N k - e N ord(t)`, where `N = n + 1` and `e` is
+the period of `𝓛`. -/
 theorem period_mul_eq_of_stratum
     (ψ : UnitaryAdditiveCharacter K.Carrier) (ν : AdditiveHaarMeasure K.Carrier)
     [SigmaFinite ν.measure]

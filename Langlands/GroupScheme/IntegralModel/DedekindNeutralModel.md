@@ -1,6 +1,6 @@
 # Affine neutral models over a Dedekind base
 
-This internal unit extends the published DVR model assembly to a Dedekind
+This module extends the published DVR model assembly to a Dedekind
 base under explicit integrality and geometric connectedness hypotheses on
 the generic group. It uses the represented relative identity component,
 not a connectedness assertion about every fibre of the original model.

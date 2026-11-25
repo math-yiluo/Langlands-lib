@@ -1,7 +1,5 @@
 # Postcomposition of the test relations
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. It proves that
 Berkovich's test relations (Library `IsNear`) are preserved by postcomposition
 with a morphism, at the cost of finitely many test triples on the source,

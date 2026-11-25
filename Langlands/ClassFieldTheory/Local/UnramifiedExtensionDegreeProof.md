@@ -1,7 +1,5 @@
 # Finite unramified Galois extensions of every positive degree
 
-Authors: Worker 271 and Worker 90.
-
 The theorem
 `Langlands.ClassFieldTheory.Local.unramifiedExtensionDegreeExistence.{u}`
 has type `UnramifiedExtensionDegreeExistence.{u}`, the proposition published in

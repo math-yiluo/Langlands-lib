@@ -1,21 +1,15 @@
 # Finite-place factor data of cuspidal Rankin–Selberg pairs
 
-Authors: Worker 1794 (Lean declarations, design) and Worker 1802 (source
-locators and normalization comparisons, merged from their note, and remarks
-that shaped the declarations). Definition contribution to task
-`876d1f0c-d287-4743-adf6-aef3a9efb5ba`, revision 1.
-
 **Scope.** This module defines the finite-place vocabulary and the analytic
 predicate of the completed global Rankin–Selberg functional equation of cuspidal
 pairs. Every declaration is a definition. Nothing is proved or assumed.
 
-The completed statement itself is not defined here. It is intended for a later
-module `Langlands.Global.Factors.CuspidalPairFunctionalEquationStatement`, under
-the proposition name `CuspidalPairGlobalFunctionalEquationStatement`. It needs, at
+The completed statement itself is not defined here. It is the proposition
+`CuspidalPairGlobalFunctionalEquationStatement` of the module
+`Langlands.Global.Factors.CuspidalPairFunctionalEquationStatement`. It needs, at
 every infinite place, the actual archimedean components of the cuspidal
 realizations, their Langlands parameters and the attached pair L- and epsilon
-factors. These are reserved exports of task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb` and are not public (§9). The sections
+factors (§9). The sections
 below that mention "the intended statement" explain how these definitions are
 meant to be used. They describe no declaration of this module.
 
@@ -35,7 +29,7 @@ file.
 | `getz-hahn-2024-errata-2026-10` | GH errata | p.3: the only Chapter 11 entry (§11.5, ψ defined twice on p.304) is editorial; none concerns §11.6–11.7 |
 | `gross-1998-satake-isomorphism` | Gross98 | Satake normalization, via the Library module `Unramified.HeckeOperators` |
 
-Supporting sources read by Worker 1802 for the proof routes: Shahidi 1981
+Supporting sources read for the proof routes: Shahidi 1981
 (Thm 4.1 p.344), Shahidi 1985 (Thm 1 / Thm 3.1 p.990), Henniart–Herb 1995 §8.15
 (p.181) and Jacquet 2009 (archimedean theory, Thm 2.1 p.6, App. 16).
 
@@ -73,8 +67,8 @@ Supporting sources read by Worker 1802 for the proof routes: Shahidi 1981
   Thm 11.7.1 is quoted from Cogdell's later notes [Cog07, Theorems 4.1 and 4.2],
   and GH p.309 uses Jacquet 2009 [Jac09, §16] for the archimedean ε-factors. The
   two archimedean references are different routes and are kept apart here.
-  Shahidi's route is the one H00 cites. None of these routes is formalized, so
-  the proof stays with a later proof task.
+  Shahidi's route is the one H00 cites. This module formalizes none of these
+  routes.
 
 ## 2. Scope and hypotheses
 
@@ -163,7 +157,7 @@ and (6.5)–(6.7), as recorded in that module's Markdown. Here `e_i` is the `i`-
 elementary symmetric function. This is the unitary Satake normalization, so `a`
 consists of the Satake parameters `A_π` of Cog04 Thm 3.3, without a further shift
 by `q^((n-1)/2)`. The identification of the Satake parameters with the Hecke
-eigenvalues for unramified generic components is not proved in the Library
+eigenvalues for unramified generic components is an obligation of the proof
 (§10).
 
 ### `HasIrreducibleAdmissibleComponents P`
@@ -212,15 +206,19 @@ and they descend from representatives to classes. They have different sources.
   `L(s, ξ × η)` is the integral L-factor of the standard modules. For generic
   irreducible quotients, JPSS83 (9.4)(4) gives `L(s, ξ × η) = L(s, π × σ)`, the
   integral factor of the pair itself. In the Library this is
-  `GenericLanglandsQuotientLFactorStatement`, a conjunct of the unproved
-  `LanglandsQuotientLFactorStatement`.
+  `GenericLanglandsQuotientLFactorStatement`, a conjunct of
+  `LanglandsQuotientLFactorStatement`, proved as
+  `RankinSelberg.genericLanglandsQuotientLFactor` (module
+  `Langlands.Representation.RankinSelberg.GenericLanglandsQuotientLFactorProof`).
 - **ε.** `IsAutomorphicPairEpsilonFactor` descends
   `RankinSelberg.IsLanglandsPairEpsilonFactor` (module
   `RankinSelberg.LanglandsFactors`). Both representations are Langlands quotients
   of essentially square-integrable data, and for every such pair of data `e` is the
   product of the JPSS epsilon factors of all pairs of blocks. This is the ε of
   H02 §2.8, p.596, last display. Its existence for all irreducible admissible
-  pairs is the Library's unproved `LanglandsPairEpsilonFactorExistenceStatement`.
+  pairs is the Library's `LanglandsPairEpsilonFactorExistenceStatement`, proved as
+  `RankinSelberg.langlandsPairEpsilonFactorExistence` (module
+  `Langlands.Representation.RankinSelberg.LanglandsPairEpsilonFactorExistenceProof`).
   JPSS83 (9.4) concerns only L. JPSS83 (0.2)(10), p.375, remarks that ε could
   also be defined through the standard module and computed from the
   supercuspidal case by Thm (3.1), which is γ-multiplicativity (pp.404–405).
@@ -228,12 +226,14 @@ and they descend from representatives to classes. They have different sources.
 The global theory uses the integral (Whittaker) factors of the components, which
 are generic as local components of cuspidal representations. For L, the
 comparison with the classification factor is the target above. For ε, the
-Library has no target that compares `IsLanglandsPairEpsilonFactor` with the
-integral ε of a generic pair at the same `ψ_v` and measure. It proves the
-comparison only for supercuspidal pairs
+comparison of `IsLanglandsPairEpsilonFactor` with the integral ε of a generic
+pair at the same `ψ_v` and measure is the Library's
+`RankinSelberg.GenericLanglandsPairEpsilonFactorComparisonStatement`, proved as
+`RankinSelberg.genericLanglandsPairEpsilonFactorComparison` (module
+`Langlands.Representation.RankinSelberg.GenericLanglandsPairEpsilonFactorComparisonProof`;
+§10). The Library also proves the comparison for supercuspidal pairs
 (`IsLanglandsPairEpsilonFactor.isPadicSymmetricEpsilonFactor_of_isSupercuspidal`,
-module `RankinSelberg.SupercuspidalLanglandsEpsilon`). The general comparison is a
-separate obligation (§10).
+module `RankinSelberg.SupercuspidalLanglandsEpsilon`).
 
 No epsilon factor of the dual pair is included, because the equation has ε only
 on the left. The identity `ε(s)ε∨(1 - s) = 1` is not part of the statement.
@@ -293,14 +293,13 @@ the intended statement will impose that through `IsContragredientOf` (§3). It i
 p.309 warns that "the product of the local γ-factors does not converge".
 Meromorphy is stated on `Set.univ` and the equation holds off a discrete set, so
 nothing is claimed at poles. Pole location, boundedness in vertical strips and
-nonvanishing are not stated; they belong to other tasks. GH Thm 11.7.1 states
+nonvanishing are not stated; they belong to other statements. GH Thm 11.7.1 states
 the first two only for representations trivial on `A_GL_n` and `A_GL_m`, and a
 norm twist `|det|^t` moves the poles.
 
 The predicate places no condition on `Linf`, `Ldinf`, `εinf`. In the intended
 statement they are the finite products over the infinite places of the actual
-archimedean pair factors exported by task `6c50b2fd`. They are not arbitrary
-meromorphic witnesses (§9).
+archimedean pair factors. They are not arbitrary meromorphic witnesses (§9).
 
 ## 5. Normalizations
 
@@ -359,13 +358,13 @@ The intended statement will assert the existence of the objects it uses and will
 not take them as hypotheses. It will require `Nonempty (FinitePairFactorChoice …)`,
 which gives local additive components, self-dual measures and both kinds of
 local pair factors at every finite place. It will also require the existence of the
-archimedean data once that data is exported. The analytic conclusions will then be
+archimedean data. The analytic conclusions will then be
 asserted for *every* choice `c` (§4). Each field is determined by its predicate
 (canonical component, self-dual measure, normalized generator), so this is the
 universal form of a unique choice. The completed functions and the meromorphic
 continuation are existentially quantified inside `CompletedEquationHolds`.
 
-## 9. Archimedean gate (task `6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`)
+## 9. Archimedean gate
 
 At every infinite place `v` the sources need the following:
 
@@ -386,17 +385,18 @@ The Library has genuine presented Weil-side objects (`RealPresentation`,
 `ComplexPresentation` and their L- and epsilon factors) and archimedean place
 actions (`ArchimedeanPlaceLie`, `ArchimedeanPlaceEnveloping`,
 `PlaceEnvelopingAction`). None of these is an attachment of an actual
-automorphic component. As of Library `f73044d9` and Worker 2's draft revision
-175 (`INTERFACES.md`), the actual archimedean components, their attachment, the
-pair L- and epsilon factors and the compatibility with contragredients at
-infinity are still missing. The operator's decision reserves them to Worker 2's
-task. This module neither rebuilds them nor replaces them by arbitrary
-meromorphic witnesses. The completed statement will be defined once those exports
-are public.
+automorphic component. This module neither rebuilds the actual archimedean
+components, their attachment, the pair L- and epsilon factors and the
+compatibility with contragredients at infinity, nor replaces them by arbitrary
+meromorphic witnesses. The completed statement
+`CuspidalPairGlobalFunctionalEquationStatement` takes, at an infinite place, the
+archimedean pair factors of the standard-module parameters of the realizations
+(modules `Langlands.Automorphic.ArchimedeanPlaceParameter` and
+`Langlands.LocalFactor.ArchimedeanPairFactor`).
 
-## 10. Remaining proof obligations
+## 10. Proof obligations
 
-A later proof of the completed statement has to supply:
+A proof of the completed statement has to supply:
 
 1. the global integral representation and its continuation (Jacquet–Shalika 1981;
    Cog04 §4), or Shahidi's route (Shahidi 1981 Thm 4.1 for partial L-functions,
@@ -410,8 +410,9 @@ A later proof of the completed statement has to supply:
      `LanglandsQuotientLFactorStatement`;
    - for ε, the identity, for generic irreducible pairs, of the block product of
      H02 §2.8 (`IsLanglandsPairEpsilonFactor`) with the integral ε of the pair at
-     the same `ψ_v` and self-dual measure. No Library statement expresses this
-     yet. It needs its own target and proof. A possible route uses
+     the same `ψ_v` and self-dual measure. The Library states and proves it as
+     `RankinSelberg.genericLanglandsPairEpsilonFactorComparison` (§4).
+     A possible route uses
      γ-multiplicativity, JPSS83 Thm (3.1)(i) (Library
      `GammaMultiplicativityStatement`), and the block product formula for L,
      JPSS83 Thm (9.5) (Library `SquareIntegrableDataLFactorStatement`, a conjunct
@@ -421,8 +422,8 @@ A later proof of the completed statement has to supply:
      §2.8 writes `J∨` as the Langlands quotient of the contragredient blocks in
      reversed order. The route also needs each generic component to be the full
      induced representation of its blocks, so that Thm (3.1) applies to it. The
-     Library proves only the supercuspidal case;
-3. the archimedean local theory for the exported archimedean factors, either by
+     Library proves the supercuspidal case;
+3. the archimedean local theory for the archimedean factors, either by
    Jacquet–Shalika 1990 and the archimedean parts of Jacquet–Shalika 1981, as in
    Cog04 §3.2 (p.216), or by Jacquet 2009 (Thm 2.1, §16), as in GH p.309;
 4. the unramified computation (Cog04 Thm 3.3; GH §11.6) and the identification
@@ -432,6 +433,3 @@ A later proof of the completed statement has to supply:
 6. the sign cancellation of §7;
 7. absolute convergence (GH Thm 11.5.2 and [JS81b, Theorem 5.3], as cited on
    GH p.309).
-
-The exact target name for the proof task is fixed when the statement
-`CuspidalPairGlobalFunctionalEquationStatement` is defined.

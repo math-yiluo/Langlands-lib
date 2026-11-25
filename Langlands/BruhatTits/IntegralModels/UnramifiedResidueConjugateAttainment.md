@@ -1,6 +1,6 @@
 # Integral conjugates of actual downstairs facet images
 
-This internal supporting unit proves
+This internal supporting module proves
 `UnramifiedResidueConjugateAttainmentStatement.{u}` with
 `unramifiedResidueConjugateAttainment`, at arbitrary universe `u`. At every
 point of the supplied downstairs apartment, every residue-field parabolic of
@@ -15,7 +15,8 @@ the fixed-point, fixed-locus surjectivity, special-point reflection and exact
 facet-restriction hypotheses; and fixedness under the bounded torus kernel.
 It also retains the supplied zero datum and facet-model family with the
 unramified integral-point characterization at every facet. Smoothness is
-both part of the model data and explicitly retained as in the host statement.
+both part of the model data and explicitly retained as in
+`UnramifiedFacetParabolicOrderStatement`.
 The quotient is an actual `SpecialFibreQuotientData` satisfying
 `IsReductiveQuotient`. The generic torus factorization and integral torus are
 constructed inside the proof, without additional premises.
@@ -27,7 +28,8 @@ the inverse inner automorphism of the quotient point obtained by reducing
 `s` and projecting it. It is exactly the range of the prescribed parabolic
 inclusion. The source facet has not been translated to absorb this conjugation;
 the theorem therefore supplies attainment up to integral conjugation at
-apartment points, not the host order bijection.
+apartment points, not the order bijection of
+`UnramifiedFacetParabolicOrderStatement`.
 
 The implemented proof has four parts:
 
@@ -61,4 +63,6 @@ conjugacy, perfect-field unipotent splitness, quotient lifting, descended
 torus containment and actual residue cocharacter attainment. It makes no
 additional original-literature translation claim. Universal image
 parabolicity, recovery of facets, and direct attainment without conjugation
-remain separate obligations for the full order-bijection theorem.
+are not proved here; the full order-bijection theorem
+`UnramifiedFacetParabolicOrderStatement` is proved as
+`unramifiedFacetParabolicOrder` in `UnramifiedFacetParabolicOrderProof`.

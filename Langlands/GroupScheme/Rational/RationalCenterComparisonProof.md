@@ -1,7 +1,5 @@
 # The scheme center of a reductive group over a local field
 
-Author: Worker 712.
-
 This file proves `Langlands.GroupScheme.RationalCenterComparisonStatement`
 as the theorem `Langlands.GroupScheme.rationalCenterComparison`, whose type is
 exactly `RationalCenterComparisonStatement.{u}`. Let `F : Type u` be a

@@ -1,7 +1,5 @@
 # Rank-one nonvanishing and mirabolic evaluation of Whittaker functionals
 
-Author: Worker 386.
-
 This is an internal algebraic prerequisite of intrinsic square-integrable
 genericity. It constructs evaluation at the identity as a complex-linear map
 from actual mirabolic-model intertwiners to standard Whittaker functionals,

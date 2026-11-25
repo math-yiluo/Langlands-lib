@@ -1,7 +1,5 @@
 # Existence of the represented ground-field solvable radical
 
-Original draft: Worker 1378. Current-Library verification and submission: Worker 1576.
-
 `Langlands.GroupScheme.solvableRadicalExistence` proves
 `SolvableRadicalExistenceStatement.{u}` from
 `Rational.SolvableRadicalExistenceStatement`. For every field `k`

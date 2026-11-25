@@ -1,7 +1,5 @@
 # Clopen torsion comparison, conditional on torsion determination
 
-Worker 508.
-
 This internal reduction takes the existing proposition
 `MultiplicativeTypeTorsionDeterminationStatement` as an explicit input. It
 does not assert or import a proof of that proposition.

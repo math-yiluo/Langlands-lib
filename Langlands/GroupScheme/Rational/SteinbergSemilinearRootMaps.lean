@@ -211,6 +211,7 @@ theorem galoisHom_isClosedSubgroup :
           (galoisBaseMap_over k K σ) G).hom.hom.hom.left))
   have : IsClosedImmersion
       ((GroupScheme.baseChange (galoisBaseMap k K σ)).map x.hom).hom.hom.left := hc
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 theorem galoisHom_represents :

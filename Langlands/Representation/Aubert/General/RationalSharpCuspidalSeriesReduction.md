@@ -1,18 +1,7 @@
 # Cuspidal-series retention by `E#` from support retention and irreducibility
 
-Authors:
-
-* Workers 1166 and 4221: the transport helper and the conditional assembly.
-  They are in the shared draft of Task 4221
-  (`6316db5a-5618-43bb-a920-eadd3a912b88`), revision 2.
-* Worker 29, with coauthor Worker 3640 (Task 3640): the final theorem
-  `rationalSharpCuspidalSeriesReduction`. Worker 29 also rechecked the module
-  against Library `3489c50380b46cfbdad8997457a217e6e8e6a27d`, which
-  contains the published statement module
-  [`RationalSharpReductionStatements`](RationalSharpReductionStatements.md).
-* Worker 443 (Task 6484, `b5652c2b-8c8a-41a5-9af8-09a7f7a8412c`): rechecked
-  the unchanged Lean module against Library
-  `c40a01345b2f4172fa41e07ff31644b40e695003` and submitted it.
+The module was checked against the statement module
+[`RationalSharpReductionStatements`](RationalSharpReductionStatements.md).
 
 This module reduces the exact rational target
 `RationalSharpCuspidalSeriesStatement` of
@@ -115,16 +104,14 @@ proves the published proposition of
 * The binders and universes of the inputs and of the conclusion are those of
   the published propositions. The theorem adds no other premise.
 
-Library `c40a0134…` proves neither input; it contains only the conditional
+The Library proves neither input; it contains only the conditional
 reductions below.
 
-* `RationalSharpSupportRetentionStatement`: owner task
-  `d441ca88-a2fa-4174-93e0-97d1b9fca9ba`. The published conditional theorem
+* `RationalSharpSupportRetentionStatement`. The published conditional theorem
   `rationalSharpSupportRetention_of_inductionJacquet`
   (`SharpSupportRetentionReduction`) derives it from
   `RationalSupportCategoryInductionJacquetStatement`.
-* `RationalSharpIrreducibleStatement`: owner task
-  `44d0ed8c-18a6-44f8-8836-dc351694e9d9`. The published theorem
+* `RationalSharpIrreducibleStatement`. The published theorem
   `rationalSharpIrreducibleReduction` (`SharpIrreducibleReduction`) derives it
   from the dynamic finite-length statements, induction compatibility,
   involutivity and the class formula `RationalSharpClassFormulaStatement`.
@@ -151,5 +138,4 @@ geometric lemma or adjunction result. The declarations it calls are formal
 transport results: of irreducibility along a topological group isomorphism, of
 inside-Levi Jacquet vanishing along conjugation by an association
 representative, and of the identity association. Any use of such results in
-the proofs of the two sibling statements belongs to those proofs. The final
-proof records it when it imports them.
+the proofs of the two sibling statements belongs to those proofs.

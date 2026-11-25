@@ -117,14 +117,14 @@ local notation "geometricAction" => cmGeometricNormalQuotientAction D C preserva
 
 /-- A representative acts by the original inverse-right geometric tower map. -/
 @[simp] theorem cmGeometricNormalQuotientAction_mk (g : U.obj.subgroup) :
-    (geometricAction).ρ (QuotientGroup.mk g) =
+    ((geometricAction).ρ (QuotientGroup.mk g)).asHom =
       (geometricSchemes).map (smallCMNormalInverseArrow D U V hVU g) := rfl
 
 /-- The first fiber projection is equivariant for every original residual element. -/
 @[reassoc (attr := simp)] theorem cmGeometricNormalQuotientAction_projection
     (g : ResidualGroup) :
-    (geometricAction).ρ g ≫ (projection).app V =
-      (projection).app V ≫ (originalAction).ρ g := by
+    ((geometricAction).ρ g).asHom ≫ (projection).app V =
+      (projection).app V ≫ ((originalAction).ρ g).asHom := by
   induction g using QuotientGroup.induction_on with
   | H g =>
     exact (projection).naturality (smallCMNormalInverseArrow D U V hVU g)
@@ -132,18 +132,18 @@ local notation "geometricAction" => cmGeometricNormalQuotientAction D C preserva
 /-- The action fixes the actual structure map to the algebraically closed field. -/
 @[reassoc (attr := simp)] theorem cmGeometricNormalQuotientAction_over
     (g : ResidualGroup) :
-    (geometricAction).ρ g ≫ ((geometricOver).obj V).hom =
+    ((geometricAction).ρ g).asHom ≫ ((geometricOver).obj V).hom =
       ((geometricOver).obj V).hom :=
-  Over.w ((overAction).ρ g)
+  Over.w (((overAction).ρ g).asHom)
 
 /-- Original forgetting invariance survives the actual field-base-change functor. -/
 @[reassoc (attr := simp)] theorem cmGeometricNormalProjection_invariant
     (g : ResidualGroup) :
-    (geometricAction).ρ g ≫ geometricMap = geometricMap := by
+    ((geometricAction).ρ g).asHom ≫ geometricMap = geometricMap := by
   have ho :
       ((ObjectProperty.ι (ComponentwiseAdmissibleCMBase D C preservation composition
         unitCoherence associativity comparison symmetry stability square universality)).map
-          ((baseAction).ρ g)) ≫ (overTower).map (smallCMInclusion D hVU) =
+          (((baseAction).ρ g).asHom)) ≫ (overTower).map (smallCMInclusion D hVU) =
         (overTower).map (smallCMInclusion D hVU) := by
     apply Over.OverMorphism.ext
     exact representedCMNormalProjection_invariant D C preservation composition
@@ -152,7 +152,7 @@ local notation "geometricAction" => cmGeometricNormalQuotientAction D C preserva
   change ((Over.pullback (cmGeometricFieldMap (F := F))).map
     ((ObjectProperty.ι (ComponentwiseAdmissibleCMBase D C preservation composition
       unitCoherence associativity comparison symmetry stability square universality)).map
-        ((baseAction).ρ g))).left ≫
+        (((baseAction).ρ g).asHom))).left ≫
     ((Over.pullback (cmGeometricFieldMap (F := F))).map
       ((overTower).map (smallCMInclusion D hVU))).left =
     ((Over.pullback (cmGeometricFieldMap (F := F))).map
@@ -212,18 +212,20 @@ def cmGeometricNormalFiniteEtaleAction_of_dominantCriterion :
     Action (Cover ((geometricSchemes).obj U)) ResidualGroup where
   V := geometricCover
   ρ :=
-    { toFun := fun g => ObjectProperty.homMk (Over.homMk ((geometricAction).ρ g)
+    { toFun := fun g => End.of (ObjectProperty.homMk (Over.homMk (((geometricAction).ρ g).asHom)
         (cmGeometricNormalProjection_invariant D C preservation composition
           unitCoherence associativity comparison symmetry stability square universality
-          dualityNaturality polarizationStability compatibility h htor q U V hVU g))
+          dualityNaturality polarizationStability compatibility h htor q U V hVU g)))
       map_one' := by
+        apply End.ext
         apply ObjectProperty.hom_ext
         apply Over.OverMorphism.ext
-        exact (geometricAction).ρ.map_one
+        exact congrArg End.asHom (geometricAction).ρ.map_one
       map_mul' := fun g g' => by
+        apply End.ext
         apply ObjectProperty.hom_ext
         apply Over.OverMorphism.ext
-        exact (geometricAction).ρ.map_mul g g' }
+        exact congrArg End.asHom ((geometricAction).ρ.map_mul g g') }
 
 local notation "finiteAction" => cmGeometricNormalFiniteEtaleAction_of_dominantCriterion D C
   preservation composition unitCoherence associativity comparison symmetry stability
@@ -241,7 +243,7 @@ local notation "finiteAction" => cmGeometricNormalFiniteEtaleAction_of_dominantC
 
 @[simp] theorem cmGeometricNormalFiniteEtaleAction_of_dominantCriterion_ρ_left
     (g : ResidualGroup) :
-    ((finiteAction).ρ g).hom.left = (geometricAction).ρ g := rfl
+    ((finiteAction).ρ g).asHom.hom.left = ((geometricAction).ρ g).asHom := rfl
 
 /-- The published canonical cover comparison is equivariant for the original residual group. -/
 def cmGeometricNormalFiniteEtaleActionPullbackIso :
@@ -252,19 +254,19 @@ def cmGeometricNormalFiniteEtaleActionPullbackIso :
     intro g
     apply ObjectProperty.hom_ext
     apply Over.OverMorphism.ext
-    change (geometricAction).ρ g ≫ (coverIso).hom.hom.left =
+    change ((geometricAction).ρ g).asHom ≫ (coverIso).hom.hom.left =
       (coverIso).hom.hom.left ≫
-        ((pullbackFunctor ((projection).app U)).map ((originalFiniteAction).ρ g)).hom.left
+        ((pullbackFunctor ((projection).app U)).map (((originalFiniteAction).ρ g).asHom)).hom.left
     have hf :
-        ((pullbackFunctor ((projection).app U)).map ((originalFiniteAction).ρ g)).hom.left ≫
+        ((pullbackFunctor ((projection).app U)).map (((originalFiniteAction).ρ g).asHom)).hom.left ≫
           pullback.fst (originalCover).obj.hom ((projection).app U) =
-        pullback.fst (originalCover).obj.hom ((projection).app U) ≫ (originalAction).ρ g :=
-      pullbackFunctor_map_hom_left_fst ((projection).app U) ((originalFiniteAction).ρ g)
+        pullback.fst (originalCover).obj.hom ((projection).app U) ≫ ((originalAction).ρ g).asHom :=
+      pullbackFunctor_map_hom_left_fst ((projection).app U) (((originalFiniteAction).ρ g).asHom)
     have hs :
-        ((pullbackFunctor ((projection).app U)).map ((originalFiniteAction).ρ g)).hom.left ≫
+        ((pullbackFunctor ((projection).app U)).map (((originalFiniteAction).ρ g).asHom)).hom.left ≫
           pullback.snd (originalCover).obj.hom ((projection).app U) =
         pullback.snd (originalCover).obj.hom ((projection).app U) :=
-      pullbackFunctor_map_hom_left_snd ((projection).app U) ((originalFiniteAction).ρ g)
+      pullbackFunctor_map_hom_left_snd ((projection).app U) (((originalFiniteAction).ρ g).asHom)
     apply pullback.hom_ext
     · rw [Category.assoc, cmGeometricNormalFiniteEtalePullbackIso_hom_fst,
         Category.assoc, hf, ← Category.assoc,

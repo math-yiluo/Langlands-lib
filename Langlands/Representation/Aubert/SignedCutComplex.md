@@ -1,7 +1,5 @@
 # Signed differentials on cut diagrams
 
-Author: Worker 164.
-
 This internal algebraic prerequisite constructs a signed differential on a
 commuting diagram of complex vector spaces indexed by finite cut sets. It also
 constructs its homogeneous degree terms and proves that consecutive

@@ -42,8 +42,8 @@ The module imports only `Langlands.AbelianScheme.Basic`,
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`,
 `Langlands.AlgebraicGeometry.Picard.Ample` and
 `Mathlib.FieldTheory.IsAlgClosed.Basic`. With `pp.fieldNotation false`,
-`pp.proofs true` and `pp.funBinderTypes true`, `#print` in the approved
-environment reports:
+`pp.proofs true` and `pp.funBinderTypes true`, `#print` in the Lean
+environment in which it was checked reports:
 
 ```text
 def Langlands.AbelianScheme.AmpleLineBundleHigherCohomologyVanishingStatement.{u} : Prop :=
@@ -220,16 +220,17 @@ the published interfaces or follows from them over `Spec K`.
   statement.
 - *Algebraically closed field.* The source proves the field case for an
   arbitrary field, reducing to an algebraically closed field "for
-  simplicity". The `IsAlgClosed K` binder is the specification requested
-  for this target. It specializes the source claim; it does not strengthen
+  simplicity". The `IsAlgClosed K` binder is part of the specification
+  of this target. It specializes the source claim; it does not strengthen
   it.
 
-## Proof obligations for the later exact proof
+## Proof obligations
 
-After independent acceptance and publication, a separate exact-target
-proof must have this entire named proposition as its type, with no extra
-outer hypotheses. The source argument has the following steps; none is
-proved here.
+A proof must have this entire named proposition as its type, with no extra
+outer hypotheses; the Library's proof is
+`Langlands.AbelianScheme.ampleLineBundleHigherCohomologyVanishing`, in the module
+`Langlands.AbelianScheme.AmpleLineBundleHigherCohomologyVanishingProof`. The
+source argument has the following steps; none is proved here.
 
 1. Serre vanishing. Since `L` is ample on the projective `A`, there is `n₀`
    with `H^i(A, L^n) = 0` for all `n ≥ n₀` and `i > 0`.
@@ -247,14 +248,13 @@ proved here.
    `k^{-2g}` times the trace, where `g` is the dimension of `A`. So
    `H^i(A, L) = 0` for `i > 0`. Such `k` with `k² ≥ n₀` always exist.
 
-A later exact proof must therefore implement, for the published
+A proof must therefore implement, for the published
 `relativeCohomology`, Serre vanishing for ample bundles on the proper
 `A.X.left`, invariance of cohomology under translation, the
 algebraic-equivalence and surjectivity inputs, cohomology of finite
 pushforwards and the trace splitting, or another unconditional route. The
-published cohomology foundation alone does not supply these. Substantial
-missing inputs need separate definitions, statements and unconditional
-proofs in dependency order; conditional assembly is not a proof of this
+published cohomology foundation alone does not supply these. A
+conditional assembly is not a proof of this
 proposition. Existing Library material that may help includes the proved
 `multiplication_isFinite_of_ne_zero` and `multiplication_isIsogeny_of_ne_zero`
 in `Langlands/AbelianScheme/FieldMultiplicationFiniteEtale`, and the
@@ -274,18 +274,15 @@ isomorphic to `Spec K`, every line bundle on it is trivial and ample, and
 its higher cohomology vanishes, so the statement is not vacuous there.
 
 The general relative form of Proposition 6.13 (i), over a noetherian base,
-is not stated here. Publication of this statement records a target for a
-later proof; it is not a vanishing theorem.
+is not stated here. This statement records a target for a
+proof; it is not a vanishing theorem.
 
-## Role and authorship
+## Role
 
-This is a focused prerequisite of task
-`baec6a6d-fe08-417e-95fd-fb8e2291cb1d`, owned by Worker 689 and
-Worker 100, which proves the published
-`Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFibreCohomologyStatement`.
+This is a focused prerequisite of the published
+`Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFibreCohomologyStatement`,
+proved by `Langlands.AbelianScheme.PolarizedFiniteLevel.cubicFibreCohomology`
+(module `Langlands.AbelianScheme.PolarizedFiniteLevel.CubicFibreCohomologyProof`).
 The vanishing half of that statement applies this target to the cube of
-the canonical diagonal bundle, once that cube is shown to be ample. The
-parent is not used to justify this statement.
-
-Worker 921 implemented the Lean declaration and this Markdown. The
-binders and conclusion follow the task specification.
+the canonical diagonal bundle, once that cube is shown to be ample.
+`CubicFibreCohomologyStatement` is not used to justify this statement.

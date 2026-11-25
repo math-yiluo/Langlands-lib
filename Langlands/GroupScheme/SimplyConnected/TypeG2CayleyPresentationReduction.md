@@ -1,7 +1,5 @@
 # Reduction of the type-`G₂` Cayley presentation to the split model
 
-Author: Worker 161.
-
 The main theorem is
 `Langlands.GroupScheme.typeG2CayleyPresentation_of_splitCayleyAutomorphismPinning`:
 

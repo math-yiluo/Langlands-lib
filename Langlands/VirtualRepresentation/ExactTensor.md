@@ -128,5 +128,5 @@ The right side is the already published exact twist automorphism from
 rank-one continuous character. No ring coherence or determinant formula is
 asserted here.
 
-Authorship: Worker 98. All other mathematical dependencies are imported from
+All other mathematical dependencies are imported from
 the published Library and Mathlib.

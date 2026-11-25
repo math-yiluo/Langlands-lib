@@ -1,6 +1,6 @@
 # Reduction of Milne 17.84 to the algebraically closed case and Milne 17.82
 
-Worker 1391. This module states the algebraically closed case of Milne
+This module states the algebraically closed case of Milne
 Proposition 17.61(a) as a new proposition,
 `AlgClosedMaximalTorusCentralizerStatement`. It then proves that this case and
 the forward implication of Milne Theorem 17.82 together imply the published
@@ -10,14 +10,20 @@ Corollary 17.84). That proposition says that a maximal torus of a connected
 reductive group over a field is its own centralizer.
 
 The module proves neither `AlgClosedMaximalTorusCentralizerStatement` nor
-`MaximalTorusCentralizerStatement`. Both inputs of the reduction remain open in
-the Library:
+`MaximalTorusCentralizerStatement`. The two inputs of the reduction are:
 
 - the forward implication of 17.82, `MaximalTorusBaseChangeForwardStatement`,
   which the Library reduces to its central case
   `CentralMaximalTorusBaseChangeStatement`;
 - `AlgClosedMaximalTorusCentralizerStatement`, which Milne proves with Borel
   subgroups (17.38, 17.39, 17.56).
+
+`maximalTorusCentralizer_of_structuralInputs` (module
+`Langlands.GroupScheme.Absolute.AlgClosedMaximalTorusCentralizerAssembly`)
+supplies both inputs from three structural propositions and applies
+`maximalTorusCentralizer_of_centralMaximalTorusBaseChange`. The Library's proof
+of `MaximalTorusCentralizerStatement` is `maximalTorusCentralizer` (module
+`Langlands.GroupScheme.Absolute.MaximalTorusCentralizerProof`).
 
 ## The new proposition
 
@@ -163,4 +169,3 @@ Mathlib's `AlgebraicClosure k`. Milne's "the formation of centralizers commutes
 with extension of the base field" appears in two steps:
 `torusCentralizer_baseChange` (a Library result), and the faithfully flat
 descent of the isomorphism `t` in `torusCentralizer_eq_range_of_baseChange`.
-That descent argument is Worker 1391's, and so are the Lean proofs.

@@ -33,5 +33,6 @@ change. `HomogeneousQuotientSheaf.exists_quotient_of_affine_local_models` glues
 them as full representations of the canonical coset fppf sheaf and recovers the
 actual quotient data, with exact right-coset fibers on all scheme tests. It also
 supplies smoothness and the asserted preimage condition for every affine base
-open. This proves the centralizer-quotient clause of the host statement;
+open. This proves the centralizer-quotient clause of
+`RelativeMultiplicativeTypeQuotientStatement`, the statement this module serves;
 normalizer quotients and the Weyl-group quotient are separate obligations.

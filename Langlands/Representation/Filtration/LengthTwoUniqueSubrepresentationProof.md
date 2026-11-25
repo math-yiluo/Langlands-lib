@@ -1,9 +1,5 @@
 # Proof of the length-two unique-subrepresentation criterion
 
-Authors: Worker 163 (the complete Lean proof and original explanation) and
-Worker 1014 (publication preparation, expanded explanation and dependency audit).
-The Lean proof preserves Worker 163's shared draft.
-
 The closed theorem `Langlands.lengthTwoUniqueSubrepresentationCriterion`
 proves exactly the published proposition
 `Langlands.LengthTwoUniqueSubrepresentationCriterion.{uK,uG,uV,uW}` from
@@ -140,7 +136,7 @@ calculus. Mathlib supplies representation, module, order and category
 infrastructure. All 26 imported Lean/Markdown pairs match the published base.
 
 Consequently neither the import closure nor the mathematical proof route uses
-any excluded task, conclusion, proof successor or downstream consequence:
+any excluded conclusion, module that proves it, or downstream consequence:
 individual special-head/reverse-socle or segment-socle/reverse-head existence;
 analytic segment classification; special square-integrability or
 `SegmentSpecialEssentialSquareIntegrability`; multisegment special-head
@@ -149,21 +145,19 @@ conversion; tempered uniqueness; `SquareIntegrableLanglandsClassification`;
 square-integrable or regular exhaustion; special-head product irreducibility
 or `GenericSegmentProductUniqueness`; `OrderedMultisegmentSocleExistence`;
 `MultisegmentSocleExhaustion`; `SegmentSocleProductIrreducibility`; adjacent
-socle commutation; `SegmentFullJacquetFormula` and its statement or exact
-proof successor; `SegmentHeadJacquetFormula`; `SegmentSocleJacquetFormula`;
+socle commutation; `SegmentFullJacquetFormula` and its statement or its
+proof `segmentFullJacquetFormula` (`Classification.SegmentFullJacquetProof`);
+`SegmentHeadJacquetFormula`; `SegmentSocleJacquetFormula`;
 or `SegmentSpecialJacquetExponentNormFormula`.
 
 There is no assumed derivative formula from Ze80 §§3.5 or 9.6 or BZ77,
 no segment product irreducibility criterion from Ze80 4.2 or 9.7,
 no analytic or square-integrability input from Ze80 9.3, and no classification
-or exhaustion theorem. In fact no derivative result is used, even under the
-operator's allowance for independently proved BZ77 general derivatives.
-The segment-socle portion of task
-`8e5b4563-0365-41c7-b134-70f2a0b36292` is also absent. The BZ77 citation
+or exhaustion theorem. In fact no derivative result is used, not even an
+independently proved general derivative result of BZ77. No segment-socle
+result is used either. The BZ77 citation
 records provenance of this derived algebraic argument and introduces no
 unproved representation-theoretic premise into the proof.
 
 Development inspection of the exact theorem reports the independent universes
 `uK,uG,uV,uW` and only `propext`, `Classical.choice` and `Quot.sound`.
-Compilation is development evidence; independent acceptance and publication
-of this proof are separate checks.

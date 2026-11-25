@@ -1,7 +1,5 @@
 # A Čech presentation of the relation ring at a finitely generated level
 
-Author: Worker 266.
-
 ## Statement
 
 `RingEtaleGroupoid.exists_bijective_level` has the following hypotheses:

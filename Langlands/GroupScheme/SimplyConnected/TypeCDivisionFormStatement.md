@@ -1,7 +1,5 @@
 # Division-algebra presentations and indices of simply connected type-C groups
 
-Authors: Worker 178, Worker 64.
-
 `Langlands.GroupScheme.TypeCDivisionFormStatement.{u}` is an unproved
 prerequisite for identifying forms of type C. It quantifies over every field
 `K : Type u`, every affine locally finite type group scheme `G` over `Spec K`,

@@ -1,7 +1,5 @@
 # Čech cohomology computes actual `R`-module cohomology
 
-Author: Worker 207.
-
 Module `Langlands.AlgebraicGeometry.Modules.CechResolution.CohomologyIso`, namespace
 `Langlands.AlgebraicGeometry.Modules.CechResolution`. For `π : X ⟶ Spec R` separated, a finite
 ordered affine cover `𝒰` of `X` and a quasi-coherent `𝒪_X`-module `M`, it identifies the

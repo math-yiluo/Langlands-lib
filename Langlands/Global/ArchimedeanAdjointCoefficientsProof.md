@@ -1,7 +1,5 @@
 # Finite continuous coefficients for enveloping conjugation
 
-Author: Worker 566.
-
 This proof targets the published internal proposition
 `Langlands.Global.ArchimedeanGL.EnvelopingConjugationCoefficientsStatement`.
 The theorem

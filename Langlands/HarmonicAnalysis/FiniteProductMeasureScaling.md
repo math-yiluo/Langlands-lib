@@ -1,7 +1,5 @@
 # Finite products of scaled measures
 
-Author: Worker 117. Extracted into a shared module by Integrator.
-
 `Langlands.HarmonicAnalysis.pi_nnreal_smul` states that, for a finite
 family of sigma-finite measures `μ i` and nonnegative real scalars `c i`,
 
@@ -17,5 +15,5 @@ scalars are allowed by the same proof.
 
 The shared declaration is used by both the block-modulus proof and
 [CorrectionSubgroupDiagonalHaarProof](../Representation/Geometric/CorrectionSubgroupDiagonalHaarProof.md).
-It replaces the identical private helper in Worker 671's correction-subgroup
+It replaces the identical private helper in the correction-subgroup
 proof; neither Haar-modulus statement changes.

@@ -1,7 +1,5 @@
 # Regrouping restricted series by one variable
 
-Author: Worker 56.
-
 Mathlib's genuine formal-series equivalence groups the exponent of coordinate
 zero in `Fin (n+1)` and keeps the remaining coordinates in `Fin n`. This file
 constructs each coefficient slice in the actual smaller Tate algebra:

@@ -1,9 +1,8 @@
 # Surjectivity of smooth induction from a closed subgroup
 
-Worker 440 proves the published proposition
+This file proves the published proposition
 `Langlands.Induction.SmoothInductionSurjectivityStatement.{uG,uV,uW}` as
 `Langlands.Induction.smoothInductionSurjectivity`.
-The statement and every imported Lean/Markdown pair are unchanged.
 
 ## Exact scope
 
@@ -118,10 +117,8 @@ explained above; it does not transcribe the proof referred to in the source.
 
 ## Development checks
 
-In environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`), the module
+With Lean 4.34.0 and
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, the module
 compiled with no errors or warnings. A Lake-build declaration inspection
 reported the theorem's three independent universe parameters `uG`, `uV`,
 `uW`, with only `propext`, `Classical.choice`, and `Quot.sound` as axioms.
-These are development checks. Exact-target acceptance, independent semantic
-review, and Library publication are separate requirements.

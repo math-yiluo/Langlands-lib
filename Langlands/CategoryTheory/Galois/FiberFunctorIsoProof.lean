@@ -52,8 +52,8 @@ private theorem nonempty_fiberFunctor_hom : Nonempty (F ⟶ G) := by
 theorem fiberFunctorIsoExists : FiberFunctorIsoExists F G := by
   obtain ⟨f⟩ := nonempty_fiberFunctor_hom F G
   obtain ⟨g⟩ := nonempty_fiberFunctor_hom G F
-  have : IsIso (f ≫ g) := FibreFunctor.end_isIso F (f ≫ g)
-  have : IsIso (g ≫ f) := FibreFunctor.end_isIso G (g ≫ f)
+  have : IsIso (f ≫ g) := FibreFunctor.end_isIso F (End.of (f ≫ g))
+  have : IsIso (g ≫ f) := FibreFunctor.end_isIso G (End.of (g ≫ f))
   have : Mono f := mono_of_mono f g
   have : IsSplitEpi f :=
     IsSplitEpi.mk'

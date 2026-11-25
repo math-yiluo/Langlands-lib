@@ -3,7 +3,7 @@
 `Langlands.TraceFormula.GeneralLinearSimpleTwistedTraceFormulaStatement.{u}` is a
 proposition definition for the simple twisted trace formula used in cyclic base change of
 `GL_n`. It states the formula in the Library's group-scheme automorphic `L²` space for
-`W = Res_{L/K} GL_n`. It is the twisted counterpart of Task 7585,
+`W = Res_{L/K} GL_n`. It is the twisted counterpart of
 `Langlands.TraceFormula.GeneralLinearSimpleTraceFormulaStatement`.
 
 ## Notation from the Library
@@ -59,7 +59,8 @@ proposition definition for the simple twisted trace formula used in cyclic base 
   `fullAEL2CuspidalIntegratedAction K Wₙ hPD hG T i hi I e hc μG f h` is its restriction
   `R_cusp(f)` to the Library's closed cuspidal subspace.
 - `ProperRationalParabolic Wₙ` and `properParabolicHaarMeasure K Wₙ hPD hG P` are the proper
-  rational parabolics and the Haar measures on the adelic unipotent radicals, as in Task 7585.
+  rational parabolics and the Haar measures on the adelic unipotent radicals, as in
+  `GeneralLinearSimpleTraceFormulaStatement`.
 - `IsHilbertSchmidt`, `IsTraceClass` and `operatorTrace` are the Library's operator ideals and
   the diagonal sum in one fixed Hilbert basis.
 - `FiniteAdelicGL.localProjection L n w` is evaluation at the finite place `w` of `L`, and
@@ -196,7 +197,7 @@ also at places above a nonsplit place of `K`.
 
 ## Derived form
 
-As in Task 7585, the Lean test function is a convolution of two continuous compactly
+As in `GeneralLinearSimpleTraceFormulaStatement`, the Lean test function is a convolution of two continuous compactly
 supported functions on the full adelic group. The Hilbert–Schmidt properties of their
 cuspidal operators are premises. Getz–Hahn's Theorem 9.1.2 (printed p. 241) proves trace class
 of the cuspidal operator for a smooth compactly supported function on the central quotient.

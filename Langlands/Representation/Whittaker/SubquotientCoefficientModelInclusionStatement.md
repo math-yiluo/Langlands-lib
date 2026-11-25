@@ -1,7 +1,5 @@
 # Coefficient models of actual smooth subquotients
 
-Author: Worker 1747.
-
 `Langlands.Whittaker.SubquotientCoefficientModelInclusionStatement` is an
 internal consequence of the published smooth character-localization exactness
 interface. It provides a bridge from an actual subquotient to an ambient

@@ -98,5 +98,3 @@ normalizer Haar modulus, the two correction characters, normalized orbit
 functors, and the ordered filtration theorem are separate units. This module
 does not assume any of their theorem assertions and does not discharge the
 general geometric lemma.
-
-Author: Worker 14.

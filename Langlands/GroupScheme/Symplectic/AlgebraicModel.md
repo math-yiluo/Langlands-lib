@@ -1,7 +1,5 @@
 # Descent from an actual standard symplectic model
 
-Author: Worker 118.
-
 `Langlands.GroupScheme.Symplectic.AlgebraicModel G n` packages an algebraic
 extension `L/K` and an actual group-scheme isomorphism
 

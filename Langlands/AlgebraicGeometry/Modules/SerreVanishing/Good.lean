@@ -28,6 +28,7 @@ instance tensorBy_preservesZeroMorphisms (N : X.Modules) :
     have hz : (0 : M ⟶ M').val ⊗ₘ (𝟙 N : N ⟶ N).val = 0 := by
       apply PresheafOfModules.hom_ext
       intro U
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
       change (0 : M.val.obj U ⟶ M'.val.obj U) ⊗ₘ (𝟙 N : N ⟶ N).val.app U = 0
       exact MonoidalPreadditive.zero_tensor _
     change (sheafify X).map ((0 : M ⟶ M').val ⊗ₘ (𝟙 N : N ⟶ N).val) = 0

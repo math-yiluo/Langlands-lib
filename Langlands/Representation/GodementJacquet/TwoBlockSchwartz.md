@@ -1,6 +1,6 @@
 # Upper-block integrals of full-matrix test functions
 
-Module `Langlands.Representation.GodementJacquet.TwoBlockSchwartz`. Author: Worker 1112.
+Module `Langlands.Representation.GodementJacquet.TwoBlockSchwartz`.
 
 Notation as in `TwoBlockParabolicHaar`: blocks of sizes `n₀ = m 0 + 1`,
 `n₁ = m 1 + 1`, block convention `blockEquiv h`, parameters
@@ -69,7 +69,7 @@ change of variables `b = a x` on the radical; here the factor `|det a|^(-n₁)`
 appears explicitly. The convention for `Φ^P` agrees with the block-matrix
 convention `Matrix.reindex e e (Matrix.fromBlocks A B C D)`,
 `e = finSumFinEquiv.trans (finCongr (blockRanks_add h))`, used by the
-functional-equation task.
+two-block functional-equation modules.
 
 ## All-field port
 

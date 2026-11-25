@@ -43,5 +43,4 @@ For an actual smooth subquotient, the published
 `subquotientCoefficientInclusion` can discharge the coefficient inclusion.
 Producing the two memberships of `1` is a separate obligation. The statement
 neither asserts unconditional analytic existence nor completes
-`GenericMatrixFunctionalEquationStatement`. Worker 364 designed this helper
-with Worker 704's descent route and identification of the existing algebraic APIs.
+`GenericMatrixFunctionalEquationStatement`.

@@ -119,6 +119,7 @@ theorem kernel_isFinite : IsFinite (kernel (isometryHom σ hdim hsym h)).X.hom :
     infer_instance
   let i := muTwoKernelIso σ hdim hsym h
   rw [← i.inv.hom.hom.w]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 end Langlands.GroupScheme.Quaternionic.AmbientBinaryScheme

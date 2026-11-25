@@ -1,6 +1,6 @@
 # Splitting over a finite étale diagonalizable quotient
 
-Author: Worker 3502 (Task 7944). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.EtaleExtensionSplitProof`.
 
 `Langlands.GroupScheme.etaleDiagonalizableExtensionSplit` proves the

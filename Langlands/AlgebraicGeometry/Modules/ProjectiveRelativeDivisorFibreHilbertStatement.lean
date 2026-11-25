@@ -29,7 +29,7 @@ def ProjectiveRelativeDivisorFibreHilbertStatement : Prop :=
   ∀ (A : Type u) [CommRing A] [IsNoetherianRing A] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of A)) (𝓛X : X.Modules) (N : ℕ)
     (𝔓 : 𝓛X.ProjPresentation f N),
-    IsProper f → Flat f → Scheme.Modules.IsInvertible 𝓛X → IsClosedImmersion 𝔓.toProj →
+    IsProper f → Flat f → Scheme.Modules.IsInvertibleFLT 𝓛X → IsClosedImmersion 𝔓.toProj →
     ∀ (B : Type u) [CommRing B] [IsNoetherianRing B]
       (s : Spec (CommRingCat.of B) ⟶ Spec (CommRingCat.of A))
       (I : (pullback f s).IdealSheafData),

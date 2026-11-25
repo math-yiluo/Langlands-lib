@@ -1,7 +1,5 @@
 # Fixed-point models whose reductive quotients carry the vanishing restricted roots
 
-Author: Worker 407.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedResidueRootModelStatement`.
 
 This module states `UnramifiedFixedResidueRootModelStatement.{u}` and does not

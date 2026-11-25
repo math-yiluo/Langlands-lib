@@ -1,7 +1,5 @@
 # Common-universe reduction for three-block induction
 
-Author: Worker 645.
-
 `Langlands.Parabolic.CommonUniverseThreeBlockAssociativity.{uF,uW}` is an
 internal statement for three smooth complex representations of the positive
 ranks `C`, `A`, and `B`. The field lies in universe `uF`, and all three

@@ -1,7 +1,5 @@
 # Completeness of positive-polyradius restricted power series
 
-Author: Worker 228.
-
 The theorem `Langlands.Analytic.GeneralizedTateAlgebra.completeness` proves
 the entire published proposition `CompletenessStatement r K`, imported
 unchanged from

@@ -1,6 +1,6 @@
 # Opposite Iwahori bases from one contracting central element
 
-Worker 1045 wrote this module and this explanation. It is an internal,
+This module is an internal,
 purely topological-group construction used by the proof of
 `Langlands.Aubert.General.RationalPointFamily.RationalOppositeIwahoriBasisStatement`.
 No algebraic geometry is involved.

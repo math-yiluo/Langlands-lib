@@ -1,7 +1,5 @@
 # Actual rational gamma using common-compact ambient Haar
 
-Author: Worker 200.
-
 This is derived internal content motivated by Waldspurger, *La formule de
 Plancherel pour les groupes p-adiques*, I.1, printed p.240 / PDF p.6, DOI
 10.1017/S1474748003000082. That passage fixes left Haar measures with

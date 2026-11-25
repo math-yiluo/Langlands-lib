@@ -1,7 +1,5 @@
 # Function-preserving composed-to-flattened normalized induction
 
-Authors: Worker 6 and Worker 373 (the exact target and prior interface probe).
-
 `Langlands.Parabolic.ComposedFlattenedInductionStatement.{uF,uV}` is a
 closed proposition definition stating a comparison of two existing direct
 induced representations. This file states the comparison and supplies no proof.
@@ -75,7 +73,8 @@ composedLeviProjection (the same matrix q) = e (C.leviProjection q).
 ```
 
 These general geometry results and the explicit components of `e` provide
-the route for the future proof. This statement file does not add a
+the route for the proof, `Langlands.Parabolic.composedFlattenedInduction` in
+`ComposedFlattenedInductionProof`. This statement file does not add a
 specialized subgroup or projection theorem. The flattened inducing
 representation is exactly `σ.comp e.toMonoidHom`, on the same module `V`.
 
@@ -115,16 +114,17 @@ modulus
 using the normalized absolute value of `F`. Both actions are right
 translation, `(h · f)(g) = f(g h)`.
 
-The future proof requires the full flattened modulus identity
+The comparison requires the full flattened modulus identity
 
 ```lean
 (T.composedLeviModulus B S).comp e.toMonoidHom =
   T.leviModulus (B.flatten S).
 ```
 
-Its shared statement is
-`Langlands.Parabolic.FlattenedRefinementModulusStatement`. A proof of this
-identity will make the positive half characters agree; the subgroup and
+Its statement is
+`Langlands.Parabolic.FlattenedRefinementModulusStatement`, proved as
+`flattenedRefinementModulus` in `FlattenedRefinementModulusProof`. This
+identity makes the positive half characters agree; the subgroup and
 projection identifications then allow the same underlying function and
 the same open stabilizer to satisfy either covariance condition.
 The existing `T.composedLeviHalfModulus_eq` only splits the composed half

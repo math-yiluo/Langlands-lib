@@ -1,8 +1,6 @@
 # Split parabolics containing a fixed maximal torus: proof
 
-Authors: Worker 3971 and Worker 4153. The reduction applied here is by
-Worker 1358, and the three structural proofs are by the authors named in their
-own Markdown files. The identical composition originally included as
+The identical composition originally included as
 `splitParabolicCocharacter` in `ParabolicDynamicForward` is consolidated here;
 that module imports this proof under its canonical name below.
 

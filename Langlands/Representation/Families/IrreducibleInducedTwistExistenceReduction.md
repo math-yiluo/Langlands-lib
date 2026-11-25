@@ -1,7 +1,5 @@
 # Irreducible induced twists from exclusion and persistence
 
-Author: Worker 5120.
-
 This module proves one theorem,
 `Langlands.Renard.AlgebraicFamily.irreducibleInducedTwistExistence_of_quotientExponentStatements`.
 It takes `InducedTwistQuotientExponentStatements.{u,v}` (exclusion and persistence of

@@ -83,11 +83,11 @@ private theorem integral_mem_closed_submodule {Y E : Type*} [MeasurableSpace Y]
   exact integral_eq_zero_of_ae (Filter.Eventually.of_forall fun y =>
     (Submodule.Quotient.mk_eq_zero A).mpr (hfA y))
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+private local instance (F : Type u) [Field F] (n : ℕ) :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of F)
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+private local instance (F : Type u) [Field F] (n : ℕ) :
     Smooth (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement (Fin n) (CommRingCat.of F)
 

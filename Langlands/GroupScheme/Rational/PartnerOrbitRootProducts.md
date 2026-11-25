@@ -3,7 +3,8 @@
 Module `Langlands.GroupScheme.Rational.PartnerOrbitRootProducts`, namespace
 `Langlands.GroupScheme.SplitPinning`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SU3 half.
+This module belongs to the `SU₃` half of the coherent algebraic `SL₂`/`SU₃` rank-one
+coordinates with Weyl normalization.
 
 ## Purpose
 

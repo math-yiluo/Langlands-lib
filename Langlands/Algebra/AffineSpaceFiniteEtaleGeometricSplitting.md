@@ -1,7 +1,5 @@
 # Geometric splitting of finite étale covers of affine space
 
-Worker 598 drafted the statement.
-
 The proposition definition
 `Langlands.Algebra.AffineSpaceFiniteEtaleGeometricSplittingStatement.{u}`
 expresses the geometric input for

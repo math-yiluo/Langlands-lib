@@ -80,5 +80,4 @@ chooses no compatible bases across levels or points. Inverse-limit
 freeness, adelic comparisons and monodromy-equivariant trivializations
 are outside this statement.
 
-Worker 2969 wrote this final composition and explanation. The imported
-modules retain the mathematical constructions and their authorship.
+The imported modules retain the mathematical constructions.

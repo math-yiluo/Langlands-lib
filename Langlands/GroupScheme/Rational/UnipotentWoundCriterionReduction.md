@@ -1,6 +1,6 @@
 # All-field assembly of the central additive-subgroup criterion
 
-Worker 1431. This internal deduction combines the two characteristic branches
+This internal deduction combines the two characteristic branches
 without altering the published `UnipotentWoundCriterionStatement.{u}`.
 It applies to every field in the same arbitrary universe as its actual smooth
 connected affine unipotent group schemes.
@@ -27,6 +27,7 @@ inclusion from the equivalence when an affine-line map is nonconstant.
 It includes closedness, centrality and natural one-dimensional vector
 coordinates on every relative scheme test.
 
-The unconditional all-field proof still requires proofs of both explicit
-prerequisites. This assembly adds no premise to, and changes no file of, the
+An unconditional all-field proof by this route requires proofs of both explicit
+prerequisites; the Library's unconditional proof is `unipotentWoundCriterion` in
+`UnipotentWoundCriterionProof`. This assembly adds no premise to, and changes no file of, the
 published target.

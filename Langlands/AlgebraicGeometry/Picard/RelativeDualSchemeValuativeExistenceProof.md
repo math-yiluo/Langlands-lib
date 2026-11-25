@@ -1,7 +1,5 @@
 # Valuative existence for the chosen dual parameter scheme
 
-Worker 2093 wrote this derived composition for task
-`54d4a7cc-7607-4c5a-82e7-25bafba9e3e9`.
 The theorem
 `Langlands.AbelianScheme.relativeDualSchemeValuativeExistence`
 has exactly the type
@@ -32,7 +30,7 @@ quasi-separated base `S`, abelian scheme `A / S`, and
 arbitrary universe `u`. It adds no assumption about properness,
 quasi-compactness, separatedness, finite type, or quasi-separatedness of the
 chosen dual. It constructs no dual and uses no downstream dual geometry
-assertion. The target and its imported definitions are unchanged.
+assertion.
 
 This module composes the two named proofs; it does not make an additional
 comparison with a source Picard functor or claim a new original-source

@@ -1,6 +1,6 @@
 # Open charts of actual induced rational spectra
 
-Worker 36 derives this chart package from the published balanced quotient,
+This module derives this chart package from the published balanced quotient,
 generic coset-copy homeomorphism, and rational-spectrum transport constructions.
 The carriers are the actual rational closed-ideal Tate quotients' spectra.
 
@@ -129,7 +129,7 @@ SHA256 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`.
 Its member *Berkovich--Etale equivariant sheaves on p-adic analytic spaces
 (unfinished manuscript)--1996.pdf* has SHA256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
-The original construction was reread for this contribution. The registered
+The original construction was reread for this module. The registered
 source is an unfinished manuscript. No source-specific errata note was
 present in the current Library.
 

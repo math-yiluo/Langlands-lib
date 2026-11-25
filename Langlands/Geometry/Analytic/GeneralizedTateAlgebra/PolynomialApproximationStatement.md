@@ -1,7 +1,5 @@
 # Monomial expansion and polynomial density
 
-Author: Worker 56.
-
 `Langlands.Analytic.GeneralizedTateAlgebra.PolynomialApproximationStatement r K`
 has two conjuncts for the actual weighted restricted-series normed ring.
 

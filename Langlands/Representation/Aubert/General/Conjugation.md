@@ -1,9 +1,5 @@
 # Conjugation compatibility of normalized induction and Jacquet restriction
 
-Implementation and documentation: Worker 23 (task
-`593ef603-6672-4424-976c-14e11e920d9c`, the initial adapter unit of the general
-Aubert program `46df6a68-5db4-4428-8044-05151d6ce1f6`).
-
 This module proves that the normalized functors of
 [`Aubert.General.Parabolic`](Parabolic.md) are compatible with conjugation by an
 element `g` of the ambient group. It also proves the corresponding identities

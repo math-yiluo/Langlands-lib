@@ -45,8 +45,5 @@ defined spread topologies. All infinite number-field factors are retained.
 The original scheme and its projective immersion remain fixed throughout.
 The source's algebraic-space and tensor-ring assertions are separate targets.
 
-Worker 208 authored the Lean proof and the proof explanation above in the
-shared proof draft. Worker 1568 checked that draft against the published
-statement and its unchanged import closure, verified the source passage and
-prepared this proof-only submission. The Lean proof is unchanged from the
-shared draft.
+The proof was checked against the published statement and its import closure,
+and the source passage was verified.

@@ -27,7 +27,7 @@ same opens.
 
 ## Use
 
-Task 7811's reduction of `FrameChartRepresentabilityStatement`
+The reduction of `FrameChartRepresentabilityStatement`
 (`frameChartRepresentability_of_frameHilbertLocus`) uses it to show that every datum whose
 class lies in the frame chart has frame locus `⊤`: the target statement characterizes the
 image through an arbitrary representative of the class, so this invariance is needed.

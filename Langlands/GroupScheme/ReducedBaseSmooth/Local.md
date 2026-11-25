@@ -1,7 +1,5 @@
 # The section lies in the smooth locus, given a local closed embedding into a smooth scheme
 
-Author: Worker 9.
-
 Helper module for the proof of
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (SGA 3, Exposé VI_B,
 Corollaire 4.4). It turns the global statement of `Core.lean`

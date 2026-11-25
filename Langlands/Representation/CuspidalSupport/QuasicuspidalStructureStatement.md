@@ -1,6 +1,6 @@
 # Quasicuspidal structure on actual product Levis
 
-Author: Worker 14. These proposition definitions state the subquotient
+These proposition definitions state the subquotient
 observation and parts (a)-(c) of Bernstein–Zelevinsky 1977, section 2.4,
 specialized to standard product Levis of general linear groups. They assert
 no proof of that theorem and assume no theorem truth as data.
@@ -64,8 +64,7 @@ to finite extensions of p-adic fields; it does not claim the full
 nonarchimedean generality.
 
 BZ77 cites its reference [1], chapter II, for the GL_n proofs of parts
-(a)-(c), and says the general proofs are similar. That cited proof route
-remains a future proof-source obligation. No proof is imported from a
+(a)-(c), and says the general proofs are similar. No proof is imported from a
 paraphrase of BZ77.
 
 ## Scope and dependencies
@@ -75,7 +74,10 @@ category with its actual subquotients, the smooth contragredient, and the
 published p-adic block topologies.
 
 Section 2.4(d), which rules out a quasicuspidal summand of induction from a
-proper standard subgroup, will be stated with the normalized induction
-family. The present aggregate deliberately names the structure subfamily;
-it does not claim to cover that remaining induction assertion. All four
-theorem proofs remain separate obligations.
+proper standard subgroup, is stated with the normalized induction
+family, as `PadicProperRefinedInductionTheorem` (`ProperInductionStatement`).
+The present aggregate deliberately names the structure subfamily;
+it does not claim to cover that induction assertion. The four theorems are
+proved in separate modules: `QuasicuspidalSubquotientProof`,
+`LeviQuasicuspidalDecompositionProof`, `ConstituentProof` and
+`LeviCuspidalContragredientProof`.

@@ -13,8 +13,8 @@ the smooth principal series. The statement is
 The extension is explicit (`PrincipalSeriesExtension.extension`) and linear in `φ`
 (`extensionLinear`).
 
-In the planned proof of the Langlands-quotient statement `RealStandardLanglandsQuotientStatement`
-(Task 6749), this is used to pass between a principal series and its dual through their common
+For the proof of the Langlands-quotient statement `RealStandardLanglandsQuotientStatement`,
+this is used to pass between a principal series and its dual through their common
 restriction to `O(n)`.
 
 Notation: `GL_n(ℝ)` is `Langlands.GeneralLinear n ℝ`, `O(n)` is `Matrix.unitaryGroup (Fin n) ℝ`, and

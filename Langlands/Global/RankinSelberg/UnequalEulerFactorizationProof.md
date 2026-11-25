@@ -1,6 +1,6 @@
 # Proof: partial Euler factorization of the unequal-rank global Whittaker integral
 
-Module `Langlands.Global.RankinSelberg.UnequalEulerFactorizationProof`. Author: Worker 95.
+Module `Langlands.Global.RankinSelberg.UnequalEulerFactorizationProof`.
 
 The theorem `Langlands.Global.RankinSelbergGlobal.unequalEulerFactorization` proves the
 Library statement `Langlands.Global.RankinSelbergGlobal.UnequalEulerFactorizationStatement.{u, uQ}`
@@ -35,12 +35,12 @@ theorem unequalEulerFactorization : UnequalEulerFactorizationStatement.{u, uQ} :
   UnequalUnfoldingStatement.{u} → UnequalEulerFactorizationStatement.{u, uQ}`.
 
 It is in module `Langlands.Global.RankinSelberg.UnequalEulerFactorizationReduction`, which
-this candidate adds ([`UnequalEulerFactorizationReduction`](UnequalEulerFactorizationReduction.md)).
-The three premises are discharged by published Library theorems:
+was ported together with this module ([`UnequalEulerFactorizationReduction`](UnequalEulerFactorizationReduction.md)).
+The three premises are discharged by Library theorems:
 
 - (A) `UnramifiedWhittaker.unramifiedWhittakerFactorization :
   UnramifiedWhittakerFactorizationStatement.{u, uQ}` (module
-  `UnramifiedWhittakerFactorizationProof`, Worker 394). At a finite place `v ∉ S`, the global
+  `UnramifiedWhittakerFactorizationProof`). At a finite place `v ∉ S`, the global
   Whittaker functions of a vector that is spherical outside `S`, for `ψ` and for `ψ⁻¹`, factor
   as `W_x(g ι_v(h)) = W_x(g) W°(h; a)` when `g_v = 1`. Here `W°(·; a)` is the explicit
   spherical Whittaker function.
@@ -55,12 +55,12 @@ The three premises are discharged by published Library theorems:
 ## What the reduction does
 
 The reduction module and its helper module `UnequalKernelLocalPoint`
-([`UnequalKernelLocalPoint`](UnequalKernelLocalPoint.md)) are part of this candidate. Their
+([`UnequalKernelLocalPoint`](UnequalKernelLocalPoint.md)) were ported together with this module. Their
 Markdown files describe them in detail. In outline:
 
 1. **The half-plane.** `σ = max(C, σ₁, σ₂)`, chosen before the vectors. `C` comes from the
    unfolding statement. `σ₁` comes from `exists_partialEulerFactor_convergence` (convergence
-   of the Euler product). `σ₂` comes from the published local Cauchy sum
+   of the Euler product). `σ₂` comes from the Library's local Cauchy sum
    `RankinSelberg.UnramifiedUnequalLocalSum.exists_hasSum_localTerm`, applied with the Satake
    bounds of `P` and `P'` (`exists_hasSatakeBound_presentation`). The local sum gives a
    half-plane that is uniform in the place `v`.
@@ -90,5 +90,5 @@ a product of local integrals. So this proof adds the unramified places one at a 
 the global integral. The cell decomposition (B_v) plays the role of the local Iwasawa
 integration formula, and the local Cauchy sum plays the role of the
 Shintani–Casselman–Shalika evaluation. For the absolute convergence Cogdell refers to gauge
-estimates; here it comes from the published unfolding proof. The split into the three premises is internal to
-Task 7022.
+estimates; here it comes from the Library's unfolding proof. The split into the three premises is internal to
+the proof of `UnequalEulerFactorizationStatement`.

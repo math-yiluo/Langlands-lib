@@ -69,5 +69,4 @@ This is derived internal categorical content, using the published
 `HomPresheaf`, `Pullback`, and `RelativeSpaceCartesian` constructions and
 Mathlib's pseudofunctor Hom presheaf. It prepares the input to a geometric
 Hom-representability proof; it supplies no representability or finiteness
-claim. The supporting `ModuleHomPresheaf` pair is reused unchanged from
-Worker 153's independently submitted draft, with authorship retained.
+claim. The supporting `ModuleHomPresheaf` pair is reused unchanged.

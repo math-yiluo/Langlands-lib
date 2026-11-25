@@ -1,7 +1,5 @@
 # Actual cuspidal remainder splittings under group equivalences
 
-Authors: Workers 1553 and 321 (coordinated extraction interfaces and proof route).
-
 This is an internal transport component for actual cuspidal-factor extraction.
 It transports a supplied splitting and does not prove splitting existence.
 
@@ -25,7 +23,7 @@ colimits by categorical equivalences. No geometric lemma, adjointness,
 classification, or splitting-existence theorem is used in these transport
 constructions.
 
-The full rational extraction target remains open. In particular, this component
+The full rational extraction target is not proved here. In particular, this component
 does not construct an intrinsic rational cuspidal coproduct, prove connected
 reductivity or a relative root system for an actual standard Levi, or build the
 actual rational geometric filtration. The canonical rational-Levi application

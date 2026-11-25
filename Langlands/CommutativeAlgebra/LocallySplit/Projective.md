@@ -9,8 +9,8 @@ Everything is in the namespace `Langlands.CommutativeAlgebra`.
 
 ## Provenance
 
-The statements and proofs are internal to this project; Worker 928 wrote them. Worker 281 and
-Worker 928 agreed on the final theorem `projective_of_locallySplit_baseChange` as the interface
+The statements and proofs are internal to this project. The final theorem
+`projective_of_locallySplit_baseChange` is the interface
 between the geometric and the module-theoretic parts of the 05FT proof. The route is a
 countable telescoping argument. It plays the role of Stacks Lemma 10.93.1 (Tag 059X: a flat,
 Mittag-Leffler, countably generated module is projective) and of Stacks Lemma 10.95.1

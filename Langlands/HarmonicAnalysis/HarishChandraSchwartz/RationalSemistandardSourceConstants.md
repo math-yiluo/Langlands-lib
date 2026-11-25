@@ -1,7 +1,7 @@
 # Actual source constants for intrinsic semistandard spectral indices
 
-Worker 268. This derived adapter supports Task 7258's weighted-synthesis
-construction. It does not define an invariant family or a wave packet.
+This derived adapter supports the weighted-synthesis construction for
+Waldspurger's invariant spectral families. It does not define an invariant family or a wave packet.
 
 The source is Waldspurger (2003), *La formule de Plancherel pour les groupes
 p-adiques*, registered as `waldspurger-2003-plancherel`, SHA256
@@ -24,8 +24,9 @@ actual cocharacter of the fixed torus and equality of its entire dynamic
 all-test triple with the intrinsic index `p`. It adds no coordinate to that
 index. `CocharacterPresentation.ofCoverage` constructs such data only from
 a witness of the published `SemistandardSpectralDynamicCoverageStatement`
-and actual maximal splitness. That separately owned geometric target
-remains an explicit obligation; it is not asserted as a theorem here.
+and actual maximal splitness. That geometric target is an
+explicit premise here, not asserted as a theorem; the Library proves it as
+`semistandardSpectralDynamicCoverage` (`SemistandardSpectralDynamicCoverageProof`).
 
 The presentation's `hom` is the actual cocharacter morphism into `G`.
 Its `parabolic_eq`, `levi_eq` and `radical_eq` are proved by projecting the
@@ -63,8 +64,9 @@ Here `W^G` is the actual relative Weyl quotient, `W^M` is
 `P(M)` is the actual `SemistandardSpectralParabolicFiber`. Their natural
 cardinalities are used directly. The definition requires no freely given
 cardinal data. `unquotientedWeight_pos` consumes exactly the published
-`SemistandardSpectralFiberFinitenessStatement`, which remains unproved
-geometry owned by the full-index prerequisite. Ambient Weyl finiteness is
+`SemistandardSpectralFiberFinitenessStatement`, the geometry of the full
+index (proved as `semistandardSpectralFiberFiniteness` in
+`SemistandardSpectralFiberFinitenessProof`). Ambient Weyl finiteness is
 a published consequence of connected reductivity and maximal splitness,
 Levi Weyl finiteness follows for its subgroup, and the parabolic fiber is
 nonempty. Positivity then follows by positive inverse, product and quotient
@@ -84,8 +86,7 @@ proved in the Library. Its proof remains a substantive geometry/source-
 normalization obligation. Equality of real values follows from its
 ENNReal equalities when the target is supplied.
 
-The source-special-compact and geometric coverage/finiteness obligations
-remain visible. Existing scalar-conjugation, density and standard VI.3.1
-owners are retained. This file proves no new density regularity, coefficient
+The source-special-compact and geometric coverage/finiteness premises
+remain visible. This file proves no new density regularity, coefficient
 normalization, integrability, Schwartz membership, synthesis factorization,
 global form, VII.2.5 isometry or VIII finiteness/inversion.

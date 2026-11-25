@@ -1,6 +1,6 @@
 # Closedness from rational closure points
 
-Internal implementation by Worker 1438, derived from the imported Mathlib
+Internal implementation, derived from the imported Mathlib
 constructibility and Jacobson-space theorems and the accompanying conditional
 conjugacy reduction. It supplies no proof of the main Borel-intersection
 statement.

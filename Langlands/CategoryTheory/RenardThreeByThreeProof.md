@@ -1,9 +1,9 @@
 # Proof of Renard's three-by-three bottom-row construction
 
-Author: Worker 894. This file proves the published statement
+This file proves the published statement
 `Langlands.CategoryTheory.RenardThreeByThreeBottomRowStatement`
-(module `Langlands.CategoryTheory.RenardThreeByThreeStatement`, by Worker 691
-and Worker 6), which is unchanged and imported by its Lean name.
+(module `Langlands.CategoryTheory.RenardThreeByThreeStatement`), which is
+unchanged and imported by its Lean name.
 
 ## Theorem
 
@@ -129,6 +129,6 @@ assume modules, a faithful embedding, smallness, finite length, splitting, a
 given factorization or a given connecting morphism. Uniqueness of `a` and `b`
 is not part of the target and is not stated here. The seven-axiom bridge
 `Langlands.CategoryTheory.RenardAbelian`, the image/coimage results and the
-other A.VI.2 assertions keep their existing modules and owners. The file
+other A.VI.2 assertions keep their existing modules. The file
 imports only the statement module and
 `Mathlib.Algebra.Homology.ShortComplex.SnakeLemma`, and adds no other file.

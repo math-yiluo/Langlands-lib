@@ -107,56 +107,56 @@ namespace ChosenAtlasSectionAction
 variable {G : Type t} [Group G]
   (X : Action (AffinoidAtlasPresentation.{u, v, w} K) G)
   (g : G) {S : X.V.atlas.OriginalChartDomain}
-  {R : Sieve (isoOriginalDomain (X.ρAut g) S)}
+  {R : Sieve (isoOriginalDomain (X.ρAut g).asIso S)}
   (p : Presieve.FamilyOfElements (locallyConstantPresheaf X.V.atlas D) R.arrows)
   (hp : p.Compatible) (hR : IsCovering R)
 
 /-- The actual induced group action takes the constructed pullback glue to
 the original target-sieve glue. -/
 theorem action_pullbackSieveGlue :
-    ((action X D).ρ g).hom
-        (OriginalDomainSection.pullbackSieveGlue (X.ρAut g) p hp hR) =
+    ((action X D).ρ g).asHom.hom
+        (OriginalDomainSection.pullbackSieveGlue (X.ρAut g).asIso p hp hR) =
       OriginalDomainSection.sieveGlue p hp hR :=
-  OriginalDomainSection.transport_pullbackSieveGlue (X.ρAut g) p hp hR
+  OriginalDomainSection.transport_pullbackSieveGlue (X.ρAut g).asIso p hp hR
 
 /-- The action recovers each whole original local domain-section pair,
 including target members not supplied as direct image presentations. -/
 theorem action_pullbackSieveGlue_restrict
     {T : X.V.atlas.OriginalChartDomain}
-    (f : T ⟶ isoOriginalDomain (X.ρAut g) S) (hf : R f) :
+    (f : T ⟶ isoOriginalDomain (X.ρAut g).asIso S) (hf : R f) :
     OriginalDomainSection.restrict
-        (((action X D).ρ g).hom
-          (OriginalDomainSection.pullbackSieveGlue (X.ρAut g) p hp hR))
+        (((action X D).ρ g).asHom.hom
+          (OriginalDomainSection.pullbackSieveGlue (X.ρAut g).asIso p hp hR))
         T (leOfHom f) =
       ⟨T, (p f hf : LocallyConstant T D)⟩ :=
-  OriginalDomainSection.transport_pullbackSieveGlue_restrict (X.ρAut g) p hp hR f hf
+  OriginalDomainSection.transport_pullbackSieveGlue_restrict (X.ρAut g).asIso p hp hR f hf
 
 /-- In particular, every original local value is recovered at its literal
 target inclusion under the actual group action. -/
 theorem action_pullbackSieveGlue_apply
     {T : X.V.atlas.OriginalChartDomain}
-    (f : T ⟶ isoOriginalDomain (X.ρAut g) S) (hf : R f) (x : T) :
-    (((action X D).ρ g).hom
-      (OriginalDomainSection.pullbackSieveGlue (X.ρAut g) p hp hR)).value
+    (f : T ⟶ isoOriginalDomain (X.ρAut g).asIso S) (hf : R f) (x : T) :
+    (((action X D).ρ g).asHom.hom
+      (OriginalDomainSection.pullbackSieveGlue (X.ρAut g).asIso p hp hR)).value
         (Set.inclusion (leOfHom f) x) = (p f hf : LocallyConstant T D) x :=
-  isoOriginalDomainLocallyConstantPullbackGlue_target_apply (X.ρAut g) p hp hR f hf x
+  isoOriginalDomainLocallyConstantPullbackGlue_target_apply (X.ρAut g).asIso p hp hR f hf x
 
 /-- The actual equivariant coefficient map takes the constructed source glue
 to the source glue of the full coefficient-mapped target family. -/
 theorem coefficientMap_pullbackSieveGlue (φ : D → E) :
     (coefficientMap X φ).hom.hom
-        (OriginalDomainSection.pullbackSieveGlue (X.ρAut g) p hp hR) =
-      OriginalDomainSection.pullbackSieveGlue (X.ρAut g)
+        (OriginalDomainSection.pullbackSieveGlue (X.ρAut g).asIso p hp hR) =
+      OriginalDomainSection.pullbackSieveGlue (X.ρAut g).asIso
         (p.map (locallyConstantCoefficientMap φ))
         (hp.map (locallyConstantCoefficientMap φ)) hR :=
-  OriginalDomainSection.pullbackSieveGlue_map (X.ρAut g) p hp hR φ
+  OriginalDomainSection.pullbackSieveGlue_map (X.ρAut g).asIso p hp hR φ
 
 /-- Acting and then changing coefficients gives the original target glue
 for the entire coefficient-mapped matching family. -/
 theorem action_pullbackSieveGlue_map (φ : D → E) :
     (coefficientMap X φ).hom.hom
-        (((action X D).ρ g).hom
-          (OriginalDomainSection.pullbackSieveGlue (X.ρAut g) p hp hR)) =
+        (((action X D).ρ g).asHom.hom
+          (OriginalDomainSection.pullbackSieveGlue (X.ρAut g).asIso p hp hR)) =
       OriginalDomainSection.sieveGlue (p.map (locallyConstantCoefficientMap φ))
         (hp.map (locallyConstantCoefficientMap φ)) hR := by
   rw [action_pullbackSieveGlue X g p hp hR]

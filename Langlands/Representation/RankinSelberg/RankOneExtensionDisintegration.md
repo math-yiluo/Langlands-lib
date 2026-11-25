@@ -98,7 +98,7 @@ the quotient `N_{t₁,t₂} \ G_t` (display (4)). Printed page 425 writes elemen
 the lower parabolic `Q` as `[1, 0; y, 1][m, 0; 0, a]` with `m ∈ G_{t₁}` and
 `a ∈ F^×`, which is the lower-block form `[m, 0; x, a]` of this chart. Both
 pages were rendered and read (one-based PDF pages 59–60). The chart rank and its expression through
-`rankOneExtensionLowerBlock` were requested by Worker 802 for the assembly of
+`rankOneExtensionLowerBlock` were chosen for the assembly of
 the strict span comparison. They make the chart match the integrand
 coordinates of `RankOneExtensionSpanTransfer`.
 

@@ -3,7 +3,7 @@
 `AugmentationLieSemigroupStatement` states Conrad–Gabber–Prasad,
 *Pseudo-reductive Groups*, second edition (2015), Example 3.3.2, printed p.108 /
 PDF p.134, for the Library's actual coordinate augmentation and original actual
-Lie-kernel support. This is an unproved `Prop` definition.
+Lie-kernel support. This is a `Prop` definition; this module does not prove it.
 
 For a smooth connected affine group over an arbitrary field, acted on by an
 actual split torus, the target equates `CoordinateWeights.support b` with the
@@ -35,5 +35,7 @@ claimed here without proof.
 
 `CoordinateSemigroupComparisonStatement` is their conjunction. These targets
 serve semigroup realization and the commutator bound without assuming either
-consumer conclusion. Their focused proof successor must discharge the source
-arguments; publishing this statement module does not prove Example 3.3.2.
+consumer conclusion. Both are proved in `Rational.CoordinateSemigroupProof`,
+where `coordinateSemigroupComparison` proves
+`CoordinateSemigroupComparisonStatement`; this statement module does not prove
+Example 3.3.2.

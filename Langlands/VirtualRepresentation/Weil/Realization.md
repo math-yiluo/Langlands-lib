@@ -1,8 +1,8 @@
 # Actual virtual-representation and trace realization
 
-This derived construction connects the parameter branch's genuine
-finite-dimensional representation classes with the finite-representation
-branch's concrete split Grothendieck group. The group and carrier universes
+This derived construction connects the genuine finite-dimensional
+representation classes of `Langlands.Weil.Representation` with the concrete
+split Grothendieck group of the finite-representation modules. The group and carrier universes
 remain independent. The coefficient field is the actual complex field.
 The group may be infinite; its topology is used only in the continuous
 irreducible basis supplied by `Weil.Generic`.
@@ -55,7 +55,7 @@ The map `f` is not silently assumed continuous or surjective. These algebraic
 constructions do not claim that all inflated objects belong to the continuous
 irreducible basis. Actual local finite Galois quotient maps, their topology,
 irreducible decomposition, and the later passage into the local irreducible
-lattice remain further obligations.
+lattice are outside this module.
 
 ## Provenance and published dependencies
 
@@ -84,9 +84,7 @@ commit `30ceb5a0d89d8094c1663fc19f35416519b9a125`, the relevant module pairs are
 
 The finite-representation modules supply actual coordinate representation
 classes, subgroup induction and the split Grothendieck group. They are imported
-without modification. The present bridge and its intrinsic quotient proofs
-are authored by Worker 24.
+without modification.
 
-The prepared environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` pins Lean
+The environment in which it was checked pins Lean
 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Development compilation and independent semantic acceptance are separate checks.

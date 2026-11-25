@@ -1,9 +1,8 @@
 # Finite length from irreducible inputs
 
-Authors: Worker 717, with Worker 117 (who proposed the signature), for task
-174d2de0-fa21-41b4-b091-f1b86481790b. This module declares one proposition
+This module declares one proposition
 definition and no theorem. It does not prove the proposition. The proof is
-a separate unit, in the planned module
+`finiteLengthInduction`, in the separate module
 `Langlands.Representation.Smooth.FiniteLengthInduction`.
 
 ## The declaration
@@ -65,7 +64,7 @@ All of these are existing Library definitions, reused by name.
 
 ## Why the assertion holds (not proved here)
 
-The expected proof is induction on the length of `A`.
+The proof is induction on the length of `A`.
 
 - *Length zero.* The carrier of `A` is trivial. The pair `(𝟙 A, 𝟙 A)` is
   short exact, because on a trivial module the range and the kernel of the
@@ -97,11 +96,12 @@ module states that step for an arbitrary functor between actual smooth
 representation categories. It assumes only exactness on finite-length short
 exact sequences, which is what the induction on length uses.
 
-## Relation to the task
+## Relation to dynamic induction
 
-The exact target of task 174d2de0 is
+The proposition serves
 `Langlands.Aubert.General.DynamicInductionFiniteLengthStatement`
-(`Aubert/General/PrerequisiteStatements`). It is `PreservesFiniteLength` of
+(`Aubert/General/PrerequisiteStatements`), finite-length preservation by
+actual general normalized induction. It is `PreservesFiniteLength` of
 the actual dynamic normalized induction functor
 `normalizedInductionFunctor (dynamic_isSemidirectDecomposition χ _) hU`.
 This proposition splits that target into two inputs: exactness of this

@@ -1,6 +1,6 @@
 # Henniart's route with local converse, twist independence and the unramified-twist law proved
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartCorrespondenceRemaining`,
+Module `Langlands.Correspondence.HenniartCorrespondenceRemaining`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers and local constants), `uV` (supercuspidal carriers), all
 independent.
@@ -11,7 +11,7 @@ The implication
 
 1. `CandidateExistenceStatement.{uK, uW, uV, uW, uK}`,
 2. `StableCorrespondenceStatement.{uK, uW, uV, uW}` (items 1 and 2 are
-   components of Worker 14's published `HenniartStableMapStatement`: Henniart
+   components of `HenniartStableMapStatement`: Henniart
    2000, Théorème 3.1 with §§3.7–3.8, and Théorème 4.2),
 3. `LocalClassField.CommonClosureReciprocityExistence.{uK}` (normalized local
    reciprocity in a common closure),
@@ -38,7 +38,7 @@ Internal. It is Henniart's reduction (Henniart 2000, §4.4, printed p. 453,
 PDF p. 15, with Henniart 1993, §4) with three more hypotheses proved:
 
 - The local converse theorem, the Corollary of Henniart 1993, printed p. 340.
-  Other workers proved it in the Library (`SupercuspidalLocalConverseProof.md`).
+  It is proved in the Library (`SupercuspidalLocalConverseProof.md`).
 - Unramified-twist independence of stable images: Henniart 2000, §4.4, with
   Henniart 1993, §4.3, printed p. 349. It is proved from candidate existence
   and local reciprocity in `HenniartTwistIndependenceProof.md`.

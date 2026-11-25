@@ -1,9 +1,6 @@
 # Proof that continuous complex quasicharacters have open kernel
 
-Worker 4 authored the Lean proof. Worker 21 checked the accepted target,
-the implementation and its dependencies, retained the Lean source unchanged,
-and prepared this paired contribution for independent checking and review.
-Both workers are actual coauthors.
+The target, the implementation and its dependencies were checked.
 
 The proof supplies the required complex-analytic argument directly.
 `complex_eq_one_of_forall_norm_pow_sub_one_lt` says that if every nonnegative
@@ -30,15 +27,11 @@ compactness, Hausdorffness of `G`, unitarity of the character, or unproved
 assertion about small subgroups is assumed. The supporting complex lemma
 and topological lemma are retained in this one proof module.
 
-## Exact accepted target and dependencies
+## Exact target and dependencies
 
-- Target: `Langlands.ContinuousComplexCharacterOpenKernel`, artifact
-  `f56acc86-4146-4652-ace8-72cda7a39b7f`, version 1.
+- Target: `Langlands.ContinuousComplexCharacterOpenKernel`.
 - Entry module:
   `Langlands.Representation.Twist.ContinuousCharacterStatement`.
-- Statement publication: `18345ab3a6bd6ae07173195fa2be198e72d0f2f0`.
-- Independent statement publication receipt:
-  `a3eb48e4-cf9a-4c76-a077-fccba5c8f4f0`.
 - Exact target fingerprint:
   `71fb79dc67fd0fd5a3cd7fc48f94c2d92ab84cbdd2d79e678bc81f065c0b5100`.
 - Statement Lean SHA-256:
@@ -46,29 +39,25 @@ and topological lemma are retained in this one proof module.
 - Statement Markdown SHA-256:
   `0791b592e84c04c73f41709e1391c23f874061e8991bf57f5bf750dba5367b3a`.
 - No project definition dependencies.
-- Environment: `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-  Lean 4.34.0 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+- Environment: Lean 4.34.0 and Mathlib commit
+  `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Worker 21 read the complete final statement review and confirmed that the
-effective source hashes and target fingerprint match the local statement.
-Fresh registry reads confirm the statement is accepted, published and current,
-with no changed files or unavailable dependencies, and that the pinned
-environment is accepted and public. The statement supplies the quasicharacter
+The effective source hashes and target fingerprint were confirmed to match the
+local statement, with no changed files or unavailable dependencies. The
+statement supplies the quasicharacter
 convention; this proof is the internal geometric-sum and open-subgroup argument
 described above.
 
-The bound proof task is `745f8453-6791-4cc3-91e0-afaf64adb387`, revision 1.
-Its proof module is `Langlands.Representation.Twist.ContinuousCharacterProof`,
+The proof module is `Langlands.Representation.Twist.ContinuousCharacterProof`,
 and its closing declaration is `Langlands.continuousComplexCharacterOpenKernel`.
 The closing theorem introduces the entire target's nonarchimedean hypothesis;
 it does not require that hypothesis as an extra parameter outside the target.
 
-Worker 21's development check compiled both modules without errors or warnings.
+A development check compiled both modules without errors or warnings.
 The closing theorem retains the arbitrary universe `uG`; its inspected axiom
 closure and the proof module's closure contain only `propext`,
 `Classical.choice`, and `Quot.sound`, with no declared or disallowed axioms.
-Development compilation and inspection do not replace the registered
-independent checker, semantic review or publication. No concrete p-adic group
+No concrete p-adic group
 instance or local Langlands correspondence is established by this module.
 
 ## Shared local-constancy consequence

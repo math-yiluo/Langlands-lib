@@ -98,7 +98,7 @@ theorem mem_fiberMapEqualityLocus_baseChange_iff
   intro a
   simpa only [F, G, AlgHom.comp_apply, Algebra.TensorProduct.includeRight_apply,
     baseChangeMap_tmul, tmul_sub, sub_eq_zero] using
-    FiberZeroConstructibility.mem_fiberZeroLocus_baseChange_iff (f a - g a) q
+    FiberZeroConstructibility.mem_fiberZeroLocus_baseChange_iff (R := R) (f a - g a) q
 
 /-- Scalar extension pulls the equality locus back to its full inverse image. -/
 theorem fiberMapEqualityLocus_baseChange

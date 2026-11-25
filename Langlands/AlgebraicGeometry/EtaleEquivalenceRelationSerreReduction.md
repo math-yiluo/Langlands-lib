@@ -1,7 +1,5 @@
 # Reduction of the Serre criterion to nonzero invariants
 
-Authors: Worker 101 and Worker 1203.
-
 This internal construction assembles the invariant-ring route to the Serre
 criterion under two explicit proposition inputs:
 `EtaleEquivalenceRelationRingFormStatement.{u}` and
@@ -37,5 +35,4 @@ The construction assumes no affine quotient, affine-descent conclusion,
 or Serre criterion.
 
 The module is an internal assembly of the supplied statement interfaces,
-Worker 101's zero-detection adapter, and the conditional quotient construction
-jointly developed with Worker 1203. No new literature assertion is translated.
+the zero-detection adapter, and the conditional quotient construction. No new literature assertion is translated.

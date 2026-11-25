@@ -1,7 +1,5 @@
 # The weight grading of square matrices (`WeightGrading`)
 
-Author: Worker 239.
-
 Fix weights `wt : ι → X` for the basis vectors of `R^ι`, with values in an additive group `X`.
 This module sets up the bookkeeping used to track how matrices move weights. Later modules
 apply it to root operators and to Weyl elements.

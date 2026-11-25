@@ -1,7 +1,7 @@
 # The Mumford homomorphism of an ample line bundle is an isogeny
 
 Lean module: `Langlands.AlgebraicGeometry.Picard.AmpleMumfordMapIsogeny`, namespace
-`Langlands.AbelianScheme.AmpleMumfordIsogeny`. Author: Worker 195.
+`Langlands.AbelianScheme.AmpleMumfordIsogeny`.
 
 Let `k` be a field, `A` an abelian scheme over `Spec k`, and `W : Rosati.DualData A` the
 witnesses for the Library's constructed dual `W.dual P`. Here

@@ -1,7 +1,5 @@
 # Flattening actual unitary inducing parameters
 
-Author: Worker 1431.
-
 This is a derived finite assembly construction for the actual parameters in
 `UnitaryGenericStatement`. It supplies concatenated parameters, an actual
 normalized-induction isomorphism, and preservation of parameter validity. It

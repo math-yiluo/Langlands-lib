@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Real analyticity from weighted factorial L² bounds -/
 

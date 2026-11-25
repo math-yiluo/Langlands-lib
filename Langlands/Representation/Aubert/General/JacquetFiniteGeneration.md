@@ -1,14 +1,9 @@
 # Finite generation of actual normalized Jacquet modules
 
-Authors: Worker 187 wrote the Lean implementation and its first Markdown in
-the shared draft (revision 2) of task `73e60be8-481a-4cea-b464-eed3bd89be7f`.
-Worker 834 agreed the scope of that draft's finite-generation part. Worker 1180
-submits the Lean file unchanged for proof task
-`7bfa0c8b-fc71-4675-b386-9a3f7b7e826a` and revised this Markdown. The
-finite-union and intersection-subrepresentation route is adapted from Worker
-319's published `Langlands.Representation.Parabolic.JacquetFiniteGenerationProof`.
-That proof in turn adapts Worker 238's single-vector cover argument, so
-Workers 319 and 238 are credited as coauthors.
+The finite-union and intersection-subrepresentation route is adapted from the
+published `Langlands.Representation.Parabolic.JacquetFiniteGenerationProof`.
+That proof in turn adapts the single-vector cover argument
+`exists_finset_generating` of `CuspidalSupport.QuasicuspidalEmbeddingProof`.
 
 ## Result
 
@@ -115,7 +110,8 @@ for the abstract subgroup hypotheses of the target rather than a reductive
 parabolic subgroup. Each generator gets its own open stabilizer and
 double-coset cover, and the finite covers are combined at the end. The
 normalization step is the explicit unit computation of `mk_parabolic`.
-Unlike Worker 319's GL-specific proof, this module imports no GL
+Unlike the GL-specific proof in `Parabolic.JacquetFiniteGenerationProof`, this
+module imports no GL
 specialization. It uses only the generic `Aubert.General.Parabolic`
 projection and normalized-action definitions, the Jacquet localization API,
 the double-coset cover in `Induction.CompactQuotientProof` (both through the
@@ -124,5 +120,4 @@ target statement's imports), and `Mathlib.RepresentationTheory.Subrepresentation
 Compactness of `P \ G` remains a hypothesis. This module does not prove it
 for rational points of a reductive group. It also does not prove Jacquet
 admissibility, Howe's theorem, finite length of Jacquet modules, or the
-separate `DynamicJacquetFiniteLengthStatement`. The target statement pair and
-its imports are unchanged.
+separate `DynamicJacquetFiniteLengthStatement`.

@@ -14,7 +14,9 @@ base hypothesis is assumed.
 This is an internal consequence of the published full-kernel definition of
 `IsFppfQuotient`, commutativity of relative tori, and elementary base change of
 subgroup functors. It supplies commutator containment on the geometric fibres
-in the central multiplication argument of Task 6385. It does not assert that
+in the central multiplication argument for the central isogeny `Z × D(G) → G`
+of reductive group schemes (`Reductive.DerivedCentralIsogenyStructuralReduction`).
+It does not assert that
 the supplied subgroup is the derived subgroup, construct a central torus or
 prove a central isogeny.
 

@@ -1,7 +1,5 @@
 # Comparing tensor presentations of a local normalization
 
-Worker 594.
-
 `tensorScalarExchangeEquiv` exchanges the order of extending scalars
 from \(R\) to \(S\) and from an \(R\)-algebra \(B\) to a \(B\)-algebra
 \(Q\). It sends \(q \otimes (s \otimes x)\) to

@@ -8,4 +8,4 @@ Because `C` is local, every denominator inverted in the tensor product maps to a
 
 This is internal infrastructure for the prime-localization transition clause in Stacks 00QV. It assumes the quotient pushout and the two component localization descriptions rather than asserting existence of the entire approximation system. The proof uses Mathlib's pushout composition and localization base-change APIs, followed by elementary localization axioms. The paired helper Markdown gives the implementation details. No finite type, flatness or injectivity hypotheses are introduced.
 
-Worker 706 wrote this wrapper and its explanation in the shared draft of task bf91326a (revision 8). Worker 928 checked it against the published statement and submitted it.
+This wrapper was checked against the published statement.

@@ -1,12 +1,12 @@
 # Exactness of the graded Jacquet pieces of the corrected filtration
 
-Author: Worker 1252. The actual Jacquet diagram, the corrected support
-filtration, its graded pieces and their finite lifting are Worker 691's
+The actual Jacquet diagram, the corrected support
+filtration, its graded pieces and their finite lifting are the
 modules `General.JacquetCutDiagram` and `General.CorrectedDegreeFiltration`.
-The Boolean contraction and Coxeter facts are this author's
+The Boolean contraction and Coxeter facts are in
 `General.CorrectedGradedContraction`. The two graded targets, the Levi Weyl
-identification and the support category are earlier Library work by other
-authors.
+identification and the support category come from other modules of the
+Library.
 
 This internal helper module serves the corrected Aubert Theorem 3.6 route
 (Aubert, *Dualité dans le groupe de Grothendieck de la catégorie des
@@ -26,7 +26,8 @@ assumes the following statements as premises and proves none of them.
   definition. The Weyl image of each `M J` is the standard subgroup `W_J`.
 - `hA : IsInSupportCategory ... I ... A`, membership of `A` in `Alg({I})`.
 - `hcover : CorrectedFiltration.IsBruhatCover T (P ∅) (P I)`. Only the two
-  lifted theorems use it, through Worker 691's exhaustiveness lemma.
+  lifted theorems use it, through the exhaustiveness lemma of
+  `General.CorrectedDegreeFiltration`.
 - For the two associated theorems at the end, three premises quantified over
   every `J` and `n : G` with `IsAssociate I J n` and
   `∀ x, x ∈ M J ↔ n⁻¹ * x * n ∈ M I`: `hcard` (`J.card = I.card`), `hsupp`
@@ -101,7 +102,8 @@ this is the published `quotient_exact_of_le`. In case B it is
 ## Actual graded pieces and lifting
 
 `gradedDiagram_range_eq_ker` and `gradedDiagram_injective_zero` state the same
-two conclusions for Worker 691's `gradedDiagram ... i`. That diagram is
+two conclusions for the `gradedDiagram ... i` of
+`General.CorrectedDegreeFiltration`. That diagram is
 `(stepSubdiagram ... i).quotientDiagram (stepSubdiagram ... (i + 1))`, so
 `hLo` and `hUp` hold by `Iff.rfl`.
 
@@ -110,27 +112,27 @@ two conclusions for Worker 691's `gradedDiagram ... i`. That diagram is
 and `k + 1` of the actual `jacquetDiagram ... A I`.
 `degreeDifferential_injective_zero_of_targets` adds `hcover` and gives
 injectivity of the actual degree-zero differential for `0 < |S| - |I|`. Both
-apply Worker 691's `degreeDifferential_exact_of_graded` and
+apply `degreeDifferential_exact_of_graded` and
 `degreeDifferential_injective_of_graded` to the graded results at every
 `i < (Support.rankOrderedList cs.length).length`.
 
 ## The `FiniteFiltered.gradedMap` form
 
-Worker 691's `gradedDifferential ... i k` is the
+The `gradedDifferential ... i k` of `General.CorrectedDegreeFiltration` is the
 `FiniteFiltered.gradedMap` of the actual degree differential `k` on grade `i`
 of `degreeFiltration`. `gradedDifferential_range_eq_ker` gives, for
 `k + 1 < |S| - |I|`, `range = ker` for `gradedDifferential ... i k` and
 `gradedDifferential ... i (k + 1)`. `gradedDifferential_injective_zero` gives
 injectivity of `gradedDifferential ... i 0` for `0 < |S| - |I|`. Both take the
 premises of `gradedDiagram_range_eq_ker`. They transfer its conclusions along
-Worker 691's `gradedDifferential_exact_iff` and
+`gradedDifferential_exact_iff` and
 `gradedDifferential_injective_iff`.
 
 ## Associated Jacquet diagrams
 
 These two theorems have exactly the shape of the `hex` and `hinj` premises
-of Worker 691's `isExactBeforeTerminal_of_jacquet`. That module is not
-imported here.
+of `isExactBeforeTerminal_of_jacquet` in `General.JacquetExactness`. That module
+is not imported here.
 
 `associated_degreeDifferential_exact_of_targets` takes `hvan`, `htrans`,
 `hLevi`, `hcard`, `hsupp` and `hcover`. Its conclusion is the following.

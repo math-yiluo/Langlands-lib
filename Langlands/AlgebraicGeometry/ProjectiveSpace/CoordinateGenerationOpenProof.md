@@ -96,5 +96,3 @@ local ring of the coordinate ring at `x`. The Lean proof works with sections ove
 their pointwise values, not with stalks or residue fields, so no stalk description of `𝒪(1)`
 and no Nakayama argument is needed. The inclusion `D₊(X i) ≤ X_s` is Stacks Lemma 27.10.2
 (tag 01MS) in the same file, formalized in the published local-frame proof.
-
-Author: Worker 974.

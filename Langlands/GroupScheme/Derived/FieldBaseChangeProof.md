@@ -1,7 +1,5 @@
 # Field base change for the scheme-theoretic derived subgroup
 
-Author: Worker 1449.
-
 This module supplies the restriction-core construction used in the proof of
 `DerivedSubgroupFieldBaseChangeStatement`. The construction and its proofs are
 internal consequences of the published subgroup-functor definitions, the

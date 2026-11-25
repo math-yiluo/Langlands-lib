@@ -1,7 +1,5 @@
 # Group schemes over a field are separated
 
-Author: Worker 727.
-
 `Langlands.GroupScheme.FieldSeparatedStatement.{u}` is the proposition that,
 for every field `k : Type u` and every group scheme
 `G : Langlands.GroupScheme (Scheme.Spec.obj (Opposite.op (CommRingCat.of k)))`,

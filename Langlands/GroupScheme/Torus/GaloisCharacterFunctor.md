@@ -1,6 +1,6 @@
 # The contravariant Galois character functor
 
-Worker 3483. This is a derived construction from the published actual character
+This is a derived construction from the published actual character
 groups, canonical descent transport and its naturality. Its field specialization
 packages the character functor used in Milne's classification of groups of
 multiplicative type. The implementation also applies to commutative ring
@@ -90,7 +90,7 @@ uses a common finite Galois splitting extension. The original pages were read.
 The complete retained official 2017 errata were checked; its Chapter 12
 corrections do not affect these passages.
 
-This unit constructs the functor on actual commutative group schemes with a
+This module constructs the functor on actual commutative group schemes with a
 specified ring extension and its automorphism group. Its ring-level scope is
 derived from the published scheme-level transport laws, rather than asserted
 as a ring-level version of Milne's classification theorem. For a finite Galois

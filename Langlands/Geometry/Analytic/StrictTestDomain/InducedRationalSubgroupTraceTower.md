@@ -8,7 +8,7 @@ pullbacks and traces. The entry construction is
 It uses `InducedRationalSubgroupTower` for the actual level category and its
 geometry, `InducedRationalSubgroupTrace` for the original coefficient maps, and
 `InducedRationalSubgroupTransitivity` for their composition laws. No external
-comparison theorem is an input or a conclusion of this unit.
+comparison theorem is an input or a conclusion of this module.
 
 ## Inputs and coefficient scope
 
@@ -108,7 +108,7 @@ intertwiner commutes with this operator. The point formula
 replacement fiber or a selected set of coset representatives.
 `invariantCommonRefinementCorrespondence` applies whole-group invariants to
 the same natural transformation. These are actual intersection-span
-operators; this unit does not identify them with an arithmetic Hecke
+operators; this module does not identify them with an arithmetic Hecke
 correspondence or prove general correspondence convolution laws.
 
 ## Agreement with the stable cohomology tower and remaining scope

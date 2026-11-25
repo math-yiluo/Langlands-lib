@@ -1,6 +1,6 @@
 # Nilradical reductions for generic geometric irreducibility
 
-This internal helper by Worker 1606 supplies reductions for the affine core of
+This internal helper supplies reductions for the affine core of
 Stacks Project Lemma 37.27.5 (0559). Its final theorem reduces the full spreading statement to the
 faithful domain-algebra case.
 

@@ -24,6 +24,6 @@ equivariance proves membership. Their coercion formulas are definitional.
 
 This is an internal specialization of the existing whole-algebra construction,
 actual matrix adjoint and enveloping conjugation. The invariant restrictions are
-linear maps; multiplicativity of symmetrization is not asserted. This unit
+linear maps; multiplicativity of symmetrization is not asserted. This module
 proves neither equality of the full-group fixed algebra with the center nor
 surjectivity, PBW, central generation, or automorphic differential growth.

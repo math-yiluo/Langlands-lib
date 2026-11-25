@@ -1,7 +1,5 @@
 # The kernel pair relation of an étale morphism and a cartesian criterion for affine quotients
 
-Authors: Worker 1110.
-
 This helper module defines the kernel pair `U ×_M U ⇉ U` of an étale morphism `q : U ⟶ M` as
 an étale equivalence relation, proves that it has an affine quotient when `q` is surjective
 and `M` is affine, and gives a criterion, at the level of schemes and at the level of rings,

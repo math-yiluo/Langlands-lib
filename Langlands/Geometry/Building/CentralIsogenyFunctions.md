@@ -1,7 +1,5 @@
 # Normalized root-function pullback through a central isogeny
 
-Author: Worker 1631.
-
 Let `k` be a field in arbitrary universe `u`. Supply affine, locally finite type
 `k`-group schemes `C` and `G`, a central isogeny `q : C → G`, split commutative
 tori `S` and `T`, maps `i : S → C`, `j : T → G`, and a torus isogeny `t : S → T`
@@ -44,5 +42,5 @@ root subgroup, without asserting surjectivity on ambient or torus rational point
 All assertions here are internal consequences of the existing central-isogeny
 root bijection, rational root-point equivalences, pairing naturality, and real
 cocharacter bijectivity. No new assertion from external literature is introduced.
-This unit constructs neither the supplied tori nor full valuation or apartment
+This module constructs neither the supplied tori nor full valuation or apartment
 data, and proves no apartment-axiom or affine Weyl image assertion.

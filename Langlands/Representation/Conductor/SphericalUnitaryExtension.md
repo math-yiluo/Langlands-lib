@@ -1,12 +1,12 @@
 # The spherical corank-one functional equation: from unitary to all Satake parameters
 
-This internal unit is a step towards the published
+This module is a step towards the published
 `SphericalLaurentFunctionalEquationStatement`. It shows that the normalized
 functional equation for the corank-one integrals against spherical Whittaker
 functions extends from unitary Satake parameters (`|x_i| = 1`) to all parameters
 `x : Fin (n + 1) → ℂˣ`. Convergence and the Laurent-polynomial numerators must be
 known for every `x`. The unitary case, the convergence and the Laurent numerators are
-explicit hypotheses of the final theorem; this unit proves no instance of them.
+explicit hypotheses of the final theorem; this module proves no instance of them.
 
 The final theorem is `normalizedFunctionalEquation_of_unitary`. The other
 declarations are algebraic and analytic lemmas for it.
@@ -110,7 +110,7 @@ du groupe linéaire*, Math. Ann. 256 (1981), 199–214, registered
 `jpss-1981-conductor`): for `|x_i| = 1` the principal series `I(x)` is irreducible and
 generic. Here that case is the hypothesis `hunit`. The literature obtains the equation
 for all `x` directly from JPSS 1983, Theorem (2.7), for representations of Whittaker
-type; this unit gives a route from the unitary case instead.
+type; this module gives a route from the unitary case instead.
 
 ## What it does not assert
 

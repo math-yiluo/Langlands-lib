@@ -36,7 +36,7 @@ dimension; it does not assert uniqueness of rank on an empty base.
 
 ## Provenance
 
-This is an internal derived proof by Worker 309, composing the published
+This is an internal derived proof, composing the published
 smooth-differentials, pullback, and internal-dual finite-local-basis theorems
 named above. It adds no hypotheses beyond an arbitrary scheme and its abelian
 scheme. The geometric source derivation belongs to the unchanged

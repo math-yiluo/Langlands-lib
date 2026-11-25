@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Determinants of products and maximal minors (Cauchy–Binet inclusion) -/
 

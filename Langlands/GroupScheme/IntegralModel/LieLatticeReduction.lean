@@ -125,7 +125,7 @@ theorem smul_top_le_ker_lieReduction :
       LinearMap.ker M.lieReduction := by
   rw [Submodule.smul_le]
   intro r hr X _
-  rw [LinearMap.mem_ker, map_smul, GenericLie.smul_def, IsLocalRing.ResidueField.algebraMap_eq,
+  rw [LinearMap.mem_ker, LinearMap.map_smul, GenericLie.smul_def, IsLocalRing.ResidueField.algebraMap_eq,
     (IsLocalRing.residue_eq_zero_iff r).mpr hr, zero_smul]
 
 variable {M}

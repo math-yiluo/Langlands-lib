@@ -1,7 +1,6 @@
 # Proof: a split fibrewise-maximal torus over a local ring has a constant root datum
 
-Authors: Worker 5087. The mathematics is imported from published Library modules
-by other workers, named below.
+The mathematics is imported from published Library modules, named below.
 
 This module proves
 [`LocalSplitFibrewiseRootDatumExistenceStatement`](LocalSplitRootDatumExistenceStatement.md)
@@ -32,10 +31,9 @@ base change `splitTorus.baseChangeHom G I i` of the torus to `k`.
 
 The Library already contains a theorem with exactly this type,
 `localSplitFibrewiseRootDatumExistence` in
-[`LocalSplitRootDatumExistence`](LocalSplitRootDatumExistence.md), by
-Worker 239. The present closing theorem for task
-`f306d476-c871-48c4-8f6a-5b3fe80dda95` directly reuses that declaration.
-The integration keeps the registered theorem name without repeating the proof.
+[`LocalSplitRootDatumExistence`](LocalSplitRootDatumExistence.md). The
+present theorem directly reuses that declaration. The module keeps the theorem
+name `localSplitFibrewiseRootDatumExistenceProof` without repeating the proof.
 
 ## The proof
 
@@ -49,21 +47,20 @@ localSplitFibrewiseRootDatumExistence_of_rootDatumExistence rootDatumExistence
 The three inputs are published Library results.
 
 1. `localSplitFibrewiseRootDatumExistence_of_rootDatumExistence`
-   ([`LocalSplitCorootTransport`](LocalSplitCorootTransport.md), Worker 239) is a
+   ([`LocalSplitCorootTransport`](LocalSplitCorootTransport.md)) is a
    conditional reduction. It takes the field statement
    `RootDatumExistenceStatement.{u}` and the flat lifting property
    `LocalSplitCorootTransport.FlatClosedPointLiftProperty.{u}`, and concludes
    the target statement.
-2. `rootDatumExistence` ([`RootDatumExistence`](RootDatumExistence.md), Workers
-   835, 1223 and 1283) proves `RootDatumExistenceStatement.{u}`: a split maximal
+2. `rootDatumExistence` ([`RootDatumExistence`](RootDatumExistence.md)) proves `RootDatumExistenceStatement.{u}`: a split maximal
    torus of a connected reductive group over a field has a finite reduced root
    datum (Milne, *Algebraic Groups* (2017), Theorem 21.11 and Corollary 21.12).
 3. `LocalSplitCorootTransport.flatClosedPointLiftProperty`
    ([`LocalSplitRootDatumExistence`](LocalSplitRootDatumExistence.md)) proves
    the flat lifting property. It is a restatement of
    `Langlands.AlgebraicGeometry.exists_extension_point_of_flat_of_closedPoint`
-   ([`FlatClosedPointGeneralization`](../../AlgebraicGeometry/FlatClosedPointGeneralization.md),
-   Worker 1422). Let `X` be flat over `Spec R`, with a point over the closed
+   ([`FlatClosedPointGeneralization`](../../AlgebraicGeometry/FlatClosedPointGeneralization.md)).
+   Let `X` be flat over `Spec R`, with a point over the closed
    point, and let `l` be a field over `R`. Then `X` has a point with values in
    some field extension `L` of `l`, lying over `Spec l → Spec R`. The argument is
    going down for flat morphisms (Stacks Project, Tag 03HV).
@@ -71,7 +68,7 @@ The three inputs are published Library results.
 ## How the reduction works
 
 This summarizes the published proof of the reduction in item 1, so that the
-route of the closing theorem is visible here.
+route of the theorem is visible here.
 
 - The residue-field maximality hypothesis gives maximality of the coordinate
   torus on every field fibre, by

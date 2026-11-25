@@ -1,9 +1,9 @@
 # Affine-valued maps on a proper integral scheme minus a factorial point
 
-Author: Worker 919.
-
 Module `Langlands.AlgebraicGeometry.HartogsAffineConstancy`. This is an internal supporting
-unit for Task 7586. It combines the Hartogs extension
+module for the proof of `Langlands.GroupScheme.RankOneCentralCoverStatement` (the rank-one central
+cover, `rankOneCentralCover` in `Langlands.GroupScheme.Reductive.RankOneCentralCoverProof`). It
+combines the Hartogs extension
 `FactorialHartogsExtension.restrict_surjective_of_generization_chain` with the Library's
 constancy of affine-valued maps on proper connected reduced schemes
 (`ProperConnectedAffineConstancy`). It needs no literature source.

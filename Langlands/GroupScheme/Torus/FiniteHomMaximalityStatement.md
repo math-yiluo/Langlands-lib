@@ -1,12 +1,9 @@
 # Reflection of maximal tori along a finite homomorphism: statement
 
-Authors: Worker 1437 (the Lean proposition and the original source route),
-Worker 1482 (the audit of its quantifiers and source route, and the task),
-Worker 1388 (the verification and this Markdown).
-
 This file defines the proposition
 `Langlands.GroupScheme.FiniteHomMaximalTorusReflectionStatement.{u}`. It
-proves nothing. A Lean proof is a separate successor obligation.
+proves nothing. Its Lean proof is `finiteHomMaximalTorusReflection`, in
+module `Langlands.GroupScheme.Torus.FiniteHomMaximalTorusReflectionProof`.
 
 ## Statement
 
@@ -65,8 +62,8 @@ split subtorus. Its trivial subgroup is therefore a maximal split torus but
 not a maximal torus.
 
 Both the hypothesis on `i` and the conclusion on `j` concern maximality among
-all tori. Neither `T` nor `S` is required to be split. The intended consumer,
-proof task `aa3b37a9-010c-46d5-8cc8-cdc83c6a456b`, lifts a maximal split
+all tori. Neither `T` nor `S` is required to be split. The intended consumer
+is a proof that lifts a maximal split
 torus along a homomorphism and then needs all-torus maximality of the lift.
 Maximality among split tori alone would not give it.
 
@@ -101,7 +98,7 @@ not concern 17.20, 17.82 or 19.20.
 
 ## Proof routes
 
-**Source route** (Worker 1437):
+**Source route**:
 
 1. Base change to an algebraic closure. By 17.82, `S` stays maximal.
 2. Extend `T` to a maximal torus `M` of `G`.
@@ -114,15 +111,15 @@ not concern 17.20, 17.82 or 19.20.
 
 In the Library, this route would need two inputs:
 
-- the forward implication of 17.82, which is published only as
-  `MaximalTorusBaseChangeForwardStatement`, with a reduction to explicit
-  unproved premises;
+- the forward implication of 17.82, stated as
+  `MaximalTorusBaseChangeForwardStatement` and proved as
+  `maximalTorusBaseChangeForward` (module
+  `Langlands.GroupScheme.Torus.MaximalBaseChangeForwardProof`);
 - a dimension comparison for tori under finite maps.
 
-The route that is now available avoids both.
+The Library route below avoids both.
 
-**Library route** (Worker 1482). Everything this route needs is now
-published.
+**Library route**. Everything this route needs is in the Library.
 
 - `finiteHomMaximalTorusReflection_of_torusImage`, in module
   `Langlands.GroupScheme.Torus.FiniteHomMaximalityReduction`, proves
@@ -145,10 +142,8 @@ published.
   `TorusImageClosedTorusStatement.{u}`. It takes the actual schematic image
   of a torus and shows that it is a torus, using a splitting field.
 
-Together these leave no unproved structural input. The intended successor
-proof is the term
-`finiteHomMaximalTorusReflection_of_torusImage torusImageClosedTorusStatement`.
-In a private development check, not part of this candidate, that term
-elaborated with this proposition as its type. It used only the standard
-axioms. Publishing the proof remains a separate successor obligation, and
-this file claims no proof.
+Together these leave no unproved structural input. The proof
+`finiteHomMaximalTorusReflection` in
+`Langlands.GroupScheme.Torus.FiniteHomMaximalTorusReflectionProof` is the term
+`finiteHomMaximalTorusReflection_of_torusImage torusImageClosedTorusStatement`,
+with this proposition as its type. This file claims no proof.

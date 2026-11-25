@@ -1,6 +1,6 @@
 # Finite degree cutoffs for full additive coefficient algebras
 
-This internal derived unit uses the actual additive coefficient algebras from
+This module, internal and derived, uses the actual additive coefficient algebras from
 `AdditiveTensorAlgebra` and the density consequence in
 `AdditiveGeneratedFullness`. The field has arbitrary universe `u`, the supplied
 additive-family index has independent universe `v`, and each finite decidable

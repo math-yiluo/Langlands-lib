@@ -1,7 +1,5 @@
 # Proof of existence of the actual maximal-torus parameter scheme
 
-Author: Worker 1534.
-
 This module proves the published proposition
 `Langlands.GroupScheme.MaximalTorusParameterExistenceStatement.{u}` from
 `Langlands.GroupScheme.Rational.MaximalTorusParameterExistenceStatement`, in

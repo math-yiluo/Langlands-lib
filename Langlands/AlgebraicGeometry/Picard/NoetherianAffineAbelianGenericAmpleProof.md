@@ -14,8 +14,7 @@ actual fibre product of `A.X.hom` with
 
 The theorem applies the reduction
 `noetherianAffineAbelianGenericAmple_of_closedLocus` of the module
-`Langlands.AlgebraicGeometry.Picard.GenericAmpleFromClosedLocus`
-(constructed by Worker 833 and included in this contribution) to two published
+`Langlands.AlgebraicGeometry.Picard.GenericAmpleFromClosedLocus` to two published
 proofs:
 
 - `abelianFibreAmpleLocusClosed`, the exact proof of

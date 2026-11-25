@@ -1,7 +1,7 @@
 # Rational `ℓ`-adic étale cohomology by extension of scalars
 
-Author: Worker 61. Built on the published module
-`Langlands.Cohomology.DivisibleSystem.EtaleAdicCohomology` of Worker 61
+Built on the published module
+`Langlands.Cohomology.DivisibleSystem.EtaleAdicCohomology`
 (`adicCohomology`, `adicSections`, `adicCohomologyZeroIso`,
 `limitComparison` with its degree-zero `IsIso` instance,
 `idealAdicCohomology`, `idealAdicCohomologyZeroIso`,
@@ -10,14 +10,14 @@ Author: Worker 61. Built on the published module
 `harrisEtaleAdicCohomology`, `harrisEtaleAdicCohomologyZeroIso`,
 `harrisEtaleAdicCohomologyZeroLimitIso`,
 `harrisEtaleAdicCohomologyZeroDivisibleIso`). Through its imports it uses
-Worker 13's `EtaleDerivedSections` (`ModuleSheaf`, `sections`,
+`EtaleDerivedSections` (`ModuleSheaf`, `sections`,
 `cohomology`), `EtaleAdicSystem.functor`,
 `EtaleAdicSystem.equivariantFunctor` and `equivariantFunctorForgetIso`,
 `EtaleCohomologyAction.EquivariantSheaf`,
 `TranslationAction.Equivariant.forget`, `harrisEtaleCoefficientSystem` and
-`harrisEtaleSectionsSystem`; Worker 61's `harrisEtaleDivisibleSystem` and
+`harrisEtaleSectionsSystem`; `harrisEtaleDivisibleSystem` and
 `harrisEtaleSectionsDivisibleSystem`
-(`Langlands.Cohomology.DivisibleSystem.HarrisEtale`); and Worker 57's
+(`Langlands.Cohomology.DivisibleSystem.HarrisEtale`); and
 `HarrisCoefficientIntegers`, `harrisCoefficientIntegersMap` and the
 algebra structure `harrisCoefficientIntegersAlgebra`
 (`Langlands.Shimura.Coefficients.HarrisLattice`). From Mathlib it uses
@@ -35,7 +35,7 @@ Composition `f ≫ g` is `f` followed by `g`.
 `X : Scheme.{u}` is a scheme, `R : Type u` and `S : Type u` are commutative
 rings, and `S` is an `R`-algebra. As in the published `EtaleAdicCohomology`,
 a sheaf is an étale sheaf of `R`-modules on `X`, `Γ(X, -)` and `H^q(X, -)`
-are Worker 13's global sections and their right derived functors, and an
+are the published global sections and their right derived functors, and an
 inverse system is a functor `F : ℕᵒᵖ ⥤ Sheaf` with objects `F_m`.
 Extension of scalars is Mathlib's
 `ModuleCat.extendScalars (algebraMap R S)`, which sends an `R`-module `M`
@@ -137,7 +137,7 @@ hypothesis; `𝓛̃_m` are the objects of the published
 `harrisEtaleCoefficientSystem ρ p U ℓ X Y hY`. Write
 `𝒪 = HarrisCoefficientIntegers L p`, the product of the valuation rings of
 the completions of `L` at the places above `p`, and `L_p = L ⊗_ℚ ℚ_p`
-(`L ⊗[ℚ] FiniteCompletion ℚ p`). Worker 57's `harrisCoefficientIntegersMap`
+(`L ⊗[ℚ] FiniteCompletion ℚ p`). The published `harrisCoefficientIntegersMap`
 is the canonical injective ring map `𝒪 ⟶ L_p`, and
 `harrisCoefficientIntegersAlgebra` is the corresponding algebra structure;
 these are Harris's `𝒪` and `L_ℓ` for the rational place `p`.
@@ -171,7 +171,7 @@ these are Harris's `𝒪` and `L_ℓ` for the rational place `p`.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §4 (Worker 61 read the rendered scanned
+J. Math. Kyoto Univ. 39-2 (1999), §4 (read in the rendered scanned
 pages):
 
 - printed p.311 (one-based PDF page 13): "let `𝓛_m = 𝓛 ⊗_𝒪 𝒪_m` for any
@@ -190,7 +190,7 @@ Harris does not define `H^q(S̄_{K(N)}, W̃)` on these pages. We read it
 with the standard recipe for cohomology of `ℓ`-adic sheaves with rational
 coefficients, recorded by Deligne, *Cohomologie étale* (SGA 4½), Lecture
 Notes in Mathematics 569 (1977), *Rapport sur la formule des traces*, §2
-(Worker 61 read the rendered scanned pages):
+(read in the rendered scanned pages):
 
 - printed p.84 (one-based PDF page 89), 2.10: "Soient `X` un schéma séparé
   de type fini sur un corps algébriquement clos `k` et `𝔉` un

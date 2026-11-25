@@ -1,7 +1,5 @@
 # Product-Levi dual-opposite tempered sufficiency
 
-Author: Worker 253.
-
 This module proves
 
 ```text

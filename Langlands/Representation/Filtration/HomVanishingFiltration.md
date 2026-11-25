@@ -1,8 +1,8 @@
 # The vanishing filtration on maps out of a filtered functor value
 
-Author: Worker 5226. This is an internal construction with supporting lemmas, derived for the planned proof of the first lemma of Renard VI.10.4 (printed pp.209–212 / PDF pp.215–218). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Renard does not state these lemmas.
+This is an internal construction with supporting lemmas, derived for a proof of the first lemma of Renard VI.10.4 (printed pp.209–212 / PDF pp.215–218). Reference: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Renard does not state these lemmas.
 
-The planned use runs as follows. By Frobenius reciprocity, `End(i_P^G Π_D)` is identified with `Hom(r_P i_P Π_D, Π_D)`. The geometric lemma (`representedGeometricLemma`) provides a natural filtration of `r_P i_P`. This file supplies the filtration of the Hom space induced by such a natural filtration, and its comparison with Hom spaces out of the graded pieces. Everything is unconditional and works for an arbitrary filtered functor.
+The intended use runs as follows. By Frobenius reciprocity, `End(i_P^G Π_D)` is identified with `Hom(r_P i_P Π_D, Π_D)`. The geometric lemma (`representedGeometricLemma`) provides a natural filtration of `r_P i_P`. This file supplies the filtration of the Hom space induced by such a natural filtration, and its comparison with Hom spaces out of the graded pieces. Everything is unconditional and works for an arbitrary filtered functor.
 
 ## Setting
 

@@ -4,9 +4,9 @@ This module gives variants of the Library results `RankOneCellData.rankOne_exist
 and `RankOneCellData.rankOne_exists_cell` (in `Reductive/RankOneCellData.lean`). The Library
 versions take two published statements as premises:
 `RankOnePositiveRootUniquenessStatement` and `SplitRootLieLineStatement`. Here those premises
-are replaced by facts about the given group `G` and cocharacter `ν` only. The rank-one
-SL2-cover task (Task 7586) may not use `RankOnePositiveRootUniquenessStatement`, so it needs
-these local versions.
+are replaced by facts about the given group `G` and cocharacter `ν` only. The proof of the
+rank-one SL2 cover (`Reductive/RankOneCentralCoverProof`) does not use
+`RankOnePositiveRootUniquenessStatement`, so it needs these local versions.
 
 The setting is a connected reductive group `G` over a field `k`, a split maximal torus
 `i : T ⟶ G`, a root `α`, and a cocharacter `ν` with `⟨α, ν⟩ > 0`.

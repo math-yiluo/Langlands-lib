@@ -21,10 +21,12 @@ variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 
 attribute [local instance 100] LieRing.ofAssociativeRing
 
+set_option synthInstance.maxSize 256 in
 /-- Constant actual smooth functions. -/
 def smoothFunctionConst (z : ℂ) : SmoothFunctions K n :=
   ⟨fun _ => z, contMDiff_const⟩
 
+set_option synthInstance.maxSize 256 in
 /-- Pointwise multiplication of actual smooth functions. -/
 def smoothFunctionMul (f h : SmoothFunctions K n) : SmoothFunctions K n :=
   ⟨fun g => f.val g * h.val g, by
@@ -32,6 +34,7 @@ def smoothFunctionMul (f h : SmoothFunctions K n) : SmoothFunctions K n :=
       contDiff_fst.mul contDiff_snd).contMDiff.comp
         (f.property.prodMk_space h.property)⟩
 
+set_option synthInstance.maxSize 256 in
 /-- Inversion pullback of an actual smooth function. -/
 def smoothFunctionInv (f : SmoothFunctions K n) : SmoothFunctions K n :=
   ⟨fun g => f.val g⁻¹, by
@@ -114,6 +117,7 @@ private theorem contMDiff_algebra_conjugation
   exact (contDiff_algebra_conjugation_product X).contMDiff.comp
     (hval.prodMk_space hinv)
 
+set_option synthInstance.maxSize 256 in
 /-- A continuous real linear coordinate of matrix conjugation is an actual
 smooth scalar function. -/
 def smoothConjugationCoordinate (X : ArchimedeanMatrix K n)

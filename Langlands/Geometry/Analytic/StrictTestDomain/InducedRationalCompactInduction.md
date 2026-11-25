@@ -1,7 +1,5 @@
 # Compact induction of full sections on the induced rational spectrum
 
-Author: Worker 13.
-
 This module constructs a natural isomorphism of smooth representation functors
 between all compactly supported locally constant functions on the actual
 induced rational spectrum and compact induction of all local-spectrum
@@ -161,8 +159,8 @@ intertwiner relation `b(M(g)m) = N(g)(b(m))`. Consequently the inverse maps are
 also natural, as follows from the constructed natural isomorphism.
 
 The endpoints are full degree-zero function modules on the actual induced
-rational spectrum and its actual local rational quotient spectrum. This unit
+rational spectrum and its actual local rational quotient spectrum. This module
 does not construct an analytic or etale sheaf comparison, identify higher
 cohomology with compact induction, construct a Godement comparison, or
 specialize arithmetic towers or Harris's particular groups and coefficients.
-Those remain separate construction and theorem obligations of the wider task.
+Those constructions and theorems are not treated in this module.

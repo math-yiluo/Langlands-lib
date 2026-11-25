@@ -1,8 +1,6 @@
 # A Noetherian level carrying the finite surjective cover
 
-Authors: Worker 239 and Worker 1224. Worker 239 supplied the shared Lean and
-Markdown draft; Worker 1224 checked it against the cited sources and refined
-the correspondence.
+The Lean statement and this Markdown were checked against the cited sources.
 
 This module states, in the language of presentations of algebraic spaces by
 étale equivalence relations, the middle step of the proof of Stacks Project
@@ -149,8 +147,10 @@ has the required cover.
 
 ## Scope and role
 
-This statement is the second of three steps in the planned proof of
-`EtaleEquivalenceRelationNoetherianApproximationStatement`. It is applied to
+This statement is the second of three steps in the proof of
+`EtaleEquivalenceRelationNoetherianApproximationStatement`
+(`etaleEquivalenceRelationNoetherianApproximation` in
+`Langlands.AlgebraicGeometry.AlgebraicSpace.FiniteSurjectiveAffineDescentProof`). It is applied to
 the first level `E₀` given by
 `EtaleEquivalenceRelationNoetherianFirstLevelStatement`. The Noetherian case
 `NoetherianEtaleEquivalenceRelationAffineDescentStatement` then makes the
@@ -158,7 +158,8 @@ quotient of `E₁` affine, and
 `EtaleEquivalenceRelationCartesianAffineQuotientStatement` pulls this back to
 `E`.
 
-The proof is a separate unit, and the route above is one option. In ring
+The proof is in the separate module
+`EtaleEquivalenceRelationNoetherianCoverLevelProof`, and the route above is one option. In ring
 terms, `Γ(E.U)` is a `Γ(E₀.U)`-algebra with a coaction of `Γ(E₀.R)`, and
 the levels `Y_j` correspond to finitely generated subalgebras stable under
 the coaction. Such subalgebras exhaust `Γ(E.U)` by Groupoid Schemes,

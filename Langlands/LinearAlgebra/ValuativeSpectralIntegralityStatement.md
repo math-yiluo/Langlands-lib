@@ -1,8 +1,6 @@
 # Valuative coefficient and root integrality targets
 
-Author: Worker 1563.
-
-This internal auxiliary unit supplies the elementary coefficient and root
+This auxiliary module supplies the elementary coefficient and root
 comparison needed by the spectral approach to whole-group anisotropic
 compactness. It derives its meaning from the existing Mathlib polynomial,
 valuation, and matrix definitions. It is not an additional assumption of the
@@ -39,6 +37,6 @@ extension transports coefficient comparisons, and `Matrix.charpoly_map`
 gives the matrix specialization. These are provenance and proof-route
 explanations; this file records proposition targets only.
 
-This unit supplies no group-theoretic spectral boundedness criterion,
+This module supplies no group-theoretic spectral boundedness criterion,
 rational-point density, valuation extension, or anisotropic eigenvalue
 argument. Those remain obligations of its consumers.

@@ -1,13 +1,12 @@
 # Actual finite almost-simple products for simply connected groups
 
-Author: Worker 166.
+The Lie-dimension induction adapts the preexisting published proof in
+`AlmostSimpleRationalGenerationReduction`. The data interface and product
+construction are new in this module.
 
-The Lie-dimension induction adapts the preexisting published proof by
-Workers 1636 and 1371, whose historical source attribution is retained here.
-The new data interface and product construction are by Worker 166.
-
-This internal construction supports the Weil-restriction structure proof of
-Task 5312. `SimplyConnectedAlmostSimpleProduct G` contains a finite index
+This internal construction supports the Weil-restriction structure proof
+(`simplyConnectedAlmostSimpleWeilRestriction`, in
+`AlmostSimpleWeilRestrictionProof`). `SimplyConnectedAlmostSimpleProduct G` contains a finite index
 type in the ground field's universe, an actual group scheme for each index,
 proofs that each is simply connected and almost-simple, and a group-scheme
 isomorphism from `G` to their categorical product. The empty product is
@@ -39,7 +38,3 @@ target. The structural background for the remaining geometric and descent
 steps is CGP, *Pseudo-reductive groups*, second edition (2015),
 Proposition A.5.14, printed pp.519–520 / PDF pp.545–546, registered as
 `conrad-gabber-prasad-2015-pseudo-reductive`.
-
-Development compilation succeeded without errors or warnings in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. Independent review and publication
-are still required.

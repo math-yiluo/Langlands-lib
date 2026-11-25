@@ -38,8 +38,8 @@ unit-circle-valued additive character and every additive Haar measure. The theor
 proposition by the preceding explicit certificate; it adds no hypothesis.
 
 The nonzero image-vector argument follows the evaluation-at-one argument in
-Worker 929’s `ModelGenericSocleProof`. The span transport is the reverse of the method
-implemented by Worker 468 in `ModelMatrixNormalizedGenerator`.
+`ModelGenericSocleProof`. The span transport is the reverse of the method
+implemented in `ModelMatrixNormalizedGenerator`.
 
 The provenance is internal: the scalar normalized generator, exact canonical
 Haar transport, coefficient-image construction, published Whittaker span

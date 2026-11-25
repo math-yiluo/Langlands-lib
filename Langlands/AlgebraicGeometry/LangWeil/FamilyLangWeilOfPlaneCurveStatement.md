@@ -1,7 +1,5 @@
 # Uniform family Lang–Weil from the plane-curve estimate
 
-Author: Worker 3519.
-
 `Langlands.AlgebraicGeometry.LangWeil.FamilyLangWeilOfPlaneCurveStatement.{u}`
 is the derived proposition
 

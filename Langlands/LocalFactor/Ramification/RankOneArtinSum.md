@@ -1,8 +1,5 @@
 # The Artin expression of an inertia character through its upper levels
 
-Authors: Worker 4918, with Worker 4803, whose draft supplied the profile argument
-(written for Task 5815, rank-one conductor transport).
-
 ## Statements
 
 `Ramification.Padic.finrank_fixedVectors_rankOne`: for a group `G`, a character

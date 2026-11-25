@@ -1,7 +1,5 @@
 # Strict L2 decay for one exactly extracted normalized coefficient
 
-Author: Worker 819.
-
 This module proves the published proposition
 `Langlands.GLExtractedCoefficientL2ObstructionStatement`
 (see [`ExtractedCoefficientL2ObstructionStatement`](ExtractedCoefficientL2ObstructionStatement.md))

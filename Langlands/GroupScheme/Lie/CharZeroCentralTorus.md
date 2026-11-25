@@ -1,6 +1,7 @@
 # Central semisimple tangents in characteristic zero
 
-This internal supporting unit proves
+This internal module, which supports the module
+`SemisimpleIsogenyReduction`, proves
 `CharZeroSemisimpleCentralNilpotenceStatement.{u}`. Over an algebraically
 closed field of characteristic zero, a smooth connected affine group is
 geometrically nilpotent if every actual semisimple Lie element has full
@@ -33,5 +34,5 @@ proved algebraically closed no-cocharacter criterion.
 
 All assertions are internal deductions from the imported constructions.
 The characteristic-zero restriction is essential to the vanishing step.
-This unit does not assert the positive-characteristic iteration or the
+This module does not assert the positive-characteristic iteration or the
 arbitrary-field no-torus unipotence theorem.

@@ -1,7 +1,5 @@
 # Smooth rational-point openness over Henselian ultrametric fields
 
-Author: Worker 1644. Target design and consumer motivation: Worker 1637.
-
 `Langlands.AlgebraicGeometry.PointTopology.HenselianSmoothRationalPointOpenMapStatement.{u}`
 is a Prop-valued statement, with arbitrary universe `u`. It quantifies over:
 
@@ -12,7 +10,7 @@ is a Prop-valued statement, with arbitrary universe `u`. It quantifies over:
 
 It asserts that postcomposition
 `fun p : RationalPoint K X => p ≫ f` is an open map. Both point spaces are
-equipped explicitly with the published `rationalPointTopology`. The carrier
+equipped explicitly with `rationalPointTopology`. The carrier
 `RationalPoint K X` is the actual morphism type
 `Over.mk (𝟙 (Spec (CommRingCat.of K))) ⟶ X`. Its topology transports the
 global-section evaluation topology along `rationalPointEquiv`. The statement
@@ -68,5 +66,6 @@ comparison without completeness. `StandardEtaleOpenProof` and
 `smoothRationalPointOpenMap` in `SmoothOpenMapProof` proves the local-field
 statement. Those proofs do not supply the Henselian lifting step here.
 
-This unit only defines the statement. Its proof, including the Henselian
-lifting and local-to-global reductions, remains a separate obligation.
+This module only defines the statement. Its proof, including the Henselian
+lifting and local-to-global reductions, is `henselianSmoothRationalPointOpenMap`
+in `HenselianSmoothOpenMapProof`.

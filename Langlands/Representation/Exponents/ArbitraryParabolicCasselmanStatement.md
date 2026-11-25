@@ -1,6 +1,6 @@
 # Casselman's criterion for actual rational parabolics
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.ArbitraryParabolicCasselmanStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `ArbitraryParabolicCasselmanCriterionStatement : Prop`; nothing is proved here.
+Module `Langlands.Representation.Exponents.ArbitraryParabolicCasselmanStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `ArbitraryParabolicCasselmanCriterionStatement : Prop`; nothing is proved here.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.1.2, printed pp.221–224 / PDF pp.227–230. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The theorem refers to IV.3.1–IV.3.2 (printed p.99 / PDF p.105) for square integrability modulo the center, to V.3.14–V.3.15 (printed p.113 / PDF p.119) for the cones, and to V.3.20 (printed pp.115–116 / PDF pp.121–122) for the real part. Its proof ends with V.3.21 (printed p.116 / PDF p.122).
 

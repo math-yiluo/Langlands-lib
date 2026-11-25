@@ -54,9 +54,8 @@ It specializes the additionally supplied
 Finally it uses `rationalContragredientCommutation_of_termComparison` to
 conclude the unchanged `RationalContragredientCommutationStatement`.
 This is a conditional implication with eight extra closed proposition inputs,
-not an unapplied proof of that target. Their separately owned proofs and
-publication remain required; none is converted into an external structural
-assumption by this module.
+not an unapplied proof of that target. Their proofs are needed separately;
+none is converted into an external structural assumption by this module.
 
 The scope remains every connected reductive group scheme over every
 nonarchimedean local field, including positive characteristic and nonsplit
@@ -68,10 +67,8 @@ Grothendieck group with its actual short-exact-sequence relations are the
 published ones. No point/scheme normalizer equality, centralizer comparison
 or quotient equivalence is used.
 
-The provenance is composition of the named internal constructions. Worker
-490 authored the generic Weyl reduction; Worker 1107 authored the outer
-transport predicate and point-evaluation adapter. No new literature assertion
-is made. The implemented proof bodies use no Langlands classification,
+The provenance is composition of the named internal constructions. No new
+literature assertion is made. The implemented proof bodies use no Langlands classification,
 character independence, geometric lemma, adjointness or cuspidal-support
 theorem. The finite-length reflection in the generic Jacquet helper uses the
 surjective invariant-subspace order equivalence described in that helper's

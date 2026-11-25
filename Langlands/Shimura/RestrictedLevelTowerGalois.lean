@@ -79,7 +79,7 @@ variable {F L}
 
 /-- The automorphism of the base-changed tower induced by `σ` on the second factor. -/
 def towerGaloisAut (σ : L ≃ₐ[F] L) : baseChangeTower F L s ≅ baseChangeTower F L s :=
-  NatIso.ofComponents (fun U => baseChangeAut (s.app U) σ) (fun {U V} a => by
+  NatIso.ofComponents (fun U => (baseChangeAut (s.app U) σ).asIso) (fun {U V} a => by
     apply pullback.hom_ext <;> simp [baseChangeTower, baseChangeAut, baseChangeMap])
 
 @[simp] theorem towerGaloisAut_hom_app (σ : L ≃ₐ[F] L) (U : P.FullSubcategory) :
@@ -89,28 +89,30 @@ variable (F L) in
 /-- The action of `L ≃ₐ[F] L` on the base-changed tower, in the opposite of its automorphism
 group, as for a single base change. -/
 def towerGaloisAction : (L ≃ₐ[F] L) →* (Aut (baseChangeTower F L s))ᵐᵒᵖ where
-  toFun σ := MulOpposite.op (towerGaloisAut s σ)
+  toFun σ := MulOpposite.op (Aut.of (towerGaloisAut s σ))
   map_one' := by
     apply MulOpposite.unop_injective
+    apply Aut.ext
     apply Iso.ext
     apply NatTrans.ext
     funext U
     exact baseChangeMap_one (s.app U)
   map_mul' σ τ := by
     apply MulOpposite.unop_injective
+    apply Aut.ext
     apply Iso.ext
     apply NatTrans.ext
     funext U
     exact (baseChangeMap_comp (s.app U) σ τ).symm
 
 theorem towerGaloisAction_hom_app (σ : L ≃ₐ[F] L) (U : P.FullSubcategory) :
-    ((towerGaloisAction F L s σ).unop.hom).app U = baseChangeMap (s.app U) σ := rfl
+    ((towerGaloisAction F L s σ).unop.asIso.hom).app U = baseChangeMap (s.app U) σ := rfl
 
 variable {X : Scheme.{u}} (p : T ⟶ (Functor.const P.FullSubcategory).obj X)
 
 /-- The Galois automorphisms lie over every base of the original tower. -/
 theorem towerGaloisAction_over (σ : L ≃ₐ[F] L) :
-    (towerGaloisAction F L s σ).unop.hom ≫ (baseChangeProjection F L s ≫ p) =
+    (towerGaloisAction F L s σ).unop.asIso.hom ≫ (baseChangeProjection F L s ≫ p) =
       baseChangeProjection F L s ≫ p := by
   apply NatTrans.ext
   funext U
@@ -133,8 +135,8 @@ theorem baseChangeTower_restrict :
 /-- The Galois automorphisms of the base change of the restricted tower are the restrictions
 of those of the base-changed tower. -/
 theorem towerGaloisAction_restrict (σ : L ≃ₐ[F] L) :
-    (towerGaloisAction F L (restrictProjection P s₀) σ).unop.hom =
-      Functor.whiskerLeft P.ι (LevelTowerGalois.towerGaloisAction F L s₀ σ).unop.hom := rfl
+    (towerGaloisAction F L (restrictProjection P s₀) σ).unop.asIso.hom =
+      Functor.whiskerLeft P.ι (LevelTowerGalois.towerGaloisAction F L s₀ σ).unop.asIso.hom := rfl
 
 end Restriction
 
@@ -165,9 +167,9 @@ def galoisCohomologyForgetIso (n : ℕ) :
 /-- The Galois element `σ` acts by the smooth pullback along the base change of `σ` at every
 level. -/
 theorem galoisCohomologyFunctor_ρ (n : ℕ) (M : ModuleSheaf X R) (σ : L ≃ₐ[F] L) :
-    ((galoisCohomologyFunctor F L s p R hT n).obj M).ρ σ =
+    (((galoisCohomologyFunctor F L s p R hT n).obj M).ρ σ).asHom =
       (smoothCanonicalPullback R (baseChangeProjection F L s ≫ p)
-        (towerGaloisAction F L s σ).unop.hom (towerGaloisAction_over s p σ)
+        (towerGaloisAction F L s σ).unop.asIso.hom (towerGaloisAction_over s p σ)
         (baseChangeTower_selfArrow F L s hT) (baseChangeTower_selfArrow F L s hT) n).app M :=
   rfl
 

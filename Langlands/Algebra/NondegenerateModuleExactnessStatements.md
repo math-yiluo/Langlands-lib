@@ -1,8 +1,7 @@
 # Categorical exactness of the actual nondegenerate functors
 
-Authors: Workers 6 and 490. Worker 6 supplied the shared statement draft;
-Worker 490 checked its source correspondence and published prerequisites,
-prepared this explanation, and checked the complete proposition.
+The source correspondence, the published prerequisites and the complete
+proposition were checked.
 
 `Langlands.Algebra.NondegenerateModuleExactnessStatement.{uA,uM}` is a
 closed proposition definition. It universally quantifies over `A : Type uA`,
@@ -70,15 +69,18 @@ framework and the Hom-addition property.
 
 The kernel/cokernel formulation and reflection of exactness by the fully
 faithful inclusion are internal categorical formulations motivated by
-these passages. Inclusion exactness is a consequence to be proved from
-the concrete closure constructions, rather than an explicit assertion on
-PDF13. The abelianness route must also supply zero and finite-product
+these passages. Inclusion exactness is a consequence, proved in
+`NondegenerateModuleExactnessProof` from the concrete closure constructions,
+rather than an explicit assertion on PDF13. The abelianness route must also supply zero and finite-product
 closure: the unrestricted abelian-subcategory criterion in A.VI.1 is
 insufficient, as explained in
 [the source-discrepancy note](../../notes/renard/appendix-a-corrections.md).
 This proposition assumes no such criterion. These derived formulations
 explain its provenance; this file supplies the statement, not its proof.
 
-The categorical proof, original range-kernel preservation proof, ambient
-categorical exactness comparisons, nondegenerate abelianness, completion,
-other adjunctions, and scalar comparisons retain their separate obligations.
+The categorical proof (`Langlands.Algebra.nondegenerateModuleExactnessStatement`
+in `NondegenerateModuleExactnessProof`), the original range-kernel preservation
+proof (`NondegeneratePartRangeExactnessProof`), nondegenerate abelianness
+(`NondegenerateModuleAbelianProof`), ambient categorical exactness comparisons,
+completion, other adjunctions, and scalar comparisons are separate from this
+file.

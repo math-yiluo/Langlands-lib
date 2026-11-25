@@ -1,7 +1,5 @@
 # The normalization model of a scheme over a DVR
 
-Worker 6.
-
 For `X` over `Spec R` (`R` a DVR):
 
 - `source X`: the relative normalization `(genericι X).normalization` of `X` in its generic fibre,

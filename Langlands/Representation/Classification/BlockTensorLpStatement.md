@@ -1,6 +1,6 @@
 # A common finite-exponent block tensor comparison
 
-Authors: Worker 403 and Worker 158. This is an internal shared proof interface
+This is an internal shared proof interface
 for the two published analytic block tensor targets.
 
 `Langlands.GLBlockTensorLpStatement.{uF,uV}` is a closed proposition. It asserts
@@ -33,14 +33,14 @@ The real parameter is a finite real number; the coefficient predicate converts
 it to the `MemLp` exponent with `ENNReal.ofReal`. The bound `r ≥ 2` is a
 separate premise of the comparison. At `r = 2`, the already proved intrinsic
 lemmas `isLpModCenter_two_iff` and `T.isLp_two_iff` identify its predicates with
-the square-integrability predicates. For temperedness, a future proof can apply
+the square-integrability predicates. For temperedness, a proof can apply
 the comparison at each `r = 2 + ε`, with `ε > 0`, and choose a character uniformly
 in `ε` using the existing `UnitaryCentralCharacter.coefficientNorm_eq`.
 Neither final analytic block comparison follows from this statement alone.
 
 This is internally derived mathematical content, not a verbatim theorem
 attributed to an original source. It isolates the common finite-exponent
-argument described in the accepted `BlockTensorAnalyticStatement` Markdown,
+argument described in the `BlockTensorAnalyticStatement` Markdown,
 using the published coefficient constructions and the new fixed-exponent
 predicates. A proof must still establish the actual full-center quotient and
 Haar transport, tensor central-character assembly and reflection, admissible

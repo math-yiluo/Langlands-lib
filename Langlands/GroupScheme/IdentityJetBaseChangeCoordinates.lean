@@ -44,7 +44,8 @@ def globalCoordinateEquiv :
       ((groupSchemeIso G).inv.hom.hom.left ≫
         (groupScheme (functor G) (corepresentation G)).X.hom).appTop) r = _
     rw [Over.w]
-  · exact (ConcreteCategory.bijective_of_isIso
+  · set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
+    exact (ConcreteCategory.bijective_of_isIso
       (groupSchemeIso G).inv.hom.hom.left.appTop).comp
         (ConcreteCategory.bijective_of_isIso
           (Scheme.ΓSpecIso (CommRingCat.of (algebra G))).inv)

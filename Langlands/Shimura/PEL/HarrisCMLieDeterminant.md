@@ -1,7 +1,5 @@
 # The Harris rational Lie determinant through a single CM structure map
 
-Author: Worker 57.
-
 This internal construction combines `HarrisReflexBase` and
 `LieRationalBaseIndependence` with the existing rational determinant
 predicate. It makes both the actual Lie differential and the prescribed

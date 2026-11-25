@@ -1,7 +1,5 @@
 # Proof of the identity-cell quotient of the normalized geometric lemma
 
-Author: Worker 787.
-
 `Langlands.Geometric.padicIdentityCellQuotientTheorem.{uF,uV}` proves exactly the
 published proposition `Langlands.Geometric.PadicIdentityCellQuotientTheorem.{uF,uV}`
 from `Langlands.Representation.Geometric.IdentityCellQuotientStatement`. The theorem's
@@ -134,45 +132,24 @@ Markdown.
 ## Dependency audit
 
 The module's direct imports, as published in Library commit
-`4c0ab0f3966f1a1836901963afb04dca21607ffb`, are listed below. Proved inputs name the
-proof artifact and task that published them. Definition modules name their
-definition artifact.
+`4c0ab0f3966f1a1836901963afb04dca21607ffb`, are listed below.
 
-- `Geometric.IdentityCellQuotientStatement`: the target statement, artifact
-  `cc17ce3e-9779-48f1-a877-dd12ba29ebe7`, task `704eb687-951c-4c3e-96f1-717ba6d80179`.
-- `Geometric.ParabolicSupportGradedProof`: `padicParabolicSupportGradedTheorem`,
-  artifact `62ae1acc-327e-447c-be32-7a11b79d8dd2`, task
-  `1e160a16-f7f4-4d17-b9ee-4fd2e6e0fb34`. It is imported, not duplicated.
-- `Geometric.PadicParabolicBruhatProof`: `padicParabolicBruhat`, artifact
-  `66197c1e-5b06-4e40-beb3-58bb0d70ae1d`, task
-  `b2c9fb09-d2c7-4895-8320-b447e3cc98c6`.
-- `Geometric.StandardIntersectionsProof`: `padicStandardIntersectionsTheorem`, artifact
-  `454f2f13-4e58-4601-a2a6-bc94e9c6b6a2`, task
-  `5f658ba6-5c6d-46e0-a5c1-6d15317f8a1d`.
-- `Geometric.WeylMinimalRepresentativeProof`: `index_strictMono`, artifact
-  `be673197-862b-407d-a1a8-251a31419cda`, task
-  `6e35399b-9029-438e-9663-5ce96ab02576`.
-- `Topology.GroupAction.FiniteOrbitProof`: `Langlands.Topology.finiteOrbitOrdering`,
-  artifact `d152e80f-831a-4f00-89d7-2ae3209d5c86`, task
-  `72152240-c606-4fc3-87a0-e6d5972c32fa`.
-- `Parabolic.QuotientCompactProof`: `Parabolic.isCompact_integralRange`, artifact
-  `6e7b4c94-bf7d-4648-b410-d3c2c64ee631`, task
-  `400d2277-4574-4aea-a50c-da70cb1702f2`.
-- `Group.GL.CountabilityProof`: the sigma-compact instance on `GL_n(F)`, artifact
-  `dd877404-a836-4910-a283-5e253b492da2`, task
-  `67ebcf61-3d58-4499-9c0c-c847e90aaeb4`. Only this countability lemma is used, not the
-  geometric lemma proved in that task.
-- `Geometric.CosetOrbitOrdering`: `closedSubgroupOrbitOrdering_of_finiteOrbitOrdering`,
-  definition artifact `a8dc116e-9481-4d5c-b25f-9e0bf5efb0dc`.
-- `Geometric.OpenOrbitCut`: `OrderedDoubleCosets.exists_openCut`, definition artifact
-  `ae0784fe-13b5-45b8-80f1-3e08e0a80ad6`.
-- `Group.GL.CompactOpen`: the nonarchimedean structure on `GL_n(F)`, definition
-  artifact `e921a8ad-efb0-42eb-adac-f64003b71ec6`.
+- `Geometric.IdentityCellQuotientStatement`: the target statement.
+- `Geometric.ParabolicSupportGradedProof`: `padicParabolicSupportGradedTheorem`. It is imported, not duplicated.
+- `Geometric.PadicParabolicBruhatProof`: `padicParabolicBruhat`.
+- `Geometric.StandardIntersectionsProof`: `padicStandardIntersectionsTheorem`.
+- `Geometric.WeylMinimalRepresentativeProof`: `index_strictMono`.
+- `Topology.GroupAction.FiniteOrbitProof`: `Langlands.Topology.finiteOrbitOrdering`.
+- `Parabolic.QuotientCompactProof`: `Parabolic.isCompact_integralRange`.
+- `Group.GL.CountabilityProof`: the sigma-compact instance on `GL_n(F)`. Only this countability lemma is used; the geometric
+  lemma is not.
+- `Geometric.CosetOrbitOrdering`: `closedSubgroupOrbitOrdering_of_finiteOrbitOrdering`.
+- `Geometric.OpenOrbitCut`: `OrderedDoubleCosets.exists_openCut`.
+- `Group.GL.CompactOpen`: the nonarchimedean structure on `GL_n(F)`.
 
 The transitive imports also supply `minimalPermutationOrdering`,
-`quotientMap_mem_cosetOrbit_iff` and `doubleCosetEquiv` (`Geometric.OrbitRepresentatives`,
-artifact `d05fb744-4e65-4dfc-baec-dc03c851a1e8`), and `Iwasawa.exists_mul_upperTriangular`
-(`Whittaker.Iwasawa`, artifact `e4518542-8a62-4515-a2a4-ef85a5d8e46e`). They supply
+`quotientMap_mem_cosetOrbit_iff` and `doubleCosetEquiv` (`Geometric.OrbitRepresentatives`), and `Iwasawa.exists_mul_upperTriangular`
+(`Whittaker.Iwasawa`). They supply
 `mem_parabolic_of_isUpperTriangular` (`Group.GL.TriangularParabolic`), the quotient
 topology lemmas (`Analysis.Local.QuotientTopology`), the filtration API
 (`Filtration.Definitions`), and the support filtration

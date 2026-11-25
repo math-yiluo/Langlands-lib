@@ -550,8 +550,9 @@ theorem factorPointsEquiv_naturality {X X' : CommAlgCat.{u} (CommRingCat.of (R i
     factorPointsEquiv R B H i X'
         (((baseChange (component R i)).obj (weil R B H)).affinePointMap f p) =
       (AffineWeil.groupScheme (R i) (B i) (H i)).affinePointMap f
-        (factorPointsEquiv R B H i X p) :=
-  @factorPointsEquivOf_naturality _ _ _ R _ B _ _ _ _ _ H _ _ i X _ _ (testAlgebra R i X)
+        (factorPointsEquiv R B H i X p) := by
+  set_option maxRecDepth 1000 in
+  exact @factorPointsEquivOf_naturality _ _ _ R _ B _ _ _ _ _ H _ _ i X _ _ (testAlgebra R i X)
     (testAlgebra_isScalarTower R i X) X' _ _ (testAlgebra R i X')
     (testAlgebra_isScalarTower R i X') f.hom p
 
@@ -562,6 +563,20 @@ def factorAffinePointIso :
   NatIso.ofComponents (fun X => (factorPointsEquiv R B H i X).toGrpIso) (by
     intro X X' f
     ext p
+    have e1 : (((baseChange (component R i)).obj (weil R B H)).affinePointFunctor.map f).hom p =
+        ((baseChange (component R i)).obj (weil R B H)).affinePointMap f p := rfl
+    have e2 : ∀ y : ((baseChange (component R i)).obj (weil R B H)).affinePoints X',
+        (MulEquiv.toGrpIso (X := ((baseChange (component R i)).obj (weil R B H)).affinePointFunctor.obj X')
+          (Y := (AffineWeil.groupScheme (R i) (B i) (H i)).affinePointFunctor.obj X')
+          (factorPointsEquiv R B H i X')).hom.hom y = factorPointsEquiv R B H i X' y := fun _ => rfl
+    have e3 : ∀ y : (AffineWeil.groupScheme (R i) (B i) (H i)).affinePoints X,
+        ((AffineWeil.groupScheme (R i) (B i) (H i)).affinePointFunctor.map f).hom y =
+          (AffineWeil.groupScheme (R i) (B i) (H i)).affinePointMap f y := fun _ => rfl
+    have e4 : ∀ y : ((baseChange (component R i)).obj (weil R B H)).affinePoints X,
+        (MulEquiv.toGrpIso (X := ((baseChange (component R i)).obj (weil R B H)).affinePointFunctor.obj X)
+          (Y := (AffineWeil.groupScheme (R i) (B i) (H i)).affinePointFunctor.obj X)
+          (factorPointsEquiv R B H i X)).hom.hom y = factorPointsEquiv R B H i X y := fun _ => rfl
+    rw [GrpCat.hom_comp, GrpCat.hom_comp, MonoidHom.comp_apply, MonoidHom.comp_apply, e1, e2, e4, e3]
     exact factorPointsEquiv_naturality R B H i f p)
 
 instance : IsAffine ((baseChange (component R i)).obj (weil R B H)).X.left :=

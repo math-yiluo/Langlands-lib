@@ -1,7 +1,5 @@
 # Points of identity jets and their centralizers
 
-Worker 946, Task 7782.
-
 This module defines two predicates on points of a group scheme `G` over an
 arbitrary scheme `S`. They use the Library's identity jets:
 `IdentityJet.scheme G n` is the closed subscheme of `G` cut out by the
@@ -26,4 +24,4 @@ test scheme is tested, so the predicate is preserved by restriction along
 any morphism of test schemes. These are internal definitions with no new
 mathematical content. They state the intermediate results
 `JetCentralizerStabilizationStatement` and
-`JetConjugationRepresentationStatement` of Task 7782.
+`JetConjugationRepresentationStatement`.

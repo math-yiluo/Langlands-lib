@@ -1,6 +1,6 @@
 # Structural Levi criterion for a corrected filtration cell
 
-Worker 1312. This internal derived construction separates the structural
+This internal derived construction separates the structural
 conclusion of corrected graded vanishing from the remaining analytic argument.
 For subsets `I`, `J` and a Weyl element `w`, write
 `H = simpleImage cs w⁻¹ J ∩ I` and `K = simpleImage cs w I ∩ J`.

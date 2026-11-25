@@ -146,7 +146,7 @@ external source assertion is made.
 
 Actual opposite-pair existence remains an explicit premise. Full simply
 connected normalizer generation modulo the actual apartment-action kernel
-is still unproved: the final theorem does not establish its subgroup
+is not proved here: the final theorem does not establish its subgroup
 membership premise for all normalizer points. No V7, AS5 or full
-apartment-axiom package is used, and this unit does not prove
+apartment-axiom package is used, and this module does not prove
 `SimplyConnectedFacetFixingStatement`.

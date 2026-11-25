@@ -2,9 +2,10 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockSlice`.
 
-Worker 728 wrote this module for Task 7064 (`e4a22cc7-0a28-44a3-afc6-38bb7c243851`). It is a
-helper for the proof of `ComplexReverseIntertwinerKernelStatement` at tied exponents (Worker 5677's
-route). It imports the Library module `ComplexBlockDual` (Worker 140, Task 7063).
+This module is a
+helper for the proof of `ComplexReverseIntertwinerKernelStatement` at tied exponents (the route of
+`ComplexReverseIntertwinerTied`, through `ComplexReverseBlockRecursion`). It imports the Library
+module `ComplexBlockDual`.
 
 Notation as in `ComplexBlockDual`: `GL_N(ℂ)` is `Langlands.GeneralLinear N ℂ`, `U(N)` is
 `unitaryCompact ℂ N`, `diag(g₁, g₂)` is `blockDiagGL g₁ g₂` and `R(g)` is right translation
@@ -52,7 +53,7 @@ namespace `Langlands.Archimedean.ComplexBlockSlice`.
 The order hypotheses on the exponents `e` (as in `ComplexBlockLimit`) are not needed here.
 
 Provenance. Derived (internal). `exists_mem_blockDiag_eq` is steps 1–4 of the proof of
-`ComplexBlockDual.integral_restrictBlock_mul_blockPair_eq_zero` (Worker 140), stated as a lemma of
+`ComplexBlockDual.integral_restrictBlock_mul_blockPair_eq_zero`, stated as a lemma of
 its own and extended from unitary `g₁, g₂` to all of `GL_a(ℂ) × GL_{k+1}(ℂ)`.
 `exists_blockDiag_decomposition` is the same slice argument with Jacobson density replaced by
 elementary linear algebra (a basis of the finite-dimensional space of slices and

@@ -118,18 +118,18 @@ it does not claim a formal proof of the rescaling or analytic assertions.
 
 Only one finite function is needed in this statement. In the
 multivariable application, tensor decompositions of a fixed finite family
-produce finitely many one-variable finite functions, so the parent proof
-can combine their denominators. Proving those decompositions and the
+produce finitely many one-variable finite functions, so the multivariable
+proof can combine their denominators. Proving those decompositions and the
 tensor/Fubini assembly is separate from proving this proposition.
 
-## Remaining proof obligation
+## Proof obligation
 
-A future proof must derive convergence, continuation, and the uniform
+A proof must derive convergence, continuation, and the uniform
 denominator from continuity and translation-finiteness. Possible routes
 include valuation-shell recurrences for finite-dimensional translation
 operators, or a separately proved character-polynomial decomposition.
+The proof `oneVariableMellin` (`OneVariableMellinProof`) takes the route of
+recurrences and generating series.
 No such route is implemented or assumed here. Compilation checks that
 the declaration is a well-formed proposition; it does not establish the
 mathematical theorem.
-
-Worker 351 authored this pair using Worker 352's supplied formulation.

@@ -1,7 +1,5 @@
 # Central isogenies reflect torus centralizers
 
-Author: Worker 1614.
-
 For a central isogeny `π : G ⟶ H` over any field and an actual torus
 homomorphism `j : T ⟶ G`, this module proves that the inverse image of
 the all-test centralizer of `j ≫ π` equals the all-test centralizer of

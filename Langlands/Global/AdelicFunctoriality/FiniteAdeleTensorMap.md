@@ -25,8 +25,8 @@ diagonal embedding. This is the tensor order of the Library's local map
 `finiteTensorMap`. Imperial's right-factor order `L ⊗[K] A_K` and its
 `TensorProduct.RightActions` scope are not used.
 
-The target `A_L` is an `A_K`-algebra through unit 1's scoped instance
-`FiniteAdeleExtension.instAlgebra`. Its ring map is `finiteAdeleInclusion`, so
+The target `A_L` is an `A_K`-algebra through the scoped instance
+`FiniteAdeleExtension.instAlgebra` of `FiniteAdeleAlgebra`. Its ring map is `finiteAdeleInclusion`, so
 `x • y = finiteAdeleInclusion x * y`. The module opens
 `scoped Langlands.Global.AdelicFunctoriality.FiniteAdeleExtension` to state the
 type of the map. A client that writes `A_K`-linear or `A_K`-algebra types with
@@ -56,8 +56,8 @@ lemmas below state their conclusions under `letI := finiteAdeleCoefficientAlgebr
 - `finiteAdeleCoefficientAlgebra_isScalarTower : IsScalarTower K L A_L`, proved
   by `IsScalarTower.of_algebraMap_eq` with `rfl` at each element.
 - `finiteAdeleCoefficientAlgebra_isScalarTower_finiteAdeleRing :
-  IsScalarTower K A_K A_L`. This is unit 1's scoped instance
-  `FiniteAdeleExtension.instIsScalarTower`, applied to the previous tower. That
+  IsScalarTower K A_K A_L`. This is the scoped instance
+  `FiniteAdeleExtension.instIsScalarTower` of `FiniteAdeleAlgebra`, applied to the previous tower. That
   instance rests on `finiteAdeleInclusion_diagonal`.
 
 The first two lemmas do not need `[NumberField K]`, and Lean omits it from their
@@ -86,7 +86,7 @@ The map is defined by
 - `finiteAdeleTensorMap_tmul` (simp):
   `finiteAdeleTensorMap K L (x ⊗ₜ[K] l) = finiteAdeleInclusion x * algebraMap L A_L l`.
   The proof is `rfl`. `AlgHom.liftEquiv_tmul` gives `x • algebraMap L A_L l`,
-  and unit 1's scalar action is multiplication by `finiteAdeleInclusion x`.
+  and the scalar action of `FiniteAdeleAlgebra` is multiplication by `finiteAdeleInclusion x`.
 - `finiteAdeleTensorMap_tmul_apply`: at a finite place `q` of `L`,
 
   ```
@@ -112,12 +112,14 @@ and commutes with `algebraMap A_K`. This follows from its type.
 
 ## Scope of this module
 
-This is the definition phase of the global finite-adele base change, unit 4.
+This is the definition phase of the global finite-adele base change.
 The module does not state or prove that `finiteAdeleTensorMap K L` is bijective.
 It constructs no algebra equivalence, topology, module topology or homeomorphism,
-and makes no norm statement. A later Prop-valued statement and its exact proof
-will treat bijectivity, using the published unit-2 restricted-product tensor
-equivalences and the unit-3 integral local comparison. The module imports neither.
+and makes no norm statement. The Prop-valued statement `FiniteAdeleTensorMapBijective`
+(`FiniteAdeleTensorStatement`) and its proof `finiteAdeleTensorMapBijective_proof`
+(`FiniteAdeleTensorProof`) treat bijectivity, using the published restricted-product tensor
+equivalences (`Langlands.LinearAlgebra.RestrictedProduct.TensorEquiv`) and the integral local
+comparison (`IntegralLocalComparisonProof`). The module imports neither.
 
 ## Provenance and modification notice
 
@@ -143,11 +145,11 @@ upstream root `LICENSE` is retained byte-for-byte at
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 The source snapshot contains no `NOTICE` file.
 
-Worker 300's modifications are as follows. The map is in the Library's tensor
+The modifications in Langlands-lib are as follows. The map is in the Library's tensor
 order `A_K ⊗[K] L` with Mathlib's left-factor algebra, not Imperial's right
 actions. It is defined by Mathlib's universal property `AlgHom.liftEquiv` from
-the diagonal `L → A_L`, not as a semialgebra base change. It uses unit 1's scoped
-algebra and `finiteAdeleInclusion` in place of `mapRingHom` and
+the diagonal `L → A_L`, not as a semialgebra base change. It uses the scoped
+algebra of `FiniteAdeleAlgebra` and `finiteAdeleInclusion` in place of `mapRingHom` and
 `ComapFiberwiseSMul`. The coefficient `K`-algebra on `A_L` is an explicit
 non-instance definition. Independent universes are kept. The map is only the
 underlying map of Imperial's equivalence: Imperial's bijectivity proof (lines
@@ -159,7 +161,5 @@ No Imperial semialgebra API and no Anthropic code is used. The public audit
 recommends this tensor order and the formula `x ⊗ l ↦ finiteAdeleInclusion x * algebraMap L _ l`
 (its unit 4).
 
-Private `lean_check` runs in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-compiled the module without warnings. The inspected declarations use only
-`propext`, `Classical.choice` and `Quot.sound`. Development checks are not
-independent semantic acceptance.
+`lean_check` runs compiled the module without warnings. The inspected declarations use only
+`propext`, `Classical.choice` and `Quot.sound`.

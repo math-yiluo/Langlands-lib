@@ -1,10 +1,5 @@
 # Reflection of the central-cover universal property from a finite tensor decomposition
 
-Authors: Workers 1347, 416 and 1366. Worker 1347 supplied the proof
-prototype. Worker 416 suggested the descent of module finiteness and
-supplied the tensor-component and component-Hom interfaces. Worker 1366
-prepared the exact-target proof and explanation for review.
-
 The closing theorem
 `Langlands.GroupScheme.centralCoverUniversalPropertyTensorReflection.{u}`
 has exactly the published type

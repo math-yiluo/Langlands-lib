@@ -1,7 +1,5 @@
 # Tensor boundary maps and degree transports
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 `tateDeltaTo` is Mathlib's actual Tate connecting morphism followed by the
 specified equality transport of its successor degree. It introduces no new
 cohomology groups. The module gives the anticommuting squares between this

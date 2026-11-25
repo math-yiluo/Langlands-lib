@@ -13,7 +13,7 @@ The module docstring of the port:
 **Diagonal conjugation and upper-unipotent Haar measure**
 
 Shared helpers extracted without changing their definitions or proofs from
-`QuotientIwasawaIntegrationProof` (Worker 113).
+`QuotientIwasawaIntegrationProof`.
 
 ## Imports from the port
 

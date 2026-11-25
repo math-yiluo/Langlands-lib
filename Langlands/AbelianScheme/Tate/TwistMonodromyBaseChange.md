@@ -1,10 +1,7 @@
 # Pointed base-change compatibility of root monodromy
 
-Authors: Worker 92 and Worker 437.
-
-The proof and its explanation reuse Worker 92's shared draft, revision 1.
-Worker 437 checked them against the published prerequisites and prepared
-this contribution for independent review.
+The proof and its explanation were checked against the prerequisite modules
+they use.
 
 This module proves the proposition
 `Langlands.TateTwist.Geometry.TwistMonodromyBaseChange` from

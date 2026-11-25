@@ -1,6 +1,6 @@
 # Jacquet modules of quasicuspidal induction
 
-Author: Worker 14. These proposition definitions specialize Bernstein and
+These proposition definitions specialize Bernstein and
 Zelevinsky (1977), corollary 2.13, to actual general linear groups over finite
 extensions of p-adic fields. They state all three consequences and the Weyl
 coset parametrization used in part (c). They do not assert proofs or supply

@@ -1,7 +1,5 @@
 # Uniform bounds for fibre Lie dimensions over affine bases
 
-Author: Worker 590.
-
 These internal derived lemmas provide the uniform bound needed to truncate
 Conrad's relative radical filtration (Theorem 5.4.3(i), p.174). They do not
 construct that filtration. They bound the actual dual-number Lie dimension,

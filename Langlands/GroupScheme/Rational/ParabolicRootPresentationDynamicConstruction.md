@@ -1,7 +1,5 @@
 # Actual root presentations from explicit dynamic structure
 
-Authors: Worker 1294 and Worker 1491.
-
 This internal assembly constructs a root presentation for the actual supplied
 parabolic, rational Levi and split-component morphisms. Four structural
 statements remain explicit arguments: `GenericMinimalParabolicStatement`,
@@ -34,8 +32,5 @@ them independently. It preserves the full geometric greatestness clauses
 supplied by that published reduction.
 
 The provenance is composition of the two supporting construction modules and
-the published dynamic-radical reduction. Worker 1491 authored the reused
-simultaneous-realization argument; Worker 1294 authored its choice interface,
-the presentation reduction and this assembly. No new external source assertion
-is introduced. The simultaneous-realization and presentation-reduction pairs
-included as dependencies are unchanged from their focused candidates.
+the published dynamic-radical reduction. No new external source assertion
+is introduced.

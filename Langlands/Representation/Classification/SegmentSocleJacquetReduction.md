@@ -5,8 +5,6 @@ The generic helpers in this module are also imported by
 the separate head-specific formulas. Both reductions use the same helper
 declarations in `Langlands.Classification.SegmentSocleJacquetReduction`.
 
-Author: Worker 756.
-
 This module reduces the published proposition
 `Langlands.Classification.SegmentSocleJacquetFormula` from
 [`SegmentSocleJacquetStatement`](SegmentSocleJacquetStatement.md) (Zelevinsky 1980,

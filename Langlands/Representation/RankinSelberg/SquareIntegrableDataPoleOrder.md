@@ -7,19 +7,18 @@ Langlands datum `d` of `GL_(n+1)(F)`. Let each block be a segment head,
 representation of `GL_(t+1)(F)` that is equivalent to a segment head
 `St(D)`. This module computes the order of the pole at `s = 0` of
 `L(s, π × ρ)`. It is the number of indices `i` with `SegmentPoleLink Δ_i D^∨`.
-In the notation of the accepted module `PoleOrderSegmentCombinatorics`
-(candidate f6e935c5 of Worker 1702), this number is
+In the notation of the module `PoleOrderSegmentCombinatorics`, this number is
 `poleLinkCount {Δ_1, …, Δ_r} D^∨`. Here `St(Δ)` is any representation in the
 Library relation `IsSegmentHead Δ`, and `D^∨` is the contragredient segment
 `Segment.dual` of `Classification/SegmentHeadContragredient`.
 
 The pole-order result is conditional. It takes five explicit hypotheses:
 
-- `h95`: the Library's unproved `SquareIntegrableDataLFactorStatement`, which
+- `h95`: the Library's `SquareIntegrableDataLFactorStatement`, which
   states JPSS 1983, Theorem (9.5), in product form;
-- `hSH`: the Library's unproved `SegmentHeadLFactorStatement`, which states
+- `hSH`: the Library's `SegmentHeadLFactorStatement`, which states
   Henniart 2002, §2.6;
-- `h81`: the Library's unproved `SupercuspidalEqualRankLFactorStatement`,
+- `h81`: the Library's `SupercuspidalEqualRankLFactorStatement`,
   which states JPSS 1983, Proposition (8.1)(ii);
 - `h81i`: `SupercuspidalUnequalRankLFactorStatement`, which states JPSS 1983,
   Proposition (8.1)(i);
@@ -35,8 +34,11 @@ already proves both. The Library theorem
 statement, supercuspidality and irreducibility into exactly the conclusion
 of `hW`. Here it is applied in carrier universe `max uF uV` to the two fields
 of the property of an irreducible supercuspidal object. A user of the main
-theorem can therefore discharge `h81i` and `hW` from the Library. Only
-`h95`, `hSH` and `h81` remain unproved.
+theorem can therefore discharge `h81i` and `hW` from the Library. The
+statements of `h95`, `hSH` and `h81` are proved in the Library as well, by
+`squareIntegrableDataLFactor` (module `SquareIntegrableDataLFactorProof`),
+`segmentHeadLFactor` (module `SegmentHeadFactorProof`) and
+`supercuspidalEqualRankLFactor` (module `SupercuspidalEqualRankLFactorProof`).
 
 ## Provenance
 
@@ -51,7 +53,7 @@ Derived.
   of `L(s, σ ⊗ τ ⊗ St_m)` is a sum over the segments of `σ`. The main theorem
   here is that sum on the representation side, with the test representation
   `ρ = St(D)`. Each summand is the pole order of one pair of segments,
-  computed in the accepted module `SegmentPairPoleOrder` from Henniart 2002,
+  computed in the module `SegmentPairPoleOrder` from Henniart 2002,
   §2.6, and JPSS 1983, Proposition (8.1).
 - The single-block datum `SquareIntegrableLanglandsDatum.single` and the
   shrinking of block universes are internal. They present the test
@@ -71,7 +73,7 @@ Derived.
   Langlands datum of `GL_n(F)`, `n > 0`, with the single block `ρ`. Its shape
   is `CuspidalSupport.LeviAdmissibility.oneBlock n`, and its exponent is a
   chosen one from `nonempty_unitaryExponentData`. The ordering condition on
-  exponents holds trivially. It is the selected declaration of the candidate.
+  exponents holds trivially.
 - `SquareIntegrableLanglandsDatum.single_isLanglandsQuotient`: the datum
   `single ρ` presents every representation `π` equivalent to `ρ`. Induction
   from the one-block parabolic subgroup is the identity up to equivalence
@@ -132,7 +134,6 @@ No unconditional analytic claim is made.
 
 ## Dependencies
 
-All imported modules are in Library commit 7c489c8a, and unchanged in Library
-commit 6f182f92. They include the accepted modules `SegmentPairPoleOrder`,
+All imported modules are Library modules. They include `SegmentPairPoleOrder`,
 `SupercuspidalPairPoleOrder`, `PoleOrderAtZeroArithmetic` and
 `PoleOrderSegmentCombinatorics`.

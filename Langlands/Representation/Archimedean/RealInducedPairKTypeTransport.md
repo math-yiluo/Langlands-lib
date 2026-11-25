@@ -1,6 +1,5 @@
 # Compact transport for two real induction blocks
 
-Worker 769, Task 7135 (`d3276721-4799-4af9-8958-2f42c88102df`).
 This is a derived helper for the two-induced-block filtration problem. It uses
 the concrete standard modules and published compact transport and counting
 theorems. No exponent inequality or restriction on the two integer weights is
@@ -16,7 +15,8 @@ complex-linear map in that direction commuting with right translation by
 
 These results concern the compact-group action. They do not construct an
 intertwiner for the Lie algebra, a four-crossing exchange operator, or a
-filtration, and do not complete the task's unconditional filtration target.
+filtration, and do not prove the unconditional filtration statement
+`RealInducedInducedFiltrationStatement`.
 
 The matrix `swapMatrix` sends `e₀` to `e₂`, `e₁` to `e₃`, `e₂` to `e₀`
 and `e₃` to `e₁`. Entrywise computation proves that it is orthogonal and

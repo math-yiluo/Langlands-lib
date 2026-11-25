@@ -1,7 +1,5 @@
 # Highly ramified L-vanishing for Whittaker-type pairs
 
-Authors: Worker 394 and Worker 331.
-
 `Langlands.RankinSelberg.whittakerTypeHighlyRamifiedLVanishing.{uF,uV,uW}`
 proves exactly
 [WhittakerTypeHighlyRamifiedLVanishingStatement](WhittakerTypeHighlyRamifiedStatement.md).
@@ -180,13 +178,13 @@ Iwasawa proofs. The final `whittakerTypeHighlyRamifiedLVanishing` supplies
 `symmetricLPolynomialExists` to that helper. All analytic, asymptotic, measure
 and factor-existence inputs are thereby discharged.
 
-## Original source, provenance and authorship
+## Original source and provenance
 
 H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika, *Rankin-Selberg
 Convolutions* (1983), registered as `jpss-1983-rankin-selberg`, at
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA-256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 394 read printed pages 385, 390-392, 394 and 403-404. Section 2.1
+Printed pages 385, 390-392, 394 and 403-404 were read. Section 2.1
 specifies full Whittaker type; Theorem 2.7 gives the integral and normalized
 generator framework; Section 2.12 supplies the opposite-rank convention;
 Proposition 2.13 on printed page 404 (PDF page 39, counting the cover as
@@ -206,7 +204,7 @@ existence, full or two-block L multiplicativity, or Section 9.3 tail
 divisibility is used. The target and its imported statement pairs, including
 the narrower `HighlyRamifiedStatement`, are unchanged.
 
-Worker 331 authorized reuse of his revision-2 zero-row analytic draft during
-development. Its private continuity helpers were subsequently replaced by
-the independently published continuity theorem; his contribution to this
-assembly remains credited.
+The zero-row analytic part of this assembly uses, in place of private
+continuity helpers, the published continuity theorem
+`unequalRankZeroRowIntegrandContinuous` of
+[UnequalRankZeroRowIntegrandContinuityProof](UnequalRankZeroRowIntegrandContinuityProof.md).

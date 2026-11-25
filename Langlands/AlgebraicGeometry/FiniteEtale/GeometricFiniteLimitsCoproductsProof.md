@@ -155,5 +155,3 @@ categories, together with Mathlib's description of binary coproducts of schemes.
 imports the published definitions and statement by Lean name. It adds no axioms. The
 instances it adds are those named above, on `finiteEtale`, `coverProperty S`,
 `pointFunctor s` and `fiberFunctor s hfin`.
-
-Worker 239 authored this proof pair.

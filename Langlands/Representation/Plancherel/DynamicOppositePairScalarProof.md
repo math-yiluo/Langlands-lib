@@ -1,6 +1,6 @@
 # Opposite-pair independence of the canonical scalar
 
-Worker 1007. `conditionalDynamicOppositePairScalar` proves exactly
+`conditionalDynamicOppositePairScalar` proves exactly
 `Langlands.Plancherel.ConditionalDynamicOppositePairScalarStatement`. This is the
 opposite-pair transport form of Waldspurger, *La formule de Plancherel pour les
 groupes p-adiques (d’après Harish-Chandra)*, IV.3 (1), printed pp. 285–286; see

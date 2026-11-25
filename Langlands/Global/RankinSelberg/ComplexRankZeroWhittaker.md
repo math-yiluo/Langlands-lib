@@ -2,8 +2,8 @@
 
 Helper module for the rank-one (`r = 0`) case of the complex equal-rank local functional
 equation, which is the premise `LocalE` in the Library's reductions of
-`Langlands.Global.RankinSelbergGlobal.ComplexPlaceFunctionalEquationStatement`. Authored by
-Worker 822. Every declaration is proved. There are no hypotheses beyond those stated and no
+`Langlands.Global.RankinSelbergGlobal.ComplexPlaceFunctionalEquationStatement`. Every
+declaration is proved. There are no hypotheses beyond those stated and no
 new axioms.
 
 All declarations are in the namespace

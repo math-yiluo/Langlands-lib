@@ -29,7 +29,7 @@ All declarations are in `Langlands.Renard.Yoneda`. They use the actual Mathlib
 `CategoryTheory.uliftYoneda`, `Functor.RepresentableBy`,
 `Functor.IsRepresentable`, `ObjectProperty.FullSubcategory` and its inclusion
 `ObjectProperty.ι`. The imports construct those objects and their intrinsic
-laws; this unit introduces no replacement category or new mathematical data.
+laws; this module introduces no replacement category or new mathematical data.
 
 The three levels `w`, `v` and `u` are independent. Each component quantifies
 `C : Type u` and `[Category.{v} C]` internally. In the evaluation and dictionary
@@ -129,7 +129,7 @@ explicit inclusion natural isomorphism, and the closed conjunction are derived
 internal packaging. They add no hypothesis or replacement construction. The
 dictionary is an obligation of this statement family, not an assumed result.
 
-A future proof can use Mathlib's `uliftYonedaEquiv`, followed by `Equiv.ulift`,
+A proof can use Mathlib's `uliftYonedaEquiv`, followed by `Equiv.ulift`,
 for the evaluation clause; `ULiftYoneda.fullyFaithful` for the Hom clause;
 `representableByUliftFunctorEquiv` and
 `RepresentableBy.equivUliftYonedaIso` for the dictionary; and the actual
@@ -137,7 +137,7 @@ full-subcategory lift, full faithfulness and each representable object's
 `uliftYonedaReprXIso` for the equivalence. These APIs have been source-inspected.
 This paragraph describes a proposed route and is not proof evidence.
 
-The exact-proof successor remains a separate task, gated on independent
-statement acceptance and actual Library publication. The later A.III.2 remark
+The conjunction is proved as `yonedaStatements` in
+`Langlands.CategoryTheory.Renard.YonedaProof`. The later A.III.2 remark
 about left universal problems, the compatible-uniqueness corollary, A.III.3,
-adjunctions, and all remaining whole-book obligations remain separate units.
+adjunctions, and the rest of the book are outside this module.

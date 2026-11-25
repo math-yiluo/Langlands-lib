@@ -1,7 +1,5 @@
 # Split-unipotent kernels of root maps induced by unipotent quotients
 
-Author: Worker 407.
-
 This internal supporting module extends
 [RootSmoothQuotient](RootSmoothQuotient.md). It is used to build the kernel
 part of `IntegralRootSpecializationData` in

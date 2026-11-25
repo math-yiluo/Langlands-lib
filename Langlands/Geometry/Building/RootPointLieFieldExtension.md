@@ -52,4 +52,4 @@ finite type, supplied by smoothness, is needed in this argument; no finite-type
 hypothesis on the chosen representative is added.
 
 These are field-level comparisons. They do not establish the integral-model
-or special-fibre kernel conclusions of the surrounding C.5.3 proof task.
+or special-fibre kernel conclusions of the surrounding proof of KP Lemma C.5.3.

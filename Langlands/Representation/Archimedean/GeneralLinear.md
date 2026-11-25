@@ -1,7 +1,5 @@
 # Generic Banach representations of real and complex general linear groups
 
-Author: Worker 35. Definition contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
 This module specializes the generic vocabulary of
 `Langlands.Representation.Archimedean.SmoothVectors` to `GL_n(F)` and to
 the Levi subgroups `GL_n(F) × GL_m(F)`, for `F = ℝ` or `ℂ`. It defines
@@ -63,7 +61,7 @@ vectors, bounded by finitely many seminorms `‖dσ(X₁)⋯dσ(Xₖ)v‖`, with
 ## Instances, universes and scope
 
 The file sets `set_option backward.isDefEq.respectTransparency false`, as
-the Library's `Langlands.Global.ArchimedeanGL` (Worker 2) does: the charts
+the Library's `Langlands.Global.ArchimedeanGL` does: the charts
 on the units of `M_n(F)` are found only after unfolding the normed-ring
 instances of the operator norm. This option affects elaboration only.
 
@@ -158,8 +156,9 @@ Lean.
      predicate, by the same comparisons.
    The character of `A_θ` is therefore kept inside `σ`, not discarded.
    Shahidi's `I(ν, σ₀, θ) = Ind σ₀ ⊗ e^ν` is the induction of the
-   full-Levi representation `σ₀ ⊗ e^ν`. When the later induction unit
-   twists `σ` by an additional spectral variable `s`, through a character
+   full-Levi representation `σ₀ ⊗ e^ν`. When the module
+   `Langlands.Representation.Archimedean.Induction` twists `σ` by an
+   additional spectral variable `s`, through a character
    of `M_θ` that is trivial on `M_θ°` (a product of powers of `|det g₁|`
    and `|det g₂|`, that is `e^{sϖ}` for some `ϖ ∈ (𝔞_θ)*`), the result is
    Shahidi's `I(μ + sϖ, σ₀, θ)`: the `A_θ`-character `μ` of `σ` is the base
@@ -185,7 +184,7 @@ Lean.
    finite multiplicities of irreducible `K`-types) are explained in
    `Langlands/Representation/Archimedean/SmoothVectors.md`.
 
-## Relation to other Library units
+## Relation to other Library modules
 
 `upperUnipotent` (from `Langlands.Group.GL.UpperUnipotent`) and
 `Whittaker.standardCharacter` (from
@@ -194,5 +193,5 @@ field-general objects, reused without change; they are also the objects
 of the Library's nonarchimedean Whittaker and Shahidi modules. The
 Library's archimedean Weil-group side (`Langlands.LocalFactor`
 archimedean modules) supplies the gamma factors that Shahidi's
-Theorem 3.1 compares with local coefficients; that comparison is planned
-as a later statement.
+Theorem 3.1 compares with local coefficients; that comparison is stated
+in `Langlands.Representation.Archimedean.LocalCoefficientGammaStatement`.

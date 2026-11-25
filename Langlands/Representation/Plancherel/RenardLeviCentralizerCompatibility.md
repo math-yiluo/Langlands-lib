@@ -10,4 +10,4 @@ This is an internal adapter for the standard-Levi clause of the Renard Cartan co
 
 `specialCompactLeviCentralizer_comap` composes the centralizer and Levi point maps, reducing the preimage of the same Levi compact intersection to the ambient centralizer preimage. The published `specialCompactCentralizer_comap` identifies the latter with the actual `rationalCommonNormKernel`. This identification does not assume any special-compact-preimage equality with a restricted Levi apartment.
 
-The provenance is an internal derivation from the named Library results and predicates. The additional apartment and compactness hypotheses remain explicit; this unit is supporting work and does not prove `AvailableRenardCartanStatement`.
+The provenance is an internal derivation from the named Library results and predicates. The additional apartment and compactness hypotheses remain explicit; this module serves `AvailableRenardCartanStatement` and does not prove it.

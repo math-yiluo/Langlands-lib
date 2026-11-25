@@ -1,7 +1,5 @@
 # Actual root data on the retained finite-Galois centralizer model
 
-Author: Worker 1293.
-
 This internal adapter retains a supplied `TorusCentralizerFiniteGaloisModel C`
 over an arbitrary field and universe `u`. It does not choose another torus or
 another splitting field.

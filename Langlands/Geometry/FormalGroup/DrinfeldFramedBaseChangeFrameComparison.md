@@ -1,6 +1,6 @@
 # Fixed-frame test comparisons defined directly by coefficient maps
 
-This internal unit constructs the fixed-frame comparison on a new Nilp-base
+This module constructs the fixed-frame comparison on a new Nilp-base
 test algebra directly from the actual coefficient maps, without a target chart
 parameter. It derives from the actual scalar-composition and equality-transport
 constructions; it makes no new literature assertion.
@@ -25,12 +25,14 @@ The two coordinate equations prove that both complete formal maps have
 identity series. Their proofs use the proved constituent coordinate equations
 and identity-coordinate composition. There is no chart choice and no inference
 of formal-map equality from point evaluation. Equality with the chart-dependent
-comparison in `DrinfeldFramedBaseChangeCharts` is a further proof.
+comparison in `DrinfeldFramedBaseChangeCharts` is proved separately, as
+`baseChangeFrameChartIso_eq_global` in `DrinfeldFramedBaseChangeCanonicalSquare`.
 
 The parameters retain the local field, finite-dimensional central division
 algebra, embedded field, coefficient and residue fields, fixed height-certified
 frame and Nilp objects in universes `{v,u}`. No target cover or target test chart
 is an argument of this comparison. The generic scalar-comparison helpers use
 finite coordinate types and coefficient rings in one universe. Framed comparison
-compatibility, class functoriality, actions and representability remain further
-constructions.
+compatibility, class functoriality, actions and representability are outside
+this module; the first two are in `DrinfeldFramedComparisonBaseChange` and
+`DrinfeldFramedClassFunctor`, and actions and representability remain separate.

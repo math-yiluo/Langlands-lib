@@ -1,6 +1,6 @@
 # The opposite open cell for a smooth affine group over a field
 
-This is the unchanged `OppositeCellStatement` originally stated by Worker 1234
+This is the unchanged `OppositeCellStatement` originally stated
 in `Absolute.BorelStatement`. Its full name, universe, hypotheses and
 `Prop`-valued body are preserved. The statement is isolated so that its proof
 and the connectedness and generic-centralizer consequences can be used without

@@ -1,6 +1,6 @@
 # A homogeneous polynomial constant along a line forces a constant parameter
 
-Author: Worker 1502. Internal helper for the proof of
+Internal helper for the proof of
 `AffineHomogeneousQuotientReductiveStatement`. It is elementary commutative algebra and does not
 follow a cited source.
 

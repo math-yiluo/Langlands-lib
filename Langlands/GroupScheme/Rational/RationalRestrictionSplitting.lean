@@ -30,7 +30,7 @@ local notation "T_L" => Functor.obj (CommGroupScheme.baseChange b) T
 local notation "G_L" => Functor.obj (GroupScheme.baseChange b) G
 local notation "j_L" => CategoryTheory.Functor.map (GroupScheme.baseChange b)
 
-local instance : IsAffineHom (G_L).X.hom :=
+private local instance : IsAffineHom (G_L).X.hom :=
   MorphismProperty.baseChange_obj (P := @IsAffineHom) b G.X inferInstance
 
 local instance : LocallyOfFiniteType (G_L).X.hom :=

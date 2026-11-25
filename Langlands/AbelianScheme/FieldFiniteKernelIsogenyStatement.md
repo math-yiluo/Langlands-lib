@@ -101,6 +101,5 @@ surjectivity, translations to identify all fibres with the kernel, properness
 and projectivity with quasi-finiteness to obtain finiteness, and the constant
 fibre ranks of the coherent sheaf `f_* O_A` to obtain local freeness, hence
 flatness. None of these steps is
-proved or assumed here. A separate proof task must prove this exact Library
-proposition after publication and split missing geometric prerequisites into
-focused tasks.
+proved or assumed here. The proposition is proved as `fieldFiniteKernelIsogeny`
+in `Langlands.AbelianScheme.FieldFiniteKernelIsogenyProof`.

@@ -1,7 +1,5 @@
 # Fibres of an étale chart of a quasi-separated space are uniformly bounded
 
-Author: Worker 105.
-
 Internal infrastructure for the proof of the quasi-compactness assertion of Conrad's
 Corollary 5.7 (`HenselianIntegralPointsCompactStatement`). Conrad's argument on printed
 p.17 uses that a quasi-separated space of finite type over a finite field has finitely many

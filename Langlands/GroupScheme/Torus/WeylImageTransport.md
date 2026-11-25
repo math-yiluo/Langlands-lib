@@ -1,6 +1,6 @@
 # Transport of the full character-lattice Weyl image
 
-This internal construction derives from the published actual normalizer and
+This internal construction derives from the actual normalizer and
 character-action transport in `Rational.CrossTorusWeylTransport`, the
 character identification in `Torus.LatticeGalois`, and Mathlib's conjugation
 of general linear groups. It supplies a reduction used in proving
@@ -19,7 +19,7 @@ with `e.inv`. `characterAutomorphismTransport e` is the multiplicative
 equivalence of integral linear automorphism groups sending an automorphism
 `a` to `c ∘ a ∘ c⁻¹`. It is obtained by conjugation on Mathlib's general
 linear groups and their standard equivalences with linear automorphisms.
-The published `weylAction_transport` shows that this conjugation sends the
+`weylAction_transport` shows that this conjugation sends the
 action of every source normalizing point to the action of its image under
 `normalizerPointsTransportEquiv e f h`.
 
@@ -31,7 +31,7 @@ surjectivity show that finiteness of either full Weyl image is equivalent
 to finiteness of the other. These are images on the entire character
 lattices, including all directions outside any root span.
 
-Finally, `splitTorusWeylImageFinite_of_standard` reduces the published full
+Finally, `splitTorusWeylImageFinite_of_standard` reduces the full
 finiteness statement to its standard split-torus case. Its premise ranges
 over every field in an arbitrary universe, every affine group scheme
 locally of finite type over that field, every finite index type, and every
@@ -44,5 +44,5 @@ transport gives the original finiteness conclusion.
 
 The module retains standard split-torus finiteness as a premise. It proves
 no preservation or generation result for representation weights and no
-unconditional Weyl-image finiteness theorem. It is a supporting unit for
+unconditional Weyl-image finiteness theorem. It is a supporting module for
 the central-isogeny root-datum proof.

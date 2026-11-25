@@ -1,6 +1,6 @@
 # Correcting a crossed homomorphism into a closed additive subgroup over any field
 
-Author: Worker 60 (Task 7805). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.CorrectionOfSolvable`, namespace
 `Langlands.GroupScheme.LinearAdditiveExtension`.
 

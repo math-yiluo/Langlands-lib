@@ -1,6 +1,6 @@
 # Rational points are dense in actual adelic projective space
 
-Worker 208. Conrad, *Weil and Grothendieck approaches to adelic points*
+Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed p.10, Example 4.3, proves that rational points of
 positive-dimensional projective space are dense in its adelic points. The two
 arithmetic clauses here state that conclusion for the actual relative
@@ -29,6 +29,8 @@ common universe. The dimension-zero extension is an elementary addition to
 the source's positive-dimensional formulation.
 
 `AdelicProjectiveRationalDensityStatement` is exactly the conjunction of these
-two Prop-valued targets. This file states density. The proof and the distinct
-positive-dimensional conclusions that the rational image is a proper subset,
-is not closed and is not discrete remain separate obligations.
+two Prop-valued targets. This file states density. The proof is
+`adelicProjectiveRationalDensity` (module `AdelicProjectiveRationalDensityProof`).
+The distinct positive-dimensional conclusions that the rational image is a proper
+subset, is not closed and is not discrete are stated separately, in
+`AdelicProjectiveRationalImageStatement`.

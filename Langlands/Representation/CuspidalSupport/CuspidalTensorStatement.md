@@ -1,7 +1,5 @@
 # Cuspidal tensor products and association of their factors
 
-Author: Worker 55.
-
 This module states two interfaces between the published external tensor product,
 actual product Levis, and multisets of supercuspidal classes. It contains only
 Prop-valued definitions. Neither interface nor uniqueness of supercuspidal

@@ -33,14 +33,16 @@ The four premises are published propositions:
   `(·,·)_P` on finite families in `A^2_P`, in Gram form.
 
 The module proves the implication only; none of the four premises is proved
-here or in the Library at the time of writing. The sesquilinearity of
+here. (G) is proved in the Library as `inducedInnerProductGram` (module
+`Langlands.Global.AdelicInducedInnerProductGramProof`); (A), (E) and (U) are
+not proved in the Library. The sesquilinearity of
 `(·,·)_P` (`InducedInnerProductSesquilinearStatement`) is not a premise: the
 proof derives the finite expansions it needs from the published integrability
 theorem `inducedInnerProductIntegrable` and the published
 `AdelicGroupPoints.inducedInnerProduct_sum_sum`. The finiteness of `Ω(P, P)`
 and the invariance of the spectral measure under `Ω(P, P)` are proved in
-`Langlands.Global.AdelicSelfWeylParameters` (a helper module of the same
-candidate).
+`Langlands.Global.AdelicSelfWeylParameters` (a helper module ported together
+with this module).
 
 ## Source
 
@@ -170,6 +172,4 @@ Fix the data of `LocalWavePacketNormBoundStatement` and write
 ## Scope
 
 The theorem is a reduction. The exact target `LocalWavePacketNormBoundStatement`
-follows once (A), (E), (U) and (G) are proved. Their proof tasks are Task 8058
-(A), the task for `IntertwiningSquareIntegrableExpansionStatement` (E), Task
-5682 (U) and the task for `InducedInnerProductGramStatement` (G).
+follows once (A), (E), (U) and (G) are proved.

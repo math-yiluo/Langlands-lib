@@ -40,7 +40,7 @@ def modulePowerReductionUnit (n : ℕ) :
       (Langlands.Coefficients.AdicSystem.powerReduction I n).mapAction G where
   app M :=
     { hom := (Langlands.Coefficients.AdicSystem.quotientMap I n).app M.V
-      comm g := (Langlands.Coefficients.AdicSystem.quotientMap I n).naturality (M.ρ g) }
+      comm g := (Langlands.Coefficients.AdicSystem.quotientMap I n).naturality (M.ρ g).asHom }
   naturality {M N} f := by
     apply Action.hom_injective
     exact (Langlands.Coefficients.AdicSystem.quotientMap I n).naturality f.hom
@@ -62,7 +62,7 @@ def modulePowerReductionTransition {m n : ℕ} (h : m ≤ n) :
       (Langlands.Coefficients.AdicSystem.powerReduction I m).mapAction G where
   app M :=
     { hom := (Langlands.Coefficients.AdicSystem.transition I h).app M.V
-      comm g := (Langlands.Coefficients.AdicSystem.transition I h).naturality (M.ρ g) }
+      comm g := (Langlands.Coefficients.AdicSystem.transition I h).naturality (M.ρ g).asHom }
   naturality {M N} f := by
     apply Action.hom_injective
     exact (Langlands.Coefficients.AdicSystem.transition I h).naturality f.hom

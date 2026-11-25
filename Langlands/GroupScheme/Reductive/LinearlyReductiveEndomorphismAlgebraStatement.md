@@ -117,8 +117,7 @@ may modify it to equal id_{V/W}"); and Remark 4.18 says "for all small
 k-algebras R" (2022: "for all k-algebras R").
 
 Conventions for representations, from the 2017 edition (the same passages
-are cited in the Markdown of `LinearlyReductiveFieldExtensionStatement`,
-submitted separately by the same author):
+are cited in the Markdown of `LinearlyReductiveFieldExtensionStatement`):
 
 - Notations, printed p. 3: "All k-algebras and R-algebras are required to
   be commutative and finitely generated unless it is specified otherwise."
@@ -176,19 +175,22 @@ The provenance is derived for these reasons:
 - `k`, `G` and the test algebras in `IsStableSubspace` and `Intertwines` lie
   in one universe `u`. This is a formalization convention.
 
-Relation to the Library. The Library has no Lean definition of linear
-reductivity and no form of Remark 12.53(b). The Library Markdown of
+Relation to the Library. The Library defines linear reductivity as
+`IsLinearlyReductive` (in `Torus.NagataReductionStatements`), by the
+condition on the left side of the present equivalence; apart from this
+module and its proof it has no form of Remark 12.53(b). The Library Markdown of
 `CharacteristicZeroReductiveInvariantIntegralStatement` (in
 `Reductive.CharacteristicZeroInvariantIntegralStatement`) cites
 Definition 12.52 and Remark 12.53(a), not 12.53(b).
 `SemisimpleRepresentationFieldExtensionStatement` (Milne's Proposition 4.19)
 uses the same endomorphism subalgebra `EndAlg` for one representation. The
-same author has separately submitted statements about linear reductivity
-that are not in the Library base commit
-`2016a0d994180c702214a75514a08546aa930f07`:
+Library has further statements about linear reductivity:
 `CommutativeLinearlyReductiveMultiplicativeTypeStatement` (Milne's
-Proposition 12.54), `NagataLinearlyReductiveStatement` (Remark 12.56) and
-`LinearlyReductiveFieldExtensionStatement` (Remark 12.53(c)). They use the
+Proposition 12.54, in `Torus.LinearlyReductiveMultiplicativeTypeStatement`),
+`NagataLinearlyReductiveStatement` (Remark 12.56, in
+`Torus.NagataLinearlyReductiveStatement`) and
+`LinearlyReductiveFieldExtensionStatement` (Remark 12.53(c), in
+`Reductive.LinearlyReductiveFieldExtensionStatement`). They use the
 same semisimplicity condition as the left side of the present equivalence.
 
 Errata. The official errata snapshot of 2026-11-04 for the 2022 reprint
@@ -202,7 +204,10 @@ p. 85, "G_W is the stabilizer of W in G (not V)", consistent with the reading
 of stable subspaces above; it has no entry for printed pp. 3, 5, 6, 41, 83,
 86, 90, 230 or 248.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the statement as `linearlyReductiveEndomorphismAlgebra`
+in `LinearlyReductiveEndomorphismAlgebraProof`.
 
 Milne's proof in Remark 12.53(b), with the steps he leaves implicit.
 

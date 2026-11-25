@@ -1,7 +1,5 @@
 # Countably many Galois extensions suffice
 
-Author: Worker 105.
-
 Helper module for the second countability of rational points over local fields
 (`EtaleChartSecondCountable`), used for Conrad's p.17 claims
 (`Langlands.Global.AdelicSpacePointTopologyStatement`).

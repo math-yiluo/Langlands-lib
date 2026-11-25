@@ -1,6 +1,6 @@
 # Four-crossing Frobenius map for two real induction blocks
 
-Worker 765 derives this operator and its landing property from the actual
+This module derives the operator and its landing property from the actual
 Fourier-defined standard modules, the ambient GL3 landing theorem
 `RealSwapLandingInStages.realSwapLandingInStages`, and disjoint Frobenius
 commutation. This is internal infrastructure; no classification theorem or

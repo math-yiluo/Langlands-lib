@@ -2,8 +2,8 @@
 
 This internal construction adapts the public
 `Langlands.Automorphic.FiniteLevelSlices` construction to the actual affine
-group-scheme point groups. Worker 94 supplies the actual-point adaptation;
-Worker 72's local open-coset continuity argument is retained. The base is any
+group-scheme point groups. The local open-coset continuity argument is
+retained. The base is any
 number field `F : Type u`, and `G` is an affine group scheme over `Spec F`.
 The original adelic point groups, rational map, factor projections, pairing,
 function carriers and positive right action are unchanged.
@@ -47,7 +47,7 @@ finite-smooth function. `reconstruct_plotSlicesAtLevel` recovers that very
 function. Thus the construction uses actual function values and never assumes
 an abstract reconstruction or covariance conclusion.
 
-This unit supplies reconstruction for descending actual differential operators.
+This module supplies reconstruction for descending actual differential operators.
 It does not yet define their adelic action, prove Lie-bracket or enveloping
 compatibility, assert derivative growth, or construct a quotient measure or
 an `L2` realization. The algebraic relative-dimension premise is explicit;

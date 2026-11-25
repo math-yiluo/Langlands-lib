@@ -1,7 +1,5 @@
 # Algebraic reduction from localized heredity to Whittaker type
 
-Author: Worker 174.
-
 The theorem `Langlands.inducedWhittakerTypeReduction` proves exactly the closed
 proposition `Langlands.InducedWhittakerTypeReductionStatement.{uF,uV}`. Its only
 premise is the full published `InducedLocalizationStatement` and its conclusion
@@ -33,8 +31,10 @@ the block functional equivalences reverse the translation.
 The proof uses the dimension lemmas underlying `dualTensorOneDimensional`;
 it does not identify the full tensor dual with a tensor product of full duals.
 It does not prove geometric heredity, invoke irreducibility, or strengthen the
-admissibility or finite-type hypotheses. The unconditional host theorem still
-requires an independently proved `InducedLocalizationStatement`.
+admissibility or finite-type hypotheses. The unconditional theorem
+`Langlands.inducedWhittakerType`, in
+`Langlands.Representation.Whittaker.InducedWhittakerTypeProof`, applies this
+reduction to the separately proved `Langlands.inducedLocalization`.
 
 ## All-field port
 

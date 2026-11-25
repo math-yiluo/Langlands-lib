@@ -1,7 +1,5 @@
 # Geometry of the centralizer intersection with a Borel
 
-Author: Worker 1479.
-
 This internal construction assembles published all-test centralizer restriction, dynamic smoothness, inherited solvability, and Borel presentation transport. It uses the actual pullback `subgroupIntersection j b`, with first projection to the chosen ambient centralizer `M` and second projection to the prescribed Borel `B`. It works over an arbitrary field and universe and includes trivial and noninjective cocharacters. The conclusions do not assume that the ambient centralizer is connected or smooth.
 
 For a closed subgroup `b : B ⟶ G` with affine source, an arbitrary cocharacter whose full range lies in `b`, and any closed representative `j : M ⟶ G` of its dynamic centralizer, `Dynamic.centralizerIntersectionIso` constructs an isomorphism from the actual pullback to the chosen affine centralizer of the restricted cocharacter in `B`. The construction uses `Dynamic.isRepresentedBy_intersectionSnd`, rewrites the proved restriction equation, and applies uniqueness of subgroup representatives. Its `hom_comp` theorem identifies the composite with the canonical internal-centralizer inclusion as the actual second projection to `B`.

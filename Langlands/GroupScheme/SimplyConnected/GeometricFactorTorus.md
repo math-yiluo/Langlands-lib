@@ -1,6 +1,6 @@
 # Geometric factor tori from original-field normal-subgroup projections
 
-Worker 509. Derived from the actual normal-factor torus construction, uniqueness
+Derived from the actual normal-factor torus construction, uniqueness
 of geometric factor retractions, and geometric maximality of self-centralizing
 tori. A supplied normal subgroup and its original-field torus/retractions can be
 recovered as one actual factor after field extension. Its base-changed retraction

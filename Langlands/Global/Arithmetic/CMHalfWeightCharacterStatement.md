@@ -1,6 +1,6 @@
 # Conjugate-inverse Hecke characters of weight one
 
-Worker 84. This contribution defines the proposition
+This module defines the proposition
 `Langlands.Global.CMHalfWeightCharacterStatement.{u}` in
 `Langlands/Global/Arithmetic/CMHalfWeightCharacterStatement.lean`. It is an
 existence assertion and is not proved here.
@@ -37,7 +37,7 @@ M. Harris and R. Taylor, *The Geometry and Cohomology of Some Simple
 Shimura Varieties*, Annals of Mathematics Studies 151 (2001). Registered
 source `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`. Read
-directly for this contribution: Proposition VII.2.7 (printed p.238, PDF
+directly: Proposition VII.2.7 (printed p.238, PDF
 p.246) and Corollary VII.2.8 with its proof (printed pp.244–245, PDF
 pp.252–253).
 
@@ -102,6 +102,6 @@ It has no regularity condition. It is independent of
 `CMCharacterGlobalizationStatement`, whose characters all have anticyclotomic
 integral types (even exponents of `z/|z|`).
 
-It serves H2 of program `34b81620-20d7-4059-9b08-6bedd1c1c029`: the target
+It serves the target
 `HarrisDatumCharacterRealizationStatement` (module
-`HenniartHarrisDatumStatement`) needs it when `[E' : E]` is even.
+`HenniartHarrisDatumStatement`), which needs it when `[E' : E]` is even.

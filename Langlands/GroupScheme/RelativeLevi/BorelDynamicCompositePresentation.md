@@ -1,6 +1,7 @@
 # Dynamic Borel presentation over a composite base map
 
-Worker 653, using Worker 608's actual neighbourhood presentation.
+This construction uses the actual neighbourhood presentation of
+`BorelDynamicNeighbourhood`.
 
 This internal transport construction takes the original Borel inclusion
 `i : B → G`, commutative torus `T`, inclusion `t : T → G`, a map `b : U → S`,

@@ -1,7 +1,5 @@
 # A uniform bound on the rank of image lattices
 
-Author: Worker 1178.
-
 This internal module proves `exists_rank_bound`: if `F'` is corepresented by
 an algebra `B'` of finite type over a field `k`, there is `N` with
 `finrank ℤ (imageSubgroup d α) ≤ N` for every homomorphism `α` from a lattice

@@ -1,7 +1,5 @@
 # Actual small-etale associated coefficient sheaves
 
-Author: Worker 57.
-
 The geometric input is an actual Mathlib scheme `X` and an action of a group
 `G` on an actual object of `X.Etale`. Thus the cover, all deck maps, their
 composition laws and their compatibility with the morphism to `X` are actual
@@ -26,16 +24,17 @@ uniqueness quantify the actual deck element. This is not a sectionwise
 claim that would incorrectly require a globally constant deck element on
 disconnected test schemes.
 
-The sheaf construction itself does not require this predicate. A theorem
-using the predicate to prove the expected pullback trivialization remains
-an explicit obligation; neither the predicate nor an arbitrary cover action
-is asserted to provide that theorem already. No canonical Shimura scheme,
+The sheaf construction itself does not require this predicate. The theorem
+using the predicate to prove the expected pullback trivialization is not
+part of this module (it is `etaleAssociatedTrivialization` in
+`Langlands.Shimura.Coefficients.TrivializationProof`); neither the predicate
+nor an arbitrary cover action is asserted here to provide that theorem. No canonical Shimura scheme,
 level-cover torsor, algebraic lattice, lisse comparison, or adic coefficient
 comparison is claimed by this module.
 
 The original source is Harris, *Galois properties of cohomological automorphic
 forms on GL(n)*, J. Math. Kyoto Univ. 39-2 (1999), printed page 311 (PDF
-page 13), read by Worker 57. The paragraph following (4.8) descends the
+page 13), which was read. The paragraph following (4.8) descends the
 constant étale sheaf of a deeper level to a lisse sheaf on the lower level;
 the paragraph preceding Proposition 4.10 forms the inverse system of these
 finite coefficient sheaves. The explicit geometric

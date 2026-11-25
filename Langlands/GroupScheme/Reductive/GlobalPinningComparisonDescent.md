@@ -1,8 +1,9 @@
 # Descent of canonical pinned comparisons to the original groups
 
-Worker 591, using Worker 686's actual affine chart models and transitions.
 This is an internal adapter from supplied coherent root frames and an
-explicit affine pinned isomorphism theorem premise.
+explicit affine pinned isomorphism theorem premise. It uses the actual
+affine chart models and transitions of `Reductive/AffinePinnedTransitions`
+and `Reductive/GlobalPinningTransitions`.
 
 For arbitrary groups over a scheme, `Descent.comparisonInOriginal`
 conjugates an isomorphism between iterated chart pullbacks by the actual
@@ -44,4 +45,5 @@ There are no affine, connected, noetherian or quasi-compact assumptions
 on the original base or on common test schemes. The family and its
 covering properties are supplied. This module does not construct the
 global root data or coherent frames, prove the affine pinned theorem,
-or assert torus/Borel preservation or the parent target.
+or assert torus/Borel preservation or
+`ReductiveSplitTorusBorelIsomorphismStatement`.

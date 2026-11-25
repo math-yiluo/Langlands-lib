@@ -1,6 +1,6 @@
 # Actual Pi-zero loci under structural base change
 
-Worker 225. This derived unit proves inverse-image equality for the actual
+This derived module proves inverse-image equality for the actual
 Pi-zero loci of Deligne line-sheaf data. It combines the actual fibre
 comparison of `DeligneFibreBaseChange` with the field-extension
 zero-reflection theorem of `StructuralLineZeroReflection`.
@@ -67,5 +67,5 @@ records its underlying point formula.
 These subspaces are `TopCat` objects with their actual subspace topology.
 No scheme structure on a zero locus, universal object, representability
 or descent theorem is asserted. Transport of condition (a), the remaining
-admissibility conditions and the admissible Nilp functor are successor
-work.
+admissibility conditions and the admissible Nilp functor are not treated
+here.

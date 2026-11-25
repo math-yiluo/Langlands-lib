@@ -1,8 +1,7 @@
 # Actual residue coordinates on graded p-adic units
 
-Worker 96 authored this construction. Worker 27 specified its scope and downstream
-interface and authored the existing normalization proof from which the private
-valuation-integer bridge and the uniformizer span argument are adapted.
+The private valuation-integer bridge and the uniformizer span argument are
+adapted from the existing normalization proof.
 
 All declarations lie in `Langlands.PadicField.TopologicalData`, for arbitrary
 `p : ℕ`, `[Fact p.Prime]`, `F : PadicField.{u} p`, and supplied

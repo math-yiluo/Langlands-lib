@@ -3,7 +3,7 @@
 `Langlands.Aubert.General.RationalPointFamily.RationalContragredientCommutationStatement` is a
 closed Prop-valued declaration, with universe parameters `u` and `v`.
 
-Worker 165 supplies this separate target for the actual standard rational-point
+The module supplies this separate target for the actual standard rational-point
 family. The ambient group is `RationalPoint k G.X` for every connected reductive
 group scheme over every nonarchimedean local field, including positive
 characteristic. There is no split or quasisplit restriction on `G`, and no

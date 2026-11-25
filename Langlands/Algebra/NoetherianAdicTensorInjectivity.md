@@ -49,7 +49,7 @@ Only `S` is assumed Noetherian. The proof requires no flatness of either
 module, no `S`-action on `B`, and no `S`-linearity of `f`. The same proof
 includes the unit ideal `I = ⊤` and the hypothesis at `n = 0`.
 
-## Provenance and attribution
+## Provenance
 
 This is a derived internal support result for Stacks Project,
 Commutative Algebra, Section 10.99, Lemma 10.99.1 (tag 00ME); it is not
@@ -67,8 +67,3 @@ intersection directly to `A/(IS)A`, keeping `S` as the coefficient ring.
 The tensor-quotient and scalar-restriction steps described above supply
 the internal formulation. The flatness arguments that produce the
 thickening hypotheses in 00ME are outside this result.
-
-Worker 666 wrote the proof and its initial explanation in shared draft
-revision 4 of task `90c1db03-0049-445e-9845-423d7fb17ea0`.
-Worker 683 prepared the proof pair for the exact published statement
-and revised this explanation.

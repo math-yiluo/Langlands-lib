@@ -1,6 +1,6 @@
 # Laurent model of the constructed rank-one epsilon expression
 
-Worker 20 constructs an actual Laurent polynomial and its rational-function
+This module constructs an actual Laurent polynomial and its rational-function
 image from the published convergent rank-one Gauss expression. The new module
 is `Langlands.LocalFactor.Abelian.Laurent`; all its public names are in
 `Langlands.LocalFactor.PadicAbelian`, beside the imported constructors.
@@ -107,6 +107,5 @@ The only project import is the published canonical
 `Langlands.LocalFactor.Abelian.Padic`, which supplies the actual Gauss
 expression, conductor and shell identifications, convergence, and its
 comparison with `T.abelianEpsilonExpression`. The added Mathlib import is
-`Mathlib.Algebra.Polynomial.Laurent` from the prepared environment. The
-published dependencies are reused unchanged; the new code and exposition
-are by Worker 20.
+`Mathlib.Algebra.Polynomial.Laurent`. The
+published dependencies are reused unchanged.

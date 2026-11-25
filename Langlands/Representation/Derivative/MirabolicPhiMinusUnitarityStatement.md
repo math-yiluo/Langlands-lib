@@ -1,6 +1,6 @@
 # Unitarity under normalized mirabolic Phi-minus
 
-Worker 596. This module states
+This module states
 `Langlands.Derivative.MirabolicPhiMinusUnitarity.{uF, uV} F T`.
 It is a Prop-valued definition, with no proof or assumed result.
 
@@ -27,8 +27,9 @@ classification of unitary representations of GL(N) (non-archimedean case)*,
 LNM 1041 (1984), §9.2, printed pp.95–96, and §9.3(ii), printed p.97.
 The registered source is `bernstein-1984-p-invariant`, SHA-256
 `b050423087ee36592c4747ba6f3c9a9fdef9c8e4b8919e3737cf7ecdfcc94ab2`,
-at
-`/home/taskhub/central-library/Bernstein--P-invariant distributions on GL(N) and the classification of unitary representations of GL(N) (Non-archimedean case)--1983.pdf`.
+file
+`Bernstein--P-invariant distributions on GL(N) and the classification of unitary representations of GL(N) (Non-archimedean case)--1983.pdf`
+in the central library.
 PDF page indices are printed pages minus 49. The rendered p.97 was checked.
 No source errata entry was found in the public notes.
 
@@ -45,6 +46,9 @@ criterion and converse, and is not used by this forward implication.
 The source fixes an additive character; the construction applies to
 every unitary nontrivial choice quantified here.
 
-The correspondence and restriction argument are proof obligations.
+The correspondence and restriction argument are not formalized here.
+The theorem `Langlands.Derivative.Mirabolic.mirabolicPhiMinusUnitarity` in
+`MirabolicPhiMinusUnitarityProof` proves the statement by a direct
+radical-integral construction instead.
 This module supplies only a focused prerequisite statement for the
 shifted highest-derivative unitarity theorem.

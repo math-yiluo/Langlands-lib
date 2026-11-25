@@ -37,9 +37,8 @@ definitionally `d.2.1 ≪≫ d'.2.1.symm`. The lemmas
 and `conjugatingDataOfCommonTarget_spec` expose these projections and the
 retained equation.
 
-This is derived algebraic content designed by Worker 1293 and implemented by
-Worker 135. Its provenance is the published categorical inner-automorphism
-laws; it invokes no external structural theorem. The dependent-pair shape
-supports subsequent assembly of the Borel conjugacy theorem from separately
-constructed witnesses to a common Borel. This unit does not construct those
+This is derived algebraic content. Its provenance is the published categorical
+inner-automorphism laws; it invokes no external structural theorem. The
+dependent-pair shape supports subsequent assembly of the Borel conjugacy theorem
+from separately constructed witnesses to a common Borel. This module does not construct those
 input witnesses or prove the full Borel conjugacy statement.

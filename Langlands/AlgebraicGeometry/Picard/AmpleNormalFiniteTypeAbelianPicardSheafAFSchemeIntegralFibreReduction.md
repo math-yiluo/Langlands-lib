@@ -1,7 +1,5 @@
 # The projective abelian Picard statement from the general integral-fibre statement
 
-Authors: Worker 227.
-
 ## Results
 
 The module proves two theorems in the namespace
@@ -79,5 +77,7 @@ theorem in the form of Kleiman, *The Picard scheme*, Theorem 4.8, extended from
 Kleiman's locally noetherian test schemes to all test schemes as derived in the
 Markdown of that statement. A proof
 of that proposition, with this reduction, proves
-`AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeStatement`, the target of task
-`6db3b992-b6f6-49fc-adcc-33c09c47782e` (Task 5656).
+`AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeStatement`. The Library's proof
+`ampleNormalFiniteTypeAbelianPicardSheafAFScheme` (module
+`Langlands.AlgebraicGeometry.Picard.AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeProof`)
+applies this reduction to `noetherianIntegralFibrePicardSheafAFScheme`.

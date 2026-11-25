@@ -69,13 +69,12 @@ Library functor with `Pic⁰`.
 ## Role and status
 
 Together with `FieldDualSchemeSmoothStatement` and
-`FieldDualSchemeSeparatedStatement`, this supplies the intended
-surjection input to the parent `FieldDualSchemeGeometryStatement`.
+`FieldDualSchemeSeparatedStatement`, this supplies the
+surjection input to `FieldDualSchemeGeometryStatement`.
 Universal closedness of the chosen dual descends from the proper source
 along the surjection; geometric connectedness descends along its base
 changes.
 
-The Lean declaration is reused from Worker 268's shared draft for the
-parent geometry proof, with the provenance explanation expanded here.
 This module supplies a statement only. It gives no proof or new axiom;
-the exact proposition remains a separate proof obligation.
+the exact proposition is proved separately, as `fieldDualSchemeSurjection`
+in `FieldDualSchemeSurjectionProof`.

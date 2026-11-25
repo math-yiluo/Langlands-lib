@@ -85,7 +85,10 @@ explanations distinguish that framework from the exact scheme-module
 coherence and normalization equations proved here; this theorem asserts no
 additional comparison with a different implementation of that framework.
 
-The full five-law conjunction is now proved for the published actual map.
+The full five-law conjunction is proved for the published actual map.
 The proof imports neither the translation-difference lifting result,
-downstream dual or Picard existence results, nor the separate host's
-cohomology-vanishing theorem. Assembly of that host is outside this result.
+downstream dual or Picard existence results, nor the separate
+cohomology-vanishing theorem for nontrivial translation-invariant line bundles
+(`algClosedFieldTranslationInvariantCohomologyVanishing` in
+`Picard/TranslationInvariantCohomologyVanishingProof`, which uses the
+split-retraction law). Assembly of that theorem is outside this result.

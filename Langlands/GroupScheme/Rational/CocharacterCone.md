@@ -1,7 +1,5 @@
 # Nonnegative cocharacters and their integral annihilator quotient
 
-Author: Worker 1222.
-
 This derived construction uses the existing character and cocharacter lattices
 of an actual commutative group scheme `T` over a field `k : Type u`, and their
 integer pairing `latticePairing`. For any set `R` of actual characters,
@@ -38,7 +36,7 @@ and needs no reductivity, finiteness, or independence assumptions.
 The quotient here is by the integral common annihilator. Its identification
 with the image of the split central component, and consequently with Renard's
 quotient by `C_(A_G)`, is a separate structural comparison. Finite generation
-has not been stated or proved in this unit. A finite-character version can use
+has not been stated or proved in this module. A finite-character version can use
 Mathlib's `AddSubmonoid.fg_of_subtractive` in
 `Mathlib.GroupTheory.Finiteness`; no new generic Gordan proof is needed.
 
@@ -46,5 +44,5 @@ Renard's stronger assertion that this monoid is free on as many generators as
 there are simple roots is false in general. For `SL_3`, simple-root
 coordinates give the monoid `{(p,q) in N^2 | p = q mod 3}`. The indecomposable
 elements `(3,0)`, `(0,3)`, and `(1,1)` satisfy
-`(3,0) + (0,3) = 3*(1,1)`. This unit makes no freeness claim and does not
+`(3,0) + (0,3) = 3*(1,1)`. This module makes no freeness claim and does not
 formalize the source's subsequent decomposition into strict faces.

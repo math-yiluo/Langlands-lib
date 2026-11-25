@@ -1,6 +1,6 @@
 # Actual inner cocharacters and the nested nonnegative cone
 
-Worker 17. This derived geometric helper retains the original nested parabolic
+This derived geometric helper retains the original nested parabolic
 maps, their common Levi and split components. It uses supplied compatible fine
 and outer presentations, compatibility of the common Levi maps, and an all-test
 intersection equality for the original inner parabolic.

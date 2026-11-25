@@ -1,11 +1,9 @@
 # The categorical universal property of the actual module localization
 
-Authors: Worker 709 prepared the statement pair; Worker 1193 checked the
-original passages, imported objects, exact quantifiers and universe conventions
-and prepared this focused statement submission under whole-book Renard task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 2. It imports the published
-`Langlands.Algebra.RenardLocalModuleCategory`, constructed by Worker 709
-and Worker 1158. The actual full subcategory, canonical map, factor and
+A second reader checked the
+original passages, imported objects, exact quantifiers and universe conventions.
+This statement pair imports
+`Langlands.Algebra.RenardLocalModuleCategory`. The actual full subcategory, canonical map, factor and
 structured arrow are unchanged. There is no proof in this file.
 
 ## Source and derived provenance
@@ -21,7 +19,7 @@ subcategory of local modules. Registered source identifier
 These original pages were reread directly on 1 November 2026.
 
 The source's parenthetical interpretation by a scalar inverse for each
-vector is false, as shown by the published integer/rational counterexample
+vector is false, as shown by the integer/rational counterexample
 in `Langlands.Algebra.RenardModuleLocalization`. The imported `IsSLocal`
 retains invertibility of each scalar endomorphism, which is the main
 condition in the original. This statement uses that corrected interface.
@@ -47,12 +45,12 @@ The imported constructions have the following exact meanings:
 
 | Construction | Actual object or map |
 | --- | --- |
-| `LocalModuleCat.{u,κ} S` | The full subcategory of `ModuleCat.{κ} R` with the published property `IsSLocal S` |
+| `LocalModuleCat.{u,κ} S` | The full subcategory of `ModuleCat.{κ} R` with the property `IsSLocal S` |
 | `localModuleInclusion S` | Its inclusion into modules over the original R |
 | `raisedSource M` | `ModuleCat.of R (ULift.{max u w} M)` |
 | `canonicalLocalObject S M` | The actual `ULift.{w} (LocalizedModule S M)` with its proved locality |
 | `canonicalModuleMap S M` | The actual `LocalizedModule.mkLinearMap S M` transported through the explicit linear ULift equivalences |
-| `canonicalFactor S M N f` | The published actual linear factor, with its source and localization-source lifts transported explicitly |
+| `canonicalFactor S M N f` | The actual linear factor, with its source and localization-source lifts transported explicitly |
 | `canonicalStructuredArrow S M` | The structured arrow of that map for the actual local-module inclusion |
 
 Morphisms of the full subcategory are all ambient R-linear maps between
@@ -118,18 +116,19 @@ universes or claim that the raw localization lives in Type v.
 
 ## Intended proof and remaining scope
 
-No proof is implemented here. A future proof should transport the already
-published `factor_comp` and `factor_unique` through the explicit linear ULift
+No proof is implemented here. A proof should transport
+`factor_comp` and `factor_unique` through the explicit linear ULift
 equivalences, use extensionality of the full-subcategory morphisms, and build
 initiality by sending every structured arrow to its actual unique factor.
-These are intended steps only. The existing linear-map universal property
-does not by itself constitute an accepted proof of this categorical target.
+These are intended steps only; `RenardLocalModuleUniversalProof` proves the
+statement along them. The existing linear-map universal property
+does not by itself constitute a proof of this categorical target.
 
 The compatible comparison remark on PDF258 requires isomorphisms compatible
 with the canonical maps; it does not assert uniqueness among all
 isomorphisms. That comparison, functorial localization and adjunctions,
 ring-localization example 3, the categorical polynomial-module/endomorphism
 equivalence of example 5, the other examples and the rest of Appendix A
-remain separate obligations. The earlier published endomorphism-localization
-proofs and all existing owners are unchanged. This statement unit establishes
+are outside this statement. The existing endomorphism-localization
+proofs are unchanged. This statement module establishes
 neither a proof nor section or book completion.

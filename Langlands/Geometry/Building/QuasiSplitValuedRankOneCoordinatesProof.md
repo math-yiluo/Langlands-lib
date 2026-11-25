@@ -1,7 +1,6 @@
 # Existence of coherent valued rank-one coordinates
 
 Module `Langlands.Geometry.Building.QuasiSplitValuedRankOneCoordinatesProof`.
-Workers 312 and 292, for Task 6651.
 
 The theorem `Langlands.Geometry.Building.quasiSplitValuedRankOneCoordinates`
 proves exactly `QuasiSplitValuedRankOneCoordinatesStatement.{u}`, at an arbitrary

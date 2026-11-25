@@ -1,7 +1,7 @@
 import Langlands.ClassFieldTheory.Local.PrimeRamifiedTraceIdealsStatement
 import Langlands.ClassFieldTheory.Local.PrimeRamifiedDifferentProof
 import Langlands.LocalField.DVRTraceIdealsProof
-import Langlands.ClassFieldTheory.Local.NYLL.RelativeIntegerStructureProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RelativeIntegerStructureProof
 import Langlands.LocalField.RelativeIdealPowers
 
 /-! Exact trace images for the supplied prime ramification break. -/
@@ -30,7 +30,7 @@ theorem primeRamifiedTraceIdeals : PrimeRamifiedTraceIdeals.{u,v} := by
   let := relativeIntegerFieldAlgebra (E := L) TF
   let := relativeIntegerFieldTower (E := L) TF
   let := relativeIntegerTower TF TL
-  obtain ⟨hclosure, hmodule⟩ := NYLL.relativeIntegerStructure p F L TF TL
+  obtain ⟨hclosure, hmodule⟩ := UniverseZero.relativeIntegerStructure p F L TF TL
   let := hclosure
   let := hmodule
   have hmap := map_maximalIdeal_algebraMap_of_ramificationIndex_eq_mul

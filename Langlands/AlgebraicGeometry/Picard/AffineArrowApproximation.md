@@ -1,6 +1,6 @@
 # Finite algebra approximation of actual Picard arrows
 
-This internal unit translates the section and equality descent interfaces into
+This internal module translates the section and equality descent interfaces into
 statements about actual arrows between restricted line-bundle families. It
 uses the relative Picard pseudofunctor and its coherent Hom presheaf, together
 with the section and equality descent helpers. It also applies the published

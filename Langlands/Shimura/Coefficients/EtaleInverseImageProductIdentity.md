@@ -116,8 +116,8 @@ constructions, and no desired CM conclusion is assumed.
 
 The construction works for every scheme, etale cover object, commutative
 coefficient ring and sheaf in the stated universe. There is no group, torsor,
-rigidity or finiteness premise. This unit does not construct a CM identity
+rigidity or finiteness premise. This module does not construct a CM identity
 comparison or prove its compatibility with original lattice inclusions. Those
 consumer results, general commensurability, rational adic independence, Hecke
 compatibility, representability, canonical models and the exact Harris geometry
-remain separate obligations.
+are not part of this module.

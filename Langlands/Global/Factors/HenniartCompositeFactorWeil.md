@@ -1,6 +1,7 @@
 # Weil-side determinants and pair L-factors along an isomorphism of p-adic fields
 
-Worker 5130, Task 5230. Internal derived infrastructure; no external source.
+Internal derived infrastructure for the proof of
+`HenniartCompositeFactorStatement`; no external source.
 
 * `Weil.Local.extensionResidueDegree_algEquiv`: an algebra isomorphism has relative
   residue degree one. `localDegreeInt_extensionWeilEquiv`: the Weil map of an algebra

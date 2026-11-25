@@ -1,9 +1,10 @@
 # Weight spaces in actual cocharacter centralizers
 
 This internal construction identifies character weight spaces under an actual
-cocharacter centralizer inclusion. It is a supporting step for the independent
-root-line proof of Task 7510, rather than an unconditional proof of the root-line
-statement.
+cocharacter centralizer inclusion. It is a supporting step for the reduction of
+the root-line statement `SplitRootLieLineStatement` to proportional-root
+centralizers (`Reductive.RootLieLineRankOneReduction`), rather than an
+unconditional proof of the root-line statement.
 
 `Lie.weightSpaceEquivOfLeRange` works over any commutative base ring `R`.
 Let `s : M ⟶ G` be a group-scheme homomorphism whose underlying morphism is
@@ -39,13 +40,11 @@ differential and centralizer APIs.
 
 ## Dependency audit
 
-A private Lean command was checked in the pinned environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` over Library base
-`ab9053b1751d6b6557d044c38c04e4c8a67dfffc`. For each public declaration it
-traversed every constant in the declaration's type and value, recursively,
-including opaque values with `ConstantInfo.value? (allowOpaque := true)`.
-The resulting check `46c38be4-566c-4dcb-895c-ce735568d2ce` reported no missing
-constants and no forbidden dependencies:
+A private Lean command was checked against the module. For each public
+declaration it traversed every constant in the declaration's type and value,
+recursively, including opaque values with
+`ConstantInfo.value? (allowOpaque := true)`. The resulting check reported no
+missing constants and no forbidden dependencies:
 
 | Declaration suffix | Total constants | `Langlands` constants |
 | --- | ---: | ---: |

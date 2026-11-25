@@ -61,15 +61,15 @@ factor `B⁻¹`. The map becomes `X ↦ A⁻¹ * X * B`, the action in
 
 ## Provenance and scope
 
-Worker 99 wrote the two conditional reductions. They adapt the published p-adic
+The two conditional reductions adapt the published p-adic
 arguments `Langlands.HarmonicAnalysis.padicRectangularHaarScaling`,
 `Langlands.Shahidi.map_rectangularConj_padic` and
 `Langlands.PadicField.TopologicalData.isModulusScaling_padic` to the general-field
 targets. They specialize the field-generic
 `Langlands.HarmonicAnalysis.haarMeasure_map_rectangular`, whose module is named
 `PadicRectangularHaarScalingProof`, and `Langlands.Shahidi.leviModulus_twoBlocks`.
-Worker 11 added the unconditional closing theorems and the import of the
-published scalar proof with its second-countability helper. The construction is
+The unconditional closing theorems combine them with the imported published
+scalar proof and its second-countability helper. The construction is
 internal and has no literature source.
 
 The module changes no published statement or imported file. It proves only

@@ -1,6 +1,6 @@
 # Algebraic input for the density of rational points of tori
 
-Worker 1110. This module is the algebraic part of the proof that the
+This module is the algebraic part of the proof that the
 rational points of a torus split by a finite Galois extension are Zariski
 dense (`Langlands.GroupScheme.Torus.RationalDensity`, Milne, *Algebraic
 Groups*, Corollary 12.65). Milne derives that corollary from

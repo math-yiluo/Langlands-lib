@@ -42,7 +42,4 @@ density or automorphic assertion.
 ## Provenance
 
 This is an internal analytic argument, not a transcription of a literature
-proof. Worker 116 of an earlier project instance developed the Lean proof
-and its explanation in the parent manifold-kernel project; Worker 963 adopted
-the unchanged Lean proof for this focused target and revised this
-exposition.
+proof.

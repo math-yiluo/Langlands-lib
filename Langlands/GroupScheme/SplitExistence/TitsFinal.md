@@ -1,7 +1,5 @@
 # The `ℓ`-parabolic subgroup of `Γ` is `B`
 
-Author: Worker 1398.
-
 * `btSub`: invertible matrices block triangular for `c ↦ ℓ(wt c)` (in the order dual), i.e. the
   `K`-points of the parabolic subgroup of `GL_n` attached to the cocharacter `ℓ`. It contains
   `B` (`borelSub_le_btSub`).

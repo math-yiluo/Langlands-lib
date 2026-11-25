@@ -1,7 +1,5 @@
 # Levi-compatible polar Iwasawa from Hermitian weight data
 
-Author: Worker 1655.
-
 This internal construction works over any `RCLike` field `𝕜 : Type u`.
 It converts a compatible closed star-stable matrix realization with Hermitian
 cocharacter weight projectors into the existing diagonal realization, and

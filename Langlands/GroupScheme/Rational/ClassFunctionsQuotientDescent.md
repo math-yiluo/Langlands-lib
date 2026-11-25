@@ -1,6 +1,6 @@
 # Detection of the actual quotient-isomorphism property after field extension
 
-Worker 1317. This is internal support for the split Steinberg quotient proof,
+This is internal support for the split Steinberg quotient proof,
 derived from the published actual class-function quotient base-change theorem,
 fpqc descent of scheme isomorphisms, and faithful flatness of field extensions.
 It makes no external source claim and does not duplicate the field-base-change

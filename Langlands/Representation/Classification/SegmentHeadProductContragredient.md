@@ -1,12 +1,12 @@
 # Optional truncations and supplied head products under smooth duality
 
-Author: Worker 357.
-
 This internal construction supplies the optional-truncation conversion and the
-actual dual product datum needed by the independent special-head product task
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`. It combines published individual-head
-endpoint reversal and general normalized-product smooth duality. The full
-product irreducibility criterion remains unproved.
+actual dual product datum needed by the independent proof of the special-head
+product irreducibility criterion `SegmentHeadProductIrreducibility`. It
+combines published individual-head endpoint reversal and general
+normalized-product smooth duality. This module does not prove the full product
+irreducibility criterion; that is done in
+[`SegmentHeadProductIrreducibilityProof`](SegmentHeadProductIrreducibilityProof.md).
 
 ## Parameters and constructions
 
@@ -114,8 +114,8 @@ source assertion. The three direct imports have the following roles:
   as a theorem, and the obstruction proof is not imported.
 
 The general product duality is reached through the first import's published
-[CuspidalProductContragredient](CuspidalProductContragredient.md). No pending
-support aggregation candidate or private support-bound specialization is an
+[CuspidalProductContragredient](CuspidalProductContragredient.md). No
+unpublished support aggregation or private support-bound specialization is an
 input. All inherited Lean and paired Markdown files are unchanged from
 Library `4103487976e26033768519d7c8e53adf6d10c898`.
 
@@ -126,14 +126,14 @@ modules including this entry and 244 directly named external import roots.
 All 731 inherited Lean/Markdown pairs match that Library byte for byte.
 Every project import and nonempty paired Markdown is present. The complete
 project inventory and external roots are reproduced below. The scan found
-no proof holes, new axioms, prohibited execution syntax or host-excluded
+no proof holes, new axioms, prohibited execution syntax or excluded
 identifier occurrence. No derivative or mirabolic module is in this closure.
 
-For continuity with the already completed semantic audits, 729 inherited pairs
+For continuity with the audits of earlier modules, 729 inherited pairs
 also match both fingerprints in the individual-dual-head, head-product
 finiteness or final-support closure audit inventories. The two other inherited
 pairs are `HeadTargetTransport` and `SegmentHeadContragredient`, the former
-moved during meaning-preserving publication of the latter. Both current Lean
+moved out of the latter without change of meaning. Both current Lean
 implementations and the former's complete explanation and latter's substantive
 explanation were read again. Target transport composes an actual quotient map
 with an invertible target map and preserves its kernel. Individual-head duality
@@ -150,37 +150,25 @@ classification theorems. The only invoked proof routes are the elementary
 support-image identities, individual-head smooth duality, individual-head
 admissibility, and general actual normalized-product duality described above.
 
-In particular, the closure and proof do not use the host criterion or either
-direction of it; parent generic-product uniqueness; multisegment exhaustion;
-ordered strong-head existence; quotient coverage; ordered conversion; tempered
-uniqueness; square-integrable classification or exhaustion; or regular
-exhaustion. The host and excluded task identifiers are
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`,
-`30341ae4-65f2-4a0e-9283-763db01a409e`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`8252833d-c269-41a9-824c-5879e531b23b`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, and
-`bf433f0a-921a-428c-b0c0-6475438125ac`.
+In particular, the closure and proof do not use the special-head criterion
+`SegmentHeadProductIrreducibility` or either direction of it; parent
+generic-product uniqueness; multisegment exhaustion; ordered strong-head
+existence; quotient coverage; ordered conversion; tempered uniqueness;
+square-integrable classification or exhaustion; or regular exhaustion.
 
-All additional host exclusions remain, including tasks with prefixes
-`ed48ae06`, `b95105c6`, `55ad1e10`, `92aea10f`, `2ae5cbe5`, and the
-segment-socle part of `8e5b4563`. No Ze80 3.5/9.6 result or proof successor,
+All further exclusions of that criterion remain, including the full, socle
+and head segment Jacquet formulas, the special exponent-norm formula,
+`SegmentSocleProductIrreducibility`, and the segment-socle derivative
+statements such as `SegmentSocleDerivatives`. No Ze80 3.5/9.6 result or its proof,
 segment derivative formula, derivative irreducibility, truncated-head
 identification, full segment Jacquet equivalence or linked segment product
-conclusion occurs. This preserves operator decisions
-`bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920`,
-`30144f6f9b59540b88b6d4c1517892d9`, and
-`ed80148e21e7523abfc048f455e98eb0`, read in full. The restricted `core_mid`
-step of the separate support proof is not imported or invoked.
+conclusion occurs. This keeps within the permitted inputs of the special-head
+criterion. The restricted `core_mid` step of the separate support proof is not
+imported or invoked.
 
-This unit proves no relation between differentiating a dual and dualizing a
+This module proves no relation between differentiating a dual and dualizing a
 derivative, no highest-derivative shift equality, no support multiplicity
-formula, and no irreducibility criterion. Those remain separate obligations.
+formula, and no irreducibility criterion. Those are not part of this module.
 
 ## Complete recursive project inventory
 

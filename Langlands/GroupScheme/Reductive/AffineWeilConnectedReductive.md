@@ -1,7 +1,5 @@
 # Connected reductivity of finite separable affine Weil restriction
 
-Author: Worker 110 (proof); placed in this standalone module by Worker 207.
-
 `Langlands.GroupScheme.AffineWeil.isConnectedReductive_restriction` proves
 the following. Let `k ⊆ K` be a finite separable field extension (arbitrary
 fields, arbitrary characteristic) and let `G` be a connected reductive group

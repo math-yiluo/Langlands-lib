@@ -111,4 +111,7 @@ The result supplies pointed normalized CM coherence under
 the displayed construction premises. Point independence,
 an unpointed PEL moduli presheaf, representability, canonical
 models, representing scheme levels and coefficient descent
-remain further constructions in the host task.
+are not constructed in this module; point independence is treated in
+`HarrisTaylorCMPolarizedPointBaseChange` and the unpointed presheaf in
+`HarrisTaylorCMPolarizedUnpointedPresheaf`, while the Library does not prove
+representability (`CMRepresentabilityStatement`).

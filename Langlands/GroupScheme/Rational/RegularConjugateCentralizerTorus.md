@@ -1,7 +1,5 @@
 # Centralizers of points conjugate to points with toral centralizer
 
-Worker 1296.
-
 This helper module proves the torus part of
 `Langlands.GroupScheme.RegularConjugateFiniteGaloisStatement`: the centralizer
 of the rational point `x` is a torus over `K`. It is internal infrastructure

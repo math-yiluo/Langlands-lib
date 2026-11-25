@@ -1,6 +1,6 @@
 # Actual reversed-dual lower sections and ordinary Jacquet transport
 
-Worker 1197 proves the existing closed proposition
+This module proves the existing closed proposition
 `Langlands.RankinSelberg.TwoBlockDualSectionJacquetStatement.{uF,uW}` by
 `Langlands.RankinSelberg.twoBlockDualSectionJacquet.{uF,uW}`. The target
 statement and its imported pairs are unchanged. The auxiliary lemmas in this

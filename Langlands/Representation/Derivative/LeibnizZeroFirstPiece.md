@@ -1,7 +1,5 @@
 # The zero-first Leibniz grade
 
-Author: Worker 984.
-
 BZ77 Corollary 4.14(c) says that the `k`-th derivative of the product `ρ × σ` is glued
 from the products `ρ^(j) × σ^(k-j)`. The published statement module
 `Langlands.Representation.Derivative.GeneralLinearDerivativeLeibnizFiltrationStatement`
@@ -41,7 +39,8 @@ general-linear derivative is `σ^(k) = (σ|P)^(k)` for `k ≥ 1` and `ρ^(0) = �
 contribution is the piece `ρ^(0) × σ^(k)`.
 
 This module proves only the last identification, for the actual Lean functors. It
-does not use 4.13(a) or 4.14(a). Those are stated in the Library but not proved there,
+does not use 4.13(a) or 4.14(a). Those are proved elsewhere in the Library (4.13(a)
+in `MirabolicProductRestriction`, 4.14(a) in `LeftMixedProductDerivativeProof`),
 and this module neither imports nor assumes them. The comparison is the published
 `generalLinearRestrictionDerivativeIso` in the second factor. The order-zero
 derivative of the first factor, the shape of the binary product and the rank cast all
@@ -49,11 +48,11 @@ agree definitionally.
 
 ## Imports
 
-- `Langlands.Representation.Derivative.LeibnizPieceCompat` (published, Worker 593):
+- `Langlands.Representation.Derivative.LeibnizPieceCompat` (published):
   `generalLinearRepRankCast` and `generalLinearRankCast_toRep`. Through it, the
   module uses the following published modules:
-  - `LeibnizIndices` (Worker 593): `leibnizZeroFirstIndex`;
-  - `RankCastCompat` (Worker 593, with Worker 984 as coauthor):
+  - `LeibnizIndices`: `leibnizZeroFirstIndex`;
+  - `RankCastCompat`:
     `generalLinearRestrictionDerivativeIso`;
   - the statement module: `leibnizPiece`, `LeibnizIndex`;
   - `Iteration`: `generalLinearRestriction`, `generalLinearDerivative`,
@@ -91,7 +90,7 @@ A case-insensitive text scan finds no Lean file in this closure that mentions se
 socles, classification, exhaustion, supercuspidals or finiteness. In particular, the
 closure contains neither `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`,
 `IrreducibleCoinvariantFinitenessStatement` nor `LeviCuspidalCoinvariantFinitenessStatement`.
-It contains no module of the excluded segment, two-supercuspidal or classification tasks.
+It contains no module of the excluded segment, two-supercuspidal or classification results.
 It also contains neither `MixedProductDerivativeStatement`, where 4.14(a) is stated,
 nor any mirabolic-product restriction module of 4.13(a). The two `Whittaker` modules only
 define additive characters, Whittaker functionals and function models, with elementary
@@ -113,18 +112,18 @@ The proofs use only the following inputs:
 `RightMixedProductDerivativeFiltrationStatement` is in the closure because
 `LeibnizIndices` uses its index set. This module does not use its proposition. No
 Prop-valued statement definition is used as a hypothesis. The proofs use no
-exactness, finite-length, admissibility or irreducibility theorem, and no conclusion of
-an excluded consumer task. The constructions hold for arbitrary carriers in universe
+exactness, finite-length, admissibility or irreducibility theorem, and no excluded
+consumer conclusion. The constructions hold for arbitrary carriers in universe
 `uV` and every continuous nontrivial additive character `ψ`. They also hold at the
 top order `d = n + 1`, where the mirabolic derivative lands in `GL_0`.
 
 ## Related Library modules
 
-`LeibnizPieceCompat` (Worker 593) gives the analogous identification
+`LeibnizPieceCompat` gives the analogous identification
 `leibnizPositivePieceIso` for the positive-first indices. Those indices come from the
 right-mixed term `(ρ|P) × σ`. `LeibnizIndices` splits every Leibniz index into a
 positive-first index or the zero-first index treated here. The order-zero case `d = 0`
-is Worker 593's `GeneralLinearDerivativeLeibnizBoundary`. Worker 593's
+is `GeneralLinearDerivativeLeibnizBoundary`.
 `LeibnizRestrictionCompat` compares the differentiated middle and subobject terms of
 the mirabolic restriction sequence with `leibnizSource` and the right-mixed source; this
 module treats the quotient term instead. This module has no declaration in common with

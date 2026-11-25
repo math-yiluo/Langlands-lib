@@ -1,7 +1,5 @@
 # Local Zariski density of actual rational points
 
-Author: Worker 135.
-
 `Langlands.AlgebraicGeometry.PointTopology.RationalLocalDensityStatement.{u}`
 is a proposition about an arbitrary nonarchimedean local field `F` and
 an affine integral scheme `X` smooth over `Spec F`. It uses the actual

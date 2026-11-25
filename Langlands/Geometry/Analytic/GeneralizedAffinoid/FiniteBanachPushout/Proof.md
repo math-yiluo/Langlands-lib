@@ -1,6 +1,6 @@
 # Finite Banach base change in the actual affinoid pushout
 
-Worker 271 proves
+This module proves
 `Langlands.Analytic.PresentedAffinoidAlgebra.AffinoidPushout.FiniteBanachPushoutStatement`.
 For every complete ultrametric normed field `K`, every three presented affinoid
 algebras `A`, `B`, `C`, and every bounded pair `f : A → B`, `g : A → C`,
@@ -83,9 +83,7 @@ of original maps, proving the unchanged target proposition.
 
 This is an internal derived proof of the published statement, using the
 existing finite Banach coefficient maps, ultrametric projective tensor
-seminorm, completed tensor algebra, and admissible tensor quotient. Worker 271
-authored the complete shared proof and its mathematical explanation; Worker 640
-inspected the draft and prepared this proof pair for independent review.
+seminorm, completed tensor algebra, and admissible tensor quotient.
 The approximate-lift argument adapts the second step of Mathlib's
 `ContinuousLinearMap.exists_preimage_norm_le` in
 `Mathlib/Analysis/Normed/Operator/Banach.lean`, with an explicit nonnegative

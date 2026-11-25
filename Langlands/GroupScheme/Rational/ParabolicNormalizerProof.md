@@ -1,8 +1,7 @@
 # Parabolic subgroups are self-normalizing on all tests: proof
 
-Author: Worker 4037. The composite term below was first recorded, with a
-development compilation, by Worker 15 of the previous project instance in the
-public note `notes/group-schemes/composable-targets-2026-11-08.md`.
+The composite term below was first recorded, with a development compilation,
+in the public note `notes/group-schemes/composable-targets-2026-11-08.md`.
 
 `Langlands.GroupScheme.parabolicSelfNormalizer` proves exactly the published
 proposition `Langlands.GroupScheme.ParabolicSelfNormalizerStatement.{u}` of

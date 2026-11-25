@@ -43,8 +43,8 @@ The source is Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin–Selberg Convolutions* (1983), registered as
 `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 486 visually read printed pages 432–436 and reread printed 433
-while implementing this helper. The source indicator
+Printed pages 432–436 were read visually, and printed 433 was reread,
+for this helper. The source indicator
 `ord(det(g*h))=m` becomes the present inner slice at
 `j=m-ord(det g)`. The uniformity in `j` gives that specialization.
 The compactness argument, generic coefficient-span lemma, and explicit
@@ -61,7 +61,7 @@ conclusions remain separate obligations.
 Local instances in this module have explicit module-specific names so that its
 canonical field structures can be imported together with the model-star modules.
 The instance bodies and all mathematical definitions and theorem statements are
-unchanged by this compatibility correction.
+unchanged by this naming.
 
 ## All-field port
 

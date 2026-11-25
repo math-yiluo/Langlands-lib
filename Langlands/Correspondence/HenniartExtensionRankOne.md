@@ -1,6 +1,6 @@
 # Rank one and the extended stable map
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartExtensionRankOne`,
+Module `Langlands.Correspondence.HenniartExtensionRankOne`,
 namespace `Langlands.Henniart.Extension`.
 
 Henniart (2000), §4.1, last sentence ("pour `χ ∈ G⁰_F(1)` d'ordre fini, `π(χ)`

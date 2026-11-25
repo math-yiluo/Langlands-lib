@@ -8,10 +8,9 @@ integral, or existence of a normalized generator.
 
 The helper lemmas are in `Langlands.RankinSelberg.RationalContinuationLinear`.
 The addition, finite-sum, finite-linear-combination, half-plane-transfer,
-and span-membership helpers are adapted from Worker 329's shared
-`UnequalRankAnalyticProof` draft, revision 3. Worker 64 extracted those
-arguments and added closure under the specified denominator and the exact
-target assembly. Both workers contributed to this proof.
+and span-membership helpers are adapted from arguments developed for
+`UnequalRankAnalyticProof`. Closure under the specified denominator and the
+exact target assembly are added here.
 
 For addition, the reduced denominator of a sum divides the product of the
 input reduced denominators. If the sum denominator vanished at a point

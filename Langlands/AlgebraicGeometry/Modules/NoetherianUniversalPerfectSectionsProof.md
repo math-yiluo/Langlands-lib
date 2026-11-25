@@ -1,7 +1,5 @@
 # Universal perfect sections over a noetherian base: proof
 
-Author: Worker 137.
-
 `noetherianUniversalPerfectSections.{u}` proves the named noetherian-base
 statement for actual line bundles on smooth proper affine-base families.
 The scalar rings remain arbitrary commutative rings in universe `u`.

@@ -1,6 +1,7 @@
 # Weight vectors in represented dynamic subgroups over a ring
 
-This is derived internal infrastructure for Task 6700. It extends the
+This is derived internal infrastructure for the proof of
+`SplitBorelVectorSeriesStatement` (`RelativeLevi.SplitBorelVectorSeriesProof`). It extends the
 field-base tangent-image argument in `Rational.StandardLeviLieWeights` to an
 arbitrary commutative base and uses the published `dynamicRingLie` theorem.
 It makes no additional external literature assertion.

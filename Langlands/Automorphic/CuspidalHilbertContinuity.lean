@@ -122,7 +122,7 @@ variable (T : CuspidalOperatorRealization F r)
 of every original vector's actual infinite orbit. -/
 theorem continuous_inner_translatedToL2_infinite
     (hcoeff : CuspidalHilbertOrbitCoefficientStatement.{u})
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (f : T.Space) (w : CuspidalHilbertOrbitCoefficient.BandHilbertSpace F r) :
     Continuous (fun g : InfiniteAdelicGL F (r + 1) =>
       Inner.inner ℂ w (translatedToL2 T.realization T.cuspidal
@@ -136,7 +136,7 @@ theorem continuous_inner_translatedToL2_infinite
 for the full actual adelic translated source orbit. -/
 theorem continuous_inner_translatedToL2
     (hcoeff : CuspidalHilbertOrbitCoefficientStatement.{u})
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (f : T.Space) (w : CuspidalHilbertOrbitCoefficient.BandHilbertSpace F r) :
     Continuous (fun a : AdelicGL F (r + 1) =>
       Inner.inner ℂ w (translatedToL2 T.realization T.cuspidal a f)) := by

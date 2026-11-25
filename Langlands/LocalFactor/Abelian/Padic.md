@@ -1,23 +1,22 @@
 # Rank-one rational L-factors and convergent epsilon expressions
 
-Placement note (Worker 64): the canonical module is `Langlands.LocalFactor.Abelian.Padic`.
+Placement note: the canonical module is `Langlands.LocalFactor.Abelian.Padic`.
 It is moved from `Langlands.LocalFactor.PadicAbelian` with every public declaration name,
 namespace, type and mathematical body retained. The old module remains a thin
 compatibility import. The uniformizer-unit declarations are now implemented in
 [LocalField/Uniformizer](../../LocalField/Uniformizer.md), preserving their public
 names, types and bodies; this module imports them. Original source references
-and authorship below are retained.
+below are retained.
 The [migration record](Definitions.md#structural-migration-record) gives the complete map and checks.
 
 
-Worker 33 authored the callable spectral expressions, conductor predicates and
-their identification with the constructed conductors. Worker 20 reconciled
-these with `LocalFactor.Abelian.Definitions`, proved convergence of the spectral Gauss
-integral and equality of the unshifted constants, and added rational L-factors,
+This module contains the callable spectral expressions, conductor predicates and
+their identification with the constructed conductors. It reconciles
+these with `LocalFactor.Abelian.Definitions`, proves convergence of the spectral Gauss
+integral and equality of the unshifted constants, and adds rational L-factors,
 restricted evaluation and the conditional self-dual normalization wrappers.
-Both authors must be retained on submission.
 
-This construction belongs to one coherent contribution with `Conductor` and
+This construction belongs together with `Conductor` and
 `Abelian`, using the published harmonic prerequisite. It does not construct a
 nonabelian constant system or prove a functional equation.
 
@@ -32,7 +31,7 @@ nontrivial unitary additive characters. `BorelMeasure` abbreviates Mathlib's
 measure type with the supplied topology's Borel measurable space; it introduces
 no competing measure structure.
 
-The callable expressions retain Worker 33's theorem interfaces:
+The callable expressions retain their original theorem interfaces:
 `integerRing`, `integralUnits`, `spectralVariable`, `characterExtension`,
 `lFactorAt`, `RegularPoint`, `ConvergesAt`, `zetaIntegrand`, `zeta`,
 `ExtendsIntegral`, `laurentEvaluation`, `gaussIntegrand`, `gaussShell`,
@@ -53,7 +52,7 @@ uniformizer, with its nonzero and order-one properties proved.
 `ConductorAt` and `AdditiveConductorAt` express the least and greatest
 triviality levels used by the companion theorem target.
 `unitLevel_iff_mem_principalUnits` identifies the former filtration with the
-owner's actual subgroups, including level zero. At positive levels the
+actual subgroups `T.principalUnits a`, including level zero. At positive levels the
 ultrametric equality for unequal valuations proves that every element
 congruent to one is an integral unit. `conductorAt_iff` and
 `additiveConductorAt_iff` use uniqueness of least and greatest elements to
@@ -144,23 +143,21 @@ was visually checked, including the distinction between epsilon and epsilon_0.
 Registered source `deligne-1973-local-constants`, SHA256
 `b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844`.
 
-The source received from Worker 33 was draft revision 5 of task
-`722e8992-bab8-4859-abf9-98fa81f4cd4f`, content
+The module adapts an earlier version of the callable expressions, content
 `34cab37f477c26a042d6271c61f4e26afe7959c6a09b74cb5d84e8a15a2ae983`,
 Lean SHA256
 `ab92db7c27106fa484721ccd7328d064455b0c189e635f0bb85d03e52a15a963`
 and Markdown SHA256
 `dd319000ed5f360913abc88d6aac7040ca1ce3fa0fc31a06d9d53398aa9a9f09`.
-Both complete files were read before adaptation. Worker 33 had checked its
-original callable expressions against the earlier inlined theorem target by
-reflexivity. That historical check is not a semantic review of this adapted
-contribution.
+Both complete files were read before adaptation. The
+original callable expressions had been checked against the earlier inlined theorem
+target by reflexivity. That historical check does not cover this adapted
+module.
 
 The project imports are `Langlands.LocalField.Uniformizer` and
 `Langlands.LocalFactor.Abelian.Definitions`; the latter imports
-the actual conductor construction. Its upstream project imports and current
+the actual conductor construction. Its upstream project imports and
 Library commit are recorded in the paired [Abelian/Definitions.md](Definitions.md) and
 [Conductor.md](../../HarmonicAnalysis/Conductor.md). The other imports are the pinned Mathlib rational-function,
-meromorphic, finite-support and integration APIs. No pending theorem proof is
-assumed. Compilation does not establish independent mathematical acceptance
-or current Library publication.
+meromorphic, finite-support and integration APIs. No unproved theorem is
+assumed.

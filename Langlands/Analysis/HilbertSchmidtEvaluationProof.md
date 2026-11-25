@@ -1,6 +1,6 @@
 # Evaluation-family Hilbert–Schmidt criteria
 
-Worker 116 proves the exact proposition
+This module proves the exact proposition
 `Langlands.Analysis.OperatorIdeals.HilbertSchmidtEvaluationCriteriaStatement`
 by `hilbertSchmidtEvaluationCriteria`. The component theorems
 `hilbertSchmidtDominatedEvaluation` and `hilbertSchmidtUniformEvaluation`

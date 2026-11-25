@@ -1,6 +1,6 @@
 # Finite degree-zero Brauer induction
 
-Worker 1787 proves
+This module proves
 `Langlands.FiniteRep.DegreeZeroBrauer.finiteDegreeZeroBrauer` with type
 `FiniteDegreeZeroBrauerStatement G` for every finite group `G : Type uG`.
 The group universe remains arbitrary. There are no further mathematical
@@ -112,8 +112,10 @@ The statement's paired Markdown explains its specialization to complex
 coefficients and its use of all subgroups and rank-one pair differences.
 
 This implementation uses the Solomon and retained-normal-subgroup monomial
-route. Solomon's identity is imported by Lean name from the published
-Anthropic FLT port; the retained-subgroup engine and induction adapters are
+route. Solomon's identity is
+`Langlands.FiniteRep.Solomon.exists_one_eq_sum_zsmul_inducedClassFunction_one_complex`
+from `SolomonInduction`, the Library's port of the Anthropic FLT proof; the
+retained-subgroup engine and induction adapters are
 in the separate supporting modules `DegreeZeroMonomial` and
 `DegreeZeroBrauerSupport`. Original-source attribution and the changes to
 the monomial engine are documented in that module. The present proof is a

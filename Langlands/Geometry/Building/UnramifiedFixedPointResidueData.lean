@@ -24,22 +24,22 @@ namespace Langlands.Geometry.Building.KPApartmentData
 variable (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
 
-local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
+private local instance : Algebra ↥𝒪[F] (fixedFieldIntegers F) :=
   Valuation.HasExtension.instAlgebraInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
-local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
+private local instance : IsScalarTower ↥𝒪[F] (fixedFieldIntegers F) (inertiaFixedField F) :=
   Valuation.HasExtension.instIsScalarTowerInteger
     (vR := ValuativeRel.valuation F) (vA := fixedFieldValuation F)
-local instance : Algebra 𝓀[F] (ResidueField (fixedFieldIntegers F)) :=
+private local instance : Algebra 𝓀[F] (ResidueField (fixedFieldIntegers F)) :=
   (residueToFixedField F).toAlgebra
-local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
+private local instance : IsDiscreteValuationRing (fixedFieldIntegers F) :=
   (separableUnramifiedArithmetic F).2.2.2.1
-local instance : HenselianLocalRing (fixedFieldIntegers F) :=
+private local instance : HenselianLocalRing (fixedFieldIntegers F) :=
   fixedFieldIntegersIsHenselian F
-local instance : Algebra.IsAlgebraic 𝓀[F] (ResidueField (fixedFieldIntegers F)) :=
+private local instance : Algebra.IsAlgebraic 𝓀[F] (ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).2
-local instance : Fintype 𝓀[F] := Fintype.ofFinite _
-local instance : IsAlgClosed (ResidueField (fixedFieldIntegers F)) :=
+private local instance : Fintype 𝓀[F] := Fintype.ofFinite _
+private local instance : IsAlgClosed (ResidueField (fixedFieldIntegers F)) :=
   (fixedFieldResidueIsAlgClosure F).1
 
 variable

@@ -1,6 +1,6 @@
 # Geometric conjugators preserve the coroot images of the derived covers
 
-Author: Worker 149 (Task 6302). This is a helper module for the proof of
+This is a helper module for the proof of
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.AlgebraicFundamentalGroupComparisonStatement`
 in `Langlands.GroupScheme.AlgebraicFundamentalGroupComparisonProof`. It supplies the
 coroot-preservation input `hB` of

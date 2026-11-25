@@ -1,8 +1,8 @@
 # Dense rational points of split unipotent groups over infinite fields
 
 This helper module serves the proof of
-`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`
-(task 6b07dcd2-af39-4c69-8ade-d0faa997a49f). Over an infinite field k, the
+`Langlands.GroupScheme.RelativeRoot.SplitUnipotentStableVectorSubgroupStatement`.
+Over an infinite field k, the
 rational points of a split unipotent affine group are dense in its underlying
 space. This is the classical fact that such a group is an affine space as a
 k-scheme. The proof here is topological and was worked out for this

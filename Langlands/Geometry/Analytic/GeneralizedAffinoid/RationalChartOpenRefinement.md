@@ -1,7 +1,5 @@
 # Finite actual rational refinements of relative open covers
 
-Author: Worker 36.
-
 This internal construction supplies finite rational refinements of arbitrary
 relative open covers of an actual rational chart. It derives the refinements
 from the published ambient rational neighborhood theorem, explicit rational
@@ -63,7 +61,7 @@ neighborhood-subcover theorem. No new original-literature assertion is
 introduced.
 
 Arbitrary positive radii, trivial valuations, nilpotents, zero quotients and
-empty spectra remain allowed. This unit gives a concrete input for descent
+empty spectra remain allowed. This module gives a concrete input for descent
 of actual algebra sections on topological opens. It does not construct that
 sheaf, prove Gerritzen–Grauert for arbitrary represented domains, or construct
 analytic atlases, etale sites, invariant refinements or the Harris tower.

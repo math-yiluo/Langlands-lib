@@ -1,7 +1,5 @@
 # The algebraic boundary of the actual rational dynamic open cell
 
-Author: Worker 135.
-
 `Langlands.Plancherel.RationalDynamicOpenCellBoundaryStatement.{u}` is a
 proposition for every field `F` in arbitrary universe, every actual
 smooth affine group scheme `G` over `Spec F`, and every cocharacter

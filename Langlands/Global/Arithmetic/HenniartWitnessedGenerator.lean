@@ -30,7 +30,7 @@ universe uW uP uV uQ
 
 namespace Langlands.VirtualRepresentation.RelativeGlobal
 
-open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassField.Global
+open Langlands.Global Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global
 open Langlands.Global.AdelicFunctoriality Langlands.Automorphic
 open scoped WithZero
 

@@ -265,12 +265,12 @@ theorem IsContinuousAction.spectralConvergesOn_preservedChartPullback
     {G : Type z} [Group G] [TopologicalSpace G] {σ : G →* Aut X}
     (hσ : IsContinuousAction σ) (i : (presentationOf X).presentation.atlas.Index)
     (f : (presentationOf X).presentation.atlas.algebra i) :
-    SpectralConvergesOn (𝓝 (1 : G)) (fun a => preservedChartPullback i (σ a).hom)
+    SpectralConvergesOn (𝓝 (1 : G)) (fun a => preservedChartPullback i (σ a).asIso.hom)
       (BoundedAlgHom.id K _) f := by
   intro ε hε
   let τ : TestTriple (presentationOf X) := ⟨i, f, ε, hε⟩
   filter_upwards [hσ τ] with a ha
-  change IsNear τ (σ a).hom (𝟙 X) at ha
+  change IsNear τ (σ a).asIso.hom (𝟙 X) at ha
   exact ha.spectralBound_preservedChartPullback
 
 end Langlands.Analytic.SaturatedAtlasPresentation

@@ -1,9 +1,7 @@
 # Reduction of the proper-field Picard scheme to the Picard stack atlas
 
-Author: Worker 3462.
-
 This internal assembly shows that, with the published Library results,
-three open proper-field Picard targets follow from the single proposition
+three proper-field Picard targets follow from the single proposition
 `FieldPicardStackAtlasStatement.{u}`. That proposition says that for every
 field `k : Type u` and every proper `X : Over (Spec (CommRingCat.of k))`,
 the actual relative line-bundle groupoid has a smooth surjective scheme
@@ -74,9 +72,9 @@ sheaf is assumed. The proofs use only the standard axioms.
 
 No new external assertion or source is used: every step is an imported
 Library result, cited above by Lean name. The single remaining input,
-`FieldPicardStackAtlasStatement`, is the target of the separate proof task
-`093deb76-b183-4d4d-816b-e79c0eedee5d`. A published proof of it would, by
-this module, also prove `FieldEtaleFppfClassSheafStatement`,
+`FieldPicardStackAtlasStatement`, is proved separately, as
+`fieldPicardStackAtlas` in `FieldPicardStackAtlasProof`. With this module,
+that proof also proves `FieldEtaleFppfClassSheafStatement`,
 `FieldPicardSheafAlgebraicSpaceStatement` and
-`FieldPicardSheafRepresentabilityStatement`. Until then, none of these
-three is proved here.
+`FieldPicardSheafRepresentabilityStatement`; none of these
+three is proved in this module itself.

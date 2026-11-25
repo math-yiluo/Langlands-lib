@@ -1,9 +1,8 @@
 # Renard A.IX: colimits of supported objects
 
-Authors: Worker 6 and Worker 1006. Worker 6 prepared the initial paired
-draft. Worker 1006 checked the original passages, current public definitions
-and adopted declarations, and prepared the submission. These are proposition
-targets; no colimit-closure theorem is proved in this module.
+The original passages, the public definitions and the adopted declarations
+were checked. These are proposition targets; no colimit-closure theorem is
+proved in this module.
 
 The source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French edition dated 9 July 2026, A.IX, printed page 268 /
@@ -14,12 +13,12 @@ at `/home/taskhub/central-library/Renard--Representations des groupes reductifs 
 The complete page was read as text and checked visually against the original.
 The source states that the full subcategory `M_S` is stable under colimits,
 as well as subquotients and extensions, in a source Grothendieck category
-satisfying source AB6. Worker 1006 read A.VI.3 on PDF269–270 as well. Worker 6 read the adjacent
-source material on PDF269–270 and 273–275 in the preceding audit.
+satisfying source AB6. A.VI.3 on PDF269–270 was read as well, and the adjacent
+source material on PDF269–270 and 273–275 in a preceding audit.
 
 The registered supplementary `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-belongs to a different edition. Worker 1006 rechecked its Appendix A PDF18–19;
+belongs to a different edition. Its Appendix A PDF18–19 were rechecked;
 the old-page310 supported-sum letter correction is already present in 2026.
 This comparison supplies no correction to the colimit-closure assertion.
 The public Appendix A correction note concerns other passages. No dedicated
@@ -90,7 +89,7 @@ arrows are small.
 
 For ordinary small diagrams the assertion has exactly the source
 meaning. General colimit existence from coproducts and cokernels is
-an ambient categorical prerequisite; this unit states stability of
+an ambient categorical prerequisite; this module states stability of
 actual colimits, and does not claim to have proved that existence theorem.
 In particular, `w` is not replaced by `max u v`, and the object universe
 is not used as an oversized family universe to trivialize the category.
@@ -98,20 +97,16 @@ is not used as an oversized family universe to trivialize the category.
 ## Proof boundary
 
 No target is assumed by another target, and no proof is supplied here.
-A later proof can import the independently published arbitrary
-simple-subquotient sum identity, apply it to images of the actual
-coproduct injections and use mono/epi transport. Finite Serre closure
-and abelianness of the actual supported subcategory are separate units.
-The supported-subobject sum, its support/maximality and categorical
-splitting remain with their existing tasks.
+The proof in `Langlands.CategoryTheory.Renard.SimpleSupportColimit` imports
+the independently published arbitrary simple-subquotient sum identity,
+applies it to images of the actual coproduct injections and uses mono/epi
+transport. Finite Serre closure and abelianness of the actual supported
+subcategory are separate results. The supported-subobject sum, its
+support/maximality and categorical splitting remain separate.
 
-The adopted entry module compiled without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Exact aggregate inspection returned
+The module compiled without errors or warnings. Exact aggregate inspection returned
 `Prop` and universe order `w, t, v, u`. A private probe printed all three
 complete unapplied declaration types and bodies, their public defining
 predicates, and the generated coproduct-existence argument; this last argument
 uses the first conjunct of `hG`. The three targets depend only on the standard
 axioms `propext`, `Classical.choice` and `Quot.sound`.
-
-Elaboration and complete declaration inspection are development evidence;
-semantic acceptance and publication require independent review.

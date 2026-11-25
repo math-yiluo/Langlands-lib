@@ -96,6 +96,10 @@ theorem innerTitsObstructionTransport (m : G ≅ H) :
   obtain ⟨a, b, ha, hb', _, _, heq⟩ :=
     d.exists_dominant_sub (d.corootSpan_eq_top_of_simplyConnected hG)
       (d.isStarFixedWeight_of_inner hG hi lam)
+  have : AddMonoidHomClass (characterLattice d.toSplitPinning.torus ≃ₗ[ℤ]
+      characterLattice d'.toSplitPinning.torus) (characterLattice d.toSplitPinning.torus)
+      (characterLattice d'.toSplitPinning.torus) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   simp only [heq, map_sub, hdom a ha, hdom b hb']
 
 /-- Any actual group isomorphism aligns any two supplied inner pinnings after

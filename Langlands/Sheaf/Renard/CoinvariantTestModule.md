@@ -1,6 +1,6 @@
 # Coinvariant test modules along an invariant map
 
-This definition unit implements the module construction in David Renard,
+This module of definitions implements the module construction in David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, III.3.1, printed p.83 / PDF p.89, the paragraph immediately
 before the Proposition. The registered source is
@@ -95,4 +95,6 @@ functorial maps and naturality are intrinsic construction laws explaining
 the source's asserted natural module structure. Applying the actual
 II.2.5 complex sheaf reconstruction to this module, comparing it with
 compact sections of the reconstructed sheaf, and stating the III.3.1
-fibre and distribution results remain separate work.
+fibre and distribution results are done separately, in
+`Langlands.Sheaf.Renard.CoinvariantSheaf` and
+`Langlands.Sheaf.Renard.CoinvariantStatements`.

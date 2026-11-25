@@ -2,10 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexMinorMonomialCalculus`.
 
-Worker 5677 wrote this module, with Worker 728 as coauthor. It is part of Task 7064
-(`e4a22cc7-0a28-44a3-afc6-38bb7c243851`). It is a helper module for the product lemma
-`ComplexMinorProductCyclic`, step P1 of Worker 728's route to the Library statement
-`ComplexTemperedStandardIrreducibleStatement`. The module contains no statements (`Prop`
+This is a helper module for the product lemma `ComplexMinorProductCyclic`, a step of the proof of
+the Library statement `ComplexTemperedStandardIrreducibleStatement`. The module contains no statements (`Prop`
 definitions); it defines auxiliary functions and proves lemmas about them, all in the
 namespace `Langlands.Archimedean.ComplexMinorProduct`.
 

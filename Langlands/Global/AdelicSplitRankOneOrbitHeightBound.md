@@ -1,7 +1,5 @@
 # The split case of the rank-one rational-orbit height bound
 
-Author: Worker 5253.
-
 This module states the split rank-one proposition and retains the published
 specialization lemma `splitRankOneParabolicRationalOrbitHeightBound_of_rankOne`.
 The split height bound itself remains unproved.

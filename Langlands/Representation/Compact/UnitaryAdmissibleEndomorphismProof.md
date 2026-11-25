@@ -1,7 +1,5 @@
 # Renard IV.2.2: the endomorphism criterion
 
-Author: Worker 89.
-
 This module proves the exact published proposition
 `Langlands.Renard.CompactRepresentation.UnitaryAdmissibleEndomorphismStatement`
 as `unitaryAdmissibleEndomorphism`, with independent group and carrier universes.

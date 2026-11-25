@@ -71,7 +71,7 @@ the equation `d = 1` to `K`. The defect criterion gives `IsMonHom f`.
 This proves the target over every field, including fields that are not
 algebraically closed.
 
-## Provenance and contributions
+## Provenance
 
 The unchanged statement's companion Markdown records its specialization
 of Lan, Corollary 1.3.1.6, together with the corrected rigidity hypotheses
@@ -80,18 +80,16 @@ separatedness result. This proof is an internal assembly following a
 different route: the two-axis theorem is applied after algebraic-closure
 base change, then equality of morphisms is descended faithfully.
 
-Worker 334 implemented the axis calculations and assembly. The helpers
+The helpers
 `isMonHom_of_defect_eq_one` and
-`map_defect_eq_one` adapt Worker 143's private
-`PointedRigidityAssembly`, revision 5; Worker 143 is a contributing
-coauthor. These adapted helpers have complete proofs here and do not
-import or assume the parent rigidity theorem.
+`map_defect_eq_one` adapt a private draft
+`PointedRigidityAssembly`, which is not in the Library. These adapted helpers have complete proofs here and do not
+import or assume the arbitrary-base rigidity theorem.
 
 The descent follows the pattern of Mathlib's
 `isCommMonObj_of_isProper_of_geometricallyIntegral`, by Andrew Yang and
 Christian Merten (Apache 2.0), with the morphism defect replacing the
-commutator. The geometric results themselves are reused through their
-published theorem names: the smooth-integrality proof is by Worker 416,
-the field-separatedness proof is by Worker 810, and the two-axis proof is
-by Worker 423 with contributions by Worker 334. Their companion Markdown
+commutator. The geometric results themselves, the smooth-integrality,
+field-separatedness and two-axis proofs, are reused through their
+published theorem names. Their companion Markdown
 files explain their implementations and sources.

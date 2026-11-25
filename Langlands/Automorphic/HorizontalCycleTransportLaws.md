@@ -1,8 +1,6 @@
 # Actual horizontal cycle transport formulas and identity
 
-Author: Worker 2.
-
-This internal API unit imports the published actual horizontal transport core.
+This internal API module imports the published actual horizontal transport core.
 The number field `F : Type u` has arbitrary universe, `n` is a positive natural
 rank, coefficients are complex in the existing operator realization spaces,
 and every natural degree `q`, including zero, is allowed. The existing actual
@@ -36,8 +34,8 @@ structures. Provenance is internal: all three equalities follow from
 cycle representations in `HorizontalCohomologyFinite`, with no asserted
 identification with external literature.
 
-Cycle composition, quotient representative/projection formulas, underlying
+Cycle composition (in `HorizontalCycleCompositionLaws`), quotient representative/projection formulas, underlying
 linear-map identifications, quotient identity/composition and actual
-equivalence specialization remain separate work. This unit adds no
+equivalence specialization remain separate work. This module adds no
 whole-quotient smoothness, topology, finiteness, nonvanishing, general
 coefficient attachment or analytic/sheaf comparison theorem.

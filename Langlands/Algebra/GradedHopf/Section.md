@@ -1,9 +1,7 @@
 # Sections of homogeneous coordinates and the tangent-space measure
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. It builds on
-`Langlands.Algebra.GradedHopf.Primitive` (same author) and its imports.
+This module builds on
+`Langlands.Algebra.GradedHopf.Primitive` and its imports.
 
 Provenance: internal. This module produces the data needed for one step of a split
 `𝔾ₐ`-series:
@@ -11,7 +9,8 @@ Provenance: internal. This module produces the data needed for one step of a spl
 - a homogeneous primitive element `g` of nonzero degree;
 - a `k`-algebra map `s : A → k[X]` with `s g = X`. This is the algebraic form of a
   scheme-theoretic section `𝔾ₐ → H` of the homomorphism given by `g`; it is consumed by
-  `Langlands.GroupScheme.HopfPrimitive.splitStep` (Worker 1419);
+  `Langlands.GroupScheme.HopfPrimitive.splitStep` (module
+  `Langlands.GroupScheme.HopfPrimitiveQuotient`);
 - a numerical measure (the dimension of the tangent space at the counit) that strictly
   drops under passage to the quotient by `g`.
 

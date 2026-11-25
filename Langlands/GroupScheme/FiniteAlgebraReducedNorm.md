@@ -6,7 +6,7 @@ and `A` an associative unital `k`-algebra. Fix a finite basis
 splitting chart
 `e : L ⊗[k] A ≃ₐ[L] Matrix I I L`.
 The finite nonempty matrix index type `I` may lie in a separate universe.
-This internal unit realizes the existing descended determinant polynomial
+This module realizes the existing descended determinant polynomial
 as an actual character of `FiniteAlgebraUnits.groupScheme b` and
 constructs its actual norm-one group scheme.
 
@@ -15,7 +15,7 @@ The chart is a visible input throughout. The existing algebraic construction
 on every commutative `k`-algebra and proves its multiplicativity and
 naturality. Its operation on units is `normFromGaloisUnits`;
 its pointwise kernel is `normFromGaloisOne`.
-The present unit uses those proved operations, with no added
+The present module uses those proved operations, with no added
 multiplicativity or naturality premise.
 
 For every scheme `T` over `Spec k`, `normPoints b e T` composes the actual
@@ -41,7 +41,7 @@ The separated target `Gm` makes this inclusion a closed immersion.
 Its source is affine because it is closed in the affine unit group, and
 its structure morphism is locally of finite type by composition of that
 closed immersion with the smooth unit-group structure morphism.
-This unit makes no smoothness or connectedness assertion for the kernel.
+This module makes no smoothness or connectedness assertion for the kernel.
 
 The multiplicative equivalence `normOnePointsEquiv b e T` identifies actual
 kernel points on any relative test scheme with exactly the existing

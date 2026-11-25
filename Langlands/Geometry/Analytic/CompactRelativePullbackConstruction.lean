@@ -25,9 +25,9 @@ def compactContinuousRelativePullback
     (σU : G →* Aut U.left) (σV : G →* Aut V.left) (σB : G →* Aut B.left) (σX : G →* Aut X)
     (hB : IsCompactSpace B.left) (hU : IsCompactSpace U.left) (hV : IsCompactSpace V.left)
     (hσU : IsContinuousAction σU) (hσV : IsContinuousAction σV)
-    (hf : ∀ a, (σU a).hom ≫ f.left = f.left ≫ (σB a).hom)
-    (hg : ∀ a, (σV a).hom ≫ g.left = g.left ≫ (σB a).hom)
-    (hb : ∀ a, (σB a).hom ≫ B.hom = B.hom ≫ (σX a).hom) :
+    (hf : ∀ a, (σU a).asIso.hom ≫ f.left = f.left ≫ (σB a).asIso.hom)
+    (hg : ∀ a, (σV a).asIso.hom ≫ g.left = g.left ≫ (σB a).asIso.hom)
+    (hb : ∀ a, (σB a).asIso.hom ≫ B.hom = B.hom ≫ (σX a).asIso.hom) :
     CompactContinuousPullbackData f g σU σV := by
   let c := localizedQuasiEtalePullback U.hom V.hom U.prop
   let d := localizedQuasiEtalePullback B.hom B.hom B.prop
@@ -50,9 +50,9 @@ def compactContinuousRelativePullback
     rw [Category.assoc, hc.w])
   let b : W ⟶ V := MorphismProperty.Over.homMk (j ≫ c.1.snd) (Category.assoc _ _ _)
   let t := PullbackCone.mk a b (MorphismProperty.Over.Hom.ext E.isPullback.w)
-  have hfx (s : G) : (σU s).hom ≫ U.hom = U.hom ≫ (σX s).hom := by
+  have hfx (s : G) : (σU s).asIso.hom ≫ U.hom = U.hom ≫ (σX s).asIso.hom := by
     rw [← MorphismProperty.Over.w f, ← Category.assoc, hf, Category.assoc, hb, ← Category.assoc]
-  have hgx (s : G) : (σV s).hom ≫ V.hom = V.hom ≫ (σX s).hom := by
+  have hgx (s : G) : (σV s).asIso.hom ≫ V.hom = V.hom ≫ (σX s).asIso.hom := by
     rw [← MorphismProperty.Over.w g, ← Category.assoc, hg, Category.assoc, hb, ← Category.assoc]
   let σ := Langlands.CategoricalPullback.pullbackAction E.isPullback σU σV σB hf hg
   let τ := Langlands.CategoricalPullback.pullbackAction hc σU σV σX hfx hgx
@@ -60,18 +60,18 @@ def compactContinuousRelativePullback
   have hσq := Langlands.CategoricalPullback.pullbackAction_snd E.isPullback σU σV σB hf hg
   have hτp := Langlands.CategoricalPullback.pullbackAction_fst hc σU σV σX hfx hgx
   have hτq := Langlands.CategoricalPullback.pullbackAction_snd hc σU σV σX hfx hgx
-  have hj (s : G) : (σ s).hom ≫ j = j ≫ (τ s).hom := by
+  have hj (s : G) : (σ s).asIso.hom ≫ j = j ≫ (τ s).asIso.hom := by
     apply hc.hom_ext
     · calc
-        _ = (σ s).hom ≫ (j ≫ c.1.fst) := Category.assoc _ _ _
-        _ = (j ≫ c.1.fst) ≫ (σU s).hom := hσp s
-        _ = j ≫ ((τ s).hom ≫ c.1.fst) :=
+        _ = (σ s).asIso.hom ≫ (j ≫ c.1.fst) := Category.assoc _ _ _
+        _ = (j ≫ c.1.fst) ≫ (σU s).asIso.hom := hσp s
+        _ = j ≫ ((τ s).asIso.hom ≫ c.1.fst) :=
           (Category.assoc _ _ _).trans (congrArg (j ≫ ·) (hτp s).symm)
         _ = _ := (Category.assoc _ _ _).symm
     · calc
-        _ = (σ s).hom ≫ (j ≫ c.1.snd) := Category.assoc _ _ _
-        _ = (j ≫ c.1.snd) ≫ (σV s).hom := hσq s
-        _ = j ≫ ((τ s).hom ≫ c.1.snd) :=
+        _ = (σ s).asIso.hom ≫ (j ≫ c.1.snd) := Category.assoc _ _ _
+        _ = (j ≫ c.1.snd) ≫ (σV s).asIso.hom := hσq s
+        _ = j ≫ ((τ s).asIso.hom ≫ c.1.snd) :=
           (Category.assoc _ _ _).trans (congrArg (j ≫ ·) (hτq s).symm)
         _ = _ := (Category.assoc _ _ _).symm
   have hτ := isContinuousAction_of_isPullback_of_quasiEtale hc U.prop hσU hσV hτp hτq

@@ -1,6 +1,6 @@
 # The common compact normalization in semidirect source coordinates
 
-Worker 200. This is an internal comparison of the published
+This is an internal comparison of the published
 `SubgroupCompactOpenHaar` and `SemidirectSourceGamma` constructions.
 
 Waldspurger, *La formule de Plancherel pour les groupes p-adiques*

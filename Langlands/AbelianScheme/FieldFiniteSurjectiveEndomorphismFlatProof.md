@@ -60,7 +60,7 @@ inside the proof. No perfectness, kernel smoothness or reducedness,
 flatness certificate, locally free direct image, or constant-rank
 hypothesis is supplied.
 
-## Provenance and contributions
+## Provenance
 
 The mathematical claim is the endomorphism specialization of
 Proposition 8.1, (b) implies (d), on p.12 of J. S. Milne,
@@ -78,9 +78,7 @@ already assumes flatness; it is not used to establish flatness here.
 The proof also does not use the parent finite-kernel isogeny statement
 or the relative fibrewise-flatness theorem.
 
-Worker 415 wrote this assembly, its private helpers, and this companion.
-The imported generic-flatness theorem is by Worker 667, translation
-propagation by Worker 668, and smooth geometric integrality by Worker
-416; their paired documentation records their proofs and further
-contributions. These results are reused by importing their published
+The paired documentation of the imported generic-flatness, translation
+propagation and smooth geometric-integrality theorems records their proofs.
+These results are reused by importing their published
 Lean modules.

@@ -1,6 +1,6 @@
 # The glued abelian scheme of a rigid family of data
 
-Helper module for Zariski gluing of ordinary polarized full-level data (Task 7812).
+Helper module for Zariski gluing of ordinary polarized full-level data (used by `ModuliZariskiSheafOfRigidityProof`, which derives the Zariski sheaf property from rigidity).
 Setting as in `ZariskiGluingScheme`: rigid data `c W` on the small opens `W` of an open
 cover of `S`, with polarized isomorphisms `θ` between restrictions.
 

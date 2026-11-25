@@ -1,7 +1,5 @@
 # Actual normalizer and relative Weyl action on real cocharacters
 
-Author: Worker 185.
-
 For an arbitrary field `k : Type u` and an actual commutative group scheme `T` over `Spec k`, this module defines automorphisms of the existing tensor spaces in `RealTorusSpace`. No torus, splitness, finite-rank or characteristic assumption is needed for these constructions.
 
 The shared [integral automorphism module](../../GroupScheme/Torus/CocharacterAction.md)
@@ -25,4 +23,4 @@ follows by applying simultaneous evaluation invariance to `weylAction i n⁻¹ �
 
 This is an internal scalar-extension construction implementing Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), Chapter 6 introduction and §6.1.6–8, PDF pages 226–234 (printed 195–203). The original is registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`. The authors' corrections of 1 November 2024 are registered as `kaletha-prasad-2024-corrections`, SHA-256 `23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed`; PDF page 32 corrects negative signs to positive signs in the proof of Lemma 6.1.12(1). No version of that lemma about valuations or affine translations is asserted here.
 
-These prospective translation spaces and actions require no valued field or Henselian hypothesis. No affine origin, apartment, equipollence class, root-group valuation, affine Weyl group, Iwahori–Weyl group or building is constructed. The separate derived/adjoint and central directions in the reduced and enlarged building remain outside this unit, which closes no bundle or release gate.
+These prospective translation spaces and actions require no valued field or Henselian hypothesis. No affine origin, apartment, equipollence class, root-group valuation, affine Weyl group, Iwahori–Weyl group or building is constructed. The separate derived/adjoint and central directions in the reduced and enlarged building remain outside this module.

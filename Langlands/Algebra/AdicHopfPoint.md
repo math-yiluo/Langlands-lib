@@ -1,7 +1,5 @@
 # Adic algebraization in native Hopf-point coordinates
 
-Worker 891.
-
 This module adapts the published `HopfPointExtension.IsHopfPoint` interface to
 the coefficient-level adic algebraization construction. It is an internal
 interface for SGA 3, Exposé IX, Theorem 7.1, recomposed pp.56–58 (original

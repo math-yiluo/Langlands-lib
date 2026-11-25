@@ -137,6 +137,7 @@ instance cmHarrisCoefficientDivisibleInclusion_mono {r s : ℕ} (hrs : r < s) :
     exact powerExact r (s - r)
   have hexact := hexactAt s (by omega)
   have := hexact.mono_cokernelDesc
+  have : Mono (scalarIso (homOfLE hrs.le).op).inv := IsIso.mono_of_iso _
   exact mono_comp _ _
 
 /-- The inclusion is killed by the original complementary-exponent transition. -/

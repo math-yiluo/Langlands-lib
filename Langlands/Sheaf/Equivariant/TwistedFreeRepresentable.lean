@@ -20,15 +20,15 @@ The inverse twist convention makes restriction on sections a left action. -/
 structure GlobalLift where
   obj : P.Over ⊤ X
   action : G →* (End ((ι P ρ).obj obj))ᵐᵒᵖ
-  twist : ∀ g, Hom.twist (action g).unop = g⁻¹
+  twist : ∀ g, Hom.twist (action g).unop.asHom = g⁻¹
 
 namespace GlobalLift
 
 variable (L : GlobalLift (P := P) (ρ := ρ))
 
 theorem action_mul_left (g h : G) :
-    Hom.left (L.action (g * h)).unop =
-      Hom.left (L.action g).unop ≫ Hom.left (L.action h).unop := by
+    Hom.left (L.action (g * h)).unop.asHom =
+      Hom.left (L.action g).unop.asHom ≫ Hom.left (L.action h).unop.asHom := by
   rw [map_mul, MulOpposite.unop_mul]
   rfl
 
@@ -37,8 +37,8 @@ global lift on the represented object. -/
 def precomp {V W : TwistedOver P ρ} (f : V ⟶ W) (k : W.obj ⟶ L.obj) :
     V.obj ⟶ L.obj :=
   MorphismProperty.Over.homMk
-    (Hom.left f ≫ k.left ≫ Hom.left (L.action (Hom.twist f)).unop) (by
-      have h := Hom.w (f ≫ (ι P ρ).map k ≫ (L.action (Hom.twist f)).unop)
+    (Hom.left f ≫ k.left ≫ Hom.left (L.action (Hom.twist f)).unop.asHom) (by
+      have h := Hom.w (f ≫ (ι P ρ).map k ≫ (L.action (Hom.twist f)).unop.asHom)
       simpa only [comp_left, homMk_left, comp_twist, homMk_twist, L.twist,
         mul_one, inv_mul_cancel,
         rho_one_hom, Category.comp_id] using h)
@@ -46,7 +46,7 @@ def precomp {V W : TwistedOver P ρ} (f : V ⟶ W) (k : W.obj ⟶ L.obj) :
 @[simp]
 theorem precomp_left {V W : TwistedOver P ρ} (f : V ⟶ W) (k : W.obj ⟶ L.obj) :
     (L.precomp f k).left =
-      Hom.left f ≫ k.left ≫ Hom.left (L.action (Hom.twist f)).unop := rfl
+      Hom.left f ≫ k.left ≫ Hom.left (L.action (Hom.twist f)).unop.asHom := rfl
 
 @[simp]
 theorem precomp_plain {V W : P.Over ⊤ X} (f : V ⟶ W) (k : W ⟶ L.obj) :
@@ -69,24 +69,24 @@ theorem precomp_comp {V W Z : TwistedOver P ρ} (f : V ⟶ W) (g : W ⟶ Z)
     L.precomp (f ≫ g) k = L.precomp f (L.precomp g k) := by
   apply MorphismProperty.Over.Hom.ext
   change (Hom.left f ≫ Hom.left g) ≫ k.left ≫
-      Hom.left (L.action (Hom.twist g * Hom.twist f)).unop =
-    Hom.left f ≫ (Hom.left g ≫ k.left ≫ Hom.left (L.action (Hom.twist g)).unop) ≫
-      Hom.left (L.action (Hom.twist f)).unop
+      Hom.left (L.action (Hom.twist g * Hom.twist f)).unop.asHom =
+    Hom.left f ≫ (Hom.left g ≫ k.left ≫ Hom.left (L.action (Hom.twist g)).unop.asHom) ≫
+      Hom.left (L.action (Hom.twist f)).unop.asHom
   rw [L.action_mul_left]
   simp only [Category.assoc]
 
 @[simp]
 theorem precomp_action (g : G) :
-    L.precomp (L.action g).unop (𝟙 L.obj) = 𝟙 L.obj := by
+    L.precomp (L.action g).unop.asHom (𝟙 L.obj) = 𝟙 L.obj := by
   apply MorphismProperty.Over.Hom.ext
-  change Hom.left (L.action g).unop ≫ 𝟙 _ ≫
-    Hom.left (L.action (Hom.twist (L.action g).unop)).unop = 𝟙 _
+  change Hom.left (L.action g).unop.asHom ≫ 𝟙 _ ≫
+    Hom.left (L.action (Hom.twist (L.action g).unop.asHom)).unop.asHom = 𝟙 _
   rw [L.twist, Category.id_comp, ← action_mul_left, mul_inv_cancel, map_one]
   rfl
 
 theorem ι_precomp {V W : TwistedOver P ρ} (f : V ⟶ W) (k : W.obj ⟶ L.obj) :
     (ι P ρ).map (L.precomp f k) =
-      f ≫ (ι P ρ).map k ≫ (L.action (Hom.twist f)).unop := by
+      f ≫ (ι P ρ).map k ≫ (L.action (Hom.twist f)).unop.asHom := by
   apply hom_ext
   · simp only [homMk_twist, comp_twist, L.twist, mul_one, inv_mul_cancel]
   · rfl
@@ -126,7 +126,7 @@ def restrictionIso : (ι P ρ).op ⋙ L.presheaf ≅ shrinkYoneda.{w}.obj L.obj 
 /-- Sections fixed by the entire specified lift. -/
 abbrev FixedSections (F : (TwistedOver P ρ)ᵒᵖ ⥤ Type w) : Type w :=
   {s : F.obj (op ((ι P ρ).obj L.obj)) //
-    ∀ g : G, F.map (L.action g).unop.op s = s}
+    ∀ g : G, F.map (L.action g).unop.asHom.op s = s}
 
 /-- A fixed section extends uniquely along ordinary maps to a map from the
 lifted representable. -/
@@ -149,11 +149,11 @@ def fixedSectionOfMap (F : (TwistedOver P ρ)ᵒᵖ ⥤ Type w) (α : L.presheaf
     L.FixedSections F :=
   ⟨α.app (op ((ι P ρ).obj L.obj)) (equivShrink _ (𝟙 L.obj)), by
     intro g
-    have h := ConcreteCategory.congr_hom (α.naturality (L.action g).unop.op)
+    have h := ConcreteCategory.congr_hom (α.naturality (L.action g).unop.asHom.op)
       (equivShrink _ (𝟙 L.obj))
-    change α.app _ (equivShrink _ (L.precomp (L.action g).unop
+    change α.app _ (equivShrink _ (L.precomp (L.action g).unop.asHom
       ((equivShrink _).symm (equivShrink _ (𝟙 L.obj))))) =
-        F.map (L.action g).unop.op
+        F.map (L.action g).unop.asHom.op
           (α.app (op ((ι P ρ).obj L.obj)) (equivShrink _ (𝟙 L.obj))) at h
     rw [Equiv.symm_apply_apply, precomp_action] at h
     exact h.symm⟩

@@ -8,7 +8,7 @@ Module `Langlands.Representation.Archimedean.RealCharacterPairData`, namespace
 ## Role and provenance
 
 This is internal infrastructure. It makes no claim from the literature and has no sources. It
-serves the proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067).
+serves the proof of `Langlands.Archimedean.RealCharacterPairFiltrationStatement`.
 There, `x = character c` and `y = character d` are two characters of `ℝ^×` with
 `Re t_c < Re t_d`. The proof splits into a generic case, where the standard modules of
 `pre ++ [x, y] ++ post` and `pre ++ [y, x] ++ post` are isomorphic, and a reducible case,

@@ -1,6 +1,6 @@
 # Finite dimensionality from the graded quotients of an actual filtration
 
-Author: Worker 1022. Provenance: internal elementary linear algebra.
+Provenance: internal elementary linear algebra.
 
 The proposition definition
 `Langlands.ObjectRepFiltration.FiniteDimensionalFromGradedStatement.{uK,uG,uV}`
@@ -57,13 +57,12 @@ coincide, so `⊥ = ⊤` and `A` is zero. The proposition still asserts
 
 This is an internal algebraic interface, not a transcription of a literature
 theorem. It is a prerequisite for the finiteness of normalized parabolic
-induction coinvariants, task `c1d64772-179e-4070-89c8-d0fd55df38d7`. That
-task's filtration has graded quotients that are known to be finite-dimensional.
-What is missing there is the elementary fact that this property passes to the
-filtered vector space.
+induction coinvariants. The filtration used there has graded quotients that
+are known to be finite-dimensional. What that argument needs in addition is the
+elementary fact that this property passes to the filtered vector space.
 
 The mathematical rationale is induction along the steps. The zero step is
 finite-dimensional. If `F_i` and `F_{i+1} / F_i` are finite-dimensional, so is
 `F_{i+1}`, as an extension of one finite-dimensional space by another. The last
-step is all of `A`. This paragraph is the rationale only. A Lean proof of this
-exact proposition is a separate obligation after this statement is published.
+step is all of `A`. This paragraph is the rationale only. No module of the
+Library proves this exact proposition.

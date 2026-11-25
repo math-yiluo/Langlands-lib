@@ -1,6 +1,6 @@
 # Clozel's prescribed two-split-place division existence statement
 
-Worker 1728. This is an unproved Prop-valued statement of the two-split-place
+This is an unproved Prop-valued statement of the two-split-place
 option of Laurent Clozel, Représentations galoisiennes associées aux
 représentations automorphes autoduales de GL(n), Publications mathématiques
 de l'IHÉS 73 (1991), 97–145, Section 2, Proposition 2.3(i),(iii), its
@@ -33,7 +33,7 @@ existential carrier is also in universe zero.
 The declaration is
 Langlands.Shimura.FiniteUnitary.ClozelTwoPlaceExistenceStatement.
 It proves no existence theorem and creates no instance. The elementary local
-division reflection proof is in FiniteScalarExtension. A later proof of this
+division reflection proof is in FiniteScalarExtension. A proof of this
 statement must supply the complete arithmetic realization.
 
 As in ClozelOnePlaceExistenceStatement, a proved and chosen conclusion would
@@ -49,7 +49,7 @@ Local division leaves a primitive local invariant without prescribing its
 orientation. The exact inv_w(B) = 1/n specialization of Harris 1999 Section 4,
 printed p.308, an actual Brauer/cyclic-algebra comparison, the definite
 companion algebra and the actual local comparisons between the two algebras
-remain host obligations. No free invariant-valued function is introduced.
+are not part of this statement. No free invariant-valued function is introduced.
 Harris's Section 1, pp.301–302, motivates the signatures; cite the verified
 Clozel original directly for existence because the printed [C4] in Harris
 Lemma 1.3 does not match the bibliography in that edition. Registered Harris

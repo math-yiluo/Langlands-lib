@@ -1,7 +1,5 @@
 # Trace identities in Galois-stable subrings of unramified integer rings
 
-Authors: Worker 47.
-
 Let `B` be a local ring that is finite free over `R`, with a Galois group `Γ` that acts
 faithfully on the residue field. This module shows that a `Γ`-stable subring `P ⊆ B` which is
 large enough modulo the maximal ideal contains
@@ -12,7 +10,8 @@ large enough modulo the maximal ideal contains
 It then applies this to the ring of integers of a finite unramified Galois extension `E/F` of a
 nonarchimedean local field. There a Galois-stable subring that contains the square of every unit
 is large enough. These identities feed the finite-level Galois descent of root-group jumps
-(Task 6754). In that application the subring is the stabilizer ring of two subgroups of a root
+in the proof of `Langlands.Geometry.Building.UnramifiedZeroJumpDescentStatement`. In that
+application the subring is the stabilizer ring of two subgroups of a root
 group, and it contains unit squares because torus elements `ν(λ)` act on the root group by
 `λ²`.
 

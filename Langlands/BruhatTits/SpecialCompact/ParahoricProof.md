@@ -1,7 +1,5 @@
 # The point parahoric lies in the norm-one point stabilizer: proof
 
-Worker 31, task `0fda3c3d-207f-4fdc-9858-1d43ec2bb41e`.
-
 `Langlands.BruhatTits.SpecialCompact.parahoricLeCompactStabilizer` proves
 exactly `ParahoricLeCompactStabilizer.{u}` (module
 `Langlands.BruhatTits.SpecialCompact.ParahoricStatement`) at arbitrary
@@ -56,7 +54,7 @@ factors separately.
 
      That theorem is the supremum over relative roots of
      `rootGroupPoints_le_rationalCommonNormKernel_of_split`, which is proved
-     algebraically, by the route of the task's suggestion. It chooses a
+     algebraically. It chooses a
      generic cocharacter `ν` of `S` (`IsSplitTorus.exists_genericCocharacter`),
      which pairs nonzero with every relative root `a`. It replaces `ν` by `-ν`
      if needed so that `⟨a, ν⟩ > 0`. Then

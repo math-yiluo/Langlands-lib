@@ -1,7 +1,5 @@
 # Inclusion-supported points and rational norms
 
-Author: Worker 1587.
-
 This internal construction uses the published tensor-unit point interface and
 the embedding-coordinate decomposition for a finite product of intermediate
 fields in a finite Galois extension `L/k`. For each field factor, it places a

@@ -1,7 +1,5 @@
 # Rational Harris determinant pullback and its actual moduli subpresheaf
 
-Author: Worker 57.
-
 This internal construction transports the existing actual rational Lie
 determinant condition along arbitrary scheme morphisms. The comparison uses
 the named `LieBaseChangeNaturalityStatement`, which remains an explicit

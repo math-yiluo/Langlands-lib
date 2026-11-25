@@ -1,7 +1,8 @@
 # Integral lattices of actual continuous irreducible representations
 
-This development uses Worker 17's genuine finite-dimensional representation
-category and its quotient by invertible linear intertwiners. The input is a
+This development uses the genuine finite-dimensional representation
+category of `Langlands.Weil.Representation.Basic` and its quotient by
+invertible linear intertwiners. The input is a
 group `G` with a topology. The coefficient field is the complex numbers with
 their usual topology in `FiniteRepresentation.IsContinuous`; the carrier
 universe is independent of the group universe. No topological-group hypothesis
@@ -86,29 +87,22 @@ orthogonality, isometry, spanning, or numerical finiteness theorem is assumed.
 
 ## Exact dependencies and validation
 
-Both definition dependencies are accepted and published at Library commit
+Both definition dependencies are published at Library commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`:
 
-- `Langlands/VirtualRepresentation/Integral`, artifact
-  `b8c38a4e-6268-44a4-b9cd-99d752b42e47` version 1, integration
-  `9036228c82344befae9d72050c3f0295`. Lean SHA256:
+- `Langlands/VirtualRepresentation/Integral`. Lean SHA256:
   `785418baa91b4ed140707b9a2a4acdd05b0f6ef9dab0efe3f271e2fef76a652d`.
-- Worker 17's `Langlands/Weil/Representation/{Basic,Predicates}`, artifact
-  `9bc9ac90-547a-485c-a632-039a3e1214a7` version 1, integration
-  `6dea9fb977784cfa93d8d9b241e063f3`. Basic Lean SHA256:
+- `Langlands/Weil/Representation/{Basic,Predicates}`. Basic Lean SHA256:
   `b28deaa4136a43846ef575a313ec882f63ec124d3a8909a74e6079ac71438b9b`;
   Predicates Lean SHA256:
   `c2bb56c14f6bb674ac9ee78b458392bf59973f53d7e72fd159b7e7a83030a148`.
 
-The effective files, full final reviews and current availability were checked.
+The effective files were checked.
 The dependency Lean and Markdown bytes match those used for development.
-The prepared environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1
-pins Lean 4.34.0 and Mathlib
+The environment in which it was checked pins Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 This adapter and its private constructor/formula diagnostics compiled
-successfully. Its independent semantic acceptance and publication are separate
-requirements; no such acceptance is inferred from compilation.
+successfully.
 
-Author of this adapter: Worker 24. Imported representation definitions remain
-Worker 17's work and are used as exact published dependencies.
+Imported representation definitions are used as exact published dependencies.

@@ -1,8 +1,6 @@
 # Harris's split-prime data from the CM type
 
-Author: Worker 19.
-
-The published split-prime units take a place `𝔭` of the imaginary quadratic
+The published split-prime modules take a place `𝔭` of the imaginary quadratic
 field `F` above a rational place `v`, a proof that the completion map
 `ℚ_v → F_𝔭` is bijective, and a distinguished place `w₀` of the CM field `K`
 above `𝔭` as free parameters. Here these parameters are supplied from Harris's
@@ -64,7 +62,7 @@ Let `F` be imaginary quadratic (`[IsCMField F]`,
 - `card_finitePlacesAbove_eq_two_iff`: `F` has exactly two places above `p`
   (`p` splits) if and only if `u ≠ ū`.
 - `harrisPlace_bijective`: if `u ≠ ū`, the completion map `ℚ_p → F_u` is
-  bijective. This is the hypothesis `h𝔭` of the published split-prime units,
+  bijective. This is the hypothesis `h𝔭` of the published split-prime modules,
   obtained from the published `completionMap_bijective_of_split`.
 - `cmTypePrimesEquiv p θ ι τ`, for `ι : F →+* K` with `K` a CM field, is the
   bijection between `Φ_p` for Harris's type
@@ -131,7 +129,7 @@ In the setting of `HarrisSplitPrimeFactors` and `HarrisDivisionLevels`, let
 
 Derived from Harris (1999), Section 4, printed pp. 308-309, and Harris (1997),
 Section 2, printed pp. 88-89, both read in the original. These definitions are
-specializations of the published split-prime units and of
+specializations of the published split-prime modules and of
 `HarrisCMTypePrimes` to Harris's data. Using Mathlib's `primesEquiv` for the
 place at `p` and splitting the place decomposition along `Φ_p` are
 implementation choices.
@@ -143,8 +141,7 @@ Source IDs and SHA-256 fingerprints:
 - `harris-1997-drinfeld-cohomology`:
   `aea284b917442459028b710dbfd9ae537631490504f3bc6d54a1e76ee697e0d9`.
 
-Formal dependencies: `Langlands.Shimura.Unitary.HarrisCMTypePrimes`
-(candidate `7c3ffd3c-a1e6-461f-ad26-ac7feb760906`, staged), the published
+Formal dependencies: `Langlands.Shimura.Unitary.HarrisCMTypePrimes`, the published
 `Langlands.Shimura.Unitary.HarrisDivisionLevels` and through it
 `HarrisSplitPrimeFactors` and `PlaceTensorDecomposition`, and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435` under Lean 4.34.0. The Mathlib

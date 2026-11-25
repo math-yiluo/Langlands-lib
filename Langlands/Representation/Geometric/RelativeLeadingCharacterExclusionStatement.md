@@ -1,9 +1,5 @@
 # Leading real-character exclusion on an actual reversed geometric piece
 
-Authors: Worker 526, with the geometric extraction and chamber design of
-Worker 828 and the relative-comparison coordinate guidance of Workers 359
-and 430.
-
 `Langlands.GLRelativeGeometricLeadingCharacterExclusionStatement.{uF,uV}`
 is an internal proposition definition. This pair states the interface;
 it supplies no proof. Field and source-carrier universes remain independent.
@@ -53,7 +49,7 @@ or positive-rank restriction. The scalar real coordinates include the
 actual target block sizes. Rank zero, one-block shapes and arbitrary real
 central shifts of `t` are included.
 
-## Internal derivation and publication boundary
+## Internal derivation and proof boundary
 
 This is an internal derived interface for the relative Hom-comparison
 investigation, not a literal transcription of a numbered literature result.
@@ -61,8 +57,8 @@ The actual functors retain their published inverse source Jacquet half,
 inverse intersection conjugation and positive target induction half.
 There is no freely supplied normalization character.
 
-The private implemented route has four steps, which remain separate proof
-obligations for a public proof of this proposition:
+The proof of this proposition in `RelativeLeadingCharacterExclusionProof`
+has four steps:
 
 1. Evaluate an actual induced generalized eigenfunction at a nonzero value.
    On target coarse scalars, centrality and the proved trivial half modulus
@@ -85,11 +81,12 @@ obligations for a public proof of this proposition:
    energy argument and uniqueness of minimal representatives force the
    inverse block reversal.
 
-The private composition compiles, but includes upstream drafts and pending
-statements/proofs. This pair imports only public definitions needed to state
-its exact actual objects. It does not import or treat those drafts as
-accepted mathematics and does not claim a public proof. A future exact
-proof must use their independently accepted public declarations.
+This pair imports only public definitions needed to state its exact actual
+objects and does not prove the proposition. The proof is
+`Langlands.relativeGeometricLeadingCharacterExclusion` in
+`RelativeLeadingCharacterExclusionProof`, through the supporting modules
+`ChamberRealPartProjection`, `GeometricPieceUntwistedProjection` and
+`GeometricPieceTemperedExclusion`.
 
 This interface excludes the leading real part in nonidentity actual pieces.
 It does not produce a geometric filtration, identify the identity piece,

@@ -30,13 +30,13 @@ The conclusion is real analyticity near every point of `S` in the
 original norm. Every open domain is covered, with no additional function
 hypothesis or analytic-solution certificate.
 
-This is an internal statement by Worker 116 isolating the boundary cases
+This is an internal statement isolating the boundary cases
 of the scalar regularity problem. Its provenance is the exact
 specialization and conjunction of the existing scalar statement; it
-claims no separate literature theorem. Worker 347 reused Worker 116's
-Lean definition unchanged and expanded this documentation. The imported
+claims no separate literature theorem. The imported
 published pairs are unchanged.
 
 The file defines the proposition only. It proves neither boundary case
 and introduces no positive-dimension, positive-order regularity assertion.
-An exact-target proof is separate work after publication of this statement.
+The proof is `scalarEllipticAnalyticityDegenerate` in
+`ScalarEllipticAnalyticityDegenerate`.

@@ -1,7 +1,5 @@
 # Polynomial vanishing along nonnegative real powers
 
-Author: Worker 1571.
-
 This auxiliary construction isolates the polynomial step in the polar
 decomposition argument of Armand Borel, *Lie Groups and Linear Algebraic Groups,
 I. Complex and Real Groups*, section 6.3, printed pages 42–43. The registered

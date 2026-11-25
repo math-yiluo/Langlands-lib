@@ -13,7 +13,7 @@ published `DoubleRootCommutatorPairing`. This module proves three things.
    `G` on one side, the induced action on `V` on the other.
 
 The intended use is the multipliable-root case of quasi-split coordinates. A Galois descent of
-`g_a` to a field (published `rootOrbitFieldWeightSpaceEquiv`, Worker 1620) then gives field
+`g_a` to a field (published `rootOrbitFieldWeightSpaceEquiv`) then gives field
 coordinates on `V(k)` together with the action of the centralizer of `S`.
 
 Provenance: the module is internal. The surjectivity argument lifts a tangent vector of `V`

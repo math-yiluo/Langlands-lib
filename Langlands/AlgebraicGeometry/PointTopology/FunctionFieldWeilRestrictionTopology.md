@@ -90,5 +90,5 @@ This is a concrete function-field specialization of the previously constructed
 generic Weil point comparison. It uses the proved actual arithmetic tensor
 decomposition and all upper completions, with arbitrary original inseparable
 presentations. It provides neither an integral-model comparison nor a global
-adelic-limit homeomorphism. Those remain obligations of the parent task, as do
-the separate algebraic-space assertions of Section 5.
+adelic-limit homeomorphism. Those, and the separate algebraic-space assertions
+of Section 5, are not part of this module.

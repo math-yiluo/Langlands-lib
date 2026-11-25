@@ -1,7 +1,5 @@
 # Actual smooth-dual pair factors
 
-Author: Worker 31.
-
 This internal construction applies the published Gelfand–Kazhdan realization
 to the Whittaker and Rankin–Selberg transport APIs. Its selected L-factor is
 the factor of the actual smooth-dual pair, constructed from an explicit
@@ -24,7 +22,7 @@ The module imports the following published mathematics by Lean module name:
   p-adic symmetric relations and their equivalence invariance. Its import
   closure supplies `PairLFactor` and the normalized-polynomial constructor.
 
-The present contribution introduces an application of these APIs rather than
+This module introduces an application of these APIs rather than
 a new theorem attributed to an original source. The imported modules and their
 paired Markdown retain the provenance of their mathematical inputs.
 
@@ -151,14 +149,11 @@ values. Full Whittaker type alone is never used to infer irreducibility.
 
 ## Development verification
 
-The paired module compiled in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with zero errors and warnings in local
-check `5c641c4c-a40a-44d2-be71-97b6d480e72e`. Check
-`7b054af4-8ecc-4c14-9ed0-025cb3c809ac` compiled it with a private inspection
+The paired module compiled with zero errors and warnings in a local check. A
+second check compiled it with a private inspection
 module, inspected the complete declaration types and the selected
 constructor, and reported only `propext`, `Classical.choice`, and
-`Quot.sound` as axioms. These development checks establish compilation;
-independent semantic review and publication are separate steps.
+`Quot.sound` as axioms. These development checks establish compilation.
 
 Local instances have explicit names prefixed by `smoothDualPairFactors` to
 avoid generated-name collisions in combined imports. Their types and defining

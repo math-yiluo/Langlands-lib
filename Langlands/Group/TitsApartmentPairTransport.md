@@ -1,6 +1,6 @@
 # Two-facet transport between arbitrary restricted apartments
 
-For an existing Tits system, this unit constructs a transporter between any
+For an existing Tits system, this module constructs a transporter between any
 two restricted apartments containing the same two admissible parabolic
 subgroups `P` and `Q`. The transporter belongs to `P ∩ Q` and conjugation by it
 carries the first apartment, as a set of subgroups, onto the second.

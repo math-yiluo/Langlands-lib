@@ -1,7 +1,5 @@
 # Jacquet's theorem for general reductive rational points
 
-Statement: Worker 261 (task `aa8bb3a4-42d3-47db-9a48-98eb87ad9327`).
-
 This module states, as a closed proposition, that every irreducible smooth
 complex representation of `G(F)` is admissible. Here `F` is any nonarchimedean
 local field and `G` any connected reductive group over `F` (Renard VI.2.2,
@@ -56,15 +54,14 @@ topological property of `G(F)` is a hypothesis.
   p. 57), which matches the coefficient field `ℂ` here.
 * Purpose: Howe's theorem (Renard VI.6.3, printed pp. 178–179) proves "finite
   length ⇒ admissible" by induction on length, starting from VI.2.2. The induction
-  is generic. Worker 585's conditional helper
+  is generic. The conditional helper
   `SmoothRep.isAdmissible_of_finiteLength_of_irreducible` (module
   `Langlands.Representation.Smooth.Admissibility.FiniteLengthReduction`) takes
   as its hypothesis exactly the inner clause of this statement, for one group and
   one carrier universe. Applying it to a proof of this statement gives
   `RationalPointsFiniteLengthAdmissibleStatement`. That application belongs to
   the proof of the finite-length target, not to this module.
-* Renard's proof of VI.2.2 needs several results that the Library does not have
-  for general `G`:
+* Renard's proof of VI.2.2 needs several results for general `G`:
   - IV.1.3: compact representations of finite type are admissible;
   - VI.2.1: a supercuspidal representation restricts to a compact
     representation of `⁰G`. The proof uses the Cartan decomposition (V.5.1)

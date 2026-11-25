@@ -89,8 +89,8 @@ local notation "FrameB" => WeilAdelicFrame preservation composition unitCoherenc
 /-- Postcomposition by a rational isogeny restricts to actual Weil-compatible
 full adelic frames. Multiplication on the actual twist realizes its multiplier. -/
 def weilAdelicFrameIsogeny (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     FrameA ≃ FrameB := by
@@ -127,8 +127,8 @@ local notation "fullIsogeny" => weilAdelicFrameIsogeny preservation composition
 
 @[simp] theorem weilAdelicFrameIsogeny_apply (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (eta : FrameA) (x : (Global.FiniteAdeles ℚ) ⊗[ℚ] V) :
@@ -138,8 +138,8 @@ local notation "fullIsogeny" => weilAdelicFrameIsogeny preservation composition
 /-- The restricted map agrees with the already constructed ambient Tate-frame map. -/
 theorem weilAdelicFrameIsogeny_underlying (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) (eta : FrameA) :
     letI := scalarExtensionAlgebraModule D V (Global.FiniteAdeles ℚ)
@@ -149,8 +149,8 @@ theorem weilAdelicFrameIsogeny_underlying (q : ℚˣ)
 /-- Source precomposition commutes with the restricted isogeny map. -/
 theorem weilAdelicFrameIsogeny_right (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (eta : FrameA) (g : ScalarExtensionSimilitudes D V (Global.FiniteAdeles ℚ) ψ) :
@@ -178,8 +178,8 @@ local notation "AwayFrameB" => WeilPrimeToAdelicFrame preservation composition u
 and the actual away Tate twist, with the coupled scalar comparison. -/
 def weilPrimeToAdelicFrameIsogeny (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     AwayFrameA ≃ AwayFrameB := by
@@ -216,8 +216,8 @@ local notation "awayIsogeny" => weilPrimeToAdelicFrameIsogeny preservation compo
 
 @[simp] theorem weilPrimeToAdelicFrameIsogeny_apply (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (eta : AwayFrameA) (x : (Global.PrimeToFiniteAdeles m) ⊗[ℚ] V) :
@@ -227,8 +227,8 @@ local notation "awayIsogeny" => weilPrimeToAdelicFrameIsogeny preservation compo
 /-- Away transport is exactly restriction of the ambient isogeny transport. -/
 theorem weilPrimeToAdelicFrameIsogeny_underlying (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) (eta : AwayFrameA) :
     letI := scalarExtensionAlgebraModule D V (Global.PrimeToFiniteAdeles m)
@@ -238,8 +238,8 @@ theorem weilPrimeToAdelicFrameIsogeny_underlying (q : ℚˣ)
 
 theorem weilPrimeToAdelicFrameIsogeny_right (q : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hf : multiple (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (eta : AwayFrameA) (g : ScalarExtensionSimilitudes D V (Global.PrimeToFiniteAdeles m) ψ) :

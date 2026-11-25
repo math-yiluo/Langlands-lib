@@ -1,6 +1,6 @@
 # Proof that the degree of an isogeny in characteristic zero counts its kernel points
 
-Lean module: `Langlands.AbelianScheme.IsogenyFinrankKernelCardProof`. Author: Worker 195.
+Lean module: `Langlands.AbelianScheme.IsogenyFinrankKernelCardProof`.
 
 `Langlands.AbelianScheme.isogenyFinrankKernelCard : IsogenyFinrankKernelCardStatement.{u}`
 proves the Library statement `Langlands.AbelianScheme.IsogenyFinrankKernelCardStatement` in its

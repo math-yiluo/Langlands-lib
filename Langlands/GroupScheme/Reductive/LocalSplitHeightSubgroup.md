@@ -1,7 +1,5 @@
 # Root-height subgroups on every scheme test
 
-Author: Worker 204.
-
 This construction applies the derived abstract height filtration to
 actual root maps over a commutative ring. A root factor is the image of
 its additive global-function parametrization on a test scheme.
@@ -27,5 +25,5 @@ by all the listed positive roots.
 
 These are derived supporting results for Conrad, *Reductive group
 schemes* (2014), Theorem 5.4.3, pp.174–177. The cocharacter hypotheses are
-explicit, and this unit does not construct a filtration for an arbitrary
+explicit, and this module does not construct a filtration for an arbitrary
 parabolic, represent these subgroups, or descend their quotients.

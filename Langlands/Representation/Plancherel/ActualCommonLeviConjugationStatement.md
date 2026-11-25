@@ -76,10 +76,9 @@ comparison supplies its canonical identification where needed.
 Only `conjugateCentralizer` and the displayed translation/parameter
 constructions are proved here. The existence of conjugate modulus
 compatibility, full-domain conjugation and the actual original integral
-square are conclusions of the unproved target. This unit proves no scalar
+square are conclusions of the unproved target. This module proves no scalar
 conjugation theorem, continuation existence, unitary extension, integrated
-coefficient identity, V.3 cocycle or Weyl descent law, and does not reassign
-the existing owners of those substantive proofs. Same-parameter inducing
+coefficient identity, V.3 cocycle or Weyl descent law. Same-parameter inducing
 representative naturality is already proved as
 `DynamicCommonLeviCompact.pairFamily_natural`; the original translated
 orbit-base square is proved separately in `ActualCommonLeviBaseChange`.

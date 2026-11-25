@@ -1,7 +1,5 @@
 # Inner cuspidal support through an actual induction quotient
 
-Author: Worker 125.
-
 This internal adapter uses the Library's actual normalized refined Jacquet
 quotients. It does not prove the cuspidal-induction constituent statement or
 the persistence statement.

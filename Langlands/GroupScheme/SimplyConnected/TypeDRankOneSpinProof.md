@@ -1,7 +1,5 @@
 # Quaternionic spin covers from rank-one type-D indices
 
-Author: Worker 180.
-
 Module `Langlands.GroupScheme.SimplyConnected.TypeDRankOneSpinProof`.
 
 `Langlands.GroupScheme.typeDRankOneSpin` proves the exact Library proposition

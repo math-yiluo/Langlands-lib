@@ -1,14 +1,15 @@
 # Residue quotient at a twisted-fixed point for a Frobenius lift
 
-This module states `UnramifiedTwistedResidueQuotientStatement.{u}`, a derived and
-unproved input for `UnramifiedTwistedChamberQuotientStatement` (Task 6500). It
+This module states `UnramifiedTwistedResidueQuotientStatement.{u}`, a derived
+input for `UnramifiedTwistedChamberQuotientStatement`. It
 asserts the reductive-quotient data at a twisted-fixed point `y` of the building
 over the maximal unramified extension. The data are a finite-field reductive
 group, a reduction map from a subgroup of the fixer of `y`, compatibility with the
 twist and with canonical Frobenius descent, fixation of the chambers through `y`
 by the kernel, and transitivity on those chambers. This data is asserted for
 every automorphism that reduces to the arithmetic Frobenius. The module proves
-nothing about the statement; a separate proof task will be published for it.
+nothing about the statement; it is proved as `unramifiedTwistedResidueQuotient`
+in the module `UnramifiedTwistedResidueQuotientProof`.
 
 ## Hypotheses (identical to the target)
 
@@ -103,9 +104,10 @@ The present statement differs in three ways.
 - Kernel fixation is required for every chamber presented through `y`.
 - Transitivity (item 7) replaces the single `h`.
 
-The intended reduction from this statement to the target will be a separate
-proved unit. It builds a Frobenius lift `φ` from the surjectivity of the residue
-map on automorphisms and shows that it is a dense generator. It then takes `Y₀`
+The reduction from this statement to the target is proved separately, as
+`unramifiedTwistedChamberQuotientResidueReduction` (module
+`UnramifiedTwistedChamberQuotientResidueReduction`). It builds a Frobenius lift `φ` from the
+surjectivity of the residue map on automorphisms and shows that it is a dense generator. It then takes `Y₀`
 from the existence of chamber closure presentations, and checks that `τ '' Y₀`
 again has a closure presentation through `y`. Finally it applies item 7 to `Y₀`
 and `τ '' Y₀`. Nothing in this module proves that reduction.

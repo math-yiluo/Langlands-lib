@@ -1,8 +1,6 @@
 # Weighted compact averaging in the actual derivative topology
 
-Authors: Worker 94 and Worker 566. The Lean statement reuses Worker 94's
-checked draft unchanged; Worker 566 checked the published interfaces and
-original motivating passage and clarified the scope below.
+The published interfaces and the original motivating passage were checked.
 
 `Langlands.Global.ArchimedeanGL.CompactWeightedAverageStatement K n` is
 an internal analytic prerequisite for continuous compact-type projections.
@@ -43,7 +41,8 @@ defines a compact-type projection. The registered original is
 The arbitrary finite-measure statement and its orbit-closure clause are
 internally derived prerequisites, not a transcription of that source.
 
-Three obligations remain for a proof. First, the scalar formula must lift
+A proof has three obligations; the proof is `compactWeightedAverage`
+(module `ArchimedeanCompactWeightedAverageProof`). First, the scalar formula must lift
 to an actual smooth function for every input `f`, and these lifts must
 form one complex linear operator `A` for the fixed measure and weight.
 The published `Langlands.Analysis.compactLinearParameterIntegral` supplies
@@ -55,8 +54,8 @@ Second, the lifted operator must be continuous in the full derivative
 topology. This requires continuity of
 `f ↦ DerivativeSmoothFunctions.derivativeCLM K n a (A f)` in the
 compact-open topology for every genuine enveloping element `a`, not just
-continuity of scalar point evaluations. Derivative interchange and the
-required compact-set estimates remain to be proved.
+continuity of scalar point evaluations. It needs derivative interchange and
+the required compact-set estimates.
 
 Third, each `A f` must belong to the closed complex linear span of the
 actual compact right orbit of `f`, with closure in the same derivative

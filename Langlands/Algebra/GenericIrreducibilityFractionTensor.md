@@ -1,6 +1,6 @@
 # Comparing the generic algebra with its function field
 
-Worker 1606. These internal derived lemmas support the algebraic proof of
+These internal derived lemmas support the algebraic proof of
 Stacks Project Lemma 37.27.5 (0559). They use the ordinary universal properties
 of localization and tensor products, through Mathlib's existing comparisons.
 

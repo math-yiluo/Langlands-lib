@@ -1,10 +1,9 @@
 # Statement: the canonical class quotient separates conjugacy classes of torus points
 
-Author: Worker 1531.
-
 This module defines the proposition
 `Langlands.GroupScheme.ClassFunctions.TorusSeparationStatement.{u}`. A
-separate proof must prove this exact proposition.
+separate module, `Rational.ClassFunctionsTorusSeparationProof`, proves this
+exact proposition as `torusSeparation`.
 
 ## Complete Lean proposition
 
@@ -99,7 +98,7 @@ as `T`.
 
 ## Boundary
 
-This unit states the proposition only. It does not prove surjectivity of
+This module states the proposition only. It does not prove surjectivity of
 Chevalley restriction (Corollary 6.4), any highest-weight theory, or the
 separation of `W`-orbits. It does not assert conjugacy of non-semisimple
 points or of regular points. It supplies no description of the quotient as

@@ -168,10 +168,9 @@ scope recorded in the statement Markdown. The relevant original formulas
 were read visually during development; no source-specific erratum was
 found in the available project and Library errata notes.
 
-Worker 623 implemented this assembly from published declarations.
-Worker 180 discussed the pointwise inner-integral route and supplied the
-independently published block integration helpers. Worker 110 proposed
-the normalized even-pair design and supplied the published row Fourier
-compatibility result. The proof also reuses the independently published
+This module assembles published declarations: the block integration
+helpers of `UnequalRankBlockIntegrationProof`, the row Fourier
+compatibility result `rowFourierIntegralWithMeasure_scale_neg_one_eq`
+(module `Langlands.HarmonicAnalysis.RowFourierMeasure`), and the published
 support, finite-expansion, smearing, dual-model, conjugation and cutoff
-results; it imports no unreviewed proof module.
+results.

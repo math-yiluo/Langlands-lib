@@ -6,7 +6,7 @@ leg is canonically strong etale. It retains the explicit
 `FiniteBanachPushoutStatement K` premise. The field universe is independent
 of the unchanged common space and atlas-index universe.
 
-Worker 250's recognition-selected cospan supplies full-domain-closed
+The recognition-selected cospan supplies full-domain-closed
 source and base atlases, complete strong maps, and full quasi-isomorphism
 comparisons from the original cospan. The finite pointed chart coverage
 of that recognized cospan and finite Banach pushout give smallness of its
@@ -27,5 +27,6 @@ No global Hausdorff hypothesis, limiting property or missing local
 descent map is supplied. This proves existence, conditional only on the
 stated finite Banach pushout input, for mapped strong cospans. The etale
 property of the base-changed projection and the full target for arbitrary
-localized etale cospans remain further work. No external statement is
+localized etale cospans are not proved here; `LocalizedEtalePullbackStatement`
+is proved in `LocalizedEtalePullbackProof`. No external statement is
 transcribed.

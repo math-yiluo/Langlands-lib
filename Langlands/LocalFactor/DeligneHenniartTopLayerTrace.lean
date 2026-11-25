@@ -69,21 +69,22 @@ theorem exists_different_exponent {N : ℕ} (hN : lowerRamificationGroup TM K.Ca
   have : FiniteDimensional K.Carrier F.Carrier :=
     Module.Finite.of_restrictScalars_finite (Padic p) K.Carrier F.Carrier
   have : IsGalois F.Carrier M.Carrier := IsGalois.tower_top_of_isGalois K.Carrier F.Carrier M.Carrier
-  have hKF := (LocalClassField.NYLL.relativeIntegerStructure p K F TK TF).2
-  have hFM := (LocalClassField.NYLL.relativeIntegerStructure p F M TF TM).2
-  have hKM := (LocalClassField.NYLL.relativeIntegerStructure p K M TK TM).2
+  have hKF := (LocalClassField.UniverseZero.relativeIntegerStructure p K F TK TF).2
+  have hFM := (LocalClassField.UniverseZero.relativeIntegerStructure p F M TF TM).2
+  have hKM := (LocalClassField.UniverseZero.relativeIntegerStructure p K M TK TM).2
   have : CharZero K.Carrier := Algebra.charZero_of_charZero (Padic p) K.Carrier
   have : CharZero TK.Integers := ⟨fun a b h => Nat.cast_injective (R := K.Carrier)
     (by simpa using congrArg Subtype.val h)⟩
   have : Algebra.IsSeparable (FractionRing TK.Integers) (FractionRing TM.Integers) := by
-    have : FiniteDimensional (FractionRing TK.Integers) (FractionRing TM.Integers) :=
-      .of_isLocalization TK.Integers TM.Integers (nonZeroDivisors TK.Integers)
+    have := Module.Finite.of_isLocalization TK.Integers TM.Integers
+      (Rₚ := FractionRing TK.Integers) (Sₚ := FractionRing TM.Integers) (nonZeroDivisors TK.Integers)
     exact Algebra.IsAlgebraic.isSeparable_of_perfectField
   -- the different of `O_F/O_K` is a power of `m_F`
   have hne : differentIdeal TK.Integers TF.Integers ≠ ⊥ := by
     have : Algebra.IsSeparable (FractionRing TK.Integers) (FractionRing TF.Integers) := by
-      have : FiniteDimensional (FractionRing TK.Integers) (FractionRing TF.Integers) :=
-        .of_isLocalization TK.Integers TF.Integers (nonZeroDivisors TK.Integers)
+      have := Module.Finite.of_isLocalization TK.Integers TF.Integers
+        (Rₚ := FractionRing TK.Integers) (Sₚ := FractionRing TF.Integers)
+        (nonZeroDivisors TK.Integers)
       exact Algebra.IsAlgebraic.isSeparable_of_perfectField
     exact differentIdeal_ne_bot
   obtain ⟨ϖ, hϖ⟩ := IsDiscreteValuationRing.exists_irreducible TF.Integers
@@ -262,7 +263,7 @@ theorem trace_mem_additiveLattice (n N : ℕ) (hcut : ramificationCutoff TM K.Ca
   let := relativeIntegerFieldAlgebra (E := F) TK
   have := relativeIntegerFieldTower (E := F) TK
   have := relativeIntegerTower TK TF
-  obtain ⟨hclosure, hmodule⟩ := LocalClassField.NYLL.relativeIntegerStructure p K F TK TF
+  obtain ⟨hclosure, hmodule⟩ := LocalClassField.UniverseZero.relativeIntegerStructure p K F TK TF
   have : CharZero K.Carrier := Algebra.charZero_of_charZero (Padic p) K.Carrier
   have : Algebra.IsSeparable K.Carrier F.Carrier := Algebra.IsAlgebraic.isSeparable_of_perfectField
   have hmap := map_maximalIdeal_algebraMap_of_ramificationIndex_eq_mul TK TF e hKF

@@ -26,4 +26,5 @@ This is an internal algebraic consequence of the existing quotient
 Grassmannian base-change map, tensor cancellation, product splitting and
 faithfully flat module APIs. No freeness or basis choices occur. Geometric
 identification of these maps with actual parabolic jet restrictions is supplied
-separately in the host task.
+separately, in `Langlands.GroupScheme.RelativeLevi.ParabolicJetOrbitComparison`,
+which applies `productKernel_eq_classified`.

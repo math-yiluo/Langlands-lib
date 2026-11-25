@@ -7,8 +7,9 @@ Module `Langlands.AlgebraicGeometry.GroupoidCoactionGenericEvaluation`, namespac
 
 This module is a ring-level ingredient for the comodule proof of the Noetherian case of
 finite-surjective affine descent (Stacks, Cohomology of Algebraic Spaces, Lemma 69.17.3,
-Tag 07VP). It was written for the Key proof task 74e16b76 (Worker 148), and in the end for this
-task (Tag 07VS). Source: the registered folder `stacks-noetherian-space-affine-descent-2026-11-01`,
+Tag 07VP). That Noetherian case is in turn used in the Library's proof of Stacks Lemma 70.15.1
+(Tag 07VS), `finiteSurjectiveAffineDescent` in
+`Langlands.AlgebraicGeometry.AlgebraicSpace.FiniteSurjectiveAffineDescentProof`. Source: the registered folder `stacks-noetherian-space-affine-descent-2026-11-01`,
 page `07VP.html`.
 
 ## Setting
@@ -106,7 +107,7 @@ contains `s * (s * s)`, which is not in the prime `p`, so `I ≠ ⊥`.
 
 Provenance: derived (internal ring-level form). The proof of Tag 07VP verifies condition (3) of
 Lemma 69.14.5 for `𝒢 = f'_* 𝒪_{Z'}`, where `Z' → Z` is the finite surjective morphism of
-Lemma 69.17.1 over an integral closed subspace `Z ⊆ X`. The Key proof task replaces sheaf
+Lemma 69.17.1 over an integral closed subspace `Z ⊆ X`. The comodule proof replaces sheaf
 cohomology on `X` with comodules over an affine étale presentation. In that setting, the generic
 part of the dévissage needs, for a coherent `ℋ`, an evaluation map `Hom(𝒢, ℋ) → ℋ^{⊕r}` that is
 an isomorphism away from a proper invariant closed subset. This module supplies that statement in
@@ -123,4 +124,4 @@ invariant ring is assumed: one minimal prime `p` of `B` and one element `s ∉ p
 ideal `I` is built from the annihilators themselves. The statement does not claim that `V(I)` is
 proper in any irreducible component other than the one through `p`. The choice of `q` from a
 prime over a minimal prime of `B` and the explicit annihilator ideal are internal design choices
-of this formalization, made to match the interface of the Key task.
+of this formalization, made to match the interface of the comodule proof.

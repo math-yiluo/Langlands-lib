@@ -33,7 +33,7 @@ private def homPrecompEquiv {ρ : Representation ℂ G A}
   left_inv f := by ext x; simp
   right_inv f := by ext x; simp
 
--- Reused from the detection/lower-bound transport of Workers 845, 526 and 435.
+-- Reused from the detection/lower-bound transport.
 private def homPostcompEquiv (ρ : Representation ℂ G A)
     {σ : Representation ℂ G B} {τ : Representation ℂ G C} (e : σ.Equiv τ) :
     ρ.IntertwiningMap σ ≃ₗ[ℂ] ρ.IntertwiningMap τ where
@@ -109,7 +109,6 @@ theorem temperedInductionFiniteGeneration :
     (T.normalizedParabolicInduced B ρt).asModule
   exact inferInstance
 
--- Literal-shape transport follows Worker 435's assembly draft.
 private theorem transportFineData {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p}
     (T : F.TopologicalData) {n : ℕ} {C D : BlockShape n} (h : C = D)
     (ω : Rep.{uV} ℂ (C.Levi F.Carrier)) :

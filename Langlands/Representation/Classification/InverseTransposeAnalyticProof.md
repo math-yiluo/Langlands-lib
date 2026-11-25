@@ -1,7 +1,5 @@
 # Analytic inverse-transpose transport
 
-Author: Worker 363.
-
 The closed theorem is
 `Langlands.Classification.padicInverseTransposeAnalytic :
 PadicInverseTransposeAnalyticStatement.{uF,uV}`. The field and representation

@@ -1,11 +1,13 @@
 # The multiplicative seminorm of a point of the affine analytification
 
-This unit gives each point of the Library's polynomial-locus affine
+This module gives each point of the Library's polynomial-locus affine
 analytification `Space K P` a multiplicative seminorm on the presented algebra
 `A`. It proves that this seminorm extends the norm of `K` and that each
 evaluation `x ↦ |a|_x` is continuous on `Space K P`. Injectivity, the image
 (every multiplicative seminorm extending the norm of `K`) and the agreement of
-topologies are not claimed here. They are left to a later statement unit.
+topologies are not claimed here. They are stated in
+`AffineAnalytificationSeminormStatement` and proved in
+`AffineAnalytificationSeminormProof`.
 
 ## Provenance
 
@@ -80,8 +82,8 @@ nontrivially normed field with an ultrametric distance. `A` is a commutative
 
 ## Scope
 
-The unit imports the published `AffineAnalytificationGluing` and
-`Spectrum.Properties` unchanged and edits no published input. It does not state
+The module imports the published `AffineAnalytificationGluing` and
+`Spectrum.Properties`. It does not state
 that `pointSeminorm` is injective, that every multiplicative seminorm extending
 the norm of `K` comes from a point, or that the topology of `Space K P` is the
 weakest one making all evaluations continuous. These claims make up the full

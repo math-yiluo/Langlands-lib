@@ -40,12 +40,7 @@ def poincareDiagonalHomPullbackIso (f : A ⟶ B)
       hom f ≫ relativeDiagonal B ≫ (relativeSpace B.X.hom).map lam := by
     apply pullback.hom_ext
     · simp [q, relativeDiagonal, relativeSpace, Category.assoc, homFamilySpaceMap]
-      change (𝟙 A.X.left) ≫ hom f ≫ lam.left =
-        hom f ≫ (𝟙 B.X.left) ≫ lam.left
-      simp only [Category.id_comp]
     · simp [q, relativeDiagonal, relativeSpace, Category.assoc, homFamilySpaceMap]
-      change (𝟙 A.X.left) ≫ hom f = hom f
-      simp only [Category.id_comp]
   have hq' : q ≫ (relativeSpace A.X.hom).map
       (dualSchemeMap homPicardZeroPullback f hA hB) =
       relativeDiagonal A ≫ (relativeSpace A.X.hom).map

@@ -70,7 +70,10 @@ series division, a nonzero quotient hypothesis, or an algebraic extension of
 the coefficient field. The resulting equivalence is bounded in both directions;
 no equality of quotient norms is claimed.
 
-This unit is conditional on the displayed radical-value-group witnesses. It
+This module is conditional on the displayed radical-value-group witnesses. It
 does not construct a common Laurent extension for a domain and its ambient
 algebra, transport full domain representation to strict presentations, or prove
-`Domain.FiniteRationalCoverStatement`. Those remain separate host obligations.
+`Domain.FiniteRationalCoverStatement`. These are, respectively,
+`LaurentReduction.exists_strictifiable` in `FiniteLaurentDomainReduction`, the
+comparison in `StrictDomainComparison`, and `Domain.finiteRationalCover` in
+`DomainRationalCoverProof`.

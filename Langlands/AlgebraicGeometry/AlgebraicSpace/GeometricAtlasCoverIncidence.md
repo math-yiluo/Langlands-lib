@@ -31,7 +31,8 @@ For a finite closed atlas cover whose geometric fibre pieces at `p` are
 nonempty connected and covering, `geometricAtlasClosedCoverComponentsEquiv`
 therefore computes the actual geometric fibre components as the quotient of
 the fixed cover labels by these original overlap image predicates. Its target
-uses exactly the presheaf product and `pointTopology` in the host statement.
+uses exactly the presheaf product and `pointTopology` in
+`GeometricFibreComponentsConstructibleStatement`.
 
 The final theorem proves constructibility of every actual geometric component
 count over a Noetherian ring for a quasi-separated space with a quasi-compact
@@ -41,7 +42,7 @@ Closed overlap image loci are constructible by `AtlasClosedCoverIncidence`;
 the finite truth-pattern theorem gives constructibility of their quotient
 counts; the preceding equivalence identifies those with the exact counts.
 
-The final theorem retains the geometric connected-cover hypotheses. This unit
+The final theorem retains the geometric connected-cover hypotheses. This module
 does not construct such covers by finite splitting and spreading, descend the
 result from a splitting base, or perform arbitrary-ring approximation. It
-therefore does not prove the unrestricted host target.
+therefore does not prove the unrestricted statement.

@@ -1,6 +1,6 @@
 # Comparison maps for equivariant compactly supported cohomology
 
-Author: Worker 26. Builds on `Langlands.Sheaf.Equivariant.TwistedCompactSupport`
+Builds on `Langlands.Sheaf.Equivariant.TwistedCompactSupport`
 (compactly supported sections of sheaves on a twisted site as representations,
 their smooth version `discreteCompactSections` on discrete sheaves, and its
 derived functors `discreteCompactDerived`), `Langlands.Sheaf.PointSupport`
@@ -120,7 +120,7 @@ degree-zero identifications, nor that it is an isomorphism.
 
 ## Provenance and scope
 
-Derived infrastructure. Sources, read in the original by Worker 26:
+Derived infrastructure. Sources, read in the original:
 
 - Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
   1995–1996 manuscript), §1.5, printed p.11 = PDF p.11: for an étale abelian

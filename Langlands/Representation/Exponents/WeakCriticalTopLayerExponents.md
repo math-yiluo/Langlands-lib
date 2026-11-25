@@ -1,7 +1,7 @@
 # Dual exponents of quotients of a maximal central-defect layer
 
 Module `Langlands.Representation.Exponents.WeakCriticalTopLayerExponents`.
-Internal helper module, author Worker 728. Mathematically it is the
+Internal helper module. Mathematically it is the
 "arguing as in Corollary 2.4.2" step of Silberger 1979, proof of Corollary
 4.5.11 (printed pp.189–190). There the top layer of the character quotient is
 compared with the exponents of the source along finer parabolics.

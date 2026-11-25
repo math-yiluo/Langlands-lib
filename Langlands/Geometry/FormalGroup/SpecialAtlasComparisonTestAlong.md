@@ -1,6 +1,6 @@
 # Actual test comparisons over supplied target scalars
 
-This internal unit transports an actual special-atlas test comparison through
+This module transports an actual special-atlas test comparison through
 coefficient extension to an independently supplied target scalar structure.
 `baseChangeReAlgebraOriginalTestIso` uses the actual supplied source coefficient
 chart isomorphism, the original actual test comparison on the restricted test

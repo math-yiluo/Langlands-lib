@@ -1,7 +1,5 @@
 # Binary quaternion product action
 
-Authors: Worker 124.
-
 This internal construction gives an actual homomorphism into binary matrix
 units, its exact kernel on every coefficient ring, and preservation of the
 quaternionic hyperbolic quadratic class. It derives these results by matrix
@@ -58,7 +56,7 @@ conjugation identity supplies `normOne_sandwich`, and
 quadratic class on every commutative coefficient algebra, including
 nonreduced ones.
 
-This unit constructs homomorphisms of the concrete groups on coefficient
-algebras. It does not yet construct the resulting group-scheme morphism,
+This module constructs homomorphisms of the concrete groups on coefficient
+algebras. It does not construct the resulting group-scheme morphism,
 prove that it is a central isogeny, identify it with a supplied spin cover,
 or assert elementary generation in that cover.

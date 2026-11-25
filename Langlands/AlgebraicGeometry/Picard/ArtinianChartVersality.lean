@@ -150,6 +150,7 @@ lemma reduction_residue :
   apply Over.OverMorphism.ext
   exact Spec.map_id _
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- A pointed deformation determines its exact residue fibre point, including
 the originally specified reduction isomorphism. -/
 def residuePoint (A : ArtinianTest k K)

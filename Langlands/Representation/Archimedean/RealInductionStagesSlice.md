@@ -6,7 +6,7 @@ Module: `Langlands.Representation.Archimedean.RealInductionStagesSlice`.
 
 This module is internal infrastructure for the proof of
 `Langlands.Archimedean.RealAdjacentFiltrationInStagesStatement` (induction in stages of adjacent
-filtrations, Task 7068). Let `a + r ≤ n`. The module embeds `GL_r(ℝ)` into `GL_n(ℝ)` as the
+filtrations). Let `a + r ≤ n`. The module embeds `GL_r(ℝ)` into `GL_n(ℝ)` as the
 middle diagonal block
 
 `ι(h) = diag(1_a, h, 1_(n-a-r))`.

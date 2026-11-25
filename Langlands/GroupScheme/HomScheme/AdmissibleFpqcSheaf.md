@@ -1,7 +1,5 @@
 # Fpqc descent of actual closed torus subgroups
 
-Author: Worker 668.
-
 The small admissible presheaf assigns to a test scheme the actual
 all-test subgroup functors represented by closed relative tori in the
 pullback of the given group. It satisfies the sheaf condition for any

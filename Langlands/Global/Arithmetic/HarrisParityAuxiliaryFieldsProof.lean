@@ -43,7 +43,7 @@ private lemma prime_nonsquare_of_unramified {M : Type u} [Field M] [NumberField 
     exact P.intValuation_singleton (Nat.cast_ne_zero.mpr q.2.ne_zero) hspan
   have hQ : Q.1.valuation M (q.val : M) = WithZero.exp (-1) := by
     have he := valuation_liesOver M P Q.1 (q.val : ℚ)
-    rw [Ideal.ramificationIdx'_eq_ramificationIdx _ _ P.ne_bot, h _ Q.2,
+    rw [h _ Q.2,
       pow_one, hv, map_natCast] at he
     exact he.symm
   intro hs

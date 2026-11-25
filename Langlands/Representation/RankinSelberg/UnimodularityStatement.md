@@ -1,6 +1,6 @@
 # Intrinsic all-rank Haar unimodularity obligations
 
-Worker 114 states two propositions in `Langlands.RankinSelberg`:
+This module states two propositions in `Langlands.RankinSelberg`:
 `GeneralLinearHaarRightInvariantStatement` and
 `UnipotentHaarRightInvariantStatement`. They are independent proof targets
 for the existing normalized left Haar measures. This module supplies the
@@ -59,5 +59,8 @@ exact uniqueness for the fixed ambient and subgroup Haar measures.
 [QuotientHaarExistence](QuotientHaarExistence.md) specializes this construction
 to prove `QuotientHaarExistenceStatement F T n` for every p-adic field `F`
 and supplied `TopologicalData T`. This file remains a statement module; those
-companion results establish measure existence and invariance, while the three
-JPSS analytic targets in [AnalyticStatement](AnalyticStatement.md) remain open.
+companion results establish measure existence and invariance. The three
+JPSS analytic targets in [AnalyticStatement](AnalyticStatement.md) are proved
+separately, as `equalRankAnalytic`, `unequalRankAnalytic` and
+`unequalRankCommonGenerator` (modules `EqualRankAnalyticProof`,
+`UnequalRankAnalyticProof` and `UnequalRankCommonGeneratorProof`).

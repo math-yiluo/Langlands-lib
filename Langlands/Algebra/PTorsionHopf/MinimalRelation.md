@@ -1,11 +1,11 @@
 # Minimal relations among primitive elements are additive
 
-Author: Worker 1519, as internal infrastructure for the proof of
+Internal infrastructure for the proof of
 `Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`.
 
 Provenance: internal. The statement that a minimal-degree element of the kernel of
 `k[Y₁, …, Yₛ] → A`, `Yᵢ ↦ yᵢ` with all `yᵢ` primitive, is an additive polynomial is a
-standard observation about Hopf ideals; the formal argument is the author's own, and no
+standard observation about Hopf ideals; the formal argument is the Library's own, and no
 source statement is translated.
 
 Throughout `k` is a field and polynomials are `MvPolynomial (Fin s) k`.

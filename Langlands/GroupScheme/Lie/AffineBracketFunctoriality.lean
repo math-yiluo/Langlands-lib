@@ -21,7 +21,7 @@ attribute [local instance 100] LieRing.ofAssociativeRing
 variable {R : CommRingCat.{u}} {G H : GroupScheme (Spec R)}
     [IsAffineHom G.X.hom] [IsAffineHom H.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 local instance : IsAffine H.X.left := isAffine_of_isAffineHom H.X.hom
 
 set_option backward.isDefEq.respectTransparency false in

@@ -1,7 +1,5 @@
 # Actual compact equal-rank coefficient tests
 
-Author: Worker 408.
-
 This internal module defines `HasEqualRankCompactTest`: actual vectors in the
 two specified coefficient images, a Schwartz--Bruhat function, a compact
 mirabolic set containing the identity, and a compact open ambient subgroup

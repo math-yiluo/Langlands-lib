@@ -61,9 +61,8 @@ The three `let` bindings are local abbreviations only; they introduce no
 data or hypotheses. The module imports `Langlands.AbelianScheme.Basic`,
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`,
 `Langlands.AlgebraicGeometry.Picard.LineBundlePullback` and
-`Mathlib.FieldTheory.IsAlgClosed.Basic`. `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiles it with no errors or
-warnings and reports `statement_returns_prop: true`.
+`Mathlib.FieldTheory.IsAlgClosed.Basic`. `lean_check` compiles it with no
+errors or warnings and reports `statement_returns_prop: true`.
 
 ## Library objects used
 
@@ -86,8 +85,7 @@ certificate or axiom.
   Here `relativeGlobalSections f` is actual module pushforward along `f`
   followed by `moduleSpecΓFunctor`, so it is sheaf cohomology `Hⁿ(X, -)`
   of actual `𝒪_X`-modules, viewed as an `R`-module. The definitions are in
-  `Langlands.AlgebraicGeometry.Modules.DerivedSections` (publication
-  `ab5e84d4-a3a6-4da0-af4e-7c3e0eb7e83b`). That module proves no geometric
+  `Langlands.AlgebraicGeometry.Modules.DerivedSections`. That module proves no geometric
   vanishing, Künneth, Leray or base-change theorem.
 - `IsZero M` in `ModuleCat K` says that the module is zero. Fibre
   cohomology is taken over `A.X.hom` and total cohomology over `sZ`, both
@@ -103,7 +101,7 @@ retained as
 `literature/Edixhoven, van der Geer, Moonen - Abelian Varieties (preliminary version of the first chapters).pdf`.
 Printed page numbers are PDF page numbers minus four. PDF pp.109–110
 (printed pp.105–106) were read on 2026-10-29. No errata note for this
-source is present in the current Library notes. The Library source map
+source is present in the Library notes. The Library source map
 `notes/abelian-schemes/relative-picard-source-map.md` mentions
 (7.21)–(7.22) but records no correction.
 
@@ -197,13 +195,11 @@ so `Rp_{1,*}Q = 0`. Finally `RΓ(Z, Q) ≅ RΓ(A, Rp_{1,*}Q) = 0`. This is the
 composition of derived functors behind the source's first Leray spectral
 sequence. It is the conclusion.
 
-This is the intended route. Alternative valid proofs are allowed. The
-argument shows that the statement holds under the stated hypotheses. It
-also explains why it needs nothing beyond `K`, `A`, `Q` and the fibrewise
-hypothesis. Its steps are not Library results. In particular, the Library
-currently has no proved cohomology and base change, perfect direct image,
-jump-locus or Leray comparison for `relativeCohomology`. A proof must
-supply them.
+This is the intended route. The argument shows that the statement holds
+under the stated hypotheses. It also explains why it needs nothing beyond
+`K`, `A`, `Q` and the fibrewise hypothesis. The Library proves the statement
+as `algClosedFieldSquareFirstProjectionAcyclicity` (module
+`SquareFirstProjectionAcyclicityProof`).
 
 ## Scope
 
@@ -219,20 +215,19 @@ certificate, dual or Picard scheme, projectivity, or assumed vanishing of
 higher direct images. It makes no claim about the second projection, the
 specific bundle `𝒦 = Λ(L) ⊗ p_2^*M^{-1}`, Lemma (7.19), or the second
 spectral sequence of the source proof. A second-projection statement with
-the fibre embedding `A × {x}` is the separate task
-`b8ed3cf9-a1d5-4db4-b854-fc68706c85b2`.
+the fibre embedding `A × {x}` is separate:
+`AlgClosedFieldSquareSecondProjectionFiniteSupportDetectionStatement`
+(module `SquareSecondProjectionFiniteSupportDetectionStatement`).
 
-## Role and authorship
+## Role
 
-This is a focused prerequisite of Worker 516's exact proof
-`0d978728-03a8-4f05-b45c-8ec83a017647` of
-`Langlands.AbelianScheme.AlgClosedFieldTranslationDifferenceLiftingStatement`.
+This is a focused prerequisite of the proof of
+`Langlands.AbelianScheme.AlgClosedFieldTranslationDifferenceLiftingStatement`
+(module `AlgClosedFieldTranslationDifferenceLiftingProof`).
 The Markdown of that parent statement lists, as proof obligation 4,
 Fact (7.20) together with the Leray spectral sequences. This statement
 isolates the part of that obligation used for the first projection. The
 parent statement and its proof are not used to justify this statement.
 
-Worker 950 implemented this pair, following the focused specification
-written for task `8de55aea-20cf-492a-a5bf-2f169e96642a`. The fibre
-embedding follows the published `smoothFamilyPointMap` in
+The fibre embedding follows the published `smoothFamilyPointMap` in
 `Langlands.AlgebraicGeometry.Picard.SmoothFamilyAlgebraicTriviality`.

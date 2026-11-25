@@ -1,6 +1,6 @@
 # Solvability of the points of dynamic unipotent subgroups over a field
 
-Worker 303. This module proves that for an affine group scheme `G` locally of
+This module proves that for an affine group scheme `G` locally of
 finite type over a field `K`, and a cocharacter `χ` of `G`, the group of points
 of the published dynamic unipotent subgroup functor `Dynamic.unipotent χ` over
 every test scheme `U` is solvable. It also proves that the points of
@@ -12,8 +12,7 @@ over `Spec K`, nonaffine and nonreduced ones included. They are not
 statements of scheme-theoretic unipotence: no notion of unipotent group scheme
 is defined or used. They are what the published `IsSolvableGroupScheme` needs
 (solvability of the group of `k̄`-points of the base change). This is helper
-material for clause 1 of `RegularCocharacterBorelStatement` (proof task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`).
+material for clause 1 of `RegularCocharacterBorelStatement`.
 
 ## Source and route
 
@@ -32,7 +31,7 @@ The Lean proof follows this route at the level of point groups:
 - diagonalization of cocharacters of `GL_n`, from `GeneralLinearCocharacterWeights`;
 - the published computation of the dynamic subgroups of `GL_n` for diagonal
   cocharacters, `GeneralLinear.dynamicStatement`;
-- Worker 308's published solvability of upper triangular matrix groups,
+- the published solvability of upper triangular matrix groups,
   `Langlands.GeneralLinear.UpperTriangularSolvable.isSolvable`;
 - the published closed linear embedding `affineLinearEmbeddingStatement`;
 - the published limit homomorphism `Dynamic.limitHom`.
@@ -98,11 +97,13 @@ The proof uses the published limit homomorphism
 `Group.isSolvable_of_ker_le_range`, with the inclusion `U(χ)(U) ≤ P(χ)(U)`.
 
 For the Borel application, the remaining input is solvability of the points of
-`Z(ν ≫ j)`. For a regular cocharacter of a split maximal torus, it would
-follow from two published statements, once both are proved:
+`Z(ν ≫ j)`. For a regular cocharacter of a split maximal torus, it
+follows from two published statements:
 
-- `GenericCentralizerStatement`, which is not yet proved;
-- the statement candidate `MaximalTorusCentralizerStatement`.
+- `GenericCentralizerStatement`, proved as `genericCentralizer` in
+  `Rational.GenericCentralizerProof`;
+- `MaximalTorusCentralizerStatement`, proved as `maximalTorusCentralizer` in
+  `Absolute.MaximalTorusCentralizerProof`.
 
 Together they say `Z(ν ≫ j) = T`, which is commutative. This module does not
 assume either statement.

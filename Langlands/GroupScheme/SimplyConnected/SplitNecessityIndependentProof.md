@@ -1,6 +1,5 @@
 # Simple connectedness forces integral coroot generation, via rank-one central covers
 
-Worker 915 and Worker 151, Task 7564.
 `Langlands.GroupScheme.splitSimplyConnectedCorootSpanIndependent` proves the
 published proposition
 `Langlands.GroupScheme.SplitSimplyConnectedCorootSpanStatement.{u}` for every
@@ -29,7 +28,7 @@ splitSimplyConnectedCorootSpan_of_corootSpanLineInputs
     splitRootLieLine_independent⟩
 ```
 
-`splitSimplyConnectedCorootSpan_of_corootSpanLineInputs` is Worker 151's
+`splitSimplyConnectedCorootSpan_of_corootSpanLineInputs` is the
 published conditional reduction. It derives the target from the bundle
 `SplitCorootSpanLineInputs.{u}`, the conjunction of `RootDatumExistenceStatement.{u}`,
 `SplitRankOneRootCellStatement.{u}` and `SplitRootLieLineStatement.{u}`.
@@ -37,15 +36,15 @@ published conditional reduction. It derives the target from the bundle
 The three components of the bundle are discharged by three proofs of these
 unchanged published propositions:
 
-1. `rootDatumExistenceIndependent : RootDatumExistenceStatement.{u}` (Task
-   7458) composes `rankOneCentralCover`,
+1. `rootDatumExistenceIndependent : RootDatumExistenceStatement.{u}`
+   composes `rankOneCentralCover`,
    `rankOneRootReducedness_of_centralCover` and
    `rootDatumExistence_of_rankOneReducedness`.
    [Root-datum existence](../Reductive/RootDatumExistenceIndependent.md)
 2. `splitRankOneRootCellIndependent : SplitRankOneRootCellStatement.{u}`
-   (Task 7509) is `splitRankOneRootCell_of_centralCover rankOneCentralCover`.
+   is `splitRankOneRootCell_of_centralCover rankOneCentralCover`.
    [Rank-one root cell](../Reductive/SplitRankOneRootCellIndependentProof.md)
-3. `splitRootLieLine_independent : SplitRootLieLineStatement.{u}` (Task 7510)
+3. `splitRootLieLine_independent : SplitRootLieLineStatement.{u}`
    is `splitRootLieLine_of_centralCover rankOneCentralCover`.
    [Root Lie lines](../Reductive/SplitRootLieLineIndependentProof.md)
 
@@ -85,7 +84,7 @@ The reduction itself proceeds as follows, with the details in its Markdown.
 
 ## Independence
 
-The task excludes the following: `ParabolicDynamicStatement`,
+The following are excluded: `ParabolicDynamicStatement`,
 `RegularCocharacterBorelStatement`, `RankOneSolvableObstructionStatement`,
 `RankOneBorelDynamicStatement` and `RankOnePositiveRootUniquenessStatement`;
 their proofs; the regular-cocharacter/Borel route and results downstream of
@@ -131,7 +130,7 @@ reached none of them.
   `Absolute.RegularCocharacterWeights` (2 constants, `weightSpace_disjoint`
   and `weightSpace_le_weightSpace_cocharacter`). These are generic lemmas on
   solvability of points and weight spaces. Neither uses a regular
-  cocharacter Borel subgroup. The same constants are in the accepted
+  cocharacter Borel subgroup. The same constants are in the
   inventories of the root-datum and root-cell proofs.
 - Controls: the same filter catches the old proofs. The closure of the
   existing `splitSimplyConnectedCorootSpan` reaches 78 excluded constants,

@@ -1,7 +1,5 @@
 # Semisimple normal complements over an arbitrary field: proof
 
-Worker 4955 assembled this proof.
-
 `Langlands.GroupScheme.semisimpleNormalIsogenyComplement` proves the existing
 `Langlands.GroupScheme.SemisimpleNormalIsogenyComplementStatement.{u}` exactly,
 for an arbitrary universe `u`. The theorem has no further hypotheses. The
@@ -76,16 +74,15 @@ lemma, and no structural premise remains.
    `semisimpleAlmostSimpleGeneration_of_actualRoots`
    (`Reductive/AlmostSimpleGenerationReduction.lean`).
 
-`lean_check` of `Langlands.GroupScheme.Reductive.NormalIsogenyComplementProof`
-in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` reports no errors or
-warnings. The theorem depends only on the axioms `propext`,
+Compiling `Langlands.GroupScheme.Reductive.NormalIsogenyComplementProof`
+reports no errors or warnings. The theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
 The second step's composite term for
 `SemisimpleAlmostSimpleGenerationStatement` is the same as the one in the
-separately submitted proof `semisimpleAlmostSimpleGeneration` (candidate
-`30d0d06b-46d4-4595-a4fd-131c13451669`). That module is not yet in the
-Library, so this proof repeats the term rather than importing it.
+theorem `semisimpleAlmostSimpleGeneration` (module
+`AlmostSimpleGenerationProof`). This proof repeats the term rather than
+importing that module.
 
 ## Provenance
 

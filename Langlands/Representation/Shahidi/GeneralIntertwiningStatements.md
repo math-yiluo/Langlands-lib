@@ -18,17 +18,17 @@ value. On printed page 72, equation (0.1) is
 
 The paragraph following it asserts convergence for sufficiently large real
 part of `s` and continuation rational in `q^(-s)`. The source cites its
-references [15, 19, 22] for convergence; this unit does not formalize those
+references [15, 19, 22] for convergence; this module does not formalize those
 proofs.
 
-Worker 99 adapted Worker 11's published p-adic `IntertwiningStatements`
+This module adapts the published p-adic `IntertwiningStatements`
 formulation to the general-field definitions in `GeneralIntertwiningFamilies`
 and `IntertwiningInduced`. The compact-picture and scalar interpretations are
 derived choices: the source does not specify a family of sections identifying
 the induced spaces as `s` varies. The normalized induction uses the existing
 factor twists `|det|^(s/2)` and `|det|^(-s/2)`. The inherited printed-exponent
 issue and its source-consistency rationale remain documented in `Induction`;
-this unit makes no new claim of a published erratum.
+this module makes no new claim of a published erratum.
 
 ## Parameters and actual objects
 
@@ -100,7 +100,7 @@ this scalar with the smooth-dual pairing of the inverse tensor flip of the
 actual target value of `intertwiningInduced`, under its displayed Levi
 cofinality and Haar modulus-scaling conditions. Neither condition is assumed
 by the new analytic statements. Deriving them for this normalized general
-local-field setting remains a separate prerequisite for that operator
+local-field setting is a separate prerequisite for that operator
 reading; no such derivation is claimed here.
 
 The restriction to `k` in the integral maximal compact is intentional.

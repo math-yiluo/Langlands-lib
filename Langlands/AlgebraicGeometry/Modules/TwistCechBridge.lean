@@ -44,10 +44,10 @@ def tensorSectionsAffHom (F M : X.Modules) :
         ((congrArg₂ (· + ·) hs ht).trans ((map_add _ _ _).symm.trans
           (congrArg _ (map_add _ s t).symm))))
 
-lemma tensorSectionsAffHom_bijective {F M : X.Modules} (hF : Scheme.Modules.IsInvertible F)
-    (hM : Scheme.Modules.IsInvertible M) (U : X.affineOpens) :
+lemma tensorSectionsAffHom_bijective {F M : X.Modules} (hF : Scheme.Modules.IsInvertibleFLT F)
+    (hM : Scheme.Modules.IsInvertibleFLT M) (U : X.affineOpens) :
     Function.Bijective ((tensorSectionsAffHom (q := q) F M).app U) :=
-  hF.bijective_lift_tensorSectionsBilin_monoidalV2 hM U
+  Scheme.Modules.IsInvertible.bijective_lift_tensorSectionsBilin_monoidalV2 hF hM U
 
 /-- Tensoring a natural family of section maps `G(U) → H(U)` on the right gives a morphism of FLT
 presheaf tensor products on affine opens. -/

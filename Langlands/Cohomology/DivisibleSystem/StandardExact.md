@@ -1,6 +1,6 @@
 # Exactness of the standard resolution
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.StandardResolution`
+Built on `Langlands.Cohomology.DivisibleSystem.StandardResolution`
 (the iterates `standardPow P n`, the differentials `standardDifferential P ε n`,
 the resolution functor `standardResolution P ε`, its augmentation
 `standardResolutionAugmentation P ε`, the systems of resolutions and the
@@ -149,9 +149,9 @@ augmentation of the Total module is a quasi-isomorphism is not proved here.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Worker 61
-read (2.4), (2.5) and the sentence "be the canonical free resolution of
-`M_m^{q,H}` obtained via (2.4)" in the scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. (2.4), (2.5)
+and the sentence "be the canonical free resolution of
+`M_m^{q,H}` obtained via (2.4)" were read in the scanned original.
 
 1. What is from the source. Harris states that (2.5) is a resolution of
    `M_m^{q,H}`, that is, exact with augmentation onto `M_m^{q,H}`. He does

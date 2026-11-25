@@ -185,8 +185,8 @@ theorem coroot_eq_corootChar {J : Type u} [Finite J]
   have hpq : p ≠ q := by
     rintro rfl
     exact P.ne_zero j (hj.trans (rootChar_self p))
-  have : IsAddTorsionFree (characterLattice 𝔻) :=
-    Function.Injective.isAddTorsionFree
+  have : HasUniqueDiv (characterLattice 𝔻) :=
+    Function.Injective.hasUniqueDiv
       (GeneralLinear.characterCoordEquiv (Fin n) k).toLinearMap.toAddMonoidHom
       (GeneralLinear.characterCoordEquiv (Fin n) k).injective
   let g : Module.Dual ℤ (characterLattice 𝔻) := P.toLinearMap.flip (corootChar n k p q)

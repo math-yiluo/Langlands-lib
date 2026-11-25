@@ -49,8 +49,9 @@ and the pairing-kernel term is central, which gives the displayed order.
 The ambient group and residual elements need not commute. No topology or
 compactness hypothesis is needed.
 
-The proof is adapted from Worker 349's published `finiteChamberLattice`
-and `finiteChamberCartanCover`: their standard-vector existence step is
+The proof is adapted from the published `finiteChamberLattice`
+(`Langlands.Algebra.FiniteChamberLatticeProof`) and `finiteChamberCartanCover`
+(`Langlands.Group.FiniteChamberCartanCoverProof`): their standard-vector existence step is
 replaced by an explicit generator argument, and the Euclidean coordinates
 and remainder are exposed as definitions. The generic algebraic argument
 is derived internally, with no additional literature claim. The original

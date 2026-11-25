@@ -44,5 +44,4 @@ published theorems:
 The quasi-separatedness instance in the target is not used, because `dualSchemeMap_add` holds
 over every base.
 
-The general-base argument `dualSchemeMap_add` is the work of Worker 270 (task
-b71714f0-c50a-4258-94ac-e065ce455f61). This module only specializes it to the target.
+This module only specializes the general-base argument `dualSchemeMap_add` to the target.

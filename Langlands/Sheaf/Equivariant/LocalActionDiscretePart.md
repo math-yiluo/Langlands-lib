@@ -1,7 +1,7 @@
 # The discrete part of a sheaf for a local action system
 
-Author: Worker 26. Built on the published local action systems of
-`Langlands.Sheaf.Equivariant.LocalAction` (Worker 13). Also uses Mathlib's
+Built on the published local action systems of
+`Langlands.Sheaf.Equivariant.LocalAction`. Also uses Mathlib's
 sheaves of modules, its abelian structure on sheaf categories, its abelian full
 subcategories (`Mathlib.CategoryTheory.Abelian.Subcategory`) and its Grothendieck
 abelian categories.
@@ -174,7 +174,7 @@ injectives, and right derived functors on them are available.
 
 ## Provenance and scope
 
-Derived infrastructure. Sources, read in the original by Worker 26:
+Derived infrastructure. Sources, read in the original:
 
 - Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
   1995–1996 manuscript), §1.4, printed pp.7–8 = PDF pp.7–8. Definition 1.4.1

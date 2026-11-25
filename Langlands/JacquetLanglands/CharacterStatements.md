@@ -122,9 +122,12 @@ representation `ρ` equals the constant `c` times the Haar measure near
 
 ## Scope
 
-The two propositions are statements for later proof tasks; nothing in
-the Library assumes them. They are the analytic input that objective
-item 3 of Task 5443 asks to state separately from the relation. The
+The two propositions are stated here without proof; nothing in
+the Library assumes them. In characteristic zero the first follows from
+Harish-Chandra's local integrability statement
+(`CharacterLocalIntegrabilityStatement.hasRegularSemisimpleCharacterValues`,
+module `BaseChange.CharacterLocalIntegrabilityStatement`). They are the
+analytic input, stated separately from the relation. The
 relation itself keeps the existence of values at corresponding points
 as part of its condition, so it is meaningful without them, and the
 two equivalences above show that it agrees with the source identity

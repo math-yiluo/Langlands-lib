@@ -1,6 +1,6 @@
 # Extension of chart covers along open immersions of bases
 
-Worker 1412. This is an internal construction for the open-restriction step of
+This is an internal construction for the open-restriction step of
 SGA 3, Exposé XI, proof of Theorem 4.1, registered source
 `sga3-exposes-xi-xii-xiv-gille-polo-2008`, `Expo11.pdf`, PDF page 21. That
 proof reduces to an affine base. Here charts of the restrictions of `G` to the

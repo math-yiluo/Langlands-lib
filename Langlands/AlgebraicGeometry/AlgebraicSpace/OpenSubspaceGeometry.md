@@ -1,7 +1,5 @@
 # Open subspaces and compactness of finite scheme sources
 
-Author: Worker 133.
-
 This internal construction packages existing representable-open subfunctor
 results as actual algebraic spaces and proves two geometric transport facts
 needed by finite-surjective AF descent. It introduces no axioms or descent

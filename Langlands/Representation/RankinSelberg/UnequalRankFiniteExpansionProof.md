@@ -1,7 +1,5 @@
 # Finite Schwartz expansion from uniform compact support
 
-Author: Worker 108.
-
 The theorem `Langlands.RankinSelberg.unequalRankFiniteExpansion` proves exactly
 `Langlands.RankinSelberg.UnequalRankFiniteExpansionStatement.{uF,uV} F T n j k`.
 It retains every prime, the supplied p-adic topological data, independent field
@@ -65,11 +63,10 @@ functions are indicators of the corresponding nonzero fibers, with a sample
 chosen in each fiber. These fibers are unions of `U`-cosets; the implementation
 does not require them to be individual cosets. The finite fibers partition the
 nonzero support, and all summands vanish where the entire family is zero.
-This is the alternative finite-fiber proof permitted by the task.
+This is an alternative, finite-fiber proof.
 
-The generic imported construction was authored by Worker 180 and Worker 451.
-Their module is used by Lean import; no unreviewed draft proof is copied into
-this module. The final theorem has no extra expansion hypothesis. It retains
+The generic construction is used by Lean import of its module; its proof is
+not copied into this module. The final theorem has no extra expansion hypothesis. It retains
 the target's nonzero functional and Whittaker-type assumptions, although the
 implemented argument only needs smoothness from the latter. The zero-row,
 zero-support and `m = 0` cases require no added inhabitance hypotheses. No
@@ -80,8 +77,8 @@ or almost-everywhere equality enters the conclusion.
 
 The original source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 *Rankin–Selberg Convolutions*, American Journal of Mathematics 105 (1983),
-367–464, registered as `jpss-1983-rankin-selberg`. Worker 108 read printed
-pp.385–386 and 393–394 visually. The retained scan is
+367–464, registered as `jpss-1983-rankin-selberg`. Printed
+pp.385–386 and 393–394 were read visually. The retained scan is
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Section 2.1, p.386, equation (3) gives the coefficient convention and stability
@@ -89,8 +86,7 @@ under right translations. The unequal-rank argument on p.393 uses compact
 rectangular support independent of `g` and a finite reduction; p.394,
 equation (7) retains coefficients of the original larger representation.
 
-This pointwise interface was specified by Worker 329 and stated in the
-Library by Worker 180. It is derived from the original argument, rather than
+This pointwise interface is derived from the original argument, rather than
 a separately displayed source theorem. The elementary matrix and topology
 lemmas are internal supporting results; the imported nonzero-fiber argument
 is an elementary alternative to enumerating compact open cosets. No registered
@@ -100,10 +96,7 @@ proof's scope.
 
 ## Development validation
 
-The complete module passed a Lake build and declaration inspection in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, check
-`effb9c35-ee2b-49bb-a879-4fc23afa1d32`, with zero errors and warnings.
+The complete module passed a Lake build and declaration inspection with zero
+errors and warnings.
 Inspection reports a theorem with independent universe parameters `uF`, `uV`
 and only `propext`, `Classical.choice`, and `Quot.sound` as assumptions.
-This development check is separate from independent semantic review and the
-submission's exact-target validation.

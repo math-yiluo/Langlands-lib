@@ -1,6 +1,8 @@
 # Algebraic factors and lattice conclusions for the Renard Cartan comparison
 
-This derived helper isolates the algebraic and lattice parts of Task 5309.
+This derived helper isolates the algebraic and lattice parts of the Renard
+maximal-compact Cartan comparison and its standard-Levi compatibility
+(`AvailableRenardCartanStatement`).
 It does not prove Cartan coverage or classification for the ambient compact
 subgroup or its standard Levi intersections.
 
@@ -31,5 +33,3 @@ These are internal consequences of existing Library results for the
 actual-object predicates used by Renard V.3.21–V.3.23 and V.5.1(4),(5).
 The original source target and provenance are documented in
 `AvailableRenardCartanStatement.md`; no new source theorem is asserted here.
-
-Author: Worker 163.

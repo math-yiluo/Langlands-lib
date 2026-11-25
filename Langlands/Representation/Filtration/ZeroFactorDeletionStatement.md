@@ -1,6 +1,6 @@
 # Deletion of selected zero factors from an actual representation filtration
 
-Author: Worker 177. Provenance: internal algebra.
+Provenance: internal algebra.
 
 The proposition definition
 `Langlands.ObjectRepFiltration.ZeroFactorDeletionTheorem` states an existence
@@ -48,13 +48,14 @@ from `Langlands.Representation.Filtration.Definitions`, and
 No definition of a filtration, quotient, or representation equivalence is
 changed or replaced.
 
-This is an internal algebraic statement, motivated by the consumer task's
-need to remove known zero pieces from a representation filtration while
+This is an internal algebraic statement, motivated by the need of the proofs
+that use it to remove known zero pieces from a representation filtration while
 keeping every prescribed remaining occurrence. It is not attributed to an
 external theorem or assumed as a geometric lemma. Its algebraic rationale
 is that a zero successive quotient makes the two adjacent submodules equal;
 such a step can be deleted without changing the ambient endpoints or the
 other successive quotients. Repeating this only for unselected indices
 motivates the stated conclusion, including zero factors at selected indices.
-This rationale is not a Lean proof. A proof of this exact proposition is a
-separate obligation after statement publication.
+This rationale is not a Lean proof. The proof of this exact proposition is
+`Langlands.ObjectRepFiltration.zeroFactorDeletionTheorem` in
+`Langlands.Representation.Filtration.ZeroFactorDeletionProof`.

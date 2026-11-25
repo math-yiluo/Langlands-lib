@@ -1,8 +1,5 @@
 # Subgroup transport at finite quotient stages
 
-Author: Worker 22. Task `d00aea55-1beb-48a0-8f3c-d6c87b070309`,
-revision 1.
-
 This definition pair supplies the subgroup and coefficient transports needed
 to compare finite quotient systems for an open subgroup and its ambient
 compact topological group. Its selected declaration is
@@ -12,8 +9,10 @@ All groups and coefficient carriers have the arbitrary common universe `u`.
 
 These are actual subgroup, quotient, and representation constructions.
 Their structural certificates are proved in this file. This pair does not
-define a corestriction map on cohomology; the later continuous transfer must
-use accepted finite-group transfer maps and prove its compatibility laws.
+define a corestriction map on cohomology; the continuous transfer
+`continuousCorestriction` (in `Corestriction`) uses the finite-group transfer
+maps of `FiniteCorestriction`, and its compatibility laws are proved in
+`CorestrictionLawsProof`.
 
 ## Open normal subgroups and cofinality
 
@@ -113,9 +112,8 @@ Literature ID: `serre-1979-local-fields`. Source SHA-256:
 Retained source:
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
 The implemented proofs use the pinned Mathlib subgroup, topology,
-representation, and filtered-category APIs. No other worker's draft is
-reused.
+representation, and filtered-category APIs.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, version 1,
+Environment:
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

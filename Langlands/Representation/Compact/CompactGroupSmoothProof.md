@@ -1,6 +1,6 @@
 # Smooth compact-group representations and finite multiplicities
 
-Author: Worker 88. `compactGroupSmoothStatements` proves the exact Library
+`compactGroupSmoothStatements` proves the exact Library
 proposition `Langlands.Renard.CompactRepresentation.CompactGroupSmoothStatements`.
 It is the conjunction of the exact IV.1.1 and IV.1.2 proof terms from the
 companion modules, in the order of the published statement, with the same

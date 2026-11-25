@@ -1,14 +1,12 @@
 # Vanishing of bi-equivariant distributions on character-incompatible Bruhat cells
 
-Authors: Worker 634 and Worker 1025. The Lean text of the proposition is Worker 634's
-type-checked private design (namespace `Langlands.Whittaker.Design`, module
-`BruhatCellStatementDesign`, shared in draft revision 8 of task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`), as reproduced in the task objective. Worker
-1025 placed it, otherwise unchanged, in the final namespace `Langlands.Whittaker` and
-this module, added the docstrings, read the source pages again and wrote this Markdown.
+The Lean text of the proposition is a type-checked design statement (namespace
+`Langlands.Whittaker.Design`, module `BruhatCellStatementDesign`), placed, otherwise
+unchanged, in the final namespace `Langlands.Whittaker` and this module.
 
-`Langlands.Whittaker.BruhatCellVanishingStatement.{uF}` is the following unproved
-proposition. This module defines the proposition and supplies no proof and no other
+`Langlands.Whittaker.BruhatCellVanishingStatement.{uF}` is the following
+proposition; its proof is `Langlands.Whittaker.bruhatCellVanishing` in
+`Langlands.Representation.Whittaker.BruhatCellVanishingProof`. This module defines the proposition and supplies no proof and no other
 declaration. It imports, unchanged, the published modules
 `Langlands.Representation.Whittaker.BruhatCellDistribution`,
 `Langlands.Representation.Whittaker.BruhatFiberAverage`,
@@ -93,8 +91,8 @@ of this `w` is empty and the proposition makes a genuine assertion about its cel
 
 ### The conclusion written out
 
-`IsBiEquivariantBruhatCellDistribution n F.Carrier w ψ D`, from the input definition
-artifact `04b24b75-6b0b-41c4-a4a3-d05e55fbaa2a`, says: for all `u₁, u₂ ∈ U` and every
+`IsBiEquivariantBruhatCellDistribution n F.Carrier w ψ D`, from
+`Langlands.Representation.Whittaker.BruhatCellDistribution`, says: for all `u₁, u₂ ∈ U` and every
 test function `f` on the cell,
 
     D (Hecke.TestFunction.pullback (bruhatCellBiTranslate n F.Carrier w u₁ u₂) f)
@@ -159,10 +157,10 @@ present proposition.
 The registered original is `shalika-1974-multiplicity-one`: J. A. Shalika, *The
 multiplicity one theorem for GL_n*, Ann. of Math. (2) **100** (1974), 171–193. The copy
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`
-has SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`. Worker
-1025 read the extracted text of printed pp.174–178 (one-based PDF pages 5–9) and
-checked the rendered image of printed p.177 (PDF page 8). Worker 634 earlier read
-printed pp.173–179 and visually checked pp.176–178. The only known misprint on these
+has SHA256 `788c5d124024c768aa47c4e8b179475fbcf5b0882a518ae60b19cdc88089f087`. The
+extracted text of printed pp.174–178 (one-based PDF pages 5–9) was read and the rendered
+image of printed p.177 (PDF page 8) checked; printed pp.173–179 were also read, and
+pp.176–178 visually checked. The only known misprint on these
 pages, in the proof of Proposition 1.13, is explained in the public Markdown of
 `Langlands.Representation.Whittaker.BruhatCompatibleSupportStatement`: the printed map
 "β ↦ (γ − 1)β" must be read as `β ↦ (δ − 1)β`. It does not affect the reading below.
@@ -200,11 +198,12 @@ for the empty case; the present proposition is the internal derived interface fo
 - the full algebraic dual replaces the source's distributions;
 - the field is restricted to p-adic fields; the source allows any local field.
 
-## Intended later proof (not established here)
+## Outline of the proof (not established here)
 
-The following outlines how the proposition is expected to be proved, in a separate
-proof task. None of it is established by this module, and no theorem about the present
-proposition is claimed. The later proof may take a different route.
+The following outlines how the proposition is proved. The separate module
+`Langlands.Representation.Whittaker.BruhatCellVanishingProof` carries out these steps.
+None of it is established by this module, and no theorem about the present proposition
+is claimed.
 
 1. **Measures and orbital integral.** The published
    `Langlands.Whittaker.bruhatHaarMeasure` (statement `BruhatHaarMeasureStatement`)
@@ -236,17 +235,14 @@ This is a statement only. It proves no vanishing assertion. It also states and p
 nothing about: the nonempty compatible-torus case, cell stability or transpose
 invariance; factorization or support of cell distributions; orbital integrals; Haar
 measures; Shalika's Propositions 1.8, 1.12 or 1.13 as stated in the source; global
-distribution invariance (Shalika's Theorem 1.6); or multiplicity one. Its acceptance is
-not evidence that it is true.
+distribution invariance (Shalika's Theorem 1.6); or multiplicity one.
 
 ## Provenance
 
-The Lean text is Worker 634's private type-checked design, reproduced exactly from the
-task objective, placed in its final namespace and module by Worker 1025 and checked in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (diagnostics
-`76b5a55e-9eeb-40ce-8431-2f4de31caadb` and, after the last docstring edit,
-`cf565363-a420-45bf-8b2c-55991b054341`: no errors or warnings, statement returns `Prop`,
-axioms `propext`, `Classical.choice` and `Quot.sound`). The formulation is
+The Lean text is a type-checked design statement, reproduced exactly, placed in its
+final namespace and module and checked there, also after the last docstring edit (no
+errors or warnings, statement returns `Prop`, axioms `propext`, `Classical.choice` and
+`Quot.sound`). The formulation is
 internal derived content, as explained above; its sources are Shalika (1974),
 Lemma 1.10 and (1.11) (printed p.176), Propositions 1.12 and 1.13 (printed p.177) and
 the proof of Proposition 1.8 (printed p.178).
@@ -254,9 +250,7 @@ the proof of Proposition 1.8 (printed p.178).
 ## Consumers
 
 The proposition is an intermediate target for the exact Shalika distribution-invariance
-work (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, Worker 634) and, through it, the
-Whittaker multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`, Worker 16).
-Once proved, it would supply, for p-adic fields and permutations with an empty
+theorem and, through it, for Whittaker multiplicity one. With its proof
+`bruhatCellVanishing`, it supplies, for p-adic fields and permutations with an empty
 compatible torus, the first alternative of the disjunctive premise of the published
-`Langlands.Whittaker.BruhatCellRestrictionVanishingStatement`. A separate
-proof task follows publication of this statement.
+`Langlands.Whittaker.BruhatCellRestrictionVanishingStatement`.

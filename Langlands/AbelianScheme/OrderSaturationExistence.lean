@@ -26,8 +26,8 @@ structure IntegralOrderModel (α : O →+* Rationalization.End A) where
   isIsogeny : IsIsogeny inverseData.hom
   etale : Etale (hom inverseData.hom)
   intertwines : ∀ x : O,
-    Rationalization.ofHom inverseData.hom ≫ Rationalization.ofEnd B (action x) =
-      α x ≫ Rationalization.ofHom inverseData.hom
+    Rationalization.ofHom inverseData.hom ≫ (Rationalization.ofEnd B (action x)).asHom =
+      (α x).asHom ≫ Rationalization.ofHom inverseData.hom
 
 /-- Construct an integral order model over a characteristic-zero field scheme whenever
 every finite subset of one fibre lies in an affine open of the original abelian scheme. -/

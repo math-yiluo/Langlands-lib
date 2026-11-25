@@ -1,8 +1,7 @@
 # Irreducibility of normalized induction of square-integrable blocks
 
-Author: Worker 452. The ordered rank adapter follows the existing
-`TemperedBlockUniquenessReduction` construction by Worker 346 and the
-corresponding adapter discussion with Worker 90.
+The ordered rank adapter follows the existing
+`TemperedBlockUniquenessReduction` construction.
 
 The theorem `Langlands.Classification.squareIntegrableBlockInductionIrreducibility`
 proves the unchanged published proposition
@@ -84,19 +83,15 @@ comparison, and name scans; it does not claim to reread all inherited proofs.
 General tempered-exponent lemmas in the closure are analytic inputs, not
 tempered block exhaustion.
 
-The product criterion's published proof records the operator rulings for its
-general derivative route and support-only terminal bound. Those rulings
-describe its permitted foundations; they provide no mathematical premise to
-this assembly. This proof calls only the final criterion, not its restricted
+The product criterion's published proof records the foundations of its
+general derivative route and support-only terminal bound. They provide no
+mathematical premise to this assembly. This proof calls only the final criterion, not its restricted
 length-two internal lemmas. The current nonlinkage proof incorporates the
 published extraction of `Segment.support_subset_of_base_shift` into
 `SegmentSupportContainment` and the shared scalar determinant-norm lemma;
 its theorem and conclusion are unchanged.
 
 Full-module development compilation and a Lake build with theorem inspection
-succeed with zero errors and warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Inspection reports exactly the
+succeed with zero errors and warnings. Inspection reports exactly the
 independent levels `uF,uV` and the axioms `propext`, `Classical.choice` and
-`Quot.sound`. These are development checks; exact-target candidate validation,
-independent semantic review and publication are separate admission steps.
-Only this new Lean/Markdown pair is submitted.
+`Quot.sound`.

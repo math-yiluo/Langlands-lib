@@ -59,9 +59,11 @@ The proof checks the square on the pulled-back open cover of `S`. Each local
 square is obtained by pasting the quotient square of `s i` with Mathlib's
 cartesian chart square for the relative gluing, and using `local_proj`.
 
-This unit constructs an underlying quotient square from supplied local
-solutions. It does not yet prove invariance under `D.source` and `D.target`,
+This module constructs an underlying quotient square from supplied local
+solutions. It does not prove invariance under `D.source` and `D.target`
+(`LocalSolutionGluing.relation` in `LocalSolutionEffectivity` proves it),
 nor choose the local solutions, reconstruct the global group, or prove the
-host quasi-split inner-form existence statement. Its provenance is internal:
+quasi-split inner-form existence statement
+`RelativeQuasiSplitInnerFormExistenceStatement`. Its provenance is internal:
 the implemented arguments are consequences of the imported local comparison,
 epimorphism cancellation, and Mathlib's actual scheme gluing construction.

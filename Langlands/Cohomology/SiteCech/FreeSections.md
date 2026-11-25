@@ -1,6 +1,6 @@
 # Sections represented by free module sheaves
 
-Author: Worker 512. This internal construction composes Mathlib's
+This internal construction composes Mathlib's
 free-module adjunction, its extension to presheaf categories, the
 sheafification adjunction, and the small Yoneda equivalence. It specializes
 the free sheaf functor already used in the general-site Čech nerve.

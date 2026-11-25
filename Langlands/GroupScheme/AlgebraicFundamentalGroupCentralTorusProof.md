@@ -1,7 +1,5 @@
 # Central-torus exactness of algebraic fundamental groups
 
-Author: Worker 149 (Task 6713).
-
 ## Statement proved
 
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.centralTorusFundamentalExactness` proves
@@ -76,5 +74,5 @@ Write `aZ`, `aH` and `aG` for the chosen presentations `chosenChoice` of `Z`, `H
    exactness from step 4 to `fundamentalGroupMap k E Z.toGrp H _ hH i = aZ.mapTo E aH i`
    and `fundamentalGroupMap k E H G hH hG p = aH.mapTo E aG p`.
 
-The development check (`lean_check` with Lake build) reports only the axioms
+The development check (with a Lake build) reports only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

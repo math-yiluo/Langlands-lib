@@ -1,7 +1,5 @@
 # Global sections of trivial modules and of restriction units
 
-Author: Worker 1119.
-
 This helper module for the proof of
 `Langlands.AlgebraicGeometry.Picard.FibreFrameLiftingStatement` computes the `T`-module
 global sections (`DerivedSections.relativeGlobalSections`) of trivial modules over `Spec T`, and

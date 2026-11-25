@@ -1,7 +1,5 @@
 # Ultrafilter lifting and spreading out of ultrapower points
 
-Author: Worker 78.
-
 Two auxiliary results, with internal provenance, for limits of rational points along
 ultrafilters.
 

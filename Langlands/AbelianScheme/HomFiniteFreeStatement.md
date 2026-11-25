@@ -1,7 +1,5 @@
 # Finite freeness of actual integral Hom groups
 
-Author: Worker 223.
-
 `Langlands.AbelianScheme.HomFiniteFreeStatement.{u}` states that, for every
 field `k : Type u` with `IsAlgClosed k` and `CharZero k`, and every pair
 `A B : AbelianScheme (Spec (CommRingCat.of k))`, the conclusion is
@@ -48,5 +46,5 @@ incorporated in the author's corrected online version. The cited 2022
 revision is that corrected version.
 
 This module defines a proposition and supplies no proof or global freeness
-instance. Proving it is a separate successor task. The existing Harris–Taylor
-small-level rigidity statement and its imports are preserved.
+instance. It is proved as `homFiniteFree` in
+`Langlands.AbelianScheme.HomFiniteFreeProof`.

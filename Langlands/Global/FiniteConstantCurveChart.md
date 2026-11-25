@@ -10,7 +10,7 @@ These are derived arithmetic constructions for Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), Example 4.2,
 printed page 10. That passage uses the arithmetic of global field extensions
 in the completed tensor decomposition and integral-model comparison.
-The present unit supplies normalized function-field base charts in the
+The present module supplies normalized function-field base charts in the
 positive-characteristic case. It does not construct the tensor decomposition
 or the Weil integral models.
 

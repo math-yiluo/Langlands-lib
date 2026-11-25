@@ -23,11 +23,11 @@ simple root `a`,
 
 `localSplitSimpleRootGroup` proves this statement.
 
-1. Worker 712's `LocalRootGroup.exists_rootParametrization` (module `LocalRootGroupParam`)
+1. `LocalRootGroup.exists_rootParametrization` (module `LocalRootGroupParam`)
    gives a root parametrization `u α` for every root `α`.
 2. For each simple root `a`, `localWeylNormalization_of_field fieldWeylNormalization`
    gives a root parametrization `v a` of `-a` such that `weylPoint (u a) (v a)` is a Weyl point
-   for `s_a`. `localWeylNormalization_of_field` is Worker 712's proof of
+   for `s_a`. `localWeylNormalization_of_field` is the proof of
    `LocalWeylNormalizationStatement` from `FieldWeylNormalizationStatement` (module
    `LocalWeylNormalizationProof`). `fieldWeylNormalization` is the field case (module
    `LocalWeylNormalizationField`).

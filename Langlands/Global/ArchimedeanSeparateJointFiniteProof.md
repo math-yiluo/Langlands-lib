@@ -1,6 +1,6 @@
 # Separate center and compact differential finiteness imply joint finiteness
 
-Author: Worker 88. Module:
+Module:
 `Langlands.Global.ArchimedeanSeparateJointFiniteProof`.
 The theorem `Langlands.Global.ArchimedeanGL.separateJointFinite` proves the
 whole published proposition
@@ -48,6 +48,6 @@ result from that literature.
 No finite-dimensionality of the full smooth-function carrier is assumed.
 The result neither identifies compact differential finiteness with compact
 group finiteness nor proves admissibility, reproduction, or automorphic
-derivative growth. It does not replace the parent theorem's simultaneous
-center-finite adelic family or common annihilating ideal. The statement
+derivative growth. It does not replace the adelic condition of a simultaneous
+center-finite family or common annihilating ideal. The statement
 pair and its imports are unchanged. The proof uses default heartbeats.

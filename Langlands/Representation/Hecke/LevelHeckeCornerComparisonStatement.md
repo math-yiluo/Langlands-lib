@@ -5,8 +5,7 @@ Module `Langlands.Representation.Hecke.LevelHeckeCornerComparisonStatement`. Nam
 The module contains one **statement**, the `Prop`-valued definition
 `LevelHeckeCornerComparisonStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. It is a **derived comparison**, not a numbered assertion
+It is a **derived comparison**, not a numbered assertion
 of the source. The Library has two models of the Hecke algebra `H(G, K)` of a compact open
 subgroup:
 
@@ -19,7 +18,7 @@ subgroup:
 
 The published VI.9.4 statement `Jacquet.StandardFixedVectorHeckeEquivalenceStatement` is
 formulated with `LevelHeckeAlgebra ℂ K`. The Chapter VI item ledger lists "the comparison of
-`LevelHeckeAlgebra ℂ K` with the Haar-measure `H(G, K)`" as part of a gap. This unit states that
+`LevelHeckeAlgebra ℂ K` with the Haar-measure `H(G, K)`" as part of a gap. This module states that
 comparison.
 
 ## Source and provenance
@@ -28,7 +27,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read:
+The passages read for this statement are:
 
 - III.1.5, printed p.60 / PDF p.66: "Rappelons que `e_K ∗ H(G) ∗ e_K = H(G, K)`", and
   Proposition (i): `j_K(V) = e_K · V` is `V^K`. So `H(G, K)` acts on `V^K`, with unit `e_K`;
@@ -87,7 +86,8 @@ constant on cosets `yK`, because `b` is left `K`-invariant. Hence
 
 ## Remaining obligations
 
-The proof is a separate obligation.
+The proof is `levelHeckeCornerComparison`, in the separate module
+`LevelHeckeCornerComparisonProof`.
 
 ## Imports
 

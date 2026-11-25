@@ -22,10 +22,9 @@ All schemes remain in an arbitrary universe `u`.
   proof pulls back along the inverse and uses the composition and identity
   comparisons.
 
-These are derived internal results, originally proved by Worker 354 as
-private helpers named `unit_hom_eq_zero_iff`, `natIso_map_eq_zero_iff`,
+These are derived internal results, originally private helpers named
+`unit_hom_eq_zero_iff`, `natIso_map_eq_zero_iff`,
 `pullback_comp_eq_zero_iff` and `pullback_iso_eq_zero_iff` in
-`ResidueLocalChartProof`. The Integrator moved and renamed those declarations
-without changing their statements or proof arguments. Both consumers now
-reuse these declarations; the duplicate helper proofs in the section
-transport contribution have been removed.
+`ResidueLocalChartProof`. They were moved here and renamed without changing
+their statements or proof arguments. Both consumers use these declarations
+instead of their own copies of the helper proofs.

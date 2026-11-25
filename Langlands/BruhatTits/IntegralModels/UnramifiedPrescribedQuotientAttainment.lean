@@ -128,7 +128,7 @@ theorem exists_pos_incidentFacet_quotientImage_eq_parabolic
   refine ⟨ε, hε, hface, ?_⟩
   intro M hsm hgc hM φ
   have hfull := hlower M {ε • C.cocharacterDirection
-      (A.cocharacterSpecialization.symm ν) +ᵥ x}
+                            (A.cocharacterSpecialization.symm ν) +ᵥ x}
     (Set.singleton_nonempty _)
     (Set.singleton_subset_iff.mpr (AffineRootSystem.mem_facet_self _ _)) hM φ
   let : Smooth Q.quotient.X.hom := hQ.2.2.smooth

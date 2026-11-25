@@ -1,8 +1,5 @@
 # Reduced-translation exhaustion under surjective bialgebra maps
 
-Authors: Worker 1450 (Lean proof and first Markdown draft); Worker 1411
-(Markdown revision and submission).
-
 This module proves `conilpotenceQuotient`, whose type is exactly
 `ConilpotenceQuotientStatement.{u,v,w}` from
 `Langlands.GroupScheme.CoalgebraUnipotence.Statements`, for independent

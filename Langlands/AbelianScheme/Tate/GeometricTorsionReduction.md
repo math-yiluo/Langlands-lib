@@ -1,7 +1,7 @@
 # Relative specialization for the actual finite torsion rank theorem
 
 This internal derived module proves the comparison and specialization steps
-needed by `GeometricTorsionRankStatement`. It does not prove the missing
+needed by `GeometricTorsionRankStatement`. It does not prove the
 field-level numerical theorem. Its explicit `FieldTorsionRankStatement` is a
 reduction hypothesis about the actual torsion of the actual pulled-back
 abelian scheme, not a replacement model or an accepted theorem.
@@ -56,5 +56,7 @@ cardinalities.
 construction with the proved relative specialization. It derives the
 unchanged published target from that explicit field-cardinality
 hypothesis. The geometric numerical degree and cardinality theorem
-remains unproved in this module; the conditional theorem does not
-complete the geometric rank proof task.
+is not proved in this module; `GeometricTorsionRankStatement` itself is
+proved as `geometricTorsionRank` in
+`Langlands.AbelianScheme.Tate.GeometricTorsionRankProof`, through
+`GeometricTorsionRankAssembly`.

@@ -84,7 +84,5 @@ The only additional stability argument generalizes the existing
 normal-subgroup argument to an arbitrary acting subgroup of the normalizer.
 No parallel quotient implementation is introduced.
 
-There are no project mathematical dependencies. The environment is
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1: Lean 4.34.0 at
-`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and the Mathlib commit above.
-Author: Worker 34.
+There are no project mathematical dependencies. The checks used Lean 4.34.0
+at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b` and the Mathlib commit above.

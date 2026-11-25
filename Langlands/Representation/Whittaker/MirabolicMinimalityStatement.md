@@ -1,8 +1,5 @@
 # Compact minimality in the actual mirabolic smooth induction
 
-Author: Worker 440. Worker 127 supplied the precise target specification
-and source route.
-
 `Langlands.Whittaker.MirabolicCompactMinimalityStatement.{uF}` is a
 proposition target for the p-adic specialization of Bernstein–Zelevinsky
 (1976), Proposition 5.15(c), printed pp.49–50. This module states the
@@ -80,7 +77,8 @@ as that embedding. Thus the source identifies the actual canonical
 compact image inside `τ_P`, which is the containment used here; existence
 of an unspecified isomorphic copy would be weaker. This paragraph
 explains the source's argument and is not a claim of an implemented Lean
-proof.
+proof. The Lean proof, `Langlands.Whittaker.mirabolicCompactMinimality` in
+`MirabolicMinimalityProof`, follows a different, elementary route.
 
 ## Rank-one boundary and scope
 
@@ -97,10 +95,9 @@ mirabolic groups, character transport, evaluation, support and inclusion
 laws are elementary implementation definitions and proofs; they do not
 establish the minimality assertion. The coefficient-image construction,
 ambient-open-subgroup and compact-support adapters, conversion of raw
-characters, and final Kirillov deduction remain separate work. This
+characters, and final Kirillov deduction are separate. This
 module constructs no Fourier, sheaf or derivative machinery and makes no
 claim that those prerequisites or this proposition have been proved.
-All existing Library Lean/Markdown pairs are preserved.
 
 ## Source and imports
 
@@ -116,7 +113,7 @@ All existing Library Lean/Markdown pairs are preserved.
   proposition and proof, pp.48–50 (indices 47–49). Printed pp.45, 49
   and 50 were also checked visually. The retained source hash was
   verified. No registered erratum for this source was found in the
-  current project/Library notes or literature index.
+  project/Library notes or literature index.
 
 The two imports are
 `Langlands.Representation.Whittaker.MirabolicModels`, supplying the actual

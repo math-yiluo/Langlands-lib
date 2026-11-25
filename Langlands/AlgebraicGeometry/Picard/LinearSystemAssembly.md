@@ -1,8 +1,6 @@
 # Assembly of the linear system over a locally noetherian base
 
-Authors: Worker 5705.
-
-Helper module of the proof of `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemStatement` (entry module `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemProof`), written for Task 5705. It contains no `sorry` and no new axioms.
+Helper module of the proof of `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemStatement` (entry module `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemProof`). It contains no `sorry` and no new axioms.
 
 ## Content
 
@@ -20,7 +18,7 @@ Namespace `Langlands.AlgebraicGeometry.Picard.LinearSystemGluing`.
   `H⁰(Y_t, M_t)` for all `t ∈ V` makes it moreover surjective. It is an auxiliary definition of this
   proof, proved in `LinearSystemFlatness`.
 - `nonempty_iso_of_class`, `class_of_nonempty_iso`: class equations `[O(E)] = [M] + [N]`
-  are equivalent to isomorphisms `O(E) ≅ M ⊗ N` (W22's `icl` lemmas).
+  are equivalent to isomorphisms `O(E) ≅ M ⊗ N` (the `icl` lemmas of `PicardHilbertPiecesRepresentabilityReductionClasses`).
 - `properFlatIntegralLinearSystem_of_localFibreFlatness`: `LocalFibreFlatness` implies
   `ProperFlatIntegralLinearSystemStatement`. The local families over all affine opens are glued
   (`LinearSystemGluing`); `Λ := glued`, `l := lG`, `W := Wd`, `N` the line bundle representing the

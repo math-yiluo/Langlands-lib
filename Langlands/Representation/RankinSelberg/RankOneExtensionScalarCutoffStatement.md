@@ -1,7 +1,5 @@
 # Same-model scalar Fourier cutoff for the early JPSS Lemma 5.5
 
-Author: Worker 252.
-
 `Langlands.RankinSelberg.RankOneExtensionScalarCutoffStatement.{uF,uV}` is a
 closed proposition definition. It states the one-coordinate Fourier cutoff
 used in the proof of JPSS Lemma (5.5). This module supplies no proof.

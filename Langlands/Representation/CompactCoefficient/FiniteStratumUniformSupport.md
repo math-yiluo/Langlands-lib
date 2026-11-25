@@ -1,6 +1,6 @@
 # Common coefficient support from finitely many fixed-level classes
 
-This derived internal construction proves the converse of the existing generic
+This module proves the converse of the existing generic
 support-to-finiteness reduction. Let `G` be a topological group with its Borel
 measurable structure and a supplied left Haar measure `μ`, and let `K` be a
 compact open subgroup. The group universe `uG` and representation-carrier
@@ -61,7 +61,8 @@ The provenance is derived rather than a translation of a separate literature
 statement: the module combines the Library's finite-dimensional fixed-space,
 normalized-projection, representation-equivalence and algebraic finite-class
 results with finite unions of compact sets and elementary linear algebra.
-It is a supporting unit for the unchanged rational norm-kernel uniform-support
-task. Actual reductive Cartan data, simultaneous compact open levels and the
-existence of the required sandwich remain separate obligations. The exact
+It supports the rational norm-kernel uniform-support statement
+`RationalNormKernelUniformSupportStatement`. Actual reductive Cartan data,
+simultaneous compact open levels and the
+existence of the required sandwich are not part of this module. The exact
 norm-kernel statement and all pairs it imports are unchanged.

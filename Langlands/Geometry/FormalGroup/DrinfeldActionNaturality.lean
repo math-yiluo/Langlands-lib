@@ -218,10 +218,11 @@ functor. The relative Frobenius rank and inverse are supplied by the actual
 isogeny and full-order quasi-isogeny theorems for the fixed frame. -/
 def actionHom : GL (Fin (reducedDegree K D)) K × Dˣ →*
     Aut (comparisonClassFunctor (R := R) Φ) where
-  toFun g := actionNatIso g p hcard
+  toFun g := Aut.of (actionNatIso g p hcard
     (fun j => SpecialModule.relativeFrobeniusQuasiIsogeny Φ p (n * j))
-    (fun j => ModuleLaw.relativeFrobeniusIsogeny Φ.val.formalModule p (n * j)) c
+    (fun j => ModuleLaw.relativeFrobeniusIsogeny Φ.val.formalModule p (n * j)) c)
   map_one' := by
+    apply Aut.ext
     apply CategoryTheory.Iso.ext
     apply NatTrans.ext
     funext A
@@ -229,6 +230,7 @@ def actionHom : GL (Fin (reducedDegree K D)) K × Dˣ →*
     intro q
     exact ComparisonClass.act_one p hcard _ _ c q
   map_mul' a b := by
+    apply Aut.ext
     apply CategoryTheory.Iso.ext
     apply NatTrans.ext
     funext A
@@ -239,7 +241,7 @@ def actionHom : GL (Fin (reducedDegree K D)) K × Dˣ →*
 /-- Evaluation of the natural action recovers the original descended action. -/
 @[simp]
 theorem actionHom_app (q : ComparisonClass Φ A) :
-    (actionHom (R := R) p hcard c g).hom.app A q =
+    (actionHom (R := R) p hcard c g).asIso.hom.app A q =
       ComparisonClass.act p hcard
         (fun j => SpecialModule.relativeFrobeniusQuasiIsogeny Φ p (n * j))
         (fun j => ModuleLaw.relativeFrobeniusIsogeny Φ.val.formalModule p (n * j)) c g q := rfl

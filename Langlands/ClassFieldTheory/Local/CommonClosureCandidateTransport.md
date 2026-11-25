@@ -1,6 +1,6 @@
 # Geometric reciprocity through prescribed closure comparisons
 
-Worker 125. Internal transport infrastructure for Task 4919.
+Internal transport infrastructure.
 
 `closureComparisonCorrection` compares the published chosen extension of an
 embedding of p-adic fields to algebraic closures with any supplied extension.

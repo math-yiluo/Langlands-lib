@@ -1,7 +1,5 @@
 # Flatness and surjectivity of the normalization model
 
-Worker 6.
-
 - `flat_of_injective_of_isUnit`: an algebra over a DVR that embeds into an algebra in which a
   uniformizer is a unit is torsion-free, hence flat
   (`Module.Flat.flat_iff_torsion_eq_bot_of_isBezout`).

@@ -66,13 +66,15 @@ scoped instance upperLocalRing (i) (q : Above k K L s t T i) :
 
 scoped instance upperOpenUnits (i) (q : Above k K L s t T i) :
     IsOpenUnits (upperFactor k K L s t T i q) := by
-  cases i <;> dsimp [upperFactor] <;> infer_instance
+  cases i <;> dsimp [upperFactor] <;>
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 scoped instance lowerOpenUnits
     (i : CurvePlaceLevelFactorIndex k K T.val) :
     IsOpenUnits
       (CurvePlaceLevelFactor k K T.val i) := by
-  cases i <;> dsimp [CurvePlaceLevelFactor] <;> infer_instance
+  cases i <;> dsimp [CurvePlaceLevelFactor] <;>
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 scoped instance upperCoefficientAlgebra (i) (q : Above k K L s t T i) :
     Algebra

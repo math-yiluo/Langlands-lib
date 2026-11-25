@@ -1,7 +1,5 @@
 # Finite representatives in Renard's actual valuation image
 
-Author: Worker 454.
-
 Let `F` be any actual nonarchimedean local field with the Library's field,
 valuation and topology instances. Let `s : T.toGrp ⟶ Z` be an actual
 homomorphism of group schemes, with `T` commutative. This module uses

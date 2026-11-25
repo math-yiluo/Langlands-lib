@@ -97,7 +97,7 @@ variable {R : Type u} [CommRing R] {G : GroupScheme (Spec (CommRingCat.of R))}
   [IsAffineHom G.X.hom] {I : Type u} [Fintype I] [DecidableEq I]
   (i : splitTorus (Spec (CommRingCat.of R)) I ⟶ G) (mu nu : I → ℤ)
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 /-- The full split-torus action on the actual dynamic root group. -/
 abbrev torusAction := UnipotentTorus.torusAction (torusZ i mu) nu
@@ -292,7 +292,7 @@ theorem exists_rootParametrization_of_flat [IsLocalRing R] (hG : IsReductive G)
     · exact Or.inl (by rw [h])
     · refine Or.inr ?_
       rw [h, splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm,
-        splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, map_neg]
+        splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, AddEquiv.map_neg]
   · rw [splitTorus.latticePairing_exponentCharacter_exponentCocharacter, hmu0]
   · rw [splitTorus.latticePairing_exponentCharacter_exponentCocharacter, h2]
     norm_num

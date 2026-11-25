@@ -45,7 +45,7 @@ The module imports only `Langlands.AlgebraicGeometry.Modules.DerivedSections`,
 `Langlands.AlgebraicGeometry.Picard.GeometricPicardZero` and
 `Mathlib.FieldTheory.IsAlgClosed.Basic`. It declares nothing else.
 
-The approved Lean service compiled the module with no errors or warnings,
+The Lean service compiled the module with no errors or warnings,
 reported that the declaration returns `Prop` with sole universe parameter
 `u`, and found only the axioms `propext`, `Classical.choice` and
 `Quot.sound` in its dependencies. With `pp.fieldNotation false`,
@@ -193,11 +193,12 @@ The Lean statement uses translation invariance directly. It asserts no
 formal comparison with a Picard scheme, a rigidified family, a chosen dual
 or a geometric Picard-zero certificate.
 
-## Proof route for the later exact proof
+## Proof route for the exact proof
 
-After independent acceptance and publication, a separate exact-target proof
-must have this entire named proposition as its type, with no extra outer
-hypotheses. Nothing below is proved here. The intended route follows the
+A separate exact-target proof must have this entire named proposition as its
+type, with no extra outer hypotheses; the Library's is
+`algClosedFieldTranslationInvariantH0Vanishing` in
+`TranslationInvariantH0VanishingProof`. Nothing below is proved here. The intended route follows the
 source paragraph quoted above.
 
 1. Inversion pullback is a tensor inverse. Let
@@ -206,8 +207,9 @@ source paragraph quoted above.
    `tensorObj L.obj ((Scheme.Modules.pullback i).obj L.obj) ≅ structureSheaf A.X.left`.
    This is the second conjunct of the published statement
    `AlgClosedFieldTranslationInvariantPullbackIdentitiesStatement`
-   (EVM (7.16)), whose unconditional proof is a separate task and an
-   intended input. `LineBundle.exists_tensorObj_iso_structureSheaf`
+   (EVM (7.16)), whose unconditional proof
+   `algClosedFieldTranslationInvariantPullbackIdentities` (module
+   `TranslationInvariantPullbackIdentitiesProof`) is an intended input. `LineBundle.exists_tensorObj_iso_structureSheaf`
    supplies the dual as some tensor inverse; the inversion pullback is the
    specific inverse the source uses.
 2. Degree zero is global sections. By `relativeCohomologyZeroIso` and
@@ -236,8 +238,7 @@ source paragraph quoted above.
 
 Published section tools that may serve steps 3 and 5 include
 `Langlands.SchemeModule.tensorSection` in `Modules/TensorSections.lean` and
-the section-locus material in `Modules/SectionLocus.lean`. Substantial missing inputs need separate
-definitions, statements and unconditional proofs in dependency order. A
+the section-locus material in `Modules/SectionLocus.lean`. A
 conditional assembly that assumes the inversion identity or
 global-functions rigidity as hypotheses is not a proof of this proposition.
 
@@ -259,19 +260,16 @@ nontriviality hypothesis cannot hold.
 The only hypotheses on `L` are ordinary translation invariance and
 nontriviality. No inversion, multiplication, Künneth, cohomology-vanishing,
 comparison, global-functions, ample, Picard, dual or existence premise is
-added. Publication of this statement records a target for a later proof;
-it is not a vanishing theorem.
+added. This statement records a target; it is not a vanishing theorem.
 
-## Role and authorship
+## Role
 
-This is a focused prerequisite of the exact proof task
-`a45129b4-368e-4cd9-813b-e2e884897b35` of
-`AlgClosedFieldTranslationInvariantCohomologyVanishingStatement`, retained
-by Workers 306 and 100. That target is not an input here.
+This is a focused prerequisite of the proof of
+`AlgClosedFieldTranslationInvariantCohomologyVanishingStatement` (module
+`TranslationInvariantCohomologyVanishingProof`). That target is not an input
+here.
 
-Worker 1135 implemented the Lean declaration and this Markdown. Workers 306
-and 100 specified the task, including the binders, the degree-zero
-conclusion and the proof route. The source quotation, the translation-
-invariance interpretation and the errata audit reuse the published
-`TranslationInvariantCohomologyVanishingStatement.md` by Workers 921, 306
-and 516, rechecked against the registered original.
+The source quotation, the translation-invariance interpretation and the
+errata audit reuse the published
+`TranslationInvariantCohomologyVanishingStatement.md`, rechecked against the
+registered original.

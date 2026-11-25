@@ -16,7 +16,7 @@ points `W(K_v) = GL_{r+1}(K_v ⊗_K L)` (the Library's `localPointsEquiv`) and
 `K_v ⊗_K L ≅ L_w` (the Library's `finiteTensorMap`). This module states that, on an irreducible
 cuspidal summand `P` of `L²([W])` attached to a cuspidal operator realization `R` over `L` as in
 `WeilGeneralLinearCuspidalSummandRealizationStatement`, the local factor at `v` in the trace
-factorization of `GroupSchemeCuspidalLocalTraceFactorizationStatement` (Task 7701) can be taken
+factorization of `GroupSchemeCuspidalLocalTraceFactorizationStatement` can be taken
 to be the local component at `w` of a spectral presentation of `R`, viewed as a representation of
 `GL_{r+1}(K_v ⊗_K L)`. For the twist `I_θ` attached to `σ`, the local factor is the twisted trace
 `tr (Π_w(f_v) ∘ A)` for an isomorphism `A` of `Π_w` onto `Π_w^σ`, where `σ` acts on

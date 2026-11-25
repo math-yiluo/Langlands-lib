@@ -1,7 +1,5 @@
 # Orbit-dimension strata of unipotent actions and their quotient spaces
 
-Author: Worker 105.
-
 `UnipotentOrbitQuotientStatement` states Example 5.5 of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), printed p.16. The
 registered source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

@@ -1,9 +1,10 @@
 # Closed affine pullbacks of algebraic-space test points
 
-Author: Worker 309. This internal unit constructs algebraic affine pullbacks
+This internal module constructs algebraic affine pullbacks
 and identifies their analytic images under an explicit point-lifting premise.
-It does not assert that those analytic images are closed, or prove the task's
-Hausdorff and rational-point embedding conclusions.
+It does not assert that those analytic images are closed, or prove the
+Hausdorff and rational-point embedding conclusions of
+`SpaceAnalytificationRationalPointsStatement`.
 
 ## Affine pullbacks from separatedness
 
@@ -67,8 +68,8 @@ map: those conditions were needed to construct the algebraic closed
 pullback, while the image identity needs only the supplied pullback square.
 The analytic point-lifting premise remains explicit. It asserts existence,
 not uniqueness, of a point over each matching pair. No topological
-pullback comparison is asserted. Proving that the range is closed is the
-separate affine closed-correspondence obligation.
+pullback comparison is asserted. Closedness of the range is not proved
+here.
 
 ## Provenance
 

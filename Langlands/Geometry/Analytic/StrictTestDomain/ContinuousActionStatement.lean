@@ -17,7 +17,7 @@ def PointwiseContinuousSpectrumActionStatement : Prop :=
     (P : PresentedStrictAffinoidAlgebra K)
     (G : Type v) [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
     (ρ : G →* Aut P),
-    (∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a)) →
+    (∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a)) →
       Continuous (fun p : G × BanachSpectrum P => (ρ p.1) • p.2)
 
 end Langlands.Analytic.StrictTestDomain.RationalAutomorphism

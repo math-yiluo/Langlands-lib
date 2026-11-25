@@ -1,7 +1,5 @@
 # Properties of a special maximal compact subgroup
 
-Worker 1249, task `219b673d-b7f3-47fb-9019-d1642687d4ac`.
-
 This module defines proposition-valued predicates on a subgroup `K` of the
 actual rational points `G(F)`. They express the properties of a special
 maximal compact subgroup in Kaletha–Prasad Theorem 4.2.15(1) and in Renard,
@@ -148,8 +146,8 @@ not part of `SpecialCompactProperties`.
   the image of a special point under (6.7.1) is special, in particular a
   vertex. The torus factorization `Standard.leviTorusHom`, its maximal
   splitness `Standard.isMaximalSplitTorus_leviTorusHom`, and
-  `KPApartmentData.specialCompactLeviSubgroup` are the accepted adapters of
-  Worker 1229 in `Langlands.Geometry.Building.SpecialCompactLevi`. The
+  `KPApartmentData.specialCompactLeviSubgroup` are the adapters in
+  `Langlands.Geometry.Building.SpecialCompactLevi`. The
   predicate quantifies over every `J`, so the one `x`, and hence the one
   `K_x`, serves every standard parabolic.
 

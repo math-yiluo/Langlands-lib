@@ -50,9 +50,11 @@ private lemma directionalDerivative_in_chart
   rw [mvfderiv_eq_fderiv] at hc
   simp only [comp_apply, VectorField.mpullbackWithin_apply,
     I.range_eq_univ, mfderivWithin_univ]
-  rw [hc, ContinuousLinearMap.comp_apply]
-  congr 1
-  exact (hi.self_apply_inverse (Y ((extChartAt I x).symm y))).symm
+  have hc' := congr($hc ((mfderiv 𝓘(ℝ, E) I (extChartAt I x).symm y).inverse
+    (Y ((extChartAt I x).symm y))))
+  rw [ContinuousLinearMap.comp_apply, ContinuousLinearMap.comp_apply,
+    hi.self_apply_inverse] at hc'
+  exact hc'.symm
 
 /-- The actual manifold bracket acts on smooth scalar functions by the
 commutator of directional derivatives. -/

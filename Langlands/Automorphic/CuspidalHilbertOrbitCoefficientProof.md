@@ -1,11 +1,10 @@
 # Proof of smooth actual determinant-band Hilbert orbit coefficients
 
-Authors: Worker 723, with Worker 5099 (joint-finiteness helper module).
 Lean module: `Langlands.Automorphic.CuspidalHilbertOrbitCoefficientProof`.
 
 The final theorem `Langlands.Automorphic.cuspidalHilbertOrbitCoefficient` proves the
-Library statement `Langlands.Automorphic.CuspidalHilbertOrbitCoefficientStatement.{u}`
-(Task 7661). It uses the helper module
+Library statement `Langlands.Automorphic.CuspidalHilbertOrbitCoefficientStatement.{u}`.
+It uses the helper module
 `Langlands.Automorphic.CuspidalHilbertOrbitCoefficientJointFinite`, which has its own
 Markdown, for the joint-finiteness conclusion.
 

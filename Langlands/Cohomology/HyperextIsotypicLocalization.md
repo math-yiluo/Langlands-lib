@@ -1,12 +1,12 @@
 # Isotypic parts and multiplicity spaces of hyperext groups and localization
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextHomLocalization`
 (`isLocalizedModule_mk_one`, `mk_one_injective_of_isSMulRegular`,
 `exists_finset_eq_top_of_finite_asModule`,
 `repCohomologyHomBaseChangeMap_bijective_of_isLocalization`,
 `smoothCohomologyHomBaseChangeMap_bijective_of_isLocalization`,
-`repHom_isSMulRegular`, `smoothRepHom_isSMulRegular`; Worker 61) and
+`repHom_isSMulRegular`, `smoothRepHom_isSMulRegular`) and
 `Langlands.Cohomology.HyperextIsotypicDegenerationBaseChange`
 (`intertwiningMapCompLinearMap`, `intertwiningMapComp`,
 `abutmentMultiplicityBaseChangeMap`, `cohomologyHomMultiplicityBaseChangeMap`,
@@ -18,7 +18,7 @@ Author: Worker 61. Built on the Library modules
 `abutmentIsotypicProdBaseChangeIntertwiningMap_bijective_iff`,
 `abutmentIsotypicProdBaseChangeEquiv`,
 `smoothAbutmentIsotypicBaseChangeMap_bijective_iff`,
-`smoothAbutmentIsotypicBaseChangeEquiv`; Worker 61). Through these imports it
+`smoothAbutmentIsotypicBaseChangeEquiv`). Through these imports it
 also uses `Langlands.Cohomology.HyperextIsotypicBaseChange`
 (`baseChangeIntertwiningMap`, `multiplicityBaseChangeMap`,
 `multiplicityBaseChangeMap_tmul`, `isotypicBaseChangeMap`,
@@ -26,20 +26,20 @@ also uses `Langlands.Cohomology.HyperextIsotypicBaseChange`
 `cohomologyHomBaseChangeIntertwiningMap`,
 `abutmentIsotypicBaseChangeMap`, `cohomologyHomIsotypicBaseChangeMap`,
 `smoothAbutmentIsotypicBaseChangeMap`,
-`smoothCohomologyHomIsotypicBaseChangeMap`; Worker 61),
+`smoothCohomologyHomIsotypicBaseChangeMap`),
 `Langlands.Cohomology.HyperextDegenerationIsotypic` (`isotypicPart`,
 `isotypicPart_le_iff`, `apply_mem_isotypicPart`,
 `intertwiningMap_apply_mem_isotypicPart`, `isotypicRepresentation`,
 `isotypicProdRepresentation`,
 `isotypicIntertwiningMap`, `abutmentRepresentation`,
-`cohomologyHomRepresentation`; Worker 61),
+`cohomologyHomRepresentation`),
 `Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`,
 `cohomologyHomBaseChangeMap`, `repExtendScalars_isSemilinear`,
-`smoothRepExtendScalars_isSemilinear`; Worker 61) and
+`smoothRepExtendScalars_isSemilinear`) and
 `Langlands.Cohomology.DivisibleSystem.ScalarExtension`
 (`baseChangeRepresentation`, `baseChangeRepresentation_apply_tmul`,
-`repExtendScalars`; Worker 61), and `smoothRepExtendScalars` of
-`Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension` (Worker 61).
+`repExtendScalars`), and `smoothRepExtendScalars` of
+`Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension`.
 
 Let `S` be the localization of a commutative ring `R` at a submonoid `M`. For
 representations `τ` and `ρ` of a group `Γ` over `R`, the Library's

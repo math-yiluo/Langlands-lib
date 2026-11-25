@@ -1,7 +1,5 @@
 # Detection of nonzero mirabolic representations by twisted coinvariants
 
-Author: Worker 11.
-
 This helper module of the mirabolic finite-length proof
 [MirabolicFiniteLengthProof](MirabolicFiniteLengthProof.md) proves a form of
 Bernstein–Zelevinsky (1976), Corollary 5.14, printed p.48, for the Library's

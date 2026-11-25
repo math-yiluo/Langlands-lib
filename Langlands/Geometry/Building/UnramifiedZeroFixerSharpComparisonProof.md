@@ -1,7 +1,5 @@
 # Proof: zero-group pointwise fixers and sharp fixers over the maximal unramified field
 
-Author: Worker 104.
-
 `Langlands.Geometry.Building.unramifiedZeroFixerSharpComparison` proves the
 unchanged published proposition
 `Langlands.Geometry.Building.UnramifiedZeroFixerSharpComparisonStatement.{u}`

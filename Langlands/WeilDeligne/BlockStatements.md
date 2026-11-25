@@ -1,14 +1,14 @@
 # Special blocks: identities, decomposition and classification
 
-Worker 25 formalizes the Weil–Deligne block statement family of task
-`f32f0f21-11a9-4bfd-9daa-e7541926d3be`. The entry proposition is
+This module formalizes the Weil–Deligne block statement family. The entry proposition is
 `Langlands.WeilDeligneRepresentation.Blocks.Statement`. It is the conjunction of the
 fifteen targets below, with universe parameters `uK uG uV uW` (field, group, and
 two independent carrier universes). The objects are the published actual pairs
-of the construction companion: finite-dimensional carriers, nilpotent monodromy,
-and covariance `r(g) N r(g)⁻¹ = ν(g) N`. The companion's uncentered blocks
+of the WD construction modules: finite-dimensional carriers, nilpotent monodromy,
+and covariance `r(g) N r(g)⁻¹ = ν(g) N`. The uncentered blocks of `SpecialBlocks`
 `block ν σ m = zeroMonodromy ν σ ⊗ specialBlock ν m` are used unchanged, as are
-its sums, tensors, duals, twists and monodromy kernels. Existence and uniqueness
+the sums, tensors, duals, twists and monodromy kernels of the construction
+modules. Existence and uniqueness
 of decompositions are conclusions. No decomposition, classification or chosen
 normal form is supplied as data. These are proposition definitions; no proof is
 claimed.
@@ -20,14 +20,14 @@ claimed.
   `N e_{m-1} = 0`), and so `ker N` is the top-weight line `K e_{m-1}`, of weight
   `ν^(m-1)`. This is Tate's `Sp(n)` and Henniart's `St_n`, whose restriction to
   the Weil group is `1 ⊕ ν ⊕ … ⊕ ν^(n-1)`; it is not a centered block. `m = 0`
-  is allowed by the companion and gives the zero pair.
+  is allowed by the construction and gives the zero pair.
 - `block ν σ m` has carrier `σ ⊗ K^m`, action `σ(g) ⊗ diag(ν(g)^j)` and monodromy
   `0 ⊗ 1 + 1 ⊗ N`. A `BlockDatum` is a Weil factor `σ` with a positive length,
   and `d.IsIrreducible` is Mathlib irreducibility of `σ`.
 - The dual pair is `(r^∨, -Nᵀ)` with `r^∨(g) = r(g⁻¹)ᵀ`. The twist by a character
   `χ` multiplies the action by `χ` and keeps `N`.
 - In the source setting, `degree` is the integer degree with geometric Frobenius
-  of degree `+1`, inertia is `degree.ker`, and Worker 1's
+  of degree `+1`, inertia is `degree.ker`, and
   `Frobenius.NormCompatible (ν := ν) degree q` says `1 < q` and
   `ν(g) = q^(-degree g)`, so `ν(Φ) = q⁻¹`.
 - `IsFrobeniusSemisimple degree` asks that `r(g)` be semisimple for every `g` of
@@ -37,7 +37,7 @@ claimed.
 
 `IsIndecomposable A` (local predicate, complex pairs) says that the carrier is
 nonzero and that any two complementary subspaces stable under the action and `N`
-(Worker 1's `LinearAlgebra.IsStable`) include `⊥`.
+(`LinearAlgebra.IsStable`) include `⊥`.
 
 ### Block calculus over a general field
 
@@ -85,7 +85,7 @@ monodromy `-(0 ⊗ 1 + 1 ⊗ N)ᵀ` is `0 ⊗ 1 + 1 ⊗ (-Nᵀ)`.
 - `det(σ ⊗ S_m) = (det σ)^m · ν^(rank σ · m(m-1)/2)`, because
   `det(A ⊗ D) = det(A)^m det(D)^(rank σ)` and `det diag(ν^j) = ν^(m(m-1)/2)`
   (exact natural division). The rank formula `rank = rank σ · m` is already the
-  companion theorem `rank_block`.
+  theorem `rank_block` of `SpecialBlocks`.
 - `N^m = 0`, and if `σ ≠ 0` then `N^n ≠ 0` on the block of length `n+1`, so the
   nilpotency order is exactly the length.
 - `block ν σ 1 ≅ zeroMonodromy ν σ`.
@@ -103,7 +103,7 @@ invariants define Tate's `V_N` (4.1.6), and it is the WD content of Henniart 200
 of `BlockTensor` has top weight `i + (m+n-1-2i) - 1 = m+n-2-i`. This matches the
 exponents in Henniart 2002 §2.4,
 `L(s, (ρ ⊗ St_n) ⊗ (ρ' ⊗ St_n')) = ∏_{j=1}^{inf(n,n')} L(s, ν^(n+n'-1-j) ⊗ ρ ⊗ ρ')`,
-with `j = i+1`. The L-factor identity itself belongs to Worker 4's arithmetic
+with `j = i+1`. The L-factor identity itself belongs to the arithmetic
 factor statements; only the representation isomorphism is stated here.
 
 `FrobeniusSemisimpleBlocks` (any field, any degree) states that a block of
@@ -191,7 +191,7 @@ contains the kernel of the pair. Conversely, the block's inertia kernel is that 
 is open. Together with `DecompositionUniqueness`, this gives the existence and
 uniqueness of the block normal form of a Frobenius-semisimple parameter. The
 normal form is not used as a definition of parameter classes.
-Finally, for every rank `n` the companion's set
+Finally, for every rank `n` the set
 `FrobeniusSemisimpleParameterClassesOfRank degree.ker degree n` of genuine
 isomorphism classes is nonempty. A witness is the class of the trivial
 representation of rank `n` with zero monodromy: its kernel is the whole group,
@@ -203,7 +203,7 @@ interface on the parameter side. It asserts nothing about representations of
 
 The family is derived. The objects and formulas come from the sources listed
 below. The exact Lean formulations are finite-dimensional linear algebra about
-the companion's uncentered blocks: index ranges, natural-number exponents, the
+the uncentered blocks of `SpecialBlocks`: index ranges, natural-number exponents, the
 integer twist `1-m`, the kernel exponents, the general-field and
 characteristic-zero ranges, and the hypotheses of the existence statements.
 Their derivations are given above. None is attributed as a literal numbered
@@ -227,10 +227,10 @@ displayed formulas in the sources:
 | `FrobeniusSemisimpleBlocks`, `RankOne` | Tate 4.1.3 and Deligne 8.5–8.6 (Frobenius semisimplicity as an operator condition); derived. |
 | `DecompositionExistence`, `DecompositionUniqueness` | Henniart 2002 §2.2 unique decomposition and §2.3 form of indecomposables; derived from ordinary semisimplicity by the argument above. |
 | `BlockCriteria` | Tate 4.1.5 (kernel stability, irreducibility) and Henniart 2002 §2.3 (bijection `G0 × ℕ^× → G2`). |
-| `FrobeniusSemisimpleClassification` | Tate 4.1.3 and 4.1.5, Deligne 8.4.1 and 8.5–8.6, with Worker 1's `NormCompatible` for `‖w‖ = q^(-v(w))`. |
+| `FrobeniusSemisimpleClassification` | Tate 4.1.3 and 4.1.5, Deligne 8.4.1 and 8.5–8.6, with `NormCompatible` for `‖w‖ = q^(-v(w))`. |
 | `ParameterNormalForm` | Tate 4.1.2(a) open inertia kernel, 4.1.3 and 4.1.5; Henniart 2002 §2.2–2.3; compact inertia as for local Weil groups. |
 
-Original sources, read by Worker 25 for this family (locators re-verified on
+Original sources, read directly for this family (locators re-verified on
 2026-10-20):
 
 - `henniart-2002-characterization`, retained PDF, SHA-256
@@ -258,8 +258,8 @@ Original sources, read by Worker 25 for this family (locators re-verified on
 
 ## Lean dependency map
 
-All imports are Lean modules of the current Library (commit
-`6700bb7581ced62a8982c39bcea021acff83aad7`); no artifact identity is imported.
+All imports are Lean modules of the Library (commit
+`6700bb7581ced62a8982c39bcea021acff83aad7`).
 Direct project imports and their transitive project closure:
 
 | Module | Declarations used here | Lean SHA-256 |
@@ -286,10 +286,8 @@ Direct project imports and their transitive project closure:
 | `Langlands.Representation.Dual.Definitions` | (generic algebraic dual, through `Dual`) | `53959e3b6cd0faad27f2566cbc9275fd537e5ab59d800f453bcbd61d05415ae5` |
 | `Langlands.Representation.Twist.Definitions` | (scalar character twist, through `Twist`) | `9e193a22784cba92e727402aac5117056433e796e37e1c76f8710e2ddd11d8cf` |
 
-The WD construction modules are authored by Worker 17 (construction companion
-task `650de61a-84c3-40d1-b791-0544af5824e1`). `LinearAlgebraStatements` and
-`FrobeniusStatements` are Worker 1's statement families (task
-`4bcfd048-60a1-4be4-a737-2fb8c48efc46`). Only their predicates `IsStable`,
+`LinearAlgebraStatements` and
+`FrobeniusStatements` are statement families. Only their predicates `IsStable`,
 `IsIrreducible` and `NormCompatible` are used; none of their proposition targets
 is assumed. Mathlib is pinned at `5ed2965256430c3649e86755f9576b54eca72435`;
 `Representation.IsIrreducible` and `Module.End.IsSemisimple` come from Mathlib.

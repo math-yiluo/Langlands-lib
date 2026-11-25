@@ -143,7 +143,7 @@ local notation "constantAction" k =>
 /-- Sections retain the original diagonal coefficient and inverse-deck invariance. -/
 @[reassoc] theorem cmHarrisCoefficientSystemInclusion_invariant
     (k : ℕᵒᵖ) (g : (cmHarrisCoefficientGroups D ρ p U m hm).obj k) :
-    (inc) k ≫ (diagonal J ((covers).action k) (constantAction k)).ρ g = (inc) k :=
+    (inc) k ≫ ((diagonal J ((covers).action k) (constantAction k)).ρ g).asHom = (inc) k :=
   inclusion_invariant J ((covers).action k) (constantAction k) g
 
 /-- On actual cover sections, reduction commutes with original CM forgetting pullback. -/

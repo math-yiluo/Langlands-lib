@@ -1,10 +1,7 @@
 # BZ77 4.14(b): the right mixed-product derivative filtration
 
-Authors: Worker 969 (final assembly, the `GL_0` extension, and this audit) and
-Worker 723 (the positive-rank proof and the rank dispatch, from their shared
-draft). Worker 723 also prepared an independent closure and audit draft. Its
-module list agrees with the one below, and its Haar-scaling notes are used in
-the section on normalizations.
+An independent second closure audit gave the same module list as the one
+below.
 
 The theorem `Langlands.Derivative.rightMixedProductDerivativeFiltration` proves
 the unchanged published proposition
@@ -20,8 +17,7 @@ theorem Langlands.Derivative.rightMixedProductDerivativeFiltration
 The outer telescope is exactly
 `{p : ℕ} [Fact p.Prime] (F : PadicField.{uF} p) (T : F.TopologicalData)`.
 The theorem has no other hypothesis, explicit, implicit or typeclass. The field
-universe `uF` and the carrier universe `uV` stay independent. The statement
-pair and every pair it imports are unchanged.
+universe `uF` and the carrier universe `uV` stay independent.
 
 ## What is proved
 
@@ -314,43 +310,40 @@ claim that none exists.
 
 ## Published inputs
 
-Every theorem input has an independently accepted and published proof whose
-approving review carries no reviewer qualification. Each was fetched and
-checked against the Library.
+Every theorem input has a published proof in the Library. Each was checked
+against the Library.
 
-| Lean input | Content | Artifact and publication |
+| Lean input | Content | Library commit |
 | --- | --- | --- |
-| `RightMixedProductDerivativeFiltrationStatement` | target proposition | `cb1dceb1`, commit `7114a390` |
-| `rightMixedProductDerivativeFiltration_zero` | `k = 0` extension | `114a6ef1`, commit `8415f617` |
-| `ZeroRankTensor` | inert tensor factor commutations | `2057375a`, commit `9a8ca758` |
-| `RightMixedDerivative.filtration_pos`, `Filtration.GluedFamily` | positive-rank filtration | `9487e57e`, commit `8f53f05b` |
-| `MirabolicProductMinus.rightPsiCompatibility` | 4.13(c), `Ψ⁻` clause | `424f4227`, commit `cb42061b` |
-| `MirabolicProductMinus.rightPhiShortExact` | 4.13(c), `Φ⁻` sequence | `5449db58`, commit `00315d47` |
-| `MirabolicProductMinus.rightPhiBoundary` | 4.13(c) at `P_1` | `58a3c341`, commit `b22e1857` |
-| `leftMixedProductDerivativeIso`, `leftMixedProductDerivativeVanishing` | 4.14(a) | `e99bbe1b`, Reviewer 7469, commit `b4b4160d` |
-| `Mirabolic.minusExactness` | exactness of the minus functors | `d307cd07`, commit `9a8ca758` |
-| `Filtration.Splicing.Basic`, `Filtration.Splicing` | generic natural splicing, refinement | `52641b38`, commit `26e9adf3`; `fe5fbc72`, commit `6cb15022` |
-| `LevelCalculus.mapsShortExact_mirabolicDerivativeOfOrder`; `mapsShortExact_id`, `mapsShortExact_comp` (`ShortExactFunctorLaws`) | composition of exact functors | `LevelCalculus`: `e85cf101`, commit `5e4a58e8`, and `6ded142e`, commit `7114a390`; `ShortExactFunctorLaws` was extracted unchanged from `LevelCalculus` at integration |
-| `mirabolicDerivativeDetection` | BZ77 §3.5 detection (imported by `LevelCalculus`) | `3ace613e`, commit `81727e81` |
+| `RightMixedProductDerivativeFiltrationStatement` | target proposition | commit `7114a390` |
+| `rightMixedProductDerivativeFiltration_zero` | `k = 0` extension | commit `8415f617` |
+| `ZeroRankTensor` | inert tensor factor commutations | commit `9a8ca758` |
+| `RightMixedDerivative.filtration_pos`, `Filtration.GluedFamily` | positive-rank filtration | commit `8f53f05b` |
+| `MirabolicProductMinus.rightPsiCompatibility` | 4.13(c), `Ψ⁻` clause | commit `cb42061b` |
+| `MirabolicProductMinus.rightPhiShortExact` | 4.13(c), `Φ⁻` sequence | commit `00315d47` |
+| `MirabolicProductMinus.rightPhiBoundary` | 4.13(c) at `P_1` | commit `b22e1857` |
+| `leftMixedProductDerivativeIso`, `leftMixedProductDerivativeVanishing` | 4.14(a) | commit `b4b4160d` |
+| `Mirabolic.minusExactness` | exactness of the minus functors | commit `9a8ca758` |
+| `Filtration.Splicing.Basic`, `Filtration.Splicing` | generic natural splicing, refinement | commits `26e9adf3` and `6cb15022` |
+| `LevelCalculus.mapsShortExact_mirabolicDerivativeOfOrder`; `mapsShortExact_id`, `mapsShortExact_comp` (`ShortExactFunctorLaws`) | composition of exact functors | `LevelCalculus`: commits `5e4a58e8` and `7114a390`; `ShortExactFunctorLaws` was extracted unchanged from `LevelCalculus` |
+| `mirabolicDerivativeDetection` | BZ77 §3.5 detection (imported by `LevelCalculus`) | commit `81727e81` |
 
-The minus-exactness proof is the published proof of task `b65bc667`. It was
-reused by its Lean name only. Its author's operator pause is untouched; the
-author was not contacted.
+The minus-exactness proof `Mirabolic.minusExactness` (module
+`MirabolicMinusExactnessProof`) is reused by its Lean name only.
 
 ## Complete import and proof-dependency audit
 
-The project import closure has 302 modules besides this entry, listed below,
+The project import closure has 302 modules besides this module, listed below,
 and 129 directly encountered external (Mathlib and core) imports. It
 consists of the 260 modules of the 4.14(a) proof's closure, including that
 entry, and 42 further modules. All 604 Lean and Markdown files of
 the closure are nonempty and byte-identical to Library commit
 `04247de81e81d501f4b57b138c70ba2d5b16e793`. They are unchanged since
-`b4b4160d118213b51ef28eb814f1828ac3902ada`. The only
-new pair is this entry. No proposition definition, citation, draft, pending
-task or consumer conclusion supplies a proof.
+`b4b4160d118213b51ef28eb814f1828ac3902ada`. No proposition definition,
+citation or consumer conclusion supplies a proof.
 
-Reviewer 7469 independently traversed the 4.14(a) closure (the same 260
-modules) and checked it against the same exclusion conditions, inspecting the
+An independent traversal of the 4.14(a) closure (the same 260
+modules) checked it against the same exclusion conditions, inspecting the
 broad scan matches and the relevant lower bodies. The scans below cover the
 whole closure again. For the modules beyond the 4.14(a) closure, the
 mathematical content is as follows.
@@ -363,27 +356,27 @@ mathematical content is as follows.
 | `MirabolicProductMinusRightPhi`, `…RightPhiAssembly`, `…RightPhiCycle*`, `…RightPhiIdentity*`, `MirabolicPhiMinusMackey`, `MirabolicPlus` | The `Φ⁻` sequence: two-orbit Mackey restriction sequence through the plus subgroup, the cycle and identity pieces computed by split-stages comparisons, exactness of the character localization from the published `Jacquet.Localization.characterLocalizationExactness`. `MirabolicPlus` contains only the construction laws of the plus functors; no plus-functor exactness or adjunction is used. |
 | `MirabolicProductMinusRightBoundary`, `Induction.SplitKernelCharacter` | The `P_1` boundary: character-twisted integration over a split kernel and `mulEquivHaarChar_conj_levi_inv`. |
 | `MirabolicMinusExactnessProof`, `…Statement`, `Group.GL.UpperUnipotentCompactContainment*`, `RankinSelberg.UnipotentUnimodularity` | Exactness of the four minus functors: `characterLocalizationExactness` for a radical in which every compact set lies in a compact subgroup, shown by compact containment in the upper unipotent group. |
-| `LevelCalculus`, `ShortExactFunctorLaws`, `Category.Abelian`, `MirabolicDerivativeDetection*`, `MirabolicDerivativeVanishing` | `LevelCalculus` collects elementary consequences of the definitions of level and homogeneity. Its artifacts `e85cf101` and `6ded142e` are conditional helpers for the Ze80 6.2 homogeneity task `b711af72`, which is not an excluded task; none of that task's classification modules is in the closure. Only `mapsShortExact_mirabolicDerivativeOfOrder` (through `mapsShortExact_mirabolicRankCast`, `mapsShortExact_phiMinusIterate` and `mapsShortExact_mirabolicDerivative`) is used, with `mapsShortExact_id` and `mapsShortExact_comp` from `ShortExactFunctorLaws`. These compose the exactness clauses passed to them. They use neither detection nor any level or homogeneity result. `LevelCalculus` imports the published §3.5 detection proof (`3ace613e`), which applies `derivativeDetection` from `MirabolicDerivativeVanishing` (Worker 1024, for BZ77 3.8, task `a925b519`); that module rests on `MinusVanishing`. `Category.Abelian` proves that smooth representations form an abelian category. |
+| `LevelCalculus`, `ShortExactFunctorLaws`, `Category.Abelian`, `MirabolicDerivativeDetection*`, `MirabolicDerivativeVanishing` | `LevelCalculus` collects elementary consequences of the definitions of level and homogeneity. It was written as conditional helpers for the Ze80 6.2 homogeneity results, which are not excluded; none of their classification modules is in the closure. Only `mapsShortExact_mirabolicDerivativeOfOrder` (through `mapsShortExact_mirabolicRankCast`, `mapsShortExact_phiMinusIterate` and `mapsShortExact_mirabolicDerivative`) is used, with `mapsShortExact_id` and `mapsShortExact_comp` from `ShortExactFunctorLaws`. These compose the exactness clauses passed to them. They use neither detection nor any level or homogeneity result. `LevelCalculus` imports the published §3.5 detection proof (`3ace613e`), which applies `derivativeDetection` from `MirabolicDerivativeVanishing` (for BZ77 3.8); that module rests on `MinusVanishing`. `Category.Abelian` proves that smooth representations form an abelian category. |
 | `Mirabolic.LeftMixedProductSuccessor` | Elementary group and determinant facts about the case (II) subgroup, written for a Ze80 §5.3 embedding. Only `determinantNorm_leftSubgroup` is used, in `…RightPhiIdentityGroups`. It imports only `MirabolicCharacter`, `MixedProducts` and `Parabolic.QuotientCompactProof`. |
 | `Group.GL.BlockDeterminant`, `Analysis.Local.CompactOpenCoverUnimodularity*` | The determinant of a block parabolic element, and two-sided Haar invariance for groups covered by compact open subgroups. |
 | `RightMixedProductDerivativeFiltrationStatement` | The target definitions and elementary index lemmas, unchanged. |
 
-Artifact provenance check. Each closure file was matched against the
-published artifact records. Eight closure modules have no artifact record of
+Provenance check. Each closure file was matched against the
+publication records of the Library. Eight closure modules have no record of
 their own: `Group.GL.RankReindex`, `HarmonicAnalysis.PadicLatticeTopology`,
 `Compact.OrbitMeanTranslation`, `Derivative.MirabolicDeterminant`,
 `Derivative.ShortExactFunctorLaws`, `OrbitSpan`, `Tensor.OneFactor` and
 `Topology.CompactNormCharacter`. Their Markdown states that their declarations
-were collected, moved or extracted unchanged from already reviewed modules,
-mostly during integration. They are covered by the same scans.
+were collected, moved or extracted unchanged from other Library modules.
+They are covered by the same scans.
 
-Two records that ship closure files mention an identifier from the exclusion
-sections of the contract.
+Two publication records that ship closure files mention a result named in the
+exclusion tables below.
 
-- The record of `Derivative.MinusVanishing` (artifact `c6026915`) calls it an
-  internal helper for task `2e5183b1`. That is the upstream derivative proof
-  task whose restriction sections this contract copies verbatim, not an
-  excluded conclusion. The module proves only the consequence of BZ77 3.2(e)
+- The record of `Derivative.MinusVanishing` calls it an
+  internal helper for the proof of `Classification.SupercuspidalDerivatives`.
+  That is an upstream derivative result whose restrictions are copied in
+  the second table below, not an excluded conclusion. The module proves only the consequence of BZ77 3.2(e)
   that `Ψ⁻X = Φ⁻X = 0` forces `X = 0`, by a direct character-averaging
   argument, and it imports no excluded module. The closure uses only its
   elementary lemmas: `MirabolicProductMinusRightBoundary` uses the compact
@@ -395,85 +388,82 @@ sections of the contract.
   §3.5 detection proof imported by `LevelCalculus` applies, and this proof
   does not use detection.
 - The publication of the excluded `SupercuspidalCoinvariantFinitenessProof`
-  (task `62de5903`, artifact `001944f3`, commit `333fb398`) lists
+  (commit `333fb398`) lists
   `MirabolicDerivativeVanishing` (both files) and `Mirabolic/MixedProducts.md`
   among its snapshot files. `MirabolicDerivativeVanishing` was published
-  earlier at commit `2b8beb8b` by the BZ77 3.8 artifact `f957ae76`
-  (Worker 1024). The bytes of all three files are the same at `2b8beb8b`, in
-  the commit before `333fb398`, in `333fb398` and in the current Library. The
+  earlier at commit `2b8beb8b`, with the BZ77 3.8 result. The bytes of all
+  three files are the same at `2b8beb8b`, in the commit before `333fb398`, in
+  `333fb398` and in the Library checked here. The
   imports of `MirabolicDerivativeVanishing` (`MinusVanishing`,
   `MirabolicDerivativeDetectionStatement`) contain no Whittaker finiteness
   module. So these mentions are snapshot listings, not dependencies.
 
 ## Exclusion audit, condition by condition
 
-Each row excludes the named conclusions, their proof successors and their
+Each row excludes the named conclusions, the modules that prove them and their
 transitive consequences. The findings rest on the content audit above as well
-as on the name and identifier scans described after the tables.
+as on the name scans described after the tables.
 
 ### Shared upstream scope
 
 | Condition | Finding |
 | --- | --- |
-| `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`, all-character single-block task `62de5903-b616-4b5c-88eb-a066b77c5467`, successors and consequences | Not used. Its proof module is not in the closure; the record mentions are explained above. Compact averaging in the lower induction modules is a direct local construction. |
+| `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement` (all-character single-block), the modules that prove it and its consequences | Not used. Its proof module is not in the closure; the record mentions are explained above. Compact averaging in the lower induction modules is a direct local construction. |
 | No consumer assumption replaces a missing general derivative or tensor proof | Every derivative, exactness and tensor input is a published proof (table above). The theorem has no hypothesis. |
-| Worker 127's operator pause | Kept. Worker 127 was not contacted or woken; the published minus-exactness proof is used by name only. |
-| `GenericSegmentProductUniqueness`, `30341ae4-65f2-4a0e-9283-763db01a409e` | No genericity or segment-uniqueness input. |
-| Multisegment exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`; ordered strong-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3` | No exhaustion or head-existence input. |
-| Quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`; ordered conversion `8252833d-c269-41a9-824c-5879e531b23b` | No coverage or conversion input. The quotients used are module quotients by relation spans and subfunctors. |
-| Tempered uniqueness `52e97845-36bb-457d-b76f-70753334b88c` | No tempered input. |
-| `SquareIntegrableLanglandsClassification`, `1cb45da2-7007-4351-a694-594fb148b8d1`; square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`; regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac` | No classification, square-integrability or exhaustion input. |
+| `GenericSegmentProductUniqueness` | No genericity or segment-uniqueness input. |
+| Multisegment exhaustion; ordered strong-head existence | No exhaustion or head-existence input. |
+| Quotient coverage; ordered conversion | No coverage or conversion input. The quotients used are module quotients by relation spans and subfunctors. |
+| Tempered uniqueness | No tempered input. |
+| `SquareIntegrableLanglandsClassification`; square-integrable exhaustion; regular exhaustion | No classification, square-integrability or exhaustion input. |
 
-### Independence (binding sections of task `2e5183b1` revision 2)
+### Independence (restrictions copied from the proof of `Classification.SupercuspidalDerivatives`)
 
 | Condition | Finding |
 | --- | --- |
-| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`; tasks `23e98d90-6055-4e35-91a9-b0f5d8a84961`, `a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc` | Not used. This theorem is an upstream input of those proofs, and none of their modules is in the closure. |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`, `7ff2a1e9-89dc-439e-a861-a567b3db92bf` and successors | No juxtaposed-product or quotient-homomorphism input. |
-| `SegmentSocleProductIrreducibility`, `2ae5cbe5-0701-4509-88a0-db8cbeb35be4` | No segment-product irreducibility input. |
-| `AdjacentUnlinkedSegmentSocleSwap`, `e3634665-571b-4852-9f4c-bab8a1053434`, successor `cded83f3-df9c-4018-bc61-dc54f5c1f9ab` | No socle swap. The tensor swaps in the `GL_0` case are linear algebra. |
-| `TwoSegmentSocleCommutation`, `426911b4-6620-413f-8065-04b25287f3bd`, `66e3b87c-647e-41e4-af18-df4d436765f0` | No commutation input. |
-| `LinkedSegmentSocleGluing`, `c84cd52c-3ff3-4024-be50-8b84dd480888`, `6780b79c-9526-46aa-b8b4-00377d68b1ea` | No segment gluing. The gluing here is the generic natural splicing of filtrations. |
-| `OrderedMultisegmentSocleExistence`, `23189526-80b0-4828-a6d4-7ebec2cbeef5`; socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63` | No socle existence or exhaustion. |
-| Segment analytic classification `aca8805b-054f-4d56-8045-12db7f623404` | No segment or analytic classification. |
-| Special-head exhaustion `3bfb61fa-…`, ordered special-head existence `ebea9a8a-…`, quotient coverage `20e4e1c6-…`, ordered conversion `8252833d-…`, tempered uniqueness `52e97845-…`, `GenericSegmentProductUniqueness` `30341ae4-…`, `SquareIntegrableLanglandsClassification` `1cb45da2-…`, exhaustions `cd8ab97c-…`, `bf433f0a-…` | As in the first table. |
-| Forward special-segment essential square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807` | No square-integrability input. |
-| `SegmentHeadProductIrreducibility`, `8364e73f-14ec-4d14-8f2b-1555a7c1ce95` | No head criterion. |
+| `UnlinkedSegmentSocleProductIrreducible`, `LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible` | Not used. This theorem is an upstream input of those proofs, and none of their modules is in the closure. |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` and the modules that prove them | No juxtaposed-product or quotient-homomorphism input. |
+| `SegmentSocleProductIrreducibility` | No segment-product irreducibility input. |
+| `AdjacentUnlinkedSegmentSocleSwap` and its proof (`AdjacentUnlinkedSegmentSocleSwapProof`) | No socle swap. The tensor swaps in the `GL_0` case are linear algebra. |
+| `TwoSegmentSocleCommutation` | No commutation input. |
+| `LinkedSegmentSocleGluing` | No segment gluing. The gluing here is the generic natural splicing of filtrations. |
+| `OrderedMultisegmentSocleExistence`; socle exhaustion | No socle existence or exhaustion. |
+| Segment analytic classification | No segment or analytic classification. |
+| Special-head exhaustion, ordered special-head existence, quotient coverage, ordered conversion, tempered uniqueness, `GenericSegmentProductUniqueness`, `SquareIntegrableLanglandsClassification`, square-integrable and regular exhaustions | As in the first table. |
+| Forward special-segment essential square-integrability | No square-integrability input. |
+| `SegmentHeadProductIrreducibility` | No head criterion. |
 | Shared lower inputs (derivative functors, exactness, Leibniz filtration, geometric lemma, cuspidal support, finite length) only after an independence check | The derivative functors, exactness and the 4.13(c)/4.14(a) inputs are checked above. No Leibniz filtration, geometric-lemma consumer, cuspidal-support theorem or finite-length theorem is used. `Category.Basic` defines finite length and proves nothing about it here. |
 
 ### Additional BZ77-only restrictions
 
 | Condition | Finding |
 | --- | --- |
-| Every segment derivative formula, segment-socle/head existence or Jacquet formula, segment classification; (b), (d), (e), (f) of the parent six-statement contribution and proofs depending on them | None is used. The derivatives here are the general BZ77 functors. |
-| `TwoSupercuspidalNonadjacentProductIrreducible`, `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`; `TwoSupercuspidalProductStructure`, `ab61f565-1427-4746-ba77-46097563e962` | Not used. `Classification.Supercuspidal`, `SupercuspidalContragredientAux` and `SupercuspidalContragredientStatement` are in the closure through `Smooth.SmallRealizationProof`. They supply predicates, class packaging, equivalence invariance and a conditional duality interface, and no product theorem. |
-| Individual special-head/reverse-socle existence `67279e36-f3c2-42e3-9302-11729784042e`; individual segment-socle/reverse-head existence `4ca79bbd-589e-476b-9f65-661e799984b5` | No existence input. |
-| `SegmentSpecialEssentialSquareIntegrability`, `5eece9e8-…`; `aca8805b-…`; `3bfb61fa-…`; `ebea9a8a-…`; `20e4e1c6-…`; `8252833d-…`; `52e97845-…`; `1cb45da2-…`; `cd8ab97c-…`; `bf433f0a-…`; `8364e73f-…`; `30341ae4-…`; `23189526-…`; `MultisegmentSocleExhaustion` `f3a69bc8-…`; `2ae5cbe5-…`; `e3634665-…` | As in the tables above. |
-| `SegmentFullJacquetFormula`, `ed48ae06-964c-4c84-9e62-978f5a953ca7` and its exact proof successor; `SegmentHeadJacquetFormula`, `55ad1e10-62d8-46b7-a081-909ef0056426`; `SegmentSocleJacquetFormula`, `b95105c6-f8bb-4641-ae53-2f49d1e7f034`; `SegmentSpecialJacquetExponentNormFormula`, `92aea10f-62ac-4e0b-bd4a-9a80909797c5` | No segment Jacquet formula. The localizations computed are general radical coinvariants of compact inductions. |
+| Every segment derivative formula, segment-socle/head existence or Jacquet formula, segment classification; (b), (d), (e), (f) of the six statements of `Classification.SegmentSocleDerivativesStatement` and proofs depending on them | None is used. The derivatives here are the general BZ77 functors. |
+| `TwoSupercuspidalNonadjacentProductIrreducible`; `TwoSupercuspidalProductStructure` | Not used. `Classification.Supercuspidal`, `SupercuspidalContragredientAux` and `SupercuspidalContragredientStatement` are in the closure through `Smooth.SmallRealizationProof`. They supply predicates, class packaging, equivalence invariance and a conditional duality interface, and no product theorem. |
+| Individual special-head/reverse-socle existence; individual segment-socle/reverse-head existence | No existence input. |
+| `SegmentSpecialEssentialSquareIntegrability`; analytic segment classification; multisegment exhaustion; ordered strong-head existence; quotient coverage; ordered conversion; tempered uniqueness; `SquareIntegrableLanglandsClassification`; square-integrable and regular exhaustions; `SegmentHeadProductIrreducibility`; `GenericSegmentProductUniqueness`; `OrderedMultisegmentSocleExistence`; `MultisegmentSocleExhaustion`; `SegmentSocleProductIrreducibility`; `AdjacentUnlinkedSegmentSocleSwap` | As in the tables above. |
+| `SegmentFullJacquetFormula` and its proof `segmentFullJacquetFormula` (`Classification.SegmentFullJacquetProof`); `SegmentHeadJacquetFormula`; `SegmentSocleJacquetFormula`; `SegmentSpecialJacquetExponentNormFormula` | No segment Jacquet formula. The localizations computed are general radical coinvariants of compact inductions. |
 | Ze80 §3.5 and §9.6 segment derivative formulas | Not used. |
-| No derivative result without a proof accepted and published under these conditions | Every derivative input is in the table of published inputs. |
+| No derivative result without a published proof satisfying these conditions | Every derivative input is in the table of published inputs. |
 | Ze80 4.2 or 9.7 product criteria, Ze80 9.3, any classification or exhaustion theorem; no circular use of the Ze80 4.2 converse for Proposition 1.11 | None is used. |
-| Only fully proved, independently accepted and published BZ77 general derivative inputs; the other proposition definitions of a statement module authorize nothing | The 4.13(c) and 4.14(a) clauses enter only through their published proofs. Other proposition definitions in the imported statement modules are not used as proofs. |
+| Only fully proved and published BZ77 general derivative inputs; the other proposition definitions of a statement module authorize nothing | The 4.13(c) and 4.14(a) clauses enter only through their published proofs. Other proposition definitions in the imported statement modules are not used as proofs. |
 
 ### Whittaker-finiteness independence
 
 | Condition | Finding |
 | --- | --- |
-| `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement`, parent `5ab445dc-d2b4-4072-80d1-6370870a4a26` | Not used. |
-| `LeviCuspidalCoinvariantFinitenessStatement`, proof task `3ff5c8fb-397c-4345-bcb3-5d98a0993d18` | Not used. |
-| Mirabolic finite-length route `5428fe2c-013c-482d-aa6e-7df43e7191aa` | Not used. No mirabolic finite-length result is in the closure. |
-| Worker 288's all-character and degenerate-character adapters | Not used. The lower Whittaker modules in the closure supply characters, matrix coefficients and quotient integration only. |
+| `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement` | Not used. |
+| `LeviCuspidalCoinvariantFinitenessStatement` and its proof | Not used. |
+| Mirabolic finite-length route | Not used. No mirabolic finite-length result is in the closure. |
+| The all-character and degenerate-character Whittaker adapters | Not used. The lower Whittaker modules in the closure supply characters, matrix coefficients and quotient integration only. |
 
-### Ownership
+### Reuse
 
 The 4.13(a), 4.13(b,c), 4.13(d), 4.14(a), 4.14(c), splicing and
-exact-transport units are reused only through their published Library results
-and are not duplicated. Ownership pointers grant no hypothesis.
+exact-transport results are reused only through their published Library
+declarations and are not duplicated.
 
 ### Scans
 
-- No identifier among the 38 task and artifact identifiers in the
-  exclusion sections of the contract occurs in any Lean file of the closure.
 - An exact-name scan of all closure Lean files for the excluded declarations
   (segment-socle, segment-head, two-supercuspidal, Jacquet-formula,
   classification, exhaustion and coinvariant-finiteness names) finds only the

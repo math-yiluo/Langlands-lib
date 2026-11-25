@@ -15,7 +15,7 @@ remain hypotheses. The images are the character-valuation kernel intersected
 with the full original facet's pointwise fixer. A Galois-fixed facet, an actual
 special-fibre quotient datum, an affine residue-field group and a specified
 quotient base-change isomorphism are also supplied. Neither model existence nor
-quotient descent is asserted by this unit.
+quotient descent is asserted by this module.
 
 `FiniteUnramified.fixedResidueAut` induces the automorphism of the actual residue
 field from the published `fixedFieldIntegerAut`. It fixes the base residue field:
@@ -56,8 +56,10 @@ square implies nonemptiness of those actual comparison data and
 schematic-image covariance theorem; the conclusion is equality on all test
 schemes of the represented incident image subgroup functors.
 
-This derived unit follows the cited Library constructions and arithmetic proofs;
+This module follows the cited Library constructions and arithmetic proofs;
 it claims no additional literature theorem. The literal quotient square, actual
 facet-parabolic correspondence, model existence and point descriptions, torus
 lifting, segment comparison and the unconditional prescribed-point split-torus
-theorem remain obligations of the host task.
+theorem are not proved here. The last is `UnramifiedFixedPointSplitTorusStatement`,
+which the Library proves as `unramifiedFixedPointSplitTorus` (module
+`UnramifiedFixedPointSplitTorusProof`).

@@ -1,9 +1,8 @@
 # Framed covers and lifted transition functions over a square-zero thickening
 
 Module `Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.ChartFrames`, namespace
-`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Author: Worker 5103 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`, openness of versality for actual Picard
-families). Everything is proved in the file, with no hypotheses beyond those in the
+`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality`. Part of the proof of openness of versality for actual Picard
+families. Everything is proved in the file, with no hypotheses beyond those in the
 signatures. Internal construction; no literature statement is formalized.
 
 The module produces the chart data used by `exists_lift` (`Sufficiency`),

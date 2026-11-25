@@ -1,6 +1,6 @@
 # A conditional form construction for the VII.2.6 corollary
 
-Author: Worker 346. This is internal assembly of the published discrete-series
+This is internal assembly of the published discrete-series
 embedding statement and positive-form constructions. It retains its inputs and
 does not prove the unconditional VII.2.6 corollary.
 

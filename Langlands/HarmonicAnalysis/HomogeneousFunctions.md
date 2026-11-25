@@ -1,6 +1,6 @@
 # Renard II.3.9: actual twisted homogeneous functions
 
-This definition unit constructs a submodule of the existing
+This definition module constructs a submodule of the existing
 `LocallyConstant G ℂ`, its right-translation representation, and the relative
 modular character for a closed subgroup with its induced topology. It does not
 assert the invariant functional theorem or quotient comparison.
@@ -11,7 +11,8 @@ version of 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 Locator: II.3.9 definition, conditions (a)–(b), right action and trivial-twist
 sentence, printed p.48 / PDF p.54. The invariant functional Theorem and module
-Remark are on printed pp.49–50 / PDF pp.55–56 and remain later obligations.
+Remark are on printed pp.49–50 / PDF pp.55–56; they are stated in
+`RenardHomogeneousStatements` and proved in `RenardHomogeneousProof`.
 
 All declarations are in
 `Langlands.HarmonicAnalysis.HomogeneousFunctions`.
@@ -35,16 +36,18 @@ constructing this action.
 `Distribution.renardModular (h:G) / Distribution.renardModular (G:=H) h`.
 Closedness installs local compactness on the existing subgroup subtype, without
 changing its topology. The multiplicative fields follow from those of the two
-published characters. For a t.d. group, a closed subgroup is again t.d.; no
+characters. For a t.d. group, a closed subgroup is again t.d.; no
 second-countability, unimodularity or compactness hypothesis is imposed on it.
 
 The existing `Langlands.Induction.LeftQuotient H` is the actual right-coset
 quotient `H\G`, and its projection is `Langlands.Induction.quotientMap H`.
-Those published objects are imported for the subsequent trivial-character
-comparison; no new quotient or topology is introduced. Existing compact
+Those objects are imported for the trivial-character comparison
+`QuotientTestStatement` of `RenardHomogeneousStatements`; no new quotient or topology is introduced. Existing compact
 induction uses `Langlands.Induction.CompactFunctions` with a uniform open right
-stabilizer and compact projected support. This unit follows the source's local
+stabilizer and compact projected support. This module follows the source's local
 constancy and explicit compact lift condition directly; their exact
 identity-on-values comparison, including the needed uniform stabilizer and
-compact-lift results, remains an explicit statement obligation. It is not
+compact-lift results, is the explicit statement `CompactInductionStatement` of
+`RenardHomogeneousStatements`, proved as `compactInduction` in
+`RenardHomogeneousQuotientProof`. It is not
 silently treated as a definitional equality with compact induction.

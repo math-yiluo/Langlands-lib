@@ -1,7 +1,5 @@
 # Split additive curves in separated-variable kernels
 
-Author: Worker 864.
-
 This derived polynomial input strengthens `AdditiveKernelCurve` by tracing a
 left inverse through its degree-reduction argument. Its source is
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),
@@ -22,7 +20,7 @@ additive and
 - `∑ i, (f i).comp (ψ i) = 0`;
 - `∑ i, (r i).comp (ψ i) = X`.
 
-Additivity uses the published `OneDimensional.IsAdditive` polynomial
+Additivity uses the `OneDimensional.IsAdditive` polynomial
 identity, so it holds on every commutative coefficient algebra. The second
 identity is a polynomial left inverse. In particular, it ensures that the
 section remains injective after evaluation on every commutative
@@ -87,8 +85,8 @@ the row `y ↦ ∑ i, aeval (y i) (r i)` is a left inverse to
 left inverse. These evaluation lemmas do not require additive coordinates;
 the identities alone suffice.
 
-This unit does not construct an actual group-scheme morphism or prove its
+This module does not construct an actual group-scheme morphism or prove its
 closed-immersion property, an actual vector-factor decomposition, a
 coordinate presentation for arbitrary group schemes, or the full
-woundness criterion. Those comparisons and structural results remain
-separate obligations.
+woundness criterion. The actual morphisms and their closedness are
+constructed in `AdditiveKernelGeometry`.

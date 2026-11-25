@@ -1,9 +1,9 @@
 import Langlands.Automorphic.WeakInductionAssociationReduction
-import Langlands.ClassField.Global.FundamentalClassProof
-import Langlands.ClassField.Global.IdeleClassNormGaloisProductProof
-import Langlands.ClassField.Global.LocalRelativeWeilMapExistenceProof
-import Langlands.ClassField.Global.RelativeWeilTransferReciprocityProof
-import Langlands.ClassField.Global.RelativeWeilUnramifiedTwist
+import Langlands.ClassFieldTheory.Global.FundamentalClassProof
+import Langlands.ClassFieldTheory.Global.IdeleClassNormGaloisProductProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransferReciprocityProof
+import Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTwist
 import Langlands.ClassFieldTheory.Local.LocalRelativeClassFormationProof
 import Langlands.ClassFieldTheory.Local.WeilReciprocityExistenceProof
 import Langlands.Global.Arithmetic.CyclicNormKernelUnramifiedOrderStatement
@@ -22,7 +22,7 @@ set_option autoImplicit false
 namespace Langlands.Global.HeckeCharacter
 
 open NumberField IsDedekindDomain
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local
 open Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 
 /-! ### Transport along an isomorphism of the extension field -/

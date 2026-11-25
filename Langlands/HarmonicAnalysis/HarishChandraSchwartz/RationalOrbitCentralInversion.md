@@ -3,11 +3,11 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitCentralInversion`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitFourierInversion` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalOrbitFourierInversion`:
   `rationalOrbitInversionIntegrand`, `integral_rationalOrbitInversionIntegrand`,
   `integral_rationalOrbitInversionIntegrand_eq_zero`, stated for a function `cc` on the orbit
   with the twist law `hcc` as a hypothesis;
-- `Langlands.Representation.Plancherel.DiscreteSeriesCentralCharacter` (Worker 200): the actual
+- `Langlands.Representation.Plancherel.DiscreteSeriesCentralCharacter`: the actual
   unitary central character of a discrete-series class and its restriction to a central
   subgroup, `discreteSeriesCentralRestriction`, with the twist law
   `discreteSeriesCentralRestriction_orbitMap` and `unitaryUnramifiedCircleCharacter_coe`.
@@ -71,7 +71,7 @@ affine commutative group scheme, `s : T → G` with `hs : GroupScheme.IsCentral 
 As in `RationalOrbitFourierInversion`: the normalization `mes(A_G ∩ K) = 1`, the choice of `Φ`
 as `ω ↦ (E^G_G ψ_ω)(g)` together with the integrability of the integrand, and the remaining
 steps of Proposition VII.2.1. For the continuity of `Φ`, the Library has
-`continuous_unitaryOrbitCoefficient` (`ProductInducedOrbitCoefficientSmoothness`, Worker 200)
+`continuous_unitaryOrbitCoefficient` (`ProductInducedOrbitCoefficientSmoothness`)
 for the orbit coefficients of a product-induced discrete series, under all the premises listed
 in that module's Markdown (among them `HasLaurentUnitaryCoordinates ν e` and `Continuous e` for
 the torus coordinates `e`); this module does not use it.

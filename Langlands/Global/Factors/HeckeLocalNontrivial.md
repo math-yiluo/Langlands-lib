@@ -1,6 +1,6 @@
 # Local nontriviality from the adelic multiplication pairing
 
-Worker 1692, internal derived support for the Hecke global functional equation.
+Internal derived support for the Hecke global functional equation.
 The module assumes an actual group homeomorphism from the additive adele group,
 written using `Multiplicative`, to its full compact-open Pontryagin dual. Its
 evaluation must be the actual multiplication pairing associated to the supplied
@@ -25,4 +25,4 @@ published finite additive-component construction and self-dual Haar existence.
 It delivers exactly the finite local-data existential in the global target,
 under the same explicit pairing hypothesis. No diagonal-triviality theorem,
 adelic self-duality, almost-everywhere conductor assertion or global functional
-equation is asserted by this supporting unit.
+equation is asserted by this supporting module.

@@ -1,7 +1,5 @@
 # Laurent coordinates on the actual universal coefficient algebra
 
-Worker 1755.
-
 This is an internal consequence of the published canonical rational
 unramified coordinate algebra and its transport to the literal Levi point
 subgroup. It supplies the scalar-ring properties needed by coefficient
@@ -51,7 +49,7 @@ installed.
 
 The imported `RationalUnramifiedFunctionField` supplies the relevant
 Mathlib finite-type, Noetherian and monoid-algebra results. The
-mathematical provenance is entirely the current Library's proved
+mathematical provenance is entirely the Library's proved
 canonical coordinate equivalence, proved literal-Levi function-algebra
 transport, and those algebraic results. No new source theorem is
 asserted.

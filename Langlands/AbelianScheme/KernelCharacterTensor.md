@@ -1,6 +1,6 @@
 # Tensor compatibility of the intrinsic kernel character
 
-This derived unit proves the tensor law for the actual intrinsic character
+This module proves the tensor law for the actual intrinsic character
 constructed in `IntrinsicKernelCharacter`, together with its choice-independent
 line-bundle version from `KernelCharacterIndependence`. It applies to an actual
 abelian-scheme homomorphism `f : A → B`, any test scheme `T` over the base, and
@@ -61,6 +61,6 @@ chosen by the choice-independent constructor.
 
 The provenance is derivation from published canonical module-sheaf pullbacks,
 the module-sheaf tensor, `EqualCompositeTensor`, intrinsic character evaluation,
-and its established independence. This unit proves tensor compatibility and
+and its established independence. This module proves tensor compatibility and
 closure under tensor of the actual families. It does not put a group structure
 on their isomorphism classes, prove effective descent, or assert kernel duality.

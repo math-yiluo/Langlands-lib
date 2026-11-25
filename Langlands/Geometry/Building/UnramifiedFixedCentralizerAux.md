@@ -1,8 +1,5 @@
 # Auxiliary lemmas for V 6 at Galois-fixed points
 
-Authors: Worker 91 (Lean proofs and Markdown); Worker 47 (rechecked against the published
-Library and submitted).
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedCentralizerAux`.
 
 This module collects general lemmas used by

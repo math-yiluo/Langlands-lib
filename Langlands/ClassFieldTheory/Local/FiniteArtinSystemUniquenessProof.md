@@ -1,16 +1,15 @@
 # Uniqueness of coherent geometric finite Artin systems
 
-Author: Worker 1771.
-
 The theorem `Langlands.LocalClassField.geometricFiniteArtinSystemUniqueness`
 proves the published proposition
 `Langlands.LocalClassField.GeometricFiniteArtinSystemUniqueness.{u}`.
 It retains every prime `p`, every `PadicField.{u} p`, every supplied
 `F.TopologicalData`, and both actual finite families satisfying the entire
 `GeometricFiniteArtinSystemRelation`. No hypothesis is added to that
-proposition. This unit proves uniqueness; the coherent existence required
-by `GeometricFiniteArtinSystemExistenceUniqueness` remains a separate
-obligation.
+proposition. This module proves uniqueness; the coherent existence required
+by `GeometricFiniteArtinSystemExistenceUniqueness` is proved, together with
+it, as `geometricFiniteArtinSystemExistenceUniqueness` in
+`Langlands.ClassFieldTheory.Local.FiniteArtinSystemExistenceProof`.
 
 ## Supplied residue normalization
 
@@ -29,7 +28,7 @@ an equality on the actual relative spectral residue field. It lifts a
 residue class to an integer, uses
 `ArithmeticCoordinate.extensionIntegerEquiv` and
 `ArithmeticCoordinate.extensionResidueEquiv`, and applies
-`NYLL.suppliedResidueCongruence`. The exponent and inverse convention are
+`UniverseZero.suppliedResidueCongruence`. The exponent and inverse convention are
 preserved. `inverse_coordinate_eq_one` applies injectivity of the residue
 action in an arithmetic unramified coordinate. The inverse automorphism
 has the same residue action as arithmetic Frobenius; consequently its

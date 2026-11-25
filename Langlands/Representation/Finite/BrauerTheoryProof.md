@@ -1,7 +1,5 @@
 # Proof of the finite complex Brauer theory statement
 
-Author: Worker 84, who wrote the proof and this explanation.
-
 This file proves the Library proposition `Langlands.FiniteRep.FiniteBrauerTheoryStatement`
 (module `Langlands.Representation.Finite.BrauerStatement`). The target is unchanged and keeps its
 hypotheses: `G` is a group in universe `uG` with a `Fintype` instance.
@@ -30,13 +28,13 @@ representations.
 
 ## Imports
 
-- `Langlands.Representation.Finite.BrauerLatticeProof` (Worker 84), for
+- `Langlands.Representation.Finite.BrauerLatticeProof`, for
   `Langlands.FiniteRep.BrauerLattice.characterLattice : IntegralBrauerCharacterLatticeStatement G`: the `ℤ`-span
   `inducedCharacterLattice` of the induced characters `inducedCharacter d` equals the image `virtualCharacters`
-  of the character map. Through it come `Langlands.Representation.Finite.InducedCharacterProof` (Worker 84), with
+  of the character map. Through it come `Langlands.Representation.Finite.InducedCharacterProof`, with
   `InducedCharacter.rankOneOrder`, `InducedCharacter.inducedCharacterFormula` and `InducedCharacter.inducedDegree`,
   and the target module `Langlands.Representation.Finite.BrauerStatement`.
-- `Langlands.Representation.Finite.VirtualCharacterProof` (Worker 84), for
+- `Langlands.Representation.Finite.VirtualCharacterProof`, for
   `Langlands.FiniteRep.VirtualCharacter.faithfulness : FiniteVirtualCharacterFaithfulnessStatement G` (the map
   `virtualCharacter` is injective) and `VirtualCharacter.irreducibleBasis : FiniteIrreducibleBasisStatement G`.
 

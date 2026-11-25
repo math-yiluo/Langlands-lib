@@ -1,7 +1,5 @@
 # Development assembly of positive-rank tempered quotient coverage
 
-Author: Worker 624.
-
 This internal construction assembles the coverage argument with two explicit
 prerequisite propositions: analytic temperedness under the ordinary smooth
 dual, and ordinary duality for twisted block products. Neither prerequisite

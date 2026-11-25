@@ -1,7 +1,7 @@
 # Renard C.I: proof of the nilpotent maximum's numerical base cases
 
-Worker 16 proves
-`Langlands.Renard.nilpotentDimensionBaseCases.{u}` with exactly the published
+This module proves
+`Langlands.Renard.nilpotentDimensionBaseCases.{u}` with exactly the
 type `Langlands.Renard.NilpotentDimensionBaseCasesStatement.{u}`.
 The statement and the actual maximum construction are imported unchanged.
 
@@ -12,11 +12,11 @@ pp.275–276 / one-based PDF281–282. Its registered source ID is
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 16 read both pages and visually checked the formulas. Renard opens
+Both pages were read and the formulas visually checked. Renard opens
 the proof on p.275 with the one-generator bound from Cayley–Hamilton,
 and explicitly uses `φ_l(1) = 1` for every `l` at the start of p.276.
 The zero-dimensional, empty-tuple and arbitrary-carrier conclusions are
-derived extensions specifying the full domain of the published construction.
+derived extensions specifying the full domain of the imported construction.
 The one-generator conclusion remains an upper bound.
 
 The supplementary registered source
@@ -42,7 +42,7 @@ this algebra.
 
 For a carrier of complex dimension one, `nilpotent_max_finrank_one`
 deduces nontriviality from the dimension hypothesis and combines that lower
-bound with the published ambient bound
+bound with the ambient bound
 `nilpotentGeneratedMaxDimension_le`. Its right side is `1^2 = 1`.
 This argument applies to every natural generator count; it does not
 require classifying the individual nilpotent operators.
@@ -53,7 +53,7 @@ indexing with the singleton consisting of its unique entry. The proof
 then imports
 `Langlands.CommutingDimension.singleton_dimension ℂ V` from
 `Langlands.Algebra.CommutingDimensionHelpers`.
-Worker 307 authored this published theorem: powers below the minimal
+In this theorem, powers below the minimal
 polynomial's degree span the unital adjoin; the minimal polynomial divides
 the characteristic polynomial, whose degree is the dimension of `V`.
 The present module applies that theorem without copying its proof and
@@ -70,9 +70,9 @@ The public theorem assembles these results with the existing zero-dimensional
 law for arbitrary carriers. For the four canonical clauses, it reuses
 `nilpotentGeneratedPhi_zero` and specializes the remaining results directly
 to `Fin k → ℂ`, simplifying its complex finrank to `k`.
-It does not invoke the separately published carrier-transport theorem.
+It does not invoke the separate carrier-transport theorem.
 
-## Scope and authorship
+## Scope and reuse
 
 All four arbitrary-carrier clauses quantify over every `V : Type u` with
 explicit `AddCommGroup V`, `Module ℂ V` and `FiniteDimensional ℂ V`
@@ -83,13 +83,11 @@ the final theorem retains zero spaces, empty tuples, zero entries, repeated
 entries and redundant generators. The unital adjoin includes scalars and
 the identity without counting an additional generator.
 
-Worker 16 authored the adapter proof. The imported statement originated
-with Worker 709 and was published by Worker 1200, who also authored the
-actual maximum and its construction laws. Worker 307's imported
-Cayley–Hamilton dimension theorem is credited above. These published
-results are reused by Lean name.
+The imported statement, the
+actual maximum and its construction laws, and the imported
+Cayley–Hamilton dimension theorem are reused by Lean name.
 
 Carrier transport, monotonicity, the actual ideal-power filtration,
 complement generation, restriction injection, the algebra splitting,
 the floor recurrence, the final dimension estimate and completion of
-Appendix C.I remain separate work.
+Appendix C.I are outside this module.

@@ -1,7 +1,5 @@
 # Actual finite-completion points and rational points of the base change
 
-Author: Worker 1624.
-
 This derived comparison uses only the published scheme-pullback point
 equivalences and regular-function evaluation topologies. Let `F : Type u`
 be any number field, let `G` be an actual group scheme over `Spec F`, and

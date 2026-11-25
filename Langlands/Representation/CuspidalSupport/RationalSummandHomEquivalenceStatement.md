@@ -1,6 +1,6 @@
 # Renard VI.4.1, Theorem: the Hom functor of the single-summand progenerator is an equivalence
 
-Worker 6. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the opening paragraphs of VI.4.1 on printed p.149 / PDF p.155, and the definitions (VI.4.1.3), (VI.4.1.4) and the Theorem with its proof on printed pp.150–151 / PDF pp.156–157. The categorical background is A.VIII.2, printed pp.266–267 / PDF pp.272–273. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026. The locators are the opening paragraphs of VI.4.1 on printed p.149 / PDF p.155, and the definitions (VI.4.1.3), (VI.4.1.4) and the Theorem with its proof on printed pp.150–151 / PDF pp.156–157. The categorical background is A.VIII.2, printed pp.266–267 / PDF pp.272–273. Registered source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. All of these pages were read.
 
 ## Source content
 
@@ -33,7 +33,7 @@ Let Π be the published `Induction.compactInductionFunctor (rationalCommonNormKe
 
 **Quasi-inverse.** Renard names the quasi-inverse G_Π(M) = M ⊗_R V_Π. The Lean statement asserts only that F_Π is an equivalence. Every equivalence has a quasi-inverse, unique up to natural isomorphism, but the identification of that quasi-inverse with M ⊗_R V_Π is not stated.
 
-**Universes.** π and ρ have carriers in `Type uV`, and Π has carrier in `Type (max uF uV)`. So the block is formed at carrier universe `max uF uV`, from the lift of π along the published fully faithful `SmoothRep.universeLiftFunctor` (`rationalInertiaBaseLift`), as in the Proposition and in Worker 1758's `RationalUniversalSmallProgeneratorStatement`. The Hom groups of the block live in `Type (max uF uV)`, so the target is the category of right R-modules with carrier in `Type (max uF uV)`. Renard has no universe restriction. Coefficients are ℂ in universe zero.
+**Universes.** π and ρ have carriers in `Type uV`, and Π has carrier in `Type (max uF uV)`. So the block is formed at carrier universe `max uF uV`, from the lift of π along the published fully faithful `SmoothRep.universeLiftFunctor` (`rationalInertiaBaseLift`), as in the Proposition and in `RationalUniversalSmallProgeneratorStatement`. The Hom groups of the block live in `Type (max uF uV)`, so the target is the category of right R-modules with carrier in `Type (max uF uV)`. Renard has no universe restriction. Coefficients are ℂ in universe zero.
 
 **Abelianness.** The published `Langlands.Renard.SmallProgeneratorEquivalenceStatement` (A.VIII.2) assumes an abelian category with coproducts. The present statement is made directly on the actual preadditive full block. It neither assumes nor asserts that the block is abelian or has coproducts. So it is not obtained by specializing that A.VIII.2 statement without further proof.
 

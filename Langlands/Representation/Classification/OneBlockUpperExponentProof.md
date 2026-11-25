@@ -1,6 +1,6 @@
 # Upper exponent bounds of `GL_n` on the single-block product Levi
 
-Author: Worker 978. No proof code was adapted from other workers. The route
+No proof code was adapted from other proofs. The route
 follows the one-block idiom of the published
 `Langlands.Representation.Classification.SquareIntegrableExponentProof`.
 

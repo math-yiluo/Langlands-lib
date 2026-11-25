@@ -106,13 +106,15 @@ attribute [local instance] Langlands.Analytic.NormContinuousAffinoidAction.topCa
 def action : Action TopCat.{max u w} G where
   V := TopCat.of (DiscreteLocallyConstant X A)
   ρ :=
-    { toFun := fun g => TopCat.ofHom ⟨fun f => g • f, continuous_of_discreteTopology⟩
+    { toFun := fun g => End.of (TopCat.ofHom ⟨fun f => g • f, continuous_of_discreteTopology⟩)
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro f
         exact one_smul G f
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro f
         exact mul_smul g h f }

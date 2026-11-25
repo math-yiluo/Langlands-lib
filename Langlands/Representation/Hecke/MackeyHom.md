@@ -1,6 +1,6 @@
 # The Hom Mackey natural isomorphism
 
-This supporting unit proves the first isomorphism of Renard III.2.11 Theorem
+This module proves the first isomorphism of Renard III.2.11 Theorem
 (printed pp.82–83 / PDF pp.88–89), using the actual transported Hecke functor.
 It does not assert the second, conditional tensor isomorphism.
 
@@ -16,6 +16,8 @@ isomorphism on the full product category, not just objectwise comparisons.
 Hecke right induction, taking its III.2.1 adjunction as an argument and using the
 published natural comparison between continuous pullback and transported Hecke
 forgetting. The required adjunction is supplied by the published theorem
-`smoothInductionAdjunctionStatement`; this supporting definition does not yet
-assemble the full target statement.
+`smoothInductionAdjunctionStatement`; this definition does not assemble the full
+statement `MackeyIsomorphismStatements` (module `MackeyStatements`). The Library
+proves that statement as `mackeyIsomorphismStatements` in `MackeyProof`, which
+does not import this module.
 All group and carrier universe parameters remain independent.

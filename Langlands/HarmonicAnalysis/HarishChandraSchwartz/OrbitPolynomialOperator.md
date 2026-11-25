@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitPolynomialOperator`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.TraceFamilyScalar` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.TraceFamilyScalar`:
   `quotientCharacter`, `quotientCharacter_apply`, `finsuppCharacterSum`, `contragredientRep`,
   `conj_mk_ker`, `hasCompactSupport_kerLiftFun`, `exists_character_comp_eq`,
   `traceFamily_operator_eq_smul` (`π[φ] = P_φ(π) • id` with a chosen `χ₀`) and
@@ -13,7 +13,7 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   `norm_character_eq_one` (`SchurOrthogonality`), `twist`, `twistEquiv`, `twist_one`,
   `twist_twist`, `twist_twist_inv`;
 - `Langlands.Representation.Category.Twist` (`equivOfRepresentationEq`);
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.AdmissibleFitting` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.AdmissibleFitting`:
   `fittingRange`, `fittingKernel`, `mem_fittingKernel_iff`, `isCompl_fittingRange_fittingKernel`,
   `bijOn_fittingRange` (the decomposition `V = ⋂ₙ Tⁿ V ⊕ ⋃ₙ Ker Tⁿ` for an intertwiner `T` of an
   admissible representation);

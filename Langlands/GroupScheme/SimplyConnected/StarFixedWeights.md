@@ -1,7 +1,7 @@
 # Star-fixed weights and coset sums of star translates
 
-This module supplies the lattice side of the transfer clause for the Tits obstruction
-(Task 7603, clause 3): the subgroups of star-fixed integral weights and the coset sum
+This module supplies the lattice side of the transfer clause for the Tits obstruction:
+the subgroups of star-fixed integral weights and the coset sum
 `∑_{σ ∈ Γ/Γ_E} σ ⋆ λ`, with independence of representatives, star invariance, additivity
 and the multiplicity of each translate. It constructs no Tits algebra, Brauer class or
 corestriction, and no base change of the group.
@@ -106,9 +106,8 @@ Internal. The construction follows the sum `c = ∑_{θ ∈ Θ} θ(c₁)` in Tit
 Proposition 5.1 (J. reine angew. Math. 247, p. 207), where `Θ` is a system of
 representatives of `Γ/Γ₁`. Tits takes for `Γ₁` the stabilizer of `c₁` and for `k₁` its
 fixed field, and states the result for `c₁` in his group `C*`. Here the sum is taken in
-the actual integral character lattice of the split torus, as the task requires. Here `Γ_E` may be any subgroup
-`Gal(K/E)` of finite index contained in the stabilizer, as clause 3 of Task 7603 requires,
-and multiplicities are counted.
+the actual integral character lattice of the split torus. Here `Γ_E` may be any subgroup
+`Gal(K/E)` of finite index contained in the stabilizer, and multiplicities are counted.
 
 `cosetSum_eq_finsum_orbit` is the integral-weight analogue of the norm sum of Tits's
 Proposition 5.1, not Tits's case itself. The stabilizers differ. Here it is the star

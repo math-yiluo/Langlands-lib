@@ -1,7 +1,5 @@
 # Finite generating families for the normalized Harris determinant
 
-Author: Worker 344.
-
 This internal derived construction reduces the existing normalized
 Harris–Taylor rational Lie determinant condition to a single fixed finite
 integer module-generating family of the actual Harris order. At every

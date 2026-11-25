@@ -1,6 +1,6 @@
 # `L²(G, χ, dg*)₀` is the space of smooth vectors of its Hilbert completion
 
-Author: Worker 1222. Module
+Module
 `Langlands.Representation.MatrixCoefficient.CentralL2SmoothVectorsStatement`, namespace
 `Langlands.Renard.CompactRepresentation`. Statement `CentralL2SmoothVectorsStatement : Prop`
 (universe parameter `uG`); nothing is proved here.
@@ -22,8 +22,8 @@ the invariant positive definite form `⟨f₁, f₂⟩ = ∫_{G/Z(G)} conj(f₁(
 
 ## The published objects
 
-- `Induction.CentralL2 χ hχ μ` (module `Langlands.Representation.MatrixCoefficient.CentralL2`,
-  Worker 88) is the Library's `L²(G, χ, dg*)₀`: centrally covariant functions with a uniform
+- `Induction.CentralL2 χ hχ μ` (module `Langlands.Representation.MatrixCoefficient.CentralL2`)
+  is the Library's `L²(G, χ, dg*)₀`: centrally covariant functions with a uniform
   open right stabilizer whose quotient norm is square integrable for `μ`, with the right
   translation representation `centralL2Representation`.
 - `Induction.centralL2Form χ hχ μ` is the published `InvariantPositiveForm` of that
@@ -71,9 +71,10 @@ That is, the smooth vectors of the completion are exactly the (image of the) ele
   assumption through a Haar measure on `G/Z(G)` that is also right invariant, and so does this
   statement.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. Elements of `L²(G, χ, dg*)₀` are smooth vectors because
+The proof is `centralL2SmoothVectors`, in the separate module
+`Langlands.Representation.MatrixCoefficient.CentralL2SmoothVectorsProof`. Elements of `L²(G, χ, dg*)₀` are smooth vectors because
 the completed operators extend the original ones. Conversely, if an open subgroup fixes `w`,
 it contains a compact open subgroup `K` fixing `w`; averaging over `K` is a continuous
 projector of the completion that maps `L²(G, χ, dg*)₀` onto its `K`-fixed functions and fixes

@@ -1,7 +1,5 @@
 # The full kernel of commuting subgroup multiplication
 
-Authors: Worker 1783 and Worker 1616.
-
 This internal construction starts from the published actual multiplication
 homomorphism for two maps `j : H → G` and `i : K → G` whose images commute on
 all test schemes. It works over every scheme base.

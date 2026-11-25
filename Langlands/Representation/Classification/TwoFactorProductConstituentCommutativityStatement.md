@@ -1,8 +1,5 @@
 # Constituent commutativity of a product of two irreducible GL factors
 
-Author: Worker 763. Worker 238 supplied the exact target shape and compiled
-it first as a private probe.
-
 `Langlands.Classification.TwoFactorProductConstituentCommutativity.{uF,uV} F T`
 is a Prop-valued definition. It states that the two orders of a normalized
 product of two irreducible factors have the same composition factors. This
@@ -83,15 +80,14 @@ contained in Theorem 1.9. The finite length of both products, which
 Zelevinsky takes from Proposition 1.4, is part of this conclusion and not a
 hypothesis. Zelevinsky's product order matches `BlockShape`: the first factor
 occupies the first block. The irreducible case suffices for the known
-consumers. It is also the base case from which the finite-length form,
-owned separately by task `bd34fb90-1c0d-4f74-aed4-ef6af4d9e5af`, is to be
-derived. That task depends on this one; this statement and its proof use no
+consumers. It is also the base case for the finite-length form of
+Theorem 1.9, which depends on it; this statement and its proof use no
 finite-length form of Theorem 1.9.
 
 The cited passages were read in the retained original, and its hash was
 checked.
 
-## Source proof and planned route
+## Source proof and proof route
 
 Zelevinsky's proof uses `s_n` with `(s_n)_{ij} = (-1)^i δ_{i,n+1-j}` and the
 automorphism `s(g) = s_n (gᵗ)⁻¹ s_n⁻¹` of `GL_n`. The induced functor `s` on
@@ -115,12 +111,13 @@ JH⁰(π₁ × π₂) = JH⁰((s(π₁ × π₂))~) = JH⁰((s(π₂) × s(π₁
 using in turn (b), (a), §1.1(d) (normalized induction commutes with
 contragredients), and (b) again.
 
-The planned independent proof follows this route.
+The independent proof route below follows this argument. The Library proves
+the statement as `Langlands.Classification.twoFactorProductConstituentCommutativity`
+in `TwoFactorProductConstituentCommutativityProof`.
 
 1. Lemma (a). The published `Parabolic.NormalizedProductInverseTransposeClause`
    (`Representation/Parabolic/InverseTransposeProductStatement`, proved in
-   `InverseTransposeProductProof` by task
-   `fc1a5e69-5e8e-4fcd-ad69-c3d3d1384e91`) identifies the inverse-transpose
+   `InverseTransposeProductProof`) identifies the inverse-transpose
    pullback of a normalized product over `B` with the product over
    `B.reverse` of the pulled-back factors. It uses the plain inverse
    transpose `θ(g) = (gᵗ)⁻¹` and already reverses the block order.
@@ -131,19 +128,22 @@ The planned independent proof follows this route.
    includes every rank here.
 2. Lemma (b) for the irreducible factors and for the composition factors of
    both products. The Gelfand–Kazhdan theorem is
-   `GelfandKazhdanContragredientStatement` (proof task
-   `2206daa6-e219-4ed6-9ad1-4f4d47efed93`, pending). It assumes admissibility,
+   `GelfandKazhdanContragredientStatement` (proved as
+   `gelfandKazhdanContragredient` in `Smooth/Contragredient/GelfandKazhdanProof`).
+   It assumes admissibility,
    is phrased with `Matrix.GeneralLinearGroup (Fin (n + 1))`, and uses the
    canonical normed-field topology. Irreducible smooth representations must
    therefore be shown to be admissible. Zelevinsky §1.5, printed p.171
    (PDF p.8), takes this from his reference [1], Bernstein–Zelevinsky (1977),
    2.5. The Library states the product-Levi form as
-   `CuspidalSupport.IrreducibleLeviAdmissibilityTheorem`, but no proof of it
-   was found at this writing. The topology and rank conventions must also be
+   `CuspidalSupport.IrreducibleLeviAdmissibilityTheorem` and proves it as
+   `irreducibleLeviAdmissibility` in
+   `CuspidalSupport/IrreducibleLeviAdmissibilityProof`. The topology and rank conventions must also be
    reconciled with `T.topology`.
 3. Finite length of the products is the statement
-   `Classification.IrreducibleProductFiniteLength` (proof task
-   `0717fd42-d711-4f42-8269-f6ae4c8da1e9`, pending). Converting finite module
+   `Classification.IrreducibleProductFiniteLength` (proved as
+   `irreducibleProductFiniteLength` in `IrreducibleProductFiniteLengthProof`).
+   Converting finite module
    length to an actual composition series in `ObjectRepFiltration` form is a
    separate step.
 4. Transport of composition series along pullback by a group automorphism
@@ -168,32 +168,21 @@ attributes to Bernstein–Zelevinsky (1977), 2.9. It may help a proof, but it
 does not give this result for arbitrary irreducible factors such as segment
 socles.
 
-The proof successor must check the exact hypotheses, universes and
-transitive dependencies of each input. It should reuse or wait for existing
-owners and split off only inputs that have no owner. A proposition
-definition, citation, conditional assembly or pending task is not a proved
+A proof must check the exact hypotheses, universes and
+transitive dependencies of each input. A proposition
+definition, citation or conditional assembly is not a proved
 input.
 
 ## Independence
 
 This result is a lower input of linked two-factor gluing
-(`LinkedSegmentSocleGluing`, candidate `c84cd52c-3ff3-4024-be50-8b84dd480888`,
-and its proof successor), two-segment socle commutation
-`426911b4-6620-413f-8065-04b25287f3bd`, the adjacent unlinked segment-socle
-swap `e3634665-571b-4852-9f4c-bab8a1053434`, linked full-product reduction
-`0f459af5-e039-4eee-a8bd-9d8d2f508936` and independent socle exhaustion
-`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`. Its proof must not use any of them.
-It must also avoid the segment-socle irreducibility criterion
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`, Worker 250's two-segment statement
-task `16045335-62c9-4da7-b38f-88579104274b`, the finite-length form
-`bd34fb90-1c0d-4f74-aed4-ef6af4d9e5af`, ordered socle existence
-`23189526-80b0-4828-a6d4-7ebec2cbeef5`, segment analytic classification
-`aca8805b-054f-4d56-8045-12db7f623404`, multisegment special-head exhaustion
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered special-head existence
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`, the square-integrable Langlands
-classification `1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable
-exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4` and regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`. These exclusions cover their
-conclusions, proof successors and transitive proof dependencies.
+(`LinkedSegmentSocleGluing` and its proof), two-segment socle commutation,
+the adjacent unlinked segment-socle swap, linked full-product reduction
+and independent socle exhaustion. Its proof must not use any of them.
+It must also avoid the segment-socle irreducibility criterion, the
+two-segment statement, the finite-length form of Theorem 1.9, ordered socle
+existence, segment analytic classification, multisegment special-head
+exhaustion, ordered special-head existence, quotient coverage, tempered block
+uniqueness, the square-integrable Langlands classification, square-integrable
+exhaustion and regular exhaustion. These exclusions cover their
+conclusions, proofs and transitive proof dependencies.

@@ -1,6 +1,6 @@
 # Represented split series for unipotent groups over algebraically closed fields
 
-Worker 1448. This derived assembly applies the published theorem
+This derived assembly applies the published theorem
 `Unipotent.algebraicallyClosedSplit_of_oneDimensional` to the published
 proofs `unipotentClosedSubgroup` and
 `perfectFieldOneDimensionalUnipotent`. Its provenance is internal composition

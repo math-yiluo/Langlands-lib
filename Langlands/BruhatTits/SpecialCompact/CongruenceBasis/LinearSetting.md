@@ -1,6 +1,6 @@
 # Congruence subgroups pulled back along a closed embedding into `GL_N`
 
-This internal unit transfers the matrix results of
+This internal module transfers the matrix results of
 `Langlands.BruhatTits.SpecialCompact.CongruenceBasis.GLCongruence` to the
 rational points of an affine group scheme `G` over a field `F`. The transfer
 goes through a linear representation

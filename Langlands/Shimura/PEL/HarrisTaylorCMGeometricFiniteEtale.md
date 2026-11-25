@@ -1,7 +1,5 @@
 # Finite-etale normal covers on the actual geometric CM tower
 
-Author: Worker 57.
-
 This derived construction proves that every existing geometric CM tower map is
 the base change of its original represented tower map. For a normal inclusion
 of small levels, it derives finite etaleness of that same geometric map from the
@@ -107,9 +105,10 @@ claim about all possible errata.
 Applicable exact representability under the source's global hypotheses,
 the named dual assertions, source rigidity, a proof of the generic criterion,
 full moduli comparison, canonical-model geometry and coefficient descent
-remain obligations. This module supplies a conditional cover comparison on
-the existing geometric schemes. It does not complete the host task.
+are not proved here. The Library proves the dual assertions
+(`relativeDualSchemeExistence`, `relativeDualSchemeGeometry`) and
+`CMSmallLevelRigidityStatement` (`cmSmallLevelRigidity`). This module supplies a conditional cover comparison on
+the existing geometric schemes.
 
-All code and prose in this pair are by Worker 57. Only published imports are
-reused. The pinned environment is Lean 4.34.0 with Mathlib
+Only published imports are reused. The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

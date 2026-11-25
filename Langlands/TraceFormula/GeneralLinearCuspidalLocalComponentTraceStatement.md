@@ -8,8 +8,8 @@ definition and one proposition definition, and no proof:
 - `Langlands.TraceFormula.GeneralLinearCuspidalLocalComponentTraceStatement.{u, uV}`.
 
 The statement is the untwisted part of
-`Langlands.TraceFormula.GroupSchemeCuspidalLocalTraceFactorizationStatement` (Task 7701) for the
-group `GL_{r+1}`, with the local factor identified. Task 7701 asserts that the traces on an
+`Langlands.TraceFormula.GroupSchemeCuspidalLocalTraceFactorizationStatement` for the
+group `GL_{r+1}`, with the local factor identified. That statement asserts that the traces on an
 irreducible cuspidal summand `P` split off the character of *some* irreducible admissible
 representation `ρ_v` of `GL_{r+1}(F_v)`. Here `ρ_v` is the Library's local component at `v` of a
 cuspidal operator realization `R` attached to `P`. That is the object on which the Library states
@@ -54,7 +54,7 @@ Places and local groups. `v : Langlands.Global.FinitePlace F` is a finite place 
 corresponding element of `Place F`. `PlaceGroupPoints F GLₙ (.inr v)` (written `GLₙ(F_v)`) is
 the topological group of points of the group scheme over the completion `F_v`;
 `atPlace F GLₙ (.inr v)` is the projection `g ↦ g_v` and `ofPlace F GLₙ (.inr v)` the insertion
-of a local point at `v`. Exactly as Task 7701 does, the statement takes
+of a local point at `v`. Exactly as `GroupSchemeCuspidalLocalTraceFactorizationStatement` does, the statement takes
 `[MeasurableSpace GLₙ(F_v)] [BorelSpace GLₙ(F_v)] [LocallyCompactSpace GLₙ(F_v)]` and
 `[TotallyDisconnectedSpace GLₙ(F_v)]` as instance binders. (The Library also has a Borel
 σ-algebra and, for affine group schemes of finite type, local compactness on these points, in
@@ -70,7 +70,7 @@ Matrix model. The Library's automorphic forms for `GL_{r+1}` live in a matrix mo
 `FiniteLocalGL F (r + 1) v` is `GL_{r+1}` of the completion `FiniteCompletion F v`, with its
 completion topology.
 `Langlands.TraceFormula.localGLHomeomorph F (r + 1) (.inr v) : GLₙ(F_v) ≃ₜ* GL (Fin (r + 1)) F_v`
-(module `Langlands.TraceFormula.GeneralLinearBaseChangeLocal`, Task 7684) is the Library's
+(module `Langlands.TraceFormula.GeneralLinearBaseChangeLocal`) is the Library's
 isomorphism of topological groups between the group-scheme model and the matrix model, and
 `continuousGeneralLinearEquiv` is the corresponding identification of continuous functions on
 the adelic groups.
@@ -110,7 +110,8 @@ For a finite place `v` and `A : LocalRealization F (r + 1) v`,
 is `A.representation` composed with the group isomorphism underlying
 `localGLHomeomorph F (r + 1) (.inr v)`. So `y ∈ GLₙ(F_v)` acts on a form in `A` by right
 translation by the matrix `localGLHomeomorph y` at the place `v`. The definition only transports
-the local action from the matrix model to the group-scheme model in which Task 7701 is stated.
+the local action from the matrix model to the group-scheme model in which
+`GroupSchemeCuspidalLocalTraceFactorizationStatement` is stated.
 
 ## Statement
 
@@ -119,7 +120,7 @@ measure `μv` on `GLₙ(F_v)` and every Haar measure `ν` on `GLₙ(𝔸_F)`, as
 
 1. `P` is a subspace of `S` with `[CompleteSpace P]` and `P ≠ ⊥`, invariant under every `πc a`,
    such that every closed subspace `Q ≤ P` invariant under every `πc a` is `⊥` or `P` (these
-   are the hypotheses on `P` in Task 7701);
+   are the hypotheses on `P` in `GroupSchemeCuspidalLocalTraceFactorizationStatement`);
 2. `R` is a cuspidal operator realization and `Φ : R.Space →ₗ[ℂ] S` is a linear map with
    `IsGeneralLinearFormClass F r T i (Φ f) (R.realization.toContinuous f)` for every
    `f : R.Space`, and the topological closure of the range of `Φ` is `P` (this link is the
@@ -154,12 +155,13 @@ the trace when the property holds. It has no twisted part (see "Scope").
    with Mathlib's topology on it: this is the topology used by `LocalRealization.IsAdmissible`.
    Open subgroups correspond, and so do their fixed vectors. So smoothness and
    finite-dimensionality of fixed spaces transfer from `D.localComponent v` to `ρ`.
-2. **Factorization of `P`.** As in the argument for Task 7701: `GLₙ(𝔸_F)` is the product
+2. **Factorization of `P`.** As in the argument for
+   `GroupSchemeCuspidalLocalTraceFactorizationStatement`: `GLₙ(𝔸_F)` is the product
    `GLₙ(F_v) × GLₙ(𝔸_F^v)` and `GLₙ(F_v)` is of type I, so the irreducible unitary
    representation on `P` is a Hilbert tensor product `π_v ⊗̂ π^v` of irreducible unitary
    representations (Folland, Theorem 7.17, printed p. 237), with `GLₙ(F_v)` acting on the first
    factor only. The smooth vectors of `π_v` form an irreducible admissible representation
-   `π_v^∞`, and the argument of Task 7701 gives
+   `π_v^∞`, and the argument for that statement gives
    `operatorTrace (P_P R_S(f) ι_P) = tr π_v^∞(fv) · C(fw)`.
 3. **The local component is `π_v^∞`.** By `localComponent_le_full`, every vector of
    `D.localComponent v` is the function of a unique vector of `R` (`toContinuous` is injective),
@@ -216,15 +218,17 @@ irreducibility and admissibility are hypotheses because the Library states them 
 on local components (`LocalRealization.IsIrreducible`, `LocalRealization.IsAdmissible`). The
 trace class property is a hypothesis.
 
-Intended use. Task 7340 uses the statement in the global assembly of the local base change
-identities. The traces on the cuspidal summands `P` from the twisted spectral expansion
-(Task 7698) and the local trace factorization (Task 7701) become characters of the Library's
+Intended use. The statement serves the global assembly of the local base change identities
+(local cyclic base change of prime degree for `GL_n`). The traces on the cuspidal summands `P`
+from the twisted spectral expansion (`GroupSchemeTwistedCuspidalSpectralExpansionStatement`)
+and the local trace factorization (`GroupSchemeCuspidalLocalTraceFactorizationStatement`)
+become characters of the Library's
 local components. These are the objects that carry the local hypotheses (for example
 `LocalRealization.IsSupercuspidal`, module `Langlands.Automorphic.SupercuspidalComponent`) of the
 Library's cyclic base change statements.
 
 ## Scope
 
-Only the untwisted part of Task 7701 is stated. The twisted part needs, in addition, the
+Only the untwisted part of `GroupSchemeCuspidalLocalTraceFactorizationStatement` is stated. The twisted part needs, in addition, the
 identification of the twisting operator `I_Θ` for the Weil restriction of `GL_n` with the
 matrix-model Galois action on forms. That identification belongs to a separate statement.

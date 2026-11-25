@@ -41,4 +41,7 @@ semisimplicity theorem applies to every quotient in the target.
 The source field is arbitrary. No perfectness, characteristic, or splitting
 hypothesis is introduced. The reduction explains the remaining proof
 obligations through its three explicit structural assumptions; it does not
-replace their proofs or complete the unconditional host task.
+replace their proofs or by itself prove the unconditional
+`ReductiveCentralTorusSemisimpleQuotientStatement`, which is proved as
+`reductiveCentralTorusSemisimpleQuotient` in
+`Reductive.CentralTorusSemisimpleQuotientProof`.

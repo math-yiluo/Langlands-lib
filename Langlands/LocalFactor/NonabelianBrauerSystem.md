@@ -1,7 +1,7 @@
 # Conditional system laws for actual Brauer descent
 
-Worker 1727 extends the conditional construction in `NonabelianBrauerDescent`,
-using Worker 1769's actual `CommonClosureCoherence` proofs.
+This module extends the conditional construction in `NonabelianBrauerDescent`,
+using the actual proofs in `CommonClosureCoherence`.
 The arithmetic `KernelCompatibility` premise and normalized supplied reciprocity
 remain explicit. No unconditional existence theorem is asserted here.
 

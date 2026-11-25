@@ -1,6 +1,6 @@
 # A reordered cuspidal tensor in the opposite Jacquet module of a product
 
-Author: Worker 4988. Module `Langlands.Representation.Classification.A6iiGeometric`,
+Module `Langlands.Representation.Classification.A6iiGeometric`,
 namespace `Langlands.Classification.A6ii`. Internal helper for the proof of Tadić's
 Corollary A.6(ii) (`IrreducibleLanglandsHeadProductProof`). It applies the whole-Levi
 piece of the geometric lemma of Bernstein–Zelevinsky, through the published

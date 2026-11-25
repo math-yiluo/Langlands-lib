@@ -67,8 +67,8 @@ theorem isIntegrallyClosed_of_smooth_over_field (K B : Type u) [Field K] [CommRi
   intro p hp
   let x : PrimeSpectrum B := ⟨p, hp.isPrime⟩
   let C := (Spec (.of B)).presheaf.stalk x
-  have hReg : IsRegularLocalRing C := AlgebraicGeometry.Smooth.isRegularLocalRing_stalk (f := f) x
-  have : IsDomain C := IsRegularLocalRing.isDomain C
+  have hReg : IsRegularLocalRing C := AlgebraicGeometry.Smooth.isRegularLocalRing_stalkFLT (f := f) x
+  have : IsDomain C := IsRegularLocalRing.isDomainFLT C
   have := Langlands.CommutativeAlgebra.regularLocalFactorial C hReg
   have hClosed : IsIntegrallyClosed C := inferInstance
   let e := (Spec.stalkIso (.of B) x).commRingCatIsoToRingEquiv

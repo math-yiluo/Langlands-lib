@@ -1,7 +1,5 @@
 # Fppf locality and commutativity of relative multiplicative-type groups
 
-Worker 875.
-
 This module proves basic consequences of the published relative predicate
 `Langlands.GroupScheme.RelativeMultiplicativeType.IsMultiplicativeType`.
 It is an internal derivation from that definition and the existing cover,

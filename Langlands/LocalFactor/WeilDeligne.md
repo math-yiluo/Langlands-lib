@@ -2,8 +2,9 @@
 
 `Langlands.LocalFactor.WeilDeligne` constructs the actual quotient
 \(Q=V^I/(\ker N)^I\), its induced action, and the determinant correction.
-It uses the parameter owner's `WeilDeligneRepresentation` and
-`inertiaKernelRepresentation`. Coefficients range over a field, the group
+It uses `WeilDeligneRepresentation` from `Langlands.WeilDeligne.Basic` and
+`inertiaKernelRepresentation` from `Langlands.WeilDeligne.Kernels`.
+Coefficients range over a field, the group
 is arbitrary, and the coefficient, group and carrier universes are
 independent. A normal subgroup \(I\) and an element \(g\) are explicit.
 The spectral-value section specializes only the coefficient field to
@@ -14,14 +15,15 @@ The spectral-value section specializes only the coefficient field to
 `inertiaRepresentation` is the representation on the actual subspace
 \(V^I\). `kernelInInvariants` is the inverse image of \(\ker N\) under
 the inclusion \(V^I\hookrightarrow V\). Its membership theorem says
-exactly \(Nv=0\). `kernelInInvariants_stable` uses the parameter owner's
-proved monodromy-kernel stability, derived from covariance. The ambient
+exactly \(Nv=0\). `kernelInInvariants_stable` uses the
+monodromy-kernel stability of `WeilDeligneRepresentation.kernelSubrepresentation`,
+derived from covariance. The ambient
 action on \(V^I\) comes from normality. These facts construct
 `quotientRepresentation` using Mathlib's quotient action and prove that
 `quotientProjection` is an intertwiner.
 
 `kernelInInvariantsEquiv` reorders the two subtype conditions to give
-an explicit linear equivalence with the parameter owner's
+an explicit linear equivalence with
 `inertiaKernelRepresentation I A`. The quotient dimension
 `conductorCorrection` therefore satisfies both
 \[
@@ -82,7 +84,8 @@ and rational corrections. The proofs use equality of finite dimensions
 and invariance of the characteristic polynomial and determinant under
 linear conjugacy. `conductorCorrectionClass`, `rationalLFactorClass`,
 `quotientDeterminantClass` and `quotientCorrectionClass` then descend
-to the parameter owner's genuine pair-isomorphism classes.
+to the genuine pair-isomorphism classes
+`WeilDeligneRepresentation.IsomorphismClasses`.
 
 The subgroup \(I\) acts trivially on \(V^I\), and this is proved to
 descend to \(Q\). Its action on the inertia-fixed kernel is also
@@ -115,26 +118,27 @@ character. In that specialization the convention must be
 chooses such an element nor proves the local Weil construction.
 
 The direct project imports are `Langlands.WeilDeligne.Kernels` and the canonical
-`Langlands.LocalFactor.Euler.Definitions`. Integration changes the former
-`Langlands.LocalFactor.Euler` import to that path without changing any
+`Langlands.LocalFactor.Euler.Definitions`. The former
+`Langlands.LocalFactor.Euler` import was changed to that path without changing any
 mathematical declaration.
 
 The dependencies `Langlands.Weil.Representation.Invariants`,
 `Langlands.WeilDeligne.Basic` and `Langlands.WeilDeligne.Kernels` are
-published in the current Library. Their Lean SHA-256 values are respectively
+modules of the Library. Their Lean SHA-256 values are respectively
 `6b8ce494e92094357b8035f0a2c782cd67be997a7eb420f01a0ae0b7e78bd87f`,
 `2359916cf05537665a83a6f5e75c55f2698577b47d9777f6431262fd1b595fbf`
 and
 `fc80f9ec895d5bfbc1ae4b397c799aa657eac45b2a4154be30a0fc8f5d560da6`.
-All three dependencies are preserved without edits and are not
-resubmitted by this contribution.
+All three dependencies are used without edits.
 
 No epsilon-system existence, reciprocity, Fourier self-dual measure,
 functional equation or tensor-factor theorem is assumed or proved
 here. The determinant correction is an actual constructed factor;
-the full nonabelian epsilon function still needs its separately
-specified constant system and existence theorem. In particular,
+the full nonabelian epsilon function needs its separately
+specified constant system and existence theorem (`NonabelianSystem.IsSystem`
+in `Langlands.LocalFactor.NonabelianSystem`, and `NonabelianSystem.exists_system`
+in `Langlands.LocalFactor.NonabelianSystemExistsProof`). In particular,
 Tate's auxiliary expression \(\epsilon(V)t^{a(V)}\) must not be
 silently identified with the full fixed-character spectral twist,
 which also contains the additive-character conductor contribution.
-This module does not complete the broad arithmetic definition task.
+This module does not complete the arithmetic definition of the local factors.

@@ -1,8 +1,7 @@
 # Maximal-torus images under central isogenies of smooth affine groups
 
-Author: Worker 1531. The first proof adapts the published proof of
-`centralIsogenyMaximalTorusImage` (`CentralIsogeny/MaximalTorusImageProof`,
-Workers 1428 and 1531).
+The first proof adapts the published proof of
+`centralIsogenyMaximalTorusImage` (`CentralIsogeny/MaximalTorusImageProof`).
 
 The module proves two theorems in namespace
 `Langlands.GroupScheme.IsCentralIsogeny`, and records both in one
@@ -99,7 +98,7 @@ are not derived from 17.20: the proof is the finite-kernel argument over `k`
 described above, which uses only Library results. The module makes no new
 external assertion.
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+Checked with `lean_check`
 over Library commit `dd78edadc914cf56ca81c595cee581a3570d415c`
-(diagnostic `8fe7a90d-e5cb-4229-8911-4620b6d22e74`, Lake build): 0 errors,
+(Lake build): 0 errors,
 0 warnings, axioms `propext`, `Classical.choice`, `Quot.sound`.

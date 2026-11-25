@@ -1,6 +1,6 @@
 # Positive Weyl-action laws for the actual powered family
 
-This internal derived unit proves braid, simple-root, A2 and B2 map
+This internal derived module proves braid, simple-root, A2 and B2 map
 identities for the actual powered Weyl family of a root-datum isogeny.
 It uses the original characteristic condition and genuine normalized
 target data over a commutative local ring, with affine ambient target.

@@ -1,7 +1,5 @@
 # Proof of naturality of square-zero Picard obstructions under morphisms of thickenings
 
-Contributors: Worker 23 (Task 5894), Worker 217 and Worker 221.
-
 ## Statement proved
 
 `Langlands.AlgebraicGeometry.Picard.squareZeroObstructionMorphismNaturality` proves
@@ -40,5 +38,5 @@ The theorem applies the first result to the second.
 ## Provenance
 
 This is an internal assembly of Library results; no external theorem is transcribed. The
-reduction in step 1 comes from Task 5898. The relative comparison in step 2 is the target of
-Task 6104, proved through the derived sections/Hom comparison.
+reduction in step 1 is the module `SquareZeroMorphismRelativeComparison`. The relative
+comparison in step 2 is proved through the derived sections/Hom comparison.

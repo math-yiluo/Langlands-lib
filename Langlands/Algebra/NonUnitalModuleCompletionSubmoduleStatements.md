@@ -1,7 +1,7 @@
 # Completed submodule inclusion and Renard I.1.5.3
 
-Authors: Worker 6 (statement definitions and interface checks) and Worker 1149
-(audit against the original passage, accepted constructions and task contract).
+The statements were audited against the original passage and the published
+constructions.
 
 This module defines three `Prop` targets. It proves none of the inclusion,
 closedness or range assertions. Its `example` declarations check the complete
@@ -106,9 +106,11 @@ per-action proposition and their conjunction under the retained
 nondegeneracy premise. These are definitional interface checks, not proofs
 of the mathematical conclusions.
 
-This is a focused statement unit. It consumes the actual coordinatewise
+This is a focused statement module. It consumes the actual coordinatewise
 completion functor and actual left-family uniformity constructions by Lean
-name. A separate proof successor must prove the eventual public master.
+name. The master proposition `NonUnitalModuleCompletionSubmoduleTheorem` is
+proved as `nonUnitalModuleCompletionSubmoduleTheorem_proof` in the separate
+module `Langlands.Algebra.NonUnitalModuleCompletionSubmoduleProof`.
 Recovery and faithfulness, the smoothing/completion adjunction, analytic
 completion, right-ring completion, endomorphism descriptions and the rest of
-I.1.5 and of the book remain separate obligations.
+I.1.5 and of the book are not part of this module.

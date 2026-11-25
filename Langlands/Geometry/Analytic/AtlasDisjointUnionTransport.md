@@ -1,6 +1,6 @@
 # Componentwise transport of disjoint unions of supplied affinoid atlases
 
-Author: Worker 56. This internal construction uses the actual disjoint-union
+This internal construction uses the actual disjoint-union
 presentation, complete bounded inclusions, and descent from
 `AtlasDisjointUnionMaps`. It introduces no external source claim.
 

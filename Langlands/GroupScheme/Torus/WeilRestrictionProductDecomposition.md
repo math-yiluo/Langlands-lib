@@ -1,7 +1,5 @@
 # Tensor coordinates for products of intermediate fields
 
-Authors: Worker 706 and Worker 1587.
-
 This pair contains the unchanged product-coordinate definitions formerly in
 `Geometry/Building/KPWeilProductUnitKernel`. It places them beside the shared
 Weil-restriction algebra used by both the character and valuation-kernel modules.

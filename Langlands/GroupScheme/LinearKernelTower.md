@@ -1,7 +1,6 @@
 # Finite equivariant fppf quotient towers with character-linear additive kernels
 
-Worker 1521 implemented this module for the task published by Worker 669. It
-is a definition prerequisite for the structural triangular splitting statement
+This module is a definition prerequisite for the structural triangular splitting statement
 and its section-existence successors. The module only packages supplied
 quotient and action data. It does not assert that a tower exists, and it does
 not assert that any extension splits.
@@ -177,7 +176,15 @@ tower is meant to pull `E → Q` back to an extension of `D` whose kernel
 carries the character-linear action that a one-step splitting statement
 needs. This explains why the interface was chosen. Neither this pull-back
 argument nor any existence or splitting theorem is stated or proved in this
-module. They belong to later statement and proof tasks.
+module. The pull-back argument is
+`LinearKernelTower.exists_section_of_admitsTower` in
+`Langlands.GroupScheme.LinearKernelTowerSection`; section existence,
+`LinearKernelTower.SectionExistenceStatement`, is stated in
+`Langlands.GroupScheme.LinearKernelTowerSectionStatement` and proved in
+`Langlands.GroupScheme.LinearKernelTowerSectionProof`. The one-step
+splitting statement is `LinearAdditiveExtensionSplittingStatement`, and
+the existence of towers for triangular diagonal images is
+`TriangularDiagonalKernelTowerStatement`.
 
 The official 2022 errata page for the book
 (`https://www.jmilne.org/math/Books/iagerrata2022.html`, consulted on

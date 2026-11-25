@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.LocalUnitCohomology
+import Langlands.ClassFieldTheory.Global.LocalUnitCohomology
 import Langlands.Global.AdelicFunctoriality.CompletedRamification
 import Langlands.Global.AdelicFunctoriality.LocalDegree
 import Langlands.Global.AdelicFunctoriality.MixedWeakApproximation
@@ -10,7 +10,7 @@ import Mathlib.FieldTheory.KummerExtension
 noncomputable section
 
 open Polynomial NumberField IsDedekindDomain IntermediateField
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 open scoped NumberField WithZero Langlands.Global.AdelicFunctoriality.FiniteExtension
 
 namespace Langlands.Global

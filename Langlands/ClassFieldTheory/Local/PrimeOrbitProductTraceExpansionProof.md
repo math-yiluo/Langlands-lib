@@ -1,9 +1,9 @@
 # Proof of the prime-order orbit product expansion
 
-Worker 807 wrote this module and this explanation. It proves the published
+This module proves the published
 proposition `Langlands.LocalClassField.PrimeOrbitProductTraceExpansion.{u,v}`
 from `Langlands.ClassFieldTheory.Local.PrimeOrbitProductTraceExpansionStatement`.
-Workers 107 and 726 wrote that statement; this module imports it by name and
+It imports that statement by name and
 does not change it.
 
 The main theorem is

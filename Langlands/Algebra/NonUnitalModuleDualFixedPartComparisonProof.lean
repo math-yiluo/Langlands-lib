@@ -3,7 +3,7 @@ import Langlands.Algebra.NonUnitalModuleDualFixedPartProof
 
 /-!
 Full-fixed and right-corner comparisons for the original dual actions.
-Worker 691 reuses the published basic complex fixed-part duality proof.
+This module reuses the published basic complex fixed-part duality proof.
 -/
 
 set_option autoImplicit false

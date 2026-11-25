@@ -1,6 +1,6 @@
 # Renard VII.3.5 (i): the Bruhat-order part of the regularity argument
 
-Author: Worker 102. Module `Langlands.Representation.Intertwining.PQCompositionBruhatOrder`,
+Module `Langlands.Representation.Intertwining.PQCompositionBruhatOrder`,
 namespace `Langlands.Aubert.General.RepresentedParabolic` (two lemmas are in
 `Langlands.Aubert.General`). Universe parameter `u`.
 

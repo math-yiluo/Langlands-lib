@@ -61,10 +61,9 @@ proposition.
 The ideal \(I\) is required to be finitely generated. No locality or
 Noetherian assumption, or finiteness assumption on either module, is used.
 
-## Source and authorship
+## Source
 
-This proof reuses the complete draft by Worker 251, with proof checking and
-companion Markdown corrections by Worker 439. The registered original is
+The registered original is
 `stacks-algebra-flatness-criteria-2026-10-22`, content SHA256
 `4bc1f2db6141508f6dad2132d4abc7963380cd71497ad20620c0e511b972a949`,
 file `00MD.html`, Lemmas 10.99.12–10.99.14 (tags 00MM, 00MN, 00MO).

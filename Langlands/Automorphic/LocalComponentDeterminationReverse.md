@@ -1,20 +1,17 @@
 # Common local components determine an automorphic representation
 
-Author: Worker 3657.
-
 Lean module: `Langlands.Automorphic.LocalComponentDeterminationReverse`. It
-imports the draft modules `Langlands.Representation.FreeMonoidGenerators`
+imports the modules `Langlands.Representation.FreeMonoidGenerators`
 (and through it `Langlands.Representation.CommutingFamilyUniqueness`) and
-`Langlands.Automorphic.OperatorSubquotientPlaceGeneration`, and the Library
+`Langlands.Automorphic.OperatorSubquotientPlaceGeneration` of this proof, and the Library
 modules `Langlands.Representation.Smooth.Schur.Proof`,
 `Langlands.Representation.Unramified.SphericalFixedLineProof` and
-`Langlands.Global.FiniteAdelicGL.PadicComparison`. It changes no published
-file.
+`Langlands.Global.FiniteAdelicGL.PadicComparison`.
 
 This module proves the reverse implication "⇐" of
-`Langlands.Automorphic.LocalComponentDeterminationStatement` (Task 6817) from
+`Langlands.Automorphic.LocalComponentDeterminationStatement` from
 `LocalComponentExistenceStatement` (proved by the Library's
-`localComponentExistence`, Task 6815).
+`localComponentExistence`).
 
 ## Main theorem
 
@@ -61,7 +58,7 @@ transported from the admissible local components of `Q` supplied by `hex`.
   `OperatorSubquotient.localRepresentation_comm_of_ne`,
   `realPlaceCompactRepresentation_comm_of_ne`,
   `realPlaceCompactRepresentation_comm_complexPlace`,
-  `complexPlaceCompactRepresentation_comm_of_ne` (draft module
+  `complexPlaceCompactRepresentation_comm_of_ne` (module
   `OperatorSubquotientPlaceGeneration`), the Library's
   `finiteRepresentation_realPlaceCompactRepresentation`,
   `finiteRepresentation_complexPlaceCompactRepresentation`,
@@ -72,17 +69,19 @@ transported from the admissible local components of `Q` supplied by `hex`.
   `realPlaceCompactRepresentation_complexPlaceLieAction`,
   `complexPlaceLieAction_comm_of_ne`,
   `complexPlaceCompactRepresentation_complexPlaceLieAction_of_ne`,
-  `complexPlaceCompactRepresentation_realPlaceLieAction` (Task 6815 modules).
+  `complexPlaceCompactRepresentation_realPlaceLieAction` (modules
+  `OperatorSubquotientPlaceComponent` and `OperatorSubquotientPlaceComponentComplex`
+  of the proof of `LocalComponentExistenceStatement`).
 - `placeRep_commuting`: hence `RestrictedTensor.CyclicEvaluation.Commuting`
   (`rep_comm`).
 - `placeRep_eventually_fixed`: every vector is fixed by
   `placeSpherical F n i` for all but finitely many `i`: at finite places by
-  `FiniteAdelicGL.eventually_fixed_localIntegral` (draft module
+  `FiniteAdelicGL.eventually_fixed_localIntegral` (module
   `OpenSubgroupInduction`) applied to the Library's
   `finiteRepresentation_isSmooth`; the infinite places are finitely many.
 - `representation_mem_of_placeRep_stable`: a subspace stable under all
   place actions is stable under `Q.representation a` for every operator `a`
-  (`representation_mem_of_placeStable`, draft module
+  (`representation_mem_of_placeStable`, module
   `OperatorSubquotientPlaceGeneration`).
 - `isJointlyIrreducible_placeRep`: for `Q` irreducible and nonzero, the
   place actions are jointly irreducible (`CommutingFamily.IsJointlyIrreducible`):
@@ -137,7 +136,7 @@ places) and `PlaceData.localRep`.
    placeRep Q' i g ∘ Φ`; on one-letter words this says that `Φ` commutes with
    the local translations, the compact translations and the complexified Lie
    actions at every place.
-6. `OperatorSubquotient.equivalenceOfPlaceComm` (draft module
+6. `OperatorSubquotient.equivalenceOfPlaceComm` (module
    `OperatorSubquotientPlaceGeneration`) turns `Φ` into `Q.Equivalence Q'`.
 
 ## Provenance
@@ -167,5 +166,5 @@ smoothness to extend the intertwining to the full operator algebra.
 
 ## Check
 
-`lean_check` 65394a97 (module): 0 errors, 0 warnings; lake build dbe84f71 of
-the full Task 6817 draft: 0 errors, 0 warnings.
+Compilation check of the module: 0 errors, 0 warnings; Lake build of all
+modules of the proof of `LocalComponentDeterminationStatement`: 0 errors, 0 warnings.

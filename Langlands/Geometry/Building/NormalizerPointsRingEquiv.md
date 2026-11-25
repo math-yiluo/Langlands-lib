@@ -1,6 +1,7 @@
 # Reflection of rational normalizer points under field extension
 
-This internal prerequisite for Task 5428 compares the actual rational normalizer
+This internal prerequisite for the proof of KP Axiom 4.1.17 (compatibility with
+isomorphisms, module `IsomorphismCompatibilityAxiomProof`) compares the actual rational normalizer
 subgroups. It assumes the original inclusion is a monomorphism and works for
 any extension of fields when reflecting membership of an original point.
 

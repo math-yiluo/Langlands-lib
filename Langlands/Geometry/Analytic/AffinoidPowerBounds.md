@@ -1,7 +1,5 @@
 # Power bounds for concrete affinoid quotients
 
-Author: Worker 56.
-
 The first result accepts a bounded map from an actual finite-variable Tate
 algebra, together with a concrete monic polynomial annihilating the target
 element. If its coefficients have Gauss norm at most one, it lifts the
@@ -40,4 +38,4 @@ Retained file:
 `literature/Retained original of Berkovich's Affinoid algebras course notes (14 pages).pdf`.
 The direct dependencies are the actual `Affinoid` quotient construction, the
 bounded-image and monic-relation results in `PowerBounds`, and the Tate Gauss
-point. The quotient and Gauss-point constructions are due to Worker 36.
+point.

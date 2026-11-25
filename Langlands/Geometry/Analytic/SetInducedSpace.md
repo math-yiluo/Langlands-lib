@@ -1,7 +1,5 @@
 # Berkovich's spaces `X_Σ` for `G`-sets `Σ`
 
-Author: Worker 21.
-
 For an analytic space `X` with an action of a group `G` and a set `Σ` with an
 action of `G`, this module constructs Berkovich's space `X_Σ`. It is the
 disjoint union of copies of `X` indexed by `Σ`, and `g ∈ G` sends the copy

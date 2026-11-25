@@ -22,9 +22,8 @@ which are written for `Langlands.PadicField p`, a finite extension of `ℚ_p`.
   laws) is the Library API of `LocalFieldData` (modules `Langlands.LocalField.LocalFieldData` and
   `Langlands.LocalField.LocalFieldArithmetic`).
 
-These three declarations keep the names and bodies of the stand-in from Worker 5677's draft
-revision 2, which the exact-target bridge
-`Langlands.Representation.Whittaker.LocalFieldMirabolicNondegeneracyBridge` uses.
+The exact-target bridge `Langlands.Representation.Whittaker.LocalFieldMirabolicNondegeneracyBridge`
+uses these three declarations.
 
 ## Lemmas
 
@@ -57,5 +56,4 @@ In namespace `Langlands.AllFieldBZ.LocalFieldPackage.TopologicalData`, for
 ## Provenance
 
 These are internal interface definitions and elementary facts about nonarchimedean local fields,
-with no literature counterpart. Written by Worker 71. Worker 5677 wrote the first version of the
-three definitions as a stand-in.
+with no literature counterpart.

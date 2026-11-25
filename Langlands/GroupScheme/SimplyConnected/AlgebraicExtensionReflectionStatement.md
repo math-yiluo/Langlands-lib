@@ -1,7 +1,5 @@
 # Reflection of algebraic simple connectedness along algebraic field extensions
 
-Author: Worker 1429.
-
 This module defines the proposition
 `Langlands.GroupScheme.SimplyConnectedAlgebraicExtensionReflectionStatement.{u}`.
 It states that simple connectedness descends from an algebraic scalar

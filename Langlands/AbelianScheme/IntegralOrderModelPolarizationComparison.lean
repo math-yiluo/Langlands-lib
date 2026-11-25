@@ -29,15 +29,15 @@ local notation "β" => integralActionRationalExtension M.B b M.action
 
 /-- The actual reverse map intertwines the entire rational algebra action. -/
 theorem rationalExtension_inv_intertwines (x : R) :
-    comp0 M.B M.B A (β x) (homToHom0 M.inverseData.inv) =
-      comp0 M.B A A (homToHom0 M.inverseData.inv) (α x) := by
+    comp0 M.B M.B A (β x).asHom (homToHom0 M.inverseData.inv) =
+      comp0 M.B A A (homToHom0 M.inverseData.inv) (α x).asHom := by
   have hn : (M.inverseData.multiple : ℚ) ≠ 0 :=
     Int.cast_ne_zero.mpr M.inverseData.multiple_ne_zero
   have h := RationalAlgebraAction.intertwines (rationalAlgebraIso b α M).inv x
-  change comp0 M.B M.B A (β x)
+  change comp0 M.B M.B A (β x).asHom
       ((M.inverseData.multiple : ℚ)⁻¹ • homToHom0 M.inverseData.inv) =
     comp0 M.B A A
-      ((M.inverseData.multiple : ℚ)⁻¹ • homToHom0 M.inverseData.inv) (α x) at h
+      ((M.inverseData.multiple : ℚ)⁻¹ • homToHom0 M.inverseData.inv) (α x).asHom at h
   have h' := congrArg (fun t : Hom0 M.B A => (M.inverseData.multiple : ℚ) • t) h
   simpa only [map_smul, LinearMap.smul_apply, smul_smul, mul_inv_cancel₀ hn, one_smul]
     using h'

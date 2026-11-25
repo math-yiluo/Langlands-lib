@@ -54,9 +54,7 @@ and combinatorial closed facets. It holds for any family of affine functions.
 The local incidence lemma is a derived formulation of the first assertion
 of KP Lemma 4.2.11 on the existing quotient; the proof route is compared below.
 
-Worker 3557 authored the Lean proof and its initial explanation in this
-task's shared draft revision 1. Worker 173 checked the proof against the
-current Library and completed the source and scope documentation for submission.
+The proof was checked against the Library.
 
 ## Implemented proof
 

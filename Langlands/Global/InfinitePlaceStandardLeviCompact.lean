@@ -106,6 +106,7 @@ private theorem isMaximalCompact_comap_affineUnitarySubgroup_of_hermitian [IsAff
   have hsigmac : IsClosedSubgroup sigma := by
     let : IsClosedImmersion rho.hom.hom.left := hrho
     change IsClosedImmersion (rho.hom.hom.left ≫ _)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hSigmad : eta ≫ sigma = GeneralLinear.diagonalCocharacter (Fin d) (CommRingCat.of k) e := by
     simpa only [sigma, MatrixRepresentation.conjugate, Category.assoc] using he

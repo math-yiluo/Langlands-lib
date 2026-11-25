@@ -1,8 +1,5 @@
 # Proof: cuspidal realizations trivial on `A_GL` have unitary central characters
 
-Author: Worker 3657 (shared draft revision 1 of Task 6998). Submitted by
-Worker 830, executor of Task 6998, without mathematical changes.
-
 Module `Langlands.Global.Factors.CuspidalSplitCentreUnitaryProof` proves
 
 ```lean
@@ -17,13 +14,11 @@ its universe parameter `u`. It says: for every number field `F : Type u` with
 `[CompactSpace (AdeleQuotient F)]`, every `r : ℕ` and every actual cuspidal
 realization `T : Automorphic.CuspidalOperatorRealization F r` of `GL_{r+1}`, if
 `CuspidalPairPoles.IsTrivialOnSplitCentre T`, then
-`Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`.
-This proof is the objective of Task 6998
-(`2dd46728-358f-4428-b1ee-387f98752a75`).
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`.
 
 The module imports the statement module,
-`Langlands.Global.HeckeCharacterPositiveRealUnitary` (new helper, paired
-Markdown beside it) and `Langlands.Automorphic.IrreducibleCentralCharacterProof`.
+`Langlands.Global.HeckeCharacterPositiveRealUnitary` (helper ported with this
+file, paired Markdown beside it) and `Langlands.Automorphic.IrreducibleCentralCharacterProof`.
 It uses no axiom beyond `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Declarations
@@ -83,20 +78,20 @@ Fix `F`, `r`, `T` and the hypothesis `hT : IsTrivialOnSplitCentre T`.
 5. The pair `χ`, with the unitarity of step 4 and the central character of
    step 1, is `HasUnitaryCentralCharacter T`.
 
-## Relation to the expected route
+## Relation to the route of the statement Markdown
 
-The contract of Task 6998 suggests four steps. Steps 1 and 2 above are its
-steps 1 and 2. Its steps 3 and 4 (decompose `z = a · y` with
+The statement Markdown (`CuspidalSplitCentreUnitaryStatement.md`, "Why the
+statement is true") outlines four steps. Steps 1–3 above carry out its steps 1
+and 2. Its steps 3 and 4 (decompose `z = a · y` with
 `a ∈ A_{G_m}` and `|y| = 1`, using `t = |z|^{1/[F:ℚ]}`, then use the
 compactness of `F^× \ (𝔸_F^×)^1`) are replaced by the helper theorem, whose
 proof avoids `[F:ℚ]`-th roots. It uses `z ^ d = PositiveRealIdeles.full F |z| · y`
 with `|y| = 1` and `d = [F:ℚ]`, the published lemma
 `HeckeEulerProduct.norm_eq_one_of_ideleClass_eq_one` for `y`, and then
-`‖χ(z)‖ ^ d = 1`. That published lemma carries out the contract's step 4 (a
-compact group bounds `‖χ‖`, and `t ≠ 1` would give unbounded powers). The
-contract's suggested comparison between `NormOneIdeleClasses F` and the idele
-class group is not needed, because that lemma is stated on the idele class
-group directly.
+`‖χ(z)‖ ^ d = 1`. That published lemma carries out step 4 of the outline (a
+compact group bounds `‖χ‖`, and `t ≠ 1` would give unbounded powers). A
+comparison between `NormOneIdeleClasses F` and the idele class group is not
+needed, because that lemma is stated on the idele class group directly.
 
 ## Sources and provenance
 
@@ -144,9 +139,8 @@ Markdown of `CuspidalPairPoleStatement` (section on `A_GL`), which compares
 
 ## Lean checks
 
-`lean_check` (lake build) of this module and the helper module compiles with
-no errors or warnings (rechecked by Worker 830 over Library
-`fcb85a7ef43356fec01e6ccf1605f08568c08cb0`, diagnostic
-`b235abda-8b26-4df7-94a9-d074a8bf08d6`). `cuspidalSplitCentreUnitaryCentralCharacter` is a
+A `lake build` of this module and the helper module, in the Lean environment in
+which they were written, compiled with no errors or warnings.
+`cuspidalSplitCentreUnitaryCentralCharacter` is a
 theorem with universe parameter `u`, and it depends only on the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

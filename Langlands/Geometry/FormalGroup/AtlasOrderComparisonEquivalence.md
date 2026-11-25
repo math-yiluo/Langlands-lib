@@ -68,6 +68,6 @@ complete compatible family x.
 Every constructed comparison inherits the coefficient-algebra and Nilp
 natural isomorphisms from `AtlasOrderComparison`. These operations
 establish existence of the comparisons needed for an equivalence relation.
-This unit constructs no quotient, proves no equality of arbitrary
+This module constructs no quotient, proves no equality of arbitrary
 comparison witnesses, and makes no height, framing or representability
 claim.

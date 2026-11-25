@@ -81,7 +81,7 @@ lemma tensorTwistRestrictionIso_hom
     (tensorTwistRestrictionIso hM hN h).hom =
       (sourceTwistRestrictionIso hM hN h).hom ≫
         (unitAut (RelativeProjectiveSpace.twistOne U.val.toScheme n).obj
-          (dualLineProjectiveUnit hM hN h)).hom := by
+          (dualLineProjectiveUnit hM hN h)).asIso.hom := by
   have ht := iso_hom_of_triple
     (C := (RelativeProjectiveSpace U.val.toScheme n).Modules)
     (tensorTwistRestrictionIso hM hN h)
@@ -89,7 +89,7 @@ lemma tensorTwistRestrictionIso_hom
       (RelativeProjectiveSpace.twistOne V.val.toScheme n).obj)
     ((sourceAtlas hM hN).cocycle.chartTwistIso h)
     (unitAut (RelativeProjectiveSpace.twistOne U.val.toScheme n).obj
-      (dualLineProjectiveUnit hM hN h))
+      (dualLineProjectiveUnit hM hN h)).asIso
     (tensor_chartTwistIso hM hN h)
   exact ht
 

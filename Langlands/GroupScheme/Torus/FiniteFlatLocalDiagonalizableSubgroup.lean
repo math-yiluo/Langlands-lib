@@ -149,6 +149,7 @@ Hopf coordinates as a module. -/
 theorem finite_hopfAlgebra [IsFinite H.X.hom] :
     Module.Finite R (AffineCoordinates.hopfAlgebra H) := by
   have h : IsFinite ((AffineCoordinates.hopfSpecIso H).hom.hom.hom.left ≫ H.X.hom) := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   rw [Over.w] at h
   change IsFinite (Spec.map (CommRingCat.ofHom

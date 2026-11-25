@@ -1,6 +1,6 @@
 # Exact exponent shifts for actual unramified normalized Jacquet modules
 
-Author: Worker 135. This module specializes the published natural Jacquet
+This module specializes the published natural Jacquet
 twist comparison to arbitrary unramified characters and proves the exact
 shift of normalized Jacquet exponents. It also decomposes the exponents of
 actual full geometric-lemma pieces of a twisted source. All local-field and
@@ -66,8 +66,8 @@ factor `f`; no Weyl representative or replacement piece is introduced.
 This theorem explicitly retains admissibility of the normalized Jacquet
 module of the twisted source along `D.p'`. That is the premise of the
 published `exists_isNormalizedJacquetExponent_of_piece`, which transfers a
-full-piece exponent to a source Jacquet exponent. Applying the newly proved
-untwisting theorem gives `theta`. The original factorization on characters
+full-piece exponent to a source Jacquet exponent. Applying the untwisting
+theorem of this module gives `theta`. The original factorization on characters
 then gives the displayed formula, and real-part additivity gives the last
 conjunct. This result does not prove Jacquet admissibility.
 
@@ -77,18 +77,19 @@ David Renard, *Representations des groupes reductifs p-adiques*, French version
 of 9 July 2026, literature ID
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 135 read VII.4.1's Lemma and proof, printed pp.241--242 / PDF
-pp.247--248. The proof's initial decomposition of the twisted Jacquet
+VII.4.1's Lemma and proof, printed pp.241--242 / PDF pp.247--248, were
+read. The proof's initial decomposition of the twisted Jacquet
 exponents and subsequent separation of their two real parts motivate this
 derived general formulation. The implemented proof composes the existing
 actual Jacquet twist comparison, unramified radical triviality,
 generalized-eigencharacter equivalence, full-piece exponent transfer and
 real-part laws. It does not use Langlands classification or opposite regularity.
 
-For Task 5282, the tempered untwisted contribution still needs its cone
-comparison at the relevant pieces. The twist factor's normalized real part
-must be identified with the Weyl translate of the inducing parameter, and
-nonidentity parabolic double cosets must be related to Weyl classes outside
-the actual Levi subgroup. The new strict Weyl-displacement lemmas then apply.
-The geometric lemma, VII.3.3 criterion and opposite identity-support result
-remain independently owned proof inputs. None is asserted by this pair.
+For the VII.4.1 Lemma (PPbar-regularity of Langlands triplets), the tempered
+untwisted contribution also needs its cone comparison at the relevant pieces.
+The twist factor's normalized real part must be identified with the Weyl
+translate of the inducing parameter, and nonidentity parabolic double cosets
+must be related to Weyl classes outside the actual Levi subgroup. The strict
+Weyl-displacement lemmas then apply. The geometric lemma, VII.3.3 criterion
+and opposite identity-support result are separate proof inputs. None is
+asserted by this pair.

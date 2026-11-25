@@ -53,11 +53,11 @@ variable (L : Type) [Field L] [NumberField L] [IsCMField L]
 omit [NumberField L] [IsCMField L] [IsQuadraticExtension ℚ L] in
 /-- The canonical actual Lie comparison intertwines every imaginary-field element. -/
 theorem imaginaryLieAction_pullback (r : L) :
-    (AlgebraicGeometry.Scheme.Modules.pullback b).map (imaginaryLieAction L s B i r) ≫
+    (AlgebraicGeometry.Scheme.Modules.pullback b).map (imaginaryLieAction L s B i r).asHom ≫
         (lieBaseChangeIso b B).hom =
       (lieBaseChangeIso b B).hom ≫
-        imaginaryLieAction L (b ≫ s) ((baseChange b).obj B)
-          ((rationalBaseChangeEnd b B).comp i) r := by
+        (imaginaryLieAction L (b ≫ s) ((baseChange b).obj B)
+          ((rationalBaseChangeEnd b B).comp i) r).asHom := by
   exact lieRationalOrderAction_baseChange_of_naturality s b
     (lieBaseChangeNaturalityStatements S).1 B i.toRingHom
       (algebraMap K A (algebraMap L K r))
@@ -95,11 +95,11 @@ theorem lieEigensheafPullbackIso_hom (conjugate : Bool) :
 
 /-- The actual eigensheaf pullback comparison intertwines the full rational algebra action. -/
 theorem lieEigensheafPullbackIso_intertwines (conjugate : Bool) (a : A) :
-    (AlgebraicGeometry.Scheme.Modules.pullback b).map (lieEigensheafAction L s B i conjugate a) ≫
+    (AlgebraicGeometry.Scheme.Modules.pullback b).map (lieEigensheafAction L s B i conjugate a).asHom ≫
         (lieEigensheafPullbackIso s b L B i conjugate).hom =
       (lieEigensheafPullbackIso s b L B i conjugate).hom ≫
-        lieEigensheafAction L (b ≫ s) ((baseChange b).obj B)
-          ((rationalBaseChangeEnd b B).comp i) conjugate a := by
+        (lieEigensheafAction L (b ≫ s) ((baseChange b).obj B)
+          ((rationalBaseChangeEnd b B).comp i) conjugate a).asHom := by
   let : Algebra K Γ(S, ⊤) := (secHom s ⊤).hom.toAlgebra
   let : Algebra ℚ Γ(S, ⊤) := Algebra.compHom Γ(S, ⊤) (algebraMap ℚ K)
   let : IsScalarTower ℚ K Γ(S, ⊤) :=
@@ -146,11 +146,11 @@ def lieTensorPullbackIso (conjugate : Bool) :
 
 /-- The original-order tensor comparison intertwines the full rational algebra action. -/
 theorem lieTensorPullbackIso_intertwines (conjugate : Bool) (a : A) :
-    (AlgebraicGeometry.Scheme.Modules.pullback b).map (lieTensorAction L s B i conjugate a) ≫
+    (AlgebraicGeometry.Scheme.Modules.pullback b).map (lieTensorAction L s B i conjugate a).asHom ≫
         (lieTensorPullbackIso s b L B i conjugate).hom =
       (lieTensorPullbackIso s b L B i conjugate).hom ≫
-        lieTensorAction L (b ≫ s) ((baseChange b).obj B)
-          ((rationalBaseChangeEnd b B).comp i) conjugate a := by
+        (lieTensorAction L (b ≫ s) ((baseChange b).obj B)
+          ((rationalBaseChangeEnd b B).comp i) conjugate a).asHom := by
   apply (cancel_mono (lieTensorSheafIso L (b ≫ s) ((baseChange b).obj B)
     ((rationalBaseChangeEnd b B).comp i) conjugate).hom).mp
   simp only [lieTensorPullbackIso, Iso.trans_hom, Functor.mapIso_hom,
@@ -164,9 +164,9 @@ theorem lieTensorPullbackIso_intertwines (conjugate : Bool) (a : A) :
 private theorem eq_scalar_pullback_of_iso {M : S.Modules} {N : T.Modules}
     (e : (AlgebraicGeometry.Scheme.Modules.pullback b).obj M ≅ N)
     (α : End M) (β : End N)
-    (he : (AlgebraicGeometry.Scheme.Modules.pullback b).map α ≫ e.hom = e.hom ≫ β)
-    (r : Γ(S, ⊤)) (hα : α = scalarHom r (𝟙 M)) :
-    β = scalarHom (b.appTop r) (𝟙 N) := by
+    (he : (AlgebraicGeometry.Scheme.Modules.pullback b).map α.asHom ≫ e.hom = e.hom ≫ β.asHom)
+    (r : Γ(S, ⊤)) (hα : α.asHom = scalarHom r (𝟙 M)) :
+    β.asHom = scalarHom (b.appTop r) (𝟙 N) := by
   apply (cancel_epi e.hom).mp
   rw [← he, hα]
   change (AlgebraicGeometry.Scheme.Modules.pullback b).map (r • (𝟙 M : M ⟶ M)) ≫ e.hom =

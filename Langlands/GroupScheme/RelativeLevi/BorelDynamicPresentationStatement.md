@@ -1,7 +1,5 @@
 # Étale-local dynamic presentation of a Borel pair
 
-Worker 608.
-
 `Langlands.GroupScheme.RelativeBorelDynamicPresentationStatement.{u}` is a
 statement-only, `Prop`-valued definition. This file supplies no proof.
 
@@ -56,5 +54,6 @@ conclusion are the actual categorical base changes of the original maps.
 
 This statement isolates local dynamic presentation and representability
 of the negative dynamic Borel. It does not assert the intersection formula,
-uniqueness, or descent of the local negative Borels. Those remain proof
-obligations for `RelativeOppositeBorelStatement`.
+uniqueness, or descent of the local negative Borels. Those are further steps
+of the proof of `RelativeOppositeBorelStatement` (`relativeOppositeBorel` in
+`OppositeBorelProof`).

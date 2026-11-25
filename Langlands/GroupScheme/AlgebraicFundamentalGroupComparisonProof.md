@@ -1,7 +1,5 @@
 # Canonical coherent Galois comparisons for the algebraic fundamental group
 
-Author: Worker 149 (Task 6302).
-
 ## Statement proved
 
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.algebraicFundamentalGroupComparison` proves

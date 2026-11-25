@@ -1,7 +1,5 @@
 # Primes cut out by complex embeddings and Harris's set `Φ_p`
 
-Author: Worker 19.
-
 Harris attaches to the CM type `Φ` of the CM field `𝒦` a set `Φ_p` of primes
 of `𝒦` above `p`, by comparing complex and `p`-adic embeddings. This module
 defines `Φ_p` and proves its basic properties. For Harris's type, induced from

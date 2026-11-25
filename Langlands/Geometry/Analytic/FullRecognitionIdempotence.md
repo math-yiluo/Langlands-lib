@@ -1,7 +1,5 @@
 # Constructed idempotence of full affinoid recognition
 
-Author: Worker 36.
-
 This module proves that iterating full affinoid recognition adds no
 literal affinoid chart range. For each chart in the iterated atlas, it
 constructs a chart of the earlier full recognition atlas on exactly the

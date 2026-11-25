@@ -1,7 +1,5 @@
 # Fibre powers of the normalization model
 
-Worker 6.
-
 - `isPullback_tensor`: a pasting lemma identifying a pullback of `A ×_S B → A → S` along `y` with a
   pullback of `B → S` along `A ×_S T → A → S`.
 - `Good P`: the predicate "flat, locally of finite type, geometrically reduced, smooth generic

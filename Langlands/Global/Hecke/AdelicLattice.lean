@@ -1,7 +1,7 @@
 import Langlands.Global.Hecke.MixedSpaceFourier
 import Langlands.Global.AdeleQuotientCompactProof
 import Langlands.Global.Factors.HeckeEulerProduct
-import Langlands.ClassField.Global.FiniteDivisorFractionalIdeal
+import Langlands.ClassFieldTheory.Global.FiniteDivisorFractionalIdeal
 import Langlands.LocalFactor.Abelian.TateFunctionalEquation
 import Langlands.LocalFactor.Harmonic.NormalizationProof
 import Langlands.HarmonicAnalysis.PadicAdditiveConductorProof
@@ -137,12 +137,12 @@ theorem le_of_forall_count_le {I J : FractionalIdeal (𝓞 K)⁰ K} (hI : I ≠ 
 /-- The fractional ideal `∏ 𝔭_v^{-m v}` of the finitely supported level vector `m`. Its elements
 are the `γ ∈ K` with `γ ∈ π_v^{-m v} O_v` for every finite place `v`. -/
 def latticeIdeal (m : FinitePlace K →₀ ℤ) : (FractionalIdeal (𝓞 K)⁰ K)ˣ :=
-  ClassField.Global.finiteDivisorFractionalIdeal K (-m)
+  ClassFieldTheory.Global.finiteDivisorFractionalIdeal K (-m)
 
 theorem count_latticeIdeal (m : FinitePlace K →₀ ℤ) (v : FinitePlace K) :
     FractionalIdeal.count K v (latticeIdeal m : FractionalIdeal (𝓞 K)⁰ K) = -m v := by
-  rw [latticeIdeal, ← ClassField.Global.fractionalIdealDivisor_apply,
-    ClassField.Global.fractionalIdealDivisor_finiteDivisorFractionalIdeal, Finsupp.neg_apply]
+  rw [latticeIdeal, ← ClassFieldTheory.Global.fractionalIdealDivisor_apply,
+    ClassFieldTheory.Global.fractionalIdealDivisor_finiteDivisorFractionalIdeal, Finsupp.neg_apply]
 
 /-- Membership in `latticeIdeal m` is the conjunction of the local conditions. -/
 theorem mem_latticeIdeal_iff (m : FinitePlace K →₀ ℤ) (γ : K) :
@@ -180,7 +180,7 @@ theorem mem_latticeIdeal_iff_forall_mem (m : FinitePlace K →₀ ℤ) (γ : K) 
 theorem absNorm_latticeIdeal (m : FinitePlace K →₀ ℤ) :
     FractionalIdeal.absNorm (latticeIdeal m : FractionalIdeal (𝓞 K)⁰ K) =
       ∏ v ∈ m.support, ((Ideal.absNorm v.asIdeal : ℕ) : ℚ) ^ (-m v) := by
-  rw [latticeIdeal, ClassField.Global.finiteDivisorFractionalIdeal_val, Finsupp.prod,
+  rw [latticeIdeal, ClassFieldTheory.Global.finiteDivisorFractionalIdeal_val, Finsupp.prod,
     Finsupp.support_neg, map_prod]
   refine Finset.prod_congr rfl fun v _ => ?_
   rw [map_zpow₀, FractionalIdeal.coeIdeal_absNorm, Finsupp.neg_apply]

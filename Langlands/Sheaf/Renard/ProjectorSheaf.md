@@ -6,7 +6,7 @@ the sheaf proof (II.2.5.1)–(II.2.5.2). Its registered identifier is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
-This unit uses the actual compact-open basis and original-action presheaf of
+This module uses the actual compact-open basis and original-action presheaf of
 `ProjectorPresheaf`. It proves the published intrinsic `SheafCondition`, and
 `basisSheaf` bundles the actual normalized presheaf with this proof. The value
 universe remains exactly the module universe `v`, independent of space universe
@@ -40,4 +40,4 @@ The additive gluing argument uses only the specified original nonunital module
 laws, so its all-module form is an internal strengthening. It assumes neither
 a separate complex action, a smooth extension, nondegeneracy, nor any output
 separation or gluing property. Scalar sheaves, compact-section recovery,
-equivalences and stalk comparisons remain separate constructions.
+equivalences and stalk comparisons are separate constructions.

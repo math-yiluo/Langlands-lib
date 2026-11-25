@@ -1,7 +1,5 @@
 # Points of a finite commutative cocommutative Hopf algebra are killed by its rank
 
-Author: Worker 1384.
-
 This module proves a purely algebraic torsion statement. Let `k` be a field and `H` a
 commutative Hopf algebra over `k` that is cocommutative (`Coalgebra.IsCocomm k H`) and
 finite-dimensional (`Module.Finite k H`). Let `C` be a commutative `k`-algebra. Then
@@ -70,8 +68,8 @@ cocommutative and `C` is commutative.
   endomorphisms of `H ⊗ H`.
 - `shearAlgHom_comp_shearInvAlgHom` and `shearInvAlgHom_comp_shearAlgHom`: the two maps are
   mutually inverse. Both are checked on the two tensor inclusions. On `includeRight` the
-  check is a group identity among points `H → H ⊗ H`. It uses the TauCeti lemma
-  `TauCeti.Bialgebra.comulPoint_eq_include_mul`: `Δ` as a point is
+  check is a group identity among points `H → H ⊗ H`. It uses the Library lemma
+  `Langlands.Bialgebra.comulPoint_eq_include_mul`: `Δ` as a point is
   `includeLeft * includeRight`.
 - `shearRingEquiv C` is precomposition with the shear, as a ring automorphism of `R'`. Its
   inverse is precomposition with `shearInvAlgHom`. `shearAlgEquiv C` upgrades it to an
@@ -95,7 +93,7 @@ Let `x : H →ₐ[k] C`, `X = toConv x.toLinearMap ∈ R`, and `z = precomp fst 
 1. `X` is a unit of `R`. Its inverse is `x ∘ S`, because `x ∘ (id * S) = x ∘ (η ε)` by
    `LinearMap.id_mul_antipode` and `LinearMap.algHom_comp_convMul_distrib`. Hence `z`, the
    image of `X` under a ring morphism, is a unit of `R'`.
-2. Using the TauCeti convolution-tensor product `mulTensor`, `precomp snd X = mulTensor 1 X`
+2. Using the exterior product of linear maps `mulTensor`, `precomp snd X = mulTensor 1 X`
    and `z = mulTensor X 1`. So by `mulTensor_convMul`,
    `algebraMap R R' X * z = mulTensor X X`, the map `a ⊗ b ↦ x(a) x(b)`.
 3. By `fstCoalgHom_shear` and multiplicativity of `x`, the shear automorphism sends `z` to

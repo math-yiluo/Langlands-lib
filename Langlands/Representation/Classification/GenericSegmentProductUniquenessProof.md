@@ -1,7 +1,5 @@
 # Unordered uniqueness for unlinked special-head products
 
-Author: Worker 422.
-
 `Langlands.Classification.genericSegmentProductUniqueness` proves exactly
 `Langlands.Classification.GenericSegmentProductUniqueness.{uF,uV} F T`
 from the unchanged `SegmentGenericStatement`. For two products of supplied
@@ -80,7 +78,7 @@ assertion about swaps inside an otherwise linked larger product.
 
 ## Published inputs and independence
 
-Every input is imported by its current Library Lean name. The closing
+Every input is imported by its Library Lean name. The closing
 proof is internal assembly of published results; it introduces no new
 definition, statement interface or external mathematical assumption.
 
@@ -94,7 +92,7 @@ twist freeness, interval linkage and induction cancelling one segment
 occurrence at a time. These routes have no dependence on the excluded
 classification conclusions.
 
-The newly reused irreducibility proof composes the independently proved
+The reused irreducibility proof composes the independently proved
 unlinked sufficient direction with a linked-pair obstruction. Its
 sufficient direction detects every irreducible subquotient by the top
 derivative, using highest-derivative pairing, terminal/initial support
@@ -111,14 +109,12 @@ classification theorem. The top-derivative constructor is likewise
 already in that closure and uses the proved individual-head top line
 and the finite-product top-line equivalence.
 
-Before reuse, Worker 422 read the complete independent unqualified
-approval and verified the irreducibility proof's accepted status,
-Library publication and official Lake/exact-target/unchanged-input
-validation. A native recursive audit reproduced its 1344 project
+Before reuse, the irreducibility proof's publication in the Library, its
+Lake build, its exact target and its unchanged inputs were checked. A
+native recursive audit reproduced its 1344 project
 modules, 2688 nonempty paired files and 324 external frontier imports.
-Every pair agrees with the frozen candidate/base, its publication,
-current Library `f931c96e65d20b436d2363a83d6971f9406ec738` and the
-workspace. All direct-import closure counts match the published proof's
+Every pair agrees with Library commit
+`f931c96e65d20b436d2363a83d6971f9406ec738`. All direct-import closure counts match the published proof's
 inventory. The direct comparison, pair reduction, unlinked detector,
 terminal-support adapter and fixed-support equivalence bodies were
 inspected in addition to their documented inherited audits. Previously
@@ -136,28 +132,20 @@ none of these intermediate results separately.
 `SegmentHeadJacquetReduction` and `TwoSupercuspidalProductStructureProof`
 are absent.
 
-The relevant trusted operator rulings were read in full:
-[bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md)
-permits the independently proved general derivative route;
-[0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-specifies eligible general infrastructure;
-[30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-permits the independently proved final support-only bound;
-[ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md)
-restricts the stronger intermediate to its length-two base case; and
-[2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-permit the reducibility import solely within that restricted branch.
-These rulings determine eligible foundations and supply no mathematical
-premise.
+The eligible foundations are the independently proved general derivative
+route, eligible general infrastructure, the independently proved final
+support-only bound, the stronger intermediate restricted to its length-two
+base case, and the reducibility import solely within that restricted
+branch. These restrictions determine eligible foundations and supply no
+mathematical premise.
 
 Neither this theorem nor its inherited proofs use multisegment
 exhaustion, ordered strong-head existence, quotient coverage, ordered
 conversion, tempered uniqueness, square-integrable Langlands
 classification, square-integrable exhaustion or regular exhaustion as
-proof inputs. They use no proof of this parent uniqueness result.
+proof inputs. They use no proof of this uniqueness result.
 The occurrence of its Prop-valued definition and conjunction entry in
-the mandatory unchanged `SegmentGenericStatement` does not assume it.
+the unchanged `SegmentGenericStatement` does not assume it.
 The additional broad name-scan hits concern precedence predicates,
 ordinary shape head/tail refinement and the general
 `OrderedCuspidalProductHeadShift` argument, whose body uses BZ77
@@ -166,8 +154,8 @@ Lemma 4.7(b); none is ordered strong-head existence.
 ## Original sources
 
 The target is Zelevinsky 1980, Theorem 9.7(b) and §9.10, with the
-irreducibility clause of 9.7(a). Worker 422 read printed pp.198–201,
-including the full §§9.7–9.10, and Kudla 1994, printed pp.369–371.
+irreducibility clause of 9.7(a). Printed pp.198–201, including the full
+§§9.7–9.10, and Kudla 1994, printed pp.369–371, were read.
 Section 9.1 fixes the special-head convention. The registered retained
 sources are:
 
@@ -189,9 +177,3 @@ The imported proofs document their original general
 Bernstein–Zelevinsky derivative, cuspidal association and support
 foundations. No separate applicable errata note was found in the
 supplied literature and project source notes.
-
-## Validation boundary
-
-Compilation and declaration inspection are development checks.
-Independent semantic review, official exact-target validation and
-Library publication remain separate requirements for this contribution.

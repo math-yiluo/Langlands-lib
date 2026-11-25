@@ -1,7 +1,5 @@
 # Affine full-centre quotients over arbitrary bases
 
-Worker 221.
-
 `Langlands.GroupScheme.relativeAdjointQuotientExistence.{u}` proves the
 unchanged Library proposition
 `Langlands.GroupScheme.RelativeAdjointQuotientExistenceStatement.{u}`.

@@ -22,7 +22,10 @@ constructions and their canonical comparisons. They are implementation lemmas
 for condition (b). The module does not assert Proposition 2.4, whose inputs
 arise from a special formal module, or Drinfeld's representability theorem.
 Preservation of the determinant condition, full admissibility, a moduli functor
-and representability remain separate obligations.
+and representability are outside this module. The first two are proved in
+`DeligneDeterminantBaseChange` and `DeligneAdmissibleBaseChange`, and
+`DeligneNilpFunctor` constructs the admissible class functor on Nilp;
+representability remains separate.
 
 ## Parameters and actual objects
 

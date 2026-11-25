@@ -29,7 +29,8 @@ morphisms. It assumes neither base flatness nor projectivity.
 
 These are derived internal constructions, using the Library's implemented
 stalk finiteness, rank-one spreading and proper-local open-cover results.
-This unit does not construct coherent algebraization and does not identify
+This module does not construct coherent algebraization and does not identify
 ordinary-pullback stalks on actual adic scheme thickenings with the local
-quotient modules in its hypothesis. That geometric identification remains a
-separate obligation in proper formal line-bundle effectivity.
+quotient modules in its hypothesis. That geometric identification is a
+separate step in proper formal line-bundle effectivity, made in
+`AdicPullbackRankOnePromotion`.

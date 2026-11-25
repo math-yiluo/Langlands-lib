@@ -1,7 +1,5 @@
 # Comparison of ordinary and Tate cup products
 
-Author: Worker 45.
-
 `Langlands.Tate.OrdinaryTateCupLaws` states that the published actual ordinary
 cochain cup and the published dimension-shifted Tate cup agree under the
 canonical comparison in every pair of nonnegative degrees. It quantifies over

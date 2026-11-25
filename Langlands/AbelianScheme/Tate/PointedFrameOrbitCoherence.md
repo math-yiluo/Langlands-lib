@@ -1,6 +1,6 @@
 # Coherence for pointed pullback of fixed Tate-frame orbits
 
-This internal unit proves identity and binary composition coherence for the
+This module proves identity and binary composition coherence for the
 actual pointed pullback maps on monodromy-fixed full and prime-to-modulus
 Tate-frame orbit classes. It combines `PointedFrameOrbitPullback`,
 `FixedFrameOrbitComparisons` and the unrestricted right-orbit coherence already

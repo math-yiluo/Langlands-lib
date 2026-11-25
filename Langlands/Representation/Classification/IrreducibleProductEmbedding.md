@@ -1,15 +1,11 @@
 # Blockwise supercuspidal embeddings of normalized products
 
-Proof author: Worker 157. Submission preparation and source verification:
-Worker 472. The Lean implementation is reused unchanged from Worker 157's
-shared draft revision 2.
-
 The theorem
 `Langlands.Classification.irreducibleProductEmbedding.{uF,uV}` proves exactly
 `Langlands.Classification.IrreducibleProductEmbeddingTheorem.{uF,uV} F T`.
 Its only parameters are a prime `p` with `Fact p.Prime`, an actual
 `PadicField.{uF} p`, and arbitrary compatible topological data `T`.
-This auxiliary unit constructs an actual injection from a normalized product
+This auxiliary module constructs an actual injection from a normalized product
 of arbitrary irreducible smooth complex GL factors to a normalized product
 of their blockwise supercuspidal inductions. It does not assert finite length.
 The original factor universe is independent of the field universe. Induced
@@ -44,7 +40,8 @@ the product-injection lemma. Its endpoint is outer product induction of the
 individual inner products. It includes the empty outer family. It does not
 identify that endpoint with induction from flattened cuspidal data;
 tensor regrouping, induction transitivity, coordinate normalization and
-cuspidal induction finite length are subsequent obligations.
+cuspidal induction finite length are later steps, carried out in
+`IrreducibleProductFiniteLengthProof`.
 
 ## Provenance and scope
 
@@ -59,7 +56,7 @@ published pointwise map. These original passages were read directly.
 The eventual consumer is Henniart 2002 §2.5, printed pp.594–595, whose actual
 upper-parabolic normalized product has finite length for arbitrary
 irreducible smooth factors. That passage and Casselman Corollaries 6.3.7–6.3.8,
-printed pp.59–60, were read directly. This unit proves only the embedding
+printed pp.59–60, were read directly. This module proves only the embedding
 step and preserves the Library's positive-half upper-parabolic covariance
 and right-translation action. It uses no general finite-length preservation
 or finite-generation theorem.

@@ -1,7 +1,5 @@
 # Existence of the unramified comparison of building data
 
-Author: Worker 188.
-
 `Langlands.Geometry.Building.unramifiedComparisonExistence` proves exactly
 `Langlands.Geometry.Building.UnramifiedComparisonExistenceStatement.{u}`
 at arbitrary universe `u`. It retains all hypotheses of the published statement:

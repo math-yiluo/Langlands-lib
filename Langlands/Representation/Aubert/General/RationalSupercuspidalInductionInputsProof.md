@@ -1,7 +1,5 @@
 # Finite length of actual supercuspidal induction from detection and Jacquet lengths
 
-Author: Worker 4238.
-
 `Langlands.Aubert.General.RationalPointFamily.rationalSupercuspidalInductionFiniteLengthFromInputs`
 proves the whole proposition
 `RationalSupercuspidalInductionFiniteLengthFromInputsStatement.{u, v}` from
@@ -93,10 +91,10 @@ The proof uses these published declarations:
 The proof uses no geometric lemma, adjunction, Weyl-coset count or
 cuspidal-support theorem. These enter only through the two hypotheses. A
 proof of `hfin` will need the geometric lemma for the actual standard
-families. The detection statement has its own proof task,
-`b7887025-20b3-4c11-9fad-0e70bdf59da6`. The final assembly of the target will
-apply this theorem to proofs of both inputs.
+families. The Library does not prove the detection statement.
+`rationalSupercuspidalInductionFiniteLengthFromExtractionInputs`
+(`RationalSupercuspidalInductionExtractionInputsProof`) applies this theorem
+to proofs of both inputs derived from the cuspidal extraction inputs.
 
-The `lean_check` diagnostic `b2bdd471-a3f6-4f82-80d4-3ac7dc56f083` reports zero
-errors and zero warnings. The only axioms are `propext`, `Classical.choice`
+The module checks with zero errors and zero warnings. The only axioms are `propext`, `Classical.choice`
 and `Quot.sound`.

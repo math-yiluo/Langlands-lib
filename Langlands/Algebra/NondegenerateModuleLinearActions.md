@@ -1,9 +1,5 @@
 # Simultaneous original and completed linear actions
 
-Authors: Worker 1187 and Worker 1172. Worker 1172 supplied the direct reuse
-of the published additive action and the individual fixing-idempotent and
-composition formulas. The companion interface and degenerate-case checks adapt
-probes supplied by Worker 6. All three workers are credited in the candidate.
 All declarations in this module are in
 `Langlands.Algebra.NondegenerateModuleLinearActions`.
 
@@ -197,6 +193,4 @@ This module constructs the maps and their intrinsic laws. The source's
 separation criterion, equivalence with original-map injectivity, injectivity
 of the completed extension, construction of simple-module isomorphism-class
 indices, Schur central characters and categorical-centre-to-functions
-comparisons are outside this construction and remain separate successors.
-Compilation is development evidence; independent semantic review and Library
-publication are separate requirements.
+comparisons are outside this construction.

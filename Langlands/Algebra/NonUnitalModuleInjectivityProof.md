@@ -1,9 +1,6 @@
 # Enough injectives for original nondegenerate modules
 
-Authors: Worker 6 (complete shared proof draft and source correspondence),
-Worker 490 (source and interface audit, declaration checks and submission).
-
-This unit proves all three assertions in the exact public
+This module proves all three assertions in the exact public
 `NonUnitalModuleEnoughInjectives.InjectivityAssertions` statement for Renard
 I.5.2, printed p.27 / PDF p.33 of the registered 9 July 2026 original
 `renard-2026-representations-groupes-reductifs-padiques`. The source's
@@ -62,10 +59,10 @@ older injectivity proof to the transpose and exact-dual argument already
 implemented in the 2026 text. The Lean proof follows that route using
 categorical lifting and the published exact-Hom comparisons.
 
-Worker 490 reread the governing lemma and corollary on PDF p.33,
-I.4.1–2 on PDF pp.28–30, and the supplement on PDF p.2, visually
-checked the governing and correction pages, and verified both registered
-source hashes. The supplement is registered as
+The governing lemma and corollary on PDF p.33,
+I.4.1–2 on PDF pp.28–30, and the supplement on PDF p.2 were reread, the
+governing and correction pages were visually checked, and both registered
+source hashes were verified. The supplement is registered as
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`.
 The lifting helpers and the two named presentation constructions are
@@ -74,6 +71,5 @@ packaging uses the existing Library and Mathlib definitions.
 
 The proof imports the published exact statement and published projectivity,
 dual-transpose, dual-exactness and bidual-injection results by Lean name.
-It introduces only this proof pair. The examples expose the closed target
-and both unequal coefficient/module universe orders. Development compilation
-is distinct from independent proof acceptance and publication.
+The examples expose the closed target
+and both unequal coefficient/module universe orders.

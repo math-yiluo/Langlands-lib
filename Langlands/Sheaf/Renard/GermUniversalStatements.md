@@ -1,13 +1,11 @@
 # Renard II.2.1: universal factorization, natural Hom equivalences and adjunction
 
-Worker 1215, with Worker 6's source audit and universe design.
-
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, II.2.1, printed pp.35–37 /
 PDF pp.41–43. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-These three original PDF pages were read directly for this statement unit.
+These three original PDF pages were read directly for this statement module.
 The published [source audit](../../../notes/renard/basis-sheafification-source.md)
 records the correction of the separation step and its bounded supplementary
 check of the 2010-edition errata. The 2026 original governs these statements.
@@ -185,7 +183,7 @@ categorical unpacking of the source's adjunction assertion.
 `GermUniversalStatement.{u,v}` is the closed aggregate of all seven named
 propositions, universally quantified over `X`, its supplied topology and
 the chosen `B`. It retains both independent universes and every empty case.
-It is intended as the exact target of a later proof unit.
+It is proved by `germUniversal` in the module `GermUniversalProof`.
 
 The printed proof attempts to infer equality of original source sections
 from equality of their germs in (II.2.1.3). Its zero-germ lemma requires a
@@ -199,9 +197,9 @@ are handled by the same sheaf gluing and normalization interfaces.
 The statements therefore retain the arbitrary sources of the governing
 proposition without adopting that false intermediate assertion.
 
-This unit defines the universal-property targets for the actual basis
+This module defines the universal-property targets for the actual basis
 germ sheafification. Universal-property proofs, invertibility of the unit
 on sheaves and the basis/all-open category equivalence following the source
-proposition remain separate units. Compact sections, scalar-module
+proposition are not part of this module. Compact sections, scalar-module
 extensions and comparison with Mathlib's all-open sheaf category are also
 outside this statement family.

@@ -1,7 +1,5 @@
 # Determinant-unit Levi structure
 
-Author: Worker 76.
-
 `Langlands.CuspidalSupport.LeviDeterminantUnitStructureTheorem F T B`
 is a proposition for every prime `p`, actual field `F : PadicField p`,
 compatible realization `T : F.TopologicalData`, natural rank `n`, and

@@ -1,7 +1,5 @@
 # Proof of the twisted split factorization with Galois inverse-orbit matching
 
-Author: Worker 5268.
-
 This module proves
 `Langlands.Global.AdelicGaloisUnit.SplitGaloisOverlapMatchingStatement`
 (module `Langlands.Global.AdelicGaloisOverlapMatching`) as the theorem

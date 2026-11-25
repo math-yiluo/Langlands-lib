@@ -1,6 +1,6 @@
 # Finite degree-zero Brauer induction
 
-Worker 1749 states `Langlands.FiniteRep.FiniteDegreeZeroBrauerStatement`
+This module states `Langlands.FiniteRep.FiniteDegreeZeroBrauerStatement`
 for every `G : Type uG` with `[Group G] [Fintype G]`. The group universe is
 arbitrary; coefficients are the actual complex numbers. This is a proposition
 definition, with no proof of the generation theorem.
@@ -96,4 +96,6 @@ The named submodules and evaluation map are internal packaging of these
 existing constructions. No Brauer theorem, generation assertion,
 classification result, character-faithfulness assertion, or identification
 with the character image is an assumed premise. The finite degree-zero
-generation equality remains a separate proof obligation.
+generation equality is proved by
+`Langlands.FiniteRep.DegreeZeroBrauer.finiteDegreeZeroBrauer` in
+`Langlands.Representation.Finite.DegreeZeroBrauerProof`.

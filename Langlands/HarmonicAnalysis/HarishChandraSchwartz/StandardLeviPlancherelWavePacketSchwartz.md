@@ -1,6 +1,6 @@
 # Actual source-normalized Plancherel wave-packet targets
 
-Worker 270. Lean module
+Lean module
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.StandardLeviPlancherelWavePacketSchwartz`,
 namespace `Langlands.HarishChandraSchwartz`.
 
@@ -71,8 +71,9 @@ The actual-image premise
 hindex : (RenardCartan.splitValuationImage s).FiniteIndex
 ```
 
-remains visible in every target. It is an unresolved structural obligation of
-the standing program, not a permitted permanent external structural input.
+remains visible in every target. For a split component `s` it is proved by
+`finiteIndex_splitValuationImage_of_isSplitComponent` (module `RationalOrbitCentralFiberAdapter`),
+which these targets do not use.
 Each component target installs the proved
 `finite_standardLeviDiscreteSeriesStabilizer I s hs hindex mu omegaπ`.
 There is no extra assumed finite self-twist stabilizer.
@@ -272,7 +273,7 @@ each level, and hence continuity after the topology comparison.
 These weak-constant-term, positive-part, and full output-seminorm
 arguments remain proof obligations; none is silently assumed here.
 
-## Reused results and limits of this publication
+## Reused results and limits of this module
 
 The section, coefficient, orbit, weight, integral and topological spaces
 are imported constructions. Character/orbit measure comparisons,
@@ -283,7 +284,7 @@ identifies the dynamic scalar parabolic with this actual standard
 parabolic; the dynamic-Levi pullback remains internal to the imported
 weight. This module adds only the three related Prop-valued targets.
 
-Publishing these targets does not prove VI.3.1, discharge `hindex` or the
+Stating these targets does not prove VI.3.1, discharge `hindex` or the
 conditional scalar/density hypotheses, prove the topology comparisons,
 or establish semistandard/global synthesis, isometry, inversion, or
 Plancherel. It preserves the scalar, inverse-regularity, density, and

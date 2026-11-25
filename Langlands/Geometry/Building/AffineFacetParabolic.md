@@ -103,17 +103,19 @@ full quotient value on every representative. No representatives are selected
 by an existential choice of a section. The full quotient and its component
 groups are retained, including in the stabilizer equality.
 
-The global target must derive this predicate and normality witnesses from only
-the apartment, chamber and common-chamber face premises. The facet stabilizer
-theorem, both parahoric containments, the standard-parabolic equality and all
-Tits assertions remain future proof obligations.
+The global target `FacetParabolicComparisonStatement` must derive this
+predicate and normality witnesses from only the apartment, chamber and
+common-chamber face premises; the Library does not prove it. The facet
+stabilizer theorem, both parahoric containments, the standard-parabolic
+equality and all Tits assertions are not proved here.
 
 The closing `ParahoricDoubleCosetStatement` concerns every element of the full
 normalizer, including representatives outside `G(F)^0`. Applying this fixed
 comparison there still requires the component extension and normalization
 comparisons, generic parabolic double-coset transports, and their values on
 every full normalizer representative. The unchanged
-`IwahoriDoubleCosetStatement` has the analogous retained obligations. This unit
-neither assumes nor proves either closing target. The future validity
-predicate for corrected Axiom 4.1.9 does not discharge these apartment-only
+`IwahoriDoubleCosetStatement` has the analogous retained obligations. This module
+neither assumes nor proves either closing target. The validity predicate for
+corrected Axiom 4.1.9, `ParahoricBuildingData.HasTitsSystem` in
+`FullValidity/ChamberAxioms`, does not discharge these apartment-only
 Chapter 7 obligations.

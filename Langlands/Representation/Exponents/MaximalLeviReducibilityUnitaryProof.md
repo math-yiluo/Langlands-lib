@@ -1,8 +1,8 @@
 # The unitary case of Renard VII.1.3 from its inputs
 
-Author: Worker 1507. Module `Langlands.Representation.Exponents.MaximalLeviReducibilityUnitaryProof`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.MaximalLeviReducibilityUnitaryProof`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
-This module proves the published `MaximalLeviSupercuspidalReducibilityUnitaryStatement` (module `MaximalLeviReducibilityReductionStatements`) from explicit premises. The premises are the eight input statements of `MaximalLeviReducibilityUnitaryInputs` and two instances of the published, still unproved, `RationalPointsIrreducibleAdmissibleStatement` (Jacquet's theorem). The result is therefore conditional: none of the premises is proved here, and no axiom is added. The positive unramified twist of the second case comes from the proved theorem `exists_positive_unramifiedTwist_unitaryCentralCharacter` of Worker 1517's module `PositiveUnramifiedCentralTwist`, and the transfer of supercuspidality to twists from `properJacquet_subsingleton_unramifiedTwist` of `UnramifiedTwistRadicals`.
+This module proves the published `MaximalLeviSupercuspidalReducibilityUnitaryStatement` (module `MaximalLeviReducibilityReductionStatements`) from explicit premises. The premises are the eight input statements of `MaximalLeviReducibilityUnitaryInputs` and two instances of the published, still unproved, `RationalPointsIrreducibleAdmissibleStatement` (Jacquet's theorem). The result is therefore conditional: none of the premises is proved here, and no axiom is added. The positive unramified twist of the second case comes from the proved theorem `exists_positive_unramifiedTwist_unitaryCentralCharacter` of module `PositiveUnramifiedCentralTwist`, and the transfer of supercuspidality to twists from `properJacquet_subsingleton_unramifiedTwist` of `UnramifiedTwistRadicals`.
 
 ## Source
 
@@ -57,4 +57,4 @@ Throughout, `π = (leviInductionFunctor p l r hp hr hl hmul).obj ρ`. First `ρ`
 
 ## Status
 
-The module is conditional on its ten premises. A proof of the published target `MaximalLeviSupercuspidalReducibilityStatement` combines it with the twist reduction `maximalLeviSupercuspidalReducibility_of_unitary` and a proof of `MaximalLeviUnitaryCentralTwistStatement` (Worker 1517's modules), once the premises are proved.
+The module is conditional on its ten premises. A proof of the published target `MaximalLeviSupercuspidalReducibilityStatement` combines it with the twist reduction `maximalLeviSupercuspidalReducibility_of_unitary` and a proof of `MaximalLeviUnitaryCentralTwistStatement` (modules `MaximalLeviTwistReduction` and `MaximalLeviUnitaryCentralTwistReduction`), once the premises are proved.

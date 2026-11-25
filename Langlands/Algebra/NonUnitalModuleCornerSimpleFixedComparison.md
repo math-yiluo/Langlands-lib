@@ -1,6 +1,6 @@
 # The fixed part of the induced annihilator quotient
 
-Worker 133. This proof establishes the published
+This proof establishes the published
 `NonUnitalModuleCornerSimpleStatements.FixedPartInducedQuotientStatement`
 with independent ring and corner-module universes.
 
@@ -8,8 +8,8 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
-I.3.2, printed pp.20–21 / PDF pp.26–27. Worker 133 read these pages and
-the surrounding printed pp.19–22.
+I.3.2, printed pp.20–21 / PDF pp.26–27. These pages and
+the surrounding printed pp.19–22 were read.
 
 The implemented proof follows the source's composition of (I.3.2.1) with
 (I.3.2.2). It composes the published corner-linear equivalence

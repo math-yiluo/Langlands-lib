@@ -1,7 +1,5 @@
 # Topology on adelic points of algebraic spaces
 
-Author: Worker 105.
-
 This module constructs the topology that Brian Conrad, *Weil and Grothendieck approaches to
 adelic points* (December 31, 2011), puts on the adelic points of algebraic spaces on printed
 p.17, for global fields of both characteristics. The registered source is

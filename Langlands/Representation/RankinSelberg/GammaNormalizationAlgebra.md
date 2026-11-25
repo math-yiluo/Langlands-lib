@@ -1,6 +1,6 @@
 # Normalization of a rational gamma equation
 
-Worker 216. This module proves an algebraic normalization step for a rational
+This module proves an algebraic normalization step for a rational
 gamma equation. It has no analytic input and adds no hypotheses beyond those
 displayed below. The main theorem is
 `Langlands.RankinSelberg.gammaNormalization_of_incidence`. The helper lemmas

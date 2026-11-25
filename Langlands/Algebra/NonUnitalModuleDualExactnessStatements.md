@@ -1,6 +1,6 @@
 # Exactness of the actual nondegenerate duality
 
-This statement unit records Renard, *Représentations des groupes réductifs
+This module records Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, I.4.1, lemma, printed page 23 /
 PDF page 29: the nondegenerate duality functor is exact. Its construction is
 on printed page 22 / PDF page 28. Registered governing source:
@@ -115,6 +115,10 @@ Algebra and carrier universes are independent throughout. There is no
 finite-dimensionality, nontriviality, admissibility, faithfulness,
 anti-involution, unital-action, splitting, additive-instance, duality
 equivalence or exactness-certificate premise. Zero algebras and zero
-modules remain in scope. Exactness proofs, canonical bidual evaluation
-and injection, admissible reflexivity and I.4.2 comparisons are separate
-successors.
+modules remain in scope. The four targets are proved in
+`NonUnitalModuleDualCategoricalExactnessProof`,
+`NonUnitalModuleDualMapExactnessProof`,
+`NonUnitalModuleDualInjectiveSurjectiveProof` and
+`NonUnitalModuleDualSurjectiveInjectiveProof`. Canonical bidual evaluation
+and injection, admissible reflexivity and I.4.2 comparisons are treated in
+other modules.

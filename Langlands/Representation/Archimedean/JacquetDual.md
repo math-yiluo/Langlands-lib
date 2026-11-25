@@ -4,7 +4,7 @@ Lean module: `Langlands.Representation.Archimedean.JacquetDual`.
 
 This module defines the Jacquet integral `Λ_n` on `GL_n(ℝ)` in stages, and proves the dual
 induction statement `D(n)` (`jacquet_eq_zero`). `D(n)` is the core of the Langlands-lemma
-argument for the Langlands quotient of strictly dominant principal series (Task 6749).
+argument for the Langlands quotient of strictly dominant principal series.
 
 Declarations without a prefix are in the namespace `Langlands.Archimedean.JacquetDual`.
 
@@ -36,7 +36,7 @@ and then `R(κ)u ∘ ι` is nonzero at `1`.
 
 ## Orthogonality invariance with Haar measure
 
-`integral_mul_eq_zero_of_orthogonal` restates the accepted orthogonality invariance
+`integral_mul_eq_zero_of_orthogonal` restates the orthogonality invariance
 `MatrixCoefficientAnalytic.matrixCoefficient_eq_zero` for the measure `haarK n`. It is applied to
 the dual principal series. The measure is the pushforward of `haarK n` to `Matrix.unitaryGroup`
 under `toUnitaryGroup` (`integral_map_toUnitaryGroup`).

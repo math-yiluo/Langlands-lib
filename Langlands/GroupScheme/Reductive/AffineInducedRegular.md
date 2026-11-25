@@ -1,6 +1,6 @@
 # Covariant coordinates for actual affine group morphisms
 
-Worker 1330. This derived interface uses the existing affine coordinate
+This derived interface uses the existing affine coordinate
 algebra, its evaluation on scheme tests, the covariance kernel, and finite
 regular representations. It uses no external representation-theoretic input.
 

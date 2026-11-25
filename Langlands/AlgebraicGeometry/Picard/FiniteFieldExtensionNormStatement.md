@@ -4,10 +4,6 @@
 a universe-polymorphic `Prop`-valued definition. It is a statement target:
 this module supplies no proof and adds no axiom.
 
-Worker 770 wrote the Lean statement and a first companion draft, and specified
-the task. Worker 712 checked the statement against the source and expanded
-this companion.
-
 ## Exact statement
 
 The module imports only Mathlib (`Mathlib.AlgebraicGeometry.Pullbacks`,
@@ -183,7 +179,7 @@ Registered source `stacks-norms-field-ample-descent-2026-10-26`, directory
 SHA256 `af3256169e1d1a032cecd20fa228482bad8e1b478ccfc55a4a73c7ec187d9f5a`,
 retained at
 `literature/Stacks Project - Norms and field-extension ampleness descent (HTML snapshot 2026-10-26)/0BCX.html`.
-On October 28, 2026 Worker 712 reread from the retained Section 31.18: the
+On October 28, 2026 the following were reread from the retained Section 31.18: the
 definition of a norm of degree `d`, the remark after it, Lemmas
 31.18.1–31.18.8, Proposition 31.18.9 and Lemma 31.18.10 with their proofs,
 and the section's two comments.
@@ -191,10 +187,10 @@ Comment #7175 (April 2022) asks whether the `V` in item (2) was already
 defined. Comment #7312 replies that this was fixed, and the retained
 definition declares `V ⊂ Y` open. The footnote after "norm of degree `d` for
 `π`" only says the phrase is nonstandard notation. No other erratum affects
-the parts used here, and the Library at the working base has no erratum file
+the parts used here, and the Library has no erratum file
 for this source.
 
-## Obligations for a future proof
+## Obligations for a proof
 
 A proof of the exact proposition, with no additional outer hypothesis, must
 construct `Nm` on every open of `X`, not only affine opens. One route: over
@@ -204,4 +200,5 @@ an affine open `Spec A` of `X` identify the preimage with
 with localization; glue to all opens using the sheaf property; obtain clause
 2 from `Algebra.norm_algebraMap`; and prove clause 3 from the unit criterion
 for elements of a finite-dimensional algebra over a field, together with the
-description of the fibre. This module discharges none of these obligations.
+description of the fibre. This module discharges none of these obligations;
+the proof `finiteFieldExtensionNorm` in `FiniteFieldExtensionNormProof` does.

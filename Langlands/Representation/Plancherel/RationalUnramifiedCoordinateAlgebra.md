@@ -1,7 +1,5 @@
 # Coordinate algebra of actual unramified characters
 
-Author: Worker 200.
-
 This derived construction identifies the existing algebra of actual unramified
 character evaluations with the complex group algebra of the actual integer
 valuation image. For a connected reductive group, its existing integer basis
@@ -180,7 +178,7 @@ formula as the descended-character version.
 
 ## Remaining application obligations
 
-This unit supplies the actual scalar-algebra comparison needed for the
+This module supplies the actual scalar-algebra comparison needed for the
 previous polynomial and common-denominator rational-family predicates.
 It does not prove convergence or rationality of an intertwiner, construct
 an open twist-orbit domain, descend operator families to representation

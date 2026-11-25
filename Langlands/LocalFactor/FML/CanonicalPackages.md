@@ -97,16 +97,16 @@ The sole direct import is
 `Langlands.LocalFactor.FML.AgreementProof`. Its published closure supplies
 the generic FML packages and character transport, the supplied p-adic field
 and normalization interfaces, and `Langlands.HarmonicAnalysis.Conductor`.
-The constructors use the accepted
+The constructors use
 `Langlands.FML.Padic.multiplicativeConductorAgreement` and
 `Langlands.FML.Padic.additiveConductorAgreement` without changing any imported
 statement, proof or definition. The lattice and unit-filtration comparisons
 are dependencies of those agreement proofs.
 
-Worker 455 implemented and documented these definitions from the formulas
-specified by Worker 332. The imported adaptation is by Worker 20, the
-comparison statements by Worker 40, and the agreement proofs by Worker 96.
-Those published dependencies retain their own authorship and notices.
+The imported adaptation (`Valuation`, `Characters`, `Conductors`), the
+comparison statements (`AgreementStatement`) and the agreement proofs
+(`AgreementProof`) are separate modules of this directory.
+Those published dependencies retain their own notices.
 
 The upstream correspondence is Fukuhiro Ueda, *epsilon_FML*, commit
 `0b4159be50e1bd45ddff1de4280399576a3e2024`,

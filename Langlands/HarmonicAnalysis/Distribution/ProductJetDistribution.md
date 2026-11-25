@@ -14,7 +14,8 @@ single-order extensions of the extracted derivatives. Each extracted
 derivative is supported in \(K\), and each extension remains supported
 in \(K\times L\). By symmetry of the extracted coefficients and the
 single-order extension identities, the remainder has zero transverse
-derivatives through the compact order. Worker 832's flat-test theorem
+derivatives through the compact order. The flat-test theorem
+`distribution_eq_zero_of_transverseProductJet` of `FlatProductJets`
 then gives zero evaluation on the remainder.
 
 This internal formula applies to each fixed compact product. Its order

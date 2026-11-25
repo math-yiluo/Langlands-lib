@@ -1,9 +1,11 @@
 # Pairing stabilizers and actual standard Levi Weyl images
 
-Worker 165. This internal conditional construction isolates the quotient and
+This internal conditional construction isolates the quotient and
 descent part of identifying actual Levi Weyl groups with standard Coxeter
 subgroups. It retains the original point Coxeter system and literal simple-root
-labels. The simple-reflection pairing law defined below remains unproved.
+labels. The simple-reflection pairing law defined below is a hypothesis here;
+`CanonicalRationalStructure` proves it for the canonical Coxeter system
+(`canonicalSimpleReflectionPairingInvariance`).
 
 Work over any field, with a commutative group scheme `T`, an affine group scheme
 `G`, and a monomorphic map `i : T → G`. Both actual normalizer and full-centralizer
@@ -51,7 +53,7 @@ is derived from `HasRelativeRootSystem.exists_standardCocharacter`. Its output
 is exactly the range of the published actual Levi Weyl inclusion being
 `standardSubgroup cs I` for every finite face `I`. It needs the split torus,
 relative-root-system, genericity and length/sign hypotheses and the explicit
-unproved simple-reflection pairing law. It does not require a finite root set,
+simple-reflection pairing law. It does not require a finite root set,
 finite Weyl group, reductivity, a scheme Coxeter realization, or an arbitrary
 choice of normalizer representatives.
 
@@ -62,5 +64,5 @@ centralizer criterion in `CocharacterCentralizer`, split-torus perfectness in
 negation and standard-cocharacter existence, and Mathlib's Coxeter descent
 theorems. No classification, character independence, geometric lemma,
 adjointness, cuspidal-support result or normalized-functor comparison is used.
-This conditional unit supplies neither the remaining simple-reflection law nor
+This conditional module supplies neither the remaining simple-reflection law nor
 an unconditional proof of `RationalJacquetCompatibilityStatement`.

@@ -1,8 +1,9 @@
 # Restricted-product tensor comparison and bijectivity targets
 
-`RestrictedProduct.TensorRestrictedProductComparison.{uR, uM, uι, uN}` is a
+`Langlands.LinearAlgebra.RestrictedProduct.TensorRestrictedProductComparison.{uR, uM, uι, uN}` is a
 `def` returning `Prop`. It states three assertions about the canonical maps
-imported from `Langlands.LinearAlgebra.RestrictedProduct.Tensor`. It proves
+declared in the Mathlib stand-in module `Langlands.Mathlib.DedekindDomain.FiniteAdeleRing.TensorRestrictedProduct`
+and imported through `Langlands.LinearAlgebra.RestrictedProduct.Tensor`. It proves
 none of them. Its body is `A ∧ (B ∧ C)`, where each clause universally
 quantifies its own types, instances, submodules and filter. Thus the hypotheses
 needed for bijectivity do not restrict the scalar comparison, and the ring
@@ -109,14 +110,13 @@ direct-limit construction, and no final `lTensorEquiv` or `lTensorEquivLeft`.
 The independent arbitrary-product comparison is neither restated nor assumed.
 No topology or norm assertion is made.
 
-A private `lean_check` probe inspected the full unapplied types of all nine
+A private probe inspected the full unapplied types of all nine
 imported declarations, the full expanded grouped target and its universes.
 It compiled without errors or warnings. A separate declaration inspection
 confirmed `statement_returns_prop = true` and the universe parameters
 `uR, uM, uι, uN`. The target depends only on the standard
 axioms `propext`, `Classical.choice` and `Quot.sound`; it introduces no axiom or
-proof hole. These checks establish well-formedness, not proofs of the clauses
-or independent semantic acceptance.
+proof hole. These checks establish well-formedness, not proofs of the clauses.
 
 ## Provenance and modification notice
 
@@ -130,9 +130,9 @@ in the registered source `external-lean-reuse-snapshots-2026-10-21`, under
 The precise source assertions and their hypothesis locations are linked above.
 The surrounding source map is the
 [finite-adele base-change audit](../../../notes/reuse/finite-adele-base-change-audit.md),
-sections 2–6 and Appendix B; that audit is not acceptance of these assertions.
+sections 2–6 and Appendix B; that audit is not a check of these assertions.
 
-Worker 288's modifications replace the three original proved declarations by
+The modifications made in Langlands-lib replace the three original proved declarations by
 one Prop definition, move each assertion's hypotheses inside its own universal
 quantifiers, make the four independent universes explicit, and import the
 published canonical maps and Mathlib's finite-presentation and flatness classes.
@@ -146,3 +146,13 @@ Jasper”, and the Apache-2.0 license notice, with a prominent modification noti
 The original license is already retained at
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 The source snapshot contains no `NOTICE` file.
+
+## Names and place (22 November 2026)
+
+The Library's own declarations of this directory, which the Imperial project does not declare, moved on
+that day from the root name space `RestrictedProduct` to `Langlands.LinearAlgebra.RestrictedProduct`
+(each name gets the prefix `Langlands.LinearAlgebra.`; for instance
+`RestrictedProduct.TensorRestrictedProductComparison` is now `Langlands.LinearAlgebra.RestrictedProduct.TensorRestrictedProductComparison`). The Lean file
+opens `RestrictedProduct` before its name space so that the Imperial-named declarations it uses keep their short names. Statements and proofs change only in these
+names; the declarations of the Imperial project that it uses (`lTensor`, `rangeLTensor`, …) are in the
+modules under `Langlands/Mathlib/`.

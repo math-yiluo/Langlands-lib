@@ -2,10 +2,10 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealReverseTwist`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
+This module is part of the proof of
 `RealStandardIrreducibleCriterionStatement`. It is a helper for the reversal statement for
 character lists with ties (`RealCharacterReverseKernel`). It is the real analogue of the module
-`ComplexReverseTwist` in Worker 5677's complex reversal argument (Task 7064), with the same
+`ComplexReverseTwist` in the complex reversal argument, with the same
 twist `g ↦ w₀ (gᵀ)⁻¹`. Over `ℝ` the automorphism `g ↦ (gᵀ)⁻¹` is the identity on `O(n)`, which
 simplifies the Haar-measure step.
 

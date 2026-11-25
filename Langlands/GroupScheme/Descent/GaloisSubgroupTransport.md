@@ -1,7 +1,5 @@
 # Composition and Frobenius invariance of subgroup descent transport
 
-Author: Worker 1442.
-
 This internal construction supplies the canonical Galois action on subgroup
 functors of a group obtained by base change. It also proves that, for finite
 fields, invariance under Frobenius suffices for invariance under every Galois

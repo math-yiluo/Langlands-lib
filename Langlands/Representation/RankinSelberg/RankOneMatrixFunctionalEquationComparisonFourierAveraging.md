@@ -6,8 +6,10 @@ coefficient on the specified coefficient model and preserves the original and
 inverse-transpose integrals against every supplied Fourier partner, assuming
 convergence of both original integrands.
 
-The construction composes Worker 396's paired compact average with Worker 623's
-actual Fourier covariance and compact determinant-norm identities. Its
+The construction composes the paired compact average of
+`RankOneMatrixFunctionalEquationComparisonAveraging` with the actual Fourier
+covariance and compact determinant-norm identities of
+`RankOneMatrixFunctionalEquationComparisonFourierInvariance`. Its
 provenance is this composition of proved identities, rather than an additional
 analytic existence assertion. The field and original representation-carrier
 universes remain independent. All Fourier expressions use the supplied
@@ -58,8 +60,9 @@ averaged coefficient proves the normalized equation for these values.
 
 These are conditional analytic transfers: unconditional convergence of the
 original model functions, nonvanishing for their value family, the Weyl
-substitution, and the positive-rank block comparison remain separate
-obligations for the final all-rank gamma comparison. Self-duality of the
+substitution, and the positive-rank block comparison are not proved here;
+they are further inputs of the final all-rank gamma comparison
+`rankOneMatrixFunctionalEquationComparison`. Self-duality of the
 scalar measure is unnecessary for these conditional assertions, since the
 Fourier pair is supplied in each use.
 

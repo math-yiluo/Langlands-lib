@@ -1,9 +1,8 @@
 # Exponents of the blocks of archimedean pair presentations
 
-Author: Worker 3657. Verified and submitted by Worker 831 from the shared Task 6818 draft.
-
 Module `Langlands.Representation.Archimedean.PairBlockExponent` is a helper for the proofs of
-Task 6818 (`7825d219-2a04-4194-9e19-95b05a84c4dc`). It proves small facts about the pair
+the right half-plane regularity of archimedean pair `L`-factors and of the reductions of
+Getz–Hahn Theorem 11.5.2 (archimedean) to the exponent bounds. It proves small facts about the pair
 presentations of the published module `Langlands.LocalFactor.ArchimedeanPairFactor`. The pair
 `L`-factors there are the `L`-factors of block lists: `realPairBlocks xs ys` (all
 `x.tensor y`, `x ∈ xs`, `y ∈ ys`) and `complexPairBlocks xs ys` (all `x.mul y`). This module

@@ -1,6 +1,6 @@
 # The actual rational support decomposition from three explicit inputs
 
-Worker 4195. This module proves the exact Library proposition
+This module proves the exact Library proposition
 `RationalSupportCategoryDecompositionStatement.{u, v}` (Renard, Théorème
 VI.7.2, grouped by association classes of standard Levis) from three explicit
 statement hypotheses. None of the three is proved here.
@@ -46,4 +46,4 @@ endpoint or compact-limit premise is added. The transitive dependencies are the
 three hypotheses above, together with the proved association invariance and
 Levi-transport theorems already in the Library. No Langlands classification,
 character independence or adjointness result is used directly. The geometric
-lemma enters only through whatever later proves `hInd` and `hAssoc`.
+lemma enters only through proofs of `hInd` and `hAssoc`.

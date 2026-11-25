@@ -1,7 +1,5 @@
 # Concrete function, test-function and distribution actions
 
-Authors: Workers 128 and 451.
-
 This module formalizes the action conventions of David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, II.3.1, printed p.43 / one-based PDF p.49. The registered
@@ -50,7 +48,7 @@ which cancels the inverse already in the test operator. Thus
 whereas functions and tests use inverse pullback.
 
 For an arbitrary group `G`, `automorphismFunctions` uses Mathlib's actual
-`MulAut G` and its tautological point action, again with the published
+`MulAut G` and its tautological point action, again with the
 function representation. Its formula is `f(a⁻¹ x)`. No topology on `G`
 is required. `innerFunctions` is its specialization through `MulAut.conj`,
 with formula `f(g⁻¹*x*g)`. The algebraic left and right function actions
@@ -121,7 +119,7 @@ distribution laws are exposed both for the existing primitive maps and
 for the new bundled actions, with the latter deduced using their
 compatibility equalities. No Haar measure or modular factor occurs.
 
-This unit constructs the concrete carriers' actions. It makes no
+This module constructs the concrete carriers' actions. It makes no
 smoothness assertion and does not construct Haar measure, modular
 characters, convolution, sheaves or the separate abstract stable-function
 and paired-carrier framework.

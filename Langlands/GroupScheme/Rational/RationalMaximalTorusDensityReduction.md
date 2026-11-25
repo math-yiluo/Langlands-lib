@@ -1,6 +1,6 @@
 # Pulling rational parameter density back to conjugators
 
-Worker 1574. This is an internal interface and conditional deduction for
+This is an internal interface and conditional deduction for
 `RationalMaximalTorusConjugateDensityStatement`. The unrestricted target is
 not proved in this module.
 

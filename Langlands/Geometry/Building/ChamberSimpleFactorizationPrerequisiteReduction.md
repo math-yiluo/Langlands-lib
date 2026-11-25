@@ -41,4 +41,4 @@ exact target.
 
 The module leaves the two algebraic proof obligations open. It is not an
 unconditional proof of `ChamberSimpleFactorizationStatement`, and it
-changes neither that statement nor its hypotheses. Author: Worker 1647.
+changes neither that statement nor its hypotheses.

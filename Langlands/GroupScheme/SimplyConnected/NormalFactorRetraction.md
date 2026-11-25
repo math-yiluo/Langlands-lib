@@ -1,8 +1,5 @@
 # Normal-factor retractions from the structural complement proposition
 
-Authors: Worker 1356; Worker 1326 (consumer interface); Worker 1371
-(structural complement interface).
-
 This is a conditional internal construction. It takes an explicit proof
 `hComplement : SemisimpleNormalIsogenyComplementStatement.{u}`. It does not
 prove that proposition or the unconditional anisotropic-factor centralizer
@@ -44,5 +41,9 @@ multiplication-isomorphism adapter or reflection of simple connectedness
 to the factor. No extra field, perfectness, splitness, characteristic or
 isotropy restriction is introduced. Applying this construction to an
 almost-simple subgroup uses its semisimplicity to obtain smoothness and
-connectedness. To close the unconditional centralizer target, a proof of
-the structural complement proposition remains necessary.
+connectedness. To close the unconditional centralizer statement, a proof of
+the structural complement proposition is necessary; the Library has one,
+`semisimpleNormalIsogenyComplement` (module
+`Reductive.NormalIsogenyComplementProof`), and proves the centralizer
+statement as `simplyConnectedAnisotropicFactorCentralizer` (module
+`SimplyConnected.AnisotropicFactorCentralizerProof`).

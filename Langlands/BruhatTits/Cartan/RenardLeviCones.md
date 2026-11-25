@@ -1,8 +1,8 @@
 # Renard V.3.21–V.3.22: the sets `M^+`, `M^{++}`, `A^+_M`, `A^{++}_M` and `A^+(ε)`
 
-This unit defines, on the actual group schemes, the sets that Renard introduces in V.3.21
+This module defines, on the actual group schemes, the sets that Renard introduces in V.3.21
 and V.3.22. Every declaration is a definition or a proved theorem. The file contains no
-statement left for a separate proof task.
+statement whose proof is left to another module.
 
 ## Source
 
@@ -122,7 +122,7 @@ the diagonal torus and a unit `u ∈ 𝔒_F^×` with `u ≠ 1`, the element `dia
 `|α(diag(1, u))|_F = 1`. It therefore lies in `A^+_M` but not in `A^{++}_M`. It is not
 central, so it is not in `A_G` either. The decomposition holds on the valuation side (the
 chambers in `𝔞_M`, V.3.16), modulo `⁰A_M`, and for the lattice parts `C_A`. This issue is
-recorded as I1 in the Chapter V item ledger (`notes/renard/item-ledger-v.md`). This unit
+recorded as I1 in the Chapter V item ledger (`notes/renard/item-ledger-v.md`). This module
 does not state (V.3.21.1) in any form.
 
 ## Dependence on `P`

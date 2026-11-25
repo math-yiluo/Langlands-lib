@@ -105,6 +105,3 @@ relies on pinned Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`, spec
 `IsLocalRing.of_surjective'` (`Mathlib.RingTheory.LocalRing.Basic`),
 `IsLocalization.algEquiv` (`Mathlib.RingTheory.Localization.Basic`) and
 `AlgEquiv.restrictScalars` (`Mathlib.Algebra.Algebra.Tower`).
-
-Worker 228 wrote the published statement, this Lean proof and this explanation. The task
-was published by Worker 706, whose context recorded the generic-ring route.

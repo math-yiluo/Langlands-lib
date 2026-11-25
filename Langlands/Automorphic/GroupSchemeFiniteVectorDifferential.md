@@ -42,8 +42,8 @@ laws are inherited through that injective inclusion.
 
 The construction and finite-dimensional image argument are internal
 manifold-calculus and representation infrastructure, derived from the named
-public constructions and proved covariance helper. This unit does not infer
+public constructions and proved covariance helper. This module does not infer
 global algebraic tensor rank from finite orbit dimension, does not prove
-automatic uniform growth, and does not yet restrict to the full automorphic
+automatic uniform growth, and does not restrict to the full automorphic
 or cuspidal form spaces. It identifies no algebraic determinant with a Haar
 modulus.

@@ -1,10 +1,7 @@
 # Local factors of weakly associated pairs
 
-Worker 35 authored this statement unit for task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`. All declarations lie in the namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`. Worker 1058 corrected the
-description of its existence claims for the 2026-10-29 documentation audit;
-the Lean file is unchanged.
+All declarations lie in the namespace
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`.
 
 The module states Henniart's Théorème 2.3, Corollaire 2.3, Théorème 2.4 and
 Corollaire 2.4 (Henniart 2000, §§2.3–2.4) as four `Prop`-valued definitions,
@@ -260,9 +257,7 @@ The formalization differs from the source in the following derived choices.
 1. **Relative Weil group.** Henniart's `S`, `S'` are representations of the
    absolute Weil group `W_F`. Here they are representations of one
    finite-level group `W_{E/F}` for the same `c`, `F` and `E`, as in the
-   published association relation. The library has no absolute global Weil
-   group or inflation maps between levels. Those belong to Worker 2's
-   construction. Using one group for both `S` and `S'` is what makes
+   published association relation. Using one group for both `S` and `S'` is what makes
    `S_v ⊗ S'_v` the restriction of `S ⊗ S'` along one local map.
 2. **Fundamental class.** Each statement assumes `IsArithmeticClassFamily c`,
    so that `W_{E/F}` is the Weil group of the arithmetic fundamental class.
@@ -275,7 +270,8 @@ The formalization differs from the source in the following derived choices.
    with `IsLocalRelativeWeilMap v w.1 e ι`, with the same `ι` for `S` and
    `S'`. Conjugating `ι` changes `S ∘ ι` only up to equivalence. When no such
    `ι` exists, nothing is claimed at `v`. The published
-   `LocalRelativeWeilMapExistenceStatement` (unproved) supplies maps under
+   `LocalRelativeWeilMapExistenceStatement`, proved by `localRelativeWeilMapExistence`
+   (module `Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof`), supplies maps under
    `IsArithmeticClassFamily c` for geometrically normalized `e`.
 4. **Cuspidal classes only.** Théorème 2.3 and Corollaire 2.3 are stated by
    Henniart for automorphic `Π`, `Π'`. Here they are stated only for actual
@@ -297,8 +293,11 @@ The formalization differs from the source in the following derived choices.
    cuspidal representation, because the presented subspace is isotypic for
    the finite part. This explains the choice and is not formalized here. By
    Flath's theorem some presentation has irreducible admissible factors at
-   every finite place. That theorem is not in the library and is not used
-   here. With such a presentation, the statements give Henniart's claims at
+   every finite place. For a realization that has some presentation, the
+   Library proves this, with factors in the universe of the forms, as
+   `cuspidalAllLocalIrreduciblePresentationExistence` (module
+   `Langlands.Automorphic.CuspidalAllLocalIrreduciblePresentationProof`); it
+   is not used here. With such a presentation, the statements give Henniart's claims at
    every finite place.
 6. **Presentations.** The association hypothesis is class-level: some
    presentation in universe `uP` has a weakly associated spectrum. The

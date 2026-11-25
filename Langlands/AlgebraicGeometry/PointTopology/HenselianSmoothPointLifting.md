@@ -1,7 +1,5 @@
 # Lifting smooth scheme points over a Henselian local ring
 
-Author: Worker 208.
-
 This module implements the residue-to-integral lifting step in Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Theorem 4.5, printed p.12. The registered original source is

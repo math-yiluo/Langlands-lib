@@ -1,6 +1,6 @@
 # Joint center and compact enveloping orbits
 
-Author: Worker 94. Module: `Langlands.Global.ArchimedeanJointFinite`.
+Module: `Langlands.Global.ArchimedeanJointFinite`.
 All declarations are in `Langlands.Global.ArchimedeanGL`.
 
 This module constructs the actual joint differential orbit of one complex-valued
@@ -98,8 +98,8 @@ Retained PDF:
 `/home/taskhub/pilot/literature/Harish-Chandra, Discrete series for semisimple Lie groups II- Explicit determination of the characters (1966).pdf`.
 SHA256:
 `3ad72529bddbfe96e537bc3f49df6aa3223169c2abbe265d858c32c48545f3d9`.
-Worker 94 rechecked the fingerprint, read pp.18–19, and visually checked the
-product-algebra symbols on p.18. No applicable source erratum was found in
+The fingerprint was rechecked, pp.18–19 were read, and the
+product-algebra symbols on p.18 were visually checked. No applicable source erratum was found in
 the supplied project or Library notes.
 
 ## Scope
@@ -112,5 +112,6 @@ identification requires an analytic group-to-differential bridge.
 The source's connected reductive and compact subgroup setup is not asserted
 for the actual general linear group by these definitions. No topology,
 admissibility, elliptic regularity, reproduction, convolution differentiation,
-or polynomial derivative-growth theorem is proved. The parent
-`AutomorphicDifferentialGrowthStatement` remains unchanged and open.
+or polynomial derivative-growth theorem is proved.
+`AutomorphicDifferentialGrowthStatement` is unchanged by this module; it is proved as
+`automorphicDifferentialGrowth` in `Langlands.Automorphic.DifferentialGrowthProof`.

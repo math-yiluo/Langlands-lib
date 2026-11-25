@@ -34,15 +34,17 @@ spectral presentation (finite slice, local factors, restricted tensor
 presentation, spherical Hecke spectra) along `e` should give a presentation of
 the pulled-back realization whose unramified spectrum at `v` is the spectrum
 of the original at `e(v)`. No source is cited for this identification; it is
-the expected compatibility of the Library's constructions, stated here
-because it is not yet proved.
+the expected compatibility of the Library's constructions. It is proved as
+`cuspidalArithmeticSpectralTransport` in
+`Langlands.Automorphic.CuspidalArithmeticSpectralTransportProof`.
 
-It is the missing link between the two endpoints of a supplied isobaric chain
+It is the link between the two endpoints of a supplied isobaric chain
 and actual data: `StartsAtCuspidal` and `terminal` in
 `Langlands.Automorphic.Unramified.PrimeCyclicBaseChangeTower` pull data back
-along `bottomEquiv` and `topEquiv.symm`. Task 7784 (distinct Mackey components
-from B6) needs it to compute the Euler polynomials at both ends of such a
-chain.
+along `bottomEquiv` and `topEquiv.symm`. The module
+`Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerDistinctnessReduction`
+(distinct Mackey components from B6) needs it to compute the Euler polynomials
+at both ends of such a chain.
 
 ## What is not asserted
 

@@ -1,7 +1,5 @@
 # Restriction of actual unramified characters
 
-Author: Worker 200.
-
 This is a derived functorial construction for the actual unramified character
 groups used in Waldspurger, *La formule de Plancherel pour les groupes
 p-adiques (d'après Harish-Chandra)* (2003), I.1, printed pp.239–240
@@ -81,7 +79,7 @@ the group scheme, with no choices of character bases.
 There is no characteristic restriction, and the construction applies without
 connectedness, reductivity, finite type, a split torus or a central morphism.
 In the intended split-center application, take the actual map \(A_G\to G\).
-This unit proves no finite-index image, restriction-kernel finiteness,
+This module proves no finite-index image, restriction-kernel finiteness,
 extension of characters, Haar identity, representation-stabilizer or orbit
 finiteness, or Plancherel assertion.
 

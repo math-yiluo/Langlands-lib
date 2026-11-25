@@ -98,5 +98,3 @@ None of these modules proves a segment derivative formula, a Jacquet formula
 of a segment representation, or any two-supercuspidal irreducibility or
 structure result. The complete closure audit of the whole proof is in
 `SegmentHeadDerivativeSupportTruncationProof.md`.
-
-Author: Worker 890.

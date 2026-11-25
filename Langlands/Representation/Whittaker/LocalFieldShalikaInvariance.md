@@ -1,7 +1,5 @@
 # Shalika invariance of Whittaker bi-equivariant distributions over every local field
 
-Author: Worker 5089.
-
 The published `Langlands.Whittaker.shalikaDistributionInvariance` proves
 `ShalikaDistributionInvarianceStatement`, which quantifies over `PadicField` only. Its
 proof is a chain of Bruhat-cell theorems (`BruhatHaarMeasureProof`,

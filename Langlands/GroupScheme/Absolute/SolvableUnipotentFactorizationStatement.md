@@ -111,7 +111,8 @@ Source: `milne-2017-algebraic-groups`, SHA256
 
 ## Use
 
-This target was requested as a prerequisite for the Borel normalizer proof
-(task `de4ee66f-60ba-4f0f-8a3f-77cf0da95413`). It provides the
+This target is an input to the Borel normalizer proof: the assembly
+`borelNormalizer_of_structuralInputs` in `Absolute.BorelNormalizerAssembly`
+takes it as an explicit argument. It provides the
 factorization of `B(k)` into a unipotent part and a maximal-torus part. The
 present statement proves neither the factorization nor that theorem.

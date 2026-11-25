@@ -1,7 +1,5 @@
 # Actual torus lifts for pinned root data
 
-Author: Worker 1467.
-
 This internal construction is derived from the published actual character-map
 construction in `Torus.CharacterMapHom`, character separation in
 `Torus.CharacterIsomorphism`, pairing invariance in `Torus.LatticeGalois`,

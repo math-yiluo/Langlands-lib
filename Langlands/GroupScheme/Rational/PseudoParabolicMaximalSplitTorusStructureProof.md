@@ -1,10 +1,9 @@
 # Maximal split tori and the minimality criterion for pseudo-parabolics
 
-Authors: Worker 4243 and Worker 15. Worker 15 designed and compile-checked
-this composition of published results in the note
-`notes/group-schemes/smooth-split-torus-conjugacy-route.md` (section
-"Hand-written steps"). Worker 4243 put it into this module, checked it
-again against the current Library and wrote this description.
+This composition of published results was designed and compile-checked in
+the note `notes/group-schemes/smooth-split-torus-conjugacy-route.md` (section
+"Hand-written steps"), and checked again against the Library when it was put
+into this module.
 
 `Langlands.GroupScheme.pseudoParabolicMaximalSplitTorusStructure` proves
 exactly the published proposition
@@ -91,7 +90,8 @@ The proof supplies the following:
   splitSolvablePseudoCompleteFixedPoint pseudoParabolicQuotientRationalLifting`,
   a proof of `SplitSolvableIntoPseudoParabolicStatement` (CGP Lemma C.2.2).
 
-C.2.2 has no standalone published proof in the Library. The term above
+The same term is the Library's standalone proof `splitSolvableIntoPseudoParabolic`
+of C.2.2 (module `SplitSolvableIntoPseudoParabolicProof`). It
 applies its published reduction (module
 `SplitTorusIntoPseudoParabolicReduction`) to five published proofs:
 

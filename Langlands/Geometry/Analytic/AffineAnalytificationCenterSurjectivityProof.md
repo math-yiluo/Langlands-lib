@@ -1,9 +1,10 @@
 # Affine center surjectivity from faithful norms on finite-type domains
 
-This helper unit is part of Task 7097. It proves reductions toward clause (1)
+This helper module is used by `AnalytificationCenterProof`. It proves
+reductions toward clause (1)
 of `Langlands.Analytic.SchemeAnalytification.AnalytificationCenterStatement`.
 The reductions retain the seminorm range property and the existence of faithful
-extending norms as explicit hypotheses. They do not yet prove that clause
+extending norms as explicit hypotheses. They do not prove that clause
 unconditionally.
 
 `PrimeQuotientNormData K A` is the explicit interface asserting that every prime
@@ -40,7 +41,7 @@ of faithful extending seminorms on all finite-type `K`-domains. Its norm-extensi
 premise is exactly
 `∀ (D : Type v) [CommRing D] [IsDomain D] [Algebra K D] [Algebra.FiniteType K D],
 ∃ n : MulRingSeminorm D, ExtendsNorm K n ∧ ∀ a : D, n a = 0 → a = 0`.
-Thus it takes the announced `FiniteTypeDomainNormExtensionStatement` interface
+Thus it takes the `FiniteTypeDomainNormExtensionStatement` interface
 specialized to `K`, without requiring a conversion to `MulRingNorm`. The polynomial
 surjection in `P` establishes `Algebra.FiniteType K A`; finite type descends to
 `A ⧸ p`, which is a domain because `p` is prime.
@@ -53,6 +54,7 @@ nilpotents or no prime ideals. The proof makes no domain assumption on `A`.
 
 Only the published definitions and statements in `AnalytificationCenter` and
 `AffineAnalytificationSeminormStatement` are imported. The range property and
-the norm-extension theorem remain explicit premises pending their independently
-reviewed proof publications. No scheme or rational-fibre clause is asserted
-by this helper unit.
+the norm-extension theorem remain explicit premises here; `AnalytificationCenterProof`
+supplies them from `AffineAnalytificationSeminormProof` and
+`FiniteTypeDomainNormExtensionProof`. No scheme or rational-fibre clause is asserted
+by this helper module.

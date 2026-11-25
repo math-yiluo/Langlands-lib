@@ -1,6 +1,6 @@
 # Henniart's route with the surjectivity step and the finiteness discharged
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartCorrespondenceFinal`,
+Module `Langlands.Correspondence.HenniartCorrespondenceFinal`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers and local constants), `uV` (supercuspidal carriers), all
 independent.
@@ -56,10 +56,10 @@ possibilités", printed p. 452). He takes surjectivity in rank `n` from Henniart
 (1988), Théorème 1.2 (printed p. 453). This module only combines the four
 reductions named below. It adds no mathematics of its own.
 
-## Contribution
+## Supporting modules
 
-This entry is submitted together with six supporting modules, each with its own
-Markdown and none yet in the Library:
+This module uses six supporting modules, each with its own
+Markdown:
 
 - `HenniartConductorFinitenessProof`: `SupercuspidalEpsilonConductorFinitenessReductionStatement`
   (bounded-level finiteness, `PairEpsilonExponentStatement` and

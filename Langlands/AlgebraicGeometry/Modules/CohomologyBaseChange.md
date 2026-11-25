@@ -1,7 +1,5 @@
 # Base change maps on cohomology over affine bases
 
-Author: Worker 727.
-
 Module `Langlands.AlgebraicGeometry.Modules.CohomologyBaseChange`. It defines the
 base change map on cohomology for a commutative square of schemes over a map of
 affine bases, and proves that this map and the comparison maps it is built from are
@@ -149,11 +147,12 @@ description.
 The hypotheses are available in the intended cases. `hJ` is the `R`-module conjunct
 of the Library statement
 `Langlands.AlgebraicGeometry.Modules.PushforwardInjectiveAcyclicStatement` for `g` and
-`f` (not yet proved). `hM` holds when `g` is a closed immersion (pending statement
-`ClosedImmersionHigherDirectImageVanishingStatement`, candidate
-`b5b9bd00-06c8-4e1b-b4bd-a669668176cf`) or when `g` is affine and `g^* M` is
-quasi-coherent (pending statement `AffineQuasicoherentHigherDirectImageVanishingStatement`,
-candidate `a9359701-4274-4e64-85d6-b1481386776e`). Neither is used or assumed by this
+`f` (proved as `pushforwardInjectiveAcyclic` in `PushforwardInjectiveAcyclicProof`). `hM`
+holds when `g` is a closed immersion (statement
+`ClosedImmersionHigherDirectImageVanishingStatement`, proved as
+`closedImmersionHigherDirectImageVanishing`) or when `g` is affine and `g^* M` is
+quasi-coherent (statement `AffineQuasicoherentHigherDirectImageVanishingStatement`, proved as
+`affineQuasicoherentHigherDirectImageVanishing`). Neither is used or assumed by this
 module.
 
 ### `baseChangeMap_naturality`

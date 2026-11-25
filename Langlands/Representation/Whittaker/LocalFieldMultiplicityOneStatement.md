@@ -1,6 +1,6 @@
 # Whittaker multiplicity at most one over every nonarchimedean local field
 
-Author: Worker 5089. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Whittaker.LocalFieldMultiplicityOneStatement` (universes `uF`, `uV`).
 It is a statement only: nothing here proves it, and no declaration assumes it.
 
@@ -98,6 +98,6 @@ No errata note for this source was found in the published notes
 ## Use
 
 The proof of `Langlands.Whittaker.MirabolicRestrictionInjectivityStatement`
-(Task 5546) uses this multiplicity-one statement over arbitrary nonarchimedean
+(module `MirabolicRestrictionInjectivityProof`) uses this multiplicity-one statement over arbitrary nonarchimedean
 local fields to show that the mirabolic kernel of a Whittaker functional has no
 Whittaker coinvariants.

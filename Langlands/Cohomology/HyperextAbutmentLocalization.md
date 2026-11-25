@@ -1,30 +1,30 @@
 # Invariants of hyperext abutments and localization for finitely generated cohomology
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextInvariantsLocalization`
-(`invariantsLinearMap_bijective`; Worker 61) and
+(`invariantsLinearMap_bijective`) and
 `Langlands.Cohomology.HyperextHomLocalization`
 (`invariantsBaseChangeMap_bijective_of_isSMulRegular`,
 `repCohomologyHomBaseChangeMap_bijective_of_isLocalization`,
 `smoothCohomologyHomBaseChangeMap_bijective_of_isLocalization`,
-`repHom_isSMulRegular`, `smoothRepHom_isSMulRegular`; Worker 61). Through
+`repHom_isSMulRegular`, `smoothRepHom_isSMulRegular`). Through
 these imports it also uses
 `Langlands.Cohomology.HyperextIsotypicDegenerationBaseChange`
 (`invariantsLinearMap`, `abutmentInvariantsBaseChangeMap`,
 `cohomologyHomInvariantsBaseChangeMap`,
 `abutmentInvariantsBaseChangeMap_bijective_iff`,
 `smoothAbutmentInvariantsBaseChangeMap`,
-`smoothCohomologyHomInvariantsBaseChangeMap`; Worker 61),
+`smoothCohomologyHomInvariantsBaseChangeMap`),
 `Langlands.Cohomology.HyperextIsotypicBaseChange`
-(`invariantsBaseChangeMap`, `cohomologyHomBaseChangeIntertwiningMap`; Worker
-61), `Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`,
+(`invariantsBaseChangeMap`, `cohomologyHomBaseChangeIntertwiningMap`),
+`Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`,
 `cohomologyHomBaseChangeMap`, `smoothCohomologyHomBaseChangeMap`,
-`repExtendScalars_isSemilinear`, `smoothRepExtendScalars_isSemilinear`; Worker
-61), `Langlands.Cohomology.HyperextDegenerationIsotypic`
-(`abutmentRepresentation`, `cohomologyHomRepresentation`; Worker 61),
-`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`repExtendScalars`;
-Worker 61) and `Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension`
-(`smoothRepExtendScalars`; Worker 61).
+`repExtendScalars_isSemilinear`, `smoothRepExtendScalars_isSemilinear`),
+`Langlands.Cohomology.HyperextDegenerationIsotypic`
+(`abutmentRepresentation`, `cohomologyHomRepresentation`),
+`Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`repExtendScalars`)
+and `Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension`
+(`smoothRepExtendScalars`).
 
 Let `S` be the localization of a commutative ring `R` at a submonoid `M`. The
 Library's `HyperextInvariantsLocalization` proves the base-change maps on
@@ -200,8 +200,8 @@ situation, are not addressed.
 - The finite generation of `H^{-n} K` over `R[G]`, the absence of `M`-torsion
   in `W` (or, in section `Derived`, in `Hom(H^{-n} K, W)`), the bijectivity
   hypothesis `h` of section `Derived` and the degeneration hypotheses are not
-  verified for any complex; whether they hold in Harris's situation remains an
-  open obligation.
+  verified for any complex; whether they hold in Harris's situation is not
+  addressed here.
 - Only invariants are treated; the base-change maps on isotypic parts for a
   nontrivial `τ` and on multiplicity spaces are not proved bijective here.
 - `HasDerivedCategory` and `HasExt` are hypotheses; the results hold for each

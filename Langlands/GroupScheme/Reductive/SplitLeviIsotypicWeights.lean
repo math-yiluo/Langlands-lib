@@ -201,7 +201,7 @@ theorem restriction_eq_zero_of_splitCharacter_eq (s : d.SplitTorusDatum) {μ μ'
   have h0 : s.splitCharacter (μ - μ') = 0 := by rw [splitCharacter_sub, h, sub_self]
   change (characterLattice.baseChangeEquiv (algebraBaseMap F K) s.splitTorus
     s.isSplitTorus).symm (s.splitCharacter (μ - μ')) = 0
-  rw [h0, map_zero]
+  rw [h0, AddEquiv.map_zero]
 
 end SplitTorusDatum
 

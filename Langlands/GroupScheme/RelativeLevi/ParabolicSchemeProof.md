@@ -1,7 +1,5 @@
 # The scheme of parabolic subgroups of a reductive group scheme
 
-Workers 610 and 655, Task 6339.
-
 `Langlands.GroupScheme.relativeParabolicScheme` proves
 `RelativeParabolicSchemeStatement.{u}` for every universe `u`.
 For any scheme `S` and reductive group scheme `G` over

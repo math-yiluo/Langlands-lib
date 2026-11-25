@@ -1,6 +1,6 @@
 # Chamber decompositions and intersections from local algebraic inputs
 
-This derived unit supplies the existing full chamber Iwahori decomposition
+This module supplies the existing full chamber Iwahori decomposition
 from three explicit algebraic inputs. It then applies the existing
 chamber-intersection proof with that decomposition.
 
@@ -70,7 +70,7 @@ because the equivalence preserves the ambient rational point.
 
 ## Provenance and scope
 
-This is derived content from the current Library chamber-exchange,
+This is derived content from the Library chamber-exchange,
 sharp-decomposition, full-decomposition, point-parahoric centralizer
 and chamber-intersection results. The first proof follows the published
 `ChamberIwahoriPrerequisiteReduction` proof, retaining the factorization
@@ -78,7 +78,7 @@ input only at the embedding where it is used. No new external-source
 assertion is introduced.
 
 There is no separate boundedness or chamber-decomposition premise.
-All three algebraic inputs remain assumptions; this unit proves none of
+All three algebraic inputs remain assumptions; this module proves none of
 their universal versions. It does not prove the unchanged apartment-only
 `AffineIwahoriTitsStatement` or the unconditional
 `ChamberConjugateIntersectionStatement`.

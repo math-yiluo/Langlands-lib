@@ -6,7 +6,8 @@ import Langlands.Geometry.Building.KPLocalCentralizerFiltrationRootCompatible
 
 /-! # The three clauses of KP Lemma 7.2.3 over `F^ur` in D1's convention
 
-D1 (Task 5875) presents the torus `Z` by the single binder `hZ : IsTorus B.centralizer.Z`
+D1 (the module `KPLocalMoyPrasadGroups`) presents the torus `Z` by the single binder
+`hZ : IsTorus B.centralizer.Z`
 and defines `Z(K)_r = B.centralizerTorusFiltration hZ r` and
 `j(Z(K)_r) = B.centralizerTorusImage hZ r`. Clause 3 for D1's filtration is
 `centralizerTorusImage_isNormalizerStable` in `KPLocalCentralizerFiltrationNormalizerStable`;
@@ -33,7 +34,8 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   (B : BuildingData F H) (hZ : IsTorus B.centralizer.Z)
 
 /-- The three clauses of KP Lemma 7.2.3 over `K` for D1's filtration, assuming the coroot
-formula (Task 5911) and the positive-depth torus action (Task 5918). -/
+formula (`KPLocalCorootComponentStatement`) and the positive-depth torus action
+(`KPLocalTorusRootCommutatorStatement`). -/
 theorem centralizerTorusFiltration_clauses_of_coroot_of_torusRoot
     (hcor : KPLocalCorootComponentStatement.{u})
     (hroot : KPLocalTorusRootCommutatorStatement.{u}) :
@@ -60,8 +62,8 @@ end Langlands.Geometry.Building.MaximalUnramified.BuildingData
 namespace Langlands.Geometry.Building
 
 /-- S1 (KP Lemma 7.2.3 over `K = F^ur`, `QuasiSplitLocalTorusFiltrationStatement`) follows
-from the coroot formula `KPLocalCorootComponentStatement` (Task 5911) and the positive-depth
-torus action `KPLocalTorusRootCommutatorStatement` (Task 5918). -/
+from the coroot formula `KPLocalCorootComponentStatement` and the positive-depth
+torus action `KPLocalTorusRootCommutatorStatement`. -/
 theorem quasiSplitLocalTorusFiltration_of_coroot_of_torusRoot
     (hcor : KPLocalCorootComponentStatement.{u})
     (hroot : KPLocalTorusRootCommutatorStatement.{u}) :

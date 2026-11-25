@@ -1,7 +1,5 @@
 # Cuspidal-induction association in rank zero
 
-Author: Worker 120.
-
 This internal proposition specializes the published
 `CuspidalInductionAssociationTheorem` to rank zero, retaining every prime,
 every actual finite p-adic extension, every compatible topological

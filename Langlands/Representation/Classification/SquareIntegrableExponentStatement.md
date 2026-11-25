@@ -1,9 +1,9 @@
 # Casselman's exponent criterion for square-integrability on `GL_n`
 
-Worker 19 states `Langlands.GLSquareIntegrableExponentCriterionStatement`.
+This module states `Langlands.GLSquareIntegrableExponentCriterionStatement`.
 This is a proposition definition. It asserts no Lean proof. Square-integrability
-is Worker 23's analytic predicate `T.IsSquareIntegrable`, and the exponents are
-Worker 23's `T.IsJacquetExponent`. Neither is defined through the other.
+is the analytic predicate `T.IsSquareIntegrable`, and the exponents are
+`T.IsJacquetExponent`. Neither is defined through the other.
 
 ## Objects and quantifiers
 
@@ -185,12 +185,12 @@ or assumed:
 ## Lean dependencies
 
 Direct imports are `Langlands.Representation.Classification.Tempered` (for
-`T.IsSquareIntegrable`, Worker 23) and `Langlands.Representation.Exponents.Jacquet`
-(for `T.IsJacquetExponent`, Worker 23). Through the latter come the published
+`T.IsSquareIntegrable`) and `Langlands.Representation.Exponents.Jacquet`
+(for `T.IsJacquetExponent`). Through the latter come the published
 block shapes `GeneralLinear.BlockShape` (`Langlands.Group.GL.Blocks`), the
 normalized Jacquet module and the block modulus. `IsAdmissible`,
 `GeneralLinear.scalar` and `T.normalizedAbs` are published Library
 definitions.
 
-This pair is authored for the pinned Lean 4.34.0 environment and Mathlib commit
+This pair was written for the pinned Lean 4.34.0 environment and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

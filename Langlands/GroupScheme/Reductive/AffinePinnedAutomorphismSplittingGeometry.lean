@@ -44,25 +44,25 @@ variable (M : AffinePinnedModel.{u})
 identity pullback admits a single exact global affine label. -/
 theorem exists_pinnedAutomorphism_of_fppfLocallyPinned [ConnectedSpace M.base]
     (σ : CategoryTheory.Aut M.group)
-    (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso σ)) :
+    (hpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso σ.asIso)) :
     ∃ θ, M.IsPinnedAutomorphism σ θ := by
   obtain ⟨τ, hτ⟩ := hpin.geometry.1
   obtain ⟨d, hd, _⟩ := exists_basedCoordinateIso_of_connected
-    ((baseChange (𝟙 M.base)).mapIso σ) τ hτ hpin.geometry.2.preservesBorel
+    ((baseChange (𝟙 M.base)).mapIso σ.asIso) τ hτ hpin.geometry.2.preservesBorel
   exact ⟨d.rootEquiv⁻¹,
     M.isPinnedAutomorphism_of_identityCoordinateIso_of_fppfLocalPinning σ d hd hpin⟩
 
 /-- Conjugating the actual identity pullback by its canonical comparison
 recovers the given original automorphism. -/
 theorem conjugate_identityBaseChange (σ : CategoryTheory.Aut M.group) :
-    (baseChangeIdIso M.group).symm ≪≫ (baseChange (𝟙 M.base)).mapIso σ ≪≫
-      baseChangeIdIso M.group = σ := by
+    (baseChangeIdIso M.group).symm ≪≫ (baseChange (𝟙 M.base)).mapIso σ.asIso ≪≫
+      baseChangeIdIso M.group = σ.asIso := by
   apply Iso.ext
   apply (cancel_epi (baseChangeIdIso M.group).hom).mp
   have hn := ((Functor.mapGrpNatIso Over.pullbackId) ≪≫
-    Functor.mapGrpIdIso).hom.naturality σ.hom
-  change (baseChange (𝟙 M.base)).map σ.hom ≫ (baseChangeIdIso M.group).hom =
-    (baseChangeIdIso M.group).hom ≫ σ.hom at hn
+    Functor.mapGrpIdIso).hom.naturality σ.asIso.hom
+  change (baseChange (𝟙 M.base)).map σ.asIso.hom ≫ (baseChangeIdIso M.group).hom =
+    (baseChangeIdIso M.group).hom ≫ σ.asIso.hom at hn
   simpa only [Iso.trans_hom, Iso.symm_hom, Functor.mapIso_hom, Category.assoc,
     Iso.hom_inv_id_assoc] using hn
 
@@ -72,7 +72,7 @@ theorem identityBaseChange_original (e : Comparison (M := M) (N := M)
     (𝟙 M.base) (𝟙 M.base)) :
     (baseChange (𝟙 M.base)).mapIso
       ((baseChangeIdIso M.group).symm ≪≫ e ≪≫ baseChangeIdIso M.group) = e := by
-  let σ : CategoryTheory.Aut M.group :=
+  let σ : M.group ≅ M.group :=
     (baseChangeIdIso M.group).symm ≪≫ e ≪≫ baseChangeIdIso M.group
   have hn := ((Functor.mapGrpNatIso Over.pullbackId) ≪≫
     Functor.mapGrpIdIso).hom.naturality σ.hom
@@ -87,8 +87,8 @@ theorem identityBaseChange_original (e : Comparison (M := M) (N := M)
 automorphisms through the canonical comparison. -/
 theorem innerEquivalent_of_identityBaseChange
     {σ τ : CategoryTheory.Aut M.group}
-    (h : IsFppfInnerEquivalent ((baseChange (𝟙 M.base)).mapIso σ)
-      ((baseChange (𝟙 M.base)).mapIso τ)) : IsFppfInnerEquivalent σ τ := by
+    (h : IsFppfInnerEquivalent ((baseChange (𝟙 M.base)).mapIso σ.asIso)
+      ((baseChange (𝟙 M.base)).mapIso τ.asIso)) : IsFppfInnerEquivalent σ.asIso τ.asIso := by
   have hp := (h.precomp (baseChangeIdIso M.group).symm).postcomp (baseChangeIdIso M.group)
   simpa only [Iso.trans_assoc, M.conjugate_identityBaseChange] using hp
 
@@ -104,14 +104,15 @@ theorem IsPinnedAutomorphism.label_eq_one_of_inner [Nonempty M.base]
     {σ : CategoryTheory.Aut M.group} {θ : RootPairing.Aut M.rootDatum}
     (hpin : M.IsPinnedAutomorphism σ θ) (hinner : σ ∈ c.basePointHom.range) : θ = 1 := by
   obtain ⟨x, hx⟩ := hinner
-  have hi : IsFppfLocallyInner σ :=
-    IsFppfLocallyInner.of_adjointPoint p hp c hc x hx
+  have hi : IsFppfLocallyInner σ.asIso :=
+    IsFppfLocallyInner.of_adjointPoint p hp c hc x (congrArg Aut.asIso hx)
   have he := eq_refl_of_fppfLocallyPinned_locallyInner
     (hpin.fppfLocallyPinned_baseChange M (𝟙 M.base)) (hi.baseChange (𝟙 M.base))
   have hσ : σ = 1 := by
+    apply Aut.ext
     apply Iso.ext
     apply Descent.baseChangeEqIdentity_map_injective (𝟙 M.base) rfl
-    change (baseChange (𝟙 M.base)).map σ.hom =
+    change (baseChange (𝟙 M.base)).map σ.asIso.hom =
       (baseChange (𝟙 M.base)).map (𝟙 M.group)
     rw [CategoryTheory.Functor.map_id]
     simpa only [Functor.mapIso_hom, Iso.refl_hom] using
@@ -128,20 +129,20 @@ theorem automorphismSplittingGeometry_of_localPinnedRepresentatives
   · intro σ
     obtain ⟨d, ⟨hdpin, hi⟩, _⟩ :=
       hasUniquePinnedComparisons_of_localPinnedRepresentatives hlocal
-        M M (𝟙 M.base) (𝟙 M.base) ((baseChange (𝟙 M.base)).mapIso σ)
+        M M (𝟙 M.base) (𝟙 M.base) ((baseChange (𝟙 M.base)).mapIso σ.asIso)
     let τ : CategoryTheory.Aut M.group :=
-      (baseChangeIdIso M.group).symm ≪≫ d ≪≫ baseChangeIdIso M.group
-    have hτ : (baseChange (𝟙 M.base)).mapIso τ = d :=
+      Aut.of ((baseChangeIdIso M.group).symm ≪≫ d ≪≫ baseChangeIdIso M.group)
+    have hτ : (baseChange (𝟙 M.base)).mapIso τ.asIso = d :=
       M.identityBaseChange_original d
-    have hτpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso τ) := by
+    have hτpin : IsFppfLocallyPinned ((baseChange (𝟙 M.base)).mapIso τ.asIso) := by
       rwa [hτ]
     obtain ⟨θ, hθ⟩ := M.exists_pinnedAutomorphism_of_fppfLocallyPinned τ hτpin
-    have hi' : IsFppfInnerEquivalent σ τ := by
+    have hi' : IsFppfInnerEquivalent σ.asIso τ.asIso := by
       apply M.innerEquivalent_of_identityBaseChange
       rwa [hτ]
     obtain ⟨x, hx, _⟩ := hi'.inv.symm.existsUnique_adjointPoint p hp c hc
     refine ⟨θ, hθ.based M, τ, hθ, c.basePointHom x, ⟨x, rfl⟩, ?_⟩
-    change c.basePointHom x = σ * τ⁻¹ at hx
+    replace hx : c.basePointHom x = σ * τ⁻¹ := Aut.ext hx
     rw [hx]
     simp only [mul_assoc, inv_mul_cancel, mul_one]
   · intro σ θ hpin hi

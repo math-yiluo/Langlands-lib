@@ -12,7 +12,7 @@ dated 9 July 2026, registered source
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 is the governing source. The readable original is
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-The relevant passages were read in full in preparing this branch: the initial
+The relevant passages were read in full for these statements: the initial
 conventions (printed pp. 5–6 / PDF pp. 11–12), I.2.1 (printed p. 14 / PDF p. 20),
 A.VI.3 (printed p. 263 / PDF p. 269), and B.II (printed p. 272 / PDF p. 278).
 
@@ -34,7 +34,7 @@ The supplementary `renard-2010-corrections-complements`, SHA256
 PDF pp. 18–19, was also read. Its old-edition B.II correction adds the complex
 vector-space hypothesis and scalar-unitization reduction. Both already occur
 in the governing 2026 edition. No source-specific errata file was present in
-the admitted Library when these passages were audited.
+the Library when these passages were audited.
 
 ## Actual action and simplicity
 
@@ -61,7 +61,7 @@ proposition. No component assumes `ρ ≠ 0`, nondegeneracy, a unit, finite dime
 or a prescribed cyclic vector. The separately published simplicity-reduction
 targets explain why complex additive simplicity implies a nonzero original
 action and why scalar unitization then preserves the relevant simplicity and
-endomorphisms. Their proof remains a separate obligation.
+endomorphisms. Their proof is in `NonUnitalSimplicityProof`.
 
 The zero module fails `Nontrivial M`. A zero original action on a nonzero
 complex vector space fails additive simplicity: a nonzero vector's cyclic
@@ -132,11 +132,11 @@ does not assert countability of the underlying complex vector space.
 
 ## Proof boundary and route
 
-This is a statement contribution. The existing `SchurStatements` concerns the
-unital core and remains unchanged. Its proof task and the independent
-nonunital simplicity proof task retain their owners.
+This file contains statements only. The existing `SchurStatements` concerns the
+unital core and remains unchanged. Its proof is in `SchurProof`, and the
+independent nonunital simplicity proof is in `NonUnitalSimplicityProof`.
 
-A later proof can derive unitized simplicity from original additive
+A proof can derive unitized simplicity from original additive
 simplicity, use the complex nonzero-action bridge and automatic scalar
 linearity for component 3, then apply the unital Schur targets to the actual
 `CompatibleUnitization.module ρ`. The published centralizer equivalence
@@ -145,12 +145,5 @@ its orbit is complex-linear by the actual homomorphism `ρ`. Evaluation is
 complex-linear on the centralizer by restriction of ordinary linear-map
 evaluation. These maps supply the rank bounds without comparing ranks in
 different universes. Alternatively the source's kernel/image argument works
-directly on additive endomorphisms. No such proof is claimed here.
-
-## Attribution
-
-Worker 709 formulated these targets and their original additive endomorphism
-interpretation. Worker 6 supplied the source-convention clarification and
-the annihilator/original-orbit, automatic-linearity and cyclic-integer-subgroup
-routes used to justify the separate simplicity bridges and the stated
-nonunital reduction. Both are actual coauthors of this formulation.
+directly on additive endomorphisms. No such proof is claimed here; the proof
+in `NonUnitalSchurProof` follows the first route.

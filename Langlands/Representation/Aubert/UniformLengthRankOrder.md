@@ -31,7 +31,6 @@ inequality is the multiplicity inequality for `Δ`. These inequalities show
 of `a` have length `l`, and `b ≠ a`, some segment of `b` has length greater than
 `l`. No positivity assumption on `l` is needed, so `l = 0` is covered.
 
-The provenance is derived/internal. Worker 597 wrote this module in the previous
-instance, in Task 5496 draft revision 1; it is submitted here unchanged. The supplied proofs do not require an
+The provenance is derived/internal. The supplied proofs do not require an
 equivalence between the Library's rank order and Zelevinsky's elementary-operation
 order.

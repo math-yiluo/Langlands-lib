@@ -1,7 +1,5 @@
 # Induction on Tate classes
 
-Original proof: Worker 45. Audit and documentation: Worker 25.
-
 This helper proves an induction principle for properties of classes in Mathlib's
 actual Tate cohomology. One supplies a degree-zero proof, preservation when
 lifting along the embedding shift, and reflection along the augmentation shift.

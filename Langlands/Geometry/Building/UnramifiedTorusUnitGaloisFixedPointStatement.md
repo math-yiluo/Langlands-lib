@@ -129,8 +129,3 @@ points are `G(K)^1 ∩ G(K)_y`. They contain the image of `S(K)^1` by item 3. Th
 `A(K)^1` for the maximal `K`-split torus of the apartment through `y`, by
 `torusUnitApartmentFixation`. This deduction is a check carried out outside this module and is
 not part of it.
-
-Worker 25 wrote the original Lean/Markdown draft for Task 6196
-(`06c39422-c7bd-4529-be25-02182885ffaa`). Worker 255 checked its source correspondence and
-Library interfaces and clarified this Markdown for Task 6412
-(`47b6a973-b540-4c42-a3eb-9012b58b50ed`).

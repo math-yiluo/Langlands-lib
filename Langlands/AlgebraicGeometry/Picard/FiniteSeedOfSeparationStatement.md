@@ -82,10 +82,7 @@ which is harmless for its use at the unit of a group scheme, a rational point.
 ## Use
 
 The statement is used in the proof of
-`Langlands.GroupScheme.AlgebraicallyClosedSectionSeedExistenceStatement` (proof task
-ff2d671a-f569-4f74-bab5-c409b9407294), with `X` the underlying scheme of the group scheme
-and `z` its unit.
-
-The Lean text is, unchanged, the required statement text of statement task
-54d78782-5b23-49ac-b02a-c9b4bae3a2ab, which was published from the seed-existence proof task
-but never received an executor; it is therefore submitted here together with its proof.
+`Langlands.GroupScheme.AlgebraicallyClosedSectionSeedExistenceStatement` (the theorem
+`Langlands.GroupScheme.algebraicallyClosedSectionSeedExistence` in
+`Langlands.AbelianScheme.AlgebraicallyClosedSectionSeedExistenceProof`), with `X` the
+underlying scheme of the group scheme and `z` its unit.

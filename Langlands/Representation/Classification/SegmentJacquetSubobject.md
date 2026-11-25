@@ -65,5 +65,3 @@ excluded multisegment, ordered-head, quotient-coverage, tempered-block,
 square-integrable or regular classification conclusion. General analytic
 predicates and statement definitions occurring in the lower adjointness
 closure are not used as proved conclusions.
-
-Author: Worker 1186.

@@ -1,8 +1,7 @@
 # Transposed matrix coefficients and the block Jacquet functional
 
 Lean module: `Langlands.Representation.Archimedean.ComplexReverseBlockRecursion`, namespace
-`Langlands.Archimedean.ComplexReverseBlockRecursion`. Worker 5677 wrote it under Task 7064
-(`e4a22cc7-0a28-44a3-afc6-38bb7c243851`) as a helper for the Langlands-ordered case of
+`Langlands.Archimedean.ComplexReverseBlockRecursion`. It is a helper for the Langlands-ordered case of
 `ComplexReverseIntertwinerKernelStatement` (module `ComplexReverseIntertwinerTied`). It is the
 analogue, for blocks of tied exponents, of `ComplexReverseRecursion` (the strictly ordered case).
 
@@ -19,15 +18,15 @@ diag(g₁, g₂)`, `dTail s = diag(1_a, s·1_{k+1})`, `IsBlockDominant e a k` (t
 `GL_a(ℂ)`), `blockStep h (g) = ∫ h(n̄(X) g) dX` (integral over the lower block unipotent of
 `P_{a,k+1}`) and `blockPair φ h (g₁) = ∫_{U(k+1)} φ(κ₂) blockStep h (diag(g₁, κ₂)) dκ₂`.
 
-From Worker 140's module `ComplexBlockFunctional`: block decompositions `ks : List ℕ` (last block
+From the module `ComplexBlockFunctional`: block decompositions `ks : List ℕ` (last block
 first) with size `dim ks`, `BlockOrdered ks e` (each block tied, strict decrease between blocks:
 `IsBlockDominant` at each cons), the block Jacquet functional `jac ks e p` (`jac [] e p h = h(1)`,
 `jac (k :: ks) e p h = jac ks e' p (blockPair (blockVector (dim ks) k e p) h)` with
 `e'_l = e_l - (k+1)/2`), and `TiedIrreducible` (every principal series of phase-power characters
-with tied exponents is irreducible). From Worker 140's module `ComplexBlockDual`:
+with tied exponents is irreducible). From the module `ComplexBlockDual`:
 `restrictBlock u (g₁) = u(diag(g₁, 1))` and `blockDualChar a χ`.
 
-From Worker 728's module `ComplexBlockLimitSum`: the leading term
+From the module `ComplexBlockLimitSum`: the leading term
 `blockTerm u h = ∫_{U(a)} ∫_{U(k+1)} u(diag(κ₁, κ₂)) ∫_X h(n̄(X) diag(κ₁, κ₂)) dX dκ₂ dκ₁`.
 
 ## Definitions
@@ -68,7 +67,7 @@ From Worker 728's module `ComplexBlockLimitSum`: the leading term
 
 - The transposition lemmas are entrywise (`Matrix.fromBlocks_transpose`,
   `Matrix.diagonal_transpose`).
-- `blockTerm_eq_sum_of_ray` applies Worker 728's `sum_blockTerm_eq_zero` to the family indexed by
+- `blockTerm_eq_sum_of_ray` applies `sum_blockTerm_eq_zero` (`ComplexBlockLimitSum`) to the family indexed by
   `Option ι`: `(u₀, h₀)` at `none` and `(-u_i, h_i)` at `some i`. The hypothesis makes the ray sums
   vanish, and `blockTerm_neg` turns the conclusion into the claimed identity.
 - `blockTerm_translate_eq_of_product` and `blockTerm_translate_eq_sum` unfold `blockTerm`,
@@ -89,7 +88,7 @@ From Worker 728's module `ComplexBlockLimitSum`: the leading term
     `blockShiftChar k χ` (`blockPair_mem`, `blockVector_mem`).
 
     Every element of `U'` has a transposed expansion against `y'`. Write it as `restrictBlock x`
-    with `x ∈ U`. By `exists_mem_blockDiag_eq` (Worker 728, `ComplexBlockSlice`; this uses the
+    with `x ∈ U`. By `exists_mem_blockDiag_eq` (`ComplexBlockSlice`; this uses the
     irreducibility above) there is `x'' ∈ U` with
     `x''(diag(h₁, h₂)) = x(diag(h₁, 1)) φ(h₂)` for `φ = blockVector a k e p`. Take the expansion
     `M_{x'',y}(g) = ∑_i M_{α_i,β_i}(gᵀ)` and decompose each `α_i` by `exists_blockDiag_decomposition`
@@ -100,8 +99,8 @@ From Worker 728's module `ComplexBlockLimitSum`: the leading term
     it reads `M_{restrictBlock x, y'}(g₁) = ∑_{i,j} M_{restrictBlock P_{ij}, blockPair S_{ij} β_i}(g₁ᵀ)`.
     The new right-hand functions are again orthogonal to nonzero stable spaces: for the space `V_i`
     of `β_i`, the restriction `restrictBlock(V_i)` is nonzero and stable (`map_restrictBlock`), and
-    it is orthogonal to `blockPair S_{ij} β_i` by Worker 140's dual step
-    `integral_restrictBlock_mul_blockPair_eq_zero` (which uses the irreducibility above).
+    it is orthogonal to `blockPair S_{ij} β_i` by the dual step
+    `integral_restrictBlock_mul_blockPair_eq_zero` of `ComplexBlockDual` (which uses the irreducibility above).
 
     The exponents shifted by `-(k+1)/2` are again `BlockOrdered` on `ks'` (`BlockOrdered.shift`),
     so the induction hypothesis applies to `U'` and `y'`. It gives
@@ -113,7 +112,7 @@ From Worker 728's module `ComplexBlockLimitSum`: the leading term
 Derived (internal). This is the block version of the recursion `mul_jacquet_eq_of_transpose` in
 `ComplexReverseRecursion`, in which the stepwise limit along `P_{n-1,1}` is replaced by the limit
 along `P_{a,k+1}` for a block of tied exponents. The orthogonality invariant (`IsOrthStable`) and
-the treatment of tied blocks follow Worker 140's proof of the nonvanishing of the
-block Jacquet functional on Langlands quotients (`ComplexBlockDual`, `ComplexBlockLanglandsQuotient`,
-Task 7063). No statement from the literature is introduced; all results are proved here from the
+the treatment of tied blocks follow the proof of the nonvanishing of the
+block Jacquet functional on Langlands quotients (`ComplexBlockDual`, `ComplexBlockLanglandsQuotient`).
+No statement from the literature is introduced; all results are proved here from the
 listed modules.

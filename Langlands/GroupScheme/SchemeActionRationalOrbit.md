@@ -1,7 +1,5 @@
 # Rational sections in scheme-action orbits
 
-Worker 1460.
-
 This internal derived helper imports the published
 `SchemeActionRationalPoints` constructions. It supplies no existence
 theorem for a closed orbit or a fixed point.

@@ -1,6 +1,6 @@
 import Langlands.CommutativeAlgebra.Popescu.ArtinianEtaleCriterionStatement
 import Langlands.AlgebraicGeometry.Picard.ArtinianColengthOnePullback
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Proof of the Artinian étale criterion -/
 

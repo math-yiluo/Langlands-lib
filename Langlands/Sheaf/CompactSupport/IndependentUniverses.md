@@ -1,6 +1,6 @@
 # Compact sections with independent universes
 
-Worker 1222. Module and namespace
+Module and namespace
 `Langlands.Sheaf.CompactSupport.IndependentUniverses`.
 
 This is an internal extension of the published

@@ -1,13 +1,13 @@
 import Langlands.Correspondence.HenniartCandidateExistenceExactStabilizerReductionStatement
 import Langlands.Global.Arithmetic.HenniartGlobalizationExactStabilizerProof
 import Langlands.Global.Factors.RelativePolePairingProof
-import Langlands.ClassField.Global.FundamentalClassProof
+import Langlands.ClassFieldTheory.Global.FundamentalClassProof
 import Langlands.Global.AdeleQuotientCompactProof
 import Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof
 import Langlands.Automorphic.AssociatedAdditiveInputs
 import Langlands.Automorphic.AssociatedCentralCharacterProof
 import Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof
-import Langlands.ClassField.Global.LocalRelativeWeilTransferProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof
 
 /-! # Henniart's candidate existence from Harris's exact-stabilizer proposition -/
 
@@ -15,7 +15,7 @@ namespace Langlands.Henniart
 
 universe uK uW uP uE uQ
 
-open Langlands.Global Langlands.ClassField.Global Langlands.Global.PoleComparison
+open Langlands.Global Langlands.ClassFieldTheory.Global Langlands.Global.PoleComparison
 
 /-- Henniart's candidate existence (universe `0` automorphic lattices) from Harris's
 exact-stabilizer Proposition 4.8, Théorème 2.4, local class formation, the certified pole

@@ -1,7 +1,5 @@
 # The right mixed-product derivative filtration with a `GL_0` factor
 
-Author: Worker 969.
-
 This module proves the `k = 0` case of BZ77 Corollary 4.14(b) in the form of the
 published statement
 `Langlands.Derivative.RightMixedProductDerivativeFiltrationStatement`: the case in

@@ -1,6 +1,7 @@
 # Isogenies from finite and surjective maps on open cells
 
-This derived supporting unit provides a geometric criterion for an actual group
+This supporting module, derived from existing Library results, provides a
+geometric criterion for an actual group
 homomorphism over an arbitrary field to be finite, flat and surjective. The source
 is smooth and affine; the target is smooth, connected and affine. Both supplied
 cell maps are open immersions, the source cell contains the unit section, and the

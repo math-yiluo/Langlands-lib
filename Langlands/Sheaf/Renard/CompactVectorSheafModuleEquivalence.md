@@ -27,7 +27,7 @@ sheaves on a basis `T₀` and sheaves on all opens `T` form equivalent categorie
 
 - `VectorSheafModuleEquivalence.equivalence X : VectorSheaf X ≌ ModuleSheaf X`
   ([VectorSheafModuleEquivalence](VectorSheafModuleEquivalence.md)) is the Remark for
-  sheaves on all opens. Its Markdown lists the base-`T_c` form as a remaining obligation.
+  sheaves on all opens. The base-`T_c` form is not part of it.
 - `ModuleBasisChange.scalarEquivalence B : ScalarModuleSheaf B ≌ ScalarModuleSheaf
   (allOpenBasis X)` and its case `compactScalarEquivalence hX` for `T_c`
   ([ModuleBasisChange](ModuleBasisChange.md)) give the last paragraph of II.2.1 for sheaves
@@ -39,15 +39,15 @@ vector sheaves on a basis; the published additive `BasisAllOpen.equivalence` ide
 sheaves on a basis with sheaves on all opens. So with the Library's convention, the base-`T_c`
 form of the Remark is an equivalence between `VectorSheaf X` and the sheaves of
 `𝒞^∞_X`-modules on `T_c`. This file constructs it as a composite of the two published
-equivalences. It discharges the obligation left open in
-[VectorSheafModuleEquivalence](VectorSheafModuleEquivalence.md).
+equivalences. It supplies the base-`T_c` form that
+[VectorSheafModuleEquivalence](VectorSheafModuleEquivalence.md) does not treat.
 
 ## Declarations
 
 `X : Type u` is a topological space. `B` is any published `OpenBasis X`.
 
-- `moduleSheaf_eq` (proved by `rfl`): the category `ModuleSheaf X` of the all-open unit is
-  the category `ScalarModuleSheaf (allOpenBasis X)` of the basis-change unit. This is why the
+- `moduleSheaf_eq` (proved by `rfl`): the category `ModuleSheaf X` of the all-open module `VectorSheafModuleEquivalence` is
+  the category `ScalarModuleSheaf (allOpenBasis X)` of the basis-change module `ModuleBasisChange`. This is why the
   two equivalences compose without a transport.
 - `basisEquivalence B : VectorSheaf X ≌ ScalarModuleSheaf B` is
   `(VectorSheafModuleEquivalence.equivalence X).trans (ModuleBasisChange.scalarEquivalence B).symm`.
@@ -84,6 +84,4 @@ The remaining lemmas describe the composite. All are proved by `rfl`.
 The equivalence is the base-`T` clause of the source Remark. The source cites the last
 paragraph of II.2.1 and gives no further proof. The construction as a composite of the
 published all-open equivalence and the published module-sheaf basis change is this file's
-own. Worker 4 wrote this unit for the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`
-(Task 1222), in agreement with Worker 1222. Every declaration is a definition or a proved
-theorem, so no proof task is needed.
+own. Every declaration is a definition or a proved theorem.

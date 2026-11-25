@@ -25,12 +25,12 @@ variable {k L : Type u} [Field k] [Field L] [Algebra k L]
   [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
   {U : CommGroupScheme (Spec (CommRingCat.of L))}
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k L)).obj G).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom (algebraBaseMap k L))
   infer_instance
 
-local instance : LocallyOfFiniteType
+private local instance : LocallyOfFiniteType
     ((GroupScheme.baseChange (algebraBaseMap k L)).obj G).X.hom := by
   change LocallyOfFiniteType (CategoryTheory.Limits.pullback.snd G.X.hom (algebraBaseMap k L))
   infer_instance

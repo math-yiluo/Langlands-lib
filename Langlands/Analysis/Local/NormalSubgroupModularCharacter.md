@@ -62,7 +62,7 @@ translation by `h⁻¹`. Subgroup integration gives the scalar `Δ_H(h)`, wherea
 ambient Haar uniqueness gives `Δ_G(h)`; cancellation identifies them.
 Local compactness of `H` is obtained from closedness.
 
-This unit establishes a general analytic construction and its compatibility
+This module establishes a general analytic construction and its compatibility
 property. It does not identify the adelic modular character with an algebraic
 character norm, prove triviality of a reductive adjoint determinant, or prove
 the universal adelic Haar-unimodularity target.

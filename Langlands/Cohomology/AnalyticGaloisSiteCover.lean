@@ -44,19 +44,19 @@ of the ordinary site. -/
 def toEtaleSiteCover {X : LocalizedCategory.{u, v, v} (K := K)}
     {A B : EtaleSite X} (p : A ⟶ B) (c : AnalyticGaloisCover Γ p.left) :
     GaloisCovering (etaleTopology X) Γ A B := by
-  let d (γ : Γ) : A ⟶ A := MorphismProperty.Over.homMk (c.deck γ).hom (by
+  let d (γ : Γ) : A ⟶ A := MorphismProperty.Over.homMk (c.deck γ).asIso.hom (by
     rw [← MorphismProperty.Over.w p, ← Category.assoc, c.deck_over])
   refine ⟨p, ?_, d, ?_, ?_, ?_, ?_, ?_⟩
   · apply mem_etaleTopology_of_jointlySurjective
     intro x
     exact ⟨A, p, ⟨A, 𝟙 A, p, ⟨()⟩, Category.id_comp _⟩, c.surjective x⟩
   · apply MorphismProperty.Over.Hom.ext
-    change (c.deck 1).hom = 𝟙 _
+    change (c.deck 1).asIso.hom = 𝟙 _
     rw [map_one]
     rfl
   · intro γ δ
     apply MorphismProperty.Over.Hom.ext
-    change (c.deck (γ * δ)).hom = (c.deck δ).hom ≫ (c.deck γ).hom
+    change (c.deck (γ * δ)).asIso.hom = (c.deck δ).asIso.hom ≫ (c.deck γ).asIso.hom
     rw [map_mul]
     rfl
   · intro γ
@@ -86,7 +86,7 @@ variable {Y X : LocalizedCategory.{u, v, v} (K := K)} {p : Y ⟶ X}
 theorem isProperMap [Finite Γ] (c : AnalyticGaloisCover Γ p) :
     IsProperMap (localizedSpaceFunctor.map p) := by
   let f := localizedSpaceFunctor.map p
-  let act (γ : Γ) := localizedSpaceFunctor.map (c.deck γ).hom
+  let act (γ : Γ) := localizedSpaceFunctor.map (c.deck γ).asIso.hom
   have hact (γ : Γ) (y : localizedSpaceFunctor.obj Y) : f (act γ y) = f y := by
     simpa only [f, act, Functor.map_comp, TopCat.comp_app] using
       congrArg (fun a : Y ⟶ X => localizedSpaceFunctor.map a y) (c.deck_over γ)
@@ -100,7 +100,7 @@ theorem isProperMap [Finite Γ] (c : AnalyticGaloisCover Γ p) :
       · rintro ⟨z, hz, he⟩
         obtain ⟨γ, hγ⟩ := c.fibre_transitive y z he.symm
         refine mem_iUnion.mpr ⟨γ, ?_⟩
-        change localizedSpaceFunctor.map (c.deck γ).hom y ∈ s
+        change localizedSpaceFunctor.map (c.deck γ).asIso.hom y ∈ s
         rwa [hγ]
       · intro hy
         obtain ⟨γ, hγ⟩ := mem_iUnion.mp hy

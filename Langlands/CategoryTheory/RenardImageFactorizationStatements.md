@@ -1,9 +1,8 @@
 # Renard A.VI.2(1, 4–5): balancedness, images, coimages and factorization
 
-Author: Worker 207. The clause list follows the task specification written by
-Worker 6 (task `adfa5ad0`). Worker 207 checked the original passage directly
-and wrote this Lean/Markdown pair. This unit states the assertions; their proof
-is a separate obligation.
+The original passage was checked directly for this Lean/Markdown pair. This
+module states the assertions; their proof is `imageFactorizationStatement` in
+the separate module `Langlands.CategoryTheory.Renard.ImageFactorization`.
 
 ## Original and reading boundary
 
@@ -209,17 +208,19 @@ duplicate it.
 
 ## Scope
 
-This unit covers A.VI.2(1), the definitions of image and coimage, (4) and (5).
-Out of scope, with separate owners:
+This module covers A.VI.2(1), the definitions of image and coimage, (4) and (5).
+Out of scope, in other modules:
 
-- A.VI.2(2–3): `Langlands.CategoryTheory.RenardSubobjectQuotientStatements`
-  (task `c5a46e17`);
-- A.VI.2(8), the 3-by-3 lemma: `Langlands.CategoryTheory.RenardThreeByThreeStatement`
-  (task `95698ee5`);
+- A.VI.2(2–3): `Langlands.CategoryTheory.RenardSubobjectQuotientStatements`;
+- A.VI.2(8), the 3-by-3 lemma: `Langlands.CategoryTheory.RenardThreeByThreeStatement`;
 - A.VI.2(6), the abelian group structure on Hom sets:
   `Langlands.CategoryTheory.RenardAbelian`;
-- the product–sum comparison (7), the Noether isomorphism theorems and the
-  AB4–AB6 conventions: obligations of the parent whole-book task.
+- the product–sum comparison (7)
+  (`Langlands.CategoryTheory.RenardProductCoproductStatements`), the Noether
+  isomorphism theorems (`Langlands.CategoryTheory.RenardNoetherIsomorphismStatements`)
+  and the AB4–AB6 conventions (AB4, AB4\* and AB5 in
+  `Langlands.CategoryTheory.RenardGrothendieckAxioms`, source AB6 in
+  `Langlands.CategoryTheory.Renard.LocallyFiniteType`).
 
 The statements do not depend on any chosen image or coimage object beyond
 Mathlib's actual constructions. They add no axiom.

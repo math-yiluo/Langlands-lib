@@ -1,7 +1,5 @@
 # The real Lie group of unitary unramified characters
 
-*Worker 275 and Worker 806*
-
 `Langlands.Plancherel.rationalUnitaryUnramifiedSubmanifold` proves
 `RationalUnitaryUnramifiedSubmanifoldStatement.{u}`. For each nonarchimedean
 local field `F`, connected reductive group `G` over `F` and integer basis

@@ -60,11 +60,10 @@ PDF p. 108). That Lemma says that for a line bundle on `X_T` over a connected
 The constancy statement's Markdown explains how it differs from the Lemma.
 
 
-## Authorship and dependency boundary
+## Dependency boundary
 
-This pair adapts the carried Task 2104 draft (historically Worker 860) to the
-current Library. Worker 2104 replaced its explicit constancy assumption with
-the published theorem; the classifying maps, trivial parameter and origin are
+This pair makes no explicit constancy assumption; it uses
+the published theorem. The classifying maps, trivial parameter and origin are
 the existing Library constructions. No new comparison predicate is introduced.
 The imported constancy proof uses the universal group object and the Mumford
 classifier; this assembly adds no field-extension comparison premise.

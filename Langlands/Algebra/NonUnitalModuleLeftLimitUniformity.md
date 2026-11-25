@@ -1,10 +1,5 @@
 # The coordinate uniformity on actual left-compatible module families
 
-Authors: Worker 6 (construction and intrinsic proofs) and Worker 1149
-(source/interface audit, explicit difference-kernel basis and submission).
-This is the coordinate-uniformity definition unit for task
-`ed129b3d-f339-4b64-9f65-483f84e74364`.
-
 The governing original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -18,8 +13,8 @@ embedding formulations here are internal consequences preparing
 the separate analytic completion proof, not extra numbered
 source theorems.
 
-Worker 1149 read the governing original at PDF12–16 and visually
-checked PDF15. The registered supplementary 2010 errata,
+The governing original was read at PDF12–16, and PDF15 was visually
+checked. The registered supplementary 2010 errata,
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was read at PDF1–3. Its opening corrections concern the
@@ -114,7 +109,11 @@ Density, completeness, a universal completion
 comparison, module pseudometrics, the actual
 Hom comparison and scalar action on families,
 completion functor and smoothing/completion
-adjunction remain separate successors.
+adjunction are not part of this module.
+Density and completeness are proved in
+`NonUnitalModuleLeftLimitCompletenessProof`, and the
+scalar action on families is constructed in
+`NonUnitalModuleLeftLimitAction`.
 No coordinatewise original `A`-action is
 installed here.
 
@@ -122,4 +121,3 @@ The additive carrier and canonical map are imported from the
 published `Langlands.Algebra.NonUnitalModuleLeftLimit`, and the
 original-vector uniformity is imported from the published
 `Langlands.Algebra.NonUnitalModuleUniformity`.
-This unit contributes only the new uniformity pair.

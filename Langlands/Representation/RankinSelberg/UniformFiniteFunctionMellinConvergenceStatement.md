@@ -1,7 +1,10 @@
 # A test-independent Mellin convergence threshold
 
-Worker 468, reusing the published Mellin telescope authored by Worker 331.
-This is an internal Prop-valued statement, with no proof supplied.
+The statement reuses the published Mellin telescope of
+`FiniteFunctionMellinStatement`.
+This is an internal Prop-valued statement, with no proof in this module;
+`uniformFiniteFunctionMellinConvergence` in
+`UniformFiniteFunctionMellinConvergenceProof` proves it.
 It strengthens the convergence quantifier in the published
 `FiniteFunctionMellinStatement` and adds no rationality or denominator claim.
 
@@ -40,7 +43,7 @@ uniform denominator alone supplies this proposition.
 
 This is derived internal support for common convergence of matrix integrals
 on actual Whittaker quotient models in the two-block rank-one analytic base.
-Its proposed derivation uses the finite-dimensional translation span: take a
+Its derivation uses the finite-dimensional translation span: take a
 finite basis of translates (or their linear combinations), apply the existing
 pointwise Mellin convergence theorem to one fixed compact clopen unit-box test
 and that finite basis, and intersect the finitely many half-planes. Dilate the
@@ -49,13 +52,14 @@ invariance, the factored determinant weight and stability of the finite span
 under translation then reduce integrability to the fixed-box basis estimates
 by finite sums and norm domination. The threshold does not change under the
 dilation; only finite scalar factors do. This paragraph gives the rationale
-and remaining proof obligation, not an implemented proof or a literal claim
-of a named literature theorem.
+that the proof module implements, not the Lean proof itself or a literal
+claim of a named literature theorem.
 
 No matrix convergence, normalized generator, functional equation, factor
 existence, irreducibility, or two-block analytic base is assumed or concluded.
 The statement does not alter the published pointwise Mellin pair or anything
-in the host targets' import closure.
+in the import closure of the statements it serves, `TwoBlockGammaRankOneStatement`
+and `TwoBlockLRankOneStatement`.
 
 ## All-field port
 

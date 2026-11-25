@@ -74,7 +74,7 @@ variable (hrank : Module.rank ℂ ρ ≤ Cardinal.aleph0)
 variable (B : SmoothRep.{0, uG, max uG uV} ℂ G)
 variable [FiniteDimensional ℂ (inducedRep H ρ ⟶ B)] [Nontrivial (inducedRep H ρ ⟶ B)]
 variable (hcyc : ∀ φ : inducedRep H ρ ⟶ B, φ ≠ 0 → ∀ ψ : inducedRep H ρ ⟶ B,
-  ∃ α : End (inducedRep H ρ), α ≫ φ = ψ)
+  ∃ α : End (inducedRep H ρ), α.asHom ≫ φ = ψ)
 
 include hH hp hrank hcyc
 
@@ -82,7 +82,7 @@ section Radical
 
 variable (hiso : ∀ (ω : G →* ℂˣ) (hω : IsOpen (ω.ker : Set G)), H ≤ ω.ker →
   ∀ Ψ : (inducedRep H ρ ⟶ B.twist ω hω) ≃ₗ[ℂ] (inducedRep H ρ ⟶ B),
-    (∀ (α : End (inducedRep H ρ)) φ, Ψ (α ≫ φ) = α ≫ Ψ φ) → Nonempty (B.twist ω hω ≅ B))
+    (∀ (α : End (inducedRep H ρ)) φ, Ψ (α.asHom ≫ φ) = α.asHom ≫ Ψ φ) → Nonempty (B.twist ω hω ≅ B))
 
 include hiso
 
@@ -103,7 +103,7 @@ theorem mem_radical_iff (g : G) :
     obtain ⟨u, hu, hu1⟩ := h𝒜.exists_mem_map_eq_one (homAction_one H ρ B)
       (isMulOrAntiMul_homAction H ρ B) hsurj hg
     let Ψ := Linear.homCongr ℂ (Iso.refl (inducedRep H ρ)) e
-    have hΨ : ∀ (α : End (inducedRep H ρ)) φ, Ψ (α ≫ φ) = α ≫ Ψ φ := fun α φ => by
+    have hΨ : ∀ (α : End (inducedRep H ρ)) φ, Ψ (α.asHom ≫ φ) = α.asHom ≫ Ψ φ := fun α φ => by
       simp only [Ψ, Linear.homCongr_apply, Iso.refl_inv, Category.id_comp, Category.assoc]
     exact eq_one_of_homEquiv ρ hH ω hω hωH B hp Ψ hΨ hu fun φ => LinearMap.congr_fun hu1 φ
   · intro h
@@ -194,7 +194,7 @@ theorem exists_algEquiv_center_quotient :
           endValue H ρ hH (e (MonoidAlgebra.of ℂ _ (QuotientGroup.mk t))) g = 0) ∧
         ∀ (ω : G →* ℂˣ) (hω : IsOpen (ω.ker : Set G)), H ≤ ω.ker →
           ∀ φ : inducedRep H ρ ⟶ B.twist ω hω,
-            (e (MonoidAlgebra.of ℂ _ (QuotientGroup.mk t)) : End (inducedRep H ρ)) ≫ φ =
+            (e (MonoidAlgebra.of ℂ _ (QuotientGroup.mk t)) : End (inducedRep H ρ)).asHom ≫ φ =
               (ω t : ℂ) • φ := by
   let _ := gradedAlgebra ρ hH hp
   have := nontrivial_end H ρ hH

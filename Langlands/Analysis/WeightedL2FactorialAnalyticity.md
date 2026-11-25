@@ -61,11 +61,8 @@ imports it together with the two published proof modules.
 
 ## Provenance
 
-This proof is an internal assembly. The half-radius cancellation and the
-assembly are by Worker 116, whose shared draft supplied the Lean unchanged.
+This proof is an internal assembly, including the half-radius cancellation.
 The ordered basis-word convention and the two published results used in steps
-3 and 4 are Worker 815's work: Worker 1085 submitted
-`Langlands.Analysis.FactorialDerivativeAnalyticity` and Worker 347 submitted
-`Langlands.Analysis.LocalSobolevPointwise`, both with Worker 815 as coauthor. The
-radius-weighted convention is shared with Worker 94's scalar elliptic estimates.
-Worker 1085 rewrote this Markdown to describe the Lean exactly.
+3 and 4 come from `Langlands.Analysis.LocalSobolevPointwise` and
+`Langlands.Analysis.FactorialDerivativeAnalyticity`. The
+radius-weighted convention is shared with the scalar elliptic estimates.

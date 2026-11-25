@@ -1,7 +1,5 @@
 # Full strong maps on actual original-chart domains
 
-Author: Worker 36.
-
 This derived construction fixes two actual indexed affinoid atlas presentations
 `A` and `B` over a complete ultrametric normed field. It constructs direct
 restriction of full strong maps along inclusions of bundled original-chart
@@ -16,7 +14,7 @@ bounded restrictions), and Definition 1.2.7, printed p.18 / PDF p.15
 (continuous maps and compatible affinoid morphisms at every admissible
 pair). Registered source: `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These pages were reread for this unit. The direct restriction and presheaf
+These pages were reread for this module. The direct restriction and presheaf
 are derived infrastructure for the supplied original atlases, rather than
 a separately numbered assertion in the source.
 
@@ -61,7 +59,7 @@ direct restrictions. Its functor laws are exactly the full identity and
 successive-restriction laws proved above. The target atlas is arbitrary;
 no directedness, greatest target chart or reducedness is assumed.
 
-This unit establishes a presheaf. Sheaf descent for arbitrary quasinet
+This module establishes a presheaf. Sheaf descent for arbitrary quasinet
 covers, producing local algebra maps, general strong composition, atlas
 extension, structure sheaves, étale and equivariant sites and the Harris
-tower remain separate obligations.
+tower lie outside it.

@@ -42,7 +42,7 @@ formulas simultaneously. This interface does not construct a cup product,
 specify a unique comparison, or assert naturality beyond these formulas.
 It is a degree-two consequence to be proved from the exterior cohomology
 and Künneth descriptions, with all transport to the actual Library functors
-still required. An abstract Künneth isomorphism without the displayed
+required. An abstract Künneth isomorphism without the displayed
 compatibilities does not supply this statement.
 
 ## Provenance and independence
@@ -72,7 +72,7 @@ found for either registered source.
 A proof for the intended primitive-class application must avoid the
 Artinian primitive lifting, Picard-zero lifting, finite-type or relative
 dual geometry, and finite-type or unrestricted smooth-family abelian
-representability results excluded by Task 5774, including results proved
+representability results, including results proved
 through them. This statement assumes none of those results.
 
 ## Implemented conditional reduction
@@ -88,10 +88,9 @@ free, so it applies here without an extra geometric finiteness hypothesis.
 The injectivity of `e` then proves the desired injectivity.
 
 The module proves this conditional reduction and the supporting algebra
-lemma, but leaves the geometric comparison target unproved. It does not
-complete Task 5774 or establish the unconditional field result.
-
-## Authorship
-
-Worker 223 designed the comparison interface and implemented the algebra
-lemma and conditional reduction.
+lemma, but does not prove the geometric comparison target; that is
+`fieldH2ExteriorCoproductComparison` in
+`Langlands.AbelianScheme.FieldH2ExteriorCoproductComparisonProof`. The module
+does not by itself establish the unconditional field result
+`FieldH2PrimitiveInjectivityStatement`; `fieldH2PrimitiveInjectivity` in
+`Langlands.AbelianScheme.FieldH2PrimitiveInjectivityProof` obtains it from the two.

@@ -28,10 +28,10 @@ J. W. Cogdell, *Analytic theory of L-functions for GL_n*, in Bernstein–Gelbart
   `Ψ̃_v(s; ρ(w_(n,m)) W̃_(o,v), W̃'_(o,v)) = L(s, π̃_v × π̃'_v)` for the normalized spherical
   data.
 
-The consumer of this statement is the proof of the partial functional equation
-`Langlands.Global.CuspidalPairPartialGammaEquationStatement` (Task 6190). It needs the
-factorization on both sides of the global functional equation. The task contract asks
-only for the ordinary side (`UnequalEulerFactorizationStatement`). This statement is the
+This statement serves the proof of the partial functional equation
+`Langlands.Global.CuspidalPairPartialGammaEquationStatement`, which needs the
+factorization on both sides of the global functional equation.
+`UnequalEulerFactorizationStatement` gives only the ordinary side. This statement is the
 dual side, which the source uses on p.220.
 
 ## The statement
@@ -54,7 +54,7 @@ Then there exists `σ : ℝ` with the following property. Take any vectors `x : 
   `g ↦ W(w_n ᵗ(g w_(n,m))⁻¹)`. This is `ρ(w_(n,m)) W̃`.
 * `W'dual = dualFunction F m W'`, that is, `g ↦ W'(w_m ᵗg⁻¹)`. This is `W̃'`.
 
-These are exactly the functions in the dual half of the published
+These are exactly the functions in the dual half of the Library's
 `UnequalUnfoldingStatement`. Then for every `s` with `σ < Re s`:
 
 1. `DualWhittakerAbsolutelyConvergent F h Wdual W'dual s` holds: the iterated integral
@@ -107,8 +107,9 @@ conclusion.
 
 ## Deviations from the source
 
-* The task contract lists the factorization only for `Ψ`. This statement adds the dual
-  side, which Cogdell uses on p.220 and the consumer Task 6190 needs.
+* `UnequalEulerFactorizationStatement` gives the factorization only for `Ψ`. This statement
+  adds the dual side, which Cogdell uses on p.220 and the proof of
+  `CuspidalPairPartialGammaEquationStatement` needs.
 * Cogdell obtains the unramified dual local integral from the local functional equation.
   The statement asserts only the global identity, so a proof may use that route or a
   direct computation.
@@ -119,7 +120,7 @@ conclusion.
 ## Provenance
 
 The statement transcribes Cogdell pp.207, 214–215 and 220 onto the Library's actual
-realizations, contragredient realizations, spectral presentations and the published dual
+realizations, contragredient realizations, spectral presentations and the Library's dual
 Whittaker integral of `Langlands.Global.RankinSelberg.WhittakerIntegrals`. The support
 argument above is a standard computation (Iwasawa decomposition and the support of
 spherical Whittaker functions). It is given only to explain why the restriction is placed

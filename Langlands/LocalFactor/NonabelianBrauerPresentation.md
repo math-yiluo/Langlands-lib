@@ -1,6 +1,6 @@
 # Actual Brauer presentations and abelian evaluation
 
-Worker 1727 supplies internal constructions for the existence argument on the
+This module supplies internal constructions for the existence argument on the
 unchanged common-closure objects. A `Generator F E` consists of an actual finite
 intermediate field `L` containing `E` and two continuous field quasicharacters.
 `Presentation F E` is the free integer module on these data. No presentation is

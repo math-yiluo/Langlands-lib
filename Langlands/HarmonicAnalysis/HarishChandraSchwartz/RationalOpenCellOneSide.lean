@@ -140,7 +140,7 @@ section Density
 attribute [local instance] rationalWeightsLocallyCompact rationalWeightsMeasurableSpace
   rationalWeightsBorelSpace
 
-local instance : T2Space (rationalPoints G) := rationalPoint_t2Space F G
+private local instance : T2Space (rationalPoints G) := rationalPoint_t2Space F G
 
 /-- The actual opposite-unipotent/parabolic product is dense. Haar conullness
 of the inverse open cell gives density in the exact rational-point topology. -/

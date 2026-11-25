@@ -133,11 +133,11 @@ smooth sheaf categories, with genuine inverse natural isomorphisms.
 
 ## Remaining boundaries
 
-This unit concerns ordinary-open equivariant module sheaves on actual induced
+This module concerns ordinary-open equivariant module sheaves on actual induced
 topological spaces. It does not identify these with analytic or etale sheaves,
 construct a smooth coreflector under weaker hypotheses, or supply compact
 support, Godement, derived, higher-cohomology, rational-object variation,
-arithmetic-tower, or Harris specialization comparisons. Those remain wider-task
-obligations. The already constructed ordinary locally constant comparison is a
-prerequisite, while its smooth coefficient-natural specialization is subsequent
-work.
+arithmetic-tower, or Harris specialization comparisons. Those are outside this
+module. The already constructed ordinary locally constant comparison is a
+prerequisite, while its smooth coefficient-natural specialization is constructed
+in `Langlands.Sheaf.Equivariant.SmoothSpatialLocallyConstant`.

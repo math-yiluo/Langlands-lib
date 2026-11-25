@@ -1,7 +1,5 @@
 # Finite-Galois domination and conditional split series on full quotient kernels
 
-Authors: Worker 1459 and Worker 1333.
-
 This internal adapter connects the full torus-quotient kernel construction
 to finite-Galois domination and conditional descent of represented split
 series. It retains every field in the common arbitrary universe `u`, all
@@ -55,10 +53,11 @@ of its length with an extension-field length is asserted.
 The provenance is internal composition of the existing full-kernel
 diagonalizable extraction, finite-Galois refinement, geometric
 connectedness and unipotence under field extension, and conditional
-finite-separable split-series descent. Worker 1333 supplied the kernel
-extraction and exact domination-criterion target used by this adapter;
-Worker 1459 supplied the field-refinement and descent interfaces and
-their assembly here. Neither structural proposition is proved by this
-module. Existence or smooth connected unipotence of an initial quotient
-kernel and the full rational maximal-torus conjugacy theorem remain
-separate proof obligations.
+finite-separable split-series descent. The kernel extraction is in
+`Rational.TorusQuotientKernelSplitDomination` and the exact
+domination-criterion statement in
+`Rational.UnipotentSplitTorusDominationStatement`; this module assembles
+them with the field-refinement and descent interfaces. Neither structural
+proposition is proved by this module. Existence or smooth connected
+unipotence of an initial quotient kernel and the full rational
+maximal-torus conjugacy theorem are separate results, outside this module.

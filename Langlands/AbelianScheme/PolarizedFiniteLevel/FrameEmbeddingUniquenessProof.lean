@@ -128,9 +128,9 @@ private theorem eq_of_cubic_coordinate_bundles
     rw [hc, sectionRatio_smul hg]
   let ec := Langlands.Scheme.Modules.unitAut a.cubicBundle.obj
     (Units.map a.abelian.X.hom.appTop.hom.toMonoidHom c)
-  have heq : mapIsoSections ec s = s' := by
+  have heq : mapIsoSections ec.asIso s = s' := by
     funext i
-    change ec.hom.app ⊤ (s i) = s' i
+    change ec.asIso.hom.app ⊤ (s i) = s' i
     rw [Langlands.Scheme.Modules.unitAut_hom_app_top]
     change a.abelian.X.hom.appTop (c : Γ(S, ⊤)) • s i = s' i
     have := hframe i.castSucc
@@ -151,8 +151,8 @@ private theorem eq_of_cubic_coordinate_bundles
         show pullbackSection _ _ (s' i) = 0 from hb' k i hik, smul_zero]
   calc
     ψ = relativeLinearSystemMap a.abelian.X.hom hs := hψ.symm
-    _ = relativeLinearSystemMap a.abelian.X.hom (mapIsoSections_generate ec hs) :=
-      (relativeLinearSystemMap_mapIso _ ec hs).symm
+    _ = relativeLinearSystemMap a.abelian.X.hom (mapIsoSections_generate ec.asIso hs) :=
+      (relativeLinearSystemMap_mapIso _ ec.asIso hs).symm
     _ = ψ' := by
       subst s'
       exact hψ'

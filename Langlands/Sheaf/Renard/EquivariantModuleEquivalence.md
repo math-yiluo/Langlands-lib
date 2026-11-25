@@ -1,6 +1,6 @@
 # Renard III.3.1: the equivariant comparison maps and the conditional equivalences
 
-Worker 134 implemented this module. It is the helper module of the proof of
+This is the helper module of the proof of
 `Langlands.Sheaf.Renard.EquivariantModuleStatements.Statements`. All
 declarations are in `Langlands.Sheaf.Renard.EquivariantModuleEquivalence`.
 

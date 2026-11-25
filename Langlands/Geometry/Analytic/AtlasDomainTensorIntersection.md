@@ -1,6 +1,6 @@
 # Tensor-admissible intersections inside one full local domain
 
-Worker 1685 constructs the literal intersection of two full local domains `U`
+This module constructs the literal intersection of two full local domains `U`
 and `V` when both have actual inclusions into one full local domain `Z` of an
 arbitrary indexed affinoid atlas. The coefficient, ambient-space and original-index
 universes are independent. The field is complete, normed and ultrametric;

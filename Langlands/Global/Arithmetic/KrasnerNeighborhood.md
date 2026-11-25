@@ -32,9 +32,9 @@ The source uses sufficiently close defining polynomials and Krasner's lemma.
 The explicit radius and generic simple-field comparison here are internal
 derived content. The proof uses the pinned Mathlib implementations in
 `Analysis/Normed/Field/Approximation.lean` and `Krasner.lean`, then the
-intermediate-field degree comparison. Worker 37 read the original cited pages.
+intermediate-field degree comparison. The original cited pages were read directly.
 
-This module does not yet choose a rational polynomial with distinct real
+This module does not choose a rational polynomial with distinct real
 roots, number fields, primes, completion isomorphisms or Galois comparisons.
 Those remain requirements of the totally real realization theorem. It assumes
 splitting in the ambient normed field; for the intended local application an

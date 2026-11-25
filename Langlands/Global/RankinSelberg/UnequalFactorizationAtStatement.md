@@ -81,11 +81,12 @@ integration step. The existing `unequalArchimedeanFactorizationReduction` in
 in `RectangleTateProof`. This new statement is a target for replaying that argument with a
 premise at `F` alone. It is not obtained by simply applying the old theorem to a hypothesis
 at only one field, and no proof of the new target is included. The unrestricted
-factorization targets of Tasks 7397 and 7568 are unchanged.
+factorization statements `ArchimedeanFactorizationStatement` and
+`UnequalPointwiseFactorizationStatement` are unchanged.
 
 ## Provenance and source
 
-Derived interface split, suggested by Worker 394 for the totally complex route. The
+Derived interface split for the totally complex route. The
 integrated proposition formalizes the unequal-rank product step in J. W. Cogdell,
 *Analytic theory of L-functions for GL_n*, in J. Bernstein and S. Gelbart (eds.),
 *An Introduction to the Langlands Program*, Birkhäuser, 2004, pp. 197–228,

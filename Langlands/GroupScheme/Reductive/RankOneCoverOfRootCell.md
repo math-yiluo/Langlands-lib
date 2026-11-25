@@ -1,9 +1,7 @@
 # The rank-one central cover from a root cell
 
-Author: Worker 919.
-
 Module `Langlands.GroupScheme.Reductive.RankOneCoverOfRootCell`. This is an internal
-supporting unit for Task 7586 (target `Langlands.GroupScheme.RankOneCentralCoverStatement`).
+supporting module for the proof of `Langlands.GroupScheme.RankOneCentralCoverStatement`.
 It proves the assembly step: a root cell of `G` with pairing `2` gives the target's
 conclusion. It assumes the root cell and does not construct it.
 

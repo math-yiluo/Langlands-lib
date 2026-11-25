@@ -1,7 +1,5 @@
 # Proof of the reduction of the noetherian-test Picard scheme to its pieces
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Picard.NoetherianIntegralFibrePicardPiecesReduction`
 proves
 
@@ -55,7 +53,7 @@ Fix `R`, `f : X ⟶ Spec R` and the hypotheses of the conclusion. Write `S = Spe
    `tr T L = (Scheme.Modules.pullback (relativeSpaceSymmetry f T).inv).obj L.obj`, a module on
    `X ×_S T = pullback f T.hom`. It is invertible:
    `isInvertible_of_isLocallyFreeRankOne` turns the line bundle into an invertible module, and
-   `Scheme.Modules.IsInvertible.pullback` preserves invertibility.
+   `Scheme.Modules.IsInvertible.pullbackFLT` preserves invertibility.
 5. **The opens of the gluing statement.** Put `V T ξ c m = U T.left T.hom (tr T (rep T ξ)) c m`,
    with `F = RelativePicard.classSheafPresheaf f`.
 

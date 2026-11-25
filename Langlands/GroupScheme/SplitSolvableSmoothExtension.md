@@ -1,6 +1,7 @@
 # Split-solvable series through a smooth connected kernel
 
-This internal derived unit joins represented Ga/Gm series along an actual
+This auxiliary module, derived from existing Library results, joins
+represented Ga/Gm series along an actual
 fppf quotient of affine group schemes over a field. It derives the smoothness
 and geometric connectedness of the quotient map from a smooth connected
 affine represented kernel. These map hypotheses were explicit in
@@ -32,7 +33,7 @@ existing split-solvability predicate.
 
 All series, subgroup, quotient and terminal-triviality predicates are the
 existing all-test predicates. The construction uses the actual inverse-image
-groups from the extension lemma. This unit asserts no existence of a
+groups from the extension lemma. This module asserts no existence of a
 unipotent kernel or torus quotient for an arbitrary solvable group, and does
 not prove `AlgebraicallyClosedSplitSolvableStatement`. Its provenance is the
 imported kernel, geometric-connectedness, fppf-smoothness, series-extension

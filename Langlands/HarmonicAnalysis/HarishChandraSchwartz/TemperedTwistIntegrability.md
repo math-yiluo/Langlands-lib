@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.TemperedTwistIntegrability`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitPolynomialOperator` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitPolynomialOperator`:
   `orbitPolynomialOperator`, `orbitPolynomialOperator_eq_smul_of_equiv`,
   `orbitPolynomialOperator_eq_zero`, `existsUnique_orbitIsotypic_decomposition`,
   `hasTemperedCoefficients_of_injective`, `hasTemperedCoefficients_of_surjective`; through it

@@ -1,8 +1,7 @@
 # Essential square-integrability of every segment special quotient
 
-Author: Worker 389. The actual twist transport, scalar-character restriction,
+The actual twist transport, scalar-character restriction,
 centering arithmetic and assembly in this module are derived internal work.
-The imported published proofs retain their own authorship.
 
 ## Exact declaration and scope
 
@@ -125,7 +124,7 @@ pour GL(n)*, §2.6, printed p.595 (PDF p.9), also states the forward result for
 the special quotient of the increasing product. Its registered source is
 `henniart-2002-characterization`, SHA-256
 `40c0ed7c7bfb05f1415fd66642d0b1984052f0af7cb5f3061b328216e2d24306`.
-These passages were read in this branch. The current source-boundary note
+These passages were read for this proof. The source-boundary note
 `notes/henniart/gln-classification-sources.md` was also read.
 
 The implementation assembles proved Library inputs and explicit algebra;
@@ -141,14 +140,14 @@ are not proof inputs.
 
 ## Dependency independence
 
-The dependency audit uses supplied Library commit
+The dependency audit uses Library commit
 `61cebbe0711a0368e49597c07d79b5188d0b829e`. The norm proof's 1137-module project
-import closure has nonempty paired Markdown and agrees with the workspace;
-its inherited pairs also agree with the independently reviewed frozen base
-`159d1197aca62e7ba065e111be014f24f26d0387`. Its primary pair agrees across the
-frozen accepted archive, exact publication and supplied Library. The scalar
+import closure has nonempty paired Markdown and agrees with that commit;
+its inherited pairs also agree with the earlier Library base
+`159d1197aca62e7ba065e111be014f24f26d0387`. Its primary pair agrees with its
+published version in the Library. The scalar
 norm proof and strict analytic criterion were separately checked against their
-independently accepted published pairs and complete declarations.
+published pairs and complete declarations.
 
 No proof uses parent ordered conversion, square-integrable exhaustion,
 regular exhaustion, square-integrable Langlands classification, tempered
@@ -162,17 +161,13 @@ does not prove or assume exhaustion. Importing those proposition definitions
 does not supply the excluded mathematical conclusion.
 
 The upstream nonadjacent-product proof uses the fully proved general BZ77
-derivative theory permitted by the trusted operator's source-boundary decision
-on request `a8463ee15d57588c8de10306748b2538`. All 158 derivative, mirabolic,
+derivative theory. All 158 derivative, mirabolic,
 Whittaker and Gelfand–Kazhdan modules in the norm closure belong to that general
 656-module upstream closure. It contains no later segment Jacquet or segment
 derivative result, highest-derivative support shift, segment-socle derivative
-assertion, or excluded classification proof. The independently accepted norm
-proof's review confirms the published general derivative inputs and this
-boundary. The full operator decision and original request were read; the
+assertion, or excluded classification proof. The
 cuspidal derivative proof and its statement were checked separately from the
 excluded segment-socle assertion. No derivative theorem is added here.
 
-The new module leaves the target Lean/Markdown pair and all pairs it imports
-unchanged. Its helper results and final assembly require independent review;
-this author audit and development compilation are not acceptance evidence.
+This module leaves the target Lean/Markdown pair and all pairs it imports
+unchanged.

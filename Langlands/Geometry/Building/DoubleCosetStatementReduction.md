@@ -1,6 +1,6 @@
 # The corrected KP Theorem 7.8.1(2),(3) from their structural inputs
 
-This derived internal unit reduces the two published targets
+This derived internal module reduces the two published targets
 `IwahoriDoubleCosetStatement` and `ParahoricDoubleCosetStatement` to three
 published structural statements:
 
@@ -19,7 +19,7 @@ universe `u`:
   together imply `ParahoricDoubleCosetStatement`.
 
 The theorem `doubleCosetStatementReduction` proves it. The three structural
-statements are explicit antecedents. This unit proves none of them. It also
+statements are explicit antecedents. This module proves none of them. It also
 does not prove either double-coset statement outright. The hypotheses of the
 two targets are unchanged: the closing theorems
 `iwahoriDoubleCosetStatement_of_statements` and
@@ -112,10 +112,10 @@ assemblies of published adapters. The mathematical context is Kaletha–Prasad,
 The corrected injectivity argument is from the authors' corrections of
 1 November 2024, PDF page 35.
 
-The three antecedent statements are open proof targets of tasks
-`fc0c8f82-31e8-47dd-ac37-ab6bee878f46` (chamber splitting),
-`20fbe465-f4ae-4fe9-9846-2201f1c31d28` (affine Iwahori–Tits) and
-`c2766503-ffb3-4bf4-a441-5a73eca4fac3` (facet-parabolic comparison). Once they
+The three antecedent statements are the chamber splitting
+(`IwahoriWeylChamberSplittingStatement`), affine Iwahori–Tits
+(`AffineIwahoriTitsStatement`) and facet-parabolic comparison
+(`FacetParabolicComparisonStatement`) statements. Once they
 are proved, `iwahoriDoubleCosetStatement_of_statements` and
 `parahoricDoubleCosetStatement_of_statements` close the two targets with their
 original hypotheses.

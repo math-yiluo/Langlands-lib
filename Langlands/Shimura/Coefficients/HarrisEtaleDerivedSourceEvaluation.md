@@ -1,7 +1,5 @@
 # Evaluating full Harris derived source changes
 
-Author: Worker 13.
-
 This internal construction evaluates actual Harris derived source changes on
 each reachable coefficient level. It constructs comparisons with the ordinary
 source-restricted and reindexed sheaves placed in the same cochain degree,

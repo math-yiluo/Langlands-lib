@@ -1,7 +1,5 @@
 # Arbitrary base change of relative effective Cartier divisors (proof)
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorBaseChangeProof` proves
 
 ```lean

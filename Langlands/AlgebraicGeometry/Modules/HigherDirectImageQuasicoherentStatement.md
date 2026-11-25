@@ -1,13 +1,10 @@
 # Higher direct images of quasi-coherent modules are quasi-coherent
 
-Author: Worker 1222. The Lean body is the one fixed by the task specification, whose
-formulation Worker 360 supplied; Worker 1222 checked the source and prepared this pair.
-
 `Langlands.AlgebraicGeometry.Modules.HigherDirectImageQuasicoherentStatement.{u}` is a
 `Prop`-valued definition. It states that, for every quasi-compact separated morphism of schemes
 `f : X ⟶ Y`, every quasi-coherent `𝒪_X`-module `M` and every degree `n : ℕ`, the higher direct
 image `Rⁿ f_* M` is a quasi-coherent `𝒪_Y`-module. This module only states the proposition; it
-contains no proof. A separate exact-target proof is still required.
+contains no proof, and no module of the Library proves it.
 
 ## Exact interface
 
@@ -94,12 +91,12 @@ quasi-compact and separated. Every separated morphism is quasi-separated, so the
 proposition is a special case of the source: the source implies it, and it is strictly narrower
 whenever some quasi-compact, quasi-separated, non-separated morphism occurs.
 
-The task specification fixes this restriction, for two reasons given there and in the consumer.
+The restriction is deliberate, for two reasons.
 
-- The consumer is the Library statement
+- The statement this proposition was formulated for is the Library statement
   `Langlands.AlgebraicGeometry.Modules.FlatHigherDirectImageBaseChangeStatement`, flat base
-  change for higher direct images, which also assumes `QuasiCompact f` and `IsSeparated f`. Its
-  proof needs this quasi-coherence only for such morphisms.
+  change for higher direct images, which also assumes `QuasiCompact f` and `IsSeparated f`. A
+  proof of it through this proposition needs this quasi-coherence only for such morphisms.
 - The Library's Čech tools are proved for separated morphisms. Over an affine base, a
   separated `X` has affine pairwise intersections of affine opens, so a finite affine cover
   computes `Rⁿ f_*` by a Čech complex of quasi-coherent modules (compare Lemma 30.7.1, label
@@ -124,16 +121,17 @@ hypotheses.
 
 ## Intended use
 
-Worker 360 published this statement task as a missing prerequisite for the exact proof of flat
-higher-direct-image base change, task `5b778a75-e74b-4ae4-9232-6735e3eefa47`, revision 1.
-That proof needs to identify the actual higher direct image over an affine base with the
-quasi-coherent sheaf associated to cohomology (compare Lemma 30.4.6, tag 01XK, `coherent.tex`
-line 844). A separate exact-target proof task will prove this proposition; it must not use
-flat base change, which depends on it.
+This proposition was formulated as a prerequisite for a proof of flat higher-direct-image
+base change that identifies the actual higher direct image over an affine base with the
+quasi-coherent sheaf associated to cohomology (compare Lemma 30.4.6, tag 01XK,
+`coherent.tex` line 844). The Library's proof of flat base change,
+`flatHigherDirectImageBaseChange` (module
+`Langlands.AlgebraicGeometry.Modules.FlatHigherDirectImageBaseChangeProof`), does not use this
+proposition.
 
 ## Proof pointers
 
-These are pointers for the future proof, not a claim that a proof is available. The Stacks
+These are pointers for a proof, not a claim that a proof is available. The Stacks
 proof of part (1) reduces to an affine base, because higher direct images commute with
 restriction to opens (Cohomology, Lemma `lemma-localize-higher-direct-images`, tag 01E5) and
 quasi-coherence is local. Over an affine base it uses the induction principle (tag 08DR,

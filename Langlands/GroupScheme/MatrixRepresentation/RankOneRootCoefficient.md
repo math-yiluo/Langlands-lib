@@ -1,6 +1,6 @@
 # Binomial pairings of actual rank-one root coefficients
 
-This internal derived unit uses the polynomial matrices of actual additive
+This module, internal and derived, uses the polynomial matrices of actual additive
 group representations, the published actual root-cell relation interface,
 and the proved characteristic-p binomial identity. It introduces the scalar
 matrix-coefficient polynomial at an original vector and proves its evaluation
@@ -21,7 +21,7 @@ divided-power coefficient operators on the original vector space.
 Whenever the diagonal binomial coefficient is nonzero, `F_a v` is nonzero.
 At m=p^r-1 every coefficient with a<p^r has this property.
 
-The unit also connects this polynomial calculation to actual group schemes.
+The module also connects this polynomial calculation to actual group schemes.
 For a supplied matrix representation, torus map, cocharacter, and two root
 maps satisfying `RootCell.RelationOver` over every relative test scheme,
 `affineMatrix_cell_relation` proves the corresponding matrix factorization
@@ -40,6 +40,8 @@ All root maps, the cell relation, and the vector and functional conditions
 remain explicit premises; the argument has not constructed them from
 highest-weight data.
 
-The unit does not establish the simultaneous nonzero action of the full
+The module does not establish the simultaneous nonzero action of the full
 unipotent top distribution or a bound for the entire covariant induced space.
-Those remain obligations for the host Steinberg big-cell theorem.
+Those are steps of the Steinberg big-cell argument that this module does not
+supply; the Library proves the big-cell statement as `steinbergBigCell`
+(`Reductive.SteinbergBigCellProof`).

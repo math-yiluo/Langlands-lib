@@ -1,7 +1,5 @@
 # Diagonalization of cocharacters of the general linear group over a principal ideal domain
 
-Author: Worker 4686.
-
 This internal helper module extends the published field case
 `GeneralLinear.exists_innerIso_comp_eq_diagonalCocharacter`
 (`Dynamic/GeneralLinearCocharacterDiagonal.lean`) from fields to principal

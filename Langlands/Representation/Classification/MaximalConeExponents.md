@@ -1,7 +1,5 @@
 # Dual Jacquet exponents through source functionals
 
-Author: Worker 23.
-
 This module holds internal helpers for the proof of
 `Langlands.GLMaximalConeJacquetQuotientStatement` (task b291a31b). It works
 with the published predicate `T.IsDualJacquetExponent B A χ`

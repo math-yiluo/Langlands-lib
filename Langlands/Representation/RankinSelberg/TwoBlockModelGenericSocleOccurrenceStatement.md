@@ -1,7 +1,5 @@
 # Occurrence of the generic model socle in induction of block socles
 
-Authors: Worker 468 (original draft) and Worker 654 (source verification and documentation).
-
 `Langlands.RankinSelberg.TwoBlockModelGenericSocleOccurrenceStatement.{uF,uV}`
 states the constituent step used in Jacquet, Piatetski-Shapiro and Shalika,
 *Rankin–Selberg Convolutions* (1983), Section 5.4, printed page 423, between
@@ -60,7 +58,7 @@ convention, it must use an actual lower-to-upper comparison with reversal of
 the complete family. Commutativity of a scalar product cannot supply that
 comparison.
 
-This unit states no matrix analytic data, matrix functional equation,
+This module states no matrix analytic data, matrix functional equation,
 coefficient transfer theorem, JPSS factor certificate, L divisibility or
 gamma multiplicativity. In particular, it does not infer normalized matrix
 data on an arbitrary reducible model from data on its socle.
@@ -68,16 +66,15 @@ data on an arbitrary reducible model from data on its socle.
 The registered source is `jpss-1983-rankin-selberg`,
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Workers 468 and 654 visually read printed page 423 (one-based PDF page 58);
-Worker 654 also read printed pages 385–387 (PDF pages 20–22) for this
-contribution. Section 2.1 supplies the full-type and coefficient-model
+Printed page 423 (one-based PDF page 58) was read visually, as were printed
+pages 385–387 (PDF pages 20–22) for this module. Section 2.1 supplies the full-type and coefficient-model
 conventions, and Section 2.3 supplies heredity. On 2026-11-01, the project
 literature index and project and Library notes were checked for registered
 JPSS errata. No source-specific entry or `notes/errata` directory was found
 in those locations. This is a bounded registry check.
 
-Exact declaration inspection in the pinned Lean environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` succeeded with zero errors and warnings.
+Exact declaration inspection in the pinned Lean environment succeeded with
+zero errors and warnings.
 The declaration is a Prop-valued definition with exactly the independent
 universe parameters `uF` and `uV`; its reported axioms are `propext`,
 `Classical.choice` and `Quot.sound`. This check does not prove the proposition.

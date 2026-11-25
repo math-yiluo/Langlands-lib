@@ -1,8 +1,8 @@
 # Boolean contraction of the surviving graded pieces
 
-Author: Worker 1252. The imported signed cut diagrams, Boolean interval
+The imported signed cut diagrams, Boolean interval
 diagrams, filtered subdiagrams, diagram equivalences and Coxeter minimality
-results are earlier Library work by other authors.
+results come from other modules of the Library.
 
 This internal helper module serves the corrected Aubert Theorem 3.6 route.
 It reduces the exactness of one graded piece of a filtered signed cut diagram

@@ -1,7 +1,5 @@
 # Actual unramified stages and compatible finite models
 
-Author: Worker 60.
-
 This helper module constructs the directed family used in the proof of
 `Langlands.ClassFieldTheory.Local.inertiaFixedFieldNormSurjectivity`.
 All declarations are in `Langlands.ClassFieldTheory.Local.InertiaNormDescent`.
@@ -32,7 +30,7 @@ and scalar-tower instances match the imported theorem's structures.
 This is internal assembly for the finite-model argument in Serre, *Local Fields*
 (1979), V.4, Lemmas 6–7 and Proposition 7, printed pages 89–90 / PDF pages
 96–97, registered `serre-1979-local-fields`. The construction uses the named
-published proofs; it asserts no new unramified arithmetic premise. Worker 60
-read these original pages and the Local Fields section of the official 2019
-corrections, registered `serre-book-corrections-2019`, PDF pages 2–3. No listed
-correction affects printed pages 88–90. No unpublished peer draft was reused.
+published proofs; it asserts no new unramified arithmetic premise. These
+original pages and the Local Fields section of the official 2019 corrections,
+registered `serre-book-corrections-2019`, PDF pages 2–3, were read. No listed
+correction affects printed pages 88–90. No unpublished proof was reused.

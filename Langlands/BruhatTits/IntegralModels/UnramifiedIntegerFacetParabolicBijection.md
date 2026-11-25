@@ -1,7 +1,7 @@
 # The actual integer-facet parabolic bijection from explicit model inputs
 
 Module `Langlands.BruhatTits.IntegralModels.UnramifiedIntegerFacetParabolicBijection`.
-This internal unit allows arbitrary universe `u` and both characteristics.
+This module allows arbitrary universe `u` and both characteristics.
 
 Let `F` be a nonarchimedean local field, `H` an affine group scheme over the
 actual maximal unramified field, `E : UnramifiedZeroDatum F H`, and
@@ -69,7 +69,11 @@ containment clause from actual model-map composition.
 
 The clean positive-root proof provider uses the separate generic torus-adapter
 relocation, and image recovery uses the separate generic root-fixer import
-cleanup. No prohibited building-descent statement is a proof input.
-This unit does not construct the actual model family, prove its neutral
+cleanup. No module of the unramified building descent
+(`UnramifiedBuildingDescentStatement`, `UnramifiedBuildingDescentReduction`,
+`UnramifiedBuildingDescentRemainingReduction`) is in the import closure of this
+module, so none of those descent statements is a proof input.
+This module does not construct the actual model family, prove its neutral
 zero-fixer formula, prove target congruence containment or actual special-fibre
-image parabolicity, or establish the host fixed-point split-torus theorem.
+image parabolicity, or establish the fixed-point split-torus theorem
+`UnramifiedFixedPointSplitTorusStatement`.

@@ -1,7 +1,5 @@
 # Compact norm-one representatives for split minimal parabolics
 
-Author: Worker 82.
-
 For a connected reductive group over a field, suppose `i : T → G` is
 both a maximal split torus and a maximal torus, and choose a generic
 cocharacter `ν`. `Standard.splitMinimalLeviIso` identifies the original

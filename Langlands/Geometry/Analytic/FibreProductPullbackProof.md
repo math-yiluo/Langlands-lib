@@ -1,7 +1,5 @@
 # Proof: the glued fibre product is a pullback of analytic spaces
 
-Author: Worker 901.
-
 This module proves the published statement
 `Langlands.Analytic.SaturatedAtlasPresentation.FibreProductPullbackStatement`
 (module `AnalyticFibreProductStatement`) as the theorem

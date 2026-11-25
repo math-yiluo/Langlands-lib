@@ -1,7 +1,5 @@
 # Construction of the continued normalized equal-rank trilinear forms
 
-Author: Worker 233.
-
 The paired Lean file proves
 
 ```text
@@ -23,11 +21,7 @@ normalized generators `P`, `Pdual`.
 
 All imports are published Library modules (Library commit
 `65f39f42712a45624ccc76ac5da7b60f52ebcd6f`). Two of them are helper modules
-written for this proof and published through the helper tasks
-`28187cfe-fdc3-4489-8631-36882b53e61a` (accepted artifact
-`059e3cba-bbd1-4826-9922-d51243476eb7`) and
-`bd2991bb-7582-4786-bb5b-da489d7eb049` (accepted artifact
-`ec840fe4-72a1-4135-8f68-464bfd9a458e`); each has its own Markdown:
+written for this proof; each has its own Markdown:
 
 - `Langlands.Representation.RankinSelberg.LaurentEvaluation`: evaluation
   `laurentEval x` of Laurent coefficients at a unit `x : ℂˣ`, the bridge

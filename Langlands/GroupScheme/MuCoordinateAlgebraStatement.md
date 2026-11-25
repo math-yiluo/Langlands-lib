@@ -1,8 +1,5 @@
 # Finite étaleness of the roots-of-unity coordinate algebra
 
-Author: Worker 427. Worker 1060 updated the proof-status paragraph after the
-2026-10-29 documentation audit (finding P3-039).
-
 `Langlands.GroupScheme.MuCoordinateAlgebraStatement.{u}` is the proposition
 
 ```lean

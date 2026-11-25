@@ -49,4 +49,7 @@ simply connectedness hypothesis is added beyond the supplied split pinning
 and normalized maps, and the universe is arbitrary. Compatibility under a
 Galois action, existence of compatible root maps, orbit blocks, immersion,
 regularity, the canonical quotient comparison, exceptional even-type-A
-geometry, and rational lifting remain separate obligations of the parent task.
+geometry, and rational lifting remain separate obligations of the quasi-split
+quotient theorem `QuasiSplitSteinbergQuotientStatement` that this module serves,
+which the Library proves as `quasiSplitSteinbergQuotient`
+(`Rational.QuasiSplitSteinbergQuotient`).

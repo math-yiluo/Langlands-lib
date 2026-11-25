@@ -1,7 +1,5 @@
 # Compactness of the rational norm kernel of a torus
 
-Author: Worker 723.
-
 This module states one proposition, `TorusNormKernelCompactnessStatement`. It is a
 proposition definition only. Nothing is proved here.
 

@@ -54,7 +54,7 @@ theorem actionChartElement_mul (g h : G) (c : G ⧸ X.subgroup.toSubgroup) :
 /-- The point action uses the inverse of the forward bounded section operator. -/
 def strictActionPullback (g : G) (c : G ⧸ X.subgroup.toSubgroup) :
     BoundedAlgHom K X.domain.obj.algebra X.domain.obj.algebra :=
-  ((X.chartSectionAction (X.actionChartElement g c))⁻¹).hom
+  ((X.chartSectionAction (X.actionChartElement g c))⁻¹).asIso.hom
 
 @[simp]
 theorem strictActionPullback_one (c : G ⧸ X.subgroup.toSubgroup) :
@@ -112,9 +112,9 @@ theorem affinoidActionMap_mul (g h : G) :
 def inducedAffinoidAction : Action (AffinoidFamily.{u, v} K) G where
   V := X.inducedAffinoidObject
   ρ :=
-    { toFun := X.affinoidActionMap
-      map_one' := X.affinoidActionMap_one
-      map_mul' := X.affinoidActionMap_mul }
+    { toFun := fun g => End.of (X.affinoidActionMap g)
+      map_one' := congrArg End.of X.affinoidActionMap_one
+      map_mul' := fun g h => congrArg End.of (X.affinoidActionMap_mul g h) }
 
 /-- The inverse morphism is the map of the inverse group element. -/
 def inducedAffinoidAutomorphisms : G →* Aut X.inducedAffinoidObject :=

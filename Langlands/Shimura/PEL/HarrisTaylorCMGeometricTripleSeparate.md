@@ -1,7 +1,5 @@
 # Three original coefficient systems on their separate geometric CM covers
 
-Author: Worker 57.
-
 This internal construction compares association on the actual simultaneous
 coefficient-kernel covers with the three independently constructed
 coefficient-cover systems over the geometric CM level at `T`, for

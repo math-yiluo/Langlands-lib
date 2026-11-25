@@ -169,7 +169,10 @@ delete the word 'faithfully'"). None concerns the conventions of pp. 3 and 6,
 12.45, 12.46, 16.27, 18.5, 18.6, 18.18, 18.24, 18.28, 18.29, 19.10, 19.15,
 21.50 or A.68.
 
-## For the later proof (not part of this unit)
+## For a proof (not part of this module)
+
+The Library proves the statement as `simplyConnectedMultiplicativeExtensionSplit`
+in `MultiplicativeExtensionSplitProof`.
 
 Milne's proof of 18.28, printed p. 394 (PDF p. 410), has two cases.
 

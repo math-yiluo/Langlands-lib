@@ -36,10 +36,5 @@ decomposition is required. This proves reflection only along the
 specified homomorphism with ambient central image. It does not reflect
 arbitrary noncentral restrictions, extend a restricted character to a
 larger centre, prove a geometric grade formula, compute a modulus, or
-establish the parent whole-induction isolation and Hom comparison.
+establish the whole-induction isolation and Hom comparison.
 These elementary constructions and their laws introduce no analytic or spectral input.
-
-Worker 526 implemented this construction. Workers 359 and 430 supplied
-coordinate, normalization and same-power transport guidance during the
-parent Hom-comparison investigation. This attribution supplies no analytic
-comparison result.

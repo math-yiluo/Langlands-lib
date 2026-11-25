@@ -1,7 +1,5 @@
 # Hopf-coordinate comparisons for torus splitting
 
-Author: Worker 1337.
-
 This module constructs the comparison between scalar-extended actual
 coordinates and the base-changed group scheme, and proves the resulting
 group-like spanning and affineness lemmas. A conditional assembly

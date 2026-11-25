@@ -1,6 +1,6 @@
 # Exponents of the full pieces of the represented geometric lemma
 
-This internal unit supports the proof task on the unitarizable-constituent step of
+This internal module supports the proof of the unitarizable-constituent step of
 Renard, Théorème VII.1.3 (printed pp.224–226, PDF pp.230–232). There Renard reads off
 the Jacquet modules of `i_P^G ρ` along the parabolics with Levi factor `M` from the
 geometric lemma VI.5.1: only the pieces whose source parabolic is all of `M` survive,
@@ -75,7 +75,8 @@ is connected reductive. The split-component point of `a' ≫ φ` is therefore ce
 The ambient group `G` is affine. `G(F)` carries the canonical topology, assumed locally
 compact and nonarchimedean, and the field is Hausdorff. No local-field structure,
 reductivity of `G` or unitarity is used. Fullness of `lQ' ≫ q'` and admissibility of
-the source Jacquet module are hypotheses. The first follows from Worker 1658's
-`isIso_q'_of_isIso_p'_of_iso` and `isIso_lQ'_of_isIso_p'_of_iso` when `M ≅ L`. This
+the source Jacquet module are hypotheses. The first follows from
+`isIso_q'_of_isIso_p'_of_iso` and `isIso_lQ'_of_isIso_p'_of_iso` (module
+`Langlands.Representation.Geometric.FullIntersectionIrreducible`) when `M ≅ L`. This
 module does not identify the piece itself with a conjugate of `σ` as a representation,
 and it does not count the surviving pieces.

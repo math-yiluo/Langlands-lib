@@ -29,8 +29,8 @@ def spectrumRestrictIso (f : H →ₜ* G) (X : NormContinuousAction K G) :
     change BanachSpectrum X.obj.V at x
     apply BanachSpectrum.ext
     intro a
-    change x ((X.obj.ρ (f (h⁻¹))).toAlgHom a) =
-      x ((X.obj.ρ ((f h)⁻¹)).toAlgHom a)
+    change x ((X.obj.ρ (f (h⁻¹))).asHom.toAlgHom a) =
+      x ((X.obj.ρ ((f h)⁻¹)).asHom.toAlgHom a)
     rw [map_inv]))
 
 @[simp]

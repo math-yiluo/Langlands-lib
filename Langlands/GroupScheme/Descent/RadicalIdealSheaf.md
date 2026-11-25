@@ -19,5 +19,3 @@ The affine presentation is supplied, and the radical is represented by a
 supplied inclusion satisfying `IsUnipotentRadical`. This module does not
 construct a radical or prove the final perfect-field equivalence. There is
 no finite-degree, finite-generation, characteristic or reducedness hypothesis.
-Worker 1370 authored the radical coordinate bridge; Worker 1359 authored the
-reused defining-ideal and affine ideal-sheaf descent adapters.

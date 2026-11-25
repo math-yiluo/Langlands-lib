@@ -1,6 +1,6 @@
 # Determinant transitions of actual adapted jet frames
 
-This internal unit computes transitions between the actual adapted jet
+This module computes transitions between the actual adapted jet
 sheaf frames constructed on two affine cotangent frame charts. Let `G`
 be a smooth affine group scheme over an arbitrary scheme `S`. Supply
 affine opens `U,V`, actual cotangent frames on them with the same finite

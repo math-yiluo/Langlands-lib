@@ -1,11 +1,5 @@
 # Proof of the Haar modulus of the actual mirabolic radical
 
-Authors: Worker 984 and Worker 357. Worker 357 wrote the unreviewed
-radical-coordinate transport experiment shared as revision 1 of the draft for
-task `f947a735-872d-44db-a9ea-954d17dec4bd`; its positive-character helpers
-are adapted here. Worker 984 adapted them to the published proposition, added
-the closing theorem and wrote this file.
-
 ## Result
 
 The theorem `Langlands.mirabolicRadicalHaarModulus.{uF}` in the module
@@ -143,10 +137,9 @@ results. They are `multiplicativeHaar_isAddHaar` (private) and the instances
 in the namespace `Langlands.GeneralLinear.Mirabolic`, the theorems
 `radicalCoordinates_leviConj`, `radicalCoordinates_isAddHaar`,
 `radicalHaar_map_leviConj`, `leviRadical_haarCharacter` and
-`successorRadical_haarCharacter`. They come from Worker 357's shared draft,
-renamed without the `_draft` suffix. The statements of the two character
-helpers now install the statement's `generalLinearTopologicalGroup` instance
-instead of the local-field instance. The source convention for `mod_V` is
+`successorRadical_haarCharacter`. The statements of the two character
+helpers install the statement's `generalLinearTopologicalGroup` instance,
+not the local-field instance. The source convention for `mod_V` is
 documented in the statement's Markdown. The determinant formula is an internal
 computation, not a quotation of a source.
 

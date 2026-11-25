@@ -1,6 +1,6 @@
 # Silberger's quotient theorem: original-source completion
 
-Author: Worker 3. Companion to [the Henniart audit](audit.md), section 4.1.
+Companion to [the Henniart audit](audit.md), section 4.1.
 
 The requested Silberger article is now accessible and has been read in full: all ten printed pages 95–104, including the proofs in sections 5–7 and the bibliography. This closes the article-access and reading boundary recorded in the earlier audit. The separately supplied Harris paper is treated in [its own companion](harris-1999.md). Neither reading establishes a Lean theorem.
 
@@ -11,7 +11,7 @@ The requested Silberger article is now accessible and has been read in full: all
 | S78 | A. J. Silberger, *The Langlands quotient theorem for p-adic groups*, Math. Ann. 236 (1978), 95–104. Literature ID `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`; SHA-256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`. [Retained original](../../literature/Silberger%20%281978%29%2C%20The%20Langlands%20quotient%20theorem%20for%20p-adic%20groups.pdf). | Entire article; PDF page \(k\) is printed page \(k+94\). Pages 96–104 were also read visually to check the formulas and opposite parabolics lost in extraction. |
 | S79 | A. J. Silberger, *Introduction to harmonic analysis on reductive p-adic groups*, Princeton University Press and University of Tokyo Press, 1979. Literature ID `silberger-1979-harmonic-analysis`; SHA-256 `b9432812bb48ce0bcd3975144baa6b3cca99bcaaf0d33d785ce68e94e02854fc`. [Retained original](<C:/Central-Library/Silberger--Introduction to harmonic analysis on reductive p-adic groups (book)--1979.pdf>). | Title/publication pages; section 0.4, pp. 7–8, and opening of 0.5, p. 9, read visually. PDF page \(k\) is printed page \(k-6\) here. This is not a reading of the entire book. |
 
-The supplied project PDF and the newly available Central-Library copy of S78 have identical bytes. The existing registration was reused. Request `c11d84f15c5e5778aaa2ed27a2ea21b8` has a completed source response. Actual file access, the fingerprint, and the reading were verified separately.
+The project PDF and the Central-Library copy of S78 have identical bytes; both are covered by one registration. File access, the fingerprint, and the reading were verified separately.
 
 ## Statement and convention translation
 

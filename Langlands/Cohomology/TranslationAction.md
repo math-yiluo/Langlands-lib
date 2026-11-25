@@ -1,6 +1,6 @@
 # Actions on derived functors through translation functors
 
-Author: Worker 13. Built on Worker 13's published
+Built on
 `Langlands.Cohomology.DerivedComparison` (mapped injective resolutions) and
 Mathlib's injective resolutions, homotopies and `Action`.
 
@@ -61,8 +61,8 @@ Fix an injective resolution `I` of `F.obj`.
 This is derived infrastructure for actions on cohomology through functoriality.
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*, J.
 Math. Kyoto Univ. 39-2 (1999), Theorem 5.7, printed p.313, uses Galois
-actions on étale cohomology with coefficients. Worker 13 read this passage in
-the original. The construction is the standard one: lift the structure maps
+actions on étale cohomology with coefficients. This passage was read in the
+original. The construction is the standard one: lift the structure maps
 to injective resolutions, and use uniqueness of lifts up to homotopy.
 
 The action is defined on the homology of `Γ` of a chosen resolution. Not

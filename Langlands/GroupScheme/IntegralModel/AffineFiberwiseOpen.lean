@@ -27,10 +27,10 @@ theorem isIntegral_of_generic (M : IntegralModel R K G) [IsIntegral G.X.left] :
   let t := M.genericToModel
   have : QuasiCompact t := by
     dsimp [t, genericToModel]
-    infer_instance
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   have : IsSchemeTheoreticallyDominant t := by
     dsimp [t, genericToModel]
-    infer_instance
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   have : IsAffine M.group.X.left := isAffine_of_isAffineHom M.group.X.hom
   have : IsDomain Γ(M.group.X.left, ⊤) :=
     Function.Injective.isDomain (α := Γ(G.X.left, ⊤))

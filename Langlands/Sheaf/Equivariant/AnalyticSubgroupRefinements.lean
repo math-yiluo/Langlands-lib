@@ -103,9 +103,9 @@ theorem isLocallyEquivariant_untwist_subgroup (hH : IsOpen (H : Set G))
   let N : OpenSubgroup H := S ⊓ M.comap H.subtype continuous_subtype_val
   have hk (g : H) (hg : g ∈ N) :
       ∃ k : (T : Subgroup G), (k : G) = (Hom.twist f)⁻¹ * (g : G) * Hom.twist f ∧
-        (liftAction m (Subgroup.inclusion hT k)).unop ≫ f =
+        (liftAction m (Subgroup.inclusion hT k)).unop.asHom ≫ f =
           f ≫ (liftAction (liftOfSubgroup hH l)
-            ⟨(g : G), Subgroup.map_mono (f := H.subtype) hS (hMS hg.2)⟩).unop := by
+            ⟨(g : G), Subgroup.map_mono (f := H.subtype) hS (hMS hg.2)⟩).unop.asHom := by
     obtain ⟨k, -, he⟩ := hM ⟨(g : G), hMS hg.2⟩ hg.2
     refine ⟨k, ?_, he⟩
     have et := congrArg Hom.twist he
@@ -141,8 +141,8 @@ theorem isLocallyEquivariant_untwist_subgroup (hH : IsOpen (H : Set G))
       rw [he]
       group
     change (m.action (m.translateHom (Hom.twist f)
-        ⟨(g : G)⁻¹, inv_mem hmem⟩)).hom ≫ Hom.left f =
-      Hom.left f ≫ (l.action (Subgroup.inclusion hS ⟨g, hg.1⟩)⁻¹).hom
+        ⟨(g : G)⁻¹, inv_mem hmem⟩)).asIso.hom ≫ Hom.left f =
+      Hom.left f ≫ (l.action (Subgroup.inclusion hS ⟨g, hg.1⟩)⁻¹).asIso.hom
     rw [eh]
     exact e
 

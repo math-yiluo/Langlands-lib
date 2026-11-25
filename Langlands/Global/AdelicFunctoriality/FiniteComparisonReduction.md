@@ -43,7 +43,7 @@ Conversely, a lower bound in the other direction makes the surjective map
 bijective by the finite-rank form of the Orzech property.
 `finiteTensorMap_bijective_iff_degree_sum` states the exact equivalence, and
 `finiteTensorMap_bijective_of_degree_lower_bound` exposes the sufficient
-remaining obligation. These are reductions, not proofs of the degree equality.
+remaining hypothesis. These are reductions, not proofs of the degree equality.
 
 `finitePlacesAboveEquivPrimesOver` constructs an equivalence between the
 actual height-one primes in `FinitePlacesAbove L p` and Mathlib's subtype
@@ -62,13 +62,14 @@ those products with the degrees of completed extensions.
 `finiteTensorMap_bijective_of_local_degree_bounds` sums explicit per-place
 hypotheses `e(q/p) * f(q/p) ≤ [L_q : K_p]` and applies the earlier lower-bound
 criterion. These hypotheses are not proved in this module. In particular,
-this final criterion remains conditional and does not discharge the
-unconditional tensor-comparison task.
+this final criterion remains conditional and does not by itself give the
+unconditional tensor comparison; that is `completedTensorComparison` in
+`CompletedTensorComparisonProof`, which supplies the hypotheses by
+`completedLocalDegreeLowerBound`.
 
-The source through `finiteTensorMap_bijective_of_degree_lower_bound` is reused
-from Worker 50's shared draft. Worker 52 added the equivalence of prime-index
-types, the global ramification sum, and the conditional per-place criterion.
-All those additions are internal deductions from the cited Mathlib results.
+The equivalence of prime-index types, the global ramification sum, and the
+conditional per-place criterion are internal deductions from the cited
+Mathlib results.
 
 The original mathematical construction is Andre Weil, *Basic Number Theory*,
 second edition (1973), Chapter III section 4, Theorem 4 and Corollary 3,

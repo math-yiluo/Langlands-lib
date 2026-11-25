@@ -65,7 +65,7 @@ theorem rationalUnramifiedComplexLieGroup :
     intro χ
     refine ContMDiffAt.comp χ ?_ (hCoordinates χ)
     apply ContDiffAt.contMDiffAt
-    refine contDiffAt_pi.mpr fun i => (contDiffAt_apply ℂ ℂ i (coordinates χ)).inv ?_
+    refine contDiffAt_pi.mpr fun i => (contDiffAt_apply ℂ (fun _ ↦ ℂ) i (coordinates χ)).inv ?_
     rw [coe_coordinates]
     exact Units.ne_zero _
 

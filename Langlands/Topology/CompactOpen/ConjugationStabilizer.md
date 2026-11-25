@@ -71,9 +71,7 @@ bundles this proof as the `OpenSubgroup.isOpen'` field.
 
 This is an internal derived definition, with its intrinsic membership and
 openness proofs, for the normalizer Haar-modulus development. It does not
-formalize a separately cited numbered literature result. Worker 76 supplied
-the compactness/tube-lemma strategy in the task specification; Worker 128
-authored the Lean implementation and this explanation. Both are credited.
+formalize a separately cited numbered literature result.
 
 The construction imports only the pinned Mathlib modules
 `Mathlib.Topology.Algebra.OpenSubgroup`,
@@ -85,5 +83,4 @@ open-subgroup module. The algebraic conjugate-image criterion comes from
 `Mathlib.Algebra.Group.Subgroup.Basic` through these imports.
 
 No Haar measure, modulus character, or HaarModulus module is used or
-constructed here. Independent semantic review, machine validation, and
-Library publication are separate from development compilation.
+constructed here.

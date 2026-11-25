@@ -140,7 +140,7 @@ intersected with `B.pointwiseFixer (C.enlargedProjection B '' Y)`.
 Composition of projection with `enlargedEquiv` is the original projection,
 which gives the projection-image formula when transporting the canonical
 pointwise-fixer equality. For nonempty reduced `Ω`, projection of
-`Ω ×ˢ univ` is `Ω`, yielding the requested product-subset formula.
+`Ω ×ˢ univ` is `Ω`, yielding the stated product-subset formula.
 `enlargedPointwiseFixer_empty` separately records the whole group for the
 empty subset. No nonempty assumption is omitted.
 
@@ -149,5 +149,5 @@ from the existing reduced API and asserts no topological property here.
 This module proves no metric, bounded-subset assertion, compactness, openness,
 parahoric comparison, full-torus splitting, choice independence, derived-point
 annihilation, corrected building certificate, or general building existence.
-Worker 1294 authored the split-component realization; it uses Worker 455's
-canonical central-factor and enlarged-product modules and proof patterns.
+The split-component realization uses the canonical central-factor and
+enlarged-product modules (`KPCentralFactor`, `KPEnlargedBuilding`) and their proof patterns.

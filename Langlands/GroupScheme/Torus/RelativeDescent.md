@@ -1,7 +1,5 @@
 # Étale descent of relative tori and transport of fibrewise maximality
 
-Author: Worker 693.
-
 This internal helper module supports the arbitrary-base quasi-split inner-form
 construction. It derives its results from the published relative-torus predicate,
 maximality on field-valued points, field-extension reflection, and the canonical

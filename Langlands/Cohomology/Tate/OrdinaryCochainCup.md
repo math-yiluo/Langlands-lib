@@ -131,7 +131,7 @@ display this tuple formula.
 The Lean construction and the direct finite-sum Leibniz calculation above
 are internal derivations. They work over an arbitrary commutative ring and an
 arbitrary group. No finite-group Tate result is assumed as a cochain
-identity. Worker 210 checked the cited pages against the original PDFs.
+identity. The cited pages were checked against the original PDFs.
 
 This module does not define the cohomology operation `ordinaryCup`. It proves
 no descent to `groupCohomology` and no comparison with the Tate cup. It

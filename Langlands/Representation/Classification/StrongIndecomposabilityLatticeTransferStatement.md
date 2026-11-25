@@ -1,8 +1,5 @@
 # Generic lattice transport for strong indecomposability
 
-Authors: Worker 864 (initial statement draft) and Worker 185 (source check,
-scope explanation and dependency audit).
-
 This module defines one proposition,
 `Langlands.Classification.StrongIndecomposabilityLatticeTransferStatement`.
 It states two algebraic assertions about the published predicate
@@ -110,7 +107,7 @@ There are no other project modules in the transitive closure.
 invariant-submodule type. The two imported project Lean/Markdown pairs
 were read completely and are preserved unchanged.
 
-The complete list of authored declarations in the project closure is:
+The complete list of declarations in the project closure is:
 
 | Module / namespace | Declarations and role |
 | --- | --- |
@@ -141,29 +138,28 @@ enter through an unexamined project import.
 ## Excluded downstream conclusions
 
 The new statement is a lower algebraic input for ordered-socle existence
-task `23189526-80b0-4828-a6d4-7ebec2cbeef5`. The audited closure excludes
-that conclusion and every item below, including its proof successors and
+(`OrderedMultisegmentSocleExistence`). The audited closure excludes
+that conclusion and every item below, including its proofs and
 transitive proof dependencies:
 
-- Socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`.
-- Analytic segment classification `aca8805b-054f-4d56-8045-12db7f623404`.
-- Segment-socle product irreducibility `23e98d90-6055-4e35-91a9-b0f5d8a84961`.
-- Final segment-socle irreducibility criterion `2ae5cbe5-0701-4509-88a0-db8cbeb35be4`.
+- Socle exhaustion.
+- Analytic segment classification.
+- Segment-socle product irreducibility.
+- Final segment-socle irreducibility criterion.
 - `AdjacentUnlinkedSegmentSocleSwap` and `TwoSegmentSocleCommutation`.
-- Special-head product criterion `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`.
-- Special-head exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`.
-- Ordered special-head existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`.
-- Quotient coverage `20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`.
-- Tempered block uniqueness `52e97845-36bb-457d-b76f-70753334b88c`.
-- `SquareIntegrableLanglandsClassification` / `1cb45da2-7007-4351-a694-594fb148b8d1`.
-- Square-integrable exhaustion `cd8ab97c-0b78-4bce-97c4-d307a28159a4`.
-- Regular exhaustion `bf433f0a-921a-428c-b0c0-6475438125ac`.
-- `GenericSegmentProductUniqueness` / `30341ae4-65f2-4a0e-9283-763db01a409e`.
-- Ordered special-segment conversion `8252833d-c269-41a9-824c-5879e531b23b`.
-- Forward special-segment essential square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`.
+- Special-head product criterion.
+- Special-head exhaustion.
+- Ordered special-head existence.
+- Quotient coverage.
+- Tempered block uniqueness.
+- `SquareIntegrableLanglandsClassification`.
+- Square-integrable exhaustion.
+- Regular exhaustion.
+- `GenericSegmentProductUniqueness`.
+- Ordered special-segment conversion.
+- Forward special-segment essential square-integrability.
 
-Only this statement pair belongs to this unit. A privately prepared proof
-companion supplies no accepted input. An exact proof successor belongs to
-a separate task after independent acceptance and publication of this
-statement. The analytic detection, P1, recursion and product-homogeneity
-work, and the separate finite-length work, remain outside its scope.
+This statement pair contains no proof. The proof is the separate module
+`StrongIndecomposabilityLatticeTransferProof`. The analytic detection, P1,
+recursion and product-homogeneity work, and the separate finite-length work,
+remain outside its scope.

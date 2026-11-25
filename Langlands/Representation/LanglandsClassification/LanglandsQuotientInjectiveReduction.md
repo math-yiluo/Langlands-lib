@@ -1,6 +1,6 @@
 # Langlands quotient injectivity from opposite intertwining rigidity
 
-Worker 63, Task 5295. This module splits Renard VII.4.2 (ii) at the diagram
+This module splits Renard VII.4.2 (ii) at the diagram
 (VII.4.2.1). It defines the proposition
 `LanglandsTripletOppositeIntertwiningRigidityStatement` and proves that it
 implies the published `LanglandsQuotientInjectiveStatement`, given second

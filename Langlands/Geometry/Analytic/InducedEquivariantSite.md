@@ -1,7 +1,5 @@
 # Induction on `G`-spaces and on equivariant quasi-étale sites
 
-Author: Worker 21.
-
 This module defines the functors through which Berkovich's Example 1.2.1(i)
 compares the quasi-étale site of an `H`-space `X` with that of its induced
 `G`-space `X_{G/H}`. The induced objects must be `G`-spaces, and the induced

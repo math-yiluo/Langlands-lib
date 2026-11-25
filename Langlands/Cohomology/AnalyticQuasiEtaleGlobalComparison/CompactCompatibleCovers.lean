@@ -31,11 +31,11 @@ structure CompactCompatibleCover (i : CompactLiftBasis ρ) where
   le_source : ∀ j, (subgroup : Subgroup G) ≤ (sourceLift j).subgroup
   equivariant : ∀ j (g : G) (hg : g ∈ subgroup),
     (liftAction (U := (ι quasiEtale ρ).obj (compactLiftBasisObject ρ (cover.index j)))
-      (sourceLift j) ⟨g, le_source j hg⟩).unop ≫
+      (sourceLift j) ⟨g, le_source j hg⟩).unop.asHom ≫
         (ι quasiEtale ρ).map (cover.arrow j) =
       (ι quasiEtale ρ).map (cover.arrow j) ≫
         (liftAction (U := (ι quasiEtale ρ).obj (compactLiftBasisObject ρ i))
-          targetLift ⟨g, le_target hg⟩).unop
+          targetLift ⟨g, le_target hg⟩).unop.asHom
 
 /-- Retain the compatible action data of an actual common-subgroup refinement. -/
 def compactCompatibleCoverOfRefinement (i : CompactLiftBasis ρ)

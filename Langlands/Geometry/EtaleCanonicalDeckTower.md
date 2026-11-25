@@ -175,13 +175,11 @@ level and coefficient-morphism laws and homology comparisons are reused
 from the geometric coefficient action API imported through
 `EtaleGeometricActionReindex`. The original geometry formulas and
 subtype-congruence arguments identify these constructions with the raw
-scheme arrows of the input. Worker 13 implemented this specialization;
-the imported canonical coefficient construction separately credits
-Worker 57's generalized proof pattern.
+scheme arrows of the input.
 
-The input is actual geometric data but is not yet an instantiated Harris or
+The input is actual geometric data but is not an instantiated Harris or
 Shimura tower. Smooth or continuous group actions, analytic-etale
 realizations, compact-support and trace comparisons, arithmetic Hecke and
-Galois identifications, and Harris compatibility remain separate obligations.
-This contribution advances the definition framework and does not complete
-the broader Harris task.
+Galois identifications, and Harris compatibility are outside this module.
+This module belongs to the definition framework and does not complete
+the Harris construction.

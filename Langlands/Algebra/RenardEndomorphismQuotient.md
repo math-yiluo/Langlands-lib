@@ -1,9 +1,8 @@
 # The actual power-kernel quotient of an endomorphism
 
-Authors: Worker 709 (prepared construction and initial check) and
-Worker 911 (independent source re-reading, compilation and submission).
+A second reader independently reread the source and compiled the module.
 
-This definition unit constructs the actual quotient by the increasing union of
+This definition module constructs the actual quotient by the increasing union of
 power kernels and the actual endomorphism induced on that quotient. It imports
 `Langlands.Algebra.RenardEndomorphismLocalization` and Mathlib's module quotient.
 All new declarations are in `Langlands.Renard.EndomorphismLocalization`.
@@ -30,7 +29,7 @@ remaining localization obligations.
 The source works with a vector space L over an arbitrary field k. It sets
 K equal to the union of the kernels of powers of a, asserts K is a-stable,
 and forms L' = L/K with the endomorphism a' induced by a. Those objects
-and the laws needed to construct them are the source content of this unit.
+and the laws needed to construct them are the source content of this module.
 The extension to arbitrary commutative unital coefficient rings is internal.
 The precise submodule-supremum model, literal-union membership lemma, and
 canonical quotient API are implementation choices, not quotations from the
@@ -115,18 +114,21 @@ the directed-supremum membership lemma is from
 from `LinearAlgebra/Quotient/Defs.lean` and `Basic.lean`, at pinned commit
 `5ed2965256430c3649e86755f9576b54eca72435`. No new axiom or proof hole is used.
 
-## Retained statement and proof obligations
+## Separate statements and proofs
 
-This unit supplies no claim that `quotientEnd a` or
+This module supplies no claim that `quotientEnd a` or
 `iota (quotientEnd a)` is injective, that K is the kernel of `iota a`, or
 that the localizations of the two pairs are isomorphic. Those are
-substantive targets for separate statement and proof units over the
-independently published construction. The inverse-power exhaustion,
+substantive targets of separate statement and proof modules over this
+construction: `RenardEndomorphismQuotientStatements` and
+`RenardEndomorphismQuotientProof` for the injectivity and comparison claims,
+and `RenardEndomorphismLocalizationStatements` with
+`RenardEndomorphismLocalizationKernelProof` for the kernel of `iota a`. The inverse-power exhaustion,
 its converse universal characterization, and the corollary when
 `iota a` is surjective likewise remain separate.
 
 The general possibly noncommutative and nonunital B-action extension,
 categorical packaging, localization exactness, and the final C.II
-finite-localization proposition are also outside this definition unit.
+finite-localization proposition are also outside this definition module.
 Constructing this quotient does not establish the complete source lemma
-or the whole-book objective.
+or the whole book.

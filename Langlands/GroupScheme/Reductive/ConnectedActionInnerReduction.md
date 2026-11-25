@@ -1,9 +1,11 @@
 # Clopen subgroups over connected residue fibres
 
-Worker 681. This is a derived supporting construction for Task 6418.
+This is a derived supporting construction for the proof of
+`ReductiveConnectedActionInnerStatement`.
 It proves the elementary connected-fibre part of the inner-action argument.
-The unconditional inner-action theorem still requires a proof of
-`ReductiveInnerActionLocusStatement`.
+The unconditional inner-action theorem also requires a proof of
+`ReductiveInnerActionLocusStatement`, which the Library has as
+`reductiveInnerActionLocus` (module `InnerActionLocusProof`).
 
 `clopen_eq_univ_of_section_connectedFibres` concerns a scheme morphism
 `p : X → S`, a section `e`, connected scheme-theoretic residue fibres, and a
@@ -59,9 +61,12 @@ assumed beyond these imported interfaces.
 The published statement
 [`ReductiveInnerActionLocusStatement`](InnerActionLocusStatement.md) describes
 the source-derived clopen locus and its universal property. Its proof is the
-separate prerequisite Task 7304 (`bb1c1b2f-f10a-4a67-9d4e-a2ec97df6574`).
+separate theorem `reductiveInnerActionLocus` of
+[`InnerActionLocusProof`](InnerActionLocusProof.md).
 The conditional reduction in this module is a supporting theorem; it does
 not assert or prove that premise. The designated construction and this
-reduction therefore do not establish the unconditional proposition
-`ReductiveConnectedActionInnerStatement` required by Task 6418.
+reduction therefore do not by themselves establish the unconditional
+proposition `ReductiveConnectedActionInnerStatement`;
+[`ConnectedActionInnerProof`](ConnectedActionInnerProof.md) proves it by
+combining this reduction with `reductiveInnerActionLocus`.
 

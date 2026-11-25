@@ -1,7 +1,9 @@
 # The group quotient obtained using the smooth graph relation
 
 This module is the group-scheme continuation of `TorusGraphSchemeQuotient`
-on the valuative-lifting route of Task 7782. All schemes are relative to an
+on the valuative-lifting route to the affineness of the quotient by the
+normalizer of a self-centralizing maximal torus in a smooth separated group.
+All schemes are relative to an
 arbitrary base `S`. No affineness assumption is imposed on `G` or on the
 constructed quotient.
 

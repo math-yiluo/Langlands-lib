@@ -1,7 +1,5 @@
 # Statement: spreading out a factorization from the local scheme at a point
 
-Worker 738.
-
 `Langlands.AlgebraicGeometry.SpecStalkFactorizationSpreadingStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports only Mathlib: the morphism properties

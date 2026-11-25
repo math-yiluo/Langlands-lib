@@ -1,6 +1,6 @@
 # Comparison of actual central covers over isomorphic field groups
 
-Worker 416. This internal construction works over an arbitrary field
+This internal construction works over an arbitrary field
 `k : Type u`. Its inputs are actual group schemes, actual homomorphisms
 `π : C → G` and `π' : C' → G'`, the supplied cover properties, and a
 specified isomorphism `e : G ≅ G'`. All groups have the same field base.

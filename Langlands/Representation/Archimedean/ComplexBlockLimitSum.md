@@ -2,9 +2,9 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexBlockLimitSum`.
 
-Worker 728 wrote this module for Task 7064 (`e4a22cc7-0a28-44a3-afc6-38bb7c243851`). It is a
-helper for the proof of `ComplexReverseIntertwinerKernelStatement` at tied exponents (Worker 5677's
-route). That proof compares two matrix-coefficient integrals and needs an identity between their
+This module is a
+helper for the proof of `ComplexReverseIntertwinerKernelStatement` at tied exponents (the route of
+`ComplexReverseIntertwinerTied`, through `ComplexReverseBlockRecursion`). That proof compares two matrix-coefficient integrals and needs an identity between their
 leading terms, not only the vanishing statement of `ComplexBlockLimit`.
 
 Notation as in `ComplexBlockLimit`: `GL_N(ℂ)` is `Langlands.GeneralLinear N ℂ` and `U(N)` is
@@ -50,7 +50,7 @@ hypothesis for every `g` implies them. `ComplexBlockLimit` states its hypothesis
 but its proof uses it only at `g = d(s)`.
 
 Provenance. Derived (internal). This is the leading-term argument of the published module
-`ComplexBlockLimit` (Worker 140, Task 7063), made linear in the pair `(u, h)` and with the
+`ComplexBlockLimit`, made linear in the pair `(u, h)` and with the
 hypothesis restricted to the ray `d(s)`. It makes no claim beyond the Lean statements.
 
 ## Proof

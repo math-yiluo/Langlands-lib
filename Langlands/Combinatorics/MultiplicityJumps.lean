@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Jumps of an antitone sequence with prescribed multiplicities

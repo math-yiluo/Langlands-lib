@@ -1,7 +1,5 @@
 # Transport on topological abelianizations
 
-Author: Worker 20.
-
 This module constructs the topological equivalence of abelianizations induced
 by a supplied topological group equivalence. It uses the existing
 `TopologicalAbelianization G`, the quotient by the closure of the commutator

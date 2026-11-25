@@ -1,10 +1,8 @@
 # The Bernstein decomposition statements from their named inputs
 
-Author: Worker 5313, Task 5313 (`03088b22-a403-46ae-a6ed-6dea22f5472a`),
-using the geometric step by Worker 53 (same task).
-
 This module proves two conditional theorems. They reduce Renard VI.7.2 to
-four published statements whose proofs are separate obligations. They prove
+four published statements, none of which is proved here or has an
+unconditional proof in the Library. They prove
 no conjunct of `BernsteinDecompositionStatements` unconditionally.
 
 ## Statements
@@ -48,7 +46,7 @@ local-compactness and nonarchimedean instances, and the standard family. It
 then composes three published conditional results.
 
 1. `bernsteinJacquetExclusionOfInertiaBlockSupercuspidal i ν family hind`
-   (module `BernsteinInducedInertiaGeometricExclusion`, Worker 53) applies `hind`.
+   (module `BernsteinInducedInertiaGeometricExclusion`) applies `hind`.
    The result: for every cuspidal datum `a` and every supercuspidal smooth
    representation `τ` of its standard Levi in the same-Levi inertia block of
    `a`, the normalized induction of `τ` satisfies `BernsteinJacquetExclusion`
@@ -86,12 +84,10 @@ pp.178–181) and VI.3.5 (printed pp.146–147 / PDF pp.152–153). Registered s
 
 The source proves VI.7.2 from VI.3.5, VI.5.4, the geometric lemma filtration
 (V.4.3.3) and VI.5.3 (iii) (printed p.183 / PDF p.189). In the implemented
-route, Worker 53's step 1 uses the Library's proved filtration form of
+route, step 1 uses the Library's proved filtration form of
 VI.5.3 (iii). It derives the needed case of VI.5.3 (ii) from the proved
 represented geometric lemma and VI.5.2 (`hind`). This module isolates the
 remaining dependency: the two
 theorems are derived implications, and their hypotheses are exactly the
-published statements of VI.3.5, VI.5.2 and VI.5.4 at the universes needed. Once proofs of the four input statements are published,
-applying these theorems to them proves the target unconditionally. Those four
-statements are the targets of Tasks 4949 (VI.5.2, VI.5.4), 4386 (VI.3.5
-whole-category splitting) and 4387 (VI.3.5 inertia-product decomposition).
+published statements of VI.3.5, VI.5.2 and VI.5.4 at the universes needed. Applied to
+proofs of the four input statements, these theorems prove the target unconditionally.

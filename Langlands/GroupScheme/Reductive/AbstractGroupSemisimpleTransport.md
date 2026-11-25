@@ -1,7 +1,5 @@
 # Semisimplicity and finite coordinate transport
 
-Author: Worker 293.
-
 This internal helper module compares two definitions of semisimplicity and
 transports representations to finite coordinate spaces. Its namespace is
 `Langlands.RepresentationSemisimpleTransport`.

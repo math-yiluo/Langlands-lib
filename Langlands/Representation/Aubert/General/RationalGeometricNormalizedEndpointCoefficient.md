@@ -1,6 +1,6 @@
 # Actual normalized geometric-term coefficient
 
-This internal construction identifies the actual inducing coefficient of the
+This construction identifies the actual inducing coefficient of the
 published geometric term with its ordinary Jacquet presentation. It then
 compares the original normalized compact coefficient to that actual inducing
 coefficient, retaining both original epsilon corrections.
@@ -139,8 +139,9 @@ evidence. These are proof-body dependencies; the broad imported module
 closure contains further representation infrastructure and is not a
 claim to have proved or applied its theorem targets.
 
-This unit does not prove epsilon cancellation on the whole common Levi,
+This module does not prove epsilon cancellation on the whole common Levi,
 the normalized compact-induction comparison with the full geometric term,
 the proper graded comparison, the ordered filtration, or
-`RationalGeometricK0ExpansionStatement`. Those remain obligations of the
-host proof.
+`RationalGeometricK0ExpansionStatement`. Those are obligations of the
+proof of that statement, `rationalGeometricK0Expansion` in
+`RationalGeometricK0Expansion`.

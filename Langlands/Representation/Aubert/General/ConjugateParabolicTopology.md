@@ -55,7 +55,7 @@ adapter directly specializes the Mathlib quotient interface already imported by
 the generic parabolic files, without importing the GL orbit-integral
 constructions from that file. No original-literature assertion is translated.
 
-This supporting unit supplies topology for comparing an actual conjugated
+This module supplies topology for comparing an actual conjugated
 parabolic with another parabolic sharing its actual Levi. It proves neither
 same-Levi independence of normalized induction nor the whole
 `RationalInducedK0WeylConjugacyStatement`. All representation, genericity,

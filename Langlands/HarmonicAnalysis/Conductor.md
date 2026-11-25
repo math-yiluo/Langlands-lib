@@ -1,6 +1,6 @@
 # Character conductors on the specified p-adic field
 
-Worker 20 constructs the additive and multiplicative character conductors from
+This module constructs the additive and multiplicative character conductors from
 the actual discrete valuation of `T : F.TopologicalData`. The field is an
 arbitrary finite extension of the specified `Q_p`, with its independently
 supplied topological realization. The module uses the common
@@ -17,9 +17,9 @@ The module proves this fractional-ideal identification explicitly:
 membership is equivalent to `x / T.uniformizer^(-n)` belonging to the actual
 `T.Integers`. It proves that the discrete and underlying valuations have the
 same integer ring and derives the chosen uniformizer's valuation directly
-from the accepted constructor. In particular the level-zero lattice is
-exactly the actual integer ring. No normalization theorem from a pending
-project proof is imported.
+from the published constructor. In particular the level-zero lattice is
+exactly the actual integer ring. No normalization theorem from
+`Langlands.LocalField.Normalization.Proof` is imported.
 
 The proof of `exists_additiveLattice_subset` transports the actual valuative
 neighborhood basis through the ordered value-group isomorphism to
@@ -51,7 +51,7 @@ field-unit group. The proof uses the topological embedding of field units
 into the field, translates an ambient neighborhood by one, and applies
 the additive-lattice cofinality theorem. A continuous complex quasicharacter
 therefore maps some `Uⁿ` into the disk of radius `1/2` around one. All powers
-remain in `Uⁿ`, so the accepted complex power estimate forces every value
+remain in `Uⁿ`, so the published complex power estimate forces every value
 there to equal one. This works for arbitrary continuous quasicharacters;
 unitarity is not an additional hypothesis.
 
@@ -74,7 +74,7 @@ The original page was read visually. The least/greatest-element constructions
 and the existence arguments are implementation choices proving the intrinsic
 obligations of these source definitions.
 
-The project imports are present in the independently reviewed Library at commit
+The project imports are present in the Library at commit
 `843c574c920aa9926ab56adf662c74b3cd4ed0e1`:
 
 - `Langlands.HarmonicAnalysis.Basic` supplies the character types.
@@ -87,14 +87,12 @@ The project imports are present in the independently reviewed Library at commit
   the proved geometric-sum estimate, not a no-small-subgroups assumption.
   Its published statement is
   `Langlands.ContinuousComplexCharacterOpenKernel`.
-- The pinned environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`,
-  version 1: Lean 4.34.0 and Mathlib
+- The module was built with Lean 4.34.0 and Mathlib
   `5ed2965256430c3649e86755f9576b54eca72435`. Mathlib supplies the valuative
   neighborhood basis, circle power lemma, unit embedding, and integer/natural
   extremal-element theorems used in the proofs.
 
 Native compilation of the complete module succeeded without diagnostics.
-This is a development check, not independent acceptance or publication.
 The abelian epsilon expressions, conductor transformation theorems, local
 functional equations, and the nonabelian epsilon-system theorem are separate
 obligations. This module defines or assumes no epsilon constant.

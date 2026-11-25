@@ -1,7 +1,5 @@
 # Signed quotient-curve bounds from pseudo-reductivity
 
-Authors: Worker 1549, Worker 1547, and Worker 317.
-
 This internal construction works over an algebraically closed field in universe
 `u`, in every characteristic. It specializes the proved unipotent curve bound
 to an actual signed dynamic direction and then transfers the bound to roots
@@ -41,15 +39,16 @@ Its positive-root bound then gives equality of any two actual roots with
 strictly positive pairing against the original `ν`. This argument uses no
 division by two and imposes no characteristic restriction.
 
-The provenance is internal. Worker 1547 implemented the existing signed curve
-assembly in `Reductive.RankOneCurvePositiveRoots`; Worker 1549 adapts it using
+The provenance is internal. The module adapts the existing signed curve
+assembly in `Reductive.RankOneCurvePositiveRoots`, using
 the proved pseudo-reductive unipotent curve constructor and the earlier signed
-tangent bridge. Worker 317 contributed the normality and action-kernel route
-used by the unipotent curve bound. This pair reuses those actual constructions
+tangent bridge. The unipotent curve bound uses a normality and action-kernel
+route. This pair reuses those actual constructions
 and their stated hypotheses.
 
 Existence of the proper solvable closed subgroup and its quotient, the
 quotient's curve dimension, symmetrized-centralizer containment, pairwise
 integral root dependence, and the nonidentity normalizer class remain
-supplied. The unrestricted `RankOnePositiveRootUniquenessStatement` remains
-a separate proof obligation.
+supplied. The unrestricted `RankOnePositiveRootUniquenessStatement` is not
+proved here; its proof is `rankOnePositiveRootUniqueness` in
+`Reductive.RankOnePositiveRootProof`.

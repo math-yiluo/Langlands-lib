@@ -109,10 +109,7 @@ form of the Corollary in §8.6, and Lapid (2011), Proposition 6 (p. 329), give
 the same facts for general inducing data. The Library states them as
 `EisensteinMeromorphicContinuationStatement`,
 `EisensteinJointRootHyperplaneStatement` and
-`EisensteinImaginaryAxisHolomorphyStatement`; their proof tasks are Task 5499
-(`1b5b4ce6-41e1-412f-a47c-c378bf0f4bb7`), Task 7946
-(`9a805465-f97d-4247-8691-02262024935c`) and Task 5613
-(`ccfc4843-fa56-468c-bf2f-811151ff64c8`). Deriving the present statement from
+`EisensteinImaginaryAxisHolomorphyStatement`. Deriving the present statement from
 them also needs the comparison of the two-block parabolic of
 \(\mathrm{GL}_N\) with the group-scheme formalism (presentation, Iwasawa
 compact, heights and sections), described in

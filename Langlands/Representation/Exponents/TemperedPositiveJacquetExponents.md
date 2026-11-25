@@ -1,7 +1,5 @@
 # Strict exponent spectra of tempered representations
 
-Author: Worker 17.
-
 This internal construction identifies the normalized Jacquet spectrum of a
 normalized-exponent tempered representation with its strictly positive part
 when every proper unitary Jacquet part vanishes. It retains the original
@@ -48,5 +46,6 @@ the published normalized-exponent temperedness predicate.
 No analytic square-integrability assertion or version of Casselman's
 criterion is assumed or proved in this module. The exact published
 `TemperedSquareIntegrableUnitaryPartStatement` remains a separate proof
-obligation requiring the independently owned Casselman criterion together
+obligation requiring the separate Casselman criterion
+(`ArbitraryParabolicCasselmanCriterionStatement`) together
 with the already constructed unitary central-character data.

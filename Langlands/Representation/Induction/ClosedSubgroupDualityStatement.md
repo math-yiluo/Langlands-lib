@@ -6,9 +6,8 @@ space).
 The module contains one **statement**, the `Prop`-valued definition
 `ClosedInductionSmoothDualityStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published map
-[iii2-hecke-induction](../../../notes/renard/iii2-hecke-induction.md) (Task 5296) records that
+The published map
+[iii2-hecke-induction](../../../notes/renard/iii2-hecke-induction.md) records that
 the III.2.7 Theorem for an arbitrary closed subgroup, with its quotient-measure pairing, is a
 gap. The published restricted result `exists_integralDualEquiv_of_section`
 ([CompactQuotientSmoothDuality](CompactQuotientSmoothDuality.md)) needs a compact quotient, a
@@ -24,7 +23,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.2.7, printed p.78 / PDF p.84:
+The passage read for this statement is III.2.7, printed p.78 / PDF p.84:
 
 > Théorème. Soit `H` un sous-groupe fermé du groupe t.d. `G`, et soit `(ρ, W)` une
 > représentation lisse de `H`. On a alors un isomorphisme naturel
@@ -78,7 +77,7 @@ such that for every `h ∈ Ind_H^G(W̃)` and `f ∈ ind_H^G(W ⊗ δ_{H\G})` the
 
 - **The integral over `H \ G`.** Renard's `dν_{H\G}` is the invariant positive functional of
   II.3.9. The statement quantifies over every nonzero right-invariant linear form `ν` on the
-  published `renardSpace`. The published `InvariantFunctionalStatement` (Task 5524) asserts
+  published `renardSpace`. The published `InvariantFunctionalStatement` asserts
   that such forms exist, form a line, and that the line contains a positive one. So the
   source's functional is one admissible `ν`, and the statement covers it. For any other
   `ν = c ν_{H\G}` with `c ≠ 0` the pairing is scaled by `c`, which is still perfect.
@@ -124,7 +123,8 @@ is bijective.
 
 ## Remaining obligations
 
-The proof is a separate obligation. It does not need the published
+The proof is `closedInductionSmoothDuality`, in the separate module
+`ClosedSubgroupDualityProof`. It does not need the published
 `InvariantFunctionalStatement`, since the argument above uses only that `ν` is invariant and
 nonzero.
 

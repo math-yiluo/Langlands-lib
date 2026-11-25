@@ -1,7 +1,7 @@
 # The derivative-comparison induction for the MW recursion
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerLabelInduction`,
-namespace `Langlands.MoeglinWaldspurger.Derivation`. Author: Worker 5735.
+namespace `Langlands.MoeglinWaldspurger.Derivation`.
 
 Fix a cuspidal datum `ρ` (saturated universe) and a real `x`. `HeadClass b n c` says that `c`
 is the class of a Langlands head of `realize ρ x b` in rank `n`; `LabelClass b n c` that `c` is

@@ -49,8 +49,9 @@ All declarations are in the namespace `Langlands.GroupScheme`.
   `B : Subgroup (rationalPoints G)`. Its only additional premise is
   `IsAlgebraicallyBounded K G.X (B : Set (rationalPoints G))`. It asserts that
   there exists a submodule `Λ` of `Fin n → K` over the canonical valuation
-  integer ring with `ρ.IsStableLatticeFor B Λ`. Its proof is left to a
-  separate successor task.
+  integer ring with `ρ.IsStableLatticeFor B Λ`. It is not proved in this
+  module; the separate module `Langlands.GroupScheme.BoundedSubgroupStableLatticeProof`
+  proves it as `boundedSubgroupStableLattice`.
 
 `IsAlgebraicallyBounded` is the Library's form of KP Definition 2.2.1. Every
 global regular function `f` on the actual affine scheme `G.X` has a nonzero
@@ -153,7 +154,7 @@ every `g ∈ B`. By the helper, each entry of each such matrix is bounded. The
 valuation is totally ordered, so one nonzero `c` bounds all `n²` entries, and
 then `Λ ⊆ c · O^n`. The module `c · O^n` is finitely generated over the
 Noetherian ring `O`, so `Λ` is finitely generated. These are proof obligations
-of the successor task, not input assumptions.
+of the existence proof, not input assumptions.
 
 ## Consumer
 

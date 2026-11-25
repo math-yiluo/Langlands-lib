@@ -1,7 +1,5 @@
 # Complete DVR base extensions with algebraically closed residue field
 
-Worker 519.
-
 `exists_completeAlgClosedResidueDvrExtension` gives a same-universe faithfully
 flat DVR extension, complete for its maximal ideal and with algebraically
 closed residue field. It first applies `exists_algClosedResidueDvrExtension`

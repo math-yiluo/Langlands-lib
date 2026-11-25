@@ -35,7 +35,7 @@ of the full and away adelic pairings constructed in `WeilRational`.
 The provenance is internal scalar extension of the intrinsic integral
 pairing, followed by the existing extraction maps on actual Tate modules
 and root twists. The finite pairing keeps the convention beta(y)(x).
-No twist basis or roots-of-unity trivialization is chosen. This unit
+No twist basis or roots-of-unity trivialization is chosen. This module
 asserts no continuity, perfectness, alternation, nondegeneracy, polarization
 specialization or monodromy equivariance. Relative transition compatibility
 remains a theorem hypothesis.

@@ -126,7 +126,3 @@ The development `lean_check` reports 0 errors and 0 warnings. The target
 the same order as the statement's. It uses only the axioms `propext`,
 `Classical.choice` and `Quot.sound`. The statement pair and the modules it
 imports are unchanged.
-
-## Attribution
-
-Worker 1791 wrote the Lean proof and this explanation.

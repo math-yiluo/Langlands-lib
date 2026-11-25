@@ -5,7 +5,7 @@ The first section is in namespace `Langlands.HarmonicAnalysis.TorusFourier` (gen
 results), the second in `Langlands.HarishChandraSchwartz` (actual rational points). It imports:
 
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalValuationCoordinates` (with
-  `TorusLatticeDuality`; Worker 249, accepted candidate 2863d106): the lattice coordinates `n = rationalValuationCoordinates G hG`,
+  `TorusLatticeDuality`): the lattice coordinates `n = rationalValuationCoordinates G hG`,
   `rationalUnitaryUnramifiedCharacter_apply`, `rationalSplitLattice hG s` (written `Λ_s`),
   `mem_rationalSplitLattice`, `finiteIndex_rationalSplitLattice`,
   `coordinates_symm_mem_restrict_ker_iff`, `latticeAnnihilator`, `finite_latticeAnnihilator`,
@@ -56,7 +56,7 @@ definition that writes Waldspurger's integrand in terms of a function on `Im X(G
   `rationalUnitaryUnramifiedCharacterHaar s hs hindex`, and the sum over `ω ∈ O` by a sum over
   `χ ∈ Im X(G)`. The orbit is `O = Im X(G)/S` for the finite stabilizer `S` of `ω₀` (III.7). The
   passage from `Im X(G)` to `O`, with its factor `|S|`, is made in the module
-  `RationalOrbitFourierInversion` submitted with this one.
+  `RationalOrbitFourierInversion`, ported together with this module.
 - The measure `ν` on `A_G` is an arbitrary left invariant measure. Its value
   `ν(A_G ∩ G¹)` appears in the result; Waldspurger's normalization `mes(A_G ∩ K) = 1` is not
   imposed.
@@ -191,7 +191,7 @@ sums, vanishing of all central projections); this module applies its
 and `TorusLatticeDuality` supply the torus inversion and the lattice annihilators.
 `RationalCharacterHaar` supplies the I.1 measure on `Im X(G)`. No other Library declaration
 states Fourier inversion over `A_G` for functions on `Im X(G)`. `RationalOrbitFourierInversion`
-(submitted with this module) transfers the results to a discrete-series orbit.
+(ported together with this module) transfers the results to a discrete-series orbit.
 
 ## Open obligations
 

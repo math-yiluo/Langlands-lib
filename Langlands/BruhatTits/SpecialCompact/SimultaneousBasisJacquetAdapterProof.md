@@ -1,7 +1,5 @@
 # Proof of the actual simultaneous-basis Jacquet adapter
 
-Author: Worker 4067.
-
 `Langlands.BruhatTits.SpecialCompact.simultaneousBasisJacquetAdapter` proves
 the published proposition
 `Langlands.BruhatTits.SpecialCompact.SimultaneousBasisJacquetAdapterStatement.{u}`

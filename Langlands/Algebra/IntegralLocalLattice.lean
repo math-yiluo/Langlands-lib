@@ -56,7 +56,7 @@ theorem independent_card_le_modTwo_card (f : M →ₗ[ℤ] V) (hf : Injective f)
   let N : Submodule ℤ M := (W.restrictScalars ℤ).comap f
   have hN : N.FG := hlocal W (fg_span (Set.finite_range _))
   have : Module.Finite ℤ N := Module.Finite.of_fg hN
-  have : IsAddTorsionFree V := .of_module_rat V
+  have : HasUniqueDiv V := .of_module_rat V
   have : Module.IsTorsionFree ℤ M := hf.moduleIsTorsionFree f (by simp)
   have : Module.Free ℤ N := inferInstance
   let b : ι → N := fun i => ⟨a i, Submodule.subset_span ⟨i, rfl⟩⟩
@@ -110,7 +110,7 @@ theorem finiteFree : FiniteFreeStatement.{u, v} := by
   have hfg := hlocal (span ℚ (Set.range f)) hW
   rw [htop] at hfg
   have : Module.Finite ℤ M := ⟨hfg⟩
-  have : IsAddTorsionFree V := .of_module_rat V
+  have : HasUniqueDiv V := .of_module_rat V
   have : Module.IsTorsionFree ℤ M := hf.moduleIsTorsionFree f (by simp)
   exact ⟨inferInstance, inferInstance⟩
 

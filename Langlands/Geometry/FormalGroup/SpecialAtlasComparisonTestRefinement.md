@@ -1,6 +1,6 @@
 # Actual refined-chart and scalar-test comparison squares
 
-This internal unit connects actual comparisons between original test charts
+This module connects actual comparisons between original test charts
 with their actual refined chart maps and supplied coefficient-chart maps.
 All square edges retain their given actual inverse formal maps.
 

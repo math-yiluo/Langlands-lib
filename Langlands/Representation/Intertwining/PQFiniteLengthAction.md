@@ -41,7 +41,7 @@ endomorphisms. That range is finite dimensional by `finite_hom`.
 `finite_actionQuotient` then uses the published injection of the faithful
 commutative action quotient into the actual operator span.
 
-This unit does not prove finite-length preservation by Jacquet or induction
+This module does not prove finite-length preservation by Jacquet or induction
 functors, or finite length of the full geometric pieces in VII.3.3. Those are
 separate remaining inputs when applying it to those pieces. It does not prove
 the exact `PQRegularityLemmaStatement`.

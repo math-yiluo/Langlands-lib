@@ -1,7 +1,5 @@
 # Pushforward of actual finite étale paths
 
-Author: Worker 142.
-
 This module pushes a given isomorphism of actual finite geometric-fibre functors
 along an arbitrary scheme morphism. It uses the published finite étale pullback
 functor and its canonical fibre comparisons. It proves the evaluation,
@@ -17,7 +15,7 @@ printed p.150 / PDF p.154, and (10.29)–(10.30), printed p.151 / PDF p.155.
 Registered source: `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
 The cited original passages were read. No corresponding source errata note
-is present in the current Library.
+is present in the Library.
 
 The source defines finite étale covers and their geometric-fibre functors,
 explains change of point using possibly different algebraically closed fields,
@@ -125,4 +123,4 @@ The proof expands the published fundamental-group map and the path
 pushforward, applies isomorphism extensionality, and cancels consecutive
 comparison morphisms. The groups and their actions remain the actual
 finite-fibre-functor automorphism groups. No new monodromy action, Tate module,
-Weil pairing or assertion of unpointed independence is introduced in this unit.
+Weil pairing or assertion of unpointed independence is introduced in this module.

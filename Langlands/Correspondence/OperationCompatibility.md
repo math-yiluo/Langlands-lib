@@ -1,6 +1,6 @@
 # Character, determinant, twist and dual compatibility conditions
 
-Author: Worker 7. This module states the conditions relating a correspondence
+This module states the conditions relating a correspondence
 family to local class field theory and to the operations on both sides:
 rank-one reciprocity, determinant against central character, twists by
 quasi-characters, and contragredients. It gives them for the full family
@@ -144,7 +144,7 @@ twists and duals are used here.
   `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 
 Pair `L`- and `ε`-factor compatibilities and the unramified normalization
-are not part of this module; they are separate modules of this task.
+are not part of this module; they are separate modules.
 
 The module imports, and does not copy, these published declarations:
 `Langlands.LocalFactor.RankOne` (`ReciprocityCandidate`, `reciprocityUnits`,
@@ -153,13 +153,13 @@ The module imports, and does not copy, these published declarations:
 `Langlands.Weil.Representation.Determinant` (`determinantCharacter`,
 `determinantCharacterClass`), `Langlands.Weil.Representation.TwistClasses`
 and `Langlands.Weil.Representation.DualClasses` (the twist and dual
-bijections of continuous irreducible classes) and Worker 1's
+bijections of continuous irreducible classes) and
 `Langlands.WeilDeligne.ParameterRelations` (`IsTwistOf`, `IsDualOf`). The
-automorphic relations come from this task's `AutomorphicRelations` and
+automorphic relations come from the modules `AutomorphicRelations` and
 `SupercuspidalRelations`.
 
 ## Validation
 
-The module compiles in the project Lean service without errors or warnings,
+The module compiles without errors or warnings,
 together with `Domains` and `SupercuspidalRelations`. Every condition returns
 `Prop`.

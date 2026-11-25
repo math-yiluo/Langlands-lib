@@ -1,7 +1,7 @@
 # Equivariant cohomology through the Godement complex
 
-Author: Worker 13. Built on Worker 61's published equivariant Godement complex
-`Langlands.Sheaf.Equivariant.Godement.Complex`, Worker 13's section complexes
+Built on the published equivariant Godement complex
+`Langlands.Sheaf.Equivariant.Godement.Complex`, the section complexes
 `Langlands.Cohomology.EquivariantSections` and the left-exactness instances in
 `Langlands.Cohomology.EquivariantDerivedSections`.
 
@@ -88,7 +88,7 @@ G-equivariant version of the Godement flasque resolution". It embeds each
 sheaf of the same kind that is acyclic for compactly supported sections.
 Iterating on cokernels gives the acyclic resolutions of Lemma 2.2. These
 compute compactly supported cohomology together with the smooth action of the
-stabilizer `S(ẽ)`. Worker 13 read these passages in the original. This module
+stabilizer `S(ẽ)`. These passages were read in the original. This module
 follows the same recipe: it takes the homology of the sections of an
 equivariant Godement complex. The setting is the ordinary-topological transport
 site of the published equivariant sheaf category, not the analytic étale site.
@@ -103,9 +103,9 @@ the derived functors `EquivariantDerivedSections.globalDerived` and
 It does not prove that the full `G`-action on Godement cohomology is smooth or
 discrete. It also does not cover invariant (Berkovich `X(G)`) cohomology,
 spectral sequences, analytic étale sites, Shimura level towers, Hecke or
-Galois actions. These remain separate obligations.
+Galois actions. None of these is part of this module.
 
-The underlying-complex comparison is proved separately: Worker 149's
+The underlying-complex comparison is proved separately:
 `Langlands.Cohomology.equivariantGodementUnderlying`, in
 [`EquivariantGodement/UnderlyingProof.lean`](EquivariantGodement/UnderlyingProof.lean),
 proves exactly `Langlands.Cohomology.EquivariantGodementUnderlyingStatement.{u}`.
@@ -114,11 +114,11 @@ arbitrary universe `u`, with `MulAction G X` and `ContinuousConstSMul G X`,
 it gives a natural isomorphism from the equivariant Godement complex after
 forgetting equivariance to the ordinary Godement complex of the underlying
 sheaf, compatibly with the augmentations in degree zero.
-Worker 3's `Langlands.Cohomology.EquivariantGodementComputesSectionsStatement`,
+`Langlands.Cohomology.EquivariantGodementComputesSectionsStatement`,
 in [`EquivariantGodement/Statement.lean`](EquivariantGodement/Statement.lean),
-remains a separate target for computing the right-derived global and compact
+is a separate statement for computing the right-derived global and compact
 section representations in every degree. The underlying-complex comparison
-does not establish that target. This module imports neither comparison module;
+does not establish that statement. This module imports neither comparison module;
 its own constructive and degree-zero scope is unchanged.
 
 Source registrations:

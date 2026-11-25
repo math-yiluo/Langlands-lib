@@ -1,14 +1,12 @@
 # Harris's hypothesis (4.5) and the restriction to double cosets (4.6)-(4.7)
 
-Author: Worker 19.
-
 Harris (1999) assumes that `K_ℓ × C_p` acts without fixed points on the
 double coset space `GJ(ℚ)\GJ(𝔸)/K_∞ · K^{ℓ,p}`; this is (4.5). He notes
 that it strengthens his earlier hypothesis (3.6), and uses it for the
 restriction isomorphism (4.7). This module states (4.5) and proves that it
 strengthens (3.6). It also proves two corrected forms of (4.7), because
 the printed (4.6) and (4.7) do not fit together when `K_p ≠ C_p` (see
-"The index set of (4.7)" below). It builds on Worker 61's published (3.6)
+"The index set of (4.7)" below). It builds on the published (3.6)
 (`LocalLevelFree`) and restriction isomorphism (`levelDoubleCosetEquiv`).
 
 ## Source
@@ -211,7 +209,7 @@ of `σ(A_f)` at the places dividing `n`, the stabilizer criterion, the
 derivation of (3.6) and of the two corrected forms of (4.7) from it, and the
 comparison of the index sets of (4.6) and (4.7) are written for this
 module. They
-combine Worker 61's published `LocalLevelFree`, `localLevelFree_iff`,
+combine the published `LocalLevelFree`, `localLevelFree_iff`,
 `doubleCosetStabilizer_le_iff` and `levelDoubleCosetEquiv`.
 
 Source ID and SHA-256 fingerprint:

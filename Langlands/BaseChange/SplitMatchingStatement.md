@@ -43,9 +43,10 @@ locally with `letI ... := borel _` and `BorelSpace` instances `⟨rfl⟩`. Let
   (`μE` integrates every split tensor `ψ₀ ⊗ ⋯ ⊗ ψ_l` to `∏ i, ∫ ψ i dμF`);
 - **(b)** for every Haar measure `μE` on `GL_n(F^{l+1})` with `IsSplitProductHaar μF μE` and
   every `ψ : Fin (l + 1) → SchwartzBruhat (GL_n(F))`, the functions
-  `splitTensor (fun i => ψ i)` on `GL_n(F^{l+1})` (Task 7457: `g ↦ ∏ i, ψ i (g_i)`) and
+  `splitTensor (fun i => ψ i)` on `GL_n(F^{l+1})` (`Langlands.BaseChange.CuspForm`:
+  `g ↦ ∏ i, ψ i (g_i)`) and
   `convolutionProduct μF ψ` on `GL_n(F)` (`ψ 0 * (ψ 1 * (⋯ * ψ l))`, convolution for `μF`)
-  satisfy Task 7416's `AreConcordant σ (l + 1) μF μE`: the orbital integrals of the
+  satisfy `AreConcordant σ (l + 1) μF μE` (`Langlands.BaseChange.OrbitalIntegral`): the orbital integrals of the
   convolution product vanish at the regular semisimple non-norms, and for every pair
   `(δ, γ)` of associated elements with `γ` regular semisimple, the σ-orbital integral of the
   split tensor at `δ` equals the orbital integral of the convolution product at `γ`, for all
@@ -76,8 +77,8 @@ a Haar measure `μF` on `GL_n(F)`; II.2.6 explains how concordance passes in gen
 compactly supported functions to functions with a central character, by averaging over the
 centre (`f ↦ f_ω`, `φ ↦ φ_χ`), which is not formalized here. At the auxiliary place `v₂`,
 split in `E` (II.6.8, printed p. 124), II.6.10 allows any concordant pair `(φ_{v₂}, f_{v₂})`
-supported in `G(E_{v₂})_{σ-r} × G(F_{v₂})_r` and prescribes no pure tensor. Statement 10
-(`SplitSigmaLiftStatement`) matches the representations at split places
+supported in `G(E_{v₂})_{σ-r} × G(F_{v₂})_r` and prescribes no pure tensor.
+`SplitSigmaLiftStatement` matches the representations at split places
 (`Π_v = π_v ⊗ ⋯ ⊗ π_v`).
 
 ## Proof idea (not formalized)
@@ -121,7 +122,7 @@ the hypothesis of (b) can be met for every `μF`.
 
 ## Dependencies and names
 
-The module imports `Langlands.BaseChange.SplitPlace` (this task: `splitCyclicShift`,
-`convolutionProduct`, `IsSplitProductHaar`), Task 7457's `splitTensor` (through `SplitPlace`)
-and Task 7416's `Langlands.BaseChange.OrbitalIntegral` (`AreConcordant`), with the names and
-argument orders cited in the task.
+The module imports `Langlands.BaseChange.SplitPlace` (`splitCyclicShift`,
+`convolutionProduct`, `IsSplitProductHaar`), `splitTensor` of `Langlands.BaseChange.CuspForm`
+(through `SplitPlace`) and `Langlands.BaseChange.OrbitalIntegral` (`AreConcordant`), with the
+names and argument orders of those modules.

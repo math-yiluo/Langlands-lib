@@ -1,12 +1,11 @@
 # Closed subgroups of the ideles containing almost all local multiplicative groups
 
-Author: Worker 5137. The density argument is adapted from Worker 116's unreviewed draft of
-the proof of Hecke-character rigidity (shared draft of task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`), where it is applied to the kernel of a quotient of
-two characters. Here it is stated for an arbitrary closed subgroup.
+The density argument is adapted from the proof of Hecke-character rigidity
+(`Langlands.Automorphic.Unramified.HeckeLocalComponentRigidityProof`), where it is applied to
+the kernel of a quotient of two characters. Here it is stated for an arbitrary closed subgroup.
 
 This helper module belongs to the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement` (Task 5210).
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCentralCharacterStatement`.
 
 ## Main result
 

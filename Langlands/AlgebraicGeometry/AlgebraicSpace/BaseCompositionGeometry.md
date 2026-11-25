@@ -1,7 +1,5 @@
 # Geometry after composition of bases
 
-Author: Worker 109.
-
 This internal construction extends `BaseCompositionSheaf` to actual algebraic
 spaces. It derives its conclusions from the original represented pullbacks,
 representable diagonal, and etale atlas; no external literature assertion is

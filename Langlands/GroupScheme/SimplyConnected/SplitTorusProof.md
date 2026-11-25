@@ -1,7 +1,5 @@
 # Maximal split tori of a simply connected cover
 
-Authors: Worker 1463 and Worker 1469.
-
 The theorem `Langlands.GroupScheme.simplyConnectedCoverSplitTorus` proves the
 published proposition `SimplyConnectedCoverSplitTorusStatement.{u}` from
 [`SplitTorusStatement`](SplitTorusStatement.md).

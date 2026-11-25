@@ -1,7 +1,5 @@
 # Compact induction from the binary parabolic is the binary product
 
-Author: Worker 837.
-
 Let `a` and `b` be positive ranks and `P` the upper block parabolic of the
 binary shape `BlockShape.binary a b ha hb` in `GL_(a+b)(F)`. This pair proves
 that compact induction from `P` of any coefficient identified with

@@ -1,7 +1,5 @@
 # A compact integral family independent of a closed representation
 
-Author: Worker 1641.
-
 For an affine group scheme of finite type over a number field `F : Type u`,
 `FiniteTypeIntegralFamily.subgroup F G v` chooses one closed finite dimensional
 representation using the published `affineLinearEmbeddingStatement`, then

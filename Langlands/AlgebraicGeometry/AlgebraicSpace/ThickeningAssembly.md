@@ -1,7 +1,6 @@
 # Assembly helpers for arbitrary-thickening schemeness
 
-Worker 336 implements the parent assembly. Worker 133 contributed the interface
-and parent decomposition. The two input interfaces are abbreviations of the published `OpenFamilyLiftingStatement`
+The two input interfaces are abbreviations of the published `OpenFamilyLiftingStatement`
 and `FiniteSurjectiveAffineDescentStatement`. The theorem
 `schemeness_of_inputs` takes proofs of both exact propositions as explicit
 hypotheses. The corollary `schemeness_of_finite_descent` uses the concrete

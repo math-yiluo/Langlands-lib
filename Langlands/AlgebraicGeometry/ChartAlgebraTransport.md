@@ -1,7 +1,5 @@
 # Compatible point transport from chart algebra transitions
 
-Worker 632.
-
 This internal construction takes a functorial family of chart-transition
 isomorphisms between the actual tensor algebras `T tensor_B C` for specified
 chart maps `B → T`. It retains the identity, cocycle and coefficient-naturality
@@ -19,5 +17,5 @@ hypothesis is needed.
 
 The construction is an internal preparation for converting the functorial
 algebra data in finite étale chart descent into the existing faithfully flat
-algebra coaction. It does not yet construct the descended algebra or assert
-effectivity of the chart datum.
+algebra coaction. It does not construct the descended algebra or assert
+effectivity of the chart datum; `ChartAlgebraDescent` does.

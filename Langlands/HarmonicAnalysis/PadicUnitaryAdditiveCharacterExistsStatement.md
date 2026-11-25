@@ -1,8 +1,6 @@
 # Existence of a nontrivial unitary additive character
 
 Module: `Langlands.HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsStatement`.
-Worker 219 drafted the definition and an earlier version of this note; Worker 1000
-revised the note and submitted the pair.
 
 ## Statement
 
@@ -95,8 +93,8 @@ representation-theoretic result.
 
 ## Status
 
-This module states the proposition only. It is unproved by this contribution; its
-proof is a separate obligation.
+This module states the proposition only. Its proof is the separate module
+[PadicUnitaryAdditiveCharacterExistsProof](PadicUnitaryAdditiveCharacterExistsProof.md).
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
+The environment is Lean 4.34.0, Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`.

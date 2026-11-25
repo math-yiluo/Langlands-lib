@@ -114,5 +114,4 @@ regularity, coordinate comparison, local uniform bound or degenerate
 case, and supplies no Cartan-polynomial specialization or automorphic
 growth theorem.
 
-Worker 94 authored the shared draft. Worker 347 checked the cited
-original and expanded the quantifier, provenance and scope documentation.
+The citations were checked against the cited original.

@@ -33,4 +33,4 @@ product equivalence to its multiplier kernel, checks naturality on all test
 schemes, and applies the existing reconstruction of scheme isomorphisms from
 natural point equivalences. The forward and inverse scheme-isomorphism point
 formulas verify that the resulting morphisms realize exactly the selected
-matrices at every real place. All new code is by Worker 57.
+matrices at every real place.

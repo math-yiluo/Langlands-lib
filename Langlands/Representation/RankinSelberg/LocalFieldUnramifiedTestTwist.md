@@ -67,4 +67,5 @@ as `UnramifiedGammaTwist.pair_both`, and over `PadicField` as `padic_pair_both`.
 module only identifies the unramified character `χ_z` with `|·|^u` over an arbitrary
 nonarchimedean local field and restates the transport for the general-field relations
 of `RankinSelberg/GeneralPairGamma`. It is used for the rank-one gamma factors
-`γ(s, π × χ_{z_i}, ψ)` in the corank-one spherical functional equation (Task 5680).
+`γ(s, π × χ_{z_i}, ψ)` in the corank-one spherical functional equation
+(`SphericalCorankOneFunctionalEquationStatement`).

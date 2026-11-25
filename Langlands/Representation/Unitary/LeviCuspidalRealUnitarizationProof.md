@@ -1,7 +1,5 @@
 # Real unitarization of irreducible cuspidal product-Levi representations
 
-Author: Worker 862.
-
 `Langlands.leviCuspidalRealUnitarization` proves the published proposition
 `Langlands.LeviCuspidalRealUnitarizationStatement.{uF,uV}`. Its type is
 exactly that proposition, with the field universe `uF` and the carrier

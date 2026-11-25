@@ -1,6 +1,6 @@
 # Free modules over `𝒪/ℓ^m𝒪[Γ]` are projective relative to objects killed by `ℓ ^ m`
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.HomSurjective` (`PowTorsionProjective`,
 `homSystem_map_surjective`, `isMittagLeffler_homSystem`,
 `towerHomEval_surjective`),
@@ -173,7 +173,7 @@ module over `k[G ⧸ K]`.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), proof of Proposition 4.10, printed p.312
-(one-based PDF page 14; Worker 61 read the rendered scanned page), after the
+(one-based PDF page 14; read in the rendered scanned page), after the
 definition of `T_m(j, ẽ)` and the maps (4.10.3) `T_{m+1}(j, ẽ) → T_m(j, ẽ)`:
 "Since `C^j_m(ẽ)^{H_p}` and `Hom(𝒪_m[C_p/H_p]^M, 𝓛_m)` are both free
 `𝒪/ℓ^m𝒪[S(ẽ)/H_p]`-modules, it follows that the maps (4.10.3) are surjective

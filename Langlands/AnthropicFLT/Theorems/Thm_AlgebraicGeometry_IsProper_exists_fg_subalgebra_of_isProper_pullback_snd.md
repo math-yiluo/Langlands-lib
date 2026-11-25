@@ -1,12 +1,12 @@
 # `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_IsProper_exists_fg_subalgebra_of_isProper_pullback_snd`
 
-Ported module of the proof submitted by task `e36ae7da-512e-4a4d-a902-71146c92ec82` (descent of properness to finitely generated subalgebras). Statement module (FLT `Theorems/`).
+Ported module of the proof of the descent of properness to finitely generated subalgebras. Statement module (FLT `Theorems/`).
 
 ## Source and licence
 
 Port of `Theorems/Thm_AlgebraicGeometry_IsProper_exists_fg_subalgebra_of_isProper_pullback_snd.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
@@ -26,7 +26,8 @@ States descent of properness over a noetherian base: for a noetherian ring `A₀
 whose base change `pullback.snd f (Spec A ⟶ Spec A₀)` is proper, and a finite `s ⊆ A`, there is a finitely
 generated `A₀`-subalgebra `T ⊇ s` of `A` such that the base change of `f` to `Spec T` is proper. This is
 the statement of `Langlands.AlgebraicGeometry.NoetherianApproximation.IsProperSubalgebraDescentStatement`,
-the target of task e36ae7da. The proof term applies the companion solution theorem.
+which the Library proves from this theorem as
+`Langlands.AlgebraicGeometry.NoetherianApproximation.isProperSubalgebraDescent`. The proof term applies the companion solution theorem.
 
 ## Declarations
 
@@ -36,5 +37,5 @@ Names, namespaces and statements are the FLT ones. Solution modules put their au
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_IsProper_exists_fg_subalgebra_of_isProper_pullback_snd` (ported by this task).
+Ported FLT modules imported: `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_IsProper_exists_fg_subalgebra_of_isProper_pullback_snd` (ported with this file).
 All modules also import `Mathlib`.

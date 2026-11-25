@@ -1,7 +1,5 @@
 # Finite affine fppf splitting covers
 
-Author: Worker 872.
-
 `RelativeMultiplicativeType.AffineSplittingCover H` packages a finite
 family of affine schemes mapping to the base, flatness and local
 finite presentation of all its maps, joint surjectivity on points,

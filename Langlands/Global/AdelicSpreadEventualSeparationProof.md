@@ -1,8 +1,5 @@
 # Eventual separatedness along the actual arithmetic integer diagrams
 
-Authors: Worker 208 (complete Lean proof draft); Worker 1596 (source and
-interface verification, explanatory Markdown and submission preparation).
-
 `Langlands.Global.adelicSpreadEventualSeparation` proves exactly
 `Langlands.Global.AdelicSpreadEventualSeparationStatement`, at arbitrary
 universe `u`, by specializing relative separatedness descent to the
@@ -52,5 +49,3 @@ initially nonseparated ones, and permits empty finite initial sets.
 Function-field constants are arbitrary perfect fields, and the specified
 finite rational-function extension need not be separable. It proves no
 local compactness assertion or existence of a spread for a field scheme.
-Its generic separation-descent and arithmetic-colimit dependencies have
-their own independent acceptance and publication obligations.

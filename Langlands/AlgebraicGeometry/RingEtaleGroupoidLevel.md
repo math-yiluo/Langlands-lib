@@ -1,7 +1,5 @@
 # Level groupoids of multiplicative coactions
 
-Author: Worker 266.
-
 ## Setting
 
 `t₀ : B₀ →+* C₀` is a ring étale groupoid (`RingEtaleGroupoid`, module

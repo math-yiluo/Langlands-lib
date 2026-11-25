@@ -107,19 +107,23 @@ declarations use only `propext`, `Classical.choice` and `Quot.sound`.
 
 The transitive Library import closure has 442 `Langlands` modules. It
 includes the published proofs of the actual p-adic geometric lemma
-(`Geometric.GeometricLemmaProof`), the associated filtration (task `6fe38fdd`)
-and the nonassociated subquotient vanishing (task `b17b8c8c`). Its only
+(`Geometric.GeometricLemmaProof`), the associated filtration
+(`CuspidalSupport.AssociatedProof`) and the nonassociated subquotient vanishing
+(`CuspidalSupport.NonassociatedJacquetSubquotientsProof`). Its only
 `Classification` modules are the target statement and the definition and
 support modules `Supercuspidal`, `SupercuspidalTwist`,
 `SupercuspidalContragredientStatement`, `SupercuspidalContragredientAux`,
 `Segments`, `ConstituentRelations` and `SupercuspidalSupport`. It contains no
 segment Jacquet, multisegment, tempered, square-integrable classification,
-quotient coverage or exhaustion module. No Markdown file in the closure cites
-any excluded task. So no conclusion or proof successor of the excluded tasks
-is used: segment constituents `67279e36`, segment Jacquet equivalence
-`ed48ae06`, and `aca8805b`, `3bfb61fa`, `ebea9a8a`, `20e4e1c6`, `52e97845`,
-`1cb45da2`, `cd8ab97c` and `bf433f0a`. The two-supercuspidal structure task
-`ab61f565` is not used. The full cuspidal Jacquet counts remain owned by
-tasks `6fe38fdd` (associated filtration) and `b17b8c8c` (nonassociated
-subquotients). This module imports their published proofs and does not
+quotient coverage or exhaustion module. So no conclusion of the following,
+nor any file proving one, is used: segment constituents, segment Jacquet
+equivalence, `SegmentEssentialSquareIntegrableClassification`,
+`MultisegmentHeadExhaustion`, `OrderedMultisegmentHeadExistence`,
+`OrderedMultisegmentQuotientExhaustion`, `TemperedBlockUniqueness`,
+`SquareIntegrableLanglandsClassification`, `SquareIntegrableLanglandsExhaustion`
+and `GLRegularLanglandsExhaustionStatement`. No two-supercuspidal
+product-structure result is used. The full cuspidal Jacquet counts are proved
+in `CuspidalSupport.AssociatedProof` (associated filtration) and
+`CuspidalSupport.NonassociatedJacquetSubquotientsProof` (nonassociated
+subquotients). This module imports these proofs and does not
 reprove them.

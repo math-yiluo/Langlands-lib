@@ -1,6 +1,6 @@
 # Renard IV.1.5 from completeness of irreducible Hecke actions
 
-Author: Worker 142. Module
+Module
 `Langlands.Representation.CompactCoefficient.CompactProjectionDistributionReduction`,
 namespace `Langlands.Renard.CompactRepresentation`.
 
@@ -14,8 +14,8 @@ The module defines the internal predicate
 HeckeCompletenessStatement.{u, v} → CompactProjectionDistributionStatement.{u, v}
 ```
 
-This is a reduction, not a proof of the premise or an unconditional proof of the
-task's target. The only retained premise is the already published completeness
+This is a reduction, not a proof of the premise or an unconditional proof of
+`CompactProjectionDistributionStatement`. The only retained premise is the already published completeness
 statement, Renard III.1.11. The target statement and all its imported files are
 unchanged.
 

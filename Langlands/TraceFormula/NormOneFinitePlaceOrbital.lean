@@ -66,9 +66,9 @@ def NormOneFinitePlaceOrbitalStatement : Prop :=
   let D := normOneFinitePlaceDecomposition K G v T i hi I e hc
   let ρ := normalizedPositiveHaarMeasure K G T i hi I e hc
   ∀ [MeasurableSpace M] [BorelSpace M] [μH.IsMulRightInvariant]
-    (a : Aut G) (_ha : i ≫ a.hom = i) (δ : H),
+    (a : Aut G) (_ha : i ≫ a.asIso.hom = i) (δ : H),
     let θ := (normOneAut K a).toMonoidHom
-    let θv := G.affinePointsTarget a.hom (placeCompletion K (.inr v))
+    let θv := G.affinePointsTarget a.asIso.hom (placeCompletion K (.inr v))
     let θJ := (normOneFinitePlaceKernelTwist K G v a).toMonoidHom
     let Cv := twistedCentralizer θv (D.symm δ).1
     let Cj := twistedCentralizer θJ (D.symm δ).2
@@ -117,7 +117,7 @@ theorem normOneFinitePlaceOrbital : NormOneFinitePlaceOrbitalStatement K G v T i
     normOneFinitePlaceDecomposition_twist K G v T i hi I e hc a ha p
   have hCv : IsClosed (Cv : Set M) :=
     isClosed_twistedCentralizer θv
-      (G.continuous_affinePointsTarget (placeCompletion K (.inr v)) a.hom) (D.symm δ).1
+      (G.continuous_affinePointsTarget (placeCompletion K (.inr v)) a.asIso.hom) (D.symm δ).1
   have hCj : IsClosed (Cj : Set J) :=
     isClosed_twistedCentralizer θJ
       (normOneFinitePlaceKernelTwist K G v a).continuous (D.symm δ).2

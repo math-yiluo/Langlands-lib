@@ -1,13 +1,5 @@
 # Conditional detection of actual fine induction quotients: proof
 
-Authors: Worker 845, Worker 526 and Worker 435. Worker 526 wrote the
-unreviewed compiled prototype of this module in the shared draft of task
-`ebf9d80c-dcd4-45c5-91f8-428ad29b1363`, revision 3. Its two generic Hom
-transports and the ambient composition adapt Worker 435's shared
-`RelativeCosocleAssembly` draft, revision 3. Worker 845 put the prototype
-theorem into the exact closed form of the target, removed two unneeded
-options and wrote this Markdown.
-
 `Langlands.fineOppositeJacquetQuotientDetection` has exactly the type
 `Langlands.FineOppositeJacquetQuotientDetectionStatement.{uF, uV, uW, uZ}`,
 the published proposition in
@@ -27,7 +19,7 @@ equivalence family in each. The naturality parts are discarded. This module
 does not prove either clause, and the theorem asserts its conclusion only
 under them.
 
-The Library now has a separate published proof of both clauses,
+The Library has a separate published proof of both clauses,
 `Langlands.Parabolic.normalizedSecondAdjointness` in
 `Parabolic.SecondAdjointnessProof`. This module neither imports nor uses it;
 the premises stay part of the proved implication.
@@ -132,7 +124,7 @@ assumed clauses (Casselman 2019, Chapter III) is recorded with
 analytic arbitrary-tempered quotient reflection, occurrence continuation, an
 equality or positivity of Hom dimensions, Jacquet semisimplicity, or an
 identification of Hom spaces with Jordan–Hölder multiplicities. It does not
-prove the parent J-specific comparison
+prove the J-specific comparison
 `Langlands.GLRelativeCosocleHomComparisonStatement`. It assumes no support,
 chamber, unitarity, finite-length or finite-dimensionality condition. The
 carriers may be infinite dimensional.

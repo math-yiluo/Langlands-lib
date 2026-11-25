@@ -1,6 +1,7 @@
 # Actual original-parabolic conjugation on face-weight vector layers
 
-This internal specialization for Task 7200 constructs the actual vector
+This internal specialization for the finite vector-bundle filtrations of
+supplied relative radicals constructs the actual vector
 quotient automorphism induced by a point of the original parabolic, and
 proves that it is linear over every coefficient algebra. All abstract
 geometric premises of `ParabolicVectorLayerLinearity` are discharged.
@@ -74,7 +75,7 @@ group-scheme morphism with the morphism of a single base-ring matrix.
 This equality therefore applies to every scheme test, including
 nonreduced tests. Empty exact-support sets are allowed throughout.
 
-The provenance is internal: this unit specializes the existing full
+The provenance is internal: this module specializes the existing full
 original-parabolic action, actual face-height realization and quotient
 equivariance, and the proved parabolic vector-layer linearity adapter.
 The only supplied objects are the face chart, the stated geometric
@@ -82,4 +83,4 @@ hypotheses, and an actual original-parabolic point. There is no field,
 noetherian, reducedness or positive-rank assumption. The nontrivial-ring
 hypothesis is retained from the existing actual parabolic comparison.
 Different-chart transitions, cover descent, and assembly of the final
-relative radical filtration remain parent-task obligations.
+relative radical filtration remain separate steps.

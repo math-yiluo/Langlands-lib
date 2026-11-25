@@ -1,8 +1,9 @@
 # The exceptional B2 relations for actual powered Weyl families
 
 This internal supporting statement connects the literal B2 power calculation
-to actual normalized root maps. It builds on Worker 685's rank-two arithmetic
-and commutator transport and on the powered-word constructions.
+to actual normalized root maps. It builds on the rank-two arithmetic of
+`RootDatumIsogenyRankTwo`, the commutator transport of
+`B2PowerCommutatorTransport` and the powered-word constructions.
 
 `PoweredB2WordRelations` consists of the two standard source short-long B2
 commutator formulas, expressed using the actual powered simple maps and their

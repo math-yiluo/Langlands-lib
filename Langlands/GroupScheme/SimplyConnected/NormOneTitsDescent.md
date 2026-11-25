@@ -2,7 +2,7 @@
 
 This internal construction is a prerequisite for the Tits normalization of
 the actual reduced-norm-one group `CentralSimpleUnits.normOne k A`. It does
-not yet assert an equality with the general Tits obstruction, or identify a
+not assert an equality with the general Tits obstruction, or identify a
 fundamental weight.
 
 Let `e : L ⊗[k] A ≃ₐ[L] Matrix I I L` be an actual splitting chart.
@@ -40,7 +40,7 @@ matrix algebra. Source
 `provided-24a63a63d1d1f52de3bb06c78f1f0b8837e492ae9eb6ee738ba647284515e9d2`,
 SHA-256
 `dbab2ec31991b639ce5461e2fe0713ff4bc5f4b9f01dfcdcc24e1a0794c5edb9`.
-This unit is an internal specialization of actual coefficient descent, not
+This module is an internal specialization of actual coefficient descent, not
 a claim that Tits states these Lean interfaces verbatim. The general
 obstruction comparison, first-fundamental-weight identification and
 contragredient sign law remain separate obligations.

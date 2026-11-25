@@ -2,7 +2,7 @@
 
 This internal construction proves compatibility of actual point transport and
 actual restriction on the supplied Harris polarized family. It uses the
-published `HarrisIntegralCMRestrictionFrames`,
+`HarrisIntegralCMRestrictionFrames`,
 `HarrisIntegralCMLevelPointComparison`, and Tate `WeilPathBaseChange`
 constructions. It makes no new assertion from external literature.
 
@@ -45,9 +45,9 @@ representative by definitional equality.
 `harrisIntegralCMFullActionLevelPointIso_raw` identifies the underlying raw
 class of the existing original fixed-level point isomorphism with precisely
 this raw point equivalence. This equality is also definitional. The original
-fixed-level comparison already has its published path-independence theorem;
-this contribution does not assert path independence for arbitrary raw
-classes.
+fixed-level comparison already has its path-independence theorem
+`harrisIntegralCMFullActionLevelPointIso_path_independent`; this module does
+not assert path independence for arbitrary raw classes.
 
 ## Restriction and point transport
 
@@ -57,8 +57,8 @@ evaluate at `t` and then transport along its actual `pathPushforward` on `T`.
 Both routes give the same frame at `u ≫ f.left`.
 
 Subtype and linear-equivalence extensionality reduce the proof to every
-actual rational Tate value. The published restriction value formula is the
-actual `rationalHomMap` for `homToHom0` of
+actual rational Tate value. The restriction value formula
+`harrisIntegralCMRestrictionFrameEquiv_apply` is the actual `rationalHomMap` for `homToHom0` of
 `relativeBaseChangeComparisonIso B f`, followed by actual
 `rationalBaseChange f.left`. Naturality `rationalTransport_homMap` moves the
 source path through that actual family homomorphism.
@@ -72,7 +72,7 @@ representative, and congruence of `RightOrbit.mk` applies the preceding frame
 square.
 
 `harrisIntegralCMRestrictionRawClass_pointMap` is the square for the existing
-original raw evaluation of an actual fixed level. The published equality
+original raw evaluation of an actual fixed level. The equality
 `harrisIntegralCMRestrictionRawClass_eq_rawEquiv` identifies both original
 evaluations with their actual frame-derived raw equivalences. The proved
 underlying-class formula for the original point isomorphism and the raw
@@ -81,7 +81,7 @@ square then give the result.
 `harrisIntegralCMFullActionLevelRestriction_pointMap` proves the corresponding
 square for the unchanged original fixed-level restriction map. Apply the
 injective actual raw evaluation equivalence to the underlying output classes.
-The published `harrisIntegralCMFullActionLevelRestriction_rawValue` recovers
+The theorem `harrisIntegralCMFullActionLevelRestriction_rawValue` recovers
 the original base classes, and the raw square proves their equality. Subtype
 extensionality recovers equality of the actual fixed levels.
 
@@ -97,6 +97,6 @@ These are compatibility results for a supplied family and supplied paths.
 They do not construct paths, compare arbitrary rational-isogeny moduli
 representatives, or construct a representing PEL scheme. The full normalized
 presheaf comparison, determinant/Lie and Rosati integration, output
-admissibility, smoothness, and division-case projectivity remain host
-obligations. `DivisionCMRepresentabilityStatement` and all imported
-Lean/Markdown pairs are preserved.
+admissibility, smoothness, and division-case projectivity are not done in this
+module; they belong to a proof of `DivisionCMRepresentabilityStatement`, which
+the Library does not prove.

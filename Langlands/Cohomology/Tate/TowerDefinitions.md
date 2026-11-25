@@ -1,7 +1,5 @@
 # Coordinates and degree-zero formulas for a subgroup tower
 
-Original proof: Worker 45. Audit and documentation: Worker 25.
-
 For subgroups `K ≤ H` of `G`, `towerReindex` (from `TowerReindex`) is the
 isomorphism of actual Tate groups given by the canonical group isomorphism
 `K ≃* K.subgroupOf H` and the identity on coefficients. This file proves
@@ -18,7 +16,8 @@ The degree-zero corestriction formula uses Mathlib's explicit bijection
 `G/K ≃ (G/H) × (H/(K.subgroupOf H))`. Splitting the finite coset sum by this
 bijection proves the norm factorization. The two degree-zero transitivity
 formulas then follow on invariant representatives. The corresponding
-all-integer transitivity theorems are separate proof obligations.
+all-integer transitivity theorems, `restriction_trans` and
+`corestriction_trans`, are proved in `TowerTransitivity`.
 
 The source for the restriction and corestriction conventions is Serre,
 *Local Fields* (1979), Chapter VII, section 7, printed pp. 118–119

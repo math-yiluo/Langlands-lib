@@ -1,7 +1,5 @@
 # Jacquet detection on segment induction support
 
-Author: Worker 165.
-
 This internal derivation concerns actual finite-length smooth representations
 and their exact Grothendieck classes. It does not assert effectivity of the
 Aubert operator.

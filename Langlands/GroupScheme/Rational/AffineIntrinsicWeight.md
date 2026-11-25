@@ -27,8 +27,8 @@ affine presentations of the same actual group and coefficient-point action.
 
 This supplies actual-map and affine-presentation independence. It does not
 construct the ambient conjugators, prove their compatibility with canonical
-face-cocharacter actions, or supply the remaining parabolic normalization,
-change-of-torus and effective descent data of Task 7200.
+face-cocharacter actions, or supply parabolic normalization,
+change-of-torus and effective descent data.
 
 `affinePointsTransformation` abbreviates the existing
 `Chevalley.affineMapNat`, whose affine-test natural transformation has the

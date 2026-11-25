@@ -1,7 +1,5 @@
 # The ordinary normalized CM presheaf on the full original test category
 
-Author: Worker 344.
-
 Fix an original Harris level whose Hodge image preserves the fixed Harris
 integral source span. This internal construction uses the ordinary quotient of
 the existing full Tate-normalized CM representatives. Its relation requires an

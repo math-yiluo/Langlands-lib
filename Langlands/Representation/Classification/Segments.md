@@ -1,7 +1,5 @@
 # Segments, multisegments and the representations `i(ρ, νρ, …, ν^(m-1) ρ)`
 
-Author: Worker 23.
-
 This module formalizes Zelevinsky's segments of irreducible supercuspidal classes
 of the groups `GL_r(F)` for a p-adic field `F`, his linkage relations and
 multisegments, and the induced representations `i(ρ, νρ, …, ν^(m-1) ρ)`. These

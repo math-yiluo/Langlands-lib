@@ -1,9 +1,9 @@
 # Actual product action on full semistandard spectral families
 
-Worker 268. This internal assembly uses the actual full semistandard family
+This internal assembly uses the actual full semistandard family
 of `RationalSemistandardSpectralFamily` and the published action in
 `ProductInducedOrbitFullAction`. It is a supporting construction for the
-invariant-subspace unit of Task 7258. It constructs the action before imposing
+invariant subspace of the invariant spectral families. It constructs the action before imposing
 the inter-parabolic invariant condition.
 
 The source is Waldspurger (2003), *La formule de Plancherel pour les groupes
@@ -29,8 +29,10 @@ all-test semistandard index, `chosenLeviModel p`, a split component `a p` with
 proof `ha p`, its normal split-center image, a measurable quotient with Haar
 measure `mu p`, and the compact-picture data `d p`. These choices do not become
 new coordinates of the intrinsic index. The projection continuity and actual
-Iwasawa factorization in `CompactData` remain visible inputs, with existence
-and model/compact-picture independence targets owned by Task 7229. This
+Iwasawa factorization in `CompactData` remain visible inputs; the existence
+and model/compact-picture independence targets are stated separately
+(existence is `CompactDataExistenceStatement`, proved in
+`RationalSemistandardCompactDataExistenceProof`). This
 construction needs no scalar continuation, density or orbit-measure
 normalization input.
 
@@ -71,7 +73,7 @@ intersection. `rationalSemistandardThetaSmoothObject` bundles this exact
 representation in the canonical complex `SmoothRep` category.
 
 The inter-parabolic invariant predicate and its stability under this action
-still require Task 7257's specified all-unitary normalized comparison and
-intrinsic fiber adapters. They are not asserted here. The construction does
+require the specified all-unitary normalized Weyl/intertwiner comparison
+(V.3) and intrinsic fiber adapters. They are not asserted here. The construction does
 not supply a projector, weighted synthesis, global form or Fourier-support
 theorem.

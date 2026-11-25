@@ -1,6 +1,6 @@
 # Spectral shifts of JPSS integrands and value sets
 
-Worker 85. This is an internal proof helper for the unramified L-polynomial
+This is an internal proof helper for the unramified L-polynomial
 transport. Its source motivation is JPSS, *Rankin–Selberg Convolutions* (1983),
 (2.4), printed page 387, and Theorem (2.7)(ii), pages 390–391 (registered as
 `jpss-1983-rankin-selberg`). The transport identities are derived directly
@@ -26,7 +26,7 @@ representation with the image of the actual character-multiplication linear
 equivalence, for both additive-character conventions.
 
 The two value-set lemmas take an equivalence of rational functions and its
-rational-continuation shift law as explicit inputs. They do not yet construct
+rational-continuation shift law as explicit inputs. They do not construct
 that algebraic equivalence. For images of supplied Whittaker-function sets,
 the pointwise integrand shift transports the Bochner integrals and absolute
 convergence. A right-half-plane bound `a` becomes `a-u.re` in the forward
@@ -48,6 +48,6 @@ associativity and commutativity then supply the integrand shift. The field
 and the two representation spaces have independent universes.
 
 This helper alone does not prove `UnramifiedTwistLFactorStatement`; the final
-proof must instantiate the explicit rational-continuation input with the
-published spectral-rescaling construction and transport normalized Laurent
-generators.
+proof, `unramifiedTwistLFactor` in `UnramifiedTwistLFactorProof`, instantiates
+the explicit rational-continuation input with the published spectral-rescaling
+construction and transports normalized Laurent generators.

@@ -10,8 +10,9 @@ both with universe parameters `uF uE uV uW`:
 - `CyclicWeakBaseChangeSupercuspidalTCStatement`, its totally complex form.
 
 Both are unproved proposition definitions of a *derived global input*. The
-module proves nothing. The proofs of the canonical statements belong to Task
-7340 (`0407c885-1c0b-496b-a8bf-829f3c1a7038`).
+module proves nothing. The proofs of the canonical statements need the simple
+trace formula with its twisted form and local cyclic base change of prime
+degree.
 
 ## 1. The statement
 
@@ -36,7 +37,7 @@ module proves nothing. The proofs of the canonical statements belong to Task
 
 The hypotheses are:
 
-1. `ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S`: `S` has
+1. `ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S`: `S` has
    a continuous unitary idele-class central character. This is the Library's
    convention for "unitary" cuspidal classes in its operator-realization
    statements (B1–B4, and `CyclicPrimeCuspidalLiftStatement`).
@@ -141,7 +142,7 @@ Neither of the following proves the conclusion by itself:
 ## 4. Proof obligations
 
 The statement is derived: Arthur and Clozel do not state it in this form. Its
-eventual proof (Task 7340) keeps all of the following obligations. Here `ℓ`
+eventual proof keeps all of the following obligations. Here `ℓ`
 is the prime `[E : F]` and `η` is a Hecke character of `F` with norm kernel
 `E`. The proof may choose `η`, but the statement does not need one.
 
@@ -200,8 +201,7 @@ is the prime `[E : F]` and `η` is a Hecke character of `F` with norm kernel
    irreducible component `S_v`. Only then is the local conclusion of
    obligation 4 a witness of `HasSupercuspidalComponent`.
 
-The local maps `Ch_{M/L}` of interface E2 (Task 5584,
-`35ad7726-c0bc-499a-ba29-69e4bc6e3c2a`) may enter this proof, in the form of
+The local maps `Ch_{M/L}` of interface E2 may enter this proof, in the form of
 the plan's E2 clause beyond supercuspidal classes. They are never premises of
 the statement. The statement has no local-map parameter.
 
@@ -216,9 +216,10 @@ the statement. The statement has no local-map parameter.
 - **B1**, `CyclicStableDescentStatement`, produces the descents considered in
   the singleton branch. B5 is the premise that gives such a descent a
   supercuspidal component at the auxiliary place (plan Section 4.8).
-- **B6**, the tower statement (Task 7417,
-  `825a18d4-056a-4fe0-9099-4e07aa786efe`, supplies its tower and Hecke
-  vocabulary), and **B7**, the archimedean statement, are separate interfaces.
+- **B6**, the tower statement (the modules
+  `Langlands.Automorphic.Unramified.PrimeCyclicBaseChangeTower` and
+  `Langlands.Automorphic.Unramified.HeckeFamilyEndpoint` supply its tower and
+  Hecke vocabulary), and **B7**, the archimedean statement, are separate interfaces.
   Neither is used here.
 
 ## 6. Sources and provenance
@@ -226,7 +227,7 @@ the statement. The statement has no local-map parameter.
 Provenance: *derived*. The statement is the global consequence, at one
 non-split place, of the sources below, with the obligations of Section 4
 retained. The sources give the statement and its eventual derivation. They
-are not accepted proof evidence.
+are not proof evidence.
 
 - `operator-external-inputs-plan-2026-11-16`: operator note *Formalizing the
   large external inputs of the local Langlands correspondence for `GL_n`*,

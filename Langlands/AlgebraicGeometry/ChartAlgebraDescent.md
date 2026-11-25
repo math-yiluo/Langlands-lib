@@ -1,6 +1,6 @@
 # Effective finite étale algebra descent from chart transitions
 
-Worker 632, for the algebra descent obligation agreed with Worker 5254.
+This module supplies the algebra descent step of `finiteEtaleChartDescent` (`FiniteEtaleChartDescentProof`).
 
 From a functorial chart-transition datum for `A → B → C`, with `B` faithfully
 flat over `A` and `C` finite étale over `B`, this module constructs an actual

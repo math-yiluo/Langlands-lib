@@ -1,7 +1,5 @@
 # Connected derived subgroups for separately continuous group laws
 
-Worker 277.
-
 This module proves the topological input of the abstract Lie–Kolchin argument in
 `Langlands.Group.LieKolchin.CommonEigenvector`. The group `G` carries an arbitrary
 topology. No topological-group structure is assumed, because the Zariski topology on the

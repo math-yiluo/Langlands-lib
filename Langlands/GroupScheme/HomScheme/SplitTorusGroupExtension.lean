@@ -147,6 +147,7 @@ theorem existsUnique_baseChange_hom_of_torsion_lifts (L : Type u) [Fintype L]
   · have hproj : ((Over.pullback b).map g').left ≫ pullback.fst G.X.hom b =
         pullback.fst H.X.hom b ≫ g'.left := pullback.lift_fst _ _ _
     rw [hproj]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     apply (cancel_epi e.inv.hom.hom.left).mp
     rw [← Category.assoc, baseChangeIso_inv_fst]
     simp only [f', Grp.comp_hom_hom, Over.comp_left, Category.assoc] at hg

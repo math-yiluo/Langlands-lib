@@ -45,6 +45,6 @@ comparisons retain arbitrary scheme tests, including nonreduced ones.
 The general arbitrary-field quotient theorem follows separately by the
 reduction in `AffineQuotientReduction`.
 
-Worker 706 assembled the proof from the orbit and eigenline helpers.
-Worker 239 supplied the tensor and dual cancellation helpers and the
-reduction interface.
+The proof is assembled from the orbit and eigenline helpers of
+`NormalOrbitEigenlines`; the tensor and dual cancellation helpers are in
+`NormalKernelTensor`, and the reduction interface is in `AffineQuotientReduction`.

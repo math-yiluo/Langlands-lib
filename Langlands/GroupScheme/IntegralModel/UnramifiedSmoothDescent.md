@@ -197,13 +197,13 @@ under `F`-automorphisms.
 ## Status
 
 This module publishes the interface, not a proof of
-`UnramifiedSmoothModelDescentStatement`. A proof is the subject of a separate
-successor task naming this exact declaration.
+`UnramifiedSmoothModelDescentStatement`. The proof is
+`unramifiedSmoothModelDescent` in `UnramifiedSmoothDescentProof`.
 
 ## Intended consumers
 
 The construction of the integral models for KP Axioms 4.1.20 and 4.1.22
-(task `cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) needs this statement. KP build
+needs this statement. KP build
 the parahoric and bounded-subgroup models over the maximal unramified extension
 first (Sections 8.3 and 9.3), where the bounded subgroups are Galois-stable,
 and descend them to `𝒪[F]` by this fact.

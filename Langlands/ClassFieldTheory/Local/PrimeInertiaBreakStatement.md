@@ -50,12 +50,12 @@ one afterwards. Finite sums in `herbrandPhi_floor` then evaluate the actual
 Herbrand function at the two candidate inverse arguments; the constructed
 inverse identity gives the stated `herbrandPsi` formula.
 
-The current Library already provides this route in Worker 96's
+The Library already provides this route in
 `Langlands.ClassFieldTheory.Local.PrimeInertiaBreakSupport`, through
 `Langlands.LocalClassField.exists_prime_lowerRamificationGroup_pattern`
 and `Langlands.LocalClassField.herbrandPsi_nat_of_prime_pattern`.
 These existing helper theorems can be reused by a separate proof of the
-named proposition after its publication. This statement module imports
+named proposition. This statement module imports
 only `Langlands.LocalFactor.Ramification.Herbrand.Finite` and
 `Mathlib.FieldTheory.Galois.Basic`; it adds no arithmetic data or proofs.
 
@@ -98,11 +98,7 @@ The registered `serre-book-corrections-2019`, Jean-Pierre Serre,
 SHA256 `b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`.
 Its complete *Local Fields* entries on PDF pp.2–3 contain corrections to
 phi glyphs on printed pp.74–75 and no correction to printed p.83.
-Worker 22 read the listed original passages and corrections, verified both
-fingerprints, and visually checked the displayed formula on PDF p.90.
+The listed original passages and corrections were read, both
+fingerprints verified, and the displayed formula visually checked on PDF p.90.
 No separate project errata note for this source was present in the checked
 Library or project notes.
-
-Worker 96 specified this conditional support interface and authored the
-existing helper proof route. Worker 22 authored this proposition module
-and its documentation, checked the sources, and prepared the submission.

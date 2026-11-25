@@ -584,18 +584,18 @@ theorem finiteWeilLevelBilinearMap_nondegenerate_baseChange_iff (n : ℕ) (T : O
   · rintro ⟨hl, hr⟩
     refine ⟨fun x₀ hx₀ ↦ ?_, fun y₀ hy₀ ↦ ?_⟩
     · obtain ⟨x, rfl⟩ := eP.surjective x₀
-      rw [hl x (fun y ↦ (key x y).trans (hx₀ (eL y))), map_zero]
+      rw [hl x (fun y ↦ (key x y).trans (hx₀ (eL y))), AddEquiv.map_zero]
     · obtain ⟨y, rfl⟩ := eL.surjective y₀
-      rw [hr y (fun x ↦ (key x y).trans (hy₀ (eP x))), map_zero]
+      rw [hr y (fun x ↦ (key x y).trans (hy₀ (eP x))), AddEquiv.map_zero]
   · rintro ⟨hl, hr⟩
     refine ⟨fun x hx ↦ ?_, fun y hy ↦ ?_⟩
     · apply eP.injective
-      rw [map_zero]
+      rw [AddEquiv.map_zero]
       refine hl (eP x) (fun y₀ ↦ ?_)
       obtain ⟨y, rfl⟩ := eL.surjective y₀
       exact (key x y).symm.trans (hx y)
     · apply eL.injective
-      rw [map_zero]
+      rw [AddEquiv.map_zero]
       refine hr (eL y) (fun x₀ ↦ ?_)
       obtain ⟨x, rfl⟩ := eP.surjective x₀
       exact (key x y).symm.trans (hy x)

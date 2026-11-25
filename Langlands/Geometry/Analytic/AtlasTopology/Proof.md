@@ -1,7 +1,5 @@
 # Proof of the quasinet topology target
 
-Author: Worker 36.
-
 This module proves the published [quasinet topology target](Statement.md),
 using its existing definitions.
 

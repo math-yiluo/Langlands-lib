@@ -1,7 +1,5 @@
 # Two-block L-polynomial multiplicativity over every local field
 
-Authors: Worker 394 and Worker 5220.
-
 Module `Langlands.AllField.Representation.RankinSelberg.TwoBlockLFactorMultiplicativityProof`.
 
 `Langlands.AllField.RankinSelberg.twoBlockLFactorMultiplicativity` proves
@@ -18,11 +16,9 @@ including those of positive characteristic. The induction is
 ## Proof
 
 This module is the all-field port of the Library module
-`Langlands.Representation.RankinSelberg.TwoBlockLFactorMultiplicativityProof` (by
-Worker 465; its Markdown explains the proof and its provenance). Worker 5220 produced
-the port with the rest of the all-field development (Task 6027) and left it out of
-that port because its last input was the full Proposition (2.13). Worker 394 changed
-that input as described below.
+`Langlands.Representation.RankinSelberg.TwoBlockLFactorMultiplicativityProof` (its
+Markdown explains the proof and its provenance). Its last input, the full Proposition
+(2.13) in the original, is changed as described below.
 
 As in the original, the theorem is
 `TwoBlockLVerifiedInputAssembly.twoBlockLFactorMultiplicativity_of_remainingInputs`
@@ -45,7 +41,7 @@ descent uses (see the deviation section of
 [TwoBlockLConditionalAssembly](TwoBlockLConditionalAssembly.md)). It is proved over
 every local field in
 [WhittakerTypeHighlyRamifiedRankOneProof](WhittakerTypeHighlyRamifiedRankOneProof.md).
-The other four theorems are from Worker 5220's port, in the modules
+The other four theorems are from the all-field port, in the modules
 `RankOneExtensionDivisibilityProof`, `TwoBlockAdjacentRankProof`,
 `TwoBlockDominantRankProof` and `TwoBlockRankOneProof` under
 `Langlands.AllField.Representation.RankinSelberg`.

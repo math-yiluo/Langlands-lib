@@ -28,7 +28,7 @@ form on row vectors `D^n`, `h` is its polar form, and `(e, f)` is a hyperbolic p
 
 ## Provenance
 
-Internal; elementary linear algebra, used for Task 5398. Together with `HyperbolicLevi` and
+Internal; elementary linear algebra, used for the proof of `LocalSpinKneserTitsStatement`. Together with `HyperbolicLevi` and
 `EichlerReducedNorm`, these results apply to the forms of the target statement. Those forms
 are on `D^4` or `D^5`, have Witt index `1`, and are defined over a quaternion division algebra
 with `dim_K D^σ = 3`.

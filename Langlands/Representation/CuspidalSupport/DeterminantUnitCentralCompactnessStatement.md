@@ -1,7 +1,5 @@
 # Compactness of the determinant-unit central intersection
 
-Author: Worker 76.
-
 `Langlands.CuspidalSupport.LeviDeterminantUnitCentralCompactnessTheorem F T B`
 is a proposition for every prime `p`, actual field `F : PadicField.{uF} p`,
 compatible realization `T : F.TopologicalData`, natural rank `n`, and ordered

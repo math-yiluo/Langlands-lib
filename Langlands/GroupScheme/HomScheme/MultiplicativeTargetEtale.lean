@@ -247,9 +247,7 @@ theorem formallyEtale_tensor_homAlgebra :
         (fun f => ⟨pushPoint R' (Ideal.Quotient.mkₐ R' I) f.1, f.2.pushPoint R' _⟩) ∘
           pointChain G ψ A B := by
     funext φ
-    simp only [Function.comp_apply]
-    rw [Equiv.eq_symm_apply]
-    exact Subtype.ext (pointChain_naturality G ψ A _ φ)
+    exact (Equiv.eq_symm_apply _).mpr (Subtype.ext (pointChain_naturality G ψ A _ φ))
   rw [h]
   exact (pointChain G ψ A _).symm.bijective.comp
     ((bijective_pushPoint hnil (Ideal.Quotient.mkₐ_surjective R' I) Λ).comp

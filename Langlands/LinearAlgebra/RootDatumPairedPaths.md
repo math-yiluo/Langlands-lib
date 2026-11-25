@@ -1,6 +1,6 @@
 # Paired simple roots of a pairing-compatible action and their even paths
 
-Provenance: internal helper for the even-chain Galois data proof (Task 5375).
+Provenance: internal helper for the even-chain Galois data proof.
 That target is derived from Robert Steinberg, *Regular elements of semi-simple
 algebraic groups*, Publ. Math. IHÉS 25 (1965), 49–80 (source
 `steinberg-1965-regular-elements-semisimple-groups`); the Markdown of the

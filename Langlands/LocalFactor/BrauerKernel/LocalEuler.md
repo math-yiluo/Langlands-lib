@@ -1,11 +1,10 @@
 # Tate L-factors of a local relation among induced characters
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, §4.12) a global relation among induced Hecke characters restricts at every
-finite place to a local relation among induced characters of local Weil groups. This unit
-shows that the Tate L-factors of such a local relation cancel. The companion unit
+finite place to a local relation among induced characters of local Weil groups. This module
+shows that the Tate L-factors of such a local relation cancel. The companion module
 `BrauerKernel.LocalRelation` produces the local relations.
 
 Everything is in `Langlands.Weil.Local.InertiaEuler`. Fix a prime `p` and a p-adic field

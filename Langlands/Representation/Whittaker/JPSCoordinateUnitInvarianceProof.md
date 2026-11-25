@@ -151,14 +151,8 @@ Lean names: the finite-operator detector, finite-dimensional Baire germ
 constancy, compact-group closed-subgroup cover, and norm-one compactness.
 The remaining adapters above are proved directly for the actual JPS
 quotient and coordinate action. The statement pair and its imports are
-unchanged. The proof is in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
-
-Worker 454 implemented the actual-quotient application. Worker 625
-supplied its unformalized finite-detection/Baire/kernel and stabilizer-cover
-route. Worker 345 implemented the generic Baire proof, Worker 451 its
-statement, and Worker 101 the generic subgroup-cover proof. Those
-published helpers retain their own attribution.
+unchanged. The proof was checked with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
 The motivating original is H. Jacquet, I. I. Piatetski-Shapiro and
 J. Shalika, *Automorphic forms on GL(3) I*, Ann. of Math. (2) 109 (1979),

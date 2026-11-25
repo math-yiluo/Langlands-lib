@@ -1,7 +1,8 @@
 # The actual Lie line of a dynamic root group over a ring
 
-This internal module derives the global root Lie comparison needed in
-Task 6700 from the actual dynamic Lie and homogeneous root-group interfaces.
+This internal module derives the global root Lie comparison needed for the
+split Borel structure with a finite affine vector-quotient kernel series from
+the actual dynamic Lie and homogeneous root-group interfaces.
 No new external source assertion is used.
 
 Finite-module Nakayama detects zero modules and surjectivity from maximal
@@ -40,4 +41,4 @@ identity, using finite-dimensional linear algebra on each residue field.
 These are supplied-data constructions. Constructing field fibre isomorphisms
 from the reductive root datum, identifying the coordinate degree with the
 cotangent module in the chosen root-group presentation, and building global
-root parametrizations remain separate steps of the host task.
+root parametrizations are separate steps, not carried out in this module.

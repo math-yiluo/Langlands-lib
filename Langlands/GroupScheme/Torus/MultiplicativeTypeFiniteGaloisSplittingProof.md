@@ -1,7 +1,5 @@
 # Groups of multiplicative type over a field split over a finite Galois extension
 
-Author: Worker 60.
-
 `Langlands.GroupScheme.multiplicativeTypeFiniteGaloisSplitting` proves exactly
 `Langlands.GroupScheme.MultiplicativeTypeFiniteGaloisSplittingStatement.{u}`, imported
 unchanged from `Langlands.GroupScheme.Torus.MultiplicativeTypeFiniteGaloisSplittingStatement`.

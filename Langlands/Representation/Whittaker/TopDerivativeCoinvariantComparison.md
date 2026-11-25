@@ -1,10 +1,10 @@
 # The top derivative surjects onto the standard upper-unipotent coinvariants
 
-Author: Worker 784. This module is an internal prerequisite of the exact proof task
-`62de5903-b616-4b5c-88eb-a066b77c5467`, which proves
-`Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`. It is the rank-zero
-top-localization comparison (`k = 0`, target `GL_0`) of that task's arrangement. The
-positive two-block comparison remains with Worker 357 and is not touched here.
+This module was prepared as an internal prerequisite of a derivative-route proof of
+`Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`; the Library's proof,
+`SupercuspidalCoinvariantFinitenessProof`, takes an elementary route and does not import
+it. It is the rank-zero top-localization comparison (`k = 0`, target `GL_0`) of that
+route. The positive two-block comparison is not part of this module.
 
 ## Statement
 

@@ -5,7 +5,7 @@ p-adiques (d'après Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003),
 235–333, proof of Proposition VIII.4.1, printed pp. 328–330 (PDF pp. 94–96),
 registered source `waldspurger-2003-plancherel`.
 
-This module is focused unit 2 of Task 7439 (revision 2). It proves the
+This module is the local kernel step of the proof of VIII.4.1. It proves the
 finite dimensionality of the actual central level span from an explicit
 function `E` with the properties of Waldspurger's `°e`. The proof goes through
 the Library's abstract kernel theorem `finiteDimensional_of_kernelAlphaChi`
@@ -176,43 +176,37 @@ The proof applies `finiteDimensional_schwartzCentralIntegralSpan_of_kernel`
   it is inversion invariant: the proof uses Mathlib's
   `IsHaarMeasure.isInvInvariant_of_regular` for a local `CommGroup` structure.
 
-## Open hypotheses and their owners
+## Open hypotheses
 
 The main theorem leaves the hypotheses below open. None of them is same-rank
 finiteness, same-rank reconstruction, the closed target or a dimension bound.
 
 - `IsRationalCuspidalLevelKernel hKc hPK ρ muG H E` for `E = °e`, the actual
-  degree-zero projection of the characteristic function of `H`. Its owner is
-  focused unit 3 of Task 7439. Worker 827's accepted unit 3 (layer A,
-  `IsRationalCuspidalUnit`, module `RationalCuspidalUnit`) gives the same five
-  properties from six laws of a linear projection. Task 7277
-  (`eaceb96b-aaaf-4068-9a11-46292b5334e6`) owns the laws for the actual
-  degree-zero projection, including the translation law, which Worker 3642
-  assigned to it. The strictly-smaller-rank hypotheses of Task 7277 are
-  discharged by standing Task 3642's mutual rank induction.
+  degree-zero projection of the characteristic function of `H`. The rank
+  adapter (`IsRationalCuspidalUnit`, module `RationalCuspidalUnit`) gives the same five
+  properties from six laws of a linear projection. The laws, including the
+  translation law, concern the actual degree-zero projection of VIII.2, which
+  is not in the Library; its construction needs strictly-smaller-rank inputs
+  from a mutual induction over rank.
 - `CentralWeights muA Ξ σ`: from `RationalSplitCenterHeightStatement`
-  (`RationalSplitCenterHeightStatement.centralWeights`), owned by Task 5480
-  (`c3846e17-dfda-44c2-a37e-cd9054cb3b0f`).
+  (`RationalSplitCenterHeightStatement.centralWeights`), proved as
+  `rationalSplitCenterHeight` (module `RationalSplitCenterHeightProof`).
 - `L2Weights muG Ξ σ` and `ConvolutionWeights muG K' Ξ σ`: from Lemma II.1.5,
   `RationalXiSquareIntegrableStatement`, through the Library adapters
   `RationalXiSquareIntegrableStatement.l2Weights` and `.convolutionWeights`.
   The Library proves II.1.5 only from `RationalXiUpperBoundStatement`, the
   upper bound of Lemma II.1.1 (`rationalXiSquareIntegrable_of_upperBound`).
-  That proof is owned by Task 5326 (`d27429ee-ab4e-47b4-8486-8cdd92ff4d34`).
+  That upper bound is proved as `rationalXiUpperBound` (module `RationalXiUpperBoundProof`).
   The adapters also take structural premises: a compact open `K0` with
   `SimultaneousStandardBasisAt i ν K0` and `FiniteCartanCovering F i ν K0`,
-  and, for the convolution weights, `K' ≤ rationalHeightSubgroup ρ`. A task
-  search on 2026-11-17 found no task that owns supplying these premises for
-  every structural choice. Supplying them belongs to the closed assembly of
-  the target. Task 7439 owns that assembly, coordinated by standing Task 3642
-  (`1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`), which records them as open
-  basis/Cartan inputs.
-- `RationalLevelKernelDiagonalIntegrable`: from VIII.3.2, owned by Task 7256
-  (`b0fd13d7-7b2e-4cec-97ef-3a2286d8ed7c`). Its statement
-  `RationalCuspidalConjugationIntegrabilityStatement` (candidate
-  `9f4689cd-0a2e-43cd-bef8-c3551ceb0281`) is accepted but not yet in the
-  Library. The reduction of this prerequisite to that statement's integrability
-  form is carried out in Task 7439's follow-up modules
+  and, for the convolution weights, `K' ≤ rationalHeightSubgroup ρ`.
+  Supplying them for every structural choice belongs to the closed assembly
+  of the target.
+- `RationalLevelKernelDiagonalIntegrable`: from VIII.3.2. Its statement
+  `RationalCuspidalConjugationIntegrabilityStatement` (module
+  `RationalCuspidalConjugationStatement`) is in the Library and is not proved
+  there. The reduction of this prerequisite to that statement's integrability
+  form is carried out in the modules
   `RationalCuspidalCentralKernelDiagonal` and
   `RationalCuspidalCentralKernelPairing`.
 

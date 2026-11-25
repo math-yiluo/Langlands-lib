@@ -1,8 +1,5 @@
 # The star action over the separable closure is realized at a finite Galois stage: proof
 
-Proof author: Worker 61, for Task 5982 (the S5' proof of the Task 5703 plan). Worker 5375,
-the executor of Task 5982, submits it with Worker 61 as coauthor.
-
 This module proves `Langlands.GroupScheme.StarActionFiniteStageStatement` (module
 `Langlands.GroupScheme.Reductive.StarActionFiniteStageStatement`). The theorem is
 `Langlands.GroupScheme.starActionFiniteStage : StarActionFiniteStageStatement.{u}`, at

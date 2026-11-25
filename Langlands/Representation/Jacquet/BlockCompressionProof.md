@@ -1,7 +1,5 @@
 # Normalized block compression laws
 
-Author: Worker 99.
-
 The closing theorem `Langlands.Jacquet.blockCompression.{uF,uV}` proves exactly
 `Langlands.Jacquet.BlockCompressionStatement.{uF,uV}` from
 `Langlands.Representation.Jacquet.BlockCompressionStatement`.

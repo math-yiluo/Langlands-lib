@@ -1,7 +1,8 @@
 # The full-operator transpose contragredient pairing condition
 
-This is internal infrastructure for Task 7294 by Worker 264. It reformulates the
-remaining contragredient bridge using the Library's actual operators and its
+This is internal infrastructure for the proof of
+`CuspidalTransposeInverseContragredientStatement`. It reformulates the
+contragredient bridge using the Library's actual operators and its
 definition of a contragredient functional. It does not prove Gelfand--Kazhdan or
 assert existence of a transpose-twisted realization.
 
@@ -41,6 +42,10 @@ The resulting `isContragredientOf_iff` identifies the two conditions exactly.
 
 All these definitions and transports follow directly from the existing
 `IsContragredientPairing` definition and linear equivalence identities; this is
-their internal provenance. The pairing-existence condition remains open for the
-cuspidal realizations in Task 7294. Neither the equivalence theorem nor
-transpose-covariance alone proves the task's required statement.
+their internal provenance. For the cuspidal realizations the pairing-existence
+condition is stated as `CuspidalTransposePairingStatement`
+(`Global/RankinSelberg/CuspidalTransposeInverseContragredientReduction`); no
+theorem of the Library proves it. Neither the equivalence theorem nor
+transpose-covariance alone proves `CuspidalTransposeInverseContragredientStatement`;
+the statement is proved as `cuspidalTransposeInverseContragredient` in
+`Global/RankinSelberg/CuspidalTransposeInverseContragredientProof`.

@@ -32,7 +32,9 @@ published Chapter I inputs. The two group universes and the input carrier
 universe are independent. The output carrier universe is `max uG v`, as in
 the Chapter I constructions.
 
-This unit covers the left `H(H)`–right `H(G)` bimodule and the Hecke-side
+This module covers the left `H(H)`–right `H(G)` bimodule and the Hecke-side
 functors `F` and `I`. It does not claim the right `H(H)` action, the functors
 `P` and pseudo-`F`, the smooth-representation comparison, or any induction
-comparison theorem. Those are subsequent units of Task 5296.
+comparison theorem. Those are in the modules
+`Langlands.Representation.Hecke.HomomorphismRight`, `HomomorphismSmooth` and
+`HomomorphismProof`.

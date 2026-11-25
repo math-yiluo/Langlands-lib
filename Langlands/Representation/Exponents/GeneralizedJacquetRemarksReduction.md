@@ -1,15 +1,14 @@
 # Renard VI.9.1, bound and Remarks 1–2, from the uniform stabilization
 
-Author: Worker 167. Module
+Module
 `Langlands.Representation.Exponents.GeneralizedJacquetRemarksReduction`, namespace
 `Langlands.Aubert.General.RationalPointFamily`.
 
-This is an intermediate reduction for proof task `7a03c792-1d54-4a95-89b7-dd1aa5e82a5e`,
-whose first target is the unchanged Library proposition
+This is an intermediate reduction towards the Library proposition
 `GeneralizedJacquetRemarksStatement.{u, v}` (module
 `Langlands.Representation.Exponents.GeneralizedJacquetRemarksStatements`). It does **not**
-prove that target, nor `UniformCompressionStabilizationStatement` (the Proposition of
-VI.9.1, proof task `47e556e6-6b2a-40dc-ba66-d6a0585f5220`), nor the Remark 3 target
+prove that proposition, nor `UniformCompressionStabilizationStatement` (the Proposition of
+VI.9.1), nor the Remark 3 statement
 `RepresentedParabolic.GeneralizedJacquetContractingRangeStatement`.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French edition
@@ -25,7 +24,7 @@ def GeneralizedJacquetRemarksReductionStatement : Prop :=
   UniformCompressionStabilizationStatement.{u, v} → GeneralizedJacquetRemarksStatement.{u, v}
 ```
 
-Both sides are the published Library propositions, used unchanged, at the same independent
+Both sides are the published Library propositions, at the same independent
 universes `u` (field and group) and `v` (representation carriers). The statement says that
 the Proposition of VI.9.1 (one exponent `b` for all smooth representations, stationary
 ranges and kernels from `b` on, and the splitting `V^K = V^K_0 ⊕ V^K_*`, for every

@@ -24,7 +24,7 @@ completions and local-unit inclusions.
 The imported module `CMInfinityExtension` proves
 `CMUnramifiedInfinity.exists_base_character`. Put
 `t = NumberField.Units.torsionOrder K` and
-`h = Nat.card (ClassField.Global.IntegralIdeleClassQuotient K)`.
+`h = Nat.card (ClassFieldTheory.Global.IntegralIdeleClassQuotient K)`.
 Both are proved positive. For every global integral unit `ε`, the ratio
 `ε / complexConj(ε)` is torsion, so scaling `a` by `t` makes its infinity
 character trivial on global integral units. It therefore descends from
@@ -87,9 +87,7 @@ the published target. Antisymmetrization is the device used in
 Henniart's Section 3.6, proof of Lemma 2, printed p.451 (PDF p.13),
 applied here to an anticyclotomic infinity character.
 
-Worker 1231 constructed the base-character module and the bridge and
-assembled the final theorem; Worker 1233 constructed the
-antisymmetrization module. This proof establishes only the unramified
+This proof establishes only the unramified
 infinity-realization statement. Finite-component prescription, local
 unit-character extension, regular unit-prescription assembly and the
 other CM-globalization statements remain separate targets.

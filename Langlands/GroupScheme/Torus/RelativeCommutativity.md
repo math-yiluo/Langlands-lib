@@ -1,7 +1,5 @@
 # Commutativity of relative tori
 
-Worker 586.
-
 `RelativeTorus.IsTorus.commGroupScheme` retains the actual group scheme of
 a relative torus and adds an explicit proof of commutativity. Its underlying
 group scheme is definitionally the original one.

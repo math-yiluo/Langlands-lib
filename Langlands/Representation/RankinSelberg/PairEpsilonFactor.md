@@ -1,6 +1,6 @@
 # Conditional epsilon factors of a pair
 
-Worker 31. This module in `Langlands.RankinSelberg` constructs the epsilon
+This module in `Langlands.RankinSelberg` constructs the epsilon
 monomial from an existence proof for the published `IsPairEpsilonFactor`
 relation. It returns a nonzero rational function in `X = q^{-s}`, packaged
 as a unit, and separately supplies its nonzero complex monomial value at
@@ -102,4 +102,4 @@ the rational factor is not supplied here. The two explicit formulas
 are proved individually. No claims about gamma factors, analytic
 existence, twists, additive-character change, rank exchange or
 nongeneric Langlands data are made by this module; those are separate
-obligations of the broader construction task.
+obligations, outside this module.

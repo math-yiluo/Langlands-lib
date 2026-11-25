@@ -1,10 +1,7 @@
 # Inverse-power extension converse for the actual localization
 
-Authors: Worker 490 (Lean proof, source reading and documentation) and Worker 922
-(the factor-map, bijectivity and transport proof route supplied in the task).
-The imported statement design is by Workers 709 and 922; the imported actual
-localization and its factorization laws are by Worker 751. No unpublished
-Lean draft is reused.
+The actual localization and its factorization laws are imported, through
+the statement module, from `Langlands.Algebra.RenardEndomorphismLocalization`.
 
 The module imports only
 `Langlands.Algebra.RenardLocalizationExtensionStatements`. It proves the exact
@@ -36,13 +33,13 @@ that it be multiplication by a coefficient.
 The source first forms the power-kernel quotient L', then states that an
 extension (M, beta) of L' in which beta restricts to the induced operator,
 is invertible, and exhausts M by inverse iterates of L', has the
-localization universal property. As explained in the published statement
+localization universal property. As explained in the statement
 Markdown, an arbitrary embedded source module V is an internal abstraction
 of that paragraph, and arbitrary commutative unital coefficients are an
 internal generalization of its field setting. The unique comparison with
 the actual localization is a derived consequence, consistent with the
 uniqueness discussion at the top of PDF258. The present proof supplies
-these already-published targets; it does not reconstruct the quotient or
+these targets; it does not reconstruct the quotient or
 attribute the generalizations verbatim to Renard.
 
 ## Data and exact conclusions
@@ -88,13 +85,13 @@ results to an arbitrary field. Finally,
 is exactly the ordered conjunction of the converse, comparison and field
 statements. It has no outer term parameters or hypotheses.
 
-The universes u, v, x and w remain independent. The actual published
+The universes u, v, x and w remain independent. The actual
 `Localized a` has carrier universe `max u v`; no shrinking or smallness
 assumption is used.
 
 ## Implemented proof
 
-`extensionFactor a β j hj` is the published `factor` for the endomorphism
+`extensionFactor a β j hj` is `factor` for the endomorphism
 `β.toLinearMap`. Its unit proof comes from beta's bijectivity through
 `Module.End.isUnit_iff`. Thus its canonical-map and intertwining equations
 are exactly `factor_comp_iota` and `factor_intertwines`.
@@ -142,18 +139,18 @@ its composite with j is f.
 
 To prove uniqueness, compose a competing map with e's forward linear
 map. This composite intertwines `localizedEnd a` with b and agrees with
-f after `iota a`, so `factor_unique` identifies it with the published
+f after `iota a`, so `factor_unique` identifies it with the
 factor map. Evaluate that equality at `e.symm m` to identify the competing
 map on every m. This implements transport of the existing factorization
 property directly, without adding a universal property as a hypothesis.
 
 The field theorem applies the two commutative-ring theorems to the
 underlying commutative ring, and the final theorem assembles the three
-clauses in the published order.
+clauses in the statement's order.
 
 ## Reuse and boundary
 
-All localization mathematics is imported by its current Lean names:
+All localization mathematics is imported by its Lean names:
 `factor`, `factor_comp_iota`, `factor_intertwines`, `factor_unique`,
 `eq_of_intertwines`, `frac_surjective`, `frac_zero`,
 `localizedEnd_frac_succ` and `frac_eq_localizedInv_pow`.
@@ -162,8 +159,8 @@ composition and the elementary injectivity criterion. The aggregate
 inspection reports only `propext`, `Classical.choice` and `Quot.sound`.
 There are no new axioms or proof holes.
 
-This unit covers the inverse-power extension converse and its comparison.
+This module covers the inverse-power extension converse and its comparison.
 The kernel/quotient construction and comparison, surjective-canonical-map
 corollary, general possibly noncommutative or nonunital algebra actions,
-exactness, categorical packaging and Appendix C.II remain separate
-obligations.
+exactness, categorical packaging and Appendix C.II are outside this
+module.

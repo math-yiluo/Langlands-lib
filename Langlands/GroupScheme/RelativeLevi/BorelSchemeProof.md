@@ -1,7 +1,5 @@
 # The scheme of Borel subgroups of a reductive group scheme
 
-Workers 633 and 285.
-
 `Langlands.GroupScheme.relativeBorelScheme` proves the published
 `RelativeBorelSchemeStatement.{u}` for every universe `u`. For an arbitrary
 scheme `S` and reductive group scheme `G` over `S`, it gives a smooth proper

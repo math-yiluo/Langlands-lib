@@ -1,7 +1,5 @@
 # A simple-coroot face for an actual split-torus centralizer
 
-Authors: Worker 1577 and Worker 1352.
-
 This internal construction starts with an actual
 `SplitTorusCentralizerRootModel C` over a field, a split source torus `A`,
 and the supplied all-test centralizer representative `j : M ⟶ G`.

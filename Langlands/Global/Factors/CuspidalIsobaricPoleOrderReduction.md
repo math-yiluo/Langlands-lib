@@ -80,10 +80,10 @@ Getz and Hahn invoke the pair-pole theorem for the isobaric formula.
 The fieldwise witness condition isolates the partial-factor order bound
 used to rule out cancellation by a zero of a constituent's completed
 function. Shahidi's boundary theorem provides that bound in the
-two-premise reduction. Worker 3657's shared Task 5978 draft developed the pairwise
-reduction and Euler product comparisons. This implementation uses
-Worker 814's symmetry lemma, which transposes an invariant pairing, and
-the Library theorem `cuspidalSplitCentreUnitaryCentralCharacter`.
+two-premise reduction. This implementation uses the symmetry lemma
+`CuspidalOperatorRealization.isContragredientOf_symm`, which transposes an
+invariant pairing, and the Library theorem
+`cuspidalSplitCentreUnitaryCentralCharacter`.
 
 - J. R. Getz and H. Hahn, *An Introduction to Automorphic
   Representations* (2024), (11.23), printed p. 308 (registered PDF p. 319),

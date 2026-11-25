@@ -1,14 +1,13 @@
 # The global relation of a Galois type decomposition
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, §4.12) the local finite Galois group is realized as a global Galois group,
-and the local relation becomes a global one. This unit performs that step on relative Weil
+and the local relation becomes a global one. This module performs that step on relative Weil
 groups `W_{K'/k}`. The input is a `GaloisTypeDecomposition` (`BrauerKernel.GaloisType`) of an
 actual relation `z` over the bottom field of `F`, and a group isomorphism
 `θ : Gal(K'/k) ≃ Gal(K/F)` for a Galois extension of number fields. It does not construct
-`θ` or any global field; the published `totallyRealGaloisRealization` will supply them. No
+`θ` or any global field; the published `totallyRealGaloisRealization` supplies them. No
 epsilon or L-factor identity and no local map is involved.
 
 Everything is in `Langlands.LocalFactor.NonabelianBrauer`. Fix `D : GaloisTypeDecomposition F e z`,
@@ -55,7 +54,7 @@ a class family `c : FundamentalClass.ClassFamily.{u}`, number fields `k`, `K'` i
   used on the support and exchange the two sums; `Finset.sum_ite_eq` collapses the sum over
   `τ`.
 
-In the intended application, which is not part of this unit, `Ω τ` is the reciprocity
+In the intended application, which is not part of this module, `Ω τ` is the reciprocity
 character of `|·|^τ` times an isolating twist. The characters `(Ω τ ∘ ι_g) · Y_i g` are then
 the global characters attached to the generators.
 
@@ -69,7 +68,7 @@ registered as `deligne-1973-local-constants`, SHA256
 `b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844`, Lemma 4.12 and its proof
 (printed page 544, PDF page 44). There a subgroup `H ⊆ Gal(K'/K) = Gal(K'_v/K_v)` defines both a
 local extension `L_v` and a global extension `L`, and a representation of `H` is read on both
-sides. The twisting by a type character follows §4.11 (printed page 543). This unit is the
+sides. The twisting by a type character follows §4.11 (printed page 543). This module is the
 relative-Weil-group counterpart. It is internal bookkeeping with the published inflation,
 induction and twist lemmas of `VirtualRepresentation.FiniteInflation`,
 `ExactInductionTwist` and `Global.Factors.RelativeWeilBrauer`.

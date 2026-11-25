@@ -6,7 +6,8 @@ result, `jointSpecialCompactBasisExistence_of_availability_and_basis`, has
 exactly two explicit inputs: corrected KP assignment existence
 (`BruhatTitsAvailabilityStatement`) and
 `AvailableSimultaneousStandardBasisStatement`. Neither is proved here. The
-result remains an implication and does not complete Task 4169.
+result remains an implication and does not prove
+`JointSpecialCompactBasisExistenceStatement` unconditionally.
 
 The implemented proof takes a globally valid assignment from the first input,
 uses published `validAssignmentTorusRebasing` to base it at the original
@@ -15,8 +16,8 @@ maximal split torus, and obtains a special vertex using published
 properties, Levi inheritance and simultaneous basis at that same point.
 Published `Iwasawa.availableIwasawa` supplies the ambient products. The
 companion `JointBasisCartanAssembly` derives the ambient and same-compact
-Levi Cartan comparisons from global validity and published results, so a
-separate Cartan statement premise is no longer required.
+Levi Cartan comparisons from global validity and published results, so no
+separate Cartan statement premise is required.
 
 For each actual standard Levi, published `availableSpecialLeviCompact`
 supplies available data whose torus is the prescribed torus and whose special
@@ -26,10 +27,10 @@ The available Iwasawa theorem applies there, and
 torus equalities. Finally `joint_of_valuationBuildingData` assembles all
 clauses at one apartment, point and centralizer datum.
 
-The earlier `jointSpecialCompactBasisExistence_of_remainingInputs` is retained
-as the direct seven-input reduction with four inputs filled by published
-proofs; it still displays a redundant separate Cartan premise. The two-input
-result is the improved route. No change is made to the published target or
+The module also contains `jointSpecialCompactBasisExistence_of_remainingInputs`,
+the direct seven-input reduction with four inputs filled by published
+proofs; it has a redundant separate Cartan premise. The two-input
+result needs fewer inputs. No change is made to the published target or
 any of its imported pairs.
 
 The provenance is internal composition of the named published results and the

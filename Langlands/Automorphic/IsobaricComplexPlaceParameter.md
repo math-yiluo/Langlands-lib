@@ -1,7 +1,6 @@
 # Complex-place parameters of isobaric data and actual Hecke families
 
-Worker 241 authored this supporting-definition unit for Task 7466
-(`d1162e86-f3f9-4420-b56a-8fc6d6737f83`). Its provenance is internal: it composes
+This is a supporting-definition module. Its provenance is internal: it composes
 the Library's actual cuspidal constituents, actual Hecke characters and selected
 completion embeddings to formulate B7 and its use along standard-B6 chains.
 
@@ -32,7 +31,7 @@ constructs no noncuspidal automorphic representation.
 
 The constituent predicate is the published
 `PositiveRankCuspidalClass.HasComplexPlaceParameter`, whose meaning is the
-literal standard-module embedding. This unit does not assert that this literal
+literal standard-module embedding. This module does not assert that this literal
 predicate is invariant under permutation. It closes the *aggregate* list under
 permutation. Consequently the singleton lemma is precisely
 
@@ -112,7 +111,7 @@ singleton. They do not use character classification.
 ## Motivation and scope
 
 These definitions and elementary list proofs are internal bookkeeping, not
-translations of a theorem in the following sources. The registered operator
+translations of a theorem in the following sources. The registered
 note `operator-external-inputs-plan-2026-11-16`, *Formalizing the large external
 inputs of the local Langlands correspondence for GL_n* (16 November 2026),
 Section 2.2 B6–B7 (LaTeX lines 197–199), Section 4.6 and Section 4.8,
@@ -127,7 +126,7 @@ data and their weak lifts. Theorem III.5.1, printed p.212 / PDF p.226, upgrades
 weak lifting to strong lifting for those representations. These passages were
 read as motivation; their compatibility theorems are not proved here.
 
-This unit proves no parameter existence or uniqueness, classification of
+This module proves no parameter existence or uniqueness, classification of
 continuous characters, weak base-change compatibility, regular-algebraicity
 comparison, or finite-to-infinite Hecke endpoint comparison. In particular,
 equality of finite Euler products is not an assumption in these definitions

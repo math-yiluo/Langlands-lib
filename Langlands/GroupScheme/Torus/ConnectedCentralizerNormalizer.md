@@ -1,7 +1,5 @@
 # Connected normalizers and central diagonalizable groups
 
-Author: Worker 360.
-
 This internal derived module applies `ConnectedPointedHomFamily` to commutators.
 Over any field, let `G` and `H` be affine group schemes with `H` connected, let
 `i : D(Λ) → G` be a homomorphism from a diagonalizable group, and let `F` be a
@@ -29,4 +27,6 @@ All its hypotheses have the same meaning as above with `T` replacing `D(Λ)`.
 
 These lemmas are internal consequences of the matrix-weight rigidity argument,
 not separate translations of a literature statement. Their intended use is the
-normalizer clause of Task 6803.
+normalizer clause of `TorusCentralizerNormalizerStatement`, which
+`torusCentralizerNormalizer` (module `Absolute.TorusCentralizerNormalizerProof`)
+proves.

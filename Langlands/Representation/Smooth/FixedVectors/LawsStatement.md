@@ -28,8 +28,8 @@ of an arbitrary surjective intertwiner is included.
 
 ## Provenance
 
-These are Worker 0's internal algebraic consequences of the fixed-vector
-condition and the accepted restriction constructions, rather than separately
+These are internal algebraic consequences of the fixed-vector
+condition and the restriction constructions, rather than separately
 numbered source theorems. For the fixed-vector condition, see Bill Casselman,
 *Introduction to admissible representations of p-adic groups*, Chapter II,
 revision June 16, 2019, Section 1, page 2, first paragraph:
@@ -47,20 +47,16 @@ inverse compatibility therefore use only the stated algebraic assumptions.
 ## Exact dependencies
 
 The sole direct project import is
-`Langlands.Representation.Smooth.FixedVectors.Definitions`, accepted artifact
-`7ad85b8b-caae-4345-ac1b-2c2d551dbb94`, version 1, published and confirmed current
-at Library commit `18d2c44b3fecb756a7634ce0f766fdc16b539b45`, with independent
-review receipt `7f5084d1-9e75-445b-b031-b754e38c4830`.
+`Langlands.Representation.Smooth.FixedVectors.Definitions`.
 Its Lean SHA256 is
 `4a80076b02e57bd0cc16a38fb21184ea1fd1d7ad723e240831e6a4625a65aee1`;
 its Markdown SHA256 is
 `86568444804fbf3b1afae1edb4cc136756c67422b9523ba8fd0e301599384392`.
 Its sole transitive project definition dependency is
-`665022df-625b-44ae-9dbd-425f6e266bab`, version 1
-(`Langlands.Representation.Smooth.Definitions`), as recorded in the accepted
+`Langlands.Representation.Smooth.Definitions`, as recorded in the
 construction's Markdown.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
-Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, with Mathlib at
-`5ed2965256430c3649e86755f9576b54eca72435`.
-This file defines propositions; their independent proof acceptance is separate.
+The environment is Lean 4.34.0 at `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
+with Mathlib at `5ed2965256430c3649e86755f9576b54eca72435`.
+This file defines propositions; their proof is `Langlands.fixedVectorsLaws`
+in `LawsProof`.

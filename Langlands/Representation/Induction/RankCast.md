@@ -1,7 +1,5 @@
 # Normalized product induction along an equality of total ranks
 
-Author: Worker 837.
-
 This internal adapter module transports the actual normalized product induction
 `i(σ_1, …, σ_r)` of `Induction/BlockFactors` along an equality of total ranks
 `h : m = n`. Let `B` be a block shape of total rank `m`. The cast shape

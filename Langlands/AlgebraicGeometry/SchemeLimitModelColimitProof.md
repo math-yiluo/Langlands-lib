@@ -1,11 +1,11 @@
 # Proof of the actual relative model Hom colimit comparison
 
-This proof reuses the complete draft by Worker 105. Its source context is
+The source context of this proof is
 Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed pp. 5–6, Theorem 3.4(1). Conrad states the
 Hom-colimit bijection for finitely presented models over a directed ring
 system. The present cofiltered affine-base formulation and its weaker
-individual hypotheses are derived from the published `modelMorphismDescent`
+individual hypotheses are derived from the `modelMorphismDescent`
 theorem.
 
 The theorem `modelHomColimitComparison` proves the complete target

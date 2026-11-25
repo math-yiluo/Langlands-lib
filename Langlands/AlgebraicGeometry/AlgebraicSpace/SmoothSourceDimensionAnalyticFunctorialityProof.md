@@ -1,7 +1,5 @@
 # Analytic functoriality for all smooth dimension pieces
 
-Author: Worker 559.
-
 The theorem
 `Langlands.AlgebraicGeometry.AlgebraicSpace.smoothSourceDimensionAnalyticFunctoriality`
 proves the unchanged published proposition

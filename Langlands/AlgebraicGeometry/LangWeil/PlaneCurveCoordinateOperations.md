@@ -1,7 +1,5 @@
 # Coordinate operations for plane curves
 
-Author: Worker 2969.
-
 This module develops internal algebraic tools for the elementary reduction
 described in Wolfgang M. Schmidt, *Zur Methode von Stepanov*, Acta Arithmetica
 24 (1973), printed p.349, registered source

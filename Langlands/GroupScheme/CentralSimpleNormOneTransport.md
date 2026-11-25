@@ -1,8 +1,7 @@
 # Transport of actual reduced-norm-one groups
 
-Author: Worker 165.
-
-This is an internal derived construction for Task 5442. It reuses the actual
+This is an internal derived construction for the local rank-one classification
+(`LocalRankOneClassificationStatement`). It reuses the actual
 unconditional reduced norm and its determinant comparison from the published
 `Langlands.Algebra.ReducedNorm` module. It introduces no classification
 hypothesis and places no restriction on the field characteristic.
@@ -51,4 +50,6 @@ schemes over `Spec K`, with compatibility established on all tests.
 
 The construction supports the later passage from an algebra decomposition to
 the actual reduced-norm-one group in family (i). Existence of that decomposition
-and the local rank-one classification remain separate obligations.
+and the local rank-one classification are not proved in this module; the
+classification is the theorem `localRankOneClassification` in
+`Langlands.GroupScheme.SimplyConnected.LocalRankOneClassificationProof`.

@@ -1,7 +1,5 @@
 # Natural endomorphisms of families of units
 
-Author: Worker 1122.
-
 This module studies families of maps on unit families that are natural in the ring. It is
 supporting algebra for `Langlands.GroupScheme.Rational.TorusNormalizerRigidity`, where the
 family is conjugation by a torus-normalizing point written in the coordinates of a split

@@ -1,6 +1,6 @@
 # Renard II.1.2: disjoint decomposition and exact sequences
 
-Worker 6 authored these source-backed closed proposition definitions.
+These are source-backed closed proposition definitions.
 They state the scalar indicator lemma and the two complete open-closed
 exact sequences; they supply no proofs of the new targets.
 
@@ -12,7 +12,7 @@ corollary is (II.1.2.2). The function-space conventions begin on printed
 page 30 / PDF page 36. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 6 read these complete pages and the following PDF page 38.
+These complete pages and the following PDF page 38 were read.
 
 ## Actual spaces and hypotheses
 
@@ -71,7 +71,7 @@ composition and the existence of a zero-extension preimage for every
 function with zero closed restriction. Thus the proposition does not
 replace middle exactness with only the zero-composition direction.
 The existing closed-restriction surjectivity proof is reusable in a
-future proof of this aggregate, but it does not alone prove all terms.
+proof of this aggregate, but it does not alone prove all terms.
 
 ## The algebraic distribution exact sequence
 
@@ -88,11 +88,11 @@ the second. This expresses the entire source sequence
 0 → D′(Uᶜ) → D′(X) → D′(U) → 0. It concerns the original full algebraic
 duals; no continuous-dual extension or analytic extension hypothesis
 is inserted. The source obtains this sequence by vector-space duality
-from the test-function sequence. A future proof must establish the
+from the test-function sequence. A proof must establish the
 endpoint surjectivity as well as middle exactness.
 
 `Assertions` is exactly the conjunction of the three closed targets.
 The universe u is unrestricted, and U may be empty or all of X.
 These statements do not assert the later support-descent formulation,
 the pairing with compactly supported distributions, or the vector-valued
-and tensor assertions of II.1.2–II.1.3. Those remain separate units.
+and tensor assertions of II.1.2–II.1.3. Those lie outside this module.

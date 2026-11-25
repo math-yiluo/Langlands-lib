@@ -1,9 +1,7 @@
 # Commutative trivial square-zero extensions
 
 Module `Langlands.Algebra.ThickSquareZero`, namespace `Langlands.Algebra.Thick` (the type
-itself is `Langlands.Algebra.Thick`). Author: Worker 5103 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`, openness of versality for actual Picard
-families). Pure commutative algebra in one universe `u`. Everything is proved in the file,
+itself is `Langlands.Algebra.Thick`). Pure commutative algebra in one universe `u`. Everything is proved in the file,
 with no hypotheses beyond those in the signatures.
 
 ## The ring

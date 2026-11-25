@@ -87,7 +87,7 @@ Proof:
    contracting subgroup `U_G(χ)` for `χ = AffineRegularBorel.cocharacter i ν`. The
    theorem `Dynamic.isUnipotent_geometricFiber_of_range_le_unipotent` of the helper module
    [`ContractingClosedSubgroupFibres`](../Dynamic/ContractingClosedSubgroupFibres.md)
-   (by Worker 851, submitted with this proof) then gives unipotence of every geometric
+   then gives unipotence of every geometric
    fibre of the closed subgroup `H`.
 
 `H` is obtained from an existential statement and is not unfolded to the vector group.

@@ -21,9 +21,9 @@ open Langlands.LinearAlgebra.SimplyConnectedCartanComponents
 
 variable (M : AffineSimplyConnectedPinnedModel.{u})
 
-local instance : CommRing M.ring := M.toAffinePinnedModel.commRing
-local instance : Fintype M.coordinates := M.toAffinePinnedModel.fintypeCoordinates
-local instance : Fintype M.rootIndex := M.toAffinePinnedModel.fintypeRoots
+private local instance : CommRing M.ring := M.toAffinePinnedModel.commRing
+private local instance : Fintype M.coordinates := M.toAffinePinnedModel.fintypeCoordinates
+private local instance : Fintype M.rootIndex := M.toAffinePinnedModel.fintypeRoots
 
 /-- Components of the full constant based Cartan diagram of the model. -/
 abbrev Component :=

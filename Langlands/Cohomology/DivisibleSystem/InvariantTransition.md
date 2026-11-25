@@ -1,6 +1,6 @@
 # Transition maps between Harris's `C_m^{•,H}` for a change of `H`
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.StandardMap`
+Built on `Langlands.Cohomology.DivisibleSystem.StandardMap`
 (`groupStandardTotalSystemMap`, `groupStandardTotalSystemMap_tower_app_comp`,
 the normalized fiber sum `groupStandardMap`) and
 `Langlands.Cohomology.DivisibleSystem.InvariantComparison` (`extendMapIso`,
@@ -20,7 +20,7 @@ the normalized fiber sum `groupStandardMap`) and
 `toRepComplexes`), `…Sections` (`mapComplexes`), `…ProPInvariants`
 (`IsProPSubgroup`), the base module `DivisibleSystem` (`map`,
 `mapFunctor`, `extendSystem`, `hom_ext`), `Langlands.Cohomology.DerivedPlus`
-(`extendXMapIso`) and Worker 3's
+(`extendXMapIso`) and
 `Langlands.Cohomology.ProPInvariants.Statement`
 (`ProPInvariantSubcomplexStatement`, used only as a hypothesis). From
 Mathlib it uses `HomologicalComplex.extend`, `HomologicalComplex.extendMap`,
@@ -198,8 +198,8 @@ he resolves `M_m^{q,H} = G_m^q(U(ẽ)_F̄)^H` by iterating (2.4)
 `Z_ℓ[S(ẽ)/H] ⊗_{Z_ℓ} (•) → •`, and on p.306, after forming `C_m^{•,H}`:
 "When we replace H by a subgroup H' which is normal in S(e), we obtain a
 natural isomorphism C_m^{•,H} = [C_m^{•,H'}]^H." He then takes the direct
-limit as `H` shrinks to the identity to obtain (2.6). Worker 61 read these
-passages in the scanned original (p.306 prints `S(e)` where p.305 has
+limit as `H` shrinks to the identity to obtain (2.6). These passages were
+read in the scanned original (p.306 prints `S(e)` where p.305 has
 `S(ẽ)`).
 
 1. The isomorphism `C_m^{•,H} = [C_m^{•,H'}]^H` is not formalized, and we
@@ -232,7 +232,7 @@ passages in the scanned original (p.306 prints `S(e)` where p.305 has
    `S(e)`), then `[H : H']` is a power of `p`, invertible in `Z/ℓ^mZ` since
    `p ≠ ℓ`. This is not formalized: `hk` is an explicit hypothesis.
 3. Hypotheses. As in the InvariantComparison module, the quasi-isomorphism
-   depends on Worker 3's unproved `ProPInvariantSubcomplexStatement`
+   depends on the unproved `ProPInvariantSubcomplexStatement`
    (`hS`). Also as there, the trivial action `htriv` is a hypothesis at the
    single level `m`, on the cohomology of the abstract complex of
    representations `K.toRepComplexes.obj m`. Harris's trivial action is on

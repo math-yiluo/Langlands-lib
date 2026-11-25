@@ -1,7 +1,5 @@
 # Arithmetic transport of archimedean Lie and enveloping algebras
 
-Author: Worker 2.
-
 This internal construction takes an actual number-field ring isomorphism
 `e : K ≃+* L`, with independent field universes, and every natural matrix
 rank `n`, including zero. It uses the existing arithmetic infinite-adele

@@ -11,7 +11,7 @@ The Library defines the rotation `r_p(θ) = blockRotation N p θ` in the coordin
 conditions of `realStandardModule` are integrals over these rotations.
 
 This module is internal infrastructure for the proof of
-`Langlands.Archimedean.RealCharacterPairFiltrationStatement` (Task 7067), which computes with
+`Langlands.Archimedean.RealCharacterPairFiltrationStatement`, which computes with
 these Fourier coefficients. It proves elementary facts about `r_p(θ)`: the closed form
 `r_p(θ) = 1 + (cos θ - 1) P + sin θ W` with `P = E_{p,p} + E_{p+1,p+1}` (when `p + 1 < N`), the
 group law, `2π`-periodicity, the matrix entries, `r_p(π) = s_p s_{p+1}`, conjugation by the sign

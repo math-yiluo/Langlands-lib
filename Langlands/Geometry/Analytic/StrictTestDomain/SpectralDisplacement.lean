@@ -59,35 +59,35 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K]
 bound. Multiplication applies the right automorphism first. -/
 def spectralDisplacementSubgroup (b : P) (r : ℝ) (hr : 0 ≤ r) :
     Subgroup (Aut P) where
-  carrier := {g | SpectralBound (g.hom.toAlgHom b - b) r}
+  carrier := {g | SpectralBound (g.asIso.hom.toAlgHom b - b) r}
   one_mem' := by
     change SpectralBound (b - b) r
     simpa only [sub_self] using (spectralBound_zero (A := P) hr)
   mul_mem' := by
     intro g h hg hh
-    change SpectralBound (g.hom.toAlgHom (h.hom.toAlgHom b) - b) r
-    have hmap := hh.map g.hom.toBoundedRingHom
+    change SpectralBound (g.asIso.hom.toAlgHom (h.asIso.hom.toAlgHom b) - b) r
+    have hmap := hh.map g.asIso.hom.toBoundedRingHom
     have hadd := hmap.add (K := K) hg
     convert hadd using 1
-    change g.hom.toAlgHom (h.hom.toAlgHom b) - b =
-      g.hom.toAlgHom (h.hom.toAlgHom b - b) + (g.hom.toAlgHom b - b)
+    change g.asIso.hom.toAlgHom (h.asIso.hom.toAlgHom b) - b =
+      g.asIso.hom.toAlgHom (h.asIso.hom.toAlgHom b - b) + (g.asIso.hom.toAlgHom b - b)
     rw [map_sub]
     abel
   inv_mem' := by
     intro g hg
-    change SpectralBound (g.inv.toAlgHom b - b) r
-    have hmap := hg.neg.map g.inv.toBoundedRingHom
-    have hinv : g.inv.toAlgHom (g.hom.toAlgHom b) = b :=
-      congrArg (fun f : BoundedAlgHom K P P => f b) g.hom_inv_id
+    change SpectralBound (g.asIso.inv.toAlgHom b - b) r
+    have hmap := hg.neg.map g.asIso.inv.toBoundedRingHom
+    have hinv : g.asIso.inv.toAlgHom (g.asIso.hom.toAlgHom b) = b :=
+      congrArg (fun f : BoundedAlgHom K P P => f b) g.asIso.hom_inv_id
     convert hmap using 1
-    change g.inv.toAlgHom b - b = g.inv.toAlgHom (-(g.hom.toAlgHom b - b))
+    change g.asIso.inv.toAlgHom b - b = g.asIso.inv.toAlgHom (-(g.asIso.hom.toAlgHom b - b))
     rw [map_neg, map_sub, hinv]
     abel
 
 @[simp] theorem mem_spectralDisplacementSubgroup (b : P) (r : ℝ) (hr : 0 ≤ r)
     (g : Aut P) :
     g ∈ spectralDisplacementSubgroup b r hr ↔
-      ∀ x : BanachSpectrum P, x (g.hom.toAlgHom b - b) ≤ r := Iff.rfl
+      ∀ x : BanachSpectrum P, x (g.asIso.hom.toAlgHom b - b) ≤ r := Iff.rfl
 
 theorem spectralDisplacementSubgroup_mono (b : P) {r s : ℝ}
     (hr : 0 ≤ r) (hs : 0 ≤ s) (hrs : r ≤ s) :
@@ -113,7 +113,7 @@ def stabilizerSpectralSubgroup (d : RationalData K P) (b : d.algebra)
     (b : d.algebra) (r : ℝ) (hr : 0 ≤ r) (g : locusStabilizer d) :
     g ∈ stabilizerSpectralSubgroup d b r hr ↔
       ∀ x : BanachSpectrum d.algebra,
-        x ((stabilizerSectionAction d g).hom.toAlgHom b - b) ≤ r := Iff.rfl
+        x ((stabilizerSectionAction d g).asIso.hom.toAlgHom b - b) ≤ r := Iff.rfl
 
 /-- The same rational test inside the ambient automorphism group. Membership
 includes preservation of the actual rational locus. -/
@@ -126,7 +126,7 @@ theorem mem_rationalSpectralSubgroup (d : RationalData K P)
     g ∈ rationalSpectralSubgroup d b r hr ↔
       ∃ hg : g ∈ locusStabilizer d,
         ∀ x : BanachSpectrum d.algebra,
-          x ((stabilizerSectionAction d ⟨g, hg⟩).hom.toAlgHom b - b) ≤ r := by
+          x ((stabilizerSectionAction d ⟨g, hg⟩).asIso.hom.toAlgHom b - b) ≤ r := by
   constructor
   · rintro ⟨h, hh, rfl⟩
     exact ⟨h.property, hh⟩
@@ -180,7 +180,7 @@ def finiteRationalSpectralSubgroup {ι : Type v} [Finite ι]
     g ∈ finiteRationalSpectralSubgroup tests ↔
       ∀ i, ∃ hg : g ∈ locusStabilizer (tests i).domain,
         ∀ x : BanachSpectrum (tests i).domain.algebra,
-          x ((stabilizerSectionAction (tests i).domain ⟨g, hg⟩).hom.toAlgHom
+          x ((stabilizerSectionAction (tests i).domain ⟨g, hg⟩).asIso.hom.toAlgHom
             (tests i).element - (tests i).element) ≤ (tests i).radius := by
   simp only [finiteRationalSpectralSubgroup, Subgroup.mem_iInf,
     mem_rationalSpectralSubgroup]

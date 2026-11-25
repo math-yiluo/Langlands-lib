@@ -1,8 +1,8 @@
 # First-block constituents of the geometric pieces of a binary product: auxiliary proposition
 
 Module `Langlands.Representation.Classification.BinaryGeometricPieceConstituentsStatement`,
-namespace `Langlands.Classification.BinaryGeometricPieces`. Drafted by Worker 377 for Task 6573
-(the proof of `Langlands.Classification.LeftCuspidalDerivative.LeftCuspidalDerivativeLemma`).
+namespace `Langlands.Classification.BinaryGeometricPieces`. It serves the proof of
+`Langlands.Classification.LeftCuspidalDerivative.LeftCuspidalDerivativeLemma`.
 
 The module defines two predicates, `IsFirstBlockConstituent` and `IsMixedConstituent`, and
 states the proposition `BinaryGeometricPieceConstituents`. Nothing is proved in this module;

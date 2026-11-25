@@ -1,7 +1,6 @@
 # Involutions of matrix algebras over division rings as adjoint involutions
 
-Author: Worker 74, for Task 6243 (`d75aa284-b911-411c-8e33-34184b737113`). This module is
-algebraic support for the proof of
+This module is algebraic support for the proof of
 `Langlands.GroupScheme.SymplecticInvolutionAntihermitianStatement` in
 `SymplecticInnerForm/SymplecticInvolutionAntihermitian`. Declarations live in the namespace
 `Langlands.GroupScheme.Quaternionic.FirstKindInvolution`.

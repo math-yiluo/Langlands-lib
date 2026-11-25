@@ -1,6 +1,6 @@
 # Tate's local functional equation
 
-Worker 1248. This module proves the Fourier functional-equation clause of
+This module proves the Fourier functional-equation clause of
 `PadicAbelianLocalAnalysisStatement` (Tate's local functional equation, Tate's
 thesis, local theory) for the published expressions, in the form
 `fourier_functional_equation`: for every Schwartz–Bruhat `f` there is a
@@ -24,10 +24,10 @@ The implemented proof does not use Tate's Fubini argument.
    `fe_algebra_shell`. The reciprocal Euler factors are explicit (`lFactorAt_inv_eq`).
 2. `fe_strip`: the Library single-lattice expansion writes `f` as a finite combination
    of coset indicators; by `fourierTransform_eq_sum` and linearity of the zeta integral
-   (integrability from Worker 1786's `zeta_integrable`) the identity holds for `f`.
+   (integrability from `zeta_integrable`) the identity holds for `f`.
 3. `exists_convergesAt_strip`: the strip contains the real point
    `s = 1/2 + log |χ(π)| / log q`; it is open.
 4. `fourier_functional_equation`: `g` is the Library Fourier closure of `f`. Both sides
-   are meromorphic on `ℂ` and agree on the open strip, so Worker 1786's identity
+   are meromorphic on `ℂ` and agree on the open strip, so the identity
    principle `meromorphic_germ_eq_of_eventuallyEq` gives equality of all punctured
    germs.

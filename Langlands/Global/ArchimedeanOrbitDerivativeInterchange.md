@@ -1,6 +1,6 @@
 # Parameter differentiation of genuine derivative orbits
 
-Author: Worker 94. This is an internal derived helper for the
+This is an internal derived helper for the
 smooth scalar orbit coefficient proof.
 
 The enveloping induction lemma uses complex tensor induction to pass from

@@ -1,6 +1,6 @@
 # Reductive monomorphisms over finite coefficient rings
 
-Worker 700. This is an internal conditional construction using the Library's
+This is an internal conditional construction using the Library's
 simultaneous `SimultaneousHomModel`, its direct and iterated pullback comparisons, and the
 explicit proposition `DirectLimitReductiveStatement`.
 

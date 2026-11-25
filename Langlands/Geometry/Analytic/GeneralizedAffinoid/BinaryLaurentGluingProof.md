@@ -1,7 +1,5 @@
 # Scalar descent for the actual relative binary Laurent diagram
 
-Author: Worker 105.
-
 The module proves
 
 ```lean

@@ -1,7 +1,5 @@
 # Tadić's Proposition 3.8: the classes `⟨a(n,d)^ρ⟩` are prime in `R`
 
-Author: Worker 4021.
-
 `Langlands.Classification.TadicRectanglePrime.tadicRectangleSoclePrime.{uF, uV}` proves
 exactly the published proposition
 `Langlands.Classification.TadicRectangleSoclePrime.{uF, uV} F T` of
@@ -17,7 +15,7 @@ the class `Aubert.gradedInclusion F T N (finiteLengthClass N F.Carrier π hπ)` 
 The axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 
 The entry module `Langlands.Representation.Classification.TadicRectangleSoclePrimeProof`
-uses three helper modules submitted with it:
+uses three helper modules ported together with it:
 
 - `TadicRectanglePrimeAlgebra`: a primality criterion for weighted homogeneous
   polynomials over `ℤ`;
@@ -73,9 +71,8 @@ The Lean proof follows the same strategy, with these differences:
   multisegment `a`.
 - `exists_isLabel_of`: every multisegment `a` has a label in degree `a.degree`, from the
   published `multisegmentConstituentDataExistence` and
-  `orderedMultisegmentSocleExistence`. (Worker 5121's staged, unpublished
-  `TadicBlockRing` has a lemma of the same name; it is reproved here since it is not in
-  the Library.)
+  `orderedMultisegmentSocleExistence`. (The module `TadicBlockRing` has a lemma of the
+  same name in its own namespace; it is proved separately here.)
 
 ### The neighbour `c_k = a_{k,k+1}`
 

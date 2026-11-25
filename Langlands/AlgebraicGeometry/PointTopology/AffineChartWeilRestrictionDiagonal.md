@@ -1,6 +1,6 @@
 # Closed diagonal charts for the actual Weil model
 
-Worker 208 derives these intrinsic construction laws for the existing glued
+This module derives these intrinsic construction laws for the existing glued
 Weil scheme. They support the finite type separated Weil model used in Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Example 4.2, printed pp.9–10. They do not establish the full adelic comparison.

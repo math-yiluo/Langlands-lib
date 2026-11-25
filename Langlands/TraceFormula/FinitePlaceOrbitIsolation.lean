@@ -25,7 +25,7 @@ local notation "Fᵥ" => v.adicCompletion K
 local notation "Eᵥ" => LocalBaseChangeAlgebra K L (Sum.inr v)
 local notation "Sᵥ" => Fin (m + 1) → Fᵥ
 
-local instance : Algebra Fᵥ Eᵥ := LocalBaseChangeAlgebra.algebra K L (.inr v)
+private local instance : Algebra Fᵥ Eᵥ := LocalBaseChangeAlgebra.algebra K L (.inr v)
 
 /-- An algebra splitting of the completed tensor algebra gives the
 corresponding group isomorphism on invertible matrices. -/
@@ -92,15 +92,15 @@ theorem localSplitGLEquiv_normAssociated
 
 end LocalCoordinates
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of K)
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     Smooth (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement (Fin n) (CommRingCat.of K)
 
-local instance {K L : Type u} [Field K] [Field L] [NumberField K] [Algebra K L]
+private local instance {K L : Type u} [Field K] [Field L] [NumberField K] [Algebra K L]
     (v : FinitePlace K) : Algebra (v.adicCompletion K) (LocalBaseChangeAlgebra K L (.inr v)) :=
   LocalBaseChangeAlgebra.algebra K L (.inr v)
 
@@ -137,8 +137,8 @@ def FinitePlaceOrbitIsolationStatement : Prop :=
       let gE := AdelicGroupPoints.rational K Wₙ
       let pF := AdelicGroupPoints.atPlace K GLₙ (.inr v)
       let pE := AdelicGroupPoints.atPlace K Wₙ (.inr v)
-      let θloc := (Wₙ).affinePointsTarget (unitGaloisAut K L GLₙ σ).hom (placeCompletion K (.inr v))
-      let θrat := (Wₙ).affinePointsTarget (unitGaloisAut K L GLₙ σ).hom (CommAlgCat.of K K)
+      let θloc := (Wₙ).affinePointsTarget (unitGaloisAut K L GLₙ σ).asIso.hom (placeCompletion K (.inr v))
+      let θrat := (Wₙ).affinePointsTarget (unitGaloisAut K L GLₙ σ).asIso.hom (CommAlgCat.of K K)
       ∀ (R : Finset (RationalGroupPoints K GLₙ)) (T : Finset (RationalGroupPoints K Wₙ))
         (q₀ : RationalGroupPoints K GLₙ) (t₀ : RationalGroupPoints K Wₙ),
         IsRegularSemisimple (rF q₀) → IsNormAssociated σ (m + 1) (rE t₀) (rF q₀) →

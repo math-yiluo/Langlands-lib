@@ -12,7 +12,7 @@ noncomputable section
 open NumberField Langlands.Automorphic Langlands.GeneralLinear
 open Langlands.Global.FiniteAdelicGL Langlands.Global.CompletionPadic
 open Langlands.Global.CuspidalPairFunctionalEquation
-open Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open scoped Classical CategoryTheory.MonObj TensorProduct
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

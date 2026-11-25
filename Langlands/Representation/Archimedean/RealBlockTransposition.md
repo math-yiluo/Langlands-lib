@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealBlockTransposition`, name
 ## Role and provenance
 
 This module is internal harmonic analysis on the orthogonal group, written for the proof of
-`Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (Task 7133). There, the
+`Langlands.Archimedean.RealCharacterInducedFiltrationStatement`. There, the
 "F-landing" step shows that a composite of block multiplier maps kills the finite-dimensional
 modes. It does so through a duality argument, which needs the results here: the integral over
 `O(N)` of a product, written in terms of block Fourier coefficients; the transposition rule for

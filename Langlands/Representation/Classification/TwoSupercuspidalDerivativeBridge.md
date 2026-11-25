@@ -1,7 +1,7 @@
 # General linear derivatives as mirabolic derivatives of the restriction
 
-Author: Worker 745. Helper module of the proof of Ze80 Proposition 1.11(a),
-first conjunct (task `3c9849a4-a6c0-43ac-9982-d15ed76bf1e9`).
+Helper module of the proof of Ze80 Proposition 1.11(a),
+first conjunct (`TwoSupercuspidalNonadjacentIrreducibilityProof`).
 
 For `0 < k ≤ N + 1`, the published derivative
 `Derivative.generalLinearDerivative T ψ (N+1) k hk : GL_(N+1) ⥤ GL_(N+1-k)`

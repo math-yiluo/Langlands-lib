@@ -1,7 +1,5 @@
 # Moving a determinant twist between the two factors of a pair gamma factor
 
-Author: Worker 389.
-
 The module defines the proposition
 `Langlands.RankinSelberg.PairGammaTwistExchangeStatement.{uF, uV, uW}`. It says that a gamma
 certificate of the pair `(π ⊗ χ∘det, σ)` is the same as a gamma certificate of the pair

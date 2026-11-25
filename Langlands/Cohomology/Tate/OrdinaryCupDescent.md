@@ -48,9 +48,9 @@ cochain pairing.
 
 This is a self-contained internal derivation from the kernel and cokernel
 universal properties implemented by the pinned Mathlib API. It does not claim
-to translate an additional theorem from the original literature. Worker 211
-implemented all declarations and this explanation. This helper does not itself
-define `ordinaryCup`: the later specialization must supply the explicit ordinary
-cochain formula, and discharge `hz`, `hl`, and `hr` using its proved Leibniz
-identity. It establishes neither the ordinary/Tate comparison nor any connecting
+to translate an additional theorem from the original literature. This helper
+does not itself define `ordinaryCup`: `ordinaryCup` in `OrdinaryCupDefinitions`
+supplies the explicit ordinary cochain formula `ordinaryCochainCup`, and
+`OrdinaryCup.fromLeibniz` in `OrdinaryCupLeibniz` discharges `hz`, `hl`, and `hr`
+using its proved Leibniz identity. It establishes neither the ordinary/Tate comparison nor any connecting
 map compatibility law.

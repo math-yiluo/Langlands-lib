@@ -1,6 +1,6 @@
 # Finite relative dimensions on the actual target point space
 
-Author: Worker 109. This derived supporting construction combines the published
+This derived supporting construction combines the published
 scheme smooth-dimension, actual local fibre-dimension, etale chart comparison,
 and quotient point-topology results. It supplies the numerical geometric step
 needed to handle varying dimensions in the adelic smooth-openness proof.
@@ -53,7 +53,8 @@ chart's actual local fibre dimension. Surjectivity is an explicit input here
 and is already available for the adelic stage models.
 
 The dimension fibres of this function are clopen point subsets. Constructing
-the associated open algebraic subspaces, proving fixed chart smoothness of
-their restrictions, applying uniform Lang-Weil and assembling the adelic
-topologies remain separate obligations. This unit does not assert the final
+the associated open algebraic subspaces (`SmoothDimensionOpenSubspaces`),
+proving fixed chart smoothness of their restrictions
+(`SmoothDimensionRestrictions`), applying uniform Lang-Weil and assembling the
+adelic topologies are not part of this module. This module does not assert the final
 adelic openness theorem.

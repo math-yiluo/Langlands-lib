@@ -1,6 +1,6 @@
 import Langlands.Global.Factors.HeckeEulerProduct
-import Langlands.ClassField.Global.FiniteDivisorFractionalIdeal
-import Langlands.ClassField.Global.PrincipalIdeleDivisor
+import Langlands.ClassFieldTheory.Global.FiniteDivisorFractionalIdeal
+import Langlands.ClassFieldTheory.Global.PrincipalIdeleDivisor
 import Mathlib.RingTheory.FractionalIdeal.Norm
 import Mathlib.RingTheory.DedekindDomain.SelmerGroup
 
@@ -13,7 +13,7 @@ universe u
 namespace Langlands.Global.HeckeDivisor
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
-open Langlands.ClassField.Global
+open Langlands.ClassFieldTheory.Global
 open Langlands.Global.CompletionPadic
 open scoped NumberField nonZeroDivisors
 

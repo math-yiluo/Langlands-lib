@@ -1,7 +1,5 @@
 # Scalar extension of reversed dual complexes
 
-Author: Worker 1015.
-
 For commutative rings `R,S`, any ring homomorphism `φ : R →+* S`,
 any integer `g`, and a cochain complex `C` whose terms are finite free,
 `reversedDualBaseChangeIso` constructs an actual isomorphism

@@ -1,21 +1,19 @@
-# Waldspurger on actual rational points: published units and structural ledger
+# Waldspurger on actual rational points: published modules and structural ledger
 
-Authors: Worker 3642 (formerly Worker 19) and Worker 5, task
-`1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1). Coverage before the
-16 November 2026 update was checked against Library commit
-`c2a69151fc91dc660bd8106a217845dbf5a561c4`. Its new row
+Coverage of the modules section, before the update of 16 November 2026, was checked against Library commit
+`c2a69151fc91dc660bd8106a217845dbf5a561c4`. Its last row
 (`DynamicCommonLeviScalar`) was checked there directly. Other modules in those earlier rows are
 byte-identical at that commit to their versions at `544dba099880b57da5fdc3cbc715c01cf2579eb2`,
-against which the row of the previous update (`DynamicCommonLeviComposition`) was checked. The
+against which the row `DynamicCommonLeviComposition` was checked. The
 modules named in the rows before that are also byte-identical to their versions at
 `70eca2e4ea526de0ce0c41e4a9ea0e7d8087cbe7`, and those in the still earlier rows to their
 versions at `7d0469f6b963a3184585874ef8a502809dcbd51b`, against which those rows were checked.
-The topology and adjunction additions of 16 November are checked against their separate
-publication receipts below; their current Lean/Markdown pairs match the frozen published pairs.
-The 21 November update records subsequent results checked at Library
+The topology and adjunction modules are checked against the commits at which they first appeared
+in the Library (below); their Lean and Markdown files there match the present ones.
+The section on weight estimates records later results checked at Library
 `a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`.
 
-This note lists the published modules used by this task that realize items of Waldspurger's article
+This note lists the Library modules that realize items of Waldspurger's article
 on the actual rational points `G(F) = rationalPoints G` of a group scheme over a nonarchimedean
 local field (canonical topology `rationalPointTopology F G.X`), the external structural
 hypotheses they consume, and the open obligations on the chains through them. It complements the
@@ -27,7 +25,7 @@ Source: J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques 
 Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 `waldspurger-2003-plancherel`. Printed page numbers; the PDF page is the printed page minus 234.
 
-## Published units
+## Modules
 
 | Module | Main declarations | Source items | Hypotheses |
 |---|---|---|---|
@@ -44,16 +42,16 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 | `Representation/Plancherel/RationalUnitaryRegularValue` | `RationalFunctionUnitaryRegular`, `rationalUnitaryValue`, `rationalUnitaryValue_eq`, `isSmoothFiniteTorusFunction_rationalUnitaryValue`, `continuous_rationalUnitaryValue`, `rationalUnitaryValue_nonneg`, `plancherelDensity_unitaryRegular`, `plancherelWeight`, `isSmoothFiniteTorusFunction_plancherelWeight`, `continuous_plancherelWeight`, `plancherelWeight_nonneg`, `plancherelWeight_stabilizer_invariant` | derived value function `ω ↦ µ(ω)` on `Im X(M)` required by V.2.1 (p.292) and the wave packets of VI.3 (p.302) | generic part: connected reductive `G` and a rational function regular at every unitary unramified character; the value is independent of the presentation, smooth in the circle coordinates, continuous, and compatible with sums, products, translations and nonnegative values. Weight part: the density's data and `hreg`, regularity of `j_P⁻¹` at every unitary character (the unproved target of the previous row); the weight is nonnegative wherever `j_P⁻¹` has nonnegative real values |
 | `Representation/Plancherel/StandardLeviPlancherelWeight` | `discreteSeriesOrbitDescend`, `standardLeviParameterIso`, `standardLeviDynamicHomeomorph`, `standardLeviCharacterRestrict`, `standardOrbitWeight`, `standardLeviPlancherelWeight` (with `_orbitMap`, `isSmoothFiniteTorusFunction_…`, `continuous_…`, `_nonneg`, `_nonneg_of_forall`), `exists_norm_standardLeviPlancherelWavePacket_le_rationalXi_rpow` | derived transport of the weight to the orbit `O` of a discrete series of a standard Levi `M_I(F)` (VI.3, p.302; V.2.1, p.292), and the wave-packet decay bound with the weight `µ` | standard cocharacter `ζ` of `I`, so that `Z_G(ζ ∘ i)` represents `M_I`; a discrete-series class `π` of `M_I(F)` with the density's data for its inducing representation; `hreg` as in the previous row. The decay corollary keeps the other hypotheses of `exists_norm_rationalInducedOrbitWavePacket_le_rationalXi_rpow` |
 | `Representation/Plancherel/DynamicOppositeContragredientScalar` | `unramifiedRegularInversion`, `rationalUnramifiedFunctionFieldInversion`, `rationalFunctionRegularAt_inversion_iff`, `rationalFunctionNonnegAt_inversion_iff`, `compactPictureDualPairing`, `ConditionalDynamicOppositeDualAdjunctionStatement` (target proved in `DynamicOppositeDualAdjunctionProof`), `ConditionalDynamicOppositeContragredientScalarStatement` (unproved target), `plancherelDensity_contragredient_of_contragredientScalar` | derived bilinear IV.1 (11) (p.283) with the smooth contragredient, for the actual opposite integrals on their convergence domains; IV.3 (2) (p.286) as `j_P(Ǎ ⊗ z⁻¹) = j_P(A ⊗ z)`; the density form of the fourth item of V.2.1 (p.292) | connected reductive `G`, `χ`, `hRefl`, `hCST`, both compact-parabolic factorizations, both Levi-projection premises for `P ∩ K` and `P̄ ∩ K`, and `A`. The scalar target takes independent conditional data for `A` and `Ǎ`, and the inclusions `_hinvForward`, `_hinvReverse` of the inverted convergence subsets in the full domains for `Ǎ`. The density corollary assumes the scalar target |
-| `Representation/Plancherel/DynamicOppositeContragredientScalarReduction` | `compactPictureDualBilin`, `exists_compactPictureDualPairing_ne_zero`, `continuedOperator_dualAdjoint`, `continuedCompositeRationalScalar_dual`, `conditionalDynamicOppositeContragredientScalar_of_dualAdjunction` | derived implementation of "IV.3 (2) … résulte de IV.1 (11)" (p.286) | takes the dual adjunction target of the previous row, now proved by Task 6641 `7222a94a-8ed5-4dbb-ad16-25f5c88276da`; its published theorem can discharge that argument, with no hypotheses beyond those of the two targets |
+| `Representation/Plancherel/DynamicOppositeContragredientScalarReduction` | `compactPictureDualBilin`, `exists_compactPictureDualPairing_ne_zero`, `continuedOperator_dualAdjoint`, `continuedCompositeRationalScalar_dual`, `conditionalDynamicOppositeContragredientScalar_of_dualAdjunction` | derived implementation of "IV.3 (2) … résulte de IV.1 (11)" (p.286) | takes the dual adjunction target of the previous row, proved as `conditionalDynamicOppositeDualAdjunction` (`DynamicOppositeDualAdjunctionProof`); that theorem can discharge that argument, with no hypotheses beyond those of the two targets |
 | `Representation/Plancherel/PlancherelWeightPositivity` | `dense_rationalUnitaryValue_pos`, `isOpen_rationalUnitaryValue_pos`, `plancherelDensity_ne_zero`, `dense_plancherelWeight_pos`, `isOpen_plancherelWeight_pos`, `standardLeviCharacterRestrictHomeomorph`, `rankOneGammaProduct_ne_top_of_isMaximalSplitTorus`, `dense_standardLeviPlancherelWeight_pos`, `standardLeviPlancherelWeightReal` (with `continuous_…`, `_nonneg`, `exists_…_le`, `dense_…_pos`, `ofReal_…`) | internal derived positivity of `µ` on a dense open subset of `Im X(M)` and of `O`, used for the definiteness asserted at VII.2 (p.319); Waldspurger states only `µ ≥ 0` (V.2.1) | `j_P ≠ 0`, `hreg` and nonnegativity of the unitary values of `j_P⁻¹` are hypotheses (the conclusions of the two targets of `DynamicOppositeUnitaryInverseRegularity`); on the orbit a maximal split torus `i` gives the finiteness of the gamma product. The real weight is continuous, nonnegative and bounded |
 | `HarmonicAnalysis/HarishChandraSchwartz/InducedOrbitWavePacketOrthogonalityDense` and `HarmonicAnalysis/HarishChandraSchwartz/RationalInducedOrbitWavePacketOrthogonalityDense` | `dense_pos_of_forall_pos`, `unitaryOrbitWeightedProductCore_of_dense` (with `_inner`), `fourierOrbitSection_eq_zero_iff_forall_pairing_inducedOrbitWavePacket_eq_zero_of_dense`; on actual points `rationalUnitaryOrbitWeightedProductCore_of_dense` (with `_inner`), `rationalFourierOrbitSection_eq_zero_iff_forall_pairing_rationalInducedOrbitWavePacket_eq_zero_of_dense`, `rationalInducedFourierTransform_eq_zero_of_forall_pairing_rationalInducedOrbitWavePacket_eq_zero_of_dense` | one-orbit Hermitian product and detection of `ψ_f[O, P]` by wave packets in the proof of Corollary VII.2.3 (p.319), for a weight positive only on a dense set | real, bounded, continuous weight `u ≥ 0` with `{u > 0}` dense, and a finite measure on `Im X(M_I)` charging nonempty open sets; otherwise the hypotheses of `RationalInducedOrbitWavePacketOrthogonality` (standard `P_I` only; the vanishing premise of the Fourier corollary is Proposition VII.2.2 (i), unproved on actual points) |
 | `Representation/Plancherel/PlancherelOrbitWavePacketOrthogonality` | `standardLeviPlancherelWeightRealBound`, `standardLeviPlancherelOrbitProductCore` (with `_inner`: `⟪s, t⟫ = ∫_O µ(ω) (s_ω, t_ω) dω`), `rationalFourierOrbitSection_eq_zero_iff_forall_pairing_standardLeviPlancherelWavePacket_eq_zero`, `rationalInducedFourierTransform_eq_zero_of_forall_pairing_standardLeviPlancherelWavePacket_eq_zero` | the one-orbit term of the VII.2 product (p.319) with the weight `µ`, and the detection step of the proof of Corollary VII.2.3 with the Plancherel wave packets | `hreg`, `j_P ≠ 0` and nonnegativity of `j_P⁻¹` on unitary characters as hypotheses; one standard pair `(O, P_I)`; any finite `ρX` charging nonempty open sets; `hcoeff` and the remaining hypotheses of `rationalFourierOrbitSmoothSectionLinear`. The sum over `Θ`, its constants and `C^∞(Θ)_inv` are not formalized |
-| `Representation/Plancherel/DynamicOppositeConjugationScalar` | `rationalUnramifiedRegularFunctionsEquiv`, `rationalUnramifiedFunctionFieldEquiv`, `rationalFunctionRegularAt_equiv_iff`, `rationalFunctionNonnegAt_equiv_iff`, `leviConjugation`, `conjugateRepresentation`, `parameterConjugationIso`, `conjugate_parabolic_mul_compact`, `conjugate_oppositeParabolic_mul_compact`, `ConditionalDynamicOppositeConjugationScalarStatement` (unproved target), `conditionalDynamicOppositeConjugationScalar_of_eq` | derived IV.3 (3) `j(wπ) = j(π)` (p.286) in transport form for an arbitrary rational point `g`: the scalar of `(gχg⁻¹, gKg⁻¹, gA)` is the transport of the scalar of `(χ, K, A)` along the isomorphism of the actual centralizer schemes | connected reductive `G`, `χ`, `hRefl`, `hCST`, a rational point `g`, both compact-parabolic factorizations for `K`, `A`, and independent conditional data on both sides. `_of_eq` accepts any compact open `K₁ = gKg⁻¹`, for example `K` when `g ∈ K`. Proof task: Task 6718 `52742276-5126-420c-a874-62321b6cc56d` |
+| `Representation/Plancherel/DynamicOppositeConjugationScalar` | `rationalUnramifiedRegularFunctionsEquiv`, `rationalUnramifiedFunctionFieldEquiv`, `rationalFunctionRegularAt_equiv_iff`, `rationalFunctionNonnegAt_equiv_iff`, `leviConjugation`, `conjugateRepresentation`, `parameterConjugationIso`, `conjugate_parabolic_mul_compact`, `conjugate_oppositeParabolic_mul_compact`, `ConditionalDynamicOppositeConjugationScalarStatement` (target), `conditionalDynamicOppositeConjugationScalar_of_eq` | derived IV.3 (3) `j(wπ) = j(π)` (p.286) in transport form for an arbitrary rational point `g`: the scalar of `(gχg⁻¹, gKg⁻¹, gA)` is the transport of the scalar of `(χ, K, A)` along the isomorphism of the actual centralizer schemes | connected reductive `G`, `χ`, `hRefl`, `hCST`, a rational point `g`, both compact-parabolic factorizations for `K`, `A`, and independent conditional data on both sides. `_of_eq` accepts any compact open `K₁ = gKg⁻¹`, for example `K` when `g ∈ K`. Proved, as `conditionalDynamicOppositeConjugationScalar` (`DynamicOppositeConjugationScalarProof`) |
 | `Representation/Plancherel/RationalPlancherelConstantConjugation` | `Langlands.GroupScheme.innerConjugate`, `roots_comp_iso`, `rankOneCocharacterSet_comp_iso`, `leviGamma_eq_of_conjugation`, `rankOneGamma_eq_of_conjugation`, `rankOneGammaProduct_eq_of_conjugation`, `plancherelConstant_eq_of_conjugation`, `plancherelDensityConstant_eq_of_conjugation`, each with `_conjugateCompact` and `_conjugate_of_mem_compact` variants where applicable | derived invariance `c(G|s·M) = c(G|M)` used in the proof of Lemma V.2.2 (p.294), and invariance of `∏_α γ(M_α|M)` and of the density constant `∏_α γ(M_α|M)²` (V.2, p.292) | affine locally finite type `G`, homomorphism `i : T → G`, cocharacter `ζ`, rational `g`; `K` replaced by `gKg⁻¹`, or kept when `g ∈ K`. The products in `ℝ≥0∞` are compared with no finiteness hypothesis. All results proved; no targets |
 | `Representation/Plancherel/RationalPlancherelDensityConjugation` | `conditionalDynamicOppositeConjugationScalar_of_heq`, `fieldConstant_conjugation`, `plancherelDensity_conjugation_of_conjugationScalar`, `PlancherelDensityConjugationStatement` (target), `plancherelDensityConjugation_of_conjugationScalar` | derived transport form of the third item of V.2.1, `µ(sω) = µ(ω)` (p.292), for every rational point `g` | the density's data for `(i, ζ, K, A)` and for `(innerConjugate i g, ζ, K₁, gA)` with `K₁ = gKg⁻¹`. The proof assumes the unproved conjugation scalar target |
-| `Representation/Plancherel/DynamicOppositePairScalar` | `changeLevi_mem_iff`, `leviChange` (with `_apply_coe`), `changeRepresentation`, `parameterChangeIso` (with `_hom_comp`, `_hom_points`), `parameterHomeomorph_parameterChangeIso`, `inverse_oppositeParabolic`, `inverse_oppositeRadical`, `inverse_oppositeParabolic_mul_compact`, `ConditionalDynamicOppositePairScalarStatement` (unproved target), `conditionalDynamicOppositeInverseScalar_of_pair` | derived IV.3 (1) (pp.285–286) for the two parabolics of one opposite pair, in transport form: for a cocharacter `ψ` with `Z_G(ψ) = Z_G(χ)` whose parabolics and radicals are those of `χ` in the same or the exchanged order, the scalar of `ψ` is the transport of the scalar of `χ` along the isomorphism of the actual centralizer schemes. For `P' = P̄` no composition formula is needed; for maximal `M` this is all of IV.3 (1) | connected reductive `G`, `χ`, `ψ`, `hRefl`, `hCST`, equality of the centralizer subgroup functors, the four subgroup equalities on rational points as hypotheses, a compact open `K` with the four compact-parabolic factorizations, `A` on `M(F)`, and independent conditional data for `(χ, K, A)` and for `(ψ, K, A)`, with `A` viewed on `Z_G(ψ)(F) = M(F)` by `changeRepresentation`. The proved corollary derives the case `ψ = χ⁻¹` (exchanged order) from the target, supplying the centralizer, subgroup and factorization premises; it still takes independent conditional data for `χ⁻¹`. Proof task: Task 6924 `9fe80067-873a-442f-b6b5-c3a6191f7655` |
-| `Representation/Plancherel/DynamicCommonLeviComposition` | `commonDecomposition`, `centralizer_inverseCocharacter_eq`, `pairIntersectionHaar`, `pairQuotientMeasure` (with `_isCompatible`), `pairFullDomainRegion`, `pairFamily` (with `_spec`), `forwardFullDomainRegion_eq_pair`, `pairFamily_inverse_eq_conditionalForwardFamily`, `IsDistanceAdditive`, `DistanceAdditiveRadicalFactorizationStatement` (unproved structural target), `ConditionalDynamicCommonLeviCompositionStatement` (unproved target) | derived IV.1 (12) (p.283; `J` defined p.278, distance and product decomposition p.279): `J_{P₂|P₀} = J_{P₂|P₁} J_{P₁|P₀}` when `d(P₂, P₀) = d(P₂, P₁) + d(P₁, P₀)`, for the actual standard integrals `pairFamily` between three dynamic parabolics `P_G(ψᵢ)` with the literal Levi `M = Z_G(χ)(F)`, pointwise on the intersection of the three full domain regions. `pairFamily` is the published `standardInductionIntertwinerFamily` for two such parabolics; for `ψ = χ` and `ψ' = χ⁻¹`, with the published conditional squared-modulus proof, it is the opposite family `conditionalForwardFamily` (`J_{P̄|P}`, by `rfl`). The distance condition is in group form: `U₀ ∩ U₂ ≤ U₁` and `Ū₀ ∩ Ū₂ ≤ Ū₁` | connected reductive `G` with `[Smooth G.X.hom]`, `χ`, `ψ₀`, `ψ₁`, `ψ₂` with `Z_G(ψᵢ) = Z_G(χ)` (equal subgroup functors), a compact open `K` with Worker 200's `SplitsAlong K ψ₀ ψ₁` and `SplitsAlong K ψ₁ ψ₂` instead of a special `K`, the squared-modulus identity `SquaredModulusCompatibility` for each of the three pairs (derived in the Library only for opposite pairs), `A` on `M(F)` and a parameter in the three full domain regions. The main target takes the structural target, the ordered product charts `(U₀ ∩ U₁) × V = U₁`, `(U₁ ∩ U₂) × W = U₂`, `(U₀ ∩ U₂) × (V × W) = U₂` with `V = U₁ ∩ Ū₀` and `W = U₂ ∩ Ū₁`, as a hypothesis. Nonemptiness of the domains, the rational continuation, the existence of `K` splitting along both pairs for a general triple (Worker 200's `exists_isCommonLeviSplitting` treats two cocharacters and their inverses) and the equivalence of the group form with the root count are not established. Proof tasks: Task 7002 `01859916-3d8b-438c-816e-386388809766` (main target) and Task 7001 `7351966c-e13e-40a4-bf1d-6b627cd4da5f` (structural target) |
-| `Representation/Plancherel/DynamicCommonLeviScalar` | `splitsAlong_of_radical_eq`, `splitsAlong_of_radical_eq_opposite`, `isCommonLeviSplitting_of_pair`, `ConditionalDynamicCommonLeviScalarStatement` (unproved target), `conditionalDynamicOppositePairScalar_of_commonLevi` | derived IV.3 (1) (pp.285–286) for an arbitrary `P' = P_G(ψ) ∈ P(M)`, in the transport form of the opposite-pair target: the canonical scalar of `(ψ, K, Aψ)` is the transport of the canonical scalar of `(χ, K, A)` along `parameterChangeIso χ ψ hM`. The source proof uses four instances of IV.1 (12), for the triples `(ψ⁻¹, χ, ψ)`, `(ψ, χ⁻¹, ψ⁻¹)`, `(χ⁻¹, ψ⁻¹, χ)` and `(χ, ψ, χ⁻¹)`; up to `SplitsAlong.inverse` their splitting premises are exactly the four fields of Worker 200's `IsCommonLeviSplitting K χ ψ`. The proved lemmas give `IsCommonLeviSplitting Q χ ψ` for every compact open `Q` when the radicals of `ψ` are those of `χ` in the same or the exchanged order, and derive the opposite-pair target `ConditionalDynamicOppositePairScalarStatement` from this target | connected reductive `G` with `[Smooth G.X.hom]`, `χ`, `ψ`, `hRefl`, `hCST`, `Z_G(ψ) = Z_G(χ)` (equal subgroup functors), a compact open `K` with `IsCommonLeviSplitting K χ ψ` and the four compact-parabolic factorizations `G(F) = Q K` for `Q ∈ {P, P̄, P', P̄'}`, `A` on `M(F)`, and independent conditional data for `(χ, K, A)` and for `(ψ, K, Aψ)` with `Aψ = changeRepresentation χ ψ hM A`. The existence of a `K` with both the splitting and the factorizations is not proved. No proof task: a proof also needs the rational continuation (Théorème IV.1.1) of the four non-opposite operators `J_{P'|P}`, `J_{P|P̄'}`, `J_{P̄'|P̄}`, `J_{P̄|P'}`, which the Library lacks and the target does not take as data, and the squared-modulus identity for non-opposite pairs |
+| `Representation/Plancherel/DynamicOppositePairScalar` | `changeLevi_mem_iff`, `leviChange` (with `_apply_coe`), `changeRepresentation`, `parameterChangeIso` (with `_hom_comp`, `_hom_points`), `parameterHomeomorph_parameterChangeIso`, `inverse_oppositeParabolic`, `inverse_oppositeRadical`, `inverse_oppositeParabolic_mul_compact`, `ConditionalDynamicOppositePairScalarStatement` (target), `conditionalDynamicOppositeInverseScalar_of_pair` | derived IV.3 (1) (pp.285–286) for the two parabolics of one opposite pair, in transport form: for a cocharacter `ψ` with `Z_G(ψ) = Z_G(χ)` whose parabolics and radicals are those of `χ` in the same or the exchanged order, the scalar of `ψ` is the transport of the scalar of `χ` along the isomorphism of the actual centralizer schemes. For `P' = P̄` no composition formula is needed; for maximal `M` this is all of IV.3 (1) | connected reductive `G`, `χ`, `ψ`, `hRefl`, `hCST`, equality of the centralizer subgroup functors, the four subgroup equalities on rational points as hypotheses, a compact open `K` with the four compact-parabolic factorizations, `A` on `M(F)`, and independent conditional data for `(χ, K, A)` and for `(ψ, K, A)`, with `A` viewed on `Z_G(ψ)(F) = M(F)` by `changeRepresentation`. The proved corollary derives the case `ψ = χ⁻¹` (exchanged order) from the target, supplying the centralizer, subgroup and factorization premises; it still takes independent conditional data for `χ⁻¹`. Proved, as `conditionalDynamicOppositePairScalar` (`DynamicOppositePairScalarProof`) |
+| `Representation/Plancherel/DynamicCommonLeviComposition` | `commonDecomposition`, `centralizer_inverseCocharacter_eq`, `pairIntersectionHaar`, `pairQuotientMeasure` (with `_isCompatible`), `pairFullDomainRegion`, `pairFamily` (with `_spec`), `forwardFullDomainRegion_eq_pair`, `pairFamily_inverse_eq_conditionalForwardFamily`, `IsDistanceAdditive`, `DistanceAdditiveRadicalFactorizationStatement` (structural target), `ConditionalDynamicCommonLeviCompositionStatement` (target) | derived IV.1 (12) (p.283; `J` defined p.278, distance and product decomposition p.279): `J_{P₂|P₀} = J_{P₂|P₁} J_{P₁|P₀}` when `d(P₂, P₀) = d(P₂, P₁) + d(P₁, P₀)`, for the actual standard integrals `pairFamily` between three dynamic parabolics `P_G(ψᵢ)` with the literal Levi `M = Z_G(χ)(F)`, pointwise on the intersection of the three full domain regions. `pairFamily` is the published `standardInductionIntertwinerFamily` for two such parabolics; for `ψ = χ` and `ψ' = χ⁻¹`, with the published conditional squared-modulus proof, it is the opposite family `conditionalForwardFamily` (`J_{P̄|P}`, by `rfl`). The distance condition is in group form: `U₀ ∩ U₂ ≤ U₁` and `Ū₀ ∩ Ū₂ ≤ Ū₁` | connected reductive `G` with `[Smooth G.X.hom]`, `χ`, `ψ₀`, `ψ₁`, `ψ₂` with `Z_G(ψᵢ) = Z_G(χ)` (equal subgroup functors), a compact open `K` with the `SplitsAlong K ψ₀ ψ₁` and `SplitsAlong K ψ₁ ψ₂` instead of a special `K`, the squared-modulus identity `SquaredModulusCompatibility` for each of the three pairs (derived in the Library only for opposite pairs), `A` on `M(F)` and a parameter in the three full domain regions. The main target takes the structural target, the ordered product charts `(U₀ ∩ U₁) × V = U₁`, `(U₁ ∩ U₂) × W = U₂`, `(U₀ ∩ U₂) × (V × W) = U₂` with `V = U₁ ∩ Ū₀` and `W = U₂ ∩ Ū₁`, as a hypothesis. Nonemptiness of the domains, the rational continuation, the existence of `K` splitting along both pairs for a general triple (the `exists_isCommonLeviSplitting` treats two cocharacters and their inverses) and the equivalence of the group form with the root count are not established. The main statement is proved, as `conditionalDynamicCommonLeviComposition` (`DynamicCommonLeviCompositionProof`), and the structural `DistanceAdditiveRadicalFactorizationStatement` as `exactDistanceAdditiveRadicalFactorization` (`DynamicCommonLeviScaledComposition`) |
+| `Representation/Plancherel/DynamicCommonLeviScalar` | `splitsAlong_of_radical_eq`, `splitsAlong_of_radical_eq_opposite`, `isCommonLeviSplitting_of_pair`, `ConditionalDynamicCommonLeviScalarStatement` (unproved target), `conditionalDynamicOppositePairScalar_of_commonLevi` | derived IV.3 (1) (pp.285–286) for an arbitrary `P' = P_G(ψ) ∈ P(M)`, in the transport form of the opposite-pair target: the canonical scalar of `(ψ, K, Aψ)` is the transport of the canonical scalar of `(χ, K, A)` along `parameterChangeIso χ ψ hM`. The source proof uses four instances of IV.1 (12), for the triples `(ψ⁻¹, χ, ψ)`, `(ψ, χ⁻¹, ψ⁻¹)`, `(χ⁻¹, ψ⁻¹, χ)` and `(χ, ψ, χ⁻¹)`; up to `SplitsAlong.inverse` their splitting premises are exactly the four fields of the `IsCommonLeviSplitting K χ ψ`. The proved lemmas give `IsCommonLeviSplitting Q χ ψ` for every compact open `Q` when the radicals of `ψ` are those of `χ` in the same or the exchanged order, and derive the opposite-pair target `ConditionalDynamicOppositePairScalarStatement` from this target | connected reductive `G` with `[Smooth G.X.hom]`, `χ`, `ψ`, `hRefl`, `hCST`, `Z_G(ψ) = Z_G(χ)` (equal subgroup functors), a compact open `K` with `IsCommonLeviSplitting K χ ψ` and the four compact-parabolic factorizations `G(F) = Q K` for `Q ∈ {P, P̄, P', P̄'}`, `A` on `M(F)`, and independent conditional data for `(χ, K, A)` and for `(ψ, K, Aψ)` with `Aψ = changeRepresentation χ ψ hM A`. The existence of a `K` with both the splitting and the factorizations is not proved. A proof also needs the rational continuation (Théorème IV.1.1) of the four non-opposite operators `J_{P'|P}`, `J_{P|P̄'}`, `J_{P̄'|P̄}`, `J_{P̄|P'}`, which the Library lacks and the target does not take as data, and the squared-modulus identity for non-opposite pairs |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalDiscreteSeriesOrbitFinitenessStatement` | `RationalDiscreteSeriesOrbitFinitenessStatement` (statement), `isConnectedReductive_centralizerScheme` | Thm VIII.1.2 (p.321) | connected reductive `G`, split component `s : T → G`, Haar measure on `G(F)/A_G(F)`; no structural input |
 | `Representation/Jacquet/StandardCasselmanPairing` | `standardCasselmanPairingData`, `exists_standardCasselmanPairing`, `exists_standardCasselmanPairing_splitComponent`, `SimultaneousStandardBasisAt.exists_casselmanPairing` | Thm I.4.1 (p.245) for actual standard `P_J`, on the cones of the whole split component | S1, S2 (as data `hζ`) |
 | `Representation/Jacquet/DynamicCasselmanConstantTerm` | `dynamicCasselmanPairingData`, `exists_dynamicCasselmanPairing`, `dynamicParabolicModulus`, `IsDynamicConstantTerm`, `dynamicConstantTerm`, `existsUnique_dynamicConstantTerm` | Thm I.4.1 and Prop. I.6.2 (pp.245, 249–250) for every dynamic `P(χ)`, along the powers of `χ(t)`; normalized by `δ_U` | smooth affine `G`; no structural input |
@@ -66,7 +64,7 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalMinimalInducedJacquetStatement` | `rationalMinimalInducedJacquet` (`V_P`, normalized by `δ_{U_J}`), `RationalMinimalInducedJacquetUnipotentStatement` (statement), `RationalMinimalInducedJacquetUnipotentStatement.splitComponent` | proof of Lemma II.1.1 (p.251): "`(π_P(a) − 1)^d` annule `V_P`" for `a ∈ A_M`, stated for every `z` central in `M_J(F)` with `d` uniform in `z` | connected reductive `G`, maximal split torus, generic `ν`; no structural input |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalModulusFactorization` | `isSemidirectDecomposition_standard`, `continuous_projection_standard`, `standardParabolicPoints_empty_le`, `isSemidirectDecomposition_minimalUnipotent`, `standardLeviMinimalModulus` (`δ₀^{M_J}`), `standardUnipotentModulus` (`δ_{U_J}`), `rationalMinimalModulus_eq_mul`, `rationalMinimalModulus_eq_standardUnipotentModulus_of_commute`, `rationalMinimalModulus_eq_standardUnipotentModulus_splitComponent` | the modulus identity behind I.3 (p.243, `I_P^G V ≃ I_{P'}^G(I_{P∩M'}^{M'} V)`) and Lemma II.1.6 (pp.252–253) for `P₀ ⊂ P_J`: `δ₀ = δ₀^{M_J} δ_{U_J}` on `P₀(F) ∩ M_J(F)`, hence `δ₀ = δ_{U_J}` on elements central in `M_J(F)` | connected reductive `G`, maximal split torus, generic `ν`; no structural input |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalXiSquareIntegrable` | `RationalXiSquareIntegrableStatement` (statement), `rationalXi_inv`, `rationalL2Weights`, `rationalConvolutionWeights`, `RationalXiSquareIntegrableStatement.l2Weights`, `RationalXiSquareIntegrableStatement.convolutionWeights` | Lemma II.1.5 (p.252, statement: `∫_G Ξ(g)²(1 + σ(g))^{-d} dg < ∞` for some `d`); Lemma II.1.4 (p.252, `Ξ(g⁻¹) = Ξ(g)`, proved for connected reductive `G`); adapters to the Library's `L2Weights` and `ConvolutionWeights` (III.6) | the statement: S1 and S5 (Cartan covering) at one compact open `K0`; S3, S4 as data. `rationalXi_inv`: connected reductive `G`, S3; no structural input. `rationalConvolutionWeights` also assumes `K ≤ rationalHeightSubgroup ρ` (Waldspurger's `τ(K) ⊂ GL_n(𝒪)`) |
-| `HarmonicAnalysis/HarishChandraSchwartz/RationalXiSquareIntegrableOfUpperBound` | `rationalCartanCell`, `exists_measure_doubleCoset_uniformizerPowers_le`, `exists_cocharacterCoordinates_norm_le`, `rationalXiSquareIntegrable_of_upperBound` | Lemma II.1.5 (p.252), proved conditionally on `RationalXiUpperBoundStatement`; I.1 (5) upper volume bound in `G(F)` (p.241) and I.1 (6) lower coordinate-height bound on uniformizer powers (p.242) | the main implication assumes the unproved analytic upper-bound statement (Task 5326); the conclusion retains S1 and S5 at a compact open `K0`, S3 and S4. No equality of `K0` with the compact defining `Ξ`, or height invariance under either compact, is required |
+| `HarmonicAnalysis/HarishChandraSchwartz/RationalXiSquareIntegrableOfUpperBound` | `rationalCartanCell`, `exists_measure_doubleCoset_uniformizerPowers_le`, `exists_cocharacterCoordinates_norm_le`, `rationalXiSquareIntegrable_of_upperBound` | Lemma II.1.5 (p.252), proved conditionally on `RationalXiUpperBoundStatement`; I.1 (5) upper volume bound in `G(F)` (p.241) and I.1 (6) lower coordinate-height bound on uniformizer powers (p.242) | the main implication assumes the analytic upper-bound statement `RationalXiUpperBoundStatement`, which the Library proves (`rationalXiUpperBound`, `RationalXiUpperBoundProof`); the conclusion retains S1 and S5 at a compact open `K0`, S3 and S4. No equality of `K0` with the compact defining `Ξ`, or height invariance under either compact, is required |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalXiLevi` | `rationalLeviXi` (`Ξ^{M_J}`), `rationalLeviData`, `rationalXi_eq_integral_rationalLeviXi`, `isIwasawaPair_standardLevi`, `rationalMinimalModulus_eq_one_of_mem_standardUnipotent`, `standardUnipotentModulus_eq_one` | II.1 (p.252, definition of `Ξ^M`) and Lemma II.1.6 (pp.252–253) for standard `P_J ⊇ P₀`: `Ξ(g) = ∫_K δ_{U_J}(m_P(kg))^{1/2} Ξ^{M_J}(m_P(kg)) dk` | connected reductive `G`, maximal split torus, generic `ν`; S3 (data); S5 (Levi Iwasawa decomposition `hM`, data) |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalTemperedInduction` | `IsRationalTempered`, `IsRationalLeviTempered`, `isRationalTempered_iff`, `isRationalLeviTempered_iff`, `exists_rationalHeight_projection_le`, `rationalLeviSigmaBound`, `isUnimodularModulus_standardUnipotentPoints`, `modularCharacter_standardParabolicPoints`, `rationalHasTemperedCoefficients_normalizedInduction`, `IsRationalLeviTempered.normalizedInduction` | III.2 (p.265, tempered representations: coefficients bounded by `cΞ(1 + σ)^r`) for `G(F)` and `M_J(F)`, independent of the closed matrix representation; Lemma III.2.3 (p.266) for standard `P_J`, `J` the root set of a set of simple roots: normalized induction of an admissible tempered representation of `M_J(F)` is tempered | connected reductive `G`, maximal split torus, generic `ν`; S3 (data, with `K ≤ rationalHeightSubgroup ρ` for III.2.3); S4; S5 (`hM`, data) |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalSquareIntegrableDecay` | `RationalSquareIntegrableRapidDecayStatement` (statement), `rationalXi_uniformTranslationBound`, `rationalTranslationWeights`, `hasRapidlyDecreasingCoefficientsOn_rationalHeight_iff`, `mul_mem_rationalSchwartz`, `RationalSquareIntegrableRapidDecayStatement.mul_mem_rationalSchwartz` | Corollary III.1.2 (p.263, statement): coefficients of a representation square integrable modulo `A_G(F)` decrease rapidly on `G¹`; Lemma II.1.2 (p.251, proved with `d = 0`); III.7 (p.273, second paragraph): `f φ ∈ C(G)` for `f ∈ A(π)`, `φ ∈ C_c(G/G¹)` (proved from rapid decay) | the statement: S1 and S5 (Cartan covering) at a compact open `K0`; S3, S4 as data. Lemma II.1.2 and III.7: S3; no structural input |
@@ -97,7 +95,7 @@ Harish-Chandra)*, J. Inst. Math. Jussieu 2 (2003), 235–333, source ID
 | `Representation/Plancherel/DynamicOppositeDualAdjunctionProof` | `conditionalDynamicOppositeDualAdjunction` | bilinear contragredient convergence-domain form of IV.1 (11), p.283, in both orientations | exact published target, including both compact factorizations and splittings and inverse-parameter full-domain premises for the smooth contragredient; no reflexivity or admissibility premise is added |
 | `HarmonicAnalysis/HarishChandraSchwartz/SmoothTorusTensorTopology` | `smoothTorusSeminorm`, `smoothTorusFunctionTopology`, `smoothTensorCoordinates`, `smoothTensorFiniteProductTopology`, `SmoothTensorBasisIndependenceStatement` | internal ordered-angle-derivative and finite-basis implementation of VI.1 and VI.3, pp.295–296, 301 | a finite product of circles and a finite complex coefficient basis; the basis-independence comparison is a target, not a proof |
 | `HarmonicAnalysis/HarishChandraSchwartz/OrbitSectionFixedTensor` | `orbitSectionFixedCoefficients`, `orbitSectionProductLevi_isAdmissible`, `finiteDimensional_orbitSectionFixedCoefficients`, `orbitSectionLevelTensor`, `orbitSectionLevelTensor_evaluation`, `orbitSectionLevelTensor_injective` | actual product fixed coefficients and faithful algebraic tensor realization of sections, VI.1 and VI.3 | compact `K`, compact-open cofinal Levi and irreducible admissible `π` imply proved finite dimensionality of the actual `H × H` fixed submodule for every open `H ≤ K`; level maps use the existing semidirect, compact-picture and orbit-section data and retain self-twist compatibility |
-| `HarmonicAnalysis/HarishChandraSchwartz/OrbitSectionFiniteProductTopology` | `orbitSectionLevelCoordinates`, `orbitSectionFiniteProductLevelTopology`, `orbitSectionFiniteProductTopology`, `OrbitSectionFiniteProductTopologyStatement` | independent finite-product level and locally convex inductive-limit topologies, VI.3, p.301 | actual sections and their injective coordinate map, any finite basis of actual fixed coefficients; the aggregate concludes a finiteness-witness family and every-basis level and total comparison. Finiteness is proved by the preceding adapter; topology equalities are open |
+| `HarmonicAnalysis/HarishChandraSchwartz/OrbitSectionFiniteProductTopology` | `orbitSectionLevelCoordinates`, `orbitSectionFiniteProductLevelTopology`, `orbitSectionFiniteProductTopology`, `OrbitSectionFiniteProductTopologyStatement` | independent finite-product level and locally convex inductive-limit topologies, VI.3, p.301 | actual sections and their injective coordinate map, any finite basis of actual fixed coefficients; the aggregate concludes a finiteness-witness family and every-basis level and total comparison. Finiteness is proved by the preceding adapter; the topology equalities are proved in `OrbitSectionFiniteProductTopologyProof`, under the hypothesis `CompactOpenCofinal M` |
 | `HarmonicAnalysis/HarishChandraSchwartz/RationalOrbitSectionFiniteProductTopology` | `rationalOrbitSectionFixedCoefficients`, `finiteDimensional_rationalOrbitSectionFixedCoefficients`, `rationalOrbitSectionFiniteProductTopology`, `RationalOrbitSectionFiniteProductTopologyStatement` | actual standard-Levi specialization of VI.3's finite-product topology | arbitrary nonarchimedean local field, connected reductive `G`, maximal split torus, generic cocharacter, standard index, compact `K` with the minimal Iwasawa condition, irreducible admissible `π` on the literal standard Levi; actual fixed-coefficient finiteness is proved using `compactOpenCofinal_standardLevi`; the level and total comparisons remain open |
 
 The analysis and Jacquet modules are in namespaces `Langlands.HarishChandraSchwartz`,
@@ -106,61 +104,58 @@ The analysis and Jacquet modules are in namespaces `Langlands.HarishChandraSchwa
 `Langlands.Plancherel.RationalPlancherelDensity`, and the scalar target and its rational-function
 predicates are in `Langlands.Plancherel`. Their paired Markdown files give the exact statements.
 
-The four scalar/density additions in this update are independently accepted and published
-Worker 5 contributions. Their current Lean/Markdown pairs match the frozen published pairs:
+The four scalar and density modules below first appeared in the Library at the commits listed; their
+Lean and Markdown files there match the present ones:
 
-| Pair | Candidate | Reviewer | Publication commit |
-|---|---|---|---|
-| [RationalPlancherelDensityPositivity](../../Langlands/Representation/Plancherel/RationalPlancherelDensityPositivity.md) | `a19a58da-5e20-4601-b639-e114d4b45034` | Reviewer 1285 | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
-| [DynamicOppositeHermitianAdjunctionStatement](../../Langlands/Representation/Plancherel/DynamicOppositeHermitianAdjunctionStatement.md) | `96426cd1-e650-4f1d-8c87-75e131d53fee` | Reviewer 1365 | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
-| [DynamicOppositeUnitaryNonnegativity](../../Langlands/Representation/Plancherel/DynamicOppositeUnitaryNonnegativity.md) | `e1b82259-c34d-4220-bdee-5507409de457` | Reviewer 1553 | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
-| [DynamicOppositeUniformNonvanishing](../../Langlands/Representation/Plancherel/DynamicOppositeUniformNonvanishing.md) | `fec5f1c0-c2cb-48fe-9f5b-0e753f8a0b2b` | Reviewer 1731 | `db8d6b3d466f2fd453a4df4624ce6c90db8eed46` |
+| Pair | First appeared at Library commit |
+|---|---|
+| [RationalPlancherelDensityPositivity](../../Langlands/Representation/Plancherel/RationalPlancherelDensityPositivity.md) | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
+| [DynamicOppositeHermitianAdjunctionStatement](../../Langlands/Representation/Plancherel/DynamicOppositeHermitianAdjunctionStatement.md) | `0c3f30c24701c74d5474fca3fbb5324a99aa1d58` |
+| [DynamicOppositeUnitaryNonnegativity](../../Langlands/Representation/Plancherel/DynamicOppositeUnitaryNonnegativity.md) | `85c2fe719cf62e96f22aaf4ca03961c5814d086b` |
+| [DynamicOppositeUniformNonvanishing](../../Langlands/Representation/Plancherel/DynamicOppositeUniformNonvanishing.md) | `db8d6b3d466f2fd453a4df4624ce6c90db8eed46` |
 
-These publications accept the targets and implemented reductions at their displayed scope.
-Those four publications alone did not prove Hermitian adjunction or the full-unitary scalar
-assertion. The later adjunction proof below closes the former at its stated convergence-domain scope.
+These modules state the targets and prove the reductions at their displayed scope.
+Those four modules alone do not prove Hermitian adjunction or the full-unitary scalar
+assertion. The adjunction proof below closes the former at its stated convergence-domain scope.
 
-The fifteen further pairs below are also independently accepted and published Worker 5
-contributions; `DynamicCommonLeviScalar` was added in the latest update,
-`DynamicCommonLeviComposition` in the previous one and the others before. Their pairs at commit
-`c2a69151…` are those published at the commits listed:
+The fifteen further modules below first appeared in the Library at the commits listed; their
+Lean and Markdown files at commit `c2a69151…` are those of the commits listed:
 
-| Pair | Candidate | Review task | Publication commit |
-|---|---|---|---|
-| [DynamicOppositeUnitaryInverseRegularity](../../Langlands/Representation/Plancherel/DynamicOppositeUnitaryInverseRegularity.md) | `4f18b469-3587-4086-bf37-536a0a7b2a6b` | `5be6aced-b5a0-4ffb-af60-fe47cf1c9c97` | `e5365902d74534dbf1622c06e695dffdc128d723` |
-| [RationalUnitaryRegularValue](../../Langlands/Representation/Plancherel/RationalUnitaryRegularValue.md) | `1e1d7060-99e2-4c18-85e2-ffe292c8de8e` | `7dd235d1-b1d0-4fd9-9d38-e9e8c5ca5cd2` | `e5365902d74534dbf1622c06e695dffdc128d723` |
-| [StandardLeviPlancherelWeight](../../Langlands/Representation/Plancherel/StandardLeviPlancherelWeight.md) | `f1478940-20ed-4d17-96de-4906bd124712` | `aca00d41-b15a-4da5-b48a-884954f6c0e7` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
-| [DynamicOppositeContragredientScalar](../../Langlands/Representation/Plancherel/DynamicOppositeContragredientScalar.md) | `8cb9f215-ad48-49fe-b0ac-9a1fca6bb063` | `c5823a4d-ec06-43c0-910f-976befaefe1f` | `c40a01345b2f4172fa41e07ff31644b40e695003` |
-| [DynamicOppositeContragredientScalarReduction](../../Langlands/Representation/Plancherel/DynamicOppositeContragredientScalarReduction.md) | `bf21c872-5ea0-43e4-8db7-539dd321d9f6` | `e6629908-6826-4a15-9268-4e19585beb14` | `c40a01345b2f4172fa41e07ff31644b40e695003` |
-| [PlancherelWeightPositivity](../../Langlands/Representation/Plancherel/PlancherelWeightPositivity.md) | `4a929a37-8a95-4d82-bca2-b20030228811` | `85d4cfb1-d608-4d2e-93f8-7b73a567c2ff` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
-| [InducedOrbitWavePacketOrthogonalityDense](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/InducedOrbitWavePacketOrthogonalityDense.md) and [RationalInducedOrbitWavePacketOrthogonalityDense](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalInducedOrbitWavePacketOrthogonalityDense.md) | `5ab951a5-2fa0-426e-bbb9-e1645c17a6ab` | `6039769e-2fe4-47b4-84af-c72d76480521` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
-| [PlancherelOrbitWavePacketOrthogonality](../../Langlands/Representation/Plancherel/PlancherelOrbitWavePacketOrthogonality.md) | `e3ce9ec0-0b9a-404c-aabf-f9465dd5ca3e` | `c69a74ba-3e4c-41bc-a4df-daf8c85388d4` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
-| [DynamicOppositeConjugationScalar](../../Langlands/Representation/Plancherel/DynamicOppositeConjugationScalar.md) | `42508655-f284-41b5-a246-14c2ebebf5fb` | `df9e2aa7-f1a0-4490-9493-9f8cd9b081e6` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
-| [RationalPlancherelConstantConjugation](../../Langlands/Representation/Plancherel/RationalPlancherelConstantConjugation.md) | `9d4ebcf8-2252-40e6-80da-d0745a49ad46` | `4c3aec64-e724-4db3-9b8e-be39863fa7ab` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
-| [RationalPlancherelDensityConjugation](../../Langlands/Representation/Plancherel/RationalPlancherelDensityConjugation.md) | `16f64579-e3b6-46eb-9b7c-6206dac8f37c` | `aea5a807-dbba-414e-a126-1bc902d3c5dd` | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
-| [DynamicOppositePairScalar](../../Langlands/Representation/Plancherel/DynamicOppositePairScalar.md) | `0e521f39-2ed2-4c45-9ddb-7ee1cf726a76` | `3f503e6f-952b-426f-9844-d99a53f82260` | `7f5b5f04a855fc0b4671393213c87415a6ee2aaf` |
-| [DynamicCommonLeviComposition](../../Langlands/Representation/Plancherel/DynamicCommonLeviComposition.md) | `36a59df1-e66f-4fdc-a7e8-99d12cb4d543` | `69f7eb96-5292-4f08-90fb-6fdf8a245b7a` | `aeb3911c4e1bf6e3a2f653e874e4ebc422d2a61a` |
-| [DynamicCommonLeviScalar](../../Langlands/Representation/Plancherel/DynamicCommonLeviScalar.md) | `c43f3b16-d43f-409b-b43a-bf508c51d781` | `5d19fdca-5e1d-49c6-a01e-d88e7acd5911` | `4abbe7aabd9c92005d91c9d5bba86b879e928bb3` |
+| Pair | First appeared at Library commit |
+|---|---|
+| [DynamicOppositeUnitaryInverseRegularity](../../Langlands/Representation/Plancherel/DynamicOppositeUnitaryInverseRegularity.md) | `e5365902d74534dbf1622c06e695dffdc128d723` |
+| [RationalUnitaryRegularValue](../../Langlands/Representation/Plancherel/RationalUnitaryRegularValue.md) | `e5365902d74534dbf1622c06e695dffdc128d723` |
+| [StandardLeviPlancherelWeight](../../Langlands/Representation/Plancherel/StandardLeviPlancherelWeight.md) | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
+| [DynamicOppositeContragredientScalar](../../Langlands/Representation/Plancherel/DynamicOppositeContragredientScalar.md) | `c40a01345b2f4172fa41e07ff31644b40e695003` |
+| [DynamicOppositeContragredientScalarReduction](../../Langlands/Representation/Plancherel/DynamicOppositeContragredientScalarReduction.md) | `c40a01345b2f4172fa41e07ff31644b40e695003` |
+| [PlancherelWeightPositivity](../../Langlands/Representation/Plancherel/PlancherelWeightPositivity.md) | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
+| [InducedOrbitWavePacketOrthogonalityDense](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/InducedOrbitWavePacketOrthogonalityDense.md) and [RationalInducedOrbitWavePacketOrthogonalityDense](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalInducedOrbitWavePacketOrthogonalityDense.md) | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
+| [PlancherelOrbitWavePacketOrthogonality](../../Langlands/Representation/Plancherel/PlancherelOrbitWavePacketOrthogonality.md) | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
+| [DynamicOppositeConjugationScalar](../../Langlands/Representation/Plancherel/DynamicOppositeConjugationScalar.md) | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
+| [RationalPlancherelConstantConjugation](../../Langlands/Representation/Plancherel/RationalPlancherelConstantConjugation.md) | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
+| [RationalPlancherelDensityConjugation](../../Langlands/Representation/Plancherel/RationalPlancherelDensityConjugation.md) | `b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a` |
+| [DynamicOppositePairScalar](../../Langlands/Representation/Plancherel/DynamicOppositePairScalar.md) | `7f5b5f04a855fc0b4671393213c87415a6ee2aaf` |
+| [DynamicCommonLeviComposition](../../Langlands/Representation/Plancherel/DynamicCommonLeviComposition.md) | `aeb3911c4e1bf6e3a2f653e874e4ebc422d2a61a` |
+| [DynamicCommonLeviScalar](../../Langlands/Representation/Plancherel/DynamicCommonLeviScalar.md) | `4abbe7aabd9c92005d91c9d5bba86b879e928bb3` |
 
-As above, these publications accept the targets and reductions at their displayed scope; none
-of the targets becomes a theorem merely by publication of its statement or a reduction. The later
+As above, these modules state the targets and prove the reductions at their displayed scope; none
+of the targets becomes a theorem by the statement or a reduction alone. The
 dual-adjunction proof below separately discharges that reduction's adjunction argument.
 
-## Topology and adjunction update, 16 November 2026
+## Topology and adjunction modules, 16 November 2026
 
-The following six pairs are independently accepted and published. The four topology
-units complete Task 6544 `88d9ffed-e423-4af5-ae96-e00eaa1befca` as a
-definitions-and-statements task; their publication does not prove topology equality.
-The last two units are exact proofs of previously published adjunction targets.
+The following six modules are in the Library. The four topology
+modules are definitions and statements for VI.1 and VI.3; they do not prove topology equality.
+The last two modules are exact proofs of adjunction statements of the modules above.
 
-| Pair | Candidate | Review task | Publication commit |
-|---|---|---|---|
-| [SmoothTorusTensorTopology](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/SmoothTorusTensorTopology.md) | `59dd5b55-c455-4ed2-b764-0c8e222a6140` | `1226809d-3c2b-45d7-b56a-0268e2c5a818` | `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181` |
-| [OrbitSectionFixedTensor](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/OrbitSectionFixedTensor.md) | `e5e7cf7a-6b76-49cc-9ad5-22633adcef93` | `e3a16c1d-52eb-495b-b7d3-2a6d1ef06edb` | `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181` |
-| [OrbitSectionFiniteProductTopology](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/OrbitSectionFiniteProductTopology.md) | `540d4bf6-5d8c-4e66-a3e6-dabeb39f83fe` | `34d8fd36-f12d-470b-b17e-aec99c5bffb2` | `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e` |
-| [RationalOrbitSectionFiniteProductTopology](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalOrbitSectionFiniteProductTopology.md) | `975daeee-7f5b-42a1-8b7f-33f2fef57d25` | `1fa7adbc-58d2-4515-b2c2-a6d67d5e5987` | `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e` |
-| [DynamicOppositeHermitianAdjunctionProof](../../Langlands/Representation/Plancherel/DynamicOppositeHermitianAdjunctionProof.md) | `fe1fe1ed-ee4a-4fb0-9582-b4830093f9c2` | `21815b00-84b4-4310-8786-684ddb9970a3` | `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22` |
-| [DynamicOppositeDualAdjunctionProof](../../Langlands/Representation/Plancherel/DynamicOppositeDualAdjunctionProof.md) | `b7b285de-3d92-4b31-8921-8e14b3596cbc` | `cd2d6926-e226-4c95-9e1e-d277ffb56662` | `ccd5c6bb63352c109b2bfde422a65c2dd78e57fd` |
+| Pair | First appeared at Library commit |
+|---|---|
+| [SmoothTorusTensorTopology](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/SmoothTorusTensorTopology.md) | `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181` |
+| [OrbitSectionFixedTensor](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/OrbitSectionFixedTensor.md) | `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181` |
+| [OrbitSectionFiniteProductTopology](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/OrbitSectionFiniteProductTopology.md) | `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e` |
+| [RationalOrbitSectionFiniteProductTopology](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalOrbitSectionFiniteProductTopology.md) | `af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e` |
+| [DynamicOppositeHermitianAdjunctionProof](../../Langlands/Representation/Plancherel/DynamicOppositeHermitianAdjunctionProof.md) | `b3dcc8cc4c93f1140c6b34374f589ccc637a1a22` |
+| [DynamicOppositeDualAdjunctionProof](../../Langlands/Representation/Plancherel/DynamicOppositeDualAdjunctionProof.md) | `ccd5c6bb63352c109b2bfde422a65c2dd78e57fd` |
 
 The actual section coordinate maps are injective and recover the original compact
 restriction at each parameter. They do not assert surjectivity onto arbitrary smooth
@@ -170,28 +165,31 @@ actual rational standard Levi subgroups, using product and contragredient admiss
 and the existing compact-fixed-vector theorem. The optional derivative-permutation
 target is not a premise of the section comparisons.
 
-Three focused exact proof tasks now own the remaining topology comparisons.
-The declaration prefix in this table is `Langlands.HarishChandraSchwartz.`:
+The remaining topology comparisons are three statements (declaration prefix
+`Langlands.HarishChandraSchwartz.`):
 
-| Target | Proof task |
+| Target | Proof in the Library |
 |---|---|
-| `SmoothTensorBasisIndependenceStatement` | Task 7224 `6ee6de28-240a-4826-b3c6-7c585dc27389` |
-| `OrbitSectionFiniteProductTopologyStatement` | Task 7225 `863c67b3-1483-41b5-8810-2654edf682ff` |
-| `RationalOrbitSectionFiniteProductTopologyStatement` | Task 7226 `aa2dcfad-211a-4e0a-a280-a7d68a315f2a` |
+| `SmoothTensorBasisIndependenceStatement` | `smoothTensorBasisIndependence` (`SmoothTorusTensorBasisIndependenceProof`) |
+| `OrbitSectionFiniteProductTopologyStatement` | `orbitSectionFiniteProductTopologyStatement_holds` (`OrbitSectionFiniteProductTopologyProof`), under the hypothesis `CompactOpenCofinal M` |
+| `RationalOrbitSectionFiniteProductTopologyStatement` | `rationalOrbitSectionFiniteProductTopologyStatement_holds` (`RationalOrbitSectionFiniteProductTopologyProof`) |
 
-The rational proof must specialize the eventual published generic proof. The separate
+The separate
 scalar basis-independence result need not be a prerequisite for a generic proof that
-directly establishes the comparison for every basis. No additional finiteness task is
+directly establishes the comparison for every basis. No additional finiteness statement is
 needed.
 
-Task 7217 `25cc1d80-3a4c-43b1-9260-eedb0ec42e56` is a published
-definitions-and-statements task for the two full conclusions of VI.3.1: every actual
+The two full conclusions of VI.3.1 are stated in
+`Langlands/HarmonicAnalysis/HarishChandraSchwartz/StandardLeviPlancherelWavePacketSchwartz.lean`
+(`StandardLeviPlancherelWavePacketMembershipStatement`,
+`StandardLeviPlancherelWavePacketContinuityStatement`,
+`StandardLeviPlancherelWavePacketSourceNormalizedStatement`; this note records no proof of
+them; the Library derives the last, the conjunction of the first two, from the derivative estimates `StandardLeviPacketDerivativeEstimates`, by `standardLeviPlancherelWavePacketSourceNormalized_of_estimates`): every actual
 mu-weighted smooth orbit section has pointwise integrable coefficient and full
 `RationalSchwartzSpace` wave packet, and the integral is realized by a continuous
-complex-linear map from the existing `rationalInducedOrbitSectionSpace`. These are
-planned targets, not published statements or proofs from that task. Its principal
-source specialization must use `standardLeviPlancherelWeight`, retain its continuation,
-convergence, generic irreducibility and inverse-scalar regularity premises, and must
+complex-linear map from the existing `rationalInducedOrbitSectionSpace`. The principal
+source specialization is meant to use `standardLeviPlancherelWeight`, retain its continuation,
+convergence, generic irreducibility and inverse-scalar regularity premises, and
 not add a coefficient Xi bound or the desired output-seminorm estimates as premises.
 The central-valuation decay theorem already in `StandardLeviPlancherelWeight` retains
 `hcoeff` and does not supply this full Schwartz conclusion. The compact subgroup used
@@ -200,23 +198,22 @@ for the scalar and the one used for wave-packet estimates may differ.
 The I.1 source measure fixes probability Haar on the split-component character group,
 not generally on the full unramified character group or its orbit. The full character
 measure has mass equal to the finite restriction-kernel cardinality; the orbit measure
-is the reciprocal stabilizer cardinality times its pushforward. Task 7217 must reuse
-`RationalCharacterHaar`, `RationalNormalizedOrbitMeasure` and the proved finite-measure
+is the reciprocal stabilizer cardinality times its pushforward. The source normalization
+reuses `RationalCharacterHaar`, `RationalNormalizedOrbitMeasure` and the proved finite-measure
 interface `RationalOrbitIntegration`, supplying the thin standard-Levi transport
 adapter and keeping the valuation-image finite-index and subgroup-identification
 obligations visible. Topology comparison, full sigma decay, source normalization,
-semistandard indexing, global invariant spectral spaces, isometry and inversion remain
-separate obligations of the standing program.
+semistandard indexing, global invariant spectral spaces, isometry and inversion are
+separate obligations of the Plancherel formalization.
 
 The Hermitian and dual adjunction proofs close their exact convergence-domain
 obligations, including the reverse-parameter convergence premises. They do not
 construct nonempty simultaneous convergence sets or establish continuation to every
-unitary parameter. The existing scalar reductions can consume the new proofs, with
-their remaining hypotheses retained; full-unitary inverse regularity, the
-square-integrable scalar target and V.2.1 remain open. The underlying proof and
-topology modules were read, and the twelve affected construction/target modules were
-recompiled without diagnostics on 16 November. That development check adds no
-independent acceptance claim.
+unitary parameter. The existing scalar reductions can use these proofs, with
+their remaining hypotheses retained; this note records no proof of full-unitary inverse
+regularity, of the square-integrable scalar target or of V.2.1. The underlying proof and
+topology modules were read, and the twelve affected construction and target modules were
+recompiled without diagnostics.
 
 ## Structural hypotheses consumed
 
@@ -240,7 +237,7 @@ hypotheses: `Langlands.GroupScheme.relativeRootReflectionExistence` in
 `GroupScheme/Rational/CentralSplitTorusCharacterProof`. They are not open structural
 obligations. Its two compact-parabolic factorizations, for `P_G(χ)` and `P_G(χ⁻¹)`, remain
 explicit data and are distinct from S3's minimal-parabolic factorization. Its analytic and
-representation-theoretic inputs remain listed in the published-unit rows and the obligations
+representation-theoretic inputs remain listed in the published-module rows and the obligations
 below. The new Hermitian and positivity targets also retain two compact projection-stability
 premises, the dynamic-parabolic form of the product clause in S5:
 `m_P(P ∩ K) ⊆ K` and `m_P̄(P̄ ∩ K) ⊆ K`. The note supplies no realization of those premises.
@@ -301,15 +298,16 @@ The last assertion of I.2 (p.243), "if `∏_{χ ∈ Y}(ρ(a) − χ(a))^D` annul
 (at each `a` one of the three factors vanishes) but `X = {1} ⊄ Y`; `FiniteFunctionUniqueness.md`
 gives the details and the correct pointwise conclusion `χ(a) ∈ {ψ(a) ; ψ ∈ Y}`.
 
-## Obligations recorded in the 16 November coverage
+## Obligations at Library commit `c2a69151`
 
-This section records the obligations at the earlier coverage snapshot.
-The 21 November update below records subsequent proofs of the `Ξ` upper
-bound and split-center height estimates, and subsequent spectral constructions
+This section records the obligations of the modules above as they stood at Library commit
+`c2a69151…`. Where a named statement has since been proved, its proof is given in
+parentheses. The next section records later proofs of the `Ξ` upper
+bound and split-center height estimates, and later spectral constructions
 and proper-Levi comparisons.
 
-- **Upper bound of Lemma II.1.1** (`RationalXiUpperBoundStatement`, unproved; proof task Task
-  5326 `d27429ee-ab4e-47b4-8486-8cdd92ff4d34`). Of the inputs of Waldspurger's proof (p.251), the
+- **Upper bound of Lemma II.1.1** (`RationalXiUpperBoundStatement`; unproved at that commit, now proved as
+  `rationalXiUpperBound` in `RationalXiUpperBoundProof`). Of the inputs of Waldspurger's proof (p.251), the
   following are published on actual points: `Ξ` as the coefficient `⟨π(g)e, e⟩` of
   `I_{P₀}^G 1` (`RationalXiCoefficient`); Proposition I.4.3 for the standard parabolics, uniformly
   on the dominant points (`StandardCasselmanUniformAsymptotics`, under S1); the modulus identity
@@ -322,8 +320,8 @@ and proper-Levi comparisons.
   `RepresentedGeometricLemmaStatement` without further hypotheses. It enumerates the finitely
   many double cosets `P(F) \ G(F) / Q(F)` and constructs representatives and intersection data,
   and shows that `r_Q ∘ i_P` is glued from the pieces `i^L_{Q'} ∘ ι ∘ r^M_{P'}`. Still open:
-  the unipotence `RationalMinimalInducedJacquetUnipotentStatement` (statement published; proof
-  task Task 5325 `53ad424f-5caa-4396-bbcc-361818d50f3a`). Its proof needs three further steps.
+  the unipotence `RationalMinimalInducedJacquetUnipotentStatement` (statement in the Library; now proved, as
+  `rationalMinimalInducedJacquetUnipotent` in `RationalMinimalInducedJacquetProof`). Its proof needs three further steps.
   First, the published geometric lemma must be compared with the standard parabolics
   `P₀(F)`, `P_J(F)` and with the coinvariant model `rationalMinimalInducedJacquet` of these
   modules. Second, each piece must be evaluated on the trivial representation of `M₀(F)`.
@@ -339,25 +337,27 @@ and proper-Levi comparisons.
   cells. `exists_cocharacterCoordinates_norm_le` proves the lower coordinate-height bound of
   I.1 (6) on uniformizer powers for a closed matrix representation. Uniform bounds on the cells
   then feed the proved `CartanSquareBound.squareIntegrableWeight` and its lattice summation.
-  The analytic upper bound `RationalXiUpperBoundStatement` (Task 5326) remains unproved;
+  The analytic upper bound `RationalXiUpperBoundStatement` was unproved at that commit (it is now
+  proved, above);
   S1 and S5 remain structural premises of the resulting II.1.5 statement. The lower volume
   bound of I.1 (5) and the upper height bound of I.1 (6) are not supplied by this reduction.
   The four conditional consumers of `RationalLeviMeasure` apply this result to the Levi scheme
   and transport its conclusion to `M_J(F)`. They retain the global analytic input (II.1.5 or
   the upper bound), closed `ρ`, Levi Iwasawa `hM`, and separate S1/S5 inputs on `L(F)`; no
   unconditional Levi integrability theorem follows.
-- **Corollary III.1.2** (`RationalSquareIntegrableRapidDecayStatement`, unproved; proof task Task
-  5461 `7f9ba483-3cd4-4733-a87b-b5651bdbd06a`). It needs Casselman's criterion in the necessity
+- **Corollary III.1.2** (`RationalSquareIntegrableRapidDecayStatement`; unproved at that commit, now proved as
+  `rationalSquareIntegrableRapidDecay` in `RationalSquareIntegrableDecayProof`). It needs Casselman's criterion in the necessity
   direction for the actual standard parabolics and square integrability modulo `A_G(F)` (the
-  represented-parabolic `ArbitraryParabolicCasselmanCriterionStatement` has proof task
-  `2e8d370f-f1ed-4ad4-a529-5083212ebae0`), Proposition I.4.3 for the given representation, the
+  represented-parabolic `ArbitraryParabolicCasselmanCriterionStatement`, of which this note records
+  no proof), Proposition I.4.3 for the given representation, the
   finite-function expansion of I.2 and Lemma II.1.1. The consequence that square-integrable
   representations are tempered on all of `G(F)` (III.2) is not stated.
-- **Proposition II.4.5** (`RationalConstantTermEstimateStatement`, unproved; proof task Task 5460
-  `cdf027c8-1a9c-410f-9630-3fb913f227c8`). The Library's abstract `constantTermEstimate_of_bounds`
+- **Proposition II.4.5** (`RationalConstantTermEstimateStatement`, unproved; the Library has only the conditional
+  `rationalConstantTermEstimate_of_analyticInputs`, in `RationalConstantTermAnalyticReduction`). The Library's abstract `constantTermEstimate_of_bounds`
   (`ConstantTermBound`) reduces it to Lemmas II.4.4, II.3.1, II.4.2 and II.1.1 for `M_J`, which
   are not established on actual points.
-- **Heights on the split centre** (`RationalSplitCenterHeightStatement`, unproved). Its two clauses
+- **Heights on the split centre** (`RationalSplitCenterHeightStatement`; unproved at that commit, now proved as
+  `rationalSplitCenterHeight` in `RationalSplitCenterHeightProof`). Its two clauses
   supply the integrability field of `CentralWeights` and the estimate on `G¹` for `p_χ`; the
   module's Markdown sketches a proof through the character valuations `H_G`.
 - **Levi subgroups as group schemes: what remains.** `RationalLeviScheme` identifies `Ξ`, `σ`,
@@ -441,11 +441,9 @@ and proper-Levi comparisons.
   restriction; the implemented algebraic proof uses only the field structure. The all-test
   formulation is a derived refinement of Renard V.5.1(5), whose original assertion concerns
   point groups.
-  Candidate `70063668-f5fc-4e53-9857-aab5b839eb03` (Workers 255 and 3642) passed the Lake
-  build and exact-target checks and independent review by Reviewer 960, and was published at
-  commit `73b1430a339b037d27e9096762b0400adb4fbd19`, retained in the checked Library.
-  Task 5969 `6cd262c7-c9dc-4c29-adf9-d75869e9d1c5` is done, with completion
-  `548b6687-68d7-4fa2-8516-b1923a907906` closed. This publication closes these five
+  The module passed the Lake
+  build and exact-target checks and first appeared in the Library at
+  commit `73b1430a339b037d27e9096762b0400adb4fbd19`. It closes these five
   algebraic clauses only. The inherited apartment, compact/open/maximality, Weyl,
   compact-parabolic product, Iwasawa and Cartan obligations remain separate, as do S1 and S5
   on `L(F)`, the explicit `hM` of the conditional consumers, and all analytic inputs.
@@ -477,7 +475,7 @@ and proper-Levi comparisons.
   The companion identifies the intersections with dynamic parabolics and opposite radicals
   in a representing smooth centralizer, but proves no reductivity or Levi property for it.
   Independence from the parabolic with fixed Levi for the fixed special `K` also remains
-  open (I.1 Remark (3)); positive-multiple invariance does not discharge it. These units
+  open (I.1 Remark (3)); positive-multiple invariance does not discharge it. These modules
   do not prove existence or the factorization properties of a special compact, or supply
   a Plancherel identity.
 - **The square-integrable unitary scalar target: statement only.**
@@ -499,13 +497,11 @@ and proper-Levi comparisons.
   It covers none of IV.3(1)–(5), the Weyl and contragredient invariance or the rank-one
   product formula of V.2.1. The later targets and reductions for some of these items, listed
   under "IV.3 and V.2.1 on actual points" below, neither assume this target nor establish it. It
-  establishes no comparison of source normalizations or Plancherel identity. Worker 5 retains
-  ownership of this scalar target and its V.2.1 successors.
+  establishes no comparison of source normalizations or Plancherel identity.
 - **Hermitian adjunction and the published common-regular-point reductions.**
-  `ConditionalDynamicOppositeHermitianAdjunctionStatement` is now proved by
+  `ConditionalDynamicOppositeHermitianAdjunctionStatement` is proved by
   `Langlands.Plancherel.conditionalDynamicOppositeHermitianAdjunction` in
-  `DynamicOppositeHermitianAdjunctionProof`, published by Task 6449
-  `2c792e2f-f6fa-4939-b0a0-0b9ee31b56a1`. With the compact-picture
+  `DynamicOppositeHermitianAdjunctionProof`. With the compact-picture
   pairing conjugate-linear in its first argument, it compares the forward integral at `z`
   and reverse integral at `z† = conj(z)⁻¹`. It retains both compact-parabolic factorizations,
   projection stability of `P ∩ K` and `P̄ ∩ K`, an invariant positive form on `A`, and
@@ -554,8 +550,8 @@ and proper-Levi comparisons.
   `ConditionalDynamicOppositeUnitaryScalarStatement`;
   no implication to that older target is established here. The published uniform-vector
   argument therefore does not close IV.3 (6), the square-integrable scalar target or the
-  density target. Worker 5 retains the scalar and V.2.1 work. Task 6449's exact
-  convergence-domain adjunction obligation is closed.
+  density target. The exact
+  convergence-domain Hermitian adjunction obligation (IV.1 (11)) is closed.
 - **The conditional rational density: construction and remaining analysis.**
   `RationalPlancherelDensity` defines `plancherelDensity = fieldConstant C * j_P⁻¹` in the
   rational unramified function field of the actual centralizer scheme, with
@@ -590,13 +586,12 @@ and proper-Levi comparisons.
   or a premise removed from the density module. Without finiteness, `toReal ⊤ = 0`;
   with `j_P = 0`, field inversion gives `µ = 0`.
   Source root/Levi and integral-normalization comparisons, fixed-Levi parabolic independence
-  and the special compact realization remain open. Neither this density unit nor the scalar
+  and the special compact realization remain open. Neither this density module nor the scalar
   statement proves IV.3(1)–(6), nonvanishing of `j_P`, regularity and nonnegativity everywhere
   on the unitary locus, the product formula, or Weyl/contragredient invariance of V.2.1. The
   value function on `Im X(M)`, its transport to orbits, the contragredient and conjugation
-  forms and the specialization to the wave-packet consumers are later conditional units,
-  described under "IV.3 and V.2.1 on actual points" below. Worker 5 retains ownership of
-  the scalar and V.2.1 work.
+  forms and the specialization to the wave-packet consumers are later conditional modules,
+  described under "IV.3 and V.2.1 on actual points" below.
   The published `RationalPlancherelDensityPositivity` now states
   `RationalPlancherelDensity.ConditionalPlancherelDensityUnitaryStatement`: the density is
   nonzero as a rational function when the gamma product is finite, and has regular
@@ -615,28 +610,29 @@ and proper-Levi comparisons.
   reduction at the scope stated in its row; none removes the analytic data of the scalar.
   - IV.3 (1), independence of `P ∈ P(M)`: for an arbitrary `P' = P_G(ψ) ∈ P(M)` it is the
     unproved target `ConditionalDynamicCommonLeviScalarStatement` (`DynamicCommonLeviScalar`,
-    published at commit `4abbe7aa…`), for one compact open `K` with
+    first appeared at commit `4abbe7aa…`), for one compact open `K` with
     `IsCommonLeviSplitting K χ ψ` and the four compact-parabolic factorizations
     `G(F) = Q K`, `Q ∈ {P, P̄, P', P̄'}`, that the scalars `j_P` and `j_{P'}` use. The
-    opposite pair `{P, P̄}` (all of `P(M)` for maximal `M`) is the earlier unproved target
-    `ConditionalDynamicOppositePairScalarStatement` (`DynamicOppositePairScalar`, published at
-    commit `7f5b5f04…`; proof task Task 6924 `9fe80067-873a-442f-b6b5-c3a6191f7655`). It is
+    opposite pair `{P, P̄}` (all of `P(M)` for maximal `M`) is the earlier target
+    `ConditionalDynamicOppositePairScalarStatement` (`DynamicOppositePairScalar`, first appeared at
+    commit `7f5b5f04…`; unproved at that commit, now proved as
+    `conditionalDynamicOppositePairScalar`). It is
     proved to follow from the general target (`conditionalDynamicOppositePairScalar_of_commonLevi`,
     which supplies the splitting for every `K` by `isCommonLeviSplitting_of_pair`). The source
     proof (pp.285–286) uses four instances of IV.1 (12), the composition formula, for the
     triples `(P₀, P₁, P₂) = (P̄', P, P')`, `(P', P̄, P̄')`, `(P̄, P̄', P)` and `(P, P', P̄)`.
-    IV.1 (12) for actual dynamic parabolics with a common Levi is the unproved target
+    IV.1 (12) for actual dynamic parabolics with a common Levi is the target
     `ConditionalDynamicCommonLeviCompositionStatement` (`DynamicCommonLeviComposition`,
-    published at commit `aeb3911c…`; proof tasks Task 7002
-    `01859916-3d8b-438c-816e-386388809766` and, for its structural hypothesis, Task 7001
-    `7351966c-e13e-40a4-bf1d-6b627cd4da5f`). Up to `SplitsAlong.inverse`, its splitting
-    premises for the four triples are the four fields of `IsCommonLeviSplitting K χ ψ`. The
-    general target has no proof task. A proof also needs: the rational continuation
+    first appeared at commit `aeb3911c…`; unproved at that commit, now proved as
+    `conditionalDynamicCommonLeviComposition`, and its structural hypothesis
+    `DistanceAdditiveRadicalFactorizationStatement` as `exactDistanceAdditiveRadicalFactorization`). Up to `SplitsAlong.inverse`, its splitting
+    premises for the four triples are the four fields of `IsCommonLeviSplitting K χ ψ`. This note
+    records no proof of the general target. A proof also needs: the rational continuation
     (Théorème IV.1.1) of the four non-opposite operators `J_{P'|P}`, `J_{P|P̄'}`, `J_{P̄'|P̄}`
     and `J_{P̄|P'}`, which the Library lacks and the target does not take as data; the
     squared-modulus identity for these non-opposite pairs; nonvanishing of the continued
     `J_{P'|P}`; and the passage from the pointwise identities on the full domain regions to the
-    rational scalars. Worker 200's `CommonLeviSplitting.exists_isCommonLeviSplitting` gives
+    rational scalars. the `CommonLeviSplitting.exists_isCommonLeviSplitting` gives
     arbitrarily small compact open `K` with `IsCommonLeviSplitting K χ ψ`. Such a small `K`
     need not have the factorizations. A `K` with both properties, such as Waldspurger's
     special `K` (I.1, p.240), is not constructed. So, beyond the opposite-pair case, the Library
@@ -646,16 +642,15 @@ and proper-Levi comparisons.
     `ConditionalDynamicOppositeContragredientScalarStatement`, reduced in `DynamicOppositeContragredientScalarReduction` to the bilinear dual
     adjunction target, now proved by
     `Langlands.Plancherel.conditionalDynamicOppositeDualAdjunction` in
-    `DynamicOppositeDualAdjunctionProof` (Task 6641
-    `7222a94a-8ed5-4dbb-ad16-25f5c88276da`). The reduction can consume this theorem.
+    `DynamicOppositeDualAdjunctionProof`. The reduction can use this theorem.
     The proof covers both opposite-parabolic orientations, with inverse-parameter
     convergence premises and both compact splittings retained; it does not itself prove
     a rationally continued scalar identity. Its density form, the fourth item of V.2.1,
     is `plancherelDensity_contragredient_of_contragredientScalar`, which assumes the
     scalar target.
-  - IV.3 (3), `j(wπ) = j(π)`: the unproved transport-form target
-    `ConditionalDynamicOppositeConjugationScalarStatement` for every rational point `g`,
-    with proof task Task 6718 `52742276-5126-420c-a874-62321b6cc56d`. The conjugation
+  - IV.3 (3), `j(wπ) = j(π)`: the transport-form target
+    `ConditionalDynamicOppositeConjugationScalarStatement` for every rational point `g`
+    (unproved at that commit, now proved as `conditionalDynamicOppositeConjugationScalar`). The conjugation
     invariance of `∏_α γ(M_α|M)`, `c(G|M)` and the density constant is proved
     (`RationalPlancherelConstantConjugation`), and the density form
     `PlancherelDensityConjugationStatement` is proved from the scalar target.
@@ -668,8 +663,8 @@ and proper-Levi comparisons.
     unitary common regular points from the now-proved Hermitian adjunction, with their
     other continuation and domain premises retained. Regularity of `j_P⁻¹` at every
     unitary character, which V.2.1 uses, is the
-    unproved target `ConditionalDynamicOppositeUnitaryInverseRegularStatement`, with no
-    proof task.
+    unproved target `ConditionalDynamicOppositeUnitaryInverseRegularStatement`; this note
+    records no proof of it.
   - V.2.1: regularity of `µ` and `µ ≥ 0` on the unitary orbit are conditional on the
     still-open regularity target and the now-proved adjunction
     (`DynamicOppositeUnitaryInverseRegularity`,
@@ -688,11 +683,12 @@ and proper-Levi comparisons.
   (`dynamicConstantTerm`, tails of the powers of `χ(t)`, no structural input) are not compared in
   the Library for `P_J = P(χ)`, and the independence of the dynamic form from the choice of `t` is
   not proved.
-- **Theorem VIII.1.2** (`RationalDiscreteSeriesOrbitFinitenessStatement`, unproved). Its proof
+- **Theorem VIII.1.2** (`RationalDiscreteSeriesOrbitFinitenessStatement`, unproved; the Library has the conditional
+  `rationalDiscreteSeriesOrbitFiniteness_of_cuspidalInputs`, in `RationalCuspidalFinitenessReduction`). Its proof
   (VIII.2–VIII.5) uses `κ` and Theorem VII.2.5 and runs by induction on the semisimple rank
-  together with VIII.1.1; a proof task is deferred until a statement of VII.2.5 on actual objects
-  exists. The set in the statement is `rationalDiscreteSeriesFixedOrbits` of the Library's
-  `RationalDiscreteSeriesOrbitFiniteness` (written in another task), which proves its finiteness
+  together with VIII.1.1; a proof needs a statement of VII.2.5 on actual objects
+  first. The set in the statement is `rationalDiscreteSeriesFixedOrbits` of the Library's
+  `RationalDiscreteSeriesOrbitFiniteness`, which proves its finiteness
   for compact open `H` from the finiteness of the sets `E₂(G)^H_χ`
   (`finite_rationalDiscreteSeriesFixedOrbits_of_finite_central`), or from a finite-dimensional
   space containing their `H`-bi-invariant coefficients
@@ -733,7 +729,7 @@ and proper-Levi comparisons.
   `DynamicOppositeUnitaryInverseRegularity`. The comparison of `µ` with Waldspurger's
   normalizations remains open. Only standard parabolics `P_I(F)` are covered. Not treated on actual points:
   the full Schwartz membership and continuous synthesis conclusions of Proposition VI.3.1
-  (targets assigned to Task 7217 in the topology update above), the intertwining part of Proposition VII.2.2 and
+  (stated in `StandardLeviPlancherelWavePacketSchwartz`; see the topology section above), the intertwining part of Proposition VII.2.2 and
   Lemma VII.1.4, Corollary VII.2.3 beyond one orbit, the spaces `C^∞(Θ)` and `C^∞(Θ)_inv`, the map
   `κ` and Theorem VII.2.5, `°C(G)`, Lemma VIII.2.1 beyond the first sentence of its proof, and
   Lemma VIII.2.3 beyond the vanishing of `f₁ ∗ f_ψ` and `f_ψ ∗ f₁`.
@@ -742,7 +738,7 @@ and proper-Levi comparisons.
 
 ## Weight estimates, spectral families and rank induction, 21 November 2026
 
-The published pairs below were checked at Library
+The modules below were checked at Library
 `a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`. The entries follow the
 rank induction in VIII.1, the proper Fourier cutoff in VIII.2.1, and
 the full-group residual argument on printed p. 332.
@@ -751,8 +747,7 @@ the full-group residual argument on printed p. 332.
   using the proved Jacquet unipotence. Combined with
   `rationalXiSquareIntegrable_of_upperBound`, it supplies the analytic
   input to II.1.5 with the simultaneous standard basis and finite
-  Cartan covering still explicit. Publication
-  `c3935b0b-4feb-4684-bddd-f9ac2c1cf9d6`.
+  Cartan covering still explicit.
   [Xi upper bound](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalXiUpperBoundProof.md)
 - `rationalSplitCenterHeight` proves the exact
   `RationalSplitCenterHeightStatement`. Its two estimates give the
@@ -761,7 +756,6 @@ the full-group residual argument on printed p. 332.
   `rationalCuspidalCentralImage_subset_of_specialCompact` uses this
   proof and the II.1.5 weight estimate for the upper inclusion of
   VIII.4.2, with explicit structural inputs and finite projected levels.
-  Height publication `9d13322d-30f0-40c6-ba95-d57d231db0eb`.
   [Split-center heights](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSplitCenterHeightProof.md),
   [Upper inclusion](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalCuspidalRankZero.md)
 - `rationalSemistandardThetaSmoothSections` constructs `C^∞(Θ)` as
@@ -775,19 +769,17 @@ the full-group residual argument on printed p. 332.
 - `semistandardProperLeviRank` proves strict rank decrease for each
   proper intrinsic semistandard parabolic, using its literal closed
   reductive Levi model and the inherited maximal split torus. The
-  ambient and Levi ranks use their relative root spans. Publication
-  `78fe22e7-7aa1-491b-851f-56b92158033e`.
+  ambient and Levi ranks use their relative root spans.
   [SemistandardProperLeviRankProof](../../Langlands/GroupScheme/Rational/SemistandardProperLeviRankProof.md)
 - `RationalExactRankDiscreteSeriesOrbitFinitenessStatement` restricts
   VIII.1.2 to one rank. `rationalStrictlyLowerRankOrbitFiniteness_succ_iff`
   adds the next rank to a strict bound, and
   `rationalStrictlyLowerRankOrbitFiniteness_one_iff` uses the rank-zero
-  proposition published as `e35df980-a95b-46fe-bac6-b53abdb9f0b5`.
+  proposition.
   `allLeviOrbitFiniteness_of_rank_lt` takes orbit finiteness at all
   ranks below a strict bound containing the ambient rank and supplies
   every semistandard Levi premise of VIII.1.3. The rank equivalences
-  and all-Levi deduction are in publication
-  `92ead55c-c483-4359-a16b-17df0ef282d8`.
+  and all-Levi deduction are in the module linked below.
   [RationalOrbitFinitenessByRank](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalOrbitFinitenessByRank.md)
 - `rationalSemistandardLeviFourierVanishing` takes zero proper Fourier
   cutoff to the vanishing of the actual Fourier product of each
@@ -795,8 +787,7 @@ the full-group residual argument on printed p. 332.
   coverage by the lifted nested indices with the specified measure
   and weight comparisons, and the outer radical conjugation modulus.
   A zero-kernel statement for the Levi Fourier product then gives
-  vanishing of those constant terms. Publication
-  `67734de5-c76d-43c0-9415-9284b4bf89a6`.
+  vanishing of those constant terms.
   [RationalSemistandardLeviFourierVanishing](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardLeviFourierVanishing.md)
 - `fullLeviSplitCenter_map` identifies the actual split-center point
   images under the full standard Levi equivalence. With this
@@ -807,9 +798,7 @@ the full-group residual argument on printed p. 332.
   tempered coefficient bounds for the normalized inductions of the
   inducing discrete series. The proof uses the actual induction
   equivalence, positivity of the inducing formal degree and square
-  integrability under either central-quotient Haar scale. Publications
-  `9b2d637d-09d7-47e4-b328-3474ea610896` and
-  `0b0a6b6d-c354-42fa-986e-69b42d44a30a`.
+  integrability under either central-quotient Haar scale.
   [Full Levi split center](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalSemistandardFullLeviSplitCenter.md),
   [Full Levi Fourier action](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalFullLeviFourierAction.md)
 - `rationalCuspidalDiscreteActionSeparation` proves that such action
@@ -821,8 +810,6 @@ the full-group residual argument on printed p. 332.
   `discreteSeriesCentralCoefficientSpace_eq_of_separable` compares
   the coefficient sums at independent carrier universes, by
   equivalent realizations preserving the quotient Haar measure.
-  Publications `268c59a3-556d-4955-a201-259ee90dc8be` and
-  `4ad21459-0db7-475b-8a8e-2eff101a24cf`.
   [Cuspidal separation](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/RationalCuspidalDiscreteActionSeparation.md),
   [Small realization](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/DiscreteSeriesSmallRealization.md)
 - `compactQuotientCentralProjectionFinite` proves finite dimension
@@ -830,8 +817,7 @@ the full-group residual argument on printed p. 332.
   level on a compact central quotient. It evaluates character
   equivariant functions at finitely many coset representatives.
   This supplies the finiteness part of VIII.4.1 when the actual
-  split-central quotient is compact. Publication
-  `21120965-c179-4429-98ea-d079b8dc0657`.
+  split-central quotient is compact.
   [Central projection on a compact quotient](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CentralProjectionCompactQuotient.md)
 
 The general reconstruction step still needs the intrinsic

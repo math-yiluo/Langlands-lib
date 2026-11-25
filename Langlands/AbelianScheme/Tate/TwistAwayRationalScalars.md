@@ -88,9 +88,9 @@ hypothesis is needed for this automorphism-action assertion.
 
 ## Scope
 
-This unit is algebraic. It does not construct a rational topology, assert
+This module is algebraic. It does not construct a rational topology, assert
 continuity, prove the scalar-comparison hypotheses, identify the twist with
 a free rank-one module, choose primitive roots or a trivialization, or
 construct geometric monodromy or a Weil pairing. It supplies the away scalar
-interface for the actual root limits; it does not complete the parent
-abelian-scheme and PEL level-structure task.
+interface for the actual root limits; it does not complete the
+abelian-scheme and PEL level-structure construction.

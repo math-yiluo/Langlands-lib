@@ -1,9 +1,13 @@
 # Sections of central extensions by diagonalizable groups: Hopf algebras
 
-Worker 3502 wrote this module for Task 7804 (Milne, *Algebraic Groups* (2017),
-Proposition 16.28). It generalizes the first half of
+This module is part of the proof of Milne, *Algebraic Groups* (2017),
+Proposition 16.28, that over a perfect field extensions of smooth connected
+unipotent groups by diagonalizable groups split uniquely
+(`perfectDiagonalizableUnipotentExtensionSplit`
+in `Langlands.GroupScheme.Unipotent.DiagonalizableExtensionSplitProof`). It
+generalizes the first half of
 [`CentralDiagonalizableExtensionHopf`](CentralDiagonalizableExtensionHopf.md)
-(Worker 603) from the quotient Hopf algebra `K[ℤ^I]` of a split torus to an
+from the quotient Hopf algebra `K[ℤ^I]` of a split torus to an
 arbitrary commutative Hopf algebra `B`. It then uses the result to construct a
 section, which that module does not do.
 

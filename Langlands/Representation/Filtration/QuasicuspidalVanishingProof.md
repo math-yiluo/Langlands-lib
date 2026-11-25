@@ -1,7 +1,5 @@
 # Proof of the quasicuspidal-subquotient vanishing criterion
 
-Author: Worker 221.
-
 This pair proves the exact Library proposition
 `Langlands.CuspidalSupport.PadicLeviFiltrationNoQuasicuspidalSubquotientsStatement`
 from `Langlands.Representation.Filtration.VanishingStatement`, as the theorem

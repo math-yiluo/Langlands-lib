@@ -1,20 +1,18 @@
 # Matrix and normalized polynomial trace generating series statements
 
-Worker 597 states the internal interface prescribed by task
-`5950a475-8abb-4450-8e53-eb3f8f8ef965`. The formulas were agreed by Worker 355
-and Worker 397 and routed by Worker 398, who supplied the published helper.
-The module
+This module states an internal interface, using the published helper of
+`TraceGeneratingSeries`. The module
 `Langlands.Automorphic.Unramified.TraceGeneratingSeriesStatement` defines
 the two closed propositions below in namespace
 `Langlands.Automorphic.Unramified`. Its entry declaration is
-`MatrixTraceGeneratingSeriesStatement`; the same contribution also contains
+`MatrixTraceGeneratingSeriesStatement`; the same module also contains
 `PolynomialTraceGeneratingSeriesStatement`.
 
 These are internal derived prerequisites for the published
 `EulerProductTraceStatement` and `InductionPolynomialTraceStatement`, whose
 motivation is explained in the published
 [TraceAlgebraStatement Markdown](TraceAlgebraStatement.md), especially its
-“Original sources and derived correspondence” discussion. This contribution
+“Original sources and derived correspondence” discussion. This module
 does not claim a new reading of the original PDFs and requires no new
 literature source. Both declarations are definitions returning `Prop`. They
 supply neither proofs nor assumed results in structures, and they assume no
@@ -111,9 +109,10 @@ without external parameters or hidden hypotheses.
 ## Proof and dependency boundary
 
 This module imports only the published helper and
-`Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff`, in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. No axioms or proof holes are added.
-The two propositions remain separate proof obligations. Proving them would
-supply formal-series algebra for the existing trace-algebra targets; this
-statement contribution itself proves no matrix identity, polynomial
+`Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff`. No axioms or proof holes are added.
+The two propositions are proved separately, as `matrixTraceGeneratingSeries`
+(module `MatrixTraceGeneratingSeriesProof`) and
+`polynomialTraceGeneratingSeries` (module `PolynomialTraceGeneratingSeriesProof`).
+These proofs supply formal-series algebra for the existing trace-algebra
+targets; this statement module itself proves no matrix identity, polynomial
 uniqueness theorem, product theorem, or automorphic result.

@@ -1,9 +1,6 @@
 # Actual localization under explicit stable-ideal finiteness: proof
 
-Author: Worker 1120, for proof task `30fb5fd5-84c5-4602-afae-5210a9f947ac`
-revision 1. That task is the proof successor of statement task
-`9796ccea-0a72-431d-b9a9-87c0499717c9`, under the whole-book Renard task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 2. The module is
+The module is
 `Langlands.Algebra.RenardStableIdealFiniteLocalizationProof`, in namespace
 `Langlands.Renard.AlgebraActionLocalization`.
 
@@ -50,8 +47,7 @@ of `B`.
 The proof establishes exactly this internal target. It does not compare
 the three explicit generation hypotheses with Renard's nonunital
 finite-type or Noetherian conventions. It does not prove the full
-source-facing C.II proposition. Both remain obligations of the parent
-task.
+source-facing C.II proposition.
 
 ## Implemented proof
 
@@ -113,11 +109,8 @@ The two results form the required conjunction.
 
 ## Verification
 
-The module compiled on 30 October 2026 in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with no errors or warnings.
+The module compiled on 30 October 2026 with no errors or warnings.
 Inspection of `stableIdealFiniteLocalization` reported a theorem with
 level parameters `uB` and `uV`. It depends only on the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. It uses no `sorry`,
-`admit` or new axioms. Development compilation is not acceptance.
-Independent semantic review, the Lake build, exact-target validation and
-Library publication are still required.
+`admit` or new axioms.

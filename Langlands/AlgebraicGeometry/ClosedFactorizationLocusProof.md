@@ -1,9 +1,5 @@
 # The universal closed-factorization locus
 
-Author: Worker 445, with the affine coefficient adapter supplied by Worker
-1150 and the full-product locality and gluing constructions supplied by
-Worker 146.
-
 `ClosedFactorizationLocusProof.closedFactorizationLocus` proves the exact
 published proposition
 `Langlands.AlgebraicGeometry.ClosedFactorizationLocusStatement.{u}`. The
@@ -68,7 +64,7 @@ criterion on affine tests. The theorem
 closed immersion to every affine open of `Y`, applies those affine
 representatives, and glues them to a closed immersion over `Y`. Its
 closed-sieve argument gives the criterion on every test scheme. This
-proves exactly the requested proposition. The structural flatness premise
+proves exactly the proposition `ClosedFactorizationLocusStatement`. The structural flatness premise
 is retained in that proposition; this implementation does not need to
 invoke it separately in the affine reduction.
 

@@ -42,7 +42,6 @@ The implemented argument proves more than the target needs. The full-support
 Levi cokernel functor is naturally isomorphic to the identity functor on all of
 `SmoothRep(M I)`, not only on Jacquet modules of objects of `Alg({I})`. In
 particular, the proof does not use the cuspidality of the Jacquet module.
-The task context explicitly permits this direct full-Levi degree-zero route.
 
 ## Implemented argument
 
@@ -174,8 +173,8 @@ lemma, representation adjointness or cuspidal-support theorem is used. The
 module import closure contains `Classification`, `CuspidalSupport` and
 `Geometric` modules and `Parabolic.NaturalFirstAdjointness`, all through the
 target's own imports. The declaration trace reaches none of their theorems.
-The separately owned Jacquet cuspidality statement (task `b752450b`) is not
-used.
+The separate Jacquet cuspidality statement `RationalJacquetCuspidalStatement`
+of `RationalTerminalJacquet` is not used.
 
 ## Source and provenance
 

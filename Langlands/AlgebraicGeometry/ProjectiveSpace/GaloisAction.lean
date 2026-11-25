@@ -54,18 +54,20 @@ theorem galoisMap_mul (σ τ : B ≃ₐ[R] B) :
 
 /-- The inverse algebra automorphism supplies the inverse projective morphism. -/
 def galoisIso (σ : B ≃ₐ[R] B) : Aut (ProjectiveSpace B n) where
-  hom := galoisMap R B n σ
-  inv := galoisMap R B n σ⁻¹
-  hom_inv_id := by rw [← galoisMap_mul, mul_inv_cancel, galoisMap_one]
-  inv_hom_id := by rw [← galoisMap_mul, inv_mul_cancel, galoisMap_one]
+  asIso.hom := galoisMap R B n σ
+  asIso.inv := galoisMap R B n σ⁻¹
+  asIso.hom_inv_id := by rw [← galoisMap_mul, mul_inv_cancel, galoisMap_one]
+  asIso.inv_hom_id := by rw [← galoisMap_mul, inv_mul_cancel, galoisMap_one]
 
 /-- Inverse comorphisms give a left action on the specified projective-space scheme. -/
 def galoisAction : (B ≃ₐ[R] B) →* Aut (ProjectiveSpace B n) where
   toFun σ := galoisIso R B n σ⁻¹
   map_one' := by
+    apply Aut.ext
     apply Iso.ext
     exact galoisMap_one R B n
   map_mul' σ τ := by
+    apply Aut.ext
     apply Iso.ext
     change galoisMap R B n ((σ * τ)⁻¹) =
       galoisMap R B n τ⁻¹ ≫ galoisMap R B n σ⁻¹
@@ -74,7 +76,7 @@ def galoisAction : (B ≃ₐ[R] B) →* Aut (ProjectiveSpace B n) where
 /-- The bundled left action uses the inverse algebra automorphism. -/
 @[simp]
 theorem galoisAction_hom (σ : B ≃ₐ[R] B) :
-    (galoisAction R B n σ).hom = galoisMap R B n σ⁻¹ := rfl
+    (galoisAction R B n σ).asIso.hom = galoisMap R B n σ⁻¹ := rfl
 
 variable {R B n}
   {X X' : Scheme.{u}}

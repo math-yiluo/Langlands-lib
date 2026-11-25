@@ -23,7 +23,7 @@ diffs):
 Declaration names and namespaces are unchanged. Apart from the universe generalization, the
 mathematical hypotheses and conclusions of the source are retained.
 -/
-import Mathlib
+import Langlands.MathlibBase
 
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000

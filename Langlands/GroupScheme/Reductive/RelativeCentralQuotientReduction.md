@@ -1,7 +1,5 @@
 # Reduction of relative central quotients to multiplicative-type inputs
 
-Workers 358 and 226.
-
 `RelativeCentralQuotientReductionStatement` is the `Prop`-valued
 definition of the implication below. `relativeCentralQuotientReduction`
 proves it using the parameterized assembly theorem.
@@ -19,7 +17,7 @@ in every universe. These three input propositions remain explicit
 hypotheses. This module does not prove any of them, and therefore does not
 provide an unconditional proof of the final statement.
 
-The conclusion is the unchanged published
+The conclusion is the published
 `RelativeCentralQuotientStatement`: for every scheme, reductive group, flat
 central closed subgroup and supplied actual fppf quotient, the quotient is
 reductive, its centre has the prescribed full preimage, both directions
@@ -54,6 +52,6 @@ subgroup-functor identities:
 This is an internal derived assembly of the imported geometry, centre,
 torus image and preimage, and inverse-image reflection results. It
 introduces no new source translation. The source correspondence of the
-unchanged target is recorded in `RelativeCentralQuotientStatement.md`;
+target is recorded in `RelativeCentralQuotientStatement.md`;
 each supporting module describes its own implemented proof and explicit
 input assumptions.

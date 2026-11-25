@@ -1,6 +1,6 @@
 # Universal closedness after rebasing to a represented target
 
-This internally derived unit compares the published universal-closedness
+This internally derived module compares the published universal-closedness
 predicate for a morphism to a represented target scheme with universal
 closedness of the actual rebased space's structural morphism. The comparison
 has arbitrary scheme base, arbitrary represented target and arbitrary
@@ -36,7 +36,7 @@ rebased structural map, not reflection of properness in arbitrary cases.
 `AffineTargetFamily.isUniversallyClosedMorphism_iff` combines the exact
 surjective-etale target-atlas criterion with the rebase equivalence. Finally,
 `AffineTargetFamily.isProperMorphism_structural` proves that a proper morphism
-with the host finite-presentation atlases gives a proper structural family
+with finite-presentation atlases on its source and target gives a proper structural family
 over any affine target chart locally of finite presentation over the base.
 Separatedness and universal closedness pass through the actual cartesian
 square, and the actual family has the required finite-presentation atlas.
@@ -46,7 +46,7 @@ preservation statement.
 The provenance is internal: the published actual target rebase and its fibre
 homeomorphisms, scheme-base-change preservation, universal-closedness
 cartesian preservation and target-atlas criterion, stability of relative
-closed-immersion diagonals, and the finite-type atlas reductions. Integration
-must follow `UniversallyClosedTargetAtlas`. The scheme-cover existence proof,
+closed-immersion diagonals, and the finite-type atlas reductions. The module
+imports `UniversallyClosedTargetAtlas`. The scheme-cover existence proof,
 descent of a chosen cover, arbitrary-base-change family comparisons and the
-full eight-property limit theorem remain separate obligations.
+full eight-property limit theorem are not part of this module.

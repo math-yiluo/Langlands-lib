@@ -1,7 +1,5 @@
 # Original CM kernel lifts on connected scheme tests
 
-Author: Worker 57.
-
 This module transfers the original CM class-fiber translation theorem to all
 connected admissible scheme tests. Under the two named relative-dual assertions,
 it constructs actual lifts of morphisms from any connected locally Noetherian
@@ -188,8 +186,8 @@ isomorphisms. Its proof route is the transfer, admission and explicit summand
 lift described above. It is not attributed to the book as a proof of the full
 cover theorem. In particular, the earlier geometric-field-only transfer is
 extended to connected scheme tests by using the same already proved
-arbitrary-base class theorem. The supplied Harris publication/errata list was
-previously read in full; no entry in that supplied list corrects this passage.
+arbitrary-base class theorem. The Harris publication/errata list was
+previously read in full; no entry in that list corrects this passage.
 
 The construction uses no original-projection etaleness, coarse-object rigidity,
 comparison `IsIso`, residual freeness or finite point-fiber assumption. It
@@ -199,5 +197,4 @@ representability, comparison with the complete source moduli problem,
 etaleness of the original projection, a full scheme inverse for the kernel
 comparison, canonical-model comparisons, uniformization and coefficient
 local-system descent remain separate obligations. The conclusions here are
-conditional actual scheme lifts, not completion of those source assertions or
-of the host task.
+conditional actual scheme lifts, not completion of those source assertions.

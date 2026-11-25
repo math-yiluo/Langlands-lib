@@ -1,13 +1,13 @@
 # Derived global section complexes on the étale site and of étale `G`-sheaves
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedExactGlobalComplex` (Worker 26, submitted together
+- `Langlands.Sheaf.Equivariant.TwistedExactGlobalComplex` (ported together
   with this module): for an exact abelian subcategory `𝒜` of module sheaves on a twisted
   site, the complexes `sheafSectionsComplex`, `exactGlobalComplex` and
   `exactInvariantGlobalComplex`, the comparison `exactGlobalComplexComparison` and the
   identifications of their cohomology.
-- `Langlands.Sheaf.Equivariant.AnalyticEtaleCohomology` (Worker 26): `etaleCohomology`
+- `Langlands.Sheaf.Equivariant.AnalyticEtaleCohomology`: `etaleCohomology`
   (`H^q(X, F)` on the étale site), `etaleGSheafCohomology` (`H^q(X{G}, F)`),
   `etaleGSheafInvariantCohomology` (`H^q(X(G), F)`) and `etaleComparison`
   (`H^q(X{G}, F) → H^q(X, b^*F)`). Through it: `AnalyticEtaleComparison` (`etaleSelf`,
@@ -15,8 +15,8 @@ Author: Worker 26. Builds on the following modules:
   `etaleGSheafRestriction`, Berkovich's `b^*`), `AnalyticEtaleCompactCohomology`
   (`etale_hasSheafify`, `twistedEtale_hasSheafify`, `etaleGSheaf_enoughInjectives`),
   `LocalActionSmoothPart` (the abelian structure of locally discrete sheaves and the
-  exactness of `smoothSheafInclusion`), `AnalyticGSheaves` (`EtaleGSheaf ρ`) and Worker
-  21's étale site `EtaleSite` with its topology `etaleTopology`.
+  exactness of `smoothSheafInclusion`), `AnalyticGSheaves` (`EtaleGSheaf ρ`) and the
+  étale site `EtaleSite` with its topology `etaleTopology`.
 
 All declarations are in the namespace `Langlands.Sheaf.Equivariant.Analytic`.
 
@@ -32,7 +32,7 @@ derived-category form of the input of Berkovich's §1.2 and Theorem 1.6.1(ii).
 
 ## Data and universes
 
-- `K : Type u` is a complete ultrametric normed field, and `X` an object of Worker 21's
+- `K : Type u` is a complete ultrametric normed field, and `X` an object of
   `LocalizedCategory.{u, v, v} (K := K)`.
 - Coefficients: write `w = max u (v + 1) uL`. The ring `R : Type w` is commutative, and
   sheaves take values in `ModuleCat.{w} R`. As `uL` occurs only inside `w`, uses name the

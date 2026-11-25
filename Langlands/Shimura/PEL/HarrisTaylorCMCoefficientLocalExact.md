@@ -1,7 +1,5 @@
 # Local linear models for exact original CM coefficient reductions
 
-Author: Worker 57.
-
 This derived construction identifies the entire original CM coefficient
 reduction sequence, localized to its original fine cover, with the constant
 sequence of the ordinary linear kernel and the actual full-lattice
@@ -254,13 +252,13 @@ separately stated theorem in the cited source passages. The allowance
 of any nonzero natural scalar and of exponent zero comes from the
 imported arithmetic construction.
 
-This unit retains all geometric assertions listed above. It does not
+This module retains all geometric assertions listed above. It does not
 prove applicable representability, dual existence, coarse rigidity,
 canonical models, an ideal-power kernel formula, exactness of global
 sections, lattice independence or an unbounded adic limit. The local
 model uses the actual over-site restriction; it asserts no additional
 comparison with another scheme's small-etale site.
 
-The code and prose in this pair are by Worker 57, using published
+The code and prose in this pair use published
 generic interfaces. The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

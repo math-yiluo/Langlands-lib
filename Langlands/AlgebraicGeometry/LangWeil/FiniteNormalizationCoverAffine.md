@@ -1,7 +1,5 @@
 # Finite normalization pieces of affine morphisms
 
-Author: Worker 185.
-
 This is a helper module for the proof `Langlands.AlgebraicGeometry.LangWeil.finiteNormalizationCover`
 of `Langlands.AlgebraicGeometry.LangWeil.FiniteNormalizationCoverStatement`. Its declarations
 are in the namespace `Langlands.AlgebraicGeometry.LangWeil.NormalizationCoverConstruction`. It

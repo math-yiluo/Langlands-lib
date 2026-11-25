@@ -1,7 +1,5 @@
 # Actual algebra presheaves on rational presentations
 
-Author: Worker 36.
-
 Fix a complete ultrametric normed field K and a presented strict affinoid
 algebra P. The base category is the existing category `RationalData K P`
 of chosen unit-radius rational presentations, with inclusions of their

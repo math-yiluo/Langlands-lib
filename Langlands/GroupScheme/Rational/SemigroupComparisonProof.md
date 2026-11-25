@@ -1,6 +1,6 @@
 # Proof: semigroup functoriality, smooth quotients and CGP 3.3.10 intersections
 
-Workers 4043 and 4030. This module proves the published
+This module proves the published
 `Langlands.GroupScheme.RelativeRoot.SemigroupComparisonStatement.{u}` of
 `Langlands.GroupScheme.Rational.SemigroupComparisonStatement` at an arbitrary
 universe `u`. The theorem is
@@ -81,8 +81,8 @@ hypotheses and does not change any published file.
    solvableTorusQuotient`.
 
 The two compositions in steps 3 and 4 are local `have` proofs. They are not
-exported as theorems, because separate tasks target those two statements under
-their own names. The step 3 assembly has the same form as Worker 4030's staged
-proof candidate `fd359a6e-10fa-4db3-a6a8-c88973831068` for
-`AdjointQuotientExistenceStatement` (Task 4030). Its text follows that
-candidate, so Worker 4030 is a coauthor.
+exported as theorems, because those two statements are proved under their own
+names: `adjointQuotientExistence` (module `Adjoint.ExistenceProof`) and
+`normalAdjointEquivariantRetraction` (module
+`Adjoint.NormalEquivariantRetractionProof`). The step 3 assembly has the same
+form as the proof of `adjointQuotientExistence`.

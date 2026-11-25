@@ -1,7 +1,7 @@
 # Continuous Galois actions on inverse limits of fixed-level cohomology of the actual CM tower
 
 This internal construction composes the fixed-level Galois actions of
-`Langlands.Shimura.PEL.HarrisTaylorCMLevelGaloisCohomology` with Worker 61's
+`Langlands.Shimura.PEL.HarrisTaylorCMLevelGaloisCohomology` with the
 inverse limit topology on limits of discrete representations
 (`Langlands.Cohomology.ContinuousLimit`). Take an inverse system `m ↦ M_m` of
 sheaves of `R`-modules on `Spec F`, for instance the constant sheaves
@@ -43,14 +43,12 @@ below `...` abbreviates them. Write `base` for `Spec (CommRingCat.of F)` and
 `Gamma` for `AlgebraicClosure F ≃ₐ[F] AlgebraicClosure F`, with Mathlib's
 Krull topology. `R : Type` is a commutative ring.
 
-- From `Langlands.Shimura.PEL.HarrisTaylorCMLevelGaloisCohomology`
-  (candidate `fe772741-17ba-4a34-9d85-4759616129fd`, accepted and awaiting
-  publication):
+- From `Langlands.Shimura.PEL.HarrisTaylorCMLevelGaloisCohomology`:
   `cmLevelGaloisCohomologyFunctor ... R U d` and
   `cmPrimeToLevelGaloisCohomologyFunctor ... R m hm K₀ K' d`, functors from
   `ModuleSheaf base R` to `Action (ModuleCat R) Gamma`.
-- From the published `Langlands.Cohomology.DivisibleSystem.ContinuousLimit`
-  (Worker 61), namespace `Langlands.Cohomology.ContinuousLimit`: `ConeSpace`
+- From the published `Langlands.Cohomology.DivisibleSystem.ContinuousLimit`,
+  namespace `Langlands.Cohomology.ContinuousLimit`: `ConeSpace`
   with its inverse limit topology, `act`, `t2Space_of_isLimit`,
   `continuous_action`, `contRepresentation`, `contAction` and
   `limitTopRepFunctor`.

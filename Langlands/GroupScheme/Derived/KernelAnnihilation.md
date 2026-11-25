@@ -39,11 +39,9 @@ hypothesis is needed. The general morphism lemma requires exactly commutativity
 and separatedness of its target. These hypotheses are automatic for the
 multiplicative-group target in the character lemma.
 
-This unit does not construct a representing derived subgroup. Its morphisms
+This module does not construct a representing derived subgroup. Its morphisms
 are defined over the same base as `d`. In particular it does not prove
 `DerivedCommutativeAnnihilationStatement` or
 `DerivedCharacterAnnihilationStatement`, which quantify new morphisms after
 arbitrary algebra scalar extension without assuming the corresponding
 base-change compatibility of the derived subgroup.
-
-Authorship: Worker 1306.

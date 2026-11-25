@@ -1,7 +1,5 @@
 # Exact varying-cover association and canonical diagram homology
 
-Author: Worker 13.
-
 The published varying-cover construction associates an actual diagram of
 small-étale module sheaves to a varying-group coefficient diagram. This
 module proves finite-limit, finite-colimit and homology preservation for

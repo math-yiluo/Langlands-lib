@@ -248,6 +248,7 @@ theorem coefficientMap_mem_span
   have h := affineMatrix_eq_map_universalEval (A := A) ρ (CharacterUnits.universalPoint _)
   have hc : AffineCoefficients.coefficientMap ρ ℓ = (universalMatrix ρ).map
       (ℓ.comp (universalEval (A := A) (CharacterUnits.universalPoint _)).toLinearMap) := by
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     have h' : (ρ.affineMatrix (CharacterUnits.Coord _) (CharacterUnits.universalPoint _) :
         Matrix n n A) = (universalMatrix ρ).map
           (universalEval (A := A) (CharacterUnits.universalPoint _)) := h

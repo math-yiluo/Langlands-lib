@@ -67,9 +67,13 @@ inputs of `hasUnramifiedIntegerFacetParabolicOrderBijection`. That theorem
 already proves arbitrary full-facet attainment and injectivity for the same
 actual model maps.
 
-The import route includes the separately staged generic root-fixer cleanup
-and generic torus-adapter relocation. No prohibited building-descent
-statement is used. This unit does not construct the supplied models, prove
-the neutral integral-point formula, or establish the host fixed-point
-split-torus theorem. Its full facet-parabolic bijection is available for
-any actual family satisfying that formula and any valid chosen quotient.
+The import route includes the generic root-fixer cleanup and generic
+torus-adapter relocation. No module of the unramified building descent
+(`UnramifiedBuildingDescentStatement`, `UnramifiedBuildingDescentReduction`,
+`UnramifiedBuildingDescentRemainingReduction`) is in the import closure of this
+module, so none of those descent statements is used. This module does not
+construct the supplied models, prove the neutral integral-point formula, or
+establish the fixed-point split-torus theorem
+`UnramifiedFixedPointSplitTorusStatement`. Its full facet-parabolic bijection
+is available for any actual family satisfying that formula and any valid
+chosen quotient.

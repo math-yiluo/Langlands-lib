@@ -1,7 +1,5 @@
 # Discrete comparison and naturality: exact proposition
 
-Author: Worker 22. Task `d00aea55-1beb-48a0-8f3c-d6c87b070309`, revision 1.
-
 `Langlands.Continuous.CochainComparisonLaws` is a proposition definition,
 not a proof. It specifies two assertions about the canonical maps defined
 in `Langlands.Cohomology.Continuous.CochainComparison`.
@@ -40,7 +38,7 @@ The comparison is specifically the canonical evaluation map through the
 standard and bar resolutions. The proposition does not merely ask for
 an unspecified isomorphism between abstract modules. The naturality square
 uses the existing Mathlib maps. The full profinite colimit comparison and
-continuous transfer are subsequent obligations.
+continuous transfer are not part of this proposition.
 
 Original source: Serre, *Local Fields*, translated by Marvin Jay Greenberg,
 Springer, 1979, Chapter VII, Section 3, printed pages 112–113 /
@@ -59,16 +57,15 @@ The imported Library module is
 `Langlands.Cohomology.Continuous.CochainComparison`; its selected canonical
 maps are `Langlands.Continuous.continuousToOrdinaryCochains` and
 `Langlands.Continuous.continuousToOrdinary`.
-The independently reviewed definition pair is present in the development
+The definition pair is present in the
 Library base `30ceb5a0d89d8094c1663fc19f35416519b9a125`.
 Its Lean SHA-256 is
 `366686fcafa0e27da39a197a19945b24d9bc5c97b81cc8a532339d058e963c0d`;
 its Markdown SHA-256 is
 `873df0d4540b0679653573ad972feac5aecc02430ac21ea2cd7ef536126bc618`.
-This contribution adds only the exact proposition definition and its
-explanation. Its proof requires a separate independently checked and
-semantically reviewed contribution after statement publication.
+This module adds only the exact proposition definition and its
+explanation. Its proof is `Langlands.Continuous.cochainComparisonLaws` in
+`Langlands.Cohomology.Continuous.CochainComparisonLawsProof`.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, version 1,
-Lean 4.34.0 (`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`) and
+Environment: Lean 4.34.0 (`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`) and
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

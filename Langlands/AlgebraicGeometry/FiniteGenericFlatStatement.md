@@ -62,9 +62,8 @@ and modules describing overlap complements. Localizing at a product of
 nonzero elements gives the desired open. This describes the cited source's
 proof; no part of that proof is implemented in this statement module.
 
-The exact interface and source specialization were supplied in Worker 415's
-task specification. The declaration and explanation preserve that scope.
-A proof of this published proposition is a separate task.
+The proof of this published proposition is `finiteGenericFlat` in the
+separate module `Langlands.AlgebraicGeometry.FiniteGenericFlatProof`.
 
 ## Retained original
 

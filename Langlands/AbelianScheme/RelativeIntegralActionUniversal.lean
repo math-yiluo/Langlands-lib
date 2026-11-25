@@ -44,10 +44,11 @@ theorem relativeIntegralActionLocusHomEquiv_comp
   change e.inv.app (op T)
       (f.hom ≫ ((g ≫ relativeIntegralActionLocusInclusion B b E e hpow) ≫
         Pi.π (fun _ : I => E) i)) =
-    (relativeEndRestrict B f.hom)
-      (e.inv.app (op T')
+    ((relativeEndRestrict B f.hom)
+      (CategoryTheory.End.of (X := (baseChange T'.obj.hom).obj B) (e.inv.app (op T')
         ((g ≫ relativeIntegralActionLocusInclusion B b E e hpow) ≫
-          Pi.π (fun _ : I => E) i)) at h
+          Pi.π (fun _ : I => E) i)))).asHom at h
+  apply CategoryTheory.End.ext
   simpa only [Category.assoc] using h
 
 variable [IsLocallyNoetherian S] [LocallyOfFiniteType E.hom] [IsSeparated E.hom]

@@ -30,11 +30,9 @@ case are included.
 
 `RelativeSimpleRootPointData.of_rootSubgroup_statements` chooses these points
 for all actual simple roots, supplying the input data of the already defined
-relative Tits nondegeneracy reduction. The full Tits-system statement remains
-unproved.
+relative Tits nondegeneracy reduction. The full Tits-system statement is not
+proved here; it is `relativeTitsSystem` in `RelativeTitsSystemProof`.
 
 The proof route is an internal deduction from the published definitions and
 `HasRelativeRootSystem.nsmul_not_mem_of_three_le`; it is not presented as
-a new translation of a literature theorem. Worker 1285 suggested the
-zero-dimensional-vector contradiction and identified the existing root-line
-helper; Worker 1288 implemented the deduction.
+a new translation of a literature theorem.

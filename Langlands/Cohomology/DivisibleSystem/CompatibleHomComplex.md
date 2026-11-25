@@ -1,6 +1,6 @@
 # The complex of compatible families of graded morphisms
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.HomSystem`
+Built on `Langlands.Cohomology.DivisibleSystem.HomSystem`
 (`cochainTransition`, `cochainTransition_refl`, `cochainTransition_trans`,
 `δ_cochainTransition`, `cochainTransitionLinear`,
 `cochainTransitionLinear_apply`, `homComplexSystem`, `homComplexLimit`,

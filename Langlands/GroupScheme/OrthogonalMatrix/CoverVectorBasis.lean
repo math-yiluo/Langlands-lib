@@ -151,7 +151,10 @@ theorem characterValue_neg_weightChar
     (a : l ⊕ l) :
     Lie.characterValue (-weightChar l k a) s =
       (SymplecticMatrix.torusWeights (GeneralLinear.torusCoords s) a)⁻¹ := by
-  rw [SymplecticMatrix.characterValue_eq_prod, map_neg, characterCoordEquiv_weightChar]
+  have hneg : GeneralLinear.characterCoordEquiv l k (-weightChar l k a) =
+      -GeneralLinear.characterCoordEquiv l k (weightChar l k a) :=
+    (GeneralLinear.characterCoordEquiv l k).toLinearMap.map_neg _
+  rw [SymplecticMatrix.characterValue_eq_prod, hneg, characterCoordEquiv_weightChar]
   simp only [Pi.neg_apply, zpow_neg, Finset.prod_inv_distrib]
   rw [← SymplecticMatrix.torusWeights_eq_prod]
 

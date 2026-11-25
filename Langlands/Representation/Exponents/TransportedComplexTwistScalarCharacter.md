@@ -36,9 +36,7 @@ topology. The unitary character has norm one. The block-scalar determinant
 formula and the complex-power norm identity give the displayed real part;
 the imaginary parameters contribute no absolute-value factor.
 
-This is internal derived algebra, adapted by Worker 1008 from Worker 429's
-`TransportedTwistScalarProbe` in the task-pinned shared comparison draft.
-It specializes the published central-character, group-transport and
+This is internal derived algebra. It specializes the published central-character, group-transport and
 complex-twist constructions. Its scalar-character conclusion is used by
 the companion cone proof; it asserts no Jacquet occurrence or analytic
 exponent estimate.

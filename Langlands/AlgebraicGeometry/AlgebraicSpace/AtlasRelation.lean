@@ -1,5 +1,5 @@
 import Langlands.AlgebraicGeometry.AlgebraicSpace.Basic
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # The equivalence relation of an atlas
 

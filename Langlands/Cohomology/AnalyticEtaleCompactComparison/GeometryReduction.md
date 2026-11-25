@@ -1,6 +1,6 @@
 # Compact analytic étale comparison from restricted-injective acyclicity
 
-Worker 515. This internal construction applies the published geometric proofs
+This internal construction applies the Library's geometric proofs
 to the existing [comparison reduction](Reduction.md). It introduces no
 external-source assertion.
 
@@ -38,7 +38,7 @@ etaleGSheafCompactCohomology L ρ h R q ⋙ smoothForget R G
   ≅ etaleGSheafRestriction ρ R ⋙ etaleCompactCohomology L h R q.
 ```
 
-It specializes the existing natural isomorphism to the same two published
+It specializes the existing natural isomorphism to the same two
 geometry proofs. The theorem `compactComparisonIsoOfCompactAcyclic_hom`
 identifies its forward transformation with
 `etaleCompactComparison L ρ h R q` by definitional equality.

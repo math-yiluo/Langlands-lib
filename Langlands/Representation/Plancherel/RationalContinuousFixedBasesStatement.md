@@ -33,5 +33,5 @@ matrices. This statement does not itself prove the target.
 The family uses positive full-parabolic normalization. Comparison with
 positive Levi normalization, uniform detection of all irreducible
 subquotients, nonzero fibers and an irreducible parameter remain separate
-obligations for the host generic irreducibility theorem. No such input is
-added to the host statement here.
+obligations for the generic irreducibility theorem that this statement
+serves. No such input is added to that theorem's statement here.

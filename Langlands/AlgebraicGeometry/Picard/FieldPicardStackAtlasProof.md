@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FieldPicardStackAtlasProof`.
 
-Author: Worker 3566, for task `093deb76-b183-4d4d-816b-e79c0eedee5d`.
-
 The theorem `Langlands.AlgebraicGeometry.Picard.fieldPicardStackAtlas`
 proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.FieldPicardStackAtlasStatement.{u}`

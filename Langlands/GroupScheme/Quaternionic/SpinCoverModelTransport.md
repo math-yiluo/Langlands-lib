@@ -59,7 +59,7 @@ For `n = Fin m` and the hypotheses of the target, these are the instances, at on
 
 ## Provenance
 
-Internal, for Task 5398. It reduces the spin-cover inputs to a single model cover through the
+Internal, for the proof of `LocalSpinKneserTitsStatement`. It reduces the spin-cover inputs to a single model cover through the
 Library's uniqueness of spin covers (`SpinCoverReduction`). A construction of an explicit spin
 cover, together with semisimplicity of `O(q)⁰`, then only has to verify the two conditions for
 that one cover.

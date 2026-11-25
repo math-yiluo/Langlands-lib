@@ -32,7 +32,12 @@ If the finite source generates the entire target, the companion theorem
 isotypic span, the sum of all intertwiner ranges, by that same finite family.
 This corollary needs no irreducibility of the selected compact representation.
 
-This unit does not yet compare an ambient isotypic intersection with the
+This module does not compare an ambient isotypic intersection with the
 isotypic part of the actual generated module, construct that module's finite
 compact source, or prove the compact-type central-span statement or automorphic
-differential growth theorem.
+differential growth theorem. The finite compact source is constructed in
+`ArchimedeanCompactDifferentialSource`; the comparison and the central-span
+statement `CompactTypeCentralSpanStatement` are proved in
+`ArchimedeanCompactTypeCentralSpanProof`, and the automorphic differential
+growth theorem `AutomorphicDifferentialGrowthStatement` in
+`Langlands.Automorphic.DifferentialGrowthProof`.

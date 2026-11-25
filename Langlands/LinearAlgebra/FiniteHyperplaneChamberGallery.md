@@ -1,7 +1,8 @@
 # Finite galleries of rational sign chambers
 
-This internal linear algebra construction for Task 5515 concerns a finite
-family of rational linear forms on an arbitrary rational vector space.
+This internal linear algebra construction, for the existence of an
+irreducible induced unramified twist for arbitrary irreducible Levi data,
+concerns a finite family of rational linear forms on an arbitrary rational vector space.
 It composes the generic segment construction in `FiniteHyperplaneSegment`
 with the interval subdivision in `FiniteHyperplaneGallery`. No finite
 dimensionality, nonempty family, or root-system structure is assumed.
@@ -50,4 +51,4 @@ The provenance is the elementary finite-hyperplane argument implemented
 above, using the two imported internal helpers. This module proves only
 the rational sign-chamber gallery. Realizing its vectors and walls by
 actual dynamic parabolics, proving maximality of the inner parabolics,
-and the representation-theoretic application remain separate obligations.
+and the representation-theoretic application are not part of this module.

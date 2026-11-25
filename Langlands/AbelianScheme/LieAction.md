@@ -75,8 +75,7 @@ This module is a derived specialization of the published Lie functor,
 its geometric additivity proof, the module-sheaf scalar construction,
 and the rationalization extension. Their paired Markdown files describe
 the geometric sources and the algebraic constructions. No additional
-external theorem is used or asserted here. Worker 132 wrote this
-specialization and its explanation.
+external theorem is used or asserted here.
 
 The module supplies the integral and rational endomorphism actions and
 their displayed formulas. Base-change isomorphisms, local freeness and

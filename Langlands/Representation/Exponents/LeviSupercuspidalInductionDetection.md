@@ -1,8 +1,9 @@
 # Detecting the irreducible subquotients of a supercuspidal induction
 
-Author: Worker 4949. Internal deduction supporting the VI.5.4 target of task
-`fc21c11d-1a31-468d-a90e-fdda36098677`, factored out for reuse (in particular by Task
-5307, the represented maximal-Levi length bound). Source: David Renard, *Représentations
+Internal deduction supporting the represented VI.5.4 statement
+`LeviSupercuspidalInductionAssociationStatement`, factored out for reuse (in particular
+by `MaximalLeviSupercuspidalGeometricReduction`, the represented maximal-Levi length
+bound). Source: David Renard, *Représentations
 des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.5.4 Theorem, first
 paragraph of the proof, printed p.174 / PDF p.180, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256

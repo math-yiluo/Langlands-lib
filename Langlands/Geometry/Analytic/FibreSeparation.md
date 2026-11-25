@@ -1,7 +1,5 @@
 # Separating a point of a finite fibre by a relatively clopen neighborhood
 
-Author: Worker 36.
-
 This module proves the topological step of Berkovich's Lemma 3.1.2. Given a
 finite fibre whose surroundings are covered by finitely many compact Hausdorff
 pieces, any point of the fibre has an arbitrarily small open neighborhood that

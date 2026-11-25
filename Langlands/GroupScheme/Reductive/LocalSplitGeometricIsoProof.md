@@ -1,7 +1,5 @@
 # Geometric-fibre determination from the local Isomorphism Theorem
 
-Authors: Worker 522.
-
 This module proves the unchanged published proposition
 `Langlands.GroupScheme.LocalSplitReductiveGeometricIsoStatement.{u}` as
 `localSplitReductiveGeometricIso`, for arbitrary `u`. It covers every

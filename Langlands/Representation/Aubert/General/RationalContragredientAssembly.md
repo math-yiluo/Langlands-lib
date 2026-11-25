@@ -1,6 +1,6 @@
 # Rational contragredient commutation from the remaining representation inputs
 
-Author: Worker 3919. This is an internal composition of published proofs. It
+This is an internal composition of published proofs. It
 proves a conditional implication, not the closed
 `RationalContragredientCommutationStatement`.
 
@@ -87,5 +87,5 @@ proved. Aubert Proposition 3.2 is not used.
 
 The provenance is internal: the new proposition records the result of
 composing the named Library proofs with an existing reduction. It makes no
-additional original-literature assertion and does not discharge Task 3919's
-requirement to prove the original unapplied proposition.
+additional original-literature assertion and does not prove the original
+unapplied proposition.

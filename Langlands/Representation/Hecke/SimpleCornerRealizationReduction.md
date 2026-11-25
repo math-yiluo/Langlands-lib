@@ -1,6 +1,6 @@
 # Realization through the general corner correspondence and Hecke equivalence
 
-Author: Worker 136. This module supports the proof of
+This module supports the proof of
 `SimpleCornerModuleRealizationStatement` in
 [SimpleCornerRealizationProof](SimpleCornerRealizationProof.md).
 Its theorem `Langlands.Hecke.simpleCornerRealization_of_general_theorems`
@@ -20,7 +20,7 @@ réductifs p-adiques*, French version dated 9 July 2026, III.1.5 Theorem (iii),
 printed p.61 / PDF p.67, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 136 read PDF pp.66–67. The source refers to I.3.2 for the correspondence,
+PDF pp.66–67 were read for this module. The source refers to I.3.2 for the correspondence,
 after establishing the Hecke-module equivalence in III.1.4.
 
 The implementation first identifies the published bi-invariant Hecke corner with

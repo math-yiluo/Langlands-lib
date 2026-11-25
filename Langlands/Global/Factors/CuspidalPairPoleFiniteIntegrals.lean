@@ -18,7 +18,7 @@ open NumberField CompletionPadic RankinSelberg
 open Automorphic (CuspidalOperatorRealization CuspidalSpectralPresentation
   cuspidalUnitaryLocalGenericity)
 open CuspidalPairFunctionalEquation
-open ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 variable {F : Type u} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
   {r t : ℕ} {T : CuspidalOperatorRealization F r} {T' : CuspidalOperatorRealization F t}

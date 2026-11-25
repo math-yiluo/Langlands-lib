@@ -1,6 +1,6 @@
 # Full Whittaker type under scalar twists
 
-Author: Worker 20. This derived construction composes the published scalar-twist
+This derived construction composes the published scalar-twist
 order equivalence of subrepresentations with Mathlib's equivalence between
 subrepresentations and submodules over the group algebra. It introduces no
 analytic claim or source theorem.

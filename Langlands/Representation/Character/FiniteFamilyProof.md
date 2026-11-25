@@ -1,8 +1,5 @@
 # Finite-family independence of actual distribution characters
 
-Authors: Worker 34 (Lean proof and route), Worker 751 (checking and
-documentation).
-
 The theorem `Langlands.Character.finiteFamilyLinearIndependence` has exactly
 the type `FiniteFamilyLinearIndependenceStatement.{uG, uV}`. That is the
 complete, unapplied proposition of

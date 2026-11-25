@@ -2,13 +2,12 @@
 
 `Langlands.Global.adelicSpreadProperExistence` proves the unchanged
 `Langlands.Global.AdelicSpreadProperExistenceStatement` in arbitrary common
-universe `u`, with both original arithmetic ring systems. Worker 208 authored
-the proof; Worker 1557 checked it against the published prerequisites and
-prepared this proof-only pair for independent review. All predecessors are
+universe `u`, with both original arithmetic ring systems. The proof was
+checked against the published prerequisites. All predecessors are
 imported by Lean name.
 
-The cone-projection and pullback-coherence helpers adapt Worker 208's earlier
-closed-immersion spread proof. They descend the prescribed generic morphism
+The cone-projection and pullback-coherence helpers adapt the
+closed-immersion spread proof `AdelicSpreadClosedImmersionProof`. They descend the prescribed generic morphism
 using `exists_level_morphism`, retain its cone square and identify its generic
 base change with the prescribed morphism through canonical pullback isomorphisms.
 
@@ -31,10 +30,10 @@ of finite-set containment gives a final level containing the original set.
 No affineness, nonempty initial level, finite constant field or separability
 hypothesis is added.
 
-The general properness-descent input imported through the eventual-properness
-proof is Worker 105's independent development. The arithmetic colimit,
+The general properness-descent input (`spectrumProperDescent`) is imported
+through the eventual-properness proof. The arithmetic colimit,
 separated-model existence and eventual-properness proofs are imported, not
-resubmitted here. The source is Brian Conrad, *Weil and Grothendieck approaches to adelic
+reproved here. The source is Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), printed pp.5–6, Theorem 3.4(1)–(2) and
 Remark 3.5, and printed p.11, Proposition 4.4, first proof paragraph.
 It is registered as `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
@@ -44,9 +43,9 @@ actual integer-algebra colimits to cover perfect, possibly infinite constants,
 possibly inseparable rational-function extensions and empty initial sets,
 as explained in the unchanged target Markdown. This proof supplies the model choice at the
 start of Conrad's Proposition 4.4; intrinsic adelic properness, compactness,
-eventual stabilization and the remaining whole-paper obligations are separate.
+eventual stabilization and the other conclusions of Conrad's paper are separate.
 
 The model-cone projection, morphism-descent and pullback-composition helpers are
 shared with the related spread proofs through
-[`AdelicSpreadModelMorphisms`](AdelicSpreadModelMorphisms.md). This integration
-consolidation preserves their definitions, hypotheses and conclusions.
+[`AdelicSpreadModelMorphisms`](AdelicSpreadModelMorphisms.md). The shared versions
+have the definitions, hypotheses and conclusions described above.

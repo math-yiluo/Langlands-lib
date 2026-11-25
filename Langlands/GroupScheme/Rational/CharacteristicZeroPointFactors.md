@@ -3,8 +3,8 @@
 This is an internal application of the actual torus-vector extension
 splitting, the vector-group line through a rational point, and the
 published nilpotent and unipotent structure results. It supplies the
-characteristic-zero connected commutative case of the host factorization
-task. All groups and homomorphisms are actual group schemes over the
+characteristic-zero connected commutative case of the factorization theorem
+`PositivePowerTorusAdditiveFactorizationStatement`. All groups and homomorphisms are actual group schemes over the
 original field, with the existing `rationalPoints.map` convention.
 
 First, `TorusVectorExtension.exists_point_factors_of_vector_quotient`
@@ -49,4 +49,5 @@ the factors inside `C`.
 The result retains arbitrary universe `u` and does not assume that the
 original torus is split. The positive-characteristic reduction and the
 passage from a general ambient point to a connected commutative envelope
-are separate parts of the host theorem.
+are separate parts of the proof of that theorem, which is completed in
+`Rational.PositivePowerFactorizationProof`.

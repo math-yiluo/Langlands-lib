@@ -3,8 +3,6 @@
 Module `Langlands.GroupScheme.Quaternionic.LocalSpinKneserTitsProof`, namespace
 `Langlands.GroupScheme.Quaternionic`.
 
-Authors: Worker 5398, Worker 14.
-
 ## Result
 
 `localSpinKneserTits : LocalSpinKneserTitsStatement.{u}`, at arbitrary universe `u`.
@@ -39,9 +37,9 @@ a spin cover `π`, a hyperbolic pair `h` and Levi lifts `mu : 𝔾_m ⟶ S`, `ps
 3. **`SpinKernelElementaryLiftStatement`: `z(-1)` is elementary.** For all Levi lifts, the
    rational point `z(-1) = mu(-1) psi(-1)` of `S` lies in `parabolicElementarySubgroup S`.
    This is `SpinKernel.spinKernelElementaryLift` (module `KneserThreeSpinSubgroupProof`,
-   included in this contribution). That theorem applies
+   ported together with this module). That theorem applies
    `SpinKernel.spinKernelElementaryLift_of_kneserThreeSpinSubgroup` (module
-   `SpinKernelElementaryReduction`, also included) to
+   `SpinKernelElementaryReduction`, also ported together with this module) to
    `CentralSimpleUnits.degreeTwoNormOneSimplyConnected` and to
    `KneserThree.Quaternion.kneserThreeSpinSubgroup` (module `KneserThreeSpinSubgroupProof`).
    - `kneserThreeSpinSubgroup` proves `SpinKernel.KneserThreeSpinSubgroupStatement` (Tits's
@@ -73,15 +71,14 @@ The Eichler-transformation argument of `SpinEichlerLift` then generates `S(K)`.
 
 ## Included helper modules
 
-This contribution also integrates two theorem-only helper pairs by Worker 14, with their own
-Markdown:
+Two theorem-only helper pairs, with their own Markdown, were ported together with this module:
 
 - `Langlands/GroupScheme/Quaternionic/SpinKernelElementaryReduction.{lean,md}`;
 - `Langlands/GroupScheme/Quaternionic/KneserThreeSpinSubgroupProof.{lean,md}`.
 
 ## Provenance
 
-Internal assembly (Task 5398). The route is the one recorded in `SpinKernelAssembly`: Tits's
+Internal assembly. The route is the one recorded in `SpinKernelAssembly`: Tits's
 proof of `W(Spin q, K) = 1` for quaternionic forms of Witt index `≥ 1`
 (Tits 1977, Bourbaki exposé 505, 1.1.6), arranged around the Levi lifts of a hyperbolic pair and
 the kernel `μ₂` of the spin cover.

@@ -1,16 +1,13 @@
 # Functions with vanishing constant term and wave packets on actual points (Waldspurger, proof of Lemma VIII.2.3)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module:
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalCuspidalConvolution`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedConstantTermFourier` (this
-  author's Unit 26, candidate `dad71a9b-6886-4dca-86a4-ff7b4af9f7cd`, review-accepted, not yet in
-  the Library). From it this module uses `integrable_rationalCoefficientPairingIntegrand` (the
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedConstantTermFourier` (Library).
+  From it this module uses `integrable_rationalCoefficientPairingIntegrand` (the
   absolute convergence in the proof of Lemma VII.1.2) and `rationalLeviL2Weights`. Through its
-  imports come the published units: `rationalInducedOrbitWavePacket` (`f_ψ`),
+  imports come the published declarations: `rationalInducedOrbitWavePacket` (`f_ψ`),
   `rationalInducedSmoothOrbitSections` (`C^∞(O, P)`), `leviRationalUnitaryCoordinates` with
   `_hasLaurent`, `compactOpenCofinal_standardLevi`, `rationalLeviXi_inv`,
   `rationalLeviTranslationWeights`, `RationalSchwartzSpace`, `rationalXi`, `rationalL2Weights`,
@@ -32,7 +29,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on
+pages; the PDF page is the printed page minus 234. The quotations below were checked on
 the rendered images of PDF pages 38, 87 and 88. Overlines in the source (complex conjugation) are written
 `\overline{…}`.
 
@@ -72,13 +69,13 @@ Correspondence:
   `f_1^{(P),Ind} = 0` for this `P` in place of `f_1 ∈ °C(G)`. The convolution is the Library's
   `convolution μG φ₁ φ₂ g = ∫ φ₁(h) φ₂(h⁻¹ g) dμG(h)` (III.6), and `f_ψ` is
   `rationalInducedOrbitWavePacket`, with a weight `w` on the orbit in place of `µ(ω)`, as in
-  Unit 20.
+  `RationalInducedOrbitWavePacket`.
 - Not formalized here: `°C(G)`, Lemma VIII.2.1, `°f_2`, and Lemma VIII.2.3 itself (which also needs
   the wave-packet decomposition of `κ(ψ)` over all `(O, P)`).
 
 ## Setting
 
-As in Unit 26, `RationalInducedConstantTermFourier.md`:
+As in `RationalInducedConstantTermFourier.md`:
 
 - `G` connected reductive over a nonarchimedean local field `F` (`hG`), with a maximal split torus
   `i` (`hi`), a generic cocharacter `ν` (`hν`) and `I` a finite set of simple roots; `P = P_I(F)`
@@ -94,7 +91,7 @@ Section `Cuspidal` (the definition and the equivalence): a Haar measure `νU` on
 `hE : ConstantTermEstimate νU δ_{U_I} Ξ σ Ξ^{M_I} σ` (the conclusion of Proposition II.4.5), which
 `rationalConstantTerm` needs.
 
-Section `Convolution` (the two vanishing theorems), the data of Unit 26's section `Orbit`:
+Section `Convolution` (the two vanishing theorems), the data of the section `Orbit` of `RationalInducedConstantTermFourier`:
 
 - `hρ : IsClosedSubgroup ρ` and `hKρ : K ≤ rationalHeightSubgroup ρ`;
 - an irreducible admissible representation `π` of `M_I(F)`, a normal subgroup `C` of the centre
@@ -143,10 +140,10 @@ orbit measure), `hwb : ∀ ω, ‖w ω‖ ≤ b`, `hcoeff` (Corollary III.1.2 fo
   `rationalConstantTerm`; backward, `isUnipotentCuspidal_of_constantTermIndVanishes` with
   `fun x => h0 x.1 x.2`.
 - The two convolution theorems apply `convolution_inducedOrbitWavePacket_eq_zero` and
-  `convolution_inducedOrbitWavePacket_left_eq_zero` to the actual data of `P_I(F)` (as in Units
-  20–26): the semidirect decomposition `isSemidirectDecomposition_standard`, closedness of
+  `convolution_inducedOrbitWavePacket_left_eq_zero` to the actual data of `P_I(F)` (as in the modules on actual points such as
+  `RationalInducedOrbitWavePacket` and `RationalInducedConstantTermFourier`): the semidirect decomposition `isSemidirectDecomposition_standard`, closedness of
   `U_I(F)` and `P_I(F)`, the factorization `G = P K`, unimodularity of `G(F)` and `U_I(F)`, the
-  modulus of `P_I(F)`, the norm characters and circle coordinates of Unit 20 with their Laurent
+  modulus of `P_I(F)`, the norm characters and circle coordinates of `RationalInducedOrbitWavePacket` with their Laurent
   property and continuity, `compactOpenCofinal_standardLevi`, `rationalL2Weights … hsw`,
   temperedness of the induced representations from
   `rationalHasTemperedCoefficients_normalizedInduction`, `rationalLeviData`,
@@ -163,11 +160,12 @@ orbit measure), `hwb : ∀ ω, ‖w ω‖ ≤ b`, `hcoeff` (Corollary III.1.2 fo
 
 - Only standard parabolics `P_I ⊇ P₀` are covered, and the results concern one parabolic and one
   orbit; the hypothesis is `f₁^{(P),Ind} = 0` for this `P`, not `f₁ ∈ °C(G)`.
-- Analytic inputs whose actual statements are published but unproved enter as hypotheses: `hsw`
+- Analytic inputs whose actual statements are in the Library enter as hypotheses: `hsw`
   and `hswM` (Lemma II.1.5 for `G` and `M_I`), `hE` (Proposition II.4.5), `hTA` (temperedness),
   `hcoeff` and `hcoeffA` (Corollary III.1.2 for `π` and for each representative of its orbit; the
-  bound for the representatives is not derived from the bound for `π`).
-- The structural fact `hPKiw` (ledger row S5) and the measure normalizations `hμK`, `hMK`, `hUK`
+  bound for the representatives is not derived from the bound for `π`). Proposition II.4.5
+  (`RationalConstantTermEstimateStatement`) is not proved in the Library.
+- The structural fact `hPKiw` and the measure normalizations `hμK`, `hMK`, `hUK`
   are hypotheses, as in Lemma VII.1.2 of the Library.
-- `K`, `hPK`, `hM`, `ρ`, `hρ`, `hKρ` are data (ledger rows S3, S4, S5).
+- `K`, `hPK`, `hM`, `ρ`, `hρ`, `hKρ` are data.
 - The Plancherel density `µ` (V.2) is not formalized; the wave packet uses the weight `w`.

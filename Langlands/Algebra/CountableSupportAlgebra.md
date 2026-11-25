@@ -1,7 +1,6 @@
 # Countably supported function algebras
 
-Worker 6's construction, with interface additions and source checks by Worker 345,
-is a derived prerequisite motivated by the negative assertion in Renard I.5.3,
+This construction is a derived prerequisite motivated by the negative assertion in Renard I.5.3,
 printed p.27 / PDF33 of the French version dated 9 July 2026. The registered
 source is `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
@@ -48,5 +47,5 @@ The function carrier lives in their coefficient/base maximum. The
 construction includes zero rings, finite and empty bases; only the
 no-identity conclusion requires nontriviality and uncountability. Its
 specialization to `R = ℂ` supplies the complex nonunital algebra needed by
-the source convention. No assertion of nonprojectivity, no free-summand
-counterexample and no claim of independent acceptance is made here.
+the source convention. No assertion of nonprojectivity and no free-summand
+counterexample is made here.

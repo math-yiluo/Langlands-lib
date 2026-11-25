@@ -1,7 +1,5 @@
 # Actual smoothing operators and compact intertwining
 
-Author: Worker 94.
-
 `CompactKernelAverage.smoothingLM` sends an actual derivative-topology smooth function to the scalar compact inverse-support average constructed in the preceding helpers. It is complex linear in its input. Its pointwise value is exactly the published raw convolution, and its value belongs to the closed span of the input's full actual right orbit. No compact-finiteness, center-finiteness, or analyticity premise is used.
 
 `smoothingBilinear` makes the same operator complex linear in the actual compact smooth kernel as well. The construction uses the scalar integral's already published additivity and scalar multiplication in the kernel, followed by injectivity of the inclusion of actual smooth functions into functions. It does not require a common support for two kernels or a topology on the space of kernels.

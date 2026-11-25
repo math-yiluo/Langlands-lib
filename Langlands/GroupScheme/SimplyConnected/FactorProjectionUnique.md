@@ -1,6 +1,6 @@
 # Intrinsic uniqueness of actual normal-factor retractions
 
-Worker 509. Derived from the full scheme-theoretic perfectness of actual
+Derived from the full scheme-theoretic perfectness of actual
 almost-simple groups and finite product coordinates. A morphism from a perfect
 group with commutative all-test image is trivial: its closed kernel contains
 every commutator and hence the full derived subgroup. Any retraction onto one

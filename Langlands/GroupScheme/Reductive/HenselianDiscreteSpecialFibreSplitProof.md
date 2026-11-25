@@ -1,8 +1,6 @@
 # Proof: split and quasi-split special fibres over a henselian DVR
 
-Worker 365.
-
-`Langlands.GroupScheme.henselianDiscreteSpecialFibreSplit` proves the unchanged
+`Langlands.GroupScheme.henselianDiscreteSpecialFibreSplit` proves the
 published proposition
 [`HenselianDiscreteSpecialFibreSplitStatement`](HenselianDiscreteSpecialFibreSplitStatement.md)`.{u}`
 in every universe `u`. That proposition transcribes Brian Conrad, *Reductive group
@@ -104,8 +102,9 @@ quasi-split lemma and the split lemma with `b = Spec.algebraMap R K`.
 Conrad leaves the exercise to the reader. The hint is to lift a Borel subgroup or a
 split maximal torus of the special fibre using the smooth schemes `Bor_{𝒢/R}` or
 `Tor_{𝒢/R}` and the henselian property, then pass to the generic fibre. The Lean proof
-follows this outline but does not use the scheme of Borel subgroups. In the Library,
-`RelativeBorelSchemeStatement` is not yet proved. Instead, the Borel subgroup is lifted
+follows this outline but does not use the scheme of Borel subgroups
+(`RelativeBorelSchemeStatement`, proved in the Library as `relativeBorelScheme` in
+`RelativeLevi/BorelSchemeProof`). Instead, the Borel subgroup is lifted
 as a dynamic parabolic of a lifted cocharacter. The split torus is lifted through the
 Library's henselian lifting of homomorphisms from split tori.
 

@@ -1,7 +1,5 @@
 # Completed-residue evaluation of actual open sections and topological germs
 
-Author: Worker 36.
-
 Let `K : Type u` be an ultrametric normed field, `A` a presented
 positive-polyradius affinoid algebra over `K`, and `x : BanachSpectrum A`.
 The completed residue field is the existing actual normed field

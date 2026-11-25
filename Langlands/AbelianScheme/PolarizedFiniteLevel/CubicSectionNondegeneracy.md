@@ -37,5 +37,5 @@ abelian-scheme geometry and the generic complete linear system and
 cubic-section constructions. It introduces no new external source assertion.
 Existence of the finite full basis, generation, the closed immersion, the
 bundle transport, the geometric count and its strict numerical range remain
-separate obligations. The geometric count is a premise here. This unit
+separate obligations. The geometric count is a premise here. This module
 does not establish unconditional rigidity or ordinary moduli representability.

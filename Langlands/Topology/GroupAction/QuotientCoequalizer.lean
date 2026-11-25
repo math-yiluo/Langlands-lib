@@ -21,8 +21,8 @@ variable {M : Type v} [Monoid M] [TopologicalSpace M]
 
 private theorem equivariant_apply {A B : ContAction TopCat.{u} M}
     (f : A ⟶ B) (g : M) (x : A.obj.V) :
-    f.hom.hom (ConcreteCategory.hom (A.obj.ρ g) x) =
-      ConcreteCategory.hom (B.obj.ρ g) (f.hom.hom x) :=
+    f.hom.hom (ConcreteCategory.hom (A.obj.ρ g).asHom x) =
+      ConcreteCategory.hom (B.obj.ρ g).asHom (f.hom.hom x) :=
   congrArg (fun k : A.obj.V ⟶ B.obj.V => k x) (f.hom.comm g)
 
 /-- The actual equal-fiber subspace of the square of the source. -/
@@ -36,42 +36,44 @@ instance : TopologicalSpace (Relation q) :=
 /-- Apply the original action to both coordinates of a fiber pair. -/
 def relationMap (g : M) : C(Relation q, Relation q) where
   toFun p :=
-    ⟨(ConcreteCategory.hom (X.obj.ρ g) p.val.1,
-      ConcreteCategory.hom (X.obj.ρ g) p.val.2),
+    ⟨(ConcreteCategory.hom (X.obj.ρ g).asHom p.val.1,
+      ConcreteCategory.hom (X.obj.ρ g).asHom p.val.2),
       (equivariant_apply q g p.val.1).trans
-        ((congrArg (ConcreteCategory.hom (Y.obj.ρ g)) p.property).trans
+        ((congrArg (ConcreteCategory.hom (Y.obj.ρ g).asHom) p.property).trans
           (equivariant_apply q g p.val.2).symm)⟩
   continuous_toFun := by
     apply Continuous.subtype_mk
-    exact ((X.obj.ρ g).hom.continuous.comp
+    exact ((X.obj.ρ g).asHom.hom.continuous.comp
       (continuous_fst.comp continuous_subtype_val)).prodMk
-      ((X.obj.ρ g).hom.continuous.comp
+      ((X.obj.ρ g).asHom.hom.continuous.comp
         (continuous_snd.comp continuous_subtype_val))
 
 /-- The diagonal action uses the original product and subspace topologies. -/
 def relationAction : Action TopCat.{u} M where
   V := TopCat.of (Relation q)
   ρ :=
-    { toFun := fun g => TopCat.ofHom (relationMap q g)
+    { toFun := fun g => End.of (TopCat.ofHom (relationMap q g))
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro p
         apply Subtype.ext
-        change (ConcreteCategory.hom (X.obj.ρ 1) p.val.1,
-          ConcreteCategory.hom (X.obj.ρ 1) p.val.2) = p.val
+        change (ConcreteCategory.hom (X.obj.ρ 1).asHom p.val.1,
+          ConcreteCategory.hom (X.obj.ρ 1).asHom p.val.2) = p.val
         rw [map_one]
         rfl
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro p
         apply Subtype.ext
-        change (ConcreteCategory.hom (X.obj.ρ (g * h)) p.val.1,
-          ConcreteCategory.hom (X.obj.ρ (g * h)) p.val.2) =
-            (ConcreteCategory.hom (X.obj.ρ g)
-                (ConcreteCategory.hom (X.obj.ρ h) p.val.1),
-              ConcreteCategory.hom (X.obj.ρ g)
-                (ConcreteCategory.hom (X.obj.ρ h) p.val.2))
+        change (ConcreteCategory.hom (X.obj.ρ (g * h)).asHom p.val.1,
+          ConcreteCategory.hom (X.obj.ρ (g * h)).asHom p.val.2) =
+            (ConcreteCategory.hom (X.obj.ρ g).asHom
+                (ConcreteCategory.hom (X.obj.ρ h).asHom p.val.1),
+              ConcreteCategory.hom (X.obj.ρ g).asHom
+                (ConcreteCategory.hom (X.obj.ρ h).asHom p.val.2))
         rw [map_mul]
         rfl }
 
@@ -213,8 +215,8 @@ def desc : Y ⟶ Z :=
         intro y
         obtain ⟨x, rfl⟩ := hq.surjective y
         change liftMap q hq f hf
-          (ConcreteCategory.hom (Y.obj.ρ g) (q.hom.hom x)) =
-            ConcreteCategory.hom (Z.obj.ρ g)
+          (ConcreteCategory.hom (Y.obj.ρ g).asHom (q.hom.hom x)) =
+            ConcreteCategory.hom (Z.obj.ρ g).asHom
               (liftMap q hq f hf (q.hom.hom x))
         rw [← equivariant_apply q, liftMap_apply, liftMap_apply]
         exact equivariant_apply f g x }

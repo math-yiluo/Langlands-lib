@@ -1,7 +1,5 @@
 # The full simply connected normalizer image over the maximal unramified extension
 
-Authors: Worker 185 and Worker 4348.
-
 `Langlands.Geometry.Building.MaximalUnramified.simplyConnectedNormalizerAffineWeyl`
 proves the unchanged published proposition
 `Langlands.Geometry.Building.MaximalUnramified.SimplyConnectedNormalizerAffineWeylStatement.{u}`

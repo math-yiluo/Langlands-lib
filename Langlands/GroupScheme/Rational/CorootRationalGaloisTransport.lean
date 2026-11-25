@@ -79,7 +79,7 @@ theorem cocharacterLattice.rationalValue_galoisRepresentation
 
 variable [IsAffineHom G.X.hom]
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom := by
   change IsAffineHom (pullback.snd G.X.hom (algebraBaseMap k K))
   infer_instance

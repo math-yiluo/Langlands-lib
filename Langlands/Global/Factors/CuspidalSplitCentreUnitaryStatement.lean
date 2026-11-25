@@ -39,6 +39,6 @@ def CuspidalSplitCentreUnitaryCentralCharacterStatement : Prop :=
   ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] (r : ℕ)
     (T : CuspidalOperatorRealization F r),
     CuspidalPairPoles.IsTrivialOnSplitCentre T →
-      Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T
+      Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T
 
 end Langlands.Global

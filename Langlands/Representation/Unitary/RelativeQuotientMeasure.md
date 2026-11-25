@@ -1,7 +1,5 @@
 # Integral for the relative modular character on a compact quotient
 
-Author: Worker 142.
-
 This is an internal helper for Renard 2026, IV.2.1, (IV.2.1.1)–(IV.2.1.2),
 printed p.97 / PDF p.103. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256

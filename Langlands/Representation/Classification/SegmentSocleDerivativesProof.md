@@ -1,13 +1,9 @@
 # Derivatives of segment socles (Zelevinsky 1980, Theorem 3.5)
 
-Author: Worker 818, for proof task 209027ca-f49c-472a-af2a-f2fc0006950e (revision 1).
-
 This module proves the published proposition
 `Langlands.Classification.SegmentSocleDerivatives.{uF, uV} F T`, statement (b) of
-`Langlands.Representation.Classification.SegmentSocleDerivativesStatement`
-(statement task 8e5b4563-0365-41c7-b134-70f2a0b36292, statement artifact
-c27c6879-9906-43fa-8d88-cf1808b55f2d). The statement module and everything it imports
-are unchanged.
+`Langlands.Representation.Classification.SegmentSocleDerivativesStatement`. The
+statement module and everything it imports are unchanged.
 
 ## The theorem
 
@@ -258,57 +254,55 @@ the `rfl` lemma `derivative_obj_rank_congr`. It also uses the top-level definiti
 
 The proof uses the published derivative, partial-derivative, Jacquet and induction
 functors as they are, with their determinant normalizations. It never compares a Haar
-modulus `mod_U` with `|det|` itself. The modulus comparison of tasks a622f240/f947a735
+modulus `mod_U` with `|det|` itself. The modulus comparison
 (`Group.GL.MirabolicModulusStatement` and `MirabolicModulusProof`) enters the closure only
 inside published inputs that use it: the Leibniz filtration proof, the socle Jacquet
 proof and the two-supercuspidal structure proof. All normalizations are therefore those
-of independently accepted proofs.
+of the imported Library proofs.
 
 ## Published inputs (direct imports)
 
-| Module | Content | Introducing artifact / task |
-| --- | --- | --- |
-| `Classification.SegmentSocleDerivativesStatement` | target statement | c27c6879 / 8e5b4563 |
-| `Classification.SegmentSocleJacquetProof` | Ze80 3.4 (required `socle_jacquet`) | dbcb1209 / b95105c6 |
-| `Classification.SupercuspidalDerivativesProof` | statement (a), BZ77 4.4 (required `supercuspidal_derivatives`) | fd42c8ef / 2e5183b1 |
-| `Classification.TwoSupercuspidalPartialDerivatives` | tensor/partial-derivative helpers, middle derivatives of adjacent products | 80bf7d22 / a4ce78f2 |
-| `Derivative.GeneralLinearDerivativeExactnessProof` | exactness of the derivatives | 79bbad40 / 44f58b77 |
-| `Derivative.GeneralLinearDerivativeLeibnizFiltrationProof` | BZ77 4.5/4.14 Leibniz filtration | c4c5439d / 4e10058b |
-| `Derivative.ZeroRankTensor` | rank-zero binary products | 2057375a / 3231134e |
-| `Derivative.LevelCalculus` | short-exact and level lemmas | e85cf101 / b711af72 |
-| `Parabolic.NaturalFirstAdjointness` | normalized first adjointness | bundled in ec16d6b6 / eb76bbde |
-| `Classification.CuspidalProductMirabolicSupportShiftProof` | BZ77 4.7(b), mirabolic form | 4b8c7a7c / 0b3bf4c1 |
-| `Classification.TwoSupercuspidalProductStructureProof` | Ze80 1.11 | f10f67f3 / ab61f565 |
-| `Classification.TwoSupercuspidalDerivativeBridge` | GL derivative = mirabolic derivative of restriction | bundled in 98cc1114 / 3c9849a4 |
-| `Derivative.OrderedCuspidalProductTwistOne` | `exponent_eq_zero` (central character) | bundled in bfc08f82 / 451717b1 |
+| Module | Content |
+| --- | --- |
+| `Classification.SegmentSocleDerivativesStatement` | target statement |
+| `Classification.SegmentSocleJacquetProof` | Ze80 3.4 (required `socle_jacquet`) |
+| `Classification.SupercuspidalDerivativesProof` | statement (a), BZ77 4.4 (required `supercuspidal_derivatives`) |
+| `Classification.TwoSupercuspidalPartialDerivatives` | tensor/partial-derivative helpers, middle derivatives of adjacent products |
+| `Derivative.GeneralLinearDerivativeExactnessProof` | exactness of the derivatives |
+| `Derivative.GeneralLinearDerivativeLeibnizFiltrationProof` | BZ77 4.5/4.14 Leibniz filtration |
+| `Derivative.ZeroRankTensor` | rank-zero binary products |
+| `Derivative.LevelCalculus` | short-exact and level lemmas |
+| `Parabolic.NaturalFirstAdjointness` | normalized first adjointness |
+| `Classification.CuspidalProductMirabolicSupportShiftProof` | BZ77 4.7(b), mirabolic form |
+| `Classification.TwoSupercuspidalProductStructureProof` | Ze80 1.11 |
+| `Classification.TwoSupercuspidalDerivativeBridge` | GL derivative = mirabolic derivative of restriction |
+| `Derivative.OrderedCuspidalProductTwistOne` | `exponent_eq_zero` (central character) |
 
 These modules are reached transitively:
 
-| Module | Content | Introducing artifact / task |
-| --- | --- | --- |
-| `Derivative.PartialDerivativeJacquetComparisonProof` | Ze80 3.7(b) | 998f43e6 / a4119dcc |
-| `Derivative.PartialDerivativeTensorProof` | Ze80 3.7(a) | 96b73e12 / e339f766 |
-| `Classification.TwoSupercuspidalAdjacentReducibilityProof` | Ze80 1.11(b) reducibility | 5d030a71 / 0988a3e0 |
+| Module | Content |
+| --- | --- |
+| `Derivative.PartialDerivativeJacquetComparisonProof` | Ze80 3.7(b) |
+| `Derivative.PartialDerivativeTensorProof` | Ze80 3.7(a) |
+| `Classification.TwoSupercuspidalAdjacentReducibilityProof` | Ze80 1.11(b) reducibility |
 
 Mathlib: `Mathlib.LinearAlgebra.PiTensorProduct.Basis`, `Mathlib.LinearAlgebra.Basis.VectorSpace`.
 
 ## Independence audit
 
-### Rulings and closure
+### Inputs and closure
 
-The proof uses neither the (c) theorem `highestDerivativeSupportShift` (proof 61c4254f)
-nor any later unit (f), (d), (e). The operator ruled on the BZ77 4.7(b) input in response
-**10df3136f50c5901b1061d52c6b92e07**. This proof may import
-`cuspidalProductMirabolicSupportShift` (BZ77 4.7(b), proof task 0b3bf4c1) with its
-published closure, including bf38b454, for the length-two case of Ze80 3.9. Per that
-response, the definition-only modules listed below are infrastructure in the sense of
-response 2b34e4035a5b5dafad7ad84d5a8c0dd8 and may remain.
+The proof uses neither the (c) theorem `highestDerivativeSupportShift`
+(`HighestDerivativeSupportShiftProof`) nor any later statement (f), (d), (e). It imports
+`cuspidalProductMirabolicSupportShift` (BZ77 4.7(b)) with its published closure,
+including `Classification.CuspidalProductDerivativeQuotientSupport`, for the length-two
+case of Ze80 3.9. The definition-only modules listed below are infrastructure and
+remain in the closure.
 
 The audit was run at Library commit `0ebc0efd383ff160084af3b33ab2b7806f7a1dde`:
 
-- The import closure of the module (all `Langlands` modules) has 1176 modules. 1158 of
-  them belong to published artifacts; their owning tasks number 920.
-- The 18 modules without an artifact manifest are infrastructure modules relocated in the
+- The import closure of the module (all `Langlands` modules) has 1176 modules.
+- 18 of them are infrastructure modules relocated in the
   Library: `Group.GL.{BlockScalarCenter, OneBlockShape, RankReindex, ReindexCongr,
   Transvection}`, `HarmonicAnalysis.{FiniteProductMeasureScaling, PadicLatticeTopology}`,
   `Representation.Compact.OrbitMeanTranslation`,
@@ -318,39 +312,37 @@ The audit was run at Library commit `0ebc0efd383ff160084af3b33ab2b7806f7a1dde`:
   `Representation.Parabolic.{InducedMapSurjectivity, OppositeJacquetMap}`,
   `Representation.Smooth.Transfer.GroupEquivalence`, `Representation.Tensor.OneFactor`,
   `Topology.CompactNormCharacter`.
-- Following contract requirements transitively from the 920 owning tasks gives 924 tasks.
 
-These were compared with all 25 excluded task IDs of this task, the two proof successors
-0c90f7e4 and ba6ec030 of 7ff2a1e9, and the later units f81d9b36 (c), 4e152d19 (f),
-60b25b28 (d) and 6c126713 (e). The only modules owned by those tasks are:
+The closure was compared with the excluded results of the exclusion table below and
+with the later statements (c), (f), (d) and (e). The only closure modules that belong to
+those results are:
 
-| Module | Artifact (kind) | Owner task | How it is reached |
+| Module | Kind | Belongs to | How it is reached |
 | --- | --- | --- | --- |
-| `Classification.TrivialGroupQuotient` | 1e56ed7e (definition) | 20e4e1c6 | target statement chain |
-| `Classification.SegmentProductPermutation` | 0095a4c4 (definition) | 8252833d | target statement chain |
-| `Classification.OrderedMultisegmentHeadReduction` | 6529dc85 (definition) | ebea9a8a | target statement chain |
-| `Classification.SegmentSocleProductData` | 29cea4fd (definition) | f3a69bc8 | target statement chain |
-| `Classification.SingletonSegmentSocle` | 8aac8ad9 (definition) | f3a69bc8 | target statement chain |
-| `Combinatorics.RelationInversions` | 9e971abc (definition) | f3a69bc8 | required inputs SegmentSocleJacquetProof and SupercuspidalDerivativesProof; also TwoSupercuspidalPartialDerivatives and TwoSupercuspidalProductStructureProof |
-| `Filtration.ObjectTransport` | 68054cb0 (definition) | f3a69bc8 | required input SegmentSocleJacquetProof; also TwoSupercuspidalProductStructureProof |
-| `Classification.CuspidalProductDerivativeQuotientSupport` | bf38b454 (definition, quotient form of BZ77 4.7(a)) | f81d9b36 | CuspidalProductMirabolicSupportShiftProof (approved in 10df3136) |
+| `Classification.TrivialGroupQuotient` | definition | quotient coverage | target statement chain |
+| `Classification.SegmentProductPermutation` | definition | ordered conversion | target statement chain |
+| `Classification.OrderedMultisegmentHeadReduction` | definition | ordered special-head existence | target statement chain |
+| `Classification.SegmentSocleProductData` | definition | socle exhaustion | target statement chain |
+| `Classification.SingletonSegmentSocle` | definition | socle exhaustion | target statement chain |
+| `Combinatorics.RelationInversions` | definition | socle exhaustion | required inputs SegmentSocleJacquetProof and SupercuspidalDerivativesProof; also TwoSupercuspidalPartialDerivatives and TwoSupercuspidalProductStructureProof |
+| `Filtration.ObjectTransport` | definition | socle exhaustion | required input SegmentSocleJacquetProof; also TwoSupercuspidalProductStructureProof |
+| `Classification.CuspidalProductDerivativeQuotientSupport` | definition, quotient form of BZ77 4.7(a) | (c) | CuspidalProductMirabolicSupportShiftProof |
 
-Each of these is a definition artifact. None proves an excluded statement or a later
-unit, and none imports the (c) theorem. The target statement chain is
+Each of these is a definition module. None proves an excluded statement or a later
+statement, and none imports the (c) theorem. The target statement chain is
 `SegmentSocleDerivativesStatement ← SingletonSegmentSocle ← SegmentSocleProductData ←
 OrderedMultisegmentHeadReduction`, plus `TrivialGroupQuotient` and
 `SegmentProductPermutation` below it. That chain also reaches the statement module
-`Classification.MultisegmentClassificationStatement` (statement artifact 0baefc8e, task
-f72fff19). It mentions `OrderedMultisegmentSocleExistence` and
+`Classification.MultisegmentClassificationStatement`. It mentions `OrderedMultisegmentSocleExistence` and
 `SquareIntegrableLanglandsClassification` only as proposition definitions. No closure
 module proves any of the excluded propositions.
 
 An identifier scan of all 1176 closure Lean files looked for every excluded declaration
-name and the later-unit names `HighestDerivativeSupportShift`,
+name and the later-statement names `HighestDerivativeSupportShift`,
 `SegmentSocleProductHighestDerivative`, `NonjuxtaposedSegmentSocleConstituentLevel` and
 `NonjuxtaposedSegmentSocleDerivativeStrictMono`. It finds them only in two statement
 modules: the target module `SegmentSocleDerivativesStatement` (its own Prop definitions
-of the later units) and `MultisegmentClassificationStatement`. The modules
+of the later statements) and `MultisegmentClassificationStatement`. The modules
 `HighestDerivativeSupportShiftProof`, `HighestDerivativeSupportShiftBoundary`,
 `TwoSupercuspidalTopDerivatives`, `SegmentHeadTopDerivative`, `TopProduct`,
 `FiniteTopLine`, `UniformJacquetVanishing`, `NondivisibleDerivativeVanishing`,
@@ -361,53 +353,50 @@ of the later units) and `MultisegmentClassificationStatement`. The modules
 
 | Excluded item | Status |
 | --- | --- |
-| `UnlinkedSegmentSocleProductIrreducible`, task 23e98d90 | absent |
-| `LinkedSegmentSocleReverseProductStructure`, task a55c4267 | absent |
-| `LinkedSegmentSoclePairReducible`, task 8fa9f68b | absent |
-| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom`, task 7ff2a1e9 and proof successors 0c90f7e4, ba6ec030 | absent |
-| `SegmentSocleProductIrreducibility`, task 2ae5cbe5 | absent |
-| `AdjacentUnlinkedSegmentSocleSwap`, tasks e3634665, cded83f3 | absent |
-| `TwoSegmentSocleCommutation`, tasks 426911b4, 66e3b87c | absent |
-| `LinkedSegmentSocleGluing`, tasks c84cd52c, 6780b79c | absent |
-| `OrderedMultisegmentSocleExistence`, task 23189526 | absent (named only in the statement module `MultisegmentClassificationStatement`) |
-| socle exhaustion f3a69bc8 | definition modules only, listed above |
-| segment analytic classification aca8805b | absent |
-| special-head multisegment exhaustion 3bfb61fa | absent |
-| ordered special-head existence ebea9a8a | definition module `OrderedMultisegmentHeadReduction` only (target chain) |
-| quotient coverage 20e4e1c6 | definition module `TrivialGroupQuotient` only (target chain) |
-| ordered conversion 8252833d | definition module `SegmentProductPermutation` only (target chain) |
-| tempered block uniqueness 52e97845 | absent |
-| `GenericSegmentProductUniqueness`, task 30341ae4 | absent |
-| `SquareIntegrableLanglandsClassification`, task 1cb45da2 | absent (named only in `MultisegmentClassificationStatement`) |
-| square-integrable exhaustion cd8ab97c | absent |
-| regular exhaustion bf433f0a | absent |
-| forward special-segment essential square-integrability 5eece9e8 | absent |
-| `SegmentHeadProductIrreducibility`, task 8364e73f, and its conclusions | absent (no `TopProduct`, `FiniteTopLine`, `TopLine` or `SegmentHead…` derivative module) |
-| later units (c) f81d9b36, (f) 4e152d19, (d) 60b25b28, (e) 6c126713 | (c) theorem absent; only the approved definition bf38b454; (f), (d), (e) absent |
+| `UnlinkedSegmentSocleProductIrreducible` | absent |
+| `LinkedSegmentSocleReverseProductStructure` | absent |
+| `LinkedSegmentSoclePairReducible` | absent |
+| `JuxtaposedSegmentSocleReverseProductStructure`, `LinkedSegmentSocleReverseProductQuotientHom` and their proofs | absent |
+| `SegmentSocleProductIrreducibility` | absent |
+| `AdjacentUnlinkedSegmentSocleSwap` | absent |
+| `TwoSegmentSocleCommutation` | absent |
+| `LinkedSegmentSocleGluing` | absent |
+| `OrderedMultisegmentSocleExistence` | absent (named only in the statement module `MultisegmentClassificationStatement`) |
+| socle exhaustion | definition modules only, listed above |
+| segment analytic classification | absent |
+| special-head multisegment exhaustion | absent |
+| ordered special-head existence | definition module `OrderedMultisegmentHeadReduction` only (target chain) |
+| quotient coverage | definition module `TrivialGroupQuotient` only (target chain) |
+| ordered conversion | definition module `SegmentProductPermutation` only (target chain) |
+| tempered block uniqueness | absent |
+| `GenericSegmentProductUniqueness` | absent |
+| `SquareIntegrableLanglandsClassification` | absent (named only in `MultisegmentClassificationStatement`) |
+| square-integrable exhaustion | absent |
+| regular exhaustion | absent |
+| forward special-segment essential square-integrability | absent |
+| `SegmentHeadProductIrreducibility` and its conclusions | absent (no `TopProduct`, `FiniteTopLine`, `TopLine` or `SegmentHead…` derivative module) |
+| later statements (c), (f), (d), (e) | (c) theorem absent; only the definition module `CuspidalProductDerivativeQuotientSupport`; (f), (d), (e) absent |
 
-The audit tools and their outputs (closure list, owner map, requirement-graph trace) are
-private records of the author. The claims above can be reproduced from the Library tree
-and the published artifact manifests.
+The closure lists of this audit are not kept in the Library. The claims above can be
+reproduced from the Library tree.
 
 ## Adapted code
 
 A few short helpers adapt published Library code:
 
 - `blockTensorEquiv` is the private `blockTensorEquiv` of
-  `CuspidalSupport.LeviTensorFactorizationProof` (Worker 82).
+  `CuspidalSupport.LeviTensorFactorizationProof`.
 - `nontrivial_piTensorProduct` follows `Tensor.ExternalSubquotient`.
 - `subsingleton_binary` follows `Derivative.ProductVanishing.subsingleton_binary`.
-- `twist_ne_self` generalizes `OrderedCuspidalProductTwistOne.twist_one_ne_self` (proof by
-  Worker 1168) from `ν` to `ν^s`, `s ≠ 0`.
-- The length-one filtration and binary-product top-derivative lemmas follow the author's
+- `twist_ne_self` generalizes `OrderedCuspidalProductTwistOne.twist_one_ne_self` from `ν`
+  to `ν^s`, `s ≠ 0`.
+- The length-one filtration and binary-product top-derivative lemmas follow
   `Derivative.OrderedCuspidalProductNondegeneracyProof`.
-
-No reused draft or unpublished code is included.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with the declaration
+`lean_check` with the declaration
 `Langlands.Classification.segmentSocleDerivatives`: Lake build with 0 errors and 0
 warnings; axioms `propext`, `Classical.choice`, `Quot.sound`; level parameters
-`[uF, uV]` (diagnostic aa489941, at Library base `0ebc0efd`). No `sorry`, `admit` or
+`[uF, uV]` (at Library base `0ebc0efd`). No `sorry`, `admit` or
 new axiom.

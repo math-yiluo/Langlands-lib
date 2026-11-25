@@ -47,7 +47,7 @@ systems, have no Mathlib base, already in rank one. For such a group the
 statements apply to the reduced subsystem of indivisible relative roots.
 That subsystem has Arthur's `Δ_0` as base, and Arthur's functions use only
 `Δ_0` and its coroots. The comparison with the full relative root system is
-a remaining obligation (Markdown of the definitions module, "Restriction to
+not done here (Markdown of the definitions module, "Restriction to
 reduced root systems").
 
 ## The statements
@@ -122,11 +122,12 @@ reduced root systems").
 - Arthur 1978, Corollary 6.2 is not stated. It is the translate of Lemma 6.1
   by a point `T ∈ 𝔞_0^+` and belongs with the truncation estimates.
 - Lemma 6.4 (the partition of `G(𝔸)`) and Arthur 2005, Lemma 8.2 use
-  reduction theory and belong to the truncation part of Task 5536.
+  reduction theory and belong with truncation.
 - The statements concern an abstract reduced root system with a Mathlib
   base. Their use for an actual reductive group needs the specialization
   described in the Markdown of the definitions module. That specialization
   passes through the reduced subsystem of indivisible relative roots when
   the relative root system is of type `BC`. It is not constructed here.
-- Proofs: these are statement targets. Each will have its own
-  `lean.proof@1` task.
+- Proofs: these are statement targets. Each is proved as its own named
+  theorem, and their conjunction as `arthurCombinatoricsStatement` in
+  `Langlands.LinearAlgebra.ArthurCombinatoricsProof`.

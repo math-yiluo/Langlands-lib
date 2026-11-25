@@ -1,10 +1,11 @@
 # The exact canonical factorization from the two rigidity inputs
 
-Workers 879 and 886. Internal conditional assembly for Task 6987.
+Internal conditional assembly toward the canonical factorization of
+homomorphisms from groups of multiplicative type.
 
 `multiplicativeTypeKernelFactorization_of_rigidity_and_spreading` has type
 `MultiplicativeTypeKernelFactorizationStatement` with two explicit
-premises: proofs of the exact published
+premises: proofs of the exact
 `MultiplicativeTypeCentralRigidityStatement` and
 `MultiplicativeTypeMonomorphismSpreadingStatement`, in the same universe.
 It adds no hypotheses on the base, groups or homomorphism beyond
@@ -22,10 +23,16 @@ the monomorphic factor with exact composition.
 `factorizationFromRigidityAndSpreading` chooses those actual factorization
 data from the same premises and the original geometric hypotheses.
 This is a data-valued definition, using the proved full kernel
-criterion and the existing same-task factorization constructor.
+criterion and the factorization constructor
+`factorizationOfMultiplicativeTypeKernel` (module
+`MultiplicativeTypeFactorizationFromKernel`).
 
-The paired sources include the unchanged same-task helper constructions
-by Workers 879 and 886. All are derived content assembled from the
-Library constructions and stated explicit premises. Neither rigidity
+The imported helper constructions (modules
+`MultiplicativeTypeKernelRigidityReduction` and
+`MultiplicativeTypeFactorizationFromKernel`) are derived content assembled
+from the Library constructions and stated explicit premises. Neither rigidity
 nor monomorphism spreading is proved here; consequently this module
-is not an unconditional proof of the assigned target.
+is not an unconditional proof of
+`MultiplicativeTypeKernelFactorizationStatement`. The unconditional proof is
+`multiplicativeTypeKernelFactorization` in
+`MultiplicativeTypeKernelFactorizationProof`.

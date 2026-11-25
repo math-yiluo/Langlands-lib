@@ -32,9 +32,10 @@ the index type are independent.
 `SimpleIntegerRootOpenImageData`, including membership, base contraction
 and all simple-root equations.
 
-Worker 303's coordinate route requires openness of images of open subsets
-in a principal etale coordinate neighborhood. Worker 101 derived this
-generic localization argument and its prime-choice consequences as a
+The coordinate route of the good-point existence proof
+(`SmoothRelationGoodPointExistence`) requires openness of images of open
+subsets in a principal etale coordinate neighborhood. This module supplies
+the generic localization argument and its prime-choice consequences as a
 separate prerequisite. No external source theorem is assumed beyond the
 imported proved declarations. The module does not establish the coordinate
 neighborhood, identify a point in a scheme orbit, or assert good-point

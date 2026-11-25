@@ -1,6 +1,6 @@
 # Square-zero lifting for normalizers of diagonalizable subgroups
 
-Let `F` be a group functor on commutative `R`-algebras corepresented by a formally smooth algebra `B`, and `ι` a `CharacterEmbedding` of a diagonalizable group. This module proves that the algebra-level normalizer family `normalizerFamily ι.range` of the embedded characters (from `CorepresentedNormalizer`) has the square-zero lifting property `HasSquareZeroLifting`. The centralizer is treated in Worker 1296's `CentralizerSmooth`.
+Let `F` be a group functor on commutative `R`-algebras corepresented by a formally smooth algebra `B`, and `ι` a `CharacterEmbedding` of a diagonalizable group. This module proves that the algebra-level normalizer family `normalizerFamily ι.range` of the embedded characters (from `CorepresentedNormalizer`) has the square-zero lifting property `HasSquareZeroLifting`. The centralizer is treated in `CentralizerSmooth`.
 
 ## Normalizer
 
@@ -14,12 +14,12 @@ Let `F` be a group functor on commutative `R`-algebras corepresented by a formal
 
 ## Diagonalizable subgroups of corepresented groups
 
-For a homomorphism `j : D(M) ⟶ Spec B` from the published diagonalizable group scheme `Diagonalizable.groupScheme R M`, which is a monomorphism of schemes:
+For a homomorphism `j : D(M) ⟶ Spec B` from the diagonalizable group scheme `Diagonalizable.groupScheme R M`, which is a monomorphism of schemes:
 
-- `diagonalizableEmbedding e j` is the character embedding `t ↦ (characterPoint t ≫ j)` in affine coordinates. `characterPoint` is published in `AffineCharacterAction`. Naturality follows from `characterPoint_mapCharacter` and the naturality of `affinePointsEquiv`; injectivity from `j` being a monomorphism.
-- `diagonalizableEmbedding_range`: its range over `A` is the published family `affineSubgroups (range j) A`, the points of `range j` over `Spec A`.
+- `diagonalizableEmbedding e j` is the character embedding `t ↦ (characterPoint t ≫ j)` in affine coordinates. `characterPoint` comes from `AffineCharacterAction`. Naturality follows from `characterPoint_mapCharacter` and the naturality of `affinePointsEquiv`; injectivity from `j` being a monomorphism.
+- `diagonalizableEmbedding_range`: its range over `A` is the family `affineSubgroups (range j) A`, the points of `range j` over `Spec A`.
 - The imported `SubgroupFunctor.range_iso_comp` from `GroupScheme/SubgroupFunctor` states that precomposing a homomorphism with an isomorphism does not change its range.
 
 ## Provenance
 
-This is an internal construction toward task `0f453442`. For a torus in a smooth group over a field, it gives the infinitesimal lifting property behind the smoothness of the normalizer (Milne, *Algebraic Groups* (2017), Corollary 13.10). Milne deduces the normalizer case from the centralizer through equality of identity components. The implemented proof instead lifts the conjugation action directly, using rigidity of diagonalizable groups (grouplike lifting) and the twisted transporter lifting of `TwistedLifting`. It holds over an arbitrary base ring `R`, for every additive commutative group `M`.
+This is an internal construction. For a torus in a smooth group over a field, it gives the infinitesimal lifting property behind the smoothness of the normalizer (Milne, *Algebraic Groups* (2017), Corollary 13.10). Milne deduces the normalizer case from the centralizer through equality of identity components. The implemented proof instead lifts the conjugation action directly, using rigidity of diagonalizable groups (grouplike lifting) and the twisted transporter lifting of `TwistedLifting`. It holds over an arbitrary base ring `R`, for every additive commutative group `M`.

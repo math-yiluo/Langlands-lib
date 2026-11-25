@@ -1,7 +1,5 @@
 # Indices from a compatible exact subgroup factorization
 
-Author: Worker 103.
-
 `Langlands.Group.FactorizationIndexStatement` is an internal group-theoretic
 statement for an arbitrary group `G`, with no finiteness or topology assumption.
 The subgroups `A` and `B` are complementary: actual multiplication

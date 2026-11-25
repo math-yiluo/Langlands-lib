@@ -1,6 +1,6 @@
 # Jacquet exclusion and unwanted inertia components
 
-Worker 137. Supporting construction and proved comparisons for Task 5352. The module formalizes the passage from the published condition (iii) to the absence of all constituents in each prohibited Levi inertia orbit. It does not prove the full Bernstein block characterization.
+Supporting construction and proved comparisons for Renard VI.7.2 Proposition (`BernsteinBlockCharacterizationStatement`). The module formalizes the passage from the published condition (iii) to the absence of all constituents in each prohibited Levi inertia orbit. It does not prove the full Bernstein block characterization.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version of 9 July 2026, source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`, VI.7.2 Proposition and proof, printed pp.184–185 / PDF pp.190–191. The target statement's Markdown explains this translation but leaves it unformalized. These are derived internal helpers for that translation.
 
@@ -14,13 +14,13 @@ The setting is exactly a published `BernsteinStandardFamily i ν`, over an arbit
 
 The entry construction is `bernsteinSchemeJacquet`. The proved comparison `isSubquotient_bernsteinSchemeJacquet_iff` moves occurrences to the literal Levi. `bernsteinLeviUnramifiedCharacter_radical` and `isLeviCuspidal_bernsteinLiteralLeviRep_of_inertia` supply the inertia replacement `BernsteinCuspidalDatum.replaceInertia`; `BernsteinCuspidalDatum.inertia_replaceInertia` proves its class is unchanged. Finally `bernsteinJacquetExclusion_iff_inertiaComplement` proves the stated equivalence for the actual published objects.
 
-The result concerns absence of constituents in unwanted inertia orbits. Identifying that absence with zero components of a chosen inertia decomposition still uses the separately stated decomposition theorem. Membership of `V` in its Bernstein block, the induction embeddings of conditions (i) and (ii), and the three equivalences of `BernsteinBlockCharacterizationStatement` are not proved by this module. The published target and its imports are unchanged.
+The result concerns absence of constituents in unwanted inertia orbits. Identifying that absence with zero components of a chosen inertia decomposition still uses the separately stated decomposition theorem. Membership of `V` in its Bernstein block, the induction embeddings of conditions (i) and (ii), and the three equivalences of `BernsteinBlockCharacterizationStatement` are not proved by this module.
 
 ## Name of the file-local topology
 
 The file-local instance `TopologicalSpace (rationalPoints G)`, the canonical point topology, is named `instBernsteinJacquetInertiaExclusionTopology`. It used to be anonymous, and Lean gave it the generated name `Langlands.CuspidalSupport.instTopologicalSpaceRationalPoints`. `RationalUniversalProgenerator` declares its own anonymous topology on rational points, with a different type, and Lean gives it the same generated name. A file-local instance is still a declaration in the namespace `Langlands.CuspidalSupport`. Neither module imports the other, so each built on its own, but any module that imports both failed with a duplicate-declaration error. Only the name changed: the type and value are as before, and no file refers to the instance by name. The other file-local instances of this module keep their generated names, which no other module declares.
 
-Integration also gives the local affine, closed-immersion, finite-type and
-Levi point-topology instances explicit module-specific names. Their types,
+The local affine, closed-immersion, finite-type and
+Levi point-topology instances have since also been given explicit module-specific names. Their types,
 bodies and local scope are preserved; no consumer refers to their former
 automatically generated names.

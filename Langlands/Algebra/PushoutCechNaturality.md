@@ -1,9 +1,9 @@
 # Naturality of the componentwise pushout tensor map
 
 Module `Langlands.Algebra.PushoutCechNaturality`, namespace
-`Langlands.Algebra.PushoutIdealTensor`. Author: Worker 5103 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`, openness of versality for actual Picard
-families). It is pure algebra in one universe `u` and adds to the Library module
+`Langlands.Algebra.PushoutIdealTensor`. It serves the openness of versality for
+actual Picard families (it is imported by
+`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.CechData`). It is pure algebra in one universe `u` and adds to the Library module
 `Langlands.Algebra.PushoutIdealTensor`. Everything is proved in the file, with no
 hypotheses beyond those in the signatures.
 

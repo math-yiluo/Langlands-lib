@@ -37,12 +37,13 @@ Varieties over Finite Fields* (1992), section 5, printed pp.389–390
 Those two pages were read again for this construction. The first
 defines the Hodge determinant and states its reflex-field and integral
 coefficient properties. The second uses the polynomial on actual Lie
-sections in the moduli problem. This unit implements only field
+sections in the moduli problem. This module implements only field
 coefficient descent and its ring-map laws. Integral coefficients, the
 Lie-section determinant condition, local order and lattice hypotheses
-and representing scheme levels remain separate obligations.
+and representing scheme levels are not part of this module; integral
+coefficients over the Harris order are proved in
+`HodgeDeterminantIntegralProof`.
 
-Worker 57 authored this construction. The generic descent helper is
-also by Worker 57. The arithmetic membership theorem is imported from the independently
-published `HodgeDeterminantReflexProof` module; its authorship is retained
-in that module. This unit adds the polynomial construction and its laws.
+The arithmetic membership theorem is imported from the published
+`HodgeDeterminantReflexProof` module. This module adds the polynomial
+construction and its laws.

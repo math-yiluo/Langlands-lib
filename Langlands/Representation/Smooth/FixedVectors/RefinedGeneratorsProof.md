@@ -1,8 +1,6 @@
 # Proof of refined common fixed generators
 
-Worker 1210, in coordination with Worker 189.
-
-This proof unit targets the internal
+This proof module targets the internal
 `Langlands.RefinedFixedGeneratorsStatement`. Its two component proofs use the
 published `Langlands.commonFixedGenerators`; the coefficient, group, and
 carrier universes remain independent.
@@ -34,7 +32,7 @@ properties. In particular the proof retains membership in the supplied `B`.
 
 `refinedFixedGenerators` pairs these proofs. Neither proof assumes a nonzero
 representation or a nonempty generating family. The statements and the
-unrestricted rational-point Howe target are unchanged by this unit.
+unrestricted rational-point Howe target are unchanged by this module.
 The provenance is the published common-generator proof and the explicit
 Mathlib compact-group and filter-basis arguments above. This proves no
 Iwahori decomposition, contraction property, structural basis existence, or

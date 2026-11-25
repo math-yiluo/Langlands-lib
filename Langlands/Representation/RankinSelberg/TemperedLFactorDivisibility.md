@@ -1,6 +1,6 @@
 # Certified L-polynomials for two block families
 
-Worker 40's internal construction supports the existing tempered L-factor
+This internal construction supports the existing tempered L-factor
 statement. It retains full Whittaker type for every block as an explicit premise
 and makes no pole or product-equality claim.
 

@@ -46,7 +46,7 @@ theorem doubleCoordinateCocharacter_points (U : Over (Spec (CommRingCat.of L)))
   by_cases hc : c = ULift.up i₀
   · subst c
     simp
-  · have hd : c.down ≠ i₀ := fun h => hc (ULift.ext _ _ h)
+  · have hd : c.down ≠ i₀ := fun h => hc (ULift.ext h)
     simp [hd, hc]
 
 end CoordinateCocharacter

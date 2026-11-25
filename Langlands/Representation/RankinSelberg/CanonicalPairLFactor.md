@@ -1,7 +1,5 @@
 # Canonical pair L-factors and additive-character scaling
 
-Author: Worker 31.
-
 This internal construction specializes `PairLFactor` to the actual measures of
 `CanonicalCharacterChange`. It constructs a rational-function unit from an
 explicit proof that a common normalized L-polynomial exists, and proves that

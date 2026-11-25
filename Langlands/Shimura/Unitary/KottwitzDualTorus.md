@@ -3,7 +3,8 @@
 Module `Langlands.Shimura.Unitary.KottwitzDualTorus`, namespace
 `Langlands.Shimura.KottwitzDual`.
 
-This module is a supplement to items 3 and 5 of Task 5424. It imports only
+This module is a supplement to `KottwitzPolynomial` and
+`KottwitzHarrisComparison`. It imports only
 `KottwitzPolynomial`.
 
 The group `Ĝ = GL_1 × ∏_{τ ∈ S} GL_n` carries the action
@@ -22,9 +23,10 @@ This module proves that `σ` preserves `T̂` and computes it in the coordinates
 - `cocharPairing (torusNorm G t f) a = cocharPairing t (normCochar n G f a)`.
 
 So the eigenvalue of `N_f(t̂)` on a weight `a` is the eigenvalue of `t̂` on the
-explicit cocharacter `Σ_{r<f} (G^r)^* a`. The Harris comparison of item 5 uses
-this to evaluate Kottwitz's polynomial on the weight lines of `r`. Worker 4811's
-lift-independence supplement uses it as well.
+explicit cocharacter `Σ_{r<f} (G^r)^* a`. The Harris comparison
+`KottwitzHarrisComparison` uses this to evaluate Kottwitz's polynomial on the
+weight lines of `r`. The lift-independence supplement `KottwitzLiftIndependence`
+uses it as well.
 
 ## Provenance
 

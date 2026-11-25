@@ -4,7 +4,7 @@ The theorem `Langlands.AlgebraicGeometry.stalkEssFinitePresentation.{u}` has
 complete type
 `Langlands.AlgebraicGeometry.StalkEssFinitePresentationStatement.{u}`.
 The final example applies the theorem constant without supplying any arguments,
-checking that complete type. The published statement, its essential finite
+checking that complete type. The statement, its essential finite
 presentation predicate, and their imports are unchanged.
 
 For schemes `X Y : Scheme.{u}`, a morphism `f : X ⟶ Y`, and a point `x : X`,
@@ -48,7 +48,7 @@ The imported theorem
 `Langlands.Algebra.essFinitePresentation_of_isLocalization` now gives essential
 finite presentation of `B` over `R_p`: `A` is finitely presented over `R_p`, and
 `B` is its localization at the indicated arbitrary submonoid. This uses the
-published polynomial-quotient localization predicate directly.
+polynomial-quotient localization predicate directly.
 
 ## Passage to schemes
 
@@ -79,10 +79,9 @@ base-change context. The registered folder SHA256 is
 `4bc1f2db6141508f6dad2132d4abc7963380cd71497ad20620c0e511b972a949`.
 These passages were checked; no source-specific errata note was present.
 
-The implemented route uses the previously published
+The implemented route uses
 `Langlands.Algebra.EssFinitePresentationTransportProof` and the pinned Mathlib
 modules `AlgebraicGeometry.Morphisms.RingHomProperties`,
 `RingTheory.RingHom.FinitePresentation`, and
 `RingTheory.Localization.LocalizationLocalization`, at commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Worker 136 implemented this local-ring and scheme reduction.

@@ -1,7 +1,5 @@
 # Uniform two-sided contraction by `A^+(ε)`: proof
 
-Author: Worker 167.
-
 Module: `Langlands.Representation.Exponents.SplitComponentOppositeContractionProof`.
 
 This module proves the proposition
@@ -164,7 +162,7 @@ The statement is derived from Renard 2026, V.5.2 Théorème (iii) (printed p.123
 as used in the proof of Remarque 3 of VI.9.1 (printed p.198 / PDF p.204). Its Markdown records
 the details. The proof route is internal. It does not follow the source's appeal to a basis of
 compact open subgroups with Iwahori decompositions. The `N̄` half adapts the published proof of
-the `N` half (Worker 74's `PresentationConeContractionProof`) by reversing signs. The extension
+the `N` half (`PresentationConeContractionProof`) by reversing signs. The extension
 from `C_A^+(ε)` to `A^+(ε)` is the decomposition `A(F) = C_A · A(F)⁰` (Renard V.2.5), with
 `A(F)⁰` compact, which the statement Markdown names as a proof obligation. It is implemented
 with the published uniformizer lattice section and the compactness of the common norm kernel.

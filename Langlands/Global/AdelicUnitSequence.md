@@ -37,6 +37,6 @@ The published place infinitude theorems supply the distinct-place sequences.
 The arbitrary common arithmetic universe and the original arithmetic topology
 instances are retained.
 
-This unit supplies the sequences and their intrinsic properties. The failure
+This module supplies the sequences and their intrinsic properties. The failure
 of topological embedding for the unit inclusion and its comparison to actual
 punctured-affine-line scheme points are separate consequences.

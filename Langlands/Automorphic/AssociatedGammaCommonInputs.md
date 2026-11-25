@@ -1,6 +1,6 @@
 # The common-twist analytic input for the two Hecke families
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaCommonInputs`). It discharges the analytic input
 `CommonTwistEulerInputs` of the published two-twist engine
 (`HeckeTwistComparisonStatement`) for the automorphic family of an `AutomorphicTwistSetup`
@@ -14,7 +14,7 @@ equations with the same Euler factors outside a finite set). Internal deduction.
   finite set `W ⊇ s.exceptional` outside which `S₀` is unramified and matches the Euler
   polynomial of `s` (published `isWeaklyAssociated_iff_exists_finset`).
 - `commonTwistEulerInputs_families`: hypotheses are the completed global Rankin–Selberg
-  equation `CuspidalPairGlobalFunctionalEquationStatement` (Task 5493 owns its proof), the
+  equation `CuspidalPairGlobalFunctionalEquationStatement`, the
   existence statement `ArithmeticPairEpsilonExistenceStatement` (proved in the Library),
   nontriviality of `ψ` and triviality on `F`, weak association of `S`, `S'`, `S^∨`, `S'^∨` with
   the spectral systems of `P`, `P'`, `Pd`, `Pd'`, and the engine inputs of the arithmetic family

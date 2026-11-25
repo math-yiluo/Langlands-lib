@@ -165,12 +165,13 @@ theorem standardLeviPlancherelWavePacketRankZero :
     obtain ⟨k₁, k₂, f, a, hk₁, hk₂, hf, ha, hfact⟩ := hB g hg
     exact ⟨k₁, k₂, f, a, hk₁.1, hk₂.1, hf, ha, hfact⟩
   let := hi.isSplitSubtorus.1.finite_realCocharacterSpace
+  have : Module.Free ℝ (RealTorusSpace.V S) := Module.Free.of_divisionRing ℝ _
   let b := Module.finBasis ℝ (RealTorusSpace.V S)
   let N := (normSeminorm ℝ (Fin (Module.finrank ℝ (RealTorusSpace.V S)) → ℝ)).comp
     b.equivFun.toLinearMap
   have hN (v : RealTorusSpace.V S) (hv : N v = 0) : v = 0 := by
     apply b.equivFun.injective
-    rw [map_zero]
+    rw [LinearEquiv.map_zero]
     exact norm_eq_zero.mp hv
   have hchamber := standardLeviPacketChamberDerivativeEstimates_of_properRegions
     hG hi hν I hζ s hs hindex π mu hsq hRefl hCST Ks hKs hPKs hOppKs p qrev

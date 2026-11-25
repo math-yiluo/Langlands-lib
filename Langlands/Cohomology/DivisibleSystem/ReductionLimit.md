@@ -1,12 +1,12 @@
 # The inverse limit of the reductions L / ℓ ^ m L
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.IHomReduction` (`ihomReductionSystem`,
 `ihomReductionTowerIso`, `reductionπ_ihomReductionIso_hom`),
 `Langlands.Cohomology.DivisibleSystem.InverseLimit`
 (`DivisibleSystem.inverseLimit`) and
-`Langlands.NYLL.ValuedFieldTheory.Valuation.DiscreteValuationField.HenselianFinite.CompletenessProofs`
-(`NYLL.ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite`).
+`Nyll.ValuedFieldTheory.Valuation.DiscreteValuationField.HenselianFinite`
+(`ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite`).
 Through their imports it uses `powSMul_hom_apply`
 (`Langlands.Cohomology.DivisibleSystem.FreeTorsionProjective`),
 `reductionTower`, `reductionπ`, `reductionπIsCokernel`,
@@ -179,7 +179,7 @@ with the trivial action.
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned pages):
+J. Math. Kyoto Univ. 39-2 (1999) (read in the rendered scanned pages):
 
 - §4, printed p.311 (one-based PDF page 13): "Now we want to let `m` vary.
   Let the `K_ℓ`-modules `(ρ, W)` and `𝓛 = 𝓛_W` be as in §3; let
@@ -230,7 +230,7 @@ results about `Hom_R(A, -)` require `G` a group and the carriers in the
 universe of `R`. Everything concerns the categories `Rep` of representations
 of abstract monoids or groups, not categories of smooth representations.
 
-Worker 13's published `Langlands.Coefficients.AdicSystem` builds, for an
+The published `Langlands.Coefficients.AdicSystem` builds, for an
 `R`-module `M` and an ideal `I`, the inverse system `M / I ^ n M` in
 `ModuleCat R` (`AdicSystem.system`) and proves that Mathlib's
 `AdicCompletion I M` is its limit (`AdicSystem.completionConeIsLimit`); its

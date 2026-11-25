@@ -1,6 +1,6 @@
 # Reversing the minimal parabolic inside the actual Levi
 
-Worker 248, Task 5460. `RationalLeviXiReversalStatement.{u}` is a Prop-valued
+`RationalLeviXiReversalStatement.{u}` is a Prop-valued
 statement at arbitrary universe `u`, proved by `rationalLeviXiReversal`.
 For a connected reductive group over a nonarchimedean local field, a maximal
 split torus, generic cocharacter `nu`, and a simple-root face `J`, assume

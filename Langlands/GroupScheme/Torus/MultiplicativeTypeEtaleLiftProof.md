@@ -3,8 +3,6 @@
 Module `Langlands.GroupScheme.Torus.MultiplicativeTypeEtaleLiftProof`, namespace
 `Langlands.GroupScheme`.
 
-Authors: Worker 57 and Worker 872.
-
 ## Result
 
 `multiplicativeTypeEtaleLift : MultiplicativeTypeEtaleLiftStatement.{u}` proves the published
@@ -35,7 +33,7 @@ scheme: one chart through the given point is enough.
 1. `finiteTypeChartCover` is
    `HomScheme.MultiplicativeTypeChart.finiteTypeChartCover_of` (module
    `HomScheme.MultiplicativeTypeChartCover`) applied to three inputs:
-   - the fppf splitting hypothesis `FppfSplitStatement`, discharged by Worker 872's
+   - the fppf splitting hypothesis `FppfSplitStatement`, discharged by
      `HomScheme.exists_fppf_diagPoints` (module `HomScheme.MultiplicativeTypeSubgroupSplitting`).
      Over an affine test, a closed multiplicative-type subgroup is, on finitely many affine
      flat, locally finitely presented pieces covering the test, the range of a closed
@@ -50,10 +48,10 @@ scheme: one chart through the given point is enough.
    `HomScheme.MultiplicativeTypeChartConstruction` from the ring-level data of
    `Algebra.MixedChartRing` / `Algebra.MixedChartExistence`. They are open charts by
    `HomScheme.MultiplicativeTypeChartInjective` and `HomScheme.MultiplicativeTypeChartOpen`
-   together with Worker 872's affine-test criterion
+   together with the affine-test criterion
    `MultiplicativeTypeSubgroupModuli.isOpenChartOfAffines`. They cover the field points by
    `MultiplicativeTypeChartCover.coversFieldPoints`.
-3. `multiplicativeTypeEtaleLift` is Worker 872's
+3. `multiplicativeTypeEtaleLift` is
    `MultiplicativeTypeSubgroupModuli.multiplicativeTypeEtaleLift_of_finiteTypeCharts`
    (module `HomScheme.MultiplicativeTypeSubgroupChartCoverReduction`) applied to
    `finiteTypeChartCover`. That theorem does two things:

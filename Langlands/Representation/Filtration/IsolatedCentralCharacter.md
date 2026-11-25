@@ -1,8 +1,6 @@
 # Isolating one generalized central block in a supplied finite filtration
 
-Worker 526 supplies this internal construction for the relative Hom comparison,
-following the full-central-character and actual-projector design discussions
-with Workers 359 and 430.
+This is an internal construction for the relative Hom comparison.
 It is a generic statement about actual representation filtrations over any
 field, with independent coefficient, group, ambient-carrier and source-carrier
 universes. It assumes a supplied actual finite filtration, one distinguished

@@ -1,7 +1,5 @@
 # The exponent difference in the real rank-two principal series
 
-Worker 848.
-
 `RealGLTwoPrincipalSeriesUnitaryBound.exponent_difference` proves
 `RealGLTwoPrincipalSeriesUnitaryBoundStatement` by calculating with the
 positive Hermitian form on the `O(2)`-finite standard module.

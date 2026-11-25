@@ -1,7 +1,5 @@
 # Pinning correction of affine unpinned isomorphisms
 
-Worker 243.
-
 `AffinePinnedIsomorphismExistenceStatement` is exactly the existence part of the published affine pinned Isomorphism Theorem: all original hypotheses and the full torus-character and pinning predicate are retained, while uniqueness is omitted. The theorem `affinePinnedIsomorphismExistence_of_unpinned` derives it from the unpinned affine Isomorphism Theorem, retained as an explicit premise.
 
 `affinePinnedIsomorphismOfUnpinned` selects the constructed actual isomorphism and packages it with the full torus-character and pinning predicate. Its return is isomorphism data, with the verified equations retained.

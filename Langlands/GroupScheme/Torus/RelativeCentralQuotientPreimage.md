@@ -1,14 +1,12 @@
 # Maximal torus preimages in relative central quotients
 
-Worker 226.
-
 `Langlands.GroupScheme.RelativeCentralQuotientPreimageReductionStatement.{u}` is the named `Prop`-valued statement recording
 the full reverse relative maximal-torus construction with the same explicit quotient-existence, reductivity and multiplicative-type-kernel hypotheses.
 `Langlands.GroupScheme.relativeCentralQuotientPreimageReduction` proves this proposition by the existing helper theorem.
 The helper signatures and all mathematical hypotheses are retained; the
 other results below are proved companion helpers.
 
-This internal assembly unit proves the reverse maximal-torus construction
+This internal assembly module proves the reverse maximal-torus construction
 for a supplied central quotient of reductive groups over any scheme,
 assuming `RelativeCentralMultiplicativeTypeQuotientStatement` and a closed
 central multiplicative-type kernel. Both ambient groups are assumed
@@ -43,6 +41,6 @@ commutes with residue base change, where the published self-centralizing
 criterion gives maximality.
 
 The final existential theorem packages the actual preimage and these
-properties. This unit is conditional on quotient existence, the
+properties. This module is conditional on quotient existence, the
 multiplicative-type kernel, and target reductivity; it does not discharge
 those separate inputs or the full relative central quotient target.

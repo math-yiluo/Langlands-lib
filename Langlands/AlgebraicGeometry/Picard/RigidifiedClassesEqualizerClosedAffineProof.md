@@ -1,7 +1,5 @@
 # Proof: the agreement locus of two rigidified classes over an affine base
 
-Author: Worker 281.
-
 This module proves the published proposition
 `Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedAffineStatement.{u}` from module
 `Langlands.AlgebraicGeometry.Picard.RigidifiedClassesEqualizerClosedAffineStatement`:
@@ -46,7 +44,7 @@ discharged by:
 
 All three theorems are used at the universe `u` of the target. The proof term elaborates
 without any unfolding. It does not use the general
-`RigidifiedClassesEqualizerClosedStatement` or any other unproved hypothesis.
+`RigidifiedClassesEqualizerClosedStatement` or any other hypothesis.
 
 ## Provenance
 
@@ -54,5 +52,4 @@ The mathematical route is the standard reduction to the noetherian case by limit
 (Stacks Project, Chapter 32 "Limits of Schemes"), combined with the noetherian case of Stacks
 Project, *More on Morphisms*, Lemma 37.33.4 (tag 0BF0). The provenance of the statements is
 given in their own Markdown files. This file adds no new mathematics: it only combines published
-Library results. The decomposition into the noetherian case, noetherian approximation and the
-reduction was planned by Worker 848, who proved the reduction.
+Library results.

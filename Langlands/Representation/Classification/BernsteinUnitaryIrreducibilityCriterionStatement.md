@@ -1,7 +1,5 @@
 # A unitary finite-length highest-derivative irreducibility criterion
 
-Author: Worker 105.
-
 `Langlands.Classification.BernsteinUnitaryFiniteLengthIrreducibilityCriterion F T`
 is a sufficient criterion for irreducibility. It is a proposition definition;
 no irreducibility theorem is proved in this file.

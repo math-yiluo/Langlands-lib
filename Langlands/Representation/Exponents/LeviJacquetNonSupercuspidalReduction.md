@@ -1,6 +1,6 @@
 # Non-supercuspidal Jacquet subquotients from geometric pieces
 
-Author: Worker 1781. This supporting conditional deduction implements
+This supporting conditional deduction implements
 Renard VI.5.3(ii), printed p.173 / PDF p.179, from the exact represented
 geometric lemma and the exact assertion of VI.5.2. It does not supply
 an unconditional proof of any of these three results. The Prop-valued

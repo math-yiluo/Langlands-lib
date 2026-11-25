@@ -1,7 +1,5 @@
 # Analytic Weierstrass division and preparation
 
-Author: Worker 56.
-
 `RestrictedSeries.weierstrass` proves `WeierstrassStatement A` by applying
 the two constructed distinguished-series theorems in
 `DistinguishedNormalization`.

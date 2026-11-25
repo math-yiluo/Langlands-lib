@@ -1,21 +1,20 @@
 # General Aubert formal identities: target and dependency map
 
 This page maps the 36 declarations in the eight representation-side
-construction/target pairs for task `e3d69272-2599-4a08-a934-cb11f2493e30`.
+construction/target pairs of the general relative-Weyl modules of the general
+Aubert duality program.
 It complements the [84-declaration finite/subgroup table](relative-weyl-construction-target-map.md)
 and the broader [general program source map](general-program-source-map.md).
 The tables distinguish actual constructions and elementary helper proofs from
 Prop targets. They do not assert any main identity, supply the missing
-connected-reductive realization, or declare the task complete.
+connected-reductive realization, or declare these modules complete.
 
 All representation-side names below have prefix `Langlands.Aubert.General`.
-The actual normalized functor and operator adapters belong to task
-`593ef603-6672-4424-976c-14e11e920d9c`, Workers 23 and 1180.
-Their unmodified revision-1 files were inspected as validation dependencies.
-They have not thereby received acceptance or publication through this task.
-Every target candidate selects only its own pair; independent adapter
-acceptance and publication must precede integration of these targets.
-Later upstream interface or meaning changes require reconciliation.
+The actual normalized functor and operator adapters belong to the
+[adapter modules](general-adapter-dependency-table.md); their files were
+inspected as dependencies. Later upstream interface or meaning changes
+require reconciliation. All the pairs of this page, the adapters and the
+geometric pair are now in the Library.
 
 ## Common actual data and named prerequisites
 
@@ -118,8 +117,8 @@ the six subgroups are fixed:
 | `GeometricIntersectionDecompositions` | Separate realization proposition for both actual decompositions at every minimum representative and every lift. | Its connected-reductive instance remains required. It contains no class equation. |
 | `GeometricK0ExpansionStatement` | Separate Prop target `r_I ∘ i_J = ∑_(w∈D(I,J)) geometricTermK0(w)`. | Uses the actual finite normalizer/full-centralizer quotient, its Coxeter indexing, the displayed decomposition proposition and term preservation premises. Every quotient section is quantified; choice and quotient surjectivity supply such sections. No expansion proof is supplied. |
 
-Worker 14 retains the actual geometric filtration and orbit-functor work.
-Its inspected private orientation sends `w` to `P_J * n⁻¹ * P_I` on
+The actual geometric filtration and orbit functors are separate work. The
+orientation inspected for it sends `w` to `P_J * n⁻¹ * P_I` on
 `P_J \ G / P_I`, so the inversion comparison with `W_I \ W / W_J`
 must be proved. Both actual Haar correction twists, smooth realization,
 graded-piece identification, parabolic normalization and any compact/full
@@ -130,8 +129,7 @@ The published `SmoothRep.filtrationGrothendieckStatement` and its proof
 already derive exact K0 additivity and piece finite length from actual smooth
 gluing and finite length of the total object. This target does not duplicate
 that theorem or pretend the missing specialization is an arbitrary sum of
-maps. Worker 14 reported no new checked general interface; the upstream
-ClosedSemidirect task's explicit pause is unchanged.
+maps. No new checked general interface for it was recorded.
 
 The elementary intersections also overlap the published
 `Langlands.Geometric.intersectionSource`, `intersectionTarget` and
@@ -144,7 +142,7 @@ intersection-term K0 expansion target.
 
 ## Corollary 1.10 and its representation prerequisites
 
-Worker 1186's
+The module
 [GeneralCorollaryTargets](../../Langlands/Representation/Aubert/GeneralCorollaryTargets.md)
 contains ten declarations. The normalization and ambient preservation
 premises are the same as above. Its `IsCorollaryLeviCuspidal` uses the actual
@@ -171,7 +169,7 @@ general prerequisites.
 
 ## Separately named Weyl conjugacy and classification dependence
 
-Worker 1186's
+The module
 [GeneralWeylConjugacyTarget](../../Langlands/Representation/Aubert/GeneralWeylConjugacyTarget.md)
 has the remaining two declarations:
 
@@ -189,121 +187,86 @@ because the target omits a classification premise.
 
 No general classification or character-independence theorem has been adopted
 here as an exact proof dependency: these are target declarations, with no
-Weyl-conjugacy proof. Any successor using that route must identify its actual
+Weyl-conjugacy proof. Any proof using that route must identify its actual
 general declarations and hypotheses. The inspected GL-specific
 `Langlands.PadicField.TopologicalData.TemperedLanglandsDatum.langlandsQuotient`
 is a head construction and does not supply the required general classification
 theorem. This unfilled dependency cannot be moved into the external structural
 list or counted as a discharged representation premise.
 
-## Actual realization and proof owners
+## Actual realization and proof obligations
 
 The final source scope is connected reductive rational-point groups over
 nonarchimedean local fields, including the permitted positive-characteristic,
 nonsplit, non-quasisplit and empty-root cases. The generic signatures add no
 restriction excluding those cases, but do not construct them.
 
-| Required comparison or result | Current construction/target and owner boundary |
+| Required comparison or result | Construction or target, and boundary |
 | --- | --- |
-| Actual rational-point topology, standard `P_I`, `M_I`, `U_I`, Levi decompositions and closedness | Shared Renard/algebraic-group/KP owners; Worker 23 specializes the actual adapters. The [Chapter V ledger](../renard/chapter-v-structural-inputs.md) remains the itemized external boundary. |
+| Actual rational-point topology, standard `P_I`, `M_I`, `U_I`, Levi decompositions and closedness | Shared with the Renard, algebraic-group and Kaletha–Prasad work; the adapter modules specialize the actual adapters. The [Chapter V ledger](../renard/chapter-v-structural-inputs.md) remains the itemized external boundary. |
 | `M_∅ = Z_G(T0)`, subgroup quotient inclusion and relative-root action | The finite/subgroup table constructs the actual abstract quotient and inclusion. Scheme-morphism normalizer/centralizer points still require comparison with abstract rational-point subgroups. |
 | Coxeter/simple-root realization, positive-root signs, minimum and longest representatives, actual standard-Levi intersections | Intrinsic constructions and distinct realization/cancellation targets are in the finite/subgroup table. Equality of conjugated reflections loses root signs. No quotient injection alone proves the actual Levi/Weyl equality test. |
 | Rank and central directions | Retain `|J| = dim A0 - dim A_(M J)` and `|S|-|J| = dim A_(M J)-dim A_G`. Total split rank cannot replace these exponents. These comparisons and the retained D04/D06 deductions are not extra external fields. |
-| Exactness, finite length, admissibility, transitivity, duality and normalization | Workers 23/1180 expose the named adapter prerequisites; the parent must supply their representation-theoretic proofs or exact published reuse. |
-| Actual geometric filtration and normalized smooth graded-piece comparison | Worker 14 and existing Renard owners; this task supplies the actual normalized K0 target and elementary term constructions. |
-| Length two, self-association, Jacquet constituent pattern and induced-class conjugacy | Worker 1186 supplies targets. Parent `46df6a68-5db4-4428-8044-05151d6ce1f6`, Worker 76, owns focused proof successors and final assembly. |
-| Main identities and their general-to-GL comparison | The five individual targets above retain the general scope; the existing GL owners and sibling comparison unit are preserved. No generic predicate is a drop-in replacement for the established GL operator without the actual indexing/functor/group comparison. |
+| Exactness, finite length, admissibility, transitivity, duality and normalization | The adapter modules expose the named prerequisites; the general program must supply their representation-theoretic proofs or exact published reuse. |
+| Actual geometric filtration and normalized smooth graded-piece comparison | Separate geometric work, with the Renard formalization; these modules supply the actual normalized K0 target and elementary term constructions. |
+| Length two, self-association, Jacquet constituent pattern and induced-class conjugacy | The Corollary and Weyl-conjugacy modules supply the targets; their proofs and the final assembly belong to the general program (see the [dependency matrix](general-program-dependency-matrix.md)). |
+| Main identities and their general-to-GL comparison | The five individual targets above retain the general scope; the existing GL results and the general-to-GL comparison modules are preserved. No generic predicate is a drop-in replacement for the established GL operator without the actual indexing/functor/group comparison. |
 
-The structural child contracts inspected on 2 November 2026 are coordination
-evidence, not accepted constructions. Task
-`8ace819d-9522-4381-aaab-f9a84a07755e` revision 1 covers simple roots,
-choice-free standard families, subgroup Weyl data and rational decompositions,
-while expressly excluding Coxeter/length/minimum-representative work.
-Task `0d8de1ec-d335-4ab1-8a62-53e04510a7f5` revision 2 includes the
-rank-zero scalar-torus contract correction: nonempty rank for the scalar
-torus, positive rank for its scalar split-component claim, and the separate
-trivial `GL_0` split component. Neither contract is proof or publication evidence.
+The structural work planned as of 2 November 2026 covered simple roots, choice-free standard
+families, subgroup Weyl data and rational decompositions, expressly
+excluding Coxeter/length/minimum-representative work, and a rank-zero
+scalar-torus correction: nonempty rank for the scalar torus, positive rank
+for its scalar split-component claim, and the separate trivial `GL_0` split
+component. These plans are not proofs.
 
-A later inspected adapter candidate,
-`21d48999-9cd6-4b13-8760-9904a16f6d1f`, has official machine validation
-but awaited independent review and publication at that inspection. Its full
-four-file diff retains the revision-1 definitions and adds helper lemmas.
-Its additional `DynamicParabolic` pair supplies
+A later version of the adapters, now in the Library, retains the earlier
+definitions and adds helper lemmas. Its additional `DynamicParabolic` pair supplies
 `dynamic_isSemidirectDecomposition` and `dynamic_projection_eq_limitHom`
 for dynamic cocharacter subgroups on every test scheme, including rational
 points at the identity test object. It fixes no topology. Consumers must bind
-the actual rational-point topology supplied by the point-topology owners;
+the actual rational-point topology `rationalPointTopology` of
+`AlgebraicGeometry.PointTopology.RationalPoints`;
 local compactness, the nonarchimedean group property and radical closedness
 remain required for the normalized functors.
 The standard simple-root/cocharacter family and Coxeter comparisons are still
 needed; the dynamic bridge does not identify an arbitrary cocharacter family
 with the required standard family.
 
-The same candidate adds `jacquetFunctor_preservesShortExact`, assuming the
+The same version adds `jacquetFunctor_preservesShortExact`, assuming the
 actual radical is a limit of compact subgroups, and
 `normalizedInductionFunctor_preservesShortExact`, assuming a Hausdorff group,
 compact-open cofinality, a closed parabolic and continuous projection.
 `ParabolicFiniteLength.of_preservesFiniteLength` then assembles the existing
 predicate from those inputs and the two finite-length-preservation premises.
-These implementations remain part of the upstream candidate's separate
-review; their structural specialization is not automatic. A private compatibility
-check, `cf2cf763-6b9c-4d78-85e3-03758cae71be`, compiled the six unchanged
-main/geometric target modules against the same exact Parabolic and
-AlternatingOperator bytes as this candidate, with no diagnostics and the
-same geometric-target fingerprints. It changes neither
-candidate acceptance nor publication and is not a proof of any target.
+Their structural specialization is not automatic. A compatibility check
+compiled the six main/geometric target modules against the same Parabolic and
+AlternatingOperator files, with no diagnostics and the same geometric-target
+fingerprints; it is not a proof of any target.
 
-## Candidate and check evidence
+## Check evidence
 
-At the inspection supporting this page, the five main pairs had successful
-official machine validation and independently approved exact target pairs,
-but remained staged and unpublished:
-
-| Pair | Candidate | Independent reviewer |
-| --- | --- | --- |
-| Contragredient | `a1b57b64-cfe8-41c8-9d4c-abff0f619b85` | Reviewer 8889 |
-| Induction | `b463b6ea-d8b9-4755-abf3-86554ed420ef` | Reviewer 8891 |
-| Jacquet | `849b7ced-2795-43fd-b2a4-65345f29e400` | Reviewer 8894 |
-| Involutivity | `eafa4f17-2a7f-4872-82e3-934521cc3257` | Reviewer 8899 |
-| Cuspidal eigenvalue | `cf289af4-7143-4d3a-b404-a4be4d4ebfda` | Reviewer 8902 |
-
-The exact fetches were read. Each approval selects only its own target pair
-and expressly requires Worker 23's separate adapter publication first.
-The Jacquet page also links the sibling induction page, which must resolve
-when these pairs publish.
-
-The geometric pair was staged as
-`73837692-e128-48b3-94ed-587b23c50477`, with official machine acceptance
-and independent approval by Reviewer 8947, still unpublished at inspection.
-The exact approval was read; it retains the separate upstream publication
-gate and the actual-realization/proof obligations. Development check
-`a65fdf30-fd0a-4849-bebf-f8ffa5d61b70` compiled it with zero errors/warnings
-and inspected `GeometricK0ExpansionStatement` as returning `Prop` with the
-standard axioms. This is not independent proof acceptance.
-Worker 1186 staged the Corollary pair as
-`4d388737-94b6-43a5-8a60-71c03a56bb7c` and the Weyl-conjugacy pair as
-`d4ba22c3-c157-41e9-93b3-c1cab30fe6e6`. The latter corrects the
-representation-carrier/K0-type universe distinction without changing either
-Lean proposition. Their candidate IDs identify the
-separate integration units; their target declarations do not become proofs
-through staging. Publish all linked pairs and their separately owned
-dependencies before this page, retaining these historical evidence statements.
+The five main pairs (contragredient, induction, Jacquet, involutivity and
+cuspidal eigenvalue), the geometric pair, the Corollary pair and the
+Weyl-conjugacy pair are in the Library as target modules
+(`Aubert.General.ContragredientTarget`, `InductionTarget`, `JacquetTarget`,
+`InvolutivityTarget`, `CuspidalEigenvalueTarget`, `GeometricK0Target`,
+`Aubert.GeneralCorollaryTargets`, `Aubert.GeneralWeylConjugacyTarget`). A
+development check compiled the geometric pair with zero errors/warnings and
+inspected `GeometricK0ExpansionStatement` as returning `Prop` with the
+standard axioms; it is not a proof, and the Library has no proof of this generic statement; on the actual rational-point families it proves the expansion under the displayed premises (`RationalPointFamily.rationalGeometricK0Expansion`, module `RationalGeometricK0Expansion`). The
+Weyl-conjugacy pair corrects the representation-carrier/K0-type universe
+distinction without changing either Lean proposition. Being in the Library
+does not make these targets proofs.
 
 ## Original-source and reading record
 
 | Registered original | SHA256 | Extent supporting this table |
 | --- | --- | --- |
-| `aubert-1995-duality` | `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693` | Worker 165 directly read printed pp.2179–2183, including the five identities, (1.3), cuspidality and Corollary 1.10. Worker 1186 visually checked p.2183 for its signs and inverse conjugation. |
+| `aubert-1995-duality` | `57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693` | Printed pp.2179–2183 were read directly, including the five identities, (1.3), cuspidality and Corollary 1.10; p.2183 was checked visually for its signs and inverse conjugation. |
 | `renard-2026-representations-groupes-reductifs-padiques` | `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c` | The finite/subgroup companion records direct reading of V.3.6–13 and V.4.1–6; this table retains its full-centralizer, central-direction and realization distinctions. The adapter companions identify the VI.1 and VI.6 representation prerequisites. |
-| `ban-jantzen-2016-duality` | `7885375b64f6146a16d2b7807447bb913e411bf73735877aca2d62f80dd4dac4` | Worker 165 directly read Proposition 4.1 and proof, printed p.158 / PDF p.6, confirming the three proof ingredients. Worker 1186's pair records the corresponding target/source audit. No new finite-central-extension theorem is claimed. |
-| `casselman-1995-admissible-representations` | `78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a` | Worker 165 directly read printed/PDF pp.2 and 67–68, including the admissible setting, Lemma 7.1.1, Corollary 7.1.2 and Theorem 7.1.4. Worker 1186 records the intended general deductions in the Corollary companion. No omitted applicability proof is supplied by citing these pages. |
+| `ban-jantzen-2016-duality` | `7885375b64f6146a16d2b7807447bb913e411bf73735877aca2d62f80dd4dac4` | Proposition 4.1 and its proof, printed p.158 / PDF p.6, were read directly, confirming the three proof ingredients. The Corollary pair records the corresponding target/source audit. No new finite-central-extension theorem is claimed. |
+| `casselman-1995-admissible-representations` | `78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a` | Printed/PDF pp.2 and 67–68 were read directly, including the admissible setting, Lemma 7.1.1, Corollary 7.1.2 and Theorem 7.1.4. The Corollary companion records the intended general deductions. No omitted applicability proof is supplied by citing these pages. |
 
 The corrected irreducibility argument and erratum boundary remain those in
 the general program source map. Aubert Proposition 3.2 supplies no evidence
 for any construction, target or future proof listed here.
-
-Authors: Worker 165; Worker 1186 contributed the Corollary and Weyl-conjugacy
-interfaces and source analysis; Worker 23 contributed the actual adapter
-interfaces; Worker 14 contributed the geometric-term orientation and retained
-normalization/filtration obligations; Worker 164 contributed the structural
-boundary and actual-realization distinctions reused from the companion table.

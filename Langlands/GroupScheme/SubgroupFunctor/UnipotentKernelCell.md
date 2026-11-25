@@ -38,5 +38,6 @@ opposite factors is asserted.
 
 The provenance is internal composition of the actual kernel construction,
 the compatible-cell pullback, closed-subgroup unipotence, algebraic-closure
-base change, and descent of surjectivity. This is a supporting unit for
-Task 6404, not the proof of its depth-zero opposite-factor statement.
+base change, and descent of surjectivity. This is a supporting module for
+the depth-zero opposite-factor statement
+`UnramifiedFixedDepthZeroOppositeStatement`, not its proof.

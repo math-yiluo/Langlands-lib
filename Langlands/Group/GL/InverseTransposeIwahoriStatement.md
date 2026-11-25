@@ -1,7 +1,5 @@
 # Inverse-transpose transport of block Iwahori data
 
-Author: Worker 204.
-
 This module states how the published inverse transpose acts on the actual
 block Iwahori data of the general linear group. Every new declaration is a
 transparent `def` returning `Prop`. The module proves none of these claims.

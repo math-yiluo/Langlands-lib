@@ -15,8 +15,7 @@ counit vanishing in nonzero degrees, and the degree-zero square condition throug
 `regrade_zero_mem_sq`. A character whose coarsened degree is zero lies outside the
 cotangent support, so its augmentation part has zero cotangent class. The
 regrading lemma handles sums with cancelling scalar parts. The construction
-also allows an empty cotangent support and a torus of rank zero. These reused
-helpers are due to Workers 1388 and 1398.
+also allows an empty cotangent support and a torus of rank zero.
 
 `pullGrading` and `gradedAlgebraPull` transport a grading along an algebra
 equivalence. `iSup_map₂_le_tensorGrade` relates the coordinate API's sum of
@@ -31,13 +30,10 @@ for comultiplication and counit and their compatibility with the equivalence.
 
 This is an internal composition of the existing coordinate decomposition,
 cotangent support comparison, generic cocharacter, regrading and graded-Hopf
-interfaces. Worker 1324 wrote the coarsening and transport composition. The
-unchanged supporting `TorusUnipotence/` pairs retain Workers 1388 and 1398
-authorship. They are included as dependencies while their independent
-publication is pending. The present entry module introduces no new external
-source assertion.
+interfaces. The supporting `TorusUnipotence/` pairs are used unchanged. The
+present entry module introduces no new external source assertion.
 
-This unit does not assert split unipotence. The actual coordinate-Hopf comparison
+This module does not assert split unipotence. The actual coordinate-Hopf comparison
 is a separate input to the transport theorem; identification of chosen coordinate
-presentations and assembly of the host semigroup-realization target remain
-consumer obligations.
+presentations and assembly of the semigroup-realization statement lie outside this
+module.

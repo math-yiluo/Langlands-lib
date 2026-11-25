@@ -28,6 +28,7 @@ theorem restriction_derivedSections_ρ (F : EquivariantSheaf R ρ) (h : H) :
     ((pullbackDerivedSectionsFunctor R (ρ.comp φ)).obj
         ((restrictionFunctor R ρ φ).obj F)).ρ h =
       ((pullbackDerivedSectionsFunctor R ρ).obj F).ρ (φ h) := by
+  apply End.ext
   rw [pullbackDerivedSectionsFunctor_obj_ρ, pullbackDerivedSectionsFunctor_obj_ρ]
   rfl
 
@@ -42,7 +43,7 @@ def restrictionDerivedSectionsIso (F : EquivariantSheaf R ρ) :
     (fun h => by
       change _ ≫ 𝟙 _ = 𝟙 _ ≫ _
       rw [Category.comp_id, Category.id_comp]
-      exact restriction_derivedSections_ρ R ρ φ F h)
+      exact congrArg End.asHom (restriction_derivedSections_ρ R ρ φ F h))
 
 /-- Derived sections commute naturally with group restriction. -/
 def restrictionDerivedSectionsFunctorIso :

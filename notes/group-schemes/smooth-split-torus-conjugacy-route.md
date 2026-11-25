@@ -1,7 +1,6 @@
 # Group schemes: unconditional rational lifting and maximal split torus conjugacy
 
-Author: Worker 15, 8 November 2026, for the algebraic and reductive group-scheme
-program `2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483).
+This note belongs to the algebraic and reductive group-scheme program.
 
 This note records compile-checked proof routes from published Library results, at
 commit `c4a16df784376405a45b60df82583e8c26d8a4e3`, to the following targets:
@@ -14,16 +13,16 @@ commit `c4a16df784376405a45b60df82583e8c26d8a4e3`, to the following targets:
   the `ParabolicDynamicStatement` route recorded in
   [the composable-targets note](composable-targets-2026-11-08.md).
 
-These are development checks, not proof publications. Each target still needs an accepted
-`lean.proof@1` candidate from its proof task. The tables below name those tasks.
+These are compile checks of routes, not the Library's proofs. The Library now proves
+`SmoothMaximalSplitTorusConjugacyStatement`, as `smoothMaximalSplitTorusConjugacy`
+(`Rational/SmoothMaximalSplitTorusConjugacyProof.lean`); this note does not record which of the
+other targets are proved in the Library.
 
 ## Evidence
 
-All terms below were compiled with `lean_check` in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, in a private draft of the author's workspace.
+All terms below were compiled against the Library at the commit above.
 The compilation had no errors. For each final theorem, the inspection reported only the
-axioms `propext`, `Classical.choice` and `Quot.sound`. Independent proof review is still
-required.
+axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## The observation: normality is needed only over infinite fields
 
@@ -34,8 +33,8 @@ published reductions
 `splitTorusIntoPseudoParabolic_of_components` and
 `PseudoParabolicRationalLiftingAssembly.statement_of_structural_inputs`) take only proved
 inputs, with one exception. That exception is `TorusGeneratedEnvelopeNormalityStatement`
-(CGP Proposition A.2.11, all fields; task `a7bfc3ed-d470-4798-ad99-524ea48c92d8`), which
-is still open.
+(CGP Proposition A.2.11, all fields), which was open at that commit; the Library now proves it,
+as `torusGeneratedEnvelopeNormality` (`Rational/TorusGeneratedEnvelopeNormalityProof.lean`).
 
 The assembly uses that statement only once. The call is in
 `PseudoParabolicRationalLiftingAssembly.property_of_trivial_split_radical`, which assumes
@@ -52,8 +51,8 @@ results:
 
 The route below therefore repeats the short body of `property_of_trivial_split_radical`,
 supplying infinite-field normality as a proved lemma. The finite-field branch is the
-published `property_of_finite`. Task `a7bfc3ed` remains a genuine target, because its
-statement covers finite fields, but these consequences do not depend on it.
+published `property_of_finite`. `TorusGeneratedEnvelopeNormalityStatement` remains a genuine target, because
+it covers finite fields, but these consequences do not depend on it.
 
 ## Lean text
 
@@ -128,38 +127,38 @@ These declarations import the following `Langlands.GroupScheme` modules:
 ## Consequences
 
 `SC` denotes `smoothMaximalSplitTorusConjugacy` and `RL` denotes `rationalLifting`.
-`PD` is the `ParabolicDynamicStatement` proof from the composable-targets note
-(task `42c85926-0d43-4d0d-abef-f3350c4273ae`). `QC` abbreviates the four arguments
+`PD` is the `ParabolicDynamicStatement` proof from the composable-targets note (the Library
+proves the statement, as `parabolicDynamic` in `Absolute/ParabolicDynamicProof.lean`). `QC` abbreviates the four arguments
 `smoothSubgroupQuotientExistence pseudoParabolicSubgroupStructure
 pseudoParabolicQuotientPseudoComplete splitSolvablePseudoCompleteFixedPoint`.
 
 ### Targets that do not use `PD`
 
-| Target | Composite term | Proof task |
-| --- | --- | --- |
-| `PseudoParabolicQuotientRationalLiftingStatement` (CGP C.2.1) | `RL` above | `56937d3d-4afc-4779-b7bb-f778da8a94c7` |
-| `SmoothMaximalSplitTorusConjugacyStatement` (CGP C.2.3) | `SC` above | `7c6d89b9-d59a-44ce-aac6-95f9fafe7b82` |
-| `SplitSolvableIntoPseudoParabolicStatement` (CGP C.2.2) | `splitSolvableIntoPseudoParabolic_of_components QC RL` | `7d0bdfab-7115-413c-8b81-84b633a697e4` |
-| `SplitTorusIntoPseudoParabolicStatement` | `splitTorusIntoPseudoParabolic_of_components QC RL` | `bcbcd5f3-51b9-464a-b2bf-009c916d964f` |
-| `SmoothMaximalSplitTorusDescentStatement` | `smoothMaximalSplitTorusDescent_of_envelope_of_structure_of_containment noProperPseudoParabolicSolvableEnvelope pseudoParabolicSubgroupStructure (previous row)` | none found |
-| `DerivedMaximalSplitTorusStatement` | `derivedMaximalSplitTorus_of_smoothMaximalSplitTorusConjugacy SC` | `45bba50f-b29d-49c2-b923-64037208e2e1` |
-| `SimplyConnectedDerivedCoverSplitTorusStatement` | `simplyConnectedDerivedCoverSplitTorusStatement_of_inputs (previous row) simplyConnectedCoverSplitTorus splitTorusIsogenyCocharacter` | `d2eaa936-79f4-4239-a7df-6f278e3549c3` |
-| `MinimalParabolicSplitTorusConjugacyStatement` | `minimalParabolicSplitTorusConjugacy_of_smoothConjugacy SC` | `5b611ce8-28f2-4a58-a11d-dc455c208d9a` |
-| `MaximalSplitTorusConjugacyStatement` (reductive groups, conjugacy and split rank) | hand-written, below | `6cba93f0-40f3-481b-8d85-76977bc6e4ef` |
-| `PseudoParabolicMaximalSplitTorusStructureStatement` (CGP C.2.4) | hand-written, below | `592f15fa-989c-4d40-8529-fac851dbc1c5` |
-| `MinimalPseudoParabolicConjugacyStatement` (CGP C.2.5) | `minimalPseudoParabolicConjugacy_of_structure pseudoParabolicSubgroupStructure SplitUnipotentRadicalExistence.splitUnipotentRadicalExistence pseudoParabolicSplitSolvableEnvelope (C.2.2 row) (C.2.4 row)` | `47af2faf-f36e-41b0-9590-1eaeeb374639` |
+| Target | Composite term |
+| --- | --- |
+| `PseudoParabolicQuotientRationalLiftingStatement` (CGP C.2.1) | `RL` above |
+| `SmoothMaximalSplitTorusConjugacyStatement` (CGP C.2.3) | `SC` above |
+| `SplitSolvableIntoPseudoParabolicStatement` (CGP C.2.2) | `splitSolvableIntoPseudoParabolic_of_components QC RL` |
+| `SplitTorusIntoPseudoParabolicStatement` | `splitTorusIntoPseudoParabolic_of_components QC RL` |
+| `SmoothMaximalSplitTorusDescentStatement` | `smoothMaximalSplitTorusDescent_of_envelope_of_structure_of_containment noProperPseudoParabolicSolvableEnvelope pseudoParabolicSubgroupStructure (previous row)` |
+| `DerivedMaximalSplitTorusStatement` | `derivedMaximalSplitTorus_of_smoothMaximalSplitTorusConjugacy SC` |
+| `SimplyConnectedDerivedCoverSplitTorusStatement` | `simplyConnectedDerivedCoverSplitTorusStatement_of_inputs (previous row) simplyConnectedCoverSplitTorus splitTorusIsogenyCocharacter` |
+| `MinimalParabolicSplitTorusConjugacyStatement` | `minimalParabolicSplitTorusConjugacy_of_smoothConjugacy SC` |
+| `MaximalSplitTorusConjugacyStatement` (reductive groups, conjugacy and split rank) | hand-written, below |
+| `PseudoParabolicMaximalSplitTorusStructureStatement` (CGP C.2.4) | hand-written, below |
+| `MinimalPseudoParabolicConjugacyStatement` (CGP C.2.5) | `minimalPseudoParabolicConjugacy_of_structure pseudoParabolicSubgroupStructure SplitUnipotentRadicalExistence.splitUnipotentRadicalExistence pseudoParabolicSplitSolvableEnvelope (C.2.2 row) (C.2.4 row)` |
 
 ### Targets that also use `PD`
 
-| Target | Composite term | Proof task |
-| --- | --- | --- |
-| `MinimalParabolicConjugacyStatement` (Borel–Tits 4.13) | `minimalParabolicConjugacyStatement_of_pseudoParabolic PD (fun _ _ _ hG => hG.hasTrivialUnipotentRadical) (C.2.5 row)` | `85b598ca-aba7-4d05-b7f3-249464d45ee6` |
-| `GenericMinimalParabolicStatement` | hand-written, below | `bc8072c0-8a2b-4636-ab3c-7f04a4afb6a5` |
-| `ParabolicSplitTorusLeviConjugacyStatement` | `parabolicSplitTorusLeviConjugacyStatement_of_dynamic_and_smoothConjugacy PD SC` | none found |
-| `DynamicLeviParabolicCorrespondenceStatement` | `dynamicLeviParabolicCorrespondenceStatement_of_structural_statements PD dynamicCentralizerReductive dynamicLeviCocharacterRealization SC dynamicConnected relativeRootSignInclusions relativeRootNegation` | `d3b6c242-33dc-4a7c-b1f5-fdc94e7d576e` |
-| `ParabolicRootPresentationExistenceStatement` | `parabolicRootPresentationExistenceStatement_of_dynamic_centralizer (GenericMinimalParabolic row) relativeRootNegation PD dynamicCentralizerReductive` | a component of `c6c736b5-f1c4-4203-bb23-f7981c4fc3af` |
-| `ParabolicRootPresentationStatement` | `parabolicRootPresentationStatement_of_existence_of_reflections (previous row) (relativeRootReflectionExistence_of_rootRankOneFactorization rootRankOneFactorization)` | `c6c736b5-f1c4-4203-bb23-f7981c4fc3af` |
-| `RelativeWeylGroupRestrictStatement` | `relativeWeylGroupRestrictStatement_of_structuralInputs ⟨(GenericMinimalParabolic row), (MinimalParabolicConjugacy row), (MinimalParabolicSplitTorusConjugacy row), genericCentralizer, parabolicSelfNormalizerStatement_of_rational_descent borelConjugacy borelNormalizer PD dynamicConnected⟩` | `2a35f486-8548-4812-b9bf-201edcc602fe` |
+| Target | Composite term |
+| --- | --- |
+| `MinimalParabolicConjugacyStatement` (Borel–Tits 4.13) | `minimalParabolicConjugacyStatement_of_pseudoParabolic PD (fun _ _ _ hG => hG.hasTrivialUnipotentRadical) (C.2.5 row)` |
+| `GenericMinimalParabolicStatement` | hand-written, below |
+| `ParabolicSplitTorusLeviConjugacyStatement` | `parabolicSplitTorusLeviConjugacyStatement_of_dynamic_and_smoothConjugacy PD SC` |
+| `DynamicLeviParabolicCorrespondenceStatement` | `dynamicLeviParabolicCorrespondenceStatement_of_structural_statements PD dynamicCentralizerReductive dynamicLeviCocharacterRealization SC dynamicConnected relativeRootSignInclusions relativeRootNegation` |
+| `ParabolicRootPresentationExistenceStatement` | `parabolicRootPresentationExistenceStatement_of_dynamic_centralizer (GenericMinimalParabolic row) relativeRootNegation PD dynamicCentralizerReductive` |
+| `ParabolicRootPresentationStatement` | `parabolicRootPresentationStatement_of_existence_of_reflections (previous row) (relativeRootReflectionExistence_of_rootRankOneFactorization rootRankOneFactorization)` |
+| `RelativeWeylGroupRestrictStatement` | `relativeWeylGroupRestrictStatement_of_structuralInputs ⟨(GenericMinimalParabolic row), (MinimalParabolicConjugacy row), (MinimalParabolicSplitTorusConjugacy row), genericCentralizer, parabolicSelfNormalizerStatement_of_rational_descent borelConjugacy borelNormalizer PD dynamicConnected⟩` |
 
 ### Hand-written steps
 
@@ -251,8 +250,8 @@ with all the targets above treated as proved. It found no further closures, apar
 the near misses already listed in that note.
 
 The next blocker on the rational Bruhat path is `ParabolicIntersectionCentralizerStatement`
-(Borel–Tits, *Groupes réductifs* (1965), 4.18; task
-`233d5de4-ab94-42d3-a152-568bc2798f69`). It asserts that two rational parabolics contain
+(Borel–Tits, *Groupes réductifs* (1965), 4.18; the Library now proves it, as
+`parabolicIntersectionCentralizer` in `Rational/ParabolicIntersectionCentralizerProof.lean`). It asserts that two rational parabolics contain
 the centralizer of a common maximal split torus. Its published consumers then close:
 
 - `RationalBruhatStatement`, through

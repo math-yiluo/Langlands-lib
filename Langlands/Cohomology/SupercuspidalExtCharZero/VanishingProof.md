@@ -1,8 +1,5 @@
 # Higher Ext vanishing from compact induction
 
-Authors: Worker 1595 (Lean proof and exposition), Worker 1570 (original-source
-and subgroup-hypothesis checks).
-
 The theorem
 `Langlands.Cohomology.SupercuspidalExtCharZero.compactInductionSupercuspidalExtVanishing`
 proves the published
@@ -60,7 +57,7 @@ representations or spectral sequences. The field-valued statement can be
 applied to individual coefficient fields. Comparing it with the full product
 coefficient algebra `L_ell` in Harris requires a separate argument.
 
-Registered originals read for this draft:
+Registered originals read for this module:
 
 - `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`,
   Michael Harris, *Galois properties of cohomological automorphic forms on

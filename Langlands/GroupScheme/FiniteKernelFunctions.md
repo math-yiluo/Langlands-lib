@@ -10,7 +10,7 @@ assumed affine, smooth, connected or reduced.
 The actual kernel square identifies its closed immersion ideal with pullback
 of the target identity ideal. Since the target is affine, that ideal is the
 ideal sheaf associated to the kernel of the identity section's map on global
-functions. The published `comap_ofIdealTop` identifies its pullback. Express
+functions. The published `comap_ofIdealTopFLT` identifies its pullback. Express
 the augmentation ideal as the sum of its principal ideals and apply
 `NoetherianIdealSheaf.finiteSupSupport` to their pulled-back ideal sheaves.
 The resulting finite set gives equality of ideal sheaves, preserving all

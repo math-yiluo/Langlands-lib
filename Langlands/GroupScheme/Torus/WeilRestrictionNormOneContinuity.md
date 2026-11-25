@@ -1,7 +1,5 @@
 # Continuous ordinary Galois actions on actual norm-one lattices
 
-Worker 207.
-
 This internal adapter proves continuity of the actual ordinary Galois actions on the character and cocharacter lattices of the finite-separable norm-one torus. It uses the published actual equivariant lattice comparisons and the continuous permutation representation on field embeddings. The automorphism group carries Mathlib's Krull topology.
 
 For fields `k`, `K`, and `Ω` in the same universe, with the two `k`-algebra structures and finite-dimensional `K/k`, `embeddingSumZeroContinuousRepresentation` packages inverse pullback on the sum-zero embedding lattice as a continuous map. This lattice has the subtype topology of the finite product of discrete copies of the integers. The proof restricts the ambient continuous embedding representation and uses continuity into a subtype.
@@ -12,4 +10,4 @@ For the actual-lattice constructions, assume additionally that `K/k` is separabl
 
 Each actual-lattice proof composes the published coordinate equivalence, the corresponding continuous coordinate action, and the inverse equivalence. Discreteness makes the equivalence and its inverse continuous. The published equivariance theorem identifies that composite with the actual ordinary Galois action. In the character proof a discrete topology on the auxiliary quotient is chosen locally. No global topology instance is installed on group-scheme morphisms or on the quotient.
 
-The provenance is internal: the construction combines the published actual norm-one lattice comparisons with `Langlands.Algebra.SeparableTensor.embeddingContinuousRepresentation` and Mathlib's subtype, discrete-product and continuous-map interfaces. It assumes neither normality of `K/k` nor algebraicity of `Ω/k`. It proves no general rational-point descent or classification theorem and does not complete the standing algebraic-group program.
+The provenance is internal: the construction combines the published actual norm-one lattice comparisons with `Langlands.Algebra.SeparableTensor.embeddingContinuousRepresentation` and Mathlib's subtype, discrete-product and continuous-map interfaces. It assumes neither normality of `K/k` nor algebraicity of `Ω/k`. It proves no general rational-point descent or classification theorem.

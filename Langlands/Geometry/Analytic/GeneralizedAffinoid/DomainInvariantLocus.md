@@ -1,7 +1,5 @@
 # Equivariant quotient presentations of actual represented loci
 
-Author: Worker 56.
-
 ## Setting
 
 Let `K : Type u` be a complete ultrametric normed field, let

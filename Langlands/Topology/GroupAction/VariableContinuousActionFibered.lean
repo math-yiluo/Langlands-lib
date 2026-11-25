@@ -44,7 +44,7 @@ def restrictionMap (f : H →ₜ* X.groupType) : restrict X f ⟶ X where
   groupHom := f
   spaceMap := 𝟙 X.action.obj.V
   equivariant g := by
-    change X.action.obj.ρ (f g) ≫ 𝟙 _ = 𝟙 _ ≫ X.action.obj.ρ (f g)
+    change (X.action.obj.ρ (f g)).asHom ≫ 𝟙 _ = 𝟙 _ ≫ (X.action.obj.ρ (f g)).asHom
     simp
 
 @[simp]
@@ -62,7 +62,7 @@ def restrictIdIso : restrict X (ContinuousMonoidHom.id X.groupType) ≅ X where
     { groupHom := ContinuousMonoidHom.id X.groupType
       spaceMap := 𝟙 X.action.obj.V
       equivariant g := by
-        change X.action.obj.ρ g ≫ 𝟙 _ = 𝟙 _ ≫ X.action.obj.ρ g
+        change (X.action.obj.ρ g).asHom ≫ 𝟙 _ = 𝟙 _ ≫ (X.action.obj.ρ g).asHom
         simp }
   hom_inv_id := by apply Hom.ext <;> rfl
   inv_hom_id := by apply Hom.ext <;> rfl
@@ -77,13 +77,13 @@ def restrictCompIso (f : H →ₜ* X.groupType) (g : J →ₜ* H) :
     { groupHom := ContinuousMonoidHom.id J
       spaceMap := 𝟙 X.action.obj.V
       equivariant h := by
-        change X.action.obj.ρ (f (g h)) ≫ 𝟙 _ = 𝟙 _ ≫ X.action.obj.ρ (f (g h))
+        change (X.action.obj.ρ (f (g h))).asHom ≫ 𝟙 _ = 𝟙 _ ≫ (X.action.obj.ρ (f (g h))).asHom
         simp }
   inv :=
     { groupHom := ContinuousMonoidHom.id J
       spaceMap := 𝟙 X.action.obj.V
       equivariant h := by
-        change X.action.obj.ρ (f (g h)) ≫ 𝟙 _ = 𝟙 _ ≫ X.action.obj.ρ (f (g h))
+        change (X.action.obj.ρ (f (g h))).asHom ≫ 𝟙 _ = 𝟙 _ ≫ (X.action.obj.ρ (f (g h))).asHom
         simp }
   hom_inv_id := by apply Hom.ext <;> rfl
   inv_hom_id := by apply Hom.ext <;> rfl
@@ -107,7 +107,8 @@ def restrictionLift (f : H →ₜ* X.groupType) (h : Z ⟶ X)
   groupHom := k
   spaceMap := h.spaceMap
   equivariant g := by
-    change Z.action.obj.ρ g ≫ h.spaceMap = h.spaceMap ≫ X.action.obj.ρ (f (k g))
+    change (Z.action.obj.ρ g).asHom ≫ h.spaceMap =
+      h.spaceMap ≫ (X.action.obj.ρ (f (k g))).asHom
     rw [show f (k g) = h.groupHom g from
       congrArg (fun q : Z.groupType →ₜ* X.groupType => q g) hgroup]
     exact h.equivariant g

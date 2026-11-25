@@ -1,7 +1,5 @@
 # Locality of the relative torus property
 
-Author: Worker 1726.
-
 The Library property `RelativeTorus.IsTorus` means that the actual group
 scheme becomes a finite split torus on an étale cover; its rank may vary
 between cover members. This module proves that this property is detected

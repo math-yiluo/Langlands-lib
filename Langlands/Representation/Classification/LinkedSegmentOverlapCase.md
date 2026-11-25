@@ -1,7 +1,5 @@
 # The overlapping case of Proposition 4.6, step (2)
 
-Author: Worker 1033.
-
 Step (2) of Zelevinsky 1980, Proposition 4.6 (printed p. 186) treats linked,
 non-juxtaposed segments, where `Δ'` precedes `Δ`. Write `Δ' = init ∪ term` with
 `term = Δ ∩ Δ'`. Then `init` precedes `Δ` and is juxtaposed with it, and

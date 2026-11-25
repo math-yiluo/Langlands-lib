@@ -1,7 +1,5 @@
 # Actual mirabolic projection and the plus-induction subgroup
 
-Author: Worker 749.
-
 This module adds group-theoretic infrastructure for Bernstein and Zelevinsky,
 *Representations of the group GL(n,F), where F is a non-archimedean local
 field* (1976), §§5.1–5.4, printed pp.44–45 (PDF zero-based indices 43–44), and

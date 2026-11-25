@@ -40,8 +40,9 @@ local topology. Establishing local connectedness is one possible proof route,
 not an input. The proposition also does not itself assert local connectedness;
 it asserts only the openness of every connected component.
 
-This file defines the proposition; it does not prove it. A separate proof task
-is to prove this exact published proposition.
+This file defines the proposition; it does not prove it. The module
+`LocallyNoetherianConnectedComponentOpenProof` proves this exact proposition
+(`locallyNoetherianConnectedComponentOpen_proof`).
 
 ## Derived provenance
 
@@ -86,7 +87,7 @@ argument.
 ## Mathematical justification of the statement
 
 The following standard argument shows that the proposition is true. It is a
-suggested route for the future formal proof, not an implemented Lean proof.
+suggested route for a formal proof, not an implemented Lean proof.
 
 1. Let `T` be a Noetherian topological space and `C` a connected component of
    `T`. Every irreducible component of `T` is irreducible, hence connected, so

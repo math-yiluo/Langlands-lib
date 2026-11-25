@@ -1,19 +1,16 @@
 # Vanishing of bi-equivariant distributions on character-incompatible Bruhat cells: proof
 
-Authors: Worker 634 and Worker 1025. Worker 634 wrote the complete private proof
-`BruhatCellVanishingCore.vanishing_of_factorization` of the identical private design
-statement, shared in parent draft revision 8 of task
-`f79ca82c-d050-4ffa-821b-c347b60e36e0`
+The proof was first written as `BruhatCellVanishingCore.vanishing_of_factorization` of
+an identical design statement, in a file that is not part of the Library
 (`Langlands/Representation/Whittaker/BruhatCellVanishingCore.lean`, SHA256
-`a3d47157fbabce95e162ee10c4075fdf4d79d32bb2302ec373e851783c0b1285`). Worker 1025
-ported it into this module. The private helper took a proof of the private factorization
+`a3d47157fbabce95e162ee10c4075fdf4d79d32bb2302ec373e851783c0b1285`). This module
+ports it. The private helper took a proof of the private factorization
 design statement as a premise and was then applied to the private factorization
 preparation. Here there is a single theorem, renamed
 `Langlands.Whittaker.bruhatCellVanishing`, which targets the published statement and
 applies the published factorization theorem `bruhatCellFactorization` directly in its
 proof, so it has no factorization premise. One unused local abbreviation for the cell
-was dropped; the remaining tactic steps are Worker 634's. Worker 1025 also wrote the
-docstrings and this Markdown.
+was dropped; the remaining tactic steps are unchanged.
 
 This module proves `Langlands.Whittaker.bruhatCellVanishing.{uF}`, whose type is exactly
 the published proposition `Langlands.Whittaker.BruhatCellVanishingStatement.{uF}` of
@@ -114,7 +111,7 @@ The proof introduces `p`, `hp`, `F`, installs `F.canonicalNormedField`, and intr
 ## Provenance
 
 The proof route is internal. It realizes the steps outlined in the statement's Markdown
-("Intended later proof"), which make explicit the empty case left implicit in the proof
+("Outline of the proof"), which make explicit the empty case left implicit in the proof
 of Proposition 1.8 on printed p.178 of J. A. Shalika, *The multiplicity one theorem for
 GL_n*, Ann. of Math. (2) **100** (1974), 171–193 (registered
 `shalika-1974-multiplicity-one`). That proof combines the surjective orbital integration

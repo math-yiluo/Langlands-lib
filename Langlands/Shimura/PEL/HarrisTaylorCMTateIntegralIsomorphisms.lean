@@ -151,8 +151,8 @@ theorem tateNormalizedCMIso_integral {U : HarrisLevel D}
       ∃ g : x.data.1.actionObj.abelianScheme ≅ y.data.1.actionObj.abelianScheme,
         Rationalization.ofHom g.hom = (RationalAlgebraAction.underlyingIso e).hom ∧
         Rationalization.ofHom g.inv = (RationalAlgebraAction.underlyingIso e).inv ∧
-        (∀ a : O, x.restriction.action a ≫ g.hom = g.hom ≫ y.restriction.action a) ∧
-        (∀ a : O, y.restriction.action a ≫ g.inv = g.inv ≫ x.restriction.action a) := by
+        (∀ a : O, (x.restriction.action a).asHom ≫ g.hom = g.hom ≫ (y.restriction.action a).asHom) ∧
+        (∀ a : O, (y.restriction.action a).asHom ≫ g.inv = g.inv ≫ (x.restriction.action a).asHom) := by
   let := auxiliaryStarRing D C
   intro e he hlev
   let := harrisCMGeometricPoint_charZero D C P Z ⟨Ω, s⟩
@@ -185,20 +185,20 @@ theorem tateNormalizedCMIso_integral {U : HarrisLevel D}
     apply Tate.ofHom_injective Z.property.torsionUnits
       x.data.1.actionObj.abelianScheme y.data.1.actionObj.abelianScheme
     rw [Rationalization.ofHom_comp, Rationalization.ofHom_comp, hg]
-    change comp0 _ _ _ (homToHom0 (x.restriction.action a))
+    change comp0 _ _ _ (homToHom0 (x.restriction.action a).asHom)
         (RationalAlgebraAction.hom0 e.hom) =
       comp0 _ _ _ (RationalAlgebraAction.hom0 e.hom)
-        (homToHom0 (y.restriction.action a))
+        (homToHom0 (y.restriction.action a).asHom)
     rw [x.restriction.agrees, y.restriction.agrees]
     exact RationalAlgebraAction.intertwines e.hom (a : A)
   · intro a
     apply Tate.ofHom_injective Z.property.torsionUnits
       y.data.1.actionObj.abelianScheme x.data.1.actionObj.abelianScheme
     rw [Rationalization.ofHom_comp, Rationalization.ofHom_comp, hgi]
-    change comp0 _ _ _ (homToHom0 (y.restriction.action a))
+    change comp0 _ _ _ (homToHom0 (y.restriction.action a).asHom)
         (RationalAlgebraAction.hom0 e.inv) =
       comp0 _ _ _ (RationalAlgebraAction.hom0 e.inv)
-        (homToHom0 (x.restriction.action a))
+        (homToHom0 (x.restriction.action a).asHom)
     rw [y.restriction.agrees, x.restriction.agrees]
     exact RationalAlgebraAction.intertwines e.inv (a : A)
 
@@ -211,8 +211,8 @@ def TateNormalizedCMIntegralIsoRelated {U : HarrisLevel D} (x y : NRep U) : Prop
     (g : x.data.1.actionObj.abelianScheme ≅ y.data.1.actionObj.abelianScheme),
     Rationalization.ofHom g.hom = (RationalAlgebraAction.underlyingIso e).hom ∧
     Rationalization.ofHom g.inv = (RationalAlgebraAction.underlyingIso e).inv ∧
-    (∀ a : O, x.restriction.action a ≫ g.hom = g.hom ≫ y.restriction.action a) ∧
-    (∀ a : O, y.restriction.action a ≫ g.inv = g.inv ≫ x.restriction.action a) ∧
+    (∀ a : O, (x.restriction.action a).asHom ≫ g.hom = g.hom ≫ (y.restriction.action a).asHom) ∧
+    (∀ a : O, (y.restriction.action a).asHom ≫ g.inv = g.inv ≫ (x.restriction.action a).asHom) ∧
     Nonempty (Rationalization.IntegralMultipleData
       ((pullZ x.data.1 y.data.1) g.hom y.data.1.polarization)
       x.data.1.polarization (q : ℚ)) ∧

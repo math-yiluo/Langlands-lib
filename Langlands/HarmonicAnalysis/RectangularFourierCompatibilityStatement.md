@@ -1,7 +1,6 @@
 # Full rectangular Schwartz Fourier equivalence and reflection
 
-Worker 753 authored this statement for task
-`d8f394b0-0444-46c4-ab1f-12fe9f99254c`, published by Worker 486 as a shared
+This statement is a shared
 Fourier prerequisite for the adjacent-rank gamma/L work. It is a statement only;
 it supplies no proof.
 
@@ -110,8 +109,8 @@ The source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`
 with SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 753 read Section 6.1 on printed pages 427–428 (one-based PDF pages
-62–63) from rendered page images; the scan has no text layer.
+Section 6.1 on printed pages 427–428 (one-based PDF pages
+62–63) was read from rendered page images; the scan has no text layer.
 
 On page 427 the source sets `t = r + 1` and works with Schwartz functions on
 the `(t - 1) × t` matrices, with the action `(gΦ)(m) = Φ(mg)`. Page 428,
@@ -145,7 +144,7 @@ matrix spaces `r = s = n`.
 
 ## Scope
 
-This unit supplies no proof of closure or inversion, no chosen Fourier
+This module supplies no proof of closure or inversion, no chosen Fourier
 primitive, no covariance law such as formula (7), no Fourier-conjugated action
 `ρ₀`, no matrix-zeta definition or comparison, and no gamma or L-factor
 analytic base. It edits no existing Lean/Markdown pair.

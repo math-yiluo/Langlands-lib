@@ -51,7 +51,7 @@ def nilpSheafShiftReframeHom (hπ : algebraMap O F π ≠ 0) :
 theorem nilpSheafShiftReframeHom_hom_app (hπ : algebraMap O F π ≠ 0)
     (p : shiftReframeSubgroup (d := d) hπ) (B : FormalGroup.Nilp.{u, u} O π)
     (q : NilpSheafIsoClass d π F hπ B) :
-    (nilpSheafShiftReframeHom hπ p).unop.hom.app B q =
+    (nilpSheafShiftReframeHom hπ p).unop.asIso.hom.app B q =
       SheafDatum.IsoClass.shiftReframe hπ p q := rfl
 
 section Valued
@@ -77,7 +77,7 @@ theorem nilpSheafNormalizedReframeHom_apply (hπ : Irreducible π)
 theorem nilpSheafNormalizedReframeHom_hom_app (hπ : Irreducible π)
     (g : (Fin d → F) ≃ₗ[F] (Fin d → F)) (B : FormalGroup.Nilp.{u, u} O π)
     (q : NilpSheafIsoClass d π F (coefficientUniformizer_ne_zero (F := F) hπ) B) :
-    (nilpSheafNormalizedReframeHom hπ g).unop.hom.app B q =
+    (nilpSheafNormalizedReframeHom hπ g).unop.asIso.hom.app B q =
       SheafDatum.IsoClass.normalizedReframe hπ g q := rfl
 
 /-- Every field scalar is the identity as a natural automorphism on Nilp. -/
@@ -137,7 +137,7 @@ def nilpSheafProjectiveReframeHom (hπ : Irreducible π) :
 theorem nilpSheafProjectiveReframeHom_hom_app (hπ : Irreducible π) (g : PGL(d, F))
     (B : FormalGroup.Nilp.{u, u} O π)
     (q : NilpSheafIsoClass d π F (coefficientUniformizer_ne_zero (F := F) hπ) B) :
-    (nilpSheafProjectiveReframeHom hπ g).unop.hom.app B q =
+    (nilpSheafProjectiveReframeHom hπ g).unop.asIso.hom.app B q =
       SheafDatum.IsoClass.projectiveReframe hπ g q := rfl
 
 /-- The natural projective action recovers the normalized GL homomorphism on representatives. -/
@@ -170,14 +170,14 @@ def nilpSheafProjectiveLeftHom (hπ : Irreducible π) :
 theorem nilpSheafProjectiveLeftHom_hom_app (hπ : Irreducible π) (g : PGL(d, F))
     (B : FormalGroup.Nilp.{u, u} O π)
     (q : NilpSheafIsoClass d π F (coefficientUniformizer_ne_zero (F := F) hπ) B) :
-    (nilpSheafProjectiveLeftHom hπ g).hom.app B q =
+    (nilpSheafProjectiveLeftHom hπ g).asIso.hom.app B q =
       SheafDatum.IsoClass.projectiveReframe hπ g⁻¹ q := rfl
 
 /-- A matrix class acts in the ordinary left convention by its inverse normalized frame change. -/
 theorem nilpSheafProjectiveLeftHom_mk_hom_app (hπ : Irreducible π) (g : GL (Fin d) F)
     (B : FormalGroup.Nilp.{u, u} O π)
     (q : NilpSheafIsoClass d π F (coefficientUniformizer_ne_zero (F := F) hπ) B) :
-    (nilpSheafProjectiveLeftHom hπ (Matrix.ProjGenLinGroup.mk g)).hom.app B q =
+    (nilpSheafProjectiveLeftHom hπ (Matrix.ProjGenLinGroup.mk g)).asIso.hom.app B q =
       SheafDatum.IsoClass.normalizedReframe hπ (matrixReframeEquiv d F g⁻¹) q := by
   rw [nilpSheafProjectiveLeftHom_hom_app, ← map_inv,
     SheafDatum.IsoClass.projectiveReframe_mk]

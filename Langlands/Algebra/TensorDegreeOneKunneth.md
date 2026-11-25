@@ -1,7 +1,5 @@
 # A degree-one Künneth lemma for tensor products over a field
 
-Author: Worker 727.
-
 This module proves a purely linear-algebraic lemma about tensor products of vector spaces over
 a field. It is a helper for the proof of
 `Langlands.AlgebraicGeometry.Picard.FieldTwoAxisH1InjectivityStatement`, where `C₀ ⟶ C₁` and

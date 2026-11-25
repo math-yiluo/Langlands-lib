@@ -1,9 +1,9 @@
 # Actual induction and duality under a proper complex self-embedding
 
 Module and namespace
-`Langlands.Algebra.RenardInductionDualitySourceObstruction`. Worker 1222
-constructed this internal coefficient audit of the second comparison in
-Renard I.4.2. It instantiates the published original-action functors and
+`Langlands.Algebra.RenardInductionDualitySourceObstruction`. This module
+is an internal coefficient audit of the second comparison in
+Renard I.4.2. It instantiates the original-action functors and
 excludes an isomorphism at the actual regular source object when the
 complex self-embedding is not surjective. It then excludes a natural
 isomorphism of those functors and supplies an unconditional witness.
@@ -12,9 +12,10 @@ The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read the additive bimodule convention on printed p.6 / PDF
+The additive bimodule convention on printed p.6 / PDF
 p.12, coefficient recovery in I.2.1 on printed p.14 / PDF p.20, and the
-I.4.2 Theorem and proof on printed pp.23–24 / PDF pp.29–30. The source
+I.4.2 Theorem and proof on printed pp.23–24 / PDF pp.29–30 were read for
+this module. The source
 asserts a natural isomorphism
 `I_AB(D_A(M)) ≅ D_B(P_AB(M))`. This counterexample is derived mathematics
 auditing its bare additive ring-bimodule interpretation; it is not a
@@ -36,14 +37,14 @@ a · b = σ(α(a)) b,       b · a = b σ(α(a)).
 The imported laws prove these actions unital, nondegenerate and commuting
 with each other and with the appropriate regular B-actions.
 `regular_right_commute σ` and `right_nondegenerate σ` are the exact inputs
-to the actual published induction functor. Both algebras are unital
+to the actual induction functor. Both algebras are unital
 fields and hence have idempotents. All carriers and categories here
 have universe `0`.
 
 `sourceRegularObject σ` is the actual nondegenerate regular left A-module
 A. `inducedObject σ` is its image under
 `NondegenerateTensorFunctor.regularP`, so its carrier `PCarrier σ` is
-the published additive balanced quotient `B ⊗_A A` with the residual
+the additive balanced quotient `B ⊗_A A` with the residual
 regular left B-action.
 
 `inductionPairing σ` is the biadditive map
@@ -78,10 +79,10 @@ Its membership in the actual nondegenerate dual is supplied by the
 imported `unitalDualEquiv`: the unit fixes every functional, so the
 nondegenerate dual is the full recovered complex dual.
 
-`coinducedObject σ` applies the published
+`coinducedObject σ` applies
 `RenardRightHomFunctors.rightI` to `sourceDualObject σ`.
 Its carrier `HCarrier σ` is thus exactly the B-nondegenerate part of
-`Hom_(A.op)(B,D_A(A))`, with the published residual original right
+`Hom_(A.op)(B,D_A(A))`, with the residual original right
 B-action. No substitute Hom functor is assumed.
 
 For `h` in that actual carrier, `coinducedEvaluation σ h b = h(b)(1)`.
@@ -166,10 +167,10 @@ identities give pointwise inverse identities for the underlying actual
 
 `coinducedDualFunctor σ` and `dualInducedFunctor σ` are precisely the
 two contravariant composites in the second I.4.2 comparison, formed
-from the published original-action functors. `no_naturalIso` evaluates
+from the original-action functors. `no_naturalIso` evaluates
 an alleged natural isomorphism at `Opposite.op (sourceRegularObject σ)`
 and applies `no_objectIso`. Finally, `exists_counterexample` uses the
-published unconditional proper-endomorphism construction to supply
+unconditional proper-endomorphism construction to supply
 σ and its nonsurjectivity proof.
 
 ## Scope
@@ -180,10 +181,10 @@ in this example. It uses actual functor values rather than just a
 failure of a proposed evaluation formula.
 
 The compatible-input statement `DualityInductionStatement`, with
-`IsScalarTower ℂ Aᵐᵒᵖ B`, and its published proof
+`IsScalarTower ℂ Aᵐᵒᵖ B`, and its proof
 `Langlands.Algebra.dualityInduction` remain separate. The present
 example has the bare commuting actions; it supplies no such common
-coefficient hypothesis. The published first-comparison obstruction
+coefficient hypothesis. The first-comparison obstruction
 and the separate transposition Lemma (I.4.2.1) are unchanged. This
-internal construction and its intrinsic laws do not claim exact proof
-acceptance of a new Library statement or completion of Chapter I.
+internal construction and its intrinsic laws do not claim an exact proof
+of a new Library statement or completion of Chapter I.

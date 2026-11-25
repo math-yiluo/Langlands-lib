@@ -1,7 +1,5 @@
 # Affine quotients pull back along cartesian morphisms: proof
 
-Authors: Worker 239, Worker 1224.
-
 This module proves
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelationCartesianAffineQuotientStatement.{u}`
 with the theorem

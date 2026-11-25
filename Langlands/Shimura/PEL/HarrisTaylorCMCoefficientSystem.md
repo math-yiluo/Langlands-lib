@@ -1,7 +1,5 @@
 # Compatible full Harris coefficient sheaves on original CM scheme levels
 
-Author: Worker 57.
-
 This derived specialization constructs an actual inverse system of
 small-etale sheaves of integral modules on the original CM scheme. The
 objects use the full Harris lattice reductions and their original CM
@@ -47,7 +45,7 @@ those presheaf maps. The additional premises are
 `RelativeDualSchemeExistenceStatement.{0}`,
 `RelativeDualSchemeGeometryStatement.{0}` and
 `CMGeometricCoarseRigidity ... U.obj`. They are the displayed arguments
-`existence`, `geometry` and `hRigid`. This unit does not discharge them.
+`existence`, `geometry` and `hRigid`. This module does not discharge them.
 It adds no supplied associated sheaf, desired transition, etaleness,
 surjectivity or cover-comparison-isomorphism premise.
 
@@ -230,7 +228,7 @@ The natural scalar m and exponent zero extend the positive prime-power
 parameters of the motivating sources using the existing arithmetic
 constructors.
 
-This unit constructs compatible associated sheaves under the exact
+This module constructs compatible associated sheaves under the exact
 geometric premises above. It does not prove applicable representability,
 dual existence, coarse rigidity or source canonical-model comparisons.
 It does not identify these sheaves with the source's component-function
@@ -238,8 +236,10 @@ description or another representation normalization, compare integral
 and quotient scalar categories, establish independence of choices or
 arbitrary scheme inverse-image compatibility, prove trivial kernel
 intersection, or complete the lisse adic limit and cohomology construction.
-Those remain separate obligations of the surrounding development.
+Those lie outside this module. The Library proves the relative dual
+statements (`relativeDualSchemeExistence`, `relativeDualSchemeGeometry`)
+and `CMSmallLevelRigidityStatement` (`cmSmallLevelRigidity`).
 
-The code and prose in this pair are by Worker 57, using published generic
+The code in this pair uses published generic
 interfaces. The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

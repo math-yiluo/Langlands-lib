@@ -214,7 +214,7 @@ end CuspidalSpectralPresentation
 
 end Langlands.Automorphic
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Unramified
 
@@ -235,4 +235,4 @@ theorem IsWeaklyAssociatedClass.presentation
   obtain ⟨P, hP⟩ := (isWeaklyAssociatedClass_isoClass_iff R T).mp h
   exact hP.of_sameEulerPolynomials (P.spectralSystem_sameEulerPolynomials Q)
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

@@ -1,7 +1,5 @@
 # Whole-torus centralizers under isomorphism squares
 
-Author: Worker 1463.
-
 This module is internal transport infrastructure derived from the published
 whole-torus centralizer, its ambient-isomorphism comparison, source-isomorphism
 comparison, and represented subgroup transport. It introduces no structural

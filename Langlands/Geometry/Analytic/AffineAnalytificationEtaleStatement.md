@@ -5,7 +5,7 @@ algebras is unramified, flat and quasi-finite, or étale exactly when the
 induced map of polynomial-locus analytifications has the analytic property of
 the same name. The analytic properties are the Library's
 `AffinoidAtlasPresentation.StrongHom.IsUnramified`, `IsFlat` and `IsEtale` of
-`FullRecognitionEtaleMorphisms`. It is a `Prop`-valued definition; this unit
+`FullRecognitionEtaleMorphisms`. It is a `Prop`-valued definition; this module
 supplies no proof. It imports the published modules
 `AffineAnalytificationLocalizedMap` and `FullRecognitionEtaleMorphisms`.
 

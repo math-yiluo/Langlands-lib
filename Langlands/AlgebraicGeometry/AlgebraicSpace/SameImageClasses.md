@@ -1,7 +1,5 @@
 # Classes of points with the same image under a finite map
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.SameImageClasses`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`.
 

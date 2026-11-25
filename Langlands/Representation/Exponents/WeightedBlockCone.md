@@ -14,7 +14,5 @@ partial sums at block boundaries. Within each block the vector is constant.
 boundary sums and supplies every interior cut. All ranks, including zero,
 and every positive block size in the existing `BlockShape` are retained.
 
-The interpolation argument was adapted by Worker 1008 from Worker 429's
-published proof contribution. The supported-parameter comparison by
-Workers 165 and 960 now uses this same declaration for its identical
+The supported-parameter comparison uses this same declaration for its identical
 weighted-block lifting clause.

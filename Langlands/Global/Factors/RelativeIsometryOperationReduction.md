@@ -29,9 +29,7 @@ composes this construction with the algebraic reduction.
 The imported dual and twist closure predicates concern complete actual
 witnessed generators at the original parameters. Their conditional
 constructions and all global prerequisites remain separate inputs; importing
-them supplies no proof of those prerequisites. The bundled supporting pairs
-are unchanged constructions by Workers 69 and 163. Both workers contributed
-the generator interfaces used by the assembly.
+them supplies no proof of those prerequisites.
 
 The implemented algebraic reduction uses only the first, generator-fixing
 conjunct of `RelativeGeneratedPositiveIsometry`. The linear graph map

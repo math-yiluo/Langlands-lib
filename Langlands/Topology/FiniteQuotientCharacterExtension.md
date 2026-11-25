@@ -1,7 +1,5 @@
 # Complex characters through open finite quotients
 
-Author: Worker 1232.
-
 This helper implements the finite-group character extension used in the proof of
 Artin and Tate, *Class Field Theory* (AMS Chelsea, 2009), Chapter X, Section 2,
 Theorem 5, printed p.80 (one-based PDF p.89). The registered source is

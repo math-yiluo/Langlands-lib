@@ -16,16 +16,16 @@ for all `f ∈ I(s,π)`, where `π = π₁ ⊗ π₂` and `π' = π₂ ⊗ π₁
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-Printed page `p` is index `p - 66` of the scan. The author of this unit,
-Worker 33, read printed pages 67, 70–73, 78 and 84 directly.
+Printed page `p` is index `p - 66` of the scan. Printed pages 67, 70–73, 78
+and 84 were read directly.
 
-The unit restricts the published function-level relation `IsLocalCoefficient`
+The module restricts the published function-level relation `IsLocalCoefficient`
 of `Langlands.Representation.Shahidi.LocalCoefficient` to the actual
 general-field induction of `Langlands.Representation.Shahidi.Induction`. It
 follows the published p-adic specialization
 `Langlands.Representation.Shahidi.LocalCoefficientPadic`, whose declarations
-it does not change. Where that unit uses a `PadicField` realization and its
-residue cardinality, this unit uses a field with Mathlib's
+it does not change. Where that module uses a `PadicField` realization and its
+residue cardinality, this module uses a field with Mathlib's
 `IsNonarchimedeanLocalField` and keeps `q` and the absolute value as explicit
 parameters.
 
@@ -89,12 +89,12 @@ starts from Lemma 2.1, whose integrand carries `|det a|^{-n} d*a`, and uses
 the normalized exponents give `|det a|^{s+n}` for the diagonal factor and the
 total `|det a|^{s-n}` of the lemma; the literal exponents would give
 `|det a|^{s-3n/2}`. That reading is an interpretation of the source's
-computations, not a published erratum. This unit adds no
+computations, not a published erratum. This module adds no
 induction of its own. It inherits that interpretation through `sourceEval`,
 `targetEval` and `intertwiningInduced`.
 
 The source uses `K_r`-finite functions. The Library's induction consists of
-smooth functions, and `Induction` leaves the comparison open. This unit does
+smooth functions, and `Induction` leaves the comparison open. This module does
 not prove it.
 
 ## Compact open cofinality of the Levi
@@ -155,7 +155,7 @@ measures are measures on matrix spaces for the measurable structure induced
 by `borel F`. `ψ` is a unitary additive character of `F`, and `q` is a
 natural number. The definitions place no condition on `q`; `1 < q` enters
 only the uniqueness results. A statement about the actual field must
-constrain `q`, `abv`, `ψ` and the measures; this unit does not.
+constrain `q`, `abv`, `ψ` and the measures; this module does not.
 
 - `IsGeneralLocalCoefficientFor q abv hopen π₁ π₂ ψ μ μJ μJ' ℓ₁ ℓ₂ C` is the
   published `IsLocalCoefficient m n ψ ρ ℓ ℓ' μ μJ μJ' q S C` with:
@@ -289,7 +289,7 @@ published `intertwiningInduced`. With `borel F` it reads the clause of
 
 ## What is not claimed
 
-This unit does not claim, prove or assume:
+This module does not claim, prove or assume:
 
 - that a local coefficient exists for any `π₁` and `π₂`;
 - that the intertwining or Jacquet integrals converge or stabilize on
@@ -301,5 +301,7 @@ This unit does not claim, prove or assume:
   `K_r`-finite functions;
 - any gamma-factor comparison, including Theorem 5.1.
 
-These are obligations of the general-field analytic statements of the parent
-task.
+These are obligations of the general-field analytic statements
+(`GeneralIntertwiningStatements`, `GeneralJacquetStatements`,
+`GeneralLocalCoefficientExistenceStatement` and
+`GeneralLocalCoefficientGammaStatement`).

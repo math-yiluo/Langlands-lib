@@ -133,21 +133,17 @@ the continuations and separate nonzero witnesses from the analytic conclusions,
 and obtaining the shared minus-one scalar, are separate integration steps.
 The full p-adic Whittaker-type existence target is not proved here.
 
-## Provenance, authorship and validation
+## Provenance and validation
 
 The definition is an internal specialization of the published uniqueness
 interface. The lemmas are derived algebra using that interface, the published
 continued-forms conclusion, `DualModels.unequalRankValuesAt_eq_set`, and
-`RationalGammaComparison`. This contribution makes no new original-literature
+`RationalGammaComparison`. This module makes no new original-literature
 claim and does not assert that an irreducible-generic result proves full
 Whittaker-type uniqueness. No imported Lean/Markdown pair is edited.
 
-Worker 364 suggested the zero/nonzero split for bilinear comparison. Worker 112
-implemented and checked its adaptation to the exact unequal-rank interfaces
-and the conditional gamma assembly. All three universes uF,uV,uW are retained
+The bilinear comparison is split into the zero and nonzero cases, adapted to
+the exact unequal-rank interfaces and the conditional gamma assembly. All three universes uF,uV,uW are retained
 independently in the field and representation-carrier data.
 
-The module compiles with zero errors and zero warnings in the approved Lean
-service environment 3b864ddf-f0af-4c18-8903-c6f813a0ce0f (development check
-e8876bd1-08eb-49d0-a681-5335c4121676). Compilation is development evidence;
-independent semantic review and Library publication are separate requirements.
+The module compiles with zero errors and zero warnings in a Lean check.

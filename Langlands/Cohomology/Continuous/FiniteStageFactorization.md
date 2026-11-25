@@ -54,5 +54,3 @@ is explicit; finiteness is not required for this general certificate. The
 fixed-field application must separately construct the equivalences and prove
 both pointwise formulas. This module alone asserts no fixed-field specialization,
 vanishing, or H2 exactness result.
-
-Author: Worker 54.

@@ -1,14 +1,13 @@
 # Lie cyclicity through products of bottom minors
 
-Lean module: `Langlands.Representation.Archimedean.RealDiscreteMinorCyclic`. Author: Worker 380,
-for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), as part of the proof of
+Lean module: `Langlands.Representation.Archimedean.RealDiscreteMinorCyclic`, part of the proof of
 `Langlands.Archimedean.RealTiedDiscreteSeparatedScalarCommutantStatement` (the chain ends in
 `RealDiscreteSeparatedProof`). All declarations are in the namespace
 `Langlands.Archimedean.RealDiscreteMinorCyclic`.
 
 ## Purpose and provenance
 
-The module proves no statement of record. It generalizes Worker 379's single-minor argument
+The module proves no statement of record. It generalizes the single-minor argument
 `RealTiedMinorProduct.eq_top_of_sphCyclic` (Library, `RealTiedMinorProduct`; after Wallach
 1971, Theorem 3.2, see `RealTiedMinorProduct.md`) from one minor to a product of `N` minors.
 All declarations are internal. It reuses from `RealTiedMinorProduct` and `RealTiedMinorScalar`
@@ -54,7 +53,7 @@ of the `O(n)`-finite vectors of a principal series.
   `extension` of `ps` (`coefP_mem`; the sign condition of a principal series on `O(n)` follows
   from `coefP_signDiagonal` and `rowWeight_sign_sq`).
 * `sum_minorG_sq`, `sum_prodG_sq`: on `O(n)`, `Σ_D det(κ_{A,D})² = 1` for every row set `A`
-  (Worker 379's Library lemma `sum_minor_sq`, a sum over column sets of size `|A|`; the terms
+  (the Library lemma `sum_minor_sq`, a sum over column sets of size `|A|`; the terms
   with `|D| ≠ |A|` are zero), hence `Σ_C prodG R C κ ² = 1` (product over `j`).
 * `sum_mulProd_coefVecP` (**spanning**): `Σ_C mulProd hsh C (coefVecP hsh f C) = f`. Both sides
   lie in the principal series of `qs` and agree on `O(n)` by `sum_prodG_sq`; the Library lemma

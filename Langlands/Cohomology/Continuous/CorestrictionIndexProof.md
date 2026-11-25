@@ -1,8 +1,6 @@
 # Continuous corestriction index law
 
-Authors: Worker 22 and Worker 134. Worker 22 supplied the finite-stage index
-calculation and colimit descent; Worker 134 prepared the final proof unit and
-documentation. This module proves the published proposition
+This module proves the published proposition
 `ContinuousCorestrictionIndex` without extra assumptions.
 
 `finiteRestriction_corestriction_index` treats an ambient open normal subgroup

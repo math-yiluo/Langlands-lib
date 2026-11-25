@@ -1,6 +1,6 @@
 # Finite compact-type coverage of an actual compact-finite smooth vector
 
-Worker 94 supplies an internal bridge from finite compact orbit spans to the published `CompactType` and `selectedTypeSum`. The field is an arbitrary number field in universe `u`; the rank is any natural number, including zero. The ambient carrier and compact action are the actual `DerivativeSmoothFunctions` and `compactAction`.
+This module supplies an internal bridge from finite compact orbit spans to the published `CompactType` and `selectedTypeSum`. The field is an arbitrary number field in universe `u`; the rank is any natural number, including zero. The ambient carrier and compact action are the actual `DerivativeSmoothFunctions` and `compactAction`.
 
 For a published finite continuous compact source `τ`, `subrepresentationModelEquiv` gives standard complex coordinates on any invariant subspace. `subrepresentationCoordinateAction` transports the subrepresentation through those coordinates. The source action is jointly continuous because the original action is continuous, restriction to the invariant subspace is continuous, and both coordinate linear maps on finite-dimensional spaces are continuous. These constructions are bundled in `subrepresentationSource` and `subrepresentationSourceEquiv`. If the invariant subspace is an atom, the published algebraic atom-to-irreducibility theorem and invariance of irreducibility under representation equivalence give the actual `subrepresentationType`. `subrepresentationSourceInclusion` is its equivariant inclusion into `τ`.
 

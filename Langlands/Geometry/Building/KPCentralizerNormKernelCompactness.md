@@ -1,6 +1,6 @@
 # Conditional compactness of the actual centralizer norm kernel
 
-This internal derived unit connects the actual centralizer supplied by
+This module connects the actual centralizer supplied by
 `ParahoricBuildingData` to the central maximal split-torus quotient route. It
 uses named group-scheme and rational-point interfaces. No new external source
 claim is used independently.
@@ -43,8 +43,13 @@ maximal split torus, closed represented centralizer, and same factorization in
 `P`. The resulting reductivity witness and the unconditional centrality and
 maximal splitness just proved supply the generic compactness theorem.
 
-All three whole-statement inputs remain proof obligations. This unit does not
-prove any of them and does not prove `CentralizerZeroCompactOpenStatement`.
+The Library proves the three whole-statement inputs elsewhere
+(`Langlands.BruhatTits.Cartan.actualCentralizerStructure`,
+`Langlands.GroupScheme.centralQuotientReductive` and
+`Langlands.GroupScheme.anisotropicCompactness_proof`). This module does not
+prove any of them and does not prove `CentralizerZeroCompactOpenStatement`,
+which `ParahoricBuildingData.centralizerZeroCompactOpen` (module
+`KPCentralizerZeroCompactOpenProof`) proves.
 Passing from the norm kernel to the actual centralizer-zero subgroup still
 requires its containment and closedness, for example through independently
 proved openness. Both local-field characteristics and split rank zero are

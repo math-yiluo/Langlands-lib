@@ -1,8 +1,6 @@
 # Renard A.VI.3: identities for simple-subquotient classes
 
-Author: Worker 6 (source reading, statement design, Lean draft and documentation).
-
-This statement unit gives four Prop-valued definitions for the unnumbered
+This statement module gives four Prop-valued definitions for the unnumbered
 three-part Lemma in David Renard, *Représentations des groupes réductifs
 p-adiques*, French edition dated 9 July 2026, Appendix A.VI.3, printed
 page 264 / PDF270. It supplies targets and no proofs of the three claims.
@@ -114,7 +112,7 @@ no `Nonempty`, directedness, finiteness, finite-type, finite-length
 or Noetherian premise on the family. For an empty family, the
 published sum construction is the zero subobject and the union
 on the right is empty. The identity for this case is included
-in the target; this unit does not prove it.
+in the target; this module does not prove it.
 
 `SimpleSubquotientIdentitiesStatement.{w} C` is exactly the conjunction
 
@@ -149,7 +147,7 @@ shrinking. No assertion identifies this size with `w`. Finite subsets
 of a supplied `I : Type w` can be indexed in `Type w`; the source's
 reduction to finite partial sums therefore requires no indexing by
 all subobjects and no extra size premise in clause (iii). The maps
-and comparisons implementing that reduction remain proof obligations.
+and comparisons implementing that reduction belong to the proof.
 
 There is no `WellPowered`, `LocallySmall`, concrete-category,
 module-category, finite-dimensionality, generator, separator or
@@ -164,7 +162,7 @@ No such comparison theorem is assumed by these targets.
 
 For clause (ii), the source invokes the preceding simple-quotient
 result. The nonzero direction needs a nonzero finite-type subobject
-from AB6 and a simple quotient of it. A future proof must justify
+from AB6 and a simple quotient of it. A proof must justify
 that selection and its transport to an actual subquotient of the
 ambient object; the target assumes no witness or nonzero-detection
 lemma. The reverse direction excludes simple subquotients of a zero
@@ -181,9 +179,9 @@ contradicting simplicity. This describes the source route. It is
 not an implemented Lean proof or a premise of the formal statements.
 
 These four definitions are internal formal targets translating the
-cited Lemma. Independent statement acceptance, publication and admission
-to the current Library must precede a distinct exact proof successor.
+cited Lemma. The aggregate is proved by `simpleSubquotientIdentities` in
+`Langlands.CategoryTheory.Renard.SimpleSubquotientIdentitiesProofs`.
 The pure Jordan–Hölder theorem, the preceding simple-quotient Proposition,
 numerical length, semisimplicity, supported subcategories, and the
 module/localization branches remain separate obligations. This file
-introduces no proof holes or new axioms and claims no theorem acceptance.
+introduces no proof holes or new axioms.

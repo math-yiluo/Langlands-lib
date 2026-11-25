@@ -1,6 +1,6 @@
 # Actual rational generation and ambient images of Weil-restricted SU3
 
-This internal derived unit concerns the actual affine Weil restriction
+This module concerns the actual affine Weil restriction
 `WeilSchemeModel.groupScheme F k L` of `SU3(L/k)`, for fields in an arbitrary
 common universe, a finite dimensional extension `k/F` and a separable quadratic
 extension `L/k`. It has no characteristic restriction and requires neither a
@@ -43,5 +43,5 @@ the whole rational image lies in that subgroup.
 
 Source smoothness and reductivity, comparison of general rank-one factors with
 this actual model, general classification and unrestricted local Kneser–Tits
-remain separate obligations. This unit asserts the ambient containment for
+remain separate obligations. This module asserts the ambient containment for
 the specified actual Weil-restricted SU3 source.

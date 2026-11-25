@@ -1,11 +1,9 @@
 # Uniqueness and Galois-fixed points of split apartment classes
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.SplitApartmentGaloisFixedPoint`.
 
-This internal unit proves three facts used to descend a split apartment class from a
-finite Galois extension (task 8ffe0456): a split apartment class is unique, it is
+This module proves three facts used to descend a split apartment class from a
+finite Galois extension: a split apartment class is unique, it is
 therefore stable under coefficient automorphisms, and over a finite extension it has
 a point fixed by all of them.
 
@@ -80,4 +78,4 @@ All proofs here are internal compositions of published Library results.
 ## Scope
 
 Nothing here constructs the apartment over the original field. In particular, the
-fixed point is not yet descended, and no relative valuation axioms are proved.
+fixed point is not descended here, and no relative valuation axioms are proved.

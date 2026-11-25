@@ -1,7 +1,6 @@
 # Fixed-level finiteness of compact-coefficient classes on `G°`
 
-Author: Worker 277. This statement pair belongs to task
-`1ae6ffd0-4e90-4d07-a45d-f9b291d2cf99`, revision 1. It is a proposition
+This statement pair is a proposition
 definition. Neither it nor the source reduction explained below is proved in
 Lean here.
 
@@ -147,7 +146,7 @@ two formulations are related as follows, in the source's setting.
    4.14. A subset of a finite set is finite.
 
 This reduction is a source-to-statement explanation only; it is not formalized
-in this unit, and the congruence subgroups are not constructed here. Step 2
+in this file, and the congruence subgroups are not constructed here. Step 2
 uses only that `K` is open. The compactness hypothesis is retained because the
 formulation is over compact open level subgroups.
 

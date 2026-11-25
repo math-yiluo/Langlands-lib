@@ -1,7 +1,8 @@
 # Unitary central characters and nontrivial Jacquet modules along sub and quotient maps
 
-This internal unit supports the proof task on the unitarizable-constituent step of
-Renard, Théorème VII.1.3. Its provenance is the published constructions it combines:
+This module supports the proof of the unitarizable-constituent step of
+Renard, Théorème VII.1.3 (`MaximalLeviSupercuspidalUnitarizableConstituentStatement`,
+reduced to its inputs in `MaximalLeviUnitarizableConstituentReduction`). Its provenance is the published constructions it combines:
 the Library's `UnitaryCentralCharacter` structure,
 `isNormalizedJacquetExponent_iff_isOpen_ker_and`,
 `normalizedJacquetFunctor_map_injective`,

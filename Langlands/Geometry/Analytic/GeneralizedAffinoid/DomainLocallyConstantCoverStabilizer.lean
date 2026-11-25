@@ -24,7 +24,7 @@ explicit in its type. -/
 def finiteCoverComponentSpectrumOperator
     (g : ρ.finiteFamilyOpenSubgroup H c.obj) (i : Fin c.size) :
     C(BanachSpectrum (c.obj i).algebra, BanachSpectrum (c.obj i).algebra) :=
-  ((ρ.finiteCoverComponentAction H d c i).ρ g).hom
+  ((ρ.finiteCoverComponentAction H d c i).ρ g).asHom.hom
 
 /-- The finite intersection of the full component-spectrum function stabilizers,
 inside the original common subgroup preserving the cover. -/

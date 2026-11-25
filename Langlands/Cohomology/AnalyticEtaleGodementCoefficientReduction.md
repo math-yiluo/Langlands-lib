@@ -42,8 +42,9 @@ functor maps the actual Godement identification to an isomorphism, and zero
 transports across it. The final input `F` has no injectivity premise.
 
 The injective-coefficient analytic vanishing remains an explicit, unproved
-hypothesis of these conditional results. This unit does not prove the task's
-unconditional analytic target. It assumes neither equivariant compact/global
+hypothesis of these conditional results. This module does not prove the
+unconditional analytic target `AnalyticEtaleGodementCompactAcyclicStatement`;
+the Library has only conditional proofs of it. It assumes neither equivariant compact/global
 comparison, parent restricted-injective acyclicity nor injectivity preservation by
 ordinary restriction. The provenance is the stated categorical specialization;
 no result is attributed to the analytic literature.

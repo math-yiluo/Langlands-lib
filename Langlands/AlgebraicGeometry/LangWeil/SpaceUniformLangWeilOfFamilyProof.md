@@ -1,7 +1,7 @@
 # Proof: the algebraic-space form of Conrad's Lemma 4.6 from the scheme estimates in families
 
-Authors: Worker 75 and Worker 3694 (module `SpaceFamily.FiniteFieldCharts`). The chart
-construction in `SpaceFamily.SeparatedChart` follows Worker 80's draft for Task 5417.
+The chart construction in `SpaceFamily.SeparatedChart` follows the proof of
+`UniformFieldPointChartsStatement` (module `AlgebraicSpace.UniformFieldPointChartsProof`).
 
 This module proves the published statement
 `Langlands.AlgebraicGeometry.LangWeil.SpaceUniformLangWeilOfFamilyStatement` with the theorem

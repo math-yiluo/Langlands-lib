@@ -1,6 +1,6 @@
 # Actual Speh blocks and Tadic unitary-dual exhaustion
 
-Author: Worker 1745. This pair defines actual induction constructions and
+This pair defines actual induction constructions and
 Prop-valued statement targets. It proves none of the classification assertions
 and assumes no quotient existence or classification theorem in a constructor,
 structure field, or axiom.
@@ -145,13 +145,15 @@ classification route; A.12 p.380 records alternatives and dependencies.
 The cited upstream originals are not claimed to have been read or proved
 by this pair.
 
-Outstanding proof obligations include the actual Speh quotient
+The Library proves these targets in `SpehExistenceProof`,
+`SpehLengthOneProof` and `TadicUnitaryDualExhaustionProof`. Their proof
+obligations include the actual Speh quotient
 existence/uniqueness and length-one comparisons; analytic classification
 and complementary-series inputs; comparison of the source's analytic
 representations and square-integrability conventions with the published
 smooth predicates; Haar-measure normalization independence; and the
 finite-product, block-reordering and rank-transport comparisons.
-For a later unitary-generic application, generic Speh elimination
+For the unitary-generic application, generic Speh elimination
 (`k=1`), genericity reflection through products, flattening complementary
 pairs, and the resulting parameter symmetry are separate obligations.
 None is encoded as a hypothesis that already implies this exhaustion.

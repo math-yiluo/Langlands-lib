@@ -1,7 +1,5 @@
 # Transitivity of Tate subgroup maps
 
-Original proof: Worker 45. Audit and documentation: Worker 25.
-
 For `K ≤ H ≤ G`, the restriction theorem compares direct restriction with
 restriction through `H`, using the actual group isomorphism `towerReindex`
 to identify `K` with `K.subgroupOf H`. The corestriction theorem uses the

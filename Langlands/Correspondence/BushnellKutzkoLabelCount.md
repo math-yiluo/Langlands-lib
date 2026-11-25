@@ -1,7 +1,7 @@
 # Counting Bushnell–Kutzko labels by the polar-part number
 
 `Langlands.Henniart.BushnellKutzkoLabelCountStatement : Prop` states the identification of
-label sets in Lemma `lem:BKlabels` of the operator route note *Numerical local Langlands for
+label sets in Lemma `lem:BKlabels` of the route note *Numerical local Langlands for
 GL_n: counts on the two sides and the recommended route* (16 November 2026, registered
 literature `operator-numerical-llc-route-2026-11-16`; §4.3, lemma and proof at lines 538–556
 of `numerical-LLC-route.tex`), in counting form.
@@ -24,7 +24,8 @@ check.
 - `Langlands.BushnellKutzko.degenerateLabelSet b q` is `P̃_0(a, b; q) = 𝔍(b, q)` (BK94,
   printed p. 126); it does not depend on `a`.
 - `Langlands.Henniart.Numerical.polarPartCount q n f s` is the polar-part number
-  `ν(n, f, s; q)` of the route note (Definition `def:model`), published by Task 7369: the
+  `ν(n, f, s; q)` of the route note (Definition `def:model`), defined in
+  `Langlands.Correspondence.HenniartPolarPart`: the
   number of `Gal(𝔽_{q^f}/𝔽_q)`-orbits of maps `c : {0, …, s/f} → 𝔽_{q^f}` with `c 0 ≠ 0`,
   `c (s/f) ≠ 0`, values generating `𝔽_{q^f}` over `𝔽_q`, and
   `gcd(n/f, {i ≥ 1 : c i ≠ 0}) = 1`.
@@ -34,7 +35,7 @@ The definitions of the label sets, of `e`, and of the fields `𝔽_{q^D}` are ex
 
 The fields `𝔽_{q^D}` are `polarExtensionField (labelFieldSize q) D` (see the labels
 Markdown). For a prime power `q`, `labelFieldSize q = q`, so these are the fields that
-Task 7369 uses for `polarPartCount` (module `Langlands.Correspondence.HenniartPolarPart`).
+`polarPartCount` uses (module `Langlands.Correspondence.HenniartPolarPart`).
 The label sets take no instance argument on `q`, so the statement quantifies directly over
 prime powers `q`.
 
@@ -56,7 +57,7 @@ finiteness hypothesis is assumed. Natural-number division `n / f` is exact becau
 
 ## Proof idea (route note, proof of Lemma `lem:BKlabels`)
 
-Not part of this record; the proof is a separate task. "Take roots successively": to a
+Not part of this module; the proof is in `BushnellKutzkoLabelCountProof`. "Take roots successively": to a
 label `((φ_i, n_i, d_i, e_i))_{0 ≤ i ≤ r}` with `φ` attach the map `c` with `c(n_i)` a root of
 `φ_i` and `c(0)` a root of `φ`, roots being taken successively in the tower
 `𝔽_q ⊆ 𝔽_{q^{d_0}} ⊆ 𝔽_{q^{d_0 d_1}} ⊆ ⋯ ⊆ 𝔽_{q^f}`, and `c = 0` elsewhere. The degree
@@ -67,5 +68,5 @@ and degrees); and `e(p) = gcd(n/f, n_0, …, n_r)`, so `e(p) = 1` is condition (
 polar-part model. For `m = 0`, both sides count the monic irreducible polynomials of
 degree `n` over `𝔽_q` other than `X`.
 
-Sanity check from the task context: for `n = f = 1` both sides of part 1 equal
+Sanity check: for `n = f = 1` both sides of part 1 equal
 `(q − 1)^2 q^{m−1}`.

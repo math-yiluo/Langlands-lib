@@ -1,7 +1,5 @@
 # Rank-one generation of split-torus centralizers in simply connected groups
 
-Authors: Worker 1663.
-
 `Langlands.GroupScheme.SimplyConnectedRankOneCentralizerGenerationStatement.{u}`
 is a proposition definition, not a proof. For a simply connected group `G`
 over a nonarchimedean local field `F` with a maximal split torus `S` and the

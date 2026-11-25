@@ -26,8 +26,8 @@ constructed binary lifts by `IsLeviLift.unique`. Connected reductivity of the
 norm-one source follows from the explicit simple-connectedness premise. The
 binary lifts satisfy `IsLeviLift` by `isLeviLift_binarySpinLift`.
 
-The provenance is internal. The module reuses Worker 5398's shared
+The provenance is internal. The module reuses the
 `SpinLeviLift` comparison module unchanged, with its explicit conditional
-simple-connectedness premise, and Worker 179's cancellation and uniqueness
-module. This is a reduction toward the target, not a proof of
+simple-connectedness premise, and the cancellation and uniqueness
+module `SpinLeviUniqueness`. This is a reduction toward the target, not a proof of
 `SpinKernelGeneratorStatement`.

@@ -1,7 +1,5 @@
 # The negative partner of a normalized simple-root parametrization
 
-Author: Worker 4348.
-
 Module `Langlands.GroupScheme.Rational.NegativeRootPartner`, namespace
 `Langlands.GroupScheme.SplitPinning.NormalizedRootParametrization`.
 

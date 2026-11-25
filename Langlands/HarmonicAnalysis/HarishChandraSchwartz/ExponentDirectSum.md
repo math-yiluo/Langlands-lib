@@ -3,7 +3,7 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.ExponentDirectSum`, namespace
 `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.ExponentDecomposition` (Worker 249):
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.ExponentDecomposition`:
   `jointGenEigenspace T χ` (the simultaneous generalized eigenspace
   `⨅ a, (T a).maxGenEigenspace (χ a)`), `mem_jointGenEigenspace`, `commute_jointFamily`,
   `map_one_of_mem_jointGenEigenspace`, `map_mul_of_mem_jointGenEigenspace` and

@@ -1,7 +1,5 @@
 # Whole-domain stabilizers and actual global spectrum actions
 
-Authors: Worker 56 and Worker 36.
-
 Let `K : Type u` be a complete ultrametric normed field, let `P` be an
 actual presented positive-polyradius affinoid algebra, and let `G : Type v`
 be a topological group in an independent universe. The input
@@ -59,7 +57,7 @@ whole-domain local theorem.
 This is an internal consequence of `Domain.whole`,
 `DomainSpectralAction.sectionAction_baseMap`, and the actual bounded
 spectrum pullback construction. It adapts the whole-stabilizer and
-global categorical-action portions of Worker 36's published
+global categorical-action portions of
 `StrictTestDomain/SpectralGlobalAction` to full represented
 positive-polyradius domains. The strict construction uses an empty
 rational quotient comparison; here the whole-domain structural map

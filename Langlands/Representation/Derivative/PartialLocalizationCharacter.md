@@ -1,7 +1,5 @@
 # Recursive partial-localization character restrictions
 
-Author: Worker 321.
-
 This internal matrix construction continues `PartialLocalizationData` in
 namespace `Langlands.Derivative.PartialLocalization`. Its algebraic declarations
 assume `F : Type uF` and `[CommRing F]`, and allow all natural `k,m`.
@@ -127,9 +125,9 @@ respectively
 `/home/taskhub/central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf`
 and
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
-The parent task read the original passages and visually checked the
-inverse-half normalization formulas; no applicable source-specific erratum
-was found in the supplied notes or literature index.
+The original passages were read and the inverse-half normalization formulas
+visually checked; no applicable source-specific erratum was found in the
+supplied notes or literature index.
 
 The originals motivate successive localization by these subgroups and the
 positive character convention. The declarations here are internal derived
@@ -145,10 +143,10 @@ The direct project imports are `Derivative.PartialLocalizationData` and
 of the 50 modules below. Its 49 preexisting Library pairs (98 files) agree
 byte for byte with supplied Library
 `7b0be54f6fdff0448d87d389ed9dc8b01c6f048f`.
-The remaining pair is the unchanged concrete `PartialLocalizationData`
-helper staged separately by this task, included in the candidate's repository
-paths to preserve the complete dependency. Integration should publish that
-focused unit before or with this one.
+The remaining pair is the concrete helper `PartialLocalizationData`, which
+that commit does not contain; it is the Library module
+`Langlands.Representation.Derivative.PartialLocalizationData`, imported
+directly above.
 
 The actual proof inputs are the elementary mirabolic Levi/projection laws,
 the partial-group membership and inclusion lemmas, the definitions of the
@@ -161,8 +159,10 @@ not an assumed existence or uniqueness theorem. `Dual.Definitions` supplies
 algebraic dual maps, not a duality result. A mention of classification in
 `LocalField.Topology.md` identifies other consumers, not an import.
 
-The complete positive-segment/socle independence exclusions of parent task
-revision 2 and the stronger shared-tower exclusions are preserved. There is
+The complete positive-segment/socle independence exclusions of the comparison
+proof `partialDerivativeJacquetComparison` (`PartialDerivativeJacquetComparisonProof`,
+which uses this module through `PartialDerivativeJacquetLHS`) and the stronger
+shared-tower exclusions are preserved. There is
 no segment or multisegment classification module in this closure and no
 head/socle irreducibility, exhaustion, conversion or gluing input; no tempered
 uniqueness, square-integrability classification, analytic segment criterion,

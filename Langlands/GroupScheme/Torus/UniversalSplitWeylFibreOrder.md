@@ -12,4 +12,4 @@ The proof uses `weylQuotientFibrePointEquiv` on the composite field-valued base 
 
 `exists_natCard_quotientFibre_constant_on_local_base` packages this formula with quantifier order `∀ R, ∀ b, ∃ d, ∀ k`. The number depends on the local ring and its base map, and is independent of the field and its supplied algebra structure. This is the universal local-base condition required for a subsequent separated étale finiteness argument.
 
-The quotient, its normalizer and kernel properties, local finite type, and surjectivity remain inputs. This unit constructs no quotient and asserts no finiteness, separatedness, quasi-compactness or étaleness.
+The quotient, its normalizer and kernel properties, local finite type, and surjectivity remain inputs. This module constructs no quotient and asserts no finiteness, separatedness, quasi-compactness or étaleness.

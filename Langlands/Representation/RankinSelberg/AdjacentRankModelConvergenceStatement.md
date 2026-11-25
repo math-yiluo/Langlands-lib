@@ -1,6 +1,6 @@
 # Unconditional convergence of the JPSS Section 6.1 tensor integral
 
-Worker 455 states the first assertion of the Proposition in Section 6.1
+This module states the first assertion of the Proposition in Section 6.1
 of Jacquet, Piatetski-Shapiro and Shalika, *Rankin-Selberg convolutions*,
 Amer. J. Math. 105 (1983), printed pp.428–429, formula (8).
 The registered original is `jpss-1983-rankin-selberg`, retained at
@@ -12,8 +12,9 @@ The original printed pp.427–431 and the inverse-transpose convention
 was found in the project's prescribed errata locations.
 
 `Langlands.RankinSelberg.AdjacentRankModelConvergenceStatement.{uF,uV}`
-is a closed, `Prop`-valued definition. **It is an unproved proposition
-definition, not a convergence theorem.** Its sole import is the published
+is a closed, `Prop`-valued definition. **It is a proposition
+definition, not a convergence theorem;** `adjacentRankModelConvergence` in
+`AdjacentRankModelConvergenceProof` proves it. Its sole import is the published
 `Langlands.Representation.RankinSelberg.AdjacentRankIntegralModel`.
 It leaves that module and every other published Lean/Markdown pair
 unchanged. The mathematical assertion comes from the cited Proposition;

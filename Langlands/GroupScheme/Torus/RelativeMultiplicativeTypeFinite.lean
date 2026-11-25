@@ -55,6 +55,7 @@ theorem finite_characters_of_locallyQuasiFinite [Nonempty S]
     infer_instance
   have : LocallyQuasiFinite (Diagonalizable.groupScheme (S.residueField s) Λ).X.hom := by
     rw [← Over.w e.inv.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have : IsFinite (Diagonalizable.groupScheme (S.residueField s) Λ).X.hom :=
     IsFinite.of_locallyQuasiFinite _
@@ -76,6 +77,7 @@ theorem FiniteDiagonalizableModel.isFinite (M : FiniteDiagonalizableModel H) :
   have : IsFinite (diagonalizable S M.characters).X.hom :=
     isFinite_diagonalizable S M.characters
   rw [← Over.w M.iso.hom.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A locally quasi-finite diagonalizable group over a nonempty base admits
@@ -86,6 +88,7 @@ theorem IsDiagonalizable.nonempty_finiteModel [Nonempty S] (hH : IsDiagonalizabl
   let : AddCommGroup Λ := hΛ
   have : LocallyQuasiFinite (diagonalizable S Λ).X.hom := by
     rw [← Over.w e.inv.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   let : Finite Λ := finite_characters_of_locallyQuasiFinite (S := S) Λ
   exact ⟨{

@@ -1,18 +1,14 @@
 # Derivatives of cuspidal representations, segment socles and their products
 
-Authors: Worker 758 (initial draft) and Worker 508 (source verification and
-submission), for task 8e5b4563-0365-41c7-b134-70f2a0b36292.
-
 This pair states five propositions and imports the separate cuspidal
 statement, together giving six propositions about the Bernstein–Zelevinsky
 derivatives `Derivative.generalLinearDerivative T ψ N k hk` from the published
-module `Langlands.Representation.Derivative.Iteration` (task
-d3e94f0f-56d3-4a0f-ac7d-473214ea8038). **None of the six is proved here.**
+module `Langlands.Representation.Derivative.Iteration`. **None of the six is proved here.**
 Each is a `Prop`-valued `def` in namespace `Langlands.Classification`.
 `SupercuspidalDerivatives` is defined in the paired lower module
 `Langlands.Representation.Classification.SupercuspidalDerivativesStatement`,
 so its eventual proof can avoid all segment-socle imports. The other five
-are defined in this module. The proofs are separate successor tasks.
+are defined in this module. The proofs are in separate modules.
 
 ## Sources
 
@@ -51,8 +47,7 @@ installs `letI := T.topology`; no canonical topology is substituted.
 - **Every `ψ`.** Each proposition is quantified over every
   `ψ : @HarmonicAnalysis.UnitaryAdditiveCharacter F.Carrier _ T.topology`
   (continuous and nontrivial). None assumes that such a `ψ` exists. That is
-  `HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsStatement` (task
-  748faef5-6f7d-46d3-bb39-60e91bd997d7).
+  `HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsStatement`.
 - **Explicit orders.** Derivative orders are explicit natural numbers. No
   level or highest-derivative predicate is introduced. Order bounds `hk : k ≤ N`
   enter as universally quantified hypotheses, never as embedded proof terms,
@@ -67,8 +62,7 @@ installs `letI := T.topology`; no canonical topology is substituted.
   a free index `k` with hypotheses `hk : k ≤ n` and `k = ∑ i, (d.segments i).rank`.
   Both are always satisfiable (`k ≤ n` follows from `d.degree_sum`, since every
   length is positive). A consumer can therefore apply the statements to two
-  data whose `λ` agree only propositionally, at one functor index. Worker 219
-  asked for this form (peer message c95afb3218e156a38ad9f3eb0754d6e6).
+  data whose `λ` agree only propositionally, at one functor index.
 - **`Δ⁻`.** For `Δ = [ρ, ν^(m-1) ρ]` with `m = Δ.length ≥ 2`, Zelevinsky's
   `Δ⁻ = [ρ, ν^(m-2) ρ]` keeps the beginning `Δ.base` and drops the end. It is
   written `⟨Δ.base, Δ.length - 1, _⟩`. The proof field establishes that the
@@ -85,9 +79,9 @@ source normalizes by `mod_U^(-1/2)` (BZ77 §1.8(b), §3.2), where `mod_U(m)` is
 the module of `u ↦ m u m⁻¹` on the unipotent radical `U ≅ F^(n-1)` of the
 mirabolic subgroup. For `m ∈ GL_(n-1)` this module is `|det m|`. So the
 Library convention is the source convention once that Haar-modulus equality
-is known. The comparison is the separate statement task
-a622f240-4846-4086-b34f-f650ba636ee4, with proof task
-f947a735-872d-44db-a9ea-954d17dec4bd. The six statements are about the
+is known. The comparison is the separate statement
+`Group.GL.MirabolicModulusStatement`, with its proof in
+`Group.GL.MirabolicModulusProof`. The six statements are about the
 Library functors as published. Their proofs must use that comparison, or work
 directly with `|det|`, wherever a source argument uses `mod_U`.
 
@@ -236,10 +230,10 @@ product.
 
 ## Status
 
-All six propositions are unproved by this contribution. They are inputs to
-the proof 23e98d90-6055-4e35-91a9-b0f5d8a84961 of
+None of the six propositions is proved in this module. They are inputs to
+the proof of
 `UnlinkedSegmentSocleProductIrreducible` (which uses (e) and (f)) and to the
-proof a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9 of
+proof of
 `LinkedSegmentSocleReverseProductStructure` (step (3), using (d)–(f)).
 
 ## Imports and independence
@@ -269,7 +263,6 @@ excluded conclusion is used.
 The lower cuspidal module imports only `Classification.Supercuspidal`,
 `Derivative.Iteration` and `HarmonicAnalysis.Basic`. Its transitive
 `Langlands` import closure at that base has 57 modules and contains no
-segment-socle statement or segment classification conclusion. The six
-proposition bodies are unchanged from the initial draft; only (a)'s module
-location was separated for upstream BZ77 consumers. This is a statement
+segment-socle statement or segment classification conclusion. Only (a) is
+placed in a separate module, for upstream BZ77 consumers. This is a statement
 import audit, not a claim that any derivative theorem is proved.

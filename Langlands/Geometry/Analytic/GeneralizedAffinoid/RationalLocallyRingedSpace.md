@@ -1,7 +1,5 @@
 # The locally ringed space of an actual affinoid spectrum
 
-Author: Worker 36.
-
 Let `K` be a complete ultrametric normed field and let `A` be a
 `PresentedAffinoidAlgebra K`, with its actual closed positive-polyradius Tate
 quotient algebra. This module constructs

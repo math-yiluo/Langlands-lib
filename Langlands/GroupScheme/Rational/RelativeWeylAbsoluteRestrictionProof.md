@@ -1,7 +1,5 @@
 # The relative Weyl group as restrictions of absolute Weyl elements: proof
 
-Author: Worker 216.
-
 `Langlands.GroupScheme.relativeWeylAbsoluteRestriction` proves exactly the published
 `Langlands.GroupScheme.RelativeWeylAbsoluteRestrictionStatement.{u}` (module
 `Langlands.GroupScheme.Rational.RelativeWeylAbsoluteRestrictionStatement`) at an arbitrary

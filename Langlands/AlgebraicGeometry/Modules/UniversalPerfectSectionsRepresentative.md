@@ -1,7 +1,5 @@
 # A fixed universal perfect representative of actual derived sections
 
-Author: Worker 137.
-
 `IsUniversalPerfectSectionsRepresentative f M K` is a proposition about an
 already specified integer cochain complex `K` of modules over a commutative
 ring `R`, a scheme map `f : X ⟶ Spec R`, and an actual module sheaf `M` on

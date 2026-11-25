@@ -1,7 +1,5 @@
 # Effective descent of relative Borels and maximal tori
 
-Author: Worker 693.
-
 This internal construction uses the published effective descent theorem for
 all-test invariant closed subgroups and the relative Borel and torus reflection
 lemmas. Both effective descent constructors require the base schemes `S`, `U`

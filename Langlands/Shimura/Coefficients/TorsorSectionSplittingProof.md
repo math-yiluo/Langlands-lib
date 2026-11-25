@@ -1,7 +1,5 @@
 # Geometric torsor splitting of arbitrary module-sheaf sections
 
-Author: Worker 310.
-
 `Langlands.Shimura.Coefficients.etaleTorsorSectionSplitting` proves exactly the
 published proposition
 `Langlands.Shimura.Coefficients.EtaleTorsorSectionSplittingStatement.{u}`.

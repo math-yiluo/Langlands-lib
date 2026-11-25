@@ -2,10 +2,9 @@
 
 This is a derived **statement target**. The file contains no proof of
 `Langlands.Global.PoleComparison.RelativeIsometryFactorStatement`, whose level
-parameters are `uF uW uP uE`. It is unit U4a-ii of the H3 program (Henniart's
-global construction, task `34b81620-20d7-4059-9b08-6bedd1c1c029`). Worker 30,
-whose task `62ea68fa` lists the same sections of Henniart as source leads,
-agreed that H3 states it. The target is a finite-relative, witnessed analogue,
+parameters are `uF uW uP uE`. It belongs to Henniart's global construction
+(track H3 of the program ledger `notes/automorphic/global-program-coverage.md`).
+The target is a finite-relative, witnessed analogue,
 at a fixed finite level `E/F` and for witnessed spans, of the determinant
 clause of Henniart's Proposition 2.6 (a) and of the L- and ε-factor clauses of
 his Proposition 2.6 (b). Henniart states these clauses for the images of the
@@ -14,8 +13,8 @@ isometry with those absolute-global objects (see "Relation to Henniart's
 absolute-global objects" below). The analogues of the degree clause of (a) and
 of the scalar-product clause of (b) are already part of the published
 `RelativeGeneratedPositiveIsometry`. The contragredient and twist clauses of
-(a), and all of (c), are the separate unit U4a-i
-(`RelativeIsometryOperationStatement`). This file does not import it.
+(a), and all of (c), are the separate statement
+`RelativeIsometryOperationStatement`. This file does not import it.
 
 ## Setting
 
@@ -153,8 +152,9 @@ imply `RelativeIsometryFactors T` for every `T` satisfying
   determinant clause uses the published geometric relation
   `IsGeometricReciprocity` and quantifies over every candidate that satisfies
   it. By local class field theory there is exactly one such candidate. In the
-  Library this existence and uniqueness is the published, still unproved
-  statement `LocalClassField.WeilReciprocityExistenceUniqueness`, so the
+  Library this existence and uniqueness is the published
+  statement `LocalClassField.WeilReciprocityExistenceUniqueness` (proved as
+  `LocalClassField.geometricWeilReciprocityExistenceUniqueness`). The
   target fixes no candidate.
 - **Local-constant systems.** The Weil-side epsilon factor is relative to a
   local-constant system `(eC, ε, hε)` with
@@ -180,7 +180,7 @@ imply `RelativeIsometryFactors T` for every `T` satisfying
   printed p.446). The helpers are these bilinear extensions, written as
   multiplicity-weighted products of basis values. On the Weil side they agree
   with the factors of actual semisimple representations, as Henniart remarks.
-  The Library does not yet prove this; see the next section.
+  This file does not prove this; see the next section.
 - **Unitarity.** Henniart's footnote 1 (printed p.439) calls a continuous
   homomorphism to `ℂ^×` a quasicharacter, and a character if it is unitary.
   The lattices are spanned by unitary irreducible classes, as his `B_G` and
@@ -216,8 +216,13 @@ spans only.
 Henniart's proof in §2.8 (printed p.448) takes the central character from §2.2
 (printed p.444). It takes the L- and ε-factors of pairs from Theorem 2.4, its
 Corollary (printed p.445) and the Remark in §1.3 (printed p.441). The sketch
-below carries this out at the fixed level `E/F`. Everything in it is a future
-proof obligation; the named statements are published but not yet proved.
+below carries this out at the fixed level `E/F`. Everything in it is a proof
+obligation outside this file. Of the named statements,
+`AssociatedCentralCharacterStatement` and `LocalTransferReciprocityStatement`
+are proved in the Library (`associatedCentralCharacter`,
+`localTransferReciprocity`), and so are both parts of
+`RankinSelberg.MultiplicativityStatement` (`gammaMultiplicativity`,
+`lFactorMultiplicativity`); the others are published but not proved.
 
 **Reduction to generators.** The pole hypothesis is not used, except through
 the existence of `T`. A `T` satisfying `RelativeGeneratedPositiveIsometry`
@@ -253,7 +258,7 @@ Weil map at `v`.
   form `RelativeWeilGroup.PresentedDeterminantAssociationStatement`:
   `FiniteRepresentation.determinantCharacter S = reciprocityCharacter c F E ω_Π`,
   where `reciprocityCharacter c F E ω_Π` is `w ↦ ω_Π(transfer c F E w)⁻¹`. As
-  in U4a-i, at finite level `τ_F` is the pointwise inverse of
+  in `RelativeIsometryOperationStatement`, at finite level `τ_F` is the pointwise inverse of
   `RelativeWeilGroup.transfer`, so two inversions occur. The published
   `RelativeWeilGroup.LocalTransferReciprocityStatement` gives
   `HasLocalTransferReciprocity v ι`: for every geometric candidate `e` of

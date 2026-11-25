@@ -1,6 +1,6 @@
 # Compact double-coset reduction for the constant-term estimate
 
-Worker 248, Task 5460. This is a derived implementation of the compact
+This is a derived implementation of the compact
 double-coset reduction in the proof of Waldspurger's Proposition II.4.5,
 printed p.262. The structural compact subgroup may differ from the subgroup
 defining the spherical function and from the subgroup preserving the height.

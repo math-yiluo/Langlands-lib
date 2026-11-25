@@ -32,4 +32,6 @@ Naturality of evaluation of the identity character identifies its unit value
 with the image of `X` in `K`. An injective field map preserves the inequality
 `X^n ≠ 1`, proved from polynomial degrees for each nonzero `n`. This yields the
 asserted infinite order in every characteristic, including over finite fields.
-This supporting result does not prove the parent no-torus unipotence theorem.
+This supporting result does not prove the no-torus unipotence theorem it serves,
+`NoTorusUnipotentStatement`, which is proved as `noTorusUnipotent` in
+`Torus.NoTorusUnipotent`.

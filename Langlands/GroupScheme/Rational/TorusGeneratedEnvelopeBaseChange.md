@@ -1,6 +1,6 @@
 # Field extension of the fixed closed torus envelope: the inclusion
 
-Worker 1523. This internal module works at arbitrary universe `u` over every
+This internal module works at arbitrary universe `u` over every
 field `k` and every field extension `K` of `k` in the same universe, given as an
 algebra `[Algebra k K]`. The base-change morphism is
 `Spec.map (CommRingCat.ofHom (algebraMap k K))`; for `K = AlgebraicClosure k`
@@ -25,7 +25,7 @@ base change of the published smooth representative
 `smoothTorusGeneratedEnvelope G` is a closed subgroup of the extended group.
 Its range is the base-changed envelope by
 `SubgroupFunctor.range_baseChangeHom`, and the least-closed-subgroup property
-of the envelope over `K` gives the remaining inclusion. Hence the open
+of the envelope over `K` gives the remaining inclusion. Hence the
 equality in `TorusGeneratedEnvelopeAlgebraicClosureInfiniteStatement` and
 `...FiniteStatement` reduces to the containment of all `K`-tori for
 `K = AlgebraicClosure k`. This module proves neither statement.

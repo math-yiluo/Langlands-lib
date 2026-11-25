@@ -1,52 +1,15 @@
 # Étale-cohomology premises of the cohomological branch: audit of the Stacks and FAG sheaf libraries
 
-Worker 22 and Worker 19, 17–18 November 2026. This report implements Task 7360
-(`e55cd2a2-2721-4a19-9ee9-df0f93065133`, revision 1), an audit for the operator's
+This report, dated 17–18 November 2026, is an audit for the
 plan note `operator-external-inputs-plan-2026-11-16` (its Sections 4.1, 3.2 and
-5.2–5.5). The work was divided as follows: Worker 22 wrote the premises and their
-consumers (Section 2), the Stacks repository (Sections 4 and 7), and generic base
-change (Section 6). Worker 19 wrote the FAG repository (Section 5) and the
-co-import question (Section 8). The recommendation (Section 9) is joint. After
-the first review, Worker 22 added Section 2.4 and the statements file, and
-revised the coefficient scope, the Galois-action comparison and the bridges in
-Sections 4, 5.2–5.5 and 6. After the second review, Worker 22 corrected the
-Stacks union sizes (Section 7.1). After the third review, Worker 19 added FAG's
-form of generic base change over a field, its Galois-point results over a
-field, and its inertia results (Sections 5.3–5.6, 6 and 9, and Sections C.5–C.7
-of the statements file), and the Stacks inertia results in bridge B4. After the
-fourth review, Worker 19 added FAG's smooth-source form of generic base change,
-its stalk formula for higher direct images (Stacks 03Q9) and its description of
-the strict henselization of a field (Sections 5.3–5.5, C.8–C.9 of the
-statements file). Worker 19 also regenerated every closure, every scan and the
-list of shared names with an import parser that reads import commands wrapped
-across lines (Sections 5.6, 7.1 and 8, and the evidence files). After the
-fifth review, Worker 19 added results that earlier versions counted among the
-missing work. On the Stacks side these are 09YQ on the full small étale sites
-and the identification of compactly supported with ordinary cohomology for a
-proper scheme (Sections 4.2–4.4). On the FAG side these are the limit cone over
-finite subextensions, 09YQ for `Sheaf.H`, the composition rule for its pullback
-maps, the factorization of a geometric point through its strict localization,
-the bijectivity of the cospecialization map, and the three comparisons of its
-cohomology groups (Sections 5.2–5.6 and 9, and Sections B.7–B.8 and C.10–C.11
-of the statements file). Worker 19 also switched the FAG line counts to counts
-of newline characters, as for Stacks. After the sixth review, Worker 19 added
-further results of this kind. On the Stacks side: 09YQ for the base change to
-any algebraic extension, which gives a limit route through the Library's own
-action without separability; spreading out of a smooth proper morphism with no
-fixed relative dimension; descent of one locally constant sheaf to a stage
-(0GL2); and the change of coefficient universe for abelian étale cohomology
-(Sections 4.1, 4.2, 4.4, 7.1 and 9, and Sections B.9–B.11 of the statements
-file). On the FAG side: the universal property of the strict localization and
-the germ formulas of its two specialization maps (bridge F5, Sections 5.5, 5.6
-and 9, and Section C.12). The companion list of shared names now states that
-both repositories pin the same Lean and Mathlib. After the seventh review, Worker 19
-replaced the arithmetic localization, which earlier versions listed as missing work, by an
-assembly of the Library's own number-field spreading theorems (bridges B3 and F4, Section
-A.5 of the statements file). Worker 19 also stated the change of coefficients and base that both
-libraries' specialization theorems require (B3, F4), and added Stacks' composition rule for
-its cohomology maps (B2, Section B.12). The stalk route of F3 is now limited to separable
-closures. No port and no dependency was started. The premises remain premises until the operator
-decides.
+5.2–5.5). Section 2 gives the premises and their consumers, Sections 4 and 7
+the Stacks repository, Section 5 the FAG repository, Section 6 generic base
+change, Section 8 the co-import question and Section 9 the recommendation. The
+evidence file `statements.md` gives the full statements: the Library's premises
+and its number-field spreading theorems (Part A), Stacks (Part B) and FAG
+(Part C). No port and no dependency was started. The Library proves none of the
+premises of Section 2 (checked against the Library as it is now); it has since
+taken in the two Stacks tiers as the copies `StacksCore/` and `StacksFrontier/`.
 
 **Verdict.**
 
@@ -123,7 +86,8 @@ decides.
    the same names, and for at least 113 of them Lean rejects the import whatever
    the statements (Section 8). The final theorem of the project imports both
    branches. Of the 7,275 modules in the FAG premise closure, all but 19 lie
-   in the closure that Task 7342 needs for Laumon's theorem.
+   in the closure of the five FAG modules that Laumon's theorem needs (the Laumon
+   roots, Section 5.6).
 6. *Recommendation* (Section 9). If FAG becomes the sheaf library for Laumon's
    theorem, as the plan note proposes, take the premises from FAG as well: one
    sheaf library, as a dependency at a common pin, with the bridges of
@@ -138,15 +102,14 @@ decides.
 | AxiomMath/Stacks | `https://github.com/AxiomMath/Stacks`, commit `c496df0d9beea9deaeabcea8492605f9a0a2313b` (committed 2026-11-10; the head on 17 November 2026), registered literature `axiommath-stacks-c496df0` (the GitHub source archive at the pin, SHA-256 `486b8562ef869c010549440faf498768eacc127c7507dd63d69702df54fa845c`, extracted). Apache-2.0 (`LICENSE`). Lean `v4.35.0`, Mathlib `v4.35.0` = `56a005855ea17e0b0958f73ec801ae140b0a1679`. Tiers: `StacksCore` (reviewed upstream) and `StacksFrontier` (AI-written and marked unreviewed upstream); 64,215 Lean files, all in the module system. |
 | formal-arithmetic-geometry/weil-conjectures (FAG) | commit `a25955cde4f85f67bef3149a6efc3efe20c22132`, registered literature `formal-arithmetic-geometry-weil-conjectures-a25955c`. Apache-2.0. Lean 4.35.0, Mathlib `56a0058` (Section 5.1). |
 | Library compared | commit `fcb85a7ef43356fec01e6ccf1605f08568c08cb0`. At the later Library commits `8aede86c1ec386cf08cfb29e80ce3c58a3239cd8` and `f050c0b1b525624bc32c1e7c25a8d2841bb2d4e0`, the 24 Library files cited here are byte-identical, and each premise name occurs in the same set of `*.lean` files. |
-| Lean environment for the compiles | `5c94c648-e8dc-4002-a50a-071ebf3f6096`: Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435` |
+| Lean environment for the compiles | Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435` |
 | Plan note | registered literature `operator-external-inputs-plan-2026-11-16` |
 
 Both upstream heads equalled these pins when the audit began, on 17 November
-2026. Worker 22 read Stacks in a full clone at the pin and Worker 19 in a
+2026. Stacks was read in a full clone at the pin and in a
 depth-1 checkout. The registered copy has the same tracked files as the clone.
 Stacks file paths in this note are relative to its root; Section 4 omits a
-common prefix, which it states. FAG was read in the registered copy and in Worker 19's
-checkout. Neither executor ran external code outside the project's Lean service.
+common prefix, which it states. FAG was read in the registered copy and in the checkout. No external code was run outside the project's Lean service.
 
 Evidence files, in [`etale-premises-sheaf-libraries-evidence/`](etale-premises-sheaf-libraries-evidence/):
 
@@ -157,9 +120,9 @@ Evidence files, in [`etale-premises-sheaf-libraries-evidence/`](etale-premises-s
   the complete unified diff of the 30 edited files.
 - [`fag-scan-report.md`](etale-premises-sheaf-libraries-evidence/fag-scan-report.md):
   the method of the FAG closures and scans, the closure table, every hit and
-  `sorry` site, the 19 premise modules outside Task 7342's closures, the
-  closures of the twelve modules cited after the third and fourth reviews and
-  of the nine cited after the fifth, and the focused FAG compile with its 70 failed modules (Section 5.6).
+  `sorry` site, the 19 premise modules outside the Laumon closures, the
+  closures of the twelve modules cited for statements C.5–C.9 and
+  of the nine further cited modules, and the focused FAG compile with its 70 failed modules (Section 5.6).
 - [`co-import-name-clashes.md`](etale-premises-sheaf-libraries-evidence/co-import-name-clashes.md):
   the 332 declaration names that both closures declare, with the modules on each
   side, Lean's rule for duplicate imports and the 113 certain clashes
@@ -170,8 +133,8 @@ Evidence files, in [`etale-premises-sheaf-libraries-evidence/`](etale-premises-s
   and of every external theorem compared in Sections 4 and 5, each with the
   namespaces, variables and local instances in scope at its line.
 
-These are unreviewed development records. Publishing this note does not accept
-any external declaration as Library mathematics.
+These are development records. This note does not make any external
+declaration Library mathematics.
 
 ## 2. The premises and their consumers (item 1)
 
@@ -274,12 +237,9 @@ We searched every `*.lean` file of Library `fcb85a7e` for each name.
 | `HarrisCMCohomologyUnramifiedStatement` | none by name. Its pointwise content is the hypothesis `hu : ∀ r, IsUnramifiedAt … ((cohomologyAction degree).obj r)` of `cmHarrisAdicCohomology_isUnramifiedAt` (`HarrisTaylorCMAdicGaloisCohomology.lean:186`), which the statement implies for every `w ∉ S`. |
 | `GaloisCohomologySmoothStatement`, `GaloisCohomologyGoodReductionStatement`, `GaloisCohomologyUnramifiedStatement`, `HarrisCMCohomologyFiniteStatement`, `HarrisCMCohomologyStatements`, `HarrisCMPrimeToGaloisSmoothStatement` | none |
 
-**Task 6698.** Task 6698 (`cd19dd55-136e-42e9-b062-5a23b2c7a6b2`) reduces Harris
-1998, Theorem 1.2 to named inputs. On 17 November 2026 it was still `ready`,
-with no executor. Its publishers are Worker 514 and Worker 619. It has published
-no names yet. This report asks it to cite the names above unchanged. Worker 22
-sent this request, with the full list of names, to its publisher Worker 514 on
-17 November 2026. Nothing here renames a premise.
+**The reduction of Harris's Theorem 1.2.** A reduction of Harris 1998,
+Theorem 1.2 (cuspidal existence) to named geometric inputs should cite the
+names above unchanged. Nothing here renames a premise.
 
 ### 2.4 The level-colimit smoothness statements
 
@@ -846,8 +806,8 @@ The general premises do not include finiteness, so 0GLH serves only
   `StacksFrontier/RingTheory/Invariant/StrictHenselizationInertiaEmbedding.lean:72`,
   `:91`); likewise `K^h = L^D` for the decomposition group
   (`DecompositionFixedField.lean`). The passage from these global groups to the
-  inertia subgroup of the completion was not looked for. Worker 19 added these
-  sentences after the third review; FAG's corresponding results are in F5.
+  inertia subgroup of the completion was not looked for. FAG's corresponding
+  results are in F5.
 - **B5, finiteness.** Stacks already identifies compactly supported with
   ordinary cohomology for proper `X̄_U` (Section 4.3). What remains is the
   passage from Stacks' cohomology to the Library's (B1) with the change of
@@ -870,7 +830,7 @@ change is not in Stacks: `StacksFrontier/EgaSgaIndex/SGA4Half.lean` lists only T
 ### 5.1 Pin, licence, reading copy
 
 Commit `a25955cde4f85f67bef3149a6efc3efe20c22132`, registered as literature
-`formal-arithmetic-geometry-weil-conjectures-a25955c` by Worker 619 (Task 7342). Apache-2.0
+`formal-arithmetic-geometry-weil-conjectures-a25955c`. Apache-2.0
 (`LICENSE` at the root). `lean-toolchain` Lean 4.35.0; `lakefile.toml` requires Mathlib
 `56a005855ea17e0b0958f73ec801ae140b0a1679` and sets `warn.sorry = false`,
 `backward.isDefEq.respectTransparency = false`, `maxSynthPendingDepth = 3`. 26,800 Lean files:
@@ -938,15 +898,12 @@ in scope. The table states only the hypotheses and what differs from the Library
 | `HarrisCMCohomologyFiniteStatement` (SGA 4 XIV 1.2) | `AlgebraicGeometry.Etale.isIso_homology_derivedBaseChangeMapPlus_of_isProper` (`SixFunctors/Etale/Derived/Finiteness/Proper.lean:205`); also `isConstructibleSheaf_homology_rightDerivedLowerStar_of_isProper` (`:179`) | `Λ : Type (u+1)` finite, killed by an integer invertible in the field `k`; `f : X ⟶ S` proper, `S` of finite type over `k`, a bound `d` on the dimension of geometric fibres, `F` constructible (`IsConstructibleSheaf`); conclusion includes that `Rᵠa_{s*}(i_s^* F)` on `Spec Ω` is a finite sheaf (`IsFiniteSheaf`: finitely generated stalks), for `Ω` algebraically closed. For `X̄_U → Spec F̄` this gives finiteness of `Hᵠ(X̄_U, B_r)` once `R = HarrisCoefficientIntegers K p` is replaced by the finite ring `R/m^r R` (or `ℤ/m^r`), `B_r` is shown constructible in FAG's sense, and the dimension bound is supplied. The compact-support form `finite_compactlySupportedCohomology` (`Finiteness/CompactSupport.lean:157`) needs finite Tor amplitude and is not the right tool for `B_r`. |
 | `GaloisCohomologyUnramifiedStatement` (SGA 4½, Th. finitude 1.9) | Two forms over a base of finite type over a field. **Open immersion:** `AlgebraicGeometry.Etale.exists_hasConstructibleDirectImageBaseChangeOn` (`SixFunctors/Etale/Derived/Finiteness/Deligne.lean:410`), with the property `HasConstructibleDirectImageBaseChangeOn` (`…/Finiteness/Deligne/Defs.lean:56`); its case `S = Spec k` is `boundedConstructible_rightDerivedLowerStar_of_isOpenImmersion_of_field` (`Deligne.lean:446`). **Smooth source:** `AlgebraicGeometry.Etale.smoothGenericDirectImage` (`Deligne.lean:342`), which proves the statement `SmoothGenericDirectImage` (`…/Deligne/Statement.lean:110`) with the property `HasDirectImageBaseChangeOnPlus` (`…/Deligne/Plus.lean:70`); FAG derives it (`Deligne.lean:298`) from the prime-field form `exists_nonempty_open_smooth_directImage_lisse_baseChange` (`AlgebraicGeometry/SmoothGenericDirectImage.lean:123`) | Statements C.5 and C.8. The site is the Library's. Common hypotheses: `Λ : Type (u+1)` finite, with `HasInvertibleExponent Λ S` (some `n > 0` with `n = 0` in `Λ` is a unit on `S`); `S` integral, locally of finite type and quasi-compact over a field `k`. *Open-immersion form:* `fY : Y ⟶ S` locally of finite type and quasi-compact; `j : X ⟶ Y` an open immersion; `F` a constructible sheaf on `X`. Conclusion: a nonempty open `U ⊆ S` such that for every noetherian `T` with a morphism `t : T ⟶ S` whose image lies in `U`, and every base change `j_T : X_T ⟶ Y_T` of `j` along `T ×_S Y ⟶ Y`, the complex `R(j_T)_*(g'^*F)` is bounded constructible and the derived exchange map `Lg^* Rj_*F ⟶ R(j_T)_* Lg'^*F` is an isomorphism. *Smooth-source form:* `a : X ⟶ S` smooth, separated and quasi-compact; `F` a finite locally constant sheaf on `X` (`IsFiniteLocallyConstantSheaf`). Conclusion: the same property with `Y = S`, `fY = 𝟙 S` and `j = a`, for `F` placed in degree 0 of `D⁺`: a nonempty open `U ⊆ S` such that for every noetherian `T` and `t : T ⟶ S` with image in `U`, the complex `R(a_T)_*(g'^*F)` is bounded constructible and the exchange map `t^* Ra_*F ⟶ R(a_T)_* g'^*F` is an isomorphism. For a sheaf in degree 0 the two properties agree (`hasConstructibleDirectImageBaseChangeOn_iff`, `Plus.lean:94`). The smooth-source form applies to morphisms that are not open immersions, for instance the projection of the affine line over `S`; FAG uses it as the smooth step in the proof of the open-immersion form. Its prime-field form has coefficients `ULift (ZMod ℓ)` with `ℓ ≠ char k`, and also states that the cohomology sheaves of the direct image are finite locally constant over `U`. Deligne's theorem (SGA 4½, Th. finitude 1.9, printed p. 236, PDF p. 275; setting on printed p. 233, PDF p. 272) is for a noetherian `S`, schemes `X` and `Y` of finite type over `S`, an `S`-morphism `f : X → Y`, and a constructible sheaf `F` of `A`-modules on `X`, with `A` left-noetherian and killed by an integer invertible on `S`. It gives a dense open `U` of `S` over which the `Rⁱf_*F` are constructible and zero for all but finitely many `i`, and their formation commutes with every base change `S' → U`. For `S` the spectrum of a field, `U = S`. FAG's forms replace `f` by an open immersion, or by a smooth, separated, quasi-compact source with finite locally constant coefficients. They allow base changes from noetherian `T` only, and need a field below `S`. The premise's coefficients are a finite `R`-module `M` with `R : Type u`, and its classical proof applies the theorem to a model of `X` over an open of `Spec 𝒪_K`. Such an open has mixed characteristic and is not a scheme over a field, so neither form applies to it. Over `S = Spec K` the only nonempty open is `Spec K` itself. There both forms give bounded constructibility of the direct image and its base change to every noetherian `K`-scheme, and nothing about places. So FAG does not give this premise. `TraceFormula/GenericBaseChange.lean` is a different statement: base change along a product projection `X × U → X × Y` over a field (blueprint lemma, `ℚ̄_ℓ` coefficients). |
 
-Earlier versions of this table missed several FAG results. The open-immersion form of
-generic base change and the Galois-module API over a field were added after the third
-review. The smooth-source form, the stalk formula 03Q9 and the strict henselization of a
-field were added after the fourth. After the third review Worker 22 searched the registered
-FAG copy for every file that mentions `galoisPoint`, `etaleSheafEquivDiscreteModule` or
+The registered
+FAG copy was searched for every file that mentions `galoisPoint`, `etaleSheafEquivDiscreteModule` or
 `etaleSheafEquivDiscreteContinuousRep`. There are twelve such files, and all concern sheaves
 on the spectrum of a field: Galois cohomology of fields, cohomological dimension, the units
 sheaf, the comparison with larger geometric points, and stalks over function fields of
-curves. After the fourth review Worker 19 searched the checkout for every file that
+curves. The checkout was searched for every file that
 mentions `HasConstructibleDirectImageBaseChangeOn`, `HasDirectImageBaseChangeOnPlus` or
 `SmoothGenericDirectImage` (either capitalization). These are `Deligne.lean`, the 19
 modules of its proof under `Derived/Finiteness/Deligne/`, the root module (which imports
@@ -1020,18 +977,18 @@ closures are large.
 
 ### 5.6 Item 5: reuse-rule facts for FAG
 
-Worker 19 computed the closures with a script that reads source text only: imports parsed
+The closures were computed with a script that reads source text only: imports parsed
 from the headers of the module files, closure inside the repository (`WeilConjectures/*` and
 `Comparator/*`), comments and string literals blanked before the text scan. The method, every
 hit and the full lists are in
 [`fag-scan-report.md`](etale-premises-sheaf-libraries-evidence/fag-scan-report.md). The
-figures below are from a second run, made after the fourth review. The first run read each
+figures below are from a second run. The first run read each
 header line by line, so it missed an import command wrapped across lines and every later import
 of the same file. 31 FAG files and 1,161 Stacks files have such wrapped imports. The second run
 reads the header as a token sequence. It enlarged the premise closure from 7,255 to 7,275
-modules and the union of the Task 7342 closures from 16,814 to 16,839. The earlier figures are
+modules and the union of the Laumon closures from 16,814 to 16,839. The earlier figures are
 in brackets in the scan report. Lines are counts of newline characters, as for Stacks in
-Section 7.1. Before the fifth review the FAG line figures counted one more line per file, for
+Section 7.1. An earlier count of the FAG lines counted one more line per file, for
 example 103,409 instead of 102,942 for the 467 modules of `CohomologyLimit`. The module
 counts are unaffected.
 
@@ -1043,19 +1000,19 @@ counts are unaffected.
 | `SixFunctors.Etale.Derived.Finiteness.Proper` | 7,050 | 1,204,390 | 1,569 | 0 |
 | `AlgebraicGeometry.Sites.CohomologyLimit` | 467 | 102,942 | 603 | 0 |
 | union of the five (premise roots) | 7,275 | 1,252,455 | 1,578 | 0 |
-| Task 7342 roots (`TraceFormula.Specialization.NearbyFiniteness`, `SixFunctors.NearbyCycles.GaloisAction`, `FourierTransform.Inversion`, `WeilSheaf.FourierInversion`, `WeilSheaf.WeilFourierInversion`) | 14,545; 13,484; 8,460; 16,818; 13,533 | | | 11; 11; 1; 14; 13 |
-| union of the five Task 7342 roots | 16,839 | 3,494,755 | 1,935 | 17 |
+| Laumon roots, the FAG modules that Laumon's theorem needs (`TraceFormula.Specialization.NearbyFiniteness`, `SixFunctors.NearbyCycles.GaloisAction`, `FourierTransform.Inversion`, `WeilSheaf.FourierInversion`, `WeilSheaf.WeilFourierInversion`) | 14,545; 13,484; 8,460; 16,818; 13,533 | | | 11; 11; 1; 14; 13 |
+| union of the five Laumon roots (the Laumon closures) | 16,839 | 3,494,755 | 1,935 | 17 |
 | `Statement` (headline Weil conjectures) | 17,339 | 3,610,380 | 1,991 | 14 |
 | whole repository (`WeilConjectures`, `Statement`) | 26,796 | 5,482,914 | 2,186 | 209 |
 
-The union of the five Task 7342 roots contains all but 19 of the 7,275 premise
+The union of the five Laumon roots contains all but 19 of the 7,275 premise
 modules. The 19 are `AlgebraicGeometry.Sites.CohomologyLimit` (09YQ) and fifteen
 modules under it (an Ext resolution, étale and semi-simplicial hypercovers,
 hypercover descent, limits of upper-star sections, `Sites.LocallyExact`), and
 the three `BaseChangeTheorems` modules `Smooth`, `SmoothProperLocallyConstant`
-and `SmoothProperSpecialization`. They are the same 19 modules with both parsers. Worker 22
-made the first count from Worker 19's module lists, Worker 19 checked it, and both recounted
-it after the fourth review. The scan report names all 19.
+and `SmoothProperSpecialization`. They are the same 19 modules with both parsers. The
+count was made from the module lists, checked, and recounted
+with the second parser. The scan report names all 19.
 
 In the premise closures there is no `sorry`, `admit`, axiom declaration, `sorryAx`,
 `native_decide`, `decide +native`, `debug.skipKernelTC`, `ofReduceBool`, `implemented_by`,
@@ -1067,22 +1024,21 @@ tactic adds theorem declarations with `addDecl (.thmDecl …)` (kernel-checked) 
 `IO.Ref` (`initialize`). A `sorry` site in a closure does not mean that a root depends on it (the
 headline closure contains 14, which the README says the main theorem does not use; e.g.
 `WeilSheaf/SmoothPurity.lean:298` is documented as unused); only `#print axioms` after a build
-settles it, and `warn.sorry = false` hides the warnings. Task 7342 received the first run's
-data.
+settles it, and `warn.sorry = false` hides the warnings.
 
-**Modules cited after the third and fourth reviews.** The same script was run on the twelve
-modules that Sections 5.3 and 5.4 now cite (the scan report's section "Modules cited after the
-third and fourth reviews" has the table and the module lists). The closure of
+**Modules cited for statements C.5–C.9.** The same script was run on the twelve
+modules that Sections 5.3 and 5.4 cite (the scan report's section "Modules cited for
+statements C.5–C.9" has the table and the module lists). The closure of
 `SixFunctors.Etale.Derived.Finiteness.Deligne` (FAG's generic base change over a field, both
 forms) has 8,230 modules, 979 of them outside the premise closure and none outside the union
-of the premise and Task 7342 closures. The module of the prime-field smooth-source form,
+of the premise and Laumon closures. The module of the prime-field smooth-source form,
 `AlgebraicGeometry.SmoothGenericDirectImage`, lies inside that closure.
 `AlgebraicGeometry.Sites.GaloisModule` (81 modules),
 `AlgebraicGeometry.GeometricFrobenius` (4), `FundamentalGroup.DecompositionGroup` (68),
 `AlgebraicGeometry.FiniteLocallyConstantEtale` (113) and
 `AlgebraicGeometry.Sites.StrictHenselizationField` (5) lie inside the premise closure, and so
 does FAG's 03SI, `SixFunctors.Etale.UpperLowerStar.TopologicalInvariance`. The
-other modules reach slightly beyond the union of the premise and Task 7342 closures; the
+other modules reach slightly beyond the union of the premise and Laumon closures; the
 second number counts the modules outside it: `RingTheory.InertiaIndEtale` (37 modules, 6
 outside), `ConstructibleSheaf.LowerStarSpecialization` (310, 2 outside),
 `EtaleCohomology.Purity.RealSheaves.BoundaryStalk` (4,051, 27 outside),
@@ -1092,17 +1048,17 @@ Galois automorphisms of a geometric fibre,
 `AlgebraicGeometry.EtaleSheafDiscreteContinuousRep` (97, 4 outside). The roots of route (ii)
 of F3 (`StalkFormula`, `StrictHenselizationField`, `GaloisModule` and
 `EtaleSheafDiscreteContinuousRep`) together have 987 modules, 6 of them outside the union of
-the premise and Task 7342 closures. All twelve roots together with the five premise roots
+the premise and Laumon closures. All twelve roots together with the five premise roots
 have 8,449 modules, 68 of them outside that union. None of these closures has a `sorry` site.
 Their other hits are `run_tac` blocks inside proofs (33 in the `Deligne` closure: the six
 above and 27 others, which were not read one by one), the two `lia` macros above, and
 `set_option backward.…` lines.
 
-**Modules cited after the fifth review.** Nine more roots are cited for bridges F3 and F5 and
+**Nine further cited modules.** Nine more roots are cited for bridges F3 and F5 and
 for the comparisons of Section 5.2 (the scan report's section of the same name has the
 Mathlib and scan columns). The table gives the number of repository modules in the
 closure, its lines, and the numbers of modules outside the premise closure (P) and outside the
-union of the premise and Task 7342 closures (P ∪ T).
+union of the premise and Laumon closures (P ∪ T).
 
 | Root (`WeilConjectures.…`) | Modules | Lines | Outside P | Outside P ∪ T |
 |---|---|---|---|---|
@@ -1123,11 +1079,11 @@ these nine have 8,550 modules (1,539,264 lines), 70 of them outside P ∪ T. Wit
 `CondensedModelFiniteLevelColimit`, which only exports the cone for an algebraic closure, they
 have 8,466 modules (1,515,233 lines), 69 outside. None of the nine closures has a `sorry`
 site. `ConstantCohomologyExt` has the six `run_tac` blocks and two macros of the premise
-closure, and the union has the 33 `run_tac` blocks of the `Deligne` closure. Worker 22
-recounted, with separate tools, the nine module counts, the counts outside P ∪ T and both
-unions with their lines, and found the same values.
+closure, and the union has the 33 `run_tac` blocks of the `Deligne` closure. The nine
+module counts, the counts outside P ∪ T and both unions with their lines were recounted
+with separate tools, with the same values.
 
-**Modules cited after the sixth review.** Two more roots are cited for bridge F5 (statements
+**Two modules cited for bridge F5.** Two more roots are cited for bridge F5 (statements
 C.12). The same script was used, and the scan report has a section of the same name:
 
 | Root (`WeilConjectures.…`) | Modules | Lines | Outside P | Outside P ∪ T |
@@ -1140,10 +1096,9 @@ With them the union of all cited FAG roots and the premise roots has 8,553 modul
 The germ formulas cited in F5 are in modules already counted (`Cospecialization`,
 `LowerStarSpecialization`, `BoundaryStalk`).
 
-**Focused compile on the Library's pin.** Environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-(Lean 4.34.0, Mathlib `5ed2965`), entry `WeilConjectures.AlgebraicGeometry.Sites.CohomologyLimit`
+**Focused compile on the Library's pin.** Lean 4.34.0, Mathlib `5ed2965`, entry `WeilConjectures.AlgebraicGeometry.Sites.CohomologyLimit`
 with its 467 repository modules copied unchanged (byte-identical to the pin; aggregate SHA-256
-`3b91f83a…`, defined in the scan report), diagnostic `ff82cdad-732c-4940-8edb-8f8a1383d0a7`:
+`3b91f83a…`, defined in the scan report):
 **fails**. Lake built 190 modules and 70 failed with 346 errors (50 modules of
 `WeilConjectures/Mathlib` with 200 errors, 10 of `FromJoel` with 80, 10 others with 66). The
 other 207 were not built, so 346 is a lower bound. Two directly imported Mathlib modules do not
@@ -1153,9 +1108,9 @@ The other errors come from FAG's newer Mathlib: 13 unknown constants, identifier
 (such as `AlgHom.toRingHom_injective` and `CategoryTheory.End.mul_asHom`), 85 unsolved goals, 57
 failed rewrites, 31 instance failures, and 37 kernel errors, 25 of them in `FromJoel`. The scan
 report lists the 70 modules with their error counts. No edits were attempted: at this count,
-taking FAG down to the Library's pin is a port, which this task does not start. Worker
-619's function-level probe (three modules of `FourierTransform.Classical`, diagnostics
-`3be89861…`, `1e06dca9…`) compiles unchanged, which shows that the module syntax itself is not
+taking FAG down to the Library's pin is a port, which this audit does not start. A
+separate function-level probe (three modules of `FourierTransform.Classical`) compiles
+unchanged, which shows that the module syntax itself is not
 the obstacle.
 
 ## 6. Is generic base change needed? (item 4)
@@ -1204,16 +1159,16 @@ Whether FAG's proofs extend to such a base was not examined.
 ### 7.1 Closures and scans
 
 The closures follow the import commands of the module headers inside the
-repository. Lines are newline counts. Worker 19 computed the first version of
-the table with `closure.py`, stripping comments and string literals before the
-text scan, and Worker 22 recomputed the union and the two extra roots with a
-separate script. That version read each header line by line and missed import
+repository. Lines are newline counts. A first version of
+the table was computed with `closure.py`, stripping comments and string literals
+before the text scan, and the union and the two extra roots were recomputed with
+a separate script. That version read each header line by line and missed import
 commands wrapped across lines, which occur in 1,161 Stacks files (for example
 `StacksFrontier/AlgebraicGeometry/EtaleCohomology/SmoothProperHigherDirectImageLocallyConstantReduction.lean:3-25`).
-After the fourth review Worker 19 recomputed every figure with a parser that
-reads the header as a token sequence. Worker 22 independently recounted both
-unions and the rows for 09YQ, `SmallEtaleColimitUnconditional`, the action
-identification and spreading out, with the same results.
+Every figure was then recomputed with a parser that
+reads the header as a token sequence, and both unions and the rows for 09YQ, `SmallEtaleColimitUnconditional`, the action
+identification and spreading out were recounted independently, with the same
+results.
 
 | Root (`StacksFrontier.AlgebraicGeometry.EtaleCohomology.…`) | Repository modules | Mathlib modules imported directly |
 | --- | --- | --- |
@@ -1236,8 +1191,8 @@ The last two came from a root set that had `ProperBaseChange.ProperBaseChangeSta
 in place of 09YQ. That module has 51 lines and only attaches Stacks tags, so it declares no
 constants.
 
-**Roots cited after the sixth review.** Worker 19 ran the same script on the roots that Sections
-4.1, 4.2 and 4.4 now cite (statements B.9–B.11). The nine-root union and its digest were
+**Roots cited for statements B.9–B.11.** The same script was run on the roots that Sections
+4.1, 4.2 and 4.4 cite (statements B.9–B.11). The nine-root union and its digest were
 reproduced in the same run.
 
 | Root | Repository modules | Lines | Mathlib modules imported directly | Outside the nine-root union |
@@ -1284,8 +1239,8 @@ run on any premise root.
 
 ### 7.2 Focused compiles on the Library's pin
 
-Both compiles used environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean
-4.34.0, Mathlib `5ed2965`) through `lean_check` with Lake build, each on a copy
+Both compiles used Lean 4.34.0 and Mathlib `5ed2965` through the project's
+Lean checking service with Lake build, each on a copy
 in a private draft directory.
 
 1. **Sample 1.** 13 unmodified Stacks files: `StacksCore.Tactic.{EgaSgaAttribute,StacksAttribute}`
@@ -1293,8 +1248,7 @@ in a private draft directory.
    `NeighborhoodsStalksPoints.Basic`, `OpenSubgroupFixedField`,
    `SliceConstantSheaf`, `Comparison.DerivedFunctor`, `SliceAdjunctions`,
    `Sites.Modules.ExtensionByZero`, `DiscreteCochains` and
-   `Sheafification.SmallEtale{Abelian,Colimits}`. Diagnostic
-   `0f875828-7587-481f-b2e8-4bf4feca6926`: 0 errors, 0 warnings.
+   `Sheafification.SmallEtale{Abelian,Colimits}`. Result: 0 errors, 0 warnings.
 2. **Sample 2.** The full import closure of
    `StacksFrontier.AlgebraicGeometry.EtaleCohomology.{SmallEtaleModuleDerivedFunctors, ComparingBigSmall.SheafCohomology, EtaleModulesConstantRing}`.
    These root modules define `EtaleModules`, its derived functors, the
@@ -1303,15 +1257,15 @@ in a private draft directory.
    aggregate SHA-256 of the originals is `e42cb7931cd7…`; of the adapted files,
    `573f0528f88f…` (full values and per-file hashes in the manifest).
 
-| Diagnostic | Result |
+| Run | Result |
 | --- | --- |
-| `6087766b-c6d6-4ac3-9cb3-65207eb88da7` | after 21 import renames: 21 errors, 3 warnings, in 6 modules; dependants skipped |
-| `8c91693a-0c62-4331-8e7e-930720c3df18` | 13 errors in 3 modules |
-| `5ffd4ba4…` | 6 errors in 2 modules |
-| `54f4cbd5…` | 1 error |
-| `f00fa293…` | 1 error, with a heartbeat increase to 10⁶, which was then reverted |
-| `ee0dcad8…`, `a19ec4f9…` | test variants of the last fix |
-| **`f2cbf418-6153-405c-b65a-6297e58be669`** | **0 errors, 0 warnings; all 318 modules and the three roots built** |
+| 1 | after 21 import renames: 21 errors, 3 warnings, in 6 modules; dependants skipped |
+| 2 | 13 errors in 3 modules |
+| 3 | 6 errors in 2 modules |
+| 4 | 1 error |
+| 5 | 1 error, with a heartbeat increase to 10⁶, which was then reverted |
+| 6, 7 | test variants of the last fix |
+| **8** | **0 errors, 0 warnings; all 318 modules and the three roots built** |
 
 The final edit set touches 30 of the 318 files and adds 95 lines while
 removing 48. It is listed in full in
@@ -1344,9 +1298,9 @@ dependencies and disjoint module roots (`StacksCore`, `StacksFrontier`, `Stacks`
 `WeilConjectures`, `Weil`, `LeanEvalWeil`), so a Lake project can require both. One module
 cannot import the closures used here, because they declare the same names.
 
-**Shared names.** Worker 19 extracted the public declaration names from the source text of the
+**Shared names.** The public declaration names were extracted from the source text of the
 Stacks union of the seven premise roots (Section 7.1; 17,881 modules) and of the FAG union of
-the five premise roots and the five Task 7342 roots (16,858 modules). Namespaces were followed,
+the five premise roots and the five Laumon roots (16,858 modules). Namespaces were followed,
 `private` declarations skipped, and names that Lean generates (unnamed instances, projections,
 auxiliary lemmas) were not produced, so the count is a lower bound. **332 names are declared in
 both**, 286 of them in the FAG premise closure. On the FAG side 180 are in its own files, 137 in
@@ -1363,9 +1317,9 @@ be merged. The list, with the modules on each side and the method, is
 **Which of them Lean rejects.** Lean does not reject every name that two imported modules both
 declare. Lean 4.34 accepts the pair when both declarations are theorems with the same
 elaborated statement and the same universe parameter names; an instance of a
-proposition-valued class counts as a theorem. Any other pair makes the import fail. Worker 19
-confirmed the rule on test modules in the project's Lean service (diagnostics `33a977fe`,
-`9e5650a8`, `43197044`, `65c7211e` and `19b14067`, described in the evidence file). The rule
+proposition-valued class counts as a theorem. Any other pair makes the import fail. The
+rule was confirmed on five test modules in the project's Lean service (described in the
+evidence file). The rule
 also explains why Stacks can declare 35 names twice inside its own premise closure: all 35 are
 theorems, lemmas or instances. Of the 332 shared names, **113 (99 of them in the FAG premise closure)
 are rejected whatever the statements**, because on at least one side the declaration is a
@@ -1388,8 +1342,8 @@ step is under the project's control.
 ## 9. Recommendation (item 7)
 
 **Which library.** Use one sheaf library for both the cohomological branch and
-Laumon's theorem. If FAG becomes the dependency for Laumon's theorem (Task 7342;
-plan note, configuration B), take the premises from FAG too. The reasons:
+Laumon's theorem. If FAG becomes the dependency for Laumon's theorem (plan
+note, configuration B), take the premises from FAG too. The reasons:
 
 1. The project's final theorem imports both branches, and one module cannot
    import the Stacks and FAG closures together (Section 8). Two sheaf libraries
@@ -1399,7 +1353,7 @@ plan note, configuration B), take the premises from FAG too. The reasons:
    in its own project, but then the final theorem is not checked by one kernel
    in one environment.
 2. FAG's premise closure costs almost nothing beyond Laumon's: 19 of its 7,275
-   modules are outside the closure of Task 7342's roots (Section 5.6). The
+   modules are outside the closure of the Laumon roots (Section 5.6). The
    Stacks premise closures add about 17,900 modules of an unreviewed tier.
 3. FAG proves what the route needs: specialization over any base, proper and
    smooth base change, finiteness for proper morphisms, the limit theorem
@@ -1417,8 +1371,8 @@ rule for its cohomology maps; the change of coefficient universe for abelian
 the identification of the cohomology in its finiteness
 theorem with ordinary cohomology for proper schemes (Sections 4.1–4.4). Its
 coefficient ring is in `Type`, and part of it compiles on the Library's present pin. It is
-the right choice only if FAG is not adopted for Laumon's theorem, or if the
-operator accepts a renaming fork. On the Stacks route the remaining work is
+the right choice only if FAG is not adopted for Laumon's theorem, or if a
+renaming fork is accepted. On the Stacks route the remaining work is
 bridges B1–B5: on the limit route, the comparison of the Library's module
 cohomology with abelian `Sheaf.H` and its pullback compatibilities (B1), and the
 identification of the Library's operator with Stacks' maps `etaleCohomologyMapTo`,
@@ -1543,23 +1497,23 @@ bridge B3).
 Generic base change over an open of `Spec 𝒪_K` is left as a premise without a
 source. FAG's two forms over a field (Section 5.3) do not apply to it, and
 whether FAG's proofs extend to a mixed-characteristic base was not examined. If the
-operator keeps the premise, it needs its own task.
+premise is kept, it needs its own proof.
 
 ## 10. Attribution and evidence limits
 
-- Worker 22 checked the Stacks statements and their line numbers in a clone at
-  `c496df0`, and the Library statements in Library `fcb85a7e`. Worker 19 checked
-  the FAG statements at `a25955c`. After the first review, Worker 22 copied
-  every statement in `statements.md` mechanically from the registered copies of
-  both libraries and from the Library, by line range, and checked the
-  fully qualified names against the `namespace` lines in scope.
+- The Stacks statements and their line numbers were checked in a clone at
+  `c496df0`, the Library statements in Library `fcb85a7e`, and the FAG
+  statements at `a25955c`. Every statement in `statements.md` was copied
+  mechanically from the registered copies of both libraries and from the
+  Library, by line range, and the fully qualified names were checked against
+  the `namespace` lines in scope.
 - The reduction of the level-colimit statements to single levels (Section 2.4)
   and the uniform extension of the Harris coefficients (B3′, F4) are read from
   the Library's Lean statements and its `Statement.md`, not proved here.
-- After the third review, Worker 19 added Sections C.5–C.7 of
-  `statements.md` by the same method, generating the blocks by line range with
-  a script from the clone at `a25955c`, and took the Stacks inertia names in
-  B4 from the clone at `c496df0`. The FAG claims added to Sections 5.3–5.6 are
+- Sections C.5–C.7 of
+  `statements.md` were made by the same method, generating the blocks by line
+  range with a script from the clone at `a25955c`, and the Stacks inertia names
+  in B4 were taken from the clone at `c496df0`. The FAG claims of Sections 5.3–5.6 they support are
   read from these statements and from module documentation. None of the cited
   modules was compiled.
 - The absence statements of Section 5.3 (no Galois-equivariant `RΓ` and no
@@ -1567,37 +1521,37 @@ operator keeps the premise, it needs its own task.
   of the files that mention `Gal(` or `≃ₐ[`, and of the uses of
   `geometricFiberGaloisMap`. A construction under other names could have been
   missed.
-- After the fourth review, Worker 19 added Sections C.8–C.9 of `statements.md`
-  by the same method, and searched the FAG checkout for the files that mention
-  the generic base-change properties (Section 5.3). Worker 19 also regenerated
-  every closure, scan and shared-name list with the corrected import parser
-  (Sections 5.6, 7.1 and 8). Worker 22 recounted the main figures
+- Sections C.8–C.9 of `statements.md` were made
+  by the same method, and the FAG checkout was searched for the files that mention
+  the generic base-change properties (Section 5.3). Every closure, scan and
+  shared-name list was made with the corrected import parser
+  (Sections 5.6, 7.1 and 8), and the main figures were recounted
   independently, with the same results. The description of route (ii) of F3
   is read from the statements and the proof outline of
   `StalkFormula.lean`; the route was not attempted.
-- After the fifth review, Worker 19 added Sections B.7–B.8 and C.10–C.11 of
-  `statements.md` by the same method, from the copies at `c496df0` and
-  `a25955c`, and computed the closures of the newly cited roots with the same
-  script (Sections 4.2 and 5.6). Worker 22 recounted the FAG figures. The
+- Sections B.7–B.8 and C.10–C.11 of
+  `statements.md` were made by the same method, from the copies at `c496df0` and
+  `a25955c`, and the closures of the roots they cite were computed with the same
+  script (Sections 4.2 and 5.6); the FAG figures were recounted. The
   descriptions of route (i) of F3, of the field case of route (ii) and of the
   comparison in F5 are read from these statements and from the proofs that
   combine them (`FieldExtension.lean:155-176`,
   `FieldCohomologicalDimension.lean:114-127`,
   `SmoothProperLocallyConstant.lean:241-247`); none of the remaining steps was
   attempted.
-- After the sixth review, Worker 19 added Sections B.9–B.11 and C.12 of
-  `statements.md` by the same method, and computed the closures of the newly
-  cited roots with the same script (Sections 5.6 and 7.1). The limit route of
-  Section 4.2, the arithmetic localization in B3 (replaced after the seventh
-  review by the Library's own theorems), the remaining parts of B1
+- Sections B.9–B.11 and C.12 of
+  `statements.md` were made by the same method, and the closures of the roots
+  they cite were computed with the same script (Sections 5.6 and 7.1). The limit
+  route of Section 4.2, the arithmetic localization first considered for B3 (now
+  replaced by the Library's own theorems), the remaining parts of B1
   and the comparison of the two specialization maps in F5 are read from these
   statements and from the proofs that use them
   (`SmoothProperHigherDirectImageLocallyConstantReduction.lean:265-295`,
   `:474-507`; `StructureSheafComparison.lean:295-307`); none of them was
   attempted. Whether Stacks' 03FD comparison applies to Mathlib's small étale
   site was not checked.
-- After the seventh review, Worker 19 added Sections A.5 (from the Library at
-  `f050c0b1`) and B.12 of `statements.md` by the same method. The assembly of
+- Sections A.5 (from the Library at
+  `f050c0b1`) and B.12 of `statements.md` were made by the same method. The assembly of
   the smooth proper model in B3 and F4 is read from the Library's statements
   and from the proof of `exists_numberFieldSmoothConnectedModel`
   (`NumberFieldAlmostAllLocalPoints.lean:42-109`). The change of coefficients
@@ -1619,4 +1573,4 @@ operator keeps the premise, it needs its own task.
 - The bridges are estimates of what remains, read from statements. None was
   attempted.
 - The claim that the final theorem must import both branches follows the plan
-  note (§5.2, criterion 5). The operator decides the configuration.
+  note (§5.2, criterion 5). The configuration is not chosen here.

@@ -1,8 +1,5 @@
 # Finite étaleness of the actual roots-of-unity group scheme
 
-Author: Worker 306. Worker 1060 updated the proof-status paragraphs after the
-2026-10-29 documentation audit (finding P3-039).
-
 `Langlands.GroupScheme.MuFiniteEtaleStatement.{u}` is the proposition
 
 ```lean

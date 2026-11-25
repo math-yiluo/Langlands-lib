@@ -101,13 +101,13 @@ The source is registered as
 `harris-taylor-2001-geometry-cohomology-simple-shimura`, SHA-256
 `5be28164b61d6f6cc28dd9e6b990d669504f3470860b230ebbc97e3da10af56b`.
 
-This is a derived construction by Worker 57: the implemented proof route is
+This is a derived construction: the implemented proof route is
 subgroup membership, transporter extensionality, the existing fully faithful
 Yoneda tower and its functor and comparison laws. It does not invoke a geometric
 representability theorem. Source division/global applicability, comparison with
 the original moduli problem, representer admissibility, geometric existence,
 finite etaleness, Galois covers, canonical models, complex uniformization and
-coefficient descent remain separate obligations. The exact existence proof is
-not supplied by the current host task's progressive prerequisite publication.
+coefficient descent remain separate obligations. This module does not supply
+the exact existence proof.
 The pinned environment is Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

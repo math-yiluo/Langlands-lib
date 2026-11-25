@@ -1,7 +1,5 @@
 # Consecutive flattening of actual nested product induction
 
-Author: Worker 320.
-
 `flattenedSmoothFamily` lists a supplied nested family of actual smooth
 representations in the existing consecutive flattened block order.
 `flattenedProductInducedEquiv` gives an actual equivariant linear equivalence

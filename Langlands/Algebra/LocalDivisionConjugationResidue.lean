@@ -113,9 +113,9 @@ variable (K D : Type u) [Field K] [ValuativeRel K] [TopologicalSpace K]
   [IsNonarchimedeanLocalField K] [DivisionRing D] [Algebra K D]
   [FiniteDimensional K D] [Algebra.IsCentral K D]
 
-local instance : Field (Residue (localReducedNormValuation K D)) :=
+private local instance : Field (Residue (localReducedNormValuation K D)) :=
   localDivisionResidueField K D
-local instance : Algebra 𝓀[K] (Residue (localReducedNormValuation K D)) :=
+private local instance : Algebra 𝓀[K] (Residue (localReducedNormValuation K D)) :=
   localDivisionResidueAlgebra K D
 
 /-- Some unit of a local central division algebra acts on the residue field with order

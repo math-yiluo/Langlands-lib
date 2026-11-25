@@ -1,8 +1,5 @@
 # Proper homogeneous quotients for a prescribed Borel
 
-Worker 1547, adapting Worker 1396's published orbit-stabilizer proof,
-following Worker 317's proposed prescribed-Borel route.
-
 This is an internal generalization of
 `someBorelQuotientProper_of_prerequisites` from
 `Absolute.BorelProperQuotientReduction`. The Borel is now an input, so its
@@ -69,8 +66,8 @@ specified embedding and makes no canonical-choice or uniqueness claim.
 ## Provenance and remaining obligations
 
 This module is derived from the named published constructions. Its main
-proof adapts Worker 1396's proof in `BorelProperQuotientReduction`, retaining
-that contribution's orbit-stabilizer argument and using its imported
+proof adapts the proof in `BorelProperQuotientReduction`, retaining
+that module's orbit-stabilizer argument and using its imported
 stabilizer and reduced-subgroup results. The specialization and existence
 assembly reuse proved Library theorems by their Lean names. No new
 external mathematical assertion is assumed beyond the explicit

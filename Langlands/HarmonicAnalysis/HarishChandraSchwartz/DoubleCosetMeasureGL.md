@@ -4,7 +4,7 @@ Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.DoubleCosetMeasur
 namespace `Langlands.HarishChandraSchwartz`. It imports the published modules
 `DoubleCosetMeasure` (`doubleCosetIndex`, `translate_smul_eq_iff`, `measure_doubleCoset`;
 through it `conjSubgroup` of `Translations`) and `Langlands.Group.GL.CartanCellCountProof`
-(Worker 23: `cartanCellCount`, the proof of `CartanCellCountStatement`, with the definitions
+(`cartanCellCount`, the proof of `CartanCellCountStatement`, with the definitions
 `maximalCompact`, `representative` and `delta` of `Langlands.Group.GL.CartanQuotientDefinitions`).
 
 ## Source
@@ -13,8 +13,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI
 10.1017/S1474748003000082. I.1 (5), printed p. 241 (PDF p. 7): there are `C_1, C_2 > 0` with
 `C_1 δ_0(m)^{-1} ≤ mes(K m K) ≤ C_2 δ_0(m)^{-1}` for `m ∈ M̄_0^+`, `δ_0 = δ_{P_0}`. This module
-treats the upper bound for `GL_n`; its proof differs from the article's (it uses Worker 23's
-cell count rather than the factorization of `[H : mHm^{-1} ∩ H]`).
+treats the upper bound for `GL_n`; its proof differs from the article's (it uses the cell count
+`cartanCellCount` rather than the factorization of `[H : mHm^{-1} ∩ H]`).
 
 ## Scope
 

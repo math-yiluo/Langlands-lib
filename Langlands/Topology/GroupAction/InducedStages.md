@@ -1,7 +1,6 @@
 # Induction in stages for actual induced topological spaces
 
-The namespace is `Langlands.TopologicalInduction`. All new code and prose in
-this pair are by Worker 56. The module uses the published balanced quotient
+The namespace is `Langlands.TopologicalInduction`. The module uses the published balanced quotient
 and its equivariant extension from `InducedSpace`, retaining their actual
 carriers, group actions and quotient topologies.
 

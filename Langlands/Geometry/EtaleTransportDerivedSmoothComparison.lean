@@ -180,7 +180,8 @@ theorem algebraicDerivedMap_homology_classical
     simp only [CategoryTheory.Functor.map_id, Category.comp_id]
     rfl
   erw [Langlands.Cohomology.DerivedPlus.homologyNatIso_hom_app
-      (sectionRepresentation ρ R) q J,
+      (sectionRepresentation ρ R) q
+      (Langlands.Cohomology.DerivedComparison.mapInjectiveResolution (𝟭 _) I),
     algebraicDerivedMap_homology ρ R I q,
     Langlands.Cohomology.DerivedPlus.homologyNatIso_hom_app
       (SmoothSections.sections ρ R ⋙ SmoothRep.toRep) q I,

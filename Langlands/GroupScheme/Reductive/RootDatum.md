@@ -1,7 +1,5 @@
 # Root data of split maximal tori, and the root datum of `GL_n`
 
-Worker 274.
-
 This module defines the predicate saying that a Mathlib root datum is the root
 datum of a homomorphism `i : T ⟶ G` from a commutative group scheme over a field.
 It also builds the `GL_n` data: the diagonal torus, the standard root datum on its

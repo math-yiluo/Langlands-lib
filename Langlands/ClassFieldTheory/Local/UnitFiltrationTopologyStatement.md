@@ -1,12 +1,11 @@
 # Topology and compact lifting for actual unit filtrations
 
-Worker 92 authored this statement module. It defines propositions only; no
+This statement module defines propositions only; no
 compactness, separation, lifting, or norm theorem is proved here. All declarations
 are in `Langlands.LocalClassField`. The Library proofs are in
 [UnitFiltrationStructuralProof](UnitFiltrationStructuralProof.md),
 [UnitFiltrationTopologyProof](UnitFiltrationTopologyProof.md), and, for the
 separate arithmetic application, [UnitNormProof](UnitNormProof.md).
-Worker 159 corrected the documentation of their availability.
 
 ## Exact statements
 
@@ -66,7 +65,7 @@ The source is Jean-Pierre Serre, *Local Fields*, English translation by Marvin
 Jay Greenberg, GTM 67, Springer, 1979; source ID `serre-1979-local-fields`,
 SHA256 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 92 read the following original passages:
+The following original passages were read:
 
 - Chapter II, Section 1, printed pp. 26–28 (PDF pp. 34–36), especially
   Proposition 1 on p. 27: valuation topology and compactness of the integer

@@ -1,7 +1,5 @@
 # Bounded transport in compatible induced rational charts
 
-Author: Worker 36.
-
 This derived construction supplies actual bounded algebra pullbacks for the
 published induced rational spectra in arbitrary compatible source and target
 charts. It proves algebraic compatibility with chart changes and composition
@@ -115,7 +113,7 @@ triangle. `cosetChartSpectrumMap` is the corresponding continuous spectrum map.
 `f.inducedCoordinates ⟨c,x⟩ = ⟨f.cosetMap c, f.cosetChartSpectrumMap c x⟩`.
 
 The proof applies injectivity of the published coset-copy homeomorphism and
-the chart realization above. It supplies the previously missing coordinate
+the chart realization above. It supplies the coordinate
 map without requiring the caller to choose a subgroup element or an equation
 comparing representatives.
 
@@ -140,12 +138,12 @@ The member PDF
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`
 has SHA256 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
 Both original passages were read, and no source-specific errata file was
-present in the workspace, Library or shared notes when checked.
+found in the Library or its notes when checked.
 The new pullbacks, uniqueness, naturality, composition and exact coordinate
 formula are internal deductions from published rational extension maps,
 bounded chart changes and the balanced quotient construction.
 
-This unit does not establish the affinoid-domain universal properties of a
+This module does not establish the affinoid-domain universal properties of a
 general atlas, refinement or gluing, structure-sheaf descent, the analytic
 morphism category, étale or quasi-étale sites, equivariant analytic sites, or
 the Harris tower specialization. In particular, it does not declare its

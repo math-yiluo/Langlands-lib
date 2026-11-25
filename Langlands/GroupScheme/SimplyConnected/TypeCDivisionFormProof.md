@@ -7,8 +7,7 @@ Proof of `Langlands.GroupScheme.TypeCDivisionFormStatement` (module
 theorem Langlands.GroupScheme.typeCDivisionForm : TypeCDivisionFormStatement.{u}
 ```
 
-Authors: Worker 31, with Worker 161 (the split-rank input), for Task 5986
-(`8494af77-9d10-4c2f-b1cd-60dc371fb195`). The theorem's type is exactly the published statement
+The theorem's type is exactly the published statement
 at every universe `u`. It has no extra hypothesis and holds over every field, in every
 characteristic. Its axioms are `propext`, `Classical.choice` and `Quot.sound`.
 
@@ -30,15 +29,14 @@ The theorem applies the reduction `typeCDivisionForm_of_inputs` (module
 `SimplyConnected.TypeCDivisionFormReduction`) to proofs of its four inputs:
 
 1. `typeCQuasiSplitInnerForm : TypeCQuasiSplitInnerFormStatement` (module
-   `SimplyConnected.TypeCQuasiSplitInnerFormProof`, in this candidate): `G` has a quasi-split
+   `SimplyConnected.TypeCQuasiSplitInnerFormProof`): `G` has a quasi-split
    inner-form presentation whose model is `Sp_{2n}`.
-2. `symplecticInnerFormAntihermitian : SymplecticInnerFormAntihermitianStatement` (published,
-   module `SimplyConnected.SymplecticInnerFormAntihermitianProof`): every inner form of
+2. `symplecticInnerFormAntihermitian : SymplecticInnerFormAntihermitianStatement` (module `SimplyConnected.SymplecticInnerFormAntihermitianProof`): every inner form of
    `Sp_{2n}` is isomorphic to `σ.symplecticGroup H` for data as in the conclusion.
 3. `antihermitianSymplecticSplitRank : AntihermitianSymplecticSplitRankStatement` (module
-   `Quaternionic.AntihermitianSplitRankProof`, in this candidate): the split rank of
+   `Quaternionic.AntihermitianSplitRankProof`): the split rank of
    `σ.symplecticGroup H` is `σ.wittIndex H`.
-4. `typeCDistinguishedVertices : TypeCDistinguishedVerticesStatement` (published, module
+4. `typeCDistinguishedVertices : TypeCDistinguishedVerticesStatement` (module
    `SimplyConnected.TypeCDistinguishedVerticesProof`): the distinguished vertices are those
    numbered `j * degree` for `1 ≤ j ≤ σ.wittIndex H`.
 

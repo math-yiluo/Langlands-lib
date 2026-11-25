@@ -1,6 +1,6 @@
 # Covering by projective frame loci from Lefschetz's theorem
 
-This unit derives the published statement `FrameLocusCoverStatement` from two
+This module derives the published statement `FrameLocusCoverStatement` from two
 other published statements:
 
 - `CubicFieldEmbeddingStatement`: Lefschetz's embedding theorem for the cubic
@@ -48,7 +48,7 @@ because `n^(2g-2)` is positive.
    `Scheme.ΓSpecIso`. Hence `(n : K) ≠ 0`. Also `n > C`, so `n > 0`, and
    `frameSize_lt` (with `m = cubicProjectiveDimension g d`) gives the size
    hypothesis of the field theorem.
-3. The field theorem `Datum.exists_frameLocus_eq_top` (from the unit
+3. The field theorem `Datum.exists_frameLocus_eq_top` (from the module
    `FrameLocusField`), applied to the pulled-back datum `a.pullback f` and to
    `hL`, gives `ρ` with `(a.pullback f).frameLocus ρ = ⊤`.
 4. The closed point of `Spec K` therefore lies in the frame locus of

@@ -1,7 +1,5 @@
 # Integral closedness and minimal polynomials over the actual Tate algebra
 
-Author: Worker 56.
-
 The preceding unique-factorization theorem supplies integral closedness
 of the actual Tate algebra through Mathlib's rational-root theorem.
 For an actual finite algebra over this ring, finite generation proves

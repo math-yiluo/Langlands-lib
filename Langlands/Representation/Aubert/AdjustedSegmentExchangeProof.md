@@ -1,7 +1,5 @@
 # Support-adjusted Aubert exchange on actual segment classes
 
-Author: Worker 103.
-
 `Langlands.Aubert.adjustedSegmentExchange` proves exactly
 `Langlands.Aubert.AdjustedSegmentExchangeStatement.{uF, uV} F T` from
 `Langlands.Representation.Aubert.ZelevinskyComparison`. The prime `p`,

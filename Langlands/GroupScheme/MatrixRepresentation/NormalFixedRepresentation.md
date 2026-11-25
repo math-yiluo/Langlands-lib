@@ -1,7 +1,5 @@
 # Actual representations on the fixed space of a normal subgroup
 
-Worker 1228.
-
 This internal construction restricts an actual finite matrix representation to
 the full fixed subspace of a normal affine subgroup. It also computes the
 scheme-theoretic kernel under an explicit fixed-vector stabilizer hypothesis.

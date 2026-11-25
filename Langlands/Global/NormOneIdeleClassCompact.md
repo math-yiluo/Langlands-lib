@@ -94,8 +94,8 @@ the class group and Dirichlet's unit theorem.
    kernel in `IdeleClasses F` is the image of `C` under `ideleClassMap F`
    (`isCompact_ker_ideleClass`).
 
-## Authorship
+## Role
 
-Worker 1179 wrote the Lean module and this explanation for task `40747bb3` (finite volume of
-the norm-one adelic rational quotient). It is the compact-torus input for the multiplicative
-group and for the central part of the reductive case.
+The module was written for the finite volume of the norm-one adelic rational quotient.
+It is the compact-torus input for the multiplicative group and for the central part of the
+reductive case.

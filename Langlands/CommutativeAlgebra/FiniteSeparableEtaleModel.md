@@ -50,7 +50,7 @@ k tensor (s tensor a) maps to
 algebraMap(K,L)(algebraMap(R[1/r],K)(s) * k) * a, where a is included in L
 through the original subalgebra.
 
-This unit constructs a domain finite free etale algebra with its specified
+This module constructs a domain finite free etale algebra with its specified
 generic fibre. It does not establish the scheme-level finite etale
 surjectivity, the field extension splitting the geometric components of a
 given generic fibre, or the nonreduced irreducible-base case of Stacks 0551.

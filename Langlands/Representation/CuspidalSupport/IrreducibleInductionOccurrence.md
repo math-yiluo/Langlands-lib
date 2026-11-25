@@ -1,6 +1,6 @@
 # Actual cuspidal occurrences and irreducible induction
 
-Worker 1216. This internal helper connects the published actual cuspidal
+This internal helper connects the published actual cuspidal
 constituent theorem with normalized first adjointness. It is intended for the
 local identification step of adjacent cuspidal Jacquet interchange.
 
@@ -50,15 +50,10 @@ The admissibility adapter used here depends on the normalized Jacquet
 admissibility theorem; the other finite-length conclusions in its module are
 not used by this proof.
 
-Neither the closure nor the implemented proof uses the conclusions or proof
-successors of analytic segment classification
-(`aca8805b-054f-4d56-8045-12db7f623404`), multisegment exhaustion
-(`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head existence
-(`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), ordered quotient coverage
-(`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), tempered block uniqueness
-(`52e97845-36bb-457d-b76f-70753334b88c`), square-integrable Langlands
-classification (`1cb45da2-7007-4351-a694-594fb148b8d1`), square-integrable
-exhaustion (`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), or regular exhaustion
-(`bf433f0a-921a-428c-b0c0-6475438125ac`). In particular, the local occurrence
+Neither the closure nor the implemented proof uses the conclusions or
+proofs of analytic segment classification, multisegment exhaustion,
+ordered strong-head existence, ordered quotient coverage, tempered block
+uniqueness, square-integrable Langlands classification, square-integrable
+exhaustion, or regular exhaustion. In particular, the local occurrence
 is upgraded by the already published cuspidal constituent theorem and concrete
 adjointness, with no disjoint-support decomposition or classification input.

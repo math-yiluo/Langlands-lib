@@ -6,7 +6,7 @@ Module `Langlands.Representation.Derivative.LeftMixedProductZeroRank`, namespace
 This module constructs the `GL` rank `k = 0` case of item 1 of
 `Langlands.Derivative.LeftMixedProductDerivative` (BZ77 Corollary 4.14(a)), for an
 arbitrary smooth representation `A` of `GL_0`, not only the unit. It is an ingredient
-for the proof task `7e19f753` (BZ77 4.14(a) in all `GL` ranks). It does not prove the
+for the proof of BZ77 4.14(a) in all `GL` ranks (`LeftMixedProductDerivativeProof`). It does not prove the
 positive-rank case, the vanishing clause `LeftMixedProductDerivativeVanishing`, or the
 target theorem itself. For `k = 0` the vanishing clause has no instances, because
 `r + 1 < i ≤ 0 + r + 1` is impossible.
@@ -37,7 +37,7 @@ T.leftMixedProductFunctor 0 r ⋙
 `GL` rank cast and binary normalized product, at the same universes. A private
 development file checked this: for `h : LeftMixedProductDerivativeIso F T`,
 `h ψ 0 r i hi = ⟨leftMixedProductZeroRankIso T ψ r i hi⟩` holds by `rfl`. That check
-is not part of this candidate. Every order `1 ≤ i ≤ r + 1` is covered, including
+is not part of this module. Every order `1 ≤ i ≤ r + 1` is covered, including
 `i = 1`, the top order `i = r + 1` (where the derivative lives on `GL_0`), and `r = 0`.
 
 In words: for every `A` on `GL_0` and `B` on `P_(r+1)`, the order-`i` derivative of
@@ -60,7 +60,7 @@ trivially. The carrier of `A` is still an arbitrary vector space.
   `(A, B) ↦ (B ∘ leftUnitProjection r, ULift.{uF} A)`: a swap of factors, followed by
   the pullback `MixedProductTensor.pullbackFunctor (leftUnitProjection r)` on `B` and
   `MixedProductTensor.liftFunctor` on `A`.
-- `leftZeroModel T r` is `leftZeroInput T r` followed by Worker 969's
+- `leftZeroModel T r` is `leftZeroInput T r` followed by
   `ZeroRankTensor.tensorFunctor` on `P_(0+r+1)` and `GL_0`. On objects it is
   `(B ∘ leftUnitProjection r) ⊗ ULift A`, with `P_(0+r+1)` acting on the first factor
   only.
@@ -130,7 +130,7 @@ arbitrary `A`.
 
 ### 4. The derivative commutes with the inert factor (Lean lines 249–295)
 
-- `tensorDerivativeCastIso T ψ r i hi` pastes Worker 969's
+- `tensorDerivativeCastIso T ψ r i hi` pastes `ZeroRankTensor`'s
   `mirabolicDerivativeOfOrderTensorIso` (the order-`i` mirabolic derivative commutes
   with `tensorFunctor`) and `generalLinearRankCastTensorIso` (so does the `GL` rank
   cast) with `ZeroRankTensor.prodCommIsoComp`. The result is that the cast
@@ -174,20 +174,20 @@ the `GL_0` factor separately. With its convention `P_0 = 0`, the case `k = 0` is
 degenerate there. The construction here is an internal argument and does not
 reproduce a source passage. The only literature input is the commutation of the
 localization functors `r_{U,θ}` with tensoring by a representation of another group,
-BZ77 Proposition 1.9(g) (printed p.445, PDF p.6). Worker 969's `ZeroRankTensor` module
+BZ77 Proposition 1.9(g) (printed p.445, PDF p.6). The `ZeroRankTensor` module
 proves this commutation in Lean. Everything else is a canonical identification
 (evaluation at `1`, the trivial twist, the swap `a ⊗ b ↦ b ⊗ ULift.up a`, and identity
 maps after substituting rank equalities). This construction uses no part of
 Proposition 4.13(b) and no proof of
-`Langlands.Derivative.MirabolicProductMinusCompatibilityStatement`. Following the
-task's suggested route (step 4), it replaces the coinvariant computation by the
+`Langlands.Derivative.MirabolicProductMinusCompatibilityStatement`. It replaces
+the coinvariant computation by the
 tensor-commutation isomorphisms of `ZeroRankTensor`.
 
 ## Dependencies and independence audit
 
 Direct imports:
 
-- `Langlands.Representation.Derivative.ZeroRankTensor` (Worker 969, published in
+- `Langlands.Representation.Derivative.ZeroRankTensor` (published in
   the Library), from which this module uses `tensorFunctor`, `prodCommIsoComp`,
   `mirabolicDerivativeOfOrderTensorIso` and `generalLinearRankCastTensorIso`;
 - `Langlands.Group.GL.RankReindex`, from which this module uses
@@ -214,8 +214,8 @@ layers `Category`, `Smooth`, `Twist`, `Tensor.{Finite, OneFactor}`,
 SmoothTwist}`, `Induction.{Definitions, Parabolic, BlockFactors, BinaryProduct}`,
 `Mirabolic.MixedProducts`, `Dual.Definitions`, `Whittaker.{Algebraic, GeneralLinear}`
 and `Derivative.{MirabolicCharacter, MirabolicMinus, Iteration, Homogeneity}`. The
-closure was checked against both exclusion sets of the task context, condition by
-condition:
+closure was checked against both exclusion sets (listed in
+`LeftMixedProductDerivativeProof.md`), condition by condition:
 
 - It contains no module and no declaration for any of the following: segment
   derivatives, segment existence or classification, Jacquet formulas, socle or head
@@ -227,14 +227,14 @@ condition:
   cast `mirabolicRankCast`, `mirabolicDerivativeOfOrder`, the level, the predicates
   `IsHomogeneous` and `IsGeneralLinearHomogeneous`, and carrier-vanishing lemmas.
   This module uses only `mirabolicDerivativeOfOrder` from it.
-- It contains no minus exactness (task `b65bc667`).
+- It contains no minus exactness.
 - It contains no `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`.
   The two Whittaker modules supply lower character and coefficient constructions
   only.
 - It does not use the consumers `RestrictedProductLevel`,
   `SegmentSocleProductHomogeneityInduction` or `SegmentSocleProductCaseTwo`.
 
-The review of `ZeroRankTensor` (Reviewer 6107) audited the same closure, which it
+The audit of `ZeroRankTensor` covered the same closure, which it
 counted as 73 modules besides `ZeroRankTensor` itself, with the same result. No hypothesis, proposition-valued premise or theorem-valued input is
 introduced. The construction is data (natural isomorphisms) and uses only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

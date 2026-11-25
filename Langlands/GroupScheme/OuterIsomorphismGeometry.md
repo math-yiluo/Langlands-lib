@@ -1,6 +1,6 @@
 # Geometry of exact outer-isomorphism orbits
 
-Worker 592. This is internal, derived material for the relative automorphism
+This is internal, derived material for the relative automorphism
 geometry in Conrad, *Reductive group schemes* (2014), Theorem 7.1.9(1).
 It assumes an actual `OuterIsomorphismScheme`; it does not assert existence
 of an isomorphism representative or of its outer quotient.

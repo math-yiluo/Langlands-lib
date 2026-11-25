@@ -68,7 +68,7 @@ search, so both generic theorems apply.
 
 This is an internal derived result. The character argument is the block-wise
 form of the argument in `Langlands.Group.GL.CentralQuotientMeasure` and reuses
-Worker 116's `character_eq_one` unchanged. The measure-theoretic steps use
+`character_eq_one` unchanged. The measure-theoretic steps use
 Mathlib at pinned commit `5ed2965256430c3649e86755f9576b54eca72435`:
 `MeasureTheory/Group/ModularCharacter.lean` and
 `MeasureTheory/Measure/Haar/{Basic,Unique}.lean`. This module proves only the

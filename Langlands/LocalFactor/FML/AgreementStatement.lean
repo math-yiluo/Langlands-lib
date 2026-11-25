@@ -4,7 +4,7 @@ import Langlands.HarmonicAnalysis.Conductor
 /-!
 # Agreement of FML and Library conductor conventions
 
-Derived comparison statements by Worker 40, using the published adaptation of
+Derived comparison statements, using the published adaptation of
 Fukuhiro Ueda's epsilon_FML at commit 0b4159be50e1bd45ddff1de4280399576a3e2024.
 These propositions compare the actual definitions with the same supplied
 local-field instances. See AgreementStatement.md for source correspondence

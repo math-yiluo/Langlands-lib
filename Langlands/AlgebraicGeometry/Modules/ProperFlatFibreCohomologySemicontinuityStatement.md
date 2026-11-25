@@ -1,7 +1,5 @@
 # Semicontinuity of fibre cohomology for proper flat morphisms
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProperFlatFibreCohomologySemicontinuityStatement`
 defines the proposition `ProperFlatFibreCohomologySemicontinuityStatement` and four auxiliary
 definitions for fibres.
@@ -30,7 +28,7 @@ Let `g : Y ⟶ T` be a morphism of schemes, `t` a point of `T` and `F` a module 
 
 `ProperFlatFibreCohomologySemicontinuityStatement` says the following. Let `T` be locally
 noetherian, `g : Y ⟶ T` proper and flat, and `F` an invertible module on `Y` (the FLT port's
-`Scheme.Modules.IsInvertible`). Then:
+`Scheme.Modules.IsInvertibleFLT`). Then:
 
 1. for every point `t` and every `p`, `Hᵖ(Y_t, F_t)` is a finite-dimensional `κ(t)`-vector space;
 2. every point `t` has an open neighbourhood `V` and a bound `b` such that `Hᵖ(Y_{t'}, F_{t'}) = 0`
@@ -72,4 +70,6 @@ Differences, all derived:
 Kleiman, *The Picard scheme* (literature id `kleiman-2005-picard-scheme-arxiv-math0504020v1`,
 proof of Theorem 4.8, pp.28–29), uses these facts, with references to EGA III, to see that the
 pieces `P^φ_m` are open. The statement is a prerequisite of a proof of the Library's
-`PicardHilbertPolynomialPiecesStatement` (Task 6028).
+`PicardHilbertPolynomialPiecesStatement`
+(proved as `Picard.picardHilbertPolynomialPieces` in
+`Langlands.AlgebraicGeometry.Picard.PicardHilbertPolynomialPiecesProof`).

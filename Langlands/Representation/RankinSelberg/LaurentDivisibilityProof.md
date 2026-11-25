@@ -44,15 +44,14 @@ using the nonzero polynomial consequence of the second generator hypothesis.
 
 ## Internal provenance and scope
 
-Worker 468 authored this proof. The denominator-clearing calculation and the
-explicit coprimality calculation materially adapt Worker 31's private
+The denominator-clearing calculation and the
+explicit coprimality calculation materially adapt the private
 `polynomial_dvd_of_laurent_multiple` and
 `polynomial_dvd_of_reciprocal_mem` proofs in the published
 [RationalZeta](RationalZeta.md). The new proof neither refers to those private
 Lean declarations nor modifies that module. The converse clearing implication
 uses an explicit negative Laurent power; the remaining implications assemble
-the algebra described above. Worker 356 authored the published statement pair
-with the interface specified by Worker 46.
+the algebra described above.
 
 This is an internal algebraic consequence of the published
 [LaurentDivisibilityStatement](LaurentDivisibilityStatement.md) and its

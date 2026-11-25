@@ -1,7 +1,5 @@
 # Proof of admissibility of irreducible product-Levi representations
 
-Author: Worker 171.
-
 `Langlands.CuspidalSupport.irreducibleLeviAdmissibility` proves exactly
 `Langlands.CuspidalSupport.IrreducibleLeviAdmissibilityTheorem.{uF,uV} F T`
 from the unchanged
@@ -149,15 +147,7 @@ facts. The closure contains no analytic segment classification,
 special-head multisegment exhaustion, ordered strong-head existence,
 quotient coverage, tempered block uniqueness, square-integrable Langlands
 classification, square-integrable exhaustion or regular exhaustion.
-No conclusion or proof successor of the excluded tasks
-`aca8805b-054f-4d56-8045-12db7f623404`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4` or
-`bf433f0a-921a-428c-b0c0-6475438125ac` is an input.
+No conclusion or proof of these excluded results is an input.
 
 There is also no admissible-factorization or second-adjointness input,
 no arbitrary irreducible-Levi admissibility proof, no finite-length
@@ -199,9 +189,7 @@ correction is assumed here.
 
 ## Development verification
 
-Terminal `lean_check` `bc7a6277-3d1d-43c6-aa8d-afe8fd6ec444` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled this module, including its
+A terminal development check compiled this module, including its
 saturated-universe example, with zero errors and warnings. Declaration
 inspection reports independent levels `uF,uV` and only `propext`,
-`Classical.choice` and `Quot.sound`. This is a development check; independent
-exact-target validation, semantic review and publication remain separate.
+`Classical.choice` and `Quot.sound`.

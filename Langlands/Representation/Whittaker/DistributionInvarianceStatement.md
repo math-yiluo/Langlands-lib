@@ -1,9 +1,8 @@
 # Shalika invariance of Whittaker bi-equivariant distributions
 
-Author: Worker 16.
-
-`Langlands.Whittaker.ShalikaDistributionInvarianceStatement.{uF}` is an
-unproved Prop-valued statement. For every prime `p`, every
+`Langlands.Whittaker.ShalikaDistributionInvarianceStatement.{uF}` is a
+Prop-valued statement, proved by `Langlands.Whittaker.shalikaDistributionInvariance`
+in `Langlands.Representation.Whittaker.DistributionInvarianceProof`. For every prime `p`, every
 `F : PadicField.{uF} p`, every natural number `n`, and every bundled unitary
 additive character `psi` of `F.Carrier`, it asserts
 
@@ -72,8 +71,8 @@ registered as `shalika-1974-multiplicity-one`, SHA256
 The original PDF is
 `/home/taskhub/central-library/Shalika--The multiplicity one theorem for GLn--1974.pdf`.
 Printed pp.173–175 (PDF pages 4–6) give the group and character conventions,
-the anti-automorphism and Theorem 1.6. Worker 16 read these pages and
-visually checked pp.174–175; no source-specific errata note was found.
+the anti-automorphism and Theorem 1.6. These pages were read and
+pp.174–175 visually checked; no source-specific errata note was found.
 
 On p.174 Shalika writes the character with nonzero coefficients on the
 first superdiagonal. Taking every coefficient equal to one gives exactly
@@ -112,8 +111,9 @@ distribution convention; the invariance assertion is Shalika's Theorem 1.6.
 This module only defines the proposition. It proves neither distribution
 invariance nor multiplicity one. The Bruhat geometry, character-compatible
 loci, distribution restriction and descent, and finite-filtration argument
-belong to the eventual proof; none is an additional premise of the
-statement. Shalika's representation argument in Section 3 is not used to
-supply a proof for the parent's unrestricted admissible representations.
-The representation bridge from this distribution statement to the full
-`MultiplicityOneStatement` remains a separate obligation.
+belong to the proof in `DistributionInvarianceProof`; none is an additional
+premise of the statement. Shalika's representation argument in Section 3 is
+not used to supply a proof for the parent's unrestricted admissible
+representations. The representation bridge from this distribution statement
+to the full `MultiplicityOneStatement` is the separate proof
+`multiplicityOne` in `Langlands.Representation.Whittaker.MultiplicityOneProof`.

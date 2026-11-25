@@ -1,7 +1,5 @@
 # Gradings of bialgebras by generalized eigenspaces of a right translation
 
-Author: Worker 1387.
-
 This internal, purely algebraic module lives in the namespace
 `Langlands.GroupScheme.CentralSurjectionImage.EigenGrading`. Let `k : Type u` be a
 field, `B` a commutative ring with a `Bialgebra k B` structure (cocommutativity

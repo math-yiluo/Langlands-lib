@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_AlgebraicGeometry_Scheme_Modules_projective_sections_o
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_Modules_projective_sections_of_locallyTrivial
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000

@@ -1,8 +1,6 @@
 # Restricting radical-free root centralizers
 
-Author: Worker 1465.
-
-This internal support unit transfers actual cocharacter centralizers from an
+This module transfers actual cocharacter centralizers from an
 ambient group to a closed subgroup containing them. It is uniform in universe
 `u`, retains all scheme tests, and assumes no reductivity theorem for a fixed
 subgroup or affine homogeneous quotient.
@@ -28,4 +26,4 @@ All rootwise witnesses and containments remain explicit premises.
 
 The provenance is internal composition of the existing represented-subgroup,
 dynamic-centralizer restriction and rootwise radical-detection constructions.
-This unit does not yet prove the full-kernel centralizer reductivity statement.
+This module does not prove the full-kernel centralizer reductivity statement.

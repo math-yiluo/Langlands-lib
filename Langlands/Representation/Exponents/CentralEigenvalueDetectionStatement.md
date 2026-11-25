@@ -1,7 +1,5 @@
 # Detecting a full-center exponent from one central operator
 
-Author: Worker 19.
-
 `Langlands.CentralEigenvalueDetectionStatement.{uG,uV}` is a closed
 proposition with independent universes for the group and representation
 carrier. The group is a topological group. The representation is a

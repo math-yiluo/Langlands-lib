@@ -1,7 +1,5 @@
 # Homology of a diagram of complexes
 
-Author: Worker 13.
-
 This module constructs a natural isomorphism between taking homology
 objectwise in a diagram of complexes and taking homology in the category
 of diagrams. It retains every diagram transition and is natural in

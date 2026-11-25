@@ -1,6 +1,6 @@
 # Left mixed products and the smooth plus functor
 
-Author: Worker 1129. Module
+Module
 `Langlands.Representation.Derivative.MirabolicSmoothPhiPlusProduct`, namespace
 `Langlands.Derivative.Mirabolic`. Main declarations: `leftPhiHatEmbedding`,
 `leftPhiHatEmbedding_injective`, `leftPhiHatEmbeddingHom` and
@@ -15,7 +15,7 @@ This module constructs the embedding
 for a smooth representation `ρ` of `GL_k` and a smooth representation `σ` of
 the mirabolic group `P_(n+1)`. Both sides are representations of `P_(k+n+2)`.
 Here `×` is the published left mixed product (BZ77 §4.12, case (II)), and
-`Φ̂⁺` is Worker 749's published smooth-induction functor. The embedding is an
+`Φ̂⁺` is the published smooth-induction functor of `MirabolicSmoothPhiPlus`. The embedding is an
 injective intertwiner, and a monomorphism of smooth representations.
 
 The module states no exactness, derivative, level or homogeneity result and
@@ -51,7 +51,7 @@ derived: the map and the auxiliary lemmas are not in the sources.
 All objects are published Library objects, used unchanged.
 
 - `phiHatPlus T ψ n : Rep P_(n+1) ⥤ Rep P_(n+2)`
-  (`MirabolicSmoothPhiPlus`, Worker 749). Its vectors are determined by the
+  (`MirabolicSmoothPhiPlus`). Its vectors are determined by the
   values `phiHatPlusNormalizedEval T ψ n σ φ x ∈ σ` for `x ∈ P_(n+2)`
   (`phiHatPlusNormalizedEval_injective`). These satisfy
   `φ(successor g · x) = ν(g)^(1/2) σ(g) φ(x)` for `g ∈ P_(n+1)`, and
@@ -63,8 +63,8 @@ All objects are published Library objects, used unchanged.
   `(V, θ)`-coinvariants, with `h` acting by `ν(h)^(-1/2)` (`phiMinusCharacter`)
   times the action of `successor h`.
 - `phiHatPlusAdjunction T ψ n A σ :
-  Hom(A, Φ̂⁺σ) ≃ₗ[ℂ] Hom(Φ⁻A, σ)` (`MirabolicSmoothPhiPlusAdjunction`, Worker
-  749). Its inverse sends `B` to `v ↦ (x ↦ B(q(x • v)))`
+  Hom(A, Φ̂⁺σ) ≃ₗ[ℂ] Hom(Φ⁻A, σ)` (`MirabolicSmoothPhiPlusAdjunction`).
+  Its inverse sends `B` to `v ↦ (x ↦ B(q(x • v)))`
   (`phiHatPlusAdjunction_symm_eval`, `rfl`), where `q` is the quotient map
   `phiMinusQuotient`.
 - `T.leftMixedProductFunctor k r` (`Mirabolic.MixedProducts`): a vector `f` of
@@ -77,7 +77,7 @@ All objects are published Library objects, used unchanged.
   group acts by right translation (`leftMixedProductFunctor_action`).
   `leftMixedMk` builds a vector from a covariant function that is invariant
   under an open subgroup and has compact support modulo `leftSubgroup k r`.
-- From `Mirabolic.LeftMixedProductSuccessor` (Worker 1129): `leftSuccessor`,
+- From `Mirabolic.LeftMixedProductSuccessor`: `leftSuccessor`,
   `leftProjection_leftSuccessor`, `leftRadical` and its projection lemmas,
   `theta_leftProjection_leftRadical`, `determinantNorm_leftSubgroup`,
   `determinantNorm_successor`, `determinantNorm_radical'`,
@@ -264,16 +264,16 @@ These are foundational modules: groups and their Haar moduli, local fields,
 smooth representations, induction, twists, Jacquet coinvariants, the
 published `Ψ⁻`, `Φ⁻`, `Ψ⁺`, `Φ⁺` and `Φ̂⁺` with their normalizations, the
 `Φ⁻ ⊣ Φ̂⁺` and `Ψ⁻ ⊣ Ψ⁺` adjunctions, Whittaker characters and the Iwasawa
-decomposition. The closure contains none of the modules or conclusions
-excluded by task `6bb62ea4-c7e1-4325-9eb6-b8bbee1f65c4` (the inherited sets
-of `b711af72`, `3238f371` revision 2, `2e5183b1` revision 2 and the
-Whittaker-finiteness clause). In particular, it contains no segment,
+decomposition. The closure contains none of the excluded modules or
+conclusions (the segment and multisegment classification results, the
+supercuspidal and single-block finiteness results, the linked and unlinked
+segment-socle results and the Whittaker-finiteness statements). In particular, it contains no segment,
 socle, head, classification, exhaustion, square-integrability or Jacquet
 formula result, and no Ze80 §3.5 or §9.6 derivative formula. It contains
 neither `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`
 nor `IrreducibleCoinvariantFinitenessStatement` nor
 `LeviCuspidalCoinvariantFinitenessStatement`. It contains no derivative
 exactness, Leibniz, 4.14(a), highest-layer, level or homogeneity result.
-Minus exactness task `b65bc667` is neither used nor resumed.
-The `lean_check` inspection of `mono_leftPhiHatEmbeddingHom` reports only
+No mirabolic minus exactness result is used.
+A Lean inspection of `mono_leftPhiHatEmbeddingHom` reports only
 the axioms `propext`, `Classical.choice` and `Quot.sound`.

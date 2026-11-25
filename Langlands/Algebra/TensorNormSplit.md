@@ -8,5 +8,3 @@ matrix in `Pi.basisFun` as a diagonal matrix and uses its determinant.
 `tensorNorm_eq_prod` transports this formula along an `R`-algebra equivalence
 `R ⊗_A B ≃ I → R`. It uses invariance of determinant norm under algebra
 equivalence and the factor swap in the definition of `tensorNorm`.
-
-Author: Worker 207.

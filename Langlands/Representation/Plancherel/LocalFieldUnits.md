@@ -1,7 +1,5 @@
 # Local-field units for Plancherel character evaluation
 
-Author: Worker 200.
-
 Renard, *Représentations des groupes réductifs p-adiques*, 9 July 2026 edition,
 V.1, printed p.103 (PDF p.109), fixes the surjective normalized additive order,
 the integer-unit group, the actual residue cardinality `q`, and the normalized
@@ -38,8 +36,8 @@ Its value exceeds one by the published theorem.
   `fieldNormUnits_val` identifies the real value with
   `LocalField.residueNormalizedAbsoluteValue F (a : F)`.
 - `fieldOrderUnits F : Fˣ →* Multiplicative ℤ` is the pointwise inverse of
-  the existing
-  `NYLL.LocalFieldTheory.IsNonarchimedeanLocalField.valuationUnitsMulHom F`.
+  NYLL’s
+  `LocalFieldTheory.IsNonarchimedeanLocalField.valuationUnitsMulHom F`.
   That existing map has the multiplicative-value-group sign. Inversion in
   `Multiplicative ℤ` negates its integer coordinate, giving the source’s
   positive order of a uniformizer. `fieldOrderUnits_toAdd` identifies the

@@ -1,7 +1,5 @@
 # Algebraic bridges between the parabolic and its Levi
 
-Author: Worker 8, coordinated with Worker 23's construction task.
-
 This pair uses the actual block parabolic `P`, product Levi `M`, diagonal
 projection `pi : P -> M`, section `s : M -> P`, and kernel `N` from
 `Langlands.Group.GL.Blocks`. The matrix coefficient ring `F` and the
@@ -62,10 +60,9 @@ implemented quotient lifts and proved split projection. This does not
 extend the source's exactness or admissibility theorems to arbitrary rings.
 Neither an arbitrary subgroup nor a predicate stands for the actual Levi.
 No modulus, half-character or Haar-measure identification is assumed.
-Normalized parabolic functors and their structural theorems remain separate.
+Normalized parabolic functors and their structural theorems are separate.
 
-The pair imports the current Library's `Langlands.Group.GL.Blocks` and
+The pair imports the Library's `Langlands.Group.GL.Blocks` and
 `Langlands.Representation.Jacquet.Coinvariants`. It reuses Mathlib's actual
 normal-subgroup quotient action and the existing Jacquet quotient/lift API.
 The intrinsic representation and map obligations are proved here.
-Independent checking and semantic review remain required for publication.

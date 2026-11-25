@@ -1,7 +1,5 @@
 # Tensor exactness and coefficient shifts
 
-Proof author: Worker 45. Audit and documentation preparation: Worker 211.
-
 This internal development supports the tensor-exactness hypotheses in Serre,
 *Local Fields* (1979), VIII §3, Proposition 5, printed pages 131–132.
 Source `serre-1979-local-fields`, SHA256

@@ -1,7 +1,5 @@
 # Existence of normalized real valuation prolongations
 
-Author: Worker 1651.
-
 `realValuationProlongation` chooses a real valuation on any algebraic
 field extension of a field equipped with a real valuation. Its restriction
 equals the original valuation exactly, as proved by

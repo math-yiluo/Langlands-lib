@@ -1,6 +1,6 @@
 # Comparing spherical functions for compact open subgroups
 
-Worker 248, Task 5460. Module
+Module
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.XiCompactModularComparison`, namespace
 `Langlands.HarishChandraSchwartz`. The proposition definition
 `XiCompactComparisonStatement.{u}` is proved by the included theorem
@@ -32,7 +32,7 @@ More precisely, `P` is additionally assumed locally compact with its subgroup
 topology. The group has a measurable space with `BorelSpace`; compact subgroups
 have their inherited topology and normalized Haar measures. No reductive group,
 Cartan covering, height, or weighted unipotent estimate is used. The actual
-rational-point and Levi specializations are left for a later contribution.
+rational-point and Levi specializations are made in `RationalXiCompactComparison`.
 
 Source: J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques,
 d'après Harish-Chandra* (2003), literature ID `waldspurger-2003-plancherel`.

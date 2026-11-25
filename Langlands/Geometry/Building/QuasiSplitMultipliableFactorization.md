@@ -1,10 +1,9 @@
 # Opposite factorization inside a piece over a multipliable relative root
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.QuasiSplitMultipliableFactorization`.
 
-This internal unit belongs to task 8ffe0456. It continues
+This module is part of the construction of actual quasi-split apartments over henselian
+integer-valued fields. It continues
 `Langlands.Geometry.Building.QuasiSplitMultipliablePieces` with the group theory of a single
 piece `{p, q, m = p + q}` over a multipliable relative root `a`. It provides:
 
@@ -24,7 +23,7 @@ Notation as in `QuasiSplitMultipliablePieces`. `U_χ` is `rootGroupPoints j χ` 
 
 - `IsMultipliablePiece f P a lp lq lm` (definition): `lp ≠ lq` are roots of `P` restricting
   to `a` along `f`, and `P.root lm = P.root lp + P.root lq`. This bundles the piece
-  hypotheses used in this unit and the next one. `IsMultipliablePiece.swap` exchanges `lp`
+  hypotheses used in this module and in `QuasiSplitMultipliableOpposite`. `IsMultipliablePiece.swap` exchanges `lp`
   and `lq`.
 
 ## Rank one
@@ -98,10 +97,10 @@ Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), §2.7 and §3.2
 proof of Proposition 6.1.19 (printed pp. 206–207, PDF pp. 237–238) for roots of type R2. The
 statements are internal. Their proofs compose published Library results: opposite factor
 pairs, separation of opposite root groups, dynamic unipotent subgroups, and Weyl actions of
-normalizer points. They also use the preceding unit `QuasiSplitMultipliablePieces`.
+normalizer points. They also use the module `QuasiSplitMultipliablePieces`.
 
 ## Scope
 
-This unit proves no axiom of the descended family by itself. The degenerate case of
+This module proves no axiom of the descended family by itself. The degenerate case of
 `piece_factorization` is excluded only later, using the original normalizer point; the
-Galois symmetry is applied in the final unit.
+Galois symmetry is applied in `QuasiSplitIntegerApartmentExistenceProof`.

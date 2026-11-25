@@ -2,7 +2,7 @@ import Langlands.Automorphic.AssociatedFactorStatement
 import Langlands.Automorphic.FiniteOrderDeterminantTwist
 import Langlands.Weil.Representation.Determinant
 import Langlands.Weil.Representation.Twist
-import Langlands.ClassField.Global.RelativeWeilTransfer
+import Langlands.ClassFieldTheory.Global.RelativeWeilTransfer
 
 /-! # Determinants and twists of weakly associated pairs
 
@@ -17,7 +17,7 @@ definitions only.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open scoped NumberField
 open Langlands.Global
@@ -93,4 +93,4 @@ def AssociatedDeterminantTwistStatement : Prop :=
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

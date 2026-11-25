@@ -1,7 +1,5 @@
 # Finite center-span coverings of actual generated compact types
 
-Author: Worker 94.
-
 `Langlands.Global.ArchimedeanGL.CompactTypeCentralSpanStatement K n`
 is an internal algebraic prerequisite for admissibility. It uses every number
 field in arbitrary universe and every natural rank, including zero. Its

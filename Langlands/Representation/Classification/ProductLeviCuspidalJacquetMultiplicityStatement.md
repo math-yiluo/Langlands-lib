@@ -1,7 +1,5 @@
 # Opposite cuspidal Jacquet multiplicities inside a product Levi
 
-Author: Worker 165.
-
 `Langlands.ProductLeviCuspidalJacquetMultiplicityStatement` is a proposition
 about the full opposite self-Jacquet module of normalized cuspidal induction
 inside an actual product Levi. It is a derived specialization of the original
@@ -103,13 +101,13 @@ group retains exactly one representative of each internal right fine-Weyl
 coset. It excludes permutations exchanging different coarse blocks, even
 when their sizes agree. It also removes the redundant permutations inside
 individual fine blocks. This explains the literal restriction used here;
-a formal proof of the restricted parametrization is required in the proof
-successor, not assumed as data in the proposition.
+a formal proof of the restricted parametrization is required in the proof,
+`ProductLeviCuspidalJacquetMultiplicityProof`, not assumed as data in the proposition.
 
 The embedding identity `flattenedLeviEquiv_embedding` identifies the
 fine-Levi action with its actual ambient matrix embedding. For a coarse-block
 preserving permutation, its ambient permutation matrix lies in the coarse
-Levi (`CuspidalSupport.permutation_mem_levi_iff`). The proof successor must
+Levi (`CuspidalSupport.permutation_mem_levi_iff`). The proof must
 use these facts to identify the internal conjugation action with
 `CuspidalSupport.transport C C`, including the inverse in that action, and
 to transport irreducibility, filtrations and multiplicities through `e`.
@@ -166,10 +164,12 @@ The published `GLCuspidalJacquetMultiplicityStatement` is the standard
 single-general-linear-group analogue and fixes the same length, multiplicity
 and normalization conventions; importing a proposition does not prove it.
 
-An exact proof successor must prove this proposition without adding tensor
+An exact proof must prove this proposition without adding tensor
 factorization or relative generic comparison as assumptions. A route through
 factorwise formulas would first need proved arbitrary irreducible-Levi tensor
 factorization and compatibility of the actual functors. A route through the
 geometric lemma must reuse the existing associated-filtration work, establish
 the product-Levi and opposite transport, and count its irreducible factors
-using Jordan–Hölder independence. These obligations remain open in this pair.
+using Jordan–Hölder independence. This file discharges none of these
+obligations; the proposition is proved as `productLeviCuspidalJacquetMultiplicity`
+in `ProductLeviCuspidalJacquetMultiplicityProof`.

@@ -1,11 +1,11 @@
 # Central extensions of split tori by diagonalizable groups are diagonalizable
 
-Worker 603 wrote this module for Task 6776, part 2 of
+This module treats part 2 of
 [`MultiplicativeTypeFieldExtensionStatement`](MultiplicativeTypeFieldExtensionStatement.md)
 (SGA 3, Exposé IX, Proposition 8.2 (ii), over a field).
 
-It generalizes [`CentralExtensionSplit`](CentralExtensionSplit.md) (Worker
-1395) from a split-torus kernel to a diagonalizable kernel `D_k(Λ)`, with `Λ`
+It generalizes [`CentralExtensionSplit`](CentralExtensionSplit.md)
+from a split-torus kernel to a diagonalizable kernel `D_k(Λ)`, with `Λ`
 finitely generated and torsion allowed. It then removes the auxiliary
 hypotheses: affineness of the middle group and closedness of the kernel are
 derived from the target's hypotheses. Centrality remains a hypothesis, and the
@@ -61,9 +61,8 @@ last theorem obtains it from part 1 of the target.
   descent `affine_descendsAlong_fpqc` from
   [`SchemeFlatPropertyDescent`](../../AlgebraicGeometry/SchemeFlatPropertyDescent.md),
   upgraded to fppf descent by Mathlib's `FlatDescent`). This repeats the proof
-  of `isAffineHom_of_kernel` in Worker 312's helper module
-  `MultiplicativeTypeExtensionHelpers` (staged for the same task, not yet
-  published when this module was written).
+  of `isAffineHom_of_kernel` in the helper module
+  [`MultiplicativeTypeExtensionHelpers`](MultiplicativeTypeExtensionHelpers.md).
 * `isClosedSubgroup_of_field i hq`: over a field, such an `i` is a closed
   subgroup. By `IsFppfQuotient.kernelIso_hom_comp`, `i` is an isomorphism onto
   the actual kernel followed by `kernelι p`. The latter is a closed immersion

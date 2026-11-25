@@ -1,6 +1,6 @@
 # Compact coefficients and compact averaged orbits
 
-Author: Worker 246. This file defines one proposition,
+This file defines one proposition,
 `Langlands.CompactCoefficientAveragedOrbitStatement.{uG, uV}`. It proves nothing
 and assumes no theorem as data. The equivalence is not proved here.
 
@@ -58,7 +58,7 @@ where F is a non-Archimedean local field*, Russian Math. Surveys 31:3 (1976),
 `bernstein-zelevinsky-1976-representations-gln`, SHA-256
 `72dc22eb9991112936a88327f00d0f02a16a2bf8747518ca0ecfeeadd188e50c`, file
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Representations of the group GL(n,F) where F is a non-archimedean local field (survey)--1976.pdf`.
-Worker 246 read §§2.39–2.40 (p. 26) in this file. Worker 246 also read the
+§§2.39–2.40 (p. 26) were read in this file, together with the
 conventions used there: §1.1 (p. 6, `l`-spaces and `l`-groups), §1.7 (p. 7,
 locally constant functions), §§1.13–1.14 (pp. 8–9, supports and "finite"
 cross-sections), §§2.1–2.4 (p. 15, algebraic representations, `π(ε_N)`) and
@@ -131,7 +131,7 @@ the convention of `Compact.averageMap`.
 
 ## Intended proof route
 
-This is not a proof. It records the source's argument for a later proof task.
+This is not a proof. It records the source's argument for a proof of the proposition.
 
 - (2) ⇒ (1), the source's (b) ⇒ (a), via 2.14. Let `ℓ` be fixed by an open
   subgroup `U`. In an `l`-group `U` contains a compact open subgroup `K`.
@@ -157,11 +157,11 @@ This is not a proof. It records the source's argument for a later proof task.
 ## Universes
 
 The group universe `uG` and the carrier universe `uV` are independent universe
-parameters of the definition. A development check printed the definition with
+parameters of the definition. A check printed the definition with
 level parameters `uG, uV`. It also unfolded the proposition at universes `2` and
 `5` with `Iff.rfl` against an explicit restatement in terms of
-`IsCompact (closure (Function.support …))`. That check is a private draft, not
-part of this unit.
+`IsCompact (closure (Function.support …))`. That check is not
+part of this module.
 
 ## Dependencies
 
@@ -174,6 +174,6 @@ Project imports:
   `Compact.averageMap`.
 
 Mathlib import: `Mathlib.Topology.Algebra.Support` for `HasCompactSupport`. No
-existing published Lean/Markdown pair is modified. Lean service environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`).
+existing published Lean/Markdown pair is modified. Environment in which it was
+checked: Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.

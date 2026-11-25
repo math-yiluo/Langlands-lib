@@ -19,7 +19,7 @@ morphism over `K`. Properness is required of `f`; neither structure morphism
 is required to be proper.
 
 The specified morphism `x : Spec (CommRingCat.of K) ⟶ X` satisfies the
-published predicate `Picard.IsRationalPoint p x`. This means exactly
+predicate `Picard.IsRationalPoint p x`. This means exactly
 `x ≫ p = 𝟙 (Spec (CommRingCat.of K))`. In particular, it is an actual rational
 point over the given structure morphism, rather than just a point of the
 underlying topological space. The over-base compatibility implies that
@@ -65,8 +65,7 @@ instantiated.
 
 ## Internal provenance
 
-Worker 487 supplied the shared Lean draft. This module preserves that Lean
-statement unchanged. The formulation is derived internally from the published
+The formulation is derived internally from the
 rational-point predicate in
 `Langlands.AlgebraicGeometry.Picard.PointTangentSeparation` and the pinned
 Mathlib APIs; it is not a transcription of an external theorem.

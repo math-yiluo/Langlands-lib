@@ -48,12 +48,14 @@ namespace ValuedSL2RootCoordinates
 
 variable (C : ValuedSL2RootCoordinates B hZ b)
 
+attribute [local instance 1100] Module.Free.of_divisionRing in
 /-- The supplied scheme coroot viewed in the commutative category. -/
 def corootMorphism :
     WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension ⟶
       B.centralizerTorus hZ :=
   Additive.ofMul C.coroot
 
+attribute [local instance 1100] Module.Free.of_divisionRing in
 theorem corootComponentCongruenceProperty (hb : b ≠ 0) :
     CorootComponentCongruenceProperty B hZ b
       (WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension)
@@ -73,12 +75,14 @@ namespace ValuedSU3RootCoordinates
 
 variable (C : ValuedSU3RootCoordinates B hZ b)
 
+attribute [local instance 1100] Module.Free.of_divisionRing in
 /-- The supplied scheme coroot viewed in the commutative category. -/
 def corootMorphism :
     WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension ⟶
       B.centralizerTorus hZ :=
   Additive.ofMul C.coroot
 
+attribute [local instance 1100] Module.Free.of_divisionRing in
 theorem corootComponentCongruenceProperty (hb : b ≠ 0) :
     CorootComponentCongruenceProperty B hZ b
       (WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension)
@@ -92,6 +96,7 @@ theorem corootComponentCongruenceProperty (hb : b ≠ 0) :
     exact MaximalUnramified.weilGm_geometricCharacter_bound F C.extension
       (MaximalUnramified.valuationSubring_isHenselian F) hr t ht χ
 
+attribute [local instance 1100] Module.Free.of_divisionRing in
 theorem double_corootComponentCongruenceProperty (hb : b ≠ 0) :
     CorootComponentCongruenceProperty B hZ (2 • b)
       (WeilGm.commGroupScheme (CommRingCat.of (UnramifiedClosure F)) C.extension)

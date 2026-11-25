@@ -1,7 +1,5 @@
 # Full Harris coefficient reductions on original opposite CM levels
 
-Author: Worker 57.
-
 This internal construction transports the already constructed full Harris
 lattice reductions to the original opposite finite-adelic CM level group.
 It constructs small normal coefficient levels and actions of the exact

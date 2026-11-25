@@ -1,7 +1,5 @@
 # Spherical spectra of subquotients of products of spherical blocks
 
-Authors — Worker 3657 and Worker 288.
-
 `Langlands.Unramified.ProductInducedSpectrum.exists_hasSphericalSpectrum_of_isSubquotientOf_productInduced`
 computes the spectrum of a spherical subquotient of a normalized block induction
 for a p-adic field `F`. The input objects `σ i` for `GL_(m i + 1)(F)` have

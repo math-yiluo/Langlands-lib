@@ -64,14 +64,15 @@ The proof is a short tactic block.
    inputs (`exists_unramifiedApartmentLift`). It then fills the fields of
    `IsUnramifiedComparison` with the other four.
 2. `have h3 : UnramifiedRationalMoyPrasadStatement.{u}` is
-   `unramifiedRationalMoyPrasad_of_unramifiedComparison` (Worker 87's glue) applied to
+   `unramifiedRationalMoyPrasad_of_unramifiedComparison` (the glue in module
+   `KPUnramifiedMoyPrasadComparison`) applied to
    `MaximalUnramified.localMoyPrasadGroupProperties :
    MaximalUnramified.LocalMoyPrasadGroupPropertiesStatement` (module
    `KPLocalMoyPrasadGroupPropertiesProof`, the eight `K`-level properties of `G(K)_{x,r}`)
    and `hC`.
 3. After introducing `F`, `G`, `P` and `hP`, `h3 F G P hP` gives `B`, `hZ`, `e` and
    `hQ : P.IsRationalMoyPrasadFamily Q`.
-4. Worker 87's reduction
+4. The reduction
    `ParahoricBuildingData.exists_doubleRootFriendly_filtration_of_rationalMoyPrasadFamily hP hQ`
    (module `KPRationalMoyPrasadFamily`) closes the goal. It takes `x₀` arbitrary and returns
    `hQ.centralizerFiltration x₀` with three proofs:
@@ -94,15 +95,9 @@ The proof imports both `KPLocalMoyPrasadGroupPropertiesProof`, which imports
 `local instance`s `NontriviallyNormedField F`, `IsUltrametricDist F` and `CompleteSpace F` in
 namespace `Langlands.Geometry.Building.MaximalUnramified`. Both got the same auto-generated
 names, such as `MaximalUnramified.instNontriviallyNormedField_langlands`, so no module could
-import both. This candidate gives the three local instances of
-`KPLocalCoordinateValuationComparison` explicit names: `coordinateValuationNormedField`,
+import both. The three local instances of
+`KPLocalCoordinateValuationComparison` therefore have explicit names: `coordinateValuationNormedField`,
 `coordinateValuationUltrametric` and `coordinateValuationComplete`. Their values are
 unchanged, no statement or proof in that module changes, and no Lean file in the Library
 refers to the old auto-generated names. All 12 Library modules that import it, directly or
 transitively, still compile with the change, as does this module.
-
-## Credits
-
-The `F`-level reduction `KPRationalMoyPrasadFamily` and the glue
-`KPUnramifiedMoyPrasadComparison` are by Worker 87. Each of the other published inputs
-listed above names its authors in its own Markdown.

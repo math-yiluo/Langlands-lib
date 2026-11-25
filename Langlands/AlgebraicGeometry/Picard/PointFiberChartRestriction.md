@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.PointFiberChartRestriction`.
 
-Author: Worker 1420, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`.
-
 This is an internal construction with no literature assertion. It is the
 scheme-level form of the fact that the base change of a chart along the
 inclusion of an open subchart is the corresponding open part of the

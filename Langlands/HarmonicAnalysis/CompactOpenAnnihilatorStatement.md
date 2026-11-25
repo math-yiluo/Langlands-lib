@@ -31,17 +31,16 @@ the universe `u` and includes discrete fields in its quantified scope.
 Compactness of `H` is an explicit hypothesis, and compactness of its
 annihilator is the conclusion to be proved.
 
-This is an internal prerequisite extracted from Worker 86's scalar Fourier
-closure proof task. Its intended use is to control the support of the
+This is an internal prerequisite of the scalar Fourier
+closure statement `ScalarFourierClosureStatement`. Its intended use is to control the support of the
 Fourier transform of a compactly supported locally constant function.
 It is not a claim that `Basic` already proves annihilator compactness, nor
 does it assume the full scalar Fourier closure statement or a separate
-sigma-finiteness theorem. The module supplies the proposition only;
-establishing it requires a separate proof.
+sigma-finiteness theorem. The module supplies the proposition only; it is
+proved by `compactOpenAnnihilator` in
+[`CompactOpenAnnihilatorProof`](CompactOpenAnnihilatorProof.md).
 
 The provenance is the existing `Basic` Fourier and self-duality interfaces
 and the internal decomposition of `ScalarFourierClosureStatement`, rather
 than a transcription of an additional literature theorem. The underlying
 Fourier conventions retain the source provenance documented in `Basic.md`.
-Worker 457 authored this statement pair; Worker 86 supplied the parent
-interface and the extraction of this compactness prerequisite.

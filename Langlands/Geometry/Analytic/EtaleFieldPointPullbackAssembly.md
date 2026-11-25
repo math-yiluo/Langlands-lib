@@ -41,6 +41,9 @@ nontrivial-valuation, or supplied field-point-preservation hypotheses.
 The construction uses `SaturatedRecognitionCospans`,
 `FiniteChartFieldPointPullbacks`, and `LocalizedFieldPointPullbackReduction`.
 The conclusion concerns the actual full localized field-point functor,
-including all chart evaluations and restriction compatibility. This supporting
-unit proves the sufficiency of the two algebraic inputs; the unconditional
-host target additionally requires their actual theorems.
+including all chart evaluations and restriction compatibility. This module
+proves the sufficiency of the two algebraic inputs; the unconditional
+statement `LocalizedEtaleFieldPointPullbackStatement` additionally requires their
+actual theorems. `LocalizedEtaleFieldPointPullbackProof` supplies them
+(`domainCompletedResidueSurjectivity` and `finiteBanachPushout`) and proves
+the statement as `localizedEtaleFieldPointPullback`.

@@ -1,15 +1,12 @@
 # Proof: the relative effective Cartier locus is open and stable under base change
 
-Authors: Worker 22.
-
-Worker 22 wrote this module for task `07219dde-fd87-48cf-83be-db16cbb3707c`
-(Task 5705), by agreement with that task's first executor, Worker 5705. It
-proves the published proposition
+This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveCartierLocusStatement`
-(module of the same name, by Worker 22). The operator's answer to request
-`98389b48910e54088e0e2b2ba6aaad9c` allows such prerequisite proofs to stay
-under Task 5705. The statement is one of the two hypotheses of the planned
-reduction of `RelativeEffectiveDivisorHilbertPiecesStatement` (Task 6002).
+(module of the same name). The statement is one of the two hypotheses of the
+reduction `RelativeEffectiveDivisorHilbertPiecesReductionStatement` of
+`RelativeEffectiveDivisorHilbertPiecesStatement`, which the Library proves as
+`relativeEffectiveDivisorHilbertPiecesReduction` (module
+`RelativeEffectiveDivisorHilbertPiecesReductionProof`).
 
 The main theorem is
 
@@ -23,17 +20,16 @@ proof uses only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 All other declarations below are in the namespace
 `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveCartierLocus`.
 
-The proof uses three further modules of this candidate:
+The proof uses three further modules:
 
-- `Langlands.CommutativeAlgebra.CartierLocusDescent` (Worker 22): the
+- `Langlands.CommutativeAlgebra.CartierLocusDescent`: the
   commutative algebra (Tor vanishing along a pushout, Nakayama along a local
   homomorphism, lifting generators and regularity).
 - `Langlands.AlgebraicGeometry.Picard.LocalEquationCartier` and
-  `Langlands.CommutativeAlgebra.FibrewiseRegularFlat` (Worker 5705, carried
-  unchanged): only `LocalEquationCartier.isEffectiveCartierIdeal_of_local` is
-  used.
+  `Langlands.CommutativeAlgebra.FibrewiseRegularFlat`: only
+  `LocalEquationCartier.isEffectiveCartierIdeal_of_local` is used.
 
-From the Library it uses Worker 5705's published proof
+From the Library it uses the published proof
 `RelativeEffectiveDivisorBaseChangeProof.relativeEffectiveDivisorBaseChange`
 of `RelativeEffectiveDivisorBaseChangeStatement`, the lemmas
 `PicardHilbertPiecesReduction.bc_comap` and

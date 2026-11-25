@@ -1,7 +1,5 @@
 # Actual coroot comparison for derived split-torus centralizers
 
-Authors: Worker 1448 and Worker 1366.
-
 `SplitTorusCentralizerDerivedCorootComparisonStatement.{u}` is a
 proposition definition. It isolates geometric structure needed by the
 integral-lattice proof of

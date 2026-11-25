@@ -69,9 +69,9 @@ def atlasAction (X : NormContinuousSpace K H) :
     Action (AffinoidAtlasPresentation.{u, max u v, v} K) G where
   V := atlasPresentation H hH X
   ρ :=
-    { toFun := atlasActionMap H hH X
-      map_one' := atlasActionMap_one H hH X
-      map_mul' := atlasActionMap_mul H hH X }
+    { toFun := fun g => End.of (atlasActionMap H hH X g)
+      map_one' := congrArg End.of (atlasActionMap_one H hH X)
+      map_mul' := fun g k => congrArg End.of (atlasActionMap_mul H hH X g k) }
 
 /-- The inverse of each bounded atlas map is supplied by the full-group action. -/
 def atlasAutomorphisms (X : NormContinuousSpace K H) :
@@ -89,10 +89,10 @@ theorem atlasMap_equivariant {X Y : NormContinuousSpace K H} (f : X ⟶ Y) (g : 
   funext c
   apply BoundedAlgHom.ext
   intro a
-  change (X.unop.actionAut (correction H g c.val)).inv.toAlgHom
+  change (X.unop.actionAut (correction H g c.val)).asIso.inv.toAlgHom
       (NormContinuousAction.homMap f.unop a) =
     NormContinuousAction.homMap f.unop
-      ((Y.unop.actionAut (correction H g c.val)).inv.toAlgHom a)
+      ((Y.unop.actionAut (correction H g c.val)).asIso.inv.toAlgHom a)
   exact (NormContinuousAction.homMap_apply_action f.unop (correction H g c.val)⁻¹ a).symm
 
 /-- Functorial induction retaining the full-group action and actual bounded atlas maps. -/

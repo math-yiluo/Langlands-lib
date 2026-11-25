@@ -1,7 +1,5 @@
 # Subgroup slices of a measurable fundamental domain
 
-Author: Worker 306.
-
 This internal measure lemma supports integration on the actual left
 quotients used in global Rankin–Selberg integrals. Let `Γ ≤ U ≤ G`.
 Suppose a measurable set `s ⊆ G` contains exactly one translate `γ g`

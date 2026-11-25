@@ -34,8 +34,8 @@ sum is compact, and compact operators are closed for the operator norm.
 This route needs only the witnessing basis, without first proving basis
 independence or countability of a basis of the ambient space.
 
-This module states the proposition; it does not prove it. The proof belongs
-in a separate exact-target proof task after this statement is published.
+This module states the proposition; it does not prove it. The proof is
+`hilbertSchmidtCompact` in `Langlands.Analysis.HilbertSchmidtCompactProof`.
 Trace class implying Hilbert–Schmidt, trace-class composition, operator
 ideal laws, construction of compact convolution operators, and cuspidal
 spectral decomposition remain separate obligations.

@@ -1,7 +1,5 @@
 # Linear differentials of representations of finite products of general linear schemes
 
-Author: Worker 2.
-
 This module constructs an algebraic linear differential for every actual
 representation of a finite categorical product of general linear group schemes.
 The principal definition is
@@ -162,7 +160,11 @@ product source. Other ingredients are Mathlib's point-group functor,
 category associativity, finite matrices and `Matrix.toLin'`.
 No external-literature identification is asserted.
 
-This unit constructs linear maps. Product bracket preservation,
+This module constructs linear maps. Product bracket preservation,
 conjugation covariance, a derived Lie-module structure, restriction of
 scalars, sheaf or analytic tangent comparisons, compact differentiation
-and attachment to automorphic coefficient cochains remain separate work.
+and attachment to automorphic coefficient cochains are not part of it;
+bracket preservation is in `MatrixRepresentationProductDifferentialLie`,
+conjugation covariance in `MatrixRepresentationProductDifferentialConjugation`,
+and the derived Lie-module structure in
+`MatrixRepresentationProductDifferentialModule`.

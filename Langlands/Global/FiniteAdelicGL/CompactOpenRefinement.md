@@ -14,11 +14,11 @@ general fact that an open subgroup of a topological group is closed.
 condition used by admissible duality and Hilbert smooth-vector recovery.
 There is no positive-rank assumption.
 
-This is internal construction infrastructure. It uses the published
+This is internal construction infrastructure. It uses the existing
 `localIntegral` and `isCompact_localIntegral` from `LocalFactor` and
 Mathlib's `IsCompact.inter_right` and `OpenSubgroup.isClosed`. The same
-intersection argument already appears inside the published
+intersection argument already appears inside
 `Automorphic.LocalHecke.automorphicLocalHeckeAction_exists_localUnit`;
-this unit exposes the refinement independently of representations and Haar
+this module exposes the refinement independently of representations and Haar
 measures. It requires no new local-field identification, Haar choice,
 total-disconnectedness hypothesis or representation-theoretic premise.

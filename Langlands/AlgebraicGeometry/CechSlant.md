@@ -1,7 +1,5 @@
 # Linear slant maps on all-sequence Čech cochains
 
-Author: Worker 327.
-
 This module extends the published shuffle slant operator
 `Langlands.Cohomology.Cech.KunnethDetection.L`. All new declarations are in
 `Langlands.Cohomology.Cech.KunnethDetection`.

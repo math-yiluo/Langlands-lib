@@ -1,7 +1,5 @@
 # Canonical rational scalars of actual standard integral composites
 
-Author: Worker 200.
-
 ## Source and provenance
 
 This is derived support for J.-L. Waldspurger, *La formule de Plancherel

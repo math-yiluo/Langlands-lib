@@ -1,7 +1,5 @@
 # Trivial-scalar rational quotients as denominator localizations: proof
 
-Author: Worker 228.
-
 The theorem `Langlands.Analytic.StrictTestDomain.trivialScalarRationalLocalization`
 proves `TrivialScalarRationalLocalizationStatement.{u}`, the target stated and
 explained in

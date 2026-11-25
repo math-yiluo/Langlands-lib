@@ -1,6 +1,6 @@
 # Scalar extension of character-one Jacquet quotients
 
-Worker 1759. This is an internal algebraic construction for the coefficient
+This is an internal algebraic construction for the coefficient
 geometric-lemma argument in Renard VI.9.2. It is derived from the existing
 relation-span quotient in `Jacquet.Localization` and the tensor universal
 property, rather than asserted as a separately quoted theorem of Renard.
@@ -23,7 +23,7 @@ The displayed formulas fix both maps on these classes. In particular
 quotient to the native `B` quotient. The argument uses no flatness,
 Noetherian, smoothness or finiteness assumption.
 
-This unit does not assert that an unramified character kills a particular
+This module does not assert that an unramified character kills a particular
 geometric radical. That action comparison must be established before this
 equivalence applies. It constructs neither a geometric-lemma filtration
 nor a proof of finiteness of the output Jacquet module of induction.

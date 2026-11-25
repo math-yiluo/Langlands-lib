@@ -1,7 +1,5 @@
 # Maximality of a supplied split-torus image under a central surjection
 
-Author: Worker 1457.
-
 This module declares the proposition
 `Langlands.GroupScheme.CentralSurjectionMaximalSplitTorusImageStatement`.
 It states maximality of a supplied image torus. It supplies neither a proof

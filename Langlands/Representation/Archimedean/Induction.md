@@ -1,8 +1,6 @@
 # Induced representations, intertwining and Jacquet integrals over `ℝ` and `ℂ`
 
-Author: Worker 35. Definition contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
-This is the second archimedean unit for Shahidi's Theorem 3.1 (1985),
+This is the second archimedean module for Shahidi's Theorem 3.1 (1985),
 after `Langlands.Representation.Archimedean.GeneralLinear`. For
 `F = ℝ` or `ℂ` and a Banach representation `σ` of `GL_m(F) × GL_n(F)`, it
 defines:
@@ -21,7 +19,8 @@ and three uniqueness statements. It proves nothing about convergence,
 continuation or existence of local coefficients. The Lean definitions
 take an arbitrary representation `σ` and arbitrary linear functionals;
 the hypotheses of Shahidi's theorem (an irreducible admissible generic
-`σ`, Whittaker functionals) are left to the later statement.
+`σ`, Whittaker functionals) are left to the statement
+`LocalCoefficientGammaStatement`.
 
 ## Mathematical content
 
@@ -147,7 +146,8 @@ and the integrals are Bochner integrals.
   `(a, b) = (1, c)` for every section `f` of `I(s, σ)`, so
   `λ(f) = c λ'(A f)`.
 
-The two-scalar form also allows the later statement to use the
+The two-scalar form also allows the statement
+`LocalCoefficientGammaStatement` to use the
 multiplied relation `a λ(f) = b λ'(A f)`, with `a` and `b` built from
 `L`- and `ε`-factors, without dividing by them.
 
@@ -240,7 +240,7 @@ measures for GL(n)*, Amer. J. Math. 106 (1984), 67–111 (literature id
   with `I(s, π) = Ind π₁|det|^{s/2} ⊗ π₂|det|^{-s/2}`, the Weyl
   representative `w_{m,n}`, and the remark on p.73 that `C_χ(s, π)`
   depends on the measures. The Library implements its integrands over any
-  field; this unit evaluates them on archimedean sections. The exponents
+  field; this module evaluates them on archimedean sections. The exponents
   `(s+n)/2` and `-(s+m)/2` of `sourceCharacter` are the normalized reading
   of the printed display on p.72 adopted by the Library's
   `Langlands.Representation.Shahidi.Induction` (see its Markdown); they
@@ -299,7 +299,8 @@ These points explain the formalization; none is proved in Lean.
    `t = diag(2, 1)` it is `2^{-(s+1)/2}`, which is `1/2` at `s = 1`. It is
    `1` when all diagonal entries of `t` have absolute value `1`, as for the
    sign matrix `z` of Derived choice 3. Matching the functionals and
-   characters of Shahidi's Theorem 3.1 is left to the later statement. The target functional is
+   characters of Shahidi's Theorem 3.1 is left to the statement
+   `LocalCoefficientGammaStatement`. The target functional is
    the same construction for the parabolic subgroup of type `(n, m)`,
    which is the Library's `swappedJacquetIntegrand`.
 5. **Continuation.** Shahidi continues `κ` analytically in `ν` (Corollary
@@ -331,7 +332,7 @@ These points explain the formalization; none is proved in Lean.
    in (2.2) change this by the scalars and the twists of `ℓ`, `ℓ'`
    described in Derived choice 4.
 
-## Relation to other Library units
+## Relation to other Library modules
 
 The geometry (`blockWeyl`, `upper`, `intertwiningUnipotent`,
 `swapRank`), the integrands (`intertwiningIntegrand`, `jacquetIntegrand`,
@@ -343,4 +344,5 @@ open subgroups and the nonarchimedean induced spaces; this module uses
 absolutely convergent integrals and smooth sections instead. The
 statement of Shahidi's Theorem 3.1 for `GL_m × GL_n`, comparing the local
 coefficient with the archimedean gamma factors of the Library's
-`Langlands.LocalFactor` modules, is a planned later unit.
+`Langlands.LocalFactor` modules, is in the module
+`Langlands.Representation.Archimedean.LocalCoefficientGammaStatement`.

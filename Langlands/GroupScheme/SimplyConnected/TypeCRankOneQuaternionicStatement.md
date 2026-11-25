@@ -1,7 +1,5 @@
 # Actual quaternionic symplectic models from rank-one type-C indices
 
-Author: Worker 165.
-
 `Langlands.GroupScheme.TypeCRankOneQuaternionicStatement.{u}` is an
 unproved identification statement. It supplies the forward type-C case
 needed after enumeration of the actual local rank-one indices.

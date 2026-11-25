@@ -1,7 +1,5 @@
 # Intrinsic standard-parabolic minima in the first canonical Levi
 
-Author: Worker 83.
-
 This derived prerequisite identifies the rational comparison groups in
 `AdelicStandardLeviHeightRestriction` with the same preceding-intersection
 construction applied to actual standard parabolics inside the first canonical

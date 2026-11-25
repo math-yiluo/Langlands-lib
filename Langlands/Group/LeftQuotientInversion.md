@@ -36,5 +36,3 @@ shown to have continuous inversion, and compact representatives or an independen
 compactness argument must still be established. This module proves no existence
 of an Iwasawa decomposition or compact subgroup and does not prove the general
 dynamic-parabolic compactness target.
-
-Author: Worker 125.

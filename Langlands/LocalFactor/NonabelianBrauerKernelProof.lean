@@ -1,5 +1,5 @@
 import Langlands.LocalFactor.BrauerKernel.GlobalAssembly
-import Langlands.ClassField.Global.LocalRelativeWeilTransferProof
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilTransferProof
 
 /-! # Proof of the actual abelian epsilon Brauer-kernel compatibility -/
 
@@ -17,6 +17,6 @@ actual abelian epsilon-ratio evaluation vanishes on the kernel of the actual Bra
 of the continuous exact degree-zero group. -/
 theorem kernelCompatibilityStatement : KernelCompatibilityStatement.{uF, uV} :=
   kernelCompatibilityStatement_of_localTransferReciprocity.{uF, uV}
-    ClassField.Global.RelativeWeilGroup.localTransferReciprocity.{0}
+    ClassFieldTheory.Global.RelativeWeilGroup.localTransferReciprocity.{0}
 
 end Langlands.LocalFactor.NonabelianBrauer

@@ -1,11 +1,11 @@
 # Ring étale groupoids and affine étale equivalence relations
 
-Author: Worker 266. `RingEtaleGroupoid.toScheme` copies the Library
+`RingEtaleGroupoid.toScheme` copies the Library
 construction `RingEtaleEquivalenceRelation.toScheme` (module
-`RingEtaleEquivalenceRelationScheme`, Worker 122).
+`RingEtaleEquivalenceRelationScheme`).
 `EtaleEquivalenceRelation.ringEtaleGroupoid` copies the proof of the Library
 theorem `etaleEquivalenceRelationRingForm` (module
-`EtaleEquivalenceRelationRingFormProof`, Worker 424) for the fields that do
+`EtaleEquivalenceRelationRingFormProof`) for the fields that do
 not involve the closed immersion condition.
 
 ## Declarations

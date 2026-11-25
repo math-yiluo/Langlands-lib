@@ -1,9 +1,8 @@
 # Closed points and rational points over an algebraically closed field
 
-Author: Worker 919.
-
-Module `Langlands.AlgebraicGeometry.ClosedRationalPoints`. This is an internal supporting unit
-for Task 7586. It builds on Mathlib (`AlgebraicGeometry.AlgClosed.Basic` and the Jacobson
+Module `Langlands.AlgebraicGeometry.ClosedRationalPoints`. This is an internal supporting module
+for the proof of the rank-one SL2 central cover independently of the dynamic-Borel route. It
+builds on Mathlib (`AlgebraicGeometry.AlgClosed.Basic` and the Jacobson
 property of schemes locally of finite type over a field). It needs no literature source. The
 first three statements overlap the Library's `SchemeActionRationalPoints`. They are kept here
 as the inputs of the Jacobson subset lemma, and they import nothing from the Borel-subgroup

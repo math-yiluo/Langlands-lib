@@ -1,7 +1,5 @@
 # Bounded pushout target for the rational intersection quotient
 
-Author: Worker 36.
-
 `Langlands.Analytic.RationalIntersection.BoundedPushoutStatement` asserts a
 bounded pushout property for three actual constructed rational algebras.
 Let \(P\) be a presented strict affinoid algebra over a complete ultrametric

@@ -1,7 +1,5 @@
 # Applying the pole criterion to automorphic classes
 
-Author: Worker 422.
-
 `HaveSameLowerRankPoleOrders` is an internal predicate recording certified
 class-level pole tests. For two automorphic objects of rank `n + 2`, it asks
 for equal pole orders of certified pair L-polynomials against every essentially

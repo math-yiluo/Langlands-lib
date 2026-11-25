@@ -116,8 +116,9 @@ are given.
 field `k`, a finitely generated `Λ`, a smooth affine `G`, an action `a`, and a
 representative `j : C ⟶ G` with `IsClosedSubgroup j`. The closed immersion is
 affine. Thus `C` has affine structure map, since by `Over.w` it is the composite
-of `j` with the structure map of `G`. Worker 1345's
-`FixedSubgroupSmoothAlgebraBridge.coordinateAlgebra_smooth` makes the coordinate
+of `j` with the structure map of `G`.
+`FixedSubgroupSmoothAlgebraBridge.coordinateAlgebra_smooth` (module
+`Torus.FixedSubgroupSmoothAlgebraBridge`) makes the coordinate
 algebra of `G` smooth, hence formally smooth, over `k`. The previous section makes
 the coordinate algebra of `C` formally smooth. Then
 `FixedSubgroupSmoothAlgebraBridge.smooth_of_formallySmooth` concludes

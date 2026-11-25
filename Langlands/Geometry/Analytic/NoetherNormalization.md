@@ -1,7 +1,5 @@
 # Constructing a finite injective Tate map
 
-Author: Worker 56.
-
 Over a complete ultrametric normed field `K`, the construction starts with an
 actual finite bounded map from a finite-variable Tate algebra into a
 nontrivial normed commutative `K`-algebra. If the map is injective, it already

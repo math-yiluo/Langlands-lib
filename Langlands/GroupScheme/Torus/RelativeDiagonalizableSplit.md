@@ -1,6 +1,7 @@
 # Splitting diagonalizable relative tori
 
-Worker 665. Internal derived construction for Task 7527.
+Internal derived construction for the proof that every torus over the integers is split
+(`integerTorusSplit` in [`IntegerSplitProof`](IntegerSplitProof.md)).
 
 The selected definition `RelativeMultiplicativeType.diagonalizableSplitIso` takes
 `S : Scheme.{u}`, an abelian group `M`, a finite type `I`, and an additive equivalence

@@ -95,7 +95,7 @@ the public definition selects a witness using `Classical.choice`.
 This is derived internal content from the named Library constructions;
 it is not a new source transcription.
 
-This supporting unit does not establish torus structure on `D`, an
+This supporting module does not establish torus structure on `D`, an
 induced-torus presentation, a vector-bundle series for `U`, cohomological
 vanishing, or the exact semilocal inner-form theorem. Those remain
 separate obligations.

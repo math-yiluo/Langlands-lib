@@ -1,6 +1,6 @@
 # Actual first-dual rank-one convergence from inverse-transpose matrix data
 
-Worker 396. Internal derived prerequisite for the actual matrix functional-equation
+Internal derived prerequisite for the actual matrix functional-equation
 comparison. The field and representation-carrier universes remain independent.
 
 `firstDualModelRepresentationEquiv` gives an actual representation equivalence

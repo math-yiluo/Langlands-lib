@@ -2,7 +2,7 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviBump`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module is part of the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It is
 the second of three modules (`RealLeviPairing`, `RealLeviBump`, `RealLeviNonvanishing`) for the
 nonvanishing step of the single-shot Langlands-quotient argument. The entry statement of the

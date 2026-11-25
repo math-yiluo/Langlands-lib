@@ -1,7 +1,7 @@
 # Weighted evaluation and bounded universal property
 
-Draft by Worker 105, adapting the algebra-law and coordinate arguments from
-Worker 36's published strict Tate evaluation and universal-property proofs.
+This module adapts the algebra-law and coordinate arguments from the
+published strict Tate evaluation and universal-property proofs.
 
 The proof estimates each term by scalar multiplication and the supplied weighted
 monomial constant. Weighted coefficient decay gives unconditional summability

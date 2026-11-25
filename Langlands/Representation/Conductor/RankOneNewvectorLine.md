@@ -1,6 +1,6 @@
 # The rank-one newvector line
 
-Worker 135 constructs `Langlands.Conductor.rankOneNewvectorLineEquiv` for an
+This module constructs `Langlands.Conductor.rankOneNewvectorLineEquiv` for an
 admissible irreducible complex representation `π` of GL₁ over an arbitrary
 nonarchimedean local field `F`. Its source is the actual submodule fixed by the
 concrete level subgroup at `rankOneConductor F π ha.1`; its target is `ℂ`.

@@ -1,7 +1,5 @@
 # Real unitarization of actual supercuspidal GL representations
 
-Authors: Worker 163 (statement draft), Worker 246.
-
 `Langlands.SupercuspidalRealUnitarizationStatement.{uF,uV}` is a closed
 proposition definition. It states that every actual irreducible
 supercuspidal representation of `GL_n(F)` becomes unitarizable on its
@@ -78,17 +76,18 @@ definition of unitarity by an invariant definite Hermitian form on `V`
 itself. The single-block reduction is our derived step and is not text in
 Casselman.
 
-This file is a statement unit only. It supplies no proof of
+This file is a statement only. It supplies no proof of
 unitarization and makes no claim about adjacent product reducibility or
 the other analytic steps of Zelevinsky 1980, Proposition 1.11, which it is
 intended to feed.
 
-## Planned proof successor
+## Proof
 
-The proof is to be supplied by a separate `lean.proof@1` task, transporting
-the proved Levi theorem `Langlands.leviCuspidalRealUnitarization` along the
-surjective single-block embedding. That task is also to provide an
-object-level corollary for `GeneralLinear.SupercuspidalRep`, whose class
-compatibility uses `supercuspidalClassRealPowerTwist` from
+The proof is in `Langlands.Representation.Unitary.SupercuspidalRealUnitarizationProof`:
+`Langlands.supercuspidalRealUnitarization` transports the proved Levi theorem
+`Langlands.leviCuspidalRealUnitarization` along the surjective single-block
+embedding. The same file gives the object-level corollary
+`Langlands.supercuspidalRepRealUnitarization` for
+`GeneralLinear.SupercuspidalRep`, whose class compatibility uses `supercuspidalClassRealPowerTwist` from
 `Classification/SupercuspidalTwist`. The corollary is not part of this
 proposition and does not strengthen it.

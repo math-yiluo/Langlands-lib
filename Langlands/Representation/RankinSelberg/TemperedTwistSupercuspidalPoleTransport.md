@@ -1,7 +1,5 @@
 # Removing the real twist from supercuspidal pole existence
 
-Author: Worker 1743.
-
 This is an internal reduction for
 `Langlands.RankinSelberg.TemperedTwistSupercuspidalPoleStatement`.
 It does not prove pole existence. It proves that the published target is

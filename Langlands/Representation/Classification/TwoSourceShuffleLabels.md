@@ -1,7 +1,5 @@
 # Two source-block labels as shuffle subsets
 
-Author: Worker 167.
-
 This internal supporting module specializes the finite labeling equivalence in
 `UniformTargetBlockLabels` to a source shape with two blocks. All declarations
 are in `Langlands.Classification.ShuffleRefinement`.
@@ -49,16 +47,13 @@ binary labels, multiplication cancellation, complement cardinalities, and the
 standard count of fixed-cardinality subsets. It cites no original literature
 and does not require a field, topology, or representation.
 
-The companion finite-label module supplies `LabelAssignment`,
-`WholeTargetRepresentatives`, and `wholeTargetEquivLabels`; its publication is
-handled separately. Its coordinate proof depends on
-`exists_index_of_blockIndex_eq` in `WeylUniquenessProof` (task
-`9ad51693-f8a1-45de-949a-72d07ecc13b9`), `index_strictMono` in
-`WeylMinimalRepresentativeProof` (task
-`6e35399b-9029-438e-9663-5ce96ab02576`), and
+The companion finite-label module `UniformTargetBlockLabels` supplies
+`LabelAssignment`, `WholeTargetRepresentatives`, and `wholeTargetEquivLabels`.
+Its coordinate proof depends on
+`exists_index_of_blockIndex_eq` in `WeylUniquenessProof`, `index_strictMono` in
+`WeylMinimalRepresentativeProof`, and
 `TotalConjugatingCount.card_blockIndex_fiber` in
-`TotalConjugatingCountProof` (task
-`5becc159-1242-4fa4-9102-79aa6e2726c0`). These are finite block-coordinate
+`TotalConjugatingCountProof`. These are finite block-coordinate
 results. The added Mathlib input is `Fintype.card_finset_len`; the other new
 steps use finite set and cardinality laws.
 
@@ -73,5 +68,5 @@ Jacquet formula.
 The whole-target condition remains part of the domain. The result counts
 actual minimal permutations satisfying that condition; it does not identify
 the nonzero geometric-lemma pieces, their representations, or any Jacquet
-module. The shuffle Jacquet formula and the unconditional parent proposition
-`JuxtaposedSegmentSocleReverseProductStructure` remain unproved by this module.
+module. The shuffle Jacquet formula and the unconditional proposition
+`JuxtaposedSegmentSocleReverseProductStructure` are not proved by this module.

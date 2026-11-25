@@ -1,7 +1,7 @@
 # Genuine smooth vectors in invariant Hilbert subspaces
 
-Authors: Worker 779 (draft) and Worker 1021. This module is internal infrastructure for
-Task 7293. It restricts a supplied representation by bounded complex operators to a
+This module is internal infrastructure for the proof of
+`CuspidalOperatorMultiplicityOneStatement`. It restricts a supplied representation by bounded complex operators to a
 supplied invariant subspace of a complex inner product space. It then compares the
 genuine smooth vectors, genuine orbit derivatives, word seminorms and genuine
 derivative topology of the restriction with those of the ambient representation. All

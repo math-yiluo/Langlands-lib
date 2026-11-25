@@ -218,7 +218,7 @@ theorem rectGL_torus {K : Type*} [Field K] {r t : ℕ} (h : t < r) (ϖ : Kˣ)
     · rfl
     · rfl
 
-/-- `∑_(i<j) (λ_i - λ_j) = ∑_i (n - 2 i) λ_i` (the computation of Worker 5130's
+/-- `∑_(i<j) (λ_i - λ_j) = ∑_i (n - 2 i) λ_i` (the computation of
 `EqualEulerLocal.sum_sub_of_lt_eq`). -/
 theorem modulusExponent_eq {n : ℕ} (lam : Fin (n + 1) → ℤ) :
     modulusExponent lam = ∑ i : Fin (n + 1), ((n : ℤ) - 2 * (i : ℤ)) * lam i := by
@@ -365,7 +365,7 @@ theorem whittaker_split (hA : UnramifiedWhittakerFactorizationStatement.{u, uQ})
     (hψS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     {x : T.Space} (hx : IsSphericalOutside F T S x) {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
       P.spectralSystem.eigenvalues v (fun hvP => hv (hP hvP))) :
@@ -391,7 +391,7 @@ theorem whittakerInv_rectangularPoint_localPoint_mul
     (hψS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     {x : T.Space} (hx : IsSphericalOutside F T S x) {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -424,7 +424,7 @@ theorem whittaker_localPoint_mul_of_integral
     (hψS : FunctionalEquationComparison.FiniteAdditiveSupport ψ S)
     {x : T.Space} (hx : IsSphericalOutside F T S x) {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {b : Fin (t + 1) → ℂˣ}
     (hb : Unramified.Eigenvalues.ofTuple b =
@@ -472,7 +472,7 @@ theorem dualKernel_localPoint_mul_of_integral
     {xd : Td.Space} (hxd : IsSphericalOutside F Td S xd)
     {xd' : Td'.Space} (hxd' : IsSphericalOutside F Td' S xd') {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -526,7 +526,7 @@ theorem dualKernel_localPoint_torus_mul
       dualFunction F (t + 1) (cuspWhittaker F T' ψ.complex⁻¹ x'))
     {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -661,7 +661,7 @@ theorem integrand_shift (hA : UnramifiedWhittakerFactorizationStatement.{u, uQ})
       dualFunction F (t + 1) (cuspWhittaker F T' ψ.complex⁻¹ x'))
     {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =
@@ -708,7 +708,7 @@ theorem setIntegral_cons_eq (hA : UnramifiedWhittakerFactorizationStatement.{u, 
       dualFunction F (t + 1) (cuspWhittaker F T' ψ.complex⁻¹ x'))
     {v : FinitePlace F} (hv : v ∉ S)
     {ψv : Correspondence.NontrivialAdditiveCharacter (CompletionPadic.padicField v)}
-    (hψv : ClassField.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
+    (hψv : ClassFieldTheory.Global.RelativeWeilGroup.IsCanonicalFiniteAdditiveComponent ψ v ψv)
     (h0 : (CompletionPadic.padicField v).canonicalTopologicalData.additiveConductor ψv = 0)
     {a : Fin (r + 1) → ℂˣ}
     (ha : Unramified.Eigenvalues.ofTuple a =

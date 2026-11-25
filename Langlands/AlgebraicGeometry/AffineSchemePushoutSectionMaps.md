@@ -54,9 +54,7 @@ commutative-ring-valued presheaves on `Spec P`.
 
 These are internal adapters derived from the imported sheaf pullback theorem
 and Mathlib's actual spectrum, pushforward, restriction, and structure-sheaf
-comap constructions. Worker 1568 supplied the sheaf comparison and the
-required equality-transport interface; Worker 336 implemented the comparisons
-and the limit witness. No external source theorem is asserted here.
+comap constructions. No external source theorem is asserted here.
 
 The generic presheafed-space universal property and the exact scheme theorem
 are separate steps. This module supplies their section-map input; it does not

@@ -1,8 +1,5 @@
 # Actual additive inputs for associated-pair comparisons
 
-Worker 1768. Worker 1679 identified the published character and proposed its
-connection to the Hecke component interface.
-
 This internal construction bundles the proved standard character from
 [`CuspidalWhittaker/AdelicCharacter`](CuspidalWhittaker/AdelicCharacter.md) and
 identifies its finite restrictions with the actual components required by

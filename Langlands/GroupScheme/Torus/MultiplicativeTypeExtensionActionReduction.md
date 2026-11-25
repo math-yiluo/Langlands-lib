@@ -1,12 +1,10 @@
 # Central extensions of multiplicative type: rigidity inputs and the closing step
 
-Worker 3502 (Task 6779).
-
 This module supplies all steps of Milne's proof of Corollary 12.41 (the target
 [`MultiplicativeTypeExtensionActionStatement`](MultiplicativeTypeExtensionActionStatement.md))
 except the construction of the difference family `ψ : G × Q → N`. That construction is
-`AutomorphicAction.centralDifference` (Worker 302,
-[`AutomorphicAction.CentralDifference`](../AutomorphicAction/CentralDifference.md)). The
+`AutomorphicAction.centralDifference`
+([`AutomorphicAction.CentralDifference`](../AutomorphicAction/CentralDifference.md)). The
 assembled proof is in
 [`MultiplicativeTypeExtensionActionProof`](MultiplicativeTypeExtensionActionProof.md).
 
@@ -58,8 +56,8 @@ Let `G` be a connected algebraic group and `Q`, `N` groups of multiplicative typ
 be a family of homomorphisms `Q → N` parametrized by `G`: multiplicative in the `Q`-point and
 natural in the test object (`HomFamily.IsHomFamily`). Then `F` has the same value at every
 point `g` of `G` as at the identity. Proof: this is the published
-`HomFamily.eq_one_of_multiplicativeType` (Worker 798,
-[`Torus.MultiplicativeTypeHomFamily`](MultiplicativeTypeHomFamily.md)), applied after the
+`HomFamily.eq_one_of_multiplicativeType`
+([`Torus.MultiplicativeTypeHomFamily`](MultiplicativeTypeHomFamily.md)), applied after the
 three hypotheses on `G` are made available as instances. That lemma takes one field extension
 `K` over which `Q` and `N` are both diagonalizable with finitely generated character groups
 (`IsMultiplicativeType.exists_common_splitting`). It then applies

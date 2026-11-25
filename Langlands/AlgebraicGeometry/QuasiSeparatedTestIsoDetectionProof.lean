@@ -34,8 +34,7 @@ private theorem left_cancel_of_quasiSeparated_tests
   exact congrArg (fun k : T ⟶ P => k.left) ((H T).1 hcomp)
 
 /-- Quasi-separated tests detect isomorphisms of schemes over an arbitrary base.
-The proof lifts affine charts and glues a two-sided inverse.
-Adapted from Worker 535's affine-cover argument. -/
+The proof lifts affine charts and glues a two-sided inverse. -/
 theorem quasiSeparatedTestIsoDetection :
     QuasiSeparatedTestIsoDetectionStatement.{u} := by
   intro S P Q f H

@@ -46,7 +46,7 @@ Whittaker function of `x ∈ T.Space`.
 * `IsComplexPlaceWhittaker F T χ w W`, for `W : GL_(r+1)(ℂ) → ℂ`, is the same at a complex
   place `w`.
 
-This is the second formulation that the task allows: archimedean restrictions
+This formulation uses archimedean restrictions
 `g_v ↦ W(g_v a)` of the global Whittaker functions, with `a` a finite adelic point. The
 components of `g` at the other infinite places are `1`. Why these functions lie in the
 Whittaker models of Jacquet's Theorem 2.1 is explained in the Markdown of
@@ -80,7 +80,7 @@ value `1` is used only if `−1` does not act by a scalar.
   components `IsRealAdditiveComponent`, `IsComplexAdditiveComponent` use the same
   coordinates.
 * **Scalars by choice.** The minus-one scalars are defined quantities (by `Classical.choose`
-  when they exist), as the task requires, not existential ones.
+  when they exist), not existential ones.
 * The module declares two local instances: affineness and smoothness of the group scheme
   `GL_n`, by `GroupScheme.GeneralLinear.isAffine_groupScheme` and
   `GroupScheme.GeneralLinear.smoothStatement`. The global modules of the Library declare the
@@ -98,6 +98,6 @@ value `1` is used only if `−1` does not act by a scalar.
 
 ## Provenance
 
-Internal helper definitions of Task 7136, written for the three archimedean statements.
+Internal helper definitions, written for the three archimedean statements.
 The inclusions and restrictions realize the source's `W_v(g_v) = W(g_v a)` in the
 coordinates of the Library.

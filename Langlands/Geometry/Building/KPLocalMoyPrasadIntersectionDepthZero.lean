@@ -4,8 +4,8 @@ import Langlands.Geometry.Building.KPLocalMoyPrasadIntersectionRoot
 # Clauses 4, 6 and 7 of the K-level Moy–Prasad group properties at depth zero
 
 The depth-zero cases of clauses 4, 6 and 7 of `LocalMoyPrasadGroupPropertiesStatement`, from two
-depth-zero intersection facts taken as explicit hypotheses (the two clauses of the statement
-requested in Task 6570): `U⁺(μ)(K) ∩ G(K)_{x,0} = U⁺_{x,0}` for generic `μ`, and
+depth-zero intersection facts taken as explicit hypotheses: `U⁺(μ)(K) ∩ G(K)_{x,0} = U⁺_{x,0}`
+for generic `μ`, and
 `M_ν(K) ∩ G(K)_{x,0} ⊆ j(Z(K)_0) · U_{Φ⁰(ν),x,0}`. Combined with the positive-depth results
 derived from the sign product cover, they give the three clauses at every depth.
 -/

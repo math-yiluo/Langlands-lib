@@ -1,7 +1,5 @@
 # The reduced norm in matrix Gram coordinates
 
-Worker 863, Task 7498.
-
 For a finite-dimensional central division algebra `D` over a field `K`, the matrix
 coefficient equivalence identifies `R ⊗[K] M_I(D)` with `M_I(R ⊗[K] D)` for each
 commutative `K`-algebra `R` and nonempty finite index type `I`. The homomorphism

@@ -1,6 +1,6 @@
 # The actual normalized Jacquet bridge for fixed-vector detection
 
-Worker 189. The internal proposition
+The internal proposition
 `Langlands.NormalizedJacquetFixedVectorBridgeStatement.{uG,uV}` connects
 fixed-vector detection to the Library's actual normalized Jacquet functor.
 The group and representation-carrier universes are independent.

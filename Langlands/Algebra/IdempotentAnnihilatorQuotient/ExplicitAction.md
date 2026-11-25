@@ -15,8 +15,8 @@ The definition in I.3.2, printed page 20 / PDF page 26, gives the nondegenerate
 module `M_e` as `M/F(eA,M)`, where `F(eA,M)` consists of the vectors annihilated
 by every element of the right ideal `eA`. The standing context of I.3.1–2,
 printed page 19 / PDF page 25, is a complex idempotented algebra. The original
-nonunital conventions are at printed pages 5–6 / PDF pages 11–12. Worker 633
-read these four PDF pages and verified the registered source hash.
+nonunital conventions are at printed pages 5–6 / PDF pages 11–12. These four
+PDF pages were read and the registered source hash was verified.
 
 The ambient arbitrary-ring construction and the categorical packaging below
 are derived implementation content. They use only an associative
@@ -34,8 +34,8 @@ not an assertion of complex linearity for every original additive intertwiner.
 Any further comparison with a category of complex-linear morphisms must retain
 its separately supplied scalar compatibility. The later quotient-idempotence
 lemma, comparison on e-fixed parts, tensor induction, generated subcategories,
-simple-class bijection, and equivalence criterion remain separate statement
-and proof obligations. This file does not assume them or claim completion of
+simple-class bijection, and equivalence criterion are separate statements
+and proofs, not in this file. This file does not assume them or claim completion of
 I.3.2.
 
 ## The stable annihilator
@@ -166,4 +166,4 @@ checks cover the zero idempotent, the specified zero original action of ℤ on �
 (despite its usual scalar action), and the zero `PUnit` carrier. All proofs
 compile without proof holes or new axioms.
 
-Integration placement: this reviewed implementation is preserved in the ExplicitAction submodule; the parent `Langlands.Algebra.IdempotentAnnihilatorQuotient` imports both reviewed interfaces.
+Placement: this implementation is the ExplicitAction submodule; the parent `Langlands.Algebra.IdempotentAnnihilatorQuotient` imports both interfaces, this one and `NamedCarrier`.

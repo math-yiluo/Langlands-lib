@@ -1,7 +1,5 @@
 # Primes below a Borel coordinate kernel with solvable rational points
 
-Worker 1498.
-
 This helper module supplies the step over the small field in the maximality argument of
 the proof of `Langlands.GroupScheme.BorelAlgClosedFieldExtensionStatement`. Throughout,
 `k` is an algebraically closed field, `G` is a group scheme over `Spec k` with affine

@@ -1,7 +1,7 @@
 # Actual Weyl and orbit descent for the normalized comparisons
 
 `ClosedWeylDescentStatement` concerns the actual intrinsic semistandard
-sections of Task 7229 using the special compact of the fixed maximal split
+sections (`RationalSemistandardOrbitSections`) using the special compact of the fixed maximal split
 torus and the split-central quotient Haar at the exact trace-normalized
 Weil scale. It includes `ClosedSectionComparisonStatement` for
 every displayed compact lift. `liftClass` is the class of that lift in the

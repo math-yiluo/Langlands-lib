@@ -29,7 +29,7 @@ theorem FiniteKernelDetector.comp_eq_zero (D : FiniteKernelDetector q) (r : H �
     intro a ha
     exact hr a ha
   have hpull : ((kernelι q).hom.hom.left.ker).comap r.hom.hom.left = ⊥ := by
-    rw [D.ideal_eq, Scheme.IdealSheafData.comap_ofIdealTop, Ideal.map_map,
+    rw [D.ideal_eq, Scheme.IdealSheafData.comap_ofIdealTopFLT, Ideal.map_map,
       ← CommRingCat.hom_comp, ← Scheme.Hom.comp_appTop]
     change Scheme.IdealSheafData.ofIdealTop
       (J.map (r ≫ q).hom.hom.left.appTop.hom) = ⊥

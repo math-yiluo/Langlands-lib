@@ -1,6 +1,6 @@
 # Finite operator expansion of a smooth representation of `Fˣ`
 
-Worker 940 defines `Langlands.FiniteOperatorExpansionStatement.{uF,uV}` in
+`Langlands.FiniteOperatorExpansionStatement.{uF,uV}` is defined in
 module `Langlands.Representation.Smooth.FiniteOperatorExpansionStatement` as a
 closed proposition. This file states the result; it does not prove it.
 
@@ -132,8 +132,7 @@ supplies representations, the `Units` topology, submodule spans,
 finite-dimensionality and finite sums. Existing Library pairs are unchanged.
 
 This statement is a focused prerequisite of the exact proof of
-`Langlands.Whittaker.JPSDecompositionStatement` (task
-`b1da68dc-38c9-449e-a71c-bae1f8902b22`), whose proof on printed p.182 applies these
+`Langlands.Whittaker.JPSDecompositionStatement`, whose proof on printed p.182 applies these
 remarks to the coordinate action `σ_n` on a coordinate-germ quotient. That
 consumer must itself supply smoothness of the quotient action; this statement
 does not assume, and is not derived from, `JPSDecompositionStatement` or the
@@ -153,8 +152,8 @@ J. Shalika, *Automorphic forms on GL(3) I*, Ann. of Math. (2) 109 (1979),
 169–212. Retained file
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Automorphic Forms on GL(3) I--1979.pdf`,
 SHA-256 `6446822f267f9f95156ce7a193409209e56ce7858ed6d3d350480e73f35b1aa5`.
-Worker 940 read the extracted text and the rendered image of printed p.181 (PDF
+The extracted text and the rendered image of printed p.181 (PDF
 page 14), including the finite-function definition and the remarks above, and
-the text of printed p.182 where they are applied. No errata file for this source
-was present in the project notes, the current Library notes or the literature
+the text of printed p.182 where they are applied, were read. No errata file for this source
+was present in the project notes, the Library notes or the literature
 collection when this statement was prepared.

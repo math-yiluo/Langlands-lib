@@ -1,6 +1,6 @@
 # Symmetric polynomial two-cocycles of the additive group
 
-Worker 716. Internal lemma for the proof of
+Internal lemma for the proof of
 `Langlands.GroupScheme.PerfectFieldOneDimensionalUnipotentStatement`. It is a
 polynomial, perfect-field form of the classical description of symmetric
 two-cocycles of the additive group. No registered source was used. The argument

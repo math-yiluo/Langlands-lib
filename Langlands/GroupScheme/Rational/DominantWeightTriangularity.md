@@ -1,7 +1,5 @@
 # Dominant-weight triangularity in the group algebra of a root datum
 
-Author: Worker 1804.
-
 This module holds the combinatorial step in the proof that fundamental trace
 characters freely generate class functions
 (`Langlands.GroupScheme.SplitFundamentalCharacterGenerationStatement`). It does

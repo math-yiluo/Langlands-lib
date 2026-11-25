@@ -1,7 +1,5 @@
 # The roots of the centralizer of a cocharacter: proof
 
-Author: Worker 712.
-
 This module proves the published proposition
 `DynamicCentralizerRootsStatement`
 ([`Dynamic.CentralizerRootsStatement`](CentralizerRootsStatement.md)) as the

@@ -63,7 +63,8 @@ Throughout, `K` is a field, `X` and `Y` are objects of `Over (Spec K)`, and
 This module proves no injectivity statement for any particular `Φ`. It uses
 only the published Library theorems named above (Künneth, finiteness, global
 functions). None of them is one of the representability and dual-scheme
-statements excluded by Task 6105, or a proof of
+statements excluded for the proof of
+`FieldH2ExteriorCoproductComparisonStatement`, or a proof of
 `FieldH2PrimitiveInjectivityStatement`.
 
 ## Provenance

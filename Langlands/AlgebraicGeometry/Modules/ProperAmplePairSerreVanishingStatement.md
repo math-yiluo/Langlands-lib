@@ -48,10 +48,9 @@ inside `namespace Langlands.AlgebraicGeometry.Modules`, with
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`,
 `Langlands.AlgebraicGeometry.Modules.Tensor`,
 `Langlands.AlgebraicGeometry.Picard.Ample` and
-`Mathlib.AlgebraicGeometry.Morphisms.Proper`. The body is the one in the task
-specification, unchanged. With `pp.fieldNotation false`, `pp.proofs true` and
-`pp.funBinderTypes true`, `#print` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` reports:
+`Mathlib.AlgebraicGeometry.Morphisms.Proper`. With `pp.fieldNotation false`,
+`pp.proofs true` and `pp.funBinderTypes true`, `#print` (Lean 4.34.0, Mathlib
+commit `5ed2965256430c3649e86755f9576b54eca72435`) reports:
 
 ```text
 def Langlands.AlgebraicGeometry.Modules.ProperAmplePairSerreVanishingStatement.{u} : Prop :=
@@ -94,7 +93,7 @@ standard axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Library objects used
 
-The statement uses only published definitions and Mathlib. It introduces no
+The statement uses only Library definitions and Mathlib. It introduces no
 new data, structure, certificate or axiom.
 
 - `Spec (CommRingCat.of K)` is Mathlib's spectrum of the field `K`.
@@ -105,13 +104,13 @@ new data, structure, certificate or axiom.
 - `X.Modules` is Mathlib's category of sheaves of `𝒪_X`-modules.
   `M.IsQuasicoherent` is Mathlib's `SheafOfModules.IsQuasicoherent`. The
   third hypothesis says that `Γ(M, U)` is a finite `Γ(X, U)`-module for every
-  affine open `U`. It is the coefficient predicate already used by the
-  published `ProperCoherentCohomologyFiniteStatement`.
+  affine open `U`. It is the coefficient predicate already used by
+  `ProperCoherentCohomologyFiniteStatement`.
 - `LineBundle X` is the full subcategory of `X.Modules` cut out by
   `IsLocallyFreeRankOne`: every point has an open neighbourhood `U` with
   `M.restrict U.ι ≅ 𝒪_U`. These are the invertible sheaves. `L.obj` is the
   underlying sheaf of modules.
-- `L.IsAmple` is the published predicate of `Picard.Ample`:
+- `L.IsAmple` is the predicate of `Picard.Ample`:
 
   ```text
   CompactSpace X ∧ ∀ x : X, ∃ n : ℕ, 1 ≤ n ∧ ∃ s : L.powSections n,
@@ -261,10 +260,10 @@ finite type over `K`.
 Applying this to `F = M` gives the statement.
 
 An alternative route works only when `X` is smooth over `K`. On `X ×_K X` the
-bundle `L₁ ⊠ L₂` is ample, and the published
+bundle `L₁ ⊠ L₂` is ample, and
 `CoherentFieldExternalTensorKunnethStatement` (proved as
 `coherentFieldExternalTensorKunneth`) computes `Hⁱ(L₁^{⊗a} ⊠ L₂^{⊗b})`. Then
-`M` is reached through the diagonal. The published Künneth statement assumes
+`M` is reached through the diagonal. The Künneth statement assumes
 `Smooth` and `IsProper` and covers line bundles only. The general Künneth
 formula over a field, Stacks Lemma 33.29.1, tag
 [0BED](https://stacks.math.columbia.edu/tag/0BED) (`varieties.tex`
@@ -272,16 +271,16 @@ line 5442), needs only quasi-compactness and affine diagonal, but it is not
 in the Library in that generality. So the dévissage above is the route that
 covers every proper `X`.
 
-## Proof obligations for the later exact proof
+## Proof requirements
 
-After independent acceptance and publication, a separate exact-target proof
-must have this entire named proposition as its type, with no extra outer
-hypotheses. Following the derivation, it needs the following. None of it is
-proved here, and the list of Library material is a pointer, not a claim of
-sufficiency.
+The proposition is proved as `properAmplePairSerreVanishing` in the module
+`ProperAmplePairSerreVanishingProof` (with the modules under
+`Langlands.AlgebraicGeometry.Modules.SerreVanishing`). Its type is this
+entire named proposition, with no extra outer hypotheses. Following the
+derivation, a proof needs the following. None of it is proved here, and the
+list of Library material is a pointer, not a claim of sufficiency.
 
-- One-bundle Serre vanishing is not in the Library. The derivation does not
-  use it.
+- The derivation does not use one-bundle Serre vanishing.
 - Finiteness of associated points of a coherent module, injectivity of
   multiplication by a section that is nonzero at the associated points, and
   the drop in dimension of the cokernel's support. The Library's
@@ -305,10 +304,6 @@ sufficiency.
   (`tensorAssociator`, `tensorPowAddIso`, `tensorRightUnitor`) and the
   transport of `IsZero` along them.
 
-Substantial missing inputs need separate definitions, statements and
-unconditional proofs, in dependency order. Conditional assembly is not a
-proof of this proposition.
-
 ## Scope
 
 The statement covers every universe `u`, every field in every
@@ -317,18 +312,16 @@ not, possibly empty) and every coherent `M`. It adds no smoothness,
 projectivity, dimension index, section or vanishing hypothesis. The exponents
 are natural numbers. Negative exponents, degree zero, and the relative form
 over a noetherian base ring are not stated. For `L₁ = L₂` the statement
-contains one-bundle Serre vanishing for all exponents `d ≥ 2n₀`. Publication
-records a target for a later proof; it is not a vanishing theorem.
+contains one-bundle Serre vanishing for all exponents `d ≥ 2n₀`. This module
+records a target for a proof; it is not a vanishing theorem.
 
-## Role and authorship
+## Role
 
-This is a prerequisite of task `6a5c4a64-6809-4f94-b35e-87cbc8a8b432`, owned
-by Worker 1147 and Worker 1137, which proves the published
-`Langlands.AbelianScheme.AmpleLineBundleHigherCohomologyVanishingStatement`.
+This is a prerequisite of the proof of
+`Langlands.AbelianScheme.AmpleLineBundleHigherCohomologyVanishingStatement`
+(`ampleLineBundleHigherCohomologyVanishing`, module
+`Langlands.AbelianScheme.AmpleLineBundleHigherCohomologyVanishingProof`).
 That proof writes `ψ_k^* L ≅ L^{C(k+1,2)} ⊗ ((−1)^* L)^{C(k,2)}` on an
 abelian variety by the theorem of the cube. It applies this statement with
 `M` the structure sheaf, `L₁ = L` and `L₂ = (−1)^* L`, in which both
 exponents grow. The consumer is not used to justify this statement.
-
-Worker 1222 wrote the Lean declaration and this Markdown. The body follows
-the task specification without change.

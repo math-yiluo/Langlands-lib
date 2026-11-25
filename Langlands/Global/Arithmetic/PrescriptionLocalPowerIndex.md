@@ -1,7 +1,5 @@
 # Finite power index in the whole prescription local product
 
-Author: Worker 53.
-
 These are internal deductions from the Library's proved finite local power
 index theorem, its archimedean root arguments, and Mathlib's quotient
 isomorphisms. They implement the local finiteness input used in the
@@ -30,7 +28,7 @@ the positive real `d`th root to show that either a unit or its negative is a
 `d`th power. The quotient is the image of the two-element type `Bool`, through
 the classes of `1` and `-1`; this proves actual finiteness. The positive-root
 calculation is the one used in
-`Langlands.ClassField.Global.index_infiniteUnitPowers_le_two`. A bound on the
+`Langlands.ClassFieldTheory.Global.index_infiniteUnitPowers_le_two`. A bound on the
 natural-number index alone would not suffice, since the index of an infinite
 quotient is zero. At a complex place, the existing theorem identifies the
 power subgroup with the whole group.
@@ -41,7 +39,7 @@ ring with the product of the infinite completion unit groups using
 along that equivalence give finite index. All real sign components remain.
 
 Finally, `prescriptionLocalProduct_power_finiteIndex` uses
-`Langlands.ClassField.Global.localPowers_finiteIndex` at the selected actual
+`Langlands.ClassFieldTheory.Global.localPowers_finiteIndex` at the selected actual
 finite completions, applies the finite-product result, and combines this with
 the whole infinite factor. Its field universe is unrestricted. This supplies
 the finite-image hypothesis for the profinite separation argument when combined

@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
 import Langlands.AnthropicFLT.Definitions.Def_PresheafOfModules_InternalHom
 import Langlands.AnthropicFLT.Theorems.Thm_PresheafOfModules_isMonoidal_inverseImage_W_toPresheaf
@@ -29,7 +29,7 @@ open AlgebraicGeometry AlgebraicGeometry.Scheme.Modules in
 
 theorem solution {X : AlgebraicGeometry.Scheme.{u}} {M : X.Modules}
     (h : ∀ x : X, ∃ (U : X.Opens) (s : Γ(M, U)), x ∈ U ∧ AlgebraicGeometry.Scheme.Modules.IsFrameOn s U) :
-    AlgebraicGeometry.Scheme.Modules.IsInvertible M := by
+    AlgebraicGeometry.Scheme.Modules.IsInvertibleFLT M := by
   refine ⟨fun x => ?_⟩
   obtain ⟨U, s, hx, hs⟩ := h x
   exact ⟨U, hx, AlgebraicGeometry.Scheme.Modules.IsFrameOn.nonempty_pullback_iso_unit hs U le_rfl le_rfl⟩

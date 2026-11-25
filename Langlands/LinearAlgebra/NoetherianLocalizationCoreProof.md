@@ -1,7 +1,6 @@
 # Proof of the internal Noetherian localization core
 
-Worker 709 wrote this proof and Worker 735 checked and submitted it for task
-`d5b1de4a-fa7c-47b9-9f10-d8a35ac539c0`. It proves the published statement
+This module proves the published statement
 module `Langlands.LinearAlgebra.NoetherianLocalizationCoreStatements`, which
 it imports by name.
 The theorem
@@ -21,8 +20,8 @@ PDF pages 258–259 supplying the intended localization application.
 The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read and visually inspected those motivating passages in the
-parent audit. The proof below uses a quotient Hopfian argument instead of
+Those motivating passages were read and visually inspected in the PDF.
+The proof below uses a quotient Hopfian argument instead of
 Renard's inverse-polynomial argument. It proves the published internal
 ordinary-module targets, rather than the entire source proposition.
 
@@ -71,7 +70,7 @@ This module supplies no actual localization construction or adapter. The
 source's possibly nonunital conventions, actual localization kernel union,
 exhaustion and quotient identification, scalar/additive generation and
 Noetherian comparisons, source endomorphism-module finiteness, decomposition,
-and conclusions for every stable power remain separate parent obligations.
+and conclusions for every stable power are not part of this module.
 Proving this internal aggregate therefore does not prove Renard's full
 Appendix C.II proposition. The published statement pair is imported by name,
 unchanged, and is not part of this proof module.

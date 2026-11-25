@@ -86,7 +86,10 @@ theorem rationalCharacterEval_two_nsmul {S : CommGroupScheme (Spec (CommRingCat.
     (a : characterLattice S) (t : rationalPoints S.toGrp) :
     rationalCharacterEval ((rationalCharacters.equivCharacterLattice S).symm (2 • a)) t =
       rationalCharacterEval ((rationalCharacters.equivCharacterLattice S).symm a) t ^ 2 := by
-  rw [map_nsmul, two_nsmul, rationalCharacterEval_add, sq]
+  have h2 : (rationalCharacters.equivCharacterLattice S).symm (2 • a) =
+      2 • (rationalCharacters.equivCharacterLattice S).symm a :=
+    (rationalCharacters.equivCharacterLattice S).symm.toAddMonoidHom.map_nsmul 2 a
+  rw [h2, two_nsmul, rationalCharacterEval_add, sq]
 
 /-- Rational points of the torus act on `K`-valued weight vector coordinates by the value of
 the weight. -/

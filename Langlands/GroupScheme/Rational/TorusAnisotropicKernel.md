@@ -1,6 +1,6 @@
 # Kernel of the quotient determined by invariant characters
 
-Worker 714. Internal supporting construction for the anisotropic-part theorem.
+Internal supporting construction for the anisotropic-part theorem.
 
 The construction `anisotropicPart` takes a commutative group scheme over a
 field and a finite Galois extension over which it is split. It returns
@@ -42,4 +42,4 @@ incoming map.
 These are internal consequences of the existing character, cocharacter,
 finite Galois descent and kernel APIs, supporting the unchanged public
 anisotropic-part statement. The finite surjective multiplication assertion
-is a separate obligation.
+is proved separately, in `TorusAnisotropicPartProof`.

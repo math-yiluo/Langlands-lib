@@ -1,7 +1,5 @@
 # Maximal-torus isogeny reduction
 
-Authors: Worker 1371 and Worker 1531.
-
 This module proves exactly `MaximalTorusIsogenyReductionStatement.{u}` from
 `Rational/MaximalTorusConjugatorReductionCases`, for an arbitrary universe and
 an arbitrary field. The original maximal torus is retained through the

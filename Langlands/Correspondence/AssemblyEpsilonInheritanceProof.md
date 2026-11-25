@@ -1,7 +1,5 @@
 # Epsilon-factor inheritance for the assembled correspondence
 
-Author: Worker 4804.
-
 `Langlands.Correspondence.assemblyEpsilonInheritance.{uF, uP, uA}` proves
 exactly the published proposition
 `Langlands.Correspondence.AssemblyEpsilonInheritanceStatement.{uF, uP, uA} F`

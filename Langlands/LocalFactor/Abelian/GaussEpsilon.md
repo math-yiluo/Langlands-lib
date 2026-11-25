@@ -1,6 +1,6 @@
 # Elementary laws of the concrete Gauss epsilon expression
 
-Worker 1248. Internal lemmas about the published expressions
+Internal lemmas about the published expressions
 `PadicAbelian.epsilonAt` and `PadicAbelian.lFactorAt` at explicit conductor levels
 `a` (multiplicative) and `n` (additive). They are derived directly from the
 definitions in `Langlands.LocalFactor.Abelian.Padic` and from scalar additive

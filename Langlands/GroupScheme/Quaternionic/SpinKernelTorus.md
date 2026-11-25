@@ -1,15 +1,13 @@
 # The kernel of a torus map with even cocharacter image
 
-Authors: Worker 146.
-
-This internal helper unit supports the proof of
-`Langlands.GroupScheme.Quaternionic.SpinKernel.SpinKernelGeneratorStatement`
-(Task 5870). It contains the lattice part of the following standard fact.
+This internal helper module supports the proof of
+`Langlands.GroupScheme.Quaternionic.SpinKernel.SpinKernelGeneratorStatement`.
+It contains the lattice part of the following standard fact.
 Let `t : T → 𝔻` be a map from a split torus to the split diagonal torus
 `𝔻 = 𝔾_m^l` whose cocharacter image is the even-sum lattice. Then the kernel of
 `t` is the image of `μ₂` under a cocharacter `c` with `t ∘ c = 2 e_{i₀}`.
 This is the familiar description of the kernel of `Spin → SO` on maximal tori.
-The unit is derived from the Library's lattice APIs and cites no outside source.
+The module is derived from the Library's lattice APIs and cites no outside source.
 
 ## Hypotheses
 

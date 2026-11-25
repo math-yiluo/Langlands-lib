@@ -62,7 +62,7 @@ January 2, 2022), source ID
 `bffdf81c57c77420b5454b31270007989d12f332abea62424be15c424079fc7c`.
 The complete registered errata snapshot
 `milne-abelian-varieties-1986-errata-2026-10-25` was read; its corrections
-are incorporated in this revision. Printed and one-based PDF page
+are incorporated here. Printed and one-based PDF page
 numbers coincide.
 
 Section 12, top of p.21, defines integral degree and describes its
@@ -91,5 +91,5 @@ polynomial. It motivates the present prerequisite. This statement
 contains no trace or Tate comparison assertion. Algebraic closedness
 and characteristic zero are deliberate restrictions of the source's
 more general field scope, matching the intended consumer. The present
-module supplies the exact proposition to be proved in a separate
-focused proof task; it does not prove any of its conclusions.
+module supplies the exact proposition; the Library does not prove it,
+and this module does not prove any of its conclusions.

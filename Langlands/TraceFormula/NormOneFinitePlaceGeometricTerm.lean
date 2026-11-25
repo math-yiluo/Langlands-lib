@@ -41,9 +41,9 @@ def NormOneFinitePlaceGeometricTermStatement : Prop :=
   let D := normOneFinitePlaceDecomposition K G v T i hi I e hc
   let ρ := normalizedPositiveHaarMeasure K G T i hi I e hc
   ∀ [MeasurableSpace M] [BorelSpace M] [μH.IsMulRightInvariant]
-    (a : Aut G) (_ha : i ≫ a.hom = i) (r : R),
+    (a : Aut G) (_ha : i ≫ a.asIso.hom = i) (r : R),
     let θ := (normOneAut K a).toMonoidHom
-    let θv := G.affinePointsTarget a.hom (placeCompletion K (.inr v))
+    let θv := G.affinePointsTarget a.asIso.hom (placeCompletion K (.inr v))
     let θJ := (normOneFinitePlaceKernelTwist K G v a).toMonoidHom
     let Cv := twistedCentralizer θv (D.symm (r : H)).1
     let Cj := twistedCentralizer θJ (D.symm (r : H)).2

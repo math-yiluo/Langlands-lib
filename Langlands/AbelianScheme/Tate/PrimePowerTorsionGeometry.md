@@ -1,7 +1,5 @@
 # An abelian scheme realizing the prime-power torsion closure
 
-Author: Worker 501.
-
 This module realizes the closure of `PrimePowerTorsion.locus A p` as an actual
 closed subgroup scheme, and, over an algebraically closed characteristic-zero
 field with prime `p`, as an actual abelian scheme. The universe `u` is arbitrary.

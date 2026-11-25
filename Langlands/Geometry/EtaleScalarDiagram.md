@@ -124,7 +124,7 @@ geometric data, including inverse diagrams when their arrows are oriented
 accordingly. They do not construct an inverse limit or prove a comparison
 with such a limit. The section comparison concerns ordinary global sections;
 there is no comparison in positive cohomological degree, no preservation of
-injectives, and no derived coefficient-change assertion here. This unit
+injectives, and no derived coefficient-change assertion here. This module
 does not construct tensor extension, reduction modulo an ideal, specified
 Harris coefficient systems or Shimura towers, smooth or continuous group
 actions, analytic sites, or compactly supported cohomology. Coherence under

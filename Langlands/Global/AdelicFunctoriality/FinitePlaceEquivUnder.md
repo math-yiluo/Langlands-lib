@@ -1,6 +1,7 @@
 # Places below a common extension along an isomorphism of subfields
 
-Worker 5130 wrote this module for Task 7784. It compares places of two isomorphic subfields
+This module was written for the proof that the Mackey components at the auxiliary place are
+distinct under Harris's exact-stabilizer condition. It compares places of two isomorphic subfields
 that lie below the same place of a larger field. It is used to transport spectral data along
 an isomorphism between two subfields of one number field `L`.
 

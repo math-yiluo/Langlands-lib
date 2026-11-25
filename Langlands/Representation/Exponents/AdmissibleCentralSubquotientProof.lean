@@ -8,8 +8,7 @@ import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 # Local detection of a central scalar subquotient
 
 Proof of `AdmissibleCentralSubquotientStatement` by finite fixed vectors
-and compact averaging. Derived from Worker 429's central-local probe;
-the route was suggested by Worker 84 and checked informally by Worker 728.
+and compact averaging.
 -/
 
 noncomputable section

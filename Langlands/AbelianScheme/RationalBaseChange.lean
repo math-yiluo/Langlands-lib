@@ -91,11 +91,12 @@ def rationalBaseChangeEnd (A : AbelianScheme S) :
   Rationalization.liftEnd (baseChange b ⋙ Rationalization.inclusion) A
 
 @[simp] theorem rationalBaseChangeEnd_apply (A : AbelianScheme S) (f : End0 A) :
-    rationalBaseChangeEnd b A f = rationalBaseChangeHom b f := rfl
+    rationalBaseChangeEnd b A f = CategoryTheory.End.of (rationalBaseChangeHom b f.asHom) := rfl
 
 @[simp] theorem rationalBaseChangeEnd_ofEnd (A : AbelianScheme S) (f : CategoryTheory.End A) :
     rationalBaseChangeEnd b A (Rationalization.ofEnd A f) =
-      Rationalization.ofEnd ((baseChange b).obj A) ((baseChange b).map f) :=
+      Rationalization.ofEnd ((baseChange b).obj A)
+        (CategoryTheory.End.of ((baseChange b).map f.asHom)) :=
   Rationalization.liftEnd_ofEnd _ A f
 
 /-- Actual rational isogenies remain invertible after arbitrary base change. -/

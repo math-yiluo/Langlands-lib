@@ -31,6 +31,7 @@ lemma scalar_naturality {U V : X.Opensᵒᵖ} (i : U ⟶ V) (a : R) :
   rw [← ConcreteCategory.comp_apply, ← X.presheaf.map_comp]
   rfl
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Sectionwise span of products of base-ideal elements and module sections. -/
 def multiplePresubmodule (I : Ideal R) (M : X.Modules) :
     PresheafOfModules.Submodule M.val where

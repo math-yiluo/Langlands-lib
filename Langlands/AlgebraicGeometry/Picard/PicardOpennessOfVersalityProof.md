@@ -1,8 +1,7 @@
 # Openness of versality for actual Picard families: proof
 
 Module `Langlands.AlgebraicGeometry.Picard.PicardOpennessOfVersalityProof`, namespace
-`Langlands.AlgebraicGeometry.Picard`. Author: Worker 5103 (task
-`14dfbe95-4d4a-46fd-933a-182df994126c`).
+`Langlands.AlgebraicGeometry.Picard`.
 
 The theorem `picardOpennessOfVersality : PicardOpennessOfVersalityStatement.{u}` proves the
 Library statement `Langlands.AlgebraicGeometry.Picard.PicardOpennessOfVersalityStatement`

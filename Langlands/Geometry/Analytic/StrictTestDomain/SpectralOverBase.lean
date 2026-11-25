@@ -29,8 +29,8 @@ def restrictedGlobalSpectrum (U : OpenSubgroup G) : ContAction TopCat.{u} U :=
 theorem restrictedGlobalSpectrum_apply (U : OpenSubgroup G) (g : U)
     (x : BanachSpectrum P) (a : P) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom ((ρ.restrictedGlobalSpectrum U).obj.ρ g) x) a =
-        x ((ρ.toMonoidHom (g : G)).inv.toAlgHom a) :=
+      (ConcreteCategory.hom ((ρ.restrictedGlobalSpectrum U).obj.ρ g).asHom x) a =
+        x ((ρ.toMonoidHom (g : G)).asIso.inv.toAlgHom a) :=
   rfl
 
 /-- The actual structural map of an invariant rational quotient is a morphism

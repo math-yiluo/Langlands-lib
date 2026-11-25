@@ -1,7 +1,5 @@
 # Geometry of centralizers of groups of multiplicative type
 
-Worker 873.
-
 This internal support module derives the geometry of the existing all-test
 centralizer from the published diagonalizable fixed-ideal construction and
 published fppf descent of closed subgroups. The base scheme and universe are
@@ -55,7 +53,7 @@ The imported constructions used here are
 [`RelativeMultiplicativeType`](RelativeMultiplicativeType.md),
 [`DiagonalizableBaseChange`](DiagonalizableBaseChange.md), and
 [`FppfLocalAtTarget`](../../AlgebraicGeometry/Morphisms/FppfLocalAtTarget.md).
-These are the provenance of this internal support unit. The exact relative
+These are the provenance of this internal support module. The exact relative
 centralizer statement and its imports are unchanged.
 
 The existing smooth-model API remains in `RelativeMultiplicativeTypeCentralizerModel`. The `ClosedModel` construction here retains its distinct `ClosedRepresentative` result without an ambient smoothness assumption. Shared fppf descent lemmas are imported from that existing module.

@@ -1,7 +1,5 @@
 # Uniform Henselian integral-point lifts
 
-Author: Worker 208.
-
 This derived construction combines the finite-field application of
 Lang–Weil with smooth Henselian lifting in Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), Theorem 4.5,

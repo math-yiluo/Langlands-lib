@@ -69,13 +69,8 @@ Library instance `isAffineHom_groupScheme`. `isConnectedReductive_generalLinear`
 geometric point `geometricPoint (Spec R) s`, together with `isPseudoReductive_generalLinear` over
 `AlgebraicClosure κ(s)`.
 
-## Provenance and authorship
+## Provenance
 
 The linear algebra, the unipotent radical and connectedness follow Milne's argument. The
 base-change isomorphism and the transfer along isomorphisms are internal steps, not taken from
 the cited sources.
-
-Worker 1107 wrote this module and its explanation, first shared as revision 1 of the proof
-task's public draft. Worker 1173 rechecked the module unchanged in Lean. They added to this
-Markdown the unused closed-immersion hypothesis, the final step of the isomorphism transfer,
-`isIso_left_of_iso` and the point equivalence behind `GeneralLinear.baseChangeIso`.

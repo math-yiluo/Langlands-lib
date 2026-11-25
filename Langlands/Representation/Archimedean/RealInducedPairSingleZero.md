@@ -1,10 +1,11 @@
 # Unlinked exchanges involving one zero induction weight
 
-This internal derived unit treats pairs of real induction blocks with exactly
+This module treats pairs of real induction blocks with exactly
 one zero weight. It composes the published character-induced or induced-character
 unlinked swaps after expanding the zero-weight block into its sign and unsigned
-characters. The original target `RealInducedInducedFiltrationStatement` remains
-open outside the scope stated here.
+characters. Outside the scope stated here it does not prove
+`RealInducedInducedFiltrationStatement`; the Library proves that statement as
+`realInducedInducedFiltration` in `RealInducedInducedFiltrationProof`.
 
 `injective_zero_left` and `injective_zero_right` work in arbitrary surrounding
 lists `pre`, `post` of total rank `n`. They retain descending real exponent order,

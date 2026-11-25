@@ -1,7 +1,5 @@
 # Truncated uniqueness of the polar-part identity
 
-Worker 563, Task 7389, revision 1.
-
 `Langlands.Henniart.polarPartTruncatedUniqueness` proves
 `Langlands.Henniart.PolarPartTruncatedUniquenessStatement`. If the counting
 identities hold for `T` at every positive rank `n` and exponent `j < n * e`,

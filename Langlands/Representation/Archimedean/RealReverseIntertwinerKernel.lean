@@ -10,7 +10,7 @@ import Langlands.Representation.Archimedean.RealStandardIrreducibleCriterionRedu
 real standard module to the standard module of the reversed list of blocks vanishes on every
 proper `(𝔤, K)`-submodule. The proof cuts the list into its tie classes (`RealTieClasses`) and
 applies `RealReverseInduced.reverseKernel` along the standard parabolic subgroup whose diagonal
-blocks are the classes. The nonvanishing of the limit pairing used there is Worker 5220's
+blocks are the classes. The nonvanishing of the limit pairing used there is
 `realLeviWitness` (module `RealLeviWitness`).
 
 The result is conditional on three inputs, passed as hypotheses: the

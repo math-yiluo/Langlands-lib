@@ -31,9 +31,9 @@ does the same for the standard model `GL_{N,𝒪}`.
 
 The module is derived. Its statements apply published Library results to the
 published Iwahori data and compare the values with the published group-level
-Iwahori subgroup. The task objective (Task 3557) asks for proved regression
-examples, and for the Library's concrete `GL_n` results to be recovered from
-the general theory with proved comparisons.
+Iwahori subgroup. The module is a proved regression example, and it recovers
+the Library's concrete `GL_n` results from the general theory with proved
+comparisons.
 
 The comparison values come from Kaletha–Prasad, *Bruhat–Tits Theory: A New
 Approach* (2023), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`

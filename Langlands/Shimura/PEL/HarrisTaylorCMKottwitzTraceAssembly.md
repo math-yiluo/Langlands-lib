@@ -1,6 +1,6 @@
 # Reducing the Harris Frobenius comparison to Frobenius power traces
 
-Worker 951, Task 7903. The declarations are in
+The declarations are in
 `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`. This module does not prove
 `CMHarrisKottwitzTraceComparisonStatement`. It proves that statement from
 one named premise, `CMHarrisKottwitzPowerTraceInputs`, which has the form of
@@ -87,12 +87,12 @@ not proved here and must not be cited as proved. Its proof needs:
 - smooth projective good-reduction models of the actual tame Harris tower at
   the auxiliary and chart places, with the Hecke and generic-fibre
   comparisons (interface `CMHarrisTameIntegralTower`; prerequisite
-  definitions in Task 8147);
+  definitions: the prime-to-`p` PEL objects and the determinant datum of
+  Kottwitz's integral Harris moduli problem);
 - extension of the Harris coefficient sheaves, smooth proper
   specialization, and the identification of the Frobenius action on stalks
   (Kottwitz, *Points on some Shimura varieties over finite fields*, §16 and
-  Lemma 18.1). By operator ruling `d14f5b2b5f6356ce97f490ad057490af` this sheaf
-  work waits for the pinned sheaf-library dependency;
+  Lemma 18.1);
 - Deligne's purity for the Weil-number condition;
 - the Hecke-projected geometric trace (5.1), its comparison to the
   automorphic side (5.2)–(5.5) by the stable trace formula, the fundamental

@@ -3,7 +3,7 @@
 Module `Langlands.Global.RankinSelberg.EqualAnalyticCharacter`, namespace
 `Langlands.Global.RankinSelbergGlobal.EqualAnalytic`.
 
-A supporting unit of the harmonic analysis for the proof of `EqualAnalyticStatement`. Its main
+A supporting module of the harmonic analysis for the proof of `EqualAnalyticStatement`. Its main
 results are:
 
 - `exists_eq_standardCharacter_mul`: every `ψ` with `IsStandardAdditiveCharacter F ψ` is

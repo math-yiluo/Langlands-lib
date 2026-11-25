@@ -1,6 +1,6 @@
 # Separation of actual root-partner character values over infinite fields
 
-Worker 244. This internal unit proves an actual-root character separation
+This internal module proves an actual-root character separation
 prerequisite for the unitary Heisenberg construction. It concerns values of
 the actual descended characters on all original rational torus points.
 The main theorem requires an infinite base field.
@@ -73,6 +73,6 @@ The provenance is internal composition of the named published
 root-datum pairing, Galois-orbit, fixed-field, character-descent and
 rational-character separation results. There is no restriction on
 characteristic. The infinite-field hypothesis is retained; no
-finite-field separation theorem is asserted. This unit does not
+finite-field separation theorem is asserted. This module does not
 construct quotient or doubled-root coordinates, a unitary
 homomorphism, a coroot map, or an affine lift.

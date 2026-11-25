@@ -28,7 +28,7 @@ def lieOrderAction (A : AbelianScheme S) (α : O →+* End A) :
 /-- Restrict the constructed Lie action to a genuine open. -/
 def lieLocalOrderAction (A : AbelianScheme S) (α : O →+* End A) (U : S.Opens) :
     O →+* CategoryTheory.End (A.Lie.over U) where
-  toFun a := (lieOrderAction A α a).over U
+  toFun a := CategoryTheory.End.of ((lieOrderAction A α a).asHom.over U)
   map_zero' := by rw [map_zero]; rfl
   map_one' := by rw [map_one]; rfl
   map_add' a b := by rw [map_add]; rfl
@@ -43,7 +43,7 @@ def lieSectionOrderAction (A : AbelianScheme S) (α : O →+* End A)
 @[simp]
 theorem lieSectionOrderAction_apply (A : AbelianScheme S) (α : O →+* End A)
     {U : S.Opens} (V : Over U) (a : O) (x : Γ(A.Lie, V.left)) :
-    lieSectionOrderAction A α V a x = (lieMap (α a)).app V.left x := rfl
+    lieSectionOrderAction A α V a x = (lieMap (α a).asHom).app V.left x := rfl
 
 /-- Sections of the differential action commute with actual restrictions. -/
 theorem lieSectionOrderAction_restrict (A : AbelianScheme S) (α : O →+* End A)
@@ -84,7 +84,7 @@ theorem lieSectionDeterminant_overlap (A : AbelianScheme S) (α : O →+* End A)
   let : DecidableEq J := Classical.decEq J
   exact Langlands.Shimura.HodgeDeterminant.polynomial_basis_independent_commRing
     (localSectionBasis e (Over.mk i)) (localSectionBasis e' (Over.mk j))
-    (fun k => (lieMap (α (a k))).val.app (op T) |>.hom)
+    (fun k => (lieMap (α (a k)).asHom).val.app (op T) |>.hom)
 
 /-- Restricting Lie polynomials restricts their actual structure-ring coefficients. -/
 theorem lieSectionDeterminant_restrict (A : AbelianScheme S) (α : O →+* End A)

@@ -1,7 +1,5 @@
 # Casselman's pairing and the constant term for actual dynamic parabolic subgroups
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.Representation.Jacquet.DynamicCasselmanConstantTerm`, namespace
 `Langlands.Jacquet`.
 
@@ -21,7 +19,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082
 (literature id `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-numbers; the PDF page is the printed page minus 234. The author checked the quotations below on
+numbers; the PDF page is the printed page minus 234. The quotations below were checked on
 the rendered PDF pages 5, 6, 9, 11, 15 and 16.
 
 - I.1, printed p. 239: "Si `P ∈ 𝒫(M)`, on note `Σ(P)` le sous-ensemble des racines de `A_M`
@@ -100,7 +98,7 @@ Dictionary with the source, for `P = P(χ) = MU`:
 - `hasOppositeIwahoriContractionBasis_cocharPoint`: the Library's
   `HasOppositeIwahoriContractionBasis U M Ū χ(t)`, i.e. arbitrarily small compact open subgroups
   with Iwahori factorizations contracted by `χ(t)` and `χ(t)⁻¹` in both orders.
-- **`dynamicCasselmanPairingData χ t ht`** (definition, the recorded declaration): the Library's
+- **`dynamicCasselmanPairingData χ t ht`** (definition): the Library's
   `StablePairingData` of `G(F)` with `N = Ū`, `Nbar = U`, `M = Z(χ)(F)` and contracting element
   `χ(t)⁻¹`, built by `stablePairingDataOfIwahoriContractions`. With the simp lemmas
   `dynamicCasselmanPairingData_M`, `_N`, `_Nbar` and `dynamicCasselmanPairingData_g_inv`

@@ -1,8 +1,6 @@
 # The quasi-split unitary group `U(1,1)` has no split maximal torus: statement
 
-Author: Worker 15, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). The module contains one
-`Prop`-valued definition and no proof.
+The module contains one `Prop`-valued definition and no proof.
 
 ## The statement
 
@@ -48,12 +46,13 @@ SHA-256 `f2ddd8fa4d263085f173934664b246007a2c0bd539739b7c82de39bfb5d21f40`:
 
 `U(1,1)` is connected reductive (`IsConnectedReductiveStatement`), so the predicate
 `HasSplitMaximalTorus` has Milne's meaning here. The statement is the assertion that
-`U(1,1)` is not split over `F`. It is derived for this program, which asks for a
-concrete noncommutative non-split unitary example with proved non-splitting. Milne
+`U(1,1)` is not split over `F`. It is derived, as a concrete noncommutative
+non-split unitary example with proved non-splitting. Milne
 does not state this particular result.
 
 `RankStatement` already gives the rank form: every closed split torus of `U(1,1)` over
 `F` has rank at most one, while the base change to `E` contains a closed split torus of
 rank two. `NotSplitStatement` is the split-group formulation itself. Deducing it
-requires the comparison of maximal tori after field extension, which is a proof
-obligation and not part of this statement.
+requires the comparison of maximal tori after field extension, which is done in the
+proof `notSplit` (module `QuasiSplitUnitaryNotSplitProof`) and is not part of this
+statement.

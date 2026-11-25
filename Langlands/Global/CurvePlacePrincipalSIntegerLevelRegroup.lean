@@ -230,7 +230,8 @@ def adelicLevelPointHomeomorph :
     fun i => schemePointTopology _ _ _
   letI : ∀ i, IsOpenUnits (U₀ i) := by
     intro i
-    cases i <;> dsimp [U₀, CurvePlaceLevelFactor] <;> infer_instance
+    cases i <;> dsimp [U₀, CurvePlaceLevelFactor] <;>
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   let Hupper := IsHomeomorph.homeomorph (curvePlaceLevelModelPointMap k L T₀ Y)
     (curvePlaceLevelModelPointMap_isHomeomorph_of_compact_quasiSeparated k L T₀ Y)
   exact (levelPointHomeomorph k K L s t Y n j hj).trans
@@ -272,7 +273,8 @@ theorem adelicLevelPointHomeomorph_coordinates
     fun i => schemePointTopology _ _ _
   let : ∀ i, IsOpenUnits (U₀ i) := by
     intro i
-    cases i <;> dsimp [U₀, CurvePlaceLevelFactor] <;> infer_instance
+    cases i <;> dsimp [U₀, CurvePlaceLevelFactor] <;>
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
   let Hupper := IsHomeomorph.homeomorph (curvePlaceLevelModelPointMap k L T₀ Y)
     (curvePlaceLevelModelPointMap_isHomeomorph_of_compact_quasiSeparated k L T₀ Y)
   let Hlocal := Homeomorph.piCongrRight fun i =>

@@ -1,7 +1,5 @@
 # Renard VI.9.1, Remark 3, from uniform stabilization alone
 
-Author: Worker 167, with Worker 5457 (author of the reduction module used here).
-
 Module: `Langlands.Representation.Exponents.GeneralizedJacquetContractingRangeOfStabilization`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -21,7 +19,7 @@ RationalPointFamily.UniformCompressionStabilizationStatement.{u, v} →
   GeneralizedJacquetContractingRangeStatement.{u, v}
 ```
 
-between two unchanged published propositions, at the same universes `u` (field and group
+between two published propositions, at the same universes `u` (field and group
 schemes) and `v` (representation carriers).
 
 - `RationalPointFamily.UniformCompressionStabilizationStatement` (module
@@ -35,12 +33,12 @@ schemes) and `v` (representation carriers).
   `Langlands.Representation.Exponents.GeneralizedJacquetRemarksStatements`) is Remarque 3 for
   an actual rational parabolic `P = MN` with opposite `P̄ = MN̄`. For an `M`-central Iwahori
   contraction `t₀` of `K`, there is `ε > 0` such that for every `t ∈ A^+(ε)` and every smooth
-  representation, `ker A_t = V^K_0(t₀)` and `Im A_t = V^K_*(t₀)`. It is the second target of
-  task `7a03c792-1d54-4a95-89b7-dd1aa5e82a5e`.
+  representation, `ker A_t = V^K_0(t₀)` and `Im A_t = V^K_*(t₀)`.
 
 The statement asserts neither proposition. It records that Remark 3 now depends only on the
-Proposition of VI.9.1. The Proposition is the open target of task
-`47e556e6-6b2a-40dc-ba66-d6a0585f5220`.
+Proposition of VI.9.1. The Proposition is not proved unconditionally in the Library: the
+reductions in `UniformCompressionNativeAssembly` and
+`UniformCompressionRepresentationReduction` derive it from further premises.
 
 ## Proof
 
@@ -53,9 +51,8 @@ generalizedJacquetContractingRange_of_uniformStabilization :
   GeneralizedJacquetContractingRangeReductionStatement.{u, v}
 ```
 
-(Worker 5457, module
-`Langlands.Representation.Exponents.GeneralizedJacquetContractingRangeReduction`, candidate
-`c1fdb671-5867-4467-b46e-cc08737c8e58`). The statement of that theorem is
+(module
+`Langlands.Representation.Exponents.GeneralizedJacquetContractingRangeReduction`). The statement of that theorem is
 `UniformCompressionStabilizationStatement.{u, v} → SplitComponentOppositeContractionStatement.{u} →
 GeneralizedJacquetContractingRangeStatement.{u, v}`. The theorem is applied to `hstab` and to
 
@@ -63,8 +60,8 @@ GeneralizedJacquetContractingRangeStatement.{u, v}`. The theorem is applied to `
 splitComponentOppositeContraction : SplitComponentOppositeContractionStatement.{u}
 ```
 
-(module `Langlands.Representation.Exponents.SplitComponentOppositeContractionProof`, this
-candidate). That theorem proves the two-sided uniform contraction of Renard V.5.2 (iii) on all
+(module `Langlands.Representation.Exponents.SplitComponentOppositeContractionProof`, ported
+with this file). That theorem proves the two-sided uniform contraction of Renard V.5.2 (iii) on all
 of `A^+(ε)`. Its Markdown describes the proof.
 
 ## Provenance
@@ -74,4 +71,5 @@ Proposition, from Remarque 2 and from Théorème V.5.2. The reduction module use
 Renard does. In place of the averages `e_C`, `e_C̄` of Remarque 2, it uses a factorization of
 the compressed actions (its Markdown gives the details). The contraction module proves the form
 of V.5.2 (iii) that the reduction takes as its second antecedent. The statement is recorded as
-an intermediate result: the task's Remark 3 target still needs the Proposition of VI.9.1.
+an intermediate result: `GeneralizedJacquetContractingRangeStatement` still needs the
+Proposition of VI.9.1.

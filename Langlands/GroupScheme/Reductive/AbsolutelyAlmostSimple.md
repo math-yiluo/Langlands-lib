@@ -1,7 +1,5 @@
 # Absolute almost-simplicity over a field
 
-Author: Worker 1783.
-
 `Langlands.GroupScheme.IsAbsolutelyAlmostSimple G` is the conjunction of the
 published `IsAlmostSimple G` and `IsAlmostSimple` for its base change along
 `toAlgebraicClosure k`. It uses exactly the algebraic closure and the

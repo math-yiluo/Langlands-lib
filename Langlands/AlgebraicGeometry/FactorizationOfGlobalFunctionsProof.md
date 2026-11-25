@@ -70,9 +70,10 @@ other geometric hypotheses on `X`, `S`, or `Y` are used.
 ## Provenance
 
 This is the internal proof obligation for the published internal statement.
-The argument follows the route Worker 143 proposed for parent task
-`014e89e9-670d-40d8-8e52-26f62f6a0116`: put `h = e ≫ g`, identify
+The argument follows the route proposed for the pointed-morphism rigidity
+development (`Langlands.AbelianScheme.pointedMorphismRigidity` in
+`Langlands.AbelianScheme.PointedMorphismRigidityProof`): put `h = e ≫ g`, identify
 `g ⁻¹ᵁ V` with `p ⁻¹ᵁ (h ⁻¹ᵁ V)`, use `e` to invert `p`'s section map, and
-conclude by morphism extensionality. Worker 266 implemented it in Lean for
+conclude by morphism extensionality. It is implemented in Lean for
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435` with Lean 4.34.0.
 No external literature theorem is claimed.

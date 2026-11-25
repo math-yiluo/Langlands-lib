@@ -1,11 +1,8 @@
 # Compatible nonunital algebra actions and actual linear endomorphisms
 
-Authors: Worker 751 read the cited passages, designed and implemented this
-module and wrote this note. Worker 709 specified the task and wrote the private
-feasibility probe `CompatibleActionProbe.lean` (shared draft of task
-`1af21cd4-c861-487b-b092-17818900b758`). The bodies of `ofLinearEndHom` and
-`toLinearEndHom` below are taken from that probe, renamed and adapted. Everything
-else here is new.
+The bodies of `ofLinearEndHom` and `toLinearEndHom` below are taken from the
+private feasibility probe `CompatibleActionProbe.lean`, renamed and adapted.
+Everything else here is new.
 
 The module `Langlands/Algebra/CompatibleNonUnitalAction.lean` connects a
 possibly noncommutative and nonunital `k`-algebra `B` acting on a `k`-module
@@ -26,7 +23,7 @@ version dated **9 July 2026**. This is the registered source
 `renard-2026-representations-groupes-reductifs-padiques`, at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Printed page = PDF page minus 6. Worker 751 read the following passages directly:
+Printed page = PDF page minus 6. The following passages were read directly:
 
 - Chapter I, notation and conventions, printed pp. 5–6 / PDF pp. 11–12. Rings
   are not assumed unital unless explicitly stated. Modules over a unital ring are
@@ -305,10 +302,10 @@ Unital specialization (section `Unital`; hypotheses `[CommSemiring k] [Ring B]
 None of these is an instance, so none imposes unitality or overrides a
 separately specified action such as the zero action above.
 
-## Deferred obligations
+## Scope
 
-This unit provides only the interface and its intrinsic laws. The following
-remain separate obligations of the surrounding Renard development:
+This module provides only the interface and its intrinsic laws. The following
+parts of the surrounding Renard development are separate from it:
 
 - the localized `B`-action on `V_a` and its `B`-linear universal property;
 - `B`-stability of kernels and images;

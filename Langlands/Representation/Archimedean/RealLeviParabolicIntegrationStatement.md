@@ -2,12 +2,12 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviParabolicIntegrationStatement`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 states one proposition, `RealLeviParabolicIntegrationStatement`, and does not prove it. The module
 also defines block diagonal matrices and proves a few elementary lemmas about them. The proposition
 is the integration formula for the Langlands lemma along an arbitrary standard parabolic subgroup
-`Q` of `GL_N(ℝ)`. It generalizes the published `RealBlockParabolicIntegrationStatement` (module
+`Q` of `GL_N(ℝ)`. It generalizes `RealBlockParabolicIntegrationStatement` (module
 `RealBlockParabolicIntegrationStatement`), which is the case of two blocks. See "Use" below.
 
 The block data and the opposite unipotent radical come from the module
@@ -40,7 +40,7 @@ In the namespace `Langlands.Archimedean.RealLeviChart`:
 (`N = ∑ i, sz i`) there is a real `C > 0` with the following property. Let `F : GL_N(ℝ) → ℂ` be
 smooth (`ContMDiff` for the manifold structure `matrixModel ℝ N` of `GL_N(ℝ)`) and satisfy
 `F(diag(z) u g) = ∏ᵢ |zᵢ|^{(N−1) − 2i} F(g)` for all `z ∈ (ℝˣ)^N`, `u` upper unipotent and `g`.
-This is the published `MaximalParabolicIntegration.IsModulusCovariant`: `F` lies in the smooth
+This is `MaximalParabolicIntegration.IsModulusCovariant`: `F` lies in the smooth
 principal series of the modulus character of the upper triangular Borel subgroup. Then:
 
 1. for every `κ = (κ_0, …, κ_{c−1})` with `κ_i ∈ O(sz_i)` (`unitaryCompact ℝ (sz i)`), the function
@@ -56,7 +56,7 @@ Edge cases. If `c ≤ 1`, then `Coord sz` is empty and `n̄(X) = 1`. For `c = 1`
 `κ_0 ↦ diag(κ_0)` is a reindexing isomorphism `O(sz_0) ≅ O(N)` of compact groups, which carries
 the Haar probability measure to the Haar probability measure, so the formula holds with `C = 1`.
 For `c = 0`, and more generally for `N = 0`, both sides are `F(1)` and `C = 1`. For `c = 2` with blocks of sizes `a` and
-`k`, the statement is the published `RealBlockParabolicIntegrationStatement` for `a, k`, with
+`k`, the statement is `RealBlockParabolicIntegrationStatement` for `a, k`, with
 `X ∈ M_{k×a}(ℝ)` and `κ_0 ∈ O(a)`, `κ_1 ∈ O(k)`, up to the identification of the coordinates and of
 `Measure.pi` over `Fin 2` with the iterated integral.
 
@@ -70,7 +70,7 @@ complement. No specific literature statement is claimed, and the constant `C` is
 Why it is true (the same argument as for two blocks; see the Markdown of
 `RealBlockParabolicIntegrationStatement`):
 
-1. Average `F` over `K_M` on the left: `F^♮(g) = ∫_{K_M} F(m g) dm`. By the published
+1. Average `F` over `K_M` on the left: `F^♮(g) = ∫_{K_M} F(m g) dm`. By
    `KIntegralInvariance` for every block `GL_{sz_i}(ℝ)`, the average is left `Q`-covariant with the
    modulus character of `Q`, and `∫_K F = ∫_K F^♮`.
 2. For continuous functions in the principal series of the modulus character of `Q`, the
@@ -95,7 +95,7 @@ below (`n̄(X)`, `n̄_B(Y)`, `m(Z)`) is lower unitriangular, so has determinant 
 `RealLeviChartIntegrableStatement` with every `γ_l = −1` (the factor `l = 0` is
 `G_0(n̄(X))^{−1} = 1`).
 
-Intended proof (for a proof task). It needs no induction on the number `c` of blocks and does not
+Intended proof. It needs no induction on the number `c` of blocks and does not
 use `RealBlockParabolicIntegrationStatement`. Write `n̄_B(Y)` for the lower unitriangular `N × N`
 matrix with the entries `Y_{pq}` (`q < p`) below the diagonal, and `m(Z)` for the block diagonal
 lower unitriangular matrix with the entries `Z_{pq}` (`q < p` in the same block) inside the
@@ -131,7 +131,7 @@ blocks.
 
 ## Use
 
-In Task 6749 the formula is applied to `F(y) = u(y) h(y)`, with `h` in a principal series and `u`
+In the proof of `RealStandardLanglandsQuotientStatement` the formula is applied to `F(y) = u(y) h(y)`, with `h` in a principal series and `u`
 in its dual, and to the translates of `F` by the elements `d_s = diag(s^{cls p})` of the center of
 the Levi factor. It computes the leading term of the `O(N)`-pairing in the single-step Langlands
 lemma along the parabolic subgroup `Q` whose blocks are the tie classes of the Langlands order.

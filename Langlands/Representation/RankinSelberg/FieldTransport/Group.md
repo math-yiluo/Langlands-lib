@@ -1,7 +1,7 @@
 # Quotient measures and Whittaker models along a group isomorphism
 
-Author: Worker 5731. This is a supporting lemma module for the proof of
-`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement` (Task 5230).
+This is a supporting lemma module for the proof of
+`Langlands.Global.PoleComparison.HenniartCompositeFactorStatement`.
 It contains no new statements of published mathematics. It records standard
 facts on transporting measures and Whittaker-type functionals along an
 isomorphism of groups, which the later modules of

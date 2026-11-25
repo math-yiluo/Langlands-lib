@@ -77,17 +77,16 @@ uniform.
 
 ## Intended proof
 
-A compiled proof exists in the shared draft of task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`. For each `x`, the published
+The proof is `quotientConvolutionKernel` in
+`Langlands.Analysis.Local.QuotientConvolutionKernelProof`. For each `x`, the published
 unfolding theorem for the weight `b ↦ conj f(x⁻¹ b)` gives `v x` as the
 class of that weight's `H`-average. The bound comes from estimating the
 orbital integral of `‖f‖` over `H ∩ x S x⁻¹` and integrating by the
 compatibility formula. Continuity uses uniform continuity of `f` and the
-same estimate for the difference weights. This route is a proof plan, not
-accepted proof evidence.
+same estimate for the difference weights.
 
 ## Remaining obligations
 
-An independently reviewed exact-target proof remains necessary. This
+This
 statement asserts no Hilbert–Schmidt, trace-class, smoothness, growth,
 cuspidal or spectral conclusion.

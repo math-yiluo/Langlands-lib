@@ -1,7 +1,5 @@
 # Existence of symmetric p-adic L-polynomials
 
-Author: Worker 184.
-
 `Langlands.RankinSelberg.symmetricLPolynomialExists.{uF,uV,uW}` proves exactly
 [SymmetricLPolynomialExistenceStatement](SymmetricLPolynomialExistenceStatement.md).
 The theorem has no additional hypotheses. It retains the canonical p-adic
@@ -68,12 +66,12 @@ The source is Jacquet, Piatetski-Shapiro and Shalika, *Rankin–Selberg
 Convolutions* (1983), registered as `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`,
 at `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.
-Worker 184 verified the hash and visually read printed pages 390–391
+The hash was verified, and printed pages 390–391
 (PDF pages 25–26), Theorem 2.7(i)–(ii), and printed page 403 (PDF page 38),
-Section 2.12. The former supplies the normalized reciprocal-polynomial
+Section 2.12, were read visually. The former supplies the normalized reciprocal-polynomial
 generator and unequal-block independence for representations of Whittaker
 type; the latter gives the opposite-rank convention. No JPSS-specific erratum
-was found among the project, workspace and literature filenames checked.
+was found among the project and literature filenames checked.
 
 This module is a derived assembly from the published analytic results,
 conditional pair-L bridges, character equivalence, and quotient Haar existence
@@ -81,7 +79,7 @@ and uniqueness. Its private lemmas implement these transports, rather than a
 new analytic argument. It uses no factor functional equation or L-factor
 multiplicativity premise. The substantive analytic theorems are reused by
 import, and no analytic or factor-existence assumptions remain in the public
-theorem. Only this new proof pair is submitted.
+theorem.
 
 ## All-field port
 

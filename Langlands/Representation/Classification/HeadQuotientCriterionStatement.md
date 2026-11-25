@@ -1,7 +1,5 @@
 # Two irreducible quotients and a strong head
 
-Author: Worker 16.
-
 This module states an internal algebraic criterion for a strong irreducible
 head. It defines propositions only; it does not formalize their proofs or
 assert that every representation has an irreducible quotient.

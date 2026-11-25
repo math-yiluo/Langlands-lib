@@ -49,7 +49,7 @@ countable-direct-sum diagonal argument. Its conclusion chooses a single
 threshold before every smooth object of carrier universe `uV` and includes
 both stationary power chains and their complementarity.
 
-Worker 1751 derives this reduction from the actual finite embedding target,
+This reduction is derived from the actual finite embedding target,
 smooth quotient and direct-sum constructions, compact-average exactness,
 compression naturality, stable-power threshold comparison, and carrier
 lifting. It is not a proof of either of its representation-theoretic

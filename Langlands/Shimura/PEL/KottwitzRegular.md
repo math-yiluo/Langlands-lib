@@ -1,6 +1,6 @@
 # Kottwitz's complex homomorphism on the regular PEL module
 
-Worker 57. This derived construction realizes the published, chart-constructed
+This derived construction realizes the published, chart-constructed
 Kottwitz complex homomorphism as an actual real algebra homomorphism into the
 endomorphisms of the left regular module. It proves compatibility with the
 actual inverse-unit trace form, including its conjugate adjoint and norm-square
@@ -153,7 +153,6 @@ comparison. Finally `kottwitzPELHom_hodgeForm` definitionally identifies
 psi(x,h(i)y) with `D.kottwitzTraceHodgeForm beta hbeta C x y`.
 
 No positivity premise on tau or this Hodge form is used in these identities.
-The unit does not select a rational beta with the required Hodge sign, prove
+The module does not select a rational beta with the required Hodge sign, prove
 that existence theorem, construct a polarization, or construct the PEL
-moduli functor, representing schemes or canonical models. Those remain
-separate obligations of the parent development.
+moduli functor, representing schemes or canonical models.

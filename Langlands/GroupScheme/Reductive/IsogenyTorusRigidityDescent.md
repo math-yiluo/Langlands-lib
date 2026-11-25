@@ -1,8 +1,6 @@
 # Descent and uniqueness for relative torus conjugators
 
-Worker 668.
-
-This internal derived unit addresses the elementary parts of the published
+This internal derived module addresses the elementary parts of the published
 `ReductiveIsogenyTorusRigidityStatement`, with the same all-test predicate
 `TorusConjugates` already used by `IsogenyAdjointTorusDescent`.
 
@@ -32,5 +30,5 @@ using the new predicate, choosing a conjugator on each cover member.
 
 The provenance is internal: these are consequences of the definitions and
 published fpqc local lifting and fppf descent, corresponding to the elementary
-uniqueness and reverse implication in Conrad's Corollary 6.1.15. This unit does
-not yet establish existence of local conjugators.
+uniqueness and reverse implication in Conrad's Corollary 6.1.15. This module does
+not establish existence of local conjugators.

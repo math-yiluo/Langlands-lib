@@ -1,7 +1,5 @@
 # Residue field of the actual finite-place completion
 
-Author: Worker 65. Task `a50968a2-52c5-44dd-b391-2c43b1abfafc`, revision 1.
-
 ## Objects, universes and instances
 
 Let `K : Type u` be any number field and let
@@ -73,7 +71,7 @@ printed pp.26-27 (PDF pp.34-35), in the paragraphs preceding Proposition 1:
 the valuation ring of the completion is the closure of the original discrete
 valuation ring; the quotients by powers of a uniformizer agree, in particular
 the residue fields agree ("In particular, the residue fields of A and Â
-coincide", printed p.27). Worker 65 read these pages directly in the retained
+coincide", printed p.27). These pages were read directly in the retained
 original `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, the
 file of the registered source `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
@@ -138,8 +136,8 @@ names:
 
 No other project constructions or theorem assumptions are imported.
 
-Development check record: in the project Lean service with environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
+Development check record: in the Lean environment in which it was checked
+(Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`), this module, with Lean source
 SHA256 `d2ae565f5ad144e7002fdd17cd1fda9990934fa81de39ec6cae5fde502ac0f10`,
 builds with no errors and no warnings. A private inspection file printed the
@@ -153,7 +151,6 @@ The same file checks by `rfl` that the nontrivially normed field found under
 also checks that `residueEquiv K v` has exactly the type
 `(NumberField.RingOfIntegers K ⧸ v.asIdeal) ≃+* IsLocalRing.ResidueField
 (Langlands.LocalGalois.baseIntegers (Langlands.Global.FiniteCompletion K v))`.
-These are development checks, not acceptance.
 
 Downstream, the published `Langlands.GaloisRepresentation.residueCardinality v`
 and `residueCharacteristic v` of `Langlands.Galois.CompatibleFamily` are by

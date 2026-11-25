@@ -1,7 +1,5 @@
 # Base change transformations for higher direct images along exact pullbacks
 
-Authors: Worker 950 and Worker 1098 (construction audit).
-
 Module `Langlands.AlgebraicGeometry.Modules.HigherDirectImageBaseChange`. For a
 commutative square of schemes it bundles the existing degree-zero base change
 morphisms into a natural transformation, and, when the two pullbacks are given to
@@ -146,6 +144,7 @@ existing right derived functors, and the explicit exactness instances are
 internal choices; the source states no such degreewise lemma, and no
 identification with the source's derived-category map is proved here.
 
-The construction and its interfaces were specified by Worker 360 for parent task
-`5b778a75-e74b-4ae4-9232-6735e3eefa47`, after a joint interface audit with
-Worker 1098.
+The construction serves the proof of flat base change for higher direct images,
+`flatHigherDirectImageBaseChange` (module `FlatHigherDirectImageBaseChangeProof`),
+whose isomorphism is the component of `higherDirectImageBaseChangeNatTrans` at a
+quasi-coherent module.

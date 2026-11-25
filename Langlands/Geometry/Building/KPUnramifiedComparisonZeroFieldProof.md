@@ -1,7 +1,5 @@
 # The depth-zero field for concrete unramified apartment lifts
 
-Authors: Worker 267 and Worker 618.
-
 `Langlands.Geometry.Building.unramifiedComparisonZeroField` proves exactly
 `Langlands.Geometry.Building.UnramifiedComparisonZeroFieldStatement.{u}` at
 arbitrary universe `u`, with the published hypotheses unchanged and no additional
@@ -44,7 +42,8 @@ remaining root term is the singleton sharp fixer, using
 `pointwiseFixer_singleton` and `sharpFiltration_zero`.
 
 Rewriting the target by this equality leaves exactly
-`ApartmentLift.comap_zeroPoints_inf_fixer E y`, proved by Worker 618. That
+`ApartmentLift.comap_zeroPoints_inf_fixer E y`, proved in
+`KPUnramifiedComparisonZeroDescent`. That
 imported descent theorem reflects fixation using the actual lift's restriction
 identity, injectivity and normalizer compatibility. It combines character-kernel
 descent and the norm-kernel consequence of centralizer fixation with

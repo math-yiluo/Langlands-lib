@@ -23,7 +23,7 @@ variable {k K : Type u} [Field k] [Field K] [Algebra k K]
   {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
   {n : Type} [Fintype n] [DecidableEq n]
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom :=
   inferInstanceAs (IsAffineHom (Limits.pullback.snd G.X.hom (algebraBaseMap k K)))
 

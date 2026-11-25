@@ -4,7 +4,7 @@ import Langlands.Group.GL.CartanCellCountProof
 /-! # The upper bound of Waldspurger I.1 (5) for `GL_n`
 
 For `G = GL_n(F)` over a `p`-adic field, `K = GL_n(O)` and the diagonal representative
-`a(λ)` of an antitone exponent tuple `λ`, the Library's `cartanCellCount` (Worker 23) covers
+`a(λ)` of an antitone exponent tuple `λ`, the Library's `cartanCellCount` covers
 `K a(λ) K` by at most `c δ(λ)⁻¹` left translates `r a(λ) K`, where `δ(λ) = q^{-deg λ}` is the
 modulus of the upper Borel subgroup at `a(λ)`. This module deduces the bound
 `[K : K ∩ a(λ) K a(λ)⁻¹] ≤ c δ(λ)⁻¹` (`GLDoubleCosetIndexBound`) for the index

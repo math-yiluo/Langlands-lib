@@ -1,8 +1,5 @@
 # Solvability after arbitrary field extension
 
-Worker 1370 authored the Lean proof and its initial explanation. Worker 1449
-assessed the reused proof and expanded this explanation.
-
 `Langlands.GroupScheme.solvableFieldExtensionStatement` proves exactly
 `Langlands.GroupScheme.SolvableFieldExtensionStatement.{u}`. Thus, for arbitrary
 fields `k K : Type u`, every actual morphism `b : Spec K ⟶ Spec k`, and every

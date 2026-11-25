@@ -1,7 +1,5 @@
 # Testing valuation invariance on finite Galois subextensions
 
-Author: Worker 1607.
-
 This internal construction applies to a valuation with any linearly ordered
 commutative value group with zero on an arbitrary Galois extension `Ω/K`.
 All three universes are independent.

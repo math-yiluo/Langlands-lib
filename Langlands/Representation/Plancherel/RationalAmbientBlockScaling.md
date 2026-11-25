@@ -1,6 +1,6 @@
 # Ambient unramified twists in valuation-kernel product coordinates
 
-This derived unit connects the integral product coordinates from
+This module connects the integral product coordinates from
 `RationalValuationKernelCoordinates` with actual unramified parameters and
 their established translations on regular functions and the function field.
 The schemes are affine and locally of finite type over a nonarchimedean

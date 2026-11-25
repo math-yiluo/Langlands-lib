@@ -2,9 +2,8 @@
 
 Module `Langlands.GroupScheme.Rational.QuasiSplitInnerFormExistenceReduction`.
 
-This supporting unit reduces the host proposition
-`QuasiSplitInnerFormExistenceStatement.{u}` to two Library propositions that
-are stated but not yet proved in the Library:
+This supporting module reduces the proposition
+`QuasiSplitInnerFormExistenceStatement.{u}` to two Library propositions:
 
 - `RootDatumExistenceStatement.{u}` (module `Reductive.RootDatumStatement`): a
   split maximal torus of a connected reductive field group has a reduced root
@@ -13,8 +12,12 @@ are stated but not yet proved in the Library:
   every connected reductive field group has an actual adjoint quotient by its
   full scheme-theoretic centre.
 
-It does not prove either proposition, so it does not prove the host statement
-by itself. Every other ingredient is a proved Library result or a supporting
+It does not prove either proposition, so it does not prove
+`QuasiSplitInnerFormExistenceStatement` by itself. The Library proves both, as
+`rootDatumExistence` (module `Reductive.RootDatumExistence`) and
+`adjointQuotientExistence` (module `Adjoint.ExistenceProof`), and combines them
+with this reduction in `quasiSplitInnerFormExistence` (module
+`Rational.QuasiSplitInnerFormExistenceProof`). Every other ingredient is a proved Library result or a supporting
 module listed below.
 
 ## Statements
@@ -93,8 +96,8 @@ Let `H` be a connected reductive group over a field `k`.
 The structure follows the standard construction of the quasi-split inner form
 by a pinning, as in Conrad, *Reductive group schemes* (2014),
 Proposition 7.2.11 (printed/PDF p.258; source
-`conrad-2014-reductive-group-schemes`), which is the source cited by the host
-statement. A finite Galois extension splits a maximal torus. The Galois action
+`conrad-2014-reductive-group-schemes`), which is the source cited for
+`quasiSplitInnerFormExistence`. A finite Galois extension splits a maximal torus. The Galois action
 on the root datum is corrected by Weyl elements to a based action. The pinned
 descent of the split form along this action is quasi-split, and it is an inner
 form of the given group. The Lean route, including the reduction to the two

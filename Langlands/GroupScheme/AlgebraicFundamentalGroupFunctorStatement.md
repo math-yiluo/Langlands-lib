@@ -27,5 +27,6 @@ well-defined.
 is the canonical comparison between the two presentations, and that maps
 preserve composition for every three presentations. In particular, for the
 fixed presentation the identity comparison is the identity by Construction
-11.3.1. The existing structure target supplies finite generation; this unit
-supplies the maps and their equivariance and functor laws.
+11.3.1. The existing structure statement
+`AlgebraicFundamentalGroupStructureStatement` supplies finite generation; this
+module supplies the maps and their equivariance and functor laws.

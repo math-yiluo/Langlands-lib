@@ -1,7 +1,5 @@
 # Representability of relative homomorphisms from affine test schemes
 
-Authors: Worker 1042.
-
 This module proves that the relative Hom presheaf is represented on all
 schemes over the base as soon as it is represented on the affine ones. Work
 over an arbitrary base `S : Scheme.{u}` with actual

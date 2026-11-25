@@ -20,7 +20,7 @@ It pulls the constituent back along the selected whole-Levi conjugation,
 untwists by the negative restricted coarse parameter, and moves the actual
 subquotient across the constructed refined Jacquet twist equivalence. The
 result is an irreducible cuspidal upper-Jacquet subquotient at parameter zero.
-Worker 125's upper quotient-support adapter, conditional on the exact
+The upper quotient-support adapter of `InnerCuspidalUpperSupport`, conditional on the exact
 constituent proposition, identifies it with transport of the fine representation
 twisted by `-v`. Its conjugating permutation lies in the coarse block Weyl group.
 
@@ -33,14 +33,15 @@ same composite permutation and conjugacy witness. Irreducibility and
 admissibility follow from the published twist and transport laws.
 
 The construction is internal: it composes the actual quotient equivalences,
-actual subquotient laws and geometric extraction developed for this task.
-Worker 99 authored this assembly and the persistent-piece extraction; Worker
-125 authored the inner quotient and upper reversal adapters. The original
-geometric extraction was authored by Worker 954.
+actual subquotient laws and geometric extraction of its supporting modules,
+among them the persistent-piece extraction
+(`InducedOppositePersistentPieceConditional`) and the inner quotient and upper
+reversal adapters (`InnerCuspidalUpperSupport`).
 
 `persistence_of_geometricLemmas` composes this assembly with the published
-`Langlands.glCuspidalInductionJacquetConstituent_of_cuspidalPiece` and Worker
-954's `glInducedOppositeJacquetCuspidalPiece_of_padicGeometricLemma`.
+`Langlands.glCuspidalInductionJacquetConstituent_of_cuspidalPiece` and
+`glInducedOppositeJacquetCuspidalPiece_of_padicGeometricLemma` (module
+`Langlands.Representation.Geometric.InducedOppositeCuspidalPieceConditional`).
 The latter supplies the cuspidal-piece statement at universes
 `.{uF,uM,uV}` from `PadicGeometricLemmaTheorem.{uF,uV}`. The published tensor
 reduction then gives precisely the constituent premise at `.{uF,uV,uM}`.

@@ -1,8 +1,7 @@
 # Actual rank-one epsilon product reduction
 
-Authors: Worker 357, using the full epsilon twist proof of Workers 357,
-458 and 1062 and the published actual rank-one character and reciprocity
-bijection constructions.
+This module uses the full epsilon twist proof and the published actual
+rank-one character and reciprocity bijection constructions.
 
 `RankOneEpsilonProductReductionStatement F` says that the existing
 quotient-level epsilon relation for the actual supercuspidal classes of
@@ -55,4 +54,4 @@ hypotheses. The arbitrary-Haar class equivalence is certificate
 transport and makes no epsilon existence assertion. Comparison of the
 scalar JPSS epsilon factor with the explicit abelian Gauss expression,
 arithmetic epsilon compatibility, geometric reciprocity existence and
-the closed all-field correspondence remain separate obligations.
+the closed all-field correspondence are not part of this module.

@@ -1,8 +1,8 @@
 # Translation-difference lifting when only finitely many translation differences are trivial
 
-Authors: Worker 3613, adapting Worker 2029's proof of
-`Langlands.AbelianScheme.algClosedFieldTranslationDifferenceLifting_of_cube` (Task 2029,
-module `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldTranslationDifferenceLiftingProof`).
+This module adapts the proof of
+`Langlands.AbelianScheme.algClosedFieldTranslationDifferenceLifting_of_cube` (module
+`Langlands.AlgebraicGeometry.Picard.AlgClosedFieldTranslationDifferenceLiftingProof`).
 
 Module `Langlands.AlgebraicGeometry.Picard.FiniteTranslationDifferenceLifting`, namespace
 `Langlands.AbelianScheme`.
@@ -74,8 +74,9 @@ back along the section `x` and composing with `ΓSpecIso` gives a ring homomorph
    `H⁰` of the trivial line bundle zero. This contradicts
    `not_isZero_relativeCohomology_zero_trivial` at the unit section.
 
-The proof follows Worker 2029's proof line by line. The only changes are that the finiteness
-of `F` and the invariance of `D(x)` are hypotheses, and that `F` is the set of points with
-`D(x)` trivial. In Worker 2029's version `F` is the set of points with `t_x^* L ≅ L`. The
-step for `x ∉ F` therefore uses `x ∉ F` directly. Worker 2029's version needs a cancellation
-argument there.
+The proof follows the proof of `algClosedFieldTranslationDifferenceLifting_of_cube` line by
+line. The only changes are that the finiteness of `F` and the invariance of `D(x)` are
+hypotheses, and that `F` is the set of points with `D(x)` trivial. In the proof of
+`algClosedFieldTranslationDifferenceLifting_of_cube`, `F` is the set of points with
+`t_x^* L ≅ L`. The step for `x ∉ F` therefore uses `x ∉ F` directly. That proof needs a
+cancellation argument there.

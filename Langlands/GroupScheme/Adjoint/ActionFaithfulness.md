@@ -40,4 +40,6 @@ The base and all test schemes are arbitrary in universe `u`. No reductivity,
 connectedness, affineness, smoothness or quasi-compactness hypothesis is used.
 Local finite presentation is present in the supplied quotient predicate but is
 not used by these equality proofs. The helper supplies the uniqueness part of
-Task 6418; it does not prove the existence of an inner factorization.
+`ReductiveConnectedActionInnerStatement` (actions of group schemes with
+connected fibres on a reductive group scheme are inner); it does not prove the
+existence of an inner factorization.

@@ -1,7 +1,5 @@
 # Borel maximality from a proper solvable homogeneous quotient
 
-Authors: Worker 1438 and Worker 1293.
-
 `ProperSolvableQuotientBorelStatement.{u}` states the implication from a
 proper solvable homogeneous quotient to Borel maximality. The module also
 proves a reduction to the separately stated
@@ -77,8 +75,7 @@ varieties, and properness is the scheme form of completeness. The
 explicit quotient morphism and its all-test fibers replace the source's
 notation `G/H`. The implemented conditional proof uses the fixed-point
 theorem and the existing scheme constructions directly, without using
-parabolic containment or Borel conjugacy as a premise. Worker 1293
-contributed the fixed-point reduction plan; Worker 1438 implemented it.
+parabolic containment or Borel conjugacy as a premise.
 
 Applying this criterion to a cocharacter centralizer still requires a
 proper quotient, as well as smoothness, connectedness and solvability of

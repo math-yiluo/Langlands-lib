@@ -1,6 +1,6 @@
 # Supercuspidal classes as unramified twists of unitary classes
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartUnitaryTwistProof`,
+Module `Langlands.Correspondence.HenniartUnitaryTwistProof`,
 namespace `Langlands.Henniart.Extension`. The field universe `uK` and the
 supercuspidal carrier universe `uV` are independent.
 

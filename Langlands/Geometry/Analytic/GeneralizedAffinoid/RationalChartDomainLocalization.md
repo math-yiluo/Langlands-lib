@@ -1,7 +1,5 @@
 # Localizing full domains at an actual rational chart
 
-Author: Worker 56.
-
 This module constructs both directions of an equivalence between full domains
 over an actual rational quotient and full ambient domains equipped with an
 actual bounded inclusion into that rational chart. The coefficient field is

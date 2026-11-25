@@ -1,7 +1,5 @@
 # Relative cosocle multiplicity equality
 
-Author: Worker 435.
-
 `Langlands.relativeCosocleMultiplicity.{uF,uV,uM,uW,uZ}` proves exactly
 `Langlands.GLRelativeCosocleMultiplicityStatement`. The field, fine,
 middle, coarse and outer-quotient carrier universes remain independent.

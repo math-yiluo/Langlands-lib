@@ -1,6 +1,6 @@
 # Determinants of the actual block-sum and mirabolic embeddings
 
-These three elementary lemmas are extracted unchanged from Worker 593's
+These three elementary lemmas are extracted unchanged from the
 published `PartialDerivativeJacquetNormalization` module. Their namespace
 `Langlands.Derivative.JacquetNormalization`, declaration names, hypotheses
 and proofs are preserved. Both derivative normalization modules import this

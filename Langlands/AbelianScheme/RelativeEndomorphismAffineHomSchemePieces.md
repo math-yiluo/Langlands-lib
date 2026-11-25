@@ -1,10 +1,8 @@
 # The affine-test Hom scheme of an H-projective abelian scheme
 
-Authors: Worker 1042.
-
-Module `Langlands.AbelianScheme.RelativeEndomorphismAffineHomSchemePieces`. Written for task
-`6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism
-functor of a projective abelian scheme). It proves the internal interface
+Module `Langlands.AbelianScheme.RelativeEndomorphismAffineHomSchemePieces`. Part of the proof of
+projective representability of the relative endomorphism functor of a projective abelian scheme
+(`relativeEndomorphismRepresentability`, module `RelativeEndomorphismRepresentability`). It proves the internal interface
 `Langlands.AbelianScheme.AffineHomSchemePiecesStatement.{u}` (module
 `Langlands.AbelianScheme.RelativeEndomorphismAffineHomScheme`) from the ported FLT Hom scheme. All
 declarations are in namespace `Langlands.AbelianScheme.AffineHomSchemePieces`. The module adds no
@@ -12,7 +10,7 @@ axioms.
 
 The mathematical input is the theorem
 `GoodReductionJacobian.RelativeGroupLaw.exists_homScheme_represents_hilbertPieces_of_closedImmersionBySections`
-of the Anthropic Fermat's Last Theorem formalisation, ported in this contribution in universe-
+of the Anthropic Fermat's Last Theorem formalisation, ported to the Library in universe-
 generalized form and with the strengthened pieces clause (see its Markdown file). For commutative
 group schemes `A`, `B` over `Spec S` with FLT's abelian-scheme property bundle and with invertible
 modules giving closed immersions by sections, it gives a scheme `H ⟶ Spec S`, separated, locally of
@@ -37,7 +35,7 @@ Fix a commutative ring `R : Type u` and `A : Langlands.AbelianScheme (Spec R)`.
   abelian schemes), and it has the group law `groupLaw A`.
 - `exists_lineBundle A h`: if `A.X.hom` is H-projective (`Langlands.AlgebraicGeometry.IsHProjective`:
   a closed immersion `i` into `ℙⁿ_R` over `Spec R`), there is an invertible module `L` on `A`
-  (`Scheme.Modules.IsInvertible`) whose sections give a closed immersion
+  (`Scheme.Modules.IsInvertibleFLT`) whose sections give a closed immersion
   (`Scheme.Modules.ClosedImmersionBySections L A.X.hom`). Proof: the ported FLT
   `ProjSpace.exists_projPresentation_toProj_eq_and_locallyTrivial` applied to `i` gives `L = i^*𝒪(1)`
   with a projective presentation `𝔓` whose morphism to `ℙⁿ` is `i`, and local triviality of `L`; the
@@ -119,7 +117,7 @@ For `T : Over (Spec R)` with `T.left` affine:
 
 ## Dependencies
 
-- Same contribution: `Langlands.AbelianScheme.RelativeEndomorphismAffineHomScheme` (the interface),
+- Companion modules: `Langlands.AbelianScheme.RelativeEndomorphismAffineHomScheme` (the interface),
   `Langlands.AbelianScheme.RelativeEndomorphismOfAffineHomSchemeGluing` (`IsPtMul`, `fstMap`,
   `ofFstMap`, `relativeHom_ext`, `fstMap_restrict`, `isPtMul_fstMap`), and the ported FLT modules
   `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_ProjSpace_exists_projPresentation_toProj_eq_and_locallyTrivial`

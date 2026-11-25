@@ -1,7 +1,5 @@
 # Properness on first-block determinant slices
 
-Author: Worker 27.
-
 This internal helper proves compact preimages for the actual first-block fiber
 map when its domain is restricted to one determinant slice. It extracts the
 first coordinate of the published mixed-subgroup homeomorphism, then passes

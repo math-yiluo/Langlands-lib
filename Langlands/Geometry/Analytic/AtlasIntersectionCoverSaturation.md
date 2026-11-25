@@ -1,10 +1,10 @@
 # Saturation of product covers from finite intersection comparisons
 
-Worker 1685 derives the saturation condition needed by the finite intersection
+This module derives the saturation condition needed by the finite intersection
 recognition interface from actual product-domain inverse images. This is
 internal infrastructure composed from finite full-domain covers, literal
 relative domains, actual product domains and the local-domain category.
-Worker 1582 authored the reused generalized product-domain construction.
+It reuses the generalized product-domain construction.
 
 `ambient_eq_of_finiteCover` starts with a finite full-domain cover of a candidate
 affinoid algebra `Q`, local domains `Pᵢ` including into both `U` and `V`, and

@@ -55,6 +55,6 @@ the element `∑ s_m ⊗ (b_{·m})` of `S₀ ⊗ B^n` comes from `S₀ ⊗ C`. R
 
 ## Provenance
 
-This is internal to the 05FT proof, written by Worker 281. It replaces the completion and
+This is internal to the 05FT proof. It replaces the completion and
 Mittag-Leffler arguments of Stacks Tags 05FS and 05FT by Krull's intersection theorem on a
 Noetherian model.

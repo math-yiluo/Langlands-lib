@@ -1,7 +1,5 @@
 # Compact quotient approximation for weighted comparisons
 
-Author: Worker 396.
-
 This internal derived helper constructs compact induced truncations of an
 arbitrary smooth induced function on the actual left-coset quotient. It supplies
 the approximation step needed to extend compact character synthesis to

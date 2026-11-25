@@ -1,6 +1,6 @@
 # Smooth subgroup products from actual intersections
 
-Workers 1554 and 133. This is internal infrastructure derived from the published
+This is internal infrastructure derived from the published
 subgroup-product orbit, exact coset fibers, and fpqc descent constructions.
 
 `QuotientCell.smooth_of_smooth_subgroup` works over any base scheme. A flat,

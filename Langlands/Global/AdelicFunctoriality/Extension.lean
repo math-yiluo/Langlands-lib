@@ -177,7 +177,7 @@ theorem continuous_localNorm : Continuous (localNorm p q) := by
   exact continuous_fieldNorm (F := p.Completion) (E := q.Completion)
 
 @[simp] theorem localNorm_algebraMap (x : p.Completion) :
-    localNorm p q (NumberField.LiesOver.completionMap x) =
+    localNorm p q (NumberField.LiesOver.completionMap p q x) =
       x ^ Module.finrank p.Completion q.Completion :=
   Algebra.norm_algebraMap _
 

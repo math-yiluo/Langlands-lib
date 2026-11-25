@@ -1,11 +1,9 @@
 # Stable pair gamma comparison under highly ramified twists: proof
 
-Author: Worker 389.
-
 The theorem
-`Langlands.ClassField.Global.RelativeWeilGroup.stableTwistPairGammaMatchStatement.{u, uV, uE}`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.stableTwistPairGammaMatchStatement.{u, uV, uE}`
 proves the unchanged Library proposition
-`Langlands.ClassField.Global.RelativeWeilGroup.StableTwistPairGammaMatchStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.StableTwistPairGammaMatchStatement`
 (module `Langlands.Automorphic.StableTwistGammaMatchStatement`) at three independent universe
 levels. It adds no hypothesis and introduces no definition. The proof uses only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

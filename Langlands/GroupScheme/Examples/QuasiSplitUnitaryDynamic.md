@@ -97,4 +97,7 @@ are derived content, rather than a quotation of those `SL₂` calculations.
 This module supplies the cocharacters, subgroup functors and root maps; the
 identifications with `Dynamic.parabolic`, `Dynamic.centralizer` and
 `Dynamic.unipotent`, the assertions that the root maps have those full images,
-and the Levi decomposition are separate statement and proof units.
+and the Levi decomposition are stated separately, in
+`QuasiSplitUnitaryDynamicStatement` and `QuasiSplitUnitaryLeviDecompositionStatement`,
+and proved in `QuasiSplitUnitaryDynamicProof` and
+`QuasiSplitUnitaryLeviDecompositionProof`.

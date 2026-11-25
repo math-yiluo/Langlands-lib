@@ -1,6 +1,6 @@
 # Coherence of actual rational dual pullback
 
-Worker 142. This derived unit gives algebraic coherence laws for the actual
+This derived module gives algebraic coherence laws for the actual
 `rationalDualPullbackHom0` introduced in `WeilHom0Pullback`. With the constructed
 contravariant rational dual, this is the composite `f^vee lamB f` in the actual
 rational Hom groups of abelian schemes over one base. The endpoint dual schemes,

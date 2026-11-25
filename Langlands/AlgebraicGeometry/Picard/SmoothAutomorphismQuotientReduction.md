@@ -48,7 +48,9 @@ and double-quotient results already provide all required properties.
 The generic quotient proposition is still a hypothesis of this theorem.
 
 The provenance is the internal composition of these published interfaces.
-This supporting construction leaves one substantial prerequisite open:
-an independently accepted and published proof of the generic
-smooth-relation quotient theorem. It is not a completion contribution for
-the host Picard proof task.
+This supporting construction leaves one substantial prerequisite to a
+separate proof: the generic smooth-relation quotient theorem, proved by
+`AlgebraicSpace.smoothRelationQuotient` in `SmoothRelationQuotientProof`.
+By itself it does not prove `SmoothAutomorphismEtaleAtlasStatement`; the
+theorem `smoothAutomorphismEtaleAtlas` in `SmoothAutomorphismEtaleAtlasProof`
+combines it with that quotient theorem.

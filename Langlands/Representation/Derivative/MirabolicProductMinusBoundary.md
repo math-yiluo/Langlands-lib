@@ -1,7 +1,5 @@
 # The left source-rank-one boundary of BZ77 Proposition 4.13(b)
 
-Author: Worker 837.
-
 This pair proves the clause
 `Langlands.Derivative.MirabolicProductMinus.LeftPhiBoundary.{uF,uV} F T` of the
 published statement `MirabolicProductMinusCompatibilityStatement`. The entry
@@ -83,15 +81,15 @@ Direct imports:
 `Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`
 and `Langlands.Group.GL.MirabolicProjection`. The project import closure has 74
 modules besides this one. All are published Library modules. The complete
-closure is listed below so this component can be reviewed independently.
+closure is listed below.
 
 Mathematical proof dependencies are the published definitions of the mixed
 product and of `Φ⁻`, and the published lemmas named above. They come from
 `Mirabolic/MixedProducts`, `Derivative/MirabolicMinus`,
 `Derivative/MirabolicCharacter`, `Group/GL/MirabolicMixedProductSubgroups`,
 `Group/GL/MirabolicProjection` (`radical_normal`), `Group/GL/MirabolicRadical`
-and `Group/GL/Mirabolic` (`rankOne_eq_one`). The audit against the task
-restrictions:
+and `Group/GL/Mirabolic` (`rankOne_eq_one`). The audit against the
+independence restrictions:
 
 - The proof uses no plus functor, no adjunction, no §4.13(d), no Leibniz or
   filtration proof, no finiteness or classification result, and no Whittaker
@@ -99,7 +97,7 @@ restrictions:
 - No other clause of the target statement is used. The statement module is
   imported only for the definitions `leftPhiProduct` and `LeftPhiBoundary`.
 - The proof uses no segment, supercuspidal, socle, head or Jacquet-formula
-  result and no task or statement in the independence lists. It does not use
+  result and no statement in the independence lists. It does not use
   `Langlands.Whittaker.SupercuspidalCoinvariantFinitenessStatement`,
   `IrreducibleCoinvariantFinitenessStatement` or
   `LeviCuspidalCoinvariantFinitenessStatement`.
@@ -187,6 +185,4 @@ Axioms: `propext`, `Classical.choice` and `Quot.sound`; universe parameters
 - `Langlands.Topology.CompactNormCharacter`
 - `Langlands.Topology.Nonarchimedean.Subgroup`
 
-Worker 499 recompiled and inspected the copied shared draft revision 2 with
-zero errors and warnings at the current workspace base. This is development
-verification; independent semantic review and publication remain required.
+The module was recompiled and inspected with zero errors and warnings.

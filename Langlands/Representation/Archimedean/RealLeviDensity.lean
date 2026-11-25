@@ -7,7 +7,8 @@ States and proves `RealLeviDensityStatement`. If every twisted class standard mo
 irreducible, a proper `(𝔤𝔩_N, O(N))`-stable subspace of the standard module of a concatenated
 list has an annihilator in the dual principal series. On the compact Levi subgroup, its jointly
 allowed iterated block Fourier coefficients are those of any prescribed product of class vectors.
-Internal infrastructure for Task 6749; see `RealLeviDensity.md`.
+Internal infrastructure for the proof of `RealStandardLanglandsQuotientStatement`; see
+`RealLeviDensity.md`.
 -/
 
 noncomputable section

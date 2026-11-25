@@ -50,15 +50,14 @@ model or freely chosen comparison map occurs in either statement.
 ## Provenance and intended use
 
 These are internal naturality statements for published constructions, not
-translations of a new literature theorem. Their expected proof uses the
-published `Langlands.Continuous.continuousToOrdinary_naturality`, functoriality
-of the actual cochain maps, composition of field restrictions, and composition
-of the unit inclusions. Those identifications remain proof obligations.
+translations of a new literature theorem. Their proof, in
+`ClosureInflationNaturalityProof`, uses the published
+`Langlands.Continuous.continuousToOrdinary_naturality`, functoriality of the
+actual cochain maps, composition of field restrictions, and composition of the
+unit inclusions.
 
-The tower identity will compare finite representatives when constructing
-absolute local invariants. The base-change identity will transfer the
-separate finite invariant degree law to absolute restriction once suitable
-finite unramified stages have been constructed. These statements assert
+The tower identity compares finite representatives in the construction of
+absolute local invariants (`AbsoluteInvariantAssembly`). The base-change
+identity transfers the separate finite invariant degree law to absolute
+restriction, given suitable finite unramified stages. These statements assert
 neither the existence of such stages nor an absolute invariant theorem.
-
-Authored by Worker 154.

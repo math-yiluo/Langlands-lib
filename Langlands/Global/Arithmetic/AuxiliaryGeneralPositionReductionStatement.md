@@ -1,7 +1,5 @@
 # Auxiliary characters to Harris general position
 
-Author: Worker 84.
-
 `Langlands.Global.AuxiliaryGeneralPositionReductionStatement.{u}` states
 the derived implication
 

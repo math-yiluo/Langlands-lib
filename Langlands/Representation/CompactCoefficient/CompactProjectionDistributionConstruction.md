@@ -1,7 +1,5 @@
 # Constructing compact-representation Hecke projectors
 
-Author: Worker 142.
-
 This is an internal construction for Renard IV.1.5 (printed p.92 / PDF p.98),
 using the published compact-isotypic splitting instead of the formal degree.
 The left translation representation on test functions is smooth by common

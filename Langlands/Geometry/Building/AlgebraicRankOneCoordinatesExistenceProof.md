@@ -2,8 +2,6 @@
 
 Module `Langlands.Geometry.Building.AlgebraicRankOneCoordinatesExistenceProof`.
 
-Workers 163 and 195, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b).
-
 ## Statement
 
 `theorem Langlands.Geometry.Building.algebraicRankOneCoordinatesExistence :
@@ -25,7 +23,7 @@ The proof is one application:
 
 - `Langlands.GroupScheme.adjacentSimpleRootSpecialLinear :
   AdjacentSimpleRootSpecialLinearStatement.{u}` (module
-  `Langlands.GroupScheme.Rational.AdjacentSimpleRootSpecialLinearProof`, Worker 195) gives,
+  `Langlands.GroupScheme.Rational.AdjacentSimpleRootSpecialLinearProof`) gives,
   for adjacent simple roots `a, b` of a split pinning, a homomorphism `SL₃(k) →* G(k)` whose
   two block restrictions are the rank-one homomorphisms of `a` and `b`.
 - `algebraicRankOneCoordinatesExistence_of_adjacent` (module

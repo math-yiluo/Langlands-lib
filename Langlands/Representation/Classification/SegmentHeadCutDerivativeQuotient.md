@@ -1,7 +1,5 @@
 # Actual quotient maps for consecutive cuts of special-head derivatives
 
-Author: Worker 357.
-
 This internal construction assembles published individual-head embeddings,
 general derivative quotients, rank transports and elementary tensor contractions.
 It introduces no assertion transcribed from original literature.
@@ -131,12 +129,12 @@ E.hom ≫ q.val ≫ c.
 
 Surjectivity of the underlying linear map of `E.hom`, the witness attached
 to `q`, and the contraction's witness compose to prove the returned property.
-The three private helpers are grouped with this constructor as a focused unit.
+The three private helpers are grouped with this constructor in this module.
 
 ## Published inputs and mathematical dependency audit
 
 The audit uses Library `83a867912d2befca2ebf3e208f7d8fc29ae19ec5`.
-All six direct imports are independently accepted, published modules.
+All six direct imports are published modules.
 All 1,132 inherited project Lean/Markdown pairs in the recursive closure
 match this published tree byte for byte. This pair is the only new module.
 The full inventory below contains 1,133 project modules and 300 distinct
@@ -206,69 +204,54 @@ The closure also contains general analytic predicates, essential/tempered
 definitions and their statement modules through individual-head infrastructure.
 No classification theorem is extracted from them. The used bodies and
 published lower proof routes supplement a comment- and string-free recursive
-code scan for host-excluded task identifiers, statement/theorem spellings,
+code scan for excluded statement/theorem spellings,
 proof holes, axioms and prohibited execution syntax. The scan has no hits;
-there are no missing modules or paired Markdown files. This is an author
-dependency audit, not independent semantic acceptance, and does not claim
+there are no missing modules or paired Markdown files. This dependency
+audit does not claim
 that all inherited source files were newly read line by line.
 
-## Operator rulings and retained boundaries
+## Permitted inputs and retained boundaries
 
-The six complete trusted operator files were read:
+The dependency conditions of the `SegmentHeadProductIrreducibility` proof:
 
-- [bd71b9185aab5d6eafffb7891bd3a3ca](/home/taskhub/pilot/correspondence/bd71b9185aab5d6eafffb7891bd3a3ca.md)
-  permits fully proved general derivative theory while preserving independence.
-- [0edda6122ce65ed7ac51603c37473920](/home/taskhub/pilot/correspondence/0edda6122ce65ed7ac51603c37473920.md)
-  permits the published BZ77 4.11 result, the general Ze80 3.7(b)/Lemma 4.7(b)
+- permit fully proved general derivative theory while preserving independence.
+- permit the published BZ77 4.11 result, the general Ze80 3.7(b)/Lemma 4.7(b)
   and 5.3 branches, and the nine generic modules. This assembly uses that
   permission through its published general and individual-head inputs.
-- [30144f6f9b59540b88b6d4c1517892d9](/home/taskhub/pilot/correspondence/30144f6f9b59540b88b6d4c1517892d9.md)
-  permits the exact independently proved support-only truncation bound as a
-  host input. That bound is not imported or used by this constructor.
-- [ed80148e21e7523abfc048f455e98eb0](/home/taskhub/pilot/correspondence/ed80148e21e7523abfc048f455e98eb0.md)
-  confines `core_mid` and its simple-factor consequence to the support proof's
+- permit the exact independently proved support-only truncation bound as an
+  input of that proof. That bound is not imported or used by this constructor.
+- confine `core_mid` and its simple-factor consequence to the support proof's
   length-two base. Neither enters this closure.
-- [2b33898bdd0a5ff1b9031be5155a06f0](/home/taskhub/pilot/correspondence/2b33898bdd0a5ff1b9031be5155a06f0.md)
-  and [ca18fd5005bf5e12a3f7cade18dca865](/home/taskhub/pilot/correspondence/ca18fd5005bf5e12a3f7cade18dca865.md)
-  permit only the specified adjacent-supercuspidal reducibility input within
+- permit only the specified adjacent-supercuspidal reducibility input within
   that support proof. This assembly uses no such reducibility input.
 
 The new result asserts an actual quotient onto a supplied shorter head.
 It does not identify the whole derivative with that head, prove derivative
 irreducibility, count its factors, or give a multiplicity or full derivative
-formula. It establishes neither direction of the host product criterion.
+formula. It establishes neither direction of the
+`SegmentHeadProductIrreducibility` criterion.
 
 The closure preserves independence, including renamed conclusions and
-proof successors, from Ze80 3.5/9.6; the excluded segment/head/socle
-derivative and full-Jacquet formulas; the segment-socle part of
-`8e5b4563-0365-41c7-b134-70f2a0b36292`; and the host's excluded
+results proved from them, from Ze80 3.5/9.6; the excluded segment/head/socle
+derivative and full-Jacquet formulas; the segment-socle derivative statements
+of `SegmentSocleDerivativesStatement`; and the excluded
 segment-socle product, linked-structure, gluing, commutation and classification
 conclusions. In particular it imports neither `SegmentHeadSupportStep`,
 `SegmentHeadJacquetReduction`, `SegmentSocleJacquetReduction`,
 `TwoSupercuspidalProductStructureProof`, nor `UniverseLiftPadic`.
-The extra derivative-route exclusions
-`ed48ae06-964c-4c84-9e62-978f5a953ca7`,
-`b95105c6-f8bb-4641-ae53-2f49d1e7f034`,
-`55ad1e10-62d8-46b7-a081-909ef0056426`,
-`92aea10f-62ac-4e0b-bd4a-9a80909797c5` and
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4` supply no excluded conclusion.
+The extra derivative-route exclusions `SegmentFullJacquetFormula`,
+`SegmentSocleJacquetFormula`, `SegmentHeadJacquetFormula`,
+`SegmentSpecialJacquetExponentNormFormula` and segment-socle product
+irreducibility supply no excluded conclusion.
 
 It uses neither `SegmentHeadProductIrreducibility` nor its parent
-`GenericSegmentProductUniqueness` conclusion
-(`30341ae4-65f2-4a0e-9283-763db01a409e`), multisegment exhaustion
-(`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`), ordered strong-head existence
-(`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`), quotient coverage
-(`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`), ordered conversion
-(`8252833d-c269-41a9-824c-5879e531b23b`), tempered uniqueness
-(`52e97845-36bb-457d-b76f-70753334b88c`),
-`SquareIntegrableLanglandsClassification`
-(`1cb45da2-7007-4351-a694-594fb148b8d1`), square-integrable exhaustion
-(`cd8ab97c-0b78-4bce-97c4-d307a28159a4`), or regular exhaustion
-(`bf433f0a-921a-428c-b0c0-6475438125ac`). Published lower constructions from
-this host do not assume its final criterion. No citation, proposition
-definition, draft or pending candidate is treated as a proved input.
-
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+`GenericSegmentProductUniqueness` conclusion, multisegment exhaustion,
+ordered strong-head existence, quotient coverage, ordered conversion,
+tempered uniqueness, `SquareIntegrableLanglandsClassification`,
+square-integrable exhaustion, or regular exhaustion. Published lower
+constructions made for the `SegmentHeadProductIrreducibility` proof do not
+assume its final criterion. No citation or proposition
+definition is treated as a proved input.
 
 ## Complete project import inventory
 

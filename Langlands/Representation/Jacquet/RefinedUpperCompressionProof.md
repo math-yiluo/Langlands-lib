@@ -1,7 +1,5 @@
 # Compression identities for the upper refined radical of a product Levi
 
-Author: Worker 246.
-
 This module proves one theorem, `Langlands.Jacquet.refinedUpperCompression`. It is
 the upper-radical form of the published `refinedOppositeCompression`, which is the
 proof of `RefinedOppositeCompressionStatement`. No definition or statement is

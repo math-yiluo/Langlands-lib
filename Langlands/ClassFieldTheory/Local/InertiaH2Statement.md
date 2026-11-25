@@ -1,7 +1,5 @@
 # Vanishing of continuous degree-two cohomology of local inertia
 
-Author: Worker 60.
-
 The proposition `Langlands.ClassFieldTheory.Local.InertiaH2Vanishing.{u}`
 asserts that, for every prime `p` and every `F : PadicField.{u} p`,
 
@@ -50,7 +48,7 @@ Jean-Pierre Serre, *Local Fields*, Greenberg English translation, Springer
 GTM 67 (1979), registered as `serre-1979-local-fields`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 60 read the following original passages. PDF page numbers count
+The following original passages were read. PDF page numbers count
 from one. No project errata entry for this source was present when checked.
 
 - Chapter V, section 4, Proposition 6 and its corollary, Lemmas 6–7,
@@ -78,7 +76,7 @@ complete discretely valued field is `F.Carrier`; its residue field is
 finite and hence perfect. His maximal unramified extension must be
 realized inside the chosen `AlgebraicClosure F.Carrier`.
 
-A future proof must establish the required fixed-field correspondence:
+A proof must establish the required fixed-field correspondence:
 the fixed field of this exact inertia subgroup is that maximal
 unramified extension. It must also establish the corresponding
 topological Galois-group identification, including compatibility of
@@ -96,5 +94,8 @@ p-adic fields; it does not supply the norm theorem for extensions over
 the maximal unramified field required by this route.
 `Langlands.Galois.Local.AbsoluteProof` supplies results about actual
 inertia, but does not prove the degree-two vanishing stated here.
-This file leaves `UnramifiedH2Exhaustion` and all its imports unchanged;
-its proof and the substantial comparison results remain separate work.
+This file leaves `UnramifiedH2Exhaustion` and all its imports unchanged.
+The proofs of this statement (`inertiaH2Vanishing`, module `InertiaH2Proof`)
+and of `UnramifiedH2Exhaustion` (`unramifiedH2Exhaustion`, module
+`UnramifiedH2Proof`), and the substantial comparison results they use, are
+separate modules.

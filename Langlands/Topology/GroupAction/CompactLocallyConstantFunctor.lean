@@ -45,8 +45,8 @@ def locallyConstantAction (S : CompactContinuousAction.{u, v} G) (C : Type w) :
 theorem locallyConstantAction_apply (S : CompactContinuousAction.{u, v} G) {C : Type w}
     (g : G) (f : DiscreteLocallyConstant S.obj.obj.V C) (x : S.obj.obj.V) :
     (DiscreteLocallyConstant.toLocallyConstant
-      (ConcreteCategory.hom ((locallyConstantAction S C).obj.ρ g) f)) x =
-      f (ConcreteCategory.hom (S.obj.obj.ρ g⁻¹) x) := rfl
+      (ConcreteCategory.hom ((locallyConstantAction S C).obj.ρ g).asHom f)) x =
+      f (ConcreteCategory.hom (S.obj.obj.ρ g⁻¹).asHom x) := rfl
 
 /-- Every original continuous equivariant map gives continuous equivariant pullback. -/
 def locallyConstantPullback {S T : CompactContinuousAction.{u, v} G}
@@ -62,9 +62,9 @@ def locallyConstantPullback {S T : CompactContinuousAction.{u, v} G}
         let f' : DiscreteLocallyConstant T.obj.obj.V C := f
         apply DiscreteLocallyConstant.ext
         intro x
-        change f' (ConcreteCategory.hom (T.obj.obj.ρ g⁻¹)
+        change f' (ConcreteCategory.hom (T.obj.obj.ρ g⁻¹).asHom
             (q.hom.hom.hom x)) =
-          f' (q.hom.hom.hom (ConcreteCategory.hom (S.obj.obj.ρ g⁻¹) x))
+          f' (q.hom.hom.hom (ConcreteCategory.hom (S.obj.obj.ρ g⁻¹).asHom x))
         exact congrArg f' (congrArg (fun k => k x) (q.hom.hom.comm g⁻¹)).symm }
 
 @[simp]

@@ -60,6 +60,6 @@ The implemented proofs use only upper-bound reasoning and the subtype range equa
 
 ## Scope and provenance
 
-This unit supplies neither the pure Jordan–Hölder theorem nor simple quotients, composition-factor identities, semisimplicity, finite-type/finite-cover comparisons, module finite-generation comparisons or finite-presentability/Grothendieck comparisons. Those remain separate statement/proof obligations.
+This module supplies neither the pure Jordan–Hölder theorem nor simple quotients, composition-factor identities, semisimplicity, finite-type/finite-cover comparisons, module finite-generation comparisons or finite-presentability/Grothendieck comparisons. Those remain separate statement/proof obligations.
 
-The five predicates translate the cited source definition. The sized predicates and the five lemmas are internal comparison material requested by the task specification. Worker 6 prepared the initial paired draft. Worker 827 rechecked it against the source, added the two category-level lemmas and checked every complete declaration type.
+The five predicates translate the cited source definition. The sized predicates and the five lemmas are internal comparison material. The pair was rechecked against the source, and every complete declaration type was checked.

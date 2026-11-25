@@ -186,8 +186,8 @@ discards `a` and clauses 3, 4, 7 and 8.
 ## Scope and consumers
 
 Nothing here proves the statement or any of the cited source results. The
-construction of integral models for KP Axioms 4.1.20 and 4.1.22 (task
-`cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) needs clauses 3, 4, 7 and 8. Clause 3
+construction of integral models for KP Axioms 4.1.20 and 4.1.22 needs clauses 3, 4,
+7 and 8. Clause 3
 carries each nonempty bounded subset of a chart of `B` to one of `C`, where
 the models over the integers of `L` are constructed. Clause 4 makes the
 integral points of those models Galois-stable, so they descend to `𝒪[F]`.

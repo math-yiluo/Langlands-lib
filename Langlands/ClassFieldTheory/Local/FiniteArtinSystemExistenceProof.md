@@ -1,7 +1,5 @@
 # Existence and uniqueness of coherent geometric finite Artin systems
 
-Author: Worker 4966.
-
 The theorem `Langlands.LocalClassField.geometricFiniteArtinSystemExistenceUniqueness`
 proves the published proposition
 `Langlands.LocalClassField.GeometricFiniteArtinSystemExistenceUniqueness.{u}`
@@ -22,7 +20,7 @@ canonical data used by the published arithmetic-coordinate theorems.
 
 - `ramificationIndex_eq_canonical`: the absolute ramification index
   `T.ramificationIndex` of any supplied datum equals the canonical one. Both are the
-  order of `p`, and orders agree along the identity by `NYLL.ord_eq_of_algEquiv`.
+  order of `p`, and orders agree along the identity by `UniverseZero.ord_eq_of_algEquiv`.
 - `canonical_ramificationIndex_eq`: let `TF` and `TD` be supplied data for `F` and
   an extension `D`, and suppose the maximal ideal of `TD.Integers` has ramification
   index one over `TF.Integers`. Then `F` and `D` have the same canonical absolute
@@ -45,7 +43,7 @@ canonical data used by the published arithmetic-coordinate theorems.
   arithmetic coordinate is transported along this equality of rings.
   `TF.residueCardinality` is identified with the spectral base residue cardinality
   (`FiniteArtinSystemUniqueness.residueCardinality_eq_canonical`,
-  `ArithmeticCoordinate.baseResidueEquiv`). Finally `NYLL.suppliedResidueCongruence`
+  `ArithmeticCoordinate.baseResidueEquiv`). Finally `UniverseZero.suppliedResidueCongruence`
   converts the residue equality into the valuation inequality.
 
 ## The geometric symbol
@@ -69,7 +67,7 @@ From `FiniteArtinSymbol` it follows that:
 
 `geometricArtin F D TD` is `geometricSymbol F D.Carrier` for a p-adic field `D`. It has
 exactly the shape of the `Artin` argument of the published
-`NYLL.RamifiedGeometricNormalizationTransferStatement`, and the supplied datum `TD`
+`UniverseZero.RamifiedGeometricNormalizationTransferStatement`, and the supplied datum `TD`
 is not used.
 
 - `unramified_normalization`: suppose `TD.Integers` has relative ramification
@@ -77,12 +75,12 @@ is not used.
   `a` with `TF.ord a = 1`. By `canonical_ramificationIndex_eq`, the published
   `ArithmeticCoordinate.coordinate_exists` supplies an arithmetic unramified
   coordinate `χ`. The order of `a` is one also for the canonical datum
-  (`NYLL.ord_eq_of_algEquiv`). So `artinSymbol_eq_of_arithmeticCoordinate` makes
+  (`UniverseZero.ord_eq_of_algEquiv`). So `artinSymbol_eq_of_arithmeticCoordinate` makes
   `(geometricArtin F D TD a).symm = artinSymbol F D a` the arithmetic generator
   `χ.symm (ofAdd 1)`. `supplied_congruence_of_arithmetic` concludes.
 - `ramified_normalization`: the same congruence holds on every finite abelian
   extension `E` with every supplied `TE`. Apply the published
-  `NYLL.ramifiedGeometricNormalizationTransfer` to `geometricArtin F`, with the
+  `UniverseZero.ramifiedGeometricNormalizationTransfer` to `geometricArtin F`, with the
   canonical datum on the finite inertia fixed field. Its first hypothesis is
   `unramified_normalization`. Its second hypothesis, restriction from `E` to the
   inertia fixed field, is `restrictNormalHom_geometricSymbol`.

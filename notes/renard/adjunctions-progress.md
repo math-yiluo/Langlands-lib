@@ -1,9 +1,9 @@
 # Renard A.V: adjunctions and scalar extension
 
-Worker 709 checked the source and the publications below on 2 November 2026
+The source and the Library declarations below were checked on 2 November 2026
 against Library commit `facdf46f0abfca9e85d49d3a35285c513a96d886`. This
-focused source-to-declaration map belongs to whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 2.
+focused source-to-declaration map is part of the whole-book coverage
+([coverage.md](coverage.md)).
 
 ## Source and conventions
 
@@ -11,8 +11,8 @@ The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-A.V.1–2 occupies printed pp.258–261 / one-based PDF264–267. Worker 709 read
-those four original pages in full and compared the twelve Lean/Markdown
+A.V.1–2 occupies printed pp.258–261 / one-based PDF264–267. Those four
+original pages were read in full and compared with the twelve Lean/Markdown
 pairs identified below.
 
 The supplementary source `renard-2010-corrections-complements`, SHA256
@@ -122,54 +122,38 @@ adjunction uses that carrier level in both module categories. This bound
 comes from the actual integer tensor quotient. It does not require the
 rings to share a universe.
 
-Worker 1151 supplied the Hom foundation. Worker 1172 supplied the Hom
-comparison, unit–counit and preservation proofs. Workers 1158 and 923
-contributed to representability and uniqueness. Worker 1171 supplied
-the scalar construction and proof, using Worker 185's published scalar
-statements. Their declarations and ownership are retained.
+## In the Library
 
-## Independent acceptance and publication
+All twelve modules are in the Library. Definition and statement modules are
+distinguished from proof modules in the table.
 
-Direct TaskHub fetches reported `accepted=true`, `public=true` and
-integration state `published` for all twelve units. Every listed semantic
-review approved without qualifications. Definition and statement
-acceptance is distinguished from proof acceptance in the table.
+| Module | Kind | First appeared at Library commit |
+| --- | --- | --- |
+| Hom foundation | definition | `e3944f764d2c00d53ac87227e98601bb667f348f` |
+| Hom comparison statements | statement | `4f2e1785a3faf187359b2dcec3c8bdbe4a70e762` |
+| Hom comparison proof | proof | `b1c8a5e809be36100da09da81385a7ca6789ae80` |
+| Representability and uniqueness statements | statement | `e3944f764d2c00d53ac87227e98601bb667f348f` |
+| Representability and uniqueness proof | proof | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
+| Unit–counit statements | statement | `e3944f764d2c00d53ac87227e98601bb667f348f` |
+| Unit–counit proof | proof | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
+| Preservation statements | statement | `4f255c2d810d0998369347f03338826ce587c35b` |
+| Preservation proof | proof | `e3944f764d2c00d53ac87227e98601bb667f348f` |
+| Scalar construction | definition | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
+| Scalar statements | statement | `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
+| Scalar proof | proof | `b1c8a5e809be36100da09da81385a7ca6789ae80` |
 
-| Unit | Accepted candidate and policy | Independent reviewer | Published commit |
-| --- | --- | --- | --- |
-| Hom foundation | `6d3eda73-ec0c-44cb-b9ad-b28c686e6d58`, `lean.definition@1` | Reviewer 7699 | `e3944f764d2c00d53ac87227e98601bb667f348f` |
-| Hom comparison statements | `e210f3e5-4578-4ff0-b6c2-29b9c97d0d27`, `lean.statement@1` | Reviewer 7841 | `4f2e1785a3faf187359b2dcec3c8bdbe4a70e762` |
-| Hom comparison proof | `3e72afbe-5ca6-4366-acca-19020ca46c13`, `lean.proof@1` | Reviewer 8021 | `b1c8a5e809be36100da09da81385a7ca6789ae80` |
-| Representability and uniqueness statements | `d23c665c-39c8-403f-a0d6-b7865b657c32`, `lean.statement@1` | Reviewer 7741 | `e3944f764d2c00d53ac87227e98601bb667f348f` |
-| Representability and uniqueness proof | `66cf4f16-8aeb-46ee-bf57-ee308d741966`, `lean.proof@1` | Reviewer 7793 | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
-| Unit–counit statements | `35c20651-78f5-44a5-afe8-6e7bb88058f6`, `lean.statement@1` | Reviewer 7708 | `e3944f764d2c00d53ac87227e98601bb667f348f` |
-| Unit–counit proof | `59670f19-608e-45b8-a17e-7501de02fd22`, `lean.proof@1` | Reviewer 7805 | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
-| Preservation statements | `0df2d370-dc51-476a-a7cc-891a7ba34069`, `lean.statement@1` | Reviewer 7682 | `4f255c2d810d0998369347f03338826ce587c35b` |
-| Preservation proof | `829dc5c8-2043-4964-8e68-e6da6f46ec77`, `lean.proof@1` | Reviewer 7743 | `e3944f764d2c00d53ac87227e98601bb667f348f` |
-| Scalar construction | `930ac854-08a0-4c55-a1a6-db646fc88bd0`, `lean.definition@1` | Reviewer 7809 | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
-| Scalar statements | `cb881e67-defc-4211-a5dd-9eea664d07f0`, `lean.statement@1` | Reviewer 7919 | `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
-| Scalar proof | `0e66e6fa-a330-4adf-9caf-190fbbec0e1f`, `lean.proof@1` | Reviewer 8047 | `b1c8a5e809be36100da09da81385a7ca6789ae80` |
+Each of the five proofs (Hom comparison, representability, unit–counit,
+preservation, scalar adjunction) was checked by a Lake build against its exact
+target, with the statement and its inputs unchanged.
 
-The five proof machine receipts are, respectively, Hom comparison
-`627b7682-f05c-45f7-8e93-033e117c1eef`, representability
-`f51f06e4-b045-45b2-b6e8-d65e47b90b1a`, unit–counit
-`3d30491d-b682-4c5a-9a8c-2cfc313b093b`, preservation
-`bcd85ad3-d76c-4486-9b70-b47303ccc581`, and scalar adjunction
-`62ffb427-1684-4350-a4b7-62b664220832`. Each records an accepted Lake
-build, exact-target validation, unchanged statement and frozen inputs,
-with `proof_accepted=true`.
-
-All twenty-four Lean/Markdown files match the SHA256 values in their
-accepted frozen records, both in the checked Library and in Worker 709's
-workspace. The scalar recovery check
-`3d2b3d50-bf01-44a3-90fb-44d0a8739489` also completed cleanly with
+All twenty-four Lean/Markdown files in the checked Library match the versions
+first published. A separate build of the scalar proof completed with
 zero errors or warnings and only the standard `propext`,
-`Classical.choice`, `Quot.sound` assumptions. That development check is
-separate from the independent proof acceptance above.
+`Classical.choice`, `Quot.sound` assumptions.
 
 This note records the A.V source correspondences and the checked
-composition of its published results. The [whole-book ledger](coverage.md)
-retains its own update process; its A.V row links this map.
+composition of its published results. The A.V row of the
+[whole-book ledger](coverage.md) links this map.
 Other Appendix A sections, Appendices B/C and the chapters
 retain their respective obligations. No appendix or book completion is
 declared here.

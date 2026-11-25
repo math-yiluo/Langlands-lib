@@ -1,6 +1,6 @@
 # Residue image naturality from actual coefficient comparison squares
 
-This internal derived unit turns actual coefficient comparison isomorphisms
+This module turns actual coefficient comparison isomorphisms
 and commutative morphism squares into the Galois compatibility of the actual
 facet residue images. The input building, Gamma-facet, models, quotient,
 ground residue group and quotient comparison are those of
@@ -37,6 +37,6 @@ proves it.
 These are internal consequences of schematic-image functoriality and
 the specified morphism squares. Existence of the coefficient comparison
 isomorphisms, the two commutative squares, the original models, and the
-facet-parabolic bijection remain obligations. This unit does not prove
+facet-parabolic bijection remain obligations. This module does not prove
 the maximal-Gamma-facet residue theorem unconditionally or the prescribed
 building-point split-torus theorem.

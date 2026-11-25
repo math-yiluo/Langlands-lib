@@ -1,7 +1,6 @@
 # Pair-factor compatibility of supercuspidal families
 
-Author: Worker 7. I001 documentation correction: Worker 100, following
-Worker 46's audit. This module states the pair L- and epsilon-factor
+This module states the pair L- and epsilon-factor
 condition (4) of Henniart 2000, §1.2, for the irreducible-Weil to
 supercuspidal family `SupercuspidalMap` of `Domains`: for irreducible Weil
 classes `σ`, `τ`, the Rankin–Selberg factors of `π(σ) × π(τ)` defined by
@@ -18,7 +17,7 @@ residue cardinality. Supercuspidal classes are the published
 supercuspidal full subcategory of smooth representations of `GL_n(F)`.
 
 - `IsSupercuspidalPairLPolynomial F ψ ν π τ P`, for supercuspidal classes `π`
-  of rank `r + 1` and `τ` of rank `n + 1`, is Worker 11's published
+  of rank `r + 1` and `τ` of rank `n + 1`, is the published
   `RankinSelberg.IsPadicSymmetricLPolynomial F ψ ν A B P` on representatives
   `A` of `π` and `B` of `τ`. It says `L(s, π × τ) = 1/P(q^(-s))` in the
   JPSS convention: the representation of larger rank is the candidate, and in
@@ -36,7 +35,7 @@ proof in the module.
 
 ## Arithmetic side
 
-The arithmetic factors come from this task's `ArithmeticFactors`.
+The arithmetic factors come from the module `ArithmeticFactors`.
 `weilPairClass F σ` is the zero-monodromy pair class of `σ`.
 `arithmeticPairLFactor` is the Artin pair L-factor as a rational function of
 `X = q^(-s)`. `IsArithmeticPairEpsilonFactor F eC ε hε ψ X Y c m` says that
@@ -89,11 +88,11 @@ universe `uP`, the universe of the Weil classes, so the pair transport of
   `α q^(-ms)`. Its §1.3, printed p.589, states the existence of the
   supercuspidal family with the epsilon identity for all `n, n' ≥ 1`.
 - JPSS 1983, Theorem 2.7, printed pp.390–391, and (2.12), printed p.403, as
-  recorded in Worker 11's published `RankinSelberg/PadicPairFactors`: the
+  recorded in the published `RankinSelberg/PadicPairFactors`: the
   definition of the pair factors and the convention that the factors of
   `σ × π`, with `σ` of smaller rank, are those of `π × σ`. This module takes
-  that convention from the published relations; I did not re-read the JPSS
-  scan, which has no text layer.
+  that convention from the published relations; the JPSS scan, which has no
+  text layer, was not re-read for it.
 - Tate 1979, (3.4.1), printed pp.14–15 (retained Part II PDF pp.23–24),
   asserts existence and uniqueness of the nonabelian local-constant function
   with rank-one agreement and degree-zero induction. The following
@@ -131,8 +130,9 @@ Source files:
   So the conditions imply that the JPSS factors of every image pair exist in
   the form required by the published relations. They do not assume it. The
   published relations need nonzero Whittaker functionals for both
-  representations. Supercuspidal representations are generic, but that is
-  not proved in the Library.
+  representations. Supercuspidal representations are generic; over p-adic
+  fields the Library proves this as
+  `RankinSelberg.SupercuspidalLFactorCharacterization.isGeneric_of_isSupercuspidal`.
 - **Measures.** A self-dual measure for `ψ` is asserted to exist, and the
   identities are required for every self-dual measure. The witnesses `P` and
   `e` may a priori depend on `ν`. The published uniqueness lemmas
@@ -173,19 +173,18 @@ Source files:
   `OperationCompatibility`.
 - **Scope.** Only the supercuspidal family is covered. The full family needs
   pair factors of nongeneric representations, which the published JPSS
-  relations do not provide; its factor conditions are a separate module of
-  this task.
+  relations do not provide; its factor conditions are a separate module.
 
-The module imports, and does not copy: Worker 11's
+The module imports, and does not copy:
 `Langlands.Representation.RankinSelberg.PadicPairFactors`
 (`IsPadicSymmetricLPolynomial`, `IsPadicSymmetricEpsilonFactor` and their
 `congr_equiv` lemmas), `Langlands.Representation.Classification.Supercuspidal`
 (`SupercuspidalRep`, `SupercuspidalClass`, `supercuspidalProperty`),
 `LocalConventions` (`NontrivialAdditiveCharacter`, `LocalAdditiveHaarMeasure`,
-`IsSelfDualMeasure`) and this task's `Domains` and `ArithmeticFactors`.
+`IsSelfDualMeasure`) and the modules `Domains` and `ArithmeticFactors`.
 
 ## Validation
 
-The module compiles in the project Lean service together with
+The module compiles together with
 `ArithmeticFactors`, with no errors or warnings. There is no `sorry` and no
 new axiom. Every condition returns `Prop`.

@@ -1,7 +1,5 @@
 # Actual projective data for a supplied proper homogeneous quotient
 
-Author: Worker 1547.
-
 This internal construction packages existing Chevalley and projective-orbit
 results for an actual supplied quotient. It works over every field in universe
 `u`, in every characteristic. The ambient group `G` is smooth and affine, and

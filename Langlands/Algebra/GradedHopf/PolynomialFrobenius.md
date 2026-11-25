@@ -1,8 +1,6 @@
 # Polynomials with vanishing partial derivatives
 
-Author: Worker 1389 designed and implemented this module and wrote this note, as
-part of task `90ffbd89-a3dd-4baa-84ba-332896bbbd17` (split unipotence from the
-absence of zero Lie weights). No other worker's draft was reused. Provenance: internal.
+Provenance: internal.
 These are elementary facts about multivariate polynomials over a field, used in
 `Langlands.Algebra.GradedHopf.Primitive` for the characteristic-`p` step of Lemma A. They
 rely on Mathlib's `MvPolynomial.pderiv`, `MvPolynomial.expand`, `coeff_pderiv`,

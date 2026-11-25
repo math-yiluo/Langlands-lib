@@ -1,6 +1,6 @@
 # Cuspidal exponents and leading cuspidal components
 
-Module `Langlands.Global.AdelicLeadingCuspidalComponents`. Author: Worker 763.
+Module `Langlands.Global.AdelicLeadingCuspidalComponents`.
 
 This module defines the objects of Bernstein–Lapid, *On the meromorphic
 continuation of Eisenstein series*, J. Amer. Math. Soc. 37 (2024), §§6.1–6.3,
@@ -22,8 +22,8 @@ from a faithful closed matrix embedding and `K_∞` is in good position (§5,
 "Source data"). The polynomial exponent condition is the generalized-eigenspace
 condition for functions with smooth orbit maps (§3).
 
-The task contract calls these subsections §§6.1–6.2. In the published paper
-they are §6.2, "Cuspidal exponents" (pp. 200–202), and §6.3, "Leading cuspidal
+In the published paper the subsections on cuspidal exponents and leading
+cuspidal components are §6.2, "Cuspidal exponents" (pp. 200–202), and §6.3, "Leading cuspidal
 components" (p. 203). In the arXiv TeX file `1911.02342.tex` they are the
 subsections `Cuspidal exponents` and `Leading cuspidal components`, lines
 1187–1383. The underlying theory of exponents and cuspidal projection is
@@ -335,7 +335,7 @@ other choices the relation still requires convergence.
   to (6.10). For the source data of §5 the components are smooth, so by §3
   `HasUnnormalizedExponent` is membership in `𝒜^{un}_{P,λ}`. Zero components are allowed and the finset makes the exponents
   distinct. Existence for `ψ ∈ 𝒜^cusp_P` is (6.6) and MW I.3.2–I.3.3. Uniqueness
-  of the nonzero components (the sum is direct) is a theorem for later tasks.
+  of the nonzero components (the sum is direct) is a theorem not proved here.
 - `leadingSum P s c = ∑_{λ ∈ s, λ leading} c λ` keeps the components whose
   unnormalized exponents satisfy `IsLeadingExponent`.
 - `IsLeadingPart P ψ ψld`: `ψld = leadingSum P s c` for some exponent
@@ -386,8 +386,8 @@ own leading cuspidal component.
   equivalence of the two characterizations of `φ^cusp` in §6.2; the
   equivalence of the polynomial and generalized-eigenspace descriptions for
   smooth orbit maps in §3; and the independence of the predicates from the
-  faithful embedding `rho`. These belong to the decomposition, injectivity (Theorem 6.3) and
-  geometric-lemma tasks that use these definitions.
+  faithful embedding `rho`. These belong to the proofs of the decomposition, of injectivity
+  (Theorem 6.3) and of the geometric lemma that use these definitions.
 - The source identifications of §§5–7 assume the source data of §5: `rho` a
   faithful closed embedding and `Kinf` the archimedean part of a maximal compact
   subgroup in good position. The Lean does not impose these conditions.

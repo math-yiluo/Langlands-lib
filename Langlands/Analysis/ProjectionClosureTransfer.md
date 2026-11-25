@@ -1,7 +1,5 @@
 # Finite-dimensional intersections and continuous projections
 
-Author: Worker 94.
-
 This internal topological linear-algebra lemma is derived directly from
 Mathlib's closedness theorem for finite-dimensional subspaces.
 It applies over any complete nontrivially normed field to a Hausdorff

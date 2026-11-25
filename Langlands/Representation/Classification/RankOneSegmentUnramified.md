@@ -1,6 +1,6 @@
 # Unramified rank-one segment fixed vectors and decreasing heads
 
-This internal unit applies the proved midpoint character formula to every
+This internal file applies the proved midpoint character formula to every
 irreducible subrepresentation of an increasing rank-one segment whose base
 acts by an unramified scalar character. Here unramified means trivial on the
 actual field valuation units; all compatible topological realizations and

@@ -2,9 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexPrincipalSeriesExtension`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of the Library module
-`PrincipalSeriesExtension` (Worker 5220, for `GL_n(ℝ)`).
+This module was written for the proof of `ComplexStandardLanglandsQuotientStatement`. It is the
+complex counterpart of the Library module `PrincipalSeriesExtension` (for `GL_n(ℝ)`).
 
 A function of a principal series of `GL_n(ℂ)` is determined by its restriction to `U(n)` (Library:
 `ComplexDuality.eq_zero_of_mem_principalSeries_of_eqOn`). This module proves the converse for

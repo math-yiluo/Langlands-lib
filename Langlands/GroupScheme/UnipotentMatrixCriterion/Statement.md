@@ -1,8 +1,5 @@
 # Actual unipotence and finite coefficient matrices
 
-Authors: Worker 572 (Lean statement and first Markdown draft); Worker 1512
-(Markdown revision and submission).
-
 The module defines one proposition,
 `Langlands.GroupScheme.UnipotentMatrixCriterion.CorepresentedMatrixUnipotenceStatement.{u}`.
 It is a statement only: no proof of the equivalence is given here.
@@ -108,5 +105,6 @@ nor any proof, and proves neither direction.
 - Changing between an arbitrary nonempty finite index type `n` and
   `Fin (Fintype.card n)` relates the two quantifications.
 
-A proof is left to a separate proof task. This module asserts no conilpotence
+The proof is `corepresentedMatrixUnipotence` in
+`Langlands.GroupScheme.UnipotentMatrixCriterion.Criterion`. This module asserts no conilpotence
 characterization, quotient theorem or closed-subgroup inheritance theorem.

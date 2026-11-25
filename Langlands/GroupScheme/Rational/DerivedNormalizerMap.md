@@ -1,6 +1,6 @@
 # Original normalizer images through a supplied central torus product
 
-Authors: Worker 27 and Worker 1631. The construction uses Worker 1631's
+The construction uses the
 supplied central-product interface and the existing maximal split-torus
 and normalizer-lifting infrastructure.
 

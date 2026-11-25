@@ -14,7 +14,7 @@ Proposition definition only.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open Langlands.Global
 
@@ -43,4 +43,4 @@ def AssociatedCentralCharacterStatement : Prop :=
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

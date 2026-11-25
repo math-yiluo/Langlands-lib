@@ -1,7 +1,5 @@
 # Proof of the hyperplane-slicing induction step of the uniform Lang–Weil estimate
 
-Authors: Worker 5132 and Worker 196.
-
 `familyLangWeilSlicing` proves the published statement
 `Langlands.AlgebraicGeometry.LangWeil.FamilyLangWeilSlicingStatement`, which is imported
 unchanged. Given Bertini's theorem for the generic hyperplane section
@@ -23,7 +21,7 @@ irreducible affine family `Spec A → Spec R` of dimension `e`, over the dense o
 
 ## The two steps
 
-1. **Slicing for affine families** (Worker 5132, `Slicing/Core.lean`):
+1. **Slicing for affine families** (`Slicing/Core.lean`):
    `Slicing.affineFamilyLangWeil_slicing hB hUB d hLW` proves `AffineFamilyLangWeil (d + 2)`
    from the three hypotheses. It counts pairs of a point and an affine hyperplane through it.
    The estimate in dimension `d + 1` is applied to the universal hyperplane section, over the
@@ -32,7 +30,7 @@ irreducible affine family `Spec A → Spec R` of dimension `e`, over the dense o
    (`Slicing/GenericImage.lean`). The remaining hyperplanes are bounded by
    `FamilyPointUpperBoundStatement` and the Schwartz–Zippel lemma (`Slicing/Counting.lean`).
    The proof is described in `Slicing/Core.md`.
-2. **Reduction to affine families** (Worker 196, `Slicing/Reduction.lean`):
+2. **Reduction to affine families** (`Slicing/Reduction.lean`):
    `Slicing.familyLangWeil_of_affine hUB e` turns `AffineFamilyLangWeil (e + 1)` into
    `FamilyLangWeilInDimension (e + 1)`. The base is covered by finitely many affine opens
    `S₀`, and every `κ`-point of `S` factors through one of them. Over a fixed `S₀`, Noetherian

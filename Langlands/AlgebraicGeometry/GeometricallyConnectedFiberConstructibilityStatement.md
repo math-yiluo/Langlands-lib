@@ -1,6 +1,6 @@
 # Geometric-connectedness fibre-locus constructibility
 
-Worker 105 states the geometric-component-count-one specialization of
+This module states the geometric-component-count-one specialization of
 Stacks Lemma 37.28.6, tag 055I. The retained original HTML and its comments
 belong to `stacks-fibre-constructibility-local-dimension-2026-11-04`,
 SHA-256
@@ -26,9 +26,10 @@ Mathlib's convention uses `ConnectedSpace` after every field-valued base
 change and therefore requires nonemptiness. This is the count-one
 specialization of 055I; an empty geometric fibre has count zero and is
 excluded. The proposition does not assert constructibility of the
-entire component-count function, nor openness of this locus. It is an
-unproved proposition definition supplying the exact target for a
-separate proof task.
+entire component-count function, nor openness of this locus. It is a
+proposition definition, not proved in this module; its proof is
+`geometricallyConnectedFiberLocalConstructibility` in
+`GeometricallyConnectedFiberConstructibilityProof`.
 
 The remaining declarations are proved, derived reductions. Local
 constructibility becomes global constructibility when the target is

@@ -1,7 +1,5 @@
 # Spreading a torus fibre in a smooth affine group
 
-Worker 606.
-
 This is an internal derived helper for the proof of
 [`TorusFibreSpreadingStatement`](FibreSpreadingStatement.md). It proves the smooth
 case in every universe, assuming geometric connectedness of the structure
@@ -70,7 +68,7 @@ property to that open image.
 This is a derived implementation of the smooth part of Conrad's Corollary
 3.1.8, using the already published split-torus lifting theorem and the smooth
 monomorphism local-isomorphism theorem. It replaces the dimension argument in
-Conrad's proof by the latter theorem. It does not yet reduce an arbitrary fppf
+Conrad's proof by the latter theorem. It does not reduce an arbitrary fppf
 group to a smooth neighbourhood.
 
 Brian Conrad, *Reductive group schemes* (2014), registered as

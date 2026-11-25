@@ -1,6 +1,6 @@
 # Character transport and Haar scaling for local constants
 
-Worker 20 constructs the changes of harmonic-analysis inputs used in the
+This module constructs the changes of harmonic-analysis inputs used in the
 local-constant laws. The module reuses `UnitaryAdditiveCharacter` and
 `AdditiveHaarMeasure` from `Langlands.HarmonicAnalysis.Basic`. It does not
 introduce a second character or measure type.

@@ -19,3 +19,14 @@ removes its factorial normalization and shrinks the ball so the top-order
 error costs at most half of the leading term of that recurrence. Compact
 containment gives finiteness before absorption. Strong induction on the
 derivative order gives the stated constants.
+
+The absorption step is the public lemma `absorbs_half`: in `ℝ≥0∞`, if
+`X ≠ ⊤` and `X ≤ ofReal (1 / 2) * X + Y`, then `X ≤ ofReal 2 * Y`. Its
+proof passes to real numbers, which is possible because `X` is finite; when
+`Y = ⊤` the bound is immediate.
+
+The finiteness before absorption is the public lemma `weightedSeminorm_lt_top`:
+for `0 ≤ R` and `G` continuous on `closedBall x₀ R`, every weighted seminorm
+`ballWeightedSeminorm G x₀ R m` is finite. `G` is bounded on the compact closed
+ball, hence in `L²` of the finite restricted measure, and each weight
+`(R - ρ) ^ m` with `R / 2 ≤ ρ < R` is at most `R ^ m`.

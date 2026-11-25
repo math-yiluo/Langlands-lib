@@ -1,7 +1,5 @@
 # Proof: nonmultipliable relative coroots of a simply connected group span the cocharacters
 
-Author: Worker 151 (Task 7828).
-
 This module proves the Library proposition
 `Langlands.GroupScheme.NonmultipliableCorootSpanStatement`
 ([`SimplyConnected.NonmultipliableCorootSpanStatement`](NonmultipliableCorootSpanStatement.md))

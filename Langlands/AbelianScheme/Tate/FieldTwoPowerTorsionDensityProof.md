@@ -1,7 +1,5 @@
 # Density of actual geometric two-power torsion
 
-Author: Worker 3376.
-
 The theorem `Langlands.AbelianScheme.Tate.fieldTwoPowerTorsionDensity` proves
 the exact Library proposition
 `Langlands.AbelianScheme.Tate.FieldTwoPowerTorsionDensityStatement.{u}`. For

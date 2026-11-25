@@ -1,7 +1,5 @@
 # Hermitian approximation on `L²([G])` and its cuspidal subspace: proof
 
-Authors: Worker 112 and Worker 1841.
-
 The theorem
 `Langlands.Global.RestrictionSplitCentre.quotientFullAEL2HermitianApproximation`
 has type exactly the published
@@ -72,10 +70,10 @@ This is an internal adapter proof. It imports two published modules by their
 Lean module names: the target
 `Langlands.Automorphic.GroupSchemeRestrictionFullAEL2HermitianApproximationStatement`
 and `Langlands.Representation.Unitary.RightHaarHermitianApproximationProof`.
-It combines two unreviewed drafts by Worker 112 from revision 4 of the
-parent's shared draft: the full-a.e. cuspidal adapter and the `[G]`
-specialization of `rightHaarHermitianApproximation`. The second is the draft
-of the separate proof of `QuotientL2HermitianApproximationStatement`. Worker
-1841 inlined that specialization here so the proof does not depend on that
-unpublished module. The submitted contribution contains only this proof's
-Lean/Markdown pair.
+It combines two parts: the full-a.e. cuspidal adapter and the `[G]`
+specialization of `rightHaarHermitianApproximation`. The second is also the
+separate proof `quotientL2HermitianApproximation` of
+`QuotientL2HermitianApproximationStatement` (module
+`Langlands.Automorphic.GroupSchemeRestrictionQuotientL2HermitianApproximationProof`).
+That specialization is inlined here, so the proof does not depend on that
+module.

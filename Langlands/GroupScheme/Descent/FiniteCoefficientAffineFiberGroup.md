@@ -1,7 +1,5 @@
 # Finite coefficient models of smooth groups with affine residue fibres
 
-Author: Worker 668.
-
 Let \(R\) be a noetherian ring and \(A\) an \(R\)-algebra. A smooth,
 separated, quasi-compact group scheme over \(\operatorname{Spec} A\) with
 affine residue fibres admits a model over a finitely generated \(R\)-subalgebra
@@ -23,4 +21,5 @@ generation over \(R\).
 
 The model and its proof are internal consequences of these approximation
 and base-change results. They supply the noetherian affine step of the
-arbitrary-base reduction for Task 7705.
+arbitrary-base reduction of smooth torus-subgroup representability for groups
+with affine residue fibres (`HomScheme.AffineFiberTorusSubgroupReduction`).

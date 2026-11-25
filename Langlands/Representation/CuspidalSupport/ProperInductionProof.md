@@ -1,7 +1,5 @@
 # Proper refined induction has no nonzero quasicuspidal subquotients
 
-Author: Worker 167.
-
 `Langlands.CuspidalSupport.padicProperRefinedInduction` proves the existing
 `PadicProperRefinedInductionTheorem.{uF,uV}`. It retains every prime, actual
 finite p-adic extension, compatible topological realization, positive rank,

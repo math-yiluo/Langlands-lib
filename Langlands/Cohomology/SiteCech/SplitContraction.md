@@ -1,6 +1,6 @@
 # Contraction of the free sheaf Čech nerve of a split presheaf arrow
 
-Author: Worker 512. This is an internal specialization of Mathlib's split
+This is an internal specialization of Mathlib's split
 Čech nerve extra degeneracy and its alternating-complex homotopy equivalence
 to the free sheaf constructions in `FreeNerve`.
 
@@ -30,4 +30,4 @@ quasi-isomorphism for that same augmentation.
 This construction treats globally split presheaf arrows. It does not
 prove exactness for arbitrary locally surjective arrows, a Čech-to-derived
 comparison, or acyclicity of restricted equivariant injectives. Those
-remain separate obligations.
+are separate obligations.

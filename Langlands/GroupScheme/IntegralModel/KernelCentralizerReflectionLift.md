@@ -40,7 +40,7 @@ The provenance is internal composition of dynamic functoriality,
 `fullGenericRepresents`, full character-kernel centralizer transport, and
 `IsSplitTorus.isRelativeReflection_of_mem_kernelCentralizer`.
 The full character kernel is retained, including a nonreduced kernel.
-No closedness of the relative component inclusion is assumed. This unit
+No closedness of the relative component inclusion is assumed. This module
 supplies helpers for integral opposite-factor arguments; it contains no
-residue quotient construction and does not prove the host Galois-fixed
-opposite-factor statement.
+residue quotient construction and does not prove the Galois-fixed
+opposite-factor statement it serves.

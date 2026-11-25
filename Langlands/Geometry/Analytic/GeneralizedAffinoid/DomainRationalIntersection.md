@@ -1,7 +1,5 @@
 # Intersecting a full affinoid domain with an actual rational chart
 
-Author: Worker 36.
-
 Over any complete ultrametric normed field `K`, this module constructs the
 intersection of a full represented domain `U : Domain K A` and an ambient
 positive-radius rational chart `d : RationalChart K A`. The underlying

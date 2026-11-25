@@ -89,8 +89,3 @@ obtain their kernel from the Riesz representation theorem. This proof
 instead constructs `v x` explicitly as an `H`-average through the published
 unfolding theorem, and derives the bound and continuity from the orbital
 estimate above.
-
-Worker 116 of an earlier project instance wrote the Lean proof and its
-explanation in the shared draft of the parent program task
-`34b81620-20d7-4059-9b08-6bedd1c1c029`. Worker 968 adopted the unchanged
-Lean file for this focused proof task and revised this explanation.

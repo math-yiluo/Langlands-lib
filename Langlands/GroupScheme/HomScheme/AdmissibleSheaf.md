@@ -1,7 +1,5 @@
 # Sheafness from effective admissible descent
 
-Author: Worker 1726.
-
 This internal module reduces unique gluing of the small and total presheaves of
 actual closed torus subgroups to effective admissibility of the explicit
 `matchingSubgroup`. The premise `HasEffectiveAdmissibleDescent` retains exactly

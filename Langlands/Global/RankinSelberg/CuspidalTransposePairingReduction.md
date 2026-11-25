@@ -1,8 +1,9 @@
 # Reduction to the pairing of the actual cuspidal transpose realization
 
-This internal conditional reduction for Task 7294 combines Worker 338's actual
-cuspidal transpose construction with Worker 264's pairing transport and cusp
-function comparison. It proves the earlier B1 premise and retains only B2,
+This internal conditional reduction combines the actual cuspidal transpose
+construction (module `Langlands.Automorphic.TransposeOperatorRealization`) with
+the pairing transport (`IsTransposeIntertwining.isContragredientOf`) and the cusp
+function comparison of `CuspidalTransposeInverseContragredientReduction`. It proves the earlier B1 premise and retains only B2,
 `CuspidalTransposePairingStatement`, as an explicit unproved premise. It does
 not prove the unconditional `CuspidalTransposeInverseContragredientStatement`.
 
@@ -43,5 +44,7 @@ surjectivity clause has been removed.
 
 The provenance is internal: the new results compose the actual transpose
 construction, the intrinsic pairing criterion and the actual function
-comparison. The Gelfand--Kazhdan pairing existence problem remains open, so
-this module does not discharge the host proof task.
+comparison. The Library has no proof of B2, the Gelfand--Kazhdan pairing
+existence problem, so this module does not prove the target; the Library proves the target by another route
+(`cuspidalTransposeInverseContragredient`, module
+`CuspidalTransposeInverseContragredientProof`).

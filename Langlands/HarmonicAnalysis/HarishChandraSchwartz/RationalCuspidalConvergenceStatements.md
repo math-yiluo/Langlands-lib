@@ -38,12 +38,11 @@ standard finite root subset, every Haar measure on its actual radical,
 and every `x,y ∈ G(F)`. Properness is inequality with the full simple-root
 set, as in `rationalCuspidalSubmodule`. In rank zero this quantifier is
 empty. There is no assumed `ConstantTermEstimate`. This target does not
-duplicate the stronger Schwartz-valued constant-term estimate owned by
-the existing constant-term task.
+duplicate the stronger Schwartz-valued constant-term estimate.
 
 `RationalStandardConstantTermsVanish` is the separate vanishing-only
 predicate for every such standard parabolic, measure and pair of
-arguments, using the published `constantTermInd` and
+arguments, using `constantTermInd` and
 `standardUnipotentModulus`. Its formula is
 `δ(m)^(1/2) ∫ f(g₂⁻¹ m u g₁) du = 0`.
 `RationalCuspidalVanishingComparisonStatement` asserts, for every actual
@@ -51,7 +50,7 @@ Schwartz function with the structural inputs above, equivalence of this
 vanishing-only condition with membership in the constructed integrable
 cuspidal kernel. It has no convergence premise.
 
-## Proven implication and remaining work
+## Proven implication and scope
 
 `RationalSchwartzConstantTermConvergenceStatement.vanishingComparison`
 proves the implication between the two closed propositions. It uses the

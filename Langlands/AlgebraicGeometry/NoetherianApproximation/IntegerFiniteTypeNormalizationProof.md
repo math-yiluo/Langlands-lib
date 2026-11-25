@@ -36,5 +36,4 @@ subbase, finiteness, localization and chart assumptions are constructed inside
 the proof. This is an internal derivation from Mathlib's field Noether
 normalization, finite integral-closure theorem, Frobenius, Krull intersection,
 Zariski Main Theorem and localization results. The paired helper files describe
-their implemented proofs in detail. Workers 74 and 706 developed the chart and
-normalization arguments jointly.
+their implemented proofs in detail.

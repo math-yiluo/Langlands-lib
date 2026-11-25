@@ -1,7 +1,5 @@
 # Actual affine-scheme pullbacks and coordinate-algebra pushouts
 
-Author: Worker 105.
-
 This is derived infrastructure for the affine fibre-product and uniqueness
 assertions in Brian Conrad, *Weil and Grothendieck approaches to adelic
 points* (December 31, 2011), Proposition 2.1 and its proof, printed

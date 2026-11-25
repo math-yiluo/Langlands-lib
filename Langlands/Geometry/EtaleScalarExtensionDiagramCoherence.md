@@ -30,7 +30,7 @@ This is an internal categorical construction. It imports the
 Mathlib's `conjugateIsoEquiv` transfers the inverse restriction comparisons
 through the actual adjunctions. The pointwise formulas and coherence laws
 are proved below; none is supplied as a field or hypothesis. No external
-literature theorem is transcribed in this unit.
+literature theorem is transcribed in this module.
 
 ## Canonical comparisons
 
@@ -110,7 +110,7 @@ coherence laws. The associator and unitors are retained in the Lean types.
 
 ## Scope
 
-This unit establishes coefficient identity/composition coherence for the
+This module establishes coefficient identity/composition coherence for the
 supplied compatible equivariant diagrams over arbitrary commutative rings.
 It asserts no flatness, exactness, injective preservation, smoothness or
 topology on the group, and no commutation of extension with global sections

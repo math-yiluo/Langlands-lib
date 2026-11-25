@@ -1,7 +1,5 @@
 # Polynomial support of a finite dominant Schur expansion
 
-Author: Worker 952.
-
 This internal algebraic lemma extends the coefficient extraction argument of the
 published `SchurIndependence` module. It is independent of the existence of an
 essential vector or the conductor theorem.

@@ -1,6 +1,6 @@
 # The actual central-image upper inclusion from weight and finite-level estimates
 
-This derived unit proves the reverse inclusion of Waldspurger VIII.4.2
+This derived module proves the reverse inclusion of Waldspurger VIII.4.2
 for an actual translation-stable Schwartz subspace under explicit weight
 estimates and finite compact projected level spans. It preserves the raw
 central image and the canonical discrete-series coefficient sum, including
@@ -32,6 +32,10 @@ Actual carrier lifts give the sum in universe `max uG uW`.
 This is an auxiliary upper-inclusion theorem. It constructs the positive
 form, admissibility and all coefficient-L² inputs from the displayed
 weight and finite-level estimates. The rational closed estimates and
-VIII.4.1 must still be proved and supplied by their respective owners;
-neither closed Task 7440 target is asserted here. No measure is
+VIII.4.1 are not proved here, and VIII.4.1
+(`RationalCuspidalCentralProjectionFiniteStatement`) has no unconditional
+proof in the Library; neither of the closed targets
+`RationalCuspidalDiscreteCoefficientStatement` and
+`RationalCuspidalFixedCoefficientLiftingStatement` (module
+`RationalCuspidalCentralStatements`) is asserted here. No measure is
 renormalized or replaced by a probability measure.

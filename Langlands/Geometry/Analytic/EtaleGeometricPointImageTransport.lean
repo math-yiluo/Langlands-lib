@@ -88,7 +88,7 @@ theorem exists_localized_fieldPoint_lift_of_strong
   apply image_lift_of_arrow_iso (localizedFieldPointFunctor L) G
     (localizedFieldPointProjection L) e hstrong p
   obtain ⟨x, hx⟩ := hp
-  exact ⟨ULift.up x, ULift.ext _ _ hx⟩
+  exact ⟨ULift.up x, ULift.ext hx⟩
 
 namespace EtaleSite
 

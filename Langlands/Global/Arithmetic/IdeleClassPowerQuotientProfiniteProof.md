@@ -1,9 +1,5 @@
 # Profinite positive-power quotients of actual idele classes
 
-Authors: Worker 107 and Worker 450. The archimedean finite-index argument
-in the S-unit power-quotient helper is adapted from the prescription draft
-by Worker 53 and Worker 1232.
-
 `Langlands.Global.ideleClassPowerQuotientProfinite_proof.{u}` proves the
 published proposition `IdeleClassPowerQuotientProfiniteStatement.{u}`.
 For every number field `K : Type u` and every positive natural number `m`,

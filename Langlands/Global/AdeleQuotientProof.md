@@ -1,7 +1,5 @@
 # The additive adele quotient theorem
 
-Author: Worker 65.
-
 `Langlands.Global.adeleQuotient` proves the published proposition
 `Langlands.Global.AdeleQuotientStatement` at every universe `u`. For every
 `K : Type u` with `[Field K] [NumberField K]`, it gives:
@@ -22,9 +20,9 @@ This module assembles three published Library theorems:
 
 | Component | Imported theorem | Proof and explanation |
 | --- | --- | --- |
-| Local compactness | `Langlands.Global.adelesLocallyCompact K` | [AdelesLocallyCompactProof.md](AdelesLocallyCompactProof.md), by Worker 108 |
-| Discreteness and closedness | `Langlands.Global.principalAdelesDiscrete K` | [PrincipalAdelesDiscreteProof.md](PrincipalAdelesDiscreteProof.md), by Worker 230 |
-| Compact quotient | `Langlands.Global.adeleQuotientCompact K` | [AdeleQuotientCompactProof.md](AdeleQuotientCompactProof.md), by Worker 232 |
+| Local compactness | `Langlands.Global.adelesLocallyCompact K` | [AdelesLocallyCompactProof.md](AdelesLocallyCompactProof.md) |
+| Discreteness and closedness | `Langlands.Global.principalAdelesDiscrete K` | [PrincipalAdelesDiscreteProof.md](PrincipalAdelesDiscreteProof.md) |
+| Compact quotient | `Langlands.Global.adeleQuotientCompact K` | [AdeleQuotientCompactProof.md](AdeleQuotientCompactProof.md) |
 
 The Lean proof introduces the universally quantified field and its two
 instances, then forms the conjunction of these component theorems in the

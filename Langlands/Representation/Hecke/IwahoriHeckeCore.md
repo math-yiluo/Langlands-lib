@@ -1,7 +1,7 @@
 # The group-theoretic core of Renard V.5.3
 
 Module `Langlands.Representation.Hecke.IwahoriHeckeCore`, namespace
-`Langlands.Hecke`. Worker 127 wrote it for Task 5575, the proof of Renard V.5.3
+`Langlands.Hecke`. It serves the proof of Renard V.5.3
 (`Langlands.Hecke.IwahoriHeckeDecompositionStatement`).
 
 The module contains supporting results derived for the proof. They abstract the

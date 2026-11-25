@@ -27,8 +27,7 @@ The public helper
 implements this argument. The closing theorem applies it to the universally
 quantified published proposition. The proof is derived from the existing
 support, linkage, precedence, and twist definitions in `Segments`.
-Worker 346 authored the reused Lean proof; Worker 328 checked it against
-the published statement and prepared this proof documentation.
+The reused Lean proof was checked against the published statement.
 
 The conclusion asserts at least one direction of precedence, without
 asserting exclusivity or uniqueness of the shift. The proof uses neither

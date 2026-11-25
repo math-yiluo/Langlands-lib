@@ -1,7 +1,5 @@
 # Ordered Jacquet factors of a weak segment quotient
 
-Authors: Worker 485 (statement design) and Worker 949 (submission edits).
-
 `Langlands.Classification.SegmentQuotientJacquetFactors.{uF,uV} F T` is a
 proposition definition. It states an object-level factorization of the actual
 normalized upper Jacquet module for every ordered standard block shape of every
@@ -83,23 +81,24 @@ has inverse half modulus. Iterating the proper two-block formula with
 normalized transitivity in the actual order of the blocks yields descending
 intervals in this normalization. No opposite-parabolic result is substituted.
 
-An exact proof must independently supply the passage from every weak quotient
+An exact proof must supply the passage from every weak quotient
 to the requisite special head, the proper two-block calculation and vanishing,
 the one-block case, arbitrary-shape transitivity, external tensor Jacquet
 compatibility, ordered tensor regrouping, and all representative and degree
-transports. Pending statements, shared drafts and citations provide none of
+transports; the proof module `Classification.SegmentQuotientJacquetFactorsProof`
+supplies them. Unproved statements and citations provide none of
 those proofs. The scalar norm formula for all generalized eigencharacters is a
-separate consumer and is not asserted here.
+separate result that uses this statement and is not asserted here.
 
 ## Independence
 
-Any proof of this statement and every prerequisite it uses must remain
-independent of forward special essential square-integrability, parent ordered
+The proof of this statement and every prerequisite it uses are
+independent of forward special essential square-integrability, ordered
 conversion, square-integrable exhaustion, regular exhaustion, square-integrable
 classification, analytic strong-head classification, tempered block uniqueness,
 multisegment exhaustion, ordered strong-head existence, quotient coverage,
 segment-head product irreducibility, generic segment-product uniqueness and
 Zelevinsky multisegment socle exhaustion. These exclusions cover mathematical
-conclusions, exact proof successors and transitive consequences. Derivative
+conclusions, their proofs and transitive consequences. Derivative
 formulas, Zelevinsky §9.3's analytic result and §9.17's conjecture cannot supply
 this algebraic assertion.

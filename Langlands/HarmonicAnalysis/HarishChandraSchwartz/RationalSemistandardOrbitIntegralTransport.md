@@ -8,7 +8,8 @@ actual literal semistandard objects used by the source integrals.
 
 - `CoefficientTransportStatement` compares the actual coefficient
   functions of the source and transported sections at every inducing
-  representative. The preceding V.3.1 statement in Task 7257 uses the
+  representative. The preceding V.3.1 statement of the normalized Weyl/intertwiner
+  coefficient comparisons uses the
   dynamic coefficient normalization. The literal comparison uses
   `SourcePacket.coefficientMap_leviNormalization` and
   `WeylSectionComparisonData.smoothComparison_apply`.
@@ -23,8 +24,8 @@ actual literal semistandard objects used by the source integrals.
   `OrbitPacketData` retain continuation, starting domains, generic
   irreducibility and full unitary inverse regularity. Their compacts
   agree with the compact of the normalized section comparison. The
-  pure-conjugation scalar and density inputs retain their existing
-  owners. The actual change of parabolic for the common Levi also
+  pure-conjugation scalar and density inputs are not proved
+  here. The actual change of parabolic for the common Levi also
   enters this comparison.
 
 The representative evaluation laws extend the stated coefficient and

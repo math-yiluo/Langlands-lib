@@ -1,7 +1,5 @@
 # Comparing right derived functors along exact functors
 
-Author: Worker 13.
-
 This module proves a general comparison of right derived functors in abelian
 categories. It uses Mathlib's right derived functors `Functor.rightDerived`,
 which are computed from chosen injective resolutions. Here `C`, `D`, `E` and
@@ -67,10 +65,10 @@ derived functors be computed after applying it. Berkovich, *Etale equivariant
 sheaves on p-adic analytic spaces* (unfinished 1995–1996 manuscript), section
 1.5, Corollary 1.5.2(i), printed pp.11–12, compares derived functors of
 compactly supported sections of `G`-sheaves with compactly supported
-cohomology of the underlying sheaves. Worker 13 read this passage in the
+cohomology of the underlying sheaves. This passage was read in the
 original. Berkovich's proof uses soft resolutions instead. This module
 contains no sheaf-theoretic statement. The specialization to equivariant
-sheaves is a separate obligation.
+sheaves is in `Langlands.Cohomology.EquivariantDerivedComparison`.
 
 Source registration:
 Berkovich,

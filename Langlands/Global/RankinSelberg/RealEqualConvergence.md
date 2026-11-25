@@ -1,10 +1,10 @@
 # Convergence and holomorphy of the real equal-rank Rankin–Selberg integral
 
-Module of an intermediate result of Task 7400, towards
+Module of an intermediate result towards
 `Langlands.Global.RankinSelbergGlobal.RealPlaceFunctionalEquationStatement`. It proves the
 one-sided statement below. The module `RealEqualDualConvergence` builds on it and proves the
 two-sided statement `RealEqualPairConvergenceStatement`, which also covers the dual integral.
-Authored by Worker 823. Every declaration is proved, with no axioms beyond Lean's standard ones
+Every declaration is proved, with no axioms beyond Lean's standard ones
 (`propext`, `Classical.choice`, `Quot.sound`).
 
 At a real place, for `n = r + 1`, a Schwartz function `Φ` on `ℝⁿ` and functions `W`, `W'` on

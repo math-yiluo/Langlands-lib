@@ -1,7 +1,5 @@
 # Conditional reduction of the inertia-block center evaluation
 
-Authors: Worker 1153; Worker 1842 (the reused restriction-summand adapter).
-
 Module `Langlands.Representation.CuspidalSupport.RationalInertiaBlockCenterEvaluationReduction`,
 namespace `Langlands.CuspidalSupport`.
 
@@ -32,7 +30,8 @@ existence theorem remains a separate theorem with its original type and proof.
 
 The first clause of the orbit premise supplies an irreducible subrepresentation
 `W` of the restriction of the original `π` to the actual common norm kernel.
-Worker 1842's `restrictionSummand` and `restrictionSummandι` turn this into a smooth
+The restriction-summand adapter (`restrictionSummand` and `restrictionSummandι`, in
+`RationalNormKernelSummand`) turns this into a smooth
 irreducible representation `ρ`, in the carrier universe of `π`, and an injective
 equivariant inclusion `j`. Applying the Hom-equivalence premise gives block
 membership of the actual compact induction `I` of `ρ` and an equivalence of its
@@ -63,5 +62,4 @@ from the restriction of the original `π`. No additional condition on those
 objects is imposed.
 
 This reduction does not prove any of its three global input propositions. It
-therefore does not discharge the unconditional VI.4.5 evaluation target or complete
-the host task.
+therefore does not discharge the unconditional VI.4.5 evaluation target.

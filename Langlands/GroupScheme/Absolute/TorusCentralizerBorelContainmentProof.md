@@ -1,7 +1,5 @@
 # Maximal-torus centralizers lie in every Borel containing the torus
 
-Author: Worker 863.
-
 `Langlands.GroupScheme.torusCentralizerBorelContainment` proves the unchanged
 `Langlands.GroupScheme.TorusCentralizerBorelContainmentStatement.{u}` at every
 universe `u`, with no additional hypotheses.

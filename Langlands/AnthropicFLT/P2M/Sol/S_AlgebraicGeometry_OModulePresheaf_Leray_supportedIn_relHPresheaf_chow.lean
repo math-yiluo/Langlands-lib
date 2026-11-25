@@ -4,7 +4,7 @@ Ported from `P2M/Sol/S_AlgebraicGeometry_OModulePresheaf_Leray_supportedIn_relHP
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ProjSpaceCover
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafLerayBicomplex
 import Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_Scheme_OrderedAffineCoverOf_ker_d_succ_le_range_d_of_isAffineOpen

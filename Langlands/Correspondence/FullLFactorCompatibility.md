@@ -1,6 +1,6 @@
 # Pair L-factor compatibility of full families
 
-Author: Worker 7. This module states the pair L-factor half of the
+This module states the pair L-factor half of the
 compatibility condition for the full family `FullMap` of `Domains`. The full
 family sends Frobenius-semisimple Weil–Deligne parameter classes, nonzero
 monodromy allowed, to classes of irreducible admissible representations of
@@ -27,7 +27,7 @@ There are representatives `A` of `π` and `A'` of `π'`, and representations
 `J`, `J'` with carriers in universe `max uF uA`, such that:
 
 - `J` is equivalent to `A` and `J'` to `A'`; and
-- Worker 11's published `RankinSelberg.IsLanglandsPairLPolynomial F ψ ν J J' P`
+- the published `RankinSelberg.IsLanglandsPairLPolynomial F ψ ν J J' P`
   holds.
 
 That published relation is the definition in JPSS 1983, (9.4). Both `J` and
@@ -82,11 +82,11 @@ these agree definitionally, so no rank casts occur.
   `π' = Σ π'_j` in `N[A_2] - {0}`,
   `L(s, π × π') = Π_(i,j) L(s, π_i × π'_j)`. This is the JPSS definition
   through the Langlands classification.
-- JPSS 1983, (9.4), printed p.458, as recorded in Worker 11's published
+- JPSS 1983, (9.4), printed p.458, as recorded in the published
   `RankinSelberg/LanglandsQuotientLFactorStatement`: `L(s, π × σ)` for any
   pair of irreducible admissible representations is defined as the factor of
-  the standard modules of which they are the Langlands quotients. I did not
-  re-read the JPSS scan, which has no text layer; the module takes the
+  the standard modules of which they are the Langlands quotients. The JPSS
+  scan, which has no text layer, was not re-read for this module; the module takes the
   definition from the published relation.
 - Tate 1979, (4.1.6), printed pp.20–21 (PDF pp.29–30): the L-factor of a
   Weil–Deligne representation is computed on the inertia invariants of the
@@ -115,8 +115,9 @@ Source files:
 - **Totality.** The polynomial `P` is asserted to exist. So the condition
   implies, and does not assume, that the JPSS L-factor of every image pair
   exists in the form the published relation requires. Its existence for all
-  irreducible admissible pairs is the published, unproved
-  `LanglandsPairLFactorExistenceStatement`.
+  irreducible admissible pairs is the published
+  `LanglandsPairLFactorExistenceStatement`, proved as
+  `RankinSelberg.langlandsPairLFactorExistence` (`LanglandsPairLFactorExistenceProof`).
 - **Representatives.** The relation is existential in the representatives
   and in the equivalent representations `J`, `J'`. The JPSS L-factor is an
   invariant of the isomorphism classes, so this matches the source.
@@ -152,17 +153,17 @@ Source files:
   `FullCorrespondenceStatement` are unproved `Prop` goals. These interfaces
   and conditional constructions do not establish unconditional analytic
   factor existence, classification or descent.
-- The module imports, and does not copy: Worker 11's
+- The module imports, and does not copy:
   `RankinSelberg/LanglandsQuotientLFactorStatement`
   (`IsLanglandsPairLPolynomial`), `LocalConventions`
   (`NontrivialAdditiveCharacter`, `LocalAdditiveHaarMeasure`,
-  `IsSelfDualMeasure`), and this task's `Domains`, `AutomorphicRelations` and
+  `IsSelfDualMeasure`), and `Domains`, `AutomorphicRelations` and
   `ArithmeticFactors`.
 - The two topology instances on `F` and on `GL_n(F)` are local and have
   explicit names, so the module can be imported together with the other
-  modules of this task.
+  modules of `Langlands.Correspondence`.
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Every condition returns `Prop`.

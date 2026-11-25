@@ -51,7 +51,8 @@ step 1.
 
 ## Scope and provenance
 
-This is an internal lemma for the route of Task 7335. The Library's
+This is an internal lemma for the proof of `FiniteAbelianReciprocityTheorems`
+from the Library's own finite Artin symbol. The Library's
 `Langlands.LocalClassField.finiteNormResidueEquiv` (module `FiniteArtin`) uses the
 same construction, but only for an extension `L : FiniteAbelianExtension K`
 inside an algebraic closure. This lemma uses it for an extension given as a
@@ -63,6 +64,5 @@ group, is Serre, *Local Fields*, XIII.4, Proposition 8 and its corollary
 (source `serre-1979-local-fields`), stated in the geometric convention of the
 target [`FiniteReciprocityStatement`](FiniteReciprocityStatement.md).
 
-The module compiled without errors or warnings in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`). Worker 56 authored it.
+The module compiled without errors or warnings (Lean 4.34.0, Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`).

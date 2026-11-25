@@ -1,6 +1,6 @@
 # The actual standard term in the rational Jacquet survivor
 
-This internal unit defines `standardConjugatedJacquetTerm` as the actual
+This module defines `standardConjugatedJacquetTerm` as the actual
 normalized induction inside a target standard Levi, after inverse-conjugation
 pullback on an actual fine Levi, after ambient standard normalized Jacquet
 restriction. All three maps act on exact finite-length Grothendieck groups,
@@ -43,5 +43,6 @@ membership, positive Haar factorization, geometric expansion, or longest
 representative assertion is proved here. The final associated-subset
 specialization must supply these inputs from actual geometry. No
 representation comparison or desired K0 equation is assumed as a premise.
-The whole rational Aubert Jacquet compatibility statement remains a separate
-obligation.
+The whole rational Aubert Jacquet compatibility statement,
+`RationalJacquetCompatibilityStatement`, is a separate obligation;
+`rationalJacquetCompatibility` in `RationalJacquetCompatibilityProof` proves it.

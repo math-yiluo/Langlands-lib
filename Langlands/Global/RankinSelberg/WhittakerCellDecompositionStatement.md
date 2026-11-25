@@ -32,10 +32,10 @@ form. This statement is a formulation made for the Library. It is the local cell
 of the first source at the single place `v`, transported to the adelic quotient
 `N_m(𝔸) \ GL_m(𝔸)` with the other components of the class untouched. It is normalized so
 that no volume of `GL_m(𝒪_v)` appears: the cell of `λ` is compared with the classes
-`N_m(F_v) GL_m(𝒪_v)` at `v`, not with a point. Two consumers asked for this form: the
-proof of `UnequalEulerFactorizationStatement` (Task 7022) and the proof of
-`EqualEulerFactorizationStatement` (Task 7024). The dual-side proof
-`UnequalDualEulerFactorizationStatement` (Task 7023) also needs it. Each of them applies
+`N_m(F_v) GL_m(𝒪_v)` at `v`, not with a point. This is the form needed by the
+proof of `UnequalEulerFactorizationStatement` and the proof of
+`EqualEulerFactorizationStatement`. The dual-side proof of
+`UnequalDualEulerFactorizationStatement` also needs it. Each of them applies
 the statement once for every place outside `S` and passes to the limit over `S`.
 
 ## Definitions
@@ -79,7 +79,7 @@ This is left translation by `ι_v(ϖ^λ)` on the quotient. It is well defined be
 
 So `∫_(U_(S∪{v})) f = ∑_(λ ∈ ℤ^m) δ_B(ϖ^λ)⁻¹ ∫_(U_S) f_λ`.
 
-## Why it holds (sketch, for the proof task)
+## Why it holds (sketch)
 
 * The Iwasawa decomposition `GL_m(F_v) = ⊔_λ N_m(F_v) ϖ^λ GL_m(𝒪_v)`, with `λ` unique,
   splits `U_(S∪{v})` into the disjoint cells
@@ -102,6 +102,6 @@ So `∫_(U_(S∪{v})) f = ∑_(λ ∈ ℤ^m) δ_B(ϖ^λ)⁻¹ ∫_(U_S) f_λ`.
   the quotient Haar measure on `N_m(F) \ GL_m(𝔸)`, so `N_m(F) \ N_m(𝔸)` gets mass one.
   The identity is homogeneous in the measure, so its normalization does not matter.
 * `f` is required to be integrable on the whole quotient. This is the hypothesis the
-  consumers asked for.
+  proofs that use the statement need.
 * The statement is universe-polymorphic in the number field `F : Type u`, like the
   other global Rankin–Selberg statements.

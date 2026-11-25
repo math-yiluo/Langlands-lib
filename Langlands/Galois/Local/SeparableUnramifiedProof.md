@@ -1,8 +1,8 @@
 # Finite unramified maximality and Galois exhaustion
 
-Worker 60 assembled this proof from the complementary finite arithmetic and
-Galois helpers developed with Worker 1199. Worker 118 contributed the target
-design and original-source correspondence.
+This proof is assembled from the complementary finite arithmetic and
+Galois helpers of `SeparableUnramifiedFiniteArithmetic` and
+`SeparableUnramifiedGaloisProof`.
 
 `Langlands.LocalGalois.Separable.separableUnramified` proves the exact published
 `Langlands.LocalGalois.Separable.SeparableUnramifiedStatement.{u}`, for an

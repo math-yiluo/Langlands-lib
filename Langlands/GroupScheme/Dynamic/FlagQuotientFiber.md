@@ -34,7 +34,7 @@ the constructions just described. A rational point of the fiber, composed
 with its inclusion into `G`, lifts the original quotient point. The proof
 uses `rationalPointEquiv` to preserve the published `RingPoint` convention.
 The subgroup's smoothness, affineness and connectedness and the finite-field
-torsor point proposition are explicit inputs. This unit proves no
+torsor point proposition are explicit inputs. This module proves no
 unconditional finite-field lifting or quotient-existence theorem.
 
 The provenance is internal, from actual pullbacks, the all-test fiber

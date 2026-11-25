@@ -1,7 +1,5 @@
 # Čech exactness for flasque sheaves
 
-Author: Worker 727.
-
 This module proves that the ordered Čech complex (module `Langlands.Cohomology.CechCochains`) of
 a flasque sheaf of abelian groups for a finite family of opens is exact in every positive
 degree. It is a helper for the proof of

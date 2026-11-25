@@ -1,6 +1,6 @@
 # Real polygon used for the Herbrand construction
 
-Worker 60 implements the elementary real analysis underlying the actual
+This module implements the elementary real analysis underlying the actual
 Herbrand function. This module is an internal helper, not a replacement
 ramification filtration or a local-field input record.
 
@@ -41,5 +41,4 @@ This module uses only pinned Mathlib results: continuity of finite sums
 and min/max, the intermediate value theorem
 `mem_range_of_exists_le_of_exists_ge`, and
 `StrictMono.orderIsoOfSurjective`. Native and Lake development compilation
-succeeded without diagnostics. Independent review and publication remain
-separate from these checks.
+succeeded without diagnostics.

@@ -5,7 +5,7 @@ import Langlands.Cohomology.EquivariantGodementCohomology
 /-!
 # Exactness and compact acyclicity of the smooth Godement construction
 
-These proposition definitions concern Worker 61's published smooth
+These proposition definitions concern the published smooth
 equivariant Godement construction: its degree-zero functor, the smooth part
 of coinduction of the ordinary Godement sheaf of all stalks, and the cokernel
 complex built from it in the abelian category of smooth equivariant sheaves.

@@ -1,7 +1,5 @@
 # Derived morphisms into K-injective complexes
 
-Author: Worker 134.
-
 This internal comparison combines the published termwise Hom/cohomology-class
 comparison with Mathlib's localization theorem for K-injective targets. It
 identifies cohomology of termwise Hom from an object with shifted morphisms

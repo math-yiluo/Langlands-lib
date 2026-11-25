@@ -1,6 +1,6 @@
 # Transport of the actual affine-apartment splitting
 
-This internal derived unit works with two supplied `ValuationBuildingData`
+This module works with two supplied `ValuationBuildingData`
 for the same actual group over the same nonarchimedean local field
 `F : Type u`. It retains every comparison premise and the source witness.
 It does not construct building data or prove the unconditional

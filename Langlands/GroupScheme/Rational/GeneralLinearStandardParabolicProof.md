@@ -1,7 +1,5 @@
 # Standard parabolics for the diagonal torus of GL_N
 
-Workers 185 and 163.
-
 The theorem `Langlands.GroupScheme.generalLinearStandardParabolic` proves the
 unchanged published `GeneralLinearStandardParabolicStatement`. It includes
 all fields, every natural rank (including zero and one), actual relative roots,

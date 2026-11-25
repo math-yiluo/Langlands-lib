@@ -1,7 +1,5 @@
 # Compact continuous scheme lifts and smooth section sheaves
 
-Author: Worker 13.
-
 This internal scheme construction tests actual transport module sheaves on
 genuine compact small-etale schemes equipped with jointly continuous actions
 of open subgroups. The topology of every scheme in this construction is its

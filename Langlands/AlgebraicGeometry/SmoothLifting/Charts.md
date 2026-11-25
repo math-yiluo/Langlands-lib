@@ -91,5 +91,4 @@ This is an internal formalization. The Stacks Project proof of Lemma
 37.11.7 (Tag 02H6) lets the sheaf of local lifts act as a torsor under
 `Hom(a*Ω, C_{T/T'})`. Here that torsor structure is only used through
 affine combinations computed in charts. Chart independence is proved with
-the fibre ring instead of a global sheaf of differentials. Worker 496 wrote
-the Lean code and this description.
+the fibre ring instead of a global sheaf of differentials.

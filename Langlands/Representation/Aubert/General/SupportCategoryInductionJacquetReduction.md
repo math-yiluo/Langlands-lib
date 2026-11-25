@@ -1,6 +1,6 @@
 # Support stability under induction after Jacquet restriction, by blocks
 
-Worker 4197 wrote this derived internal reduction for the exact proof task of
+This derived internal reduction serves the proof of
 `Langlands.Aubert.General.RationalPointFamily.RationalSupportCategoryInductionJacquetStatement`.
 It does not prove that target. It proves that the target follows from three
 other published propositions, which stay separate proof obligations:
@@ -41,7 +41,7 @@ from the whole-category proposition at the same universes. That statement asks
 for the literal cuspidal/remainder splitting, inside every standard Levi, of
 every actual normalized Jacquet module. The proof introduces the binders of the
 splitting statement and installs the same instances as below. For each smooth
-`A` and standard `L` it applies Worker 1570's published
+`A` and standard `L` it applies the published
 `hasLeviCuspidalRemainderSplitting_of_wholeStatement`
 ([RationalLeviSplittingFromWhole](../../CuspidalSupport/RationalLeviSplittingFromWhole.md))
 to the Jacquet module of `A`. That theorem keeps one explicit input, a relative
@@ -208,13 +208,13 @@ quotient compactness supplied above.
 
 Some arguments adapt published Library proofs:
 
-* the cyclic-module and coatom-quotient steps adapt Worker 158's
+* the cyclic-module and coatom-quotient steps adapt
   [JacquetCommonConstituent](JacquetCommonConstituent.md), and the
   association step adapts the associated-subset witness of
   [JacquetSupportVanishingReduction](JacquetSupportVanishingReduction.md);
 * the minimal-index step adapts
   [RationalLeviCuspidalJacquet](RationalLeviCuspidalJacquet.md), itself
-  adapted from Worker 379's `RationalCuspidalEmbeddingProof`;
+  adapted from `RationalCuspidalEmbeddingProof`;
 * the rational adapter follows
   [RationalJacquetVanishingFromDynamicCompactness](RationalJacquetVanishingFromDynamicCompactness.md).
 

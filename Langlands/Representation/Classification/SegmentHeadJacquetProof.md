@@ -1,7 +1,5 @@
 # Two-block Jacquet modules of special segment heads (Zelevinsky 1980, Proposition 9.5)
 
-Authors: Worker 256 and Worker 756.
-
 ## Declaration
 
 - `Langlands.Classification.segmentHeadJacquetFormula`: for a prime `p` with
@@ -46,8 +44,7 @@ published, premise-free theorem of the Library for the same `F` and `T`:
   each segment has a head that is the irreducible socle of the decreasing segment
   induction), from `Classification.segmentSpecialConstituentExistence F T`
   ([`SegmentSpecialConstituentExistenceProof`](SegmentSpecialConstituentExistenceProof.md)).
-  This is the published result of task 67279e36-f3c2-42e3-9302-11729784042e, which
-  the contract requires reusing.
+  This published existence theorem is reused here, not reproved.
 - **H4** `CuspidalSupport.CuspidalInductionLengthTheorem.{uF, uV} F T n` for every
   `n` (Bernstein–Zelevinsky 1977, Theorem 2.8), from
   `CuspidalSupport.cuspidalInductionLength F T n`
@@ -133,21 +130,20 @@ The closure has 1121 modules. `lean_check` reports only the axioms `propext`,
   definitions. None of them is one of the excluded results or is used as a premise.
 - No closure module other than this module and the supporting module imports
   `SegmentHeadJacquetStatement`, directly or transitively. So no input depends on the
-  target, and the closure contains no downstream consumer of it, such as tasks
-  8364e73f, 15540667 or 040c5597.
-- The closure contains `SegmentQuotientJacquetSingleBlock` (task a91c30bb, Workers
-  485 and 964). It is reached through H1′
+  target, and the closure contains no downstream consumer of it, such as
+  `SegmentHeadProductIrreducibility`.
+- The closure contains `SegmentQuotientJacquetSingleBlock`. It is reached through H1′
   (`SegmentFullJacquetEdgeData` → `SegmentEdgeFamilyHypotheses` →
   `SegmentEdgeFactorHypotheses`). It is the elementary one-block case, in which the
   Jacquet module along a one-block shape is the representation itself. It imports only
   `Segments`, `MinimalJacquetProof` and `RegroupingFactorEquivalences`, uses no
-  proper-block Jacquet calculation, and is not among this task's exclusions.
+  proper-block Jacquet calculation, and is not among the excluded results above.
 
 ### Derivative results
 
-The contract says the proof "must not assume a derivative formula (Ze80 9.6, BZ77
-derivative results) or the current parent irreducibility criterion to obtain the
-Jacquet formula". No derivative statement is a hypothesis of this theorem or of the
+The proof is to assume neither a derivative formula (Ze80 9.6, BZ77 derivative
+results) nor the special-head product irreducibility criterion to obtain the
+Jacquet formula. No derivative statement is a hypothesis of this theorem or of the
 reduction. Neither this module nor the reduction module contains a derivative.
 SegmentSpecialConstituentExistenceProof (H3′), NonassociatedJacquetSubquotientsProof
 (H2) and NormalizedCuspidalInductionLengthProof (H4) have no derivative module in
@@ -163,29 +159,29 @@ Bernstein–Zelevinsky derivatives. All 158 closure modules named `Derivative`,
 the only module with such a name is `Whittaker.Iwasawa`, the Iwasawa decomposition,
 which contains no derivative.
 
-The same clause appears in the 1.11 task ab61f565 and in task b331611c (H1′). A
-trusted operator decision for the 1.11 task (request
-`a8463ee15d57588c8de10306748b2538`, correspondence
-`bd71b9185aab5d6eafffb7891bd3a3ca`, `sender_role: operator`) interprets it. The
-clause forbids assuming derivative results without proof and any circular
-dependency. It does not forbid a fully proved BZ77 derivative route, under three
-conditions. The published Markdown of
+The same requirement applies to the proofs of Ze80 1.11
+(`TwoSupercuspidalProductStructure`) and of Ze80 9.1(*) (H1′). It is read as
+forbidding derivative results assumed without proof and any circular dependency.
+It does not forbid a fully proved BZ77 derivative route, under three conditions.
+The published Markdown of
 [`TwoSupercuspidalProductStructureProof`](TwoSupercuspidalProductStructureProof.md)
-and of `SegmentFullJacquetProof` audits this. That decision was made for the 1.11
-task. Its conditions also hold for this closure:
+and of `SegmentFullJacquetProof` audits this. The three conditions were set for
+the 1.11 proof; they also hold for this closure:
 
 1. only general BZ77 derivative theory occurs. A search of the closure finds no
    segment derivative statement (`SegmentSocleDerivatives`,
    `HighestDerivativeSupportShift` or any segment-named derivative), so Ze80 3.5 and
    9.6 are neither stated nor used;
-2. every derivative result in the closure is a proved, accepted and published
-   Library theorem, and it is used only inside the premise-free 1.11 proof;
-3. the closure contains none of this task's Independence exclusions (see above).
-   The decision's own list (ed48ae06, b95105c6, 55ad1e10, 92aea10f, 2ae5cbe5,
-   8364e73f) was the 1.11 task's exclusion list, and the 1.11 closure contains none
-   of them, as its Markdown records. This closure necessarily also contains
-   ed48ae06's statement and b331611c's proof, which supply H1′. No segment-socle
-   derivative statement (the segment-socle part of task 8e5b4563) is in the closure.
+2. every derivative result in the closure is a proved Library theorem, and it is
+   used only inside the premise-free 1.11 proof;
+3. the closure contains none of the excluded results listed under Independence
+   exclusions (see above). The results excluded for the 1.11 proof (the full, head
+   and socle segment Jacquet formulas, the special exponent-norm formula,
+   `SegmentSocleProductIrreducibility` and `SegmentHeadProductIrreducibility`) do
+   not occur in the 1.11 closure, as its Markdown records. This closure necessarily
+   also contains the full segment Jacquet statement `SegmentFullJacquetFormula` and
+   its proof `segmentFullJacquetFormula`, which supply H1′. No segment-socle
+   derivative statement is in the closure.
    Segment socles occur only as the predicate `IsSegmentSocle` and the propositions
    about it in `Segments`, `SegmentConstituentStatement`,
    `SegmentConstituentCompatibilityStatement` and `LanglandsData`.
@@ -197,8 +193,8 @@ do not import the target statement or any segment-head Jacquet result.
 
 The target is the published Library statement `SegmentHeadJacquetFormula`
 (Zelevinsky 1980, Proposition 9.5). The inputs are the published Library proofs of
-Zelevinsky 1980, 9.1(*) (task b331611c, artifact f2c2886a) and 9.1 (task 67279e36),
-and of Bernstein–Zelevinsky 1977, Corollary 2.13(b) and Theorem 2.8 (source
-`bernstein-zelevinsky-1977-induced-i`). The reduction module is joint work: its
-generic lemmas are Worker 756's, from their socle-side reduction (candidate
-e749a00f), and they are reused with Worker 756's approval.
+Zelevinsky 1980, 9.1(*) (`SegmentFullJacquetProof`) and 9.1
+(`SegmentSpecialConstituentExistenceProof`), and of Bernstein–Zelevinsky 1977,
+Corollary 2.13(b) and Theorem 2.8 (source `bernstein-zelevinsky-1977-induced-i`).
+The reduction module imports its generic lemmas from the socle-side reduction
+[`SegmentSocleJacquetReduction`](SegmentSocleJacquetReduction.md).

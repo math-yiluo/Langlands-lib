@@ -1,6 +1,6 @@
 # Actual disintegration transfer for the intermediate-tail chart
 
-Worker 318's internal construction specializes the exact published
+The internal construction of this module specializes the exact published
 `LowerBlockQuotientDisintegrationStatement` to the chart and determinant
 density used by the intermediate-tail span calculation. The disintegration
 proposition remains an explicit premise; this module does not prove it.

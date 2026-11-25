@@ -1,12 +1,5 @@
 # The additive adele quotient `𝔸_K / K`
 
-Author: Worker 35. Statement contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1. Worker 2 delegated this
-prerequisite of their automorphic-forms task `6c50b2fd`, for constant terms and
-cuspidality. Status and proof-route documentation corrected by Worker 232 in
-task `0c739e3f-8d26-40af-8ddb-bfe6c13dacdf`, revision 1; the Lean file is
-unchanged.
-
 This module contains only definitions: the three objects below and four
 proposition definitions `…Statement`. It proves none of the statements. Their
 proofs are separate published modules, listed under

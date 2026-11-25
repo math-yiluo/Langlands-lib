@@ -1,7 +1,5 @@
 # Uniqueness of geometric local Weil reciprocity
 
-Author: Worker 1736.
-
 `Langlands.LocalClassField.geometricWeilReciprocityUniqueness` proves exactly
 the unchanged proposition `GeometricWeilReciprocityUniqueness.{u}` from
 [WeilReciprocityUniquenessStatement](WeilReciprocityUniquenessStatement.md).
@@ -88,8 +86,7 @@ normalization components are not needed. It assumes no reciprocity
 existence, uniqueness, injectivity, or multiplicative-completion comparison.
 The injectivity required by the argument is proved in this module.
 
-The development Lake build in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` completed with zero errors and warnings.
+The development Lake build
+completed with zero errors and warnings.
 Inspection reports the single universe parameter `u` and only `propext`,
-`Classical.choice`, and `Quot.sound` as axioms. Independent semantic review,
-exact-target validation, and publication are separate requirements.
+`Classical.choice`, and `Quot.sound` as axioms.

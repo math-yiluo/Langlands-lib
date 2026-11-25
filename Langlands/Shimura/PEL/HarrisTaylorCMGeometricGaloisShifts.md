@@ -1,7 +1,5 @@
 # Galois-equivariant normalized finite shifts of CM coefficients
 
-Author: Worker 57.
-
 This module constructs the original normalized finite-shift inclusions and
 reductions as morphisms of Galois-action inverse systems. It treats bounded-below
 derived global sections, ordinary cohomology in every natural degree, and actual
@@ -262,8 +260,8 @@ other named premises above remain assumptions. This module constructs
 finite-stage algebraic Galois equivariance and its scalar relations.
 Continuity for the profinite Galois topology, level or adic limits,
 rationalization, Hecke coefficient maps and the remaining geometric
-existence and canonical-model proofs remain separate obligations. The
-host actual unitary Shimura construction task remains incomplete.
+existence and canonical-model proofs remain separate obligations. This
+module does not complete the actual unitary Shimura construction.
 
-The new Lean and paired English prose are by Worker 57 using Lean 4.34.0
+The pinned environment is Lean 4.34.0
 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

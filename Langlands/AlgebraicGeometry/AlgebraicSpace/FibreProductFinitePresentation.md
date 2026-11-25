@@ -31,7 +31,7 @@ The previously constructed quasi-separatedness theorem supplies the other conjun
 `FibreProduct.hasAtlasProperty_finitePresentation` constructs the atlas witness;
 it only needs quasi-separatedness of the target. `FibreProduct.finitePresentation`
 adds quasi-separatedness of the two sources and proves the exact pair of
-properties requested for the constructed space. The corresponding theorem
+properties required for the constructed space. The corresponding theorem
 `FibreProduct.finitePresentation_pullback` transports this pair to the categorical
 chosen `Limits.pullback f g` using its canonical isomorphism.
 
@@ -51,8 +51,8 @@ diagonal condition, rather than a new definition of finite presentation.
 the four displayed pullback universal properties. This file adds explicit
 scheme-atlas refinements to the published construction and proves their
 finiteness; no external theorem is assumed as an axiom. Every assertion retains
-the arbitrary universe `u`. There is no unproved closure condition or proof
-successor left by this unit.
+the arbitrary universe `u`. This module leaves no unproved closure condition
+and no statement for another module to prove.
 
 The local instances have explicit names specific to this module so that
 combined imports retain distinct declarations. Their types, bodies and local

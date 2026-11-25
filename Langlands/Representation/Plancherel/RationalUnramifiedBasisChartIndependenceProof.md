@@ -1,7 +1,5 @@
 # Independence of the complex chart on `X(G)` from the lattice basis
 
-Author: Worker 706.
-
 `Langlands.Plancherel.rationalUnramifiedBasisChartIndependence` proves
 `RationalUnramifiedBasisChartIndependenceStatement.{u}`. For any two integer
 bases `b` and `b'` of the valuation image `Λ(G)` of a connected reductive group

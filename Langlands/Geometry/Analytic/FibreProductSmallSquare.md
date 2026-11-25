@@ -29,4 +29,4 @@ not merely their base maps.
 No categorical pullback universal property or etale assertion is proved in
 this module. Smallness still needs to be supplied, for example by a
 small-spectrum cover obtained from finite local models. These are further
-requirements of Task 7349. No external statement is transcribed.
+requirements of `LocalizedEtalePullbackStatement`. No external statement is transcribed.

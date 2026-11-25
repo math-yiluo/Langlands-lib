@@ -1,6 +1,6 @@
 # Lifts of matrices in one root group commute
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1). It proves the commutativity of the preimages `U′` and `V′` of the
 two root groups in a central extension. Conrad shows that a bi-additive commutator pairing

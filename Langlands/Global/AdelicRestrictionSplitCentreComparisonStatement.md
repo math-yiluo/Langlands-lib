@@ -1,7 +1,5 @@
 # Rational split centre of the restriction versus the split component of the group
 
-Author: Worker 112.
-
 `RestrictionSplitCentre.ComparisonStatement` is a proposition. It is stated,
 not proved, here.
 

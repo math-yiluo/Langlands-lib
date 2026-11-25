@@ -1,7 +1,5 @@
 # Direct strong isomorphism for arbitrary local-domain subnets
 
-Author: Worker 36.
-
 Fix a literal net `σ` of local affinoid domains of an actual atlas `A`.
 This module constructs an actual isomorphism in the category of saturated
 affinoid atlas presentations. It goes from the full recognition atlas of the

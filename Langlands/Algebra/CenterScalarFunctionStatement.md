@@ -6,8 +6,7 @@ carriers, enlarged to `max uA uM`).
 The module contains one **statement**, the `Prop`-valued definition
 `CenterScalarFunctionStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published modules around I.1.7–I.1.8 leave
+Apart from this module and its proof, the published modules around I.1.7–I.1.8 leave
 I.1.8 open: [NondegenerateModuleCenter](NondegenerateModuleCenter.md) says
 "Topology, closure, the unital-specialization comparison and I.1.8 remain separate
 obligations". [NondegenerateModuleLinearActions](NondegenerateModuleLinearActions.md)
@@ -20,7 +19,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read I.1.8, printed pp.13–14 / PDF pp.19–20:
+I.1.8, printed pp.13–14 / PDF pp.19–20, was read directly:
 
 > Soit `A` une `ℂ`-algèbre à idempotents, de dimension finie ou dénombrable. Notons
 > `Irr(A)` l'ensemble des classes d'isomorphie de modules simples dans `M(A)`. Le lemme de
@@ -93,14 +92,17 @@ The statement asserts:
    a simple `M` and `m` with `x(e) · m ≠ 0`. Put `m' = e · m`. Then `e` fixes `m'` and
    `x · m' = x(e) · m' = x(e) · m ≠ 0`, a contradiction. Hence `x = 0`. For `ℨ(A)`, the
    I.1.7 identification (the published statement
-   `NondegenerateModuleCenterTheoremStatement`, under review) writes `θ` and `θ'` as the
+   `NondegenerateModuleCenterTheoremStatement`, proved as `nondegenerateModuleCenterTheorem`
+   in `Langlands.Algebra.NondegenerateModuleCenterProof`) writes `θ` and `θ'` as the
    actions of elements of the commutant of `A` in `Â`, and their difference then acts by
    zero on all simple modules.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. It needs B.II (`NonUnitalSchurStatements`), the I.2.1
-scalars, and, for the last assertion, the I.1.7 identification of the centre.
+The proof is `centerScalarFunction` in `Langlands.Algebra.CenterScalarFunctionProof`. It uses
+B.II (`NonUnitalSchurStatements`) and the I.2.1 scalars; for the last assertion it uses
+naturality along orbit maps out of the regular module instead of the I.1.7 identification
+of the centre.
 
 ## Imports
 

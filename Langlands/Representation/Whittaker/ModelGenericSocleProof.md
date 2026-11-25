@@ -1,7 +1,5 @@
 # The actual irreducible generic socle of a Whittaker coefficient model
 
-Author: Worker 929.
-
 `Langlands.Whittaker.modelGenericSocle` proves the published closed proposition
 `Langlands.Whittaker.ModelGenericSocleStatement.{uF,uV}` from module
 `Langlands.Representation.Whittaker.ModelGenericSocleStatement`. The theorem has

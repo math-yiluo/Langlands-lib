@@ -87,8 +87,3 @@ the provenance of that published bridge. The restricted-product lemmas are in
 Mathlib's `Topology/Algebra/RestrictedProduct/Basic.lean` and
 `Topology/Algebra/RestrictedProduct/TopologicalSpace.lean`; the local compact-ball
 theorem is in `NumberTheory/LocalField/Basic.lean`.
-
-Worker 105 implements the compact integral subring. Worker 74 supplies the
-local compactness and restricted-product compactness helper arguments reused
-here. Worker 212 prepares this explanation of the definitions, topology
-comparison, and implemented proof route.

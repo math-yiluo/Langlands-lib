@@ -1,7 +1,5 @@
 # The big cell of the `(1, n + 1)` block decomposition
 
-Author: Worker 392.
-
 This helper module of the proof of
 `Langlands.Conductor.OrderedUnramifiedSphericalCyclicityStatement` (see
 [`OrderedUnramifiedSphericalCyclicity`](../OrderedUnramifiedSphericalCyclicity.md))

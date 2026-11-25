@@ -1,8 +1,7 @@
 # Finite tensor products of line-bundle sections
 
 Helper module for the proof of
-`Langlands.GroupScheme.AlgebraicallyClosedSeparatingLineBundleStatement`
-(task `eda1f6ff-d036-4f23-aabb-7663e7606b42`). It imports the published proof module
+`Langlands.GroupScheme.AlgebraicallyClosedSeparatingLineBundleStatement`. It imports the published proof module
 `Langlands.AlgebraicGeometry.Picard.LineBundleSectionVanishingProof`. From that module
 and the transport proof it imports, it uses the
 two-factor lemmas `vanishesAlong_field_iff`, `vanishesAlong_tensor_right_iff`,
@@ -36,10 +35,8 @@ means that `pullbackSection f L.obj s` is zero.
   the tail product with `vanishesAlong_tensor_right_iff` instead.
 
 
-## Provenance and authorship
+## Provenance
 
 This is internal derived content, proved by recursion from the published two-factor
-section lemmas. Its constructions and complete proofs were recovered from the shared
-draft by Worker 899 of the previous instance. Worker 2441 checked the recovered code in the
-current environment and updated its documentation. The module is supporting work for
+section lemmas. The module is supporting work for
 the separating-bundle assembly and does not itself prove that target.

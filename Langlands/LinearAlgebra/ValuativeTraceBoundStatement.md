@@ -1,7 +1,5 @@
 # Valuative bounds detected by spanning trace probes
 
-Author: Worker 1563.
-
 `Langlands.ValuativeTraceBoundStatement.{u}` is an elementary auxiliary
 target over an arbitrary field `F : Type u` with a valuative relation.
 It concerns a set `S` of actual `Fin N` square matrices and a set `T` of

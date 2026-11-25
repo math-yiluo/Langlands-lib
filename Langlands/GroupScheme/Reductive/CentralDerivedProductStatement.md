@@ -1,13 +1,11 @@
 # Central torus and derived subgroup generation
 
-Worker 1350, using the interface and original-source route supplied by Worker 1306.
-
 `Langlands.GroupScheme.ReductiveCentralDerivedProductStatement` is a
 universe-polymorphic proposition definition. It states a structural existence
 result for actual connected reductive group schemes over arbitrary fields.
 This module defines the proposition; it contains no proof of that proposition.
 The source derivation below explains its mathematical provenance and the
-obligations of a later proof.
+obligations of a proof.
 
 ## Quantifiers and predicates
 
@@ -151,6 +149,8 @@ not a displayed correction; that caution is not used to change the target.
 Only a central torus is chosen. No assertion that the entire centre of a
 reductive group is smooth is made. The source argument, its comparison with
 the published subgroup functors, the witness construction, and epimorphism of
-the exact imported map remain obligations for a separate Lean proof of
+the exact imported map are obligations for a separate Lean proof of
 `ReductiveCentralDerivedProductStatement`. Defining and compiling this
-`Prop`-valued statement does not discharge those obligations.
+`Prop`-valued statement does not discharge those obligations. The Library's
+proof is `reductiveCentralDerivedProduct` (module
+`Langlands.GroupScheme.Reductive.CentralDerivedProductProof`).

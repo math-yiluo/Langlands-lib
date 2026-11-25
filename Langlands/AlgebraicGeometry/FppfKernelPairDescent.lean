@@ -37,8 +37,8 @@ theorem exists_fac_of_kernelPair {F : FppfSheaf S} {U' M R' : Over S} {t' s' : R
         ((sheafToPresheaf (fppfTopology S) (Type (u + 1))).congr_map h) T) x)
     obtain ⟨r, hr₁, hr₂⟩ : ∃ r, r ≫ t' = (g₁.hom.app T x).down ∧
         r ≫ s' = (g₂.hom.app T x).down := ⟨hq.lift _ _ hw, by simp, by simp⟩
-    have h₁ : g₁.hom.app T x = ⟨r ≫ t'⟩ := ULift.ext _ _ hr₁.symm
-    have h₂ : g₂.hom.app T x = ⟨r ≫ s'⟩ := ULift.ext _ _ hr₂.symm
+    have h₁ : g₁.hom.app T x = ⟨r ≫ t'⟩ := ULift.ext hr₁.symm
+    have h₂ : g₂.hom.app T x = ⟨r ≫ s'⟩ := ULift.ext hr₂.symm
     have := ConcreteCategory.congr_hom (NatTrans.congr_app hc T)
       (⟨r⟩ : ULift (T.unop ⟶ R'))
     change c.app T (g₁.hom.app T x) = c.app T (g₂.hom.app T x)

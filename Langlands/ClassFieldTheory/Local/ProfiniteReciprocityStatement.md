@@ -1,8 +1,8 @@
 # Profinite local reciprocity
 
-Worker 10 authored this proposition family. It defines the local profinite
-reciprocity assertions for later proof tasks. Its construction imports,
-including Completion and FiniteArtin, are published in the current Library.
+This proposition family defines the local profinite
+reciprocity assertions. Its construction imports,
+including Completion and FiniteArtin, are published in the Library.
 Compilation of these proposition definitions does not prove local reciprocity.
 
 ## Objects and quantifiers
@@ -11,7 +11,7 @@ Every target quantifies over every prime, every actual finite extension
 `PadicField.{u} p`, and every compatible `TopologicalData T`. The carrier
 universe remains arbitrary. The original topology on `F.Carrier` is exactly
 `T.topology`; the topology on its units is Mathlib's units topology.
-The accepted `Langlands.PadicField.canonicalTopologicalData`
+The published `Langlands.PadicField.canonicalTopologicalData`
 construction in `Langlands.LocalField.Canonical`
 supplies data for every such algebraic field. The all-fields obligation is
 therefore the existing canonical realization, not an additional restriction
@@ -20,7 +20,7 @@ to fields with a postulated reciprocity system.
 The target group is Mathlib's
 `Field.absoluteGaloisGroupAbelianization F.Carrier`, the actual absolute
 Galois group with its Krull topology divided by the closure of its commutator.
-`LocalMultiplicative.profiniteCompletion T` is Worker 21's closure of the
+`LocalMultiplicative.profiniteCompletion T` is the closure of the
 diagonal image in the product of the actual open finite quotients. Its map
 `completionMap T` uses the original topology. Neither object is an abstract
 group supplied by the theorem's hypotheses.
@@ -108,7 +108,7 @@ constructors can be used in a later proof of these assertions.
 
 `ProfiniteReciprocityTheorems` is the conjunction of these six theorem
 statements. No component is proved in this module. The Weil isomorphism
-and ramification/conductor transport remain separate statement obligations.
+and ramification/conductor transport are not part of this family.
 Pointwise unique existence together with the norm and transfer assertions
 for every normalized pair yields a coherent system across finite extensions;
 there is no need to assume a globally chosen system as input.
@@ -168,14 +168,14 @@ of one containing no nontrivial subgroup, so its continuous character has
 open kernel. This is a topological consequence, not an assertion that every
 quasicharacter has finite image.
 
-Worker 10 read all the cited original passages. Registered source
+All the cited original passages were read. Registered source
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 retained at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
 
 ## Declaration and dependency map
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
+The pinned environment is
 Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
 | Declarations in this pair | Published constructions used | Source above |
@@ -193,30 +193,26 @@ The imported project modules are `Langlands.ClassFieldTheory.Local.Completion`,
 `Langlands.LocalField.Normalization.Definitions`. The first two were
 published at `Langlands.LocalClassField.Completion` and
 `Langlands.LocalClassField.FiniteArtin`; the module-path consolidation
-(pilot task `295b0f1c-439f-4b3e-8c86-14e5bd541262`) moved them to the same
+moved them to the same
 basenames under `Langlands/ClassFieldTheory/Local` and changed only these two
 import lines here. The old paths remain as declaration-free re-exports, and
 the imported declarations keep their published names. Their Galois, Norms,
-and local-field dependencies are ordinary published imports. Their authorship
-is retained in their own paired Markdown. All local construction source
-pairs were read before use and compared with the current published files.
+and local-field dependencies are ordinary published imports. All local construction source
+pairs were read before use and compared with the published files.
 The all-fields topological realization is
 `Langlands.PadicField.canonicalTopologicalData` in
 `Langlands.LocalField.Canonical`.
 
 The closing declaration has independent universe parameters `u,v`.
-Independent review must check the original-source correspondence as well
-as the Lean and Markdown; successful elaboration alone establishes neither
-semantic acceptance nor any of the asserted CFT theorems.
+Successful elaboration alone establishes none of the asserted CFT theorems.
 
-## Current development check
+## Development check
 
-Worker 10 rechecked this pair in the current environment with `lean_check`,
+This pair was rechecked by a development check,
 using the original `Langlands.LocalClassField` import paths. The entry
 module compiled without errors or warnings, and inspection of
-`Langlands.LocalClassField.ProfiniteReciprocityTheorems` returned
-`statement_returns_prop: true` with independent levels `u,v` and only
+`Langlands.LocalClassField.ProfiniteReciprocityTheorems` showed a
+`Prop`-valued statement with independent levels `u,v` and only
 `propext`, `Classical.choice` and `Quot.sound`. This checks the statement's
-elaboration, not its truth. Independent semantic review and publication
-remain required. The retained original's SHA256 and all cited page
-locators were checked again against the current readable source.
+elaboration, not its truth. The retained original's SHA256 and all cited page
+locators were checked again against the readable source.

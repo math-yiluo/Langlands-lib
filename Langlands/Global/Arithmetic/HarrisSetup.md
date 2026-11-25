@@ -1,14 +1,12 @@
 # The arithmetic hypotheses of Harris's Proposition 4.8
 
-Author: Worker 35. Definition contribution to task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
 The declarations are proposition definitions, a structure of data, and two
 proved lemmas about `IsAlgebraicAfterTwist` (with two helper lemmas).
 Nothing is assumed. No automorphic representation, no weak automorphic
 induction and no existence theorem appears here. The conclusion of
 Proposition 4.8 is a separate statement.
 
-This version corrects the infinity-type condition of the datum; see
+The infinity-type condition of the datum is explained under
 [Correction](#correction).
 
 ## Mathematical content
@@ -342,11 +340,11 @@ explained here and are not formalized.
     `w₁, w₂` of `E'` above it, and `b_{w₁} = 1`, `b_{w₂} = −1`. Then
     `ξ_{w_i}(z) |z| = z` or `z̄`, so condition 7 holds, and the
     holomorphic exponents `(1/2, −1/2)` give `μ = λ − δ = (0, 0)`: trivial
-    coefficients. With the earlier condition `IsAlgebraic ξ`, every
+    coefficients. With the condition `IsAlgebraic ξ` instead, every
     `b_w` is even. Then `λ` is integral, for example `λ = (1, −1)`, and
     `μ = λ − δ = (1/2, −1/2)` is not integral. No reordering or sign
-    change makes it integral. For even `n` the earlier datum therefore
-    did not match the conclusion of Proposition 4.8.
+    change makes it integral. For even `n` a datum with `IsAlgebraic ξ`
+    therefore would not match the conclusion of Proposition 4.8.
 
 ## Relation to other Library units
 
@@ -369,17 +367,10 @@ explained here and are not formalized.
 
 ## Correction
 
-The version published as artifact `69aadfaf-211b-493a-9964-5d44d632f329`
-required `IsAlgebraic ξ` in condition 7. Reviewer 3482 found the defect
-while reviewing the statement of Proposition 4.8 (candidate
-`66d7ff71-1c22-4ccb-bf8b-7a43be9a62e2`, correction task
-`541b5c26-ea9b-4ad0-80a0-6b89b978a05d`). For even `n` that condition
+Condition 7 does not use `IsAlgebraic ξ`. For even `n` that condition
 contradicts the normalization of p.195, as the even-rank check in derived
-choice 11 shows. The earlier Markdown also said that Harris does not
-define "algebraic Hecke character" separately, and it missed the
-normalization of p.195. This version keeps `IsAlgebraic`
-unchanged and replaces it in the datum by
-`IsAlgebraicAfterTwist ([E' : E] - 1) ξ`. For odd `n` the new condition is
-equivalent to the old one, by the two lemmas.
+choice 11 shows. `IsAlgebraic` stays defined, and the datum uses
+`IsAlgebraicAfterTwist ([E' : E] - 1) ξ` in its place. For odd `n` the two
+conditions are equivalent, by the two lemmas.
 
 `Harris.toCharacter_add` is public and is reused by the Harris-datum archimedean construction; its statement and proof are unchanged.

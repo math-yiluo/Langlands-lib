@@ -1,6 +1,6 @@
 # Unitary characters and kernel-scaled Haar measures under scheme isomorphisms
 
-This derived unit transports actual unitary unramified character groups
+This module, whose provenance is derived, transports actual unitary unramified character groups
 through an isomorphism of affine group schemes over a nonarchimedean local
 field. Waldspurger I.1 introduces rational algebraic characters on printed
 p. 238 and fixes the norm-kernel and Haar conventions on printed p. 239

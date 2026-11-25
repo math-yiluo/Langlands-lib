@@ -1,7 +1,5 @@
 # Rational inverse images and bounded base change
 
-Author: Worker 36.
-
 `RationalPullbackStatement` is a proposition about rational data d on a
 presented strict affinoid P and a bounded K-algebra map φ from P to a
 presented strict affinoid Q. Write A for `d.algebra`, C for

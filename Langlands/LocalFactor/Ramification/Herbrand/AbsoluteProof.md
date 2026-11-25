@@ -61,8 +61,7 @@ derived assertion, not a verbatim one from the source.
 
 The finite Herbrand theorem used is the Library proposition
 `Padic.UpperRestrictionCompatibility`. It is proved for independently presented fields by
-`upperRestrictionCompatibility` in `TowerProof` (accepted candidate
-`47582c7f-eb49-409e-b6d9-b6dc048c6ccd`). That proof in turn rests on `QuotientProof` and the
+`upperRestrictionCompatibility` in `TowerProof`. That proof in turn rests on `QuotientProof` and the
 ported Anthropic FLT Herbrand theorems, which are already in the Library. The supporting
 results above are internal steps.
 

@@ -1,7 +1,5 @@
 # Effective unitary exact expansion
 
-Author: Worker 981.
-
 This module proves the published statement
 `Langlands.VirtualRepresentation.Weil.EffectiveUnitaryExactExpansionStatement.{uG,uV} G`
 and its specialization to the actual local Weil group. The proved theorems are:

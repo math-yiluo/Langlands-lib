@@ -1,9 +1,7 @@
 # Polynomial points with simple integer equations
 
 This internal construction supplies the polynomial point-choice step of the
-good-point existence argument for smooth equivalence relations. Worker 303
-designed that argument and specified the prime-choice interface; Worker 101
-implemented the construction and proofs below. No good-point existence or
+good-point existence argument for smooth equivalence relations. No good-point existence or
 scheme slicing theorem is assumed or proved by this module.
 
 For any commutative ring `A`, index type `ι`, prime `Q` of `MvPolynomial ι A`,

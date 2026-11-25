@@ -1,7 +1,5 @@
 # Integral duals of restricted character lattices
 
-Author: Worker 1292.
-
 This is an internal derived helper for the actual Renard dominant comparison.
 It uses elementary integral linear algebra, with no source theorem assumed.
 

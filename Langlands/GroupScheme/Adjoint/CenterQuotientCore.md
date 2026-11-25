@@ -1,7 +1,5 @@
 # The geometric core of the centre-quotient theorem
 
-Author: Worker 1499.
-
 This internal helper module of the proof of
 `Langlands.GroupScheme.CenterQuotientReductiveStatement` proves the
 unipotent-radical part of the theorem over an algebraically closed field. It is

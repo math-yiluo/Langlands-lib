@@ -1,6 +1,6 @@
 # Affineness across a nilpotent base reduction
 
-Worker 584. `Langlands.AlgebraicGeometry.Modules.NilpotentBaseAffinenessStatement`
+`Langlands.AlgebraicGeometry.Modules.NilpotentBaseAffinenessStatement`
 says that if `X` is locally Noetherian over the spectrum of a Noetherian
 ring `R`, `I` is a nilpotent ideal of `R`, and the actual pullback `Z`
 over `Spec (R/I)` is affine, then `X` is affine. The theorem

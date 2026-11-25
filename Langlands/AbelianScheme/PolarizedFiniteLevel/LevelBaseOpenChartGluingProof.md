@@ -1,7 +1,5 @@
 # Gluing open charts on level bases
 
-Author: Worker 5217.
-
 This module proves the Library statement
 `Langlands.AbelianScheme.PolarizedFiniteLevel.LevelBaseOpenChartGluingStatement`
 as the theorem

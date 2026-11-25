@@ -1,7 +1,5 @@
 # Recovering datum matching from datum existence and classification
 
-Author: Worker 584.
-
 This internal supporting module connects the two existing datum interfaces used
 by the assembly reductions. It assumes
 `MultisegmentHeadDatumExistence.{uF, uA} F` and the published proposition

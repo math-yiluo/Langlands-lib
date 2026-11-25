@@ -1,7 +1,5 @@
 # Action laws on a universal fibre product
 
-Author: Worker 706.
-
 This internal helper rewrites the action interface as finitely many morphisms
 and equalities. It follows directly from the fibre product universal property
 and the already constructed relation operations; no approximation or descent

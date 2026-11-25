@@ -1,4 +1,4 @@
-import Langlands.TauCeti.Algebra.Coalgebra.Convolution
+import Langlands.RingTheory.Coalgebra.TensorConvolution
 import Mathlib.LinearAlgebra.Contraction
 import Mathlib.RingTheory.HopfAlgebra.Convolution
 import Mathlib.RingTheory.HopfAlgebra.TensorProduct

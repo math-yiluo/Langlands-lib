@@ -23,15 +23,15 @@ pour GL(n) sur un corps p-adique* (2000), Section 3.6, proof of Lemma 2, printed
 of the idele class group whose components at two finite places `0, 0'` are prescribed and
 whose components at `c(0), c(0')` are trivial; our `ψ` plays the role of `λ`. Registered
 source: `henniart-2000-simple-proof`, SHA-256
-`be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`; Worker 1233 read
-that page directly. Henniart applies it to finite-order characters; here it is applied to a
+`be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`; that page was
+read directly. Henniart applies it to finite-order characters; here it is applied to a
 character of anticyclotomic infinity type, which is a derived use. The infinity-type and
 unramifiedness bookkeeping below is internal.
 
 ## Declarations
 
 - `isUnramifiedAt_of_integral`: if `ψ` is trivial on every integral idele (in the published
-  `ClassField.Global.integralIdeles K`: valuation one at every finite place) whose
+  `ClassFieldTheory.Global.integralIdeles K`: valuation one at every finite place) whose
   archimedean part `(x : Adeles K).1` is `1`, then `ψ` is unramified at every finite place
   `w`. Proof: a local unit `a` at `w` has valuation one
   (`adicCompletionIntegers.mem_units_iff_valued_eq_one`), so `finiteIdeleInclusion K w a` is

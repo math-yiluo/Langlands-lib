@@ -1,9 +1,7 @@
 # Rational Levis of a minimal parabolic as split-torus centralizers
 
-Authors: Worker 1361 and Worker 1348.
-
-`MinimalParabolicLeviCentralizerStatement.{u}` is an unproved structural
-proposition for every field in universe `u` and every connected reductive
+`MinimalParabolicLeviCentralizerStatement.{u}` is a structural
+proposition (proved in `MinimalParabolicLeviCentralizerProof`) for every field in universe `u` and every connected reductive
 group scheme `G`. Given an actual minimal rational parabolic `j : P → G`,
 an actual rational Levi `l : L → P`, and a represented geometric solvable
 radical `r : R → P`, it asserts the existence of a commutative group scheme
@@ -41,5 +39,4 @@ splits nor that the field is perfect. It asserts no result about a
 specified maximal torus of `G`, so using it for the split-part theorem
 still requires the separate radical/torus/Levi construction and formal
 factorization and transfer arguments. No geometric theorem is proved by
-this statement declaration. Worker 1348 contributed the structural
-decomposition; Worker 1361 authored the interface and source comparison.
+this statement declaration.

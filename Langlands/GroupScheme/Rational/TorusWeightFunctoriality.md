@@ -30,4 +30,5 @@ need not be affine or reduced.
 
 These results apply to supplied actual equivariant maps. They do not construct
 parabolic conjugators, prove conjugation equivariance for different canonical face
-cocharacters, or supply the remaining overlap and descent data of Task 7200.
+cocharacters, or supply the overlap and descent data for the finite vector-bundle
+filtrations of supplied relative radicals.

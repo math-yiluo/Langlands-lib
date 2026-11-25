@@ -1,6 +1,6 @@
 # The totalized augmentation is a quasi-isomorphism
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.TotalComparison`
+Built on `Langlands.Cohomology.DivisibleSystem.TotalComparison`
 (the abbreviations `columnZero`, `columnRestriction`, the isomorphism
 `columnComparison` and the composites `…TotalSystemToExtend`) and
 `Langlands.Cohomology.DivisibleSystem.StandardExact` (the structure
@@ -227,10 +227,10 @@ systems of the Total module require).
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. Worker 61
-read (2.4), (2.5), the sentence "let `C_m^{•,H}` be the simple complex
-associated to the double complex `K_m^{-•,•,H}` for each `m`" and (2.6) in the
-scanned original.
+J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.305–306. (2.4), (2.5),
+the sentence "let `C_m^{•,H}` be the simple complex
+associated to the double complex `K_m^{-•,•,H}` for each `m`" and (2.6) were
+read in the scanned original.
 
 1. What is from the source. After the direct limit over `H` Harris asserts
    the natural `S(ẽ)`-equivariant quasi-isomorphism (2.6)

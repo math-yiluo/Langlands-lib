@@ -8,8 +8,7 @@ This module proves the published statement
 theorem chamberParahoricNormalizer : ChamberParahoricNormalizerStatement.{u}
 ```
 
-at an arbitrary universe `u`. The statement and its hypotheses are unchanged. Worker 4681 is
-the author.
+at an arbitrary universe `u`. The statement and its hypotheses are unchanged.
 
 ## What is proved
 
@@ -109,11 +108,10 @@ The two inputs that have no direct proof theorem are assembled inside the proof,
 `(n : rationalPoints G)` in the image of `Z(F)^0` in `G(F)`. Rewriting with the equality of
 Step 1, it is enough to show `(n : rationalPoints G) ∈ P.zeroNormalizer C`. That is
 `normalizerPoints P.i ⊓ P.parahoric C`, and it holds by `n.property` and the hypothesis on `n`.
-These closing lines follow the conditional wiring in this task's carried-over shared draft
-(`ChamberParahoricNormalizerAssembly`). That draft kept rank-one factorization and the
-cover-image comparison as premises; here both are discharged.
+These closing lines are those of the conditional argument with rank-one factorization and
+the cover-image comparison as premises; here both premises are discharged.
 
-`lean_check` builds the module with no errors or warnings. The theorem depends only on the
+A compilation check builds the module with no errors or warnings. The theorem depends only on the
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Comparison with the source

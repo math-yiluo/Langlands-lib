@@ -1,7 +1,5 @@
 # Simple vertices of the actual anisotropic-kernel subdiagram
 
-Author: Worker 177.
-
 This is an internal consequence of the published actual
 `TitsIndexData.KernelComparison` interface, the kernel-index proof, and
 `titsIndexStarInvariant`. It works over every field `k : Type u` and keeps

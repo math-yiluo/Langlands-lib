@@ -1,7 +1,5 @@
 # The diagonal trick for an annihilator of the Kähler differentials
 
-Author: Worker 931.
-
 This is a helper module of the proof of
 `Langlands.Analytic.SaturatedAtlasPresentation.QuasiEtaleLiftCompatibilityStatement`
 (`QuasiEtaleLiftCompatibilityProof`). It is pure commutative algebra over

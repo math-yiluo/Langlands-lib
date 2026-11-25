@@ -5,16 +5,13 @@ Namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `
 The module contains one **statement**, the `Prop`-valued definition
 `SupercuspidalCoefficientCriterionStatement`; it proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.2.1, printed pp.137–139 / PDF pp.143–145:
+VI.2.1, printed pp.137–139 / PDF pp.143–145, was read:
 
 > **Théorème.** Soit `(π, V)` une représentation lisse de `G`. Les conditions
 > suivantes sont équivalentes : a) `(π, V)` est supercuspidale, b) Les
@@ -25,7 +22,7 @@ The Library states (a) ⇒ (c) and (c) ⇒ (a) (`RationalCuspidalCompactRestrict
 and `RationalCompactRestrictionCuspidalStatement`, both proved). Condition (b)
 appears only in `SupercuspidalUnitaryCoefficientCompactSupportStatement`, for
 irreducible representations with unitary central character and smooth-dual
-coefficient norms. This unit states (a) ⇔ (b) for every smooth representation.
+coefficient norms. This module states (a) ⇔ (b) for every smooth representation.
 
 ## The statement
 
@@ -60,9 +57,11 @@ follows from (c) and the finiteness of `G/⁰G Z`.
 
 ## Remaining obligations
 
-The proof is a separate obligation. It needs the framework comparison between the
+The proof is separate. It needs the framework comparison between the
 represented predicate and the standard-family cuspidality used by the proved
-(a) ⇔ (c) statements.
+(a) ⇔ (c) statements. `SupercuspidalCoefficientCriterionReduction` proves
+(b) ⇒ (a) and reduces the full equivalence to
+`JointSpecialCompactBasisExistenceStatement`.
 
 ## Imports
 

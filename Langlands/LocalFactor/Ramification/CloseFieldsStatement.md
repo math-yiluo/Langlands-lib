@@ -50,7 +50,7 @@ The \(K\) side uses `Field.absoluteGaloisGroup F.Carrier`, the automorphisms of
 `Langlands.Ramification.Padic.absoluteUpperRamificationGroup`. It uses
 `Langlands.Weil.Local.localWeilGroup` and `localDegree` together with
 `Langlands.VirtualRepresentation.LocalWeil.Ramification.upperGroup`.
-These are the published p-adic objects from Tasks 7403, 7404 and 7415.
+These are the published p-adic objects of the Library.
 
 The \(X\) side uses `LaurentSeries (Langlands.Weil.Local.localResidueField F)`
 with `Langlands.LocalField.Laurent.valuativeRel`, `Laurent.localField`, and

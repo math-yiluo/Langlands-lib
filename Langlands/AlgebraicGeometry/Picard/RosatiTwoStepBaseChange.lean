@@ -24,7 +24,7 @@ def GeometricTracePreservedByTwoStepBaseChange
     (A : AbelianScheme (Spec (.of k))) : Prop :=
   ∀ f : End0 A,
     geometricEndomorphismTrace ((baseChange c).obj ((baseChange b).obj A))
-        (rationalBaseChangeHom c (rationalBaseChangeHom b f)) =
+        (CategoryTheory.End.of (rationalBaseChangeHom c (rationalBaseChangeHom b f.asHom))) =
       geometricEndomorphismTrace A f
 
 /-- Only the endpoints need to be geometric fields for two-step trace transport. -/
@@ -40,9 +40,12 @@ theorem geometricEndomorphismTrace_twoStep_baseChange_of_comparison
   rw [(hcomparison C ((baseChange c).obj ((baseChange b).obj A)) 2).2.2,
     (hcomparison k A 2).2.2]
   change primeEndomorphismTraceAt ((baseChange c).obj ((baseChange b).obj A))
-      (Over.mk (𝟙 _)) 2 (rationalBaseChangeHom c (rationalBaseChangeHom b f)) =
+      (Over.mk (𝟙 _)) 2 (CategoryTheory.End.of (rationalBaseChangeHom c
+        (rationalBaseChangeHom b f.asHom))) =
     primeEndomorphismTraceAt A (Over.mk (𝟙 _)) 2 f
-  rw [primeEndomorphismTraceAt_baseChange, primeEndomorphismTraceAt_baseChange]
+  rw [primeEndomorphismTraceAt_baseChange c _ _ 2
+      (CategoryTheory.End.of (rationalBaseChangeHom b f.asHom)),
+    primeEndomorphismTraceAt_baseChange]
   have hunit : IsUnit (2 : Γ(Spec (.of k), ⊤)) := by
     simpa only [map_ofNat] using (isUnit_iff_ne_zero.mpr (by norm_num : (2 : k) ≠ 0)).map
       (Scheme.ΓSpecIso (.of k)).inv.hom
@@ -73,8 +76,8 @@ on the existing rational trace comparison at the geometric endpoints. -/
 theorem traceForm_twoStep_baseChange_of_comparison (a d : End0 A) :
     @traceForm P C _ ((baseChange c).obj ((baseChange b).obj A)) W₂ hadd₂
       (DualData.baseChangeMap P c W₁ W₂ (DualData.baseChangeMap P b W W₁ lam)) hinv₂
-      (rationalBaseChangeHom c (rationalBaseChangeHom b a))
-      (rationalBaseChangeHom c (rationalBaseChangeHom b d)) =
+      (CategoryTheory.End.of (rationalBaseChangeHom c (rationalBaseChangeHom b a.asHom)))
+      (CategoryTheory.End.of (rationalBaseChangeHom c (rationalBaseChangeHom b d.asHom))) =
       @traceForm P k _ A W hadd lam hinv a d := by
   rw [traceForm_apply, traceForm_apply,
     involution_baseChange P c W₁ W₂ hadd₁ hadd₂,

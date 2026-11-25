@@ -1,6 +1,6 @@
 # Internal unitarization of elements of two-power order
 
-This internal construction by Worker 1655 concerns polynomially defined
+This internal construction concerns polynomially defined
 matrix subgroups over an arbitrary-universe `RCLike` field. The subgroup
 is assumed stable under conjugate transpose. It constructs conjugating
 elements inside that subgroup. It does not assert existence of such a
@@ -44,4 +44,5 @@ The provenance is the implemented polar-factor and positive-square-root
 argument. No compact-subgroup conjugacy theorem is assumed. These results
 provide an internal conjugation tool for cocharacter evaluations at roots
 of unity; a cocharacter comparison and existence of a compatible
-realization remain separate obligations of the archimedean Iwasawa task.
+realization are separate obligations of the archimedean Iwasawa decomposition,
+not provided here.

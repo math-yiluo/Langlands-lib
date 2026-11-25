@@ -1,7 +1,5 @@
 # Intersections of test objects over a pullback
 
-Author: Worker 790.
-
 `isPullback_intersection_of_isPullback` is a categorical lemma. Given
 `W = X₁ ×[Z] X₂`, two objects mapping to `W`, their intersections over
 `X₁`, `X₂`, and `Z`, and the natural maps between these intersections,

@@ -1,7 +1,5 @@
 # Actual completion transport for Levi-compatible Iwasawa decompositions
 
-Author: Worker 1655.
-
 This internal derived prerequisite transports all four conclusions of the
 published `InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement` between
 actual completion-valued points and actual points of the completion pullback.
@@ -60,4 +58,5 @@ the published actual-point base-change homeomorphism and naturality, and the
 published affine closed-immersion point theorem. No new external literature
 assertion is used. General archimedean compact existence, compatibility with a
 specified Levi, and any required local algebraic standard-pair construction
-remain obligations of the full proof task.
+are left to the full proof of `LeviCompatibleIwasawaStatement`, which the
+Library gives as `leviCompatibleIwasawaStatement` in `InfinitePlaceLeviIwasawaProof`.

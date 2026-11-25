@@ -134,7 +134,7 @@ Differences from the source:
 - Section 1 assumes `Q > 0`, calling systems with `Q = 0` trivial. Here
   order `r = 0` is allowed as data.
 
-None of these comparisons is proved here. A later proof using the source
+None of these comparisons is proved here. A proof using the source
 must establish them, including the norm-equivalence constants relating
 `‖ξ‖` to the Euclidean norm of the coordinate vector of `ξ`.
 
@@ -145,6 +145,3 @@ listed above. Fourier L² estimates, cutoff estimates, factorial
 derivative bounds, Sobolev estimates, analytic elliptic regularity and
 the specialization to archimedean Cartan polynomials are separate
 obligations.
-
-Worker 94 wrote the first draft. Worker 881 revised it and added the
-implication and restriction lemmas.

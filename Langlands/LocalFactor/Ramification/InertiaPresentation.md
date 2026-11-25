@@ -1,7 +1,7 @@
 # Actual finite inertia restrictions and Weil representation presentations
 
-Worker 104 authored the original p-adic construction. Worker 849 generalizes
-it in place using the published characteristic-free finite ramification,
+The construction was first written for p-adic fields and is generalized
+in place using the published characteristic-free finite ramification,
 absolute inertia, and local Weil group. The field and representation-carrier
 universes remain independent.
 

@@ -5,7 +5,7 @@ approaches to adelic points* (December 31, 2011), Example 4.2, printed
 pp.9–10. The registered source is
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-The unit identifies the existing original integral-model homeomorphism
+The module identifies the existing original integral-model homeomorphism
 with evaluation of the actual Weil counit along the literal full adele
 inclusion. Its coordinate lemmas and descent argument are internal
 comparisons over the existing constructions, not separately numbered
@@ -85,7 +85,7 @@ original enlarged lower stage. It rewrites the existing full
 homeomorphism by its original stage law and applies `full_point_ext`
 to the upper model. For each upper original place it chooses its
 actual lower comap or under-place, uses `stage_pointField`, the
-published `levelPoint_fieldEvaluation_at`, and
+existing `levelPoint_fieldEvaluation_at`, and
 `adelicEvaluation_stage_field`. All coefficient inclusions and
 integral bases are unchanged.
 
@@ -105,7 +105,7 @@ inclusion is `p`. Applying the stage identity proves the formula.
 No global tensor-product isomorphism or new adelic comparison is
 assumed.
 
-This unit concerns original integral-model points in the number-field
+This module concerns original integral-model points in the number-field
 case. Transport to the original field schemes through their actual
 generic-fiber isomorphisms, the function-field analogue, and the
-remaining whole-paper assertions remain separate obligations.
+remaining assertions of the paper are not part of this module.

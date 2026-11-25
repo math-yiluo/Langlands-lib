@@ -1,6 +1,6 @@
 # Rational-character tensors and actual complex exponential parameters
 
-Worker 6. This is a construction prerequisite for the tensor description in
+This is a construction prerequisite for the tensor description in
 David Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, V.3.19–V.3.20, printed pages 115–116 / PDF pages 121–122.
 The registered source is

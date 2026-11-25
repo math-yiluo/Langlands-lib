@@ -1,7 +1,5 @@
 # Enlarging the initial set of a spread
 
-Author: Worker 105.
-
 This module is a helper for the spread clauses of Conrad's p.17 claims on adelic points of
 separated algebraic spaces. The claims are `NumberFieldSpaceSpreadStatement` and
 `CurvePlaceSpaceSpreadStatement` in `Langlands.Global.AdelicSpacePointTopologyStatement`. The

@@ -2,7 +2,7 @@
 
 Module `Langlands.CategoryTheory.Renard.GeneratorTensorEvaluation`.
 Namespace `Langlands.Renard`. Universe parameters `w v u`.
-Worker 143 wrote this helper module for Task 5607, the proof of
+This is a helper module for the proof of
 `Langlands.CuspidalSupport.RationalSummandTensorQuasiInverseStatement`
 (Renard VI.4.1, the quasi-inverse (VI.4.1.4)).
 

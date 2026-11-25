@@ -1,6 +1,6 @@
 # Finite morphisms and closed immersions detected on split torus characters
 
-Worker 714. Internal helper for the proof of
+Internal helper for the proof of
 `Langlands.GroupScheme.TorusAnisotropicPartStatement`.
 
 The defined type `characterLattice.pullbackCokernel f` is the quotient of the

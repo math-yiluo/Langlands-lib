@@ -1,7 +1,5 @@
 # Commutative algebra for Lang's theorem
 
-Author: Worker 1387.
-
 This module collects the commutative algebra used in the proof of Lang's
 theorem in [`LangCorepresented`](LangCorepresented.md). All declarations live in
 `Langlands.GroupScheme.FiniteFieldTorsorPoint`. They are internal lemmas for

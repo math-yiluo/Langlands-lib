@@ -1,7 +1,5 @@
 # The category of represented-domain spectral actions
 
-Authors: Worker 56 and Worker 36.
-
 ## Objects and their actual maps
 
 Let `K : Type u` be a complete ultrametric normed field and let `G : Type v`
@@ -72,8 +70,7 @@ because equality after restriction still gives equality of these maps.
 This is internal categorical construction from the imported represented
 domain topology and Mathlib's action and full-subcategory interfaces.
 It adapts the category, all-map and restriction pattern of the published
-`GeneralizedAffinoid/NormContinuousAction` construction by Worker 56 and
-Worker 36, with continuity into the domain spectral topology replacing
+`GeneralizedAffinoid/NormContinuousAction` construction, with continuity into the domain spectral topology replacing
 norm continuity of every element orbit. It asserts no implication between
 these two continuity hypotheses.
 
@@ -89,8 +86,8 @@ structure, and its recovery theorem, require `IsTopologicalGroup G`
 because that structure is parameterized by this assumption.
 
 Trivial valuations, nonreduced quotients, zero quotients and empty spectra
-remain permitted. This unit constructs the category for the represented
+remain permitted. This module constructs the category for the represented
 domain topology. It does not prove joint continuity on spectra, identify
 the topology with all compact analytic-domain tests, or construct general
 analytic spaces, étale sites or cohomology. Those are further construction
-obligations in the host task.
+obligations.

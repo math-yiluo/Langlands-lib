@@ -1,6 +1,6 @@
 # Actual Cartan-to-Iwasawa weight comparison
 
-Worker 788, Task 7622. This module states
+This module states
 `Langlands.HarishChandraSchwartz.RationalCartanIwasawaWeightComparisonStatement.{u}`.
 It does not prove this comparison.
 
@@ -35,7 +35,8 @@ Absorbing the finite centralizer factors into a compact set gives the
 version stated here. Arbitrary compact factors, including those in the
 Iwasawa decomposition, are bounded in that same argument. These adaptations
 are internal derived content rather than a separate numbered assertion in
-the source. The proposition remains a proof obligation.
+the source. The proposition is proved as `rationalCartanIwasawaWeightComparison` in
+`RationalCartanIwasawaWeightComparisonProof`.
 
 Source: J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques,
 d'après Harish-Chandra* (2003), literature ID `waldspurger-2003-plancherel`,

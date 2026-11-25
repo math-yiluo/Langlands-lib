@@ -1,7 +1,5 @@
 # Finite unramified extensions and arithmetic Frobenius coordinates
 
-Author: Worker 154.
-
 This pair states two arithmetic prerequisites for constructing the absolute
 local invariant from finite unramified stages. Both declarations are
 proposition-valued definitions; this pair proves neither assertion.
@@ -65,9 +63,9 @@ GTM 67 (1979), registered source `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 The retained original is
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 154 read Chapter III, section 5, Theorems 2 and 3 and their
+Chapter III, section 5, Theorems 2 and 3 and their
 corollaries, printed pages 54–55 / PDF pages 61–62, and Chapter XIII,
-section 2, example (a), printed page 191 / PDF page 196. No project errata
+section 2, example (a), printed page 191 / PDF page 196, were read. No project errata
 entry for this source was present when checked.
 
 Theorems 2 and 3 identify unramified extensions of a complete discretely

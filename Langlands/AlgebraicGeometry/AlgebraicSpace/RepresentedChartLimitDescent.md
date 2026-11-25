@@ -1,6 +1,6 @@
 # Limit descent from one represented target-atlas pullback
 
-This internal unit transports four published scheme limit-descent theorems
+This internal module transports four published scheme limit-descent theorems
 through an actual fixed represented target-atlas pullback. It retains
 representability and scheme finiteness as explicit premises. It does not prove
 eventual representability or the four unrestricted clauses of
@@ -41,7 +41,7 @@ The four final specializations concern the original published space
 predicates `IsClosedImmersion`, `IsAffineMorphism`, `IsOpenImmersion` and
 `IsFinite`, with their definitions unchanged.
 
-The remaining geometric step for the host task is to obtain such a finite
-represented pullback at a suitable stage from representability only at the
-limit. Neither the explicit representability field nor the six structural
-premises are discharged by this unit.
+The further geometric step needed for `SpaceLimitPropertyDescentStatement` is
+to obtain such a finite represented pullback at a suitable stage from
+representability only at the limit. Neither the explicit representability
+field nor the six structural premises are discharged by this module.

@@ -1,6 +1,6 @@
 # Invariant subspaces and actual-root commutation
 
-This internal supporting unit defines the actual roots whose rational images
+This module defines the actual roots whose rational images
 belong to a subspace of the rational relative-root span. It excludes strict
 positive mixed root combinations across a reflection-invariant subspace and
 reuses `RootPairNoncommutation.commute_of_no_strict_combinations` from

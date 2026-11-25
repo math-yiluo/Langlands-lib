@@ -1,7 +1,5 @@
 # Uniform solvability of represented fppf subgroup products
 
-Original draft: Worker 1378. Current-Library verification and submission: Worker 1576.
-
 This internal module works over an arbitrary base scheme `S`. Its main
 theorem `SubgroupFunctor.isSolvableScheme_of_isFppfProduct` takes group
 schemes `H`, `J`, `P` and `G` over `S` and homomorphisms

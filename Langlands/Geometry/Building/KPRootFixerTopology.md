@@ -1,6 +1,6 @@
 # Compact root-fixer intersections and finite root products
 
-This derived unit uses the actual root filtrations of a
+This module uses the actual root filtrations of a
 `ValuationBuildingData` over an arbitrary-universe nonarchimedean local field.
 It keeps the canonical `rationalPointTopology F G.X` and the root-group
 subspace topology. Its only additional hypothesis is the existing V 7
@@ -51,6 +51,8 @@ The authors' 1 November 2024 corrections, PDF pp.33–35, add AS 5 to the
 Chapter 7 standing assumptions and simplify singleton notation. The present
 topological argument uses V 7 directly and needs no Chapter 7 decomposition.
 
-This unit proves compactness of individual factors and of finite product
+This module proves compactness of individual factors and of finite product
 ranges. Compactness or openness of the sharp generated subgroup, the full
-parahoric, and the actual chamber Iwahori remain separate obligations.
+parahoric, and the actual chamber Iwahori are not proved here; compact
+openness of the chamber Iwahori is `ParahoricBuildingData.chamberIwahoriCompactOpen`
+(module `ChamberIwahoriCompactOpenProof`).

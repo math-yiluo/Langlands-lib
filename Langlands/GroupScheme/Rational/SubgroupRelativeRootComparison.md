@@ -1,7 +1,5 @@
 # Actual relative roots of monomorphic subgroup representatives
 
-Author: Worker 1623.
-
 This internal comparison concerns actual adjoint Lie weights over any field,
 with the field and group universe unrestricted. If `a : T → H` is a torus map
 and `p : H → G` is a homomorphism of affine group schemes whose underlying

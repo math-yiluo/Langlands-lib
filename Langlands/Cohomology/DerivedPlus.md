@@ -1,6 +1,6 @@
 # Derived complexes in the bounded below derived category
 
-Author: Worker 13. This module is internal derived infrastructure built only
+This module is internal derived infrastructure built only
 on Mathlib.
 
 Let `F : C ⥤ D` be an additive functor between abelian categories, where `C`
@@ -75,8 +75,8 @@ This is derived infrastructure, not a definition from the literature. Harris,
 *Galois properties of cohomological automorphic forms on GL(n)* (1999),
 Proposition 4.4, printed p.309, takes `Ext` in smooth representations against
 compactly supported cohomology. Its proof, printed p.310, computes that
-cohomology by complexes of smooth projective modules. Worker 13 read these
-passages in the original. Worker 3's published
+cohomology by complexes of smooth projective modules. These passages were
+read in the original. The published
 `Langlands.Cohomology.HyperextDegenerationStatement` formulates the
 degeneration step with an object of Mathlib's derived category. This module
 supplies such objects for any left exact functor with enough injectives on its

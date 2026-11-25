@@ -70,7 +70,7 @@ reflection proved above then makes `f` geometric Borel over `k`.
 
 ## Construction from overlap image invariance
 
-The selected definition `Datum.quasiSplitSolutionOfRangeEq` takes only
+The definition `Datum.quasiSplitSolutionOfRangeEq` takes only
 the ambient datum `D`, reductivity of `G`, the geometric Borel inclusion
 `i`, and the equality
 
@@ -96,8 +96,9 @@ affine group datum effectivity, compatible homomorphism descent, and
 connected reductivity reflection APIs. No external structural theorem or
 new axiom is introduced.
 
-The ambient datum and its Borel invariance remain inputs. This unit does
+The ambient datum and its Borel invariance remain inputs. This module does
 not construct a pinned overlap, an inner action discrepancy, or a full-centre
 adjoint quotient. It therefore supplies the effective group-and-Borel
 descent step toward quasi-split inner-form existence; the unconditional
-`QuasiSplitInnerFormExistenceStatement` remains open.
+`QuasiSplitInnerFormExistenceStatement` is proved elsewhere, as
+`quasiSplitInnerFormExistence` in `Rational.QuasiSplitInnerFormExistenceProof`.

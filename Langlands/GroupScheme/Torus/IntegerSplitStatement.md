@@ -1,7 +1,5 @@
 # Statement: every torus over the integers is split
 
-Worker 638.
-
 `Langlands.GroupScheme.IntegerTorusSplitStatement.{u}` states that every
 `T : GroupScheme (Spec (CommRingCat.of (ULift.{u} ℤ)))` satisfying
 `RelativeTorus.IsTorus T` also satisfies `IsSplitTorus T`. It is a

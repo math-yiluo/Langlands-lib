@@ -1,6 +1,6 @@
 # Concrete archimedean matrix Lie algebra and complexification
 
-Author: Worker 72. Namespace: `Langlands.Global.ArchimedeanGL`.
+Namespace: `Langlands.Global.ArchimedeanGL`.
 
 For an actual number field `K : Type u` and every natural rank `n`, including
 zero, `RealLieAlgebra K n` is a type synonym for the published
@@ -52,7 +52,7 @@ functions. No such finiteness assertion is made in this module.
 
 Registered original: `borel-jacquet-1979-automorphic`, SHA256
 `3b9fe0145da81d870ef8967be83635cd440a2581fe043e64e63324e22dec4db5`.
-Worker 72 read these original pages, and sections 4.6-4.7 (PDF191-192), which
+These original pages were read, and so were sections 4.6-4.7 (PDF191-192), which
 keep the automorphic Hecke module distinct from a full adelic group action.
 The explicit matrix model, tensor complexification and implementation laws
 are derived constructions realizing the survey's objects for general linear

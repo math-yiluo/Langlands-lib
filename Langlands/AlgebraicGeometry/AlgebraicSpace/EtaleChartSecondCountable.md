@@ -1,7 +1,5 @@
 # Rational points of separated algebraic spaces of finite type are second countable
 
-Author: Worker 105.
-
 This module supplies the local input for the countable base in Conrad's p.17 claims. The source
 is Brian Conrad, *Weil and Grothendieck approaches to adelic points* (2011), printed p.17:
 adelic points of separated algebraic spaces of finite type over the `S`-integers are second

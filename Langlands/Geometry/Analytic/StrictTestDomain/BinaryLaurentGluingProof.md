@@ -1,7 +1,5 @@
 # Scalar descent for the actual strict binary Laurent diagram
 
-Author: Worker 572.
-
 The module proves the existing proposition, at every universe `u`:
 
 ```lean

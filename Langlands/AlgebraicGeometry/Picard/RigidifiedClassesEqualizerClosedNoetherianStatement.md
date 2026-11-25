@@ -15,7 +15,7 @@ proposition:
             (unitSection_comp A) h r
 ```
 
-This unit only defines the proposition. It proves nothing.
+This module only defines the proposition. It proves nothing.
 
 ## Meaning
 
@@ -37,10 +37,11 @@ proposition from the general one by
 `fun R _ A q r => h (Spec R) A (Over.mk (𝟙 (Spec R))) q r`.
 
 Without the noetherian hypothesis the same proposition is the affine statement
-`RigidifiedClassesEqualizerClosedAffineStatement` (statement task
-`40213915-546f-4273-91e7-aff363d3ca2a`). That statement is meant to follow from the present
-one together with a separate noetherian-approximation statement; neither that derivation nor
-the approximation is part of this unit.
+`RigidifiedClassesEqualizerClosedAffineStatement`. That statement follows from the present
+one together with a separate noetherian-approximation statement
+(`rigidifiedClassesEqualizerClosedAffine_of_noetherian`, module
+`RigidifiedClassesEqualizerClosedAffineFromNoetherianProof`); neither that derivation nor
+the approximation is part of this module.
 
 ## Exact interface
 
@@ -73,8 +74,8 @@ Lemma 37.33.4 (tag 0BF0, label `lemma-get-a-closed`); registered source
 applied with the noetherian affine base `Spec R` to the structure morphism `A.X.hom` itself
 (via the chosen total space over the identity object), with `E = L ⊗ M⁻¹` for representatives
 `L`, `M` of `q`, `r`. Lemmas 37.33.1 and 37.33.4 need no noetherian hypothesis; the added
-hypothesis `[IsNoetherianRing R]` only narrows the scope of this unit, so it claims less than the
+hypothesis `[IsNoetherianRing R]` only narrows the scope of this module, so it claims less than the
 source.
 
 The noetherian affine case is introduced as one half of the cohomological core of the proof of
-the general statement (task `e3d4a3ab-f378-42af-87c5-0cd4caec7b2e`).
+the general statement.

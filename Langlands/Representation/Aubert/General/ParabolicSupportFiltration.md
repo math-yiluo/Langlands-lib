@@ -1,7 +1,7 @@
 # Support filtration of Jacquet restriction after parabolic induction
 
 Module: `Langlands.Representation.Aubert.General.ParabolicSupportFiltration`,
-namespace `Langlands.Aubert.General`. Author: Worker 4021.
+namespace `Langlands.Aubert.General`.
 
 This module filters the composite `r_Q ∘ i_P` of normalized parabolic induction
 and normalized Jacquet restriction. The filtration is by the images of the
@@ -106,7 +106,8 @@ the published represented-parabolic modules
 `Geometric.RepresentedParabolicCoinvariantsExact`,
 `Geometric.RepresentedParabolicSupportOrbit` and
 `Geometric.RepresentedParabolicSupportJacquet` to arbitrary subgroup triples,
-so that they apply to the rational standard families of the Aubert program.
+so that they apply to the rational standard families of
+`Aubert.General.RationalPointFamily`.
 The proofs use only the published support filtrations, the
 compact-to-smooth comparison, the closed-subgroup Mackey theorem, exactness of
 character localization and the filtration transport lemmas. They use no

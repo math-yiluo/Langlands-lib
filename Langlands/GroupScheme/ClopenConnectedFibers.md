@@ -1,7 +1,5 @@
 # Clopen subgroups of groups with connected fibres
 
-Worker 508.
-
 For every scheme `S`, group schemes `G` and `H` over `S`, and homomorphism
 `j : G → H` whose underlying scheme map is an open immersion and a closed
 immersion, assume that every actual residue-field fibre of `H` is connected.

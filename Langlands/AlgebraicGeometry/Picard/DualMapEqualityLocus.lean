@@ -118,14 +118,16 @@ lemma associate_snd (T : Over S) :
     (associate B T).hom ≫ pullback.snd T.hom (square B).X.hom =
       (relativeSpace B.X.hom).map (parameterMap B T) := by
   apply pullback.hom_ext
-  · change (pullbackAssoc T.hom B.X.hom B.X.hom B.X.hom).hom ≫
+  · rw [Category.assoc]
+    change (pullbackAssoc T.hom B.X.hom B.X.hom B.X.hom).hom ≫
         pullback.snd T.hom (pullback.fst B.X.hom B.X.hom ≫ B.X.hom) ≫
           pullback.fst B.X.hom B.X.hom = _
     simp only [pullbackAssoc_hom_snd_fst, relativeSpace, Functor.comp_map,
       Over.forget_map, Over.pullback_map_left, parameterMap, Over.homMk_left,
       pullback.lift_fst]
     rfl
-  · change (pullbackAssoc T.hom B.X.hom B.X.hom B.X.hom).hom ≫
+  · rw [Category.assoc]
+    change (pullbackAssoc T.hom B.X.hom B.X.hom B.X.hom).hom ≫
         pullback.snd T.hom (pullback.fst B.X.hom B.X.hom ≫ B.X.hom) ≫
           pullback.snd B.X.hom B.X.hom = _
     simp only [pullbackAssoc_hom_snd_snd, relativeSpace, Functor.comp_map,

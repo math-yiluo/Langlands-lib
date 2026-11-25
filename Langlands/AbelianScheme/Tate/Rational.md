@@ -100,4 +100,4 @@ scalar extension with `Langlands.Global.FiniteAdeles ℚ`, and the corresponding
 adelic and prime-to-p algebra actions remain separate obligations. It asserts
 no finite-dimensionality, rank, rational topology, monodromy, pairing,
 pointed base-change theorem, or unpointed canonical transport. These require
-the geometric hypotheses and constructions specified by the parent task.
+further geometric hypotheses and constructions.

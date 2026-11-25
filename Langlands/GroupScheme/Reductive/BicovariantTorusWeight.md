@@ -1,6 +1,6 @@
 # Weights forced by bi-covariant coordinates at unit points
 
-Worker 1628 derives this internal result from the Library's point form of left
+This internal result is derived from the Library's point form of left
 covariance. It is a cancellation argument. Suppose a coordinate is covariant
 on the left for one subgroup and on the right for another, and its value at a
 point `m` is a unit. Whenever `m` intertwines a point of the first subgroup

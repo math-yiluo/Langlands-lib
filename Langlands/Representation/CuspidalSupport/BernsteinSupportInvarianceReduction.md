@@ -1,6 +1,6 @@
 # Renard VI.5.4 for the standard family, from represented VI.5.4
 
-Worker 117. This is a derived conditional reduction for Renard, *Représentations des
+This is a derived conditional reduction for Renard, *Représentations des
 groupes réductifs p-adiques*, French version dated 9 July 2026
 (`renard-2026-representations-groupes-reductifs-padiques`), VI.5.4, Theorem
 (printed pp.173–175 / PDF pp.179–181). It moves the theorem from the
@@ -52,8 +52,7 @@ same theorem, VI.5.4. It isolates the transfer from the represented-parabolic
 framework (arbitrary rational parabolics with geometric unipotent radicals) to the
 standard Bernstein family. The transfer is needed because the conditional reduction
 of VI.10.4, Theorem (second sentence), `BernsteinCenterFunctionsReductionStatement`,
-assumes the standard-family form. No proof task covers that form, whereas the
-represented form is already the target of a proof task.
+assumes the standard-family form.
 
 ## Proof
 

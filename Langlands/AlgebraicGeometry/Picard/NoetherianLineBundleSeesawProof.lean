@@ -12,7 +12,7 @@ namespace Langlands.AlgebraicGeometry.Picard
 /-- A locally free rank-one sheaf is invertible in the sense of the ported FLT predicate:
 restriction along an open immersion is isomorphic to pullback along it. -/
 lemma isInvertible_of_isLocallyFreeRankOne {X : Scheme.{u}} {M : X.Modules}
-    (hM : IsLocallyFreeRankOne M) : Scheme.Modules.IsInvertible M :=
+    (hM : IsLocallyFreeRankOne M) : Scheme.Modules.IsInvertibleFLT M :=
   ⟨fun x => by
     obtain ⟨U, hx, ⟨e⟩⟩ := hM x
     exact ⟨U, hx, ⟨((Scheme.Modules.restrictFunctorIsoPullback U.ι).app M).symm ≪≫ e⟩⟩⟩

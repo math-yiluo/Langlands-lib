@@ -1,6 +1,6 @@
 # Reduction of chart covers to bases of finite type over `ℤ`
 
-Worker 1412. This module proves the target
+This module proves the statement
 `TorusSubgroupModuli.ChartCoverReductionStatement.{u}` from
 `Langlands.GroupScheme.HomScheme.TorusSubgroupChartStatements`, uniformly in the
 universe `u`. The statement is the noetherian reduction in SGA 3, Exposé XI,
@@ -28,7 +28,7 @@ and with `G.X.hom` smooth and affine, has a chart cover. The steps are:
    isomorphism `e : G ≅ (G₀)_{Spec R}`.
 2. The hypothesis gives a chart cover of `G₀`.
 3. `hasChartCover_baseChange`, from
-   `Langlands.GroupScheme.HomScheme.ChartCoverBaseChange` (Worker 706), carries
+   `Langlands.GroupScheme.HomScheme.ChartCoverBaseChange`, carries
    it to a chart cover of `(G₀)_{Spec R}`.
 4. `hasChartCover_iso` with `e.symm` carries that to a chart cover of `G`.
 

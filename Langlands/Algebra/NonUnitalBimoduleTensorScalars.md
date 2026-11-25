@@ -1,6 +1,6 @@
 # Compatible coefficient-linear residual actions on original tensors
 
-Worker 185 authored this construction. Its namespace is
+The namespace of this construction is
 `Langlands.Algebra.NonUnitalBimoduleTensorScalars`.
 It refines the published original residual action to a nonunital
 coefficient-algebra homomorphism and compares the two actual coefficient
@@ -33,7 +33,7 @@ is a sufficient condition for the adapter constructed here; the commuting
 original actions alone are not asserted to imply that condition.
 The full-source coefficient-convention audit, arbitrary-input comparisons,
 F/P duality, categorical natural isomorphisms, tensor inverses and equivalences
-remain separate obligations. This construction does not settle them.
+are not part of this module. This construction does not settle them.
 
 ## Exact structures and hypotheses
 

@@ -389,7 +389,7 @@ local notation "stageCohomology" U:max degree:max k:max =>
 `(𝟙, σ)` with the coefficient transition of that arrow. -/
 theorem cmHarrisScaledGaloisCohomologyAction_obj_ρ (degree : ℕ)
     (x : (CMScaledLevel D ρ p)ᵒᵖ × ℕᵒᵖ) (σ : Galois) :
-    (((scaledCohomologyAction) degree).obj x).ρ σ =
+    ((((scaledCohomologyAction) degree).obj x).ρ σ).asHom =
       cohomologyPullbackWithCoefficients
         ((geometricGaloisSchemes).map (𝟙 x ×ₘ (σ : SingleObj.star Galois ⟶ _))).unop Rcoeff
           degree ((galoisCoefficients).map (𝟙 x ×ₘ (σ : SingleObj.star Galois ⟶ _))) :=
@@ -411,8 +411,8 @@ Galois action at the level `U` of `X`. -/
 theorem cmHarrisScaledGaloisCohomologyAction_obj_ρ_eq (degree : ℕ) (X : CMScaledLevel D ρ p)
     (k : ℕᵒᵖ) (σ : Galois) :
     @Eq (stageCohomology X.level degree k ⟶ stageCohomology X.level degree k)
-      ((((scaledCohomologyAction) degree).obj (op X, k)).ρ σ)
-      ((((fixedCohomologyAction X.level) degree).obj k).ρ σ) := by
+      ((((scaledCohomologyAction) degree).obj (op X, k)).ρ σ).asHom
+      ((((fixedCohomologyAction X.level) degree).obj k).ρ σ).asHom := by
   have hD : (galoisCoefficients).map (𝟙 (op X, k) ×ₘ (σ : SingleObj.star Galois ⟶ _)) =
       (inverseImageCongr Rcoeff (cmScaledGeometricGaloisSchemes_map_sameLevel D C
           preservation composition unitCoherence associativity comparison symmetry stability

@@ -1,7 +1,5 @@
 # Reduction of local-to-global quadratic isometry to isotropy
 
-Workers 787 and 864.
-
 `Langlands.NumberFieldQuadraticIsometryReductionStatement.{u}` says that
 `Langlands.NumberFieldQuadraticIsotropyStatement.{u}` implies
 `Langlands.NumberFieldQuadraticIsometryStatement.{u}`.
@@ -67,7 +65,7 @@ coordinate-space proposition already in the Library.
 
 ## Dependency check
 
-The Lean diagnostic `8fdd2927-1bb1-42e5-b269-19868952f0c8` starts at
+The Lean diagnostic starts at
 `Langlands.numberFieldQuadraticIsometry_of_isotropy` and traverses
 constants in declaration types and values, including opaque values.
 The diagnostic imported the three excluded statements to check their

@@ -1,5 +1,5 @@
 import Langlands.Global.Arithmetic.HarrisProposition48StabilizerComparison
-import Langlands.ClassField.Global.CompletionTower
+import Langlands.ClassFieldTheory.Global.CompletionTower
 
 /-! # Descent from the completion at the auxiliary place -/
 
@@ -11,7 +11,7 @@ namespace Langlands.Global.Harris
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
 open AdelicFunctoriality GeneralPosition LocalFactor.CommonClosure
-open Langlands.ClassField.Global Langlands.ClassField.Global.FundamentalClass
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Global.FundamentalClass
 open scoped NumberField FiniteExtension
 
 namespace MackeyCompletion

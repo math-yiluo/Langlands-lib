@@ -1,7 +1,5 @@
 # Ordinary cohomology of the restriction on paracompact analytic spaces
 
-Author: Worker 16.
-
 ## Source
 
 Vladimir Berkovich, *Étale equivariant sheaves on p-adic analytic spaces*

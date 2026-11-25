@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypePicardStackAtlasProof`.
 
-Author: Worker 5005, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`.
-
 The theorem `Langlands.AlgebraicGeometry.Picard.finiteTypePicardStackAtlas`
 proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.FiniteTypePicardStackAtlasStatement.{u}`
@@ -117,6 +115,6 @@ snapshot `stacks-picard-stack-algebraicity-2026-11-01`. It is restricted to
 line bundles over a finite-type `ℤ`-algebra. The source proves that
 proposition through the stack of coherent sheaves. The Lean proof instead
 checks the versality, algebraization and openness inputs directly for line
-bundles, as the task's context requires. The module documentation of each
+bundles. The module documentation of each
 reduction listed above records how its formal version differs from the
 corresponding step in the source.

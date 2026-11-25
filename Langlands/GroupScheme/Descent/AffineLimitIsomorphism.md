@@ -1,7 +1,5 @@
 # Affine group isomorphisms descend along cofiltered limits
 
-Worker 875.
-
 `Langlands.GroupScheme.Descent.AffineLimit.isomorphismModel` chooses an actual
 level and an isomorphism of group schemes at that level from an isomorphism
 over a supplied cofiltered affine limit. The base and every diagram level are
@@ -19,8 +17,8 @@ The paired theorems implement the following internal finite-data argument.
   quasi-compact over the base and whose target is locally of finite type. It also records that the
   equality holds at every level mapping to the chosen one. This uses Mathlib's
   finite-type equality theorem on the actual base-change limit cone.
-  Worker 668 generalized the source hypothesis to quasi-compactness for
-  descent of the centrality equation on the product of two groups.
+  The source hypothesis is quasi-compactness, which allows descent of the
+  centrality equation on the product of two groups.
 - `exists_level_isMonHom` applies that equality theorem to preservation of the
   unit and multiplication. A common cofiltered refinement satisfies both
   equations, so the map there is a homomorphism of group schemes.

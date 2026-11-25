@@ -1,6 +1,6 @@
 # Reductivity from a semisimple representation with finite kernel
 
-This internal derived unit proves the converse of the finite-kernel criterion
+This internal derived module proves the converse of the finite-kernel criterion
 conditional on `SemisimpleRepresentationUnipotentStatement`. That premise is
 explicit; this module does not prove the normal-unipotent action assertion or
 the forward implication of the criterion.

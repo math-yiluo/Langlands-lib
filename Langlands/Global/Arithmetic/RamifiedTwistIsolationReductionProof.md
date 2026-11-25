@@ -1,9 +1,6 @@
 # Ramified twist isolation from global prescription and local existence
 
-Authors: Worker 84 and Worker 1231. Worker 84 authored the proof and its
-explanation; Worker 1231 adopted the draft, checked the imported target and
-source correspondence, and prepared the pair for publication. The theorem
-proves the existing Library proposition
+The theorem proves the existing Library proposition
 `Langlands.Global.RamifiedTwistIsolationOfInputsStatement.{u}`.
 
 The theorem `Langlands.Global.ramifiedTwistIsolationOfInputs.{u}` proves
@@ -42,7 +39,7 @@ Proposition 3.4, printed pp.156–157, and Section 4.3, printed pp.158–159
 (one-based PDF pp.13–16). Registered source `henniart-1986-cyclic`,
 SHA-256
 `096fba993b7368b1af9f7cc1f0c053e5436ba447f291c2acd402f058eb44b0ba`.
-Worker 84 read these original pages and visually checked p.159. The
+These original pages were read and p.159 was visually checked. The
 source chooses finite-order local characters of sufficiently large
 conductor and prescribes them globally, with a trivial character at the
 place to be isolated and at infinity. The exact finite-set implication,
@@ -52,5 +49,4 @@ between those statements.
 
 Neither arithmetic existence premise is discharged here. Local stability,
 global functional equations and comparison of factors remain separate
-proof obligations. Development compilation does not replace independent
-semantic review, exact-target validation or publication.
+proof obligations.

@@ -1,6 +1,6 @@
 # Restricting canonical class functions to the supplied Steinberg product
 
-Author: Worker 1284. Provenance: internal and derived from the published affine coordinate and canonical class-function interfaces.
+Provenance: internal and derived from the published affine coordinate and canonical class-function interfaces.
 
 For every affine test morphism `f : Spec A → G`, `ClassFunctions.restriction G f` is evaluation of the actual coordinate algebra at `f`, composed with the actual invariant-algebra inclusion. Its spectrum is exactly `f ≫ ClassFunctions.rho G`, by the published quotient-point coordinate equation. Full faithfulness of relative spectrum and the algebra equivalence associated to a bijective algebra homomorphism prove that this composite is an isomorphism if and only if restriction is bijective.
 

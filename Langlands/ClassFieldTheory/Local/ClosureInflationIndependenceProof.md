@@ -1,7 +1,5 @@
 # Proof that closure inflation does not depend on the chosen isomorphism
 
-Author: Worker 272.
-
 This module proves `closureInflationTransportIndependence :
 ClosureInflationTransportIndependence.{u,v}`, the published proposition
 `Langlands.ClassFieldTheory.Local.ClosureInflationTransportIndependence` of

@@ -14,13 +14,13 @@ Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitSmoot
   `IsBiInvariant.constantTermInd_mul`;
 - `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedFourierCoherence`:
   `fourierOrbitSection` (`ψ_f[O, P]`) and `fourierOrbitSection_mem_coherent`; through its
-  imports Worker 200's `UnitaryOrbitRepresentative`, `unitaryOrbitParameterRepresentative`,
+  imports `UnitaryOrbitRepresentative`, `unitaryOrbitParameterRepresentative`,
   `unitaryTorusParameter`, `productInducedOrbitPullback`, `productInducedFamilyRestriction` with
   `productInducedFamilyRestriction_eval`, `productCompactTwistTensorEquiv`,
   `ProductInducedCompactPicture`, `compactPictureInducingRepresentation`,
   `productInducedSmoothOrbitSections`, `unramifiedCharacter_isOpen_ker` and
   `representationFormalDegree_unitaryTwist`;
-- `Langlands.Representation.Plancherel.FiniteSmoothCompactEvaluation` (Worker 200):
+- `Langlands.Representation.Plancherel.FiniteSmoothCompactEvaluation`:
   `mem_finiteSmoothFamilies_of_common_open_stabilizer`;
 - `Langlands.Representation.Induction.FiniteProductTensorBijectiveProof`:
   `Induction.FiniteProductTensorBijective.evalLinear` and `smoothFunctions_ext`.
@@ -52,7 +52,7 @@ the linear map `f ↦ ψ_f[O, P]`. The continuity assertion is not addressed. Th
   `e : unitaryUnramifiedCharacters ν ≃* (J → Circle)` (Waldspurger's `Im X(M)`). `ω_z` is the
   literal twist of `π` by the character `χ_z = unitaryTorusParameter ν e z`
   (`unitaryOrbitParameterRepresentative ν π e z`).
-- `C^∞(O, P)` is `productInducedSmoothOrbitSections ν π e h hU K hP hK hνc hm hPK'` (Worker 200):
+- `C^∞(O, P)` is `productInducedSmoothOrbitSections ν π e h hU K hP hK hνc hm hPK'`:
   coherent sections whose parameter pullback, restricted to the fixed compact picture
   `ProductInducedCompactPicture h K π.obj` of functions on `K × K`, is a finite smooth family on
   `J → Circle`.
@@ -84,8 +84,8 @@ countability or the Hausdorff property of `G`.
 `fourierOrbitSection_mem_smooth` also takes:
 
 - a finite type `J` and torus coordinates `e : unitaryUnramifiedCharacters ν ≃* (J → Circle)`;
-  `hνc : ∀ i, Continuous (ν i)`; `hPK' : ∀ g, ∃ p : P, ∃ k : K, g = p k` (Worker 200's form of
-  `G = P K`);
+  `hνc : ∀ i, Continuous (ν i)`; `hPK' : ∀ g, ∃ p : P, ∃ k : K, g = p k` (the form of
+  `G = P K` taken by `productInducedSmoothOrbitSections`);
 - `hsqπ`: square integrability of `π` modulo `C` for `μM`;
 - the hypotheses of Lemma VII.1.2 (`InducedConstantTermFourier`), except those attached to one
   inducing representation: `[MeasurableInv G]`, `[μ.IsInvInvariant]`, `[SigmaFinite μ]`,
@@ -129,19 +129,19 @@ every `f ∈ C(G)`.
 3. For fixed `(k₁, k₂)`, `z ↦` that value is a finite smooth family in `E ⊗ Ě` by
    `twistTensorEquiv_coefficientFourierTransform_mem_finiteSmoothFamilies` on `M`.
 4. The values at `(k₁ l₁, k₂ l₂)` and `(k₁, k₂)` agree for `l₁, l₂ ∈ H`, by
-   `Space.constantTermInd_mul_of_isBiInvariant`. Worker 200's
+   `Space.constantTermInd_mul_of_isBiInvariant`.
    `mem_finiteSmoothFamilies_of_common_open_stabilizer`, applied to evaluation on the compact
    group `K × K` (injective) and the open subgroup `(H × H) ∩ (K × K)`, gives the finite smooth
    family.
 5. The theorem is compiled with `set_option maxHeartbeats 1000000`: the identification in step 2
-   of Worker 200's untwisting map for the representative with `twistTensorEquiv` for the literal
+   of the untwisting map for the representative with `twistTensorEquiv` for the literal
    twist is checked by definitional unfolding.
 
 ## Relation to the Library
 
 - This module combines Lemma VII.1.2 (`InducedConstantTermFourier`), the coherence of
   `ψ_f[O, P]` (`InducedFourierCoherence`) and the case `M = G` (`TwistedFourierIdentification`)
-  with Worker 200's smooth sections `C^∞(O, P)`.
+  with the smooth sections `C^∞(O, P)` (`productInducedSmoothOrbitSections`).
 
 ## Open obligations
 

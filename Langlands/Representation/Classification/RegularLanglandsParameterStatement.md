@@ -1,7 +1,5 @@
 # Regular Langlands block-rank and real-parameter uniqueness
 
-Author: Worker 346.
-
 `Langlands.GLRegularLanglandsParameterUniquenessStatement` is a closed
 proposition definition isolating the standard-parabolic and real-parameter
 conclusions of Silberger's Proposition 6.1 for the Library's actual tempered
@@ -91,7 +89,7 @@ with SHA-256
 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
 The retained file is
 `literature/Silberger (1978), The Langlands quotient theorem for p-adic groups.pdf`.
-For this contribution, printed pp.96–97, 99 and 102–103 were read as text
+For this statement, printed pp.96–97, 99 and 102–103 were read as text
 and checked in page images; one-based PDF pages are printed pages minus 94.
 No source-specific author erratum was found in the supplied errata locations.
 
@@ -107,8 +105,9 @@ The specialization also expresses the tempered Levi representation as the
 actual external tensor of the tempered blocks. Its irreducibility and
 analytic temperedness comparison need separate proofs; they are not new
 assumptions here. Passing from the source's distinguished quotients to our
-arbitrary irreducible quotient witnesses will use the separately published
-`GLRegularLanglandsHeadExistenceStatement` and its future proof: equality
+arbitrary irreducible quotient witnesses can use the separately published
+`GLRegularLanglandsHeadExistenceStatement` and its proof
+`glRegularLanglandsHeadExistence`: equality
 of kernels identifies every irreducible quotient with the head. This
 explains the reformulation without adding head hypotheses to this target.
 
@@ -118,7 +117,7 @@ The parameter argument in Proposition 6.1, pp.102–103, first uses associated
 cuspidal support to obtain a Weyl comparison. It then uses analytic
 continuation of actual class exponents, tempered cone inequalities,
 orthogonality and a Weyl-invariant inner product, followed by rigidity in
-the standard chamber. These are unproved dependencies of this statement,
+the standard chamber. These are dependencies of a proof of this statement,
 not facts supplied by declaring it.
 
 In particular, the existing `Exponents.DualJacquetStatement` states finite
@@ -138,7 +137,7 @@ likewise require matching input. They do not derive matching from an
 isomorphism of quotients.
 
 The published [Lemma 5.3 scope audit](../../../notes/jacquet/silberger-lemma53-scope.md)
-was independently approved by Reviewer 1486. It identifies a `GL₂`
+identifies a `GL₂`
 obstruction to the printed unrestricted multiplicity equality and the
 inner-constituent restriction supported by its proof. It is a source audit,
 not a Lean theorem or an author erratum. Its caution also applies to use
@@ -153,7 +152,7 @@ deliberately outside this statement. This target is a prerequisite for
 or downstream square-integrable block classification which depends on it,
 would be circular in the intended proof development.
 
-The future proof task must separate substantial missing constructions,
+A proof of this statement must separate the substantial constructions,
 statements and proofs in that dependency order, in particular the actual
 class-exponent continuation/comparison. It must preserve the weak quotient
 hypotheses, all real central twists, the one-block case, and both universe

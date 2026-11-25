@@ -1,7 +1,5 @@
 # Descent of Galois-invariant Laurent coordinates
 
-Worker 1272.
-
 This is an internal algebraic construction for the descent step following
 the cocharacter orbit sum in Milne, *Algebraic Groups* (2017), Theorem 25.1,
 printed page 544 (PDF page 560). It supplies a coordinate argument using
@@ -24,4 +22,5 @@ map of algebras over `k`.
 This file supplies the algebraic coordinate construction. Identifying
 these coordinates with the published Galois action on cocharacters and
 proving that the descended scheme map is a group homomorphism remain
-separate steps. It does not yet assert cocharacter descent.
+separate steps (`CocharacterDescent` and `CocharacterDescentGroup`). It does
+not assert cocharacter descent.

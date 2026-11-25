@@ -1,7 +1,5 @@
 # Statement: unipotent fibres of dynamic unipotent subgroups over a ring
 
-Worker 3483.
-
 `Langlands.GroupScheme.DynamicRingUnipotentFibresStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it
 adds no other definitions, theorems or axioms. It imports

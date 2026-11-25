@@ -22,13 +22,13 @@ variable {X : LocalizedCategory.{u, v, v} (K := K)}
 variable {G : Type z} [Group G] [TopologicalSpace G] {ρ : G →* Aut X}
 variable {R : Type w} [CommRing R] (S : EtaleGSheaf ρ (ModuleCat.{w} R))
 
-private abbrev plainDeck {V : EtaleSite X} (e : Aut V.left) (he : e.hom ≫ V.hom = V.hom) :
-    V ⟶ V := MorphismProperty.Over.homMk e.hom he
+private abbrev plainDeck {V : EtaleSite X} (e : Aut V.left) (he : e.asIso.hom ≫ V.hom = V.hom) :
+    V ⟶ V := MorphismProperty.Over.homMk e.asIso.hom he
 
 omit [TopologicalSpace G] in
 private theorem deckEndomorphism_eq_map {V : EtaleSite X} (e : Aut V.left)
-    (he : e.hom ≫ V.hom = V.hom) :
-    deckEndomorphism ((ι etale ρ).obj V) e he = (ι etale ρ).map (plainDeck e he) :=
+    (he : e.asIso.hom ≫ V.hom = V.hom) :
+    deckEndomorphism ((ι etale ρ).obj V) e.asIso he = (ι etale ρ).map (plainDeck e he) :=
   hom_ext rfl rfl
 
 private theorem restrict_point_inj (T : Opens (localizedSpaceFunctor.obj X)) (V : EtaleSite X) :
@@ -38,11 +38,11 @@ private theorem restrict_point_inj (T : Opens (localizedSpaceFunctor.obj X)) (V 
 
 /-- The common discrete sieve for the deck translates of the sections in a family. -/
 def deckTranslateDiscreteSieve {V : EtaleSite X} {Γ D : Type a}
-    (deck : Γ → Aut V.left) (hdeck : ∀ γ, (deck γ).hom ≫ V.hom = V.hom)
+    (deck : Γ → Aut V.left) (hdeck : ∀ γ, (deck γ).asIso.hom ≫ V.hom = V.hom)
     (s : D → S.obj.obj.obj (op ((ι etale ρ).obj V))) :
     Sieve ((ι etale ρ).obj V) :=
   ⨅ i : D × Γ, (distinguishedLiftSystem ρ).discreteSieve S.obj.obj
-    (S.obj.obj.map (deckEndomorphism ((ι etale ρ).obj V) (deck i.2) (hdeck i.2)).op (s i.1))
+    (S.obj.obj.map (deckEndomorphism ((ι etale ρ).obj V) (deck i.2).asIso (hdeck i.2)).op (s i.1))
 
 /-- If covering sieves lift ordinary points and the deck family is
 transitive on each fibre, a finite family of sections has a common finite
@@ -50,10 +50,10 @@ family of discrete restrictions that covers after shrinking the base. -/
 theorem exists_open_finite_discreteSieve_family
     (hpoints : EtaleCoveringPointsStatement.{u, v} K)
     {V : EtaleSite X} {Γ : Type a} [Finite Γ]
-    (deck : Γ → Aut V.left) (hdeck : ∀ γ, (deck γ).hom ≫ V.hom = V.hom)
+    (deck : Γ → Aut V.left) (hdeck : ∀ γ, (deck γ).asIso.hom ≫ V.hom = V.hom)
     (htrans : ∀ x y : localizedSpaceFunctor.obj V.left,
       localizedSpaceFunctor.map V.hom x = localizedSpaceFunctor.map V.hom y →
-        ∃ γ, localizedSpaceFunctor.map (deck γ).hom x = y)
+        ∃ γ, localizedSpaceFunctor.map (deck γ).asIso.hom x = y)
     {D : Type a} [Finite D] (s : D → S.obj.obj.obj (op ((ι etale ρ).obj V)))
     (x : localizedSpaceFunctor.obj V.left) :
     ∃ O : Opens (localizedSpaceFunctor.obj X), localizedSpaceFunctor.map V.hom x ∈ O ∧
@@ -67,7 +67,7 @@ theorem exists_open_finite_discreteSieve_family
   let := Fintype.ofFinite D
   let J := twistedEtaleTopology ρ
   let dS (i : D × Γ) := (distinguishedLiftSystem ρ).discreteSieve S.obj.obj
-    (S.obj.obj.map (deckEndomorphism ((ι etale ρ).obj V) (deck i.2) (hdeck i.2)).op (s i.1))
+    (S.obj.obj.map (deckEndomorphism ((ι etale ρ).obj V) (deck i.2).asIso (hdeck i.2)).op (s i.1))
   have hdS (t : Finset (D × Γ)) : t.inf dS ∈ J ((ι etale ρ).obj V) := by
     induction t using Finset.induction_on with
     | empty => exact J.top_mem _
@@ -96,10 +96,10 @@ theorem exists_open_finite_discreteSieve_family
     have hs : dS (i, e.symm j) ((ι etale ρ).map f) :=
       (iInf_le dS (i, e.symm j)) ((ι etale ρ).map f) hf
     have hres := (distinguishedLiftSystem ρ).discreteSieve_le_pullback S.obj.obj
-      (deckEndomorphism ((ι etale ρ).obj V) (deck (e.symm j)) (hdeck (e.symm j))) (s i)
+      (deckEndomorphism ((ι etale ρ).obj V) (deck (e.symm j)).asIso (hdeck (e.symm j))) (s i)
       ((ι etale ρ).map f) hs
     change (distinguishedLiftSystem ρ).discreteSieve S.obj.obj (s i)
-      ((ι etale ρ).map f ≫ deckEndomorphism ((ι etale ρ).obj V) (deck (e.symm j)) _) at hres
+      ((ι etale ρ).map f ≫ deckEndomorphism ((ι etale ρ).obj V) (deck (e.symm j)).asIso _) at hres
     rw [deckEndomorphism_eq_map, ← (ι etale ρ).map_comp] at hres
     exact hres
   · intro T hTO
@@ -126,7 +126,7 @@ theorem exists_open_finite_discreteSieve_family
     · apply restrict_point_inj T V
       change (EtaleSite.points X).map (r.app V) ((EtaleSite.points X).map (Q.map (p j)) b') = y
       have hbase : (EtaleSite.points X).map (p j) ((EtaleSite.points X).map (r.app W) b') = y := by
-        change localizedSpaceFunctor.map (f.left ≫ (deck (e.symm j)).hom) b = y
+        change localizedSpaceFunctor.map (f.left ≫ (deck (e.symm j)).asIso.hom) b = y
         rw [localizedSpaceFunctor.map_comp_apply, show e.symm j = γ from e.symm_apply_apply γ]
         exact hγ
       calc
@@ -146,10 +146,10 @@ distinguished stage with a supplied action lift. -/
 theorem exists_open_discrete_on_restriction
     (hpoints : EtaleCoveringPointsStatement.{u, v} K)
     {V : EtaleSite X} (hV : IsDistinguishedEtale V.hom) (l : ActionLift ρ V.hom)
-    {Γ : Type a} [Finite Γ] (deck : Γ → Aut V.left) (hdeck : ∀ γ, (deck γ).hom ≫ V.hom = V.hom)
+    {Γ : Type a} [Finite Γ] (deck : Γ → Aut V.left) (hdeck : ∀ γ, (deck γ).asIso.hom ≫ V.hom = V.hom)
     (htrans : ∀ x y : localizedSpaceFunctor.obj V.left,
       localizedSpaceFunctor.map V.hom x = localizedSpaceFunctor.map V.hom y →
-        ∃ γ, localizedSpaceFunctor.map (deck γ).hom x = y)
+        ∃ γ, localizedSpaceFunctor.map (deck γ).asIso.hom x = y)
     {D : Type a} [Finite D] (s : D → S.obj.obj.obj (op ((ι etale ρ).obj V)))
     (x : localizedSpaceFunctor.obj V.left) :
     ∃ O : Opens (localizedSpaceFunctor.obj X), localizedSpaceFunctor.map V.hom x ∈ O ∧

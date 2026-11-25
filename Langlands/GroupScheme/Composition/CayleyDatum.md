@@ -1,7 +1,5 @@
 # Eight-dimensional unital composition data
 
-Author: Worker 177.
-
 `CayleyDatum K` consists of a bilinear multiplication on the actual vector
 space `Fin 8 → K`, a two-sided identity vector, and a quadratic form with
 norm one on the identity, multiplicative norm, and zero radical for its

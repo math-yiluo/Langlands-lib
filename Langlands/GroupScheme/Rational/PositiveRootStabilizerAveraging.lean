@@ -60,7 +60,10 @@ theorem hasTrivialPositiveRootStabilizer
     ∑ w : H, relativeWeylCocharacterAction i w.val ν
   have hνsumfixed (w : H) : relativeWeylCocharacterAction i w.val νsum = νsum := by
     dsimp only [νsum]
-    rw [map_sum]
+    have hmap := map_sum (relativeWeylCocharacterAction i w.val).toLinearMap
+      (fun w' : H => relativeWeylCocharacterAction i w'.val ν) Finset.univ
+    rw [LinearEquiv.coe_coe] at hmap
+    rw [hmap]
     simp_rw [← LinearEquiv.mul_apply, ← map_mul]
     exact Fintype.sum_equiv (Equiv.mulLeft w) _ _ (fun _ => rfl)
   have hνsumgeneric : IsGenericCocharacter i νsum := by

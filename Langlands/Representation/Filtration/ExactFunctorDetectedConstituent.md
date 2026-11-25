@@ -1,7 +1,5 @@
 # Actual constituents detected by an irreducible exact-functor image
 
-Author: Worker 357.
-
 This internal algebraic construction chooses an actual irreducible subquotient
 of a finite-length smooth complex representation whose image under a supplied
 exact functor is nontrivial. It also constructs actual representation
@@ -119,7 +117,8 @@ A recursive native audit against Library commit
 `5f6cde0afc23676fd99240c550fb11cbac67d970` finds 95 project modules
 including this module and 76 external import roots. All 94 inherited project
 Lean/Markdown pairs agree byte for byte with that Library. There are no
-missing pairs, proof holes, or hits for the excluded host conclusions.
+missing pairs, proof holes, or hits for the conclusions excluded for the
+proof of `SegmentHeadProductIrreducibility`.
 The only classification-named modules in the import closure are
 `Supercuspidal`, `SupercuspidalSupport`, `Segments`, `ConstituentRelations`,
 and `SupercuspidalTwist`. They provide lower definitions and actual
@@ -132,18 +131,21 @@ mirabolic or derivative exactness statement is treated as a proved input.
 The closure contains none of the excluded segment-derivative, generic
 uniqueness, multisegment exhaustion, ordered-head existence, quotient coverage,
 ordered conversion, tempered uniqueness, square-integrable classification or
-exhaustion, regular exhaustion, or host irreducibility conclusions. In
-particular, it does not import either separately submitted
+exhaustion, regular exhaustion, or `SegmentHeadProductIrreducibility`
+conclusions. In particular, it does not import either
 `InvariantBilinearSmoothDual` or `HighestDerivativeConstituentQuotient`.
 
-## Scope of the host task
+## Relation to `SegmentHeadProductIrreducibility`
 
 This supporting construction does not prove
-`Langlands.Classification.SegmentHeadProductIrreducibility`. A future
+`Langlands.Classification.SegmentHeadProductIrreducibility`. An
 application must establish source finite length, exactness of its actual
 functor, and irreducibility of the actual functor image, independently and
 with the required universe conventions. No special-head derivative
 nonvanishing, truncation, product formula, linked-pair converse, or
 permutation argument is supplied here. Both directions of the full
-repeated-segment special-head criterion remain obligations of the host task,
-with its existing unsaturated base carrier universe and supplied topology.
+repeated-segment special-head criterion, with its existing unsaturated base
+carrier universe and supplied topology, are proved by
+`Langlands.Classification.segmentHeadProductIrreducibility`
+(`Classification.SegmentHeadProductIrreducibilityProof`), whose import
+closure contains this module.

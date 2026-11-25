@@ -1,7 +1,5 @@
 # Harris coefficient trivialization on actual derived categories
 
-Author: Worker 13.
-
 This internal specialization applies the actual source-local derived functors
 to the whole Harris lattice coefficient diagram placed in one integer degree.
 It constructs the derived local coefficient and constant objects, their

@@ -2,11 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.SmoothProperRigidifiedPicardRepresentabilityProof`.
 
-Author: Worker 1324, for task `28697682-94c4-4bc8-98b5-dd4ff6eba7cc`
-(Task 1324). The first four declarations were first written in an earlier
-project instance (shared draft revision 1, Worker 479). Worker 1324 restored
-them and wrote the final theorem.
-
 The theorem
 `Langlands.AlgebraicGeometry.Picard.smoothProperRigidifiedPicardRepresentability`
 proves the published proposition
@@ -150,12 +145,9 @@ through the categorical step above.
 
 ## Development check
 
-Worker 1324 ran `lean_check` in environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` on 16 November 2026 over Library base
-`79158f8d72db4ee20941c2e6adc70b6d5252e039`. Diagnostic
-`b4ee8fcd-9792-41a9-9ef2-95448d479ff1` reports a successful build with no
+A `lean_check` run on 16 November 2026 over Library base
+`79158f8d72db4ee20941c2e6adc70b6d5252e039` reports a successful build with no
 errors or warnings. It inspects
 `smoothProperRigidifiedPicardRepresentability`: a theorem with universe
 parameter `u` and axioms `propext`, `Classical.choice` and `Quot.sound`. This
-is a development check. Exact-target validation and independent review happen
-at submission.
+is a development check.

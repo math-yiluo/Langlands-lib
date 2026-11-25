@@ -39,7 +39,7 @@ definitions of `Langlands.AlgebraicGeometry.EtaleLocalSystem`, used unchanged.
 
 ## Correspondence with the source
 
-- **Normal scheme.** This is the hypothesis of the parent target
+- **Normal scheme.** This is the hypothesis of the multiplicative-type statement
   `Langlands.GroupScheme.MultiplicativeTypeNormalIsotrivialStatement`, word for word:
   every stalk `S.presheaf.stalk x` is an integrally closed domain. No noetherian
   hypothesis is imposed, as in Conrad, who notes that irreducibility can fail for
@@ -68,16 +68,18 @@ definitions of `Langlands.AlgebraicGeometry.EtaleLocalSystem`, used unchanged.
   of `S`, with open subscheme `U.toScheme` and inclusion `U.ι`, such that `F` restricted
   to `U` is isotrivial. In other words, there is a finite étale surjective
   `p : U' ⟶ U.toScheme` with `restrict (p ≫ U.ι) F ≅ constant U' M`. This uses the same
-  open-neighbourhood quantifiers as part 1 of the parent target.
+  open-neighbourhood quantifiers as part 1 of `MultiplicativeTypeNormalIsotrivialStatement`.
 - **Part 2, irreducible base.** If `S` is an irreducible space, then `F` is isotrivial
-  over `S` itself. This uses the same quantifiers as part 2 of the parent target.
+  over `S` itself. This uses the same quantifiers as part 2 of `MultiplicativeTypeNormalIsotrivialStatement`.
 
 ## Provenance and use
 
 This is a source statement, Conrad's reformulation of Corollary B.3.6 in terms of
-sheaves. In the planned proof of the parent target it is combined with:
+sheaves. In the proof of `MultiplicativeTypeNormalIsotrivialStatement`
+(`multiplicativeTypeNormalIsotrivial` in `Langlands.GroupScheme.Torus.MultiplicativeTypeNormalIsotrivialProof`) it is combined with:
 - a comparison between characters of a group of multiplicative type and local systems
-  (Worker 616's character adapter and its planned successors);
+  (`RelativeCharacterConstancyStatement` and `RelativeCharacterLocalConstancyStatement`, with
+  their proofs, assembled in `MultiplicativeTypeNormalIsotrivialAssembly`);
 - Proposition B.3.4(1), étale-local diagonalizability.
 
 The Lean encoding of "finite type locally constant" follows the published definition

@@ -1,7 +1,5 @@
 # A detected constituent of a fixed ordered cuspidal product
 
-Author: Worker 357.
-
 This is a derived supporting construction for one fixed ordered product
 of actual supercuspidal representations. It combines the general
 exact-functor constituent construction with independently proved
@@ -117,26 +115,21 @@ and `Induction.BlockEquivalence`.
 The construction is internal composition of these actual APIs; its
 mathematical content is the displayed application and universe transport.
 
-At submission the generic `ExactFunctorDetectedConstituent` pair has
-independent semantic approval and successful machine validation but
-awaits publication. Its frozen pair is the sole unpublished inherited
-pair in this import closure. It is a separately submitted generic
-prerequisite, not an additional integration payload of this unit.
-It must be published before this unit can be integrated or used as a
-proved Library input. All other inherited pairs match published Library
+The generic `ExactFunctorDetectedConstituent` pair
+(`Filtration.ExactFunctorDetectedConstituent`) is a separate generic
+prerequisite, not part of this module. All other inherited pairs in this
+import closure matched Library commit
 `b1c8a5e809be36100da09da81385a7ca6789ae80`.
-This submission supplies no publication or host-completion evidence.
 
 ## Independence audit
 
 The native recursive inventory records 807 project modules including
 this module and 251 external import roots. There are no missing modules
 or missing Markdown pairs. All 805 inherited pairs other than the
-separately reviewed generic prerequisite match the named Library
-byte for byte; that prerequisite matches its frozen reviewed pair.
-The remaining new pair is this module.
+generic prerequisite `ExactFunctorDetectedConstituent` match the named
+Library commit byte for byte. The remaining pair is this module.
 
-The closure combines the earlier audited generic constituent,
+The closure combines the separately audited generic constituent,
 finite-product top-line, supercuspidal top-line and product-finite-length
 closures. The eleven inherited additions beyond those inventories are
 `ExactFunctorIrreducibility`, `ExactSmoothSubquotients`,
@@ -155,29 +148,31 @@ The lower derivative inputs are the independently proved and published
 general derivative exactness and Leibniz rule, and the independently
 proved cuspidal-only top nonvanishing and multiplicity-one route.
 The finite-length branch uses cuspidal embedding, cuspidal induction
-length, and actual ordered regrouping. Its earlier body and import
-audits remain applicable: the inventoried inherited Lean hashes are
-unchanged. The only differences from the earlier private inventories
-are the now-published `TopLine` and `FiniteTopLine` Markdown, both
-matching the current Library. This is a combined import, byte and
-targeted proof-body audit, not a claim to have reread every inherited
-module.
+length, and actual ordered regrouping. Its body and import audits
+apply here: the inventoried inherited Lean hashes are unchanged. The
+only differences from those inventories are the `TopLine` and
+`FiniteTopLine` Markdown, both matching the named Library commit. This
+is a combined import, byte and targeted proof-body audit, not a claim to
+have reread every inherited module.
 
-The code closure contains none of the excluded special-head,
-segment-socle, parent uniqueness, exhaustion, ordered-existence,
+The code closure contains none of the special-head,
+segment-socle, special-head product uniqueness
+(`GenericSegmentProductUniqueness`), exhaustion, ordered-existence,
 quotient-coverage, ordered-conversion, tempered-uniqueness or
 square-integrable classification conclusions. Searches cover their
-Lean names, lower-case proof names and supplied task identifiers.
+Lean names and lower-case proof names.
 It imports no segment Jacquet formula, Zelevinsky 1980 segment derivative
 formula, partial-Jacquet two-supercuspidal product argument, or
 segment-socle derivative proof. The generic zero-map and
 one-dimensional-image arguments do not use the stronger
-nonvanishing-on-all-subquotients irreducibility criterion. Proof-hole
-and forbidden-execution-command scans found no hits.
+nonvanishing-on-all-subquotients irreducibility criterion. Scans for
+proof holes and for execution commands found no hits.
 
 This single-product construction proves neither irreducibility of `P`
 nor nonvanishing of every constituent. It makes no assertion comparing
 different ordered products and gives no derivative formula or
 nonvanishing result for an individual special head. Those steps, the
 linked-pair converse, and both directions of the full repeated-segment
-`SegmentHeadProductIrreducibility` criterion remain open.
+`SegmentHeadProductIrreducibility` criterion are not proved here. The
+criterion is proved, as `Classification.segmentHeadProductIrreducibility`,
+in `Classification.SegmentHeadProductIrreducibilityProof`.

@@ -1,8 +1,7 @@
 # Local finite type of original nondegenerate modules: proof
 
-Authors: Workers 6 and 633. Worker 6 supplied the complete shared proof.
-Worker 633 compared it with the accepted targets, original sources and
-published interfaces, checked its declaration and prepared this submission.
+The proof was compared with the target statements, the original sources and
+the published interfaces, and its declaration was checked.
 
 This file proves the explicit finite-subset cover
 and source AB6 targets in
@@ -19,9 +18,10 @@ Those retained pages were read in full for this proof, and PDF p.34 was
 visually checked. The original conventions on PDF pp.11–13, the
 finite-type definition on PDF pp.254–255 and the source AB6 definition
 on PDF p.269 were also read. The source fingerprints were verified.
-The public Appendix A correction note was consulted; no dedicated
+The public Appendix A correction note was consulted. The dedicated
 `notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`
-is present in the workspace. The registered earlier-edition supplement
+was not present when this proof was written; it now exists and concerns
+VII.1.2, not I.6. The registered earlier-edition supplement
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was read at PDF pp.18–19. It gives no correction of local finite type
@@ -70,5 +70,6 @@ extension beyond the source's complex-algebra setting without a field,
 unit, dimension, or Noetherianity hypothesis. The ring and module carrier
 universes remain independent. The family of finite subsets has the
 original carrier's universe, and both unequal universe specializations
-are checked. Filtered-colimit exactness, completion of I.6, and the whole
-book remain separate obligations.
+are checked. Filtered-colimit exactness is proved separately, in
+`NondegenerateModuleFilteredColimitsProof`; the rest of I.6 and the whole
+book are outside this file.

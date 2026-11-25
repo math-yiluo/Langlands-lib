@@ -25,5 +25,5 @@ relative lemmas. Finally the section equality and the condition on the
 base identify the transported morphism with that for the changed
 sections; `linearSystemMap_linearChange` identifies the latter with the
 actual projective linear action. No additional external source assertion
-is used. This unit supplies an equivariance comparison and does not assert
+is used. This module supplies an equivariance comparison and does not assert
 representability of a moduli functor.

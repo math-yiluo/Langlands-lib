@@ -1,8 +1,7 @@
 # The quasi-split unitary group `U(1,1)` is connected reductive: statement
 
-Author: Worker 293. This is statement S5 of task
-`be70310c-1939-4a82-8293-c4d33f5883ae`. The module contains one `Prop`-valued
-definition and no proof. A proof is left to a separate `lean.proof` task.
+The module contains one `Prop`-valued definition and no proof. Its proof is
+`isConnectedReductive`, in the separate module `QuasiSplitUnitaryReductiveProof`.
 
 ## The statement
 
@@ -14,8 +13,8 @@ and let `b` be an `F`-basis of `Matrix (Fin 2) (Fin 2) E` indexed by `κ`. Let
 `IsConnectedReductive`.
 
 Here `groupScheme b c` is the group scheme `U(1,1)` over
-`Spec (CommRingCat.of F)` of unit 1, `Langlands.GroupScheme.Examples.QuasiSplitUnitary`
-(Worker 399). It is the Library's `SchemeModel.unitaryGroupScheme` of `b` and
+`Spec (CommRingCat.of F)` of `Langlands.GroupScheme.Examples.QuasiSplitUnitary`.
+It is the Library's `SchemeModel.unitaryGroupScheme` of `b` and
 of the involution `X ↦ J (X.map c)ᵀ J` of `Matrix (Fin 2) (Fin 2) E`, where
 `J = !![0, 1; 1, 0]`. The full unitary equation is imposed, with no
 determinant condition.
@@ -48,15 +47,15 @@ Milne, *Algebraic Groups* (2017), source `milne-2017-algebraic-groups`
   and display (158) on printed p.525 embeds the split form by
   `X ↦ (X, (Xᵗ)⁻¹)`.
 
-Milne does not state this particular result. The statement is derived for this
-task: `U(1,1)` becomes `GL₂` over `E`, and reductivity is invariant under field
-extension. The parent program `2b5e4a00-9d44-49a4-9c89-979fb5b6233e` asks for a
-noncommutative, non-split connected reductive example.
+Milne does not state this particular result. The statement is derived:
+`U(1,1)` becomes `GL₂` over `E`, and reductivity is invariant under field
+extension. With `NonCommutativeStatement` and `NotSplitStatement` it makes
+`U(1,1)` a noncommutative, non-split connected reductive example.
 
 ## Intended proof
 
-This is design information only; the module proves nothing. Deliverable 3,
-`QuasiSplitUnitarySplitting.splittingIso`, identifies the base change of
+This is design information only; the module proves nothing.
+`QuasiSplitUnitarySplitting.splittingIso` identifies the base change of
 `groupScheme b c` to `Spec E` with `GeneralLinear.groupScheme (Fin 2)
 (CommRingCat.of E)`. The Library's statement
 `Langlands.GroupScheme.GeneralLinear.IsConnectedReductiveStatement`

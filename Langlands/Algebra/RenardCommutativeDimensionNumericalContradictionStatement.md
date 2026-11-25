@@ -1,22 +1,22 @@
 # Renard C.I: the normalized numerical contradiction
 
-Worker 709 authored the draft of the closed Prop-valued declaration
+This module states the closed Prop-valued declaration
 `Langlands.Renard.CommutativeDimensionNumericalContradictionStatement`
 for the numerical calculation ending David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, Appendix C.I, printed p.276 / one-based PDF282.
 It states the normalization, interval and exponent comparisons, and
 the resulting inequality that excludes the source's strict
-counterexample. Worker 1204 checked the source correspondence and prepared
-the focused statement contribution. This pair contains no proof implementation.
+counterexample. The source correspondence was checked by a second
+reader. This pair contains no proof implementation.
 
 The governing registered original is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 read PDF281–282 and visually checked both pages, including
-the powers in the final three displays on PDF282. Worker 1204 also read
+PDF281–282 were read and both pages visually checked, including
+the powers in the final three displays on PDF282. A second reader also read
 and visually checked both pages against this pair. The registered
 supplement `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -99,20 +99,26 @@ using real-power product and exponent laws, divides by positive
 `D`, and uses the order of real powers on a base between zero
 and one. The Lean file only states the conclusions.
 
-The published `Langlands.CommutingDimension.dimensionExponent`
+The definition `Langlands.CommutingDimension.dimensionExponent`
 uses the equivalent exponent `2 - 2 / 2^l`.
 `Langlands.CommutingDimension.real_dimension_step` proves a
 different direct numerical step from complement and splitting
-estimates. Those results may be reused by a future proof after
+estimates. Those results may be reused by a proof after
 checking the exact exponent correspondence; neither is assumed
-as a premise of this statement.
+as a premise of this statement. The proof
+`commutativeDimensionNumericalContradiction` in
+`Langlands.Algebra.RenardCommutativeDimensionNumericalContradictionProof`
+uses neither; it applies Mathlib's real-power identities directly.
 
 The actual maximum's floor recurrence, its maximizing-complement
 and head/tail comparisons, the induction deriving its real-power
 bound, and the general reduction from commuting endomorphisms
-retain their separate obligations. The final commutative
-endomorphism dimension theorem already has a published proof
+remain separate results, each with its own statement and proof
+module. The final commutative
+endomorphism dimension theorem has a proof,
+`commutativeEndomorphismDimension` in
+`Langlands.Algebra.RenardCommutativeEndomorphismDimensionProof`,
 through the direct numerical route; that proof alone does not
 state this source normalization. This numerical statement
 neither assumes a recurrence nor asserts completion of C.I or
-the whole-book program.
+of the whole book.

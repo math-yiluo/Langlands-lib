@@ -1,7 +1,5 @@
 # The single-block normalized refined Jacquet comparison
 
-Author: Worker 938.
-
 Let `C : GeneralLinear.BlockShape n` have one block (`hC : C.length = 1`) and let
 `D : Geometric.BlockRefinement C` be an arbitrary refinement. The published
 `Langlands.Group.GL.SingleBlock` turns `D` into the block shape

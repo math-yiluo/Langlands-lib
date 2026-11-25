@@ -24,7 +24,7 @@ of a point in term `d`. Coordinates below `d + 1` vanish; coordinates above
 inverse factor-product equivalence therefore reads precisely the original
 coordinates of weight `d + 1`, as `layerCoordinates_apply` proves.
 
-This unit supplies pointwise additive quotient coordinates. Representation of
+This module supplies pointwise additive quotient coordinates. Representation of
 the quotient map, its fppf properties and exact kernel, a finite series, and the
 construction and descent for a supplied relative radical remain separate
 obligations. No external source translation is claimed.

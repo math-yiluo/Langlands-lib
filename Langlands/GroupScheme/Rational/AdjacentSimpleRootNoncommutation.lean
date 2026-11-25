@@ -19,7 +19,7 @@ variable {k : Type u} [Field k]
     {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
     (p : SplitPinning G)
 
-local instance : Mono p.inclusion.hom.hom.left := p.isMaximalTorus.2.1.mono
+private local instance : Mono p.inclusion.hom.hom.left := p.isMaximalTorus.2.1.mono
 
 /-- Specified normalized points of adjacent simple root groups do not commute. -/
 def AdjacentSimpleRootNoncommutationStatement : Prop :=

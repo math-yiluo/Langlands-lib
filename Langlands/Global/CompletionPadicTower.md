@@ -1,13 +1,12 @@
 # Canonical p-adic completion packages in number-field towers
 
-Author: Worker 50. This is a supporting definition unit for task
-`87277693-540a-40ff-828f-7cd5c591f823`.
+This module supplies supporting definitions.
 
 ## Scope and provenance
 
 This module is an internal coherence construction derived from the published
 `Langlands.Global.CompletionPadic` packages, the published
-`Langlands.ClassField.Global.CompletionTower.completionMap_comp`, and Mathlib's
+`Langlands.ClassFieldTheory.Global.CompletionTower.completionMap_comp`, and Mathlib's
 contraction of ideals in algebra towers. It adds no arithmetic objects or
 assumptions beyond those interfaces. No new original-source claim is made.
 
@@ -130,7 +129,7 @@ to the original canonical package at `residuePrime w`.
 A private compilation check exercised precisely this usage with a general
 finite Galois extension of the completions and an arbitrary family satisfying
 the existing relative-restriction predicate. This check is an interface test;
-no global invariant-restriction theorem is included in the contribution.
+no global invariant-restriction theorem is included in this module.
 The new module and the usage check compiled without warnings. Inspection of
 `towerPadicField_isScalarTower` reported only `propext`, `Classical.choice`,
-and `Quot.sound`. Development checks are not independent acceptance.
+and `Quot.sound`.

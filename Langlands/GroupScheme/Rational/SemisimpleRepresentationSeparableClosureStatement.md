@@ -167,7 +167,11 @@ reprint (source ID `milne-2022-algebraic-groups-errata-2026-11-04`, SHA-256
 Chapter 22, an entry on p. 465 that concerns 22.8 ("X ⊂ X₀ + P(Φ)" holds only
 modulo `X₀`) and one on p. 478 (proof of 22.42); neither concerns 22.7.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The Library proves the proposition as
+`reductiveSemisimpleRepresentationSeparableClosure` in
+[`Rational.SemisimpleRepresentationSeparableClosureProof`](SemisimpleRepresentationSeparableClosureProof.md).
 
 A possible route, following Milne:
 

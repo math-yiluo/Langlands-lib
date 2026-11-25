@@ -1,7 +1,7 @@
 # Full Weyl images and containment of normalizer points
 
 This is internal derived content, uniform in universe `u`. It uses the
-published map `normalizerPointsMap` and its compatibility with the full
+map `normalizerPointsMap` and its compatibility with the full
 character action, the split-torus identification of the action kernel with
 the centralizer, and finiteness of the full Weyl image for a closed split
 torus in an affine algebraic group.
@@ -38,5 +38,5 @@ group over a field, the Library finiteness theorem supplies the required
 finite image. Thus `normalizerPoints_le_range_of_natCard_le` derives
 normalizer containment from the reverse quotient-order bound and all-test
 centralizer containment. The subgroup map need not be open or closed.
-This unit retains the order and centralizer premises; it does not assert
+This module retains the order and centralizer premises; it does not assert
 them for a family or prove reductive-monomorphism closedness.

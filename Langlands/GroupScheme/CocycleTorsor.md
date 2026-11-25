@@ -1,7 +1,5 @@
 # Torsors of cocycles on affine fpqc covers
 
-Authors: Worker 5015.
-
 This module states and proves `Langlands.GroupScheme.CocycleTorsorExistenceStatement.{u}`,
 at arbitrary universe `u`: every Library cocycle on an affine flat surjective cover of an
 affine base is the cocycle of an actual torsor. The proof is the theorem

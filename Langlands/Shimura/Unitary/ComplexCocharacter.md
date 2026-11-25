@@ -1,7 +1,5 @@
 # Complex cocharacters of the constructed Harris group
 
-Author: Worker 57.
-
 This module constructs actual group-scheme morphisms from the complex
 multiplicative group to the complex pullback of the rational Harris similitude
 group. It first constructs the two factor cocharacters of the complex Deligne
@@ -120,9 +118,10 @@ and selects `first = true`.
 ## Remaining scope
 
 The result constructs the actual cocharacters and their all-test-scheme point
-and multiplier formulas. It does not yet split the complex target into its
-matrix factors, calculate its representation weights, prove invariance under
-changing charts, or identify the cocharacter conjugacy-class stabilizer with
-the previously computed coordinate Hodge stabilizer. Smoothness, reductivity,
-PEL representability, canonical models, scheme levels and coefficient descent
-remain obligations of the host task.
+and multiplier formulas. It does not split the complex target into its matrix
+factors, calculate its representation weights (`ComplexCocharacterMatrices`
+computes the matrices of the Harris cocharacter), prove invariance under
+changing charts, or identify the cocharacter conjugacy-class stabilizer with the
+previously computed coordinate Hodge stabilizer. Smoothness, reductivity, PEL
+representability, canonical models, scheme levels and coefficient descent remain
+separate obligations.

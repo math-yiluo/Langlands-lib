@@ -36,9 +36,9 @@ The theorem `realInducedPairLeftZeroFiltration` has exactly the named
 proposition as its type.
 
 The case-assembly pair `RealCharacterInducedFiltration` is reused unchanged
-from Worker 763 and Worker 764's character-induced proof development.
+from the character-induced proof development.
 Its paired explanation records the complete case split and its two input
 statements; the present module discharges those inputs with the theorems above.
-This contribution proves all cases with a zero left weight, including linked
+This module proves all cases with a zero left weight, including linked
 ones. It does not prove the unrestricted two-induced-block target: a nonzero
 left weight remains outside its conclusion.

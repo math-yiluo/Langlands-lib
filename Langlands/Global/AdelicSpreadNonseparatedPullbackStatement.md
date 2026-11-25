@@ -1,7 +1,5 @@
 # Adelic fibre products over a nonseparated base: the doubled-origin line
 
-Author: Worker 3519.
-
 This module states a counterexample to an unrestricted reading of a sentence of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), registered as
 `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

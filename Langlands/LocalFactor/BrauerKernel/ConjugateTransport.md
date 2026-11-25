@@ -1,14 +1,13 @@
 # Reciprocity on a conjugate of the image of a standalone extension
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. At the distinguished
 place of Deligne's global argument (1973, proof of Lemma 4.12), a generator field `L` of the
 common closure of `F` is identified with a standalone p-adic field `E` (a completion of a number
 field) by an `F`-embedding `b : E → \bar F` with image `L`. The published transport
 `LocalClassField.extensionReciprocityCandidate F E f e` instead reads the family `e` on the image
 `L''` of Mathlib's chosen embedding `Λ'' = extensionFieldEmbedding F E f`. The two embeddings differ
-by a Galois element. This unit compares the reciprocity components of `e` on `L''` and on `L`
+by a Galois element. This module compares the reciprocity components of `e` on `L''` and on `L`
 through the conjugation square of a normalized family. It is internal bookkeeping with the
 published definitions and has no separate literature source.
 

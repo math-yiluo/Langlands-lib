@@ -1,7 +1,5 @@
 # Integral sections and finite carriers of outer classes
 
-Worker 635.
-
 These are internal consequences of the supplied outer-class interface
 and the published extension of generic points in finite schemes over
 valuation rings. They require neither reductivity nor existence of an
@@ -26,5 +24,5 @@ section over the base. The forward implication is the existing
 proved using the valuative criterion for finite morphisms. The reverse
 implication is `ofIntegralClass`. No uniqueness is asserted for the
 integral outer class, since separatedness of the outer parameter is not
-assumed. The theorem does not supply the section or prove the target
+assumed. The theorem does not supply the section or prove the
 finite-carrier existence assertion for reductive groups.

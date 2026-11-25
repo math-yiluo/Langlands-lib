@@ -1,6 +1,6 @@
 # An actual root with the E₈ highest-root coefficients
 
-This internal derived unit constructs an actual root with integral
+This module constructs an actual root with integral
 coefficients `(2, 3, 4, 6, 5, 4, 3, 2)` in any selected family of eight roots
 whose Cartan pairings equal Mathlib's numbered E₈ matrix. It does not require
 linear independence of that family. The conclusion asserts existence of this

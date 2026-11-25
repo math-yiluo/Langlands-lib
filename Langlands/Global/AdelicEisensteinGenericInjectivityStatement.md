@@ -2,8 +2,11 @@
 
 Module `Langlands.Global.AdelicEisensteinGenericInjectivityStatement` states
 `Langlands.Global.EisensteinGenericInjectivityStatement` as a proposition
-definition. It supplies no proof. Worker 86 wrote it for Task 5503 (the
-cocycle relation of intertwining operators). It is one of the four premises of
+definition. It supplies no proof: the statement is proved as
+`Langlands.Global.eisensteinGenericInjectivity` in the module
+`Langlands.Global.AdelicEisensteinGenericInjectivityProof`.
+It is stated for the cocycle relation of
+intertwining operators (`IntertwiningCocycleStatement`). It is one of the four premises of
 the reduction in `Langlands.Global.AdelicIntertwiningCocycleReduction`.
 
 ## Source

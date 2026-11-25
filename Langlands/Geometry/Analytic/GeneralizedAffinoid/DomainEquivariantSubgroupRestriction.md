@@ -1,7 +1,5 @@
 # Subgroup restriction of represented-locus actions and equivariant maps
 
-Author: Worker 56.
-
 Fix a complete ultrametric normed field `K : Type u`, a presented finite
 positive-polyradius affinoid quotient `P`, a topological group `G : Type v`
 and a supplied `ρ : DomainSpectralAction G P`. For open subgroups `J ≤ H`,

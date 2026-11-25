@@ -94,5 +94,6 @@ RationalCuspidalFixedCoefficientLiftingStatement.{u,uV}`.
 preceding theorem. It is an internal conditional reduction. It neither
 proves the lifting target nor adds a hypothesis to it. A closed proof of
 the target follows by applying it to closed proofs of the two inputs
-(owned by Task 7438 for convergence and by the VIII.4.2 lower-inclusion
-work, respectively).
+(convergence is proved as `rationalSchwartzCentralConvergence`; the lower
+inclusion `RationalCuspidalDiscreteCoefficientLowerInclusionStatement` is not proved
+unconditionally in the Library).

@@ -1,6 +1,6 @@
 # The irreducible-Weil/supercuspidal local Langlands correspondence
 
-Author: Worker 7. This module states the local Langlands correspondence
+This module states the local Langlands correspondence
 between irreducible representations of the Weil group and supercuspidal
 representations of `GL_n(F)`, for every p-adic field `F` and every rank
 `n ≥ 1`. It defines the correspondence predicate on a supercuspidal map and
@@ -9,7 +9,7 @@ are propositions; none is proved, and no correspondence is an input.
 
 The full correspondence (Frobenius-semisimple Weil–Deligne parameters with
 nonzero monodromy, and all irreducible admissible representations) is a
-separate statement of this task. This module covers only the zero-monodromy
+separate statement. This module covers only the zero-monodromy
 irreducible case.
 
 ## The correspondence predicate
@@ -98,5 +98,5 @@ Source files:
 
 ## Validation
 
-The module compiles in the project Lean service with no errors or warnings.
+The module compiles with no errors or warnings.
 There is no `sorry` and no new axiom. Every definition returns `Prop`.

@@ -1,6 +1,6 @@
 # Maximal p-subgroups over finite fields
 
-Worker 302 isolates the finite reductive-group prerequisite used in the
+This module isolates the finite reductive-group prerequisite used in the
 proof of Kaletha–Prasad Proposition 13.5.2. This pair states a proposition;
 it does not prove it.
 
@@ -41,6 +41,6 @@ to be a separately numbered theorem in KP.
 
 The 1 November 2024 corrections, PDF p.49, replace the ambient local group
 in Proposition 13.5.2(1) by its zero subgroup. This does not alter the
-finite-field classification isolated here. Proving this statement and
-applying it to the supplied reductive quotient remain separate
-obligations.
+finite-field classification isolated here. The statement is proved as
+`finiteFieldSylowBorel` in `Rational.FiniteFieldBorelSylow`; applying it to
+the supplied reductive quotient is not part of this module.

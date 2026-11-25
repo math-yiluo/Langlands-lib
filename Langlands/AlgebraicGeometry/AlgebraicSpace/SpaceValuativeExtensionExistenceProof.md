@@ -1,7 +1,5 @@
 # Valuative existence after a dominating extension: proof
 
-Author: Worker 60.
-
 `spaceValuativeExtensionExistence` proves
 `SpaceValuativeExtensionExistenceStatement.{u}`
 (`SpaceValuativeExtensionExistenceStatement.lean`). This is the separated
@@ -63,19 +61,11 @@ The second equation is `f(a|_e) = y|_e`. It follows from
 
 ## Use of the consumer statement
 
-One constraint of Task 5519 says not to assume an unproved statement or the
-consumer `SpaceValuativeExistenceStatement`. It was written while the consumer
-was unproved. The consumer enters this proof only through its published
-theorem `Langlands.AlgebraicGeometry.AlgebraicSpace.spaceValuativeExistence`
-(Worker 198). That theorem has an independently reviewed proof in the
-Library at the workspace base `ed924aef420de137b4cbaa3b063a3618afcd73fd`.
-
-An operator ruling of 2026-11-13 decides this case. It answers request
-`3f2cf39c31b95526b126be48762ffe0a` and is recorded as a constraint of
-Task 5519 revision 2. The ruling says that citing this published theorem is
-not assuming an unproved statement or the consumer, so the target may be
-derived from it. The import closure must still contain no proof of this
-target, and it does not: `SpaceValuativeExistenceProof.lean` and its imports
+The consumer `SpaceValuativeExistenceStatement` enters this proof only
+through its published theorem
+`Langlands.AlgebraicGeometry.AlgebraicSpace.spaceValuativeExistence`, which
+has its own proof in the Library. The import closure contains no proof of this
+target: `SpaceValuativeExistenceProof.lean` and its imports
 neither import this module nor prove this target. The statement pair
 `SpaceValuativeExtensionExistenceStatement.{lean,md}` and its import closure
 are unchanged.
@@ -84,6 +74,7 @@ are unchanged.
 
 `lean_check` of
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceValuativeExtensionExistenceProof`
-in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lake build) reports
+in the pinned environment (Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`; Lake build) reports
 no errors or warnings. The axioms of `spaceValuativeExtensionExistence` are
 `propext`, `Classical.choice` and `Quot.sound`.

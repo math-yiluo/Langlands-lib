@@ -1,7 +1,5 @@
 # Special-fibre isomorphisms are open and closed immersions
 
-Worker 356 and Worker 748.
-
 This module proves the immersion half of the complete-local deformation
 statement. Over a complete local noetherian ring `R`, let `G` be an affine
 group of finite type and let `H` become diagonalizable after a finite étale
@@ -20,8 +18,9 @@ actual coordinate algebra `O(G)`. Finite type over the noetherian base makes
 `O(G)` noetherian. The actual special-fibre isomorphism gives a unit
 coefficient in each character degree, and it detects membership in multiples
 of the maximal ideal through the coordinate map `π : O(G) → R[M]`. The
-maximal ideal of a local ring is its Jacobson radical. Worker 748's pure
-bialgebra theorem `surjective_and_ker_eq_span_idempotent` therefore gives
+maximal ideal of a local ring is its Jacobson radical. The pure
+bialgebra theorem `surjective_and_ker_eq_span_idempotent` (module
+`CompleteLocalDeformation.OpenClosed`) therefore gives
 surjectivity of `π` and an idempotent generating its kernel. The certificate
 records this idempotent and both properties. The actual source-coordinate
 comparison translates them into an open and closed immersion of the actual

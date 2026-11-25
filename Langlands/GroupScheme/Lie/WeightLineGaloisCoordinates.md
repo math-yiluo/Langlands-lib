@@ -30,7 +30,7 @@ extension is needed. The noncomputable definition
 `rootWeightEquivariantLinearEquiv_galois` proves the same intertwining law
 for that chosen map, for every stabilizer element and coefficient.
 
-The dimension-one hypothesis is explicit and is not proved here. This unit
+The dimension-one hypothesis is explicit and is not proved here. This module
 neither realizes an actual root subgroup nor transfers such a subgroup's
 dimension to its intrinsic adjoint weight space. It does not prove that a
 relative-root restriction fiber is one Galois orbit, identify rational root

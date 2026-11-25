@@ -98,9 +98,7 @@ chosen reduction trivialization.
 ## Provenance and scope
 
 These are internal applications of the proved actual coefficient-unit,
-frame, pullback and tensor gluing constructions. Worker 509 authored
-this specialization; Worker 207 authored the reused gluing
-constructions. The module does not assert the final tangent-space or
+frame, pullback and tensor gluing constructions. The module does not assert the final tangent-space or
 rigidified Picard comparison. The ordinary deformation-class quotient,
 its comparison with actual derived H1, rigidification and scalar
 compatibility are subsequent obligations.

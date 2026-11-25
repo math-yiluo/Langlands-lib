@@ -1,7 +1,5 @@
 # Diagonalizable group schemes of character groups
 
-Author: Worker 228.
-
 For a commutative ring `R : CommRingCat` and an additive commutative group `Λ` (both in
 universe `u`), this module constructs the diagonalizable group scheme `D(Λ) = Spec R[Λ]` over
 `Spec R` with the published `Corepresented` interface ([`Corepresented`](../Corepresented.md)).

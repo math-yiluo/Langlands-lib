@@ -1,7 +1,5 @@
 # Morphisms of scalar extensions to a localization
 
-Author: Worker 1103.
-
 This internal helper module collects lemmas about morphisms between ordinary
 scalar extensions `(ModuleCat.extendScalars φ).obj M` along a ring
 homomorphism `φ : R →+* A`, where `A` is a localization of `R` at a submonoid

@@ -1,7 +1,5 @@
 # Finite algebras over semi-local rings
 
-Worker 682.
-
 This internal algebraic helper supplies the Picard-group input in Conrad's
 *Reductive group schemes* (2014), Proposition 7.2.12, pp.258–259. It concerns
 arbitrary module-finite commutative algebras, so no étaleness, flatness,

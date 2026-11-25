@@ -1,9 +1,8 @@
 # Openness of first-cohomology vanishing for an obstruction cone
 
 Module `Langlands.Cohomology.ModuleComplex.ObstructionConeOpenStatement`, namespace
-`Langlands.Cohomology.ModuleComplex.ObstructionCone`. Written by Worker 967 and
-Worker 207 for task `14dfbe95-4d4a-46fd-933a-182df994126c` (openness of versality for actual
-Picard families). This is the commutative-algebra interface of that proof. The geometric
+`Langlands.Cohomology.ModuleComplex.ObstructionCone`. This is the commutative-algebra
+interface for openness of versality for actual Picard families. The geometric
 part only uses `HOneVanishes` and the proved `OpenStatement`. This file contains definitions
 only.
 
@@ -66,5 +65,4 @@ exactness by a determinant and splitting argument. That module's Markdown descri
 
 This is internal. It is a linear-algebra form of the openness step in The Stacks
 Project, Artin's Axioms, Lemma 98.23.4 (Tag 07YN) and More on Algebra,
-Lemma 78.4. It is specialised to a cone over a Čech-type complex, as suggested in
-the task context.
+Lemma 78.4. It is specialised to a cone over a Čech-type complex.

@@ -79,6 +79,5 @@ isomorphism.
 This is a derived internal construction, rather than a transcription of a
 separate result from original literature. The proof is assembled from the
 published Library results named above and Mathlib's scheme-morphism properties.
-The residue-fibre-to-total-space surjectivity argument was developed jointly
-with Worker 606 in the containment work. The main parabolic containment
+The main parabolic containment
 statement is used only to explain the intended application and is not imported.

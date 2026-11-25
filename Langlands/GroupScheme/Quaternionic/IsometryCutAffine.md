@@ -1,7 +1,5 @@
 # Original-algebra equations for affine isometry-cut points
 
-Author: Worker 118.
-
 This internal helper transports the existing isometry-cut equation from
 relative global sections to the original algebra over the base field.
 The algebra is associative and may be noncommutative; it has finite

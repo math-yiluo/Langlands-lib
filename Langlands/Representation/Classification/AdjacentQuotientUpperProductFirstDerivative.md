@@ -1,7 +1,5 @@
 # The first common-rank derivative of an increasing quotient times its upper factor
 
-Author: Worker 168.
-
 This is an internal prerequisite for the repeated-cuspidal triple transfers.
 The proposition
 `Langlands.Classification.IncreasingAdjacentQuotientUpperProductFirstDerivative`
@@ -106,14 +104,11 @@ exactly the finite-length and upper-support conclusions described above.
 The generic Artinian, two-reference gluing, rank-transport and pair-support
 helpers describe their implemented actual maps and quotient objects.
 
-The recursive project import closure has 941 modules, including this entry.
-Five entries differ by absence from base
-`e058cb4d3adbd71764731d87c4cbfcb5805696e8`: this entry,
+The recursive project import closure has 952 modules, including this one.
+Its prerequisites there include
 `AdjacentQuotientUpperProductDerivatives`, `AdjacentQuotientUpperProduct`,
 `TwoSupercuspidalTopDerivatives`, and `Derivative.LocalPositiveLeibniz`.
-The latter four are separately submitted prerequisites; their independent
-review and integration remain separate gates. The other 936 project Lean
-files are byte-identical to that base. All project modules have Markdown
+All project modules have Markdown
 pairs. External imports come from Lean and Mathlib.
 
 Relative to the order-`2d` prerequisite, the substantive additional finite-length
@@ -131,16 +126,19 @@ minimal nonzero Jacquet modules and nonassociation vanishing supply detection.
 This uses no general ordered quotient coverage or global support decomposition.
 
 The inherited order-`2d`, product-top, and positive-Leibniz dependencies retain
-their previously documented proof routes. In particular the mixed-product
+the proof routes documented on their own pages. In particular the mixed-product
 premises are discharged from actual minus identities and exact localization;
 the quotient top calculation uses the individual highest-support shift,
 integral twist freeness and Whittaker multiplicity one. Imported broad
 classification proposition definitions are not applied as proved conclusions.
-No used proof depends on the host's excluded segment classification,
+No used proof depends on the segment classification,
 special-head or ordered-head existence, multisegment or regular exhaustion,
 tempered uniqueness, square-integrable exhaustion or square-integrable
-Langlands classification, including renamed conclusions or proof successors.
+Langlands classification, including renamed conclusions or the files that prove them.
 
-The remaining host work is all-subquotient top nonvanishing and irreducibility
-of `Q × A`, then both actual repeated-triple transfers and the final exact
-ambient conjunction. This prerequisite does not close those obligations.
+This prerequisite does not prove all-subquotient top nonvanishing and
+irreducibility of `Q × A`, which are proved in
+`Classification.IncreasingAdjacentQuotientUpperProductIrreducibility`, nor
+both actual repeated-triple transfers and the final exact ambient
+conjunction, which `RepeatedCuspidalTripleJacquetTransfer` states and
+`Classification.RepeatedCuspidalTripleJacquetTransferProof` proves.

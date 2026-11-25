@@ -11,7 +11,9 @@ a quasi-separated algebraic space of finite type over `R'` is a quasi-separated 
 space of finite type over `R`, separated or of finite presentation when the original space
 is. Conrad's Proposition 5.11(1): for a finite extension `K'/K` of henselian valued fields,
 the identification `Res_{K'/K}(Y')(K) = Y'(K')` is a homeomorphism for the étale-chart
-topologies.
+topologies. As it is printed, and as it is transcribed here, that proposition is false: it
+needs the module topology on `K'` over `K`. The statement with that hypothesis is
+`HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement`, which the Library proves.
 -/
 
 noncomputable section
@@ -45,7 +47,15 @@ henselian valued fields, the norm of `K'` restricting to that of `K`. For every
 quasi-separated algebraic space `Y'` of finite type over `Spec K'`, the Weil restriction
 `Res_{K'/K}(Y')` is an algebraic space over `Spec K`, and the identification
 `Res_{K'/K}(Y')(K) = Y'(K')` is a homeomorphism for the étale-chart topologies over `K`
-and over `K'`. -/
+and over `K'`.
+
+**False as stated.** It fails for some finite purely inseparable extensions of incomplete
+henselian valued fields: the proof in the source uses the comparison of its Example 2.4,
+which assumes the module topology on `K'` over `K`, and henselianity alone does not give it.
+The correct statement adds `IsModuleTopology K K'`:
+`HenselianWeilRestrictionPointHomeomorphOfModuleTopologyStatement`, proved by
+`henselianWeilRestrictionPointHomeomorphOfModuleTopology`. This definition records the
+literal form only; nothing uses it. -/
 def HenselianWeilRestrictionPointHomeomorphStatement : Prop :=
   ∀ (K K' : Type u) [NontriviallyNormedField K] [NontriviallyNormedField K']
     [NormedAlgebra K K'] [FiniteDimensional K K'],

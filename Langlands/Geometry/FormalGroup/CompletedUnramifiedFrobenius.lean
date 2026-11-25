@@ -88,7 +88,7 @@ private theorem completedUnramifiedReduction_eq_evalOne (x : Ĉ) :
     rw [AdicCompletion.maximalIdeal_eq_map, ← ker_evalOneₐ_eq_map mC (mC).fg_of_isNoetherianRing]
     exact he
   have hres : residue Ĉ x = residue Ĉ (toCompletedUnramifiedIntegers F y) := by
-    rw [← sub_eq_zero, ← map_sub, residue_eq_zero_iff]
+    rw [← sub_eq_zero, ← (residue Ĉ).map_sub, residue_eq_zero_iff]
     exact hx
   change completedUnramifiedResidueEquiv F (residue Ĉ x) = _
   rw [hres, completedUnramifiedResidueEquiv_residue, hy]

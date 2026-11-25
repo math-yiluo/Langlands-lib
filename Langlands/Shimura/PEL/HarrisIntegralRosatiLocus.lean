@@ -69,8 +69,8 @@ variable (H : Over S)
 /-- The actual equalizer of the finite Harris Rosati equations for an integral action family. -/
 abbrev integralRosatiLocus : Over S :=
   relativeHomEquationLocus B.toCommGroupScheme (DB).toCommGroupScheme H e
-    (fun k => commHom (a (basisO k) ≫ lam))
-    (fun k => commHom (lam ≫ dualInt (a (tauO (basisO k)))))
+    (fun k => commHom ((a (basisO k)).asHom ≫ lam))
+    (fun k => commHom (lam ≫ dualInt (a (tauO (basisO k))).asHom))
 
 
 /-- The finite Rosati locus is a closed subscheme of the action family's base. -/
@@ -79,8 +79,8 @@ instance integralRosatiLocus_isClosedImmersion [IsSeparated H.hom] :
       associativity comparison symmetry stability B hB MB evaluationB geometryB H e a lam).hom :=
   inferInstanceAs (IsClosedImmersion
     (relativeHomEquationLocus B.toCommGroupScheme (DB).toCommGroupScheme H e
-      (fun k => commHom (a (basisO k) ≫ lam))
-      (fun k => commHom (lam ≫ dualInt (a (tauO (basisO k)))))).hom)
+      (fun k => commHom ((a (basisO k)).asHom ≫ lam))
+      (fun k => commHom (lam ≫ dualInt (a (tauO (basisO k))).asHom))).hom)
 
 instance integralRosatiLocus_isLocallyNoetherian [IsSeparated H.hom] :
     IsLocallyNoetherian (integralRosatiLocus D C preservation composition unitCoherence
@@ -115,16 +115,16 @@ local notation "dualIntT" => dualAbelianSchemeMapFromEvaluation hT geometryT pre
 
 omit [IsLocallyNoetherian S] in
 private theorem integralRosatiPullbackEquation_iff (f g : CategoryTheory.End B) :
-    (baseChange T.obj.hom).map (f ≫ lam) =
-        (baseChange T.obj.hom).map (lam ≫ dualInt g) ↔
-      (baseChange T.obj.hom).map f ≫ pullLam lam =
-        pullLam lam ≫ dualIntT ((baseChange T.obj.hom).map g) := by
-  have leftEq : (baseChange T.obj.hom).map (f ≫ lam) ≫ (beta).hom =
-      (baseChange T.obj.hom).map f ≫ pullLam lam := by
+    (baseChange T.obj.hom).map (f.asHom ≫ lam) =
+        (baseChange T.obj.hom).map (lam ≫ dualInt g.asHom) ↔
+      (baseChange T.obj.hom).map f.asHom ≫ pullLam lam =
+        pullLam lam ≫ dualIntT ((baseChange T.obj.hom).map g.asHom) := by
+  have leftEq : (baseChange T.obj.hom).map (f.asHom ≫ lam) ≫ (beta).hom =
+      (baseChange T.obj.hom).map f.asHom ≫ pullLam lam := by
     rw [Functor.map_comp, Category.assoc]
     rfl
-  have rightEq : (baseChange T.obj.hom).map (lam ≫ dualInt g) ≫ (beta).hom =
-      pullLam lam ≫ dualIntT ((baseChange T.obj.hom).map g) := by
+  have rightEq : (baseChange T.obj.hom).map (lam ≫ dualInt g.asHom) ≫ (beta).hom =
+      pullLam lam ≫ dualIntT ((baseChange T.obj.hom).map g.asHom) := by
     rw [Functor.map_comp, Category.assoc,
       dualAbelianBaseChangeNaturality preservation stability composition unitCoherence
         associativity comparison symmetry universality compatibility S T.obj.left T.obj.hom B B

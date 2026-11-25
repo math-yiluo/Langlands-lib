@@ -234,6 +234,7 @@ theorem fieldBaseChangeHom_isClosedSubgroup :
     ((VectorGroup.fieldBaseChangeIso k F 1).inv.hom.hom.left ≫
       ((GroupScheme.baseChange bc).map x.hom).hom.hom.left)
   have : IsClosedImmersion ((GroupScheme.baseChange bc).map x.hom).hom.hom.left := hc
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- Torus equivariance of the root map persists on all scheme tests. -/

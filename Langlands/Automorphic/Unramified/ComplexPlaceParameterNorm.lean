@@ -70,7 +70,7 @@ the selected coordinates. -/
 theorem extensionEmbedding_completionMap_of_comp_eq (v : NumberField.InfinitePlace K)
     (w : InfinitePlacesAbove L v) (h : w.1.embedding.comp (algebraMap K L) = v.embedding)
     (y : v.Completion) :
-    extensionEmbedding w.1 (NumberField.LiesOver.completionMap y) = extensionEmbedding v y := by
+    extensionEmbedding w.1 (NumberField.LiesOver.completionMap v w.1 y) = extensionEmbedding v y := by
   have : ComplexEmbedding.LiesOver w.1.embedding v.embedding := ⟨h⟩
   have := liesOver_extensionEmbedding w.1 v
   exact liesOver_extensionEmbedding_apply w.1 v (φ := extensionEmbedding w.1) (x := y)
@@ -80,7 +80,7 @@ omit [NumberField K] in
 theorem extensionEmbedding_completionMap_of_comp_ne (v : NumberField.InfinitePlace K)
     (w : InfinitePlacesAbove L v) (h : ¬ w.1.embedding.comp (algebraMap K L) = v.embedding)
     (y : v.Completion) :
-    extensionEmbedding w.1 (NumberField.LiesOver.completionMap y) =
+    extensionEmbedding w.1 (NumberField.LiesOver.completionMap v w.1 y) =
       starRingEnd ℂ (extensionEmbedding v y) := by
   have hc : (ComplexEmbedding.conjugate w.1.embedding).comp (algebraMap K L) = v.embedding :=
     (NumberField.InfinitePlace.LiesOver.embedding_comp_eq_or_conjugate_embedding_comp_eq
@@ -117,7 +117,7 @@ theorem extensionEmbedding_localNorm (v : NumberField.InfinitePlace K) (hv : v.I
   let e := ringEquivComplexOfIsComplex hv
   split_ifs with h
   · set y := e.symm (extensionEmbedding w.1 x) with hydef
-    have hy : NumberField.LiesOver.completionMap y = x := by
+    have hy : NumberField.LiesOver.completionMap v w.1 y = x := by
       apply (isometry_extensionEmbedding w.1).injective
       rw [extensionEmbedding_completionMap_of_comp_eq v w h]
       exact e.apply_symm_apply _
@@ -126,7 +126,7 @@ theorem extensionEmbedding_localNorm (v : NumberField.InfinitePlace K) (hv : v.I
   · set y := e.symm (starRingEnd ℂ (extensionEmbedding w.1 x)) with hydef
     have hey : extensionEmbedding v y = starRingEnd ℂ (extensionEmbedding w.1 x) :=
       e.apply_symm_apply _
-    have hy : NumberField.LiesOver.completionMap y = x := by
+    have hy : NumberField.LiesOver.completionMap v w.1 y = x := by
       apply (isometry_extensionEmbedding w.1).injective
       rw [extensionEmbedding_completionMap_of_comp_ne v w h, hey, Complex.conj_conj]
     rw [← hy, InfiniteExtension.localNorm_algebraMap, hdeg, pow_one, hey, hy]

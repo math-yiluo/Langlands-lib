@@ -1,7 +1,5 @@
 # One-dimensional connected group varieties are commutative
 
-Worker 244, Task 7632.
-
 `Langlands.GroupScheme.oneDimensionalCommutative` proves
 `Langlands.GroupScheme.OneDimensionalCommutativeStatement.{u}` in every
 universe `u`. For any field `k`, the theorem gives `IsCommMonObj G.X` for a

@@ -157,7 +157,7 @@ at `1`), which gives `Nontrivial`.
 
 ## Provenance
 
-NZ is an internal statement of Task 6759 (see the Markdown of
+NZ is an internal statement of the proof of `ComplexStandardSurjectionInjectiveStatement` (see the Markdown of
 `ComplexStandardSurjectionInjectiveReduction`), needed because irreducibility in the Library
 includes nontriviality. The proof is an explicit elementary construction written for this
 module: products of powers of the bottom-right minors, their conjugates and real powers of

@@ -1,6 +1,6 @@
 # Algebraic reductions for tempered pair L-factors
 
-Worker 40 authored these internal auxiliary reductions for
+These are internal auxiliary reductions for
 `Langlands.RankinSelberg.TemperedLFactorStatement`. They are in namespace
 `Langlands.RankinSelberg.TemperedLFactorAlgebra`. Analytic multiplicativity,
 existence and pole bounds remain explicit premises where used; these lemmas
@@ -71,5 +71,5 @@ dual divisibility, block pole bounds and the reflected identity relating the
 residual quotients. The reflected-root comparison is imported from
 `Langlands.Representation.RankinSelberg.ReflectionRigidityProof`;
 normalization is extracted from the intrinsic Library certificate rather than
-assumed for each application. This is a derived algebraic contribution; it
+assumed for each application. This is a derived algebraic module; it
 asserts no new analytic theorem from the cited literature.

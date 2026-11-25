@@ -1,7 +1,5 @@
 # Base change of the Weil restriction `Res_{B/A} 𝔾ₘ`
 
-Author: Worker 299.
-
 This module proves that the host group scheme `Res_{B/A} 𝔾ₘ`
 (`Langlands.GroupScheme.WeilGm.groupScheme A B`, module
 `Langlands.GroupScheme.Torus.WeilRestriction`) commutes with base change. For
@@ -29,20 +27,11 @@ needs.
   `(Π_{A/k} G)_K(R) = G(A ⊗_k R) ≃ G(A ⊗_k K ⊗_K R) = Π_{A⊗_k K/K}(G_K)(R)`,
   "because A ⊗_k R ≃ A ⊗_k K ⊗_K R". Here Milne's `k`, `A`, `K`, `R` and `G`
   are `A`, `B`, `A'`, `T` and `𝔾ₘ`.
-- TauCeti, Lean source closure at commit
-  `8428d6217f74afa72531df0bc85d7b57ab72810f`. Source ID
-  `tauceti-8428d621-weil-restriction-closure`. The ported closure (modules
-  `Langlands.TauCeti.*`) provides the coordinate algebra
-  `WeilRestriction A B B[T;T⁻¹]` of `groupScheme A B` for `B` finite projective
-  over a commutative ring `A`.
+- The Library constructs the coordinate algebra from a presentation and identifies its tensor-valued points with units. [Weil restriction of the multiplicative group](../../RingTheory/WeilRestriction/Units.md)
 
 **Derived generality.** Milne's statement is for a field extension `K/k` and a
 finite algebra over a field. This module proves it for an arbitrary ring map
-`f : A ⟶ A'` and `B` finite projective over `A`, for `G = 𝔾ₘ` only. That ring
-version is derived, not taken from Milne. The generality of `Res_{B/A} 𝔾ₘ` over
-a ring is that of the TauCeti source. The proof follows Milne's argument on
-points, with the same tensor identity. It does not use TauCeti's base-change
-isomorphism `WeilRestriction.baseChangeAlgEquiv` of coordinate algebras.
+`f : A ⟶ A'` and `B` finite projective over `A`, for `G = 𝔾ₘ` only. The proof uses the Library's finite projective construction and Milne's tensor identity on points.
 Milne's points are over `K`-algebras, that is, affine test schemes. Here they
 are over arbitrary test schemes `T : Over (Spec A')`, through the global sections
 `Γ(T) = ((algΓ A').obj T).unop`.
@@ -139,5 +128,4 @@ that need `A'` as an `A`-algebra use `f.hom.toAlgebra` locally, as in the task.
 ## Scope
 
 This module treats only `𝔾ₘ` and only base change of the host group scheme
-`groupScheme A B`. It does not state the compatibility of TauCeti's
-coordinate-algebra base change `baseChangeAlgEquiv` with this isomorphism.
+`groupScheme A B`. The comparison is constructed from its action on points.

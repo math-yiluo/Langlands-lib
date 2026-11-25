@@ -1,7 +1,5 @@
 # Algebraic target for extracting two actual constituents
 
-Author: Worker 1277.
-
 `Langlands.Aubert.General.TwoConstituentExtractionStatement.{uG, uV}` is an
 internal algebraic prerequisite for the general rational-point rank-one
 length-two proof. It quantifies over every topological group `G` and every

@@ -1,7 +1,5 @@
 # Normalized Jacquet modules for standard block parabolics
 
-Author: Worker 23.
-
 This module constructs the normalized Jacquet module of a representation of
 `GL_n(F)` along the standard upper block parabolic `P = B.parabolic F`. It uses
 only published constructions:

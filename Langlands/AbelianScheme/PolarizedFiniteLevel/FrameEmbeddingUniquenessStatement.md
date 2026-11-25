@@ -44,6 +44,6 @@ isomorphism, `ψ = ψ'`.
 
 ## Use
 
-Task 7811's reduction of `FrameChartRepresentabilityStatement`
+The reduction of `FrameChartRepresentabilityStatement`
 (`frameChartRepresentability_of_frameHilbertLocus`) uses it to show that the classifying
 natural transformation is injective: isomorphic data have the same embedded family.

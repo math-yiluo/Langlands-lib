@@ -1,11 +1,10 @@
 # Short exactness of the actual absolute-Galois character functor
 
-Worker 3483.
-
 `Langlands.GroupScheme.MultiplicativeTypeAbsoluteExactnessStatement.{u}`
 declares the short-exact-sequence clause for the specific functor
 `MultiplicativeTypeGroup.characterFunctor`. This file supplies a proposition
-declaration; its proof is a separate obligation.
+declaration; it is proved as `multiplicativeTypeAbsoluteExactness` in
+[`MultiplicativeTypeAbsoluteExactnessProof`](MultiplicativeTypeAbsoluteExactnessProof.md).
 
 ## Groups, morphisms and characters
 

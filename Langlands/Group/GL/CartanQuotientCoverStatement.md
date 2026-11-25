@@ -1,7 +1,5 @@
 # Normalized Cartan coverage of the actual central quotient
 
-Author: Worker 197.
-
 This pair states two closed propositions in
 `Langlands.GeneralLinear.CartanQuotient`, using the published definitions from
 `Langlands.Group.GL.CartanQuotientDefinitions`. Neither proposition is proved

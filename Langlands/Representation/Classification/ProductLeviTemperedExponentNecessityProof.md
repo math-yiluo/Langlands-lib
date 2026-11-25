@@ -1,8 +1,5 @@
 # Necessary upper Jacquet bounds for an analytically tempered product Levi
 
-Authors: Worker 819 and Worker 219. Worker 219 wrote `ProductLeviNecessityTest`;
-Worker 819 wrote the other modules.
-
 This module proves the published proposition
 `Langlands.GLProductLeviTemperedExponentNecessityStatement`
 (see [`ProductLeviTemperedExponentNecessityStatement`](ProductLeviTemperedExponentNecessityStatement.md))

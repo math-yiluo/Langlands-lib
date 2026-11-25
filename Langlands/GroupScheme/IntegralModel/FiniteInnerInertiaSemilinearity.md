@@ -1,6 +1,6 @@
 # All-automorphism compatibility of the recovered inertia comparison
 
-This internal unit derives compatibility from actual coefficient tower
+This module derives compatibility from actual coefficient tower
 comparisons. No original-literature theorem is claimed.
 
 `pullbackComparison_transport_semilinear` assumes a finite comparison f

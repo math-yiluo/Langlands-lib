@@ -1,9 +1,8 @@
 # Restriction of étale and quasi-étale `G`-sheaves to a subgroup
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedSubgroupRestriction` (imported; accepted candidate
-  `053e4a98`): the subgroup inclusion
+- `Langlands.Sheaf.Equivariant.TwistedSubgroupRestriction` (imported): the subgroup inclusion
   `subgroupInclusion ρ H : TwistedOver P (ρ.comp H.subtype) ⥤ TwistedOver P ρ` (identity on
   objects, a twist `h ∈ H` goes to the twist `(h : G)`), restriction of sheaves
   `subgroupRestriction ρ H J A` (precomposition with its opposite), and the natural
@@ -22,7 +21,7 @@ Author: Worker 26. Builds on the following modules:
   compact), and the categories `EtaleGSheaf ρ A` (locally discrete sheaves for
   `distinguishedLiftSystem ρ`) and `QuasiEtaleGSheaf ρ A` (discrete sheaves for
   `compactLiftSystem ρ`).
-- `Langlands.Geometry.Analytic.LocalActionLifts` (Worker 21, through the imports):
+- `Langlands.Geometry.Analytic.LocalActionLifts` (through the imports):
   `ActionLift ρ f`, a lift of the action `ρ` to `f : U ⟶ X`, consisting of an open subgroup
   `l.subgroup` of `G`, a continuous action `l.action` of it on `U`, and the equivariance of
   `f`; `IsDistinguishedEtale` and `IsCompactSpace`.

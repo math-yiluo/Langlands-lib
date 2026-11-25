@@ -31,7 +31,7 @@ private lemma etale_prod_hom_ext {X T : Scheme.{u}} {A B : X.Etale}
 private lemma torsor_graphs_cover {X : Scheme.{u}} {G : Type u} [Group G]
     (Y : Action X.Etale G) (hY : IsFiniteGeometricTorsor X Y) (U : Over Y.V) :
     Sieve.ofArrows (fun _ : G => U.left)
-      (fun g => prod.lift (U.hom ≫ Y.ρ g) (𝟙 U.left)) ∈
+      (fun g => prod.lift (U.hom ≫ (Y.ρ g).asHom) (𝟙 U.left)) ∈
         Scheme.smallEtaleTopology X (Y.V ⨯ U.left) := by
   rw [Scheme.ofArrows_mem_smallEtaleTopology_iff]
   ext z
@@ -47,16 +47,16 @@ private lemma torsor_graphs_cover {X : Scheme.{u}} {G : Type u} [Group G]
   have hab : a ≫ Y.V.hom = b ≫ Y.V.hom := by
     simp [a, b, Category.assoc]
   obtain ⟨g, hg, _⟩ := hY.2.2.2 Ω a b hab
-  let γ : U.left ⟶ P := prod.lift (U.hom ≫ Y.ρ g) (𝟙 U.left)
+  let γ : U.left ⟶ P := prod.lift (U.hom ≫ (Y.ρ g).asHom) (𝟙 U.left)
   have hγ₁ : γ.left ≫ (prod.fst : P ⟶ Y.V).left =
-      U.hom.left ≫ (Y.ρ g).left :=
+      U.hom.left ≫ (Y.ρ g).asHom.left :=
     congrArg (fun f : U.left ⟶ Y.V => f.left) (prod.lift_fst _ _)
   have hγ₂ : γ.left ≫ (prod.snd : P ⟶ U.left).left = 𝟙 _ :=
     congrArg (fun f : U.left ⟶ U.left => f.left) (prod.lift_snd _ _)
   have heq : p ≫ (prod.snd : P ⟶ U.left).left ≫ γ.left = p := by
     apply etale_prod_hom_ext
     · simpa only [Category.assoc, hγ₁] using
-        (show p ≫ (prod.snd : P ⟶ U.left).left ≫ U.hom.left ≫ (Y.ρ g).left =
+        (show p ≫ (prod.snd : P ⟶ U.left).left ≫ U.hom.left ≫ (Y.ρ g).asHom.left =
           p ≫ (prod.fst : P ⟶ Y.V).left by simpa only [a, b, Category.assoc] using hg)
     · simp only [Category.assoc, hγ₂, Category.comp_id]
   refine ⟨g, (p ≫ (prod.snd : P ⟶ U.left).left) default, ?_⟩
@@ -66,25 +66,25 @@ private lemma torsor_graphs_cover {X : Scheme.{u}} {G : Type u} [Group G]
 private lemma torsor_overlap_index_eq {X : Scheme.{u}} {G : Type u} [Group G]
     (Y : Action X.Etale G) (hY : IsFiniteGeometricTorsor X Y) (U : Over Y.V)
     {W : X.Etale} {g h : G} (f k : W ⟶ U.left)
-    (heq : f ≫ prod.lift (U.hom ≫ Y.ρ g) (𝟙 U.left) =
-      k ≫ prod.lift (U.hom ≫ Y.ρ h) (𝟙 U.left)) (z : W.left) : g = h := by
+    (heq : f ≫ prod.lift (U.hom ≫ (Y.ρ g).asHom) (𝟙 U.left) =
+      k ≫ prod.lift (U.hom ≫ (Y.ρ h).asHom) (𝟙 U.left)) (z : W.left) : g = h := by
   have hfk : f = k := by
     simpa using congrArg (fun t => t ≫ prod.snd) heq
   subst k
-  have hfst : f ≫ U.hom ≫ Y.ρ g = f ≫ U.hom ≫ Y.ρ h := by
+  have hfst : f ≫ U.hom ≫ (Y.ρ g).asHom = f ≫ U.hom ≫ (Y.ρ h).asHom := by
     simpa using congrArg (fun t => t ≫ prod.fst) heq
   let Ω := SeparableClosure (W.left.residueField z)
   let p : Spec (.of Ω) ⟶ W.left :=
     (Scheme.SpecToEquivOfField Ω W.left).symm
       ⟨z, CommRingCat.ofHom (algebraMap (W.left.residueField z) Ω)⟩
   let a := p ≫ f.left ≫ U.hom.left
-  have hgh : a ≫ (Y.ρ g).left = a ≫ (Y.ρ h).left := by
+  have hgh : a ≫ (Y.ρ g).asHom.left = a ≫ (Y.ρ h).asHom.left := by
     have hh := congrArg (fun t : W ⟶ Y.V => p ≫ t.left) hfst
-    change p ≫ (f.left ≫ U.hom.left ≫ (Y.ρ g).left) =
-      p ≫ (f.left ≫ U.hom.left ≫ (Y.ρ h).left) at hh
+    change p ≫ (f.left ≫ U.hom.left ≫ (Y.ρ g).asHom.left) =
+      p ≫ (f.left ≫ U.hom.left ≫ (Y.ρ h).asHom.left) at hh
     simpa only [a, Category.assoc] using hh
-  have hab : a ≫ Y.V.hom = (a ≫ (Y.ρ g).left) ≫ Y.V.hom := by simp
-  obtain ⟨t, _, ht⟩ := hY.2.2.2 Ω a (a ≫ (Y.ρ g).left) hab
+  have hab : a ≫ Y.V.hom = (a ≫ (Y.ρ g).asHom.left) ≫ Y.V.hom := by simp
+  obtain ⟨t, _, ht⟩ := hY.2.2.2 Ω a (a ≫ (Y.ρ g).asHom.left) hab
   exact (ht g rfl).trans (ht h hgh.symm).symm
 
 private instance module_forget_corepresentable (R : Type u) [CommRing R] :
@@ -118,7 +118,7 @@ theorem etaleTorsorSectionSplitting : EtaleTorsorSectionSplittingStatement.{u} :
     (isSheaf_iff_isSheaf_of_type _ _).mp
       ((sheafCompose (Scheme.smallEtaleTopology X) (forget (ModuleCat.{u} R))).obj F).property
   let γ : ∀ g : G, (fun _ : G => U.left) g ⟶ Y.V ⨯ U.left :=
-    fun g => prod.lift (U.hom ≫ Y.ρ g) (𝟙 U.left)
+    fun g => prod.lift (U.hom ≫ (Y.ρ g).asHom) (𝟙 U.left)
   have hγ := hP.isSheafFor _ (torsor_graphs_cover Y hY U)
   rw [Function.bijective_iff_existsUnique]
   intro x

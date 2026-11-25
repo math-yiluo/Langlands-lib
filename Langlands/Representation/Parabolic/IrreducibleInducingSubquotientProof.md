@@ -1,7 +1,5 @@
 # Proof of the irreducible inducing subquotient assertion
 
-Authors: Worker 320 (original draft), Worker 514 (import reduction and verification).
-
 The proof uses the Library's actual normalized first-adjointness linear
 equivalence to turn the supplied nonzero map into a nonzero map from the whole
 normalized Jacquet module to `σ`.

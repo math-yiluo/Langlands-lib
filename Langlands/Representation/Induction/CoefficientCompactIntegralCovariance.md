@@ -38,7 +38,7 @@ the complex scalar `δH / δG`, where each `δ` is the actual
 proof transports the published complex identity through the actual quotient
 comparison. No smoothness or bijectivity assumption is needed for this formula.
 
-This unit provides naturality and automorphism covariance of the native full
+This module provides naturality and automorphism covariance of the native full
 compact-induction integral. Partial radical coinvariants with their Levi action,
 the split-stage orbit comparison, cancellation of normalization characters,
 actual rational orbit geometry, compatible-measure existence and the final

@@ -1,6 +1,6 @@
 # Renard VI.3.6 from the structural statements
 
-Author: Worker 1709. Module
+Module
 `Langlands.Representation.Exponents.RepresentedSupercuspidalCentralProjectivityReduction`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -52,6 +52,7 @@ canonical topology, which is Hausdorff
    property `fun A => A.HasCentralCharacter χ`, which is the target's `C`.
 
 No admissibility, finite-length, unitarity or smoothness hypothesis on `χ` is
-used. The five premises are published propositions with open proof tasks; the
-final proof of the target applies this theorem to their proofs once those are
-published.
+used. The five premises are published propositions. The Library proves four of
+them (`parabolicDynamic`, `standardCocharacter`, `relativeRootSystem`,
+`splitComponentLattice`) but not `JointSpecialCompactBasisExistenceStatement`; a
+proof of the target follows by applying this theorem to proofs of all five.

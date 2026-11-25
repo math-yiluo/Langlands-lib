@@ -1,7 +1,5 @@
 # Product points in the actual base-changed local models
 
-Author: Worker 208.
-
 For a commutative ring `C`, any family of commutative `C`-algebras `R i`, and
 an actual scheme `X` over `Spec C`, `localProductPointMap C R X` maps an
 actual `C`-morphism `Spec (∀ i, R i) → X` to a family of actual `R i`-morphisms

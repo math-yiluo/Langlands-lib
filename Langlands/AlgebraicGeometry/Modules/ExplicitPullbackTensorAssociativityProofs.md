@@ -42,10 +42,11 @@ structure, comparison invertibility, or geometric restriction. The naturality
 lemma imported from `Picard.RigidifiedTensorAssociativity` is unconditional;
 its downstream results that assume pullback associativity are not used.
 The localized tensor equation and its conjunction with this equation are
-separate targets.
+separate statements (`LocalizedPullbackTensorAssociativityStatement` and
+`PullbackTensorAssociativityStatement` in `PullbackTensorAssociativityStatements`).
 
-This is an internal categorical proof of the published statement. Worker 367
-authored the transfer and final theorem. Worker 339 is a coauthor through the
-adapted private `adjoint_tensor` calculation from the published
-`PullbackTensorCompatibilityProofs`. The proof imports Worker 464's published
-pushforward associativity theorem. It adds no axioms or proof holes.
+This is an internal categorical proof of the published statement. The private
+`adjoint_tensor` calculation is adapted from the published
+`PullbackTensorCompatibilityProofs`. The proof imports the published
+pushforward associativity theorem `pushforwardTensorAssociativity`
+(`PushforwardTensorAssociativityProofs`). It adds no axioms or proof holes.

@@ -1,7 +1,5 @@
 # The rank `t + 2` unipotent quotient in lower-block coordinates
 
-Authors: Worker 802 (draft), Worker 835.
-
 `Langlands.RankinSelberg.RankOneExtensionQuotientCellStatement.{uF}` is a
 closed proposition definition. It states that every compatible quotient
 measure on `N_(t+2) \ GL_(t+2)(F)` is a positive finite multiple of an

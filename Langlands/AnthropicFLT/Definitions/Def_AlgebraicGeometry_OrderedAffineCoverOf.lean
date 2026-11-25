@@ -4,7 +4,7 @@ Ported from `Definitions/Def_AlgebraicGeometry_OrderedAffineCoverOf.lean` of the
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_OModulePresheafHom
 set_option maxHeartbeats 4000000

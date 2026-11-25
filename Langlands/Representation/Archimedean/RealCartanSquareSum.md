@@ -1,6 +1,6 @@
 # The rational Cartan square sum on actual real general linear groups
 
-Worker 1028, Task 7767. This internal module specializes the rational mixed coordinates of [RealMixedMatrixCoordinates](RealMixedMatrixCoordinates.md) to the actual group `GL_n(ℝ)`. It identifies the compact group and the Cartan square sum used by [MixedOrbitCoefficient](MixedOrbitCoefficient.md).
+This internal module specializes the rational mixed coordinates of [RealMixedMatrixCoordinates](RealMixedMatrixCoordinates.md) to the actual group `GL_n(ℝ)`. It identifies the compact group and the Cartan square sum used by [MixedOrbitCoefficient](MixedOrbitCoefficient.md).
 
 - `Langlands.Archimedean.cartanPositiveForm_star_conj`: for any number field `K` and a mixed matrix `u` with `u u* = 1`, the published `cartanPositiveForm` is invariant under `X ↦ u* X u`. Its value is the total mixed trace of `tr(X Y*)`. The conjugated product is `u*(X Y*)u` because `u u* = 1`, and the trace is cyclic.
 

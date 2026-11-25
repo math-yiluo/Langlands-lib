@@ -59,10 +59,10 @@ the details.
   `System.IsAlgebraization`.
 * `Langlands.GroupScheme.HomScheme.AdicFiniteDescent`: transport from finite
   test schemes to spectra of finite algebras, and the descent argument.
-* `Langlands.GroupScheme.HomScheme.AdicFiniteTest` (Worker 323): the affine
+* `Langlands.GroupScheme.HomScheme.AdicFiniteTest`: the affine
   existence and uniqueness of algebraizations.
 * `Langlands.GroupScheme.HomScheme.AdicBaseChange` and
-  `Langlands.GroupScheme.HomScheme.AdicSystemBaseChange` (Worker 323):
+  `Langlands.GroupScheme.HomScheme.AdicSystemBaseChange`:
   pullback of adic systems along ring maps, used by `AdicFiniteTest`, and
   `evaluate_injective_of_flat_surjective`, used by `AdicFiniteDescent`.
 

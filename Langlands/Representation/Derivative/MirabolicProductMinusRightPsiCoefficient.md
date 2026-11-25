@@ -1,7 +1,5 @@
 # The coefficient of the positive-rank right `Ψ⁻` compatibility of BZ77 4.13(c)
 
-Author: Worker 837.
-
 This helper module belongs to the proof of the clause
 `Langlands.Derivative.MirabolicProductMinus.RightPsiCompatibility.{uF,uV} F T`
 of the published statement module

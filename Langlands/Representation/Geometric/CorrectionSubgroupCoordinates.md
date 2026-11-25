@@ -1,7 +1,5 @@
 # Actual allowed-entry coordinates for the full correction subgroup
 
-Author: Worker 201.
-
 This internal construction gives actual matrix-entry coordinates for the full
 subgroup `U ∩ g⁻¹ Q g`, where `U = B.unipotentSubgroup R`,
 `Q = C.parabolic R`, and `g = GeneralLinear.permutation n R w`.

@@ -1,7 +1,5 @@
 # Intrinsic laws of concrete Cartan quotient cells
 
-Author: Worker 553.
-
 The theorem
 `Langlands.GeneralLinear.CartanQuotient.cartanQuotientLaws.{uF}`
 proves the exact closed Library proposition

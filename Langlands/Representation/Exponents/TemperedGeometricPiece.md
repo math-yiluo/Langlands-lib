@@ -1,12 +1,12 @@
 # The unitary part of one piece of the geometric lemma (Renard VII.2.5)
 
-Author: Worker 1221. Module `Langlands.Representation.Exponents.TemperedGeometricPiece`,
+Module `Langlands.Representation.Exponents.TemperedGeometricPiece`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`. This is an internal supporting
 module for the proof of Renard VII.2.5 (`TemperedGeometricLemmaStatement`). It treats one
 piece of the geometric lemma at a time. It shows that the zero-real-part selection of the
 piece `i^L_{Q'} ∘ ι ∘ r^M_{P'} ρ` is the piece `i^L_{Q'} ∘ ι ∘ (r^M_{P'} ρ)_0`
 (`D.unitaryPieceRep`) of the target statement. The passage from the pieces to a filtration
-of `(r_Q^G i_P^G ρ)_0` is separate work (Worker 1725's `LeviUnitaryFiltration`).
+of `(r_Q^G i_P^G ρ)_0` is separate work (`LeviUnitaryFiltration`).
 
 ## Jacquet-level lemmas
 
@@ -69,7 +69,7 @@ there is an equivalence of representations of `L(F)` (`Representation.Equiv`) fr
 
 to `(D.unitaryPieceRep ha' ρ).ρ`. The source is the sum of the generalized weight spaces of
 `AL(F)` with zero normalized real part in the published piece `D.pieceFunctor.obj ρ` of
-the geometric lemma. Its form is the one used by Worker 1725's
+the geometric lemma. Its form is the one used by
 `exists_leviUnitaryJacquetInductionFiltration_of_isGluedFrom`.
 
 ### Proof

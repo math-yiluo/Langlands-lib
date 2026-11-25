@@ -1,7 +1,5 @@
 # Transitivity for represented parabolics
 
-Authors: Worker 1754 and Worker 1373.
-
 This module proves the published
 `Langlands.Aubert.General.RepresentedParabolic.LeviParabolicTransitivityStatement`
 without adding hypotheses. Its theorem is `leviParabolicTransitivity`, with the

@@ -1,7 +1,7 @@
 # Positive scalar weights and linear vector-group maps
 
 This internal adapter supports linear transitions between local quotient charts
-in Task 7200. It concerns the actual finite free polynomial vector groups over an
+for the finite vector-bundle filtrations of supplied relative radicals. It concerns the actual finite free polynomial vector groups over an
 arbitrary commutative ring. Source and target have independent finite ranks,
 including rank zero. It imposes no field, reducedness, characteristic, locality,
 connectedness or noetherian hypothesis.

@@ -1,8 +1,6 @@
 # Connected smooth actions on finite schemes
 
-Worker 1351.
-
-This internal derived unit supplies the last elementary step after a complete
+This internal derived module supplies the last elementary step after a complete
 orbit has been shown finite. It does not assert that a complete orbit is finite.
 
 `rationalPointEquivClosedPoint` identifies relative rational sections of a

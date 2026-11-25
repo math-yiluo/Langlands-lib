@@ -27,7 +27,7 @@ variable {R : Type u} [CommRing R] {I : Type u} [Fintype I] [DecidableEq I]
   (hG : IsReductive G) (hp : IsRelativeParabolicSubgroup p)
   (hmax : IsFibrewiseMaximalTorus (T := splitTorus.commGroupScheme _ I) (t ≫ p))
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 local instance (A : Type u) [CommRing A] [Algebra R A] :
     IsAffineHom ((GroupScheme.baseChange (algebraBaseMap R A)).obj G).X.hom :=
   MorphismProperty.pullback_snd G.X.hom (algebraBaseMap R A) inferInstance

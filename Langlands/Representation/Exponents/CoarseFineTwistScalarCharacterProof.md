@@ -1,14 +1,8 @@
 # Coarse scalar character of a nested fine twist: proof
 
-Authors: Worker 526, using Worker 359's effective-parameter and fibre-sum
-calculation. Worker 438 adapted the shared proof for submission and checked
-its build, declaration and published imports. Imported published results
-retain their own provenance.
-
 `Langlands.Exponents.coarseFineTwistScalarCharacter` proves exactly
 `Langlands.Exponents.CoarseFineTwistScalarCharacterStatement.{uF,uV}`.
-The field and representation carrier universes remain independent. The
-published statement and all its imports are used unchanged.
+The field and representation carrier universes remain independent.
 
 This is an internal algebraic deduction from the public
 `unitaryFineTwistScalarCharacter`, `positiveRootBlockSums`, the flattening

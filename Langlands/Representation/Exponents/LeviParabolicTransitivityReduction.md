@@ -1,6 +1,6 @@
 # Reduction of represented transitivity to nested radical identities
 
-Authors: Worker 1373, with Worker 1754 contributing the agreed structural interface. Module `Langlands.Representation.Exponents.LeviParabolicTransitivityReduction`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.LeviParabolicTransitivityReduction`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The construction `leviParabolicTransitivityComparisons` returns a pair of actual natural isomorphisms between the published represented-Levi induction and Jacquet functors. Its supporting theorem `leviParabolicTransitivity_of_radical_decomposition` asserts the conjunction of their nonemptiness. These are internal derived adapters for the proof of Renard 2026 VI.1.4, not proofs of the unconditional published `LeviParabolicTransitivityStatement`.
 
@@ -17,7 +17,7 @@ There are exactly two additional structural hypotheses:
 
 No representation finiteness, admissibility, standardness, quotient compactness, chosen cocharacter or additional topological premise is used. Local compactness and the nonarchimedean-group structure of `L(k)` are derived through the canonical `leviPointsEquiv`; the topology on each Levi is the published canonical topology. The induction isomorphism has output carrier universe `max u v`, with the outer induction evaluated at that universe. Jacquet restriction preserves `v`.
 
-The two structural hypotheses must still be proved from the target's existing hypotheses before the unconditional theorem can be discharged. The parabolic product `P = P_L U` is not an extra premise of this adapter.
+The two structural hypotheses must be proved from the target's existing hypotheses to discharge the unconditional theorem, which `leviParabolicTransitivity` in `LeviParabolicTransitivityProof` proves. The parabolic product `P = P_L U` is not an extra premise of this adapter.
 
 ## Implemented construction
 
@@ -31,4 +31,4 @@ The canonical outer Levi homeomorphism identifies membership in the inner parabo
 
 ## Verification boundary
 
-The module compiles with no diagnostics. Declaration inspection of `leviParabolicTransitivityComparisons` reports a definition with universe parameters `u`, `v`, returning a product of natural-isomorphism types. Only the standard assumptions `propext`, `Classical.choice` and `Quot.sound` occur. This construction does not assert the two structural identities and does not by itself establish the task's unconditional target.
+The module compiles with no diagnostics. Declaration inspection of `leviParabolicTransitivityComparisons` reports a definition with universe parameters `u`, `v`, returning a product of natural-isomorphism types. Only the standard assumptions `propext`, `Classical.choice` and `Quot.sound` occur. This construction does not assert the two structural identities and does not by itself establish the unconditional `LeviParabolicTransitivityStatement`.

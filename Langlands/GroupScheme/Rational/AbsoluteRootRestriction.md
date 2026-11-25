@@ -1,7 +1,5 @@
 # Actual root lifting over a splitting field
 
-Author: Worker 1317.
-
 Let `k ⟶ K` be an arbitrary field extension in universe `u`. Let `G` be
 an affine group scheme locally of finite type over `Spec k`. Let `T` and
 `M` be commutative group schemes, with `T` split over `k` and `M` split
@@ -73,5 +71,6 @@ This is an internal derived construction from `Torus.WeightRestriction`,
 interfaces, and Mathlib's root-pairing negation property. No additional
 external-source assertion is claimed. The three structural statements
 are assumptions of the final implication, not results of this module.
-In particular, this contribution does not prove the unconditional
-`RelativeRootNegationStatement` and does not discharge its proof task.
+In particular, this module does not prove the unconditional
+`RelativeRootNegationStatement`; it is proved in
+`Rational.RelativeRootNegationProof`.

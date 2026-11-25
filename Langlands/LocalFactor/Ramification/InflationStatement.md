@@ -1,6 +1,6 @@
 # Finite-Galois conductor inflation and common-refinement independence
 
-Worker 48 states a single family concerning the published rational Artin and
+This module states a single family concerning the published rational Artin and
 Swan sums of actual finite p-adic Galois representations. The complete target is
 `Langlands.Ramification.Padic.FiniteGaloisConductorInflationAndIndependenceStatement`.
 All four declarations in this module are `def`s returning `Prop`. This module
@@ -117,7 +117,7 @@ Graduate Texts in Mathematics 67, Springer, 1979:
 - Chapter I, section 7, Proposition 22(b), printed pages 22–23 / PDF pages
   30–31 gives exactness of inertia restriction in a Galois tower.
 
-These original passages were read for this contribution. There is no source
+These original passages were read for this module. There is no source
 errata file for this source in the supplied public notes.
 
 The Artin clause translates the Corollary to VI.2 Proposition 3, specialized to
@@ -169,8 +169,6 @@ retains characteristic-zero coefficients and the finite-Galois field setting;
 the more general local-ring action conductor constructors do not justify a
 broader assertion here.
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-Lean 4.34.0, Lean commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-Compilation and whole-target inspection are distinct from independent
-semantic acceptance and current Library publication.
+The pinned environment is Lean 4.34.0, Lean commit
+`293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`.

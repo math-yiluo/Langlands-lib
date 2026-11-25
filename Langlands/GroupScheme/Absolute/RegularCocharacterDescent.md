@@ -1,8 +1,7 @@
 # Borel subgroups through a split maximal torus: descent from `k̄`-points
 
 Module `Langlands.GroupScheme.Absolute.RegularCocharacterDescent`. It is derived infrastructure
-for clause 3 of `Langlands.GroupScheme.RegularCocharacterBorelStatement` (task
-`618cd683-cfcd-43a3-b4bf-6c8abd208b1f`): every Borel subgroup through a split maximal torus
+for clause 3 of `Langlands.GroupScheme.RegularCocharacterBorelStatement`: every Borel subgroup through a split maximal torus
 `j : T ⟶ G` represents `P(ν ≫ j)` for some regular cocharacter `ν`. The module reduces this to
 two facts about `k̄`-points. The main theorem is conditional on published structure
 statements, which it takes as hypotheses and does not prove.

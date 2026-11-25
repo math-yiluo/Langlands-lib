@@ -1,6 +1,6 @@
 # Single-row cells of the mirabolic quotient and their masses
 
-Author: Worker 1797. Module `Langlands.Representation.RankinSelberg.UnitaryCellMasses`,
+Module `Langlands.Representation.RankinSelberg.UnitaryCellMasses`,
 namespace `Langlands.RankinSelberg.UnramifiedUnitary`.
 
 This helper module serves the proof of

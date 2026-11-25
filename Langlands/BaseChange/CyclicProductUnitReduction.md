@@ -16,9 +16,9 @@ existing spherical subgroups in the factors. Over `F` the test is the unit
 of `SphericalHeckeAlgebra F r` with Haar measure `sphericalHaar F r`. The
 conclusion is `AreConcordant` for these functions and measures.
 
-For vanishing off norms, the equivalence in
-`cyclicProductGLCoordinates_isNorm_iff` transfers nonmembership in the norm
-image to the field factor. The field unit premise gives the required
+For vanishing off norms, `vanishesOffNorms_cyclicProduct_iff` (which rests
+on the equivalence `cyclicProductGLCoordinates_isNorm_iff`) transfers the
+condition to the field factor. The field unit premise gives the required
 ordinary orbital integral vanishing.
 
 For concordance at an associated pair, the proof sends an extension matrix
@@ -29,7 +29,7 @@ association. The source twisted centralizer measure maps along
 `cyclicProductCentralizerEquiv` to a right Haar measure on the field twisted
 centralizer. Projecting the two measure pushforwards in `IsAssociatedMeasure`
 to the zeroth coordinate proves association of this Haar measure with the
-ordinary centralizer measure. The Library's quotient-measure existence
+ordinary centralizer measure (`IsAssociatedMeasure.cyclicProduct`). The Library's quotient-measure existence
 theorem supplies a compatible field quotient measure.
 
 `cyclicProductUnitOrbitalIntegral_eq` then evaluates the product-side unit

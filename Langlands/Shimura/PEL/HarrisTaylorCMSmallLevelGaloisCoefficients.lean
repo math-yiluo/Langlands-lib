@@ -115,14 +115,14 @@ theorem cmSmallLevelBaseChangeIso_projection :
 
 /-- Galois automorphisms of the actual geometric CM tower, via the constructed comparison. -/
 def cmSmallLevelGaloisAut (σ : Gamma) : Aut geometricSchemes :=
-  (baseChangeIso).symm ≪≫
-    RestrictedLevelTowerGalois.towerGaloisAut arithmeticStructure σ ≪≫ baseChangeIso
+  Aut.of ((baseChangeIso).symm ≪≫
+    RestrictedLevelTowerGalois.towerGaloisAut arithmeticStructure σ ≪≫ baseChangeIso)
 
 local notation "galoisAut" => cmSmallLevelGaloisAut D C preservation composition unitCoherence associativity comparison symmetry stability square universality dualityNaturality polarizationStability compatibility h htor q
 
 /-- At each actual CM level the Galois map acts on the algebraic-closure factor. -/
 @[simp] theorem cmSmallLevelGaloisAut_hom_app (σ : Gamma) (U : SmallCMLevel D) :
-    (galoisAut σ).hom.app U =
+    (galoisAut σ).asIso.hom.app U =
       EtaleGaloisAction.baseChangeMap ((arithmeticStructure).app U) σ := by
   simp [cmSmallLevelGaloisAut, cmSmallLevelBaseChangeIso]
   exact Category.id_comp _
@@ -132,14 +132,16 @@ def cmSmallLevelGaloisAction : Gamma →* (Aut geometricSchemes)ᵐᵒᵖ where
   toFun σ := MulOpposite.op (galoisAut σ)
   map_one' := by
     apply MulOpposite.unop_injective
+    apply Aut.ext
     apply Iso.ext
     apply NatTrans.ext
     funext U
-    change (galoisAut (1 : Gamma)).hom.app U = 𝟙 _
+    change (galoisAut (1 : Gamma)).asIso.hom.app U = 𝟙 _
     rw [cmSmallLevelGaloisAut_hom_app]
     exact EtaleGaloisAction.baseChangeMap_one ((arithmeticStructure).app U)
   map_mul' σ τ := by
     apply MulOpposite.unop_injective
+    apply Aut.ext
     apply Iso.ext
     apply NatTrans.ext
     funext U
@@ -150,11 +152,11 @@ local notation "galoisAction" => cmSmallLevelGaloisAction D C preservation compo
 
 /-- Every Galois automorphism is over the original base field. -/
 theorem cmSmallLevelGaloisAction_over (σ : Gamma) :
-    (galoisAction σ).unop.hom ≫ arithmeticGeometricStructure =
+    (galoisAction σ).unop.asIso.hom ≫ arithmeticGeometricStructure =
       arithmeticGeometricStructure := by
   apply NatTrans.ext
   funext U
-  change (galoisAut σ).hom.app U ≫ _ ≫ _ = _ ≫ _
+  change (galoisAut σ).asIso.hom.app U ≫ _ ≫ _ = _ ≫ _
   rw [cmSmallLevelGaloisAut_hom_app, ← Category.assoc]
   change EtaleGaloisAction.baseChangeMap _ σ ≫ pullback.fst _ _ ≫ _ = _
   simp [EtaleGaloisAction.baseChangeMap, pullback.map,
@@ -286,9 +288,9 @@ theorem cmSmallLevelGaloisCohomologyFunctor_ρ (d : ℕ) (M : ModuleSheaf base R
     letI : Module.Finite ℚ A := Module.Finite.trans F A
     letI : ∀ {U V : SmallCMLevel D} (k : U ⟶ V), Etale ((geometricSchemes).map k) :=
       towerEtale
-    ((galoisCohomologyFunctor d).obj M).ρ σ =
+    (((galoisCohomologyFunctor d).obj M).ρ σ).asHom =
       (RestrictedLevelTowerCohomology.smoothCanonicalPullback
-        R arithmeticGeometricStructure (galoisAction σ).unop.hom (galoisOver σ)
+        R arithmeticGeometricStructure (galoisAction σ).unop.asIso.hom (galoisOver σ)
         selfTrivial selfTrivial d).app M := by
   let := D.finite
   let : Module.Finite ℚ A := Module.Finite.trans F A
@@ -306,12 +308,12 @@ theorem cmSmallLevelGaloisCohomology_ρ_ι_apply (d : ℕ) (M : ModuleSheaf base
     letI : Module.Finite ℚ A := Module.Finite.trans F A
     letI : ∀ {U V : SmallCMLevel D} (k : U ⟶ V), Etale ((geometricSchemes).map k) :=
       towerEtale
-    SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ)
+    SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ).asHom
         ((RestrictedLevelColimit.ι ((arithmeticCoefficients M).cohomology d) U).hom x) =
       (RestrictedLevelColimit.ι ((arithmeticCoefficients M).cohomology d) U).hom
         ((LevelTowerCohomology.projectionCohomologyMap R
           ((arithmeticGeometricStructure).app U) ((arithmeticGeometricStructure).app U)
-          ((galoisAction σ).unop.hom.app U) (NatTrans.congr_app (galoisOver σ) U)
+          ((galoisAction σ).unop.asIso.hom.app U) (NatTrans.congr_app (galoisOver σ) U)
           d M).hom x) := by
   let := D.finite
   let : Module.Finite ℚ A := Module.Finite.trans F A
@@ -319,16 +321,16 @@ theorem cmSmallLevelGaloisCohomology_ρ_ι_apply (d : ℕ) (M : ModuleSheaf base
     towerEtale
   exact congrArg (fun f => f.hom x)
     (RestrictedLevelTowerCohomology.canonicalPullback_ι R arithmeticGeometricStructure
-      (galoisAction σ).unop.hom (galoisOver σ) M d U)
+      (galoisAction σ).unop.asIso.hom (galoisOver σ) M d U)
 
 /-- The Galois and finite-adelic actions commute on the actual CM cohomology module. -/
 theorem cmSmallLevelGaloisCohomology_commutes (d : ℕ) (M : ModuleSheaf base R)
     (σ : Gamma) (g : G) (x : ((galoisCohomologyFunctor d).obj M).V) :
-    SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ)
+    SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ).asHom
         (((galoisCohomologyFunctor d).obj M).V.obj.ρ g x) =
       ((galoisCohomologyFunctor d).obj M).V.obj.ρ g
-        (SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ) x) :=
+        (SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ).asHom x) :=
   Representation.IntertwiningMap.isIntertwining _ _
-    (SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ)) g x
+    (SmoothRep.hom (((galoisCohomologyFunctor d).obj M).ρ σ).asHom) g x
 
 end Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel

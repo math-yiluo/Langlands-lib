@@ -1,7 +1,5 @@
 # Proof of the unitary finite-length highest-derivative irreducibility criterion
 
-Author: Worker 5193.
-
 This module proves the target with no added hypothesis. The final theorem is
 `Langlands.Classification.bernsteinUnitaryFiniteLengthIrreducibilityCriterion`.
 

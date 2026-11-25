@@ -1,9 +1,9 @@
 # Multiplicity one for the cuspidal spectrum of `GL_n`, reduced to three named premises
 
-Worker 1005. Module `Langlands.Automorphic.GeneralLinearCuspidalMultiplicityOneReduction`,
-namespace `Langlands.Automorphic.GroupSchemeFunctions`. This is a conditional reduction for
-Task 5730. It does not prove `GeneralLinearCuspidalMultiplicityOneStatement` outright: the
-main theorem takes three unproved propositions as hypotheses.
+Module `Langlands.Automorphic.GeneralLinearCuspidalMultiplicityOneReduction`,
+namespace `Langlands.Automorphic.GroupSchemeFunctions`. This is a conditional reduction of
+multiplicity one for the cuspidal spectrum of `GL_n`. It does not prove `GeneralLinearCuspidalMultiplicityOneStatement` outright: the
+main theorem takes three propositions as hypotheses.
 
 ## Main theorem
 
@@ -29,15 +29,17 @@ The three premises are:
    image of a linear map `Φ : R.Space → S` for some cuspidal operator realization `R`, where
    `Φ` sends every form to the `L²` class of the function it induces on the quotient
    (`IsGeneralLinearFormClass`).
-3. `GeneralLinearCuspidalSummandEquivalenceStatement` (new, module
-   `Langlands.Automorphic.GeneralLinearCuspidalSummandEquivalenceStatement`, submitted with
-   this module): if `P` and `Q` are two such minimal submodules with an isometric equivalence
+3. `GeneralLinearCuspidalSummandEquivalenceStatement` (module
+   `Langlands.Automorphic.GeneralLinearCuspidalSummandEquivalenceStatement`, ported together
+   with this module): if `P` and `Q` are two such minimal submodules with an isometric equivalence
    `U : P ≃ Q` intertwining the right regular action, and `R, Φ` and `R', Φ'` realize `P` and
    `Q` as in premise 2, then `R` and `R'` are equivalent. Its Markdown states it in full and
    explains its provenance.
 
-None of the three premises is proved here. Premises 1 and 2 are the targets of Task 7293
-and Task 7775, respectively. Premise 3 is a separate proof obligation within Task 5730.
+None of the three premises is proved here. Premise 1 is proved in the Library as
+`cuspidalOperatorMultiplicityOne` (module `Langlands.Automorphic.CuspidalOperatorMultiplicityOneProof`).
+Premises 2 and 3 are not proved in the Library; premise 2 follows from the density statement
+`GeneralLinearSummandFormsDenseStatement` by `generalLinearCuspidalSummandRealizationFromDensity`.
 
 ## Local instances
 
@@ -94,8 +96,8 @@ The axioms used are `propext`, `Classical.choice` and `Quot.sound`.
 
 ## What is not proved or used
 
-The three premises are hypotheses and are not proved. The objective of Task 5730 lists
-prerequisites of Getz–Hahn's route: density and realization of smooth vectors (with the
+The three premises are hypotheses and are not proved here. The prerequisites of
+Getz–Hahn's route are density and realization of smooth vectors (with the
 Whittaker expansion), nonvanishing of the Whittaker functional, local uniqueness of Whittaker
 functionals and the factorization of global Whittaker functionals. This module neither proves
 nor uses any of them directly. Where they are needed, they enter through the premises: the

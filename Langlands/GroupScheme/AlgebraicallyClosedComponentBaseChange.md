@@ -1,7 +1,5 @@
 # Field extension on all actual component groups
 
-Author: Worker 1107.
-
 Let `k` and `L` be algebraically closed fields in the same arbitrary universe
 `u`, let `φ : k →+* L` be a field homomorphism, and let `H` be an actual smooth
 affine group scheme over `Spec k`. Write `H_L` for the actual pullback along

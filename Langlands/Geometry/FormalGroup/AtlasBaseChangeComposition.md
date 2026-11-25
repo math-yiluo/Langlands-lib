@@ -86,7 +86,7 @@ compatibility between its iterated-source and direct-source components.
 equivalence. Both sides use the actual complete compatible-family spaces,
 including coefficient naturality and overlap compatibility.
 
-This unit constructs the two-step formal comparison and its family squares.
+This module constructs the two-step formal comparison and its family squares.
 Identity comparisons, coherence for three extensions, naturality in an arbitrary
 atlas morphism, full acting-order compatibility, varying-base moduli class
-functor laws, framing, heights and representability remain separate work.
+functor laws, framing, heights and representability remain separate.

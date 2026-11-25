@@ -1,7 +1,5 @@
 # Finite ordered block shapes
 
-Author: Worker 290.
-
 This internal supporting construction sends the Library's actual ordered
 positive `BlockShape n` to Mathlib's `Composition n`. Its list of parts is
 `List.ofFn B.size`. The positivity and total-sum laws follow from the fields

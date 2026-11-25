@@ -24,10 +24,9 @@ finite-dimensional `F`-vector space (in the same universe as `F`), `ι` a finite
 (truncated subtraction in `ℕ`), then there is `v : V` with `v ≠ 0` and `fh ∣ φ l v` for every
 `l`.
 
-The binders are exactly those of the `DivisibleKernel` proposition requested by Worker 5406 for
-the Task 5406 assembly, in the same order, all explicit. A check outside this module confirmed
-that `exists_ne_zero_forall_dvd` proves that proposition verbatim, using only the standard
-axioms.
+The binders are all explicit. `exists_normPoly_rational` and `exists_normPoly_nonrational`
+(`Assembly.lean`) apply the theorem in this form. A check outside this module confirmed that
+`exists_ne_zero_forall_dvd` uses only the standard axioms.
 
 ## Auxiliary declarations
 
@@ -62,8 +61,8 @@ This is the linear-algebra step of the Stepanov–Schmidt method (W. M. Schmidt,
 von Stepanov*, Acta Arithmetica 24 (1973)). It shows that an auxiliary polynomial can be
 chosen divisible by the curve equation once the parameter space is large enough. The exact
 formulation, with the bound `n (a + 1) + m (b + 1 - n)` on the codimension of the multiples of
-`fh` inside the box `(a, b)`, is internal to the project. Worker 5406 specified it for the
-plane-curve Hasse–Weil assembly (Task 5406). The other declarations are elementary
+`fh` inside the box `(a, b)`, is internal to the project. It is the form used by the
+plane-curve Hasse–Weil assembly (`Assembly.lean`). The other declarations are elementary
 helpers.
 
 ## Proof

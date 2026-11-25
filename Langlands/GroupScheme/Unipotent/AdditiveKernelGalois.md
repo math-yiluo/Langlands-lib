@@ -1,7 +1,5 @@
 # Galois descent of split additive polynomial kernel curves
 
-Author: Worker 864.
-
 This is a derived polynomial form of Conrad–Gabber–Prasad, *Pseudo-reductive
 Groups*, second edition (2015), Lemmas B.1.7–B.1.9, printed pp.563–565,
 one-based PDF pp.589–591. The registered source is

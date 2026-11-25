@@ -57,7 +57,8 @@ map.
 
 The provenance is internal: actual identity-component inclusion and all-test
 transporter functoriality, integral automorphism base-change compatibility,
-Worker 1683's geometric-field-to-etale identity-transporter construction,
+the geometric-field-to-etale identity-transporter construction
+`etaleIdentityTransporterOfSplitTorus` (`Torus/IdentityTransporterEtaleLift`),
 the actual section neighbourhood, and the existing rank-one/open-descent
 constructors. The arbitrary base may be nonreduced or nonnoetherian, and
 the original ambient fibres may be disconnected. Construction of the

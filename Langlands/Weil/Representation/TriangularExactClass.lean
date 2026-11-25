@@ -43,7 +43,7 @@ def lineQuotientEquiv
         rw [← LinearMap.ker_eq_bot, LinearMap.ker_eq_bot']
         intro c hc
         rw [lineQuotientMap_apply, Submodule.Quotient.mk_eq_zero] at hc
-        exact ULift.ext _ _ (hind _ hc),
+        exact ULift.ext (hind _ hc),
       by
         intro q
         obtain ⟨x, rfl⟩ := Submodule.Quotient.mk_surjective P q

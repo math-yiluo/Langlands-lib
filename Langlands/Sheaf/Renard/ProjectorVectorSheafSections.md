@@ -82,6 +82,7 @@ not prove or assume any of the following:
 - any statement of the II.2.5 Theorem.
 
 The test-algebra structure on compact sections and the resulting comparison
-morphism of nondegenerate modules belong to the compact-section functor of
-Task 5338, Unit 1, which is a separate unit. So do the sheaf-side comparison
+morphism of nondegenerate modules belong to the compact-section functor
+(`CompactSectionTestModule`) and to `ModuleProjectorComparison`, which are
+separate modules. So do the sheaf-side comparison (`SheafProjectorComparison`)
 and the stalk descriptions.

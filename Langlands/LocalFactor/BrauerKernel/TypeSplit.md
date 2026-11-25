@@ -1,13 +1,12 @@
 # Separating an actual Brauer relation by unramified types
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. Following
 Deligne (1973), §4.10, an actual relation among induced character differences
 splits into separate relations, one for each class of unramified twists. This
 module proves that splitting at the level of trace characters, for any admissible
 choice of exponents. It asserts no epsilon or L-factor identity. The existence of
-admissible exponents is a separate unit.
+admissible exponents is proved in a separate module.
 
 ## Abstract lemmas (`Langlands.LocalFactor.BrauerKernel`)
 

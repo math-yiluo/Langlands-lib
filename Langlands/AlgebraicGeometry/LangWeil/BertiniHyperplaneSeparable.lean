@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_IntermediateField_mem_adjoin_sum_mul_of_isSeparable_of_algebraicIndependent
 import Langlands.AnthropicFLT.P2M.Sol.S_Ideal_exists_mem_and_mem_and_radical_span_singleton_isPrime
 

@@ -1,6 +1,6 @@
 # Casselman–Wallach extension on genuine smooth vectors
 
-Worker 1028. The declarations are in `Langlands.Archimedean`. The module defines two interfaces and states, but does not prove, a Banach smooth-vector specialization of the Casselman–Wallach lifting theorem.
+The declarations are in `Langlands.Archimedean`. The module defines two interfaces and states, but does not prove, a Banach smooth-vector specialization of the Casselman–Wallach lifting theorem.
 
 ## Interfaces
 

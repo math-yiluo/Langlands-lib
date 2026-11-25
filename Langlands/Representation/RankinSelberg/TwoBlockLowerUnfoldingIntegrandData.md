@@ -3,8 +3,6 @@
 Module `Langlands.Representation.RankinSelberg.TwoBlockLowerUnfoldingIntegrandData`,
 namespace `Langlands.RankinSelberg.TwoBlockLowerUnfolding`.
 
-Author: Worker 1037.
-
 This module is a definitions unit for the right side of JPSS (1983), Section
 4.7, equation (1). It constructs the actual unweighted scalar function
 

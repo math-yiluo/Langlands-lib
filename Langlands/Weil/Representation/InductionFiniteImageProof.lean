@@ -1,7 +1,7 @@
 /-
 Copyright (c) 2025 Amelia Livingston. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
-Authors: Amelia Livingston, Worker 261
+Authors: Amelia Livingston
 
 The quotient-lift construction of `identityCosetProjection` is adapted from
 Mathlib's `Rep.indResHomEquiv`.

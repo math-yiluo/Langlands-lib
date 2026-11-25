@@ -1,9 +1,9 @@
 # Chamber restriction and diagonal real-part projection
 
-Worker 526 derives these coordinate lemmas from the actual chamber labels in
+These coordinate lemmas are derived from the actual chamber labels in
 `IntersectionChamberCoordinates` and the real-part fibre formula and block-sum
-algebra in `MaximalConeExponents`. Worker 828 supplied the chamber coordinates
-and their constancy on each fine block. This is internal finite-sum algebra;
+algebra in `MaximalConeExponents`. The chamber coordinates and their constancy
+on each fine block come from `IntersectionChamberCoordinates`. This is internal finite-sum algebra;
 it makes no new assertion about an external literature source.
 
 The namespace is `Langlands.Geometric.ChamberProjection`.

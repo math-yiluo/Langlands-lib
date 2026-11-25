@@ -13,9 +13,10 @@ with coefficients in an algebraic representation `ρ`
 the algebra of the Shimura varieties is split or a division algebra.
 
 The hypotheses on `π_f`, `JL(π_f)` and the model of `JL(π_f)` over an
-`ℓ`-adic field are encoded as in Worker 34's statement of Harris's
-Theorem 5.7(i)–(ii) (`CMHarrisTheorem57Statement`, submitted as candidate
-`023a56d6`). This module neither imports that statement nor depends on it.
+`ℓ`-adic field are encoded as in the Library's statement of Harris's
+Theorem 5.7(i)–(ii) (`CMHarrisTheorem57Statement`, in
+`HarrisTaylorCMHarrisTheorem57Statement`). This module neither imports that
+statement nor depends on it.
 
 ## Harris's formula
 
@@ -166,7 +167,8 @@ images of all `GG(A_f)`-intertwining maps `τ → H^d(S, W)_λ ⊗_{K_λ} M`.
   cohomology exists only for the Harris-signature charts. That the Library's
   `S_U` over `F`, with the coefficient system attached to `ρ`, is Harris's
   `S̄_{K(N)}` with `W̃` is not formalized.
-* **`ℬ` is a division algebra.** Worker 34's Theorem 5.7 statement assumes
+* **`ℬ` is a division algebra.** The Theorem 5.7 statement
+  `CMHarrisTheorem57Statement` assumes
   that `A` is a division algebra. This statement does not, because the
   hypothesis follows from the variable `t`. The map `a ↦ 1 ⊗ a` from `A` to
   `F_{w₀} ⊗_F A` is injective, since `F_{w₀}` is a field extension of `F`, and
@@ -299,4 +301,4 @@ The Library's ingredients are `IsHarrisJacquetLanglandsTransfer`,
 `harrisAwaySplitGL`, `HarrisAwayComplement` and `splitTensor`
 (Jacquet–Langlands); `GeneralLinear.IsSupercuspidal`; and
 `cmHarrisLambdaTowerIsotypicFixedVectors` of `HarrisTaylorCMLambdaTower`. The
-encoding of the hypotheses follows Worker 34's `CMHarrisTheorem57Statement`.
+encoding of the hypotheses follows `CMHarrisTheorem57Statement`.

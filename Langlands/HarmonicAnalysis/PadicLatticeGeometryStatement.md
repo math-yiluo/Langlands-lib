@@ -51,7 +51,7 @@ TotallyDisconnectedSpace F.Carrier ∧
   `T.additiveLattice m`.
 
 All three facts concern only the topology `T.topology`. The instances
-`T.valuativeRel` and `T.localField` are installed as the task requires, and no
+`T.valuativeRel` and `T.localField` are installed as well, and no
 term of the conclusion depends on them. `IsNonarchimedeanLocalField` takes a
 topology as a parameter and provides none, so `T.topology` is the only topology
 in scope. No hypothesis is added. In particular, the proposition contains no
@@ -161,8 +161,7 @@ The Library has no `notes/errata` directory (checked on 2026-10-27).
 
 ## Purpose and proof route
 
-Worker 688 split this prerequisite from task
-`2be3a65c-9439-43c6-be52-368dd3a8bf98` revision 2, whose target is
+This prerequisite was split from the proof of
 `Langlands.HarmonicAnalysis.PadicSelfDualMeasureExistsStatement` for every
 prime, every `PadicField.{u}` and every supplied `TopologicalData`. The first
 conjunct supplies that statement's total-disconnectedness certificate. The
@@ -171,7 +170,7 @@ functions and lattice volumes. This proposition does not change or prove that
 statement.
 
 A proof must establish all three facts from the supplied data alone. Before
-the proof was written, Worker 180 suggested a route for total
+the proof was written, the following route was suggested for total
 disconnectedness:
 
 - import `Mathlib.Topology.Algebra.Nonarchimedean.TotallyDisconnected`;
@@ -188,7 +187,7 @@ For the lattices, one possible route is the following:
 - combine this with `isCompact_integers` and `isOpen_integers`.
 
 These routes are neither implemented nor assumed in this module. The
-published proof `padicLatticeGeometry` follows Worker 180's route for total
+published proof `padicLatticeGeometry` follows the suggested route for total
 disconnectedness. For the lattices it applies the published theorems
 `PadicField.TopologicalData.isCompact_additiveLattice` and
 `PadicField.TopologicalData.isOpen_additiveLattice`, whose proofs use the
@@ -196,12 +195,11 @@ uniformizer-power description of the lattices.
 [PadicLatticeGeometryProof](PadicLatticeGeometryProof.md) describes the
 implemented Lean argument.
 
-## Environment and authorship
+## Environment
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and
+The environment is Lean 4.34.0 with
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. The module imports
-only `Langlands.HarmonicAnalysis.Conductor`. Worker 723 authored this pair from
-the formulation in task `8031460c-9263-44a4-a117-e80aed4f1458` revision 1.
+only `Langlands.HarmonicAnalysis.Conductor`.
 
 ## Status
 
@@ -211,8 +209,7 @@ The proposition is proved by the theorem
 telescope `{p} [Fact p.Prime] (F) (T)` and conclusion
 `PadicLatticeGeometryStatement F T`, so it covers every supplied
 `T : F.TopologicalData` and every integer level `m`, with no added hypothesis.
-The proof is artifact `d4d3bd16-22c3-4fd2-9ebc-fc0d73167286` version 1. Its
-validation passed the Lake build and exact-target checks, an independent review
-approved it, and it was published at Library commit
+The proof passed the Lake build and exact-target checks and was published at
+Library commit
 `a2f65909d0470e0c9b71d24975a4fb12723f855f`. It proves only the topological
 facts stated here, not `PadicSelfDualMeasureExistsStatement`.

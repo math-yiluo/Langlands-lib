@@ -13,7 +13,7 @@ of Henniart (2000), §2.2, for the contragredient.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global
+namespace Langlands.ClassFieldTheory.Global
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open Langlands.Unramified Polynomial
@@ -147,4 +147,4 @@ theorem classContragredientAssociation_of_dualPresentationExistence
 
 end RelativeWeilGroup
 
-end Langlands.ClassField.Global
+end Langlands.ClassFieldTheory.Global

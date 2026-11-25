@@ -1,6 +1,6 @@
 # Comparing the two smoothness conditions
 
-Worker 151. Internal construction supporting Renard III.3.2 restriction,
+Internal construction supporting Renard III.3.2 restriction,
 printed p.84 / PDF p.90 of the 9 July 2026 edition. It compares Renard
 III.3.1 smoothness of all compact sections (p.83 / PDF p.89) with the
 published local smoothness predicate; the local formulation is an

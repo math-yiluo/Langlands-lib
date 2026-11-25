@@ -1,7 +1,7 @@
 # Terminal quotients of the actual normalized complex
 
-Internal construction by Worker 194, depending on the separately owned
-normalization adapter of Worker 23.
+Internal construction, depending on the normalization adapter module
+`Parabolic`.
 
 The incoming boundary in degree zero is zero. In degree `k + 1` it is the
 actual image of the signed differential from degree `k`. Equivariance of that

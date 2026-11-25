@@ -78,7 +78,7 @@ root functor. Composing the factor inclusions with `jU` and using
 `orderedMultiplication_comp` gives the displayed equation. The cyclic
 realization theorem also supplies unipotence and splitness of each factor.
 
-This unit constructs a selected-root product, not the final
+This module constructs a selected-root product, not the final
 `BuildingComparisonStatement`. It supplies neither initial opposite pairs
 nor compatible valuation data, a building metric, a special point for the
 supplied integral model, or unique fixation.

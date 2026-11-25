@@ -1,7 +1,5 @@
 # Uniform vanishing of higher fibre cohomology of large twists
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProjectiveFibreTwistUniformVanishing` (namespace
 `Langlands.AlgebraicGeometry.Modules.FibreTwist`) proves clause 1 of
 `ProjectiveFibreTwistCohomologyStatement`, together with helpers shared with the other clauses.
@@ -10,7 +8,7 @@ The module `Langlands.AlgebraicGeometry.Modules.ProjectiveFibreTwistUniformVanis
 
 For modules `𝓛`, `F` on a scheme (FLT tensor products), `twist 𝓛 F n` is the twist of the statement.
 
-- `twistTensorPowIso`: `twist 𝓛 F n ≅ F ⊗ 𝓛.tensorPow n` (FLT tensor power), by the right unitor
+- `twistTensorPowIso`: `twist 𝓛 F n ≅ F ⊗ 𝓛.tensorPowFLT n` (FLT tensor power), by the right unitor
   and associators.
 - `pullbackTwistIso`: pullback commutes with twisting (FLT `pullbackTensorObjIso`).
 - `isInvertible_twist`: twists of invertible modules are invertible.

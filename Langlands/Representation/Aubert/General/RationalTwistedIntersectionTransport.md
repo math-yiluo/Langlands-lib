@@ -1,10 +1,10 @@
 # Twisted intersections on the actual point Weyl quotient
 
-This internal transport unit starts from the published `pointCoxeterSystem`,
+This transport module starts from the published `pointCoxeterSystem`,
 which sends a scheme relative Weyl Coxeter system through the
 representative-preserving quotient equivalence `weylEquiv`. The labels remain
 exactly `SimpleRoot i ν`. The normalizer and full-centralizer comparison
-hypotheses are explicit; this unit does not prove those comparisons.
+hypotheses are explicit; this module does not prove those comparisons.
 
 `pointCoxeterSystem_mem_standardSubgroup` identifies membership in standard
 Coxeter subgroups under that equivalence. `pointCoxeterSystem_isMinimal_iff`

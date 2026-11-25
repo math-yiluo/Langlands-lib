@@ -1,7 +1,5 @@
 # The split form of a reductive group: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.SplitFormStatement.{u}` is a proposition definition. This
 module does not prove it.
 
@@ -71,9 +69,8 @@ The definition of a split reductive group (§21.a, printed p.424, PDF p.440):
   common split maximal torus and matching root data) and
   `maximalTorusExistence : MaximalTorusExistenceStatement`
   (`Torus/ExistenceProof`).
-- No Lean declaration of Corollary 23.57 was found: searching `Langlands/` for
-  `SplitForm` and for statements with conclusions `Nonempty (G₀_{k_s} ≅ G_{k_s})`
-  found none. The published family-7 ledger
+- Corollary 23.57 is this statement; it is proved as `splitForm` in
+  `Reductive/SplitFormProof`. The published family-7 ledger
   (`notes/group-schemes/ledger-family-7-split-classification.md`) records the
   existence theorem (row A1) and the common-torus isomorphism theorem (row A2) but no
   split-form row.

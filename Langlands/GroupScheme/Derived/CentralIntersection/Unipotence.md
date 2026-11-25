@@ -1,7 +1,5 @@
 # A unipotence criterion over an algebraically closed field
 
-Author: Worker 1408.
-
 This internal helper module proves a sufficient criterion for the Library
 predicate `IsUnipotent` (module `Reductive.Basic`). That predicate says that
 every matrix representation on a nonzero coordinate space has a nonzero fixed

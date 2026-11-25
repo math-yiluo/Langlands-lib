@@ -1,7 +1,5 @@
 # Topology on adelic-level points of algebraic spaces
 
-Author: Worker 105.
-
 This module defines the topology on the adelic-level points of an algebraic space over
 the `S`-integers of a global field. Brian Conrad, *Weil and Grothendieck approaches to
 adelic points* (December 31, 2011), uses this topology on printed p.17. The registered

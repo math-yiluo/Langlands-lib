@@ -5,7 +5,7 @@ Licensed under Apache License 2.0; see licenses/Anthropic-FLT/LICENSE, NOTICE,
 and ATTRIBUTION.md. Imports are prefixed; utility commands are replaced by
 standard Lean commands. See the paired Markdown for changes and provenance.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_isDomain_localization_atPrime_ker_counitAlgHom_of_finiteType_of_charZero
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_exists_algEquiv_comap_ker_counitAlgHom_eq_ker_algHom
 set_option maxHeartbeats 4000000

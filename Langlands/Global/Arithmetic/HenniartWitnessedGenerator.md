@@ -1,6 +1,6 @@
 # Witnessed generators from weakly associated unitary representations
 
-Author: Worker 5134. Module `Langlands.Global.Arithmetic.HenniartWitnessedGenerator`
+Module `Langlands.Global.Arithmetic.HenniartWitnessedGenerator`
 (namespace `Langlands.VirtualRepresentation.RelativeGlobal`). It is a helper for the
 reduction `HenniartGlobalizationReductionStatement`
 (`Langlands.Global.Arithmetic.HenniartGlobalizationReduction`) of

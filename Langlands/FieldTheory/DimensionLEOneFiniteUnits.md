@@ -35,6 +35,3 @@ cohomology results using
 [`IsCohomologicallyTrivial`](../Cohomology/Tate/CohomologicallyTrivial.md).
 It does not assert tensor stability, identify torus scheme cocycles with
 lattice-valued cohomology, or prove the existence of a Borel subgroup.
-
-Worker 1333 authored this packaging and its proofs. The imported
-vanishing and comparison results retain their existing authorship.

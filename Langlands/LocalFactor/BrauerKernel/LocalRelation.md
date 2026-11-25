@@ -1,14 +1,13 @@
 # Local restrictions of a relation among induced Hecke characters
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, §4.12) a relation among induced characters of a global Weil group restricts
 at every finite place `z` to a relation among induced characters of the local Weil group at
-`z`. This unit performs that restriction for relative Weil groups `W_{E/F}`. The companion
-unit `BrauerKernel.LocalEuler` then cancels the L-factors of the local relation.
+`z`. This module performs that restriction for relative Weil groups `W_{E/F}`. The companion
+module `BrauerKernel.LocalEuler` then cancels the L-factors of the local relation.
 
-Everything is in `Langlands.ClassField.Global.RelativeWeilGroup`. Fix a class family
+Everything is in `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`. Fix a class family
 `c : FundamentalClass.ClassFamily.{u}` with `h : FundamentalClass.Restriction c`, a Galois
 extension `E/F` of number fields in universe `u`, a finite type `J`, integers `r j`,
 intermediate fields `K j` of `E/F` and Hecke characters `θh j`, `θh' j` of `K j`. `Gal(E/F)`
@@ -59,7 +58,7 @@ The global universe `u` and the representation universe `uV` are independent.
 The Mackey formula is the published `LocalInducedRestriction`, whose source is Tate, *Number
 theoretic background* (1979), (2.3.5) with (1.6.1). Its use here follows Deligne, *Les
 constantes des équations fonctionnelles des fonctions L* (1973), proof of Lemma 4.12, where
-the global relation is restricted to every place. This unit is internal bookkeeping with the
+the global relation is restricted to every place. This module is internal bookkeeping with the
 published lemmas of `Global.Factors.RelativeWeilBrauer` and
 `Global.Factors.RelativeWeilLocalHecke`. It is the general-index form of the Fin-indexed
 decomposition `exists_continuousRestrict_decomposition` in `RelativeWeilBrauer`. No base-field

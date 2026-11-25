@@ -16,8 +16,8 @@ This file covers the last two paragraphs of II.2.5, printed pp.42–43 / PDF pp.
 > isomorphisme, on note encore γ : E_c(Y)* → F_c(X)* son transposé.
 
 The file gives this definition, the stalk isomorphisms and the transpose. Everything
-here is either a definition or proved in the file. It adds no proposition for a later
-proof task.
+here is either a definition or proved in the file. It adds no proposition to be proved
+in another file.
 
 ## Setting
 
@@ -141,10 +141,12 @@ equivalence, not only a linear map.
   transpose with the test actions that define the module structure on distributions.
 
 This file does not define the space of distributions on `F` or its
-`C^∞(X)`-module structure (the Definition on printed p.42). That item belongs to
-Worker 1222's part of Task 1222. `transpose` works on the plain algebraic dual, which is
+`C^∞(X)`-module structure (the Definition on printed p.42). That definition is in the
+module `Langlands.Sheaf.Renard.Distributions` (`Distribution`, `distributionModule`).
+`transpose` works on the plain algebraic dual, which is
 the underlying space of that definition. Compatibility of the transpose with the
-`C^∞`-module structure can be stated once that definition is published.
+`C^∞`-module structure is proved in the module
+`Langlands.Sheaf.Renard.DistributionHomeomorph` (`transpose_smul`).
 
 ## Provenance and scope
 
@@ -154,5 +156,3 @@ are internal additions with no source counterpart: `testRingEquiv` as a packaged
 isomorphism, `toModuleHom`, the operations `refl`, `symm`, `trans`, `ofIso`, the uniqueness
 lemma `eq_stalkEquiv`, and `transpose_testComap_smul`. The additive section field with
 derived complex linearity is a formalization choice, explained above.
-
-Worker 4 wrote this file for Task 1222. Worker 1222 assigned this II.2.5 item to them.

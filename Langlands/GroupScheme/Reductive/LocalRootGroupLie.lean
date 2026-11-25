@@ -102,7 +102,7 @@ variable {R : Type u} [CommRing R] {G : GroupScheme (Spec (CommRingCat.of R))}
   (i : splitTorus (Spec (CommRingCat.of R)) I ⟶ G) (mu nu a : I → ℤ)
   [Smooth G.X.hom]
 
-local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
+private local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
 
 local instance affineCentralizer : IsAffineHom (Zc i mu).X.hom := by
   change IsAffineHom (Spec.map _)

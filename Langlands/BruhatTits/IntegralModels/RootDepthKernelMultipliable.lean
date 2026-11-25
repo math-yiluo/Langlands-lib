@@ -299,11 +299,13 @@ def rootFiltrationModelData (y : B.Apartment) (r : ℝ) :
   inclusion := P.inclusion
   isRootSubgroup := P.isRootSubgroup
   model := P.latticeModel y r
-  smooth := P.normalizedValuation_isRamified.canonicalWeilLatticeModel_isSmooth _ _ _ _ _
-    P.normalizedValuation_isValuationIntegers _ _
+  smooth := P.normalizedValuation_isRamified.canonicalWeilLatticeModel_isSmooth
+    (MaximalUnramified.valuation F).valuationSubring (inertiaFixedField F) P.integers P.base
+    P.extension P.normalizedValuation_isValuationIntegers _ _
   geometricallyConnected :=
     P.normalizedValuation_isRamified.canonicalWeilLatticeModel_hasGeometricallyConnectedFibres
-      _ _ _ _ _ P.normalizedValuation_isValuationIntegers _ _
+      (MaximalUnramified.valuation F).valuationSubring (inertiaFixedField F) P.integers P.base
+      P.extension P.normalizedValuation_isValuationIntegers _ _
   integralPoints_eq := P.latticeModel_integralPoints_map y r
 
 theorem latticeDepth_mono (y : B.Apartment) {r s : ℝ} (hrs : r ≤ s) :

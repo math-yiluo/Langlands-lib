@@ -32,7 +32,7 @@ parabolic whose all-test functor equals the dynamic parabolic. These are
 equalities of subgroup functors; they do not choose additional point or measure
 comparisons.
 
-The provenance is internal: this unit composes the existing affine dynamic
+The provenance is internal: this module composes the existing affine dynamic
 representability, represented-subgroup lift, centralizer reductivity, geometric
 radical reduction, field-extension theorem and canonical radical uniqueness. It
 introduces no external theorem. It supplies a structural bridge for the actual

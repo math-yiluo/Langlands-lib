@@ -6,17 +6,19 @@ DOI 10.1017/S1474748003000082, literature ID `waldspurger-2003-plancherel`.
 Relevant passage: the proof of Proposition VIII.4.1, printed pp. 328–330
 (PDF pp. 94–96).
 
-This module belongs to unit 3 ("rank adapter") of Task 7439, revision 2. Its
-provenance is **derived**. It contains no new analysis. It composes modules of
-the same task with each other and with Library statements. It names one new
+This module belongs to the rank adapter for the proof of VIII.4.1, with
+`RationalCuspidalUnit` and `RationalCuspidalUnitKernel`. Its provenance is **derived**. It
+contains no new analysis. It composes the modules below with each other and with Library
+statements. It names one new
 proposition, `RationalDegreeZeroOperatorExistenceStatement`, and does not prove it.
 
-* `RationalCuspidalUnitKernel` (unit 3) defines `IsRationalDegreeZeroOperator`,
+* `RationalCuspidalUnitKernel` defines `IsRationalDegreeZeroOperator`,
   the six degree-zero laws of a complex-linear operator `P` on the actual rational
   Schwartz space. It proves that `°e = P(1_H)` satisfies
   `IsRationalCuspidalLevelKernel` and, from the closed Corollary VIII.3.2
   statement, `RationalLevelKernelConjugationIntegrable`.
-* `RationalCuspidalCentralKernelLocalStep` (Worker 825's follow-up of unit 2)
+* `RationalCuspidalCentralKernelLocalStep` (the continuation of the kernel step
+  `RationalCuspidalCentralKernelStep`)
   proves that these two properties of an element `E`, together with the central
   and `L²` weights, make the actual central level span finite dimensional for
   connected reductive `G` and every unitary `χ`
@@ -24,7 +26,7 @@ proposition, `RationalDegreeZeroOperatorExistenceStatement`, and does not prove 
   It also proves the closed form `RationalCuspidalLevelKernelFiniteStatement` from
   three Library statements (`RationalCuspidalLevelKernelFiniteStatement.of_statements`).
 * `RationalCuspidalCentralImage` and `RationalCuspidalCentralFiniteReduction`
-  (unit 1) give the equality of the span with the raw image under central
+  give the equality of the span with the raw image under central
   convergence (`coe_schwartzCentralIntegralSpan_eq_image`,
   `CentralIntegralConvergesOn.mono_of_le`).
 * `RationalCuspidalConvergenceReductions` (Library) derives closed central
@@ -74,11 +76,12 @@ Schwartz space, as in `RationalCuspidalCentralProjectionFiniteStatement`.
   `RationalCuspidalCentralProjectionFiniteStatement` at the given structural data.
   Proof:
   * equality: the split-centre heights give closed central convergence, which
-    restricts to the level and gives the equality (as in unit 1);
+    restricts to the level and gives the equality (as in
+    `RationalCuspidalCentralFiniteReduction`);
   * finiteness: the special-vertex statement supplies a compact `K0` with
-    `SimultaneousStandardBasisAt i ν K0`. With it, unit 3 gives
+    `SimultaneousStandardBasisAt i ν K0`. With it, `RationalCuspidalUnitKernel` gives
     `RationalLevelKernelConjugationIntegrable` at `°e = P(1_H)` from VIII.3.2.
-    Unit 3 also gives `IsRationalCuspidalLevelKernel` at `°e`.
+    It also gives `IsRationalCuspidalLevelKernel` at `°e`.
     `RationalCuspidalLevelKernelFiniteStatement.of_statements` then concludes; it
     takes the central and `L²` weights from the first three statements and splits
     off the case where `χ` is nontrivial on `A_G(F) ∩ H`.
@@ -112,41 +115,38 @@ The source constructs `°f` for `G` from results on proper Levi subgroups
 `IsRationalDegreeZeroOperator.centralLevelSpan_eq_image_and_finiteDimensional`
 uses one operator for the one group `G` and no statement about `G` itself
 besides the four analytic Library statements. It is the form for a well-founded
-assembly over rank (Task 3642). The closed corollary assumes the existence of
+assembly over rank. The closed corollary assumes the existence of
 such an operator for every group at once. It records what the closed target
 still needs and does not by itself discharge the recursion.
 
-## Open hypotheses and their owners
+## Open hypotheses
 
 No hypothesis here is same-rank finiteness, same-rank reconstruction, the
 closed target or a dimension bound.
 
-* `RationalSplitCenterHeightStatement`: owned by **Task 5480**.
+* `RationalSplitCenterHeightStatement`: proved as `rationalSplitCenterHeight` (module
+  `RationalSplitCenterHeightProof`).
 * `RationalXiSquareIntegrableStatement` (Lemma II.1.5): the Library proves it
   from `RationalXiUpperBoundStatement` by
-  `rationalXiSquareIntegrable_of_upperBound`; that upper bound is owned by
-  **Task 5326**.
+  `rationalXiSquareIntegrable_of_upperBound`; that upper bound is proved as
+  `rationalXiUpperBound` (module `RationalXiUpperBoundProof`).
 * `CuspidalSupport.RationalSpecialVertexCompactInputsStatement`: the Library
   proves it from `JointSpecialCompactBasisExistenceStatement` by
   `CuspidalSupport.rationalSpecialVertexCompactInputs_of_jointBasis`; that
-  statement is owned by **Task 4169**.
-* `RationalCuspidalConjugationIntegrabilityStatement` (Corollary VIII.3.2): its
-  proof is owned by **Task 7500**.
+  statement is not proved unconditionally in the Library.
+* `RationalCuspidalConjugationIntegrabilityStatement` (Corollary VIII.3.2): it is
+  not proved in the Library.
 * `RationalDegreeZeroOperatorExistenceStatement`, or for one group an operator
-  with `IsRationalDegreeZeroOperator`: the actual degree-zero projection and its
-  VIII.2.1–VIII.2.3 laws are owned by **Task 7277**. Worker 3642 has assigned the
-  translation law to Task 7277 as well. Discharging `IsRationalDegreeZeroOperator`
-  for Task 7277's operator is Task 7439's unit 3, after Task 7277 publishes. The
-  well-founded assembly over rank is owned by **Task 3642**.
+  with `IsRationalDegreeZeroOperator`: the actual degree-zero projection of VIII.2 is
+  not in the Library. Discharging `IsRationalDegreeZeroOperator` for it needs its
+  VIII.2.1–VIII.2.3 laws and the translation law; its construction uses a
+  well-founded assembly over rank.
 
 The closed target `RationalCuspidalCentralProjectionFiniteStatement` is not
-proved here. This module is an intermediate unit; Task 7439's completion still
-requires the closed theorem.
+proved here.
 
 ## Dependencies
 
-This module imports `RationalCuspidalUnitKernel` (Task 7439 unit 3, candidate
-`6dd35692-0689-4a5b-8236-bde0f31d78c0`, staged, not yet in the Library),
-`RationalCuspidalCentralKernelLocalStep` (Task 7439, Worker 825's unit published
-as candidate `b46ce0f0-0164-4091-b359-d77221dc0431`) and the Library module
+This module imports `RationalCuspidalUnitKernel`,
+`RationalCuspidalCentralKernelLocalStep` and the Library module
 `RationalCuspidalConvergenceReductions`.

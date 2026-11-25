@@ -1,7 +1,5 @@
 # Proof: strict block-length growth for concrete conjugate pair refinements
 
-Author: Worker 277.
-
 The theorem `Langlands.conjugatePairRefinementRank.{uF}` has type exactly
 `Langlands.ConjugatePairRefinementRankStatement.{uF}`. The statement module
 `Langlands.Group.GL.ConjugatePairRefinementRankStatement` is imported by name

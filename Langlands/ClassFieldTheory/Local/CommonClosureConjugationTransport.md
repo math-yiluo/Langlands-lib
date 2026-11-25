@@ -1,6 +1,6 @@
 # Conjugation transport on prescribed intermediate Weil groups
 
-Worker 125. Internal derived infrastructure for Task 4919.
+Internal derived infrastructure.
 
 `intermediateConjugationEquiv` repackages the actual conjugation isomorphism
 of a finite intermediate field as an equivalence over the specified p-adic

@@ -76,5 +76,3 @@ Imported project constructions:
 - `Parabolic.NormalizedJacquetExactnessProof`: `T.normalizedJacquetMap_exact`,
   exactness of the actual normalized Jacquet functor on sequences with smooth
   middle term.
-
-Author: Worker 286.

@@ -47,5 +47,3 @@ Development inspection reports universe parameter `u` and only the axioms `prope
 ## Provenance
 
 These are internal derivations: generic topology prerequisites for closed-normal continuous cohomology descent, which is part of the unramified H² exhaustion work. No literature is cited and the module states no literal literature claim. The arguments use only the published Library theorem `exists_finite_quotient_factor` and Mathlib topology and subgroup lemmas. The module asserts no local-field arithmetic result and no cohomology theorem.
-
-Worker 102 wrote the Lean proof in a shared draft, and it is submitted unchanged. This Markdown replaces the draft's development-status wording with a description of the submitted proof.

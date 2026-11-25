@@ -1,6 +1,6 @@
 # The product side of the Mumford-bundle computation on `A ×_K A`
 
-This module is the entry point of a helper unit for the proof of the published
+This module is the entry point of a group of helper modules for the proof of the published
 `AlgClosedFieldAmpleEulerInverseScalingStatement`. It states one anchor proposition,
 `MumfordProductSideStatement`, which is the conjunction of the main theorems of the two
 companion modules, and proves it in `mumfordProductSide`.
@@ -23,8 +23,10 @@ finite cohomology (`HasFiniteCohomology`) along the structure map.
    `χ(m^* L ⊗ p₁^* M) = χ(L) · χ(M)`.
 2. The same with `p₂` in place of `p₁`: `m^* L ⊗ p₂^* M` has finite cohomology and
    `χ(m^* L ⊗ p₂^* M) = χ(L) · χ(M)`.
-3. If the theorem of the square holds, in the form of the published (not yet proved)
-   `Langlands.GroupScheme.FieldTheoremOfTheSquareStatement.{u}`, then for every
+3. If the theorem of the square holds, in the form of the published
+   `Langlands.GroupScheme.FieldTheoremOfTheSquareStatement.{u}` (proved in the Library as
+   `Langlands.GroupScheme.fieldTheoremOfTheSquare`, module
+   `Langlands.AbelianScheme.FieldTheoremOfTheSquareProof`), then for every
    algebraically closed field `K : Type u`, abelian scheme `A` over `Spec K`, ample line
    bundle `H` on `A` and line bundle `N` with `H ⊗ N ≅ 𝒪_A`, and every `n : ℕ`, the higher
    direct image `R^n p₂,* (m^* H ⊗ p₁^* N)`, written
@@ -57,10 +59,10 @@ cohomology into finiteness of cohomology and multiplicativity of Euler character
 Künneth theorem `coherentFieldExternalTensorKunneth`. The theorems use only the standard
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-## Files of this unit
+## Files of this group
 
 - `Langlands/AlgebraicGeometry/Modules/KunnethEulerProduct.lean` and `.md`: Euler
-  characteristics under a degreewise Künneth decomposition (author Worker 998).
+  characteristics under a degreewise Künneth decomposition.
 - `Langlands/AlgebraicGeometry/Picard/MumfordProductEulerCharacteristic.lean` and `.md`:
   parts 1 and 2.
 - `Langlands/AlgebraicGeometry/Picard/MumfordSecondProjectionSupport.lean` and `.md`:

@@ -1,7 +1,5 @@
 # The coatom Jacquet-length budget on actual reductive rational points
 
-Author: Worker 153.
-
 The declaration is
 
 ```text

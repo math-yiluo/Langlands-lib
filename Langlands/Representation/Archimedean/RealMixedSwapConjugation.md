@@ -1,6 +1,6 @@
 # Conjugating real rank-three intertwiners by signed reversal
 
-This internal supporting unit derives a transport principle from
+This module derives a transport principle from
 `RealMixedSwapLie`, `RealMixedSwapSigned` and the actual compact and infinitesimal
 actions of the Library's real standard modules. It uses no external existence,
 classification or irreducibility theorem.
@@ -56,7 +56,10 @@ Finally, `injectiveIntertwinerExists_conjugate` transports
 `RealInjectiveIntertwinerExists 3 ds es`. Injectivity is the composition of
 the injectivity of \(e_1\), \(T\) and \(e_2^{-1}\).
 
-This unit constructs neither the signed-reversal equivalences for particular
+This module constructs neither the signed-reversal equivalences for particular
 block parameters nor an intertwiner for the reversed pair. Those remain
-necessary inputs before this transport can be used to prove the host mixed
-swap statement.
+necessary inputs before this transport can be used to prove the mixed
+swap statement `RealInducedCharacterSwapStatement`. `RealMixedSwapIntertwiner`
+applies this transport to the equivalences of `RealMixedSwapStandard` and to the
+reversed-pair intertwiner of `RealCharacterInducedUnlinked`, and
+`realInducedCharacterSwap` proves the statement.

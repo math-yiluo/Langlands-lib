@@ -1,7 +1,5 @@
 # Compact-probe covering sieves on Hausdorff quasi-étale objects
 
-Author: Worker 21. The comparison interface and proof route use Worker 209's draft.
-
 `Langlands.Analytic.SaturatedAtlasPresentation.CompactProbeQuasiEtaleHausdorffComparisonStatement K`
 is a proposition, not a proof. For a complete ultrametric normed field `K`,
 it quantifies over `X : LocalizedCategory.{u, v, v} (K := K)`, an object

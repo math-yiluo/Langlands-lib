@@ -6,9 +6,8 @@ carriers).
 The module contains one **statement**, the `Prop`-valued definition
 `OpenSubgroupHeckeInclusionStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published map
-[iii2-hecke-induction](../../../notes/renard/iii2-hecke-induction.md) (Task 5296) lists the
+The published map
+[iii2-hecke-induction](../../../notes/renard/iii2-hecke-induction.md) lists the
 final Remark of III.2.6 as a retained gap: "This exact extension/inclusion bimodule comparison
 and the resulting Hecke pseudo-forgetful comparison for all open subgroups are not separately
 packaged here. A direct general-open-subgroup triviality theorem for
@@ -22,7 +21,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.2.6, printed p.77 / PDF p.83:
+The passage read for this statement is III.2.6, printed p.77 / PDF p.83:
 
 > Remarque. Nous terminons cette section en étudiant le cas de l'induction à partir d'un
 > sous-groupe ouvert `H` de `G` (la topologie étant totalement discontinue, `H` est aussi
@@ -114,7 +113,8 @@ measure on `H`. Then:
 
 ## Remaining obligations
 
-The proof is a separate obligation.
+The proof is `openSubgroupHeckeInclusion`, in the separate module
+`OpenSubgroupInclusionProof`.
 
 ## Imports
 

@@ -1,7 +1,5 @@
 # The factors of an adelic level
 
-Author: Worker 105.
-
 Helper module for the proof of Conrad's p.17 claims on adelic levels
 (`Langlands.Global.AdelicSpaceLevelTopologyStatement`). For a separated algebraic space `X` of
 finite type over a ring `C`, it collects the topological properties of the two kinds of factors

@@ -1,15 +1,13 @@
 # Quotient and coefficient-map proofs for affine point topologies
 
-Author: Worker 105. Submission preparation and source checks: Worker 135.
-
-Proof of the published `AffineMapProperties` target, derived from Conrad, Proposition 2.1 and Example 2.2,
+Proof of the `AffineMapProperties` target, derived from Conrad, Proposition 2.1 and Example 2.2,
 printed pages 2–3. Registered source
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 
 The rings `R`, `A`, `B`, `S`, and `T` have independent universes. No topology
 is imposed on the base ring or either coordinate algebra. Each topological-ring,
-Hausdorff, finite-type, or discrete hypothesis occurs only where the published
+Hausdorff, finite-type, or discrete hypothesis occurs only where the
 target requires it; no finite-presentation or nonzero-ring assumption is added.
 The coefficient map has direction `S → T`, and the induced point map has
 direction `X(S) → X(T)`. Thus the source coefficient ring is the closed or

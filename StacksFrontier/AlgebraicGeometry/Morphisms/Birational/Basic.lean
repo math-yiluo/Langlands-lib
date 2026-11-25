@@ -1,0 +1,85 @@
+module
+
+public import Mathlib.AlgebraicGeometry.Scheme
+public import Mathlib.AlgebraicGeometry.Birational.Birational
+public import Mathlib.Tactic.CrossRefAttribute
+
+set_option autoImplicit false
+set_option maxSynthPendingDepth 3
+
+/-!
+# Birational morphisms of schemes
+
+A morphism of schemes is *birational* when it induces a bijection between the generic points
+of the irreducible components of its source and those of its target, and an isomorphism on the
+local ring at each of those points of the source.
+
+Birationality of two *schemes*, rather than of a morphism, is the subject of
+`StacksFrontier.AlgebraicGeometry.Birational.IrreducibleDominantRat`, which defines it as Stacks
+does (Tag 0A20), by isomorphism in the category of irreducible schemes and dominant rational
+maps, and proves it equivalent to the library's `AlgebraicGeometry.Scheme.Birational` and
+`AlgebraicGeometry.Scheme.BirationalOver` (an isomorphism between dense open subschemes,
+compatible with the structure morphisms over a base).
+
+## Main definitions
+
+* `AlgebraicGeometry.IsBirational`: birationality of a morphism of schemes.
+
+## Main results
+
+* `AlgebraicGeometry.isBirational_iff`, `AlgebraicGeometry.IsBirational.bijOn`,
+  `AlgebraicGeometry.IsBirational.isIso_stalkMap` and
+  `AlgebraicGeometry.isBirational_of_bijOn_of_isIso_stalkMap` unfold the definition in both
+  directions.
+
+## Implementation notes
+
+The generic points of the irreducible components of a space form the set `genericPoints`, so
+the bijection in the definition is `Set.BijOn` for the underlying map of points. The condition
+on local rings is `CategoryTheory.IsIso` for the induced map of stalks.
+
+The source assumes that both schemes have finitely many irreducible components. Neither
+condition in the definition uses that finiteness, so the predicate is defined for arbitrary
+schemes; under the source's hypotheses it is exactly the stated notion.
+
+## References
+
+* [EGA I, (2.2.9)]
+* [Stacks Project, Tag 01RO](https://stacks.math.columbia.edu/tag/01RO)
+-/
+
+@[expose] public section
+
+open CategoryTheory TopologicalSpace
+
+universe u
+
+namespace AlgebraicGeometry
+
+/-- A morphism of schemes is **birational** if it induces a bijection on the generic points of
+irreducible components and an isomorphism on the local rings at every such point of its source.
+
+This definition is meaningful without the finiteness hypotheses on the sets of irreducible
+components imposed in [Stacks Project, Tag 01RO]. -/
+@[stacks 01RO]
+def IsBirational {X Y : Scheme.{u}} (f : X ⟶ Y) : Prop :=
+  Set.BijOn f (genericPoints X) (genericPoints Y) ∧
+    ∀ x : X, x ∈ genericPoints X → IsIso (f.stalkMap x)
+
+/-- A birational morphism bijects the generic points of irreducible components. -/
+theorem IsBirational.bijOn {X Y : Scheme.{u}} {f : X ⟶ Y} (hf : IsBirational f) :
+    Set.BijOn f (genericPoints X) (genericPoints Y) := hf.1
+
+/-- The map on local rings induced by a birational morphism at a generic point is an
+isomorphism. -/
+theorem IsBirational.isIso_stalkMap {X Y : Scheme.{u}} {f : X ⟶ Y}
+    (hf : IsBirational f) (x : X) (hx : x ∈ genericPoints X) : IsIso (f.stalkMap x) := hf.2 x hx
+
+/-- A morphism which bijects generic points and induces isomorphisms on their local rings is
+birational. -/
+theorem isBirational_of_bijOn_of_isIso_stalkMap {X Y : Scheme.{u}} (f : X ⟶ Y)
+    (hbij : Set.BijOn f (genericPoints X) (genericPoints Y))
+    (hstalk : ∀ x : X, x ∈ genericPoints X → IsIso (f.stalkMap x)) :
+    IsBirational f := ⟨hbij, hstalk⟩
+
+end AlgebraicGeometry

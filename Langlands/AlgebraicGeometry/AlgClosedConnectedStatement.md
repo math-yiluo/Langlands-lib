@@ -22,7 +22,7 @@ contain a closed point, and its inverse image rules out a separation.
 The inverse image of a rational point under this projection is isomorphic
 to the spectrum of the extension field and is connected.
 
-The Lean file only defines this proposition. A separate proof contribution
-must establish it. This comparison is useful for packaging a connected
+The Lean file only defines this proposition. It is proved in
+`AlgClosedConnectedProof`. This comparison is useful for packaging a connected
 smooth proper closed subgroup as an abelian scheme. It asserts no torsion
 cardinality, dimension comparison, or torsion density.

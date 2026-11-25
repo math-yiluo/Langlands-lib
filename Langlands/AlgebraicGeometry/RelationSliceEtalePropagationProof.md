@@ -2,8 +2,8 @@
 
 Let `B = V ×_U R`, let `p : B → V` be the first projection, and let
 `h : B → U` be the second projection followed by `s`. Assume that `s` is
-flat, `h` is locally of finite presentation, and `(t,s)` is the published
-scheme equivalence relation. If `σ : V → B` is a section of `p`, then
+flat, `h` is locally of finite presentation, and `(t,s)` is a
+scheme equivalence relation (`AlgebraicSpace.AtlasRelation.IsEquivRel`). If `σ : V → B` is a section of `p`, then
 formal etaleness of the actual stalk map of `h` at `σ(p(b))` implies
 formal etaleness at `b`.
 
@@ -17,9 +17,8 @@ gives the conclusion at `b`. The auxiliary open-neighborhood argument
 cancels the isomorphism on stalks induced by an open immersion.
 
 This is internal groupoid infrastructure for the smooth equivalence
-relation slicing proof. Worker 303 supplied the double-pullback
-propagation argument. Worker 101's scheme etale-locus API supplies the
-open etale locus; a private copy is used until that API is published.
+relation slicing proof. The scheme etale-locus API of the module
+`SchemeEtaleLocus` supplies the open etale locus.
 The proof asserts no existence of a local slice and no quotient theorem.
 
 The shrinking lemma takes `W = σ⁻¹(schemeEtaleLocus h)`. The canonical

@@ -1,6 +1,6 @@
 # Outer parameter geometry from local normalized families
 
-Worker 592. Internal derived material for the outer-parameter clauses of
+Internal derived material for the outer-parameter clauses of
 relative reductive automorphism geometry. An actual full Isom representative
 and an exact outer quotient are supplied. The acting group is flat and
 locally of finite presentation.

@@ -1,7 +1,5 @@
 # Openness of the integral-point image over a local field
 
-Author: Worker 4686.
-
 This internal helper module proves two facts about a supplied integral model
 `M : IntegralModel R K G`: the integral-point image `M.integralPoints` is open
 in `G(F)` over a nonarchimedean local field, and the original coordinates of a

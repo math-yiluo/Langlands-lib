@@ -2,7 +2,7 @@
 
 This module proves the exact `LeftHaarStatement` and
 `MeasureHaarBridgeStatement` at the full group universe through `leftHaar`
-and `measureHaarBridge`. It imports the published finite expansion proof
+and `measureHaarBridge`. It imports the finite expansion proof
 `Hecke.RenardTestDecomposition.rightInvariantExpansion`.
 
 The proof compares invariant algebraic functionals on finite compact-open
@@ -26,7 +26,7 @@ that this same scalar works on that test. Evaluation at `φ₀` proves scalar
 uniqueness. The zero functional is included among the distributions `S`.
 
 The actual Mathlib Haar integration functional supplies positivity and left
-invariance via the preceding density proof unit. It therefore realizes the
+invariance via the density proof module `RenardHaarDensityProof`. It therefore realizes the
 left Haar distribution and compares with every left-invariant algebraic
 distribution. For existence without a supplied measurable structure, the proof
 uses the Borel measurable space and Mathlib's `Measure.haar`. No supplied
@@ -34,7 +34,7 @@ topology or algebraic distribution carrier is replaced.
 
 The auxiliary `measureHaarBridge_of_expansion` and `leftHaar_of_expansion`
 isolate the finite expansion input. The final two declarations supply its
-published proof, so the exported existence and comparison assertions have no
+proof, so the exported existence and comparison assertions have no
 remaining expansion premise.
 
 The finite expansion and common-invariance steps implement the argument of

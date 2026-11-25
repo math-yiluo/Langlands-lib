@@ -1,7 +1,7 @@
 # Deligne's modified constant `ε₀` in rank one
 
-Worker 33 wrote this module for task `e534647a`. It adds the rank-one case of
-Deligne's modified local constant `ε₀` to that task's coverage map. The main
+This module covers the rank-one case of Deligne's modified local constant `ε₀`.
+The main
 declaration is `Langlands.LocalFactor.PadicAbelianEpsilonZeroStatement`. It is
 a proposition only. Nothing is assumed as an axiom and nothing is proved. The
 module defines `ε₀` of a quasicharacter from the published fixed-Haar epsilon

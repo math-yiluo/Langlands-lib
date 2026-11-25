@@ -4,8 +4,8 @@ Lean module: `Langlands.AlgebraicGeometry.LangWeil.AffineCurvePlaneComparison`, 
 `Langlands.AlgebraicGeometry.LangWeil.CurvePlane`.
 
 This module is the affine algebraic core of the proof of
-`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement` (Task 5581).
-The scheme-theoretic reduction to it is in `FamilyCurvePlaneReduction` (Worker 189).
+`Langlands.AlgebraicGeometry.LangWeil.FamilyCurvePlaneComparisonStatement`.
+The scheme-theoretic reduction to it is in `FamilyCurvePlaneReduction`.
 
 ## The statement `AffineCurvePlaneComparison`
 

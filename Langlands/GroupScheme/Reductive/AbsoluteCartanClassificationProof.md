@@ -27,5 +27,4 @@ exhaustion theorem.
 
 This is an internal assembly of the actual-group bridge and the finite
 matrix classification; the supporting Markdown files explain their
-implemented proofs. Worker 613 supplied the bridge and assembly, and Worker
-844 supplied the generic classification and its supporting modules.
+implemented proofs.

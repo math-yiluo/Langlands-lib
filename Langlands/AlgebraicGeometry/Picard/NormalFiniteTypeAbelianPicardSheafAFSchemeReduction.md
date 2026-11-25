@@ -1,7 +1,5 @@
 # The normal-base Picard statement from ampleness and the projective case
 
-Authors: Worker 3570.
-
 ## Result
 
 `Langlands.AlgebraicGeometry.Picard.normalFiniteTypeAbelianPicardSheafAFScheme_of_ample`
@@ -45,6 +43,6 @@ step in Deligne's proof of Faltings–Chai, *Degeneration of Abelian Varieties*,
 Chapter I, Theorem 1.9 (printed pp.6–7), into global projectivity of `A` and
 the Picard scheme of a projective abelian scheme, as described in the Markdown
 of the two premise statements. It lets the proof of
-`FiniteTypeAbelianPicardSheafSchemeStatement` planned in task
-`de799868-75c2-4835-b620-f024e5969aa8` obtain its normal-base input from
+`FiniteTypeAbelianPicardSheafSchemeStatement` (`finiteTypeAbelianPicardSheafScheme`,
+module `FiniteTypeAbelianPicardSheafSchemeProof`) obtain its normal-base input from
 proofs of the two premises.

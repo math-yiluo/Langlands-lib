@@ -1,7 +1,5 @@
 # Standard etale point maps are open
 
-Author: Worker 208.
-
 `standardEtalePointOpen` proves `StandardEtalePointOpenStatement` in independent
 universes for the complete nontrivially normed field K and the two commutative
 K-algebras A and B. It uses the actual presentation, scalar tower and evaluation

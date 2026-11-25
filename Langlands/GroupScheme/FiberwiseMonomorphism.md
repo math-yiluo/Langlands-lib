@@ -1,7 +1,5 @@
 # Detecting monomorphisms of group schemes on residue-field fibres
 
-Worker 677, using the kernel API of Worker 878.
-
 `kernelBaseIsoOfResidueFieldMonos` constructs the canonical isomorphism from the
 full kernel to the base, and its forward-map formula identifies it with the
 kernel structure map. It uses the same hypotheses as the detection theorem
@@ -30,4 +28,4 @@ APIs are imported from the Library.
 This supplies the global assertion 6.7 of
 `MultiplicativeTypeMonomorphismSpreadingStatement` once its multiplicative-type
 source is known locally of finite presentation. The separate local spreading
-assertion 6.6 and the exact two-part statement remain outside this contribution.
+assertion 6.6 and the exact two-part statement remain outside this module.

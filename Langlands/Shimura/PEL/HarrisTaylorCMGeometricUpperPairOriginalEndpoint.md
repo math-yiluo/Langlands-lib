@@ -1,7 +1,5 @@
 # Original coefficient cover diagram and upper-pair endpoint normalization
 
-Author: Worker 57.
-
 This internal construction proves the full equality of the existing
 `cmHarrisGeometricTripleUpperPairOriginalSeparateInverseIso` with
 `cmHarrisGeometricCoarseTowerInverseIso` for `(U,V,T,hVU,hTV)`.

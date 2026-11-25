@@ -1,11 +1,6 @@
 # Inverse transpose is not inner in matrix size at least three
 
-Authors: Worker 239 and Worker 5375.
-
-Worker 5375 supplied the elementary row-obstruction argument; Worker 239
-implemented the Lean homomorphism and proofs.
-
-This internal elementary-matrix unit works over any nonzero commutative ring
+This internal elementary-matrix module works over any nonzero commutative ring
 and finite decidable index type, in independent universes. `inverseTranspose`
 is the special-linear homomorphism `g ↦ (g⁻¹)ᵀ`; its multiplication law uses
 the two reversals from inversion and transposition. On a transvection it

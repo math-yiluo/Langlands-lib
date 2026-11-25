@@ -1,8 +1,5 @@
 # Embeddings along arbitrary henselian normed extensions
 
-Authors: Worker 114 and Worker 157 (adaptation of the published finite-extension
-chart proof).
-
 This derived construction gives the canonical homeomorphism onto the image of
 `X(K) → X_L(L)` when `K` and `L` are nontrivially normed fields in universe `u`,
 `L` is a normed `K`-algebra, both fields satisfy `IsHenselianValuedField`, and `X`
@@ -18,8 +15,8 @@ is the homeomorphism to its range obtained from the proved embedding by
 
 ## Implemented proof
 
-The module adapts the published `HenselianFiniteExtensionPointEmbeddingProof`
-of Worker 157, rather than asserting a new result from the literature.
+The module adapts `HenselianFiniteExtensionPointEmbeddingProof`, rather than
+asserting a new result from the literature.
 
 1. `NormedExtensionEmbedding.exists_invariant_open` constructs arbitrarily small
    open neighborhoods of a rational affine point inside `AlgPoint K A L`. The
@@ -46,7 +43,7 @@ of Worker 157, rather than asserting a new result from the literature.
    result for `L/K`. Henselianity of `L` is not an additional premise of this helper.
 5. `isEmbedding_henselianExtensionPointMap` factors an arbitrary extension through
    `S = separableClosure K L`. The first arrow is the separable algebraic case.
-   The second uses the published relatively separably closed extension result,
+   The second uses the relatively separably closed extension result,
    since `separableClosure S L = bottom`. The actual base-change tower isomorphism
    identifies the composition with `extensionPointMap L X`.
 
@@ -55,5 +52,9 @@ of Worker 157, rather than asserting a new result from the literature.
 This is supporting construction for `HenselianExtensionPointEmbeddingStatement`.
 It proves the embedding and constructs its homeomorphism onto the range for
 separated spaces. The conditional closed-image conclusion and the passage to
-spaces covered by separated open subspaces remain to be proved. This module does
+spaces covered by separated open subspaces are not proved here; they are in
+`HenselianExtensionClosedReduction` (from the complete-field case, proved in
+`CompleteExtensionPointClosedRangeProof`) and `HenselianExtensionLocalReduction`, and
+the whole target is proved as `henselianExtensionPointEmbedding` in
+`HenselianExtensionPointEmbeddingProof`. This module does
 not claim the whole target.

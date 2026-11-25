@@ -94,16 +94,16 @@ theorem rightMultiplication_hom (hA : IsIdempotented A) (b : A) :
 def evaluationEnd (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) : AddMonoid.End A :=
   AddEquiv.ulift.toAddMonoidHom.comp
-    ((θ.app (liftedRegularObject hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom)
+    ((θ.asHom.app (liftedRegularObject hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom)
 
 @[simp] theorem evaluationEnd_apply (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) (a : A) :
-    evaluationEnd hA θ a = (θ.app (liftedRegularObject hA) (ULift.up a)).down := rfl
+    evaluationEnd hA θ a = (θ.asHom.app (liftedRegularObject hA) (ULift.up a)).down := rfl
 
 theorem evaluationEnd_coe (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) :
     (evaluationEnd hA θ : A → A) =
-      (fun a => (θ.app (liftedRegularObject hA) (ULift.up a)).down) := rfl
+      (fun a => (θ.asHom.app (liftedRegularObject hA) (ULift.up a)).down) := rfl
 
 /-- Naturality with the actual right multiplication gives the full map identity. -/
 theorem evaluationEnd_comp_right (hA : IsIdempotented A)
@@ -113,7 +113,7 @@ theorem evaluationEnd_comp_right (hA : IsIdempotented A)
   apply AddMonoidHom.ext
   intro a
   have h := congrArg (fun f => (f (ULift.up a)).down)
-    (θ.naturality (rightMultiplication hA b))
+    (θ.asHom.naturality (rightMultiplication hA b))
   exact h
 
 /-- The right-linearity equation is derived, not supplied as a certificate. -/
@@ -196,7 +196,7 @@ theorem toRightLinearEnd_val_coe (hA : IsIdempotented A) :
 @[simp] theorem toRightLinearEnd_apply_apply (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) (a : A) :
     (toRightLinearEnd hA θ).val a =
-      (θ.app (liftedRegularObject hA) (ULift.up a)).down := rfl
+      (θ.asHom.app (liftedRegularObject hA) (ULift.up a)).down := rfl
 
 /-- Equality of the entire bundled ring map after actual subtype inclusion. -/
 theorem toRightLinearEnd_subtype_comp (hA : IsIdempotented A) :
@@ -221,7 +221,7 @@ theorem toRightLinearEnd_mul_apply (hA : IsIdempotented A)
 theorem evaluationEnd_eq_comp (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) :
     evaluationEnd hA θ = AddEquiv.ulift.toAddMonoidHom.comp
-      ((θ.app (liftedRegularObject hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom) := rfl
+      ((θ.asHom.app (liftedRegularObject hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom) := rfl
 
 /-- The actual additive composite with the published idempotent evaluation. -/
 def familyAddHom (hA : IsIdempotented A) :
@@ -243,13 +243,13 @@ theorem familyAddHom_coe (hA : IsIdempotented A) :
 @[simp] theorem familyAddHom_val (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) (e : Idempotent A) :
     (familyAddHom hA θ).val e =
-      (θ.app (liftedRegularObject hA) (ULift.up (e : A))).down := rfl
+      (θ.asHom.app (liftedRegularObject hA) (ULift.up (e : A))).down := rfl
 
 /-- The complete coordinate function retains the actual evaluated component. -/
 theorem familyAddHom_val_coe (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) :
     (familyAddHom hA θ).val =
-      (fun e : Idempotent A => (θ.app (liftedRegularObject hA) (ULift.up (e : A))).down) := rfl
+      (fun e : Idempotent A => (θ.asHom.app (liftedRegularObject hA) (ULift.up (e : A))).down) := rfl
 
 @[simp] theorem familyAddHom_one (hA : IsIdempotented A) :
     familyAddHom.{uA, uM} hA 1 = IdempotentedRingRightLimit.unit := by
@@ -311,12 +311,12 @@ theorem toFamilyRingHom_toAddMonoidHom (hA : IsIdempotented A) :
 @[simp] theorem toFamilyRingHom_val (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) (e : Idempotent A) :
     (toFamilyRingHom hA θ).val e =
-      (θ.app (liftedRegularObject hA) (ULift.up (e : A))).down := rfl
+      (θ.asHom.app (liftedRegularObject hA) (ULift.up (e : A))).down := rfl
 
 theorem toFamilyRingHom_val_coe (hA : IsIdempotented A)
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) :
     (toFamilyRingHom hA θ).val =
-      (fun e : Idempotent A => (θ.app (liftedRegularObject hA) (ULift.up (e : A))).down) := rfl
+      (fun e : Idempotent A => (θ.asHom.app (liftedRegularObject hA) (ULift.up (e : A))).down) := rfl
 
 /-! Complete unapplied interfaces at independent scalar and lifting universes. -/
 
@@ -375,13 +375,13 @@ example : {A : Type uA} → [NonUnitalRing A] → IsIdempotented A →
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) →
     (evaluationEnd.{uA, uM} hA θ : A → A) =
-      (fun a => (θ.app (liftedRegularObject.{uA, uM} hA) (ULift.up a)).down) :=
+      (fun a => (θ.asHom.app (liftedRegularObject.{uA, uM} hA) (ULift.up a)).down) :=
   @evaluationEnd_coe.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) →
     evaluationEnd.{uA, uM} hA θ = AddEquiv.ulift.toAddMonoidHom.comp
-      ((θ.app (liftedRegularObject.{uA, uM} hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom) :=
+      ((θ.asHom.app (liftedRegularObject.{uA, uM} hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom) :=
   @evaluationEnd_eq_comp.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -447,7 +447,7 @@ example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) → (a : A) →
     (toRightLinearEnd.{uA, uM} hA θ).val a =
-      (θ.app (liftedRegularObject.{uA, uM} hA) (ULift.up a)).down :=
+      (θ.asHom.app (liftedRegularObject.{uA, uM} hA) (ULift.up a)).down :=
   @toRightLinearEnd_apply_apply.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -488,7 +488,7 @@ example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) →
     (familyAddHom.{uA, uM} hA θ).val =
-      (fun e : Idempotent A => (θ.app (liftedRegularObject.{uA, uM} hA) (ULift.up (e : A))).down) :=
+      (fun e : Idempotent A => (θ.asHom.app (liftedRegularObject.{uA, uM} hA) (ULift.up (e : A))).down) :=
   @familyAddHom_val_coe.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -513,7 +513,7 @@ example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) →
     (toFamilyRingHom.{uA, uM} hA θ).val =
-      (fun e : Idempotent A => (θ.app (liftedRegularObject.{uA, uM} hA) (ULift.up (e : A))).down) :=
+      (fun e : Idempotent A => (θ.asHom.app (liftedRegularObject.{uA, uM} hA) (ULift.up (e : A))).down) :=
   @toFamilyRingHom_val_coe.{uA, uM}
 
 /-! Complete unapplied interfaces at (uA,uM)=(0,1); the category uses max 0 1. -/
@@ -573,13 +573,13 @@ example : {A : Type 0} → [NonUnitalRing A] → IsIdempotented A →
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{0, max 0 1} A) →
     (evaluationEnd.{0, 1} hA θ : A → A) =
-      (fun a => (θ.app (liftedRegularObject.{0, 1} hA) (ULift.up a)).down) :=
+      (fun a => (θ.asHom.app (liftedRegularObject.{0, 1} hA) (ULift.up a)).down) :=
   @evaluationEnd_coe.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{0, max 0 1} A) →
     evaluationEnd.{0, 1} hA θ = AddEquiv.ulift.toAddMonoidHom.comp
-      ((θ.app (liftedRegularObject.{0, 1} hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom) :=
+      ((θ.asHom.app (liftedRegularObject.{0, 1} hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom) :=
   @evaluationEnd_eq_comp.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -645,7 +645,7 @@ example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{0, max 0 1} A) → (a : A) →
     (toRightLinearEnd.{0, 1} hA θ).val a =
-      (θ.app (liftedRegularObject.{0, 1} hA) (ULift.up a)).down :=
+      (θ.asHom.app (liftedRegularObject.{0, 1} hA) (ULift.up a)).down :=
   @toRightLinearEnd_apply_apply.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -686,7 +686,7 @@ example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{0, max 0 1} A) →
     (familyAddHom.{0, 1} hA θ).val =
-      (fun e : Idempotent A => (θ.app (liftedRegularObject.{0, 1} hA) (ULift.up (e : A))).down) :=
+      (fun e : Idempotent A => (θ.asHom.app (liftedRegularObject.{0, 1} hA) (ULift.up (e : A))).down) :=
   @familyAddHom_val_coe.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -711,7 +711,7 @@ example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{0, max 0 1} A) →
     (toFamilyRingHom.{0, 1} hA θ).val =
-      (fun e : Idempotent A => (θ.app (liftedRegularObject.{0, 1} hA) (ULift.up (e : A))).down) :=
+      (fun e : Idempotent A => (θ.asHom.app (liftedRegularObject.{0, 1} hA) (ULift.up (e : A))).down) :=
   @toFamilyRingHom_val_coe.{0, 1}
 
 /-! Complete unapplied interfaces at (uA,uM)=(1,0); the category uses max 1 0. -/
@@ -771,13 +771,13 @@ example : {A : Type 1} → [NonUnitalRing A] → IsIdempotented A →
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{1, max 1 0} A) →
     (evaluationEnd.{1, 0} hA θ : A → A) =
-      (fun a => (θ.app (liftedRegularObject.{1, 0} hA) (ULift.up a)).down) :=
+      (fun a => (θ.asHom.app (liftedRegularObject.{1, 0} hA) (ULift.up a)).down) :=
   @evaluationEnd_coe.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{1, max 1 0} A) →
     evaluationEnd.{1, 0} hA θ = AddEquiv.ulift.toAddMonoidHom.comp
-      ((θ.app (liftedRegularObject.{1, 0} hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom) :=
+      ((θ.asHom.app (liftedRegularObject.{1, 0} hA)).hom.comp AddEquiv.ulift.symm.toAddMonoidHom) :=
   @evaluationEnd_eq_comp.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -843,7 +843,7 @@ example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{1, max 1 0} A) → (a : A) →
     (toRightLinearEnd.{1, 0} hA θ).val a =
-      (θ.app (liftedRegularObject.{1, 0} hA) (ULift.up a)).down :=
+      (θ.asHom.app (liftedRegularObject.{1, 0} hA) (ULift.up a)).down :=
   @toRightLinearEnd_apply_apply.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -884,7 +884,7 @@ example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{1, max 1 0} A) →
     (familyAddHom.{1, 0} hA θ).val =
-      (fun e : Idempotent A => (θ.app (liftedRegularObject.{1, 0} hA) (ULift.up (e : A))).down) :=
+      (fun e : Idempotent A => (θ.asHom.app (liftedRegularObject.{1, 0} hA) (ULift.up (e : A))).down) :=
   @familyAddHom_val_coe.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
@@ -909,7 +909,7 @@ example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{1, max 1 0} A) →
     (toFamilyRingHom.{1, 0} hA θ).val =
-      (fun e : Idempotent A => (θ.app (liftedRegularObject.{1, 0} hA) (ULift.up (e : A))).down) :=
+      (fun e : Idempotent A => (θ.asHom.app (liftedRegularObject.{1, 0} hA) (ULift.up (e : A))).down) :=
   @toFamilyRingHom_val_coe.{1, 0}
 
 /-! Named original scalar choices remain explicit in the presence of another ring. -/
@@ -943,7 +943,7 @@ example (a : A) (m : ULift.{uM} A) :
 example (hA : @IsIdempotented A originalRing)
     (θ : @NondegenerateModuleNaturalEnd.{uA, max uA uM} A originalRing) :
     (@evaluationEnd.{uA, uM} A originalRing hA θ : A → A) =
-      (fun a => (θ.app (@liftedRegularObject.{uA, uM} A originalRing hA)
+      (fun a => (θ.asHom.app (@liftedRegularObject.{uA, uM} A originalRing hA)
         (ULift.up a)).down) :=
   @evaluationEnd_coe.{uA, uM} A originalRing hA θ
 
@@ -1033,7 +1033,7 @@ example : (hA : IsIdempotented A) →
     (θ : NondegenerateModuleNaturalEnd.{uA, max uA uM} A) →
     (toFamilyRingHom.{uA, uM} hA θ).val =
       (fun e : Idempotent A =>
-        (θ.app (liftedRegularObject.{uA, uM} hA) (ULift.up (e : A))).down) :=
+        (θ.asHom.app (liftedRegularObject.{uA, uM} hA) (ULift.up (e : A))).down) :=
   @toFamilyRingHom_val_coe.{uA, uM} A _
 
 end CompetingEndAndFamilyRings

@@ -1,13 +1,11 @@
 # Hopf points of a lattice with bounded generator supports are determined modulo `m`
 
-Author: Worker 1421.
-
 This module proves that a homomorphism from a split torus `D(ℤ^r)` to an
 affine group whose coefficients on fixed generators lie in a bounded box is
 determined, up to an automorphism of `ℤ^r`, by its restriction to the
 `m`-torsion `D((ℤ/m)^r)` for `m` large. It is the uniqueness step that makes
-the torus attached to a finite subgroup well defined in the charts of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. It is an internal lemma. The
+the torus attached to a finite subgroup well defined in the charts of the
+closed torus subgroup functor. It is an internal lemma. The
 corresponding step of SGA 3 XI §4 (registered source
 `sga3-exposes-xi-xii-xiv-gille-polo-2008`) uses infinitesimal and formal
 arguments instead.

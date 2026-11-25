@@ -1,6 +1,6 @@
 # Surjectivity of the normalized character from effective descent
 
-Author: Worker 934. This module shows that the published normalized character
+This module shows that the published normalized character
 `trivialHomPullbackClassCharacter f (universalGlobalFunctions A)` on
 `TrivialHomPullbackClasses f T` is surjective. It assumes
 `Langlands.Scheme.Modules.UnitCocycleDescentEffectiveStatement`, and holds for

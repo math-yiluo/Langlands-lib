@@ -1,7 +1,5 @@
 # Rational section diagrams for represented-domain spectral actions
 
-Author: Worker 56.
-
 Let `K : Type u` be a complete ultrametric normed field, let
 `A : PresentedAffinoidAlgebra K` be an actual presented affinoid quotient,
 and let `G : Type v` be a topological group. The field and group universes
@@ -144,7 +142,7 @@ unchanged structural map. Its proof again evaluates the concrete maps.
 
 ## Provenance and sources
 
-This is an internal construction by Worker 56 from
+This is an internal construction from
 `RationalChartSpectralRestriction`, `DomainInvariantActions`,
 `DomainSpectralActionCategory`, `DomainSpectralSpectrumFunctor`,
 `DomainContinuousLocus` and `DomainContinuousOverBase`, together with the
@@ -192,7 +190,7 @@ permitted. There is no quotient-norm continuity premise on section orbits,
 spectral faithfulness assumption, or identification of quotient and spectral
 norms. Every original bounded rational restriction is retained.
 
-The outer local algebras here are rational chart algebras. This unit does
+The outer local algebras here are rational chart algebras. This module does
 not prove continuous restriction to every represented domain or compare
 the represented-domain topology with all compact analytic-domain tests
 and the full analytic automorphism topology. General analytic atlases,

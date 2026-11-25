@@ -1,7 +1,7 @@
 # Split Borel structure with a finite affine vector-quotient kernel series
 
-Authors: Worker 591 and Worker 686. The generic represented root-height
-construction is by Worker 204.
+The generic represented root-height construction is
+`RelativeUnipotent.RootHeightChart` (`RelativeUnipotent.RootHeightFiltration`).
 
 `splitBorelVectorSeries` proves the unchanged Library proposition
 `Langlands.GroupScheme.SplitBorelVectorSeriesStatement.{u}` for every universe.

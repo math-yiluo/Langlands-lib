@@ -2,7 +2,7 @@
 
 Module `Langlands.HarmonicAnalysis.HarishChandraSchwartz.StandardLeviLowerSplitCenter`, namespace
 `Langlands.HarishChandraSchwartz.LowerSplitCenter`. It imports
-`StandardLeviLowerChamber` (the chamber `ν'` of the lower Levi), Task 7454's
+`StandardLeviLowerChamber` (the chamber `ν'` of the lower Levi),
 `RationalWeakExpansionLowerOrbit` (through it), `StandardLeviCharacterMeasure`,
 `GeometricLemmaExponentTransfer` and `RationalOrbitCentralFiberAdapter`.
 
@@ -14,7 +14,7 @@ de Plancherel pour les groupes p-adiques, d'après Harish-Chandra*, J. Inst. Mat
 hypothesis to packets on a proper standard Levi subgroup `M' = M_{I'}` for the parabolic
 `M' ∩ s·P`, with `s` represented by `n ∈ N_G(S)(F)`.
 
-Task 7454 (`RationalWeakExpansionLowerOrbit`) writes these lower packets on the literal Levi
+The module `RationalWeakExpansionLowerOrbit` writes these lower packets on the literal Levi
 `(s·M)(F) = Z_{M'}(sζ)(F)` of the lower cocharacter `χ_s = lowerCocharacter i ν (rootSet I') ζ n`.
 It conjugates all the data of `M = M_I` by `n`:
 
@@ -105,7 +105,7 @@ local field `F`, and `Φ : L ≅ L'` is an isomorphism of group schemes.
 
 ### Setting and notation
 
-The hypotheses are those of Task 7454's lower data: `G` connected reductive (`hG`), `i` a
+The hypotheses are those of the lower data of `RationalWeakExpansionLowerOrbit`: `G` connected reductive (`hG`), `i` a
 maximal split torus (`hi`), `ν` generic (`hν`), `I` and `I'` two finite sets of simple-root
 labels, `ζ` a standard cocharacter for `I` (`hζ`), and `n` a normalizer point with
 `n M_I n⁻¹ ≤ M_{I'}` (`hn`). The two label sets are independent; they need not be nested. The
@@ -121,25 +121,25 @@ satisfy `hn` with equality. In the Lean source:
 - `𝐌` and `𝐌'` are `M_I(F)` and `M_{J''}(F)` as subtypes of `G(F)` and `M'(F)`, written as in the
   target;
 - `e₀ = lowerChamberLeviHomeomorph : Z_{M'}(sζ)(F) ≃ₜ* M_{J''}(F)` (from
-  `StandardLeviLowerChamber`), and `eₛ = lowerLeviConjugation : M_I(F) ≃ₜ* (s·M)(F)` (Task 7454);
-- `Φ₁ = lowerParameterIso : Z_{M'}(sζ) ≅ M_I` (Task 7454) and
+  `StandardLeviLowerChamber`), and `eₛ = lowerLeviConjugation : M_I(F) ≃ₜ* (s·M)(F)` (`RationalWeakExpansionLowerGeometry`);
+- `Φ₁ = lowerParameterIso : Z_{M'}(sζ) ≅ M_I` (`RationalWeakExpansionLowerOrbit`) and
   `Φ₂ = standardLeviParameterIso : Z_{M'}(sζ) ≅ M_{J''}` at `M'`, `iL`, `ν'`, `J''`.
 
-The local instances are those of Task 7454's lower-orbit module, so that the topology on
+The local instances are those of `RationalWeakExpansionLowerOrbit`, so that the topology on
 `M'(F)` is the same as there.
 
 ### The scheme isomorphism `M_I ≅ M_{J''}`
 
 - `lowerChamberLeviEquiv` is `e₀⁻¹ : M_{J''}(F) ≃ₜ* (s·M)(F)`, with codomain written as the
-  literal Levi `levi χ_s` on which Task 7454's data live.
+  literal Levi `levi χ_s` on which the data of `RationalWeakExpansionLowerOrbit` live.
 - `rationalPoints_map_comp`: rational points of a composite.
 - `leviRationalPointHomeomorph_lowerParameterLeviIso`: on points, `Φ₂` is
   `e₀ ∘ parameterHomeomorph`. It is the published
   `leviRationalPointHomeomorph_map_standardLeviParameterIso`.
 - `lowerLeviIso : M_I ≅ M_{J''}` is `Φ₁⁻¹ ≪≫ Φ₂`.
 - `leviRationalPointHomeomorph_lowerLeviIso`: on points it is `y ↦ e₀(eₛ(y))`, conjugation by
-  `n` followed by `Z_{M'}(sζ)(F) = M_{J''}(F)`. It combines the previous item with Task 7454's
-  `leviRationalPointHomeomorph_lowerParameterIso`.
+  `n` followed by `Z_{M'}(sζ)(F) = M_{J''}(F)`. It combines the previous item with
+  `leviRationalPointHomeomorph_lowerParameterIso` (`RationalWeakExpansionLowerOrbit`).
   `lowerChamberLeviEquiv_lowerLeviIso` is the same identity after applying `e₀⁻¹`.
 
 ### The split component `s'` and `A_{M_{J''}}(F)`
@@ -154,8 +154,8 @@ Let `s : A → M_I` be a homomorphism from a commutative affine group scheme.
 - `finiteIndex_lowerSplit`: the finite-index premise of the I.1 measure holds for `s'`
   (published `finiteIndex_splitValuationImage_of_isSplitComponent`).
 - `map_lowerSplitCenter`: with `C = rationalLeviSplitCenter I s` and
-  `C' = rationalLeviSplitCenter J'' s'`, the image of `C'` under `e₀⁻¹` is Task 7454's
-  `lowerCentral … C`. This uses the point formula for `lowerLeviIso`.
+  `C' = rationalLeviSplitCenter J'' s'`, the image of `C'` under `e₀⁻¹` is
+  `lowerCentral … C` of `RationalWeakExpansionLowerOrbit`. This uses the point formula for `lowerLeviIso`.
 - `lowerSplitCenter_normal`, `lowerSplit_range_normal`: `C'` and the image of `A(F)` in
   `M_{J''}(F)` are normal, being central.
 
@@ -170,8 +170,8 @@ Haar measure on `M_I(F)/C`.
   `lowerChamberQuotientMeasure_map` says that it is mapped back to `sμ`.
 - `lowerChamberRepresentation_isSquareIntegrable`: assume `s` is a split component and `π` is
   square integrable modulo `C` for `μ`. Then `π' = lowerChamberRepresentation … π` is square
-  integrable modulo `C'` for `lowerChamberQuotientMeasure`. The proof combines Task 7454's
-  `lowerRepresentation_isSquareIntegrable` with the published
+  integrable modulo `C'` for `lowerChamberQuotientMeasure`. The proof combines
+  `lowerRepresentation_isSquareIntegrable` (`RationalWeakExpansionLowerOrbit`) with the published
   `isSquareIntegrableModCentralSubgroup_comp_iff` along `e₀⁻¹`.
 
 ### The I.1 character measures
@@ -193,18 +193,19 @@ literal Levi subtype).
 
 ### The orbits and orbit measures
 
-`sω` is the class of `sπ` modulo `sC` for `sμ` (Task 7454's lower orbit is the orbit of `sω`),
+`sω` is the class of `sπ` modulo `sC` for `sμ` (the lower orbit of `RationalWeakExpansionLowerOrbit`
+is the orbit of `sω`),
 and `ω'` is the class of `π'` modulo `C'` for `lowerChamberQuotientMeasure`.
 
 - `pullback_lowerClass`: `ω'` is the pullback of `sω` along `e₀⁻¹`, by `rfl`.
 - `lowerChamberOrbitTransport` is `orbitTransport` for `e₀⁻¹` and
-  `lowerChamberCharacterTransport`: a homeomorphism from Task 7454's lower orbit of `sω` under
+  `lowerChamberCharacterTransport`: a homeomorphism from the lower orbit of `sω` under
   `Im X(s·M)` to the orbit of `ω'` under `Im X(M_{J''})`.
 - `lowerChamberOrbitTransport_orbitMap`: it sends `z • sω` to
   `lowerChamberCharacterTransport z • ω'`.
 - `finite_lowerChamberStabilizer`: the stabilizer of `ω'` is finite when that of `sω` is.
 - `map_lowerOrbitMeasure`: assume both stabilizers are finite. The image under
-  `lowerChamberOrbitTransport` of Task 7454's orbit measure of `sω` for
+  `lowerChamberOrbitTransport` of the lower orbit measure of `sω` for
   `lowerCharacterMeasure (standardLeviUnitaryUnramifiedCharacterHaar I s …)` is the orbit measure
   of `ω'` for `standardLeviUnitaryUnramifiedCharacterHaar J'' s' …`. This is the orbit measure
   `dO'` that the target uses at `M'`. The proof is
@@ -212,14 +213,16 @@ and `ω'` is the class of `π'` modulo `C'` for `lowerChamberQuotientMeasure`.
 
 `map_lowerCharacterMeasure` and `map_lowerOrbitMeasure` raise `maxHeartbeats` to 800000 and
 1000000. Both proofs are short chains of equalities, but every step elaborates terms that contain
-the full lower-Levi data of Task 7454. They need about 530000 and 670000 heartbeats.
+the full lower-Levi data of `RationalWeakExpansionLowerOrbit`. They need about 530000 and 670000 heartbeats.
 
 ## What this module does not provide
 
 - It does not compare the target's section spaces `rationalInducedSmoothOrbitSections` at `M'`
-  with Task 7454's dynamic lower sections, and it does not compare the wave packets. That is a
-  separate module.
-- It does not compare Task 7454's `lowerPlancherelWeight` with the target's weights at `M'`.
-- The finiteness of the stabilizer of `sω` is a hypothesis here. Task 7454's
-  `finite_lowerStabilizer` derives it from the finiteness of the stabilizer of the class of `π`.
-- It proves nothing analytic and does not prove the host target.
+  with the dynamic lower sections `LowerSectionsAt` of `RationalWeakExpansionTargets`, and it does
+  not compare the wave packets. That is the module `StandardLeviLowerPacket`.
+- It does not compare `lowerPlancherelWeight` (`RationalWeakExpansionLowerOrbit`) with the target's
+  weights at `M'`.
+- The finiteness of the stabilizer of `sω` is a hypothesis here.
+  `finite_lowerStabilizer` (`RationalWeakExpansionLowerOrbit`) derives it from the finiteness of the stabilizer of the class of `π`.
+- It proves nothing analytic and does not prove the target
+  `StandardLeviPlancherelWavePacketSourceNormalizedStatement`.

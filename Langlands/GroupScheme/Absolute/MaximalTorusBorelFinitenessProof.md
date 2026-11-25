@@ -1,7 +1,5 @@
 # Finitely many Borel subgroups through a maximal torus
 
-Worker 185.
-
 This module proves the unchanged published proposition
 `Langlands.GroupScheme.MaximalTorusBorelFinitenessStatement.{u}` as
 `Langlands.GroupScheme.maximalTorusBorelFiniteness`, in every universe `u`.

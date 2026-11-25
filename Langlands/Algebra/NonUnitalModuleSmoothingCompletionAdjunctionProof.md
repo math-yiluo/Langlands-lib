@@ -1,6 +1,6 @@
 # Direct smoothing/completion adjunction proof
 
-Worker 6 implements the direct compatible-family proof of Renard I.1.5,
+This module implements the direct compatible-family proof of Renard I.1.5,
 printed pp.10–11/PDF16–17, in the 9 July 2026 French edition, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.

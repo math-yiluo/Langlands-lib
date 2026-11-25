@@ -46,7 +46,7 @@ The provenance is internal composition of the proved intrinsic normalized
 measure identity with the existing actual block constant-term comparison.
 The intrinsic measure belongs to the simultaneous subgroup-Haar and quotient
 normalization established in `GeneralLinearBlockIntrinsicMeasure`; that
-module's exact counting-measure Weil compatibility is retained. This unit
+module's exact counting-measure Weil compatibility is retained. This module
 does not classify rational parabolics, identify their unipotent radicals, prove
 all-proper cuspidality, establish general reductive finite volume or reduction
 theory, or supply a growth, smoothness or Hilbert-space comparison.

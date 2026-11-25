@@ -1,7 +1,5 @@
 # Proof of finite Galois Frobenius-trace rigidity
 
-Author: Worker 68 (Task 7408, deliverable 3a of Task 7344).
-
 This file proves the Library statement
 `Langlands.Global.FiniteGaloisFrobeniusRigidityStatement.{u, v, w, z}`
 of `Langlands/Global/Arithmetic/ChebotarevStatement.lean`, exactly as
@@ -19,8 +17,8 @@ hypothesis beyond those of the target.
   FiniteGaloisFrobeniusRigidityStatement.{u, v, w, z}`
   is the target theorem. It applies the reduction to the Library's proof
   `Langlands.Global.chebotarevPrimeRealizationStatement` of module
-  `Langlands.Global.Arithmetic.ChebotarevPrimeRealizationProof` (Task 7411,
-  the port of the Chebotarev closure of the Anthropic FLT repository).
+  `Langlands.Global.Arithmetic.ChebotarevPrimeRealizationProof` (the port
+  of the Chebotarev closure of the Anthropic FLT repository).
   Prime realization therefore enters as a proved theorem, not as a
   premise.
 
@@ -65,7 +63,7 @@ the same Mathlib constructions as in the character theorem.
 
 The route is the two-step argument recorded in the target's Markdown
 (`ChebotarevStatement.md`, section "Character rigidity"). It is also in the
-operator plan note `operator-external-inputs-plan-2026-11-16`, Section 2.6
+plan note `operator-external-inputs-plan-2026-11-16`, Section 2.6
 (interface F) and Section 4.4.
 
 - Equality of complex characters determines a representation up to
@@ -81,13 +79,11 @@ operator plan note `operator-external-inputs-plan-2026-11-16`, Section 2.6
 
 ## Checks
 
-`lean_check` on environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-(Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) compiled
+A check with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` compiled
 this module against Library `2613dbbf`, which contains the published
-`ChebotarevPrimeRealizationProof` module, with no errors or warnings
-(diagnostic `c5c0b889-0d7e-462d-ad37-064f567d6af4`). The target theorem
+`ChebotarevPrimeRealizationProof` module, with no errors or warnings. The target theorem
 `Langlands.Global.finiteGaloisFrobeniusRigidityStatement` uses only the axioms
 `propext`, `Classical.choice` and `Quot.sound`, and its universe parameters
 are `u, v, w, z`. An earlier check compiled the reduction alone against
-Library `97101ec2`, with the same axioms and universe parameters (diagnostic
-`acb8367f-ef28-4e70-b17a-56f1d66f9d14`).
+Library `97101ec2`, with the same axioms and universe parameters.

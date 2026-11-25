@@ -84,7 +84,7 @@ Its `_mk` formula retains the explicit finite-fiber integral of the
 original restricted function, and its `_natural` theorem retains
 naturality under every native coefficient intertwiner.
 
-This unit introduces no new geometric or representation-theoretic
+This module introduces no new geometric or representation-theoretic
 premise beyond the displayed topology, smoothness and supplied measure
 data. It constructs neither those measures nor rational orbit geometry.
 The companion `CoefficientSplitKernelEquivariant` module proves the

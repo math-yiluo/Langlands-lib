@@ -1,7 +1,5 @@
 # Unitary normalized Jacquet exponents and vanishing
 
-Author: Worker 17.
-
 The set `unitaryJacquetExponents` consists of the actual normalized Jacquet
 exponents with zero normalized real part. It uses the same split component,
 normalized Jacquet module and `q^(-s)` real-part convention as the published

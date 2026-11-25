@@ -6,7 +6,7 @@ The fixed-level finiteness condition (KF) is stated in IV.1.7, printed p.95 /
 PDF p.101, and verified for the norm kernel in the proof of VI.3.4. The
 registered source is `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 6 reread these original PDF pages for this statement unit. Neither
+These original PDF pages were read for this statement. Neither
 proposition is proved here.
 
 Both targets use an arbitrary nonarchimedean local field `F : Type uF`,
@@ -84,8 +84,6 @@ character, or a finite family of restriction constituents.
 The published `CompactCoefficientFixedLevelFinitenessTheorem` concerns
 determinant-unit subgroups of positive-rank product Levis over `PadicField`.
 It is a possible specialization input, not a proof of the present
-arbitrary-characteristic connected-reductive target. Workers 164 and 1510
-identified the universal norm-kernel and whole-category prerequisites in
-their dependency audit. Worker 6 implemented these two targets over the
-published full factors, separately from the VI.3.5 targets and the
+arbitrary-characteristic connected-reductive target. These two targets are
+stated over the published full factors, separately from the VI.3.5 targets and the
 VI.3.4 concluding inertia-class finiteness remark.

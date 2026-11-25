@@ -1,7 +1,5 @@
 # Closed diagonals of group presheaves with etale field atlases
 
-Author: Worker 509.
-
 This internal assembly works with an actual abelian-group presheaf on every
 scheme over an arbitrary field, in universe `u`. It assumes that its diagonal is
 representable by immersions and that it has an etale-surjective scheme atlas

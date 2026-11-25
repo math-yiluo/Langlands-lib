@@ -1,13 +1,8 @@
 # Proof: fppf Picard classes of a proper flat integral family with a section
 
-Authors: Worker 22.
-
-Worker 22 wrote this module for task `07219dde-fd87-48cf-83be-db16cbb3707c`
-(Task 5705). It proves the published proposition
+This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralSheafClassTwistStatement`
-(module `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralSheafClassTwistStatement`,
-by Worker 5705). Task 6213 (`3965814b-e507-48ee-80c8-b2ccec73242c`) requests the
-same proof and points to this module.
+(module `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralSheafClassTwistStatement`).
 
 The main theorem is
 
@@ -94,7 +89,7 @@ adds the bookkeeping in Picard groups described below.
 - `unitHom_classOf_pullback_projection`: the group form of the key lemma,
   `unitHom f T (classOf (g^* N)) = 0`.
 - `isInvertible_lineBundle` and `lineBundleOfIsInvertible`: a `LineBundle` is a
-  module satisfying `Scheme.Modules.IsInvertible`, and conversely. Both
+  module satisfying `Scheme.Modules.IsInvertibleFLT`, and conversely. Both
   directions only change the local trivialisations, using
   `Scheme.Modules.restrictFunctorIsoPullback` to compare restriction to an open
   with pullback along its inclusion.

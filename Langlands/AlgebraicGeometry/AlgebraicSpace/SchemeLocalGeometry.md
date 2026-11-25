@@ -1,7 +1,5 @@
 # Affine representation and scheme-local morphism properties
 
-Author: Worker 208.
-
 This module imports the published `AlgebraicSpace.Thickening` foundation and
 Mathlib's finite-morphism and open-immersion modules. It defines affine scheme
 representation and the representable finite and open-immersion properties.
@@ -163,7 +161,7 @@ the published `IsThickening.surjective`.
 The new definitions and lemmas impose no extra geometric or order
 hypothesis. The published `Basic`, `Thickening` and
 `SchemenessOfThickeningStatement` Lean/Markdown pairs and their import
-closures are unchanged. This is a focused definition unit: it establishes
+closures are unchanged. This is a focused definition module: it establishes
 no finite-surjective affine descent, open-space lifting, gluing, general
 schemeness theorem, reduction construction or integral-morphism predicate.
 It contains no Picard or actual-family comparison result.

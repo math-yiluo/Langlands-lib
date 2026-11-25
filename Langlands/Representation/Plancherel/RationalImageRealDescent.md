@@ -1,7 +1,5 @@
 # Real homomorphisms descended to the actual valuation image
 
-Author: Worker 20.
-
 This is a derived algebraic construction over the published actual rational
 character valuation image. It implements the factorization step used after
 norm-kernel annihilation in the proof route for

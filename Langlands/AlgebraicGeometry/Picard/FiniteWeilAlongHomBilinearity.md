@@ -1,6 +1,6 @@
 # Bilinearity of the finite Weil pairing along an actual homomorphism
 
-This internal unit proves bilinearity of the existing
+This internal module proves bilinearity of the existing
 `finiteWeilAlongHomValue` and packages the same pairing as
 `finiteWeilAlongHomBilinearMap`. Its inputs are exactly those of
 `FiniteWeilAlongHom`: a quasi-separated base, the actual abelian
@@ -65,7 +65,7 @@ as an input. This is an internal consequence of the published
 point equivalences, the actual torsion map, and the bilinearity of
 the Poincaré-derived finite Weil pairing.
 
-The unit proves no alternation, Cartier perfectness,
+The module proves no alternation, Cartier perfectness,
 nondegeneracy, transition compatibility, dual-homomorphism
 functoriality or inverse-limit pairing. It makes no assertion of
 integral perfectness for arbitrary nonprincipal polarizations.

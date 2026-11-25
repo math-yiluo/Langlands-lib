@@ -1,12 +1,11 @@
 # Canonical-form targets of Aubert Theorem 1.7 and Corollary 1.10 on actual rational points
 
-Authors: Worker 29, with Worker 3640 (Task 3640, Block C(2)). This module
+This module
 declares eight closed Prop-valued definitions in namespace
 `Langlands.Aubert.General.RationalPointFamily`, each with universe parameters
-`u` and `v`. The review entry declaration is
-`CanonicalRationalInvolutivityStatement`. Each of the other seven is a separate
-target with its own name, listed below, so that a later exact proof task can
-name it on its own. The module proves nothing: it contains no theorem, and no
+`u` and `v`. Besides `CanonicalRationalInvolutivityStatement`, each of the
+other seven is a separate target with its own name, listed below, so that a
+proof can name it on its own. The module proves nothing: it contains no theorem, and no
 instance of any statement is claimed.
 
 ## Common scope
@@ -46,8 +45,8 @@ some of them omit those; for example, the involutivity statement installs only
 the affine-hom instance and the topology, because the canonical operator builds
 the rest itself.
 
-The canonical structural data are published or supplied by C(1)
-(`CanonicalRationalStructure`):
+The canonical structural data are published or supplied by
+`CanonicalRationalStructure`:
 
 - The standard decompositions `P_I = M_I ⋉ U_I` are
   `isSemidirectDecomposition_of_standardCocharacterStatement` applied to the
@@ -66,7 +65,7 @@ The canonical structural data are published or supplied by C(1)
   (RationalPoint k G.X)`, with representation carriers in universe
   `max (u + 1) v`. No further rank sign is applied. For an empty simple-root
   type the sum has its single empty-subset term.
-- Standard Levi operators are the C(1) declaration
+- Standard Levi operators are the `CanonicalRationalStructure` declaration
   `canonicalRationalLeviAlternatingOperator`. It acts inside the actual closed
   subgroup `levi i ν J`, with subtype labels `J` and the literal `subgroupOf`
   restrictions at `leviIndex J I` of the same ambient families.
@@ -125,7 +124,7 @@ The existing `RationalInductionCompatibilityStatement` specializes to this one.
 This is the second equation of Theorem 1.7(2),
 `r_J ∘ D_G = Ad(w_J) ∘ D_(L_J') ∘ r_J'`.
 
-The statement fixes the C(1) Coxeter system `cs := canonicalCoxeterSystem`.
+The statement fixes the `CanonicalRationalStructure` Coxeter system `cs := canonicalCoxeterSystem`.
 `cs` is a Coxeter system on the actual relative Weyl group
 `N_G(T₀)/Z_G(T₀)`, with the full-centralizer denominator, indexed by the
 actual simple roots. It allows every `Fintype` structure on that Weyl group
@@ -153,7 +152,7 @@ choosing the canonical system. The converse is not claimed: it would need a
 comparison of `longestRep`, `associatedSubset` and the transports across
 different Coxeter systems, which this module does not provide.
 
-### (3) `CanonicalRationalInvolutivityStatement` (entry declaration)
+### (3) `CanonicalRationalInvolutivityStatement`
 
 This is Theorem 1.7(3): `D.comp D = LinearMap.id` on the whole exact
 Grothendieck group, not only on irreducible classes. The existing
@@ -182,7 +181,7 @@ to the canonical standard families with:
 - `h`: the canonical decompositions;
 - `hU`: `canonicalStandardUnipotent_isClosed`;
 - `hfl`: `canonicalStandardParabolicFiniteLength`;
-- `hM`: the C(1) theorem `canonicalStandardLevi_isClosed`;
+- `hM`: the `CanonicalRationalStructure` theorem `canonicalStandardLevi_isClosed`;
 - `hLevi`: `isSemidirectDecomposition_in_levi` with the published
   `standardLeviIntersection`;
 - decidable equality on the simple roots from `Classical.decEq`.
@@ -256,16 +255,17 @@ facts as explicit premises:
 - per-index preservation of finite length.
 
 Instantiating these premises with the published theorems and with the
-per-index facts derived from `hiFl` and `hrFl` yields the canonical form. C(1)
-records, by `rfl`, that the published premise-taking operators
+per-index facts derived from `hiFl` and `hrFl` yields the canonical form.
+`CanonicalRationalStructure` records, by `rfl`, that the published premise-taking operators
 `rationalAlternatingOperator` and `rationalLeviAlternatingOperator` agree with
 the canonical ones for every choice of premise proofs
 (`rationalAlternatingOperator_eq_canonical`,
 `rationalLeviAlternatingOperator_eq_canonical`).
 
-Lean proofs of these eight existing-to-canonical implications compile against
-this module. They are not part of this unit and will be submitted separately
-as a definition-level unit. No canonical-to-existing implication is claimed,
+Lean proofs of these eight existing-to-canonical implications are in
+`CanonicalRationalTargetBridgesProof`, for the statement
+`CanonicalRationalTargetBridgesStatement`; they are not part of this module.
+No canonical-to-existing implication is claimed,
 for two reasons:
 
 - the canonical forms assume the global dynamic finite-length statements, which
@@ -273,8 +273,9 @@ for two reasons:
 - the Jacquet target fixes one Coxeter system.
 
 A published implication does not prove its consequent. Proofs of these
-canonical targets require separate exact proof tasks. Owners of existing proof
-obligations are unchanged.
+canonical targets are separate from this module;
+`CanonicalRationalJacquetCompatibilityProof` and
+`CanonicalRationalCuspidalEigenvalueProof` prove two of them.
 
 ## Not covered
 
@@ -305,5 +306,5 @@ published canonical data. No new translation of the literature is introduced.
   Proposition 4.1(3) and its proof, printed p.158 / PDF p.6. This is for (7)
   only.
 
-The relative Weyl quotient uses the full centralizer `Z_G(T₀)` required by the
-task contract, which corrects the paper's torus-quotient notation.
+The relative Weyl quotient uses the full centralizer `Z_G(T₀)`, which corrects
+the paper's torus-quotient notation.

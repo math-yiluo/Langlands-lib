@@ -1,6 +1,6 @@
 # Specializing section-selected components over a DVR
 
-This internal unit constructs an open neighbourhood of a clopen in a closed residue fibre and proves the two-section DVR step used in the proof of EGA IV, third part (1966), Proposition 15.6.4, printed pp.237–238 (retained PDF pages236–237). Corollary 15.6.5, printed pp.238–239 (retained PDF pages237–238), supplies the downstream finite-presentation motivation. The unit proves the DVR step for flat morphisms locally of finite presentation. It does not yet realize general Noetherian generizations by DVRs or prove the arbitrary-base openness proposition.
+This internal module constructs an open neighbourhood of a clopen in a closed residue fibre and proves the two-section DVR step used in the proof of EGA IV, third part (1966), Proposition 15.6.4, printed pp.237–238 (retained PDF pages236–237). Corollary 15.6.5, printed pp.238–239 (retained PDF pages237–238), supplies the downstream finite-presentation motivation. The module proves the DVR step for flat morphisms locally of finite presentation. It does not realize general Noetherian generizations by DVRs (see `NoetherianDvrSpecialization`) or prove the arbitrary-base openness proposition (`SectionComponentOpennessProof`).
 
 For an actual morphism `p : X ⟶ Y`, a closed point `y`, and a clopen `C` of the actual residue fibre `p.fiber y`, `fiberClopenNeighbourhood p y hy C` is the open subscheme
 

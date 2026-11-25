@@ -1,7 +1,5 @@
 # Equivariant bounded transport on actual induced affinoid families
 
-Author: Worker 36.
-
 This module proves equivariance of the actual bounded quotient-algebra
 pullbacks used by transport between the induced affinoid families. It
 packages the bounded actions and transport maps into a functor, proves

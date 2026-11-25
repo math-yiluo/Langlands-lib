@@ -1,6 +1,6 @@
 # Conductor preservation and the numerical surjectivity step
 
-Worker 619, Task 7045. Namespace
+Namespace
 `Langlands.Henniart.Extension.SupercuspidalConductor`, independent universes
 `uK uW uV`.
 

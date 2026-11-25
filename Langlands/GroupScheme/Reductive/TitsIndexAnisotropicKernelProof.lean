@@ -59,6 +59,7 @@ theorem IsSemisimple.isEmpty_of_isCentral_splitTorus
         f ≫ splitTorus.proj (Spec (CommRingCat.of k)) I a) hs
     simpa [splitTorus.single_comp_proj] using h
   have h := congrArg (gmEndEquiv k) hid
+  rw [AddEquiv.map_zero] at h
   simp at h
 
 /-- **Tits §2.2.** The derived group of every actual representative of the centralizer

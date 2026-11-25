@@ -3,17 +3,18 @@
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitLaurentSmoothness`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitSmoothness` (accepted candidate
-  d6417274, not yet in the Library when this module was written): `fourierOrbitSection_mem_smooth`
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitSmoothness`:
+  `fourierOrbitSection_mem_smooth`
   and `fourierOrbitSmoothSectionLinear` (Proposition VII.1.3, first assertion, for a supplied
-  lattice map `n`); through its imports `fourierOrbitSection` (`ψ_f[O, P]`), Worker 200's
-  `productInducedSmoothOrbitSections` (`C^∞(O, P)`), `UnitaryOrbitRepresentative`,
+  lattice map `n`); through its imports `fourierOrbitSection` (`ψ_f[O, P]`),
+  `productInducedSmoothOrbitSections` (`C^∞(O, P)`) and `UnitaryOrbitRepresentative` of
+  `Representation.Plancherel.ProductInducedOrbitSections`,
   `unitaryTorusParameter` and `torusCharacter`;
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.LaurentExponent` (accepted candidate
-  297d4b59, not yet in the Library when this module was written): `laurentExponent ν e he`,
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.LaurentExponent`: `laurentExponent ν e he`,
   `torusCharacter_laurentExponent`, `laurentExponent_mul`, `laurentExponent_eq_zero_of_isCompact`
-  and `measurable_laurentExponent`; through its imports Worker 200's
-  `HasLaurentUnitaryCoordinates ν e`, `commonNormKernel ν` with `mem_commonNormKernel`, and
+  and `measurable_laurentExponent`; through its imports
+  `HasLaurentUnitaryCoordinates ν e` (`Representation.Plancherel.UnitaryUnramifiedSmoothEvaluation`),
+  `commonNormKernel ν` with `mem_commonNormKernel`, and
   `RankinSelberg.LastRowReduction.eq_one_of_isCompact` (a continuous homomorphism to `ℝ≥0ˣ` is
   trivial on a compact subgroup).
 
@@ -33,7 +34,7 @@ Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S147474
 (source content) in the Library's torus formulation; `fourierOrbitLaurentSmoothSectionLinear` is
 the map `f ↦ ψ_f[O, P]` of the second sentence, as a linear map, without its continuity.
 Waldspurger has no coordinates on `Im X(M)`. The torus coordinates `e`, the Laurent condition
-`HasLaurentUnitaryCoordinates ν e` (Worker 200) and the lattice map `laurentExponent ν e he` are
+`HasLaurentUnitaryCoordinates ν e` and the lattice map `laurentExponent ν e he` are
 part of the Library's formulation, and `isOpen_commonNormKernel_of_continuous` is derived. This
 module removes from `FourierOrbitSmoothness` the hypotheses on the lattice map `n` that
 `LaurentExponent` proves: it sets `n := laurentExponent ν e he`. The growth bound on `n`

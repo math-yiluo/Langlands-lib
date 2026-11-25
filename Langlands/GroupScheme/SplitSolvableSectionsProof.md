@@ -1,7 +1,5 @@
 # Sections of the canonical extension of a split solvable group (proof)
 
-Author: Worker 755.
-
 `Langlands.GroupScheme.splitSolvableExtensionSections` proves exactly the
 published `Langlands.GroupScheme.SplitSolvableExtensionSectionsStatement.{u}`
 (Milne 2017, Proposition 16.54; module

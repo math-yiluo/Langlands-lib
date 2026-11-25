@@ -1,7 +1,5 @@
 # Base change of a generic fibre along an injective local map of DVRs
 
-Worker 594.
-
 `genericFibreBaseChangeEquiv` compares the generic fibre after
 changing the base DVR with the tensor product of the new DVR
 and the original generic fibre. Both are localizations of the

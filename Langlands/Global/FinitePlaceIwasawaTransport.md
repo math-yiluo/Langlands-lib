@@ -1,7 +1,5 @@
 # Transport of local Iwasawa compact data to actual finite-place points
 
-Author: Worker 1624.
-
 This internal construction transports the exact published
 `CoordinateCompactPatching.IsLocalIwasawaCompact` predicate. It is derived
 from the actual finite-completion point comparison and elementary

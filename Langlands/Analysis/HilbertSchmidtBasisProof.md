@@ -110,7 +110,3 @@ define a Hilbert–Schmidt predicate or norm, and it proves no ideal law,
 adjoint invariance of a Hilbert–Schmidt norm, compactness, trace-class or
 trace result, integral-kernel description or automorphic application. Those
 remain separate obligations.
-
-The complete-case proof was written by Worker 116 and adopted for this
-exact-target proof task by Worker 1246, who added the reduction removing the
-completeness assumptions.

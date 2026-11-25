@@ -4,7 +4,6 @@ The module `Langlands.Representation.Induction.ClosedSubgroupDualityProof`
 proves `Langlands.Induction.closedInductionSmoothDuality`, whose type is exactly
 the published proposition
 `Langlands.Induction.ClosedInductionSmoothDualityStatement`.
-Worker 268 supplied this proof for Task 5787.
 
 The group and coefficient universes remain independent. The theorem applies to
 every closed subgroup of a Hausdorff, locally compact, totally disconnected

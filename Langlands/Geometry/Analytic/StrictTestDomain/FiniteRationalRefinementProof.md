@@ -1,7 +1,5 @@
 # Finite standard rational refinement
 
-Author: Worker 575.
-
 `Langlands.Analytic.StrictTestDomain.finiteRationalRefinement` proves the
 unapplied published proposition
 `Langlands.Analytic.StrictTestDomain.FiniteRationalRefinementStatement.{u}`

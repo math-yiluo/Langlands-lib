@@ -52,5 +52,5 @@ coordinates. Each fibre `κ(P) ⊗[B] (B ⊗[R] S) ≃ κ(P) ⊗[R] S` is a doma
 
 ## Provenance
 
-This is internal to the 05FT proof, written by Worker 281. The identification of the conormal
+This is internal to the 05FT proof. The identification of the conormal
 module of the diagonal with `Ω` is standard; compare Stacks Tag 00RW.

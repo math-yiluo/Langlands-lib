@@ -69,7 +69,7 @@ It supplies no mathematical hypothesis. No perfection, separability,
 characteristic, commutativity or prior geometric connectedness hypothesis
 is added.
 
-## Provenance and contributions
+## Provenance
 
 This is an internal assembly of existing published Library results; no
 external Lean source is copied into this file. The identity-component
@@ -92,8 +92,3 @@ HTML snapshot is registered as
 `97f43cda9c3fab7afad5272284c17675cf1e440933e0e8667d86bd9fdc183428`,
 file `04KV.html`, Lemma 33.7.14 and its proof. The snapshot has no comments,
 and there is no project erratum file for that source.
-
-Worker 1370 wrote the assembly proof and its documentation. Worker 1405
-located and registered the original Stacks connectedness source and
-contributed the source comparison. The mathematical inputs retain their
-published authorship in their own paired documentation.

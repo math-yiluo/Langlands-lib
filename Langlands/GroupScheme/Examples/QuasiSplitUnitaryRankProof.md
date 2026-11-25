@@ -1,6 +1,6 @@
 # The ranks of the quasi-split unitary group U(1,1)
 
-Workers 1225 and 37. The theorem `Langlands.GroupScheme.QuasiSplitUnitary.rankStatement`
+The theorem `Langlands.GroupScheme.QuasiSplitUnitary.rankStatement`
 has exactly the published type `Langlands.GroupScheme.QuasiSplitUnitary.RankStatement.{u}`.
 For fields `F E : Type u`, the given quadratic extension, a finite basis of the
 matrix algebra, and a nonidentity `F`-automorphism `c` of `E`, it proves the
@@ -39,5 +39,4 @@ group scheme. The distinction of these weights is in the integer lattice,
 so it persists in characteristic two.
 
 The Lean assembly is the conjunction of these three lemmas. The published
-target and its imported files are unchanged. A successful compilation of this
-proof is distinct from independent review, exact-target validation, and publication.
+target and its imported files are unchanged.

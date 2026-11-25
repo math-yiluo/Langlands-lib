@@ -1,7 +1,5 @@
 # Proof: Murre's condition (F2) for the two-axis class presheaf
 
-Author: Worker 385.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.NoetherianTwoAxisClassFilteredColimitsStatement`:
 

@@ -1,7 +1,5 @@
 # Scheme etale specialization of the Godement construction
 
-Author: Worker 13.
-
 For an actual Mathlib scheme `X`, this module uses Mathlib's small etale site:
 objects are schemes etale over `X`, and coverings are jointly surjective etale
 families. At each point `x` of `X`, the separable closure of its residue field
@@ -37,8 +35,8 @@ complex with derived compact-support cohomology.
 
 The construction follows the point-family and cokernel recipe in Berkovich,
 *Etale equivariant sheaves on p-adic analytic spaces*, section 1.5, printed/PDF
-page 10, as a stated derived generalization to scheme etale sites. Worker 13
-read that original passage. The source is the supplied unfinished 1995–1996
+page 10, as a stated derived generalization to scheme etale sites. That
+original passage was read. The source is the supplied unfinished 1995–1996
 manuscript, registered folder
 `provided-7bb3903652336bd799aad8853b8efd7ff3bcc0c7652745417f4745a14ac08e90`,
 digest `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`;

@@ -115,8 +115,6 @@ No separate errata note for either source was present in the supplied
 project notes. The pinned Milne version's front matter records the
 corrections incorporated through version 4.03.
 
-The continuity and product-density route is an internal derivation by
-Worker 107 from the cited published Library and Mathlib results. It is
+The continuity and product-density route is an internal derivation
+from the cited published Library and Mathlib results. It is
 not claimed to reproduce a proof written out in either original source.
-Worker 107 is the sole author of this Lean/Markdown pair. No unpublished
-peer draft was reused.

@@ -1,7 +1,5 @@
 # Topological proofs for actual affine scheme points
 
-Author: Worker 105.
-
 This proves `AffineSchemeTopologicalProperties`, the relative actual-scheme
 Hausdorff and local-compactness assertions derived from Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011),

@@ -79,7 +79,7 @@ The following statements assume `IsIntegrallyTrivial v θ`, except
 
 ## Standard characters
 
-Worker 31's published `standardCharacter ψ n` (module
+The published `standardCharacter ψ n` (module
 `Langlands.Representation.Whittaker.GeneralLinear`) is
 `u ↦ ψ(u_(0,1) + u_(1,2) + … + u_(n-1,n))` for a unitary additive character
 `ψ : UnitaryAdditiveCharacter F`. `inverseStandardCharacter ψ n` is its
@@ -219,8 +219,10 @@ The relation of `sphericalWhittaker` to this theorem is derived, as follows.
 - The vanishing off antitone weights is built into `cellFunction`. In the
   source it is a theorem about Whittaker functions. Here it is part of the
   definition.
-- Formalizing the theorem that `sphericalWhittaker` is the Whittaker function
-  of the normalized spherical vector is left open. This is Shintani's
+- The theorem that `sphericalWhittaker` is the Whittaker function of the
+  normalized spherical vector is not in this module; the Library proves it for
+  the unramified principal series `I(z)` in
+  `Langlands.Representation.Conductor.UnramifiedSphericalWhittaker`. This is Shintani's
   characterization through the Hecke eigen-equations, and the function
   `W(g; x; ψ)` of Jacquet (2012), p. 516, with `x_i = q^(-t_i)`.
 
@@ -249,8 +251,7 @@ determined by its values `w(f) = W(π^f)`.
 
 ## Dependencies
 
-Imports are the modules published in Library commit
-`f5f825f762f6e1cbbb8ec9161e74894398fdbd14`:
+Imports are the published modules
 `Langlands.Representation.Whittaker.Iwasawa` (`exists_iwasawa`, `exponent`,
 `exponent_eq`, `exponent_torus`, `exponent_mul_integral`,
 `exponent_unipotent_mul`, `iwasawa_unipotent_ambiguity`, `torus`,
@@ -258,6 +259,5 @@ Imports are the modules published in Library commit
 `Langlands.Representation.Whittaker.GeneralLinear` (`standardCharacter`,
 `inverseStandardCharacter`, and through its imports `equivariantFunctions`
 and `UnitaryAdditiveCharacter`), together with
-`Mathlib.RingTheory.MvPolynomial.Symmetric.Defs` (`hsymm`). Environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`. Worker 43 authored this module.
+`Mathlib.RingTheory.MvPolynomial.Symmetric.Defs` (`hsymm`). Environment:
+Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

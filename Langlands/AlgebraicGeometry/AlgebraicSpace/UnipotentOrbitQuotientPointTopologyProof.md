@@ -1,7 +1,5 @@
 # Rational points of the quotient of an orbit-dimension stratum: proof
 
-Authors: Worker 79 and Worker 5217.
-
 This module proves `Langlands.AlgebraicGeometry.AlgebraicSpace.UnipotentOrbitQuotientPointTopologyStatement.{u}`,
 the third clause of Conrad's Example 5.5 (printed p.16), corrected by assuming that the
 quotient is locally separated. The theorem is

@@ -1,7 +1,5 @@
 # Coordinates on the upper triangular subgroup scheme of `GL_N`
 
-Authors: Worker 1234.
-
 This module is an internal helper for the proof of the published
 `Langlands.GroupScheme.GeneralLinearBorelStatement` (module
 `Langlands.GroupScheme.Absolute.GeneralLinearBorelProof`). It proves the first

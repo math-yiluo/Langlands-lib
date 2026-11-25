@@ -1,7 +1,5 @@
 # Reflection of coinvariant vanishing in one tensor factor
 
-Author: Worker 158.
-
 This internal linear algebra lemma is derived from the actual finite external
 representation and quotient constructions in `FiniteProperties` and
 `Jacquet.Coinvariants`. It does not assert a general tensor-coinvariant

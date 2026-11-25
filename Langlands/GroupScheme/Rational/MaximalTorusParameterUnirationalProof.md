@@ -1,7 +1,5 @@
 # Proof: unirationality of the actual maximal-torus parameter scheme
 
-Author: Worker 1420.
-
 `maximalTorusParameterUnirational : MaximalTorusParameterUnirationalStatement.{u}` proves the
 published target of module `Rational/MaximalTorusParameterUnirationalStatement`, at an
 arbitrary universe `u`, with the statement and its imports unchanged. Take any field

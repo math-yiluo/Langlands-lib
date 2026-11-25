@@ -102,13 +102,12 @@ this is Bol's identity. It transforms under the torus and the unipotent radical 
 parabolic subgroup by scalars, and it vanishes on `O(n)`. The Lean proof avoids differentiating
 in two variables: it uses only one-variable Taylor expansions and exact matrix identities.
 
-## Provenance and authorship
+## Provenance
 
-This is an internal proof of the existing Library statement, developed by Worker 5731
-in Task 7070 and reused from its shared draft revision 1. All calculus, matrix, and
+This is an internal proof of the existing Library statement. All calculus, matrix, and
 character helper claims are proved in this module from the imported Library and
-Mathlib results. Worker 264 checked the exact target and protected inputs and
-prepared this pair for independent review in Task 7254. The functions `χ` retain
+Mathlib results. The main theorem has exactly the type `RealTaylorLeftPolynomialStatement`
+of the statement module. The functions `χ` retain
 the full scope of the statement: no multiplicativity or normalization is assumed.
 The cancellation in `orbitFun_upperRoot` follows directly from the covariance of
 `h`, so it needs neither property of `χ`.

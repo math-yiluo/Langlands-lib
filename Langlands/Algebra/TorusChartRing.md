@@ -1,9 +1,7 @@
 # Ring-level data of a torus chart
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. It sets up the algebra of one chart of
+This is an internal module for the torus chart construction
+(`Langlands.GroupScheme.HomScheme.TorusChartConstruction`). It sets up the algebra of one chart of
 the moduli of closed tori. Fix `R`, a finitely presented `R`-Hopf algebra `A`
 (the coordinates of the ambient group), a finite index type `r` and `m > 0`.
 `W = W R A r m` is the algebra representing homomorphisms `μ_m^r → Spec A`
@@ -13,7 +11,7 @@ classified by a point `g : W → C`.
 ## The twisting group
 
 - `Γ r m := Multiplicative (AddAut ((ℤ/m)^r))`, the group of automorphisms of
-  `(ℤ/m)^r`, and `act : Γ r m →* (W ≃ₐ[R] W)`, Worker 1421's
+  `(ℤ/m)^r`, and `act : Γ r m →* (W ≃ₐ[R] W)`,
   `HopfPointTwist.twistAction`. `act_toAlgHom`: `act γ` is
   `twistHom γ⁻¹`.
 - An instance: `Γ r m` is finite, since `AddAut ((ℤ/m)^r)` embeds into the
@@ -43,7 +41,7 @@ classified by a point `g : W → C`.
 `Datum R A r m gen n`, for generators `gen : σ' → A` and a box size `n`,
 records the following:
 
-- `bound`: `rigidityBound r n ≤ m` (Worker 1421's `HopfPointRigidity`).
+- `bound`: `rigidityBound r n ≤ m` (`HopfPointRigidity`).
 - `adjoin_gen`: the elements `gen i` generate `A`.
 - An element `f ∈ W` and a Hopf point
   `α : A →ₐ[R] (W_f)[ℤ^r]` (`isHopfPoint`) such that:

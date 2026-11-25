@@ -1,7 +1,5 @@
 # Field points of a split rank-one group act on the binary form by similitudes
 
-Author: Worker 10.
-
 Let `D : CellData ρ j i α` be the cell data of `SplitRankOneCellData.md`, and
 let `L ⊇ F` be a field. This module shows that every `L`-point `g` of `G`
 acts on the binary form `ν(X, Y) = ∑_{l ≤ k} X^(k-l) Y^l w_l` through a

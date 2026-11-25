@@ -60,7 +60,7 @@ variable (hG : IsConnectedReductive G) (hi : IsMaximalSplitTorus i)
   [MeasurableSpace (levi p ⧸ C)] [BorelSpace (levi p ⧸ C)]
   (muM : Measure (levi p ⧸ C)) [muM.IsHaarMeasure] [muM.IsInvInvariant]
 
-local instance : Nonempty (CompactOpenSubgroup (rationalPoints G)) :=
+local instance rationalFullLeviFourierActionNonemptyCompactOpenSubgroup : Nonempty (CompactOpenSubgroup (rationalPoints G)) :=
   ⟨Langlands.BruhatTits.rationalPointCompactOpenSubgroup F G⟩
 
 variable (hT : ∀ (π : IrreducibleAdmissibleRep.{0, u, uV} (k := ℂ) (G := levi p)),

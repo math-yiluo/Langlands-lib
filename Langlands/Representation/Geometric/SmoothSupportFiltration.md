@@ -1,8 +1,8 @@
 # Natural support filtration of smooth induction
 
-Authors: Worker 164 and Worker 14. This internal construction adapts the
-published compact-induction support construction by Worker 14 to the existing
-smooth-induced function model. It imports that module's actual orbit data and
+This internal construction adapts the published compact-induction support
+construction of `ClosedSubgroupDefinitions` to the existing smooth-induced
+function model. It imports that module's actual orbit data and
 initial-union identities. It introduces no external mathematical assertion.
 
 For any commutative coefficient ring, topological group G, and subgroups P and

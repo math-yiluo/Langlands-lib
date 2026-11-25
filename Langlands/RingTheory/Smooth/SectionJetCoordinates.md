@@ -57,6 +57,6 @@ assumes a field. Here the ring-generic augmentation class map from
 map; the polynomial-substitution lemma in `Truncation` already works
 over a commutative ring. No external theorem is asserted as the source
 of these interfaces. No finite type, noetherian, field, or fixed finite
-rank hypothesis is added. This unit supplies local algebra coordinates;
+rank hypothesis is added. This module supplies local algebra coordinates;
 it does not construct sheaf gluing, higher symmetric-power comparisons,
 a determinant-power formula, or ampleness.

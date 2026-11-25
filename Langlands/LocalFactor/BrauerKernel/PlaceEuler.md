@@ -1,11 +1,10 @@
 # Local L-factors and epsilon factors of a global relation at a finite place
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global argument
 (1973, proof of Lemma 4.12) the local relation at each finite place makes the local L-factors of
 the global product cancel, and the remaining epsilon factors are compared place by place. This
-unit connects the local relation (`BrauerKernel.PlaceEpsilon.LocalPlaceRelation`) with the local
+module connects the local relation (`BrauerKernel.PlaceEpsilon.LocalPlaceRelation`) with the local
 factors of the published Brauer product package (`hasGlobalEquation_brauerProduct`). It is
 bookkeeping with published lemmas and has no separate literature source.
 

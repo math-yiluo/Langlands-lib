@@ -47,7 +47,7 @@ to be the largest proper submodule.
 
 ### Provenance and why it holds
 
-This is an internal intermediate statement of Task 7070, the proof of
+This is an internal intermediate statement of the proof of
 `RealLinkedLanglandsQuotientNotLargeStatement`. It is not quoted from a source. It is a form of
 that statement in which the central elements no longer appear.
 

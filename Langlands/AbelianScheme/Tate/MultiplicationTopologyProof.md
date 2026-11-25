@@ -23,8 +23,7 @@ conventions and distinguishes this stronger arbitrary-test-scheme assertion
 from a theorem quoted in the literature. The argument here is a direct proof
 on the actual published carriers; it makes no additional source attribution.
 
-Worker 129 implemented coordinate division and the continuous-retract argument.
-The zero-extension and coordinate-continuity pattern is adapted from Worker 18's
+The zero-extension and coordinate-continuity pattern is adapted from the
 published `Langlands.AbelianScheme.Tate.PrimeComparisonProof`.
 That module's proved `fullPrimeProductComparison` and
 `awayPrimeProductComparison` are imported as theorems. They are not assumed

@@ -1,7 +1,5 @@
 # The uniformizer test for actual lower ramification groups
 
-Authors: Worker 507, with Worker 32's formulation and derivation.
-
 `Langlands.Ramification.Padic.UniformizerCriterion.{u,v}` is a proposition
 target. This pair states the criterion; it does not prove it.
 
@@ -51,8 +49,8 @@ English translation by Marvin Jay Greenberg, GTM 67, Springer (1979),
 Chapter IV, section 1, Lemma 1 and Proposition 1, printed pages 61–62
 (PDF pages 68–69), and section 2, Proposition 5, printed page 66
 (PDF page 73). The preceding notation on printed page 65 (PDF page 72)
-chooses an arbitrary uniformizer. Worker 507 read these original pages
-and rendered PDF page 73 to check the ideal-power exponent.
+chooses an arbitrary uniformizer. These original pages were read, and
+PDF page 73 was rendered to check the ideal-power exponent.
 Registered original: `serre-1979-local-fields`, at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
@@ -74,19 +72,20 @@ leaves a multiple of any chosen uniformizer. Induction on the ideal-power
 exponent then propagates the uniformizer congruence to all integers;
 the reverse direction evaluates the all-integer congruence at that
 uniformizer. This argument motivates the target without adding a
-generation or Galois hypothesis. Its formal implementation remains the
-proof successor's obligation.
+generation or Galois hypothesis. Its formal implementation is
+`Langlands.Ramification.Padic.uniformizerCriterion` in
+`Langlands.LocalFactor.Ramification.UniformizerCriterionProof`.
 
-Worker 507 also read the *Local Fields* entries on PDF pages 2–3 of
-Serre's *Corrections to J-P. Serre's books* (2019), registered as
+The *Local Fields* entries on PDF pages 2–3 of Serre's *Corrections to
+J-P. Serre's books* (2019), registered as
 `serre-book-corrections-2019`, SHA-256
-`b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`.
-Those entries make no correction to the cited statements on printed
+`b76739179d067850770081597a8e9ced68135ebf80678876605f471297a4fee5`,
+were also read. Those entries make no correction to the cited statements on printed
 pages 61–62 and 66. The retained errata file is
 `/home/taskhub/pilot/literature/Jean-Pierre Serre — Corrections to J-P. Serre's books (2019).pdf`.
 
-The imported constructions retain their original authorship. In
-particular, the relative integer and residue maps are Worker 90's work;
-this statement pair contains no adaptation of their proofs. The pinned
+The imported constructions retain their own modules and provenance. In
+particular, the relative integer and residue maps come from
+`Langlands.LocalField.RelativeIntegers`; this statement pair contains no adaptation of their proofs. The pinned
 environment is Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

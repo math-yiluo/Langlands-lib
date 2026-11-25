@@ -1,7 +1,5 @@
 # Finite-length reflection for smooth induction
 
-Author: Worker 1343.
-
 This is an internal algebraic and topological adapter for Corollary 1.10(a).
 For a smooth representation of an actual subgroup of a locally compact
 nonarchimedean group, it constructs an order embedding from its coefficient

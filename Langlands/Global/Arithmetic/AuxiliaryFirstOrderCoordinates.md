@@ -1,8 +1,8 @@
 # Finite-order characters with total-trace norm coordinates
 
-Worker 84 implements this norm-coordinate family using the existing actual
-local objects. Its separate prerequisite theorem modules retain their original
-authorship and are formal dependencies of the final proof task.
+This module implements this norm-coordinate family using the existing actual
+local objects. Its separate prerequisite theorem modules are formal
+dependencies of the final proof in AuxiliaryCharacterFirstOrderProof.
 
 For supplied data TF, TL and TM and a unit coefficient b in the actual
 intermediate field L, use the public traceCharacter and scale constructors to
@@ -25,4 +25,4 @@ The coefficient is nonzero through its unit type. Every prime, independent
 carrier universe and supplied topology is retained; k must be positive for the
 strict unit bound. AuxiliaryCharacterFirstOrderProof supplies arbitrary-depth nontriviality, the
 common detection parameter and the final subtype-topology transport. This file
-proves its stated coordinate family; independent review covers the full bundle.
+proves its stated coordinate family.

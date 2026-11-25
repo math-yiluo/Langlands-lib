@@ -1,7 +1,5 @@
 # Haar normalization invariance of Lp membership
 
-Author: Worker 158.
-
 `Langlands.haarMemLpInvariant` proves the published closed proposition
 `Langlands.HaarMemLpInvariantStatement` in every group universe. It compares two
 Haar measures on the same Borel measurable space of a second-countable locally

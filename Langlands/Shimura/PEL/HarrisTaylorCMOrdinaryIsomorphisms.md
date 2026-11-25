@@ -1,7 +1,5 @@
 # The ordinary isomorphism relation on full Tate-normalized Harris CM models
 
-Author: Worker 344.
-
 This internal construction works on the existing actual
 `TateNormalizedCMRepresentative` values over the same connected admissible CM
 base and geometric point, at the same original Harris level. Each representative

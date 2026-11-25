@@ -1,7 +1,5 @@
 # Proof: the split rank of `O(q)⁰` equals the Witt index
 
-Author: Worker 350.
-
 Module `Langlands.GroupScheme.Quaternionic.ConnectedIsometrySplitRankProof`.
 
 ## Statement proved

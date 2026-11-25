@@ -4,16 +4,13 @@ Module `Langlands.Representation.CuspidalSupport.BernsteinInductionRestrictionSt
 Namespace `Langlands.CuspidalSupport`.
 Entry proposition `BernsteinInductionRestrictionStatement`; nothing is proved here.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.7.1–VI.7.4, printed pp.180–186 / PDF pp.186–192. The
+VI.7.1–VI.7.4, printed pp.180–186 / PDF pp.186–192, were read. The
 statement is the Proposition of VI.7.3, printed p.185 / PDF p.191:
 
 > Soit `P = MN` un sous-groupe parabolique de `G`. Une donnée cuspidale
@@ -40,12 +37,12 @@ subquotients have inertial support `𝔱`, and likewise for `M(M)_𝔰`.
 ## The objects
 
 All objects are published; this file constructs nothing. The setting is that
-of the companion VI.7.2 statement units `BernsteinDecompositionStatements` and
-`BernsteinBlockCharacterizationStatement` (Worker 1222), on the standard-family
-framework of Worker 1153 (modules `BernsteinData` and `BernsteinBlock`).
+of the companion modules `BernsteinDecompositionStatements` and
+`BernsteinBlockCharacterizationStatement` (statements of VI.7.2), on the standard-family
+framework (modules `BernsteinData` and `BernsteinBlock`).
 
 - `F`, `G`, `T`, `i`, `ν` and `family : BernsteinStandardFamily i ν` are as in
-  those units: a nonarchimedean local field, a group scheme with locally
+  those modules: a nonarchimedean local field, a group scheme with locally
   compact nonarchimedean `G(F)` in the canonical topology, and the actual
   standard family (structural hypotheses only).
 - `J : Finset (SimpleRoot i ν)` gives the standard parabolic
@@ -131,17 +128,19 @@ They are not formalized; they explain why this formulation, which needs only
   universe of the published saturated block and of normalized induction.
 - **Support.** As in `BernsteinBlock`, inertial support is defined by
   occurrence in normalized induction. Its comparison with the cuspidal support
-  defined by Jacquet modules is the support-uniqueness obligation recorded
-  there.
+  defined by Jacquet modules rests on the uniqueness of cuspidal support,
+  which `BernsteinBlock` does not prove.
 - **Index sets.** The fibre `i_{MG}^{-1}(𝔱)` is not formed as a set: the fibre
   property quantifies over the data directly. The varieties `Ω(M)`, `Ω(G)` and
   the morphism `i_{MG}` of varieties (VI.7.1, VI.10.5) are not available.
 
 ## Scope
 
-This file states the VI.7.3 Proposition and proves nothing. A proof belongs to
-a separate `lean.proof@1` task targeting
-`BernsteinInductionRestrictionStatement`. The source deduces both assertions
+This file states the VI.7.3 Proposition and proves nothing.
+`bernsteinInductionRestriction_of_decomposition_and_characterization` (module
+`BernsteinInductionRestrictionAssembly`) derives
+`BernsteinInductionRestrictionStatement` from the Bernstein decomposition and
+the block characterization. The source deduces both assertions
 from the characterizations of the VI.7.2 Proposition (published as
 `BernsteinBlockCharacterizationStatement`), applied in `G` and in `M`. In the
 present formulation the deduction also uses the existence of cuspidal
@@ -150,6 +149,5 @@ and Jacquet modules in stages for `M_K ⊆ M ⊆ G`, and exactness of `r_P^G`.
 
 The file imports `Langlands.Representation.CuspidalSupport.BernsteinBlock`,
 `Langlands.Representation.Aubert.General.RationalInductionStagesGeometry` and
-`Langlands.GroupScheme.Rational.StandardLeviIntersectionProof` (environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`, Mathlib commit
+`Langlands.GroupScheme.Rational.StandardLeviIntersectionProof` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`).

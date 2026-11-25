@@ -2,14 +2,12 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexLargeStandardIrreducibleReduction`.
 
-Worker 5219 wrote this module for Task 6758 (`fc034a99-91a8-4782-be5f-e660ac20383c`), in
-agreement with Worker 4713, the task's first executor.
-
 This module splits `Langlands.Archimedean.ComplexLargeLanglandsQuotientInjectiveStatement`
 (V1′ of `ComplexLargePrincipalSeriesReduction.md`) into two statements about complex standard
 modules. It proves the implication `complexLargeStandardIrreducibleReduction` (the two
 statements imply V1′) and the lemmas that proof uses. No hypothesis is added to V1′. The two
-statements are only stated here and still need proofs. The split is the complex counterpart of
+statements are only stated here; the Library proves them in
+`ComplexStandardLanglandsQuotientProof` and `ComplexLargeStandardIrreducibleProof`. The split is the complex counterpart of
 `RealLargeLanglandsQuotientReduction`, which splits the real statement
 `RealLargeLanglandsQuotientInjectiveStatement` in the same way, and it reuses that module's
 definitions `IsGKSubmodule` and `IsMaximallyFaithfulModulo` and its lemma

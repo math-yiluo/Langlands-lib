@@ -7,7 +7,7 @@ discharges both.
 
 - `RankOneLocalCover.RootCellCoverInput`: a connected reductive group `G` with a split torus
   `i : T → G`, a root cell `RootCell.IsRootCell i α αv xp xm` and `⟨α, αv⟩ = 2` admits the
-  target's central cover. Its binders match Worker 919's theorem
+  target's central cover. Its binders match the theorem
   `rankOneCentralCover_of_rootCell` (module `Langlands.GroupScheme.Reductive.RankOneCoverOfRootCell`),
   which proves it.
 - `RankOneLocalCover.LocalLineCrux`: in semisimple rank one over an algebraically closed field,
@@ -24,5 +24,5 @@ this cell returns the target's conclusion.
 
 ## Provenance
 
-This is internal assembly for Task 7586. It contains no mathematics beyond composing the cited
+This is internal assembly for the proof of `RankOneCentralCoverStatement`. It contains no mathematics beyond composing the cited
 lemmas.

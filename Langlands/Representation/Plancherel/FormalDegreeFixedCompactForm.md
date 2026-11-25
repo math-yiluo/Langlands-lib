@@ -6,7 +6,7 @@ pp.295–296 (PDF pp.61–62), source `waldspurger-2003-plancherel`, SHA-256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
 V.2 rescales the tensor product of the two actual induced forms by the inverse
 Schur degree. VI.1 identifies the unitary unramified twisted product inductions
-with one fixed compact picture. This unit proves that these existing maps
+with one fixed compact picture. This module proves that these existing maps
 preserve the actual degree-normalized forms.
 
 The general-framework assumptions of `FixedCompactProductForm` remain
@@ -48,6 +48,6 @@ form. Its value lemma identifies that map literally. The construction uses
 no topology or completion of the coefficient or section carrier.
 
 No arbitrary Bruhat-measure normalization, orbit measure, spectral-family
-descent, wave-packet convergence or whole-task completion condition is proved
+descent or wave-packet convergence is proved
 here. Actual rational-point realization of the displayed general-framework
 structural assumptions is a separate obligation.

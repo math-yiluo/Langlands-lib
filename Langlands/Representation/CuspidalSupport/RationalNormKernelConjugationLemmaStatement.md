@@ -5,17 +5,14 @@ Namespace `Langlands.CuspidalSupport`. Universe parameters `u, uV, uW`.
 The module contains one **statement**, the `Prop`-valued definition
 `RationalNormKernelConjugationLemmaStatement`; it proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VI.3.1 and the start of VI.3.2, printed pp.142–143 / PDF
-pp.148–149:
+VI.3.1 and the start of VI.3.2, printed pp.142–143 / PDF pp.148–149, were
+read:
 
 > Comme `⁰G` est un sous-groupe distingué de `G`, `G` agit sur `Irr(⁰G)` par
 > `(g, σ) ↦ σ^g` […]
@@ -70,9 +67,10 @@ centre acts trivially. So the action on classes factors through
 bijection `Hom_{⁰G}(σ, π) ≅ Hom_{⁰G}(σ^g, π)` (source computation), so `π(g)`
 maps the images onto each other.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation. Part (i) needs the finiteness of
+The proof is `rationalNormKernelConjugationLemma` in
+`RationalNormKernelConjugationLemmaProof`. Part (i) needs the finiteness of
 `G/⁰G Z(G)` (V.2.6; check the Library for its published form).
 
 ## Imports

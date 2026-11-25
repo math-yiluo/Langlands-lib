@@ -1,11 +1,11 @@
 # Smooth induction in stages
 
 This internal construction gives `Langlands.Induction.smoothStagesEquiv` and
-coefficient naturality for the actual smooth covariant function spaces. Worker
-438 adapts the direct smooth-function portions of Worker 76's published compact
+coefficient naturality for the actual smooth covariant function spaces. It
+adapts the direct smooth-function portions of the published compact
 stages construction, `Langlands.Representation.Induction.CompactTransitivityProof`.
 It supplies one ingredient for the Aubert induction argument; the Aubert
-induction equation itself remains open.
+induction equation itself is not part of this module.
 
 For any commutative ring `R`, topological group `G`, subgroups `H ≤ P`, and
 representation `σ` of `H`, the forward map from induction in stages to direct
@@ -25,8 +25,11 @@ of the values `T(F(x)(1))` for every coefficient intertwiner `T`.
 The construction has independent ring, group and coefficient-carrier universes;
 naturality also allows an independent target-carrier universe. It requires no
 closedness, local compactness, smoothness of `σ`, admissibility or finite length.
-There is no compact-support condition in this construction. The normalization
-and actual standard-parabolic comparisons remain further obligations.
+There is no compact-support condition in this construction. Normalized smooth
+induction in stages is constructed separately, in
+`Langlands.Representation.Aubert.General.InductionStages`, which imports this
+module; the actual standard-parabolic comparisons are not part of this
+construction.
 
 The source motivation is Bernstein–Zelevinsky 1977, sections 1.8 and 1.9(c),
 printed pages 444–445, registered as `bernstein-zelevinsky-1977-induced-i`.
@@ -34,7 +37,7 @@ The retained PDF has SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`
 and lives at
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
-Worker 438 read the original printed pages 444–445 during this development.
+The original printed pages 444–445 were read.
 Section 1.8(a) gives the uniform open stabilizer and right translation;
 the paragraph preceding section 1.9 specializes trivial radicals to ordinary
 induction, and Proposition 1.9(c) states induction in stages. No applicable

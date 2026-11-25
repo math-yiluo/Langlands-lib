@@ -1,6 +1,6 @@
 # Reflection of Renard Noetherianity
 
-Worker 1582. Internal derived infrastructure for the proof of Renard VI.7.5,
+Internal derived infrastructure for the proof of Renard VI.7.5,
 Proposition, printed page 186 / PDF page 192, in David Renard,
 *Représentations des groupes réductifs p-adiques*, French version of 9 July
 2026. The registered source is
@@ -60,5 +60,3 @@ The generic transfer theorem is proved. It neither constructs the
 cuspidal Jacquet functor `R`, proves its faithfulness or finite-type
 preservation, nor proves that its target is Noetherian. It does not
 discharge either exact represented-group VI.7.5 target.
-
-Prepared environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.

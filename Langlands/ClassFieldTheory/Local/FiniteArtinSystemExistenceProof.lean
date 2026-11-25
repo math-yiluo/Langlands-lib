@@ -1,9 +1,9 @@
 import Langlands.ClassFieldTheory.Local.FiniteArtinSymbol
 import Langlands.ClassFieldTheory.Local.FiniteArtinSystemStatement
 import Langlands.ClassFieldTheory.Local.FiniteArtinSystemUniquenessProof
-import Langlands.ClassFieldTheory.Local.NYLL.RamifiedGeometricNormalizationTransferProof
-import Langlands.ClassFieldTheory.Local.NYLL.RelativeIntegerStructureProof
-import Langlands.ClassFieldTheory.Local.NYLL.UniverseZeroModel
+import Langlands.ClassFieldTheory.Local.UniverseZero.RamifiedGeometricNormalizationTransferProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.RelativeIntegerStructureProof
+import Langlands.ClassFieldTheory.Local.UniverseZero.UniverseZeroModel
 import Langlands.ClassFieldTheory.Local.NormExistenceClosedSupport
 
 /-! # Existence of the coherent geometric finite Artin system
@@ -38,7 +38,7 @@ variable (F : PadicField.{u} p) (D : PadicField.{u} p)
 theorem ramificationIndex_eq_canonical (T : F.TopologicalData) :
     T.ramificationIndex = F.canonicalTopologicalData.ramificationIndex :=
   congrArg Int.toNat
-    (NYLL.ord_eq_of_algEquiv AlgEquiv.refl F.canonicalTopologicalData T (p : F.Carrier))
+    (UniverseZero.ord_eq_of_algEquiv AlgEquiv.refl F.canonicalTopologicalData T (p : F.Carrier))
 
 /-- Relative ramification index one for supplied data gives equal canonical
 absolute ramification indices. -/
@@ -62,8 +62,8 @@ theorem canonical_ramificationIndex_eq (TF : F.TopologicalData) (TD : D.Topologi
   let := PadicField.TopologicalData.relativeIntegerFieldAlgebra (E := D) TF
   let := PadicField.TopologicalData.relativeIntegerFieldTower (E := D) TF
   let := PadicField.TopologicalData.relativeIntegerTower TF TD
-  let := (NYLL.relativeIntegerStructure p F D TF TD).1
-  let := (NYLL.relativeIntegerStructure p F D TF TD).2
+  let := (UniverseZero.relativeIntegerStructure p F D TF TD).1
+  let := (UniverseZero.relativeIntegerStructure p F D TF TD).2
   let : Module TF.Integers D.Carrier := Algebra.toModule
   have : CharZero F.Carrier :=
     charZero_of_injective_algebraMap (algebraMap (Padic p) F.Carrier).injective
@@ -122,7 +122,7 @@ theorem supplied_congruence_of_arithmetic {n : ℕ} [NeZero n]
   change TD.residue (e (LocalGalois.integerAut F.Carrier D.Carrier
     (χ.symm (Multiplicative.ofAdd 1)) z)) = TD.residue (e (z ^ _)) at h2
   rw [hq]
-  exact (NYLL.suppliedResidueCongruence D TD _ _).mp h2
+  exact (UniverseZero.suppliedResidueCongruence D TD _ _).mp h2
 
 end Unramified
 
@@ -194,7 +194,7 @@ theorem unramified_normalization (TF : F.TopologicalData) (D : PadicField.{u} p)
   obtain ⟨χ, hχ⟩ := ArithmeticCoordinate.coordinate_exists F D
     (canonical_ramificationIndex_eq F D TF TD h)
   have ha' : F.canonicalTopologicalData.ord (a : F.Carrier) = 1 :=
-    (NYLL.ord_eq_of_algEquiv AlgEquiv.refl TF F.canonicalTopologicalData (a : F.Carrier)).trans
+    (UniverseZero.ord_eq_of_algEquiv AlgEquiv.refl TF F.canonicalTopologicalData (a : F.Carrier)).trans
       ha
   change TD.discreteValuation
     ((geometricSymbol F D.Carrier a).symm x - x ^ TF.residueCardinality) < 1
@@ -211,12 +211,12 @@ theorem ramified_normalization (TF : F.TopologicalData) (E : PadicField.{u} p)
     TE.discreteValuation
       ((geometricArtin F E TE a).symm x - x ^ TF.residueCardinality) < 1 := by
   let := FiniteDimensional.right (Padic p) F.Carrier E.Carrier
-  let := NYLL.finiteInertiaField_isAbelianGalois F E TF
-  refine NYLL.ramifiedGeometricNormalizationTransfer.{u, u} F E TF
-    (NYLL.finiteInertiaPadicField F E TF).canonicalTopologicalData TE (geometricArtin F)
+  let := UniverseZero.finiteInertiaField_isAbelianGalois F E TF
+  refine UniverseZero.ramifiedGeometricNormalizationTransfer.{u, u} F E TF
+    (UniverseZero.finiteInertiaPadicField F E TF).canonicalTopologicalData TE (geometricArtin F)
     (fun D _ _ _ TD h => unramified_normalization F TF D TD h) ?_ a ha x hx
   refine MonoidHom.ext fun b => ?_
-  exact restrictNormalHom_geometricSymbol F E.Carrier (NYLL.finiteInertiaField F E TF) b
+  exact restrictNormalHom_geometricSymbol F E.Carrier (UniverseZero.finiteInertiaField F E TF) b
 
 /-- The geometric symbol is continuous: its kernel, the norm subgroup, is closed of
 finite index, hence open. -/

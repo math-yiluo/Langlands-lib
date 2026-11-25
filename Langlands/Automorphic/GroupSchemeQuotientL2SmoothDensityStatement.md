@@ -1,6 +1,6 @@
 # Smooth-vector density in the original reductive quotient L2
 
-Worker 116 states
+This module states
 `Langlands.Automorphic.GroupSchemeFunctions.GroupSchemeQuotientL2SmoothDensityStatement`
 for a number field in arbitrary universe `u` and an actual connected
 reductive group scheme. It keeps the affine locally finite-type hypotheses,

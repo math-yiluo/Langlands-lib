@@ -1,7 +1,5 @@
 # Hermite reduction of integral positive definite forms
 
-Author: Worker 19.
-
 This module proves two facts about a symmetric bilinear form `β` with values
 in `ℤ` on a free `ℤ`-module `L` of rank `d` (a "lattice"), when `β` is
 positive definite:

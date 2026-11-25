@@ -1,6 +1,6 @@
 # Renard VI.8.4–VI.8.5: irreducibility of induced twists on Zariski open sets
 
-Author: Worker 709. Module
+Module
 `Langlands.Representation.Families.RenardGenericIrreducibilityStatements`,
 namespace `Langlands.Renard.AlgebraicFamily`. It contains two **statements**,
 the closed `Prop`-valued definitions `InducedIrreducibilityOpenStatement` and
@@ -24,7 +24,7 @@ dated **9 July 2026**:
 - Irreducible representations: III.1.4, printed p. 60 / PDF p. 66.
 
 Literature ID `renard-2026-representations-groupes-reductifs-padiques`, file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
 The VI.8.4 Proposition reads: "Soit `P = MN` un sous-groupe parabolique de
@@ -119,7 +119,7 @@ The objects of the source are the following published declarations.
    regular functions on `X(M)`, and they form a base of its Zariski topology.
    A change of basis of the lattice acts by an automorphism of the torus given
    by monomials, so the base does not depend on that choice. These remarks
-   are Worker 709's and are not checked in Lean.
+   are not checked in Lean.
 2. VI.8.4. A Zariski open set contains `ψ₀` exactly when it contains a
    principal open set containing `ψ₀`. So the conclusion of
    `InducedIrreducibilityOpenStatement` is equivalent to: `π_ψ` is
@@ -132,7 +132,7 @@ The objects of the source are the following published declarations.
    `ψ₀`. The VI.8.5 proof uses the Proposition in this stronger form: "il
    suffit de montrer que `π_{ψ_0}` est irréductible pour un certain `ψ_0`"
    needs the open set to be nonempty. The statement therefore includes
-   `ψ₀ ∈ D(f)`. This is a reading of the source by Worker 709.
+   `ψ₀ ∈ D(f)`. This is a reading of the source.
 3. VI.8.5. If `f ≠ 0`, its principal open set is dense in `X(M)`
    (published `Plancherel.dense_rationalUnramifiedPrincipalOpen`), so it is
    nonempty, because `X(M)` contains the trivial character. Conversely the
@@ -177,10 +177,13 @@ freeness is `LocalFreeCoverStatement` in
 [RenardFamilyStatements](RenardFamilyStatements.md); this module does not
 import it.
 
-## Remaining obligations
+## Proofs
 
-The proofs are separate obligations, which must prove these declarations
-unchanged. The source proof of VI.8.4 uses the universal family
+The Library proves these declarations, unchanged, only from further statements:
+VI.8.4 in [InducedIrreducibilityOpenAssembly](InducedIrreducibilityOpenAssembly.md),
+VI.8.5 in [RenardGenericIrreducibilityReduction](RenardGenericIrreducibilityReduction.md)
+and [RenardGenericIrreducibilityRemainingInputs](RenardGenericIrreducibilityRemainingInputs.md).
+The source proof of VI.8.4 uses the universal family
 `ρ ⊗ χ_un` over `B = ℂ[Λ(M)]` (VI.8.1 Example), the commutation of
 specialization and induction (VI.8.2 Corollary), the local freeness theorem
 of VI.8.4, a compact open `K` such that every irreducible representation of
@@ -194,7 +197,7 @@ these steps as (T5-a), (T5-b), (L5) and (T5-c).
 
 ## Environment
 
-Environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. The project imports are
 `ArbitraryParabolicLeviPoints` (`leviInductionFunctor`, `leviPointTopology`),

@@ -1,7 +1,5 @@
 # Tensor coefficients of actual group-scheme representations
 
-Author: Worker 2.
-
 This module constructs the tensor product of two actual finite-coordinate
 representations of a common group scheme. It evaluates that scheme morphism
 on test schemes, proves its Kronecker matrix formulas, and gives a bundled
@@ -167,8 +165,10 @@ the pinned Mathlib commit is
 `5ed2965256430c3649e86755f9576b54eca72435`.
 No additional identification with external literature is asserted.
 
-This unit supplies the common-source tensor scheme construction and
+This module supplies the common-source tensor scheme construction and
 its full module tensor comparison. It does not construct a Lie
 differential of the tensor representation, analytic or topological
-tensor products, or automorphic coefficient attachment. Those remain
-separate obligations in the broader definition task.
+tensor products, or automorphic coefficient attachment. For representations
+of a general linear group scheme, the differential of the tensor
+representation is computed by `differential_tensor` in
+`MatrixRepresentationDifferentialOperations`.

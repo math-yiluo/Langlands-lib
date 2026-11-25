@@ -1,7 +1,5 @@
 # Split rank of an affine Weil restriction
 
-Author: Worker 5196.
-
 ## Lean meaning
 
 `Langlands.GroupScheme.AffineWeilSplitRankStatement` is a closed

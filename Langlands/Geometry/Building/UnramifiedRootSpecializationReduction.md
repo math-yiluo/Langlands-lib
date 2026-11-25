@@ -1,12 +1,11 @@
 # Root specialization from fixed-point models with surviving residue roots
 
-Author: Worker 407.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedRootSpecializationReduction`.
 
-This module proves two implications from the unproved prerequisite
+This module proves two implications from the prerequisite
 [UnramifiedFixedResidueRootModelStatement](UnramifiedFixedResidueRootModelStatement.md).
-It does not prove that prerequisite.
+It does not prove that prerequisite; `unramifiedFixedResidueRootModel` in
+[UnramifiedFixedResidueRootModelProof](UnramifiedFixedResidueRootModelProof.md) does.
 
 ## The named implication
 
@@ -69,7 +68,7 @@ applied to `g ∈ rootGroupPoints iS a`.
 ## `unramifiedFixedRootModel_of_fixedResidueRootModel`
 
 The same hypothesis also implies the published
-`UnramifiedFixedRootModelStatement.{u}` (Worker 200). The proof supplies the
+`UnramifiedFixedRootModelStatement.{u}`. The proof supplies the
 Henselian instance and applies the hypothesis at the fixed point. It returns
 `D₀`, `T₀` and `Q₀`, with `T₀.IsClosedSplit` assembled from `hT₀` and the
 closedness clause, `Q₀.IsReductiveQuotient`, and the two root-point

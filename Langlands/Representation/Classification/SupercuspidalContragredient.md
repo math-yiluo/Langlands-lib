@@ -1,7 +1,5 @@
 # The smooth contragredient of supercuspidal objects and classes
 
-Author: Worker 23.
-
 This module restricts the bundled smooth contragredient of
 `Category/Contragredient` to the actual supercuspidal objects
 `GeneralLinear.SupercuspidalRep` and their isomorphism classes

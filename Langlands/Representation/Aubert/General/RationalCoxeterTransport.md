@@ -1,6 +1,6 @@
 # Scheme-to-point Coxeter transport
 
-Worker 1344. This is a conditional internal comparison, intended to supply
+This is a conditional internal comparison, intended to supply
 part of the structural indexing needed to apply the rational rank-one targets
 when proving Corollary 1.10(b). It does not prove the corollary or the existence
 of a scheme or point Coxeter realization.
@@ -38,4 +38,4 @@ reflection-label assertion is proved; existence of a scheme realization,
 splitness, finiteness, and both point subgroup comparisons remain inputs.
 
 The accompanying scheme proof includes a reflection conjugation and uniqueness
-route suggested by Worker 181. Length preservation reuses Worker 913's lemma.
+route. Length preservation reuses `GroupScheme.coxeterLength_map_eq`.

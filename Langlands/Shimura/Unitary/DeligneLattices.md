@@ -1,7 +1,5 @@
 # Character and cocharacter lattices of the Deligne torus
 
-Worker 207.
-
 This module computes the character and cocharacter lattices of the Deligne
 torus `S = Res_{ℂ/ℝ} 𝔾_m` after base change to `ℂ`, together with the action
 of complex conjugation:

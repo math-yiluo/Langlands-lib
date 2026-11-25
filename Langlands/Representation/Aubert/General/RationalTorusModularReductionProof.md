@@ -1,7 +1,6 @@
 # The ambient modular character on actual torus points
 
-Authors: Worker 103 (proof and original exposition); Worker 1658 (verification
-and submission).
+The proof was verified independently of its writing.
 
 The theorem `rationalTorusModularReduction` proves exactly
 `RationalTorusModularReductionStatement` in every universe. Its explicit

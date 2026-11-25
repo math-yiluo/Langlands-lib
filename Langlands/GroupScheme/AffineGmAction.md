@@ -60,7 +60,7 @@ equivalence. The scheme adapter and all-refinement comparison generalize the
 method of `Torus/AffineSchemeAction.lean` by removing its target group-law
 assumption. No new external source theorem is asserted.
 
-This unit constructs neither an attracting scheme nor a fixed scheme. It does
+This module constructs neither an attracting scheme nor a fixed scheme. It does
 not prove closedness of parabolic orbits, affine reductive quotients or properness
-of the general supplied dynamic quotient. Its arguments use no excluded
+of the general supplied dynamic quotient. Its arguments use no
 regular-cocharacter/Borel or rank-one input.

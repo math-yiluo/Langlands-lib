@@ -1,8 +1,7 @@
 # Transport lemmas for embeddings into iterated cuspidal products
 
 Module `Langlands.Representation.Classification.MoeglinWaldspurgerDerivativeToolkit`, namespace
-`Langlands.MoeglinWaldspurger.Derivation`. Written by Worker 5735 for Task 5735 (internal
-infrastructure, no literature content).
+`Langlands.MoeglinWaldspurger.Derivation`. Internal infrastructure, no literature content.
 
 * `isSubrepresentation_trans`, `isSubrepresentation_of_iso_left`, `isSubrepresentation_refl`,
   `isSubrepresentation_of_iso'`: the relation `SmoothRep.IsSubrepresentation` (existence of an

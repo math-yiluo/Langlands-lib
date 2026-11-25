@@ -34,6 +34,9 @@ genericity, apartment axioms, or the facet sign condition.
 
 The provenance is the internal argument above using the established
 `RootSubgroupPositive`, `ChamberOrderedInjective` and `ChamberProductInjective`
-interfaces. This unit makes no further literature claim. The Dynamic ordered
+interfaces. This module makes no further literature claim. The Dynamic ordered
 product premise, every exact range, the central and normalizer comparisons
-and the complete target remain separate obligations.
+and the complete `ChamberIwahoriDecompositionStatement` remain separate
+obligations; the Library proves the premise as
+`RelativeRoot.dynamicRootOrderedProduct` and the complete statement as
+`ParahoricBuildingData.chamberIwahoriDecomposition` in `ChamberIwahoriProof`.

@@ -1,7 +1,5 @@
 # Full Tate-normalized CM models on componentwise admissible bases
 
-Author: Worker 344.
-
 This internal construction extends the actual normalized-model presheaf,
 at one fixed original Harris level, to the full existing
 `ComponentwiseAdmissibleCMBaseCategory`. It uses the same universe-zero

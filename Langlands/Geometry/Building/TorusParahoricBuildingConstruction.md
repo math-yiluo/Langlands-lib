@@ -31,8 +31,8 @@ preserved. The full existing `SatisfiesApartmentAxioms` conclusion also follows
 from the underlying torus constructor.
 
 The provenance is an internal assembly of the three named constructors and the
-proved arbitrary-field-extension theorem `IsTorus.baseChange`. This unit proves
+proved arbitrary-field-extension theorem `IsTorus.baseChange`. This module proves
 torus data existence and the single-apartment predicate. It does not assert the
 other building-level axiom families or existence for general connected
-reductive groups. The unrestricted `RootValuationBuildingConstructionStatement`
-remains a parent-task obligation.
+reductive groups. The unrestricted `RootValuationBuildingConstructionStatement`,
+the statement this module serves, remains open.

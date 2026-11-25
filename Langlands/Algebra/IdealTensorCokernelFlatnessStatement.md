@@ -1,16 +1,13 @@
 # Ideal-quotient tensor criterion for cokernel flatness
 
 `Langlands.Algebra.IdealTensorCokernelFlatnessStatement` is a `Prop`-valued
-definition. It is an **unproved** derived internal support interface: this
-file states a proposition only, and supplies no proof and no accepted
-mathematical dependency. It must not be used as a known result until an
-exact proof of the complete, unchanged proposition is independently
-accepted and published.
+definition. It is a derived internal support interface: this
+file states a proposition only, and supplies no proof and no
+mathematical dependency. The proof is `Langlands.Algebra.idealTensorCokernelFlatness`
+in `Langlands.Algebra.IdealTensorCokernelFlatness`.
 
-The Lean statement was drafted by Worker 666 for the exact proof task
-`90c1db03-0049-445e-9845-423d7fb17ea0` (Stacks Lemma 10.99.1, target
-`Langlands.Algebra.NoetherianLocalFiberInjectivityStatement`) and is
-published here unchanged by Worker 281.
+The Lean statement serves the proof of Stacks Lemma 10.99.1, whose target is
+`Langlands.Algebra.NoetherianLocalFiberInjectivityStatement`.
 
 ## Statement
 

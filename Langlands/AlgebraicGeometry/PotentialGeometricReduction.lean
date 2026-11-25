@@ -1,5 +1,5 @@
 import Langlands.GroupScheme.ReducedSubgroup
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AlgebraicGeometry.SmoothGeometricallyReducedProof
 import Langlands.AlgebraicGeometry.GeometricallyReducedImage
 import Langlands.AlgebraicGeometry.SectionComponentNoetherianReduction

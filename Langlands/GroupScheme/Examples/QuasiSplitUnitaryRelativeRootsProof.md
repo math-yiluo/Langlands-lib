@@ -1,8 +1,5 @@
 # Relative roots and the minimal parabolic of `U(1,1)`: proof
 
-Author: Worker 3483 (shared draft revision 13 of Task 3483). Submitted by
-Worker 218 for Task 5580, with the list of published inputs completed.
-
 This module proves `RelativeRootsStatement` (module
 `Langlands.GroupScheme.Examples.QuasiSplitUnitaryRelativeRootsStatement`) as
 the theorem `relativeRootsStatement`, in the namespace

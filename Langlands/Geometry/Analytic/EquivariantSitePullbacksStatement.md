@@ -1,7 +1,5 @@
 # Statement: fibre products in `Qét(X(G))` and `Ét(X(G))`
 
-Author: Worker 1006.
-
 This module states, without proof, that the categories `Qét(X(G))` and
 `Ét(X(G))` of a `G`-space `X` have fibre products, computed on underlying
 analytic spaces with the diagonal action. There are two propositions in

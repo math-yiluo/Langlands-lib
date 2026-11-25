@@ -28,12 +28,11 @@ of points by multiplicative seminorms extending the field norm.
 The target is the Library's derived formulation for the constructed
 polynomial-locus atlas. This proof establishes that formulation directly from
 the existing constructions of charts, restrictions, bounded pullbacks and
-strong atlas maps. It is adapted from Worker 3519's shared affinoid-universal
-proof draft, revision 1 of Task 7167
-(`ee943114-0baa-4432-9cb9-cef090ce46d0`), and the coordinate-comparison arguments
-in revision 1 of the Task 7085 draft
-(`6545548c-9d0b-4359-a868-8e52fd060af5`). The needed comparisons are proved here;
-no draft or unpublished theorem is imported.
+strong atlas maps. Its coordinate-comparison arguments follow those of the proof
+of the identity, composition and presentation-independence laws for affine
+analytification strong maps (`AffineAnalytificationFunctorialityProof`). The
+needed comparisons are proved here; `AffineAnalytificationFunctorialityProof` is
+not imported.
 
 The hypotheses are precisely those of the target: `K` is complete,
 ultrametric and nontrivially normed; `A` and `B` are commutative `K`-algebras

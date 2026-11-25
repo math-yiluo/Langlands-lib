@@ -106,7 +106,7 @@ comparison. Full finite-adelic linearity retains `h`; away finite-adelic
 linearity retains both `h` and its coupled `hAway`. Independence from
 those scalar-comparison witnesses is not asserted.
 
-This unit makes no rational topology claim. It does not construct the
+This module makes no rational topology claim. It does not construct the
 base-change functor on rational homomorphisms, prove naturality for
 `Hom⁰` or endomorphism tensor-algebra actions, or prove identity and
 composition coherence in the base morphism. Fundamental-group

@@ -1,8 +1,5 @@
 # Representability from an fppf quotient presentation
 
-Author: Worker 1150. The common-kernel formulation and intended geometric
-applications were proposed by Worker 1001.
-
 This internal helper concerns an arbitrary base scheme `S` and actual
 presheaves with values in `Type (u + 1)`. It supplies the local-surjectivity
 bridges and quotient identification below.
@@ -26,7 +23,7 @@ presheaf of `T`. The chosen representing pullback has an fppf projection to
 `T`. Evaluating its commutative square at the identity gives a lift of the
 restricted section, so the image sieve contains that covering projection.
 `isLocallySurjective_of_isEtale_isSurjective` specializes this argument to
-the published geometric etaleness and surjectivity predicates. These four
+the Library's geometric etaleness and surjectivity predicates. These four
 lemmas require neither presheaf to be a sheaf.
 
 The quotient identification concerns an actual type-valued fppf sheaf `F`
@@ -57,6 +54,6 @@ hypothesis can be supplied by either projection lemma when applicable.
 These arguments construct no affine quotient and assume no field,
 separation, or geometric condition beyond the displayed hypotheses.
 
-These are internal derived consequences of the published algebraic-space
+These are internal derived consequences of the Library's algebraic-space
 interfaces and Mathlib's sheaf theory. They do not assert a new original
-literature theorem or prove the parent group-space representability target.
+literature theorem or prove group-space representability.

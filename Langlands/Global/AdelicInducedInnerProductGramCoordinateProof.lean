@@ -79,7 +79,7 @@ variable {F : Type} [Field F] {P M : GroupScheme (Spec (CommRingCat.of F))}
 
 /-- Restriction of rational characters to a rational Levi subgroup is injective: a character
 of `P = M U` is trivial on the unipotent radical `U`. (This reproduces a private lemma of
-`Langlands.Global.AdelicIntertwiningImaginaryUnitarityReduction`, after Worker 587.) -/
+`Langlands.Global.AdelicIntertwiningImaginaryUnitarityReduction`.) -/
 theorem characterRestrict_injective_of_levi {l : M ⟶ P}
     (hl : IsRationalLeviSubgroup l) : Function.Injective (characterRestrict l) := by
   obtain ⟨U, i, hi, hmul⟩ := hl.exists_unipotentRadical

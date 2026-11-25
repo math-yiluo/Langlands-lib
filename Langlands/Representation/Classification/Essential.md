@@ -1,6 +1,6 @@
 # Explicit real exponents and essential analytic properties
 
-Worker 23 defines actual exponent witnesses, using the genuine positive character
+This module defines actual exponent witnesses, using the genuine positive character
 `nu : G -> NNReal units` and the constructed action `realPowerTwist`.
 `UnitaryExponentData nu rho` consists of a real exponent `s` and an invariant
 positive definite form for `nu^(-s) rho`. `SquareIntegrableExponentData nu rho mu`
@@ -15,7 +15,7 @@ follows from the proved cancellation of real-power twists. The `shift`
 constructors send a witness of exponent `s` to one of exponent `s+t` for
 `nu^t rho`; their fields use the proved equality of the normalized actions.
 The square-integrable normalized action is admissible by definition. If `nu`
-has open kernel, the original action is smooth by the accepted twist theorem.
+has open kernel, the original action is smooth by the proved twist theorem.
 No norm, topology, completeness, or finite dimension is required on the module.
 
 The file also constructs transport through any actual equivariant linear
@@ -23,9 +23,9 @@ equivalence, including between different carrier universes. For a unitary
 central character, the character homomorphism itself is unchanged and its
 scalar-action field is transported by the equivalence. On the central
 quotient, the transported coefficient norm equals the original norm with the
-functional pulled back and the vector transported inversely. The accepted
+functional pulled back and the vector transported inversely. The published
 `contragredientMap` supplies this pullback as an actual smooth functional.
-Together with the accepted `isAdmissible_of_equiv`, this proves invariance of
+Together with the published `isAdmissible_of_equiv`, this proves invariance of
 square-integrability modulo the center. The `ofEquiv` constructors then
 transport both kinds of exponent witnesses with the same exponent, yielding
 invariance of both essential-property predicates. These intrinsic transport
@@ -61,5 +61,4 @@ They are published in Library commit
 of fourteen Lean/Markdown pairs matches that Library exactly.
 The generic construction and transport proofs use Lean 4.34.0 and Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Compilation checks the implementation; independent source correspondence
-review and publication are separate requirements.
+Compilation checks the implementation.

@@ -39,7 +39,7 @@ theorem groupSchemeFullAEL2HermitianApproximation :
     · apply (B n).opNorm_le_bound (by norm_num)
       intro ψ
       calc
-        ‖B n ψ‖ = ‖A n ψ.val‖ := congrArg norm (hval n ψ)
+        ‖B n ψ‖ = ‖A n ψ.val‖ := (Submodule.norm_coe (B n ψ)).symm.trans (congrArg norm (hval n ψ))
         _ ≤ ‖A n‖ * ‖ψ.val‖ := (A n).le_opNorm ψ.val
         _ ≤ 1 * ‖ψ‖ := mul_le_mul_of_nonneg_right (hoperators n).2 (norm_nonneg _)
   · intro ψ

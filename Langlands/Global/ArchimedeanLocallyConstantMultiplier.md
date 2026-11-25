@@ -1,6 +1,6 @@
 # Locally constant multiplication and genuine archimedean differentials
 
-Author: Worker 2. This internal construction uses the existing
+This internal construction uses the existing
 `ArchimedeanGL.SmoothFunctions` on completion-based infinite adelic matrices,
 with real smoothness in the published mixed coordinates and complex
 coefficients. The number field is in an arbitrary universe, and every

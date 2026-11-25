@@ -1,6 +1,6 @@
 # Rational-point comparisons and multiplicative-group norm normalization
 
-Worker 1294. Derived algebraic implementation using the Library's actual
+Derived algebraic implementation using the Library's actual
 `GroupScheme`, `CommGroupScheme`, `affinePoints`, `affinePointMap`,
 `rationalPoints`, and scheme-pullback `baseChange` constructions. The imported
 `GaloisPointDescent` and `GaloisPointNorm` construct effective coordinate descent
@@ -100,8 +100,7 @@ completeness, local compactness or residue-field hypothesis is imposed. This
 module does not assert tower transitivity, splitting-field independence,
 openness, unit-norm surjectivity, an Iwahori subgroup, a maximal unramified
 characterization or a construction of `G(k)^0`. The existing WeilGm finite-free
-determinant norm is unchanged. Those later arithmetic constructions and
-compatibilities remain successor obligations.
+determinant norm is unchanged.
 
 `rationalCoeffEquiv_map` identifies postcomposition by an actual group-scheme
 morphism before and after the base-field rational/coefficient comparison.

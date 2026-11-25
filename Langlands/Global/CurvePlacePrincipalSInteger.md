@@ -41,5 +41,8 @@ Finite constants, the lower function-field presentation, and finiteness over the
 specified parameter subfield are explicit. No separability assumption on that
 presentation or on any later original field extension is imposed. The initial
 finite exceptional set may be empty. Finite normalization and finite local
-freeness for this cofinal family, its integral Weil generic fiber, and the adelic
-topological comparison remain obligations of the host task.
+freeness for this cofinal family (proved in `CurvePlacePrincipalSIntegerFinite`),
+its integral Weil generic fiber, and the adelic topological comparison are left
+to the proof of the statement this module serves,
+`AdelicProjectiveWeilComparisonStatement` (Example 4.2), which the Library
+proves as `adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.

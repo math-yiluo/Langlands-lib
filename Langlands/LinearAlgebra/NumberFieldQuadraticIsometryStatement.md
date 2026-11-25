@@ -1,7 +1,5 @@
 # The Hasse principle for isometry of quadratic forms over number fields
 
-Worker 863.
-
 `Langlands.NumberFieldQuadraticIsometryStatement.{u}` is a `Prop`-valued
 definition. It states the classical local-to-global theorem for equivalence
 of nondegenerate quadratic forms. The module contains no proof of it.
@@ -41,7 +39,7 @@ completion, and identify it with injectivity of first cohomology of the
 orthogonal group. On printed p. 348 they conclude the Hasse principle for
 quadratic forms. Page 349 describes the resulting classification by
 discriminants, local Hasse–Witt invariants and real signatures.
-No errata note for this source is present in the current project Library.
+No errata note for this source was found in the project Library.
 
 The provenance is derived. The source's number field `K`, quadratic forms in
 `n` variables and completions `K_v` are represented by `F`, forms on
@@ -61,4 +59,6 @@ needs a separate comparison between orthogonal-group cocycles and descended
 quadratic spaces. A proof intended for that use must avoid a circular
 dependence on the number-field group-cocycle Hasse principle or its equivalent
 finite-Galois-cover formulation. The source's cohomological proof route is not
-mandated; a classical arithmetic proof can be used.
+needed: the proof `Langlands.numberFieldQuadraticIsometry` (module
+`Langlands.LinearAlgebra.NumberFieldQuadraticIsometryProof`) is a classical
+arithmetic one, and its dependency check finds none of these statements.

@@ -5,8 +5,7 @@ states and proves a reduction of the Library's
 `Langlands.Global.IntertwiningImaginaryUnitarityStatement` (Lapid 2011,
 p.312; Mœglin–Waldspurger IV.1.11 (b), VI.2.1 (i); module
 `Langlands.Global.AdelicIntertwiningImaginaryUnitarityStatement`) to three
-statements. Worker 106 wrote it for Task 5682, whose target is that
-statement. The module does not prove the unitarity statement outright: the
+statements. The module does not prove the unitarity statement outright: the
 three statements remain premises.
 
 ## Sources
@@ -47,15 +46,15 @@ In the namespace `Langlands.Global`:
 The premises:
 
 - `IntertwiningImaginaryIsometryStatement` (module
-  `Langlands.Global.AdelicIntertwiningImaginaryIsometryStatement`, Task 5682
-  statement candidate `ea2169ff-d905-44aa-ac9f-5afd7b162047`): MW IV.3.12,
+  `Langlands.Global.AdelicIntertwiningImaginaryIsometryStatement`): MW IV.3.12,
   step (1). In the data of the unitarity statement, every family `coeff'`,
   meromorphic with one domain `DM'` and agreeing with the given expansion on
   `DM ∩ DM'`, satisfies the Gram identity of the unitarity statement at every
   imaginary point of `DM'`.
 - `InducedInnerProductGramStatement` (module
-  `Langlands.Global.AdelicInducedInnerProductGramStatement`, Task 5682
-  statement candidate `02b483e7-f6c3-4a0e-9709-3e8c26fcd2ed`): Lapid §2
+  `Langlands.Global.AdelicInducedInnerProductGramStatement`; proved in the
+  Library as `inducedInnerProductGram`, module
+  `Langlands.Global.AdelicInducedInnerProductGramProof`): Lapid §2
   (p.311). The Gram sum `∑ i, ∑ i', x i * conj (x i') * (φ i, φ i')_P` of
   forms `φ i ∈ A^2_P` is a nonnegative real number, and it is `0` exactly when
   `∑ i, x i • φ i = 0`.
@@ -102,10 +101,10 @@ Section `Roots`:
 The private lemmas `characterRestrict_injective_of_levi`,
 `characterRestrict_rightInverse`, `characterRestrict_bijective_of_levi`,
 `parameterRealPart_surjective`, `realParameterRestriction_surjective` and
-`exists_regularParameter` are copies of helper lemmas written by Worker 587
-(Task 5502 draft) and reproduced by Worker 86 in the staged cocycle reduction
-of Task 5503; they are private so that a later publication of the originals
-causes no name clash.
+`exists_regularParameter` are copies of helper lemmas written for the
+functional equation of Eisenstein series, `EisensteinFunctionalEquationStatement` (in the Library, such lemmas are in
+`AdelicWeylParameterEquivalence` and `AdelicEisensteinRegularRegion`); they are
+private so that they cause no name clash with the originals.
 
 ## Proof of `intertwiningImaginaryUnitarity_of_inputs`
 

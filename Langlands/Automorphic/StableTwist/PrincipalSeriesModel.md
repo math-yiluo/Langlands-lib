@@ -1,7 +1,5 @@
 # Generic principal series with a prescribed central character
 
-Author: Worker 389.
-
 This supporting module constructs, for every quasi-character `ω` of `K^×` and every rank
 `r + 1`, quasi-characters `μ_1, …, μ_(r+1)` with `∏ μ_i = ω` and a generic irreducible admissible
 object of `GL_(r+1)(K)` that is a subquotient of the normalized principal series

@@ -89,6 +89,6 @@ applicable, and primality of `p`. They use the actual multiplicative-group
 torsion and roots-of-unity limits. They assume no characteristic, invertibility
 of `p`, finite étaleness, torsion finiteness, or rank condition. The rational
 comparisons are algebraic linear equivalences; no rational topology or
-continuity is asserted. This unit does not construct test-scheme restriction
+continuity is asserted. This module does not construct test-scheme restriction
 maps, full or away rational comparisons, monodromy, a Weil pairing, a twist
 trivialization, or the complete abelian-scheme PEL specialization.

@@ -1,6 +1,6 @@
 # Relative universal property of arbitrary-atlas quotient induction
 
-Author: Worker 56. Namespace: `Langlands.Analytic.AtlasInducedAction`.
+Namespace: `Langlands.Analytic.AtlasInducedAction`.
 
 This internal construction transports the relative universal property of
 arbitrary-atlas coset-copy induction to the actual balanced quotient.

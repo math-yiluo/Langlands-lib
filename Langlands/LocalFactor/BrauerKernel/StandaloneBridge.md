@@ -1,7 +1,6 @@
 # Standalone Brauer relations as presentations over the bottom field
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In the global
 argument (Deligne 1973, §4.12), a global relation is restricted to the local Weil group
 `W_F` at a finite place. The result is a relation in the continuous exact virtual group of
@@ -10,14 +9,14 @@ the standalone group `W_F`:
 `Σ_j n_j Ind_{E_j/F}([α_j] - [β_j]) = 0`.
 
 Here the `E_j` are standalone p-adic fields with embeddings `g_j : F → E_j`, and the
-induction is along the Library's `extensionWeilMap F E_j g_j`. This unit turns such a relation
+induction is along the Library's `extensionWeilMap F E_j g_j`. This module turns such a relation
 into an actual relation of the common-closure presentation of `F` over its bottom field
-`⊥`. It then applies the accepted special kernel lemmas of `BrauerKernel.UnramifiedExponent`
+`⊥`. It then applies the special kernel lemmas of `BrauerKernel.UnramifiedExponent`
 and `BrauerKernel.RamifiedTwist` in the standalone form needed at the places other than
 the distinguished one. It also identifies each generator value with a ratio of Tate's
 epsilon factors on the `E_j`. The general kernel statement is not claimed.
 
-The unit reuses Worker 1805's published transport lemmas from
+The module reuses the published transport lemmas from
 `Langlands.Global.Factors.RelativeWeilLocalEpsilon` and
 `RelativeWeilLocalEpsilonTransport` (namespace `Langlands.Weil.Local.SystemEpsilon`):
 `continuousRestrict_continuousInduceAlong`, `virtualEquiv_symm_characterClass`,
@@ -42,7 +41,7 @@ and `uV` for the presentation.
   `weilCharacter_fieldCharacterEquiv`.
 - `universeMap_continuousInduceAlong_characterClass`: changing the carrier universe of an
   induced character line gives the induced line in the new universe. This is the step `hInd`
-  of Worker 1805's `conditionalPairEpsilonValue_eq_of_virtualIdentity`.
+  of `conditionalPairEpsilonValue_eq_of_virtualIdentity` (`RelativeWeilLocalEpsilon`).
 - `presentationMap_imageGenerator_eq_zero`: suppose
   `Σ_j n_j • continuousInduceAlong (extensionWeilMap F (E j) (g j)) _ ([α_j] - [β_j]) = 0`
   in any carrier universe `w`. Then `presentationMap F e ⊥ (Σ_j n_j • single (imageGenerator
@@ -66,14 +65,14 @@ of `E_j`, transported to `E_j`.
 - `imageCharacter_weilCharacter`, `fieldCharacterEquiv_imageCharacter`,
   `standaloneGenerator_first`, `standaloneGenerator_second`: the characters of
   `standaloneGenerator F e E g η η'` are `transportedCharacter F E g η` and `… η'`. The proof
-  evaluates both Weil characters at `extensionImageWeilEquiv v`, as in Worker 1805's
-  `weilCharacter_imageQuasicharacter`; no normalization of `e` is needed here.
+  evaluates both Weil characters at `extensionImageWeilEquiv v`, as in
+  `weilCharacter_imageQuasicharacter` (`RelativeWeilLocalEpsilonTransport`); no normalization of `e` is needed here.
 - `ramificationIndex_baseExtension`, `ramificationIndex_extensionFiniteIntermediate`: the
   bottom field and the image of `E` have the absolute ramification indices of `F` and `E`.
   Both are the published `ArithmeticNormalizationProof.ramificationIndex_eq_of_algEquiv`.
 - `botEquiv_norm_eq`, `baseFieldUnitsEquiv_unitsNorm`: the norm from the image of `E` to the
-  bottom field corresponds to the norm of `E / F`. This is the norm version of Worker 1805's
-  `botEquiv_trace_eq`, via Mathlib's `Algebra.norm_eq_of_equiv_equiv`.
+  bottom field corresponds to the norm of `E / F`. This is the norm version of
+  `botEquiv_trace_eq` (`RelativeWeilLocalEpsilonTransport`), via Mathlib's `Algebra.norm_eq_of_equiv_equiv`.
 - `generatorValue_standaloneGenerator`: suppose `e` is normalized and `ψ` is the bottom-field
   character of `ψF` (`IsBaseCharacter F ψF ψ`). Then the generator value of
   `standaloneGenerator F e E g η η'` is
@@ -99,7 +98,7 @@ of `E_j`, transported to `E_j`.
   the ramification index of `F`, and that `η_j = η₀_j · (α ∘ N)` and `η'_j = η₀'_j · (α ∘ N)`
   hold pointwise, with `η₀_j`, `η₀'_j` unramified and one quasicharacter `α` of `F`. Then for
   every `ψ` and every Haar family, the evaluation of the combination of standalone generators
-  over the bottom field is trivial. This is the accepted
+  over the bottom field is trivial. This is
   `evaluationMap_eq_zero_of_unramified_normPullback` for `baseFieldCharacterEquiv F α`.
   Its hypotheses follow from the transport lemmas above and the published
   `ConductorTransport.isUnramifiedQuasicharacter_iff`.
@@ -107,7 +106,7 @@ of `E_j`, transported to `E_j`.
   standalone extensions `E_j`, the character `ψ` on the bottom field, a Haar family and `K`.
   There is `B` with the following property. Suppose `a(α) ≥ B`, the relation above holds, and
   `η_j = η₀_j · (α ∘ N)`, `η'_j = η₀'_j · (α ∘ N)` with `a(η₀_j), a(η₀'_j) ≤ K`. Then the
-  evaluation is trivial. This is the accepted
+  evaluation is trivial. This is
   `exists_bound_evaluationMap_eq_zero_of_ramified_normPullback`, applied to the finite set of
   image fields. It uses `ConductorTransport.multiplicativeConductor_eq` for the conductor
   bounds and `multiplicativeConductor_baseFieldCharacterEquiv` for `a(α)`.
@@ -123,8 +122,8 @@ registered as `deligne-1973-local-constants`, SHA256
 `b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844`, Lemma 4.12 (printed
 page 544, PDF page 44) and Lemmas 4.15–4.16 (printed pages 545–547, PDF pages 45–47). There
 the constants at places other than `v` must already be known: unramified data by 4.15, and
-data twisted by a highly ramified character by 4.16. This unit is internal bookkeeping. It
+data twisted by a highly ramified character by 4.16. This module is internal bookkeeping. It
 moves the local restriction of a global relation into the common-closure presentation, where
-the accepted versions of 4.15 and 4.16 apply. The transports are published Library results
+the Library's versions of 4.15 and 4.16 apply. The transports are published Library results
 named above. The epsilon identification uses Tate's local epsilon factors in the Library
 form `PadicAbelian.epsilon`.

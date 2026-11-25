@@ -186,16 +186,19 @@ The source is ImperialCollegeLondon/FLT at commit
 Imperial's final section assumes `[FiniteDimensional K L]` and
 `[Module.Finite A B]`. For number fields, instance search finds
 `FiniteDimensional K L` and `Module.Finite (𝓞 K) (𝓞 L)`. This was checked by a
-private development check. The targets therefore take no finiteness
+development check. The targets therefore take no finiteness
 hypothesis.
 
-## Intended later proofs
+## Intended proof routes
 
-This module proves neither target. The intended routes, for separate proof
-tasks, are as follows.
+This module proves neither target. Their proofs are
+`integralTensorTransportBijective` in `IntegralTensorTransportProof` and
+`integralLocalTensorComparison` in `IntegralLocalComparisonProof`. The intended
+routes are as follows.
 
 - Supporting target: a localization argument for the specialization above,
-  using the Mathlib interfaces just named. Its proof is a separate task.
+  using the Mathlib interfaces just named. Its proof is in
+  `IntegralTensorTransportProof`.
 - Clause 1: the published theorem `finiteTensorMap_integralTensorTransport`
   gives `finiteTensorMap p ∘ τ_p = T_p` as functions. The published theorem
   `completedTensorComparison` gives bijectivity of `finiteTensorMap p`.
@@ -217,7 +220,7 @@ Matthew Jasper, under Apache-2.0. The Lean file keeps that header and adds a
 modification notice. The upstream root `LICENSE` is retained at
 [licenses/ImperialCollegeLondon-FLT/LICENSE](../../../licenses/ImperialCollegeLondon-FLT/LICENSE).
 
-Worker 382 made these modifications:
+These modifications were made in Langlands-lib:
 
 - the general Dedekind data are specialized to number fields in independent
   universes;
@@ -237,9 +240,8 @@ explains the reuse boundary.
 
 ## Checks
 
-A private development check compiled the module without errors or warnings.
+A development check compiled the module without errors or warnings.
 Inspection of `IntegralLocalTensorComparison` and of
 `IntegralTensorTransportBijective` reported `Prop`-valued definitions with
 universe parameters `u` and `v`. Each depends only on `propext`,
-`Classical.choice` and `Quot.sound`. These checks are not independent semantic
-acceptance.
+`Classical.choice` and `Quot.sound`.

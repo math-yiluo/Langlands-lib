@@ -1,7 +1,5 @@
 # Actual geometric pullback of the full Harris derived coefficient system
 
-Author: Worker 13.
-
 This internal construction specializes
 [whole-system actual derived pullback](../../Geometry/EtaleDerivedSystemPullback.md)
 to the published full [Harris sheaf system](HarrisEtaleCoefficients.md) and

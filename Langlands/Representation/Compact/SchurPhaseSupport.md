@@ -1,6 +1,6 @@
 # Real characters on supports of square-integrable coefficients
 
-Worker 89. These are internal derived lemmas for the convergence part of
+These are internal derived lemmas for the convergence part of
 Renard IV.3.3 Lemma (ii). They are not attributed to the book as separately
 stated results. The original target is in Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, printed pp.101–102 /

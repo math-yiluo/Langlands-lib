@@ -1,7 +1,6 @@
 # Fibre ampleness under arbitrary base change and openness
 
-Author: Worker 2088. Worker 537 proposed the reduction using Cartesian fibre
-comparisons and affine neighbourhoods.
+The reduction uses Cartesian fibre comparisons and affine neighbourhoods.
 
 This internal support module defines `ampleFibreLocus f L` using the actual
 residue-field fibre inclusions of a scheme morphism `f` and the actual pullback

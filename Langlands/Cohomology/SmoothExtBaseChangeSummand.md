@@ -1,35 +1,35 @@
 # Extension of scalars on `Ext` groups of smooth representations: summands and compact induction
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.SmoothExtBaseChange` (`IsFreeOnFixedVectors`,
 `HasFreeFixedBasis`, `HasProPFreeFixedBasis`, `smoothRepHom_mem_invariants`,
 `isFreeOnFixedVectors_compactInduction`, `HasProPFreeFixedBasis.projective`,
 `HasProPFreeFixedBasis.projective_smoothRepExtendScalars`,
-`smoothHomBaseChangeMap_bijective_of_hasProPFreeFixedBasis`; Worker 61),
+`smoothHomBaseChangeMap_bijective_of_hasProPFreeFixedBasis`),
 `Langlands.Cohomology.HyperextExtBaseChangeSummand` (`IsSummandOfFiniteSum`,
 `IsSummandOfFiniteSum.of_prop`, `IsSummandOfFiniteSum.biproduct`,
 `extBaseChangeMap_injective_of_hasResolutionBy_summand`,
 `extBaseChangeMap_bijective_of_hasResolutionBy_summand`,
-`extBaseChangeEquivOfHasResolutionBySummand`; Worker 61) and
+`extBaseChangeEquivOfHasResolutionBySummand`) and
 `Langlands.Representation.Induction.PermutationModule`
 (`Induction.permutation`, `Induction.smoothPermutation`,
-`Induction.compactInductionTrivialIso`; Worker 61). Through these imports it
+`Induction.compactInductionTrivialIso`). Through these imports it
 also uses `Langlands.Representation.Induction.OpenAdjunction`
 (`Induction.smoothRestriction`, `Induction.smoothCompactInduction`,
 `Induction.compactInductionAdjunction`, `Induction.unitFunction`,
-`Induction.eval_unitFunction`; Worker 61),
-`Langlands.Representation.Induction.Definitions` (`Induction.eval`;
-Worker 61), `Langlands.Cohomology.HyperextExtBaseChange` (`HasResolutionBy`,
-`extBaseChangeMap_zero_bijective_iff`; Worker 61),
+`Induction.eval_unitFunction`),
+`Langlands.Representation.Induction.Definitions` (`Induction.eval`),
+`Langlands.Cohomology.HyperextExtBaseChange` (`HasResolutionBy`,
+`extBaseChangeMap_zero_bijective_iff`),
 `Langlands.Cohomology.HyperextScalarExtension` (`smoothExtBaseChangeMap`,
-`smoothRepExtendScalars_isSemilinear`; Worker 61),
+`smoothRepExtendScalars_isSemilinear`),
 `Langlands.Cohomology.DivisibleSystem.SmoothScalarExtension`
-(`smoothRepExtendScalars`; Worker 61),
+(`smoothRepExtendScalars`),
 `Langlands.Cohomology.DivisibleSystem.PermutationProjective`
-(`smoothTrivialFunctor`; Worker 61),
-`Langlands.Cohomology.DivisibleSystem.ProPInvariants` (`IsProPSubgroup`;
-Worker 61) and `Langlands.Cohomology.ProPInvariants.Statement`
-(`ProPInvariantsExactStatement`; Worker 3).
+(`smoothTrivialFunctor`),
+`Langlands.Cohomology.DivisibleSystem.ProPInvariants` (`IsProPSubgroup`) and
+`Langlands.Cohomology.ProPInvariants.Statement`
+(`ProPInvariantsExactStatement`).
 
 The Library's `SmoothExtBaseChange` proves that, for a localization `S` of `R`,
 the comparison map

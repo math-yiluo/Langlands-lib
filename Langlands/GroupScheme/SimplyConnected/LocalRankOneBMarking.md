@@ -1,10 +1,12 @@
 # Actual rank-one type-B markings and the two small ranks
 
-This internal contribution to Task 5783 proves a conditional marking
+This internal module for the enumeration `LocalRankOneTitsIndexStatement`
+proves a conditional marking
 reduction for type B and unconditional identifications for ranks one and
 two. The higher-rank reduction explicitly assumes
-`LocalAnisotropicCartanComponentsStatement`; that premise and the full
-local rank-one enumeration remain unproved.
+`LocalAnisotropicCartanComponentsStatement`; this module proves neither that
+premise nor the full local rank-one enumeration, which is proved as
+`localRankOneTitsIndex` in [`LocalRankOneTitsIndexProof`](LocalRankOneTitsIndexProof.md).
 
 All the results use actual `TitsIndexData` and a supplied equivalence
 identifying every ordered Cartan entry with Mathlib's `CartanMatrix.B n`.

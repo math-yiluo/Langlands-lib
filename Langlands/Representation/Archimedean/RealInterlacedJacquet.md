@@ -5,13 +5,13 @@ Lean module: `Langlands.Representation.Archimedean.RealInterlacedJacquet`, names
 
 This is the first of six modules that prove
 `RealInterlacedInducedInducedLinkedJacquetFunctionalStatement` (module
-`RealInterlacedLinkedJacquetStatement`, Task 7070). The modules are, in import order,
+`RealInterlacedLinkedJacquetStatement`). The modules are, in import order,
 `RealInterlacedJacquet`, `RealInterlacedColumns`, `RealInterlacedChain`, `RealInterlacedEngine`,
 `RealInterlacedProof` and `RealInterlacedMirror`. The final theorem is in `RealInterlacedMirror`;
 its Markdown file explains the whole proof.
 
 This module imports `RealBlockFlatJacquet` and through it the Library module
-`RealCharacterCrossing` (Worker 5731). It contains two independent toolkits: functionals
+`RealCharacterCrossing`. It contains two independent toolkits: functionals
 composed with intertwiners, and expansions of functions on matrices along block rotations.
 
 ## Notation
@@ -25,7 +25,7 @@ The notation is that of `RealBlockFlatJacquet.md`:
 * `ℓ_μ = blockJacquet n ds b μ` is the block Jacquet functional
   `ℓ_μ(f) = (2π)⁻¹ Σᶠ_j μ_j Φ^{(b)}_j(f)(1)` (Library).
 * `PL τ e` is the list of characters `sgn^{e_i} |·|^{τ_i}`, and `frobMap hψ` is the Frobenius map
-  of a real Jacquet functional `ψ` (Worker 5731). `ia hb = b` and `ib hb = b + 1` are the two
+  of a real Jacquet functional `ψ` (module `RealCharacterCrossing`). `ia hb = b` and `ib hb = b + 1` are the two
   positions of the block `b`. `par hb e = (e_b + e_{b+1}) mod 2` is the parity class of the block.
 * `RealLinkedJacquetFunctionalExists n ds` is the conclusion of the pair statements (module
   `RealLinkedJacquetPairReduction`, Library).
@@ -109,9 +109,10 @@ The module compiles with no errors or warnings.
 
 ## Provenance
 
-The method is internal to Task 7070. It extends the flat-multiplier method of
+The method is internal to the proof of
+`RealInterlacedInducedInducedLinkedJacquetFunctionalStatement`. It extends the flat-multiplier method of
 `RealBlockFlatJacquet` from block Jacquet functionals on a standard module to their composites
 with `(𝔤, K)`-intertwiners into principal series of characters, which are the Frobenius maps of
-Worker 5731's `RealCharacterCrossing`. It uses the Library's block Fourier coefficients, block
+`RealCharacterCrossing`. It uses the Library's block Fourier coefficients, block
 Jacquet functionals and multipliers (`RealBlockJacquetFunctional`, `RealBlockMultiplier`). The
 expansions are elementary Fourier analysis on the circle.

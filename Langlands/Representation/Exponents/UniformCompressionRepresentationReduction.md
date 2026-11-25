@@ -1,11 +1,10 @@
 # Uniform dynamic compression from the remaining representation inputs
 
-Author: Worker 4899. Module
+Module
 `Langlands.Representation.Exponents.UniformCompressionRepresentationReduction`,
 namespace `Langlands.Aubert.General.RationalPointFamily`.
 
-This is an internal reduction for proof task
-`47e556e6-6b2a-40dc-ba66-d6a0585f5220`, whose target is the unchanged Library
+This is an internal reduction whose target is the Library
 proposition `UniformCompressionStabilizationStatement.{u,v}` (Renard 2026,
 VI.9.1 Proposition, printed p.197 / PDF p.203). It does not prove that
 target. It shortens the list of premises of the published conditional assembly
@@ -56,8 +55,8 @@ parabolic `P(χ)`) and `BruhatTits.dynamicParabolicQuotientCompact`
 parabolic). The helper rewrites the literal point image of `p` as the rational
 points of `P(χ)` and uses the left-coset half of the compactness conclusion.
 The helper installs the same `pointTopology` as the statement. The standalone
-proof of this proposition is the separate task
-`c1ce4629-6768-4eb5-b4ee-0086526913ea`. Item 1 is recorded here because item 2
+proof of this proposition is `arbitraryParabolicQuotientCompact` in
+`ArbitraryParabolicQuotientCompactProof`. Item 1 is recorded here because item 2
 needs it.
 
 **Item 2.** The published conditional theorem
@@ -71,9 +70,10 @@ applied to six published theorems: `rationalBruhat`,
 `genericMinimalParabolic`, `minimalParabolicConjugacy`,
 `parabolicIntersectionCentralizer`, `parabolicDynamic` and
 `smoothMaximalSplitTorusConjugacy`. The second is item 1. The resulting
-theorem has no hypotheses. Inspecting it in the Lean service reports only the
-axioms `propext`, `Classical.choice` and `Quot.sound`. The proof task for this
-proposition is `c1f3c743-2a62-415c-8640-714b9f6a27c4`. Item 2 is recorded here
+theorem has no hypotheses. Inspecting it reports only the
+axioms `propext`, `Classical.choice` and `Quot.sound`. The Library also proves
+this proposition as `Plancherel.rationalSupercuspidalJacquetFamilyFinite` in
+`UnramifiedRationalJacquetFinitenessProof`. Item 2 is recorded here
 because the uniform target needs it.
 
 **Item 4.** The theorem applies `uniformCompressionStabilization_of_nativeStatements`
@@ -110,18 +110,13 @@ contraction and the centrality of `g` in the dynamic Levi.
 ## Remaining obligations
 
 To prove the target with this reduction, the five remaining premises must be
-proved. Their proof tasks are:
+proved:
 
-- `RationalPointsIrreducibleAdmissibleStatement` (Jacquet's theorem):
-  `173e44ba-079b-4597-a13b-1aab371a4ec9`;
-- `RationalCuspidalInertiaProductDecompositionStatement` (VI.3.5):
-  `b1a82b53-e942-41b3-9f25-dec52736e712`;
-- `RationalCuspidalInertiaFinitenessStatement` (VI.3.4 concluding remark):
-  `61b5cb94-c808-4499-9efb-ec1ae6c0cecb`;
-- `RationalUniversalSmallProgeneratorStatement` (VI.4.1):
-  `0ba788d6-b9d9-4a76-a017-972f8cad288f`;
-- `RationalCuspidalInducedEmbeddingStatement` (VI.7.2):
-  `198824c2-4e2f-40c1-94a0-07fa748bede9`.
+- `RationalPointsIrreducibleAdmissibleStatement` (Jacquet's theorem);
+- `RationalCuspidalInertiaProductDecompositionStatement` (VI.3.5);
+- `RationalCuspidalInertiaFinitenessStatement` (VI.3.4 concluding remark);
+- `RationalUniversalSmallProgeneratorStatement` (VI.4.1);
+- `RationalCuspidalInducedEmbeddingStatement` (VI.7.2).
 
 ## Provenance and scope
 

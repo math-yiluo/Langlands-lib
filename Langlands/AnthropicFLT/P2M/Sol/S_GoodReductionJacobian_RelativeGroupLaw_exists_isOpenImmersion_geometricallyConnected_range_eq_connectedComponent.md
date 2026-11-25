@@ -1,18 +1,18 @@
 # `Langlands.AnthropicFLT.P2M.Sol.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent`
 
-Ported for task `6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism functor of a projective abelian scheme). Proof module (FLT `P2M/Sol/`).
+Ported for the proof of projective representability of the relative endomorphism functor of a projective abelian scheme. Proof module (FLT `P2M/Sol/`).
 
 ## Source and licence
 
 Port of `P2M/Sol/S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.lean` from the Anthropic Lean formalisation of Fermat's Last Theorem (commit `6e837e75355538c7f80bab5b956861e86c4eacc2`; project literature folder "Anthropic - Fermat's Last Theorem - complete Lean source at 6e837e75355538c7f80bab5b956861e86c4eacc2", literature id `anthropic-flt-complete-lean-source-6e837e75`). The text is the FLT text except for the changes listed below.
 
-Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/` (added by statement artifact `a25bcdd5-03da-45b4-a0d3-100bb603e7c5`).
+Licence: Apache License, Version 2.0; Copyright 2026 Anthropic, PBC. Copies of the FLT `LICENSE`, `NOTICE` and `ATTRIBUTION.md` are in `licenses/Anthropic-FLT/`.
 
 FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 
 ## Changes against the FLT file
 
-- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; Mathlib imports are unchanged.
+- Imports of FLT modules (`Definitions.*`, `Theorems.*`, `P2M.*`) are renamed to `Langlands.AnthropicFLT.*`; `import Mathlib` is now `import Langlands.MathlibBase` (all of Mathlib except the three modules that clash with weil-conjectures, see `Langlands/MathlibBase.md`).
 - The FLT lakefile options are inserted after the imports: `maxHeartbeats 4000000`, `synthInstance.maxHeartbeats 400000`, `backward.isDefEq.respectTransparency.types false`.
 - An attribution header comment is added at the top of the file.
 - The import of the FLT utility module `P2M.Util` (custom tactics and commands) is dropped.
@@ -20,7 +20,7 @@ FLT `ATTRIBUTION.md` does not list this file as containing third-party material.
 - 1 `p2m_export "N" "a b …"` command(s) (an FLT command from `P2M.Util` that adds aliases `a`, `b`, … in the current namespace for `N.a`, `N.b`, …) are replaced by `export _root_.N (a b …)` with the same names. The command `export _root_.P2mIdCompField (finite_irreducibleComponents)` is dropped; see the port edit below.
 - Port edit replacing a `P2M.Util` alias (FLT line 215, line 225 here): `isOpen_connectedComponent_of_finite_irreducibleComponents (finite_irreducibleComponents L) _` is replaced by `isOpen_connectedComponent_of_finite_irreducibleComponents (_root_.P2mIdCompField.finite_irreducibleComponents L) _`. FLT `p2m_export "P2mIdCompField" "finite_irreducibleComponents"` aliases the private declaration(s) `_root_.P2mIdCompField.`, `_root_.finite_irreducibleComponents.` (declared earlier in the file) into the current namespace. Standard `export` cannot do this: `P2mIdCompField` contains only private declarations and is not a registered namespace (`unknown namespace`). The command is dropped, and the uses of the alias are written with the full name of the private declaration, which denotes the same declaration.
 - Port edit replacing a `P2M.Util` alias (FLT line 729, line 739 here): `haveI : Finite (irreducibleComponents G) := (finite_irreducibleComponents L).to_subtype` is replaced by `haveI : Finite (irreducibleComponents G) := (_root_.P2mIdCompField.finite_irreducibleComponents L).to_subtype`. FLT `p2m_export "P2mIdCompField" "finite_irreducibleComponents"` aliases the private declaration(s) `_root_.P2mIdCompField.`, `_root_.finite_irreducibleComponents.` (declared earlier in the file) into the current namespace. Standard `export` cannot do this: `P2mIdCompField` contains only private declarations and is not a registered namespace (`unknown namespace`). The command is dropped, and the uses of the alias are written with the full name of the private declaration, which denotes the same declaration.
-- No other change: apart from the edits listed above, the declarations, statements and proofs are the FLT text.
+- No other change: apart from the edits listed above and the renames described under “Names changed by the Library” below, the declarations, statements and proofs are the FLT text.
 
 ## Content
 
@@ -38,13 +38,13 @@ connected. Sections `BaseChange`, `AlgClosure`, `Geometric`: over an algebraic c
 identity component is irreducible; the preimage of `idC` in a base change is the identity component there
 (`preimage_idC_eq_idC`), hence `G₀` is geometrically irreducible (ported
 `GeometricallyIrreducible.of_irreducibleSpace_of_isAlgClosed`) and geometrically connected (ported
-`GeometricallyIrreducible.geometricallyConnected`). Sections `Compat`, `Law`: multiplication, unit and inverse
+`GeometricallyIrreducible.geometricallyConnectedFLT`). Sections `Compat`, `Law`: multiplication, unit and inverse
 preserve `idC`, giving the restricted law `law₀` with the inclusion a homomorphism. Section `FiniteIndex`: the
 cosets of `G₀` are connected components, of which there are finitely many (`exists_finite_cosets`).
 
 ## Declarations
 
-Names, namespaces and statements are the FLT ones. Solution modules put their auxiliary declarations in the FLT namespace `P2MW.<module name>`.
+Names, namespaces and statements are the FLT ones, apart from the renames described under “Names changed by the Library” below. Solution modules put their auxiliary declarations in the FLT namespace `P2MW.<module name>`.
 
 - def `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.const`
 - theorem `P2MW.S_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_geometricallyConnected_range_eq_connectedComponent.P2mIdCompField.const_coe`
@@ -142,5 +142,13 @@ Names, namespaces and statements are the FLT ones. Solution modules put their au
 
 ## Dependencies
 
-Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw` (Library), `Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawKernel` (Library), `Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawBaseChange` (Library), `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelEndomorphismExtension` (Library), `Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_irreducibleSpace_range_eq_connectedComponent_finiteIndex` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyIrreducible_of_irreducibleSpace_of_isAlgClosed` (same contribution), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyIrreducible_geometricallyConnected` (same contribution).
-Other imports: `Mathlib`.
+Ported FLT modules imported: `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw` (Library), `Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawKernel` (Library), `Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawBaseChange` (Library), `Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_NeronModelEndomorphismExtension` (Library), `Langlands.AnthropicFLT.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_isOpenImmersion_irreducibleSpace_range_eq_connectedComponent_finiteIndex` (ported with this file), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyIrreducible_of_irreducibleSpace_of_isAlgClosed` (ported with this file), `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyIrreducible_geometricallyConnected` (ported with this file).
+Other imports: `Langlands.MathlibBase`.
+
+## Names changed by the Library (22 November 2026)
+
+weil-conjectures, on which the Library depends, declares 21 of the names of this extract itself, so that no module could import both. The Library renamed these 21 declarations: each keeps its name space and the last component of its name gets the marker `FLT` (`tensorPow` becomes `tensorPowFLT`, `tensorPow_zero` becomes `tensorPowFLT_zero`). In this file:
+
+- its uses of `AlgebraicGeometry.GeometricallyIrreducible.geometricallyConnected` are uses of `geometricallyConnectedFLT` now.
+
+Statements and proofs are otherwise unchanged. Elsewhere on this page the names are given as they now are.

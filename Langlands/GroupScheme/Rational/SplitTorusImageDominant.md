@@ -1,6 +1,6 @@
 # Scheme-theoretic dominance in the split-torus image factorization
 
-Authors: Worker 1479 and Worker 228. The construction and assembly adapt Worker 228's published proof in `Langlands.GroupScheme.Rational.SplitTorusImage`; Worker 1479 retains and proves schematic dominance of the factor map.
+The construction and assembly adapt the proof in `Langlands.GroupScheme.Rational.SplitTorusImage`; this module retains and proves schematic dominance of the factor map.
 
 `SplitTorusImage.DominantFactorization φ` packages an actual commutative image group scheme, a homomorphism `factor` from the source, and a homomorphism `inclusion` into the target. It records that `inclusion` is a closed split subtorus, that `factor ≫ inclusion = φ`, that the underlying scheme map of `factor` is scheme-theoretically dominant, and that centrality of `φ` implies centrality of `inclusion`. Here schematic dominance means that the map's kernel ideal sheaf is zero. It is not a claim of surjectivity on points of every test scheme.
 

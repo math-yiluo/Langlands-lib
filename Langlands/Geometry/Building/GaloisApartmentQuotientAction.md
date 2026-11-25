@@ -41,13 +41,13 @@ equivalence from `ApartmentGaloisAction` therefore send each generator into
 the sharp fixer at the transformed point. The subgroup supremum property
 extends this to every member, without a separate sharp-fixer premise.
 
-`galoisQuotientActionData` now fills all four fields of the existing generic
+`galoisQuotientActionData` fills all four fields of the existing generic
 `ApartmentQuotient.SemilinearActionData`. It uses the restricted actual
 apartment action, actual normalizer preservation, the normalizer equivariance
 just proved and sharp-fixer preservation. Its ambient automorphism
 homomorphism is the existing generic `rationalConjugateAction` from
 `UnramifiedBuildingSemilinearAction`; that definition is over arbitrary field
-extensions, so this import imposes no local-field hypothesis on this unit.
+extensions, so this import imposes no local-field hypothesis on this module.
 
 `galoisQuotientAction` applies the generic quotient construction to these data.
 The carrier is exactly the existing `D.ReducedBuilding`, the quotient of actual
@@ -73,5 +73,5 @@ normalizer and sharp-fixer compatibility as separate inputs once the given
 class is coefficient-stable. Canonical class existence and stability, a
 complete NPC metric, isometry and orbit continuity, a special point, the
 original supplied-model stabilizer identity and unique fixation, and descent
-to the base-field comparison remain separate obligations. The unconditional
-`BuildingComparisonStatement` remains open.
+to the base-field comparison remain separate obligations. The Library does
+not prove the unconditional `BuildingComparisonStatement`.

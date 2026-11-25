@@ -1,6 +1,6 @@
 # Intrinsic compact projectors and the block predicates
 
-Worker 141 supplies internal proof infrastructure for Renard IV.1.6–IV.1.7,
+This module supplies internal proof infrastructure for Renard IV.1.6–IV.1.7,
 printed pages 94–95 / PDF pages 100–101 of the registered French 2026 edition.
 The mathematical definitions are the unchanged published block predicates.
 

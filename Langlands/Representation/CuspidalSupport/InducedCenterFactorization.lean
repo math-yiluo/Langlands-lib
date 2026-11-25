@@ -50,7 +50,7 @@ theorem inducedCenter_eq_of_kernelVanishing :
             h (Jacquet.Localization.mk (I.obj σ).representation (pointImage (r ≫ p)) 1 f) = 0) →
         (Subring.center (End (I.obj σ)) : Set (End (I.obj σ))) =
           {x : End (I.obj σ) | ∃ z ∈ Subring.center (End σ),
-            x = I.map z ∧ ∀ a : End (I.obj σ), a * x = x * a} := by
+            x = End.of (I.map z.asHom) ∧ ∀ a : End (I.obj σ), a * x = x * a} := by
   intro k _ _ _ _ _ G hG
   have := hG.isAffineHom
   let : TopologicalSpace (rationalPoints G) := RationalPointFamily.pointTopology
@@ -89,16 +89,16 @@ theorem inducedCenter_eq_of_kernelVanishing :
   constructor
   · intro hx
     have hxc : ∀ a : End (I.obj σ), a * x = x * a := Subring.mem_center_iff.mp hx
-    let h := e (SmoothRep.hom x)
+    let h := e (SmoothRep.hom x.asHom)
     let ε := e (SmoothRep.hom (𝟙 (I.obj σ)))
     have hh : ∀ (a : σ ⟶ σ) (w : J.obj (I.obj σ)),
         h (SmoothRep.hom (J.map (I.map a)) w) = SmoothRep.hom a (h w) :=
-      hcomm x (fun a => (hxc (I.map a)).symm)
+      hcomm x.asHom (fun a => congrArg End.asHom (hxc (End.of (I.map a))).symm)
     have hε : ∀ (a : σ ⟶ σ) (w : J.obj (I.obj σ)),
         ε (SmoothRep.hom (J.map (I.map a)) w) = SmoothRep.hom a (ε w) :=
       hcomm (𝟙 _) (fun a => by rw [Category.comp_id, Category.id_comp])
     have hεmk (f : I.obj σ) : ε (mk f) = ev f := he _ f
-    have hhmk (f : I.obj σ) : h (mk f) = ev (SmoothRep.hom x f) := he _ f
+    have hhmk (f : I.obj σ) : h (mk f) = ev (SmoothRep.hom x.asHom f) := he _ f
     have hker : LinearMap.ker ε.toLinearMap ≤ LinearMap.ker h.toLinearMap := by
       intro w hw
       obtain ⟨f, rfl⟩ := hmk w
@@ -125,28 +125,28 @@ theorem inducedCenter_eq_of_kernelVanishing :
       obtain ⟨w, rfl⟩ := hsurj v
       rw [← Representation.IntertwiningMap.isIntertwining _ _ ε m w, hc0, hc0,
         Representation.IntertwiningMap.isIntertwining _ _ h m w]
-    let cS : End σ := SmoothRep.ofHom ⟨c0, fun m => LinearMap.ext (hc0eq m)⟩
-    have hcS (w : J.obj (I.obj σ)) : SmoothRep.hom cS (ε w) = h w := hc0 w
+    let cS : End σ := End.of (SmoothRep.ofHom ⟨c0, fun m => LinearMap.ext (hc0eq m)⟩)
+    have hcS (w : J.obj (I.obj σ)) : SmoothRep.hom cS.asHom (ε w) = h w := hc0 w
     have hextM {f g : σ ⟶ σ} (hfg : ∀ v, SmoothRep.hom f v = SmoothRep.hom g v) : f = g :=
       congrArg SmoothRep.ofHom (Representation.IntertwiningMap.ext (LinearMap.ext hfg))
     -- `c` is central in `End σ`.
     have hcen : cS ∈ Subring.center (End σ) := by
-      refine Subring.mem_center_iff.mpr fun a => hextM fun v => ?_
+      refine Subring.mem_center_iff.mpr fun a => End.ext (hextM fun v => ?_)
       obtain ⟨w, rfl⟩ := hsurj v
-      change SmoothRep.hom a (SmoothRep.hom cS (ε w)) =
-        SmoothRep.hom cS (SmoothRep.hom a (ε w))
-      rw [← hε a w, hcS, hcS, hh]
+      change SmoothRep.hom a.asHom (SmoothRep.hom cS.asHom (ε w)) =
+        SmoothRep.hom cS.asHom (SmoothRep.hom a.asHom (ε w))
+      rw [← hε a.asHom w, hcS, hcS, hh]
     -- `x` and `I(c)` have the same Frobenius image, so they are equal.
-    have hx : SmoothRep.hom x = SmoothRep.hom (I.map cS) := by
+    have hx : SmoothRep.hom x.asHom = SmoothRep.hom (I.map cS.asHom) := by
       apply e.injective
       refine Representation.IntertwiningMap.ext (LinearMap.ext fun w => ?_)
       obtain ⟨f, rfl⟩ := hmk w
-      change h (mk f) = e (SmoothRep.hom (I.map cS)) (mk f)
-      calc h (mk f) = SmoothRep.hom cS (ε (mk f)) := (hcS _).symm
-        _ = SmoothRep.hom cS (ev f) := by rw [hεmk]
-        _ = ev (SmoothRep.hom (I.map cS) f) := (hev cS f).symm
-        _ = e (SmoothRep.hom (I.map cS)) (mk f) := (he _ f).symm
-    exact ⟨cS, hcen, congrArg SmoothRep.ofHom hx, hxc⟩
+      change h (mk f) = e (SmoothRep.hom (I.map cS.asHom)) (mk f)
+      calc h (mk f) = SmoothRep.hom cS.asHom (ε (mk f)) := (hcS _).symm
+        _ = SmoothRep.hom cS.asHom (ev f) := by rw [hεmk]
+        _ = ev (SmoothRep.hom (I.map cS.asHom) f) := (hev cS.asHom f).symm
+        _ = e (SmoothRep.hom (I.map cS.asHom)) (mk f) := (he _ f).symm
+    exact ⟨cS, hcen, End.ext (congrArg SmoothRep.ofHom hx), hxc⟩
   · rintro ⟨z, _, _, hz⟩
     exact Subring.mem_center_iff.mpr hz
 

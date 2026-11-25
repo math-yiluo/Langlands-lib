@@ -1,7 +1,5 @@
 # Constructing norm-one minima in the first standard Levi
 
-Author: Worker 83.
-
 This derived prerequisite removes the separate norm-one premise on the
 initial Levi factor in the canonical height-minimum restriction step. It
 extracts an actual positive factor in a constructed split component and

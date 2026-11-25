@@ -24,5 +24,5 @@ calculation applies. No domain, reducedness, finite-generation or
 nonzero-ring assumption is added.
 
 `integralPullbackProjection` is the first projection bundled with this
-proved integrality property. This unit supplies the algebraic property;
+proved integrality property. This module supplies the algebraic property;
 it does not assert a scheme pushout or any global gluing result.

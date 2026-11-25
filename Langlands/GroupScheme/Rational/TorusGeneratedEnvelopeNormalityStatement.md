@@ -1,6 +1,6 @@
 # Normality of the fixed closed torus envelope
 
-Worker 1436. `TorusGeneratedEnvelopeNormalityStatement.{u}` asserts that, over
+`TorusGeneratedEnvelopeNormalityStatement.{u}` asserts that, over
 every field `k : Type u`, any actual representative `D` of the fixed closed
 torus envelope of a smooth connected affine group scheme `G` has normal image
 in `G`. There is no reductivity, solvability, splitness, perfection, infinitude,
@@ -29,11 +29,12 @@ fixed envelope by its least closed-subgroup property. The existing uniqueness
 of representatives then identifies any supplied `D` with that source subgroup,
 compatibly with its inclusion into `G`. For this reason no separate smoothness
 or connectedness premise on `D.group` is needed. Smooth connected
-representability and this structural identification remain proof obligations;
+representability and this structural identification are proof obligations, not premises;
 this file states no existence theorem and assumes no theorem-valued premise.
 
 This is a focused prerequisite target for the infinite-field reduction in the
 pseudo-parabolic rational-lifting argument of CGP Lemma C.2.1, printed
-pp.592--593 / PDF pp.618--619. It supplies neither a proof of normality nor the
+pp.592--593 / PDF pp.618--619. It supplies neither a proof of normality (that is
+`torusGeneratedEnvelopeNormality` in `TorusGeneratedEnvelopeNormalityProof`) nor the
 rational-lifting theorem. Rational density, the quotient by the envelope, and
 compatibility with field extension are separate assertions.

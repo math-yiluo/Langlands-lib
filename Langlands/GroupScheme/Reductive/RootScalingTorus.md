@@ -1,7 +1,5 @@
 # The simple-root quotient torus and its action
 
-Author: Worker 1467.
-
 This internal construction is derived from the supplied root datum and base,
 the published character realization for split tori, the diagonalizable
 faithful-flatness theorem, the published root-kernel centrality theorem,

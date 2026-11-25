@@ -87,4 +87,4 @@ transport, where an independently proved integral identity must identify its
 scalar with a Laurent monomial and must transport the actual generating data.
 No determinant weight identity, Haar modulus law, convergence of an integral,
 existence of a rational continuation, or character independence of an L-factor
-is asserted in this unit.
+is asserted in this module.

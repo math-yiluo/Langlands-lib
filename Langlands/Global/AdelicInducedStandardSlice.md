@@ -6,4 +6,4 @@ The real and complex membership lemmas assume that each such coefficient orbit l
 
 At a real place, the outer determinant half-character is one on an embedded compact block. The left compact block slice through an arbitrary \(g\) is therefore the restriction of the coefficient orbit for the value of the section at \(y\iota_v(g)\). The compact-block Fourier criterion gives the required real standard-module membership. At a complex place the concatenated standard module is the principal series itself.
 
-This is an internal step in the archimedean induction-in-stages comparison for Task 7041. Its premises concern the actual coefficient action. It supplies standard-module membership before taking compact-finite vectors.
+This is an internal step in the archimedean induction-in-stages comparison toward `CuspidalSupportEveryPlaceStatement`. Its premises concern the actual coefficient action. It supplies standard-module membership before taking compact-finite vectors.

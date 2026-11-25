@@ -1,7 +1,5 @@
 # Harris's similitude group at a split prime as a product over places
 
-Author: Worker 19.
-
 This module completes the identification of Harris (1999), (4.2), and Harris
 (1998), (A.1), for the unitary similitude group of the published Harris
 setting: at a degree-one place `𝔭` of the imaginary quadratic field `F` above

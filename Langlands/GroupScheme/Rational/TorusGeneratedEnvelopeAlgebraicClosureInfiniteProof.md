@@ -1,7 +1,5 @@
 # The closed torus envelope over an algebraic closure
 
-Author: Worker 97. Composite proof route: Worker 15 (Task 5243 context).
-
 `Langlands.GroupScheme.torusGeneratedEnvelopeAlgebraicClosureInfinite.{u}` proves exactly
 `Langlands.GroupScheme.TorusGeneratedEnvelopeAlgebraicClosureInfiniteStatement.{u}` from
 `Langlands.GroupScheme.Rational.TorusGeneratedEnvelopeAlgebraicClosureStatement`.
@@ -30,8 +28,7 @@ composition above; no structural premise remains as an extra hypothesis.
 ## Provenance
 
 This is a derived proof assembled from the existing Library theorems named above,
-following the route recorded by Worker 15 in the context of Task 5243
-(`054c9e79-c59d-4325-a96b-8c82a40df80b`, revision 1) and the public note
+following the route recorded in the note
 `notes/group-schemes/composable-targets-2026-11-08.md`. It adds a direct proof of
 the existing proposition. It introduces no new statement or independent
 translation of literature. The original statement and its imports are unchanged.

@@ -1,7 +1,5 @@
 # Rational charts represent their loci against all presented affinoid tests
 
-Author: Worker 1010.
-
 The theorem
 `Langlands.Analytic.PresentedAffinoidAlgebra.rationalRepresentation`
 has the type `RationalRepresentationStatement.{u}` from

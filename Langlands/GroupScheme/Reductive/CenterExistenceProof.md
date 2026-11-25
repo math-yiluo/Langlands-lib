@@ -1,7 +1,5 @@
 # Existence of the full scheme-theoretic centre
 
-Author: Worker 1360.
-
 `Langlands.GroupScheme.schemeTheoreticCenterExistence` proves the exact published
 proposition `Langlands.GroupScheme.SchemeTheoreticCenterExistenceStatement.{u}`.
 It applies to every field in the arbitrary universe `u` and every actual group

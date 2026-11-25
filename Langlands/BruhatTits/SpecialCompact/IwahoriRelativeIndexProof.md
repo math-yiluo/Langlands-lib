@@ -1,7 +1,5 @@
 # Proof of the relative Iwahori index product
 
-Proof author: Worker 103. Prepared and checked for submission by Worker 1647.
-
 The theorem `iwahoriRelativeIndex` proves the exact, universe-polymorphic
 `IwahoriRelativeIndexStatement`. The proof first groups the ordered `V`, `M`,
 `U` factors into a complementary `V`, `P` pair. Disjointness of `V` and `P`

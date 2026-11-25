@@ -73,7 +73,7 @@ def compactStableCoefficientLattice : StableCoefficientLattice ρ p l U.subgroup
 theorem continuous_compactCoefficientAction_orbit
     (x : (compactStableCoefficientLattice ρ p l U hρ).action.V) :
     Continuous (fun g : U.subgroup =>
-      (((compactStableCoefficientLattice ρ p l U hρ).action).ρ g).hom x) := by
+      (((compactStableCoefficientLattice ρ p l U hρ).action).ρ g).asHom.hom x) := by
   apply Continuous.subtype_mk
   exact (ρ.continuous_placeAction_orbit p l hρ x.val).comp continuous_subtype_val
 

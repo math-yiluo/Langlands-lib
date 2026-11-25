@@ -1,11 +1,10 @@
 # Transport of reflections and root data along a field extension
 
-Author: Worker 5397, for Task 7827 (Borel–Tits 1965, Théorème 7.2). Worker 163 is the first
-executor of that task. They requested this module (parts A3a and A3b of their plan). Their proof
-builds a subgroup `F` of `G` over `k` and proves it reductive after base change to an extension
-`K`, such as an algebraic closure. This module moves two pieces of data from `k` to `K`: the
-Weyl points through lattice reflections, and the root combinatorics in the form that Worker 163's
-module `MaximalSplitGeneratedReductive` uses over `K`.
+This module is part of the proof of Borel–Tits 1965, Théorème 7.2 (`MaximalSplitSubgroupProof`).
+That proof builds a subgroup `F` of `G` over `k` and proves it reductive after base change to an
+extension `K`, such as an algebraic closure. This module moves two pieces of data from `k` to `K`
+(parts A3a and A3b below): the Weyl points through lattice reflections, and the root combinatorics
+in the form that the module `MaximalSplitGeneratedReductive` uses over `K`.
 
 This is a technical module with no counterpart in the literature. It does not use Borel–Tits
 3.22. Only `baseChange_mem_nonmultipliableBaseChange_iff`, `mem_closure_of_baseChange_mem_cone`
@@ -56,7 +55,7 @@ additive map from the characters of `S` to the characters of `S_K`, and
   which the previous lemma rewrites.
 - `characterLattice_baseChange_reflection`: for characters `c`, `d` and a cocharacter `ν`,
   `ψ (c - ⟨c, ν⟩ • d) = ψ c - ⟨ψ c, ν_K⟩ • ψ d`, where `ν_K` is the base-changed cocharacter.
-- `cone_baseChange`: for a finite set `D` of characters, Worker 163's `cone` of the family
+- `cone_baseChange`: for a finite set `D` of characters, the `cone` of the family
   `d ↦ ψ d` (indexed by `↥D`) is the image under `ψ` of `AddSubsemigroup.closure D`.
 - `mem_closure_of_baseChange_mem_cone`: for a split torus `S`, if `ψ c` lies in that cone then
   `c ∈ AddSubsemigroup.closure D`.
@@ -94,12 +93,12 @@ additive map from the characters of `S` to the characters of `S_K`, and
   map `ψ`, and apply `hred`. Clause 7: given `P` over `K`, apply `hrefl` to `Q c := P (ψ c)`, using
   `characterLattice_baseChange_reflection` for the reflection step.
 
-The conclusion of A3b is a conjunction stated with `let` bindings for `aK`, `νK`, `lamK` and `ΦK`,
-as Worker 163 specified. `ΦK` unfolds to `ψ '' {c | c ∈ R ∧ 2 • c ∉ R}` by definition.
+The conclusion of A3b is a conjunction stated with `let` bindings for `aK`, `νK`, `lamK` and `ΦK`.
+`ΦK` unfolds to `ψ '' {c | c ∈ R ∧ 2 • c ∉ R}` by definition.
 
 ## Imports
 
-`MaximalSplitGeneratedReductive` (Worker 163's accepted module, not yet in the Library; it
+`MaximalSplitGeneratedReductive` (it
 provides `cone`, `IsIsolatingCocharacter` and `LiesInReflectionClosure` through its imports),
 together with the published `Rational.NormalizerGaloisAction`,
 `CentralIsogeny.CorootCompatibility` and `Torus.SplitLatticeBaseChange`.

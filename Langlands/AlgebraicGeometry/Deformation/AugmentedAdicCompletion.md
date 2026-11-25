@@ -15,7 +15,8 @@ All declarations below lie in
 `sourceMap` is the original scalar-preserving canonical map `R →ₐ[k] ring`.
 Mathlib supplies the local ring structure and completeness for its maximal ideal.
 The present module imports only published local-completion and actual-Artinian-test
-interfaces; it does not depend on the separate completion-noetherianness candidate.
+interfaces; it does not depend on the separate completion-noetherianness module,
+`AdicCompletionNoetherian`.
 
 `residueFactor` factors `ε` through `R / maximalIdeal R` using the equality of its
 kernel with the actual maximal ideal. `augmentation` composes this factor with the
@@ -84,7 +85,7 @@ no external representability assertion is invoked.
 
 ## Scope
 
-This unit supplies an augmented complete local source and its full Artinian map
+This module supplies an augmented complete local source and its full Artinian map
 comparison. It does not construct a deformation hull, a formal Picard family, an
 algebraization, or a smooth scheme atlas. Those geometric existence and comparison
-obligations remain part of the surrounding Picard task.
+results belong to the Picard construction, outside this module.

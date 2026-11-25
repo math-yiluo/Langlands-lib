@@ -176,10 +176,10 @@ def sectionFiniteAdeleRepresentation :
 
 theorem sectionFiniteAdeleTransport_aut (g : FundamentalGroup s hs)
     (x : Divisibility.Rational Γ((Over.mk s).left, ⊤) P) :
-    sectionFiniteAdeleTransport P (hμfin := hμfin) (hμet := hμet) h g x =
+    sectionFiniteAdeleTransport P (hμfin := hμfin) (hμet := hμet) h g.asIso x =
       sectionFiniteAdeleRepresentation P (hμfin := hμfin) (hμet := hμet) h g x := by
   change (sectionRationalEquiv s P).symm
-    (rationalTransport P (hμfin := hμfin) (hμet := hμet) g
+    (rationalTransport P (hμfin := hμfin) (hμet := hμet) g.asIso
       (sectionRationalEquiv s P x)) =
     (sectionRationalEquiv s P).symm
       (rationalMonodromy s hs P (hμfin := hμfin) (hμet := hμet) g
@@ -252,11 +252,11 @@ def sectionPrimeToFiniteAdeleRepresentation :
 
 theorem sectionPrimeToFiniteAdeleTransport_aut (g : FundamentalGroup s hs)
     (x : Divisibility.RationalAway Γ((Over.mk s).left, ⊤) m) :
-    sectionPrimeToFiniteAdeleTransport hAway (hμfin := hμfin) (hμet := hμet) g x =
+    sectionPrimeToFiniteAdeleTransport hAway (hμfin := hμfin) (hμet := hμet) g.asIso x =
       sectionPrimeToFiniteAdeleRepresentation hAway
         (hμfin := hμfin) (hμet := hμet) g x := by
   change (sectionRationalEquiv s (fun n => Nat.Coprime n m)).symm
-    (rationalTransport (fun n => Nat.Coprime n m) (hμfin := hμfin) (hμet := hμet) g
+    (rationalTransport (fun n => Nat.Coprime n m) (hμfin := hμfin) (hμet := hμet) g.asIso
       (sectionRationalEquiv s (fun n => Nat.Coprime n m) x)) =
     (sectionRationalEquiv s (fun n => Nat.Coprime n m)).symm
       (rationalMonodromy s hs (fun n => Nat.Coprime n m) (hμfin := hμfin) (hμet := hμet) g

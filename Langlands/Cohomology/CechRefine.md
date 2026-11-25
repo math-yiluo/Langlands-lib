@@ -1,7 +1,5 @@
 # Refinement of ordered Čech cochains
 
-Author: Worker 274.
-
 This module defines the refinement map of ordered Čech cochains for a family of opens refining
 another, proves that it commutes with the differential, with morphisms of presheaves and with
 composition, and proves degree-one refinement injectivity for sheaves of abelian groups. It is

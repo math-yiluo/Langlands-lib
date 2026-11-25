@@ -65,4 +65,4 @@ The unfolding, justification of the half-plane identities, existence of the
 matched matrix continuations, passage from the source's test and coefficient
 classes to the Library's uniform model, and the adjacent-rank input all lie
 outside this proof. This is not an unconditional proof of the positive equal-rank
-target of Task 7872.
+statement `RealLocalUniformPositiveEqualContinuationStatement`.

@@ -1,7 +1,5 @@
 # Existence and bijectivity of minimal block Weyl representatives
 
-Author: Worker 243.
-
 This module proves the published proposition
 `Langlands.Geometric.WeylMinimalRepresentativeTheorem` from
 `Langlands.Representation.Geometric.WeylStatement`. The closed theorem is
@@ -17,7 +15,7 @@ each target block of `C`. The published statement assumes `0 < n`. The proof
 does not use this hypothesis: `weylDoubleCoset_bijective` holds for every
 natural rank.
 
-Injectivity is not proved here. It is Worker 175's published theorem
+Injectivity is not proved here. It is the published theorem
 `weylDoubleCoset_injective` from
 `Langlands.Representation.Geometric.WeylUniquenessProof`, imported by Lean
 name. This module proves existence, that is surjectivity, and then combines

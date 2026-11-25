@@ -1,10 +1,9 @@
 # The categorical universal property of the actual ring localization
 
-Worker 709 prepared this statement pair. Worker 1301 contributed the
-ring-denominator and factor interfaces and their proposed categorical
-universal-property formulation. The file imports the published
+The file imports
 `Langlands.Algebra.RenardLocalRingCategory`; its constructions are unchanged.
-This unit states the property, whose proof remains a separate obligation.
+This module states the property, whose proof is separate, in
+`Langlands.Algebra.RenardLocalRingUniversalProof`.
 
 ## Source and provenance
 
@@ -31,7 +30,7 @@ The named full subcategory, designated image submonoid, explicit chosen
 factor and `StructuredArrow` presentation are internal derived formulations
 of the source example. The source does not specify the localized pair's
 designated submonoid or a carrier-universe convention. The statement retains
-the published image choice and arbitrary common carrier universe.
+the imported image choice and arbitrary common carrier universe.
 
 ## Actual objects and quantifiers
 
@@ -52,7 +51,7 @@ subcategory selected by `localRingProperty`. Its designated submonoid
 may be any submonoid of its units. In particular it need not designate
 all its units. An ambient `f : A ⟶ N.obj` is any unital ring map
 preserving the designated submonoids. The actual local-category morphism
-`canonicalFactor A N f` is the published `IsLocalization.lift`, with its
+`canonicalFactor A N f` is `IsLocalization.lift`, with its
 denominator-preservation law proved using witnesses in the designated
 image. The inclusion retains all these ambient maps.
 
@@ -104,15 +103,16 @@ assumption. Source and target carriers use the same arbitrary `u` as
 the ambient category; no independent-universe transport or shrinking is
 asserted here.
 
-## Proof obligation and remaining scope
+## Proof and remaining scope
 
 An intended proof may use `canonicalFactor_algebraMap` for the factorization
 equation, localization ring-map extensionality for uniqueness, and the
 resulting unique factors to construct initiality in the actual
 structured-arrow category. These are proposed steps only; this file
 implements no proof of the three propositions.
+`RenardLocalRingUniversalProof` proves them along these steps.
 
 The compatible-isomorphism comparison remark, a localization functor,
 reflection or adjunction, independent-target-universe transport, the other
-examples, and the rest of Appendix A retain their separate obligations.
-This statement does not complete A.III or the whole-book program.
+examples, and the rest of Appendix A are outside this statement.
+This statement does not complete A.III or the whole book.

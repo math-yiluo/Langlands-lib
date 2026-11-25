@@ -2,9 +2,9 @@ import Langlands.Algebra.BrauerComparison.BaseChangeChart
 import Langlands.Algebra.BrauerComparison.RelativeLaws
 import Langlands.Algebra.BrauerSplitting
 import Langlands.Algebra.CentralSimple.FiniteGaloisSplitting
-import Langlands.ClassField.Global.H1VanishingProof
-import Langlands.ClassField.Global.IdeleArchimedean
-import Langlands.ClassField.Global.ReciprocityTower
+import Langlands.ClassFieldTheory.Global.H1VanishingProof
+import Langlands.ClassFieldTheory.Global.IdeleArchimedean
+import Langlands.ClassFieldTheory.Global.ReciprocityTower
 import Langlands.ClassFieldTheory.Local.LocalInvariantFamilyRelativeImagesProof
 import Langlands.ClassFieldTheory.Local.UnramifiedH2Proof
 
@@ -20,7 +20,7 @@ open scoped Langlands.Global.AdelicFunctoriality.InfiniteExtension
 
 namespace Langlands.BrauerComparison
 
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local Langlands.CentralSimple
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local Langlands.CentralSimple
 open Langlands.CentralSimple.SemilinearGaloisAction
 open Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open FundamentalClass Reciprocity
@@ -154,7 +154,7 @@ end Langlands.BrauerComparison
 namespace Langlands.Brauer
 
 open Langlands.BrauerComparison Langlands.CentralSimple
-open Langlands.ClassField.Global Langlands.ClassFieldTheory.Local
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Local
 
 /-- A central simple algebra over a number field splits if it splits at every completion. -/
 def NumberFieldBrauerSplittingStatement : Prop :=

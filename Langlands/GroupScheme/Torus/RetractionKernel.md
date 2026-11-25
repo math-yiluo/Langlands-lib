@@ -1,6 +1,6 @@
 # Retracts of tori and kernels of homomorphisms with a section
 
-This internal unit constructs an actual group-scheme retraction onto the kernel
+This internal module constructs an actual group-scheme retraction onto the kernel
 of a homomorphism from a commutative group scheme when a group-scheme section
 is supplied. It then identifies affine kernels of such maps from tori as tori.
 

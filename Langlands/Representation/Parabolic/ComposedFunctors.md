@@ -1,7 +1,7 @@
 # Direct normalized functors for a composed block parabolic
 
-Authors: Worker 8, with Worker 14's inner-refinement functor pattern adapted
-for the direct construction.
+The inner-refinement functor pattern of `Geometric.RefinementFunctors` is
+adapted for the direct construction.
 
 For an ordered block shape `B` and refinement `S`, the source of direct
 induction is the actual subgroup `refinedLevi F.Carrier B S`, and the target

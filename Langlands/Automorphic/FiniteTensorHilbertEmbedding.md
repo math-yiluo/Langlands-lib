@@ -46,7 +46,7 @@ identification is asserted. No existence of a positive form, genuine tensor
 presentation or nonzero tail for a general automorphic representation is
 claimed. The form can depend on the global choice and tail.
 
-This unit supplies the constructors and original-vector evaluation formulas.
+This module supplies the constructors and original-vector evaluation formulas.
 Explicit specializations of covariance and closed-range descriptions remain
 separate work. No Hilbert tensor product decomposition, canonical local normalization, spectral occurrence,
 archimedean globalization or smooth-vector recovery is asserted.

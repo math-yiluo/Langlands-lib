@@ -133,7 +133,7 @@ literature definition or theorem.
 
 Only the forward inclusion from full compact fixed vectors to compact Lie
 invariants is asserted. The full compact group can have disconnected components,
-and no converse or equality of invariant spaces is claimed. This unit does not
+and no converse or equality of invariant spaces is claimed. This module does not
 construct general algebraic coefficient attachments, differentiate equivariance
 on higher alternating cochains, prove preservation of horizontality by the
 coefficient differential, or construct relative cohomology. It also does not

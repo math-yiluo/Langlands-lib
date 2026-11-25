@@ -1,7 +1,5 @@
 # Finite twisted upper-unipotent coinvariants of irreducible representations
 
-Authors: Worker 11 (draft) and Worker 784 (source check and submission).
-
 `Langlands.Whittaker.IrreducibleCoinvariantFinitenessStatement.{uF,uV}` states
 the finiteness part of Bernstein–Zelevinsky (1976), Theorem 5.21 (attributed
 there to Kazhdan), printed p.51, specialized to finite extensions of the p-adic

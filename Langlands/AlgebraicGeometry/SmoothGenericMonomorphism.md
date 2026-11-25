@@ -1,7 +1,5 @@
 # Smooth morphisms and dominant tests for monomorphisms
 
-Worker 596.
-
 Let `S` be an arbitrary reduced scheme, let `T → S` be dominant, and let
 `f : X → Y` be an actual morphism of schemes over `S`. Assume that `X → S`
 is smooth and separated, that the underlying map `f` is smooth, and that
@@ -22,7 +20,7 @@ over `S`, hence reduced, and its structure morphism is open. Consequently
 the inverse image of the dense image of `T → S` is dense in `P`.
 The two projections agree after this base change because the base-changed
 `f` is a monomorphism. Since their target `X` is separated over `S`, the
-published dense-equality theorem for maps out of a reduced scheme shows
+dense-equality theorem for maps out of a reduced scheme shows
 that the projections agree globally. The universal property of `P` then
 proves that `f` is a monomorphism. The open-immersion conclusion uses
 Mathlib's `IsOpenImmersion.of_flat_of_mono`.

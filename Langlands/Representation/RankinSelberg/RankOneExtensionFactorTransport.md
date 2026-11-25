@@ -1,7 +1,5 @@
 # Certified-factor and zeta-value transport for rank-one extension
 
-Author: Worker 469.
-
 This is a derived construction using the published
 `rankOneExtensionLowerToUpperEquiv` and the existing equivalence invariance
 of Whittaker type, coefficient sets, zeta values and certified pair polynomials.

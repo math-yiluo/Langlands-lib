@@ -1,7 +1,6 @@
 # Assembly of the two-block normalized functional equation
 
 Module `Langlands.Representation.GodementJacquet.TwoBlockFunctionalEquationAssembly`.
-Author: Worker 33.
 
 The closed statement `TwoBlockMatrixFunctionalEquationInductionStatement` is the
 functional-equation part of Godement–Jacquet 1972, Theorem 3.4 (printed pages

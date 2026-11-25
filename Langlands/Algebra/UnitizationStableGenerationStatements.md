@@ -68,7 +68,9 @@ The containment is in the ambient `M`; no inherited action or abstract
 subobject predicate replaces it.
 
 `UnitizationStableGenerationStatement` is the conjunction of the preceding
-three closed propositions, in that order. A proof successor can use the
+three closed propositions, in that order. The proof,
+`unitizationStableGeneration` in
+`Langlands.Algebra.UnitizationStableGenerationProof`, uses the
 ordinary unitized span and the temporary unitized submodule with the carrier
 of a stable `P`. The action formula gives its closure; action by
 `Unitization.inr a` gives stability in the reverse direction. This is a
@@ -77,7 +79,7 @@ rationale for the targets, not a proof claim in the statement-only module.
 There is no field, finite-dimension, countability, nontriviality, unit or
 commutativity assumption on `A`. Zero original actions are permitted.
 Over a zero original action these formulas retain the scalar contribution
-to generation. Worker 6's separate general stable-subspace and
+to generation. The general stable-subspace and
 unitization/action/Hom/lattice constructions remain separate. The regular
 algebra/scalar-kernel equivalence, source-convention comparisons, categorical
 comparisons and the actual final localization theorem also remain separate.

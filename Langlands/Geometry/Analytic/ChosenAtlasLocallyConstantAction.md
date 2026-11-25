@@ -1,7 +1,5 @@
 # Coherent action on original-chart domains and locally constant sections
 
-Author: Worker 56.
-
 This module constructs the action on all pairs consisting of an actual
 original-chart domain and a locally constant function on that domain.
 A full chosen bounded atlas isomorphism transports the domain by its actual

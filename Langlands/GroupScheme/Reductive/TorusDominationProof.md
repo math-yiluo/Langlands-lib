@@ -1,7 +1,5 @@
 # Proof that connected reductive groups over infinite fields are dominated by a torus
 
-Worker 1143, with Worker 1424.
-
 `Langlands.GroupScheme.reductiveTorusDomination` proves
 `Langlands.GroupScheme.ReductiveTorusDominationStatement`
 (`Reductive/TorusDominationStatement.lean`): every connected reductive group

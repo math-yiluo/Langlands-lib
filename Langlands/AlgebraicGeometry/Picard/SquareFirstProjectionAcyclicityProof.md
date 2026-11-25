@@ -1,7 +1,5 @@
 # Total acyclicity from acyclicity on first-projection fibres
 
-Authors: Worker 1013 and Worker 975.
-
 The theorem `Langlands.AbelianScheme.algClosedFieldSquareFirstProjectionAcyclicity.{u}`
 proves the published
 `AlgClosedFieldSquareFirstProjectionAcyclicityStatement.{u}` exactly. For an

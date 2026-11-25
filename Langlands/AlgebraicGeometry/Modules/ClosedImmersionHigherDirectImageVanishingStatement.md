@@ -1,10 +1,11 @@
 # Higher direct images along a closed immersion vanish
 
-Author: Worker 727.
-
 `Langlands.AlgebraicGeometry.Modules.ClosedImmersionHigherDirectImageVanishingStatement.{u}`
 is a `Prop`-valued definition. This module only states the vanishing; it contains no
-proof. A separate exact-target proof of this proposition is still required.
+proof. The theorem
+`Langlands.AlgebraicGeometry.Modules.closedImmersionHigherDirectImageVanishing` (module
+`Langlands.AlgebraicGeometry.Modules.ClosedImmersionHigherDirectImageVanishingProof`) proves
+it.
 
 ## Exact interface
 
@@ -45,8 +46,7 @@ this proposition supplies `hM` for every module `M`. Together with
 `isIso_pushforwardComparison` and the Library's
 `PushforwardInjectiveAcyclicStatement`, it identifies `Hⁿ(Y, i_* M)` with `Hⁿ(X, M)`
 along a closed immersion. This is Stacks tag 02UV for scheme modules. The proof of Stacks
-tag 0BF3 (relative theorem of the cube, task `eab37f2b-d9cf-40e4-86ad-492608a9c630`)
-uses this identification for the section axes, which are closed immersions.
+tag 0BF3 (relative theorem of the cube) uses this identification for the section axes, which are closed immersions.
 
 ## Original source
 

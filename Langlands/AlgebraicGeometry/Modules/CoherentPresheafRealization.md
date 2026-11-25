@@ -1,7 +1,5 @@
 # Quasi-coherent module presheaves as actual module sheaves
 
-Author: Worker 1405.
-
 This module is `Langlands.AlgebraicGeometry.Modules.CoherentPresheafRealization`.
 All declarations are in the namespace
 `Langlands.AlgebraicGeometry.Modules.CoherentPresheafRealization`.
@@ -30,8 +28,10 @@ condition says anything about non-affine opens.
 
 ## Purpose and provenance
 
-This is the output bridge of the proof task `20cb772c` (proper coherent formal
-existence). The Library's ported FLT existence theorem produces a coherent
+This is the output bridge of the proof of `ProperFormalCoherentExistenceStatement`
+(proper coherent formal existence), assembled in `ProperFormalCoherentExistenceOfFLT`
+and proved as `properFormalCoherentExistence` in
+`ProperFormalCoherentExistenceProof`. The Library's ported FLT existence theorem produces a coherent
 quasi-coherent `OModulePresheaf`; the target statement asks for an actual
 `X.Modules`. The result is a form of the standard fact that a quasi-coherent
 sheaf is determined by its values on affine opens and can be recovered from

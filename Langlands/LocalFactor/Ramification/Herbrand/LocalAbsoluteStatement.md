@@ -1,13 +1,13 @@
 # Absolute upper ramification in any characteristic: statements
 
-Worker 988 authors this statement unit for Task 7421. Its six declarations are
+The six declarations of this module are
 Prop-valued definitions in `Langlands.Ramification.Local`. They state the
 properties of the general absolute upper filtration of `Herbrand.GeneralAbsolute`
-(Task 7403) and of the general inertia of `Galois.Local.AbsoluteDefinitions`
-(Task 7404). The p-adic forms of these properties are in
-`Herbrand/AbsoluteStatement.lean`. The declarations here are targets for later
-proof tasks; nothing here proves them, and none is used as a hypothesis of a
-construction. There is no hypothesis on the characteristic.
+and of the general inertia of `Galois.Local.AbsoluteDefinitions`. The p-adic forms of these properties are in
+`Herbrand/AbsoluteStatement.lean`. The declarations here are proof targets;
+nothing here proves them, and none is used as a hypothesis of a
+construction. `AbsoluteUpperFiniteImage` is proved in
+`Langlands.LocalFactor.Ramification.Wintenberger.Absolute`. There is no hypothesis on the characteristic.
 
 ## Objects and quantifiers
 
@@ -17,8 +17,8 @@ and `Ω` is a specified separable closure,
 `[Field Ω] [Algebra K Ω] [IsSepClosure K Ω]`, in an independent universe. Write
 `G = Ω ≃ₐ[K] Ω` with its Krull topology, and:
 
-- `G^v = localAbsoluteUpperRamificationGroup K Ω v`, Task 7403's absolute upper
-  group: the intersection, over all finite Galois subextensions, of the preimages
+- `G^v = localAbsoluteUpperRamificationGroup K Ω v`, the absolute upper
+  group of `Herbrand.GeneralAbsolute`: the intersection, over all finite Galois subextensions, of the preimages
   of the finite upper groups. Every finite level is realized with the spectral
   norm extending the published local norm `LocalGalois.localNormedField K` of `K`
   itself (base `K₀ = K`);
@@ -30,9 +30,10 @@ and `Ω` is a specified separable closure,
   for the canonical realization `localTopologicalData K L`; and
   `(G_L)_1 = lowerRamificationGroup (localTopologicalData K L) K 1`, its first
   lower group;
-- `I = LocalGalois.SepClosed.absoluteInertia K Ω`, Task 7404's inertia, the
+- `I = LocalGalois.SepClosed.absoluteInertia K Ω`, the inertia of
+  `Galois.Local.AbsoluteDefinitions`, the
   kernel of the residue projection of `G`;
-- `localWildInertia K Ω`, Task 7403's wild inertia, which is by definition
+- `localWildInertia K Ω`, the wild inertia of `Herbrand.GeneralAbsolute`, which is by definition
   `(⨆ (v : ℝ) (_ : 0 < v), G^v).topologicalClosure`.
 
 All indices are real numbers. No family of groups, fields or homomorphisms is supplied
@@ -54,13 +55,13 @@ Page numbers are Serre's printed pages; PDF pages are seven larger.
 Notes on the individual statements:
 
 - Both image statements assert equality. The construction itself only gives the
-  containment `(G^v).map r_L ≤ G_L^v` (Task 7403's
-  `absoluteUpperRamificationGroup_map_restriction_le`).
+  containment `(G^v).map r_L ≤ G_L^v`
+  (`absoluteUpperRamificationGroup_map_restriction_le` of `Herbrand.GeneralAbsolute`).
 - Left continuity intersects over the restricted interval `[-1, v)`. At
   `v = -1` that interval is empty, and the statement excludes this case. The
-  endpoint `G^{-1} = ⊤` is Task 7403's lemma
-  `localAbsoluteUpperRamificationGroup_neg_one` and is not restated, as the task
-  specifies. Task 7403 also proves `G^w = ⊤` for every `w ≤ -1`. With this
+  endpoint `G^{-1} = ⊤` is the lemma
+  `localAbsoluteUpperRamificationGroup_neg_one` of `Herbrand.GeneralAbsolute` and is
+  not restated. That module also proves `G^w = ⊤` for every `w ≤ -1`. With this
   extension, the restricted formula agrees with Serre's intersection over all
   `w < v`.
 - The closure in the right-limit statement is taken in the Krull topology of
@@ -75,13 +76,13 @@ Notes on the individual statements:
   constructions; their equality is a proposition to prove.
 - `AbsoluteUpperInertia` compares two independent constructions. `G^0` comes
   from the finite integer rings of the canonical realizations. `I` comes from the
-  residue action on the integers of `Ω` (Task 7404). No definitional equality
+  residue action on the integers of `Ω` (`Galois.Local.AbsoluteDefinitions`). No definitional equality
   is claimed.
 
 ## Relation to the p-adic statements
 
 The p-adic module works with `F : PadicField p`, `Ω = AlgebraicClosure F.Carrier`
-and the p-adic `absoluteUpperRamificationGroup F v`. Task 7403 defines that group in
+and the p-adic `absoluteUpperRamificationGroup F v`. `Herbrand.Absolute` defines that group in
 place as the general spectral construction at base `K₀ = Padic p`: every finite
 level uses the spectral norm extending the norm of `Padic p`. The general
 statements here use `localAbsoluteUpperRamificationGroup K Ω`, which is the same
@@ -91,14 +92,14 @@ two absolute groups are therefore built from integer rings of finite levels take
 for two different base norms. Both rings are the integral closure of the integers
 of `F` in the finite level, so they are equal. That equality is a theorem, not a
 definitional unfolding, and so the statements here are not `Iff.rfl`-equivalent to
-the p-adic ones. Following the task, the relation is explained in words here, and
+the p-adic ones. The relation is explained in words here, and
 no comparison theorem is added.
 
 Apart from this base norm, the statements correspond clause by clause:
 
 - the right-hand sides of `AbsoluteUpperInertia` agree definitionally. For
-  `Ω = AlgebraicClosure K` in characteristic zero, Task 7404's
-  `SepClosed.absoluteInertia K Ω` unfolds to the characteristic-zero
+  `Ω = AlgebraicClosure K` in characteristic zero, the
+  `SepClosed.absoluteInertia K Ω` of `Galois.Local.AbsoluteDefinitions` unfolds to the characteristic-zero
   `absoluteInertia K`, and the p-adic `F.absoluteInertia T` is that subgroup for
   the instances of `T`. This is the definitional agreement that the residue
   projection module `Galois.Local.ResidueProjectionStatement` checks by `Iff.rfl`;
@@ -173,5 +174,5 @@ level, inertia at `0`, wild inertia as the closure of the positive members) are
 listed in the operator plan `operator-external-inputs-plan-2026-11-16`, §4.2,
 lines 513–570.
 
-This unit does not edit the published p-adic statements, the proof modules, or
-the definition modules of Tasks 7403 and 7404.
+This module does not edit the published p-adic statements, the proof modules, or
+the general definition modules of the ramification filtrations and of inertia.

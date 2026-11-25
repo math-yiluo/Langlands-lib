@@ -147,13 +147,14 @@ variable (Γ) in
 monoid. -/
 def coHomologyAction (F : Coequivariant 𝒯) (I : InjectiveResolution F.obj) (n : ℕ) :
     Gᵐᵒᵖ →* End (((Γ.mapHomologicalComplex _).obj I.cocomplex).homology n) where
-  toFun g := HomologicalComplex.homologyMap (cochainMap Γ F g.unop I) n
+  toFun g := End.of (HomologicalComplex.homologyMap (cochainMap Γ F g.unop I) n)
   map_one' := by
     rw [MulOpposite.unop_one, (coOneHomotopy Γ F I).homologyMap_eq n,
       HomologicalComplex.homologyMap_id]
     rfl
   map_mul' g h := by
-    rw [End.mul_def, MulOpposite.unop_mul, ← HomologicalComplex.homologyMap_comp,
+    apply End.ext
+    rw [End.mul_asHom, MulOpposite.unop_mul, ← HomologicalComplex.homologyMap_comp,
       (comulHomotopy Γ F h.unop g.unop I).homologyMap_eq n]
 
 variable (Γ) in

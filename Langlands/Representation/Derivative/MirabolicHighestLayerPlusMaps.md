@@ -1,10 +1,7 @@
 # Maps used in the actual highest mirabolic layer
 
-Authors: Worker 1185 (construction and proofs), Worker 805 (interfaces and
-composition design).
-
-This internal helper module is part of task
-`3826dc7b-ec07-4059-9425-ee376ebcf07b`. It proves postcomposition and base-layer
+This internal helper module is part of the proof of the actual highest
+mirabolic layer (`MirabolicHighestLayerProof`). It proves postcomposition and base-layer
 comparisons for the actual published normalized plus constructions. It imports
 only `Langlands.Representation.Derivative.MirabolicPlusNormalization`, leaving
 all published files unchanged.
@@ -14,7 +11,7 @@ definitions. Their source context is Bernstein–Zelevinsky (1977), §1.8 and
 §3.2 (printed pp.444 and 451; one-based PDF5 and PDF12), source `bernstein-zelevinsky-1977-induced-i`, SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 The cited formulas were checked in the original; no source-specific errata
-note was found in the prescribed project locations. These are internal derived
+note was found in the project locations searched. These are internal derived
 maps, rather than verbatim statements from that source. They do not assume
 source adjunction or exactness assertions.
 
@@ -64,9 +61,10 @@ The complete transitive project import closure has 68 modules including
 this helper. The 67 pre-existing module pairs are byte-identical to Library
 `b22e185743f7c318f709e14e422801f4360105d5`. The table below records both
 SHA-256 fingerprints for every pre-existing pair. This helper itself is
-identified by its candidate bundle fingerprints rather than a self-hash.
+not fingerprinted in the table.
 
-The public exact target and all 54 of its transitive project imports
+The target statement module `MirabolicHighestLayerStatement` and all 54 of its
+transitive project imports
 (55 pairs in total) were also compared byte for byte to that Library
 and remain unchanged. Their unchanged root fingerprints are
 `18167297f5a3657e1b35b1d09a87eb24430248f08baa2bdf9a1b46eae13a6c0d` (Lean) and
@@ -77,10 +75,10 @@ in this helper and recursively follows every referenced constant in types
 and bodies, including theorem and opaque bodies and constructors of reached
 inductives. It visits 27,469 constants in all libraries; the full project
 part is 398 names in 30 modules, listed below, including generated and
-private names. The traversal was compiled through the Lean service as a
+private names. The traversal was compiled as a
 private audit module; it is not part of the published source.
 
-Neither closure contains detection, homogeneity, the exact endpoint proof,
+Neither closure contains detection, homogeneity, the highest-layer proof,
 generic lattice transport, segment/classification or the strong
 indecomposability consumer. In particular, these elementary map proofs do
 not invoke BZ77 adjunction or exactness theorems. They use the independently
@@ -88,12 +86,10 @@ published constructors only with their explicit guarantees; their
 elementary evaluation/normalization and quotient identities are checked
 from those definitions, without promoting a constructor to adjunction.
 
-No conclusion, exact proof successor or transitive proof consequence of
-any item in the inherited exclusion set is used. The retained exclusions
-are the following (task IDs are locators, not mathematical dependencies):
+No conclusion, proof or transitive proof consequence of
+any of the following results is used:
 
-- Strong indecomposability reduction `MirabolicStrongIndecomposabilityReduction`,
-  task `08fe06ea-e64e-4f3a-b899-3e0acacf61db`.
+- Strong indecomposability reduction `MirabolicStrongIndecomposabilityReduction`.
 - Ordered-socle existence and exhaustion; analytic segment classification;
   individual special-head/reverse-socle and segment-socle/reverse-head
   existence; unlinked segment-socle product irreducibility and its final
@@ -106,55 +102,21 @@ are the following (task IDs are locators, not mathematical dependencies):
   integrability; segment full/head/socle Jacquet formulas; special Jacquet
   exponent norm formula; the nonadjacent two-supercuspidal product and full
   two-supercuspidal product-structure consumers.
-- Named exclusions include `AdjacentUnlinkedSegmentSocleSwap`,
+- Those with Lean names include `AdjacentUnlinkedSegmentSocleSwap`,
   `TwoSegmentSocleCommutation`, `SquareIntegrableLanglandsClassification`,
   `GenericSegmentProductUniqueness`, `SegmentSpecialEssentialSquareIntegrability`,
   `OrderedMultisegmentSocleExistence`, `MultisegmentSocleExhaustion`,
   `SegmentSocleProductIrreducibility`, `SegmentFullJacquetFormula`,
   `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`, and
   `SegmentSpecialJacquetExponentNormFormula`.
-- The corresponding inherited task IDs are:
-
-```text
-1cb45da2-7007-4351-a694-594fb148b8d1
-20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584
-23189526-80b0-4828-a6d4-7ebec2cbeef5
-23e98d90-6055-4e35-91a9-b0f5d8a84961
-2ae5cbe5-0701-4509-88a0-db8cbeb35be4
-30341ae4-65f2-4a0e-9283-763db01a409e
-3bfb61fa-1129-4fc9-83fd-7fcfec22106e
-4ca79bbd-589e-476b-9f65-661e799984b5
-52e97845-36bb-457d-b76f-70753334b88c
-55ad1e10-62d8-46b7-a081-909ef0056426
-5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807
-67279e36-f3c2-42e3-9302-11729784042e
-8252833d-c269-41a9-824c-5879e531b23b
-8364e73f-14ec-4d14-8f2b-1555a7c1ce95
-92aea10f-62ac-4e0b-bd4a-9a80909797c5
-aca8805b-054f-4d56-8045-12db7f623404
-b95105c6-f8bb-4641-ae53-2f49d1e7f034
-bf433f0a-921a-428c-b0c0-6475438125ac
-cd8ab97c-0b78-4bce-97c4-d307a28159a4
-e3634665-571b-4852-9f4c-bab8a1053434
-ebea9a8a-9b21-4208-aa31-98c2dea1f8a3
-ed48ae06-964c-4c84-9e62-978f5a953ca7
-f3a69bc8-7312-4f82-8a7d-ea3c8188cb63
-3c9849a4-a6c0-43ac-9982-d15ed76bf1e9
-ab61f565-1427-4746-ba77-46097563e962
-```
 
 No Ze80 segment derivative formula from §3.5 or §9.6, segment product
 irreducibility criterion from §4.2 or §9.7, analytic/square-integrability
 assertion from §9.3, classification or exhaustion theorem is used. The
-segment-socle part of `8e5b4563-0365-41c7-b134-70f2a0b36292` is excluded.
-Every reused derivative theorem remains subject to the operator requirement
-of independent acceptance and actual publication. This helper does not
-resume, replace or bypass minus exactness task
-`b65bc667-6951-4bd5-82af-10fb7046df7f` or Worker 127 controls. It preserves
-Worker 157 finite-length task `0717fd42-d711-4f42-8269-f6ae4c8da1e9`,
-Worker 357 mixed-product/restriction/Leibniz and raw tensor/partial-derivative
-scope, Worker 288 k=0 adapter, and the distinct Workers 864/700 generic
-lattice unit `a2baddab-056b-4503-865e-74d58ecb3812`.
+segment-socle statements of `Classification.SegmentSocleDerivativesStatement`
+are not used either. This helper does not duplicate the finite-length,
+mixed-product, restriction, Leibniz, raw tensor or partial-derivative
+results, the `k = 0` adapter or the generic lattice transport.
 
 ### Complete transitive project import closure and fingerprints
 
@@ -186,7 +148,7 @@ lattice unit `a2baddab-056b-4503-865e-74d58ecb3812`.
 | `Langlands.Representation.Category.Basic` | `6a4781890b642e590206b68b7cea02bc4add8bdfb85e6a29991f73992bbcf706` | `647da2c8e2011decf8c6971c0f4a20a162e6ead265bf4d7448b2045072862ba2` |
 | `Langlands.Representation.Category.Twist` | `9fb1bca986f0a1a202a4e3d9e1ac481405646293ece6da63374e447cd85ca740` | `e16d708bc3b312c0a79947852bbf147ea230b0a9b8b9ddbd9f80432833bfcb5d` |
 | `Langlands.Representation.Derivative.MirabolicCharacter` | `27ad9768aa1f5ee9f1534e99521462f22cdb280abbcf711b79621d405d654a6d` | `f7b710cddba2ed791d268d8a1644315548f2b64912ffed0138579cbd497fae25` |
-| `Langlands.Representation.Derivative.MirabolicHighestLayerPlusMaps` | new helper | candidate bundle |
+| `Langlands.Representation.Derivative.MirabolicHighestLayerPlusMaps` | this module | this module |
 | `Langlands.Representation.Derivative.MirabolicMinus` | `526932155b00d435068485ffb7a8a5d4f565b9729779cebe97cfcf96e894e02e` | `3b6fbca0a52aed7251fab742229c22ded359759b67326d66f69db5c1a9b0e9c9` |
 | `Langlands.Representation.Derivative.MirabolicMinusNormalization` | `fdc1fd8583588ba1ca5722d96f91b455ea9dadb494b5d8a22ec9e96d789836c9` | `06468be815383e4f98fe355fb5319430a986d5b93115ad2befd16ac6ac3f515a` |
 | `Langlands.Representation.Derivative.MirabolicPlus` | `07129014f7995b8bfc85636fb59192ab88b8b9cff9a63ff862a14fcdc03ab421` | `62e65478b9b3b0007744b3409f7dcaf68275f2fcb9d87f1fc7a2ba7441112798` |

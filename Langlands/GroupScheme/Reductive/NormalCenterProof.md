@@ -1,8 +1,5 @@
 # Full centres of normal connected reductive subgroups
 
-Worker 1360 assembled this proof; Worker 303 supplied the centralizer assembly
-route and identified the published structural inputs.
-
 `Langlands.GroupScheme.normalReductiveCenter` proves exactly the existing
 `Langlands.GroupScheme.NormalReductiveCenterStatement.{u}` for arbitrary
 universe `u`. For every field `k : Type u`, connected reductive group schemes

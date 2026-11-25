@@ -26,6 +26,4 @@ uses `connectedSpace_baseChange_of_smooth_affine`.
 
 These are internal consequences of the imported constructions. The source
 and inclusion are actual group schemes, and subgroup-functor equalities retain
-all relative test schemes, including nonreduced tests. Worker 1359 authored
-the assembly and the reused scheme ideal-descent adapters; Worker 1370
-authored the tensor-coordinate and Galois ideal-descent proofs.
+all relative test schemes, including nonreduced tests.

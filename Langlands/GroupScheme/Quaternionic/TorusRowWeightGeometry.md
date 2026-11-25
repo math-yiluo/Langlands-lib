@@ -1,7 +1,5 @@
 # Totally singular sums of nonopposite torus row weights
 
-Author: Worker 186. Uses Worker 350's quadratic sandwich argument.
-
 This internal derived module works over any field `K` and any finite-dimensional
 division `K`-algebra `D` with a first-kind involution `σ`. The row index `n` is
 finite. The torus `i : Gm^I → O(q)` need not be injective or maximal, and the
@@ -29,7 +27,7 @@ quadratic form over the group algebra `K[ℤ^I]`. Its defect's constant
 coefficient lies in the quadratic kernel. Sandwiching this coefficient by
 `f` and its involution kills every pair of opposite exponents, and gives
 `f Q τ(f)` in the quadratic kernel, with `Q` the chosen matrix representing
-`q`. Worker 350's `quadraticValue_eq_zero_of_vecMul_eq` then makes every row
+`q`. `quadraticValue_eq_zero_of_vecMul_eq` (module `QuadraticTorusWittBound`) then makes every row
 fixed by `f` singular.
 
 Finally `sum_finrank_torusRowWeightSpace_le_quadraticWittIndex` bounds the

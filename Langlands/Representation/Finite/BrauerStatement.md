@@ -1,6 +1,6 @@
 # Integral Brauer induction and character realization
 
-Worker 30 states the finite complex Brauer prerequisites using Worker 18's
+This module states the finite complex Brauer prerequisites using the
 published finite-representation constructions. These proposition definitions
 assert no proofs of Brauer's theorem or the accompanying character assertions. Its scope is a finite group in an arbitrary universe
 and representations over the actual complex numbers. Thus the coefficient field
@@ -14,7 +14,7 @@ equivariant linear isomorphism. `VirtualRep ℂ G` is its split additive group
 completion, with direct-sum relations. The induction used here is the actual
 Mathlib quotient-induced action, transferred through a proved coordinate
 equivalence to an `FDRep`. Its action laws, finite-dimensionality, isomorphism
-congruence and additivity are implemented by the definition owner.
+congruence and additivity are implemented in the imported `Induction` module.
 
 `IrreducibleClass G` is the subtype of genuine isomorphism classes having an
 irreducible representative. It is not defined by an assumed basis or by equality
@@ -30,8 +30,8 @@ proofs, with no spanning or injectivity hypotheses.
 The coefficient vectors are `Finsupp` over `ℤ`, so their support is finite and
 their coefficients may be negative. No choice of rational denominators, positivity
 of the coefficients, or surjectivity of an LLC map is assumed.
-The definition owner's coordinate-model equivalence and
-`classOfRepresentation_eq_iff` include finite-dimensional representations on any
+The coordinate-model equivalence and
+`classOfRepresentation_eq_iff` of the imported `Classes` module include finite-dimensional representations on any
 carrier universe. Use of `FDRep ℂ G` therefore loses no such isomorphism classes;
 the group universe is independent of the fixed coefficient universe.
 
@@ -107,7 +107,8 @@ corps p-adique*, Inventiones Mathematicae 139 (2000), pp.439–455:
 - Section 3.7, p.451, uses the integral linear combination of induced finite-order
   subgroup characters; Section 3.8 distinguishes its permitted character twists.
   The finite-group theorem is the input here. Pullback to actual finite Weil
-  quotients and descent through weak association remain later obligations.
+  quotients and descent through weak association are not part of these
+  statements.
 
 The cited source passages were read directly. No original theorem is installed
 as an axiom or used as an assumed field to define a target.
@@ -125,21 +126,19 @@ versions used in the original development check:
 | `Virtual` | `51b214fca45871f2eb6bd16a63e3ff0e3598bd0e0aef3b0bc9ff70674722af57` |
 
 The prepared environment uses Lean 4.34.0 and Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. The paired file was recompiled
-using the project's Lean service, and inspection confirmed that
+`5ed2965256430c3649e86755f9576b54eca72435`. The paired file was recompiled,
+and inspection confirmed that
 `FiniteBrauerTheoryStatement` returns `Prop` with only `propext`,
 `Classical.choice`, and `Quot.sound` as assumptions. The finite-group binders
 and complete proposition bodies have also been inspected. The local classical
 decision instance in the induced-character formula only decides subgroup
 membership. Development checks do not prove any of the seven conclusions.
 
-Worker 30 authored this proposition pair; Worker 18 authored the published
-construction imports. Those imports are not republished by this contribution.
+The construction imports are not changed by this pair.
 The published `Langlands.Representation.Finite.CharacterStatement` is a later
 proof input, not a Lean import or an assumed proposition here.
 
 Local Weil and supercuspidal virtual lattices, weak-association relation
 independence, positive-degree sign extraction, finite witnesses, lower-rank
 lifting, auxiliary extension independence and numerical surjectivity are
-separate portions of the host task. This finite-group family does not complete
-those portions.
+separate results. This finite-group family does not prove them.

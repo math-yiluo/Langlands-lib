@@ -1,8 +1,5 @@
 # Representability of an fppf sheaf through a flat proper equivalence relation
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705).
-Worker 5705 uses the statement in the Picard construction of that task.
-
 ## Statement
 
 `Langlands.AlgebraicGeometry.FppfQuotientRepresentabilityStatement.{u}` is a
@@ -124,9 +121,8 @@ is an explanation of why the statement holds, not a Lean proof.
    flat proper equivalence relation is then effective: there are an
    H-quasi-projective `Q` and a flat, surjective, proper `π : Z ⟶ Q`, locally
    of finite presentation, with `R = Z ×_Q Z`. This is the statement
-   `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientStatement`
-   of Task 5705 (lean.statement candidate
-   `67461119-f54c-479d-a843-0b255d8fd982`). Its sources are Altman–Kleiman
+   `Langlands.AlgebraicGeometry.FlatProperEquivalenceRelationQuotientStatement`.
+   Its sources are Altman–Kleiman
    [AK80, Thm. (2.9)], as cited by Kleiman, and N. Nitsure, *Construction of
    Hilbert and Quot schemes* (`nitsure-2005-hilbert-quot-arxiv-math0504590v1`),
    Theorem 6.8, p.33. Kleiman applies this quotient theorem at this point.
@@ -152,5 +148,8 @@ In Kleiman's proof of Theorem 4.8 (pp.29–30), `Z` is an open subscheme of the
 scheme of relative effective divisors and `α` is the Abel map onto a piece
 `P^{φ₀}_0` of the Picard sheaf. Its fibre products with schemes are linear
 systems, and Kleiman shows that the first projection of `Z ×_P Z` is smooth and
-projective. Task 5705 applies the present statement to the fppf Picard sheaf
-`RelativePicard.classSheaf f`, or to a subsheaf of it, in this step.
+projective. In the Library this step is taken with the locally noetherian form
+`Langlands.AlgebraicGeometry.FppfQuotientLocallyNoetherianStatement`, which
+`Langlands.AlgebraicGeometry.Picard.PicardHilbertPiecesRepresentabilityReductionProof`
+applies to a subsheaf of the fppf Picard sheaf `RelativePicard.classSheaf f`;
+no Lean file of the Library applies the present statement.

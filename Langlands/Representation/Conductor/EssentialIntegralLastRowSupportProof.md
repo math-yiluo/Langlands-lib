@@ -1,7 +1,5 @@
 # Integral last-row support of the corrected essential vector
 
-Authors: Worker 1466 and Worker 952.
-
 `essentialIntegralLastRowSupport` proves exactly the published proposition
 `Langlands.Conductor.EssentialIntegralLastRowSupportStatement.{uF,uV}`.
 The field and representation-space universes remain independent. Every

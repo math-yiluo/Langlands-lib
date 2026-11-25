@@ -1,13 +1,8 @@
 # Literal norm and trace coefficients under unramified base change
 
-Author: Worker 27.
-
 This module is derived support for the prime norm argument. It uses the
 published actual compositum, order, integer and residue maps. It does not
-assert norm surjectivity. The new definitions and elementary compatibility
-proofs are by Worker 27; the imported compositum norm and trace proof is by
-Worker 159, and the imported relative maps and coordinates retain their
-published authorship. No unpublished draft was reused.
+assert norm surjectivity.
 
 `normTraceResiduePolynomial` in
 `Langlands.PadicField.TopologicalData` constructs the polynomial

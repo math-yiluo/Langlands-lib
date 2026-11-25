@@ -1,7 +1,5 @@
 # Conditional unitary detection by the actual split-center point image
 
-Author: Worker 200.
-
 ## Provenance and status
 
 `ConditionalRationalSplitCenterUnitaryDetectionStatement` is an internal

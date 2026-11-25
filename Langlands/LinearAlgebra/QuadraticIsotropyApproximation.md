@@ -1,7 +1,5 @@
 # Weak approximation reduces diagonal quadratic isotropy by one variable
 
-Worker 787.
-
 The proof follows the higher-dimensional step of Voight,
 *Quaternion Algebras*, Theorem 26.8.24, printed p. 451. It decomposes a
 diagonal form into its first two coordinates and its tail. The premise
@@ -44,7 +42,7 @@ The proposition isolates the weak approximation step of Theorem 26.8.24.
 The Lean type-and-value closure of `diagonal_isotropic_of_tail_cofinite`
 contains 61,522 constants, including the 134 project declarations below.
 It contains none of the three excluded group-cohomology statements or
-the corresponding proof prefixes. Diagnostic `e20e57f1-b432-49f8-af67-c64b637858ad`.
+the corresponding proof prefixes.
 
 <details>
 <summary>Lean declaration closure</summary>

@@ -65,7 +65,7 @@ proofs replace the upstream dependency on its larger congruence API.
 
 ## Source and modifications
 
-Adapted by Worker 20 from Fukuhiro Ueda, *epsilon_FML*, commit
+Adapted in Langlands-lib (2026) from Fukuhiro Ueda, *epsilon_FML*, commit
 `0b4159be50e1bd45ddff1de4280399576a3e2024`, licensed under Apache-2.0.
 The original license is retained unchanged in [LICENSE](LICENSE).
 The registered original is `external-lean-reuse-snapshots-2026-10-21`,

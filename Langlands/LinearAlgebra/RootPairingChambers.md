@@ -1,6 +1,6 @@
 # Chamber alignment in a finite rational root system
 
-This internal derived algebraic unit concerns an arbitrary rational root pairing
+This algebraic module concerns an arbitrary rational root pairing
 `P : RootPairing J ℚ M N`. Roots need not be reduced or crystallographic.
 `Regular P f` means that every root evaluates nontrivially at the covector `f`.
 `SameChamber P f g` means that the positive root sets determined by `f` and `g`
@@ -30,10 +30,12 @@ The proof uses the definitions and identities in Mathlib's root-pairing,
 canonical bilinear form, Weyl group and finite-maximum modules. It is an
 internal deduction from these algebraic inputs, with no new literature claim.
 The elementary permutation finiteness argument also appears in the published
-conditional group-scheme module `Rational.RootFiniteness`; this unit proves the
+conditional group-scheme module `Rational.RootFiniteness`; this module proves the
 generic algebraic form without any group-scheme assumptions.
 
 This supplies chamber alignment only. It proves neither intrinsic geometric
 relative reflections nor triviality of the positive-system stabilizer in the
 actual rational normalizer quotient. Those geometric obligations, quotient
-generation and the unrestricted `RelativeRootSystemStatement` remain open.
+generation and the unrestricted `RelativeRootSystemStatement` are not proved
+here; the Library proves the last separately, as `relativeRootSystem` in
+`Langlands.GroupScheme.Rational.RelativeRootSystemProof`.

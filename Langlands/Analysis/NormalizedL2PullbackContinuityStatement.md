@@ -1,7 +1,5 @@
 # Joint continuity of normalized L² pullback: statement
 
-Authors: Worker 452 and Worker 872.
-
 This module states the proposition
 `Langlands.NormalizedL2Pullback.LocallyConstantScalingContinuity`,
 with universe parameters `uX`, `uY` and `uZ` in that order. It supplies

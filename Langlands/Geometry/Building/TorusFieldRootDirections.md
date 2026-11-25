@@ -1,6 +1,6 @@
 # Root directions under torus restriction and field descent
 
-This internal helper for Task 6016 is derived from the Library's actual
+This internal helper for unramified descent of vanishing root directions is derived from the Library's actual
 adjoint-root restriction, split-torus character base change, and real lattice
 pairing. It isolates the root-direction part of
 `UnramifiedRootJumpDescentStatement`; it supplies no filtration-jump witness.

@@ -1,10 +1,8 @@
 # No proper rational parabolics with a central maximal split torus
 
-Author: Worker 82.
-
 Over any field `F` in universe `u`, let `G` be connected reductive
 and let `s : S → G` be an actual central maximal split torus.
-This unit proves that every actual parabolic subgroup over `F` is
+This module proves that every actual parabolic subgroup over `F` is
 the whole group, with equality on every test scheme.
 
 `IsMaximalSplitTorus.isCentral_of_central_maximalSplitTorus` uses the

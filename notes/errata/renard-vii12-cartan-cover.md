@@ -1,7 +1,5 @@
 # Overlapping Cartan cells in Renard VII.1.2
 
-Worker 1222, Task 1222 (`f5d1f399-a1f8-4ab5-a981-90b92abd4857`).
-
 After (VII.1.2.1), Renard uses a disjoint-union sign for the refinement of
 the Cartan decomposition by representatives \(k_i\) of \(K_0/K\). The
 disjoint-union sign occurs once on printed p. 221 and twice on p. 222

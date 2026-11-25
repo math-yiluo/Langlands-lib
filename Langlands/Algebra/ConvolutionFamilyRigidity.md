@@ -9,7 +9,7 @@ is its value on the universal point `id : D →ₐ[R] D`.
 Naturality determines the whole family by precomposition with that map.
 Preservation of the identity at the counit gives preservation of the counit.
 The convolution of the two universal tensor inclusions is comultiplication,
-using the published `TauCeti.Bialgebra.comulPoint_eq_include_mul` in reverse;
+using the published `Langlands.Bialgebra.comulPoint_eq_include_mul` in reverse;
 preservation of that convolution and naturality give preservation of
 comultiplication. These two identities construct `EndFamily.coalgHom`.
 

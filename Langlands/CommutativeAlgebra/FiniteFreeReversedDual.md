@@ -1,7 +1,5 @@
 # Reversed duals of finite free cochain complexes
 
-Author: Worker 1015.
-
 This internal construction defines `reversedDual g C`, whose degree `i`
 term is `Module.Dual R (C.X (g - i))` and whose differential is the
 transpose of the reversed differential of `C`. Here `g` and all complex

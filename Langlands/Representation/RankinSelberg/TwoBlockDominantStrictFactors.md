@@ -15,8 +15,9 @@ ranks and do not assume equality of the total and test ranks. No unrestricted
 multiplicativity theorem is used.
 
 The closed proposition `TwoBlockDominantFirstBlockLaurentIdentityStatement`
-remains an explicit hypothesis `H` in both real-ray existence theorems. Its
-independently owned proof is not discharged here. The fixed-model comparison
+remains an explicit hypothesis `H` in both real-ray existence theorems. This
+module does not discharge it; `twoBlockDominantFirstBlockLaurentIdentity` in
+`TwoBlockDominantFirstBlockLaurentIdentityProof` proves it. The fixed-model comparison
 and identification theorems instead take their retained actual certificates
 explicitly.
 

@@ -35,18 +35,18 @@ juxtaposed.
 
 The proof is one term. It applies the conditional theorem
 `linkedSegmentSocleReverseProductStructure_of` of
-`Classification.LinkedSegmentSocleReverseProductConditional` (submitted with this
-module) to seven published theorems, one for each of its hypotheses:
+`Classification.LinkedSegmentSocleReverseProductConditional` (ported together
+with this module) to seven published theorems, one for each of its hypotheses:
 
-| Hypothesis | Published theorem | Module | Task, artifact |
-| --- | --- | --- | --- |
-| `hψ` | `HarmonicAnalysis.padicUnitaryAdditiveCharacterExists F T` | `HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsProof` | 2dbce78d, 72e1678f |
-| `hex` | `segmentZelevinskyConstituentExistence F T` | `Classification.SegmentZelevinskyConstituentExistenceProof` | 4ca79bbd, 7172c4a6 |
-| `hirr` | `unlinkedSegmentSocleProductIrreducible F T` (Ze80 Theorem 4.2, (2)⇒(1)) | `Classification.UnlinkedSegmentSocleProductIrreducibleProof` | 23e98d90, b7a91382 |
-| `hA` | `juxtaposedSegmentSocleReverseProductStructure F T` (step (1)) | `Classification.JuxtaposedSegmentSocleReverseProductStructureProof` | 0c90f7e4, 55b6c80e |
-| `hB` | `linkedSegmentSocleReverseProductQuotientHom F T` (step (2)) | `Classification.LinkedSegmentSocleReverseProductQuotientHomProof` | ba6ec030, 70b28ca8 |
-| `he` | `nonjuxtaposedSegmentSocleDerivativeStrictMono F T` (lattice form of Ze80 4.3) | `Classification.NonjuxtaposedSegmentSocleDerivativeStrictMonoProof` | 6c126713, f95b4d5e |
-| `hf` | `segmentSocleProductHighestDerivative F T` (highest derivative of a product of socles) | `Classification.SegmentSocleProductHighestDerivativeProof` | 4e152d19, cf12542e |
+| Hypothesis | Published theorem | Module |
+| --- | --- | --- |
+| `hψ` | `HarmonicAnalysis.padicUnitaryAdditiveCharacterExists F T` | `HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsProof` |
+| `hex` | `segmentZelevinskyConstituentExistence F T` | `Classification.SegmentZelevinskyConstituentExistenceProof` |
+| `hirr` | `unlinkedSegmentSocleProductIrreducible F T` (Ze80 Theorem 4.2, (2)⇒(1)) | `Classification.UnlinkedSegmentSocleProductIrreducibleProof` |
+| `hA` | `juxtaposedSegmentSocleReverseProductStructure F T` (step (1)) | `Classification.JuxtaposedSegmentSocleReverseProductStructureProof` |
+| `hB` | `linkedSegmentSocleReverseProductQuotientHom F T` (step (2)) | `Classification.LinkedSegmentSocleReverseProductQuotientHomProof` |
+| `he` | `nonjuxtaposedSegmentSocleDerivativeStrictMono F T` (lattice form of Ze80 4.3) | `Classification.NonjuxtaposedSegmentSocleDerivativeStrictMonoProof` |
+| `hf` | `segmentSocleProductHighestDerivative F T` (highest derivative of a product of socles) | `Classification.SegmentSocleProductHighestDerivativeProof` |
 
 Each theorem has the outer telescope `{p} [Fact p.Prime] (F) (T)` and is used at
 the same `F`, `T` and universes `uF, uV`, so its type is exactly the hypothesis.
@@ -65,45 +65,45 @@ conditional imports the target statement module, the statement modules of the
 inputs, `Classification.CuspidalIntegralTwistFreenessProof`, and the three helper
 modules `Filtration.FunctorLengthTwoDetection`,
 `Classification.SegmentPrecedenceTruncation` and
-`Classification.SegmentSocleProductComparison`. This task published the helpers
-as the independently accepted definition candidate d910a6a8.
+`Classification.SegmentSocleProductComparison`. The helpers were written for
+this proof.
 
 Import closure. Following the `import` lines transitively, this module has 1373
 `Langlands` modules in its closure. The union of the closures of the seven input
 proof modules has 1367. The only six other modules are this module, the
 conditional module, the three helper modules, and
-`Classification.SegmentInitialTruncation`. That last module (Workers 700 and 904)
+`Classification.SegmentInitialTruncation`. That last module
 defines the one-step truncation `Segment.dropLastNonempty`/`Segment.dropLast` and
 imports only `Classification.Segments`. So no module in the closure lies outside
-the input proofs except definitions and lemmas written for this task and one
+the input proofs except definitions and lemmas written for this proof and one
 segment-combinatorics definitions module.
 
-The seven inputs are independently accepted `lean.proof` artifacts. The
-Markdown of each records its own dependency audit. The tasks of `hirr`, `hA` and
-`hB` carry the exclusion list of this task, and each of them excludes this task
-or its target. In particular, none of the inputs uses
+The seven inputs are published proofs. The Markdown of each records its own
+dependency audit. The audits of `hirr`, `hA` and `hB` check independence from
+the excluded results listed below and from this target or its proof. In
+particular, none of the inputs uses
 `LinkedSegmentSocleReverseProductStructure`.
 
-Name search. I searched every module of the closure for the excluded
+Name search. Every module of the closure was searched for the excluded
 propositions, written both capitalized and lowercase (that is, also as their
 proof theorem names). The names are:
 
 - `LinkedSegmentSoclePairReducible`;
-- `SegmentSocleProductIrreducibility` (2ae5cbe5);
-- `AdjacentUnlinkedSegmentSocleSwap` (e3634665, cded83f3);
-- `TwoSegmentSocleCommutation` (426911b4, 66e3b87c);
-- `LinkedSegmentSocleGluing` (c84cd52c, 6780b79c);
-- `OrderedMultisegmentSocleExistence` (23189526);
-- `MultisegmentSocleExhaustion` (f3a69bc8);
-- `SegmentEssentialSquareIntegrableClassification` (aca8805b);
-- `MultisegmentHeadExhaustion` (3bfb61fa);
-- `OrderedMultisegmentHeadExistence` (ebea9a8a);
-- `OrderedMultisegmentQuotientExhaustion` (20e4e1c6);
-- `TemperedBlockUniqueness` (52e97845);
-- `SquareIntegrableLanglandsClassification` (1cb45da2);
-- `SquareIntegrableLanglandsExhaustion` (cd8ab97c);
-- `GLRegularLanglandsExhaustion` (bf433f0a);
-- `SegmentHeadProductIrreducibility` (8364e73f).
+- `SegmentSocleProductIrreducibility`;
+- `AdjacentUnlinkedSegmentSocleSwap`;
+- `TwoSegmentSocleCommutation`;
+- `LinkedSegmentSocleGluing`;
+- `OrderedMultisegmentSocleExistence`;
+- `MultisegmentSocleExhaustion`;
+- `SegmentEssentialSquareIntegrableClassification`;
+- `MultisegmentHeadExhaustion`;
+- `OrderedMultisegmentHeadExistence`;
+- `OrderedMultisegmentQuotientExhaustion`;
+- `TemperedBlockUniqueness`;
+- `SquareIntegrableLanglandsClassification`;
+- `SquareIntegrableLanglandsExhaustion`;
+- `GLRegularLanglandsExhaustion`;
+- `SegmentHeadProductIrreducibility`.
 
 No proof module of any of these is in the closure. The matches are:
 
@@ -128,11 +128,10 @@ No proof module of any of these is in the closure. The matches are:
   `LinkedSegmentSocleReverseProductStepsStatement`, in the conditional module
   and in this module.
 
-`LinkedSegmentSoclePairReducible` and its proof successor are not used.
+`LinkedSegmentSoclePairReducible` and its proof are not used.
 
 ## Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with
-declaration `Langlands.Classification.linkedSegmentSocleReverseProductStructure`:
+`lean_check`, with declaration `Langlands.Classification.linkedSegmentSocleReverseProductStructure`:
 0 errors, 0 warnings. The axioms are `propext`, `Classical.choice` and
 `Quot.sound`.

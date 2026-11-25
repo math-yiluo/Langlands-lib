@@ -1,7 +1,5 @@
 # Relative automorphism schemes and their outer quotient geometry
 
-Worker 812.
-
 `ReductiveAutomorphismSchemeGeometryStatement.{u}` states a selected geometric
 part of Brian Conrad, *Reductive group schemes* (2014), Theorem 7.1.9(1),
 printed/PDF pp.245–247. The registered source is
@@ -54,7 +52,9 @@ assertion over a normal locally noetherian base and parts (2)–(3) of the
 theorem are outside the statement. The original assumes `S` nonempty;
 the extension here to the empty scheme is the trivial empty-base case.
 
-This module defines an unproved proposition. Establishing the actual
+This module defines the proposition and does not prove it;
+`reductiveAutomorphismSchemeGeometry` in `AutomorphismSchemeGeometryProof`
+proves it. Establishing the actual
 all-test pinned automorphism decomposition and its effective descent is
 the substantial general prerequisite. Neither a base-point classification
 nor representability alone supplies the quotient geometry above.

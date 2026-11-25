@@ -1,6 +1,6 @@
 # Special formal division-order modules in local coordinates
 
-This derived unit imposes the special tangent condition on actual formal
+This module imposes the special tangent condition on actual formal
 division-order atlases and the height d² condition on their actual chart
 scalar kernels.
 
@@ -23,8 +23,8 @@ Set d = `CentralSimple.reducedDegree K D`. The division order and embedded
 integer subring are the actual restricted-valuation rings of `DivisionOrder`
 and `SpecialModule`. The unramified-subfield condition is the existing
 finite-dimensionality, finite etale integer algebra and full-degree predicate.
-Existence of that subfield and specialization to Hasse invariant 1/d remain
-open obligations.
+Existence of that subfield and specialization to Hasse invariant 1/d are not
+proved here.
 
 Each atlas has one fixed coordinate type `Fin d` on a supplied principal-open
 cover. Tests have the base ring's universe v, families v+1, and the geometric

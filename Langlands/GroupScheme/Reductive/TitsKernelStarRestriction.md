@@ -1,7 +1,5 @@
 # Star equivariance of character restriction to an anisotropic kernel
 
-Author: Worker 5662.
-
 This module proves that actual integral character restriction to a kernel
 torus intertwines the full absolute star actions. The kernel is any group `D`
 with index data `e` and a published `TitsIndexData.KernelComparison` with

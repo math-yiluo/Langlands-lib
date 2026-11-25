@@ -1,13 +1,11 @@
 # Linear systems and their universal divisors over opens of the base
 
-Authors: Worker 5705.
-
-Helper module of the proof of `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemStatement` (entry module `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemProof`), written for Task 5705. It contains no `sorry` and no new axioms.
+Helper module of the proof of `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemStatement` (entry module `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemProof`). It contains no `sorry` and no new axioms.
 
 ## Content
 
 Namespace `Langlands.AlgebraicGeometry.Picard.LinearSystemGluing`. Let `g : Y ⟶ S` and `m` a Picard class on `Y`. `mapX g h w` is
-`pullback.map g t' g t (𝟙) h (𝟙)`, the map `Y ×_S T' ⟶ Y ×_S T` (W22's
+`pullback.map g t' g t (𝟙) h (𝟙)`, the map `Y ×_S T' ⟶ Y ×_S T` (the Library's
 `PicardHilbertPiecesReduction.mapX`).
 
 - `exists_local_regular_generator_of_isEffectiveCartierIdeal`: an effective Cartier ideal is

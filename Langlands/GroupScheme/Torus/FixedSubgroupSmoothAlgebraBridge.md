@@ -1,6 +1,6 @@
 # Affine coordinate smoothness and the closed subgroup bridge
 
-This is an internal transport helper by Worker 1345 for
+This is an internal transport helper for
 `Langlands.GroupScheme.Diagonalizable.FixedSubgroupSmoothStatement`.
 It derives the needed facts from the published affine coordinate presentation
 and Mathlib's scheme and ring smoothness criteria; it asserts no new result

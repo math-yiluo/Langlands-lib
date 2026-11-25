@@ -1,7 +1,5 @@
 # Surjectivity of torus Iwahori subgroups
 
-Author: Worker 1587.
-
 `Langlands.Geometry.Building.torusIwahoriSurjectivity.{u}` proves exactly
 `Langlands.Geometry.Building.TorusIwahoriSurjectivityStatement.{u}`. It uses
 the actual maximal unramified extension `UnramifiedClosure F`, the given finite

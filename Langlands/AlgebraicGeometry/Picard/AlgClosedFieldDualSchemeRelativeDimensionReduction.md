@@ -2,7 +2,7 @@
 
 This module reduces the published proposition
 `Langlands.AbelianScheme.AlgClosedFieldDualSchemeRelativeDimensionStatement.{u}` to three
-Library statements that had no published proof when it was written. It does **not**
+Library statements. It does **not**
 prove the target outright. Its main theorem is
 
 ```lean
@@ -23,9 +23,12 @@ The three hypotheses are:
   geometrically connected commutative group scheme over an algebraically closed field has
   an ample line bundle.
 
-Each is imported as a statement only and passed as an explicit argument. Once proofs of
-all three are published, applying this theorem to them proves the target exactly, with no
-further hypothesis. Inspection of both theorems reports only the standard axioms
+Each is imported as a statement only and passed as an explicit argument. Applying this
+theorem to proofs of all three proves the target exactly, with no
+further hypothesis. The Library proves the three as
+`Langlands.AbelianScheme.relativeDualSchemeFinitePresentation`,
+`Langlands.AbelianScheme.mumfordBundlePicardZero` and
+`Langlands.GroupScheme.algebraicallyClosedFieldAmpleExistence`. Inspection of both theorems reports only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound`. The file uses no `sorry`.
 
 ## Source and provenance
@@ -73,7 +76,7 @@ and `x₀` for the image of the closed point under `e`. The proof:
    `g ≤ dim O_{D, x₀}`. So `O_{D, x₀}` is a regular local ring. Since for a regular local
    ring the Krull dimension equals the cotangent dimension
    (`IsRegularLocalRing.iff_finrank_cotangentSpace`), `dim O_{D, x₀} = g`.
-3. A regular local ring is a domain (`IsRegularLocalRing.isDomain`, from the published
+3. A regular local ring is a domain (`IsRegularLocalRing.isDomainFLT`, from the published
    `AnthropicFLT` port `Thm_IsRegularLocalRing_isDomain`).
 4. `x₀` is a closed point (`pointEquivClosedPoint`). For every closed point `y`,
    `GrpObj.exists_iso_apply_closedPoint` (module `FieldGroupSchemeHomogeneity`) gives an
@@ -93,7 +96,7 @@ and `x₀` for the image of the closed point under `e`. The proof:
 This theorem supplies the two non-Library hypotheses of the previous theorem from proved
 modules:
 
-- the tangent equivalence is `dualSchemeTangentH1 A hA`, proved by Worker 299 in module
+- the tangent equivalence is `dualSchemeTangentH1 A hA`, proved in module
   `Langlands.AlgebraicGeometry.Picard.DualSchemeTangentH1`;
 - the lower bound is `algClosedFieldDualOriginDimensionLowerBound_of mumford
   finitePresentation ample`, from module

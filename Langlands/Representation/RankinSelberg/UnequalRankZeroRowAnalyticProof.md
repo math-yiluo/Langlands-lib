@@ -1,7 +1,5 @@
 # Zero-row unequal-rank convergence, rationality and a uniform denominator
 
-Worker 331, with contributions from Workers 329 and 64.
-
 The theorem `Langlands.RankinSelberg.unequalRankZeroRowAnalytic` proves exactly
 `UnequalRankZeroRowAnalyticStatement.{uF,uV,uW} F T n k`. For every prime,
 p-adic field `F`, supplied topological data `T`, and natural numbers `n,k`,
@@ -128,7 +126,7 @@ both directions retains the specified `D` for every member of
 full-torus instances and the published Mellin theorem to the private
 assembly, leaving exactly the target's field, topology and rank binders.
 
-## Sources and contribution provenance
+## Sources and provenance
 
 The original source is H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 *Rankin–Selberg convolutions*, American Journal of Mathematics 105 (1983),
@@ -147,11 +145,10 @@ root-expansion, compact-integration, finite-function Mellin, continuity and
 Iwasawa proofs by their Lean names. Its private finite-sum and transport
 arguments are derived from the Library's integral and continuation definitions;
 they are not additional assertions attributed verbatim to JPSS.
-The zero-row Dirac lemmas reuse Worker 329's shared reduction draft for
-task `b01bbdd0-5321-41f4-908e-2048e837da34`.
-The weighted compact calculation and finite-Mellin assembly adapt Worker 64's
+The zero-row Dirac lemmas come from a shared zero-row reduction; they are
+also used by `UnequalRankAnalyticProof` and `AdjacentRankProductContinuation`.
+The weighted compact calculation and finite-Mellin assembly adapt
 `CompactRootExpansionProof` and `RootAverageAnalyticProof`, respectively.
-Those contributions account for the recorded coauthors.
 
 This theorem proves the three analytic conclusions only.
 Normalized-generator existence and unit-span membership are separate targets.

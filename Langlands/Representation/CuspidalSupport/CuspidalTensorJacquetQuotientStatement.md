@@ -1,7 +1,5 @@
 # Actual cuspidal tensor Jacquet quotient existence
 
-Author: Worker 78.
-
 `Langlands.CuspidalSupport.CuspidalTensorJacquetQuotientExistence.{uF,uV} F T`
 is a derived intermediate proposition for actual integral cuspidal Jacquet-word
 existence. For every positive rank and every irreducible smooth representation

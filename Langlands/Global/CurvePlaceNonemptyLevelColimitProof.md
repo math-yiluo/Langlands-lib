@@ -1,8 +1,5 @@
 # Colimits over nonempty finite sets of actual curve places
 
-Authors: Worker 208 (Lean proof and first Markdown); Worker 840 (submission
-and Markdown revision).
-
 The theorem `Langlands.Global.curvePlaceNonemptyLevelColimit` has type
 exactly `CurvePlaceNonemptyLevelColimitStatement.{u}`. The fields `k` and
 `F` belong to an arbitrary common universe `u`, with `Algebra k F` and a
@@ -91,8 +88,7 @@ Grothendieck approaches to adelic points* (December 31, 2011), Section 2,
 printed p.1. There, finite nonempty place sets index the open adelic
 levels and their direct limit. This proof concerns only the published
 actual curve-place rings, topologies, literal inclusions and canonical
-cocones. Three topics remain separate obligations of the whole-paper
-task:
+cocones. Three topics of Conrad's paper remain separate obligations:
 
 - identification with the conventional places of a global function field;
 - local compactness;

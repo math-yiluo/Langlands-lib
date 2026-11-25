@@ -27,7 +27,7 @@ chosen.
 `exists_finiteMellin_common_halfPlane` first applies
 `exists_finset_additiveConductor_eq_zero` to the supplied global data. This
 finite support follows from the exact positive-sign additive product formula
-and the lattice arithmetic proved by Worker 1798. It is not an additional
+and the lattice arithmetic proved in `Hecke.AdelicLattice`. It is not an additional
 premise. The existing Fourier divisor theorem enlarges that exceptional set
 by the finite multiplicative ramification set. The original series for the
 character and its inverse, and the Fourier series, all converge absolutely
@@ -55,6 +55,6 @@ No exceptional coefficient or epsilon factor is divided out. The argument
 `1-s`, integer exponents, uniformizers, local spectral variables and p-adic
 Haar normalizations are the existing ones from `HeckeDivisorEulerProduct`.
 The provenance is direct composition of those proved finite-series results
-with the actual conductor-support adapter. This unit does not identify these
+with the actual conductor-support adapter. This module does not identify these
 sums with adelic integrals or prove archimedean Mellin formulas, meromorphic
 continuation or the global functional equation.

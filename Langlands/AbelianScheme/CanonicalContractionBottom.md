@@ -24,5 +24,6 @@ maps previously defined, using their fixed cocycle retraction and covers.
 
 The provenance is internal specialization of the generic bottom-degree
 representative calculation and the existing canonical multiplication
-pullback. This unit does not prove the general creation-contraction relation,
-exterior generation, or the host exterior/coproduct comparison.
+pullback. This module does not prove the general creation-contraction relation,
+exterior generation, or the exterior/coproduct comparison
+`FieldH2ExteriorCoproductComparisonStatement`.

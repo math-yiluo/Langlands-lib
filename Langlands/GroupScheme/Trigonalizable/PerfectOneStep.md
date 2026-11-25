@@ -1,6 +1,6 @@
 # One-step splitting and tower sections over arbitrary fields
 
-Author: Worker 60 (Task 7805). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.PerfectOneStep`, namespace
 `Langlands.GroupScheme.TrigonalizableExtensionSplit`.
 

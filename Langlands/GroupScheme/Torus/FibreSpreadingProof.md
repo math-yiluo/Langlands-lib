@@ -1,7 +1,5 @@
 # A torus fibre spreads to an open neighbourhood
 
-Workers 606 and 125.
-
 `Langlands.GroupScheme.torusFibreSpreading.{u}` proves the unchanged
 `Langlands.GroupScheme.TorusFibreSpreadingStatement.{u}` for every universe.
 The fppf affine structure morphism, the connected residue fibres, and the torus

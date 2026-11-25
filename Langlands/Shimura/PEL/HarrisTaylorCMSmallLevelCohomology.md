@@ -68,7 +68,7 @@ representative theorem after installing actual downward closure. It retains
 an explicit `Nonempty (SmallCMLevel D)` premise. The colimit's indexing
 category is the opposite ordered category, so its maps shrink the levels.
 
-This unit constructs the cohomology colimit conditionally. It does not prove
+This module constructs the cohomology colimit conditionally. It does not prove
 q, arithmetic existence, small-level existence, the named geometric inputs,
 or coefficient-level triviality of a general nonconstant Harris coefficient
 system. In particular, the scheme self-arrow identity alone is not used to

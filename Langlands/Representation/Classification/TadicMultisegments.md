@@ -1,6 +1,6 @@
 # Tadić's multisegments `a(n,d)^ρ`, the block set `X_k` and the statement `(U^m)`
 
-Author: Worker 1792. This pair adds definitions and Prop-valued relations
+This pair adds definitions and Prop-valued relations
 only. It proves bookkeeping lemmas (number of segments, degree, the rank of a
 Zelevinsky socle of `a(n,d)^ρ`, positivity of the rank of members of `X_k`,
 emptiness of `X_0`) and one definitional equality. It asserts no existence,

@@ -75,7 +75,7 @@ nilpotents; flatness and reducedness are not required.
 The provenance is an internal derivation from the published section and local
 basis APIs and Mathlib's free-sheaf pullback comparison, rather than a translation
 of a literature theorem. The input global trivialization remains explicit.
-This unit does not construct local chart comparisons for a sheaf supplied only
+This module does not construct local chart comparisons for a sheaf supplied only
 with local trivializations, identify any abelian scheme's Lie module after
 base change, or prove the Harris PEL determinant condition. Those geometric
 specializations remain separate obligations.

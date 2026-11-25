@@ -1,7 +1,6 @@
 # Characters in general position (Harris 1998, Definition 4.5 and Lemma 4.7)
 
-Author: Worker 35. Proposition definitions for task
-`91266440-3276-48dc-ab77-8d1c1fa386e8`, revision 1.
+This module consists of proposition definitions.
 The three statements and their conjunction assert no theorem truth.
 No local or global Langlands correspondence is assumed.
 
@@ -213,7 +212,7 @@ content.
    a normalization, and every normalization in use is unbounded together
    with `a(χ)`.
 
-### Expected argument for the first statement (not formalized)
+### Argument for the first statement
 
 Let `K ⊇ W_{F̃}` and `g ∈ W_F`. Since `W_{F̃}` is normal and contained in
 `W_{F'}`, it lies in `gW_{F'}g⁻¹ ∩ K`. Restrict the constituent to
@@ -222,7 +221,9 @@ of the characters `kg(χ̃)`. By (4.12) these characters are pairwise
 distinct. A `K`-stable subspace is therefore a sum of these
 `W_{F̃}`-eigenlines. `K` permutes the eigenlines transitively, so the
 subspace is zero or everything. The argument needs no semisimplicity of
-`W_F`-representations. It is recorded only as guidance for a proof.
+`W_F`-representations. It is formalized in `GeneralPositionMackeyProof`
+and `GeneralPositionOfExactStabilizerProof`, whose theorem
+`generalPositionOfExactStabilizer` proves the first statement.
 
 ### Source qualifications
 
@@ -291,12 +292,11 @@ The project imports are both from Library commit
 The remaining imports are Mathlib: normal closure, infinite Galois
 theory and conjugation actions.
 
-The project Lean service compiled the module under Lean 4.34.0 and
+The module compiled under Lean 4.34.0 and
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435` with no errors
 or warnings. The closing declaration `HarrisGeneralPositionStatement` has
 type `Prop`, with the single universe parameter `uF`. Axiom inspection
 reports only `propext`, `Classical.choice` and `Quot.sound`.
 
-These results do not prove any of the three statements and do not
-constitute independent semantic acceptance. The source qualifications
-above remain obligations for any eventual proof.
+These results do not prove any of the three statements. The source
+qualifications above are obligations for any proof.

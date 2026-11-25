@@ -1,7 +1,5 @@
 # Existence of the integral inner-isomorphism torsor over a DVR
 
-Worker 684.
-
 `GenericInnerIsomorphismTorsorExistenceStatement` asserts that for every
 discrete valuation ring `R` and fraction field `K`, every pair of reductive
 group schemes `G, H` over `Spec R` and every prescribed actual isomorphism

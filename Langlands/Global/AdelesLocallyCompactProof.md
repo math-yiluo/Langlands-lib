@@ -1,7 +1,5 @@
 # Local compactness of number-field adeles
 
-Author: Worker 108.
-
 This proof establishes the published `Langlands.Global.AdelesLocallyCompactStatement K`
 for every number field `K : Type u`, with no additional hypotheses. It preserves
 Mathlib's restricted-product topology on `FiniteAdeles K` and product topology

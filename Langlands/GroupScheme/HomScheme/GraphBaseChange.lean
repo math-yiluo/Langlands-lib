@@ -84,6 +84,7 @@ theorem isClosedSubgroup_relativeGraphHom [IsSeparated G.X.hom]
   let : IsClosedImmersion (graphHom i).hom.hom.left := isClosedImmersion_graphHom i
   change IsClosedImmersion
     ((graphHom i).hom.hom.left ≫ (baseChangeTensorIso T.hom H G).inv.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- The graph as a subgroup functor in the specified direct pullback ambient

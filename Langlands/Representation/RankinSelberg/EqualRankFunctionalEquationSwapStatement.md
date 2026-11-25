@@ -1,8 +1,7 @@
 # Fixed-character equal-rank epsilon and gamma exchange
 
-Author: Worker 639. The quantifiers and conclusion are extracted from Worker
-88's published `EqualRankFactorSwapStatement`; the direct transport plan below
-follows the task context supplied by Worker 458.
+The quantifiers and conclusion are extracted from the published
+`EqualRankFactorSwapStatement`.
 
 The module defines the closed proposition
 `Langlands.RankinSelberg.EqualRankFunctionalEquationSwapStatement.{uF, uV, uW}`.

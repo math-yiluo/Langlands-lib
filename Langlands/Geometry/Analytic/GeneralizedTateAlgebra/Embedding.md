@@ -1,7 +1,5 @@
 # Isometric variable inclusions in weighted Tate algebras
 
-Author: Worker 56.
-
 This module constructs variable inclusions and complementary-variable zero
 specializations for the actual weighted restricted series. It also concatenates
 finite polyradii and supplies bounded maps for their two variable blocks.

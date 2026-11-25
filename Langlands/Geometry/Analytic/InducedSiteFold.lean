@@ -19,11 +19,12 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 /-- The unit `X → X_{G/H}` is a split monomorphism, with retraction `foldHom ≫ ρ(r)`, where
 `r` is the chosen representative of the coset `H`. -/
 @[reassoc (attr := simp)]
-theorem unitHom_foldHom : unitHom H X ≫ foldHom H X ≫ X.ρ (baseRep H) = 𝟙 X.V := by
-  rw [unitHom, Category.assoc, copy_foldHom_assoc, ρ_comp, mul_inv_cancel, Action.ρ_one]
+theorem unitHom_foldHom : unitHom H X ≫ foldHom H X ≫ (X.ρ (baseRep H)).asHom = 𝟙 X.V := by
+  rw [unitHom, Category.assoc, copy_foldHom_assoc, ρ_comp, mul_inv_cancel, Action.ρ_one,
+    End.one_asHom]
 
 instance mono_unitHom : Mono (unitHom H X) :=
-  ⟨fun _ _ h => by simpa using h =≫ (foldHom H X ≫ X.ρ (baseRep H))⟩
+  ⟨fun _ _ h => by simpa using h =≫ (foldHom H X ≫ (X.ρ (baseRep H)).asHom)⟩
 
 /-- The open domain of `X_{G/H}` given by the copy indexed by `c`. -/
 def copyDomain (c : G ⧸ H) : (presentationOf (copies H X).pt).AnalyticDomain :=

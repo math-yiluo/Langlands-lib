@@ -1,7 +1,5 @@
 # Galois transport of character and cocharacter lattices
 
-Worker 207.
-
 This module defines the Galois action on the character and cocharacter
 lattices of a commutative group scheme after base change. For a field
 extension `K / k`, an automorphism `σ ∈ Aut_k(K)` acts on `X^*(T_K)` and on

@@ -1,10 +1,9 @@
 # Invariant form data for tied real standard modules
 
-Author: Worker 378. Module `Langlands.Representation.Archimedean.RealTemperedFormProof`. Its auxiliary
+Module `Langlands.Representation.Archimedean.RealTemperedFormProof`. Its auxiliary
 declarations are in the namespace `Langlands.Archimedean.RealTemperedForm`. The final theorem is
 `Langlands.Archimedean.realTemperedForm`. The module proves the Library statement
-`Langlands.Archimedean.RealTemperedFormStatement` (module `RealTemperedCommutantReduction`) for
-Task 7625. It changes no published file.
+`Langlands.Archimedean.RealTemperedFormStatement` (module `RealTemperedCommutantReduction`).
 
 The proof is derived here and follows no specific literature source. Its Lie identity uses a
 "dual partner", like the Library's complex analogue `ComplexTemperedComplement.unitaryForm_lie_add`.

@@ -1,7 +1,7 @@
 # Normalized compact averages for zero-row unequal-rank integrands
 
 `Langlands.RankinSelberg.unequalRankZeroRowNormalizedCompactIntegration` proves
-exactly the accepted proposition
+exactly the published proposition
 `UnequalRankZeroRowNormalizedCompactIntegrationStatement.{uF,uV,uW} F T n k`.
 It preserves the supplied field `F`, every supplied topological datum `T`,
 independent universes for the field and the two representations, and every
@@ -80,7 +80,7 @@ integral. Finiteness of `ν` identifies
 are chosen before the function `H`.
 
 Apply this lemma to the coset label `D`. For arbitrary `g ∈ G` and `s ∈ ℂ`,
-the function in the accepted target is exactly
+the function in the target is exactly
 
 \[
 H_{g,s}(u)=
@@ -117,7 +117,7 @@ ambient measure `μ.restrict K`, preserving the representatives, weights and
 uniformity in both parameters.
 
 This is an internal derived compact integration argument. The finite-average
-step uses Worker 64's `CompactIntegration.finite_average` in
+step uses `CompactIntegration.finite_average` in
 `Langlands.Representation.RankinSelberg.CompactIntegrationProof`. The helper
 is public so both compact integration proofs use its unchanged statement and
 proof. The normalization and measurable-subtype argument follows the published
@@ -126,14 +126,14 @@ Haar and Mathlib theorems by name. The new part pulls the larger-rank
 stabilizer through the actual embedding and applies the coset argument to
 the actual zero-row integrand.
 
-The source motivation, inherited from the accepted statement, is
+The source motivation, inherited from the statement, is
 Jacquet–Piatetski-Shapiro–Shalika, *Rankin–Selberg Convolutions* (1983),
 printed p.391, proof of Theorem 2.7, paragraph preceding display (3), and
 printed p.394, display (7). These passages motivate compact finiteness and
 the diagonal determinant shift. The exact normalized finite-average
 interface is an internal derivation, rather than a verbatim JPSS theorem.
 The proof establishes compact averaging; the parent's final analytic
-assembly and the separately owned Iwasawa and Mellin steps remain separate.
+assembly and the Iwasawa and Mellin steps remain separate.
 
 Registered source: `jpss-1983-rankin-selberg`, PDF SHA256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.

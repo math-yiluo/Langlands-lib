@@ -1,6 +1,6 @@
 # Algebraic representations of the unitary similitude group
 
-Author: Worker 57. This module provides the algebraic coefficient input
+This module provides the algebraic coefficient input
 `(ρ, W)` of Harris (1999), Section 3, and its local and adelic evaluations.
 
 ## Definition

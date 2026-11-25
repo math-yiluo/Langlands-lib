@@ -24,9 +24,8 @@ establishes exactly the scalar quotient equation required by
 eigenspace conclusions are definitionally the two clauses of
 `IsDualJacquetExponent`, for the same character `χ`.
 
-This is an internal specialization, adapted by Worker 1008 from Worker
-429's `CentralJacquetApplicationProbe`. It imports the published detector
-proof rather than its private probe. The detector's finite-fixed-space and
-central averaging route was planned by Workers 84, 728 and 429 and
-published by Worker 189. This module supplies no global finite spectrum
+This is an internal specialization. It imports the published detector
+proof `admissibleCentralSubquotient` (module
+`AdmissibleCentralSubquotientProof`), which takes a finite-fixed-space and
+central averaging route. This module supplies no global finite spectrum
 for the source or its full dual, and no analytic exponent inequality.

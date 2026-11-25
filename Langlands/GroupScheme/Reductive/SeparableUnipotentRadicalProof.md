@@ -1,11 +1,7 @@
 # Unipotent radicals under separable algebraic extension: proof
 
-Author: Worker 169. The proof route follows the outline of a draft by Worker 3483
-(Task 3483) described in the context of Task 5659; that draft's files were not
-available in this instance, so the Lean code here was written anew.
-
 The theorem `Langlands.GroupScheme.separableAlgebraicUnipotentRadical` proves the
-unchanged published proposition
+published proposition
 `Langlands.GroupScheme.SeparableAlgebraicUnipotentRadicalStatement.{u}`
 (module `Langlands.GroupScheme.Reductive.SeparableUnipotentRadicalStatement`) at an
 arbitrary universe `u`, with no added hypothesis. The module also proves two
@@ -106,13 +102,12 @@ From Mathlib: `SeparableClosure`, `IsSepClosed.lift`, the `IsGalois` instance fo
 separable closure, `Spec.map_comp` and `CommRingCat.ofHom_comp`.
 
 The module sets `backward.isDefEq.respectTransparency false` and
-`maxHeartbeats 800000`, as do the imported modules it relies on. The development
+`maxHeartbeats 800000`, as do the imported modules it relies on. An axiom
 check reports only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance
 
-This is an internal deduction from the published results listed above. It changes
-neither the statement's Lean/Markdown pair nor anything it imports.
+This is an internal deduction from the published results listed above.
 
 The target derives from Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second
 edition (2015), Proposition 1.1.9(1), printed pp. 8–9 (PDF pp. 34–35), registered as

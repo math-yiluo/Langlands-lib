@@ -6,7 +6,7 @@ Lean module: `Langlands.Representation.Archimedean.RealCharacterInducedPushforwa
 ## Role and provenance
 
 This module is an internal step in the proof of
-`Langlands.Archimedean.RealCharacterInducedFiltrationStatement` (Task 7133). That statement
+`Langlands.Archimedean.RealCharacterInducedFiltrationStatement`. That statement
 asks for the adjacent filtration `RealAdjacentFiltration 3 [] [] (character c) (induced d)`
 of the `O(3)`-finite functions of the standard module of `[c, d]`, where `c` is a real
 character and `d` a complex character of nonzero weight. This module proves it in two of the
@@ -17,7 +17,7 @@ as a hypothesis `hL`. That statement is not proved here.
 The idea is the classical one: realize the induction block `d` inside a principal series
 `[χ_b, χ_a]` of `GL_2(ℝ)`, build the filtration on the principal series of `GL_3(ℝ)` by
 intertwining operators between the orderings of three characters, and push it forward. Here
-the intertwining operators are the block Frobenius maps of Task 7067 (modules
+the intertwining operators are the block Frobenius maps (modules
 `RealBlockFrobeniusMap`, `RealBlockPositionData`, `RealCharacterPairFiltration`,
 `RealCharacterPairReducible`): a map on block Fourier coefficients along one rotation,
 `Φ^p_j (q f) = μ(j) Φ^p_j f`, with a multiplier `μ`. The multipliers are those of the Library
@@ -41,7 +41,7 @@ literature statement is formalized, so the module has no sources.
   `G = [c, sgn^{s_b}|·|^a, sgn^{s_a}|·|^b]` (`lG`), and, for `ℓ' ∈ ℕ`,
   `R = [χ_b, induced(pairInduced c χ_a ℓ')]` (`lR`).
 - `pairParity c c' = (ε_c + ε_{c'}) mod 2`, and `sigma0 c c' = (-1)^{pairParity c c'}`
-  (Task 7067).
+  (modules `RealCharacterPairData` and `RealCharacterPairReducible`).
 - `w = b - s`, the difference of exponents of the first swap.
 
 ## Declarations
@@ -70,7 +70,7 @@ The Library proves the recurrence and nonvanishing of `genericMultiplier ν ε` 
 
 ### Frobenius maps
 
-For data `h : IsBlockFrobData n ds es p ε σ μ` (Task 7067), `blockFrobMap h : K(ds) → K(es)`.
+For data `h : IsBlockFrobData n ds es p ε σ μ` (module `RealBlockFrobeniusMap`), `blockFrobMap h : K(ds) → K(es)`.
 
 - `frob_inv_of_ne_zero`: if `μ` has no zeros on the class `k ≡ ε`, the map with the inverse
   multiplier `k ↦ (μ k)⁻¹` is a right inverse (`blockFrobMap_blockFrobMap_eq`).
@@ -82,7 +82,7 @@ For data `h : IsBlockFrobData n ds es p ε σ μ` (Task 7067), `blockFrobMap h :
   induction block of weight `ℓ` at `p` vanish.
 - `ker_tail_le_range`: with `h₀` the map with multiplier `binomialMultiplier ℓ ε` (and `hB` its
   inverse-multiplier map) and `D` the tail map out of its target, `ker D ≤ range h₀`. Proof:
-  Task 7067's `ker_le_range`; a zero of the binomial multiplier has `|j| ≥ ℓ`, and there the
+  `ker_le_range` (module `RealCharacterPairReducible`); a zero of the binomial multiplier has `|j| ≥ ℓ`, and there the
   tail multiplier is nonzero.
 
 ### Filtrations with two pieces
@@ -113,7 +113,8 @@ For data `h : IsBlockFrobData n ds es p ε σ μ` (Task 7067), `blockFrobMap h :
 
 ### The lists and the Frobenius data
 
-All data come from Task 7067's constructors: `data_D` and `data_q1` (tail maps onto an
+All data come from the constructors of the modules `RealCharacterPairReducible` and
+`RealBlockFrobeniusMap`: `data_D` and `data_q1` (tail maps onto an
 induction block and their inverses), `data_swap` and `data_unswap` (swaps of two characters
 and their inverses), and `IsBlockFrobData.of_mid`.
 
@@ -233,7 +234,7 @@ and their inverses), and `IsBlockFrobData.of_mid`.
   Proof. The first swap is generic as in case (a): its parity class is `k mod 2`, so its
   denominators `pairParity + 2i + 1 + k` are positive and its numerators vanish only if
   `k = pairParity + 2m + 1`, which has the wrong parity. The second swap has `a - s = ℓ'`, and
-  `ℓ' - 1 - pairParity c χ_a` is even; it uses Task 7067's reducible data: `Q₂` with
+  `ℓ' - 1 - pairParity c χ_a` is even; it uses the reducible data of `RealCharacterPairReducible`: `Q₂` with
   `binomialMultiplier ℓ'`, the tail map `D : K(Y) → K(R)` and its inverse-multiplier map
   `q : K(R) → K(Y)`. Here `D (q f) = f` (`tail_inv`), `ker D ≤ range Q₂` (`ker_tail_le_range`),
   and `q` is an intertwiner modulo `range Q₂` (`isRealIntertwinerModulo_of_leftInverse`).

@@ -1,7 +1,5 @@
 # Finite twisted coinvariants of irreducible cuspidal Levi representations
 
-Author: Worker 288.
-
 `Langlands.Whittaker.leviCuspidalCoinvariantFiniteness` proves exactly the
 published proposition
 [`LeviCuspidalCoinvariantFinitenessStatement.{uF,uV}`](LeviCuspidalCoinvariantFinitenessStatement.md).

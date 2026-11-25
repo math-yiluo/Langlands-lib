@@ -38,5 +38,5 @@ its infinitesimal structure.
 For a supplied `AffinePinnedModel`, `centerKernel` and `centerKernelHom` expose
 the actual group and inclusion. `centerKernel_isSchemeTheoreticCenter` and
 `centerKernel_isDiagonalizable` give the two local inputs needed for étale
-descent to an arbitrary base. This unit constructs and proves the local
+descent to an arbitrary base. This module constructs and proves the local
 representative; it does not itself assert the global descent theorem.

@@ -1,7 +1,5 @@
 # Length-one Speh comparison
 
-Author: Worker 1431.
-
 `spehLengthOneComparison` proves exactly
 `Langlands.Classification.SpehLengthOneComparison.{uF,uV} F T`.
 It works for every prime, finite p-adic field and compatible topology, with

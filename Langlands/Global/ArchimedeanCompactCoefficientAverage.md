@@ -1,7 +1,5 @@
 # Matrix-coefficient averages for the actual compact action
 
-Author: Worker 94.
-
 This internal development applies the actual scalar weighted averaging operator
 to the inverse matrix coefficients of a published `ContinuousCompactRep`.
 For a fixed smooth input and a fixed coordinate of the source model, the

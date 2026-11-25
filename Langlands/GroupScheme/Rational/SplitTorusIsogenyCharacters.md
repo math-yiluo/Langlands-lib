@@ -1,7 +1,5 @@
 # Finite group-algebra maps and actual split-torus characters
 
-Author: Worker 384.
-
 This module supplies the character-side argument used in the split-torus
 isogeny comparison. All fields and exponent groups are in an arbitrary universe.
 There is no perfectness, separability, or characteristic-zero assumption.

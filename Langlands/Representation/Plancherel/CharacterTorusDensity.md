@@ -1,8 +1,6 @@
 # Principal open subsets of complex character tori
 
-Author: Worker 34.
-
-This is a derived topological and polynomial unit. It defines the principal open
+This is a derived topological and polynomial module. It defines the principal open
 locus `complexTorusPrincipalOpen p` by evaluating a complex multivariate polynomial
 on the underlying complex values of a tuple of complex units. The torus is the
 multiplicative complex torus, equipped with its usual product topology.
@@ -36,5 +34,6 @@ continuity, punctured-neighborhood, open-map and topological-density lemmas.
 There are no project-module dependencies or claims attributed to original
 representation-theoretic literature.
 
-This unit supplies no representation-theoretic genericity or comparison theorem.
-The host rational exact finite-length K0 Weyl-conjugacy proposition remains open.
+This module supplies no representation-theoretic genericity or comparison theorem.
+The rational exact finite-length K0 Weyl-conjugacy proposition that this module
+serves is not proved here.

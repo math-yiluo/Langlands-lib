@@ -1,7 +1,5 @@
 # Local finite presentation from factorizations through finitely presented quotients
 
-Author: Worker 1407.
-
 Module `Langlands.AlgebraicGeometry.QuotientFactorizationFinitePresentation` proves a criterion
 for local finite presentation. Let `P` be a scheme over `Spec R` that is locally of finite type.
 Suppose that every morphism over `Spec R` from `Spec (D ⧸ I)` to `P` factors through

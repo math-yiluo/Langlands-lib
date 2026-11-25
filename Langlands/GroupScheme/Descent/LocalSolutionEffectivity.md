@@ -3,8 +3,9 @@
 This is an internal construction derived from `LocalSolutionGluing`, actual
 transport under restriction (`ReindexTransport`), and reconstruction from an
 underlying scheme solution (`SchemeSolutionGroup`). It makes no external
-source claim. It is a prerequisite for general-base effectivity and the host
-quasi-split inner-form proof.
+source claim. It is a prerequisite for general-base effectivity and the proof of
+the quasi-split inner-form theorem over an arbitrary base,
+`RelativeQuasiSplitInnerFormExistenceStatement`.
 
 All schemes lie in an arbitrary universe `u`. Let `p : S → B` be surjective
 and étale, `G` an actual group scheme over `S`, and `D` a Čech descent datum
@@ -12,7 +13,7 @@ for `G` along `p`. Let `𝒰` be an open cover of `B`, indexed by a small thin
 category, with the `LocallyDirected` structure. The input family `s i` is an
 actual `Solution (D.baseChange (𝒰.f i))` for each chart. No affineness or
 quasi-compactness hypothesis is imposed here. The local solutions are supplied;
-this unit does not construct them.
+this module does not construct them.
 
 The preceding gluing construction supplies a scheme `obj D 𝒰 s` over `B`,
 a map `proj D 𝒰 s` from the original group scheme, its pullback square, and
@@ -43,5 +44,7 @@ constructed actual quotient and its cartesian square. `solution` applies
 `SchemeSolution.solution` to reconstruct the actual group operations and the
 isomorphism over `S` compatible with the original datum. Thus a global
 `Solution D` is constructed from the supplied local solutions. Unconditional
-local-solution existence, affine descent, reductive geometry, and the host
-inner-form theorem remain separate obligations.
+local-solution existence, affine descent, reductive geometry, and the
+inner-form theorem remain separate obligations (the Library proves that
+theorem as `relativeQuasiSplitInnerFormExistence` in
+`Reductive.RelativeQuasiSplitInnerFormProof`).

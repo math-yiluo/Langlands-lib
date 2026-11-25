@@ -63,8 +63,7 @@ bilateral series module. The module proves the lower L assertion only.
 The parent upper-family L theorem additionally needs the existing complete
 ordered-family reversal, and the gamma assertion is separate.
 
-Worker 1191 is credited for the included spectral-clearing bridge.
-Workers 831 and 15 are credited for the included zero-comparison
+The module uses the spectral-clearing bridge and the zero-comparison
 construction in `AdjacentRankSecondBlockLDivisibility`. The published
 second-block deformation theorem is reused by its Lean name.
 

@@ -42,4 +42,4 @@ After introducing the data (with `L(F)` and `M(F)` carrying their canonical topo
 
 `PQOuterLeviRadicals`, `PQOuterLeviSupport`, `PQOuterLeviOperator`, `PQOuterLeviRegularity`
 (this proof), and `HaarTransportComparison`, `LeviInductionStagesFormula`,
-`PQIntegralUniqueness` (written by Worker 115 for part (ii), used here unchanged).
+`PQIntegralUniqueness` (written for part (ii), used here unchanged).

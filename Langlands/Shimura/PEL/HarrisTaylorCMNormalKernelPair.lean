@@ -86,7 +86,7 @@ local notation "kernelPair" => representedCMNormalKernelPair D C preservation co
 /-- The graph of a residual translate lies in the actual forgetting kernel pair. -/
 def representedCMNormalGraph (g : SmallCMResidualGroup D U V) :
     (schemes R).obj V ⟶ kernelPair R U V hVU :=
-  pullback.lift (𝟙 _) ((quotientAction R U V hVU).ρ g) (by
+  pullback.lift (𝟙 _) ((quotientAction R U V hVU).ρ g).asHom (by
     simpa using (representedCMNormalProjection_invariant D C preservation composition
       unitCoherence associativity comparison symmetry stability square universality
       dualityNaturality polarizationStability compatibility h htor R U V hVU g).symm)
@@ -102,7 +102,7 @@ local notation "graph" => representedCMNormalGraph D C preservation composition
 
 @[reassoc (attr := simp)] theorem representedCMNormalGraph_snd
     (g : SmallCMResidualGroup D U V) :
-    graph R U V hVU g ≫ pullback.snd _ _ = (quotientAction R U V hVU).ρ g := by
+    graph R U V hVU g ≫ pullback.snd _ _ = ((quotientAction R U V hVU).ρ g).asHom := by
   exact pullback.lift_snd _ _ _
 
 /-- The identity residual translate gives the actual diagonal. -/
@@ -111,7 +111,7 @@ local notation "graph" => representedCMNormalGraph D C preservation composition
   apply pullback.hom_ext
   · rw [representedCMNormalGraph_fst, pullback.lift_fst]
   · rw [representedCMNormalGraph_snd, pullback.lift_snd]
-    exact (quotientAction R U V hVU).ρ.map_one
+    exact congrArg CategoryTheory.End.asHom (quotientAction R U V hVU).ρ.map_one
 
 /-- The concrete normal-cover comparison, with no isomorphism assumption or conclusion. -/
 def representedCMNormalKernelComparison :
@@ -140,12 +140,12 @@ local notation "kernelComparison" => representedCMNormalKernelComparison D C pre
 /-- The second projection applies the original residual action. -/
 @[reassoc (attr := simp)] theorem representedCMNormalKernelComparison_snd :
     kernelComparison R U V hVU ≫ pullback.snd _ _ =
-      Sigma.desc (fun g : SmallCMResidualGroup D U V => (quotientAction R U V hVU).ρ g) := by
+      Sigma.desc (fun g : SmallCMResidualGroup D U V => ((quotientAction R U V hVU).ρ g).asHom) := by
   apply Sigma.hom_ext
   intro g
   rw [representedCMNormalKernelComparison_ι_assoc, representedCMNormalGraph_snd]
   exact (Sigma.ι_comp_desc
-    (fun g : SmallCMResidualGroup D U V => (quotientAction R U V hVU).ρ g) g).symm
+    (fun g : SmallCMResidualGroup D U V => ((quotientAction R U V hVU).ρ g).asHom) g).symm
 
 omit [(V.obj.subgroup.subgroupOf U.obj.subgroup).Normal] in
 /-- Both kernel-pair projections have the same composite with original forgetting. -/

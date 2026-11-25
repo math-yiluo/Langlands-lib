@@ -1,7 +1,5 @@
 # Actual irreducible support and the full Bernstein blocks
 
-Author: Worker 1153.
-
 This is a derived construction of the objects needed in Renard VI.7.1–2, printed pp.180–182 / PDF pp.186–188, in David Renard, *Représentations des groupes réductifs p-adiques*, 9 July 2026 version. Registered source: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. It constructs support relations and full categories, with elementary intrinsic closure laws. It does not prove the source's support uniqueness, support-map or Bernstein decomposition theorems.
 
 The parameters are the actual connected-reductive standard family `BernsteinStandardFamily i ν` from `BernsteinData`, over an arbitrary nonarchimedean local field. Its actual structural decompositions and closedness, canonical ambient rational-point topology, local compactness and nonarchimedean-group hypotheses remain explicit. Local finite type of the ambient scheme is an instance hypothesis, available from `BernsteinStandardFamily.locallyOfFiniteType`. Neither admissibility nor finite length of any smooth object is assumed.

@@ -42,8 +42,9 @@ groups do not depend on which witnesses are supplied.
 ## Provenance
 
 The provenance is internal. The module adds no literature assertion. It is a
-generic prerequisite for the Harris raw-level comparison owned by task
-`6eac742d-7f56-403d-8f08-f535a1ca289c`. Every construction is built from the
+generic prerequisite for the Harris raw-level comparison, a step toward
+division-case representability of the normalized Harris CM presheaf. Every
+construction is built from the
 published finite étale definitions listed above, and every law is proved
 below.
 

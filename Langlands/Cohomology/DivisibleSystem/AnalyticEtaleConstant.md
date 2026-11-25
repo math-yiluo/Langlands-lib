@@ -1,28 +1,28 @@
 # The constant `ℓ`-divisible system of étale `G`-sheaves
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.LocalActionSmoothConstant` (Worker 26, submitted with this
+- `Langlands.Sheaf.Equivariant.LocalActionSmoothConstant` (ported together with this
   module): the constant sheaf functor with values in locally discrete sheaves,
   `LocalActionSystem.smoothConstantSheaf L J R`, with its exactness and additivity.
-- `Langlands.Cohomology.DivisibleSystem.ConstantCoefficients` (Worker 61): the
+- `Langlands.Cohomology.DivisibleSystem.ConstantCoefficients`: the
   `ℓ`-divisible system `scalarSystem R ℓ hℓ` of the modules `R / ℓ ^ m R`, for
   `hℓ : IsSMulRegular R (ℓ : R)`, the identification `scalarSystemObjIso hℓ m` of its level
   `m` with `R ⧸ Ideal.span {ℓ ^ m}`, and `DivisibleSystem.map` along exact additive functors.
-- `Langlands.Cohomology.DivisibleSystem.AnalyticEtale` (Worker 26): `EtaleDivisibleSystem`,
+- `Langlands.Cohomology.DivisibleSystem.AnalyticEtale`: `EtaleDivisibleSystem`,
   the Godement functor `etaleFamilyGodementFunctor` of a family of points of the étale site,
   and Harris's Lemma 2.2, Lemma 2.2 bis, (2.3) and Lemma 2.8 for étale `G`-sheaves.
-- `Langlands.Sheaf.Equivariant.AnalyticEtaleComparison` (Worker 26): Berkovich's `b^*`
+- `Langlands.Sheaf.Equivariant.AnalyticEtaleComparison`: Berkovich's `b^*`
   (`etaleGSheafRestriction`), the plain compactly supported cohomology
   `etaleCompactCohomology L h R q` on the étale site of `X`, the comparison
   `etaleCompactComparison L ρ h R q`, and `etale_hasPointwiseRightKanExtension`.
-- `Langlands.Cohomology.DivisibleSystem.ConstantRestriction` (Worker 26):
+- `Langlands.Cohomology.DivisibleSystem.ConstantRestriction`:
   `constantSheafCompRestrictionIso`, the restriction of a constant sheaf on a twisted site.
-- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtaleConstant` (Worker 26, through
+- `Langlands.Cohomology.DivisibleSystem.AnalyticQuasiEtaleConstant` (through
   `ConstantRestriction`): `isSMulRegular_uLiftInt_natCast`.
 - Through these modules: `AnalyticEtaleCompactCohomology` (sheafification on both sites,
-  `etaleGSheafCompactCohomology`), Worker 21's étale site, points and point axioms, and
-  Worker 3's statements `ProPInvariantSubcomplexStatement` and
+  `etaleGSheafCompactCohomology`), the Library's étale site, points and point axioms, and
+  the statements `ProPInvariantSubcomplexStatement` and
   `FiniteCohomologyInverseLimitStatement`, which enter only as hypotheses `hS` and `hS'`
   and are not proved in the Library.
 
@@ -149,5 +149,5 @@ so this is the closer model. Coefficients are `R / ℓ ^ m R` for a commutative 
 ## Not formalized here
 
 The hypotheses listed above (exactness of the Godement functor, a family of points
-satisfying `hpoints`, `hF`, `hC`, the admissible refinements, the point axioms, Worker 3's
-statements), that the comparison maps are isomorphisms, and Harris's spaces and groups.
+satisfying `hpoints`, `hF`, `hC`, the admissible refinements, the point axioms, the two
+statements `ProPInvariantSubcomplexStatement` and `FiniteCohomologyInverseLimitStatement`), that the comparison maps are isomorphisms, and Harris's spaces and groups.

@@ -1,7 +1,5 @@
 # Isomorphisms near a fibre for flat closed group inclusions
 
-Author: Worker 606.
-
 `Langlands.GroupScheme.FlatClosedLocalIso.isIsoNear_of_residueFiber` proves
 that a closed group-scheme inclusion which is an isomorphism on one residue
 fibre becomes an isomorphism over an open neighbourhood of that base point.

@@ -1,7 +1,5 @@
 # Block projections of a basis
 
-Authors: Worker 187.
-
 The module `Langlands.LinearAlgebra.BasisBlockProjection` (namespace
 `Langlands.LinearAlgebra.BasisBlockProjection`) gives elementary linear algebra for a
 basis whose index set is partitioned into blocks. It is an internal helper for

@@ -1,10 +1,10 @@
 # The augmentation ideal of the convolution dual and conilpotence
 
-Author: Worker 1519, as internal infrastructure for the proof of
+Internal infrastructure for the proof of
 `Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`.
 
 Provenance: internal. The coradical-filtration language is standard coalgebra theory; the
-statements and proofs below are the author's own implementation for the Mathlib convolution
+statements and proofs below are the Library's own implementation for the Mathlib convolution
 ring, and no source statement is translated.
 
 Notation: `k` is a field, `A` a commutative `k`-bialgebra, and the convolution dual is

@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments; universe levels are generalized. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_HilbertFunctor
 import Langlands.AnthropicFLT.P2M.Sol.S_MvPolynomial_relation_mem_span_of_forall_finrank_piece_succ_le
 set_option maxHeartbeats 4000000

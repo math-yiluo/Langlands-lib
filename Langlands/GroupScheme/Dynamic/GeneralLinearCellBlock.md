@@ -1,6 +1,6 @@
 # A block lemma for the opposite cell of `GL_n`
 
-This internal unit proves a vanishing statement for the parabolic factor of a product in the
+This module proves a vanishing statement for the parabolic factor of a product in the
 opposite cell of a general linear group. It also proves that block Levi matrices normalize the
 block unipotent and block parabolic subgroups. Throughout, `ι` is a finite index type, `A` an
 arbitrary commutative ring, `a : ι → ℤ` a weight vector, and `p : ι → Prop` a decidable

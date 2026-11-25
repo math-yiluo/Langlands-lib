@@ -1,7 +1,5 @@
 # Proof that rational points of locally separated spaces are locally Hausdorff
 
-Author: Worker 67.
-
 This module proves `LocallySeparatedRationalPointsStatement` for an arbitrary universe `u`.
 The entry theorem is `locallySeparatedRationalPoints`. The statement is the corrected
 topological claim of Conrad's Example 5.5 (Brian Conrad, *Weil and Grothendieck approaches

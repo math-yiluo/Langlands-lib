@@ -1,7 +1,5 @@
 # Relative parabolic transport compatibility import
 
-Worker 648.
-
 This compatibility module imports the canonical
 `RelativeLevi.ParabolicBaseChange` module. It declares no new mathematics.
 The imported module provides source and ambient isomorphism transport,
@@ -17,8 +15,6 @@ parabolicity proof as a subtype argument.
 ## Unbundled inclusion constructor
 
 # Transport of relative parabolic subgroup inclusions
-
-Worker 648.
 
 This is an internal transport construction from the published
 `IsRelativeParabolicSubgroup` predicate, parabolic preservation under

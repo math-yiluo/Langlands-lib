@@ -1,6 +1,6 @@
 # Rational evaluation at regular points
 
-Worker 31. This internal helper module has namespace
+This internal helper module has namespace
 `Langlands.RankinSelberg.RationalEvaluation`. Its results hold over any field
 `K : Type u` and support the JPSS gamma construction without adding analytic
 hypotheses. Their provenance is elementary algebra of Mathlib's reduced

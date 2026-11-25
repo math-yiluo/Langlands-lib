@@ -1,7 +1,5 @@
 # Complete bounded-map separation on refining source charts
 
-Author: Worker 36.
-
 This internal construction proves that restriction to any locally refining
 selection of original source charts detects equality of full strong maps.
 Its inputs are the actual presented affinoid chart algebras and their original

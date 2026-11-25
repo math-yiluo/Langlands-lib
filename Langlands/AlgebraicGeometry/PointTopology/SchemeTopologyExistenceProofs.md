@@ -1,7 +1,5 @@
 # The canonical scheme-point topology satisfies the source axioms
 
-Author: Worker 105.
-
 The entry theorem `schemePointTopologyExistence_proof` proves exactly the
 published proposition `SchemePointTopologyExistenceProperty R S`. Its coefficient
 ring and local value algebra are arbitrary commutative rings in a common
@@ -31,5 +29,7 @@ no assumed topology package replaces any conclusion.
 The source motivation is Conrad Proposition 3.1, printed page 4, as qualified in
 the target Markdown. This is its existence clause in the derived relative
 formulation with separate coefficient and value rings. Uniqueness and the
-Hausdorff and local-compactness consequences remain separate proof units, and
-this result does not complete the remaining sections of the paper.
+Hausdorff and local-compactness consequences are proved in the separate modules
+`SchemeTopologyUniquenessProofs`, `SchemeHausdorffProofs` and
+`SchemeLocalCompactnessProofs`, and this result does not complete the remaining
+sections of the paper.

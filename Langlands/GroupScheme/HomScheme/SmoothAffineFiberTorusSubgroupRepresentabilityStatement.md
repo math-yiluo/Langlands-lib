@@ -1,7 +1,5 @@
 # Smooth torus-subgroup moduli for groups with affine fibres
 
-Authors: Worker 606 (draft) and Worker 175.
-
 `Langlands.GroupScheme.TorusSubgroupModuli.SmoothAffineFiberTorusSubgroupRepresentabilityStatement.{u}`
 is a proposition about every scheme `S : Scheme.{u}` and every actual group
 scheme `G : GroupScheme S`. There is no restriction on the base: it need not be

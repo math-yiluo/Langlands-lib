@@ -1,8 +1,6 @@
 # Étale transport of relative Borel subgroups
 
-Worker 653.
-
-This supporting draft supplies transport for the descent step in Conrad,
+This supporting module supplies transport for the descent step in Conrad,
 *Reductive group schemes* (2014), Proposition 5.2.12, p.158. The relative
 Borel predicate is the one from Definition 5.2.10, p.157. These are derived
 applications of the existing Library definitions and transport theorems;
@@ -65,6 +63,6 @@ base change, so the existing geometric Borel transport lemmas apply.
 
 This module proves transport and reflection only. It does not construct
 opposite Borels, prove their uniqueness, or eliminate the local dynamic
-presentation and Lie-containment prerequisites of the host proof.
+presentation and Lie-containment prerequisites of the opposite Borel proof.
 
-Shared declarations `IsRelativeBorelSubgroup.iso_comp`, `IsRelativeBorelSubgroup.comp_iso` are imported from `Langlands.GroupScheme.RelativeLevi.BorelTransport`; their mathematical hypotheses, conclusions and data are unchanged.
+The declarations `IsRelativeBorelSubgroup.iso_comp` and `IsRelativeBorelSubgroup.comp_iso` described above are imported from `Langlands.GroupScheme.RelativeLevi.BorelTransport`.

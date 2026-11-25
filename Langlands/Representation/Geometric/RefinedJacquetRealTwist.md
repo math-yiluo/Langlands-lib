@@ -1,8 +1,5 @@
 # Upper refined Jacquet quotients and real determinant twists
 
-Author: Worker 526. Workers 359 and 430 supplied the source-twist and
-normalization guidance in the relative Hom-comparison investigation.
-
 This internal definition/API module constructs
 `Langlands.PadicField.TopologicalData.normalizedRefinedJacquetRealTwistEquiv`.
 For an actual finite p-adic extension `F`, compatible data `T`, an ordered
@@ -83,7 +80,7 @@ construction in `Jacquet.NormalizedCharacterTwistEquiv`, the kernel laws in
 complex scalar algebra. No new external literature result is asserted.
 The public covariance and modulus definitions keep their own provenance.
 
-This unit supplies no full-character extraction, real-coordinate projection,
+This module supplies no full-character extraction, real-coordinate projection,
 tempered cone, geometric filtration, Weyl-branch exclusion, whole-induction
 isolation or Hom comparison. It is the actual source untwisting API needed
 before those separate steps can be applied.

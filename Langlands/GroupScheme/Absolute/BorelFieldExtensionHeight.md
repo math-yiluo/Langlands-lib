@@ -1,7 +1,5 @@
 # A height inequality for special fibres of flat families
 
-Worker 1382.
-
 This helper module is pure commutative algebra. It feeds the specialization step in the
 maximality part of the proof of `Langlands.GroupScheme.BorelAlgClosedFieldExtensionStatement`
 (module `BorelFieldExtensionDescent`, lemma `exists_isPrime_lt_specMap`). All declarations

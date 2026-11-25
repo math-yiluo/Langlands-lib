@@ -165,7 +165,7 @@ The errata snapshot of 2026-11-04 for the 2022 reprint (source ID
 Chapter 22, entries on p. 465 (22.8) and p. 478 (proof of 22.42) only; the
 latter concerns Theorem 22.42, not Lemma 22.40.
 
-## For the later proof (not part of this unit)
+## For the proof (in `SemisimpleRepresentationCodimensionOneProof`, not part of this module)
 
 Milne's proof, printed pp. 476–477, with the details it leaves implicit:
 

@@ -1,7 +1,5 @@
 # Central smooth quotients from explicit structural inputs
 
-Author: Worker 362.
-
 This derived module combines the actual homogeneous quotient and action
 constructions. Its original adapters have three explicit proposition hypotheses:
 `UnipotentAffineOrbitClosedStatement`, `UnipotentFieldExtensionStatement`,

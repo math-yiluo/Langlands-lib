@@ -1,7 +1,5 @@
 # Continuation of unitarizability along a connected parameter set
 
-Author: Worker 1023.
-
 `Langlands.UnitarizabilityContinuationStatement.{uG,uV}` is a proposition
 definition. It names the soft analytic step of the reducibility sketch in
 Zelevinsky 1980, Proposition 1.11, proof, printed p.175 (PDF p.12): positivity of

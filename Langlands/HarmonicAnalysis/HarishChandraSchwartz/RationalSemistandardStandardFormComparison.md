@@ -1,6 +1,6 @@
 # Actual standard source integral and product-core comparison
 
-Worker 268, Task 7258. This derived unit identifies the actual
+This derived module identifies the actual
 source-normalized semistandard orbit form at the standard Levi with
 `standardLeviPlancherelOrbitProductCore` and its integral formula.
 
@@ -42,7 +42,7 @@ unitary inverse-regularity prerequisites of that data. Its additional
 scalar inputs are precisely nonvanishing of the actual
 `StandardSourceComparison.standardScalar` and nonnegative real values
 of its inverse at every unitary unramified character. The existing
-product core uses the resulting dense positive locus; this unit does
+product core uses the resulting dense positive locus; this module does
 not require the Plancherel density to be strictly positive everywhere.
 
 The imported core's additional group-finiteness input remains explicit:
@@ -83,6 +83,5 @@ normalization in this standard specialization.
 This comparison proves no general model/representative/compact
 independence and no new global positivity, Schwartz estimate or
 Plancherel isometry. Those substantive targets and the invariant-family
-restriction remain separate units of Task 7258 and their existing
-owners. The central norm quotient finiteness and all preceding scalar
+restriction are separate. The central norm quotient finiteness and all preceding scalar
 inputs remain visible conditional boundaries of the imported core.

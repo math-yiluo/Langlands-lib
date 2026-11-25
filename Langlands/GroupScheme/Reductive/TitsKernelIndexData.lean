@@ -161,7 +161,7 @@ theorem rootRestriction_neg (a : d.pinning.rootIndex) :
       ((BC).map d.torusMap ≫ d.pinning.rootDatum.root (-a)) =
     -(characterLattice.baseChangeEquiv bE d.splitTorus d.maximalSplit.1.1).symm
       ((BC).map d.torusMap ≫ d.pinning.rootDatum.root a)
-  rw [h, Preadditive.comp_neg, map_neg]
+  rw [h, Preadditive.comp_neg, AddEquiv.map_neg]
 
 /-- An absolute root has zero restriction exactly when it vanishes on the coweight. -/
 theorem rootRestriction_eq_zero_iff_root' (a : d.pinning.rootIndex) :

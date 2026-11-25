@@ -1,7 +1,5 @@
 # Finite rational coverage of every full affinoid domain
 
-Author: Worker 36.
-
 `Langlands.Analytic.PresentedAffinoidAlgebra.Domain.FiniteRationalCoverStatement`
 states the finite rational coverage of an arbitrary full represented affinoid
 domain. The definition returns `Prop`; it does not prove the covering theorem

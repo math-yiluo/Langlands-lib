@@ -1,6 +1,6 @@
 # Langlands heads of `a(d,n)^ρ` are Speh representations
 
-Author: Worker 1792. Module
+Module
 `Langlands.Representation.Classification.TadicSpehHeads`, namespace
 `Langlands.Classification`. Every result is proved from published Library results;
 there are no hypotheses of theorem type, no axioms and no `sorry`.

@@ -3,8 +3,7 @@
 Module `Langlands.GroupScheme.Rational.LanglandsDecompositionStatement`.
 Namespace `Langlands.GroupScheme`. Universe parameter `u`.
 The module contains one **statement**, the `Prop`-valued definition
-`LanglandsCombinatorialDecompositionStatement`. It proves nothing. Worker 24 wrote it under
-Task 5474 (`9abd0e5e-4606-4ee5-b449-49ac84438117`). The cones and the decomposition predicate
+`LanglandsCombinatorialDecompositionStatement`. It proves nothing. The cones and the decomposition predicate
 it uses are defined in `Langlands.GroupScheme.Rational.LanglandsDecompositionCones`. Their
 Markdown gives the source passages V.3.7 and V.3.13–V.3.17, the realization of each cone, and
 the source issue in the `μ⁻` cone.
@@ -15,7 +14,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 edition dated 9 July 2026. It is registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. V.3.18 is on printed
-pp.114–115 / PDF pp.120–121. Worker 24 read it from rendered page images:
+pp.114–115 / PDF pp.120–121. It was read from rendered page images:
 
 > **V.3.18 Lemme combinatoire de Langlands.** Soient `P = MN` un sous-groupe parabolique
 > standard de `G` et `μ ∈ 𝔞*_M`. Le lemme combinatoire de Langlands affirme qu'il existe un
@@ -33,8 +32,8 @@ pp.114–115 / PDF pp.120–121. Worker 24 read it from rendered page images:
 
 The in-book proof is V.5.5 (printed pp.127–129 / PDF pp.133–135). It applies the Euclidean
 Proposition and Corollary of V.5.5 to `V = (𝔞^G_M)*` with basis `Δ(P)`. Those two results are
-the published generic statement `Langlands.Renard.ConeProjectionStatements`, proved under Task
-5418. Notation `⁻[𝔞]^G_P = −(⁺[𝔞]^G_P)` is from V.3.15.
+the published generic statement `Langlands.Renard.ConeProjectionStatements`, proved as
+`Langlands.Renard.coneProjectionStatements` in `Langlands.Analysis.RenardConeProjectionProof`. Notation `⁻[𝔞]^G_P = −(⁺[𝔞]^G_P)` is from V.3.15.
 
 Provenance: **source**, with one **derived** correction. The condition on `μ⁻` follows the V.5.5
 proof (minus a nonnegative combination of the restricted roots of `K ∖ J`), not the literal
@@ -172,10 +171,11 @@ reason is that `B(α, β) ≤ 0` for distinct simple roots and the inverse Gram 
 entrywise nonnegative. So `−μm` is a nonnegative combination of the roots in `K`, and the
 tuple is also a `J = ∅` decomposition, which is unique.
 
-## Remaining proof obligations
+## Proof obligations
 
-The proof is a separate obligation (an exact proof successor task will name
-`Langlands.GroupScheme.LanglandsCombinatorialDecompositionStatement`). The prerequisites below
+The proof is not part of this module; it is
+`Langlands.GroupScheme.langlandsCombinatorialDecomposition` in
+`Langlands.GroupScheme.Rational.LanglandsDecompositionProof`. The prerequisites below
 are not established by this module. They are recorded here so that they are not mistaken for
 proved structural results:
 

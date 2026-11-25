@@ -1,7 +1,5 @@
 # Involutivity of the actual unadjusted Aubert operator
 
-Author: Worker 164.
-
 `Langlands.Aubert.involutivity.{uF,uV} F T` proves exactly
 `Langlands.Aubert.InvolutivityStatement.{uF,uV} F T`: for every natural
 rank `n`, the existing unadjusted endomorphism satisfies

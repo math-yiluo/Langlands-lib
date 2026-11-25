@@ -106,15 +106,10 @@ Library's chart predicates, its scheme embedding and Mathlib's scheme
 properties. Its statement Markdown traces it to the representable case of
 Stacks Project Lemma 67.22.1 (Tag 03MJ) and the one-atlas criteria in Lemmas
 67.37.4(6) (Tag 03ZB) and 67.28.4(6) (Tag 03XO). The Lean route above
-combines Yoneda reflection with the published scheme descent results, and
-follows the source-level route sketched in the task context. It is not a
-transcription of a cited proof.
+combines Yoneda reflection with the published scheme descent results. It is
+not a transcription of a cited proof.
 
 This module concerns only the three named properties on actual schemes. It
 does not prove general atlas independence, compatibility for arbitrary
 properties, or anything about properness. It constructs no Picard
 representer, group scheme, universal family or actual-family comparison.
-
-## Authorship
-
-Worker 840 wrote the Lean proof and this Markdown.

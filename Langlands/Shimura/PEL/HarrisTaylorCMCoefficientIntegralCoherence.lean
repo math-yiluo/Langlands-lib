@@ -132,8 +132,8 @@ def cmHarrisSuccessiveRefinementIntegralActionIso :
     intro g
     induction g using QuotientGroup.induction_on with
     | H g =>
-      change (cmHarrisTorsionSystem D ρ p U m |>.obj (Opposite.op k)).ρ g ≫ 𝟙 _ =
-        𝟙 _ ≫ (cmHarrisTorsionSystem D ρ p U m |>.obj (Opposite.op k)).ρ g
+      change ((cmHarrisTorsionSystem D ρ p U m |>.obj (Opposite.op k)).ρ g).asHom ≫ 𝟙 _ =
+        𝟙 _ ≫ ((cmHarrisTorsionSystem D ρ p U m |>.obj (Opposite.op k)).ρ g).asHom
       simp only [Category.comp_id, Category.id_comp])
 
 @[simp] theorem cmHarrisSuccessiveRefinementIntegralActionIso_hom_hom :

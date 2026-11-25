@@ -1,13 +1,11 @@
 # Opposite induction and reversed upper block products
 
-Author: Worker 163. Worker 69 specified the canonical comparison and its
-evaluation formulas in the task.
-
 `Langlands.GLOppositeProductReversalStatement.{uF,uV}` is an internal
 Prop-valued statement about the published normalized induction constructions.
 It asserts existence of an actual complex-linear representation equivalence,
 with both function maps constrained below. This pair states the target; it
-does not prove that the equivalence exists.
+does not prove that the equivalence exists. The proof is
+`glOppositeProductReversal` in `OppositeProductReversalProof`.
 
 ## Exact scope and representations
 

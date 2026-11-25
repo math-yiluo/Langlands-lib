@@ -1,7 +1,5 @@
 # Actual upper-place targets of the completed-tensor Weil decomposition
 
-Author: Worker 208.
-
 This is a derived construction for the completed-tensor and finite-product
 identities in Brian Conrad, *Weil and Grothendieck approaches to adelic
 points*, December 31, 2011, Example 4.2, printed page 10. Registered source:
@@ -104,9 +102,9 @@ provides the finite arithmetic theorem and `Norm` provides the infinite
 one; the present construction adds no arithmetic assumption or axiom and
 does not reprove those results.
 
-This unit supplies actual number-field coefficient decompositions and
+This module supplies actual number-field coefficient decompositions and
 factor-target identifications. It does not yet compose the tensor,
 coefficient, product and complete-field point homeomorphisms. Function-field
 completed-tensor realizations, integral models, geometric preservation of
-Weil restriction, and the global adelic comparison remain obligations of
-the parent all-five-sections task. No whole-paper completion is asserted.
+Weil restriction, and the global adelic comparison are not part of this
+module. No whole-paper completion is asserted.

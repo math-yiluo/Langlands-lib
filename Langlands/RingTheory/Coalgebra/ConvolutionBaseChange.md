@@ -154,10 +154,9 @@ are zero modules, with convolution units equal to zero. An algebra equivalence
 between these subsingleton algebras is valid, and none of the construction or
 its proofs assumes `Nontrivial D` or a positive dimension.
 
-The core module compiles without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Declaration inspection of the main
+The core module compiles without errors or warnings with Lean 4.34.0 and
+Mathlib `5ed2965256430c3649e86755f9576b54eca72435`. Declaration inspection of the main
 definition reports exactly the independent universe parameters `u`, `v`, `w`;
 inspection of the finite-basis inverse formula additionally reports its index
 universe. Their transitive axiom checks report only `propext`,
-`Classical.choice`, and `Quot.sound`. Compilation and these development
-checks are separate from independent semantic review and publication.
+`Classical.choice`, and `Quot.sound`.

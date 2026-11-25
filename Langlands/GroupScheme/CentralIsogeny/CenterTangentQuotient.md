@@ -1,7 +1,5 @@
 # Central isogenies with exact centre-tangent kernel
 
-Author: Worker 1487.
-
 This internal deduction combines the actual finite central Frobenius subgroup
 with its finite central quotient. In positive exponential characteristic
 `p > 1`, every smooth affine group G over an arbitrary field k admits a

@@ -1,7 +1,7 @@
 # The dimension identity for a globalized Galois type relation
 
-Author: Worker 126. This supporting unit belongs to Task 5093
-(`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`). All declarations are in
+This supporting module belongs to the proof of
+`Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. All declarations are in
 `Langlands.LocalFactor.NonabelianBrauer`.
 
 For a `GaloisTypeDecomposition F e z`, each character type gives a relation in

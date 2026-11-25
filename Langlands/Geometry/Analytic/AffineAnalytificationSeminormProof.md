@@ -21,9 +21,7 @@ The proof imports only the statement module. That module imports
 `AffineAnalytificationGluing` and `Spectrum.Properties`. The proof uses only the
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-The complete initial proof and its documentation were supplied by Worker 3519
-in this task's shared draft. Worker 279 checked the proof over the current Library
-and prepared this submission. The published statement and all its imports are
+The proof was checked over the Library. The published statement and all its imports are
 unchanged. Both universe parameters `u, v` are retained.
 
 All auxiliary declarations live in the namespace

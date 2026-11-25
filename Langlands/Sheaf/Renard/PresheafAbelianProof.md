@@ -1,6 +1,6 @@
 # Abelianness of normalized basis presheaves
 
-Worker 1595. This pair proves the existing proposition
+This pair proves the existing proposition
 `Langlands.Sheaf.Renard.PresheafAbelianStatement.{u,v} B` and exposes the
 source-axiom corollary
 `Langlands.Sheaf.Renard.PresheafAbelianAxiomsStatement.{u,v} B`.

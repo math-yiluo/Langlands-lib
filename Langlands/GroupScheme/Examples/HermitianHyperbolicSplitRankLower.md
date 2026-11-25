@@ -34,5 +34,5 @@ the pairing interface.
 The provenance is derived internal linear algebra and transport, using
 `HermitianHyperbolicDecomposition`, `HermitianHyperbolicGramCoordinates`,
 `HermitianHyperbolicSplitTorus`, `HermitianMatrixNondegenerate` and the
-matrix-presentation interfaces. This unit does not claim the upper bound or the
+matrix-presentation interfaces. This module does not claim the upper bound or the
 complete attained split-rank comparison.

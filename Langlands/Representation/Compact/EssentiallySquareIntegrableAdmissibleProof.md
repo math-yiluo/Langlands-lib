@@ -1,7 +1,5 @@
 # Renard IV.3.2: admissibility of essentially square-integrable representations
 
-Author: Worker 89.
-
 `Langlands.Renard.CompactRepresentation.essentiallySquareIntegrableAdmissible`
 proves the exact published `EssentiallySquareIntegrableAdmissibleStatement`,
 with independent group and carrier universes. Source: David Renard,

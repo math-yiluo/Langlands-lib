@@ -1,6 +1,7 @@
 # Reversing complex-place parameter transport
 
-Worker 230 authored this elementary support lemma for B7. Its provenance is
+This is an elementary support lemma for B7
+(`CyclicWeakBaseChangeComplexPlaceStatement`). Its provenance is
 internal: it computes the existing actual-character conjugation and the
 identity/conjugation formula in
 `Langlands.Automorphic.Unramified.ComplexPlaceParameterTransport`.

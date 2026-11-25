@@ -20,8 +20,8 @@ needed for these generic assertions.
 Postcomposing the same locally constant map with the total integral
 `φ ↦ ∫ g, φ(g) f₂(g) dμ` proves that the conjugation pairing is locally
 constant. The canonical projection onto left cosets is an open quotient
-map. Its quotient topology detects local constancy, so the already
-published central descent is locally constant as well. This proof uses
+map. Its quotient topology detects local constancy, so the existing
+central descent is locally constant as well. This proof uses
 neither convergence of the integral nor invariance of the measure.
 
 Every element of the generic Schwartz space belongs to a compact open
@@ -39,12 +39,12 @@ compact open level; it need not be the level of either function. The field,
 affine locally finite type group scheme, torus, cocharacter, matrix
 representation and Schwartz weights retain their existing types and
 arbitrary universe. There are no reductivity, maximality, genericity,
-closed matrix realization or cuspidality assumptions in this unit.
+closed matrix realization or cuspidality assumptions in this module.
 
 For the displayed Borel measurable structure of that exact left quotient,
 continuity gives `StronglyMeasurable` with complex values, hence
 `AEStronglyMeasurable` for every measure on it. In particular the latter
-theorem supplies the measurability input of the published integrability
+theorem supplies the measurability input of the integrability
 adapter for any compatible quotient measure. It supplies no estimate of
 the integral of the norm and no convergence of the inner integral.
 The closed VIII.3.2 theorem still requires those analytic and geometric

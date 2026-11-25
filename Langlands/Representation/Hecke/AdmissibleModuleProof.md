@@ -1,6 +1,6 @@
 # Admissibility of representations and their Hecke modules
 
-Worker 279, Task 5792. This proof targets exactly the published proposition
+This proof targets exactly the published proposition
 `Langlands.Hecke.AdmissibleIffHeckeAdmissibleStatement`, with independent group
 and carrier universes and no additional hypotheses. The target and its imports
 are unchanged.

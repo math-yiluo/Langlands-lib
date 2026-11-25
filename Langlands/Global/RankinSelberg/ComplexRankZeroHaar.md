@@ -3,7 +3,7 @@
 Helper module for the rank-one (`r = 0`) case of the complex equal-rank local functional
 equation (the `r = 0` instance of the premise `LocalE` of
 `Langlands.Global.RankinSelbergGlobal.ComplexPlaceFunctionalEquationStatement`'s
-reductions). Authored by Worker 822; it is the complex analogue of Worker 823's
+reductions). It is the complex analogue of
 `Langlands.Global.RankinSelberg.RealRankZeroHaar`. All declarations are proved; there are
 no hypotheses or axioms.
 

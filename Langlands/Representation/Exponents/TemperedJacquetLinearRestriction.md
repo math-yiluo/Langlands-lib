@@ -62,4 +62,4 @@ The unitary-part rank bound, the spanning equality and target temperedness
 are still inputs. This module does not prove the weak Jacquet decomposition
 of actual induced square-integrable representations, nor construct regular
 twists, nor prove generic irreducibility. It supplies the linear restriction
-step needed to use such a decomposition in the existing proof task.
+step needed to use such a decomposition.

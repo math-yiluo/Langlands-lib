@@ -65,7 +65,8 @@ models is `baseChanged F (inertiaFixedField F) G`. A private instance
 records that this base change is again affine, by the pullback-stability
 of affine morphisms.
 
-`UnramifiedParahoricModelStatement.{u}` is an unproved proposition. Its
+`UnramifiedParahoricModelStatement.{u}` is a proposition, proved as
+`unramifiedParahoricModel` in `UnramifiedParahoricModelProof`. Its
 inputs are:
 
 - `C : MaximalUnramified.BuildingData F (baseChanged F (inertiaFixedField F) G)`.
@@ -150,8 +151,11 @@ stabilizer `C.oneStabilizer y`. The proof rewrites with
   bounded subgroup of `T(L)`, does not depend on `L`. The image `G(K)^♮`
   of the simply connected cover does not depend on the chosen cover,
   since any two simply connected covers of the derived group are
-  isomorphic over it. The Library does not prove these independence
-  results. The statement needs them only to compare with the source.
+  isomorphic over it. The Library proves the combined independence,
+  that `E.zeroPoints` does not depend on `E`, as
+  `unramifiedZeroPointsIndependence` (module
+  `Langlands.Geometry.Building.UnramifiedZeroIndependenceProof`). The
+  statement needs it only to compare with the source.
 - The statement also quantifies over every supplied `C`. This is no
   strengthening either. The class carried by `C` is an equipollence class
   of valuations of the root datum of `(G_K, S)` satisfying V6. That is
@@ -179,7 +183,7 @@ stabilizer `C.oneStabilizer y`. The proof rewrites with
 ## Intended consumers
 
 The construction of the integral models for KP Axioms 4.1.20 and 4.1.22
-(task `cd2ad671-3edf-4905-a0e2-e7aa2b160b91`) needs this statement. It
+needs this statement. It
 builds the models over the integers of the maximal unramified extension,
 for the image of each bounded subset of the building of `G` under the
 unramified descent embedding into the building of `G_K`. It then descends

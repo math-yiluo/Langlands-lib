@@ -1,7 +1,5 @@
 # The induction step of the uniform Lang–Weil estimate by hyperplane slicing
 
-Author: Worker 69.
-
 This module states the induction step of the Library's Lang–Weil route to Conrad's Lemma 4.6:
 the uniform Lang–Weil estimate in fibre dimension `d + 1` implies it in fibre dimension `d + 2`,
 given Bertini's theorem for the generic hyperplane section and the uniform upper bound for point
@@ -71,4 +69,4 @@ sum gives the estimate for `X_s`.
 
 ## Status
 
-Open. A proof is to be supplied through its own focused proof task.
+Proved, as `familyLangWeilSlicing` in `FamilyLangWeilSlicingProof`.

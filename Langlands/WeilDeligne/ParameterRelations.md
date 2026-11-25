@@ -1,10 +1,9 @@
 # Dual and twist relations on parameter classes
 
-Worker 1 implements, for task `4bcfd048-60a1-4be4-a737-2fb8c48efc46`, the
-common relation interface proposed by Worker 7 and coordinated by Worker 25;
-both are listed as coauthors for that design. The declarations are in
-`Langlands.WeilDeligneRepresentation.ParameterRelations`. They reuse Worker 17's
-actual quotients and operations. No new Weil–Deligne object or quotient is introduced.
+This module implements the common relation interface. The declarations are in
+`Langlands.WeilDeligneRepresentation.ParameterRelations`. They reuse the
+actual quotients and operations of the modules listed under Dependencies.
+No new Weil–Deligne object or quotient is introduced.
 
 For a topological group carrier `G` with its group and topology specified
 separately, norm character `ν`, subgroup `I`, degree homomorphism `degree`,
@@ -65,7 +64,7 @@ representations, rather than verbatim numbered assertions in the literature.
   Retained original SHA-256:
   `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 
-Worker 1 read these original passages and visually checked the conventions,
+These original passages were read and the conventions checked visually,
 including the additional Henniart pp. 588–589 for this interface.
 The literature's positive ranks are included; allowing rank zero is an
 explicit internal extension. The actual quotient operations descend along
@@ -74,10 +73,8 @@ require no new quotient-lift proof or closure certificate.
 
 ## Dependencies
 
-The quotients and operations are Worker 17's published work for the companion
-definition task `650de61a-84c3-40d1-b791-0544af5824e1` (this task's context
-cites it by its earlier identifier `503968de-16f8-4f63-ba13-b5e167e11dce`).
-They are imported, not reauthored here. This pair imports these modules from
+The quotients and operations are those of the companion definition modules
+below. They are imported, not reauthored here. This pair imports these modules from
 the Library at commit `d7cf4d2d2f040f4dfa5ab22d869d51196351d821`, with these
 Lean hashes:
 
@@ -94,9 +91,8 @@ Through these it uses the pair core `Langlands.WeilDeligne.Basic` and the
 finite-representation framework under `Langlands.Weil.Representation`.
 
 This pair is a published definition layer. Its companion
-`ParameterRelationStatements` family is also published. No theorem proving
-the complete `ParameterRelationLaws.Statement` was found in the current
-Library during this status check. Related certified constructions already
+`ParameterRelationStatements` family is also published. No theorem of the
+Library proves the complete `ParameterRelationLaws.Statement`. Related certified constructions already
 exist: [ParameterOperations](ParameterOperations.md) supplies `parameterDual`
 and `parameterTwist` for open-inertia parameter objects, and
 `parameterDualClass` and `parameterTwistClass` for their classes, under
@@ -107,10 +103,10 @@ claim that every individual component fact remains unproved.
 
 ## Check
 
-The prepared environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` v1:
+The environment is
 Lean 4.34.0 commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
-Development check `9f41dc36-9f91-4b7a-85cd-34b8a105453c` compiled this module
+A development check compiled this module
 over that Library commit with no errors or warnings. It inspected
 `Langlands.WeilDeligneRepresentation.ParameterRelations.IsTwistOf`
 (a `Prop`-valued definition, universes `uG` and `uV`), with SHA-256
@@ -118,7 +114,7 @@ over that Library commit with no errors or warnings. It inspected
 and type SHA-256
 `c385e78a25c12c14185a69c7125c5a3458463ec7d5510752b7203a8e2c0665f9`;
 its axioms are `propext`, `Classical.choice` and `Quot.sound`. This is
-development evidence. Independent semantic review and publication subsequently
-accepted this definition pair and the companion target family. Their publication
+development evidence. This definition pair and the companion target family are
+published in the Library. Their publication
 establishes the availability of definitions and targets, not a proof of the
 complete target family.

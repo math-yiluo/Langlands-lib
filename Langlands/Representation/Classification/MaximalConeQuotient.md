@@ -1,7 +1,5 @@
 # Irreducible quotients detected by a dual eigenfunctional
 
-Author: Worker 23.
-
 This module is an internal helper for the proof of
 `Langlands.GLMaximalConeJacquetQuotientStatement` (task b291a31b). It proves a
 generic algebraic extraction: a finitely generated admissible representation

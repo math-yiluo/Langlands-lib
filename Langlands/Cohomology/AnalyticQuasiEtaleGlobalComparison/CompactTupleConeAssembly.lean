@@ -44,8 +44,8 @@ theorem sourceAction_continuous (j : Fin c.cover.size) :
 /-- The twisted compatibility equation gives ordinary analytic equivariance
 for the common-subgroup actions, by applying it at the inverse element. -/
 theorem sourceAction_equivariant (j : Fin c.cover.size) (a : c.subgroup) :
-    (c.sourceAction j a).hom ≫ (c.cover.arrow j).left =
-      (c.cover.arrow j).left ≫ (c.targetAction a).hom := by
+    (c.sourceAction j a).asIso.hom ≫ (c.cover.arrow j).left =
+      (c.cover.arrow j).left ≫ (c.targetAction a).asIso.hom := by
   have h := congrArg Hom.left
     (c.equivariant j (a : G)⁻¹ (c.subgroup.inv_mem a.property))
   simp only [comp_left, liftAction_left] at h
@@ -73,10 +73,10 @@ structure CompactCompatibleTupleConeData (n : ℕ)
   compact : IsCompactSpace cone.pt.left
   action : c.subgroup →* Aut cone.pt.left
   continuous : IsContinuousAction action
-  base_equivariant : ∀ a, (action a).hom ≫ cone.base.left =
-    cone.base.left ≫ (c.targetAction a).hom
-  projection_equivariant : ∀ j a, (action a).hom ≫ (cone.π j).left =
-    (cone.π j).left ≫ (c.sourceAction (α j) a).hom
+  base_equivariant : ∀ a, (action a).asIso.hom ≫ cone.base.left =
+    cone.base.left ≫ (c.targetAction a).asIso.hom
+  projection_equivariant : ∀ j a, (action a).asIso.hom ≫ (cone.π j).left =
+    (cone.π j).left ≫ (c.sourceAction (α j) a).asIso.hom
 
 /-- The positive induction starts with the supplied first source and its
 restricted continuous action. -/
@@ -92,7 +92,7 @@ def compactTupleSingleton (α : Fin 1 → Fin c.cover.size) :
     intro j a
     have hj : j = 0 := Fin.eq_zero j
     subst j
-    change (c.sourceAction (α 0) a).hom ≫ 𝟙 _ = 𝟙 _ ≫ (c.sourceAction (α 0) a).hom
+    change (c.sourceAction (α 0) a).asIso.hom ≫ 𝟙 _ = 𝟙 _ ≫ (c.sourceAction (α 0) a).asIso.hom
     rw [Category.comp_id, Category.id_comp]
 
 /-- The successor step uses one compact continuous binary pullback. Its
@@ -117,16 +117,16 @@ def compactTupleCons
     continuous := p.continuous
     base_equivariant := by
       intro a
-      change (p.action a).hom ≫ (p.cone.fst.left ≫ (c.cover.arrow (α 0)).left) =
-        (p.cone.fst.left ≫ (c.cover.arrow (α 0)).left) ≫ (c.targetAction a).hom
+      change (p.action a).asIso.hom ≫ (p.cone.fst.left ≫ (c.cover.arrow (α 0)).left) =
+        (p.cone.fst.left ≫ (c.cover.arrow (α 0)).left) ≫ (c.targetAction a).asIso.hom
       rw [← Category.assoc, p.fst_equivariant, Category.assoc,
         c.sourceAction_equivariant, ← Category.assoc]
     projection_equivariant := by
       intro j a
       refine Fin.cases ?_ (fun k => ?_) j
       · exact p.fst_equivariant a
-      · change (p.action a).hom ≫ (p.cone.snd.left ≫ (s.cone.π k).left) =
-          (p.cone.snd.left ≫ (s.cone.π k).left) ≫ (c.sourceAction (α k.succ) a).hom
+      · change (p.action a).asIso.hom ≫ (p.cone.snd.left ≫ (s.cone.π k).left) =
+          (p.cone.snd.left ≫ (s.cone.π k).left) ≫ (c.sourceAction (α k.succ) a).asIso.hom
         rw [← Category.assoc, p.snd_equivariant, Category.assoc,
           s.projection_equivariant, ← Category.assoc]
   }
@@ -153,22 +153,22 @@ def actionLift : ActionLift ρ d.cone.pt.hom where
   equivariant a := by
     have hw := MorphismProperty.Over.w d.cone.base
     calc
-      (d.action a).hom ≫ d.cone.pt.hom =
-          (d.action a).hom ≫ (d.cone.base.left ≫ (compactLiftBasisObject ρ i).hom) :=
-        congrArg (fun k => (d.action a).hom ≫ k) hw.symm
-      _ = ((d.action a).hom ≫ d.cone.base.left) ≫ (compactLiftBasisObject ρ i).hom :=
+      (d.action a).asIso.hom ≫ d.cone.pt.hom =
+          (d.action a).asIso.hom ≫ (d.cone.base.left ≫ (compactLiftBasisObject ρ i).hom) :=
+        congrArg (fun k => (d.action a).asIso.hom ≫ k) hw.symm
+      _ = ((d.action a).asIso.hom ≫ d.cone.base.left) ≫ (compactLiftBasisObject ρ i).hom :=
         (Category.assoc _ _ _).symm
-      _ = (d.cone.base.left ≫ (c.targetAction a).hom) ≫ (compactLiftBasisObject ρ i).hom :=
+      _ = (d.cone.base.left ≫ (c.targetAction a).asIso.hom) ≫ (compactLiftBasisObject ρ i).hom :=
         congrArg (fun k => k ≫ (compactLiftBasisObject ρ i).hom) (d.base_equivariant a)
-      _ = d.cone.base.left ≫ ((c.targetAction a).hom ≫ (compactLiftBasisObject ρ i).hom) :=
+      _ = d.cone.base.left ≫ ((c.targetAction a).asIso.hom ≫ (compactLiftBasisObject ρ i).hom) :=
         Category.assoc _ _ _
-      _ = d.cone.base.left ≫ ((compactLiftBasisObject ρ i).hom ≫ (ρ (a : G)).hom) :=
+      _ = d.cone.base.left ≫ ((compactLiftBasisObject ρ i).hom ≫ (ρ (a : G)).asIso.hom) :=
         congrArg (fun k => d.cone.base.left ≫ k)
           (c.targetLift.equivariant (Subgroup.inclusion c.le_target a))
-      _ = (d.cone.base.left ≫ (compactLiftBasisObject ρ i).hom) ≫ (ρ (a : G)).hom :=
+      _ = (d.cone.base.left ≫ (compactLiftBasisObject ρ i).hom) ≫ (ρ (a : G)).asIso.hom :=
         (Category.assoc _ _ _).symm
-      _ = d.cone.pt.hom ≫ (ρ (a : G)).hom :=
-        congrArg (fun k => k ≫ (ρ (a : G)).hom) hw
+      _ = d.cone.pt.hom ≫ (ρ (a : G)).asIso.hom :=
+        congrArg (fun k => k ≫ (ρ (a : G)).asIso.hom) hw
 
 /-- Every constructed point lies in the original compact lift basis. -/
 def basisPoint : CompactLiftBasis ρ :=

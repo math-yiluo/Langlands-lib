@@ -1,7 +1,5 @@
 # Original own-cover diagram and upper-pair inverse-image endpoint normalization
 
-Author: Worker 57.
-
 This internal construction identifies the previously constructed
 `cmHarrisGeometricTripleUpperPairOwnSeparateInverseIso` with the existing
 `cmHarrisGeometricCoarseInverseImageAssociatedIso` for `(V,T,hTV)`.
@@ -111,10 +109,10 @@ and original reductions, including exponent zero.
 Write `f*Y` and `f*O` for `etaleTorsorDiagramPullback f` applied to these
 actual cover diagrams. Their components are the actual scheme fiber
 products; their transitions and actions are the original ones pulled back
-by the published functor. The generic `etaleGroupCoverMapPullback` applied
+by that functor. The generic `etaleGroupCoverMapPullback` applied
 to `a` supplies the map `f*a` between them.
 All original and pulled covers satisfy the existing finite geometric
-torsor conditions; the pulled conditions follow from the published
+torsor conditions; the pulled conditions follow from the
 preservation theorem.
 
 Over `X_T`, let `C` be the original triple common cover diagram and let
@@ -141,7 +139,7 @@ Let `A_V` be the original own associated system at `V`, and let `P_V`
 be the original pair common-cover own associated system for `(U,V)`.
 Let `a_S : A_V ≅ P_V` be the existing
 `cmHarrisGeometricLatticeCommonOwnAssociatedCoverIso`.
-Let `s_O` and `s_Y` be the published
+Let `s_O` and `s_Y` be the
 `etaleAssociatedVaryingSystemInverseImage` components for `O,N` and
 `Y,N_Y`, respectively. Let `r_S` be the varying-group cover isomorphism
 on the actual pulled diagrams `f*Y,f*O`, evaluated at `N`.
@@ -269,7 +267,7 @@ and cancels `t_S.hom ; t_S.inv`. Equality of the entire natural
 isomorphisms identifies both forward and inverse components and retains
 all original exponent transitions.
 
-## Internal provenance and remaining obligations
+## Internal provenance and what is not proved here
 
 This is an internal deduction from the original pair/triple constructions
 in `HarrisTaylorCMGeometricUpperPairCoherence`, the original
@@ -280,11 +278,12 @@ their original scheme composites, compares their invariant-section
 formulas, and uses categorical functoriality and isomorphism laws.
 It introduces no new external-literature assertion.
 
-This unit normalizes only the own endpoint `e_1`. Normalization of the
+This module normalizes only the own endpoint `e_1`. Normalization of the
 original-coefficient endpoint from inverse image of the coarse `(U,V)`
-system to the coarse `(U,T)` system, and the resulting composition law
-for the original own-system inverse-image lattice morphisms, remain
-further work. General commensurability, rational adic independence,
+system to the coarse `(U,T)` system is proved in
+`HarrisTaylorCMGeometricUpperPairOriginalEndpoint`, and the resulting
+composition law for the original own-system inverse-image lattice morphisms
+in `HarrisTaylorCMGeometricLatticeInverseImageCoherence`. General commensurability, rational adic independence,
 Hecke compatibility, full source-specific unitary geometry and the
 arithmetic existence, representability and canonical-model theorems are
 not proved here. All named premises above remain explicit.

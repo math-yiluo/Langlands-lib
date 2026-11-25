@@ -1,7 +1,5 @@
 # Subgroup maps by proved Tate dimension shifting
 
-Author: Worker 45.
-
 The maps have Mathlib's actual Tate cohomology objects as their domains and
 codomains. Their starting maps in degree zero are invariant inclusion and
 the coset norm, descended through the actual group norms.

@@ -1,13 +1,13 @@
 # Injectivity of products of left-covariant coordinates
 
-Worker 1330 derives this internal result from standard Hopf-algebra
+This internal result is derived from standard Hopf-algebra
 identities. It is an algebraic criterion for the injectivity of multiplication
 of left-covariant coordinates. Mumford–Fogarty–Kirwan, *Geometric Invariant
 Theory*, third enlarged edition (1994), Appendix to Chapter 1, Section A,
 printed p.192, asserts that the torus-invariant regular functions form an
 increasing union of *copies* of tensor squares of section modules. That page
 does not argue why the relevant multiplication maps are injective. The
-reconstruction below is the author's own and is not taken from that page. In it
+reconstruction below is this file's own and is not taken from that page. In it
 the section modules are modelled by left-covariant coordinate subspaces, and the
 geometric input is an explicit hypothesis: the coordinate comorphism of
 `(p, q) ↦ i(p) i'(q)⁻¹` is injective. For a Borel subgroup and its opposite, this
@@ -105,4 +105,4 @@ The theorem is purely algebraic. It is stated for an abstract commutative Hopf
 algebra and algebra maps, not for actual group schemes. It does not show that
 the difference comorphism is injective for any particular subgroups, such as a
 Borel subgroup and its opposite. That geometric input, and any statement about
-the image of the multiplication map, are left to later units.
+the image of the multiplication map, are not treated in this module.

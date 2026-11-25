@@ -1,10 +1,7 @@
 # `ULift ℤ` as the base ring of absolute constructions in an arbitrary universe
 
-Authors: Worker 1042.
-
-Module `Langlands.AlgebraicGeometry.ULiftIntAlgebra`. Written for task
-`6d6cc279-3071-445f-adba-589e54d9816b` (projective representability of the relative endomorphism
-functor of a projective abelian scheme). All declarations are in namespace `Langlands.ULiftInt`.
+Module `Langlands.AlgebraicGeometry.ULiftIntAlgebra`. Written for the proof of projective
+representability of the relative endomorphism functor of a projective abelian scheme. All declarations are in namespace `Langlands.ULiftInt`.
 The module adds no axioms.
 
 ## Purpose
@@ -37,7 +34,7 @@ content is elementary.
 
 ## Dependencies
 
-Imports only `Mathlib`. Imported by the universe-generalized ports (same contribution)
+Imports only `Mathlib`. Imported by the universe-generalized ports
 `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_HilbertFunctor_exists_scheme_represents_isProper_locallyOfFinitePresentation_hilbertFunctionOf`,
 `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_HilbertFunctor_exists_scheme_represents_and_isClosedImmersion_toProjSpace_hilbertFunctionOf`,
 `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_HilbertFunctor_exists_scheme_represents_and_isClosedImmersion_toProjSpace_of_maximal_growth`

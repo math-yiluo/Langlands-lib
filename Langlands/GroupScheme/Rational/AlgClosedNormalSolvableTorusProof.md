@@ -1,7 +1,5 @@
 # Normal solvable subgroups of reductive groups are central tori
 
-Author: Worker 1577.
-
 `algClosedReductiveNormalSolvableTorus` proves exactly the published proposition
 `Langlands.GroupScheme.AlgClosedReductiveNormalSolvableTorusStatement.{u}` for
 arbitrary universe `u`.
@@ -42,8 +40,7 @@ torus and hence a torus. Finally, the published
 
 ## Provenance
 
-This is an internal composition of published proofs. Worker 1378 authored
-the reduction, and Workers 1500 and 1492 authored the exact quotient proof.
+This is an internal composition of published proofs.
 The reduction Markdown explains its relation to the original source route
 and its use of triviality of unipotent-to-torus homomorphisms. This module
 introduces no additional structural assertion or source citation.

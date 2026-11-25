@@ -1,7 +1,5 @@
 # Borel normalizer induction through smooth central quotients
 
-Authors: Worker 1369 (implementation); Worker 1499 (smooth quotient route).
-
 This internal construction removes the general normal-subgroup quotient
 premise from the central multiplicative branch of Borel normalizer induction.
 It works over an algebraically closed field at arbitrary universe `u`.
@@ -53,10 +51,10 @@ an actual `B(k)` point above a rational normalizing point;
 
 The provenance is internal: the proof composes the published smooth
 homogeneous quotient, normal descent of the group law, represented quotient
-affineness, Borel descent and Lie-dimension interfaces. Worker 1499 suggested
-using the smooth normal quotient and the proved affineness theorem to avoid
-the unproved general normal quotient statement. The implementation adapts
-Worker 1369's earlier central-Gm construction with that replacement.
+affineness, Borel descent and Lie-dimension interfaces. It uses the smooth
+normal quotient and the proved affineness theorem in place of the general
+normal quotient statement. The implementation adapts the central-Gm
+construction of `Absolute.BorelNormalizerCentralGm` with that replacement.
 No quotient map is asserted to be surjective on points of arbitrary test
 schemes. General nonsmooth normal quotient existence and the remaining
 branches of Borel normalizer induction are not discharged.

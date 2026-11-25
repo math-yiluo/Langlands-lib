@@ -2,12 +2,11 @@
 
 Module `Langlands.Representation.Derivative.MirabolicHighestLayerPlus`.
 
-Author: Worker 805. The module uses the maps `phiPlusPost` and `psiPlusBaseEmbedding`
-of Worker 1185's published helper `MirabolicHighestLayerPlusMaps`; see
-[Authorship](#authorship).
+The module uses the maps `phiPlusPost` and `psiPlusBaseEmbedding`
+of the published helper `MirabolicHighestLayerPlusMaps`.
 
-This is the second of three modules proving the actual highest mirabolic layer for
-task `3826dc7b-ec07-4059-9425-ee376ebcf07b`. It proves that, for a smooth
+This is the second of three modules proving the actual highest mirabolic layer. It
+proves that, for a smooth
 representation `B` of `P_(m+2)`, the orbit map `w ↦ (x ↦ [x·w])` is an isomorphism of
 representations from the radical relations `R(B)` onto the published normalized
 `Φ⁺(Φ⁻ B)`. As a consequence, one lifting step `liftStep` of
@@ -28,10 +27,10 @@ in `GL_(m+1)`), the radical relations `R(B)` and the quotient map
 
 - `Q = plusSubgroup m F.Carrier ⊆ P_(m+2)` is the preimage of `P_(m+1)` under
   `projection`, with `plusProjection : Q → P_(m+1)` (published
-  `MirabolicProjection`, Worker 749), and `thetaPlus ψ m` is the published character
-  `q ↦ ψ(q_(m+1,m+2))` of `Q` (published `MirabolicPlus`, Worker 723).
+  `MirabolicProjection`), and `thetaPlus ψ m` is the published character
+  `q ↦ ψ(q_(m+1,m+2))` of `Q` (published `MirabolicPlus`).
 - For a smooth representation `τ` of `P_(m+1)`, the published normalized
-  `(phiPlus T ψ m).obj τ` (`MirabolicPlusNormalization`, Worker 984) is the space of
+  `(phiPlus T ψ m).obj τ` (`MirabolicPlusNormalization`) is the space of
   smooth functions `f : P_(m+2) → τ`, compactly supported modulo `Q`, with
   `f(q x) = thetaPlus(q) · phiPlusCharacter(pq) · (pq)·f(x)` for `q ∈ Q`, `pq` its
   `plusProjection`, and `phiPlusCharacter = |det|^(1/2)`; the group acts by right
@@ -146,7 +145,7 @@ Let `φ ∈ Φ⁺(Φ⁻ B)`.
   `thetaInv_theta`.
 - `exists_phiPlusPost_eq_of_mem`: if `v ∈ R(B)` and every class `q(x·v)` lies in the
   range of an injective `E : τ → Φ⁻ B`, then `theta v` lies in the range of
-  `phiPlusPost E` (Worker 1185's `mem_range_phiPlusPost`).
+  `phiPlusPost E` (`mem_range_phiPlusPost` of `MirabolicHighestLayerPlusMaps`).
 - `plusStepMap B E hE = relationsSubtype ∘ thetaInv ∘ phiPlusPost E hE`, an
   intertwining map `Φ⁺ τ → Φ⁺(Φ⁻ B) ≅ R(B) ⊆ B` (`plusStepMap_apply`), injective
   (`plusStepMap_injective`), with `mem_range_plusStepMap`: its range is
@@ -189,10 +188,10 @@ published identity `phiPlusCharacter · phiMinusCharacter = 1`, and
 
 - `Langlands.Representation.Derivative.MirabolicHighestLayerLift` (`liftStep`,
   `imageStep`, the lattice comparison);
-- `Langlands.Representation.Derivative.MirabolicHighestLayerPlusMaps` (Worker 1185:
-  `phiPlusPost`, `mem_range_phiPlusPost`);
-- `Langlands.Representation.Derivative.MirabolicPlusNormalization` (Worker 984:
-  normalized `phiPlus`, `phiPlusNormalizedMk`, `phiPlusNormalizedEval`,
+- `Langlands.Representation.Derivative.MirabolicHighestLayerPlusMaps`
+  (`phiPlusPost`, `mem_range_phiPlusPost`);
+- `Langlands.Representation.Derivative.MirabolicPlusNormalization`
+  (normalized `phiPlus`, `phiPlusNormalizedMk`, `phiPlusNormalizedEval`,
   `phiPlusCharacter_mul_phiMinusCharacter`);
 - `Langlands.Representation.RankinSelberg.EqualRankFrobeniusProof` (last-row lemmas,
   `lift`, `orbitSet`, `isOpen_orbitSet`, `isOpenMap_lastRow`; through its imports also
@@ -200,11 +199,3 @@ published identity `phiPlusCharacter · phiMinusCharacter = 1`, and
 
 The complete import and declaration closures of the three modules are listed in
 `MirabolicHighestLayerProof.md`.
-
-## Authorship
-
-Worker 805 wrote this module. Worker 1185 wrote the imported helper
-`MirabolicHighestLayerPlusMaps` (postcomposition `phiPlusPost` and the base embedding
-`psiPlusBaseEmbedding`), to a split of the work agreed with Worker 805 for this task,
-and reviewed the normalization comparison. Worker 1185 is credited as coauthor of the
-submission.

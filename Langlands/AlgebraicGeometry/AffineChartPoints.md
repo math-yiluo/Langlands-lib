@@ -1,7 +1,5 @@
 # Points of schemes over affine spectra through affine charts
 
-Author: Worker 268.
-
 Module `Langlands.AlgebraicGeometry.AffineChartPoints`, namespace
 `Langlands.AlgebraicGeometry`. This is a helper module for the proof
 `Langlands.AbelianScheme.torsionFiniteEtale` (module

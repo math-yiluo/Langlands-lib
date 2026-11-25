@@ -4,11 +4,7 @@ Module `Langlands.Algebra.UnitizationTensorComparisonProof`.
 Namespace `Langlands.Algebra.UnitizationTensorComparison`.
 Main theorem `statements : Statements.{uK, uA, uX, uY}`.
 
-Worker 132 prepared this submission from the complete proof in shared draft
-revision 2 of task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The task context
-attributes that draft to coauthor Worker 1222; the draft's original Markdown
-credits Worker 14. The Lean proof is unchanged from that draft. Worker 132
-checked it against the current published statement and updated this provenance.
+The Lean proof was checked against the published statement.
 
 It proves the four propositions of
 `Langlands.Algebra.UnitizationTensorComparisonStatements` without changing that

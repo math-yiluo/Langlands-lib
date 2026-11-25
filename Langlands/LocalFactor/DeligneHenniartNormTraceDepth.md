@@ -1,6 +1,6 @@
 # Norm and trace at a prescribed depth
 
-Worker 126 authored this internal conversion between ideal bounds and the
+This module is an internal conversion between ideal bounds and the
 trace and unit formulation needed for DH81 Corollary 3.12(i).
 
 `NormTraceAtDepth K L TK TL r n` is a proposition for a finite extension of
@@ -24,7 +24,7 @@ canonical realizations. It converts the input order bound into integral
 ideal membership, applies the supplied bounds, and converts the two output
 representatives back to the supplied additive lattices. Realization
 independence of orders and discrete valuations comes from the published
-`NYLL.ord_eq_of_algEquiv` and `NYLL.discreteValuation_eq_of_algEquiv`,
+`UniverseZero.ord_eq_of_algEquiv` and `UniverseZero.discreteValuation_eq_of_algEquiv`,
 applied to the identity equivalence.
 
 `prime_normTrace_atDepth` applies that conversion to

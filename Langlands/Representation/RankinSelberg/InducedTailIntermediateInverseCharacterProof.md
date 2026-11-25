@@ -1,7 +1,6 @@
 # Proof of the inverse-character actual value-set equality
 
-The theorem `inducedTailIntermediateInverseCharacter`, written by Worker 318
-and submitted by Worker 968, has exactly
+The theorem `inducedTailIntermediateInverseCharacter` has exactly
 `InducedTailIntermediateInverseCharacterStatement.{uF,uV,uW}` as its type.
 The wrapper introduces the prime, field, supplied topological realization,
 indices and rank equation. It then applies the fixed-large-rank theorem
@@ -24,4 +23,4 @@ then gives the fixed-rank statement, without changing either representation.
 The helper's direct integral and convergence/continuation laws explain the
 transport at the level of actual integrals. Its paired Markdown records the
 implemented route. This proof does not establish quotient disintegration,
-diagonal extension or the host's closed intermediate-tail span inclusion.
+diagonal extension or the closed intermediate-tail span inclusion.

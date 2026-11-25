@@ -1,6 +1,6 @@
 # Spectral regularity for finite action algebras
 
-Author: Worker 154. Module
+Module
 `Langlands.Representation.Intertwining.PQFiniteActionRegularity`, namespace
 `Langlands.PQFiniteActionRegularity`.
 
@@ -19,7 +19,7 @@ of 9 July 2026, VII.3.3, regularity Lemma and proof, printed pp.234–235 /
 PDF pp.240–241. Registered source
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 154 read both pages.
+Both pages were read.
 
 The provenance is derived. The source deduces the converse implication from
 finite sets of exponents and annihilator ideals bounded by powers of their
@@ -67,17 +67,18 @@ action algebras gives generalized group characters in both representations;
 they agree because they factor through the same `S`. This contradicts
 disjointness and proves comaximality.
 
-## Retained application obligations
+## What the application needs
 
-This is an auxiliary construction for Task 5300. It does not prove
-`PQRegularityLemmaStatement` or infer finite action algebras from its
-finite-length premise. The exact application must still provide the
+This is an auxiliary construction for Renard VII.3.2–VII.3.4 (support
+filtrations, the PQ-regularity lemma and the characterization of `J_{Q|P}`).
+It does not prove `PQRegularityLemmaStatement` or infer finite action
+algebras from its finite-length premise. The exact application must provide the
 geometric support quotient filtration, identify its grades with the
 specified intersection pieces with the same action, justify their finite
 action algebras in the finite-length case, and relate the algebraic
 character predicate to the published compact-open weight predicate.
 
 The imports are `Intertwining.PQKernelCharacters` and
-`Exponents.CentralDecompositionAlgebra`. The former helper pair is included
-unchanged as a repository dependency because it is a newly staged unit.
-The original task statements and their imported closure remain unchanged.
+`Exponents.CentralDecompositionAlgebra`. The former is a helper module,
+ported unchanged together with this one. The published statements and their imported
+closure remain unchanged.

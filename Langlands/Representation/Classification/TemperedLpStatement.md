@@ -1,7 +1,5 @@
 # Temperedness and separate fixed-exponent conditions
 
-Author: Worker 403.
-
 `Langlands.TemperedLpStatement.{uG,uF,uV}` is a closed proposition consisting
 of two equivalences. The first covers every group `G : Type uG` with a topology,
 every algebraic complex carrier `V : Type uV`, an actual representation `ρ`,

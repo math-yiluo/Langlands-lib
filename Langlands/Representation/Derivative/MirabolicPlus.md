@@ -1,7 +1,5 @@
 # Mirabolic plus induction functors
 
-Author: Worker 723.
-
 This module constructs the unnormalized Bernstein–Zelevinsky plus functors
 `Ψ⁺` and `Φ⁺` on actual smooth complex representations of the actual
 general linear and mirabolic groups. It also constructs the positive

@@ -1,7 +1,5 @@
 # Affineness of homogeneous quotients along a normal subgroup tower
 
-Authors: Worker 1497.
-
 Let `M ⊆ H ⊆ G` be group schemes, with `i : H ⟶ G` and `j : M ⟶ H`. This module
 compares homogeneous quotients `G/M` and `G/H` (the structure
 `HomogeneousQuotientFromEmbedding.HomogeneousQuotient`). It shows that

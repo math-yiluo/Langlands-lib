@@ -2,7 +2,7 @@
 
 Module `Langlands.GroupScheme.Rational.PinnedGaloisInnerTwist`.
 
-This supporting unit is a step toward the inner-discrepancy part of the
+This supporting module is a step toward the inner-discrepancy part of the
 quasi-split inner-form existence theorem. Fix a finite Galois extension `K/k`,
 a group scheme `H` over `Spec k`, a split pinning `p` of `H_K` and a homomorphism
 `ρ` from `K ≃ₐ[k] K` to the based root-datum automorphisms of `p`. Let `s` be a
@@ -19,7 +19,7 @@ discrepancy for every actual adjoint quotient of `s.obj`. Its hypotheses are:
 
 Nothing here builds the pinning, the torus comparisons or the Galois action on
 the root datum. Nothing here constructs a quasi-split inner form or proves the
-host existence theorem.
+existence theorem `QuasiSplitInnerFormExistenceStatement`.
 
 ## Notation
 
@@ -176,7 +176,8 @@ obtained by twisting a split group with a based Galois action is an inner form.
 Each Galois twist of the descent identification differs from the identity by an
 automorphism that preserves the pinned torus and acts on characters by a Weyl
 element. Such an automorphism is inner by a rational point of the adjoint
-quotient. The host statement cites Conrad, *Reductive group schemes* (2014),
+quotient. The existence theorem this module serves, `quasiSplitInnerFormExistence`
+(module `Rational.QuasiSplitInnerFormExistenceProof`), cites Conrad, *Reductive group schemes* (2014),
 Proposition 7.2.11 (printed/PDF p.258; source
 `conrad-2014-reductive-group-schemes`), for the pinned construction of
 quasi-split inner forms. The Lean statements and route, including the explicit

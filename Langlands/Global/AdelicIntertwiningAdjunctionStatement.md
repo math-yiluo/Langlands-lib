@@ -2,8 +2,8 @@
 
 Module `Langlands.Global.AdelicIntertwiningAdjunctionStatement` states
 `Langlands.Global.IntertwiningContinuedAdjunctionStatement` as a proposition
-definition. It proves nothing. Worker 48 wrote it for Task 7924, whose target
-is `IntertwiningImaginaryIsometryStatement`: the source proof of that target
+definition. It proves nothing. It is stated for
+`IntertwiningImaginaryIsometryStatement`: the source proof of that statement
 (Mœglin–Waldspurger IV.3.12) combines this adjunction with the functional
 equation of intertwining operators.
 

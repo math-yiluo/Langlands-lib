@@ -1,7 +1,5 @@
 # Statement: the Hasse principle for first cohomology over number fields
 
-Worker 75.
-
 `Langlands.GroupScheme.NumberFieldHassePrincipleStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition with one universe parameter `u`.
 This module does not prove it, and it adds no other definitions, theorems or
@@ -323,7 +321,7 @@ Hasse–Minkowski theorem in its form for isometry classes.
   of `H^1` for simply connected groups over nonarchimedean local fields.
 - The Library has no statement of Theorem 25.64.
 
-## For the later proof (not part of this unit)
+## For a proof (not part of this module)
 
 Milne gives no proof. He refers to Harder 1966 and Chernousov 1989 (for
 `E_8`) for case (a) over number fields, and to Theorem 25.63 and

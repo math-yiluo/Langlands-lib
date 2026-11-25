@@ -1,7 +1,5 @@
 # fpqc reflection of central isogenies
 
-Authors: Worker 712 and Worker 1347.
-
 Module `Langlands.GroupScheme.CentralIsogeny.FpqcReflection` proves the
 published statement `Langlands.GroupScheme.CentralIsogenyFpqcReflectionStatement.{u}`
 from `Langlands.GroupScheme.CentralIsogeny.FpqcReflectionStatement`, for
@@ -57,7 +55,7 @@ and requires no affineness descent.
 
 Centrality of the full scheme-theoretic kernel inclusion is
 `isCentral_kernelι_of_baseChange b f hf.isCentral_kernelι` from
-`Langlands.GroupScheme.CentralIsogeny.FpqcReflectionHelpers` (Worker 1347).
+`Langlands.GroupScheme.CentralIsogeny.FpqcReflectionHelpers`.
 It tests every point of every test scheme over `S` and needs only that `b` is
 flat and surjective; no representable centre is used.
 

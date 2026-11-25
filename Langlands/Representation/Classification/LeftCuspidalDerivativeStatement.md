@@ -1,9 +1,7 @@
 # The highest left cuspidal derivative lemma for `GL_n`: proposition target
 
 Module `Langlands.Representation.Classification.LeftCuspidalDerivativeStatement`, namespace
-`Langlands.Classification.LeftCuspidalDerivative`. The formulation was drafted by Worker 5735
-for Task 5735; Worker 261 checked and documented it for Task 5909, with a source audit by
-Worker 352.
+`Langlands.Classification.LeftCuspidalDerivative`.
 
 This module defines actual iterated normalized products and left reducedness, proves their
 elementary rank formula, and states the unproved proposition `LeftCuspidalDerivativeLemma`.
@@ -79,8 +77,8 @@ datum, natural-number rank `d`, and actual supercuspidal `A` above. Its five con
 
 There is no multiplicity-one assumption on `S` in `Y` in clause 3. Clause 4 asserts
 uniqueness of the isomorphism class, without separately asserting existence or multiplicity
-one. No highest-derivative existence assertion is included. These are the five clauses of
-Task 5909 revision 3. None is proved or assumed by this module.
+one. No highest-derivative existence assertion is included. None of the five clauses is
+proved or assumed by this module.
 
 ## Source correspondence and derived content
 

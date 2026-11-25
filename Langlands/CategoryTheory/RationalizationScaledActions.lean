@@ -32,36 +32,42 @@ structure ScaledIntegralLift (α : O →+* End X) where
 linear lift whose scaled unit and multiplication laws hold integrally. -/
 theorem nonempty_scaledIntegralLift {I : Type z} [Finite I] (b : Basis I ℤ O)
     (α : O →+* End X) : Nonempty (ScaledIntegralLift α) := by
-  obtain ⟨a, ha, r, hr⟩ := exists_common_integral_multiple (fun i => α (b i))
-  let g₀ : O →ₗ[ℤ] CategoryTheory.End X := b.constr ℤ r
+  obtain ⟨a, ha, r, hr⟩ := exists_common_integral_multiple (fun i => (α (b i)).asHom)
+  let g₀ : O →ₗ[ℤ] CategoryTheory.End X := b.constr ℤ (fun i => CategoryTheory.End.of (r i))
   have h₀ : ∀ x, ofEnd X (g₀ x) = a • α x := by
     have hlin : ((ofEnd X).toAddMonoidHom.toIntLinearMap).comp g₀ =
         a • α.toAddMonoidHom.toIntLinearMap := by
       apply b.ext
       intro i
-      change ofHom (g₀ (b i)) = a • α (b i)
+      apply CategoryTheory.End.ext
+      change ofHom (g₀ (b i)).asHom = a • (α (b i)).asHom
       simpa only [g₀, Basis.constr_basis] using hr i
     exact fun x => DFunLike.congr_fun hlin x
-  have hunit : ofHom (g₀ 1) = ofHom (a • (1 : CategoryTheory.End X)) := by
-    change ofEnd X (g₀ 1) = ofEnd X (a • (1 : CategoryTheory.End X))
-    simp only [h₀, map_zsmul, map_one]
+  have hunit : ofHom (g₀ 1).asHom = ofHom (a • (1 : CategoryTheory.End X)).asHom := by
+    have h : ofEnd X (g₀ 1) = ofEnd X (a • (1 : CategoryTheory.End X)) := by
+      simp only [h₀, map_zsmul, map_one]
+    exact congrArg CategoryTheory.End.asHom h
   have hmul (x y : O) :
-      ofHom (g₀ x * g₀ y) = ofHom (a • g₀ (x * y)) := by
-    change ofEnd X (g₀ x * g₀ y) = ofEnd X (a • g₀ (x * y))
-    simp only [map_mul, h₀, map_zsmul, smul_mul_assoc, mul_smul_comm]
+      ofHom (g₀ x * g₀ y).asHom = ofHom (a • g₀ (x * y)).asHom := by
+    have h : ofEnd X (g₀ x * g₀ y) = ofEnd X (a • g₀ (x * y)) := by
+      simp only [map_mul, h₀, map_zsmul, smul_mul_assoc, mul_smul_comm]
+    exact congrArg CategoryTheory.End.asHom h
   obtain ⟨k, hk, hku⟩ := (ofHom_eq_iff_exists_zsmul_eq _ _).mp hunit
   obtain ⟨l, hl, hlm⟩ := exists_common_zsmul_eq
-    (fun ij : I × I => g₀ (b ij.1) * g₀ (b ij.2))
-    (fun ij : I × I => a • g₀ (b ij.1 * b ij.2))
+    (fun ij : I × I => (g₀ (b ij.1) * g₀ (b ij.2)).asHom)
+    (fun ij : I × I => (a • g₀ (b ij.1 * b ij.2)).asHom)
     (fun ij => hmul (b ij.1) (b ij.2))
   let t : ℤ := k * l
   let n : ℤ := t * a
   let g : O →ₗ[ℤ] CategoryTheory.End X := t • g₀
   have hunit' : t • g₀ 1 = t • (a • (1 : CategoryTheory.End X)) := by
-    simpa only [t, smul_smul, mul_assoc, mul_comm k l] using congrArg (fun f => l • f) hku
+    simpa only [t, smul_smul, mul_assoc, mul_comm k l] using congrArg (fun f => l • f)
+      (CategoryTheory.End.ext hku : k • g₀ 1 = k • (a • (1 : CategoryTheory.End X)))
   have hmul' (i j : I) :
       t • (g₀ (b i) * g₀ (b j)) = t • (a • g₀ (b i * b j)) := by
-    simpa only [t, smul_smul, mul_assoc] using congrArg (fun f => k • f) (hlm (i, j))
+    simpa only [t, smul_smul, mul_assoc] using congrArg (fun f => k • f)
+      (CategoryTheory.End.ext (hlm (i, j)) :
+        l • (g₀ (b i) * g₀ (b j)) = l • (a • g₀ (b i * b j)))
   have hbasis (i j : I) : g (b i) * g (b j) = n • g (b i * b j) := by
     change (t • g₀ (b i)) * (t • g₀ (b j)) =
       (t * a) • (t • g₀ (b i * b j))

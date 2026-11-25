@@ -1,7 +1,7 @@
 # Induction category compatibility checks
 
-Worker 15's intrinsic checks accompany the transparent reuse of Worker 23's
-canonical category in
+These intrinsic checks accompany the transparent reuse of the
+canonical category `Langlands.SmoothRep` in
 [`Induction/Definitions`](Definitions.md). They introduce no mathematical
 construction, category instance, comparison equivalence, or additional
 assumption. Their provenance is the definitions of the two category names and

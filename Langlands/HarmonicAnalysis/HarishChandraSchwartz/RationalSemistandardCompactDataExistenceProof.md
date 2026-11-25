@@ -1,7 +1,7 @@
 # Compact-picture data for actual semistandard parabolics
 
 `Langlands.HarishChandraSchwartz.RationalSemistandard.compactDataExistence`
-proves `CompactDataExistenceStatement` for Task 7516. For each intrinsic index
+proves `CompactDataExistenceStatement`. For each intrinsic index
 the proof supplies a compact open subgroup in the canonical rational-point
 topology, continuity of the literal Levi projection and a factorization in the
 order \(G(F)=P(F)K\). Waldspurger (2003), §I.1, printed pp. 238–240, uses this
@@ -11,8 +11,8 @@ product in the compact picture. The paper is registered as
 The explicit local-field premise supplies the local instance. Smoothness of
 the connected reductive group supplies local finite type.
 `Langlands.HarishChandraSchwartz.rationalIwasawaCompactExistence` gives `K` and
-the point product for an empty-index standard parabolic. Worker 184's proof of
-that theorem uses depth-zero root groups at an apartment point and the relative
+the point product for an empty-index standard parabolic. Its proof
+(`RationalIwasawaCompactExistenceProof`) uses depth-zero root groups at an apartment point and the relative
 Tits system. `standardParabolic_empty_eq_dynamic_of_generic` and
 `genericMinimalParabolic` give minimality for the empty-index parabolic.
 

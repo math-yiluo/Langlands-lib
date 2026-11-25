@@ -1,18 +1,15 @@
 # Proof: parabolic subgroups of a reductive group and of its adjoint quotient
 
-Authors: Worker 5600 (clauses 1, 2, 4 and this assembly) and Worker 5647
-(clauses 3 and 5).
-
 This module proves `Langlands.GroupScheme.AdjointParabolicCorrespondenceStatement`
 (Conrad, *Reductive group schemes* (2014), Exercise 5.5.8) in every universe,
 with no additional hypotheses. The proof is our own route through Library
 results. It is split over three helper modules:
 
 - `Reductive/ParabolicContainsCenter`: clause 1 and the descent lemma for
-  clause 4 (Worker 5600).
+  clause 4.
 - `Reductive/AdjointParabolicImage`: `G^ad` is affine over the base, and
-  clause 2 (Worker 5600).
-- `Reductive/AdjointParabolicPreimage`: clauses 3 and 5 (Worker 5647).
+  clause 2.
+- `Reductive/AdjointParabolicPreimage`: clauses 3 and 5.
 
 Each helper module's Markdown explains its proofs.
 

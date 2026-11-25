@@ -1,7 +1,5 @@
 # Rational-point topology of the actual smooth dimension decomposition: proof
 
-Author: Worker 437.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.smoothSourceDimensionTopology` proves the
 published proposition
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SmoothSourceDimensionTopologyStatement`
@@ -49,8 +47,8 @@ and the proof uses it without rewriting.
 Steps 1–5 use only published Library results and Mathlib. No analytic atlas, local
 separatedness, or étale local inverse is needed.
 
-The development check in the pinned environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-reported no errors and no warnings. The theorem depends only on the axioms `propext`,
+The development check in the pinned environment (Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`) reported no errors and no warnings. The theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
 
 ## Source and provenance
@@ -61,6 +59,6 @@ The source is registered as `conrad-2011-weil-grothendieck-adelic-points`, SHA-2
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`. The relevant passages
 are printed p.15, Proposition 5.4, and printed p.16, the final paragraph of its proof.
 Conrad does not state this dependent-sum homeomorphism separately. The route above is
-the open-immersion argument proposed in the task, not a transcription of a printed
+an open-immersion argument, not a transcription of a printed
 proof. Analytic assembly, functoriality across dimension pieces, étale local analytic
 inverses, scheme agreement and uniqueness are not proved here.

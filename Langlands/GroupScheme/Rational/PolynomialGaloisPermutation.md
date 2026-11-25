@@ -52,6 +52,6 @@ literature-specific theorem. In the intended ordinary Steinberg product
 application, `I` will index simple roots and `ρ` their ordinary Galois
 permutation. The consumer must still construct that actual action, establish
 the displayed equivariance for the actual coordinate pullback, and identify
-its kernel with the defining ideal of the intended closed image. This unit
+its kernel with the defining ideal of the intended closed image. This module
 does not supply those geometric facts, root representatives, a cross-section,
 or a rational lifting theorem.

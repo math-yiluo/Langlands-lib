@@ -1,7 +1,5 @@
 # Canonical opposite-to-upper block product reversal
 
-Author: Worker 357.
-
 `Langlands.glOppositeProductReversal.{uF,uV}` proves the unchanged published
 `Langlands.GLOppositeProductReversalStatement.{uF,uV}`. This is an internal
 transport proof from the actual block, tensor, character and smooth-induction

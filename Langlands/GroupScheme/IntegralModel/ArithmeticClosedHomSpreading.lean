@@ -35,6 +35,7 @@ theorem Hom.isClosedImmersion_generic {M : IntegralModel R K G}
   rw [hg]
   change IsClosedImmersion (M.genericIso.hom.hom.hom.left ≫
     (f.hom.hom.left ≫ N.genericIso.inv.hom.hom.left))
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 namespace ArithmeticSpreading
@@ -96,6 +97,7 @@ theorem exists_enlarged_closedHom (S : Finset (FinitePlace F))
   change IsClosedImmersion (E₁.inv.hom.hom.left ≫
     (t.hom.hom.left ≫ E₂.hom.hom.hom.left))
   let : IsClosedImmersion t.hom.hom.left := ht
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A finite arithmetic enlargement on which the prescribed extending

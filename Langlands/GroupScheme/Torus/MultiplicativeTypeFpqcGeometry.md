@@ -1,6 +1,6 @@
 # Geometric fibre conditions and torsion orders under fpqc base change
 
-Worker 875. This is an internal derivation from the published geometric-fibre
+This is an internal derivation from the published geometric-fibre
 comparison, the field-level multiplicative-type predicate, actual torsion
 schemes, affine tensor coordinates and the quotient topology of fpqc maps.
 

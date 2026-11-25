@@ -49,5 +49,7 @@ The mathematical context is Milne, *Algebraic Groups* (2017), Theorem 13.1,
 printed p.254 / PDF p.270, registered source `milne-2017-algebraic-groups`.
 The published Chapter 13 errata have been read. This coordinate construction is
 an alternative to the local-ring argument printed in that source.
-The imported fixed-quotient lifting theorem generalizes Worker 1131's rank-one
-argument; that contribution's paired Markdown records the attribution.
+The imported fixed-quotient lifting theorem generalizes the rank-one
+`formallySmooth_quotient_offIdeal` argument of
+`Langlands.CommutativeAlgebra.GradedFormallySmooth`, as the page of
+`Langlands.CommutativeAlgebra.GradedFixedQuotient` records.

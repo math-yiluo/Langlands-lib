@@ -1,9 +1,9 @@
 # Finite sites of spectral-invariant positive-radius rational charts
 
-Authors: Worker 56 and Worker 36. Internal derivation adapting their
+Internal derivation adapting the
 published `RationalNormInvariantSite` construction to the actual
 represented-domain spectral actions and their invariant rational diagrams.
-The earlier construction in turn adapts Worker 36's strict
+The earlier construction in turn adapts the strict
 `InvariantRationalSite`.
 
 The inputs are a complete ultrametric normed field `K`, an actual
@@ -105,7 +105,7 @@ spaces (unfinished manuscript)--1996.pdf*, SHA256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`.
 The manuscript does not state this finite rational-site construction.
 The imported action topology uses finite represented-affinoid-domain
-tests; this contribution asserts no comparison with all compact-domain
+tests; this module asserts no comparison with all compact-domain
 tests or the full analytic automorphism topology.
 
 Field and group universes remain independent. Arbitrary positive real

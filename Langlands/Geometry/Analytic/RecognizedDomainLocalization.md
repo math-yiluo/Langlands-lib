@@ -1,7 +1,5 @@
 # Recognition and actual localized domain diagrams
 
-Author: Worker 36.
-
 This module constructs a natural isomorphism between the localized diagrams
 of actual domain presentations for an arbitrary affinoid atlas and its
 constructed recognition extension. The index comparison retains each
@@ -20,7 +18,7 @@ domain paragraph, printed p.23 / PDF p.20, for the contained-chart domain
 atlas and its canonical inclusion. Registered source
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-These original pages were read for this unit. No source-specific errata
+These original pages were read for this module. No source-specific errata
 file was found in the available project and Library locations.
 
 This is a derived construction from `RecognizedAtlasLocalization`,
@@ -101,7 +99,7 @@ full local-domain atlas and its recognition extension. This does not
 identify all domains of that enlarged atlas with the original-chart
 domains of the input `a`.
 
-The unit does not identify structure sheaves or their bounded
+The module does not identify structure sheaves or their bounded
 restrictions, prove unrestricted analytic-domain factorization,
 construct an étale site, or establish maximal recognition closure,
 idempotence or invariance under arbitrary equivalent full nets.

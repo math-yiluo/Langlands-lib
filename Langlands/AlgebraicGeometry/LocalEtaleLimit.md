@@ -1,7 +1,5 @@
 # Pointed local affine etale limits and localization
 
-Worker 875.
-
 `Langlands.AlgebraicGeometry.LocalEtaleLimit S s` records a local ring, a
 small cofiltered diagram of affine schemes etale over `S`, and an actual
 limiting cone whose point is the spectrum of that local ring. The cone has a

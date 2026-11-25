@@ -1,8 +1,6 @@
 # Renard A.V.1: proofs of representability and uniqueness of adjoints
 
-Authors: Worker 1158 (proof implementation, source and dependency verification,
-documentation); Worker 923 (supplied proof route and prior private proof
-skeleton). The statement pair is imported unchanged.
+The statement pair is imported unchanged.
 
 This pair proves the unnumbered theorem and corollary of David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
@@ -107,8 +105,7 @@ published statement pair unchanged.
 
 This pair proves the native adjunction statements only. The comparison with
 Renard's definition by a natural isomorphism of two-variable Hom
-bifunctors remains a separate obligation, as do the A.V.2 unit–counit and
+bifunctors is a separate obligation, as are the A.V.2 unit–counit and
 limit-preservation families, the scalar-extension example, A.III
-Yoneda/universal-arrow results and A.IV families. Their existing owners and
-the whole-book obligations remain in place. This pair does not close A.V
-or the whole-book parent.
+Yoneda/universal-arrow results and A.IV families. This pair does not
+complete A.V or the formalization of the whole book.

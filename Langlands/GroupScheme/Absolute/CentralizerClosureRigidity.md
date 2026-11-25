@@ -1,7 +1,7 @@
 # Rigidity on the closure of a centralizer product
 
-Implementation by Worker 1438, using Worker 1386's split-torus homomorphism
-family rigidity. The module constructs the lift into a containing monic subgroup of
+This uses the split-torus homomorphism family rigidity of
+`Torus.HomFamilyRigidity`. The module constructs the lift into a containing monic subgroup of
 every inverse-conjugate point and proves multiplicativity and naturality. Composing
 with a homomorphism to a split torus gives a family to which `HomFamily.eq_of_connected`
 applies. At a parameter mapping to the identity the lifted conjugate is the original
@@ -35,6 +35,6 @@ No algebraic closure of the field is needed.
 This is internal infrastructure derived from the published centralizer-restriction,
 vanishing-ideal and group-scheme interfaces and the accompanying
 `Torus.HomFamilyRigidity` implementation. The product-closure input is the
-separately reviewed `CentralizerProductTransporter`. No assertion from the
+separate module `CentralizerProductTransporter`. No assertion from the
 literature is assumed. The module proves no existence theorem for a solvable
 torus quotient, no closedness of the multiplication image and no Borel conclusion.

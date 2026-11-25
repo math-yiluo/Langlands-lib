@@ -1,7 +1,5 @@
 # Statement: points of a torus centralizer lie in Borel subgroups containing the torus
 
-Worker 75.
-
 `Langlands.GroupScheme.TorusCentralizerBorelCoverStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:

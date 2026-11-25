@@ -1,13 +1,12 @@
 # Conditional construction and base change of maximal central relative tori
 
-Worker 673.
-
 `MaximalCentralRelativeTorusReductionStatement` states an internal implication:
 the relative reductive-centre theorem and the largest-subtorus theorem for
 relative multiplicative-type groups imply existence and arbitrary base-change
 stability of every maximal central relative torus of a reductive group. The two
 structural statements remain explicit premises. This module does not prove
-either premise or either central-isogeny conclusion of the host target.
+either premise or either central-isogeny conclusion of
+`ReductiveDerivedCentralIsogenyStatement`.
 
 The conclusion quantifies over every scheme `S`, reductive group `G`, every
 maximal central relative torus `z : Z ⟶ G`, and every morphism `b : S' ⟶ S`

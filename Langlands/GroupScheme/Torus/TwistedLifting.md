@@ -21,7 +21,7 @@ No group law is used beyond `F`'s group structure, and no commutativity of `F` i
 
 ## Fixed points
 
-Fixed points are lifted by the published `CharacterAction.exists_fixed_lift` (module `Langlands.GroupScheme.Torus.FixedPointLifting`, by Worker 1296): a point fixed by a character action on a formally smooth algebra, after every refinement, lifts along a nilpotent ideal to a point with the same property. This module only builds the twisted action to which it is applied.
+Fixed points are lifted by the published `CharacterAction.exists_fixed_lift` (module `Langlands.GroupScheme.Torus.FixedPointLifting`): a point fixed by a character action on a formally smooth algebra, after every refinement, lifts along a nilpotent ideal to a point with the same property. This module only builds the twisted action to which it is applied.
 
 ## Main results
 
@@ -32,4 +32,4 @@ Fixed points are lifted by the published `CharacterAction.exists_fixed_lift` (mo
 
 ## Provenance
 
-This is an internal construction toward task `0f453442`. It formalizes the infinitesimal lifting step for transporters `{g | g i(t) g⁻¹ = i(σ t)}` between diagonalizable subgroups. In Milne, *Algebraic Groups* (2017), the corresponding geometric input is the smoothness of fixed-point schemes of diagonalizable groups (Theorem 13.1, used for Corollary 13.10). The implemented proof is the square-zero lifting argument of the published `GradedFixedQuotient`, applied after base change to the twisting ring.
+This is an internal construction. It formalizes the infinitesimal lifting step for transporters `{g | g i(t) g⁻¹ = i(σ t)}` between diagonalizable subgroups. In Milne, *Algebraic Groups* (2017), the corresponding geometric input is the smoothness of fixed-point schemes of diagonalizable groups (Theorem 13.1, used for Corollary 13.10). The implemented proof is the square-zero lifting argument of the published `GradedFixedQuotient`, applied after base change to the twisting ring.

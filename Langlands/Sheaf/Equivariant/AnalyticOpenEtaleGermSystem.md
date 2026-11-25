@@ -1,6 +1,6 @@
 # The ordinary neighbourhood system of a point as a germ system on the étale site
 
-Worker 749. This module is a derived helper for the planned proof of
+This module is a derived helper for a proof of
 `AnalyticEtaleGaloisCoinducedLocalAcyclicStatement`. The Library computes the ordinary
 germ cohomology `etaleUnderlyingGermCohomology X R y q` with the fiber of the ordinary site
 point `underlyingTopologyPoint X y`. The germ functors of

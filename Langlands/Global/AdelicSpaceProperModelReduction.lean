@@ -52,8 +52,7 @@ section Comparisons
 variable {B C E : Scheme.{u}} (q : C ⟶ B) (r : E ⟶ C) (p : E ⟶ B)
     (h : r ≫ q = p)
 
-/-- Convert the section equality in morphism descent to a commuting arrow square.
-Adapted from Worker 208's shared arithmetic independence draft. -/
+/-- Convert the section equality in morphism descent to a commuting arrow square. -/
 theorem compIso_hom_comp_eq {X Z : AlgebraicSpace B}
     (φ : baseChange p X ⟶ baseChange p Z) (φi : baseChange q X ⟶ baseChange q Z)
     (hφ : ∀ (W : Over E) (x : (baseChange p X).sections W),

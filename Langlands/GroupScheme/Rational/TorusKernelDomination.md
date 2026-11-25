@@ -31,6 +31,6 @@ so the published split-domination theorem applies directly.
 The provenance is internal, from the published pointed torus homomorphism
 constructor, kernel-difference construction, torus geometry, smooth
 reducedness and dominant-homomorphism flatness. The actual kernel of
-`φ` can remain disconnected or nonsmooth; this contribution does not
+`φ` can remain disconnected or nonsmooth; this module does not
 replace it by a torus or conclude unipotent splitness or maximal-torus
 conjugacy.

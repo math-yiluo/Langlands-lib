@@ -1,7 +1,5 @@
 # Actual supercuspidal induction finite length from the cuspidal extraction inputs
 
-Author: Worker 4238.
-
 Module `Langlands.Representation.Aubert.General.RationalSupercuspidalInductionExtractionInputsProof`,
 namespace `Langlands.Aubert.General.RationalPointFamily`.
 
@@ -16,10 +14,10 @@ RationalCuspidalExtractionInputsStatement.{u, v} →
 ```
 
 It does **not** prove the target `RationalSupercuspidalInductionFiniteLengthStatement`
-itself: its antecedent, Worker 4358's published conjunction of the geometric
+itself: its antecedent, the published conjunction of the geometric
 filtration input (G) and the proper-standard exclusion input (E)
 ([RationalCuspidalExtractionInputs](RationalCuspidalExtractionInputs.md)), is
-still unproved in the Library. The universes `u` and `v` are independent, and
+not proved in the Library. The universes `u` and `v` are independent, and
 no premise is added to the target. The axioms used are `propext`,
 `Classical.choice` and `Quot.sound`.
 
@@ -129,7 +127,9 @@ published statements.
 
 ## What remains open
 
-Inputs (G) and (E) of `RationalCuspidalExtractionInputsStatement` are unproved
-in the Library; the inputs Markdown records what each still needs. Until both
-are proved, the target `RationalSupercuspidalInductionFiniteLengthStatement`
-remains open.
+Of the inputs of `RationalCuspidalExtractionInputsStatement`, (G) is proved in
+the Library (`exists_pointInducedJacquetGeometricFiltration` in
+`RationalInducedJacquetGeometricFiltration`); (E) is proved only conditionally,
+from the whole-category splitting or from the special-vertex compact inputs.
+The Library does not prove the target
+`RationalSupercuspidalInductionFiniteLengthStatement`.

@@ -64,6 +64,8 @@ variable (ν : Measure (AdelicGroupPoints F G))
 /-- Actual continuous cusp orbits are strongly measurable for the specified group measure. -/
 theorem fullAEL2CuspidalOrbit_aestronglyMeasurable (φ : S) :
     AEStronglyMeasurable (fun a => πc a φ) ν :=
+  haveI : SecondCountableTopologyEither (AdelicGroupPoints F G) S :=
+    secondCountableTopologyEither_of_left _ _
   (fullAEL2CuspidalOrbitMap F G hPD hG T i hi I e hc φ).continuous.stronglyMeasurable.aestronglyMeasurable
 
 local notation "hπcmeas" =>

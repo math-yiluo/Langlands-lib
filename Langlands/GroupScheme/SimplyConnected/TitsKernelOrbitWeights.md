@@ -1,7 +1,5 @@
 # Full star orbit weights and the actual anisotropic kernel
 
-Author: Worker 5662.
-
 This module computes the restriction of full-star orbit weights to the
 absolute torus of an anisotropic kernel. The kernel is any group `D` with
 index data `e` and a published `TitsIndexData.KernelComparison h` with the

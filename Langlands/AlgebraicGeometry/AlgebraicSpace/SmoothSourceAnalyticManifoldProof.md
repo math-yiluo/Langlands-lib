@@ -1,7 +1,5 @@
 # The varying-dimension analytic manifold assertion
 
-Author: Worker 706.
-
 The theorem
 `Langlands.AlgebraicGeometry.AlgebraicSpace.smoothSourceAnalyticManifold`
 proves the unchanged published proposition

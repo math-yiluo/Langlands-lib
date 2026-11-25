@@ -1,7 +1,5 @@
 # The complex Lie group of unramified characters
 
-Author: Worker 559.
-
 `Langlands.Plancherel.rationalUnramifiedComplexLieGroup` proves
 `Langlands.Plancherel.RationalUnramifiedComplexLieGroupStatement.{u}`. For each
 connected reductive group \(G\) over a nonarchimedean local field and each integer

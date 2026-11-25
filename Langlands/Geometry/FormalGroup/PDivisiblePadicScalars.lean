@@ -39,7 +39,7 @@ theorem levelZero_affinePoint_eq_one (A : CommAlgCat.{u} R)
 
 /-- The actual n-th finite group scheme is killed by multiplication by p^n. -/
 theorem level_nsmul_id_eq_zero (n : ℕ) :
-    p ^ n • (𝟙 (G.inclusions.obj n)) = (0 : End (G.inclusions.obj n)) := by
+    p ^ n • (𝟙 (G.inclusions.obj n)) = (0 : G.inclusions.obj n ⟶ G.inclusions.obj n) := by
   let i : 0 ⟶ n := homOfLE (Nat.zero_le n)
   have hm := G.multiplication i
   rw [Nat.sub_zero] at hm
@@ -66,7 +66,7 @@ def levelZModAction (n : ℕ) : ZMod (p ^ n) →+* End (G.inclusions.obj n) := b
   let : CharP E (ringChar E) := ringChar.charP E
   have h : ringChar E ∣ p ^ n := ringChar.dvd (R := E) (by
     rw [← nsmul_one]
-    exact G.level_nsmul_id_eq_zero n)
+    exact congrArg End.of (G.level_nsmul_id_eq_zero n))
   exact ZMod.castHom (m := ringChar E) h E
 
 /-- An actual finite level carries the residue of a p-adic scalar. -/
@@ -76,7 +76,7 @@ def levelPadicAction (n : ℕ) : ℤ_[p] →+* End (G.inclusions.obj n) :=
 /-- A representative of the scalar at level n acts by its integral multiple
 at every level m at most n. -/
 theorem levelPadicAction_eq_nsmul_of_le {m n : ℕ} (h : m ≤ n) (a : ℤ_[p]) :
-    G.levelPadicAction m a = (PadicInt.toZModPow n a).val • (𝟙 (G.inclusions.obj m)) := by
+    (G.levelPadicAction m a).asHom = (PadicInt.toZModPow n a).val • (𝟙 (G.inclusions.obj m)) := by
   let j := PadicInt.toZModPow n a
   let r := ZMod.castHom (pow_dvd_pow p h) (ZMod (p ^ m))
   have hn : (j.val : ZMod (p ^ n)) = j := ZMod.natCast_zmod_val j
@@ -84,30 +84,30 @@ theorem levelPadicAction_eq_nsmul_of_le {m n : ℕ} (h : m ≤ n) (a : ℤ_[p]) 
     have he := DFunLike.congr_fun (PadicInt.zmod_cast_comp_toZModPow (p := p) m n h) a
     change r j = PadicInt.toZModPow m a at he
     exact he.symm.trans ((congrArg r hn.symm).trans (map_natCast r j.val))
-  change G.levelZModAction m (PadicInt.toZModPow m a) = _
+  change (G.levelZModAction m (PadicInt.toZModPow m a)).asHom = _
   rw [hm, map_natCast, ← nsmul_one]
   rfl
 
 /-- The natural p-adic scalar action on the entire actual tower. -/
 def padicAction : ℤ_[p] →+* End G where
-  toFun a := Hom.ofComponents (fun n => G.levelPadicAction n a) (by
+  toFun a := End.of <| Hom.ofComponents (fun n => (G.levelPadicAction n a).asHom) (by
     intro m n i
     rw [G.levelPadicAction_eq_nsmul_of_le (leOfHom i), G.levelPadicAction_eq_nsmul_of_le (le_refl n)]
     simp) (by
     intro m n i
     rw [G.levelPadicAction_eq_nsmul_of_le (leOfHom i), G.levelPadicAction_eq_nsmul_of_le (le_refl n)]
     simp)
-  map_one' := Hom.ext fun n => (G.levelPadicAction n).map_one
-  map_zero' := Hom.ext fun n => (G.levelPadicAction n).map_zero
-  map_add' a b := Hom.ext fun n => (G.levelPadicAction n).map_add a b
-  map_mul' a b := Hom.ext fun n => (G.levelPadicAction n).map_mul a b
+  map_one' := End.ext (Hom.ext fun n => congrArg End.asHom (G.levelPadicAction n).map_one)
+  map_zero' := End.ext (Hom.ext fun n => congrArg End.asHom (G.levelPadicAction n).map_zero)
+  map_add' a b := End.ext (Hom.ext fun n => congrArg End.asHom ((G.levelPadicAction n).map_add a b))
+  map_mul' a b := End.ext (Hom.ext fun n => congrArg End.asHom ((G.levelPadicAction n).map_mul a b))
 
 @[simp] theorem padicAction_app (n : ℕ) (a : ℤ_[p]) :
-    (Hom.app (G.padicAction a) n) = G.levelPadicAction n a := rfl
+    (Hom.app (G.padicAction a).asHom n) = (G.levelPadicAction n a).asHom := rfl
 
 /-- All morphisms commute with the natural p-adic scalar actions. -/
 theorem padicAction_naturality {H : PDivisibleGroup R p} (f : G ⟶ H) (a : ℤ_[p]) :
-    G.padicAction a ≫ f = f ≫ H.padicAction a := by
+    (G.padicAction a).asHom ≫ f = f ≫ (H.padicAction a).asHom := by
   apply Hom.ext
   intro n
   rw [Hom.comp_app, Hom.comp_app, padicAction_app, padicAction_app,
@@ -118,12 +118,12 @@ theorem padicAction_naturality {H : PDivisibleGroup R p} (f : G ⟶ H) (a : ℤ_
 instance : CategoryTheory.Linear ℤ_[p] (PDivisibleGroup R p) where
   homModule G H := Module.compHom (G ⟶ H) H.padicAction
   smul_comp G H J a f g := by
-    change (f ≫ H.padicAction a) ≫ g = (f ≫ g) ≫ J.padicAction a
+    change (f ≫ (H.padicAction a).asHom) ≫ g = (f ≫ g) ≫ (J.padicAction a).asHom
     rw [Category.assoc, H.padicAction_naturality, ← Category.assoc]
-  comp_smul _ _ J f a g := (Category.assoc f g (J.padicAction a)).symm
+  comp_smul _ _ J f a g := (Category.assoc f g (J.padicAction a).asHom).symm
 
 /-- Scalar multiplication of a morphism is postcomposition by the scalar on the target. -/
 theorem smul_eq_comp_padicAction {G H : PDivisibleGroup R p} (a : ℤ_[p]) (f : G ⟶ H) :
-    a • f = f ≫ H.padicAction a := rfl
+    a • f = f ≫ (H.padicAction a).asHom := rfl
 
 end Langlands.PDivisibleGroup

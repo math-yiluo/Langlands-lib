@@ -1,7 +1,5 @@
 # Unitary constituents of an admissible finite-length character limit
 
-Authors: Worker 607 (draft), Worker 5 (revision).
-
 This module states
 `Langlands.UnitaryCharacterLimitSubquotientsStatement.{uG, uV}`
 in `Langlands/Representation/Unitary/CharacterLimitSubquotientsStatement.lean`.
@@ -141,7 +139,8 @@ theorem, every irreducible subquotient `τ` of `ρ` is isomorphic to some `τ_i`
 ## Why the derived scope is sound
 
 The following outline shows that the statement is plausible in its stated
-generality. It is not a Lean proof, and the proof is left to a successor task.
+generality. It is not a Lean proof; the Lean proof is in
+`Langlands.Representation.Unitary.CharacterLimitSubquotientsProof`.
 It adapts Tadic's proof to one compact open subgroup at a time.
 
 Let `K` be a compact open subgroup of `G`. Such subgroups exist and form a
@@ -189,14 +188,14 @@ compactness. Let `e_K = μ(K)⁻¹ 1_K ∈ SchwartzBruhat G`. For admissible `σ
 The outline uses the topological hypotheses, unimodularity, and admissibility
 of the `π k` and of `ρ`. It does not use second countability, the regularity
 of `μ`, irreducibility of the `π k` or finite length of `ρ`. These hypotheses
-are kept because this task fixes the interface. They only narrow the
+are kept as part of the statement's interface. They only narrow the
 statement and hold in the intended application.
 
 As in the source, the argument needs **all** irreducible constituents. One
 limiting positive semidefinite form on `ρ` would only make one quotient of
 `ρ` unitarizable. That does not cover every irreducible subquotient.
 
-Library material for a later proof includes `Hecke.HeckeAlgebra.Corner`,
+Library material for a proof includes `Hecke.HeckeAlgebra.Corner`,
 `Hecke.cornerModule`, `Character.distribution_eq_fixedVectors`,
 `CompactCoefficientClass.isSimpleModule_fixedVectors`,
 `Character.finiteFamilyLinearIndependence` (Bernstein–Zelevinsky 1976,
@@ -223,11 +222,10 @@ hypothesis on `G` and `μ` is available from the Library.
   `RankinSelberg.generalLinearHaar_isMulRightInvariant`).
 
 The levels `.{uF, max uF uV}` match the carrier universe of
-`Classification.ComplementarySeriesUnitarity`. A private development probe
+`Classification.ComplementarySeriesUnitarity`. A separate check
 compiled the specialization of
 `UnitaryCharacterLimitSubquotientsStatement.{uF, max uF uV}` to these data
-for every `p`, `F`, `T` and `m`. It used `lean_check` diagnostic
-`6230f014-e20c-473a-bdf8-e8e315626d17`. That consumer uses `GL_(2n)` with
+for every `p`, `F`, `T` and `m`. That consumer uses `GL_(2n)` with
 `0 < n`. Any Haar measure may be chosen, since the conclusion does not
 mention `μ`.
 
@@ -237,7 +235,9 @@ The intended consumer is the end-point clause of
 `Langlands.Classification.ComplementarySeriesUnitarity` (Tadic 1986,
 Proposition 2.9). Take parameters `α_k` in the open interval tending to `α₀`.
 Let `π k` be the complementary products at `α_k` and `ρ` the product at
-`α₀`. The following remain separate obligations of that proof:
+`α₀`. The following are inputs of that proof that this statement does not
+supply; `ComplementarySeriesUnitarity` is proved in
+`Langlands.Representation.Classification.TadicComplementarySeriesProof`:
 
 - irreducibility and unitarity at the interior parameters (hypothesis and
   first clause of Proposition 2.9);
@@ -249,8 +249,8 @@ None is inferred here.
 
 ## Validation
 
-`lean_check` diagnostic `1e59aebf-96e8-48dc-a2cf-f27386624a34` compiled
+A compilation check compiled
 this module in place without errors or warnings. It reported a proposition-valued
 definition with level parameters `uG` and `uV`. The only axioms were
-`propext`, `Classical.choice` and `Quot.sound`. This check provides neither a
-proof nor semantic acceptance.
+`propext`, `Classical.choice` and `Quot.sound`. This check provides no
+proof.

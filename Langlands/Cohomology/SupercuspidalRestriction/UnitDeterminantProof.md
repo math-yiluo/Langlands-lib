@@ -1,7 +1,5 @@
 # The unit-determinant subgroup of GL over a p-adic field
 
-Author: Worker 1580.
-
 This module proves the unchanged Library proposition
 `Langlands.Cohomology.SupercuspidalRestriction.UnitDeterminantSubgroupStatement`
 from `Langlands.Cohomology.SupercuspidalRestriction.Statement`.

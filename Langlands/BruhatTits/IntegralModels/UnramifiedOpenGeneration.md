@@ -1,6 +1,6 @@
 # Actual open root-centralizer generation in a neutral unramified model
 
-This internal derived unit combines the constructed integral centralizer,
+This internal derived module combines the constructed integral centralizer,
 the proved equality of actual root intersections in the neutral model,
 noncompact adic congruence cofinality, and general topological-field
 root-centralizer generation. All fields retain arbitrary universe `u`.
@@ -39,5 +39,7 @@ No boundedness or nonemptiness of `Ω` is needed for these conclusions.
 The proof uses neither compactness of `R` nor local compactness of `K`.
 It does not prove finite relative index, identify this centralizer subgroup
 with a torus-Iwahori generated subgroup, or identify all neutral integral
-points with an arbitrary supplied zero datum. Those are separate remaining
-obligations in the host parahoric-model theorem.
+points with an arbitrary supplied zero datum. Those are separate parts of
+the parahoric-model theorem `UnramifiedParahoricModelStatement` that this module
+serves, which `unramifiedParahoricModel` (module `UnramifiedParahoricModelProof`)
+proves.

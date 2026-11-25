@@ -1,10 +1,10 @@
 # The rank-one relation for an equivariant line in a nonmultipliable root group
 
-Author: Worker 5397. Worker 163 requested the interface for Task 7827 (Borel–Tits 1965,
-Théorème 7.2). Its input is the output of
-`MaximalSplitSubgroup.exists_line_through_rootPoint`
-(`Rational.MaximalSplitRankOneLine`, Worker 163). Its output is the rank-one relation that
-Worker 163's generated-subgroup argument consumes.
+This module is an interface of the proof of Borel–Tits 1965, Théorème 7.2. Its input is the
+output of `MaximalSplitSubgroup.exists_line_through_rootPoint`
+(`Rational.MaximalSplitRankOneLine`). Its output is the rank-one relation that the
+generated-subgroup argument of that proof consumes (`MaximalSplitSubgroupLines`,
+`MaximalSplitGeneratedWeyl`).
 
 Throughout, `k : Type u` is a field and `G` is a group scheme over `Spec k`. `S` is a
 commutative group scheme over `Spec k`, and `i : S.toGrp ⟶ G` is a homomorphism. Notation:
@@ -44,7 +44,8 @@ The entry definition `oppositeLine x n` is `scaleHom (-1) ≫ x ≫ (G.innerIso 
 Pointwise it is `t ↦ n⁻¹ x(-t) n` (`rootPoint_oppositeLine`), and `mono_oppositeLine` shows it
 is monic when `x` is.
 
-The section `Reflection` gives the reflection formulas in the form Worker 163 asked for:
+The section `Reflection` gives the reflection formulas in the form the generated-subgroup
+argument uses:
 
 - `cocharacter_comp_reflection`: `ξ ≫ s_a = ξ - ⟨a, ξ⟩ • ν`;
 - `groupHom_comp_reflection_of_pairing_eq_zero`: `s_a` fixes every cocharacter `ξ` with

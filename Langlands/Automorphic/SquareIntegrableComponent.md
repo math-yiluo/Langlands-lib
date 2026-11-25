@@ -1,6 +1,6 @@
 # Square-integrable local components of cuspidal classes
 
-Author: Worker 34. This module defines when an irreducible cuspidal class of
+This module defines when an irreducible cuspidal class of
 `GL_{r+1}` over a number field `F` has a square-integrable local component at
 a finite place `v`. Harris (1998), Theorem 1.2(i), and Clozel's theorems on
 which it rests assume such a component. Nothing is asserted about any
@@ -75,10 +75,12 @@ remark explains the choice; it is not proved in Lean.
 ## Scope
 
 As for supercuspidal components, the definition asks for one presentation
-whose local component at `v` is square-integrable. The Library does not yet
+whose local component at `v` is square-integrable. The Library does not
 prove that all presentations of a cuspidal class have isomorphic local
-components, so "some presentation" is the faithful reading of "the local
-component is square-integrable". The predicate is internal: it combines the
+components; it compares two presentations whose components at `v` are
+irreducible (`CuspidalSpectralPresentation.localComponent_isoClass_eq`,
+module `AssociatedPresentationComparison`). So "some presentation" is the faithful
+reading of "the local component is square-integrable". The predicate is internal: it combines the
 published local components and the published square-integrability predicate.
 No relation to supercuspidality (every supercuspidal irreducible
 representation with unitary central character is square-integrable) is

@@ -34,7 +34,7 @@ Thus `W` is affine. The explicit `UnipotentClosedSubgroupStatement` premise
 applied to this first projection proves `IsUnipotent W`. The arbitrary-torus
 vanishing theorem from `Torus/UnipotentHomNonsplit` makes the second projection
 `W ⟶ T` zero. The pullback equation then makes the intersection homomorphism
-`W ⟶ G` zero. Its published range comparison proves trivial intersection
+`W ⟶ G` zero. Its range comparison proves trivial intersection
 on every scheme test, including nonreduced tests.
 
 The preliminary lemma
@@ -47,12 +47,13 @@ this image the identity. Cancelling the subgroup monomorphism proves
 calculation above. The point embedding is composition by the resulting
 monomorphism; associativity gives its naturality.
 
-These are internal deductions from the published subgroup pullback and
+These are internal deductions from the existing subgroup pullback and
 kernel point APIs and the separately supplied nonsplit-target vanishing
 helper. There is no additional literature assertion.
 
-This unit supplies injectivity only. It does not establish closedness or
+This module supplies injectivity only. It does not establish closedness or
 maximality of the image in `Q`, surjectivity of a torus onto a quotient, a
 homomorphic section, existence of a torus lift, or rational conjugacy of
-maximal tori. Closed-subgroup unipotence and those further structural
-obligations remain separate.
+maximal tori. Closed-subgroup unipotence, proved as `unipotentClosedSubgroup`
+in `UnipotentClosedSubgroupProof`, and those further structural results are
+not part of this module.

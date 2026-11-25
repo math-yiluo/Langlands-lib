@@ -16,9 +16,6 @@ algebraic point `φ : AlgPoint K B K`, it asserts
 baseMap K P Q f (analyticPoint K Q φ) = analyticPoint K P (AlgPoint.precomp f φ).
 ```
 
-This proof adapts the complete public draft shared by Worker 3519 for Task 7072,
-revision 1. Its Lean proof is unchanged from that draft.
-
 The proof imports only the statement module, which in turn imports the published
 `AffineAnalytificationRationalPoints` and `AffineAnalytificationMap`. It uses no
 other axioms than `propext`, `Classical.choice` and `Quot.sound`.

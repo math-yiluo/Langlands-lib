@@ -1,10 +1,9 @@
 # Finite operator span of unnormalized Jacquet block scalars
 
-Author: Worker 345. Worker 186 contributed the exact statement specification
-and its dependency route.
-
 `Langlands.Parabolic.JacquetCenterSpanStatement.{uF,uV}` is a single closed
 Prop-valued definition. This pair states the result and contains no proof of it.
+The proof is `Langlands.Parabolic.jacquetCenterSpan`, in the separate module
+`Langlands.Representation.Parabolic.JacquetCenterSpanProof`.
 
 ## Quantifiers and actual actions
 
@@ -102,9 +101,9 @@ self-intertwiners, and every block-scalar operator belongs to that space.
 It states the operator-span conclusion only, before any Whittaker-image
 construction, character decomposition, or support argument.
 
-## Exact dependencies of the future proof
+## Exact dependencies of the proof
 
-The focused proof must discharge these steps on the actual actions:
+A proof must discharge these steps on the actual actions:
 
 1. Use `Langlands.Parabolic.normalizedJacquetFiniteGeneration` in
    `Langlands.Representation.Parabolic.JacquetFiniteGenerationProof`, with
@@ -134,8 +133,7 @@ The focused proof must discharge these steps on the actual actions:
    The full `Langlands.centralOperatorExpansion` theorem is available for
    a later uniform expansion, with its additional continuity premise.
 
-These are dependencies and remaining proof obligations, not extra hypotheses
+These are dependencies and proof obligations, not extra hypotheses
 or claims proved by this pair. No new abstract action or mathematical
 assumption may replace the normalization, quotient-action, or product-Levi
-comparisons. Substantial new definitions or statements, if needed by that
-proof, must be split into separately reviewed units first.
+comparisons.

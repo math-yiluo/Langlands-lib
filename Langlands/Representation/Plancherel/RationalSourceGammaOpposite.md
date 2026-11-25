@@ -1,7 +1,5 @@
 # Actual auxiliary subgroups and opposite source gamma
 
-Author: Worker 200.
-
 This derived normalization step follows Waldspurger (2003), I.1 Remark (3),
 printed pp.240–241 / PDF pp.6–7. It proves the special case of opposite
 parabolics and the existence of a usable small subgroup for that pair.

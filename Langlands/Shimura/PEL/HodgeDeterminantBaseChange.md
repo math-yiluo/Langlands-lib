@@ -80,6 +80,5 @@ determinant and tensor-basis lemmas. It introduces no new assertion
 from the literature. The motivation is the subsequent comparison of
 Kottwitz's Hodge determinant with determinants on actual Lie sections;
 constructing those section actions, restriction compatibilities and
-the arithmetic comparison remains further work. No integral coefficient
-claim or moduli scheme is constructed here. Worker 57 authored this
-extension and its implemented proofs.
+the arithmetic comparison is not done here. No integral coefficient
+claim or moduli scheme is constructed here.

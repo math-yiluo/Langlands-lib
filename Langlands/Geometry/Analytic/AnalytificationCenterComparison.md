@@ -2,14 +2,16 @@
 
 This module develops reductions for the unchanged
 `Langlands.Analytic.SchemeAnalytification.AnalytificationCenterStatement`.
-It does not yet prove that entire proposition. The statements that take
+It does not prove that entire proposition; `AnalytificationCenterProof`
+combines these reductions with the remaining inputs to prove it. The statements that take
 seminorm injectivity, affine surjectivity, or chart range identities as
 arguments are explicit conditional reductions.
 
 The affine rational-point seminorm formula follows by evaluating the
 published chart character on an element of the coordinate algebra. It
-reproduces the short calculation in the unreviewed rational-point comparison
-draft of Task 7084. Its kernel is the algebraic point's kernel. If a second
+reproduces the short calculation of `pointSeminorm_analyticPoint_apply` in the
+rational-point comparison `AffineAnalytificationRationalPointsProof`. Its
+kernel is the algebraic point's kernel. If a second
 point has that center, the difference between an element and its scalar
 value under the rational point has seminorm zero. Applying the triangle
 inequality in both directions shows equality of the two seminorms. Seminorm

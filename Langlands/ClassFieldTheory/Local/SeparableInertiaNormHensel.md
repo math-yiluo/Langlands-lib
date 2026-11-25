@@ -1,6 +1,6 @@
 # Valuation-theoretic Hensel lemmas for unit norm surjectivity
 
-Author: Worker 1512. This is the first helper module of the proof of
+This is the first helper module of the proof of
 `Langlands.ClassFieldTheory.Local.SeparableInertiaUnitNormSurjectivity` (see
 `SeparableInertiaNormProof.md`). It imports only Mathlib.
 

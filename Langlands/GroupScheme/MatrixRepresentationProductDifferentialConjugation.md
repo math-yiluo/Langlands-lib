@@ -1,7 +1,5 @@
 # Matrix evaluation and conjugation for actual finite-product scheme representations
 
-Author: Worker 2.
-
 This module evaluates actual representations of finite products of general
 linear group schemes in invertible matrix coordinates. It proves that the
 constructed product differential intertwines conjugation by every matrix

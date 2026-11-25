@@ -5,16 +5,13 @@ Namespace `Langlands.Aubert.General.RepresentedParabolic`. Universe parameters `
 The module contains one **statement**, the `Prop`-valued definition
 `LanglandsQuotientExponentCharacterizationStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-
 ## Source and provenance
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read VII.4.2, the Theorem and the proof of (i), printed p.243 / PDF p.249.
+VII.4.2, the Theorem and the proof of (i), printed p.243 / PDF p.249, were read.
 After proving that `i_P^G(σ ⊗ ψ)` has a unique irreducible quotient, Renard writes:
 
 > De plus, on voit d'après ce qui précède que `(π, V)` est caractérisé en tant que
@@ -26,7 +23,7 @@ set of normalized exponents along the split component `A_M` (VII.1.1), and `ℜ`
 real part (V.3.20).
 
 The published statement of the Theorem, `LanglandsClassificationStatement`, states
-parts (i)–(iii). Its Markdown records this sentence as not stated. This unit states it.
+parts (i)–(iii). Its Markdown records this sentence as not stated. This module states it.
 
 ## The statement
 
@@ -67,7 +64,9 @@ statement asserts:
 
 ## Why the statement is true
 
-The proof is a separate obligation. Renard's argument: by second adjointness (VI.9.6),
+The proof is separate: `langlandsQuotientExponentCharacterization_of_secondAdjointness`
+(module `LanglandsQuotientExponentCharacterizationFromSecondAdjointnessProof`) proves the
+statement from second adjointness. Renard's argument: by second adjointness (VI.9.6),
 `Hom_G(I, π) ≅ Hom_M(σ ⊗ ψ, r_{P̄}^G(π))`. So the Langlands quotient contains `σ ⊗ ψ`
 in `r_{P̄}^G`. Its central exponent along `A_M` has real part `ℜ(ψ)`, because `σ` is
 tempered and therefore has a unitary central character on `A_M` (VII.2.1, Remark 1).

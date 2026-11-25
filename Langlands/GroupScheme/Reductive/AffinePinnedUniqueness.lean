@@ -74,6 +74,7 @@ theorem isClosedSubgroup_baseChangeHom (i : splitTorus (Spec (CommRingCat.of R))
   change IsClosedImmersion
     ((splitTorus.baseChangeIso (algebraBaseMap R A) I).inv.hom.hom.left ≫
       ((baseChange (algebraBaseMap R A)).map i).hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 end BaseChange

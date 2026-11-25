@@ -1,7 +1,5 @@
 # Immersed equalizer loci from fppf-local representatives
 
-Author: Worker 509.
-
 This internal construction applies to every type-valued fppf sheaf on all schemes
 over an arbitrary base scheme `S`, in universe `u`. For any test scheme `T` and
 any two sections `x, y`, `sectionEqualizerSieve` is the sieve on `T.left` of

@@ -1,6 +1,6 @@
 # The division condition for the Harris algebra
 
-Worker 57. This derived unit isolates the extra division condition on the
+This derived module isolates the extra division condition on the
 actual central simple algebra and proves the elementary module dimension
 obstruction used in Kottwitz's projectivity argument.
 

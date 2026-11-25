@@ -1,8 +1,8 @@
 # The fibre of a presheaf on `P(G)` as a smooth representation
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Topology.GroupAction.DiscreteGSetSite` (imported; Worker 21): Berkovich's
+- `Langlands.Topology.GroupAction.DiscreteGSetSite` (imported): Berkovich's
   category `DiscreteGSet G = P(G)`. Its objects are the `G`-sets (objects of
   `Action (Type z) G`) all of whose stabilizers are open, and its morphisms are the `G`-maps.
   The module also provides the forgetful functor `DiscreteGSet.forget`, the discrete `G`-set

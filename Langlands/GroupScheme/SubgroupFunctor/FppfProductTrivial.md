@@ -1,7 +1,5 @@
 # Trivial factors in represented fppf-local subgroup products
 
-Author: Worker 1473.
-
 This internal prerequisite defines `SubgroupFunctor.IsFppfSaturated` and
 proves elementary consequences of the published `FppfLocallyInProduct`
 and `IsFppfProduct` definitions. It works over an

@@ -1,7 +1,5 @@
 # Norm compatibility of geometric Weil reciprocity along a field embedding
 
-Author: Worker 5095, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`.
-
 For an embedding `g : E → L` of finite extensions of `ℚ_p`, this module proves that
 geometric local Weil reciprocity for `E` and for `L` fit in the norm square
 

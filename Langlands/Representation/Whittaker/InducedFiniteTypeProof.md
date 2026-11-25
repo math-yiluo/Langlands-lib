@@ -1,7 +1,5 @@
 # Finite type of upper-parabolic induction
 
-Author: Worker 172.
-
 `Langlands.inducedFiniteType.{uF,uV}` proves exactly the closed proposition
 `Langlands.InducedFiniteTypeStatement.{uF,uV}` from
 `Langlands.Representation.Whittaker.InducedStatement`.

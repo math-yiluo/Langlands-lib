@@ -79,7 +79,7 @@ lemma localSectionBasis_repr_restrict
 /-- Evaluate an actual sheaf endomorphism on sections of a smaller open. -/
 def localSectionEndomorphism (M : X.Modules) (V : Over U) :
     End (M.over U) →+* Module.End Γ(X, V.left) Γ(M, V.left) where
-  toFun f := (f.val.app (op V)).hom
+  toFun f := (f.asHom.val.app (op V)).hom
   map_zero' := rfl
   map_one' := rfl
   map_add' _ _ := rfl
@@ -87,14 +87,14 @@ def localSectionEndomorphism (M : X.Modules) (V : Over U) :
 
 @[simp]
 lemma localSectionEndomorphism_apply (V : Over U) (f : End (M.over U))
-    (x : Γ(M, V.left)) : localSectionEndomorphism M V f x = f.val.app (op V) x := rfl
+    (x : Γ(M, V.left)) : localSectionEndomorphism M V f x = f.asHom.val.app (op V) x := rfl
 
 /-- Restriction intertwines the section actions on actual sheaf sections. -/
 lemma localSectionEndomorphism_restrict {V W : Over U} (j : V ⟶ W)
     (f : End (M.over U)) (x : Γ(M, W.left)) :
     localSectionEndomorphism M V f (M.presheaf.map j.left.op x) =
       M.presheaf.map j.left.op (localSectionEndomorphism M W f x) :=
-  PresheafOfModules.naturality_apply f.val j.op x
+  PresheafOfModules.naturality_apply f.asHom.val j.op x
 
 /-- Matrices of the section endomorphism restrict entry by entry. -/
 lemma localSectionEndomorphism_toMatrix_restrict

@@ -22,7 +22,8 @@ theorem isIso_of_fppf_baseChange {S V : Scheme.{u}} (q : V ⟶ S)
     [Surjective q] [Flat q] [LocallyOfFinitePresentation q]
     {H G : GroupScheme S} (i : H ⟶ G) [IsIso ((baseChange q).map i)] :
     IsIso i := by
-  have : IsIso ((baseChange q).map i).hom.hom.left := inferInstance
+  have : IsIso ((baseChange q).map i).hom.hom.left :=
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in inferInstance
   have : IsIso i.hom.hom.left :=
     MorphismProperty.of_isPullback_of_descendsAlong
       (P := MorphismProperty.isomorphisms Scheme)

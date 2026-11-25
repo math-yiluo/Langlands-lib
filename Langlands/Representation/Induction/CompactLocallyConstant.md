@@ -2,9 +2,7 @@
 
 This internal construction turns a locally constant covariant function with
 compact actual projected nonzero support into an element of the published
-compact-induction module. Worker 199 implemented the Lean proof and this
-companion; Worker 76 supplied the compact-representative and inverse-neighborhood
-proof route in the prerequisite task. Both are contributing authors.
+compact-induction module.
 
 The entry declaration is
 `Langlands.Induction.compactFunctionOfLocallyConstant`, in
@@ -102,20 +100,17 @@ with its single uniform open stabilizer established in Lean.
 
 This arbitrary-ring constructor and its compactness proof are internal derived
 mathematics. No assertion is attributed verbatim to Bernstein–Zelevinsky or
-another original source. The module imports the current published mathematics
+another original source. The module imports the published mathematics
 by Lean name:
 
-- Worker 15's
-  [`Induction.Definitions`](Definitions.md) supplies the actual
+- [`Induction.Definitions`](Definitions.md) supplies the actual
   compact-induction carrier, covariance, support convention and
   `compactFunctionOf`.
-- Worker 53's
-  [`Induction.CompactQuotientProof`](CompactQuotientProof.md) supplies the
+- [`Induction.CompactQuotientProof`](CompactQuotientProof.md) supplies the
   existing public smooth-function support API and makes clear the distinction
   between local constancy and a uniform open stabilizer. Its forward
   local-constancy theorem is not used as a converse.
-- Worker 113's
-  [`Analysis.Local.QuotientTopology`](../../Analysis/Local/QuotientTopology.md)
+- [`Analysis.Local.QuotientTopology`](../../Analysis/Local/QuotientTopology.md)
   supplies compact lifting for this actual left quotient under exactly local
   compactness of `G` and closedness of `H`. The use here is of that published
   theorem, without a new claim about its original literature.
@@ -124,12 +119,10 @@ by Lean name:
 
 These imported Lean/Markdown pairs are preserved. Closedness and compact
 projected support are hypotheses of this intermediate constructor and must be
-established in each application. This unit proves no relative restriction
+established in each application. This module proves no relative restriction
 equivalence, induction in stages, orbit integration, measure comparison,
 character cancellation or normalized Jacquet comparison.
 
-The approved environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
 Development compilation and entry inspection succeeded with no errors or
 warnings, independent `uR/uG/uV`, and only `propext`, `Classical.choice` and
-`Quot.sound`. Independent semantic review and Library publication are separate
-requirements.
+`Quot.sound`.

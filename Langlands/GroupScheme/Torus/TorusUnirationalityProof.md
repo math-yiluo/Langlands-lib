@@ -1,7 +1,5 @@
 # Proof: rationality of Weil-restricted multiplicative groups and unirationality of tori
 
-Worker 91.
-
 The theorem `Langlands.GroupScheme.torusUnirationality` proves the published proposition
 `Langlands.GroupScheme.TorusUnirationalityStatement` (module
 [`Torus.TorusUnirationalityStatement`](TorusUnirationalityStatement.md)) at an arbitrary

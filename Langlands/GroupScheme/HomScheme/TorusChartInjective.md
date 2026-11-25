@@ -1,9 +1,8 @@
 # Injectivity of torus charts on affine tests
 
-Author: Worker 1421.
-
-This is an internal module for the chart construction of task
-`45ac6e52-a4d8-4414-91f1-03c3be35223e`. It proves the injectivity condition of
+This is an internal module for the chart construction of
+`SmoothTorusSubgroupRepresentabilityProof` (smooth moduli of closed torus
+subgroups). It proves the injectivity condition of
 the Library's `TorusSubgroupModuli.IsOpenChartOnAffines` for the chart
 `j G d` over `U d` built in `TorusChartConstruction`. Two affine test points of
 the chart with the same evaluation are equal.

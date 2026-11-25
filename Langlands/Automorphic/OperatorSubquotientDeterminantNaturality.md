@@ -1,6 +1,6 @@
 # Linear intertwiner transport and natural determinant quotient comparisons
 
-Author: Worker 2. This internal construction extends the actual finite-order
+This internal construction extends the actual finite-order
 determinant transport on `OperatorSubquotient`. The number field has arbitrary
 universe, the rank is any natural number and coefficients are complex.
 The character has an explicit finite-order proof. No CM-field hypothesis is

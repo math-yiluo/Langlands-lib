@@ -1,7 +1,5 @@
 # Unramified rigidity for Hecke characters
 
-Author: Worker 44.
-
 This module states a coherent rank-one global input over the actual
 `Langlands.Global.HeckeCharacter K`: continuous complex quasi-characters of
 the idele-class quotient of a number field. Each declaration is a definition
@@ -99,7 +97,7 @@ that a continuous character of the actual idele-class quotient has
 unramified local components at almost every place. This is precisely the
 first target.
 
-Worker 44 read pp.114–119 of the retained original, whose hash was checked.
+Pages 114–119 of the retained original were read, and its hash was checked.
 Literature ID: `weil-1973-basic-number-theory`. SHA256:
 `32fff78f8ccc5d6378907941e26746c34e20fc3adf5096508844cfe8a301e33b`.
 Retained file:
@@ -128,8 +126,8 @@ derived formulations are not claims that the general higher-rank
 automorphic constructions or theorems have already been formalized.
 Their Lean proofs remain separate obligations.
 
-Worker 44 visually read the original pp.805–809, and rechecked
-pp.805–807 for this specialization.
+The original pp.805–809 were read visually, and pp.805–807 were
+rechecked for this specialization.
 Literature ID: `jacquet-shalika-1981-euler-ii`. SHA256:
 `4d3f68841a558631a1624482d497665c2b52059bb9e0b7333948b8d1610b57d8`.
 Retained file:
@@ -138,7 +136,7 @@ These printed pages are one-based PDF pages 30–34.
 
 Tate, *Number theoretic background* (Corvallis, Part II, 1979),
 §3.1.3, printed p.13, gives the unramified rank-one local factor with
-the character evaluated on a uniformizer. Worker 44 read that passage
+the character evaluated on a uniformizer. That passage was read
 in the retained original. It fixes the normalization of the polynomial
 used above.
 Literature ID: `tate-1979-number-theoretic-background`. SHA256:
@@ -151,24 +149,20 @@ Printed p.13 is one-based PDF page 22.
 
 The only project import is `Langlands.Global.HeckeCharacter`, including
 its companion `Langlands.Global.Adelic`, in Library commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`. Worker 44 read both published
-pairs and verified that the workspace imports are byte-identical. Their
-historical accepted submission was
-`0e6d30b8-1a28-49a0-988e-84729eb9f351` version 1, with final semantic
-receipt `0021c5fc149c4d7186cf6b5f9fa379d8`; the Lean imports use the
-published module names above. The source hashes at this Library base are:
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1`. Both published pairs were
+read, and the imports used were verified to be byte-identical to them. The
+Lean imports use the published module names above. The source hashes at this Library base are:
 
 - `Adelic.lean`: `b1b7213c47725ac26e0ce09b0e483e548c8a4e1f3fd4a4972cedb64b7ce8258e`.
 - `Adelic.md`: `117b848792dbdbd67225466f0c51c312951803134cdc97dfc895d3f58f9b8c53`.
 - `HeckeCharacter.lean`: `68525fbd6a536afefdb696f83491c0ddd60d506390cf7dcb9682c7688c3de18f`.
 - `HeckeCharacter.md`: `9af1f28dc3858237fecf97b389a0c581433870404b40274bcb7b37f68323c94f`.
 
-The environment is artifact `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`
-version 1, Lean 4.34.0 and Mathlib commit
+The environment in which it was checked is Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The additional direct import
 `Mathlib.Algebra.Polynomial.Basic` supplies polynomial notation and algebra.
 The normalized valuation comes from Mathlib's actual Dedekind-domain
-adic completion infrastructure imported by the accepted adelic group.
+adic completion infrastructure imported by the adelic group.
 
 All five declarations were printed after elaboration and inspected:
 the number field and its instances are internally quantified, the
@@ -178,13 +172,11 @@ conjunction uses the same arbitrary universe in each component. A
 development Lake build and exact declaration inspection succeeded with
 zero warnings and errors; inspection reports `statement_returns_prop:
 true`. This verifies well-formedness, not the truth of the four targets.
-Independent semantic review and Library publication remain required.
 
-This contribution supplies actual global rank-one prerequisites. The
+This module supplies actual global rank-one prerequisites. The
 mixed-rank Jacquet–Shalika linear-independence theorem, general cuspidal
 and isobaric rigidity, cyclic base change, automorphic induction and
-descent still require the separate actual automorphic definitions and
-their corresponding statements. Worker 44 retains those obligations.
-Worker 35 retains character-existence, CM, Harris weak-induction and
-global functional-equation statements. No statement here substitutes
-for those remaining parts of the broad task.
+descent require separate actual automorphic definitions and their
+corresponding statements, as do character existence, CM, Harris weak
+induction and the global functional equation. No statement here
+substitutes for them.

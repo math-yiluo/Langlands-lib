@@ -45,7 +45,8 @@ nonreduced carrier `d.Carrier` is asserted.
 `genericPrimeResidueFieldEquiv` then identifies the ideal residue field of
 the actual generic prime with the originally specified `L`. Its coefficient
 formula is the original reduction map followed by the subalgebra inclusion.
-The predecessor module proves that this prime equals the carrier nilradical
+The imported module `Langlands.CommutativeAlgebra.FiniteSeparableNilradicalModel`
+proves that this prime equals the carrier nilradical
 and is generic for its whole spectrum.
 
 In a common scheme universe, `modelScheme` is literally `Spec d.Carrier`,
@@ -64,9 +65,10 @@ scalar tower, so it preserves the specified `K`-algebra structure on `L`.
 ## Scope
 
 The algebraic comparison needs a supplied actual model and algebraicity;
-its predecessor constructs that model from finite dimensionality and
+`finiteSeparableNilradicalModel` in that module constructs that model from finite dimensionality and
 separability. The scheme comparisons use one common universe and retain
 all nilpotents in `R` and in the model. No reducedness or Noetherianity
-hypothesis is added. This unit does not yet construct the principal-localized
-scheme cover or transport it to a general irreducible scheme; those remain
-consumer obligations, as do component splitting and full Stacks 0551.
+hypothesis is added. This module does not construct the principal-localized
+scheme cover or transport it to a general irreducible scheme; those are done in
+`FiniteSeparableNilradicalEtaleScheme` and `FiniteSeparableGenericCoverData`.
+Component splitting and full Stacks 0551 are outside this module.

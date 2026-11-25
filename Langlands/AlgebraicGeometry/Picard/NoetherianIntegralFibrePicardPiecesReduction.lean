@@ -52,8 +52,8 @@ theorem noetherianIntegralFibrePicardPiecesReduction :
   have hcls' := hcls f hprop hflat hlfp hgi hsec
   -- `U` only depends on the isomorphism class of the module
   have Uiso : ∀ (T : Scheme.{u}) [IsLocallyNoetherian T] (s : T ⟶ Spec (CommRingCat.of R))
-      (L L' : (pullback f s).Modules), Scheme.Modules.IsInvertible L →
-      Scheme.Modules.IsInvertible L' → Nonempty (L ≅ L') →
+      (L L' : (pullback f s).Modules), Scheme.Modules.IsInvertibleFLT L →
+      Scheme.Modules.IsInvertibleFLT L' → Nonempty (L ≅ L') →
       ∀ (c : κ) (m : ℕ), U T s L c m = U T s L' c m := by
     intro T _ s L L' hL hL' ⟨e⟩ c m
     refine P1 T s L L' (𝟙_ T.Modules) hL hL' (Scheme.Modules.isInvertible_unit T) ⟨?_⟩ c m
@@ -63,7 +63,7 @@ theorem noetherianIntegralFibrePicardPiecesReduction :
   -- the structure map
   have P2' : ∀ (T T' : Scheme.{u}) [IsLocallyNoetherian T] [IsLocallyNoetherian T']
       (s : T ⟶ Spec (CommRingCat.of R)) (s' : T' ⟶ Spec (CommRingCat.of R)) (h : T' ⟶ T)
-      (e : h ≫ s = s') (L : (pullback f s).Modules), Scheme.Modules.IsInvertible L →
+      (e : h ≫ s = s') (L : (pullback f s).Modules), Scheme.Modules.IsInvertibleFLT L →
       ∀ (c : κ) (m : ℕ),
         U T' s' ((Scheme.Modules.pullback
             (pullback.map f s' f s (𝟙 X) h (𝟙 _) (by simp) (by simp [e]))).obj L) c m =
@@ -75,8 +75,8 @@ theorem noetherianIntegralFibrePicardPiecesReduction :
   let tr : ∀ T : Over (Spec (CommRingCat.of R)), LineBundle ((relativeSpace f).obj T) →
       (pullback f T.hom).Modules := fun T L =>
     (Scheme.Modules.pullback (relativeSpaceSymmetry f T).inv).obj L.obj
-  have tr_inv : ∀ T L, Scheme.Modules.IsInvertible (tr T L) := fun T L =>
-    (isInvertible_of_isLocallyFreeRankOne L.property).pullback _
+  have tr_inv : ∀ T L, Scheme.Modules.IsInvertibleFLT (tr T L) := fun T L =>
+    Scheme.Modules.IsInvertible.pullbackFLT (hL := isInvertible_of_isLocallyFreeRankOne L.property) _
   -- `U ∘ tr` only depends on the fppf class
   have Ucls : ∀ (T : Over (Spec (CommRingCat.of R))) [IsLocallyNoetherian T.left]
       (L L' : LineBundle ((relativeSpace f).obj T)),
@@ -99,9 +99,9 @@ theorem noetherianIntegralFibrePicardPiecesReduction :
       U T'.left T'.hom (tr T' ((LineBundle.pullback ((relativeSpace f).map h)).obj L)) c m =
         h.left ⁻¹ᵁ U T.left T.hom (tr T L) c m := by
     intro T T' _ _ h L c m
-    have hL : Scheme.Modules.IsInvertible ((Scheme.Modules.pullback
+    have hL : Scheme.Modules.IsInvertibleFLT ((Scheme.Modules.pullback
         (pullback.map f T'.hom f T.hom (𝟙 X) h.left (𝟙 _) (by simp) (by simp))).obj
-          (tr T L)) := (tr_inv T L).pullback _
+          (tr T L)) := Scheme.Modules.IsInvertible.pullbackFLT (hL := tr_inv T L) _
     rw [← P2' T.left T'.left T.hom T'.hom h.left (Over.w h) (tr T L) (tr_inv T L) c m]
     refine Uiso T'.left T'.hom _ _ (tr_inv T' _) hL ⟨?_⟩ c m
     exact (Scheme.Modules.pullbackComp _ _).app L.obj ≪≫

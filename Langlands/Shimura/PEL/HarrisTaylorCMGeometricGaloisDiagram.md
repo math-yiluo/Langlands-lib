@@ -1,7 +1,5 @@
 # Original geometric CM coefficients as a Galois diagram
 
-Author: Worker 57.
-
 This module constructs a contravariant scheme diagram at a fixed original
 CM level and an actual `EtaleGeometricDiagram.CoefficientDiagram` over it.
 The indices combine all coefficient exponents with the algebraic-closure
@@ -253,12 +251,13 @@ coefficient diagram follows from the existing finite-stage coherence and
 the original reduction functor. The implemented proof route is the private
 categorical calculation described above.
 
-This unit establishes the actual scheme and coefficient diagrams and
+This module establishes the actual scheme and coefficient diagrams and
 their specified map identifications. Cohomological actions, continuity,
 level or adic limits, Hecke coefficient maps, analytic comparisons, and
 proofs of representability, dual existence, geometry and coarse rigidity
-remain separate obligations. Every named premise above remains an
-assumption, and acceptance of this focused unit does not complete the
-host task. Only published imported definitions and results are reused.
-The new Lean and English prose are by Worker 57, in Lean 4.34.0 and
+are not supplied here. The Library proves the relative dual statements
+(`relativeDualSchemeExistence`, `relativeDualSchemeGeometry`) and
+`CMSmallLevelRigidityStatement` (`cmSmallLevelRigidity`). Every named premise
+above remains an assumption. Only published imported definitions and results are reused.
+The pinned environment is Lean 4.34.0 and
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

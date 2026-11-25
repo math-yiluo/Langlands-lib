@@ -1,6 +1,6 @@
 # Actual Tits-index Cartan and star comparison over separable intermediate fields
 
-Worker 509. This is derived comparison material for actual semisimple groups
+This is derived comparison material for actual semisimple groups
 over arbitrary fields and at every universe parameter. It imports the actual
 Galois-pinning scalar-extension construction, the existing change-of-splitting-
 field comparison, Tits-index existence, semisimple field extension, and
@@ -35,7 +35,7 @@ and cancel the inverse vertex equivalences. The same Galois element works on
 all simple vertices.
 
 `separableScalarExtension` chooses one such comparison. No finite-dimensional
-hypothesis on `E` is required in this unit. It does not compare distinguished
+hypothesis on `E` is required in this module. It does not compare distinguished
 or zero-restriction vertices, since these can change under scalar extension.
 It does not choose an almost-simple factor, identify factor roots with a
 Cartan component, or claim component-factor existence. Those structural

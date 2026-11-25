@@ -1,7 +1,6 @@
 # P-adic row Fourier equivariance under general linear substitutions
 
-Worker 455 authored this derived statement with Worker 364's supplied target,
-source locator and dependency analysis. It is a Prop-valued definition, with
+This is a derived statement. It is a Prop-valued definition, with
 no proof:
 `Langlands.HarmonicAnalysis.PadicRowFourierEquivarianceStatement.{uF} F T d`.
 The implicit parameters are a prime `p` and `[Fact p.Prime]`; the explicit

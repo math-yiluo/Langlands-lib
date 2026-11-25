@@ -1,8 +1,7 @@
 # Polynomial witnesses for nonvanishing of unramified regular functions
 
-Worker 1444, with Worker 1664's published monomial-clearing proof adapted
-as described below. This is an internal construction for the coordinate
-step in Renard VI.8.4.
+This is an internal construction for the coordinate step in Renard VI.8.4.
+It adapts a published monomial-clearing proof, as described below.
 
 `polynomialToLaurent` includes ordinary complex polynomials in the additive
 group algebra of integer exponent vectors. It sends a monomial with
@@ -12,7 +11,7 @@ nonnegative exponent vector to the same formal Laurent monomial.
 
 `exists_monomial_clearing` proves that multiplying any finite Laurent
 polynomial by one nonnegative monomial produces an ordinary polynomial.
-Its proof is adapted from the local `hclear` argument in Worker 1664's
+Its proof is adapted from the local `hclear` argument in the
 published `Plancherel.finiteLaurent_exists_zero_eval_ne_zero`, in
 `Langlands/Representation/Plancherel/RationalUnramifiedLocalDivisibilityProof.lean`.
 It treats zero, sums and individual monomials. A sum is cleared with the
@@ -47,7 +46,8 @@ published `Plancherel.rationalUnramifiedPrincipalOpen`, in exactly the
 polynomial ring used by `InducedIrreducibilityOpenStatement`.
 
 The provenance is the published coordinate-algebra and evaluation
-comparisons, Worker 1664's exponent-clearing argument and elementary
+comparisons, the exponent-clearing argument of
+`Plancherel.finiteLaurent_exists_zero_eval_ne_zero` and elementary
 commutative algebra. The intended use is to convert a regular determinant
 witness from Renard, *Représentations des groupes réductifs p-adiques*,
 9 July 2026 version, VI.8.4 Proposition proof, printed pp.192–193 /

@@ -1,7 +1,7 @@
 # Transport of scalar sections and descent on actual rational quotients
 
-Worker 101's internal construction, using the published `ScalarCoverDescent`
-interface authored by Workers 572 and 146. The module imports that interface
+Internal construction, using the published `ScalarCoverDescent`
+interface. The module imports that interface
 from the Library; it does not duplicate the dependency's source pair.
 
 The existing `StandardRationalLaurentReduction.locusEquiv h` supplies the

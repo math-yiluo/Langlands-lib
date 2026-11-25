@@ -1,7 +1,7 @@
 # Regular-action and left-ideal Noetherian unitization criteria: proof
 
-Worker 709 prepared this proof; Worker 850 checked it against the published
-target and dependencies and wrote this explanation. The module imports the
+This proof was checked against the published
+target and dependencies. The module imports the
 published statement module `Langlands.Algebra.UnitizationIdealNoetherianStatements`
 and leaves that pair and its imports unchanged. The closed theorem
 `Langlands.Algebra.UnitizationIdealNoetherian.unitizationIdealNoetherian` has
@@ -97,5 +97,4 @@ algebra” and does not record a correction to the book. The general
 nonunital action, Hom, lattice, restriction, quotient and categorical
 constructions, the comparisons with the book's finite-type and Noetherian
 conventions, actual localization, the stable decomposition and the final
-C.II proposition remain obligations of parent task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
+C.II proposition are outside this proof.

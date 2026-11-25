@@ -56,4 +56,5 @@ There the one-step map has kernel with coordinate algebra `A[u]/(εu)` over
 construction proves this restricted kernel calculation via its full point
 functor. It does not construct the unitary integral models `X_{r,s}`, identify
 their depth maps with `epsilonMap`, or prove the full root-depth kernel
-statement of KP C.5.3. Those are separate remaining inputs to the host task.
+statement of KP C.5.3. Those are separate inputs to the statement this module
+serves.

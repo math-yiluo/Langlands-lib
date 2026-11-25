@@ -23,7 +23,7 @@ variable (hExact : FiniteCartierDualExactnessStatement.{u})
 
 /-- Cartier duality preserves the natural p-adic scalar at every level. -/
 theorem Hom.dual_padicAction (G : PDivisibleGroup R p) (a : ℤ_[p]) :
-    Hom.dual (G.padicAction a) hExact = (G.dual hExact).padicAction a := by
+    Hom.dual (G.padicAction a).asHom hExact = ((G.dual hExact).padicAction a).asHom := by
   apply Hom.ext
   intro n
   have : IsFinite (G.inclusions.obj n).X.hom := (G.finiteLocallyFree n).1
@@ -31,7 +31,7 @@ theorem Hom.dual_padicAction (G : PDivisibleGroup R p) (a : ℤ_[p]) :
   have : LocallyOfFinitePresentation (G.inclusions.obj n).X.hom := (G.finiteLocallyFree n).2.2
   rw [Hom.dual_app, padicAction_app, padicAction_app]
   let L := schemeDualMapAdd (G := G.inclusions.obj n) (H := G.inclusions.obj n)
-  change L (G.levelPadicAction n a) = (G.dual hExact).levelPadicAction n a
+  change L (G.levelPadicAction n a).asHom = ((G.dual hExact).levelPadicAction n a).asHom
   rw [G.levelPadicAction_eq_nsmul_of_le (le_refl n),
     (G.dual hExact).levelPadicAction_eq_nsmul_of_le (le_refl n), map_nsmul]
   exact congrArg (((PadicInt.toZModPow n) a).val • ·) (schemeDualMap_id (G := G.inclusions.obj n))

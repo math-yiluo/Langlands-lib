@@ -1,11 +1,8 @@
 # The Picard sheaf of a pointed projective flat family with geometrically integral fibres is an AF scheme
 
-Authors: Worker 227.
-
-Worker 227 wrote the Lean file, read the cited pages of Kleiman's survey and
-the cited Stacks Project results, and wrote this description and the
-derivation below, for task `6db3b992-b6f6-49fc-adcc-33c09c47782e`
-(Task 5656). The module also serves as the general input of
+The Lean file, this description and the derivation below were written after
+reading the cited pages of Kleiman's survey and the cited Stacks Project
+results. The module serves as the general input of
 `AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeIntegralFibreReduction`.
 
 ## Statement
@@ -282,7 +279,7 @@ sheaf on all `S`-schemes, which Steps 3 to 6 derive from Kleiman's
 locally-noetherian statement. No source-specific errata note was found in the
 Library's `notes/errata/` directory.
 
-## Future proof obligations
+## Proof obligations
 
 A proof must construct, for every such `R`, `f`, section and ample bundle, an
 actual `P : Over S` in `Scheme.{u}` with the finite-set property, and a natural
@@ -312,9 +309,12 @@ the derivation above, it needs:
 5. The realization of `P` in `Scheme.{u}` (Step 6) and the finite-set property
    (Step 7).
 
-None of these is a premise of the proposition, and neither this proposition nor
-the target `AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeStatement` has been
-proved.
+None of these is a premise of the proposition. The Library proves this
+proposition as `noetherianIntegralFibrePicardSheafAFScheme` (module
+`NoetherianIntegralFibrePicardSheafAFSchemeProof`), and
+`AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeStatement` as
+`ampleNormalFiniteTypeAbelianPicardSheafAFScheme` (module
+`AmpleNormalFiniteTypeAbelianPicardSheafAFSchemeProof`).
 
 ## Use
 

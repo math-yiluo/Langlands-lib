@@ -1,6 +1,6 @@
 # Fixed-vector generation and actual subquotients under carrier lifts
 
-Author: Worker 1649. This is internal universe infrastructure for the proof of
+This is internal universe infrastructure for the proof of
 Renard VI.9.4. It derives transport facts from the published actual carrier
 lift, fixed-vector equivalence and smooth subquotient presentation. The carrier
 lift implementation and these transport lemmas are not attributed to a
@@ -38,6 +38,6 @@ This lemma claims preservation only.
 
 For the VI.9.4 application one may take `uX = uF + 1` to apply an existing
 large-carrier Jacquet theorem, then use the nonzero-vector equivalence to
-return to the independent original universe `uV`. This unit supplies the
+return to the independent original universe `uV`. This module supplies the
 transport facts only; the reductive hypotheses and the Jacquet detection
 argument remain separate obligations.

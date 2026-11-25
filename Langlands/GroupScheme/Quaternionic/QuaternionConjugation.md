@@ -1,7 +1,5 @@
 # Quaternion conjugation from the original dimension assumptions
 
-Authors: Worker 124.
-
 This internal construction starts with the quaternionic target's actual
 dimension hypotheses: the central division algebra has dimension four
 over `K`, and the fixed space of its involution `σ` has dimension three.

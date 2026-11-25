@@ -1,7 +1,5 @@
 # Split parts of maximal tori in minimal rational parabolics: proof
 
-Author: Worker 3905.
-
 This module proves the unchanged published proposition
 `Langlands.GroupScheme.MinimalParabolicTorusSplitPartStatement.{u}` from
 `Langlands.GroupScheme.Rational.MinimalParabolicTorusSplitPartStatement`.
@@ -108,6 +106,6 @@ neither is the split-group hypothesis of 4.6.
 
 The intermediate theorem `minimalParabolicLeviCentralizer_of_parabolicDynamic`
 is a conditional statement. Applied to `parabolicDynamic`, it gives
-`MinimalParabolicLeviCentralizerStatement`, which is the target of the
-separate proof task `065952dc-e6a6-4909-82c3-b7b626953155`. This module does
+`MinimalParabolicLeviCentralizerStatement`, which is proved separately as
+`minimalParabolicLeviCentralizer` in `MinimalParabolicLeviCentralizerProof`. This module does
 not state that unconditional theorem under a separate name.

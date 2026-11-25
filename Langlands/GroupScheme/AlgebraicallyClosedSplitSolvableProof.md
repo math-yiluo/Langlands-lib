@@ -1,7 +1,5 @@
 # Represented split series for solvable groups over algebraically closed fields
 
-Authors: Worker 1472 and Worker 1448.
-
 `Langlands.GroupScheme.algebraicallyClosedSplitSolvable` proves exactly
 `AlgebraicallyClosedSplitSolvableStatement.{u}`. For every algebraically
 closed field `k : Type u` and every smooth affine group scheme `G` over

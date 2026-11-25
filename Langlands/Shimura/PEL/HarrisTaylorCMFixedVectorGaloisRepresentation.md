@@ -65,31 +65,25 @@ embedding at `w`.
   followed by `LevelHecke.heckeModuleActionFunctor` for a level `K'` of
   `(D.rationalInvolution.PrimeToPoints m)ᵐᵒᵖ`.
 - The published
-  `Langlands.Cohomology.HarrisCMLevelGaloisSmooth.HarrisCMLevelGaloisSmoothStatement ... R`
-  (Worker 3).
+  `Langlands.Cohomology.HarrisCMLevelGaloisSmooth.HarrisCMLevelGaloisSmoothStatement ... R`.
 - The published `cmPrimeToHeckeFrobenius` of
   `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology`.
-- From `Langlands.Shimura.PEL.HarrisTaylorCMIsotypicCohomology` (candidate
-  `06482d9c-709f-449e-bd42-538102e24d51`, accepted and awaiting
-  publication): `cmSmallLevelIsotypicCohomologyFunctor` and
+- From `Langlands.Shimura.PEL.HarrisTaylorCMIsotypicCohomology`:
+  `cmSmallLevelIsotypicCohomologyFunctor` and
   `cmPrimeToIsotypicCohomologyFunctor`.
-- From `Langlands.Shimura.PEL.HarrisTaylorCMIsotypicDecompositionCohomology`
-  (candidate `65e8e325-c197-47a1-ab0b-91df2848f8b4`, accepted and awaiting
-  publication): `cmPrimeToIsotypicHeckeFrobenius`.
-- From `Langlands.Shimura.PEL.HarrisTaylorCMMultiplicityGaloisRepresentation`
-  (candidate `918ad65e-471f-4f3e-a388-db523e305d3a`, accepted and awaiting
-  publication):
+- From `Langlands.Shimura.PEL.HarrisTaylorCMIsotypicDecompositionCohomology`:
+  `cmPrimeToIsotypicHeckeFrobenius`.
+- From `Langlands.Shimura.PEL.HarrisTaylorCMMultiplicityGaloisRepresentation`:
   `cmSmallLevelGaloisCohomology_isSmooth`,
   `cmSmallLevelIsotypicCohomology_isSmooth` and
   `cmPrimeToIsotypicCohomology_isSmooth`.
-- From `Langlands.Shimura.FixedVectorGaloisRepresentation`, submitted
-  together with this module: `isSmooth_fixedVectors`, `heckeFrobenius`,
+- From `Langlands.Shimura.FixedVectorGaloisRepresentation` (ported together
+  with this module): `isSmooth_fixedVectors`, `heckeFrobenius`,
   `fixedVectorsObjects` and its Euler-polynomial results, and
   `isUnramifiedAlong_fixedVectors_isotypic`. It uses
   `LevelHecke.fixedVectorsActionFunctor`.
-- `FrobeniusPolynomial.frobeniusEulerPolynomial` (candidate
-  `5c2f38db-a736-4706-aa12-6de9f8bf0b33`, accepted and awaiting
-  publication), and `IsUnramifiedAt`, `IsUnramifiedAlong` and
+- `FrobeniusPolynomial.frobeniusEulerPolynomial` (in
+  `Langlands.Shimura.FrobeniusPolynomial`), and `IsUnramifiedAt`, `IsUnramifiedAlong` and
   `geometricFrobenius` of the published
   `Langlands.Shimura.DecompositionGroupAction`.
 

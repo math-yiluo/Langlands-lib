@@ -96,4 +96,6 @@ It needs no additional injectivity hypothesis on the root-form map.
 inclusions, the unchanged doubled-block identities, and the positive depth
 `0` and negative depth `0+` equalities. General actual ordered root products,
 sharp normalizer computations, the full central factor and the complete
-Iwahori theorem remain separate parts of the proof task.
+Iwahori theorem are separate parts of the proof of
+`ChamberIwahoriDecompositionStatement`, which the Library completes as
+`ParahoricBuildingData.chamberIwahoriDecomposition` in `ChamberIwahoriProof`.

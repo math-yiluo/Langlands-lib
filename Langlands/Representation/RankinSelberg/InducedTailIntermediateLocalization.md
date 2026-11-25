@@ -1,6 +1,6 @@
 # Smooth test invariance for the intermediate lower-block comparison
 
-Supporting work by Worker 318. This is a derived coefficient-level
+This is a derived coefficient-level
 step in the intermediate-rank calculation of JPSS section 9.3, printed
 456–457. It does not prove the quotient disintegration or span inclusion.
 
@@ -41,8 +41,8 @@ by the entry-preserving `reindex (finCongr hn)` homomorphism.
 The result uses arbitrary field and representation universes. It requires
 smoothness and actual coefficient membership, without irreducibility,
 Whittaker uniqueness, rational continuation or an integral comparison. The
-target task later supplies smoothness from its retained Whittaker-type
-hypothesis and applies the separate lower-block localization result inside
+proof of `InducedTailIntermediateRankSpanStatement` later supplies smoothness
+from its retained Whittaker-type hypothesis and applies the separate lower-block localization result inside
 these neighborhoods.
 
 For a supplied p-adic topological realization, a further lemma proves that the

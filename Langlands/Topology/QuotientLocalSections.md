@@ -34,5 +34,3 @@ proper quotient scheme, the exact fiber identity, algebraic local sections,
 and compactness of its local-field points remain separate obligations.
 This module does not prove any of those existence results or the full
 dynamic-parabolic compactness target.
-
-Author: Worker 125.

@@ -4,7 +4,7 @@ Lean module: `Langlands.Representation.Archimedean.RealInducedSwapUnlinked`.
 
 Main theorem: `Langlands.Archimedean.realInducedSwap : RealInducedSwapStatement`. It proves the
 Library statement `Langlands.Archimedean.RealInducedSwapStatement` of
-`Langlands.Representation.Archimedean.RealUnlinkedSwapReduction` (Task 7172). For lists `pre`,
+`Langlands.Representation.Archimedean.RealUnlinkedSwapReduction`. For lists `pre`,
 `post` of real blocks and complex characters `d`, `e` of nonzero weights with
 `Re t(e) ≤ Re t(d)` whose Mœglin data are not linked, of total rank `n`, there is an injective
 `(𝔤, K)`-intertwiner from the `O(n)`-finite functions of the standard module of
@@ -13,8 +13,7 @@ helper results are in namespace `Langlands.Archimedean.RealInducedSwapUnlinked`.
 
 This module only assembles results. The analytic and arithmetic work is in the modules listed
 under Dependencies. The proof is internal to this project. The route deforms the four rank-one
-crossings and takes a limit at the central parameter. It follows the plan of the co-executor
-Worker 772 and does not formalize a literature argument.
+crossings and takes a limit at the central parameter. It does not formalize a literature argument.
 
 ## Proof
 
@@ -53,7 +52,7 @@ Worker 772 and does not formalize a literature argument.
    `IntegralSwapStatement`.
 
 5. **Arithmetic input.** `RealInducedSwapIntegralNormalization.exists_balanced_of_integralWindow`
-   (Worker 772) provides, from `d.weight ≠ 0`, `e.weight ≠ 0`,
+   provides, from `d.weight ≠ 0`, `e.weight ≠ 0`,
    `|d.weight| ≠ |e.weight|` and `IntegralWindow d e m`, normalizations `a`, `b` with
    `IsValid d e a`, `IsValid e d b` and `Balanced a b`. So the hypothesis of step 4 holds, and
    `realInducedSwap` follows from step 1.
@@ -73,11 +72,11 @@ Worker 772 and does not formalize a literature argument.
 * Library: `RealUnlinkedSwapReduction` (the target statement), `RealInducedSwapIntegralReduction`,
   `RealInducedSwapShifted`, `RealInducedSwapGeneric`, `RealInducedSwapInverse`,
   `RealCharacterInducedSwap`.
-* Helper module of this candidate: `RealInducedSwapScalarLimit`. It extends the limit theorem to
+* Helper module: `RealInducedSwapScalarLimit`. It extends the limit theorem to
   scalar multiples of shifted maps.
-* Separately submitted units: `RealExponentDeformation` and `RealInducedSwapLieLimit` (Worker
-  5546), and `RealFiniteLayerRegularization`, `RealInducedSwapRegularizedFamily`,
+* Further modules: `RealExponentDeformation` and `RealInducedSwapLieLimit`, and
+  `RealFiniteLayerRegularization`, `RealInducedSwapRegularizedFamily`,
   `RealInducedSwapRegularization`, `RealInducedSwapGerm`, `RealInducedSwapLimit`,
-  `RealInducedSwapBalanced` and `RealInducedSwapIntegralNormalization` (Worker 772).
+  `RealInducedSwapBalanced` and `RealInducedSwapIntegralNormalization`.
 
 Axioms of `realInducedSwap`: `propext`, `Classical.choice`, `Quot.sound`.

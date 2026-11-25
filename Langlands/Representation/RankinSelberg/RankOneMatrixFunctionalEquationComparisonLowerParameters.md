@@ -1,7 +1,5 @@
 # Product parameters for the shifted lower affine slice
 
-Author: Worker 623.
-
 This internal coordinate helper parametrizes the already defined shifted
 lower affine slice using the strict-upper scalar coordinates of the actual
 upper-unipotent group and one scalar. The field is locally compact,

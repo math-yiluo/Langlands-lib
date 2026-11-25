@@ -97,8 +97,8 @@ coordinate. The lemma `rankOneExtensionStableIntegrand_apply` states this formul
 The contraction is the published one, defined from `ℓ` and section evaluation. No
 new function model and no topology on `W` is used.
 
-The factor is positive because `ℓ` is an *inverse*-character functional. The task
-contract prescribes this sign for the inverse-functional conventions, in place of
+The factor is positive because `ℓ` is an *inverse*-character functional. This
+sign follows the inverse-functional conventions, in place of
 the source's conjugate factor `θ̄`. This module proves no Whittaker transformation
 law for the integrand or the resulting functional.
 
@@ -176,8 +176,8 @@ whole actual section carrier.
 
 The extension is not claimed to be nonzero or a Whittaker functional. Those
 properties, the stabilization hypothesis `hall` itself, and the source's later
-Fubini and dominated-passage argument for chosen sections are left to separate
-statement and proof tasks.
+Fubini and dominated-passage argument for chosen sections are not proved in this
+module.
 
 ## All-field port
 

@@ -23,7 +23,7 @@ puts no condition on the characteristic of `K` or of its residue field.
 The proof is one term. It composes four published results:
 
 1. `Langlands.GroupScheme.outerTypeAUnitarySplitPresentation` (module
-   `OuterTypeAUnitarySplitPresentationProof`, Task 6356) proves
+   `OuterTypeAUnitarySplitPresentationProof`) proves
    `OuterTypeAUnitarySplitPresentationStatement`. Let `K` be a field with
    `UnitaryInvolutionSplitting K`. Let `G` be an affine, locally finite-type, simply
    connected, absolutely almost-simple group over `K` whose index has type `A_n` and whose
@@ -67,10 +67,10 @@ localAnisotropicTypeAInner_of_hermitianModel
 
 ## Excluded inputs
 
-The task forbids `LocalAnisotropicSimplyConnectedClassificationStatement`,
+The proof excludes `LocalAnisotropicSimplyConnectedClassificationStatement`,
 `LocalRankOneClassificationStatement`, `LocalRankOneTitsIndexStatement`, and any local
 Kneser–Tits statement. The theorem has no hypotheses and uses only the three standard
-axioms. None of these statements has a proof in the Library, where they occur only as
-hypotheses of conditional reductions, so the proof cannot depend on them. Some
+axioms. The modules that prove these statements in the Library are not among the
+modules the proof imports, directly or transitively, so the proof cannot depend on them. Some
 transitively imported modules import their statement files, but only for shared
 definitions.

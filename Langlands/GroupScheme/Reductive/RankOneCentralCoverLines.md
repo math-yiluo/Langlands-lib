@@ -1,8 +1,6 @@
 # Actual root-space lines from a supplied standard rank-one cover
 
-Author: Worker 777.
-
-This internal supporting unit constructs actual root-space lines from explicit matrix data
+This internal supporting module constructs actual root-space lines from explicit matrix data
 and a supplied compatible central cover. It does not construct a cover or prove the original
 rank-one root-cell statement. All fields and schemes retain arbitrary universe `u`.
 
@@ -88,7 +86,7 @@ for a central isogeny. It makes no new translation from original literature. Its
 existence premise is deliberately retained.
 
 A recursive audit follows all constants in both types and values, including opaque values.
-Terminal check `a0166875-298f-47b9-99b9-640e1506cdf5` reported:
+It reported:
 
 | Declaration | Constants reached | Forbidden declarations reached |
 | --- | ---: | ---: |
@@ -106,9 +104,9 @@ The 21 cut points were `ParabolicDynamicStatement`, `RegularCocharacterBorelStat
 `rankOne_rootTangent_le_one_of_projectiveBorelInputs`, `rootDatumExistence`,
 `rootReducedness`, `reductiveGeometricReductivity`, `absoluteBruhatCovering`,
 `steinbergBigCell`, and `isParabolicSubgroup_of_range_eq_dynamicParabolic`.
-The development scanner remains private and is not submitted. Semantic independence
-remains subject to independent review.
+The development scanner is not part of the Library. The scan does not establish semantic
+independence.
 
-Exact compilation and inspection of the entry definition succeeded in terminal check
-`c7efc01f-1cb6-4a2c-a329-d4e1e326372e`, with zero errors or warnings. It reports only
+Exact compilation and inspection of the entry definition succeeded, with zero errors or
+warnings. It reports only
 `propext`, `Classical.choice`, and `Quot.sound` as axioms.

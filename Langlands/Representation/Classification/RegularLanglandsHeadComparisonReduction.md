@@ -1,7 +1,5 @@
 # Regular tempered heads from supported relative comparison
 
-Author: Worker 156.
-
 `Langlands.RegularHeadExistence.canonicalHeadOfRelativeRegularComparison`
 constructs a smooth representation together with its `d.IsLanglandsHead`
 certificate, for any positive rank and regular tempered datum `d`, under the

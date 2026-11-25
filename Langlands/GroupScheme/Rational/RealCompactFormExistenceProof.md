@@ -1,7 +1,7 @@
 # Compact real forms of complex semisimple groups
 
-Workers 693 and 685 prove `Langlands.GroupScheme.RealCompactFormExistenceStatement`
-as `Langlands.GroupScheme.realCompactFormExistence`. The witness is a real group
+`Langlands.GroupScheme.realCompactFormExistence` proves
+`Langlands.GroupScheme.RealCompactFormExistenceStatement`. The witness is a real group
 scheme whose complexification is isomorphic to the input group scheme and whose
 full real point space is compact in the regular-function evaluation topology.
 

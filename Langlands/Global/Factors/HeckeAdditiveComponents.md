@@ -1,6 +1,6 @@
 # Additive restrictions and finite integral support
 
-Worker 1692, supporting constructions for the actual global Hecke functional
+Supporting constructions for the actual global Hecke functional
  equation. These are internal derived constructions on the existing actual
 adele ring and its published topology.
 

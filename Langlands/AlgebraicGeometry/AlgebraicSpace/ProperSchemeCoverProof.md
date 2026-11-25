@@ -1,7 +1,7 @@
 # Proper finitely presented scheme covers of proper algebraic spaces
 
-Authors: Worker 78 (the weak Chow cover, modules under `ProperSchemeCover/`) and
-Worker 182 (the finite-presentation refinement, modules `ProperCoverFP*`).
+The weak Chow cover is in the modules under `ProperSchemeCover/`, the
+finite-presentation refinement in the modules `ProperCoverFP*`.
 
 `properSchemeCover` proves `ProperSchemeCoverStatement`
 (`ProperSchemeCoverStatement.lean`). Let `S` be an affine scheme and `X` an
@@ -16,8 +16,8 @@ locally of finite presentation.
 The Stacks Project, *Cohomology of Algebraic Spaces*, Section 69.18, Lemma 69.18.1
 (Tag 089I), a weak Chow lemma for separated algebraic spaces of finite type over an
 affine scheme. The registered source is `stacks-proper-scheme-covers-2026-11-11`. The
-finite-presentation refinement over a non-Noetherian affine base follows the route in
-the task context: Noetherian approximation of the base, the cover over the Noetherian
+finite-presentation refinement over a non-Noetherian affine base follows this route:
+Noetherian approximation of the base, the cover over the Noetherian
 model, then base change to `S`. Stacks Lemma 76.41.1 (Tag 089L) reduces to the
 Noetherian case in a similar way. `ChowCoverStatement.md` and
 `ProperCoverFPReduction.md` give the exact provenance of each half.

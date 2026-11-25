@@ -1,7 +1,5 @@
 # Descent of the valuation of the root datum from the maximal unramified extension
 
-Author: Worker 5553.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedValuationDescentProof`.
 
 The theorem `Langlands.Geometry.Building.unramifiedValuationDescent` proves the published

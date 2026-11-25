@@ -1,8 +1,5 @@
 # Strong segment heads from actual consecutive words
 
-Authors: Worker 320 (proof and original draft), Worker 495 (dependency and
-complete-signature verification and submission).
-
 The theorem `consecutiveIntegralCuspidalWordSegmentHead` proves the named
 proposition with arbitrary supplied p-adic field and topology, independent
 universes, and actual saturated smooth representations.
@@ -39,7 +36,7 @@ word and does not construct it or prove analytic classification.
 
 The recursive project import audit at Library base
 `a5dff2ff93bd3637a67ee8847f67f811efc82f01` contains 802 modules, including
-the two new modules in this contribution. All 800 imported Lean and Markdown
+this module and the accompanying actual-word realization helper. All 800 imported Lean and Markdown
 pairs match that base. The target pair and its 57-module import closure are
 unchanged. The imported inputs include the actual cuspidal tensor theorem,
 cuspidal constituent quotient detection, first adjointness, and the
@@ -47,6 +44,6 @@ individual-segment strong head and decreasing socle. The closure contains
 no use of segment analytic classification, multisegment exhaustion, ordered
 strong-head existence, quotient coverage, tempered block uniqueness,
 square-integrable classification or exhaustion, regular exhaustion, or
-proof successors of those conclusions. The general analytic predicates and
+proofs of those conclusions. The general analytic predicates and
 lower support adapters imported by adjointness do not supply any of those
 excluded conclusions.

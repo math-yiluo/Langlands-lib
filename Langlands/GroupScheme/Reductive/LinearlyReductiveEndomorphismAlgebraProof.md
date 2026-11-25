@@ -1,7 +1,5 @@
 # Proof: linear reductivity via semisimple endomorphism algebras
 
-Worker 905. Proof for Task 7154.
-
 This module proves the Library statement
 `Langlands.GroupScheme.LinearlyReductiveEndomorphismAlgebraStatement` (Milne, *Algebraic
 Groups*, Remark 12.53(b)) at every universe `u`, as the theorem

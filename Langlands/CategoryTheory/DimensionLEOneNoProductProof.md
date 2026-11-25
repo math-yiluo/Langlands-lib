@@ -1,9 +1,8 @@
 # Proof that the line has no binary product in the dimension-at-most-one subcategory
 
-Author: Worker 894. This file proves the published statement
+This file proves the published statement
 `Langlands.CategoryTheory.DimensionLEOneLineHasNoBinaryProduct`
-(module `Langlands.CategoryTheory.AbelianSubcategoryStatement`, by
-Worker 633). The statement and its supporting definitions
+(module `Langlands.CategoryTheory.AbelianSubcategoryStatement`). The statement and its supporting definitions
 `dimensionLEOneProperty`, `DimensionLEOneModuleCat` and `dimensionLEOneLine`
 are unchanged and imported by their Lean names.
 

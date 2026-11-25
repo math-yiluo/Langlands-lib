@@ -1,15 +1,16 @@
 # The degree of an isogeny in characteristic zero counts its kernel points
 
 Lean module: `Langlands.AbelianScheme.IsogenyFinrankKernelCard`, namespace
-`Langlands.AbelianScheme.IsogenyKernelCard`. Author: Worker 195.
+`Langlands.AbelianScheme.IsogenyKernelCard`.
 
-The main theorem `finrank_eq_natCard_ker` proves the content of the accepted statement
-`Langlands.AbelianScheme.IsogenyFinrankKernelCardStatement` (candidate `253be8dc`).
+The main theorem `finrank_eq_natCard_ker` proves the content of the statement
+`Langlands.AbelianScheme.IsogenyFinrankKernelCardStatement`.
 Let `α : A ⟶ B` be an isogeny of abelian schemes over an algebraically closed field `k` of
 characteristic zero. At every point `y` of `B`, the rank `(hom α).finrank y` of the finite flat
 underlying morphism equals the number of elements of the kernel of the homomorphism induced
-on `k`-points. The one-line proof of the statement itself is a separate contribution, to be
-made once the statement is in the Library.
+on `k`-points. The one-line proof of the statement itself is
+`Langlands.AbelianScheme.isogenyFinrankKernelCard`, in the separate module
+`Langlands.AbelianScheme.IsogenyFinrankKernelCardProof`.
 
 ## Provenance
 

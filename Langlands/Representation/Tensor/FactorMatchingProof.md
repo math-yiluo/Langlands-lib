@@ -8,8 +8,8 @@ families implies that predicate for their actual `blockTensor` actions on the
 same block Levi. Field and the two families' carrier universes remain
 independent. The target and its imported definitions are unchanged.
 
-Worker 161 implements this proof. The tensor-filtration construction in
-`Langlands.Representation.Tensor.Filtration` is by Worker 439. All other
+The tensor-filtration construction is in
+`Langlands.Representation.Tensor.Filtration`. All other
 mathematical inputs are imported by their Library names.
 
 ## Actual series transport

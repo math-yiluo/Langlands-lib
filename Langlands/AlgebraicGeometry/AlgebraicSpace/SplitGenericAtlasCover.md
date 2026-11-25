@@ -51,14 +51,17 @@ specified explicitly.
 
 `exists_open_geometricFibreComponentCount_of_split_generic` specializes to the
 spectrum of a Noetherian ring and takes `ENat.card` of these equivalences. Its
-conclusion is local constancy of the exact count used in the host statement.
+conclusion is local constancy of the exact count used in
+`GeometricFibreComponentsConstructibleStatement`.
 Empty generic fibres and empty component label sets are allowed.
 
 ## Provenance and scope
 
-This unit is derived internally from the cited Library constructions and
+This module is derived internally from the cited Library constructions and
 proved spreading and incidence results; it is not a transcription of an
 external source. It retains the split-generic hypothesis. Existence of a finite
 splitting base change, descent of component counts from that base, Noetherian
 induction, and approximation for arbitrary rings are not proved here. Thus this
-unit does not prove the unrestricted constructibility target.
+module does not prove the unrestricted constructibility statement; the Library
+proves it as `geometricFibreComponentsConstructible` in
+`GeometricFibreComponentsProof`.

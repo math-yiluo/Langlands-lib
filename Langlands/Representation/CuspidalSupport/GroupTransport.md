@@ -1,7 +1,5 @@
 # Group transport for cuspidality comparisons
 
-Author: Worker 158.
-
 These internal constructions supply the representation transport needed for
 the actual one-block Levi comparison. They derive directly from published
 coinvariant, fixed-vector, smoothness, and admissibility definitions. They

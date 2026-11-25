@@ -1,8 +1,8 @@
 # The rank-one step from filtrations of standard modules
 
-Worker 32 wrote this module for Task 6747 (`505270a8-39b1-487d-afdb-01f552e4ab3b`). That task's
-target is the Library's `Langlands.Archimedean.RealLanglandsFromPrincipalSeriesStatement`.
-Worker 63's module `RealLanglandsRankOneReduction` reduces the target to one statement,
+The target of this module is the Library's
+`Langlands.Archimedean.RealLanglandsFromPrincipalSeriesStatement`.
+The module `RealLanglandsRankOneReduction` reduces the target to one statement,
 `RealRankOneStepStatement` (see `RealLanglandsRankOneReduction.md`). This module reduces that
 statement to two statements about standard modules alone, with no target module `(ρ, π)`:
 

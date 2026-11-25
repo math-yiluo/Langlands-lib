@@ -1,6 +1,7 @@
 # Simultaneous triangularization of a cyclic matrix group
 
-Supporting module of Task 5003 (module `Langlands.Automorphic.AssociatedGammaTriangular`,
+Supporting module of the gamma comparison for weakly associated cuspidal pairs,
+`AssociatedGammaStatement` (module `Langlands.Automorphic.AssociatedGammaTriangular`,
 namespaces `Langlands.LieKolchin` and `Langlands.Weil.Local`). At unramified places the local restriction of a relative
 Weil representation is determined by one Frobenius operator. The published
 `PrincipalSeriesPairGammaMatchStatement` asks for a basis in which every Weil element acts by an

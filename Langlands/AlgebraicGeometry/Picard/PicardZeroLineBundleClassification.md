@@ -42,10 +42,9 @@ the universal property of the Poincaré bundle. The registered source is
 `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256
 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`.
 This is the derived Picard-zero consequence described by the statement
-and proof modules. Worker 516 read these original pages and found no
-source-specific project errata note in the supplied Library.
+and proof modules. These original pages were read, and no source-specific
+project errata note was found in the Library.
 
-Worker 266 authored the imported classification-from-inverse construction.
-Worker 270 authored the imported dual-evaluation proof and classification
-wrapper. Worker 516 prepared this thin proof entry and its explanation,
-reusing those published results unchanged.
+This module is a thin proof entry. It reuses the imported
+classification-from-inverse construction, dual-evaluation proof and
+classification wrapper unchanged.

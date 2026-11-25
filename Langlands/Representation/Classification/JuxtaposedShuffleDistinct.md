@@ -1,7 +1,6 @@
 # Distinct shuffles give inequivalent shuffle tensors
 
-Helper module for the juxtaposed case of Zelevinsky 1980, Proposition 4.6
-(task 0c90f7e4-78fa-43fd-8736-238bb3e8617d). It contains no statement of its own
+Helper module for the juxtaposed case of Zelevinsky 1980, Proposition 4.6. It contains no statement of its own
 from the literature. In Zelevinsky's proof, each shuffle tensor `τ_S` occurs in the
 Jacquet module of `⟨Δ₀⟩ × ⟨Δ₁⟩` with multiplicity one. This module supplies the
 input that makes the multiplicities at most one: different shuffles give

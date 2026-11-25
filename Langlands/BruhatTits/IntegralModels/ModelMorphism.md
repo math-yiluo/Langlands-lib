@@ -1,12 +1,12 @@
 # Compatible morphisms of supplied Bruhat–Tits models
 
-This focused definition unit expresses the preamble and part (1) of Kaletha–Prasad Axiom 4.1.22 on actual supplied full and neutral integral models. The data, the special fibres, the restriction square and the kernel are actual group schemes and morphisms. It supplies no models, no comparison map existence and no full corrected building certificate.
+This focused definition module expresses the preamble and part (1) of Kaletha–Prasad Axiom 4.1.22 on actual supplied full and neutral integral models. The data, the special fibres, the restriction square and the kernel are actual group schemes and morphisms. It supplies no models, no comparison map existence and no full corrected building certificate.
 
 ## Source and scope
 
 The source is Kaletha–Prasad, *Bruhat–Tits theory: a new approach* (2023), printed p.163, PDF p.194, Axiom 4.1.22 up to and including (1), registered as `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`. The authors' 1 November 2024 corrections, PDF p.27, include 4.1.22 in the corrected ten-item Definition 4.1.26 list and do not change these clauses. The corrections are registered as `kaletha-prasad-2024-corrections`, SHA-256 `23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed`.
 
-The integral base is an arbitrary domain `R` with fraction field `K`, in arbitrary universe `u`; the residue section requires `R` to be local. No characteristic restriction is imposed. The actual valuation rings in the surrounding KP task specialize these definitions. Both models have generic fibre identified with the same actual group `G`. The published `RelativeComponentModelData` already supplies smooth affine full and neutral models, connected neutral fibres and the all-test relative identity-component assertion. This file does not infer connected fibres from connected total space.
+The integral base is an arbitrary domain `R` with fraction field `K`, in arbitrary universe `u`; the residue section requires `R` to be local. No characteristic restriction is imposed. The actual valuation rings of the surrounding KP construction specialize these definitions. Both models have generic fibre identified with the same actual group `G`. The published `RelativeComponentModelData` already supplies smooth affine full and neutral models, connected neutral fibres and the all-test relative identity-component assertion. This file does not infer connected fibres from connected total space.
 
 ## Source-to-declaration map
 
@@ -31,4 +31,4 @@ The kernel uses `Langlands.GroupScheme.kernel`, whose actual pullback constructi
 
 `specialFibre_component_comm` applies the base-change functor to `component_comm`. `full_reduction_naturality` and `neutral_reduction_naturality` specialize the existing residue-section naturality laws. These are intrinsic consequences of the supplied maps and prove none of the structural special-fibre predicates.
 
-The caller must index these data over every ordered pair of nonempty bounded apartment subsets in the source relation `Ω ≺ Ω'`. The actual ordering, the full and neutral integral-point/fixer equalities from 4.1.20, all facet-only parts 4.1.22(2)–(7), and the full corrected ten-axiom assembly remain obligations of task `129deca1-ce21-411b-9b79-7e94545fe26d`. This focused unit does not claim any of them.
+The caller must index these data over every ordered pair of nonempty bounded apartment subsets in the source relation `Ω ≺ Ω'`. The actual ordering, the full and neutral integral-point/fixer equalities from 4.1.20, all facet-only parts 4.1.22(2)–(7), and the full corrected ten-axiom assembly are outside this module. This focused module does not claim any of them.

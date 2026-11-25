@@ -1,7 +1,9 @@
 # Separating two Laurent monomials on a nonzero principal open
 
-Worker 194 prepared these internal helpers as support for Task 5365, the generic nonzero
-same-Levi intertwiner. They supply the polynomial-clearing step: a finite family of
+These internal helpers support the generic nonzero same-Levi intertwiner
+(`RationalSameLeviGenericNonzeroIntertwinerStatement`, proved by
+`rationalSameLeviGenericNonzeroIntertwiner` in `Aubert.General.RationalSameLeviGenericIntertwinerProof`).
+They supply the polynomial-clearing step: a finite family of
 pointwise inequalities between unramified character values holds on one nonzero
 principal open in the published finite coordinates. Products of the polynomials below
 give one principal open for a finite family.

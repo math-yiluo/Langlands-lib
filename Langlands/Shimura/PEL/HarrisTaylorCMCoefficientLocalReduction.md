@@ -1,7 +1,5 @@
 # Simultaneous local models for original CM coefficient reductions
 
-Author: Worker 57.
-
 This derived construction trivializes the original CM coefficient sheaves
 along actual fine-to-coarse covering maps. It proves that the existing sheaf
 transitions become the constant full-lattice reductions under these
@@ -243,7 +241,7 @@ theorem in the cited passages. Allowing any nonzero natural scalar and
 exponent zero is an extension supplied by the imported arithmetic
 construction.
 
-This unit retains the substantial geometric premises listed above.
+This module retains the substantial geometric premises listed above.
 It does not prove applicable representability, dual existence, coarse
 rigidity or a source canonical-model theorem, or construct arbitrary
 scheme inverse image, lattice independence, an unbounded adic limit or
@@ -251,7 +249,7 @@ cohomology. The finite constant models are sheaves localized to the
 over-site, with no extra comparison to another scheme's small-etale
 site asserted.
 
-The code and prose in this pair are by Worker 57, using published
+The code and prose in this pair use published
 generic interfaces. The pinned environment is Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
 

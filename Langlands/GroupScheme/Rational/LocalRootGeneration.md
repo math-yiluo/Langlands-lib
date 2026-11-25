@@ -1,6 +1,6 @@
 # Integral root and dynamic-centralizer generation
 
-This internal derived unit applies the actual integral root-product charts of
+This internal derived module applies the actual integral root-product charts of
 `LocalRootProducts` to subgroup containment on test schemes, and combines the
 two signs with `Dynamic.HenselianCellGeneration`. The construction retains
 arbitrary universe `u`.
@@ -49,5 +49,5 @@ integral factorization is assumed. The field-fibre root-system and
 monomorphy hypotheses are retained. For the parahoric application, one must
 still provide the compatible integral torus and identify the generic
 images of its integral root functors and dynamic centralizer with the
-specified root and centralizer generators. This unit does not prove
+specified root and centralizer generators. This module does not prove
 `UnramifiedParahoricModelStatement`.

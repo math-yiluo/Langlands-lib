@@ -1,9 +1,10 @@
 # Topology of Renard's chamber in the actual split-component space
 
-This unit states the topological meaning of the nonstrict chamber already defined
+This module states the topological meaning of the nonstrict chamber already defined
 in [RenardLeviCones](RenardLeviCones.md). It introduces no second chamber or torus
-space. The declaration is a proposition definition; its proof remains a separate
-obligation.
+space. The declaration is a proposition definition; its proof is not given here.
+The theorem `Langlands.BruhatTits.Cartan.RenardLeviCones.leviChamberTopology` in
+`RenardLeviChamberTopologyProof` proves it.
 
 ## Source and provenance
 

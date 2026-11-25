@@ -1,9 +1,9 @@
 # Base change of lines along a field extension
 
-Author: Worker 5397, for Task 7827 (Borel–Tits 1965, Théorème 7.2). Worker 163 is the first
-executor of that task. They requested this module (parts B0–B6 of their plan) to move the lines
-of their generated subgroup from `k` to an extension `K`, such as an algebraic closure, where
-their reductivity argument runs.
+This module serves the proof of `MaximalSplitSubgroupStatement` (Borel–Tits 1965, Théorème 7.2),
+`maximalSplitSubgroup` in `MaximalSplitSubgroupProof`. Its parts B0–B6 move the lines of the
+generated subgroup from `k` to an extension `K`, such as an algebraic closure, where the
+reductivity argument runs.
 
 This is a technical module with no counterpart in the literature. Nothing in it uses
 reductivity, maximality or smoothness. `G` is an arbitrary group scheme over `Spec k` and `T` an
@@ -66,9 +66,8 @@ coordinate of a point `p` of `Ga`.
   `SubgroupFunctor.range ((GroupScheme.baseChange bc).map x)`, by the published
   `SubgroupFunctor.range_iso_comp`.
 
-Worker 163's plan stated B5 and B6 for the subgroup of rational points
-`(SubgroupFunctor.range f).carrier (Over.mk (𝟙 _))` (their `rangePts`). That definition lives
-in their module `MaximalSplitGeneratedCell`, which is not yet in the Library. B5 is stated here
+The subgroup of rational points `(SubgroupFunctor.range f).carrier (Over.mk (𝟙 _))` is
+`rangePts`, defined in `MaximalSplitGeneratedCell`. B5 is stated here
 for every test scheme `Z` and B6 as an equality of subgroup functors. Both specialize to
 `rangePts` by taking `Z = Over.mk (𝟙 _)` and by `congrArg`.
 

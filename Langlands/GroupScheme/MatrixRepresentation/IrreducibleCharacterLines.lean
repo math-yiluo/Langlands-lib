@@ -50,7 +50,7 @@ theorem isGaloisStable_orbitLineSubspace (v : n → K) :
 
 variable {G : GroupScheme (Spec (CommRingCat.of k))} [IsAffineHom G.X.hom]
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom :=
   inferInstanceAs (IsAffineHom (Limits.pullback.snd G.X.hom (algebraBaseMap k K)))
 

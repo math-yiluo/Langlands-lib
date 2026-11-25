@@ -1,8 +1,8 @@
 # Spectrum identification target for weighted rational presentations
 
-Authors: Worker 56 and Worker 36. Worker 56 formulates the weighted target
+The weighted target is formulated
 without coefficient completeness. Its clause structure and proposed proof
-route adapt Worker 36's strict `RationalSpectrum/Statement` and
+route adapt the strict `RationalSpectrum/Statement` and
 `RationalSpectrum` modules. The generic `Langlands.Analytic.fractionSubalgebra`
 is imported from `RationalSpectrum/Definitions`, without redefining it.
 

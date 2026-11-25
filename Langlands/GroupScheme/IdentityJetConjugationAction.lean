@@ -76,7 +76,7 @@ def conjugatePoint (g : U ⟶ G.X) (x : U ⟶ (schemeFunctor S n).obj G) :
     U ⟶ (schemeFunctor S n).obj G :=
   baseChangedJetPoints G n U ((baseChangedJetPoints G n U).symm x ≫
     (conjugationAut ((GroupScheme.baseChange U.hom).obj G) n
-      ((baseChangeBasePointsEquiv U.hom G).symm g)).hom)
+      ((baseChangeBasePointsEquiv U.hom G).symm g)).asIso.hom)
 
 variable {U} in
 /-- The jet point obtained by conjugation has the prescribed image in the group. -/
@@ -85,7 +85,7 @@ theorem conjugatePoint_inclusion (g : U ⟶ G.X) (x : U ⟶ (schemeFunctor S n).
     conjugatePoint G n g x ≫ overInclusion G n = g * (x ≫ overInclusion G n) * g⁻¹ := by
   let G' := (GroupScheme.baseChange U.hom).obj G
   let g' := (baseChangeBasePointsEquiv U.hom G).symm g
-  have hc : (conjugationAut G' n g').hom ≫ overInclusion G' n =
+  have hc : (conjugationAut G' n g').asIso.hom ≫ overInclusion G' n =
       overInclusion G' n ≫ (G'.innerIso g').hom.hom.hom :=
     Over.OverMorphism.ext (conjugationAut_inclusion G' n g')
   rw [conjugatePoint, baseChangedJetPoints_inclusion, Category.assoc, hc, ← Category.assoc,

@@ -1,6 +1,7 @@
 # Inverse-transpose pullback on actual automorphic forms
 
-This internal construction for Task 7294 combines the actual finite-smooth
+This internal construction for the proof of
+`CuspidalTransposeInverseContragredientStatement` combines the actual finite-smooth
 pullback with the concrete standard compact subgroup. It works over an
 arbitrary-universe number field and at every natural matrix size.
 
@@ -26,5 +27,8 @@ in `IsAutomorphicForm`. Restriction to their actual subspace defines
 `AutomorphicForms.transpose`, a complex-linear involution with the stated
 evaluation and finite-translation covariance.
 
-This result does not yet establish preservation of cuspidality, an operator
-realization, or the contragredient identification. Task 7294 remains open.
+This result does not establish preservation of cuspidality, an operator
+realization, or the contragredient identification.
+`CuspidalTransposeInverseContragredientStatement` is proved as
+`cuspidalTransposeInverseContragredient` in
+`Global/RankinSelberg/CuspidalTransposeInverseContragredientProof`.

@@ -1,12 +1,9 @@
 # Proof: representability on locally noetherian tests of fppf sheaves presented by a flat proper equivalence relation
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705),
-by agreement with that task's first executor, Worker 5705. It proves the
+This module proves the
 published proposition
 `Langlands.AlgebraicGeometry.FppfQuotientLocallyNoetherianStatement`
 (input (c'') of the Picard reduction `PicardHilbertPiecesRepresentabilityReductionStatement`).
-The operator's answer to request `98389b48910e54088e0e2b2ba6aaad9c` allows such
-prerequisite proofs to stay under Task 5705.
 
 The main theorem is
 
@@ -29,7 +26,8 @@ The proof is a single term built from three published Library theorems:
   FlatProperEquivalenceRelationQuotientReductionStatement.{u}`, which is the
   implication
   `HilbertSchemeUniversalFamilyStatement.{u} → FlatProperEquivalenceRelationQuotientStatement.{u}`
-  (Worker 5705's proof of Nitsure's Theorem 6.8 from the Hilbert scheme);
+  (the proof of Nitsure's Theorem 6.8 from the Hilbert scheme, in
+  `FlatProperEquivalenceRelationQuotientReductionProof`);
 - `Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamily.hilbertSchemeUniversalFamily :
   HilbertSchemeUniversalFamilyStatement.{u}`: the Hilbert scheme of a
   projective flat family over a noetherian ring, on all test schemes, with its

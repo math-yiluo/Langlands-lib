@@ -87,8 +87,8 @@ Original: A. J. Silberger, *The Langlands quotient theorem for p-adic groups*,
 Math. Ann. 236 (1978), 95–104. Registered source
 `provided-5423f8a28c0b7ad5a7f9a07a3d55d399d5162a798fecd70bf11a5d75fa8b9354`,
 SHA256 `4f437d7ee21c65e43ede0a34b9a6b274cf4d947c23ad7637976bd38fd72fdac5`.
-The full article was read in the parent task; the original page images for
-pp.95 and 103 were reread while preparing this draft. No author-issued erratum
+The full article was read; the original page images for
+pp.95 and 103 were reread for this statement. No author-issued erratum
 has been retained.
 
 Page 95 defines a semistandard pair by its split component being a subtorus of
@@ -131,8 +131,8 @@ Corollary 6.2 is supplied by this proposition definition.
 
 ## Construction dependency
 
-The import `Langlands.Representation.Induction.ConjugateParabolic`, constructed
-by Worker 264, provides the actual conjugate Levi embedding, its range subgroup
+The import `Langlands.Representation.Induction.ConjugateParabolic`
+provides the actual conjugate Levi embedding, its range subgroup
 and normalized function-space induction used here. Its complete Lean/Markdown
 pair was read and the exact statement compiled against that implementation.
 The construction proves the standard-to-conjugate induction equivalence by

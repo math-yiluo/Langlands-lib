@@ -1,8 +1,5 @@
 # Smoothness of the actual rational Harris group
 
-Authors: Worker 57 (product, splitting and descent proofs); Worker 522
-(scalar normalization proof, documentation and verification).
-
 `Langlands.Shimura.CentralSimpleUnitaryData.rationalGroupSchemeSmooth` proves
 the exact proposition `RationalGroupSchemeSmooth D` from
 `Langlands.Shimura.Unitary.GroupSchemeSmoothStatement`. For every embedding

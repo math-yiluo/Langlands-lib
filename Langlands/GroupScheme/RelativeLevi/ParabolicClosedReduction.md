@@ -1,7 +1,5 @@
 # Closedness from an etale-local dynamic description
 
-Author: Worker 589.
-
 This is an internal reduction toward the published
 `Langlands.GroupScheme.RelativeParabolicClosedStatement`. It does not prove the target
 unconditionally: its final theorem requires the separate

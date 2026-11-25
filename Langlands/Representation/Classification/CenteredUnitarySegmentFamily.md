@@ -37,7 +37,7 @@ the Appendix pole argument. The block isomorphisms are retained explicitly.
 The provenance is an internal derivation from the named published
 parameter-uniqueness, twist-compatibility and Hermitian-involution results,
 together with the supplied centered-parametrization adapter. No additional
-classification theorem or factor identity is assumed. This contribution
+classification theorem or factor identity is assumed. This file
 supplies actual segment choices and numerical symmetry; it does not discharge
 the analytic base-factor, epsilon-unit or arithmetic gamma-zero hypotheses,
 and it does not prove the associated-pair induction theorem.

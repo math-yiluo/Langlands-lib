@@ -1,7 +1,5 @@
 # Statement: lifting homomorphisms from isotrivial groups of multiplicative type over adically complete noetherian rings
 
-Worker 75.
-
 `Langlands.GroupScheme.MultiplicativeTypeAdicLiftStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports:
@@ -154,6 +152,6 @@ the injectivity in 7.1 gives `u' = int(g) ∘ u`. This is explanation only.
 - `MultiplicativeTypeCompleteLocalDeformationStatement`
   ([`Torus.MultiplicativeTypeCompleteLocalDeformationStatement`](MultiplicativeTypeCompleteLocalDeformationStatement.md))
   is Conrad's Theorem B.3.2(2), which Conrad compares with SGA 3, IX, 7.1.
-- The candidate statement `MultiplicativeTypeInfinitesimalLiftStatement` (SGA 3, IX,
-  Théorème 3.6, the input to the proof of 7.3) is not yet in the Library and is not imported
-  here.
+- `MultiplicativeTypeInfinitesimalLiftStatement`
+  ([`Torus.MultiplicativeTypeInfinitesimalLiftStatement`](MultiplicativeTypeInfinitesimalLiftStatement.md))
+  is SGA 3, IX, Théorème 3.6, the input to the proof of 7.3. It is not imported here.

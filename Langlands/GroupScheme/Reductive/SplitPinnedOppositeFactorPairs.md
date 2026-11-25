@@ -45,7 +45,7 @@ opposite-factor-pair conditions, including normalization of the supplied
 torus. Specializing to the fields of a `SplitPinning` gives
 `splitPinnedOppositeFactorPairs`.
 
-All inputs are imported by their Lean names. This unit is an internal
+All inputs are imported by their Lean names. This module is an internal
 derivation combining the published root-cell, cocharacter-centralizer,
 orthogonal-root-datum, and actual root-subgroup transport results. It does not
 claim a new translation of an original-literature assertion. The cocharacter

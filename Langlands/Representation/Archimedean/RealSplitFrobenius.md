@@ -22,14 +22,15 @@ is the `j`-th Fourier coefficient along the rotation block at positions `p, p + 
 module `RealBlockFourierFinite`); `realInducedBlockAt ds p` is the induction block of `ds` at
 position `p`, if any (module `RealBlockPositionData`).
 
-This module is internal infrastructure for the reverse-intertwiner step of Task 7069
-(`RealReverseIntertwinerKernelStatement`, module `RealStandardIrreducibleCriterionReduction`)
+This module is internal infrastructure for the reverse-intertwiner step of the proof of
+`RealStandardIrreducibleCriterionStatement` (`RealReverseIntertwinerKernelStatement`, module
+`RealStandardIrreducibleCriterionReduction`)
 when `ds` has induction blocks. It has no literature source. The idea is classical: an
 induction block of weight `m` is the irreducible subquotient of the principal series of its
 two characters that contains the `O(2)`-types of weight `≥ ℓ`; here this is realised by the
 Frobenius maps of module `RealBlockFrobeniusMap` and the tail multipliers of the Library
-module `RealBlockMultiplier`, which were built for Task 7067
-(`RealCharacterPairFiltrationStatement`). The order low/high of the two characters is the
+module `RealBlockMultiplier`, which were built for the proof of
+`RealCharacterPairFiltrationStatement`. The order low/high of the two characters is the
 order used by `data_D` of module `RealCharacterPairReducible` (exponent difference `ℓ`).
 `split`, `IsTailFrom`, `IsSplitMap` and `Commutes` are internal notation.
 

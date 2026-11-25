@@ -1,7 +1,5 @@
 # Regularity under the literal normalizer
 
-Author: Worker 1597.
-
 This supporting construction uses the actual subgroup normalizer and the
 published conjugation functor. It supplies a regularity predicate, its inner
 equivalences, a vanishing result for intertwiners from noninner conjugates, and

@@ -1,6 +1,7 @@
 # Parabolic conjugation is linear on actual vector layers
 
-This internal construction for Task 7200 proves that actual conjugation by a
+This internal construction for the finite vector-bundle filtrations of
+supplied relative radicals proves that actual conjugation by a
 parabolic base point induces a linear automorphism on a root-weight vector
 quotient. The point need not centralize the cocharacter. The base ring and
 universe are arbitrary, and the comparison holds on every scheme test.

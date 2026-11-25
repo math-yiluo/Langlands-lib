@@ -1,7 +1,5 @@
 # Level spaces at split levels
 
-Author: Worker 13.
-
 This internal construction describes the level spaces of a group that splits
 as a product, at levels whose first component is fixed. Let `Γ` be a group
 acting on a space `X`, let `ι : Γ →* G`, and let `e : G ≃ₜ* H × H'` be an

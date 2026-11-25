@@ -1,7 +1,5 @@
 # Genericity at one rank-one wall
 
-Author: Worker 5120.
-
 This module produces, for one rank-one wall and one representative of `N_G(L)(k)/L(k)`,
 a nonzero polynomial on `X(M)` off whose zero set the relevant induced representations are
 irreducible. All declarations are in `Langlands.InducedTwistPersistence`. The unramified

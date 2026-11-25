@@ -24,15 +24,14 @@ namespace Langlands.Analysis.Meromorphic
 
 /-! ## Scalar meromorphic functions on a normed space
 
-The lemmas of this section are private copies of helper lemmas written by Worker 587 (Task 5502
-draft) and reproduced by Worker 86 in the staged cocycle reduction of Task 5503. -/
+The lemmas of this section are private helper lemmas. -/
 
 section Scalar
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
   {f g : E → ℂ} {U V W : Set E}
 
-/-- Multiplication by a constant keeps the domain of holomorphy (new). -/
+/-- Multiplication by a constant keeps the domain of holomorphy. -/
 private theorem IsMeromorphicOn.mul_const (hf : IsMeromorphicOn 𝓘(ℂ, E) f U) (c : ℂ) :
     IsMeromorphicOn 𝓘(ℂ, E) (fun x => f x * c) U := by
   have h := hf.mul (isMeromorphicOn_const (E := E) c)
@@ -174,8 +173,7 @@ end Transport
 section LinearAlgebra
 
 /-- Coordinates in a linearly independent finite family of functions are linear combinations of
-finitely many point evaluations (after Worker 979's `exists_continuousLinearMap_leftInverse`,
-Task 5501 draft). -/
+finitely many point evaluations (after `exists_continuousLinearMap_leftInverse`). -/
 theorem exists_eval_leftInverse {Γ : Type} {ι : Type*} [Fintype ι] (b : ι → Γ → ℂ)
     (hb : LinearIndependent ℂ b) :
     ∃ (κ : Type) (_ : Fintype κ) (pts : κ → Γ) (Λ : (κ → ℂ) →ₗ[ℂ] (ι → ℂ)),

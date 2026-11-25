@@ -47,6 +47,6 @@ The provenance is the internal derivation from the finite pairing,
 the named relative transition hypothesis, the existing prime-adic Tate
 modules and roots-of-unity twist, and the canonical coordinate maps.
 The pairing keeps the finite convention `beta(y)(x)` and chooses no
-roots-of-unity basis. This unit asserts no perfectness, alternation,
+roots-of-unity basis. This module asserts no perfectness, alternation,
 nondegeneracy, geometric monodromy equivariance, polarization
 specialization, or rational pairing.

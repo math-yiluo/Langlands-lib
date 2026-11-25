@@ -1,7 +1,5 @@
 # Cuspidal eigenvalue of the general unadjusted Aubert operator
 
-Author: Worker 165, task `e3d69272-2599-4a08-a934-cb11f2493e30`.
-
 `Langlands.Aubert.General.CuspidalEigenvalueStatement` is the separate Prop
 target for Aubert 1995, Theorem 1.7(4), printed p.2181 / PDF p.3:
 for an actual irreducible cuspidal smooth representation `A`,
@@ -26,8 +24,8 @@ this helper does not silently replace it. On arbitrary smooth objects,
 The inputs are an actual locally compact nonarchimedean topological group,
 a finite index type, actual subgroup families `P`, `M`, `U`, their
 semidirect decompositions `h`, closedness `hU`, and the named
-`ParabolicFiniteLength` prerequisites `hfl`. The operator is exactly Worker
-23's [`alternatingOperator`](AlternatingOperator.md), the unadjusted sum
+`ParabolicFiniteLength` prerequisites `hfl`. The operator is exactly
+[`alternatingOperator`](AlternatingOperator.md), the unadjusted sum
 `∑_I (-1)^|I| i_I r_I`, acting on the exact Grothendieck group of actual
 finite-length smooth complex representations at carrier universe
 `max uG uV`. Its class formula is already supplied upstream.
@@ -38,10 +36,12 @@ group-algebra length from simplicity. It requires no admissibility or
 finite-dimensional carrier hypothesis. The exponent is `Fintype.card ι`,
 the cardinality of the full simple-root index set, and can be zero.
 
-This target is generic in the actual subgroup data. The standard rational-point
-realization, including the full subset's identity induction/Jacquet term,
-remains required for a connected reductive instance. So do the named
-representation-theoretic prerequisites and the eigenvalue proof. No arbitrary
+This target is generic in the actual subgroup data. A connected reductive
+instance needs the standard rational-point realization, including the full
+subset's identity induction/Jacquet term, and the named
+representation-theoretic prerequisites. On the rational points the eigenvalue
+is proved, under the hypotheses of `RationalCuspidalEigenvalueStatement`, as
+`rationalCuspidalEigenvalue` in `General.RationalCuspidalEigenvalueProof`. No arbitrary
 family is asserted to satisfy the target. No split, quasisplit,
 characteristic-zero or positive-rank restriction is added.
 

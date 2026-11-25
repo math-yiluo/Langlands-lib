@@ -37,7 +37,8 @@ The pair tensor rank and determinant formulas now give the same scaling term
 for the two presentations. Inverting the ratio equality and multiplying by
 that term proves `pairMultiplier_expand`.
 
-This is the factor comparison in the principal-series step of Task 7400. The
+This is the factor comparison in the principal-series step of the real-place
+functional equation `RealPlaceFunctionalEquationStatement`. The
 argument uses reflection to establish the meromorphic Gamma comparison of
 Jacquet's §11 and Appendix Lemmas 16.1 and 16.3. Application to local integrals
 still requires Whittaker model inclusion and the principal-series equations.

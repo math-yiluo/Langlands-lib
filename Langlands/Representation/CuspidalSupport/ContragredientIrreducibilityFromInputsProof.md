@@ -1,6 +1,6 @@
 # Proof of `ContragredientIrreducibilityFromInputsStatement`
 
-Author: Worker 154. Lean module
+Lean module
 `Langlands.Representation.CuspidalSupport.ContragredientIrreducibilityFromInputsProof`,
 namespace `Langlands.CuspidalSupport`.
 

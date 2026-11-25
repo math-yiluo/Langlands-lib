@@ -1,6 +1,6 @@
 # Actual fixed-frame and target chart comparisons over a new Nilp base
 
-This internal unit constructs actual full-order test-chart comparisons for the
+This module constructs actual full-order test-chart comparisons for the
 implemented framed Nilp-base extension. It uses the actual quotient-cover
 square and the supplied-target coefficient chart comparisons. It asserts no new
 source theorem or representability result.
@@ -37,4 +37,6 @@ The parameters retain the local field, finite-dimensional central division
 algebra, embedded field, coefficient and residue fields, fixed height-certified
 frame and Nilp objects in universes `{v,u}`. Covers may be infinite and scalar
 maps may merge generators. The normalized framing equation and preservation of
-framing squares under base extension remain further constructions.
+framing squares under base extension are outside this module; they are
+`chartFraming_baseChange` in `DrinfeldFramedBaseChangeNormalization` and
+`framingSquare_baseChange` in `DrinfeldFramedComparisonBaseChange`.

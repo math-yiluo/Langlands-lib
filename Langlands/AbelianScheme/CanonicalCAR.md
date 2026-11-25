@@ -80,7 +80,9 @@ every `Hⁿ⁺¹(A)`.
   with index universe `0`, to `hH1` and to `canonicalCARData A` for every field and abelian
   scheme. The hypothesis `hH1` is used only for the vanishing of `Hⁿ(A)` above degree `dim H¹(A)` (see
 `DegreeTwoComparisonFinal`). This module does not prove `FieldStructureSheafH1DimensionStatement`
-  (Task 6458), so the target is proved here only conditionally on it.
+  (the Library proves it as `fieldStructureSheafH1Dimension`, in
+  `Langlands.AbelianScheme.FieldStructureSheafH1DimensionProof`), so the target is proved here only
+  conditionally on it.
 
 ## Provenance and independence
 
@@ -89,5 +91,6 @@ This is internal derived content. The relation has the form of the identity
 project's actual-cohomology interfaces: creation naturality and refinement
 (`AllSeqCreationNaturality`), primitivity of `H¹` (`CanonicalH1Primitive`), the left-axis slant
 formula (`CanonicalLeftAxisSlant`), the right-axis slant formula (`CanonicalSlantRightCreation`) and
-the section property of the left axis (`CanonicalCARData`). None of these uses the excluded Picard
-or dual-geometry statements, or a proof of `FieldH2PrimitiveInjectivityStatement`.
+the section property of the left axis (`CanonicalCARData`). None of these uses the Picard
+or dual-geometry statements excluded from the proof of the degree-two exterior and canonical
+coproduct comparison, or a proof of `FieldH2PrimitiveInjectivityStatement`.

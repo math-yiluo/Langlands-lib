@@ -1,7 +1,5 @@
 # Opposite factors in smooth connected integral models
 
-Author: Worker 200.
-
 Lean module: `Langlands.BruhatTits.IntegralModels.IntegralOppositeFactorsStatement`.
 
 This module states `IntegralOppositeFactorsStatement.{u}` without proof. It is

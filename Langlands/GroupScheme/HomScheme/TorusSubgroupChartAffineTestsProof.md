@@ -1,7 +1,5 @@
 # Passing from affine tests to all tests for torus-subgroup charts
 
-Author: Worker 1735.
-
 The theorem `Langlands.GroupScheme.TorusSubgroupModuli.isOpenChartOfAffines`
 proves exactly the published proposition `IsOpenChartOfAffinesStatement.{u}`.
 For an arbitrary scheme `S : Scheme.{u}`, group scheme `G/S`, parameter scheme

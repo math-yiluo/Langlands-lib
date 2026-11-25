@@ -1,11 +1,10 @@
 # Endpoint reversal and smooth duality of individual special heads
 
-Author: Worker 357.
-
 This internal construction defines endpoint reversal for one segment and proves
 smooth duality of every supplied individual special head. It is a focused
-prerequisite of task `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`. The full product
-irreducibility criterion remains a separate, unproved obligation.
+prerequisite of the `SegmentHeadProductIrreducibility` criterion. The full
+product irreducibility criterion is a separate result, proved by
+`segmentHeadProductIrreducibility` in `SegmentHeadProductIrreducibilityProof`.
 
 ## Parameters and conclusions
 
@@ -128,13 +127,10 @@ The substantial direct modules are:
   each decreasing representative. Its proof compares the published
   individual-head existence result with actual canonical heads and socles.
 
-Both direct pairs were freshly checked against accepted, published records.
-The former was independently approved by Reviewer 6069 and published at
-Library `9a8ca758097242bde4147f33304f43fceef22fa4`; the latter was independently
-approved by Reviewer 6998 and published at Library
-`31d47a6f0dabd6dff6c65e1b78f4821ddedc9bc8`. Their frozen pair hashes still
-match the current Library exactly. The full independent acceptance reports
-were read. The present module uses no unaccepted draft or pending candidate.
+Both direct pairs are published Library modules. The former was published at
+Library `9a8ca758097242bde4147f33304f43fceef22fa4`; the latter at Library
+`31d47a6f0dabd6dff6c65e1b78f4821ddedc9bc8`. The pairs used here matched those
+published versions exactly. The present module uses no unpublished module.
 
 Other proof inputs reached through these modules include
 `Twist.SmoothPartDefinitions`, general contragredient injectivity and
@@ -178,39 +174,29 @@ opposite-support adapters, `TemperedSupportStatement` and
 `TemperedInductionStatement` provide definitions and general infrastructure;
 no excluded analytic classification conclusion is assumed or proved here.
 
-In particular, neither the import closure nor this proof uses the host
-criterion, generic segment product uniqueness, multisegment exhaustion,
+In particular, neither the import closure nor this proof uses the
+`SegmentHeadProductIrreducibility` criterion, generic segment product
+uniqueness, multisegment exhaustion,
 ordered strong-head existence, quotient coverage, ordered conversion,
 tempered block uniqueness, square-integrable classification or exhaustion,
-or regular exhaustion. Their host contract task identifiers are
-`8364e73f-14ec-4d14-8f2b-1555a7c1ce95`,
-`30341ae4-65f2-4a0e-9283-763db01a409e`,
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`,
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`,
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`,
-`8252833d-c269-41a9-824c-5879e531b23b`,
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`1cb45da2-7007-4351-a694-594fb148b8d1`,
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, and
-`bf433f0a-921a-428c-b0c0-6475438125ac`.
+or regular exhaustion.
 
-The host's additional exclusions, including the segment conclusions associated
-with task prefixes `ed48ae06`, `b95105c6`, `55ad1e10`, `92aea10f`,
-`2ae5cbe5`, and the segment-socle part of `8e5b4563`, remain excluded.
-There is no use of Zelevinsky 1980 sections 3.5 or 9.6, their proof successors,
+The further exclusions of that criterion's proof, including the segment
+conclusions `SegmentFullJacquetFormula`, `SegmentSocleJacquetFormula`,
+`SegmentHeadJacquetFormula`, `SegmentSpecialJacquetExponentNormFormula`,
+segment-socle product irreducibility, and the segment-socle derivative
+statements of `SegmentSocleDerivativesStatement`, remain excluded.
+There is no use of Zelevinsky 1980 sections 3.5 or 9.6, results proved from them,
 segment derivative formulas, segment-socle existence, full segment Jacquet
 formulas, linked segment product structure or a segment product criterion.
-This audit preserves the operator decisions
-`bd71b9185aab5d6eafffb7891bd3a3ca`,
-`0edda6122ce65ed7ac51603c37473920`, and
-`30144f6f9b59540b88b6d4c1517892d9`, read in full. The latter's support-only
-permission is not needed as an input here: the module asserts no derivative
+The support-only exception to these exclusions is not needed as an input
+here: the module asserts no derivative
 support bound, derivative irreducibility, truncated-head identification,
 multiplicity formula or complete derivative formula.
 
-This contribution provides individual smooth duality. Product derivative
+This file provides individual smooth duality. Product derivative
 support aggregation, survival under nonlinkage, the linked converse, and the
-full unchanged product irreducibility target remain separate obligations.
+full unchanged product irreducibility criterion are not established here.
 
 ## Complete recursive project inventory
 

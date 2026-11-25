@@ -19,7 +19,7 @@ universe u uQ
 namespace Langlands.Global.CuspidalPairFunctionalEquation
 
 open NumberField
-open Langlands.Global.CompletionPadic Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.Global.CompletionPadic Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 section LocalExistence
 

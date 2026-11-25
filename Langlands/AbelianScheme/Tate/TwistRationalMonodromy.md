@@ -99,7 +99,7 @@ uses the roots-of-unity carriers and their explicit `mu` hypotheses.
 No field automorphism or arbitrary action is substituted for geometric
 fibre-functor evaluation.
 
-This unit is algebraic: no topology or continuity theorem on these
+This module is algebraic: no topology or continuity theorem on these
 rationalizations is asserted. It does not identify the fundamental group
 with an absolute Galois group or prove the scalar-comparison hypotheses,
 finite étaleness, a restricted-product comparison, path transport, pairing

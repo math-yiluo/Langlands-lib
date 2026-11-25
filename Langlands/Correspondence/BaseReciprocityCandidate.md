@@ -1,6 +1,6 @@
 # The actual base component of a supplied reciprocity family
 
-Worker 1555 derives this internal construction from the existing canonical
+This internal construction is derived from the existing canonical
 bottom-field unit equivalence, the actual base Weil equivalence and the
 functorial equivalence on quotients by closed commutators. No new
 original-literature assertion is introduced.
@@ -37,7 +37,7 @@ property to every compatible candidate by their proved equality.
 
 The prime and field universe are arbitrary. The family remains a supplied
 input, and its normalization is a premise only for the normalization theorems.
-This unit constructs no family or local-constant system and asserts no
+This module constructs no family or local-constant system and asserts no
 unconditional reciprocity existence. The order relation proved here is only
 one conjunct of `IsGeometricReciprocity`; its full normalized finite
 norm-residue condition is not proved here. No analytic comparison or closed

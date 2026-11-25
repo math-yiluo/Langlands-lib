@@ -1,7 +1,5 @@
 # Bounded automorphisms on rational domains and sections
 
-Author: Worker 36.
-
 This derived construction uses the automorphism group of an actual presented
 strict affinoid algebra in its category of bounded algebra maps. It constructs
 left actions on chosen rational presentations, spectrum points and the total

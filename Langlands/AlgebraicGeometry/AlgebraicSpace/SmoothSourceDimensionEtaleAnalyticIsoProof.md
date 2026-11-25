@@ -1,7 +1,5 @@
 # Proof that étale maps are local analytic isomorphisms of the varying-dimension atlases
 
-Author: Worker 489.
-
 `smoothSourceDimensionEtaleAnalyticIso` proves the unchanged published
 proposition
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SmoothSourceDimensionEtaleAnalyticIsoStatement.{u}`

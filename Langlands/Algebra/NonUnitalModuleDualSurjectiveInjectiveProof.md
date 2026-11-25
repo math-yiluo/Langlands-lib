@@ -23,7 +23,7 @@ actual nondegenerate dual elements with equal pullbacks agree at f(m)
 for every original m. Surjectivity supplies a preimage of every target
 vector, so the two entire functionals agree. Extensionality of the actual
 nondegenerate subtype gives equality. This argument needs neither full-dual
-extension nor the separately owned fixed-part inverse or equivalence.
+extension nor the fixed-part inverse or equivalence.
 
 The named full-dual actions and canonical recovered complex scalar
 structures are those in the unchanged target. No finite-dimensionality,

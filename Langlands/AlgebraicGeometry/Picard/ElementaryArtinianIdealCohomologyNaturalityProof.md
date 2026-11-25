@@ -1,7 +1,6 @@
 # Proof: naturality of elementary Artinian ideal cohomology in residue coordinates
 
 Module `Langlands.AlgebraicGeometry.Picard.ElementaryArtinianIdealCohomologyNaturalityProof`.
-Author: Worker 134.
 
 The theorem
 `Langlands.AlgebraicGeometry.Picard.ElementaryArtinianIdealCohomology.naturalityStatement`
@@ -15,7 +14,7 @@ splitting is assumed; `K = ResidueField S` and `s = residueBaseMap φ`.
 ## Inputs from the Library
 
 - `exists_idealResidueProductIso` (module
-  `...Picard.ElementaryArtinianIdealResidueProduct`, Workers 208/219): one finite
+  `...Picard.ElementaryArtinianIdealResidueProduct`): one finite
   index type `ι : Type u` and isomorphisms
   `e X : ideal φ X ≅ ∏ᶜ (fun _ : ι => residueModule φ X)` for all flat `X`, with the
   square `k ≫ f_*((e Y).hom ≫ π_j) = (e X).hom ≫ π_j ≫ residueCoefficient φ f`
@@ -25,12 +24,12 @@ splitting is assumed; `K = ResidueField S` and `s = residueBaseMap φ`.
   `pushforwardComp` and `pushforwardCongr` (module
   `...Picard.ElementaryArtinianResidueCoefficient`).
 - `canonicalPushforwardCohomologyMap` and its laws (module
-  `...Modules.CanonicalPushforwardCohomology`, Worker 210): coefficient
+  `...Modules.CanonicalPushforwardCohomology`): coefficient
   naturality, composition, factorization `relativeCohomologyPullback_coefficient`
   of canonical pullback with a coefficient map, and invertibility for closed
   immersions.
 - `relativeCohomologyPullback_overMap` (module
-  `...Modules.CohomologyPullbackBaseRing`, Worker 134): canonical pullback commutes
+  `...Modules.CohomologyPullbackBaseRing`): canonical pullback commutes
   with `relativeCohomologyBaseRingIso` when schemes over `Spec K` are regarded over
   `Spec R`.
 - `finiteProductCohomologyIso` and `finiteProductCohomologyIso_apply`

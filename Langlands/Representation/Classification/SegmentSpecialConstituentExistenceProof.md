@@ -1,7 +1,6 @@
 # The special strong head and reverse socle of a segment
 
-Worker 502, with Worker 699 as coauthor for the adapted pointwise assembly,
-proves the published proposition
+This module proves the published proposition
 `Langlands.Classification.SegmentSpecialConstituentExistence.{uF,uV} F T`.
 The closing theorem is
 `Langlands.Classification.segmentSpecialConstituentExistence`.
@@ -68,7 +67,10 @@ supplies `IsSegmentHead`. For each other actual representative of the same
 base, `segmentInducedDownIsoOfRepresented` gives an actual equivalence of the
 decreasing products. `IsIrreducibleSocle.of_equiv` transports the strong
 socle along it. Thus the same constructed representation satisfies the
-universal representative clause of the exact target.
+universal representative clause of the exact target. This pointwise
+assembly is adapted code: it has the form of
+`segmentZelevinskyConstituentExistence_of_pointwise` in
+`SegmentZelevinskyConstituentExistenceProof`, with head and socle exchanged.
 
 The induction is the existing upper normalized induction with positive
 half-modulus covariance and right translation. The special head uses the
@@ -110,6 +112,6 @@ those statement definitions is used as an assumption or proved input here.
 There is no use of segment analytic classification, multisegment special-head
 exhaustion, ordered special-head existence, quotient coverage, tempered block
 uniqueness, square-integrable classification or exhaustion, regular exhaustion,
-or a proof successor or transitive proof dependency of those conclusions.
+or a proof or transitive proof dependency of those conclusions.
 The downstream full segment Jacquet equivalence is also excluded. Ordinary
 contragredient compatibility is not used to identify the endpoints.

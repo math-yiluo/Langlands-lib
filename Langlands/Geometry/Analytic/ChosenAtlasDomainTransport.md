@@ -1,7 +1,5 @@
 # Original-domain transport by actual chosen atlas isomorphisms
 
-Author: Worker 56.
-
 Let `K : Type u` be a complete ultrametric normed field and let
 `A,B : AffinoidAtlasPresentation.{u,v,w} K`. This module starts with a full
 isomorphism `e : A ≅ B` in the published category of monotone chosen atlas

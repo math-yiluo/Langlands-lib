@@ -1,6 +1,6 @@
 # Actual finite-place norm twist in Harris's Proposition 4.8
 
-Proof by Worker 126. `Langlands.Global.Harris.proposition48PlaceNormTwist.{uF}`
+`Langlands.Global.Harris.proposition48PlaceNormTwist.{uF}`
 proves [`Proposition48PlaceNormTwistStatement`](HarrisParityLocalTransportStatement.md)
 at its stated universe and hypotheses. The place datum `P` is arbitrary; the
 proof does not require uniqueness of a place above it, general position, or an
@@ -75,7 +75,7 @@ character common to different places.
 
 This is the derived finite-place comparison described in
 [`HarrisParityLocalTransportStatement`](HarrisParityLocalTransportStatement.md).
-It adapts the range, norm and pointwise reciprocity calculation of Worker 237's
+It adapts the range, norm and pointwise reciprocity calculation of
 [`HarrisProposition48ExactStabilizerParityInheritanceProof`](HarrisProposition48ExactStabilizerParityInheritanceProof.md),
 which assumes the corrected component is already given and uses only the
 underlying multiplicative map of the auxiliary twist. Here both continuous

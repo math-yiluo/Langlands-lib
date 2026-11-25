@@ -1,6 +1,6 @@
 # Square-integrability of the quotient chosen at a minimal unitary support
 
-Author: Worker 4772. This is internal supporting work for the necessity part
+This is internal supporting work for the necessity part
 of Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, VII.2.6, Theorem, first proof paragraph (printed p.231 /
 PDF p.237). The registered source is
@@ -117,6 +117,8 @@ ones. Minimality is over all actual parabolic data with any split
 component. The field and carrier universes are independent, and all
 local-field, topology and connected-reductive hypotheses are retained.
 Compactness of actual parabolic quotients and the VII.2.4 Lemma remain
-explicit hypotheses of the last two results. Their proofs are separate
-tasks, and this module proves neither. It proves no part of the uniqueness
+explicit hypotheses of the last two results, and this module proves
+neither. Quotient compactness is proved separately, in
+`ArbitraryParabolicQuotientCompactProof`; the VII.2.4 Lemma is not proved
+in the Library. This module proves no part of the uniqueness
 assertion or of the Corollary.

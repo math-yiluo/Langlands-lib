@@ -1,10 +1,10 @@
 # Source axioms for Renard's full module categories
 
-Worker 1571. This statement unit provides six closed future theorem targets and
+This statement module provides six closed theorem targets and
 their conjunction in
 `Langlands.Algebra.RenardFullModuleAxiomStatements`, module
 `Langlands.Algebra.RenardFullModuleAxiomStatements`. Every target is a `def`
-returning `Prop`. None assumes the category property it asks a future proof to
+returning `Prop`. None assumes the category property it asks a proof to
 establish.
 
 ## Source correspondence
@@ -28,19 +28,21 @@ and explicitly distinguishes it from Tohoku AB6. On printed p.264 / PDF270,
 the opening example asserts these axioms for all left modules over an arbitrary
 ring and for unital left modules over a unital ring.
 
-The six targets specialize the published source predicates to those actual
+The six targets specialize the source predicates to those actual
 categories. The explicit universe bounds and the separate directed-distribution
 targets are foundational elaborations of that example, rather than additional
-numbered assertions in the book. This unit proves no instance of either
+numbered assertions in the book. This module proves no instance of either
 example. Its two reflexive equivalences only expose the existing definitional
 source Grothendieck reading.
 
-The published `notes/renard/appendix-a-corrections.md` and the A.VI.3 progress
+The note `notes/renard/appendix-a-corrections.md` and the A.VI.3 progress
 note were consulted. The former treats other passages; the latter preserves
 the distinction between the full examples and the I.6 nondegenerate category.
 No dedicated
 `notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`
-was present in the workspace, project notes or pinned Library. The registered
+was present in the workspace, project notes or pinned Library when this was
+checked; the Library's file now concerns chapters V–VII and has no entry for
+these passages. The registered
 2010-edition correction list `renard-2010-corrections-complements` was read on
 PDF18–19. Its nearby correction changes the Zorn argument to use chains;
 it does not address these example assertions or the source AB5/AB6 definitions.
@@ -92,13 +94,13 @@ UnitalSourceAB6Statement.{uA, uM} : Prop :=
 conjunction in exactly that order. The two AB6 components use only `uA,uM`;
 there is no indexing parameter or chosen small cover in canonical source AB6.
 
-The nonunital targets explicitly select the published instance
+The nonunital targets explicitly select the instance
 `Langlands.Algebra.NonUnitalModuleCat.abelian` from
 `Langlands.Algebra.NonUnitalModuleAmbientAbelianProof`. It retains the
 pointwise Hom groups and uses the integer-unitization equivalence. The unital
 targets explicitly select Mathlib's standard `ModuleCat.abelian` from
 `Mathlib.Algebra.Category.ModuleCat.Abelian`. No abelian structure is a
-parameter of a target. The published category structures, categorical
+parameter of a target. The Library's category structures, categorical
 subobjects and their existing factorization order are retained.
 
 The complete types of
@@ -138,7 +140,7 @@ fixed smaller carrier category. Source AB5 is not defined through Mathlib's
 filtered-colimit exactness `AB5OfSize` or `IsGrothendieckAbelian`, and these
 targets assert no comparison with them.
 
-`Langlands.Renard.SourceAB6 C` is the published
+`Langlands.Renard.SourceAB6 C` is
 `Langlands.Renard.IsLocallyFiniteTypeCategory C`: for every `X : C`,
 
 ```lean
@@ -148,13 +150,13 @@ IsLUB {P : CategoryTheory.Subobject X |
 ```
 
 Thus top is the sum of all actual categorical finite-type subobjects.
-`IsFiniteTypeObject` is the published source predicate, including existence
+`IsFiniteTypeObject` is the source predicate, including existence
 of subobject unions and its nonempty proper-chain condition. No replacement
 finite-generation notion, sized cover, selected finite-subset construction or
 extra Grothendieck hypothesis is inserted into source AB6. Its carrier stays
 `uM` independently of `uA` and `uI`.
 
-## Category scope and remaining proof gate
+## Category scope and proof
 
 The nonunital category is the full original additive-action category: objects
 are additive commutative groups with an associative distributive action, and
@@ -167,14 +169,14 @@ No nontriviality, commutativity, finite dimension, coefficient/carrier size
 comparison, idempotentedness or nondegeneracy hypothesis is added. Zero rings,
 zero modules and all zero actions allowed by the selected category remain
 in scope. The existing I.6 targets for `NondegenerateModuleCat` retain their
-distinct category, idempotented-ring hypothesis and owners. `TopModuleCat`
-and other module-category comparisons are outside this unit.
+distinct category and idempotented-ring hypothesis. `TopModuleCat`
+and other module-category comparisons are outside this module.
 
-Independent acceptance and publication of this pair supplies exact proposition
-targets for separate source AB5 and local-finite-type proof successors retained
-by the parent program. The existing integer-unitization equivalence,
+This pair supplies exact proposition
+targets for the proof `fullModuleAxioms` in
+`Langlands.Algebra.RenardFullModuleAxiomProof`. The existing integer-unitization equivalence,
 `NonUnitalModuleSubobject`, `NonUnitalModuleFinitenessProof` and
-`RenardModuleFiniteType` may support those proofs. This unit does not assume
+`RenardModuleFiniteType` may support that proof. This module does not assume
 their desired category conclusions, construct covers or coproducts, or prove
 any of the six example targets or their aggregate. Other Appendix A assertions
-and module-category comparisons remain separate obligations.
+and module-category comparisons are outside this module.

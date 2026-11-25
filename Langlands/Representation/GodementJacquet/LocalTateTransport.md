@@ -30,4 +30,4 @@ The provenance is internal: the proof uses the actual constructions in
 `TateScalarTransport`, `RankOneQuotient`, and `RankinSelberg.Measures`, and
 Mathlib's uniqueness of regular Haar measure. No local functional equation,
 analytic continuation, normalized generator or conductor comparison is
-asserted by this unit.
+asserted by this module.

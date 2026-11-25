@@ -20,7 +20,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 def LocusEquivariant (H : OpenSubgroup G) (d : ρ.InvariantDomain H)
     (Y : Action TopCat.{w} H) (f : C(d.obj.locus, Y.V)) : Prop :=
   ∀ (g : H) (x : d.obj.locus),
-    f (ρ.invariantLocusOperator H d g x) = ConcreteCategory.hom (Y.ρ g) (f x)
+    f (ρ.invariantLocusOperator H d g x) = ConcreteCategory.hom (Y.ρ g).asHom (f x)
 
 /-- Actual continuous equivariant maps out of a represented locus. -/
 abbrev EquivariantLocusMap (H : OpenSubgroup G) (d : ρ.InvariantDomain H)
@@ -150,7 +150,7 @@ def equivariantLocusMapPostcomp {J : OpenSubgroup G} {e : ρ.InvariantDomain J}
     ρ.EquivariantLocusMap J e Z :=
   ⟨p.hom.hom.comp f.val, fun g x => by
     change p.hom (f.val (ρ.invariantLocusOperator J e g x)) =
-      ConcreteCategory.hom (Z.ρ g) (p.hom (f.val x))
+      ConcreteCategory.hom (Z.ρ g).asHom (p.hom (f.val x))
     rw [f.property g x]
     exact ConcreteCategory.congr_hom (p.comm g) (f.val x)⟩
 

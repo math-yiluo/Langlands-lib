@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviProducts`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It is
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It is
 the second of three modules (`RealLeviSlices`, `RealLeviProducts`, `RealLeviDensity`) for the
 density step of the single-shot Langlands-quotient argument. It states no `Prop`-valued statement
 of its own. Its results are used by `RealLeviDensity`.
@@ -26,8 +26,8 @@ Unprefixed names below are in the namespace `Langlands.Archimedean.RealLeviProdu
 As in `RealLeviSlices.md`: `start`, `pos`, `blockDiagGL`, `emb`, `embA`, `slice`, `repG`, `repC`,
 `lieC`, `gensG`, `flat`, `sz`, `cl`, and `DualSpace`.
 
-From the earlier modules `RealInducedBlockBound`, `RealInducedTorusCore`, `RealInducedTorusReduction`
-of this task: a `Slot N` records a block `p, p + 1` (with `p + 1 < N`), a covariance exponent
+From the earlier modules `RealInducedBlockBound`, `RealInducedTorusCore`, `RealInducedTorusReduction`:
+a `Slot N` records a block `p, p + 1` (with `p + 1 < N`), a covariance exponent
 `α`, a weight `M`, a Fourier mode `j` and coordinates `x, y, w`. For a list `L` of slots,
 `coeffs L F` is the iterated block Fourier coefficient
 `Φ^{p_1}_{j_1} ⋯ Φ^{p_r}_{j_r} F`, where the Library's `blockFourierCoefficient N p j F g` is

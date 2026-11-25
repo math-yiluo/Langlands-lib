@@ -1,7 +1,5 @@
 # Adjointness recovered from local finite-base comparisons
 
-Worker 632.
-
 This internal helper supplies the adjointness part of the final descent
 assembly. Its motivating source is Brian Conrad, *Reductive group
 schemes* (2014), the proof of Proposition 6.4.4 and Remark 6.4.5,

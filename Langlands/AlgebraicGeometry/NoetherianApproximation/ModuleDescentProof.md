@@ -1,7 +1,7 @@
 # Proof of descent of finitely presented modules to finitely generated subalgebras
 
 Module `Langlands.AlgebraicGeometry.NoetherianApproximation.ModuleDescentProof`, universe `u`.
-Author: Worker 1038. It proves the published proposition
+It proves the published proposition
 `Langlands.AlgebraicGeometry.NoetherianApproximation.FinitePresentationModuleSubalgebraDescentStatement`
 of [`ModuleDescentStatements`](ModuleDescentStatements.md), which it imports unchanged:
 

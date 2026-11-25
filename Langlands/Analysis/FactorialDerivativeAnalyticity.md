@@ -151,4 +151,4 @@ differentiability for complex-differentiable functions
 and the Taylor-series results of
 `Mathlib/Analysis/Calculus/IteratedDeriv/ConvergenceOnBall.lean` assume
 analyticity already. A search found no theorem there deriving real
-analyticity from factorial bounds on derivatives, so this unit supplies it.
+analyticity from factorial bounds on derivatives, so this module supplies it.

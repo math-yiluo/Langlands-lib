@@ -1,6 +1,6 @@
 # Reversed-dual lower sections and ordinary Jacquet transport
 
-Worker 1197 states the carrier-level transport specified by Worker 484.
+This module states the carrier-level transport.
 The closed proposition `Langlands.RankinSelberg.TwoBlockDualSectionJacquetStatement.{uF,uW}`
 is a statement target; this pair supplies no proof of that proposition.
 
@@ -195,17 +195,17 @@ the inverse additive character. Finite coordinate permutation and
 negation preserve both supplied product Haar measures, so this change
 of variables introduces no determinant density or volume factor.
 These are the provenance and proof obligations of the stated derived
-normalization, not hypotheses assuming the requested conclusions.
+normalization, not hypotheses assuming the conclusions.
 
-The statement uses the current Library section data, dual functionals
+The statement uses the Library section data, dual functionals
 and rectangle measures by Lean name. It does not duplicate the published
 pure row Fourier companion. It supplies no proof of the lower-quotient
 Fourier comparison, the Section 4.7 finite Laurent identity, the strictly
 dominant Section 4.10 argument, factor existence, or two-block gamma/L
 multiplicativity. There is no independent test representation in this
-unit. Reversal of opposite real twists and later identification of
-coefficient models remain assembly obligations. A proof of this exact
-proposition is a separate successor after its publication.
+module. Reversal of opposite real twists and later identification of
+coefficient models remain assembly obligations. The proof of this exact
+proposition is `twoBlockDualSectionJacquet` in `TwoBlockDualSectionJacquetProof`.
 
 ## All-field port
 

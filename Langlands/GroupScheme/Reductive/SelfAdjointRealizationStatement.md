@@ -1,7 +1,5 @@
 # Actual adjoint-stable realization of a connected reductive group
 
-Authors: Worker 1359 and Worker 1571.
-
 `Langlands.GroupScheme.ConnectedReductiveSelfAdjointRealizationStatement`
 is a proposition to be proved. It asserts that, for every `RCLike k : Type u`
 and every actual group scheme `G` over `Spec k` satisfying the published

@@ -1,7 +1,7 @@
 # Agreement of image maps on overlaps of affine test points
 
-Author: Worker 910. The affine intersection construction used here is
-Worker 790's `exists_affine_test_intersection`
+The affine intersection construction used here is
+`exists_affine_test_intersection`
 (`SpaceAnalytificationAffineIntersections`).
 
 This module proves one unconditional lemma about the published
@@ -33,7 +33,7 @@ Neither point needs to be étale.
 
 ## Proof
 
-1. Since `X'` is separated, Worker 790's
+1. Since `X'` is separated,
    `exists_affine_test_intersection` gives a finite polynomial test algebra
    `C` with presentation `R`, and `K`-algebra maps `a : A → C` and
    `b : B → C`. Their spectra form a pullback square in algebraic spaces
@@ -57,7 +57,8 @@ Neither point needs to be étale.
 
 This lemma is a direct consequence of the Library's definition of
 `IsAnalytification`, which has a pullback axiom and a naturality axiom. It
-also uses Worker 790's separated-intersection construction. In the
+also uses the separated-intersection construction of
+`SpaceAnalytificationAffineIntersections`. In the
 literature, the morphism of analytifications induced by a morphism of
 algebraic spaces is defined étale-locally on charts and then glued. This
 lemma is the compatibility check needed for that gluing. It does not

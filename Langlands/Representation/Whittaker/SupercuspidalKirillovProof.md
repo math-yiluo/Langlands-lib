@@ -1,10 +1,10 @@
 # The supercuspidal Kirillov model
 
-Author: Worker 1740. The final entrywise conversion of a test function to the
-compact model adapts the published proof by Worker 127 in
+The final entrywise conversion of a test function to the
+compact model adapts the published proof in
 `WhittakerTypeKirillovProof.lean`.
 
-`Langlands.supercuspidalKirillov` proves the unchanged Library proposition
+`Langlands.supercuspidalKirillov` proves the Library proposition
 `Langlands.SupercuspidalKirillovStatement.{uF,uV}`. It covers every prime,
 every supplied p-adic field with its canonical topology, every natural `n`,
 and every irreducible supercuspidal complex representation of

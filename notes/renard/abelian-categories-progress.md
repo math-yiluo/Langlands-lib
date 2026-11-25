@@ -1,22 +1,22 @@
 # Renard A.VI.1–2: abelian axioms and basic categorical results
 
-Author: Worker 709. Seven-unit audit dated 1 November 2026; sheaf and
+Seven-module audit dated 1 November 2026; sheaf and
 presheaf prerequisite update dated 4 November 2026; proof, criterion and
 sheaf updates dated 5 November 2026; module-example update dated
 6 November 2026.
 
 This note maps the seven abelian-category axioms in A.VI.1 and the ten
 numbered assertions in A.VI.2 to current Lean declarations. Eight mathematical
-units below have verified independent acceptance and Library publication,
+modules below are in the Library,
 including the three-by-three and subobject–quotient proofs. Every numbered
 A.VI.2 row therefore cites a published proof or construction of its exact Lean
 interface. This is selected Appendix A coverage, with the remaining boundaries
 listed below. The 5 November update also verifies the five published proofs
 for the corrected full-subcategory criteria and their counterexample. The
-sheaf/presheaf section records ten published units. They include the
+sheaf/presheaf section records ten published modules. They include the
 normalized-presheaf abelianness and star-obstruction proofs, the composite
 chosen-basis/Mathlib equivalence and the exact proof of both sufficient-size
-sheaf targets. The 6 November update records four published units for the
+sheaf targets. The 6 November update records four published modules for the
 module part of the A.VI.1 example list. They prove abelianness of the
 original category A−mod and of the nondegenerate subcategory, which gives
 M(A) at a unital ring. The whole-book ledger is [coverage.md](coverage.md).
@@ -27,30 +27,30 @@ The governing source is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, Appendix A.VI.1–2,
 printed pp.261–263 / one-based PDF267–269. The registered original is
 `renard-2026-representations-groupes-reductifs-padiques`, retained at
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 These three pages were read in full; the hash was checked. The numbered
 results are asserted without displayed proofs. The Lean companions
 describe the implemented Mathlib proofs and constructions.
 
 The supplementary `renard-2010-corrections-complements`, retained at
-`/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`,
+`literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was reread on PDF18–19. This bounded older-edition check does not replace
 the 2026 reference. The separate
 [Appendix A discrepancy audit](appendix-a-corrections.md) preserves the
 full-subcategory counterexample and corrected sufficient hypotheses.
 
-The six earlier published units were inspected against Library
+The six earlier published modules were inspected against Library
 `e3944f764d2c00d53ac87227e98601bb667f348f`. The three-by-three publication
 was then verified in Library `a5dff2ff93bd3637a67ee8847f67f811efc82f01`;
-all seven Lean/Markdown pairs match their frozen candidate hashes in that
-Library. The 5 November additions were verified against Library
-`a9f12d1e4a0823c676b8a7b9292f17ea7c1d08ee` and the current Library
+all seven Lean/Markdown pairs match, in that Library, the hashes of the
+versions checked. The 5 November additions were verified against Library
+`a9f12d1e4a0823c676b8a7b9292f17ea7c1d08ee` and Library
 `0d12b7d171600d15516e52ee508d3aaca3e9cf9e`, which leaves those pairs
 unchanged. Each added A.VI.2 and criterion Lean/Markdown pair has the same
-hashes in its frozen candidate, both Libraries and the workspace; the
-sheaf section records its own hash checks. The status and receipt tables
+hashes in the version checked and in both Libraries; the
+sheaf section records its own hash checks. The status tables
 below describe these audits; this documentation adds no Lean result.
 
 ## Seven axioms and the additive structure
@@ -70,7 +70,7 @@ The construction `AbelianAxioms.abelian` obtains an actual Mathlib
 `AbelianAxioms C ↔ Nonempty (Abelian C)`. All names in this paragraph
 have prefix `Langlands.Renard`.
 
-This same published unit supplies A.VI.2(6):
+This same published module supplies A.VI.2(6):
 `AbelianAxioms.homGroup` constructs the additive commutative group on
 each actual Hom set, `homGroup_zero` identifies its zero with the
 zero-object morphism, and `add_comp` and `comp_add` give the two
@@ -150,48 +150,30 @@ of colimits from coproducts and coequalizers. It assumes no connectedness,
 filteredness or nonemptiness of the diagram category. The nonempty
 directed-family restriction belongs to the AB5 subobject formula only.
 
-The definition unit supplies these conventions, not proofs of AB5 in
+The definition module supplies these conventions, not proofs of AB5 in
 arbitrary abelian categories or an equivalence with filtered-colimit
 exactness. The infinitary subobject-sum consequence of cocompleteness
 and comparisons with other AB5 formulations retain separate obligations.
 
-## Independent acceptance and publication evidence
+## In the Library
 
-All eight units below were fetched as `accepted = true`, `public = true`
-with integration state `published`. Their independent reviews were
-approved without qualifications. The six proof receipts accept Lake
-build, exact-target, unchanged-statement and frozen-input checks.
-The other two are definition receipts; their construction review covers
-the declarations described above.
+All eight modules below are in the Library. The six proofs were each checked
+by a Lake build against the exact target, with the statement and its inputs
+unchanged. The other two are definitions; their checks cover the
+declarations described above.
 
-| Unit and author | Candidate | Machine receipt | Independent review |
-| --- | --- | --- | --- |
-| Seven axioms and Hom addition; Worker 595 | `ef153d78-b932-400b-be63-70c40ef38029` | `937ee58d-11fe-494a-9137-49fc4b348441` | `9ecc9a87-faf3-4e75-bd85-757929f70ef5`, Reviewer 2973 |
-| (1,4,5), image factorization; Worker 795 | `d70b2bfe-72ab-45dc-ae3f-846312ce1598` | `cb6b67b7-9a77-46d5-af5c-133dce884c3b` | `c6b4c954-9de2-47dc-b22e-beb024f24fe3`, Reviewer 3545 |
-| (7), product–coproduct; Worker 794 | `47a0f4e4-0341-4f16-857e-bc3aca9c6f6b` | `709b9953-5d0d-4fa3-a8c9-38edf6abf450` | `0e792ceb-afc6-4dc3-a213-9a3485c4a929`, Reviewer 3542 |
-| (9), Noether clauses; Worker 798 | `c2dc09d5-e172-44a1-b1bb-98de55f92df5` | `f9adc4e5-f665-45cf-9972-b5af04b48c14` | `c58fd7f5-2c30-4bdd-8de3-b22020d8518f`, Reviewer 3548 |
-| Source AB predicates; Worker 713 | `3a3715a3-98e9-4296-89db-9e444de18217` | `b8564e22-9e20-4f64-b57e-6607360de831` | `5dc86a28-8549-45e9-bcdd-77bfc6cce5c4`, Reviewer 3097 |
-| (10), limits and colimits; Worker 800 | `1ca15f76-aeab-41f7-85ca-7abefeff2570` | `dd281b63-24e3-4a57-b59a-45df07e9e58d` | `97aed342-12bc-4fdb-ad2e-e3f7a8416197`, Reviewer 3986 |
-| (8), three-by-three; Worker 894 | `b9962438-fef0-4120-954c-5860c9e0fb09` | `633ab7a0-8667-49ff-9927-92af59c62dad` | `7f821824-a0e7-4ffb-bb59-84d470ffe464`, Reviewer 7814 |
-| (2–3), subobject–quotient; Worker 840 | `5a79258c-f051-4a5b-a15d-51446e2f847e` | `33ed8313-b8ff-4554-ac05-4153cd6a66f6` | `eb188f2f-f773-42f9-9b81-ef8fc9c02228`, Reviewer 7851 |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Seven axioms and Hom addition | `a74ef41f111ae26bf08f0c56914b60efa011d2a9` |
+| Image factorization | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Product–coproduct | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Noether clauses | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
+| Source AB predicates | `d82ec7582eecc70a116cb73c7d40f31827c4b023` |
+| Limits and colimits | `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
+| Three-by-three | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
+| Subobject–quotient | `4f2e1785a3faf187359b2dcec3c8bdbe4a70e762` |
 
-| Unit | Publication integration | Published commit |
-| --- | --- | --- |
-| Seven axioms and Hom addition | `bbb76abebe1b486b821be3876c1e57d2` | `a74ef41f111ae26bf08f0c56914b60efa011d2a9` |
-| Image factorization | `82fd025528fb4629b09c19e0053156fc` | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Product–coproduct | `f5c8687381b24a9bba6798919cdd1734` | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Noether clauses | `c285f416a38d459180e15a681311a36d` | `65f39f42712a45624ccc76ac5da7b60f52ebcd6f` |
-| Source AB predicates | `a16af28821f846c29b05b2d4aec617a4` | `d82ec7582eecc70a116cb73c7d40f31827c4b023` |
-| Limits and colimits | `39f4f61059d143ddb454099af005fa75` | `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
-| Three-by-three | `bc21ead2385543db89c3e9ad13610859` | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
-| Subobject–quotient | `68ce2dd6455e47dea50ec8f1923474fc` | `4f2e1785a3faf187359b2dcec3c8bdbe4a70e762` |
-
-The public (2–3) statement is
-`1c3a8a95-a5fc-4f51-b820-4ff9bef02f75`. Its exact-proof task is
-`ec2f9f47-3627-4647-83ad-2d0976d52ccb`. Worker 840's proof candidate
-`5a79258c-f051-4a5b-a15d-51446e2f847e` was first recorded here as staged
-and nonpublic. Its 5 November direct check reports `accepted = true`,
-`public = true` and integration state `published`. The theorem
+The (2–3) statement and its proof are in the Library. The theorem
 `Langlands.Renard.subobjectQuotientAndLatticeStatement` holds for every
 `C : Type u` with `Category.{v} C` and `[Abelian C]`, adding no
 well-poweredness, smallness or module hypothesis. The proof takes Mathlib's
@@ -202,19 +184,12 @@ representative formulas hold by definitional unfolding of `Subobject.lift`.
 The binary laws are `le_inf_iff` and `sup_le_iff` for Mathlib's lattice on
 `Subobject X`, built from pullbacks and from images of coproduct maps.
 
-The public (8) statement is
-`91ca9983-3181-4fe0-9e1c-8a07e370ba49`. Its exact-proof task is
-`35cb9192-61c7-49e6-85d9-ae01c66ec282`; Worker 894's proof candidate
-`b9962438-fef0-4120-954c-5860c9e0fb09` has accepted exact-target
-machine validation `633ab7a0-8667-49ff-9927-92af59c62dad` and
-Reviewer 7814's independent approval
-`7f821824-a0e7-4ffb-bb59-84d470ffe464`. Its later direct check reports
-`accepted = true`, `public = true` and integration state `published`, as
-recorded in the tables. The proof constructs both bottom arrows through
+The (8) statement and its proof are in the Library, as recorded in the
+table. The proof constructs both bottom arrows through
 cokernel universal properties and proves short exactness with Mathlib's
-snake lemma. With the (2–3) publication, no numbered A.VI.2 row waits for
-a proof of its exact interface. This is not an Appendix A.VI completion
-claim; the obligations below remain.
+snake lemma. With the (2–3) proof, every numbered A.VI.2 row has a proof of
+its exact interface in the Library. This does not complete Appendix A.VI;
+the obligations below remain.
 
 ## Further source obligations
 
@@ -227,27 +202,26 @@ section below. The exact-sequence
 convention, infinitary subobject-sum consequence, AB5 comparisons and
 A.VI.3/Jordan–Hölder assertions also retain their own coverage and proof
 checks. Their exclusion from this audit says nothing about whether other
-tasks already cover them.
+notes or modules already cover them.
 
 The corrected full-subcategory criterion must preserve finite-product
 closure and zero containment; subobject and quotient closure alone
 fail by the explicit dimension-at-most-one counterexample in the linked
 discrepancy audit. The seven-axiom equivalence above does not remove that
 missing source hypothesis. The next section records the published proofs of
-both corrected criteria and of the counterexample. This note makes no
-Appendix A.VI, Appendix A or whole-book completion declaration.
+both corrected criteria and of the counterexample. This note does not
+claim that Appendix A.VI, Appendix A or the whole book is complete.
 
 ## Corrected full-subcategory criteria and counterexample, 5 November 2026
 
 The A.VI.1 sentence on printed p.261 / PDF267 says that every full
 subcategory of A-mod closed under submodules and quotients is abelian. It
 has no zero-object or finite-product hypothesis. The linked discrepancy audit
-gives the dimension-at-most-one counterexample. Worker 633's public statement
+gives the dimension-at-most-one counterexample. The public statement
 module
 [AbelianSubcategoryStatement](../../Langlands/CategoryTheory/AbelianSubcategoryStatement.md)
 states two strengthened sufficient criteria and three counterexample
-targets. Worker 894 published one exact proof for each target under task
-`514d7109-dfe5-46d8-a712-30d5879691f0`. All names have prefix
+targets. The Library has one exact proof for each target. All names have prefix
 `Langlands.CategoryTheory`.
 
 | Target | Published theorem and implemented route |
@@ -266,17 +240,16 @@ discrepancy audit. The counterexample uses unital `ModuleCat.{u} K` with
 module carriers in the field's universe. Its embedding into the source's
 possibly-nonunital module category remains a separate adapter obligation.
 
-All five candidates were fetched as `accepted = true` and `public = true`,
-with unqualified independent approvals. Each proof receipt accepts Lake build,
-exact-target, unchanged-statement and frozen-input checks.
+All five proofs are in the Library. Each was checked by a Lake build against
+the exact target, with the statement and its inputs unchanged.
 
-| Target / candidate | Machine receipt | Independent reviewer / review task | Integration / commit |
-| --- | --- | --- | --- |
-| Kernel criterion / `d43d5feb-0758-4e8d-9d98-23369e0dc49a` | `7b8f133e-6ecb-4a9b-97cb-329ec4c4692a` | Reviewer 7965 / `636d8ddb-68d9-44a0-98d4-d56785030d7b` | `b0ae6e8898ba488e89934fafdc9e8cd6` / `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
-| Subobject criterion / `be88fa6f-cb10-4a4c-b90a-65beaa5c4b61` | `f57f930c-deee-41cc-9a51-11ac3d6fffeb` | Reviewer 7967 / `068f7dd8-afac-4694-8886-6064cf00ded1` | `de42de5e1989491a86308a8349d87b2b` / `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
-| Closure / `e3ddcc90-248a-40f1-a22b-04850a8c8212` | `276b7aaa-8cde-4a88-882a-e3f12fd0e05e` | Reviewer 7969 / `e951ebb0-5963-4da4-8665-07a9fce5e34c` | `fd31216c0d0d424d93f1b3b1b6ad74ca` / `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
-| No product / `44ecd2b1-5bc1-46e0-bf3f-09c99f0631ad` | `70251bff-0466-4ec7-b966-6c1b31f03f01` | Reviewer 7970 / `d526d8e7-1ddd-4484-ae1e-b12de34aa327` | `e842db00a2b6482cb56d6d59e02fa1f7` / `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
-| Not abelian / `62422faf-3a99-4605-988a-8f7a2c0d89d8` | `050878a3-0fe9-483d-91c0-f958439cb56d` | Reviewer 8025 / `544cd493-933b-4c32-bebe-b2fd43153ddb` | `abff13684723447aa9f931542045b597` / `b1c8a5e809be36100da09da81385a7ca6789ae80` |
+| Target | First appeared at Library commit |
+| --- | --- |
+| Kernel criterion | `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
+| Subobject criterion | `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
+| Closure | `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
+| No product | `aa1400a0eb858f7fdc607a5bb736d8f7a705fa10` |
+| Not abelian | `b1c8a5e809be36100da09da81385a7ca6789ae80` |
 
 ## A.VI.1 module examples, 6 November 2026
 
@@ -286,16 +259,15 @@ unital left modules over a unital ring A, as a full subcategory of A−mod
 closed under submodules and quotients. The source concludes that it is
 abelian by the unrestricted criterion discussed above. Under the conventions
 on printed pp.5–6 / PDF11–12, rings need not be unital and actions need not
-satisfy a unit law. Worker 709 reread PDF267 for this update. Four published
-units prove abelianness of both module categories; Worker 709 wrote none of
-them. Names in this section have prefix `Langlands.Algebra`.
+satisfy a unit law. PDF267 was reread for this update. Four published
+modules prove abelianness of both module categories. Names in this section have prefix `Langlands.Algebra`.
 
 | Source item | Published statement and proof | Implemented route |
 | --- | --- | --- |
 | A−mod | [`NonUnitalModuleAmbientAbelianStatement`](../../Langlands/Algebra/NonUnitalModuleAmbientAbelianStatements.md), proved by [`nonUnitalModuleAmbientAbelianStatement`](../../Langlands/Algebra/NonUnitalModuleAmbientAbelianProof.md) with the named instance `NonUnitalModuleCat.abelian A` | For every `A : Type uA` with `NonUnitalRing A`, Mathlib's `abelianOfEquivalence` is applied to the published functor `IntegerUnitization.extendFunctor A`, with target `ModuleCat.{uM} (Unitization ℤ A)`. It transfers Mathlib's abelian structure to the original category. `NonUnitalModuleCat.abelian_toPreadditive` proves by `rfl` that the resulting Hom groups are the published pointwise `NonUnitalModuleCat.preadditive A`. |
 | Nondegenerate subcategory | [`NondegenerateModuleAbelianStatement`](../../Langlands/Algebra/NondegenerateModuleAbelianStatements.md), proved by [`nondegenerateModuleAbelianStatement`](../../Langlands/Algebra/NondegenerateModuleAbelianProof.md) with the named data `NondegenerateModuleCat.abelian A hA` | For `hA : IsIdempotented A`, the published `nondegenerateModuleClosureStatement A hA` gives zero containment and closure of `nondegenerateProperty A` under ambient subobjects, quotients and finite products. Mathlib's instance in `Abelian/Subcategory.lean` then builds abelian data on the actual full subcategory, using the ambient instance. `NondegenerateModuleCat.abelian_toPreadditive` proves by `rfl` agreement with `Preadditive.fullSubcategory (nondegenerateProperty A)`. |
 
-In all four units the ring universe uA and carrier universe uM are
+In all four modules the ring universe uA and carrier universe uM are
 independent. The two proofs and the nondegenerate statement check both
 unequal assignments `(0,1)` and `(1,0)` explicitly. The ambient category
 admits zero rings, zero carriers and zero actions. No unit-action law, field,
@@ -335,37 +307,30 @@ instance makes them applicable to full subcategories of
 dimension-at-most-one counterexample remains in unital `ModuleCat K`.
 
 The closure dependency is the published `nondegenerateModuleClosureStatement`
-in `Langlands.Algebra.NondegenerateModuleClosureProof`, candidate
-`e3daa759-434c-43f9-9a20-0333ed9c9cd9` under proof task
-`4fe8906c-c042-480a-999e-45a8dc163970`; this update does not audit its
-receipts. Worker 6's
-[I.5.2–I.6 module-category note](module-classes-category-properties.md)
+in `Langlands.Algebra.NondegenerateModuleClosureProof`; this update does
+not audit its checks. The [I.5.2–I.6 module-category note](module-classes-category-properties.md)
 records the same nondegenerate abelianness proof in its I.6 assertion map.
 The A.VI.3 AB5 and AB6 assertions for these module examples are mapped in
 the [A.VI.3 source map](jordan-holder-progress.md). Exactness of the inclusion
 and of the nondegenerate-part functor, concrete kernel and cokernel formulas,
 and scalar or tensor comparisons are outside this section.
 
-All four candidates below were checked on 6 November 2026 as accepted and
-published, with unqualified independent approvals and no author
-qualifications. Each `lean.statement@1` receipt passed the schema,
-immutable-content, reference-integrity, exact-reference-policy, Lake-build and
-declaration-kind checks; this is not proof acceptance. Each `lean.proof@1`
-receipt passed `lake-build`, `exact-target`, `unchanged-statement` and
-`frozen-inputs`, with `proof_accepted: true`. The proofs were produced under
-proof tasks `fcd4730b-17d8-4a21-9cb7-c09566d60e66` and
-`e2e9e077-cf22-45ea-be01-c57cbd911882`, both done. This note documents the
-units and is not a review.
+All four modules below were checked on 6 November 2026 to be in the Library.
+Each statement passed the statement checks: schema,
+immutable content, reference integrity, exact-reference policy, Lake build and
+declaration kind; this is not a proof. Each proof passed the proof
+checks: a Lake build against the exact target, with the statement and its
+inputs unchanged.
 
-| Unit / authors | Candidate | Machine receipt | Independent reviewer / review task | Integration / commit |
-| --- | --- | --- | --- | --- |
-| A−mod statement; Worker 633 with Worker 6 | `49ea0507-f60c-4240-8c3f-a061c0cb9171` | `900d562b-6b90-4b19-bfcd-256cfcf70adf` (statement) | Reviewer 5162 / `3196bfe6-85dd-4f16-a573-45828c8b106d` | `ab3f4b4e8c6d4fde91ab897bc86ff140` / `127ad790e7e947faeb397b6e2634daa0a46e344d` |
-| A−mod proof; Worker 633 with Worker 6 | `970db9c1-987f-4b13-9452-b148cf0b7bf2` | `6f650a60-862a-483b-be42-8778f79ea974` (proof) | Reviewer 5204 / `621d70cf-f97d-4283-86ec-6c2f3f2d6e2e` | `a7ba4075e3d14b59853c977f288c4b77` / `ddcb24bcc9c4fe817800414f5fd5f3536da42760` |
-| Nondegenerate statement; Worker 695 with Worker 6 | `bb6340c8-7bd2-414d-9978-624b75c10b48` | `83d5af69-1a49-4810-a6e5-c83bfbf5a414` (statement) | Reviewer 5332 / `a0e74ae1-b383-4b2f-8ec9-3b3a2262ca6d` | `386b941286c74524ba6bd78da59cc152` / `7d8c1355c088b76a992b0af1690748d5ae7147b5` |
-| Nondegenerate proof; Worker 695 with Worker 6 | `fe323f87-21e1-4ebd-96a5-2e2ab7c72787` | `443934ef-df0a-43ba-bd9a-671396cc86d4` (proof) | Reviewer 5413 / `30ec7595-42e1-46b9-bcba-e8e5da09eca9` | `45ce28d8f0c54d63883fadbba9560d96` / `ddf3850e87ef10e9eabe230b50f772e4890d71bd` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| A−mod statement | `127ad790e7e947faeb397b6e2634daa0a46e344d` |
+| A−mod proof | `ddcb24bcc9c4fe817800414f5fd5f3536da42760` |
+| Nondegenerate statement | `7d8c1355c088b76a992b0af1690748d5ae7147b5` |
+| Nondegenerate proof | `ddf3850e87ef10e9eabe230b50f772e4890d71bd` |
 
-On 6 November 2026 the frozen bundles, Library
-`26195cb4483eb6386dd05e2d230e7b8bf67af591` and the workspace had the same
+On 6 November 2026 the versions checked and Library
+`26195cb4483eb6386dd05e2d230e7b8bf67af591` had the same
 SHA256 for each file:
 
 | Path under `Langlands/Algebra/` | SHA256 |
@@ -382,8 +347,8 @@ SHA256 for each file:
 ## A.VI.1 sheaf and presheaf prerequisites, 4–5 November 2026
 
 The example on printed p.261 / PDF267 includes abelian-group sheaves
-and presheaves on an arbitrary topological space. Worker 709 reread
-that example and the II.2.1 definitions on printed pp.33–34 / PDF39–40
+and presheaves on an arbitrary topological space. That example and
+the II.2.1 definitions on printed pp.33–34 / PDF39–40 were reread
 for this branch. The source presheaves form the normalized full
 subcategory `Langlands.Sheaf.Renard.Presheaf B`; abelianness of the raw
 functor category alone does not establish the normalized example.
@@ -392,13 +357,12 @@ two statement pairs. The 5 November update adds four more: the exact
 normalized-presheaf proof, the star obstruction statements and their exact
 proof, and the chosen-basis/all-open equivalence. A second 5 November update
 adds the composite chosen-basis/Mathlib equivalence and the exact proof of
-both sufficient-size sheaf targets. The remaining successors are
+both sufficient-size sheaf targets. What remains is
 distinguished explicitly.
 
 ### The published all-open comparison
 
-Worker 1594, with Worker 709's source audit and universe-safe comparison
-route, constructed
+The Library constructs
 `Langlands.Sheaf.Renard.AllOpenMathlib.equivalence.{u,v}` in
 [AllOpenMathlibSheaf](../../Langlands/Sheaf/Renard/AllOpenMathlibSheaf.md):
 
@@ -407,8 +371,7 @@ BasisSheaf.{u,v} (allOpenBasis X) ≌
   TopCat.Sheaf AddCommGrpCat.{v} (TopCat.of X).
 ```
 
-This is the actual equivalence requested by definition task
-`81f01a25-7878-4134-9ca4-d903603c3c18`. It preserves independent space
+This is an actual equivalence. It preserves independent space
 and original section universes, the actual groups, restrictions and
 natural transformations. The two functors precompose with the published
 `LocallyConstantScalar.allOpenFunctor` and `basisInclusion`. The source's
@@ -428,9 +391,9 @@ chosen-basis comparison is recorded below.
 
 ### The published normalized-presheaf statements
 
-Worker 1595's statement pair
-[PresheafAbelianStatements](../../Langlands/Sheaf/Renard/PresheafAbelianStatements.md),
-from task `ca7e40d3-9cbe-44c4-8b09-74139d6edb9e`, defines in
+The statement pair
+[PresheafAbelianStatements](../../Langlands/Sheaf/Renard/PresheafAbelianStatements.md)
+defines in
 `Langlands.Sheaf.Renard`:
 
 | Proposition at independent universes u and v | Exact body |
@@ -448,8 +411,7 @@ bodies; no parallel axiom package is introduced.
 
 ### The published normalized-presheaf proof
 
-Worker 1595 also proved both statements under exact-proof task
-`2e405776-930f-43f8-a41f-5634b85df700`, in
+Both statements are proved in
 [PresheafAbelianProof](../../Langlands/Sheaf/Renard/PresheafAbelianProof.md).
 The theorems `Langlands.Sheaf.Renard.presheafAbelianStatement B` and
 `presheafAbelianAxiomsStatement B` hold for every `X : Type u` with its
@@ -472,9 +434,9 @@ separate.
 
 ### The published sufficient-size sheaf statements
 
-Worker 1153, with Worker 709's source and size design, published
+The statement module
 [SheafAbelianStatements](../../Langlands/Sheaf/Renard/SheafAbelianStatements.md)
-under task `1c102f4c-05fd-423b-bb6b-1b58d5bbb28e`. Its two closed
+is in the Library. Its two closed
 Prop-valued definitions are
 `Langlands.Sheaf.Renard.BasisSheafAbelianStatement.{u,v}` and
 `BasisSheafAbelianAxiomsStatement.{u,v}`. Each universally quantifies
@@ -500,9 +462,8 @@ equivalence.
 
 ### The published star-space diagram, obstruction statements and proof
 
-Worker 1301 implemented Worker 709's internal diagram in
-[StarDiagram](../../Langlands/Sheaf/Renard/StarDiagram.md), under task
-`b0105955-9a21-492e-b97d-62fbc7fb4718`. All names here have prefix
+The internal diagram is implemented in
+[StarDiagram](../../Langlands/Sheaf/Renard/StarDiagram.md). All names here have prefix
 `Langlands.Sheaf.Renard.StarDiagram`. For `I : Type u`, `topology I`
 on `Option I` has opens the empty set and the sets containing `none`.
 The actual `F`, `G` and `Ti i` are objects of
@@ -520,9 +481,9 @@ zero components of `f ≫ gi i`. All constructions include empty I and
 impose no relation between u and v. These are published intrinsic laws
 of an actual diagram, without a hypothetical cokernel premise.
 
-Worker 1599 published the obstruction statements in
-[StarCokernelScopeStatements](../../Langlands/Sheaf/Renard/StarCokernelScopeStatements.md),
-under statement task `6416418d-565b-498f-951f-bc24c29350be`. In the same
+The obstruction statements are in
+[StarCokernelScopeStatements](../../Langlands/Sheaf/Renard/StarCokernelScopeStatements.md).
+In the same
 namespace, `CokernelSectionInjectionStatement.{u,v}` asserts, for every
 `I : Type u`, every actual `c : CokernelCofork f` and `IsColimit c`, the
 proposition `Nonempty (I ↪ Sections c.pt.obj.obj (whole I))`.
@@ -533,8 +494,7 @@ on that actual category. `CokernelScopeStatements.{u,v}` conjoins the three
 targets without outer premises. The module also proves `f_comp_gi_eq_zero`
 and `sheafHomEquiv_zero_app` for the canonical pointwise zero morphisms.
 
-Worker 1038 proved the aggregate under exact-proof task
-`bf7c2dbf-867c-41be-8001-917a5201699f`, as
+The aggregate is proved as
 `cokernelScopeStatements` in
 [StarCokernelScopeProof](../../Langlands/Sheaf/Renard/StarCokernelScopeProof.md).
 For each leaf, the proof glues the `c.π`-image of integer one on that leaf's
@@ -555,35 +515,20 @@ They are independent of the positive sufficient-size sheaf target, whose
 section universe `max u v` is at least v+1 here, and of normalized-presheaf
 abelianness.
 
-### Publication evidence for the 4 November prerequisites
+### The 4 November prerequisites in the Library
 
-All four candidates below were independently accepted, with unqualified
-reviews, and published at commit
-`50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. The complete independent
-and integrated reports were read and their common fields agree. Their
-frozen Lean/Markdown pairs match the publication tree, the then-current audit
-base `8b0bca33e42af34d78809e9fae6a20b0e296117c` and workspace.
-The machine receipts check the respective construction or statement;
-none is an exact-proof receipt for an abelianness or obstruction target.
-
-| Unit / author | Candidate | Machine receipt | Independent reviewer / review task |
-| --- | --- | --- | --- |
-| All-open equivalence; Worker 1594 with Worker 709 | `c98d755f-bead-4f25-ba97-f23c47cf0f6f` | `f2eab6bd-6a2f-49cf-a40f-08c6ea66fb30` | Reviewer 13116 / `01a6bc46-a643-4726-bebf-f60de0f35173` |
-| Normalized-presheaf statements; Worker 1595 | `e3f15ef9-1314-4309-93ec-18a66c3f2cb8` | `aa81c658-6458-45d0-9862-9415d12759c7` | Reviewer 13156 / `f9e502d6-7090-474b-9fe6-dabe6c57c633` |
-| Sufficient-size sheaf statements; Worker 1153 with Worker 709 | `6bcb8bd5-5def-4c64-8b29-d15b33dfa582` | `bbd315df-79d4-4597-8684-07049c27771c` | Reviewer 13169 / `dd9fce49-d4ac-47e2-8e26-a76602bcfd1c` |
-| Star diagram; Worker 1301 with Worker 709 | `735eb5b6-796d-4903-93b2-0da307653ee2` | `4d9b8254-c9f2-4482-9367-54621ecb8017` | Reviewer 13194 / `e7d7ec9a-c9c9-4677-b212-9b6826442ac5` |
-
-| Unit | Publication integration |
-| --- | --- |
-| All-open equivalence | `4f9f9c8cc9504d8888d578d43ab8e50d` |
-| Normalized-presheaf statements | `044ae79e39424ff09f6eccaa1e9b1fc3` |
-| Sufficient-size sheaf statements | `e83f21ac0a2a4542a4196e9eabfbfb56` |
-| Star diagram | `038a5b2f73c54616be27b96067127219` |
+The four modules of 4 November (the all-open equivalence, the
+normalized-presheaf statements, the sufficient-size sheaf statements and the
+star diagram) first appeared in the Library at commit
+`50c05a5877c13ea23a52ea298c0ec2bd6fdb0817`. Their Lean/Markdown pairs, as
+checked, match that commit and the audit base
+`8b0bca33e42af34d78809e9fae6a20b0e296117c`.
+Their checks are of the respective construction or statement; none is an
+exact-proof check of an abelianness or obstruction target.
 
 ### The published chosen-basis/all-open equivalence
 
-Worker 1594 constructed, under task `bbc1d9a5-4933-4677-b7ae-0184c69a2087`,
-the actual equivalence in
+The Library constructs the actual equivalence in
 [BasisAllOpenEquivalence](../../Langlands/Sheaf/Renard/BasisAllOpenEquivalence.md):
 
 ```text
@@ -604,39 +549,29 @@ actual `unitIso` and `counitIso` compare original sections, and
 arbitrary original-v extension claim. It is a category comparison and
 supplies no abelianness proof.
 
-### Publication evidence for the 5 November additions
+### The 5 November additions in the Library
 
-All four candidates below were fetched as `accepted = true` and
-`public = true`, with unqualified independent approvals. The two proof
-receipts accept Lake build, exact-target, unchanged-statement and
-frozen-input checks. The statement and definition receipts accept Lake
-build, declaration-kind and reference checks. For all four, the complete
-independent and integrated reports were read and their common fields agree.
-The first three frozen Lean/Markdown pairs match
-Library `a9f12d1e4a0823c676b8a7b9292f17ea7c1d08ee`, the current Library
-`0d12b7d171600d15516e52ee508d3aaca3e9cf9e` and the workspace. For the star
-proof, the Markdown is identical in the frozen candidate, the current Library
-and the workspace. The integrated Lean differs from the frozen file only by
+All four modules below are in the Library. The two proofs were each checked by
+a Lake build against the exact target, with the statement and its inputs
+unchanged. The statement and the definition were checked by a Lake build
+and declaration-kind and reference checks. The first three Lean/Markdown
+pairs, as checked, match
+Library `a9f12d1e4a0823c676b8a7b9292f17ea7c1d08ee` and Library
+`0d12b7d171600d15516e52ee508d3aaca3e9cf9e`. For the star
+proof, the Markdown is identical in the version checked and in Library
+`0d12b7d1`. The Lean file in the Library differs from the version checked only by
 naming its local topology instance `starCokernelScopeTopology`.
 
-| Unit / author | Candidate | Machine receipt | Independent reviewer / review task |
-| --- | --- | --- | --- |
-| Normalized-presheaf proof; Worker 1595 | `c1d386ea-5845-4a90-b766-3da562ad37e4` | `f1f161a9-f16e-4213-81b2-b0a901dd9199` (proof) | Reviewer 13653 / `453c7fa5-3cd5-404c-b417-dc7c8b111020` |
-| Star obstruction statements; Worker 1599 | `0d3adc37-e086-4c4a-b569-e83d1282d667` | `76baa571-0b8f-405c-9f6d-1e3be386c9e5` (statement) | Reviewer 13644 / `deb1b086-ec40-44b5-a519-33af6c6e1795` |
-| Chosen-basis equivalence; Worker 1594 | `c4c1f560-2c7c-498b-a9c1-f0f6c90be179` | `2c954800-7111-494b-a5d6-084d514c0fd7` (construction) | Reviewer 13709 / `1a9d4783-99ca-4f8e-8825-5a26c44e88ad` |
-| Star obstruction proof; Worker 1038 | `41193286-b04a-41c4-b04d-64fd170019f7` | `11f35e42-a745-42e0-8704-e504f1a69a1c` (proof) | Reviewer 13892 / `f89c03fa-9eed-4596-8b5d-1186f3c6e4fb` |
-
-| Unit | Publication integration | Published commit |
-| --- | --- | --- |
-| Normalized-presheaf proof | `76b0201730aa47019a2c4d974ca8dd7a` | `476a152fd90d846bcb20b9897f53829a768b822c` |
-| Star obstruction statements | `4acdd83262b74f17aec044eebb32ddc4` | `476a152fd90d846bcb20b9897f53829a768b822c` |
-| Chosen-basis equivalence | `18073be37831463f8bbda68fa0abea60` | `409542525904dd50036abafdafb8ad1459eadade` |
-| Star obstruction proof | `607828dba9f44bcb9d2cea546e4c0e85` | `0d12b7d171600d15516e52ee508d3aaca3e9cf9e` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Normalized-presheaf proof | `476a152fd90d846bcb20b9897f53829a768b822c` |
+| Star obstruction statements | `476a152fd90d846bcb20b9897f53829a768b822c` |
+| Chosen-basis equivalence | `409542525904dd50036abafdafb8ad1459eadade` |
+| Star obstruction proof | `0d12b7d171600d15516e52ee508d3aaca3e9cf9e` |
 
 ### The published composite chosen-basis/Mathlib equivalence
 
-Worker 1153 implemented, under task `bbc1d9a5-4933-4677-b7ae-0184c69a2087`,
-the composite in
+The composite is implemented in
 [BasisMathlibSheafEquivalence](../../Langlands/Sheaf/Renard/BasisMathlibSheafEquivalence.md):
 
 ```text
@@ -646,20 +581,16 @@ Langlands.Sheaf.Renard.BasisMathlib.equivalence.{u,v} B :
 ```
 
 It is the actual composition of `BasisAllOpen.equivalence.{u,v} B` with
-`AllOpenMathlib.equivalence` at section universe `max u v`. Worker 1594's
-compatible-family core and all-open comparison are reused by Lean name;
-Worker 709 supplied the task specification, source audit and universe
-design. The module exposes the forward and reverse functors, section,
+`AllOpenMathlib.equivalence` at section universe `max u v`. The compatible-family core and all-open comparison are reused by Lean name.
+The module exposes the forward and reverse functors, section,
 restriction and morphism formulas, and the evaluated unit, counit and
 triangle laws. No sheafification, abelianness or comparison certificate is
-an input. The record classifies it as internal elaboration of the II.2.1
+an input. It is classified as internal elaboration of the II.2.1
 equivalence on printed p.37 / PDF43. It proves no abelianness statement.
 
 ### The published sufficient-size sheaf proof
 
-Worker 1153, with Worker 709's proof draft, source audit and universe
-argument, proved both targets under exact-proof task
-`ad6365e1-89a5-47a3-8a7c-eede875029c7`, in
+Both targets are proved in
 [SheafAbelianProof](../../Langlands/Sheaf/Renard/SheafAbelianProof.md).
 The theorems `Langlands.Sheaf.Renard.basisSheafAbelianStatement` and
 `basisSheafAbelianAxiomsStatement` have exactly the types
@@ -667,7 +598,6 @@ The theorems `Langlands.Sheaf.Renard.basisSheafAbelianStatement` and
 `BasisSheafAbelianAxiomsStatement.{u,v}`. Thus, for every `X : Type u` with
 its supplied topology and every `B : OpenBasis X`, the actual category
 `BasisSheaf.{u,max u v} B` is abelian and satisfies the seven source axioms.
-The task is completed.
 
 The implemented route has four steps.
 
@@ -696,30 +626,23 @@ no necessity claim for `max u v`. By the star obstruction above, the
 original-value category is not abelian for the star space on `Type v` at
 section universe v.
 
-### Publication evidence for the second 5 November update
+### The second 5 November update in the Library
 
-Both candidates below were checked as published, with unqualified
-independent approvals. The complete independent and integrated reports were
-read; their twelve common fields agree, and each integration ran a fresh
-integrated build. Each frozen Lean/Markdown pair matches the current
-Library `81bddf38b8069213a7ace261e56ea16dd84f3721` and the workspace. The
+Both modules below are in the Library, each after a fresh build of the
+Library with it. Each Lean/Markdown pair, as checked, matches
+Library `81bddf38b8069213a7ace261e56ea16dd84f3721`. The
 imported statement pair `SheafAbelianStatements` is unchanged there.
 
-| Unit / author | Candidate | Machine receipt | Independent reviewer / review task |
-| --- | --- | --- | --- |
-| Composite equivalence; Worker 1153 | `bf448972-6482-4d38-8d60-881a356302b2` | `06222e5d-a5d0-4580-af84-16d57e100b13` (construction) | Reviewer 13898 / `e7006c65-77ef-41fc-8ea8-4c6e2b431d15` |
-| Sheaf proof; Worker 1153 with Worker 709 | `c6d6b19b-fc7c-4172-9a52-c87cb24faeff` | `bad6a19c-2e96-47f6-aa6d-e008b67eef2f` (proof) | Reviewer 14378 / `f8900262-fec4-487d-ade5-a6ad0329adb0` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| Composite equivalence | `58c925cc173d944d4bb579be5c971ee1a5896d28` |
+| Sheaf proof | `1831431f93603e52c73600a2a900dd42d7f18deb` |
 
-| Unit | Publication integration | Published commit |
-| --- | --- | --- |
-| Composite equivalence | `ec7cd0be30054ac3af39d9403361704e` | `58c925cc173d944d4bb579be5c971ee1a5896d28` |
-| Sheaf proof | `93778c6dfcc94184bb1efcb13740a870` | `1831431f93603e52c73600a2a900dd42d7f18deb` |
-
-The construction receipt accepts Lake build, declaration-kind and reference
-checks. The proof receipt accepts Lake build, exact-target,
-unchanged-statement and frozen-input checks against
-`BasisSheafAbelianStatement`. The reviewer also checked the second theorem
-against `BasisSheafAbelianAxiomsStatement`.
+The construction was checked by a Lake build and declaration-kind and
+reference checks. The proof was checked by a Lake build against the exact
+target `BasisSheafAbelianStatement`, with the statement and its inputs
+unchanged; the second theorem was also checked against
+`BasisSheafAbelianAxiomsStatement`.
 
 ### Remaining sheaf obligations
 
@@ -727,4 +650,4 @@ The sheaf and normalized-presheaf parts of the A.VI.1 example now have
 published proofs, at the section universes stated above. The source example
 is not thereby completed in every formal reading. Scalar and module
 enhancements, compact-section comparisons and the other source obligations
-above retain their scope. No Appendix A.VI completion is declared.
+above retain their scope. This note does not claim that Appendix A.VI is complete.

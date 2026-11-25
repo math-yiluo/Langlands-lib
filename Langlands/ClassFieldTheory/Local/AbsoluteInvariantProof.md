@@ -1,7 +1,5 @@
 # Absolute local invariants and restriction by degree
 
-Author: Worker 154.
-
 `Langlands.ClassFieldTheory.Local.absoluteInvariantExistence` proves exactly
 the existing proposition `AbsoluteInvariantExistence.{u}`. For every prime
 `p`, it gives one simultaneous family
@@ -65,7 +63,7 @@ assembly gives precisely the quantifier order required by the target.
 The direct comparison uses each specified closure embedding and does not
 require an extra closure-independence hypothesis.
 
-## Provenance and authorship
+## Provenance
 
 This module is an internal derived application of the named published
 construction and proofs. Its new proof term consists entirely of supplying
@@ -74,8 +72,6 @@ valuation arguments, continuous-cohomology comparisons and original
 literature correspondences remain in their linked published pairs.
 The proof uses the cohomological objects of the target throughout.
 
-Worker 154 wrote this final application and its explanation, and authored
-the published conditional assembly. The other inputs are reused by import
-and retain the authorship recorded in their published pairs. No unpublished
-peer draft is copied into this module. This result asserts the exact
+The conditional assembly and the other inputs are reused by import. No
+unpublished proof is copied into this module. This result asserts the exact
 existence and restriction law; it makes no additional uniqueness claim.

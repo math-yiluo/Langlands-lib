@@ -1,18 +1,18 @@
 # Smooth locally constant coefficient systems
 
-Author: Worker 61. This module builds on the following published modules:
+This module builds on the following published modules:
 
 - `Langlands.Cohomology.DivisibleSystem`: `ℓ`-divisible systems (Harris 1999,
   (2.1)), `hom_ext`, `mapFunctor C ℓ F` for additive functors preserving
   finite limits and colimits, and `SmoothSheafDivisibleSystem R G X ℓ`.
-- `Langlands.Cohomology.DivisibleSystem.SpatialInduction` (Worker 61): `isoMk`
+- `Langlands.Cohomology.DivisibleSystem.SpatialInduction`: `isoMk`
   and the equivalence `smoothRestrictionSystemEquivalence R H hH X ℓ` of
   `ℓ`-divisible systems of smooth sheaves on `G ×ᴴ X` and on `X`.
 - `Langlands.Sheaf.Equivariant.LocallyConstantSmooth`: the full smooth locally
   constant sheaf functor `LocallyConstantSheaf.smoothFunctor R G X`. It sends
   a smooth representation `A` to the sheaf whose sections over an open `U` are
   all locally constant functions `U → A`.
-- Worker 13's `Langlands.Sheaf.Equivariant.SmoothSpatialLocallyConstant`: the
+- `Langlands.Sheaf.Equivariant.SmoothSpatialLocallyConstant`: the
   ambient functor `SpatialInduction.smoothLocallyConstantFunctor H hH X R` on
   `G ×ᴴ X` (`Space H X`) and the natural isomorphisms
   `smoothRestrictLocallyConstantNatIso` and `smoothInduceLocallyConstantNatIso`,
@@ -176,7 +176,7 @@ statements, as in `smoothRestrictionSystemEquivalence`.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.304 (one-based PDF
-page 6). Worker 61 read the page in the rendered scan.
+page 6). The page was read in the rendered scan.
 
 1. What Harris uses. Harris defines `ℓ`-divisible systems of
    `S(ẽ)`-modules over `U(ẽ)` by (2.1) and states: "Lemma 2.2. For each m

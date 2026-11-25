@@ -1,6 +1,6 @@
 # Proof: normalized spherical Whittaker vectors
 
-Author: Worker 1797. Module
+Module
 `Langlands.Representation.RankinSelberg.UnramifiedSphericalVectorProof`.
 
 The theorem `Langlands.RankinSelberg.unramifiedSphericalVector` proves the published

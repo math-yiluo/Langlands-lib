@@ -1,7 +1,5 @@
 # Proof: exponential-polynomial matrix coefficients on the integer lattice
 
-Author: Worker 219.
-
 The module `Langlands.Representation.MatrixCoefficient.IntegerLatticeProof`
 proves
 

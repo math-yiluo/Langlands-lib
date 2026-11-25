@@ -57,6 +57,7 @@ def ProperQuotientJetData.atLeast (D : ProperQuotientJetData i Q) (m : ℕ) :
   have hsG : Algebra.Smooth R (algebra G) := by
     apply smooth_of_smooth_groupScheme
     rw [← Over.w (groupSchemeIso G).hom.hom.hom]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   letI : Algebra.Smooth R (algebra G) := hsG
   obtain ⟨hfK, hpK⟩ := finite_projective_quotient_jetIdeal hH N

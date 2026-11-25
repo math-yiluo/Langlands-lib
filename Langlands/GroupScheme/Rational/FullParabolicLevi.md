@@ -38,7 +38,7 @@ the group-scheme equation required in the uniqueness statement, with the
 inverse conjugating point.
 
 All assertions hold over arbitrary fields and for the original actual
-group schemes, with no rational-point or topology substitution. This unit
+group schemes, with no rational-point or topology substitution. This module
 does not prove that an intersection parabolic arising in the geometric
 lemma is full, identify its representations, or prove any of the three
 VII.2.6 statements. Those are separate obligations.

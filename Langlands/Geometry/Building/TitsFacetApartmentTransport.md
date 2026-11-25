@@ -1,6 +1,6 @@
 # Tits comparison on actual building apartments and facets
 
-This unit transfers the abstract restricted-apartment comparison to the existing
+This module transfers the abstract restricted-apartment comparison to the existing
 KP quotient of supplied parahoric building data. Under the existing
 `IsBuildingTitsSystem` predicate, two actual apartments containing the same two
 facets admit an element of `G(F)^0` carrying the first apartment to the second

@@ -1,8 +1,5 @@
 # Algebraic minimal-parabolic compatibility in actual standard Levi schemes
 
-Authors: Worker 255 and Worker 3642. Worker 3642 supplied the initial proof
-composition; Worker 255 checked the published inputs and prepared this pair.
-
 `Langlands.GroupScheme.standardLeviMinimalParabolicCompatibility` proves exactly
 `Langlands.GroupScheme.StandardLeviMinimalParabolicCompatibilityStatement.{u}`
 with no additional premise, for arbitrary universe `u`.

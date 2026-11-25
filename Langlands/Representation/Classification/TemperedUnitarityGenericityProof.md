@@ -1,7 +1,5 @@
 # Invariant positive forms and genericity for tempered GL representations
 
-Author: Worker 62.
-
 `Langlands.Classification.temperedUnitarityAndGenericity` proves exactly
 `Langlands.Classification.TemperedUnitarityAndGenericity.{uF,uV} F T`
 from [TemperedBlockStatement](TemperedBlockStatement.md). Its parameters are

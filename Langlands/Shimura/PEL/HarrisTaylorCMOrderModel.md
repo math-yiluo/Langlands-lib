@@ -83,9 +83,12 @@ action, this unit and `cmPolarizedOrderModelIso`. It uses the ordered-pair
 additivity supplied by `Z.property.pairAdditivity` and the existing exact
 `PolarizedAction.orderModelMultiple` computation.
 
-This unit constructs neither level orbits nor an integral representative of a
+This module constructs neither level orbits nor an integral representative of a
 normalized class. It does not prove surjectivity of the integral class image,
 scheme representability, smoothness, division-case projectivity or the main
-`DivisionCMRepresentabilityStatement`. Those consumer conclusions remain
-separate obligations. In particular, the full generic proper-family
+`DivisionCMRepresentabilityStatement`. Those conclusions belong to the modules
+that use this one: surjectivity of the integral class image is proved, under
+the same premises, as `integralCMClassCondition_all` in
+`HarrisTaylorCMIntegralExistence`, while the Library does not prove
+`DivisionCMRepresentabilityStatement`. In particular, the full generic proper-family
 fibre-ampleness theorem remains a premise of the constructions here.

@@ -1,6 +1,6 @@
 # The functor `R` of Renard VI.7.2: exactness, finite type, faithfulness, injective units
 
-Worker 4814. This is a supporting unit for Task 5419, which proves Renard VI.7.2,
+This module supports the proof of Renard VI.7.2,
 second Lemma (`Langlands.CuspidalSupport.BernsteinCuspAdjunctionStatement`). It
 proves the assertions about `R` in clause (ii), and clause (iii), for the actual
 standard family (`BernsteinStandardFamily`). Two hypotheses stay explicit:

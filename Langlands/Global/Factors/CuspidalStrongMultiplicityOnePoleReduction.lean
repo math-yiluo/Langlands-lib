@@ -24,7 +24,7 @@ namespace Langlands.Global
 open NumberField Automorphic CuspidalPairPoles CuspidalPairFunctionalEquation
 open CuspidalPairBoundaryNonvanishing CuspidalSelfPairAssembly
 open Automorphic.ContinuousRationalFunctions (evaluate)
-open Langlands.ClassField.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (HasUnitaryCentralCharacter)
 
 /-- The completed cuspidal pair pole theorem implies strong multiplicity one. -/
 def CuspidalStrongMultiplicityOneFromPairPole : Prop :=

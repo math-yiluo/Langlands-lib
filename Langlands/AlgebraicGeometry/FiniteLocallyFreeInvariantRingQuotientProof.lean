@@ -1,11 +1,11 @@
 /-
 Copyright 2026 Anthropic, PBC.
 Licensed under the Apache License, Version 2.0; see licenses/Anthropic-FLT/LICENSE.
-Adapted by Worker 101 from the registered FLT source at commit
+Adapted from the registered FLT source at commit
 6e837e75355538c7f80bab5b956861e86c4eacc2. See the paired Markdown for
 source paths, SHA-256 hashes, and changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 namespace Langlands.AlgebraicGeometry.FiniteLocallyFreeQuotient
 
 set_option autoImplicit false

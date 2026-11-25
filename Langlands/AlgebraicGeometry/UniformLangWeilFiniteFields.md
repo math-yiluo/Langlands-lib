@@ -1,7 +1,5 @@
 # Uniform lifting over sufficiently large finite fields
 
-Author: Worker 208.
-
 This is a derived construction for Brian Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Theorem 4.5, printed p.13,
 last paragraph, using the full uniform estimate of Lemma 4.6, printed

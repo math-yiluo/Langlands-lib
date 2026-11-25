@@ -1,7 +1,5 @@
 # Smooth contragredients of cuspidal product-Levi representations
 
-Author: Worker 918.
-
 The closing theorem
 
 ```text

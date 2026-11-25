@@ -1,7 +1,5 @@
 # Infinitesimal kernels of group schemes are uniquely divisible
 
-Author: Worker 268.
-
 Module `Langlands.AlgebraicGeometry.InfinitesimalKernel`, namespaces
 `Langlands.AlgebraicGeometry.SquareZero` (ring constructions) and
 `Langlands.AlgebraicGeometry.InfinitesimalKernel` (points of group objects).

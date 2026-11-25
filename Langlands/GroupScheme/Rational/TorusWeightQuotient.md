@@ -30,14 +30,14 @@ in namespace `Langlands.GroupScheme.Corepresented`.
 `exists_primitive_coordinates` (`Rational.TorusWeightPrimitive`) gives the primitive
 coordinates `y`, further coordinates `z` with `aeval (Sum.elim y z)` bijective, and the
 kernel description: the `y i` vanish on a point exactly when it lies in `U_{r+1}`. The
-published `VectorGroup.isFppfQuotient_quotientMap` (Worker 1239,
-`Langlands.GroupScheme.VectorGroupQuotient`) then applies, after lifting the index type of
+published `VectorGroup.isFppfQuotient_quotientMap`
+(`Langlands.GroupScheme.VectorGroupQuotient`) then applies, after lifting the index type of
 `z` to `Type u` with `aeval_sum_elim_ulift_bijective`.
 
 ## Provenance
 
 Internal supporting material for the proof of
-`Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement` (task 023326af).
+`Langlands.GroupScheme.RelativeRoot.CyclicWeightFiltrationStatement`.
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, 2nd ed., Lemma 3.3.8 (printed p.111)
 states that `U_{A_j}(G)/U_{A_{j+1}}(G)` is a vector group whose Lie algebra has the single
 weight `j • a`. Here the quotient is constructed explicitly, on the cut group scheme, as a

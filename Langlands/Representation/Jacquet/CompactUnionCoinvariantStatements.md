@@ -8,9 +8,8 @@ The module contains four **statements**, the `Prop`-valued definitions
 `CompactAveragingRelationStatement` and `CoinvariantSubrepresentationRelationsStatement`. It
 proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published map
-[iii2-hecke-induction](../../../notes/renard/iii2-hecke-induction.md) (Task 5296) lists these
+The published map
+[iii2-hecke-induction](../../../notes/renard/iii2-hecke-induction.md) lists these
 III.2.9 items as gaps:
 
 - the Haar Example: "an exact dimension-one declaration for this coinvariant carrier was not
@@ -31,7 +30,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.2.9, printed pp.78–80 / PDF pp.84–86:
+III.2.9, printed pp.78–80 / PDF pp.84–86, was read:
 
 > Soient `H` un groupe t.d. et `(τ, E)` une représentation de `H`. On note `E(H, τ)` le
 > sous-espace de `E` engendré par les vecteurs `(τ(h) · v − v)`, `v ∈ E`, `h ∈ H`. L'espace

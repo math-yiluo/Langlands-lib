@@ -1,6 +1,6 @@
 # The original infinite adelic quotient L2 action
 
-Worker 116 constructs `haarQuotientL2InfiniteRightAction` on the unchanged
+This module constructs `haarQuotientL2InfiniteRightAction` on the unchanged
 `Lp ℂ 2 (positiveRationalQuotientHaarMeasure F G T i)`. It is exactly the
 existing bounded full adelic quotient right action restricted along the
 original continuous homomorphism `AdelicGroupPoints.ofInfinite F G`.

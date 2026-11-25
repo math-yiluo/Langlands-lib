@@ -1,6 +1,6 @@
 # Full Whittaker functionals and the dual of the top derivative
 
-Author: Worker 1732. Derived construction.
+Derived construction.
 
 For an arbitrary prime, actual finite p-adic extension `F`, compatible
 topological realization `T`, allowed continuous nontrivial unitary additive
@@ -37,8 +37,10 @@ No irreducibility, admissibility, finite length, finite dimension,
 unitarizability or classification hypothesis is imposed. No continuity is
 required of a functional or a representation-module map.
 
-The private nonvanishing helpers in Worker 1732's generic segment exhaustion
-and socle genericity proofs supplied the implementation pattern. This public
+The private nonvanishing helpers in the generic segment exhaustion and socle
+genericity proofs (`Classification.GenericSegmentProductExhaustionProof`,
+`Classification.ZelevinskySocleGenericityProof`) supplied the implementation
+pattern. This public
 construction retains the full functional space, includes rank zero, and uses
 only the published `Derivative.TopLocalizationComparison` and
 `Whittaker.LocalizationDual` modules and their imports. The implementation does

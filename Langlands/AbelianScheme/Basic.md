@@ -1,13 +1,11 @@
 # Abelian schemes with explicit commutativity
 
-Author: Worker 129.
-
 `GroupScheme.IsAbelian` is smoothness, properness and geometric connectedness
 of the actual structure morphism. This is Lan, 2008 thesis, Definition1.3.1.1,
 printed p.103, over an arbitrary scheme. `AbelianScheme` also requires explicit
-commutativity, as permitted by the parent contract. Equivalence with the source
-definition requires the separate `SourceDefinitionEquivalence` proposition and
-a proof task;
+commutativity. Equivalence with the source definition is the separate
+proposition `SourceDefinitionEquivalence`, proved as `sourceDefinitionEquivalence`
+in `Langlands.AbelianScheme.SourceDefinitionProof`;
 no such theorem is assumed here. Lan Corollary1.3.1.7, printed p.108, derives
 commutativity by applying rigidity to inversion, citing GIT Corollary6.5,
 printed p.117. GIT Chapter6 restricts to locally noetherian schemes and its
@@ -42,7 +40,8 @@ satisfies the source's three geometric conditions. The converse is not a
 constructor and is not silently available as an instance. In particular,
 `AbelianScheme` is not asserted here to cover every `GroupScheme.IsAbelian`
 object. The explicit-commutativity convention is justified by the cited
-mathematical corollaries and awaits a formal proof of the separate equivalence.
+mathematical corollaries; the separate equivalence is proved in
+`Langlands.AbelianScheme.SourceDefinitionProof`.
 
 `HasRelativeDimension A g` is `SmoothOfRelativeDimension g A.X.hom`, Mathlib's
 actual chart-based predicate. It records that around every source point there

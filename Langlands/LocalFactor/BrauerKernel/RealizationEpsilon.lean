@@ -48,7 +48,7 @@ end Trace
 
 section Place
 
-open ClassField.Global ClassField.Global.RelativeWeilGroup
+open ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup
 
 variable {k K' : Type} [Field k] [Field K'] [NumberField k] [NumberField K'] [Algebra k K']
   (v : HeightOneSpectrum (𝓞 k)) {F : PadicField.{uF} (residuePrime v)} (K : Extension F)

@@ -1,7 +1,5 @@
 # Normalized matrix generators on actual Whittaker coefficient models
 
-Author: Worker 468.
-
 The definition `Langlands.GodementJacquet.Padic.modelMatrixLPolynomial` chooses
 a polynomial for a full Whittaker-type representation `σ` of `GL(n+1)`.
 It uses the canonical data of the supplied p-adic field `F`, the supplied

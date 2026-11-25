@@ -1,6 +1,6 @@
 # Reduction of the tempered-untwist selection (Renard VII.4.2 (iii))
 
-Worker 5295, Task 5295. This module defines the closed proposition
+This module defines the closed proposition
 `OppositeUntwistTemperedCriterionStatement`, a temperedness criterion for a
 unitary untwist ("T" below). It imports the closed proposition
 `OppositeStandardExponentRestrictionStatement` from the module
@@ -118,13 +118,17 @@ intermediate claim of the source proof.
 `OppositeJacquetUntwistSelectionStatement.{u, v}` from
 
 - `Langlands.GroupScheme.LanglandsCombinatorialDecompositionStatement.{u}`
-  (V.3.18, a published statement by Worker 24, unproved);
+  (V.3.18, a published statement; proved as
+  `Langlands.GroupScheme.langlandsCombinatorialDecomposition` in
+  `Langlands.GroupScheme.Rational.LanglandsDecompositionProof`);
 - `RationalPointsIrreducibleAdmissibleStatement.{u, v}` (irreducible smooth
   representations are admissible; unproved);
 - `LeviJacquetFiniteLengthStatement.{u, v}` (Levi Jacquet functors preserve
   finite length; unproved);
-- `OppositeStandardExponentRestrictionStatement.{u, v}` (R1, unproved);
-- `OppositeUntwistTemperedCriterionStatement.{u, v}` (T, unproved).
+- `OppositeStandardExponentRestrictionStatement.{u, v}` (R1; proved as
+  `oppositeStandardExponentRestriction` in `OppositeStandardExponentRestrictionProof`);
+- `OppositeUntwistTemperedCriterionStatement.{u, v}` (T; proved as
+  `oppositeUntwistTemperedCriterion` in `OppositeUntwistTemperedCriterion`).
 
 ### Auxiliary lemmas (namespace `UntwistSelection`)
 

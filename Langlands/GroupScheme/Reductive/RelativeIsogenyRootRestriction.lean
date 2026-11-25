@@ -93,7 +93,7 @@ theorem hasEquivariantFibres_of_isolating_cocharacters
     · exact Or.inl (by rw [h])
     · refine Or.inr ?_
       rw [h, splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm,
-        splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, map_neg]
+        splitTorus.exponentCharacter_eq_characterLatticeEquiv_symm, AddEquiv.map_neg]
   · rw [splitTorus.latticePairing_exponentCharacter_exponentCocharacter, hmu0]
   · rwa [splitTorus.latticePairing_exponentCharacter_exponentCocharacter]
 

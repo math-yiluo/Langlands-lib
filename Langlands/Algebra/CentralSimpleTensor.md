@@ -19,8 +19,9 @@ The namespace `Langlands.Brauer` provides:
 
 These are Mathlib's `CSA` objects, with their existing algebra structures and
 proved centrality, simplicity and finite dimensionality. They carry no assumed
-group laws. This unit supplies representative algebras; quotient operations
-and scalar-extension functoriality are subsequent units.
+group laws. This module supplies representative algebras; quotient operations
+and scalar-extension functoriality are in the modules `BrauerGroup` and
+`BrauerScalarExtension`.
 
 ## Canonical enveloping equivalences
 

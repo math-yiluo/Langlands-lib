@@ -1,6 +1,6 @@
 # Parabolic chamber linear algebra
 
-Worker 705, Task 6450. Module
+Module
 `Langlands.Representation.LanglandsClassification.ParabolicChamberLinearAlgebraProof`,
 namespace `Langlands.GroupScheme`.
 

@@ -1,9 +1,9 @@
 # From a geometric-point locus to the all-test Picard-zero criterion
 
 `Langlands.AbelianScheme.PicardZeroGeometricOpenLocusBridgeStatement.{u}`
-is a Prop-valued definition. It states the generic implication implemented
-in Worker 390's shared draft revision 2 of
-`FieldPicardZeroOpenLocusAssembly`.
+is a Prop-valued definition. It states the generic implication used in the
+proof of the field open-locus theorem (module `FieldPicardZeroOpenLocusProof`,
+through `isPicardZeroOpenLocus_of_geometricPoints`).
 
 The first premise is the existing proposition
 `PicardZeroGeometricDetectionStatement.{u}`. For every arbitrary base
@@ -41,13 +41,13 @@ nor the relative openness theorem.
 
 ## Internal provenance and proof obligation
 
-This is an internal compatibility statement extracted from Worker 390's
-existing conditional assembly, rather than a theorem quoted from the
+This is an internal compatibility statement extracted from a conditional
+assembly of the field open-locus theorem, rather than a theorem quoted from the
 abelian-variety literature. Its imports supply the already defined
 family predicate, actual classifier, and open-locus predicate. The
 extraction changes no one of those definitions.
 
-The intended proof uses a geometric point above every point of a scheme:
+The proof uses a geometric point above every point of a scheme:
 take the spectrum of the algebraic closure of its residue field and
 compose with the canonical residue-field map. This detects range
 containment in any subset. Geometric detection for the family pulled
@@ -58,6 +58,7 @@ pullbacks with the direct composite into `P`. The supplied
 geometric-point criterion gives range containment, hence the desired
 all-test equivalence.
 
-These steps are proof obligations for the separate exact proof of this
-statement. This module defines the proposition and contains no proof of
-it. Publication of its statement alone supplies no bridge theorem.
+These steps are proof obligations for the proof of this statement,
+`Langlands.AbelianScheme.picardZeroGeometricOpenLocusBridge` (module
+`PicardZeroGeometricOpenLocusBridgeProof`). This module defines the
+proposition and contains no proof of it.

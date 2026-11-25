@@ -37,7 +37,7 @@ Cancellation of the final composition isomorphism proves
 of `pullbackUnitIso` with composition, and cancellation of inverse square
 isomorphisms prove the normalized automorphism equation.
 
-This unit is derived from the existing module-pullback pseudofunctor and its
+This module is derived from the existing module-pullback pseudofunctor and its
 proved unit and associativity laws. It is a reusable prerequisite for the
 intrinsic kernel character's test-scheme law, with no abelian-scheme,
 constant-functions, descent or duality assertion of its own.

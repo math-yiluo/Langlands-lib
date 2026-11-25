@@ -1,6 +1,6 @@
 # The integral weight image of character-kernel invariants
 
-This internal contribution constructs an actual universal point of the
+This module constructs an actual universal point of the
 scheme-theoretic character kernel and proves the reverse integral-weight
 support inclusion. It derives these results from the existing character-kernel
 point equivalence, the quotient universal monomial character, the Lie
@@ -42,5 +42,8 @@ of integral `a`-weights and hence belongs to `integralWeightSpan i a`.
 Together with the existing
 `RelativeRoot.integralWeightSpan_le_kernelLieInvariants`, this identifies
 the kernel-invariant submodule exactly with that complete integral weight
-span. This unit does not construct a centralizer representative or prove
-its smoothness; those are separate steps in the host task.
+span. This module does not construct a centralizer representative or prove
+its smoothness; those are separate steps in the proof of
+`KernelCentralizerStructureStatement`, which the module
+`Rational.KernelCentralizerStructureProof` completes as
+`kernelCentralizerStructure`.

@@ -71,7 +71,7 @@ def BernsteinLeviCenterVarietyStatement : Prop :=
           ∀ (z : Subalgebra.center ℂ (End piD)) (ω : X)
             (φ : piD ⟶ rationalUnramifiedTwist (bernsteinLeviScheme i ν a.roots) ω
               a.representation),
-            (z : End piD) ≫ φ = Ψ z ω • φ
+            (z : End piD).asHom ≫ φ = Ψ z ω • φ
 
 variable {F : Type uF} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]

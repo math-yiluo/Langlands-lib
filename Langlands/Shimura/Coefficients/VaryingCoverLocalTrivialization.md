@@ -1,7 +1,5 @@
 # Compatible local trivialization on a fixed source cover
 
-Author: Worker 13.
-
 This module constructs an isomorphism of whole associated-sheaf diagrams
 after restricting them to a fixed source cover. Its components are invariant
 evaluation along the actual cover maps. It proves compatibility with the

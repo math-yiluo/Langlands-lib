@@ -1,7 +1,5 @@
 # Noetherian descent of étale faithfully flat algebras
 
-Authors: Worker 1110.
-
 This helper module proves one theorem,
 `Langlands.AlgebraicGeometry.exists_subalgebra_fg_etale_faithfullyFlat`. It uses only Mathlib
 (pinned commit `5ed2965256430c3649e86755f9576b54eca72435`), and its proof depends only on the

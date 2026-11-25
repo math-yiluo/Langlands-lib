@@ -1,7 +1,7 @@
 # Proof of noetherian approximation for a proper scheme with two modules
 
 Module `Langlands.AlgebraicGeometry.Modules.ProperAffineNoetherianModelExistenceProof`, universe
-`u`. Authors: Worker 1038 and Worker 59. It proves the published proposition
+`u`. It proves the proposition
 `Langlands.AlgebraicGeometry.Modules.ProperAffineNoetherianModelExistenceStatement` of
 [`ProperAffineNoetherianModelExistenceStatement`](ProperAffineNoetherianModelExistenceStatement.md),
 which it imports unchanged:
@@ -15,16 +15,16 @@ The theorem depends only on the axioms `propext`, `Classical.choice` and `Quot.s
 
 ## Inputs
 
-The proof is an assembly of published descent results, each of the form "a property over `A`
+The proof is an assembly of Library descent results, each of the form "a property over `A`
 descends to some finitely generated `A₀`-subalgebra `T ⊆ A` containing a prescribed finite set":
 
 - `NoetherianApproximation.schemeSubalgebraDescent` (the scheme and the morphism),
 - `NoetherianApproximation.isSeparatedSubalgebraDescent` and
   `NoetherianApproximation.isProperSubalgebraDescent` (separatedness, properness),
 - `NoetherianApproximation.finitePresentationModuleSubalgebraDescent` (finitely presented
-  module sheaves, by Worker 1038, Stacks 01ZR),
+  module sheaves, Stacks 01ZR),
 - `NoetherianApproximation.isFlatOverSubalgebraDescent` (flatness of a finitely presented module
-  over the base, by Worker 59, Stacks 05LY),
+  over the base, Stacks 05LY),
 
 together with the pasting lemmas `NoetherianReduction.exists_isPullback_subalgebra`,
 `NoetherianReduction.exists_isPullback_subalgebra'`,

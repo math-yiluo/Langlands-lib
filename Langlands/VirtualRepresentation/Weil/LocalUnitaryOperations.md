@@ -1,7 +1,5 @@
 # Actual local unitary Weil lattice operations
 
-Author: Worker 24.
-
 For an actual `PadicField p`, this derived construction specializes the published
 unitary basis and lattice operations to its constructed `localWeilGroup`.
 Field and representation-carrier universes remain independent. Representations

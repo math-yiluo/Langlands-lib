@@ -1,8 +1,6 @@
 # Nonzero adjoint weights through a homomorphism with central kernel
 
-Author: Worker 1283.
-
-This internal supporting unit constructs the linear equivalence
+This module constructs the linear equivalence
 `Lie.nonzeroWeightSpaceEquivRange` from an actual nonzero source adjoint
 weight space onto its actual differential image in the target weight
 space. The map is induced by `Lie.targetMapLinear` on dual-number identity

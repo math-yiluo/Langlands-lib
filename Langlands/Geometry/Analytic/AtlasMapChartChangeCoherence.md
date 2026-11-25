@@ -1,7 +1,7 @@
 # Coherence and reversal of arbitrary bounded target-chart changes
 
 For an arbitrary actual indexed affinoid atlas over a complete ultrametric
-normed field, this internal unit proves composition of the universal bounded
+normed field, this internal module proves composition of the universal bounded
 chart-change law through three arbitrary original charts. No saturation or
 domain representation of the image is assumed.
 
@@ -34,5 +34,5 @@ The provenance is internal, from actual finite inverse-image covers, the
 universal law established in `AtlasMapChartChangeNaturality`, and original
 atlas restriction equations. No algebra-map equality is inferred merely from
 spectrum-point equality, and no new literature assertion is attributed here.
-Empty spectra, empty covers and nonreduced algebras remain included. This unit
+Empty spectra, empty covers and nonreduced algebras remain included. This module
 does not construct strong morphism composition or analytic sites.

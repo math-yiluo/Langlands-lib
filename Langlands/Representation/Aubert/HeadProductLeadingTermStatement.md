@@ -1,7 +1,5 @@
 # Products of actual Langlands heads: rank bounds and leading multiplicity
 
-Authors: Worker 859 and Worker 597.
-
 `Langlands.Aubert.HeadProductLeadingTermStatement.{uF, uV} F T` is a
 Prop-valued target for an arbitrary p-adic field `F : PadicField.{uF} p`,
 with `[Fact p.Prime]`, and supplied topology `T : F.TopologicalData`.
@@ -49,13 +47,14 @@ by elementary multisegment operations is asserted. There is no positivity
 hypothesis on the common length `l`. In particular `l = 0` remains covered;
 segment lengths themselves are positive in the existing definition.
 
-This is a derived internal target, extracted from Worker 597's
-`HeadProductLeadingTerm` development shared with Task 5496. It packages its
+This is a derived internal target, extracted from the
+`HeadProductLeadingTerm` development. It packages its
 three actual-representation conclusions for reuse. It is not a transcription
 of a numbered literature theorem. The proposed proof route transports
 socle-product coefficients through adjusted Aubert exchange and then uses
-uniform-length rigidity of the published rank order. Those ingredients are
-proof obligations or published results to be supplied in a separate proof;
-none is a hypothesis of this proposition. This module imports the public
+uniform-length rigidity of the published rank order. The proof is the separate
+module [HeadProductLeadingTermProof](HeadProductLeadingTermProof.md) (theorem
+`headProductLeadingTerm`); none of those ingredients is a hypothesis of this
+proposition. This module imports the public
 definitions of Langlands data, rank order, the binary normalized product, and
 actual composition multiplicity, and proves none of the three assertions.

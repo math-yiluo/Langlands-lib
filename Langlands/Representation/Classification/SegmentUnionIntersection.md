@@ -1,7 +1,5 @@
 # Actual union/intersection segments and degree preservation
 
-Author: Worker 494.
-
 This internal combinatorial unit concerns a preceding pair of segments on
 an integral cuspidal twist line. Integral twist freeness is an explicit
 premise at the same independent field and carrier universes as the segments.

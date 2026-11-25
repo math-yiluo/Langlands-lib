@@ -1,6 +1,6 @@
 # Rank-one arithmetic epsilon expressions on the original base field
 
-Worker 1555 derives this internal transport unit from the existing actual
+This internal transport module is derived from the existing actual
 bottom-field algebra equivalence, generic field transport, canonical abelian
 epsilon transport, and the normalized rank-one arithmetic epsilon formula.
 No additional original-literature assertion is introduced.
@@ -65,6 +65,6 @@ exponent `m : Int`.
 The prime and finite p-adic field are arbitrary. The field, parameter-carrier
 and supplied-system universes remain independent. Standalone reciprocity,
 common-closure reciprocity, their compatibility and a validated local-constant
-system are supplied premises. This unit constructs none of these inputs,
+system are supplied premises. This module constructs none of these inputs,
 selects no self-dual measure or monomial constants, and proves neither an
 analytic epsilon comparison nor the closed supercuspidal correspondence.

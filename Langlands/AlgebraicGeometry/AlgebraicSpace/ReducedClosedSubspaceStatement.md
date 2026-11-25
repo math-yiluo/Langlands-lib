@@ -1,7 +1,5 @@
 # Algebraic spaces under saturated reduced closed subschemes of a finite cover
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.ReducedClosedSubspaceStatement`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`. It imports the definition `SameImage` from
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SameImagePoints` and, for the existing predicates,

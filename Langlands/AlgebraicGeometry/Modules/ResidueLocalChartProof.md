@@ -1,9 +1,7 @@
 # Actual residue sections in a local rank-one chart
 
-Author: Worker 354.
-
-`Langlands.SchemeModule.residueLocalChartCriterion` proves the unchanged
-published proposition `Langlands.SchemeModule.ResidueLocalChartCriterion.{u}`.
+`Langlands.SchemeModule.residueLocalChartCriterion` proves the
+proposition `Langlands.SchemeModule.ResidueLocalChartCriterion.{u}`.
 For an arbitrary scheme `X : Scheme.{u}`, module sheaf `M`, global section
 `s`, open `U`, point `x : U.toScheme`, and isomorphism
 `e : M.restrict U.ι ≅ structureModule U.toScheme`, put
@@ -22,8 +20,7 @@ NonvanishingAt M s (U.ι x) ↔
 
 The left side uses the actual `residueSection`, defined by module pullback
 along `X.fromSpecResidueField (U.ι x)` and the existing
-`Langlands.Scheme.Modules.pullbackUnitIso`. No construction or statement
-imported by this module is changed. The universe remains arbitrary, and
+`Langlands.Scheme.Modules.pullbackUnitIso`. The universe remains arbitrary, and
 the only trivialization assumption is the specified chart on `U`.
 
 ## Implemented proof
@@ -67,8 +64,8 @@ premise.
 For a structure-module endomorphism `φ`, the lemma
 `pullback_scalar_eq_zero_iff` uses the pullback–pushforward adjunction.
 Postcomposition by `pullbackUnitIso.hom` preserves vanishing. The adjoint
-of this composite is `φ ≫ unitToPushforwardUnit`, by naturality and the
-published `pullbackUnitAdjunction`. The adjunction preserves zero, and
+of this composite is `φ ≫ unitToPushforwardUnit`, by naturality and
+`pullbackUnitAdjunction`. The adjunction preserves zero, and
 evaluation at one identifies this last morphism with `f.appTop (φ.app ⊤ 1)`.
 For the residue-point map, `residue_appTop` identifies `appTop` with
 `Γevaluation` followed by `ΓSpecIso.inv`. It unfolds `fromSpecResidueField`,
@@ -77,7 +74,7 @@ Injectivity of `ΓSpecIso.inv` then gives the scalar residue criterion.
 
 The final theorem uses the restriction comparison with `i = U.ι`, cancels
 the pullbacks of `restrictUnitIso.inv` and `e.hom`, and applies the scalar
-criterion to `ψ`. Negating this zero equivalence proves the requested
+criterion to `ψ`. Negating this zero equivalence proves the stated
 nonvanishing equivalence.
 
 ## Provenance
@@ -86,11 +83,8 @@ This is an internal derived proof of the Library's local-coordinate
 interface, not a transcription of an external theorem. It imports
 `ResidueLocalChartStatement`, `PullbackUnitProofs` and `MorphismVanishing` by their Lean module
 names and uses the actual scheme-module, adjunction, and residue-field
-constructions in pinned Mathlib. The proof establishes only the specified
-local comparison; the final global line-bundle composition belongs to its
-separate task. Worker 354 authored this proof and its accompanying text;
-no unpublished draft by another worker was reused.
+constructions in Mathlib. The proof establishes only the specified
+local comparison; the final global line-bundle composition is separate.
 
 The public helper `Langlands.SchemeModule.pullback_scalar_eq_zero_iff` is also
-reused by the frame-vanishing and finite-seed proofs. Its statement and proof
-are unchanged.
+reused by the frame-vanishing and finite-seed proofs.

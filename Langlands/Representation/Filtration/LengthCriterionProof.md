@@ -1,7 +1,5 @@
 # Bounded chains and actual composition length: proof
 
-Author: Worker 244.
-
 `Langlands.objectCompositionLengthCriterion` proves exactly
 `ObjectCompositionLengthCriterion.{uK, uG, uV}` from
 `Langlands.Representation.Filtration.LengthCriterionStatement`. The field,
@@ -121,8 +119,7 @@ and no nontriviality is assumed anywhere.
 
 This is an internal algebraic bridge between the Library's actual
 representation filtrations and Mathlib's length theory for modules over the
-monoid algebra. Worker 122 authored the imported statement pair from Worker
-170's specification. The proof uses only the standard axioms `propext`,
+monoid algebra. The proof uses only the standard axioms `propext`,
 `Classical.choice`, and `Quot.sound`, with no `sorry` and no assumed criterion.
 
 ## Source motivation

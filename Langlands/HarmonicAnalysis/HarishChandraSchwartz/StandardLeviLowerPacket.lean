@@ -805,7 +805,7 @@ local notation "sω" => discreteSeriesClass (sC) hsC (sμ)
   (lowerRepresentation hG hi hν I I' hζ n hn π)
   (lowerRepresentation_isSquareIntegrable hG hi hν I I' hζ n hn CM hCM mu π hsq)
 
-/-- A lower density package `P` of Task 7454, read as density data at `M'` for the inducing
+/-- A lower density package `P`, read as density data at `M'` for the inducing
 representation `π' ∘ e₀` of the target (`lowerDensityPackage_eq`). -/
 abbrev lowerChamberPackage (P : LowerDensityPackage hG hi hν I I' hζ n hn π hRefl hCST) :
     DynamicInducedOrbit.DensityPackage iL (conjugatedCocharacter i ζ n) hRefl hCST hM'
@@ -826,7 +826,7 @@ local notation "ω'" => discreteSeriesClass CM' hCM' mu' π' hsq'
 
 set_option maxHeartbeats 1000000 in
 omit [IsAffine A.X.left] [(CM').Normal] [MeasurableSpace (𝐌' ⧸ CM')] [BorelSpace (𝐌' ⧸ CM')] in
-/-- Task 7454's lower density at `sπ ⊗ z` is the package weight at the restriction of `z`. -/
+/-- The lower density at `sπ ⊗ z` is the package weight at the restriction of `z`. -/
 theorem lowerPlancherelWeight_orbitMap
     (P : LowerDensityPackage hG hi hν I I' hζ n hn π hRefl hCST)
     (z : unitaryUnramifiedCharacters (leviNormCharacters χs)) :
@@ -858,7 +858,7 @@ set_option maxHeartbeats 2000000 in
 omit [IsAffine A.X.left] in
 /-- **The Plancherel weights correspond.** Along `lowerChamberOrbitTransport`, the Plancherel
 weight of the source-normalized target at `M'` (for the chamber of `sζ`, the representation
-`π'` and the data of a lower density package `P`) is Task 7454's lower density
+`π'` and the data of a lower density package `P`) is the lower density
 `lowerPlancherelWeight P`. -/
 theorem standardLeviPlancherelWeight_lowerChamberOrbitTransport
     (P : LowerDensityPackage hG hi hν I I' hζ n hn π hRefl hCST)

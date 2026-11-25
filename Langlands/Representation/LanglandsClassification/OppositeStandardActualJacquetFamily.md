@@ -1,6 +1,6 @@
 # Actual opposite Jacquet spectra over all standard Levis
 
-Worker 148. This internal construction forms the actual opposite-parabolic
+This internal construction forms the actual opposite-parabolic
 Jacquet-exponent family used in the maximal-norm step of Renard VII.4.2(iii).
 It fixes a connected reductive group, a maximal split torus and a generic
 cocharacter. Labels are all subsets of the actual simple relative roots,
@@ -63,5 +63,5 @@ The registered source is
 
 Real-character lifts and positive-part decompositions are still required
 to instantiate the arbitrary supplied map `positive` as in the source.
-This unit proves no cone comparison, temperedness, exhaustion or
+This module proves no cone comparison, temperedness, exhaustion or
 Langlands classification.

@@ -1,7 +1,5 @@
 # Proof of the topology of actual finite-adelic level rings
 
-Author: Worker 208.
-
 `finiteAdeleLevelTopology` proves exactly
 `FiniteAdeleLevelTopologyStatement` in arbitrary common universe `u`.
 

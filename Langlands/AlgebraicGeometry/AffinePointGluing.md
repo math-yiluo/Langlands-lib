@@ -1,6 +1,6 @@
 # Morphisms of schemes from natural maps on affine points
 
-Author: Worker 1399. Internal helper module for the proof of
+Internal helper module for the proof of
 `Langlands.GroupScheme.GeneralLinearSolvableStabilizerStatement`; it has no literature source.
 It is the standard fact that a scheme is the colimit of its affine points ("functor of points
 on affine schemes"). Mathlib has no such Yoneda statement for `Scheme`, so the module glues

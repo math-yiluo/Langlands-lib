@@ -1,7 +1,5 @@
 # Scalar torus units fix the ambient apartment
 
-Author: Worker 229.
-
 The Prop-valued `KPApartmentData.ScalarTorusUnitsFixApartmentStatement` states
 the assertion uniformly in the source map and unit-kernel point, for fixed
 `v`, `D` and `C`. The theorem `KPApartmentData.scalarTorusUnitsFixApartment`

@@ -1,7 +1,5 @@
 # Source invariance of étaleness on all recognized pieces
 
-Author: Worker 208.
-
 This derived internal prerequisite proves that precomposition with a full
 strong quasi-isomorphism does not change `IsEtaleAllPieces`. The maps are
 between constructed saturation presentations; transport through arbitrary

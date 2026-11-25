@@ -8,7 +8,7 @@ are set after the imports; the import of `P2M.Util` is dropped; the proof `by
 p2m_exact_reverting @_root_.S.solution` is replaced by the term `S.solution` applied to the
 explicit arguments. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_Nat_MacaulayPow
 import Langlands.AnthropicFLT.P2M.Sol.S_Nat_exists_forall_eq_macaulayPow_of_forall_le_macaulayPow
 set_option maxHeartbeats 4000000

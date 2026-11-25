@@ -1,6 +1,6 @@
 # The split-rank upper bound for U(1,1)
 
-Workers 1225 and 37. This internal argument derives the split-rank upper
+This internal argument derives the split-rank upper
 bound from the existing unitary matrix model. The fields, quadratic extension,
 finite matrix basis, and automorphism are those of `RankStatement`. No
 nonidentity hypothesis on the automorphism is needed for this bound, and the

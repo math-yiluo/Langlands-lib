@@ -1,11 +1,8 @@
 # Gluing a Zariski sheaf from quasi-projective open pieces on locally noetherian tests
 
-Authors: Worker 5705.
-
-Worker 5705 wrote the Lean file and this description for task
-`07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705). The proposition is the
-gluing step of the Kleiman-style construction of the Picard scheme in that
-task. A Zariski sheaf on schemes over a noetherian affine base is
+The proposition is the gluing step of the Kleiman-style construction of the
+Picard scheme in the proof of `NoetherianIntegralFibrePicardSheafAFSchemeStatement`.
+A Zariski sheaf on schemes over a noetherian affine base is
 decomposed by base-change-compatible opens into pieces. Each piece is
 represented by a quasi-projective scheme, and the conclusion is that the
 sheaf is represented on noetherian affine tests by a scheme that is locally
@@ -181,14 +178,16 @@ The intended proof follows Tag 01JJ, simplified by the index shape. Let
   sheaf `RelativePicard.classSheafPresheaf f`, takes values in that
   universe. `β` therefore uses `uliftYoneda.{u + 1}`.
 - `κ : Type` is a small index type, as in the companion statement
-  `PicardHilbertPolynomialPiecesStatement` of Task 5705 (Kleiman's pieces are
+  `PicardHilbertPolynomialPiecesStatement` (Kleiman's pieces are
   indexed by pairs of rational polynomials).
-- The intended consumer is the assembly proof of
-  `NoetherianIntegralFibrePicardNoetherianTestsStatement` in Task 5705. There,
+- The consumer is the assembly proof of
+  `NoetherianIntegralFibrePicardNoetherianTestsStatement` (the reduction
+  `noetherianIntegralFibrePicardPiecesReduction`, applied in
+  `NoetherianIntegralFibrePicardSheafAFSchemeAssembly`). There,
   `F` is the Picard class sheaf, `V` comes from the open pieces of
   `PicardHilbertPolynomialPiecesStatement`, and `Q c m` from the quotient
   of an open of the divisor scheme by the linear-system equivalence relation.
-  This describes intended use only; this module imports none of those
+  This describes that use only; this module imports none of those
   statements except the one supplying `noetherianAffineOverι`.
 - The Library's `Langlands.AlgebraicGeometry.AlgebraicSpace.OpenChartGluingStatement`
   is a different adaptation of Tag 01JJ, with fppf sheaves, all tests and

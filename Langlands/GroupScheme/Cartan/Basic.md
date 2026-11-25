@@ -1,7 +1,5 @@
 # Cartan subgroups and their closed representatives
 
-Worker 1342.
-
 `Langlands.GroupScheme.IsCartanSubgroup i` is a predicate on an actual group-scheme
 homomorphism `i : H ⟶ G` over `Spec k`, for an arbitrary field `k` in universe `u`.
 It requires a closed subgroup embedding and a maximal torus `j : T.toGrp ⟶ G`
@@ -76,6 +74,7 @@ contains no correction to 17.43, 17.44, 17.84 or 17.91.
 
 All results retain arbitrary fields, nonsplit tori, and rank zero. No
 perfection, infinitude, rational-point density or generation hypothesis is
-used. In the rational-point density project this module supplies only the
-Cartan subgroup interface; the general structural and generation arguments
-remain separate obligations.
+used. For rational-point density this module supplies only the Cartan
+subgroup interface; the general structural and generation arguments are
+proved separately, by `cartanStructure` (`Cartan.StructureProof`) and
+`cartanGenerationStatement` (`Cartan.GenerationProof`).

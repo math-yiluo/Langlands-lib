@@ -1,6 +1,7 @@
 # Assembly of pairings for a finite family of commuting compact and Lie actions
 
-This internal finite-family assembly result for Task 7294 takes a finite
+This internal finite-family assembly result for the cuspidal contragredient of dual cusp
+forms (`CuspidalTransposeInverseContragredientStatement`) takes a finite
 family of compact-group and complex Lie algebra actions on one complex
 vector space. The different local operator families commute and jointly
 act irreducibly. For each family there is a supplied source model

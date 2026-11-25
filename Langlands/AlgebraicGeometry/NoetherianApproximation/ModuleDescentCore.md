@@ -1,8 +1,8 @@
 # A finitely presented submodule sheaf of an affine direct image
 
 Module `Langlands.AlgebraicGeometry.NoetherianApproximation.ModuleDescentCore`, namespace
-`Langlands.AlgebraicGeometry.NoetherianApproximation.ModuleDescentCore`, universe `u`. Author:
-Worker 1038. This is an internal helper module for the proof of
+`Langlands.AlgebraicGeometry.NoetherianApproximation.ModuleDescentCore`, universe `u`. This is an
+internal helper module for the proof of
 `FinitePresentationModuleSubalgebraDescentStatement` in
 [`ModuleDescentProof`](ModuleDescentProof.md). It asserts no source theorem of its own.
 

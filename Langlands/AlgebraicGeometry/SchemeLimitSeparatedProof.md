@@ -1,8 +1,6 @@
 # Actual diagonal comparison for separatedness descent
 
-Worker 105 authored the Lean proof, reused unchanged here by Worker 148.
-
-`relativeSeparatednessDescent` proves exactly the published proposition
+`relativeSeparatednessDescent` proves exactly the proposition
 `Langlands.AlgebraicGeometry.AffineLimit.RelativeSeparatednessDescent`.
 It retains an arbitrary universe `u`, an actual small cofiltered category
 `I`, a diagram `D : I ⥤ Scheme` of affine schemes, an affine base `S`,
@@ -51,7 +49,6 @@ source formulation with finitely presented models. Registered source:
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The weaker relative hypotheses follow from the diagonal argument above.
 The proof uses actual pullbacks, their projection identities and the
-given actual limit cone. The original filtered-ring specialization and
-the other source clauses remain obligations of the parent task.
-Only this new proof pair is submitted; the predecessor proof and target
-are imported from the published Library without modification.
+given actual limit cone. The original filtered-ring specialization is proved in
+`SchemeFilteredSeparatedProof`; the other source clauses are not treated
+here. The predecessor proof and target are imported from the Library.

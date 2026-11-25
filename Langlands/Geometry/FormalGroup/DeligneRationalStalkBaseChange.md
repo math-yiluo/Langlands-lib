@@ -22,10 +22,11 @@ assertion quoted from the paper. The constructed rationalization,
 `integralRationalStalkMap`, and `componentStalkLattice` are the existing Library
 objects; no comparison is supplied as additional data.
 
-This unit does not prove compatibility of the rational frame or of integer Pi
+This module does not prove compatibility of the rational frame or of integer Pi
 powers, preservation of determinant normalization, injectivity of the integral
-map, or equality with a separately constructed exterior-power subsheaf. Full
-admissibility and representability remain separate obligations.
+map, or equality with a separately constructed exterior-power subsheaf.
+Preservation of full admissibility is proved in `DeligneAdmissibleBaseChange`;
+representability remains separate.
 
 ## Parameters and actual objects
 

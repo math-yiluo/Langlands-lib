@@ -27,6 +27,8 @@ hypothesis on `R` is needed.
 This is an internal convenience layer over Mathlib's
 `AlgebraicGeometry.tildeEquiv`, the standard equivalence between modules over
 `R` and quasi-coherent sheaves on `Spec R`. It rests on the mapping property
-of the associated sheaf, Stacks Project, Lemma 26.7.1 (tag 01I7). It is used in the Task 7748 torsion bracket branch to construct
+of the associated sheaf, Stacks Project, Lemma 26.7.1 (tag 01I7). It is used in the torsion bracket argument for eventual
+quasi-projectivity of fine moduli schemes of ordinary polarized full-level data
+(module `EvaluationBracketFibres`) to construct
 isomorphisms of evaluation data over the spectrum of a field from linear
 algebra on global sections.

@@ -1,7 +1,5 @@
 # Actual adjacent segment-product refinements
 
-Author: Worker 494.
-
 This internal construction specializes `SegmentProductRefinement` to the
 geometric adjacent merge and its swapped refinement from `AdjacentMergeShape`.
 Both inner data retain every supplied segment occurrence and its actual

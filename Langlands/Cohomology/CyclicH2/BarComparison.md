@@ -76,5 +76,4 @@ The construction is an internal chain-level derivation from Mathlib's
 definitions; it is not a verbatim result of the original literature. The
 values `[]`, `[g]`, and `∑_{i<n} [g^i|g]` and the telescoping argument are the
 comparison design recorded in the published statement
-`Langlands.Cohomology.CyclicH2.CocycleSumComparison`, supplied by Worker 28 and
-documented there by Worker 25. Worker 262 implemented this module.
+`Langlands.Cohomology.CyclicH2.CocycleSumComparison`.

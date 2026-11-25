@@ -2,7 +2,7 @@ import Langlands.Automorphic.Unramified.RelativeWeilAssociation
 
 noncomputable section
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Unramified
 
@@ -22,4 +22,4 @@ theorem IsWeaklyAssociated.of_sameEulerPolynomials {n : ℕ}
   obtain ⟨hs, hm⟩ := hv
   exact ⟨ht, hvst hs ht ▸ hm⟩
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

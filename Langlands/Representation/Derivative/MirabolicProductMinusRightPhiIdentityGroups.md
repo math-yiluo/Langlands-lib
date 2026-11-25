@@ -1,11 +1,9 @@
 # Groups for the identity orbit of the right `Φ⁻` sequence
 
-Author: Worker 837.
-
 This helper module belongs to the proof of the clause
 `Langlands.Derivative.MirabolicProductMinus.RightPhiShortExact.{uF,uV} F T` of
-`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`
-(host task `6cd54f76-f453-4faa-818a-5843e1bbcaff`). It supplies the group data of
+`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`.
+It supplies the group data of
 the published split-stage character comparison at the identity representative,
 and the Haar ratio of that comparison. The identity piece is assembled in
 `Langlands.Representation.Derivative.MirabolicProductMinusRightPhiIdentity`.

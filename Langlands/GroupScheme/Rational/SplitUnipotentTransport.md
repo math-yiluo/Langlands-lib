@@ -1,6 +1,6 @@
 # Transport of actual unipotence and split series
 
-This internal helper unit develops isomorphism transport for the published
+This internal helper module develops isomorphism transport for the published
 actual group-scheme definitions. It uses no external structural theorem.
 Its purpose in the semigroup realization proof is the clause asserting
 unipotence and split unipotence for every representative: once one

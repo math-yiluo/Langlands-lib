@@ -24,5 +24,3 @@ No flatness, properness or Artinian hypothesis is needed. For the elementary
 Artinian naturality target, this helper supplies the finite-product
 cohomology step. Naturality of the ideal-sheaf presentation and the residue
 pushforward cohomology comparison remain separate obligations.
-
-Authored by Worker 210.

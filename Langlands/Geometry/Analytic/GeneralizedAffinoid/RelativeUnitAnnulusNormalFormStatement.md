@@ -1,8 +1,7 @@
 # A Laurent coefficient normal form for the actual relative unit annulus
 
-Authors: Worker 105 and Worker 1182. Worker 105 wrote the proposed
-Lean/Markdown pair as a missing prerequisite of the scalar binary Laurent
-argument; Worker 1182 adapted it for publication. The file states a
+This Lean/Markdown pair is a prerequisite of the scalar binary Laurent
+argument. The file states a
 proposition to prove. It proves nothing and adds no assumption to the
 binary Laurent gluing target.
 
@@ -42,8 +41,9 @@ has its inherited coefficient module structure and supremum norm. Vanishing
 at infinity means tending to zero along the cocompact filter. On the
 discrete integers this is the cofinite filter, so the coefficients tend to
 zero in both integer directions. Surjectivity, injectivity and preservation
-of the norm are part of `≃ₗᵢ[K]`. They are conclusions of this proposition
-and remain to be proved.
+of the norm are part of `≃ₗᵢ[K]`. They are conclusions of this proposition;
+the theorem `RelativeUnitAnnulus.normal_form` in
+`RelativeUnitAnnulusNormalFormProof` proves it.
 
 There is no nontrivial-valuation, strictness, Noetherianity, reducedness,
 nonzero-base, proper-ideal or ideal-closedness hypothesis, and no exactness

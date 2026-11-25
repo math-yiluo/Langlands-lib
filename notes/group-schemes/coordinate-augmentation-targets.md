@@ -1,10 +1,10 @@
 # Actual coordinate augmentation weights and remaining proof targets
 
-This note inventories the constructions and precise proposition targets of task
-`7a21605a-8f42-4554-8610-b8fdf28b233d`. The mathematical entries are separate
-construction and statement submissions. A proposition declaration records an
+This note inventories the constructions and precise proposition targets of the coordinate
+weight and augmentation formalization. The mathematical entries are separate
+construction and statement modules. A proposition declaration records an
 obligation; it does not supply a proof. Each of the seven target groups below
-has a published focused proof successor.
+is proved in the Library.
 
 The source is Conrad–Gabber–Prasad, *Pseudo-reductive Groups*, second edition
 (2015), §3.3, printed pp.107–108 / PDF pp.133–134, especially Example 3.3.2.
@@ -41,20 +41,18 @@ inserted automatically. Coordinate support remains distinct from the original
 
 ## Exact outstanding propositions
 
-Each successor uses policy `lean.proof@1`, pins environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, and requires publication of its exact
-statement. All targets retain arbitrary universe `u` and all field
+All targets retain arbitrary universe `u` and all field
 characteristics.
 
-| Exact declaration after `Langlands.GroupScheme.` | Module | Remaining conclusion | Proof successor task |
+| Exact declaration after `Langlands.GroupScheme.` | Module | Remaining conclusion | Proof in the Library |
 | --- | --- | --- | --- |
-| `CoordinateWeights.CoordinateWeightDecompositionStatement` | `CoordinateWeightDecompositionStatement` | For split-torus actions on affine groups, internal direct sums of coordinate, augmentation and cotangent eigenspaces, and same-character lifts from cotangent to augmentation. | `ccddf7a7-e580-4d6a-9009-75424a7e54c1` |
-| `CoordinateWeights.CoordinateLieComparisonStatement` | `CoordinateLieComparisonStatement` | The three actual kernel-duality, action-pairing and support comparisons detailed below. | `e1a78681-725a-40f5-af98-93856cb7ac28` |
-| `CoordinateWeights.CoordinateSemigroupComparisonStatement` | `CoordinateSemigroupStatement` | For smooth connected affine groups and split tori, the positive-semigroup equality and equivalent containment criterion detailed below. | `afd5b210-636d-4e7b-a143-0bc11df29d9b` |
-| `CoordinateWeights.CotangentPullbackStatement` | `CoordinateCotangentPullbackStatement` | Actual equivariant group pullback preserves each cotangent weight space; actual equivariant group isomorphisms preserve cotangent support. | `f664e382-76db-4c65-bc03-4254ea82e431` |
-| `PointedCoordinateWeights.PointedCoordinateDecompositionStatement` | `PointedCoordinateDecompositionStatement` | For actual split-torus actions on arbitrary pointed affine schemes, internal direct sums of the coordinate and fixed-point augmentation eigenspaces. | `4e087cc6-722e-47e9-a978-3f120cb386bc` |
-| `PointedCoordinateWeights.DominantPullbackStatement` | `DominantPullbackStatement` | A dominant morphism of actual affine schemes with reduced target gives injectivity of the specified coordinate pullback. | `1f93b03c-7810-4fc3-a4e3-f213ae57e74b` |
-| `PointedCoordinateWeights.ClosedImmersionPullbackStatement` | `ClosedImmersionPullbackStatement` | An actual pointed equivariant closed immersion for a split torus gives coordinate and augmentation surjectivity, images equal to the same-character weight spaces, augmentation weightwise lifts, and source support contained in target support. | `536e7301-29bf-425e-abdc-bbe53e5620d4` |
+| `CoordinateWeights.CoordinateWeightDecompositionStatement` | `CoordinateWeightDecompositionStatement` | For split-torus actions on affine groups, internal direct sums of coordinate, augmentation and cotangent eigenspaces, and same-character lifts from cotangent to augmentation. | `coordinateWeightDecomposition` (`Rational/CoordinateWeightDecompositionProof.lean`) |
+| `CoordinateWeights.CoordinateLieComparisonStatement` | `CoordinateLieComparisonStatement` | The three actual kernel-duality, action-pairing and support comparisons detailed below. | `coordinateLieComparison` (`Rational/CoordinateLieComparisonProof.lean`) |
+| `CoordinateWeights.CoordinateSemigroupComparisonStatement` | `CoordinateSemigroupStatement` | For smooth connected affine groups and split tori, the positive-semigroup equality and equivalent containment criterion detailed below. | `coordinateSemigroupComparison` (`Rational/CoordinateSemigroupProof.lean`) |
+| `CoordinateWeights.CotangentPullbackStatement` | `CoordinateCotangentPullbackStatement` | Actual equivariant group pullback preserves each cotangent weight space; actual equivariant group isomorphisms preserve cotangent support. | `cotangentPullbackStatement` (`Rational/CoordinateCotangentPullbackProof.lean`) |
+| `PointedCoordinateWeights.PointedCoordinateDecompositionStatement` | `PointedCoordinateDecompositionStatement` | For actual split-torus actions on arbitrary pointed affine schemes, internal direct sums of the coordinate and fixed-point augmentation eigenspaces. | `pointedCoordinateDecomposition` (`Rational/PointedCoordinateDecompositionProof.lean`) |
+| `PointedCoordinateWeights.DominantPullbackStatement` | `DominantPullbackStatement` | A dominant morphism of actual affine schemes with reduced target gives injectivity of the specified coordinate pullback. | `dominantPullbackStatement` (`Rational/DominantPullbackProof.lean`) |
+| `PointedCoordinateWeights.ClosedImmersionPullbackStatement` | `ClosedImmersionPullbackStatement` | An actual pointed equivariant closed immersion for a split torus gives coordinate and augmentation surjectivity, images equal to the same-character weight spaces, augmentation weightwise lifts, and source support contained in target support. | `closedImmersionPullback` (`Rational/ClosedImmersionPullbackProof.lean`) |
 
 The Lie-comparison conjunction contains the exact declarations
 `CoordinateWeights.KernelCotangentDualityStatement`,
@@ -100,4 +98,4 @@ These interfaces serve `RelativeRoot.SemigroupCommutatorStatement` and
 without assuming either consumer conclusion. All-test stability of the concrete
 commutator image and the support calculation for its finite products are
 separate consumer obligations. Completing the construction and statement
-publications does not discharge the seven proof successors above.
+publications did not prove the seven targets above; the Library proves them separately (table of proposition targets).

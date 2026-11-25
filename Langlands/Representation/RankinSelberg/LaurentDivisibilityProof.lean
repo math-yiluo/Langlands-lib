@@ -5,7 +5,7 @@ import Langlands.Representation.RankinSelberg.LaurentDivisibilityStatement
 
 The three published algebraic criteria, using the Laurent action through
 `laurentToRatFunc`. Denominator clearing and the coprimality calculation adapt
-Worker 31's proofs in `RationalZeta`; no private declaration is used.
+the proofs in `RationalZeta`; no private declaration is used.
 -/
 
 noncomputable section

@@ -24,17 +24,17 @@ variable {S S' : Scheme.{u}} (b : S' ⟶ S) {A B : AbelianScheme S}
   {D : Type v} [Ring D] [Algebra ℚ D]
   (iA : D →ₐ[ℚ] End0 A) (iB : D →ₐ[ℚ] End0 B)
   (e : Rationalization.of A ≅ Rationalization.of B)
-  (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-    Rationalization.comp A B B e.hom (iB d))
+  (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+    Rationalization.comp A B B e.hom (iB d).asHom)
 
 include he
 
 /-- Actual rational pullback preserves intertwining of algebra actions. -/
 theorem rationalIntertwines_baseChange (d : D) :
-    Rationalization.comp _ _ _ (((rationalBaseChangeEnd b A).comp iA) d)
+    Rationalization.comp _ _ _ (((rationalBaseChangeEnd b A).comp iA) d).asHom
         (rationalBaseChangeIso b e).hom =
       Rationalization.comp _ _ _ (rationalBaseChangeIso b e).hom
-        (((rationalBaseChangeEnd b B).comp iB) d) := by
+        (((rationalBaseChangeEnd b B).comp iB) d).asHom := by
   simpa only [rationalBaseChangeHom_comp, AlgHom.comp_apply,
     rationalBaseChangeEnd_apply, rationalBaseChangeIso_hom] using
     congrArg (rationalBaseChangeHom b) (he d)
@@ -109,8 +109,8 @@ local notation "multipleb" => IsRationalDualPullbackMultiple preservation compos
   hAb hBb geometryAb geometryBb MAb evaluationAb MBb evaluationBb additivityb
 
 variable (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-  (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-    Rationalization.comp A B B e.hom (iB d))
+  (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+    Rationalization.comp A B B e.hom (iB d).asHom)
   (hqe : IsRationalDualPullbackMultiple preservation composition unitCoherence associativity comparison symmetry stability
     hA hB geometryA geometryB MA evaluationA MB evaluationB additivity (q : ℚ) e.hom
     (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))

@@ -45,7 +45,7 @@ presheaf braiding naturality. This lemma was moved unchanged from
 foundational tensor proofs can reuse it. `tensorLeftUnitor M` and
 `tensorRightUnitor M` sheafify the respective presheaf unit isomorphism and
 then compose with the counit isomorphism. These are actual isomorphisms;
-this file does not yet package them into a monoidal structure.
+this file does not package them into a monoidal structure.
 
 `tensorPow M 0` is `structureSheaf X`, and
 `tensorPow M (n + 1)` is `tensorObj M (tensorPow M n)`.
@@ -80,14 +80,15 @@ its adjunction, and the invertible counit, and
 `Algebra/Category/ModuleCat/Presheaf/Monoidal.lean` for sectionwise tensors,
 symmetry, and unit isomorphisms. Tensor powers and their maps are internal
 recursive definitions from the tensor and unit just constructed.
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+The file was written against Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`.
 
 ## Remaining obligations
 
 An associator and the symmetric monoidal coherence laws, as well as tensor
-and unit comparisons for scheme pullback and their coherence, remain separate
-units. The published proposition
+and unit comparisons for scheme pullback and their coherence, are not part
+of this module: they are in `TensorMonoidal` and `TensorCoherenceMaps`, and
+in `PullbackTensor`, `PullbackUnit` and `PullbackMonoidal`. The published proposition
 `Langlands.Scheme.Modules.tensorLocalEquivalencesIsMonoidalStatement`
 records the prerequisite for the intended monoidal localization route;
-it is not assumed or used by this module. This definition contribution alone
-does not complete the tensor and monoidal pullback task.
+it is not assumed or used by this module.

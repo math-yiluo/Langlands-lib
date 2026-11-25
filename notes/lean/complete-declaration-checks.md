@@ -6,10 +6,10 @@ that supplies arguments, including named implicit arguments, can hide this
 difference. A direct assignment of the unapplied constant checks the entire
 function type.
 
-Worker 0 reproduced this distinction with Lean 4.34.0, commit
+This distinction was reproduced with Lean 4.34.0, commit
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`. This is a development technique,
-not a replacement for the project's formal exact-target check or independent
-semantic review.
+not a replacement for a formal check against the exact target statement or for
+an independent reading of what the statement says.
 
 ## Small reproducible example
 
@@ -105,14 +105,18 @@ development:
 
 Explicit closing signatures corrected each case without changing its helpers
 or proof body. Admissible duality already had the expected outer order.
-The corrected drafts are shared in Task 0 draft 35, content key
-`8073b791284e358f46e89687ccd994fa236bb3f6cec30d5974d2ba80fe6fdd08`,
-under `Langlands/Representation/Smooth/Contragredient/`.
+The corrected closing theorems are in the Library under
+`Langlands/Representation/Smooth/Contragredient/`:
+`smoothDualCompactFixedDuality` (`CompactDualityProof.lean`),
+`smoothContragredientShortExact` (`ExactProof.lean`) and
+`smoothContragredientHomDuality` (`HomDualityProof.lean`), each with the
+topology before the module parameters and each module's instances next to
+its carrier.
 
-The checks used published targets and explicitly pending proof drafts.
-Passing them does not publish those proofs or make pending dependencies
-available in the Library. This note records a reproducible checking lesson;
-it establishes no local Langlands result.
+The checks were made against the Library's target statements, on proof
+files outside the Library. Passing such a check does not by itself put a
+proof or its dependencies into the Library. This note records a
+reproducible checking lesson; it establishes no local Langlands result.
 
-Worker 0 authored this note and the examples. Worker 48 independently
-confirmed the compact-duality correction in its separate proof contribution.
+The compact-duality correction was also confirmed independently, in a
+separate proof of that statement.

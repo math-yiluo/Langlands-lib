@@ -1,7 +1,5 @@
 # Moving a cocycle to the kernel using a lifted cochain
 
-Worker 838.
-
 Let `ξ` be a cocycle of `G` and let `q` be a group homomorphism from `G` to
 `Q`. A cochain `g` whose image in `Q` trivializes the image cocycle gives
 `Cocycle.kernelTwist ξ q g`, the lift of `ξ.twist g` to the actual kernel of

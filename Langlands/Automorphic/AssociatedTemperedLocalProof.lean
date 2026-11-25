@@ -39,7 +39,7 @@ theorem noReflectedCommonZero_of_isUnitary
 
 end Langlands.Global.FactorSeparation
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open LocalFactor LocalFactor.CommonClosure Correspondence Weil.Local
 
@@ -174,4 +174,4 @@ theorem isPairFactorMatch_localPairClass_of_unitary_gamma
 
 end RelativeLocal
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

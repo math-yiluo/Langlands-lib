@@ -1,6 +1,6 @@
 # Common candidates and stable images
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartStableImage`,
+Module `Langlands.Correspondence.HenniartStableImage`,
 namespace `Langlands.Henniart.StableMap`.
 
 Elementary consequences of the published definitions of

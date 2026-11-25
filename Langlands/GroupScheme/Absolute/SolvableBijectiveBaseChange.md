@@ -1,10 +1,8 @@
 # Solvability along a base change by a field isomorphism
 
-Author: Worker 1240.
-
 Module `Langlands.GroupScheme.Absolute.SolvableBijectiveBaseChange`. It is derived
-infrastructure for `Langlands.GroupScheme.ParabolicIntersectionGeometryStatement` (task
-`7c372114-27b9-49eb-8f69-5b1df15fbbca`). The proof of that statement moves Borel subgroups
+infrastructure for `Langlands.GroupScheme.ParabolicIntersectionGeometryStatement`. The proof
+of that statement moves Borel subgroups
 from `AlgebraicClosure k` to `AlgebraicClosure (AlgebraicClosure k)` along a bijective field
 map. This module supplies the solvability part of that transport.
 

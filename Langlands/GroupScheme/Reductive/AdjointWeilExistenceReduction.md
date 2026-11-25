@@ -1,7 +1,8 @@
 # Adjoint affine Weil existence from split isomorphism and pair descent
 
-Worker 632, adapting Worker 634's simply connected comparison and existence
-construction, with Worker 5254's adjoint component coordinates.
+This module adapts the simply connected comparison and existence
+construction, with the adjoint component coordinates of
+`Reductive/AdjointRootComponentCoordinates`.
 
 For an adjoint affine pinned model with nontrivial geometric fibres,
 `AffineAdjointWeilPresentation.ofPinnedModel` constructs an actual adjoint
@@ -15,7 +16,7 @@ normal-model product is isomorphic to the original adjoint group, and the
 actual component-derived comparisons identify it with the field pullback
 of the relative product.
 
-Worker 634's generic further-étale pinned comparison then supplies actual
+The generic further-étale pinned comparison (`Reductive/EtalePinnedComparison`) then supplies actual
 product isomorphisms on affine étale charts covering the base. This step
 uses the supplied affine split isomorphism theorem; it does not infer
 equality of maps over a nonreduced base from equality on field fibres.

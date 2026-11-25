@@ -1,19 +1,17 @@
 # The first bound of Proposition VI.3.1 for actual standard parabolic subgroups
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacketDecay`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacket` (this
-  author's Unit 20, candidate `32489085-08ba-4b12-be15-d1eee77e42b3`). It provides:
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacket`. It
+  provides:
   - the wave packet `rationalInducedOrbitWavePacket` (`f_ψ`) and the space
     `rationalInducedSmoothOrbitSections` (`C^∞(O, P)`);
   - the circle coordinates `leviRationalUnitaryCoordinates` on `Im X(M_I)`, with
     `leviRationalUnitaryCoordinates_hasLaurent`;
   - `isConnectedReductive_leviScheme_rootSet`.
 
-  Through its imports (Unit 19, candidate `181a067e`, and the published Units 11–14) come the
+  Through its imports (`RationalInducedCoefficients` and the modules below it) come the
   actual data of `P_I(F)`:
   - `isSemidirectDecomposition_standard`, `isClosed_standardUnipotentPoints`,
     `isClosed_standardParabolicPoints_rootSet`, `exists_standardParabolicPoints_rootSet_mul`,
@@ -21,10 +19,10 @@ namespace `Langlands.HarishChandraSchwartz`. It imports:
   - `modularCharacter_standardParabolicPoints`, `isUnimodularModulus_standardUnipotentPoints`;
   - `rationalLeviData`, `rationalLeviXi`, `compactSpace_subgroupOf_standardLevi`;
   - `rationalXi`, `rationalMinimalModulus_eq_one`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacketDecay` (Worker 249): the
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.OrbitWavePacketDecay`: the
   abstract bound `exists_norm_inducedOrbitWavePacket_le_xi_rpow`. Through its imports come
   `torusCharacter`, `finiteTorusMonomial` and `IsSmoothFiniteTorusFunction`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalValuationCoordinates` (Worker 249).
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalValuationCoordinates`.
   It provides:
   - the lattice coordinates `rationalValuationCoordinates G hG` (`n_G(g) ∈ ℤ^r`), with
     `rationalValuationCoordinates_mul`, `rationalValuationCoordinates_one`,
@@ -47,8 +45,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on the
-text of PDF pages 5, 6 and 69.
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the text
+of PDF pages 5, 6 and 69.
 
 - I.1, printed pp. 239–240: "On pose `Im X(G) = {χ ∈ X(G); Re(χ) = 0}`. C'est le sous-ensemble
   des éléments unitaires de `X(G)`." and "On définit un homomorphisme `H_G : G → 𝔞_G` par la
@@ -175,17 +173,17 @@ Here `j : M_I → G` is the Levi inclusion `Standard.leviHom`.
 ## Proofs
 
 The main theorem applies `exists_norm_inducedOrbitWavePacket_le_xi_rpow` with:
-- the actual data of `P_I(F)`, as in Unit 20;
+- the actual data of `P_I(F)`, as in `RationalInducedOrbitWavePacket`;
 - `nG = rationalValuationCoordinatesHom G hG` and `a = leviValuationRestrictionMatrix`;
 - `hnK`, `hnU`, `hnM` from the three lemmas above;
 - the Laurent property and continuity of `leviRationalUnitaryCoordinates`;
-- the structural hypotheses of Lemma VI.2.2 used in Unit 20.
+- the structural hypotheses of Lemma VI.2.2 used in `RationalInducedOrbitWavePacket`.
 
 The two sides then differ only by:
 - `Ξ = xi hPK δ₀` (definition of `rationalXi`);
 - `toAdd (nG g) = n_G(g)` (by `rfl`).
 
-As in Unit 20, the definition `rationalInducedOrbitWavePacket` is unfolded. The final step is
+As in `RationalInducedOrbitWavePacket`, the definition `rationalInducedOrbitWavePacket` is unfolded. The final step is
 `with_reducible_and_instances exact`, because the remaining differences are instance terms.
 
 ## Scope and hypotheses
@@ -197,6 +195,6 @@ As in Unit 20, the definition `rationalInducedOrbitWavePacket` is unfolded. The 
   formalized.
 - `K`, `hKc`, `hPK` and `hM` are data (ledger rows S3 and S5). `hcoeff` is a hypothesis: for `π`
   square integrable modulo the centre, it is the conclusion of Corollary III.1.2
-  (`RationalSquareIntegrableRapidDecayStatement`, not yet proved).
+  (`RationalSquareIntegrableRapidDecayStatement`, proved as `rationalSquareIntegrableRapidDecay`).
 - The remaining steps of Proposition VI.3.1 are not treated here: the estimates near the walls
   through constant terms, and the conclusion `f_ψ ∈ C(G)`.

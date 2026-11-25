@@ -25,30 +25,22 @@ input, and it uses no hypothesis besides them. Both inputs keep their published
 universes. In particular, Renard VI.3.5 is used only at carrier universe
 `max (u + 1) v`. The module imports only published modules.
 
-## Authors
+Steps 4a, 4b and 6 are written out as local steps, so that the module does not
+import the modules that prove them as theorems.
 
-- Worker 29, with Worker 3640 (Task 3640, block (iii)), wrote the proof route
-  (steps 1–3 and 5 below). Worker 29 also wrote the canonical specialization in
-  step 6, which this file transcribes from the shared draft of Task 6425
-  (`d7477c1e-06c2-43ec-9035-3eb6b594058b`, theorem
-  `canonicalRationalCorrectedTheorem36_of_rational`).
-- Worker 4193 wrote step 4a, applying the generic reduction of Worker 379. This
-  file transcribes it from the shared draft of Task 6582
-  (`f7b6068d-c312-487a-b08f-72f5382bd5fb`), which reuses it from Task 4193.
-- Worker 128 wrote step 4b, and Worker 4194 checked it. It applies Worker 499's
-  generic exactness reduction. This file transcribes it from the shared draft of
-  Task 6583 (`e9fddf52-5367-4151-a290-413d98622e89`), which reuses it from
-  Task 4194.
-- Worker 445 (Task 6557) inlined steps 4a, 4b and 6 as local steps, so that the
-  module depends only on published modules, and wrote this Markdown.
-
-Steps 4a and 4b prove the unconditional conclusions of the published block (ii)
+Steps 4a and 4b prove the unconditional conclusions of the published
 reduction statements `RationalSupportCategoryZeroDetectionReductionStatement`
 and `RationalSupportCategoryExactnessDetectionReductionStatement`
 (`RationalDetectionFiniteLengthReductionStatements`) from the inputs of this
 proof. They are local `have` steps, not public theorems. They do not prove
-those statements as Library declarations, and Tasks 6582 and 6583 keep that
-work. Step 6 likewise does not prove the bridge statement of Task 6425.
+those statements as Library declarations; the Library proves them as
+`rationalSupportCategoryZeroDetectionReduction`
+(`RationalSupportCategoryZeroDetectionProof`) and
+`rationalSupportCategoryExactnessDetectionReduction`
+(`RationalSupportCategoryExactnessReduction`). Step 6 is the same
+specialization as `canonicalRationalCorrectedTheorem36_of_rational`; it likewise
+does not prove the bridge statement `CanonicalRationalComplexTargetBridgesStatement`,
+which `CanonicalRationalComplexTargetBridgesProof` proves.
 
 ## Proof
 
@@ -82,7 +74,7 @@ at universes `.{u, v}` unless stated otherwise.
 4. **Detection on the support categories.**
    - 4a, zero detection (`hzero : RationalSupportCategoryZeroDetectionStatement`).
      First, `rationalSupportCategoryIrreducibleJacquetDetection_of_cuspidalFactors`
-     (Worker 658, `RationalIrreducibleJacquetFactorDetection`) applied to
+     (`RationalIrreducibleJacquetFactorDetection`) applied to
      step 1 gives the irreducible Jacquet detection proposition `hirr`. Then
      the proof introduces the field, group, torus and the explicit premises of
      the zero-detection target. It installs `pointTopology` on the rational
@@ -90,17 +82,17 @@ at universes `.{u, v}` unless stated otherwise.
      `simpleRelativeRootFintype i hRoots hi.isSplitSubtorus.1 ν`. Finally it
      applies the generic reduction
      `supportCategoryZeroDetection_of_irreducibleJacquetDetection`
-     (Worker 379, `SupportCategoryReductions`) to two arguments:
+     (`SupportCategoryReductions`) to two arguments:
      - the compact-limit property of every standard unipotent subgroup,
        `standardUnipotent_isLimitOfCompactSubgroups_of_standardCocharacterStatement`
-       (Worker 480, `RationalUnipotentRegularity`), proved from the displayed
+       (`RationalUnipotentRegularity`), proved from the displayed
        standard-cocharacter premise `hStandard`;
      - `hirr` at the same data.
    - 4b, exactness detection
      (`hdet : RationalSupportCategoryExactnessDetectionStatement`). The proof
      introduces the same data and instances as in 4a. It applies
      `ExactnessDetection.supportCategoryExactnessDetection_of_zeroDetection`
-     (Worker 499, `SupportCategoryExactnessReduction`) to the same
+     (`SupportCategoryExactnessReduction`) to the same
      compact-limit argument and to `hzero` at the same data.
 5. **Corrected Theorem 3.6 with explicit structural premises**
    (`hrat : RationalCorrectedTheorem36Statement`).
@@ -142,7 +134,6 @@ and `Langlands/GroupScheme/Rational/`.
 
 ## Check
 
-The module compiles in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`
-over Library commit `c40a01345b2f4172fa41e07ff31644b40e695003` with no errors
+The module compiles over Library commit `c40a01345b2f4172fa41e07ff31644b40e695003` with no errors
 or warnings and with no `set_option`. The theorem's axioms are `propext`,
 `Classical.choice` and `Quot.sound`.

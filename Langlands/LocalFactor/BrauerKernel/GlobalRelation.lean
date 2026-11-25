@@ -9,7 +9,7 @@ universe uF uV u
 
 namespace Langlands.LocalFactor.NonabelianBrauer
 
-open CommonClosure VirtualRepresentation ClassField.Global ClassField.Global.RelativeWeilGroup
+open CommonClosure VirtualRepresentation ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup
 
 variable {p : ℕ} [Fact p.Prime] {F : PadicField.{uF} p} {e : ReciprocityFamily F}
   {z : Presentation F (Correspondence.baseExtension F)}
@@ -60,7 +60,7 @@ def globalCharacter (h : FundamentalClass.Restriction c)
     (g : Generator F (Correspondence.baseExtension F))
     (χ : @galoisImage p _ F D.K D.normal g.extension →* ℂˣ) :
     RelativeWeilGroup c (globalField D k K' θ g) K' →ₜ* ℂˣ :=
-  (ClassField.Global.RelativeWeilGroup.galoisCharacter c k K' (globalSubgroup D k K' θ g)
+  (ClassFieldTheory.Global.RelativeWeilGroup.galoisCharacter c k K' (globalSubgroup D k K' θ g)
       (globalSubgroupCharacter D k K' θ g χ)).comp
     (ExactGrothendieckGroup.codRestrictOfRange
       (restrictionInclusion c k K' (globalField D k K' θ g) h) _
@@ -78,7 +78,7 @@ theorem inflate_induce_globalSubgroup (g : Generator F (Correspondence.baseExten
       ExactGrothendieckGroup.continuousInduce (galoisPreimage c k K' (globalSubgroup D k K' θ g))
         (isOpen_galoisPreimage c k K' _)
         (ExactGrothendieckGroup.characterClass.{u, max u uV}
-          (ClassField.Global.RelativeWeilGroup.galoisCharacter c k K' (globalSubgroup D k K' θ g)
+          (ClassFieldTheory.Global.RelativeWeilGroup.galoisCharacter c k K' (globalSubgroup D k K' θ g)
             (globalSubgroupCharacter D k K' θ g χ))) :=
   ExactGrothendieckGroup.inflate_ofClass_induce (globalQuotient D c k K' θ)
     (isOpen_ker_globalQuotient D c k K' θ) (globalQuotient_surjective D c k K' θ)
@@ -88,7 +88,7 @@ theorem inflate_induce_globalSubgroup (g : Generator F (Correspondence.baseExten
       (isOpen_galoisPreimage c k K' _) hA)
     (FiniteRep.oneDimensional χ)
     (FiniteRepresentation.characterLine.{u, max u uV}
-      (ClassField.Global.RelativeWeilGroup.galoisCharacter c k K' (globalSubgroup D k K' θ g)
+      (ClassFieldTheory.Global.RelativeWeilGroup.galoisCharacter c k K' (globalSubgroup D k K' θ g)
         (globalSubgroupCharacter D k K' θ g χ)).toMonoidHom)
     (FiniteRepresentation.characterLine_isContinuous _)
     (ULift.moduleEquiv : ULift.{max u uV} ℂ ≃ₗ[ℂ] ℂ).symm (fun _ _ => rfl)

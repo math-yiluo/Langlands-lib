@@ -1,6 +1,6 @@
 # The corank-one functional equation against unitary spherical functions
 
-Author: Worker 5008. This module defines one proposition,
+This module defines one proposition,
 `Langlands.Conductor.SphericalCorankOneFunctionalEquationStatement`
 (universes `uF`, `uV`). It is a statement only: nothing here proves it, and no
 declaration assumes it.
@@ -8,10 +8,13 @@ declaration assumes it.
 It is the identity that Jacquet, Piatetski-Shapiro and Shalika (1981) use in
 (4.2) and again in (5.3), for an irreducible generic `π` of `GL_r(F)` and the
 spherical Whittaker functions of the unramified unitary principal series of
-`GL_(r-1)(F)`. It was split out of Task 5548 (the proof of the published
-`EssentialDualComparisonStatement`), because the Library has no
+`GL_(r-1)(F)`. It is the analytic input of the proof of the published
+`EssentialDualComparisonStatement`, stated separately because it needs the
 Rankin–Selberg functional equation with multiplicativity of gamma factors over
-an arbitrary nonarchimedean local field.
+an arbitrary nonarchimedean local field. The theorem
+`Langlands.Conductor.sphericalCorankOneFunctionalEquation`, in
+[`SphericalCorankOneFunctionalEquationProof`](SphericalCorankOneFunctionalEquationProof.md),
+proves it.
 
 ## Statement
 
@@ -224,7 +227,9 @@ power series form of display (1).
 
 ## Intended use
 
-Task 5548 proves `EssentialDualComparisonStatement` from this statement and
+`essentialDualComparison_of_functionalEquation`
+([`EssentialDualComparisonBridge`](EssentialDualComparisonBridge.md)) proves
+`EssentialDualComparisonStatement` from this statement and
 the mirabolic restriction injectivity of generic representations. For an
 essential vector `w` of `π` (identity `∏ P(xᵢ q^(-s))⁻¹`) the statement with
 `v` the vector of `w` makes the dual integral of `W̃` against `W(g; x⁻¹; ψ)` a
@@ -244,7 +249,7 @@ and `UnitaryAdditiveCharacter.scale`.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `bb168ec3` with no
+The module compiles with no
 errors or warnings. The declaration was inspected: it returns `Prop`, has
 universe parameters `uF uV`, and uses only `propext`, `Classical.choice` and
 `Quot.sound`. There is no `sorry` and no new axiom.

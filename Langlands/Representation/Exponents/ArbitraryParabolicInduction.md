@@ -1,10 +1,10 @@
 # Normalized induction and split-component exponents for represented parabolics
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.ArbitraryParabolicInduction`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
+Module `Langlands.Representation.Exponents.ArbitraryParabolicInduction`, namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VII.1.1, printed pp.220–221 / PDF pp.226–227. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Normalized induction is VI.1.2, printed p.135 / PDF p.141, with the modular-function remark on printed p.136 / PDF p.142.
 
-VII.1.1 compares three characteristic-space decompositions: that of `r_P^G V` under `A`, that of a Levi representation `W` under `A_M`, and that of a representation of `G` (in particular `i_P^G W`) under `A_G`. The published module `ArbitraryParabolic` already defines the first. This module supplies the other two and the functor `i_P^G` for the same represented parabolic data. It is a definition unit: it states and proves only the structural facts needed to build these objects. No decomposition, finiteness or induction/restriction comparison from VII.1.1 is asserted here.
+VII.1.1 compares three characteristic-space decompositions: that of `r_P^G V` under `A`, that of a Levi representation `W` under `A_M`, and that of a representation of `G` (in particular `i_P^G W`) under `A_G`. The published module `ArbitraryParabolic` already defines the first. This module supplies the other two and the functor `i_P^G` for the same represented parabolic data. It is a definition module: it states and proves only the structural facts needed to build these objects. No decomposition, finiteness or induction/restriction comparison from VII.1.1 is asserted here.
 
 ## Actual objects and hypotheses
 
@@ -73,4 +73,4 @@ These definitions are stated for all smooth representations; Renard's VII.1.1 us
 | `V_χ`, `Exp(A_G, V)` | `groupWeightSpace`, `IsGroupExponent`, `groupExponents`, `mem_groupWeightSpace` |
 | `Exp(A, r_P^G V) = Exp(A_M, r_P^G V)` | `normalizedJacquetExponents_eq_leviExponents` |
 
-The point-level decomposition, the functor wrapper and the two weight-space packagings are derived implementation content, needed to formulate (VII.1.1.1), the `P = G` remark and the lemma for an arbitrary represented parabolic. Their definitions agree with Renard's at admissible inputs and extend them to smooth ones. This unit does not establish admissibility of `i_P^G` or `r_P^G`, the characteristic-space decompositions, finiteness of exponents for finite length, the comparison with III.1.10, the inclusion `A_G ⊂ A_M`, or either part of the lemma. Those are separate statements.
+The point-level decomposition, the functor wrapper and the two weight-space packagings are derived implementation content, needed to formulate (VII.1.1.1), the `P = G` remark and the lemma for an arbitrary represented parabolic. Their definitions agree with Renard's at admissible inputs and extend them to smooth ones. This module does not establish admissibility of `i_P^G` or `r_P^G`, the characteristic-space decompositions, finiteness of exponents for finite length, the comparison with III.1.10, the inclusion `A_G ⊂ A_M`, or either part of the lemma. Those are separate statements.

@@ -1,6 +1,6 @@
 # Renard II.1.3: products of t.d. spaces, tensor products and Fubini
 
-Author: Worker 1219. This file gives closed proposition definitions for the
+This file gives closed proposition definitions for the
 assertions of David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, subsection II.1.3 "Produit
 tensoriel de distributions", printed page 32 / PDF page 38. The whole
@@ -131,8 +131,8 @@ two rectangle targets above. It is not restated here.
 `TensorLinearMapBijective` states that the published canonical map
 `SchwartzBruhat.tensorLinearMap` is bijective. This expresses the source's
 linear isomorphism D(X)⊗D(Y) ≃ D(X×Y) through the map given by the
-source's formula. No inverse map or `LinearEquiv` is chosen. A later proof
-may build one from this bijectivity.
+source's formula. No inverse map or `LinearEquiv` is chosen. One can be
+built from this bijectivity.
 
 ## The distribution targets
 
@@ -197,9 +197,10 @@ the disjoint refinement of II.1.1 (ii), "les intégrales se ramènent à des
 sommes finies", and the proof of the support proposition. The support
 proof restricts T1⊗T2 to an open rectangle U×V and identifies the result
 with T1,U⊗T2,V. That identification is an intermediate step of the proof,
-not a separate stated result. This unit leaves it to the support-product
-proof, which may state and prove it over `Distribution.restrictOpen`.
+not a separate stated result, and this module does not state it.
 The geometric and tensor-map proofs, the uniqueness and Fubini proofs and
-the support-product proofs are left to later proof tasks over these exact
-public declarations. The vector-valued II.1.2 maps (II.1.2.3)–(II.1.2.4)
-belong to a separate unit and are not stated here.
+the support-product proofs are in
+[TensorProductProof](TensorProductProof.md) (theorem `assertions`), over
+these exact public declarations; its support-product proof tests directly
+with external products and does not use that identification. The vector-valued II.1.2 maps (II.1.2.3)–(II.1.2.4)
+belong to a separate module and are not stated here.

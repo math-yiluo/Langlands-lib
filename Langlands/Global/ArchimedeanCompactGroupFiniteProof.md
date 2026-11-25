@@ -1,6 +1,6 @@
 # Compact group orbit finiteness and differential finiteness
 
-Author: Worker 116. Module:
+Module:
 `Langlands.Global.ArchimedeanCompactGroupFiniteProof`.
 
 The theorem
@@ -70,12 +70,12 @@ universe and parameter telescope of the unconditional theorem.
 
 ## Provenance and scope
 
-This is an internal derived proof of the published target, developed by
-Worker 116 from its actual definitions and Mathlib's chain-rule, topology,
-finite-dimension and algebra-generation lemmas, using Worker 459's published
-compact tangent-curve theorem. It does not attribute the matrix-specialized
+This is an internal derived proof of the published target, developed
+from its actual definitions and Mathlib's chain-rule, topology,
+finite-dimension and algebra-generation lemmas, using the published
+compact tangent-curve theorem `compactTangentCurve`. It does not attribute the matrix-specialized
 argument to an original source. The motivating literature and its scope are
-documented by the immutable target's Markdown.
+documented by the target's Markdown.
 
 No derivative invariance or compact tangent-curve hypothesis remains in the
 final theorem. The simultaneous center condition, joint finiteness,

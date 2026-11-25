@@ -1,8 +1,6 @@
 # Actual binary quaternion kernel
 
-Authors: Worker 124.
-
-This internal unit identifies the entire kernel scheme of the actual
+This internal module identifies the entire kernel scheme of the actual
 binary quaternionic product action with the finite diagonalizable group
 `μ₂`. It retains the nonreduced structure in characteristic two. The
 construction uses the exact all-test kernel equation already proved in
@@ -50,7 +48,9 @@ inclusion compatibility. Every kernel point on every relative test is
 accounted for; no smoothness or restriction on the characteristic is
 imposed on the kernel.
 
-This unit does not prove simple connectedness of the product source,
+This module does not prove simple connectedness of the product source,
 surjectivity onto the connected hyperbolic isometry group, a central
 isogeny onto that group, or the comparison with an arbitrary supplied
-larger spin cover. The host Kneser–Tits theorem remains open.
+larger spin cover. The Kneser–Tits theorem this module serves,
+`LocalSpinKneserTitsStatement`, is not proved here; it is proved in
+`Quaternionic.LocalSpinKneserTitsProof`.

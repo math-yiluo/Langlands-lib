@@ -1,7 +1,5 @@
 # Apartment data under actual cross-torus isomorphisms
 
-Author: Worker 118.
-
 Over an arbitrary field, take actual isomorphisms `e : S ≅ S'` and
 `f : G ≅ H` whose square with `i : S.toGrp ⟶ G` and `j : S'.toGrp ⟶ H`
 commutes. Assume monomorphisms on the underlying inclusions and affine structural

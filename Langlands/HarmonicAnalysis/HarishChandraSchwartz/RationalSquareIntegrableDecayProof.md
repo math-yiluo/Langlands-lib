@@ -1,8 +1,7 @@
 # Proof of Waldspurger's Corollary III.1.2 on actual rational points
 
-Author: Worker 128, task `7f9ba483-3cd4-4733-a87b-b5651bdbd06a` (Task 5461, revision 1). The
-height bound used in the last step is the helper module `RationalCartanCellHeight`, by Worker 106
-(with general lemmas by Worker 128), which is submitted together with this module.
+The height bound used in the last step is the helper module `RationalCartanCellHeight`, which is
+ported together with this module.
 
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalSquareIntegrableDecayProof`,
 namespace `Langlands.HarishChandraSchwartz`.

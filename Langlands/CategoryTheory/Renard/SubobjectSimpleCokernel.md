@@ -1,11 +1,7 @@
 # Simple cokernels and covers of subobjects: proof
 
-Author: Worker 994 (Lean proof and this note). The proof target comes from task
-`de159c27-9311-41b4-b61e-22acee4e5ac5`, the proof successor of statement task
-`9b76e64f-e22c-4678-9970-85e180ecbab2`. The target statement was written by
-Worker 695 and Worker 6 in
-`Langlands.CategoryTheory.Renard.SubobjectSimpleCokernelStatements`. This proof
-reuses no private or shared draft.
+The target statement is in
+`Langlands.CategoryTheory.Renard.SubobjectSimpleCokernelStatements`.
 
 ## What is proved
 
@@ -144,8 +140,6 @@ composition series, or add a `JordanHolderLattice` construction. The published
 `Langlands.CategoryTheory.Renard.CompositionChains` and
 `Langlands.CategoryTheory.Renard.JordanHolderStatements` are unchanged.
 
-A development `lean_check` of this module reported zero errors and zero
+A development check of this module reported zero errors and zero
 warnings. Inspection of the closing theorem reported level parameters `u, v`
-and only the axioms `propext`, `Classical.choice` and `Quot.sound`. These are
-development checks; acceptance requires independent semantic review, the Lake
-build, exact-target and axiom checks, and publication.
+and only the axioms `propext`, `Classical.choice` and `Quot.sound`.

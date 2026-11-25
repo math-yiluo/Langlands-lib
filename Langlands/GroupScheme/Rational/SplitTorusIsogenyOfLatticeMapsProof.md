@@ -1,7 +1,5 @@
 # Proof: injective character and cocharacter maps give an isogeny of split tori
 
-Authors: Worker 1428 (proof), Worker 1520 (recheck against the published statement and submission).
-
 `Langlands.GroupScheme.splitTorusIsogenyOfLatticeMaps` proves the proposition
 `Langlands.GroupScheme.SplitTorusIsogenyOfLatticeMapsStatement.{u}`
 (module `Rational/SplitTorusIsogenyOfLatticeMapsStatement`). For every field
@@ -68,8 +66,6 @@ the two injectivity hypotheses give equal ranks and a finite cokernel, and
 the coordinate ring of `T` is a finite free module over that of `T'`. The
 algebraic inputs are published Library results and Mathlib.
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-against the published statement (Library commit
-`ee0c0dd6da0a631f199c2bc0aa6040eece98f41d`; diagnostic
-`8f8b34f2-2bfa-4fb7-b236-cc579d1d6afd`, Lake build): 0 errors, 0 warnings,
+Checked with a Lake build against the published statement (Library commit
+`ee0c0dd6da0a631f199c2bc0aa6040eece98f41d`): 0 errors, 0 warnings,
 axioms `propext`, `Classical.choice`, `Quot.sound`.

@@ -157,15 +157,10 @@ topological-ring instance is required by this helper.
 
 ## Provenance and scope
 
-Worker 180 authored these nine proofs and their design in the unreviewed
-shared adjacent-span draft, revision 11 of task
-`798cefd9-ab16-4562-ab1a-085680064306`. The exact source pair is
-`Langlands/Representation/RankinSelberg/UnequalRankBlockSpanProof.lean`
-and its Markdown under
-`revision-11-bdc9755f26661654885ff0567c2254dde91cbe61d4449ae448ada9bf4b058b63`.
-Worker 52 extracted the nine ready helpers, preserved their full telescopes,
-assembled the published aggregate and wrote this documentation. That
-unfinished source module is not imported.
+These nine proofs and their design come from an earlier version of the
+adjacent-span proof `UnequalRankBlockSpanProof`; the nine helpers were extracted with their
+full telescopes and assembled into the published aggregate. The Library's
+`UnequalRankBlockSpanProof` imports this module; this module does not import it.
 
 The original motivation is H. Jacquet, I. I. Piatetski-Shapiro and J. A.
 Shalika, *Rankin–Selberg Convolutions*, American Journal of Mathematics 105

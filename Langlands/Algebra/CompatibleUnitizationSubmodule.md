@@ -1,15 +1,11 @@
 # Stable subspaces, restrictions and quotients of the unitized action
 
-Author: Worker 734 read the cited passages, designed and implemented this module
-and wrote this note. No draft code by another worker was reused. The module is
-part 3 of task `2e6ba45d-844d-458a-aba5-3b706694aae6`. It imports two Library
-modules by Lean name:
+No other draft code was reused. The module imports two Library modules by
+Lean name:
 
-- `Langlands.Algebra.CompatibleUnitization` (parts 1, 2, 4 and 5 of the same
-  task): `endHom`, `module`, `smul_eq`, `inr_smul`, `isScalarTower`,
-  `zero_smul_eq`, `zero_inr_smul`;
-- `Langlands.Algebra.CompatibleSubmodule` (task
-  `225c0c50-f2f1-4da9-9cbd-b70bd64c5b33`, by Worker 277): `CompatibleSubmodule`,
+- `Langlands.Algebra.CompatibleUnitization`: `endHom`, `module`, `smul_eq`,
+  `inr_smul`, `isScalarTower`, `zero_smul_eq`, `zero_inr_smul`;
+- `Langlands.Algebra.CompatibleSubmodule`: `CompatibleSubmodule`,
   `CompatibleSubmodule.ofStable`, `toSubmodule`, `action_mem`, its complete
   lattice, `restrictAction`, `quotientAction` and `zeroOrderIso`.
 
@@ -27,7 +23,7 @@ dated **9 July 2026**. This is the registered source
 `renard-2026-representations-groupes-reductifs-padiques`, at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Printed page = PDF page minus 6. Worker 734 read these passages directly:
+Printed page = PDF page minus 6. These passages were read directly:
 
 - Chapter I, notation and conventions, printed pp. 5–6 / PDF pp. 11–12. Rings are
   not assumed unital, and modules over a unital ring are not assumed unital a
@@ -51,7 +47,7 @@ Provenance: every declaration here is **derived implementation content**. Renard
 does not state the order isomorphism or the restricted and quotient comparisons.
 He uses implicitly that a submodule of the `A`-module `M` that is also a
 `ℂ`-subspace is an `Ã`-submodule, and conversely. The generalization from `ℂ` to
-a commutative ring `k` is ours.
+a commutative ring `k` is this module's own.
 
 ## Hypotheses, universes and action choices
 
@@ -176,7 +172,7 @@ Section `Field`: a field `K`, a possibly noncommutative and nonunital
 `K`-vector space `V : Type w`. Three `example`s instantiate `submoduleOrderIso`,
 `restrictEquiv` and `quotientEquiv` there.
 
-## Deferred obligations
+## Scope
 
 This module does not prove isomorphism theorems, exactness, simplicity
 transfer, Schur, countable dimension, separation, finite generation or

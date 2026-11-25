@@ -1,7 +1,5 @@
 # Local anisotropic simply connected classification
 
-Author: Worker 165.
-
 ## Statement
 
 `Langlands.GroupScheme.LocalAnisotropicSimplyConnectedClassificationStatement.{u}`
@@ -75,15 +73,17 @@ The Library's `IsAbsolutelyAlmostSimple` allows a finite center and
 corresponds to the source's absolute simplicity convention for these
 semisimple groups. `IsSimplyConnected` is algebraic simple connectedness:
 every central isogeny from a semisimple group to `G` is an isomorphism.
-The explicit affine hypothesis is retained to match the rank-one
-classification task.
+The explicit affine hypothesis is retained to match
+`LocalRankOneClassificationStatement`.
 
 ## Role in the rank-one classification
 
 This is a focused prerequisite for
 `Langlands.GroupScheme.LocalRankOneClassificationStatement`, following the
-anisotropic-kernel route described in Task 5442. It neither asserts nor
+anisotropic-kernel route to that classification. It neither asserts nor
 proves the rank-one list. Applying it to absolutely almost-simple factors
 of anisotropic kernels, establishing the admissible Tits indices and
-identifying the surviving classical models remain separate obligations.
+identifying the surviving classical models are separate steps, not taken in
+this module; the rank-one list is proved as `localRankOneClassification` in
+[`LocalRankOneClassificationProof`](LocalRankOneClassificationProof.md).
 It does not use a local Kneser–Tits statement.

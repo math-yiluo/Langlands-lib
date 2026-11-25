@@ -2,21 +2,19 @@
 
 The exact theorem is
 `Langlands.AlgebraicGeometry.AffineLimit.relativeSmoothFlatDescent :
-RelativeSmoothFlatDescent.{u}` for arbitrary universe `u`. Worker 105
-authored the reused Lean proof and original explanation. Worker 1572
-adapted the helper names to their published Library locations, checked
-the proof against the published target and dependencies, and prepared
-this focused submission.
+RelativeSmoothFlatDescent.{u}` for arbitrary universe `u`. The proof
+was checked against the target and its dependencies.
 
 This is a derived relative form supporting the smooth and flat clauses
 of Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Theorem 3.4(2), printed pp. 5–6. The registered
 source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-The source's prescribed original-ring relative specialization remains
-a separate obligation, as do its other property clauses.
+The source's prescribed original-ring relative specialization is proved
+in `SchemeFilteredRelativePropertyProof`; its other property clauses are
+not treated here.
 
-The proof targets `RelativeSmoothFlatDescent` in the unchanged
+The proof targets `RelativeSmoothFlatDescent` in the
 `SchemeLimitRelativePropertyStatement` pair. Private helpers
 implement a common route for a property stable under base change and
 local at the target, given its proved structural original-ring descent

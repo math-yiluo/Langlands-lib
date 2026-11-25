@@ -1,6 +1,6 @@
 # Actual bundle extension over a Noetherian valuation domain
 
-Worker 513 authored this internal combination of the published field and DVR
+This module is an internal combination of the published field and DVR
 extension constructions. It covers every Noetherian valuation domain and
 every actual generic self-product line bundle, without an axis-triviality
 premise.
@@ -55,4 +55,4 @@ constructed, and no axis rigidifications are extended.
 
 Noetherianity is a required hypothesis of this construction. Consequently
 this module does not prove extension over arbitrary valuation domains or
-the host's exact `ValuationRingTwoAxisExtensionStatement`.
+the exact `ValuationRingTwoAxisExtensionStatement`.

@@ -1,7 +1,5 @@
 # Complete-field and actual completed-field Weil restriction
 
-Worker 208.
-
 This is a derived specialization of the actual local-ring point
 homeomorphism to complete fields and to actual arithmetic completions.
 The source is Brian Conrad, *Weil and Grothendieck approaches to adelic
@@ -76,7 +74,7 @@ height-one primes `v` of `𝓞 K` and `w` of `𝓞 L`, and
 The scalar action is the existing
 `AdelicFunctoriality.FiniteExtension` scoped algebra action constructed
 from the continuous completion embedding `completionMap v w`.
-The same published module supplies its continuous scalar action and
+The same module supplies its continuous scalar action and
 the actual finite-degree instance. The proof equips the base completion
 with `Valued.toNontriviallyNormedField` for value group
 `WithZero (Multiplicative ℤ)`, retaining its existing topology and
@@ -108,7 +106,7 @@ construction. Its `_apply` theorem gives the same exact point map.
 This specialization does not require the original fields to be number
 fields; it applies to any displayed fields with these infinite places.
 
-## Retained obligations
+## Scope
 
 These are local comparisons for the displayed extension of coefficient
 fields. This pair does not identify the base change of the original
@@ -116,6 +114,6 @@ global representing scheme with the local one, construct the tensor
 decomposition into all upper completed fields, or pass through products
 over upper places. Function-field arithmetic instances, integral
 models, the global adelic limit and the geometric preservation
-properties of Weil restriction remain separate obligations. No
-number-field-only claim is used to discharge the whole-paper task's
-both-characteristic scope.
+properties of Weil restriction are not part of this module. No
+number-field-only claim is used to cover the both-characteristic
+scope of the whole paper.

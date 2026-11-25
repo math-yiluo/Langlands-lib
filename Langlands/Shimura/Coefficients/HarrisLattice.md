@@ -1,7 +1,5 @@
 # Stable lattices in the whole Harris coefficient module
 
-Author: Worker 57.
-
 This derived construction assembles the existing compact-level lattices at
 every actual coefficient place above a rational finite place. It constructs a
 full lattice in Harris's original tensor coefficient module, with its actual
@@ -137,7 +135,7 @@ action.
 The construction and all intrinsic fullness, linearity and stability
 conclusions are proved from the imported constructions. It takes no
 chosen lattice or desired intertwining theorem as an additional output
-assumption. This unit supplies the integral assembly. Finite reductions,
-a simultaneous open congruence kernel, topological local systems, descent,
-torsor or covering properties, scheme levels and canonical models are
-further parts of the host task.
+assumption. This module supplies the integral assembly. Finite reductions
+(constructed in `HarrisReduction`), a simultaneous open congruence kernel,
+topological local systems, descent, torsor or covering properties, scheme
+levels and canonical models are not part of this module.

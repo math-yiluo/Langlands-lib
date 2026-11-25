@@ -1,6 +1,6 @@
 # Integral conjugation covariance and direct residue parabolic attainment
 
-This internal supporting unit proves
+This module proves
 `UnramifiedResidueParabolicAttainmentStatement` at arbitrary universe `u`.
 It retains all seven building hypotheses, all eight apartment-descent
 hypotheses, and the actual all-facet unramified integral-point
@@ -12,7 +12,7 @@ actual schematic quotient image. The theorem is
 `unramifiedResidueParabolicAttainment`.
 
 The target facet is still required to contain a point of the distinguished
-apartment. This unit does not prove image parabolicity for every incident
+apartment. This module does not prove image parabolicity for every incident
 facet, injectivity, or the full facet order bijection.
 
 The provenance is an internal composition of existing Library extension,

@@ -95,16 +95,16 @@ include hp in
 theorem hom_inducedLiftHomEquiv_comp {g : G} {α : End (inducedRep H ρ)}
     (hα : α ∈ component H ρ hH p (p g))
     (φ : inducedRep H ρ ⟶ (SmoothRep.universeLiftFunctor.{uG, uG, uV} G).obj π) (w : ρ) :
-    SmoothRep.hom (inducedLiftHomEquiv H ρ hH π (α ≫ φ)) w =
+    SmoothRep.hom (inducedLiftHomEquiv H ρ hH π (α.asHom ≫ φ)) w =
       π.representation g⁻¹
         (SmoothRep.hom (inducedLiftHomEquiv H ρ hH π φ) (endValue H ρ hH α g w)) := by
   have hF : ∀ x, x * g⁻¹ ∉ H → eval H ρ.representation
-      (SmoothRep.hom α (unitFunction H hH ρ.representation ρ.isSmooth w)).1 x = 0 := by
+      (SmoothRep.hom α.asHom (unitFunction H hH ρ.representation ρ.isSmooth w)).1 x = 0 := by
     intro x hx
     refine congrArg (fun T : Module.End ℂ ρ => T w) (hα x fun hpx => hx ?_)
     rw [← hp.eq_zero_iff, hp.map_mul, hp.map_inv, hpx, add_neg_cancel]
   rw [hom_inducedLiftHomEquiv_apply, hom_inducedLiftHomEquiv_apply]
-  change (SmoothRep.hom φ (SmoothRep.hom α _)).down = _
+  change (SmoothRep.hom φ (SmoothRep.hom α.asHom _)).down = _
   rw [hom_of_support hH φ _ hF]
   rfl
 
@@ -138,7 +138,7 @@ theorem exists_mem_component_comp_eq_self (j : ρ ⟶ SmoothRep.restrictSubgroup
     ∃ α ∈ component H ρ hH p (p k), α ≠ 0 ∧
       (∀ w, SmoothRep.hom j (endValue H ρ hH α k w) =
         π.representation k (SmoothRep.hom j w)) ∧
-      α ≫ (inducedLiftHomEquiv H ρ hH π).symm j = (inducedLiftHomEquiv H ρ hH π).symm j := by
+      α.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j = (inducedLiftHomEquiv H ρ hH π).symm j := by
   choose r hr using hk
   let R : Module.End ℂ ρ :=
     { toFun := r
@@ -255,7 +255,7 @@ omit hN [ρ.representation.IsIrreducible] in
 include hp in
 theorem hom_comp_symm_apply {g : G} {α : End (inducedRep H ρ)}
     (hα : α ∈ component H ρ hH p (p g)) (j : ρ ⟶ SmoothRep.restrictSubgroup H π) (w : ρ) :
-    SmoothRep.hom (inducedLiftHomEquiv H ρ hH π (α ≫ (inducedLiftHomEquiv H ρ hH π).symm j)) w =
+    SmoothRep.hom (inducedLiftHomEquiv H ρ hH π (α.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j)) w =
       π.representation g⁻¹ (SmoothRep.hom j (endValue H ρ hH α g w)) := by
   rw [hom_inducedLiftHomEquiv_comp ρ hH hp π hα, LinearEquiv.apply_symm_apply]
 
@@ -268,7 +268,7 @@ theorem inH_iff (j : ρ ⟶ SmoothRep.restrictSubgroup H π)
     (hj : Function.Injective (SmoothRep.hom j)) (g : G) :
     (∀ v : π, (∃ w, SmoothRep.hom j w = v) ↔ ∃ w, SmoothRep.hom j w = π.representation g v) ↔
       (∃ α ∈ component H ρ hH p (p g), α ≠ 0) ∧ ∀ u ∈ component H ρ hH p (p g), ∃ c : ℂ,
-        u ≫ (inducedLiftHomEquiv H ρ hH π).symm j =
+        u.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j =
           c • (inducedLiftHomEquiv H ρ hH π).symm j := by
   classical
   constructor
@@ -278,7 +278,7 @@ theorem inH_iff (j : ρ ⟶ SmoothRep.restrictSubgroup H π)
     refine ⟨⟨α, hα, hα0⟩, fun u hu => ?_⟩
     let _ := gradedAlgebra ρ hH hp
     obtain ⟨c, rfl⟩ := (isRankOneGrading ρ hH hp hrank).exists_smul_eq hα hα0 hu
-    exact ⟨c, by rw [Linear.smul_comp, hαx]⟩
+    exact ⟨c, by rw [End.smul_asHom, Linear.smul_comp, hαx]⟩
   · rintro ⟨⟨α, hα, hα0⟩, hu⟩
     obtain ⟨c, hc⟩ := hu α hα
     have h0 := endValue_ne_zero_of_mem_component ρ hH hp hα hα0
@@ -366,7 +366,7 @@ theorem mul_comm_of_inHtilde (j : ρ ⟶ SmoothRep.restrictSubgroup H π)
   obtain ⟨β, hβ, hβ0, hβk, hβx⟩ := exists_mem_component_comp_eq_self ρ hH hp j hj
     fun w => (hk (SmoothRep.hom j w)).mp ⟨w, rfl⟩
   have hαx : ∀ w, SmoothRep.hom (inducedLiftHomEquiv H ρ hH π
-      (α ≫ (inducedLiftHomEquiv H ρ hH π).symm j)) w =
+      (α.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j)) w =
         π.representation g⁻¹ (SmoothRep.hom j (A w)) := by
     intro w
     rw [hom_comp_symm_apply ρ hH hp hα j w, hαA]
@@ -376,8 +376,8 @@ theorem mul_comm_of_inHtilde (j : ρ ⟶ SmoothRep.restrictSubgroup H π)
     abel
   have hk' := (inH_iff ρ hH hp hrank j hj (g * k * g⁻¹)).mpr
     (by rw [hpk]; exact (inH_iff ρ hH hp hrank j hj k).mp hk)
-  have hβα : β ≫ (α ≫ (inducedLiftHomEquiv H ρ hH π).symm j) =
-      α ≫ (inducedLiftHomEquiv H ρ hH π).symm j := by
+  have hβα : β.asHom ≫ (α.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j) =
+      α.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j := by
     apply (inducedLiftHomEquiv H ρ hH π).injective
     refine restrict_hom_ext ρ fun w => ?_
     rw [hom_inducedLiftHomEquiv_comp ρ hH hp π hβ, hαx, hαx]
@@ -393,7 +393,7 @@ theorem mul_comm_of_inHtilde (j : ρ ⟶ SmoothRep.restrictSubgroup H π)
     rw [add_comm]
     exact mul_mem_component hH hp hβ hα
   obtain ⟨c, hc⟩ := h𝒜.exists_smul_eq hab (h𝒜.mul_ne_zero hα hα0 hβ0) hba
-  have hx0 : α ≫ (inducedLiftHomEquiv H ρ hH π).symm j ≠ 0 := by
+  have hx0 : α.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j ≠ 0 := by
     intro h0
     apply hw₀
     apply A.injective
@@ -404,11 +404,11 @@ theorem mul_comm_of_inHtilde (j : ρ ⟶ SmoothRep.restrictSubgroup H π)
       eq_zero_of_rep_apply_eq_zero (π := π) (g := g⁻¹) h1.symm
     rw [h2, map_zero, map_zero]
   have hc1 : c = 1 := by
-    have h1 : c • (α ≫ (inducedLiftHomEquiv H ρ hH π).symm j) =
-        α ≫ (inducedLiftHomEquiv H ρ hH π).symm j := by
-      have h2 : (c • (α * β)) ≫ (inducedLiftHomEquiv H ρ hH π).symm j =
-          (β * α) ≫ (inducedLiftHomEquiv H ρ hH π).symm j := by rw [hc]
-      rw [Linear.smul_comp, End.mul_def, End.mul_def, Category.assoc, Category.assoc, hβx,
+    have h1 : c • (α.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j) =
+        α.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j := by
+      have h2 : (c • (α * β)).asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j =
+          (β * α).asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm j := by rw [hc]
+      rw [End.smul_asHom, Linear.smul_comp, End.mul_def, End.mul_def, Category.assoc, Category.assoc, hβx,
         hβα] at h2
       exact h2
     exact smul_left_injective ℂ hx0 (h1.trans (one_smul ℂ _).symm)
@@ -504,12 +504,12 @@ theorem lineStabilizer (π : SmoothRep.{0, uG, uV} ℂ G)
     [FiniteDimensional ℂ (inducedRep H ρ ⟶ (SmoothRep.universeLiftFunctor.{uG, uG, uV} G).obj π)]
     (hcyc : ∀ φ : inducedRep H ρ ⟶ (SmoothRep.universeLiftFunctor.{uG, uG, uV} G).obj π,
       φ ≠ 0 → ∀ ψ : inducedRep H ρ ⟶ (SmoothRep.universeLiftFunctor.{uG, uG, uV} G).obj π,
-        ∃ α : End (inducedRep H ρ), α ≫ φ = ψ)
+        ∃ α : End (inducedRep H ρ), α.asHom ≫ φ = ψ)
     (hiso : ∀ (ω : G →* ℂˣ) (hω : IsOpen (ω.ker : Set G)), H ≤ ω.ker →
       ∀ Ψ : (inducedRep H ρ ⟶
           ((SmoothRep.universeLiftFunctor.{uG, uG, uV} G).obj π).twist ω hω) ≃ₗ[ℂ]
           (inducedRep H ρ ⟶ (SmoothRep.universeLiftFunctor.{uG, uG, uV} G).obj π),
-        (∀ (α : End (inducedRep H ρ)) φ, Ψ (α ≫ φ) = α ≫ Ψ φ) →
+        (∀ (α : End (inducedRep H ρ)) φ, Ψ (α.asHom ≫ φ) = α.asHom ≫ Ψ φ) →
           Nonempty (((SmoothRep.universeLiftFunctor.{uG, uG, uV} G).obj π).twist ω hω ≅
             (SmoothRep.universeLiftFunctor.{uG, uG, uV} G).obj π))
     {T : Subgroup G} (hT : ∀ g, g ∈ T ↔ ∀ (ω : G →* ℂˣ) (hω : IsOpen (ω.ker : Set G)),
@@ -638,7 +638,7 @@ theorem lineStabilizer (π : SmoothRep.{0, uG, uV} ℂ G)
         SmoothRep.hom ψ (endValue H ρ hH u t w) = π.representation t (SmoothRep.hom ψ w) := by
       intro ψ w
       have h1 := hom_comp_symm_apply ρ hH hp hu ψ w
-      have h2 : u ≫ (inducedLiftHomEquiv H ρ hH π).symm ψ =
+      have h2 : u.asHom ≫ (inducedLiftHomEquiv H ρ hH π).symm ψ =
           (inducedLiftHomEquiv H ρ hH π).symm ψ :=
         LinearMap.congr_fun hu1 _
       rw [h2, LinearEquiv.apply_symm_apply] at h1

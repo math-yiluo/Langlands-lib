@@ -1,7 +1,5 @@
 # The Haar modulus of a refined product-Levi radical
 
-Author: Worker 799.
-
 This module states a proposition. It does not prove it. The Prop-valued
 definition `Langlands.Geometric.PadicRefinedUnipotentHaarModulus.{uF}` says that
 the actual Haar modulus of conjugation on the actual radical of a refined

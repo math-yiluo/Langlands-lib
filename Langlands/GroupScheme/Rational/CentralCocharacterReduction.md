@@ -30,7 +30,9 @@ The cocharacters throughout the field-level results are over the ground field;
 there is no descent assumption for cocharacters over an algebraic closure. The
 parabolic comparison remains an explicit premise of these supporting results.
 Finite-field quasi-splitness, lifting through the unipotent quotient, and an
-unconditional proof of the comparison are still needed for the host theorem.
+unconditional proof of the comparison are needed for the finite-field theorem
+`FiniteFieldCentralCocharacterSolvableStatement` and are not supplied here; that
+theorem is proved in `Rational.FiniteFieldCentralCocharacterSolvableProof`.
 
 The full subgroup functor is represented by the identity using the existing
 `SubgroupFunctor.top_isRepresentedBy_id` from

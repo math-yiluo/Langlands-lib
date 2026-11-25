@@ -1,6 +1,7 @@
 # Hopf algebra of the actual Frobenius-origin quotient
 
-This derived unit equips the genuine coordinate augmentation-power quotient
+This module, derived rather than taken from a source, equips the genuine
+coordinate augmentation-power quotient
 with inversion induced by the original affine group scheme. Coordinate inversion
 classifies the inverse of the actual universal point. Naturality of the actual
 point-coordinate equivalence proves its behavior on every commutative test

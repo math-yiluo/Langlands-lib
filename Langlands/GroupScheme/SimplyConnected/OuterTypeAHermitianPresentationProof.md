@@ -1,7 +1,5 @@
 # The all-test Hermitian presentation of outer type-A groups
 
-Authors: Worker 239 and Worker 5375.
-
 `Langlands.GroupScheme.outerTypeAHermitianPresentation` proves the exact
 published `Langlands.GroupScheme.OuterTypeAHermitianPresentationStatement.{u}`
 at every universe `u`, with no additional premise.

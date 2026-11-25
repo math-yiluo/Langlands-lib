@@ -1,6 +1,6 @@
 # Smooth compactly supported sections
 
-Author: Worker 13. This module reuses Worker 0's published smooth-vector
+This module reuses the published smooth-vector
 constructions without modifying or duplicating the general smooth
 representation category.
 
@@ -45,7 +45,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces*, unfinished
 1995–1996 manuscript, section 1.5, printed p.11, defines support by nonzero
 germs and forms the union over open subgroups of compact invariant sections.
 The preceding section 1.4, printed p.7, describes the transport action.
-Worker 13 read these original passages. The present construction is an
+These original passages were read. The present construction is an
 ordinary-topological counterpart: its elements are precisely compact
 sections fixed by an open subgroup. It does not identify this construction
 with Berkovich's analytic etale sheaf category or assert a categorical
@@ -53,8 +53,8 @@ colimit comparison.
 
 The existing `Langlands.smoothPart`, `smoothMap`, `smoothInclusion` and
 `smoothLift` are reused from
-`Langlands.Representation.Smooth.SmoothPart.Definitions`, verified in the
-current Library. Their intrinsic construction fields supply the conjugation
+`Langlands.Representation.Smooth.SmoothPart.Definitions`, present in the
+Library. Their intrinsic construction fields supply the conjugation
 argument and preservation of smooth vectors under intertwiners. This module
 specializes them to the previously constructed compact-section action.
 The smooth representation category and its inclusion are imported from
@@ -74,4 +74,4 @@ member SHA-256
 The ordinary compact-support and moving-space equivariance prerequisites are
 published in Library commit `30ceb5a0d89d8094c1663fc19f35416519b9a125`.
 The analytic site, smooth equivariant etale category, derived equivariant
-cohomology, and Harris specialization remain separate obligations.
+cohomology, and Harris specialization are not treated here.

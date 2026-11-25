@@ -1,7 +1,5 @@
 # Common affine neighbourhoods in codimension at most one
 
-Author: Worker 219.
-
 `Langlands.AlgebraicGeometry.NormalCodimensionOneAffineNeighbourhoodStatement.{u}`
 is a proposition definition for Bosch, Lütkebohmert and Raynaud, *Néron Models*
 (1990), §6.4 Lemma 4, printed p.155, PDF p.162. The registered source is

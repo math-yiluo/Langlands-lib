@@ -1,6 +1,6 @@
 # Full parahoric factorization across a chamber-simple wall
 
-This derived unit proves the full generated-parahoric simple-wall
+This module proves the full generated-parahoric simple-wall
 factorization from three retained algebraic inputs. It works in arbitrary
 universe `u`, over a nonarchimedean local field `F : Type u`, with the
 existing actual `P : ParahoricBuildingData G` for an affine group scheme.
@@ -84,11 +84,14 @@ associativity give the claimed factorization. Reversing the product-set
 membership equality gives the membership theorem. The entry then
 packages the inclusion without changing the ambient point.
 
-All content is derived from the current Library's actual apartment,
+All content is derived from the Library's actual apartment,
 collection, generic-cocharacter and conditional Iwahori results, and the
-unchanged wall-product helper modules bundled while their publication
-is pending. No new external-source assertion is introduced. The three
-algebraic inputs remain hypotheses: this unit proves neither their
+wall-product helper modules `ChamberWallProductAssembly` and
+`ChamberWallRootContainment`. No new external-source assertion is introduced. The three
+algebraic inputs remain hypotheses: this module proves neither their
 universal versions nor the unconditional
 `ChamberSimpleFactorizationStatement` or `AffineIwahoriTitsStatement`.
-The unchanged apartment-only endpoint remains open.
+The Library proves `ChamberSimpleFactorizationStatement` as
+`chamberSimpleFactorization` in `ChamberSimpleFactorizationProof`; the
+unchanged apartment-only endpoint `AffineIwahoriTitsStatement` it proves only
+from further statements.

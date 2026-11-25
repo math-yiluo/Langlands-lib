@@ -1,6 +1,6 @@
 # Center descent for actual rational Levi functors
 
-Worker 86. This is an internal supporting construction for Renard VI.10.5,
+This is an internal supporting construction for Renard VI.10.5,
 not a proof of `HarishChandraHomomorphismStatement`. The representation theoretic
 existence of pointwise central lifts and module finiteness remain obligations.
 
@@ -37,4 +37,4 @@ The construction is derived directly from the imported categorical and
 representation theoretic results. It verifies their applicability to the
 exact functors and universes used by VI.10.5. It supplies neither
 `CenterComponentsLift I` unconditionally nor a finite-module conclusion, and
-therefore does not discharge any of the four complete host-task targets.
+therefore does not prove any of the statements of Renard VI.10.4–VI.10.5.

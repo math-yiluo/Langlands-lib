@@ -29,9 +29,13 @@ so it is relatively affine. Its geometric fibres are tori by the same field
 argument and hence connected reductive. Thus the actual commutative
 intersection is reductive. The commutative-reductive relative-torus theorem
 proves its étale-local splitness. Finally pullback symmetry identifies its
-range with the projection used in the host correspondence statement.
+range with the projection used in the correspondence statement
+`ReductiveDerivedTorusParabolicCorrespondenceStatement`.
 
 All content is derived internally from the imported results. This module
 establishes the forward maximal-torus intersection assertion. Isogenies,
-inverse torus correspondence, uniqueness and parabolic assertions of the
-host target remain separate obligations.
+inverse torus correspondence, uniqueness and parabolic assertions of
+`ReductiveDerivedTorusParabolicCorrespondenceStatement` remain separate
+obligations (the Library proves that statement as
+`reductiveDerivedTorusParabolicCorrespondence` in
+`Reductive.DerivedTorusParabolicCorrespondenceProof`).

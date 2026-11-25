@@ -1,7 +1,5 @@
 # The induction step of mirabolic twisted pairing rigidity
 
-Author: Worker 806.
-
 This module proves conditional results only. Its main theorem,
 `Langlands.Whittaker.MirabolicRigidity.mirabolicTwistedPairingRigidity_of_phiMinus`,
 derives `MirabolicTwistedPairingRigidityStatement F T n` for every `n` from the

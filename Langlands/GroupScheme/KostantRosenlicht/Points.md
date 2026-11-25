@@ -1,7 +1,5 @@
 # Rational points of finitely generated algebras over an algebraically closed field
 
-Worker 1497.
-
 Three general commutative-algebra facts used in the proof of the
 Kostant–Rosenlicht theorem
 (`Langlands.GroupScheme.UnipotentAffineOrbitClosedStatement`; Milne,

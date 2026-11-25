@@ -1,11 +1,10 @@
 # Inflation of factor-extension classes along a norm-compatible kernel map
 
-Author: Worker 5095, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`. This module
+This module
 proves the inflation law `inf α_{E/F} = [L:E] α_{L/F}` for factor-extension
 classes when the kernel maps are related by a norm. It is stated for the pushout
-extensions of `Langlands.GroupTheory.ExtensionPushout` (Worker 1556) and uses the
-cocycle identity `akizukiWitt_identity` of `Langlands.GroupTheory.ExtensionAkizukiWitt`
-(Worker 1839).
+extensions of `Langlands.GroupTheory.ExtensionPushout` and uses the
+cocycle identity `akizukiWitt_identity` of `Langlands.GroupTheory.ExtensionAkizukiWitt`.
 
 There is no arithmetic content. In the intended application `W` is the Weil group
 of a local field `F`, `ker q = W_L` and `ker (π ∘ q) = W_E` for a tower
@@ -33,7 +32,7 @@ All declarations are in `Langlands.GroupExtensionPushout`. The data are:
   kernel because `π (q (t γ)) = π γ = π (q (t (σ (π γ))))`.
 - `kernelInclusion_factorKernel` decomposes the factor set of `t`, viewed in
   `ker (π ∘ q)`, through the factor set of the lifted section
-  `Section.lift π t σ` (Worker 1839). Writing `d = liftDifference π t σ`,
+  `Section.lift π t σ` (from `ExtensionAkizukiWitt`). Writing `d = liftDifference π t σ`,
   `s' = t ∘ σ` and `c(x) = s'(π g) x s'(π g)⁻¹`, it states
 
   `t(g) t(g') t(gg')⁻¹ = d(g) · c(d(g')) · s'(π g) s'(π g') s'(π(gg'))⁻¹ · d(gg')⁻¹`.
@@ -58,8 +57,8 @@ in Mathlib's `H²(G, A)`.
 
 The proof runs as follows.
 
-1. Put `σ = Section.ofSurjective hπ`. Worker 1556's section independence
-   `Section.cohomologyClass_eq` and `cohomologyClass_inflate_congr` replace `s` by
+1. Put `σ = Section.ofSurjective hπ`. The section independence
+   `Section.cohomologyClass_eq` of `ExtensionPushout` and `cohomologyClass_inflate_congr` replace `s` by
    the lifted section `Section.lift π t σ`. `cohomologyClass_npow` writes
    `|H| •` as the class of the pointwise power `npow`.
 2. Let `a = t.cocycle r hr`. Take the cochain `γ ↦ b(γ) / u(γ)`, where

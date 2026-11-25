@@ -1,7 +1,5 @@
 # Full upper unipotent matrix group
 
-Author: Worker 6.
-
 The carrier of `upperUnipotent n R` is a subgroup of the actual
 `Matrix.GeneralLinearGroup (Fin n) R`. A matrix belongs precisely when its
 strictly lower entries vanish and each diagonal entry is one. The coefficient
@@ -38,15 +36,10 @@ Continuity of the sum assumes `IsTopologicalRing R`. Hausdorffness makes the
 group closed, as the intersection of the triangular zero conditions and
 the equations fixing diagonal entries to one. Closedness transfers local
 compactness from the ambient GL. It does not assume or prove a compact-open
-basis. The character itself and its Whittaker representation remain with
-their assigned construction task.
+basis. The character itself and its Whittaker representation are not
+constructed here.
 
-The only project import is `Langlands.Group.GL.Basic`, in independently accepted
-artifact `cd1132db-8cab-4cab-bd28-0c6164b44dbe` version 1, published at commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, effective snapshot
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`.
-Final review receipt `7c88f2621a5047a9a85fe9ef375a8ed0` confirms the unchanged
-reviewed pairs, their current dependency closure and successful final Lake validation.
+The only project import is `Langlands.Group.GL.Basic`.
 
 Source: `jpss-1981-conductor`, H. Jacquet, I. I. Piatetski-Shapiro and J. Shalika,
 *Conducteur des representations du groupe lineaire*, Math. Ann. 256 (1981),

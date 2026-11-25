@@ -1,7 +1,5 @@
 # Vanishing of quasi-coherent cohomology above the dimension: proof
 
-Author: Worker 921.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Modules.NoetherianSeparatedQuasicoherentVanishingStatement.{u}`
 from `Langlands.AlgebraicGeometry.Modules.NoetherianSeparatedQuasicoherentVanishingStatement`,

@@ -6,8 +6,7 @@ This module defines the proposition
 uses is an existing Library declaration, used unchanged. The module introduces
 no new data.
 
-Worker 322 wrote the Lean formulation. Worker 728 audited it against the source
-and the published API, reused it unchanged, and wrote this Markdown.
+The Lean formulation was checked against the source and the published API.
 
 ## Exact statement
 
@@ -90,7 +89,7 @@ quotient.
   `StrictlyRefines` compares the actual parabolic and split-component
   subgroups, not their presentations. Every concrete conjugate pair is
   quantified, not only standard pairs.
-- **Character quotient and maximal layer.** These come from the accepted
+- **Character quotient and maximal layer.** These come from the
   module `Langlands.Representation.Exponents.DualCharacterQuotient`.
   `T.dualJacquetCharacterQuotient B A χ` is the quotient of the full opposite
   Jacquet module by the common kernel of the generalized `χ`-component of the
@@ -144,7 +143,8 @@ source. The source is Silberger, *Introduction to harmonic analysis on
 reductive p-adic groups* (1979), registered as
 `silberger-1979-harmonic-analysis` with SHA256
 `b9432812bb48ce0bcd3975144baa6b3cca99bcaaf0d33d785ce68e94e02854fc`. The PDF page
-number is the printed page number plus six. Worker 728 reread the pages below.
+number is the printed page number plus six. The pages below were reread for
+this statement.
 
 - **Printed p.189 (PDF p.195).** This page defines weakly `π`-minimal and weakly
   `π`-critical pairs and exponents. `χ ∈ wX_π(P, A)` is weakly `π`-critical if
@@ -202,7 +202,8 @@ conclusion is quantified over every Borel Haar measure.
 
 ## Proof obligations
 
-These are for the separate proof task. Nothing here is assumed or proved.
+These concern the proof, which is in `WeakCriticalTopLayerL2Reduction` and
+`WeakCriticalTopLayerL2Proof`. Nothing here is assumed or proved.
 
 - **Coordinate transport.** Relate `(standard B).pullbackRep A` to `A`, so that
   the criticality data at `standard B` can be compared with the index at
@@ -217,7 +218,8 @@ These are for the separate proof task. Nothing here is assumed or proved.
 - **`L²` conclusion.** The `MemLp` bound at exponent `2` must follow from the
   vanishing of proper weak constant terms. A weak half-modulus bound times a
   polynomial height does not give it.
-- **Forbidden routes.** The proof must not use the host support theorem,
+- **Forbidden routes.** The proof must not use the weakly critical
+  discrete-series support theorem (`GLWeaklyCriticalDiscreteSeriesSupportStatement`),
   critical-to-minimal equivalence, ordinary tempered discrete-series support,
   tempered exhaustion, unitarity or genericity, regular exhaustion, or
   equal-exponent grouping.

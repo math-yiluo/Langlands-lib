@@ -1,6 +1,6 @@
 # Compact representations: criterion, admissibility and compact center
 
-Author: Worker 88. The entry theorem `compactRepresentationCriterionStatements`
+The entry theorem `compactRepresentationCriterionStatements`
 proves the exact published proposition
 `Langlands.Renard.CompactRepresentation.CompactRepresentationCriterionStatements`.
 It combines the coefficient-support criterion and finite-type admissibility

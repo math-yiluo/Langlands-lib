@@ -78,14 +78,16 @@ theorem rationalTorsionAction_ker (n : ℕ) :
     (torsionAction (coefficientScalarIdeal l m) Λ.action n).ρ g = 1
   constructor
   · intro h
+    apply End.ext
     apply ModuleCat.hom_ext
     ext x
-    exact congrArg (fun f : End (Λ.rationalTorsionAction l m n).V => f.hom x) h
+    exact congrArg (fun f : End (Λ.rationalTorsionAction l m n).V => f.asHom.hom x) h
   · intro h
+    apply End.ext
     apply ModuleCat.hom_ext
     ext x
     exact congrArg (fun f : End (torsionAction (coefficientScalarIdeal l m) Λ.action n).V =>
-      f.hom x) h
+      f.asHom.hom x) h
 
 /-- The coefficient action over the actual quotient ring, factored through its congruence group. -/
 def rationalCongruenceAction (n : ℕ) :
@@ -125,8 +127,8 @@ The coefficient map retains integral scalars because its source and target quoti
 theorem rationalCongruenceTransition_equivariant {i j : ℕ} (h : i ≤ j)
     (g : Λ.RationalCongruenceGroup m j) (x : (Λ.rationalCongruenceAction m j).V) :
     ((Λ.rationalTorsionSystem l m).map (homOfLE h).op).hom.hom
-        (((Λ.rationalCongruenceAction m j).ρ g).hom x) =
-      ((Λ.rationalCongruenceAction m i).ρ (Λ.rationalCongruenceTransition m h g)).hom
+        (((Λ.rationalCongruenceAction m j).ρ g).asHom.hom x) =
+      ((Λ.rationalCongruenceAction m i).ρ (Λ.rationalCongruenceTransition m h g)).asHom.hom
         (((Λ.rationalTorsionSystem l m).map (homOfLE h).op).hom.hom x) := by
   induction g using QuotientGroup.induction_on with
   | H g =>

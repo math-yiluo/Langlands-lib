@@ -37,10 +37,11 @@ argument is to obtain a uniform left and right stabilizing identity neighborhood
 from local constancy on compact support, combine these neighborhoods for the
 finite family, intersect with `U`, and refine to a compact open subgroup. The
 published `Langlands.Topology.CompactOpen.NeighborhoodBasis` supplies the
-compact-open refinement under `NonarchimedeanGroup`; connecting the present
-topological hypotheses to that basis belongs to the later proof. No such basis
+compact-open refinement under `NonarchimedeanGroup`; the proof does not use
+that basis and obtains the refinement directly from the present topological
+hypotheses. No such basis
 or stabilizer is assumed as input to this statement. This module defines only
-the proposition; its proof is a separate obligation against this fixed interface.
+the proposition; its proof is `commonCompactOpenBiInvariance` in `CommonInvarianceProof`.
 
 The motivating original is D. Flath, *Decomposition of representations into
 tensor products* (1979), section 1, printed page 179, one-based PDF page 175 of
@@ -52,5 +53,3 @@ refinement inside a prescribed `U` are an internal derived formulation, not a
 quoted theorem of Flath. The retained source is
 `/home/taskhub/central-library/Borel-Casselman--Automorphic Forms, Representations and L-Functions (Corvallis)--1979/Part I.pdf`,
 SHA-256 `3b9fe0145da81d870ef8967be83635cd440a2581fe043e64e63324e22dec4db5`.
-
-Worker 108 authored this statement and its explanation.

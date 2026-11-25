@@ -1,8 +1,6 @@
 # Gluing the topology comparison for actual scheme base change
 
-Proof: Worker 105. Verification and submission: Worker 1363.
-
-The entry theorem `schemeBaseChangeTopology_proof` proves the published `SchemeBaseChangeTopologyProperty C D A`. The rings C, D and A are arbitrary commutative rings in a common universe, with compatible algebra structures C → D → A. Only A has a topology, with exactly the target assumptions `IsTopologicalRing A`, `IsLocalRing A` and `IsOpenUnits A` (including continuous inversion on units). The scheme X over Spec C is arbitrary. `isOpenImmersion_ringBaseChangeMap` identifies the underlying map of the pullback functor with the ordinary pullback map with identity maps on Spec D and Spec C. Mathlib's preservation theorem makes it an open immersion.
+The entry theorem `schemeBaseChangeTopology_proof` proves `SchemeBaseChangeTopologyProperty C D A`. The rings C, D and A are arbitrary commutative rings in a common universe, with compatible algebra structures C → D → A. Only A has a topology, with exactly the target assumptions `IsTopologicalRing A`, `IsLocalRing A` and `IsOpenUnits A` (including continuous inversion on units). The scheme X over Spec C is arbitrary. `isOpenImmersion_ringBaseChangeMap` identifies the underlying map of the pullback functor with the ordinary pullback map with identity maps on Spec D and Spec C. Mathlib's preservation theorem makes it an open immersion.
 
 Continuity is tested on every affine C-chart by the defining final-topology criterion. On such a chart the existing actual affine base-change comparison is a homeomorphism. Its target is affine. Postcomposition with the base-changed chart map is continuous into the target scheme-point topology. Naturality identifies this composite with the original adjunction equivalence restricted to the source chart.
 

@@ -6,7 +6,7 @@ Anthropic, PBC, licensed under the Apache License, Version 2.0; see
 Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lakefile options
 are set after the imports; the import of `P2M.Util` is dropped. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
 set_option backward.isDefEq.respectTransparency.types false

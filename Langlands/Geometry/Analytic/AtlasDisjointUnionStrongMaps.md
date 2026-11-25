@@ -1,12 +1,10 @@
 # Disjoint unions in the category of compatible strong maps
 
-Author: Worker 21.
-
-The module `AtlasDisjointUnion` (Worker 56) constructs the disjoint union
+The module `AtlasDisjointUnion` constructs the disjoint union
 `presentation A hA` of a family `A : I → AffinoidAtlasPresentation K` of
 presentations whose charts all have nonempty spectrum (`hA`). Its space is the
 topological sigma type `Σ i, (A i).space`, and its charts are the original
-charts tagged by their component. `AtlasDisjointUnionMaps` (Worker 56) makes it
+charts tagged by their component. `AtlasDisjointUnionMaps` makes it
 a coproduct in the category of chosen-chart maps. This module proves the same
 universal property in the Library's category `CompatibleAtlasPresentation` of
 compatible strong maps (all admissible chart pairs, with
@@ -74,12 +72,12 @@ same universes:
 For a second family `A'` with nonempty charts and compatible maps
 `s i : A' i → A i`:
 
-- `map hA hA' s := compatibleDesc (fun i => (s i).comp (compatibleInclusion A hA i))`, with
+- `compatibleMap hA hA' s := compatibleDesc (fun i => (s i).comp (compatibleInclusion A hA i))`, with
   `map_baseMap_apply` (`⟨i, x⟩ ↦ ⟨i, (s i).baseMap x⟩`) and
   `inclusion_comp_map`.
 - `isQuasiIso_map`: if every `s i` is a quasi-isomorphism (`IsQuasiIso`:
   homeomorphism, and every admissible pullback represents the image of the
-  chart), then so is `map hA hA' s`. The base map is `Sigma.map id`, a
+  chart), then so is `compatibleMap hA hA' s`. The base map is `Sigma.map id`, a
   homeomorphism by Mathlib's `IsHomeomorph.sigmaMap`. For an admissible pair
   of tagged charts, a point of the nonempty source chart shows that the tags
   agree. The pullback is then that of `s i`, by `comp_pullback` through the
@@ -88,7 +86,7 @@ For a second family `A'` with nonempty charts and compatible maps
 ## Provenance
 
 This is an internal construction on the Library's disjoint-union atlas
-(`AtlasDisjointUnion`, Worker 56) and compatible strong maps. It is the step
+(`AtlasDisjointUnion`) and compatible strong maps. It is the step
 towards disjoint unions of analytic spaces needed for Berkovich's induced
 spaces `X_{G/H}` (Berkovich, *Étale equivariant sheaves on p-adic analytic
 spaces*, 1996 manuscript, registered as

@@ -1,7 +1,5 @@
 # Statement: the fibral isomorphism criterion
 
-Worker 75.
-
 `Langlands.AlgebraicGeometry.FibralIsomorphismStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition in `Langlands.AlgebraicGeometry.FibralIsomorphismStatement`. This
 module does not prove it, and it adds no other definitions, theorems or axioms. It imports
@@ -82,8 +80,8 @@ weaker hypothesis that `Y'` is locally of finite type over `S`.
 
 ## Proof boundary
 
-This module defines a proposition; it proves nothing. A separate exact-target proof must
-show that `h.left` is an isomorphism for every stated `S`, `Y`, `Y'` and `h`. One route: the
+This module defines a proposition; it proves nothing. The separate proof `fibralIsomorphism`
+(module `Langlands.AlgebraicGeometry.FibralIsomorphism`) shows that `h.left` is an isomorphism for every stated `S`, `Y`, `Y'` and `h`. One route: the
 fibres of `h` are open immersions, so `h.left` is an open immersion by
 `isOpenImmersion_of_fiberwise`; the fibres are surjective, so `h.left` is surjective; a
 surjective open immersion is an isomorphism.

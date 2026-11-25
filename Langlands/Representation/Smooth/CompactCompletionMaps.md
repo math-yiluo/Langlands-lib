@@ -1,6 +1,6 @@
 # Componentwise maps of compact-open completions
 
-Author: Worker 1775. Namespace: `Langlands.CompactCompletion`.
+Namespace: `Langlands.CompactCompletion`.
 
 This is derived infrastructure for the completion in Renard 2026, I.1.4–I.1.5
 (printed pp.9–10 / PDF pp.15–16) and its use in VI.9.7 (printed pp.205–206 /

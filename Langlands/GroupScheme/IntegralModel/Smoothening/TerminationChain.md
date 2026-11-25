@@ -1,6 +1,6 @@
 # Termination of the smoothening sequence: the sequence inside the integral functions
 
-Author: Worker 348. Internal helper module for Kaletha–Prasad, Theorem A.6.2
+Internal helper module for Kaletha–Prasad, Theorem A.6.2
 (literature ID `kaletha-prasad-2023-bruhat-tits-new-approach`). The source iterates dilatations of
 schemes (Construction A.6.1). This module realizes the same tower as an increasing sequence of
 subalgebras of `B = integralFunctions R K A`. The ring form is internal to this project.
@@ -9,7 +9,7 @@ Namespace: `Langlands.GroupScheme.IntegralModel.Smoothening.Termination`.
 
 Setting: `R` is a discrete valuation ring with fraction field `K`, and `A` is a commutative Hopf
 algebra over `R`. Here `incl R K A : A → B`, `point φ : B → R` (for an `R`-point `φ` of `A`) and
-`comulInt`, `antipodeInt` come from Worker 50's modules `Smoothening.IntegralFunctionsBasic` and
+`comulInt`, `antipodeInt` come from the modules `Smoothening.IntegralFunctionsBasic` and
 `Smoothening.Hopf`.
 
 ## The sequence

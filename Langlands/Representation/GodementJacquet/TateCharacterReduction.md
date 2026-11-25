@@ -1,6 +1,6 @@
 # Actual character models for admissible irreducible GL₁ representations
 
-Worker 458 proves `Langlands.GodementJacquet.exists_tateCharacterModel` and
+This module proves `Langlands.GodementJacquet.exists_tateCharacterModel` and
 constructs `tateCharacterModel` by classical choice from that theorem. For any field
 `F : Type uF` with a topology making its actual `GeneralLinear 1 F` a
 topological group, any complex module `V : Type uV`, and any admissible

@@ -1,7 +1,5 @@
 # Three residual patterns of actual rank-one indices
 
-Author: Worker 177.
-
 These internal predicates describe three concrete patterns on an actual
 `TitsIndexData G` over any field. They impose no locality, simple connectedness
 or split-rank premise. Their names record the rank-one marking patterns for

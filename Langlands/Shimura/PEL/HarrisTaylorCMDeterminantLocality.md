@@ -1,7 +1,5 @@
 # Open-cover descent of the normalized Harris determinant
 
-Author: Worker 344.
-
 This is an internal derivation from the published actual Lie determinant,
 its base-change theorem, rational-action classes, and Mathlib's separation
 theorem for sections on a scheme open cover. It introduces no new assertion

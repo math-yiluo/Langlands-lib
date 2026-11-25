@@ -1,7 +1,5 @@
 # Uniform finite parabolic types on an affine étale neighbourhood
 
-Worker 648, Task 6840.
-
 `relativeParabolicEtaleLocalFiniteTypes` proves the unchanged published
 `RelativeParabolicEtaleLocalFiniteTypesStatement` in every universe. The proof
 uses the actual iterated pullback objects from the target statement throughout.

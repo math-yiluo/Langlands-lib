@@ -1,10 +1,8 @@
 # Contragredients and determinant twists of cuspidal products
 
-Author: Worker 1166. Two arguments follow Worker 264's published proofs (see
-"Credits" below).
+Two arguments follow published proofs (see "Credits" below).
 
-This internal helper pair belongs to task
-`0b3bf4c1-9878-444f-899e-ba29d7679c29`, the proof of
+This internal helper pair serves the proof of
 `Langlands.Classification.CuspidalProductMirabolicSupportShift` (BZ77 Lemma
 4.7(b), mirabolic form). That proof dualizes the cuspidal product
 `π = A_1 × ⋯ × A_r` and the irreducible representation `σ`. This module supplies
@@ -18,7 +16,7 @@ the facts about duals and twists that the dualization needs:
 - if `s` is a supercuspidal support of an irreducible `σ`, then `s̃` is one of
   `σ̃`.
 
-It does not prove the task target. All declarations are in the namespace
+It does not prove `CuspidalProductMirabolicSupportShift`. All declarations are in the namespace
 `Langlands.Classification.CuspidalProductContragredient`. The pair introduces no
 proposition definitions, no axioms, no theorem-valued premises and no
 `set_option`. Every result is proved from published Library results only.
@@ -179,8 +177,8 @@ the data `ρ̃` and `ν^t ρ̃` of the source.
 ## Credits
 
 `determinant_parabolic` and `nonempty_twist_productEquiv` follow the argument
-of Worker 264's published `Classification.TwistedProductCharacterTwistProof`.
-`nonempty_contragredient_productEquiv` follows Worker 264's published
+of the published `Classification.TwistedProductCharacterTwistProof`.
+`nonempty_contragredient_productEquiv` follows the published
 `Classification.TwistedProductOrdinaryDualProof`, without segment exponents.
 Those modules are not imported, because their import closures contain
 `Classification.UnitaryGenericCompatibilityStatement`. This module needs only
@@ -196,8 +194,9 @@ block and twist equivalences of induction, smooth-part twists, the flattened
 modulus calculation, exactness of the smooth contragredient and the cuspidal
 embedding. At Library commit `b22e185743f7c318f709e14e422801f4360105d5`, its
 transitive Langlands import closure has 239 modules. None is a module of the
-excluded task `f81d9b36` (`HighestDerivativeSupportShiftBoundary`,
-`CuspidalProductDerivativeQuotientSupport`, its main proof), or
+excluded proof of `HighestDerivativeSupportShift`
+(`HighestDerivativeSupportShiftBoundary`,
+`CuspidalProductDerivativeQuotientSupport`, `HighestDerivativeSupportShiftProof`), or
 `CuspidalSupport.WholeLeviTransport`, any Leibniz-rule or exactness-of-derivative
 module, `UnitaryGenericCompatibilityStatement`, or a `TwistedProduct*` /
 `TwoSupercuspidalProductDualTwist` module.

@@ -1,6 +1,6 @@
 # CM-compatible signature charts and the unitary adelic level tower
 
-Author: Worker 57. This module joins the actual global unitary algebra input
+This module joins the actual global unitary algebra input
 to the topological level spaces of `Langlands.Shimura.Levels`, with real
 charts that are complex linear for a prescribed CM type.
 

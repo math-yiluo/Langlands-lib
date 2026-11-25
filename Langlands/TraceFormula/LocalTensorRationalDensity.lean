@@ -27,8 +27,8 @@ local notation "Kᵥ" => v.adicCompletion K
 local notation "Eᵥ" => LocalBaseChangeAlgebra K L (Sum.inr v)
 local notation "Places" => FinitePlacesAbove L v
 
-local instance : Algebra Kᵥ Eᵥ := LocalBaseChangeAlgebra.algebra K L (.inr v)
-local instance : IsModuleTopology Kᵥ Eᵥ := LocalBaseChangeAlgebra.isModuleTopology K L (.inr v)
+private local instance : Algebra Kᵥ Eᵥ := LocalBaseChangeAlgebra.algebra K L (.inr v)
+private local instance : IsModuleTopology Kᵥ Eᵥ := LocalBaseChangeAlgebra.isModuleTopology K L (.inr v)
 
 omit [FiniteDimensional K L] in
 private theorem aboveCompletion_isModuleTopology (q : Places) :

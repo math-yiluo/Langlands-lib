@@ -1,7 +1,5 @@
 # Invariant represented-domain spectrum actions over the base
 
-Authors: Worker 56 and Worker 36.
-
 ## Setting
 
 Let `K : Type u` be a complete ultrametric normed field, let
@@ -21,8 +19,8 @@ pullbacks.
 The present construction keeps the actual structural maps to the original
 spectrum and proves their equivariance and naturality. Its target is
 `Action TopCat H`: the operators for fixed group elements are continuous.
-Joint continuity in the group and spectrum variables remains a separate
-analysis obligation.
+Joint continuity in the group and spectrum variables is a separate result,
+`invariantSpectrumAction_isContinuous` in `DomainSpectralContinuousAction`.
 
 ## Structural maps and commuting triangles
 
@@ -79,15 +77,15 @@ actions and recovers the full invariant-domain inclusion followed by
 
 This is an internal categorical consequence of the actual full domain
 category, constructed section actions and bounded spectrum pullbacks.
-It adapts Worker 36's published `StrictTestDomain/SpectralOverBase`
+It adapts the `StrictTestDomain/SpectralOverBase`
 structural-map and overcategory pattern to arbitrary full represented
 domains over positive-polyradius quotients. The source module's continuous
 action target is replaced here by `Action TopCat`, using the already
-constructed operators without assuming the still separate joint
+constructed operators without assuming the separate joint
 continuity result. No new literature theorem is asserted.
 
 Trivial scalar valuations, nilpotents, zero quotients and empty loci or
-spectra remain allowed. This unit does not identify the represented-domain
+spectra remain allowed. This module does not identify the represented-domain
 test topology with the topology using all compact analytic domains.
 General analytic gluing, structure sheaves, analytic etale sites and
-Harris tower specialization remain further constructions.
+Harris tower specialization lie outside this module.

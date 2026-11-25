@@ -1,9 +1,8 @@
 # Scheme representability from locally surjective open charts
 
-Worker 336 proves
+This module proves
 `Langlands.AlgebraicGeometry.AlgebraicSpace.openChartGluing.{u}` with exactly
-the type of the published `OpenChartGluingStatement.{u}`. Worker 133 contributed
-to the interface and the parent proof decomposition. The statement and its
+the type of the published `OpenChartGluingStatement.{u}`. The statement and its
 entire import closure remain unchanged.
 
 The proof introduces the actual base scheme, fppf sheaf, chart index type,
@@ -36,6 +35,7 @@ links, and Naganori Yamaguchi's local adaptation notice.
 
 The theorem keeps arbitrary universe `u` and base `S`, the original index
 type, actual represented charts and the actual fppf sheaf. No affineness,
-finiteness, separation or prior scheme representation is assumed. This unit
-proves open-chart gluing; the thickening lifting, affine descent and final
-schemeness results are separate units.
+finiteness, separation or prior scheme representation is assumed. This module
+proves open-chart gluing; the thickening lifting (`OpenFamilyLiftingProof`),
+affine descent (`FiniteSurjectiveAffineDescentProof`) and final schemeness
+(`SchemenessOfThickeningProof`) results are in separate modules.

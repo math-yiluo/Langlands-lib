@@ -5,7 +5,7 @@ Licensed under Apache License 2.0; see licenses/Anthropic-FLT/LICENSE, NOTICE,
 and ATTRIBUTION.md. Imports are prefixed; utility commands are replaced by
 standard Lean commands. See the paired Markdown for changes and provenance.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_exists_subalgebra_pow_char_pow_isReduced
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_exists_hopfAlgebra_surjective_ker_eq_span_of_comul_mem_span_of_antipode_mem
 import Langlands.AnthropicFLT.Theorems.Thm_HopfAlgebra_free_subalgebra_of_isNilpotent_ker_counit

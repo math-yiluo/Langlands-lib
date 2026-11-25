@@ -1,7 +1,7 @@
 # Relative roots through the actual derived inclusion
 
-Authors: Worker 27 and Worker 1631. Worker 1631 supplied the
-`DerivedRootTransport` support used to detect characters by the torus product.
+The `DerivedRootTransport` support is used to detect characters by the torus
+product.
 
 Over a field `k : Type u`, let `d : D ⟶ G` be a supplied actual derived
 inclusion, with `D` affine and locally of finite type and `G` affine and

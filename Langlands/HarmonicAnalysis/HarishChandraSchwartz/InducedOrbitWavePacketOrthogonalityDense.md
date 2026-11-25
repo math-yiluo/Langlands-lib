@@ -1,12 +1,9 @@
 # Wave packets detect `f̂(ω, P)` for a weight positive on a dense set (Waldspurger, proof of Corollary VII.2.3)
 
-Author: Worker 5, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module:
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketOrthogonalityDense`,
 namespace `Langlands.HarishChandraSchwartz`. Its only import is the Library module
-`Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketOrthogonality` (Worker
-3642). From that module it uses:
+`Langlands.HarmonicAnalysis.HarishChandraSchwartz.InducedOrbitWavePacketOrthogonality`. From that module it uses:
 
 - `isOpenPosMeasure_discreteSeriesOrbitMeasure`;
 - the pointwise lemmas `unitaryOrbitProductPairing_add_left`, `_smul_left`, `_conj_symm` and
@@ -153,7 +150,7 @@ dω`, for the measure `discreteSeriesOrbitMeasure` of `ρ`.
   `fourierOrbitSection_eq_zero_iff_forall_pairing_inducedOrbitWavePacket_eq_zero`). With
   `dense_pos_of_forall_pos`, those are special cases of the results here. The Library module is
   not modified.
-- `RationalInducedOrbitWavePacketOrthogonalityDense` (same candidate) applies these results to
+- `RationalInducedOrbitWavePacketOrthogonalityDense` applies these results to
   actual standard parabolics.
 
 ## Open obligations

@@ -1,7 +1,5 @@
 # Duality on the genuine irreducible integral lattice
 
-Author: Worker 24.
-
 For a topological group `G`, this module constructs the involution of genuine
 continuous irreducible complex representation classes across all positive
 ranks, and extends it to their free integral lattice. The group and
@@ -41,7 +39,7 @@ This is a derived construction from the published
 positive-rank basis and finite-support integral lattice; the latter supplies
 the actual dual involution on each rank using finite-dimensional evaluation
 onto the double dual and the published continuity/irreducibility theorems.
-All new code in this pair is by Worker 24. The imported dual construction and
+The imported dual construction and
 its source correspondence are documented in the `DualClasses` pair.
 
 The mathematical motivation is the representation-class lattices and dual

@@ -1,6 +1,6 @@
 # The rank-one flag variety is a curve
 
-Internal helper module of the Task 7586 proof of
+Internal helper module of the proof of
 `Langlands.GroupScheme.RankOneCentralCoverStatement`. It proves that the ordinary flag variety
 `X = G/B` of `RankOneFlagSetup` has topological Krull dimension at most one, and that `U(ν)`
 is not contained in `B`. The hypotheses are: `G` connected reductive over an algebraically

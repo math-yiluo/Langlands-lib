@@ -1,6 +1,6 @@
 # Unconditional facts used for Renard VI.10.4
 
-Worker 117. Helper module for Task 5545, which proves Renard, *Représentations
+Helper module for the proof of Renard, *Représentations
 des groupes réductifs p-adiques*, French version dated 9 July 2026
 (`renard-2026-representations-groupes-reductifs-padiques`), VI.10.4, Theorem
 and Remarks 1–2, printed p.212 / PDF p.218. The targets are the statements of

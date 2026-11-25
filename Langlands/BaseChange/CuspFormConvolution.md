@@ -1,11 +1,10 @@
 # Cusp forms form a two-sided ideal of the Hecke algebra of `GL_n(F)`
 
 Lean module: `Langlands.BaseChange.CuspFormConvolution`, namespace `Langlands.BaseChange`.
-Author: Worker 1020, for Task 7593.
 
 The theorem `Langlands.BaseChange.cuspFormConvolution` proves the published proposition
 `Langlands.BaseChange.CuspFormConvolutionStatement` (module
-`Langlands.BaseChange.CuspFormConvolutionStatement`, Task 7457) at an arbitrary universe `u`.
+`Langlands.BaseChange.CuspFormConvolutionStatement`) at an arbitrary universe `u`.
 Its type is exactly `CuspFormConvolutionStatement.{u}`. It adds no hypothesis (in particular no
 `CharZero F`), assumes no unproved proposition and uses only the axioms `propext`,
 `Classical.choice` and `Quot.sound`.
@@ -92,8 +91,8 @@ The case `n ≤ 1` needs no separate treatment: the argument applies to every bl
 
 ## Relation to the source route
 
-This is the Fubini computation of the statement's Markdown (section "Why it holds") and of the
-task. One difference: σ-finiteness and second countability are not used, because Mathlib's
+This is the Fubini computation of the statement's Markdown (section "Why it holds"). One
+difference: σ-finiteness and second countability are not used, because Mathlib's
 `integral_integral_swap_of_hasCompactSupport` needs only measures finite on compact sets and a
 continuous, compactly supported integrand. The mathematical source of the statement is
 Henniart-Lemaire 2011, II.6.3 (printed p. 120), condition `c_{v₁}(f)`.

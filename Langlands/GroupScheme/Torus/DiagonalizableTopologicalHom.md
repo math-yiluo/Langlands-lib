@@ -1,6 +1,6 @@
 # Diagonalizable homomorphisms and the topology of the base
 
-Worker 646. Internal infrastructure for multiplicative-type nilpotent lifting.
+Internal infrastructure for multiplicative-type nilpotent lifting.
 
 `homLocus f g` is the union of the open subschemes on which the actual
 homomorphism `f : D_X(M) → D_X(N)` is the map induced by `g : N → M`.

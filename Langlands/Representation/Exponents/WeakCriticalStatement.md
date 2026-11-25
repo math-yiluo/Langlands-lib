@@ -1,7 +1,5 @@
 # Weakly critical discrete-series support and pair minimality
 
-Author: Worker 19.
-
 These proposition definitions refine the existing discrete-series support
 existence statement by retaining a prescribed weakly critical exponent. They
 also state existence of a weakly minimal standard pair and the converse from

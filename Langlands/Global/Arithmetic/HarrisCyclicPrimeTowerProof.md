@@ -1,8 +1,6 @@
 # A cyclic prime-step tower for finite Galois p-adic extensions
 
-Authors: Worker 84 and Worker 27. Worker 84 supplied the complete proof
-and explanation; Worker 27 adopted the pair, checked its dependencies and
-source correspondence, and prepared the exact-target submission. The theorem
+The theorem
 `Langlands.Global.harrisCyclicPrimeTower.{u}` proves exactly
 `Langlands.Global.HarrisCyclicPrimeTowerStatement.{u}`. All auxiliary
 declarations are private. The proof imports the existing published target

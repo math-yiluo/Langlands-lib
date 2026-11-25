@@ -1,9 +1,5 @@
 # The absolute residue action of a nonarchimedean local field
 
-Original construction (characteristic zero, `AlgebraicClosure K`): Worker 9.
-Generalization to every nonarchimedean local field over a separably closed
-algebraic extension: Worker 122 (Task 7404, deliverable 1b of Task 7341).
-
 For every nonarchimedean local field \(K\), in any characteristic, and every
 algebraic extension \(\Omega/K\) that is separably closed, this file constructs
 an actual homomorphism
@@ -42,7 +38,7 @@ Mathlib derives `Algebra.IsAlgebraic K Ω` by instances, and
 instance, so a user writes
 `haveI := IsSepClosure.sep_closed K (K := Ω)` before applying the general
 declarations. For Mathlib's `SeparableClosure K`, both instances are found
-automatically. Each of the following was checked to compile, in a private draft
+automatically. Each of the following was checked to compile, in a private scratch
 module importing this file, `AbsoluteProof` and `SeparableInertiaDefinitions`:
 the declarations at an arbitrary `Ω` with `[IsSepClosure K Ω]` (through that
 `haveI`), at `SeparableClosure K`, and at
@@ -170,8 +166,8 @@ The published section assumed `[CharZero K]` and worked with
 
 The other published uses of `CharZero K` in `AbsoluteProof` (openness,
 compactness of inertia, the quotient equivalence) are part of the published
-statement `LocalResidueProperties` and are not generalized here; a later task of
-Task 7341 states their general analogue.
+statement `LocalResidueProperties` and are not generalized here;
+`ResidueProjectionStatement` states their general analogue.
 
 ## In place: the published declarations are the general ones
 
@@ -194,7 +190,7 @@ instances of the supplied `T : F.TopologicalData` and call the declarations
 above, so they are the general ones at `F.Carrier` and
 `AlgebraicClosure F.Carrier`.
 
-In a private draft module, each equation in the following table between a
+In a private scratch module, each equation in the following table between a
 published declaration and the general declaration was checked by `rfl` (for the
 p-adic column, after installing `T.topology`, `T.valuativeRel` and
 `T.localField`).
@@ -249,12 +245,11 @@ explicit. Its project dependencies are:
   `isUnit_resultant_iff_isCoprime`, `resultant_map_map`,
   `resultant_add_right_deg`).
 
-The generalization was compiled in the environment
-`5c94c648-e8dc-4002-a50a-071ebf3f6096` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`) over Library commit `fcb85a7e`.
+The generalization was compiled with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435` over Library commit `fcb85a7e`.
 
 This file does not prove the residue exact sequence. `AbsoluteStatement`
-specifies the published characteristic-zero conclusions, and a later task of
-Task 7341 states their general analogue. The identification of
+specifies the published characteristic-zero conclusions, and
+`ResidueProjectionStatement` states their general analogue. The identification of
 `Field.absoluteGaloisGroup k` with the profinite integers by Frobenius, and the
 local Weil group, are in `Langlands/Weil/Local/Assembly.lean`.

@@ -1,8 +1,6 @@
 # Effective unitary exact expansion: statements
 
-Author: Worker 981.
-
-This pair states that every actual continuous unitarizable finite-dimensional
+This module states that every actual continuous unitarizable finite-dimensional
 complex representation has its whole exact class expanded by a nonnegative
 integral combination of genuine unitary irreducible classes. It does not prove
 that assertion. The only theorem proved here is the definitional equivalence of
@@ -59,7 +57,7 @@ bijectivity, a chosen inverse, or `IsTopologicalGroup G`, and it does not refer
 to a supplied summand or selected constituent. It asserts no uniqueness of `x`,
 no chosen expansion function and no canonical decomposition. Uniqueness of
 expansions in the full irreducible lattice is the separate exact-K0 statement
-`Weil.ExactExpansionUniqueStatement`, which this pair neither uses nor
+`Weil.ExactExpansionUniqueStatement`, which this module neither uses nor
 duplicates.
 
 ## Actual local Weil specialization
@@ -86,8 +84,9 @@ side is asserted.
 
 The following explains why the statement is expected to hold and why its
 hypotheses suffice. None of these representation-theoretic steps is
-implemented or asserted as a theorem here; the existence proof is a separate
-successor task.
+implemented or asserted as a theorem here; the existence proof is in the module
+`UnitaryExactExpansionProof` (`Weil.effectiveUnitaryExactExpansion` and
+`LocalWeil.effectiveUnitaryExactExpansion`).
 
 Fix an invariant positive Hermitian form on `A`. It restricts to a positive
 invariant form on every invariant subspace `W`. The orthogonal complement of
@@ -137,7 +136,8 @@ The scope is justified as follows.
 This proposition is an internal derived statement, not a transcription of a
 numbered theorem. It is needed to instantiate the full local unitary
 restriction used by Henniart. Henniart does not state this generalized
-finite-dimensional proposition, and its proof is not already formalized.
+finite-dimensional proposition; its proof is formalized in
+`UnitaryExactExpansionProof`.
 
 The source conventions were checked directly in this registered original:
 Guy Henniart, *Une preuve simple des conjectures de Langlands pour GL(n) sur un

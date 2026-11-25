@@ -1,14 +1,14 @@
 # The actual differentiated product restriction sequence
 
-Author: Worker 593.
-
 This derived helper constructs a natural short exact sequence whose middle
 functor is the unchanged `leibnizSource`. The subobject is the actual right
 mixed derivative source precomposed by restriction on the first input. The
 quotient is the actual restriction quotient followed by the actual derivative.
 It supplies a focused step toward the positive-rank, positive-order Leibniz
 argument. The full mixed derivative comparisons and the construction of the
-Leibniz filtration remain separate obligations.
+Leibniz filtration are separate results, proved in
+`LeftMixedProductDerivativeProof`, `RightMixedProductDerivativeFiltrationProof`
+and `GeneralLinearDerivativeLeibnizFiltrationProof`.
 
 ## Parameters and declarations
 
@@ -227,20 +227,19 @@ among its premises.
 | --- | --- |
 | Actual natural functors, unchanged target, complete feasible indices, smooth casts and no residual twist | The middle is literally `leibnizSource`. The two arrows are natural. The subobject cast agrees with the prescribed smooth cast by the forgetting square. No target or imported pair is edited; no filtration or enumeration is asserted by this helper. The actual normalized characters remain present. |
 | Supplied topology and character, independent universes, arbitrary carriers and all boundaries | `T`, `ψ`, `uF` and `uV` are unchanged parameters. There is no representation hypothesis. Positive input ranks and order are explicit scope bounds. The top order and its actual `GL_0` output carrier are included. Zero-factor and order-zero cases remain in the separate boundary results. |
-| Only independently proved and published general inputs; no unproved consumer hypothesis | The proof uses the published restriction sequence and unconditional actual derivative exactness, source comparisons and elementary linear algebra. Neither a source citation nor a statement definition, draft, pending proof, mixed theorem or Leibniz assembly supplies a proof. |
-| All segment derivative formulas, individual special-head/reverse-socle or segment-socle/reverse-head existence, full/head/socle Jacquet and special-exponent formulas, analytic segment classification | No segment module occurs in the complete Lean closure. No formula or existence/classification conclusion in these families is used. In particular none of the other clauses of the parent six-statement segment contribution supplies an input. |
+| Only independently proved and published general inputs; no unproved consumer hypothesis | The proof uses the published restriction sequence and unconditional actual derivative exactness, source comparisons and elementary linear algebra. Neither a source citation nor a statement definition, mixed theorem or Leibniz assembly supplies a proof. |
+| All segment derivative formulas, individual special-head/reverse-socle or segment-socle/reverse-head existence, full/head/socle Jacquet and special-exponent formulas, analytic segment classification | No segment module occurs in the complete Lean closure. No formula or existence/classification conclusion in these families is used. |
 | Unlinked/linked/juxtaposed segment structures, pair reducibility, reverse quotient maps, segment-socle product irreducibility, adjacent swaps, two-segment commutation, linked gluing, ordered socle existence and socle exhaustion | No such consumer declaration occurs in the closure or the proof route. Their conclusions, successors and downstream consequences supply no premise. |
 | Special-head product criterion, generic segment-product uniqueness, multisegment exhaustion, ordered strong-head existence, quotient coverage, ordered conversion and tempered uniqueness | None enters the restriction, averaging, localization, cast or source-comparison argument. The incidental supercuspidal-definition/contragredient imports above prove no such conclusion and are not used as classification evidence. |
 | Square-integrable Langlands classification, square-integrable and regular exhaustion, forward special essential square-integrability | No square-integrable or exhaustion theorem is imported or used. The proof operates on arbitrary smooth objects and their actual function spaces and character quotients. |
 | Two-supercuspidal nonadjacent irreducibility, full-product structure or assembly and their downstream conclusions | None is in the closure or proof route. General exactness and general restriction are the upstream inputs used here. |
 | Ze80 §3.5/§9.6 segment derivatives, 4.2/9.7 criteria, 9.3 analytic or square-integrability results, classification or exhaustion | No Ze80 result supplies a proof input. The original-source route is the general BZ77 restriction and minus-exactness construction, independently proved in the Library. |
-| Irreducible, Levi-cuspidal, supercuspidal, all-character single-block Whittaker coinvariant finiteness and the dependent mirabolic finite-length route | None of the three prohibited finiteness declarations or tasks occurs in the closure. No finite-length theorem is used. Algebraic Whittaker characters and Iwasawa compactness are independent lower constructions; the incidental Rankin–Selberg imports above do not supply finiteness. |
-| Operator pause and upstream/downstream ownership | No contact or wake of Worker 127 is needed or made. The accepted/public minus-exactness theorem is read and imported. This helper does not duplicate either separately owned full mixed derivative proof or claim the parent theorem. |
+| Irreducible, Levi-cuspidal, supercuspidal, all-character single-block Whittaker coinvariant finiteness and the dependent mirabolic finite-length route | None of the three prohibited finiteness declarations occurs in the closure. No finite-length theorem is used. Algebraic Whittaker characters and Iwasawa compactness are independent lower constructions; the incidental Rankin–Selberg imports above do not supply finiteness. |
+| Upstream and downstream results | The published minus-exactness theorem is read and imported. This helper does not duplicate either full mixed derivative proof or claim the full Leibniz theorem. |
 
-A recursive scan checked all excluded declaration names and all 38 unique
-inherited excluded task identifiers, with no Lean-source matches in the
-closure. This supplements the mathematical trace above; it does not replace
-that trace or independent review.
+A recursive scan checked all excluded declaration names, with no Lean-source
+matches in the closure. This supplements the mathematical trace above; it
+does not replace that trace.
 
 ## Complete project import closure
 

@@ -1,8 +1,5 @@
 # Local two-axis triviality for smooth proper families: proof
 
-Author: Worker 513. Worker 1017 contributed the initial proper-spreading
-interface and the design used to apply it in this assembly.
-
 The module proves
 
 ```lean
@@ -99,7 +96,7 @@ The proof follows the Stacks Project, More on Morphisms, Lemma
 `stacks-picard-diagonal-seesaw-0bdp-0bf0-a04446e5`, commit
 `a04446e57ec1fbc252a871afcec7752fb2807b14`, folder SHA-256
 `b97dd26d238af5bb18d082504515f27f5316b6b87c2a7d68ca8630e7862ad48e`.
-Worker 513 read these statements and complete proofs, together with the
+These statements and complete proofs were read, together with the
 single-H1 argument in lines 9430–9516. The retained README records two
 corrected typographical comments on 0BDP; no project errata file was
 present when checked.

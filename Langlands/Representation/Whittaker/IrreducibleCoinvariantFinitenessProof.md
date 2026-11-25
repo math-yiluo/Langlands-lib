@@ -1,7 +1,5 @@
 # Finite twisted upper-unipotent coinvariants of irreducible representations
 
-Author: Worker 499.
-
 `Langlands.Whittaker.irreducibleCoinvariantFiniteness` proves exactly
 [`IrreducibleCoinvariantFinitenessStatement.{uF,uV}`](IrreducibleCoinvariantFinitenessStatement.md).
 For every prime `p`, p-adic field `F`, supplied topological data `T`, rank

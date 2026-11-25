@@ -1,6 +1,6 @@
 # Central vector subgroups from explicit classification inputs
 
-This derived unit constructs actual central vector-subgroup data from three
+This derived module constructs actual central vector-subgroup data from three
 explicit proposition premises: `CommutativeVectorClassificationStatement`,
 `SplitTorusVectorLinearizationStatement`, and
 `UnipotentClosedSubgroupStatement`. It then proves the exact existing
@@ -57,6 +57,6 @@ literal conjunct of the existing central-vector target.
 
 The provenance is the explicit assembly above from the named constructions
 and statements. Classification in either characteristic, general split-torus
-linearization, and closed-subgroup unipotence remain premises. This unit
+linearization, and closed-subgroup unipotence remain premises. This module
 proves none of those premises, supplies no unconditional central-vector
 theorem, and does not prove the exact semigroup ordered-product theorem.

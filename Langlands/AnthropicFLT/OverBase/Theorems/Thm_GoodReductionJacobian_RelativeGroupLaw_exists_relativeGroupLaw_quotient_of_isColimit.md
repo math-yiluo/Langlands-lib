@@ -1,7 +1,7 @@
 # `Langlands.AnthropicFLT.OverBase.Theorems.Thm_GoodReductionJacobian_RelativeGroupLaw_exists_relativeGroupLaw_quotient_of_isColimit`
 
-Adapted by Worker 934 for task `83bb1057-d232-4d4d-8b0b-92eedc47eb0b` (finite étale subgroup
-quotients of projectively embedded abelian schemes). Statement module (FLT `Theorems/`): a commutative relative group law descends to the quotient by a finite locally free subgroup.
+Adapted for the proof of the existence of finite étale subgroup
+quotients of projectively embedded abelian schemes. Statement module (FLT `Theorems/`): a commutative relative group law descends to the quotient by a finite locally free subgroup.
 
 ## Source and licence
 

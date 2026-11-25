@@ -1,7 +1,5 @@
 # Ordinary cup normalization and naturality
 
-Authors: Worker 45 (proof draft); Worker 211 (author audit and submission documentation).
-
 `Langlands.Tate.ordinaryCupLaws : Langlands.Tate.OrdinaryCupLaws.{u}` proves the
 normalization and coefficient naturality specification in the published module
 `Langlands.Cohomology.Tate.OrdinaryCupStatement`. This is an internal, derived proof

@@ -32,9 +32,8 @@ The argument does **not** refute the following:
   Their premise `IsDoubleRootCommutatorFriendly` fails for the filtration below (see
   "Scope").
 
-Found while working on Task 5512 (`05aa82d6-2f2e-4113-908c-edc4ea226133`). Worker 3557,
-the publisher of the targets, checked the witness arithmetic and accepted the
-report.
+Found in an attempt to prove `MoyPrasadCommutatorStatement`. The witness arithmetic
+was checked a second time, independently.
 
 ## Summary
 
@@ -247,7 +246,7 @@ uniformizer of `F`: take `u = u(0, √ϖ)` and `u' = u⁻(2, -2)`, so `r = 1/2` 
 `r > 0` and `s < ε`. The `Z`-component `1 + βf_0` has `δ`-part of valuation `r + 2s`, which
 is below `min(r + s + ε, 2r + 2s)`.
 
-## Witness against `MoyPrasadCovarianceStatement` (Task 5511)
+## Witness against `MoyPrasadCovarianceStatement`
 
 Keep `u = u(0, √2) ∈ U_{2a,x,1/2}` and take `u'' := u⁻(√2, 1)`. Here
 `tr 1 = 2 = -N(√2)` and `φ_{-a}(u'') = 0`, so `u'' ∈ U_{-a,x,0}`. The element
@@ -265,7 +264,6 @@ As above, it follows that `u''⁻¹ u u'' ∉ P'_{x,1/2}`. Now set
   `U_{-a,x,0} ≤ G(F)^♯_x`. The reduced building is the quotient by the family
   `x ↦ G(F)^♯_x` (`KPApartmentData.sharpFixerFamily`), so
   `ApartmentQuotient.mk_eq_mk_iff` with `n = 1` gives `u'' • [x] = [x]`.
-  Worker 45 pointed this out.
 - So both `Q` and `Q'` satisfy `IsMoyPrasadAt [x] (1/2)`: use `g = 1` for `Q` and
   `g = u''` for `Q'`. Here `IsMoyPrasadAt` is `CentralizerFiltration.IsMoyPrasadAt`
   (module `KPMoyPrasadFiltration`).
@@ -303,7 +301,11 @@ comes from.
 - **`IsDoubleRootCommutatorFriendly` fails for `Z'`.** It would require
   `t(1 - 2√2) ∈ Z'_{3/2}`, because the pair above has `a`-depth sum `1/4 + 1/2 = 3/4`.
   KP's `T_r` satisfies it at this pair, since `ω(γ - 1) = 3/2`. So the double-root
-  variants (Tasks 5645 and 5646) are not affected.
+  variants are not affected; both are proved in the Library
+  (`moyPrasadDoubleRootCovariance` in
+  `Langlands/Geometry/Building/KPMoyPrasadDoubleRootCovarianceProof.lean`,
+  `moyPrasadDoubleRootCommutator` in
+  `Langlands/Geometry/Building/KPMoyPrasadDoubleRootCommutatorProof.lean`).
 - **KP's book is not refuted.** KP Lemma 7.2.3 (printed p.245 / PDF p.276) uses the
   minimal congruent filtration `T_r`, not an arbitrary commutator-friendly one. The
   published axioms admit `Z'`, which is strictly smaller than `T_r` when `p = 2`.

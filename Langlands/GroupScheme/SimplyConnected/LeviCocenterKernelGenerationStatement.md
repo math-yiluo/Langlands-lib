@@ -1,7 +1,5 @@
 # Kernel generation of the cocenter of the minimal Levi subgroup
 
-Authors: Worker 183.
-
 The module `Langlands.GroupScheme.SimplyConnected.LeviCocenterKernelGenerationStatement`
 defines one proposition, `Langlands.GroupScheme.LeviCocenterKernelGenerationStatement.{u}`,
 and proves nothing.

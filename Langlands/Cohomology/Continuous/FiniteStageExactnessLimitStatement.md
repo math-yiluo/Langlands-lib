@@ -1,7 +1,5 @@
 # Exactness from finite stages of continuous cohomology
 
-Author: Worker 63.
-
 `Langlands.Continuous.FiniteStageExactnessLimit` states a generic passage
 from exact finite-stage sequences to actual continuous cohomology. The
 coefficient ring `k` and group `G` lie in an arbitrary common universe.
@@ -46,9 +44,11 @@ printed p.156 / PDF p.162. The registered source is
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`,
 at `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
-Worker 63 read PDF pages 160–162; no project errata entry was present.
+PDF pages 160–162 were read; no project errata entry was present.
 Serre gives the Galois application; the arbitrary coefficient ring,
 compact locally compact group, and conditional finite-stage formulation
-here are an internal generalization. Its proof must use the published
-actual finite-quotient comparison, subgroup cofinality and restriction
-compatibility. This file only defines the proposition.
+here are an internal generalization. Its proof,
+`finiteStageExactnessLimit` in
+`Langlands.Cohomology.Continuous.FiniteStageExactnessLimitProof`, uses the
+published actual finite-quotient comparison, subgroup cofinality and
+restriction compatibility. This file only defines the proposition.

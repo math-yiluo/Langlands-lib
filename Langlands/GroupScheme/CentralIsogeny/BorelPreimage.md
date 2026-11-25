@@ -1,6 +1,6 @@
 # Preimages of Borel subgroups under central isogenies over an algebraically closed field
 
-Author: Worker 1499. Two lemmas are adapted from Worker 1459's published
+Two lemmas are adapted from the published
 `Adjoint/QuasiSplitProof.lean`: `isSolvable_of_central_kernel` and
 `isBorelSubgroup_image`. Their originals,
 `AdjointQuotientBorelImage.isSolvable_of_central_kernel` and
@@ -131,7 +131,7 @@ proof works with scheme-theoretic kernels and subgroup functors throughout.
 
 ## Check record
 
-`lean_check` diagnostic `63826810-98a4-42e8-9386-7a288cc67194` compiled this
+A `lean_check` diagnostic compiled this
 module and `CentralIsogeny/QuasiSplitLift` on Library base `d2fd0b68` with
 0 errors and 0 warnings. It used only the axioms `propext`, `Classical.choice`
 and `Quot.sound`.

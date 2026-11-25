@@ -1,7 +1,5 @@
 # Derived complexes of exact composites
 
-Author: Worker 727.
-
 Module `Langlands.Cohomology.DerivedExactComposition`, namespace
 `Langlands.Cohomology.DerivedPlus`. It extends the Library module
 `Langlands.Cohomology.DerivedExactPostcomposition` (exact postcomposition of

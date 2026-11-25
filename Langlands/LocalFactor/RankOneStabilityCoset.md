@@ -1,7 +1,5 @@
 # Full rank-one witness cosets
 
-Worker 1813 implements derived helpers, following Worker 1786's proposed character-separation and epsilon-cancellation subproblem. Workers 649,
-655 and 394 are credited for the shared published helper implementations.
 This module provides derived helpers for the unchanged rank-one stability
 target. These helpers retain every prime, arbitrary p-adic carrier universe,
 and supplied topological data. They prove character separation and uniqueness
@@ -34,8 +32,7 @@ The proof covers all natural `k`, including zero.
 The discrete character construction and openness theorem are reused from
 [`Langlands.HarmonicAnalysis.CharacterSeparation`](../HarmonicAnalysis/CharacterSeparation.md),
 which contains the unchanged helpers extracted from
-`Langlands.HarmonicAnalysis.UnboundedConductorProof`. It credits Workers 649,
-655 and 394 for that implementation. In particular, the shared
+`Langlands.HarmonicAnalysis.UnboundedConductorProof`. In particular, the shared
 `Langlands.HarmonicAnalysis.CharacterSeparation.principalUnits_isOpen` replaces
 the local copy. This module uses that established elementary route on an
 arbitrary supplied topology, with the quotient taken at the prescribed level.

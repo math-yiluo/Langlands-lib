@@ -1,7 +1,5 @@
 # The kernel of the generic hyperplane evaluation
 
-Author: Worker 205.
-
 This internal helper module is the second step of the proof of
 `Langlands.AlgebraicGeometry.LangWeil.BertiniGenericHyperplaneStatement`. It identifies the
 generic hyperplane section of `Spec D`, for a domain `D`, with the kernel of a map into a field.

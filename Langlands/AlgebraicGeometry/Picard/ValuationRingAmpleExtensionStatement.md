@@ -8,10 +8,6 @@ total space of `A` restricts to an ample line bundle on the generic fibre. This
 module only defines the proposition. It does not prove it, and it adds no
 axiom.
 
-Worker 712 implemented this pair. Worker 1031 specified the exact Lean
-statement, the source and the specializations in the task contract of task
-`469d3df1-468d-41cc-bbec-02aa3e4fab79`.
-
 ## Exact statement
 
 The checked declaration, in namespace `Langlands.AbelianScheme` with
@@ -30,9 +26,7 @@ def ValuationRingAmpleExtensionStatement : Prop :=
           (pullback.fst A.X.hom (Spec.map (CommRingCat.ofHom (algebraMap R K))))).obj M).IsAmple
 ```
 
-This is the body displayed in the task objective, unchanged. Only the
-docstring and the module documentation were added. `lean_check` in
-environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` reports no errors or
+`lean_check` reports no errors or
 warnings and confirms that the declaration returns `Prop`, with the single
 universe parameter `u`.
 
@@ -241,11 +235,13 @@ extends over `A`.
 
 ## Role in the project
 
-Worker 1031 published this statement as a prerequisite of the exact-target
-proof task `322a2874-8b1c-4e61-b7cc-e0d154742640`, which proves
-`Langlands.AbelianScheme.PicardZeroValuativeExtensionStatement`. That task
-in turn serves Worker 302's task `54d4a7cc-7607-4c5a-82e7-25bafba9e3e9`. On
-Worker 1031's route, the line bundle `M` supplied here, passed to a
+This statement is a prerequisite of the proof of
+`Langlands.AbelianScheme.PicardZeroValuativeExtensionStatement` (module
+`PicardZeroValuativeExtensionProof`, through the reduction
+`PicardZeroValuativeExtensionReduction`). That proof is in turn used by the
+proof `relativeDualSchemeValuativeExistence` of
+`RelativeDualSchemeValuativeExistenceStatement` (module
+`RelativeDualSchemeValuativeExistenceProof`). On that route, the line bundle `M` supplied here, passed to a
 valuation ring dominating `R` in an algebraic closure of `K`, feeds the
 Mumford-bundle construction. Any ample line bundle on the generic fibre
 suffices, because the translation-difference lifting is applied afterwards
@@ -261,7 +257,7 @@ to the restriction of `M`.
   directory SHA256
   `40f8c93a80878a062eb4bf6387a8f76f9843c43cadcb38ec84d6bac9c5ea3f8c`, at
   `literature/Stacks Project - Valuation rings, normal schemes and geometric unibranchness (HTML snapshot 2026-10-30)`.
-  Worker 712 read `00I8.html` (Section 10.50, Definition 10.50.1 and
+  The files read were `00I8.html` (Section 10.50, Definition 10.50.1 and
   Lemmas 10.50.3, 10.50.4, 10.50.5 and 10.50.9 with proofs), `06DT.html`
   (Section 15.108), `0BPZ.html` (Definition 15.108.1), `0BQ1.html`
   (Section 28.16), `0BQ2.html` (Definition 28.16.1) and `0BQ3.html`
@@ -283,7 +279,7 @@ to the restriction of `M`.
   were read in full with their comments for the published
   `Langlands/AlgebraicGeometry/Picard/FieldBaseChangeAmpleStatement.md`.
 
-## Proof obligations for the future exact-target proof
+## Proof obligations for the exact-target proof
 
 A proof must work with the Library definitions above and add no outer
 hypothesis. The source gives no Lean construction of the following, among
@@ -301,4 +297,5 @@ others:
    the whole generation open, as in the obligations listed in
    `Langlands/AlgebraicGeometry/Picard/FieldBaseChangeAmpleStatement.md`.
 
-This module discharges none of these obligations.
+This module discharges none of these obligations. The Library proves the
+statement as `valuationRingAmpleExtension` in `ValuationRingAmpleExtensionProof`.

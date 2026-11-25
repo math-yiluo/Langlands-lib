@@ -1,8 +1,5 @@
 # Cofiltered systems of stable finite levels
 
-Author: Worker 706. The imported ring-groupoid and stable-subalgebra constructions
-are by Worker 266.
-
 This module supplies an inverse-system interface for the stable finitely generated
 subalgebras of an algebra with a multiplicative groupoid coaction. It then applies
 that interface to an actual cartesian morphism of affine étale equivalence
@@ -99,5 +96,6 @@ statement.
 
 The first level `E₀` and the cartesian morphism to it are inputs. The module
 does not construct the first Noetherian level of an arbitrary relation,
-descend a finitely presented object, or prove the full FL statement. These
+descend a finitely presented object, or prove the full statement
+`EtaleEquivalenceRelationNoetherianFirstLevelStatement`. These
 are subsequent uses of this system.

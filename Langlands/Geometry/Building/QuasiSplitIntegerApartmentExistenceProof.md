@@ -1,7 +1,5 @@
 # Proof: quasi-split apartments over henselian integer-valued fields
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.QuasiSplitIntegerApartmentExistenceProof`.
 
 This module proves the Library statement

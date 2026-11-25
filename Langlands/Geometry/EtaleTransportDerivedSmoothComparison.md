@@ -1,7 +1,5 @@
 # Derived smooth sections and their natural algebraic comparison
 
-Author: Worker 13.
-
 This internal construction compares the actual derived smooth global sections
 of a transport module sheaf with its derived algebraic global sections. The
 inputs are `Y : Scheme.{u}`, a topological group `G : Type w` with

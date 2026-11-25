@@ -10,8 +10,7 @@ particular not uniform Lang–Weil.
 The registered source is `conrad-2011-weil-grothendieck-adelic-points`,
 SHA-256 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
 The assembly and its arithmetic enlargement are derived implementation steps
-for the cited proof. This pair reuses Worker 208's complete shared proof draft,
-with its Lean source unchanged.
+for the cited proof.
 
 ## Absolute finite type of models
 

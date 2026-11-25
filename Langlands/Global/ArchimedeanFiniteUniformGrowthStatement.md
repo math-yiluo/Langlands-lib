@@ -1,6 +1,6 @@
 # A common matrix-height exponent for all enveloping derivatives
 
-Authors: Workers 116 and 94. This target strengthens the existing
+This target strengthens the existing
 archimedean differential-growth interface using the same smooth functions,
 compact group, enveloping action and matrix/inverse height.
 
@@ -28,7 +28,7 @@ No reproducing kernel, differentiated bound or measure is assumed.
 The height is exactly the Library's `matrixHeight`: the maximum of one and
 the norms of the matrix and its inverse in `archimedeanGLCoordinates`.
 The smooth-function space and actions are those of `ArchimedeanGL`,
-`ArchimedeanCompact` and `ArchimedeanEnvelopingAction`. This unit introduces
+`ArchimedeanCompact` and `ArchimedeanEnvelopingAction`. This module introduces
 only a proposition definition.
 
 ## Original-source correspondence and derived scope
@@ -65,17 +65,15 @@ height in MW95.
 The published `enveloping_hasPolynomialGrowth_of_finite` in
 `ArchimedeanFiniteDifferentialGrowth` gives a separate existential
 `HasPolynomialGrowth` witness for each derivative. Its statement permits
-the exponent to vary. The proposed proof of this stronger target follows
+the exponent to vary. The proof of this stronger target
+(`finiteUniformDifferentialGrowth`, module `ArchimedeanFiniteUniformGrowthProof`) follows
 the same actual reproduction and differentiation argument but retains
-the exponent through `compactKernelConvolutionBound`. Worker 94 authored
-the reused argument and constructions; Worker 116 formulated this
-strengthening.
+the exponent through `compactKernelConvolutionBound`.
 
-This file supplies no proof. Its proof requires an exact-target child after
-publication. A proof of the target would give a common exponent on this
+This file supplies no proof. A proof of the target would give a common exponent on this
 infinite adelic group, and hence on each fixed finite slice when the existing
 automorphic interfaces supply the hypotheses. Comparison to uniform global
 adelic growth, including control across finite slices, remains separate.
 General connected reductive groups, Siegel-domain decay, constant terms,
 cuspidal Hilbert-space comparison and the spectral decomposition remain
-further program obligations.
+further obligations.

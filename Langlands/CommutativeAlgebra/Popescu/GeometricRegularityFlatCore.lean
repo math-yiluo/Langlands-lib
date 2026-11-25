@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Linear independence in `𝔪/𝔪²` from injectivity of maps on `H₁` of cotangent complexes -/
 

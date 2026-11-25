@@ -105,6 +105,10 @@ theorem titsObstruction_starFixedWeightsEquiv (hG : IsSimplyConnected G)
   have hb' := (f.isDominantWeight_weightMap_iff (a - lam.1)).mpr hb
   have hfa' := (f.isStarFixedWeight_weightMap_iff a).mpr hfa
   have hfb' := (f.isStarFixedWeight_weightMap_iff (a - lam.1)).mpr hfb
+  have : AddMonoidHomClass (characterLattice d.toSplitPinning.torus ≃ₗ[ℤ]
+      characterLattice d'.toSplitPinning.torus) (characterLattice d.toSplitPinning.torus)
+      (characterLattice d'.toSplitPinning.torus) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   rw [d.titsObstruction_eq_sub hG lam ha hb hfa hfb (sub_sub_cancel a lam.1).symm,
     d'.titsObstruction_eq_sub hG' (f.starFixedWeightsEquiv lam) ha' hb' hfa' hfb'
       (by rw [coe_starFixedWeightsEquiv, ← map_sub, sub_sub_cancel]),
@@ -303,6 +307,10 @@ theorem titsObstruction_starFixedWeightsEquiv (hG : IsSimplyConnected G)
   have hb' := (f.isDominantWeight_weightMap_iff (a - lam.1)).mpr hb
   have hfa' := (f.isStarFixedWeight_weightMap_iff a).mpr hfa
   have hfb' := (f.isStarFixedWeight_weightMap_iff (a - lam.1)).mpr hfb
+  have : AddMonoidHomClass (characterLattice d.toSplitPinning.torus ≃ₗ[ℤ]
+      characterLattice d'.toSplitPinning.torus) (characterLattice d.toSplitPinning.torus)
+      (characterLattice d'.toSplitPinning.torus) :=
+    SemilinearMapClass.instAddMonoidHomClass _
   rw [d.titsObstruction_eq_sub hG lam ha hb hfa hfb (sub_sub_cancel a lam.1).symm,
     d'.titsObstruction_eq_sub hG (f.starFixedWeightsEquiv lam) ha' hb' hfa' hfb'
       (by rw [coe_starFixedWeightsEquiv, ← map_sub, sub_sub_cancel]),

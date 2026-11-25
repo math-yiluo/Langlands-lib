@@ -287,7 +287,10 @@ Chapter 22, entries on p. 465 (22.8) and p. 478 (proof of 22.42); none
 concerns Section 22d. Its Chapter 21 entries (p. 440, 21.19; p. 457) and its
 Chapter 12 entry (Example 12.10) do not concern the results cited here.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
+
+The statement is proved as `weylCharacterFormulaStatement` in
+[`Rational.WeylCharacterFormulaProof`](WeylCharacterFormulaProof.md).
 
 Milne's route needs the line bundles `L(λ)` on `G/B` and their cohomology
 (Theorems 22.48, 22.50 and 22.51), which the Library does not have. A route

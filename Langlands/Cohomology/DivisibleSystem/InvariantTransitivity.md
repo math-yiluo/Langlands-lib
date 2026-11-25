@@ -1,6 +1,6 @@
 # Transitivity of the transition maps between Harris's `C_m^{•,H}`
 
-Author: Worker 61. Built on `Langlands.Cohomology.DivisibleSystem.InvariantTransition`
+Built on `Langlands.Cohomology.DivisibleSystem.InvariantTransition`
 (`quotientProjection`, `surjective_quotientProjection`,
 `quotientInvariantsComplexesChange`, `quotientInvariantsTransition`) and
 `Langlands.Cohomology.DivisibleSystem.StandardMap` (`StandardMap`, its
@@ -166,8 +166,8 @@ Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.306, after forming
 `C_m^{•,H}`: "When we replace H by a subgroup H' which is normal in S(e), we
 obtain a natural isomorphism C_m^{•,H} = [C_m^{•,H'}]^H. Taking the direct
-limit as H shrinks to the identity, we obtain ... (2.6)". Worker 61 read
-this passage in the scanned original.
+limit as H shrinks to the identity, we obtain ... (2.6)". This passage was
+read in the scanned original.
 
 Harris does not state transitivity. A direct limit over the subgroups `H`
 needs transition maps that compose and are the identity for `H' = H`; this

@@ -1,7 +1,5 @@
 # Supplied-Haar reversal of both rectangle indices
 
-Author: Worker 1209.
-
 This internal coordinate helper supports the reflected first-block calculation
 for the dominant JPSS integral. It is a direct consequence of invariance of
 finite product measures under index permutations. It introduces no new

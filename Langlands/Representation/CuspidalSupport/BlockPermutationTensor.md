@@ -1,7 +1,5 @@
 # Actual transport of canonically permuted block tensors
 
-Author: Worker 289.
-
 This internal construction identifies actual whole-Levi Weyl transport of an
 external block tensor with the external tensor of the reordered factors. It
 uses `BlockShape.permute e`, whose target block `i` is source block `e i`,

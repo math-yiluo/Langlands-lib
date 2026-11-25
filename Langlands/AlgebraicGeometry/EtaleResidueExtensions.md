@@ -1,7 +1,5 @@
 # Etale neighbourhoods realizing prescribed finite separable residue extensions
 
-Author: Worker 1683.
-
 `Langlands.AlgebraicGeometry.etaleResidueExtension.{u}` constructs an
 actual etale neighbourhood realizing a specified finite separable extension
 of a scheme's actual residue field. It implements The Stacks Project,
@@ -82,7 +80,7 @@ element to lift its coefficients directly. Both give an etale algebra
 over the original ring. The construction uses only `propext`,
 `Classical.choice`, and `Quot.sound`.
 
-This unit supplies the residue-extension realization used when arranging a
+This module supplies the residue-extension realization used when arranging a
 split maximal torus near a point. It does not construct that maximal
 torus, prove relative split-torus lifting or centralizer spreading, or
 establish openness of the reductive geometric identity-component locus.

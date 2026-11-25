@@ -1,10 +1,10 @@
 # Étale and quasi-étale `G`-sheaves on analytic spaces
 
-Author: Worker 26. Uses the published twisted category
+Uses the published twisted category
 `Langlands.Sheaf.Equivariant.TwistedOver` and local action systems
 `Langlands.Sheaf.Equivariant.LocalAction` and
-`Langlands.Sheaf.Equivariant.LocalActionDiscretePart` (Workers 13, 26). It also uses
-Worker 21's analytic sites: the étale site `EtaleSite`, its translations
+`Langlands.Sheaf.Equivariant.LocalActionDiscretePart`. It also uses
+the analytic sites of `Langlands.Geometry.Analytic`: the étale site `EtaleSite`, its translations
 (`Langlands.Geometry.Analytic.EtaleSiteTranslation`), the quasi-étale site
 `QuasiEtaleSite`, lifts of actions `ActionLift`, distinguished étale morphisms
 `IsDistinguishedEtale` and compact analytic spaces `IsCompactSpace`
@@ -17,7 +17,7 @@ quasi-étale `G`-sheaves on `X` in two steps. First, `G^d`-sheaves are sheaves w
 an action of `G` with the discrete topology that is compatible with the action on
 `X`. Second, a discreteness condition uses the actions of open subgroups of `G`
 on objects `U → X` that lift the action on `X`. This module specializes the
-general framework of `TwistedOver` and `LocalAction` to Worker 21's analytic
+general framework of `TwistedOver` and `LocalAction` to these analytic
 sites. It defines
 
 - the twisted étale and twisted quasi-étale sites of `X`, whose sheaves are the
@@ -30,8 +30,8 @@ sites. It defines
 
 ## Data
 
-- `K : Type u` is a complete ultrametric normed field. `X` is an object of Worker
-  21's `LocalizedCategory.{u, v, v} (K := K)` of `K`-analytic spaces.
+- `K : Type u` is a complete ultrametric normed field. `X` is an object of
+  `LocalizedCategory.{u, v, v} (K := K)` of `K`-analytic spaces.
   `G : Type z` is a group and `ρ : G →* Aut X` an action of `G` on `X`. No
   topology on `G` and no continuity of `ρ` is needed for the twisted sites. The
   lift systems and the `G`-sheaf categories use `[TopologicalSpace G]`.
@@ -42,8 +42,8 @@ sites. It defines
 
 - `etale_isTranslationInvariant ρ` is the instance
   `IsTranslationInvariant (etaleTopology X)` for the morphism property `etale`.
-  The translation of `TwistedOver` by `g` is Worker 21's `EtaleSite.translate (ρ g)`
-  (both are `MorphismProperty.Comma.mapRightIso` along `ρ g`), and Worker 21's
+  The translation of `TwistedOver` by `g` is `EtaleSite.translate (ρ g)`
+  (both are `MorphismProperty.Comma.mapRightIso` along `ρ g`), and the
   instance `EtaleSite.isCocontinuous_translate_functor` shows that it is
   cocontinuous.
 - `twistedEtaleTopology ρ` is the twisted topology `twistedTopology ρ (etaleTopology X)`
@@ -58,7 +58,7 @@ sites. It defines
   of `V`, by the arrows of `R` and by charts of their sources. Translation does not
   change sources or arrows, so the same families work.
 - `quasiEtale_isTranslationInvariant ρ` is the instance
-  `IsTranslationInvariant (quasiEtaleTopology X)`. It is proved with Worker 21's
+  `IsTranslationInvariant (quasiEtaleTopology X)`. It is proved with the
   criterion `isCocontinuous_toGrothendieck_of_equivalence` and the previous lemma.
 - `twistedQuasiEtaleTopology ρ` is `twistedTopology ρ (quasiEtaleTopology X)` on
   `TwistedOver quasiEtale ρ`.
@@ -126,7 +126,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
 (folder SHA-256
 `e046cadfb9dcec4b0cf6624f80d6316bf532416153b82023f5100bd1ab0726cd`, member
 `Berkovich--Etale equivariant sheaves on p-adic analytic spaces (unfinished manuscript)--1996.pdf`),
-§1.4, printed pp. 7–8 = PDF pp. 7–8, read in the original by Worker 26.
+§1.4, printed pp. 7–8 = PDF pp. 7–8, read in the original.
 
 - p.7: "for any quasi-étale morphism `U → X` with compact `U` the action of `G` on
   `X` extends in a canonical way to a continuous action of some open subgroup
@@ -135,7 +135,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
   and `φ`), where `U` is compact, `φ` is quasi-étale and `j` identifies `𝒰` with a
   distinguished open subset of `U`, i.e., with such one whose complement in `U` is
   an analytic domain". Then `𝒰` carries a canonical continuous action of an open
-  subgroup `G_𝒰`, and two such actions coincide on an open subgroup. In Worker 21's
+  subgroup `G_𝒰`, and two such actions coincide on an open subgroup. In
   `IsDistinguishedEtale`, `U` is the source of the étale morphism and `Ubar` the
   compact space.
 - Definition 1.4.1 (pp. 7–8): "A quasi-étale (resp. étale) `G`-sheaf on `X` is a
@@ -149,7 +149,7 @@ Berkovich, *Etale equivariant sheaves on p-adic analytic spaces* (unfinished
   open in `G_𝒰`."
 
 The quasi-étale topology is Berkovich's (*Vanishing cycles for formal schemes*,
-1994, §3), as formalized in Worker 21's `QuasiEtaleSite`.
+1994, §3), as formalized in `QuasiEtaleSite`.
 
 ## Provenance and correspondence
 
@@ -158,13 +158,14 @@ ours:
 
 - `G^d`-sheaves are modelled as sheaves on the twisted sites, as in `TwistedOver`.
 - Lifts. Berkovich uses the canonical action of `G_U` given by the Key Lemma.
-  The Lean systems accept every lift. By Worker 21's statement
+  The Lean systems accept every lift. By the statement
   `QuasiEtaleActionLiftStatement`, which formalizes this consequence of the Key
   Lemma, lifts exist on compact quasi-étale objects when `X` is Hausdorff and `ρ` is
   continuous, and any two lifts agree on an open subgroup. Then, by
   `isDiscreteSection_liftAction_of_agreeOn`, a section is discrete for one lift
-  exactly when it is discrete for every lift. At the Library base of this module the
-  statement has no proof. This module uses neither the statement nor any existence
+  exactly when it is discrete for every lift. The statement is proved by
+  `quasiEtaleActionLift` in `Langlands.Geometry.Analytic.QuasiEtaleActionLiftProof`.
+  This module uses neither the statement nor any existence
   or uniqueness of lifts. In particular, when an object has no lift, the conditions impose
   nothing on it.
 - `QuasiEtaleGSheaf` is Definition 1.4.1 for the quasi-étale topology: discreteness
@@ -172,7 +173,9 @@ ours:
 - `EtaleGSheaf` follows the criterion of p.8 rather than the étale case of
   Definition 1.4.1. The étale case of Definition 1.4.1 evaluates an étale sheaf on
   quasi-étale objects, through the comparison morphism between the two sites, and
-  that comparison is not available in the Library. The p.8 criterion stays inside
+  this module does not use that comparison (that the inclusion `Ét(X) → Qét(X)` defines
+  a morphism of sites `X_qét → X_ét` is `QuasiEtaleToEtaleStatement`, proved by
+  `quasiEtaleToEtale` in `Langlands.Geometry.Analytic.QuasiEtaleToEtaleProof`). The p.8 criterion stays inside
   the étale site. Berkovich asks for distinguished open neighbourhoods of the points
   of `U`. The Lean condition asks that the arrows through distinguished étale
   objects carrying a lift on which `s` is discrete form a covering sieve of the
@@ -191,5 +194,6 @@ Berkovich's Theorem 1.4.2, the equivalence of `T_G(X_qét)` and `T_G(X_ét)` wit
 sheaves on `X(G)`, is not formalized. Nor are the comparison between étale and
 quasi-étale `G`-sheaves, the Key Lemma, and the equivalence of the Lean
 conditions with Berkovich's. Points of the étale site, which compactly supported
-cohomology on these sites requires (see `TwistedCompactSupport`), are Worker 21's
-open dependency.
+cohomology on these sites requires (see `TwistedCompactSupport`), are not used
+here; they are `EtaleSite.toPoint` in `Langlands.Geometry.Analytic.EtaleGeometricPoints`,
+used by `AnalyticCompactSupport`.

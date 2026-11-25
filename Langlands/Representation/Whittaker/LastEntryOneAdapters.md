@@ -1,7 +1,5 @@
 # Coefficient and support adapters for the last-entry-one expansion
 
-Author: Worker 186.
-
 These are internal adapters to the published coefficient model and
 simple-root support statement. The support proposition is an explicit
 hypothesis of the general support adapters in this module.

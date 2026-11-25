@@ -1,6 +1,6 @@
 # Principal congruence and newvector levels
 
-Worker 43 authored this derived construction. It uses the actual matrix
+This is a derived construction. It uses the actual matrix
 general linear group and the previously constructed last-row congruence
 subgroups. It introduces no new conductor convention.
 
@@ -83,6 +83,4 @@ interface.
 
 The imported conductor pairs are published in Library commit
 `1804f2a6d98d21c2bbfa3c73ccf807df74c484bb`, and their published bytes
-were verified against the inputs used here. This pair still requires
-its own independent review and publication. Native compilation alone
-does not establish either.
+were verified against the inputs used here.

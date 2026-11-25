@@ -1,7 +1,5 @@
 # Rational points of a generated group have dense locations
 
-Author: Worker 712 (interface requested by Worker 1444).
-
 This is a derived internal support module for the graph route to the
 common-torus Levi gluing statement `SplitCommonTorusLeviGluingStatement`.
 Over an algebraically closed field, suppose a family of homomorphisms generates
@@ -51,7 +49,7 @@ the rational points `x ∈ Γ`.
 - `dense_rationalPointImage_generatedRationalPoints hA hgen`: under the same
   hypotheses, `rationalPointImage H (generatedRationalPoints H A a)` is dense.
 - `dense_rationalPointImage_closure_of_isGeneratedByFamily hA hgen`: the
-  specialization in the form requested for the gluing proof. Here `k` is
+  specialization in the form used for the gluing proof. Here `k` is
   algebraically closed, `H` is smooth and affine, each `A j` is smooth, affine
   and connected (`hA`), and `IsGeneratedByFamily A a (𝟙 H)` holds. The set
   `Subgroup.closure (⋃ j, range (a j) at rational points)` then has dense

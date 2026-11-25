@@ -1,6 +1,6 @@
 # Transport of Renard's small progenerators across equivalences, proof
 
-Author: Worker 937 (this module, its helper lemmas and this Markdown). It reuses published Library results only by Lean name; see "Provenance".
+This module reuses published Library results only by Lean name; see "Provenance".
 
 This module proves the published proposition `Langlands.Renard.SmallProgeneratorTransportStatement.{w, v, u, v', u'} C D` from `Langlands.CategoryTheory.Renard.SmallProgeneratorTransportStatements`. The theorem is
 
@@ -21,9 +21,9 @@ Both sides use the same index size `w`. The left side concerns the Hom functor `
 
 The theorem adds no hypothesis. It assumes nothing about the equivalence beyond its being an actual `C ≌ D`: no additivity, exactness, preservation of the Hom coproducts, projectivity or generation is supplied. It assumes no relation between the universes, no finite-length condition, no module equivalence and no coproducts at a maximal universe. The statement pair and the pairs it imports are used unchanged.
 
-## Files in this contribution
+## Files
 
-- `Langlands/CategoryTheory/Renard/SmallProgeneratorTransport.lean` and this Markdown: new. No other file is added or edited.
+- `Langlands/CategoryTheory/Renard/SmallProgeneratorTransport.lean` and this Markdown.
 
 ## The predicates
 
@@ -108,27 +108,27 @@ Both directions concern the same index size `w`, because the same factorization 
 
 ## Source and provenance
 
-This is a derived prerequisite, not a separately printed result. The governing original is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, A.VIII.2, printed page 267 / PDF page 273. Registered source: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. That page was reread for this unit. It defines projective objects and generators through the functor `Hom_A(X, •)`, calls a projective `P` in a cocomplete abelian category small when `Hom_A(P, •)` preserves direct sums, and states the theorem that a cocomplete abelian category with a small progenerator `P` is equivalent to right modules over `End_A(P)`. The remark that follows reads: "On a bien sûr la réciproque, puisque un anneau unitaire A est un petit progénérateur de M(A)".
+This is a derived prerequisite, not a separately printed result. The governing original is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, A.VIII.2, printed page 267 / PDF page 273. Registered source: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. That page was reread for this module. It defines projective objects and generators through the functor `Hom_A(X, •)`, calls a projective `P` in a cocomplete abelian category small when `Hom_A(P, •)` preserves direct sums, and states the theorem that a cocomplete abelian category with a small progenerator `P` is equivalent to right modules over `End_A(P)`. The remark that follows reads: "On a bien sûr la réciproque, puisque un anneau unitaire A est un petit progénérateur de M(A)".
 
-The source does not state that small progenerators are preserved by equivalences. The remark uses this tacitly: to get a small progenerator of a category equivalent to `M(A)`, one moves the regular module across the equivalence. The published statement makes that step an explicit proposition, and this module proves it. The argument above is not taken from the source, which gives no proof of the remark. It was written for this unit from the published definitions and comparisons.
+The source does not state that small progenerators are preserved by equivalences. The remark uses this tacitly: to get a small progenerator of a category equivalent to `M(A)`, one moves the regular module across the equivalence. The published statement makes that step an explicit proposition, and this module proves it. The argument above is not taken from the source, which gives no proof of the remark. It was written for this module from the published definitions and comparisons.
 
 The supplementary older-edition errata `renard-2010-corrections-complements` (SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`) were reread at PDF pages 18–19. Their correction "p. 309, l. 2 : remplacer X par P : si le foncteur Hom_A(P,•) préserve les sommes directes" fixes the variable in the smallness condition of the 2010 edition. The 2026 page already has `P` there. The errata say nothing about transport along equivalences.
 
-The route follows the plan in the statement's Markdown: projectivity and generation through comparisons with native categorical notions, smallness through factorization through finite subcoproducts. For generation, this module proves its own elementwise cancellation characterization, `homGenerator_iff_cancel`, rather than citing a published generation comparison. All reused results are published Library theorems imported by name. No code was copied from other contributions.
+The route follows the plan in the statement's Markdown: projectivity and generation through comparisons with native categorical notions, smallness through factorization through finite subcoproducts. For generation, this module proves its own elementwise cancellation characterization, `homGenerator_iff_cancel`, rather than citing a published generation comparison. All reused results are published Library theorems imported by name. No code was copied from other modules.
 
 ## Checks
 
-Development checks used the approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`) over Library commit `dad4d948ab2f6838277ce9094bcc92df1507b0cb`.
+Development checks used Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435` over Library commit `dad4d948ab2f6838277ce9094bcc92df1507b0cb`.
 
-- Compilation and inspection (diagnostic `28f40a81-df23-4f23-b6a2-521208306fba`): the module compiled with no errors or warnings. `smallProgeneratorTransport` is a theorem with level parameters `w, v, u, v', u'`, and its only axioms are `propext`, `Classical.choice` and `Quot.sound`.
-- Private probe (diagnostic `ca9a003e-40ac-4f7b-99eb-eb607604eab3`, no errors or warnings):
+- Compilation and inspection: the module compiled with no errors or warnings. `smallProgeneratorTransport` is a theorem with level parameters `w, v, u, v', u'`, and its only axioms are `propext`, `Classical.choice` and `Quot.sound`.
+- Private probe (no errors or warnings):
   - elaborated `@smallProgeneratorTransport.{w, v, u, v', u'}` against the complete type `∀ (C : Type u) [Category.{v} C] [Abelian C] [HasCoproducts.{w} C] (D : Type u') [Category.{v'} D] [Abelian D] [HasCoproducts.{w} D], SmallProgeneratorTransportStatement.{w, v, u, v', u'} C D`;
   - elaborated `smallProgeneratorTransport C D` against the unfolded biconditional for every `e` and `P`;
   - instantiated the theorem at `(w, v, u, v', u') = (3, 1, 5, 0, 2)` and `(0, 4, 2, 6, 1)`.
-- Workspace recheck (diagnostic `af0d2ed6-482f-4722-87da-d915b89f980c`): the submitted Lean file, unchanged, built in the workspace with no errors or warnings, with the same level parameters and axioms.
+- Recheck: the Lean file, unchanged, built again with no errors or warnings, with the same level parameters and axioms.
 
-These are development checks. They do not establish exact-target validation, independent acceptance or publication.
+These are development checks.
 
 ## Scope
 
-This unit proves only the transport biconditional. The realization of the categorical converse of Renard's theorem through the regular module, the regular-module theorem itself, the forward Hom-equivalence theorem and the finite-support and finite-type characterizations remain separate results with their own declarations.
+This module proves only the transport biconditional. The realization of the categorical converse of Renard's theorem through the regular module, the regular-module theorem itself, the forward Hom-equivalence theorem and the finite-support and finite-type characterizations remain separate results with their own declarations.

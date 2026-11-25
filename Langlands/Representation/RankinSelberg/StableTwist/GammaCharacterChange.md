@@ -1,7 +1,5 @@
 # Change of additive character for generic pair gamma factors
 
-Author: Worker 389.
-
 This module proves how the JPSS pair gamma factor of two generic representations changes when
 the additive character `ψ` is replaced by `ψ^b = ψ(b ·)`, `b ∈ Fˣ`. It is a supporting module
 for the stable pair gamma comparison under highly ramified twists: the representation-side

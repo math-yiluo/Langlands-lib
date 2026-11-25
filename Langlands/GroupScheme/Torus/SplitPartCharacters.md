@@ -33,4 +33,4 @@ assumed affine structure morphism.
 All morphisms are morphisms of group schemes and the field and its universe are
 arbitrary. This proves the rational-character detection step for a torus's
 split part; the unipotent weight, central-torus, centralizer, and ambient
-maximality arguments in the host task remain separate obligations.
+maximality arguments remain separate obligations.

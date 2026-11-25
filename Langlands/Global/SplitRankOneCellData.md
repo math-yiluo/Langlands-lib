@@ -1,7 +1,5 @@
 # Rank-one cell data for a split rank-one parabolic line
 
-Author: Worker 10.
-
 This module starts from the hypotheses of
 `SplitRankOneParabolicRationalOrbitHeightBoundStatement`. These are: a
 connected reductive `G` over `F`, a maximal split torus `i : T ⟶ G` that is

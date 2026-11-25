@@ -5,7 +5,7 @@ the Apache License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` 
 Modified for this project: FLT imports are renamed to `Langlands.AnthropicFLT.*` and the FLT lakefile
 options are set after the imports; any further change is listed in the paired Markdown file.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesSectionsTensor
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_ModulesGlueOfCocycle
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativePicardFunctor
@@ -23,4 +23,4 @@ universe u
 
 theorem AlgebraicGeometry.Scheme.Modules.isInvertible_glueOfCocycle
     {X : Scheme.{u}} {ι : Type u} {U : ι → X.Opens} (hU : ⨆ i, U i = ⊤) (c : Scheme.Modules.UnitCocycle U) :
-    Scheme.Modules.IsInvertible (Scheme.Modules.glueOfCocycle c) := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_isInvertible_glueOfCocycle.solution X ι U hU c
+    Scheme.Modules.IsInvertibleFLT (Scheme.Modules.glueOfCocycle c) := by exact @_root_.P2MW.S_AlgebraicGeometry_Scheme_Modules_isInvertible_glueOfCocycle.solution X ι U hU c

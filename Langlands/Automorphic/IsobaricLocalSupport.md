@@ -75,11 +75,12 @@ Multiset (Σ k : ℕ,
   Correspondence.SupercuspidalAutomorphicClass.{uK,uV} K k.succPNat)
 ```
 
-This is exactly the target-field multiset codomain specified for Task 7375's
-`CyclicBaseChangeMap`; its successor index records a positive local rank,
+This is exactly the target-field multiset codomain of
+`CyclicBaseChangeMap` (module `Langlands.Correspondence.HenniartCyclicBaseChange`);
+its successor index records a positive local rank,
 and its second component is the genuine supercuspidal class at that rank.
 The module writes this published sigma type directly and does not import
-Task 7375's work.
+`Langlands.Correspondence.HenniartCyclicBaseChange`.
 
 The witnesses comprise a length `b`, a full enumeration
 `σ : Fin b → PositiveRankCuspidalClass F`, actual local representations

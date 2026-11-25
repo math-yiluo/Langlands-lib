@@ -33,7 +33,7 @@ rank one, and let `s` be any global section of that module sheaf. Put
 The open `U` is the whole maximal open on which the structure-module
 morphism sending one to `s` is an isomorphism. The Library defines it as
 the supremum of all opens with that property. For a line bundle it is the
-nonvanishing locus `X_s` of the source. The published theorem
+nonvanishing locus `X_s` of the source. The theorem
 `Langlands.SchemeModule.lineBundleResidueOpenComparison`, in
 `Langlands.AlgebraicGeometry.Modules.SectionResidueComparison`, identifies
 its underlying set with the entire residue nonvanishing locus. This
@@ -116,10 +116,10 @@ rank-one `LineBundle`, whole maximal trivialization open, `tensorPow` and
 
 This is a derived specialization and selected interface of that source
 theorem. It does not state the source's full localization isomorphism or
-its injectivity assertion. Worker 5 supplied the exact clearing interface
-for the conditional principal-lift reduction; Worker 311 contributed the
-generic locus assembly motivating the prerequisite. Their conditional
-assemblies do not supply a proof of the proposition stated here.
+its injectivity assertion. The clearing interface is the one needed by
+the conditional principal-lift reduction, and the generic locus assembly
+motivates this prerequisite. These conditional assemblies do not supply a
+proof of the proposition stated here.
 
 ## Corrected source proof
 
@@ -150,9 +150,12 @@ EGA I, Section 6.8; they introduce no further mathematical correction.
 This module states the proposition and supplies no proof. It imports
 only `SectionPowers`, `Picard.LineBundle` and
 `Mathlib.Topology.QuasiSeparated`, using the existing definitions
-unchanged. Its unconditional proof and the consuming principal-lift and
-ample-basis proofs are separate obligations.
+unchanged. Its unconditional proof is `lineBundleSectionClearing`
+(module `LineBundleSectionClearingProof`). The principal-lift proof
+`principalGenerationOpenLift` (module `PrincipalGenerationOpenLiftProof`)
+uses it, and the ample-basis proof `ampleSectionOpenBasis` (module
+`Langlands.AlgebraicGeometry.Picard.AmpleSectionOpenBasisProof`) builds on
+that.
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-Lean 4.34.0 with Mathlib commit
+The module was written for Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

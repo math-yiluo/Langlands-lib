@@ -1,7 +1,5 @@
 # Strict scalar change of variable adjunction
 
-Author: Worker 101.
-
 This internal specialization applies the generic variable-inclusion naturality
 construction to the actual `Adjoin.algebra` quotient and `Adjoin.baseMap`.
 The additional relations are arbitrary. In particular, rational-chart equations

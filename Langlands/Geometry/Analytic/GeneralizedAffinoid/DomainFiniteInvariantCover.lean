@@ -143,37 +143,39 @@ def finiteCoverSpectrumAction :
     Action TopCat.{u} (ρ.finiteFamilyOpenSubgroup H c.obj) where
   V := TopCat.of (Σ i : Fin c.size, BanachSpectrum (c.obj i).algebra)
   ρ :=
-    { toFun := fun g => TopCat.ofHom
+    { toFun := fun g => End.of (TopCat.ofHom
         { toFun := fun x => ⟨x.1,
-            ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c x.1).ρ g) x.2⟩
+            ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c x.1).ρ g).asHom x.2⟩
           continuous_toFun := continuous_sigma fun i =>
             continuous_sigmaMk.comp
-              ((ρ.finiteCoverComponentAction H d c i).ρ g).hom.continuous }
+              ((ρ.finiteCoverComponentAction H d c i).ρ g).asHom.hom.continuous })
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         rintro ⟨i, x⟩
-        change (⟨i, ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ 1) x⟩ :
+        change (⟨i, ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ 1).asHom x⟩ :
           Σ i : Fin c.size, BanachSpectrum (c.obj i).algebra) = ⟨i, x⟩
         rw [map_one]
         rfl
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         rintro ⟨i, x⟩
         change (⟨i, ConcreteCategory.hom
-          ((ρ.finiteCoverComponentAction H d c i).ρ (g * h)) x⟩ :
+          ((ρ.finiteCoverComponentAction H d c i).ρ (g * h)).asHom x⟩ :
             Σ i : Fin c.size, BanachSpectrum (c.obj i).algebra) =
-          ⟨i, ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ g)
-            (ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ h) x)⟩
+          ⟨i, ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ g).asHom
+            (ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ h).asHom x)⟩
         rw [map_mul]
         rfl }
 
 @[simp]
 theorem finiteCoverSpectrumAction_mk (g : ρ.finiteFamilyOpenSubgroup H c.obj)
     (i : Fin c.size) (x : BanachSpectrum (c.obj i).algebra) :
-    ConcreteCategory.hom ((ρ.finiteCoverSpectrumAction H d c).ρ g) ⟨i, x⟩ =
+    ConcreteCategory.hom ((ρ.finiteCoverSpectrumAction H d c).ρ g).asHom ⟨i, x⟩ =
       Sigma.mk i
-        (ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ g) x) :=
+        (ConcreteCategory.hom ((ρ.finiteCoverComponentAction H d c i).ρ g).asHom x) :=
   rfl
 
 /-- The actual finite spectrum quotient is an equivariant map to the target

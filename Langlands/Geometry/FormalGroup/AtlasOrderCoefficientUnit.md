@@ -1,6 +1,6 @@
 # Actual formal unit coherence for coefficient extension
 
-This internal unit identifies both actual full-order coefficient-composition
+This module identifies both actual full-order coefficient-composition
 unit maps with the existing actual identity-base comparisons. It proves
 equalities of whole integral formal atlas isomorphisms and packages their
 rationalized test squares.
@@ -34,6 +34,7 @@ two edges. Both actual rational inverses are retained.
 Coefficient and acting rings and the rational field may have separate
 universes; the finite coordinate type is arbitrary. Rationalization uses the
 existing domain and fraction-field assumptions. This is generic coefficient
-unit coherence. Quotient-unit coherence and original framed identity and
-composition comparisons, class functor laws and representability remain
-subsequent constructions.
+unit coherence. Quotient-unit coherence is proved in `AtlasOrderReductionUnit`,
+and the original framed identity and composition comparisons are constructed in
+`DrinfeldFramedIdentityComparison` and `DrinfeldFramedCompositionComparison`;
+class functor laws and representability remain separate.

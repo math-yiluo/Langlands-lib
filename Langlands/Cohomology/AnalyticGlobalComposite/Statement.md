@@ -1,7 +1,5 @@
 # Berkovich's composite-functor identification for étale and quasi-étale `G`-sheaves
 
-Author: Worker 16.
-
 This module declares, in the namespace
 `Langlands.Cohomology.AnalyticGlobalComposite`, one auxiliary definition and
 two theorem-statement definitions. The statements are propositions, not
@@ -29,17 +27,17 @@ covers equivariant sheaves on a topological space. It is proved in
 
 ## Setting and imported objects
 
-All sheaf-theoretic objects come from Worker 26's modules
+All sheaf-theoretic objects come from the modules
 `Langlands.Sheaf.Equivariant.AnalyticEtaleGlobalComplex` and
 `Langlands.Sheaf.Equivariant.AnalyticQuasiEtaleGlobalComplex` (namespace
 `Langlands.Sheaf.Equivariant.Analytic`). They also come from the modules these
 build on: `AnalyticGSheaves`, `AnalyticEtaleCohomology`,
 `AnalyticQuasiEtaleCohomology`, `TwistedExactGlobalComparison` and
-`TwistedExactGlobalComplex`, all by Worker 26, and Worker 21's analytic spaces
+`TwistedExactGlobalComplex`, and the Library's analytic spaces
 and étale and quasi-étale sites.
 
 - `K : Type u` is a complete ultrametric normed field (`NormedField`,
-  `IsUltrametricDist`, `CompleteSpace`). `X` is an object of Worker 21's
+  `IsUltrametricDist`, `CompleteSpace`). `X` is an object of the Library's
   category of analytic spaces `LocalizedCategory.{u, v, v} (K := K)`. This is
   the category for one fixed field `K`. Its morphisms are built from strong
   atlas maps, whose chart pullbacks are bounded `K`-algebra homomorphisms
@@ -54,10 +52,10 @@ and étale and quasi-étale sites.
   is assumed. The section "Correspondence and modelling choices" compares this
   scope with Berkovich's.
 - `R : Type (max u (v + 1) uL)` is a commutative ring. Sheaves take values in
-  `R`-modules. This coefficient universe is the one used by Worker 26's
+  `R`-modules. This coefficient universe is the one used by the Library's
   derived functors.
 - `EtaleGSheaf ρ (ModuleCat R)` and `QuasiEtaleGSheaf ρ (ModuleCat R)` are
-  Worker 26's models of Berkovich's categories `T_G(X_ét)` and `T_G(X_qét)`
+  the Library's models of Berkovich's categories `T_G(X_ét)` and `T_G(X_qét)`
   of Definition 1.4.1, for sheaves of `R`-modules. They are sheaves on the
   twisted étale (resp. quasi-étale) site. Their sections are locally discrete
   for the lifts of the action to distinguished étale objects (resp. discrete
@@ -117,12 +115,12 @@ Binders and conventions:
 
 - The two instance binders `[Small.{max u (v + 1) uL} G]` and the refinement
   condition are binders of the definitions, not hypotheses of Berkovich's
-  statement. They are exactly the conditions under which Worker 26 defines the
+  statement. They are exactly the conditions under which the Library defines the
   source and target: the size condition makes the twisted sites essentially
   small, and the refinement condition makes `G`-sheaves an abelian category
   with enough injectives. The size condition holds, for example, when `G` lies
   in a universe at most `max u (v + 1) uL`. The refinement conditions are not
-  proved in the Library. Worker 26's `AnalyticEtaleRefinements` reduces the
+  proved in the Library. `AnalyticEtaleRefinements` reduces the
   étale one to three propositions about the étale site of `X`, which remain
   hypotheses. If a refinement condition fails for an action, the proposition
   cannot be formed for that action.
@@ -140,7 +138,7 @@ Binders and conventions:
 - Only the existence of a natural family is asserted. The statement does not
   say that the family is a particular canonical comparison map.
 - The level parameters of both statements are `w, u, v, uL, z`, inspected with
-  `lean_check` (`statement_returns_prop: true`).
+  the Lean check (each statement returns `Prop`).
 
 ## Original source
 
@@ -208,8 +206,8 @@ hyperext spectral sequence of the right side.
 ## Correspondence and modelling choices
 
 - Berkovich's abelian sheaves on `X(G)_ét` (resp. `X(G)_qét`) are modelled by
-  Worker 26's étale (resp. quasi-étale) `G`-sheaves, through Theorem 1.4.2, as
-  in all of Worker 26's analytic modules. Theorem 1.4.2 is not formalized.
+  the étale (resp. quasi-étale) `G`-sheaves, through Theorem 1.4.2, as
+  in all of the Library's analytic `G`-sheaf modules. Theorem 1.4.2 is not formalized.
   Derived functors are therefore taken in the category of `G`-sheaves, which
   corresponds to Berkovich's derived functors on `S(X(G))` under that theorem.
 - Coefficients are `R`-modules for an arbitrary commutative ring `R` in the
@@ -269,7 +267,7 @@ by the same argument as for `EquivariantGlobalCompositeStatement`.
    representations. It is right adjoint to the constant `G`-sheaf functor
    `M ↦ M_X` from smooth representations to `G`-sheaves, which is exact. The
    right adjoint of a functor preserving monomorphisms preserves injective
-   objects. Worker 26's published module
+   objects. The module
    `Langlands.Sheaf.Equivariant.AnalyticConstantAdjunction` proves this as
    `etaleGSheafSections_preservesInjectiveObjects` and
    `quasiEtaleGSheafSections_preservesInjectiveObjects`, with the adjunctions
@@ -284,18 +282,21 @@ by the same argument as for `EquivariantGlobalCompositeStatement`.
    group is `H^n(X(G), F)`. Both sides are computed functorially from the same
    resolutions, which gives naturality in `F`.
 
-The published proof `GlobalProof` of the topological-space statement follows
-this route. It uses `ConstantAdjunction` and `KInjectiveHomology` (Worker 134)
-and `InvariantsHom`, and its pattern should transfer.
+The proof `GlobalProof` of the topological-space statement follows
+this route. It uses `ConstantAdjunction` and `KInjectiveHomology`
+and `InvariantsHom`.
 
 ## Role in the Harris framework
 
-These propositions are theorem statements for Task 16, "Formalize the Harris
-and Berkovich cohomological theorem-statement framework". That task covers
+These propositions are theorem statements of the Harris and Berkovich
+cohomological theorem-statement framework, which covers
 Berkovich's equivariant cohomology of analytic spaces with group actions, the
 setting of the Drinfeld tower in Harris's local computations. These
 propositions state the ordinary-cohomology composite of Berkovich §1.2. The
-task's coverage note
+coverage note
 `notes/henniart/harris-cohomology-coverage.md` lists the stated and open
-comparisons. No other Library statement uses these propositions yet. Their
-proofs are separate obligations.
+comparisons. No other Library statement uses these propositions. Their
+proofs are `analyticEtaleGlobalComposite` in
+`Langlands.Cohomology.AnalyticGlobalComposite.EtaleProof` and
+`analyticQuasiEtaleGlobalComposite` in
+`Langlands.Cohomology.AnalyticGlobalComposite.QuasiEtaleProof`.

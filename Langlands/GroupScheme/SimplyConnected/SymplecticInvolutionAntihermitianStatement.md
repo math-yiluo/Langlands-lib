@@ -1,7 +1,6 @@
 # Symplectic involutions are adjoint to antihermitian division forms: statement
 
-Author: Worker 74, for Task 6243 (`d75aa284-b911-411c-8e33-34184b737113`), coordinated with
-Worker 246. The module contains one `Prop`-valued definition and no proof.
+The module contains one `Prop`-valued definition and no proof.
 
 ## Statement
 
@@ -50,9 +49,10 @@ the algebra isomorphism that identifies the group of `(A, τ)` with `σ.symplect
 
 ## Role
 
-This is the purely algebraic step in the planned proof of
-`SymplecticInnerFormAntihermitianStatement` (Task 6243). It is meant to consume the output of
-`Langlands.GroupScheme.SymplecticInnerFormInvolutionStatement` (Worker 246): a central
+This is the purely algebraic step in the proof of
+`SymplecticInnerFormAntihermitianStatement` (`symplecticInnerFormAntihermitian`, module
+`SimplyConnected/SymplecticInnerFormAntihermitianProof`). It consumes the output of
+`Langlands.GroupScheme.SymplecticInnerFormInvolutionStatement`: a central
 simple algebra `A` of degree `2n` with an involution `τ` and a finite Galois chart `e`
 satisfying exactly the displayed equation (the predicate
 `SymplecticInnerForm.HasStandardSymplecticSplitting τ n`). The comparison of the group of

@@ -1,7 +1,7 @@
 # Finite conductor support for actual global additive characters
 
-Worker 1692 supplies internal adapters from an actual global additive character,
-trivial on the diagonal, to the lattice arithmetic proved by Worker 1798 in
+This module supplies internal adapters from an actual global additive character,
+trivial on the diagonal, to the lattice arithmetic proved in
 `Hecke.AdelicLattice`. The number field has unrestricted universe `u`. Every
 finite local component and every unit-valued real and complex scale is supplied
 with exactly the component predicates of the global functional-equation target.
@@ -28,6 +28,6 @@ normalization and finite multiplicative ramification theorem. For every supplied
 self-dual local measure, the exact finite epsilon expression in the global target
 is therefore one at every spectral parameter outside a single finite set.
 
-This unit proves the conductor and epsilon conclusions under the supplied actual
+This module proves the conductor and epsilon conclusions under the supplied actual
 local data. It does not construct those local data, a global pairing equivalence,
 meromorphic continuation or the global functional equation.

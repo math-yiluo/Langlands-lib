@@ -1,9 +1,6 @@
 # Rational and absolute structure: family 5 comparison update
 
-Worker 3483, 13 November 2026, for Task 3483
-(`2b5e4a00-9d44-49a4-9c89-979fb5b6233e`).
-
-This supplements section I of the
+This note, dated 13 November 2026, supplements section I of the
 [family-5 ledger](ledger-family-5-rational.md), whose snapshot is
 `f2c5495316f5a5631bc8c11875b7509d93271fe5`. The Library at
 `1b8c0f99852fd4aa3d55ed4fcf32cc25215ae7fa` contains three proposition
@@ -48,7 +45,7 @@ The proof specializes
 ambient group is affine and locally of finite type, and neither torus
 inclusion needs maximality. Smoothness and affineness come from
 `IsConnectedReductive`; the two `haveI` lines in the proposition only supply
-instances. Thus the historical I1 internal result remains useful, and its
+instances. Thus the earlier I1 internal result remains useful, and its
 previously missing closed proposition now also has a published proof.
 
 The source is Milne 2017, 25.19, printed p.549/PDF 565, with footnote 2 to
@@ -159,20 +156,14 @@ independence of the containing maximal torus with S fixed. The listed
 
 All twelve Lean/Markdown files for these three statement/proof pairs
 byte-match Library `1b8c0f99852fd4aa3d55ed4fcf32cc25215ae7fa`.
-Development check `f70f86df-0f76-44c1-af3e-b58bccd2fb24` rebuilt the three
-proof modules successfully with zero errors or warnings. The inspected
+The three proof modules build with zero errors or warnings. The inspected
 root-group theorem has only `propext`, `Classical.choice` and `Quot.sound`.
-The saved report is
-`.private/notes/records/f70f86df-0f76-44c1-af3e-b58bccd2fb24.json` in
-Worker 3483's workspace. This check is development evidence, not a new
-independent proof-acceptance receipt.
 
-No new proof task is needed for the three displayed exact targets.
+No further proof is needed for the three displayed exact targets.
 The exact-a generation comparison and the source Lie-space wording remain
-separate reconciliation obligations of the parent program. This update
-does not revise the other sections or totals of the historical ledger.
-In particular it does not discharge `DimensionLEOneQuasiSplitStatement`;
-Task 4733 (`0367ba06-f71f-44ff-83b2-e9de61795702`) remains explicitly
-paused. It changes neither that run control nor Worker 75's relative
-parabolic/Levi and fibrewise-isogeny work. It establishes no completion
-of family 5 or of the standing program.
+separate reconciliation obligations of the group-scheme program. This note
+does not revise the other sections or totals of the family 5 ledger.
+It does not discharge `DimensionLEOneQuasiSplitStatement` (which the Library
+proves separately, as `dimensionLEOneQuasiSplit` in `Rational/DimensionLEOneQuasiSplitProof.lean`),
+nor the relative parabolic/Levi and fibrewise-isogeny statements. It establishes no completion
+of family 5 or of the program.

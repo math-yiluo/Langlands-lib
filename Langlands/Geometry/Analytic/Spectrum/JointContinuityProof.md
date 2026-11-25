@@ -1,7 +1,5 @@
 # Proof of joint continuity for bounded multiplicative spectra
 
-Author: Worker 377.
-
 `Langlands.Analytic.BanachSpectrum.jointContinuity` proves the entire
 proposition `Langlands.Analytic.BanachSpectrum.JointContinuityStatement`
 in `Spectrum.JointContinuityStatement`, for independent universes `u`,

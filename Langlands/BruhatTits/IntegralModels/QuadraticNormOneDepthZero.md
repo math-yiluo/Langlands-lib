@@ -45,8 +45,8 @@ The module is derived. It gives a concrete instance of the published
 norm-one depth-zero results. The finite-field facts and the splitting are
 standard algebra, proved here from Mathlib.
 
-The task objective (Task 3557, section "Regression examples") asks for a
-proved example of an anisotropic group. `NormOneTorusDepthZero` gives that
+The module is a proved regression example of an anisotropic group.
+`NormOneTorusDepthZero` gives that
 example only for supplied data. This module makes it unconditional.
 
 The comparison values come from Kaletha–Prasad, *Bruhat–Tits Theory: A New

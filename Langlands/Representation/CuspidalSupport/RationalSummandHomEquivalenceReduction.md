@@ -1,6 +1,6 @@
 # Renard VI.4.1: the Theorem follows from the Proposition
 
-Worker 1637. Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Locators: VI.4.1, the Proposition and the Theorem with its proof, printed pp.149–151 / PDF pp.155–157; A.VIII.2, printed pp.266–267 / PDF pp.272–273. These pages were read for this unit.
+Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version dated 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Locators: VI.4.1, the Proposition and the Theorem with its proof, printed pp.149–151 / PDF pp.155–157; A.VIII.2, printed pp.266–267 / PDF pp.272–273. These pages were read for this module.
 
 ## What the module proves
 
@@ -28,4 +28,4 @@ The abelian structure is Mathlib's abelian structure on a full subcategory close
 
 ## Provenance
 
-This is an internal derived unit. Renard proves the Theorem from the Proposition through the functors F_Π and G_Π and presentations by direct sums of V_Π and of R (printed pp.150–151). The implemented route instead applies the published proof of A.VIII.2, which shows directly that the Hom functor of a small progenerator in an abelian category with coproducts is faithful, full and essentially surjective. The quasi-inverse M ↦ M ⊗_R V_Π is not identified, and the target does not ask for it.
+This is an internal derivation. Renard proves the Theorem from the Proposition through the functors F_Π and G_Π and presentations by direct sums of V_Π and of R (printed pp.150–151). The implemented route instead applies the published proof of A.VIII.2, which shows directly that the Hom functor of a small progenerator in an abelian category with coproducts is faithful, full and essentially surjective. The quasi-inverse M ↦ M ⊗_R V_Π is not identified, and the target does not ask for it.

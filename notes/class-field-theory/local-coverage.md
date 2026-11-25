@@ -3,10 +3,11 @@
 This note maps the actual local-field, Galois, norm and quotient constructions
 and the local class-field-theory proposition families to Library declarations,
 original sources and dependencies. The statement families are `Prop`-valued
-definitions. Their publication supplies theorem targets, not proofs of local
-class-field theory or a selected canonical reciprocity map. The eleven statement
-families below and their paired source documentation were checked in Library
-commit `bfd2c6b428660be7889841323ce92565132580bb`.
+definitions. As statements they supply theorem targets, not proofs of local
+class-field theory or a selected canonical reciprocity map; the proofs that the
+Library has are named after the table of statement families. The eleven
+statement families below and their paired source documentation were checked
+against their sources.
 
 Declarations are in the namespace `Langlands.LocalClassField` unless they
 are written as `T.name`. In that case they are in
@@ -31,10 +32,9 @@ sources, conventions and proofs of intrinsic certificates.
 | [`Langlands.ClassFieldTheory.Local.ReciprocitySystem`](../../Langlands/ClassFieldTheory/Local/ReciprocitySystem.md) | Families over all finite intermediate fields, coherence, normalization, existence and uniqueness |
 | [`Langlands.ClassFieldTheory.Local.ReciprocitySystemStatement`](../../Langlands/ClassFieldTheory/Local/ReciprocitySystemStatement.md) | Published unconditional existence and uniqueness targets specialized to the actual geometric residue degree and canonical extension data |
 
-The layout task "Consolidate local class-field modules under one topic
-hierarchy" (task `295b0f1c`, Worker 63) moved the first seven modules from
-`Langlands/LocalClassField/` to `Langlands/ClassFieldTheory/Local/`. The move
-was first published at Library commit
+The first seven modules were moved from `Langlands/LocalClassField/` to
+`Langlands/ClassFieldTheory/Local/`, to consolidate the local class-field
+modules under one topic hierarchy. The move first appeared at Library commit
 `8728166c7a3a18d2d8347cd6c907cc2226768605`. It changed module paths only:
 declaration names are unchanged, so the namespace `Langlands.LocalClassField`
 used below is still correct. Each old module `Langlands.LocalClassField.X`
@@ -192,14 +192,22 @@ candidate and never uses a section into the nonabelian Weil group.
   that a family satisfies the actual norm, transfer, conjugation, density,
   completion and geometric absolute-value relations; it does not assume
   such a family. The uniqueness target compares any two such families.
-  These are independently reviewed, published proposition definitions.
-  Proofs of these targets remain later work. The generic single-field
+  These are proposition definitions of the Library. The Library proves
+  both: `commonClosureReciprocityExistence`
+  ([`CommonClosureExistenceProof`](../../Langlands/ClassFieldTheory/Local/CommonClosureExistenceProof.md))
+  and `commonClosureReciprocityUniqueness`
+  ([`ReciprocitySystemUniquenessProof`](../../Langlands/ClassFieldTheory/Local/ReciprocitySystemUniquenessProof.md)).
+  The generic single-field
   interfaces above remain distinct from an actual-degree theorem target;
   the separate `WeilReciprocityTheorems` family below addresses the actual
   single-field formulation.
-- **Canonical reciprocity map.** No canonical reciprocity map is defined. Its
-  construction is a downstream obligation, which can be met only after the
-  existence and uniqueness theorems are proved and published.
+- **Canonical reciprocity map.** None of the statement families defines a
+  canonical reciprocity map. Its construction can follow only from proved
+  existence and uniqueness theorems. The Library builds a reciprocity family
+  in this way, `constructedReciprocityFamily` with the per-field
+  `canonicalStandaloneReciprocity`
+  ([`CommonClosureReciprocityConstruction`](../../Langlands/ClassFieldTheory/Local/CommonClosureReciprocityConstruction.md));
+  this note does not record whether it is the selected map meant here.
 - **Comparisons not made here.** The fixing subgroups in a common closure
   are not identified with separately presented absolute Galois or Weil
   groups of the intermediate fields. Independence of the choice of closure
@@ -233,6 +241,26 @@ PDF numbers count from one in the retained originals.
 | `CommonClosureReciprocityTheorems`: unconditional normalized-system existence and uniqueness | [`ReciprocitySystemStatement`](../../Langlands/ClassFieldTheory/Local/ReciprocitySystemStatement.md) | Tate 1.1 pp.3-4/PDF12-13, 1.4.1/1.4.6 pp.6-7/PDF15-16; Serre XI.3-5, XIII.4, XIV.6 | Every actual finite intermediate field including nonnormal fields, actual norms/inclusions/transfers/conjugation, canonical extension data, actual degree, completion | Published statement |
 | `AbsoluteUpperReciprocityTheorems`: actual inertia image, natural/real upper-unit images, arbitrary-quasicharacter conductor levels and detected break | [`AbsoluteReciprocityStatement`](../../Langlands/ClassFieldTheory/Local/AbsoluteReciprocityStatement.md) | Serre IV.3 pp.74-76/PDF81-83; XIII.4 pp.197-198/PDF202-203; XIV.6 p.219/PDF224; XV.2 pp.227-228/PDF232-233; Tate 3.2.6 | Absolute upper intersection over all finite Galois restrictions; its actual abelianized image; literal reciprocity images of character kernels | Published statement |
 
+In the Library, the families `FiniteAbelianReciprocityTheorems`
+(`finiteAbelianReciprocityTheorems`, `FiniteReciprocityProof`),
+`FiniteCharacterConductorTheorems` (`finiteCharacterConductorTheorems`,
+`FiniteConductorProof`), `FiniteUpperReciprocityTheorems`
+(`finiteUpperReciprocityTheorems`, `UpperReciprocityProof`),
+`WeilReciprocityTheorems` (`weilReciprocityTheorems`,
+`WeilReciprocityProof`) and `AbsoluteUpperReciprocityTheorems`
+(`absoluteUpperReciprocityTheorems`, `AbsoluteReciprocityProof`) are
+proved, and both halves of `CommonClosureReciprocityTheorems` are proved
+(see above). Of the other families, the Library proves the components
+`NormSubgroupExistence` (`NormExistenceProof`), `NormSubgroupsSeparatePoints`
+(`NormSubgroupsSeparatePointsProof`), `RelativeNormOrderLaws`
+(`NormOrderProof`), `UnramifiedUnitNorms` (`UnitNormProof`),
+`UnramifiedNormMembership` (`UnramifiedNormMembershipProof`) and
+`UnramifiedCyclicNormQuotient` (`UnramifiedCyclicNormQuotientProof`); this
+note records no proof of `FiniteNormProperties`, `NormSubgroupLattice`,
+`RelativeAbsoluteValueLaws`, `UnramifiedNormCharacterCriterion`,
+`AbelianUnitNormIndex` or `ProfiniteReciprocityTheorems`. The proof modules
+named here are in `Langlands/ClassFieldTheory/Local/`.
+
 The norm/residue and reciprocity diagrams use geometric normalization:
 the inverse of the image of a uniformizer acts on the residue field by
 `x ↦ x^q`. The source comparison explicitly inverts Serre's arithmetic
@@ -259,37 +287,41 @@ abelianization and determinant norms are independent constructions reused
 by the targets. The common-closure family uses canonical extension data
 and arbitrary compatible base data, as described above.
 
-The cohomological prerequisite assignment "Formalize local class formations,
-invariant maps and Tate reciprocity statements" (task
-`c7513fdc-eb44-48b5-8734-001f18050403`, revision 1) separately
-requires genuine coefficient actions and maps, unconditional local
-class-formation realization, all-integer Tate cup isomorphisms and the
-`n = -2` comparison. It is a coherent published assignment under the host's
-permission to decompose substantial prerequisites. Its remaining mathematical
-obligations are not counted as published statements here.
+The cohomological prerequisites, local class formations, invariant maps and
+Tate reciprocity, separately require genuine coefficient actions and maps,
+unconditional local class-formation realization, all-integer Tate cup
+isomorphisms and the `n = -2` comparison. They are not counted as statements
+here. The Library has them in the `ClassFormation…`, `Tate…` and
+`CohomologyExistence…` modules of `Langlands/ClassFieldTheory/Local/` (for
+instance `ClassFormationTateIsomorphismsProof`,
+`LocalRelativeClassFormationProof`); this note does not map them.
 
 Published [`Langlands.ClassFieldTheory.Local.CohomologyExistence`](../../Langlands/ClassFieldTheory/Local/CohomologyExistence.md) states
 absolute H1 vanishing and the H2 description by the actual `Q/Z`, together
-with relative H1 and the denominator image of the finite invariant map.
+with relative H1 and the denominator image of the finite invariant map; the
+Library proves it, as `cohomologyExistence` (`CohomologyExistenceProof`).
 `Invariants`, `FundamentalClasses`, `MultiplicativeFormation` and
 `InvariantCompatibility` provide data and predicates; they do not by
 themselves assert simultaneous unconditional realization of that data.
-The full compatible local realization and all-degree Tate cup/functoriality
-family remain in that prerequisite assignment. [`TateNormQuotient`](../../Langlands/ClassFieldTheory/Local/TateNormQuotient.md) identifies
+The full compatible local realization and the all-degree Tate
+cup/functoriality family belong to those prerequisites. [`TateNormQuotient`](../../Langlands/ClassFieldTheory/Local/TateNormQuotient.md) identifies
 degree-zero Tate cohomology of `Lˣ` with the actual norm quotient, and is not
 the all-degree Tate reciprocity theorem.
 
 The local residue/inertia, normalization and Herbrand arithmetic families
-have their own assignments. The source derivations of the reciprocity targets
+are separate statement families. The source derivations of the reciprocity targets
 use their mathematical conclusions, but these targets do not duplicate their
 proofs. In particular, `Langlands.Ramification.Padic.AbsoluteHerbrandArithmetic`
 in [`Herbrand.AbsoluteStatement`](../../Langlands/LocalFactor/Ramification/Herbrand/AbsoluteStatement.md)
-is an arithmetic statement family; publication
-of that target is not a proof of the absolute upper image theorem.
+is an arithmetic statement family; stating that target is not a proof of
+the absolute upper image theorem. (The Library proves it separately, as
+`absoluteHerbrandArithmetic` in
+[`Herbrand.InertiaProof`](../../Langlands/LocalFactor/Ramification/Herbrand/InertiaProof.md).)
 
-Proofs of the reciprocity, existence, ramification-image and conductor targets
-remain separate work. A future selected reciprocity map must follow proved
-existence and uniqueness. Comparison with separately presented extension
+Proofs of the reciprocity, existence, ramification-image and conductor
+targets are separate from this map; those in the Library are named after
+the table of statement families. A selected reciprocity map must follow
+proved existence and uniqueness. Comparison with separately presented extension
 fields and independence of the closure presentation remain distinct from the
 common-closure system theorem. No proof of local CFT or rank-one LLC is claimed
 by this statement coverage map.

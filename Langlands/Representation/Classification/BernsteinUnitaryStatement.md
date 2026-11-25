@@ -1,7 +1,6 @@
 # Bernstein's unitary product and shifted highest-derivative theorems
 
-Authors: Worker 1808 (Lean module and Markdown) and Worker 1775 (independent
-source and normalization check). This pair states the three parts of Bernstein's theorem on
+The sources and the normalization were checked independently. This pair states the three parts of Bernstein's theorem on
 unitary representations of `GL_n` over a p-adic field, as Tadic 1986, Theorem
 2.5 uses them. Every assertion is a Prop-valued definition. **No part is proved
 here.** The pair has no axioms, no proof holes and no structure fields that
@@ -129,7 +128,7 @@ Sources:
 - Bernstein 1984, §7.4, the unitarizability criterion for G-modules. An
   irreducible unitarizable `π` has a unitarizable highest shifted derivative
   `π^[h]`; this is condition (ii). §7.4 begins on printed p.83 (PDF page 34).
-  The task contract and the literature pointer cite it as p.82, which holds
+  A citation of it as p.82 points to the page that holds
   §7.2–§7.3. The rendered page was checked.
 - Bernstein 1984, Theorem in §7.7, p.85, quoting Zelevinsky [Z1, 8.1]. The
   highest shifted derivative `⟨a⟩^[h]` is isomorphic to the irreducible `⟨a'⟩`.
@@ -200,7 +199,7 @@ with universe parameters `.{uF, uV}`.
 ## Derived formulation choices
 
 - **Finite families.** The sources state parts 1 and 2 for two factors. The
-  task contract fixes the finite-family form over all
+  statement takes the finite-family form over all
   `B : BlockShape n`. A proof can reduce it to the binary form by induction on
   the number of blocks, using transitivity of normalized parabolic induction.
   For part 2 it also needs two facts about the partial product of the
@@ -222,7 +221,7 @@ with universe parameters `.{uF, uV}`.
   nontrivial unitary additive character `ψ`; the sources' derivative does not,
   up to isomorphism. Part 3 quantifies over every `ψ` and every `hd`. The order
   `hd.order` is determined by `π` and `ψ`, since it is the greatest order with
-  nonzero derivative. `0 < N` is the contract's hypothesis. It also follows
+  nonzero derivative. `0 < N` is a hypothesis of the statement. It also follows
   from `hd.positive` and `hd.le_rank`.
 - **Unitarizability.** The Library already proves that normalized products of
   unitarizable blocks are unitarizable (`glNormalizedInductionUnitarity`,

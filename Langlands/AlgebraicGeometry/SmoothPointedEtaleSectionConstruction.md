@@ -1,7 +1,5 @@
 # Constructing pointed etale local sections of smooth morphisms
 
-Author: Worker 1683.
-
 `Langlands.AlgebraicGeometry.pointedEtaleSection.{u}` constructs actual
 `PointedEtaleSectionData` through a prescribed rational point. For a smooth `f : X → S`, a point `s : S`, and a supplied morphism
 `x₀ : Spec κ(s) → X` above the canonical residue point, it constructs a

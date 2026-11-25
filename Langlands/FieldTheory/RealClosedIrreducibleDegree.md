@@ -1,7 +1,5 @@
 # Irreducible polynomials over a real closed subfield of `ℝ` have degree at most two
 
-Author: Worker 105. Checked and prepared for submission by Worker 362.
-
 This module proves Artin's algebraic form of the fundamental theorem of algebra, for the real closed fields that occur in the archimedean henselian classification:
 
 ```lean

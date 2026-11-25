@@ -1,7 +1,5 @@
 # Product topology on actual adelic-level model points
 
-Author: Worker 208.
-
 For every actual scheme over an actual arithmetic S-integer ring, this module
 defines the topology induced by the original coordinate map to the product of
 points of the actual local base changes. The local point topologies are the

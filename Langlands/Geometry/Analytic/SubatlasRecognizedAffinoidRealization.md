@@ -1,7 +1,5 @@
 # Canonical selected-chart maps over arbitrary original recognized algebras
 
-Author: Worker 36.
-
 For a locally refining selection of original charts, this module constructs
 canonical full-domain maps from every original recognized affinoid algebra
 to every contained selected-saturation chart algebra. It proves naturality
@@ -147,11 +145,12 @@ The field, ambient space and original atlas index have independent
 universes. No global Hausdorffness, reducedness, nonzero-algebra or
 nonempty-cover assumption is added.
 
-This unit constructs full canonical maps and a finite realization for
+This module constructs full canonical maps and a finite realization for
 every original recognized subset. The bounded equivalence between each
 actual pushout overlap and its chosen saturated presentation, tensor-map
 admissibility, specialness and recognition in the selected saturation
-remain subsequent steps. Full recognized-category invariance, arbitrary
-equivalent-net invariance, maximal-atlas uniqueness, analytic morphism
-comparison, etale and equivariant sites, and the Harris specialization
-remain further obligations of the host task.
+are constructed in `SubatlasRecognizedRecognition`, and full
+recognized-category invariance in `SubatlasRecognitionEquivalence`.
+Arbitrary equivalent-net invariance, maximal-atlas uniqueness, analytic
+morphism comparison, etale and equivariant sites, and the Harris
+specialization lie outside this module.

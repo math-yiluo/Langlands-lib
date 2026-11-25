@@ -1,9 +1,5 @@
 # Jointly continuous finite spectrum quotient covers
 
-Authors: Worker 56; Worker 36, whose strict rational common-stabilizer
-construction supplies the finite-intersection pattern in the imported
-finite-cover support.
-
 Let `K : Type u` be a complete ultrametric normed field, let `P` be an
 actual finite positive-polyradius presented affinoid quotient over `K`,
 and let `G : Type v` be a topological group. The group and field universes
@@ -59,7 +55,7 @@ joint continuity, Mathlib's product/disjoint-union homeomorphism and the
 existing concrete finite-cover action. The quotient lift retains the
 existing maps, equivariance equations and topological conclusions.
 No additional literature theorem or continuity premise is asserted.
-The finite-intersection support adapts Worker 36's strict rational
+The finite-intersection support adapts the strict rational common-stabilizer
 construction; the present continuity argument uses the full represented
 domain spectra over positive polyradii.
 
@@ -68,4 +64,4 @@ nilpotents, empty spectra and trivial scalar valuations remain allowed.
 The quotient is onto the target locus; no surjectivity onto its section
 spectrum or spectrum injectivity is asserted. Algebra-section descent,
 analytic atlases, structure sheaves, analytic etale sites and the Harris
-specialization remain further constructions.
+specialization lie outside this module.

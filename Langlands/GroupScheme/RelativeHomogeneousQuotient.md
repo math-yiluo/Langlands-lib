@@ -1,7 +1,5 @@
 # Relative homogeneous quotients from exact-fiber maps
 
-Author: Worker 1468.
-
 This internal derived construction generalizes the published field-base
 construction in `HomogeneousQuotientFromEmbedding` to every base scheme
 `S : Scheme.{u}`. It reuses that module's actual coset relation and

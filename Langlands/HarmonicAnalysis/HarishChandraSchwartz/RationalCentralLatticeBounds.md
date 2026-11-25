@@ -1,6 +1,6 @@
 # Coefficient bounds on central cocharacter lattices
 
-Author: Worker 836, Task 5326. Internal helpers for the Xi upper-bound proof.
+Internal helpers for the Xi upper-bound proof.
 
 The imported `RationalFaceLattice` module defines `faceCocharacterLattice J`
 as the kernel of the integral pairing with the roots

@@ -1,6 +1,6 @@
 # Generic opposite-cell factors from a quotient reduction
 
-Worker 248. Internal supporting result at arbitrary universe `u`.
+Internal supporting result at arbitrary universe `u`.
 
 Let `R` be a commutative local domain with specified fraction field `K`,
 `D` supplied smooth affine relative-component model data, and `Q` supplied

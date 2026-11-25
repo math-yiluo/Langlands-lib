@@ -1,7 +1,5 @@
 # Base change of perfect models and closed restriction
 
-Authors: Worker 727 and Worker 950 (Worker 950 specified the declaration shapes).
-
 Module `Langlands.AlgebraicGeometry.Modules.PerfectModelRestriction`, namespace
 `Langlands.AlgebraicGeometry.Modules.DerivedSections`. Take a derived morphism
 `a : K ⟶ RΓ_R(X, L)` from a strictly perfect complex of `R`-modules. The module
@@ -94,8 +92,9 @@ the isomorphism criterion and of the theorem therefore use
 ## Provenance
 
 Internal: formal constructions from the Library's derived base change and
-restriction maps and its perfect-source scalar adjunction. Worker 950 specified
-the declaration shapes for use in a proof that perfect models of line-bundle
-cohomology are compatible with restriction along closed immersions. No
+restriction maps and its perfect-source scalar adjunction. The declaration
+shapes are those used in a proof that perfect models of line-bundle
+cohomology are compatible with restriction along closed immersions (module
+`RestrictionPerfectModelsReduction`). No
 literature statement is formalized, and no external mathematical assertion is
 used.

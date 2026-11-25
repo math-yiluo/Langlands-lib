@@ -1,9 +1,8 @@
 # Uniform small-coordinate dilation for actual JPS function spaces (proof)
 
-Author: Worker 941. This unit proves the published proposition
+This module proves the published proposition
 `Langlands.Whittaker.JPSUniformDilationStatement.{uF}` (module
-`Langlands.Representation.Whittaker.JPSUniformDilationStatement`, statement
-artifact `8461c160-2445-4e4c-83a8-dafc1e1f1300`). The statement is the
+`Langlands.Representation.Whittaker.JPSUniformDilationStatement`). The statement is the
 small-coordinate dilation step in the proof of JPS (1979), Lemma (2.2.1),
 printed p.182. The statement pair and everything it imports are unchanged.
 
@@ -18,21 +17,13 @@ jpsBoundedDilationRecurrence`, with two published theorems:
 
 - `Langlands.Whittaker.jpsCoordinateUnitInvariance` proves
   `JPSCoordinateUnitInvarianceStatement.{uF}`, in module
-  `Langlands.Representation.Whittaker.JPSCoordinateUnitInvarianceProof`
-  (artifact `a313ec54-80de-4856-b8fc-a604418de77b`, proof task
-  `97e96190-2043-4279-bd83-d5b3ec8911b4`, Library commit
-  `6789e5106aba61566887427750f5444a494d5879`).
+  `Langlands.Representation.Whittaker.JPSCoordinateUnitInvarianceProof`.
 - `Langlands.Whittaker.jpsBoundedDilationRecurrence` proves
   `JPSBoundedDilationRecurrenceStatement.{uF}`, the uniform-region recurrence for
   powers of a bounded coordinate dilation, in module
-  `Langlands.Representation.Whittaker.JPSBoundedDilationRecurrenceProof`
-  (statement artifact `fe9dd1eb-3328-4d44-a518-477bb975447d`, statement task
-  `48bd2fbc-532c-4b84-b411-a180058a1107`; proof artifact
-  `f93626e1-1239-43d1-ae2a-5cf84e39c67b`, proof task
-  `9c6a43b4-5ac4-4220-9372-304a353e06a5`, Library commit
-  `9a8ca758097242bde4147f33304f43fceef22fa4`).
+  `Langlands.Representation.Whittaker.JPSBoundedDilationRecurrenceProof`.
 
-This unit imports both and reproves neither.
+This module imports both and reproves neither.
 
 The new auxiliary declarations are in the namespace
 `Langlands.Whittaker.JPSUniformDilationProof` and have the unrestricted field universe
@@ -152,7 +143,7 @@ The recurrence is the published `jpsBoundedDilationRecurrence`, applied once to
 `c = π`, before `f` is fixed. It gives `D` and `d`, independent of `f`, and for
 each `g ∈ W` a threshold `δ_g > 0` such that
 `(ρ(π^m) g)(a) = ∑_{j<D} d m j · (ρ(π^j) g)(a)` for all `m : ℕ` and all tuples
-`a` with `|a_i| < δ_g`. This unit does not reprove it.
+`a` with `|a_i| < δ_g`. This module does not reprove it.
 
 ## Step 4: one threshold for all `|b| ≤ 1` (clause 4)
 
@@ -211,7 +202,7 @@ multiplicativity `T.normalizedAbs_mul`, the formula
   `JPSCoordinateUnitInvarianceStatement.{uF}`, the first hypothesis of
   `jpsUniformDilation_of_unitInvariance_of_recurrence`. That proof uses the
   published generic results `Langlands.Topology.baireFiniteDimensionalGermConstancy`
-  and `Langlands.Topology.compactGroupClosedSubgroupCover`. This unit uses
+  and `Langlands.Topology.compactGroupClosedSubgroupCover`. This module uses
   neither of them directly.
 - `Langlands.Representation.Whittaker.JPSBoundedDilationRecurrenceProof`: the
   published theorem `jpsBoundedDilationRecurrence`, which proves
@@ -227,8 +218,8 @@ multiplicativity `T.normalizedAbs_mul`, the formula
   `Submodule.fg_iff_finiteDimensional`) and local constancy
   (`IsLocallyConstant.iff_eventually_eq`).
 
-lean_check `42bcff47-29d1-4257-a4f3-9b7fff3e69f6` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: 0 errors, 0 warnings; the closing
+A Lean check with Lean 4.34.0 and Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`: 0 errors, 0 warnings; the closing
 theorem has level parameter `uF` and axioms `propext`, `Classical.choice`,
 `Quot.sound`.
 

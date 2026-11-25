@@ -1,13 +1,11 @@
 # Finite Schwartz expansion of unequal-rank block coefficients
 
-Author: Worker 180. The statement and intended reduction were specified by
-Worker 329.
-
 The module defines the proposition
 `Langlands.RankinSelberg.UnequalRankFiniteExpansionStatement.{uF,uV} F T n j k`.
 It imports the published `RankinSelberg.AnalyticStatement` and uses its actual
 Whittaker coefficient models and the matrices from `QuotientIntegrals`.
-This is a statement target, with no implemented proof.
+This is a statement target, with no proof in this module; the theorem
+`unequalRankFiniteExpansion` in `UnequalRankFiniteExpansionProof` proves it.
 
 ## Quantifiers and topology
 
@@ -132,9 +130,9 @@ distinct cosets yields the finite identity. This paragraph explains the
 provenance and proposed proof route; none of these steps is proved by
 this proposition definition.
 
-The separate compact-support statement task
-`7cd83342-a96b-46d7-9933-35f7dc7ca187` is a future supplier of the premise;
-no unpublished declaration from that task is imported or assumed here.
+The separate compact-support statement `UnequalRankCompactSupportStatement`
+(proved in `UnequalRankCompactSupportProof`) supplies the premise; it is not
+imported or assumed here.
 No measures, Haar normalization, second representation, spectral parameter,
 convergence, or rationality occur in the assertion. For a later integral
 consumer the expansion keeps the same larger group and hence the same
@@ -143,8 +141,8 @@ to an integral with a different rank gap.
 
 ## Validation
 
-The proposition passed a Lake build and declaration inspection in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` with zero errors and warnings.
+The proposition passed a Lake build and declaration inspection with zero
+errors and warnings.
 Inspection reports `statement_returns_prop = true`, independent universe
 parameters `uF` and `uV`, and only `propext`, `Classical.choice`, and `Quot.sound`.
 These checks certify elaboration and allowed assumptions, not a proof of the

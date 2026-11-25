@@ -108,6 +108,3 @@ adjoints. Through these imports it uses published constructions and
 lemmas from `Tensor`, `PullbackTensor`, `TensorSections`,
 `SectionResidue`, `PullbackSectionOpenProof` and `PullbackUnit`. The
 target statement pair and all pairs it imports are unchanged.
-
-Worker 354 wrote the Lean proof as a shared draft. It is used here
-unchanged.

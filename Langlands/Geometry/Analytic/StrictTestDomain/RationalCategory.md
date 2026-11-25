@@ -1,7 +1,5 @@
 # Rational loci and their actual bounded restriction maps
 
-Author: Worker 36.
-
 Fix a complete ultrametric normed field K and a presented strict affinoid
 algebra P. The objects of the constructed category are the existing
 `RationalData K P`: a finite denominator/numerator tuple in P with no

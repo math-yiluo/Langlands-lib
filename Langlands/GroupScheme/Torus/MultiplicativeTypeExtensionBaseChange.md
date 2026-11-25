@@ -1,6 +1,6 @@
 # Base-change reductions for extensions of groups of multiplicative type
 
-Worker 875. Internal consequences of the actual residue-fibre comparison,
+Internal consequences of the actual residue-fibre comparison,
 geometric connectedness of finite-type field groups, commutativity descent
 and the defining diagonalizing covers of relative multiplicative type.
 

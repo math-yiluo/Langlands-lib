@@ -1,6 +1,6 @@
 # The Plancherel weight on the orbit of a discrete series of a standard Levi
 
-Worker 5. Module `Langlands.Representation.Plancherel.StandardLeviPlancherelWeight`,
+Module `Langlands.Representation.Plancherel.StandardLeviPlancherelWeight`,
 namespace `Langlands.Plancherel`.
 
 Waldspurger's wave packets are `f_ψ(g) = ∫_O μ(ω) (E_P^G ψ_ω)(g) dω` (VI.3).

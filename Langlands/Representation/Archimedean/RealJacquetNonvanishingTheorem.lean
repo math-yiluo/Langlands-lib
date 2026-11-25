@@ -6,7 +6,7 @@ import Langlands.Representation.Archimedean.RealPrincipalSeriesSubquotientProof
 
 Proof of `Langlands.Archimedean.RealJacquetNonvanishingStatement`: for an irreducible admissible
 `(𝔤𝔩_n(ℝ), O(n))`-module `V`, the subspace `𝔫V` spanned by the upper nilpotent radical is not
-all of `V`. It is Worker 723's reduction `realJacquetNonvanishingSubquotientReduction`
+all of `V`. It is the reduction `realJacquetNonvanishingSubquotientReduction`
 (subquotient theorem ⇒ nonvanishing) applied to Harish-Chandra's subquotient theorem
 `realPrincipalSeriesSubquotient`.
 -/

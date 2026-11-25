@@ -1,7 +1,5 @@
 # Bernstein's binary rank induction from four analytic inputs
 
-Authors: Worker 103; the analytic input statements are by Worker 105.
-
 This internal reduction separates the rank induction from its four analytic
 prerequisites. `BernsteinUnitaryInductionInputs F T` is precisely the conjunction
 of the existing shifted highest-derivative irreducibility and unitarity
@@ -11,8 +9,8 @@ irreducibility criterion. The package asserts no proof of those statements.
 
 `bernsteinUnitaryProductIrreducibility_of_inductionInputs F T` proves the exact
 published `BernsteinUnitaryProductIrreducibility F T` conditionally on this
-package. In particular this file is not an unconditional proof of the task's
-target. The field and carrier universes remain independent and the supplied
+package. In particular this file is not an unconditional proof of
+`BernsteinUnitaryProductIrreducibility`. The field and carrier universes remain independent and the supplied
 field topology is retained.
 
 The proof first supplies unitarity of binary products of irreducible unitarizable
@@ -48,6 +46,6 @@ clause, including the empty product.
 
 The provenance is an internal composition of the explicit structural
 isomorphisms and separate analytic statement interfaces. The four analytic
-implications remain hypotheses, not accepted facts supplied by this file.
+implications remain hypotheses, not proved facts supplied by this file.
 It implements the structural rank-induction route of Bernstein's Corollary
 8.2(a), without importing the desired product irreducibility as an assumption.

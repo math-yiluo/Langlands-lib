@@ -1,6 +1,6 @@
 # Actual framed formal atlases over a varying Nilp base
 
-This internal unit constructs coefficient extension of an actual height-zero
+This module constructs coefficient extension of an actual height-zero
 framed representative along a morphism of the given Nilp category. It derives
 from the existing actual global-cover, quotient-naturality and rational-height
 constructions; it makes no new original-source identification or
@@ -47,5 +47,8 @@ height-certified frame `Φ`, and Nilp objects in universes `{v,u}`. Original cov
 may be infinite and the scalar/quotient maps may merge generators. No new frame,
 representing object or universal object is assumed. Compatibility with actual
 framed comparisons, descent to comparison classes, identity and composition of
-framed extension, source-functor identification and group actions remain
-further constructions.
+framed extension, source-functor identification and group actions are outside
+this module. The first three are constructed in
+`DrinfeldFramedComparisonBaseChange`, `DrinfeldFramedClassBaseChange`,
+`DrinfeldFramedIdentityComparison` and `DrinfeldFramedCompositionComparison`;
+source-functor identification and group actions remain separate.

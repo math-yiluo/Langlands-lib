@@ -1,7 +1,5 @@
 # Coordinates on the full Whittaker-functional line
 
-Author: Worker 181.
-
 This is an internal linear-algebra adapter for the existing Whittaker predicates. For any field and any submodule of an arbitrary vector space, `scalarEquivOfNonzeroSpan` constructs coordinates on the entire submodule from a nonzero vector that spans it. The map from scalars to the submodule sends `c` to `c • w`; nonzeroness makes it injective, and the spanning hypothesis makes it surjective. The definition is the inverse of that linear equivalence. No ambient finite-dimensionality hypothesis is used.
 
 `nonempty_scalarEquiv_iff` proves that a scalar equivalence exists precisely when an ambient nonzero vector belongs to the submodule and spans all its elements. In the forward direction, the inverse image of `1` is the generator and coordinates supply the multiples. In the reverse direction the construction above applies to the subtype. All ambient vectors in the submodule are quantified over.

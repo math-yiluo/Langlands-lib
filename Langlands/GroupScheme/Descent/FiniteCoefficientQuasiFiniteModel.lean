@@ -33,6 +33,7 @@ theorem SimultaneousHomModel.property_over_algebra
   rw [he]
   change P (D.sourceIso.inv.hom.hom.left ≫ f.hom.hom.left ≫
     D.targetIso.hom.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   rw [P.cancel_left_of_respectsIso, P.cancel_right_of_respectsIso]
   exact hf
 

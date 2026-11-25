@@ -1,6 +1,6 @@
 # Special tori from an adapted smooth model (KP Proposition 9.3.4)
 
-Worker 224. This module reduces `Langlands.Geometry.Building.SpecialTorusExistenceStatement`
+This module reduces `Langlands.Geometry.Building.SpecialTorusExistenceStatement`
 (Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*, Proposition 9.3.4) to the building input
 `SpecialTorusIntegralModelStatement` (an adapted smooth model; see its Markdown). The Henselian
 lifting of a torus of the special fibre (KP Proposition 8.2.1(1)) is the published Library

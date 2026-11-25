@@ -12,7 +12,7 @@ B ──→ A ⊗[C] B
 
 to a pullback square in the Library's localized category of analytic spaces.
 So `Spec(A ⊗[C] B)ᵃⁿ` is the fibre product of `Spec(A)ᵃⁿ` and `Spec(B)ᵃⁿ`
-over `Spec(C)ᵃⁿ`. It is a `Prop`-valued definition; this unit supplies no
+over `Spec(C)ᵃⁿ`. It is a `Prop`-valued definition; this module supplies no
 proof. It imports only the published `AffineAnalytificationLocalizedMap`.
 
 ## Provenance

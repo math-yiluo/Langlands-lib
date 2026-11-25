@@ -1,6 +1,6 @@
 # Conditional arithmetic epsilon values of character pairs
 
-This internal unit computes the full common-closure arithmetic pair epsilon
+This module computes the full common-closure arithmetic pair epsilon
 value for two actual continuous character lines. It retains an explicitly
 supplied reciprocity family, an explicitly supplied assignment satisfying
 `NonabelianSystem.IsSystem`, a finite intermediate field, a nontrivial unitary

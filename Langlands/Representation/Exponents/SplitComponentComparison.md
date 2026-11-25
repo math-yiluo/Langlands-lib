@@ -1,6 +1,6 @@
 # Exponent comparisons for central actions
 
-Author: Worker 1666. Internal supporting derivations for Renard 2026, VII.1.1.
+Internal supporting derivations for Renard 2026, VII.1.1.
 
 Restriction along a group homomorphism retains the same uniform nilpotence
 exponent. If the original weight spaces span, any nonzero restricted character

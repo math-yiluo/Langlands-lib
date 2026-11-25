@@ -24,6 +24,6 @@ test schemes, with coefficients pulled back through `scalarMap`.
 
 The provenance is internal and derived from the published full based projection,
 Weyl image comparison and pinned Weyl innerness, and the adjoint-point matrix
-bridge. This unit does not identify the full projection from its permutation
+bridge. This module does not identify the full projection from its permutation
 of simple roots and does not classify nonidentity diagram actions. It makes
 no restriction on characteristic or on the finite coordinate index type.

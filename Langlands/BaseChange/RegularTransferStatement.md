@@ -1,7 +1,7 @@
 # Transfer of test functions with regular support
 
 Module `Langlands.BaseChange.RegularTransferStatement`, namespace `Langlands.BaseChange`.
-It states `RegularTransferStatement.{u, v} : Prop` (item 11 of the task). The statement is
+It states `RegularTransferStatement.{u, v} : Prop`. The statement is
 not proved here.
 
 ## Source
@@ -72,8 +72,8 @@ The left coset spaces carry the Borel σ-algebra through the local instances
 
 ## Dependencies
 
-`Langlands.BaseChange.OrbitalIntegral` (this task); through it Task 7402
-(`Langlands.TraceFormula.TwistedOrbital`) and Task 7405 (`Langlands.BaseChange.Norm`:
-`IsCyclicAlgebra`, `IsSigmaRegular`, `IsNorm`, `IsNormAssociated`); the Library's
+`Langlands.BaseChange.OrbitalIntegral`; through it
+`Langlands.TraceFormula.TwistedOrbital` and `Langlands.BaseChange.Norm`
+(`IsCyclicAlgebra`, `IsSigmaRegular`, `IsNorm`, `IsNormAssociated`); the Library's
 `Langlands.HarmonicAnalysis.SchwartzBruhat`; Mathlib's `IsNonarchimedeanLocalField` and
 `IsModuleTopology`.

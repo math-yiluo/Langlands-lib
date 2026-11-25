@@ -10,7 +10,7 @@ blocks). The rest of II is reduced to the statement
 `RealInterlacedInducedInducedLinkedJacquetFunctionalStatement` of the module
 `RealInterlacedLinkedJacquetStatement`.
 
-It imports the Library module `RealCharacterCrossing` (Worker 5731). From it the proofs use `KF`, `PL`, `frobMap`, `frobMap_rep`, `frobMap_lie`, `frobMap_coe`, `isJacquet_cross`,
+It imports the Library module `RealCharacterCrossing`. From it the proofs use `KF`, `PL`, `frobMap`, `frobMap_rep`, `frobMap_lie`, `frobMap_coe`, `isJacquet_cross`,
 `crossExp`, `crossExp_sub`, `sw`, `par`, `par_cases`, `PL_parity`, `blockJacquet_pow_eq_zero` and
 `coeff_cos_pow_ne_zero`. From the Library module `RealInductionStagesFourier` (namespace
 `Langlands.Archimedean.InductionStages`, opened here) they use `realPositionCharacter_exp`,
@@ -36,7 +36,7 @@ says: if `f` is in the principal series of the position characters, and the coef
   recurrence `μ_{j+2}(δ + j) = (j + 2 - δ) μ_j` (Library, `RealBlockMultiplier`).
 * `PL τ e` is the list of characters `sgn^{e_i} |·|^{τ_i}`. `frobMap hψ : KF n ds → KF n (PL τ e)`
   is the Frobenius map `v ↦ (g ↦ ψ(π(g) v))` of a real Jacquet functional `ψ` with exponents
-  `α` (Worker 5731).
+  `α` (module `RealCharacterCrossing`).
 * `RealLinkedJacquetFunctionalExists n ds` is the conclusion of the pair statements
   (`RealLinkedJacquetPairReduction`).
 
@@ -174,10 +174,12 @@ the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Provenance
 
-The method is internal to Task 7070. It uses the Library's block Fourier coefficients, block
+The method is internal to the proof of `RealLinkedLanglandsQuotientNotLargeStatement` (the
+Langlands quotient of a Langlands-ordered real standard module with a linked pair is not
+maximally faithful). It uses the Library's block Fourier coefficients, block
 Jacquet functionals and multipliers (`RealBlockJacquetFunctional`, `RealBlockMultiplier`,
-`RealBlockLeftDerivative`, `RealBlockFourierPropagation`, `PrincipalSeriesExtension`), Worker 5731's
-crossing at a pair of characters (`RealCharacterCrossing`), and Worker 109's membership lemmas
+`RealBlockLeftDerivative`, `RealBlockFourierPropagation`, `PrincipalSeriesExtension`), the
+crossing at a pair of characters (`RealCharacterCrossing`), and the membership lemmas
 (`RealInductionStagesFourier`). The case split follows the
 cases "discrete series then character", "character then discrete series" and "two discrete series"
 (a)/(b) of the Library's `RealLinkedJacquetFunctional.md`. The proofs do not use

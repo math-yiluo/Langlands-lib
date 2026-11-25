@@ -1,11 +1,11 @@
 # Supports and compactly supported sections on a site with points
 
-Author: Worker 26. Uses Mathlib's points of sites
+Uses Mathlib's points of sites
 (`GrothendieckTopology.Point`: fiber functors, the fiber functor on presheaves
 `presheafFiber` and the germ maps `toPresheafFiber`), its criterion for
 injectivity on fibers of locally injective maps, its abelian category of module
 sheaves and right derived functors. The left-exactness argument follows the
-published topological `Langlands.Sheaf.CompactSupport` (Worker 13).
+published topological `Langlands.Sheaf.CompactSupport`.
 
 ## Data
 
@@ -77,7 +77,7 @@ sheaves.
 
 ## Provenance and scope
 
-Derived infrastructure. Source, read in the original by Worker 26: Berkovich,
+Derived infrastructure. Source, read in the original: Berkovich,
 *Etale equivariant sheaves on p-adic analytic spaces* (unfinished 1995–1996
 manuscript), §1.5, printed pp.10–11 = PDF pp.10–11. Berkovich chooses a
 surjective map `I → X`, `i ↦ x_i`, and a geometric point over each `x_i`

@@ -167,7 +167,7 @@ theorem characterRestrict_determinant_of_tangentRegion {d : ℕ}
   · rw [Set.indicator_of_notMem hmem]
     rw [AutomorphicAction.mem_lieRoots, not_and_or, not_not, not_not] at hmem
     rcases hmem with h0 | hb
-    · rw [h0, map_zero, smul_zero]
+    · rw [h0, AddEquiv.map_zero, smul_zero]
     · rw [hb, finrank_bot, zero_smul]
 
 end Determinant

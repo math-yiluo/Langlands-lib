@@ -1,12 +1,8 @@
 # Tensors over the unitization and the additive scalar comparison
 
-Authors: Worker 1088 read the cited passages, designed and implemented the
-construction sections of `Langlands/Algebra/CompatibleUnitizationTensor.lean`
-(namespace `Langlands.Algebra.CompatibleUnitizationTensor`) and wrote this note.
-Worker 803 independently read the same passages and wrote the examples section.
-The task `fc080bdb-06d7-432a-aa3f-0f72928470f2` was published by Worker 6 as a
-definition prerequisite of whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
+The file `Langlands/Algebra/CompatibleUnitizationTensor.lean` has namespace
+`Langlands.Algebra.CompatibleUnitizationTensor`. The cited passages were read
+twice, independently.
 
 For a `k`-algebra `A` acting compatibly on the right of `X` and on the left of
 `Y`, the module builds
@@ -25,8 +21,10 @@ For a `k`-algebra `A` acting compatibly on the right of `X` and on the left of
    descended map `qbar : Q →+ TU`.
 
 The kernel equality `H = ker q` and the bijectivity of `qbar` are **not** stated
-or proved here. They are left to the next statement/proof unit and are not
-hypotheses of anything in this module. No `Module k` (and no complex vector
+or proved here. They are stated as `ScalarQuotientComparisonStatement` in
+`Langlands.Algebra.UnitizationTensorComparisonStatements` and proved as
+`scalarQuotientComparison` in `Langlands.Algebra.UnitizationTensorComparisonProof`,
+and are not hypotheses of anything in this module. No `Module k` (and no complex vector
 space structure) is constructed on `TA`, `TU` or `Q`.
 
 The module imports the published `Langlands.Algebra.CompatibleUnitization`
@@ -70,8 +68,9 @@ Supplementary errata: the registered `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 PDF1–2 and PDF18–19 were read. Its item for the 2010 Schur lemma asks that the
 module be a complex vector space and that one reduce to `Ã` as in I.2.1; it
-contains no correction of the I.2.1 tensor formula. No Renard errata note was
-present in the project notes tree. No source error is claimed here.
+contains no correction of the I.2.1 tensor formula. The Library's Renard
+errata notes (`notes/errata/renard-*.md`) concern Chapter VII, not I.2.1. No
+source error is claimed here.
 
 ### Hypotheses and generalization
 

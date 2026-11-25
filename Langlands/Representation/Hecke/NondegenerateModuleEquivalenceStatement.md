@@ -1,6 +1,6 @@
 # Smooth representations and nondegenerate Hecke modules (Renard III.1.4, Theorem): statement
 
-Author: Worker 1222. Module `Langlands.Representation.Hecke.NondegenerateModuleEquivalenceStatement`,
+Module `Langlands.Representation.Hecke.NondegenerateModuleEquivalenceStatement`,
 namespace `Langlands.Hecke`. The module contains one **statement**, the closed `Prop`-valued
 definition `HeckeNondegenerateModuleEquivalenceStatement` (universe parameters `u, v`). It
 proves nothing.
@@ -9,8 +9,8 @@ proves nothing.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated
 **9 July 2026**, registered as `renard-2026-representations-groupes-reductifs-padiques`,
-SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. Worker 1222 read
-III.1.1–III.1.6, printed pp.58–62 / PDF pp.64–68, for this unit. The Theorem of III.1.4,
+SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. III.1.1–III.1.6,
+printed pp.58–62 / PDF pp.64–68, were read for this statement. The Theorem of III.1.4,
 printed p.60 / PDF p.66, reads:
 
 > **Théorème.** Si `(π, V)` est une représentation lisse de `G`, le `H(G)`-module `V` est non
@@ -88,8 +88,9 @@ The provenance is the source Theorem.
 ## Scope
 
 This module states the Theorem of III.1.4 and proves none of it. The construction of the
-functor and its nondegeneracy are the published definition unit. A proof belongs to a
-separate proof task.
+functor and its nondegeneracy are in the published definition module
+`NondegenerateModuleFunctor`. The proof is `heckeNondegenerateModuleEquivalence`, in the
+separate module `NondegenerateModuleEquivalenceProof`.
 
 ## Imports
 

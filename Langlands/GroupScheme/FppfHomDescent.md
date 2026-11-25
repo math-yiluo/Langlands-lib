@@ -1,6 +1,7 @@
 # Homomorphism descent through an fppf group-scheme quotient
 
-Worker 701, supporting Task 6384.
+This module supports the existence and uniqueness theorem for the derived group
+of a reductive group scheme over a base.
 
 This module constructs descent of an actual group-scheme homomorphism through
 an fppf homomorphism over any scheme. For `q : H ⟶ Q` flat, surjective and

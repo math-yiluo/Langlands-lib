@@ -1,7 +1,6 @@
 # Haar modulus in triangular coordinates
 
-Author: Worker 1179. Part of task 40747bb3 (finite volume of `G(F) \ G(𝔸_F)¹`), with
-Worker 235.
+Part of the finite-volume argument for `G(F) \ G(𝔸_F)¹`.
 
 This module computes the Haar modulus of a group automorphism in coordinates. The
 coordinates must make left translations triangular, and the automorphism must act

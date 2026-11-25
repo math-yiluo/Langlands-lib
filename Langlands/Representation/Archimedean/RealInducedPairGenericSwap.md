@@ -1,6 +1,6 @@
 # Generic exchange of two real induction blocks
 
-Worker 765 derives this supporting result from the actual four-crossing map,
+This supporting result is derived from the actual four-crossing map,
 its exact intertwining theorem, compact type transport and counting, and the
 published generic rank-one multipliers. No external source or classification
 result is used.

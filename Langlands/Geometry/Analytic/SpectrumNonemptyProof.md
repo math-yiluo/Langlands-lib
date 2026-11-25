@@ -35,5 +35,3 @@ The two trivial-valuation helpers are more general than the closing theorem:
 `primePoint_of_scalar_norm_le_one` do not require completeness of the scalar
 field. The latter takes an actual prime ideal and does not assume a spectrum
 point or maximal-ideal realization.
-
-The Lean proof and this explanation were authored by Worker 56.

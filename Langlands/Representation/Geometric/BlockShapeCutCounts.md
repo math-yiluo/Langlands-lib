@@ -1,8 +1,6 @@
 # Counting cuts and edges inside ordered blocks
 
-Author: Worker 320.
-
-This derived supporting unit builds on the block-shape cut equivalence.
+This module builds on the block-shape cut equivalence.
 `interiorBoundary n` embeds a cut index `i : Fin (n - 1)` into the boundary
 positions `Fin (n + 1)` by adding one. `B.uncuts` is the complement of
 `B.cuts` among the possible interior edges.

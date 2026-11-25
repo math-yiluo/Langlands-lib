@@ -1,7 +1,7 @@
 import Langlands.Global.NumberFieldAdeleContinuousTensor
 import Langlands.Global.AdelicGLTransport
 import Langlands.Global.AdeleGaloisAction
-import Langlands.ClassField.Global.IdeleGaloisDescentProof
+import Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof
 import Langlands.BaseChange.CyclicNormDeterminant
 
 /-! # Fixed adelic coefficients of a cyclic generator -/
@@ -58,7 +58,7 @@ private theorem powers_surject_of_cyclic {σ : L ≃ₐ[K] L} {l : ℕ}
     rw [Fintype.card_fin, Fintype.card_eq_nat_card, IsGalois.card_aut_eq_finrank, hcyc.2.1]
   exact ((Fintype.bijective_iff_injective_and_card _).2 ⟨hinj, hcard⟩).2
 
-open Langlands.ClassField.Global.IdeleGaloisDescentProof
+open Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof
 
 variable [NumberField K]
 

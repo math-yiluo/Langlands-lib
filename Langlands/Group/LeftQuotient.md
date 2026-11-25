@@ -8,13 +8,13 @@ parameters, representative formulas and proofs are retained. The carrier
 `Langlands.QuotientIntegration.LeftQuotient` transparently reuses
 `Langlands.Induction.LeftQuotient`; both are the actual right-relation quotient.
 
-Worker 15 supplied the induction carrier, projection and positive translation;
-Worker 31 supplied invariant-function descent and the translation homeomorphism.
+The module provides the induction carrier, projection and positive translation,
+invariant-function descent and the translation homeomorphism.
 `descend` retains arbitrary Sort-valued codomains. Right translation sends the
 class of `x` to the class of `x * g`; its inverse is translation by `g⁻¹`.
 These elementary constructions require no representation or integration imports.
 
-Worker 113 proves topological prerequisites for quotient integration on the
+The module also proves topological prerequisites for quotient integration on the
 published `Langlands.QuotientIntegration.LeftQuotient H`, whose cosets are `H g`.
 The existing quotient and its topology are unchanged. The abbreviation
 `leftQuotientMap H` reuses `Langlands.Induction.quotientMap H` from
@@ -41,7 +41,7 @@ of the same orbit space. These facts come from
 No normality, countability, Haar measure or quotient-measure existence is
 assumed. Ambient Hausdorffness is not needed for these topological lemmas;
 they apply in particular under the locally compact Hausdorff hypotheses of
-the compatible-measure existence task. They do not construct a measure.
+the compatible-measure existence theorem. They do not construct a measure.
 
 The original modules re-export these declarations. The general adelic
 [LeftCosetSpace](../Global/LeftCosetSpace.md) interface reuses them for its

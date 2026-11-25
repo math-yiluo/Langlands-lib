@@ -4,7 +4,7 @@ Module `Langlands.Global.Factors.CuspidalSelfPairContinuationAssembly`, namespac
 `Langlands.Global.CuspidalSelfPairAssembly`.
 
 This internal helper is the last step of the positivity proof of
-`CuspidalSelfPairContinuationStatement` (Jacquet–Shalika 1981, I, Lemma (5.2); Task 6821).
+`CuspidalSelfPairContinuationStatement` (Jacquet–Shalika 1981, I, Lemma (5.2)).
 It contains no `Prop`-valued statement definitions.
 
 Fix the data of that statement:
@@ -22,7 +22,7 @@ uniformly in the finite set `E` of places outside `S`. Here `L(s, π_v × π̃_v
 ## Imported machinery
 
 The module imports `Langlands.Global.Factors.CuspidalPairAbsoluteConvergenceProof`, the
-proof of Task 6822 by Worker 834 and Worker 3657. From it, this module uses:
+proof of `CuspidalPairAbsoluteConvergenceReductionStatement`. From it, this module uses:
 
 * `selfCoeff P hP (v, n) = |tr A_v ^ (n + 1)|² / (n + 1) ≥ 0` and
   `logExponent (v, n) = (n + 1) log q_v`;
@@ -102,4 +102,4 @@ partial products at real points by `Ψ(σ)/Ψ_S(σ)`, ratios of nonnegative part
 Whittaker integrals of `|W|² Φ |det|^σ`. This mirrors the positivity used in the proof of
 (4.8), p. 553. The bound itself is supplied separately. The passage from convergence of the
 nonnegative double series to the Euler product follows JS I, (5.3.1)–(5.3.2), through the
-imported Task 6822 machinery.
+imported machinery of `CuspidalPairAbsoluteConvergenceProof`.

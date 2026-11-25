@@ -1,7 +1,7 @@
 import Langlands.CommutativeAlgebra.Popescu.GeometricRegularityH1FiniteStatement
 import Langlands.CommutativeAlgebra.Popescu.GeometricRegularityH1InjectiveStatement
 import Langlands.CommutativeAlgebra.Popescu.GeometricRegularityH1InjectiveProof
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Finiteness of `H₁(L_{κ(q)/k})` from the injectivity into `𝔪/𝔪²` -/
 

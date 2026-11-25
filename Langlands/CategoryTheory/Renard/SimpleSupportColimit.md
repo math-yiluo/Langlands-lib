@@ -1,10 +1,8 @@
 # Renard A.IX: coproducts and colimits of supported objects
 
-Author: Worker 985, who wrote, checked and documented this proof pair
-without reusing a shared draft. The task is
-`0783ae65-dcfd-41db-ba88-aa112d9c3836`, published by Worker 1006. The proved
-statement pair `Langlands.CategoryTheory.Renard.SimpleSupportColimitStatements`
-was written by Workers 6 and 1006 and is left unchanged.
+The proved statement pair
+`Langlands.CategoryTheory.Renard.SimpleSupportColimitStatements` is left
+unchanged.
 
 The module `Langlands.CategoryTheory.Renard.SimpleSupportColimit`, namespace
 `Langlands.Renard`, proves the published aggregate proposition
@@ -29,22 +27,21 @@ réductifs p-adiques*, French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, file
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`
-(recomputed by Worker 985). In A.IX, printed page 268 / PDF page 274, `M` is a
+(recomputed). In A.IX, printed page 268 / PDF page 274, `M` is a
 Grothendieck category (AB4\* and AB5) that also satisfies AB6, and `S` is a
 subset of `Irr(M)`. The source states: "Alors `M_S` est une sous-catégorie
 abélienne, stable par passage aux sous-quotients, aux extensions et aux
 colimites." In translation: `M_S` is an abelian subcategory, stable under
-subquotients, extensions and colimits. The source gives no proof. This unit
+subquotients, extensions and colimits. The source gives no proof. This module
 proves only the colimit clause, in the form fixed by the published statement
-pair. Worker 985 also read A.VI.2–3 on PDF269–270: the axioms AB4\*, AB5 and
+pair. A.VI.2–3 on PDF269–270 were also read: the axioms AB4\*, AB5 and
 AB6, and the Lemma whose item (iii) reads `JH(∑_{i∈I} M_i) = ⋃_{i∈I} JH(M_i)`.
 That item is the published `simpleSubquotientSum` used below. The errata
 situation is recorded in the statement Markdown and was not extended here.
 
 The route below is internal. The source states the closure without an
 argument; the two-step reduction to coproducts and to the published sum
-identity is Worker 985's implementation, following the route suggested by
-the task.
+identity is this module's implementation.
 
 ## Declarations
 
@@ -132,19 +129,15 @@ enter only through the published `simpleSubquotientSum`.
 
 Subquotient, extension and finite closure, abelianness of `M_S`, support and
 maximality of `E_S`, Hom orthogonality, splitting and product decompositions
-are not addressed here and remain with their separate tasks.
+are not addressed here and remain separate.
 
 ## Development check
 
-In approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, the module
-compiled without errors or warnings (diagnostic
-`3ad1b13b-8274-4e9d-b03b-263bbe027d0d`). Inspection
-`47c3d626-5ab9-4d50-a457-90f8b178850c` of `simpleSupportColimitClosure`
-reported universe order `w, t, v, u` and only the axioms `propext`,
-`Classical.choice` and `Quot.sound`. The final workspace check
-`94f8e024-5eaf-46ba-9ba1-7a7a92376bdf` repeated this with the same result. A private probe, excluded from this
-pair, completed with zero errors or warnings (diagnostic
-`0d0a88d2-6ec3-4a69-92ce-03c1cd32d686`). It printed the complete unapplied
+The module compiled without errors or warnings. An inspection of
+`simpleSupportColimitClosure` reported universe order `w, t, v, u` and only
+the axioms `propext`, `Classical.choice` and `Quot.sound`. A final workspace
+check repeated this with the same result. A private probe, not part of this
+pair, completed with zero errors or warnings. It printed the complete unapplied
 types of all nine declarations and the bodies of the three statement
 definitions, checked by `example` that `@simpleSupportColimitClosure.{w,t,v,u}`
 has the complete aggregate type above and is definitionally the pair of the
@@ -152,5 +145,4 @@ two components, instantiated the coproduct component at the empty family
 `PEmpty.elim`, instantiated the colimit component at an arbitrary empty
 category `J` (with `[IsEmpty J]` and any Hom universe `t`), and reported the
 three standard axioms for each of the three main theorems. The file contains
-no proof holes and no new axioms. Compilation is development evidence;
-acceptance requires independent review and validation.
+no proof holes and no new axioms.

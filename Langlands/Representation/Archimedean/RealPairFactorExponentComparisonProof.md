@@ -1,7 +1,5 @@
 # Proof of the real block exponent comparison
 
-Worker 848.
-
 `realPairFactorExponentComparison` proves
 `RealPairFactorExponentComparisonStatement`. For a block \(x\) of the first
 list, take \(s\) to be the negative of its complex exponent. If \(x\) is a
@@ -15,7 +13,7 @@ denominator vanish at \(s\).
 Denominator equality transfers this zero to the second list. If the
 real exponent of \(x\) were at most the proposed lower threshold, then
 \(\operatorname{Re}(s)\) plus the real exponents of any block of the second
-list and the test block would be strictly positive. The published
+list and the test block would be strictly positive. The Library's
 `realPairLFactorRightHalfPlaneRegularity` would give a nonzero denominator,
 which proves the strict lower bound.
 

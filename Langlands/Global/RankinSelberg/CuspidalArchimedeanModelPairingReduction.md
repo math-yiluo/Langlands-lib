@@ -47,5 +47,11 @@ The implemented proof discharges the global assembly obligations:
 
 The provenance is internal composition of these completed constructions
 and published proofs. Local archimedean form existence remains an
-explicit unproved input. This conditional intermediate does not prove
-the unconditional target or complete Task 7294.
+explicit input here; `cuspidalArchimedeanModelPairing_of_localGK`
+(module `CuspidalLocalGKTransposePairingReduction`) derives it from
+`Archimedean.ArchimedeanTransposePairingStatement`, which the Library
+proves (`Archimedean.archimedeanTransposePairing`, module
+`TransposePairingProof`). This conditional intermediate does not prove
+the unconditional target; the Library proves it as
+`cuspidalTransposeInverseContragredient` (module
+`CuspidalTransposeInverseContragredientProof`).

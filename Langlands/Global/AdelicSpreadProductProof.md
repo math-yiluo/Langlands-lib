@@ -26,7 +26,6 @@ product-limit construction `productModelIso` are public for reuse by the
 separatedness and pullback proofs. The generic-fiber composition isomorphisms
 `Langlands.Global.curveProductGenericFiberCompIso` and
 `Langlands.Global.numberProductGenericFiberCompIso` are likewise shared.
-Their definitions and hypotheses are unchanged by this visibility change.
 
 Apply the fixed-model adelic pullback theorem over the terminal object
 `Over.mk (𝟙 _)`. Its structure morphism is the identity, hence is finite
@@ -56,7 +55,7 @@ original topologies. The common-base argument now applies. The number-field
 proof repeats this construction with its original integer and full-adele
 algebras, retaining every infinite factor.
 
-Worker 208 authored this proof and its original explanation. The pair imports
+The pair imports
 the published predecessor results by module name. It establishes binary
 products for supplied spreads; general generic-fiber pullbacks and the
-remaining whole-paper obligations are separate.
+other conclusions of Conrad's paper are separate.

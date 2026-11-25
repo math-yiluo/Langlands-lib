@@ -39,5 +39,3 @@ unitarity input to local Euler and gamma analysis. They do not establish
 epsilon analyticity, supplied-pair gamma comparison, local automorphic
 classification, block factor formulas, or the associated-pair induction
 statement.
-
-Author: Worker 1768.

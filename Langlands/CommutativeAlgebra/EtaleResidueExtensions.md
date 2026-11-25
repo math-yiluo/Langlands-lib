@@ -1,7 +1,5 @@
 # Etale algebras realizing prescribed finite separable residue extensions
 
-Author: Worker 1683.
-
 This module is `Langlands.CommutativeAlgebra.EtaleResidueExtensions`.
 It proves the algebraic realization needed for The Stacks Project, Algebra
 Lemma 10.144.3, Tag 00UD. The registered original source is

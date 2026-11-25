@@ -1,7 +1,5 @@
 # Geometric monodromy on the actual finite roots of unity
 
-Author: Worker 92.
-
 This module constructs geometric monodromy on the existing
 `TateTwist.Level Ω n = Additive (rootsOfUnity n Ω)`. The action is evaluation
 of an automorphism of the actual finite geometric-fibre functor at the
@@ -122,8 +120,8 @@ law, and invokes equivariance of the existing actual torsion transition.
 
 ## Scope
 
-This focused unit constructs finite-level monodromy and its compatibility
-with the actual `Gm` comparison. It does not yet construct the inverse-limit
+This module constructs finite-level monodromy and its compatibility
+with the actual `Gm` comparison. It does not construct the inverse-limit
 or rational action, path transport, pointed base change, Weil pairings, or
 PEL level structures. The geometric finiteness and finite étaleness
 hypotheses remain explicit theorem dependencies.

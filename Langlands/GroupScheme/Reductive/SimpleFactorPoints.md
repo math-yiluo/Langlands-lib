@@ -1,7 +1,5 @@
 # Point-level helpers for the semisimple decomposition theorem
 
-Author: Worker 161 (Task 6631, with Worker 162).
-
 This module is an internal step toward the proof of
 [`SimpleFactorDecompositionStatement`](SimpleFactorDecompositionStatement.md), Conrad's
 decomposition theorem for semisimple groups (*Reductive group schemes*, Theorem 5.1.19). It

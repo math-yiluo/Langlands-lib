@@ -1,7 +1,6 @@
 # The dual cusp forms lie in a cuspidal contragredient
 
 Module `Langlands.Global.RankinSelberg.CuspidalTransposeInverseContragredientStatement`.
-Author: Worker 381.
 
 ## Statement
 

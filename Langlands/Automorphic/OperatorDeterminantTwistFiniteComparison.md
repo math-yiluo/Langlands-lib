@@ -1,6 +1,6 @@
 # The finite and compact representations of actual determinant twists
 
-Author: Worker 2. This internal comparison uses the actual full operator
+This internal comparison uses the actual full operator
 realizations over each number field `F : Type u`, every natural rank including
 zero, and complex coefficients. The Hecke character `χ` has finite order
 when constructing its actual image realization.

@@ -14,7 +14,7 @@ target. Its source may be any `k`-charted space in three independent universes;
 no source manifold assumption is needed. Constants and actual postcomposition
 preserve this condition.
 
-This is an internal adaptation by Worker 115 of Workers 94 and 274's published
+This is an internal adaptation of the published
 `PointManifold.General.RegularEvaluation`: the coefficient restriction is
 replaced and the calculus is analytic over `k`; no Type 0 comparison is asserted.
 

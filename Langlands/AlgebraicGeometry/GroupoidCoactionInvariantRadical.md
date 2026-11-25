@@ -1,9 +1,10 @@
 # Radical invariant ideals of Noetherian affine étale relations
 
-Worker 148. This is internal support algebra derived from the published ring
+This is internal support algebra derived from the published ring
 étale relation, coaction annihilator, quotient-base-change constructions, and
 Mathlib's reducedness results. It is a prerequisite for the geometric support
-argument; it does not prove the host acyclicity statement.
+argument; it does not prove the acyclicity statement
+`EtaleEquivalenceRelationComodulesAcyclicStatement`.
 
 The rings and schemes have arbitrary universe `u`. Coefficient modules in the
 last result have independent universe `v`.

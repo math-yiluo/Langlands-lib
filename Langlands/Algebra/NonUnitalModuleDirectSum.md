@@ -9,7 +9,7 @@ SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The nondegeneracy definition and finite-upper-bound property are I.1.2,
 printed p.7 / PDF13. The adjacent 2010 corrections do not change this construction.
 
-This unit implements the actual direct sum and its intrinsic universal property.
+This module implements the actual direct sum and its intrinsic universal property.
 It supplies a construction needed by the cited proofs, rather than the whole
 I.6 completeness, cocompleteness, AB5, AB6 or filtered-exactness assertion.
 The source's construction uses only additive groups and original ring actions,

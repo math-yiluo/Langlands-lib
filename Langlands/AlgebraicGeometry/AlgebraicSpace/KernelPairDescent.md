@@ -1,7 +1,5 @@
 # Descent of maps along locally surjective maps from schemes
 
-Author: Worker 5067.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.KernelPairDescent`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace.KernelPairDescent`. It imports
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelationPresentation` and Mathlib's

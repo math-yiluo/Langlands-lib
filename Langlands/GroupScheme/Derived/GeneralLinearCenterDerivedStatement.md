@@ -252,9 +252,11 @@ these pages, only an entry for the proof of Proposition 1.90 on p. 33 (a
 citation); it has no entry for Proposition 1.92 or for printed pp. 99, 111,
 129, 130, 246, 247 or 415.
 
-## For the later proof (not part of this unit)
+## For a proof (not part of this module)
 
-A proof of the Lean statement can follow these steps. Write `R = Γ(T, 𝒪_T)`.
+A proof of the Lean statement can follow these steps; the Library proves it as
+`generalLinearCenterDerived` in
+[`GeneralLinearCenterDerivedProof`](GeneralLinearCenterDerivedProof.md). Write `R = Γ(T, 𝒪_T)`.
 
 - Conjunct (1). If the matrix of `g` is `u • 1`, then by naturality of
   `pointsEquiv` the matrix of `a ≫ g` is the image of `u` times `1`, which

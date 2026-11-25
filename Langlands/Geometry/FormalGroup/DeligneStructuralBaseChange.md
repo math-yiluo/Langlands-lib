@@ -116,11 +116,12 @@ are inputs to the constructor.
 
 ## Scope
 
-This unit constructs the structural tangent-sheaf pullback on objects and
+This module constructs the structural tangent-sheaf pullback on objects and
 proves the displayed splitting, scalar and local-triviality laws. It does not
 construct morphism functoriality, full four-data base change with its locally
 generating `u`, admissibility transport, the functor on Nilp isomorphism
 classes, or the normalized `PGL(d,F)` action. The inherited comparison between
 stalkwise determinant conditions and an independently constructed exterior-power
-subsheaf equality remains open. Proposition 2.4, existence of the special
+subsheaf equality is not made here; `determinantSubsheavesNormalized_iff` in
+`DeligneDeterminantSubsheaf` proves it. Proposition 2.4, existence of the special
 formal module, and representability are not proved by these constructions.

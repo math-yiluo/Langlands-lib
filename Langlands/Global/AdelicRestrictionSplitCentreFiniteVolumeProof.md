@@ -1,7 +1,5 @@
 # Finite volume of the restriction split-centre adelic quotient
 
-Author: Worker 679.
-
 The theorem
 `Langlands.Global.RestrictionSplitCentre.connectedReductiveQuotientFiniteVolume`
 proves exactly the published proposition

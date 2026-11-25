@@ -34,7 +34,7 @@ def ConjugateSelfDualUnitaryCentralCharacterStatement : Prop :=
   ∀ (E : Type u) [Field E] [NumberField E] [IsCMField E] [CompactSpace (AdeleQuotient E)]
     (r : ℕ) (S : CuspidalOperatorRealization E r),
     S.isoClass.IsConjugateSelfDual →
-    ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S
+    ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S
 
 /-- A conjugate self-dual cuspidal class over a CM field that has a
 supercuspidal component at a finite place `v` has a supercuspidal component at

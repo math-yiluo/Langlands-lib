@@ -7,7 +7,7 @@ noncomputable section
 
 namespace Langlands.BaseChange
 
-open HarmonicAnalysis LocalClassField LocalClassField.NYLL Ramification
+open HarmonicAnalysis LocalClassField LocalClassField.UniverseZero Ramification
 open scoped BigOperators Classical
 
 universe u v

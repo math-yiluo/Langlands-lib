@@ -1,7 +1,5 @@
 # Conditional torus reduction of quasi-split semisimple cocycles over infinite fields
 
-Author: Worker 1534.
-
 This module implements Steinberg's reduction (1965, §§10–11) of
 `QuasiSplitCocycleTorusReductionStatement` over infinite fields. The proof is
 conditional on seven named structural propositions, which remain explicit

@@ -2,12 +2,11 @@
 
 Module `Langlands.Representation.RankinSelberg.UniformRankOneTwistEpsilon`.
 
-Authors: Worker 1836. The module builds on Worker 1807's
+The module builds on
 [UniformRankOneTwistTest](UniformRankOneTwistTest.md), which supplies the test
-function, its Fourier support and the dual-side pointwise identity. Worker 1807
-also suggested reading the exponent and the constant off the functional equation
-at two explicit points, which avoids a separate convergence or uniqueness
-argument.
+function, its Fourier support and the dual-side pointwise identity. The exponent
+and the constant are read off the functional equation at two explicit points,
+which avoids a separate convergence or uniqueness argument.
 
 This internal module serves the proof of
 [UniformRankOneTwistStatement](UniformRankOneTwistStatement.md). It computes the
@@ -96,8 +95,9 @@ For `twistedMatrixEpsilon`, the Library's
 with `ℓ(w) ≠ 0`. Take the bi-smooth coefficient `f(g) = ℓ(ρ(g) w)`. The central
 character and the eigenvector property give `f(z y) = ω(z) χ(det y) f(1)` for
 scalars `z` and `y ∈ K_(m')`. Since `m' ≤ j`, so that `K_j ⊆ K_(m')`, this also
-gives `f(g) = χ(det g) f(1)` on `K_j`. Worker 1807's
-`UniformTwist.coefficientIota_eq_of_fourierIntegral_ne_zero` supplies the dual
+gives `f(g) = χ(det g) f(1)` on `K_j`. The theorem
+`UniformTwist.coefficientIota_eq_of_fourierIntegral_ne_zero` of
+`UniformRankOneTwistTest` supplies the dual
 pointwise law with `N = (n+1) a(χ)`, and `epsilon_eq_of_coefficient` concludes.
 
 ## Provenance

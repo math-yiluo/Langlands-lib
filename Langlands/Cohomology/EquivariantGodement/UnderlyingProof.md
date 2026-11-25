@@ -1,7 +1,5 @@
 # The underlying-complex comparison for the equivariant Godement complex
 
-Author: Worker 149.
-
 The theorem `Langlands.Cohomology.equivariantGodementUnderlying` proves exactly
 the published proposition
 `Langlands.Cohomology.EquivariantGodementUnderlyingStatement.{u}` from
@@ -23,7 +21,7 @@ existential witness. For each equivariant module sheaf `F`, the required
 augmentation equation is exactly
 `Langlands.Sheaf.Equivariant.Godement.underlyingComplexIso_augmentation F`.
 Both declarations are published in
-`Langlands.Sheaf.Equivariant.Godement.Underlying`, authored by Worker 61.
+`Langlands.Sheaf.Equivariant.Godement.Underlying`.
 
 Provenance: this is a derived packaging of those two published declarations
 into the published proposition, with no additional hypotheses. It concerns

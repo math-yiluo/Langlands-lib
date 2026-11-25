@@ -1,8 +1,11 @@
 # Two-axis rigidity for smooth proper pointed products over fields
 
-Worker 149 implemented this statement and checked the original sources.
-Worker 337 specified the general scheme-map interface for the cube argument;
-Worker 334 supplied the shared square-and-descent route.
+The original sources were checked for this statement. Its general
+scheme-map interface is the one of the cube argument: the hypothesis
+`rigidity` of `Langlands.AlgebraicGeometry.Picard.cubeTrivializationOfUniversalFamily`
+(module `Langlands.AlgebraicGeometry.Picard.CubeTrivialityAssembly`) asks
+for two-axis rigidity of a morphism `g : Y ⨯ Z ⟶ P` in this form. That
+module does not import this statement.
 
 `Langlands.AlgebraicGeometry.FieldTwoAxisRigidityStatement.{u}` is a
 `Prop`-valued definition. This module states a derived rigidity result and
@@ -85,8 +88,8 @@ than a verbatim theorem from any of these sources.
   through `Y`. The proof uses an affine neighborhood, properness,
   and equality on a dense open subset of the integral product.
   In this retained version (1.13) defines a group homomorphism and
-  (1.14) applies rigidity to a map constant on both axes. The supplied
-  task's locator “printed pp.17–19” does not locate this passage in this
+  (1.14) applies rigidity to a map constant on both axes. A
+  locator “printed pp.17–19” does not locate this passage in this
   version: those pages belong to Chapter II on line bundles.
   Because our `P` need not be a variety in their sense, the scheme-level
   Lan/GIT formulations supply the direct source for its permitted scope.
@@ -141,8 +144,9 @@ This descent does not assume that a field extension is separable.
 ## Reuse route and separate proof boundary
 
 A formal proof may instead reuse the published proposition
-`Langlands.AbelianScheme.AlgebraicallyClosedTwoAxisRigidity`, once its
-independent exact-target proof is published. Over `L`, set
+`Langlands.AbelianScheme.AlgebraicallyClosedTwoAxisRigidity`, proved as
+`Langlands.AbelianScheme.algebraicallyClosedTwoAxisRigidity` in
+`Langlands.AbelianScheme.AlgebraicallyClosedTwoAxisRigidityProof`. Over `L`, set
 `A = Y_L ×_L Z_L`, `a = (y₀,z₀)` and `H = P_L`, and define
 
 ```text
@@ -160,12 +164,14 @@ The square interface uses cartesian monoidal products, whereas this
 one uses `Limits.prod`; canonical product and terminal isomorphisms
 must be handled explicitly in a Lean implementation.
 
-All those geometry, product, integrality and descent steps remain
-obligations of the separate exact-target proof. This module imports
+All those geometry, product, integrality and descent steps are carried
+out in the separate proof `fieldTwoAxisRigidity` (module
+`Langlands.AlgebraicGeometry.FieldTwoAxisRigidityProof`), which takes this
+reuse route. This module imports
 only Mathlib and neither assumes nor proves those results. Proof
-assembly must use accepted published prerequisites and must not use
-field or arbitrary-base pointed-group-morphism rigidity circularly.
-Unreviewed assembly drafts provide guidance only.
+assembly must not use
+field or arbitrary-base pointed-group-morphism rigidity circularly; the
+import closure of `FieldTwoAxisRigidityProof` contains no such theorem.
 
 ## Retained source identifiers
 

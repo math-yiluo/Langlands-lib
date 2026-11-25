@@ -1,6 +1,6 @@
 # Common convergence on actual coefficient models
 
-Author: Worker 468. The module adapts the published tail-product and Iwasawa
+The module adapts the published tail-product and Iwasawa
 proofs in `WhittakerTorusMellin` and `WhittakerMatrixConvergence`, and reuses
 the published compact-averaging APIs in `WhittakerModelInclusion`.
 
@@ -123,9 +123,9 @@ original literature is claimed.
 
 The module does not prove `UniformFiniteFunctionMellinConvergenceStatement`.
 That premise remains required in the selected real bound and every final
-convergence assertion. This unit supplies no rational continuation,
+convergence assertion. This module supplies no rational continuation,
 normalized generator, transformed-coefficient assertion or functional
-equation, and proves neither of the host task's closed two-block gamma
+equation, and proves neither of the closed two-block gamma
 or L propositions. No two-block multiplicativity result is used.
 
 ## All-field port

@@ -1,7 +1,5 @@
 # The topology on represented presheaf points
 
-Author: Worker 107.
-
 This is internal comparison infrastructure derived from `SpacePoints.lean` and
 `SchemePointsComparison.lean`. `schemePointsHomeomorph U` identifies the étale-chart
 topology on `Points ((schemeYoneda S).obj U)` with the actual topology on the representing

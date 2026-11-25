@@ -27,8 +27,7 @@ All names are in the namespace `Langlands.CommutativeAlgebra.Popescu`.
 
 ## Supporting modules
 
-This candidate adds four modules besides this one. All come from Worker 5698's shared
-draft for this task:
+Four modules besides this one support the proof:
 
 - `SmoothingAlgebra`: the algebra `B = A[x, z]/(xᵢⁿ − Σ zᵢⱼ aⱼ)` and its smoothness
   over `R = k[x₁, …, x_d]` after inverting each `aⱼ`.

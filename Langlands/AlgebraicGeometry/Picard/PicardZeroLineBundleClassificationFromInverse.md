@@ -93,7 +93,8 @@ surjectivity in (6.2)(ii) for the Picard-zero subfunctor. Normalize the
 bundle by the base twist, then classify it by the universal family. The
 inverse bundle that the source writes as `ε^* L^{-1}` is the supplied `M`.
 
-The theorem statement and the route follow a request from Worker 270 for
-the proof of `PicardZeroLineBundleClassificationStatement` in task
-`b71714f0-c50a-4258-94ac-e065ce455f61`. That proof supplies `inverse` from
+The theorem statement and the route are those used by the proof of
+`PicardZeroLineBundleClassificationStatement`
+(`picardZeroLineBundleClassification`, module
+`PicardZeroLineBundleClassificationProof`). That proof supplies `inverse` from
 the dual line bundle.

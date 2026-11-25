@@ -1,20 +1,22 @@
 # Analytifications of algebraic spaces, tested on affine points
 
-This unit defines when an analytic space `Y` with a family of maps `p` is an
+This module defines when an analytic space `Y` with a family of maps `p` is an
 analytification of an algebraic space `X` over `Spec K`. Here `Y` is an object of
 the Library's localized category of analytic spaces. The family `p` assigns a
 morphism `Spec(A)ᵃⁿ → Y` to every `A`-valued point of `X` and every finite
 polynomial presentation of `A`. The predicate `IsAnalytification` asks that these
 maps be natural in the test algebra, étale for étale points and jointly
 surjective from étale points. It also asks that they carry fibre squares of
-affine test points to pullback squares. The unit also defines the analytic point
+affine test points to pullback squares. The module also defines the analytic point
 attached to a `K`-point and proves that composing with an isomorphism `Y ≅ Y'`
 preserves the predicate.
 
-The unit makes no existence, uniqueness or comparison claim. In particular it
+The module makes no existence, uniqueness or comparison claim. In particular it
 does not state that an analytification exists for a separated algebraic space,
 that it is unique up to unique isomorphism, or that its rational points are the
-`K`-points of `X`. Those are later statements.
+`K`-points of `X`. Those are stated in other modules, among them
+`SpaceAnalytificationExistenceStatement` and
+`SpaceAnalytificationRationalPointsStatement`.
 
 ## Provenance
 
@@ -54,7 +56,7 @@ algebraic space. The proof analytifies an étale chart to good strictly
 ## Derived formulation
 
 The Library has no category of étale sheaves on its analytic spaces and no
-quotient sheaves. This unit therefore uses the representability criterion of
+quotient sheaves. This module therefore uses the representability criterion of
 Definition 4.1.1 directly, not the quotient sheaf. It does not fix one chart.
 Instead it asks for compatible maps from the analytifications of all affine test
 points, which builds in the chart independence of Lemma 2.2.1. The derivation
@@ -79,7 +81,7 @@ naturality from Theorem 2.2.3, the étale condition from Theorem 2.3.1, joint
 surjectivity because `Uᵃⁿ → Xᵃⁿ` is surjective, and the pullback condition from
 compatibility with fibre products (Theorem 2.2.3) together with the affine
 scheme case. These comparisons are motivation only. Neither direction is stated
-or proved in this unit for the Library's model.
+or proved in this module for the Library's model.
 
 The predicate is defined for every algebraic space over `Spec K`. It is intended
 as Conrad–Temkin's notion only for separated `X` locally of finite type over `K`,

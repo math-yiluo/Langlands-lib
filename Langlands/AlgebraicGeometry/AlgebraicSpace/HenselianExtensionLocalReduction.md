@@ -1,6 +1,6 @@
 # Open-subspace reductions for henselian extension point maps
 
-Author: Worker 114. This is derived infrastructure for Conrad's
+This is derived infrastructure for Conrad's
 `HenselianExtensionPointEmbeddingStatement`, using the already constructed
 coefficient-extension map and the separated-space embedding argument. No new
 literature assertion is attributed to the source.
@@ -55,9 +55,12 @@ All declarations below are in the `ExtensionLocalReduction` namespace.
   neighborhood disjoint from the ambient rational locus. This helper assumes
   henselianity of `L`, but not of `K`.
 
-## Remaining obligation
+## Scope
 
 This module proves the entire embedding part and gives a localization reduction
 for closedness. It does not prove closedness of the separated-space rational
 locus under the assumption that `K` is closed in `L`, and so does not prove the
-whole `HenselianExtensionPointEmbeddingStatement`.
+whole `HenselianExtensionPointEmbeddingStatement`. That closedness is derived
+in `HenselianExtensionClosedReduction` from the complete-field case, which is
+proved in `CompleteExtensionPointClosedRangeProof`; the whole statement is proved as
+`henselianExtensionPointEmbedding` in `HenselianExtensionPointEmbeddingProof`.

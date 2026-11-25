@@ -1,7 +1,9 @@
 # Normalized bilinear forms on restricted tensor products
 
-This internal construction for Task 7294 supplies the algebraic finite-adelic
-pairing assembly. It works over an arbitrary field and uses the actual
+This internal construction for the proof that the dual cusp forms of a
+cuspidal realization lie in a cuspidal contragredient
+(`CuspidalTransposeInverseContragredientStatement`) supplies the algebraic
+finite-adelic pairing assembly. It works over an arbitrary field and uses the actual
 restricted tensor product already constructed in the Library.
 
 At a finite stage the local bilinear forms are tensored using Mathlib's
@@ -31,5 +33,5 @@ and use the product formula for the stage pairing.
 
 No local form existence, normalization, or automorphic factorization
 is asserted here. The provenance is internal algebraic infrastructure
-for the host task; the paired Lean implements the construction and
+for that proof; the paired Lean implements the construction and
 its stated properties from the existing actual direct-limit API.

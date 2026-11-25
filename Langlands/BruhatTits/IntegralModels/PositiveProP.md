@@ -1,6 +1,6 @@
 # Full special-fibre reduction and pro-p radical preimages
 
-Worker 302 supplies an internal construction of full special-fibre reduction on
+The module supplies an internal construction of full special-fibre reduction on
 the neutral integral-point image and proves the pro-p property of the actual
 radical preimage. All declarations work at arbitrary universe `u`.
 

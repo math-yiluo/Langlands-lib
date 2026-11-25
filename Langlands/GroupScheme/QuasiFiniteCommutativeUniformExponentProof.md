@@ -11,10 +11,6 @@ The result is SGA 3, Exposé IX, Lemma 6.1, whose proof continues through
 Lemma 6.2, printed pp.52–54 (retained PDF pp.22–24), registered as
 `sga3-expose-ix-gille-polo-2009`, SHA256
 `7c1e3d5b9d01ad01d0dd7b8b62045d012052e7890fb37adc3e7934ebb5fd6fc3`.
-Worker 887 supplies the locality, approximation, directed-family organization,
-dimension induction and final assembly. Worker 801 supplies the Artinian
-exponent, adic support separation, local geometric exhaustion and
-stalk-to-global fullness.
 
 Over a local Artinian base, quasi-compactness and local quasi-finiteness make
 the group scheme finite. The theorem for finite group schemes over a field

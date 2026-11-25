@@ -1,7 +1,5 @@
 # Recovering an admissible representation from its smooth realization
 
-Author: Worker 386.
-
 `Langlands.AdmissibleSmoothVectorRecovery.{uG,uV,uH}` is a proposition
 definition for the smooth-vector comparison needed after constructing a unitary
 completion. This module states the comparison; it proves no theorem and

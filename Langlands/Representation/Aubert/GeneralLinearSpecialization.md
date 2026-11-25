@@ -192,8 +192,8 @@ composite equality. The existing root equivalence identifies
 Every construction permits `n = 0`. There is then one empty block shape and one
 empty root subset, and the sign is `+1`. The theorem retains that term and the
 existing rank-zero operator. It introduces no alternative operator or graded
-ring; the graded unit and support-adjusted whole-ring comparisons have their
-separate existing owners.
+ring; the graded unit and support-adjusted whole-ring comparisons are made in
+separate existing modules.
 
 ## Provenance and remaining boundaries
 
@@ -221,8 +221,10 @@ other constructions retain their own import closure. This adapter makes no
 classification-independence claim; the host dependency ledger must include the
 new general-interface and comparison roots as well as the older GL roots.
 
-The full Haar-to-block modulus identity is still a named structural proof
-obligation. The separately published
+The full Haar-to-block modulus identity is the named structural hypothesis
+`GeneralLinearModulusCompatibility` of this module; the module
+`Aubert.GeneralLinearModulusCompatibilityProof` proves it as
+`generalLinearModulusCompatibility`. The separately published
 [`Group.GL.AlgebraicPointTopology`](../../Group/GL/AlgebraicPointTopology.md)
 compares the actual algebraic GL rational points, dynamic subgroups, limit,
 inclusion, conjugation and quotient with these matrix models, using the named
@@ -240,29 +242,20 @@ the product-Levi tensor comparison or the full graded Zelevinsky comparison.
 
 ## Exact General-source reconciliation and dependency audit
 
-This submission uses the `General.Parabolic` and `General.AlternatingOperator`
-source pairs from Worker 23's published contribution
-`434a4095-6e40-4821-becc-73e6edef6124`. It has machine validation and Reviewer
-9160's independent approval, review `03c6a487-2c16-4853-9dcd-baf9210bb440`,
-and was published at Library commit
-`7a2e42fd31831029d34cafb155ffad911920df25`, integration
-`db08bd0035d74c9ca9ec89bb53e67ece`. Its predecessor
-`214d3c61-c6e3-4576-b94e-57c72d2e7e55` was rejected for an unqualified BZ77
-induction identification in `Parabolic.md`. Native comparison of all six frozen
-files confirms that the three Lean files and `DynamicParabolic.md` are
-byte-identical to that predecessor; only `Parabolic.md` and
-`AlternatingOperator.md` changed. The corrected documentation restricts the
+This module uses the `General.Parabolic` and `General.AlternatingOperator`
+source pairs as they stand in the Library at commit
+`7a2e42fd31831029d34cafb155ffad911920df25`. An earlier version of these files
+stated the BZ77 induction identification in `Parabolic.md` without
+qualification. Native comparison of all six files confirms that the three Lean
+files and `DynamicParabolic.md` are byte-identical to that earlier version; only
+`Parabolic.md` and `AlternatingOperator.md` changed. The corrected documentation restricts the
 induction identification to unimodular radicals as described above. The exact
 two corrected Markdown files are used unchanged here.
 
 The existing exported interfaces, full-smooth exactness lemmas and compact-open
-cofinality proof are retained. This adapter's Lean source is unchanged from its
-previous submission. This module imports no `General.DynamicParabolic`
-declaration. The General files are borrowed prerequisites, not submitted paths
-of this adapter; their actual author, Worker 23, retains coauthor credit for the
-reused draft interface. The corrected General prerequisite is now public.
-Approval of the previous adapter does not approve these
-replacement bytes; this reconciliation requires ordinary independent review.
+cofinality proof are retained. This module imports no `General.DynamicParabolic`
+declaration. The General files are prerequisites in their own modules, not part
+of this adapter.
 
 | Imported pair | Lean SHA256 | Markdown SHA256 |
 | --- | --- | --- |
@@ -270,18 +263,17 @@ replacement bytes; this reconciliation requires ordinary independent review.
 | `General.AlternatingOperator` | `de28a2470cf971ce83fe3e203118bf6154d4f2a96857412c4dbe6dc0cb4a093c` | `eaf84fd0c93b660a0ac2843be520b42667192bb87e280e3938d42f21e039e25f` |
 
 The [specialization addendum](../../../notes/aubert/gl-general-specialization.md)
-records a separately pinned earlier draft audit: 17 roots, their 67 distinct
+records a separately pinned earlier audit: 17 roots, their 67 distinct
 Classification-origin constants and all root memberships, plus paired source
 fingerprints and a separate source-import graph. That historical snapshot is
-preserved. A fresh checked-type/body traversal, diagnostic
-`2364f782-042f-4dda-98ba-8f4d37b089b8`, against the corrected prerequisite and
-Library base `df7769b33f1b2e786f8bb0ac3ff1a6fd8a49020e` gives exactly the same
+preserved. A fresh checked-type/body traversal against the corrected
+prerequisite and Library base `df7769b33f1b2e786f8bb0ac3ff1a6fd8a49020e` gives exactly the same
 17 root records as the preceding reconciliation: declaration counts, defining
 module sets and Classification-origin constant lists are all unchanged. Its
 union contains 465 defining project modules and the same 67
 Classification-origin constants in 10 defining Classification modules; all 67
 occur in the earlier 420-constant host inventory. A paired-source inventory at
-the published Library commit `7a2e42fd31831029d34cafb155ffad911920df25`
+Library commit `7a2e42fd31831029d34cafb155ffad911920df25`
 resolves the 465 defining modules to 464 byte-identical Library pairs and one
 additional pair, this adapter.
 
@@ -297,28 +289,21 @@ every Lean fingerprint is unchanged. All Classification-module pairs agree
 with that reconciliation. Neither inventory is a classification-independence
 certificate.
 
-The reproducible native fingerprint script is
-`.private/notes/gl_general_434a4095_source_audit.py`; it resolves the current
-workspace, then this named Library base, with no private source overlay. Full
-paired hashes, source resolutions and import edges are saved in
-`.private/notes/gl-general-specialization-434a4095-source-hashes.json`, and the
-17 checked root records in
-`.private/notes/gl-general-specialization-434a4095-dependencies.json`.
+The fingerprints were computed by a reproducible native script that resolves
+the workspace, then this named Library base, with no private source overlay;
+the script, the full paired hashes, source resolutions and import edges, and
+the 17 checked root records are not part of the Library.
 The checked traversal was run at the earlier base named above; the final
 fingerprint comparison confirms that every imported Lean file is unchanged,
-including the two newly published General pairs. Restoration compilation
-`31ee7858-2489-423e-afaf-fcd7ddada99e` also checks this adapter and the
-separate topology bridge with no errors or warnings.
+including the two General pairs. A compilation also checks this adapter and
+the separate topology bridge with no errors or warnings.
 The source-pair normalization remains sorted UTF-8 lines
 `module<TAB>Lean-SHA256<TAB>Markdown-SHA256<LF>`, including the final newline.
 
-The focused submission exports only this Lean/Markdown pair. The imported
+The imported
 `Parabolic.LeviModelTransport`, `Group.GL.ParabolicQuotientTopology`,
 `Parabolic.QuotientJacquetComparison`, `Parabolic.QuotientInductionComparison`
-and `Smooth.FiniteLengthGrothendieckIso` pairs match the independently accepted
-and published Library sources. Their former pending status is historical.
-Neither development compilation nor source reconciliation establishes
-publication or mathematical acceptance of this adapter. The full Haar-to-block
-modulus comparison remains in-book proof work, separate from the allowed
-external Chapter V inputs and from the published algebraic rational-point and
+and `Smooth.FiniteLengthGrothendieckIso` pairs match the Library sources. The
+full Haar-to-block modulus comparison is separate from the allowed external
+Chapter V inputs and from the published algebraic rational-point and
 point-topology comparisons.

@@ -1,7 +1,5 @@
 # Finite length of Jacquet modules inside a standard Levi
 
-Author: Worker 1254. Dependency account checked by Worker 158.
-
 This module proves that Jacquet restriction inside a closed standard Levi
 `M_J` preserves finite length. The proof uses only the ambient finite-length
 hypotheses that the actual rational-point statements already carry: the

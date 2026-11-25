@@ -1,10 +1,10 @@
 # Anthropic local flatness: exact 00MK feasibility and tower limits
 
-Worker 362, 25 October 2026. This is a bounded source and Library-interface
-audit, with private Lean development checks. It publishes no mathematical
-port. Independent acceptance of this note does not accept the external proofs.
+This note, dated 25 October 2026, is a bounded source and Library-interface
+audit, with private Lean development checks. It contains no mathematical
+port, and it does not make the external proofs part of the Library.
 
-**Verdict: adapt the primary proof for the existing 00MK task; defer the
+**Verdict: adapt the primary proof for the existing 00MK statement; defer the
 secondary tower proof.** The primary adaptation compiles against the pinned
 project environment and specializes to the complete, unchanged
 `Langlands.Algebra.LocalFlatnessCriterionStatement.{u,v,w}`. The tower
@@ -30,7 +30,7 @@ at `literature/Anthropic - Fermat's Last Theorem - complete Lean source at
 The [upstream revision](https://github.com/anthropics/fermats-last-theorem/tree/6e837e75355538c7f80bab5b956861e86c4eacc2)
 uses Lean 4.33.1 and Mathlib
 `db584cd6d46c92f209a44c0f1c829460d327499d`.
-The project checks use environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
+The project checks use
 Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 The Library comparison base is
 `05e9d802f08c814de1be8cfe174ad0e47a37c791`.
@@ -146,12 +146,12 @@ The implemented route is:
    Elements of the complement act invertibly on `M`; semisimplicity of the
    localized residue-field modules supplies the required splitting.
 
-Check `9dac7498-4a33-44de-949d-e1bb2187cde6` succeeded with zero errors
+The primary check ([report](anthropic-local-flatness-evidence/primary-report.md)) succeeded with zero errors
 and twelve style/deprecation warnings. It prints the full unapplied solution,
 the exact bridge type, and both axiom lists. Each list is exactly
 `[propext, Classical.choice, Quot.sound]`.
 The fresh standalone recheck
-`b5d6dfb1-a9b1-4f41-bfdf-65b810315a3a` also succeeded, with declaration
+([report](anthropic-local-flatness-evidence/primary-recheck-report.md)) also succeeded, with declaration
 inspection reporting level parameters `["u","v","w"]` and the same axioms.
 Its build output has no warnings; this does not establish that the source is
 warning-free, since the earlier build emitted them.
@@ -159,10 +159,10 @@ warning-free, since the earlier build emitted them.
 Both reports explicitly say `proof_accepted: false`.
 Inspection has `target_matches: false` because no proof-submission target was
 requested; `statement_returns_prop: false` classifies a theorem rather than
-a Prop-valued statement definition. Neither field is an exact-proof receipt.
+a Prop-valued statement definition. Neither field certifies a proof of the target.
 The bridge's checked declared type establishes development feasibility
-against the existing target. Independent proof review, formal exact-target
-validation and publication remain necessary.
+against the existing target. It is not a proof of the target in the Library; the
+Library's proof is described in the last section.
 
 ## Secondary tower result: scope and failed feasibility
 
@@ -189,12 +189,12 @@ read to make this distinction.
 The private adaptations use `FlatnessAudit.TorZero`, `TorUniv`,
 `TowerZero`, and `TowerUniv`. Initial edits remove the unused utility import,
 rename namespaces, and redirect the tower's Tor-criterion import and call.
-Check `f43f80d0-14e4-4b9b-8942-5975399f64d5` failed with two errors and
+The initial tower check ([report](anthropic-local-flatness-evidence/tower-initial-report.md)) failed with two errors and
 42 warnings. Both errors occur in the Tor dependency at
 `MK00Port.ar_tor0_map_fromLeftDerivedZero_naturality`,
 on the first explicit `hbr` cancellation in a composition chain.
-The attempted deletion of that step also failed:
-`9b300eab-7016-4613-9f4f-5f365725f4c4`, two errors and 42 warnings,
+The attempted deletion of that step also failed
+([report](anthropic-local-flatness-evidence/tower-edit-report.md)), two errors and 42 warnings,
 now at the subsequent `hι` composition. The same attempted edit was applied
 to the corresponding tower naturality proof, but those modules were blocked
 by the dependency failure. The records and both versions of every patch are
@@ -242,10 +242,10 @@ that no equivalent theorem exists. Relevant existing APIs were read:
 | `Module.Finite.base_change`, `Module.Finite.tensorProduct` in `RingTheory/TensorProduct/Finite` | Useful standard finiteness cases; their displayed statements alone do not give the source's mixed `S`/`R` coefficient assertion without an equivalence/transport argument. |
 | `Langlands.Algebra.quotientBaseChangeComparison` | Published Library proof for canonical quotient maps when extended ideals agree. It is not the missing general fibrewise-flatness theorem. |
 
-For an authorized future implementation, the primary proof supports these
-focused units, in dependency order. Each new definition and Prop target
-must be reviewed/published before its exact proof task; small helper lemmas
-may be grouped with the unit that uses them.
+For an implementation, the primary proof supports these
+modules, in dependency order. Each new definition and Prop target
+precedes the proofs that use it; small helper lemmas
+may be grouped with the module that uses them.
 
 1. **Free-cover tensor transport and the internal predicate.**
    `FreeCover`, its evaluation map, `lTensor_injective_of_cover`,
@@ -267,8 +267,8 @@ may be grouped with the unit that uses them.
 All these primary names are below
 `FlatnessAudit.Primary.LocalFlatnessCriterionAtPrime` except the final
 `FlatnessAudit.Primary.solution`; the source namespace mapping is in the
-appendix. This partition is a recommendation, not newly created tasks.
-Review may choose a smaller local-ring specialization if it removes
+appendix. This partition is a recommendation.
+A smaller local-ring specialization may be chosen if it removes
 unneeded general localization infrastructure without changing 00MK.
 
 For the deferred tower, plausible focused extraction leads are
@@ -285,28 +285,12 @@ declaration/axiom check, and generalize its universes/module where needed.
 The primary route is preferable for this tensor-form 00MK target because
 its feasibility is established without this categorical Tor dependency.
 
-## Ownership and remaining acceptance
+## The 00MK target in the Library
 
-The existing 00MK statement task is
-`9e754bcc-9ee0-4dc5-95c7-66f127c778a8`; its unchanged target was published
-at `84f5d5a32df09643d499627f7ca72504805d3365`.
-The exact-proof task is
-`11a11b7f-7747-4bd1-b219-2e8febc50673` (ready, without an executor at
-the audit's status check). This audit creates no rival implementation task.
-
-Worker 336 coordinates parent
-`3456d315-11f6-4139-a252-2bd081630700`; Worker 9 owns scheme assembly
-`bd62242a-a240-4c31-a976-42e83d95485b`.
-Preserved tasks include 00R7
-`8644bad3-d88e-4471-aa5e-c9c93babe680`, 046Y
-`de630fa7-ed99-4739-a333-8db01375d3dd`, approximation
-`232f59bb-1e1e-4636-bc62-45f0e72ae43c`, 00ML
-`e2c919ab-5dc7-461a-bc41-8c89cd609e37`, and 00MP
-`3acee84e-e8aa-45da-81f1-bc803f9db121`.
-
-The next mathematical work belongs to those owners: choose the focused
-primary units, retain attribution, publish their required interfaces, and
-obtain independent semantic review, successful Lake and exact-target
-validation, and publication for a theorem of the unchanged 00MK target.
-The tower limitations remain explicit obligations. Audit acceptance and
-publication discharge only this note's documentary task.
+The 00MK statement `Langlands.Algebra.LocalFlatnessCriterionStatement` first appeared in the
+Library at `84f5d5a32df09643d499627f7ca72504805d3365`. The Library now proves it, as
+`localFlatnessCriterion` (`Langlands/Algebra/LocalFlatnessCriterion.lean`), through
+`idealTensorKernelSeparation` rather than by an adaptation of the external proof audited here.
+The tower limitations described above remain those of the external tower proof. The
+neighbouring Stacks statements 00R7, 046Y, 00ML and 00MP and the approximation step are
+outside this audit.

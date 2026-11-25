@@ -1,7 +1,5 @@
 # Continuity under actual representation intertwiners
 
-Author: Worker 585.
-
 This helper module is internal derived linear algebra for the exact K0
 realization proof. It uses the existing `FiniteRepresentation.IsContinuous`
 predicate without changing it. For an arbitrary group `G` with an arbitrary

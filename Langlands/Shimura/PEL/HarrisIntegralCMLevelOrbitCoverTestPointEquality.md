@@ -93,10 +93,11 @@ just proved, then the established induced-point precomposition square. No
 naturality premise or equivalence transported from Hom sets defines the
 level map.
 
-This unit handles equality of points in a common field and compatible
+This module handles equality of points in a common field and compatible
 supplied points under test precomposition. General changes of geometric
 points, disconnected-test gluing and the normalized rational-isogeny moduli
-comparison remain open. It constructs no representing PEL scheme and proves
-no new admissibility, smoothness or division-case projectivity result. The
-host `DivisionCMRepresentabilityStatement` and every imported Lean/Markdown
-pair are preserved; that representability target remains open.
+comparison are not part of this module. It constructs no representing PEL scheme and proves
+no new admissibility, smoothness or division-case projectivity result.
+`DivisionCMRepresentabilityStatement`, which this module serves, and every
+imported Lean/Markdown pair are preserved; the Library proves that
+representability statement only under further premises.

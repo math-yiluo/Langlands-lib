@@ -1,13 +1,13 @@
 # Local Fourier inversion and Haar normalization
 
-Placement note (Worker 64): the canonical module is `Langlands.LocalFactor.Harmonic.Statement`.
+Placement note: the canonical module is `Langlands.LocalFactor.Harmonic.Statement`.
 It is moved from `Langlands.LocalFactors.Harmonic.Statement` with every public declaration name,
 namespace, type and mathematical body retained. The old module remains a thin
-compatibility import. Original source references and authorship below are retained.
+compatibility import. Original source references below are retained.
 The [migration record](../Abelian/Definitions.md#structural-migration-record) gives the complete map and checks.
 
 
-Worker 33 authors this theorem-statement family. It contains proposition
+This module is a theorem-statement family. It contains proposition
 definitions, not proofs. The closing target is
 `Langlands.LocalFactors.PadicHarmonicAnalysisStatement`.
 
@@ -17,7 +17,7 @@ Every component quantifies an arbitrary prime `p`, every universe-polymorphic
 `F : Langlands.PadicField p`, and a supplied `T : F.TopologicalData`.
 It uses that topology's Borel measurable space, the actual integer ring
 `T.Integers`, its chosen uniformizer, actual residue cardinality
-`T.residueCardinality`, and actual function `T.normalizedAbs`. The accepted
+`T.residueCardinality`, and actual function `T.normalizedAbs`. The Library's
 integer-valued order has `ord(0)=0`; the only order value used in a scaling law
 is that of an explicit unit.
 
@@ -85,7 +85,7 @@ conclusion. There is no second self-dual-measure construction.
 The family treats the nonarchimedean local harmonic prerequisites. It does
 not claim to formalize the abelian zeta functional equation, epsilon systems,
 Weil--Deligne factor identities, highly ramified stability, or archimedean
-factors. Those remain parts of the parent assignment.
+factors. Those are not part of this family.
 
 ## The scalar-measure discrepancy
 
@@ -107,7 +107,7 @@ self-dual integer-ring volume as `mod(a)^(1/2)` for `ord(a)=n(ψ)`, hence
 `q^(-n(ψ)/2)`. His proof uses the actual annihilator and the identity
 `μ(O_F)μ(O_F^⊥)=1`. This verifies the correction from the original Fourier
 definitions, independently of any epsilon-factor convention.
-Worker 33 visually checked both original pages.
+Both original pages were checked visually.
 
 For example, scaling a conductor-zero character by a uniformizer makes
 `n(ψ)=1`. Its self-dual integer-ring volume becomes `q^(-1/2)`, and a
@@ -136,7 +136,7 @@ with `μ_(ψ_a)=|a|_F^(1/2)μ_ψ`.
   §3.2, pp.13–14 / PDF pp.22–23 fixes the Fourier sign and conductor.
   §3.6, p.17 / PDF p.26 fixes self-dual measure and the half-shift convention;
   the scalar sentence after (3.6.2) requires the correction above.
-  No epsilon theorem is asserted in this contribution.
+  No epsilon theorem is asserted in this module.
 - Pierre Deligne, *Les constantes des equations fonctionnelles des fonctions L*
   (1973). Literature ID `deligne-1973-local-constants`;
   SHA256 `b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844`.
@@ -151,50 +151,40 @@ with `μ_(ψ_a)=|a|_F^(1/2)μ_ψ`.
 ## Exact dependencies and validation boundary
 
 The arithmetic project import is
-`Langlands.LocalField.Normalization.Definitions`, artifact
-`e3d7bbd4-f2b9-4970-a60f-bf6aa0b34bb2` version 1, accepted, published,
-and verified current. Its underlying field definition is artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0` version 1.
+`Langlands.LocalField.Normalization.Definitions`. Its underlying field
+definition is `Langlands.LocalField.Definitions`.
 No unproved normalization theorem is imported as a proof assumption.
 
-The shared harmonic import is Worker 20's accepted
-`Langlands.HarmonicAnalysis.Basic`, artifact
-`65988160-6fd5-4d2d-9c21-0976b2137010` version 1. Its current publication was
-verified at Library commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`,
-including the complete final review receipt
-`3dcce1a7f7fa421db3d03a1bc8ecdcd6` and the effective integrated pair.
-Its Lean SHA256 is
+The shared harmonic import is
+`Langlands.HarmonicAnalysis.Basic`. It was
+verified in the Library at commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`,
+Lean file and page together.
+At that commit its Lean SHA256 was
 `2198cecae146fa7f904dc2c01169d6321aee8e155c99614ed92f861fd2d65aff`.
-Its effective Markdown SHA256 is
+Its effective Markdown SHA256 was
 `770a9f6e068d76d72fb10ff91ee1a27b66696ebf0c52af23464fb4d0956ffdf6`.
 The Lean dependency is unchanged from the checked development version. Both
-local-field definition dependencies above were also fetched as accepted,
-published and current at that same Library commit, with their previously
-reviewed effective Lean/Markdown hashes unchanged.
+local-field definition dependencies above were also verified in the Library
+at that same commit, with their previously
+checked Lean/Markdown hashes unchanged.
 It uses the companion's bundled existence predicate without treating its
 unproved existence assertion as a hypothesis. The topology, compatible additive
 uniformity, and Borel structure are installed locally from supplied or Mathlib
 constructed data; no extra topology or total-disconnectedness premise is added.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1:
+The environment is
 Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 Mathlib supplies the actual Bochner integral, additive characters, Haar
 predicate, locally constant functions, compact support, and real powers.
-The earlier Mathlib-only formulation passed development compilation and
-whole-target fingerprint inspection, diagnostic
-`51a8ef8b-cdfe-49a7-a05d-501fb6a8a825`. That fingerprint is superseded by the
-alignment with the companion's predicates; it must not be used to submit
-this revised source. The revised source passed a fresh full development check
-`0a5c9682-b469-4e45-8dda-1b1e9a832a11`: all four modules compiled with no
+The source passed a full development check: all four modules compiled with no
 warnings or errors, and inspection confirmed a universe-polymorphic `Prop`
 definition. Its checked target fingerprint is
 `96cb5af71f21e075cad111e69a8f9db3c6af1a2f97c23eefe3408ed892da277e`.
-The fingerprint matches the earlier conjunction expression because its named
-component references are unchanged; this does not mean their definitions or
-the dependency bytes are unchanged. The new source snapshot and fresh check
-are the relevant evidence. Only `propext`, `Classical.choice`, and `Quot.sound`
+This fingerprint is determined by the conjunction expression and its named
+component references; it does not by itself certify their definitions or the
+dependency bytes.
+Only `propext`, `Classical.choice`, and `Quot.sound`
 occur among the inspected target assumptions. The checked statement and
 imported Lean bytes are unchanged, so the successful exact check remains
-applicable. Independent semantic review and publication of this statement
-remain outstanding. This contribution supplies no theorem proof.
+applicable. This module supplies no theorem proof.

@@ -1,6 +1,6 @@
 # Existential finite recovery and the final descent assembly
 
-This internal interface packages the remaining finite-coefficient existence
+This internal interface packages the finite-coefficient existence
 input separately from the completed descent construction. It uses arbitrary
 common universe `u` and the actual nonarchimedean local field, inertia fixed
 field, spectral integer rings and canonical coefficient inclusions.
@@ -34,5 +34,7 @@ assembles the precise published descent statement from two explicit
 premises: `SmoothHomExtensionStatement` and
 `FiniteUnramifiedRecoveryStatement`. This is an internal composition of
 the existing finite-recovery and arithmetic adapters. It proves neither
-premise and is not an unconditional proof of KP Fact 2.10.16 or completion
-of the host task. The original target pair and its imports are unchanged.
+premise and is not an unconditional proof of KP Fact 2.10.16. The unconditional
+`UnramifiedSmoothModelDescentStatement` is proved as `unramifiedSmoothModelDescent`
+in `UnramifiedSmoothDescentProof`, which applies this assembly to
+`smoothHomExtension` and `finiteUnramifiedRecovery`.

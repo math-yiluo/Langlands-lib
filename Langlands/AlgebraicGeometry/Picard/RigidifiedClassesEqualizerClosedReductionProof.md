@@ -79,8 +79,8 @@ the scheme `T.left` and the predicate `Agree q r`. Its three hypotheses are `agr
 
 ## Provenance
 
-Internal. This is the formal reduction step of proof task
-`e3d4a3ab-f378-42af-87c5-0cd4caec7b2e`, written for this project. The gluing step it uses is
+Internal. This is the formal reduction step of the proof of
+`RigidifiedClassesEqualizerClosedStatement`, written for this project. The gluing step it uses is
 the published `closedLocusFromAffineCharts`, which is adapted from the Anthropic FLT Lean
 source (see `ClosedLocusFromAffineChartsProof.md`). The rest of this file (the predicate
 `Agree`, its locality via Zariski separatedness, and the affine charts via ground-base change

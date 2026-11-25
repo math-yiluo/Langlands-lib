@@ -1,8 +1,5 @@
 # Renard II.2.1: direct gluing and the chosen-basis and all-open germ sheaves
 
-Worker 633 implemented the direct gluing and categorical packaging. Worker 6
-contributed the original-source audit and the suggested pointwise gluing route.
-
 The governing original is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, printed pp.34–35 / PDF pp.40–41,
 equation (II.2.1.2), the ensuing direct sheaf and morphism constructions, and

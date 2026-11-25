@@ -1,7 +1,5 @@
 # Alternating Čech section complexes of a family of opens
 
-Author: Worker 1147.
-
 Lean module: `Langlands.AlgebraicGeometry.Modules.BiCech.OneDirection`.
 It is a helper for the proof of
 `Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethStatement`.

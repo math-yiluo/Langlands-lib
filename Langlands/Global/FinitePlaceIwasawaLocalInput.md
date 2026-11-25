@@ -1,7 +1,5 @@
 # Extracting finite-place Iwasawa data from local compact and product data
 
-Author: Worker 1624.
-
 This internal adapter connects the existing general local conclusion bodies
 to the exact finite-place consumer. Its provenance is derived: it applies the
 published unconditional field-extension proofs, extracts fields of the

@@ -39,8 +39,8 @@ conclusion does not state that the representation restricts to it.
 
 This is the extension step from noetherian affine tests to all tests for the
 Picard class sheaf. Together with a proof of
-`NoetherianIntegralFibrePicardNoetherianTestsStatement` (Task 5705's interface
-statement, accepted in review and not yet in the Library, which produces such a
+`NoetherianIntegralFibrePicardNoetherianTestsStatement` (the Library statement of
+the module of the same name, which produces such a
 `P` and such an isomorphism on noetherian affine tests) it
 yields `NoetherianIntegralFibrePicardSheafAFSchemeStatement`, which the Library
 reduction `ampleNormalFiniteTypeAbelianPicardSheafAFScheme_of_noetherianIntegralFibre`

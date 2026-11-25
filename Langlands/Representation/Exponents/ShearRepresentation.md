@@ -1,6 +1,6 @@
 # The shear representation and a `𝔾_m` example for Renard VII.2.6, Remark
 
-Author: Worker 128. Module `Langlands.Representation.Exponents.ShearRepresentation`.
+Module `Langlands.Representation.Exponents.ShearRepresentation`.
 
 This helper module builds a counterexample for Renard's Remark after the Corollary of VII.2.6.
 The Corollary says that an irreducible tempered representation is unitary. The Remark says that

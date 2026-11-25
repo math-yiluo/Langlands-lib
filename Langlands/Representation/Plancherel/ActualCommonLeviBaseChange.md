@@ -54,6 +54,6 @@ these provide the original hypotheses used by the published
 still displays the independent continuation data and a common nonempty
 open starting region with the appropriate translated inclusions; those
 propagation theorems then compare independent denominators on the common
-regular locus. This unit makes no continuation-existence or nonempty-open
+regular locus. This module makes no continuation-existence or nonempty-open
 claim and proves no all-unitary extension theorem. It changes no compact
 probability normalization, source formal degree or quotient measure.

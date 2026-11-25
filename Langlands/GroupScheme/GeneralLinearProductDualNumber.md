@@ -1,7 +1,5 @@
 # Dual-number identity kernels of finite products of general linear group schemes
 
-Author: Worker 207.
-
 This module takes the actual categorical finite product of general linear
 group schemes and builds dual-number coordinates on the identity kernel of
 that product scheme. The main constructions are:

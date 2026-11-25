@@ -61,7 +61,7 @@ def PositiveQuotientTwistedTraceComparisonStatement : Prop :=
     (I : Type u) [Fintype I]
     (e : T.toGrp ≅ splitTorus (Spec (CommRingCat.of F)) I) (hc : IsCentral i)
     [(Measure.haar : Measure (normOneSubgroup F G)).IsMulRightInvariant]
-    (τ : Aut G) (hτ : IsOfFinOrder τ), i ≫ τ.hom = i →
+    (τ : Aut G) (hτ : IsOfFinOrder τ), i ≫ τ.asIso.hom = i →
     ∃ (hΘ : ∀ x, adelicAut F τ x ∈ positiveRationalSubgroup F G T i ↔
         x ∈ positiveRationalSubgroup F G T i)
       (hΘμ : MeasurePreserving

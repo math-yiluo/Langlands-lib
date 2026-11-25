@@ -1,9 +1,7 @@
 # Renard A.IV: limits, colimits and concrete abelian groups
 
-Worker 709, updated 5 November 2026, with Worker 6's source diagnosis and
-filtered-colimit scope reconciliation and Worker 1153's concrete proof
-and publication evidence. This note maps printed pages
-256–258 / PDF262–264 to one published general definition unit and four
+Updated 5 November 2026. This note maps printed pages
+256–258 / PDF262–264 to one published general definition module and four
 published statement/proof pairs, plus the published concrete
 filtered-colimit construction, statements and proof. It also records the
 published statements identifying limits and colimits with universal arrows
@@ -19,9 +17,9 @@ réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
+`central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 PDF262–264 were read in full for the original audit; PDF263–264 were
-read again for the concrete quotient units, with PDF264 visually inspected.
+read again for the concrete quotient modules, with PDF264 visually inspected.
 The supplementary
 2010 author errata, registered as `renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -31,7 +29,7 @@ already incorporates this. The older errata do not replace the reference
 edition or repair the constant-transformation assertion on these pages.
 
 The [published general bridge](../../Langlands/CategoryTheory/Renard/ConeBridge.md)
-retains Worker 6's internal diagnosis: nonemptiness of an index category
+retains an internal diagnosis: nonemptiness of an index category
 ensures faithfulness of the diagonal, but does not ensure fullness.
 On `Discrete Bool`, the transformation from constant `PUnit` to constant
 `Bool` with components `false` and `true` has no diagonal preimage.
@@ -227,54 +225,40 @@ singleton vertex; factorization is vacuous and uniqueness follows because
 every element equals zero. No change is made to the unrestricted general
 ordered-system statements.
 
-The general bridge is Worker 610's implementation with Worker 6's
-source diagnosis. The elementary statements are by Workers 709 and 695,
-and their proof by Worker 1158. The ordered statements are by Worker 709
-and proof by Worker 695. The subobject statements are by Worker 709 and
-proof by Worker 840. The abelian-group statements are by Workers 709
-and 937 and proof by Worker 695. Worker 709 authored the concrete
-filtered-colimit construction and statements, with Worker 6's prior
-source-scope reconciliation and retention of the empty-index boundary.
-Worker 1153 authored the concrete five-part proof.
 These published implementations reuse
 Mathlib at pin `5ed2965256430c3649e86755f9576b54eca72435`; their
 implemented proof routes are the ones described above.
 
-## Verified acceptance, publication and file identity
+## In the Library: first appearance and file identity
 
-The first nine units were audited at Library base
-`071b82c1a715daffe0334ad25311484eaba312b0`, including equality with each
-cited publication commit. The concrete construction and statement
-receipts were verified on publication, including their frozen pairs.
-The first eleven exact records were verified on 3 November 2026.
-The concrete proof record was fetched on 4 November 2026 and is
-accepted and public, with Reviewer 12926's independent approval without
-qualifications and the published integration below. Its complete acceptance
-report agrees with the integrated report in every common field.
-At Library base `442ff746325df5b6d721fee75d430a65c33d09f0`, the first
-twenty-four mathematical files below retain the displayed hashes in
-the workspace and Library. The new proof pair also matches its frozen
-artifact, and both imported construction and statement pairs are unchanged
-from the preceding Library base. The table gives exact archival evidence; reuse
-uses the current Lean names above. The general bridge is a definition
-unit with short intrinsic laws, not a separate aggregate proof record.
+The first nine modules were audited at Library
+`071b82c1a715daffe0334ad25311484eaba312b0`, including equality with the
+commit at which each first appeared. The concrete construction and statement
+were checked when they entered the Library; the first eleven modules were
+checked on 3 November 2026 and the concrete proof on 4 November 2026.
+At Library `442ff746325df5b6d721fee75d430a65c33d09f0`, the first
+twenty-four mathematical files below have the displayed hashes. The new
+proof pair also matches its first published version, and both imported
+construction and statement pairs are unchanged from the preceding Library
+commit. Reuse uses the Lean names above. The general bridge is a definition
+module with short intrinsic laws, not a separate aggregate proof.
 
-| Unit and exact task | Accepted publication | Independent review | Integration and Library commit |
-| --- | --- | --- | --- |
-| General bridge (definition); task `57165880-67cc-47a1-9761-3960f6543b0b` | `25bf9e9f-f37f-4eae-9010-b0441a3bf865` | Reviewer 3042; `2e099064-58fe-4b34-a2a8-a2b97b1276e0` | `a7144ff47cab4d38954b0885866c33e3`; `d20f8eabc581491c5dec30dea40e5e036293121f` |
-| Elementary statements; task `c3d30624-2819-4880-9e8f-aeae7deefd62` | `3bd88773-11b2-48be-bdc3-8bbc4a7d088d` | Reviewer 7597; `8db96549-0bea-4d68-a4db-ffd66d6e9e5a` | `7ebbdf058662453f9476395eee7b1bd1`; `676ac944440098acb714f6b953083e88bb89c9c2` |
-| Elementary proof; task `9e2071b5-8063-4fd9-a6a7-82b899839586` | `9f0b09c1-b8a3-450a-94c4-65d7fc785ad0` | Reviewer 7648; `9c31cb29-4ece-4c83-a5e9-970f477e2d8e` | `d495c23a54044a58a63dc9e43d86d80c`; `4f255c2d810d0998369347f03338826ce587c35b` |
-| Ordered statements; task `dce29bd9-fedd-47d6-a101-2025e40b2b15` | `d57cb0f8-b86b-4335-8215-49386e68e504` | Reviewer 7620; `2b9a0d6d-65c5-4c5c-a4c1-302fdc27b51f` | `18456a343c8f461c98d3931524be3cc6`; `676ac944440098acb714f6b953083e88bb89c9c2` |
-| Ordered proof; task `642ff030-25ae-460a-8640-7734777aeb4b` | `2709c19c-f6ee-447e-96c2-98d42dc54c99` | Reviewer 7668; `bac117d3-bce7-4a9b-aa65-0f648e15b1ef` | `2a53b7eb9fdb4d539111322ee289b80a`; `4f255c2d810d0998369347f03338826ce587c35b` |
-| Subobject statements; task `ee3a58ca-a732-4688-bd68-20294fc66e2f` | `74110307-1661-4db7-b6f1-28001180d21b` | Reviewer 7633; `1fe3a5d9-ebaf-44a2-a86c-da248fb95dc6` | `3887368448b04a3494345213a67cd9de`; `4f255c2d810d0998369347f03338826ce587c35b` |
-| Subobject proof; task `d6777962-fc47-48f4-9eae-db566e452454` | `db95c802-942f-4c4c-9993-abc85db2fa16` | Reviewer 7735; `361eb673-1e30-4906-9522-81d35d393dff` | `c3b84639be454f1693a6d852a2f8fb95`; `e3944f764d2c00d53ac87227e98601bb667f348f` |
-| Abelian-group statements; task `01fe320c-fced-4500-8bbb-e6a2f9b63681` | `54fab975-e2de-420b-927b-6b4a9d24eb71` | Reviewer 7707; `6b4b58d7-3699-4199-a2b2-3bdad69d5738` | `a3de277e4aab4809bab31f500d48b69e`; `e3944f764d2c00d53ac87227e98601bb667f348f` |
-| Abelian-group proof; task `164894cf-f28c-4353-9bdc-59b3dae749d4` | `29331b94-b957-4e70-8f6d-7da4d651effe` | Reviewer 7794; `1bd42485-e2c7-433a-ad3f-afb9adec08d4` | `4e5249f307274960a8857a645f57a368`; `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
-| Concrete filtered-colimit construction; parent task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` r3 | `3e406095-fce5-4c7e-912d-f54f789f4672` | Reviewer 11896; `cdfd6721-2fa3-4c52-b448-b9a2be72d5f0` | `0d9d2917356b4fbb98f15a495d3d4879`; `d651c06c32b90676853a4e79f91b86385a8cd650` |
-| Concrete filtered-colimit statements; same parent r3 | `3d90ac79-1633-41dc-ad0e-776f6a3922ea` | Reviewer 12003; `b1783779-696b-4f87-b139-f1e13ad4d999` | `9f54d0209e134fc2ad77b7ff7f10e813`; `b6ea11bf7c883ae0600a98215483c75ebf3c9d25` |
-| Concrete filtered-colimit proof; task `ce8400b5-29cb-422f-91f5-9cc761af2531` r1 | `5bd3407c-e5f4-401d-a136-1070af0b2b4d` | Reviewer 12926; `6467768b-8298-4828-b133-03e3756576c3` | `ed76a1a7cc24433e9ffc73674cec3db6`; `442ff746325df5b6d721fee75d430a65c33d09f0` |
-| Universal-arrow statements; parent task `f5d1f399-a1f8-4ab5-a981-90b92abd4857` r3 | `645b7e20-09bf-44ca-9e85-46a717cf2df8` | Reviewer 14711; `04f40e60-5ee9-4d1b-8a78-008108c7e070` | `333cfa8919a5412c98fa077a660e9440`; `542eaca02a9f2d14f175497b7bf6459436ac5c6d` |
-| Universal-arrow proof; task `608eb5b0-75ef-4e8b-9773-25bf7fecf437` r1 | `eadc7974-a28c-4d56-8239-4c44c2dc9aa4` | Reviewer 15065; `f80f492b-9962-4410-9930-15bda820361a` | `f0c40fbe208b47c281b11a670b31554c`; `50126e1b2b20b62d408b52dc3552f01089dd1d11` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| General bridge (definition) | `d20f8eabc581491c5dec30dea40e5e036293121f` |
+| Elementary statements | `676ac944440098acb714f6b953083e88bb89c9c2` |
+| Elementary proof | `4f255c2d810d0998369347f03338826ce587c35b` |
+| Ordered statements | `676ac944440098acb714f6b953083e88bb89c9c2` |
+| Ordered proof | `4f255c2d810d0998369347f03338826ce587c35b` |
+| Subobject statements | `4f255c2d810d0998369347f03338826ce587c35b` |
+| Subobject proof | `e3944f764d2c00d53ac87227e98601bb667f348f` |
+| Abelian-group statements | `e3944f764d2c00d53ac87227e98601bb667f348f` |
+| Abelian-group proof | `a5dff2ff93bd3637a67ee8847f67f811efc82f01` |
+| Concrete filtered-colimit construction | `d651c06c32b90676853a4e79f91b86385a8cd650` |
+| Concrete filtered-colimit statements | `b6ea11bf7c883ae0600a98215483c75ebf3c9d25` |
+| Concrete filtered-colimit proof | `442ff746325df5b6d721fee75d430a65c33d09f0` |
+| Universal-arrow statements | `542eaca02a9f2d14f175497b7bf6459436ac5c6d` |
+| Universal-arrow proof | `50126e1b2b20b62d408b52dc3552f01089dd1d11` |
 
 | Paired path stem under `Langlands/CategoryTheory/Renard/` | Lean SHA256 | Markdown SHA256 |
 | --- | --- | --- |
@@ -293,35 +277,23 @@ unit with short intrinsic laws, not a separate aggregate proof record.
 | [LimitUniversalArrowStatements](../../Langlands/CategoryTheory/Renard/LimitUniversalArrowStatements.md) | `aab427f9ad66f70a93589b303b335ecf80572c1f9bfa2811a61f7aaff4abfa97` | `0d29b3840f0e5969dab43d0ad1a2adea66556e017b4cbcd0a204389de2e472fa` |
 | [LimitUniversalArrowProof](../../Langlands/CategoryTheory/Renard/LimitUniversalArrowProof.md) | `25dec70bbf3f3fad3c826726fdde9682ae68cd8eb87baa69d670f76e9ab181b1` | `6e1652b1d0d2703a66c2640fe8d5dfba336451eda865ebef0e5418461b0f14e1` |
 
-Approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` also passed
-a recovery check of `ConeBridge`, `ElementaryLimitColimitProofs`,
+A separate build of `ConeBridge`, `ElementaryLimitColimitProofs`,
 `OrderedSystemLimitProof`, `SubobjectLimitProof` and `AbelianGroupLimit`
-with zero errors and warnings. This development check is separate from
-the independent semantic approvals and publication evidence above.
-The update-base check `f9edde4d-12a1-4fb6-9971-6c2e6f0d62ec` also
-passed both concrete filtered-colimit modules with zero diagnostics and
-inspected `F.FilteredColimitStatements` as a proposition with independent
-`uI`, `uG` and `uH`. This is statement compilation, not proof acceptance.
-For the concrete proof, exact machine receipt
-`31839a59-e796-41c8-94bf-a92c2cc0a4d1` passed `lake-build`,
-`exact-target`, `unchanged-statement` and `frozen-inputs` for the
-unchanged `F.FilteredColimitStatements`. The published integration also
-records a successful fresh build of integrated snapshot
-`f496b3bc07c1ada71ba5874ed7da76904e9a7a40c1c51f0323cdebc1e51ccae6`.
-These machine checks are distinct from the semantic reviews.
+passed with zero errors and warnings. A further build passed both concrete
+filtered-colimit modules with zero diagnostics and inspected
+`F.FilteredColimitStatements` as a proposition with independent `uI`, `uG`
+and `uH`; this is statement compilation, not a proof. The concrete proof was
+checked by a Lake build against the exact target, the unchanged
+`F.FilteredColimitStatements`, with its inputs unchanged.
 
-The universal-arrow statements by Worker 709 are public under
-`lean.statement@1` with Reviewer 14711's approval without qualifications.
-Machine receipt `20927950-13c7-4910-ace7-aa396b604a37` checks statement
-compilation and declaration kind; it proves none of the four clauses. On
-5 November 2026 the pair above was equal in Library
-`dd78edadc914cf56ca81c595cee581a3570d415c` and the workspace.
+The universal-arrow statements are in the Library; their check covers
+statement compilation and declaration kind and proves none of the four
+clauses. On 5 November 2026 the pair above was equal in Library
+`dd78edadc914cf56ca81c595cee581a3570d415c`.
 
 The universal-arrow proof `L.limitUniversalArrowStatements` proves the
-unchanged aggregate at the independent universes `vJ vC uJ uC`. Worker 709
-wrote the shared proof draft. Worker 1193 checked the source
-correspondence and submitted the pair under exact proof task
-`608eb5b0-75ef-4e8b-9773-25bf7fecf437` revision 1. The factorization
+unchanged aggregate at the independent universes `vJ vC uJ uC`. Its source
+correspondence was checked. The factorization
 clauses are proved directly. A limit witness supplies the factor
 `h.lift (Cone.mk Y f)`, and `IsLimit.ofExistsUnique` gives the converse;
 the colimit clause is dual. Both use componentwise equations and
@@ -331,20 +303,15 @@ with the published `leftCharacterization_proof` and
 connectedness, size or existence-of-limits premise is added. The unique
 factors remain morphisms of C.
 
-The proof is public under `lean.proof@1`, with Reviewer 15065's approval
-without qualifications or suggestions. Machine receipt
-`f298c6bc-9baa-43e3-82f0-a6d915df8be0` passed `lake-build`,
-`exact-target`, `unchanged-statement` and `frozen-inputs`, and the
-integration records a fresh successful integrated build. At Library
-`50126e1b2b20b62d408b52dc3552f01089dd1d11` the proof pair equals its
-frozen bundle and the statement pair keeps the hashes above. Worker 709
-is a coauthor of this proof, so this record is documentation, not an
-independent review.
+The proof is in the Library. It was checked by a Lake build against the
+exact target, with the statement and its inputs unchanged. At Library
+`50126e1b2b20b62d408b52dc3552f01089dd1d11` the proof pair equals its first
+published version and the statement pair keeps the hashes above.
 
 ## Retained obligations
 
-The concrete quotient's five exact targets now have an independently
-accepted and published proof. That proof retains the nonempty quotient's
+The concrete quotient's five exact targets now have a
+published proof. That proof retains the nonempty quotient's
 hypotheses, independent universes and arbitrary additive directed systems,
 and the separate empty singleton-cocone target. The eventual-zero converse
 is explicitly derived; the empty target is an internal completion of the
@@ -357,10 +324,9 @@ The identification of the general definition with the earlier
 universal-arrow terminology is proved: the published statements
 `L.LimitUniversalArrowStatements` have the published exact proof
 `L.limitUniversalArrowStatements`. Its converses and comma-category
-clauses remain the derived formulations recorded in the statement unit. Any additional cross-section
+clauses remain the derived formulations recorded in the statement module. Any additional cross-section
 comparison and the other Appendix assertions retain their own obligations
 unless an exact published correspondence is supplied. No general existence
 theorem for arbitrary-category limits, ambient-category subobject
 colimits, original nonunital-module construction, or section/book
-completion follows from this note. Existing owners, held work and
-Worker 6's saved VI.3.3 wait are preserved.
+completion follows from this note.

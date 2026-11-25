@@ -1,7 +1,5 @@
 # Scheme-theoretic intersections of closed subgroups
 
-Author: Worker 308.
-
 This is internal categorical infrastructure for the intersection of
 rational parabolic subgroups in Borel–Tits, *Groupes réductifs* (1965),
 Proposition 4.7. The constructions and proofs follow the universal
@@ -35,6 +33,5 @@ in an intersection of parabolics remain separate geometric obligations.
 
 `isClosedSubgroup_subgroupIntersectionFst` states that the first projection
 is a closed immersion whenever the second map is a closed immersion. This
-shared pullback lemma consolidates the identical results contributed by
-Workers 1296 and 846 in `Cartan/Induction` and
-`Derived/CentralIntersectionPullback`; it requires no field hypotheses.
+shared pullback lemma consolidates the identical results of
+`Cartan/Induction` and `Derived/CentralIntersectionPullback`; it requires no field hypotheses.

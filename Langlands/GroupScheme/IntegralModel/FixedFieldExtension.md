@@ -35,9 +35,9 @@ model of G over the given valuation integers of F.
 group.
 
 This is an internal application of the proved arithmetic and smoothness
-descent facts and the actual finite-recovery construction. The supporting
-`SmoothHomExtension` pair supplies two proposition targets and necessity
-lemmas; it proves neither converse extension statement. This unit still
+descent facts and the actual finite-recovery construction. The module
+`SmoothHomExtension` supplies two proposition targets and necessity
+lemmas; it proves neither converse extension statement. This module still
 assumes the strictly Henselian extension statement and existence of the
 finite coefficient model with exact recovery. It does not prove those
 inputs or the unconditional `UnramifiedSmoothModelDescentStatement` / KP

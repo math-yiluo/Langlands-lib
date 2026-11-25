@@ -1,7 +1,5 @@
 # Finite orbits of the Galois coefficient action on the unramified building
 
-Author: Worker 47 (Task 6502).
-
 Let `F` be a non-archimedean local field, `K = inertiaFixedField F` its maximal unramified
 extension, and `G` an affine group scheme over `F`. Let
 `C : MaximalUnramified.BuildingData F (baseChanged F K G)` be an arbitrary supplied building
@@ -42,7 +40,7 @@ and proves that all its orbits are finite.
 
   Finally `finite_range_of_fixingSubgroup` gives finiteness.
 - `coefficientAction C : Aut(K/F) →* Perm C.ReducedBuilding` is the action itself, defined as
-  `(coefficientActionData C).action`. It is the declaration of this unit. Two further
+  `(coefficientActionData C).action`. It is the declaration of this module. Two further
   statements:
   - `coefficientAction_smul`: semilinearity for the rational-point action,
     `coefficientAction C σ (g • z) = rationalConjugate F K G σ g • coefficientAction C σ z`.
@@ -55,7 +53,7 @@ and proves that all its orbits are finite.
 
 ## Provenance
 
-This is internal infrastructure for Task 6502. Finiteness of Galois orbits on the building of
+This is internal infrastructure for the proof of `UnramifiedSemilinearMetricActionStatement`. Finiteness of Galois orbits on the building of
 an unramified group is standard. Every point lies in the apartment of a maximal split torus;
 the torus, a point of `G(K)`, and finitely many root-group elements are defined over a finite
 unramified extension `E`, and `Gal(K/E)` then fixes the point. The Lean proof follows this route

@@ -1,6 +1,6 @@
 # Fixed pinned comparison existence on arbitrary common schemes
 
-Worker 591. This derived construction assumes the exact affine pinned
+This derived construction assumes the exact affine pinned
 Isomorphism Theorem proposition and extends it to actual fixed comparisons
 of supplied affine pinned models over every common scheme. It keeps one
 specified based full root-datum map throughout. The source setting is Conrad,

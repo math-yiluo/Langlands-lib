@@ -1,9 +1,6 @@
 # The actual relative-series binary Laurent diagram
 
-Authors: Worker 948 and Worker 101.
-Documentation correction (P3-013): Worker 1057.
-
-This is a definition unit with elementary
+This is a module of definitions with elementary
 map laws. It is built from published relative series, coefficient evaluation
 and closed-ideal quotient descent.
 
@@ -158,7 +155,7 @@ the contractive evaluation and descent that construct the arrows, so it is
 dropped. The registered literature-index entry for this source retains the
 nontrivial-valuation hypothesis for the source's small-scalar reduction; no
 such reduction is used here. No registered errata for this source were found
-in the current Library notes or the project literature index.
+in the Library notes or the project literature index.
 
 Vladimir Berkovich, *Non-Archimedean analytic spaces*, Trieste lectures (2009),
 registered as `berkovich-2009-trieste-analytic-spaces`, SHA256
@@ -174,10 +171,10 @@ Taking the closure of the generated ideals is an internal choice: for
 affinoid algebras the sources' ideals are already closed, but no closedness
 of the plain generated ideal is proved here. Retaining the actual quotient norm,
 and proving bounded evaluation and the elementary map laws, are derived
-constructions using the published Library interfaces. This unit does not
+constructions using the published Library interfaces. This module does not
 identify these relative quotients with another scalar presentation. It permits
 unit relation ideals, zero or nonreduced bases, nilpotent `f`, and trivial
 scalar valuations. It assumes no properness, norm attainment, nonempty
 spectrum or injectivity. Exactness, sheafness, finite-module descent, higher
 Čech exactness, admissibility and arbitrary-radius descent remain outside this
-unit.
+module.

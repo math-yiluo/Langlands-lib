@@ -1,7 +1,5 @@
 # Statement: adjoint semisimple group schemes as Weil restrictions
 
-Worker 75.
-
 `Langlands.GroupScheme.AffineAdjointWeilRestrictionStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It imports
@@ -195,11 +193,11 @@ All rings are in universe `u`. The proposition does not state:
 ## Relation to the Library
 
 - [`Reductive.AffineSimplyConnectedWeilRestrictionStatement`](AffineSimplyConnectedWeilRestrictionStatement.md)
-  (Worker 75) states Proposition 6.4.4 itself with the same encoding, with
+  states Proposition 6.4.4 itself with the same encoding, with
   `IsSimplyConnected` in place of `IsAdjoint`. This module proves no relation between the
   two propositions.
 - [`SimplyConnected.AlmostSimpleWeilRestrictionStatement`](../SimplyConnected/AlmostSimpleWeilRestrictionStatement.md)
-  (Worker 1783; Borel–Tits 6.21(ii), Milne Theorem 24.3) records the simply connected
+  (Borel–Tits 6.21(ii), Milne Theorem 24.3) records the simply connected
   field case for an almost simple `G`, with no uniqueness. The Library has no adjoint
   field analogue.
 - The Library's split-group statements over a general base, for example

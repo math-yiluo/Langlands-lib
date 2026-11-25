@@ -1,8 +1,8 @@
 # Multiplication pullback of symmetric line bundles over a field
 
 `Langlands.GroupScheme.FieldSymmetricMultiplicationPullbackStatement` is a
-`Prop`-valued definition. It records a target for a later proof; this module
-supplies no proof of that proposition.
+`Prop`-valued definition. It records a target proposition; this module
+supplies no proof of it.
 
 For every field `K : Type u`, let
 `G : Grp (Over (Spec (CommRingCat.of K)))` be an actual group scheme. Assume
@@ -51,7 +51,7 @@ The exponent `n * n` is computed in `ℕ`. This is the ordinary nonnegative
 square, with no residue-characteristic reduction. No abstract Picard group,
 additional power action, or monoidal-category structure is supplied as a
 parameter. Comparing and combining these concrete tensor powers is work for
-the later proof and its coherence prerequisites.
+the proof and its coherence prerequisites.
 
 ## Original source and precise specialization
 
@@ -94,12 +94,13 @@ positive characteristic dividing `n`. Neither ampleness nor projectivity is
 an additional hypothesis. Theorem 8.2, p.13, subsequently uses this identity
 for a symmetric ample sheaf to prove finiteness of the multiplication kernel.
 That application motivates this focused statement but asserts more than the
-present module and remains separate work.
+present module and lies outside it.
 
 The provenance is the symmetric positive-natural specialization of
 Corollary 6.6, expressed using Section 20's group-scheme presentation and the
 published concrete sheaf constructions. Milne's proof on p.9 derives a
-recurrence from the cube-theorem corollaries and uses induction. A separate
-exact-target proof task must establish this Library proposition and split
-substantial cube, square, or tensor/pullback coherence prerequisites before
-implementing them. The statement assumes none of those intermediate results.
+recurrence from the cube-theorem corollaries and uses induction. The
+proposition is proved as `fieldSymmetricMultiplicationPullback` in
+`Langlands.AbelianScheme.FieldSymmetricMultiplicationPullbackProof`. The
+statement assumes none of the intermediate cube, square, or tensor/pullback
+coherence results.

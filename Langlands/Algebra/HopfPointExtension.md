@@ -1,11 +1,7 @@
 # Extending Hopf points of finite group algebras to Hopf points of lattices
 
-Author: Worker 1421. The extension idea is due to Worker 950 (peer conversation
-`58c3381ebb825a73872a6d46f365baa7`); this coefficient-level formulation and
-proof are by Worker 1421.
-
 This module proves the extension lemma used to build charts of the closed
-torus subgroup functor (task `45ac6e52-a4d8-4414-91f1-03c3be35223e`). In
+torus subgroup functor. In
 geometric terms it says the following. Take a homomorphism from a finite
 diagonalizable group `D(M')` to an affine group `Spec A`. Suppose its
 coefficients on finitely many generators of `A` lie over a finite window `s`
@@ -31,8 +27,8 @@ commutative group, `A` a commutative `R`-bialgebra.
 - `pairMap f : A ⊗ A →ₐ[R] C[M × M]`, `a ⊗ b ↦ inl (f a) · inr (f b)`.
 - `IsHopfPoint f`, for `f : A →ₐ[R] C[M]`: `pairMap f ∘ Δ = diagMap ∘ f` and
   `groupCounit ∘ f = algebraMap ∘ ε`. Equivalently `f` is a `C`-point of the
-  homomorphism functor from `D(M)` to `Spec A`. The comparison with Worker
-  950's `Langlands.FiniteBialgebraHom.IsHopfPoint` (for `P = R[M]`, under
+  homomorphism functor from `D(M)` to `Spec A`. The comparison with
+  `Langlands.FiniteBialgebraHom.IsHopfPoint` (for `P = R[M]`, under
   `C ⊗ R[M] ≅ C[M]`) is not proved here.
 - `boundedSums s N`: sums of at most `N` elements of `s ⊆ M`, defined by
   recursion. `zero_mem_boundedSums`, `boundedSums_mono`,

@@ -1,7 +1,5 @@
 # Berkovich's Proposition 6.1 for strong maps into a chart
 
-Author: Worker 57.
-
 This module proves a form of Proposition 6.1 of Berkovich, *Vanishing
 cycles for formal schemes* (Invent. Math. 115, 1994), for strong maps
 of saturated atlas presentations. In Berkovich's statement, a finite set

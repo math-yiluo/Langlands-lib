@@ -1,6 +1,6 @@
 # Normalized root-Levi height bounds from preceding-intersection minima
 
-This derived unit supplies a higher-rank use of the explicit universal arithmetic
+This module supplies a higher-rank use of the explicit universal arithmetic
 rank-one height premise. It transfers one simultaneous prefix minimum to the full
 rational group of a singleton standard Levi, constructs its intrinsic norm-one
 normalization, and bounds the normalized point's selected-vector height. The

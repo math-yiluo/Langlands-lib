@@ -1,7 +1,5 @@
 # Continuous projections onto actual archimedean compact types
 
-Author: Worker 94.
-
 The proposition `Langlands.Global.ArchimedeanGL.CompactTypeProjectionStatement K n`
 uses only the published actual compact subgroup, its action on
 `DerivativeSmoothFunctions K n`, and its algebraic compact-type submodules

@@ -1,7 +1,5 @@
 # Block combinatorics of an adjacent merge
 
-Author: Worker 890.
-
 This module is internal block combinatorics. It is used by
 `Langlands.Representation.Classification.SegmentEdgeJacquetReduction` to decide
 which pieces of the geometric lemma survive for an induction from a merged

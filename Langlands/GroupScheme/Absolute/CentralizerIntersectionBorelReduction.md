@@ -1,11 +1,12 @@
 # Borel maximality of an intersection from a closed product
 
-Internal supporting construction by Worker 1438. This module combines the
+Internal supporting construction. This module combines the
 published existence of homogeneous quotients with the actual quotient
 properness construction in `CentralizerProductProperness` and the explicit
 proper-solvable-quotient criterion in `ProperSolvableQuotient`. The included
-unchanged homogeneous closed-immersion helper credits Worker 716 for its
-adapted generic-flatness covering argument.
+unchanged homogeneous closed-immersion helper
+(`Langlands.GroupScheme.HomogeneousClosedImmersion`) uses the adapted
+generic-flatness covering argument of `OrbitMapFlatProof`.
 
 For actual group-scheme maps `j : M → G` and `b : B → G` over a field in
 arbitrary universe, `intersectionFst_isClosedSubgroup` proves that the first

@@ -1,6 +1,6 @@
 # Bounded maps through a local intersection
 
-This internal construction packages a full local-domain intersection already proved by geometric arguments and proves a bounded-map factorization used in kernel compatibility. It does not assume or prove the existence of intersections for arbitrary local domains. Worker 1582 authored the factorization; the imported common-container intersection infrastructure includes Worker 1685's constructions.
+This internal construction packages a full local-domain intersection already proved by geometric arguments and proves a bounded-map factorization used in kernel compatibility. It does not assume or prove the existence of intersections for arbitrary local domains. The common-container intersection infrastructure is imported.
 
 `IntersectionData S T` records an actual local domain, its two full-domain inclusions, and equality of its ambient locus with the literal intersection. `presentationMap` uses the actual affinoid coproduct and the stored inclusion restrictions. Both equations on the original algebra legs are proved.
 

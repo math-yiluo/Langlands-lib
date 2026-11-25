@@ -1,6 +1,7 @@
 # Realizing integer quasiinverses by actual torus homomorphisms
 
-Worker 384, with the integral quasiinverse algebra supplied by Worker 1444.
+The integral quasiinverse algebra is supplied by
+`SplitTorusIsogenyQuasiInverseLinear`.
 This is an internal supporting construction for the split-torus isogeny proof.
 It uses the published actual character lattice equivalence and coordinate
 characters and cocharacters, together with the character comparison and finite
@@ -40,7 +41,7 @@ identity. Realizing its columns gives an actual `g : T_J → T_I` with both
 composites equal to multiplication by `n`.
 
 The construction also covers empty coordinate types. No characteristic,
-separability or perfectness restriction is imposed on `k`. This supporting unit
+separability or perfectness restriction is imposed on `k`. This supporting module
 does not itself assert the cocharacter comparison for arbitrary chosen split
 tori; that conclusion still requires transport by splitting isomorphisms and
 application of the actual cocharacter maps.

@@ -1,6 +1,6 @@
 # Lie dimension and rational point count of split unipotent groups
 
-Worker 1387. This internal module works with the existing finite Ga-series
+This internal module works with the existing finite Ga-series
 predicate `RelativeRoot.HasSplitSeries` and the actual dual-number Lie kernel
 `lieKernel`. All declarations are in `Langlands.GroupScheme.RelativeRoot`. The
 field `k : Type u` is arbitrary except where it is assumed finite.

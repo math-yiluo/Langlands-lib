@@ -1,7 +1,5 @@
 # Supercuspidal Ext vanishing over a field of characteristic zero
 
-Author: Worker 3.
-
 This module restates the supercuspidal `Ext` statements of the published
 module `Langlands.Cohomology.SupercuspidalExt.Statement` over an arbitrary
 field `k` of characteristic zero. That module has complex coefficients. The
@@ -22,7 +20,7 @@ hypothesis of another component.
 ## Objects
 
 `k` is a field with `CharZero k`. As in the published module, `Ext` is
-Worker 13's `Langlands.Cohomology.SmoothExt.ext k G V n`, the `n`-th right
+`Langlands.Cohomology.SmoothExt.ext k G V n`, the `n`-th right
 derived functor of equivariant `Hom(V, -)` on the abelian category
 `Langlands.SmoothRep k G` of smooth representations, with values in
 `k`-modules. `SmoothExt` needs the coefficients, the group and the carriers
@@ -145,7 +143,7 @@ results in §7 require.
    reciprocity, with `H = G₀`, the group in question is
    `Ext^{n+1}_{G₀}(V, π|_{G₀})`. That is the finite sum of the
    `Ext^{n+1}_{G₀}(V, σ_i)`. Each `σ_i` is injective by the second
-   component applied to `G₀`, so these groups vanish by Worker 13's
+   component applied to `G₀`, so these groups vanish by
    `isZero_ext_succ_of_injective`. The open subgroup `G₀` is closed, hence
    σ-compact, and the restriction of `μ` is a two-sided Haar measure on it.
 
@@ -255,44 +253,42 @@ sequence (10), over `Q̄_ℓ` (with the remark on p.95 that one may choose
 
 ## Formal dependencies and checks
 
-The only direct project import is Worker 3's
+The only direct project import is
 `Langlands.Cohomology.SupercuspidalExt.Statement`, byte-identical to Library
 commits `196ceda926c7cfe1fdbe5ae57c08133d83bbf940` and
 `9a1bc5f8b8379aa4fe176f3af65ec4c9d96fc715`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Cohomology.SupercuspidalExt.Statement` | Worker 3 | `f7e3f1d1ec7bf54178be094a654eee3a7619c4d2347a5462288bf266e4d450fd` | `6171ec8abb8e684ff4f86fd9724323976d2b772690114a0560782884f666ae2a` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Cohomology.SupercuspidalExt.Statement` | `f7e3f1d1ec7bf54178be094a654eee3a7619c4d2347a5462288bf266e4d450fd` | `6171ec8abb8e684ff4f86fd9724323976d2b772690114a0560782884f666ae2a` |
 
 Through it the module uses the published functors `restriction` and
 `compactInduction`, the predicate `SupercuspidalExt.HasCompactCoefficients`
 and the statements `CompactInductionExtReciprocityStatement` and
-`SupercuspidalExtStatements`. Transitively it uses Worker 13's
+`SupercuspidalExtStatements`. Transitively it uses
 `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`, with the abelian
 structure `Langlands.SmoothRep.abelian` and the instance
 `Langlands.SmoothRep.enoughInjectives` of
-`Langlands.Representation.Category.SmoothPartAdjunction`), Worker 0's
+`Langlands.Representation.Category.SmoothPartAdjunction`),
 `Langlands.matrixCoefficient` from
 `Langlands.Representation.MatrixCoefficient.Definitions`,
 `Langlands.IsSmoothVector` from `Langlands.Representation.Smooth.Definitions`
 and `Langlands.SmoothRep.IsIrreducible` from
 `Langlands.Representation.Category.Basic`, an abbreviation for Mathlib's
 `Representation.IsIrreducible`. Steps 5 and 6 of the truth argument refer to
-`Langlands.SmoothRep.enoughInjectives` and to Worker 13's
+`Langlands.SmoothRep.enoughInjectives` and to
 `Langlands.Cohomology.SmoothExt.isZero_ext_succ_of_injective`; neither is
 used by a proof in this module.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
-Checks `bede913e-e270-4616-b663-6191ed5efb2d` and
-`bc7849f1-fefd-4130-b3ce-bc0301e37577` built this module with Lake
-against the published import, with no errors or warnings, and inspected
+Two checks built this module with Lake
+against its import, with no errors or warnings, and inspected
 `SupercuspidalExtCharZeroStatements` as a `Prop`-valued definition with the
 single universe parameter `u`, depending only on `propext`,
-`Classical.choice` and `Quot.sound`. Check
-`3be6b0c7-113d-48c4-9bb9-9da3f8baa3b6` compiled a test file against the
-module and its output was read. It printed the predicate, the two new
+`Classical.choice` and `Quot.sound`. A further check compiled a test file
+against the module and its output was read. It printed the predicate, the two new
 components and the conjunction with universe annotations, the types of the
 two lemmas, and their axioms (`propext`, `Classical.choice`,
 `Quot.sound`). The prints show:

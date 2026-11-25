@@ -1,22 +1,19 @@
-/-
-Copyright (c) 2026 The Tau Ceti contributors and the Langlands project contributors.
-Released under Apache 2.0 license as described in the file LICENSE.
-Authors: The Tau Ceti contributors, Worker 16
-
-The range-closure argument is adapted from TauCeti's Subcoalgebra/Map.lean
-at commit 8428d6217f74afa72531df0bc85d7b57ab72810f.
-The carrier coalgebra maps and scalar extension are new constructions.
--/
 import Langlands.RingTheory.Coalgebra.Subcoalgebra.Basic
 import Mathlib.RingTheory.Coalgebra.TensorProduct
 import Mathlib.RingTheory.TensorProduct.Finite
 import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 
 /-!
-# Scalar extension of field subcoalgebras
+# Images of coalgebra maps and scalar extension of subcoalgebras
 
-The image of a coalgebra map is a subcoalgebra. Applying this to the
-base change of a subcoalgebra inclusion gives its scalar extension.
+Over a field `k`, the image of a homomorphism of coalgebras `f : C →ₗc[k] E` is a
+subcoalgebra `range f` of `E`, and `f` factors through it by a surjective homomorphism
+`rangeRestrict f`, which is an equivalence `equivRange f hf` when `f` is injective.
+
+For a field extension `K` of `k` and a subcoalgebra `D` of `C`, the map
+`baseChangeMap K D : K ⊗[k] D →ₗc[K] K ⊗[k] C` induced by the inclusion is injective. Its
+image `baseChange K D` is the scalar extension of `D`, a subcoalgebra of `K ⊗[k] C`
+identified with `K ⊗[k] D` by `baseChangeEquiv K D`.
 -/
 
 open scoped TensorProduct
@@ -30,15 +27,19 @@ variable {k : Type u} [Field k]
 variable {C : Type v} [AddCommGroup C] [Module k C] [Coalgebra k C]
 variable {E : Type w} [AddCommGroup E] [Module k E] [Coalgebra k E]
 
-/-- The range of a coalgebra homomorphism, with its comultiplication closure. -/
+/-- The image of a homomorphism of coalgebras, as a subcoalgebra of the target. It is closed
+under comultiplication because `Δ (f c) = (f ⊗ f) (Δ c)`, and the range of `f ⊗ f` is the
+image of the tensor square of the range of `f`. -/
 def range (f : C →ₗc[k] E) : Subcoalgebra k E where
   carrier := LinearMap.range f.toLinearMap
   comul_mem' := by
     rintro _ ⟨c, rfl⟩
-    refine ⟨TensorProduct.map f.toLinearMap.rangeRestrict
-      f.toLinearMap.rangeRestrict (Coalgebra.comul (R := k) c), ?_⟩
-    rw [TensorProduct.map_map]
-    exact CoalgHomClass.map_comp_comul_apply f c
+    have h : LinearMap.range (TensorProduct.map (LinearMap.range f.toLinearMap).subtype
+        (LinearMap.range f.toLinearMap).subtype) =
+        LinearMap.range (TensorProduct.map f.toLinearMap f.toLinearMap) :=
+      (TensorProduct.range_mapIncl _ _).trans (TensorProduct.range_map _ _).symm
+    rw [h]
+    exact ⟨Coalgebra.comul c, LinearMap.congr_fun f.map_comp_comul c⟩
 
 @[simp]
 theorem range_toSubmodule (f : C →ₗc[k] E) :
@@ -48,24 +49,29 @@ theorem range_toSubmodule (f : C →ₗc[k] E) :
 theorem mem_range {f : C →ₗc[k] E} {e : E} :
     e ∈ range f ↔ ∃ c, f c = e := Iff.rfl
 
-/-- Restrict the codomain of a coalgebra map to a subcoalgebra containing its image. -/
+/-- A homomorphism of coalgebras with all its values in a subcoalgebra `D`, as a
+homomorphism into `D`. -/
 noncomputable def codRestrict (D : Subcoalgebra k E) (f : C →ₗc[k] E)
     (h : ∀ c, f c ∈ D) : C →ₗc[k] D where
   toLinearMap := f.toLinearMap.codRestrict D.toSubmodule h
-  counit_comp := by
-    ext c
-    exact CoalgHomClass.counit_comp_apply f c
+  counit_comp := LinearMap.ext fun c ↦ LinearMap.congr_fun f.counit_comp c
   map_comp_comul := by
-    ext c
-    apply D.tensorSquareInclusion_injective
-    change TensorProduct.map D.toSubmodule.subtype D.toSubmodule.subtype
-        (TensorProduct.map (f.toLinearMap.codRestrict D.toSubmodule h)
-          (f.toLinearMap.codRestrict D.toSubmodule h) (Coalgebra.comul c)) =
-      TensorProduct.map D.toSubmodule.subtype D.toSubmodule.subtype
-        (Coalgebra.comul (R := k) (A := D) (⟨f c, h c⟩ : D))
-    rw [TensorProduct.map_map]
-    exact (CoalgHomClass.map_comp_comul_apply f c).trans
-      (CoalgHomClass.map_comp_comul_apply D.subtype (⟨f c, h c⟩ : D)).symm
+    -- Both sides are compared in `E ⊗ E`, where `D ⊗ D` embeds.
+    have hg : D.carrier.subtype ∘ₗ f.toLinearMap.codRestrict D.toSubmodule h = f.toLinearMap :=
+      LinearMap.subtype_comp_codRestrict _ _ _
+    refine LinearMap.ext fun c ↦ D.tensorSquareInclusion_injective ?_
+    calc D.tensorSquareInclusion
+          (TensorProduct.map (f.toLinearMap.codRestrict D.toSubmodule h)
+            (f.toLinearMap.codRestrict D.toSubmodule h) (Coalgebra.comul c))
+        = TensorProduct.map (D.carrier.subtype ∘ₗ f.toLinearMap.codRestrict D.toSubmodule h)
+            (D.carrier.subtype ∘ₗ f.toLinearMap.codRestrict D.toSubmodule h)
+            (Coalgebra.comul c) := TensorProduct.map_map _ _ _ _ _
+      _ = Coalgebra.comul (f.toLinearMap c) := by
+          rw [hg]
+          exact LinearMap.congr_fun f.map_comp_comul c
+      _ = D.tensorSquareInclusion (Coalgebra.comul (R := k) (A := D)
+            (f.toLinearMap.codRestrict D.toSubmodule h c)) :=
+          (D.map_comul_subtype (f.toLinearMap.codRestrict D.toSubmodule h c)).symm
 
 @[simp]
 theorem codRestrict_apply (D : Subcoalgebra k E) (f : C →ₗc[k] E)
@@ -75,11 +81,10 @@ theorem codRestrict_apply (D : Subcoalgebra k E) (f : C →ₗc[k] E)
 @[simp]
 theorem subtype_comp_codRestrict (D : Subcoalgebra k E) (f : C →ₗc[k] E)
     (h : ∀ c, f c ∈ D) :
-    D.subtype.comp (codRestrict D f h) = f := by
-  ext c
-  rfl
+    D.subtype.comp (codRestrict D f h) = f :=
+  CoalgHom.ext fun _ ↦ rfl
 
-/-- A coalgebra homomorphism with codomain restricted to its range. -/
+/-- A homomorphism of coalgebras, as a homomorphism onto its image. -/
 noncomputable def rangeRestrict (f : C →ₗc[k] E) : C →ₗc[k] range f :=
   codRestrict (range f) f (fun c => ⟨c, rfl⟩)
 
@@ -89,18 +94,17 @@ theorem rangeRestrict_apply (f : C →ₗc[k] E) (c : C) :
 
 theorem rangeRestrict_surjective (f : C →ₗc[k] E) :
     Function.Surjective (rangeRestrict f) := by
-  rintro ⟨e, c, hc⟩
-  exact ⟨c, Subtype.ext hc⟩
+  rintro ⟨_, c, rfl⟩
+  exact ⟨c, rfl⟩
 
 theorem rangeRestrict_injective (f : C →ₗc[k] E) (hf : Function.Injective f) :
-    Function.Injective (rangeRestrict f) := by
-  intro c d h
-  exact hf (congrArg Subtype.val h)
+    Function.Injective (rangeRestrict f) :=
+  fun _ _ h ↦ hf (congrArg Subtype.val h)
 
-/-- An injective coalgebra homomorphism identifies its source with its range. -/
+/-- An injective homomorphism of coalgebras is an equivalence onto its image. -/
 noncomputable def equivRange (f : C →ₗc[k] E) (hf : Function.Injective f) :
     C ≃ₗc[k] range f :=
-  CoalgEquiv.ofBijective
+  CoalgEquiv.ofBijective (f := rangeRestrict f)
     ⟨rangeRestrict_injective f hf, rangeRestrict_surjective f⟩
 
 @[simp]
@@ -109,7 +113,8 @@ theorem equivRange_apply (f : C →ₗc[k] E) (hf : Function.Injective f) (c : C
 
 variable (K : Type x) [Field K] [Algebra k K]
 
-/-- The scalar extension of the inclusion of a subcoalgebra. -/
+/-- The inclusion of a subcoalgebra `D` of `C` after extension of scalars to `K`, as a
+homomorphism of `K`-coalgebras `K ⊗[k] D → K ⊗[k] C`. -/
 noncomputable def baseChangeMap (D : Subcoalgebra k C) :
     K ⊗[k] D →ₗc[K] K ⊗[k] C :=
   Coalgebra.TensorProduct.map (CoalgHom.id K K) D.subtype
@@ -122,12 +127,14 @@ theorem baseChangeMap_toLinearMap (D : Subcoalgebra k C) :
 theorem baseChangeMap_tmul (D : Subcoalgebra k C) (a : K) (d : D) :
     baseChangeMap K D (a ⊗ₜ[k] d) = a ⊗ₜ[k] (d : C) := rfl
 
+/-- `K` is flat over `k`, so tensoring the inclusion of `D` with `K` keeps it injective. -/
 theorem baseChangeMap_injective (D : Subcoalgebra k C) :
     Function.Injective (baseChangeMap K D) :=
-  Module.Flat.lTensor_preserves_injective_linearMap
-    D.toSubmodule.subtype D.toSubmodule.subtype_injective
+  Module.Flat.lTensor_preserves_injective_linearMap (M := K)
+    D.toSubmodule.subtype D.toSubmodule.injective_subtype
 
-/-- Scalar extension as a subcoalgebra of the actual tensor-product coalgebra. -/
+/-- The scalar extension of a subcoalgebra `D` of `C` to `K`: the image of `K ⊗[k] D` in
+`K ⊗[k] C`. -/
 noncomputable def baseChange (D : Subcoalgebra k C) : Subcoalgebra K (K ⊗[k] C) :=
   range (baseChangeMap K D)
 
@@ -140,9 +147,9 @@ theorem mem_baseChange (D : Subcoalgebra k C) (z : K ⊗[k] C) :
 
 theorem tmul_mem_baseChange (D : Subcoalgebra k C) (a : K) {c : C} (hc : c ∈ D) :
     a ⊗ₜ[k] c ∈ baseChange K D :=
-  ⟨a ⊗ₜ[k] (⟨c, hc⟩ : D), rfl⟩
+  Submodule.tmul_mem_baseChange_of_mem a hc
 
-/-- The canonical coalgebra map to the carrier of the scalar-extended subcoalgebra. -/
+/-- The homomorphism of `K`-coalgebras from `K ⊗[k] D` onto the scalar extension of `D`. -/
 noncomputable def toBaseChange (D : Subcoalgebra k C) :
     K ⊗[k] D →ₗc[K] baseChange K D :=
   rangeRestrict (baseChangeMap K D)
@@ -159,7 +166,7 @@ theorem toBaseChange_bijective (D : Subcoalgebra k C) :
     Function.Bijective (toBaseChange K D) :=
   ⟨rangeRestrict_injective _ (baseChangeMap_injective K D), rangeRestrict_surjective _⟩
 
-/-- Scalar extension of the carrier agrees with the carrier of scalar extension. -/
+/-- The scalar extension of `D` is `K ⊗[k] D`, as `K`-coalgebras. -/
 noncomputable def baseChangeEquiv (D : Subcoalgebra k C) :
     K ⊗[k] D ≃ₗc[K] baseChange K D :=
   equivRange (baseChangeMap K D) (baseChangeMap_injective K D)
@@ -178,35 +185,33 @@ theorem baseChangeEquiv_tmul (D : Subcoalgebra k C) (a : K) (d : D) :
 
 @[simp]
 theorem subtype_comp_toBaseChange (D : Subcoalgebra k C) :
-    (baseChange K D).subtype.comp (toBaseChange K D) = baseChangeMap K D := by
-  ext z
-  rfl
+    (baseChange K D).subtype.comp (toBaseChange K D) = baseChangeMap K D :=
+  subtype_comp_codRestrict _ _ _
 
 @[simp]
 theorem baseChange_bot :
     baseChange K (⊥ : Subcoalgebra k C) = ⊥ := by
-  apply SetLike.coe_injective
-  change ((⊥ : Submodule k C).baseChange K : Set (K ⊗[k] C)) =
-    ((⊥ : Submodule K (K ⊗[k] C)) : Set (K ⊗[k] C))
-  rw [Submodule.baseChange_bot]
+  ext z
+  rw [← mem_toSubmodule, baseChange_toSubmodule, bot_toSubmodule, Submodule.baseChange_bot,
+    Submodule.mem_bot, mem_bot]
 
 @[simp]
 theorem baseChange_top :
     baseChange K (⊤ : Subcoalgebra k C) = ⊤ := by
-  apply SetLike.coe_injective
-  change ((⊤ : Submodule k C).baseChange K : Set (K ⊗[k] C)) =
-    ((⊤ : Submodule K (K ⊗[k] C)) : Set (K ⊗[k] C))
-  rw [Submodule.baseChange_top]
+  ext z
+  rw [← mem_toSubmodule, baseChange_toSubmodule, top_toSubmodule, Submodule.baseChange_top]
+  exact iff_of_true Submodule.mem_top (mem_top z)
 
 theorem baseChange_mono {D F : Subcoalgebra k C} (h : D ≤ F) :
     baseChange K D ≤ baseChange K F :=
-  Submodule.baseChange_mono K h
+  toSubmodule_le_toSubmodule.mp
+    (Submodule.baseChange_mono K (toSubmodule_le_toSubmodule.mpr h))
 
-/-- Finite dimensionality is preserved by arbitrary extension of the field. -/
+/-- The scalar extension of a finite-dimensional subcoalgebra is finite dimensional: it is
+linearly equivalent to `K ⊗[k] D`. -/
 noncomputable instance instFiniteDimensionalBaseChange (D : Subcoalgebra k C)
     [FiniteDimensional k D] : FiniteDimensional K (baseChange K D) :=
-  Module.Finite.of_surjective (toBaseChange K D).toLinearMap
-    (toBaseChange_bijective K D).surjective
+  Module.Finite.equiv (baseChangeEquiv K D).toLinearEquiv
 
 end Subcoalgebra
 end Langlands

@@ -1,6 +1,6 @@
 # The actual affine Tits projection and its kernel
 
-This internal unit develops the subgroup algebra for the actual datum in
+This module develops the subgroup algebra for the actual datum in
 `AffineIwahoriTits.lean`. It is derived from the published definitions and the
 quotient lemmas in `IwahoriWeylQuotientLemmas.lean`. Its source context is
 Kaletha–Prasad, *Bruhat–Tits theory: a new approach* (2023), Definition 2.6.23,

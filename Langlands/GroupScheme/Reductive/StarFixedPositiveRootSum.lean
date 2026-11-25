@@ -33,7 +33,9 @@ def starFixedPositiveRootSum : {χ // d.IsStarFixedWeight χ} := by
       d.toSplitPinning.base θ (d.starAction σ).property i
   change θ.weightEquiv (IntegralWeylVector.positiveRootSum
     d.toSplitPinning.rootDatum d.toSplitPinning.base) = _
-  rw [IntegralWeylVector.positiveRootSum, map_sum]
+  have hmap := map_sum (ι := d.toSplitPinning.rootIndex) θ.weightEquiv.toLinearMap
+  rw [LinearEquiv.coe_coe] at hmap
+  rw [IntegralWeylVector.positiveRootSum, hmap]
   apply Finset.sum_equiv θ.indexEquiv
   · intro i
     simpa only [Finset.mem_filter, Finset.mem_univ, true_and] using (hpos i).symm

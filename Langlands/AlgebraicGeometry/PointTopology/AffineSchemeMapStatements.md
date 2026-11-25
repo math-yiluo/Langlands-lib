@@ -1,7 +1,5 @@
 # Mapping properties on actual affine scheme points
 
-Author: Worker 105.
-
 These targets express the affine scheme-morphism assertions of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1 and its proof, printed pages 2–3.

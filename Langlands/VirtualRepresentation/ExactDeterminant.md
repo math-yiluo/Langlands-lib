@@ -1,6 +1,6 @@
 # Determinant characters of exact virtual complex representations
 
-Worker 6 constructs the actual determinant on
+This module constructs the actual determinant on
 `Langlands.VirtualRepresentation.ExactGrothendieckGroup P` for an arbitrary
 predicate `P` on finite-dimensional complex representations of a group `G`.
 The group universe `uG` and the representation-carrier universe `uV` are

@@ -1,6 +1,6 @@
 # The fixed compact product form and actual unitary twist isometry
 
-This derived unit compares the actual compact restriction of the product
+This module compares the actual compact restriction of the product
 induction with its positive Hermitian form. Its source context is Waldspurger,
 *La formule de Plancherel pour les groupes p-adiques*, V.2, printed p.293
 (PDF p.59), and VI.1, printed pp.295–296 (PDF pp.61–62), source
@@ -49,6 +49,5 @@ literally; the form equality follows by extensionality from the proved inner
 product identity. This uses no topology or completion on the section carrier.
 
 The result does not supply formal-degree invariance, a comparison with an
-arbitrarily scaled Bruhat measure, orbit measure or spectral family, analytic
-convergence, or any whole-task completion condition. Those consumers remain
-separate obligations.
+arbitrarily scaled Bruhat measure, orbit measure or spectral family,
+or analytic convergence. Those consumers remain separate obligations.

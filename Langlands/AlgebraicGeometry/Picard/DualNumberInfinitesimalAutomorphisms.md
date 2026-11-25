@@ -55,6 +55,6 @@ actual derived structure-sheaf `H⁰`. If `f` is proper,
 These assertions apply over every field and at universe `u`, including empty
 schemes, with no chosen trivialization of `L`.
 
-This contribution supplies the actual infinitesimal automorphism calculation
+This module supplies the actual infinitesimal automorphism calculation
 and its module consequences. It does not construct a smooth atlas or an
 equivalence of pointed deformation groupoids.

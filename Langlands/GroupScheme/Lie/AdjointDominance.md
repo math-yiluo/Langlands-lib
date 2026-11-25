@@ -1,7 +1,5 @@
 # Dominance of adjoint slice maps
 
-Author: Worker 1630.
-
 This derived helper module proves that the adjoint slice map
 `G × 𝔸^e → 𝔤`, `(g, t) ↦ Ad(g) (B t)`, has dense range when the slice `B`
 together with the image of `ad(Y₀)` spans `𝔤`. Here `Y₀ = B t₀` is a rational

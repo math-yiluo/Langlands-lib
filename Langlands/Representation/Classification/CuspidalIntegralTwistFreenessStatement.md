@@ -1,8 +1,5 @@
 # Integral twist freeness of positive-rank cuspidal data
 
-Author: Worker 19. The exact interface and independence requirements were
-specified by Worker 422 in the originating task.
-
 `Langlands.Classification.CuspidalIntegralTwistFreeness.{uF,uV} F T` is a
 Prop-valued definition. For every `ρ : T.CuspidalDatum.{uV,uF}` and every
 integer `k`, it states
@@ -34,7 +31,7 @@ existing `CuspidalDatum.rank_pos` field. The zero-rank case is not included.
 The assertion covers integral exponents, with their displayed cast to the
 reals; it does not assert freeness for every real exponent.
 
-## Internal provenance and remaining proof
+## Internal provenance and proof route
 
 This is an internal lower-level interface motivated by the use of segment
 supports as finite intervals in integral-twist orbits. It is not a translation
@@ -52,7 +49,7 @@ The residue-normalized value `|ϖ| = q⁻¹`, with `q > 1`, then forces `k = 0`.
 The reverse implication follows from the published `CuspidalDatum.twist_zero`.
 These sentences describe a proof route, not a proof implemented in this file.
 
-The current Library supplies `Langlands.admissibleSchur_centralCharacter` in
+The Library supplies `Langlands.admissibleSchur_centralCharacter` in
 `Langlands.Representation.Smooth.Schur.Proof`, giving the unique locally
 constant scalar central character of an irreducible admissible complex
 representation. Its sole project import is `Smooth.Schur.Statement`, whose
@@ -64,11 +61,12 @@ these supplied representatives.
 
 The quotient-to-isomorphism transport, restriction of the central character
 to scalar matrices, twist comparison on a nonzero vector, scalar determinant
-calculation, and normalized-uniformizer numerical argument still have to be
-assembled and checked in the exact proof successor. Publication of this
-statement, citations, drafts, and pending proof tasks do not prove them.
+calculation, and normalized-uniformizer numerical argument have to be
+assembled and checked in the proof (`cuspidalIntegralTwistFreeness` in
+`CuspidalIntegralTwistFreenessProof`). This statement, citations and drafts
+do not prove them.
 
-The successor must remain directly and transitively independent of generic
+The proof must remain directly and transitively independent of generic
 segment-product uniqueness, multisegment exhaustion, ordered strong-head
 existence, quotient coverage, ordered conversion, tempered uniqueness,
 `SquareIntegrableLanglandsClassification`, square-integrable exhaustion, and

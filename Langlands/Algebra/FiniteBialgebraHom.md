@@ -66,8 +66,8 @@ Lean formulation and the proofs are internal to this project.
 
 Here `P` is finite and free as an `R`-module, and `A` is a finitely presented `R`-algebra.
 
-- `Weil R A P` is the Weil restriction `TauCeti.Algebra.WeilRestriction R P (P ⊗[R] A)` from the
-  Library. By `TauCeti.Algebra.WeilRestriction.tensorHomEquiv`, its `R`-algebra maps to `C`
+- `Weil R A P` is the Weil restriction `Langlands.Algebra.WeilRestriction R P (P ⊗[R] A)` from the
+  Library. By `Langlands.Algebra.WeilRestriction.tensorHomEquiv`, its `R`-algebra maps to `C`
   correspond to points `A → C ⊗ P`.
 - `weilPoint R A P` is the universal point. `tensorHomEquiv_eq` says that the point attached to
   `g` is `pushPoint R g (weilPoint R A P)`.

@@ -129,33 +129,33 @@ variable {K₀ : Type u₀} [Field K₀] [ValuativeRel K₀] [TopologicalSpace K
 /-- If the orders of the lower groups agree, the Library real Herbrand function
 agrees at nonnegative rational arguments with the source rational one. -/
 theorem herbrandPhi_ratCast
-    (hcard : ∀ i, lowerGroupOrder T K i = IsLocalRing.lowerRamificationCard A Γ i)
+    (hcard : ∀ i, lowerGroupOrder T K i = lowerGroupCard A Γ i)
     {u : ℚ} (hu : 0 ≤ u) :
-    herbrandPhi T K (u : ℝ) = (IsLocalRing.herbrandPhi A Γ u : ℝ) := by
+    herbrandPhi T K (u : ℝ) = (herbrandPhiRat A Γ u : ℝ) := by
   rcases hu.eq_or_lt with rfl | hu
   · simp
   rw [herbrandPhi_floor T K (by exact_mod_cast hu.le),
-    IsLocalRing.herbrandPhi_of_pos hu, HerbrandBridge.natFloor_ratCast]
+    herbrandPhiRat_of_pos hu, HerbrandBridge.natFloor_ratCast]
   push_cast
   simp only [hcard]
   rw [HerbrandBridge.sum_Icc_one_eq_sum_range]
 
 theorem herbrandPhi_natCast_eq
-    (hcard : ∀ i, lowerGroupOrder T K i = IsLocalRing.lowerRamificationCard A Γ i)
+    (hcard : ∀ i, lowerGroupOrder T K i = lowerGroupCard A Γ i)
     (n : ℕ) :
-    herbrandPhi T K (n : ℝ) = (IsLocalRing.herbrandPhi A Γ (n : ℚ) : ℝ) := by
+    herbrandPhi T K (n : ℝ) = (herbrandPhiRat A Γ (n : ℚ) : ℝ) := by
   have h := herbrandPhi_ratCast T K hcard (Nat.cast_nonneg n : (0 : ℚ) ≤ n)
   rwa [Rat.cast_natCast] at h
 
 /-- The integer index of the Library upper group at a nonnegative rational
 argument is the source upper index. -/
 theorem ceil_herbrandPsi_ratCast [Finite Γ]
-    (hcard : ∀ i, lowerGroupOrder T K i = IsLocalRing.lowerRamificationCard A Γ i)
+    (hcard : ∀ i, lowerGroupOrder T K i = lowerGroupCard A Γ i)
     {w : ℚ} (hw : 0 ≤ w) :
-    ⌈herbrandPsi T K (w : ℝ)⌉ = (IsLocalRing.upperRamificationIndex A Γ w : ℤ) := by
-  set N := IsLocalRing.upperRamificationIndex A Γ w
+    ⌈herbrandPsi T K (w : ℝ)⌉ = (upperGroupRatIndex A Γ w : ℤ) := by
+  set N := upperGroupRatIndex A Γ w
   have key : ∀ n : ℕ, herbrandPsi T K (w : ℝ) ≤ n ↔
-      w ≤ IsLocalRing.herbrandPhi A Γ (n : ℚ) := by
+      w ≤ herbrandPhiRat A Γ (n : ℚ) := by
     intro n
     rw [← (herbrandPhi_strictMono T K).le_iff_le, herbrandPhi_herbrandPsi,
       herbrandPhi_natCast_eq T K hcard]
@@ -175,16 +175,16 @@ theorem ceil_herbrandPsi_ratCast [Finite Γ]
         rw [Nat.cast_sub hpos]
         push_cast at hlt ⊢
         exact hlt
-      have := IsLocalRing.upperRamificationIndex_le ((key _).mp h1)
+      have := upperGroupRatIndex_le ((key _).mp h1)
       omega
   · push_cast
-    exact (key N).mpr (IsLocalRing.le_herbrandPhi_upperRamificationIndex w)
+    exact (key N).mpr (le_herbrandPhiRat_upperGroupRatIndex w)
 
 theorem upperRamificationGroup_ratCast [Finite Γ]
-    (hcard : ∀ i, lowerGroupOrder T K i = IsLocalRing.lowerRamificationCard A Γ i)
+    (hcard : ∀ i, lowerGroupOrder T K i = lowerGroupCard A Γ i)
     {w : ℚ} (hw : 0 ≤ w) :
     upperRamificationGroup T K (w : ℝ) =
-      lowerRamificationGroup T K (IsLocalRing.upperRamificationIndex A Γ w) := by
+      lowerRamificationGroup T K (upperGroupRatIndex A Γ w) := by
   rw [upperRamificationGroup_eq_lower, ceil_herbrandPsi_ratCast T K hcard hw,
     ← lowerRamificationGroupReal_int, Int.cast_natCast, lowerRamificationGroupReal_nat]
 
@@ -278,12 +278,12 @@ theorem integerAction_faithful :
 theorem lowerRamificationGroup_eq_source (i : ℕ) :
     letI := integerAction T K
     lowerRamificationGroup T K i =
-      IsLocalRing.lowerRamificationGroup T.Integers (L ≃ₐ[K] L) i := rfl
+      lowerGroup T.Integers (L ≃ₐ[K] L) i := rfl
 
 theorem lowerGroupOrder_eq_source (i : ℕ) :
     letI := integerAction T K
     lowerGroupOrder T K i =
-      IsLocalRing.lowerRamificationCard T.Integers (L ≃ₐ[K] L) i := rfl
+      lowerGroupCard T.Integers (L ≃ₐ[K] L) i := rfl
 
 end Source
 
@@ -304,10 +304,10 @@ ring and the full automorphism group. -/
 theorem source_map_lowerRamificationGroup_mk (H : Subgroup (L ≃ₐ[K] L)) [H.Normal]
     (n : ℕ) :
     letI := integerAction T K
-    (IsLocalRing.lowerRamificationGroup T.Integers (L ≃ₐ[K] L) n).map
+    (lowerGroup T.Integers (L ≃ₐ[K] L) n).map
         (QuotientGroup.mk' H) =
-      IsLocalRing.lowerRamificationGroup (FixedPoints.subring T.Integers H)
-        ((L ≃ₐ[K] L) ⧸ H) ⌈IsLocalRing.herbrandPhi T.Integers H (n : ℚ)⌉₊ := by
+      lowerGroup (FixedPoints.subring T.Integers H)
+        ((L ≃ₐ[K] L) ⧸ H) ⌈herbrandPhiRat T.Integers H (n : ℚ)⌉₊ := by
   letI := integerAction T K
   letI := T.topology
   letI := T.valuativeRel
@@ -320,7 +320,7 @@ theorem source_map_lowerRamificationGroup_mk (H : Subgroup (L ≃ₐ[K] L)) [H.N
     inferInstanceAs (Finite T.ResidueField)
   haveI : (maximalIdeal T.Integers).LiesOver
       (maximalIdeal (FixedPoints.subring T.Integers (L ≃ₐ[K] L))) :=
-    ⟨FixedPoints.maximalIdeal_subring_eq_comap⟩
+    ⟨maximalIdeal_fixedSubring_eq_comap⟩
   letI : Field (T.Integers ⧸ maximalIdeal T.Integers) := Ideal.Quotient.field _
   letI : Field (FixedPoints.subring T.Integers (L ≃ₐ[K] L) ⧸
       maximalIdeal (FixedPoints.subring T.Integers (L ≃ₐ[K] L))) :=
@@ -332,14 +332,14 @@ theorem source_map_lowerRamificationGroup_mk (H : Subgroup (L ≃ₐ[K] L)) [H.N
         (FixedPoints.subring T.Integers (L ≃ₐ[K] L) ⧸
           maximalIdeal (FixedPoints.subring T.Integers (L ≃ₐ[K] L)))
         (T.Integers ⧸ maximalIdeal T.Integers)).injective
-  exact IsDiscreteValuationRing.map_lowerRamificationGroup_mk_eq_of_isSeparable_residueField n
+  exact map_lowerGroup_mk_eq_of_isSeparable_residueField n
 
 /-- The Library lower-group orders of `L` over the actual fixed field of `H`
 are the source orders for the subgroup `H`. -/
 theorem lowerGroupOrder_fixedField (H : Subgroup (L ≃ₐ[K] L)) (i : ℕ) :
     letI := integerAction T K
     lowerGroupOrder T (IntermediateField.fixedField H) i =
-      IsLocalRing.lowerRamificationCard T.Integers H i := by
+      lowerGroupCard T.Integers H i := by
   letI := integerAction T K
   letI := integerAction T (IntermediateField.fixedField H)
   haveI : FiniteDimensional K L := Module.Finite.of_restrictScalars_finite K₀ K L
@@ -405,7 +405,7 @@ theorem map_restrictNormalHom_eq [IsGalois K L]
     (X : Subgroup (L ≃ₐ[K] L)) (i : ℕ)
     (hX : letI := integerAction T K
       X.map (QuotientGroup.mk' H) =
-        IsLocalRing.lowerRamificationGroup (FixedPoints.subring T.Integers H)
+        lowerGroup (FixedPoints.subring T.Integers H)
           ((L ≃ₐ[K] L) ⧸ H) i) :
     X.map (AlgEquiv.restrictNormalHom (F := K) (K₁ := L)
         (IntermediateField.fixedField H)) =
@@ -435,7 +435,7 @@ theorem lowerGroupOrder_fixedField_quotient [IsGalois K L]
     (S : LocalField.TopologicalData K₀ (IntermediateField.fixedField H)) (i : ℕ) :
     letI := integerAction T K
     lowerGroupOrder S K i =
-      IsLocalRing.lowerRamificationCard (FixedPoints.subring T.Integers H)
+      lowerGroupCard (FixedPoints.subring T.Integers H)
         ((L ≃ₐ[K] L) ⧸ H) i := by
   letI := integerAction T K
   letI := integerAction S K
@@ -506,7 +506,7 @@ theorem upperQuotientCompatibility {K₀ : Type u₀} [Field K₀] [ValuativeRel
     upperRamificationGroup_ratCast T K (lowerGroupOrder_eq_source T K) hw0,
     upperRamificationGroup_ratCast S K (lowerGroupOrder_fixedField_quotient K L T H S) hw0]
   exact map_restrictNormalHom_eq K L T H S _ _
-    (IsLocalRing.upperRamificationQuotientCompat_of_map_lowerRamificationGroup_mk_eq
+    (upperGroupRatQuotientCompat_of_map_lowerGroup_mk_eq
       (source_map_lowerRamificationGroup_mk K L T H) _ hw0)
 
 /-- The phi tower law through the actual fixed field of a normal subgroup
@@ -530,14 +530,14 @@ theorem herbrandPhi_fixedField_tower {K₀ : Type u₀} [Field K₀] [ValuativeR
         herbrandPhi_of_nonpos S _ hq']
     · have hH := herbrandPhi_ratCast T (IntermediateField.fixedField H)
         (lowerGroupOrder_fixedField K L T H) hq.le
-      have hφ0 : 0 ≤ IsLocalRing.herbrandPhi T.Integers H q := by
+      have hφ0 : 0 ≤ herbrandPhiRat T.Integers H q := by
         have h := herbrandPhi_pos T (IntermediateField.fixedField H)
           (by exact_mod_cast hq : (0 : ℝ) < q)
         rw [hH] at h
         exact_mod_cast h.le
       rw [herbrandPhi_ratCast T K (lowerGroupOrder_eq_source T K) hq.le, hH,
         herbrandPhi_ratCast S K (lowerGroupOrder_fixedField_quotient K L T H S) hφ0,
-        IsLocalRing.herbrandPhi_eq_herbrandPhi_quotient_comp_of_map_lowerRamificationGroup_mk_eq
+        herbrandPhiRat_eq_herbrandPhiRat_quotient_comp_of_map_lowerGroup_mk_eq
           (source_map_lowerRamificationGroup_mk K L T H) hq.le]
   have hcont : Continuous fun u => herbrandPhi S K
       (herbrandPhi T (IntermediateField.fixedField H) u) :=

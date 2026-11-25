@@ -1,7 +1,5 @@
 # Point generation and normality in a commuting product
 
-Worker 1636.
-
 This internal helper module starts with two group-scheme homomorphisms
 `j : H ⟶ G` and `i : K ⟶ G` over an arbitrary base. Their images commute on
 every test scheme. The published `commutingSubgroupMultiplicationHom` is

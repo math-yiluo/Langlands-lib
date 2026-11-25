@@ -1,6 +1,6 @@
 # Vectors with a scaled essential identity are multiples of the essential vector
 
-This internal auxiliary isolates the last step of the proof of Theorem (5.1)
+This module isolates the last step of the proof of Theorem (5.1)
 in Jacquet, Piatetski-Shapiro and Shalika, *Conducteur des représentations du
 groupe linéaire*, Math. Ann. 256 (1981), printed page 214: "D'après l'unicité
 dans le théorème (4.1) la fonction W₁ est alors un multiple de W". Suppose a
@@ -108,9 +108,9 @@ identity below, `hψ` is `h.conductor.1` and the uniformizer is
   `C • w` for some `C`. Restriction invariance of level-fixed vectors is the
   published `isIntegralInvariantOnRestriction_of_mem_levelFixedVectors`.
 
-## Provenance and remaining obligations
+## Provenance and what is not proved here
 
-The unit has internal provenance. Its steps are linearity of the Bochner
+The module has internal provenance. Its steps are linearity of the Bochner
 integral, elementary facts about scalar multiples of rational functions, and
 uniqueness of the essential vector, which is supplied as a hypothesis.
 The cited step of JPSS 1981, printed page 214, is the only source content
@@ -119,5 +119,5 @@ the functional equation and the support argument of printed pages 212–214,
 with `C` constant because the polynomial there is constant. Those arguments
 are not formalized here: the scaled identity for level-fixed vectors is a
 hypothesis. Existence and uniqueness of the essential vector, the epsilon
-factor, and the vanishing below level `m` are not proved. This unit does not
+factor, and the vanishing below level `m` are not proved here. This module does not
 prove `EssentialConductorStatement`.

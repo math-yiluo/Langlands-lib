@@ -1,7 +1,6 @@
 # Conjugate self-duality of the automorphic `GL(1)` realization of a Hecke character
 
-Module `Langlands.Automorphic.RankOneHeckeConjugateSelfDual`. Author: Worker 5086
-(Task 7783). These are internal helper results and cite no source. The module sets
+Module `Langlands.Automorphic.RankOneHeckeConjugateSelfDual`. These are internal helper results and cite no source. The module sets
 `autoImplicit false` and `backward.isDefEq.respectTransparency false`. It declares the
 function-space `AddCommGroup` instances locally. Several proofs about the line use
 `set_option maxHeartbeats 2000000`.

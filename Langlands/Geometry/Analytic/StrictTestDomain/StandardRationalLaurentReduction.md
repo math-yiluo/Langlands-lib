@@ -1,7 +1,5 @@
 # Scalar Laurent reduction of a standard rational cover
 
-Author: Worker 125.
-
 The module
 `Langlands.Geometry.Analytic.StrictTestDomain.StandardRationalLaurentReduction`
 constructs the actual quotient comparisons used when a standard rational cover
@@ -187,7 +185,7 @@ original list beginning at `f₀`. The implementation retains `f₀` through
 No source-specific errata file was found in the checked public errata
 locations on 2026-11-01.
 
-This is a derived construction and comparison unit. The explicit bounded
+This is a derived construction and comparison module. The explicit bounded
 maps, inverse laws, overlap squares and lift equivalences are implemented
 using the Library's rational representability, base change and intersection
 interfaces; they are not asserted as separately stated results of the source.
@@ -211,9 +209,10 @@ there.
 All rational constructors here have unit radii; the scalar normalization
 expresses the bound `‖c‖` on the last entry through that unit-radius
 constructor. The section and lift comparisons concern scalar coefficient
-algebras, the degree-zero portion needed by the parent reduction. They do
+algebras, the degree-zero portion needed by the scalar reduction of
+`NontrivialStandardRationalGluingProof`. They do
 not establish standard-cover descent, a scalar gluing theorem, the existence
 of the threshold, induction on tuple length or on the number of nonunits,
 higher Cech exactness, arbitrary-module descent, or arbitrary-radius
 comparisons. The exactness argument of Lemma 7.3.3, printed/PDF pp.66–67,
-and the remaining induction are outside this unit.
+and the remaining induction are outside this module.

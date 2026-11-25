@@ -1,7 +1,7 @@
 # Scalar Fourier closure and sigma-finiteness from self-duality
 
-Worker 86 authored this internal prerequisite statement for the finite-row
-Fourier compatibility work coordinated by Worker 110.
+This is an internal prerequisite statement for the finite-row
+Fourier compatibility work.
 
 `Langlands.HarmonicAnalysis.ScalarFourierClosureStatement.{u}` is a closed
 proposition definition. It universally quantifies over a field `F : Type u`
@@ -46,6 +46,6 @@ The Fourier conventions and their original-source provenance remain those
 documented in `Basic.md` and `RowFourier.md`. The present proposition is an
 internal prerequisite formulated in terms of their published objects, not a
 transcription of a new literature theorem. It introduces no new measure,
-transform, or test-function construction, and supplies no proof. A future
+transform, or test-function construction, and supplies no proof. A
 proof must derive both conclusions under the displayed assumptions, including
 the discrete case.

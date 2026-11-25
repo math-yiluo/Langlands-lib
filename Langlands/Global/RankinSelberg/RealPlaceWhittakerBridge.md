@@ -1,13 +1,13 @@
 # The real-place model bridge from coefficient regularity
 
-This internal conditional reduction for Task 7400 is in namespace
-`Langlands.Global.RankinSelbergGlobal`. It adapts Worker 5665's complex-place
+This internal conditional reduction towards `RealPlaceFunctionalEquationStatement` is in namespace
+`Langlands.Global.RankinSelbergGlobal`. It adapts the complex-place
 bridge argument, using the real-place spanning proof in `RealPlaceIsotypic`
 and the unconditional character and compact calculations in
 `RealPlaceWhittakerEquivariance`.
 
 The resulting `RealPlaceFunctionalEquationAnalyticReductionStatement.{u}`
-states that the following four inputs imply the exact published
+states that the following four inputs imply the exact Library statement
 `RealPlaceFunctionalEquationStatement.{u}`:
 
 1. `RealLocalUnequalJacquetStatement`, the local unequal-rank integral package;
@@ -18,7 +18,9 @@ states that the following four inputs imply the exact published
 4. `RealPlaceContragredientPairLStatement.{u}`, equality of the dual denominator
    functions for actual contragredient parameters and inverse real blocks.
 
-All four inputs remain open in this contribution. The already implemented
+None of the four inputs is proved in this module; the Library proves the
+coefficient regularity input as `realPlaceWhittakerAnalytic` (module
+`RealPlaceWhittakerAnalyticProof`). The already implemented
 `RealLocalTheoryReduction` supplies the parameter signs, reflection and
 unconditional `r = 0` equal-rank case. The local analytic inputs also retain
 any continuous-globalization and measure-normalization comparison needed to

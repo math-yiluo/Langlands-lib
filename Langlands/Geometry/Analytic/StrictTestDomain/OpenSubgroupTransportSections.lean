@@ -70,9 +70,9 @@ theorem operator_restriction (X : ρ.OpenSubgroupTransport) (k : X.subgroup) :
     (X.operator k).restriction = X.sectionOperator k := by
   apply X.domain.obj.hom_ext
   rw [Hom.restriction_comp_baseMap]
-  change X.domain.obj.baseMap.comp (ρ.toMonoidHom (k : G)⁻¹).inv =
+  change X.domain.obj.baseMap.comp (ρ.toMonoidHom (k : G)⁻¹).asIso.inv =
     (ρ.sectionAction X.domain.obj
-      (ρ.invariantStabilizerInclusion X.subgroup X.domain k)).hom.comp
+      (ρ.invariantStabilizerInclusion X.subgroup X.domain k)).asIso.hom.comp
         X.domain.obj.baseMap
   rw [ρ.sectionAction_comp_baseMap, map_inv]
   rfl
@@ -85,7 +85,7 @@ def presheafSectionAction (X : ρ.OpenSubgroupTransport) :
   obj F :=
     { V := F.obj (op X)
       ρ :=
-        { toFun k := F.map (X.operator k).op
+        { toFun k := End.of (F.map (X.operator k).op)
           map_one' := by rw [operator_one, op_id, F.map_id]; rfl
           map_mul' k l := by rw [operator_mul, op_comp, F.map_comp]; rfl } }
   map f :=
@@ -94,7 +94,7 @@ def presheafSectionAction (X : ρ.OpenSubgroupTransport) :
 
 @[simp] theorem presheafSectionAction_obj_ρ (X : ρ.OpenSubgroupTransport)
     (F : (ρ.OpenSubgroupTransport)ᵒᵖ ⥤ A) (k : X.subgroup) :
-    ((presheafSectionAction A X).obj F).ρ k = F.map (X.operator k).op := rfl
+    (((presheafSectionAction A X).obj F).ρ k).asHom = F.map (X.operator k).op := rfl
 
 /-- The original presheaf map, as an intertwiner after conjugation of subgroups. -/
 def presheafSectionRestriction {X Y : ρ.OpenSubgroupTransport} (f : X ⟶ Y) :

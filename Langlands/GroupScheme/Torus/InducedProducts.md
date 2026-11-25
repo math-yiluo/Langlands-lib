@@ -1,7 +1,7 @@
 # Binary products of actual induced tori
 
 This is an internal, derived construction for the product-kernel step of
-Task 6659. Its mathematical inputs are the existing actual product of group
+the proof of morphism-compatible domination of actual z-extensions. Its mathematical inputs are the existing actual product of group
 schemes, character-lattice Galois action, common finite Galois splitting field,
 and transport of an induced-torus permutation basis. It adds no new field,
 characteristic, perfectness, or splitting assumption.

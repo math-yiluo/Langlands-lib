@@ -1,7 +1,5 @@
 # Closure of actual prime-power torsion
 
-Author: Worker 501.
-
 This module defines `PrimePowerTorsion.locus A p` as the underlying points of
 actual sections of `A` over the identity test object `Spec K` killed by some
 `p ^ n`. The definition works over any field and for any natural number `p`.

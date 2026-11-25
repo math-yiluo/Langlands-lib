@@ -1,7 +1,5 @@
 # Evaluation and total disconnectedness of canonical rational points
 
-Author: Worker 200.
-
 This derived adapter constructs a continuous evaluation map from the existing
 identity-test rational points of an affine scheme to the product of copies of
 its base ring indexed by global coordinates. Its source topology is exactly

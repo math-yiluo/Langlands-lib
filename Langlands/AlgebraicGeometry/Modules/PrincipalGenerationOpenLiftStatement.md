@@ -17,7 +17,7 @@ def Langlands.SchemeModule.PrincipalGenerationOpenLiftStatement : Prop :=
 
 It has one universe parameter `u`. The file opens only `AlgebraicGeometry`, for
 `Scheme` and the notation `Γ(X, U)`. All Library names are written in full and
-refer to the published declarations.
+refer to the Library declarations.
 
 ## Meaning
 
@@ -106,15 +106,14 @@ The present proposition is this project's derived consequence of that
 conclusion. It is not a verbatim source statement. The source identifies the
 ring of the open `X_s` with a degree-zero localization. The proposition instead
 asserts an exact identity of whole generation opens. It is the form needed by
-Worker 689 for the basis proof in task `95bb4422-61fb-457d-82b7-162bc9807a6b`,
-whose target pair is in
-`Langlands.AlgebraicGeometry.Picard.AmpleSectionOpenStatements`. The exact Lean
-form, with the explicit quasi-compactness and quasi-separatedness hypotheses,
-was fixed by the contract of task `7aebc706-2b14-43af-8bb2-921eeeac9ba4`,
-published by Worker 689. The parent task establishes these two hypotheses from
-ampleness.
+the basis proof for the statements in
+`Langlands.AlgebraicGeometry.Picard.AmpleSectionOpenStatements`
+(`ampleSectionOpenBasis`, module
+`Langlands.AlgebraicGeometry.Picard.AmpleSectionOpenBasisProof`). The exact Lean
+form has the explicit quasi-compactness and quasi-separatedness hypotheses;
+that basis proof establishes these two hypotheses from ampleness.
 
-The expected mathematical route is as follows. It is recorded only to explain
+The mathematical route is as follows. It is recorded only to explain
 why the proposition holds and why its exponent is positive. This module does
 not prove it.
 
@@ -145,7 +144,7 @@ makes the lifted section stop generating outside the original generation open.
   17.25.10 also states that `s : 𝒪_{X_s} → 𝓛|_{X_s}` is an isomorphism, so
   `X_s` lies in the trivialization open. Conversely, at a point of an open
   where this map is an isomorphism, the stalk of `s` generates `𝓛_x`. In the
-  Library this agreement for line bundles is the published theorem
+  Library this agreement for line bundles is the theorem
   `Langlands.SchemeModule.lineBundleResidueOpenComparison` (module
   `Langlands.AlgebraicGeometry.Modules.SectionResidueComparison`). That
   comparison is neither imported nor assumed here. The open
@@ -213,8 +212,8 @@ line-bundle structure, locus or localization.
 It proves no part of the proposition. It also does not state or prove the
 localization isomorphism of Lemma 28.18.2, any tensor-section locus identity,
 any rank-one property of tensor powers, any tensor-power isomorphism, or any
-ampleness result. The proof of the proposition is the separate obligation of a
-`lean.proof@1` successor task.
+ampleness result. The proposition is proved as
+`Langlands.SchemeModule.principalGenerationOpenLift` in the module
+`PrincipalGenerationOpenLiftProof`.
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0
-and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
+The module was written for Lean 4.34.0 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.

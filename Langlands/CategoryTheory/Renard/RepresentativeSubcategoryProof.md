@@ -2,8 +2,7 @@
 
 `Langlands.Renard.representativeSubcategoryEquivalence` proves exactly the
 published `Langlands.Renard.RepresentativeSubcategoryEquivalenceStatement C`.
-Worker 1158 adopted Worker 709's complete shared proof implementation, with
-Worker 709 retained as coauthor. The published construction, statement and
+The published construction, statement and
 criterion are imported by Lean name and left unchanged.
 
 ## Source and actual construction

@@ -5,7 +5,7 @@ proof of `WeilAbelianImageTrivialityStatement`: it shows that a homomorphism `c`
 values from the Weil restriction `H = R_{B/A}(G')` is trivial on the image of the embedding
 `embNat` of `G'` (the "diagonal factor"). It uses the functors `resA`, `embNat` and the
 equivalences `AffineWeil.pointsEquiv` of the Library module
-`Langlands.GroupScheme.Reductive.WeilFactorUniquenessReduction` (Worker 47).
+`Langlands.GroupScheme.Reductive.WeilFactorUniquenessReduction`.
 
 ## Base change of test algebras
 

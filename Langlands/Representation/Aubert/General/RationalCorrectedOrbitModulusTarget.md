@@ -1,9 +1,5 @@
 # Squared intersection modulus for corrected Aubert orbits
 
-Author: Worker 76. The precise conditional orbit Jacquet modulus input and
-its scalar use are due to Worker 1255, within Worker 969's interface.
-Workers 164 and 6 contributed the residual-obligation reconciliation.
-
 `RationalCorrectedOrbitSquaredModulusStatement.{u}` in
 `Langlands.Aubert.General.RationalPointFamily` is a proposition definition.
 Its generic template is `CorrectedFiltration.OrbitSquaredModulusTarget`.
@@ -86,11 +82,12 @@ neither the identity nor a new integral comparison.
 The separate equality between a full parabolic's modular character and the
 conjugation modulus of its radical does not establish this intersection
 identity. The actual rational intersection-weight or determinant comparison
-still needs a proof. In particular this assertion is not added to the
+needs its own proof; `rationalCorrectedOrbitSquaredModulus` in
+`RationalCorrectedOrbitModulusProof` proves the statement. In particular this assertion is not added to the
 allowed external Chapter V structural-input boundary.
 
 The radical containments `(S1)` and `(S2)`, fixed-order support topology,
 quotient compactness, continuous projections, conditional orbit integral,
 full-smooth exactness, general proper-target comparison and terminal
-comparison retain their separate obligations and owners. No existing target
+comparison retain their separate obligations. No existing target
 or import is changed.

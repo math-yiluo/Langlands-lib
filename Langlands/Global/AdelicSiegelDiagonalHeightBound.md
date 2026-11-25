@@ -3,14 +3,12 @@
 Module `Langlands.Global.AdelicSiegelDiagonalHeightBound`, namespace
 `Langlands.Global.AdelicSiegelFactors`.
 
-Author: Worker 5644.
-
 ## Role and provenance
 
-This module is Part A of the planned proof of
+This module is Part A of the proof of
 `Langlands.Global.AdelicSiegelFactors.SiegelNormMinimalityStatement` (Mœglin–Waldspurger,
 *Spectral decomposition and Eisenstein series*, 1995, I.2.2 (vii), printed pp. 20–21; source id
-`moeglin-waldspurger-1995-spectral-decomposition`), as divided in the context of Task 5910.
+`moeglin-waldspurger-1995-spectral-decomposition`), as divided in `AdelicSiegelNormMinimalityProof`.
 Mœglin–Waldspurger's argument that `‖γ g‖ ≫ ‖g‖` on a Siegel set rests on the following
 idea: a rational matrix cannot make a diagonal matrix of positive real ideles smaller,
 because of the product formula. This module proves that idea for the full adelic height
@@ -67,8 +65,8 @@ Notation: `H = AdelicMatrixHeight.height F N` on `AdelicGL F N`, and
   - If `φ_{j₀} = r_{j₀}⁻¹`: use `H(R_𝔸 D) = H((R_𝔸 D)⁻¹)` (`height_inv`). The entry
     `(D⁻¹ R_𝔸⁻¹) j₀ k = R⁻¹ j₀ k · full(r_{j₀}⁻¹)` gives `(N r_{j₀}⁻¹)^d ≤ H(R_𝔸 D)`.
 
-  The constant is `1`. This is sharper than the bound `N^d` that Task 5910's route sketch
-  allows.
+  The constant is `1`. This is sharper than the bound `N^d`, which would also suffice for
+  the proof of norm minimality.
 
 ### Transfer to split tori
 
@@ -79,8 +77,8 @@ Notation: `H = AdelicMatrixHeight.height F N` on `AdelicGL F N`, and
   `rational F G q` is the diagonal image of the rational matrix
   `rho.affineMatrix (CommAlgCat.of F F) q`. This is `affineMatrix_naturality` for the algebra
   map `F → 𝔸_F`.
-- `exists_adelicHeight_map_le_rational_mul` (the Part A interface fixed in Task 5910's
-  context): let `T₀` be a split torus and `f : T₀ → G` a homomorphism. Then there is `c ≥ 0`
+- `exists_adelicHeight_map_le_rational_mul` (the Part A interface of the proof of norm
+  minimality): let `T₀` be a split torus and `f : T₀ → G` a homomorphism. Then there is `c ≥ 0`
   such that for every intrinsic positive point `a` of `T₀` and every rational point `q`,
   `adelicHeight(map f a) ≤ c · adelicHeight(rational q · map f a)`.
 
@@ -100,5 +98,4 @@ Notation: `H = AdelicMatrixHeight.height F N` on `AdelicGL F N`, and
 
 The final theorem depends only on the axioms `propext`, `Classical.choice` and `Quot.sound`.
 A Lake build of this module with the three others of the proof over Library commit
-`f2b3d7dcdd52af1923cd0bf5c4d90beda3118720` reports no errors or warnings (diagnostic
-`12ca220b-423d-4a37-b422-3120df9ecce6`).
+`f2b3d7dcdd52af1923cd0bf5c4d90beda3118720` reports no errors or warnings.

@@ -1,8 +1,6 @@
 # Actual real-twist families and opposite Jacquet occurrence loci
 
-Author: Worker 167.
-
-This internal definition unit packages the published actual induction, determinant
+This module of definitions packages the published actual induction, determinant
 twist, inverse-conjugation transport, and opposite Jacquet class-exponent predicate.
 It introduces no continuation hypothesis, selected irreducible quotient, or new
 induction, conjugation, or Jacquet carrier.
@@ -105,9 +103,12 @@ required by the separate regular comparison target.
 ## Provenance, intrinsic proofs, and limits
 
 This is internal packaging of the imported Library operations, not a theorem
-stated in this form in the literature. The intended consumers are the separate
-parameter-comparison, supported regular-comparison and quotient-extraction
-tasks. Existing targets and their support hypotheses are unchanged.
+stated in this form in the literature. It is intended for separate parameter
+comparisons, supported regular comparisons and quotient extraction; in the
+Library it is imported directly by `InducedCuspidalExponentPersistenceStatement`,
+`SupportedRegularWeylParameterHelpers`, `ComplexTwistFamilies`,
+`InnerCuspidalQuotientSupport` and `PersistenceTransport`. Existing targets and
+their support hypotheses are unchanged.
 
 The original is A. J. Silberger, *The Langlands quotient theorem for p-adic
 groups*, Math. Ann. 236 (1978), 95–104, retained at

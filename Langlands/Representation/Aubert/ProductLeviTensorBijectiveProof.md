@@ -1,7 +1,5 @@
 # Bijectivity of the actual product-Levi tensor comparison
 
-Author: Worker 981 (proof implementation and submission).
-
 The theorem `Langlands.Aubert.productLeviTensorBijective` proves the published
 proposition `Langlands.Aubert.ProductLeviTensorBijectiveStatement.{uF, uV}`
 from `Langlands.Representation.Aubert.ProductLeviGrothendieck`. It applies to

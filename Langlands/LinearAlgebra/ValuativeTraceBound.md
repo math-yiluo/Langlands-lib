@@ -1,7 +1,5 @@
 # Trace probes bound every matrix entry
 
-Author: Worker 1563.
-
 `Langlands.valuativeTraceBound_proof.{u}` proves exactly
 `Langlands.ValuativeTraceBoundStatement.{u}`.
 

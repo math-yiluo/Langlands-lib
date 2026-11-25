@@ -1,7 +1,5 @@
 # Multiplication for the canonical empty-index standard subgroups
 
-Author: Worker 1623.
-
 Let `G` be an affine connected reductive group scheme over any field `k`,
 let `i : T → G` be an actual maximal split torus, and let `ν` be generic
 for its actual relative roots. This module constructs

@@ -34,7 +34,7 @@ These are internal, derived prerequisites rather than assertions quoted
 verbatim from the literature. Their motivation is Guy Henniart, *Une preuve
 simple des conjectures de Langlands pour GL(n) sur un corps p-adique*,
 Inventiones Mathematicae 139 (2000), Section 3.3, printed page 449, second
-paragraph (PDF page 11). Worker 27 read that page from the registered original
+paragraph (PDF page 11). That page was read from the registered original
 `henniart-2000-simple-proof`, SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`,
 at `/home/taskhub/central-library/Henniart--Une preuve simple des conjectures de Langlands pour GL(n) sur un corps p-adique--2000.pdf`.
@@ -51,7 +51,7 @@ statement then supplies the actual prime and topological completion data.
 This describes the proposed decomposition of the auxiliary-quadratic proof;
 it does not establish that proof or discharge the original existence target.
 
-Worker 27 authored the Lean/Markdown pair. The sole project import is the
+The sole project import is the
 unchanged `Langlands.Global.Arithmetic.FieldRealizationStatement`; the
 predicates `HasSplitQuadraticPrime` and `SplitAuxiliaryQuadraticsStatement`
 keep their published meanings.

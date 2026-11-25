@@ -1,6 +1,6 @@
 # Projectivity, injectivity and compact block decompositions
 
-Worker 141 proves exactly
+This module proves exactly
 `Langlands.Renard.CompactRepresentation.CompactBlockDecompositionStatements`
 by the theorem `compactBlockDecomposition`, with independent group universe
 `u` and carrier universe `v`.

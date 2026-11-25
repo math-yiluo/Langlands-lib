@@ -1,7 +1,5 @@
 # Actual intersection characters for the standard intertwiner
 
-Author: Worker 200.
-
 ## Provenance and purpose
 
 This is a derived comparison for the standard integral of Waldspurger,

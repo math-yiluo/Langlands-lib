@@ -40,8 +40,8 @@ unitriangular group of `GL_(n+1)(F)`. The inputs are:
 * an explicit natural number `q`;
 * the parameters `x`.
 
-The function is packaged as an element of Worker 31's published
-`InverseWhittakerFunctions ψ n`, the type of the second argument of the
+The function is packaged as an element of the published
+`InverseWhittakerFunctions ψ n` (`Langlands.Representation.RankinSelberg.QuotientIntegrals`), the type of the second argument of the
 corank-one JPSS integral. The membership proof is the published
 `sphericalWhittaker_mem` together with the integral triviality of the inverse
 standard character.
@@ -109,8 +109,8 @@ For every `x : Fin (n + 1) → ℂˣ`, the property requires the following, wher
 The thresholds `a` and `a'` may depend on `x`. Jacquet's Theorem 1 writes the
 identity as an equality of functions of `s`. The module reads it as convergence
 on a right half-plane together with agreement there with the stated rational
-function in `q^(-s)`. This is the same convention as Worker 31's published zeta
-values.
+function in `q^(-s)`. This is the same convention as the published Rankin–Selberg
+zeta values.
 
 ## Jacquet's normalizations
 
@@ -162,7 +162,8 @@ essential-vector definitions take:
 
 1. **The identity.** There is a polynomial `P` with both of the following:
    * `IsCharacterLPolynomial q ψ abv (rankOneQuotientHaar F) 1 π P`, so `P` is
-     Worker 31's published normalized generator of the zeta values of `π × 1`.
+     the published normalized generator of the zeta values of `π × 1`
+     (`Langlands.Representation.RankinSelberg.LocalFactor`).
      Here `1` is the trivial character of `GL_1(F)`, and `rankOneQuotientHaar F`
      is the published rank-one quotient measure. Thus
      `L(s, π × 1) = P(q^(-s))^(-1)`.
@@ -219,6 +220,7 @@ equals it. No vector is chosen without such a proof.
   * p. 517: Theorem 1, the uniqueness clause, and `L(s, π) = P(q^(-s))^(-1)`.
 * H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika, *Rankin–Selberg
   convolutions*, Amer. J. Math. 105 (1983), 367–464. This is the source of the
-  JPSS L-factors that Worker 31's published module uses for `L(s, π × 1)`:
+  JPSS L-factors that the published module
+  `Langlands.Representation.RankinSelberg.LocalFactor` uses for `L(s, π × 1)`:
   §2.1, pp. 385–386 (conventions and `𝒲(π; ψ)`), and Theorem 2.7,
   pp. 390–391 (the normalized generator of the zeta values).

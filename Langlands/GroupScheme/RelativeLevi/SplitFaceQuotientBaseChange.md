@@ -1,6 +1,7 @@
 # Actual vector quotient comparison after coefficient change
 
-This internal adapter for Task 7200 constructs the actual full quotient
+This internal adapter for the finite vector-bundle filtrations of supplied
+relative radicals constructs the actual full quotient
 isomorphism between the original coefficient-changed vector quotient and
 the vector quotient of an independently chosen fresh face chart on the
 pulled-back roots. It proves this actual comparison linear, rather than

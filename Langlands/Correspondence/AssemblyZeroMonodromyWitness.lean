@@ -136,7 +136,8 @@ theorem isSegmentHead_single
       (T.segmentInduced S.obj 1 (Nat.succ_pos k)).representation :=
     (Weil.IsomorphismInvariance.irreducible_iff e1).mpr
       (T.isIrreducible_castRank (Nat.one_mul (k + 1)).symm S.obj S.property.1)
-  exact ⟨S, hS, Classification.isIrreducibleHead_self _ hπ1⟩
+  exact ⟨S, hS, Classification.isIrreducibleHead_self
+    (F.canonicalTopologicalData.segmentInduced S.obj 1 (Nat.succ_pos k)).representation hπ1⟩
 
 /-- The one-segment product datum with segment `[c0 σ]` and a supplied block. -/
 def singleSegmentDatum

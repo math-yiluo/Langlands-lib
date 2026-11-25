@@ -1,11 +1,8 @@
 # Reducing the aggregate Bernstein target to the decomposition theorem
 
-Author: Worker 145, Task 5346
-(`42ad56a2-0729-42a7-9240-63e953ee2961`).
-
 This is a derived supporting construction on the published Bernstein targets.
-It proves no unconditional Bernstein decomposition. The exact remaining
-obligation is `Langlands.CuspidalSupport.BernsteinDecompositionStatement`.
+It proves no unconditional Bernstein decomposition. The aggregate target
+reduces exactly to `Langlands.CuspidalSupport.BernsteinDecompositionStatement`.
 
 The entry definition `bernsteinDecompositionProofEquiv` constructs an `Equiv`
 between proofs of `BernsteinDecompositionStatements` and proofs of
@@ -28,7 +25,7 @@ existence conclusion from the stronger assertion that every object splits.
 The theorem `bernsteinDecompositionStatements_iff_decomposition` projects
 the decomposition conjunct in the forward direction. In the reverse
 direction it combines the decomposition premise, the preceding theorem and
-Worker 167's published `bernsteinBlockAbelian` from
+the published `bernsteinBlockAbelian` from
 `BernsteinBlockAbelianProof`. The latter already proves exactly
 `BernsteinBlockAbelianStatement`, including equality with the inherited
 preadditive structure.
@@ -46,7 +43,7 @@ p-adiques*, French version dated 9 July 2026, VI.7.2, printed pp.181–184 /
 PDF pp.187–190, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 145 read these pages. The theorem and first Lemma are on printed
+These pages were read. The theorem and first Lemma are on printed
 p.182 / PDF p.188; the abelian-block remark is on printed p.184 / PDF p.190.
 The equivalence proved here is an internal logical consequence of the
 published targets and published abelian-block proof, rather than a separate

@@ -1,6 +1,6 @@
 # Normalized Hermitian weights in identity neighborhoods
 
-Worker 116 formulates the internal proposition
+The module formulates the internal proposition
 `Langlands.Analysis.HermitianNeighborhoodWeightStatement`.
 Let G be a locally compact Hausdorff topological group, with its Borel
 measurable space, and let μ be a Borel measure finite on compact sets and
@@ -37,7 +37,7 @@ The source uses smooth compactly supported weights, a sequence, right
 Haar measure, and d = δ_G⁻¹ in its modular convention. This target supplies
 continuous weights in individual neighborhoods. Smoothness, a shrinking
 sequence or net, the concrete modular character and its continuity, and
-the actual equality μ.inv = μ.withDensity d are separate obligations.
+the actual equality μ.inv = μ.withDensity d are not part of this target.
 In particular this proposition does not assert a Getz–Hahn smooth Dirac
 sequence or an automorphic spectral decomposition. Passing from a weight
 in each neighborhood to a sequence requires a countable local base; no
@@ -52,11 +52,11 @@ supported inside U, and ψ(1) = 2. Positivity of μ on nonempty open sets
 makes c = ∫ ψ strictly positive; finiteness on compact sets ensures
 integrability. Then f = ψ/c has exactly the asserted properties.
 The target is a Prop-valued definition; this file supplies no proof.
-A separate exact published-target proof child is required.
+The proof is in `Langlands.Representation.Unitary.HermitianNeighborhoodWeightProof`.
 
 The independent integrated-unitary symmetry target applies to the complex
 coercion of these real weights only after its actual measure identity and
 representation hypotheses have been supplied. Compactness of integrated
 operators, invariance and intertwining, strong approximation, smooth
-realization and comparison with the algebraic Hecke action remain
+realization and comparison with the algebraic Hecke action are
 separate requirements for the cuspidal application.

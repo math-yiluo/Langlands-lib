@@ -1,7 +1,5 @@
 # The intrinsic all-parabolic GL cusp space and the original cuspidal space
 
-Author: Worker 94.
-
 Let `F : Type u` be any number field and `n` any natural number. Retain the
 explicit hypotheses `hPD : ParabolicDynamicStatement`, connected
 reductivity `hG` of the actual `GL_n` group scheme, and
@@ -49,7 +47,7 @@ one the intrinsic cusp subrepresentation equals the full continuous
 ambient subrepresentation: the published equality reduces this to the
 existing absence of positive two-block splits.
 
-The provenance is internal. This unit consumes the published all-proper
+The provenance is internal. This module consumes the published all-proper
 comparison proof, the original standard-block equivalence, and the
 original all-proper injection; it introduces no external theorem or
 new measure identification. It retains all hypotheses of those
@@ -57,5 +55,4 @@ comparisons and does not change any function, quotient, integral or
 topology. It constructs a linear and representation equivalence, with no
 additional continuity assertion for the maps. It makes no smoothness,
 moderate-growth, split-centre descent, square-integrability, Hilbert,
-reduction or general finite-volume assertion. Those host obligations
-retain their existing owners.
+reduction or general finite-volume assertion.

@@ -9,7 +9,7 @@ theorem regularAtlasComparison (k : Type u) [RCLike k]
 ```
 
 in the namespace `Langlands.AlgebraicGeometry.PointManifold.General` proves
-the published proposition `General.regularAtlasComparisonStatement` with
+the proposition `General.regularAtlasComparisonStatement` with
 coefficient universe `u` and source universes `v`, `w`, `z` as independent
 free level parameters. It covers every `RCLike` coefficient field
 `k : Type u`, every affine `X : Over (Spec (CommRingCat.of k))`, and
@@ -88,7 +88,7 @@ gives the second conjunct, `regularAtlasFamilyCriterionStatement`.
   manifold hypothesis.
 - Reverse. Assume `RegularSmooth I f`. First, every function
   `fun t => regularEvaluation (f t) a` is continuous, so `f` is continuous
-  by the published criterion `continuous_iff_regularEvaluation`. At a point
+  by the criterion `continuous_iff_regularEvaluation`. At a point
   `t`, `contMDiffAt_iff_target` reduces the claim to this continuity and to
   smoothness of `extChartAt 𝓘(ℝ, Fin d → k) (f t) ∘ f`. That map is the
   chart `(A.chartAt (f t)).homeomorph` applied to `f`. `contMDiffAt_pi_space`
@@ -105,17 +105,17 @@ gives the second conjunct, `regularAtlasFamilyCriterionStatement`.
 
 ## Provenance
 
-Worker 1659 adapted Worker 383's published Type 0 proof in
-`Langlands.AlgebraicGeometry.PointManifold.RegularAtlasComparisonProof`;
-Worker 383 is a coauthor of this adaptation. The analytic argument is the
+This proof adapts the Type 0 proof in
+`Langlands.AlgebraicGeometry.PointManifold.RegularAtlasComparisonProof`.
+The analytic argument is the
 same, with the coefficient universe made explicit and all three source
-universes retained independently. The General interfaces were published by
-Worker 94, adapting Worker 274's interfaces. No Type 0 declaration or
+universes retained independently. The General interfaces adapt the
+corresponding Type 0 interfaces. No Type 0 declaration or
 existing General interface is changed.
 
 The proof is internal. It derives the result from the explicit fields of
-`RegularChart` and `RegularAtlas`, the published
+`RegularChart` and `RegularAtlas`, the
 `continuous_regularEvaluation` and `continuous_iff_regularEvaluation`, and
 Mathlib's manifold and `ContDiff` calculus. It follows the route that the
-statement's Markdown and the task context describe. No literature result is
+statement's Markdown describes. No literature result is
 transcribed.

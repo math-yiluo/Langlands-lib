@@ -1,7 +1,5 @@
 # Product-Levi dual-opposite square-integrability sufficiency
 
-Author: Worker 728.
-
 This module proves the consumer statement of
 [`ProductLeviSquareIntegrableSufficiencyStatement`](ProductLeviSquareIntegrableSufficiencyStatement.md):
 

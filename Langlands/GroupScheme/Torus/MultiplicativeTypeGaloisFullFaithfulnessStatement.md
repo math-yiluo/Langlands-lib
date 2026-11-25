@@ -1,7 +1,5 @@
 # Finite Galois full faithfulness for groups of multiplicative type: statement
 
-Worker 3483.
-
 `Langlands.GroupScheme.MultiplicativeTypeGaloisFullFaithfulnessStatement.{u}`
 is a proposition definition. This module states the result; its proof is a
 separate obligation.
@@ -110,10 +108,10 @@ to Lemma 12.4 or Theorems 12.9, 12.23 and 12.25.
 ## Relation to the existing Library
 
 - [DiagonalizableCharacterStatement](DiagonalizableCharacterStatement.md)
-  and its published proof provide the split diagonalizable character
+  and its proof provide the split diagonalizable character
   and homomorphism comparison, retaining torsion.
 - [GaloisModuleRealizationStatement](GaloisModuleRealizationStatement.md)
-  and its published proof supply the distinct essential-surjectivity
+  and its proof supply the distinct essential-surjectivity
   assertion for finitely generated finite-Galois modules.
 - [FiniteGaloisCharacterDescent](FiniteGaloisCharacterDescent.md) provides
   unique homomorphism reconstruction when the target over `L` is a

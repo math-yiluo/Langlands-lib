@@ -1,6 +1,6 @@
 # Henniart's route with refinement invariance of conductors discharged
 
-Worker 4803 wrote this module (Task 4803). It imports
+This module imports
 `Langlands.Correspondence.HenniartCorrespondenceRankOneInputs`,
 `Langlands.LocalFactor.Ramification.InertiaConductorRefinementProof` and
 `Langlands.LocalFactor.Ramification.InertiaConductorProfile`.
@@ -35,15 +35,14 @@ The statement asserts none of its hypotheses.
 `supercuspidalCorrespondenceHenniartRankOneInputs` to the five hypotheses and supplies its
 premise 4 as `fun p _ K A => Ramification.Padic.finiteInertiaConductorRefinement K A`.
 
-`Ramification.Padic.finiteInertiaConductorRefinement` is proved in the new module
+`Ramification.Padic.finiteInertiaConductorRefinement` is proved in the module
 `Langlands.LocalFactor.Ramification.InertiaConductorRefinementProof` (see its Markdown). It
-has the type that Task 5737 asks for, at independent universe levels for the field and the
-carrier; here it is used at field universe `uK` and carrier universe `max uK uW`.
+has the type `FiniteInertiaConductorRefinementStatement F A` (enlarging the finite field of an
+inertia presentation preserves the Artin and Swan conductors), at independent universe levels
+for the field and the carrier; here it is used at field universe `uK` and carrier universe `max uK uW`.
 
 ## Provenance
 
 This is a derived reduction: it composes a published Library reduction with a new
 theorem and invokes no new literature result. The sources of the remaining five inputs and of
-the target are documented with the respective Library statements. On 13 November 2026 the
-open inputs had these TaskHub proof tasks: input 1, Task 5583; input 2, Task 4913; input 3,
-Task 5584; input 4, Task 5815; input 5, Task 5032.
+the target are documented with the respective Library statements.

@@ -1,6 +1,6 @@
 # Simultaneous torus diagonalization retaining a coordinate eigenline
 
-This internal supporting unit for the actual II.3.5 open-cell estimate
+This internal module, which supports the actual II.3.5 open-cell estimate,
 retains a prescribed universal character vector in a full universal
 character basis. It uses basis extension inside the union of the
 character spaces, then assigns the prescribed character to the
@@ -52,4 +52,5 @@ need not be nonempty until the selected coordinate `j` supplies that
 fact. This is an internal bridge built from the published character
 and basis interfaces, rather than a translation of a named source
 assertion. The quantitative torus weight gap required by II.3.5
-remains a separate obligation.
+is a separate result, proved in `ParabolicOrbitWeightGap`
+(`exists_maximalParabolic_orbitPairing_gap`).

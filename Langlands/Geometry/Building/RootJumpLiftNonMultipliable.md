@@ -5,16 +5,16 @@ Module `Langlands.Geometry.Building.RootJumpLiftNonMultipliable`.
 This module defines the predicate `IsRootFiltrationJump` ("`r` is a filtration jump of the
 root `a`") and proves that filtration jumps of a relative root `α` lift to filtration jumps of
 an absolute root restricting to `α`, when `2α` is not a relative root. This is internal
-infrastructure for Task 6577, the proof of
+infrastructure for the proof of
 `Langlands.Geometry.Building.UnramifiedAffineRootRestrictionStatement`. That statement
 formalizes Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), Proposition
 9.4.28. Its existence part (1) says every relative affine root is the restriction of an
-absolute affine root. In Task 6577's reduction an affine root vanishing at a point is a
+absolute affine root. In the reduction `UnramifiedAffineRootRestrictionReduction` an affine root vanishing at a point is a
 filtration jump at value `0`, so the lemma here gives part (1) for non-multipliable `α`.
 KP prove 9.4.28 through parahoric group schemes (their Proposition 9.4.23). The route here
 is different and is not in the book: it uses the Library's description of the restricted
 filtration through coordinates in the upper root groups. The lemmas hold for any field
-extension `K/k` and any real level `r`, more generally than Task 6577 needs (there `K` is
+extension `K/k` and any real level `r`, more generally than that proof needs (there `K` is
 the maximal unramified extension and the level is `0`).
 
 ## Setting
@@ -45,7 +45,7 @@ Provenance: when `φ` is the family of a point `x` of an apartment, this is the 
 KP Definition 6.3.4 (printed pp. 217–218) imposes on an affine functional with derivative `a`
 and value `r` at `x` for it to be an affine root: `U_ψ ⊈ U_{ψ+} · U_{2a}(k)`. The predicate
 names that condition at a single root and level, which is the form used in the zero-jump
-statements of Task 6577's reduction. This module does not prove an identification with the
+statements of that reduction. This module does not prove an identification with the
 Library's `KPApartmentData.affineRoots`.
 
 ## Theorems

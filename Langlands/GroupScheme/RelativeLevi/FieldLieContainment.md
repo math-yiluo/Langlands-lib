@@ -1,7 +1,5 @@
 # Field parabolic containment with a specified common maximal torus
 
-Worker 606.
-
 This is an internal derived ingredient for the arbitrary-base parabolic Lie
 containment theorem. It combines the published fixed-torus field classification,
 finite Galois descent and dynamic Lie containment criterion. It asserts no new

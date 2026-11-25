@@ -1,6 +1,6 @@
 # Integral coroot generation from explicit root-cell and root-line inputs
 
-Worker 151, Task 7564. This module gives a derived, conditional reduction of
+This module gives a derived, conditional reduction of
 `SplitSimplyConnectedCorootSpanStatement` (module
 `Langlands.GroupScheme.SimplyConnected.SplitNecessityStatement`). The target
 follows from three published propositions, which enter only as explicit
@@ -153,7 +153,7 @@ the property at whichever of `χ`, `-χ` is positive gives the claim.
 
 `algClosedGraphProjectionIsomorphisms_of_rootLieLine`. The proof is the
 original one with `weightKernelTrivial_of_rootLieLine hLine` in place of
-`weightKernelTrivial`. With Worker 1444's `E = D.graphDynamicFactorsOfReductive`
+`weightKernelTrivial`. With `E = D.graphDynamicFactorsOfReductive`
 and `F = D.graphFactorProjectionsOfReductive`, the graph group is connected
 reductive (`D.isConnectedReductive`) with maximal torus
 `D.envelope.torusLift` (`E.isMaximalTorus`). For `p = first` and

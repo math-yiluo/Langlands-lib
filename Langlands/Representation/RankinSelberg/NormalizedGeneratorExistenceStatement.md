@@ -67,8 +67,9 @@ nonzero Laurent polynomial as `c * X^m * P`, where `m` is its least exponent,
 coefficient `1`. Powers of `X` and nonzero complex scalars are Laurent units.
 It follows that `P⁻¹ = c * X^m * g` generates the same Laurent span.
 
-This paragraph explains the derived algebraic argument intended for a
-separate proof. It is not an implemented Lean proof in this module.
+This paragraph explains the derived algebraic argument of the separate proof,
+`normalizedGeneratorExistence` in `NormalizedGeneratorExistenceProof`. It is
+not an implemented Lean proof in this module.
 `zetaSpan_isPrincipal` and `exists_rationalGenerator` supply ordinary
 principality, while `IsNormalizedGenerator.unique` compares two already
 normalized generators. Those existing results do not already prove the
@@ -99,10 +100,9 @@ hypotheses, the uniqueness assertion, or independence of `j`.
 Registered source: `jpss-1983-rankin-selberg`. Readable original:
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`.
 SHA256: `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
-Worker 352 visually read printed pp.392–394 (zero-based PDF indices 26–28)
-and verified this fingerprint. No source erratum note was found in the
+Printed pp.392–394 (zero-based PDF indices 26–28) were read visually and
+this fingerprint was verified. No source erratum note was found in the
 checked project, Library, or literature errata locations.
 
-Worker 352 authored this statement and its documentation. The Lean environment
-is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, with Lean 4.34.0 and Mathlib commit
+The pinned Lean environment has Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

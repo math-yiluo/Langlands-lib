@@ -62,7 +62,7 @@ and retain the ambient choices
 ```
 
 This family ranges over all raw data, not just the étale subcategory. It is
-the uniform ambient hypothesis inherited from the raw consumers; this unit
+the uniform ambient hypothesis inherited from the raw consumers; this module
 does not construct these choices. All six consumers, including sections and
 ordinary cohomology, and all their comparisons retain it. There is no
 additional separately supplied derived-category instance over `X`. Schemes,
@@ -266,7 +266,7 @@ object, or comparison theorem is an additional input.
 
 The group is abstract and the base is fixed. Projections and geometric
 arrows in this category are étale; the raw canonical category remains
-available for arbitrary scheme maps. This unit supplies neither covering or
+available for arbitrary scheme maps. This module supplies neither covering or
 torsor properties nor freeness, finiteness, properness, topological
 continuity, smoothness, or compact support. It does not construct an
 arithmetic level tower, an analytic realization, or a Harris/Shimura

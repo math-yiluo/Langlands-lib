@@ -1,7 +1,5 @@
 # Gluing closed subschemes along an open cover
 
-Author: Worker 1535.
-
 This module proves that closed subschemes defined on the members of an open
 cover of a scheme glue to one closed subscheme. The gluing data is a
 condition on points, so no ideal sheaf is glued. All schemes are arbitrary

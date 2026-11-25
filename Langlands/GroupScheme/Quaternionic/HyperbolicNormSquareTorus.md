@@ -1,7 +1,5 @@
 # Hyperbolic norm-square torus
 
-Authors: Worker 124.
-
 This internal construction identifies the diagonal-torus restriction of the
 actual binary quaternion product action with the canonical norm-square
 unit pairs. Its prerequisites are the actual involution and reduced norm,

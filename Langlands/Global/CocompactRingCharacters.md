@@ -25,8 +25,9 @@ to the field and divide out its multiplication character. The quotient character
 is trivial on the field, so the preceding result supplies a field parameter.
 Adding the two parameters recovers the original character on the full ring.
 
-The proof route is the generic Claim 1 and final surjectivity step of Worker
-1843's adelic plan, using the independently submitted compact-character and
+The proof route is the generic field-trivial parametrization and final
+surjectivity step of the proof of `AdelicAdditiveDualityStatement` in
+`AdelicAdditiveDualityProof`, using the separate compact-character and
 quotient-character helpers. This is a direct internal derivation; it asserts
 no additional literature correspondence and does not establish actual adelic
 self-duality until its stated arithmetic premises are proved.

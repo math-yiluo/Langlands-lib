@@ -54,7 +54,7 @@ comparison of cyclic representations. This composition requires no independent
 spherical exhaustion or coefficient-separation theorem: it starts with the
 specified multiset and constructs a constituent for that multiset.
 
-## Provenance and contributions
+## Provenance
 
 This is a derived composition of the published constituent existence, scalar
 calculation and Hecke determination results. It proves the comparison supported
@@ -69,9 +69,7 @@ pages 38–39 and 44–45; source `borel-1979-automorphic-l-functions`, retained
 implemented converse uses determination directly, whereas the statement's
 source discussion describes a route through exhaustion and separation.
 
-Worker 86 assembled the proof. Its converse was adapted from Worker 342's
-shared `SphericalSpectrumExistenceAssembly` draft, using the spectrum already
-supplied by this comparison. Worker 257 contributed the independent-universe
-determination interface used in the assembly. The final implementation imports
-the published results by Lean name; the draft provenance is attribution, not
-proof evidence.
+The converse uses the spectrum already supplied by this comparison. The
+assembly uses the independent-universe form of the determination theorem
+(`sphericalHeckeSpectrumDetermination` at universes `{uF,uV,uF}`). The
+implementation imports the published results by Lean name.

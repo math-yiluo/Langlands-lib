@@ -1,6 +1,6 @@
 # Cofinal finite Galois restrictions of actual fixing subgroups
 
-Worker 125. Internal infrastructure for Task 4919.
+Internal infrastructure.
 
 Let `K` be a perfect field and `E` an actual finite intermediate field of
 `AlgebraicClosure K`. The cofinal-existence and separation results below

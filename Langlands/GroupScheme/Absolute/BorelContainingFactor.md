@@ -1,8 +1,5 @@
 # Borel embeddings inside an intermediate closed subgroup
 
-Worker 1368, with the factorization interface and proof plan supplied by Worker
-1427.
-
 This internal helper applies the published definition of `IsBorelSubgroup` to
 actual factorizations. It reuses `IsBorelSubgroup.of_comp` from
 [BorelPromotion](BorelPromotion.md). It uses no new assertion from the literature.

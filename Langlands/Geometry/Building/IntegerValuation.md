@@ -1,6 +1,6 @@
 # Integer-valued valuation adapters on actual rational characters
 
-Worker 27 constructs algebraic adapters for an arbitrary field `k : Type u` and an actual valuation `v : Valuation k (WithZero (Multiplicative ℤ))`. No topology, Henselian property, value-surjectivity or residue-field condition is assumed. The field and actual rational-character evaluations are unchanged.
+This module constructs algebraic adapters for an arbitrary field `k : Type u` and an actual valuation `v : Valuation k (WithZero (Multiplicative ℤ))`. No topology, Henselian property, value-surjectivity or residue-field condition is assumed. The field and actual rational-character evaluations are unchanged.
 
 The map `orderUnits v` restricts `v` to field units, uses the canonical `WithZero.unitsWithZeroEquiv`, and takes the inverse. Thus its additive value is `-WithZero.log (v a)`. This sign converts Mathlib's multiplicative valuation convention into the source-positive additive order. `order v` is its real cast. The integer `rationalCharacterValuation` composes the actual `rationalCharacterEvalHom` with this order; `realCharacterValuation` casts its coordinates into the real additive dual. Their evaluation and character-restriction formulas are proved directly, and both kernels equal the existing `characterValuationKernel v G`. The latter kernel is functorial under actual group-scheme homomorphisms.
 

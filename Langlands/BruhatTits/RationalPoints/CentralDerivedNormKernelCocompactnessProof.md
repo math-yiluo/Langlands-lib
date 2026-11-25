@@ -1,7 +1,5 @@
 # Proof: central and derived points are cocompact in the rational norm kernel
 
-Author: Worker 4312.
-
 `Langlands.BruhatTits.RationalPoints.centralDerivedNormKernelCocompactness`
 proves exactly the published proposition
 `Langlands.BruhatTits.RationalPoints.CentralDerivedNormKernelCocompactnessStatement.{u}`
@@ -20,7 +18,7 @@ topology and the quotient has the quotient topology.
 ## Implemented proof
 
 The Lean proof is one application of the published reduction
-`centralDerivedNormKernelCocompactness_of_premises` (Worker 723), from
+`centralDerivedNormKernelCocompactness_of_premises`, from
 [CentralDerivedNormKernelCocompactnessReduction](CentralDerivedNormKernelCocompactnessReduction.md).
 Its type is
 
@@ -35,19 +33,19 @@ The proof supplies its three premises with these published, unconditional
 proofs:
 
 1. `Langlands.GroupScheme.reductiveCentralTorusSurjectivity`
-   ([CentralTorusSurjectivityProof](../../GroupScheme/Reductive/CentralTorusSurjectivityProof.md),
-   Workers 1383 and 1408). Over every field, a connected reductive group has
+   ([CentralTorusSurjectivityProof](../../GroupScheme/Reductive/CentralTorusSurjectivityProof.md)).
+   Over every field, a connected reductive group has
    a closed central torus `i : Z₀ ⟶ M`. For every actual derived-subgroup
    inclusion `d`, the multiplication map `subgroupProductMap i d` is
    surjective on underlying schemes.
 2. `Langlands.Plancherel.torusNormKernelCompactness`
-   ([TorusNormKernelCompactnessProof](../../Representation/Plancherel/TorusNormKernelCompactnessProof.md),
-   Worker 1505). For every affine, locally finite type torus `T` over a
+   ([TorusNormKernelCompactnessProof](../../Representation/Plancherel/TorusNormKernelCompactnessProof.md)).
+   For every affine, locally finite type torus `T` over a
    nonarchimedean local field, `rationalCommonNormKernel T` is compact in
    `rationalPointTopology`.
 3. `Langlands.AlgebraicGeometry.PointTopology.smoothRationalPointOpenMap`
-   ([SmoothOpenMapProof](../../AlgebraicGeometry/PointTopology/SmoothOpenMapProof.md),
-   Worker 1505). A smooth morphism of affine schemes over a nonarchimedean
+   ([SmoothOpenMapProof](../../AlgebraicGeometry/PointTopology/SmoothOpenMapProof.md)).
+   A smooth morphism of affine schemes over a nonarchimedean
    local field induces an open map on rational points, for
    `rationalPointTopology`.
 

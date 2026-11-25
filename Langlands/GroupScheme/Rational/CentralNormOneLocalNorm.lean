@@ -1,5 +1,5 @@
-import Langlands.ClassField.Global.TensorNormPrimitiveBaseChange
-import Langlands.ClassField.Global.CompletionTower
+import Langlands.ClassFieldTheory.Global.TensorNormPrimitiveBaseChange
+import Langlands.ClassFieldTheory.Global.CompletionTower
 import Langlands.Global.Arithmetic.ArchimedeanAlgebraicClosure
 import Langlands.Global.Arithmetic.CompletionTensorFullDegree
 import Langlands.GroupScheme.Rational.CentralNormOneCocycleLift
@@ -18,7 +18,7 @@ open scoped Langlands.Global.AdelicFunctoriality.InfiniteExtension
 namespace Langlands.GroupScheme.IsCentralIsogeny
 
 open Langlands.Algebra Langlands.Global Langlands.Global.AdelicFunctoriality
-open Langlands.ClassField.Global.TensorUnitShapiro
+open Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 open Langlands.LocalClassField
 open KummerCocycle
 
@@ -121,7 +121,7 @@ theorem isNormMulPower_of_normOneKernel_finite [Algebra B L] [IsScalarTower F B 
     let M := t.adicCompletion L
     let : FiniteDimensional K M := FiniteExtension.local_finite v t
     let : IsGalois K M := isGalois_adicCompletion v t
-    let : IsScalarTower K D M := ClassField.Global.CompletionTower.isScalarTower_completion v w t
+    let : IsScalarTower K D M := ClassFieldTheory.Global.CompletionTower.isScalarTower_completion v w t
     let : CharZero K := charZero_of_injective_algebraMap (algebraMap F K).injective
     exact hf.isNormMulPower_of_normOneKernel_baseChange (M := M) n e d a ha hδ hz hN
       (finiteCompletionTensorEquiv v w (h₂.trans hB.symm)) h
@@ -157,7 +157,7 @@ end Langlands.GroupScheme.IsCentralIsogeny
 
 namespace Langlands.GroupScheme
 
-open Langlands.Algebra Langlands.Global Langlands.ClassField.Global.TensorUnitShapiro
+open Langlands.Algebra Langlands.Global Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 open KummerCocycle
 open IsCentralIsogeny
 

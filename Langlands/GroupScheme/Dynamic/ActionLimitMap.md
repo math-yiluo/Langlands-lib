@@ -36,6 +36,6 @@ point into an identity-limit point and its fixed limit.
 The proof adapts the published conjugation results in `Dynamic.Uniqueness` and
 `Dynamic.LimitMap` to the actual abstract action. Its mathematical inputs are
 those existing affine-line constructions, separated-target extension uniqueness,
-and action laws; it invokes no additional external theorem. This unit asserts
+and action laws; it invokes no additional external theorem. This module asserts
 no geometric realization, smoothness, Lie-weight comparison, or cyclic-tail
 comparison.

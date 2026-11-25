@@ -1,6 +1,6 @@
 # Actual families over affine target charts
 
-This internal supporting unit constructs the actual algebraic space over a
+This internal supporting module constructs the actual algebraic space over a
 target chart V associated to a morphism f of algebraic spaces over S. It first
 takes the actual pullback of f along the chart and then applies
 `SchemeTargetRebase.space` to its second projection. The construction assumes
@@ -28,5 +28,5 @@ surjectivity and local finite presentation transfer along this isomorphism.
 
 All content is derived from existing Library constructions, their atlas and
 fibre comparisons, and affine scheme reconstruction. No external assertion
-is introduced. The unit does not prove eventual connectedness along limits
+is introduced. The module does not prove eventual connectedness along limits
 or the full eight-property limit-descent statement.

@@ -2,7 +2,7 @@
 
 Module `Langlands.Geometry.Analytic.KeyLemma.RationalTestTransfer`, namespace
 `Langlands.Analytic.PresentedAffinoidAlgebra.RationalChart`. This module is a helper for the proof of
-`QuasiEtaleAutomorphismLiftStatement`, the existence half of Berkovich's Key Lemma 7.2, in Task 5895.
+`QuasiEtaleAutomorphismLiftStatement`, the existence half of Berkovich's Key Lemma 7.2.
 
 ## Setting
 

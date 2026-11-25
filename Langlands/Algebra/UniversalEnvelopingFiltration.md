@@ -1,6 +1,6 @@
 # Degree filtration of the universal enveloping algebra
 
-Author: Worker 94. This is an internal algebraic construction from Mathlib's
+This is an internal algebraic construction from Mathlib's
 actual universal enveloping algebra and submodule multiplication. No PBW
 isomorphism is assumed.
 

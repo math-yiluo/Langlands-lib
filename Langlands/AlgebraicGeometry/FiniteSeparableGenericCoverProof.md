@@ -3,7 +3,7 @@
 `finiteSeparableGenericCover` proves the published proposition
 `FiniteSeparableGenericCover` in an arbitrary common universe `u`.
 It uses the published `PrescribedGenericCoverData.construct` construction
-from `FiniteSeparableGenericCoverData`, developed by Worker 105.
+from `FiniteSeparableGenericCoverData`.
 The statement and all of its imports are unchanged.
 
 For an arbitrary irreducible scheme `Y`, a specified whole-space generic

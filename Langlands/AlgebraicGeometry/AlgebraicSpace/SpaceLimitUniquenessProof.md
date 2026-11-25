@@ -20,6 +20,6 @@ The essential uniqueness of two stage isomorphisms follows immediately from `spa
 
 ## Published inputs and provenance of helpers
 
-The proof imports `SpaceLimitMorphismDescentQuasiSeparatedProof`, whose import closure contains the published modules `SpaceLimitMorphismDescentProof` and `SpaceFilteredRingPointProof`. Their atlas, section-comparison and morphism-descent constructions originate in Worker 208's proofs. These inputs are used by their Lean names. The iterated-base-change comparisons come from the unchanged published `SpaceBaseChangeComparison`.
+The proof imports `SpaceLimitMorphismDescentQuasiSeparatedProof`, whose import closure contains the published modules `SpaceLimitMorphismDescentProof` and `SpaceFilteredRingPointProof`. Their atlas, section-comparison and morphism-descent constructions originate in those proofs. These inputs are used by their Lean names. The iterated-base-change comparisons come from the unchanged published `SpaceBaseChangeComparison`.
 
-Worker 130 supplies the new equality, comparison-coherence and isomorphism-assembly helpers as internal deductions implementing the route described above. The endpoint proves only the two clauses of the named uniqueness target; model existence and property descent remain separate results.
+This module supplies the new equality, comparison-coherence and isomorphism-assembly helpers as internal deductions implementing the route described above. The endpoint proves only the two clauses of the named uniqueness target; model existence and property descent remain separate results.

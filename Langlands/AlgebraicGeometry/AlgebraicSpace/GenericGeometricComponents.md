@@ -50,9 +50,10 @@ unspecified component model is assumed.
 
 `exists_open_geometricFibreComponentCount` specializes to an irreducible
 Noetherian affine base and applies `ENat.card_congr`. The resulting function
-is exactly `geometricFibreComponentCount` from the host statement, including
-all its values. Empty fibres require no exception.
+is exactly `geometricFibreComponentCount` (module
+`GeometricFibreComponentGeometry`), the count in
+`GeometricFibreComponentsConstructibleStatement`, including all its values. Empty fibres require no exception.
 
 Noetherian induction on closed base subschemes and approximation over
-arbitrary rings remain separate obligations for the unrestricted host target.
-The host statement and its import closure are unchanged.
+arbitrary rings remain separate obligations for the unrestricted statement.
+That statement and its import closure are unchanged.

@@ -61,17 +61,17 @@ local instance (S : X.V.atlas.OriginalChartDomain) :
 local instance (S : X.V.atlas.OriginalChartDomain) :
     ContinuousConstSMul (domainStabilizer X S) S where
   continuous_const_smul g :=
-    ((X.ρ (g : G)).baseMap.continuous.comp continuous_subtype_val).subtype_mk _
+    ((X.ρ (g : G)).asHom.baseMap.continuous.comp continuous_subtype_val).subtype_mk _
 
 theorem compactOpen_smul_map (φ : D → E) (g : G)
     (s : CompactOpenOriginalDomainSection X.V D) :
     g • CompactOpenOriginalDomainSection.map φ s =
       CompactOpenOriginalDomainSection.map φ (g • s) := by
   apply CompactOpenOriginalDomainSection.ext
-  exact OriginalDomainSection.transport_map (X.ρAut g) φ _
+  exact OriginalDomainSection.transport_map (X.ρAut g).asIso φ _
 
 variable [TopologicalSpace G] [IsTopologicalGroup G]
-  (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).baseMap p.2))
+  (hX : Continuous (fun p : G × X.V.space => (X.ρ p.1).asHom.baseMap p.2))
 
 /-- Coefficient postcomposition is an actual continuous equivariant morphism. -/
 def compactOpenCoefficientMap (φ : D → E) :
@@ -187,12 +187,12 @@ theorem finiteSieveGlue_fixed (U : OpenSubgroup G) (g : G)
       finiteSieveLocalSections X p T f hf hC hO i :=
     (mem_finiteSectionOpenStabilizer X hX U _ g).mp hg |>.2
   have hdomains (i : ι) :
-      (isoOriginalDomain (X.ρAut g) (T i) : Set X.V.space) = (T i : Set X.V.space) :=
+      (isoOriginalDomain (X.ρAut g).asIso (T i) : Set X.V.space) = (T i : Set X.V.space) :=
     congrArg (fun s : CompactOpenOriginalDomainSection X.V D =>
       (s.toOriginalDomainSection.domain : Set X.V.space)) (hlocals i)
-  have hdomain : isoOriginalDomain (X.ρAut g) S = S := by
+  have hdomain : isoOriginalDomain (X.ρAut g).asIso S = S := by
     apply SetLike.coe_injective
-    change isoHomeomorph (X.ρAut g) '' (S : Set X.V.space) = (S : Set X.V.space)
+    change isoHomeomorph (X.ρAut g).asIso '' (S : Set X.V.space) = (S : Set X.V.space)
     rw [← hcover, Set.image_iUnion]
     exact iUnion_congr hdomains
   apply CompactOpenOriginalDomainSection.ext
@@ -206,7 +206,7 @@ theorem finiteSieveGlue_fixed (U : OpenSubgroup G) (g : G)
     let k : domainStabilizer X (T i) := ⟨g, hd⟩
     let q : CompactAction.DiscreteLocallyConstant (T i) D :=
       ⟨(p (f i) (hf i) : LocallyConstant (T i) D)⟩
-    have hpair : ((action X D).ρ g).hom
+    have hpair : ((action X D).ρ g).asHom.hom
         (⟨T i, q.toLocallyConstant⟩ : OriginalDomainSection X.V D) =
           ⟨T i, q.toLocallyConstant⟩ :=
       congrArg CompactOpenOriginalDomainSection.toOriginalDomainSection (hlocals i)

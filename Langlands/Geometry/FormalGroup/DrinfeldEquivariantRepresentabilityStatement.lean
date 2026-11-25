@@ -42,7 +42,7 @@ def DrinfeldEquivariantRepresentabilityStatement {π : 𝒪[K]}
         (Nilp.quotientO 𝒪[K] B).comp (e.hom.app B q).2 =
           q.residueMap.comp (IsScalarTower.toAlgHom 𝒪[K] (Integers K) (Residue K))) ∧
       ∀ g : GL (Fin (reducedDegree K D)) K × Dˣ,
-        (DrinfeldFramedAtlas.unramifiedAction Φ c g).hom ≫ e.hom =
-          e.hom ≫ (nilpDeligneCompletedDivisionAction (D := D) Φ.property.1 g).hom
+        (DrinfeldFramedAtlas.unramifiedAction Φ c g).asIso.hom ≫ e.hom =
+          e.hom ≫ (nilpDeligneCompletedDivisionAction (D := D) Φ.property.1 g).asIso.hom
 
 end Langlands.FormalGroup.LocalDivision

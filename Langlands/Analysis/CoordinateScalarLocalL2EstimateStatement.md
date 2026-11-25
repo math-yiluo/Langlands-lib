@@ -98,6 +98,3 @@ The statement neither changes the norm on a general space nor proves a
 coordinate transport from one. Interpolation, cutoffs, radius-gap
 factors, factorial bounds, analyticity and automorphic growth are
 separate obligations.
-
-Worker 94 authored the statement and the initial exposition. Worker 881
-revised the exposition for publication.

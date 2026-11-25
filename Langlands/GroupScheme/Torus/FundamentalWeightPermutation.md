@@ -1,7 +1,5 @@
 # Fundamental weights from an integral simple-coroot basis
 
-Author: Worker 1642.
-
 This derived lattice construction supplies another elementary step in the
 fundamental-weight route to the split-torus-centralizer cocenter theorem. Its
 inputs are explicit: a root datum, a root-pairing base, and integral generation

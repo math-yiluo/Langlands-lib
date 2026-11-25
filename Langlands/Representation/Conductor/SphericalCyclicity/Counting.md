@@ -1,7 +1,5 @@
 # Counting tuples by the position of their last nonzero entry
 
-Author: Worker 392.
-
 This helper module of the proof of
 `Langlands.Conductor.OrderedUnramifiedSphericalCyclicityStatement` (see
 [`OrderedUnramifiedSphericalCyclicity`](../OrderedUnramifiedSphericalCyclicity.md))

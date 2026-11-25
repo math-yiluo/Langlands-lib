@@ -1,7 +1,6 @@
 # Proof of Renard VI.4.2 (after the Proposition): right H(G, ρ)-modules and the adjunction
 
 Module `Langlands.Representation.CuspidalSupport.RationalNormKernelHeckeModuleProof`.
-Author: Worker 130 (task `31647676-0fa8-4bfb-984c-ad3601495dfe`).
 
 `Langlands.CuspidalSupport.rationalNormKernelHeckeModule` proves the published
 `Langlands.CuspidalSupport.RationalNormKernelHeckeModuleStatement.{uF, uV}` for arbitrary

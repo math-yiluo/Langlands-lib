@@ -1,10 +1,10 @@
 # Unramified base-change Satake parameters of Kottwitz's unitary similitude groups
 
-Author: Worker 8. Module `Langlands.Shimura.Unitary.KottwitzBaseChange`, namespace
-`Langlands.Shimura.KottwitzUnramified`. This is item 4 of Task 5424. It builds on the
-standard unramified charts of `KottwitzChart` (item 1) and on the principal-series
+Module `Langlands.Shimura.Unitary.KottwitzBaseChange`, namespace
+`Langlands.Shimura.KottwitzUnramified`. It builds on the
+standard unramified charts of `KottwitzChart` and on the principal-series
 parameters, normalized position values and Weyl equivalence of
-`KottwitzPrincipalSeries` (item 2).
+`KottwitzPrincipalSeries`.
 
 For a place `w` of the CM field `K` above a good prime `p`, the module defines the Satake
 parameter at `w` of the unramified base change of an unramified representation `π_p` of
@@ -74,7 +74,7 @@ square root of `p` in `L`. `ξ : T →* Lˣ` is a character of the torus. Positi
   `{β_k^{±1}}` for the unitary parameters `β_k` (`k < rev k`), together with `1` at the
   middle position when `n` is odd. This is the standard unramified base change from the
   quasi-split unitary group to `GL_n(K_w)`.
-- `baseChangeParameter_of_weylEquivalent`: Weyl-equivalent characters (item 2) have the
+- `baseChangeParameter_of_weylEquivalent`: Weyl-equivalent characters (`KottwitzPrincipalSeries`) have the
   same base-change parameters. Under a Weyl element the position values are permuted
   (`positionValue_of_weyl`), and the multiset is invariant.
 - `positionCocharacter_placeConj`: `λ_{w̄, rev k} = -λ_{w,k}`. With `f_{w̄} = f_w` it gives
@@ -118,15 +118,15 @@ square root of `p` in `L`. `ξ : T →* Lˣ` is a character of the torus. Positi
 ## Scope and provenance
 
 This is a derived, concrete presentation of the unramified base change for the groups of
-item 1. The source normalization is that of Clozel (5.2) and the published `GL_n` spectra.
+`KottwitzChart`. The source normalization is that of Clozel (5.2) and the published `GL_n` spectra.
 Not proved here: the Satake computation behind `SplitPlaceHeckeNormalization`, the global
 base-change theorems of Clozel, Harris–Labesse or Harris–Taylor (automorphic statements
-owned elsewhere), and existence or uniqueness of principal-series parameters (item 2).
+outside this module), and existence or uniqueness of principal-series parameters (`KottwitzPrincipalSeries`).
 The parameters are defined from principal-series parameters. No structure field stores a
 parameter, and no Satake or Langlands correspondence is assumed.
 
-Formal dependencies: `Langlands.Shimura.Unitary.KottwitzPrincipalSeries` (item 2),
-`Langlands.Shimura.Unitary.KottwitzChart` (item 1),
+Formal dependencies: `Langlands.Shimura.Unitary.KottwitzPrincipalSeries`,
+`Langlands.Shimura.Unitary.KottwitzChart`,
 `Langlands.Representation.Unramified.HeckeOperators` (`Eigenvalues`,
 `elementaryCoefficient`), `Langlands.Shimura.LevelHecke` (`heckeOperator`),
 `Langlands.Shimura.Levels` (`CompactOpenLevel`), and Mathlib (`Sym`, `Fin.revPerm`,

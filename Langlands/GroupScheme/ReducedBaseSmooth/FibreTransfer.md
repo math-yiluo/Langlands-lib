@@ -1,7 +1,5 @@
 # Transport of smooth residue fibres along base change and open immersions
 
-Author: Worker 9.
-
 Helper module for the proof of
 `Langlands.GroupScheme.ReducedBaseConnectedFibreSmoothStatement` (SGA 3, Exposé VI_B,
 Corollaire 4.4). It shows that the hypothesis "the residue fibre is smooth of relative

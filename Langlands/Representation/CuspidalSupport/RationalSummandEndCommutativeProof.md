@@ -1,7 +1,5 @@
 # Proof of Renard VI.4.3, Corollary (ii): End(ind_{⁰G}^G ρ) is commutative exactly when Res π is multiplicity-free
 
-Author: Worker 1789.
-
 `Langlands.CuspidalSupport.rationalSummandEnd_commutative` proves the published
 `Langlands.CuspidalSupport.RationalSummandEndCommutativeStatement.{uF, uV}` with both
 universes arbitrary. Source: David Renard, *Représentations des groupes réductifs

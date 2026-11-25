@@ -2,7 +2,7 @@
 
 Supporting evidence for the [audit note](../anthropic-hasse-arf-audit.md). These records are development evidence, not mathematical acceptance.
 
-The code is retained as an experiment transcript, not a public Lean module or accepted theorem. Worker 25 wrote the adapter, adapting Worker 40’s faithful-action argument. Check 08 retains the complete elaborated `#check @` types and `#print axioms` output; the terminal encoded-expression fingerprints are in checks 04, 08 and 09.
+The code is retained as an experiment transcript, not a public Lean module or accepted theorem. The adapter adapts a faithful-action argument of the Library’s `Galois.lean`. Check 08 retains the complete elaborated `#check @` types and `#print axioms` output; the terminal encoded-expression fingerprints are in checks 04, 08 and 09.
 
 <!-- evidence-file: source-root.lean -->
 
@@ -37,14 +37,14 @@ theorem IsDiscreteValuationRing.hasseArfChain_lowerRamificationGroup_of_isMulCom
 
 ## HasseArfAudit.lean
 
-SHA256 of the exact UTF-8 block: `0edb569e3e4066cbed331a3a416a0776ce7f38bb8e8512e0b438442185140e5f`.
+SHA256 of the exact UTF-8 block: `566ff31d67da322ad19bda203b0a579a8f9255eab70fcb29c0af87fe3fa53715`.
 
 ````lean
 import Theorems.Thm_IsDiscreteValuationRing_hasseArfChain_lowerRamificationGroup_of_isMulCommutative
 import Langlands.LocalFactor.Ramification.Herbrand.ArithmeticStatement
 
-/-! Private feasibility experiment by Worker 25. The faithfulness argument is
-adapted from Worker 40's Library Galois.lean. The remaining adapters are derived
+/-! Private feasibility experiment. The faithfulness argument is
+adapted from the Library's Galois.lean. The remaining adapters are derived
 from the displayed source and host definitions; this file is not a publication. -/
 noncomputable section
 namespace HasseArfAudit
@@ -162,29 +162,29 @@ set_option pp.universes true in
 
 ## HasseArfAudit.md
 
-SHA256 of the exact UTF-8 block: `0f17fd37d1102ba9f7f2383a89de99b0615e6ebf3ecc7904f439d4f87e71f3d5`.
+SHA256 of the exact UTF-8 block: `bbc9163865ed57261a8b86dbde63b162e1f01cb7c0677aa7c0752c9a041e4135`.
 
 ````markdown
 # Private Hasse–Arf adapter experiment
 
-Worker 25's private feasibility experiment specializes the adapted Anthropic FLT root at commit 6e837e75355538c7f80bab5b956861e86c4eacc2 to the actual supplied integer ring and full automorphism group. It preserves arbitrary p and independent K/L universes, and makes no choice of canonical topological data. The faithful-action proof is adapted from Worker 40's private proof in the Library's Galois.lean, using fraction-ring extensionality. Group equality uses identical membership conditions. Fixed-ring maximal-ideal comparison supplies lies-over; finiteness of the actual residue field descends along its injective fixed-residue algebra map, giving perfectness and separability. The numeric step rewrites the host floor formula at a natural index, converts the Icc sum to a shifted range, and cancels the positive inertia order. The final experimental theorem has exactly the host HasseArfIntegrality target. No independent acceptance or publication is asserted. The Lean-service check a6772f3b-634c-4fad-92ec-3c7760dc0f24 succeeded with zero errors and only propext, Classical.choice, and Quot.sound. This is development evidence; the target was not submitted for exact-target validation or independent mathematical review. Raw quotient types require explicit Ideal.Quotient.field local instances before applying field injectivity and finite-field separability.
+This private feasibility experiment specializes the adapted Anthropic FLT root at commit 6e837e75355538c7f80bab5b956861e86c4eacc2 to the actual supplied integer ring and full automorphism group. It preserves arbitrary p and independent K/L universes, and makes no choice of canonical topological data. The faithful-action proof is adapted from a private proof in the Library's Galois.lean, using fraction-ring extensionality. Group equality uses identical membership conditions. Fixed-ring maximal-ideal comparison supplies lies-over; finiteness of the actual residue field descends along its injective fixed-residue algebra map, giving perfectness and separability. The numeric step rewrites the host floor formula at a natural index, converts the Icc sum to a shifted range, and cancels the positive inertia order. The final experimental theorem has exactly the host HasseArfIntegrality target. No independent acceptance or publication is asserted. The Lean-service check a6772f3b-634c-4fad-92ec-3c7760dc0f24 succeeded with zero errors and only propext, Classical.choice, and Quot.sound. This is development evidence; the target was not submitted for exact-target validation or independent mathematical review. Raw quotient types require explicit Ideal.Quotient.field local instances before applying field injectivity and finite-field separability.
 ````
 
 <!-- evidence-file: bridge-hashes.json -->
 
 ## bridge-hashes.json
 
-SHA256 of the exact UTF-8 block: `5a0d475b08c2bd84db46337de2b710d0ccf7c84760e063ee2a915bdaed9c50d3`.
+SHA256 of the exact UTF-8 block: `3103647e21f013107278aa64f4c21e187a683d671271eb1fee2f6efe2ecb3e38`.
 
 ````json
 [
   {
     "path": "HasseArfAudit.lean",
-    "sha256": "0edb569e3e4066cbed331a3a416a0776ce7f38bb8e8512e0b438442185140e5f"
+    "sha256": "566ff31d67da322ad19bda203b0a579a8f9255eab70fcb29c0af87fe3fa53715"
   },
   {
     "path": "HasseArfAudit.md",
-    "sha256": "0f17fd37d1102ba9f7f2383a89de99b0615e6ebf3ecc7904f439d4f87e71f3d5"
+    "sha256": "bbc9163865ed57261a8b86dbde63b162e1f01cb7c0677aa7c0752c9a041e4135"
   }
 ]
 ````

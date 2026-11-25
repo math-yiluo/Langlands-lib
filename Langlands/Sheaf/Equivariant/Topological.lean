@@ -70,12 +70,14 @@ variable {G X A}
 def sectionAction (F : (ActionOpens G X)ᵒᵖ ⥤ A) : Action A G where
   V := F.obj (op ActionOpens.top)
   ρ :=
-    { toFun g := F.map (ActionOpens.sectionArrow g).op
+    { toFun g := End.of (F.map (ActionOpens.sectionArrow g).op)
       map_one' := by
+        apply End.ext
         change F.map (ActionOpens.sectionArrow (1 : G)).op = 𝟙 _
         rw [ActionOpens.sectionArrow_one]
         exact F.map_id _
       map_mul' g h := by
+        apply End.ext
         change F.map (ActionOpens.sectionArrow (g * h)).op =
           F.map (ActionOpens.sectionArrow h).op ≫
             F.map (ActionOpens.sectionArrow g).op
@@ -98,12 +100,14 @@ variable (hU : ∀ h : H, ∀ x ∈ U.openSet, (h : G) • x ∈ U.openSet)
 def invariantSectionAction (F : (ActionOpens G X)ᵒᵖ ⥤ A) : Action A H where
   V := F.obj (op U)
   ρ :=
-    { toFun h := F.map (ActionOpens.invariantArrow H U hU h).op
+    { toFun h := End.of (F.map (ActionOpens.invariantArrow H U hU h).op)
       map_one' := by
+        apply End.ext
         change F.map (ActionOpens.invariantArrow H U hU 1).op = 𝟙 _
         rw [ActionOpens.invariantArrow_one]
         exact F.map_id _
       map_mul' g h := by
+        apply End.ext
         change F.map (ActionOpens.invariantArrow H U hU (g * h)).op =
           F.map (ActionOpens.invariantArrow H U hU h).op ≫
             F.map (ActionOpens.invariantArrow H U hU g).op

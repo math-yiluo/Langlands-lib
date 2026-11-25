@@ -1,17 +1,16 @@
 # Group-scheme ledger, family 4: absolute structure over fields
 
-For the additional dynamic statement publications and proof owners as of
-13 November 2026, see [the dated dynamic update](dynamic-relative-progress.md).
+For the additional dynamic statements as of 13 November 2026 and their proofs, see
+[the dynamic update](dynamic-relative-progress.md).
 It supplements rows C3, C7 and C8; the labels below describe the original snapshot.
 
 The [absolute coverage update](absolute-coverage-2026-11-13.md) records the
 published proofs for C13, E3 and the first two interfaces of F. Its
-[21 November section](absolute-coverage-2026-11-13.md#verified-proof-publications-21-november-2026)
+[section on C11 and the third interface of F](absolute-coverage-2026-11-13.md#proofs-of-c11-and-of-the-third-interface-of-f)
 records the exact independent proofs for C11 and the third interface of F.
 
-Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
-ledger for family 4 of that program's contract. Family 4 covers:
+This note, dated 10 November 2026, is the source-to-declaration
+ledger for family 4 of the algebraic and reductive group-scheme program. Family 4 covers:
 
 - maximal tori and Borel subgroups over a field;
 - roots, root data on the actual character and cocharacter lattices, and Weyl groups;
@@ -19,8 +18,7 @@ ledger for family 4 of that program's contract. Family 4 covers:
 - parabolic subgroups, parabolic quotients and the absolute Bruhat covering;
 - the determinant of the adjoint action on `Lie U(λ)`.
 
-It describes Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0` and environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. All Lean names are in `Langlands.GroupScheme`
+It describes Library commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`. All Lean names are in `Langlands.GroupScheme`
 unless a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that
 commit. "Field group" means a group scheme over `Spec k` for a field `k : Type u`.
 "Connected reductive" means `IsConnectedReductive` (`Reductive/Basic`): smooth, affine
@@ -33,26 +31,23 @@ the program and is not listed here.
 ## Status codes and evidence
 
 Each row gives the source assertion with its locator, the exact Lean statement and its
-hypotheses, a status, the evidence, and the owner task.
+hypotheses, a status and the evidence.
 
 - **D (definition or internal result).** A published construction, or a published
   theorem that is not a proposition declaration, with the hypotheses listed in the row.
-  The evidence is its module path. No owner task is needed.
+  The evidence is its module path. 
 - **P (published proof).** The Library at the commit above contains a theorem whose type is
-  exactly the statement. The evidence is that theorem and its module path. The author also
-  type-checked `example : S := proof` for every P row in a private module. That check
-  passed with no errors or warnings, but it is not public evidence. No further proof work or
-  owner task is needed.
+  exactly the statement. The evidence is that theorem and its module path. Every P row was
+  also type-checked as `example : S := proof`, with no errors or warnings. No further proof
+  work is needed.
 - **C (composite, not published).** No published theorem has the statement as its type.
-  However, a term built only from published theorems has that type: the author type-checked
-  it in the same private module, and its axioms are `propext`, `Classical.choice` and
-  `Quot.sound`. The composite is not an accepted artifact. The row names the owner task,
-  or says that there is none. A projection out of a published conjunction is also listed
+  However, a term built only from published theorems has that type: it was type-checked
+  in the same way, and its axioms are `propext`, `Classical.choice` and
+  `Quot.sound`. The composite is not itself in the Library. A projection out of a published conjunction is also listed
   as C: what is missing is then a named wrapper theorem, not mathematics.
 - **O (open).** No published proof and no composite from published results is known.
 
-The labels "accepted" and "published" are used only for artifacts that passed independent
-review.
+The label "published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 - `milne-2017-algebraic-groups`: J. S. Milne, *Algebraic Groups* (2017). PDF page = printed
@@ -431,18 +426,18 @@ p.546 (PDF 562); A.75–A.76, printed p.583 (PDF 599).
 - Status C. The author type-checked a short tactic proof that uses only published results:
   take the closed representative `Dynamic.Affine.parabolicHom χ` of `P(χ)` (C1); it is
   parabolic by `parabolicDynamic` (D5); then apply `parabolicSubgroupQuotientProper` (D6).
-- Owner: Task 4665, `04457b36-90fb-4b02-85e4-924c3c791c0b`. Its contract forbids using
+- The intended proof of this statement must not use
   `ParabolicDynamicStatement` and its proofs, because the consumer it was meant to support,
-  `RankOnePositiveRootUniquenessStatement`, was unproved when it was written. That consumer
-  is now published (B8). The composite above therefore cannot discharge Task 4665 as the
-  contract stands.
+  `RankOnePositiveRootUniquenessStatement`, was unproved when that restriction was set. That
+  consumer is now published (B8). The composite above therefore does not meet the restriction;
+  the Library's proof is recorded in the C11 update below.
 
-**C11 update, 21 November 2026.** Status P. Task 6453 published
-`dynamicQuotientProper` in `Dynamic/QuotientProperProof`. It proves
+**C11 update, 21 November 2026.** Status P.
+`dynamicQuotientProper` in `Dynamic/QuotientProperProof` proves
 properness of the supplied `Q` via a closed immersion into a proper general
-linear dynamic quotient. The review verified the dependency audit against
-the independent-route contract.
-[Proof publication and exact-target evidence](absolute-coverage-2026-11-13.md#verified-proof-publications-21-november-2026).
+linear dynamic quotient. Its dependency audit was checked against
+the independence restriction.
+[Proof publication and exact-target evidence](absolute-coverage-2026-11-13.md#proofs-of-c11-and-of-the-third-interface-of-f).
 
 **C12. Dynamic subgroups of `GL_n` for diagonal cocharacters.** Source: CGP, Example 2.1.1,
 printed pp.45–47 (PDF 71–73); Lemma 2.1.5, printed pp.50–51 (PDF 76–77); Proposition
@@ -458,8 +453,7 @@ printed pp.45–47 (PDF 71–73); Lemma 2.1.5, printed pp.50–51 (PDF 76–77);
     `U(λ)` is normal in `P(λ)` with complement `Z(λ)`;
   - `BlockShapeLimitStatement`: the limit statement for block shapes.
 - Status P for the conjunction: `GeneralLinear.dynamicStatement` (`Dynamic/GeneralLinearProof`).
-  The five components are C, as its projections; no named theorem for them exists, and no
-  task is needed.
+  The five components are C, as its projections; no named theorem for them exists.
 
 **C13. Pseudo-reductive groups: `P(χ) = G` only for central `χ`.** Source: CGP, Lemma
 2.2.3(2), printed p.62 (PDF 88).
@@ -474,7 +468,7 @@ printed pp.45–47 (PDF 71–73); Lemma 2.1.5, printed pp.50–51 (PDF 76–77);
   `Dynamic.Affine.unipotentHom χ`: `Dynamic.Affine.isRepresentedBy_unipotentHom` and
   `Dynamic.Affine.isClosedSubgroup_unipotentHom` (`Dynamic/AffineRepresentability`) give
   representability and closedness, and `dynamicUnipotentUnipotence`
-  (`Dynamic/UnipotentUnipotenceProof`) gives unipotence. No owner task was found; what is
+  (`Dynamic/UnipotentUnipotenceProof`) gives unipotence. What is
   missing is a named theorem.
 
 ## D. Parabolic subgroups and the absolute Bruhat covering
@@ -572,8 +566,7 @@ p.53 (PDF 79). Neither source states it.
   centralSplitTorusCharacter dynamicCentralizerReductive`
   (`Dynamic/LeviAdjointDeterminantReciprocityReduction`, `Rational/RootReflectionExistenceProof`,
   `Rational/CentralSplitTorusCharacterProof`, `Dynamic/CentralizerReductiveProof`).
-- No owner task was found. The statement is an input of published reductions used by Task
-  `c0fa1878-6cee-4435-8484-2fc15ea04a17`.
+- The statement is an input of published reductions.
 
 ## F. Internal interfaces
 
@@ -588,12 +581,12 @@ theorems are missing. The third is open.
   `−α` and preserving that weight support. Status C: the published theorem
   `Langlands.GroupScheme.AbsoluteBorelOvergroup.exists_supportPreserving_weylInverter_of_both_signs`
   (same module) has exactly these hypotheses and this conclusion; introducing the
-  hypotheses and applying it type-checks, with standard axioms. Owner task: none needed.
+  hypotheses and applying it type-checks, with standard axioms.
 - `AbsoluteBorelOvergroupRankOneContainmentStatement` (`Absolute/BorelOvergroupRankOne`).
   Hypotheses: as above but over any field. Conclusion: the dynamic centralizer of the
   rank-one cocharacter of `α` lies in `P`. Status C: the published theorem
   `Langlands.GroupScheme.AbsoluteBorelOvergroup.rankOneCentralizer_le_range_of_both_signs`
-  (same module), applied in the same way. Owner task: none needed.
+  (same module), applied in the same way.
 - `TriangularDiagonalKernelTowerStatement` (`Absolute/TriangularDiagonalKernelTowerStatement`).
   Source: Milne 2022, Theorem 16.21, printed p.330 (PDF 341), as a quotient-oriented
   reformulation. Hypotheses: a field `k`; `H` with affine and locally finite type
@@ -603,20 +596,20 @@ theorems are missing. The third is open.
   Conclusion: `q` admits a finite character-linear kernel tower. No smoothness,
   connectedness or splitting is assumed. Status O.
 
-**F update, 21 November 2026.** The third interface has status P. Task 6428
-published `triangularDiagonalKernelTower` in
+**F update, 21 November 2026.** The third interface has status P:
+`triangularDiagonalKernelTower` in
 `Absolute/TriangularDiagonalKernelTowerProof`. The theorem supplies the
 tower for the original `q`, with full actual kernels, character
 equivariance on all tests and an isomorphism at the terminal stage.
-[Proof publication and exact-target evidence](absolute-coverage-2026-11-13.md#verified-proof-publications-21-november-2026).
+[Proof publication and exact-target evidence](absolute-coverage-2026-11-13.md#proofs-of-c11-and-of-the-third-interface-of-f).
 
 ## Remaining targets at the original snapshot
 
-- O row: the third internal interface of F (`TriangularDiagonalKernelTowerStatement`). No
-  owner task was found.
-- C rows: C11 (owner Task 4665, whose contract excludes the composite route), C13 and E3
-  (no owner task), the five components of C12, and the first two internal interfaces of F
-  (named wrappers only, no task needed).
+- O row: the third internal interface of F (`TriangularDiagonalKernelTowerStatement`); proved since,
+  see the F update.
+- C rows: C11 (whose independence restriction excludes the composite route; proved since, see
+  the C11 update), C13 and E3, the five components of C12, and the first two internal interfaces
+  of F (named wrappers only).
 - Scope differences recorded above: A6 (point form of the normalizer theorem), A10 (no
   `P = N_G(P)`), A11 (existence half only), B7 (algebraically closed, no Lie comparison),
   D7 (covering only).

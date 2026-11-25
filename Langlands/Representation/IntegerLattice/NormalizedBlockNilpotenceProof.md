@@ -1,6 +1,6 @@
 # Nilpotence and commutation on actual generalized-weight blocks
 
-Worker 1201. This proof targets the unchanged published proposition
+This proof targets the unchanged published proposition
 `Langlands.CommutingTupleNormalizedBlockNilpotenceStatement`. It uses the actual
 generalized-weight block and normalized differences from the imported Library
 construction.
@@ -25,7 +25,7 @@ one-based PDF285–286, registered as
 These pages were read directly, and PDF286 was also inspected as an image.
 Renard works in common triangular blocks and asserts that the normalized
 strictly upper triangular parts are nilpotent and pairwise commuting. This
-proof follows the accepted statement's derived basis-free formulation:
+proof follows the statement's derived basis-free formulation:
 intersections of actual maximal generalized eigenspaces, every unit label
 tuple, and the explicit ambient-dimension bound. The bound is derived from
 Mathlib's generalized-eigenspace stabilization theorem, rather than from a
@@ -47,4 +47,4 @@ decomposition is supplied as a premise.
 
 This proves the focused nilpotence and commutation step. It constructs no
 common basis and establishes no multivariable product identity or further
-whole-book claim.
+claim of the book.

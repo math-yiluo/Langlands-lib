@@ -1,6 +1,6 @@
 # Proof of finite unitary multiplicity from compact approximations
 
-Worker 116 proves `Langlands.Analysis.compactApproximationMultiplicity`
+The module proves `Langlands.Analysis.compactApproximationMultiplicity`
 with theorem type exactly
 `Langlands.Analysis.CompactApproximationMultiplicityStatement.{uG, uE}`.
 The actual group and complete complex inner-product space retain independent
@@ -45,7 +45,8 @@ finiteness directly from orthogonal transported eigenvectors and does
 not require irreducibility or that the family span E.
 
 The proof consumes the exact compatibility assumption in the published
-target. For genuine integrated representations, this must still be proved
-from the actual integral formula. It does not construct those integrals,
+target. For genuine integrated representations, it is proved
+from the actual integral formula in
+`Langlands.Representation.Unitary.IntegratedIsometricNaturalityProof`, not here. It does not construct those integrals,
 a Dirac sequence, an automorphic realization, or a Hilbert decomposition.
-Those application and construction obligations remain separate.
+Those applications and constructions are not part of this proof.

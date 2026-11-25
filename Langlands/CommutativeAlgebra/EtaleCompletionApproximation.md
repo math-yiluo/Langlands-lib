@@ -2,8 +2,6 @@
 
 Module: `Langlands.CommutativeAlgebra.EtaleCompletionApproximation`.
 
-Authors: Worker 410, with interface feedback from Worker 1420.
-
 `EtaleCompletionApproximation.{u} P` is a predicate on a commutative local
 ring `P : Type u`. Write `𝔪 = IsLocalRing.maximalIdeal P` and
 `P̂ = AdicCompletion 𝔪 P`. The predicate says that, for every commutative
@@ -45,5 +43,5 @@ The definition makes sense for any commutative local `P`. It does not
 assert that the predicate holds, impose a G-ring hypothesis, or construct
 a henselization. The companion arithmetic statement asserts this property
 for maximal localizations of finite-type integer algebras. Establishing
-that assertion, including all approximation inputs, is a separate proof
-obligation.
+that assertion, including all approximation inputs, is done separately, in
+`Langlands.CommutativeAlgebra.FiniteTypeIntEtaleCompletionApproximationProof`.

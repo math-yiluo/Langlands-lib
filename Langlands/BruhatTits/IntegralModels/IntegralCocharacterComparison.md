@@ -64,6 +64,6 @@ parabolic of the upstairs quotient cocharacter is the residue-field base
 change of the downstairs dynamic parabolic. These are equalities of
 subgroup functors on all scheme tests.
 
-This unit compares canonical constructions for supplied torus data. It does
+This module compares canonical constructions for supplied torus data. It does
 not prove arbitrary parabolic attainment, facet-model existence, or the
-host facet order bijection.
+facet order bijection `UnramifiedFacetParabolicOrderStatement`.

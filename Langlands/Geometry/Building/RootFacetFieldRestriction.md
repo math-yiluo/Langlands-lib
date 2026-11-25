@@ -11,7 +11,7 @@ is supplied. Its original apartment is exactly the previously constructed
 
 The previous extended-root inclusion does not alone identify ordinary
 roots: their definition also uses a product with the doubled-root group.
-This unit obtains ordinary walls and facet refinement using the existing
+This module obtains ordinary walls and facet refinement using the existing
 doubling theorem.
 
 `no_quadruple_root_fieldExtend` proves that the actual upstairs relative
@@ -55,7 +55,7 @@ vertex, and therefore equals the lift.
 The provenance is internal, from actual root membership base change, the
 opposite-pair integrality bound, the existing root-doubling proof,
 extended-root field restriction, and the existing sign definitions of
-facets, closures and vertices. This unit supplies no initial apartment or
+facets, closures and vertices. This module supplies no initial apartment or
 vertex. It does not prove that each original ordinary functional itself
 extends to an ordinary root, identify the complete arrangements or
 facets, compare proper enlarged split tori, construct a Galois fixed

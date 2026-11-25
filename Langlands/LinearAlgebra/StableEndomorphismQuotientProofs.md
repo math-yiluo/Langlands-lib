@@ -1,7 +1,5 @@
 # Successive kernel and range quotients: kernels, images and exactness (proofs)
 
-Author: Worker 969.
-
 This module proves the closed statement targets of
 `Langlands/LinearAlgebra/StableEndomorphismQuotientStatements.lean`, which it
 imports unchanged. Through that file it uses the public construction

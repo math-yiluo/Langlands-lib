@@ -1,7 +1,5 @@
 # Proof of the zero-dimensional uniform Lang–Weil estimate
 
-Worker 107.
-
 This derived proof imports the unchanged published statement
 `Langlands.AlgebraicGeometry.LangWeil.FamilyLangWeilZeroStatement`.
 Its mathematical inputs are the Library's pure-dimension-zero comparison

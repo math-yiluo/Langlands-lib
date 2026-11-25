@@ -1,7 +1,5 @@
 # Actual separated completion of topological modules
 
-Worker 1582 with Worker 709.
-
 This module constructs the actual separated completion of every topological
 module over a topological unital ring, its functor, canonical natural
 transformation, chosen continuous linear extension maps, and explicit
@@ -30,8 +28,9 @@ rational-function obstruction remains separate from a formal theorem over a
 fixed real or complex coefficient field.
 
 The categorical universal-property proposition, uniqueness among arbitrary
-competing extension morphisms, initiality and adjunction are separate successor
-units. This pair supplies their actual objects and chosen maps, together with
+competing extension morphisms, initiality and adjunction are stated separately
+in `Langlands.Topology.RenardTopModuleCompletionStatements` and proved in
+`Langlands.Topology.RenardTopModuleCompletionProof`. This pair supplies their actual objects and chosen maps, together with
 the intrinsic continuity, functor and agreement laws needed to construct them.
 It assumes no extension or universal-property certificate when selecting objects.
 
@@ -91,7 +90,7 @@ additive group, `R`-module, scalar multiplication, topology and uniformity.
 Its joint scalar continuity is proved by `completionContinuousSMul`, rather
 than supplied as an assumption.
 
-The proof follows Worker 709's shared feasibility probe. Form the biadditive
+The proof is as follows. Form the biadditive
 map `(r,x) ↦ (r • x : Completion M)`, and extend it along the identity dense
 inducing additive map on `R` and `Completion.toCompl` on `M`.
 `IsDenseInducing.extend_Z_bilin` gives joint continuity of this extension into

@@ -1,6 +1,7 @@
 # Ordered Frobenius cyclicity
 
-This derived unit connects the original ordered additive parameters of an affine
+This module, derived rather than taken from a source, connects the original
+ordered additive parameters of an affine
 group scheme to its intrinsic Frobenius distribution action. Its provenance is
 the existing ordered-coordinate constructions, the actual coordinate and
 distribution identifications, and `FrobeniusCyclicDetection`. It introduces no
@@ -50,7 +51,7 @@ If the displayed coefficient operator is nonzero on an original vector `v`,
 
 The chart, torus action, factor scaling, positive pairings and nonzero original
 coefficient remain explicit hypotheses. The last conclusion also retains the
-whole-representation dimension bound. This unit constructs neither a root chart
+whole-representation dimension bound. This module constructs neither a root chart
 for a reductive group nor a highest-weight vector satisfying that nonvanishing,
 and supplies no upper bound for the entire induced space. It does not prove
 `SteinbergBigCellStatement`.

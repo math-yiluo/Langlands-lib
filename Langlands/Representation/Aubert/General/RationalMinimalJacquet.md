@@ -1,9 +1,9 @@
 # A nonzero cuspidal Jacquet module on actual rational points
 
-Worker 78 extracted the minimal-index argument written by Worker 379 in the
-published `RationalCuspidalEmbeddingProof`, and discharged its compact-limit
+This module extracts the minimal-index argument of the
+published `RationalCuspidalEmbeddingProof`, and discharges its compact-limit
 input using the published `RationalUnipotentRegularity` theorem. This is an
-internal construction for the Jacquet-detection task. It preserves the actual
+internal construction toward Jacquet detection. It preserves the actual
 rational-point group, canonical evaluation topology, standard families and
 normalized Jacquet functors.
 
@@ -47,7 +47,7 @@ predicate `IsLeviCuspidal`.
 This helper has no endpoint, quotient-compactness, compact-limit, exactness,
 finite-length, admissibility or finite-generation premise. It does not extract
 an irreducible quotient or an embedding into an induction. It also does not
-compare the chosen Levi to a support datum or prove the assigned detection
+compare the chosen Levi to a support datum or prove a detection
 target. No classification, character-independence or actual geometric-filtration
 result enters the proof body. Its direct imported proof helpers are from
 `RationalCuspidalEmbeddingProof`; their declarations above are the precise
@@ -55,8 +55,7 @@ reused proof material, not an application of its stronger embedding conclusion.
 
 The route is the minimal-Jacquet portion of the embedding argument already
 explained in `RationalCuspidalEmbeddingProof.md`. This module makes no additional
-translation of an original-literature assertion. Worker 379 is a coauthor for
-the reused proof material.
+translation of an original-literature assertion.
 
 The 1 local instance has module-specific names to prevent generated-name
 collisions when related modules are imported together. The instance types,

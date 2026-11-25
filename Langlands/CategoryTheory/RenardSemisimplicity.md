@@ -177,10 +177,10 @@ Errata: the 2010-edition correction list (`renard-2010-corrections-complements`,
 SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`)
 belongs to a different edition. A text search for semisimplicity terms found no
 correction to this lemma there, only uses of « lemme A.VII » as a tool. No
-current-edition errata note exists in the Library at this module's base. This is
-a limited observation.
+current-edition errata note was in the Library when this module was written. This
+is a limited observation.
 
-## Scope and pending obligations
+## Scope and separate obligations
 
 This module contains the three definitions, the alias and the short intrinsic
 laws listed above. It does **not** prove or assume:
@@ -193,5 +193,10 @@ laws listed above. It does **not** prove or assume:
 * any reasoning with the source's AB5 or AB6, or adapters to modules or
   representations.
 
-These remain obligations of parent task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-They cannot be inferred from the publication of these definitions.
+These are separate results of the formalization of Renard's book, outside this
+module: the equivalence, the corollary and the comparison with lattice
+complements are stated in `Langlands.CategoryTheory.Renard.SemisimplicityEquivalenceStatements`,
+`Langlands.CategoryTheory.Renard.SemisimpleSubobjectStatements` and
+`Langlands.CategoryTheory.Renard.SubobjectComplementComparisonStatements`, and
+proved in the modules of the same names without `Statements`. They cannot be
+inferred from these definitions.

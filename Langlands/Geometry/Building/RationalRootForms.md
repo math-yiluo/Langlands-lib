@@ -1,6 +1,6 @@
 # Rational character evaluation and reduced apartment root forms
 
-Worker 227. Internal support for comparing the full derivative-root span of
+Internal support for comparing the full derivative-root span of
 an apartment with the actual relative-root span.
 
 `evalRat` extends the published integral character evaluation to the

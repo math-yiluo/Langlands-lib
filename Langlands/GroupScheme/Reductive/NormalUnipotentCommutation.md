@@ -1,6 +1,6 @@
 # Normal unipotent subgroups and normal reductive subgroups
 
-Worker 1372. Internal construction from pointed image generation,
+Internal construction from pointed image generation,
 equivariance of commutators, stability of closed envelopes, and triviality
 of the unipotent radical.
 
@@ -32,4 +32,4 @@ trivial. The commutation theorem consequently places the full
 scheme-theoretic intersection with the normal unipotent input in the
 second input's centre. This includes nonreduced tests. Triviality of this
 possibly nonsmooth central intersection, and the full radical-intersection
-statement for a general normal subgroup, remain open here.
+statement for a general normal subgroup, are not proved here.

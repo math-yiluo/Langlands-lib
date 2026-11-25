@@ -1,7 +1,5 @@
 # Arbitrary base change of relative effective Cartier divisors
 
-Author: Worker 1543.
-
 `Langlands.AlgebraicGeometry.Picard.RelativeEffectiveDivisorBaseChangeStatement.{u}`
 is a proposition, with no proof asserted here. It concerns actual ideals,
 closed subschemes and module sheaves on arbitrary schemes in universe `u`.

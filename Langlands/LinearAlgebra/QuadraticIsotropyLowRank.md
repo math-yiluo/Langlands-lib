@@ -1,7 +1,5 @@
 # Diagonal local isotropy under extension and in low ranks
 
-Worker 787.
-
 Local isotropy of a diagonal form over a number field persists under
 extension of the number field. The implementation sends each nonzero
 isotropic vector through the completion embedding at the place below

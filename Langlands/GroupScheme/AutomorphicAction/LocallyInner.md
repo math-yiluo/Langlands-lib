@@ -1,7 +1,5 @@
 # Global adjoint sections for fppf-locally inner automorphisms
 
-Worker 561.
-
 This is an internal descent construction for the natural pinned-comparison
 problem. It uses the published fppf effective-epimorphism machinery and
 `AutomorphicAction.isFaithful_of_isFppfQuotient_center`. It does not assert an

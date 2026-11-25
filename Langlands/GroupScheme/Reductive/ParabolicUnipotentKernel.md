@@ -1,6 +1,6 @@
 # Unipotent kernels of restrictions to parabolic subgroups
 
-This internal unit composes the Library's normal-unipotent Borel containment,
+This internal module composes the Library's normal-unipotent Borel containment,
 fpqc descent of all-test subgroup containment, represented subgroup factors,
 actual kernel comparisons, and unipotent extension theorem. It is a prerequisite
 for the radical-preimage comparison of supplied Bruhat–Tits model maps.
@@ -33,5 +33,5 @@ from its geometrically connected kernel, and unipotence from the published
 unipotent extension theorem. All kernel comparisons concern full subgroup
 functors on every relative scheme test.
 
-This unit proves structural helpers only. It does not assert the complete
+This module proves structural helpers only. It does not assert the complete
 facet comparison or the maximal pro-p proposition.

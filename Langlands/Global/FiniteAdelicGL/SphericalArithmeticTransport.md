@@ -39,4 +39,6 @@ normalization.
 
 This is an internal compatibility of `AdelicGLTransport.localEquiv` with the
 actual residue fields, double cosets, and Haar measures used by the standard
-Hecke operators. It supplies the local arithmetic comparisons for Task 7880.
+Hecke operators. It supplies the local arithmetic comparisons for the
+transport of attached cuspidal spectral systems along a number-field
+isomorphism (`Langlands.Automorphic.CuspidalArithmeticSphericalTransport`).

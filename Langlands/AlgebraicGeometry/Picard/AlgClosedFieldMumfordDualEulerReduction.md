@@ -1,18 +1,15 @@
 # Steps 5 and 7 of the dual-side Euler reduction
 
-Author: Worker 943.
-
-This module is for task `6b1ab3e8-b3b0-4567-9251-7566e7a6dba3`, which proves
-`Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. Its contract splits the
-route into seven steps. This file proves two of them, Step 5 and Step 7, from published
+This module serves the proof of
+`Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. The route of that proof is
+split into seven steps. This file proves two of them, Step 5 and Step 7, from published
 Library results and Mathlib. It has no hypotheses beyond the ones stated in each lemma.
 Steps 1-4 (the coefficient rewrite and the direct images of the twisted Poincaré pullback)
 are in `Langlands.AlgebraicGeometry.Picard.MumfordDualDirectImages`, Step 6 (the kernel fibre
 dimension) is in `Langlands.AlgebraicGeometry.Picard.FiniteFlatPointFibreSections`, and the
 assembly is in `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerFromPrerequisites`.
 
-The module compiles: `lean_check` diagnostic `85546967-27ed-45d8-bb36-799254d7eff3`,
-0 errors, 0 warnings.
+The module compiles with 0 errors and 0 warnings.
 
 ## Step 5: `Langlands.AlgebraicGeometry.Modules.DerivedSections.eulerCharacteristic_comp_eq_of_concentrated`
 
@@ -60,5 +57,5 @@ flat map `f.left` is locally of finite presentation. Mathlib's
 locally constant function on a preconnected space takes the same value at any two points
 (`IsLocallyConstant.apply_eq_of_preconnectedSpace`).
 
-In the contract's route, Step 7 turns the origin value computed in Step 6 into the value at
+In the route, Step 7 turns the origin value computed in Step 6 into the value at
 an arbitrary point `y`, which the target statement quantifies over.

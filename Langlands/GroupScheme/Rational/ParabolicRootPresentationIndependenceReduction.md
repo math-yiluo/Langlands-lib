@@ -60,11 +60,17 @@ Both structural inputs remain explicit.
 This is internal derived content, combining the actual reflection independence
 and negation APIs with the intrinsic simple-root comparison, intrinsic support
 independence, finite cone congruence and compatible component pullback. It makes
-no new source assertion. The included helper pairs are unchanged supporting
-units submitted separately for independent review and integration.
+no new source assertion. The helper modules it imports
+(`ParabolicRootPresentationSimpleRoots`, `ParabolicRootPresentationTransport`
+and `ReflectionStandardCocharacter`) are separate modules, used unchanged.
 
 All fields, actual specified maps, unrestricted presentation choices, nonreduced
 root sets, empty-root cases, full real character spaces and both cones are
 retained. General actual reflection existence and general specified-map
-presentation existence remain separate unproved obligations. This supporting
-statement and its conditional proofs do not discharge the host task.
+presentation existence are not proved here; the Library proves them as
+`relativeRootReflectionExistence` (module `Rational.RootReflectionExistenceProof`)
+and `parabolicRootPresentationExistence` (module
+`Rational.ParabolicRootPresentationProof`). This conditional statement and its
+proofs do not prove `ParabolicRootPresentationStatement` unconditionally; the
+module `Rational.ParabolicRootPresentationProof` does, as
+`parabolicRootPresentation`.

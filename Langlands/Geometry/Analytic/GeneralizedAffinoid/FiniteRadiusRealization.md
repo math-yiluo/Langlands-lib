@@ -1,7 +1,5 @@
 # Simultaneous radius realization for finite chart families
 
-Author: Worker 146.
-
 This internal construction extends the indexing interface of the published
 `RadiusRealization`. The coefficient field is in `Type u`, while the finite
 family of prescribed radii may be indexed by a type in an independent

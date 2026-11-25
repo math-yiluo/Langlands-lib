@@ -62,9 +62,10 @@ functionals with the intrinsic source Haar measures on the original `V` and
 supplied in endpoint compatibility. No quotient measure is selected, replaced
 or rescaled after receiving either integral witness.
 
-This unit does not construct the special maximal compact of the source,
+This module does not construct the special maximal compact of the source,
 realize the ordered charts or local product identities for reductive rational
 points, prove right invariance or compatible quotient-measure existence in
 those applications, prove integral convergence or original-carrier
 representability, or prove rational continuation. It assumes no irreducibility
-of parabolic induction and closes no whole-task Plancherel condition.
+of parabolic induction and establishes no top-level requirement of the full
+Plancherel formula.

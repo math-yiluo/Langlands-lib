@@ -555,7 +555,7 @@ theorem unequalRankMirabolicUnitTest {p : ℕ} [Fact p.Prime] (F : PadicField.{u
         (μ.prod (rectangularMeasure ν j (n + 1))) := by
       rw [integrable_indicator_iff (hΩmeas.prod hXmeas)]
       exact integrableOn_const
-        ((Measure.prod_prod_le _ _).trans_lt (ENNReal.mul_lt_top hΩfin hXfin)).ne
+        ((Measure.prod_prod _ _).le.trans_lt (ENNReal.mul_lt_top hΩfin hXfin)).ne
     exact hint.congr (Filter.Eventually.of_forall fun qx => (hval s qx.2 qx.1).symm)
   · -- The inner integral over `X`, then the outer integral over `Ω`.
     have hinner : ∀ q, ∫ x, unequalRankIntegrand ψ (normalizedAbsoluteValue T) j k φ

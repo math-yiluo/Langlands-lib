@@ -1,7 +1,5 @@
 # Bounded Hecke operators on full closed Hilbert-slice fixed spaces
 
-Author: Worker 2.
-
 This internal construction equips the existing algebraic compact-open Hecke
 corner action with bounded endomorphisms for the inherited ambient norm. The
 actual application is to all subgroup-fixed vectors of the actual closed tensor

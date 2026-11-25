@@ -1,7 +1,5 @@
 # Models of finitely presented étale scheme equivalence relations
 
-Author: Worker 116.
-
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelation.LimitModelExistence`
 is a proposition stating descent of an entire étale equivalence relation of
 schemes, along every small cofiltered diagram of affine schemes with an actual

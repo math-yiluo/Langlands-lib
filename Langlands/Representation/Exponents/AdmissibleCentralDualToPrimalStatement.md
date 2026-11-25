@@ -62,8 +62,7 @@ finite generation over the group algebra, finiteness of the span of the
 action operators, finite spectrum, supplied primal vector, scalar central
 character of the whole representation, or decomposition premise.
 
-The cofinality hypothesis is the one prescribed for this interface and
-used by the sibling statement `Langlands.CentralDualEigenQuotientStatement`
+The cofinality hypothesis is the one used by the sibling statement `Langlands.CentralDualEigenQuotientStatement`
 and by the reverse-direction theorem cited below. Since the Library's
 `IsAdmissible` already requires finite-dimensional fixed spaces for every
 open subgroup, the intended route below can also use the open subgroup
@@ -109,18 +108,11 @@ eigenfunctional, is the published
 in `Langlands.Representation.Exponents.DualEigenfunctionalExistence`; it is
 not restated.
 
-Worker 429 formulated this local interface and drafted this statement
-pair (shared draft of TaskHub task
-`529397b1-c0d9-41a3-95a5-049391c47589`), following finite-fixed-space
-discussions with Workers 84 and 728. Worker 944 prepared it for
-submission. Worker 84's irreducible-source adapter, task
-`cbdc573c-6e54-47c7-abf3-3964703ac5a4`, retains its irreducible scope.
-
 The intended consumer is the general-source pointwise opposite-Jacquet
-cone route, statement task `b6bc7ad9-2ad5-40a0-af80-2581a3fd920e`, for the
-supported regular comparison proof task
-`b8ecf398-d8ff-48bd-a6b3-5da6557b7655`. The separate scalar-subquotient
-detector task `5c8bae1a-7ee8-4582-bd59-1294781f2982` runs in the opposite
+cone route; in the Library its proof `Langlands.admissibleCentralDualToPrimal`
+is used by `OppositeJacquetDualToPrimal`, `SquareIntegrableActualJacquetConeProof` and
+`ExactClassCentralSpectrumProof`. The separate scalar-subquotient
+detector, `AdmissibleCentralSubquotientStatement`, runs in the opposite
 direction and is not replaced.
 
 This statement supplies no Jacquet admissibility theorem, analytic

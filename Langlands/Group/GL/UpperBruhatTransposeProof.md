@@ -1,7 +1,5 @@
 # Proof of the Weyl-conjugated transpose transport of upper Bruhat cells
 
-Author: Worker 915.
-
 The theorem `Langlands.GeneralLinear.upperBruhatTranspose` proves exactly the
 published proposition `Langlands.GeneralLinear.UpperBruhatTransposeStatement.{u}`
 from `Langlands.Group.GL.UpperBruhatTransposeStatement`. The module imports only

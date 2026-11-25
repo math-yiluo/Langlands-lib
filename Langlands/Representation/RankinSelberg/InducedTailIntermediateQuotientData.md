@@ -1,6 +1,6 @@
 # Actual quotient chart and determinant density for the intermediate tail
 
-Worker 318 constructs consumer data for the intermediate-rank JPSS comparison.
+This module constructs data for the intermediate-rank JPSS comparison.
 The constructions use published definitions and the published lower-block
 quotient chart. They assert no disintegration or integration identity.
 

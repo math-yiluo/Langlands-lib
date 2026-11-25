@@ -85,7 +85,7 @@ def sheaf : TopologicalSheaf G X (ModuleCat.{u} R) :=
 theorem sectionAction_apply (g : G)
     (s : (ActionOpens.top (G := G) (X := X)).openSet → M)
     (x : (ActionOpens.top (G := G) (X := X)).openSet) :
-    ((sectionAction (presheaf ρ)).ρ g).hom s x =
+    ((sectionAction (presheaf ρ)).ρ g).asHom.hom s x =
       ρ g (s ⟨g⁻¹ • x.1, by trivial⟩) := by
   change ρ (g⁻¹)⁻¹ (s ⟨g⁻¹ • x.1, _⟩) = _
   simp only [inv_inv]

@@ -2,11 +2,10 @@
 
 Module `Langlands.GroupScheme.SolvableOrbitProperImageFiniteProof`.
 
-Worker 1506 wrote this module. Its induction step applies the theorem
+The module's induction step applies the theorem
 `stabilizerImageDichotomy : StabilizerImageDichotomyStatement` of
-`Langlands.GroupScheme.StabilizerImageDichotomy` (Worker 716; the statement text is
-Worker 1506's), and the fibre step and base case of
-`Langlands.GroupScheme.HomogeneousProperImageFibre` (Workers 1095 and 1506).
+`Langlands.GroupScheme.StabilizerImageDichotomy`, and the fibre step and base case of
+`Langlands.GroupScheme.HomogeneousProperImageFibre`.
 
 Throughout, `k` is a field, `Spec k` means `Spec (CommRingCat.of k)`, and a rational
 point of a `k`-scheme `O` is a morphism `Over.mk (𝟙 (Spec k)) ⟶ O` over `Spec k`.
@@ -45,8 +44,7 @@ All results below take `k` algebraically closed, except
 - `solvableOrbitProperImageFinite : SolvableOrbitProperImageFiniteStatement.{u}`.
   This is the target. It applies `solvableOrbitProperImageFinite_of_split` to the
   published theorem `algebraicallyClosedSplitSolvable` of
-  `Langlands.GroupScheme.AlgebraicallyClosedSplitSolvableProof` (Workers 1472 and
-  1448).
+  `Langlands.GroupScheme.AlgebraicallyClosedSplitSolvableProof`.
 
 ## Proof of the induction step
 

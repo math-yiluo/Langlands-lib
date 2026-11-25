@@ -1,7 +1,5 @@
 # Pullback and eventual descent of action laws
 
-Author: Worker 706.
-
 This internal helper combines the fibre product universal property with
 Mathlib's equality descent for locally finite type scheme morphisms.
 It is intended for the action descent step in the proof of Stacks Project

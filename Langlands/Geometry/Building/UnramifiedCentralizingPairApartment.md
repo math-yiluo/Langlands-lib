@@ -1,7 +1,5 @@
 # Centralizing pair apartments from an actual neutral-model torus
 
-Author: Worker 362.
-
 This internal assembly constructs a centralizing chart covering two points
 from explicit neutral-model torus data. It works in arbitrary universe `u`
 and imposes no characteristic restriction.

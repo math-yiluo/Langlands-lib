@@ -152,7 +152,8 @@ theorem tensorMatrixEquiv_rootMap {i j : n} (hij : i ≠ j)
       (Corepresented.pointsEquiv
         (AffineWeil.pointFunctor F E (SpecialLinear.groupScheme n (CommRingCat.of E)))
         (AffineWeil.corepresentableBy F E (SpecialLinear.groupScheme n (CommRingCat.of E)))
-        T (x ≫ (AffineWeil.map F E (Root.rootMap (CommRingCat.of E) hij)).hom.hom)) =
+        T (x ≫ (rootMap F E hij).hom.hom)) = _
+  change _ =
     Matrix.SpecialLinearGroup.transvection hij
       ((Corepresented.affinePointsEquiv (VectorGroup.functor (CommRingCat.of E) 1)
         (VectorGroup.corepresentableBy (CommRingCat.of E) 1) (tensorAlgebra F E T)
@@ -160,7 +161,8 @@ theorem tensorMatrixEquiv_rootMap {i j : n} (hij : i ≠ j)
           (AffineWeil.pointFunctor F E (VectorGroup.groupScheme (CommRingCat.of E) 1))
           (AffineWeil.corepresentableBy F E (VectorGroup.groupScheme (CommRingCat.of E) 1))
           T x)).toAdd 0)
-  erw [Corepresented.groupSchemeMap_points
+  rw [rootMap, AffineWeil.map]
+  rw [Corepresented.groupSchemeMap_points
     (AffineWeil.corepresentableBy F E (VectorGroup.groupScheme (CommRingCat.of E) 1))
     (AffineWeil.corepresentableBy F E (SpecialLinear.groupScheme n (CommRingCat.of E)))
     (AffineWeil.pointTransformation F E (Root.rootMap (CommRingCat.of E) hij)) x]

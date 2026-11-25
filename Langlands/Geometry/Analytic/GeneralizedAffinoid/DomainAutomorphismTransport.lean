@@ -17,15 +17,15 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K]
 
 /-- Retain both specified bounded maps of an actual automorphism. -/
 def boundedEquiv (g : Aut A) : BoundedAlgEquiv K A A :=
-  BoundedAlgEquiv.ofHomInv g.hom g.inv
-    (fun a => congrArg (fun f : BoundedAlgHom K A A => f a) g.hom_inv_id)
-    (fun a => congrArg (fun f : BoundedAlgHom K A A => f a) g.inv_hom_id)
+  BoundedAlgEquiv.ofHomInv g.asIso.hom g.asIso.inv
+    (fun a => congrArg (fun f : BoundedAlgHom K A A => f a) g.asIso.hom_inv_id)
+    (fun a => congrArg (fun f : BoundedAlgHom K A A => f a) g.asIso.inv_hom_id)
 
 @[simp] theorem boundedEquiv_hom (g : Aut A) :
-    (boundedEquiv g).toBoundedAlgHom = g.hom := by ext a; rfl
+    (boundedEquiv g).toBoundedAlgHom = g.asIso.hom := by ext a; rfl
 
 @[simp] theorem boundedEquiv_symm_hom (g : Aut A) :
-    (boundedEquiv g).symm.toBoundedAlgHom = g.inv := by ext a; rfl
+    (boundedEquiv g).symm.toBoundedAlgHom = g.asIso.inv := by ext a; rfl
 
 variable [CompleteSpace K]
 
@@ -38,7 +38,7 @@ def movedDomain (U : Domain K A) (g : Aut A) : Domain K A :=
     (movedDomain U g).algebra = U.algebra := rfl
 
 @[simp] theorem movedDomain_baseMap (U : Domain K A) (g : Aut A) :
-    (movedDomain U g).baseMap = U.baseMap.comp g.inv := by
+    (movedDomain U g).baseMap = U.baseMap.comp g.asIso.inv := by
   change U.baseMap.comp (boundedEquiv g).symm.toBoundedAlgHom = _
   rw [boundedEquiv_symm_hom]
 
@@ -92,21 +92,21 @@ the original untwisted base equation on the retained section algebra. -/
 theorem conjugateSectionMap_comp_baseMap (U : Domain K A) (g h : Aut A)
     (hm : g * h * g⁻¹ ∈ locusStabilizer (movedDomain U g)) :
     (movedSectionMap U g ⟨g * h * g⁻¹, hm⟩).comp U.baseMap =
-      U.baseMap.comp h.hom := by
+      U.baseMap.comp h.asIso.hom := by
   apply BoundedAlgHom.ext
   intro a
-  have hinv (b : A) : g.inv.toAlgHom (g.hom.toAlgHom b) = b :=
-    congrArg (fun f : BoundedAlgHom K A A => f b) g.hom_inv_id
+  have hinv (b : A) : g.asIso.inv.toAlgHom (g.asIso.hom.toAlgHom b) = b :=
+    congrArg (fun f : BoundedAlgHom K A A => f b) g.asIso.hom_inv_id
   have heq := congrArg (fun f : BoundedAlgHom K A U.algebra =>
-    f (g.hom.toAlgHom a))
+    f (g.asIso.hom.toAlgHom a))
     (stabilizerSectionMap_comp_baseMap (movedDomain U g) ⟨g * h * g⁻¹, hm⟩)
   change stabilizerSectionMap (movedDomain U g) ⟨g * h * g⁻¹, hm⟩
-      (U.baseMap (g.inv.toAlgHom (g.hom.toAlgHom a))) =
-    U.baseMap (g.inv.toAlgHom (g.hom.toAlgHom
-      (h.hom.toAlgHom (g.inv.toAlgHom (g.hom.toAlgHom a))))) at heq
+      (U.baseMap (g.asIso.inv.toAlgHom (g.asIso.hom.toAlgHom a))) =
+    U.baseMap (g.asIso.inv.toAlgHom (g.asIso.hom.toAlgHom
+      (h.asIso.hom.toAlgHom (g.asIso.inv.toAlgHom (g.asIso.hom.toAlgHom a))))) at heq
   simp only [hinv] at heq
   change movedSectionMap U g ⟨g * h * g⁻¹, hm⟩ (U.baseMap a) =
-    U.baseMap (h.hom.toAlgHom a)
+    U.baseMap (h.asIso.hom.toAlgHom a)
   exact heq
 
 /-- Conjugating on the base and moving the domain leaves the full bounded
@@ -126,6 +126,7 @@ theorem stabilizerSectionAut_conjugate (U : Domain K A) (g h : Aut A)
     (hm : g * h * g⁻¹ ∈ locusStabilizer (movedDomain U g)) :
     movedSectionAut U g ⟨g * h * g⁻¹, hm⟩ =
       stabilizerSectionAut U ⟨h, hh⟩ := by
+  apply CategoryTheory.Aut.ext
   apply CategoryTheory.Iso.ext
   exact stabilizerSectionMap_conjugate U g h hh hm
 

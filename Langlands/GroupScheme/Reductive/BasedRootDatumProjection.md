@@ -53,8 +53,9 @@ chamber, actual Weyl-action and complete pinned-isomorphism results.
    Uniqueness proves the multiplication law and the identity law. It also
    proves restriction to based automorphisms and the stated kernel formula.
 
-The supplied complete pinning remains an input. This unit constructs no pinning,
+The supplied complete pinning remains an input. This module constructs no pinning,
 coefficient-algebra automorphism section, semilinear action, effective descent
 datum, adjoint quotient or quasi-split inner form. Composing a field action with
 the projection or its actual lift will still require the geometric semilinear
-compatibilities and inner-overlap construction for the host theorem.
+compatibilities and inner-overlap construction for the existence of quasi-split
+inner forms, `QuasiSplitInnerFormExistenceStatement`.

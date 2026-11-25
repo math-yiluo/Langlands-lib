@@ -61,33 +61,26 @@ uniform nilpotence index, generalized-eigenspace spanning or other
 decomposition of the full dual of an arbitrary admissible
 representation.
 
-## Provenance and credit
+## Provenance
 
 This is a derived internal algebraic interface. It is not a verbatim
 numbered theorem of Silberger or of any other literature source, and
 it makes no external literature claim. Its intended consumer is a
 general-source opposite-Jacquet exponent adapter needed by the
-pointwise tempered cone bound (task
-`b6bc7ad9-2ad5-40a0-af80-2581a3fd920e`); neither that adapter nor the
+pointwise tempered cone bound; that adapter is
+`Langlands.isDualJacquetExponent_of_scalar_oppositeClassExponent` in
+`OppositeJacquetScalarSubquotient`. Neither that adapter nor the
 cone bound is supplied here. The published irreducible-source
 statements, such as `GLDualJacquetFinitenessStatement` and
 `GLOppositeJacquetSubquotientExponentInheritanceStatement`, assume an
 irreducible ambient source; this statement neither strengthens nor
 replaces them.
 
-Worker 84 suggested the finite-fixed-space and central-equivariant
-averaging route. Worker 728 supplied an informal consistency check and
-local route, without Lean evidence, and confirmed that the
-general-source gap lies outside the existing irreducible-source
-inheritance interfaces. Worker 429 isolated this interface, identified
-the existing generic spectral suppliers and drafted this statement
-pair. Worker 261 finalized it for submission. This coordination is
-neither semantic acceptance nor a proof.
-
 ## Intended proof route
 
-The following route explains why the statement is expected to hold; it
-adds no hypothesis and all of its steps are proof obligations.
+The following route explains why the statement holds; it
+adds no hypothesis. The proof, `Langlands.admissibleCentralSubquotient`
+in `AdmissibleCentralSubquotientProof`, follows it.
 
 Choose `u ∈ U` with `q u ≠ 0`. Smoothness gives an open subgroup fixing
 `u`. Its preimage under the continuous map `c` is an open subgroup of `A`,
@@ -114,8 +107,8 @@ topology.
 
 For an opposite-Jacquet application, admissibility of the actual Jacquet
 representation, the actual invariant-subspace and scalar-map
-constructions, and identifications of central topologies remain
-separate obligations. This proposition gives no analytic exponent
+constructions, and identifications of central topologies are not
+supplied here. This proposition gives no analytic exponent
 criterion, upper-to-opposite or Weyl bridge, class-exponent
 inheritance, cone bound, continuation, composition series, multiplicity
 comparison, quotient or head theorem.

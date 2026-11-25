@@ -45,16 +45,17 @@ local notation "E" => DualData.baseChangeIso P b W W'
 theorem dual0_baseChange (hadd : W.Additivity P) (hadd' : W'.Additivity P)
     (a : End0 A) :
     comp0 ((baseChange b).obj D) ((baseChange b).obj D) D'
-      (rationalBaseChangeHom b (W.dual0 P hadd a)) (homToHom0 (E).hom) =
+      (rationalBaseChangeHom b (W.dual0 P hadd a).asHom) (homToHom0 (E).hom) =
     comp0 ((baseChange b).obj D) D' D'
-      (homToHom0 (E).hom) (W'.dual0 P hadd' (rationalBaseChangeHom b a)) :=
+      (homToHom0 (E).hom)
+      (W'.dual0 P hadd' (CategoryTheory.End.of (rationalBaseChangeHom b a.asHom))).asHom :=
   dualHom0_baseChange_of_naturality P.preservation P.stability P.composition P.unitCoherence
     P.associativity P.comparison P.symmetry P.universality dualAbelianBaseChange b A
     W.hasDual W.geometry W.inversePoincare W.evaluation
     W'.hasDual W'.geometry W'.inversePoincare W'.evaluation A
     W.hasDual W.geometry W.inversePoincare W.evaluation
     W'.hasDual W'.geometry W'.inversePoincare W'.evaluation
-    hadd hadd' dualAbelianBaseChangeNaturality a
+    hadd hadd' dualAbelianBaseChangeNaturality a.asHom
 
 variable (hadd : W.Additivity P) (hadd' : W'.Additivity P)
   (lam : A ⟶ W.dual P)
@@ -87,41 +88,46 @@ variable [hinv : HasRationalInverse P W lam]
 
 /-- Actual Rosati conjugation commutes with the actual rational Hom pullback. -/
 theorem involution_baseChange (a : End0 A) :
-    @involution S' A' P W' hadd' lam' hinv' (rationalBaseChangeHom b a) =
-      rationalBaseChangeHom b (involution P W hadd lam a) := by
+    @involution S' A' P W' hadd' lam' hinv'
+        (CategoryTheory.End.of (rationalBaseChangeHom b a.asHom)) =
+      CategoryTheory.End.of (rationalBaseChangeHom b (involution P W hadd lam a).asHom) := by
   have hsource :
-      comp0 A A D (involution P W hadd lam a) (homToHom0 lam) =
-        comp0 A D D (homToHom0 lam) (W.dual0 P hadd a) := by
+      comp0 A A D (involution P W hadd lam a).asHom (homToHom0 lam) =
+        comp0 A D D (homToHom0 lam) (W.dual0 P hadd a).asHom := by
     rw [involution_apply, comp0_assoc, inverse_comp_polarization, comp0_id0]
   have hpull := congrArg (rationalBaseChangeHom b) hsource
   change rationalBaseChangeHom b (Langlands.Rationalization.comp A A D
-      (involution P W hadd lam a) (homToHom0 lam)) =
+      (involution P W hadd lam a).asHom (homToHom0 lam)) =
     rationalBaseChangeHom b (Langlands.Rationalization.comp A D D
-      (homToHom0 lam) (W.dual0 P hadd a)) at hpull
+      (homToHom0 lam) (W.dual0 P hadd a).asHom) at hpull
   simp only [rationalBaseChangeHom_comp] at hpull
   change comp0 A' A' ((baseChange b).obj D)
-      (rationalBaseChangeHom b (involution P W hadd lam a))
+      (rationalBaseChangeHom b (involution P W hadd lam a).asHom)
       (rationalBaseChangeHom b (homToHom0 lam)) =
     comp0 A' ((baseChange b).obj D) ((baseChange b).obj D)
       (rationalBaseChangeHom b (homToHom0 lam))
-      (rationalBaseChangeHom b (W.dual0 P hadd a)) at hpull
+      (rationalBaseChangeHom b (W.dual0 P hadd a).asHom) at hpull
   have htransport :
-      comp0 A' A' D' (rationalBaseChangeHom b (involution P W hadd lam a))
+      comp0 A' A' D' (rationalBaseChangeHom b (involution P W hadd lam a).asHom)
           (homToHom0 lam') =
         comp0 A' D' D' (homToHom0 lam')
-          (W'.dual0 P hadd' (rationalBaseChangeHom b a)) := by
+          (W'.dual0 P hadd'
+            (CategoryTheory.End.of (rationalBaseChangeHom b a.asHom))).asHom := by
     rw [homToHom0_baseChangeMap, ← comp0_assoc, hpull, comp0_assoc,
       dual0_baseChange, ← comp0_assoc]
   have htarget :
       comp0 A' A' D'
-          (@involution S' A' P W' hadd' lam' hinv' (rationalBaseChangeHom b a))
+          (@involution S' A' P W' hadd' lam' hinv'
+            (CategoryTheory.End.of (rationalBaseChangeHom b a.asHom))).asHom
           (homToHom0 lam') =
         comp0 A' D' D' (homToHom0 lam')
-          (W'.dual0 P hadd' (rationalBaseChangeHom b a)) := by
+          (W'.dual0 P hadd'
+            (CategoryTheory.End.of (rationalBaseChangeHom b a.asHom))).asHom := by
     rw [involution_apply, comp0_assoc, inverse_comp_polarization, comp0_id0]
   have h := congrArg
     (fun z => comp0 A' D' A' z (polarizationInverse P W' lam'))
     (htarget.trans htransport.symm)
+  apply CategoryTheory.End.ext
   simpa only [comp0_assoc, polarization_comp_inverse, comp0_id0] using h
 
 end Langlands.AbelianScheme.Rosati
@@ -144,7 +150,8 @@ is preserved under geometric field base change. -/
 theorem traceForm_baseChange_of_comparison (a c : End0 A) :
     @traceForm P K _ ((baseChange b).obj A) W' hadd'
       (DualData.baseChangeMap P b W W' lam) hinv'
-      (rationalBaseChangeHom b a) (rationalBaseChangeHom b c) =
+      (CategoryTheory.End.of (rationalBaseChangeHom b a.asHom))
+      (CategoryTheory.End.of (rationalBaseChangeHom b c.asHom)) =
       @traceForm P k _ A W hadd lam hinv a c := by
   rw [traceForm_apply, traceForm_apply, involution_baseChange]
   change geometricEndomorphismTrace ((baseChange b).obj A)

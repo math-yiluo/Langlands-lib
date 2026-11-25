@@ -1,6 +1,6 @@
 # Determinant-one diagonal action on quadratic root coordinates
 
-This internal unit derives an explicit matrix comparison from the published SU3 coordinate embedding and intrinsic scaling maps. Its ring constructions work over an arbitrary involutive commutative ring with a scalar unit, including characteristic two and the zero ring. The valuation consequences use an arbitrary field and an explicitly supplied conjugation-invariant additive valuation to the extended real numbers. No new literature assertion is made.
+This module derives an explicit matrix comparison from the published SU3 coordinate embedding and intrinsic scaling maps. Its ring constructions work over an arbitrary involutive commutative ring with a scalar unit, including characteristic two and the zero ring. The valuation consequences use an arbitrary field and an explicitly supplied conjugation-invariant additive valuation to the extended real numbers. No new literature assertion is made.
 
 `barUnit` applies the specified involution to scalar units. `diagonalRootScalar` is the unit `a = t*t/bar(t)`. The actual invertible matrix `diagonal` has entries `(t, bar(t)/t, 1/bar(t))`. The entry formulas identify its underlying matrix, and entrywise multiplication proves its identity, multiplication, homomorphism and inverse laws. Its determinant is one. Expanding the matrices also proves preservation of the already defined split Hermitian form; the cancellations use unit inverses and the involution laws. The root scalar satisfies `a*bar(a) = t*bar(t)`.
 

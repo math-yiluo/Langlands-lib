@@ -1,7 +1,5 @@
 # Isomorphism transport of fixed universal representatives: proof
 
-Author: Worker 137.
-
 The theorem `universalPerfectSectionsIsoTransport.{u}` proves
 `UniversalPerfectSectionsIsoTransportStatement.{u}` by retaining the
 given complex `K`. The construction uses actual derived sections and

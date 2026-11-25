@@ -1,7 +1,5 @@
 # Actual finite-adelic rings at a finite set of places
 
-Author: Worker 208.
-
 Let `R` be a commutative Dedekind domain with fraction field `K`, in an
 arbitrary common universe `u`. For a finite set `S` of height-one primes,
 `finiteAdeleLevel R K S` is the actual subring of Mathlib's

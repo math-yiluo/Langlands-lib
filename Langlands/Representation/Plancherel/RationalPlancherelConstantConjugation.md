@@ -1,6 +1,6 @@
 # Conjugation invariance of the Plancherel constants
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.RationalPlancherelConstantConjugation`
 defines the conjugate `innerConjugate f g = f ≫ Int(g)` of a homomorphism
 of group schemes by a point. It proves that the Library's constants

@@ -47,7 +47,7 @@ theorem rationalBaseChange_endAction (f : End0 A)
         (rationalEndAction ((AbelianScheme.baseChange b).obj A) T P
           (AbelianScheme.rationalBaseChangeEnd b A f) x) =
       rationalEndAction A ((Over.map b).obj T) P f (rationalBaseChange b A T P x) :=
-  rationalBaseChange_homMap b T P f x
+  rationalBaseChange_homMap b T P f.asHom x
 
 variable {D : Type*} [Ring D] [Algebra ℚ D]
   (i : D →ₐ[ℚ] End0 A)

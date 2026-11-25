@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Positively graded algebras over a reduced local ring that are polynomial in one variable -/
 

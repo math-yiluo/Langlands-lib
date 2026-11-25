@@ -18,9 +18,8 @@ namespace `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`.
 Harris (1999), *Galois properties of cohomological automorphic forms on
 GL(n)*, works with coefficients modulo powers of the coefficient prime `ℓ`
 (printed p. 308) and forms the lisse `ℓ`-adic sheaf from them (printed
-p. 311). The module
-`Langlands.Shimura.PEL.HarrisTaylorCMEllAdicGaloisCohomology` (candidate
-`641dba11-c910-474d-9cbb-3cb23c2b7d20`, accepted and awaiting publication)
+p. 311). The published module
+`Langlands.Shimura.PEL.HarrisTaylorCMEllAdicGaloisCohomology`
 specializes the torsion-limit construction at `m = ℓ`. It proves that `ℓ`
 lies in every place of `K` above `p`, but not the corresponding facts in
 the completed valuation rings. This module supplies them: the coefficients
@@ -36,9 +35,9 @@ any comparison of the `ℓ`-power torsion limit with other definitions of
 
 ## Inputs
 
-- From `Langlands.Shimura.PEL.HarrisTaylorCMEllAdicGaloisCohomology`
-  (candidate `641dba11-c910-474d-9cbb-3cb23c2b7d20`, accepted and awaiting
-  publication): `harrisCoefficientPrime`, `harrisCoefficientPrime_ne_zero`
+- From the published
+  `Langlands.Shimura.PEL.HarrisTaylorCMEllAdicGaloisCohomology`:
+  `harrisCoefficientPrime`, `harrisCoefficientPrime_ne_zero`
   and `harrisCoefficientPrime_mem_above`.
 - From the published `Langlands.Global.Adelic`: `FiniteCompletion K v`, the
   completion `v.adicCompletion K` of `K` at a finite place `v`.
@@ -128,5 +127,6 @@ This is an internal module of two abbreviations and elementary facts about valua
 the published `FiniteCompletion`, `FinitePlacesAbove`, `placeAbove`,
 `CoefficientIntegers`, `HarrisCoefficientIntegers` and the published
 reductions by scalar ideals, from
-`harrisCoefficientPrime_mem_above` of candidate `641dba11`, and from Mathlib.
+`harrisCoefficientPrime_mem_above` of `HarrisTaylorCMEllAdicGaloisCohomology`,
+and from Mathlib.
 Harris (1999), printed pp. 308 and 311, is motivation only.

@@ -1,6 +1,6 @@
 # Real averaging prerequisites for quotient integration
 
-Worker 112 formalizes three proposition definitions needed to prove the existing
+This module formalizes three proposition definitions needed to prove the existing
 `CompatibleMeasureExists` target. No proposition in this module is proved or
 assumed by an instance. `RealQuotientMeasurePrerequisites` is their conjunction.
 The final quotient-measure construction must consume independently proved

@@ -1,7 +1,5 @@
 # Comparison and kernel geometry of arbitrary fppf quotients
 
-Worker 358.
-
 All results apply over an arbitrary base scheme and use the actual fppf
 quotient predicate `RelativeRoot.IsFppfQuotient F q`, including its equality
 between the full kernel range and the subgroup functor `F`.

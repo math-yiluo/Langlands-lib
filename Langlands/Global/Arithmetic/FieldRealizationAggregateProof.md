@@ -1,7 +1,5 @@
 # Field realization and split auxiliary quadratic fields
 
-Author: Worker 84, who wrote the proof and this explanation.
-
 The theorem `Langlands.Global.fieldRealization.{u,v}` proves the unchanged
 Library proposition `Langlands.Global.FieldRealizationStatement.{u,v}` from
 `Langlands.Global.Arithmetic.FieldRealizationStatement`. That proposition is

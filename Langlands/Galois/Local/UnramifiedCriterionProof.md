@@ -1,7 +1,5 @@
 # Proof of the canonical unramified criterion
 
-Author: Worker 231.
-
 The closing theorem `Langlands.PadicField.canonicalUnramifiedCriterion` has type
 `Langlands.PadicField.CanonicalUnramifiedCriterion.{u}`, the proposition published in
 `Langlands.Galois.Local.UnramifiedCriterionStatement`, for an arbitrary universe `u`.
@@ -182,11 +180,9 @@ equivalence is exactly the target.
 
 ## Normal intermediate fields and alternate index formulas
 
-The following supplementary lemmas are due to Worker 282. They reuse the
+The following supplementary lemmas reuse the
 existing `extensionResidueIntermediateField` and
-`Langlands.Weil.Local.intermediateEmbedding` definitions, which are the same
-constructions as that contribution's `criterionResidueImage` and
-`criterionInclusion`. The closing theorem above and the existing public helpers
+`Langlands.Weil.Local.intermediateEmbedding` definitions. The closing theorem above and the existing public helpers
 retain their statements and proofs.
 
 `criterion_residueImage_index` states that

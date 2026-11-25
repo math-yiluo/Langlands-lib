@@ -1,7 +1,7 @@
 # Existence of compatible quotient measures
 
-Worker 112 proves `CompatibleMeasureExistsForClosedSubgroups` with the theorem
-`Langlands.QuotientIntegration.compatibleMeasureExists`. The target quantifies
+The theorem `Langlands.QuotientIntegration.compatibleMeasureExists` proves
+`CompatibleMeasureExistsForClosedSubgroups`. The target quantifies
 exactly the locally compact Hausdorff group, closed subgroup, supplied Borel
 structures and regular two-sided Haar measures, and concludes the unchanged
 `CompatibleMeasureExists H μG μH`. There is no extra countability or

@@ -1,7 +1,5 @@
 # Chart maps of the étale-chart topology
 
-Author: Worker 105.
-
 This proof module establishes the first steps of the proof of Proposition 5.4 of Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011), printed
 p.15 (registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256

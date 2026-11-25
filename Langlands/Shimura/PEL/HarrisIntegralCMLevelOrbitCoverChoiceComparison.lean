@@ -351,7 +351,7 @@ private theorem path_change_apply
     (path path' : fiberFunctor t ht ≅ fiberFunctor u hu)
     (Y : Cover X) (x : Fiber t Y) :
     path'.hom.app Y x =
-      (show FundamentalGroup u hu from path.symm ≪≫ path') • path.hom.app Y x := by
+      (show FundamentalGroup u hu from Aut.of (path.symm ≪≫ path')) • path.hom.app Y x := by
   change path'.hom.app Y x =
     path'.hom.app Y (path.inv.app Y (path.hom.app Y x))
   rw [show path.inv.app Y (path.hom.app Y x) = x from
@@ -368,7 +368,7 @@ private theorem path_change_eval
     (hsmul : ∀ (g : FundamentalGroup u hu) (z : Fiber u Z),
       er (g • z) = g • er z) (y : Fiber t Z) :
     er (path'.hom.app Z y) =
-      (show FundamentalGroup u hu from path.symm ≪≫ path') • er (path.hom.app Z y) := by
+      (show FundamentalGroup u hu from Aut.of (path.symm ≪≫ path')) • er (path.hom.app Z y) := by
   rw [path_change_apply path path', hsmul]
 
 private theorem path_composition_eval
@@ -490,7 +490,7 @@ private theorem orbitCoverPointIso_change_eval
   let : SMulCommClass Gamma Hᵐᵒᵖ Frame := actionsComm
   let : SMulCommClass GammaR Hᵐᵒᵖ FrameR := commR
   intro q x
-  let g : GammaR := path.symm ≪≫ path'
+  let g : GammaR := Aut.of (path.symm ≪≫ path')
   calc
     _ = g • rawEvalR U V (targetNonempty path U hU)
         (rawPath path (levelSubgroup V) q)

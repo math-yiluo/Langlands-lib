@@ -67,4 +67,6 @@ quotient comparison and additive embedding interfaces. It makes no external
 literature attribution. It imposes no smoothness or connectedness hypothesis
 on the groups or kernels and proves neither generic image/quotient existence,
 the explicit matrix character formula, a finite tower, nor a splitting
-section. Those remain separate obligations of the parent task.
+section. Those are not part of this module; the triangular diagonal splitting
+is proved as `triangularDiagonalSplitting` in
+`Absolute.TriangularDiagonalSplittingAssembly`, which builds on this module.

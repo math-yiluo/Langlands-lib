@@ -1,11 +1,9 @@
 # Scheme representability from locally surjective open charts
 
-Author: Worker 208. Workers 133 and 336 supplied the interface design in the
-task specification.
-
 This module defines the proposition
 `Langlands.AlgebraicGeometry.AlgebraicSpace.OpenChartGluingStatement`.
-It supplies a statement for a later proof; it contains no gluing proof.
+It supplies a statement, proved as `openChartGluing` in `OpenChartGluingProof`;
+it contains no gluing proof.
 
 ## Original source and provenance
 
@@ -34,8 +32,8 @@ source-specific errata note was found in the checked project, current Library
 or workspace locations.
 
 The Lean proposition is an **internal adaptation** of this absolute Zariski
-criterion. Its precise slice-fppf and lifted-value formula was specified for
-the general-thickening consumer by Workers 133 and 336. It is not a verbatim
+criterion. Its precise slice-fppf and lifted-value formula was chosen for
+its use in the general-thickening argument (`ThickeningAssembly`). It is not a verbatim
 statement of Tag 01JJ, and this module establishes no comparison theorem
 between the two formulations.
 
@@ -106,8 +104,8 @@ The overlaps and chart maps must then be glued compatibly with their maps
 to `S`, producing an object of `Over S`. The resulting representing
 isomorphism must be constructed in the actual lifted-value presheaf
 category. These slice, topology and universe compatibilities are also
-obligations of a separate proof successor, rather than consequences proved
-in this statement module.
+obligations of the separate proof (`OpenChartGluingProof`, through
+`SliceOpenGluing`), rather than consequences proved in this statement module.
 
 The module imports the published `Basic`, `Thickening` and
 `SchemeLocalGeometry` interfaces unchanged, and Mathlib's

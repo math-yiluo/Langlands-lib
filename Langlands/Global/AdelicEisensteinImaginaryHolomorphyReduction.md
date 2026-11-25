@@ -15,7 +15,7 @@ Proposition 6) from three premises:
 - `Langlands.Global.IwasawaCompatibleMeasureExistenceStatement`: a Haar
   measure on `M(𝔸)` compatible with the Iwasawa decomposition.
 
-The analytic tools are proved in the same task, by Worker 757, in the
+The analytic tools are proved in the
 modules `Langlands.Analysis.SeveralComplex.MeromorphicDomainExtension`
 (gluing local holomorphic extensions), `ParametricIntegral` (holomorphy of
 parametric integrals) and `RealHyperplaneDivision` (division by products of
@@ -50,7 +50,7 @@ Let `E`, `D` be as in the target: `λ ↦ E λ g` is meromorphic with domain
    `ℝ ⊗ X^*(P)` is too. Fix `eR : ℝⁿ ≃ X^*(P) ⊗ ℝ` and its complex-linear
    extension `e : ℂⁿ ≃ X^*(P) ⊗ ℂ` (module `ImaginaryAxisCoordinates`), with
    `e(i x) = imaginaryParameter (eR x)`.
-2. Gluing. By Worker 757's
+2. Gluing. By
    `Langlands.Analysis.Meromorphic.exists_isMeromorphicInCoordinatesOn_extension`
    with `O = univ` and `Λ = i𝔞_P^*`, it suffices to find, for every
    `x₀ ∈ ℝⁿ`, one open `W' ∋ i x₀`. For every `g` we need a holomorphic `u`
@@ -91,7 +91,7 @@ Let `E`, `D` be as in the target: `λ ↦ E λ g` is meromorphic with domain
 7. Local division. `exists_local_division` (module
    `ImaginaryAxisLocalDivision`) applies with `ν` the Haar measure on
    `G(𝔸)`, `Γ = G(F)` and `c · vol = spectralMeasure n`, for a slice ball
-   of radius `ρ` inside `W₁`, and with Worker 757's division lemma
+   of radius `ρ` inside `W₁`, and with the division lemma
    `Langlands.Analysis.SeveralComplex.exists_open_forall_tendsto_eq_rootProduct_mul`
    for these `ℓ_β`.
    The `ℓ_β` are real on real points (`rootFunctional_complexify`) and

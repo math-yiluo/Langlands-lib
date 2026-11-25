@@ -1,8 +1,7 @@
 # Sections of split-unipotent torsors over affine schemes
 
 This module proves the published proposition
-`Langlands.GroupScheme.SplitUnipotentAffineTorsorStatement` (task
-21d6e245-dcea-4c7a-af4a-c532ea0dd295). Let H be a split-unipotent group over
+`Langlands.GroupScheme.SplitUnipotentAffineTorsorStatement`. Let H be a split-unipotent group over
 a field k, and let T be an affine scheme over k. Every fpqc torsor under the
 base change of H to T has a section over T. This is the standard vanishing of
 H¹ for split-unipotent groups over affine schemes. The proof goes by dévissage
@@ -119,5 +118,4 @@ statement is not used.
 `SplitUnipotentAffineTorsorStatement.{u}`. It applies
 `splitUnipotentAffineTorsorStatement_of_vector`, with `hvec` supplied by
 `Cocycle.isTrivial_of_isVectorGroupOfDimension_one` from
-`Langlands.GroupScheme.SplitUnipotentTorsor.VectorCocycle` (written by
-Worker 1389).
+`Langlands.GroupScheme.SplitUnipotentTorsor.VectorCocycle`.

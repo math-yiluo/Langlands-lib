@@ -6,4 +6,4 @@ This is an internal specialization of the published `Cocycle.nonempty_localTrivi
 
 `Cocycle.fieldTrivializingCochain` chooses a cochain from this existence theorem. `Cocycle.fieldTrivializingCochain_spec` records its all-test coboundary identity, so downstream constructions can use one fixed choice.
 
-This unit supplies cocycle trivialization only. The transporter and normalizer descent needed by the reductive-group application is a separate step.
+This module supplies cocycle trivialization only. The transporter and normalizer descent needed by the reductive-group application is a separate step.

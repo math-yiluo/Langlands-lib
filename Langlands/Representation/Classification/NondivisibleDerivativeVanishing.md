@@ -7,7 +7,8 @@ nontrivial unitary additive character and every order `0 < k < n`, the
 actual order-`k` derivative of `π` has a zero carrier whenever `r` does not
 divide `k`. Zero carriers are expressed by `Subsingleton`. Field and carrier
 universes remain independent; the actual representation carriers lie in
-`Type (max uF uV)`, as in the host repeated cuspidal triple target.
+`Type (max uF uV)`, as in the repeated cuspidal triple statement
+`RepeatedCuspidalTripleJacquetTransfer`.
 
 For every actual subquotient of a normalized product of actual
 supercuspidal factors, the module proves this predicate for any common
@@ -31,7 +32,9 @@ map from the increasing segment induction. For a length-two head, the only
 positive multiple of its rank strictly below its degree is its rank itself.
 Thus every other proper positive derivative vanishes. The derivative of
 order equal to the rank, the top derivative, their dimensions and the local
-rank-three irreducibility calculation remain separate obligations.
+rank-three irreducibility calculation are not proved here (see
+`TwoSupercuspidalPartialDerivatives`, `TwoSupercuspidalTopDerivatives` and
+`IncreasingAdjacentQuotientUpperProductIrreducibility`).
 
 The provenance is internal. The two direct imports are
 `Classification.UniformJacquetVanishing` and
@@ -61,8 +64,8 @@ nor general ordered quotient coverage, multisegment classification,
 analytic segment classification, special-head exhaustion, ordered
 special-head existence, tempered block uniqueness, square-integrable
 Langlands classification, square-integrable exhaustion or regular
-exhaustion. No proof successor of those conclusions occurs in the
-project closure. This unit also uses no derivative Leibniz formula,
+exhaustion. No file proving those conclusions occurs in the
+project closure. This file also uses no derivative Leibniz formula,
 two-supercuspidal adjacent reducibility theorem, special-head existence
 theorem or general segment derivative formula. Given segment quotient
 and head relations provide actual quotient maps; the proof does not

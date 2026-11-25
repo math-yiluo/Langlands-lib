@@ -1,7 +1,5 @@
 # Coordinates of points of fibre powers
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.FibrePowerCoordinates`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`. It extends the published
 `ChartFibrePower` (finite fibre powers `V ×_X ⋯ ×_X V` of a map `a : h_V ⟶ X`).

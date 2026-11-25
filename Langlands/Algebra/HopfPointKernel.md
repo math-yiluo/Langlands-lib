@@ -1,13 +1,11 @@
 # Kernels of bounded Hopf points are determined modulo `m`
 
-Author: Worker 1421.
-
 Corollaries of `Langlands.Algebra.HopfPointRigidity` phrased with the kernel of
 the scalar extension `scalarExt α : C ⊗[R] A → C[ℤ^r]`
 (`Langlands.Algebra.HopfPointClosedLocus`). This kernel is the defining ideal
 of the image torus of the corresponding homomorphism from the split torus.
 These results are used for the descent datum of the torus in the chart
-construction of task `45ac6e52-a4d8-4414-91f1-03c3be35223e`. Internal module.
+construction for the closed torus subgroup functor. Internal module.
 
 - `scalarExt_comp_mapDomain`: precomposition of a point with `mapDomain T`
   corresponds to `mapDomain T` after the scalar extension.

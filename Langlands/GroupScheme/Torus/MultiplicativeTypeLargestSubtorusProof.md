@@ -1,7 +1,5 @@
 # Proof: the largest subtorus of a group of multiplicative type
 
-Worker 351.
-
 The theorem `Langlands.GroupScheme.multiplicativeTypeLargestSubtorus` proves
 `Langlands.GroupScheme.MultiplicativeTypeLargestSubtorusStatement.{u}`
 ([statement](MultiplicativeTypeLargestSubtorusStatement.md)) in every universe `u`:

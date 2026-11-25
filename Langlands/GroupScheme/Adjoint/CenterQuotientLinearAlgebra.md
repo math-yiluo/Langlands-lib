@@ -1,7 +1,5 @@
 # Linear algebra for the quotient by the centre
 
-Author: Worker 1499.
-
 This internal helper module of the proof of
 `Langlands.GroupScheme.CenterQuotientReductiveStatement` collects elementary
 matrix facts. It is derived content: the statements are standard linear algebra

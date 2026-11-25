@@ -1,9 +1,9 @@
 # Acyclic resolutions compute right derived functors
 
-Author: Worker 716. This module proves Worker 3's statement
+This module proves the statement
 `Langlands.Cohomology.AcyclicResolutionComparisonStatement` from the module
-`Langlands.Cohomology.AcyclicResolution.Statement`. It imports that statement module, Worker
-61's published modules `Langlands.Cohomology.RightDerivedSequence` (the long exact sequence of
+`Langlands.Cohomology.AcyclicResolution.Statement`. It imports that statement module, the
+Library modules `Langlands.Cohomology.RightDerivedSequence` (the long exact sequence of
 right derived functors) and `Langlands.Cohomology.ExtendMap` (extension by zero commutes with
 applying a functor), and Mathlib's `Mathlib.Algebra.Homology.HomotopyCategory.Acyclic`.
 
@@ -44,18 +44,18 @@ mapping cones and the long exact sequence of right derived functors.
 ## Helper results
 
 All helpers are in the namespace `Langlands.Cohomology.AcyclicComparison`. They are stated in
-the setting of Worker 61's long exact sequence: `C` and `D` abelian with independent universes,
+the setting of the long exact sequence of `RightDerivedSequence`: `C` and `D` abelian with independent universes,
 `[EnoughInjectives C]`, and, where the long exact sequence is used, derived categories chosen by
 `[HasDerivedCategory.{w} C]` and `[HasDerivedCategory.{w'} D]`.
 
 - `isZero_rightDerived_obj_of_isZero F k hX`: if `X` is a zero object, then `RᵏF X` is zero.
   Proof: the identity of `X` is the zero map, and right derived functors send zero maps to zero
-  (Worker 61's `DerivedPlus.rightDerived_map_zero`; Mathlib has no `Additive` instance for
+  (`DerivedPlus.rightDerived_map_zero` of `RightDerivedSequence`; Mathlib has no `Additive` instance for
   `F.rightDerived k`).
 - `isZero_rightDerived_obj_of_iso F k e hX`: if `e : X ≅ Y` and `RᵏF X` is zero, so is
   `RᵏF Y`.
 - `isZero_rightDerived_obj_biprod F k X Y hX hY`: if `RᵏF X` and `RᵏF Y` are zero, so is
-  `RᵏF (X ⊞ Y)`. Proof: `X ⟶ X ⊞ Y ⟶ Y` is split short exact, and Worker 61's
+  `RᵏF (X ⊞ Y)`. Proof: `X ⟶ X ⊞ Y ⟶ Y` is split short exact, and
   `DerivedPlus.rightDerived_exact₂` makes `RᵏF X ⟶ RᵏF (X ⊞ Y) ⟶ RᵏF Y` exact.
 - `cyclesSc X i j`, for `X : CochainComplex C ℤ`: the short complex
   `Zⁱ ⟶ Xⁱ ⟶ Zʲ` of objects of cycles, with first map the inclusion `X.iCycles i` and second
@@ -71,13 +71,13 @@ the setting of Worker 61's long exact sequence: `C` and `D` abelian with indepen
   is `F`-acyclic. Proof: for `i < m`, `Zⁱ` is a subobject of the zero object `X.X i`, hence
   zero. For `i ≥ m - 1`, by induction on `i` (`Int.leInduction` from `m - 1`, simultaneously
   for all `n`): the short exact sequence `0 ⟶ Zⁱ ⟶ Xⁱ ⟶ Zⁱ⁺¹ ⟶ 0` has `F`-acyclic middle
-  term, so Worker 61's `DerivedPlus.isIso_rightDerivedδ_of_isZero` makes the connecting map
+  term, so `DerivedPlus.isIso_rightDerivedδ_of_isZero` makes the connecting map
   `DerivedPlus.rightDerivedδ : Rⁿ⁺¹F Zⁱ⁺¹ ⟶ Rⁿ⁺²F Zⁱ` an isomorphism, and its target is zero
   by the induction hypothesis.
 - `acyclic_map F X hX m hm hacyc` (the key lemma), with `F` preserving finite limits and the
   same hypotheses on `X`: the complex `F X` is acyclic. Proof in degree `i`: each of the three
   short exact sequences `0 ⟶ Zᵏ ⟶ Xᵏ ⟶ Zᵏ⁺¹ ⟶ 0` for `k = i - 1, i, i + 1` has `F`-acyclic
-  first term, so Worker 61's `DerivedPlus.shortExact_map_of_isZero_rightDerived_one` shows
+  first term, so `DerivedPlus.shortExact_map_of_isZero_rightDerived_one` shows
   that `F` keeps it short exact. Then `F Xⁱ⁻¹ ⟶ F Xⁱ ⟶ F Zⁱ⁺¹` is exact: it maps to the exact
   `F Zⁱ ⟶ F Xⁱ ⟶ F Zⁱ⁺¹` by `F (X.toCycles (i - 1) i)` (an epimorphism) and identities, so
   Mathlib's `ShortComplex.exact_iff_of_epi_of_isIso_of_mono` applies. It also maps to
@@ -132,5 +132,5 @@ homology map of the quasi-isomorphism `F φ` in degree `n`, an isomorphism by
 `quasiIsoAt_iff_isIso_homologyMap`; composing with the inverse of the isomorphism
 `I.isoRightDerivedObj F n` gives an isomorphism (`IsIso.comp_isIso'`).
 
-`lean_check` reports that the theorem depends only on the axioms `propext`,
+The Lean check reports that the theorem depends only on the axioms `propext`,
 `Classical.choice` and `Quot.sound`, and that its universe parameters are `u v u' v'`.

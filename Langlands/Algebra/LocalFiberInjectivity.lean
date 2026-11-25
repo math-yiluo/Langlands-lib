@@ -75,8 +75,7 @@ theorem injective_of_eventually_injective
 
 variable [Module R M] [Module R N] [IsScalarTower R S M] [IsScalarTower R S N]
 
-/-- Descent and the actual approximation transition maps give a flatness tail.
-Adapted from Worker 214's fibrewise-flatness assembly. -/
+/-- Descent and the actual approximation transition maps give a flatness tail. -/
 theorem eventually_flat_of_descent_and_propagation
     (F : LocalModuleSystem.{uI, uA, uB, uF, uR, uS, uN} D N)
     (hRS : EssFinitePresentation R S)

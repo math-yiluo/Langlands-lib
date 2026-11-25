@@ -1,7 +1,5 @@
 # Products of ordered Čech cochains of a presheaf of rings
 
-Author: Worker 274.
-
 This module defines the Alexander–Whitney products of ordered Čech cochains that are needed
 to multiply degree-one Čech classes of a presheaf of commutative rings, and proves their
 Leibniz rules. It is a helper for the proof of

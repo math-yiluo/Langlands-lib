@@ -1,8 +1,8 @@
 # Smoothness of the action of `G` on `H^q(X, b^*F)` and `H^q_c(X, b^*F)`
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.AnalyticRepComparison` (accepted candidate `a8d99f4f`):
+- `Langlands.Sheaf.Equivariant.AnalyticRepComparison`:
   the equivariance theorems `etaleComparison_representation`,
   `etaleCompactComparison_representation`, `quasiEtaleComparison_representation` and
   `quasiEtaleCompactComparison_representation`. Each says that the comparison map
@@ -14,9 +14,9 @@ Author: Worker 26. Builds on the following modules:
   `quasiEtaleGSheafCompactCohomology` (Berkovich's `H^q(X{G}, F)` and `H^q_c(X{G}, F)`), the
   canonical actions `etaleRestrictionCohomologyAction`,
   `etaleRestrictionCompactCohomologyAction`, `quasiEtaleRestrictionCohomologyAction` and
-  `quasiEtaleRestrictionCompactCohomologyAction` (published candidate `9abc9653`), and
+  `quasiEtaleRestrictionCompactCohomologyAction`, and
   `smoothForget R G`.
-- `Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.Statement` (Worker 16):
+- `Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.Statement`:
   `AnalyticQuasiEtaleGlobalComparisonStatement X G ρ R`, the statement without proof of the
   quasi-étale case of Berkovich's Theorem 1.6.1(ii). It says: if `IsCompactSpace X` and
   `IsContinuousAction ρ`, then `quasiEtaleComparison ρ R q` is an isomorphism for every `q`.
@@ -92,7 +92,7 @@ For each column, with `q : ℕ` and `F` a `G`-sheaf:
 
 The surjectivity and bijectivity of `c.hom` are hypotheses. They are not proved here.
 
-## Consequences of Worker 16's statement (quasi-étale, `H^q`)
+## Consequences of `AnalyticQuasiEtaleGlobalComparisonStatement` (quasi-étale, `H^q`)
 
 Assume `hB : AnalyticQuasiEtaleGlobalComparisonStatement X G ρ R`, `hX : IsCompactSpace X`
 and `hρ : IsContinuousAction ρ`.
@@ -106,7 +106,10 @@ and `hρ : IsContinuousAction ρ`.
 - `quasiEtaleComparisonSmoothIsoOfStatement ρ R hB hX hρ q F`, a definition: the isomorphism
   of smooth representations `quasiEtaleComparisonSmoothIso` for this bijectivity.
 
-These results are conditional on `hB`, which is a hypothesis; it has not been proved.
+These results are conditional on `hB`, which is a hypothesis here. The statement is proved
+as `analyticQuasiEtaleGlobalComparison` in
+`Langlands.Cohomology.AnalyticQuasiEtaleGlobalComparison.Proof`, which this module does not
+import.
 
 ## Original source
 
@@ -140,7 +143,8 @@ quasi-étale `H^q_c` column applies the same step to the quasi-étale comparison
 in `AnalyticEtaleComparison` and `AnalyticQuasiEtaleComparison`.
 
 Not formalized here: the comparison isomorphisms themselves (Corollary 1.5.2(i), and
-Theorem 1.6.1(ii) beyond the conditional consequences of Worker 16's statement), and the
+Theorem 1.6.1(ii) beyond the conditional consequences of
+`AnalyticQuasiEtaleGlobalComparisonStatement`), and the
 spectral sequences. In particular, no unconditional smoothness of the action on
 `H^q(X, b^*F)` or `H^q_c(X, b^*F)` is proved.
 

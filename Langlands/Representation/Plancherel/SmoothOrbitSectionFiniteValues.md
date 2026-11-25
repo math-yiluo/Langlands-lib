@@ -1,6 +1,6 @@
 # Finite values at actual inducing representatives
 
-This derived unit gives the smooth-section choice used in the lower inclusion
+This derived module gives the smooth-section choice used in the lower inclusion
 of Waldspurger VIII.4.2, printed p.330 (PDF p.96), on the existing product-induced
 section space. It turns finite parameter isolation into isolation at actual
 inducing representatives, with no choice of torus parameters supplied by the
@@ -31,5 +31,5 @@ continuous norm family and Levi projection, factorization, torus coordinates
 and finite actual class-stabilizer hypotheses. The carrier universe is
 independent of the group and torus universes.
 
-This unit does not prove packet membership, cuspidality or either closed
-Task 7440 target.
+This module does not prove packet membership, cuspidality, the Waldspurger
+VIII.4.2 cuspidal coefficient equality or the same-level coefficient lifting.

@@ -1,7 +1,5 @@
 # Proof of finite-type adelic-level model comparison
 
-Author: Worker 208.
-
 `adelicFiniteTypeLevelModelComparison` proves exactly
 `AdelicFiniteTypeLevelModelComparisonStatement` in its arbitrary common
 universe, with the original actual arithmetic level maps and all the

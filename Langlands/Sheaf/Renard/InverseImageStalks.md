@@ -1,12 +1,12 @@
 # Original stalks of equivariant inverse image
 
-Worker 151, Task 5297. Derived construction supporting Renard III.3.2,
+Derived construction supporting Renard III.3.2,
 printed p.84 / PDF p.90, restriction-functor paragraph and its assertion that
 point restriction is the original smooth stabilizer representation. Source:
 `renard-2026-representations-groupes-reductifs-padiques`, French edition dated
 9 July 2026, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-This unit constructs the comparison between original stalks for the
+This module constructs the comparison between original stalks for the
 published action-sheaf inverse image. The comparison is an internal
 implementation bridge for the source's restriction, not a separately printed
 theorem or a supplied isomorphism assumption.
@@ -75,7 +75,7 @@ fixed-stalk functor at f(x) and its target is the actual inverse image followed
 by the original fixed-stalk functor at x.
 
 This completes the original-stalk and stabilizer-action comparison for the
-actual inverse image. It does not yet construct the equivalence between
+actual inverse image. It does not construct the equivalence between
 sheaves on a singleton and representations, compare singleton global sections
 with their stalk, lift this natural isomorphism to the smooth categories, or
 construct the induction/coinvariant sheaves or the main III.3 statements.

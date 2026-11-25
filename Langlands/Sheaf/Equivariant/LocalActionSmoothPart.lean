@@ -39,14 +39,15 @@ def IsRestrictionEquivariant {U V : T} {H H' : OpenSubgroup G}
     (p : V ⟶ U) : Prop :=
   ∀ K : OpenSubgroup G, K ≤ H → ∃ M : OpenSubgroup G, M ≤ H' ∧
     ∀ h : (H' : Subgroup G), (h : G) ∈ M → ∃ k : (H : Subgroup G), (k : G) ∈ K ∧
-      (b h).unop ≫ p = p ≫ (a k).unop
+      (b h).unop.asHom ≫ p = p ≫ (a k).unop.asHom
 
 /-- An arrow intertwining two local actions on a common open subgroup restricts
 discreteness. -/
 theorem isRestrictionEquivariant_of_intertwines {U V : T} {H H' : OpenSubgroup G}
     {a : (H : Subgroup G) →* (End U)ᵐᵒᵖ} {b : (H' : Subgroup G) →* (End V)ᵐᵒᵖ}
     {p : V ⟶ U} (N : OpenSubgroup G) (hNH : N ≤ H) (hNH' : N ≤ H')
-    (hp : ∀ (g : G) (hg : g ∈ N), (b ⟨g, hNH' hg⟩).unop ≫ p = p ≫ (a ⟨g, hNH hg⟩).unop) :
+    (hp : ∀ (g : G) (hg : g ∈ N), (b ⟨g, hNH' hg⟩).unop.asHom ≫ p =
+      p ≫ (a ⟨g, hNH hg⟩).unop.asHom) :
     IsRestrictionEquivariant a b p := by
   intro K _
   refine ⟨N ⊓ K, inf_le_left.trans hNH', fun h hh => ?_⟩

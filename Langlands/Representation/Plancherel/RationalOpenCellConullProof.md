@@ -1,7 +1,5 @@
 # Haar conullness of the actual rational dynamic open cell
 
-Author: Worker 135.
-
 The theorem `Langlands.Plancherel.rationalDynamicOpenCellConull` proves the
 unchanged `Langlands.Plancherel.RationalDynamicOpenCellConullStatement.{u}`.
 It assembles the actual-point density, geometric boundary and Noetherian

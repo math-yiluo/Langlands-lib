@@ -1,6 +1,6 @@
 # Actual common-Levi compact standard families
 
-Worker 266. This is a derived adapter from the published actual common-Levi
+This is a derived adapter from the published actual common-Levi
 standard integrals to the published compact-picture interface.
 
 Source: J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques
@@ -113,5 +113,5 @@ This module supplies actual families and their elementary transport laws.
 It proves neither squared-modulus compatibility for a general common-Levi
 pair nor nonempty convergence regions, rationality, continuation existence,
 unitary regularity, invertibility, composition, or scalar identities.
-Those remain separate obligations. The proofs use the ordinary permitted
+Those are separate obligations. The proofs use the ordinary
 Lean axioms only; no axiom or proof hole is introduced.

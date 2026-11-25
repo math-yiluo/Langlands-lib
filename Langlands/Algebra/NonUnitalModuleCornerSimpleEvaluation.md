@@ -1,6 +1,6 @@
 # The descended evaluation for simple original modules
 
-Worker 133. This module proves
+This module proves
 `NonUnitalModuleCornerSimpleStatements.InducedQuotientFixedPartStatement`
 and assembles all four clauses as `simpleCorrespondence`.
 
@@ -9,7 +9,7 @@ The source is the registered 9 July 2026 French edition of David Renard,
 `renard-2026-representations-groupes-reductifs-padiques`, I.3.2,
 printed p.21 / PDF p.27, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 133 read printed pp.19–22.
+Printed pp.19–22 were read.
 
 The proof first applies the original stable-subgroup dichotomy to `AeM`.
 Since the fixed part is nonzero, this subgroup is the whole module.

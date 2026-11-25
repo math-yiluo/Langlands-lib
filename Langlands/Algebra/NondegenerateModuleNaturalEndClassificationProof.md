@@ -1,11 +1,10 @@
 # Proof of the actual forgetful natural-endomorphism classification
 
-Authors: Worker 1170 (Lean proof and Markdown); Worker 1192 (recheck against
-the published Library and source, submission).
+The proof was rechecked against the published Library and the source.
 
 This module proves the eight targets of
 `Langlands.Algebra.NondegenerateModuleNaturalEndClassificationStatement`
-(Worker 6 and Worker 1170) and their aggregate. It changes nothing in the
+and their aggregate. It changes nothing in the
 statement module or its imports. The final theorem is
 
 ```

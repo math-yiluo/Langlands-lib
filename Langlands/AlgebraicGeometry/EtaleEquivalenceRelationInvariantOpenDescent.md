@@ -1,7 +1,5 @@
 # Invariant affine covers at a finite level of a cartesian diagram
 
-Author: Worker 706.
-
 This internal construction supplies the invariant-open descent step in Stacks
 Lemma 70.5.11, Tag 07SR, used by Proposition 70.8.1, Tag 07SU. The registered
 originals are `stacks-stratification-2026-11-02` and

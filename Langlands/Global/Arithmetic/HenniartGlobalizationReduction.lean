@@ -1,8 +1,8 @@
 import Langlands.Global.Arithmetic.HenniartGeneratorRealization
 import Langlands.Global.Arithmetic.HenniartCommonBaseRealizationProof
 import Langlands.LocalFactor.CommonClosureFactoringBrauer
-import Langlands.ClassField.Global.FamilyGaloisOverfield
-import Langlands.ClassField.Global.LocalRelativeWeilMapExistenceProof
+import Langlands.ClassFieldTheory.Global.FamilyGaloisOverfield
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapExistenceProof
 import Langlands.Automorphic.CuspidalAllLocalIrreduciblePresentationProof
 import Mathlib.FieldTheory.PrimitiveElement
 
@@ -26,7 +26,7 @@ universe uK uQ uW uP
 namespace Langlands.Global
 
 open NumberField Langlands.Weil.Local Langlands.Global.CompletionPadic
-open Langlands.ClassField.Global Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.LocalFactor.CommonClosure Langlands.VirtualRepresentation
 open Langlands.VirtualRepresentation.RelativeGlobal Langlands.Automorphic
 open GeneralPosition

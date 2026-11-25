@@ -1,6 +1,6 @@
 # Independence of archimedean arithmetic factor presentations
 
-Worker 33 authors the proposition
+This module states the proposition
 `Langlands.LocalFactor.ArchimedeanFactorPresentationIndependenceStatement`.
 It asserts that isomorphic finite presentations by the actual archimedean
 Weil representations give the same separate L- and epsilon-factors.
@@ -8,7 +8,7 @@ All factor expressions are explicit. Their equality is a conclusion;
 neither a classification theorem nor the existence of a factor system is
 assumed.
 
-This is a statement contribution, with theorem proofs separate. It covers
+This is a statement module, with theorem proofs separate. It covers
 choice independence on actual finite presentations. It does not claim that
 every representation admits such a presentation. In particular, it does
 not confuse arbitrary continuous representations with semisimple ones.
@@ -18,9 +18,9 @@ classes remain separate obligations.
 
 ## Actual representations and input equations
 
-The representation constructors are Worker 2's
+The representation constructors are
 `Langlands.Weil.Archimedean.complexCharacter`, `realCharacter`, and
-`realInducedCharacter`. The first two act on the complex line; the last acts
+`realInducedCharacter` (module `Langlands.Weil.ArchimedeanRepresentation`). The first two act on the complex line; the last acts
 on `Complex × Complex` and is identified by a proved intertwining equivalence
 with the actual equivariant-function induction model. Its restriction to
 the complex subgroup is the sum of a character and its conjugate pullback;
@@ -47,7 +47,7 @@ These equations specify input parameters for existing characters. They
 assume no factor formula and no existence theorem. Nonunitary characters
 are allowed, and no restriction on `Re(t)` occurs. The earlier published
 archimedean abelian statement separately states classification of all
-quasicharacters; it is not resubmitted or assumed here.
+quasicharacters; it is not restated or assumed here.
 
 The complex presentation is a finite list of complex data. The real
 presentation is a finite list whose entries are either real character data
@@ -80,8 +80,9 @@ Euclidean area. These are the plus Fourier conventions and their standard
 self-dual measures. No further self-dual normalization is silently made
 when the measure is scaled below.
 
-The L expression is the product of Worker 20's published
-`gammaReal.shift` and `gammaComplex.shift` constructors, combined by
+The L expression is the product of the published
+`gammaReal.shift` and `gammaComplex.shift` constructors (module
+`Langlands.LocalFactor.Archimedean.Definitions`), combined by
 `ReciprocalEntire.product`. Consequently it is an actual nonzero entire
 reciprocal denominator and a punctured meromorphic germ at every point.
 The theorem states equality in `ReciprocalEntire`; hence the entire
@@ -190,7 +191,7 @@ Retained original:
 `C:/Central-Library/Borel-Casselman--Automorphic Forms, Representations and L-Functions (Corvallis)--1979/Part II.pdf`.
 The earlier abelian normalization work visually checked the formula pages,
 and PDF19 and PDF23--24 were read directly again for this presentation
-target. For this submission the text of PDF19 and PDF21--24 was reread
+target. For this statement the text of PDF19 and PDF21--24 was reread
 against every locator above.
 
 The polar-parameter notation is a translation of Tate's `z^(-N) omega_s`
@@ -204,31 +205,30 @@ they are not quoted verbatim from Tate.
 
 ## Dependencies and status
 
-All three direct project imports were published under their original paths at
+All three direct project imports were in the Library under their original paths at
 commit `30ceb5a0d89d8094c1663fc19f35416519b9a125`, together with their own
-published dependencies. Integration uses the canonical
+dependencies. The Lean file uses the canonical
 `Langlands.LocalFactor.Archimedean.Definitions` path, retaining all declaration
 names and mathematical bodies. The table records historical fingerprints
-before migration; no draft or unpublished module is imported.
+before migration; only Library modules are imported.
 
 | Current import (original path where moved) | Historical Lean SHA-256 |
 | --- | --- |
-| `Langlands.Weil.ArchimedeanRepresentation` (Worker 2) | `32ba55eaf9ac19b6c4b9c6a48f390cce35991961d78aab0f5e83cd71e3ee20a2` |
-| `Langlands.Weil.Representation.SumsTensor` (Worker 17) | `d5ce49ecda33a85b025d201c0cb114a98bbed8c65d36050aa6fc1b55cf42275b` |
-| `Langlands.LocalFactor.Archimedean.Definitions` (formerly `Langlands.LocalFactor.Archimedean`, Worker 20) | `9f2a4b986dcdd37b16f6d7547896ee50b1fbe2f05f02451b872538aa8199d7f1` |
+| `Langlands.Weil.ArchimedeanRepresentation` | `32ba55eaf9ac19b6c4b9c6a48f390cce35991961d78aab0f5e83cd71e3ee20a2` |
+| `Langlands.Weil.Representation.SumsTensor` | `d5ce49ecda33a85b025d201c0cb114a98bbed8c65d36050aa6fc1b55cf42275b` |
+| `Langlands.LocalFactor.Archimedean.Definitions` (formerly `Langlands.LocalFactor.Archimedean`) | `9f2a4b986dcdd37b16f6d7547896ee50b1fbe2f05f02451b872538aa8199d7f1` |
 
 The representation Lean file is byte-identical to the version against
 which this statement was first developed and checked; only its Markdown
-was revised before publication. The published Markdown was read for this
-submission, and the description of the three constructors above agrees
-with it.
+was revised. That Markdown was read, and the description of the three
+constructors above agrees with it.
 
-The local presentation expressions are available for coordination with the
-arithmetic definition owner; they do not create a competing representation
+The local presentation expressions can be reused by the arithmetic factor
+definitions, as in `Langlands.LocalFactor.ArchimedeanAttachment`; they do not
+create a competing representation
 carrier or claim an already descended arithmetic function.
 
-The unchanged statement passed check
-`8548543f-745f-4530-8344-c9da5a3a3f74` in the pinned environment
+The unchanged statement passed a check in the pinned environment
 (Lean 4.34.0, Mathlib `5ed2965256430c3649e86755f9576b54eca72435`) over
 the published sources named above. The incremental Lake build and the
 inspection of the closing declaration both terminated with exit code zero,
@@ -242,7 +242,5 @@ the whole proposition fingerprint is
 `009a9bf84c69e3bd82d95acb2a2532b137ddb5215c3d2b90e50e46946c775baa`,
 identical to that of the first development check.
 
-Independent semantic review accepted this statement contribution.
 Compilation and target inspection do not prove the proposition. The theorem
-proof is a separate obligation, and no callable descended factor or completion
-of the broad arithmetic statement task is claimed.
+proof is a separate obligation, and no callable descended factor is claimed.

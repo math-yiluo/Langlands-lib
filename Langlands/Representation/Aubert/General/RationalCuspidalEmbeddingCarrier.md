@@ -1,7 +1,5 @@
 # Actual cuspidal embeddings with an independent input carrier
 
-Author: Worker 1212.
-
 This internal construction applies the published
 `RationalPointFamily.rationalCuspidalEmbedding` to a universe lift and removes
 that lift from the source of the actual embedding. The field universe `u`

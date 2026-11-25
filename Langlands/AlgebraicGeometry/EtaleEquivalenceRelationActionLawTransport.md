@@ -1,7 +1,5 @@
 # Transport of the finite action equations
 
-Author: Worker 706.
-
 This internal helper derives naturality and a pullback criterion for the finite
 action equations from the scheme fibre product universal property. It uses the
 existing relation unit and composition and does not assume approximation.

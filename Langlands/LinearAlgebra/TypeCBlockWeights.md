@@ -1,7 +1,5 @@
 # Simple-root restrictions on repeated type C weights
 
-Author: Worker 244 for Task 6244.
-
 This internal combinatorial module defines `Langlands.TypeCBlockWeights.weight`.
 Its argument `i` is a zero-based coordinate of the natural symplectic
 representation. Coordinates in the `k`-th block, from `k * degree` through

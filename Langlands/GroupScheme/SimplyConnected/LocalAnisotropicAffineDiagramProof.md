@@ -1,7 +1,5 @@
 # Proof: the affine diagram of an anisotropic group over a local field
 
-Authors: Worker 161, Worker 227 (Task 6205).
-
 `Langlands.GroupScheme.localAnisotropicAffineDiagram` proves the published
 proposition `Langlands.GroupScheme.LocalAnisotropicAffineDiagramStatement.{u}`
 at every universe `u`. The statement module

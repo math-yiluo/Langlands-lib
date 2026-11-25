@@ -1,8 +1,7 @@
 # Additivity and cancellation for rank order
 
 Helper module for the proof of
-`Langlands.Aubert.SocleProductLeadingTermStatement`. Worker 104 and Worker
-597 wrote it in an earlier project instance.
+`Langlands.Aubert.SocleProductLeadingTermStatement`.
 
 These internal combinatorial lemmas follow directly from the published
 definition of `Multisegment.RankLE` in `Aubert/MultisegmentRankOrder`:

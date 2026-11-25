@@ -1,7 +1,8 @@
 # Structural inputs to reductive Kottwitz descent
 
 This companion to `ReductiveMapExistenceReduction` develops parts of
-the structural reduction in Task 6363. It does not assert the unconditional
+the structural reduction for the existence and z-extension independence of the
+reductive Kottwitz map. It does not assert the unconditional
 `ReductiveKottwitzExistenceStatement`. The provenance is the factorization
 argument of Kaletha–Prasad (2023), Lemma 11.5.1, printed p. 430 / PDF p. 461,
 source `kaletha-prasad-2023-bruhat-tits-new-approach`, together with internal
@@ -40,8 +41,8 @@ algebraic fundamental-group map statement, the simply-connected-derived
 Kottwitz statement, the inertia-map statement, naturality between groups
 with simply connected derived subgroup, nonemptiness of z-extensions,
 point and inertia surjectivity, and common domination. It concludes every
-conjunct of the requested existence statement at a fixed group. It no
-longer assumes a separate kernel-vanishing condition. The outstanding
+conjunct of the existence statement at a fixed group. It does not
+assume a separate kernel-vanishing condition. The outstanding
 inputs remain explicit assumptions of this lemma. The companion
 `ReductiveMapTorusReduction` supplies several of them from published proofs,
 and `ReductiveMapRemainingInputs` packages the final four-premise reduction.

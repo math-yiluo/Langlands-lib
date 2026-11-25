@@ -93,7 +93,7 @@ every relative scheme test, respectively.
 
 ## Provenance and scope
 
-This unit is internal derived algebra, not a translation of an external
+This module is internal derived algebra, not a translation of an external
 theorem. Its input is the existing actual polynomial action and divided-power
 identities, Mathlib's monic remainder construction and proved Lucas consequence,
 and the preceding all-test coefficient comparisons. The new bounded results
@@ -103,6 +103,6 @@ polynomial algebra.
 
 No Frobenius-kernel group scheme or comparison with such a scheme is constructed
 here. A single finite height is described only by the stated affine nilpotent
-scalar tests. This unit does not construct a generating root family, a
+scalar tests. This module does not construct a generating root family, a
 highest-weight or Steinberg module, or the big cell, and does not prove
 `SteinbergBigCellStatement`.

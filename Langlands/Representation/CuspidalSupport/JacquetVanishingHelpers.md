@@ -1,7 +1,5 @@
 # Elementary helpers for Jacquet vanishing
 
-Author: Worker 191.
-
 These internal algebraic helpers treat rank zero in both vanishing targets of
 `JacquetInductionStatement`. The ambient general linear group of rank zero is
 trivial, so all of its subgroups are equal and the identity permutation

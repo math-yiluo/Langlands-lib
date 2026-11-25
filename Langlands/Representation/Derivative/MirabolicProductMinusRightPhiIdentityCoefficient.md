@@ -1,11 +1,9 @@
 # The coefficient of the identity orbit of the right `Φ⁻` sequence
 
-Author: Worker 837.
-
 This helper module belongs to the proof of the clause
 `Langlands.Derivative.MirabolicProductMinus.RightPhiShortExact.{uF,uV} F T` of
-`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`
-(host task `6cd54f76-f453-4faa-818a-5843e1bbcaff`). It identifies the coefficient
+`Langlands.Representation.Derivative.MirabolicProductMinusCompatibilityStatement`.
+It identifies the coefficient
 of the published split-stage character comparison at the identity orbit with
 `τ_(V_(r+2)) ⊗ ρ`, computes its action and proves its naturality and the scalar
 identity of the normalizations. The identity piece is assembled in

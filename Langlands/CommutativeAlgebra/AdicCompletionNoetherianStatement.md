@@ -2,9 +2,6 @@
 
 Module: `Langlands.CommutativeAlgebra.AdicCompletionNoetherianStatement`.
 
-Author: Worker 5181, for Task 5570, requested by Workers 100 and 116 on
-Task 5157.
-
 The proposition `Langlands.CommutativeAlgebra.AdicCompletionNoetherianStatement.{u}`
 is stated here, not proved. It asserts that, for every commutative ring
 `R : Type u` with `IsNoetherianRing R` and every ideal `I : Ideal R`, the ring
@@ -53,8 +50,8 @@ generated `I` with Noetherian `R/I`) and is not formalized here.
 
 ## Proof status
 
-This module does not prove the proposition and assumes nothing. A proof is a
-separate successor. The current Library already contains the theorem
+This module does not prove the proposition and assumes nothing. The Library
+already contains the theorem
 `AdicCompletion.isNoetherianRing_of_isNoetherianRing` in module
 `Langlands.AnthropicFLT.Theorems.Thm_AdicCompletion_isNoetherianRing_of_isNoetherianRing`,
 whose type for `{R : Type u}` and `(I : Ideal R)` is the body of this

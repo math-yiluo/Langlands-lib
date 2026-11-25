@@ -1,7 +1,5 @@
 # Representable closed immersions and thickenings
 
-Author: Worker 133.
-
 This module imports `Langlands.AlgebraicGeometry.AlgebraicSpace.Basic` and
 extends its geometric predicates on actual natural transformations. It defines
 closed immersions, arbitrary thickenings, nth-order thickenings, first-order

@@ -1,7 +1,5 @@
 # Finite-set AF descent conditional on quasi-affine-source AF descent
 
-Author: Worker 133.
-
 This internal module completes the reduction of the exact full AF-descent
 proposition to the explicit mathematical premise
 `FiniteSurjectiveQuasiAffineSourceAFStatement.{u}`. It does not prove that

@@ -8,7 +8,7 @@ Theorem 7.5.3(2): `N(F) ∩ G(F)^♮` acts on the apartment through exactly
 building of supplied data. `iwahoriDecompositionAxiomReduction` proves this
 implication.
 
-The range statement remains an explicit premise. This unit does not prove
+The range statement remains an explicit premise. This module does not prove
 Axiom 4.1.16 without it. It shows that, once the range statement is proved,
 nothing else is missing for Axiom 4.1.16. The range statement is used in only
 one step: an element of `N(F) ∩ G(F)^0` that maps a chamber `C` onto itself

@@ -81,7 +81,7 @@ theorem algClosedFieldDualSchemeRelativeDimension_of
     refine le_antisymm ?_ hlow
     rw [← (IsRegularLocalRing.iff_finrank_cotangentSpace _).mp hR, ← hcot]
     exact_mod_cast hT
-  have := IsRegularLocalRing.isDomain (D.left.presheaf.stalk (e.left (IsLocalRing.closedPoint K)))
+  have := IsRegularLocalRing.isDomainFLT (D.left.presheaf.stalk (e.left (IsLocalRing.closedPoint K)))
   have hx₀ : IsClosed ({e.left (IsLocalRing.closedPoint K)} : Set D.left) :=
     (pointEquivClosedPoint D.hom ⟨e.left, Over.w e⟩).2
   have key (y : D.left) (hy : IsClosed ({y} : Set D.left)) :

@@ -7,7 +7,7 @@ infrastructure for Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Example 4.2, printed page 10. That passage decomposes the
 completed tensor algebra into the product over all upper places.
 
-This unit supplies the full finite index set and surjectivity of that
+This module supplies the full finite index set and surjectivity of that
 comparison. Tensor injectivity, which is needed for the decomposition used in
 the source, remains a separate obligation. It is not assumed or claimed here.
 
@@ -145,7 +145,9 @@ finite-dimensional topology. Its canonical maps and local scalar actions are
 actual constructions; no comparison equivalence or local-degree bound is
 given as an additional premise.
 
-Injectivity in the function-field setting, the resulting algebra
-decomposition, the associated nonaffine point-space homeomorphism, integral
-models and passage to adelic limits remain obligations of the whole-paper
-task.
+Injectivity in the function-field setting and the resulting algebra
+decomposition are proved in `CurvePlaceCompletedTensorEquiv`
+(`allTensorMap_bijective`, `allTensorEquiv`). The associated nonaffine
+point-space homeomorphism, integral models and passage to adelic limits are
+not part of this module; the Library proves the comparison of Example 4.2 as
+`adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.

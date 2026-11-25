@@ -1,7 +1,7 @@
 # Restricting opposite dual Jacquet vectors to a consecutive coarsening
 
 Module `Langlands.Representation.Exponents.WeakCriticalTopLayerCoarsening`.
-Internal helper module (no source statement); author Worker 728.
+Internal helper module (no source statement).
 
 ## Setting
 

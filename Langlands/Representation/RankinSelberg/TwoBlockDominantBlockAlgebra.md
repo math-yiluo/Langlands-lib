@@ -5,8 +5,7 @@ Section 4.10(2), printed page 419. The registered original is
 `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The residual factor and padding constructions here are derived formalization
-infrastructure, not separate displayed claims attributed to the source. The
-residual's mathematical design was supplied by Worker 484.
+infrastructure, not separate displayed claims attributed to the source.
 
 The generic algebra works over every commutative ring `K` in arbitrary universe,
 with independently universe-polymorphic finite index types `A,C,B`.

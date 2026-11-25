@@ -1,17 +1,17 @@
 # Original generic-fibre comparison of a number-field space Weil model
 
-This internal unit identifies the original integral Weil model's generic fibre,
+This module identifies the original integral Weil model's generic fibre,
 proves its compatibility with the canonical full adelic tensor map, and constructs
 the field-valued adelic homeomorphism for these specified models. Algebraicity
 and separated finite-type geometry of the integral Weil model remain explicit
-inputs; arbitrary independent models are not compared in this unit.
+inputs; arbitrary independent models are not compared in this module.
 
 Let `L/K` be an extension of number fields and `S` a finite set of finite places
 of `K`. Let `X` be an algebraic space over the original upper S-integers, where
 the upper support is the full preimage of `S`, and assume its original Weil
 sheaf to the lower S-integers is algebraic.
 
-`genericWeilAlgebraic` applies the published cartesian Weil base-change result
+`genericWeilAlgebraic` applies the existing cartesian Weil base-change result
 to the original fraction-field tensor equivalence. Its right pure-tensor law
 is the original inclusion of the upper integral coefficients into `L`.
 `genericFiberIso` is that actual cartesian isomorphism from the generic fibre
@@ -50,4 +50,4 @@ The provenance is internal composition of the actual integral-closure fraction
 tensor equivalence, cartesian Weil base change, counit evaluation compatibility,
 canonical full adelic tensor comparison, and the proved fixed-model and spread
 homeomorphisms. All original infinite-place factors and coefficient maps are
-retained through these published constructions.
+retained through these constructions.

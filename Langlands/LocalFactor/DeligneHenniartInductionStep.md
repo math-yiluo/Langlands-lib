@@ -2,10 +2,9 @@
 
 Lean module: `Langlands.LocalFactor.DeligneHenniartInductionStep`
 (namespace `Langlands.LocalFactor.NonabelianSystem.DeligneHenniart`). It imports
-`Langlands.LocalFactor.DeligneHenniartRelativeWitness` (Worker 1813's accepted candidate
-f81c641d, with its import `DeligneHenniartUpperUnits`, candidate 0f242e66) and
-`Langlands.LocalFactor.CommonClosureInductionTensor` (the projection formula, my accepted
-candidate e4245d3f).
+`Langlands.LocalFactor.DeligneHenniartRelativeWitness` (with its import
+`DeligneHenniartUpperUnits`) and
+`Langlands.LocalFactor.CommonClosureInductionTensor` (the projection formula).
 
 ## Setting
 

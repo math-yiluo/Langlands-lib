@@ -1,6 +1,6 @@
 # Norm-one tori over the actual maximal unramified field
 
-Worker 336. This internal specialization for Task 6432 derives the torus
+This internal specialization derives the torus
 boundedness step from the spectral torus helper. Its source motivation is
 Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), Proposition 2.5.8,
 printed pages 88–89 / PDF pages 119–120. The precise statement for the Library's

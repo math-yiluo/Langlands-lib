@@ -1,7 +1,7 @@
 # The abelian category of equivariant module sheaves
 
-Author: Worker 61. Builds on Worker 13's published equivariant sheaf category
-and on the companion transport site `Langlands.Sheaf.Equivariant.Site`.
+Builds on the published equivariant sheaf category
+(`Langlands.Sheaf.Equivariant.Topological`) and on the companion transport site `Langlands.Sheaf.Equivariant.Site`.
 
 Let `R` be a commutative ring, and let a group `G` act on a topological space
 `X` by continuous individual operators. Here `R`, `G` and `X` all lie in one
@@ -51,7 +51,7 @@ member PDF SHA-256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`) and
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`
 (SHA-256 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`).
-Worker 61 read the cited passages.
+The cited passages were read in the original.
 
 Dependencies: the companion `Site` module and Mathlib `Sites.Abelian`,
 `Sites.LeftExact`, `Abelian.GrothendieckAxioms.Sheaf`,

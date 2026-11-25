@@ -101,19 +101,19 @@ def ring (A : Type uA) [NonUnitalRing A] :
   inferInstanceAs (Ring (End (nondegenerateModuleForgetful.{uA, uM} A)))
 
 @[simp] theorem zero_app_hom (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((0 : NondegenerateModuleNaturalEnd A).app M).hom = 0 := rfl
+    ((0 : NondegenerateModuleNaturalEnd A).asHom.app M).hom = 0 := rfl
 
 @[simp] theorem add_app_hom (θ η : NondegenerateModuleNaturalEnd.{uA, uM} A)
     (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((θ + η).app M).hom = (θ.app M).hom + (η.app M).hom := rfl
+    ((θ + η).asHom.app M).hom = (θ.asHom.app M).hom + (η.asHom.app M).hom := rfl
 
 @[simp] theorem one_app_hom (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((1 : NondegenerateModuleNaturalEnd A).app M).hom = AddMonoidHom.id M.obj := rfl
+    ((1 : NondegenerateModuleNaturalEnd A).asHom.app M).hom = AddMonoidHom.id M.obj := rfl
 
 /-- Multiplication applies the right factor first, then the left factor. -/
 @[simp] theorem mul_app_hom (θ η : NondegenerateModuleNaturalEnd.{uA, uM} A)
     (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((θ * η).app M).hom = (θ.app M).hom.comp (η.app M).hom := rfl
+    ((θ * η).asHom.app M).hom = (θ.asHom.app M).hom.comp (η.asHom.app M).hom := rfl
 
 end NondegenerateModuleNaturalEnd
 
@@ -187,28 +187,30 @@ theorem actionAddHom_naturality (hA : IsIdempotented A)
 /-- Every family acts as an actual natural endomorphism of the forgetful functor. -/
 def familyNaturalEnd (hA : IsIdempotented A) (x : IdempotentedRingRightLimit A) :
     NondegenerateModuleNaturalEnd.{uA, uM} A where
-  app M := AddCommGrpCat.ofHom (actionAddHom hA M.property x)
-  naturality M N f := by
-    apply AddCommGrpCat.hom_ext
-    exact (actionAddHom_naturality hA M.property N.property f.hom x).symm
+  asHom :=
+  { app M := AddCommGrpCat.ofHom (actionAddHom hA M.property x)
+    naturality M N f := by
+      apply AddCommGrpCat.hom_ext
+      exact (actionAddHom_naturality hA M.property N.property f.hom x).symm }
 
 @[simp] theorem familyNaturalEnd_app (hA : IsIdempotented A)
     (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A) :
-    (familyNaturalEnd hA x).app M = AddCommGrpCat.ofHom (actionAddHom hA M.property x) :=
+    (familyNaturalEnd hA x).asHom.app M = AddCommGrpCat.ofHom (actionAddHom hA M.property x) :=
   rfl
 
 @[simp] theorem familyNaturalEnd_app_hom (hA : IsIdempotented A)
     (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((familyNaturalEnd hA x).app M).hom = actionAddHom hA M.property x := rfl
+    ((familyNaturalEnd hA x).asHom.app M).hom = actionAddHom hA M.property x := rfl
 
 @[simp] theorem familyNaturalEnd_app_apply (hA : IsIdempotented A)
     (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A)
     (m : M.obj) :
-    (familyNaturalEnd hA x).app M m = IdempotentedRingRightLimitAction.act M.property x m :=
+    (familyNaturalEnd hA x).asHom.app M m = IdempotentedRingRightLimitAction.act M.property x m :=
   rfl
 
 @[simp] theorem familyNaturalEnd_zero (hA : IsIdempotented A) :
     familyNaturalEnd.{uA, uM} hA 0 = 0 := by
+  apply End.ext
   apply NatTrans.ext
   funext M
   apply AddCommGrpCat.hom_ext
@@ -218,6 +220,7 @@ theorem familyNaturalEnd_add (hA : IsIdempotented A)
     (x y : IdempotentedRingRightLimit A) :
     familyNaturalEnd.{uA, uM} hA (x + y) =
       familyNaturalEnd hA x + familyNaturalEnd hA y := by
+  apply End.ext
   apply NatTrans.ext
   funext M
   apply AddCommGrpCat.hom_ext
@@ -225,6 +228,7 @@ theorem familyNaturalEnd_add (hA : IsIdempotented A)
 
 @[simp] theorem familyNaturalEnd_unit (hA : IsIdempotented A) :
     familyNaturalEnd.{uA, uM} hA unit = 1 := by
+  apply End.ext
   apply NatTrans.ext
   funext M
   apply AddCommGrpCat.hom_ext
@@ -234,6 +238,7 @@ theorem familyNaturalEnd_product (hA : IsIdempotented A)
     (x y : IdempotentedRingRightLimit A) :
     familyNaturalEnd.{uA, uM} hA (product hA x y) =
       familyNaturalEnd hA x * familyNaturalEnd hA y := by
+  apply End.ext
   apply NatTrans.ext
   funext M
   apply AddCommGrpCat.hom_ext
@@ -262,39 +267,39 @@ theorem toNaturalEndRingHom_coe (hA : IsIdempotented A) :
 
 @[simp] theorem toNaturalEndRingHom_app (hA : IsIdempotented A)
     (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A) :
-    (toNaturalEndRingHom hA x).app M =
+    (toNaturalEndRingHom hA x).asHom.app M =
       AddCommGrpCat.ofHom (actionAddHom hA M.property x) := rfl
 
 @[simp] theorem toNaturalEndRingHom_app_hom (hA : IsIdempotented A)
     (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((toNaturalEndRingHom hA x).app M).hom = actionAddHom hA M.property x := rfl
+    ((toNaturalEndRingHom hA x).asHom.app M).hom = actionAddHom hA M.property x := rfl
 
 theorem toNaturalEndRingHom_app_coe (hA : IsIdempotented A)
     (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A) :
-    ⇑((toNaturalEndRingHom hA x).app M).hom =
+    ⇑((toNaturalEndRingHom hA x).asHom.app M).hom =
       IdempotentedRingRightLimitAction.act M.property x := rfl
 
 @[simp] theorem toNaturalEndRingHom_app_apply (hA : IsIdempotented A)
     (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A)
     (m : M.obj) :
-    (toNaturalEndRingHom hA x).app M m =
+    (toNaturalEndRingHom hA x).asHom.app M m =
       IdempotentedRingRightLimitAction.act M.property x m := rfl
 
 theorem toNaturalEndRingHom_app_eq (hA : IsIdempotented A)
     (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A)
     (m : M.obj) (e : Idempotent A) (he : (e : A) • m = m) :
-    (toNaturalEndRingHom hA x).app M m = x.val e • m :=
+    (toNaturalEndRingHom hA x).asHom.app M m = x.val e • m :=
   actionAddHom_eq hA M.property x m e he
 
 @[simp] theorem toNaturalEndRingHom_canonical_app_hom (hA : IsIdempotented A)
     (a : A) (M : NondegenerateModuleCat.{uA, uM} A) :
-    ((toNaturalEndRingHom hA (canonical a)).app M).hom =
+    ((toNaturalEndRingHom hA (canonical a)).asHom.app M).hom =
       NonUnitalModule.toEndHom M.obj.isModule a :=
   actionAddHom_canonical hA M.property a
 
 @[simp] theorem toNaturalEndRingHom_canonical_app_apply (hA : IsIdempotented A)
     (a : A) (M : NondegenerateModuleCat.{uA, uM} A) (m : M.obj) :
-    (toNaturalEndRingHom hA (canonical a)).app M m = a • m :=
+    (toNaturalEndRingHom hA (canonical a)).asHom.app M m = a • m :=
   IdempotentedRingRightLimitAction.canonical_act hA M.property a m
 
 end IdempotentedRingRightLimit
@@ -384,7 +389,7 @@ example : (A : Type uA) → [NonUnitalRing A] →
 example : {A : Type uA} → [NonUnitalRing A] →
     (θ η : NondegenerateModuleNaturalEnd.{uA, uM} A) →
     (M : NondegenerateModuleCat.{uA, uM} A) →
-    ((θ * η).app M).hom = (θ.app M).hom.comp (η.app M).hom :=
+    ((θ * η).asHom.app M).hom = (θ.asHom.app M).hom.comp (η.asHom.app M).hom :=
   @NondegenerateModuleNaturalEnd.mul_app_hom.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] →
@@ -432,7 +437,7 @@ example : {A : Type uA} → [NonUnitalRing A] → IsIdempotented A →
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{uA, uM} A) →
-    ((IdempotentedRingRightLimit.familyNaturalEnd hA x).app M).hom =
+    ((IdempotentedRingRightLimit.familyNaturalEnd hA x).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x :=
   @IdempotentedRingRightLimit.familyNaturalEnd_app_hom.{uA, uM}
 
@@ -449,33 +454,33 @@ example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{uA, uM} A) →
-    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M).hom =
+    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_hom.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{uA, uM} A) →
-    ⇑((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M).hom =
+    ⇑((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M).hom =
       IdempotentedRingRightLimitAction.act M.property x :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_coe.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{uA, uM} A) →
     (m : M.obj) → (e : Idempotent A) → (e : A) • m = m →
-    (IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M m = x.val e • m :=
+    (IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M m = x.val e • m :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_eq.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (a : A) → (M : NondegenerateModuleCat.{uA, uM} A) →
     ((IdempotentedRingRightLimit.toNaturalEndRingHom hA
-      (IdempotentedRingRightLimit.canonical a)).app M).hom =
+      (IdempotentedRingRightLimit.canonical a)).asHom.app M).hom =
       NonUnitalModule.toEndHom M.obj.isModule a :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_canonical_app_hom.{uA, uM}
 
 example : {A : Type uA} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (a : A) → (M : NondegenerateModuleCat.{uA, uM} A) → (m : M.obj) →
     (IdempotentedRingRightLimit.toNaturalEndRingHom hA
-      (IdempotentedRingRightLimit.canonical a)).app M m = a • m :=
+      (IdempotentedRingRightLimit.canonical a)).asHom.app M m = a • m :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_canonical_app_apply.{uA, uM}
 
 /-! Unequal-universe specialization (uA,uM,uN)=(0,1,0). -/
@@ -564,7 +569,7 @@ example : (A : Type 0) → [NonUnitalRing A] →
 example : {A : Type 0} → [NonUnitalRing A] →
     (θ η : NondegenerateModuleNaturalEnd.{0, 1} A) →
     (M : NondegenerateModuleCat.{0, 1} A) →
-    ((θ * η).app M).hom = (θ.app M).hom.comp (η.app M).hom :=
+    ((θ * η).asHom.app M).hom = (θ.asHom.app M).hom.comp (η.asHom.app M).hom :=
   @NondegenerateModuleNaturalEnd.mul_app_hom.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] →
@@ -612,7 +617,7 @@ example : {A : Type 0} → [NonUnitalRing A] → IsIdempotented A →
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{0, 1} A) →
-    ((IdempotentedRingRightLimit.familyNaturalEnd hA x).app M).hom =
+    ((IdempotentedRingRightLimit.familyNaturalEnd hA x).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x :=
   @IdempotentedRingRightLimit.familyNaturalEnd_app_hom.{0, 1}
 
@@ -629,33 +634,33 @@ example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{0, 1} A) →
-    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M).hom =
+    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_hom.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{0, 1} A) →
-    ⇑((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M).hom =
+    ⇑((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M).hom =
       IdempotentedRingRightLimitAction.act M.property x :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_coe.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{0, 1} A) →
     (m : M.obj) → (e : Idempotent A) → (e : A) • m = m →
-    (IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M m = x.val e • m :=
+    (IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M m = x.val e • m :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_eq.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (a : A) → (M : NondegenerateModuleCat.{0, 1} A) →
     ((IdempotentedRingRightLimit.toNaturalEndRingHom hA
-      (IdempotentedRingRightLimit.canonical a)).app M).hom =
+      (IdempotentedRingRightLimit.canonical a)).asHom.app M).hom =
       NonUnitalModule.toEndHom M.obj.isModule a :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_canonical_app_hom.{0, 1}
 
 example : {A : Type 0} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (a : A) → (M : NondegenerateModuleCat.{0, 1} A) → (m : M.obj) →
     (IdempotentedRingRightLimit.toNaturalEndRingHom hA
-      (IdempotentedRingRightLimit.canonical a)).app M m = a • m :=
+      (IdempotentedRingRightLimit.canonical a)).asHom.app M m = a • m :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_canonical_app_apply.{0, 1}
 
 /-! Unequal-universe specialization (uA,uM,uN)=(1,0,1). -/
@@ -744,7 +749,7 @@ example : (A : Type 1) → [NonUnitalRing A] →
 example : {A : Type 1} → [NonUnitalRing A] →
     (θ η : NondegenerateModuleNaturalEnd.{1, 0} A) →
     (M : NondegenerateModuleCat.{1, 0} A) →
-    ((θ * η).app M).hom = (θ.app M).hom.comp (η.app M).hom :=
+    ((θ * η).asHom.app M).hom = (θ.asHom.app M).hom.comp (η.asHom.app M).hom :=
   @NondegenerateModuleNaturalEnd.mul_app_hom.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] →
@@ -792,7 +797,7 @@ example : {A : Type 1} → [NonUnitalRing A] → IsIdempotented A →
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{1, 0} A) →
-    ((IdempotentedRingRightLimit.familyNaturalEnd hA x).app M).hom =
+    ((IdempotentedRingRightLimit.familyNaturalEnd hA x).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x :=
   @IdempotentedRingRightLimit.familyNaturalEnd_app_hom.{1, 0}
 
@@ -809,33 +814,33 @@ example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{1, 0} A) →
-    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M).hom =
+    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_hom.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{1, 0} A) →
-    ⇑((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M).hom =
+    ⇑((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M).hom =
       IdempotentedRingRightLimitAction.act M.property x :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_coe.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (x : IdempotentedRingRightLimit A) → (M : NondegenerateModuleCat.{1, 0} A) →
     (m : M.obj) → (e : Idempotent A) → (e : A) • m = m →
-    (IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M m = x.val e • m :=
+    (IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M m = x.val e • m :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_eq.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (a : A) → (M : NondegenerateModuleCat.{1, 0} A) →
     ((IdempotentedRingRightLimit.toNaturalEndRingHom hA
-      (IdempotentedRingRightLimit.canonical a)).app M).hom =
+      (IdempotentedRingRightLimit.canonical a)).asHom.app M).hom =
       NonUnitalModule.toEndHom M.obj.isModule a :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_canonical_app_hom.{1, 0}
 
 example : {A : Type 1} → [NonUnitalRing A] → (hA : IsIdempotented A) →
     (a : A) → (M : NondegenerateModuleCat.{1, 0} A) → (m : M.obj) →
     (IdempotentedRingRightLimit.toNaturalEndRingHom hA
-      (IdempotentedRingRightLimit.canonical a)).app M m = a • m :=
+      (IdempotentedRingRightLimit.canonical a)).asHom.app M m = a • m :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_canonical_app_apply.{1, 0}
 
 /-! Competing choices cannot replace the actual source and target rings. -/
@@ -858,20 +863,20 @@ example : (hA : IsIdempotented A) →
 
 example : (hA : IsIdempotented A) → (x : IdempotentedRingRightLimit A) →
     (M : NondegenerateModuleCat.{uA, uM} A) →
-    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M).hom =
+    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M).hom =
       IdempotentedRingRightLimit.actionAddHom hA M.property x :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_hom.{uA, uM} A _
 
 example : (hA : IsIdempotented A) → (x : IdempotentedRingRightLimit A) →
     (M : NondegenerateModuleCat.{uA, uM} A) →
     (m : M.obj) → (e : Idempotent A) → (e : A) • m = m →
-    (IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M m = x.val e • m :=
+    (IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M m = x.val e • m :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_app_eq.{uA, uM} A _
 
 example : (hA : IsIdempotented A) → (a : A) →
     (M : NondegenerateModuleCat.{uA, uM} A) →
     ((IdempotentedRingRightLimit.toNaturalEndRingHom hA
-      (IdempotentedRingRightLimit.canonical a)).app M).hom =
+      (IdempotentedRingRightLimit.canonical a)).asHom.app M).hom =
       NonUnitalModule.toEndHom M.obj.isModule a :=
   @IdempotentedRingRightLimit.toNaturalEndRingHom_canonical_app_hom.{uA, uM} A _
 
@@ -905,7 +910,7 @@ example : (hA : IsIdempotented A) →
 
 example (hA : IsIdempotented A) (hM : @IsNondegenerate A M _ _ originalAction)
     (x : IdempotentedRingRightLimit A) :
-    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app
+    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app
       ⟨@NonUnitalModuleCat.of A _ M _ originalAction, hM⟩).hom =
       @IdempotentedRingRightLimit.actionAddHom A _ M _ originalAction hA hM x := rfl
 
@@ -943,7 +948,7 @@ example (hA : IsIdempotented A) :
 
 example (hA : IsIdempotented A) (hM : IsNondegenerate A M)
     (x : IdempotentedRingRightLimit A) :
-    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app
+    ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app
       ⟨NonUnitalModuleCat.of A M, hM⟩).hom = 0 := by
   change IdempotentedRingRightLimit.actionAddHom hA hM x = 0
   apply AddMonoidHom.ext
@@ -958,7 +963,7 @@ variable {A : Type uA} [NonUnitalRing A] [Subsingleton A]
 
 example : ∃ hA : IsIdempotented A,
     ∀ (x : IdempotentedRingRightLimit A) (M : NondegenerateModuleCat.{uA, uM} A),
-      ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).app M).hom = 0 := by
+      ((IdempotentedRingRightLimit.toNaturalEndRingHom hA x).asHom.app M).hom = 0 := by
   have hA : IsIdempotented A := by
     intro s
     refine ⟨⟨0, zero_mul 0⟩, ?_⟩

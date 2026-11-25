@@ -1,7 +1,5 @@
 # Actual group points under compatible affine base change
 
-Author: Worker 94.
-
 This internal derived construction uses commutative rings `C`, `D` and `A`
 in one arbitrary universe, with compatible algebra structures `C → D → A`,
 and an actual group scheme `G` over `Spec C`. Its base change `G_D` is the

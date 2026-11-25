@@ -1,15 +1,12 @@
 # Harris's smooth `GJ_p`-modules of forms and their `Ext` groups (Proposition 4.4)
 
-Author: Worker 61. Built on the published `Langlands.Shimura.EquivariantForms`
-(Worker 61: `forms`, `rightTranslation`),
-`Langlands.Cohomology.SmoothHyperextSecondPage` (Worker 61:
-`SmoothHyperext.secondPageAddEquiv`),
-`Langlands.Cohomology.HyperextSpectralSequence` (Worker 61:
-`hyperextSpectralObject`, `hyperextSpectralSequence`, `abutmentIso`),
+Built on the published `Langlands.Shimura.EquivariantForms`
+(`forms`, `rightTranslation`),
+`Langlands.Cohomology.SmoothHyperextSecondPage` (`SmoothHyperext.secondPageAddEquiv`),
+`Langlands.Cohomology.HyperextSpectralSequence` (`hyperextSpectralObject`, `hyperextSpectralSequence`, `abutmentIso`),
 `Langlands.Cohomology.HyperextAbutmentFiltration` and
-`Langlands.Cohomology.HyperextAbutmentNaturality` (Worker 61:
-`HyperextAbutment.filtration`, `graded`, `filtrationPostcomp`,
-`gradedPostcomp` and their `_id`/`_comp` lemmas); on Worker 13's published
+`Langlands.Cohomology.HyperextAbutmentNaturality` (`HyperextAbutment.filtration`, `graded`, `filtrationPostcomp`,
+`gradedPostcomp` and their `_id`/`_comp` lemmas); on the published
 `Langlands.Shimura.SplitLevelTower` (`factorHom`, `awayHom`,
 `factorHom_commute_awayHom`, `factorHom_mul_awayHom`),
 `Langlands.Shimura.PartialLevelTower` (`CompactOpenLevel.prod`),
@@ -17,9 +14,9 @@ Author: Worker 61. Built on the published `Langlands.Shimura.EquivariantForms`
 `finiteAdelicPointsSplit`),
 `Langlands.Representation.Category.SmoothPartAdjunction`
 (`SmoothRep.smoothPartFunctor`) and `Langlands.Cohomology.SmoothExt`
-(`SmoothExt.ext`); on Worker 0's published
+(`SmoothExt.ext`); on the published
 `Langlands.Representation.Smooth.SmoothPart.FixedVectorsDefinitions`
-(`smoothPartFixedVectorsEquiv`); and on Worker 57's published
+(`smoothPartFixedVectorsEquiv`); and on the published
 `Langlands.Shimura.Levels` (`CompactOpenLevel` and its arrows),
 `Langlands.Shimura.PEL.TraceSimilitudesLevels` (`CompactOpenLevel.transport`)
 and `Langlands.Shimura.Unitary.Adelic` (`FiniteAdelicPoints`,
@@ -183,7 +180,7 @@ the generic ones for `e = σ.finiteAdelicPointsSplit p hp` and
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999), §4. Worker 61 read the rendered scanned page,
+J. Math. Kyoto Univ. 39-2 (1999), §4. The rendered scanned page was read,
 printed p.309 (one-based PDF page 11). It writes `K(m)^p = K'^{,p} × K_ℓ(m)`
 and gives the isomorphism (4.3)
 "`[(GJ(ℚ)\GJ(𝔸_f)/K(m)^p) × M̌_N]/GJ_p ⥲ S(GG, X_{n-1})_{K(N,m)} ×_{𝒦,v_1} F^nr`".
@@ -247,7 +244,7 @@ How the module relates to Harris (an explanation, not formalized):
   representation of `K_ℓ`. With trivial coefficients it is the `forms` space on
   the right of `dividingSmoothFixedEquiv` at `K = splitLevel e U K'`.
 - Library `Langlands.Shimura.LevelColimit.awaySmoothRep`
-  (`Shimura/SplitLevelTower`, Worker 13): the smooth representation of the
+  (`Shimura/SplitLevelTower`): the smooth representation of the
   second factor `H'` on the colimit, over the away levels at a fixed level `K₀`
   of `H`, of a presheaf on levels of `G`. That is the geometric side with the
   roles of the factors exchanged. The present module keeps the away level

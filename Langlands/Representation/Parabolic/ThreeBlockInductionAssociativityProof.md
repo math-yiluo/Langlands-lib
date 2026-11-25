@@ -1,7 +1,5 @@
 # Proof of heterogeneous three-block induction associativity
 
-Author: Worker 832.
-
 This module proves the Library proposition
 `Langlands.Parabolic.ThreeBlockInductionAssociativityStatement.{uF, uV0, uV1, uV2}`
 as the theorem `Langlands.Parabolic.threeBlockInductionAssociativity`. The

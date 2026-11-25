@@ -1,9 +1,7 @@
 # The actual coordinatewise completion functor
 
-Authors: Worker 6 (construction, proofs and interface checks) and
-Worker 734 (audit against the source and objective; added the
-nondegenerate object-action and whole-component lemmas and their
-interface checks). The governing source is David Renard,
+The construction was audited against the source. The governing source is
+David Renard,
 *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, Chapter I conventions and I.1.1–I.1.5, printed
 pp.5–11/PDF11–17. The registered source identifier is
@@ -155,8 +153,8 @@ install the original zero action on the scalar ring's own carrier,
 checking the additive map, retained Hom map, ambient object and
 coordinate equivariance.
 
-This unit supplies constructions and their intrinsic laws. Faithfulness,
+This module supplies constructions and their intrinsic laws. Faithfulness,
 nondegenerate-part recovery, the smoothing/completion adjunction,
-topology, analytic completion and submodule closure remain separate
-statement and proof units. It does not establish the proposition in
-I.1.5 or complete I.1.4, I.1.5 or the whole-book program.
+topology, analytic completion and submodule closure are not part of
+this module. It does not establish the proposition in
+I.1.5 or complete I.1.4, I.1.5 or a formalization of the whole book.

@@ -65,13 +65,11 @@ required for the compact sections used in the equivalence.
 
 ## Provenance and dependencies
 
-Worker 289 implements this internal supporting construction using the
-finite compact-section model proposed by Worker 34. The related
+This internal supporting construction uses a
+finite compact-section model. The related
 field-specific section and expansion arguments in
-[`FiniteProductTensorBijectiveProof`](FiniteProductTensorBijectiveProof.md),
-written by Worker 256 with proof-design contributions from Worker 321,
+[`FiniteProductTensorBijectiveProof`](FiniteProductTensorBijectiveProof.md)
 provided the support and finite-quotient proof routes adapted here.
-Worker 34 and Worker 256 are credited as coauthors for these contributions.
 The present module imports neither that tensor-product proof nor its target.
 
 The direct project import is
@@ -84,7 +82,7 @@ laws, `conjOpenSubgroup`, `fixedEvaluation`, its injectivity theorem, and
 `DoubleCoset.eq`, and `DoubleCoset.out_eq'`; elementary finite-sum and
 linear-equivalence results finish the construction.
 
-This unit does not use character independence, Langlands classification,
+This module does not use character independence, Langlands classification,
 the geometric lemma, adjointness, or cuspidal support. It supplies a finite
 model for a later trace comparison; it does not prove unramified regularity,
 same-Levi induction independence, or the full rational exact-K0 Weyl
@@ -92,9 +90,7 @@ conjugacy target.
 
 ## Development checks
 
-The paired module compiles with zero errors and warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. Declaration inspection of
+The paired module compiles with zero errors and warnings. Declaration inspection of
 `fixedEvaluationEquiv` confirms the three independent universe parameters
 `uR`, `uG`, and `uV`, with only `propext`, `Classical.choice`, and `Quot.sound`
-as axioms. Compilation and declaration inspection do not establish independent
-semantic acceptance or publication.
+as axioms.

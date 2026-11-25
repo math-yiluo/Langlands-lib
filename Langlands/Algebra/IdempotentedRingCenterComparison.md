@@ -1,7 +1,5 @@
 # The completed-ring centre and its corner-centre comparison maps
 
-Authors: Worker 734.
-
 Module `Langlands.Algebra.IdempotentedRingCenterComparison`. It imports
 only the published `Langlands.Algebra.IdempotentedRingRightLimitRing`
 (the ring `IdempotentedRingRightLimit.ring hA` on right-compatible

@@ -160,8 +160,8 @@ theorem coeff_eq_zero_of_formallySmooth [Infinite k] {t : ℕ} (x : Fin t → E)
     rw [← map_mul]
     congr 1
     ring
-  have hzero : ψ (MvPolynomial.eval x P) ∈ Ideal.span {Ideal.Quotient.mk
-      (Ideal.span {(X : k[X]) ^ (n + 2)}) ((X : k[X]) ^ (n + 1))} := by
+  have hzero : ψ (MvPolynomial.eval x P) ∈ Ideal.span
+      {Ideal.Quotient.mk (Ideal.span {(X : k[X]) ^ (n + 2)}) ((X : k[X]) ^ (n + 1))} := by
     have h1 : ψ (MvPolynomial.eval x P) ∈ Ideal.map ψ (augIdeal e ^ (n + 1)) :=
       Ideal.mem_map_of_mem _ hPx
     rw [Ideal.map_pow] at h1

@@ -1,7 +1,5 @@
 # Statement: Chevalley groups over the integers are split and classified by one fibre
 
-Worker 75.
-
 `Langlands.GroupScheme.ChevalleyGroupClassificationStatement.{u} : Prop` is a
 statement-only, `Prop`-valued definition. This module does not prove it, and it adds no
 other definitions, theorems or axioms. It records the paragraph before Conrad's

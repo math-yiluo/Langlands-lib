@@ -93,9 +93,9 @@ def levelDataIntegralRestrictionBaseChange {U : HarrisLevel D} (x : DataS U)
     { action := baseChangeOrderAction b x.1.actionObj.abelianScheme a.action
       agrees := ?_ }
   intro z
-  change homToHom0 ((Langlands.AbelianScheme.baseChange b).map (a.action z)) =
-    rationalBaseChangeHom b (x.1.actionObj.action (z : A))
-  exact (rationalBaseChangeHom_ofHom b (a.action z)).symm.trans
+  change homToHom0 ((Langlands.AbelianScheme.baseChange b).map (a.action z).asHom) =
+    rationalBaseChangeHom b (x.1.actionObj.action (z : A)).asHom
+  exact (rationalBaseChangeHom_ofHom b (a.action z).asHom).symm.trans
     (congrArg (rationalBaseChangeHom b) (a.agrees z))
 
 local notation "pullRestriction" => levelDataIntegralRestrictionBaseChange D C preservation

@@ -1,9 +1,7 @@
 # Proof that action quotients over a field are quasi-separated and finitely presented
 
-Authors: Worker 193 and Worker 3749.
-
-`Langlands.AlgebraicGeometry.AlgebraicSpace.actionQuotientFiniteness` proves the
-published `ActionQuotientFinitenessStatement.{u}` for every universe `u`. The statement
+`Langlands.AlgebraicGeometry.AlgebraicSpace.actionQuotientFiniteness` proves
+`ActionQuotientFinitenessStatement.{u}` for every universe `u`. The statement
 and its Lean/Markdown pair are unchanged. Let `k` be a field, `G` a group scheme over `k`
 with `G.X.hom` quasi-compact, and `b : SchemeAction G Z` an action on a scheme `Z` that is
 locally of finite type and quasi-compact over `k`. Let `X` be an algebraic space over `k`
@@ -12,7 +10,7 @@ smooth and surjective. Then `X` is quasi-separated and `FinitePresentationOverRi
 holds. The final theorem combines the two results below,
 `ActionQuotientFiniteness.isQuasiSeparated` and
 `ActionQuotientFiniteness.finitePresentationOverRing`. The helper module
-`ActionQuotientOrbitRelation` is part of this contribution.
+`ActionQuotientOrbitRelation` was written for this proof.
 
 All auxiliary declarations are in the namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace.ActionQuotientFiniteness`.
@@ -109,10 +107,10 @@ modules named above. The names of the declarations are internal.
 
 ## Additional smooth-cover helpers
 
-Worker 3749's independently accepted contribution supplies the following helpers.
-Its identical smooth descent and quasi-separatedness lemmas are shared above.
-Both reviewed proofs establish the same unchanged `actionQuotientFiniteness`;
-the combined module uses the final assembly described above.
+The following helpers come from a second, independent proof of the same theorem.
+Its smooth descent and quasi-separatedness lemmas are identical to those above,
+which serve both. Both proofs establish the same `actionQuotientFiniteness`;
+the module's final theorem uses the assembly described above.
 
 ## The action graph covers the kernel pair (section `Action`)
 

@@ -1,6 +1,6 @@
 # Affine pinned solutions and rigidity on arbitrary common schemes
 
-Worker 591. This derived adapter assumes the exact published proposition
+This derived adapter assumes the exact published proposition
 `AffinePinnedIsomorphismTheoremStatement`; it does not prove that proposition.
 It constructs its scalar-extended affine solution and derives uniqueness of
 fixed comparisons over arbitrary common schemes. The setting is Conrad,
@@ -32,4 +32,5 @@ recover equality of the ordinary pulled-back group maps. The published
 étale locality of homomorphism equality then proves equality over the whole
 common scheme. No connectedness or affineness is assumed on this scheme.
 This establishes rigidity conditional on the supplied affine theorem;
-existence of fixed comparisons and compatible local gluing remain separate.
+existence of fixed comparisons and compatible local gluing are separate
+results, in `AffinePinnedFixedExistence` and `AffinePinnedFixedCoherence`.

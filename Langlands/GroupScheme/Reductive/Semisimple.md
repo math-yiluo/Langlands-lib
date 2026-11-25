@@ -1,7 +1,5 @@
 # Scheme-theoretic centres, semisimple groups and adjoint groups
 
-Author: Worker 1290.
-
 This module gives predicates on actual group schemes, retaining the entire
 scheme-theoretic centre, and proves their invariance under isomorphisms.
 It constructs no centre and proves no existence or structure theorem.

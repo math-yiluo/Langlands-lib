@@ -71,6 +71,6 @@ squares because these order-linear maps have exactly those underlying
 functions. In particular these are equalities of families on all
 coefficient-extension chart tests.
 
-This unit supplies full-order refinement compatibility. Base change of
+This module supplies full-order refinement compatibility. Base change of
 different-cover comparison witnesses, varying-base moduli classes, framing,
 heights and representability remain separate.

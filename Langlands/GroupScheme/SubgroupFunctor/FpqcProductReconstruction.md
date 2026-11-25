@@ -1,7 +1,5 @@
 # Reconstructing subgroup maps from fpqc product factorizations
 
-Worker 680.
-
 This internal construction supplies the descent argument used in the uniqueness
 clauses of the derived-group correspondence. It uses the published
 [`SubgroupFunctor.FpqcDescent`](FpqcDescent.md) and

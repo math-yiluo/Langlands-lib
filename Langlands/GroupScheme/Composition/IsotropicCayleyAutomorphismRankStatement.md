@@ -1,7 +1,5 @@
 # Split rank of isotropic Cayley automorphism groups
 
-Author: Worker 177.
-
 `Langlands.GroupScheme.IsotropicCayleyAutomorphismRankStatement` is an
 unproved proposition over every field `K`, in every characteristic. It
 quantifies over an actual `CayleyDatum K`, a group scheme `H` over

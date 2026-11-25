@@ -1,6 +1,6 @@
 # The actual relative unit annulus and its canonical maps
 
-Author: Worker 59. This focused construction specializes the published
+This focused construction specializes the published
 `RelativeRelations`, `RelativeEvaluation` and `BinaryLaurentDiagram` APIs.
 All declarations lie in
 `Langlands.Analytic.PresentedAffinoidAlgebra.RelativeUnitAnnulus`.
@@ -120,7 +120,7 @@ their published instances.
 map `baseMap K A` and the constant coordinate tuple
 `fun _ : Fin 1 => coordinate K A i`. Its bounds come from
 `monomialValue_norm_le_weight`, `norm_one_le`, `norm_coordinate_le` and
-`norm_baseMap_le`. The two requested maps are
+`norm_baseMap_le`. The two maps are
 
 ```lean
 positive K A = oneVariable K A 0
@@ -265,7 +265,7 @@ Geometry*, November 22, 2020, registered as
 `achinger-2020-non-archimedean-geometry-nov22`, SHA256
 `666cc6a90efbfc05f5fa0156044a259beaabdf989c45b633542e1cd2cdc0ec95`,
 at `/home/taskhub/pilot/literature/Piotr Achinger, Introduction to non-Archimedean Geometry (November 22, 2020).pdf`.
-Printed/PDF page 6 and pages 63–65 were read directly for this unit.
+Printed/PDF page 6 and pages 63–65 were read directly for this module.
 The literature-index entry was checked; a bounded filename search of retained
 literature and current Library notes found no Achinger-specific errata.
 
@@ -287,17 +287,16 @@ passes to general Laurent coverings. The displayed proposition on p.64
 omits the words “is exact”; its last paragraph has `g₋₁` where `g₋` is
 intended. These discrepancies are also recorded in the published
 `BinaryLaurentGluingStatement.md`. Neither exactness argument is implemented
-by this definition unit.
+by this module.
 
 The overlap map, the contraction estimates and the compatibility identities
 are derived here from the published bounded relative evaluation, quotient
 descent and map uniqueness APIs. They are not cited as separate statements
 of Achinger. Existing `RelativeRelations`, `RelativeEvaluation`,
 `BinaryLaurentDiagram` and all their imported Lean/Markdown pairs remain
-unchanged. Importing their declarations does not add their authors as
-coauthors of this new specialization.
+unchanged.
 
-This unit constructs no coefficient normal form, injectivity theorem,
+This module constructs no coefficient normal form, injectivity theorem,
 ordinary-ideal closedness theorem, comparison kernel, algebra equivalence,
 exact sequence or gluing theorem. The relative scalar gluing target
 `BinaryLaurent.GluingStatement`, strict binary assembly and the strict/relative

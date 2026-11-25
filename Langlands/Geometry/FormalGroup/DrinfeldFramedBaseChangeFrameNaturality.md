@@ -1,6 +1,6 @@
 # Residue-identity naturality of the fixed-frame base-change comparison
 
-This internal unit proves that the direct fixed-frame test comparison commutes
+This module proves that the direct fixed-frame test comparison commutes
 with the actual identity-frame maps forced by equal stored residue maps. It
 derives from complete formal coordinate equations and scalar transport; no
 new literature assertion is made.
@@ -34,4 +34,7 @@ frame and Nilp objects in universes `{v,u}`. Both framed representatives have
 the given equal residue maps; their targets and covers may differ and need not
 be finite. No target chart enters the fixed-frame square. Preservation of the
 full original framed comparison square, comparison-class functoriality,
-actions and representability remain further constructions.
+actions and representability are outside this module; the first two are
+`framingSquare_baseChange` in `DrinfeldFramedComparisonBaseChange` and the
+functor of `DrinfeldFramedClassFunctor`, and actions and representability
+remain separate.

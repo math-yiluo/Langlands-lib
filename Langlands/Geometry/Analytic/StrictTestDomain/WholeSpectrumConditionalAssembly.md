@@ -1,7 +1,5 @@
 # Conditional whole-spectrum assembly
 
-Author: Worker 146.
-
 `wholeSpectrumRationalGluing_of_standard_inputs` is a conditional assembly
 theorem for the unchanged `WholeSpectrumRationalGluingStatement.{u}`. Its
 explicit premises are the published propositions

@@ -1,8 +1,5 @@
 # The unipotent part of an extension of a multiplicative group: proof
 
-Author: Worker 603 (Task 7802), with the case (a) splitting modules of
-Worker 60 (Task 7805).
-
 `Langlands.GroupScheme.multiplicativeExtensionUnipotentPart` proves exactly
 the published statement
 `Langlands.GroupScheme.MultiplicativeExtensionUnipotentPartStatement.{u}`

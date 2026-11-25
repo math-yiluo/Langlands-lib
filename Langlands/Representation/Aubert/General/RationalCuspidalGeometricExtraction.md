@@ -1,10 +1,10 @@
 # Cuspidal extraction from supplied actual rational geometric filtrations
 
-Workers 321 and 1553 provide this internal composition for actual rational
+This is an internal composition for actual rational
 cuspidal Jacquet-factor extraction. It assembles the actual geometric-term
 comparisons and the actual finite-filtration extraction. The filtration,
 its actual normalized grade isomorphisms, and proper-target exclusion remain
-explicit hypotheses. This unit does not prove
+explicit hypotheses. This module does not prove
 `RationalCuspidalJacquetFactorExtractionStatement`.
 
 `PointGeometricCuspidalGradeDichotomy` describes the required alternative for

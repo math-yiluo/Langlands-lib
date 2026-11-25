@@ -1,6 +1,7 @@
 # Lie-curve derivatives of actual global Whittaker integrals
 
-This internal supporting construction for Task 7400 is in namespace
+This internal supporting construction for the archimedean functional equation at the real
+places (`RealPlaceFunctionalEquationStatement`) is in namespace
 `Langlands.Global.RankinSelbergGlobal.WhittakerCurve`. It concerns the existing
 global character-coefficient integral, rather than a newly chosen Whittaker
 functional. Its compact-quotient dominated-differentiation argument follows
@@ -59,7 +60,7 @@ pointwise derivative by the fixed conjugate generic character gives the
 derivative integrand. Unfolding the existing Whittaker definitions identifies
 the two integrals with the asserted actual coefficients.
 
-This proves differentiation along exponential curves. It does not yet
+This proves differentiation along exponential curves. It does not
 assert smoothness of the restriction, a polynomial growth bound, or the
 matrix-model `mfderiv` identity in `RealPlaceWhittakerAnalyticStatement`.
 Those require further arguments. No functional equation is proved here.

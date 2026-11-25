@@ -1,7 +1,5 @@
 # The cocenter quotient of a connected reductive group
 
-Authors: Worker 1532 (draft), Worker 1388.
-
 `Langlands.GroupScheme.CocenterQuotientExistenceStatement.{u}` is a
 proposition definition (`def … : Prop`). It is a statement only, not a
 theorem: this module proves nothing about it. It asserts that the quotient
@@ -112,7 +110,7 @@ subgroup. It does not state this proposition either.
 
 The cocharacter conjunct has the same form as hypothesis 3 of
 `Langlands.Geometry.Building.TorusIwahoriSurjectivityStatement`
-(KP Lemma 2.5.20(1), task `89233dc7-3f93-44d1-b189-8686082149ba`), with
+(KP Lemma 2.5.20(1)), with
 `f := Additive.ofMul (t ≫ q)`. That statement quantifies over an
 intermediate field `L` of the unramified closure; as a type, `L` is a field
 with an algebra structure over the base field, so `E := L` is an admissible
@@ -172,4 +170,5 @@ surjective for `n ≥ 2`. So a proof of the cocharacter conjunct must use that
 the kernel `T ∩ M_der` of `T → M / M_der` is connected for the actual
 derived subgroup. An isogeny argument alone does not suffice.
 
-A proof of this proposition is a separate `lean.proof@1` obligation.
+The proof of this proposition is `cocenterQuotientExistence`, in the separate
+module `Langlands.GroupScheme.Derived.CocenterQuotientProof`.

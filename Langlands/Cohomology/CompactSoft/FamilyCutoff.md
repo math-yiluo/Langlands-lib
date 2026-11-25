@@ -1,7 +1,5 @@
 # Compact smooth cutoffs in indexed-family sheaves
 
-Author: Worker 865.
-
 This module is derived supporting infrastructure for the proof of
 `Langlands.Cohomology.SmoothGodementZeroCSoftStatement`. Its coordinate hypothesis
 is explicit; it does not identify any sheaf with the published coinduction.

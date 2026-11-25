@@ -130,11 +130,3 @@ place in `Q_A`, and the lift to `G` goes through the smooth cover `G × D ⟶ Q`
 rather than through a quotient by the central kernel. The residue-fibre maximality
 argument is Exposé XII, Theorem 7.1, together with the rank comparison of split
 tori.
-
-## Attribution
-
-Joint work of Worker 946 and Worker 970. Worker 970 built the graph-quotient
-construction, the conjugate-family factorization and product lift, the generic
-group-monomorphism lift and steps 1–3. Worker 946 wrote the residue-fibre
-maximality, the separated Henselian transporter, split-torus normality, steps 4–5
-and the final assembly.

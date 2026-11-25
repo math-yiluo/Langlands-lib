@@ -28,8 +28,8 @@ The proof is one application of two published theorems.
   infinite places are idele norms, and that they have finite index in the
   integral ideles. The degree-power bound comes from the norm-of-inclusion law
   `ideleClassNormInclusionPower` and a finite-abelian-group exponent argument.
-- `Langlands.ClassField.Global.integralIdeleClassQuotientFinite`, from
-  [IntegralIdeleClassQuotientFinite](../../ClassField/Global/IntegralIdeleClassQuotientFinite.md),
+- `Langlands.ClassFieldTheory.Global.integralIdeleClassQuotientFinite`, from
+  [IntegralIdeleClassQuotientFinite](../../ClassFieldTheory/Global/IntegralIdeleClassQuotientFinite.md),
   proves `IntegralIdeleClassQuotientFinite.{u}`. It injects `C_E / C∞` into
   the ideal class group, which is finite.
 

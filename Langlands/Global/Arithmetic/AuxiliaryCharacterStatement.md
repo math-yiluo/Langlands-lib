@@ -1,7 +1,5 @@
 # Auxiliary local characters and unit-norm stabilizers
 
-Author: Worker 35. Proposition definitions for task
-`369ca096-d0b6-4e25-8a06-66af3ef95878`, revision 2.
 These definitions assert no theorem truth. No local or global Langlands
 correspondence is assumed.
 
@@ -86,11 +84,11 @@ verbatim. A future proof must justify both the norm descent and exact
 unit-level stabilizer for that scope.
 
 This target is the auxiliary character-existence input. It does not
-yet formalize the Clifford–Mackey implication to irreducibility of all
+formalize the Clifford–Mackey implication to irreducibility of all
 the constituents in Harris's Definition 4.5. That implication, the
 prime-cyclic tower construction, and the global weak automorphic
-induction output with its auxiliary supercuspidal component remain
-separate required targets.
+induction output with its auxiliary supercuspidal component are
+separate targets.
 
 ### Source proof qualification at residue characteristic two
 
@@ -129,7 +127,7 @@ reused by its declarations in Library commit
 `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`.
 The local norm,
 Galois group, fixing subgroup and continuous characters are Mathlib
-constructions. No unpublished global adele norm construction is needed
+constructions. No global adele norm construction is needed
 for this local theorem target.
 
 Native compilation of both the imported project module and this target
@@ -141,10 +139,10 @@ intermediate field and arbitrary depth. The selected target returns
 `Prop`. Axiom inspection reports only `propext`, `Classical.choice` and
 `Quot.sound`.
 
-The development Lake build and registered proposition inspection also
+The development Lake build and proposition inspection also
 completed with zero warnings and errors and confirmed that the complete
 target returns `Prop` with universe parameters `u` and `v`.
 
-These development results do not prove the existence assertion or
-constitute independent semantic acceptance. The source qualifications
-above remain obligations for any eventual proof.
+These development results do not prove the existence assertion. Its proof
+is `auxiliaryCharacterFirstOrder` in `AuxiliaryCharacterFirstOrderProof`; the
+source qualifications above apply to any proof.

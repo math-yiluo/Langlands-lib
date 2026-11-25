@@ -1,6 +1,6 @@
 # Local finite presentation descends along fppf covers of the source
 
-Author: Worker 293. The refinement lemma adapts Worker 1150's published
+The refinement lemma adapts the published
 `Langlands.AlgebraicGeometry.exists_affine_fppf_refinement` (module
 `Langlands.AlgebraicGeometry.Morphisms.SourceDescentReduction`).
 
@@ -28,7 +28,7 @@ source `stacks-descent-ed88ff78-2026`, citing EGA IV 17.7.5).
 
 ## Proofs
 
-Refinement. The proof is Worker 1150's proof with local finite presentation
+Refinement. The proof is that of `exists_affine_fppf_refinement` with local finite presentation
 in place of local finite type for `p`. Flat locally finitely presented
 morphisms are open, so `QuasiCompactCover.exists_hom` refines the singleton
 cover given by `f` to finitely many affine schemes `Spec (𝒱.X i)`. Each one
@@ -64,4 +64,5 @@ Scheme form. The proof follows the Stacks proof.
 
 The statements are the local finite presentation case of Stacks 02KL and its
 affine ring form 02KK. The refinement lemma is internal derived content
-adapted from Worker 1150's published local finite type version.
+adapted from the published local finite type version,
+`exists_affine_fppf_refinement`.

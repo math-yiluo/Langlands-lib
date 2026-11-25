@@ -3,8 +3,9 @@
 This internal construction is conditional. It retains three structural
 propositions: `SolvableMaximalTorusSemidirectStatement`,
 `Torus.SolvableFixedContainmentConnectedStatement` and
-`CentralStableVectorSubgroupStatement`. None is proved here, and the
-unconditional host theorem remains open.
+`CentralStableVectorSubgroupStatement`. None is proved here;
+`semigroupOrderedProduct` (module `Rational.SemigroupOrderedProductProof`)
+supplies all three and proves the unconditional theorem.
 
 `hasOrderedSemigroupProducts_semidirect_of_solvable` concerns an actual action
 of a smooth connected affine group `K` on a smooth connected affine group
@@ -60,11 +61,9 @@ zero whenever it occurs. Generation is positive
 alongside the original block disjointness. There is no disjointness assumption
 on two generated closures.
 
-The provenance is internal: this unit composes the actual solvable-factor
+The provenance is internal: this module composes the actual solvable-factor
 construction, solvable-source semigroup intersection, local semidirect
 assembly, equivariant factor transport, central-vector induction and scalar
-descent. The adapted induction is joint work of Worker 1313 and Worker 362.
-This unit narrows the earlier reduction's full semigroup-intersection premise
-to its independent solvable fixed-containment connectedness input. It does
-not establish the remaining structural propositions or complete the host
-proof task.
+descent. This module narrows the earlier reduction's full semigroup-intersection
+premise to its independent solvable fixed-containment connectedness input. It
+does not establish the three structural propositions.

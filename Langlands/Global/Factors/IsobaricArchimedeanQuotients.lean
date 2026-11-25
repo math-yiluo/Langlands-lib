@@ -251,7 +251,7 @@ theorem hasRealPlaceLanglandsQuotient_of_quotient {v : RP} {ds : List RealBlock}
     {B : J →ₗ[ℂ] Q.Space} (hne : B ≠ 0)
     (hB : B ∈ gkHoms κ π (Q.realPlaceCompactRepresentation v) (Q.realPlaceLieAction v)) :
     Q.HasRealPlaceLanglandsQuotient v ds := by
-  let A := B ∘ₗ p
+  let A : realStandardKFinite n ds →ₗ[ℂ] Q.Space := B ∘ₗ p
   have hrange : LinearMap.range A = LinearMap.range B :=
     LinearMap.range_comp_of_range_eq_top B (LinearMap.range_eq_top.mpr hp)
   have hA := isIrreducible_range_of_gkHoms hJ hB hne
@@ -283,7 +283,7 @@ theorem hasComplexPlaceLanglandsQuotient_of_quotient {v : CP} {ds : List Complex
     {B : J →ₗ[ℂ] Q.Space} (hne : B ≠ 0)
     (hB : B ∈ gkHoms κ π (Q.complexPlaceCompactRepresentation v) (Q.complexPlaceLieAction v)) :
     Q.HasComplexPlaceLanglandsQuotient v ds := by
-  let A := B ∘ₗ p
+  let A : complexStandardKFinite n ds →ₗ[ℂ] Q.Space := B ∘ₗ p
   have hrange : LinearMap.range A = LinearMap.range B :=
     LinearMap.range_comp_of_range_eq_top B (LinearMap.range_eq_top.mpr hp)
   have hA := isIrreducible_range_of_gkHoms hJ hB hne

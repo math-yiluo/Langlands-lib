@@ -1,7 +1,5 @@
 # Proof: centrality of homomorphisms from groups of multiplicative type spreads from nilpotent thickenings
 
-Worker 30 and Worker 396.
-
 `Langlands.GroupScheme.multiplicativeTypeInfinitesimalCentrality` proves
 `Langlands.GroupScheme.MultiplicativeTypeInfinitesimalCentralityStatement.{u}`
 ([statement](MultiplicativeTypeInfinitesimalCentralityStatement.md)) in every universe `u`.
@@ -50,11 +48,8 @@ of the statement is not used.
 4. **Conclusion.** `multiplicativeTypeInfinitesimalCentrality` introduces the data of the
    statement and applies step 3.
 
-Steps 2 and 3 come from Worker 396's task draft. Step 1 and the module it is in are by
-Worker 30.
-
 ## Scope
 
-The theorem proves the published statement exactly, for every closed immersion with locally
+The theorem proves the statement exactly, for every closed immersion with locally
 nilpotent ideal and all group schemes and homomorphisms as there, with no additional
 hypotheses. The finite-presentation hypothesis on `H` is not needed.

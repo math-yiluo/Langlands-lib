@@ -1,6 +1,6 @@
 # The fixed-Levi embedding of a Bernstein block from a Levi block projection
 
-Worker 5352. This is a supporting reduction for Task 5352. It is not an unconditional proof of that task's target.
+This is a supporting reduction for Renard VI.7.2 Proposition (`BernsteinBlockCharacterizationStatement`). It is not an unconditional proof of that statement.
 
 Source: David Renard, *Représentations des groupes réductifs p-adiques*, French version of 9 July 2026, source `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The relevant passages are:
 
@@ -15,14 +15,14 @@ Source: David Renard, *Représentations des groupes réductifs p-adiques*, Frenc
 The published reduction `BernsteinBlockCharacterizationReduction` and `BernsteinSupportJacquetPresentation` derive the VI.7.2 characterization `BernsteinBlockCharacterizationStatement` from two named inputs. This module replaces one of them, the fixed-Levi embedding `BernsteinFixedLeviBlockEmbedding` (condition (i) for block objects), with:
 
 - a Levi-side input `BernsteinLeviBlockProjection`;
-- two published but unproved statements, VI.10.3 `BernsteinBlockJacquetFaithfulStatement` and VI.4.1 `RationalSummandSmallProgeneratorStatement`;
+- two published statements without an unconditional proof in the Library, VI.10.3 `BernsteinBlockJacquetFaithfulStatement` and VI.4.1 `RationalSummandSmallProgeneratorStatement`;
 - the proved VI.3.2 theorem `rationalNormKernelFiniteRestriction`.
 
 The other input, the geometric exclusion `BernsteinInducedInertiaJacquetExclusion`, is unchanged. Neither `BernsteinLeviBlockProjection` nor `BernsteinInducedInertiaJacquetExclusion` is proved here, and neither is VI.10.3 or VI.4.1.
 
 ## Why the route differs from the source
 
-The source proof, on printed p.185, obtains (i) by grouping the components of the I/R embedding `V → ⊕_Q i_Q^G(R_Q)` by conjugacy class. It then states that a factor `⊕_{(Q,D')} i_Q^G(τ_{Q,D'})` "can be rewritten" as `i_P^G(τ)` with `τ ∈ M(M)_D`, because the data `(M,D)` and `(L,D')` are conjugate. That rewriting compares induction from different standard parabolics with conjugate Levis. The current Library has no such comparison. This module therefore proves the fixed-`P` embedding directly. It applies first adjointness to a projection of `r_P^G(V)` onto its `D`-component, and uses VI.10.3 to show that the transposed map is injective.
+The source proof, on printed p.185, obtains (i) by grouping the components of the I/R embedding `V → ⊕_Q i_Q^G(R_Q)` by conjugacy class. It then states that a factor `⊕_{(Q,D')} i_Q^G(τ_{Q,D'})` "can be rewritten" as `i_P^G(τ)` with `τ ∈ M(M)_D`, because the data `(M,D)` and `(L,D')` are conjugate. That rewriting compares induction from different standard parabolics with conjugate Levis, a comparison this module does not use. This module therefore proves the fixed-`P` embedding directly. It applies first adjointness to a projection of `r_P^G(V)` onto its `D`-component, and uses VI.10.3 to show that the transposed map is injective.
 
 ## Declarations
 
@@ -30,7 +30,7 @@ The source proof, on printed p.185, obtains (i) by grouping the components of th
 
 For each actual standard cuspidal datum `a` of the family, with standard Levi `M = M_{a.roots}` and `D = [a.representation]`, and for each smooth representation `W` of the literal standard Levi subgroup `levi i ν a.roots` (carrier universe `max uF uV`), it asserts the following. There exist an object `τ` of the full rational inertia block of `a.representation`, on the rational points of `bernsteinLeviScheme i ν a.roots`, and a map `p : W ⟶ bernsteinLiteralLeviRep i ν a.roots τ`. For every object `Y` of that inertia block and every nonzero `f : bernsteinLiteralLeviRep … Y ⟶ W`, the composite `f ≫ p` is nonzero.
 
-Provenance: derived. With the VI.3.3.1 decomposition `W = W_D ⊕ W^D`, take `τ` as the transport of `W_D` and `p` as the projection onto `W_D`. A map out of a block object into `W` lands in `W_D`, because `Hom(M(M)_D, M(M)^D) = 0`, and so it is not killed by the projection. The Prop records exactly the part of VI.3.3.1 that the embedding argument uses. Worker 76 is deriving it from the published `RationalCuspidalInertiaDecompositionStatement` in separate work.
+Provenance: derived. With the VI.3.3.1 decomposition `W = W_D ⊕ W^D`, take `τ` as the transport of `W_D` and `p` as the projection onto `W_D`. A map out of a block object into `W` lands in `W_D`, because `Hom(M(M)_D, M(M)^D) = 0`, and so it is not killed by the projection. The Prop records exactly the part of VI.3.3.1 that the embedding argument uses. `bernsteinLeviBlockProjectionOfRationalInertiaDecomposition` (module `BernsteinLeviInertiaProjection`) derives it from the published `RationalCuspidalInertiaDecompositionStatement`.
 
 ### `BernsteinLeviBlockJacquetDetection` (derived Prop)
 
@@ -84,10 +84,10 @@ This is the composite of the two theorems above. From `BernsteinLeviBlockProject
 
 ## Remaining inputs
 
-- `BernsteinLeviBlockProjection`: derived from VI.3.3.1 (`RationalCuspidalInertiaDecompositionStatement`), in separate work by Worker 76.
-- `BernsteinInducedInertiaJacquetExclusion`: Task 5313.
-- `BernsteinBlockJacquetFaithfulStatement` (VI.10.3) and `RationalSummandSmallProgeneratorStatement` (VI.4.1): published statements that are not yet proved.
+- `BernsteinLeviBlockProjection`: derived from VI.3.3.1 (`RationalCuspidalInertiaDecompositionStatement`) in `BernsteinLeviInertiaProjection`.
+- `BernsteinInducedInertiaJacquetExclusion`: derived from VI.3.5 and VI.5.2 in `BernsteinDecompositionInputsAssembly` and `BernsteinInducedInertiaGeometricExclusion`.
+- `BernsteinBlockJacquetFaithfulStatement` (VI.10.3) and `RationalSummandSmallProgeneratorStatement` (VI.4.1): published statements without an unconditional proof in the Library.
 
 ## Local instances
 
-The module-local instances, which are affine, closed-immersion, finite-type, point-topology, local-compactness and non-archimedean instances for `G` and the standard Levis, copy those of `BernsteinBlockCharacterizationReduction` and `BernsteinLeviInertiaCofan`. Each has an explicit module-specific name, prefixed `instFixedLeviEmbedding`. No statement or import file of the target is modified, no missing statement is assumed as an instance, and no axiom is introduced.
+The module-local instances, which are affine, closed-immersion, finite-type, point-topology, local-compactness and non-archimedean instances for `G` and the standard Levis, copy those of `BernsteinBlockCharacterizationReduction` and `BernsteinLeviInertiaCofan`. Each has an explicit module-specific name, prefixed `instFixedLeviEmbedding`. No missing statement is assumed as an instance, and no axiom is introduced.

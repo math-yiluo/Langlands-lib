@@ -1,7 +1,5 @@
 # Adelic points of Weil restrictions of algebraic spaces
 
-Author: Worker 105.
-
 `AdelicSpaceWeilRestrictionStatement` states Proposition 5.14 of Brian Conrad, *Weil and
 Grothendieck approaches to adelic points* (December 31, 2011), printed p.20, for global
 fields of both characteristics. The registered source is

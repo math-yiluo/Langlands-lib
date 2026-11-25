@@ -1,6 +1,6 @@
 # Cartan comparison inside the same compact Levi intersection
 
-Worker 454. This internal definition unit records the comparison obligations
+This internal definition module records the comparison obligations
 for the standard Levi groups using the fixed geometric compact subgroup of
 the ambient group. It constructs the conditional norm-quotient, chamber and
 representative equivalences. It does not assert a structural inheritance
@@ -119,7 +119,7 @@ dominant intersection and separately makes a rectangular choice.
 V.5.1(4),(5), printed page 122/PDF128, gives the Cartan decomposition
 and retains the same `K₀ ∩ M` inside each standard Levi.
 The present property isolates its Cartan/lattice comparison obligations;
-the other adapted-compact properties remain with the structural sibling.
+the other adapted-compact properties belong to a separate structural statement.
 The positive normalization is inherited from the paired
 `CentralizerValuation` modules and their mandatory KP correction sources.
 
@@ -127,8 +127,8 @@ In the intended structural specialization, `G` is connected reductive,
 `i` is maximal split, `ν` is generic, `j` represents its actual centralizer
 and `s ≫ j = i`, and `x` is an actual special vertex for explicitly
 valid corrected building data. These hypotheses and that validity are
-not supplied by the weak `KPApartmentData` parameter. A future global
-statement must retain them explicitly. This unit asserts neither
+not supplied by the weak `KPApartmentData` parameter. A global
+statement must retain them explicitly. This module asserts neither
 universal validity or existence nor compactness, maximality, inherited
 apartments, minimal-parabolic comparison or any KP parahoric/`Z(F)^0`
-identification. It does not complete the host task.
+identification. It does not prove `AvailableRenardCartanStatement`.

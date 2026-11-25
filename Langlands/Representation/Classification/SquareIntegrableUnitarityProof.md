@@ -1,7 +1,5 @@
 # Unitarizability of square-integrable p-adic GL representations: proof
 
-Author: Worker 438.
-
 `Langlands.glSquareIntegrableUnitarity.{uF,uV}` proves exactly the closed
 proposition `Langlands.GLSquareIntegrableUnitarityStatement.{uF,uV}` from
 `Langlands.Representation.Classification.SquareIntegrableUnitarityStatement`.

@@ -1,7 +1,5 @@
 # Cohomology of an external tensor product of line bundles via Čech complexes
 
-Author: Worker 1147.
-
 Lean module: `Langlands.AlgebraicGeometry.Modules.BiCech.Kunneth`.
 This is the geometric input to the proof of
 `Langlands.AlgebraicGeometry.Modules.CoherentFieldExternalTensorKunnethStatement`.

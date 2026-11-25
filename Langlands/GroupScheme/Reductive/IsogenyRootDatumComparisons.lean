@@ -25,7 +25,7 @@ to a root, rather than merely to a positive multiple of a root. -/
 theorem isCentral_iff_mapsTo_roots (f : RootDatumIsogeny p P Q) :
     f.IsCentral ↔ Set.MapsTo f.weightMap (Set.range P.root) (Set.range Q.root) := by
   have : Module.IsReflexive ℤ X' := .of_isPerfPair Q.toLinearMap
-  have : IsAddTorsionFree X' := .of_isTorsionFree ℤ X'
+  have : HasUniqueDiv X' := .of_isTorsionFree ℤ X'
   constructor
   · intro hf x hx
     obtain ⟨j, rfl⟩ := hx

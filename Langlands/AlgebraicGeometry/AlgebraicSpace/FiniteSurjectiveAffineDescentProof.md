@@ -1,7 +1,6 @@
 # Finite-surjective descent of affineness for algebraic spaces (proof)
 
-Author: Worker 239. The proof is an assembly of published theorems; their
-authors are named in their own Markdown files.
+The proof is an assembly of Library theorems.
 
 The theorem
 `Langlands.AlgebraicGeometry.AlgebraicSpace.finiteSurjectiveAffineDescent`
@@ -22,7 +21,7 @@ axioms. It uses only the standard axioms `propext`, `Classical.choice` and
 
 ## Inputs
 
-The proof imports the following published theorems. Each proves the published
+The proof imports the following theorems. Each proves the
 statement named after it, with exactly that type.
 
 | Short name | Theorem | Statement |

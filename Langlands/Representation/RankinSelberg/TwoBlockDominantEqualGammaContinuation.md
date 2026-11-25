@@ -54,9 +54,12 @@ existence witnesses.
 This file is derived from the imported actual-family, real-ray, unramified
 transport and rational-comparison results; it introduces no new translation from
 literature. The actual lower-to-upper reversal and retained integral comparisons
-are dependencies of the real-ray result. This unit proves the equal-rank lower
-induction boundary. It does not yet transport the result to the upper normalized
-induction in the closed task targets, nor prove the strictly dominant range.
+are dependencies of the real-ray result. This module proves the equal-rank lower
+induction boundary. It does not transport the result to the upper normalized
+induction in the closed dominant-rank statements
+(`TwoBlockGammaDominantRankStatement`, `TwoBlockLDominantRankStatement`), nor
+prove the strictly dominant range; `TwoBlockDominantRankProof` carries out that
+transport and proves both statements.
 
 ## All-field port
 

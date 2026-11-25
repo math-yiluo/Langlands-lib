@@ -1,6 +1,6 @@
 # Evaluating actual projective affine charts
 
-Author: Worker 105. This internal construction is a prerequisite for the bounded
+This internal construction is a prerequisite for the bounded
 chart argument for projective-point compactness over locally compact fields.
 The motivating source is Conrad, *Weil and Grothendieck approaches to adelic
 points* (2011), Proposition 4.4, printed p.11. No compactness theorem is asserted
@@ -16,6 +16,6 @@ exactly `a k / a j`.
 The construction uses the existing Library projective scheme and chart rings.
 For the existing normalized homogeneous coordinates of any actual rational
 scheme morphism, evaluating in any nonvanishing chart recovers the same actual
-morphism. The proof applies the published two-chart comparison to the old and
+morphism. The proof applies the two-chart comparison to the old and
 new coordinate maps. No topology is assigned to projectivization or assumed as
 an input, and no compactness or properness result is used.

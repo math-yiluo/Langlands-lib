@@ -1,6 +1,6 @@
 # Extensions of a unipotent group by a diagonalizable group
 
-Worker 3502 wrote this module for Task 7804. It supplies the ingredients of the
+This module supplies the ingredients of the
 proof of [`PerfectDiagonalizableUnipotentExtensionSplitStatement`](DiagonalizableExtensionSplitStatement.md)
 (Milne, *Algebraic Groups* (2017), Proposition 16.28): centrality of the kernel,
 affineness of the quotient, existence of a homomorphic section and its

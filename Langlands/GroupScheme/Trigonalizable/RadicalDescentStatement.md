@@ -1,7 +1,5 @@
 # Statement: separable trigonalizability and descent of the geometric unipotent radical
 
-Worker 75.
-
 `Langlands.GroupScheme.SeparablyTrigonalizableRadicalDescentStatement.{u} : Prop` is a
 statement-only encoding of Milne, Corollary 16.31. It is over arbitrary fields, including
 imperfect fields. It does not assert that the geometric radical always descends.

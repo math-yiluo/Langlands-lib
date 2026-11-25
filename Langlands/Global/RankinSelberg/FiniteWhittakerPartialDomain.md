@@ -1,10 +1,11 @@
 # Paired Whittaker products on the partial adelic domain
 
-This internal unit shows that the paired Whittaker product of the actual
+This internal module shows that the paired Whittaker product of the actual
 prescribed tensor vectors depends only on the infinite and `S` coordinates on
 the domain of the partial Rankin–Selberg integral. Its provenance is actual
 finite tensor covariance, the existing global Whittaker transformation laws,
-and Worker 394's published group decomposition of that domain.
+and the published group decomposition of that domain (`adelicSplit`, module
+`UnipotentClassDecomposition`).
 
 The entry is
 `Langlands.Global.RankinSelbergGlobal.FiniteWhittakerPartialDomain.PartialDomainPairReductionStatement`;
@@ -45,7 +46,7 @@ The proof removes the two extra factors in the group's decomposition.
 2. `awayFinite k` uses `splitAtPlaces` to insert a supplied element of the
    away integral subgroup, with identity coordinates at `S`. The two local
    projection lemmas prove exactly its identity and integrality properties.
-   `adelicSplit_away` identifies the corresponding point of Worker 394's
+   `adelicSplit_away` identifies the corresponding point of the
    coordinate decomposition with its finite adelic inclusion under the
    published adelic group-point equivalence.
 3. `whittaker_mul_away` applies the genuine finite translation identity of the

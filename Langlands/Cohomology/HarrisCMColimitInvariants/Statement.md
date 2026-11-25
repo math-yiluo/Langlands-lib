@@ -1,8 +1,5 @@
 # Level invariants of CM cohomology over all small levels
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 This module states one proposition, `HarrisCMColimitInvariantsStatement`. It is
 about the colimit, over all sufficiently small CM levels, of the cohomology of
 the Library's geometric CM tower `U ↦ X̄_U` (module
@@ -51,8 +48,8 @@ The Lean definition keeps every premise as an explicit hypothesis, as the
 Library's modules do. A premise being a parameter does not mean that it is
 unproved. In Library commit `eec7519b852f9097606377425625fd5794c87f71`,
 fourteen premise types have published proofs, so a user can pass these
-theorems as the corresponding arguments. Check `88f571ea` (see the checks
-below) confirms that each theorem, at universe zero, has the premise type.
+theorems as the corresponding arguments. The third of the checks
+below confirms that each theorem, at universe zero, has the premise type.
 
 | Premise | Type | Library theorem | Module |
 | --- | --- | --- | --- |
@@ -88,6 +85,14 @@ that commit and `eec7519b` mentions any of the five types.
   levels, not a general theorem: the docstring of `CMGeometricCoarseRigidity`
   says that it "is not inferred from sufficiently small level".
 
+In the Library as it is now, `square`, `existence` and `geometry` are proved as
+well: `Langlands.AbelianScheme.mumfordBundlePicardZero` (module
+`Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroProof`),
+`Langlands.AbelianScheme.relativeDualSchemeExistence` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`) and
+`Langlands.AbelianScheme.relativeDualSchemeGeometry` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`).
+
 Since `q` is unproved, the proposition is a statement about the objects that
 any witness `q` produces. A proof must work for every such witness.
 
@@ -122,7 +127,7 @@ subgroup `U.obj.subgroup` of `G` that is sufficiently small
 - `H^d(X̄_U, coeff_U) = (cmSmallLevelCohomology ... R coeff d).obj (op U)`.
   This is the `d`-th right derived functor of global sections on
   `Sheaf (Scheme.smallEtaleTopology X̄_U) (ModuleCat.{0} R)`, computed with
-  injective resolutions (Worker 13's `EtaleDerivedSections`). For an arrow
+  injective resolutions (`EtaleDerivedSections`). For an arrow
   `a`, `(cmSmallLevelCohomology ... R coeff d).map a.op` is
   `cohomologyMapWithCoefficients f_a R d (coeff.map a.op)`: the pullback map
   `cohomologyMap f_a R d` followed by the map induced by `coeff.map a.op`.
@@ -138,7 +143,7 @@ subgroup `U.obj.subgroup` of `G` that is sufficiently small
   representation of `G` on this colimit
   (`RestrictedLevelTowerCohomology.smoothColimitCohomology`). Its operator
   `ρ u` is, definitionally, `RestrictedLevelColimit.translate u`; the lemma
-  `colimit_invariant` of check `6773df61` uses this.
+  `colimit_invariant` of the second check below uses this.
   `cmSmallLevelSmoothCohomology_action` proves that `ρ u (ι_K x)` is
   `ι_{uKu⁻¹}` of the image of `x` under the map of the arrow
   `restrictedConjArrow small u K : uKu⁻¹ ⟶ K`, whose element is `u`.
@@ -182,7 +187,7 @@ The hypotheses:
 
 - *Level triviality* is needed for the colimit to carry the smooth action at
   all (`cmSmallLevelSmoothCohomology` takes the witness `hcoeff`), and for
-  classes from level `U` to be `U`-invariant. Check `6773df61` (below) proves
+  classes from level `U` to be `U`-invariant. The second check below proves
   this inclusion of the image in the invariants in Lean.
 - *Cartesian coefficients.* The finite-level comparison needs the transition
   along each inclusion `W ≤ U` to be an isomorphism; the proposition assumes
@@ -221,7 +226,7 @@ element `g`.
    `W ≤ U`, so `res_{U→W°} x = 0`, and `x = 0` by injectivity in the
    finite-level statement.
 3. *The image consists of invariants.* This is the Lean lemma
-   `colimit_invariant` of check `6773df61`, proved with
+   `colimit_invariant` of the second check below, proved with
    `RestrictedLevelColimit.translate_ι_apply_of_mem` and level triviality.
 4. *Invariants come from level `U`.* Let `z` be fixed by every `u ∈ U`. Write
    `z = ι_K y`. Replacing `K` by the core in `U` of `K ⊓ U` and `y` by its
@@ -280,9 +285,9 @@ The statement does not cover:
   statement is the available form;
 - the sheaves `L_ξ`, ℓ-adic coefficients or limits over torsion coefficients;
 - Hecke operators, compact supports, or local-global compatibility;
-- a proof of any premise. The open premises `square`, `q`, `existence`,
-  `geometry` and `hRigid` stay open, and the proved ones are not
-  instantiated here.
+- a proof of any premise. The premises `q` and `hRigid` are not proved in
+  the Library; the others are proved there (see "Proof status of the
+  premises") but are not instantiated here.
 
 ## Registered sources
 
@@ -298,47 +303,45 @@ finite-level statement, whose Markdown cites SGA 4 IX 5.1.
 ## Formal dependencies and checks
 
 Direct project import, in Library commit
-`eec7519b852f9097606377425625fd5794c87f71` and the workspace:
+`eec7519b852f9097606377425625fd5794c87f71`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelCohomology` | Library (no Author line) | `9348395d2f5acbdf1856b569010a2aa79c1fcfd7395a88f2b36e7b93ab560af8` | `13c08eb11012cbe385fd3a316fafa8fb12d7ef3a819a86389b6250f324e41e61` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Shimura.PEL.HarrisTaylorCMSmallLevelCohomology` | `9348395d2f5acbdf1856b569010a2aa79c1fcfd7395a88f2b36e7b93ab560af8` | `13c08eb11012cbe385fd3a316fafa8fb12d7ef3a819a86389b6250f324e41e61` |
 
-Through it the module uses `HarrisTaylorCMSmallLevelIndex` (Author: Worker
-57) for `SmallCMLevel` and `OrderedSmallCMLevel`; `EtaleDerivedSections`
-(Author: Worker 13) for the cohomology; and the Library modules
-`RestrictedLevelColimit` (`ι`, `translate`), `RestrictedLevelTowerCohomology`
-(`IsLevelTrivialCoefficients`, `smoothColimitCohomology`) and
-`EtaleCohomologyDiagram` (`CoefficientDiagram`), whose Markdown files have no
-Author line. It does not import the companion finite-level module.
+Through it the module uses `HarrisTaylorCMSmallLevelIndex` for `SmallCMLevel`
+and `OrderedSmallCMLevel`; `EtaleDerivedSections` for the cohomology; and the
+Library modules `RestrictedLevelColimit` (`ι`, `translate`),
+`RestrictedLevelTowerCohomology` (`IsLevelTrivialCoefficients`,
+`smoothColimitCohomology`) and `EtaleCohomologyDiagram` (`CoefficientDiagram`).
+It does not import the companion finite-level module.
 
-The environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0,
+The environment is Lean 4.34.0,
 Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Checks against Library `eec7519b`, all on the final Lean file (SHA-256
 `2294b0d1f6197d0d22c36d13f915345877fc6b10bdb0a1052846d623168ec773`). None reported errors or warnings.
 
-- `1e9052c7-ef2e-4c67-a18e-2cbb28876aff` built the file from a draft
-  directory and inspected `HarrisCMColimitInvariantsStatement`: a
+- The first built the file and inspected `HarrisCMColimitInvariantsStatement`: a
   `Prop`-valued definition with no universe parameters, depending only on
   `propext`, `Classical.choice` and `Quot.sound` (type hash
   `933dcfb8826c61e7e3272f8beaf9a441f4160bccbab82547383005574835d1cc`).
-- `6773df61-f66e-4af8-83b3-8c34c0f0f376` compiled a test file
+- The second compiled a test file
   (`Langlands/Inspect/CMLevelInvariantsPrint.lean`, SHA-256
   `0a2bf3ffa1d7e1a5adc2dfc5a6e6a478caa7a4f3a21f76d26d506ea048b04134`), not part
-  of the candidate, against this file and the finite-level statement. It
+  of the Library, against this file and the finite-level statement. It
   printed both definitions with universes and proved `colimit_invariant`:
   for level-trivial `coeff`, `u ∈ U` and `x` at level `U`,
   `ρ u (ι_U x) = ι_U x`. This is the inclusion of the image in the invariants.
   It depends only on the three standard axioms.
-- `88f571ea-ab8f-40d6-8edd-403fa3f86d75` compiled a test file
+- The third compiled a test file
   (`Langlands/Inspect/CMLevelInvariantsPremises.lean`, SHA-256
   `b7bcb2ead3df306593f0fdd14577c0cfed3eaf7e7fcd8ca3489cc706b3fa1809`)
   against this file. For each of the fourteen proved premises in the table
   above, an `example` with the premise type at universe zero is closed by the
   cited theorem. `#print axioms` shows that each theorem depends only on
   `propext`, `Classical.choice` and `Quot.sound`.
-- `f11e8712-cfda-488c-af98-528da8c41ce9` built the file with Lake from the workspace and inspected
+- The fourth built the file with Lake and inspected
   `HarrisCMColimitInvariantsStatement`, with the same result and the same type hash.
 
 This establishes a well-formed statement. It does not prove it.

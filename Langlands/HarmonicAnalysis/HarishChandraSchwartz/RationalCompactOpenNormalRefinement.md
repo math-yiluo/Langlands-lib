@@ -1,6 +1,6 @@
 # Compact open normal refinement for VIII.1.3
 
-This unit constructs the topological refinement used in Waldspurger VIII.1.3
+This module constructs the topological refinement used in Waldspurger VIII.1.3
 and elementary adapters for returning from the refined level to the original
 compact open subgroup. It does not assert an induced-model comparison or
 spectral finiteness.
@@ -59,7 +59,7 @@ For the set-family adapter, choose this `L` and use antitonicity to include the
 set at `H` in the finite set at `L`. For fixed vectors, antitonicity of the
 fixed-vector submodule implies that vanishing at `L` would force vanishing at
 `H`. The rational specialization installs the canonical rational-point topology
-and the published `Langlands.Plancherel.rationalPoints_nonarchimedeanGroup`.
+and `Langlands.Plancherel.rationalPoints_nonarchimedeanGroup`.
 
 The actual literal-Levi intersection level, its compactness, the induced-fixed
 comparison at normal levels, all/proper VIII.1.2 inputs, and Fourier support

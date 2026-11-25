@@ -1,7 +1,5 @@
 # Rational rank-one length two from detection and Jacquet-length inputs
 
-Author: Worker 3915.
-
 `Langlands.Aubert.General.RationalPointFamily.rationalRankOneLengthTwoFromInputs`
 proves the whole proposition
 `RationalRankOneLengthTwoFromInputsStatement.{u, v}` from
@@ -102,13 +100,13 @@ adapter rests on the published `BruhatTits.dynamicUnipotentCompactOpenContainmen
 
 The proof body invokes no Langlands classification, character independence,
 geometric lemma, adjointness or cuspidal-support theorem. Those enter only
-through the two hypotheses. A future proof of the budget input needs the
-geometric lemma. A proof of the detection input through
+through the two hypotheses. The proof of the budget input
+(`rationalMaximalCuspidalJacquetBudget`) needs the geometric lemma. A proof of
+the detection input through
 `rationalMaximalCuspidalJacquetDetectionFromExtraction` needs the published
 factor-extraction proposition, whose own proof needs the geometric lemma.
-Such proofs must record their own dependencies. The final assembly would
-apply this theorem to them.
+`rationalRankOneLengthTwo_of_extraction` in `RationalRankOneLengthTwoReduction`
+applies this theorem to them.
 
-The checked lean_check diagnostic `40286eac-56fc-459a-abc8-7a6782f6df66`
-reports zero errors and warnings and only the axioms `propext`,
-`Classical.choice` and `Quot.sound`.
+The module checks with zero errors and warnings, and the theorem depends only
+on the axioms `propext`, `Classical.choice` and `Quot.sound`.

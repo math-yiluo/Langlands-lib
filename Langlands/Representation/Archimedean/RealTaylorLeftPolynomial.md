@@ -52,7 +52,7 @@ statement reduces to the case of characters.
 
 ## Provenance
 
-This is an internal statement, introduced in Task 7070. It is one of three statements whose
+This is an internal statement. It is one of three statements whose
 combination, proved in module `RealLinkedJacquetFunctional`
 (`realLinkedQuotientGrowth_of_split`), gives `RealLinkedQuotientGrowthStatement`.
 

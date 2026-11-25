@@ -21,7 +21,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 on a neighborhood of the identity. -/
 theorem rationalSpectralSubgroup_mem_nhds_of_normContinuous
     (ρ : G →* Aut P)
-    (hb : ∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+    (hb : ∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
     (d : RationalData K P) (b : d.algebra) (r : ℝ) (hr : 0 < r) :
     ρ ⁻¹' (rationalSpectralSubgroup d b r hr.le : Set (Aut P)) ∈ 𝓝 (1 : G) := by
   let H : Subgroup G := (locusStabilizer d).comap ρ
@@ -31,17 +31,17 @@ theorem rationalSpectralSubgroup_mem_nhds_of_normContinuous
       map_one' := Subtype.ext (map_one ρ)
       map_mul' := fun g h => Subtype.ext (map_mul ρ (g : G) (h : G)) }
   have hσ (a : P) :
-      Continuous (fun g : H => (σ g : Aut P).hom.toAlgHom a) :=
+      Continuous (fun g : H => (σ g : Aut P).asIso.hom.toAlgHom a) :=
     (hb a).comp continuous_subtype_val
   have hc : Continuous (fun g : H =>
-      ‖(stabilizerSectionAction d (σ g)).hom.toAlgHom b - b‖) :=
+      ‖(stabilizerSectionAction d (σ g)).asIso.hom.toAlgHom b - b‖) :=
     ((continuous_section_orbit d σ hσ b).sub continuous_const).norm
-  have hz : ‖(stabilizerSectionAction d (σ (1 : H))).hom.toAlgHom b - b‖ < r := by
+  have hz : ‖(stabilizerSectionAction d (σ (1 : H))).asIso.hom.toAlgHom b - b‖ < r := by
     rw [map_one, map_one]
     change ‖b - b‖ < r
     simpa only [sub_self, norm_zero] using hr
   have hsmall : ∀ᶠ g in 𝓝 (1 : H),
-      ‖(stabilizerSectionAction d (σ g)).hom.toAlgHom b - b‖ < r :=
+      ‖(stabilizerSectionAction d (σ g)).asIso.hom.toAlgHom b - b‖ < r :=
     hc.continuousAt.eventually (gt_mem_nhds hz)
   have htest : ∀ᶠ (g : H) in 𝓝 (1 : H),
       ρ g ∈ rationalSpectralSubgroup d b r hr.le := by
@@ -58,7 +58,7 @@ theorem rationalSpectralSubgroup_mem_nhds_of_normContinuous
 rational spectral topology on actual bounded algebra automorphisms. -/
 theorem continuous_rationalSpectralTopology_of_normContinuous
     (ρ : G →* Aut P)
-    (hb : ∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a)) :
+    (hb : ∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a)) :
     @Continuous G (Aut P) _ (rationalSpectralTopology P) ρ := by
   apply (continuous_rationalSpectralTopology_iff P ρ).mpr
   intro ι hι tests
@@ -76,12 +76,12 @@ namespace RationalSpectralAction
 /-- Construct a rational spectral action from norm-continuous forward orbits
 on the base affinoid algebra, retaining the given algebraic action. -/
 def ofNormContinuous (ρ : G →* Aut P)
-    (hb : ∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a)) :
+    (hb : ∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a)) :
     RationalSpectralAction G P :=
   ⟨ρ, continuous_rationalSpectralTopology_of_normContinuous ρ hb⟩
 
 @[simp] theorem ofNormContinuous_toMonoidHom (ρ : G →* Aut P)
-    (hb : ∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a)) :
+    (hb : ∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a)) :
     (ofNormContinuous ρ hb).toMonoidHom = ρ := rfl
 
 end RationalSpectralAction

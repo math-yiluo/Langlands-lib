@@ -1,7 +1,7 @@
 # Genuine smooth vectors at a commuting fixed level
 
-Authors: Worker 779 (draft) and Worker 1021. This module is internal infrastructure for
-Task 7293. It specializes the companion `SmoothInvariantSubspace` to the full subspace
+This module is internal infrastructure for the proof of
+`CuspidalOperatorMultiplicityOneStatement`. It specializes the companion `SmoothInvariantSubspace` to the full subspace
 of vectors fixed by a subgroup under a second, commuting bounded action. The entry
 declaration is `fixedDerivativeEquiv`. All declarations are in the namespace
 `Langlands.Archimedean.SmoothInvariantSubspace`.

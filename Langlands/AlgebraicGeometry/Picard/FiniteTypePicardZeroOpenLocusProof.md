@@ -1,7 +1,5 @@
 # Geometric Picard-zero openness for actual families over finite-type integer algebras
 
-Authors: Worker 967, Worker 1095.
-
 Module `Langlands.AlgebraicGeometry.Picard.FiniteTypePicardZeroOpenLocusProof`
 proves the published statement
 `Langlands.AbelianScheme.FiniteTypePicardZeroOpenLocusStatement.{u}` as
@@ -30,7 +28,7 @@ All of these are imported by Lean name from the Library.
 
 * **Core criterion.** `Langlands.AbelianScheme.mumfordTrivialLocus G M : B.Opens`
   and `isTranslationInvariant_fibreLineBundle_iff G M K t` (module
-  `Langlands.AbelianScheme.MumfordTrivialLocus`, Worker 1095). Here `B` is
+  `Langlands.AbelianScheme.MumfordTrivialLocus`). Here `B` is
   an arbitrary scheme, `G` an abelian scheme over `B` and `M` an arbitrary
   line bundle on `G.X.left`. The open set is the set of points `b` of `B`
   such that the Mumford class of `M` on `G.X ⨯ G.X` pulls back to the
@@ -39,8 +37,8 @@ All of these are imported by Lean name from the Library.
   `t : Spec K ⟶ B`, the restriction `fibreLineBundle G M t` is translation
   invariant on `G_t` if and only if `Set.range t ⊆ mumfordTrivialLocus G M`.
 * **Comparisons.** `exists_isPicardZeroFamily_relativePullback_iff_of_fibreCriterion`
-  (module `Langlands.AlgebraicGeometry.Picard.PicardZeroFamilyGeometricPointComparison`,
-  Worker 967). Its hypothesis is that
+  (module `Langlands.AlgebraicGeometry.Picard.PicardZeroFamilyGeometricPointComparison`).
+  Its hypothesis is that
   `HasOpenFibreTranslationInvarianceLocus G M` holds for every line bundle
   `M` on every abelian scheme `G` over every base `B`. Its conclusion is
   an open `U ⊆ P.left` such that, for every algebraically closed `K` in
@@ -48,8 +46,8 @@ All of these are imported by Lean name from the Library.
   `IsPicardZeroFamily A L_s ↔ Set.range s ⊆ U`. Here `L_s` is the actual
   relative pullback of `L` along `Over.homMk s rfl`.
 * **Bridge.** `isPicardZeroOpenLocus_of_geometricPoints` (module
-  `Langlands.AlgebraicGeometry.Picard.PicardZeroGeometricOpenLocusBridgeProof`,
-  Worker 390). Given the geometric detection statement, an open `U ⊆ P.left`
+  `Langlands.AlgebraicGeometry.Picard.PicardZeroGeometricOpenLocusBridgeProof`).
+  Given the geometric detection statement, an open `U ⊆ P.left`
   with the geometric-point property above satisfies `IsPicardZeroOpenLocus A L U`.
 * **Geometric detection.** `picardZeroGeometricDetection : PicardZeroGeometricDetectionStatement`
   (module `Langlands.AlgebraicGeometry.Picard.PicardZeroGeometricDetectionProof`).

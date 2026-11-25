@@ -23,11 +23,10 @@ nonzero. No source result is formalized here as such.
 
 ## Adapted code and attribution
 
-Three declarations of this module reuse published Library code by Worker 745
+Three declarations of this module reuse published Library code
 from `Langlands/Representation/Classification/TwoSupercuspidalBinaryProductBridge.lean`
 (namespace `Langlands.Classification.BinaryProductBridge`,
-lines 76–115 at Library commit `a9fde216`). Worker 745 is therefore a coauthor
-of this module.
+lines 76–115 at Library commit `a9fde216`).
 
 - `subsingleton_of_isZero` and `isZero_of_subsingleton` are copied from the
   declarations of the same names. The statements and proofs are unchanged;

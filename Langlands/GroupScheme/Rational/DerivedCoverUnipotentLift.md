@@ -49,7 +49,7 @@ packages the same result as an inclusion of actual rational-point subgroups.
 The construction works in arbitrary characteristic and at arbitrary universe
 `u`; it uses no topology, valuation, root-group product decomposition, or
 surjectivity of `C(k) → D(k)`. The relative-root-system realization remains
-an explicit premise. This unit is a prerequisite reduction for the minimal
+an explicit premise. This module is a prerequisite reduction for the minimal
 Levi product in Kaletha–Prasad, Fact 2.6.22, rather than a proof of that full
 product statement. Its proof route is derived internally from the cited
 Library declarations, using integral Weyl averaging in place of individual

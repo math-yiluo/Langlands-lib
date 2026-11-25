@@ -1,6 +1,6 @@
 # Proper maps on actual arithmetic-level model points
 
-This unit states the arithmetic-level step in the proof of Brian Conrad,
+This module states the arithmetic-level step in the proof of Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 printed p.11, Proposition 4.4, first two paragraphs of its proof. The registered
 source is `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
@@ -58,4 +58,5 @@ all adelic points.
 This statement does not assert existence of proper models for arbitrary
 field morphisms, the valuative preimage equality, properness on the full
 adelic point spaces, or the eventual stabilization conclusion of Proposition
-4.4. Those remain separate obligations of the whole-paper program.
+4.4. Properness on the full adelic point spaces of fixed models is
+`AdelicFixedModelProperMapStatement`, proved in `AdelicFixedModelProperMapProof`.

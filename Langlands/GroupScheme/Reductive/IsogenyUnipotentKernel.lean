@@ -56,10 +56,10 @@ variable {k : Type u} [Field k]
 /-- The actual relative roots of a supplied reduced root datum have reduced rays. -/
 theorem reducedRays (hP : IsRootDatumOf i P) (hT : IsSplitTorus T.toGrp) :
     SplitBigCell.ReducedRays i := by
-  let : IsAddTorsionFree (ℚ ⊗[ℤ] characterLattice T) :=
-    IsAddTorsionFree.of_module_rat _
-  let : IsAddTorsionFree (characterLattice T) :=
-    hT.character_toRat_injective.isAddTorsionFree toRat
+  let : HasUniqueDiv (ℚ ⊗[ℤ] characterLattice T) :=
+    HasUniqueDiv.of_module_rat _
+  let : HasUniqueDiv (characterLattice T) :=
+    hT.character_toRat_injective.hasUniqueDiv toRat
   intro a ha b hb r t hr ht he
   rw [relativeRoots_eq_roots, ← hP.2.1] at ha hb
   obtain ⟨s, rfl⟩ := ha

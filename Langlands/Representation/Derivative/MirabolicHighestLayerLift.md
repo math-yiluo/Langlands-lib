@@ -2,12 +2,10 @@
 
 Module `Langlands.Representation.Derivative.MirabolicHighestLayerLift`.
 
-Authors: Worker 805 and Worker 806. Worker 805 wrote the module. The averaging
-lemma `exists_levi_translates_mem` adapts Worker 806's published proof of
-`eq_bot_or_eq_top_of_radicalQuotient`; see [Authorship](#authorship).
+The averaging lemma `exists_levi_translates_mem` adapts the published proof of
+`eq_bot_or_eq_top_of_radicalQuotient`; see [Adapted argument](#adapted-argument).
 
-This is the first of three modules proving the actual highest mirabolic layer for task
-`3826dc7b-ec07-4059-9425-ee376ebcf07b`:
+This is the first of three modules proving the actual highest mirabolic layer:
 
 1. this module builds one lifting step through `Φ⁻` and proves the one-step lattice
    comparison, the base step and the level bounds;
@@ -69,8 +67,8 @@ Let `B` be a smooth representation of `P_(m+2)`.
 and `χ` a character of the radical with open kernel. A vector `v ∈ S` that lies in
 the ambient relations `R_χ(A)` already lies in `R_χ(S)`, the relations of the
 subrepresentation. For `n = 0` the radical is trivial and `R_χ(A) = 0`. For a positive
-rank the proof applies the published `CharacterAveraging.apply_eq_zero_of_mem_relations`
-(Worker 831). The exhaustion uses the compact radical boxes of the published
+rank the proof applies the published `CharacterAveraging.apply_eq_zero_of_mem_relations`.
+The exhaustion uses the compact radical boxes of the published
 `MinusVanishing.radicalBox`; every point lies in one of them by `exists_mem_latticeBox`.
 The argument shows that every linear functional on the `χ`-coinvariants of `S` kills
 the class of `v`.
@@ -135,7 +133,7 @@ vector is a combination of translates of `x`, so it stays in `S`.
   - `Φ⁻ Z = 0`: for `y ∈ L` there is `w ∈ W` with `q(w) = q(y)`. Then `y - w ∈ R_θ(B)`,
     hence `y - w ∈ R_θ(D)`, and `w ↦ 0` in `Z`.
 
-  The published `MinusVanishing.subsingleton_of_psiMinus_phiMinus` (Worker 1025) then
+  The published `MinusVanishing.subsingleton_of_psiMinus_phiMinus` then
   gives `Z = 0`, so `L ⊆ W`. That theorem is the analytic input: a smooth `P_(m+2)`
   representation with vanishing `Ψ⁻` and `Φ⁻` is zero.
 - `stepIso`: `Set.Iic (liftStep X) ≃o Set.Iic X`, given by `imageStep` with inverse
@@ -208,7 +206,7 @@ identity `∫ f(σ⁻¹u) dμ = mod(σ) ∫ f dμ` then says `μ.map σ⁻¹ = m
   column coordinates. This follows from the published `levi_conjugate_radicalElement`.
 - `map_inv_mul_haar`: for every additive Haar measure `μ` on the column space,
   `μ.map (X ↦ g⁻¹X) = |det g| • μ`, with `|·|` the residue-normalized absolute value
-  `T.determinantNorm`. This is Worker 110's published `padicRectangularHaarScaling`
+  `T.determinantNorm`. This is the published `padicRectangularHaarScaling`
   with `r = n`, `s = 1`, `A = g⁻¹`, `B = 1`.
 - `map_inv_mul_haar_iff`: a scalar `c : ℝ≥0` satisfies `μ.map (X ↦ g⁻¹X) = c • μ`
   exactly when `c = |det g|`. Uniqueness evaluates both sides on a compact
@@ -266,12 +264,11 @@ image of the published normalized `Φ⁺`.
 The complete import and declaration closures of the three modules are listed in
 `MirabolicHighestLayerProof.md`.
 
-## Authorship
+## Adapted argument
 
-Worker 805 wrote this module. The averaging lemma `exists_levi_translates_mem` adapts
-the averaging argument of Worker 806's published proof of
+The averaging lemma `exists_levi_translates_mem` adapts
+the averaging argument of the published proof of
 `eq_bot_or_eq_top_of_radicalQuotient` (`MirabolicMinusIrreducibleProof`, not imported): the
 same choice of an open compact fixer, last-row boxes and the character-sum
 cancellation `sum_out_eq_zero`, here applied to a subspace `σ` and an invariant
-subspace `S` instead of the whole quotient. Worker 806 is therefore credited as
-coauthor.
+subspace `S` instead of the whole quotient.

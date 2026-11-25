@@ -169,7 +169,7 @@ variable (F L : Type u) [Field F] [NumberField F] [Field L] [NumberField L]
   (G : GroupScheme (Spec (CommRingCat.of F)))
   [IsAffine G.X.left] [IsAffineHom G.X.hom] [LocallyOfFiniteType G.X.hom]
 
-local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
+private local instance : IsAffineHom (AffineWeil.unitBaseChange F L G).X.hom :=
   isAffineHom_of_isAffine _
 
 omit [FiniteDimensional F L] [IsGalois F L] [IsAffineHom G.X.hom] in
@@ -500,7 +500,7 @@ matching.** Let `G` have `F`-rank one, with minimal standard parabolic `P_F` the
 stabilizer of the coordinate line `j` under `ρ`. Let `i : T → G_L` be a split maximal torus
 of `G_L` over the Galois extension `L/F`, with generic cocharacter `ν`. Suppose the scalar
 extensions of norm-one points admit Springer's §3.5 twisted factorization with inverse-orbit
-matching (the body of Worker 5268's `HasTwistedOverlapMatching`, stated inline). Then the
+matching (the body of `HasTwistedOverlapMatching`, stated inline). Then the
 `ρ`-orbit heights of rational translates of norm-one points are uniformly bounded. -/
 theorem hasUniformNormOneRationalOrbitHeightBound_of_twistedOverlapMatching
     (hG : IsConnectedReductive G) {TF : CommGroupScheme (Spec (CommRingCat.of F))}

@@ -1,7 +1,7 @@
 # Local class of an induced reciprocity representation at a place with one place above
 
-Author: Worker 5134. Module `Langlands.Automorphic.InducedReciprocityLocalClass`, namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`. It is a helper for the proof of
+Module `Langlands.Automorphic.InducedReciprocityLocalClass`, namespace
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`. It is a helper for the proof of
 `HenniartGlobalizationStatement` (Henniart 2000, §3.4).
 
 Setting: `c` is a fundamental class family with `h : FundamentalClass.Restriction c`.
@@ -17,8 +17,9 @@ quotient.
 The hypotheses are:
 
 - `hN2 : LocalInducedRestrictionStatement.{uV, u}`, Tate's local restriction formula for
-  relative Weil groups (Tate 1979, (2.3.5) with (1.6.1)). It is a Library statement that
-  is not yet proved, so the theorem takes it as a hypothesis.
+  relative Weil groups (Tate 1979, (2.3.5) with (1.6.1)). The theorem takes it as a
+  hypothesis; the Library proves it as `localInducedRestriction` (module
+  `Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof`).
 - `z` is a finite place of `F` and `w` a finite place of `L` above `z`. The candidate `e`
   is a reciprocity candidate of `L_w`, and `ι : W_{F_z} → W_{L/F}` is a local
   relative Weil map for `z, w, e` (`IsLocalRelativeWeilMap`).

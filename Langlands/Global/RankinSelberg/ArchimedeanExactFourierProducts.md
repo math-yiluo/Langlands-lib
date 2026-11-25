@@ -1,8 +1,8 @@
 # Exact adelic test and Fourier products
 
-This internal unit discharges the rectangular-measure premise in the published
+This module discharges the rectangular-measure premise in the existing
 restricted-tensor Fourier and local-test assembly reductions. It combines
-those imported results with the published unconditional
+those imported results with the unconditional
 `RectangleTate.rectangleTateStatement`. No new open theorem premise is
 retained.
 
@@ -40,8 +40,8 @@ tensor and substitutes the prescribed finite Fourier partners. The
 rectangular-measure proof establishes scalar one from the adelic covolume-one
 normalization and the supplied self-dual local measures.
 
-This supplies the test-function and exact Fourier-product clauses used in the
-equal-rank task. It does not construct any Whittaker vectors, individual
+This supplies the test-function and exact Fourier-product clauses used for the
+equal-rank archimedean factorization, in `EqualInfiniteWhittakerReduction`. It does not construct any Whittaker vectors, individual
 archimedean Whittaker factors or nonvanishing local integrals, and it does not
 prove `EqualPointwiseFactorizationStatement` or the full
 `ArchimedeanFactorizationStatement`. Those conclusions require the remaining

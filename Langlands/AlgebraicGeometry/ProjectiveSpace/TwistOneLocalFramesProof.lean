@@ -124,7 +124,7 @@ lemma trivializesOn_projTwistingSheafSection {d : ℕ} {f : A} (hf : f ∈ 𝒜 
 end ProjTwist
 
 /-- Once the coordinate sections are frames on their coordinate opens, the published coordinate
-cover makes `𝒪(1)` locally free of rank one. (Contributed by Worker 311.) -/
+cover makes `𝒪(1)` locally free of rank one. -/
 lemma isLocallyFreeRankOne_twistOne_of_coordinateFrames
     (R : Type u) [CommRing R] (n : ℕ)
     (h : ∀ i : Fin (n + 1),

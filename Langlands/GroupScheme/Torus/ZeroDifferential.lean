@@ -97,7 +97,10 @@ theorem exists_character_div_characteristic (p : ℕ) [CharP k p]
   refine ⟨(characterLatticeEquiv k I).symm m, ?_⟩
   apply (characterLatticeEquiv k I).injective
   ext i
-  simpa only [map_zsmul, AddEquiv.apply_symm_apply, Pi.smul_apply, zsmul_eq_mul, Int.cast_id]
+  have hz : ∀ (n : ℤ) (x : characterLattice (commGroupScheme (Spec (CommRingCat.of k)) I)),
+      characterLatticeEquiv k I (n • x) = n • characterLatticeEquiv k I x :=
+    fun n x => (characterLatticeEquiv k I).toAddMonoidHom.map_zsmul n x
+  simpa only [hz, AddEquiv.apply_symm_apply, Pi.smul_apply, zsmul_eq_mul, Int.cast_id]
     using (hm i).symm
 
 /-- A nonzero integer acts injectively on the character lattice of a split torus. -/
@@ -108,7 +111,10 @@ theorem zsmul_character_injective (n : ℤ) (hn : n ≠ 0) :
   apply (characterLatticeEquiv k I).injective
   ext i
   have hi := congrFun (congrArg (characterLatticeEquiv k I) h) i
-  simp only [map_zsmul, Pi.smul_apply, zsmul_eq_mul] at hi
+  have hz : ∀ (m : ℤ) (x : characterLattice (commGroupScheme (Spec (CommRingCat.of k)) I)),
+      characterLatticeEquiv k I (m • x) = m • characterLatticeEquiv k I x :=
+    fun m x => (characterLatticeEquiv k I).toAddMonoidHom.map_zsmul m x
+  simp only [hz, Pi.smul_apply, zsmul_eq_mul] at hi
   exact mul_left_cancel₀ hn hi
 
 /-- Zero differential of a map from a standard split torus to a split torus implies
@@ -157,7 +163,7 @@ theorem character_eq_zero_of_zero_differential [CharZero k]
       Lie.targetMap (CommGroupScheme.groupHom χ) k X = 1) : χ = 0 := by
   apply (characterLatticeEquiv k I).injective
   ext i
-  simpa only [map_zero, Pi.zero_apply, Int.cast_eq_zero] using
+  simpa only [AddEquiv.map_zero, Pi.zero_apply, Int.cast_eq_zero] using
     character_coordinates_cast_eq_zero I χ hχ i
 
 /-- In characteristic zero, a map from a standard split torus to a split torus with

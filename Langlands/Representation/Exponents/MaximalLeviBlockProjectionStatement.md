@@ -9,13 +9,12 @@ The module contains one `Prop`-valued definition,
 `MaximalLeviBlockProjectionEquivalenceStatement`. It proves nothing and defines no new
 objects.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-It addresses gap 2 of the Chapter VII item ledger (`notes/renard/item-ledger-vii.md`, row
+The module addresses gap 2 of the Chapter VII item ledger (`notes/renard/item-ledger-vii.md`, row
 "VII.1.3 Corollary (i)–(iii)"): "the functor `r_D`, its faithfulness as stated by the
-source, and the unit isomorphism `π → i_P^G r_D(π)`". Worker 6's published
+source, and the unit isomorphism `π → i_P^G r_D(π)`". The published
 `MaximalLeviBlockStatements` (module `Langlands.Representation.Exponents.MaximalLeviBlockStatements`)
 states parts (i)–(iii) of the Corollary without naming `r_D`. Its correspondence note 4
-says that `r_D` was not named because no projection onto `M(M)_D` exists in the Library. This unit names `r_D`. It
+says that `r_D` was not named because no projection onto `M(M)_D` exists in the Library. This module names `r_D`. It
 characterizes the projection by its universal property (a left adjoint of the inclusion of
 `M(M)_D`), asserts that such a projection exists, and then states the claims of (ii) and
 (iii) about `r_D`.
@@ -25,8 +24,8 @@ characterizes the projection by its universal property (a left adjoint of the in
 David Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF page numbers are
-one-based and equal printed page numbers plus six. The author read PDF pp.150–151 and
-232–233.
+one-based and equal printed page numbers plus six. PDF pp.150–151 and 232–233 were
+read.
 
 - VII.1.3, Corollary, printed p.226 / PDF p.232:
 
@@ -142,7 +141,7 @@ representations of `M(F)` and of `G(F)`. The conclusion is the conjunction of:
 5. **Relation to the published statement.** The published `MaximalLeviBlockStatements`
    states (ii) as a nonvanishing criterion and (iii) through `InBlockM.ι ⋙ i_P^G` (full,
    faithful, essentially surjective onto `InBlockG`). Its correspondence notes 4 and 5
-   record that `r_D` and the unit isomorphism were not stated. This unit states exactly
+   record that `r_D` and the unit isomorphism were not stated. This module states exactly
    these missing claims. It reuses the same setting and encodings, so the published
    discussion of `w · D ≠ D`, of `M(M)_D` and of `M(G)_Ω` applies unchanged.
 6. **Universes.** As in the published statement, all smooth representations have carriers
@@ -153,7 +152,8 @@ representations of `M(F)` and of `G(F)`. The conclusion is the conjunction of:
 
 ## Expected proof route
 
-Not proved here; this is for the proof task.
+Not proved here. `MaximalLeviBlockProjectionReduction` derives the statement from
+`RationalCuspidalInertiaDecompositionStatement` and `MaximalLeviBlockStatements`.
 
 - **(b) from the published part (iii).** Let `I : InBlockM.FullSubcategory ⥤
   InBlockG.FullSubcategory` be the lift of `InBlockM.ι ⋙ i_P^G`
@@ -187,7 +187,7 @@ Not proved here; this is for the proof task.
 
 At Library commit `4f6abf4c`:
 
-- `MaximalLeviBlockStatements` (Worker 6) states VII.1.3 Corollary (i)–(iii) without
+- `MaximalLeviBlockStatements` states VII.1.3 Corollary (i)–(iii) without
   `r_D`. Its reduction module `MaximalLeviBlockReductionStatements` reduces it to the
   VII.1.3 Theorem and further inputs. Neither is proved;
 - `leviFirstAdjointnessAdjunction` (module
@@ -197,7 +197,9 @@ At Library commit `4f6abf4c`:
   actual category decomposition, `IsRationalInertiaCategoryDecomposition`; it is not
   proved.
 
-No theorem of the Library proves this statement or any part of it.
+No theorem of the Library proves this statement or any part of it unconditionally; the
+conditional reduction is `maximalLeviBlockProjectionEquivalence_of_decomposition_of_blocks`
+(module `MaximalLeviBlockProjectionReduction`).
 
 ## Provenance
 

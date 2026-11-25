@@ -1,7 +1,5 @@
 # Nonvanishing form of Jacquet's lemma, without admissibility
 
-Author: Worker 733, Task 6639 (`97df9594-40e0-45d8-8f8c-0e7562c6b4de`).
-
 This module proves, without any admissibility or finiteness hypothesis, that
 a nonzero vector of the Jacquet module fixed by `K ∩ M` produces a nonzero
 `K`-fixed vector of the representation. Here `K` is a compact open subgroup

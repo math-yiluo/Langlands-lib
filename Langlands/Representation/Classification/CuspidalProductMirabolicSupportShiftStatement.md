@@ -1,7 +1,6 @@
 # Support shift for mirabolic submodules of cuspidal products
 
-Authors: Worker 1070 (Lean statement and Markdown draft), Worker 1166
-(verification against the current Library and the source, Markdown update).
+The statement was checked against the Library and the source.
 
 This module states one proposition and proves nothing. It records
 Bernstein–Zelevinsky's Lemma 4.7(b) in its original mirabolic form: if `W`
@@ -9,8 +8,8 @@ is a representation of the mirabolic group `P_n` sitting inside the
 restriction of a product of supercuspidal representations
 `ρ_1 × ⋯ × ρ_r`, then every irreducible subrepresentation of the highest
 derivative of `W` has supercuspidal support which, after the shift by `ν`,
-is contained in `{ρ_1, …, ρ_r}` with multiplicities. It is an unproved
-assertion.
+is contained in `{ρ_1, …, ρ_r}` with multiplicities. This module does not
+prove it; the proof is in `CuspidalProductMirabolicSupportShiftProof`.
 
 ## The declaration
 
@@ -216,9 +215,7 @@ functors by `|det|^(-1/2)` of the output group. The source normalizes by
 `mod_U^(-1/2)` (BZ77 §1.8(b), §3.2), and for `m ∈ GL_(n-1)` this module is
 `|det m|`. The cuspidal product uses the Library's normalized parabolic
 induction. The comparison of these determinant characters with the source's
-Haar-modulus normalization is the separate statement task
-`a622f240-4846-4086-b34f-f650ba636ee4` with proof task
-`f947a735-872d-44db-a9ea-954d17dec4bd`. This proposition concerns the
+Haar-modulus normalization is a separate statement. This proposition concerns the
 Library functors as published; it neither assumes nor supplies that
 comparison. The direction of the shift agrees with the published
 `HighestDerivativeSupportShift`, whose Markdown checks it on segment
@@ -241,7 +238,7 @@ representations (Ze80 §3.5: `⟨Δ⟩^(m) = ⟨Δ⁻⟩`, so `ν · supp ⟨Δ�
 
 ## Scope and dependencies
 
-The proposition supplies no proof. Statement publication proves no
+The proposition supplies no proof. Stating it proves no
 representation-theoretic assertion. BZ77 Proposition 3.8 (the highest
 derivative pairing), Lemma 4.7(a), Corollary 4.6 and the Leibniz
 filtration 4.5, the Gelfand–Kazhdan derivatives of supercuspidal
@@ -250,68 +247,41 @@ representations (BZ77 §4.4), the contragredient of a product (BZ77 §2.3(d),
 comparison are inputs of the proof, not hidden hypotheses of this
 proposition. None of them is imported here.
 
-This statement is a lower input to the Ze80 §6.2 homogeneity proof task
-`b711af72-fdf9-4b32-a450-937911426822` (the case of a submodule of the
+This statement is a lower input to the Ze80 §6.2 homogeneity proof
+(`SegmentSocleProductHomogeneityProof`; the case of a submodule of the
 restriction that meets the right mixed part trivially), itself a lower input
-to ordered-socle existence task `23189526-80b0-4828-a6d4-7ebec2cbeef5`. The
-irreducible form `HighestDerivativeSupportShift` (exact proof task
-`f81d9b36-2615-4fec-abc2-50ef93d880bf`) is a special case of it. This
-module uses no conclusion, proof successor or transitive proof dependency of
-any task or proposition excluded by those two tasks. In particular it uses
-none of: `SegmentSocleProductIrreducibility` /
-`2ae5cbe5-0701-4509-88a0-db8cbeb35be4`; `UnlinkedSegmentSocleProductIrreducible`,
-`LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`
-and tasks `23e98d90-6055-4e35-91a9-b0f5d8a84961`,
-`a55c4267-7e3a-43f6-8bb1-ce319e1d0aa9`, `8fa9f68b-fa1b-431a-97f6-5b163964d1fc`;
+to ordered-socle existence `OrderedMultisegmentSocleExistence`. The
+irreducible form `HighestDerivativeSupportShift` (proved in
+`HighestDerivativeSupportShiftProof`) is a special case of it. This
+module uses no conclusion, proof or transitive proof dependency of
+any result excluded for those two proofs. In particular it uses
+none of: `SegmentSocleProductIrreducibility`;
+`UnlinkedSegmentSocleProductIrreducible`,
+`LinkedSegmentSocleReverseProductStructure`, `LinkedSegmentSoclePairReducible`;
 `JuxtaposedSegmentSocleReverseProductStructure`,
-`LinkedSegmentSocleReverseProductQuotientHom` and task
-`7ff2a1e9-89dc-439e-a861-a567b3db92bf`; `AdjacentUnlinkedSegmentSocleSwap` /
-`e3634665-571b-4852-9f4c-bab8a1053434` /
-`cded83f3-df9c-4018-bc61-dc54f5c1f9ab`; `TwoSegmentSocleCommutation` /
-`426911b4-6620-413f-8065-04b25287f3bd` /
-`66e3b87c-647e-41e4-af18-df4d436765f0`; `LinkedSegmentSocleGluing` /
-`c84cd52c-3ff3-4024-be50-8b84dd480888` /
-`6780b79c-9526-46aa-b8b4-00377d68b1ea`; `OrderedMultisegmentSocleExistence` /
-`23189526-80b0-4828-a6d4-7ebec2cbeef5`; socle exhaustion
-`f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`; analytic segment classification
-`aca8805b-054f-4d56-8045-12db7f623404`; special-head exhaustion
-`3bfb61fa-1129-4fc9-83fd-7fcfec22106e`; ordered special-head existence
-`ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`; quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`; ordered conversion
-`8252833d-c269-41a9-824c-5879e531b23b`; tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`; `GenericSegmentProductUniqueness` /
-`30341ae4-65f2-4a0e-9283-763db01a409e`;
-`SquareIntegrableLanglandsClassification` /
-`1cb45da2-7007-4351-a694-594fb148b8d1`; square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`; regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`; forward special-segment essential
-square-integrability `5eece9e8-7f6b-4ea9-abea-a1f9f1b8c807`;
-`SegmentHeadProductIrreducibility` / `8364e73f-14ec-4d14-8f2b-1555a7c1ce95`;
-individual segment-socle and special-head existence
-`4ca79bbd-589e-476b-9f65-661e799984b5` and
-`67279e36-f3c2-42e3-9302-11729784042e`; the segment Jacquet formulas
-(`ed48ae06-964c-4c84-9e62-978f5a953ca7`,
-`55ad1e10-62d8-46b7-a081-909ef0056426`,
-`b95105c6-f8bb-4641-ae53-2f49d1e7f034`,
-`92aea10f-62ac-4e0b-bd4a-9a80909797c5`);
-`TwoSupercuspidalNonadjacentProductIrreducible` /
-`3c9849a4-a6c0-43ac-9982-d15ed76bf1e9` and `TwoSupercuspidalProductStructure` /
-`ab61f565-1427-4746-ba77-46097563e962`. It uses no segment, cuspidal or
+`LinkedSegmentSocleReverseProductQuotientHom`; `AdjacentUnlinkedSegmentSocleSwap`;
+`TwoSegmentSocleCommutation`; `LinkedSegmentSocleGluing`;
+`OrderedMultisegmentSocleExistence`; socle exhaustion; analytic segment
+classification; special-head exhaustion; ordered special-head existence;
+quotient coverage; ordered conversion; tempered block uniqueness;
+`GenericSegmentProductUniqueness`; `SquareIntegrableLanglandsClassification`;
+square-integrable exhaustion; regular exhaustion; forward special-segment
+essential square-integrability; `SegmentHeadProductIrreducibility`;
+individual segment-socle and special-head existence; the segment Jacquet
+formulas; `TwoSupercuspidalNonadjacentProductIrreducible` and
+`TwoSupercuspidalProductStructure`. It uses no segment, cuspidal or
 supercuspidal derivative formula (Ze80 §3.5 or §9.6), no proposition of the
-Library module `SegmentSocleDerivativesStatement` (the segment-socle part of
-task `8e5b4563-0365-41c7-b134-70f2a0b36292`), no segment product
+Library module `SegmentSocleDerivativesStatement`, no segment product
 irreducibility criterion (Ze80 4.2 or 9.7), no analytic or
 square-integrability result and no classification or exhaustion theorem.
-Later proof tasks and lower splits must preserve this exclusion set and the
-further exclusions recorded in their contracts.
+Proofs built on this statement must preserve this exclusion set.
 
 ### Import closure audit
 
 The complete transitive project import closure was traversed in Library
-commit `5265467bd3fd94308df2e30a20d91abedd90f413`, the base of this
-contribution. It has the 79 project modules listed below. Every one has a
-nonempty Markdown pair, and every pair is byte-identical between that
-Library tree and the submitting workspace. The derivative branch contains
+commit `5265467bd3fd94308df2e30a20d91abedd90f413`. It has the 79 project
+modules listed below. Every one has a nonempty Markdown pair, and every pair
+is byte-identical to that Library tree. The derivative branch contains
 group and functor constructions, quotient carriers, rank transports, the
 finite-maximum level and the invariant-subspace homogeneity definition, with
 elementary laws about them. The classification branch contains the cuspidal
@@ -321,7 +291,7 @@ and the support definitions. The closure contains no socle, segment-product,
 classification, commutation, exhaustion, coverage, derivative-filtration,
 derivative-detection, derivative-exactness, pairing or Whittaker-finiteness
 result, no `Statement` module of any derivative or classification
-proposition, and no module of any excluded task above. The `Proof` modules in
+proposition, and no module of any excluded result above. The `Proof` modules in
 the closure prove p-adic arithmetic normalization interfaces,
 matrix-coefficient laws, smooth-part laws, smoothness and admissibility
 transfer, the admissibility equivalence, character-twist laws and the
@@ -413,11 +383,10 @@ Langlands.Weil.Representation.IsomorphismInvarianceProof
 Langlands.Weil.Representation.Operations
 ```
 
-### Development checks
+### Checks
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-(diagnostic `1a783d43-4071-4554-91f8-557222e9e52a`) compiled the module with no errors or warnings.
-Inspection of the declaration reported `statement_returns_prop: true`, level
+The module compiles with no errors or warnings.
+Inspection of the declaration reported that it returns a `Prop`, level
 parameters `uF, uV`, and only the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`. These checks establish elaboration and
-proposition kind only; they are not semantic acceptance.
+proposition kind only.

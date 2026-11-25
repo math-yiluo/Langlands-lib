@@ -1,6 +1,6 @@
 # An actual opposite parabolic for a represented parabolic
 
-Author: Worker 70. Module
+Module
 `Langlands.Representation.Families.InducedTwistsDetectionOpposite`, namespace
 `Langlands.Renard.AlgebraicFamily.InducedTwistsDetection`. Internal helper for the
 uniform induced-twist detector.

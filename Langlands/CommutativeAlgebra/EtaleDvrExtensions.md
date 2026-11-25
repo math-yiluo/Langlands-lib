@@ -1,6 +1,6 @@
 # Local essentially etale extensions of a DVR
 
-Worker 252. Internal derived support for the existence of strictly Henselian
+Internal derived support for the existence of strictly Henselian
 DVR extensions.
 
 Let `R` be a domain DVR, and let `S` be a local, flat, essentially finite type,

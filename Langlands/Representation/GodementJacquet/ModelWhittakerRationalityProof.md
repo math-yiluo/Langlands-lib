@@ -62,9 +62,6 @@ extend the irreducible statement by an unsupported carrier equivalence.
 The target's Markdown explains the shift and the omission of the source's
 common greatest common divisor assertion.
 
-Worker 352 prepared this closing pair. Workers 249 and 261 supplied the
-conditional assembly and the closing expression reused here.
-
 ## Declaration checks
 
 The closing module and two private complete-type assignments compile with no

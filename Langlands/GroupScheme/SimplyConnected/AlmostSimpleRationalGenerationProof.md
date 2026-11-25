@@ -1,7 +1,5 @@
 # Rational generation of simply connected groups by almost-simple factors: proof
 
-Authors: Worker 4902.
-
 `Langlands.GroupScheme.simplyConnectedAlmostSimpleRationalGeneration` proves
 the unchanged published
 `Langlands.GroupScheme.SimplyConnectedAlmostSimpleRationalGenerationStatement.{u}`

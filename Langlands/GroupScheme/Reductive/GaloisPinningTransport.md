@@ -41,8 +41,8 @@ isomorphism the identity of `d.torus`, and root-datum equivalence
 
 ## Provenance
 
-Internal. Task 7603 (clause 1) asks for the transport of the Tits obstruction along actual
-group isomorphisms. This construction supplies Galois pinning data on the target group that is
+Internal. The Tits obstruction is transported along actual group isomorphisms in
+`SimplyConnected/TitsObstructionTransport`. This construction supplies Galois pinning data on the target group that is
 compatible with the given isomorphism, so that the transport along pinned isomorphisms applies
 to every `k`-isomorphism of groups. No literature statement is formalized; the construction
 only combines the Library's transport results for connected reductivity, maximal tori, root

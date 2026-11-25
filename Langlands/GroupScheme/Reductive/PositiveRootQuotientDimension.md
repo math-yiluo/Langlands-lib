@@ -53,9 +53,10 @@ root sets.
 The provenance is an internal composition of published opposite-cell,
 dynamic representability, smoothness, tangent and dimension results. The
 opposite-cell theorem's original source and implemented general-linear
-proof are documented in `Absolute.OppositeCellProof`; this unit introduces
+proof are documented in `Absolute.OppositeCellProof`; this module introduces
 no additional external structural assertion. It does not prove properness,
 a projective fixed-point bound, maximal-torus conjugacy, maximality
-preservation under base change or the exact rank-one parent target.
-The four theorem families excluded by the parent task are not used as
-premises or proof dependencies.
+preservation under base change or the exact rank-one target
+`RankOnePositiveRootUniquenessStatement`, which the Library proves as
+`rankOnePositiveRootUniqueness` in `RankOnePositiveRootProof`.
+The first four are not used as premises or proof dependencies either.

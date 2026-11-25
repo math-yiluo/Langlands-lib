@@ -1,7 +1,5 @@
 # Axiom V 3 for the Chevalley root function family
 
-Author: Worker 1620.
-
 Lean module: `Langlands.Geometry.Building.ChevalleyRootFamilyCommutator`.
 
 ## Setting

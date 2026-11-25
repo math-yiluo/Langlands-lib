@@ -17,7 +17,7 @@ character in that range. Equality after descent implies equality on `A` by
 evaluation at quotient classes. This proves `mem_of_separates_quotient`.
 
 This is an internal supporting construction for adelic additive duality.
-It adapts the quotient-character step of Worker 1843's proposed abstract
-argument using `CompactCharacterCompleteness`. It does not prove the
+It adapts the quotient-character step of an abstract argument for that
+duality, using `CompactCharacterCompleteness`. It does not prove the
 arithmetic separation hypothesis or provide a parametrization of characters
 that are nontrivial on `D`.

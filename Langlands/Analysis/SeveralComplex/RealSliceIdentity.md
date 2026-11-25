@@ -2,7 +2,7 @@
 
 Module `Langlands.Analysis.SeveralComplex.RealSliceIdentity` (namespace
 `Langlands.Analysis.SeveralComplex`). Helper of
-`Langlands.Analysis.SeveralComplex.RealHyperplaneDivision` (Task 5613, Lapid
+`Langlands.Analysis.SeveralComplex.RealHyperplaneDivision` (for Lapid
 2011 Proposition 6). Provenance: internal; standard complex analysis proved
 from Mathlib's one-variable identity theorem.
 

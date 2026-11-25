@@ -21,8 +21,8 @@ Sources:
 - Operator route note `operator-numerical-llc-route-2026-11-16`, Lemma `lem:level`(i), first
   sentence (marked "[literature]"), printed pp. 15–16, with a short proof in the note.
 
-`FundamentalStratumLevelStatement.{uK, uV} : Prop` is an unproved statement; a later
-`lean.proof@1` task proves it.
+`FundamentalStratumLevelStatement.{uK, uV} : Prop` is a statement, proved as
+`fundamentalStratumLevel` in `Langlands.BushnellKutzko.FundamentalStratumLevelProof`.
 
 ## Statement
 
@@ -41,8 +41,8 @@ chain `𝓛 : LatticeChain 𝒪[K.Carrier] K.Carrier (Fin n → K.Carrier)`, eve
 then `IsNormalizedLevel K n a (m / e(𝓛))`, where `e(𝓛) = 𝓛.period` and the quotient is taken in
 `ℚ`.
 
-The fundamental condition is stated directly from the Library's `𝔓^j`, because the
-fundamental-strata definition of Task 7412 is not yet in the Library. It is BK93's definition
+The fundamental condition is stated directly from the Library's `𝔓^j`, not through the
+Library's `Stratum.IsFundamental` (module `Langlands.BushnellKutzko.FundamentalStratum`). It is BK93's definition
 (printed p. 57) verbatim: `b + 𝔓^{1−m}` contains no nilpotent element of `A`.
 
 ## Relation to the sources

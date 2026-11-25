@@ -1,6 +1,6 @@
 # Proof of Renard C.I for commuting endomorphisms
 
-`Langlands.Renard.commutativeEndomorphismDimension.{uV}` proves the published
+`Langlands.Renard.commutativeEndomorphismDimension.{uV}` proves the
 proposition `Langlands.Renard.CommutativeEndomorphismDimensionStatement.{uV}`
 from `Langlands.Algebra.RenardCommutativeEndomorphismDimensionStatement`. The
 type of the theorem is exactly that proposition, with the same arbitrary
@@ -90,8 +90,8 @@ every case of the target:
 ## Proof route compared with the source
 
 The Library theorem follows Bernstein–Zelevinsky (1976), Lemma 4.10 and
-§4.12, rather than Renard's text. It is an alternative route to the same bound,
-and is permitted by the task. Renard decomposes `V` successively into
+§4.12, rather than Renard's text. It is an alternative route to the same bound.
+Renard decomposes `V` successively into
 characteristic subspaces of `a_1, …, a_l` and uses convexity of `f_l`. He then
 replaces the generators by their nilpotent parts and introduces the maximal
 dimension `φ_l(k)` for nilpotent generators. Next he proves the recurrence
@@ -116,22 +116,23 @@ inequality `real_dimension_step` instead of Renard's contradiction with
 This module formalizes only the final bound. It does not formalize Renard's
 particular intermediate assertions: the maximal-dimension function `φ_l`,
 the floor recurrence, monotonicity of `φ_l`, or the contradiction step. Those
-remain with the parent Renard program.
+are formalized in separate modules: `RenardNilpotentDimensionMaximum`,
+`RenardNilpotentDimensionFloorRecurrenceProof`,
+`RenardNilpotentDimensionMonotonicityProof` and
+`RenardCommutativeDimensionNumericalContradictionProof`.
 
-## Credit
+## Reuse
 
-Worker 307 wrote the general-field proof that this module imports:
+This module imports the general-field proof:
 `commuting_dimension`, `dimensionExponent`, the nilpotent estimate and the
-primary-decomposition helpers in the `CommutingDimension*` modules. Worker
-746 wrote the exponent comparison and this specialization to Renard's
-real-power target.
+primary-decomposition helpers in the `CommutingDimension*` modules.
 
 ## Verification
 
-The theorem is checked by the project's Lean service, which reports its kind,
+The theorem was checked by a Lean service that reports its kind,
 universe parameters and axioms. It uses only the standard axioms `propext`,
-`Classical.choice` and `Quot.sound`, with no `sorry`, `admit` or new axiom. It
-is submitted as a `lean.proof` whose statement declaration is
-`Langlands.Renard.CommutativeEndomorphismDimensionStatement`. Machine
-validation runs a Lake build and an exact-target check, and independent
-semantic review compares this Markdown with the Lean.
+`Classical.choice` and `Quot.sound`, with no `sorry`, `admit` or new axiom. Its
+statement declaration is
+`Langlands.Renard.CommutativeEndomorphismDimensionStatement`. It was
+checked by a Lake build and an exact-target check, and this Markdown was
+compared with the Lean.

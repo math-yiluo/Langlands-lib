@@ -25,7 +25,7 @@ variable {S X : Scheme.{u}} (f : X ⟶ S) {κ : Type}
 /-- Base change of the opens along a morphism of `S`-schemes with an arbitrary structure map. -/
 lemma hU2' (hU2 : HU2 f U) {T T' : Scheme.{u}} [IsLocallyNoetherian T] [IsLocallyNoetherian T']
     {s : T ⟶ S} {s' : T' ⟶ S} (h : T' ⟶ T) (w : h ≫ s = s') (L : (pullback f s).Modules)
-    (hL : Scheme.Modules.IsInvertible L) (c : κ) (n : ℕ) :
+    (hL : Scheme.Modules.IsInvertibleFLT L) (c : κ) (n : ℕ) :
     U T' s' ((Scheme.Modules.pullback (mapX f h w)).obj L) c n = h ⁻¹ᵁ U T s L c n := by
   subst w
   exact hU2 T T' s h L hL c n
@@ -35,7 +35,7 @@ end BaseChange
 section Abel
 
 variable {S X : Scheme.{u}} (f : X ⟶ S) (𝓛X : X.Modules)
-  (h𝓛X : Scheme.Modules.IsInvertible 𝓛X) {D : Scheme.{u}} (d : D ⟶ S)
+  (h𝓛X : Scheme.Modules.IsInvertibleFLT 𝓛X) {D : Scheme.{u}} (d : D ⟶ S)
   (W : RelativeEffectiveDivisor (pullback.snd f d)) (m : ℕ)
 
 /-- An open `Z₀` of the divisor scheme as a scheme over `S`. -/
@@ -58,8 +58,8 @@ lemma abelMap_app (Z₀ : D.Opens) (T : Over S) (x : T ⟶ Zo d Z₀) :
 lemma linsys_class (hcl : Classifies f d W)
     (hbc : RelativeEffectiveDivisorBaseChangeStatement.{u}) {T Λ : Scheme.{u}} {s : T ⟶ S}
     (l : Λ ⟶ T) (WΛ : RelativeEffectiveDivisor (pullback.snd (pullback.snd f s) l))
-    (L : (pullback f s).Modules) (hL : Scheme.Modules.IsInvertible L) (NΛ : Λ.Modules)
-    (hN : Scheme.Modules.IsInvertible NΛ)
+    (L : (pullback f s).Modules) (hL : Scheme.Modules.IsInvertibleFLT L) (NΛ : Λ.Modules)
+    (hN : Scheme.Modules.IsInvertibleFLT NΛ)
     (e : WΛ.toEffectiveCartierDivisor.lineBundle.obj ≅
       (Scheme.Modules.pullback (pullback.fst (pullback.snd f s) l)).obj
           (twist L ((Scheme.Modules.pullback (pullback.fst f s)).obj 𝓛X) m) ⊗
@@ -82,16 +82,16 @@ abbrev tr (T : Over S) (L : LineBundle ((relativeSpace f).obj T)) :
   (Scheme.Modules.pullback (sym f T).inv).obj L.obj
 
 lemma isInvertible_tr (T : Over S) (L : LineBundle ((relativeSpace f).obj T)) :
-    Scheme.Modules.IsInvertible (tr f T L) :=
+    Scheme.Modules.IsInvertibleFLT (tr f T L) :=
   isInvertible_pullback _ (isInvertible_lineBundle L)
 
 lemma icl_tr (T : Over S) (L : LineBundle ((relativeSpace f).obj T))
-    (h : Scheme.Modules.IsInvertible (tr f T L)) :
+    (h : Scheme.Modules.IsInvertibleFLT (tr f T L)) :
     icl (tr f T L) h = Group.pullback (sym f T).inv L.classOf := by
   rw [icl_pullback _ _ (isInvertible_lineBundle L), icl_lineBundle]
 
 lemma pb_relativeSpace_map {T T' : Over S} (k : T' ⟶ T) (L : LineBundle ((relativeSpace f).obj T))
-    (h : Scheme.Modules.IsInvertible (tr f T L)) :
+    (h : Scheme.Modules.IsInvertibleFLT (tr f T L)) :
     Group.pullback ((relativeSpace f).map k) L.classOf =
       Group.pullback (sym f T').hom
         (Group.pullback (mapX f k.left (Over.w k)) (icl (tr f T L) h)) := by

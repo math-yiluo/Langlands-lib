@@ -1,13 +1,13 @@
 # Locally constant scalar compatibility over a homeomorphism
 
-Worker 1222. This internal comparison joins the distribution action in
+This internal comparison joins the distribution action in
 `Distributions` to the section isomorphisms and algebraic dual transpose in
 `HomeomorphSheafIso`. Its provenance is the Definition of distributions and
 the last two paragraphs of Renard II.2.5, printed pp.42–43 / PDF pp.48–49,
 in the French edition dated 9 July 2026. The registered source is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read both original pages for this comparison.
+Both original pages were read for this comparison.
 
 Renard defines the full locally constant action on distributions by
 `(f · T)(s) = T(f · s)`. He then defines isomorphisms of sheaves over a
@@ -71,5 +71,6 @@ the formula without requiring that `f` have compact support.
 
 `transpose Φ hX (g · T) = (g ∘ Φ.homeomorph) · transpose Φ hX T`.
 
-All results in this module are proved. The open/closed exact sequence and
-module-sheaf basis equivalence remain separate obligations.
+All results in this module are proved. The open/closed exact sequence
+(`ClosedRestrictionExactStatements`) and the module-sheaf basis equivalence
+(`CompactVectorSheafModuleEquivalence`) are separate modules.

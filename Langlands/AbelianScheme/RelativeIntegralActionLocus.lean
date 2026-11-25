@@ -22,10 +22,18 @@ variable {S : Scheme.{u}} (B : Langlands.AbelianScheme S)
       (locallyNoetherianTestInclusion S).op ⋙ yoneda.obj E)
     (hpow : IsLocallyNoetherian (∏ᶜ fun _ : I => E).left)
 
+/-- The End-ring presheaf after forgetting the ring, on locally noetherian tests, represented by
+`E`: the relative-Hom comparison `relativeEndRingFunctorForgetIso` followed by `e`. -/
+def relativeEndRingRepresentation :
+    (locallyNoetherianTestInclusion S).op ⋙ relativeEndRingFunctor B ⋙ forget RingCat ≅
+      (locallyNoetherianTestInclusion S).op ⋙ yoneda.obj E :=
+  Functor.isoWhiskerLeft (locallyNoetherianTestInclusion S).op
+    (relativeEndRingFunctorForgetIso B) ≪≫ e
+
 /-- The actual equalizer imposing the finite unit and multiplication equations. -/
 abbrev relativeIntegralActionLocus : Over S :=
   FiniteFreeRingHom.locus b (relativeEndRingFunctor B)
-    (fun T : Over S => IsLocallyNoetherian T.left) E e hpow
+    (fun T : Over S => IsLocallyNoetherian T.left) E (relativeEndRingRepresentation B E e) hpow
 
 /-- The equation locus is a subobject of the finite endomorphism-tuple space. -/
 def relativeIntegralActionLocusInclusion :
@@ -42,7 +50,8 @@ def relativeIntegralActionLocusHomEquiv
     (T.obj ⟶ relativeIntegralActionLocus B b E e hpow) ≃
       (O →+* CategoryTheory.End ((baseChange T.obj.hom).obj B)) :=
   (FiniteFreeRingHom.locusHomEquiv b (relativeEndRingFunctor B)
-    (fun T : Over S => IsLocallyNoetherian T.left) E e hpow T).trans
+    (fun T : Over S => IsLocallyNoetherian T.left) E (relativeEndRingRepresentation B E e) hpow
+      T).trans
       (integralActionEquiv b ((baseChange T.obj.hom).obj B)).symm
 
 /-- On a basis vector, the classified action is the decoded coordinate of the locus map. -/
@@ -50,12 +59,13 @@ theorem relativeIntegralActionLocusHomEquiv_apply_basis
     (T : ObjectProperty.FullSubcategory (fun T : Over S => IsLocallyNoetherian T.left))
     (f : T.obj ⟶ relativeIntegralActionLocus B b E e hpow) (i : I) :
     relativeIntegralActionLocusHomEquiv B b E e hpow T f (b i) =
-      e.inv.app (op T)
+      CategoryTheory.End.of (X := (baseChange T.obj.hom).obj B) (e.inv.app (op T)
         ((f ≫ relativeIntegralActionLocusInclusion B b E e hpow) ≫
-          Pi.π (fun _ : I => E) i) := by
+          Pi.π (fun _ : I => E) i)) := by
   exact integralActionEquiv_symm_apply_basis b ((baseChange T.obj.hom).obj B)
     (FiniteFreeRingHom.locusHomEquiv b (relativeEndRingFunctor B)
-      (fun T : Over S => IsLocallyNoetherian T.left) E e hpow T f) i
+      (fun T : Over S => IsLocallyNoetherian T.left) E (relativeEndRingRepresentation B E e) hpow
+      T f) i
 
 /-- The natural comparison on the unchanged full locally noetherian test category. -/
 def relativeIntegralActionLocusIso :
@@ -63,6 +73,6 @@ def relativeIntegralActionLocusIso :
       (locallyNoetherianTestInclusion S).op ⋙
         uliftYoneda.{max uI uO}.obj (relativeIntegralActionLocus B b E e hpow) :=
   FiniteFreeRingHom.actionLocusIso b (relativeEndRingFunctor B)
-    (fun T : Over S => IsLocallyNoetherian T.left) E e hpow
+    (fun T : Over S => IsLocallyNoetherian T.left) E (relativeEndRingRepresentation B E e) hpow
 
 end Langlands.AbelianScheme

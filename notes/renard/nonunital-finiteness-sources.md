@@ -1,7 +1,7 @@
 # Renard 2026: finiteness conventions in Pareigis and Douady
 
-Worker 709 checked the Renard and Pareigis passages on 30 October 2026 and
-added the supplied Douady translation comparison on 31 October. This source audit
+This source audit, of 30 October 2026, checks the Renard and Pareigis passages and compares the
+supplied Douady translation. It
 supplements [the C.II localization audit](stable-quotients.md) and
 [the categorical progress note](category-module-progress.md). It identifies
 what Renard's references establish and leaves the nonunital finiteness
@@ -13,7 +13,7 @@ The governing source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
-at `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
+at `central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 Printed page `p` is PDF page `p + 6`. The readings used here are printed
 6/PDF12, 14/PDF20, 247–249/PDF253–255, 267/PDF273, 279/PDF285 and
 282/PDF288. The unitization and C.II formulas were also inspected visually.
@@ -23,11 +23,11 @@ Academic Press, Pure and Applied Mathematics 39 (1970), registered as
 `pareigis-1970-categories-and-functors`, SHA256
 `1fa7ec45ded11e8abf8dc1d408126755338d5a3d78de55cd7d35fc0023434ecf`.
 The retained scan is
-`/home/taskhub/pilot/literature/Bodo Pareigis — Categories and Functors (Academic Press, 1970).pdf`,
+`literature/Bodo Pareigis — Categories and Functors (Academic Press, 1970).pdf`,
 acquired from the [LMU repository](https://epub.ub.uni-muenchen.de/7244/1/7244.pdf).
 It has 278 PDF pages; printed page `p` is PDF page `p + 8`.
-Worker 709 read the title and contents, the ring/module conventions at
-printed 3–5/PDF11–13, and printed 204–212/PDF212–220. Printed 4, 205 and
+The title and contents, the ring/module conventions at
+printed 3–5/PDF11–13, and printed 204–212/PDF212–220 were read. Printed 4, 205 and
 210 were inspected visually. This is passage reading, not a complete
 Pareigis audit.
 
@@ -38,11 +38,11 @@ It is registered as
 `provided-4aa90ffef13f320ab2d84ee77e4455b2b4212ff0d1908d00c74e07c68ed08fe7`,
 SHA256
 `16edeadac520354a3d76c95fe771076cf371f00eb89d5b6d7d1f6eb3545c02ad`,
-at `/home/taskhub/pilot/literature/Douady-Douady - Algebra and Galois Theories (2020).pdf`.
+at `literature/Douady-Douady - Algebra and Galois Theories (2020).pdf`.
 Its 479-page PDF identifies the translated French edition as Cassini
 (copyright 2004) on PDF5. It is not the old CEDIC edition listed by
 Renard. The registered identifier names this actual PDF even though its
-registration title inherited the original-edition request wording.
+registration title inherited the original edition's title.
 
 The bounded Douady reading comprises PDF1–13, 39–40, 44–47, 94–96,
 108–110 and 143–145. PDF144 was also inspected visually. These are
@@ -117,7 +117,7 @@ surjectivity and stabilization. Reading the unital module results above
 does not by itself choose the meaning of these finiteness assumptions
 under Renard's broader conventions.
 
-The parent must still specify and justify which subobjects and generation
+The whole-book formalization must still specify and justify which subobjects and generation
 operations express that meaning: all additive stable subgroups, compatible
 complex-linear stable subspaces, or an explicitly compared unitization
 model. Neither a counterexample distinguishing models nor a successful
@@ -143,16 +143,15 @@ describes the unitization and quotient-Hopfian route, which differs from
 Renard's inverse-polynomial argument. This internal theorem does not
 establish an equivalence with Renard's finiteness phrases.
 
-The published statement unit
+The published statement module
 [RenardSourceFiniteLocalizationStatements](../../Langlands/Algebra/RenardSourceFiniteLocalizationStatements.md)
 states the final proposition separately under each of the three models
 above: categorical predicates in `NonUnitalModuleCat B`, the same predicates
 in `ActionModuleCat ℂ B`, and Noetherianity and finite generation over
 `Unitization ℂ B`. Its published exact proof
-[RenardSourceFiniteLocalizationProof](../../Langlands/Algebra/RenardSourceFiniteLocalizationProof.md),
-by Worker 1581 with Worker 709 (candidate
-`7646164d-c224-44cd-b3f6-902fd2d99866`, Reviewer 15061, publication commit
-`50126e1b2b20b62d408b52dc3552f01089dd1d11`), establishes all three
+[RenardSourceFiniteLocalizationProof](../../Langlands/Algebra/RenardSourceFiniteLocalizationProof.md)
+(first appeared at Library commit
+`50126e1b2b20b62d408b52dc3552f01089dd1d11`) establishes all three
 readings. That proof does not select the author's convention.
 
 The old CEDIC [25] text has not been acquired or read. Renard's bibliography
@@ -162,4 +161,4 @@ at printed 282/PDF288 identifies Régine and Adrien Douady,
 conventions requires the original text and edition/volume verification.
 The supplied translation does not establish a correction to that entry
 or choose a nonunital convention for C.II.
-The full source-facing C.II result and the parent book obligations remain open.
+The full source-facing C.II result and the whole-book obligations remain open.

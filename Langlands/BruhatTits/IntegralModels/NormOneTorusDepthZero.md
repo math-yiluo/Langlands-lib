@@ -41,8 +41,7 @@ The module is derived. Its statements are standard facts about the norm-one
 torus of an unramified extension and its smooth integral model. Here they
 are obtained by applying published Library results to the supplied data.
 
-The task objective (Task 3557, section "Regression examples") asks for a
-proved example of an anisotropic group.
+The module is a proved regression example of an anisotropic group.
 
 The comparison values come from Kaletha–Prasad, *Bruhat–Tits Theory: A New
 Approach* (2023). The registered original is

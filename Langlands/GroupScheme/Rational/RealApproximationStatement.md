@@ -94,13 +94,15 @@ character of `ℚ(√2)/ℚ`, acting by negation, is a smooth affine group over
 `ℚ`. Its only rational point is the identity, while it has three real
 points, since `√2` is real; its real points form a discrete space.
 
-Relation to the Library. The Library has no statement of Theorem 25.70.
+Relation to the Library. The Library proves this statement as
+`realApproximation` (module `Rational.RealApproximationProof`).
 `ConnectedGroupUnirationalityStatement` (in
 [`Rational.ConnectedGroupUnirationalityStatement`](ConnectedGroupUnirationalityStatement.md))
 states Milne's Theorem 17.93, unirationality of connected group varieties over
 a perfect field and of connected reductive groups, which Milne's proof uses.
-Theorem 25.54, also used by Milne's proof, is not in the Library; it is the
-subject of a separate statement candidate, `RealPointComponentsStatement`.
+Theorem 25.54, also used by Milne's proof, is stated separately, as
+`RealPointComponentsStatement`, and proved as `realPointComponents` (module
+`Rational.RealPointComponentsProof`).
 
 Corrected reprint. The 2022 corrected reprint (in the project literature
 folder, registered as `milne-2022-algebraic-groups`, SHA-256
@@ -121,7 +123,7 @@ the 2022 reprint (source ID `milne-2022-algebraic-groups-errata-2026-11-04`,
 SHA-256 `78e5f297fb2c80c6dacf413fc5abd7f82ba3dd5e5f83b5a5205dfd93bf160d49`)
 has no entry for printed pp. 4, 14, 547, 567 or 568.
 
-## For the later proof (not part of this unit)
+## For the proof (not part of this module)
 
 Milne's proof (2017, p. 564) proceeds through tori, groups of multiplicative
 type and reductive groups. It begins: "For a torus of the form (G_m)_{k/Q}

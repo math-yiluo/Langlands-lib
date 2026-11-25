@@ -1,7 +1,5 @@
 # No specializations between points with the same image
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.SameImageSpecialization`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace`.
 

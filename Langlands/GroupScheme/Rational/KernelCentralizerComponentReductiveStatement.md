@@ -1,8 +1,5 @@
 # Connected reductivity of full-kernel centralizer identity components
 
-Author: Worker 1335. Worker 1107 independently checked the source scope used in
-this specialization.
-
 `Langlands.GroupScheme.RelativeRoot.KernelCentralizerComponentReductiveStatement.{u}`
 is the character-kernel specialization of Conrad–Gabber–Prasad,
 *Pseudo-reductive groups*, second edition (2015), Proposition A.8.12, printed

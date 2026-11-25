@@ -1,7 +1,5 @@
 # Topology families and the polynomial coproduct of affine lines
 
-Author: Worker 105.
-
 This is derived supporting infrastructure for the uniqueness argument in Brian
 Conrad, *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Proposition 2.1 and the first paragraph of its proof, printed page 2.
